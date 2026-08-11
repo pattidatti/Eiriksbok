@@ -7487,7 +7487,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-03-15T21:57:26+01:00"
+                  "lastUpdated": "2026-08-11T19:40:07+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -7672,7 +7672,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T19:40:07+02:00"
                 },
                 {
                   "id": "bonn",
@@ -7788,9 +7788,9 @@
               "lessons": [
                 {
                   "id": "sentrale-trekk",
-                  "title": "Sentrale trekk",
-                  "description": "Kjernen i buddhismen: Nirvana, de fire edle sannheter og den åttedelte vei.",
-                  "image": "/images/krle/religion/buddhisme_hero.webp",
+                  "title": "En diagnose og en behandling",
+                  "description": "De fire edle sannhetene er bygget som et legebesøk: her er problemet, her er årsaken, her er kuren. Bli kjent med kjernen i buddhismen, og med hvor mye theravada og mahayana skiller lag.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "sentrale_trekk"
@@ -7925,9 +7925,9 @@
               "lessons": [
                 {
                   "id": "sentrale-trekk",
-                  "title": "Sentrale trekk",
-                  "description": "Kjernen i jødedommen: Pakten, Toraen og livet her og nå.",
-                  "image": "/images/krle/religion/jodedom_menora.webp",
+                  "title": "Mange måter å være jøde på",
+                  "description": "Én Gud, én pakt og 613 bud - men ingen trosbekjennelse noen må undertegne, og ingen som bestemmer over alle. Bli kjent med kjernen i jødedommen og med hvor ulikt retningene praktiserer den.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "sentrale_trekk"
@@ -8049,9 +8049,9 @@
               "lessons": [
                 {
                   "id": "sentrale-trekk",
-                  "title": "Sentrale trekk",
-                  "description": "Kjernen i hinduismen: Moksha, Dharma og Karma.",
-                  "image": "/images/krle/religion/hinduisme_hero.webp",
+                  "title": "En religion uten sentrum",
+                  "description": "Hinduismen har ingen grunnlegger, ingen trosbekjennelse og ingen sentral ledelse. Bli kjent med de fire ordene som likevel binder tradisjonene sammen - dharma, karma, samsara og moksha - og med de tre store retningene som svarer ulikt på hvem som er høyest.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "sentrale_trekk"
@@ -8251,7 +8251,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T19:40:07+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8375,7 +8375,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T19:40:07+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8499,7 +8499,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T19:40:07+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8623,7 +8623,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-07-09T10:26:20+02:00"
+                  "lastUpdated": "2026-08-11T19:40:07+02:00"
                 },
                 {
                   "id": "grunnleggere",

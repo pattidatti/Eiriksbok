@@ -1,225 +1,311 @@
 {
-    "id": "sentrale-trekk",
-    "title": "Sentrale trekk i Buddhismen",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "buddhisme",
-    "dimension": "doctrinal",
-    "comparison_tags": ["sentrale_trekk", "frelse_og_mal"],
-    "createdDate": "2025-12-04T10:00:00Z",
-    "lastUpdated": "2026-06-09T00:00:00Z",
-    "heroImage": "/images/krle/buddhisme/sentrale-trekk-hero.webp",
-    "readTime": "10 min lesning",
-    "content": [
-        {
-            "type": "text",
-            "content": "For 2500 år siden levde en prins i Nepal ved navn Siddhartha Gautama. Faren hans hadde sørget for at han bare så vakre, friske og glade ting - fattigdom, sykdom og død var skjult bak palassets murer. Men én dag red Siddhartha gjennom byen og møtte tre syn som forandret alt: en syk mann, en gammel mann og et lik. For første gang skjønte han at lidelse ikke var noe som bare rammet andre. Den ventet ham også."
-        },
-        {
-            "type": "header",
-            "text": "Siddhartha og erkjennelsen"
-        },
-        {
-            "type": "text",
-            "content": "Da Siddhartha var 29 år, forlot han kone, barn og alt han eide for å søke svaret på spørsmålet: hva er lidelse, og finnes det en vei ut? Han prøvde streng askese - å pine kroppen for å oppnå innsikt. Men det hjalp ikke. Til slutt satte han seg under et fikentre i Bodh Gaya i India - i dag kalt Bodhitreet - og bestemte at han ikke ville flytte seg før han hadde funnet sannheten."
-        },
-        {
-            "type": "text",
-            "content": "Etter 49 dagers meditasjon fikk han den store erkjennelsen. Han ble Buddha - \"den opplyste\". Det han oppdaget delte han resten av livet med alle han møtte. Hans lære kalles Dharma og er kjernen i buddhismen."
-        },
-        {
-            "type": "header",
-            "text": "De fire edle sannheter"
-        },
-        {
-            "type": "text",
-            "content": "Buddha oppsummerte erkjennelsen sin i fire påstander kalt De fire edle sannheter. Buddhister beskriver dem som en lege som stiller en diagnose: han identifiserer sykdommen, finner årsaken, slår fast at kuren finnes, og skriver ut resepten."
-        },
-        {
-            "type": "list",
-            "items": [
-                "Dukkha - Alt liv inneholder lidelse: aldring, sykdom, tap og skuffelse er uunngåelig.",
-                "Samudaya - Lidelsens årsak er begjær: vi lider fordi vi vil ha mer, holder fast, eller frykter å miste.",
-                "Nirodha - Det er mulig å avslutte lidelsen: Nirvana er ikke bare et ideal - det er faktisk mulig.",
-                "Magga - Veien til frigjøring er Den åttedelte veien."
-            ]
-        },
-        {
-            "type": "text",
-            "content": "I buddhismen er ikke frelse noe som gis deg av en gud. Det er noe du oppnår selv ved å følge en metode - som en pasient som tar medisinen legen skriver ut."
-        },
-        {
-            "type": "header",
-            "text": "Den åttedelte veien"
-        },
-        {
-            "type": "text",
-            "content": "Den åttedelte veien er den praktiske guiden til frigjøring. Den er delt inn i tre grupper - visdom, etikk og meditasjon - som vever seg inn i hverandre. Å forstå uten å leve etter forståelsen hjelper lite. Å leve etisk uten dyp meditasjon rekker heller ikke. Alle tre trengs."
-        },
-        {
-            "type": "component",
-            "name": "DharmahjuletUtforsker",
-            "props": {}
-        },
-        {
-            "type": "header",
-            "text": "Karma og gjenfødsel"
-        },
-        {
-            "type": "text",
-            "content": "Et sentralt prinsipp i buddhismen er karma - læren om at alle handlinger har konsekvenser. Gode handlinger skaper gode konsekvenser, dårlige handlinger skaper dårlige. Karma er ikke en belønning eller straff fra en gud, men mer som en naturlov: visse årsaker skaper visse virkninger."
-        },
-        {
-            "type": "text",
-            "content": "Buddhister tror at de fleste vesener gjenfødes igjen og igjen. Dette kretsløpet kalles Samsara. Hva du gjenfødes som avhenger av din karma. Målet er å bryte ut av kretsløpet og nå Nirvana. Buddhistisk meditasjon er en trening i å se gjennom illusjonene som binder oss til Samsara."
-        },
-        {
-            "type": "header",
-            "text": "Nirvana - frigjøringen"
-        },
-        {
-            "type": "text",
-            "content": "\"Nirvana\" betyr bokstavelig talt \"utblåsing\" - som å blåse ut en flamme. Det er ikke et sted man reiser til, men en tilstand som oppstår når De tre gifter er sluknet: grådighet (raga), hat (dvesha) og uvitenhet (moha)."
-        },
-        {
-            "type": "text",
-            "content": "I Theravada-buddhismen er Nirvana full frigjøring fra Samsara - den som oppnår det slipper å gjenfødes. I Mahayana-buddhismen er idealet en Bodhisattva - et opplyst vesen som velger å forbli i Samsara for å hjelpe alle andre til frigjøring. Det regnes som den høyeste form for medfølelse."
-        },
-        {
-            "type": "header",
-            "text": "Theravada og Mahayana"
-        },
-        {
-            "type": "text",
-            "content": "Buddhismen delte seg over tid i to store retninger. Theravada - \"de eldstes lære\" - er utbredt i Sri Lanka, Thailand og Kambodsja. Den legger vekt på den individuelle veien mot Nirvana gjennom meditasjon og streng klosterdisiplin."
-        },
-        {
-            "type": "text",
-            "content": "Mahayana - \"det store fartøyet\" - er utbredt i Kina, Japan, Korea og Tibet. Den utvider idealet til å omfatte alle veseners frigjøring og legger stor vekt på Bodhisattva-idealet. Tibetansk buddhisme (Vajrayana) er en gren av Mahayana, kjent for sine elaborate ritualer og Dalai Lama som åndelig leder."
-        },
-        {
-            "type": "header",
-            "text": "Buddhismen i dag"
-        },
-        {
-            "type": "text",
-            "content": "I dag følger rundt 500 millioner mennesker buddhismen - de fleste i Asia. Buddhismen er ikke bare en religion, men også en filosofi og en psykologisk praksis. Mange ikke-religiøse mennesker over hele verden praktiserer buddhistisk meditasjon, særlig mindfulness - bevisst tilstedeværelse i øyeblikket. Teknikken stammer direkte fra Buddhas undervisning under Bodhitreet for 2500 år siden."
-        },
-        {
-            "type": "text",
-            "content": "I Norge er buddhismen det tredje største registrerte trossamfunnet etter kristendommen og islam. Men mange flere praktiserer buddhistisk meditasjon uten å være formelle medlemmer av et buddhistisk trossamfunn."
-        },
-        {
-            "type": "header",
-            "text": "Se Samsara og Nirvana i 3D"
-        },
-        {
-            "type": "component",
-            "name": "MicroGame",
-            "props": { "gameId": "samsara-syklusen" }
-        },
-        {
-            "type": "header",
-            "text": "Videre lesning"
-        },
-        {
-            "type": "text",
-            "content": "Utforsk buddhismens hellige tekster og lær om Buddhas liv i artikkelen om [grunnleggerne av buddhismen](/krle/religion/buddhisme/grunnleggere). Les om [buddhistisk gudebilde](/krle/religion/buddhisme/gudsbilde) og [buddhistisk bønn og meditasjon](/krle/religion/buddhisme/bonn). Du kan også sammenligne buddhismen med andre religioner på [sammenligningssiden](/krle/sammenlign)."
-        },
-        {
-            "type": "component",
-            "name": "Quiz",
-            "props": {
-                "questions": [
-                    {
-                        "question": "Hva er den første av De fire edle sannheter i buddhismen?",
-                        "options": [
-                            "Livet er fullt av lykke og glede",
-                            "Alt liv inneholder lidelse (Dukkha)",
-                            "Gud har skapt all lidelse"
-                        ],
-                        "answer": "Alt liv inneholder lidelse (Dukkha)"
-                    },
-                    {
-                        "question": "Hva betyr \"nirvana\" bokstavelig talt?",
-                        "options": [
-                            "En paradishage",
-                            "Guds rike",
-                            "\"Utblåsing\" - som å slukke en flamme"
-                        ],
-                        "answer": "\"Utblåsing\" - som å slukke en flamme"
-                    },
-                    {
-                        "question": "Hva er De tre gifter i buddhismen?",
-                        "options": [
-                            "Grådighet, hat og uvitenhet",
-                            "Stolthet, løgn og vold",
-                            "Begjær, rikdom og makt"
-                        ],
-                        "answer": "Grådighet, hat og uvitenhet"
-                    },
-                    {
-                        "question": "Hva er en Bodhisattva i Mahayana-buddhismen?",
-                        "options": [
-                            "Et buddhistisk tempel",
-                            "Et opplyst vesen som hjelper alle andre til frigjøring",
-                            "En buddhistisk hellig skriving"
-                        ],
-                        "answer": "Et opplyst vesen som hjelper alle andre til frigjøring"
-                    },
-                    {
-                        "question": "Hvilken del av Den åttedelte veien hører \"Rett meditasjon\" til?",
-                        "options": [
-                            "Visdom (Prajna)",
-                            "Etikk (Sila)",
-                            "Meditasjon (Samadhi)"
-                        ],
-                        "answer": "Meditasjon (Samadhi)"
-                    }
-                ]
-            }
-        }
-    ],
-    "concepts": [
-        {
-            "id": "dharma-buddh",
-            "term": "Dharma",
-            "definition": "Buddhas lære. Også brukt om den universelle kosmiske orden. Å følge Dharma betyr å leve i tråd med Buddhas innsikt."
-        },
-        {
-            "id": "samsara",
-            "term": "Samsara",
-            "definition": "Kretsløpet av gjenfødsel og lidelse. Buddhister tror vesener gjenfødes liv etter liv til de oppnår Nirvana og bryter ut av Samsara."
-        },
-        {
-            "id": "karma-buddh",
-            "term": "Karma",
-            "definition": "Prinsippet om årsak og virkning. Gode handlinger skaper gode konsekvenser, dårlige handlinger skaper dårlige. Karma er ikke en guddoms dom, men en naturlov."
-        },
-        {
-            "id": "nirvana",
-            "term": "Nirvana",
-            "definition": "Buddhistenes mål. Tilstanden som oppstår når grådighet, hat og uvitenhet (De tre gifter) er sluknet. \"Nirvana\" betyr bokstavelig \"utblåsing\"."
-        },
-        {
-            "id": "bodhisattva",
-            "term": "Bodhisattva",
-            "definition": "I Mahayana-buddhismen: et opplyst vesen som velger å ikke gå inn i Nirvana alene, men hjelper alle andre vesener til frigjøring. Regnes som det høyeste ideal."
-        },
-        {
-            "id": "dukkha",
-            "term": "Dukkha",
-            "definition": "Lidelse, utilfredshet, forgjengelighet. Den første av De fire edle sannheter: alt liv inneholder dukkha."
-        },
-        {
-            "id": "den-attedelte-veien",
-            "term": "Den åttedelte veien",
-            "definition": "Buddhas praktiske veiledning til Nirvana, delt i visdom (Prajna), etikk (Sila) og meditasjon (Samadhi). Den fjerde av De fire edle sannheter."
-        }
-    ],
-    "quote": {
-        "text": "Lidelse finnes, men ingen som lider. Gjerninger finnes, men ingen som gjør dem.",
-        "source": "Visuddhimagga",
-        "reference": "Buddhaghosa"
+  "id": "sentrale-trekk",
+  "title": "En diagnose og en behandling",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "buddhisme",
+  "dimension": "doctrinal",
+  "layout": "rich",
+  "category": "Buddhisme",
+  "comparison_tags": [
+    "sentrale_trekk",
+    "frelse_og_mal"
+  ],
+  "createdDate": "2025-12-04T10:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "heroImage": "/images/placeholder.webp",
+  "readTime": "9 min lesning",
+  "details": [
+    "Buddhismen bygger på De fire edle sannhetene: en diagnose av lidelsen og en behandling",
+    "De tre juvelene er Buddha, dharma og sangha - den som tar tilflukt til dem, regnes som buddhist",
+    "Ingen gud frelser noen. Målet er nirvana, og veien dit må hver enkelt gå selv",
+    "Buddhismen er delt i to hovedtradisjoner: theravada og mahayana",
+    "Pew anslo rundt 324 millioner buddhister i verden i 2020, 98 prosent av dem i Asia"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Buddhismen begynte ikke med en gud som talte fra himmelen. Den begynte med et menneske som grublet på ett spørsmål: hvorfor har livet så mye vondt i seg, og finnes det en vei ut? Svaret han kom fram til, kalles dharma, og det er fortsatt kjernen i religionen (Kværne & Borgland, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Mannen bak læren"
+    },
+    {
+      "type": "text",
+      "content": "Buddha het egentlig Siddhartha Gautama. Han var en indisk prins av Sakya-ætten og vokste opp i Kapilavatthu, i grenselandet mellom dagens Nepal og den indiske delstaten Bihar. Forskerne er enige om at han var en virkelig person, men usikre på når han levde. En vanlig datering har vært 566-486 fvt., men de fleste mener nå at han levde rundt år 400 fvt., altså for omtrent 2400 år siden (Kværne & Borgland, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Ifølge tradisjonen fikk han en plutselig erkjennelse av sykdom, alderdom og død. Da han var 30 år, forlot han familien og ble en hjemløs asket. Lenge drev han med streng askese, altså å pine kroppen for å nå innsikt, men det førte ikke fram. Til slutt satte han seg i meditasjon under et fikentre ved dagens Bodh Gaya, og samme natt kom gjennombruddet. Det kalles oppvåkningen, på sanskrit bodhi, og ærestittelen Buddha betyr «den oppvåknede». Han underviste i Nord-India resten av livet og døde 80 år gammel (Kværne & Borgland, 2026). Mer om [grunnleggeren av buddhismen](/krle/religion/buddhisme/grunnleggere)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Buddhastatue i meditasjonsstilling under et stort tre",
+      "caption": "Buddha regnes ikke som en gud, men som en læremester."
+    },
+    {
+      "type": "header",
+      "text": "De fire edle sannhetene"
+    },
+    {
+      "type": "text",
+      "content": "Buddha samlet innsikten sin i fire punkter som kalles De fire edle sannhetene. De ligner en legejournal: først diagnosen, så årsaken, så beskjeden om at pasienten kan bli frisk, og til slutt behandlingen."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Alt er lidelse. Alt er forgjengelig, og ingenting har et evig vesen.",
+        "Lidelsen har en årsak. Den er «tørst», altså begjær etter sanseglede, etter å eksistere eller etter å bli borte.",
+        "Lidelsen kan opphøre. Den slutter når tørsten slukkes og uvitenheten forsvinner, først og fremst forestillingen om et evig «jeg».",
+        "Det finnes en vei dit, og den kalles den åttedelte veien."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva som ikke står der (Kværne & Borgland, 2026). Ingen gud griper inn og redder noen. Buddhister mener at hver enkelt må gå veien selv, slik pasienten selv må ta medisinen. Mer om målet i artikkelen om [frelse](/krle/religion/buddhisme/frelse)."
+    },
+    {
+      "type": "header",
+      "text": "Den åttedelte veien"
+    },
+    {
+      "type": "text",
+      "content": "Den åttedelte veien er den fjerde sannheten satt ut i praksis. De åtte delene samles i tre grupper: visdom (prajna), etikk (sila) og meditasjon (samadhi) (Store norske leksikon & Borgland, 2026). Etikken er konkret. Buddhisten skal holde seg unna drap, tyveri, usannhet, rusdrikk og ukyskhet (Kværne & Borgland, 2026). Klikk deg gjennom hjulet under, eller les mer om [den åttedelte veien](/krle/religion/buddhisme/den-attedelte-vei)."
+    },
+    {
+      "type": "component",
+      "name": "DharmahjuletUtforsker",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "De tre juvelene"
+    },
+    {
+      "type": "text",
+      "content": "Det korteste svaret på hva buddhismen bygger på, er De tre juvelene, på sanskrit triratna: Buddha, dharma og sangha. Buddha er læreren, dharma er læren hans, og sangha er ordenen av munker og nonner. Den som offentlig sier fram en kort formel om å ta sin tilflukt til juvelene, regnes som buddhist (Store norske leksikon, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Ordet sangha brukes også videre, om alle buddhister. Ordenen har vært buddhismens viktigste institusjon: munkene tar vare på tekstene og underviser, mens legfolket, altså vanlige buddhister som ikke er munker eller nonner, holder klostrene i gang med gaver av mat og klær. I buddhistisk tenkning gir slike gaver religiøs fortjeneste, det som ofte kalles god karma (Borgland, 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Buddhistiske munker i oransje kapper utenfor et kloster",
+      "caption": "Sanghaen, munke- og nonneordenen, er den tredje av De tre juvelene."
+    },
+    {
+      "type": "header",
+      "text": "Karma, samsara og ikke-selv"
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen overtok to ideer fra indisk religion. Den ene er karma. Læren sier at handlinger mot andre får følger for en selv, i dette livet eller i et senere: gode handlinger gir et bedre liv, dårlige et dårligere (Jacobsen, 2026). Den andre er samsara, forestillingen om et kretsløp av fødsel, død og ny fødsel. Både hinduismen, jainismen og buddhismen ser det å slippe ut av dette kretsløpet som et frelsesmål (Jacobsen, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Men buddhismen la til noe eget: anatman, «ikke-selv». Buddhister mener at ingen evig sjel vandrer fra kropp til kropp. Mennesket består i stedet av fem deler i stadig forandring: ytre form, fornemmelser, forestillinger, viljesimpulser og bevissthet (Kværne & Borgland, 2026). Nettopp troen på et fast «jeg» regnes som en grunn til at vi lider."
+    },
+    {
+      "type": "header",
+      "text": "Nirvana er målet"
+    },
+    {
+      "type": "text",
+      "content": "Nirvana betyr «utslukning», som når en flamme slukner. I buddhistisk lære er det ikke et sted man reiser til, men en uforanderlig tilstand der alt begjær og all illusjon har opphørt. Den som når nirvana, blir ikke gjenfødt (Kværne & Borgland, 2026). I Vesten brukes ordet ofte om paradis eller «det store intet». Begge deler er misforståelser (Kværne & Borgland, 2025)."
+    },
+    {
+      "type": "header",
+      "text": "Theravada og mahayana"
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen er ikke ensartet. Den er delt i to hovedtradisjoner (Kværne & Borgland, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Theravada betyr «de eldstes lære». Retningen ble skilt ut på 200-tallet fvt. og hevder å ha bevart Buddhas lære uten endringer. De hellige grunntekstene, Tipitaka, er skrevet på pali. Theravada dominerer i Sri Lanka, Myanmar, Thailand, Laos og Kambodsja, og er statsreligion i flere av dem (Store norske leksikon & Frydenlund, 2026). Idealet er arhaten, den som selv når nirvana. De fleste theravada-buddhister mener at dette ikke lenger er mulig i praksis, og satser i stedet på en god gjenfødsel gjennom etisk liv og gavmildhet (Kværne & Borgland, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Mahayana betyr «den store vogn» og oppsto i India rundt hundreåret før vår tidsregning. Her lærer man at alle mennesker kan nå nirvana, ikke bare munker og nonner. Idealet er bodhisattvaen, den som strever mot fullkommenhet til beste for alle levende vesener, om det så tar mange liv. Mahayana er utbredt i Tibet, Mongolia, Himalaya, Kina, Korea, Vietnam og Japan. Den er heller ikke ensartet, men har egne skoler med hvert sitt særpreg, som zen i Kina og Japan. Også tibetansk buddhisme hører til mahayana (Kværne, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Forskjellen stikker dypt. I mahayana blir Buddha oppfattet som et kosmisk og guddommelig vesen, og det tenkes å finnes mange buddhaer samtidig. Bodhisattvaer som Avalokiteshvara og Manjushri blir dyrket som guddommelige (Kværne, 2026). I den eldste tradisjonen var Buddha et menneske."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Kart over Asia som viser buddhismens utbredelse",
+      "caption": "Theravada dominerer i sør og sørøst, mahayana i nord og øst."
+    },
+    {
+      "type": "header",
+      "text": "Trenger man å tro på en gud?"
+    },
+    {
+      "type": "text",
+      "content": "Nei. De tidligste tilhengerne så ikke Buddha som en gud, men som læremester for både guder og mennesker, et vesen som ved egen kraft nådde den forløsende innsikten (Kværne & Borgland, 2026). Men mahayana viser at bildet er sammensatt: der får buddhaer og bodhisattvaer en gudelignende plass. Les mer om [buddhismens gudsbilde](/krle/religion/buddhisme/gudsbilde)."
+    },
+    {
+      "type": "header",
+      "text": "Buddhismen i dag"
+    },
+    {
+      "type": "text",
+      "content": "Pew Research Center anslo at det i 2020 var omtrent 324 millioner buddhister i verden, mot 488 millioner i 2010. Det eldre tallet er senere justert ned til 343 millioner. Slike tall måler hva folk svarer at de er, og i Øst-Asia lever buddhismen side om side med taoisme i Kina og shinto i Japan. I 2018 svarte 33 prosent av kinesiske voksne at de tror på Buddha eller bodhisattvaer, mens bare 4 prosent kalte seg buddhister. Rundt 98 prosent av verdens buddhister bor i Asia, og bare i fire land er de i flertall: Thailand, Myanmar, Kambodsja og Sri Lanka (Kværne & Borgland, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Til Norge kom buddhismen særlig med innvandrere fra Vietnam og Thailand. Det første buddhistiske samfunnet, Zen-skolen i Oslo, ble etablert i 1972. I 2025 var 22 176 buddhister registrert i norske trossamfunn. Buddhistforbundet anslo for 2019 om lag 40 000 buddhister med innvandrerbakgrunn, og rundt 44 000 når vestlige konvertitter regnes med (Kværne & Borgland, 2026). I 2023 var rundt 183 000 registrert i islamske trossamfunn og rundt 13 150 i hinduistiske, mot drøyt 22 200 buddhister (Rasmussen mfl., 2025). Målt i registrerte medlemmer er buddhismen dermed den tredje største religionen i Norge."
+    },
+    {
+      "type": "header",
+      "text": "Se samsara i 3D"
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "samsara-syklusen"
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Skriv De fire edle sannhetene med dine egne ord, én setning på hver.",
+          "Hva er De tre juvelene, og hva gjør en person for å regnes som buddhist?",
+          "Forklar hva anatman betyr, og hvorfor buddhister mener at troen på et fast «jeg» skaper lidelse.",
+          "Nevn tre land der theravada dominerer og tre land der mahayana dominerer."
+        ],
+        "reflekter": [
+          "Artikkelen sammenligner De fire edle sannhetene med en legejournal. Hvor godt passer bildet, og hvor svikter det?",
+          "Buddhismen krever ikke tro på en skapergud. Kan noe da være en religion? Begrunn svaret.",
+          "Anslaget på antall buddhister falt fra 488 til 324 millioner uten at folk sluttet å praktisere. Hva sier det om å telle religiøse mennesker?",
+          "Theravada og mahayana ser ulikt på hvem Buddha er. Hvorfor er det viktig å nevne slike forskjeller når man beskriver en religion?"
+        ],
+        "gaaVidere": [
+          "Lag en plakat som viser den åttedelte veien delt i visdom, etikk og meditasjon, med ett hverdagseksempel til hver del.",
+          "Sammenlign nirvana med frelsesmålet i en annen religion du har lest om. Hva er likt, og hva er helt ulikt?",
+          "Undersøk hvilke buddhistiske retninger som finnes i Norge i dag, og lag en kort oversikt."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva sier den andre av De fire edle sannhetene?",
+            "options": [
+              "At lidelsen har en årsak, nemlig «tørst» eller begjær",
+              "At lidelsen er en straff fra gudene",
+              "At lidelsen aldri kan ta slutt",
+              "At lidelsen bare rammer de fattige"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sannhet nummer to peker på årsaken: «tørst» etter sanseglede, etter å eksistere eller etter å bli borte."
+          },
+          {
+            "question": "Hva er De tre juvelene i buddhismen?",
+            "options": [
+              "Fortid, nåtid og framtid",
+              "Buddha, dharma og sangha",
+              "Visdom, etikk og meditasjon",
+              "Karma, samsara og nirvana"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Triratna er Buddha (læreren), dharma (læren) og sangha (munke- og nonneordenen). Den som tar tilflukt til dem, regnes som buddhist."
+          },
+          {
+            "question": "Hva betyr nirvana bokstavelig?",
+            "options": [
+              "Evig hage",
+              "Gudenes bolig",
+              "Utslukning, som når en flamme slukner",
+              "Den store vogn"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Nirvana betyr «utslukning». Det er ikke et paradis, men en tilstand der alt begjær og all illusjon har opphørt."
+          },
+          {
+            "question": "Hva er hovedforskjellen mellom theravada og mahayana?",
+            "options": [
+              "Theravada bruker templer, mahayana bruker ikke templer",
+              "Theravada tror på karma, mahayana gjør det ikke",
+              "Theravada finnes bare i Europa, mahayana bare i Asia",
+              "Theravada vektlegger arhat-idealet og den eldste læren, mahayana vektlegger bodhisattva-idealet og en kosmisk Buddha"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Theravada hevder å ha bevart den eldste læren uendret, mens mahayana utviklet bodhisattva-idealet og synet på Buddha som et kosmisk, guddommelig vesen."
+          },
+          {
+            "question": "Omtrent hvor mange mennesker identifiserte seg som buddhister i verden i 2020?",
+            "options": [
+              "Rundt 324 millioner",
+              "Rundt 50 millioner",
+              "Rundt 1,2 milliarder",
+              "Rundt 700 millioner"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Pew Research Center anslo rundt 324 millioner i 2020. Det eldre anslaget på 488 millioner fra 2010 er senere justert ned."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddha*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Buddha](https://snl.no/Buddha)",
+          "Kværne, P. & Borgland, J. W. (2025). *Nirvana*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nirvana](https://snl.no/nirvana)",
+          "Store norske leksikon & Borgland, J. W. (2026). *Den åttedelte veien*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_åttedelte_veien](https://snl.no/den_%C3%A5ttedelte_veien)",
+          "Store norske leksikon & Frydenlund, I. (2026). *Theravada*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/theravada](https://snl.no/theravada)",
+          "Kværne, P. (2026). *Mahayana*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/mahayana](https://snl.no/mahayana)",
+          "Store norske leksikon. (2026). *Triratna*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/triratna](https://snl.no/triratna)",
+          "Borgland, J. W. (2026). *Sangha*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sangha](https://snl.no/sangha)",
+          "Jacobsen, K. A. (2026). *Karma*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/karma](https://snl.no/karma)",
+          "Jacobsen, K. A. (2025). *Samsara*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/samsara](https://snl.no/samsara)",
+          "Rasmussen, T., Bangstad, S., Jacobsen, K. A. & Groth, B. (2025). *Religion i Norge*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Religion_i_Norge](https://snl.no/Religion_i_Norge)"
+        ]
+      }
     }
+  ],
+  "concepts": [
+    {
+      "id": "dharma-buddh",
+      "term": "Dharma",
+      "definition": "Buddhas lære. Dharma er den andre av De tre juvelene og grunnlaget for alle buddhistiske retninger."
+    },
+    {
+      "id": "triratna",
+      "term": "De tre juvelene",
+      "definition": "Buddha, dharma og sangha. Den som offentlig tar sin tilflukt til dem, regnes som buddhist. Kalles triratna på sanskrit."
+    },
+    {
+      "id": "anatman",
+      "term": "Anatman",
+      "definition": "«Ikke-selv». Læren om at ingen evig sjel vandrer gjennom gjenfødslene. Mennesket består av fem deler som hele tiden forandrer seg."
+    },
+    {
+      "id": "nirvana",
+      "term": "Nirvana",
+      "definition": "«Utslukning». Den uforanderlige tilstanden der alt begjær og all illusjon har opphørt. Den som når nirvana, blir ikke gjenfødt."
+    },
+    {
+      "id": "bodhisattva",
+      "term": "Bodhisattva",
+      "definition": "I mahayana: den som har bestemt seg for å streve mot fullkommenhet til beste for alle levende vesener, om det så tar mange liv."
+    }
+  ],
+  "timeline": []
 }

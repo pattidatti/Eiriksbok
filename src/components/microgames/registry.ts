@@ -1395,7 +1395,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'tikkun-olam-3d',
         title: 'Tikkun Olam - Reparer verden',
         description:
-            'Kjenn jødedommens kjerneforpliktelse på kroppen: reparer fire skader i en Jerusalem-by - gi mat til den sultne, fiks veien, tenn Shabbat-lyset, plant et tre. Verdenen lyser opp for hvert grep du tar. Lyspæren: Tikkun Olam er ikke et ideal, det er en daglig plikt.',
+            'Reparer fire skader i en Jerusalem-by - gi mat til den sultne, fiks veien, tenn Shabbat-lyset, plant et tre. Verdenen lyser opp for hvert grep du tar. Lyspæren: uttrykket tikkun olam har skiftet mening flere ganger, og for mange jøder i dag betyr det å gjøre verden litt bedre med egne hender.',
         estimatedSeconds: 120,
         loader: () => import('./TikkunOlam3D'),
         Component: TikkunOlam3D as never,

@@ -1,6 +1,7 @@
 {
     "id": "sentrale-trekk",
-    "title": "Sentrale trekk i Hinduismen",
+    "title": "En religion uten sentrum",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "hinduisme",
@@ -9,86 +10,80 @@
         "sentrale_trekk",
         "frelse_og_mal"
     ],
-    "heroImage": "/images/krle/religion/hinduisme_moksha.webp",
-    "readTime": "6 min lesning",
+    "category": "Hinduisme",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Hinduisme er et samlenavn på mange tradisjoner, ikke navnet på én religion.",
+        "Den har ingen stifter, ingen trosbekjennelse og ingen sentral ledelse.",
+        "Fire ord binder tradisjonene sammen: dharma, karma, samsara og moksha.",
+        "De tre store retningene er vishnuisme, shivaisme og shaktisme, og de regner ulike guder som den høyeste.",
+        "Rundt 1,2 milliarder mennesker var hinduer i 2023, om lag 15 prosent av verdens befolkning."
+    ],
     "createdDate": "2025-12-04T10:00:00Z",
-    "lastUpdated": "2026-06-09T00:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg en religion som er over 5000 år gammel, som aldri hadde én grunnlegger, og som ikke krever at du tror på nøyaktig det samme som naboen din. Hinduisme er verdens eldste levende religion - og på mange måter den mest mangfoldige. Over 1,2 milliarder mennesker kaller seg hinduer, men de tilber ulike guder, praktiserer på ulike måter og forstår livet forskjellig. Det de deler, er et felles sett av ideer om hva livet er, hva sjelen er, og hva det vil si å leve riktig."
+            "content": "Hinduismen har ingen grunnlegger, ingen felles trosbekjennelse og ingen øverste leder. Likevel var rundt 1,2 milliarder mennesker hinduer i 2023 (Kværne & Jacobsen, 2026). Hvordan henger det sammen? Svaret er at hinduisme ikke er navnet på én religion. Det er et samlenavn på et mangfold av religiøse tradisjoner, ideer og praksiser som har vokst fram på det indiske subkontinentet gjennom flere tusen år (Kværne & Jacobsen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Denne artikkelen er kartet: hva tradisjonene deler, og hvor de går fra hverandre."
         },
         {
             "type": "header",
-            "text": "Hva er hinduisme?"
+            "text": "Et samlenavn, ikke en kirke"
         },
         {
             "type": "text",
-            "content": "Hinduisme kalles gjerne 'Sanatan Dharma' - den evige orden. Det er ikke en religion som begynte en bestemt dag, men snarere en familie av tradisjoner som har vokst i India og omegn i tusenvis av år. Det finnes ingen pave eller offisiell leder som bestemmer hva som er riktig hinduisme. I stedet finnes det hellige tekster - Vedaene, Upanishadene og Bhagavad Gita - et mangfold av guder og gudinner, og et sett av kjerneideer som de fleste hinduer er enige om."
+            "content": "Hinduismen oppsto ikke til én bestemt tid eller på ett bestemt sted. Den har ingen stifter, ingen trosartikler og ingen fast organisert ledelse. Store norske leksikon kaller den en mosaikk av tradisjoner uten noe sentrum og uten noen sentral organisasjon (Kværne & Jacobsen, 2026). Det betyr at ingen kan si «slik er riktig hinduisme» på vegne av alle andre."
         },
         {
             "type": "text",
-            "content": "Det som gjør hinduisme unik blant verdensreligionene, er nettopp dette mangfoldet. Den rommer både streng monoteisme (troen på én Gud) og polyteisme (troen på mange guder), og ser ingen motsetning mellom dem. Mangfold er ikke en svakhet - det er en styrke."
+            "content": "Røttene går tilbake til den vediske religionen, de eldste religiøse tradisjonene vi kjenner fra India. De kom med nomadefolk som vandret inn i Nord-India fra omkring 1700 fvt. (Kværne & Jacobsen, 2026). Buddhismen og jainismen oppsto også i India, men de regnes som egne religioner fordi de har egne stiftere og egne tekster. Hvordan en religion uten grunnlegger likevel kan ha store lærere, ser du nærmere på i [Hvem grunnla hinduismen?](/krle/religion/hinduisme/grunnleggere)"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tempeltårn i sør-India med hundrevis av gudefigurer",
+            "caption": "Ingen sentral kirke, men tusenvis av lokale templer med egne tradisjoner."
         },
         {
             "type": "header",
-            "text": "Brahman og Atman - sjelen som er alt"
+            "text": "Fire ord som binder det hele sammen"
         },
         {
             "type": "text",
-            "content": "I hjertet av hinduismen finnes en av filosofiens mest dristige ideer: den universelle sjelen (Brahman) og din personlige sjel (Atman) er i bunn og grunn identiske. Brahman er det absolutte - kilden til alt som eksisterer, den usynlige kraften som holder universet oppe. Atman er sjelen din - den delen av deg som ikke dør når kroppen din gjør det."
+            "content": "Skal du huske fire ord fra hinduismen, er det disse: dharma, karma, samsara og moksha. Nesten alle hinduistiske tradisjoner bruker dem, selv om de forklarer dem litt ulikt."
         },
         {
             "type": "text",
-            "content": "Upanishadene - en samling eldgamle filosofitekster - formulerer det slik: 'Tat tvam asi' - Det er deg. Den store sannheten du kan erkjenne gjennom livet, er at du ikke er atskilt fra universet. Du er en del av det. Illusjonen om atskilthet kalles maya - og å gjennomskue maya er første skritt mot frigjøring."
+            "content": "Dharma er det vanskeligste av dem. Ordet betyr noe slikt som det rette, moralen, loven eller selve verdensordenen (Jacobsen, 2026a). Poenget er at dharma ikke er én regel som gjelder alle. Hva som er riktig, varierer med tid, sted, kjønn, alder, yrke og situasjon. Dharma handler mer om plikter enn om rettigheter. Tradisjonen skiller mellom allmenne prinsipper som gjelder alle, og svadharma, den plikten som følger av akkurat din plass i livet. At dette er komplisert, ser du av at det store diktverket Mahabharata bruker rundt 200 000 verselinjer på å svare på hva dharma er (Jacobsen, 2026a). I Bhagavadgita, den mest leste delen av dette verket, sier guden Krishna til krigeren Arjuna at han bør følge sin natur, men handle uten egoistisk begjær (Jacobsen, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "Karma er læren om at handlinger du gjør mot andre, får følger for deg selv i dette eller et senere liv (Jacobsen, 2026b). Karma er altså ikke skjebne. Det er konsekvens. Og i denne tenkningen opphever ikke karma menneskets frihet: i indisk religion og filosofi er det ingen motsetning mellom karma og frihet, fordi det er menneskets egne valg som lager karmaen (Jacobsen, 2026b). I hinduismen er karma tett knyttet til dharma, altså til hva som er rett handling for nettopp deg."
+        },
+        {
+            "type": "text",
+            "content": "Samsara er ordet for gjenfødelsens verden, verden vi lever i, kjennetegnet av at individet stadig fødes, dør og fødes på nytt (Jacobsen, 2025d). I denne tenkningen er ikke døden en sluttstrek, men en overgang til en ny fødsel."
+        },
+        {
+            "type": "text",
+            "content": "Moksha er utgangen. Ordet betegner frelse fra individualitet og materialitet, fra tid og forgjengelighet, og dermed også fra gjenfødelse (Jacobsen, 2025c). Karma og moksha er hverandres motsetninger: karma er årsak og virkning, moksha er friheten fra den kjeden. Veien dit kan gå gjennom innsikt, yoga, streng selvfornektelse eller tilbedelse av guder. Mange hinduer mener også at hellige steder i seg selv har frelsende kraft, og festivalen Kumbhamela samler titalls millioner deltakere (Jacobsen, 2025c). Hva de ulike retningene mener frigjøringen er, står i [Ikke et bedre sted, men ut](/krle/religion/hinduisme/frelse)"
         },
         {
             "type": "header",
-            "text": "Karma - handlingers vekt"
+            "text": "Atman og brahman, og uenigheten om dem"
         },
         {
             "type": "text",
-            "content": "Karma betyr ikke skjebne. Det betyr konsekvens. Hvert valg du tar, hver handling du gjør, legger seg som frø i sjelen din. Gode handlinger - de som gjøres uten egoisme og med omsorg for andre - bærer god karma. Dårlige handlinger - de som springer ut av grådighet eller egoisme - bærer dårlig karma."
+            "content": "Brahman er et hovedbegrep i hinduistisk filosofi og teologi og betegner universets enhet, ofte oversatt som verdensaltet (Jacobsen, 2024). Brahman beskrives som usynlig, uforanderlig og til stede i alt, og læren sier at brahman også finnes i hvert menneske som atman, det evige og uforanderlige i mennesket, det som ikke dør når kroppen dør (Jacobsen, 2024; Jacobsen, 2025a)."
         },
         {
             "type": "text",
-            "content": "Karma bestemmer ikke hva du er, men den former hva du møter i neste liv. Det er et etisk system som sier: handlingene dine har mening, og de følger deg videre. Men karma er ikke bare straff og belønning. Den dypeste innsikten er at du kan handle fritt uten å la deg styre av begjær etter resultater - det er essensen av Karma Yoga."
-        },
-        {
-            "type": "header",
-            "text": "Dharma - din plass i verdensordenen"
-        },
-        {
-            "type": "text",
-            "content": "Dharma er et av hinduismens viktigste begreper, og det er vanskelig å oversette presist. Det betyr noe slikt som 'den rette orden' eller 'pliktene dine i samsvar med den du er'. Dharma handler om å leve i tråd med din natur og din rolle - som student, forelder, leder eller borger."
-        },
-        {
-            "type": "text",
-            "content": "I Bhagavad Gita - hinduismens kanskje viktigste tekst - spør krigeren Arjuna om han bør kjempe i en krig mot sin egen familie. Guden Krishna svarer at det er Arjunas dharma som kriger å kjempe. Men han skal gjøre det uten hat, uten begjær etter seier, og uten å frykte tapet. Handlingen er plikt - ikke hevn, ikke ære, ikke gevinst."
-        },
-        {
-            "type": "header",
-            "text": "Samsara - gjenfødsels-sirkelen"
-        },
-        {
-            "type": "text",
-            "content": "Hinduisme lærer at sjelen (Atman) er udødelig. Kroppen din er midlertidig - den fødes, lever og dør. Men Atman fortsetter og tar en ny kropp, igjen og igjen. Dette kaller vi samsara - sirkelen av gjenfødsler. Hvilken kropp sjelen tar i neste liv, avhenger av karma fra dette livet. Et liv levet med god karma og rettferdig dharma gir en bedre gjenfødsel - kanskje som et menneske med muligheter til å nå nærmere Moksha."
-        },
-        {
-            "type": "text",
-            "content": "Samsara er ikke et mål - det er det som skal overvinnes. Den er beskrevet som en elv du ikke kan stanse, men som du kan lære å krysse. Og det finnes veier ut."
-        },
-        {
-            "type": "header",
-            "text": "Moksha - frigjøringen"
-        },
-        {
-            "type": "text",
-            "content": "Det ultimate målet i hinduismen er Moksha - frigjøring fra samsaras syklus. Moksha betyr at Atman endelig erkjenner sin identitet med Brahman og smelter inn i det universelle. Det er ikke en himmel du reiser til - det er snarere oppløsningen av illusjonen om at du noen gang var atskilt. Moksha er slutten på gjenfødselsenes sirkel. Det er det hinduismen, i sin kjerne, handler om."
-        },
-        {
-            "type": "text",
-            "content": "Det finnes ikke bare én vei til Moksha. Hinduismen respekterer at ulike mennesker er ulike - og tilbyr dermed ulike veier til det samme målet."
+            "content": "Her stopper enigheten. Filosofen Shankara mente at atman og brahman er identiske: vi er allerede brahman, men uvitenheten hindrer oss i å se det. Ramanuja mente derimot at det alltid består en forskjell, der brahman er guden Vishnu og verden er hans kropp (Jacobsen, 2024). Andre skoler lærer at hvert menneske har sin egen atman som står i et personlig forhold til brahman (Jacobsen, 2025a). Læreboksetningen «du er Gud» er altså bare én av flere hinduistiske posisjoner."
         },
         {
             "type": "component",
@@ -97,20 +92,41 @@
         },
         {
             "type": "header",
-            "text": "Hinduismens guder - ett Brahman, mange ansikter"
+            "text": "Tre store retninger, tre ulike svar på hvem som er høyest"
         },
         {
             "type": "text",
-            "content": "Hinduisme er polyteistisk - det finnes tusenvis av guder og gudinner. Men mange hinduer vil si at alle disse gudene er ulike manifestasjoner av én virkelighet: Brahman. De tre viktigste er Brahma (skaperen), Vishnu (opprettholdaren) og Shiva (den som ødelegger det gamle for å gjøre plass til det nye). Disse tre utgjør Trimurti - den guddommelige treenigheten i hinduismen."
+            "content": "Det er vanlig å dele de hinduistiske retningene i tre grupper: vishnuismen, shivaismen og shaktismen (Kværne & Jacobsen, 2026). Forskjellen er ikke bare hvilken gud man liker best. Den handler om hvem som regnes som den høyeste virkeligheten."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Vishnuismen: Vishnu er guden som skaper, holder oppe og verner verden. Han blir ofte identifisert med Krishna.",
+                "Shivaismen: Shiva står i sentrum. Han framstilles oftest som asket, en som lever strengt og avstår fra nytelse, og i noen teologier er det han som knuser verden i sin ville dans når verden går i oppløsning.",
+                "Shaktismen: gudinnen Devi står i sentrum, særlig i skikkelsene Durga og Kali. Hun omtales gjerne som Shivas shakti, kraften hans, men er ofte helt enerådende som den høyeste guddommen."
+            ]
         },
         {
             "type": "text",
-            "content": "I tillegg tilbes Sarasvati (visdomens gudinne), Lakshmi (rikdommens og lykken gudinne), Durga (det feminine kraftprinsippet) og Krishna (Vishnus kjærligste skikkelse), blant mange andre. Valg av gud handler ikke om hvilken som er 'riktig' - det handler om hvem som taler til nettopp deg."
+            "content": "Å kalle hinduismen «polyteistisk» og la det bli med det, blir derfor for enkelt. I moderne hinduisme skiller mange mellom nirguna brahman, det upersonlige verdensaltet, og saguna brahman, den personlige guden. Det er dette skillet som gjør at hinduismens mange guder kan samles under ett teologisk begrep (Jacobsen, 2024). Hvordan hinduer selv beskriver det guddommelige, står i [Én eller tusen guder?](/krle/religion/hinduisme/gudsbilde)"
         },
         {
-            "type": "component",
-            "name": "MicroGame",
-            "props": { "gameId": "moksha-veien-3d" }
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tre gudebilder side om side i et hjemmealter",
+            "caption": "Vishnu, Shiva og gudinnen Devi. Tre retninger, tre svar på hvem som er høyest."
+        },
+        {
+            "type": "header",
+            "text": "Kaste er lett å framstille for enkelt"
+        },
+        {
+            "type": "text",
+            "content": "Kastesystemet i India har to nivåer. Øverst ligger de fire varna-gruppene: brahmaner, kshatriyaer, vaishyaer og shudraer. Innenfor denne rammen finnes tusenvis av jati, lokale grupper som ofte følger yrke (Store norske leksikon & Schackt, 2026). Utenfor de fire varna sto de som historisk ble regnet som «urørbare», og som selv bruker navnet dalit, «de undertrykte» (Store norske leksikon & Schackt, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Systemet har vært knyttet til religiøs tenkning gjennom ordningen varnashramadharma, som fordeler plikter etter samfunnsklasse og livsfase (Jacobsen, 2026a), og gjennom karma-læren, som forklarte at posisjonen din ikke kunne endres innenfor ett liv (Store norske leksikon & Schackt, 2026). Men kaste er ikke det samme som hinduisme, og hinduer har selv kjempet mot systemet: fra begynnelsen av 1800-tallet ville enkelte velutdannede hinduer fjerne det (Kværne & Jacobsen, 2026). Indias grunnlov fra 1950 forkastet læren om medfødte samfunnsgrupper og personlig dharma (Jacobsen, 2026a), og India har forbudt diskriminering på grunnlag av kaste og innført kvoter i statlige stillinger for de laveste kastene (Store norske leksikon & Schackt, 2026)."
         },
         {
             "type": "header",
@@ -118,11 +134,47 @@
         },
         {
             "type": "text",
-            "content": "Hinduisme er verdens tredje største religion, med rundt 1,2 milliarder tilhengere - de fleste i India og Nepal, men også store hinduistiske samfunn i Sørøst-Asia, Karibia og Vest-Europa. Hinduisme er ikke en misjonerende religion - den søker ikke aktivt å omvende andre. Den er en levende, mangfoldig tradisjon som tar opp i seg nye praksiser og ideer."
+            "content": "I 2023 omfattet hinduismen rundt 1,2 milliarder mennesker, altså rundt 15 prosent av verdens befolkning (Kværne & Jacobsen, 2026). Pew Research Center kom til det samme for 2020: 1,2 milliarder hinduer, 14,9 prosent av jordas befolkning. Rundt 95 prosent av dem bodde i India, og 99 prosent i Asia og Stillehavsområdet (Pew Research Center, 2025). Hinduismen er altså enormt stor, men geografisk svært samlet."
         },
         {
             "type": "text",
-            "content": "Yoga og meditasjon, som opprinnelig er hinduistiske praksiser, har spredt seg over hele verden og praktiseres i dag av hundrevis av millioner mennesker - selv om mange ikke er klar over de religiøse røttene. Karma er blitt et hverdagsord i norsk. Hinduismens ideer om sjelen, tid og frigjøring preger vår felles kultur mer enn vi kanskje er klar over."
+            "content": "Til slutt en advarsel: alt handler ikke om livet etter døden. Hinduismen legger stor vekt på det religiøse livet her og nå, på feiringen av gudenes nærvær i templene, og religionen knyttes dermed like mye til skjønnhet og søken etter lykke som til frelse (Jacobsen, 2025d). Moksha er det høyeste målet, men for de fleste hinduer er hverdagen fylt av noe annet: ritualer, festivaler og tekster som du kan lese mer om i [Tekstene som aldri ble én bok](/krle/religion/hinduisme/hellige-tekster)"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Pilegrimer ved en elvebredd under en stor festival",
+            "caption": "Kumbhamela samler titalls millioner mennesker. Religion er også fest."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "moksha-veien-3d"
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Forklar med egne ord hvorfor hinduisme kalles et samlenavn og ikke navnet på én religion.",
+                    "Hva betyr dharma, karma, samsara og moksha? Skriv én setning om hvert ord.",
+                    "Hva er forskjellen på de tre retningene vishnuisme, shivaisme og shaktisme?",
+                    "Hva er forskjellen på varna og jati?"
+                ],
+                "reflekter": [
+                    "Shankara mente at atman og brahman er identiske, mens Ramanuja mente at det alltid er en forskjell. Hvorfor får denne uenigheten betydning for hvordan man ber?",
+                    "Hvorfor er det unøyaktig å si at «hinduer tror på mange guder», når mange hinduer selv snakker om én virkelighet bak gudene?",
+                    "Kaste er forbudt å diskriminere etter i India, men systemet finnes fortsatt. Hva sier det om forholdet mellom lov og kultur?",
+                    "Er det en styrke eller en svakhet for en religion at ingen kan bestemme hva som er riktig lære? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Sammenlign hinduismen med en religion som har én grunnlegger og én hellig bok. Skriv en kort tekst om hva som blir annerledes.",
+                    "Finn ut hvor mange hinduer som bor i Norge, og sjekk hvilke retninger de tilhører.",
+                    "Undersøk hva Bhimrao Ramji Ambedkar mente om kastesystemet, og sammenlign med det artikkelen skriver."
+                ]
+            }
         },
         {
             "type": "component",
@@ -130,69 +182,113 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva er det ultimate målet i hinduismen?",
-                        "options": ["Å gjenfødes som et bedre menneske", "Moksha - frigjøring fra samsaras syklus", "Å tjene de rette gudene"],
-                        "answer": "Moksha - frigjøring fra samsaras syklus"
+                        "question": "Hvorfor sier vi at hinduismen ikke har noe sentrum?",
+                        "options": [
+                            "Fordi den ikke har templer",
+                            "Fordi den ikke har stifter, trosartikler eller fast organisert ledelse",
+                            "Fordi hinduer ikke bruker hellige tekster",
+                            "Fordi den er forbudt i India"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Hinduismen oppsto ikke til én tid eller på ett sted, og den har verken stifter, trosartikler eller en sentral organisasjon."
                     },
                     {
-                        "question": "Hva betyr 'Tat tvam asi' i Upanishadene?",
-                        "options": ["Gud er stor", "Det er deg - Atman og Brahman er identiske", "Gå den rette veien"],
-                        "answer": "Det er deg - Atman og Brahman er identiske"
+                        "question": "Hva betyr karma i hinduismen?",
+                        "options": [
+                            "At skjebnen din er bestemt på forhånd",
+                            "At handlinger mot andre får følger for deg selv i dette eller et senere liv",
+                            "At du blir straffet av en dommergud etter døden",
+                            "At bare prester kan gjøre rituelle handlinger"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Karma er konsekvens, ikke skjebne. Det er valgene dine som lager karmaen, og derfor er det ingen motsetning mellom karma og frihet."
                     },
                     {
-                        "question": "Hvilken av disse er IKKE en av de tre yoga-veiene til Moksha?",
-                        "options": ["Karma Yoga", "Dharma Yoga", "Bhakti Yoga"],
-                        "answer": "Dharma Yoga"
+                        "question": "Hva er de tre store retningene i hinduismen?",
+                        "options": [
+                            "Vedanta, yoga og samkhya",
+                            "Hinduisme, buddhisme og jainisme",
+                            "Vishnuisme, shivaisme og shaktisme",
+                            "Brahmanisme, dalitisme og vedisme"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Retningene deles vanligvis i tre: vishnuismen med Vishnu, shivaismen med Shiva og shaktismen med gudinnen Devi som den høyeste."
                     },
                     {
-                        "question": "Hva er karma i hinduismen?",
-                        "options": ["Skjebnen din - bestemt av gudene", "Konsekvensen av dine handlinger - som påvirker neste gjenfødsel", "Et ritual du utfører i tempelet"],
-                        "answer": "Konsekvensen av dine handlinger - som påvirker neste gjenfødsel"
+                        "question": "Hva er forskjellen på varna og jati?",
+                        "options": [
+                            "Varna er fire brede grupper, jati er tusenvis av lokale grupper som ofte følger yrke",
+                            "Varna er indisk, jati er nepalsk",
+                            "Varna gjelder menn, jati gjelder kvinner",
+                            "Det er to ord for nøyaktig det samme"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "De fire varna-gruppene danner rammen, mens jati er de tusenvis av kastene folk faktisk lever i, ofte knyttet til yrke."
+                    },
+                    {
+                        "question": "Omtrent hvor mange hinduer var det i verden i 2023?",
+                        "options": [
+                            "Rundt 200 millioner",
+                            "Rundt 600 millioner",
+                            "Rundt 1,2 milliarder",
+                            "Rundt 3 milliarder"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Rundt 1,2 milliarder mennesker, altså om lag 15 prosent av verdens befolkning. Nesten alle bor i India."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Jacobsen, K. A. (2024). *Brahman*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/brahman](https://snl.no/brahman)",
+                    "Jacobsen, K. A. (2025a). *Atman*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/atman](https://snl.no/atman)",
+                    "Jacobsen, K. A. (2025b). *Bhagavadgita*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bhagavadgita](https://snl.no/Bhagavadgita)",
+                    "Jacobsen, K. A. (2025c). *Moksha*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/moksha](https://snl.no/moksha)",
+                    "Jacobsen, K. A. (2025d). *Samsara*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/samsara](https://snl.no/samsara)",
+                    "Jacobsen, K. A. (2026a). *Dharma*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/dharma](https://snl.no/dharma)",
+                    "Jacobsen, K. A. (2026b). *Karma*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/karma](https://snl.no/karma)",
+                    "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+                    "Pew Research Center. (2025). *How the global religious landscape changed from 2010 to 2020*. Hentet 11.08.2026 fra [pewresearch.org](https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/)",
+                    "Store norske leksikon & Schackt, J. (2026). *Kaster*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/kaster](https://snl.no/kaster)"
                 ]
             }
         }
     ],
     "concepts": [
         {
-            "id": "karma",
-            "term": "Karma",
-            "definition": "Loven om handling og konsekvens i hinduismen. Gode handlinger gir god karma og bedre gjenfødsel, dårlige handlinger gir dårlig karma."
-        },
-        {
             "id": "dharma",
             "term": "Dharma",
-            "definition": "Den evige verdensorden og pliktene hvert menneske har ut fra sin natur og rolle. Å leve etter sin dharma er å leve riktig."
+            "definition": "Det rette, moralen, loven eller verdensordenen. Hva som er riktig, varierer med tid, sted, alder, kjønn, yrke og situasjon."
+        },
+        {
+            "id": "karma",
+            "term": "Karma",
+            "definition": "Læren om at handlinger du gjør mot andre, får følger for deg selv i dette livet eller i et senere."
         },
         {
             "id": "samsara",
             "term": "Samsara",
-            "definition": "Sirkelen av gjenfødsler i hinduismen. Sjelen (Atman) gjenfødes igjen og igjen til den oppnår Moksha."
+            "definition": "Ordet for gjenfødelsens verden i indiske religioner. Verden vi lever i, kjennetegnet av at individet stadig fødes, dør og fødes på nytt."
         },
         {
             "id": "moksha",
             "term": "Moksha",
-            "definition": "Frigjøring fra samsaras syklus i hinduismen. Atman erkjenner sin identitet med Brahman og smelter inn i det universelle."
+            "definition": "Frelse fra individualitet, materialitet, tid og forgjengelighet, og dermed også fra gjenfødelse."
         },
         {
             "id": "brahman",
             "term": "Brahman",
-            "definition": "Den universelle sjelen og kilden til alt som eksisterer i hinduismen. Identisk med Atman (den individuelle sjelen)."
-        },
-        {
-            "id": "atman",
-            "term": "Atman",
-            "definition": "Den individuelle sjelen i hinduismen - den udødelige delen av deg. Identisk med Brahman (den universelle sjelen)."
-        },
-        {
-            "id": "maya",
-            "term": "Maya",
-            "definition": "Illusjonen om at vi er atskilte fra Brahman og fra hverandre. Å gjennomskue maya er første skritt mot Moksha."
+            "definition": "Universets enhet i hinduistisk filosofi. Usynlig, uforanderlig og til stede i alt, og til stede i mennesket som atman."
         }
     ],
     "quote": {
-        "text": "La den rette handlingen være ditt motiv, ikke frukten som kommer av den.",
-        "source": "Bhagavad Gita",
-        "reference": "2.47"
-    }
+        "text": "Arjuna bør følge sin natur, men handle uten egoistisk begjær.",
+        "source": "Knut A. Jacobsen om Krishnas råd i Bhagavadgita",
+        "reference": "Store norske leksikon"
+    },
+    "timeline": []
 }

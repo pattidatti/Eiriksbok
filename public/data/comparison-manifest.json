@@ -737,13 +737,13 @@
         },
         {
           "religion": "buddhisme",
-          "title": "Sentrale trekk i Buddhismen",
+          "title": "En diagnose og en behandling",
           "file": "content/krle/religion/buddhisme/sentrale-trekk/artikkel.json",
           "link": "/krle/religion/buddhisme/sentrale-trekk"
         },
         {
           "religion": "hinduisme",
-          "title": "Sentrale trekk i Hinduismen",
+          "title": "En religion uten sentrum",
           "file": "content/krle/religion/hinduisme/sentrale-trekk/artikkel.json",
           "link": "/krle/religion/hinduisme/sentrale-trekk"
         },
@@ -761,7 +761,7 @@
         },
         {
           "religion": "jodedom",
-          "title": "Sentrale trekk i Jødedommen",
+          "title": "Mange måter å være jøde på",
           "file": "content/krle/religion/jodedom/sentrale-trekk/artikkel.json",
           "link": "/krle/religion/jodedom/sentrale-trekk"
         },
@@ -1137,7 +1137,7 @@
     },
     {
       "religion": "buddhisme",
-      "title": "Sentrale trekk i Buddhismen",
+      "title": "En diagnose og en behandling",
       "link": "/krle/religion/buddhisme/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [
@@ -1218,7 +1218,7 @@
     },
     {
       "religion": "hinduisme",
-      "title": "Sentrale trekk i Hinduismen",
+      "title": "En religion uten sentrum",
       "link": "/krle/religion/hinduisme/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [
@@ -1472,7 +1472,7 @@
     },
     {
       "religion": "jodedom",
-      "title": "Sentrale trekk i Jødedommen",
+      "title": "Mange måter å være jøde på",
       "link": "/krle/religion/jodedom/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [

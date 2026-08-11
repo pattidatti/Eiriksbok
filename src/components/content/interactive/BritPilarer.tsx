@@ -22,11 +22,11 @@ const PILARER: Pilar[] = [
         name: 'Shema',
         subtitle: 'Én Gud',
         description:
-            'Kjernebekjennelsen i jødedommen lyder: "Hør, Israel - Herren er vår Gud, Herren er én." Troen på én Gud er absolutt. Gud er skaperen, lovgiveren og dommeren - barmhjertig og rettferdig. Det er ingen treenighet og ingen gudesønn. Bare én.',
+            'Shema begynner slik: "Hør, Israel! Adonai (Herren) er vår Gud, Adonai er én." Strengt tatt er det ikke en vanlig bønn, men en bekjennelse av at Gud er én. Den blir ofte kalt den jødiske trosbekjennelsen, selv om jødedommen egentlig ikke har noen. Teksten er satt sammen av tre steder i Bibelen: 5. Mosebok 6,4-9 og 11,13-21, og 4. Mosebok 15,37-41.',
         examples: [
-            'Shema leses to ganger daglig - om morgenen og om kvelden',
-            'Det er de første ordene et jødisk barn lærer',
-            'Mange jøder leser Shema som siste ord de uttaler',
+            'Shema skal leses to ganger om dagen, morgen og kveld',
+            'Den hører med blant bønnene jøder ber på dødsleiet',
+            'Plikten følges i stor grad blant ortodokse menn, og i ulik grad i de ikke-ortodokse retningene',
         ],
         accentColor: '#d97706',
         bgFrom: 'from-amber-50',
@@ -39,11 +39,11 @@ const PILARER: Pilar[] = [
         name: 'Brit',
         subtitle: 'Pakten',
         description:
-            'Brit betyr pakt - en toveis avtale mellom Gud og det jødiske folk. Gud lovet Abraham etterkommere og et eget land. I gjengjeld forpliktet folket seg til å følge Guds bud. Ikke én part som gir: begge har ansvar. Det er denne gjensidigheten som gjør jødedommen unik.',
+            'Brit betyr pakt. Jødedommen bygger på en overbevisning om at Gud har inngått en pakt med Abrahams etterkommere. Pakten går begge veier: den gir folket både forpliktelser, altså mitzvot, og rettigheter. Det er ikke bare én part som gir.',
         examples: [
-            'Abraham er den første som inngår pakten med Gud',
-            'Moses fornyer pakten på Sinai-fjellet med de ti bud',
-            'Jødene ser seg som Guds utvalgte folk - ikke fordi de er bedre, men fordi de har et særlig ansvar',
+            'Ifølge Tanakh, den hebraiske bibelen, ble pakten inngått med Abrahams etterkommere',
+            'Ifølge Mosebøkene ble lovene og levereglene åpenbart for Moses på Sinai',
+            'Rabbinerne lærer at jøder ikke er mer verdifulle enn andre, bare underlagt andre forpliktelser',
         ],
         accentColor: '#2563eb',
         bgFrom: 'from-blue-50',
@@ -56,11 +56,11 @@ const PILARER: Pilar[] = [
         name: 'Mitzvot',
         subtitle: '613 bud',
         description:
-            'Mitzvot er de 613 budene som regulerer alt: hva du spiser (kashrut), når du hviler (Shabbat), hvordan du behandler andre, og hva du gir til fattige. Hele livet er hellig - ikke bare én dag i uken. Jødedommen er en handlingsreligion: religion er noe du gjør, ikke bare noe du tror.',
+            'Rabbinerne har utledet 613 religiøse bud, mitzvot, fra tekstene i Mosebøkene. De styrer både forholdet mellom mennesket og Gud og forholdet mellom mennesker. Til sammen utgjør de halakha, den jødiske loven. Religion er noe du gjør, ikke bare noe du tror.',
         examples: [
-            'Kashrut - kostholdsregler: ikke svin, ikke blandede kjøtt- og melkeretter',
-            'Shabbat - hvile fra fredag kveld til lørdag kveld er et bud, ikke bare en tradisjon',
-            'Tzedakah - å gi til de fattige er en plikt, ikke frivillig veldedighet',
+            '248 av budene er ting du skal gjøre, 365 er ting du ikke skal gjøre',
+            'De handler blant annet om mat, om shabbat der arbeid er forbudt, og om hvordan du behandler andre',
+            'Ortodokse jøder søker å følge så mye som mulig, mens ikke-ortodokse praktiserer i ulik grad',
         ],
         accentColor: '#16a34a',
         bgFrom: 'from-green-50',
@@ -89,9 +89,9 @@ export function BritPilarer() {
             <div className="px-5 py-4 border-b border-slate-100 flex items-center gap-3">
                 <Star className="w-5 h-5 text-amber-500 shrink-0" />
                 <div>
-                    <h3 className="font-semibold text-slate-800">Jødedommens tre søyler</h3>
+                    <h3 className="font-semibold text-slate-800">Tre nøkkelord i jødedommen</h3>
                     <p className="text-sm text-slate-500">
-                        Klikk hver søyle for å utforske kjernebegrepet
+                        Klikk hvert ord for å utforske begrepet
                     </p>
                 </div>
             </div>
@@ -183,7 +183,8 @@ export function BritPilarer() {
                                                             <span
                                                                 className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
                                                                 style={{
-                                                                    backgroundColor: pilar.accentColor,
+                                                                    backgroundColor:
+                                                                        pilar.accentColor,
                                                                 }}
                                                             />
                                                             {ex}
@@ -227,7 +228,7 @@ export function BritPilarer() {
                             )}
                         </div>
                     ))}
-                    <span className="text-xs text-slate-500 ml-1">= Tikkun Olam</span>
+                    <span className="text-xs text-slate-500 ml-1">= livet i praksis</span>
                 </div>
             </div>
 
@@ -240,8 +241,10 @@ export function BritPilarer() {
                         className="mx-4 mb-4 px-4 py-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-medium flex items-center gap-2"
                     >
                         <CheckCircle2 className="w-4 h-4 shrink-0" />
-                        Én Gud (Shema) skapte pakten (Brit) som forplikter til handlinger (Mitzvot)
-                        - og alt dette sammen driver Tikkun Olam: å reparere verden.
+                        Troen på én Gud (Shema) og pakten med Gud (Brit) gir folket forpliktelser
+                        (mitzvot). Budene og rabbinernes tolkninger av dem blir til halakha, den
+                        jødiske loven, som former hverdagen. Hvor mye den følges, varierer sterkt
+                        mellom retningene.
                     </motion.div>
                 )}
             </AnimatePresence>

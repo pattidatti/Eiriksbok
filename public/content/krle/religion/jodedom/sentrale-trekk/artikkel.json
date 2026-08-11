@@ -1,213 +1,315 @@
 {
-    "id": "sentrale-trekk",
-    "title": "Sentrale trekk i Jødedommen",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "jodedom",
-    "dimension": "doctrinal",
-    "comparison_tags": ["sentrale_trekk", "frelse_og_mal"],
-    "createdDate": "2025-12-04T10:00:00Z",
-    "lastUpdated": "2026-06-09T00:00:00Z",
-    "heroImage": "/images/krle/jodedom/jodedom-sentrale-trekk-hero.webp",
-    "readTime": "8 min lesning",
-    "content": [
-        {
-            "type": "text",
-            "content": "En religion som er over 3500 år gammel, uten pave og uten sentralt lederskap - og likevel levende over hele verden. Jødedommen er moreligionen til både kristendommen og islam, og den har overlevd forfølgelse, eksil og folkemord. Hva er hemmeligheten? Svaret ligger i tre begreper som henger ubrytelig sammen: Shema, Brit og Mitzvot. Og i en grunnleggende idé om at religion ikke er noe du bare tror - det er noe du gjør."
-        },
-        {
-            "type": "header",
-            "text": "Shema: Kjernebekjennelsen"
-        },
-        {
-            "type": "text",
-            "content": "Kjernen i jødisk tro er én setning: \"Hør, Israel - Herren er vår Gud, Herren er én.\" På hebraisk heter dette Shema. Det er ikke bare en bønn - det er en erklæring. Troen på én Gud (monoteisme) er absolutt i jødedommen. Gud er skaperen, lovgiveren og dommeren. Men Gud er ikke fjern: han er en Gud som bryr seg, som inngår avtaler, og som hører bønner."
-        },
-        {
-            "type": "text",
-            "content": "Shema leses to ganger daglig - om morgenen og om kvelden. Det er de første ordene et jødisk barn lærer å si, og de siste mange jøder uttaler før de dør. Det er kjernen som alt annet henger fra."
-        },
-        {
-            "type": "header",
-            "text": "Brit: Den toveis pakten"
-        },
-        {
-            "type": "text",
-            "content": "Brit betyr pakt - en formell avtale. Ifølge Toraen inngikk Gud en pakt med Abraham for ca. 4000 år siden: Gud lovet Abraham etterkommere uten tall og et eget land. I gjengjeld forpliktet Abraham og hans etterkommere seg til å leve etter Guds bud. Pakten ble fornyet med Moses på Sinai-fjellet, der folket mottok de ti bud."
-        },
-        {
-            "type": "text",
-            "content": "Pakten er toveis: Gud har forpliktelser, og folket har forpliktelser. Det er ikke en kontrakt der Gud bare gir og mennesket bare mottar. Jødene ser seg som Guds utvalgte folk - men ikke fordi de er bedre enn andre. De er valgt til å ha et særlig ansvar: å leve etter Guds bud og være et eksempel for verden."
-        },
-        {
-            "type": "header",
-            "text": "Mitzvot: 613 bud som dekker hele livet"
-        },
-        {
-            "type": "text",
-            "content": "Mitzvot er de 613 budene i Toraen. De regulerer nesten alt: hva du spiser (kashrut), når du hviler (Shabbat), hvordan du behandler andre, hva du gir til fattige, og mye mer. For en person utenfor kan det se ut som uendelige regler. Innenfor er det noe annet: en livsstil som gjør hverdagen til en religiøs handling."
-        },
-        {
-            "type": "text",
-            "content": "Tanken er at hele livet er hellig - ikke bare det som skjer i synagogen. En jøde som holder kashrut og velger mat med omhu, utfører en religiøs handling. En jøde som setter av fredag kveld til lørdag kveld som Shabbat, hviler slik Gud hvile etter skapelsen. Religion er noe du gjør, ikke bare noe du tror."
-        },
-        {
-            "type": "component",
-            "name": "BritPilarer",
-            "props": {}
-        },
-        {
-            "type": "header",
-            "text": "Tikkun Olam: Å reparere verden"
-        },
-        {
-            "type": "text",
-            "content": "Et av de viktigste begrepene i jødedommen er Tikkun Olam - hebraisk for \"å reparere verden\". Ideen er at verden ble skapt ufullstendig, og at hvert menneske har ansvar for å gjøre den litt bedre. Det er ikke nok å unngå det onde. Du skal aktivt bidra til det gode."
-        },
-        {
-            "type": "text",
-            "content": "Tzedakah - å gi til de fattige - er et bud, ikke veldedighet. Det handler ikke om å være snill, men om å gjøre det rettferdige. Pikuach nefesh er plikten til å redde et liv, som veier tyngre enn nesten alle andre bud. Disse prinsippene gjør jødedommen til en handlingsorientert religion: det er ikke nok å ha de rette tankene."
-        },
-        {
-            "type": "header",
-            "text": "Messias: Venter fortsatt"
-        },
-        {
-            "type": "text",
-            "content": "Jødedommen venter på Messias - en fremtidig menneskelig hersker av Davids slekt. Messias er ikke guddommelig i jødedommen. Han er en menneskelig kongelik skikkelse som skal samle det jødiske folk, gjenreise tempelet i Jerusalem, og skape en verden med rettferdighet og fred. Kristendommen tror Jesus var Messias. Det er jødedommen fundamentalt uenig i - blant annet fordi tempelet ikke ble gjenreist og verden ikke ble fredfull."
-        },
-        {
-            "type": "text",
-            "content": "Jødedommen legger generelt mer vekt på livet her og nå enn på livet etter døden. Fokuset er på denne verden og på å leve etter Guds vilje i dag. Det er pakten som forplikter - og den forplikter til handling, ikke til å vente."
-        },
-        {
-            "type": "header",
-            "text": "Tre retninger: Ortodoks, konservativ og reform"
-        },
-        {
-            "type": "text",
-            "content": "Jødedommen er ikke én enhetlig religion. De tre største retningene svarer ulikt på spørsmålet om hvor strengt Mitzvot skal tolkes. Ortodoks jødedom mener de 613 budene er bindende og skal følges slik de alltid har blitt fulgt. Konservativ jødedom mener budene er bindende, men kan tilpasses nye tider med forsiktighet. Reformjødedom mener det etiske kjerneinnholdet er bindende, men mange ritualer kan tilpasses individuelt."
-        },
-        {
-            "type": "text",
-            "content": "Alle tre er enige om Shema, om Brit og om Tikkun Olam. Det de er uenige om, er hvordan den daglige praksisen skal se ut i en moderne verden."
-        },
-        {
-            "type": "header",
-            "text": "Kjenn Tikkun Olam på kroppen"
-        },
-        {
-            "type": "component",
-            "name": "MicroGame",
-            "props": { "gameId": "tikkun-olam-3d" }
-        },
-        {
-            "type": "header",
-            "text": "Videre lesning"
-        },
-        {
-            "type": "text",
-            "content": "Vil du gå dypere inn i jødedommen? Les om [Abraham og Moses](/krle/religion/jodedom/grunnleggere), utforsk [Tanakh og Talmud](/krle/religion/jodedom/hellige-tekster), lær om [bønn i jødedommen](/krle/religion/jodedom/bonn), og se hva jødedommen tror om [livet her og nå](/krle/religion/jodedom/frelse). Du kan også sammenligne jødedommen med andre religioner på [sammenligningssiden](/krle/sammenlign)."
-        },
-        {
-            "type": "component",
-            "name": "Quiz",
-            "props": {
-                "questions": [
-                    {
-                        "question": "Hva er Shema?",
-                        "options": [
-                            "En jødisk høytid",
-                            "Kjernebekjennelsen om at Gud er én",
-                            "De 613 budene i Toraen"
-                        ],
-                        "answer": "Kjernebekjennelsen om at Gud er én"
-                    },
-                    {
-                        "question": "Hva betyr Brit?",
-                        "options": [
-                            "Pakt - en toveis avtale mellom Gud og det jødiske folk",
-                            "Bønn fem ganger om dagen",
-                            "Sabbatsdagen"
-                        ],
-                        "answer": "Pakt - en toveis avtale mellom Gud og det jødiske folk"
-                    },
-                    {
-                        "question": "Hva er Tikkun Olam?",
-                        "options": [
-                            "En jødisk matrett",
-                            "Å reparere verden - plikten til å gjøre verden bedre",
-                            "En bønn"
-                        ],
-                        "answer": "Å reparere verden - plikten til å gjøre verden bedre"
-                    },
-                    {
-                        "question": "Hva er Messias i jødedommen?",
-                        "options": [
-                            "Jesus fra Nasaret",
-                            "En fremtidig menneskelig hersker av Davids slekt",
-                            "Moses"
-                        ],
-                        "answer": "En fremtidig menneskelig hersker av Davids slekt"
-                    },
-                    {
-                        "question": "Hva er Mitzvot?",
-                        "options": [
-                            "De 613 budene som regulerer hele livet",
-                            "En synagoge",
-                            "En jødisk høytid"
-                        ],
-                        "answer": "De 613 budene som regulerer hele livet"
-                    }
-                ]
-            }
-        }
-    ],
-    "concepts": [
-        {
-            "id": "shema",
-            "term": "Shema",
-            "definition": "Kjernebekjennelsen i jødedommen: 'Hør, Israel - Herren er vår Gud, Herren er én.' Leses to ganger daglig."
-        },
-        {
-            "id": "brit",
-            "term": "Brit",
-            "definition": "Pakt - en toveis avtale mellom Gud og det jødiske folk. Inngått med Abraham og fornyet med Moses."
-        },
-        {
-            "id": "mitzvot",
-            "term": "Mitzvot",
-            "definition": "De 613 budene og reglene som jødene skal leve etter. Dekker alt fra mat til ærlighet og omsorg for andre."
-        },
-        {
-            "id": "tikkun-olam",
-            "term": "Tikkun Olam",
-            "definition": "'Å reparere verden'. Plikten til aktivt å gjøre verden bedre gjennom konkrete handlinger."
-        },
-        {
-            "id": "kashrut",
-            "term": "Kashrut",
-            "definition": "Jødiske kostholdsregler. Blant annet: ikke spise svin, ikke blande kjøtt og melk, bare spise dyr som er slaktet på foreskrevet måte."
-        },
-        {
-            "id": "shabbat",
-            "term": "Shabbat",
-            "definition": "Den jødiske hviledagen - fra fredag kveld til lørdag kveld. Et av de 613 budene og en av de viktigste markeringene i jødedommen."
-        },
-        {
-            "id": "tzedakah",
-            "term": "Tzedakah",
-            "definition": "Å gi til de fattige - i jødedommen er dette en plikt (bud), ikke veldedighet. Tzedakah betyr egentlig 'rettferdighet'."
-        },
-        {
-            "id": "messias-jode",
-            "term": "Messias",
-            "definition": "I jødedommen: en fremtidig menneskelig hersker av Davids slekt som skal gjenopprette tempelet og skape fred. Ikke guddommelig."
-        }
-    ],
-    "quote": {
-        "text": "Du skal elske din neste som deg selv.",
-        "source": "Toraen",
-        "reference": "3. Mosebok 19:18"
+  "id": "sentrale-trekk",
+  "title": "Mange måter å være jøde på",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "jodedom",
+  "dimension": "doctrinal",
+  "category": "Jødedom",
+  "layout": "rich",
+  "comparison_tags": [
+    "sentrale_trekk",
+    "frelse_og_mal"
+  ],
+  "createdDate": "2025-12-04T10:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "heroImage": "/images/placeholder.webp",
+  "readTime": "9 min lesning",
+  "details": [
+    "Jødedommen er en monoteistisk religion fra Midtøsten: det finnes bare én Gud.",
+    "Den bygger på en pakt, brit, mellom Gud og Abrahams etterkommere.",
+    "Rabbinerne har utledet 613 bud, mitzvot, fra Mosebøkene.",
+    "Jødedom er både en religion og et folk, og det går an å være jøde uten å tro.",
+    "Det finnes ingen felles overhode og ingen trosbekjennelse man må skrive under på."
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Jødedommen har ingen pave og ingen kirke med ett felles overhode. Den har heller ingen trosbekjennelse du må skrive under på for å høre til. Likevel henger den sammen, over hele verden og gjennom svært lang tid. Nøkkelen ligger i tre ord: Shema, brit og mitzvot. Og i en tanke som går igjen overalt: religion er noe du gjør, ikke bare noe du tror."
+    },
+    {
+      "type": "header",
+      "text": "Både en religion og et folk"
+    },
+    {
+      "type": "text",
+      "content": "Jødedommen er en monoteistisk religion med utspring i Midtøsten (Groth, 2026a). Monoteisme betyr troen på én eneste Gud. Men jødedommen er ikke bare en religion. Alle jøder deler også forestillingen om å tilhøre ett bestemt folk, Am Israel, israelfolket (Groth, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Derfor går det an å være jøde uten å tro på Gud. Mange jøder regner seg som ikke-troende og ser jødedommen mer som en kultur enn som en religion (Groth, 2026a). Det finnes til og med en egen sekulær retning, humanistisk jødedom (Groth, 2026a). Jødisk tradisjon regner historien tilbake til Abraham, tidlig i det andre årtusenet før vår tidsregning (Groth, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Det er vanskelig å telle nøyaktig, men anslaget i 2026 var noe under 15 millioner mennesker i verden med tilknytning til jødisk religion eller kultur (Groth, 2026a). I Norge er tallene små. Det Mosaiske Trossamfund i Oslo er det viktigste senteret for jødisk religiøst liv i landet, og hadde i overkant av 600 medlemmer i 2026. Det finnes også en egen menighet i Trondheim (Store norske leksikon og Groth, 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Synagoge med torarull og lys på bordet",
+      "caption": "Ingen pave, ingen hovedkirke. Menigheten er selve enheten."
+    },
+    {
+      "type": "header",
+      "text": "Shema: setningen alt henger på"
+    },
+    {
+      "type": "text",
+      "content": "Shema begynner slik: \"Hør, Israel! Adonai (Herren) er vår Gud, Adonai er én\" (Groth, 2024b). Adonai er et av navnene jøder bruker om Gud. Strengt tatt er dette ikke en vanlig bønn, men en bekjennelse av at Gud er én (Groth, 2024b). Teksten er satt sammen av tre steder i Bibelen: 5. Mosebok 6,4-9, 5. Mosebok 11,13-21 og 4. Mosebok 15,37-41 (Groth, 2024b)."
+    },
+    {
+      "type": "text",
+      "content": "Shema skal leses to ganger om dagen, morgen og kveld, og blir ofte kalt den jødiske trosbekjennelsen (Groth, 2026b). Men jødedommen har egentlig ingen trosbekjennelse, og ingen læresetninger alle må godta (Groth, 2026a). Shema hører også med blant bønnene jøder ber på dødsleiet, og har vært viktig for jødiske martyrer gjennom historien (Groth, 2024b). Hvor strengt plikten følges varierer: den følges i stor grad blant ortodokse menn, mens den følges i ulik grad i de ikke-ortodokse retningene (Groth, 2024b)."
+    },
+    {
+      "type": "text",
+      "content": "Den andre teksten som kommer nær en trosbekjennelse, er de 13 trossetningene som den jødiske filosofen Moses Maimonides satte opp i middelalderen (Groth, 2026a; Groth, 2024a). Heller ikke de er bindende for jøder, selv om mange tror det (Groth, 2025)."
+    },
+    {
+      "type": "header",
+      "text": "Brit: pakten som går begge veier"
+    },
+    {
+      "type": "text",
+      "content": "Brit betyr pakt. Jødedommen bygger på en overbevisning om at Gud har inngått en pakt med Abrahams etterkommere (Groth, 2026a). Ifølge Mosebøkene ble folkets lover og leveregler åpenbart for Moses på fjellet Sinai (Groth, 2026a). Pakten går begge veier: den gir folket både forpliktelser, mitzvot, og rettigheter (Groth, 2026a). Hvordan jøder tenker om Gud, kan du lese mer om i [gudsbildet i jødedommen](/krle/religion/jodedom/gudsbilde)."
+    },
+    {
+      "type": "text",
+      "content": "Mange tror at uttrykket \"Guds utvalgte folk\" betyr at jøder mener de er bedre enn andre. Rabbinerne lærer det motsatte. De sier at jøder ikke er mer verdifulle enn andre mennesker, de er bare underlagt andre forpliktelser (Groth, 2026a)."
+    },
+    {
+      "type": "component",
+      "name": "BritPilarer",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Mitzvot: 613 bud som dekker hverdagen"
+    },
+    {
+      "type": "text",
+      "content": "Rabbinerne har utledet 613 religiøse bud, mitzvot, fra tekstene i Mosebøkene (Groth, 2024a). 248 av dem er positive forpliktelser, altså ting du skal gjøre. 365 er negative forpliktelser, ting du ikke skal gjøre (Groth, 2024a). Tidlige rabbinere mente at tallet 248 svarte til antall knokler i kroppen, og 365 til antall dager i året (Groth, 2024a)."
+    },
+    {
+      "type": "text",
+      "content": "Budene styrer både forholdet mellom mennesket og Gud og forholdet mellom mennesker (Groth, 2024a). De handler om mat, om hviledagen shabbat der arbeid er forbudt, og om hvordan du behandler andre (Groth, 2026a). Til sammen utgjør de halakha, den jødiske loven (Groth, 2024a). Ordet mitzva brukes også i dagligtale om en god gjerning (Groth, 2024a)."
+    },
+    {
+      "type": "text",
+      "content": "Hvor mye man følger, varierer sterkt. Ortodokse jøder søker å etterleve så mye som mulig, mens ikke-ortodokse retninger praktiserer budene i ulik grad (Groth, 2024a). Budene og tekstene henger tett sammen, og du kan lese mer om dem i artikkelen om [hellige tekster i jødedommen](/krle/religion/jodedom/hellige-tekster)."
+    },
+    {
+      "type": "text",
+      "content": "Etikken kan likevel oppsummeres kort. Rabbineren Hillel sa det slik: du skal ikke gjøre mot andre det du ikke vil at andre skal gjøre mot deg (Groth, 2026a)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Dekket bord med brød og lys til shabbat",
+      "caption": "Hviledagen er ikke en pause fra religionen. Den er en del av den."
+    },
+    {
+      "type": "header",
+      "text": "Tikkun olam: å reparere verden"
+    },
+    {
+      "type": "text",
+      "content": "Tikkun olam betyr \"å reparere verden\". Uttrykket er eldre enn den betydningen mange bruker det i dag. Det dukker først opp i Misjna, en samling rabbinske tekster fra rundt år 200 evt. Der handler det om regler som skulle gi ekstra beskyttelse til dem som lett kom dårlig ut, for eksempel ved skilsmisse og ved frigivelse av slaver (My Jewish Learning, u.a.)."
+    },
+    {
+      "type": "text",
+      "content": "På 1500-tallet fikk uttrykket en helt annen mening hos Isaac Luria, en lærd innenfor kabbala, den jødiske mystikken. Der handler tikkun olam om at mennesker skal samle inn guddommelige gnister som ligger spredt rundt i skaperverket (My Jewish Learning, u.a.). Først på 1950-tallet begynte man å bruke tikkun olam om sosialt arbeid og rettferdighet (My Jewish Learning, u.a.). Tanken bak dagens bruk er at verden er dypt ødelagt, og at bare menneskelig handling kan fikse den (My Jewish Learning, u.a.)."
+    },
+    {
+      "type": "text",
+      "content": "Det passer med jødedommen som helhet: den legger mest vekt på hvordan man skal leve livet her på jorden (Groth, 2026a)."
+    },
+    {
+      "type": "header",
+      "text": "Messias: et håp jøder er uenige om"
+    },
+    {
+      "type": "text",
+      "content": "Mashiach, på norsk Messias, er den jødiske betegnelsen på en framtidig skikkelse som skal frigjøre det jødiske folket fra alle undertrykkere (Groth, 2025). Profetene forkynte at det skulle komme en ny konge fra kong Davids slekt (Groth, 2025). Men det finnes ingen felles jødisk lære om hvem Messias er og hva han skal gjøre. Rabbinerne har diskutert spørsmålet i århundrer (Groth, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Én ting har det likevel aldri vært tvil om: Messias er et helt spesielt menneske som skal befri folket fra undertrykkelse, ikke en guddommelig skikkelse som skal befri den enkelte fra synd (Groth, 2025). Her går et av de tydeligste skillene mot kristendommen, som lærer at Jesus er Messias."
+    },
+    {
+      "type": "text",
+      "content": "Retningene svarer ulikt. Reformjødedommen forkastet tidlig tanken om en personlig Messias, og tolker i stedet den messianske tiden som en streben etter å utvikle menneskeheten (Groth, 2025). Konservativ jødedom knytter begrepet til en tid da det vil herske fred og rettferdighet for alle, ikke til en person (Groth, 2025). Ortodoks jødedom lærer at det vil komme en messiansk tid da jøder samles i Israel, og mange ortodokse venter fortsatt på en bestemt person (Groth, 2025)."
+    },
+    {
+      "type": "header",
+      "text": "Mange måter å være jøde på"
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å tro at en religion er ensartet. Jødedommen er det ikke. I dag rommer den flere retninger: ortodoks jødedom, konservativ jødedom, reformjødedom og rekonstruksjonisme, i tillegg til humanistisk jødedom som er en sekulær bevegelse (Groth, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Ortodokse jøder prøver å følge forpliktelsene i størst mulig grad (Groth, 2026a). Konservativ jødedom holder gjerne matreglene hjemme, men har en mer likestilt gudstjeneste. Reformjødedommen har opphevet mange av de tradisjonelle budene og legger i stedet vekt på etikken. Rekonstruksjonismen holder på ritualene, men ser dem mest som folkets gamle tradisjoner (Groth, 2024a). Uenigheten handler sjelden om Shema eller pakten, men om hvor bindende budene er i dag."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom leser fra torarull foran menighet",
+      "caption": "Overgangen til voksenlivet markeres med å lese fra teksten selv."
+    },
+    {
+      "type": "header",
+      "text": "Kjenn tikkun olam på kroppen"
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "tikkun-olam-3d"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Videre lesning"
+    },
+    {
+      "type": "text",
+      "content": "Vil du gå dypere? Les om [bønn i jødedommen](/krle/religion/jodedom/bonn) for å se hvordan Shema og de tre daglige bønnetidene fungerer i praksis. Og se hvordan pakten markeres gjennom livet, fra omskjæring til bar mitzva, i artikkelen om [overgangsriter](/krle/religion/jodedom/overgangsriter)."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr ordet brit, og hvem er de to partene i pakten?",
+          "Hvor mange mitzvot har rabbinerne utledet fra Mosebøkene, og hvordan fordeler de seg på påbud og forbud?",
+          "Hvor mange ganger om dagen skal Shema leses, og hva er hovedbudskapet i den?",
+          "Nevn tre av retningene i jødedommen i dag."
+        ],
+        "reflekter": [
+          "Artikkelen sier at jødedommen handler mer om hva du gjør enn om hva du tror. Finn to eksempler i teksten som viser dette.",
+          "Rabbinerne sier at jøder ikke er mer verdifulle enn andre, bare underlagt andre forpliktelser. Hvorfor tror du uttrykket \"utvalgte folk\" likevel blir misforstått?",
+          "Uttrykket tikkun olam har fått ny mening flere ganger siden år 200. Hva sier det om hvordan religiøse begreper utvikler seg?",
+          "Artikkelen sier at jødedommen er både en religion og et folk. Hvordan kan det forklare at noen regner seg som jøder uten å tro på Gud?"
+        ],
+        "gaaVidere": [
+          "Skriv en kort tekst der du forklarer for en tiåring hvorfor jødedommen ikke har noen pave.",
+          "Sammenlign hvordan ortodoks, konservativ og reformjødedom svarer på spørsmålet om Messias. Sett opp svarene i en tabell.",
+          "Undersøk hva det vil si at Det Mosaiske Trossamfund har i overkant av 600 medlemmer, sammenlignet med de under 15 millionene i verden. Hva betyr det for jødisk liv i Norge?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er Shema?",
+            "options": [
+              "En bekjennelse av at Gud er én",
+              "En jødisk høytid om våren",
+              "Navnet på den jødiske loven",
+              "En regel om hva man kan spise"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Shema er strengt tatt ikke en vanlig bønn, men en bekjennelse av at Gud er én. Den leses morgen og kveld."
+          },
+          {
+            "question": "Hvor mange mitzvot har rabbinerne utledet fra Mosebøkene?",
+            "options": [
+              "10",
+              "248",
+              "365",
+              "613"
+            ],
+            "correctAnswer": 3,
+            "explanation": "613 bud: 248 positive forpliktelser og 365 negative forpliktelser."
+          },
+          {
+            "question": "Hva sier rabbinerne om at jødene er Guds utvalgte folk?",
+            "options": [
+              "At jøder er mer verdifulle enn andre mennesker",
+              "At jøder ikke er mer verdifulle, men har andre forpliktelser",
+              "At bare ortodokse jøder er utvalgt",
+              "At utvelgelsen tok slutt da tempelet ble ødelagt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Rabbinerne lærer at jøder ikke er mer verdifulle enn andre. De er bare underlagt andre forpliktelser."
+          },
+          {
+            "question": "Hva er Messias i jødedommen?",
+            "options": [
+              "En guddommelig frelser som allerede har kommet",
+              "Et helt spesielt menneske av Davids slekt, ikke en guddommelig skikkelse",
+              "En engel som dømmer de døde",
+              "Et annet navn på profeten Moses"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Det har aldri vært tvil om at Messias er et spesielt menneske, ikke en guddommelig skikkelse. Men retningene er uenige: reformjødedommen forkastet tidlig tanken om en personlig Messias."
+          },
+          {
+            "question": "Omtrent hvor mange mennesker i verden har tilknytning til jødisk religion eller kultur?",
+            "options": [
+              "Noe under 15 millioner",
+              "Rundt 150 millioner",
+              "Rundt 600 000",
+              "Over 1 milliard"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Anslaget i 2026 var noe under 15 millioner. Til sammenligning hadde Det Mosaiske Trossamfund i Oslo i overkant av 600 medlemmer i 2026."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Groth, B. (2026a). *Jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Groth, B. (2026b). *Bønn - jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bønn_-_jødedom](https://snl.no/b%C3%B8nn_-_j%C3%B8dedom)",
+          "Groth, B. (2025). *Messias - i jødedommen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Messias_-_i_jødedommen](https://snl.no/Messias_-_i_j%C3%B8dedommen)",
+          "Groth, B. (2024a). *Mitzva*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/mitzva](https://snl.no/mitzva)",
+          "Groth, B. (2024b). *Shema*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Shema](https://snl.no/Shema)",
+          "Store norske leksikon og Groth, B. (2026). *Det Mosaiske Trossamfund*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Det_Mosaiske_Trossamfund](https://snl.no/Det_Mosaiske_Trossamfund)",
+          "My Jewish Learning. (u.a.). *Tikkun Olam: Repairing the World*. Hentet 11.08.2026 fra [myjewishlearning.com](https://www.myjewishlearning.com/article/tikkun-olam-repairing-the-world/)"
+        ]
+      }
     }
+  ],
+  "timeline": [],
+  "concepts": [
+    {
+      "id": "shema",
+      "term": "Shema",
+      "definition": "Bekjennelsen 'Hør, Israel! Adonai (Herren) er vår Gud, Adonai er én.' Blir ofte kalt den jødiske trosbekjennelsen, og leses morgen og kveld."
+    },
+    {
+      "id": "brit",
+      "term": "Brit",
+      "definition": "Pakt. Troen på en avtale mellom Gud og Abrahams etterkommere, som gir folket både forpliktelser og rettigheter."
+    },
+    {
+      "id": "mitzvot",
+      "term": "Mitzvot",
+      "definition": "De 613 budene rabbinerne har utledet fra Mosebøkene: 248 påbud og 365 forbud."
+    },
+    {
+      "id": "halakha",
+      "term": "Halakha",
+      "definition": "Den jødiske loven, bygget på budene i Mosebøkene og rabbinernes tolkninger av dem."
+    },
+    {
+      "id": "tikkun-olam",
+      "term": "Tikkun olam",
+      "definition": "'Å reparere verden'. I dag brukt om sosialt arbeid og rettferdighet, en betydning som slo gjennom på 1950-tallet."
+    }
+  ],
+  "quote": {
+    "text": "Du skal ikke gjøre mot andre det du ikke vil at andre skal gjøre mot deg.",
+    "source": "Rabbineren Hillel, gjengitt i Store norske leksikon",
+    "reference": "Groth, B. (2026a). Jødedom"
+  }
 }

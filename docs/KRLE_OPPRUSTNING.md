@@ -1,6 +1,6 @@
 # KRLE - opprustningsplan og statusoversikt
 
-> **Sist målt:** 2026-08-11 (etter R5d pulje A) · **N = 126 artikler**
+> **Sist målt:** 2026-08-11 (etter R5, komplett) · **N = 126 artikler**
 > Dette dokumentet er arbeidslista for å løfte KRLE-innholdet opp på plan_article-standard.
 > Kryss av i `✔`-kolonnen når en artikkel er ferdigstilt, og oppdater sammendraget nederst.
 
@@ -97,8 +97,8 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 | Status | Antall | Andel |
 |---|---:|---:|
 | `STUB` | 8 | 6,3 % |
-| `HALV` | 25 | 19,8 % |
-| `FERDIG` | 93 | 73,8 % |
+| `HALV` | 23 | 18,3 % |
+| `FERDIG` | 95 | 75,4 % |
 | **Sum** | **126** | |
 
 | Mangel | Antall | Andel |
@@ -123,7 +123,7 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 | ~~**R2**~~ | ~~`gudsbilde` × 8~~ **Ferdig 2026-08-11** | 8 | ✅ Tema 2 «Én, mange eller ingen gud?» har nå 9/9 ferdige kilder |
 | ~~**R3**~~ | ~~`bonn` × 8~~ **Ferdig 2026-08-11**. Sikhisme-artikkelen kom fra bot-PR #390 og telles med i N. | 8 | ✅ Tema 3 «Å snakke med det hellige» har nå 9/9 ferdige kilder |
 | ~~**R4**~~ | ~~`overgangsriter` × 8~~ **Ferdig 2026-08-11** | 8 | ✅ Tema 4 «Fra vugge til grav» har nå 9/9 ferdige kilder |
-| **R5** | ~~`frelse` × 8 + ny sikhisme-artikkel~~ **Ferdig 2026-08-11**. ~~`grunnleggere` × 9~~ **Ferdig 2026-08-11**. ~~`hellige-tekster` × 9~~ **Ferdig 2026-08-11**. Gjenstår: `sentrale-trekk` for jødedom, hinduisme og buddhisme, som alle har signaturkomponent fra før og mangler hale og kilder | 3 igjen | Tema 5-8. Frelse har nå 9/9 ferdige kilder |
+| ~~**R5**~~ | ~~`frelse`, `grunnleggere`, `hellige-tekster`, `sentrale-trekk`~~ **Ferdig 2026-08-11** | 34 | ✅ Tema 5-8 har alle 9/9 ferdige kilder |
 | **R6** | De 8 kristendom-artiklene i 325-396-båndet | 8 | Kortest vei til ferdig - har allerede quiz og tekst |
 | **R7** | Filosofi: 17 artikler uten quiz, `Oppgaver` og `Kildeliste` | 17 | Utenfor sammenligningsemnet |
 
@@ -201,7 +201,7 @@ n = 9 · snitt 930 ord · 1 stub / 0 halv / 8 ferdig
 
 ### Jødedom
 
-n = 9 · snitt 863 ord · 1 stub / 1 halv / 7 ferdig
+n = 9 · snitt 912 ord · 1 stub / 0 halv / 8 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -212,12 +212,12 @@ n = 9 · snitt 863 ord · 1 stub / 1 halv / 7 ferdig
 | ☑ | `FERDIG` | `religion/jodedom/grunnleggere/artikkel.json` | 1024 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/jodedom/overgangsriter/artikkel.json` | 1109 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/jodedom/frelse/artikkel.json` | 1024 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
-| ☐ | `HALV` | `religion/jodedom/sentrale-trekk/artikkel.json` | 761 | ✅ | - | - | 5 | ✅ | - |
+| ☑ | `FERDIG` | `religion/jodedom/sentrale-trekk/artikkel.json` | 1198 | ✅ | ✅ | ✅ | 5 | ⏳ | ✅ har |
 | ☑ | `FERDIG` | `religion/jodedom/skapelse/artikkel.json` | 921 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 
 ### Hinduisme
 
-n = 9 · snitt 917 ord · 1 stub / 0 halv / 8 ferdig
+n = 9 · snitt 943 ord · 1 stub / 0 halv / 8 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -228,7 +228,7 @@ n = 9 · snitt 917 ord · 1 stub / 0 halv / 8 ferdig
 | ☑ | `FERDIG` | `religion/hinduisme/bonn/artikkel.json` | 916 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/hinduisme/grunnleggere/artikkel.json` | 1200 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/hinduisme/overgangsriter/artikkel.json` | 1139 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
-| ☐ | `FERDIG` | `religion/hinduisme/sentrale-trekk/artikkel.json` | 970 | ✅ | - | - | 4 | ✅ | ✅ har |
+| ☑ | `FERDIG` | `religion/hinduisme/sentrale-trekk/artikkel.json` | 1200 | ✅ | ✅ | ✅ | 5 | ⏳ | ✅ har |
 | ☑ | `FERDIG` | `religion/hinduisme/skapelse/artikkel.json` | 955 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 
 ### Islam
@@ -249,7 +249,7 @@ n = 9 · snitt 934 ord · 1 stub / 0 halv / 8 ferdig
 
 ### Buddhisme
 
-n = 10 · snitt 960 ord · 1 stub / 1 halv / 8 ferdig
+n = 10 · snitt 1005 ord · 1 stub / 0 halv / 9 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -260,7 +260,7 @@ n = 10 · snitt 960 ord · 1 stub / 1 halv / 8 ferdig
 | ☑ | `FERDIG` | `religion/buddhisme/gudsbilde/artikkel.json` | 961 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/buddhisme/grunnleggere/artikkel.json` | 1043 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/buddhisme/overgangsriter/artikkel.json` | 976 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
-| ☐ | `HALV` | `religion/buddhisme/sentrale-trekk/artikkel.json` | 746 | ✅ | - | - | 5 | ✅ | - |
+| ☑ | `FERDIG` | `religion/buddhisme/sentrale-trekk/artikkel.json` | 1198 | ✅ | ✅ | ✅ | 5 | ⏳ | ✅ har |
 | ☐ | `FERDIG` | `religion/buddhisme/den-attedelte-vei/artikkel.json` | 1506 | ✅ | - | - | 5 | ✅ | ✅ har |
 | ☑ | `FERDIG` | `religion/buddhisme/skapelse/artikkel.json` | 1037 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 
@@ -523,3 +523,6 @@ Før opp hver ferdigstilte artikkel her fra og med nå, så er historikken synli
 | 2026-08-11 | Mormonisme: Påstanden alt annet henger på | `GjenopprettelsensPaastand` | - | - |
 | 2026-08-11 | Jehovas vitner: Regjeringen som snart skal overta | `HvaSomSkillerDem` | - | - |
 | 2026-08-11 | Sikhisme: Tre regler du kan leve, fem ting du kan se | `TreReglerOgFemTing` | - | - |
+| 2026-08-11 | Jødedom: Mange måter å være jøde på | `BritPilarer` | ↻ tikkun-olam-3d | - |
+| 2026-08-11 | Hinduisme: En religion uten sentrum | `MokshaVeiene` | ↻ | - |
+| 2026-08-11 | Buddhisme: En diagnose og en behandling | `DharmahjuletUtforsker` | ↻ | - |

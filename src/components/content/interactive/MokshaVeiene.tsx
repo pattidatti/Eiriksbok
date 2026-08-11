@@ -12,8 +12,8 @@ interface YogaPath {
     textClass: string;
     description: string;
     example: string;
-    quote: string;
-    quoteSource: string;
+    kjerne: string;
+    kjerneKilde: string;
 }
 
 const YOGA_PATHS: YogaPath[] = [
@@ -26,11 +26,11 @@ const YOGA_PATHS: YogaPath[] = [
         borderClass: 'border-orange-200',
         textClass: 'text-orange-600',
         description:
-            'Karma Yoga er veien gjennom handling. Du gjør pliktene dine - som student, venn eller borger - men uten å forvente belønning. Handlingen er et offer til det guddommelige, ikke en transaksjon. Det er ikke hva du gjør som renser sjelen, men hvorfor du gjør det.',
+            'Veien gjennom handling. Du gjør pliktene som følger av din plass i livet, men uten egoistisk begjær etter hva du selv får igjen. I Bhagavadgita er dette svaret Krishna gir Arjuna når han blir lammet av tvil: handling er det rette, følg din natur, men handle uten egoistisk begjær.',
         example:
-            'Eksempel: Du hjelper naboen med å bære varer - ikke fordi du vil ha takk, men fordi det er riktig. Handlingen er sin egen belønning.',
-        quote: 'La den rette handlingen være ditt motiv, ikke frukten som kommer av den.',
-        quoteSource: 'Bhagavad Gita 2.47',
+            'Bhagavadgita kritiserer asketer som trekker seg unna verden. I stedet forkynner den en streng pliktetikk der man deltar aktivt i samfunnet.',
+        kjerne: 'Ikke hva du gjør, men med hvilket motiv du gjør det.',
+        kjerneKilde: 'Jacobsen (2025b), Bhagavadgita, Store norske leksikon',
     },
     {
         id: 'jnana',
@@ -41,11 +41,11 @@ const YOGA_PATHS: YogaPath[] = [
         borderClass: 'border-cyan-200',
         textClass: 'text-cyan-600',
         description:
-            'Jnana Yoga er veien gjennom visdom og innsikt. Gjennom meditasjon og filosofisk undersøkelse forstår du at sjelen din (Atman) er identisk med den universelle sjelen (Brahman). Illusjonen om at du er atskilt fra verden - dette kalles maya - oppløses av sann kunnskap.',
+            'Veien gjennom innsikt. Upanishadene knytter det innerste i mennesket (atman) til grunnlaget for hele universet (brahman). Skolen advaita vedanta lærer at de to er identiske: du er allerede brahman, men uvitenheten hindrer deg i å se det. Andre skoler er uenige, og mener mennesket beholder sin egen atman.',
         example:
-            'Eksempel: En filosof mediterer og spør seg: "Hvem er jeg egentlig - utover kropp, tanker og navn?" Svaret Upanishadene gir er: Du er Brahman selv.',
-        quote: 'Det er deg - Tat tvam asi.',
-        quoteSource: 'Chandogya Upanishad 6.8.7',
+            'Filosofen Shankara mente at frigjøringen er å oppdage noe som allerede er sant. Ramanuja mente derimot at det alltid består en forskjell mellom mennesket og brahman.',
+        kjerne: 'Frigjøring ved å forstå hva du allerede er.',
+        kjerneKilde: 'Jacobsen (2024), Brahman, Store norske leksikon',
     },
     {
         id: 'bhakti',
@@ -56,11 +56,11 @@ const YOGA_PATHS: YogaPath[] = [
         borderClass: 'border-pink-200',
         textClass: 'text-pink-600',
         description:
-            'Bhakti Yoga er veien gjennom kjærlighet og hengivelse til en personlig gud - som Krishna, Vishnu eller Durga. Du ber, synger, danser og ofrer blomster - ikke av frykt, men av ren kjærlighet. Ego oppløses i møtet med det guddommelige.',
+            'Veien gjennom hengivelse. Mennesket vender seg til en gud i hengivelse og handler med guddommen i tankene, gjerne Vishnu, Krishna, Shiva eller gudinnen Devi. Bhagavadgita framhever denne veien som den beste av dem.',
         example:
-            'Eksempel: Pilegrimer reiser hundrevis av kilometer til Varanasi for å bade i Ganges og be til Shiva. Det er ikke en plikt - det er kjærlighet.',
-        quote: 'Overgitt til meg med kjærlighet - du skal nå meg.',
-        quoteSource: 'Bhagavad Gita 18.65',
+            'Mange hinduer mener at hellige steder i seg selv har frelsende kraft. Festivalen Kumbhamela samler titalls millioner deltakere.',
+        kjerne: 'Frigjøring gjennom kjærlighet til en gud, ikke gjennom egen prestasjon.',
+        kjerneKilde: 'Jacobsen (2025b, 2025c), Bhagavadgita og Moksha, Store norske leksikon',
     },
 ];
 
@@ -94,7 +94,7 @@ export function MokshaVeiene() {
             <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-3">
                 <Star className="w-5 h-5 text-amber-500" />
                 <div>
-                    <h3 className="font-semibold text-slate-800">Tre veier til Moksha</h3>
+                    <h3 className="font-semibold text-slate-800">Tre veier til moksha</h3>
                     <p className="text-sm text-slate-500">Klikk på hver vei for å utforske den</p>
                 </div>
                 <div className="ml-auto text-sm font-medium text-slate-400 tabular-nums">
@@ -104,7 +104,7 @@ export function MokshaVeiene() {
 
             {/* Path cards */}
             <div className="p-6 pb-4">
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {YOGA_PATHS.map((path) => {
                         const isExplored = explored.has(path.id);
                         const isActive = active === path.id;
@@ -166,13 +166,15 @@ export function MokshaVeiene() {
                             <p className="text-sm text-slate-700 leading-relaxed mb-3">
                                 {activePath.description}
                             </p>
-                            <p className="text-sm text-slate-600 italic mb-3">{activePath.example}</p>
+                            <p className="text-sm text-slate-600 italic mb-3">
+                                {activePath.example}
+                            </p>
                             <blockquote
                                 className={`border-l-2 pl-3 ${activePath.borderClass} text-sm ${activePath.textClass} italic`}
                             >
-                                "{activePath.quote}"
+                                {activePath.kjerne}
                                 <span className="block text-xs text-slate-400 not-italic mt-0.5">
-                                    - {activePath.quoteSource}
+                                    Kilde: {activePath.kjerneKilde}
                                 </span>
                             </blockquote>
                         </motion.div>
@@ -197,12 +199,14 @@ export function MokshaVeiene() {
                                 <Star className="w-8 h-8 text-amber-400 fill-amber-300" />
                             </motion.div>
                             <h4 className="font-semibold text-amber-800 mb-1">
-                                Veiene til Moksha er kartlagt
+                                Veiene til moksha er kartlagt
                             </h4>
                             <p className="text-sm text-amber-700 leading-relaxed">
-                                Hinduismen lærer at det ikke finnes én rett vei - hvert menneske finner sin.
-                                Karma Yoga, Jnana Yoga og Bhakti Yoga er alle gyldige veier mot det samme
-                                målet: gjenforening med Brahman.
+                                Tradisjonen peker på flere veier til moksha: innsikt, yoga, askese
+                                (streng selvfornektelse) og tilbedelse av guder. Men hinduer er ikke
+                                enige om hva målet er. Tilhengere av advaita vedanta mener at
+                                mennesket går opp i verdensaltet, andre venter et liv i en guds
+                                himmel.
                             </p>
                         </motion.div>
                     )}

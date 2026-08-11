@@ -13,67 +13,66 @@ interface Step {
 const STEPS: Step[] = [
     {
         id: 1,
-        name: 'Rett forståelse',
+        name: 'Riktig syn',
         category: 'visdom',
         description:
-            'Å forstå De fire edle sannheter - at lidelse finnes, hva som forårsaker den, og at det er mulig å frigjøre seg.',
-        insight: 'Du kan ikke gå riktig vei uten å forstå hvor du er.',
+            'Å se De fire edle sannhetene slik de er: at lidelsen finnes, at den har en årsak, og at den kan ta slutt.',
+        insight: 'Du kan ikke finne veien ut før du vet hvor du står.',
     },
     {
         id: 2,
-        name: 'Rett intensjon',
+        name: 'Riktig tenkning',
         category: 'visdom',
         description:
-            'Å ha rene motiver: gi opp begjær, unngå ondsinnethet, og la medfølelse med alle vesener veilede deg.',
-        insight: 'Handlinger som springer ut av kjærlighet skaper god karma.',
+            'Å vende tankene bort fra begjær og vond vilje, og mot velvilje for alt som lever.',
+        insight: 'Handlingen begynner som en tanke.',
     },
     {
         id: 3,
-        name: 'Rett tale',
+        name: 'Riktig tale',
         category: 'etikk',
         description:
-            'Å snakke sant, unngå sladder og løgn, og la ordene bygge opp snarere enn å rive ned.',
-        insight: 'Ord skaper virkelighet - de kan helbrede eller såre.',
+            'Å la være å lyve. Usannhet er en av de handlingene buddhistisk etikk krever at man holder seg unna.',
+        insight: 'Ord kan bygge opp eller rive ned.',
     },
     {
         id: 4,
-        name: 'Rett handling',
+        name: 'Riktig handling',
         category: 'etikk',
         description:
-            'Å ikke drepe, stjele eller skade. De fem buddhistiske levereglene (Pansil) er kjernen her.',
+            'Å avholde seg fra drap, tyveri og ukyskhet. Dette er kjernen i de buddhistiske levereglene.',
         insight: 'Kroppen din skal gjøre godt i verden, ikke skade.',
     },
     {
         id: 5,
-        name: 'Rett levemåte',
+        name: 'Riktig levemåte',
         category: 'etikk',
         description:
-            'Å tjene til livets opphold på en måte som ikke skader andre - unngå yrker som handel med våpen, kjøtt eller gift.',
+            'Å tjene til livets opphold på en måte som ikke skader andre. Yrker som bygger på drap, bedrag eller handel med rusmidler faller utenfor.',
         insight: 'Også jobben din er en etisk handling.',
     },
     {
         id: 6,
-        name: 'Rett innsats',
+        name: 'Riktig bestrebelse',
         category: 'meditasjon',
         description:
-            'Å aktivt motarbeide negative tanker og dyrke positive. Frigjøring krever bevisst og vedvarende arbeid.',
-        insight: 'Sinnet endres ikke av seg selv - det må trenes.',
+            'Å arbeide bevisst med å svekke skadelige tanker og styrke de gode. Frigjøring krever innsats over tid.',
+        insight: 'Sinnet endrer seg ikke av seg selv. Det må trenes.',
     },
     {
         id: 7,
-        name: 'Rett oppmerksomhet',
+        name: 'Riktig oppmerksomhet',
         category: 'meditasjon',
         description:
-            'Å være til stede i øyeblikket - observere kropp, følelser og tanker uten å bli revet med. Dette er kjernen i mindfulness.',
-        insight: 'Bevissthet om nå-øyeblikket er veien fri fra fortid og fremtid.',
+            'Å være våken for hva som skjer i kropp, følelser og tanker akkurat nå. Kalles også aktpågivenhet.',
+        insight: 'Å se hva som skjer, er første skritt mot å slippe taket.',
     },
     {
         id: 8,
-        name: 'Rett konsentrasjon',
+        name: 'Riktig konsentrasjon',
         category: 'meditasjon',
-        description:
-            'Å utvikle dyp, stabil konsentrasjon gjennom meditasjon. Buddhisten trener seg til fire nivåer av dyp ro (jhana).',
-        insight: 'Dyp ro åpner sinnet for erkjennelse som hverdagslig bevissthet ikke kan nå.',
+        description: 'Å samle sinnet, fra oppmerksomhet på kroppens handlinger til dyp meditasjon.',
+        insight: 'Dyp ro åpner for innsikt som hverdagssinnet ikke når.',
     },
 ];
 
@@ -129,9 +128,7 @@ export function DharmahjuletUtforsker() {
                         className="text-2xl select-none leading-none"
                         animate={allRevealed ? { rotate: 360 } : { rotate: 0 }}
                         transition={
-                            allRevealed
-                                ? { duration: 1.2, ease: 'easeInOut', repeat: 1 }
-                                : {}
+                            allRevealed ? { duration: 1.2, ease: 'easeInOut', repeat: 1 } : {}
                         }
                     >
                         ☸
@@ -140,13 +137,11 @@ export function DharmahjuletUtforsker() {
                         <h3 className="text-sm font-bold text-slate-800 leading-tight">
                             Den åttedelte veien
                         </h3>
-                        <p className="text-xs text-slate-500">Klikk hvert steg for å avdekke det</p>
+                        <p className="text-xs text-slate-500">Klikk hver del for å avdekke den</p>
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
-                    <span className="text-xs font-medium text-slate-500">
-                        {revealed.size} / 8
-                    </span>
+                    <span className="text-xs font-medium text-slate-500">{revealed.size} / 8</span>
                     <button
                         onClick={reset}
                         className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
@@ -161,6 +156,8 @@ export function DharmahjuletUtforsker() {
             <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                 <motion.div
                     className="h-full rounded-full bg-gradient-to-r from-amber-400 via-blue-400 to-purple-400"
+                    style={{ width: 0 }}
+                    initial={{ width: '0%' }}
                     animate={{ width: `${(revealed.size / 8) * 100}%` }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
                 />
@@ -178,7 +175,9 @@ export function DharmahjuletUtforsker() {
                         {/* Category header */}
                         <div className={`rounded-lg border px-3 py-2 ${cat.header}`}>
                             <div className={`text-xs font-bold ${cat.headerText}`}>{cat.label}</div>
-                            <div className={`text-xs opacity-70 ${cat.headerText}`}>{cat.sanskrit}</div>
+                            <div className={`text-xs opacity-70 ${cat.headerText}`}>
+                                {cat.sanskrit}
+                            </div>
                         </div>
 
                         {/* Step cards */}
@@ -196,10 +195,7 @@ export function DharmahjuletUtforsker() {
                                     <div className="flex items-start gap-2">
                                         <div className="mt-0.5 flex-shrink-0">
                                             {isRevealed ? (
-                                                <CheckCircle2
-                                                    size={14}
-                                                    className={cat.iconClass}
-                                                />
+                                                <CheckCircle2 size={14} className={cat.iconClass} />
                                             ) : (
                                                 <Lock size={14} className="text-slate-300" />
                                             )}
@@ -253,15 +249,21 @@ export function DharmahjuletUtforsker() {
                         <span className="text-xl select-none">☸</span>
                         <div>
                             <p className="text-sm font-bold text-emerald-700">
-                                Alle åtte steg avdekket!
+                                Alle åtte deler avdekket!
                             </p>
                             <p className="text-xs text-emerald-600 mt-0.5">
-                                Visdom, Etikk og Meditasjon vever seg sammen til en vei mot Nirvana.
+                                Ifølge buddhistisk lære henger visdom, etikk og meditasjon sammen
+                                til én vei mot nirvana.
                             </p>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <p className="text-[11px] text-slate-400 leading-snug">
+                Navn og inndeling følger Store norske leksikon, «Den åttedelte veien» og
+                «Buddhisme».
+            </p>
         </div>
     );
 }
