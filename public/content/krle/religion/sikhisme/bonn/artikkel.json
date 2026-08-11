@@ -1,0 +1,324 @@
+{
+  "id": "bonn",
+  "title": "Bønn i sikhismen: å huske et navn",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "sikhisme",
+  "dimension": "ritual",
+  "comparison_tags": ["bønn", "ritual", "dagligliv"],
+  "year": "1469-1604",
+  "category": "Sikhisme",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Bønn i sikhismen handler mest om å huske Guds navn, ikke om å be om ting.",
+    "Dagen begynner i timene før daggry og rammes inn av tre faste bønner.",
+    "I gurdwaraen blir bønnen sunget av musikere, ikke lest opp av en prest.",
+    "Fellesmåltidet langar regnes som en del av det samme: bønn med hendene.",
+    "Alle setter seg på det samme gulvet og spiser den samme maten."
+  ],
+  "concepts": [
+    {
+      "id": "nam-simran",
+      "term": "Nam simran",
+      "definition": "Å gjenta og huske Guds navn. Den viktigste formen for bønn i sikhismen."
+    },
+    {
+      "id": "amritvela",
+      "term": "Amritvela",
+      "definition": "Timene mellom klokka tre og seks om morgenen. Tida sikher setter av til stille bønn."
+    },
+    {
+      "id": "japji-sahib",
+      "term": "Japji Sahib",
+      "definition": "Morgenbønnen som står helt først i Guru Granth Sahib. Den blir lest opp, ikke sunget."
+    },
+    {
+      "id": "kirtan",
+      "term": "Kirtan",
+      "definition": "Å tilbe gjennom sang. Musikere synger salmer fra den hellige boka."
+    },
+    {
+      "id": "ardas",
+      "term": "Ardas",
+      "definition": "Fellesbønnen som avslutter samlingen i gurdwaraen."
+    },
+    {
+      "id": "langar",
+      "term": "Langar",
+      "definition": "Det gratis fellesmåltidet i gurdwaraen. Alle sitter på gulvet og spiser det samme."
+    },
+    {
+      "id": "seva",
+      "term": "Seva",
+      "definition": "Frivillig arbeid for andre. I sikhismen regnes det som en måte å tjene Gud på."
+    }
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Klokka er fire om morgenen. Ute er det stummende mørkt. En person står opp, vasker seg, setter seg ned på gulvet og begynner å gjenta ett eneste ord, om og om igjen. Ingen prest er til stede. Ingen kirkeklokke har ringt. Ingen ser på. Slik begynner dagen for mange sikher."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Person sitter alene på gulvet i et mørkt rom før soloppgang",
+      "caption": "Amritvela: timene før daggry. Dagen begynner alene, i mørket, med ett ord som gjentas."
+    },
+    {
+      "type": "text",
+      "content": "Ordet er Vahiguru, ett av navnene sikhene bruker om Gud. Å gjenta det kalles nam simran, og det er kjernen i sikhisk bønn (Singh, 2018). Legg merke til hva som ikke skjer: personen ber ikke om noe. Bønnen handler ikke om å be Gud fikse noe, men om å huske. Hvorfor akkurat et navn er så viktig, henger sammen med at sikhene ikke har noe bilde av Gud i det hele tatt. Det kan du lese mer om i [Gud du ikke kan tegne](/krle/religion/sikhisme/gudsbilde)."
+    },
+    {
+      "type": "header",
+      "text": "Bønn er å huske"
+    },
+    {
+      "type": "text",
+      "content": "For å skjønne hvorfor det å huske er så sentralt, må vi vite hva sikhene mener er problemet med mennesket. Sikhismen bruker ordet haumai om det å være opptatt av seg selv. Så lenge du kretser rundt ditt eget, er du fanget. Målet er å bli fri mens du fortsatt lever, og veien dit går gjennom å huske Guds navn i stedet for å utføre ytre ritualer (Singh, 2018). Sikhismen vokste fram i et miljø som la vekt på et indre liv framfor faste ritualer (Kristiansen, Kværne og Jacobsen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Disse tankene er ikke nye. Sikhismen ble stiftet i Punjab i India på 1500-tallet av Guru Nanak, som levde fra 1469 til 1539, og ble ført videre av ni guruer etter ham (Kristiansen, Kværne og Jacobsen, 2024). Skikkene under er altså rundt 500 år gamle."
+    },
+    {
+      "type": "text",
+      "content": "Tenk på forskjellen mellom å pugge et telefonnummer og å kunne det. Når du kan det, trenger du ikke lete. Det er der uansett hva du holder på med. Slik tenker sikhene om Guds navn: det skal gå fra å være noe du sier, til å være noe som ligger under alt du gjør."
+    },
+    {
+      "type": "header",
+      "text": "Timene før sola"
+    },
+    {
+      "type": "text",
+      "content": "Sikher setter av en bestemt del av døgnet til dette. Tida mellom klokka tre og seks om morgenen kalles amritvela. Den troende står opp, vasker seg og går rett i gang med å meditere over Guds navn. Deretter blir det lest fem faste bønner, og den første av dem er Japji Sahib (Singh, 2018)."
+    },
+    {
+      "type": "text",
+      "content": "Japji Sahib står ikke tilfeldig plassert. Den utgjør de aller første sidene i Guru Granth Sahib, sikhenes hellige bok, og mange kan den utenat. Det spesielle er at akkurat denne delen blir lest opp uten musikk, mens resten av boka blir sunget (Jacobsen, 2020). Sikhen begynner altså dagen med de samme ordene som åpner boka."
+    },
+    {
+      "type": "text",
+      "content": "Dagen blir også avsluttet med bønn. Rundt solnedgang leses Rehras, og rett før sikhen legger seg kommer Kirtan Sohila (Singh, 2018). Til sammen lager de tre bønnene en ramme rundt hele døgnet: en om morgenen, en om kvelden og en om natta."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "De tre faste bønnene i døgnet",
+        "content": "Japji Sahib leses i timene før daggry og står først i den hellige boka. Rehras leses rundt solnedgang, når arbeidsdagen er over. Kirtan Sohila leses rett før sikhen sovner. Alle tre er hentet fra tekstene sikhene regner som hellige, og de sies i hjemmet like gjerne som i gurdwaraen."
+      }
+    },
+    {
+      "type": "component",
+      "name": "DagenSomBonn",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Sammen i gurdwaraen"
+    },
+    {
+      "type": "text",
+      "content": "Bønn i sikhismen er ikke bare noe man gjør alene. Sikhenes forsamlingshus heter gurdwara, som betyr både døren til guruen og guruens hus. Hver eneste gurdwara må ha et eksemplar av Guru Granth Sahib liggende framme, og boka blir behandlet som en levende lærer. Utenfor vaier et oransje eller blått flagg som kalles nishan sahib, slik at alle ser hvor huset er. I Norge finnes det tre gurdwaraer: i Oslo, i Lier og i Bergen (Jacobsen, 2023). Det bor rundt 5000 sikher i landet (Kristiansen, Kværne og Jacobsen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Skal du besøke en gurdwara, er det noen enkle regler du bør kunne på forhånd:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Ta av deg skoene før du går inn i bønnerommet.",
+        "Dekk til hodet med et skjerf, et sjal eller en lue. Dette gjelder både gutter og jenter.",
+        "Ha på klær du kan sitte med beina i kryss i, for alle sitter på gulvet.",
+        "La være å bruke tobakk på området.",
+        "Ikke rett føttene mot Guru Granth Sahib. Det regnes som respektløst."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Boka ble første gang samlet i 1604 av den femte guruen, Guru Arjan, og fikk da navnet Adi Granth. Den ble senere utvidet av den tiende guruen, Guru Gobind Singh, som før han døde i 1708 bestemte at boka skulle være sikhenes øverste veileder etter ham (Jacobsen, 2020). Det er derfor det ligger en bok der andre religioner kunne hatt en prest."
+    },
+    {
+      "type": "text",
+      "content": "Boka blir tatt fram hver morgen og lagt til ro hver kveld. Den ligger under en baldakin, dekket av fine klær, og en person vifter over den med en vifte som kalles chauri (Breidlid, 2026). Menn og kvinner deltar sammen i gudstjenesten (Kristiansen, Kværne og Jacobsen, 2024)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Bønnerom i gurdwara med musikere som synger foran den hellige boka",
+      "caption": "I gurdwaraen ligger boka framme under en baldakin. Musikerne som kalles ragi synger salmene fra den."
+    },
+    {
+      "type": "header",
+      "text": "Sangen er hjertet"
+    },
+    {
+      "type": "text",
+      "content": "Det som skjer i en gurdwara, ligner kanskje mer på en konsert enn på en preken. Sangen står helt sentralt i sikhismen (Kristiansen, Kværne og Jacobsen, 2024). Guru Granth Sahib er ikke ordnet etter tema, men etter melodier, og salmene framføres gjerne av tre musikere: to på orgel og en på tromme. Forsamlingen mediterer over det som blir sunget (Jacobsen, 2020)."
+    },
+    {
+      "type": "text",
+      "content": "Denne formen for tilbedelse heter kirtan. Musikerne kalles ragi, og de leder sangen på tradisjonelle instrumenter. Målet er at de som er til stede skal komme på bølgelengde med Guds ord, som på sikhenes språk heter gurbani (Breidlid, 2026). Å synge sammen med andre regnes som selve hjertet i sikhenes trosliv (Singh, 2018)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Musikken har en helt sentral plass i sikhismen.",
+        "author": "Kristiansen, Kværne og Jacobsen, Store norske leksikon"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Ardas: bønnen alle sier sammen"
+    },
+    {
+      "type": "text",
+      "content": "Samlingen avsluttes med ardas, fellesbønnen. Den nevner blant annet dem som døde for troen gjennom sikhenes historie. Etter ardas blir det delt ut karah prasad, en søt puding, til alle som er til stede. Alle får det samme, både sikher og de som ikke er sikher. Det er ikke bare en kos i etterkant. Det skal vise at ingen står over noen andre (Breidlid, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Bønn med hendene"
+    },
+    {
+      "type": "text",
+      "content": "Så kommer den delen som overrasker mange. Etter samlingen går forsamlingen ut i langar, det gratis fellesmåltidet som lages på gurdwaraens eget kjøkken. Alle setter seg på gulvet i lange rekker og spiser det samme. Det er dette som er poenget: å sitte på samme gulv viser at ingen er finere enn andre (Jacobsen, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Da sikhismen vokste fram, var det indiske samfunnet delt inn i kaster som bestemte hvem du kunne spise sammen med. Langar var derfor ikke bare snilt, det var et angrep på selve inndelingen (Singh, 2018). Å be en rik og en fattig sette seg på det samme gulvet var en tydelig beskjed."
+    },
+    {
+      "type": "text",
+      "content": "Både råvarene og selve matlagingen er seva, altså frivillig arbeid som noen gir bort uten å få betalt for det (Breidlid, 2026). Skalaen kan bli enorm. Ved Harmandir Sahib i Amritsar, tempelet mange kaller Det gylne tempel, ligger et av verdens største kjøkken. Det gir gratis mat til over hundre tusen mennesker hver eneste dag (Jacobsen, 2024)."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "langar-kjokkenet-3d"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Lange rekker av mennesker som sitter på gulvet og spiser sammen",
+      "caption": "I langar sitter alle på det samme gulvet og får den samme maten. Ingen betaler, og ingen får bedre plass enn andre."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor ser det slik ut?"
+    },
+    {
+      "type": "text",
+      "content": "Nå henger bitene sammen. Sikhene mener at målet med et religiøst liv er å bli forent med Gud, som er én, evig, allvitende og allmektig (Kristiansen, Kværne og Jacobsen, 2024). Veien dit går ikke gjennom å utføre riktige ritualer på riktig måte, men gjennom å huske Guds navn og la det forandre hvordan du lever (Singh, 2018)."
+    },
+    {
+      "type": "text",
+      "content": "Derfor er det ingen skarp grense mellom bønnerommet og kjøkkenet. Å gjenta navnet i mørket klokka fire, å synge salmene sammen med andre og å bære mat ut i rekkene er tre former for det samme. Boka som ordene kommer fra, kan du lese mer om i [Guru Granth Sahib](/krle/religion/sikhisme/hellige-tekster), og de ti lærerne som formet skikkene, møter du i [Guruene](/krle/religion/sikhisme/grunnleggere). De samme tankene om likeverd dukker opp igjen i [Overgangsriter i sikhismen](/krle/religion/sikhisme/overgangsriter), der bryllupet er en rundgang rundt boka i stedet for et løfte til en prest."
+    },
+    {
+      "type": "text",
+      "content": "Neste gang du hører ordet bønn, er det verdt å spørre hva slags bønn det er snakk om. I sikhismen er svaret verken en bønneliste eller en fast stilling. Det er et navn som blir husket, morgen, kveld og natt, og et par hender som deler ut mat mens navnet huskes."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr nam simran, og hvorfor er det viktig i sikhismen?",
+          "Når på døgnet er amritvela, og hva gjør sikhen da?",
+          "Hvilke tre faste bønner rammer inn døgnet, og når leses de?",
+          "Nevn tre regler som gjelder når du besøker en gurdwara."
+        ],
+        "reflekter": [
+          "Forklar med egne ord forskjellen på å be om noe og å huske noe. Hvorfor velger sikhene det siste?",
+          "Hvorfor blir sangen viktigere enn en preken når den hellige boka er ordnet etter melodier?",
+          "Langar var et angrep på kastesystemet. Forklar hvordan det å sitte på et gulv kan være en politisk handling.",
+          "I mikrospillet må du selv bære maten ut i rekkene. Hva sier det om forholdet mellom bønn og arbeid i sikhismen?"
+        ],
+        "gaaVidere": [
+          "Les artikkelen om bønn i islam i Eiriksbok og sammenlign. Hva er likt, og hva er ulikt i hvordan de to religionene tenker om faste bønnetider?",
+          "Finn ut hvor den nærmeste gurdwaraen ligger, og undersøk om den har åpne dager for besøkende. Skriv ned tre spørsmål du ville stilt.",
+          "Diskuter i klassen: finnes det steder i Norge der alle spiser sammen uten å betale? Hva skjer med et fellesskap når maten er gratis for alle?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er nam simran?",
+            "options": [
+              "En vandring til et hellig sted i India",
+              "Å gjenta og huske Guds navn",
+              "Et måltid som spises etter gudstjenesten",
+              "Navnet på sikhenes hellige bok"
+            ],
+            "correctIndex": 1,
+            "explanation": "Nam simran er å gjenta det guddommelige navnet, ofte Vahiguru. Det er kjernen i sikhisk bønn (Singh, 2018)."
+          },
+          {
+            "question": "Hva kalles timene mellom klokka tre og seks om morgenen?",
+            "options": ["Amritvela", "Ardas", "Langar", "Kirtan"],
+            "correctIndex": 0,
+            "explanation": "Amritvela er tida rett før daggry. Da står den troende opp, vasker seg og mediterer over Guds navn (Singh, 2018)."
+          },
+          {
+            "question": "Hva er spesielt med Japji Sahib sammenlignet med resten av Guru Granth Sahib?",
+            "options": [
+              "Den er skrevet på et annet språk",
+              "Den blir lest opp uten musikk, mens resten blir sunget",
+              "Bare menn får lese den",
+              "Den ble lagt til så sent som på 1900-tallet"
+            ],
+            "correctIndex": 1,
+            "explanation": "Japji Sahib står først i boka og resiteres uten musikk. Resten av boka er ordnet etter melodier og blir sunget (Jacobsen, 2020)."
+          },
+          {
+            "question": "Hvorfor sitter alle på gulvet under langar?",
+            "options": [
+              "Fordi det ikke er råd til stoler",
+              "Fordi gulvet regnes som hellig",
+              "For å vise at ingen står over noen andre",
+              "Fordi maten er varm og må avkjøles"
+            ],
+            "correctIndex": 2,
+            "explanation": "Å sitte sammen på gulvet uttrykker likeverd, og det utfordret kasteinndelingen i det indiske samfunnet (Jacobsen, 2023; Singh, 2018)."
+          },
+          {
+            "question": "Hva menes med seva?",
+            "options": [
+              "Frivillig arbeid som gis bort uten betaling",
+              "En bønn som leses ved solnedgang",
+              "Flagget utenfor gurdwaraen",
+              "Musikerne som synger salmene"
+            ],
+            "correctIndex": 0,
+            "explanation": "Seva er frivillig tjeneste. Både råvarene og matlagingen i langar regnes som seva (Breidlid, 2026)."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Breidlid, H. (2026). *Sikhismen - praksis og ritual i gurdwaraen*. NDLA. Hentet 11.08.2026 fra [ndla.no](https://ndla.no/nn/r/religion-og-etikk/sikhismen---praksis-og-ritualer-i-gurdwaraen/541954dcc0)",
+          "Jacobsen, K. A. (2020). *Guru Granth Sahib*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Guru_Granth_Sahib](https://snl.no/Guru_Granth_Sahib)",
+          "Jacobsen, K. A. (2023). *Gurdwara*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/gurdwara](https://snl.no/gurdwara)",
+          "Jacobsen, K. A. (2024). *Det gylne tempel*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Det_gylne_tempel](https://snl.no/Det_gylne_tempel)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2024). *Sikhisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "Singh, P. (2018). *Sikhism*. Encyclopedia.com. Hentet 11.08.2026 fra [encyclopedia.com](https://www.encyclopedia.com/philosophy-and-religion/eastern-religions/buddhism/sikhism)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -118,6 +118,7 @@ const OrganisertAvMaterie = lazy(() => import('./content/interactive/OrganisertA
 const DeSeksPeriodene = lazy(() => import('./content/interactive/DeSeksPeriodene').then(m => ({ default: m.DeSeksPeriodene })));
 const FoerLysetFantes = lazy(() => import('./content/interactive/FoerLysetFantes').then(m => ({ default: m.FoerLysetFantes })));
 const DenTommeRammen = lazy(() => import('./content/interactive/DenTommeRammen').then(m => ({ default: m.DenTommeRammen })));
+const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
 const CategoricalImperativeTester = lazy(() => import('./content/interactive/CategoricalImperativeTester').then(m => ({ default: m.CategoricalImperativeTester })));
@@ -508,6 +509,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     DeSeksPeriodene,
     FoerLysetFantes,
     DenTommeRammen,
+    DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,
     CategoricalImperativeTester,
