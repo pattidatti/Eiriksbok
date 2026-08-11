@@ -545,49 +545,49 @@
       "entries": [
         {
           "religion": "bahai",
-          "title": "En ukjennbar Gud",
+          "title": "Solen du ikke kan se på",
           "file": "content/krle/religion/bahai/gudsbilde/artikkel.json",
           "link": "/krle/religion/bahai/gudsbilde"
         },
         {
           "religion": "buddhisme",
-          "title": "Ingen skapergud",
+          "title": "Gudene som ikke kan redde deg",
           "file": "content/krle/religion/buddhisme/gudsbilde/artikkel.json",
           "link": "/krle/religion/buddhisme/gudsbilde"
         },
         {
           "religion": "hinduisme",
-          "title": "Brahman og guder",
+          "title": "Én eller millioner?",
           "file": "content/krle/religion/hinduisme/gudsbilde/artikkel.json",
           "link": "/krle/religion/hinduisme/gudsbilde"
         },
         {
           "religion": "islam",
-          "title": "Tawhid: Guds enhet",
+          "title": "Én, og ingen ved siden av",
           "file": "content/krle/religion/islam/gudsbilde/artikkel.json",
           "link": "/krle/religion/islam/gudsbilde"
         },
         {
           "religion": "jehovas-vitner",
-          "title": "Jehova",
+          "title": "Gud med fornavn",
           "file": "content/krle/religion/jehovas-vitner/gudsbilde/artikkel.json",
           "link": "/krle/religion/jehovas-vitner/gudsbilde"
         },
         {
           "religion": "jodedom",
-          "title": "Monoteisme: Troen på én Gud",
+          "title": "Navnet ingen sier høyt",
           "file": "content/krle/religion/jodedom/gudsbilde/artikkel.json",
           "link": "/krle/religion/jodedom/gudsbilde"
         },
         {
           "religion": "kristendom",
-          "title": "Treenigheten",
+          "title": "Én Gud, tre personer",
           "file": "content/krle/religion/kristendom/gudsbilde/artikkel.json",
           "link": "/krle/religion/kristendom/gudsbilde"
         },
         {
           "religion": "mormonisme",
-          "title": "Guddommen",
+          "title": "Guden med en kropp",
           "file": "content/krle/religion/mormonisme/gudsbilde/artikkel.json",
           "link": "/krle/religion/mormonisme/gudsbilde"
         },
@@ -1009,7 +1009,7 @@
     },
     {
       "religion": "bahai",
-      "title": "En ukjennbar Gud",
+      "title": "Solen du ikke kan se på",
       "link": "/krle/religion/bahai/gudsbilde",
       "dimension": "doctrinal",
       "tags": [
@@ -1100,7 +1100,7 @@
     },
     {
       "religion": "buddhisme",
-      "title": "Ingen skapergud",
+      "title": "Gudene som ikke kan redde deg",
       "link": "/krle/religion/buddhisme/gudsbilde",
       "dimension": "doctrinal",
       "tags": [
@@ -1181,7 +1181,7 @@
     },
     {
       "religion": "hinduisme",
-      "title": "Brahman og guder",
+      "title": "Én eller millioner?",
       "link": "/krle/religion/hinduisme/gudsbilde",
       "dimension": "doctrinal",
       "tags": [
@@ -1263,7 +1263,7 @@
     },
     {
       "religion": "islam",
-      "title": "Tawhid: Guds enhet",
+      "title": "Én, og ingen ved siden av",
       "link": "/krle/religion/islam/gudsbilde",
       "dimension": "doctrinal",
       "tags": [
@@ -1354,7 +1354,7 @@
     },
     {
       "religion": "jehovas-vitner",
-      "title": "Jehova",
+      "title": "Gud med fornavn",
       "link": "/krle/religion/jehovas-vitner/gudsbilde",
       "dimension": "doctrinal",
       "tags": [
@@ -1435,7 +1435,7 @@
     },
     {
       "religion": "jodedom",
-      "title": "Monoteisme: Troen på én Gud",
+      "title": "Navnet ingen sier høyt",
       "link": "/krle/religion/jodedom/gudsbilde",
       "dimension": "doctrinal",
       "tags": [
@@ -1516,7 +1516,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Treenigheten",
+      "title": "Én Gud, tre personer",
       "link": "/krle/religion/kristendom/gudsbilde",
       "dimension": "doctrinal",
       "tags": [
@@ -1606,7 +1606,7 @@
     },
     {
       "religion": "mormonisme",
-      "title": "Guddommen",
+      "title": "Guden med en kropp",
       "link": "/krle/religion/mormonisme/gudsbilde",
       "dimension": "doctrinal",
       "tags": [

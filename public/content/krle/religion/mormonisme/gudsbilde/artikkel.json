@@ -1,91 +1,293 @@
 {
-    "id": "gudsbilde",
-    "title": "Guddommen",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "mormonisme",
-    "dimension": "doctrinal",
-    "comparison_tags": [
-        "gudsbilde",
-        "doctrinal"
-    ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Tre separate vesener"
-        },
-        {
-            "type": "text",
-            "content": "I motsetning til den tradisjonelle treenighetslæren, tror mormonere at Faderen, Sønnen og Den hellige ånd er tre helt separate vesener, men at de er ett i hensikt."
-        },
-        {
-            "type": "header",
-            "text": "Gud har en kropp"
-        },
-        {
-            "type": "text",
-            "content": "De tror at Gud Faderen og Jesus Kristus har fysiske kropper av kjøtt og ben, men at de er herliggjorte og udødelige. Den hellige ånd er en åndeperson."
-        },
-        {
-            "type": "header",
-            "text": "Vi er Guds barn"
-        },
-        {
-            "type": "text",
-            "content": "Mormonere lærer at alle mennesker er Guds åndelige barn, og at vi bodde hos ham før vi ble født på jorden."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "guddommen",
-            "term": "Guddommen",
-            "definition": "Faderen, Sønnen og Den hellige ånd som tre separate guder."
-        },
-        {
-            "id": "himmelske-foreldre",
-            "term": "Himmelske foreldre",
-            "definition": "Troen på at vi har både en Himmelsk Fader og en Himmelsk Mor."
-        },
-        {
-            "id": "foruttilvaerelse",
-            "term": "Foruttilværelse",
-            "definition": "Livet som ånder hos Gud før vi ble født."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hvordan ser Gud ut ifølge mormonismen?",
-            "options": [
-                "Han er en usynlig kraft",
-                "Han har en fysisk kropp",
-                "Han er et lys"
-            ],
-            "answer": "Han har en fysisk kropp"
-        },
-        {
-            "question": "Er Faderen, Sønnen og Ånden én person?",
-            "options": [
-                "Ja, treenigheten",
-                "Nei, tre separate vesener",
-                "Vet ikke"
-            ],
-            "answer": "Nei, tre separate vesener"
-        },
-        {
-            "question": "Hvor var vi før vi ble født?",
-            "options": [
-                "Vi fantes ikke",
-                "Hos Gud som ånder",
-                "I magen"
-            ],
-            "answer": "Hos Gud som ånder"
-        }
-    ],
-    "quote": {
-        "text": "Faderen har et legeme av kjøtt og ben like følbart som menneskets, Sønnen likeså.",
-        "source": "Lære og pakter",
-        "reference": "130:22"
+  "id": "gudsbilde",
+  "title": "Guden med en kropp",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "mormonisme",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "gudsbilde",
+    "doctrinal"
+  ],
+  "category": "Mormonisme",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Jesu Kristi Kirke av Siste Dagers Hellige lærer at Faderen, Sønnen og Den hellige ånd er tre atskilte vesener.",
+    "De tre er ikke ett vesen, men ett i hensikt. De vil det samme.",
+    "Faderen og Sønnen har kropp av kjøtt og bein. Den hellige ånd er en person uten kropp.",
+    "Mennesket regnes som Guds barn i bokstavelig forstand, med både en himmelsk Far og en himmelsk Mor.",
+    "Kirken sier selv at lite om dette er åpenbart, og siterer Joseph Smith på at ikke alt kan forstås i denne verden."
+  ],
+  "createdDate": "2025-12-04T12:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "guddommen",
+      "term": "Guddommen",
+      "definition": "Fellesnavnet på Faderen, Sønnen og Den hellige ånd, forstått som tre atskilte vesener som er ett i hensikt."
+    },
+    {
+      "id": "treenigheten",
+      "term": "Treenigheten",
+      "definition": "Læren i de fleste kristne kirker om at Gud er tre personer i ett og samme vesen."
+    },
+    {
+      "id": "foruttilvaerelse",
+      "term": "Foruttilværelse",
+      "definition": "Tanken om at mennesket levde som ånd nær Gud før det ble født på jorden."
+    },
+    {
+      "id": "himmelske-foreldre",
+      "term": "Himmelske foreldre",
+      "definition": "Troen på at alle mennesker er åndebarn av en himmelsk Far og en himmelsk Mor."
+    },
+    {
+      "id": "laere-og-pakter",
+      "term": "Lære og pakter",
+      "definition": "En av kirkens hellige bøker ved siden av Bibelen, Mormons bok og Den kostelige perle."
     }
+  ],
+  "quote": {
+    "text": "Faderen har et legeme av kjøtt og ben like følbart som menneskets, Sønnen likeså.",
+    "source": "Lære og pakter",
+    "reference": "130:22"
+  },
+  "content": [
+    {
+      "type": "text",
+      "content": "Slik forteller kirken det: en vårmorgen i 1820 gikk en gutt inn i en lysning i skogen i staten New York for å be. Han het Joseph Smith og var fjorten år gammel. Kirkene rundt ham sa forskjellige ting om Gud, og han visste ikke hvem han skulle tro på."
+    },
+    {
+      "type": "text",
+      "content": "Det han fortalte etterpå, ble starten på en helt egen måte å tenke om Gud på. Smith skrev at han så to personer stå i lufta over seg, og at den ene pekte på den andre og sa: «Dette er min elskede Sønn. Hør ham!» (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Legg merke til tallet. To personer, ikke én."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung gutt kneler alene i solfylt lysning i skogen",
+      "caption": "Joseph Smith fortalte at han så to skikkelser, ikke én."
+    },
+    {
+      "type": "text",
+      "content": "Kirken [Smith](/krle/religion/mormonisme/grunnleggere) grunnla, ble formelt stiftet i 1830, og siden 1847 har hovedsetet ligget i Salt Lake City i Utah (Bloch-Hoell mfl., 2024). Mange kaller medlemmene mormonere, men kirken ber selv om at trossamfunnet omtales med hele navnet sitt, Jesu Kristi Kirke av Siste Dagers Hellige, og at medlemmene kalles siste dagers hellige (Bloch-Hoell mfl., 2024). Og nettopp synet på Gud er der kirken skiller lag med resten av kristendommen."
+    },
+    {
+      "type": "header",
+      "text": "To måter å telle på"
+    },
+    {
+      "type": "text",
+      "content": "De aller fleste kristne kirker lærer treenigheten. Den går ut på at Gud er tre personer eller framtredelsesformer i ett vesen: Faderen, Sønnen og Den hellige ånd (Leivestad og Elstad, 2026). Tre, men likevel én. Det er en tanke som er lett å si og vanskelig å tegne."
+    },
+    {
+      "type": "text",
+      "content": "Siste dagers hellige teller annerledes. Den første trosartikkelen deres lyder: «Vi tror på Gud, den evige Fader, og på hans Sønn, Jesus Kristus, og på Den hellige ånd» (Bloch-Hoell mfl., 2024). Ordene ligner på det andre kristne sier. Men bak ordene ligger et annet bilde: Faderen og Sønnen forstås som to atskilte, menneskelige og fysiske vesener, mens Den hellige ånd er en person uten kropp (Bloch-Hoell mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Sett sammen modellen selv i ruta under, og se hva forskjellen egentlig består i."
+    },
+    {
+      "type": "component",
+      "name": "GuddommenModellen",
+      "props": {
+        "title": "Sett sammen modellen av Guddommen"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Det du bygde, kalles Guddommen. Tre selvstendige vesener som vil nøyaktig det samme. Enheten ligger i hensikten, ikke i selve vesenet. Derfor kan et medlem av kirken si at hun tror på Faderen, Sønnen og Den hellige ånd, uten å mene det samme som naboen i den lutherske kirken mener med de samme ordene."
+    },
+    {
+      "type": "header",
+      "text": "En Gud du kan ta på"
+    },
+    {
+      "type": "text",
+      "content": "Den skarpeste setningen står i Lære og pakter. Det er en av kirkens hellige bøker, ved siden av Bibelen, [Mormons bok](/krle/religion/mormonisme/hellige-tekster) og Den kostelige perle (Bloch-Hoell mfl., 2024)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Faderen har et legeme av kjøtt og ben like følbart som menneskets, Sønnen likeså.",
+        "author": "Lære og pakter 130:22"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Videre i det samme verset står det at Den hellige ånd ikke har et slikt legeme, men er en åndeperson, og at han ellers ikke kunne bo i oss (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Kroppen er altså ikke en detalj i denne læren. Den forklarer hvorfor de tre har hver sin oppgave."
+    },
+    {
+      "type": "text",
+      "content": "Dette gjør noe med avstanden mellom Gud og menneske. Siden mennesket er skapt i Guds bilde, har Gud og mennesket samme form (Bloch-Hoell mfl., 2024). Gud er ikke en kraft eller et lys uten kanter. Gud er en person, og en fjortenåring i en skoglysning kunne se ham."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Oppslått bok med Lære og pakter på trebord i varmt lys",
+      "caption": "Setningen om Guds legeme står i Lære og pakter, kapittel 130."
+    },
+    {
+      "type": "header",
+      "text": "Barn, ikke bare skapninger"
+    },
+    {
+      "type": "text",
+      "content": "Hvis Gud har en kropp, hva er da mennesket? Svaret i denne kirken er kort: Guds barn, og det menes bokstavelig. Kirken lærer at alle mennesker er elskede åndebarn av himmelske foreldre, en himmelsk Far og en himmelsk Mor (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Allerede i 1909 uttalte kirkens ledelse at alle menn og kvinner er skapt i den evige Faders og Moders bilde (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c)."
+    },
+    {
+      "type": "text",
+      "content": "Siste dagers hellige ber til den himmelske Faderen, ikke til Moren, fordi de mener Jesus viste det mønsteret. Kirken understreker samtidig at dette ikke betyr at hun nedvurderes (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Kirken sier likevel lite om henne, og skriver selv at kunnskapen om henne er begrenset."
+    },
+    {
+      "type": "text",
+      "content": "Mennesket har også en historie før fødselen. Siste dagers hellige lærer at vi levde som ånder nær Gud før vi ble født på jorden med en kropp, at livet her handler om å ta viktige valg, og at vi etter døden kommer til en åndeverden før ånden forenes med en oppstanden kropp (Bloch-Hoell mfl., 2024). Kirken avviser også arvesyndslæren, og ser positivt på fortellingen om syndefallet, fordi kunnskap om godt og ondt er det som gjør frie valg mulig (Bloch-Hoell mfl., 2024)."
+    },
+    {
+      "type": "header",
+      "text": "Kan et menneske vokse videre?"
+    },
+    {
+      "type": "text",
+      "content": "Her går læren enda et skritt. Kirken skriver at alle mennesker er Guds barn i ordets hele og fulle betydning, og at de har guddommelighetens kime i seg. Gjennom Kristi forsoning kan mennesket utvikle seg mot fullkommenhet og til sist virkeliggjøre sitt guddommelige potensial (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d)."
+    },
+    {
+      "type": "text",
+      "content": "Samtidig er kirken tydelig på hvor mye den ikke vet. I det samme skrivet står det at lite er åpenbart om hvordan dette henger sammen, og en av kirkens presidenter, Gordon B. Hinckley, sa at temaet kommer inn på ganske dyp teologi som vi ikke vet så mye om (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Skrivet siterer også Joseph Smith på at ikke alt kan forstås i denne verden. Når kilden selv er så åpen, er det ikke rart at siste dagers hellige forstår detaljene ulikt."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "To ord som ligner, men betyr ulikt",
+        "content": "Andre kristne bruker ordet treenighet: tre personer i ett og samme vesen. Siste dagers hellige bruker ordet Guddommen: tre atskilte vesener som er ett i hensikt. Begge sier tre, og begge bruker navnene Faderen, Sønnen og Den hellige ånd. Uenigheten handler om hvor mange vesener det er snakk om."
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Familier samlet i lys og enkel møtesal med store vinduer",
+      "caption": "Over 4600 mennesker hører til kirken i Norge, fordelt på 22 menigheter."
+    },
+    {
+      "type": "header",
+      "text": "Kort avstand"
+    },
+    {
+      "type": "text",
+      "content": "Se hele bildet samlet. Gud har kropp. Mennesket er hans barn. Vi bodde hos ham før vi kom hit, og vi kan utvikle oss videre etterpå. I denne læren er ikke Gud en helt annen slags virkelighet enn oss. Gud er nærmere slekt."
+    },
+    {
+      "type": "text",
+      "content": "Det er også grunnen til at akkurat dette punktet skaper diskusjon mellom siste dagers hellige og andre kristne. De to sidene bruker de samme navnene, men de teller dem ikke likt, og de mener ulike ting om hvor stor forskjellen på Gud og menneske egentlig er."
+    },
+    {
+      "type": "text",
+      "content": "I Norge ble de første medlemmene døpt i Risør i 1851, og i dag er det over 4600 medlemmer i 22 menigheter her i landet (Bloch-Hoell mfl., 2024). På verdensbasis var tallet rundt 15,5 millioner i over 150 land i 2015 (Bloch-Hoell mfl., 2024)."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva fortalte Joseph Smith at han så våren 1820, og hvor mange personer var det?",
+          "Hva går treenighetslæren ut på?",
+          "Hvem av de tre i Guddommen har kropp av kjøtt og bein, og hvem har det ikke?",
+          "Hva menes med foruttilværelsen?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord forskjellen på «ett vesen i tre personer» og «tre vesener som er ett i hensikt».",
+          "Hva gjør det med avstanden mellom Gud og menneske at Gud beskrives med en kropp? Begrunn svaret.",
+          "Kirken sier selv at lite er åpenbart om hvordan mennesket kan utvikle seg videre. Hvorfor kan det være greit for en religion å ha ubesvarte spørsmål?",
+          "Siste dagers hellige og andre kristne bruker de samme navnene på Gud, men mener ulike ting. Hvorfor kan felles ord skape misforståelser?"
+        ],
+        "gaaVidere": [
+          "Tegn de to modellene ved siden av hverandre, treenigheten og Guddommen, og skriv én setning under hver som forklarer forskjellen.",
+          "Finn ut hva kirken selv skriver om Guddommen på sine egne nettsider, og sammenlign med det du har lest her.",
+          "Diskuter i klassen: Blir en religion lettere eller vanskeligere å forstå når Gud beskrives som en person med kropp?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva lærer Jesu Kristi Kirke av Siste Dagers Hellige om Faderen, Sønnen og Den hellige ånd?",
+            "options": [
+              "At de er tre personer i ett og samme vesen",
+              "At de er tre atskilte vesener som er ett i hensikt",
+              "At de er tre navn på den samme personen",
+              "At de er tre krefter uten personlighet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Kirken lærer at de tre er atskilte vesener. Enheten ligger i at de vil det samme, ikke i at de er ett vesen."
+          },
+          {
+            "question": "Hvem av de tre har ikke et legeme av kjøtt og bein?",
+            "options": [
+              "Faderen",
+              "Sønnen",
+              "Den hellige ånd",
+              "Alle tre har legeme"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Lære og pakter 130:22 sier at Faderen og Sønnen har legeme, mens Den hellige ånd er en åndeperson og derfor kan bo i mennesker."
+          },
+          {
+            "question": "Hva kalles læren om at Gud er tre personer i ett vesen?",
+            "options": [
+              "Guddommen",
+              "Treenigheten",
+              "Foruttilværelsen",
+              "Forsoningen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Treenigheten er oppfatningen i kristendommen om at Gud er tre personer eller framtredelsesformer i ett vesen."
+          },
+          {
+            "question": "Hva lærer kirken om mennesket før det ble født på jorden?",
+            "options": [
+              "At mennesket ikke fantes i det hele tatt",
+              "At mennesket levde som ånd nær Gud",
+              "At mennesket levde et tidligere liv på jorden",
+              "At mennesket var en engel med kropp"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Siste dagers hellige lærer at vi levde som ånder nær Gud, og at vi så ble født på jorden med en kropp."
+          },
+          {
+            "question": "Hva sier kirken selv om læren om at mennesket kan virkeliggjøre sitt guddommelige potensial?",
+            "options": [
+              "At alt er nøye forklart, og at ingen er i tvil",
+              "At lite er åpenbart, og at ikke alt kan forstås i denne verden",
+              "At læren er avskaffet",
+              "At bare kirkens ledere har lov til å tenke på den"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Kirkens eget skriv sier at lite er åpenbart om hvordan dette henger sammen, og siterer Joseph Smith på at ikke alt kan forstås i denne verden."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2024). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Leivestad, R. & Elstad, H. (2026). *Treenigheten*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/treenigheten](https://snl.no/treenigheten)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-a). *Joseph Smith - Historie 1*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-b). *Lære og pakter 130*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/130?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-c). *Vår himmelske Mor*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/mother-in-heaven?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-d). *Bli som Gud*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/becoming-like-god?lang=nor)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
 }

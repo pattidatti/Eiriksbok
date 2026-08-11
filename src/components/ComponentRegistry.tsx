@@ -118,6 +118,14 @@ const OrganisertAvMaterie = lazy(() => import('./content/interactive/OrganisertA
 const DeSeksPeriodene = lazy(() => import('./content/interactive/DeSeksPeriodene').then(m => ({ default: m.DeSeksPeriodene })));
 const FoerLysetFantes = lazy(() => import('./content/interactive/FoerLysetFantes').then(m => ({ default: m.FoerLysetFantes })));
 const DenTommeRammen = lazy(() => import('./content/interactive/DenTommeRammen').then(m => ({ default: m.DenTommeRammen })));
+const NavnetSomIkkeSies = lazy(() => import('./content/interactive/NavnetSomIkkeSies').then(m => ({ default: m.NavnetSomIkkeSies })));
+const TreenighetensKnute = lazy(() => import('./content/interactive/TreenighetensKnute').then(m => ({ default: m.TreenighetensKnute })));
+const TawhidEllerShirk = lazy(() => import('./content/interactive/TawhidEllerShirk').then(m => ({ default: m.TawhidEllerShirk })));
+const SpeiletOgSolen = lazy(() => import('./content/interactive/SpeiletOgSolen').then(m => ({ default: m.SpeiletOgSolen })));
+const GuddommenModellen = lazy(() => import('./content/interactive/GuddommenModellen').then(m => ({ default: m.GuddommenModellen })));
+const HvemErStorst = lazy(() => import('./content/interactive/HvemErStorst').then(m => ({ default: m.HvemErStorst })));
+const EnEllerMillioner = lazy(() => import('./content/interactive/EnEllerMillioner').then(m => ({ default: m.EnEllerMillioner })));
+const GudeneSomIkkeFrelser = lazy(() => import('./content/interactive/GudeneSomIkkeFrelser').then(m => ({ default: m.GudeneSomIkkeFrelser })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -509,6 +517,14 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     DeSeksPeriodene,
     FoerLysetFantes,
     DenTommeRammen,
+    NavnetSomIkkeSies,
+    TreenighetensKnute,
+    TawhidEllerShirk,
+    SpeiletOgSolen,
+    GuddommenModellen,
+    HvemErStorst,
+    EnEllerMillioner,
+    GudeneSomIkkeFrelser,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,

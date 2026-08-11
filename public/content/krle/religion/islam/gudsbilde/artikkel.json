@@ -1,6 +1,7 @@
 {
     "id": "gudsbilde",
-    "title": "Tawhid: Guds enhet",
+    "title": "Én, og ingen ved siden av",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "islam",
@@ -9,83 +10,253 @@
         "gudsbilde",
         "doctrinal"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Ingen gud utenom Allah"
-        },
-        {
-            "type": "text",
-            "content": "Det viktigste dogmet i islam er Tawhid – troen på Guds absolutte enhet. Gud (Allah) har ingen partnere, ingen sønn og ingen like."
-        },
-        {
-            "type": "header",
-            "text": "Shirk"
-        },
-        {
-            "type": "text",
-            "content": "Det motsatte av Tawhid er Shirk – å sette noe ved siden av Gud. Dette regnes som den største synden i islam."
-        },
-        {
-            "type": "header",
-            "text": "Allahs egenskaper"
-        },
-        {
-            "type": "text",
-            "content": "Gud har 99 vakre navn som beskriver hans egenskaper, som Den Barmhjertige, Den Nåderike, Skaperen og Dommeren."
-        }
+    "category": "Islam",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Tawhid betyr at Gud er én. Det er den mest grunnleggende læren i islam.",
+        "Å sette noe eller noen ved siden av Gud kalles shirk og regnes som den største synden.",
+        "Ordet Allah er ikke navnet på en egen muslimsk gud. Det er det arabiske ordet for Gud.",
+        "Koranen har ikke noe uttrykkelig bildeforbud. Forbudet mot å avbilde levende vesener kommer fra hadith.",
+        "Gud beskrives i stedet med navn. En utbredt liste teller nittini av dem."
     ],
     "concepts": [
         {
             "id": "tawhid",
             "term": "Tawhid",
-            "definition": "Læren om Guds enhet. Det finnes bare én Gud."
-        },
-        {
-            "id": "allah",
-            "term": "Allah",
-            "definition": "Det arabiske ordet for Gud."
+            "definition": "Læren om Guds enhet. Det finnes bare én Gud, og ingenting står ved siden av ham."
         },
         {
             "id": "shirk",
             "term": "Shirk",
-            "definition": "Avgudsdyrkelse. Å sidestille noe med Gud."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva betyr Tawhid?",
-            "options": [
-                "Hellig krig",
-                "Guds enhet",
-                "Bønn"
-            ],
-            "answer": "Guds enhet"
+            "definition": "Å sette noe eller noen ved siden av Gud. Den største synden i islam."
         },
         {
-            "question": "Hva er den største synden i islam?",
-            "options": [
-                "Å stjele",
-                "Shirk (avgudsdyrkelse)",
-                "Å lyve"
-            ],
-            "answer": "Shirk (avgudsdyrkelse)"
+            "id": "allah",
+            "term": "Allah",
+            "definition": "Det arabiske ordet for Gud. Også arabiske kristne og jøder bruker det."
         },
         {
-            "question": "Hvor mange navn har Gud i islam?",
-            "options": [
-                "1",
-                "10",
-                "99"
-            ],
-            "answer": "99"
+            "id": "shahada",
+            "term": "Shahada",
+            "definition": "Trosbekjennelsen i islam, den første av de fem søylene. Den som sier den, er muslim."
+        },
+        {
+            "id": "al-asma-al-husna",
+            "term": "Al-asma al-husna",
+            "definition": "De vakreste navnene. Navnene som beskriver Guds egenskaper i islam."
         }
     ],
-    "quote": {
-        "text": "Si: Han er Allah, Én. Allah, den Evige. Han har ikke avlet, og Han er ikke avlet, og ingen er Hans like.",
-        "source": "Koranen",
-        "reference": "Sure 112"
-    }
+    "content": [
+        {
+            "type": "text",
+            "content": "Gå inn i en moské, og noe mangler. Det henger ingen malerier av Gud på veggene. Det står ingen statue framme i rommet. Du finner ikke ett eneste ansikt. I stedet er flatene dekket av mønstre, ranker og skrift som slynger seg rundt seg selv. Islamsk kunst har tradisjonelt hatt en motvilje mot å avbilde levende vesener, og kreftene er lagt i ornamentikk, håndverk og kalligrafi i stedet (Blom, 2024). Det er ikke fordi muslimer mangler ord om Gud. Det er fordi de mener at ingen av ordene kan bli et bilde."
+        },
+        {
+            "type": "text",
+            "content": "Alt henger sammen med én kort setning. På arabisk lyder den la ilaha illa allah wa muhammad rasul allah: det finnes ingen gud utenom Gud, og Muhammad er hans profet. Setningen heter shahada, trosbekjennelsen, og er den første av islams fem søyler. Den som sier den, er muslim (Vogt, 2025). Legg merke til rekkefølgen. Før alt annet kommer et regnestykke: én."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Moskévegg dekket av arabisk kalligrafi og geometriske mønstre",
+            "caption": "Der andre religioner har bilder, har moskeen mønstre og skrift."
+        },
+        {
+            "type": "text",
+            "content": "Læren om at Gud er én, heter tawhid. En streng monoteisme preger islam, og Gud er én (Vogt, 2026). Ordet Allah er ikke navnet på en egen muslimsk gud. Det er rett og slett det arabiske ordet for Gud, satt sammen av al, som betyr den, og ilah, som betyr en gud (Eggen, 2025). Arabiske kristne og jøder bruker det samme ordet når de ber."
+        },
+        {
+            "type": "header",
+            "text": "Setningen som deler alt i to"
+        },
+        {
+            "type": "text",
+            "content": "Tawhid er ikke bare en opplysning om hvor mange guder det finnes. Det er en grense. Alt som finnes, havner på én av to sider: Gud, eller det Gud har skapt. Ingenting kan flyttes over."
+        },
+        {
+            "type": "text",
+            "content": "Å sette noe eller noen ved siden av Gud kalles shirk, og det regnes som den største synden i islam (Vogt, 2026). Shirk trenger ikke bety at du bøyer deg for en statue. Det holder å gi noe annet den plassen som bare Gud skal ha. Prøv deg på seks påstander under, og se selv hvor grensa går."
+        },
+        {
+            "type": "component",
+            "name": "TawhidEllerShirk",
+            "props": {
+                "title": "Hvor går grensa?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Fikk du noe feil, er du i godt selskap. Grensa er skarp, men den er ikke alltid lett å se. Da Muhammad begynte å forkynne, var Allah allerede et kjent navn i Arabia. Men da var Allah én gud blant mange, trolig en skapergud uten noen framtredende plass (Eggen, 2025). Det nye var ikke navnet. Det nye var at det ikke fantes noen andre."
+        },
+        {
+            "type": "header",
+            "text": "Derfor tegner ingen Gud"
+        },
+        {
+            "type": "text",
+            "content": "Hvis Gud er helt ulik alt annet, kan ingenting du kjenner brukes til å vise ham. Koranen inneholder ikke noe uttrykkelig bildeforbud, slik De ti bud gjør i Bibelen. Forbudet kommer fra hadith, fortellingene om hva profeten sa og gjorde. Der omtales Muhammad som svært negativ til bilder av levende vesener, altså mennesker og dyr (Vogt & Farstad, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Begrunnelsen er verdt å stoppe ved. Kunstneren blir sett på som Guds rival, en som urettmessig prøver å etterligne Guds skaperkraft (Vogt & Farstad, 2026). Å lage liv er Guds arbeid. Den som later som om han kan det, har allerede tatt et skritt mot grensa."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Si: «Han er Gud, Én. Gud, den Evigvarende. Ikke har Han avlet noen, ei heller er Han selv blitt avlet. Ingen er Hans like.»",
+                "author": "Koranen, sure 112, i Einar Bergs oversettelse"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Denne korte suren er fire linjer lang, og den er rettet mot alle former for flerguderi (Vogt, 2026). Den treffer også treenighetslæren i kristendommen, som muslimer forstår som at Gud deles i tre. Muslimer regner Jesus som en profet, men ikke som Guds sønn (Seim & Elstad, 2024). Kristne selv mener at de tror på én Gud, og at treenigheten ikke bryter med det. Her leser to religioner den samme grensa på hver sin måte. Du kan lese mer om boka linjene står i, i artikkelen om [Koranen](/krle/religion/islam/hellige-tekster)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen koran med arabisk skrift i varmt lys",
+            "caption": "Sure 112 er fire korte linjer, og de sier hva Gud ikke er."
+        },
+        {
+            "type": "header",
+            "text": "Nittini navn i stedet for ett bilde"
+        },
+        {
+            "type": "text",
+            "content": "Hvis du ikke kan tegne Gud, hvordan snakker du da om ham? Svaret i islam er navnene. Koranen framstiller Gud som et mysterium og beskriver ham med en rekke navn, som Den barmhjertige, Den levende og Den hellige. En utbredt liste teller nittini navn, mens andre lister inneholder enda flere (Eggen, 2025). De kalles de vakreste navnene, på arabisk al-asma al-husna."
+        },
+        {
+            "type": "text",
+            "content": "Navnene lever ikke bare i bøker. De læres utenat, resiteres i forsamlinger og skrives med vakker kalligrafi som henges opp i hjem og moskeer (Eggen, 2025). Islamic Relief Norge lister dem opp i rekkefølge, og de tre første er Ar-Rahman, Den barmhjertige, Ar-Rahim, Den nåderike, og Al-Malik, Kongen (Islamic Relief Norge, u.å.). Se hva navnene faktisk gjør. Hvert av dem sier hvordan Gud er, aldri hvordan Gud ser ut. Du kan lese hele lista og fortsatt ikke vite én ting om form eller farge."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Kalligrafisk plakat med Guds navn på vegg i et hjem",
+            "caption": "Navnene henges opp der bildet kunne hengt."
+        },
+        {
+            "type": "header",
+            "text": "Enige om én, uenige om resten"
+        },
+        {
+            "type": "text",
+            "content": "Tawhid er felles for alle muslimer, men muslimer er ikke enige om alt. Rundt 85 prosent er sunnier og omtrent 15 prosent er sjiaer, fordelt på flere grupper (Vogt, 2026). Bildeforbudet viser forskjellene godt. Det er særlig viktig i sunniislam, mens sjiaislam og sufismen har et mindre strengt syn. I sjiatradisjonen brukes bilder av hellige personer og livet deres den dag i dag i forkynnelse og religiøs opplæring. Strengest er wahhabisme og salafisme. Der er dukker og lekedyr forbudt, og i illustrerte barnebøker tegnes mennesker uten ansikt (Vogt & Farstad, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Historien er heller ikke entydig. Fra 1200-tallet laget muslimske kunstnere utsøkte bokillustrasjoner, og religiøse tekster kunne pyntes med fargerike bilder av profeter, engler og hellige skikkelser (Vogt & Farstad, 2026). Regelen har altså aldri vært helt lik overalt. Men på ett punkt står alle sammen: ingen har forsøkt å tegne Gud selv. Mannen som brakte budskapet, kan du lese mer om i artikkelen om [Muhammad](/krle/religion/islam/grunnleggere)."
+        },
+        {
+            "type": "text",
+            "content": "Gå tilbake til moskeen en siste gang. Rommet er ikke tomt fordi noe mangler. Mønstrene og skriften står der i stedet for et ansikt, fordi et ansikt ville gjort Gud til noe man kan måle og sammenligne med andre ting. Vil du se hvordan en annen religion svarer på det samme spørsmålet, kan du sammenligne med [gudsbildet i sikhismen](/krle/religion/sikhisme/gudsbilde)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr tawhid, og hvorfor kalles det den mest grunnleggende læren i islam?",
+                    "Hva er shirk, og hvilken plass har det blant syndene i islam?",
+                    "Hva sier trosbekjennelsen shahada, og hva skal til for å regnes som muslim?",
+                    "Hvor kommer forbudet mot å avbilde levende vesener fra, hvis det ikke står uttrykkelig i Koranen?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor de nittini navnene ikke gjør Gud til nittini guder.",
+                    "Artikkelen sier at navnene forteller hvordan Gud er, aldri hvordan Gud ser ut. Hvorfor er den forskjellen viktig i islam?",
+                    "Muslimer forstår treenigheten som at Gud deles i tre, mens kristne mener at de tror på én Gud. Hvordan kan to religioner lese det samme spørsmålet så ulikt?",
+                    "Sjiaislam er mer åpen for religiøse bilder enn sunniislam. Hva sier det om hvordan en felles lære kan bli praktisert forskjellig?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign gudsbildet i islam med [gudsbildet i sikhismen](/krle/religion/sikhisme/gudsbilde). Hva er likt, og hva skiller?",
+                    "Finn tre av de nittini navnene og skriv en kort tekst om hva slags bilde av Gud de til sammen gir.",
+                    "Diskuter i klassen: hjelper det å ha et bilde av det man tror på, eller kommer bildet i veien?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr tawhid?",
+                        "options": [
+                            "Læren om at Gud er én",
+                            "Reisen til Mekka",
+                            "Den rituelle bønnen",
+                            "Fasten i ramadan"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Tawhid er læren om Guds enhet. En streng monoteisme preger islam."
+                    },
+                    {
+                        "question": "Hva er shirk?",
+                        "options": [
+                            "Å be på feil tidspunkt",
+                            "Å sette noe eller noen ved siden av Gud",
+                            "Å lese Koranen på et annet språk enn arabisk",
+                            "Å spise mat som ikke er halal"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Shirk betyr å gi noe annet den plassen som bare Gud skal ha. Det regnes som den største synden i islam."
+                    },
+                    {
+                        "question": "Hva sier trosbekjennelsen shahada?",
+                        "options": [
+                            "At Koranen er skapt av Gud",
+                            "At alle muslimer skal reise til Mekka",
+                            "At det ikke finnes noen gud utenom Gud, og at Muhammad er hans profet",
+                            "At Gud har nittini navn"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Shahada er den første av islams fem søyler, og den som sier setningen, er muslim."
+                    },
+                    {
+                        "question": "Hvor kommer forbudet mot å avbilde levende vesener fra?",
+                        "options": [
+                            "Fra et uttrykkelig forbud i Koranen",
+                            "Fra hadith, fortellingene om hva profeten sa og gjorde",
+                            "Fra De ti bud i Bibelen",
+                            "Fra en avgjørelse tatt av kalifen i Bagdad"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Koranen har ikke noe uttrykkelig bildeforbud. Forbudet er begrunnet i hadith, der Muhammad omtales som svært negativ til bilder av mennesker og dyr."
+                    },
+                    {
+                        "question": "Hva er de nittini navnene i islam?",
+                        "options": [
+                            "Navnene på profetene før Muhammad",
+                            "Navnene på de viktigste moskeene",
+                            "Beskrivelser av den ene Gudens egenskaper",
+                            "Nittini guder som deler makten"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Navnene kalles de vakreste navnene og beskriver hvordan Gud er. De deler ikke Gud opp i flere."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Vogt, K. (2026). *Islam*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+                    "Vogt, K. (2025). *Shahada*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/shahada](https://snl.no/shahada)",
+                    "Vogt, K. & Farstad, M. H. (2026). *Bildeforbud - islam*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bildeforbud_-_islam](https://snl.no/bildeforbud_-_islam)",
+                    "Eggen, N. S. (2025). *Allah*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Allah](https://snl.no/Allah)",
+                    "Seim, T. K. & Elstad, H. (2024). *Jesus*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesus](https://snl.no/Jesus)",
+                    "Blom, H. (2024). *Islamsk kunst og arkitektur*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/islamsk_kunst](https://snl.no/islamsk_kunst)",
+                    "Islamic Relief Norge. (u.å.). *Allahs 99 navn (Al Asma ul Husna)*. Hentet 11.08.2026 fra [islamic-relief.no](https://islamic-relief.no/allahs-99-navn-al-asma-ul-husna/)",
+                    "Koranen. (u.å.). *Sure 112, al-Ikhlas* (E. Berg, overs.). Hentet 11.08.2026 fra [quranv.com/no/112](https://www.quranv.com/no/112/1/)"
+                ]
+            }
+        }
+    ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
+    "timeline": []
 }

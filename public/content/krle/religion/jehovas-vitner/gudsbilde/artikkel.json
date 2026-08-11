@@ -1,91 +1,279 @@
 {
-    "id": "gudsbilde",
-    "title": "Jehova",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "jehovas-vitner",
-    "dimension": "doctrinal",
-    "comparison_tags": [
-        "gudsbilde",
-        "doctrinal"
-    ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Den eneste sanne Gud"
-        },
-        {
-            "type": "text",
-            "content": "Jehovas vitner tror at det bare finnes én allmektig Gud, og hans navn er Jehova. De avviser treenighetslæren."
-        },
-        {
-            "type": "header",
-            "text": "Jesus er Guds sønn"
-        },
-        {
-            "type": "text",
-            "content": "De tror at Jesus er Guds sønn og hans første skapning, men at han ikke er Gud selv. Den hellige ånd er Guds virksomme kraft, ikke en person."
-        },
-        {
-            "type": "header",
-            "text": "Kjærlighet"
-        },
-        {
-            "type": "text",
-            "content": "Guds fremste egenskap er kjærlighet. Han ønsker at alle mennesker skal lære sannheten å kjenne."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "jehova",
-            "term": "Jehova",
-            "definition": "Navnet på den eneste sanne Gud."
-        },
-        {
-            "id": "treenigheten",
-            "term": "Treenigheten",
-            "definition": "En lære som Jehovas vitner avviser som ubibelsk."
-        },
-        {
-            "id": "den-hellige-and",
-            "term": "Den hellige ånd",
-            "definition": "Guds virksomme kraft (ikke en person)."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva er Guds navn ifølge Jehovas vitner?",
-            "options": [
-                "Herren",
-                "Jehova",
-                "Gud"
-            ],
-            "answer": "Jehova"
-        },
-        {
-            "question": "Tror de på treenigheten?",
-            "options": [
-                "Ja",
-                "Nei",
-                "Vet ikke"
-            ],
-            "answer": "Nei"
-        },
-        {
-            "question": "Hvem er Jesus?",
-            "options": [
-                "Gud selv",
-                "Guds sønn",
-                "En engel"
-            ],
-            "answer": "Guds sønn"
-        }
-    ],
-    "quote": {
-        "text": "Du, som har navnet Jehova, du alene er Den Høyeste over hele jorden.",
-        "source": "Ny verden-oversettelsen",
-        "reference": "Salme 83:18"
+  "id": "gudsbilde",
+  "title": "Gud med fornavn",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "jehovas-vitner",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "gudsbilde",
+    "doctrinal"
+  ],
+  "category": "Jehovas vitner",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Jehovas vitner mener Gud har et personlig navn, og at navnet er Jehova.",
+    "Navnet kommer av fire hebraiske bokstaver, JHVH, som ingen i dag vet sikkert hvordan skal uttales.",
+    "De avviser treenighetslæren og mener den ble vedtatt på kirkemøter flere hundre år etter Jesus.",
+    "Jesus regnes som Guds sønn og den første Gud skapte, ikke som Gud selv.",
+    "Den hellige ånd er ikke en person, men Guds virksomme kraft."
+  ],
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "jehova",
+      "term": "Jehova",
+      "definition": "Navnet Jehovas vitner bruker om Gud. Det er laget av de fire hebraiske bokstavene JHVH."
+    },
+    {
+      "id": "tetragrammet",
+      "term": "Tetragrammet",
+      "definition": "De fire hebraiske bokstavene JHVH, som er Guds navn i Det gamle testamentet. Ordet betyr de fire bokstavene."
+    },
+    {
+      "id": "treenigheten",
+      "term": "Treenigheten",
+      "definition": "Den kristne læren om at Gud er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd."
+    },
+    {
+      "id": "virksom-kraft",
+      "term": "Guds virksomme kraft",
+      "definition": "Jehovas vitners forklaring på hva den hellige ånd er. En kraft Gud bruker, ikke en person."
+    },
+    {
+      "id": "monoteisme",
+      "term": "Monoteisme",
+      "definition": "Troen på at det bare finnes én Gud."
     }
+  ],
+  "quote": {
+    "text": "Dere er mine vitner, sier Jehova.",
+    "source": "Jesaja 43,10 (Ny verden-oversettelsen)",
+    "reference": "Jesaja 43,10"
+  },
+  "content": [
+    {
+      "type": "text",
+      "content": "Det ringer på døra en lørdag formiddag. Utenfor står to personer med et blad i hånda. Du har sett dem før, og du vet omtrent hva de heter: Jehovas vitner. Men har du tenkt over hva det navnet faktisk sier? Det sier: vi vitner om noen som har et navn."
+    },
+    {
+      "type": "text",
+      "content": "For de aller fleste kristne heter Gud rett og slett Gud, eller Herren. Jehovas vitner mener at det er å gjemme bort noe viktig. De mener Gud har et personlig navn, og at det navnet er Jehova (Ringnes mfl., 2026). Det høres ut som en liten detalj. Det er det ikke. Nesten alt de tror om Gud henger sammen med dette ene ordet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nærbilde av hebraisk skrift med de fire bokstavene JHVH",
+      "caption": "Guds navn i Det gamle testamentet består av fire hebraiske konsonanter."
+    },
+    {
+      "type": "text",
+      "content": "Men her møter de et problem som ingen har klart å løse: ingen vet sikkert hvordan navnet skal uttales."
+    },
+    {
+      "type": "header",
+      "text": "Fire bokstaver uten vokaler"
+    },
+    {
+      "type": "text",
+      "content": "I den hebraiske bibelen skrives Guds navn med fire konsonanter: JHVH. Fagfolk kaller dem tetragrammet, som betyr de fire bokstavene (Groth, 2025). Vokalene mangler, slik de ofte gjorde i gammel hebraisk skrift. Du får altså navnet, men ikke lyden."
+    },
+    {
+      "type": "text",
+      "content": "Ifølge jødisk tradisjon var navnet så hellig at bare øverstepresten sa det høyt, én gang i året, i tempelet. Etter at tempelet ble ødelagt i år 70, ble den riktige uttalen gradvis glemt. Allerede fra rundt 200 år før vår tidsregning leste jødene ordet Adonaj, som betyr Herren, i stedet for navnet (Groth, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "I middelalderen satt kristne teologer og studerte hebraiske håndskrifter. Under konsonantene JHVH sto vokaltegnene fra Adonaj. De la de to sammen, og ut kom formen Jehova (Groth, 2025). Forskere i dag skriver heller Jahve eller Yahweh, og norske bibeloversettelser skriver Herren. Jehovas vitner kjenner til dette, men holder på formen Jehova fordi den er innarbeidet (Ringnes mfl., 2026). Selv peker de på at navnet står omkring 7000 ganger i Bibelen, og at Gud der sier: Jeg er Jehova, det er mitt navn (Jehovas vitner, u.å.-b)."
+    },
+    {
+      "type": "text",
+      "content": "Navnet er likevel bare den ene halvdelen av gudsbildet deres. Den andre halvdelen handler om hvem som ikke har det navnet. Prøv modellen under, og se hvordan de rangerer de tre skikkelsene kristne flest snakker om."
+    },
+    {
+      "type": "component",
+      "name": "HvemErStorst",
+      "props": {
+        "title": "Hvem er størst?"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva du nettopp gjorde. Du satte ikke tre like store ting ved siden av hverandre. Du satte dem over og under hverandre. Det er hele poenget."
+    },
+    {
+      "type": "header",
+      "text": "Derfor sier de nei til treenigheten"
+    },
+    {
+      "type": "text",
+      "content": "De aller fleste kristne kirker lærer at Gud er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd. Denne læren kalles treenigheten. Den ble fastsatt på kirkemøtet i Nikea i år 325, der det ble bestemt at Kristus er av samme vesen som Faderen, og fullført på kirkemøtet i Konstantinopel i 381, da det samme ble sagt om ånden (Leivestad og Elstad, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Jehovas vitner peker på nettopp disse årstallene. De mener at læren ble vedtatt på kirkemøter flere hundre år etter at Jesus levde, og at den derfor ikke hører hjemme i Bibelen (Ringnes mfl., 2026). Kirkene som holder fast på treenigheten, svarer at læren ikke er noe nytt påfunn, men en sammenfatning av det de mener bibeltekstene til sammen sier. Store norske leksikon skriver at Bibelen ikke inneholder noen uttrykkelig lære om forholdet mellom de tre (Leivestad og Elstad, 2026). Uenigheten handler altså om hva man kan lese ut av tekster som ikke sier det rett ut."
+    },
+    {
+      "type": "text",
+      "content": "Selv viser Jehovas vitner blant annet til Johannes 14,28, der Jesus sier at Faderen er større enn ham (Jehovas vitner, u.å.-a). Hvis Faderen er større, mener de, kan ikke de to være like store. De tilber derfor bare én: den ene sanne og allmektige Gud, skaperen, som de sier er Gud for Abraham, Moses og Jesus (Jehovas vitner, u.å.-a)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Dere er mine vitner, sier Jehova.",
+        "author": "Jesaja 43,10 i Ny verden-oversettelsen, verset bevegelsen har navnet sitt fra"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Slik lyder verset i deres egen bibeloversettelse, [Ny verden-oversettelsen](/krle/religion/jehovas-vitner/hellige-tekster). Slår du opp i en vanlig norsk bibel, står det Herren og ikke Jehova. Det er dette verset navnet på bevegelsen kommer fra (Ringnes mfl., 2026). Å hete Jehovas vitner er altså ikke bare en merkelapp. Det er en oppgave: å gjøre navnet kjent for andre. Da forstår du kanskje bedre hvorfor noen ringer på døra di en lørdag formiddag."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Åpen bibel med understrekninger og notatbok på et bord",
+      "caption": "Alle læresetningene bygger på egne tolkninger av bibeltekster."
+    },
+    {
+      "type": "header",
+      "text": "Sønnen som ble skapt"
+    },
+    {
+      "type": "text",
+      "content": "Hva er da Jesus, hvis han ikke er Gud? Jehovas vitner regner ham som Guds sønn og som sin frelser, men understreker at han ikke er den allmektige Gud (Jehovas vitner, u.å.-a). De lærer at han er den første Gud skapte, og de identifiserer ham med erkeengelen Mikael både før og etter livet hans på jorda (Ringnes mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "En annen forskjell er lettere å få øye på. Jehovas vitner mener at Jesus døde på en påle, ikke på et kors (Ringnes mfl., 2026). Det er en liten uenighet om et redskap, men den viser hvordan de arbeider: de leser bibeltekstene på sin egen måte, og lander ofte et annet sted enn kirkene har gjort."
+    },
+    {
+      "type": "text",
+      "content": "Den tredje skikkelsen, den hellige ånd, forsvinner nesten helt ut av regnestykket. Jehovas vitner oppfatter ikke ånden som en person, men som Guds virksomme kraft (Ringnes mfl., 2026). Det betyr at ånden er noe Gud bruker, ikke noen Gud er. En kraft kan gjøre noe, men den kan ikke ville noe på egen hånd."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "To personer i pen bekledning samtaler ved en inngangsdør",
+      "caption": "Navnet Jehovas vitner er både en tro og en oppgave: å fortelle om navnet."
+    },
+    {
+      "type": "header",
+      "text": "Et lite trossamfunn med en stor uenighet"
+    },
+    {
+      "type": "text",
+      "content": "Bevegelsen ble grunnlagt i USA på 1870-tallet av [Charles Taze Russell](/krle/religion/jehovas-vitner/grunnleggere), som levde fra 1852 til 1916. Navnet Jehovas vitner ble tatt i bruk i 1931 (Ringnes mfl., 2026). I dag finnes de over hele verden. I Norge var det i 2019 rundt 12 000 aktive forkynnere fordelt på omtrent 167 menigheter (Ringnes mfl., 2026). Det er få mennesker, men de er godt synlige."
+    },
+    {
+      "type": "text",
+      "content": "Som i alle trossamfunn legger den enkelte vekt på ulike sider ved troen, og ikke alle medlemmer er like opptatt av de samme spørsmålene. Men på ett punkt er de samlet, og det er punktet som skiller dem tydeligst fra andre kristne: Jehova er én, og bare én. Alt annet står under ham."
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til at begge sider i denne uenigheten leser den samme boka. Kirkene som tror på treenigheten, og Jehovas vitner som avviser den, bruker de samme bibeltekstene. De trekker bare helt ulike slutninger av dem. Det er verdt å ta med seg neste gang det ringer på døra."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er tetragrammet, og hvorfor er det uklart hvordan det skal uttales?",
+          "Hvordan oppsto formen Jehova, ifølge artikkelen?",
+          "Hva mener Jehovas vitner at Jesus er?",
+          "Hva mener de at den hellige ånd er?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor årstallene 325 og 381 er så viktige i argumentasjonen til Jehovas vitner.",
+          "Artikkelen sier at begge sider leser den samme boka. Hvordan kan to grupper lese den samme teksten og komme fram til helt ulike svar?",
+          "Hvorfor tror du det betyr så mye for Jehovas vitner at Gud har et personlig navn?",
+          "Hvilken forskjell gjør det om den hellige ånd er en person eller en kraft?"
+        ],
+        "gaaVidere": [
+          "Lag en enkel tegning eller tabell som viser forskjellen mellom treenighetslæren og Jehovas vitners modell.",
+          "Finn ut hvordan Guds navn er oversatt i en norsk bibel du har tilgang til. Står det Herren, Jahve eller noe annet?",
+          "Diskuter i klassen: Bør et navn på Gud oversettes, eller bør det stå slik det er skrevet i grunnteksten?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er tetragrammet?",
+            "options": [
+              "Fire bønner som bes hver dag",
+              "De fire hebraiske bokstavene JHVH, som er Guds navn",
+              "Et hellig tall i Bibelen",
+              "Navnet på Jehovas vitners bibeloversettelse"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Tetragrammet betyr de fire bokstavene, og viser til konsonantene JHVH i den hebraiske bibelen."
+          },
+          {
+            "question": "Hvordan oppsto formen Jehova?",
+            "options": [
+              "Den ble funnet i et gammelt håndskrift fra tempelet",
+              "Charles Taze Russell fant den opp på 1870-tallet",
+              "Kristne teologer i middelalderen satte vokalene fra Adonaj inn i konsonantene JHVH",
+              "Den ble vedtatt på kirkemøtet i Nikea i 325"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Jødene leste Adonaj i stedet for navnet. Vokaltegnene fra Adonaj sto under konsonantene JHVH, og kombinasjonen ga formen Jehova."
+          },
+          {
+            "question": "Hva mener Jehovas vitner om Jesus?",
+            "options": [
+              "At han er den allmektige Gud selv",
+              "At han er Guds sønn og den første Gud skapte",
+              "At han bare var en vanlig profet",
+              "At han aldri har levd"
+            ],
+            "correctAnswer": 1,
+            "explanation": "De regner Jesus som Guds sønn og frelser, men som skapt og underordnet Faderen."
+          },
+          {
+            "question": "Hvorfor avviser Jehovas vitner treenighetslæren?",
+            "options": [
+              "Fordi de mener den ble vedtatt på kirkemøter flere hundre år etter Jesus",
+              "Fordi de ikke tror på Gud i det hele tatt",
+              "Fordi de mener det finnes flere guder",
+              "Fordi den ble forbudt i Norge"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Læren ble fastsatt i Nikea i 325 og Konstantinopel i 381, og Jehovas vitner mener derfor at den ikke står i Bibelen."
+          },
+          {
+            "question": "Hva er den hellige ånd ifølge Jehovas vitner?",
+            "options": [
+              "Den tredje personen i Gud",
+              "En engel som tjener Gud",
+              "Guds virksomme kraft, ikke en person",
+              "Et annet navn på Jesus"
+            ],
+            "correctAnswer": 2,
+            "explanation": "De oppfatter ånden som kraften Gud bruker for å utføre viljen sin, ikke som noen."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Groth, B. (2025). *Jahve*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jahve](https://snl.no/Jahve)",
+          "Leivestad, R. & Elstad, H. (2026). *Treenigheten*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/treenigheten](https://snl.no/treenigheten)",
+          "Jehovas vitner. (u.å.-a). *What do Jehovah's Witnesses believe?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/jehovah-witness-beliefs/)",
+          "Jehovas vitner. (u.å.-b). *Does God have a name?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/gods-name/)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
 }

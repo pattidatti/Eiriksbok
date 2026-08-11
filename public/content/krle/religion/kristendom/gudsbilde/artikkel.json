@@ -1,6 +1,7 @@
 {
     "id": "gudsbilde",
-    "title": "Treenigheten",
+    "title": "Én Gud, tre personer",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
@@ -9,135 +10,281 @@
         "gudsbilde",
         "doctrinal"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Én Gud i tre personer"
-        },
-        {
-            "type": "text",
-            "content": "Kristne tror på én Gud, men at Gud viser seg som tre personer: Faderen, Sønnen og Den hellige ånd. Dette kalles treenigheten. Ideen var ikke enkel for de første kristne heller. Det tok flere hundre år med diskusjoner før kirken vedtok treenighetslæren på kirkemøtet i Nikea i år 325."
-        },
-        {
-            "type": "header",
-            "text": "Faderen - Skaperen"
-        },
-        {
-            "type": "text",
-            "content": "Den første personen i treenigheten er Gud Faderen. Han er skaperen av alt som finnes. Kristne ser ikke på Gud som en streng dommer som bare straffer. Tvert imot er Gud en kjærlig far som vil ha et nært forhold til menneskene. Jesus kalte Gud for Abba, som betyr pappa på arameisk - det var et svært uvanlig og personlig ord å bruke om Gud."
-        },
-        {
-            "type": "header",
-            "text": "Sønnen - Jesus Kristus"
-        },
-        {
-            "type": "text",
-            "content": "Kristne tror at Jesus var både fullt ut Gud og fullt ut menneske. At Gud ble menneske kalles inkarnasjonen. Tenk deg at kongen i et land kledde seg ut som en vanlig person og levde blant folket for å virkelig forstå livene deres. På lignende måte tror kristne at Gud ble menneske i Jesus for å vise hvem han er og for å dele menneskers glede og smerte."
-        },
-        {
-            "type": "header",
-            "text": "Den hellige ånd"
-        },
-        {
-            "type": "text",
-            "content": "Den tredje personen i treenigheten er Den hellige ånd. Kristne tror at etter at Jesus forlot jorda, sendte Gud sin ånd til menneskene. Det skjedde på pinsedagen, da disiplene plutselig begynte å tale på fremmede språk. Den hellige ånd er Guds nærvær i verden i dag - en kraft som gir troende styrke, trøst og veiledning."
-        },
-        {
-            "type": "header",
-            "text": "Gud som kjærlighet"
-        },
-        {
-            "type": "text",
-            "content": "I Det nye testamentet står det at Gud er kjærlighet. For kristne er ikke kjærlighet bare noe Gud gjør, det er noe Gud er. Hele skapelsen, Jesu liv og Den hellige ånds virke handler om kjærlighet. Denne tanken skiller seg fra gudsbilder der Gud først og fremst er en mektig hersker eller en fjern kraft."
-        },
-        {
-            "type": "header",
-            "text": "Hvordan forestiller kristne seg Gud?"
-        },
-        {
-            "type": "text",
-            "content": "Kristne tror at Gud ikke har en fysisk kropp og ikke kan fanges i et bilde. Likevel har kunstnere gjennom historien forsøkt å framstille Gud - som en gammel mann med skjegg, som et lys, eller som en hånd som strekker seg ut fra himmelen. Slike bilder er symboler, ikke forsøk på å vise hvordan Gud faktisk ser ut. I ortodokse kirker brukes ikoner, som er religiøse bilder som hjelper de troende å fokusere på Gud."
-        }
+    "category": "Kristendom",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Kristne tror på én Gud som er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd.",
+        "Bibelen inneholder ingen ferdig lære om hvordan de tre henger sammen. Den måtte kirken formulere selv.",
+        "Striden startet i Alexandria rundt år 318, da presten Arius mente at Sønnen var skapt.",
+        "Kirkemøtet i Nikea i 325 vedtok at Sønnen er av samme vesen som Faderen. Saken ble først avgjort i Konstantinopel i 381.",
+        "Kristne er fortsatt uenige om detaljer, blant annet om Ånden utgår fra Faderen alene eller fra Faderen og Sønnen."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "treenighet",
             "term": "Treenighet",
-            "definition": "Læren om at Gud er én, men tre personer: Faderen, Sønnen og Den hellige ånd."
+            "definition": "Læren om at Gud er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd."
         },
         {
             "id": "inkarnasjon",
             "term": "Inkarnasjon",
-            "definition": "At Gud ble menneske i Jesus Kristus. Betyr å bli kjøtt - altså å ta menneskelig form."
+            "definition": "At en guddommelig skikkelse trer fram som menneske. Kristne mener dette skjedde i Jesus."
         },
         {
-            "id": "den-hellige-and",
-            "term": "Den hellige ånd",
-            "definition": "Guds nærvær i verden og i de troende. Den tredje personen i treenigheten."
+            "id": "arianisme",
+            "term": "Arianisme",
+            "definition": "Læren til presten Arius om at Sønnen var skapt av Faderen og ikke av samme vesen som ham."
         },
         {
-            "id": "nikea-konsilet",
-            "term": "Kirkemøtet i Nikea",
-            "definition": "Et viktig møte i år 325 der kristne ledere ble enige om treenighetslæren."
+            "id": "den-nikenske-trosbekjennelsen",
+            "term": "Den nikenske trosbekjennelsen",
+            "definition": "Trosbekjennelsen som ble formulert i Nikea i 325 og fikk sin nåværende form i Konstantinopel i 381."
         },
         {
-            "id": "pinse",
-            "term": "Pinse",
-            "definition": "Feiringen av at Den hellige ånd kom til disiplene. Regnes som kirkens fødselsdag."
+            "id": "filioque",
+            "term": "Filioque",
+            "definition": "Uenigheten om Den hellige ånd utgår fra Faderen alene eller fra både Faderen og Sønnen."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva er treenigheten?",
-            "options": [
-                "Tre guder",
-                "Gud, Jesus og Maria",
-                "Faderen, Sønnen og Den hellige ånd"
-            ],
-            "answer": "Faderen, Sønnen og Den hellige ånd"
+            "type": "text",
+            "content": "I byen Alexandria i Egypt ble en biskop og en av prestene hans uenige en gang rundt år 318. Biskopen hadde sagt at både Gud Faderen og Sønnen hadde vært til i all evighet. Presten, som het Arius, mente det var umulig. En sønn må da bli til etter faren sin (Hvalvik, 2025)."
         },
         {
-            "question": "Hva betyr inkarnasjon?",
-            "options": [
-                "At Gud er usynlig",
-                "At Gud ble menneske",
-                "At Jesus var en engel"
-            ],
-            "answer": "At Gud ble menneske"
+            "type": "text",
+            "content": "Uenigheten ble ikke værende i Alexandria. Den spredte seg gjennom hele kirken, varte i over seksti år, dro med seg en romersk keiser og to store kirkemøter, og endte i noen setninger som fortsatt leses høyt i kirker hver søndag. Alt handlet om det samme spørsmålet: hvem er egentlig Jesus?"
         },
         {
-            "question": "Når ble treenighetslæren vedtatt?",
-            "options": [
-                "Da Jesus levde",
-                "På kirkemøtet i Nikea i år 325",
-                "Under reformasjonen"
-            ],
-            "answer": "På kirkemøtet i Nikea i år 325"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Biskoper diskuterer rundt et bord i senantikkens Alexandria",
+            "caption": "Striden begynte som en faglig uenighet mellom to menn i Alexandria."
         },
         {
-            "question": "Hva skjedde på pinsedagen?",
-            "options": [
-                "Jesus ble født",
-                "Den hellige ånd kom til disiplene",
-                "Moses mottok De ti bud"
-            ],
-            "answer": "Den hellige ånd kom til disiplene"
+            "type": "text",
+            "content": "Svaret kristne til slutt samlet seg om, kalles treenigheten. Den sier at Gud er tre personer i ett og samme vesen: Faderen, Sønnen og Den hellige ånd (Leivestad og Elstad, 2026). For mange høres det ut som et regnestykke som ikke går opp. Nettopp derfor tok det så lang tid å formulere."
         },
         {
-            "question": "Hva kalles religiøse bilder i ortodokse kirker?",
-            "options": [
-                "Fresker",
-                "Ikoner",
-                "Relieffer"
-            ],
-            "answer": "Ikoner"
+            "type": "header",
+            "text": "Tre ting de kristne ikke ville gi slipp på"
+        },
+        {
+            "type": "text",
+            "content": "De første kristne holdt fast ved tre ting samtidig. Det første var arven fra jødedommen: det finnes bare én Gud. Det andre var at Jesus ikke bare var en klok mann, men Gud selv. Det tredje var at Guds ånd, som de mente virket blant dem, også var Gud."
+        },
+        {
+            "type": "text",
+            "content": "Å tro alle tre delene samtidig er ikke lett. I Det nye testamentet står det setninger som binder Jesus tett til Faderen, blant annet i Johannesevangeliet, og hos Matteus nevnes Faderen, Sønnen og Den hellige ånd i samme setning. Men Bibelen gir ingen lære om hvordan de tre henger sammen (Leivestad og Elstad, 2026). Den forklaringen måtte kirken lage selv."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv under. De tre påstandene må holde samtidig. Klikk på snarveiene folk har foreslått gjennom historien, og se hvilken tråd som ryker."
+        },
+        {
+            "type": "component",
+            "name": "TreenighetensKnute",
+            "props": {
+                "title": "Treenighetens knute"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til mønsteret. Hver eneste snarvei er lettere å forstå enn treenigheten. Og hver eneste av dem koster noe de kristne ikke ville gi fra seg."
+        },
+        {
+            "type": "header",
+            "text": "Arius og keiseren"
+        },
+        {
+            "type": "text",
+            "content": "Arius mente at Faderen og Sønnen ikke var av samme vesen. Sønnen var det fremste av alt som er skapt, men fortsatt skapt, og det fantes en tid da Sønnen ikke fantes (Hvalvik, 2025). Det var en ryddig løsning. Den beholdt den ene Gud og gjorde Jesus stor uten å gjøre ham til Gud."
+        },
+        {
+            "type": "text",
+            "content": "Motstanderen hans, Athanasius fra Alexandria, svarte med et spørsmål om frelse. En skapning kan ikke frelse andre skapninger. Skal Jesus kunne redde mennesker, må han være Gud selv. Og hvordan kan kristne tilbe noen som bare er skapt (Hvalvik, 2025)?"
+        },
+        {
+            "type": "text",
+            "content": "Striden truet med å splitte kirken. Keiser Konstantin kalte derfor sammen et kirkemøte i byen Nikea i år 325 (Hvalvik, 2025). Et kirkemøte, også kalt konsil, er et møte der biskoper fra hele kirken blir enige om hva som skal gjelde."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva de vedtok i Nikea",
+                "content": "Møtet gikk imot Arius. Vedtaket var at Sønnen er av samme vesen som Faderen. Det greske ordet er homoousios, og det ble selve prøvesteinen: enten deler Sønnen Faderens guddom helt, eller så gjør han det ikke. I trosbekjennelsen som kom ut av arbeidet, står det at Jesus er født, ikke skapt (Elstad og Hvalvik, 2026)."
+            }
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Født, ikke skapt, av samme vesen som Faderen.",
+                "author": "Den nikenske trosbekjennelsen"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Vedtaket i 325 gjorde likevel ikke slutt på striden. Arianismen levde videre i deler av kirken og ved keiserhoffet, og spredte seg blant gotiske folkegrupper i flere hundre år (Hvalvik, 2025). Først på kirkemøtet i Konstantinopel i 381 ble saken avgjort, og der fikk trosbekjennelsen den formen den har i dag (Elstad og Hvalvik, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammelt håndskrift med gresk tekst i lysende rom",
+            "caption": "Hele striden endte i noen få setninger som kirken fortsatt leser høyt."
+        },
+        {
+            "type": "header",
+            "text": "Det som sto på spill"
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor kranglet de i over seksti år om ett ord? Fordi svaret avgjorde hva kristendommen egentlig påstår. Inkarnasjon betyr at en guddommelig skikkelse trer fram som menneske (Leivestad og Groth, 2024). Kristne mener at det er dette som skjedde i Jesus: Gud ble ikke bare kjent gjennom en budbringer, Gud kom selv."
+        },
+        {
+            "type": "text",
+            "content": "På kirkemøtet i Kalkedon i 451 ble det slått fast at Jesus har to naturer, at han er både fullt ut Gud og fullt ut menneske (Leivestad og Groth, 2024). Hadde Arius fått rett, ville påstanden vært en annen: at Gud sendte den fremste av sine skapninger. For kristne er forskjellen avgjørende. Slik de ser det, har den ene Gud selv vært et sted i tid og rom, sultet, grått og dødd."
+        },
+        {
+            "type": "header",
+            "text": "Ånden, og en uenighet som fortsatt varer"
+        },
+        {
+            "type": "text",
+            "content": "Den tredje personen kom sist i formuleringene. Kristne feirer pinse til minne om at Den hellige ånd kom til apostlene og satte dem i stand til å tale andre språk. Pinsen faller på den femtiende dagen etter påske, og selve ordet kommer av det greske tallordet for femti (Rasmussen mfl., 2024). I mange protestantiske kirkesamfunn regnes dagen som kirkens fødselsdag. Men at Ånden er en tredje person i guddommen, ble først slått fast på møtet i Konstantinopel i 381 (Seim, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Kristne er ikke enige om alt her. Et av de eldste stridsspørsmålene handler om Ånden utgår fra Faderen alene, eller fra Faderen og Sønnen. Denne uenigheten kalles filioque, og den gjorde skillet mellom kirken i øst og kirken i vest dypere. Den er fortsatt et tema når kirkesamfunn snakker sammen (Seim, 2025). Noen kristne grupper avviser dessuten treenighetslæren helt. Jehovas vitner mener for eksempel at bare Faderen er Gud, og at Jesus er den første Gud skapte. Det kan du lese om i artikkelen om [gudsbildet hos Jehovas vitner](/krle/religion/jehovas-vitner/gudsbilde). Treenigheten er altså ikke et ferdig regnestykke alle kristne leser helt likt. Vil du se hvordan andre religioner svarer på det samme spørsmålet, kan du sammenligne i [oversikten over gudsbilder](/krle/sammenlign/tema/gudsbilde)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Due i lys over samlet folkemengde i kirkerom",
+            "caption": "Duen er det vanligste symbolet på Den hellige ånd."
+        },
+        {
+            "type": "header",
+            "text": "Faren du kan snakke med"
+        },
+        {
+            "type": "text",
+            "content": "Bak alle de tekniske ordene ligger noe ganske jordnært. Jesus tiltalte Gud med det arameiske ordet abba, som betyr far. Det var en uvanlig enkel måte å snakke til Gud på, og ordet ble bevart på arameisk også i menigheter som snakket helt andre språk (Store norske leksikon, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Der ligger poenget med hele striden. Mange kristne mener at Gud ikke er en fjern kraft du bare kan lese om, men noen som har kommet nær nok til å bli snakket til. Treenigheten er forsøket på å si nettopp det uten å miste noe på veien. Vil du lese mer om hvordan resten av kristendommen henger sammen, finner du det på [siden om kristendommen](/krle/religion/kristendom)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre personer består treenigheten av?",
+                    "Hva mente Arius om forholdet mellom Faderen og Sønnen?",
+                    "Hva vedtok kirkemøtet i Nikea i år 325, og hvem kalte det sammen?",
+                    "Hva betyr ordet inkarnasjon?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor de tre påstandene i verktøyet er vanskelige å tro samtidig.",
+                    "Athanasius mente at en skapning ikke kan frelse andre skapninger. Hvorfor gjorde det argumentet spørsmålet om Jesus så viktig?",
+                    "Bibelen gir ingen ferdig lære om hvordan de tre henger sammen. Hva sier det om hvordan religiøse læresetninger blir til?",
+                    "Hvorfor tror du det tok fra 325 til 381 før striden var over, når vedtaket allerede var gjort?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign gudsbildet i kristendommen med et annet i [oversikten over gudsbilder](/krle/sammenlign/tema/gudsbilde). Hva er den største forskjellen?",
+                    "Finn ut hva filioque-striden hadde å si for skillet mellom den ortodokse og den katolske kirken.",
+                    "Diskuter i klassen: Er det et problem for en religion at en av de viktigste læresetningene er vanskelig å forstå?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva vedtok kirkemøtet i Nikea i år 325 om Sønnen?",
+                        "options": [
+                            "At Sønnen var det fremste av alt som er skapt",
+                            "At Sønnen er av samme vesen som Faderen",
+                            "At Sønnen bare var et vanlig menneske",
+                            "At Sønnen og Ånden er samme person"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Vedtaket gikk imot Arius. Det greske ordet homoousios betyr av samme vesen, og ble avgjørende for trosbekjennelsen."
+                    },
+                    {
+                        "question": "Hva mente Arius?",
+                        "options": [
+                            "At Gud er tre atskilte guder",
+                            "At Faderen bare er en maske Gud tar på seg",
+                            "At Sønnen var skapt, og at det fantes en tid da Sønnen ikke fantes",
+                            "At Den hellige ånd er viktigere enn Sønnen"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Arius mente Sønnen var det fremste av det skapte, men likevel skapt, og derfor ikke av samme vesen som Faderen."
+                    },
+                    {
+                        "question": "Hva betyr inkarnasjon?",
+                        "options": [
+                            "At Gud er usynlig for mennesker",
+                            "At en guddommelig skikkelse trer fram som menneske",
+                            "At sjelen fødes på nytt i en ny kropp",
+                            "At Gud skapte verden av ingenting"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Kristne mener dette skjedde i Jesus. På kirkemøtet i Kalkedon i 451 ble det slått fast at han er både fullt ut Gud og fullt ut menneske."
+                    },
+                    {
+                        "question": "Når ble det slått fast at Den hellige ånd er en tredje person i guddommen?",
+                        "options": [
+                            "På kirkemøtet i Nikea i 325",
+                            "På kirkemøtet i Konstantinopel i 381",
+                            "På kirkemøtet i Kalkedon i 451",
+                            "Under reformasjonen på 1500-tallet"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Nikea handlet om Sønnen. Møtet i Konstantinopel i 381 tok med Ånden, og trosbekjennelsen fikk der sin nåværende form."
+                    },
+                    {
+                        "question": "Hva handler filioque-uenigheten om?",
+                        "options": [
+                            "Om Jesus virkelig sto opp fra de døde",
+                            "Om Bibelen skal leses på gresk eller latin",
+                            "Om Ånden utgår fra Faderen alene eller fra Faderen og Sønnen",
+                            "Om barn eller voksne skal døpes"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Denne uenigheten gjorde skillet mellom kirken i øst og kirken i vest dypere, og den er fortsatt et tema mellom kirkesamfunn."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Leivestad, R. & Elstad, H. (2026). *Treenigheten*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/treenigheten](https://snl.no/treenigheten)",
+                    "Elstad, H. & Hvalvik, R. (2026). *Den nikenske trosbekjennelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_nikenske_trosbekjennelse](https://snl.no/den_nikenske_trosbekjennelse)",
+                    "Hvalvik, R. (2025). *Arianere*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/arianere](https://snl.no/arianere)",
+                    "Seim, T. K. (2025). *Den hellige ånd*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Den_hellige_ånd](https://snl.no/Den_hellige_%C3%A5nd)",
+                    "Leivestad, R. & Groth, B. (2024). *Inkarnasjon*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/inkarnasjon](https://snl.no/inkarnasjon)",
+                    "Rasmussen, T., Elstad, H., Langhelle, S. I. & Thomassen, M. (2024). *Pinse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/pinse](https://snl.no/pinse)",
+                    "Store norske leksikon. (2024). *Abba - tiltale til Gud*. Hentet 11.08.2026 fra [snl.no/abba](https://snl.no/abba)"
+                ]
+            }
         }
     ],
     "quote": {
         "text": "Gå derfor og gjør alle folkeslag til disipler: Døp dem til Faderens og Sønnens og Den hellige ånds navn.",
         "source": "Bibelen",
         "reference": "Matteus 28:19"
-    }
+    },
+    "timeline": []
 }

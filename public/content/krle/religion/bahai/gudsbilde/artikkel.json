@@ -1,91 +1,276 @@
 {
-    "id": "gudsbilde",
-    "title": "En ukjennbar Gud",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "bahai",
-    "dimension": "doctrinal",
-    "comparison_tags": [
-        "gudsbilde",
-        "doctrinal"
-    ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Gud er én"
-        },
-        {
-            "type": "text",
-            "content": "Bahá'í-troen lærer at det finnes bare én Gud, som er skaperen av hele universet. Gud er evig, allvitende og allmektig."
-        },
-        {
-            "type": "header",
-            "text": "Ukjennbar"
-        },
-        {
-            "type": "text",
-            "content": "Gud er så stor at menneskene aldri kan forstå ham fullt ut. Vi kan bare kjenne Gud gjennom hans sendebud (manifestasjoner), som Jesus, Muhammad og Bahá'u'lláh."
-        },
-        {
-            "type": "header",
-            "text": "Alle ber til samme Gud"
-        },
-        {
-            "type": "text",
-            "content": "Bahá'íer mener at alle religioner ber til den samme Gud, selv om de bruker forskjellige navn (Gud, Allah, Jehova, Brahman)."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "guds-enhet",
-            "term": "Guds enhet",
-            "definition": "Troen på at det bare finnes én Gud for alle mennesker."
-        },
-        {
-            "id": "ukjennbar",
-            "term": "Ukjennbar",
-            "definition": "At noe ikke kan forstås fullt ut av mennesker."
-        },
-        {
-            "id": "manifestasjon",
-            "term": "Guds manifestasjon",
-            "definition": "En person som viser hvem Gud er (f.eks. Jesus, Buddha, Bahá'u'lláh)."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hvor mange guder finnes det ifølge bahá'í-troen?",
-            "options": [
-                "Mange",
-                "To",
-                "Én"
-            ],
-            "answer": "Én"
-        },
-        {
-            "question": "Kan mennesker forstå Gud fullt ut?",
-            "options": [
-                "Ja, hvis de leser mye",
-                "Nei, Gud er ukjennbar",
-                "Ja, hvis de ber"
-            ],
-            "answer": "Nei, Gud er ukjennbar"
-        },
-        {
-            "question": "Hva mener bahá'íer om andre religioners guder?",
-            "options": [
-                "At de er falske",
-                "At det er den samme Gud med ulike navn",
-                "At de er demoner"
-            ],
-            "answer": "At det er den samme Gud med ulike navn"
-        }
-    ],
-    "quote": {
-        "text": "Vit du at Gud er én, at Han i seg selv er udelt og at Han i sitt vesen er hevet over alle ting.",
-        "source": "Glimt fra Bahá'u'lláhs skrifter",
-        "reference": "LXXXIV"
+  "id": "gudsbilde",
+  "title": "Solen du ikke kan se på",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "bahai",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "gudsbilde",
+    "doctrinal"
+  ],
+  "category": "Bahá'í",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Bahá'íer tror på én Gud, men mener at Gud i seg selv er umulig for mennesker å fatte.",
+    "Vi kan bare lære Gud å kjenne gjennom manifestasjonene, sendebudene som speiler Guds egenskaper.",
+    "Bildet som brukes er solen og speilet: du ser aldri solen direkte, bare gjenskinnet.",
+    "Abraham, Moses, Buddha, Jesus, Muhammad og Bahá'u'lláh regnes alle som speil for det samme lyset.",
+    "Læren om at Gud sender veiledning i etapper kalles progressiv åpenbaring."
+  ],
+  "createdDate": "2025-12-04T12:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "ukjennbar",
+      "term": "Ukjennbar",
+      "definition": "At noe er så stort at mennesker ikke kan fatte det. Bahá'íer sier dette om Guds eget vesen."
+    },
+    {
+      "id": "manifestasjon",
+      "term": "Guds manifestasjon",
+      "definition": "Et menneske som ifølge bahá'í-troen speiler Guds egenskaper så rent at vi kan lære Gud å kjenne gjennom ham."
+    },
+    {
+      "id": "progressiv-apenbaring",
+      "term": "Progressiv åpenbaring",
+      "definition": "Læren om at Gud har sendt veiledning i etapper, tilpasset ulike tider og kulturer."
+    },
+    {
+      "id": "bahaullah",
+      "term": "Bahá'u'lláh",
+      "definition": "Mirza Husayn-Ali Núri (1817-1892), som tok navnet Bahá'u'lláh og grunnla bahá'í-troen."
+    },
+    {
+      "id": "bab",
+      "term": "Báb",
+      "definition": "Ali Muhammad (1819-1850). I 1844 sa han at han var Báb, som betyr porten. Han ble henrettet i 1850."
     }
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Prøv å se rett på solen. Du klarer det ikke. Øynene lukker seg av seg selv, og tvinger du dem opp, gjør det vondt. Solen er der hele tiden. Den gir lys og varme til alt som lever. Men selve solen får du aldri se ordentlig."
+    },
+    {
+      "type": "text",
+      "content": "Hold i stedet opp et speil mot himmelen. Nå ser du solen likevel, i en form øynene dine tåler. Lyset er nøyaktig det samme lyset. Du ser det bare gjennom noe annet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Speil som fanger sollys og kaster det ned mot bakken",
+      "caption": "Du ser ikke solen direkte, men du ser lyset den sender."
+    },
+    {
+      "type": "text",
+      "content": "Dette bildet står helt i sentrum av bahá'í-troen. Det er en religion med iransk opphav som ble stiftet i andre halvdel av 1800-tallet, og som i dag har rundt seks millioner tilhengere i verden og omtrent 1100 registrerte medlemmer i Norge (Vogt og Winje, 2026). Solen er Gud. Speilene er de menneskene [bahá'íer](/krle/religion/bahai/sentrale-trekk) kaller Guds manifestasjoner."
+    },
+    {
+      "type": "header",
+      "text": "En Gud ingen kan fatte"
+    },
+    {
+      "type": "text",
+      "content": "Bahá'íer tror at det bare finnes én Gud. Gud er verdens skaper, allvitende, kjærlig og nåderik (Vogt og Winje, 2026). Så langt likner troen ganske mye på jødedom, kristendom og islam. Men så kommer et trekk mange synes er uvant. Bahá'í-troen sier at Gud i seg selv er helt utenfor rekkevidde for mennesker. Det hjelper ikke hvor smart du er, eller hvor mye du leser. Tanken din er laget for menneskenes verden, og Gud hører ikke hjemme der (Bahá'í International Community, u.å.-c)."
+    },
+    {
+      "type": "text",
+      "content": "Hvordan kan man da tro på noen man aldri kan fatte? Svaret bahá'íer gir, ligger i bildet fra begynnelsen av artikkelen. Vend speilene under mot solen, ett om gangen, og følg med på hvor lyset tar veien."
+    },
+    {
+      "type": "component",
+      "name": "SpeiletOgSolen",
+      "props": {
+        "title": "Vend speilene mot solen"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til to ting du fikk gjort, og én ting du ikke fikk gjort. Du vendte hvert speil for seg, og hvert speil sendte lyset videre ned til menneskene. Men du kunne ikke gjøre noe med selve solen. Den lå bare der og skinte. Det er akkurat sånn bahá'íer tenker om Gud."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'u'lláh, som grunnla religionen, skrev at Gud fra evighet av har vært skjult i sitt eget opphøyde vesen, og alltid vil være hyllet inn i mysteriet om et vesen ingen kan kjenne. Hvert forsøk på å nå fram til en forståelse av Guds utilgjengelige virkelighet ender ifølge ham i full forvirring (Bahá'u'lláh, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Fagordet for dette er at Gud er ukjennbar. Det betyr ikke at Gud er likegyldig eller langt borte. Det betyr at Gud er for stor for hodet ditt, på samme måte som solen er for sterk for øyet ditt. Og akkurat som med solen finnes det en vei rundt problemet."
+    },
+    {
+      "type": "header",
+      "text": "Speilene som fanger lyset"
+    },
+    {
+      "type": "text",
+      "content": "Veien rundt er speilene. Bahá'íer kaller dem Guds manifestasjoner. Det er mennesker som har levd et menneskeliv med kropp, sult og motstand, men som ifølge bahá'í-troen viser Guds egenskaper så rent at det er som å møte Gud selv. På bahá'íenes egne nettsider forklares det slik: hvis Gud er en sol ingen kan komme nær, er manifestasjonene speil som kaster solens lys tilbake i en form mennesker klarer å ta imot (Bahá'í International Community, u.å.-b)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Hver eneste av dem er et speil for Gud, og gjenspeiler ikke annet enn ham selv, hans skjønnhet, hans makt og hans herlighet.",
+        "author": "Bahá'u'lláh, Glimt fra Bahá'u'lláhs skrifter, avsnitt XXX"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Et speil lager ikke lys. Det gir bare videre lys som kommer et annet sted fra. Slik ser bahá'íer på manifestasjonene. De er ikke Gud, og de er ikke bare kloke lærere. De er stedet der Guds lys blir synlig for oss. Bahá'u'lláh kalte dem hellige speil som viser fram ham som er universets midtpunkt (Bahá'í International Community, u.å.-b)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Seks speil i en bue som kaster lys mot samme punkt",
+      "caption": "Ulike speil, ulike tider, samme lys."
+    },
+    {
+      "type": "header",
+      "text": "Én sol, mange speil"
+    },
+    {
+      "type": "text",
+      "content": "Hvem er så disse speilene? Bahá'íer regner Abraham, Krishna, Zarathustra, Moses, Buddha, Jesus, Muhammad, Báb og [Bahá'u'lláh](/krle/religion/bahai/grunnleggere) som manifestasjoner av Gud (Bahá'í International Community, u.å.-b). Les lista en gang til. Den går tvers gjennom skillene vi vanligvis setter mellom religionene. En jødisk profet, en hinduisk gud, en buddhistisk lærer, en kristen frelser og en muslimsk profet står side om side."
+    },
+    {
+      "type": "text",
+      "content": "Tanken som holder dette sammen kalles progressiv åpenbaring. Bahá'íer mener at alle religioner deler evige sannheter, og at budskapene ble gitt i etapper som passet til ulike tider og kulturer (Vogt og Winje, 2026). Speilene er ulike fordi menneskene de kom til var ulike. Det som skinner i dem, er det samme. Bahá'íer beskriver det som at Guds lys faller over hele skaperverket, slik den fysiske solen skinner på verden (Bahá'í International Community, u.å.-a)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Andre religioner er ikke enige",
+        "content": "Det er viktig å huske at dette er bahá'íenes eget syn. En kristen vil vanligvis ikke godta at Jesus er ett speil blant flere, og en muslim regner Muhammad som den siste profeten. I Iran, der religionen oppsto, har bahá'í vært forbudt siden 1983, og bahá'íer blir forfulgt fordi tradisjonell islam avviser læren deres (Vogt og Winje, 2026)."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Bahá'íer selv er heller ikke én ensartet gruppe. De bor i svært mange land og kulturer, og de leser de eldre religionenes skrifter med ulike briller. Bildet med solen og speilet er nettopp et bilde, ikke en nøyaktig beskrivelse. Hvor langt bildet rekker, og hva det betyr for troende i andre religioner, er noe bahá'íer kan lande forskjellig på."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Bahá'í-tempel med kuppel i dagslys",
+      "caption": "Verdenssenteret ligger på Karmelberget i Haifa i Israel."
+    },
+    {
+      "type": "header",
+      "text": "Hva gjør et slikt gudsbilde med et fellesskap?"
+    },
+    {
+      "type": "text",
+      "content": "Et gudsbilde er ikke bare en tanke. Det former hvordan mennesker organiserer seg. Hvis ingen kan kjenne Gud direkte, kan heller ingen si at de har fasiten på Gud. Bahá'í har derfor ingen prester. I stedet ledes religionen av Det universelle rettferdighetens hus, et demokratisk valgt råd på ni medlemmer. Verdenssenteret ligger på Karmelberget i Haifa i Israel. Templene bevegelsen har rundt om i verden, har alle én kuppel som skal symbolisere at Gud og menneskeheten hører sammen (Vogt og Winje, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Religionen vokste fram i en shiamuslimsk verden som ventet på en frelserskikkelse. I 1844 sa Ali Muhammad at han var Báb, som betyr porten, og han ble henrettet i 1850. Mirza Husayn-Ali Núri tok deretter navnet Bahá'u'lláh, samlet de fleste tilhengerne og gjorde bevegelsen til en egen religion. Den viktigste høytiden, Ridván, minnes at han sto fram som profet i Bagdad i 1863 (Vogt og Winje, 2026). Går du tilbake til speilene i begynnelsen av artikkelen, ser du hva bahá'íer mener skjedde da: enda et speil ble vendt mot den samme gamle solen."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva mener bahá'íer når de sier at Gud er ukjennbar?",
+          "Hva er en manifestasjon i bahá'í-troen, og hvilken rolle har den?",
+          "Hvem er solen og hvem er speilene i bildet artikkelen bruker?",
+          "Nevn minst fire personer bahá'íer regner som Guds manifestasjoner."
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor et speil er et godt bilde på det bahá'íer mener om sendebudene.",
+          "Progressiv åpenbaring sier at budskapet ble tilpasset tiden det kom til. Hva er styrken ved en slik tanke, og hva kan være problemet med den?",
+          "Hvorfor kan en kristen eller en muslim ha vanskelig for å godta at deres egen profet er ett speil blant flere?",
+          "Bahá'í har ingen prester. Henger det sammen med gudsbildet? Begrunn svaret."
+        ],
+        "gaaVidere": [
+          "Sammenlign bahá'íenes syn på Gud med gudsbildet i en annen religion du har lært om. Skriv en kort tekst om hva som er likt og hva som skiller.",
+          "Prøv å beskrive noe du ikke kan se direkte, for eksempel vind eller strøm, uten å bruke ordet selv. Hvilke bilder må du ty til?",
+          "Diskuter i klassen: kan flere religioner ha rett samtidig, eller utelukker de hverandre?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva mener bahá'íer om Guds eget vesen?",
+            "options": [
+              "At det kan forstås av de som studerer lenge nok",
+              "At det er utenfor det mennesker kan fatte",
+              "At det bare kan sees i drømmer",
+              "At det finnes i naturen og kan måles"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Bahá'í-troen lærer at Guds virkelighet er utenfor rekkevidde for menneskesinnet. Vi kan bare kjenne Gud gjennom manifestasjonene."
+          },
+          {
+            "question": "Hva står solen for i bildet bahá'íer bruker?",
+            "options": [
+              "Gud selv",
+              "Bahá'u'lláh",
+              "Menneskeheten",
+              "Den hellige boka"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Solen er Gud, som er umulig å se rett på. Manifestasjonene er speilene som kaster lyset videre i en form vi tåler."
+          },
+          {
+            "question": "Hvem regnes som Guds manifestasjoner i bahá'í-troen?",
+            "options": [
+              "Bare Báb og Bahá'u'lláh",
+              "Alle som leder en menighet",
+              "Blant andre Abraham, Moses, Buddha, Jesus, Muhammad og Bahá'u'lláh",
+              "Ingen, fordi Gud aldri viser seg"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Lista går på tvers av religionene og omfatter blant andre Abraham, Krishna, Zarathustra, Moses, Buddha, Jesus, Muhammad, Báb og Bahá'u'lláh."
+          },
+          {
+            "question": "Hva betyr progressiv åpenbaring?",
+            "options": [
+              "At religionen blir mer moderne for hvert år",
+              "At Gud har sendt veiledning i etapper, tilpasset ulike tider og kulturer",
+              "At bare den nyeste religionen er sann",
+              "At mennesker gradvis blir guddommelige"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Bahá'íer mener religionene deler evige sannheter, og at budskapet ble gitt trinnvis slik at det passet til den tiden og kulturen det kom til."
+          },
+          {
+            "question": "Hvorfor har bahá'í ingen prester?",
+            "options": [
+              "Fordi religionen er for liten til å ha ansatte",
+              "Fordi bare kvinner får lede møter",
+              "Fordi ingen mennesker kan si at de har fasiten på Gud; religionen ledes i stedet av et valgt råd",
+              "Fordi Bahá'u'lláh mente at bønn er unødvendig"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Bahá'í har ikke noe presteskap. Religionen ledes av Det universelle rettferdighetens hus, et råd på ni medlemmer som velges."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+          "Bahá'í International Community. (u.å.-a). *Revelation*. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/god-his-creation/revelation/)",
+          "Bahá'í International Community. (u.å.-b). *Manifestations of God*. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/god-his-creation/revelation/manifestations-god)",
+          "Bahá'í International Community. (u.å.-c). *God and His Creation*. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/god-his-creation/)",
+          "Bahá'u'lláh. (u.å.). *Gleanings from the Writings of Bahá'u'lláh*. Bahá'í Reference Library. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/bahaullah/gleanings-writings-bahaullah/3)"
+        ]
+      }
+    }
+  ],
+  "quote": {
+    "text": "Hver eneste av dem er et speil for Gud, og gjenspeiler ikke annet enn ham selv, hans skjønnhet, hans makt og hans herlighet.",
+    "source": "Glimt fra Bahá'u'lláhs skrifter",
+    "reference": "XXX"
+  },
+  "timeline": []
 }

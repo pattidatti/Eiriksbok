@@ -1,6 +1,7 @@
 {
     "id": "gudsbilde",
-    "title": "Brahman og guder",
+    "title": "Én eller millioner?",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "hinduisme",
@@ -9,83 +10,286 @@
         "gudsbilde",
         "doctrinal"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Mange guder, én kraft"
-        },
-        {
-            "type": "text",
-            "content": "Hinduismen har millioner av guder, men mange hinduer mener at alle disse bare er ulike former av den ene, upersonlige verdenssjelen: Brahman."
-        },
-        {
-            "type": "header",
-            "text": "Trimurti"
-        },
-        {
-            "type": "text",
-            "content": "Tre guder er spesielt viktige: Brahma (skaperen), Vishnu (opprettholderen) og Shiva (ødeleggeren). De representerer livets syklus."
-        },
-        {
-            "type": "header",
-            "text": "Avatarer"
-        },
-        {
-            "type": "text",
-            "content": "Guden Vishnu stiger av og til ned på jorden i en kropp for å redde verden. Disse kalles avatarer. Krishna og Rama er kjente avatarer."
-        }
+    "category": "Hinduisme",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Hinduismen har ingen felles lære om hvem Gud er som alle hinduer er enige om.",
+        "Brahman er den ene, usynlige virkeligheten som finnes i alt, også i mennesket selv.",
+        "De mange gudene kan forstås som navn og former på den samme enheten.",
+        "Vaishnaver setter Vishnu høyest, shaivaer setter Shiva høyest, shaktaer setter gudinnen høyest.",
+        "Murti er det innviede gudebildet, og darshan er å se guden og bli sett av guden."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "brahman",
             "term": "Brahman",
-            "definition": "Verdenssjelen. Den guddommelige kraften som finnes i alt."
+            "definition": "Verdens og universets enhet. Den usynlige virkeligheten som finnes i alt."
         },
         {
             "id": "atman",
             "term": "Atman",
-            "definition": "Menneskets sjel, som er en del av Brahman."
+            "definition": "Det udødelige selvet inne i mennesket, som mange hinduer mener er ett med Brahman."
         },
         {
             "id": "avatar",
             "term": "Avatar",
-            "definition": "En gud som stiger ned på jorden i en kropp."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hvem er ødeleggeren i hinduismen?",
-            "options": [
-                "Brahma",
-                "Vishnu",
-                "Shiva"
-            ],
-            "answer": "Shiva"
+            "definition": "En skikkelse guden Vishnu stiger ned til jorden i, for eksempel Krishna eller Rama."
         },
         {
-            "question": "Hva er en avatar?",
-            "options": [
-                "En blå filmfigur",
-                "En gud på jorden",
-                "En prest"
-            ],
-            "answer": "En gud på jorden"
+            "id": "murti",
+            "term": "Murti",
+            "definition": "Et innviet gudebilde. Stedet der mange hinduer møter guden."
         },
         {
-            "question": "Hva er Brahman?",
-            "options": [
-                "En prestekaste",
-                "Verdenssjelen",
-                "En hellig bok"
-            ],
-            "answer": "Verdenssjelen"
+            "id": "darshan",
+            "term": "Darshan",
+            "definition": "Å se guddommen i det innviede bildet, og selv bli sett av guddommen."
         }
     ],
     "quote": {
-        "text": "Sannheten er én, men de vise kaller den ved mange navn.",
+        "text": "Det som er ett, gir de vise mange navn.",
         "source": "Rigveda",
         "reference": "1.164.46"
-    }
+    },
+    "content": [
+        {
+            "type": "text",
+            "content": "Du står i døra til et hindutempel. Rett fram står en figur i stein med fire armer. Ved siden av ham står en kvinne på en løve, med våpen i hver hånd. Lenger inne står en skikkelse med elefanthode. Du begynner å telle, og du kommer godt over ti før du er ferdig med det første rommet."
+        },
+        {
+            "type": "text",
+            "content": "Så stiller du det spørsmålet alle stiller: hvor mange guder tror dere egentlig på? Det er et helt vanlig spørsmål. Det har bare ikke ett svar, og det er ikke fordi noen holder svaret skjult for deg."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Innsiden av hindutempel med flere fargerike gudefigurer",
+            "caption": "Et tempelrom kan romme mange gudebilder samtidig."
+        },
+        {
+            "type": "text",
+            "content": "Hinduismen blir ofte kalt polyteistisk, altså en religion med mange guder. Det stemmer hvis du bare teller figurer. Men hinduismen har ingen samlet lære om hvem Gud er som alle hinduer stiller seg bak (Kværne og Jacobsen, 2026). Ingen har vedtatt en fasit for alle. Derfor må du tåle flere svar samtidig i denne artikkelen."
+        },
+        {
+            "type": "header",
+            "text": "Brahman, det som er bak alt"
+        },
+        {
+            "type": "text",
+            "content": "Det viktigste ordet er Brahman. Brahman er verdens og universets enhet, og blir beskrevet som usynlig, uforanderlig og til stede i alt (Jacobsen, 2024a). Brahman er altså ikke en gud som sitter et sted og ser ned på verden. Brahman er den virkeligheten alt annet er en del av."
+        },
+        {
+            "type": "text",
+            "content": "Inne i hvert menneske finnes atman, det udødelige selvet (Jacobsen, 2024a). Her begynner en av de eldste diskusjonene i hinduismen. Filosofen Shankara, som levde rundt år 800, lærte at atman og Brahman er nøyaktig det samme, og at alt annet ikke har noen virkelig eksistens (Jacobsen, 2024a). Ramanuja, som levde noen hundre år senere, mente derimot at Brahman alltid er noe annet enn det enkelte selvet (Jacobsen, 2024a). Uenigheten er over tusen år gammel og lever fortsatt."
+        },
+        {
+            "type": "text",
+            "content": "Så hvor blir det da av alle gudene i tempelet? Mange hinduer skiller mellom Brahman uten egenskaper, som ikke har noen form i det hele tatt, og Brahman med egenskaper, som er en gud du kan snakke til. Det er denne tanken som binder det hele sammen: Shiva, Vishnu og Durga blir da personifikasjoner av den samme guddommelige enheten (Jacobsen, 2024a). Prøv det i linsene under. Gudene er de samme hele tiden. Det er blikket som flytter seg."
+        },
+        {
+            "type": "component",
+            "name": "EnEllerMillioner",
+            "props": {
+                "title": "Hvor mange guder ser du?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som skjedde. Du byttet aldri ut en eneste gud. Du byttet bare hvor du så fra, og tallet endret seg likevel. Det er kjernen i hele denne artikkelen."
+        },
+        {
+            "type": "header",
+            "text": "Tre svar på hvem som er høyest"
+        },
+        {
+            "type": "text",
+            "content": "De siste to tusen årene har tre guddommer stått over de andre: Vishnu, Shiva og gudinnen (Kværne og Jacobsen, 2026). Rundt hver av dem har det vokst fram en stor retning, og de tre retningene svarer ulikt på hvem som er høyest."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Vaishnavisme: Vishnu er den som skaper, opprettholder og beskytter verden (Jacobsen, 2025b).",
+                "Shaivisme: Shiva er høyest. For shaivaer er det Shiva som også skaper og opprettholder verden, ikke bare ødelegger den (Jacobsen, 2025a).",
+                "Shaktisme: gudinnen er høyest. I teksten Devimahatmya er Durga verdenssjelen og universets høyeste guddom, og fordi hun selv er Brahman, finnes det ingen mannlig gud som er hennes like (Jacobsen, 2024b)."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Se hva de tre har til felles. De er ikke uenige om at det finnes én høyeste virkelighet. De er uenige om hva den heter og hvilken skikkelse den viser seg i. Det er en annen type uenighet enn den man ofte tror finnes mellom religioner."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Det som er ett, gir de vise mange navn.",
+                "author": "Rigveda 1.164.46"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Linja over er rundt tre tusen år gammel og står i Rigveda, den eldste av de hinduiske tekstene. I verset ramses flere gudenavn opp, og poenget er at de peker mot det samme (Wisdomlib, u.å.). Verset blir stadig brukt som et tidlig uttrykk for tanken om at det bare finnes én virkelighet bak navnene. Du kan lese mer om disse tekstene i artikkelen om [Vedaene og Bhagavad Gita](/krle/religion/hinduisme/hellige-tekster)."
+        },
+        {
+            "type": "text",
+            "content": "Vishnu stiger også ned til jorden i ulike skikkelser når verden er truet. Disse skikkelsene heter avatarer, og de mest kjente er Krishna og Rama (Jacobsen, 2025b). En avatar er ikke en ny gud i tillegg til Vishnu. Det er Vishnu i en annen form. Igjen samme mønster: flere skikkelser, én gud."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Steinfigur av Vishnu med fire armer i tempelnisje",
+            "caption": "Vishnu vises ofte med fire armer, med konkylie, hjul, lotus og stav."
+        },
+        {
+            "type": "header",
+            "text": "Å se, og å bli sett"
+        },
+        {
+            "type": "text",
+            "content": "Fram til nå har alt handlet om tanker. Men for de aller fleste hinduer begynner ikke troen i en filosofibok. Den begynner foran et bilde. Murti, det innviede gudebildet, og puja, tilbedelsen av guden, er kjernen i hinduistisk religiøst liv (Kværne og Jacobsen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Puja kan foregå i et tempel, ved et lite alter hjemme eller ute (Kværne, 2024). Man steller med guden omtrent som man ville stelt med en konge eller en høyt aktet gjest: bad, mat, røkelse, lys og musikk (Kværne, 2024; Kværne og Jacobsen, 2026). Det høres kanskje rart ut å gi mat til en figur i stein. Men det gir mening hvis du tenker på bildet som et sted guden er å møte, ikke som en gjenstand som skal beundres."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Darshan: blikket som går begge veier",
+                "content": "Darshan betyr syn eller det å se. Det er å se en guddom slik den viser seg i et innviet bilde i et tempel, eller i en hellig person eller guru. Å ha sett guddommen regnes som en velsignelsesbringende åpenbaring. Og det viktige er at blikket går begge veier: du ser guden, og guden ser deg (Kværne, 2025; Kværne og Jacobsen, 2026)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Dette er verdt å ha med seg når noen sier at hinduer tilber statuer. Figuren er innviet gjennom en seremoni (Kværne, 2025), og mange hinduer vil si at guden er til stede i den uten å være begrenset til den. Den som står i kø for darshan, mener selv at hun står i kø for å møte en gud, ikke for å se på stein. Samtidig er ikke alle hinduer enige om dette heller. Noen retninger legger mest vekt på bildene, andre mest på meditasjon og indre erkjennelse."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Kvinne tenner oljelampe foran gudebilde i hjemmealter",
+            "caption": "Puja skjer like ofte hjemme som i tempelet."
+        },
+        {
+            "type": "header",
+            "text": "Så hvor mange guder er det?"
+        },
+        {
+            "type": "text",
+            "content": "Gå tilbake til templet der du sto og talte. Alt du talte, var riktig. Det er mange figurer i rommet, og mange hinduer ber til flere av dem gjennom et liv. Samtidig kan den som står ved siden av deg, mene at alle sammen er former av den ene, og at tallet derfor er én. De to svarene krangler ikke, de svarer på hvert sitt spørsmål."
+        },
+        {
+            "type": "text",
+            "content": "Det er verdt å merke seg hvor uvanlig dette er. Både [tawhid i islam](/krle/religion/islam/gudsbilde) og gudsbildet i [sikhismen](/krle/religion/sikhisme/gudsbilde) begynner med et klart nei: Gud er én, og Gud kan ikke avbildes. Hinduismen svarer på en annen måte. Der er ikke bildene et problem, de er inngangen. Og spørsmålet om antall får lov til å stå åpent."
+        },
+        {
+            "type": "text",
+            "content": "Det betyr ikke at hinduer ikke vet hva de tror. Det betyr at spørsmålet ditt var formet av en annen måte å tenke på. Neste gang lønner det seg kanskje å spørre: hvem ber du til, og hva mener du at hun eller han er?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er Brahman, og hvorfor kan man ikke si at Brahman er en gud som sitter et sted?",
+                    "Hva er atman, og hva var Shankara og Ramanuja uenige om?",
+                    "Hva er forskjellen på vaishnavisme, shaivisme og shaktisme?",
+                    "Forklar hva murti og darshan betyr."
+                ],
+                "reflekter": [
+                    "Hvorfor er det ikke noe godt svar på spørsmålet om hvor mange guder hinduismen har? Bruk minst to grunner fra artikkelen.",
+                    "En avatar er ikke en ny gud, men samme gud i en ny skikkelse. Hvorfor er det en viktig forskjell?",
+                    "Artikkelen sier at de tre store retningene er uenige om navnet, ikke om at det finnes én høyeste virkelighet. Er det en liten eller stor uenighet, mener du?",
+                    "Hva gjør et gudebilde med troen? Blir det lettere eller vanskeligere å tro på noe du kan se?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign gudsbildet i hinduismen med [tawhid i islam](/krle/religion/islam/gudsbilde). Hva er den største forskjellen?",
+                    "Bruk [sammenligningsverktøyet for gudsbilde](/krle/sammenlign/tema/gudsbilde) og finn ut hvilken annen religion som ligner mest på hinduismen.",
+                    "Finn ut hvor det nærmeste hindutempelet i Norge ligger, og hvilke guder som står der."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er Brahman i hinduismen?",
+                        "options": [
+                            "Den øverste presten i tempelet",
+                            "Verdens og universets enhet, som er til stede i alt",
+                            "En hellig bok fra middelalderen",
+                            "Navnet på gudinnen som rir på en løve"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Brahman beskrives som usynlig, uforanderlig og til stede i alt, altså verdens og universets enhet."
+                    },
+                    {
+                        "question": "Hva mener mange hinduer om forholdet mellom Brahman og de mange gudene?",
+                        "options": [
+                            "Gudene kjemper mot Brahman",
+                            "Gudene er personifikasjoner av den samme enheten",
+                            "Brahman er den eneste guden som finnes bilder av",
+                            "Gudene kom først, og Brahman ble oppfunnet senere"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Guder som Shiva, Vishnu og Durga kan forstås som personifikasjoner av den ene guddommelige enheten."
+                    },
+                    {
+                        "question": "Hvem setter shaktaene høyest?",
+                        "options": [
+                            "Vishnu",
+                            "Shiva",
+                            "Gudinnen, for eksempel Durga",
+                            "Brahma"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "I shaktismen er gudinnen høyest. Devimahatmya kaller Durga verdenssjelen og universets høyeste guddom."
+                    },
+                    {
+                        "question": "Hva er en avatar?",
+                        "options": [
+                            "En ny gud som oppstår når en gammel dør",
+                            "En skikkelse Vishnu stiger ned til jorden i, som Krishna eller Rama",
+                            "En prest som leder puja i tempelet",
+                            "Et bilde som ennå ikke er innviet"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Vishnu stiger ned i ulike skikkelser for å redde verden. Krishna og Rama er de mest kjente."
+                    },
+                    {
+                        "question": "Hva betyr darshan?",
+                        "options": [
+                            "Å ofre mat til guden",
+                            "Å se guddommen i det innviede bildet, og bli sett av guddommen",
+                            "Å bade i en hellig elv",
+                            "Å lære Rigveda utenat"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Darshan er å se guddommen slik den viser seg i et innviet bilde, og blikket går begge veier."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Jacobsen, K. A. (2024a). *Brahman*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/brahman](https://snl.no/brahman)",
+                    "Jacobsen, K. A. (2024b). *Durga*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Durga](https://snl.no/Durga)",
+                    "Jacobsen, K. A. (2025a). *Shiva*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Shiva](https://snl.no/Shiva)",
+                    "Jacobsen, K. A. (2025b). *Vishnu*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Vishnu](https://snl.no/Vishnu)",
+                    "Kværne, P. (2024). *Puja*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/puja](https://snl.no/puja)",
+                    "Kværne, P. (2025). *Darshana*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/darshana](https://snl.no/darshana)",
+                    "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+                    "Wisdomlib. (u.å.). *Rig Veda 1.164.46, engelsk oversettelse*. Hentet 11.08.2026 fra [wisdomlib.org](https://www.wisdomlib.org/hinduism/book/rig-veda-english-translation/d/doc830789.html)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
 }

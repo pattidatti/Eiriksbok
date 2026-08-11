@@ -1,91 +1,282 @@
 {
-    "id": "gudsbilde",
-    "title": "Monoteisme: Troen på én Gud",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "jodedom",
-    "dimension": "doctrinal",
-    "comparison_tags": [
-        "gudsbilde",
-        "doctrinal"
-    ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Én Gud"
-        },
-        {
-            "type": "text",
-            "content": "Jødedommen er strengt monoteistisk. Det finnes bare én Gud, som er skaperen av alt. Gud er evig, allmektig og rettferdig, men også barmhjertig."
-        },
-        {
-            "type": "header",
-            "text": "Guds navn"
-        },
-        {
-            "type": "text",
-            "content": "Guds navn, JHWH (Jahve), er så hellig at det tradisjonelt ikke uttales. I stedet sier man 'Adonai' (Herren) eller 'HaShem' (Navnet)."
-        },
-        {
-            "type": "header",
-            "text": "Bildeforbudet"
-        },
-        {
-            "type": "text",
-            "content": "Det er forbudt å lage bilder av Gud. Gud er ånd og kan ikke begrenses til en form."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "monoteisme",
-            "term": "Monoteisme",
-            "definition": "Troen på at det bare finnes én Gud."
-        },
-        {
-            "id": "shema",
-            "term": "Shema",
-            "definition": "Den jødiske trosbekjennelsen: 'Hør Israel! Herren er vår Gud, Herren er én.'"
-        },
-        {
-            "id": "jhwh",
-            "term": "JHWH",
-            "definition": "Guds hellige navn. Uttales vanligvis som Adonai."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva betyr monoteisme?",
-            "options": [
-                "Troen på mange guder",
-                "Troen på én Gud",
-                "Troen på naturen"
-            ],
-            "answer": "Troen på én Gud"
-        },
-        {
-            "question": "Hvorfor lager ikke jøder bilder av Gud?",
-            "options": [
-                "Fordi Gud er usynlig",
-                "Pga. bildeforbudet",
-                "De har ikke maling"
-            ],
-            "answer": "Pga. bildeforbudet"
-        },
-        {
-            "question": "Hva sier man i stedet for Guds navn?",
-            "options": [
-                "Jesus",
-                "Adonai",
-                "Buddha"
-            ],
-            "answer": "Adonai"
-        }
-    ],
-    "quote": {
-        "text": "Hør, Israel! Herren er vår Gud, Herren er én.",
-        "source": "Toraen",
-        "reference": "5. Mosebok 6:4"
+  "id": "gudsbilde",
+  "title": "Navnet ingen sier høyt",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "jodedom",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "gudsbilde",
+    "doctrinal"
+  ],
+  "category": "Jødedom",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Jødedommen er streng monoteisme: det finnes bare én Gud, uten form og uten bosted.",
+    "Guds eget navn skrives med fire bokstaver, JHVH, men leses aldri høyt.",
+    "I stedet sier man Adonai når teksten leses, og HaShem, som betyr Navnet, ellers.",
+    "Bildeforbudet er det andre budet i jødisk telling, og gjelder Gud aller strengest.",
+    "Sjema samler hele troen i én setning: Herren er vår Gud, Herren er én."
+  ],
+  "createdDate": "2025-12-04T12:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "tetragrammet",
+      "term": "Tetragrammet",
+      "definition": "De fire hebraiske bokstavene JHVH, som er Guds eget navn i de jødiske skriftene."
+    },
+    {
+      "id": "adonai",
+      "term": "Adonai",
+      "definition": "Ordet som sies i stedet for gudsnavnet når teksten leses høyt. Det betyr Herren."
+    },
+    {
+      "id": "hashem",
+      "term": "HaShem",
+      "definition": "Betyr Navnet. Mange jøder bruker dette ordet om Gud i dagligtale."
+    },
+    {
+      "id": "sjema",
+      "term": "Sjema",
+      "definition": "Den jødiske bekjennelsen som begynner: Hør, Israel! Herren er vår Gud, Herren er én."
+    },
+    {
+      "id": "bildeforbud",
+      "term": "Bildeforbud",
+      "definition": "Forbudet mot å lage bilder av Gud. I jødisk telling er det det andre av de ti bud."
     }
+  ],
+  "quote": {
+    "text": "Hør, Israel! Herren er vår Gud, Herren er én.",
+    "source": "Sjema",
+    "reference": "5. Mosebok 6,4"
+  },
+  "content": [
+    {
+      "type": "text",
+      "content": "En lørdag formiddag står et menneske foran forsamlingen i en synagoge og leser høyt fra Toraen. Fingeren følger bokstavene bortover linjen. Så kommer det fire bokstaver leseren ikke sier. Hen stopper ikke opp, men ordet som kommer ut av munnen, er et helt annet ord enn det som står på rullen."
+    },
+    {
+      "type": "text",
+      "content": "De fire bokstavene heter jod, he, vav og he. På norsk skriver vi dem JHVH. Dette er Guds eget navn i de jødiske hellige skriftene, og fagfolk kaller det tetragrammet, som betyr de fire bokstavene. Ingen vet sikkert hvordan navnet ble uttalt (Groth, 2025a). Grunnen er enkel: det har ikke vært sagt høyt på nesten to tusen år."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Håndskrevet torarull med pekestav i synagoge",
+      "caption": "Navnet står skrevet i rullen. Det er lyden som mangler."
+    },
+    {
+      "type": "text",
+      "content": "For å skjønne hvorfor, må du begynne et annet sted: med hva jødedommen mener at Gud er. [Jødedommen](/krle/religion/jodedom/sentrale-trekk) er en monoteistisk religion, altså en religion med tro på bare én Gud. Troen på denne ene Guden, og forholdet mellom Gud og det jødiske folket, er det som holder hele religionen sammen (Groth, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Én Gud, uten form"
+    },
+    {
+      "type": "text",
+      "content": "Gud blir beskrevet som hellig, evig, allmektig, allvitende, barmhjertig og rettferdig. Men to av ordene i beskrivelsen betyr mest her: Gud er uten form og uten bosted (Groth, 2026). Ingen kropp, ingen omriss, ingen adresse. Samtidig blir Gud oppfattet som personlig, en Gud det går an å snakke med og si du til. Begge deler skal være sant på én gang."
+    },
+    {
+      "type": "text",
+      "content": "Den korteste versjonen av hele denne troen er noen få ord som jødene kaller Sjema. Teksten er satt sammen av tre steder i Bibelen, og den regnes ikke som en vanlig bønn. Den er en bekjennelse av at Gud er én, og av at folket har plikt til å følge Guds lov (Groth, 2024c). [Sjema](/krle/religion/jodedom/bonn) leses både i morgengudstjenesten og i kveldsgudstjenesten."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Hør, Israel! Herren er vår Gud, Herren er én.",
+        "author": "Sjema, 5. Mosebok 6,4"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til ordet Herren. I den hebraiske teksten står det ikke Herren. Der står de fire bokstavene. Herren er det leseren sier i stedet. Prøv det selv nedenfor: start opplesningen, og velg hva du sier når lesingen stopper."
+    },
+    {
+      "type": "component",
+      "name": "NavnetSomIkkeSies",
+      "props": {
+        "title": "Les Sjema høyt"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Det du nettopp gjorde, gjør jøder hver eneste gang teksten leses. Allerede fra 200-tallet før vår tidsregning ble JHVH byttet ut med Adonai, som betyr Herren, når skriftene ble lest høyt (Groth, 2025a). Utenfor bønn og opplesning sier mange heller HaShem, som rett og slett betyr Navnet (Jewish Virtual Library, u.å.)."
+    },
+    {
+      "type": "header",
+      "text": "Hvordan uttalen ble borte"
+    },
+    {
+      "type": "text",
+      "content": "Navnet ble ikke glemt ved et uhell. Det ble beskyttet. Etter tradisjonen i [Talmud](/krle/religion/jodedom/hellige-tekster), jødedommens store samling av lovtolkninger, var navnet så hellig at bare ypperstepresten kunne uttale det. Og han kunne bare gjøre det én dag i året, på forsoningsdagen, inne i tempelet i Jerusalem (Groth, 2025a)."
+    },
+    {
+      "type": "text",
+      "content": "I år 70 etter vår tidsregning ble tempelet ødelagt. Dermed forsvant både ypperstepresten og den ene dagen i året, og den opprinnelige uttalen gikk tapt blant jødene (Groth, 2025a). Navnet står fortsatt skrevet. Lyden er borte."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Derfor skriver mange G-d",
+        "content": "Mange jøder unngår også å skrive gudsnavnet uformelt, for eksempel på en lapp eller på nett. Grunnen er ikke at det er galt å skrive det, men at et papir kan bli revet i stykker og en fil kan bli slettet. Da er navnet blitt ødelagt. Løsningen er å hoppe over en bokstav, slik at det står G-d i stedet for God. Da er det ikke selve navnet som står der."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Hva så med Jahve og Jehova, navnene du kanskje har hørt før? Jahve er en mulig uttale som forskere har regnet seg fram til, og den brukes i faglitteratur. Jehova er en misforståelse med lang historie. Da hebraisk fikk vokaltegn, satte man vokalene fra Adonai under de fire bokstavene, som en påminnelse om hva som skulle sies. Kristne teologer i middelalderen leste de to lagene som ett ord, og fikk Jehova (Groth, 2025a). I norske bibeloversettelser står det Herren."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nærbilde av hebraiske konsonanter med små vokaltegn under",
+      "caption": "De små tegnene under bokstavene er vokaler. De hører til et annet ord enn konsonantene."
+    },
+    {
+      "type": "header",
+      "text": "Det andre budet: ingen bilder"
+    },
+    {
+      "type": "text",
+      "content": "Navnet er ikke det eneste som holdes utenfor rekkevidde. I jødisk telling av de ti bud er bildeforbudet det andre budet: du skal ikke lage deg noen statue eller noe slags bilde (Groth, 2024a). Det tredje budet handler om å ikke misbruke Guds navn (Groth, 2024b). Navnet og bildet blir altså vernet rett etter hverandre, helt i starten av budene."
+    },
+    {
+      "type": "text",
+      "content": "Forbudet mot å avbilde Gud selv holdes strengt i alle retninger av jødedommen. Derfor finner du ingen figurer eller ansikter av Gud i en synagoge. Men dette er ikke et forbud mot all kunst. Bibler, bønnebøker og bøker for barn har ofte illustrasjoner, og i de første århundrene etter vår tidsregning hadde synagoger både malerier, fresker og fargerike gulvmosaikker med scener fra Bibelen. Aldri av Gud, men av alt det andre (Groth, 2024a). Bare i strengt ultraortodokse miljøer er foto og film sterkt regulert i dag."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Synagogerom med mønstre og skrift, ingen figurer",
+      "caption": "Veggene i en synagoge har mønstre og bokstaver, ikke ansikter."
+    },
+    {
+      "type": "header",
+      "text": "Å beskrive noe du ikke kan se"
+    },
+    {
+      "type": "text",
+      "content": "Legen og filosofen Moses Maimonides satte opp tretten punkter han mente var de viktigste i jødedommen. Det tredje punktet er troen på at Gud ikke er kroppslig (Groth, 2025b). Har Gud ingen kropp, finnes det heller ingenting å tegne av."
+    },
+    {
+      "type": "text",
+      "content": "Maimonides mente i tillegg at selve Guds vesen er utenfor det mennesker kan forstå. Vi kan vite at Gud finnes, og vi kan se resultatene av det Gud gjør i verden, men lenger kommer vi ikke (Groth, 2025b). Da henger navnet og bildet sammen: et navn du kan uttale og et bilde du kan tegne, er begge måter å få grep om noe på. Jødedommen lar begge deler ligge like utenfor rekkevidde."
+    },
+    {
+      "type": "text",
+      "content": "Som i alle religioner er ikke alle jøder like. Ortodokse menn følger i stor grad plikten til å lese hele Sjema både morgen og kveld. Historisk var kvinner fritatt fra plikter som er bundet til bestemte tidspunkt, men i dag leser mange ortodokse kvinner hele Sjema, og i reformjødiske, konservative og rekonstruksjonistiske menigheter deltar kvinner på lik linje. Reformjøder utelater også deler av teksten som ikke passer med det de selv står for (Groth, 2024c)."
+    },
+    {
+      "type": "text",
+      "content": "Kjernen er likevel den samme overalt. Gå inn i en hvilken som helst synagoge i verden, og du finner det samme: en tekst som inneholder navnet, en forsamling som ikke sier det, og ingen vegg med et ansikt på. Det som mangler, er ikke noe jødedommen har glemt. Det er selve poenget."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er tetragrammet, og hvilke fire bokstaver består det av?",
+          "Hvilke to ord sier jøder i stedet for gudsnavnet, og hva betyr de?",
+          "Hvorfor gikk den opprinnelige uttalen av navnet tapt?",
+          "Hvilket nummer har bildeforbudet i jødisk telling av de ti bud?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvordan navnet Jehova oppsto.",
+          "Artikkelen sier at Gud er uten form, men samtidig personlig. Hvordan kan begge deler være sant samtidig?",
+          "Synagoger har mønstre og skrift, men ikke bilder av Gud. Hva sier det om hva jødedommen mener et bilde gjør med det som avbildes?",
+          "Maimonides mente at vi bare kan vite at Gud finnes, ikke hva Gud er. Er det en trygg eller en vanskelig tanke å leve med? Begrunn svaret."
+        ],
+        "gaaVidere": [
+          "Skriv en kort tekst der du beskriver en person uten å bruke navnet hens en eneste gang. Hva må du gjøre i stedet?",
+          "Finn ut hvordan andre religioner omtaler Gud. Har noen av dem lignende regler for navn eller bilder?",
+          "Diskuter i klassen: Blir noe viktigere eller fjernere av at man ikke får si navnet på det?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er tetragrammet?",
+            "options": [
+              "En bønn som leses fire ganger om dagen",
+              "De fire bokstavene JHVH, som er Guds navn i de jødiske skriftene",
+              "De fire første bøkene i Toraen",
+              "Et smykke med fire hjørner"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Tetragrammet betyr de fire bokstavene, altså jod, he, vav og he, som på norsk skrives JHVH."
+          },
+          {
+            "question": "Hva sier en jødisk leser høyt når det står JHVH i teksten?",
+            "options": [
+              "Jahve",
+              "Jehova",
+              "Adonai",
+              "Ingenting, hen hopper over ordet"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Fra 200-tallet før vår tidsregning ble JHVH byttet ut med Adonai, som betyr Herren, når teksten ble lest høyt."
+          },
+          {
+            "question": "Hvorfor er den opprinnelige uttalen av navnet ukjent i dag?",
+            "options": [
+              "Bokstavene i teksten ble ødelagt av romerne",
+              "Bare ypperstepresten sa det, én dag i året i tempelet, og tempelet ble ødelagt i år 70",
+              "Hebraisk ble et dødt språk og ingen kunne lese det lenger",
+              "Navnet ble aldri skrevet ned"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Etter tradisjonen i Talmud kunne bare ypperstepresten uttale navnet, og bare på forsoningsdagen i tempelet. Da tempelet ble ødelagt i år 70, gikk uttalen tapt."
+          },
+          {
+            "question": "Hvordan oppsto navnet Jehova?",
+            "options": [
+              "Det er navnet Gud oppga til Moses",
+              "Kristne teologer i middelalderen leste konsonantene JHVH sammen med vokalene fra Adonai",
+              "Det er en gammel gresk oversettelse av Adonai",
+              "Det er et navn jødiske rabbinere fant på i tempelet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Vokaltegnene fra Adonai ble satt under de fire bokstavene som en påminnelse. Leser man de to lagene som ett ord, får man Jehova."
+          },
+          {
+            "question": "Hva stemmer om bildeforbudet i jødedommen?",
+            "options": [
+              "All kunst og alle illustrasjoner er forbudt i jødedommen",
+              "Det gjelder bare i ultraortodokse miljøer",
+              "Det er det andre budet i jødisk telling, og å avbilde Gud selv holdes strengt av alle retninger",
+              "Det ble opphevet da tempelet ble ødelagt"
+            ],
+            "correctAnswer": 2,
+            "explanation": "I jødisk telling er bildeforbudet det andre budet. Gud selv avbildes aldri, men bønnebøker og barnebøker kan godt ha illustrasjoner av andre ting."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Groth, B. (2024a). *Bildeforbud*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bildeforbud](https://snl.no/bildeforbud)",
+          "Groth, B. (2024b). *De ti bud - jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/De_ti_bud_-_jødedom](https://snl.no/De_ti_bud_-_j%C3%B8dedom)",
+          "Groth, B. (2024c). *Shema*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Shema](https://snl.no/Shema)",
+          "Groth, B. (2025a). *Jahve (JHVH)*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jahve](https://snl.no/Jahve)",
+          "Groth, B. (2025b). *Moses Maimonides*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Moses_Maimonides](https://snl.no/Moses_Maimonides)",
+          "Groth, B. (2026). *Jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Jewish Virtual Library. (u.å.). *Jewish Concepts: The Name of God*. Hentet 11.08.2026 fra [jewishvirtuallibrary.org/the-name-of-god](https://www.jewishvirtuallibrary.org/the-name-of-god)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
 }
