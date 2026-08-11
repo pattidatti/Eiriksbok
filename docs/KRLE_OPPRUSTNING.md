@@ -1,6 +1,6 @@
 # KRLE - opprustningsplan og statusoversikt
 
-> **Sist målt:** 2026-08-11 (etter R5, komplett) · **N = 126 artikler**
+> **Sist målt:** 2026-08-12 (etter R6) · **N = 126 artikler**
 > Dette dokumentet er arbeidslista for å løfte KRLE-innholdet opp på plan_article-standard.
 > Kryss av i `✔`-kolonnen når en artikkel er ferdigstilt, og oppdater sammendraget nederst.
 
@@ -32,7 +32,7 @@ Destillert fra `.agent/workflows/plan_article.md`. En artikkel er ferdig når al
 - [ ] Objektiv, respektfull tone: «Muslimer tror …», aldri normativ. Indre mangfold nevnt minst ett sted.
 - [ ] `npx tsc -b` og `npm run lint` rene
 
-**Referansemal:** `public/content/krle/religion/sikhisme/overgangsriter.json` - 40 blokker, 1304 ord, komplett hale, egen signaturkomponent (`SikhNavneseremoni`) og mikrospill (`anand-karaj-3d`). Det er denne artikkelen nye oppgraderinger skal måles mot, **ikke** `kristendom/intro`, som er eldre og mangler halen.
+**Referansemal:** `public/content/krle/religion/sikhisme/overgangsriter.json` - 40 blokker, 1304 ord, komplett hale, egen signaturkomponent (`SikhNavneseremoni`) og mikrospill (`anand-karaj-3d`). Det er denne artikkelen nye oppgraderinger skal måles mot. (Merknaden om at `kristendom/intro` manglet halen gjaldt fram til R6; den artikkelen er nå ferdig.)
 
 ### 2.1 Mikrospill - når og når ikke
 
@@ -97,8 +97,8 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 | Status | Antall | Andel |
 |---|---:|---:|
 | `STUB` | 8 | 6,3 % |
-| `HALV` | 23 | 18,3 % |
-| `FERDIG` | 95 | 75,4 % |
+| `HALV` | 19 | 15,1 % |
+| `FERDIG` | 99 | 78,6 % |
 | **Sum** | **126** | |
 
 | Mangel | Antall | Andel |
@@ -124,7 +124,7 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 | ~~**R3**~~ | ~~`bonn` × 8~~ **Ferdig 2026-08-11**. Sikhisme-artikkelen kom fra bot-PR #390 og telles med i N. | 8 | ✅ Tema 3 «Å snakke med det hellige» har nå 9/9 ferdige kilder |
 | ~~**R4**~~ | ~~`overgangsriter` × 8~~ **Ferdig 2026-08-11** | 8 | ✅ Tema 4 «Fra vugge til grav» har nå 9/9 ferdige kilder |
 | ~~**R5**~~ | ~~`frelse`, `grunnleggere`, `hellige-tekster`, `sentrale-trekk`~~ **Ferdig 2026-08-11** | 34 | ✅ Tema 5-8 har alle 9/9 ferdige kilder |
-| **R6** | De 8 kristendom-artiklene i 325-396-båndet | 8 | Kortest vei til ferdig - har allerede quiz og tekst |
+| ~~**R6**~~ | ~~Kristendom-artiklene~~ **Ferdig 2026-08-12**. Ble sju artikler, ikke atte: sju av de opprinnelige atte ble tatt i R2-R5, mens sju andre kristendom-artikler manglet hale og kilder | 7 | Hele kristendom-mappa er na ferdig |
 | **R7** | Filosofi: 17 artikler uten quiz, `Oppgaver` og `Kildeliste` | 17 | Utenfor sammenligningsemnet |
 
 **Om tallene.** Ti artikler i matrisen finnes ikke på disk i det hele tatt: `skapelse` for
@@ -282,24 +282,24 @@ n = 9 · snitt 957 ord · 1 stub / 0 halv / 8 ferdig
 
 ### Kristendom
 
-n = 14 · snitt 903 ord · 0 stub / 4 halv / 10 ferdig
+n = 14 · snitt 1097 ord · 0 stub / 0 halv / 14 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
 | ☑ | `FERDIG` | `religion/kristendom/hellige-tekster/artikkel.json` | 1184 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/kristendom/bonn/artikkel.json` | 901 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
-| ☐ | `HALV` | `religion/kristendom/skapelse/artikkel.json` | 347 | - | - | - | 5 | - | - |
+| ☑ | `FERDIG` | `religion/kristendom/skapelse/artikkel.json` | 1170 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/kristendom/sentrale-trekk/artikkel.json` | 1066 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/kristendom/grunnleggere/artikkel.json` | 1101 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/kristendom/gudsbilde/artikkel.json` | 942 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/kristendom/frelse/artikkel.json` | 1152 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/kristendom/overgangsriter/artikkel.json` | 1052 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
-| ☐ | `HALV` | `religion/kristendom/baptistene.json` | 571 | ✅ | - | - | 5 | ✅ | - |
-| ☐ | `HALV` | `religion/kristendom/pinse.json` | 728 | ✅ | - | - | 5 | ✅ | - |
-| ☐ | `HALV` | `religion/kristendom/sakramentene.json` | 820 | - | - | - | 5 | ✅ | - |
-| ☐ | `FERDIG` | `religion/kristendom/kirkesamfunn.json` | 831 | ✅ | - | - | 5 | ✅ | - |
-| ☐ | `FERDIG` | `religion/kristendom/intro/artikkel.json` | 850 | ✅ | - | - | 5 | ✅ | ✅ har |
-| ☐ | `FERDIG` | `religion/kristendom/paulus-og-misjonen.json` | 1099 | ✅ | - | - | 5 | ✅ | - |
+| ☑ | `FERDIG` | `religion/kristendom/baptistene.json` | 1177 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
+| ☑ | `FERDIG` | `religion/kristendom/pinse.json` | 1184 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
+| ☑ | `FERDIG` | `religion/kristendom/sakramentene.json` | 974 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
+| ☑ | `FERDIG` | `religion/kristendom/kirkesamfunn.json` | 1095 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
+| ☑ | `FERDIG` | `religion/kristendom/intro/artikkel.json` | 1189 | ✅ | ✅ | ✅ | 5 | ⏳ | ✅ har |
+| ☑ | `FERDIG` | `religion/kristendom/paulus-og-misjonen.json` | 1170 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 
 ### Samisk religion
 
@@ -526,3 +526,10 @@ Før opp hver ferdigstilte artikkel her fra og med nå, så er historikken synli
 | 2026-08-11 | Jødedom: Mange måter å være jøde på | `BritPilarer` | ↻ tikkun-olam-3d | - |
 | 2026-08-11 | Hinduisme: En religion uten sentrum | `MokshaVeiene` | ↻ | - |
 | 2026-08-11 | Buddhisme: En diagnose og en behandling | `DharmahjuletUtforsker` | ↻ | - |
+| 2026-08-12 | Kristendom: To fortellinger om begynnelsen | `SeksDagersVerket` | - | - |
+| 2026-08-12 | Kristendom: Sakramentene: Dåp og nattverd | `HvaSkjerMedBrodet` | - | - |
+| 2026-08-12 | Kristendom: Kirkesamfunn: Splittelse og enhet | `ToStoreBrudd` | - | - |
+| 2026-08-12 | Kristendom: Avgjørelsen som åpnet døren | `AvgjorelsenSomAapnetDoren` | - | - |
+| 2026-08-12 | Kristendom: Verdens største religion | `KristendomsGrenerUtforsker` | ↻ | - |
+| 2026-08-12 | Kristendom: Pinse: Den dagen kirken ble til | `PinseNasjoner` | ↻ | - |
+| 2026-08-12 | Kristendom: Baptistene: frihet gjennom dåpen | `BaptismComparator` | ↻ | - |

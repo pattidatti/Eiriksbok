@@ -767,7 +767,7 @@
         },
         {
           "religion": "kristendom",
-          "title": "Introduksjon til kristendommen",
+          "title": "Verdens største religion",
           "file": "content/krle/religion/kristendom/intro/artikkel.json",
           "link": "/krle/religion/kristendom/intro"
         },
@@ -829,7 +829,7 @@
         },
         {
           "religion": "kristendom",
-          "title": "Skapelsen i Bibelen",
+          "title": "To fortellinger om begynnelsen",
           "file": "content/krle/religion/kristendom/skapelse/artikkel.json",
           "link": "/krle/religion/kristendom/skapelse"
         },
@@ -1542,7 +1542,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Introduksjon til kristendommen",
+      "title": "Verdens største religion",
       "link": "/krle/religion/kristendom/intro",
       "dimension": "doctrinal",
       "tags": [
@@ -1572,7 +1572,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Skapelsen i Bibelen",
+      "title": "To fortellinger om begynnelsen",
       "link": "/krle/religion/kristendom/skapelse",
       "dimension": "narrative",
       "tags": [

@@ -175,6 +175,10 @@ const TreEnheter = lazy(() => import('./content/interactive/TreEnheter').then(m 
 const GjenopprettelsensPaastand = lazy(() => import('./content/interactive/GjenopprettelsensPaastand').then(m => ({ default: m.GjenopprettelsensPaastand })));
 const HvaSomSkillerDem = lazy(() => import('./content/interactive/HvaSomSkillerDem').then(m => ({ default: m.HvaSomSkillerDem })));
 const TreReglerOgFemTing = lazy(() => import('./content/interactive/TreReglerOgFemTing').then(m => ({ default: m.TreReglerOgFemTing })));
+const SeksDagersVerket = lazy(() => import('./content/interactive/SeksDagersVerket').then(m => ({ default: m.SeksDagersVerket })));
+const HvaSkjerMedBrodet = lazy(() => import('./content/interactive/HvaSkjerMedBrodet').then(m => ({ default: m.HvaSkjerMedBrodet })));
+const ToStoreBrudd = lazy(() => import('./content/interactive/ToStoreBrudd').then(m => ({ default: m.ToStoreBrudd })));
+const AvgjorelsenSomAapnetDoren = lazy(() => import('./content/interactive/AvgjorelsenSomAapnetDoren').then(m => ({ default: m.AvgjorelsenSomAapnetDoren })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -623,6 +627,10 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     GjenopprettelsensPaastand,
     HvaSomSkillerDem,
     TreReglerOgFemTing,
+    SeksDagersVerket,
+    HvaSkjerMedBrodet,
+    ToStoreBrudd,
+    AvgjorelsenSomAapnetDoren,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,

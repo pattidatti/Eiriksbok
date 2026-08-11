@@ -2,13 +2,12 @@
     "id": "sakramentene",
     "title": "Sakramentene: Dåp og nattverd",
     "subject": "krle",
-    "topic": "religion",
+    "topic": "religioner",
     "religion": "kristendom",
     "layout": "rich",
-    "year": "år 30 e.Kr. – i dag",
     "category": "Kristendom",
-    "readTime": "9 min lesning",
-    "heroImage": "/images/krle/religion/kristendom_hero.webp",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
     "dimension": "ritual",
     "comparison_tags": [
         "ritualer",
@@ -17,200 +16,122 @@
         "sakrament"
     ],
     "details": [
-        "Et sakrament er et synlig tegn på en usynlig nåde.",
-        "Dåpen er inngangen til det kristne fellesskapet.",
-        "Nattverden er et felles måltid som minner om Jesu siste kveld.",
-        "Protestanter har to sakramenter, katolikker og ortodokse har sju.",
-        "Kristne er uenige om hva som egentlig skjer under nattverden."
+        "Et sakrament er en hellig handling, også kalt et nådemiddel.",
+        "Den katolske og den ortodokse kirken har sju sakramenter, protestantiske kirker to.",
+        "Dåpen markerer at man blir en del av den kristne kirken.",
+        "Nattverden er et rituelt måltid med brød og vin. Det nye testamentet forteller at Jesus innstiftet det kvelden før han ble korsfestet.",
+        "Kirkene svarer helt ulikt på hva som skjer med brødet i nattverden."
+    ],
+    "createdDate": "2026-05-11T01:14:17+00:00",
+    "lastUpdated": "2026-08-11T12:00:00Z",
+    "concepts": [
+        {
+            "id": "sakrament",
+            "term": "Sakrament",
+            "definition": "En hellig handling, også kalt et nådemiddel. Fra høymiddelalderen brukt om rituelle handlinger som formidler guddommelig nåde gjennom et ytre middel."
+        },
+        {
+            "id": "nademiddel",
+            "term": "Nådemiddel",
+            "definition": "Et middel Gud etter kristen tro gir sin nåde gjennom. Den norske kirke bruker ordet om Guds ord, dåpen og nattverden."
+        },
+        {
+            "id": "eukaristi",
+            "term": "Eukaristi",
+            "definition": "Kirkelig navn på nattverden. Ordet betyr takksigelse."
+        },
+        {
+            "id": "transsubstansiasjon",
+            "term": "Transsubstansiasjon",
+            "definition": "Katolsk lære om at brødets og vinens vesen forvandles til Jesu legeme og blod, mens utseende, lukt og smak er uforandret."
+        },
+        {
+            "id": "realpresens",
+            "term": "Realpresens",
+            "definition": "Læren om at Jesu legeme og blod virkelig er til stede i brødet og vinen. Luther holdt fast på dette, men avviste transsubstansiasjonslæren."
+        }
     ],
     "content": [
         {
+            "type": "text",
+            "content": "Presten løfter et tynt, hvitt brød foran menigheten og leser ordene Det nye testamentet forteller at Jesus sa til vennene sine kvelden før han døde: «Ta imot og spis! Dette er min kropp.» Alle i rommet ser det samme: et stykke brød. Men hva de mener at brødet er, skiller kristne fra hverandre den dag i dag. Uenigheten er nesten 500 år gammel, og den handler ikke om et ord for mye eller for lite. Den handler om hva som faktisk skjer i det øyeblikket."
+        },
+        {
+            "type": "text",
+            "content": "Handlinger som denne kalles sakramenter. Et sakrament er en hellig handling, også kalt et nådemiddel (Store norske leksikon, 2026). I kristen tro betyr nåde Guds gave til mennesker, en gave ingen kan gjøre seg fortjent til. Du kan lese mer om det i artikkelen om [frelse](/krle/religion/kristendom/frelse). I den første kristne tiden ble ordet sakrament brukt om alt som hørte til gudstjenesten: handlinger, riter og gjenstander. Først fra høymiddelalderen ble ordet snevret inn til rituelle handlinger som formidler guddommelig nåde gjennom et ytre middel (Store norske leksikon, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Steindøpefont med vann i lys kirke",
+            "caption": "Vannet i døpefonten er det ytre middelet i dåpen."
+        },
+        {
+            "type": "text",
+            "content": "Hvor mange slike handlinger finnes? Der skiller kirkene lag. Den katolske og den ortodokse kirken har sju sakramenter: dåp, ferming (det som ellers kalles konfirmasjon), nattverd, bot, sykesalving, ordinasjon og ekteskap (Store norske leksikon, 2026). De protestantiske kirkesamfunnene, Den norske kirke inkludert, har to. De mener at bare dåp og nattverd kan kalles sakramenter, fordi bare disse to har et tydelig ytre middel, altså vann i dåpen og brød og vin i nattverden, og samtidig er tydelig innstiftet av Jesus selv (Store norske leksikon, 2026). Hvordan kirkene ellers skiller lag, kan du lese om i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
+        },
+        {
             "type": "header",
-            "text": "Vann som dreper og gir liv"
+            "text": "Hva skjer med brødet?"
         },
         {
             "type": "text",
-            "content": "Tenk deg en gammel kirke med en tung døpefont av stein. En far holder den lille datteren sin over fonten. Presten øser vann over pannen hennes tre ganger og sier noen ord. Vannet renner nedover ansiktet. Babyen begynner å gråte. Familien smiler. Men hva er det egentlig som skjer her? Det er bare vann. Likevel mener kristne over hele verden at noe usynlig og viktig skjer i akkurat dette øyeblikket. De kaller det et sakrament."
-        },
-        {
-            "type": "header",
-            "text": "Hva er et sakrament?"
-        },
-        {
-            "type": "text",
-            "content": "Ordet sakrament kommer fra det latinske ordet sacramentum, som betyr noe hellig eller en hellig ed. Den mest kjente forklaringen kom fra kirkefaderen Augustin på 400-tallet. Han sa at et sakrament er et synlig tegn på en usynlig nåde. Det betyr at vi ser noe vanlig, som vann, brød eller vin, men kristne tror at Gud virker noe usynlig gjennom det."
-        },
-        {
-            "type": "text",
-            "content": "Det er litt som når du får en bursdagsgave. Selve esken er bare papp. Men inni ligger noe verdifullt, og hele pakken er et tegn på at noen er glad i deg. På samme måte er vannet i dåpen bare vann. Men kristne tror at gjennom det handler Gud."
+            "content": "Det vanskeligste spørsmålet er likevel ikke hvor mange sakramenter som finnes, men hva som skjer i dem. Nattverden er skoleeksempelet. Den katolske kirken lærer at brødets hele vesen ved vigslingen blir forvandlet til Kristi legemes vesen. Kirken kaller denne forvandlingen transsubstansiasjon, altså vesensforvandling (Den katolske kirke, u.å.-b). Utseende, lukt og smak er uforandret (Store norske leksikon & Elstad, 2026). Martin Luther mente noe annet, og reformatorene Ulrich Zwingli og Jean Calvin igjen noe annet. Prøv selv under."
         },
         {
             "type": "component",
-            "name": "FactBox",
+            "name": "HvaSkjerMedBrodet",
             "props": {
-                "title": "Tre vanskelige ord forklart",
-                "items": [
-                    {
-                        "label": "Sakrament",
-                        "value": "En hellig handling som Jesus selv satte i gang. Et synlig tegn der kristne tror Gud handler usynlig."
-                    },
-                    {
-                        "label": "Nåde",
-                        "value": "Guds gave til mennesker, som de ikke kan gjøre seg fortjent til. Du kan ikke kjøpe den eller jobbe deg til den."
-                    },
-                    {
-                        "label": "Eukaristi",
-                        "value": "Et gresk ord som betyr takksigelse. Det er det vanlige navnet på nattverden i den katolske og ortodokse kirken."
-                    }
-                ]
+                "title": "Hva skjer med brødet?"
             }
         },
         {
+            "type": "text",
+            "content": "Uenigheten går dypere enn selve brødet. Den katolske, den ortodokse, den anglikanske og den lutherske kirken lærer at et sakrament alltid har en virkning, så lenge mennesket ikke selv stenger for den med vantro eller manglende anger over syndene sine. Den reformerte kirken lærer i stedet at sakramentene er tegn og bekjennelseshandlinger der mennesker vitner om troen sin (Store norske leksikon, 2026). Er sakramentet noe Gud gjør med mennesket, eller noe mennesket gjør for å vise hva det tror? Der går selve skillelinjen."
+        },
+        {
             "type": "header",
-            "text": "Dåpen: en ny start"
+            "text": "Dåpen: døren inn"
         },
         {
             "type": "text",
-            "content": "Dåpen er det første sakramentet i et kristent liv. Den som blir døpt, blir tatt opp i det kristne fellesskapet. Måten det skjer på er enkel: presten øser vann over hodet eller dypper hele kroppen, og sier ordene som Jesus ga disiplene før han forlot dem: «Jeg døper deg i Faderens og Sønnens og Den hellige ånds navn.»"
-        },
-        {
-            "type": "text",
-            "content": "Hvorfor akkurat vann? Vann renser. Men i Bibelen har vannet enda en betydning. I fortellingen om Noah druknet en hel verden i en stor flom, og en ny verden kunne begynne. Israelittene gikk gjennom Rødehavet og slapp unna farao. Vannet sluker det gamle og åpner for noe nytt. Kristne ser dåpen som en liknende reise: man dør bort fra det gamle livet og står opp til et nytt."
+            "content": "Dåpen er en seremoni med neddykking i vann eller overøsing med vann, og den markerer at man blir en del av den kristne kirken (Elstad, 2026). I de fleste kristne trossamfunn regnes den som det første og viktigste sakramentet. Den katolske katekismen, som er kirkens offisielle læreoversikt, kaller dåpen porten inn til livet i Ånden og døren inn til de andre sakramentene (Den katolske kirke, u.å.-a). I Norge gjelder dåpen som innmelding i et trossamfunn, for eksempel Den norske kirke (Elstad, 2026). Dåpen som overgang i livet er tema i artikkelen om [overgangsriter](/krle/religion/kristendom/overgangsriter)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Den som tror og blir døpt, skal bli frelst.",
-                "author": "Bibelen",
-                "reference": "Markus 16:16"
+                "text": "Dra ut og gjør alle folkeslag til disipler, idet dere døper dem til Faderens og Sønnens og Den Hellige Ånds navn.",
+                "author": "Matteus 28,19, gjengitt i Den katolske kirkes katekisme"
             }
         },
         {
-            "type": "header",
-            "text": "Barnedåp eller voksendåp?"
+            "type": "text",
+            "content": "Det er med disse ordene kristne regner Jesus som den som innstiftet dåpen. Senest fra 500-tallet ble det vanlig å døpe små barn. På 1500-tallet innførte de mest radikale reformatorene voksendåp: dåpen skulle være en omvendelseshandling og et uttrykk for personlig tro, og den som var døpt som barn, måtte døpes på nytt (Elstad, 2026). I dag er barnedåp likevel vanligst. Den norske kirke begrunner den med at troen og tilgivelsen dåpen er et tegn på, er en gave, ikke noe mennesker kan gjøre seg fortjent til (Elstad, 2026). Baptister og pinsevenner døper bare den som selv bekjenner troen, gjerne ved neddykking (Elstad, 2026). Mer om det finner du i artikkelen om [baptistene](/krle/religion/kristendom/baptistene)."
         },
         {
-            "type": "text",
-            "content": "Her er kristne uenige. I Den norske kirke og hos katolikkene døper man som regel små barn. Foreldrene velger på vegne av barnet, og senere bekrefter ungdommen selv troen sin i konfirmasjonen. Tanken er at dåpen er en gave, og en gave er en gave selv om mottakeren er liten."
-        },
-        {
-            "type": "text",
-            "content": "Andre kristne, som baptister og pinsevenner, mener at man bør være gammel nok til å velge selv. De døper bare ungdom og voksne som har sagt tydelig at de tror. Hos dem dyppes hele kroppen under vann, slik Johannes døperen gjorde med Jesus i elven Jordan. Begge tradisjonene leser i Bibelen, men de leser med ulike briller."
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Voksen person døpes ved neddykking i vann",
+            "caption": "Troendes dåp ved neddykking. Baptister og pinsevenner døper bare den som selv bekjenner troen."
         },
         {
             "type": "header",
-            "text": "Nattverden: et måltid med Jesus"
+            "text": "Nattverden: måltidet som gjentas"
         },
         {
             "type": "text",
-            "content": "Det andre sakramentet er nattverden. Den minner om den siste kvelden Jesus var sammen med disiplene før han ble korsfestet. De spiste et jødisk påskemåltid sammen. Midt under måltidet løftet Jesus opp brødet, takket og delte det ut. «Dette er mitt legeme,» sa han. Så løftet han kalken med vin. «Dette er mitt blod.» Han ba disiplene gjøre dette igjen og igjen for å huske ham."
+            "content": "Nattverd er et rituelt måltid som utgjør en viktig del av den kristne gudstjenesten. Deltakerne spiser et lite stykke alterbrød, kalt oblat, og drikker litt nattverdvin fra en kalk, altså et beger. Brødet og vinen kalles elementene (Thomassen & Rasmussen, 2026). Utgangspunktet er fortellingene i Det nye testamentet om at Jesus kvelden før han ble korsfestet, ba disiplene spise brød og drikke vin for at syndene deres skulle bli tilgitt. Denne kvelden kalles skjærtorsdag. Kristne tror at de som deltar i måltidet, får styrke og tilgivelse fra Jesus. I en del kirker må man være døpt for å gå til nattverd, og i Norge brukes det av og til alkoholfrie alternativer, for eksempel rød saft (Thomassen & Rasmussen, 2026)."
         },
         {
             "type": "text",
-            "content": "I dag samles kristne i kirkene for å spise et lite stykke brød og smake litt vin eller druesaft. For mange er det den viktigste delen av gudstjenesten. Det er ikke et stort måltid – ofte bare en liten oblat på tungen – men det er fylt med mening. Det knytter dagens kristne tilbake til den første kvelden i Jerusalem for nesten 2000 år siden."
+            "content": "Måltidet har mange navn. I Det nye testamentet kalles det blant annet brødsbrytelse og Herrens måltid. Kirkelig språkbruk bruker også eukaristi, som betyr takksigelse, og kommunion, som viser til fellesskap (Thomassen & Rasmussen, 2026). Tidlig begynte kristne å se nattverden som en fremstilling av det offeret Jesus gjorde da han ble korsfestet. Dette kalles messeoffer, og tanken ble stadig viktigere gjennom middelalderen. Under reformasjonen på 1500-tallet ble messeoffertanken kritisert. Luther, Zwingli og Calvin mente at nattverden skulle forstås som en gave fra Gud, innstiftet for at alle kristne skulle delta ved å spise brødet og drikke vinen (Thomassen & Rasmussen, 2026)."
         },
         {
-            "type": "component",
-            "name": "QuoteBlock",
-            "props": {
-                "text": "Gjør dette til minne om meg.",
-                "author": "Bibelen",
-                "reference": "Lukas 22:19"
-            }
-        },
-        {
-            "type": "header",
-            "text": "Hva skjer egentlig i nattverden?"
-        },
-        {
-            "type": "text",
-            "content": "Akkurat dette spørsmålet har splittet kirken i 500 år. Alle kristne er enige om at noe viktig skjer. Men hva? Er brødet bare brød, eller er det virkelig Jesu kropp?"
-        },
-        {
-            "type": "component",
-            "name": "Comparison",
-            "props": {
-                "title": "Tre syn på nattverden",
-                "leftTitle": "Katolsk syn",
-                "rightTitle": "Protestantisk syn",
-                "items": [
-                    {
-                        "label": "Hva skjer med brødet?",
-                        "left": "Brødet forvandles til Jesu virkelige kropp. Smaken er den samme, men selve innholdet er endret.",
-                        "right": "Brødet er fortsatt brød. Noen mener Jesus er åndelig til stede, andre at det bare er et minne."
-                    },
-                    {
-                        "label": "Hvem leder?",
-                        "left": "Bare en prest som er vigslet av en biskop.",
-                        "right": "En prest eller pastor, men hvem som helst i menigheten kan også bidra."
-                    },
-                    {
-                        "label": "Hvor ofte?",
-                        "left": "Ofte hver dag eller hver søndag.",
-                        "right": "Vanligvis noen ganger i måneden, eller bare på store høytider."
-                    },
-                    {
-                        "label": "Hva får man?",
-                        "left": "Brød og vin. Lenge fikk vanlige folk bare brødet.",
-                        "right": "Både brød og vin til alle. Dette var en av reformasjonens viktigste endringer."
-                    }
-                ]
-            }
-        },
-        {
-            "type": "header",
-            "text": "To eller sju sakramenter?"
-        },
-        {
-            "type": "text",
-            "content": "Da Martin Luther brøt med paven på 1500-tallet, ble det også uenighet om hvor mange sakramenter som finnes. Den katolske og den ortodokse kirken har sju. Protestantene beholdt bare to. Hvorfor? Luther mente at et ekte sakrament må være innstiftet av Jesus selv i Bibelen. Han fant tydelig spor av dåp og nattverd, men ikke av de fem andre."
-        },
-        {
-            "type": "component",
-            "name": "Comparison",
-            "props": {
-                "title": "Sakramentene i de største kirkene",
-                "leftTitle": "Katolsk og ortodoks kirke (sju)",
-                "rightTitle": "Protestantiske kirker (to)",
-                "items": [
-                    {
-                        "label": "Dåp",
-                        "left": "Ja",
-                        "right": "Ja"
-                    },
-                    {
-                        "label": "Nattverd",
-                        "left": "Ja",
-                        "right": "Ja"
-                    },
-                    {
-                        "label": "Konfirmasjon",
-                        "left": "Et sakrament",
-                        "right": "En seremoni, ikke et sakrament"
-                    },
-                    {
-                        "label": "Ekteskap",
-                        "left": "Et sakrament",
-                        "right": "En velsignet handling, ikke et sakrament"
-                    },
-                    {
-                        "label": "Skriftemål",
-                        "left": "Et sakrament der presten gir tilgivelse",
-                        "right": "Ikke et sakrament. Man ber direkte til Gud."
-                    },
-                    {
-                        "label": "Sykesalving",
-                        "left": "Et sakrament for syke og døende",
-                        "right": "En forbønn, ikke et sakrament"
-                    },
-                    {
-                        "label": "Prestevielse",
-                        "left": "Et sakrament",
-                        "right": "En ansettelse, ikke et sakrament"
-                    }
-                ]
-            }
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Kalk og oblatfat på hvitt alterduk",
+            "caption": "Kalken og oblatene. Brødet og vinen kalles elementene i nattverden."
         },
         {
             "type": "header",
@@ -218,149 +139,110 @@
         },
         {
             "type": "text",
-            "content": "I Norge blir omtrent halvparten av alle nyfødte fortsatt døpt i Den norske kirke. Mange foreldre velger dåp selv om de ikke er ofte i kirken. For dem er det en gammel skikk som binder familien sammen, og en velkomst inn i et fellesskap som har vart i nesten 1000 år her i landet."
-        },
-        {
-            "type": "text",
-            "content": "Nattverd er mindre vanlig i hverdagen, men på julaften og påskedag samles tusenvis av nordmenn rundt alteret. Da knytter de seg ikke bare til Jesus og disiplene, men også til alle generasjoner kristne nordmenn før dem – helt tilbake til de første som tok kristendommen til seg etter at Olav den hellige falt på Stiklestad i 1030."
-        },
-        {
-            "type": "header",
-            "text": "Sakramentenes lange historie"
+            "content": "I Den norske kirke er nattverden et fast ledd i menighetens hovedgudstjeneste, og bordet er åpent for alle, uansett alder (Den norske kirke, u.å.-b). Slik har det ikke alltid vært. Tidligere måtte man være konfirmert for å delta. Fra 1969 fikk de som hadde fylt 12 år, adgang på visse vilkår, og fra 1993 kunne alle døpte barn i følge med voksne delta (Thomassen & Rasmussen, 2026). Dåpen har lenge hatt stor oppslutning i Norge, men de siste årene har den sunket. Av alle nyfødte i 2019 ble 51 prosent døpt i Den norske kirke (Elstad, 2026). Kirken bruker ordet nådemidler om Guds ord, dåpen og nattverden, altså midlene Gud gir sin nåde gjennom (Den norske kirke, u.å.-a)."
         },
         {
             "type": "component",
-            "name": "TimelineComponent",
+            "name": "Oppgaver",
             "props": {
-                "compact": true,
-                "events": [
-                    {
-                        "year": "ca. 30",
-                        "title": "Det siste måltidet",
-                        "description": "Jesus innstifter nattverden kvelden før korsfestelsen."
-                    },
-                    {
-                        "year": "ca. 50",
-                        "title": "Paulus skriver om nattverden",
-                        "description": "I et brev til menigheten i Korint forklarer Paulus hva nattverden betyr."
-                    },
-                    {
-                        "year": "ca. 400",
-                        "title": "Augustin definerer sakramentet",
-                        "description": "Et synlig tegn på en usynlig nåde."
-                    },
-                    {
-                        "year": "1215",
-                        "title": "Den katolske kirke fastsetter sju sakramenter",
-                        "description": "Et stort kirkemøte i Roma bestemmer tallet."
-                    },
-                    {
-                        "year": "1517",
-                        "title": "Luther utfordrer kirken",
-                        "description": "Reformasjonen begynner. Etter hvert beholder protestantene bare to sakramenter."
-                    },
-                    {
-                        "year": "1537",
-                        "title": "Norge blir luthersk",
-                        "description": "Kongen innfører reformasjonen. Antall sakramenter går fra sju til to."
-                    }
+                "forstaa": [
+                    "Hva er et sakrament? Bruk ordene hellig handling og nådemiddel i svaret.",
+                    "Hvor mange sakramenter har Den katolske kirken, og hvor mange har Den norske kirke?",
+                    "Hvilke to grunner gir protestantiske kirker for at bare dåp og nattverd er sakramenter?",
+                    "Forklar hva ordene oblat, kalk og elementene betyr i nattverden."
+                ],
+                "reflekter": [
+                    "Alle de fire synene i den interaktive oppgaven leser de samme ordene fra Jesus. Hvorfor tror du de likevel kommer til så ulike svar?",
+                    "Katolsk lære sier at brødet ser og smaker helt likt etter forvandlingen. Hvorfor er det viktig for læren at ingen kan merke noen forskjell?",
+                    "Sammenlign barnedåp og troendes dåp. Hvilket syn på hva dåpen er, ligger bak hver av dem?",
+                    "Den reformerte kirken kaller sakramentene bekjennelseshandlinger, andre kirker sier at de alltid har en virkning. Hva er den viktigste forskjellen mellom disse to måtene å tenke på?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva de fem sakramentene protestantene ikke regner som sakramenter, går ut på, og lag en kort oversikt.",
+                    "Undersøk hvordan et annet religiøst fellesskap markerer at et nytt medlem tas opp, og sammenlign med dåpen.",
+                    "Diskuter i klassen: I Norge døpes omtrent halvparten av de nyfødte. Hva kan grunnene være til at tallet synker?"
                 ]
             }
-        },
-        {
-            "type": "header",
-            "text": "Hva sitter du igjen med?"
-        },
-        {
-            "type": "text",
-            "content": "Et sakrament er et lite, hverdagslig tegn – vann, brød, vin – som kristne tror bærer noe stort. Dåpen åpner døren inn til fellesskapet. Nattverden samler menigheten rundt det samme bordet som Jesus delte med vennene sine. Selv om kirkene er uenige om antallet og om hva som skjer i akkurat øyeblikket, er begge sakramentene et synlig tegn på at troen ikke bare er tanker, men også kropp, smak og berøring."
         },
         {
             "type": "component",
             "name": "Quiz",
             "props": {
-                "title": "Test deg selv",
                 "questions": [
                     {
-                        "question": "Hva betyr Augustins definisjon av et sakrament?",
+                        "question": "Hva er et sakrament?",
                         "options": [
-                            "En usynlig handling uten ytre tegn",
-                            "Et synlig tegn på en usynlig nåde",
-                            "En regel som bare prester må følge"
+                            "En bønn som bare prester har lov til å be",
+                            "En hellig handling, også kalt et nådemiddel",
+                            "En regel om hvordan man skal kle seg i kirken",
+                            "En sang som avslutter gudstjenesten"
                         ],
-                        "answer": "Et synlig tegn på en usynlig nåde"
+                        "correctAnswer": 1,
+                        "explanation": "Fra høymiddelalderen ble ordet brukt om rituelle handlinger som formidler guddommelig nåde gjennom et ytre middel, som vann eller brød og vin."
                     },
                     {
-                        "question": "Hvor mange sakramenter har den katolske kirken?",
+                        "question": "Hvorfor har protestantiske kirker bare to sakramenter?",
                         "options": [
-                            "To",
-                            "Fem",
-                            "Sju"
+                            "Fordi de fem andre ble forbudt ved lov i Norge",
+                            "Fordi de mener at bare dåp og nattverd har et tydelig ytre middel og er tydelig innstiftet av Jesus",
+                            "Fordi de mener at sakramenter ikke betyr noe",
+                            "Fordi de ortodokse kirkene ba dem om å kutte ned"
                         ],
-                        "answer": "Sju"
+                        "correctAnswer": 1,
+                        "explanation": "Vann i dåpen og brød og vin i nattverden er tydelige ytre midler, og begge handlingene knyttes til Jesus selv i Det nye testamentet."
                     },
                     {
-                        "question": "Hva er hovedforskjellen mellom barnedåp og voksendåp?",
+                        "question": "Hva går den katolske læren om transsubstansiasjon ut på?",
                         "options": [
-                            "Det brukes ulike væsker",
-                            "Hvem som velger – foreldrene eller personen selv",
-                            "Voksendåp foregår alltid i kirken, barnedåp hjemme"
+                            "At brødet ikke lenger smaker som brød etter vigslingen",
+                            "At bare presten får spise brødet",
+                            "At brødets og vinens vesen forvandles til Jesu legeme og blod, mens utseende, lukt og smak er uforandret",
+                            "At nattverden bare er et minne om Jesu død"
                         ],
-                        "answer": "Hvem som velger – foreldrene eller personen selv"
+                        "correctAnswer": 2,
+                        "explanation": "Nettopp fordi utseende, lukt og smak er uendret, trenger læren et eget faguttrykk for det den mener har skjedd på innsiden."
                     },
                     {
-                        "question": "Hva sa Jesus da han delte ut brødet under det siste måltidet?",
+                        "question": "Hva mente Martin Luther om nattverden?",
                         "options": [
-                            "Dette er mitt legeme",
-                            "Dette er en gave fra himmelen",
-                            "Spis så mye dere vil"
+                            "At Jesu legeme og blod virkelig er til stede, men at brødet fortsatt er brød",
+                            "At brødet forvandles helt, akkurat som i katolsk lære",
+                            "At nattverden burde avskaffes",
+                            "At bare voksne som hadde valgt troen selv, kunne delta"
                         ],
-                        "answer": "Dette er mitt legeme"
+                        "correctAnswer": 0,
+                        "explanation": "Luther holdt fast på realpresens, altså at Jesus virkelig er til stede, men avviste transsubstansiasjonslæren om at elementene forvandles."
                     },
                     {
-                        "question": "Hvorfor beholdt protestantene bare to sakramenter etter reformasjonen?",
+                        "question": "Hva sier Den norske kirke om hvem som kan gå til nattverd?",
                         "options": [
-                            "Fordi paven beordret det",
-                            "Fordi de fem andre ikke ble innstiftet av Jesus i Bibelen",
-                            "Fordi sju var for dyrt"
+                            "Bare de som er konfirmert",
+                            "Bare de som er over 18 år",
+                            "Bordet er åpent for alle, uansett alder",
+                            "Bare de som har vært til skriftemål først"
                         ],
-                        "answer": "Fordi de fem andre ikke ble innstiftet av Jesus i Bibelen"
+                        "correctAnswer": 2,
+                        "explanation": "Tidligere måtte man være konfirmert. Fra 1969 fikk 12-åringer adgang på visse vilkår, og fra 1993 kunne alle døpte barn delta sammen med voksne."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Store norske leksikon. (2026). *Sakrament*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sakrament](https://snl.no/sakrament)",
+                    "Thomassen, M. & Rasmussen, T. (2026). *Nattverd*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nattverd](https://snl.no/nattverd)",
+                    "Elstad, H. (2026). *Dåp*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/dåp](https://snl.no/d%C3%A5p)",
+                    "Store norske leksikon & Elstad, H. (2026). *Transsubstansiasjon*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/transsubstansiasjon](https://snl.no/transsubstansiasjon)",
+                    "Den katolske kirke. (u.å.-a). *Annen del: Kirkens syv sakramenter*. Den katolske kirkes katekisme. Hentet 11.08.2026 fra [katolsk.no/tro/kkk/k2_06](https://www.katolsk.no/tro/kkk/k2_06)",
+                    "Den katolske kirke. (u.å.-b). *IV. Den liturgiske feiring av eukaristien*. Den katolske kirkes katekisme. Hentet 11.08.2026 fra [katolsk.no/tro/kkk/k2_10](https://www.katolsk.no/tro/kkk/k2_10)",
+                    "Den norske kirke. (u.å.-a). *En evangelisk-luthersk kirke*. Hentet 11.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/kristen-tro/kristen-tro/en-evangelisk-luthersk-kirke/)",
+                    "Den norske kirke. (u.å.-b). *Nattverd*. Hentet 11.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/kristen-tro/kristen-tro/nattverd/)"
                 ]
             }
         }
     ],
-    "concepts": [
-        {
-            "id": "sakrament",
-            "term": "Sakrament",
-            "definition": "En hellig handling som Jesus selv satte i gang. Et synlig tegn på en usynlig nåde."
-        },
-        {
-            "id": "dap",
-            "term": "Dåp",
-            "definition": "Det første kristne sakramentet. Inngangen til det kristne fellesskapet, der vann brukes som tegn på en ny start."
-        },
-        {
-            "id": "nattverd",
-            "term": "Nattverd",
-            "definition": "Et felles måltid med brød og vin som minner om Jesu siste kveld med disiplene."
-        },
-        {
-            "id": "eukaristi",
-            "term": "Eukaristi",
-            "definition": "Gresk ord for takksigelse. Vanlig navn på nattverden i den katolske og ortodokse kirken."
-        },
-        {
-            "id": "innstiftelsesord",
-            "term": "Innstiftelsesord",
-            "definition": "Ordene Jesus sa da han satte i gang nattverden: «Dette er mitt legeme … dette er mitt blod.»"
-        }
-    ],
-    "quote": {
-        "text": "Gjør dette til minne om meg.",
-        "source": "Bibelen",
-        "reference": "Lukas 22:19"
-    },
     "timeline": []
 }

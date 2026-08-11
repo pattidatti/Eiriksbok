@@ -1,6 +1,7 @@
 {
     "id": "skapelse",
-    "title": "Skapelsen i Bibelen",
+    "title": "To fortellinger om begynnelsen",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
@@ -9,135 +10,247 @@
         "skapelse",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Skapelsen i Bibelen"
-        },
-        {
-            "type": "text",
-            "content": "Helt i begynnelsen av Bibelen står skapelsesfortellingen. Gud skapte verden på seks dager og hvilte på den sjuende. Først skapte han lys, så himmelen, land og hav, sol, måne og stjerner, dyr - og til slutt mennesket. Den sjuende dagen hvilte Gud, og den ble hellig. Denne fortellingen handler ikke bare om hvordan verden ble til, men om at alt som finnes har en mening og en hensikt."
-        },
-        {
-            "type": "header",
-            "text": "Mennesket i Guds bilde"
-        },
-        {
-            "type": "text",
-            "content": "Bibelen sier at mennesket ble skapt i Guds bilde. Det betyr ikke at Gud ser ut som et menneske. Det handler om at mennesker har noe spesielt - evnen til å tenke, elske, skape og ta moralske valg. Å være skapt i Guds bilde betyr at hvert menneske har en unik verdi."
-        },
-        {
-            "type": "header",
-            "text": "Forvalteransvaret"
-        },
-        {
-            "type": "text",
-            "content": "I skapelsesfortellingen gir Gud menneskene ansvar for å ta vare på jorda. Dette kalles forvalteransvaret. Mennesket skal ikke bare bruke naturen, men passe på den. Mange kristne bruker dette som argument for at vi må ta vare på miljøet - fordi jorda er Guds skaperverk, og vi har fått i oppgave å verne om den."
-        },
-        {
-            "type": "header",
-            "text": "Syndefallet"
-        },
-        {
-            "type": "text",
-            "content": "Like etter skapelsesfortellingen kommer historien om Adam og Eva i Edens hage. De levde i et perfekt paradis, men Gud sa at de ikke fikk spise av treet som ga kunnskap om godt og ondt. Da de likevel gjorde det, mistet de plassen sin i hagen. Denne hendelsen kalles syndefallet, og den forklarer hvorfor verden ikke er perfekt - ifølge kristen tro."
-        },
-        {
-            "type": "header",
-            "text": "To skapelsesfortellinger"
-        },
-        {
-            "type": "text",
-            "content": "Noe som overrasker mange, er at Bibelen har to litt forskjellige skapelsesfortellinger. Den første (1. Mosebok kapittel 1) forteller om de seks dagene. Den andre (1. Mosebok kapittel 2) starter med at Gud former mennesket av jord. De to fortellingene har ulike detaljer, men begge handler om at Gud er skaperen."
-        },
-        {
-            "type": "header",
-            "text": "Skapelse og vitenskap"
-        },
-        {
-            "type": "text",
-            "content": "Hvordan passer skapelsesfortellingen med det vi vet om evolusjon og Big Bang? Kristne har ulike syn på dette. Noen mener at Bibelen beskriver seks bokstavelige dager. Andre leser fortellingen som et bilde eller en metafor, og mener den handler om at Gud står bak skaperverket - ikke om nøyaktig hvordan det skjedde. Begge synene finnes blant kristne i dag."
-        }
+    "category": "Kristendom",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "1. Mosebok åpner med to skapelsesfortellinger som setter hendelsene i ulik rekkefølge.",
+        "De seks dagene er bygget som tre par: dag 1-3 lager tre tomme rom, dag 4-6 fyller dem.",
+        "I fortellingen hviler Gud på den sjuende dagen. Jøder markerer hviledagen på sabbaten, de fleste kristne på søndagen.",
+        "Kristne tror at mennesket er skapt i Guds bilde og har fått ansvar for å ta vare på jorda.",
+        "Noen kristne leser de seks dagene bokstavelig, men de fleste ser ingen motsetning mellom evolusjonsteori og kristendom."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "skaperverket",
             "term": "Skaperverket",
-            "definition": "Alt som Gud har skapt: universet, jorda, planter, dyr og mennesker."
+            "definition": "Kristent uttrykk for alt Gud har skapt: universet, jorda, planter, dyr og mennesker."
+        },
+        {
+            "id": "imago-dei",
+            "term": "Imago dei",
+            "definition": "Latin for gudsbilde eller avbilde. Uttrykket kommer fra 1. Mosebok 1,27 og betyr ikke at mennesket er guddommelig, men at det står i en særstilling blant alt det skapte."
         },
         {
             "id": "forvalteransvar",
             "term": "Forvalteransvar",
-            "definition": "Menneskets oppgave å ta vare på jorda og alt som lever der. Kommer fra skapelsesfortellingen."
+            "definition": "Menneskets oppgave med å ta vare på jorda og alt som lever der. Kirkene bygger tanken på skapelsesfortellingene."
         },
         {
-            "id": "guds-bilde",
-            "term": "Guds bilde",
-            "definition": "Tanken om at mennesket er skapt likt Gud, med evne til å tenke, elske og skape."
+            "id": "sabbat",
+            "term": "Sabbat",
+            "definition": "Jødedommens hviledag. Den varer fra fredag ettermiddag til lørdag kveld, og skal blant annet minne om at Gud hvilte etter skapelsen."
         },
         {
-            "id": "syndefallet",
-            "term": "Syndefallet",
-            "definition": "Fortellingen om at Adam og Eva brøt Guds bud i Edens hage. Forklarer hvorfor verden ikke er perfekt."
-        },
-        {
-            "id": "eden",
-            "term": "Edens hage",
-            "definition": "Paradiset der Adam og Eva levde ifølge Bibelen, før de ble drevet ut etter syndefallet."
+            "id": "kreasjonisme",
+            "term": "Kreasjonisme",
+            "definition": "En trosretning som bygger på at universet og alt liv er skapt slik Bibelen beskriver det. Den er marginal i Skandinavia."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvor mange dager brukte Gud på å skape verden ifølge Bibelen?",
-            "options": [
-                "3 dager",
-                "6 dager",
-                "10 dager"
-            ],
-            "answer": "6 dager"
+            "type": "text",
+            "content": "Slå opp på den aller første siden i Bibelen og les videre. Etter et par sider skjer det noe rart: begynnelsen kommer en gang til. I kapittel 1 taler Gud, og verden blir til på seks dager. I kapittel 2 bøyer Gud seg ned og former et menneske av støv fra jorda, før det finnes en eneste busk på marken. 1. Mosebok har to skapelsesfortellinger, og de setter hendelsene i ulik rekkefølge (Bibelselskapet, 2011)."
         },
         {
-            "question": "Hva er menneskets oppgave i skaperverket?",
-            "options": [
-                "Å herske over andre",
-                "Å forvalte og ta vare på det",
-                "Å ødelegge det"
-            ],
-            "answer": "Å forvalte og ta vare på det"
+            "type": "text",
+            "content": "1. Mosebok er den første av Mosebøkene, de fem første bøkene i Det gamle testamentet. De åpner med fortellingene om skapelsen og menneskets urhistorie (Groth & Store norske leksikon, 2025). Allerede på 1800-tallet begynte bibelforskere å granske disse tekstene med vitenskapens metoder. Julius Wellhausen (1844-1918) satte i system den såkalte flerkildehypotesen, som sier at Mosebøkene er satt sammen av tekster fra ulik tid og ulike miljøer (Groth & Store norske leksikon, 2025). Bibelforskerne mener at de to fortellingene kommer fra ulike miljøer av skriftlærde, altså folk som kunne lese og skrive og tok vare på de hellige tekstene (Kværne mfl., 2026)."
         },
         {
-            "question": "Hva er syndefallet?",
-            "options": [
-                "At Gud skapte synden",
-                "At Adam og Eva brøt Guds bud",
-                "At djevelen skapte verden"
-            ],
-            "answer": "At Adam og Eva brøt Guds bud"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bibel på de første sidene i sterkt sidelys",
+            "caption": "De to skapelsesfortellingene står rett etter hverandre, helt først i Bibelen."
         },
         {
-            "question": "Hvor mange skapelsesfortellinger har Bibelen?",
-            "options": [
-                "En",
-                "To",
-                "Tre"
-            ],
-            "answer": "To"
+            "type": "text",
+            "content": "Forskjellene er lette å se når du vet hva du skal se etter. I kapittel 1 kommer mennesket helt til slutt, etter planter, sjødyr, fugler og landdyr, og mann og kvinne skapes samtidig og i Guds bilde. I kapittel 2 formes mennesket først, før plantene har spirt, og kvinnen formes seinere av mannens ribbein (Groth & Barstad, 2024). Fortellingen i kapittel 2 fortsetter inn i kapittel 3, med slangen, det forbudte treet og det som kristne kaller syndefallet. Kristne teologer bygde seinere læren om arvesynd på den teksten, tanken om at alle mennesker har arvet synden til de første menneskene. Jødisk tradisjon tolker ikke fortellingen slik (Groth & Store norske leksikon, 2026). Mer om det finner du i artikkelen om [frelse](/krle/religion/kristendom/frelse), og mer om hvordan kristne bruker Bibelen i artikkelen om [hellige tekster](/krle/religion/kristendom/hellige-tekster)."
         },
         {
-            "question": "Kan man være kristen og tro på evolusjon?",
-            "options": [
-                "Nei, aldri",
-                "Ja, mange kristne gjør det",
-                "Bare katolikker"
-            ],
-            "answer": "Ja, mange kristne gjør det"
+            "type": "header",
+            "text": "Seks dager, tre par"
+        },
+        {
+            "type": "text",
+            "content": "Kapittel 1 har en fast takt. Gud sa. Og Gud så at det var godt. Og det ble kveld, og det ble morgen. Setningene kommer igjen dag etter dag. Den norske kirke kaller \"Og Gud så at det var godt\" et refreng gjennom hele fortellingen om verdens skapelse (Den norske kirke, u.å.-a). Men under refrenget ligger det et mønster til. Prøv å finne det selv."
+        },
+        {
+            "type": "component",
+            "name": "SeksDagersVerket",
+            "props": {
+                "title": "Finn mønsteret i de seks dagene"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Fant du det? De tre første dagene lager tre tomme rom, og de tre siste fyller nøyaktig de samme rommene, i samme rekkefølge. Dag 1 skiller lys fra mørke, dag 4 setter sol, måne og stjerner inn i dem. Dag 2 lager hvelvingen Gud kaller himmel, dag 5 fyller lufta med fugler og vannet med sjødyr. Dag 3 lar det tørre landet komme til syne, dag 6 slipper landdyrene og menneskene ut på det (Bibelselskapet, 2011). Først rom, så innbyggere. Mange kirker leser de seks dagene som en form, ikke som en kalender. Den katolske kirkes katekisme, altså kirkens offisielle læreoversikt, sier at Skriften framstiller Skaperens verk symbolsk som en serie på seks guddommelige arbeidsdager som munner ut i hvilen på den sjuende dagen (Den katolske kirke, u.å.)."
+        },
+        {
+            "type": "header",
+            "text": "Dagen da Gud stanser"
+        },
+        {
+            "type": "text",
+            "content": "I fortellingen skjer det ingenting på den sjuende dagen. Gud fullfører arbeidet, hviler, velsigner dagen og lyser den hellig (Bibelselskapet, 2011). I jødedommen er dette sabbaten, som varer fra fredag ettermiddag til lørdag kveld og er satt av til hvile og gudstjeneste. Den er påbudt i 2. Mosebok 20,8-11, og skal blant annet minne om skapelsen (Cohen & Groth, 2025). De fleste kristne markerer hviledagen på søndagen i stedet. Søndagen feires til minne om Jesu oppstandelse, som ifølge Det nye testamentet skjedde på en søndag, og de første kristne kalte dagen Herrens dag (Store norske leksikon & Thomassen, 2025)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Gud så på alt det han hadde gjort, og se, det var svært godt!",
+                "author": "1. Mosebok 1,31, Bibelen 2011"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det siste teksten sier om verden før hvilen, er altså at den er svært god. For kristne er dette et viktig utgangspunkt. De mener at verden er god i seg selv, og at Gud ikke slutter å skape når de seks dagene er over. Den norske kirke skriver at skapelsen ikke bare var noe som skjedde en gang, for Gud skaper hele tiden (Den norske kirke, u.å.-a)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tomt kjøkkenbord med brød og lys i lav ettermiddagssol",
+            "caption": "Hviledagen har fulgt teksten videre: sabbaten i jødedommen, søndagen i de fleste kirker."
+        },
+        {
+            "type": "header",
+            "text": "Skapt i Guds bilde"
+        },
+        {
+            "type": "text",
+            "content": "Ett vers har fått mer å si enn de fleste andre i Bibelen: \"Og Gud skapte mennesket i sitt bilde, i Guds bilde skapte han det, som mann og kvinne skapte han dem\" (Bibelselskapet, 2011). På latin heter uttrykket imago dei, gudsbilde eller avbilde. At mennesket bærer imago dei, betyr ikke at det er guddommelig, men at det står i en særstilling blant alt det skapte (Store norske leksikon, 2024). Den norske kirke bruker verset om menneskeverd: verdien vår ligger ikke i hva vi eier eller får til, men i at vi er til, og da finnes det ingen grunn til å rangere mennesker (Den norske kirke, u.å.-b). Hvordan kristne ellers tenker om Gud, kan du lese om i artikkelen om [gudsbildet](/krle/religion/kristendom/gudsbilde)."
+        },
+        {
+            "type": "text",
+            "content": "Det samme kapitlet gir mennesket en jobb, og ordene er sterke: \"Vær fruktbare og bli mange, fyll jorden og legg den under dere!\" (Bibelselskapet, 2011). I kapittel 2 er tonen en annen. Der blir mennesket satt i hagen til å dyrke og passe den. Både Den norske kirke og Den katolske kirke legger i dag mest vekt på det siste. Den norske kirke sier at mennesket har fått et forvalteransvar av Skaperen, og at det er vårt ansvar å ta vare på skaperverket (Den norske kirke, u.å.-b). Den katolske katekismen advarer mot å bruke skapningene på måter som strider mot skaperordenen, og sier at slik bruk får uheldige følger for både mennesker og miljø (Den katolske kirke, u.å.)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ung hånd som holder en jordklump med spirende plante",
+            "caption": "Forvalteransvaret er et av de vanligste argumentene for miljøvern i kirkene i dag."
+        },
+        {
+            "type": "header",
+            "text": "Seks dager eller fjorten milliarder år?"
+        },
+        {
+            "type": "text",
+            "content": "I 1951 uttalte paven at big bang-teorien var en naturvitenskapelig støtte for Bibelens skapelsesberetning. Mannen som hadde laget teorien, protesterte med en gang. Georges Lemaître var belgisk prest og kosmolog, altså forsker på hvordan universet er bygd opp og har blitt til, og regnes i dag som big bang-teoriens far. Han skrev at naturvitenskapens universmodeller er religiøst nøytrale, og mente at den materielle og den åndelige siden av tilværelsen er to sider som krever hver sin tilnærming (Grøn, 2025). En prest kunne altså slå fast at teorien hans verken bekreftet eller motbeviste noen tro."
+        },
+        {
+            "type": "text",
+            "content": "Andre kristne leser de seks dagene bokstavelig. Kreasjonisme er en trosretning som bygger på at universet, verden og alt liv er skapt slik Bibelen beskriver det. Den vokste fram i USA på 1920-tallet, i kirkesamfunn som mente at Bibelen må leses helt bokstavelig, og i motstand mot Charles Darwins utviklingslære, altså forklaringen på at artene har utviklet seg over lang tid (Gundersen & Elstad, 2025). I 1925 forbød delstaten Tennessee lærere i offentlige skoler å undervise i lære som stred mot Bibelens skapelsesberetning, og læreren John Scopes ble dømt til 100 dollar i bot i saken folk kalte Apeprosessen. Boten ble opphevet av delstatens høyesterett to år seinere (Pettersen mfl., 2026). I Skandinavia er kreasjonismen mer marginal. Den finnes i enkelte kristne miljøer, blant annet i deler av pinsebevegelsen og i adventistkirker, men de fleste kristne ser ingen motsetning mellom evolusjonsteori og kristendom (Gundersen & Elstad, 2025). At kristne leser den samme teksten ulikt, er ikke noe nytt, og du kan lese mer om forskjellene i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor i 1. Mosebok står de to skapelsesfortellingene, og hva er den viktigste forskjellen mellom dem?",
+                    "Forklar hvordan de seks dagene er bygget som tre par. Bruk dag 2 og dag 5 som eksempel.",
+                    "Hva skjer på den sjuende dagen, og hvorfor markerer jøder og de fleste kristne hviledagen på ulike ukedager?",
+                    "Hva betyr imago dei, og hva betyr uttrykket ikke?"
+                ],
+                "reflekter": [
+                    "1. Mosebok 1 sier at mennesket skal legge jorda under seg. 1. Mosebok 2 sier at mennesket skal dyrke og passe hagen. Hvorfor tror du kirkene i dag legger mest vekt på det siste?",
+                    "Den katolske katekismen kaller de seks dagene et symbolsk bilde. Hva mener du en kirke vinner på å lese teksten slik, og hva kan den tape?",
+                    "Georges Lemaître var prest, og mente at vitenskapens universmodeller er religiøst nøytrale. Forklar med egne ord hva han mente.",
+                    "Bibelforskere mener de to fortellingene kommer fra ulike miljøer av skriftlærde. Endrer det noe for en som tror at Gud står bak teksten? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Finn ut mer om Apeprosessen i 1925, og skriv en kort tekst om hvorfor rettssaken ble så kjent.",
+                    "Sammenlign skapelsesfortellingen i 1. Mosebok med en skapelsesfortelling fra en annen religion. Hva er likt, og hva er ulikt?",
+                    "Undersøk hvordan en menighet der du bor arbeider med miljø og skaperverk, og presenter funnene for klassen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvor mange skapelsesfortellinger står det i 1. Mosebok, og hva skiller dem?",
+                        "options": [
+                            "Én fortelling, delt i to kapitler med samme rekkefølge",
+                            "To fortellinger som setter hendelsene i ulik rekkefølge",
+                            "Tre fortellinger, én for hver del av treenigheten",
+                            "To fortellinger som er helt like, bare på ulike språk"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "I kapittel 1 skapes mennesket til slutt, etter planter og dyr. I kapittel 2 formes mennesket først, før plantene har spirt."
+                    },
+                    {
+                        "question": "Hva er mønsteret i de seks dagene?",
+                        "options": [
+                            "Dagene blir lengre og lengre utover i uka",
+                            "Gud skaper noe nytt annenhver dag",
+                            "Dag 1-3 lager tre rom, dag 4-6 fyller de samme rommene i samme rekkefølge",
+                            "Hver dag gjentar nøyaktig det som skjedde dagen før"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Dag 1 og 4 hører sammen, dag 2 og 5, dag 3 og 6. Først lages tomme rom, så fylles de."
+                    },
+                    {
+                        "question": "Hva betyr imago dei?",
+                        "options": [
+                            "At mennesket selv er guddommelig",
+                            "Gudsbilde eller avbilde: mennesket står i en særstilling blant det skapte",
+                            "At Gud ser ut som et menneske",
+                            "At bare prester og biskoper ligner Gud"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Uttrykket kommer fra 1. Mosebok 1,27. Det betyr ikke at mennesket er guddommelig, men at det har en særstilling blant alt det skapte."
+                    },
+                    {
+                        "question": "Hvorfor markerer de fleste kristne hviledagen på søndag og ikke på lørdag?",
+                        "options": [
+                            "Fordi søndagen er den sjuende dagen i den jødiske uka",
+                            "Fordi Jesus ble født på en søndag",
+                            "Fordi paven bestemte det på 1500-tallet",
+                            "Fordi søndagen feires til minne om Jesu oppstandelse"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Ifølge Det nye testamentet sto Jesus opp på en søndag. De første kristne kalte dagen Herrens dag."
+                    },
+                    {
+                        "question": "Hva er kreasjonisme, og hvor utbredt er den i Skandinavia?",
+                        "options": [
+                            "Troen på at universet er skapt slik Bibelen beskriver det, og den er marginal i Skandinavia",
+                            "Troen på at Gud ikke finnes, og den er svært utbredt",
+                            "Et katolsk kirkemøte fra 1500-tallet",
+                            "En vitenskapelig teori de fleste forskere støtter"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Kreasjonismen finnes i enkelte kristne miljøer, særlig i pinsebevegelsen og i adventistkirker, men de fleste kristne ser ingen motsetning mellom evolusjonsteori og kristendom."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bibelselskapet. (2011). *1. Mosebok 1-2*. Bibelen. Hentet 11.08.2026 fra [bibel.no](https://bibel.no/nettbibelen/les/nb-2011/GEN/GEN.1)",
+                    "Groth, B. & Store norske leksikon. (2025). *Mosebøkene*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Mosebøkene](https://snl.no/Moseb%C3%B8kene)",
+                    "Groth, B. & Store norske leksikon. (2026). *Syndefallet*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/syndefallet](https://snl.no/syndefallet)",
+                    "Groth, B. & Barstad, H. M. (2024). *Adam - bibelsk skikkelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Adam_-_bibelsk_skikkelse](https://snl.no/Adam_-_bibelsk_skikkelse)",
+                    "Kværne, P., Groth, B. & Løøv, M. (2026). *Skapelsesmyter*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/skapelsesmyter](https://snl.no/skapelsesmyter)",
+                    "Store norske leksikon. (2024). *Imago dei*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/imago_dei](https://snl.no/imago_dei)",
+                    "Cohen, K. J. & Groth, B. (2025). *Sabbat*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sabbat](https://snl.no/sabbat)",
+                    "Store norske leksikon & Thomassen, M. (2025). *Søndag*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/søndag](https://snl.no/s%C3%B8ndag)",
+                    "Gundersen, D. & Elstad, H. (2025). *Kreasjonisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/kreasjonisme](https://snl.no/kreasjonisme)",
+                    "Grøn, Ø. (2025). *Georges Lemaître*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Georges_Lemaître](https://snl.no/Georges_Lema%C3%AEtre)",
+                    "Pettersen, S. A., Gisle, J. & Store norske leksikon. (2026). *Apeprosessen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Apeprosessen](https://snl.no/Apeprosessen)",
+                    "Den katolske kirke. (u.å.). *5. avsnitt: Himmel og jord*. Den katolske kirkes katekisme. Hentet 11.08.2026 fra [katolsk.no/tro/kkk/k1_10](https://www.katolsk.no/tro/kkk/k1_10)",
+                    "Den norske kirke. (u.å.-a). *Gud, vår skaper*. Hentet 11.08.2026 fra [kirken.no](https://kirken.no/nb-NO/kristen-tro/kristen-tro/gud-var-skaper/)",
+                    "Den norske kirke. (u.å.-b). *Hva er et menneske?* Hentet 11.08.2026 fra [kirken.no](https://kirken.no/nb-NO/kristen-tro/kristen-tro/hva_er_et_menneske/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "I begynnelsen skapte Gud himmelen og jorden.",
-        "source": "Bibelen",
-        "reference": "1. Mosebok 1:1"
-    }
+    "timeline": []
 }

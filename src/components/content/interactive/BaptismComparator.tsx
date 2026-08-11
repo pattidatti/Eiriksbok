@@ -8,12 +8,16 @@ interface ChurchAnswer {
     explanation: string;
 }
 
+interface BibleVerse {
+    text: string;
+    ref: string;
+}
+
 interface Dimension {
     id: string;
     label: string;
     question: string;
-    verse: string;
-    verseRef: string;
+    verses: BibleVerse[];
     churches: [ChurchAnswer, ChurchAnswer, ChurchAnswer];
 }
 
@@ -25,81 +29,97 @@ const DIMENSIONS: Dimension[] = [
     {
         id: 'hvem',
         label: 'Hvem?',
-        question: 'Hvem har rett til å bli døpt?',
-        verse: 'Omvend dere, og la dere alle døpe i Jesu Kristi navn til syndenes forlatelse.',
-        verseRef: 'Apostlenes gjerninger 2,38',
+        question: 'Hvem kan bli døpt?',
+        verses: [
+            {
+                text: 'Vend om og la dere døpe i Jesu Kristi navn, hver og en av dere, så dere kan få tilgivelse for syndene.',
+                ref: 'Apostlenes gjerninger 2,38 (Bibelen 2011) - brukes av baptistene',
+            },
+            {
+                text: 'La de små barna komme til meg, og hindre dem ikke! For Guds rike tilhører slike som dem.',
+                ref: 'Markus 10,14 (Bibelen 2011) - brukes til forsvar for barnedåpen',
+            },
+        ],
         churches: [
             {
                 name: 'Baptistene',
-                short: 'Bare troende voksne',
+                short: 'Bare den som selv kan tro',
                 explanation:
-                    'Kun den som selv kan bekjenne troen sin. Et spedbarn kan ikke forstå hva det sier ja til. Dåpen er en bevisst handling.',
+                    'Dåpen er forbeholdt mennesker som kan stå personlig inne for kristendommen sin. Slik baptistene ser det, kan et spedbarn ikke ta det valget. Derfor tar de avstand fra barnedåp.',
             },
             {
                 name: 'Den norske kirke',
                 short: 'Spedbarn og voksne',
                 explanation:
-                    'Barnedåpen er innarbeidet tradisjon. Foreldrene og fadderforeldre lover å oppdra barnet i kristen tro. Dåpen er Guds gave, ikke barnets prestasjon.',
+                    'Barnedåp er det vanlige, men kirken sier at du kan bli døpt når som helst i livet. Er du udøpt og vil bli medlem som ungdom eller voksen, brukes en tilpasset dåpsliturgi.',
             },
             {
                 name: 'Den katolske kirke',
                 short: 'Helst som spedbarn',
                 explanation:
-                    'Barnedåp er normen fordi arvesynden fjernes ved dåpen. Jo raskere, jo bedre - barnet trenger Guds nåde fra starten.',
+                    'Katekismen lærer at spedbarn fødes med en skadet menneskenatur og trenger å bli gjenfødt i dåpen. Å vente ville være å frata barnet en uvurderlig nåde.',
             },
         ],
     },
     {
         id: 'metode',
         label: 'Hvordan?',
-        question: 'Hvordan utføres dåpen?',
-        verse: 'Da Jesus var blitt døpt, steg han straks opp av vannet.',
-        verseRef: 'Matteus 3,16',
+        question: 'Hvordan blir dåpen utført?',
+        verses: [
+            {
+                text: 'Da Jesus var blitt døpt, steg han straks opp av vannet.',
+                ref: 'Matteus 3,16 (Bibelen 2011)',
+            },
+        ],
         churches: [
             {
                 name: 'Baptistene',
-                short: 'Full neddykking',
+                short: 'Gjerne full neddykking',
                 explanation:
-                    'Hele kroppen senkes under vann. Symbolet er kraftigst slik: du dør fra det gamle livet og stiger opp til det nye. Jesus ble selv neddykket i Jordanelven.',
+                    'Hele kroppen senkes under vann. De aller første baptistene på 1600-tallet øste derimot vann over hodet. Full neddykking ble tatt i bruk fra 1641.',
             },
             {
                 name: 'Den norske kirke',
-                short: 'Stenking med vann',
+                short: 'Vann øses over hodet',
                 explanation:
-                    'Presten heller noen dråper vann over hodet tre ganger, i Faderens, Sønnens og Den hellige ånds navn. Symbolikken er den samme, formen er enklere.',
+                    'Presten øser tre håndfuller vann over hodet og sier: «Jeg døper deg til Faderens, Sønnens og Den Hellige Ånds navn.»',
             },
             {
                 name: 'Den katolske kirke',
-                short: 'Stenking eller øsing',
+                short: 'Neddykking eller overøsing',
                 explanation:
-                    'Vann helles over hodet. Selve vannmengden er ikke avgjørende - det er ordene og intensjonen som gjør handlingen til et sakrament.',
+                    'Katekismen sier at dåpen utføres mest meningsfullt ved trefoldig neddykking, men at den siden antikken også har kunnet skje ved å øse vann tre ganger over hodet.',
             },
         ],
     },
     {
         id: 'teologi',
         label: 'Hva betyr det?',
-        question: 'Hva skjer teologisk i dåpen?',
-        verse: 'Den som tror og blir døpt, skal bli frelst.',
-        verseRef: 'Markus 16,16',
+        question: 'Hva skjer i dåpen?',
+        verses: [
+            {
+                text: 'Den som tror og blir døpt, skal bli frelst.',
+                ref: 'Markus 16,16 (Bibelen 2011)',
+            },
+        ],
         churches: [
             {
                 name: 'Baptistene',
-                short: 'Lydighetshandling',
+                short: 'En bekreftelse på troen',
                 explanation:
-                    'Dåpen frelser deg ikke - du er allerede frelst av tro. Dåpen er et offentlig vitnesbyrd: "Jeg er kristen." Det er en lydighetshandling, ikke et nådemiddel.',
+                    'Dåpen bekrefter et valg som allerede er tatt. Den kalles troendes dåp og er et uttrykk for en personlig trosoverbevisning. Troen kommer først, dåpen etterpå.',
             },
             {
                 name: 'Den norske kirke',
-                short: 'Nådemiddel',
+                short: 'Sakrament og gave',
                 explanation:
-                    'Gud virker gjennom dåpen. Det er ikke bare en handling vi gjør - det er noe Gud gjør med oss. Dåpen gir syndstilgivelse og Den hellige ånd.',
+                    'Dåpen regnes som det første og viktigste sakramentet, altså en hellig handling der Gud gir noe. Begrunnelsen for barnedåpen er at troen og tilgivelsen dåpen er et tegn på, er en gave og ikke noe mennesket kan gjøre seg fortjent til.',
             },
             {
                 name: 'Den katolske kirke',
-                short: 'Sakrament som gir nåde',
+                short: 'Gjenfødelsens sakrament',
                 explanation:
-                    'Dåpen er ett av sju sakramenter. Den fjerner arvesynden, gir helliggjørende nåde og gjør deg til lem av Kirkens kropp. Det er ikke mulig å bli frelst uten.',
+                    'Katekismen kaller dåpen «gjenfødelsens sakrament ved vannet og i Ordet». Den er samtidig troens sakrament: troen som kreves, er en begynnelse som skal vokse videre.',
             },
         ],
     },
@@ -107,35 +127,54 @@ const DIMENSIONS: Dimension[] = [
         id: 'konsekvens',
         label: 'Hva skjer etterpå?',
         question: 'Hva betyr dåpen for fellesskapet?',
-        verse: 'Vi ble alle døpt med én Ånd til å være ett legeme.',
-        verseRef: '1. Korinterbrev 12,13',
+        verses: [
+            {
+                text: 'For med én Ånd ble vi alle døpt til å være én kropp.',
+                ref: '1. Korinterbrev 12,13 (Bibelen 2011)',
+            },
+        ],
         churches: [
             {
                 name: 'Baptistene',
-                short: 'Inn i menigheten av troende',
+                short: 'Inn i en menighet av troende',
                 explanation:
-                    'Du blir tatt opp i en lokal menighet av bevisste kristne. Fellesskapet er frivillig og aktivt - alle som er der har valgt å være der.',
+                    'Du blir del av en lokal menighet som styrer seg selv og ansetter sin egen pastor. Den som kommer fra en kirke med barnedåp, må døpes på nytt ved opptaket.',
             },
             {
                 name: 'Den norske kirke',
-                short: 'Pakt og kirkemedlemskap',
+                short: 'Medlemskap i kirken',
                 explanation:
-                    'Du inngår en pakt med Gud og blir registrert som kirkemedlem. Konfirmasjonen bekrefter dåpsløftet bevisst i tenårene.',
+                    'Dåpen er kriteriet for medlemskap. Er du allerede døpt i et annet kristent trossamfunn, trengs ingen ny dåp. Foreldre og faddere blir bedt om å be for barnet.',
             },
             {
                 name: 'Den katolske kirke',
-                short: 'Del av Kirkens kropp',
+                short: 'Det første av tre skritt',
                 explanation:
-                    'Du blir innlemmet i den ene, hellige, katolske og apostoliske kirke. Dåpen etterfølges av ferming og første nattverd - de tre initiasjonssakramentene.',
+                    'Dåpen er det første av sakramentene som innvier i det kristne liv. Foreldre, faddere og hele menigheten har ansvar for at dåpens nåde får vokse videre.',
             },
         ],
     },
 ];
 
 const CHURCH_COLORS = [
-    { border: 'border-blue-500', bg: 'bg-blue-50', text: 'text-blue-700', badge: 'bg-blue-100 text-blue-800' },
-    { border: 'border-amber-500', bg: 'bg-amber-50', text: 'text-amber-700', badge: 'bg-amber-100 text-amber-800' },
-    { border: 'border-yellow-600', bg: 'bg-yellow-50', text: 'text-yellow-700', badge: 'bg-yellow-100 text-yellow-800' },
+    {
+        border: 'border-blue-500',
+        bg: 'bg-blue-50',
+        text: 'text-blue-700',
+        badge: 'bg-blue-100 text-blue-800',
+    },
+    {
+        border: 'border-amber-500',
+        bg: 'bg-amber-50',
+        text: 'text-amber-700',
+        badge: 'bg-amber-100 text-amber-800',
+    },
+    {
+        border: 'border-emerald-600',
+        bg: 'bg-emerald-50',
+        text: 'text-emerald-700',
+        badge: 'bg-emerald-100 text-emerald-800',
+    },
 ];
 
 export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismComparatorProps) {
@@ -151,19 +190,19 @@ export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismCom
     };
 
     return (
-        <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+        <div className="my-8 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
             {/* Header */}
-            <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-3 bg-slate-50">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                    <Droplets className="w-5 h-5 text-blue-600" />
+            <div className="flex items-center gap-3 border-b border-slate-100 bg-slate-50 px-6 py-4">
+                <div className="rounded-lg bg-blue-100 p-2">
+                    <Droplets className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
                     <h3 className="font-semibold text-slate-800">{title}</h3>
                     <p className="text-sm text-slate-500">
-                        Klikk pa en dimensjon og se hva de tre kirkene svarer
+                        Klikk på et spørsmål og se hva de tre kirkene svarer
                     </p>
                 </div>
-                <div className="ml-auto text-sm text-slate-400 font-medium">
+                <div className="ml-auto text-sm font-medium text-slate-400">
                     {explored.size}/{DIMENSIONS.length} utforsket
                 </div>
             </div>
@@ -177,9 +216,9 @@ export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismCom
                         <button
                             key={dim.id}
                             onClick={() => handleSelect(dim.id)}
-                            className={`flex-1 px-3 py-3 text-sm font-medium transition-all relative ${
+                            className={`relative flex-1 px-3 py-3 text-sm font-medium transition-all ${
                                 isActive
-                                    ? 'bg-white text-blue-700 border-b-2 border-blue-500'
+                                    ? 'border-b-2 border-blue-500 bg-white text-blue-700'
                                     : isExplored
                                       ? 'text-slate-600 hover:bg-white'
                                       : 'text-slate-400 hover:bg-white hover:text-slate-600'
@@ -187,7 +226,7 @@ export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismCom
                         >
                             {dim.label}
                             {isExplored && !isActive && (
-                                <span className="absolute top-1 right-1 w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+                                <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                             )}
                         </button>
                     );
@@ -204,12 +243,12 @@ export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismCom
                         exit={{ opacity: 0, y: -6 }}
                         transition={{ duration: 0.18 }}
                     >
-                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4">
+                        <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-slate-400">
                             {activeDim.question}
                         </p>
 
                         {/* Church cards */}
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                             {activeDim.churches.map((church, i) => {
                                 const color = CHURCH_COLORS[i];
                                 return (
@@ -218,17 +257,17 @@ export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismCom
                                         initial={{ opacity: 0, scale: 0.97 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: i * 0.06 }}
-                                        className={`rounded-xl border-t-4 ${color.border} bg-white border border-slate-200 border-t-4 p-4 shadow-sm`}
+                                        className={`rounded-xl border border-slate-200 border-t-4 bg-white p-4 shadow-sm ${color.border}`}
                                     >
                                         <p
                                             className={`text-xs font-bold uppercase tracking-wide ${color.text} mb-1`}
                                         >
                                             {church.name}
                                         </p>
-                                        <p className="font-semibold text-slate-800 text-sm mb-2">
+                                        <p className="mb-2 text-sm font-semibold text-slate-800">
                                             {church.short}
                                         </p>
-                                        <p className="text-xs text-slate-600 leading-relaxed">
+                                        <p className="text-xs leading-relaxed text-slate-600">
                                             {church.explanation}
                                         </p>
                                     </motion.div>
@@ -236,15 +275,22 @@ export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismCom
                             })}
                         </div>
 
-                        {/* Bible verse */}
+                        {/* Bible verses */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.25 }}
-                            className="mt-4 px-4 py-3 bg-blue-50 border border-blue-100 rounded-lg"
+                            className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2"
                         >
-                            <p className="text-sm italic text-blue-800">«{activeDim.verse}»</p>
-                            <p className="text-xs text-blue-500 mt-1">{activeDim.verseRef}</p>
+                            {activeDim.verses.map((verse) => (
+                                <div
+                                    key={verse.ref}
+                                    className="rounded-lg border border-blue-100 bg-blue-50 px-4 py-3"
+                                >
+                                    <p className="text-sm italic text-blue-800">«{verse.text}»</p>
+                                    <p className="mt-1 text-xs text-blue-500">{verse.ref}</p>
+                                </div>
+                            ))}
                         </motion.div>
                     </motion.div>
                 </AnimatePresence>
@@ -257,16 +303,23 @@ export function BaptismComparator({ title = 'Tre kirker, tre svar' }: BaptismCom
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="mx-6 mb-5 px-4 py-3 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center gap-2"
+                        className="mx-6 mb-5 flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3"
                     >
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
                         <p className="text-sm text-emerald-700">
-                            Du har utforsket alle fire dimensjonene. Legg merke til: det handler ikke om
-                            hvem som gjor det «riktig» - men om hva dåpen betyr for den enkelte retningen.
+                            Du har vært gjennom alle fire spørsmålene. Alle tre kirkene bygger på
+                            Bibelen, men de leser den ulikt og legger vekt på ulike tekster. Ingen
+                            av svarene er «det kristne svaret»: dette er en uenighet kristne har
+                            hatt med hverandre i flere hundre år.
                         </p>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <p className="px-6 pb-5 text-xs text-slate-400">
+                Kilder: Store norske leksikon (baptisme, dåp), Den katolske kirkes katekisme og Den
+                norske kirke. Se kildelisten nederst i artikkelen.
+            </p>
         </div>
     );
 }

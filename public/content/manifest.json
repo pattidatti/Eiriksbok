@@ -469,7 +469,7 @@
                 "budskap"
               ],
               "createdDate": "2026-02-05T10:32:12+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-11T19:49:18+02:00"
             },
             {
               "id": "analyse-novelle",
@@ -517,7 +517,7 @@
                 "roman"
               ],
               "createdDate": "2026-02-02T15:09:02+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-11T19:49:18+02:00"
             },
             {
               "id": "analyse-fagartikkel",
@@ -1084,7 +1084,7 @@
                 "norsk"
               ],
               "createdDate": "2026-06-02T09:38:09+02:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-11T19:49:18+02:00"
             }
           ]
         }
@@ -7467,9 +7467,9 @@
               "lessons": [
                 {
                   "id": "intro",
-                  "title": "Introduksjon",
-                  "description": "Verdens største religion: retninger, utbredelse og kristendommen i Norge.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "title": "Verdens største religion",
+                  "description": "Verdens største religion begynte med en henrettelse i Jerusalem. Se hva historikere faktisk kan slå fast, hva kristne tror, og hvordan de tre hovedgrenene skiller lag.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "intro"
@@ -7569,9 +7569,9 @@
                 },
                 {
                   "id": "skapelse",
-                  "title": "Skapelsen",
-                  "description": "Bibelens skapelsesfortelling, syndefallet og forvalteransvaret.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "title": "To fortellinger om begynnelsen",
+                  "description": "1. Mosebok åpner med to skapelsesfortellinger som setter hendelsene i ulik rekkefølge. Finn mønsteret i de seks dagene, og se hvorfor kristne leser den samme teksten så ulikt.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "skapelse",
@@ -7582,9 +7582,9 @@
                 },
                 {
                   "id": "paulus-og-misjonen",
-                  "title": "Paulus og misjonen",
-                  "description": "Hvordan en streng forfølger ble den som åpnet kristendommen for hele verden.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "title": "Avgjørelsen som åpnet døren",
+                  "description": "Paulus forfulgte de første Jesus-troende, men ble den viktigste misjonæren av dem alle. På møtet i Jerusalem i år 48 måtte jøder og ikke-jøder finne ut hvordan de kunne dele den samme menigheten uten at den ene gruppen måtte bli den andre.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "misjon",
@@ -7597,8 +7597,8 @@
                 {
                   "id": "kirkesamfunn",
                   "title": "Kirkesamfunn: Splittelse og enhet",
-                  "description": "Tre store familier av kristne, to historiske splittelser og veien tilbake til samarbeid.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "description": "To brudd forklarer nesten hele kirkekartet: 1054 mellom øst og vest, og reformasjonen fra 1517. Tegn treet steg for steg og se hvor få splittelser som skiller katolikker, ortodokse og protestanter - og hvordan greinene har begynt å snakke sammen igjen.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "kirkesamfunn",
@@ -7612,8 +7612,8 @@
                 {
                   "id": "sakramentene",
                   "title": "Sakramentene: Dåp og nattverd",
-                  "description": "Synlige tegn på usynlig nåde – ritualene som tar deg inn i fellesskapet og samler det rundt bordet.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "description": "Hva er egentlig et sakrament? Følg vannet i dåpen og brødet i nattverden, og se hvorfor katolske, lutherske, reformerte og baptistiske kirker svarer så ulikt på hva som skjer.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "sakrament",
@@ -7627,8 +7627,8 @@
                 {
                   "id": "baptistene",
                   "title": "Baptistene: frihet gjennom dåpen",
-                  "description": "Frikirken som definerer seg ved ett prinsipp: bare troende kan døpes. Fra Amsterdam 1609 til borgerrettighetsbevegelsen.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "description": "Baptistene mener dåpen må komme etter et personlig valg, ikke før. Møt uenigheten mellom kirkene om dåpen, veien fra Amsterdam 1609 til Porsgrunn 1860, og en bevegelse som ikke er enig med seg selv.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "baptistene",
@@ -7641,9 +7641,9 @@
                 },
                 {
                   "id": "pinse",
-                  "title": "Pinse",
-                  "description": "Den dagen Den hellige ånd kom over disiplene og kirken ble til.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "title": "Pinse: Den dagen kirken ble til",
+                  "description": "Femti dager etter påske skjer det noe i Jerusalem som mange kristne kaller kirkens fødselsdag. Møt pinsefortellingen, den jødiske høytiden bak den, og de ulike måtene kirkesamfunnene forstår Den hellige ånd på.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "høytider",
@@ -7796,7 +7796,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-06-09T11:51:44+02:00"
+                  "lastUpdated": "2026-08-11T20:14:44+02:00"
                 },
                 {
                   "id": "den-attedelte-vei",
@@ -7933,7 +7933,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-06-09T11:51:44+02:00"
+                  "lastUpdated": "2026-08-11T20:14:44+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8057,7 +8057,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-06-09T14:33:51+02:00"
+                  "lastUpdated": "2026-08-11T20:14:44+02:00"
                 },
                 {
                   "id": "bonn",

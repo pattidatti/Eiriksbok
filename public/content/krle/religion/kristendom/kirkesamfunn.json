@@ -5,197 +5,185 @@
     "topic": "religion",
     "religion": "kristendom",
     "layout": "rich",
-    "year": "1054 – i dag",
     "category": "Kristendom",
-    "readTime": "11 min lesning",
-    "heroImage": "/images/krle/religion/kristendom_hero.webp",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
     "dimension": "social",
-    "comparison_tags": [
-        "kirkesamfunn",
-        "reformasjonen",
-        "skisma",
-        "okumenikk"
-    ],
+    "comparison_tags": ["kirkesamfunn", "reformasjonen", "skisma", "okumenikk"],
     "details": [
-        "Kristendommen er delt i tre store familier: katolsk, ortodoks og protestantisk.",
-        "I 1054 brøt den østlige og vestlige kirken med hverandre i Det store skismaet.",
-        "I 1517 startet Martin Luther reformasjonen i Tyskland og delte den vestlige kirken på nytt.",
-        "Den norske kirke er luthersk og fikk reformasjonen ovenfra i 1537.",
-        "I dag jobber mange kirker sammen gjennom det vi kaller økumenikk."
+        "To brudd forklarer det meste: 1054 mellom øst og vest, og reformasjonen fra 1517 i vest.",
+        "I 1054 stengte paven og patriarken i Konstantinopel hverandre ute av kirken.",
+        "Reformasjonen delte vestlig kristendom i en katolsk, en luthersk og en reformert kirke.",
+        "Den katolske kirke oppga om lag 1,36 milliarder medlemmer i 2020, de ortodokse kirkene teller om lag 260 millioner og de protestantiske om lag 800 millioner.",
+        "Økumenikk er arbeidet for at kirkesamfunn skal forstå og samarbeide med hverandre igjen."
+    ],
+    "lastUpdated": "2026-08-11T12:00:00Z",
+    "concepts": [
+        {
+            "id": "skisma",
+            "term": "Skisma",
+            "definition": "Gresk ord som betyr splittelse. Brukes om et formelt brudd som fører til nye, uavhengige grupper i en kirke."
+        },
+        {
+            "id": "filioque",
+            "term": "Filioque",
+            "definition": "Latin for og fra Sønnen. Et tillegg om Den hellige ånd som vestkirken satte inn i trosbekjennelsen, og som østkirken avviste."
+        },
+        {
+            "id": "reformasjonen",
+            "term": "Reformasjonen",
+            "definition": "De religiøse og kulturelle omveltningene i Europa på 1500-tallet som delte vestlig kristendom i en katolsk, en luthersk og en reformert kirke."
+        },
+        {
+            "id": "konfesjon",
+            "term": "Konfesjon",
+            "definition": "Et kristent trossamfunn, eller den bekjennelsen et trossamfunn bygger troen sin på."
+        },
+        {
+            "id": "okumenikk",
+            "term": "Økumenikk",
+            "definition": "Arbeid som skal gi bedre forståelse og samarbeid mellom kirkesamfunn, og gjøre kirkelig enhet synlig."
+        }
     ],
     "content": [
         {
+            "type": "text",
+            "content": "Det er om lag 2,2 milliarder kristne i verden (Elstad & Allkunne, 2026). De går i kirker som ser helt ulike ut. I én kirke synger prestene på gresk foran en vegg full av ikoner. I en annen lukter det røkelse, og altertavlen glitrer av gull. I en tredje er veggene hvitkalkede, og gudstjenesten er en preken og noen salmer. Alle bygger på Bibelen. Likevel hører de til ulike kirkesamfunn."
+        },
+        {
+            "type": "text",
+            "content": "Det kan virke som om kristendommen har delt seg tusen ganger. Men to brudd betyr mer enn alle de andre. Det første skjedde i 1054 og delte kirken i en østlig og en vestlig del. Det andre begynte i 1517 og delte vesten på nytt. Nesten alt annet er greiner som vokser ut av disse to. Et formelt brudd i en kirke kalles et skisma, et gresk ord som betyr splittelse (Stensvold, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tre kirkebygg i ulik stil sett fra samme plass",
+            "caption": "Kirkebygg forteller historien om splittelsene: kuppel og ikoner i øst, gull og statuer i vest, hvitkalkede vegger etter reformasjonen."
+        },
+        {
+            "type": "text",
+            "content": "Kirken vokste fram som en egen organisasjon etter at den romerske keiseren Konstantin anerkjente kristendommen på 300-tallet. Etter hvert fikk ledelsen ulik form i øst og vest. I den østlige delen av Romerriket var biskopene sammen den øverste myndigheten. I vest ble paven i Roma regnet som leder for kirken (Halvorsen & Stensvold, 2025). I vest brukte man latin, i øst gresk. Sakte gled de to halvdelene fra hverandre."
+        },
+        {
             "type": "header",
-            "text": "Tre kirker, én tro?"
+            "text": "1054: Kirken deler seg i øst og vest"
         },
         {
             "type": "text",
-            "content": "Tenk deg at du går inn i tre kirker på samme dag. Først en stor katolsk kirke i Roma med statuer, røkelse og en altertavle som glitrer av gull. Så en ortodoks kirke i Athen, der prestene synger på gresk og veggene er dekket av ikoner. Til slutt en enkel norsk landsens kirke med hvitkalkede vegger, en preken og noen salmer. Alle stedene snakker man om Jesus. Alle leser fra Bibelen. Likevel ser, høres og lukter alt helt forskjellig."
+            "content": "Uenigheten handlet særlig om treenighetslæren, altså hvordan man skal beskrive forholdet mellom Gud Fader, Sønnen og Den hellige ånd (Stensvold, 2026). Begge sider mente at det er én Gud i tre personer. Men vestkirken sa at Den hellige ånd utgår både fra Faderen og fra Sønnen, mens østkirken sa at Ånden utgår fra Faderen (Stensvold, 2026). Det latinske tillegget som betyr og fra Sønnen, heter filioque. Det ble vanlig i vest på 400- og 500-tallet (Store norske leksikon, 2025). I 1054 ekskommuniserte paven og patriarken i Konstantinopel hverandre. En patriark er lederen for en av de store kirkene i øst, og å ekskommunisere vil si å stenge noen ute av kirken. Etter dette kalte vestkirken seg katolsk, som betyr universell, mens østkirken samlet seg om ordet ortodoks, som betyr rett lære (Halvorsen & Stensvold, 2025). Hva kirkene fortsatt deler, kan du lese om i artikkelen om [sentrale trekk](/krle/religion/kristendom/sentrale-trekk)."
+        },
+        {
+            "type": "component",
+            "name": "ToStoreBrudd",
+            "props": {
+                "title": "To brudd formet kristendommen"
+            }
         },
         {
             "type": "text",
-            "content": "Det er fordi kristendommen i dag er delt i tre store familier: katolikkene, de ortodokse og de protestantiske. Til sammen finnes det over to milliarder kristne i verden, og de tilhører tusenvis av ulike kirkesamfunn. Hvordan klarte én tro å bli så mange ulike kirker? Svaret ligger i to store krangler som rystet historien."
+            "content": "Legg merke til hvor mye som henger sammen med de to røde punktene i treet. Nesten alle kirkesamfunn i dag kan spores tilbake til dem."
         },
         {
             "type": "header",
-            "text": "1054: Det store skismaet"
+            "text": "1517: Vesten deler seg igjen"
         },
         {
             "type": "text",
-            "content": "I de første århundrene var kristendommen én kirke. Men Romerriket var stort, og fra 300-tallet ble det delt i en vestlig del med Roma som hovedstad og en østlig del med Konstantinopel som hovedstad. Folk i vest snakket latin, folk i øst snakket gresk. Sakte vokste de fra hverandre."
-        },
-        {
-            "type": "text",
-            "content": "Krangelen handlet om to ting. Den ene var et lite ord i trosbekjennelsen. Skulle man si at Den hellige ånd kommer fra Faderen, eller fra Faderen og Sønnen? Dette latinske tillegget kalles filioque. For oss kan det høres ut som flisespikkeri, men for kirken handlet det om hvem Gud er. Den andre saken var pavens makt. I vest mente paven i Roma at han hadde myndighet over hele kirken. I øst sa de at paven bare var én av fem like viktige biskoper."
-        },
-        {
-            "type": "text",
-            "content": "I 1054 reiste den katolske utsendingen kardinal Humbertus til Konstantinopel. Han la et brev på alteret i den store kirken Hagia Sofia og lyste patriarken Mikael Kerularios i bann. Patriarken svarte med å lyse paven i bann. Etter den dagen var kirken delt i to. I vest finner vi den katolske kirke, i øst den ortodokse kirke. Splittelsen kalles skismaet."
+            "content": "Nesten 500 år senere kom det neste bruddet. Den tyske teologen Martin Luther angrep avlatshandelen. Avlat gikk ut på at folk kunne betale penger til kirken for syndene sine i stedet for å vise anger eller gjøre bot (Rasmussen, 2026). Kritikken sto i 95 læresetninger som ble kjent 31. oktober 1517 (Rasmussen, 2026). Skriftene hans ble trykt og solgt i by etter by, og ideene spredte seg raskt. Paven erklærte Luther for kjetter i 1521, altså en som lærer noe galt. En riksdag var et stort møte der keiseren samlet fyrstene i det tyske riket. På riksdagen i byen Worms samme år nektet Luther å ta tilbake det han hadde sagt, hvis ingen kunne overbevise ham ut fra Bibelen og fornuften (Rasmussen, 2026)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Vanskelige ord forklart",
+                "title": "Ord som går igjen",
                 "items": [
                     {
                         "label": "Skisma",
-                        "value": "Et gresk ord som betyr splittelse. Det brukes om når en religion deler seg i to grupper som ikke vil høre på hverandre lenger."
+                        "value": "Et formelt brudd i en kirke, som fører til nye og uavhengige grupper. Ordet er gresk og betyr splittelse."
                     },
                     {
-                        "label": "Pave",
-                        "value": "Den øverste lederen i den katolske kirke. Katolikker mener han er etterfølgeren til apostelen Peter og bor i Vatikanet i Roma."
+                        "label": "Ekskommunisere",
+                        "value": "Å stenge noen ute av kirken og fellesskapet rundt nattverden."
                     },
                     {
                         "label": "Patriark",
-                        "value": "Tittelen på de øverste biskopene i den ortodokse kirke. De viktigste sitter i Konstantinopel, Moskva, Aleksandria, Antiokia og Jerusalem."
+                        "value": "Tittelen på lederen for flere av de selvstyrende ortodokse kirkene. Andre kirkeledere har titler som metropolitt eller erkebiskop. De eldste patriarkatene er Konstantinopel, Antiokia, Jerusalem og Alexandria."
                     },
                     {
-                        "label": "Filioque",
-                        "value": "Et latinsk ord som betyr 'og fra Sønnen'. Den vestlige kirken la dette ordet til i trosbekjennelsen. Den østlige kirken nektet."
+                        "label": "Konfesjon",
+                        "value": "Et kristent trossamfunn, eller bekjennelsen et trossamfunn bygger på. Et kjent eksempel er Den augsburgske bekjennelse fra 1530."
                     }
                 ]
             }
         },
         {
+            "type": "text",
+            "content": "Reformasjonen delte ikke vesten i to, men i tre. Det vokste fram en katolsk, en luthersk og en reformert kirke (Rasmussen, 2026). Den reformerte greina begynte i Sveits, med Ulrich Zwingli i Zürich og senere Jean Calvin i Genève (Elstad & Allkunne, 2026). Navnet protestanter kommer fra riksdagen i Speyer i 1529, der tilhengerne av reformasjonen protesterte mot et forbud mot å spre den videre (Elstad & Allkunne, 2026). Selv kalte de seg helst evangeliske. Hva de mente om frelse, kan du lese om i artikkelen om [frelse](/krle/religion/kristendom/frelse)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammel boktrykkerpresse med ferske trykte ark",
+            "caption": "Boktrykkerkunsten gjorde at Luthers skrifter kunne trykkes og selges i by etter by."
+        },
+        {
             "type": "header",
-            "text": "1517: Reformasjonen sprenger den vestlige kirken"
+            "text": "Tre familier, mange greiner"
         },
         {
             "type": "text",
-            "content": "Nesten 500 år senere skjedde det igjen. På 1500-tallet hadde den katolske kirke i vest blitt veldig rik og veldig mektig. Den solgte avlatsbrev til folk som var redde for synd og helvete. Et avlatsbrev var et papir som skulle gi tilgivelse for synder, mot betaling. Pengene gikk blant annet til å bygge den enorme Peterskirken i Roma."
+            "content": "Den katolske kirke er størst. I 2020 oppga kirken selv om lag 1,36 milliarder medlemmer, drøyt 17 prosent av verdens befolkning (Halvorsen & Stensvold, 2025). Den ledes av paven i Vatikanet og er hierarkisk organisert. De ortodokse kirkene teller i dag om lag 260 millioner (Thorbjørnsrud & Kværne, 2026). De har ikke ett overhode, men består av mange selvstyrende kirker. Patriarken i Konstantinopel kalles den første blant likemenn, men de ortodokse er selv uenige om hvor mye makt den tittelen gir (Thorbjørnsrud & Kværne, 2026). De protestantiske kirkene teller i dag om lag 800 millioner (Elstad & Allkunne, 2026) og har ingen felles organisasjon. Derfor oppstår det stadig nye menigheter uten at det kalles skisma (Stensvold, 2026). Et sakrament er en hellig handling som kirken mener gir mennesker del i Guds nåde. Reformatorene beholdt to eller tre av den katolske kirkens sju sakramenter, som regel dåp og nattverd (Elstad & Allkunne, 2026). Mer om det står i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene)."
         },
         {
             "type": "text",
-            "content": "En tysk munk og professor ved navn Martin Luther reagerte sterkt. Han mente at frelse er en gave fra Gud, ikke noe man kan kjøpe. Den 31. oktober 1517 skrev han 95 setninger der han kritiserte avlatshandelen. Mange tror han spikret dem opp på kirkedøren i byen Wittenberg, men sannsynligvis sendte han dem til biskopen sin. Uansett: setningene ble trykt, kopiert og spredt over hele Europa på noen få uker, takket være en ny oppfinnelse — boktrykkerkunsten."
+            "content": "Norge er et uvanlig eksempel. Her ble reformasjonen innført ovenfra av den danske kongen Christian 3. i 1536, samtidig som Norge mistet statusen som eget rike med eget riksråd (Rasmussen, 2026). Før det fantes det nesten ingen reformatorisk bevegelse i landet. Ny kirkelov kom med Kirkeordinansen i 1537. Klostrene ble lagt ned, og kirkegods gikk til kongen. Statskirkeordningen varte helt til grunnlovsendringen i 2012, og fra 1. januar 2017 ble Den norske kirke en selvstendig organisasjon, skilt fra staten. I 2024 var 62 prosent av befolkningen, 3,4 millioner mennesker, medlemmer (Rasmussen mfl., 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Hvitmalt norsk trekirke i vinterlandskap",
+            "caption": "Norge fikk reformasjonen ovenfra i 1536, uten noen bred folkelig bevegelse på forhånd."
+        },
+        {
+            "type": "header",
+            "text": "Økumenikk: greinene nærmer seg"
         },
         {
             "type": "text",
-            "content": "Luther ville først bare reformere kirken innenfra. Men paven nektet å høre. Til slutt brøt Luther helt med Roma. Han satte fram tre grunnsetninger som ble ryggraden i den nye, protestantiske kirken: bare nåden, bare troen og bare Skriften. Det betyr at mennesket blir frelst av Guds kjærlighet alene, ved å stole på Jesus, og at Bibelen står over alle andre regler i kirken."
+            "content": "Ordet økumenikk kommer av det greske oikumene, den bebodde verden. Det brukes om arbeid som skal gi bedre forståelse og samarbeid mellom kirkesamfunn (Seim mfl., 2024). Et bibelsk kjerneord for bevegelsen er Jesu bønn i Johannes kapittel 17 vers 21 om at disiplene må være ett, for at verden skal tro (Seim mfl., 2024). Verdensmisjonskonferansen i Edinburgh i 1910 regnes som starten på den moderne økumeniske bevegelsen. I 1948 ble Kirkenes Verdensråd dannet i Amsterdam av 147 medlemskirker fra 44 land (Flottorp, 2024). I dag er 356 kirker fra mer enn 120 land med (Kirkenes Verdensråd, u.å.)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Her står jeg. Jeg kan ikke annet. Gud hjelpe meg. Amen.",
-                "author": "Martin Luther",
-                "context": "Sagt i 1521, da keiseren krevde at han skulle ta tilbake skriftene sine. Sitatet er kanskje pyntet på, men ble symbolet for å stå for sin egen samvittighet."
+                "text": "Kirkenes Verdensråd er et fellesskap av kirker som bekjenner Herren Jesus Kristus som Gud og frelser i overensstemmelse med Skriften, og derfor søker å fullføre sammen sitt felles kall til ære for den ene Gud, Fader, Sønn og Hellig Ånd.",
+                "author": "Basisparagrafen til Kirkenes Verdensråd"
             }
         },
         {
-            "type": "header",
-            "text": "Tre familier av kristne i dag"
-        },
-        {
             "type": "text",
-            "content": "Etter de to splittelsene står vi igjen med tre store hovedretninger. Hver av dem har sin egen historie, sine egne ledere og sine egne måter å feire gudstjeneste på. Likevel deler de mye: troen på Jesus, treenigheten og Bibelen."
+            "content": "Den katolske kirke er ikke medlem av rådet, men deltar i noen av kommisjonene (Seim mfl., 2024) og driver egne økumeniske samtaler med andre kirkesamfunn (Den katolske kirke, u.å.). I 1965 trakk pave Paul 6. og patriark Athenagoras tilbake bannlysningene fra 1054 (Stensvold, 2026). I Norge har Den norske kirke og Metodistkirken en avtale om utvidet fellesskap, og Porvoo-avtalen knytter lutherske kirker i Norden og Baltikum til anglikanske kirker i Storbritannia (Seim mfl., 2024). Av protestantene har særlig pinsevennene nølt med å slutte seg til bevegelsen (Seim mfl., 2024); mer om dem står i artikkelen om [pinsebevegelsen](/krle/religion/kristendom/pinse). Kirkene har også gått i seg selv. I 2016 tok Bispemøtet i Den norske kirke avstand fra Luthers antisemittisme og beklaget den overfor det jødiske folket (Den norske kirke, u.å.). Uenighetene fra 1054 og 1517 er ikke løst, og kirkene er fortsatt atskilte. Men de snakker sammen, og mange av dem samarbeider."
         },
         {
             "type": "component",
-            "name": "SimpleTable",
+            "name": "Oppgaver",
             "props": {
-                "title": "Katolsk, ortodoks og protestantisk",
-                "columns": ["", "Katolsk", "Ortodoks", "Protestantisk"],
-                "rows": [
-                    ["Antall", "Ca. 1,3 milliarder", "Ca. 220 millioner", "Ca. 600 millioner"],
-                    ["Leder", "Paven i Roma", "Flere patriarker", "Ingen felles leder"],
-                    ["Sentrum", "Vatikanet", "Konstantinopel og Moskva", "Spredt over hele verden"],
-                    ["Gudstjeneste", "Messe med liturgi", "Liturgi med ikoner og sang", "Preken og salmer i sentrum"],
-                    ["Sakramenter", "Sju", "Sju", "To (dåp og nattverd)"],
-                    ["Prester gifter seg?", "Nei (med få unntak)", "Ja, hvis gift før prestevielsen", "Ja, alltid"],
-                    ["Bibelen alene?", "Nei, også tradisjonen", "Nei, også tradisjonen", "Ja (sola scriptura)"]
-                ]
-            }
-        },
-        {
-            "type": "header",
-            "text": "Reformasjonen kommer til Norge"
-        },
-        {
-            "type": "text",
-            "content": "I Norge skjedde reformasjonen ovenfra. I 1537 bestemte den danske kongen Christian den tredje at riket skulle bli protestantisk og luthersk. Vanlige folk hadde lite de skulle ha sagt. Folk rev ned bilder i kirkene, kongen la ned klostrene, og biskopene måtte gå. Den norske kirke var statskirke helt fram til 2017. Da skilte Stortinget kirke og stat fra hverandre. I dag er rundt to av tre nordmenn medlem av Den norske kirke, men færre enn før går jevnlig på gudstjeneste."
-        },
-        {
-            "type": "header",
-            "text": "Hva forener de kristne?"
-        },
-        {
-            "type": "text",
-            "content": "Selv om kirkene har kranglet i tusen år, deler de mer enn de er uenige om. Alle tre familiene tror på den samme treenige Gud, på Jesus som Guds sønn, og på Bibelen som hellig tekst. De fleste bruker den samme apostoliske trosbekjennelsen som ble skrevet på 300-tallet. De feirer jul og påske til omtrent samme tid. De døper barn eller voksne i Faderens, Sønnens og Den hellige ånds navn."
-        },
-        {
-            "type": "header",
-            "text": "Økumenikk: veien tilbake til enhet"
-        },
-        {
-            "type": "text",
-            "content": "I dag prøver mange kirker å snakke sammen igjen. Dette arbeidet kalles økumenikk, av det greske ordet oikumene som betyr 'hele den bebodde verden'. I 1948 startet kirker fra hele verden Kirkenes Verdensråd. I 1965 trakk paven og patriarken i Konstantinopel tilbake bannlysningene fra 1054. I 1999 ble katolikker og lutheranere enige om hva nåde og frelse betyr. Mange steder ber kristne fra ulike kirker sammen, jobber sammen for fattige og minner hverandre om at de tjener den samme Gud."
-        },
-        {
-            "type": "text",
-            "content": "Ingen tror at de tre familiene blir helt like igjen. Men de har sluttet å se hverandre som fiender. Ofte ser de hverandre som søsken som har vokst opp ulikt og må lære å snakke sammen igjen."
-        },
-        {
-            "type": "component",
-            "name": "TimelineComponent",
-            "props": {
-                "compact": true,
-                "events": [
-                    {
-                        "year": "395",
-                        "title": "Romerriket deles",
-                        "description": "Vest med Roma og øst med Konstantinopel utvikler seg fra hverandre."
-                    },
-                    {
-                        "year": "1054",
-                        "title": "Det store skismaet",
-                        "description": "Paven og patriarken lyser hverandre i bann. Kirken splittes i katolsk og ortodoks."
-                    },
-                    {
-                        "year": "1517",
-                        "title": "Luthers 95 setninger",
-                        "description": "Reformasjonen begynner i Wittenberg og deler den vestlige kirken."
-                    },
-                    {
-                        "year": "1537",
-                        "title": "Norge blir luthersk",
-                        "description": "Kong Christian den tredje gjør reformasjonen til lov."
-                    },
-                    {
-                        "year": "1948",
-                        "title": "Kirkenes Verdensråd",
-                        "description": "Kirker fra hele verden starter et felles arbeid for enhet."
-                    },
-                    {
-                        "year": "1965",
-                        "title": "Bannlysningene trekkes tilbake",
-                        "description": "Paven og patriarken i Konstantinopel forsoner seg etter 911 år."
-                    },
-                    {
-                        "year": "2017",
-                        "title": "Norge skiller kirke og stat",
-                        "description": "Den norske kirke blir et eget trossamfunn etter 480 år som statskirke."
-                    }
+                "forstaa": [
+                    "Hva betyr ordet skisma, og hvilke to brudd handler denne artikkelen om?",
+                    "Hva var uenigheten om filioque, forklart med dine egne ord?",
+                    "Hva var avlat, og hvorfor reagerte Martin Luther på den?",
+                    "Nevn tre forskjeller mellom Den katolske kirke og de ortodokse kirkene."
+                ],
+                "reflekter": [
+                    "Reformasjonen delte vesten i tre, ikke i to. Hvorfor er det viktig å få med den reformerte greina?",
+                    "De protestantiske kirkene har ingen felles ledelse. Hvilke fordeler og ulemper kan det gi?",
+                    "I 1965 trakk paven og patriarken tilbake bannlysningene fra 1054, men kirkene er fortsatt atskilte. Hva sier det om hva økumenikk er, og hva den ikke er?",
+                    "Norge fikk reformasjonen ovenfra i 1536. Hvordan tror du det påvirket hva vanlige folk mente om den?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvilke kirkesamfunn som finnes i kommunen din, og lag en oversikt over hvilken familie hvert av dem tilhører.",
+                    "Undersøk hva Porvoo-avtalen går ut på, og skriv en kort tekst om hva de involverte kirkene ble enige om.",
+                    "Sammenlign splittelsene i kristendommen med retningene i en annen religion. Hva ligner, og hva er ulikt?"
                 ]
             }
         },
@@ -203,103 +191,85 @@
             "type": "component",
             "name": "Quiz",
             "props": {
-                "title": "Test deg selv",
                 "questions": [
                     {
                         "question": "Hva skjedde i 1054?",
                         "options": [
                             "Reformasjonen begynte i Tyskland",
-                            "Den katolske og den ortodokse kirken brøt med hverandre",
-                            "Den norske kirke ble grunnlagt",
-                            "Paven flyttet til Vatikanet"
+                            "Paven og patriarken i Konstantinopel ekskommuniserte hverandre",
+                            "Kirkenes Verdensråd ble dannet",
+                            "Norge ble luthersk"
                         ],
-                        "correct": 1,
-                        "explanation": "I 1054 lyste paven og patriarken hverandre i bann. Det skilles ut to hovedretninger: katolsk i vest og ortodoks i øst."
+                        "correctAnswer": 1,
+                        "explanation": "I 1054 stengte paven og patriarken hverandre ute av kirken. Etter det kalte vestkirken seg katolsk og østkirken ortodoks."
                     },
                     {
-                        "question": "Hva var et avlatsbrev?",
+                        "question": "Hva var uenigheten om filioque?",
                         "options": [
-                            "Et brev fra paven til kongen",
-                            "Et papir som skulle gi tilgivelse for synder mot betaling",
-                            "En invitasjon til gudstjeneste",
-                            "Et brev som ga lov til å bli prest"
+                            "Om paven skulle bo i Roma eller i Konstantinopel",
+                            "Om prester fikk gifte seg",
+                            "Om Den hellige ånd utgår fra Faderen alene, eller også fra Sønnen",
+                            "Om Bibelen skulle oversettes til folkespråket"
                         ],
-                        "correct": 1,
-                        "explanation": "Avlatsbrev ble solgt for å samle inn penger og lovet folk tilgivelse. Luther mente det var galt fordi frelse er en gave fra Gud."
+                        "correctAnswer": 2,
+                        "explanation": "Vestkirken la til at Ånden utgår også fra Sønnen. Østkirken sa at Ånden utgår fra Faderen, og avviste tillegget."
                     },
                     {
-                        "question": "Hva betyr de tre setningene 'bare nåden, bare troen, bare Skriften'?",
+                        "question": "Hvilke tre kirker vokste fram av reformasjonen i vest?",
                         "options": [
-                            "At man må be tre ganger om dagen",
-                            "At frelse skjer av Guds kjærlighet, gjennom tro, og at Bibelen er den øverste regelen",
-                            "At man bare skal lese Bibelen og ikke andre bøker",
-                            "At man bare kan stole på paven"
+                            "Den katolske, den lutherske og den reformerte",
+                            "Den katolske, den ortodokse og den lutherske",
+                            "Den anglikanske, den ortodokse og den koptiske",
+                            "Den lutherske, den ortodokse og den reformerte"
                         ],
-                        "correct": 1,
-                        "explanation": "Disse tre setningene er kjernen i protestantismen og skiller den fra katolisismen."
+                        "correctAnswer": 0,
+                        "explanation": "Reformasjonen delte vestlig kristendom i tre: en katolsk, en luthersk og en reformert kirke. Østkirken ble ikke berørt."
                     },
                     {
-                        "question": "Hvilken hovedretning hører Den norske kirke til?",
+                        "question": "Hvilken av disse er størst i antall medlemmer?",
                         "options": [
-                            "Katolsk",
-                            "Ortodoks",
-                            "Protestantisk og luthersk",
-                            "Bahá'í"
+                            "De ortodokse kirkene",
+                            "De protestantiske kirkene",
+                            "Den katolske kirke",
+                            "Kirkenes Verdensråd"
                         ],
-                        "correct": 2,
-                        "explanation": "Norge ble luthersk i 1537 og er en del av den protestantiske familien."
+                        "correctAnswer": 2,
+                        "explanation": "Den katolske kirke oppga om lag 1,36 milliarder medlemmer i 2020. Protestantene teller om lag 800 millioner og de ortodokse om lag 260 millioner."
                     },
                     {
                         "question": "Hva betyr økumenikk?",
                         "options": [
-                            "Å bygge nye kirker",
-                            "Å lese på gresk",
-                            "Å samarbeide og snakke sammen på tvers av kirkesamfunn",
-                            "Å bestemme hvem som er pave"
+                            "Å bygge nye kirker i fattige land",
+                            "Arbeid for bedre forståelse og samarbeid mellom kirkesamfunn",
+                            "Å velge ny pave",
+                            "Å oversette Bibelen til nye språk"
                         ],
-                        "correct": 2,
-                        "explanation": "Ordet kommer av oikumene, 'hele den bebodde verden'. Det handler om at kristne kirker prøver å finne tilbake til hverandre."
+                        "correctAnswer": 1,
+                        "explanation": "Ordet kommer av gresk oikumene, den bebodde verden. Kirkenes Verdensråd fra 1948 er et sentralt samlingssted for dette arbeidet."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Stensvold, A. (2026). *Skisma*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/skisma](https://snl.no/skisma)",
+                    "Store norske leksikon. (2025). *Filioque*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/filioque](https://snl.no/filioque)",
+                    "Halvorsen, P. B. & Stensvold, A. (2025). *Den katolske kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Den_katolske_kirke](https://snl.no/Den_katolske_kirke)",
+                    "Thorbjørnsrud, B. S. & Kværne, P. (2026). *Den ortodokse kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_ortodokse_kirke](https://snl.no/den_ortodokse_kirke)",
+                    "Rasmussen, T. (2026). *Reformasjonen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/reformasjonen](https://snl.no/reformasjonen)",
+                    "Elstad, H. & Allkunne. (2026). *Protestantisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/protestantisme](https://snl.no/protestantisme)",
+                    "Rasmussen, T., Lundal, S. O. & Elstad, H. (2026). *Den norske kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Den_norske_kirke](https://snl.no/Den_norske_kirke)",
+                    "Seim, T. K., Store norske leksikon & Elstad, H. (2024). *Økumenikk*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/økumenikk](https://snl.no/%C3%B8kumenikk)",
+                    "Flottorp, H. (2024). *Kirkenes Verdensråd*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Kirkenes_Verdensråd](https://snl.no/Kirkenes_Verdensr%C3%A5d)",
+                    "Kirkenes Verdensråd. (u.å.). *What is the World Council of Churches?* Hentet 11.08.2026 fra [oikoumene.org](https://www.oikoumene.org/about-the-wcc)",
+                    "Den katolske kirke. (u.å.). *Økumenikk og religionsdialog*. Hentet 11.08.2026 fra [katolsk.no](https://www.katolsk.no/tro/tema/okumenikk)",
+                    "Den norske kirke. (u.å.). *En evangelisk-luthersk kirke*. Hentet 11.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/kristen-tro/kristen-tro/en-evangelisk-luthersk-kirke/)"
                 ]
             }
         }
     ],
-    "concepts": [
-        {
-            "id": "skisma",
-            "term": "Skisma",
-            "definition": "Et gresk ord som betyr splittelse. Brukes om når en kirke deler seg i to."
-        },
-        {
-            "id": "pave",
-            "term": "Pave",
-            "definition": "Den øverste lederen i den katolske kirke. Bor i Vatikanet i Roma."
-        },
-        {
-            "id": "patriark",
-            "term": "Patriark",
-            "definition": "Tittelen på de øverste biskopene i den ortodokse kirke."
-        },
-        {
-            "id": "reformasjonen",
-            "term": "Reformasjonen",
-            "definition": "Bevegelsen Martin Luther startet i 1517, som førte til den protestantiske kirken."
-        },
-        {
-            "id": "avlatsbrev",
-            "term": "Avlatsbrev",
-            "definition": "Et papir den katolske kirke solgte i middelalderen, som lovet tilgivelse for synd mot betaling."
-        },
-        {
-            "id": "okumenikk",
-            "term": "Økumenikk",
-            "definition": "Arbeidet for at ulike kristne kirker skal samarbeide og finne tilbake til hverandre."
-        }
-    ],
-    "quote": {
-        "text": "At de alle må være ett.",
-        "source": "Jesus i Johannesevangeliet",
-        "reference": "Joh 17,21"
-    },
     "timeline": []
 }

@@ -1,96 +1,140 @@
 {
     "id": "intro",
-    "title": "Introduksjon til kristendommen",
+    "title": "Verdens største religion",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
     "dimension": "doctrinal",
     "comparison_tags": ["sentrale_trekk"],
+    "category": "Kristendom",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Cirka 2,3 milliarder mennesker er kristne, omtrent 33 prosent av verdens befolkning.",
+        "Kristendommen begynte som en bevegelse inne i jødedommen, rundt Jesus fra Nasaret.",
+        "De tre hovedgrenene er katolsk, ortodoks og protestantisk kristendom.",
+        "Kristne tror at Gud er tre personer i ett vesen, og at Gud ble menneske i Jesus.",
+        "62 prosent av befolkningen i Norge, 3,4 millioner, var medlemmer i Den norske kirke i 2024."
+    ],
     "createdDate": "2025-12-21T13:37:14Z",
-    "lastUpdated": "2026-06-09T00:00:00Z",
-    "heroImage": "/images/krle/kristendom/kristendom-intro-hero.webp",
-    "readTime": "10 min lesning",
+    "lastUpdated": "2026-08-11T12:00:00Z",
+    "concepts": [
+        {
+            "id": "monoteisme",
+            "term": "Monoteisme",
+            "definition": "Troen på bare én gud. Kristendommen, jødedommen og islam er alle monoteistiske religioner."
+        },
+        {
+            "id": "messias",
+            "term": "Messias",
+            "definition": "Hebraisk ord som betyr den salvede, og navnet på frelserkongen i jødisk tradisjon. Det greske ordet for det samme er Christos, som har gitt oss ordet kristen."
+        },
+        {
+            "id": "treenigheten",
+            "term": "Treenigheten",
+            "definition": "Den kristne læren om at Gud er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd. Ikke tre guder."
+        },
+        {
+            "id": "inkarnasjon",
+            "term": "Inkarnasjon",
+            "definition": "Læren om at Gud ble menneske i Jesus fra Nasaret. Ordet betyr å ta kjøtt på seg."
+        },
+        {
+            "id": "oppstandelse",
+            "term": "Oppstandelse",
+            "definition": "Troen på at Jesus sto opp fra de døde etter korsfestelsen. Dette er kjernen i kristen tro, og noe historikere ikke kan etterprøve."
+        }
+    ],
     "content": [
         {
             "type": "text",
-            "content": "For nesten 2000 år siden ble en mann henrettet som forbryter i en liten provins i Romerriket. Hans navn var Jesus fra Nasaret - en snekker fra Galilea. I dag er han den personen som har hatt mest innflytelse på verdenshistorien. Religionen som vokste frem av hans liv og lære - kristendommen - er verdens største, med over 2,4 milliarder tilhengere. Det tilsvarer nesten én av tre mennesker på jorda."
+            "content": "Under påskehøytiden rundt år 30 ble en jødisk mann henrettet i Jerusalem. Han het Jesus og kom fra byen Nasaret i Galilea. Korsfesting var en romersk straff, ikke en jødisk, og stattholderen i provinsen Judea, keiserens mann på stedet, het Pontius Pilatus. Ifølge alle de fire evangeliene, fortellingene om Jesus i Bibelen, var det han som avsa dødsdommen (Seim & Iddeng, 2026). For dem som sto og så på, var saken avsluttet."
+        },
+        {
+            "type": "text",
+            "content": "Den var ikke det. I dag er kristendommen verdens største religion. Det finnes cirka 2,3 milliarder kristne, omtrent 33 prosent av alle mennesker på jorda, og det bor kristne i samtlige land i verden (Elstad & Rasmussen, 2026). Denne artikkelen gir deg det store bildet. Herfra kan du gå videre inn i hvert tema."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammel steinkirke med tårn mot lys morgenhimmel",
+            "caption": "Kirkebygg finnes i alle verdensdeler. Korset er det viktigste kristne symbolet."
+        },
+        {
+            "type": "text",
+            "content": "Selve navnet peker tilbake på Jesus. Ordene kristendom og kristen kommer av det greske Christos, som betyr den salvede. Det betyr det samme som det hebraiske ordet Messias, navnet på frelserkongen i jødisk tradisjon (Elstad & Rasmussen, 2026). Jesus og de første tilhengerne hans var jøder, og bevegelsen begynte som en retning inne i jødedommen. Det første stedet der tilhengerne ble kalt kristne, var byen Antiokia i dagens Tyrkia. Rundt år 100 sto kristendommen tydelig fram som en egen religion (Elstad & Rasmussen, 2026)."
         },
         {
             "type": "header",
-            "text": "Hvem var Jesus?"
+            "text": "Én religion, mange kirker"
         },
         {
             "type": "text",
-            "content": "Jesus vokste opp i Nasaret og begynte å forkynne rundt år 27-30 e.Kr. Han vandret rundt i Palestina, samlet disipler rundt seg og lærte folk å elske hverandre og å hjelpe de svake. Han sa at Gud elsker alle mennesker - også de som andre så ned på. Han helbredet syke og spiste med folk som ingen andre ville ha noe med."
-        },
-        {
-            "type": "text",
-            "content": "Rundt år 30 e.Kr. ble han arrestert i Jerusalem og korsfestet av den romerske guvernøren Pontius Pilatus. Korsfestelse var en av de grusomste henrettelsesmåtene i antikken, forbeholdt forbrytere og slaveopprørere. Til alle som så på, var det over."
-        },
-        {
-            "type": "header",
-            "text": "Kjernen: Oppstandelsen"
-        },
-        {
-            "type": "text",
-            "content": "Det som gjør kristendommen unik, er ikke bare Jesu lære - det er påstanden disiplene satte livet på spill for å fortelle: at Jesus stod opp fra de døde tre dager etter korsfestelsen. Dette kaller vi oppstandelsen. Disiplene sa de hadde sett ham, spist med ham og talt med ham etter at han var død."
-        },
-        {
-            "type": "text",
-            "content": "Denne påstanden er kjernen i all kristen tro. Apostelen Paulus skriver i et brev: \"Hvis Kristus ikke er stått opp, er vår tro meningslos.\" Kristne tror ikke bare på Jesu kloke ord - de tror at han er Guds sønn som beseiret døden, og at det forandrer alt. Kjærlighetsbudet oppsummerer hele læren hans: elsk Gud av hele ditt hjerte, og elsk din neste som deg selv."
-        },
-        {
-            "type": "header",
-            "text": "Treenigheten: Tre i én"
-        },
-        {
-            "type": "text",
-            "content": "En av de vanskeligste - og viktigste - ideene i kristendommen er treenigheten: læren om at Gud er tre i én. Faderen er den skapende Gud som holder universet oppe. Sønnen er Jesus, som ble menneske og levde på jord. Den hellige ånd er Guds nærvær i verden og i de troende."
-        },
-        {
-            "type": "text",
-            "content": "Det er ikke tre guder, men én Gud med tre sider. Treenigheten skiller kristendommen fra islam og jødedommen, som begge tror på én Gud, men ikke at Jesus er Gud. Ideen om at den allmektige Skaperguden ble et lite, sårbart menneske - det kaller vi inkarnasjonen - er noe de aller fleste andre religioner finner umulig. For kristne er det selve kjernen."
-        },
-        {
-            "type": "header",
-            "text": "Frelse og nåde"
-        },
-        {
-            "type": "text",
-            "content": "Kristendommen lærer at menneskene er syndige og ikke klarer å leve opp til Guds standard på egenhånd. Men Gud elsker menneskene, og han sendte Jesus for å betale prisen for menneskenes synder ved sin død på korset. Dette kaller vi nåde - Guds kjærlighet og tilgivelse som ikke kan kjøpes eller fortjenes, bare mottas som gave."
-        },
-        {
-            "type": "text",
-            "content": "Frelse er frigjøringen fra synd og konsekvensene av den. Kristne tror at de som tar imot Jesu frelse, vil leve med Gud etter døden - i himmelen. Troen handler altså ikke bare om å oppføre seg bra. Den handler om å motta noe du ikke har fortjent."
-        },
-        {
-            "type": "header",
-            "text": "Fra 12 disipler til 2,4 milliarder"
-        },
-        {
-            "type": "text",
-            "content": "Da Jesus ble korsfestet, hadde han rundt 12 trofaste disipler. Hvordan ble de til 2,4 milliarder?"
-        },
-        {
-            "type": "text",
-            "content": "Disiplene - spesielt Paulus - reiste tvers gjennom Middelhavet og grunnla menigheter i by etter by. Troen spredte seg langs romervegene til Alexandria, Antiokia, Roma og Konstantinopel. Den vokste særlig blant de fattige, slaver og kvinner - folk som romernes religioner ikke brydde seg om. Keiser Konstantin ble kristen rundt år 312, og i 380 ble kristendommen Romerrikets offisielle religion. Fra det øyeblikket ekspanderte den raskt gjennom hele Europa, og siden videre til Amerika, Afrika og Asia med de europeiske misjonærene."
-        },
-        {
-            "type": "header",
-            "text": "Tre store grener"
-        },
-        {
-            "type": "text",
-            "content": "Kristendommen er ikke én samlet kirke, men en familie av kirker og bevegelser med en felles kjerne. De tre største grenene er den katolske kirke, de ortodokse kirkene og de protestantiske kirkene. Alle kaller seg kristne og tror på Jesus, Bibelen og treenigheten - men de er uenige om hvem som har autoritet i kirkespørsmål, og om hvordan gudstjenesten skal se ut."
+            "content": "Kristendommen er ikke én organisasjon. Den er delt i mange kirkesamfunn, og det er vanlig å dele de kristne i tre hovedgrupper: katolikker, ortodokse og protestanter. Rundt halvparten av verdens kristne, cirka 1,1 milliarder, er katolikker. De ortodokse kirkene har cirka 260 millioner, protestantene cirka 800 millioner (Elstad & Rasmussen, 2026). Den anglikanske kirken regnes også som en viktig gruppe. Legg merke til at tallene spriker: Den katolske kirke teller selv 1,36 milliarder medlemmer i 2020, fordi den regner alle som er katolsk døpt som medlemmer (Halvorsen & Stensvold, 2025). Utforsk grenene under."
         },
         {
             "type": "component",
             "name": "KristendomsGrenerUtforsker",
-            "props": {}
+            "props": {
+                "title": "Kristendommens tre hovedgrener"
+            }
         },
         {
             "type": "text",
-            "content": "Du kan lese mer om disse skillelinjene i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
+            "content": "Grenene er uenige om hvem som har myndighet i kirken, hvor mange sakramenter som finnes, og hvordan gudstjenesten skal se ut. Et sakrament er en hellig handling, som dåp og nattverd. Den katolske kirke har sju sakramenter, mens de protestantiske reformatorene beholdt to eller tre. De ortodokse kirkene har ikke noe felles overhode i det hele tatt (Den katolske kirke, u.å.; Elstad & Allkunne, 2026; Thorbjørnsrud & Kværne, 2026). Men kjernen deler de. Alle de store kirkesamfunnene holder fast på at Jesus er sann Gud og sant menneske (Elstad & Rasmussen, 2026). Mer om det de er enige om finner du i [Det alle kristne er enige om](/krle/religion/kristendom/sentrale-trekk), og mer om skillelinjene i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
+        },
+        {
+            "type": "header",
+            "text": "Hva historikere vet, og hva kristne tror"
+        },
+        {
+            "type": "text",
+            "content": "Det er liten tvil om at Jesus har levd. Den jødiske historikeren Josefus er den første ikke-kristne forfatteren som nevner ham, og den romerske historieskriveren Tacitus nevner også korsfestelsen. Disse kildene sier svært lite om hvem Jesus var, men de gjør det sannsynlig at han fantes (Seim & Elstad, 2024). De viktigste kildene til livet hans er evangeliene i Bibelen. De ble trolig skrevet mellom 70 og 90 år etter Jesu fødsel, og de forteller ikke nøytralt, men i lys av kirkens tro på ham. Evangeliene forteller at Jesus vokste opp i Nasaret som sønn av tømmermannen Josef, at han lot seg døpe av Johannes rundt 30 år gammel, og at han deretter vandret rundt og forkynte, mest i Galilea. Virket varte kort, kanskje bare ett år og ikke mer enn tre (Seim & Elstad, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Det som skjedde etterpå, kan ingen historiker etterprøve. Tilhengerne fortsatte å spre læren hans, og de var overbevist om at Jesus var stått opp fra de døde (Seim & Elstad, 2024). Kristne tror at Jesus er Guds sønn som ble menneske, at han døde på korset for menneskenes synd, og at han overvant døden. Paulus, en av de første kristne lederne, skrev til menigheten i Korint: «Men er ikke Kristus stått opp, da er vårt budskap tomt, og deres tro er også tom» (Bibelselskapet, 2011). Kristen tro står og faller altså ikke med at Jesus sa kloke ting, men med oppstandelsen. Mer om dette i artikkelen om [frelse](/krle/religion/kristendom/frelse)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bibel med tynne sider på trebord",
+            "caption": "Bibelen består av Det gamle testamentet, som deles med jødedommen, og Det nye testamentet."
+        },
+        {
+            "type": "header",
+            "text": "Én Gud i tre"
+        },
+        {
+            "type": "text",
+            "content": "Kristendommen er monoteistisk, altså en religion med bare én gud. Samtidig lærer den at Gud er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd. Dette kalles treenigheten (Leivestad & Elstad, 2026). Det er ikke tre guder. Bibelen inneholder ingen lære om hvordan de tre henger sammen, og den tidlige kirken brukte lang tid på spørsmålet. På kirkemøtet i Nikea i 325 slo kirken fast at Kristus er av samme vesen som Faderen, og på kirkemøtet i Konstantinopel i 381 sa den det samme om Den hellige ånd (Leivestad & Elstad, 2026). Læren om at Gud ble menneske i Jesus, kalles inkarnasjon. Mer om dette i artikkelen om [gudsbildet](/krle/religion/kristendom/gudsbilde)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Du skal elske Herren din Gud av hele ditt hjerte og av hele din sjel og av all din forstand. Dette er det største og første budet. Men det andre er like stort: Du skal elske din neste som deg selv.",
+                "author": "Matteus 22,37-39, Bibelen 2011"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Jesus svarte dette da han ble spurt om hvilket bud som var det største i loven (Bibelselskapet, 2011). De to setningene er noe kristne fra alle grener siterer, uansett hvor uenige de ellers er. Kirkeåret følger den samme tråden. De store høytidene er jul, påske og pinse. Påsken er den mest sentrale, fordi den markerer Jesu lidelse, død og oppstandelse. Julen ble ikke feiret som fødselsfest før på 300-tallet (Elstad & Rasmussen, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Verdenskart i papir med små merker på flere kontinenter",
+            "caption": "Tyngdepunktet har flyttet seg: i 1910 bodde 66 prosent av alle kristne i Europa, i 2015 bare 25 prosent."
+        },
+        {
+            "type": "header",
+            "text": "Fra Jerusalem til hele verden"
+        },
+        {
+            "type": "text",
+            "content": "De kristne ble først forfulgt i Romerriket. I år 313 gjorde keiser Konstantin slutt på forfølgelsene og støttet i stedet kristendommen, og i 380 gjorde keiser Theodosius den til statsreligion (Elstad & Rasmussen, 2026). Etter hvert fikk kirken ett tyngdepunkt i Roma og ett i Konstantinopel. De to fjernet seg fra hverandre og ble splittet i 1054. På 1500-tallet ble kirken i vest splittet på nytt gjennom reformasjonen, oppgjøret med kirkens ledelse som toppet seg i 1517 og ga oss de protestantiske kirkene. Med koloniseringen av Amerika, Asia og Afrika spredte både katolisisme og protestantisme seg videre. Resultatet ser vi i tallene i dag: i 1910 bodde 66 prosent av alle kristne i Europa, i 2015 bare 25 prosent. Nå bor 36 prosent i Amerika, 23 prosent i Afrika sør for Sahara og 13 prosent i Asia (Elstad & Rasmussen, 2026)."
         },
         {
             "type": "header",
@@ -98,28 +142,34 @@
         },
         {
             "type": "text",
-            "content": "Kristendommen kom til Norge rundt år 1000, brakt av vikinger som hadde møtt troen ute på sine reiser og av konger som så nytten av å samle folket under én religion. Olav Haraldsson - kjent som St. Olav og Norges skytshelgen - er den viktigste skikkelsen i kristningen av Norge. Han falt i slaget på Stiklestad i 1030, og ble erklært hellig av kirken bare ett år etter sin død."
+            "content": "Det endelige gjennombruddet for kristendommen i Norge kom på 1000-tallet, men kontakt med det kristne Europa hadde gitt kristne impulser lenge før. Kongene Olav Tryggvason og Olav Haraldsson gjorde kristningen til en del av rikssamlingen. Olav Haraldsson falt i slaget på Stiklestad 29. juli 1030, og allerede året etter ble han erklært hellig av kirken og lagt i skrin i Nidaros (Krag mfl., 2026). I 1152 ble den norske kirken et eget kirkeområde med sin egen erkebiskop i Nidaros, dagens Trondheim. Reformasjonen ble innført i Norge i 1537 av danskekongen Christian 3., og landet ble luthersk (Elstad & Rasmussen, 2026)."
         },
         {
             "type": "text",
-            "content": "I dag er Den norske kirke det største trossamfunnet med rundt 65 prosent av befolkningen som formelle medlemmer - selv om langt færre går regelmessig i kirken. Kristne tradisjoner er uansett en del av norsk kultur: dåp som hilser det nye livet, konfirmasjon som markerer overgangen til voksenlivet, og høytidene jul og påske som er røttet i den kristne fortellingen."
-        },
-        {
-            "type": "header",
-            "text": "Fra 12 disipler til hele verden - se det i 3D"
+            "content": "Den norske kirke er fortsatt det største trossamfunnet i landet. I 2024 var 62 prosent av befolkningen, 3,4 millioner mennesker, medlemmer. Langt færre går jevnlig i kirken, men tradisjonene står sterkt: i 2024 ble 51 prosent av alle fødte døpt i Den norske kirke, og 81 prosent av gravferdene var kirkelige (Rasmussen mfl., 2026). Fra 1. januar 2017 er kirken ikke lenger statskirke, men en selvstendig organisasjon (Elstad & Rasmussen, 2026). I tillegg hørte 391 292 mennesker til kristne trossamfunn utenfor Den norske kirke som får offentlig støtte, i 2026. Blant dem er katolikker, ortodokse, pinsevenner og baptister (Statistisk sentralbyrå, 2026)."
         },
         {
             "type": "component",
-            "name": "MicroGame",
-            "props": { "gameId": "kristendom-spredning" }
-        },
-        {
-            "type": "header",
-            "text": "Videre lesning"
-        },
-        {
-            "type": "text",
-            "content": "I de andre artiklene om kristendommen kan du gå dypere inn i hvert tema. Les om [Jesus liv og lære](/krle/religion/kristendom/grunnleggere), utforsk [Bibelen](/krle/religion/kristendom/hellige-tekster), lær om [bønn og gudstjeneste](/krle/religion/kristendom/bonn) og forstå [de ulike kirkesamfunnene](/krle/religion/kristendom/kirkesamfunn). Du kan også sammenligne kristendommen med andre religioner på [sammenligningssiden](/krle/sammenlign)."
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange kristne finnes det i verden, og hvor stor andel av jordas befolkning er det?",
+                    "Hva betyr ordene Christos og Messias?",
+                    "Hva heter de tre hovedgrenene i kristendommen, og omtrent hvor mange tilhører hver av dem?",
+                    "Forklar med egne ord hva treenigheten er."
+                ],
+                "reflekter": [
+                    "Josefus og Tacitus gjør det sannsynlig at Jesus har levd, men de sier ingenting om oppstandelsen. Hvorfor er skillet mellom det historikere kan slå fast og det kristne tror, viktig?",
+                    "Store norske leksikon oppgir cirka 1,1 milliarder katolikker, mens Den katolske kirke selv oppgir 1,36 milliarder. Hva kan forklare forskjellen, og hvilket tall ville du brukt?",
+                    "I 1910 bodde 66 prosent av alle kristne i Europa, i 2015 bare 25 prosent. Hva kan det ha å si for hvordan kristendommen ser ut i framtiden?",
+                    "62 prosent av nordmenn er medlemmer i Den norske kirke, men langt færre går jevnlig i kirken. Hva sier medlemstall egentlig om hva folk tror?"
+                ],
+                "gaaVidere": [
+                    "Lag en tidslinje med årstallene 313, 380, 1054, 1517 og 1537, og skriv én setning om hva som skjedde hver gang.",
+                    "Velg én av de tre grenene og finn ut hvor mange menigheter den har i ditt fylke.",
+                    "Sammenlign kristendommen med jødedommen eller islam på sammenligningssiden. Hva er den viktigste forskjellen?"
+                ]
+            }
         },
         {
             "type": "component",
@@ -127,96 +177,80 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva er kjernen i kristen tro?",
+                        "question": "Omtrent hvor mange kristne finnes det i verden?",
                         "options": [
-                            "At Jesus ga de ti bud på Sinai-fjellet",
-                            "At Jesus stod opp fra de døde etter korsfestelsen",
-                            "At Jesus grunnla en kirke i Roma"
+                            "Cirka 500 millioner",
+                            "Cirka 1,2 milliarder",
+                            "Cirka 2,3 milliarder",
+                            "Cirka 4 milliarder"
                         ],
-                        "answer": "At Jesus stod opp fra de døde etter korsfestelsen"
+                        "correctAnswer": 2,
+                        "explanation": "Det finnes cirka 2,3 milliarder kristne, omtrent 33 prosent av verdens befolkning. Kristendommen er verdens største religion, og det bor kristne i samtlige land."
                     },
                     {
                         "question": "Hva er treenigheten?",
                         "options": [
-                            "Tre separate guder i kristendommen",
-                            "Én Gud med tre sider: Faderen, Sønnen og Den hellige ånd",
-                            "De tre store kirkesamfunnene"
+                            "Tre selvstendige guder i kristendommen",
+                            "Læren om at Gud er tre personer i ett vesen",
+                            "De tre store kirkesamfunnene",
+                            "De tre store høytidene jul, påske og pinse"
                         ],
-                        "answer": "Én Gud med tre sider: Faderen, Sønnen og Den hellige ånd"
+                        "correctAnswer": 1,
+                        "explanation": "Treenigheten er læren om at Gud er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd. Kristendommen er monoteistisk, så det er ikke snakk om tre guder."
                     },
                     {
-                        "question": "Hvilken kristen retning tilhører Den norske kirke?",
-                        "options": ["Katolsk", "Ortodoks", "Protestantisk (luthersk)"],
-                        "answer": "Protestantisk (luthersk)"
-                    },
-                    {
-                        "question": "Hva betyr nåde i kristen sammenheng?",
+                        "question": "Hvilken av disse påstandene kan historikere slå fast?",
                         "options": [
-                            "Guds tilgivelse og kjærlighet som gis gratis - ikke fortjent",
-                            "Å be fem ganger om dagen",
-                            "Å gjøre gode gjerninger for å bli frelst"
+                            "At Jesus sto opp fra de døde",
+                            "At Jesus var Guds sønn",
+                            "At Jesus fantes, og at han ble korsfestet",
+                            "At Jesus ville stifte en ny religion"
                         ],
-                        "answer": "Guds tilgivelse og kjærlighet som gis gratis - ikke fortjent"
+                        "correctAnswer": 2,
+                        "explanation": "Josefus og Tacitus nevner Jesus og korsfestelsen, og gjør det sannsynlig at han har levd. Oppstandelsen og at Jesus er Guds sønn er trosinnhold, ikke noe historikere kan etterprøve."
                     },
                     {
-                        "question": "Hvem er Norges skytshelgen fra kristningens tid?",
-                        "options": ["Harald Hårfagre", "Olav Haraldsson (St. Olav)", "Håkon den gode"],
-                        "answer": "Olav Haraldsson (St. Olav)"
+                        "question": "Hva skjedde i 1054?",
+                        "options": [
+                            "Reformasjonen begynte i Tyskland",
+                            "Kristendommen ble statsreligion i Romerriket",
+                            "Olav Haraldsson falt på Stiklestad",
+                            "Kirken i øst og kirken i vest ble splittet"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Vestkirken med sentrum i Roma og Østkirken med sentrum i Konstantinopel hadde fjernet seg fra hverandre over lang tid. I 1054 ble splittelsen endelig."
+                    },
+                    {
+                        "question": "Hvor stor andel av befolkningen i Norge var medlemmer i Den norske kirke i 2024?",
+                        "options": ["38 prosent", "52 prosent", "62 prosent", "90 prosent"],
+                        "correctAnswer": 2,
+                        "explanation": "62 prosent, altså 3,4 millioner mennesker, var medlemmer i 2024. Andelen har gått ned siden etterkrigstiden, da rundt 90 prosent var med."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Elstad, H. & Rasmussen, T. (2026). *Kristendom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/kristendom](https://snl.no/kristendom)",
+                    "Seim, T. K. & Elstad, H. (2024). *Jesus*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesus](https://snl.no/Jesus)",
+                    "Seim, T. K. & Iddeng, J. W. (2026). *Pontius Pilatus*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Pontius_Pilatus](https://snl.no/Pontius_Pilatus)",
+                    "Leivestad, R. & Elstad, H. (2026). *Treenigheten*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/treenigheten](https://snl.no/treenigheten)",
+                    "Halvorsen, P. B. & Stensvold, A. (2025). *Den katolske kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Den_katolske_kirke](https://snl.no/Den_katolske_kirke)",
+                    "Thorbjørnsrud, B. S. & Kværne, P. (2026). *Den ortodokse kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_ortodokse_kirke](https://snl.no/den_ortodokse_kirke)",
+                    "Elstad, H. & Allkunne. (2026). *Protestantisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/protestantisme](https://snl.no/protestantisme)",
+                    "Rasmussen, T., Lundal, S. O. & Elstad, H. (2026). *Den norske kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Den_norske_kirke](https://snl.no/Den_norske_kirke)",
+                    "Krag, C., Norseng, P. G. & Bandlien, B. (2026). *Olav den hellige*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Olav_den_hellige](https://snl.no/Olav_den_hellige)",
+                    "Den katolske kirke. (u.å.). *Om Den katolske kirke - for skoleelever*. Hentet 11.08.2026 fra [katolsk.no/tro/for-skoleelever](https://www.katolsk.no/tro/for-skoleelever)",
+                    "Statistisk sentralbyrå. (2026). *Tabell 06326: Medlemmer i trus- og livssynssamfunn som søker om offentleg stønad og er utanfor Den norske kyrkja*. Hentet 11.08.2026 fra [ssb.no/statbank/table/06326](https://www.ssb.no/statbank/table/06326/)",
+                    "Stensvold, A. (2025). *Leo 14.* Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Leo_14.](https://snl.no/Leo_14.)",
+                    "Bibelselskapet. (2011). *Matteus 22,37-39*. Bibelen. Hentet 11.08.2026 fra [bibel.no](https://bibel.no/nettbibelen/les/nb-2011/MAT/MAT.22)",
+                    "Bibelselskapet. (2011). *1. Korinter 15,14*. Bibelen. Hentet 11.08.2026 fra [bibel.no](https://bibel.no/nettbibelen/les/nb-2011/1CO/1CO.15)"
                 ]
             }
         }
     ],
-    "concepts": [
-        {
-            "id": "monoteisme",
-            "term": "Monoteisme",
-            "definition": "Troen på bare én gud. Kristendommen, islam og jødedommen er alle monoteistiske religioner."
-        },
-        {
-            "id": "treenigheten",
-            "term": "Treenigheten",
-            "definition": "Den kristne læren om at Gud er tre i én: Faderen, Sønnen (Jesus) og Den hellige ånd. Ikke tre guder, men én Gud med tre sider."
-        },
-        {
-            "id": "inkarnasjon",
-            "term": "Inkarnasjon",
-            "definition": "Læren om at Gud ble menneske i Jesus fra Nasaret. Inkarnasjon betyr bokstavelig talt 'å ta kjøtt på seg'."
-        },
-        {
-            "id": "oppstandelse",
-            "term": "Oppstandelse",
-            "definition": "At Jesus stod opp fra de døde tre dager etter korsfestelsen. Dette er kjernen i kristen tro."
-        },
-        {
-            "id": "frelse",
-            "term": "Frelse",
-            "definition": "I kristendommen: å bli frigjort fra synd og dens konsekvenser, og å komme til himmelen. Kristne tror Jesus sørget for frelsen gjennom sin død og oppstandelse."
-        },
-        {
-            "id": "naade",
-            "term": "Nåde",
-            "definition": "Guds kjærlighet og tilgivelse som gis gratis - den kan ikke kjøpes eller fortjenes, bare mottas som gave."
-        },
-        {
-            "id": "protestantisk",
-            "term": "Protestantisk",
-            "definition": "En kristen retning som oppsto med reformasjonen i 1517. Luthers kjerneidé: frelse ved tro alene, og Bibelen som øverste autoritet. Den norske kirke er protestantisk."
-        },
-        {
-            "id": "katolsk",
-            "term": "Katolsk",
-            "definition": "Den største kristne retningen med 1,3 milliarder medlemmer, ledet av paven i Roma. Legger stor vekt på tradisjon og kirkens autoritet."
-        },
-        {
-            "id": "ortodoks",
-            "term": "Ortodoks",
-            "definition": "En kristen retning utbredt i Øst-Europa, Russland og Midtøsten. Skilte lag med Roma i 1054. Kjent for rik liturgi og ikoner."
-        }
-    ],
-    "quote": {
-        "text": "Du skal elske Herren din Gud av hele ditt hjerte og av hele din sjel og av hele ditt sinn. Dette er det største og første budet. Det andre er like stort: Du skal elske din neste som deg selv.",
-        "source": "Bibelen",
-        "reference": "Matteus 22:37-39"
-    }
+    "timeline": []
 }

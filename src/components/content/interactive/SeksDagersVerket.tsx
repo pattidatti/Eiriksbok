@@ -29,28 +29,31 @@ const STANDARD_PAR: DagPar[] = [
         id: 'lys',
         romDag: 1,
         romTittel: 'Lys og mørke',
-        romTekst: 'Gud skiller lyset fra mørket. Det blir dag og natt - men ingenting lyser ennå.',
+        romTekst:
+            'Gud skiller lyset fra mørket og kaller det dag og natt. Men ingen sol og ingen stjerne lyser ennå.',
         fyllDag: 4,
         fyllTittel: 'Sol, måne og stjerner',
-        fyllTekst: 'Nå kommer lysene som skal styre dagen og natten.',
+        fyllTekst: 'Nå kommer lysene som skal skille dag fra natt og lyse over jorda.',
     },
     {
         id: 'himmel',
         romDag: 2,
-        romTittel: 'Himmel og hav',
-        romTekst: 'Gud skiller vannet over fra vannet under. Det blir en himmel og et hav - begge tomme.',
+        romTittel: 'Himmelen og vannet',
+        romTekst:
+            'Gud lager en hvelving som skiller vann fra vann, og kaller den himmel. Både lufta og vannet er tomme.',
         fyllDag: 5,
-        fyllTittel: 'Fugler og fisk',
-        fyllTekst: 'Fuglene fyller himmelen, fiskene fyller havet.',
+        fyllTittel: 'Fugler og sjødyr',
+        fyllTekst: 'Fuglene flyr under himmelhvelvingen, og vannet myldrer av levende skapninger.',
     },
     {
         id: 'land',
         romDag: 3,
         romTittel: 'Land og planter',
-        romTekst: 'Det tørre landet kommer til syne, og det gror. Men ingen går der.',
+        romTekst:
+            'Vannet samler seg, det tørre landet kommer til syne, og det gror. Men ingen går der ennå.',
         fyllDag: 6,
-        fyllTittel: 'Dyr og mennesker',
-        fyllTekst: 'Landdyrene og menneskene får plassen sin på jorda.',
+        fyllTittel: 'Landdyr og mennesker',
+        fyllTekst: 'Ville dyr, fe og kryp får plassen sin på jorda. Mennesket skapes sist av alt.',
     },
 ];
 
@@ -65,8 +68,8 @@ export function SeksDagersVerket({
     const [koblet, setKoblet] = useState<string[]>([]);
     const [bom, setBom] = useState<string | null>(null);
 
-    // Rekkefølgen på fyll-kortene stokkes én gang, ellers ligger fasiten rett under.
-    const fyllRekke = useMemo(() => [par[1], par[2], par[0]].filter(Boolean), [par]);
+    // Rekkefølgen på fyll-kortene forskyves ett hakk, ellers ligger fasiten rett under.
+    const fyllRekke = useMemo(() => par.map((_, i) => par[(i + 1) % par.length]), [par]);
 
     const ferdig = koblet.length === par.length;
 
@@ -102,7 +105,8 @@ export function SeksDagersVerket({
                 </button>
             </div>
             <p className="text-sm text-slate-600 mb-5">
-                Velg et kort nederst, og klikk på rommet det fyller.
+                Slik forteller 1. Mosebok 1 om de seks dagene. Velg et kort nederst, og klikk på
+                rommet det fyller.
             </p>
 
             {/* Rommene - dag 1, 2, 3 */}
@@ -240,9 +244,11 @@ export function SeksDagersVerket({
                             </span>
                         </div>
                         <p className="text-sm text-emerald-900 leading-snug">
-                            De seks dagene er bygget som tre par. Først lager Gud tre tomme rom, så
-                            fyller han dem i samme rekkefølge: 1 og 4, 2 og 5, 3 og 6. Fortellingen
-                            er ikke en liste over hendelser - den er komponert som et dikt.
+                            De seks dagene er bygget som tre par. Fortellingen lager først tre tomme
+                            rom, så fyller den dem i samme rekkefølge: 1 og 4, 2 og 5, 3 og 6.
+                            Teksten er altså ikke satt opp som en tilfeldig liste, men følger et
+                            fast mønster. Mange kirker leser derfor dagene som en form og ikke som
+                            en kalender, mens andre kristne mener de skal leses bokstavelig.
                         </p>
                     </motion.div>
                 )}
