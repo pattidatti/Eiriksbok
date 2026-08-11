@@ -134,6 +134,14 @@ const BonnSomSamtale = lazy(() => import('./content/interactive/BonnSomSamtale')
 const AdressenPaaBonnen = lazy(() => import('./content/interactive/AdressenPaaBonnen').then(m => ({ default: m.AdressenPaaBonnen })));
 const PujaBrettet = lazy(() => import('./content/interactive/PujaBrettet').then(m => ({ default: m.PujaBrettet })));
 const HvemSnakkerDuTil = lazy(() => import('./content/interactive/HvemSnakkerDuTil').then(m => ({ default: m.HvemSnakkerDuTil })));
+const PliktenSomFlytterSeg = lazy(() => import('./content/interactive/PliktenSomFlytterSeg').then(m => ({ default: m.PliktenSomFlytterSeg })));
+const NaarSkalDuDoepes = lazy(() => import('./content/interactive/NaarSkalDuDoepes').then(m => ({ default: m.NaarSkalDuDoepes })));
+const FoersteOgSisteOrd = lazy(() => import('./content/interactive/FoersteOgSisteOrd').then(m => ({ default: m.FoersteOgSisteOrd })));
+const SamtykkePorten = lazy(() => import('./content/interactive/SamtykkePorten').then(m => ({ default: m.SamtykkePorten })));
+const Slektskjeden = lazy(() => import('./content/interactive/Slektskjeden').then(m => ({ default: m.Slektskjeden })));
+const ValgetDuTarSelv = lazy(() => import('./content/interactive/ValgetDuTarSelv').then(m => ({ default: m.ValgetDuTarSelv })));
+const SamskaraStigen = lazy(() => import('./content/interactive/SamskaraStigen').then(m => ({ default: m.SamskaraStigen })));
+const RitenSomIkkeFinnes = lazy(() => import('./content/interactive/RitenSomIkkeFinnes').then(m => ({ default: m.RitenSomIkkeFinnes })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -541,6 +549,14 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     AdressenPaaBonnen,
     PujaBrettet,
     HvemSnakkerDuTil,
+    PliktenSomFlytterSeg,
+    NaarSkalDuDoepes,
+    FoersteOgSisteOrd,
+    SamtykkePorten,
+    Slektskjeden,
+    ValgetDuTarSelv,
+    SamskaraStigen,
+    RitenSomIkkeFinnes,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,

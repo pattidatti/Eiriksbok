@@ -7552,13 +7552,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-03-15T21:57:26+01:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Dåp, konfirmasjon, ekteskap, begravelse og sakramentene.",
-                  "image": "/images/krle/religion/kristendom_overgangsriter.webp",
+                  "title": "Uenigheten om vannet",
+                  "description": "Dåp, konfirmasjon, vielse og gravferd. Kristne har kranglet i 500 år om når dåpen skal skje - og striden kostet liv.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "overgangsriter",
@@ -7685,13 +7685,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-10T22:16:47+02:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Fødsel, ekteskap og død.",
-                  "image": "/images/krle/religion/islam_hero.webp",
+                  "title": "Setningen som rammer inn livet",
+                  "description": "Trosbekjennelsen hviskes i øret på det nyfødte barnet og er det siste mange muslimer vil si. Se hvordan islam markerer fødsel, ekteskap og død.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "overgangsriter",
@@ -7822,13 +7822,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Fødsel, munkeinnvielse og død.",
-                  "image": "/images/krle/religion/buddhisme_hero.webp",
+                  "title": "Riten som ikke finnes",
+                  "description": "Buddhismen har ikke noe eget bryllupsrituale, men eier begravelsen fullstendig. Om munkevigsling som overgang til voksenlivet, om fortjeneste som kan gis til de døde, og om hvilke overganger en religion velger å ta hånd om.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "overgangsriter",
@@ -7946,13 +7946,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Omskjæring, Bar/Bat Mitzvah og ekteskap.",
-                  "image": "/images/krle/religion/jodedom_hero.webp",
+                  "title": "Dagen ansvaret bytter eier",
+                  "description": "Bar mitzva betyr forpliktelsens sønn. Bli med gjennom fire jødiske overganger, fra brit mila på den åttende dagen til den enkle kisten, og se hvordan ansvaret for budene flytter seg fra foreldrene til barnet.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "overgangsriter",
@@ -8070,13 +8070,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Samskaras - livets overgangsriter.",
-                  "image": "/images/krle/religion/hinduisme_hero.webp",
+                  "title": "Seksten riter gjennom et liv",
+                  "description": "Hinduismen har en liste på seksten overgangsriter, samskara. Den første holdes før barnet er unnfanget, den siste er kremasjonen. Men nesten ingen familie holder alle seksten.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "overgangsriter",
@@ -8264,13 +8264,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Ingen faste ritualer, men markering av livshendelser.",
-                  "image": "/images/krle/religion/bahai_hero.webp",
+                  "title": "Én setning, og alle foreldrenes ja",
+                  "description": "Bahá'í har ingen prester og nesten ingen seremonier. Bryllupet krever samtykke fra alle foreldre som lever, og består av én setning begge sier. Gravferden har strenge regler: ingen kremasjon, og grav innen én times reise.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "bahai",
                     "overgangsriter",
@@ -8388,13 +8388,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Dåp, konfirmasjon og tempelbesegling.",
-                  "image": "/images/krle/religion/mormonisme_hero.webp",
+                  "title": "Ikke til døden skiller dere",
+                  "description": "I et tempel i Stockholm sier et norsk brudepar noe annet enn «til døden skiller dere». Bli med gjennom overgangene som skal binde generasjoner sammen.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "overgangsriter",
@@ -8512,13 +8512,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T08:44:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
-                  "title": "Overgangsriter",
-                  "description": "Dåp og ekteskap.",
-                  "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+                  "title": "Dåpen du må be om selv",
+                  "description": "Jehovas vitner døper ikke spedbarn. Dåpen skjer først når en person selv har studert, angret og bedt innvielsesbønnen, og den bekreftes med to spørsmål som svares høyt på et stevne. Bryllup og begravelse holdes enkelt i Rikets sal.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "overgangsriter",

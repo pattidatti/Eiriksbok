@@ -1,6 +1,7 @@
 {
     "id": "overgangsriter",
-    "title": "Overgangsriter i Jehovas vitner",
+    "title": "Dåpen du må be om selv",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jehovas-vitner",
@@ -10,91 +11,263 @@
         "ritual",
         "døden"
     ],
-    "createdDate": "2025-12-04T11:00:00Z",
-    "lastUpdated": "2025-12-04T11:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Ingen barnedåp"
-        },
-        {
-            "type": "text",
-            "content": "Jehovas vitner praktiserer ikke barnedåp. Dåpen er et bevisst valg man tar når man har forstått troen, ofte i tenårene eller som voksen."
-        },
-        {
-            "type": "header",
-            "text": "Dåp"
-        },
-        {
-            "type": "text",
-            "content": "Dåpen skjer ved full neddykking i vann og markerer innvielse til Jehova."
-        },
-        {
-            "type": "header",
-            "text": "Ekteskap"
-        },
-        {
-            "type": "text",
-            "content": "Vielsen foregår ofte i Rikets sal. Det er en enkel seremoni med en bibelsk tale om ekteskapet."
-        },
-        {
-            "type": "header",
-            "text": "Begravelse"
-        },
-        {
-            "type": "text",
-            "content": "Begravelsen er en enkel minnestund i Rikets sal med fokus på håpet om oppstandelse til liv på en paradisisk jord."
-        }
+    "category": "Jehovas vitner",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jehovas vitner døper ikke spedbarn. Dåpen er noe man ber om selv, etter å ha studert i månedsvis eller år.",
+        "Dåpen skjer ved full neddykking, som regel på de store stevnene som arrangeres hvert år.",
+        "Rett før neddykkingen svarer alle kandidatene ja på to spørsmål som leses høyt i salen.",
+        "Bryllup og begravelse holdes enkelt i Rikets sal, med en tale som kjerne. Det tas ikke opp kollekt.",
+        "Jul, påske og bursdager markeres ikke. Den ene faste markeringen i året er minnehøytiden."
     ],
+    "createdDate": "2025-12-04T11:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
-        {
-            "id": "voksendap",
-            "term": "Voksendåp",
-            "definition": "Dåp ved full neddykking etter at man selv har valgt å tjene Jehova."
-        },
         {
             "id": "innvielse",
             "term": "Innvielse",
-            "definition": "Et løfte man gir til Jehova i bønn om å tjene ham for alltid, før man blir døpt."
+            "definition": "Løftet du gir Gud i en bønn du ber alene, om å gjøre hans vilje. Innvielsen kommer før dåpen."
+        },
+        {
+            "id": "dap-ved-neddykking",
+            "term": "Dåp ved neddykking",
+            "definition": "Dåp der hele kroppen senkes under vann. Hos Jehovas vitner skjer den først når personen selv har bedt om det."
+        },
+        {
+            "id": "rikets-sal",
+            "term": "Rikets sal",
+            "definition": "Møtelokalet til Jehovas vitner. Det brukes til møter, bryllup og begravelser, og har nesten ingen religiøse symboler."
+        },
+        {
+            "id": "minnehoytiden",
+            "term": "Minnehøytiden",
+            "definition": "Den ene faste markeringen i året hos Jehovas vitner, til minne om at Jesus døde. Den holdes den 14. nisan."
         },
         {
             "id": "oppstandelse",
             "term": "Oppstandelse",
-            "definition": "Håpet om at døde skal få livet tilbake på en paradisisk jord."
+            "definition": "Håpet om at de døde skal få livet tilbake, de aller fleste på en jord som er gjort om til et paradis."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Praktiserer Jehovas vitner barnedåp?",
-            "options": [
-                "Ja",
-                "Nei",
-                "Noen ganger"
-            ],
-            "answer": "Nei"
+            "type": "text",
+            "content": "I en stor hall reiser flere hundre mennesker seg samtidig fra stolradene. En taler leser to spørsmål høyt. De som står, svarer ja. Så går de en etter en bort til et basseng, blir bøyd bakover og forsvinner helt under vannflaten i et par sekunder. En av dem er 15 år. Ingen bar henne hit da hun var nyfødt. Hun har bedt om å få stå her selv."
         },
         {
-            "question": "Hvordan foregår dåpen?",
-            "options": [
-                "Litt vann på hodet",
-                "Full neddykking i vann",
-                "Med olje"
-            ],
-            "answer": "Full neddykking i vann"
+            "type": "text",
+            "content": "Dette er dåpen hos Jehovas vitner, og det er den viktigste overgangsriten de har. En overgangsrite er en seremoni som markerer at et menneske går fra én plass i samfunnet til en annen (Bertelsen, 2024). Forskeren Arnold van Gennep beskrev rundt 1909 at slike riter ofte har tre trinn: du løsrives fra det gamle, du er en stund i en mellomtilstand, og så tas du inn igjen med ny status (Bertelsen, 2024). Jehovas vitner har færre slike seremonier enn de fleste andre. Til gjengjeld er den ene de har, tung."
         },
         {
-            "question": "Hva er håpet ved døden?",
-            "options": [
-                "Å bli en engel",
-                "Oppstandelse på jorden",
-                "Å bli gjenfødt som dyr"
-            ],
-            "answer": "Oppstandelse på jorden"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom bøyes bakover ned i dåpsbasseng i stor hall",
+            "caption": "Dåpen foregår ved at hele kroppen senkes under vann. Den skjer som regel på de årlige stevnene."
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner begynte som en bibelstudiegruppe i USA på 1870-tallet, samlet rundt Charles Taze Russell (1852-1916). Navnet Jehovas vitner ble tatt i bruk i 1931 (Ringnes mfl., 2026). I Norge var det rundt 12 000 aktive medlemmer fordelt på omtrent 167 menigheter i 2019 (Ringnes mfl., 2026). Møtelokalet deres heter Rikets sal og ligner lite på en kirke. Det er nesten uten religiøse symboler. Du kan lese mer om troen deres i artikkelen om [sentrale trekk hos Jehovas vitner](/krle/religion/jehovas-vitner/sentrale-trekk)."
+        },
+        {
+            "type": "header",
+            "text": "Ingen barn blir døpt"
+        },
+        {
+            "type": "text",
+            "content": "I de fleste kristne kirker er barnedåp den vanligste formen for dåp i dag (Elstad, 2026). Tanken bak er at troen er en gave fra Gud, ikke noe mennesket selv skaffer seg. Jehovas vitner gjør det motsatte. De døper ikke spedbarn i det hele tatt. Grunnen de selv gir, er at Bibelen ikke sier at barn skal døpes, og at et spedbarn umulig kan gjøre det dåpen krever (Jehovas vitner, u.å.-b). Den som skal døpes, må ha forstått hva det handler om, angre det hen har gjort galt og selv love Gud å følge ham. Også barn av foreldre som er Jehovas vitner, må ta dette valget på egen hånd (Jehovas vitner, u.å.-a). Hvordan de leser Bibelen, står det mer om i artikkelen om [de hellige tekstene](/krle/religion/jehovas-vitner/hellige-tekster)."
+        },
+        {
+            "type": "text",
+            "content": "Før noen kan bli døpt, må flere ting være på plass. Man studerer Bibelen slik Jehovas vitner leser den, ofte i månedsvis. Man skal leve etter det man lærer. Man skal angre. Så ber man en bønn alene der man lover Gud å gjøre hans vilje. Den bønnen kalles innvielsen. Til slutt går de eldste i menigheten gjennom spørsmål med den som vil døpes, for å se at hen har forstått hva dette betyr (Jehovas vitner, u.å.-a). Prøv rekkefølgen under."
+        },
+        {
+            "type": "component",
+            "name": "ValgetDuTarSelv",
+            "props": {
+                "title": "Valget du tar selv"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hvor det tunge skjer. Innvielsesbønnen er selve vendepunktet, og den ber du alene. Ingen hører den, og ingen skriver den ned. Seremonien i hallen bekrefter offentlig noe du allerede har bestemt deg for. Bønn fyller mye av hverdagen deres, og du kan lese mer om det i artikkelen om [bønn](/krle/religion/jehovas-vitner/bonn)."
+        },
+        {
+            "type": "header",
+            "text": "Dåpsdagen"
+        },
+        {
+            "type": "text",
+            "content": "Dåpen skjer som regel på de store stevnene, som arrangeres hvert år (Ringnes mfl., 2026). Der er det ikke én person som døpes, men mange på samme dag. Dåpen foregår ved full neddykking, altså at hele kroppen går under vann (Ringnes mfl., 2026). Jehovas vitner viser til at det greske ordet i Bibelen betyr å dyppe eller senke ned, og at det derfor ikke holder å helle vann på hodet (Jehovas vitner, u.å.-b)."
+        },
+        {
+            "type": "text",
+            "content": "Selve handlingen skal bety noe helt bestemt. Å gå under vann viser at det gamle livet er slutt. Å komme opp igjen viser at et nytt liv har begynt (Jehovas vitner, 2026). Det finnes ingen fast aldersgrense. Noen døper seg som tenåringer, andre venter til de er godt voksne."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "De to spørsmålene",
+                "content": "Rett før neddykkingen reiser alle som skal døpes seg samtidig, og en taler leser to spørsmål høyt. Kandidatene svarer ja i kor. På norsk lyder spørsmålene omtrent slik: «Har du angret dine synder, innviet deg til Jehova og godtatt hans måte å frelse på gjennom Jesus Kristus?» og «Forstår du at dåpen din viser at du er et av Jehovas vitner, og at du hører til Jehovas organisasjon?» (Jehovas vitner, 2026). Det er alt som sies. Ingen faddere, ingen navneopprop."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Dåpen har også en side det er verdt å vite om. Fordi den gjør deg til medlem med plikter, får den følger hvis noen senere bryter med reglene og ikke angrer. Den som blir utelukket, blir unngått av de andre medlemmene, også av familie som ikke bor i samme hus (Ringnes mfl., 2026). Dette er en av de mest omstridte sidene ved bevegelsen, både utenfra og blant folk som har vokst opp i den."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Fullsatt stevnehall der mange ungdommer reiser seg samtidig",
+            "caption": "På stevnet står alle kandidatene opp samtidig og svarer ja på de samme to spørsmålene."
+        },
+        {
+            "type": "header",
+            "text": "Bryllup og begravelse i Rikets sal"
+        },
+        {
+            "type": "text",
+            "content": "Bryllupet er enkelt. Mange gifter seg i Rikets sal når den er ledig. Kjernen i seremonien er en tale på omtrent en halvtime om hva Bibelen sier om ekteskapet (Jehovas vitner, u.å.-c). Paret kan utveksle løfter og ringer. I noen land kan en av Jehovas vitner vie folk med juridisk virkning. I andre land må paret innom det offentlige, enten rett før eller rett etter talen. Det serveres ikke mat i salen. Vil paret ha fest, holdes den et annet sted, og hvordan festen ser ut, varierer fra land til land og fra par til par (Jehovas vitner, u.å.-c)."
+        },
+        {
+            "type": "text",
+            "content": "Begravelsen følger samme mønster. En taler holder en tale som bygger på Bibelen, om døden og om håpet om oppstandelse. Ofte sies det noe om hvordan den døde levde. Det synges gjerne en sang, og det avsluttes med en bønn. Familien velger selv om det skal skje i Rikets sal, i et kapell, hjemme, i et krematorium eller ved graven. Det koster ingenting, og det tas ikke opp kollekt. Andre enn medlemmer er velkomne (Jehovas vitner, u.å.-d)."
+        },
+        {
+            "type": "text",
+            "content": "Noen skikker holdes bevisst utenfor. Jehovas vitner mener at de døde ikke er ved bevissthet, og at de derfor verken kan følge med på de levende eller påvirke dem. Derfor holder de ikke likvake, de markerer ikke årsdagen for dødsfallet, og de verken snakker til de døde eller ber dem om noe (Jehovas vitner, u.å.-d). De unngår også dyre kister og påkostede seremonier. Håpet deres er at de aller fleste døde skal få livet tilbake på en jord som er gjort om til et paradis, mens et mindretall på 144 000 skal styre sammen med Jesus i himmelen (Ringnes mfl., 2026). Mer om dette står i artikkelen om [frelse](/krle/religion/jehovas-vitner/frelse)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Enkel sal med stolrader, talerstol og kiste uten pynt",
+            "caption": "Begravelsen holdes ofte i Rikets sal. Talen og bønnen er kjernen, og seremonien skal være enkel."
+        },
+        {
+            "type": "header",
+            "text": "En kalender nesten uten fest"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne hvorfor dåpen betyr så mye, hjelper det å se på hva som ikke markeres. Jehovas vitner feirer verken jul, påske eller andre tradisjonelle høytider, fordi de ikke står i Bibelen (Ringnes mfl., 2026). De feirer heller ikke bursdager. Begrunnelsen de gir, er at bursdagsfeiring har røtter i før-kristne skikker, at de første kristne ikke feiret bursdager, og at Bibelen aldri forteller om noen Guds tjener som feiret sin egen fødselsdag. De to bursdagsfeiringene Bibelen faktisk nevner, endte begge med et drap (Jehovas vitner, u.å.-e; Ringnes mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Én fast markering finnes: minnehøytiden, som holdes den 14. nisan etter den jødiske kalenderen, til minne om at Jesus døde. Brød og vin sendes rundt i salen, men bare de som mener at de hører til de 144 000, spiser og drikker av det. De aller fleste sender det videre uten å ta noe (Ringnes mfl., 2026). Selv inne i det samme rommet er det altså forskjell på hva medlemmene gjør."
+        },
+        {
+            "type": "text",
+            "content": "Bildet som trer fram, er stramt. Ingen navneseremoni ved fødselen, ingen konfirmasjon fordi man har fylt fjorten, ingen bursdager. Det som blir igjen, er en dag du selv har bedt om, et bryllup uten stas og en begravelse uten pynt. Overgangene som markeres, er nettopp de man har valgt."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor døper ikke Jehovas vitner spedbarn?",
+                    "Hvilke ting må være på plass før en person kan bli døpt?",
+                    "Hvordan foregår selve dåpen, og hvor skjer den som regel?",
+                    "Hva er minnehøytiden, og hvem er det som spiser brødet og drikker vinen?"
+                ],
+                "reflekter": [
+                    "Innvielsesbønnen ber man alene, og ingen andre hører den. Hvorfor tror du den likevel regnes som selve vendepunktet?",
+                    "Forklar med egne ord forskjellen på en overgangsrite som skjer med deg, og en du må be om selv.",
+                    "Bruk van Genneps tre trinn (løsrivelse, mellomtilstand, ny status) på dåpen hos Jehovas vitner. Passer modellen?",
+                    "Jehovas vitner markerer verken bursdager eller jul. Hva tror du det gjør med hvor mye de få seremoniene de har, betyr?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign dåpen hos Jehovas vitner med barnedåp i Den norske kirke. Skriv en kort tekst om hva som er likt og hva som skiller dem.",
+                    "Diskuter i klassen: Bør et menneske kunne meldes inn i en religion før det er gammelt nok til å velge selv? Finn argumenter på begge sider.",
+                    "Finn ut hvor den nærmeste Rikets sal ligger, og hva som skjer der i løpet av en vanlig uke."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvorfor døper ikke Jehovas vitner spedbarn?",
+                        "options": [
+                            "Fordi de mener vann er farlig for små barn",
+                            "Fordi de mener Bibelen ikke lærer det, og fordi et spedbarn ikke kan forstå og velge selv",
+                            "Fordi de bare døper folk over 18 år",
+                            "Fordi dåpen bare er for dem som skal til himmelen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Den som skal døpes, må ha forstått hva det handler om, angre og selv love Gud å følge ham. Det kan ikke et spedbarn."
+                    },
+                    {
+                        "question": "Hva er innvielsen?",
+                        "options": [
+                            "En bønn du ber alene der du lover Gud å gjøre hans vilje",
+                            "Selve neddykkingen i vannet",
+                            "Et kurs de eldste holder i Rikets sal",
+                            "En fest familien holder etter dåpen"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Innvielsen skjer i en bønn ingen andre hører, og den kommer før dåpen. Dåpen bekrefter offentlig det du allerede har bestemt."
+                    },
+                    {
+                        "question": "Hva skjer rett før en person går under vann?",
+                        "options": [
+                            "En fadder svarer på personens vegne",
+                            "Personens navn ropes opp fra en liste",
+                            "Personen svarer ja på to spørsmål som leses høyt i salen",
+                            "Personen leser opp sin egen bønn foran forsamlingen"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Alle kandidatene reiser seg samtidig og svarer ja på de samme to spørsmålene. Så følger neddykkingen."
+                    },
+                    {
+                        "question": "Hva er kjernen i en begravelse hos Jehovas vitner?",
+                        "options": [
+                            "En likvake natten før",
+                            "En tale som bygger på Bibelen, om døden og håpet om oppstandelse",
+                            "En bønn til den døde",
+                            "En messe med nattverd"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Talen er kjernen. Det synges gjerne en sang og avsluttes med bønn. Seremonien skal være enkel, og det tas ikke opp kollekt."
+                    },
+                    {
+                        "question": "Hvilken markering holder Jehovas vitner én gang i året?",
+                        "options": [
+                            "Julaften",
+                            "Påskedag",
+                            "Minnehøytiden på den 14. nisan",
+                            "Bursdagen til Charles Taze Russell"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Minnehøytiden holdes til minne om at Jesus døde. Bare de som mener de hører til de 144 000, spiser brødet og drikker vinen."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Bertelsen, B. E. (2024). *Overgangsriter*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/overgangsriter](https://snl.no/overgangsriter)",
+                    "Elstad, H. (2026). *Dåp*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/dåp](https://snl.no/d%C3%A5p)",
+                    "Jehovas vitner. (2026). *Understanding the Meaning of Baptism*. Vakttårnet, studieutgave februar 2026. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/library/magazines/watchtower-study-february-2026/Understanding-the-Meaning-of-Baptism/)",
+                    "Jehovas vitner. (u.å.-a). *How Do I Become One of Jehovah's Witnesses?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/how-to-become-jehovahs-witness/)",
+                    "Jehovas vitner. (u.å.-b). *What Is Baptism?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/what-is-baptism/)",
+                    "Jehovas vitner. (u.å.-c). *What Happens at a Wedding of Jehovah's Witnesses?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/jw-weddings/)",
+                    "Jehovas vitner. (u.å.-d). *How Do Jehovah's Witnesses View Funerals?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/funeral/)",
+                    "Jehovas vitner. (u.å.-e). *Why Don't Jehovah's Witnesses Celebrate Birthdays?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/birthdays/)"
+                ]
+            }
         }
     ],
     "quote": {
         "text": "Gå derfor og gjør mennesker fra alle nasjoner til disipler, idet dere døper dem.",
         "source": "Bibelen (NWT)",
         "reference": "Matteus 28:19"
-    }
+    },
+    "timeline": []
 }

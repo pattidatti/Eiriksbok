@@ -1,6 +1,7 @@
 {
     "id": "overgangsriter",
-    "title": "Overgangsriter i kristendommen",
+    "title": "Uenigheten om vannet",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
@@ -10,139 +11,255 @@
         "ritual",
         "døden"
     ],
-    "createdDate": "2025-12-04T11:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Dåp - inngang til kirken"
-        },
-        {
-            "type": "text",
-            "content": "Dåpen er den viktigste overgangsriten i kristendommen. Gjennom dåpen blir man en del av det kristne fellesskapet. I Den norske kirke er barnedåp vanligst: presten øser vann over barnets hode tre ganger i Faderens, Sønnens og Den hellige ånds navn. Barnet får faddere som lover å hjelpe til med den kristne oppdragelsen. I noen kirkesamfunn praktiseres voksendåp, der den som døpes senkes helt under vann."
-        },
-        {
-            "type": "text",
-            "content": "Vannet i dåpen er et symbol på renselse og ny begynnelse. Dåpen er et sakrament - en hellig handling som kristne tror formidler Guds nåde. For mange familier er dåpen også en stor sosial begivenhet med fest og feiring."
-        },
-        {
-            "type": "header",
-            "text": "Konfirmasjon"
-        },
-        {
-            "type": "text",
-            "content": "Konfirmasjonen skjer vanligvis når man er 14-15 år gammel. Det er en bekreftelse av dåpen og markerer overgangen fra barn til ungdom. Konfirmantene går gjennom et forberedelseskurs der de lærer om kristen tro, før de konfirmeres i en høytidelig gudstjeneste. I Norge velger mange også humanistisk konfirmasjon, som ikke er religiøs. Uansett hvilken type man velger, er konfirmasjonen en viktig markering i de unges liv."
-        },
-        {
-            "type": "header",
-            "text": "Første nattverd"
-        },
-        {
-            "type": "text",
-            "content": "Mange konfirmanter deltar i nattverden for første gang under konfirmasjongudstjenesten. Nattverden er det andre sakramentet i protestantiske kirker, der man deler brød og vin til minne om Jesu siste måltid. Denne første nattverden markerer at den unge nå er et fullverdig medlem av menigheten."
-        },
-        {
-            "type": "header",
-            "text": "Ekteskap"
-        },
-        {
-            "type": "text",
-            "content": "Et kristent bryllup holdes i kirken som en hellig handling foran Gud og vitner. Paret lover hverandre troskap, utveksler ringer og mottar prestens velsignelse. Mange brudepar velger å gå opp kirkegulvet mens orgelet spiller. I dag gifter mange seg også borgerlig, altså uten kirken. Den norske kirke åpnet i 2017 for at homofile par kan gifte seg i kirken, men dette er det ulike syn på blant kristne."
-        },
-        {
-            "type": "header",
-            "text": "Begravelse"
-        },
-        {
-            "type": "text",
-            "content": "Når noen dør, holdes en begravelse eller bisettelse i kirken. Presten holder en tale om den avdøde og leser fra Bibelen. Menigheten synger salmer, og familien tar avskjed. Ved graven sies ordene jord til jord, aske til aske. Kristne tror på oppstandelsen og evig liv, og begravelsen er preget av både sorg og håp. Både kistebegravelse og kremasjon er vanlig i Norge."
-        },
-        {
-            "type": "header",
-            "text": "Hva er et sakrament?"
-        },
-        {
-            "type": "text",
-            "content": "Et sakrament er en hellig handling som kristne tror formidler Guds nåde. I protestantiske kirker, som Den norske kirke, finnes det to sakramenter: dåpen og nattverden. Den katolske kirke har sju sakramenter, som også inkluderer konfirmasjon, ekteskap, skriftemål, de sykes salving og ordinasjon av prester. Sakramentene markerer viktige hendelser i et menneskes trosliv."
-        }
+    "category": "Kristendom",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Kristendommen markerer fire overganger: dåp, konfirmasjon, vielse og gravferd.",
+        "Dåpen er inngangen til kirken og regnes som det viktigste sakramentet.",
+        "De fleste kirker døper spedbarn. Baptister og pinsevenner døper bare den som selv kan tro.",
+        "Striden startet i Zürich i 1525, og fra 1529 kunne gjendåp straffes med døden.",
+        "I 2024 ble 51 prosent av alle fødte i Norge døpt i Den norske kirke, og 80,4 prosent av de døde fikk kirkelig gravferd."
     ],
+    "createdDate": "2025-12-04T11:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "overgangsrite",
             "term": "Overgangsrite",
-            "definition": "Et ritual som markerer overgangen fra en livsfase til en annen, for eksempel fra barn til voksen."
+            "definition": "En seremoni som markerer at et menneske går fra én plass i samfunnet til en annen, for eksempel fra barn til voksen."
         },
         {
             "id": "sakrament",
             "term": "Sakrament",
-            "definition": "En hellig handling som formidler Guds nåde. Protestantiske kirker har to: dåp og nattverd. Katolske kirker har sju."
+            "definition": "En hellig handling som kristne tror formidler Guds nåde. Protestantiske kirker har to: dåp og nattverd. Katolske og ortodokse kirker har sju."
         },
         {
-            "id": "konfirmasjon",
-            "term": "Konfirmasjon",
-            "definition": "En bekreftelse på dåpen som skjer i 14-15 års alderen. Markerer overgangen fra barn til ungdom."
+            "id": "troendes-daap",
+            "term": "Troendes dåp",
+            "definition": "Dåp av mennesker som selv kan bekjenne troen sin. Baptister og pinsevenner praktiserer dette, som regel ved full neddykking."
         },
         {
             "id": "fadder",
             "term": "Fadder",
-            "definition": "En person som lover å hjelpe til med den kristne oppdragelsen av et barn som døpes."
+            "definition": "En voksen som lover å be for et døpt barn og hjelpe til med den kristne oppdragelsen."
         },
         {
-            "id": "begravelse",
-            "term": "Begravelse",
-            "definition": "En seremoni for å ta avskjed med en som er død. Preget av sorg, men også håp om oppstandelse."
+            "id": "jordpaakastelse",
+            "term": "Jordpåkastelse",
+            "definition": "Handlingen der presten kaster jord tre ganger på kisten i en kristen gravferd, med ordene om at mennesket er kommet av jord og skal bli til jord igjen."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva er et sakrament?",
-            "options": [
-                "En type bønn",
-                "En hellig handling som formidler Guds nåde",
-                "En kristen høytid"
-            ],
-            "answer": "En hellig handling som formidler Guds nåde"
+            "type": "text",
+            "content": "En søndag i mars holder en prest et barn på tre uker over en steinskål framme i kirken. Han øser vann over hodet til barnet tre ganger. Barnet sover gjennom det meste. Familien står tett rundt, og noen filmer."
         },
         {
-            "question": "Hvor mange sakramenter har Den norske kirke?",
-            "options": [
-                "2 (dåp og nattverd)",
-                "5",
-                "7"
-            ],
-            "answer": "2 (dåp og nattverd)"
+            "type": "text",
+            "content": "Samme helg, i et annet kirkelokale, går en mann på 24 år ned i et basseng foran i salen. Han har nettopp sagt høyt at han tror på Jesus. Pastoren legger en hånd på ryggen hans og senker ham helt under vann, og løfter ham opp igjen. Begge to blir døpt. Begge to er kristne. Men de to menighetene er dypt uenige om hvem av dem som egentlig ble døpt."
         },
         {
-            "question": "Hva markerer konfirmasjonen?",
-            "options": [
-                "At man er ferdig på skolen",
-                "En bekreftelse av dåpen og overgang fra barn til ungdom",
-                "At man kan kjøre bil"
-            ],
-            "answer": "En bekreftelse av dåpen og overgang fra barn til ungdom"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Prest øser vann over hodet til nyfødt barn i kirke",
+            "caption": "I de fleste kirker døpes barnet lenge før det kan svare for seg selv."
         },
         {
-            "question": "Hva er en fadder?",
-            "options": [
-                "En prest",
-                "En som lover å hjelpe med barnets kristne oppdragelse",
-                "En som betaler for dåpen"
-            ],
-            "answer": "En som lover å hjelpe med barnets kristne oppdragelse"
+            "type": "text",
+            "content": "Dåpen er en overgangsrite. Overgangsriter er seremonier som markerer at et menneske går fra én plass i samfunnet til en annen (Bertelsen, 2024). Den franske forskeren Arnold van Gennep beskrev dem rundt 1909 i tre trinn: du skilles ut fra det gamle, du er en stund i en mellomtilstand, og så tas du inn igjen med ny status (Bertelsen, 2024). Kristendommen markerer fire slike overganger: dåp, konfirmasjon, vielse og gravferd. Dåpen er den første, og den er inngangen til alt det andre."
         },
         {
-            "question": "Hva er håpet i en kristen begravelse?",
-            "options": [
-                "At man blir gjenfødt",
-                "Oppstandelse og evig liv",
-                "At man blir en engel"
-            ],
-            "answer": "Oppstandelse og evig liv"
+            "type": "header",
+            "text": "Vannet som er inngangen"
+        },
+        {
+            "type": "text",
+            "content": "Dåpen gjør et menneske til en del av den kristne kirken, og de fleste kristne trossamfunn kaller den det viktigste sakramentet (Elstad, 2026). Et sakrament er en hellig handling som kristne tror formidler Guds nåde. Den katolske og den ortodokse kirken har sju sakramenter, mens protestantiske kirker som Den norske kirke bare har to: dåp og nattverd (Store norske leksikon, 2026). Mer om dette står i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene). Barnet som døpes, får faddere som skal be for det og hjelpe til med den kristne oppdragelsen. Ordningen er gammel: kirkefaderen Tertullian nevnte fadderne allerede rundt år 200 (Elstad, 2026). Men når skal dåpen skje? Prøv de fire tilfellene under."
+        },
+        {
+            "type": "component",
+            "name": "NaarSkalDuDoepes",
+            "props": {
+                "title": "Når skal du døpes?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Mønsteret er tydelig. De to kirkene er ikke uenige om vannet, og ikke om at dåpen betyr noe stort. De er uenige om rekkefølgen. Den norske kirke mener at troen og tilgivelsen dåpen er et tegn på, er en gave, og en gave kan gis til et barn som ennå ikke kan svare (Elstad, 2026). Den døper derfor både spedbarn, ungdom og voksne (Den norske kirke, u.å.). Baptistene mener at dåpen må være forbeholdt mennesker som kan stå personlig inne for troen sin, og de tar avstand fra barnedåp (Rasmussen, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "En strid som er 500 år gammel"
+        },
+        {
+            "type": "text",
+            "content": "Uenigheten er gammel, og den har kostet liv. I Zürich i 1525 begynte en gruppe å døpe voksne som allerede var døpt som barn. De mente at barnedåpen ikke holdt som innvielse for en sann kristen (Rasmussen, 2024). Straffen var hard. Felix Manz ble henrettet ved drukning i Zürich i 1527, og i 1529 vedtok den tyske riksdagen at gjendåp skulle straffes med døden i hele Det tysk-romerske riket (Rasmussen, 2024). Baptistbevegelsen selv regner 1609 som startåret sitt, året da engelske trosflyktninger under John Smyth dannet en menighet i Amsterdam (Rasmussen, 2025)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvorfor navnet gjendøpere?",
+                "content": "Gjendøper betyr en som døper om igjen. Navnet ble brukt om dem som lot voksne bli døpt selv om de allerede var døpt som spedbarn. Bevegelsen var mest aktiv mellom 1525 og 1550, med tyngdepunkt i Sør-Tyskland og Sveits. Etter 1550 søkte de som var igjen, tilflukt i Nederlandene og Preussen (Rasmussen, 2024)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "I dag er det ikke lenger farlig å mene noe om dette, men uenigheten består. Det finnes over 60 millioner baptister i verden, flest i USA. Baptistkirken Norge oppgir rundt 6700 døpte medlemmer, og rundt 12 000 om man teller med barn og andre med juridisk tilknytning (Rasmussen, 2025). Pinsebevegelsen i Norge har om lag 350 menigheter og rundt 50 000 medlemmer, og avviser også barnedåp (Rasmussen, 2026). Den norske kirke er langt større: 62 prosent av befolkningen er medlemmer, og i 2024 ble 51 prosent av alle fødte døpt der (Rasmussen mfl., 2026). Mer om retningene finner du i artiklene om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn) og [baptistene](/krle/religion/kristendom/baptistene)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Voksen person senkes under vann i dåpsbasseng i menighetslokale",
+            "caption": "Troendes dåp skjer som regel ved full neddykking, etter at den som døpes selv har bekjent troen."
+        },
+        {
+            "type": "header",
+            "text": "Å svare selv, og å love noe"
+        },
+        {
+            "type": "text",
+            "content": "Konfirmasjonen markerer overgangen fra barndom til voksenliv. I Den norske kirke kan bare den som er døpt, konfirmeres, og i dag er handlingen en forbønn for konfirmanten. Tidligere avla konfirmanten et løfte, men det gjør hen ikke lenger (Elstad mfl., 2026). Konfirmasjonen var obligatorisk i Danmark-Norge fra 1736 til 1912. I 2023 ble rundt 32 570 ungdommer konfirmert i Den norske kirke, altså omtrent 48 prosent av alle femtenåringer. Andelen har falt lenge: den var 93 prosent i 1960 og 66 prosent i 2005. Mange velger i stedet humanistisk konfirmasjon, som ikke er religiøs. Den første var i Oslo i 1951 med 34 ungdommer, og i 2022 gjaldt det nesten 13 800. I Den katolske kirke heter det ferming, er et av de sju sakramentene, og utføres bare av biskopen (Elstad mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Vielsen er den tredje overgangen. I middelalderen tok kirken gradvis over ekteskapsinngåelsen, og presten ble den som velsignet paret og ringene (Dybdahl, 2026). I dag må forloverne skrive under på at brudeparet oppfyller kravene i loven (Dybdahl, 2026). Fra 2009 kunne to av samme kjønn gifte seg i Norge, og fra 1. februar 2017 fikk Den norske kirke en egen vigselsliturgi for likekjønnet vigsel (Skirbekk mfl., 2025). Her er kristne uenige seg imellom: noen kirkesamfunn vier likekjønnede par, andre gjør det ikke."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Brudepar utveksler ringer foran prest i kirke",
+            "caption": "Kirken overtok gradvis ekteskapsinngåelsen i middelalderen. Presten velsignet både paret og ringene."
+        },
+        {
+            "type": "header",
+            "text": "Den siste overgangen"
+        },
+        {
+            "type": "text",
+            "content": "Den siste riten holdes for en som ikke kan delta selv. Gravferd er fellesordet for begravelse og bisettelse. Bisettelse brukes når kisten skal kremeres eller flyttes til et annet gravsted etterpå (Dybdahl mfl., 2025). I en kristen gravferd står kisten framme i kirken med blomster rundt. Presten utfører jordpåkastelsen: tre ganger kastes jord på kisten, og presten sier at av jord er du kommet, til jord skal du bli, av jord skal du igjen oppstå (Store norske leksikon, 2025). Ordene sier begge deler samtidig. Kroppen blir til jord, og kristne venter oppstandelse. Handlingen har vært en del av norsk gravferd siden reformasjonen (Store norske leksikon, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Loven setter rammer rundt det siste. Begravelse eller kremasjon skal skje senest ti virkedager etter dødsfallet, og en urne må settes ned eller asken spres innen seks måneder (Dybdahl mfl., 2025). Kremasjon ble vanlig i løpet av 1900-tallet. Selv om færre døpes og konfirmeres enn før, holder de fleste fast ved kirken når noen dør: i 2024 fikk 80,4 prosent av de døde i Norge en kirkelig gravferd (Dybdahl mfl., 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Se de fire ritene samlet, så trer noe fram. Kristendommen markerer inngangen, ungdomstiden, ekteskapet og døden, men det er den første av dem kristne har brukt mest tid på å diskutere. Det er ikke tilfeldig. I dåpen må hver kirke svare på hva et menneske selv må gjøre, og hva Gud gjør uten å spørre først. Vil du lese mer om hvordan kristendommen henger sammen, finner du det i [innføringen om kristendommen](/krle/religion/kristendom/intro)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke fire overganger markerer kristendommen?",
+                    "Hva er et sakrament, og hvor mange sakramenter har henholdsvis Den katolske kirke og Den norske kirke?",
+                    "Hva er forskjellen på barnedåp og troendes dåp?",
+                    "Hva sier presten under jordpåkastelsen, og hvor mange ganger kastes jorden?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor Den norske kirke og Baptistkirken svarer ulikt på om et spedbarn skal døpes.",
+                    "En som er døpt som spedbarn, må døpes på nytt for å bli medlem i en baptistmenighet. Hvorfor kaller baptistene dette den første dåpen, mens andre kaller det gjendåp?",
+                    "Andelen som konfirmeres i kirken har falt fra 93 prosent i 1960 til 48 prosent i 2023, mens over 80 prosent av gravferdene fortsatt er kirkelige. Hva kan forklare den forskjellen?",
+                    "Bruk van Genneps tre trinn (utskilling, mellomtilstand, ny status) på dåpen eller på konfirmasjonen. Passer modellen?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign dåpen i kristendommen med navneseremonien i en annen religion. Skriv en kort tekst om hva som er likt og hva som skiller dem.",
+                    "Finn ut hva som skjer i en humanistisk konfirmasjon, og lag en liste over hva den har til felles med den kirkelige, og hva som er ulikt.",
+                    "Diskuter i klassen: Er det rimelig å gi et menneske en religiøs tilhørighet før det kan velge selv?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er hovedgrunnen til at baptister tar avstand fra barnedåp?",
+                        "options": [
+                            "De mener vann ikke kan brukes i ritualer",
+                            "De mener dåpen må være forbeholdt mennesker som selv kan stå inne for troen",
+                            "De mener bare biskopen kan døpe",
+                            "De mener dåpen bør skje etter konfirmasjonen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Baptistene praktiserer troendes dåp. Den som døpes, skal selv kunne bekjenne troen sin, og dåpen skjer som regel ved full neddykking."
+                    },
+                    {
+                        "question": "Hvor mange sakramenter har Den norske kirke, og hvilke?",
+                        "options": [
+                            "Sju: blant annet dåp, ferming og ekteskap",
+                            "Tre: dåp, nattverd og konfirmasjon",
+                            "To: dåp og nattverd",
+                            "Ett: bare dåpen"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Protestantiske kirker regner bare dåp og nattverd som sakramenter. Den katolske og den ortodokse kirken har sju."
+                    },
+                    {
+                        "question": "Hva skjedde i Zürich i 1525?",
+                        "options": [
+                            "Barnedåpen ble forbudt i hele Europa",
+                            "Den første baptistmenigheten ble grunnlagt",
+                            "En gruppe begynte å døpe voksne som allerede var døpt som barn",
+                            "Konfirmasjonen ble innført som sakrament"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Gjendøperne mente barnedåpen ikke holdt som innvielse for en sann kristen. Fra 1529 kunne gjendåp straffes med døden i Det tysk-romerske riket."
+                    },
+                    {
+                        "question": "Hva er forskjellen på en begravelse og en bisettelse?",
+                        "options": [
+                            "Bisettelse brukes når kisten skal kremeres eller flyttes til et annet gravsted etterpå",
+                            "Bisettelse holdes bare for barn",
+                            "Begravelse er uten prest, bisettelse er med prest",
+                            "Bisettelse holdes utendørs, begravelse innendørs"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Gravferd er fellesordet for begge. Bisettelse brukes om seremonien når kisten skal kremeres eller flyttes videre."
+                    },
+                    {
+                        "question": "Hvor stor andel av dem som døde i Norge i 2024, fikk en kirkelig gravferd?",
+                        "options": [
+                            "Rundt 30 prosent",
+                            "Rundt 51 prosent",
+                            "Rundt 80 prosent",
+                            "Nesten alle, over 95 prosent"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "80,4 prosent fikk kirkelig gravferd i 2024. Til sammenligning ble 51 prosent av alle fødte døpt i Den norske kirke samme år."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Elstad, H. (2026). *Dåp*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/dåp](https://snl.no/d%C3%A5p)",
+                    "Elstad, H., Aas, P. A., Thomassen, M. & Løøv, M. (2026). *Konfirmasjon*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/konfirmasjon](https://snl.no/konfirmasjon)",
+                    "Rasmussen, T. (2024). *Gjendøpere*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/gjendøpere](https://snl.no/gjend%C3%B8pere)",
+                    "Rasmussen, T. (2025). *Baptisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/baptisme](https://snl.no/baptisme)",
+                    "Rasmussen, T. (2026). *Pinsebevegelsen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/pinsebevegelsen](https://snl.no/pinsebevegelsen)",
+                    "Rasmussen, T., Lundal, S. O. & Elstad, H. (2026). *Den norske kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Den_norske_kirke](https://snl.no/Den_norske_kirke)",
+                    "Dybdahl, A. (2026). *Bryllup*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bryllup](https://snl.no/bryllup)",
+                    "Dybdahl, A., Redaksjonen i Store norske leksikon & Løøv, M. (2025). *Begravelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/begravelse](https://snl.no/begravelse)",
+                    "Store norske leksikon. (2025). *Jordpåkastelse*. Hentet 11.08.2026 fra [snl.no/jordpåkastelse](https://snl.no/jordp%C3%A5kastelse)",
+                    "Store norske leksikon. (2026). *Sakrament*. Hentet 11.08.2026 fra [snl.no/sakrament](https://snl.no/sakrament)",
+                    "Bertelsen, B. E. (2024). *Overgangsriter*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/overgangsriter](https://snl.no/overgangsriter)",
+                    "Skirbekk, S., Kjølsrød, L., Schackt, J., Hovde, K.-O. & Tjernshaugen, A. (2025). *Ekteskap*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/ekteskap](https://snl.no/ekteskap)",
+                    "Den norske kirke. (u.å.). *Dåp i Den norske kirke*. Hentet 11.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/dap-i-den-norske-kirke/)"
+                ]
+            }
         }
     ],
     "quote": {
         "text": "Jeg er oppstandelsen og livet. Den som tror på meg, skal leve om han enn dør.",
         "source": "Bibelen",
         "reference": "Johannes 11:25"
-    }
+    },
+    "timeline": []
 }
