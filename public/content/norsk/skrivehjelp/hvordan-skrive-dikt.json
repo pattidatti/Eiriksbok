@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Et dikt er som en suppeterning av språk: Mye smak komprimert på liten plass. Å skrive dikt handler om å male bilder med ord, røre ved følelser og si mye ved å si lite. Her er din guide fra blanke ark til ferdig dikt."
+            "content": "Et dikt er som en suppeterning av språk: Mye smak komprimert på liten plass. Å skrive dikt handler om å male bilder med ord, røre ved følelser og si mye ved å si lite - lyrikk er nettopp konsentrerte tekster som viser evnen til å si mye med få ord (Vassenden, 2025). Her er din guide fra blanke ark til ferdig dikt."
         },
         {
             "type": "header",
@@ -39,14 +39,14 @@
         },
         {
             "type": "text",
-            "content": "For å skape disse bildene, bruker vi språklige virkemidler. Her er de viktigste verktøyene du bør ha i kassen:"
+            "content": "For å skape disse bildene, bruker vi språklige bilder: uttrykk som brukes i overført og ikke bokstavelig betydning (Nordbø, 2026). Her er de viktigste verktøyene du bør ha i kassen:"
         },
         {
             "type": "list",
             "items": [
-                "**Metafor**: Å si at noe *er* noe annet. Det skaper en sterk forbindelse. \n*Eksempel: 'Du er en rose i vinterhagen min.'*",
+                "**Metafor**: Å si at noe *er* noe annet, uten sammenligningsord. Det skaper en sterk forbindelse (Grue, 2025). \n*Eksempel: 'Du er en rose i vinterhagen min.'*",
                 "**Sammenligning**: Å si at noe er *som* eller *lik* noe annet. Litt mildere enn metafor. \n*Eksempel: 'Sinnet hans var som et tordenvær som bygget seg opp.'*",
-                "**Besjeling**: Å gi døde ting liv eller menneskelige egenskaper. \n*Eksempel: 'Vinden hvisket hemmeligheter i trærne.'*",
+                "**Besjeling**: Å gi noe som ikke er menneskelig, menneskelige egenskaper og evner (Lauvstad, 2026). \n*Eksempel: 'Vinden hvisket hemmeligheter i trærne.'*",
                 "**Kontrast**: Å sette motsetninger opp mot hverandre for å forsterke dem. \n*Eksempel: 'Svart sorg og hvit glede', 'Liten kropp, stor skygge'.*"
             ]
         },
@@ -64,7 +64,7 @@
         },
         {
             "type": "text",
-            "content": "Hvor du velger å bryte linjen bestemmer pausen. Et linjeskift er en liten pustepause som gir ordet før eller etter ekstra vekt."
+            "content": "Hvor du velger å bryte linjen bestemmer pausen. Et linjeskift er en liten pustepause som gir ordet før eller etter ekstra vekt. I lyrikken er linjedelingen hard og betydningsskapende, og det er nettopp dette som skiller diktet fra prosaen (Vassenden, 2025)."
         },
         {
             "type": "poem",
@@ -80,7 +80,7 @@
         },
         {
             "type": "text",
-            "content": "Mange tror dikt *må* rime. Det må de ikke, men rim kan binde teksten sammen og skape musikalitet. Her er de vanligste mønstrene:"
+            "content": "Mange tror dikt *må* rime. Det må de ikke. Rim er en gjentakelse av samme språklyd etter bestemte regler (Skei, 2024), og kan binde teksten sammen og skape musikalitet. Måten rimene er plassert på, kalles rimmønster - for eksempel parrim og kryssrim (Store norske leksikon, 2025b). Omsluttende rim, som har formen a-b-b-a, kalles også kiastisk rim (Store norske leksikon, 2025a). Her er de vanligste mønstrene:"
         },
         {
             "type": "poem",
@@ -144,6 +144,21 @@
                     "Følg oppskriften i punkt 4 og lag et dikt fra bunnen: start med idémyldring, velg ut de sterkeste ordene, skriv råtekst, og siseler til slutt. Marker hvilket ord du valgte å la stå alene på en linje."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Grue, J. (2025). *Metafor*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/metafor](https://snl.no/metafor)",
+                    "Lauvstad, H. (2026). *Besjeling - litteratur*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/besjeling_-_litteratur](https://snl.no/besjeling_-_litteratur)",
+                    "Nordbø, B. (2026). *Språklig bilde*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/språklig_bilde](https://snl.no/spr%C3%A5klig_bilde)",
+                    "Skei, H. H. (2024). *Rim*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/rim](https://snl.no/rim)",
+                    "Store norske leksikon. (2025a). *Kiastisk rim*. Hentet 12.08.2026 fra [snl.no/kiastisk_rim](https://snl.no/kiastisk_rim)",
+                    "Store norske leksikon. (2025b). *Metrikk - verslære*. Hentet 12.08.2026 fra [snl.no/metrikk_-_verslære](https://snl.no/metrikk_-_versl%C3%A6re)",
+                    "Vassenden, E. (2025). *Lyrikk*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/lyrikk](https://snl.no/lyrikk)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -158,5 +173,5 @@
         "url": "/norsk/tekstsjangre/dikt"
     },
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-12T00:00:00Z"
 }

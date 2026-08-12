@@ -9,21 +9,21 @@
     "category": "Skrivehjelp",
     "year": "2026",
     "details": [
-        "Drøfting er det høyeste nivået i Argumentstigen — ikke bare analyse, men veiing av motstridende syn.",
+        "Drøfting er det høyeste nivået i Argumentstigen - ikke bare analyse, men veiing av motstridende syn.",
         "En god drøfting presenterer ALLTID motargumenter, ikke bare egne påstander.",
-        "Diskursmarkører som «På den ene siden» er verktøy, ikke magi — de virker bare med ekte argumentasjon bak seg.",
+        "Diskursmarkører som «På den ene siden» er verktøy, ikke magi - de virker bare med ekte argumentasjon bak seg.",
         "En drøftingskonklusjon skal faktisk konkludere, ikke gjemme seg bak nøytrale fraser."
     ],
     "timeline": [],
     "content": [
         {
             "type": "text",
-            "content": "Se for deg denne situasjonen: Du har jobbet i to timer med en drøftingsoppgave. Du har skrevet om karakterpress i skolen — hva det er, hva psykologer sier, hvilke elever som rammes hardest, og hvilke tiltak skoler har prøvd. Du leverer, fornøyd. Tilbake får du: «Bra fakta, men du drøfter ikke.» Hva skjedde? Du beskrev og analyserte et tema. Men en drøfting er noe annet: du skal veie argumenter for og mot, og ende opp i en begrunnet konklusjon. Det er akkurat den forskjellen vi skal lære i denne artikkelen."
+            "content": "Se for deg denne situasjonen: Du har jobbet i to timer med en drøftingsoppgave. Du har skrevet om karakterpress i skolen - hva det er, hva psykologer sier, hvilke elever som rammes hardest, og hvilke tiltak skoler har prøvd. Du leverer, fornøyd. Tilbake får du: «Bra fakta, men du drøfter ikke.» Hva skjedde? Du beskrev og analyserte et tema. Men å drøfte er å behandle en sak fra forskjellige synsvinkler (Gisle, 2026): du skal veie argumenter for og mot, og ende opp i en begrunnet konklusjon. Det er akkurat den forskjellen vi skal lære i denne artikkelen."
         },
         {
             "type": "info_box",
             "title": "Hva betyr det å drøfte?",
-            "content": "Å drøfte betyr å presentere argumenter på begge sider av en sak — både FOR og MOT — vurdere dem mot hverandre, og avslutte med en begrunnet konklusjon. Det er ikke nok å liste opp fakta eller forklare årsaker. Du skal ta stilling."
+            "content": "Å drøfte betyr å presentere argumenter på begge sider av en sak - både FOR og MOT - vurdere dem mot hverandre, og avslutte med en begrunnet konklusjon. Det er ikke nok å liste opp fakta eller forklare årsaker. Du skal ta stilling."
         },
         {
             "type": "header",
@@ -31,7 +31,7 @@
         },
         {
             "type": "text",
-            "content": "Du kjenner kanskje Argumentstigen fra før — det er en modell som viser fire nivåer av skriving, fra referat i bunnen til drøfting på toppen. Hvert nivå bygger på det forrige. De fleste elever er gode til å analysere, men stopper der. Drøfting krever ett steg til: du må møte den andre siden."
+            "content": "Du kjenner kanskje Argumentstigen fra før - det er en modell som viser fire nivåer av skriving, fra referat i bunnen til drøfting på toppen. Hvert nivå bygger på det forrige. De fleste elever er gode til å analysere, men stopper der. Drøfting krever ett steg til: du må møte den andre siden."
         },
         {
             "type": "component",
@@ -53,7 +53,7 @@
                         "name": "Analyse",
                         "color": "yellow",
                         "example": "Mobilbruk i klasserommet fører til konsentrasjonsproblemer fordi varsler avbryter fokus.",
-                        "explanation": "Du forklarer årsak og virkning og bruker bevis. Bedre — men du presenterer bare én side av saken.",
+                        "explanation": "Du forklarer årsak og virkning og bruker bevis. Bedre - men du presenterer bare én side av saken.",
                         "additions": []
                     },
                     {
@@ -61,7 +61,7 @@
                         "name": "Refleksjon",
                         "color": "green",
                         "example": "Selv om mobilen forstyrrer, kan man spørre seg om et totalforbud er riktig virkemiddel.",
-                        "explanation": "Du stiller spørsmål og ser nyanser — men veier ikke argumentene mot hverandre systematisk.",
+                        "explanation": "Du stiller spørsmål og ser nyanser - men veier ikke argumentene mot hverandre systematisk.",
                         "additions": []
                     },
                     {
@@ -81,7 +81,7 @@
         },
         {
             "type": "text",
-            "content": "PAMK er den enkleste og mest pålitelige modellen for å bygge en drøftende tekstblokk. Du bruker den gjentatte ganger gjennom teksten — én runde per argument du vil utforske."
+            "content": "PAMK er den enkleste og mest pålitelige modellen for å bygge en drøftende tekstblokk. Du bruker den gjentatte ganger gjennom teksten - én runde per argument du vil utforske."
         },
         {
             "type": "list",
@@ -89,13 +89,13 @@
                 "P = Påstand: Hva hevder du? Formuler et klart standpunkt.",
                 "A = Argument: Hvorfor er påstanden riktig? Gi bevis, eksempler eller logisk resonnement.",
                 "M = Motargument: Hva ville en som er uenig si? Presenter den andre siden seriøst.",
-                "K = Konklusjon/Syntese: Etter å ha sett begge sider — hva veier tyngst, og hvorfor?"
+                "K = Konklusjon/Syntese: Etter å ha sett begge sider - hva veier tyngst, og hvorfor?"
             ]
         },
         {
             "type": "info_box",
             "title": "Hvorfor MÅ du ta med motargumenter?",
-            "content": "Den vanligste feilen i drøftingsoppgaver er å hoppe over M-en. Mange elever tror at motargumenter svekker dem — men det er det motsatte som er sant. En konklusjon som har møtt og vurdert motargumentet er langt sterkere enn en som aldri ble utfordret. Sensor vet at du har tenkt grundig. Og hvis motargumentet faktisk er sterkere enn ditt eget? Da endrer du konklusjonen. Det er kritisk tenkning."
+            "content": "Den vanligste feilen i drøftingsoppgaver er å hoppe over M-en. Mange elever tror at motargumenter svekker dem - men det er det motsatte som er sant. En konklusjon som har møtt og vurdert motargumentet er langt sterkere enn en som aldri ble utfordret. Sensor vet at du har tenkt grundig. Og hvis motargumentet faktisk er sterkere enn ditt eget? Da endrer du konklusjonen. Det er kritisk tenkning."
         },
         {
             "type": "header",
@@ -103,7 +103,7 @@
         },
         {
             "type": "text",
-            "content": "Se på samme tema — innvandringspolitikk — skrevet på to ulike måter. Den første er et typisk referat. Den andre bruker PAMK og er en ekte drøfting."
+            "content": "Se på samme tema - innvandringspolitikk - skrevet på to ulike måter. Den første er et typisk referat. Den andre bruker PAMK og er en ekte drøfting."
         },
         {
             "type": "info_box",
@@ -113,11 +113,11 @@
         {
             "type": "info_box",
             "title": "Med PAMK (ekte drøfting)",
-            "content": "Norge bør opprettholde en human flyktningpolitikk basert på internasjonale forpliktelser (P). FNs flyktningkonvensjon forplikter Norge til å gi vern til de som flykter fra forfølgelse, og historisk sett har norsk økonomi tjent på arbeidsinnvandring (A). Et reelt motargument er at integreringskapasiteten har grenser — rask tilstrømming kan skape press på bolig, skole og helsetjenester i mottakerkommuner (M). Sett samlet er løsningen ikke å lukke grensene, men å øke integreringsressursene parallelt med mottaket (K)."
+            "content": "Norge bør opprettholde en human flyktningpolitikk basert på internasjonale forpliktelser (P). FNs flyktningkonvensjon forbyr Norge å sende flyktninger tilbake til et land der de risikerer forfølgelse, et prinsipp som kalles non-refoulement (FN-sambandet, 2025) (A). Et reelt motargument er at integreringskapasiteten har grenser - rask tilstrømming kan skape press på bolig, skole og helsetjenester i mottakerkommuner (M). Sett samlet er løsningen ikke å lukke grensene, men å øke integreringsressursene parallelt med mottaket (K)."
         },
         {
             "type": "header",
-            "text": "De tre vanligste feilene — og hvordan du fikser dem"
+            "text": "De tre vanligste feilene - og hvordan du fikser dem"
         },
         {
             "type": "text",
@@ -131,7 +131,7 @@
                 "items": [
                     {
                         "bad": "Karakterpress er et stort problem blant ungdom. Mange elever sover dårlig og er stresset. Skoler har satt inn tiltak som lavterskel-rådgivning. Det er viktig at vi gjør noe.",
-                        "good": "Karaktersystemet bidrar til at mange elever opplever skolen som en kontinuerlig prestasjonsvurdering snarere enn et læringssted — noe som ifølge Folkehelseinstituttet korrelerer med økt forekomst av angst blant 15-åringer. Et reelt motargument er at karakterer gir elever konkret tilbakemelding og forbereder dem på arbeidslivets krav om målbare resultater. Sett samlet er løsningen ikke å fjerne karakterer, men å supplere dem med systematisk underveisvurdering som premierer læringsprosessen — ikke bare sluttproduktet.",
+                        "good": "Karaktersystemet bidrar til at mange elever opplever skolen som en kontinuerlig prestasjonsvurdering snarere enn et læringssted - og skolerelatert stress er en av forklaringene Folkehelseinstituttet trekker fram på at mange unge rapporterer psykiske plager (Folkehelseinstituttet, 2026). Et reelt motargument er at karakterer gir elever konkret tilbakemelding og forbereder dem på arbeidslivets krav om målbare resultater. Sett samlet er løsningen ikke å fjerne karakterer, men å supplere dem med systematisk underveisvurdering som premierer læringsprosessen - ikke bare sluttproduktet.",
                         "why": "Det første svaret gjenforteller fakta uten å ta stilling. Det andre presenterer et standpunkt, et motargument og en begrunnet syntese."
                     }
                 ]
@@ -145,7 +145,7 @@
                 "items": [
                     {
                         "bad": "På den ene siden er sosiale medier bra. På den andre siden er sosiale medier dårlig. Til slutt kan vi konkludere med at sosiale medier er bra og dårlig.",
-                        "good": "Sosiale medier gir unge en plattform for selvuttrykk og fellesskap. Et reelt motargument er at algoritmenes logikk systematisk favoriserer ekstremt innhold — noe forskning fra MIT (2018) viser øker polarisering blant tenåringer. Etter en samlet vurdering mener jeg sosiale medier kan være en styrke, men krever regulering av algoritmene — ikke av brukerne selv.",
+                        "good": "Sosiale medier gir unge en plattform for selvuttrykk og fellesskap. Et reelt motargument er at det oppsiktsvekkende sprer seg raskest: en studie fra MIT fant at falske nyheter spredte seg langt raskere enn sanne på Twitter, og at det var mennesker - ikke roboter - som delte dem videre (Dizikes, 2018). Etter en samlet vurdering mener jeg sosiale medier kan være en styrke, men krever at vi lærer oss å sjekke kilder før vi deler.",
                         "why": "«På den ene siden» fungerer bare hvis du faktisk presenterer et argument med fakta eller resonnement bak seg. Tomme markører uten innhold er et rødt flagg for sensor."
                     }
                 ]
@@ -159,8 +159,8 @@
                 "items": [
                     {
                         "bad": "Alt i alt ser vi at det finnes mange argumenter for og mot. Det er vanskelig å si noe klart om dette temaet. Konklusjonen er at alle har sine meninger.",
-                        "good": "Selv om det finnes tunge argumenter på begge sider, veier hensynet til den individuelle friheten tyngst i dette tilfellet — forutsatt at vi investerer i reell opplæring i kritisk mediebruk. Uten en slik investering holder ikke argumentet.",
-                        "why": "En konklusjon som sier «begge sider har poeng» er ingen konklusjon. En god syntese veier og ender i et standpunkt — gjerne med et forbehold som viser at du ser kompleksiteten."
+                        "good": "Selv om det finnes tunge argumenter på begge sider, veier hensynet til den individuelle friheten tyngst i dette tilfellet - forutsatt at vi investerer i reell opplæring i kritisk mediebruk. Uten en slik investering holder ikke argumentet.",
+                        "why": "En konklusjon som sier «begge sider har poeng» er ingen konklusjon. En god syntese veier og ender i et standpunkt - gjerne med et forbehold som viser at du ser kompleksiteten."
                     }
                 ]
             }
@@ -171,7 +171,7 @@
         },
         {
             "type": "text",
-            "content": "Diskursmarkører er ord og fraser som hjelper leseren å forstå strukturen i argumentasjonen din. De er ikke pynt — de er vegvisere. Men de virker bare når det er ekte argumentasjon bak dem."
+            "content": "Diskursmarkører er ord og fraser som hjelper leseren å forstå strukturen i argumentasjonen din. De er ikke pynt - de er vegvisere. Men de virker bare når det er ekte argumentasjon bak dem."
         },
         {
             "type": "info_box",
@@ -199,7 +199,7 @@
         },
         {
             "type": "text",
-            "content": "Drøfting er ikke bare et norsk-fag-fenomen. Du møter det i alle fag. Her er tre eksempler på PAMK-avsnitt fra ulike fag."
+            "content": "Drøfting er ikke bare et norsk-fag-fenomen. Du møter det i alle fag. Her er tre eksempler på PAMK-avsnitt fra ulike fag. Legg merke til at eksemplene bygger på fakta du kan slå opp selv: tallene om vikingtiden er hentet fra Bandlien (2026), og tallene om stemmerettsforsøket fra Zakariassen (2026). Et argument uten kilde er bare en påstand."
         },
         {
             "type": "header",
@@ -207,7 +207,7 @@
         },
         {
             "type": "quote",
-            "content": "Vikingtiden var på mange måter en blomstringsperiode for norsk kultur og handel — vikingene etablerte handelsruter fra Konstantinopel til Vinland og bygde avanserte skip. Et sentralt motargument er at «vikingtiden» som gyllen epoke er en romantisert konstruksjon: for de som ble ranet, tatt til fange og solgt som slaver, var perioden langt fra gyllen. Sett under ett er det mer korrekt å beskrive vikingtiden som en ambivalent periode preget av både kulturell ekspansjon og brutal vold.",
+            "content": "Vikingtiden var på mange måter en blomstringsperiode for norsk kultur og handel - vikingene fulgte handelsruter langs de russiske elvene helt til Svartehavet og Bysants. Et sentralt motargument er at «vikingtiden» som gyllen epoke er en romantisert konstruksjon: treller utgjorde kanskje en fjerdedel av befolkningen, og for de som ble ranet, tatt til fange og solgt som slaver, var perioden langt fra gyllen (Bandlien, 2026). Sett under ett er det mer korrekt å beskrive vikingtiden som en ambivalent periode preget av både kulturell ekspansjon og brutal vold.",
             "author": "Eksempeltekst"
         },
         {
@@ -216,7 +216,7 @@
         },
         {
             "type": "quote",
-            "content": "Religion bidrar til fellesskap, mening og moralsk rammeverk for millioner av mennesker, og å ekskludere religiøse stemmer fra det offentlige ordskiftet ville være å frata en stor gruppe borgere sin demokratiske stemme. Et reelt motargument er at statsreligion og religiøse symboler i offentlige institusjoner kan oppleves ekskluderende for borgere av andre trosretninger eller uten religion. Etter en samlet vurdering bør religion ha plass i det offentlige rom som én av mange stemmer — men statens institusjoner bør være livssynsnøytrale.",
+            "content": "Religion bidrar til fellesskap, mening og moralsk rammeverk for millioner av mennesker, og å ekskludere religiøse stemmer fra det offentlige ordskiftet ville være å frata en stor gruppe borgere sin demokratiske stemme. Et reelt motargument er at statsreligion og religiøse symboler i offentlige institusjoner kan oppleves ekskluderende for borgere av andre trosretninger eller uten religion. Etter en samlet vurdering bør religion ha plass i det offentlige rom som én av mange stemmer - men statens institusjoner bør være livssynsnøytrale.",
             "author": "Eksempeltekst"
         },
         {
@@ -225,7 +225,7 @@
         },
         {
             "type": "quote",
-            "content": "16-åringer er direkte berørt av politiske beslutninger om skole, boligpriser og arbeidsliv, og forsøket med stemmerett for 16-åringer i norske kommunevalg i 2011 og 2015 viste at unge stemte mer konsekvent enn voksne i aldersgruppen 18–21. Et motargument er at hjernen ikke er ferdig utviklet før i midten av tjueårene, og at ungdom kan være mer sårbare for kortsiktig påvirkning fra sosiale medier. Likevel veier demokratihensynet tyngst: politisk deltakelse er også en læringsarena, og stemmerett fra 16 vil styrke demokratisk engasjement på lang sikt.",
+            "content": "16-åringer er direkte berørt av politiske beslutninger om skole, boligpriser og arbeidsliv, og i forsøkene med stemmerett for 16-åringer i norske kommunevalg i 2011 og 2015 var valgdeltakelsen blant 16- og 17-åringene overraskende høy: den lå like under nivået for alle velgere samlet (Zakariassen, 2026). Et motargument er at ungdom kan være mer sårbare for kortsiktig påvirkning fra sosiale medier, og at de samme forsøkene ikke kunne vise at lavere stemmerettsalder øker valgdeltakelsen over tid. Likevel veier demokratihensynet tyngst: politisk deltakelse er også en læringsarena, og stemmerett fra 16 vil styrke demokratisk engasjement på lang sikt.",
             "author": "Eksempeltekst"
         },
         {
@@ -241,7 +241,7 @@
             "name": "ScenarioRoleplay",
             "props": {
                 "title": "Drøftingsvalget",
-                "intro": "Du skriver en drøfting om kunstig intelligens i skolen. Du har nettopp skrevet: «KI kan tilpasse undervisning til hver enkelt elev — noe én lærer med 28 elever aldri kan gjøre fullt ut. Forskning fra Stanford viser 30% økt læringsutbytte i matte.» Hva gjør du NÅ?",
+                "intro": "Du skriver en drøfting om kunstig intelligens i skolen. Du har nettopp skrevet: «KI kan tilpasse oppgavene til hver enkelt elev - noe én lærer med 28 elever aldri kan gjøre fullt ut. Verktøyet kan gi et nytt nivå i samme sekund som eleven har svart.» Hva gjør du NÅ?",
                 "startId": "start",
                 "scenarios": [
                     {
@@ -272,7 +272,7 @@
                     },
                     {
                         "id": "riktig",
-                        "text": "Riktig! Du anvender M-en i PAMK. Du viser at du kan se saken fra begge sider — noe sensor premierer. Fortsett med å veie de to sidene mot hverandre, og avslutt med en begrunnet konklusjon.",
+                        "text": "Riktig! Du anvender M-en i PAMK. Du viser at du kan se saken fra begge sider - noe sensor premierer. Fortsett med å veie de to sidene mot hverandre, og avslutt med en begrunnet konklusjon.",
                         "options": []
                     },
                     {
@@ -287,7 +287,7 @@
                     },
                     {
                         "id": "feil_c",
-                        "text": "Mer bevis for din side gjør argumentet sterkere, men endrer ikke at teksten mangler drøftingen. Du har skrevet en sterk analyse — men ikke en drøfting.",
+                        "text": "Mer bevis for din side gjør argumentet sterkere, men endrer ikke at teksten mangler drøftingen. Du har skrevet en sterk analyse - men ikke en drøfting.",
                         "options": []
                     }
                 ]
@@ -299,12 +299,12 @@
         },
         {
             "type": "text",
-            "content": "Den klassiske feilen er konklusjonen som lyder: «Alt i alt ser vi at det finnes mange argumenter på begge sider, og dette er et komplisert tema.» Det er ikke en konklusjon — det er en unnvikelse. En god drøftingskonklusjon gjør fire ting:"
+            "content": "Den klassiske feilen er konklusjonen som lyder: «Alt i alt ser vi at det finnes mange argumenter på begge sider, og dette er et komplisert tema.» Det er ikke en konklusjon - det er en unnvikelse. En god drøftingskonklusjon gjør fire ting:"
         },
         {
             "type": "list",
             "items": [
-                "Den oppsummerer ikke bare — den veier: Hvilket argument sto sterkest, og hvorfor?",
+                "Den oppsummerer ikke bare - den veier: Hvilket argument sto sterkest, og hvorfor?",
                 "Den tar et standpunkt: Du forplikter deg til et syn, gjerne med et forbehold som viser at du ser kompleksiteten.",
                 "Den knytter tilbake til oppgavespørsmålet: Svar direkte på det du ble spurt om.",
                 "Den er kort og presis: To til fire setninger er nok. Konklusjonen er ikke stedet for nye argumenter."
@@ -313,7 +313,7 @@
         {
             "type": "info_box",
             "title": "Huskeregel for konklusjonen",
-            "content": "Hvis noen bare leser konklusjonen din — skjønner de hva du mener OG hvorfor du mener det? Hvis svaret er nei, er konklusjonen ikke ferdig."
+            "content": "Hvis noen bare leser konklusjonen din - skjønner de hva du mener OG hvorfor du mener det? Hvis svaret er nei, er konklusjonen ikke ferdig."
         },
         {
             "type": "header",
@@ -322,7 +322,7 @@
         {
             "type": "info_box",
             "title": "Relaterte artikler",
-            "content": "Bygger videre på ferdighetene i denne artikkelen: [Hvordan skrive gode saktekster](/norsk/skrivehjelp/hvordan-skrive-gode-saktekster) — strukturen bak gode avsnitt med temasetninger og bindeord. [Hvordan skrive reflekterende](/norsk/skrivehjelp/hvordan-skrive-reflekterende) — neste nivå etter drøfting: dypere undring og personlig perspektiv."
+            "content": "Bygger videre på ferdighetene i denne artikkelen: [Hvordan skrive gode saktekster](/norsk/skrivehjelp/hvordan-skrive-gode-saktekster) - strukturen bak gode avsnitt med temasetninger og bindeord. [Hvordan skrive reflekterende](/norsk/skrivehjelp/hvordan-skrive-reflekterende) - neste nivå etter drøfting: dypere undring og personlig perspektiv."
         },
         {
             "type": "component",
@@ -346,8 +346,23 @@
                     "Bruk huskeregelen fra artikkelen: Hvis noen bare leser konklusjonen din, skjønner de hva du mener OG hvorfor? Bytt en drøftingskonklusjon med en medelev og test hverandres tekster mot denne regelen."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bandlien, B. (2026). *Vikingtiden*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/vikingtiden](https://snl.no/vikingtiden)",
+                    "Dizikes, P. (2018). *Study: On Twitter, false news travels faster than true stories*. MIT News. Hentet 12.08.2026 fra [news.mit.edu](https://news.mit.edu/2018/study-twitter-false-news-travels-faster-true-stories-0308)",
+                    "FN-sambandet. (2025). *Flyktningkonvensjonen*. Hentet 12.08.2026 fra [fn.no](https://fn.no/avtaler/flyktninger/flyktningkonvensjonen)",
+                    "Folkehelseinstituttet. (2026). *Psykisk helse hos barn og unge*. Folkehelserapporten. Hentet 12.08.2026 fra [fhi.no](https://www.fhi.no/he/folkehelserapporten/psykisk-helse/psykisk-helse-hos-barn-og-unge/)",
+                    "Gisle, J. (2026). *Drøfting*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/drøfting](https://snl.no/dr%C3%B8fting)",
+                    "Zakariassen, E. S. (2026). *Stemmerett for 16-åringer: formål og resultater*. NDLA. Hentet 12.08.2026 fra [ndla.no](https://ndla.no/nb/r/samfunnskunnskap/stemmerett-for-16-aringer-formal-og-resultater/1631d8b884)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-08-12T00:00:00Z",
     "quiz": [
         {
             "question": "Hva er hovedforskjellen på en analyse og en drøfting?",
@@ -371,7 +386,7 @@
             "options": [
                 "Alt i alt ser vi at det finnes mange meninger om dette temaet.",
                 "Karakterer i skolen er absolutt nødvendig.",
-                "Selv om karakterer gir nyttig tilbakemelding, veier den dokumenterte belastningen på elevenes psykiske helse tyngst — forutsatt at vi innfører robuste alternativer til vurdering.",
+                "Selv om karakterer gir nyttig tilbakemelding, veier den dokumenterte belastningen på elevenes psykiske helse tyngst - forutsatt at vi innfører robuste alternativer til vurdering.",
                 "Det er umulig å si noe sikkert om dette."
             ],
             "answer": 2,
@@ -382,11 +397,11 @@
             "options": [
                 "Den er for lang",
                 "Den bruker feil diskursmarkører",
-                "Den bruker diskursmarkørene uten reelle argumenter — tomme formler uten innhold",
+                "Den bruker diskursmarkørene uten reelle argumenter - tomme formler uten innhold",
                 "Den mangler kildehenvisning"
             ],
             "answer": 2,
-            "explanation": "Diskursmarkører fungerer kun som lim mellom ekte argumenter. «Bra» og «dårlig» er ikke argumenter — de er påstander uten begrunnelse eller bevis."
+            "explanation": "Diskursmarkører fungerer kun som lim mellom ekte argumenter. «Bra» og «dårlig» er ikke argumenter - de er påstander uten begrunnelse eller bevis."
         },
         {
             "question": "Hvorfor bør du ta med motargumenter i en drøfting?",
