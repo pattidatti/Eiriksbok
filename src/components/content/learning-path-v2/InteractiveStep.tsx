@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, CheckCircle2 } from 'lucide-react';
 import { getComponent } from '../../ComponentRegistry';
+import { LazyComponentSlot } from '../LazyComponentSlot';
 import type { StepRendererProps } from './types';
 
 // Spawner en ComponentRegistry-komponent (PackTheBag, ScenarioRoleplay, etc).
@@ -67,10 +68,12 @@ export const InteractiveStep: React.FC<StepRendererProps> = ({
                         );
                     }
                     return (
-                        <Component
-                            {...componentProps}
-                            onComplete={handleComponentComplete}
-                        />
+                        <LazyComponentSlot name={componentName}>
+                            <Component
+                                {...componentProps}
+                                onComplete={handleComponentComplete}
+                            />
+                        </LazyComponentSlot>
                     );
                 })()}
                 {/* eslint-enable react-hooks/static-components */}

@@ -17,6 +17,7 @@ import type { LearningPathData, LearningPathStep } from '../../types';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getComponent } from '../ComponentRegistry';
 import { CopyTasksButton } from './CopyTasksButton';
+import { LazyComponentSlot } from './LazyComponentSlot';
 
 interface LearningPathProps {
     data: LearningPathData;
@@ -158,9 +159,14 @@ export const LearningPath: React.FC<LearningPathProps> = ({ data }) => {
                                         )}
 
                                         {step.component && (() => {
-                                            const Component = getComponent(step.component.name);
+                                            const name = step.component.name;
+                                            const Component = getComponent(name);
                                             if (!Component) return null;
-                                            return <Component {...step.component.props} />;
+                                            return (
+                                                <LazyComponentSlot name={name}>
+                                                    <Component {...step.component.props} />
+                                                </LazyComponentSlot>
+                                            );
                                         })()}
 
                                         {step.links && step.links.length > 0 && (
