@@ -1,0 +1,15 @@
+{
+  "term": "Mitzva",
+  "definition": "En religiøs plikt eller et bud. Jødedommen regner med 613 slike bud i Toraen.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "mitzvot",
+    "mitsva",
+    "mitsvot",
+    "mitzvaer"
+  ],
+  "tags": [
+    "jødedom"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "term": "Ritual",
+  "definition": "En handling som gjentas etter faste regler og gir mening til dem som gjør den, for eksempel å tenne lys, vaske seg før bønn eller si de samme ordene hver gang.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "ritualer",
+    "ritualet",
+    "ritualene"
+  ],
+  "tags": [
+    "religion"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "term": "Dåp",
+  "definition": "Riten der en person blir tatt inn i den kristne kirken med vann. Noen kirker døper spedbarn, andre venter til man selv kan velge.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "dåpen",
+    "barnedåp",
+    "barnedåpen",
+    "voksendåp"
+  ],
+  "tags": [
+    "kristendom",
+    "overgangsriter"
+  ]
+}

@@ -677,3 +677,62 @@ Rangert etter hvor alvorlige de er og hvor vanskelige de er å se:
 - **Verifiseringsagenten skal være motstander, ikke godkjenner.** Den skal hente hver
   kilde-URL på nytt, bruke `snl.no/<oppslagsord>.json` for å lese forfatter og `changed_at`
   direkte, og rette selv. Alle de alvorlige funnene i denne serien kom derfra.
+
+---
+
+## 8. Religionsprofilen - dimensjonskort i `public/data/religion/`
+
+`/krle/religion/:id` har fra 2026-08-12 én dimensjonsvisning i stedet for to («Hjulet» og
+«Dimensjoner» viste samme tekst i ulik form). Hjulet er nå navigasjon med fremdrift: hver
+dimensjon har egen farge, eget ikon og et spørsmål en 14-åring forstår («Hva gjør de?»,
+«Hva kan du se og ta på?»). Alle sju lest gir XP via `recordActivity()`.
+
+Filene i `public/data/religion/*.json` kan ha dimensjonene i to former, og begge virker:
+
+```jsonc
+// Gammel form - verdien ER rich-text-treet
+"ritual": { "type": "root", "children": [ ... ] }
+
+// Ny form - dimensjonskort
+"ritual": {
+    "summary": "Ett svar i én setning, vises som ingress.",
+    "image": "/images/buddhisme/bonn-01.webp",
+    "imageAlt": "...",
+    "keyTerms": [{ "term": "puja", "explanation": "..." }],
+    "example": { "title": "Nærbilde: ...", "text": "..." },
+    "question": "Refleksjonsspørsmål eleven tar med seg videre.",
+    "body": { "type": "root", "children": [ ... ] }   // samme tre som før
+}
+```
+
+`normalizeDimension()` i `src/utils/religionDimensions.ts` skiller de to, og alt som leser
+dimensjoner (profilen, `/krle/sammenlign`, `generate-comparison-manifest.mjs`) går gjennom
+den. Legger du til felter, gjør det der.
+
+**Status:** alle ni religioner er løftet (63 dimensjonskort). Buddhisme er referanse-
+standarden. Fordypningslenkene under hver dimensjon kommer automatisk fra `dimension`-feltet
+i artiklene, så de krever ikke arbeid i datafila.
+
+**Det som mangler er bilder, ikke tekst.** 39 av 63 kort har bilde. Bahá'í og buddhisme har
+fullt sett, mens seks religioner må låne fra de få bildene som finnes i
+`public/images/krle/religion/`. Disse dimensjonene står helt uten bilde og bør prioriteres
+når bildecronen skal kjøres:
+
+| Religion | Dimensjoner uten bilde |
+|---|---|
+| Mormonisme | alle sju |
+| Jehovas vitner | seks (kun `experiential` har bilde) |
+| Hinduisme | ritual, social, ethical |
+| Jødedom | experiential, ethical, doctrinal |
+| Kristendom | social, ethical |
+| Sikhisme | social, ethical |
+| Islam | ethical |
+
+Panelet håndterer manglende bilde uten hull i layouten, så dette er en forbedring og ikke
+en feil. Legg bildet i `public/images/<religion>/` og sett `image` + `imageAlt` på
+dimensjonen.
+
+**Ingressen (`summary`) skal ikke gjenta brødtekstens første setning.** Det var den vanligste
+feilen da kortene ble skrevet: ingressen ble en omskrivning av åpningen, og eleven leste det
+samme to ganger. Ingressen skal svare på dimensjonens spørsmål med et annet grep enn
+brødteksten - et konkret bilde, en følge, en motsetning.

@@ -1,244 +1,254 @@
-import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useParams } from 'react-router-dom';
-import { User, Search, Filter, BookOpen, ArrowRight, ArrowLeft } from 'lucide-react';
-import { useGlossary, type GlossaryEntry } from '../context/GlossaryContext';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import Fuse from 'fuse.js';
+import { Users } from 'lucide-react';
+import { usePeople } from '../hooks/usePeople';
+import type { EraKey, PersonEntry } from '../types/people';
+import { PersonCard } from '../components/people/PersonCard';
+import { PersonFilters, type SortMode } from '../components/people/PersonFilters';
+import { ERA_ORDER, eraMeta } from '../components/people/peopleMeta';
+import { PageSkeleton } from '../components/Skeleton';
 
-// Lager en URL-vennlig slug av et navn: «John F. Kennedy» -> «john-f-kennedy».
-// Brukes til å koble persongalleri-lenker (/persongalleri/john-f-kennedy) mot
-// person-oppføringer som bare har et `term`-felt (ingen egen id/slug).
-const slugify = (s: string): string =>
-    s
-        .normalize('NFKD')
-        .replace(/[̀-ͯ]/g, '')
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-
+/**
+ * Persongalleriet - et oppslagsverk over menneskene i Eiriksbok.
+ *
+ * URL-en er kilden til sannhet for søk, filtre og sortering (?q=, ?fag=, ?epoke=,
+ * ?tag=, ?sort=), slik at en filtrert visning kan deles og tilbakeknappen virker.
+ * Mønsteret er hentet fra sammenligningsmotoren.
+ */
 export const PersonGallery: React.FC = () => {
-    const { entries, isLoading } = useGlossary();
-    const { slug } = useParams<{ slug?: string }>();
-    const [searchQuery, setSearchQuery] = useState(slug ? slug.replace(/-/g, ' ') : '');
-    const [selectedSubject, setSelectedSubject] = useState<string>('all');
+    const { data, isLoading, isError, refetch } = usePeople();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const reduceMotion = useReducedMotion();
 
-    const people = useMemo(() => {
-        return entries.filter(e => e.type === 'person');
-    }, [entries]);
+    const people = useMemo(() => data?.people ?? [], [data]);
 
-    // Finn personen en slug peker på. Eksakt match på navn-slug eller alias-slug
-    // åpner detaljvisning. Treffer vi ikke eksakt, faller vi pent tilbake til
-    // galleriet med søket forhåndsutfylt (aldri en «død» blank skjerm).
-    const activePerson = useMemo<GlossaryEntry | undefined>(() => {
-        if (!slug) return undefined;
-        return people.find(p => {
-            if (slugify(p.term) === slug) return true;
-            return (p.aliases ?? []).some(a => slugify(a) === slug);
-        });
-    }, [people, slug]);
+    const urlQuery = searchParams.get('q') ?? '';
+    const subject = searchParams.get('fag') ?? 'alle';
+    const era = searchParams.get('epoke') ?? 'alle';
+    const tag = searchParams.get('tag');
+    const sort: SortMode = searchParams.get('sort') === 'kronologisk' ? 'kronologisk' : 'alfabetisk';
 
-    const subjects = useMemo(() => {
-        const set = new Set(people.map(p => p.subject).filter(Boolean));
-        return ['all', ...Array.from(set)];
+    // Søkefeltet skriver til lokal state med én gang og til URL-en etter en liten
+    // pause, så vi verken laggar på hvert tastetrykk eller fyller historikken.
+    const [queryInput, setQueryInput] = useState(urlQuery);
+    useEffect(() => {
+        setQueryInput(urlQuery);
+    }, [urlQuery]);
+
+    useEffect(() => {
+        if (queryInput === urlQuery) return;
+        const timer = setTimeout(() => {
+            setSearchParams(
+                (params) => {
+                    if (queryInput) params.set('q', queryInput);
+                    else params.delete('q');
+                    return params;
+                },
+                { replace: true }
+            );
+        }, 250);
+        return () => clearTimeout(timer);
+    }, [queryInput, urlQuery, setSearchParams]);
+
+    const setParam = useCallback(
+        (key: string, value: string | null) => {
+            setSearchParams(
+                (params) => {
+                    if (value && value !== 'alle') params.set(key, value);
+                    else params.delete(key);
+                    return params;
+                },
+                { replace: true }
+            );
+        },
+        [setSearchParams]
+    );
+
+    // Fuse gir treff på aliaser og tåler skrivefeil. Det gamle søket var rent
+    // substring-match på navn og beskrivelse.
+    const fuse = useMemo(
+        () =>
+            new Fuse(people, {
+                keys: [
+                    { name: 'name', weight: 3 },
+                    { name: 'aliases', weight: 2 },
+                    { name: 'tags', weight: 1 },
+                    { name: 'definition', weight: 1 },
+                ],
+                threshold: 0.35,
+                ignoreLocation: true,
+            }),
+        [people]
+    );
+
+    const filtered = useMemo(() => {
+        let list: PersonEntry[] = urlQuery.trim()
+            ? fuse.search(urlQuery.trim()).map((r) => r.item)
+            : people;
+
+        if (subject !== 'alle') {
+            list = list.filter((p) =>
+                subject === 'uten' ? !p.subject : p.subject === subject
+            );
+        }
+        if (era !== 'alle') list = list.filter((p) => p.era === era);
+        if (tag) list = list.filter((p) => p.tags.includes(tag));
+
+        if (sort === 'kronologisk') {
+            // Personer uten årstall skal aldri forsvinne - de samles til slutt.
+            return [...list].sort((a, b) => {
+                const ay = a.birthYear ?? a.deathYear;
+                const by = b.birthYear ?? b.deathYear;
+                if (ay === null && by === null) return a.name.localeCompare(b.name, 'nb');
+                if (ay === null) return 1;
+                if (by === null) return -1;
+                return ay - by || a.name.localeCompare(b.name, 'nb');
+            });
+        }
+        // Fuse returnerer etter relevans; ved fritekstsøk beholder vi den rekkefølgen.
+        if (urlQuery.trim()) return list;
+        return [...list].sort((a, b) => a.name.localeCompare(b.name, 'nb'));
+    }, [people, fuse, urlQuery, subject, era, tag, sort]);
+
+    const subjectCounts = useMemo(() => {
+        const counts: Record<string, number> = {};
+        for (const p of people) {
+            const key = p.subject ?? 'uten';
+            counts[key] = (counts[key] ?? 0) + 1;
+        }
+        return counts;
     }, [people]);
 
-    const filteredPeople = useMemo(() => {
-        const q = searchQuery.toLowerCase();
-        return people.filter(p => {
-            const matchesSearch =
-                (p.term ?? '').toLowerCase().includes(q) ||
-                (p.definition ?? '').toLowerCase().includes(q);
-            const matchesSubject = selectedSubject === 'all' || p.subject === selectedSubject;
-            return matchesSearch && matchesSubject;
-        });
-    }, [people, searchQuery, selectedSubject]);
+    const eraCounts = useMemo(() => {
+        const counts: Record<string, number> = {};
+        for (const p of people) counts[p.era] = (counts[p.era] ?? 0) + 1;
+        return counts;
+    }, [people]);
 
-    if (isLoading) {
+    // Ved kronologisk sortering deler vi listen i epoker med egen overskrift.
+    // 224 navn i én strøm er en sekk; 224 navn i seks epoker er en fortelling.
+    const groups = useMemo<{ key: EraKey | null; items: PersonEntry[] }[]>(() => {
+        if (sort !== 'kronologisk') return [{ key: null, items: filtered }];
+        return ERA_ORDER.map((key) => ({
+            key,
+            items: filtered.filter((p) => p.era === key),
+        })).filter((g) => g.items.length > 0);
+    }, [filtered, sort]);
+
+    if (isLoading) return <PageSkeleton />;
+
+    if (isError || people.length === 0) {
         return (
-            <div className="max-w-7xl mx-auto px-4 py-12 animate-pulse">
-                <div className="h-12 w-64 bg-slate-200 rounded-lg mb-8" />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[1, 2, 3, 4, 5, 6].map(i => (
-                        <div key={i} className="h-64 bg-slate-100 rounded-2xl" />
-                    ))}
-                </div>
-            </div>
-        );
-    }
-
-    if (activePerson) {
-        return (
-            <div className="max-w-3xl mx-auto px-4 py-12">
-                <Link
-                    to="/persongalleri"
-                    className="inline-flex items-center gap-2 text-slate-500 hover:text-orange-600 font-semibold mb-8 transition-colors"
+            <div className="mx-auto max-w-2xl px-6 py-24 text-center">
+                <h1 className="mb-3 text-2xl font-bold text-slate-900">
+                    Kunne ikke laste persongalleriet
+                </h1>
+                <p className="mb-6 text-slate-500">
+                    Noe gikk galt da vi hentet personene. Sjekk nettforbindelsen og prøv igjen.
+                </p>
+                <button
+                    type="button"
+                    onClick={() => refetch()}
+                    className="pressable rounded-xl bg-indigo-600 px-5 py-2.5 font-bold text-white transition-colors hover:bg-indigo-700"
                 >
-                    <ArrowLeft size={18} /> Tilbake til persongalleriet
-                </Link>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200"
-                >
-                    <div className="flex items-start justify-between mb-6">
-                        <div className="p-4 bg-orange-50 text-orange-600 rounded-2xl">
-                            <User size={40} strokeWidth={2.5} />
-                        </div>
-                        {activePerson.subject && (
-                            <span className="px-3 py-1 bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-wider rounded-full">
-                                {activePerson.subject}
-                            </span>
-                        )}
-                    </div>
-
-                    <h1 className="text-4xl font-black text-slate-900">{activePerson.term}</h1>
-                    {activePerson.lifespan && (
-                        <div className="text-base font-semibold text-slate-400 mt-2 bg-slate-50 inline-block py-1 px-3 rounded-lg">
-                            {activePerson.lifespan}
-                        </div>
-                    )}
-
-                    <p className="text-lg text-slate-600 leading-relaxed mt-6">
-                        {activePerson.definition}
-                    </p>
-
-                    {activePerson.tags && activePerson.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mt-8">
-                            {activePerson.tags.map(tag => (
-                                <span key={tag} className="text-xs font-bold text-slate-400 uppercase">
-                                    #{tag}
-                                </span>
-                            ))}
-                        </div>
-                    )}
-
-                    {activePerson.link && (
-                        <Link
-                            to={activePerson.link}
-                            className="inline-flex items-center gap-1 mt-8 text-orange-600 font-bold hover:gap-2 transition-all"
-                        >
-                            Les artikkelen <ArrowRight size={18} />
-                        </Link>
-                    )}
-                </motion.div>
+                    Prøv igjen
+                </button>
             </div>
         );
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-12">
-            <header className="mb-12">
-                <h1 className="text-4xl font-black text-slate-900 mb-4 flex items-center gap-3">
-                    <div className="p-2 bg-orange-100 text-orange-600 rounded-xl">
-                        <User size={32} />
-                    </div>
+        <div className="mx-auto max-w-7xl px-4 py-5 md:px-8 md:py-8">
+            {/* Toppen holdes lav med vilje: på Chromebook-baselinen 1366x768 skal
+                eleven se den første kortraden uten å scrolle. */}
+            <header className="mb-4 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <h1 className="flex items-center gap-2.5 text-2xl font-bold text-slate-900 md:text-3xl">
+                    <span className="rounded-lg bg-indigo-100 p-1.5 text-indigo-700">
+                        <Users size={22} />
+                    </span>
                     Persongalleri
                 </h1>
-                <p className="text-xl text-slate-600 max-w-2xl">
-                    Her kan du lære mer om de mest sentrale historiske personene og tenkerne i Eiriksbok.
+                <p className="text-sm text-slate-500">
+                    Menneskene bak historien, litteraturen og religionene i Eiriksbok.
                 </p>
             </header>
 
-            <div className="flex flex-col md:flex-row gap-4 mb-12">
-                <div className="relative flex-1">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-                    <input
-                        type="text"
-                        placeholder="Søk etter navn eller beskrivelse..."
-                        className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                </div>
-                <div className="flex items-center gap-2 bg-white border border-slate-200 p-2 rounded-2xl shadow-sm">
-                    <Filter className="ml-2 text-slate-400" size={18} />
-                    <select
-                        className="bg-transparent border-none outline-none pr-8 py-2 text-slate-700 font-medium"
-                        value={selectedSubject}
-                        onChange={(e) => setSelectedSubject(e.target.value)}
-                    >
-                        {subjects.map(s => (
-                            <option key={s || 'unknown'} value={s || 'all'}>
-                                {s === 'all' ? 'Alle fag' : (s ? s.charAt(0).toUpperCase() + s.slice(1) : 'Ukjent')}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </div>
+            <PersonFilters
+                query={queryInput}
+                onQueryChange={setQueryInput}
+                subject={subject}
+                onSubjectChange={(v) => setParam('fag', v)}
+                era={era}
+                onEraChange={(v) => setParam('epoke', v)}
+                tag={tag}
+                onClearTag={() => setParam('tag', null)}
+                sort={sort}
+                onSortChange={(v) => setParam('sort', v === 'alfabetisk' ? null : v)}
+                subjectCounts={subjectCounts}
+                eraCounts={eraCounts}
+                total={people.length}
+                shown={filtered.length}
+            />
 
-            {filteredPeople.length === 0 ? (
-                <div className="text-center py-24 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
-                    <User className="mx-auto text-slate-300 mb-4" size={48} />
-                    <p className="text-slate-500 text-lg">Ingen personer matchet søket ditt.</p>
+            {filtered.length === 0 ? (
+                <div className="rounded-3xl border-2 border-dashed border-slate-200 bg-slate-50 py-20 text-center">
+                    <Users className="mx-auto mb-4 text-slate-300" size={44} />
+                    <p className="text-lg text-slate-500">Ingen personer matchet søket ditt.</p>
+                    <button
+                        type="button"
+                        onClick={() => setSearchParams({}, { replace: true })}
+                        className="pressable mt-4 rounded-xl bg-slate-900 px-4 py-2 text-sm font-bold text-white"
+                    >
+                        Nullstill filtrene
+                    </button>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <AnimatePresence mode="popLayout">
-                        {filteredPeople.map((person) => (
-                            <motion.div
-                                key={person.term}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.2 }}
-                                className="group bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl border border-slate-200 hover:border-orange-200 transition-all flex flex-col"
-                            >
-                                <div className="flex items-start justify-between mb-4">
-                                    <div className="p-3 bg-orange-50 text-orange-600 rounded-2xl group-hover:scale-110 transition-transform">
-                                        <User size={24} strokeWidth={2.5} />
-                                    </div>
-                                    {person.subject && (
-                                        <span className="px-3 py-1 bg-slate-100 text-slate-500 text-xs font-bold uppercase tracking-wider rounded-full">
-                                            {person.subject}
-                                        </span>
-                                    )}
-                                </div>
-                                <h3 className="text-2xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
-                                    {person.term}
-                                </h3>
-                                {person.lifespan && (
-                                    <div className="text-sm font-semibold text-slate-400 mb-3 bg-slate-50 inline-block py-0.5 px-2 rounded-lg">
-                                        {person.lifespan}
-                                    </div>
-                                )}
-                                <p className="text-slate-600 leading-relaxed mb-6 flex-1">
-                                    {person.definition}
-                                </p>
-
-                                <div className="pt-6 border-t border-slate-50 flex items-center justify-between">
-                                    <div className="flex flex-wrap gap-2">
-                                        {person.tags?.map(tag => (
-                                            <span key={tag} className="text-[10px] font-bold text-slate-400 uppercase">#{tag}</span>
-                                        ))}
-                                    </div>
-                                    {person.link ? (
-                                        <Link
-                                            to={person.link}
-                                            className="text-orange-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
+                <div className="space-y-8">
+                    {groups.map((group) => (
+                        <section key={group.key ?? 'alle'}>
+                            {group.key && (
+                                <h2 className="sticky top-16 z-10 mb-3 -mx-1 flex items-center gap-2 bg-slate-50/90 px-1 py-2 text-sm font-bold uppercase tracking-wide text-slate-500 backdrop-blur">
+                                    <span
+                                        className={`h-2.5 w-2.5 rounded-full ${eraMeta(group.key).dot}`}
+                                    />
+                                    {eraMeta(group.key).label}
+                                    <span className="font-semibold text-slate-400">
+                                        {group.items.length}
+                                    </span>
+                                </h2>
+                            )}
+                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                <AnimatePresence mode="popLayout">
+                                    {group.items.map((person) => (
+                                        <motion.div
+                                            key={person.slug}
+                                            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.15 }}
+                                            className="flex"
                                         >
-                                            Lær mer <ArrowRight size={16} />
-                                        </Link>
-                                    ) : (
-                                        <div className="text-slate-300 font-bold text-sm flex items-center gap-1 cursor-default">
-                                            Lær mer <ArrowRight size={16} />
-                                        </div>
-                                    )}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
+                                            <PersonCard
+                                                person={person}
+                                                onTagClick={(t) => setParam('tag', t)}
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
+                            </div>
+                        </section>
+                    ))}
                 </div>
             )}
 
-            <footer className="mt-24 py-12 border-t border-slate-200 text-center">
+            <footer className="mt-16 border-t border-slate-200 py-10 text-center">
                 <Link
-                    to="/oving/flashcards"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-50 text-indigo-700 rounded-full font-bold hover:bg-indigo-100 transition-colors cursor-pointer"
+                    to="/tidslinje"
+                    className="pressable inline-flex items-center gap-2 rounded-full bg-indigo-50 px-6 py-3 font-bold text-indigo-700 transition-colors hover:bg-indigo-100"
                 >
-                    <BookOpen size={20} />
-                    <span>Se alle fagbegreper</span>
+                    Se hendelsene på den store tidslinjen
                 </Link>
             </footer>
         </div>

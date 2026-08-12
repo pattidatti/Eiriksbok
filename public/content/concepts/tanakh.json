@@ -1,0 +1,13 @@
+{
+  "term": "Tanakh",
+  "definition": "Den hebraiske bibelen. Navnet er satt sammen av forbokstavene i de tre delene: Toraen, Neviim og Ketuvim.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "Tanach"
+  ],
+  "tags": [
+    "jødedom",
+    "tekster"
+  ]
+}

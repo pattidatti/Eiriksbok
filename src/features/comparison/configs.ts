@@ -1,4 +1,5 @@
 import { fetchReligion, fetchPhilosopher } from '../../utils/contentLoader';
+import { dimensionBody } from '../../utils/religionDimensions';
 import type { ComparisonContent, ComparisonDomainConfig, ComparisonEntity } from './types';
 
 function wrapDimensions(
@@ -8,10 +9,12 @@ function wrapDimensions(
     const wrapped: Record<string, ComparisonContent | undefined> = {};
     for (const [key, value] of Object.entries(dimensions ?? {})) {
         if (value == null || value === '') continue;
+        // Løftede datafiler pakker teksten i et dimensjonskort; sammenligningen
+        // viser bare brødteksten.
+        const body = dimensionBody(value);
+        if (body == null || body === '') continue;
         wrapped[key] =
-            format === 'plain'
-                ? { format: 'plain', value: String(value) }
-                : { format: 'rich', value };
+            format === 'plain' ? { format: 'plain', value: String(body) } : { format: 'rich', value: body };
     }
     return wrapped;
 }

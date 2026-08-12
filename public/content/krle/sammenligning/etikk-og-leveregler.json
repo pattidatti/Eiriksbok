@@ -335,7 +335,7 @@
       "name": "FactBox",
       "props": {
         "title": "Se rådataene",
-        "content": "Vil du lese hva hver enkelt religion selv sier om etikk og leveregler, finner du artiklene side om side på /krle/sammenlign."
+        "content": "Vil du lese hva hver enkelt religion selv sier om etikk og leveregler, finner du artiklene side om side i [Sammenlign religioner](/krle/sammenlign)."
       }
     },
     {

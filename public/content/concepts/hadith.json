@@ -1,0 +1,15 @@
+{
+  "term": "Hadith",
+  "definition": "Korte fortellinger om hva Muhammad sa og gjorde. De ble samlet på 800- og 900-tallet og brukes til å forstå hvordan man skal leve.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "hadithene",
+    "hadith-samlingene",
+    "hadithsamlingene"
+  ],
+  "tags": [
+    "islam",
+    "tekster"
+  ]
+}

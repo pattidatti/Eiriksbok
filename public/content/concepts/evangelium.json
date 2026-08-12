@@ -1,0 +1,15 @@
+{
+  "term": "Evangelium",
+  "definition": "Betyr godt budskap. De fire evangeliene i Bibelen forteller om livet, døden og oppstandelsen til Jesus.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "evangeliet",
+    "evangelier",
+    "evangeliene"
+  ],
+  "tags": [
+    "kristendom",
+    "tekster"
+  ]
+}

@@ -104,7 +104,8 @@ function readJson(file) {
     }
 }
 
-// Trekker ut ren tekst fra Tina rich-text-noder (root > children > text)
+// Trekker ut ren tekst fra Tina rich-text-noder (root > children > text).
+// Løftede dimensjoner er et kort med teksten i `body` og ekstra felter rundt.
 function extractText(node) {
     if (node == null) return '';
     if (typeof node === 'string') return node;
@@ -112,6 +113,9 @@ function extractText(node) {
     if (typeof node === 'object') {
         if (typeof node.text === 'string') return node.text;
         if (node.children) return extractText(node.children);
+        if ('body' in node || 'summary' in node) {
+            return [extractText(node.summary), extractText(node.body)].join(' ').trim();
+        }
     }
     return '';
 }

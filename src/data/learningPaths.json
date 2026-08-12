@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-12T10:01:00.219Z",
-  "count": 20,
+  "updatedAt": "2026-08-12T17:22:34.101Z",
+  "count": 21,
   "paths": [
     {
       "id": "romerriket-sti",
@@ -117,6 +117,18 @@
       "readTime": "5-6 timer",
       "path": "/historie/etterkrigstiden/etterkrigstiden-sti",
       "fileRelativePath": "historie/etterkrigstiden/etterkrigstiden-sti.json",
+      "version": 1
+    },
+    {
+      "id": "hovedplottet-sti",
+      "title": "Læringssti: Hovedplottet",
+      "description": "Alle religioner forteller den samme historien: noe er galt, og noe skal fikse det. De er dypt uenige om hvem som er helten.",
+      "subjectId": "krle",
+      "subjectName": "KRLE",
+      "topicId": "sammenligning",
+      "readTime": "2 timer",
+      "path": "/krle/sammenligning/hovedplottet-sti",
+      "fileRelativePath": "krle/sammenligning/hovedplottet-sti.json",
       "version": 1
     },
     {

@@ -1,0 +1,12 @@
+{
+  "term": "Kosher",
+  "definition": "Mat som er tillatt etter jødiske regler. Svin og skalldyr er ikke kosher, og kjøtt og melk skal ikke blandes.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "kosjer"
+  ],
+  "tags": [
+    "jødedom"
+  ]
+}

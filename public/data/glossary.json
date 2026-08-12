@@ -1,5 +1,46 @@
 [
   {
+    "term": "'Abdu'l-Bahá",
+    "definition": "Sønnen til Bahá'u'lláh. Han ledet troen etter faren og fikk retten til å forklare hva læren betyr.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Abdu'l-Bahá",
+      "Abdul-Baha"
+    ],
+    "tags": [
+      "bahai"
+    ]
+  },
+  {
+    "term": "Abhidharma",
+    "definition": "Den tredje kurven i Tripitaka. Den kom senere enn de andre og går grundig gjennom hva læren egentlig går ut på.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "abhidharma-tekstene"
+    ],
+    "tags": [
+      "buddhisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Abrahamittiske religioner",
+    "definition": "Fellesnavn på jødedom, kristendom og islam. De regner alle Abraham som en stamfar, og de tror på én Gud som har skapt verden.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "abrahamittisk",
+      "abrahamittiske",
+      "abrahamittiske religionene"
+    ],
+    "tags": [
+      "religion",
+      "sammenligning"
+    ]
+  },
+  {
     "id": "absolutt-fortrinn",
     "term": "Absolutt fortrinn",
     "definition": "Å være best til å lage en vare, altså klare å lage mest av den med de samme ressursene. Et land kan ha absolutt fortrinn i alt og likevel tjene på å spesialisere seg etter komparativt fortrinn.",
@@ -23,6 +64,27 @@
       "privilegier"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Adonai",
+    "definition": "Ordet jøder leser høyt i stedet for Guds egennavn. Det betyr min herre.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Adonaj"
+    ],
+    "tags": [
+      "jødedom"
+    ]
+  },
+  {
+    "term": "Advaita",
+    "definition": "Betyr ikke-to. Retningen som mener at atman og brahman er nøyaktig det samme, og at følelsen av å være et eget menneske er en illusjon.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme"
+    ]
   },
   {
     "term": "Ærlighet",
@@ -59,6 +121,18 @@
     "type": "concept"
   },
   {
+    "term": "Allah",
+    "definition": "Det arabiske ordet for Gud. Også arabiske kristne bruker ordet når de snakker om Gud.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Allahs"
+    ],
+    "tags": [
+      "islam"
+    ]
+  },
+  {
     "term": "Allianse",
     "definition": "En avtale mellom land om gjensidig støtte, ofte militært, hvis et av landene blir angrepet.",
     "subject": "historie",
@@ -72,6 +146,71 @@
     "definition": "Det beste du gir opp når du velger å bruke tid eller ressurser på noe annet. Hver time legen skriver brev, er en time hun ikke behandler pasienter. Alternativkostnaden er kjernen i komparativt fortrinn.",
     "subject": "samfunnskunnskap",
     "type": "concept"
+  },
+  {
+    "term": "Amitabha",
+    "definition": "Buddhaen som styrer det rene landet i vest. Mange buddhister i Øst-Asia ber til ham om hjelp.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Amida"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Amrit Sanskar",
+    "definition": "Innvielsen i fellesskapet khalsa. Det er den eneste av de fire sikh-ritene du velger selv, som voksen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Amrit-sanskar"
+    ],
+    "tags": [
+      "sikhisme",
+      "overgangsriter"
+    ]
+  },
+  {
+    "term": "Amrit",
+    "definition": "Sukkervannet som røres med et tveegget sverd og drikkes ved innvielsen i khalsa.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "amriten"
+    ],
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Amritsar",
+    "definition": "Byen i India der sikhenes viktigste tempel, Harmandir Sahib, ligger.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Amritvela",
+    "definition": "Timene før daggry, mellom klokka tre og seks. Mange sikher står opp da for å be.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Anand Karaj",
+    "definition": "Sikh-bryllupet. Navnet betyr omtrent den lykkelige handlingen, og paret går fire runder rundt den hellige boka.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme",
+      "overgangsriter"
+    ]
   },
   {
     "term": "anarki",
@@ -98,6 +237,18 @@
     "type": "concept"
   },
   {
+    "term": "Åndebarn",
+    "definition": "Læren om at alle mennesker levde som barn av en himmelsk Far og en himmelsk Mor før de ble født på jorda.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "åndebarna"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
     "term": "Angra Mainyu",
     "definition": "Det ondes prinsipp i zoroastrismen, motsetningen til Ahura Mazda. Modellen for jødedommens og kristendommens djevelfigur.",
     "type": "concept"
@@ -111,9 +262,61 @@
     "type": "concept"
   },
   {
+    "term": "Antam Sanskar",
+    "definition": "Den siste seremonien i sikhismen, altså begravelsen. Kroppen brennes, og bønnen Sohila leses.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Antam-sanskar"
+    ],
+    "tags": [
+      "sikhisme",
+      "død"
+    ]
+  },
+  {
     "term": "Antisemittisme",
     "definition": "Fordommer og hat rettet mot jøder. Har røtter i middelalderen, men nådde sitt mest brutale uttrykk i nazistenes Holocaust.",
     "type": "concept"
+  },
+  {
+    "term": "Apokryfer",
+    "definition": "Skrifter som katolske og ortodokse bibler har med, men som protestantiske bibler ikke regner som en del av Bibelen. Ordet betyr skjult.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "apokryfene",
+      "apokryf",
+      "apokryfe"
+    ],
+    "tags": [
+      "kristendom",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Apostel",
+    "definition": "En av dem Jesus sendte ut for å spre budskapet videre. Ordet betyr utsending.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "apostelen",
+      "apostler",
+      "apostlene"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Aqiqa",
+    "definition": "Navneseremonien for et nyfødt muslimsk barn, ofte på den sjuende dagen. Et dyr slaktes, og kjøttet deles med familie, venner og folk som trenger det.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "islam",
+      "overgangsriter"
+    ]
   },
   {
     "term": "Den arabiske våren",
@@ -154,9 +357,36 @@
     "link": "/samfunnskunnskap/okonomi/arbeidsspesialisering"
   },
   {
+    "term": "Ardas",
+    "definition": "Fellesbønnen som avslutter samlingen i gurdwaraen. Alle står mens den bes.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "ardasen"
+    ],
+    "tags": [
+      "sikhisme",
+      "bønn"
+    ]
+  },
+  {
     "term": "Argumentasjon",
     "definition": "Måten man bygger opp grunner for et synspunkt. God argumentasjon består av en påstand, et belegg og en bakenforliggende grunn som binder dem sammen.",
     "type": "concept"
+  },
+  {
+    "term": "Arhat",
+    "definition": "Et menneske som er blitt helt fritt fra begjær og har våknet slik Buddha gjorde. Arhaten er idealet for munker og nonner i theravada.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "arhaten",
+      "arhater",
+      "arhatene"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
   },
   {
     "term": "armada",
@@ -184,6 +414,18 @@
     "type": "concept"
   },
   {
+    "term": "Arvesynd",
+    "definition": "Læren om at mennesket helt fra fødselen har en vilje som trekker mot det gale. Tanken kommer fra kirkefaderen Augustin. Jødedommen har ingen slik lære.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "arvesynden"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Asherah",
     "aliases": [
       "asjera"
@@ -196,6 +438,18 @@
       "gudinne"
     ],
     "subject": "krle"
+  },
+  {
+    "term": "Atman",
+    "definition": "Sjelen eller kjernen i hvert menneske. Mange hinduer mener at atman egentlig er det samme som brahman, altså at du dypest sett er ett med alt.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "atmanen"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
   },
   {
     "term": "autoritært diktatur",
@@ -211,6 +465,15 @@
     "type": "concept"
   },
   {
+    "term": "Avalokiteshvara",
+    "definition": "En av de mest kjente bodhisattvaene, kjent for medfølelse. Mange kaller på ham når de trenger hjelp.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
     "term": "Avkolonisering",
     "definition": "Prosessen der kolonier blir selvstendige stater.",
     "subject": "historie",
@@ -223,6 +486,46 @@
     "definition": "En del av en tekst som består av en eller flere setninger som henger sammen og handler om det samme temaet.",
     "links": [],
     "type": "concept"
+  },
+  {
+    "term": "Báb",
+    "definition": "Mannen som fra 1844 sa at en ny utsending fra Gud snart ville komme. Han ble henrettet i 1850, og bahá'íer regner ham som forløperen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Báben"
+    ],
+    "tags": [
+      "bahai"
+    ]
+  },
+  {
+    "term": "Bahá'í",
+    "definition": "En religion som startet i Iran på 1800-tallet, og som lærer at alle de store religionene kommer fra den samme Gud.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bahá'íer",
+      "bahá'íene",
+      "bahaier",
+      "bahaiene"
+    ],
+    "tags": [
+      "bahai"
+    ]
+  },
+  {
+    "term": "Bahá'u'lláh",
+    "definition": "Grunnleggeren av bahá'í-troen. Han sa i 1863 at han var den utsendingen fra Gud som Báb hadde varslet om.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Bahaullah",
+      "Baha'u'llah"
+    ],
+    "tags": [
+      "bahai"
+    ]
   },
   {
     "term": "Balfour-erklæringen",
@@ -240,6 +543,47 @@
     "type": "concept"
   },
   {
+    "term": "Bar mitzva",
+    "definition": "Dagen da et jødisk barn selv får ansvaret for å følge budene. Gutter blir bar mitzva som trettenåringer, jenter blir bat mitzva litt tidligere.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bar mitsva",
+      "bat mitzva",
+      "bat mitsva"
+    ],
+    "tags": [
+      "jødedom",
+      "overgangsriter"
+    ]
+  },
+  {
+    "term": "Bardo",
+    "definition": "I tibetansk buddhisme mellomtilstanden mellom døden og den nye fødselen. Den varer i 49 dager.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bardoen"
+    ],
+    "tags": [
+      "buddhisme",
+      "død"
+    ]
+  },
+  {
+    "term": "Barzakh",
+    "definition": "Ventetiden mellom at et menneske dør og den store oppstandelsen. Ordet betyr skille.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "al-barzakh"
+    ],
+    "tags": [
+      "islam",
+      "død"
+    ]
+  },
+  {
     "term": "Bayt al-Hikma",
     "aliases": [
       "Visdomshuset",
@@ -255,6 +599,31 @@
       "Bagdad",
       "vitenskap",
       "kunnskap"
+    ]
+  },
+  {
+    "term": "Bedehus",
+    "definition": "Et enkelt forsamlingshus der kristne møtes til møter og bønn utenom kirken.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bedehuset",
+      "bedehusene"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Begavelsen",
+    "definition": "Tempelhandlingen der et medlem får undervisning om frelsesplanen og lover å holde Guds bud og bruke tid og krefter på kirkens arbeid.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "begavelse"
+    ],
+    "tags": [
+      "mormonisme"
     ]
   },
   {
@@ -276,9 +645,75 @@
     "topic": "kinas-historie"
   },
   {
+    "term": "Besegling",
+    "definition": "Handlingen i mormontempelet der et ektepar bindes sammen for evig, ikke bare til døden. Den kreves for å nå det øverste riket.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "beseglingen",
+      "beseglet",
+      "besegles"
+    ],
+    "tags": [
+      "mormonisme",
+      "overgangsriter"
+    ]
+  },
+  {
     "term": "Bevissthet",
     "definition": "Å være våken og oppleve verden. En av filosofiens største gåter: Hvordan oppstår indre opplevelse av fysisk hjerneaktivitet?",
     "type": "concept"
+  },
+  {
+    "term": "Bhagavadgita",
+    "definition": "Hinduismens mest leste tekst. Den er en samtale mellom krigeren Arjuna og guden Krishna om plikt, handling og hva som er riktig å gjøre.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Bhagavad Gita",
+      "Gita"
+    ],
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Bhakti",
+    "definition": "Kjærlig hengivelse til en gud. Det er den veien de aller fleste hinduer bruker: å elske en gud, ikke å tenke seg fram til sannheten.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bhakti-bevegelsen"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Bhikkhu",
+    "definition": "En buddhistisk munk. Han eier nesten ingenting og lever av det andre gir ham.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bhikkhuer"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Bildeforbudet",
+    "definition": "Regelen om at Gud, og i islam også profeten, ikke skal avbildes. Derfor pyntes moskeer med mønstre og skjønnskrift i stedet for bilder av mennesker.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bildeforbud"
+    ],
+    "tags": [
+      "islam",
+      "jødedom"
+    ]
   },
   {
     "term": "Bindeord",
@@ -346,6 +781,19 @@
     "subject": "historie"
   },
   {
+    "term": "Blodoverføring",
+    "definition": "Å få blod fra en annen person. Jehovas vitner sier nei til dette fordi de mener Bibelen forbyr å ta imot blod.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "blodoverføringer"
+    ],
+    "tags": [
+      "jehovas vitner",
+      "etikk"
+    ]
+  },
+  {
     "term": "Blokade",
     "definition": "Å stenge av forsyninger til et land ved bruk av militærmakt, oftest skip.",
     "subject": "historie",
@@ -376,6 +824,20 @@
     "subject": "historie"
   },
   {
+    "term": "Bodhisattva",
+    "definition": "En som er på vei til å bli en buddha, men som venter for å hjelpe andre først. I mahayana ber folk til bodhisattvaer om hjelp.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bodhisattvaer",
+      "bodhisattvaen",
+      "bodhisattvaene"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
     "id": "bolgemodellen",
     "term": "Bølgemodellen",
     "definition": "En modell for hvordan et språktrekk sprer seg. Trekket brer seg jevnt utover fra der det oppsto, som ringer i vann: fra nabo til nabo. Nære steder får trekket først, fjerne steder sist. Forklarer de myke overgangene mellom nabodialekter.",
@@ -384,9 +846,82 @@
     "link": "/norsk/dialekter/spredning-av-dialekttrekk"
   },
   {
+    "term": "Bønnehjul",
+    "definition": "En sylinder med bønner skrevet inni. Å snurre den regnes som å si bønnene, og brukes særlig i tibetansk buddhisme.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bønnehjulet",
+      "bønnehjulene"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Bønneropet",
+    "definition": "Ropet som kaller muslimer til bønn fem ganger om dagen. Trosbekjennelsen er en fast del av det.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bønnerop",
+      "adhan"
+    ],
+    "tags": [
+      "islam",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Bønnesjal",
+    "definition": "Sjalet jøder har over skuldrene under bønnen. Duskene i hjørnene skal minne om budene.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bønnesjalet",
+      "tallit"
+    ],
+    "tags": [
+      "jødedom",
+      "bønn"
+    ]
+  },
+  {
     "term": "Børskrakket 1929",
     "definition": "Det plutselige og dramatiske fallet i aksjekursene på Wall Street i oktober 1929. Krakket markerte starten på den store depresjonen som rammet hele verden.",
     "type": "concept"
+  },
+  {
+    "term": "Brahma",
+    "definition": "Skaperguden i hinduismen. Han blir sjelden tilbedt i dag, i motsetning til Vishnu og Shiva.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Brahman",
+    "definition": "Den store kraften som ifølge hinduismen finnes bak alt som er til. Brahman er ikke en person, men selve grunnen til at verden finnes.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Brahmaner",
+    "definition": "Den øverste av de fire varna-gruppene i det gamle indiske samfunnet. Brahmanene var prester og lærere.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "brahmanene",
+      "brahmanklassen"
+    ],
+    "tags": [
+      "hinduisme",
+      "samfunn"
+    ]
   },
   {
     "term": "Bretton Woods",
@@ -394,9 +929,44 @@
     "type": "concept"
   },
   {
+    "term": "Brigham Young",
+    "definition": "Lederen som tok over etter Joseph Smith og førte mormonene til Utah, der de bygde opp Salt Lake City.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
+    "term": "Brit mila",
+    "definition": "Omskjæringen av jødiske guttebarn på den åttende dagen. Den markerer at barnet er tatt inn i pakten mellom Gud og folket.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "brit-mila"
+    ],
+    "tags": [
+      "jødedom",
+      "overgangsriter"
+    ]
+  },
+  {
     "term": "Brutalitet",
     "definition": "Ekstrem voldelighet uten medfølelse. Et begrep som ofte brukes om krigføring, undertrykkelse og diktaturers behandling av motstandere.",
     "type": "concept"
+  },
+  {
+    "term": "Buddha",
+    "definition": "Betyr den oppvåknede. Brukes særlig om Siddhartha Gautama, som ifølge tradisjonen forsto hvordan lidelsen kan ta slutt.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "buddhaen",
+      "buddhas"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
   },
   {
     "term": "Budskap",
@@ -441,6 +1011,18 @@
     "link": "/samfunnskunnskap/ideer-og-verdenssyn/casus-belli"
   },
   {
+    "term": "Charles Taze Russell",
+    "definition": "Amerikaneren som startet bevegelsen som ble til Jehovas vitner. Fra 1879 ga han ut bladet Vakttårnet og regnet ut årstall for endetiden.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Taze Russell"
+    ],
+    "tags": [
+      "jehovas vitner"
+    ]
+  },
+  {
     "term": "Civil Rights Act",
     "definition": "Amerikansk lov fra 1964 som forbød diskriminering basert på rase, hudfarge, religion eller kjønn. President Lyndon B. Johnson signerte loven.",
     "type": "concept"
@@ -467,9 +1049,34 @@
     "type": "concept"
   },
   {
+    "term": "Cogito, ergo sum",
+    "definition": "Latin for «jeg tenker, altså er jeg». Descartes mente dette var det ene han umulig kunne tvile på.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "cogito ergo sum",
+      "cogito"
+    ],
+    "tags": [
+      "filosofi"
+    ]
+  },
+  {
     "term": "Corpus Juris Civilis",
     "definition": "Romersk lovsamling utgitt av keiser Justinian rundt år 530. Den ble gjenoppdaget på 1100-tallet og er grunnlaget for europeisk rett.",
     "type": "concept"
+  },
+  {
+    "term": "Creatio ex nihilo",
+    "definition": "Latin for skapelse av ingenting. Læren om at Gud ikke formet verden av noe som allerede fantes, men skapte alt fra bunnen av.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "skapelse av intet"
+    ],
+    "tags": [
+      "kristendom"
+    ]
   },
   {
     "term": "Cura Annonae",
@@ -496,6 +1103,48 @@
     "subject": "historie"
   },
   {
+    "term": "Dåp for døde",
+    "definition": "Handlingen der et levende medlem blir døpt på vegne av en avdød, slik at den døde selv kan velge om han vil ta imot det.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "dåp på vegne av døde",
+      "dåp for de døde"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
+    "term": "Dåp",
+    "definition": "Riten der en person blir tatt inn i den kristne kirken med vann. Noen kirker døper spedbarn, andre venter til man selv kan velge.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "dåpen",
+      "barnedåp",
+      "barnedåpen",
+      "voksendåp"
+    ],
+    "tags": [
+      "kristendom",
+      "overgangsriter"
+    ]
+  },
+  {
+    "term": "Darshan",
+    "definition": "Å se guden og bli sett av guden. Det er ofte hele poenget med å gå i tempelet.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "darshana",
+      "darshanen"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
     "term": "Das Ding an sich",
     "definition": "Kants begrep om «tingen i seg selv» - virkeligheten slik den faktisk er, uavhengig av hvordan vi opplever den. Den kan vi aldri kjenne direkte.",
     "type": "concept"
@@ -504,6 +1153,28 @@
     "term": "Das Man",
     "definition": "Heideggers begrep om «manmennesket» - det upersonlige «folk sier», «folk gjør». En tilstand der man slutter å ta egne valg.",
     "type": "concept"
+  },
+  {
+    "term": "Dasein",
+    "definition": "Heideggers ord for menneskets måte å eksistere på. Det betyr å være der, midt i verden, alltid opptatt med noe.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "filosofi"
+    ]
+  },
+  {
+    "term": "Davidsstjernen",
+    "definition": "Den sekstakkede stjernen som er blitt jødedommens mest kjente symbol. Den er også med i Israels flagg.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "davidsstjerne"
+    ],
+    "tags": [
+      "jødedom",
+      "symbol"
+    ]
   },
   {
     "term": "De 100 ydmykelsenes år",
@@ -531,12 +1202,71 @@
     "type": "concept"
   },
   {
+    "term": "De fem søylene",
+    "definition": "De fem pliktene som holder islam oppe: trosbekjennelsen, de daglige bønnene, den religiøse avgiften, fasten i ramadan og pilegrimsreisen til Mekka.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "islams fem søyler",
+      "fem søyler",
+      "de fem søyler"
+    ],
+    "tags": [
+      "islam"
+    ]
+  },
+  {
+    "term": "De fire edle sannheter",
+    "definition": "Kjernen i Buddhas lære: livet inneholder lidelse, lidelsen kommer av begjær, begjæret kan slukne, og Den åttedelte veien fører dit.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "de fire edle sannhetene",
+      "fire edle sannheter",
+      "fire edle sannhetene"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
     "term": "De forente nasjoner (FN)",
     "definition": "Internasjonal organisasjon grunnlagt i 1945 for å fremme fred, samarbeid og menneskerettigheter.",
     "subject": "historie",
     "topic": "andre-verdenskrig",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "De tre herlighetsrikene",
+    "definition": "De tre stedene mennesker havner etter dommen ifølge mormonkirken. De har navn etter lys: det celestiale som solen, det terrestriale som månen og det telestiale som stjernene.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "celestiale",
+      "det celestiale riket",
+      "celestiale rike",
+      "terrestriale",
+      "telestiale"
+    ],
+    "tags": [
+      "mormonisme",
+      "død"
+    ]
+  },
+  {
+    "term": "De tre juvelene",
+    "definition": "De tre tingene en buddhist søker tilflukt hos: Buddha, dharma (læren) og sangha (fellesskapet).",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "de tre juveler",
+      "tre juvelene",
+      "triratna"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
   },
   {
     "term": "Defenestrasjon",
@@ -580,6 +1310,45 @@
     "type": "concept"
   },
   {
+    "term": "Den åttedelte veien",
+    "definition": "De åtte tingene en buddhist skal øve på, blant annet rett tale, rett handling og rett meditasjon. Veien deles i visdom, rett handling og meditasjon.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "den åttedelte vei",
+      "åttedelte veien",
+      "åttedelte vei"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Den hellige ånd",
+    "definition": "Den tredje personen i treenigheten. Kristne mener Ånden er Gud som virker i menneskene her og nå.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Helligånden"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Den kostelige perle",
+    "definition": "Den minste av de fire hellige bøkene i mormonkirken, med korte tekster om skapelsen og om Joseph Smiths eget liv.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Kostelige perle"
+    ],
+    "tags": [
+      "mormonisme",
+      "tekster"
+    ]
+  },
+  {
     "term": "Den lange marsjen",
     "aliases": [
       "lange marsjen",
@@ -597,6 +1366,20 @@
     "topic": "kinas-historie"
   },
   {
+    "term": "Den salvede resten",
+    "definition": "De 144 000 Jehovas vitner mener skal styre sammen med Jesus i himmelen. Alle andre trofaste skal få leve evig på en ny jord.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "salvede resten",
+      "de 144 000",
+      "144 000"
+    ],
+    "tags": [
+      "jehovas vitner"
+    ]
+  },
+  {
     "term": "dendrokronologi",
     "definition": "Metode for å datere treverk ved å telle og analysere årringer. Brukes blant annet til å studere tidligere klimaforhold.",
     "subject": "historie",
@@ -609,14 +1392,69 @@
     "type": "concept"
   },
   {
+    "term": "Det gamle testamentet",
+    "definition": "Den første og største delen av Bibelen. Den er stort sett den samme teksten som den hebraiske bibelen i jødedommen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Det gamle testamente",
+      "gamle testamentet"
+    ],
+    "tags": [
+      "kristendom",
+      "tekster"
+    ]
+  },
+  {
     "term": "Det kategoriske imperativ",
     "definition": "Kants etiske grunnregel: Handle bare etter en regel du samtidig kan ønske skal være lov for alle mennesker.",
     "type": "concept"
   },
   {
+    "term": "Det nye testamentet",
+    "definition": "Den delen av Bibelen som handler om Jesus og den første kristne tiden. Den inneholder blant annet de fire evangeliene og brevene til Paulus.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Det nye testamente",
+      "nye testamentet"
+    ],
+    "tags": [
+      "kristendom",
+      "tekster"
+    ]
+  },
+  {
     "term": "Det Østindiske Kompani",
     "definition": "Nederlandsk variant av det britiske: VOC (1602-1799) - verdens første aksjeselskap. Dominerte handelen med Asia.",
     "type": "concept"
+  },
+  {
+    "term": "Det styrende råd",
+    "definition": "Ledelsen til Jehovas vitner, som sitter ved hovedkontoret i USA. De bestemmer hva som er riktig lære, og medlemmene skal følge det.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "styrende råd",
+      "det styrende rådet",
+      "styrende rådet"
+    ],
+    "tags": [
+      "jehovas vitner"
+    ]
+  },
+  {
+    "term": "Det universelle rettferdighetens hus",
+    "definition": "Det valgte rådet som leder bahá’í-troen i dag. Det holder til i Haifa i Israel.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "universelle rettferdighetens hus",
+      "Rettferdighetens hus"
+    ],
+    "tags": [
+      "bahai"
+    ]
   },
   {
     "term": "Devşirme",
@@ -634,6 +1472,43 @@
       "hær"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Dhammapada",
+    "definition": "En kort og mye lest buddhistisk tekstsamling med vers om hvordan man bør leve.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "buddhisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Dharma",
+    "definition": "I buddhismen er dharma læren Buddha ga videre. I hinduismen betyr det plikten din, altså det som er riktig for deg å gjøre i den rollen du har.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "dharmaen"
+    ],
+    "tags": [
+      "buddhisme",
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Dharmahjulet",
+    "definition": "Buddhismens viktigste symbol. De åtte eikene står for de åtte delene av Den åttedelte veien.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "dharmahjul",
+      "hjulet med åtte eiker"
+    ],
+    "tags": [
+      "buddhisme",
+      "symbol"
+    ]
   },
   {
     "term": "Diktatur",
@@ -656,6 +1531,16 @@
     "type": "concept"
   },
   {
+    "term": "Dissenterloven",
+    "definition": "Den norske loven fra 1845 som ga folk lov til å stå utenfor statskirken og danne egne kristne menigheter.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "kristendom",
+      "samfunn"
+    ]
+  },
+  {
     "term": "Dolkestøtlegenden",
     "definition": "En konspirasjonsteori og myte om at den tyske hæren aldri tapte på slagmarken under første verdenskrig, men ble 'dolket i ryggen' av politikere, sosialister og jøder på hjemmebane.",
     "type": "concept",
@@ -665,6 +1550,28 @@
       "første verdenskrig"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Dua",
+    "definition": "Fri bønn med egne ord, i tillegg til de faste bønnene. Den kan sies når som helst og på hvilket språk som helst.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "duaen"
+    ],
+    "tags": [
+      "islam",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Durga",
+    "definition": "En mektig gudinne som kjemper mot demoner. Hun blir feiret i store høytider, særlig i Øst-India.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme"
+    ]
   },
   {
     "term": "Dygdsetikk",
@@ -688,6 +1595,19 @@
     ],
     "subject": "historie",
     "topic": "kinas-historie"
+  },
+  {
+    "term": "Dyreetikk",
+    "definition": "Den delen av etikken som spør hvilke plikter vi har overfor dyr, og om det er greit å bruke dem til mat og forskning.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "dyreetikken"
+    ],
+    "tags": [
+      "etikk"
+    ],
+    "link": "/krle/etikk/dyreetikk"
   },
   {
     "term": "East India Company",
@@ -800,6 +1720,44 @@
     "topic": "kinas-historie"
   },
   {
+    "term": "Eudaimonia",
+    "definition": "Aristoteles sitt ord for det høyeste målet i livet. Det oversettes ofte med lykke, men betyr heller å blomstre som menneske og bruke evnene sine fullt ut.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "filosofi",
+      "etikk"
+    ]
+  },
+  {
+    "term": "Evangelium",
+    "definition": "Betyr godt budskap. De fire evangeliene i Bibelen forteller om livet, døden og oppstandelsen til Jesus.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "evangeliet",
+      "evangelier",
+      "evangeliene"
+    ],
+    "tags": [
+      "kristendom",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Fadervår",
+    "definition": "Den bønnen Jesus ifølge evangeliene lærte disiplene sine. Den er den mest brukte bønnen i kristendommen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Vår Far"
+    ],
+    "tags": [
+      "kristendom",
+      "bønn"
+    ]
+  },
+  {
     "term": "Fagforening",
     "definition": "En organisasjon der arbeidstakere går sammen for å kjempe for bedre lønn og arbeidsvilkår. Istedenfor at hver enkelt forhandler alene, står man sterkere sammen.",
     "type": "concept",
@@ -816,6 +1774,20 @@
     "topic": "andre-verdenskrig",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Faste",
+    "definition": "Å la være å spise eller drikke i en bestemt periode for å konsentrere seg om det religiøse. Muslimer faster i ramadan, kristne i fastetiden før påske.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "fasten",
+      "fastetiden",
+      "faster"
+    ],
+    "tags": [
+      "religion"
+    ]
   },
   {
     "term": "Fattigdom",
@@ -843,6 +1815,15 @@
       "økonomi"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Filioque",
+    "definition": "Det latinske tillegget som betyr og fra Sønnen. Uenigheten om dette lille ordet gjorde skillet mellom kirken i øst og kirken i vest dypere.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "kristendom"
+    ]
   },
   {
     "term": "Filosofi",
@@ -903,10 +1884,57 @@
     "link": "/historie/middelalderen/tidlig-middelalder"
   },
   {
+    "term": "Foruttilværelsen",
+    "definition": "Livet mormonkirken mener alle mennesker levde som Guds åndebarn før jorda ble til.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "førjordiske liv"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
+    "term": "Fredagsbønnen",
+    "definition": "Ukas viktigste felles bønn i islam. Den holdes i moskeen midt på dagen fredag, og har en preken i tillegg til selve bønnen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "fredagsbønn"
+    ],
+    "tags": [
+      "islam",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Frelsesplanen",
+    "definition": "Mormonkirkens navn på Guds plan for menneskene: fra livet som ånd før fødselen, gjennom livet på jorda, til de tre rikene etter dommen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "lykkens plan"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
     "term": "Frihet",
     "definition": "Å kunne velge selv hva man vil gjøre, tro og si. Skiller mellom frihet FRA (tvang, undertrykkelse) og frihet TIL (å delta, ytre seg).",
     "type": "concept",
     "link": "/samfunnskunnskap/arbeidsliv/fremtidens-arbeidsliv"
+  },
+  {
+    "term": "Fronesis",
+    "definition": "Praktisk klokskap. Ikke bare å vite at noe er galt, men å skjønne når en spøk går for langt og hvordan man sier sannheten på en god måte.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "filosofi",
+      "etikk"
+    ]
   },
   {
     "term": "Frontfagmodellen",
@@ -930,6 +1958,19 @@
       "diktatur"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Gemara",
+    "definition": "De lærdes forklaringer og diskusjoner om Mishna. Mishna og gemara utgjør til sammen Talmud.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "gemaraen"
+    ],
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
   },
   {
     "term": "Generasjon",
@@ -976,6 +2017,32 @@
     "subject": "samfunnskunnskap"
   },
   {
+    "term": "Gjendøpere",
+    "definition": "Kallenavnet på dem som på 1500-tallet mente at bare voksne som selv velger det, kan døpes. Mange av dem ble forfulgt og drept.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "gjendøper",
+      "gjendøperne",
+      "anabaptister"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Gjenopprettelsen",
+    "definition": "Mormonkirkens lære om at den sanne kirken forsvant etter apostlenes tid, og at Gud satte den opp igjen gjennom Joseph Smith.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "gjenopprettelse"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
     "term": "Glasnost",
     "definition": "En reformpolitik lansert av Mikhail Gorbatsjov i Sovjetunionen på 1980-tallet. Ordet betyr 'åpenhet', og målet var å skape mer gjennomsiktighet i staten og mer ytringsfrihet for borgerne.",
     "subject": "historie",
@@ -1003,6 +2070,21 @@
     "type": "concept"
   },
   {
+    "term": "Gudsbilde",
+    "definition": "Hvordan en religion tenker om Gud: om Gud er én eller mange, om Gud kan avbildes, og om Gud er nær menneskene eller langt borte.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "gudsbildet",
+      "gudsbilder"
+    ],
+    "tags": [
+      "religion",
+      "sammenligning"
+    ],
+    "link": "/krle/sammenligning/gudsbilde"
+  },
+  {
     "term": "Gulag",
     "definition": "Et system av tvangsarbeidsleirer i Sovjetunionen der millioner av politiske fanger og kriminelle ble sendt for å utføre hardt arbeid under umenneskelige forhold.",
     "type": "concept",
@@ -1027,6 +2109,18 @@
     "link": "/historie/sveriges-historie/stormaktstiden"
   },
   {
+    "term": "Gullplatene",
+    "definition": "Platene av gull Joseph Smith sa han fant og oversatte til Mormons bok. Kirken lærer at de senere ble tatt tilbake av engelen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "gullplater"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
     "term": "Gullstandard",
     "aliases": [
       "gullstandarden",
@@ -1042,6 +2136,16 @@
     "subject": "samfunnskunnskap"
   },
   {
+    "term": "Gurbani",
+    "definition": "Ordene til guruene, altså hymnene i den hellige boka Guru Granth Sahib.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme",
+      "tekster"
+    ]
+  },
+  {
     "term": "gurdwara",
     "definition": "Sikhismens gudshus. Navnet betyr 'porten til guruen'.",
     "subject": "krle",
@@ -1052,8 +2156,18 @@
     "type": "concept"
   },
   {
+    "term": "Gurmukhi",
+    "definition": "Skriftspråket sikhenes hellige bok er skrevet med. Navnet betyr fra guruens munn.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme",
+      "tekster"
+    ]
+  },
+  {
     "term": "Guru Gobind Singh",
-    "definition": "Den tiende menneskelige guruen (1666–1708), som etablerte Khalsa-fellesskapet og overførte autoriteten til Guru Granth Sahib.",
+    "definition": "Den tiende menneskelige guruen (1666-1708), som etablerte Khalsa-fellesskapet og overførte autoriteten til Guru Granth Sahib.",
     "subject": "krle",
     "topic": "religion",
     "tags": [
@@ -1075,7 +2189,7 @@
   },
   {
     "term": "Guru Nanak",
-    "definition": "Den første av sikhismens ti guruer og grunnleggeren av religionen (1469–1539). Han forkynte likhet og troen på én Gud.",
+    "definition": "Den første av sikhismens ti guruer og grunnleggeren av religionen (1469-1539). Han forkynte likhet og troen på én Gud.",
     "subject": "krle",
     "topic": "religion",
     "tags": [
@@ -1095,12 +2209,66 @@
     "type": "concept"
   },
   {
+    "term": "Gyges' ring",
+    "definition": "Platons tankeeksperiment om en gjeter som fant en ring som gjorde ham usynlig. Spørsmålet er: ville du fortsatt vært et godt menneske hvis ingen kunne se deg?",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Gyges ring",
+      "ringen til Gyges",
+      "Gyges"
+    ],
+    "tags": [
+      "filosofi",
+      "etikk"
+    ]
+  },
+  {
     "term": "Habsburgerne",
     "definition": "Det mektige kongehuset som styrte Det tysk-romerske riket, Spania og Østerrike.",
     "subject": "historie",
     "topic": "reformasjonen",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Hadith",
+    "definition": "Korte fortellinger om hva Muhammad sa og gjorde. De ble samlet på 800- og 900-tallet og brukes til å forstå hvordan man skal leve.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "hadithene",
+      "hadith-samlingene",
+      "hadithsamlingene"
+    ],
+    "tags": [
+      "islam",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Hajj",
+    "definition": "Pilegrimsreisen til Mekka. Alle muslimer som har helse og råd, skal dra minst én gang i livet.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "hajjen"
+    ],
+    "tags": [
+      "islam"
+    ]
+  },
+  {
+    "term": "Halal",
+    "definition": "Det som er tillatt etter islamske regler. Ordet brukes mest om mat, og motsatsen er haram, det forbudte.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "halalmat"
+    ],
+    "tags": [
+      "islam"
+    ]
   },
   {
     "term": "Hamartia",
@@ -1123,6 +2291,20 @@
     ]
   },
   {
+    "term": "Hanukka",
+    "definition": "Den jødiske lysfesten. Én ekstra flamme tennes hver kveld i åtte dager til minne om at tempelet ble tatt tilbake.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "hanukkah",
+      "chanukka"
+    ],
+    "tags": [
+      "jødedom",
+      "høytid"
+    ]
+  },
+  {
     "term": "Harem",
     "aliases": [
       "haremet",
@@ -1137,6 +2319,38 @@
       "palass"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Harmageddon",
+    "definition": "Det avgjørende slaget Jehovas vitner venter på, der Gud gjør slutt på den nåværende verden. Ordet står bare ett sted i Bibelen.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jehovas vitner"
+    ]
+  },
+  {
+    "term": "Harmandir Sahib",
+    "definition": "Sikhenes viktigste tempel, i byen Amritsar i India. Her ligger et av verdens største kjøkken, som gir gratis mat til alle.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Det gylne tempel",
+      "Det gylne tempelet",
+      "gylne tempel"
+    ],
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Haumai",
+    "definition": "Det å bare tenke på seg selv. Ifølge sikhismen er det haumai som skiller mennesket fra Gud.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme"
+    ]
   },
   {
     "term": "Helhet",
@@ -1264,6 +2478,15 @@
     "subject": "historie"
   },
   {
+    "term": "Hukam",
+    "definition": "Guds vilje eller befaling, planen Gud styrer verden etter. Å ta hukam betyr også å åpne den hellige boka tilfeldig og lese hymnen øverst på siden.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
     "term": "Humanisme",
     "definition": "Livssyn som setter mennesket i sentrum og bygger på fornuft, etikk og menneskeverd uten religion. Har røtter i renessansen.",
     "type": "concept",
@@ -1273,6 +2496,19 @@
     "term": "Humes giljotin",
     "definition": "Filosofisk regel oppkalt etter David Hume: man kan ikke utlede en moralsk «bør» fra en faktisk «er». Hva som er, sier ikke noe om hva som bør være.",
     "type": "concept"
+  },
+  {
+    "term": "Huppa",
+    "definition": "Baldakinen brudeparet står under i et jødisk bryllup, et tak av stoff på fire stenger.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "huppaen"
+    ],
+    "tags": [
+      "jødedom",
+      "overgangsriter"
+    ]
   },
   {
     "term": "Hyperinflasjon",
@@ -1286,6 +2522,22 @@
     "subject": "historie"
   },
   {
+    "term": "Id al-fitr",
+    "definition": "Festen som avslutter fasten i ramadan. Folk kler seg fint, spiser sammen og gir gaver.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "eid al-fitr",
+      "id-al-fitr",
+      "id al-adha",
+      "eid"
+    ],
+    "tags": [
+      "islam",
+      "høytid"
+    ]
+  },
+  {
     "term": "Identitet",
     "definition": "Det som gjør deg til deg - kjønn, språk, kultur, tro, gruppetilhørighet. Identitet kan både samle og skille mennesker.",
     "type": "concept",
@@ -1295,6 +2547,32 @@
     "term": "Ideologi",
     "definition": "Et helhetlig sett med ideer om hvordan samfunnet bør være. Liberalisme, sosialisme og konservatisme er eksempler på politiske ideologier.",
     "type": "concept"
+  },
+  {
+    "term": "Idéverdenen",
+    "definition": "Platons tanke om at det finnes en verden av perfekte forbilder bak den verdenen vi ser. En sirkel vi tegner er alltid litt skjev, men den perfekte sirkelen finnes som idé.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "idéverden",
+      "ideenes verden",
+      "ideverdenen"
+    ],
+    "tags": [
+      "filosofi"
+    ]
+  },
+  {
+    "term": "Ikonostas",
+    "definition": "Veggen av hellige bilder i en ortodoks kirke, mellom folket og den delen der presten gjør tjeneste. Den har tre dører som åpnes på bestemte tidspunkt.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "ikonostasen"
+    ],
+    "tags": [
+      "kristendom"
+    ]
   },
   {
     "term": "Il Duce",
@@ -1307,6 +2585,33 @@
       "italia",
       "mussolini",
       "diktatur"
+    ]
+  },
+  {
+    "term": "Imago dei",
+    "definition": "Latin for Guds bilde. Tanken om at mennesket er skapt i Guds bilde og derfor har en helt egen verdi.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "gudsbilde i mennesket"
+    ],
+    "tags": [
+      "kristendom",
+      "etikk"
+    ]
+  },
+  {
+    "term": "Imam",
+    "definition": "Den som leder bønnen i en moské. I sjiaislam betyr ordet også en av lederne som stammer fra Muhammads familie.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "imamen",
+      "imamer",
+      "imamene"
+    ],
+    "tags": [
+      "islam"
     ]
   },
   {
@@ -1346,6 +2651,18 @@
     "type": "concept"
   },
   {
+    "term": "Inkarnasjon",
+    "definition": "Troen på at Gud ble menneske i Jesus. Ordet betyr å bli kjøtt.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "inkarnasjonen"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Innovasjon",
     "definition": "Når noen finner opp eller forbedrer noe slik at det skaper ny verdi - en idé, et produkt eller en måte å gjøre ting på.",
     "type": "concept"
@@ -1380,6 +2697,19 @@
     "subject": "historie"
   },
   {
+    "term": "Jahve",
+    "definition": "En vanlig måte å uttale Guds navn i den hebraiske bibelen på. De fire bokstavene JHVH ble skrevet uten vokaler.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Yahweh"
+    ],
+    "tags": [
+      "jødedom",
+      "historiske religioner"
+    ]
+  },
+  {
     "term": "Janitsjar",
     "aliases": [
       "janitsjarer",
@@ -1397,6 +2727,32 @@
     "subject": "historie"
   },
   {
+    "term": "Japji",
+    "definition": "Morgenbønnen i sikhismen, skrevet av Guru Nanak. Mange sikher leser den utenat før daggry.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Japji Sahib"
+    ],
+    "tags": [
+      "sikhisme",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Jati",
+    "definition": "De tusenvis av lokale gruppene folk faktisk lever i, ofte knyttet til yrke. Varna er den brede rammen, jati er gruppene i praksis.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "jatier"
+    ],
+    "tags": [
+      "hinduisme",
+      "samfunn"
+    ]
+  },
+  {
     "term": "Jazz Age",
     "definition": "Engelsk: «jazzalderen». Tilnavnet på 1920-tallet i USA, da jazzen erobret klubbene, kvinner fikk stemmerett og kulturen brøt med tradisjonene.",
     "type": "concept"
@@ -1405,6 +2761,18 @@
     "term": "Jazz",
     "definition": "En musikksjanger som oppsto i det afroamerikanske miljøet i USA tidlig på 1900-tallet. Kjennetegnes av spilleglede, improvisasjon og synkoperte rytmer.",
     "type": "concept"
+  },
+  {
+    "term": "Jehova",
+    "definition": "Den formen av Guds navn Jehovas vitner bruker. De mener det er avgjørende å bruke navnet, ikke bare si Gud eller Herren.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Jehovas"
+    ],
+    "tags": [
+      "jehovas vitner"
+    ]
   },
   {
     "term": "Jernteppet",
@@ -1419,9 +2787,42 @@
     "type": "concept"
   },
   {
+    "term": "Jesusbønnen",
+    "definition": "Den korte bønnen «Herre Jesus Kristus, forbarm deg over meg», som gjentas om og om igjen. Den er viktig i ortodoks kristendom.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "kristendom",
+      "bønn"
+    ]
+  },
+  {
     "term": "Jim Crow-lovene",
     "definition": "Lover i amerikanske sørstater fra 1870-tallet til 1965 som påla raseskille på skoler, busser, vannposter og restauranter. Navnet kommer fra en rasistisk sceneskikkelse.",
     "type": "concept"
+  },
+  {
+    "term": "John Rawls",
+    "definition": "Amerikansk filosof (1921-2002) som spurte hvordan et rettferdig samfunn ser ut. Svaret hans bygger på uvitenhetens slør.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Rawls"
+    ],
+    "tags": [
+      "filosofi",
+      "etikk"
+    ]
+  },
+  {
+    "term": "Jom kippur",
+    "definition": "Forsoningsdagen, den alvorligste dagen i det jødiske året. Da faster man og ber om tilgivelse.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jødedom",
+      "høytid"
+    ]
   },
   {
     "term": "justinianerpesten",
@@ -1447,6 +2848,19 @@
     "subject": "historie"
   },
   {
+    "term": "Kaba",
+    "definition": "Det terningformede bygget midt i moskeen i Mekka. Det er punktet alle muslimer vender seg mot i bønn.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Kaaba",
+      "Kabaen"
+    ],
+    "tags": [
+      "islam"
+    ]
+  },
+  {
     "term": "Kalifat",
     "aliases": [
       "kalif",
@@ -1464,6 +2878,19 @@
     "subject": "historie"
   },
   {
+    "term": "Kalkedon",
+    "definition": "Kirkemøtet i år 451 som slo fast at Jesus er helt Gud og helt menneske på én gang, uten at de to blandes sammen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kirkemøtet i Kalkedon",
+      "to-natur-læren"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Kalmarunionen",
     "definition": "En personalunion mellom kongerikene Danmark, Norge og Sverige (inkludert Finland) som varte fra 1397 til 1523. Unionen ble styrt fra Danmark, noe som førte til stadige konflikter med den svenske adelen.",
     "type": "concept",
@@ -1474,6 +2901,44 @@
     ],
     "subject": "historie",
     "link": "/historie/sveriges-historie/sveriges-historie"
+  },
+  {
+    "term": "Kalpa",
+    "definition": "En verdensalder i hinduismen, mange milliarder år lang. Verden blir skapt og går under igjen og igjen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kalpaer"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Kanjur",
+    "definition": "Den tibetanske samlingen av tekster som regnes som Buddhas egne ord.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Kanjuren"
+    ],
+    "tags": [
+      "buddhisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Kanon",
+    "definition": "Samlingen av tekster som et fellesskap har godtatt som de gyldige og hellige. Tekster utenfor kanon regnes ikke med.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kanonen"
+    ],
+    "tags": [
+      "religion",
+      "tekster"
+    ]
   },
   {
     "term": "kapitalisme",
@@ -1501,6 +2966,19 @@
     "subject": "samfunnskunnskap"
   },
   {
+    "term": "Karah prasad",
+    "definition": "En søt puding som deles ut til alle som er til stede etter samlingen i gurdwaraen. Alle får den samme, uansett hvem de er.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "karah-prasad",
+      "prasad"
+    ],
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
     "term": "Karakterarketyper",
     "definition": "Universelle rollemønstre eller «grunntyper» av karakterer som går igjen i historier på tvers av kulturer, som for eksempel Helten, Mentoren, Skyggen eller Hjelperen.",
     "link": "/norsk/skrivehjelp/hvordan-lage-karakterer",
@@ -1511,6 +2989,55 @@
     "definition": "Prosessen der en karakter i en historie endrer seg, vokser eller lærer noe nytt som følge av hendelsene de opplever. God karakterutvikling gjør at figurene føles levende og tredimensjonale.",
     "link": "/norsk/skrivehjelp/hvordan-lage-karakterer",
     "type": "concept"
+  },
+  {
+    "term": "Karma",
+    "definition": "Tanken om at alt du gjør får følger for deg senere, også i neste liv. Gode handlinger gir god karma, dårlige gir dårlig karma.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "karmaen"
+    ],
+    "tags": [
+      "hinduisme",
+      "buddhisme",
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Kastesystemet",
+    "definition": "Inndelingen av mennesker i grupper man fødes inn i, med ulike yrker og ulik status. Systemet er forbudt ved lov i India, men lever videre mange steder.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kastesystem",
+      "kaste",
+      "kaster",
+      "kastene"
+    ],
+    "tags": [
+      "hinduisme",
+      "samfunn"
+    ]
+  },
+  {
+    "term": "Kaur",
+    "definition": "Navnet alle sikh-kvinner får, og som betyr prinsesse. Menn får navnet Singh, løve. Da forsvinner etternavn som røper kaste.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Ketuvim",
+    "definition": "Skriftene, den tredje delen av den hebraiske bibelen. Her ligger blant annet Salmene og Jobs bok.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
   },
   {
     "term": "Keynesiansk",
@@ -1555,6 +3082,36 @@
     "subject": "krle"
   },
   {
+    "term": "Kipa",
+    "definition": "Den lille runde luen mange jødiske gutter og menn har på hodet når de ber, leser hellige tekster eller spiser.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kipaen",
+      "kalott",
+      "kalotten"
+    ],
+    "tags": [
+      "jødedom",
+      "klær"
+    ]
+  },
+  {
+    "term": "Kirkemøte",
+    "definition": "En stor forsamling av biskoper og ledere som avgjorde hva kirken skulle mene. Møtene i Nikea i 325 og Kalkedon i 451 er de mest kjente.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kirkemøter",
+      "kirkemøtene",
+      "konsil",
+      "konsilet"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Kirtan",
     "definition": "Lovsang og musikalsk fremføring av hymner fra Guru Granth Sahib, som er en sentral del av sikh-tilbedelse.",
     "subject": "krle",
@@ -1564,6 +3121,20 @@
       "ritual"
     ],
     "type": "concept"
+  },
+  {
+    "term": "Kitáb-i-Aqdas",
+    "definition": "Bahá'í-troens helligste bok, skrevet av Bahá'u'lláh. Navnet betyr Den helligste boken.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Kitab-i-Aqdas",
+      "Aqdas"
+    ],
+    "tags": [
+      "bahai",
+      "tekster"
+    ]
   },
   {
     "term": "Kjærlighet",
@@ -1633,6 +3204,46 @@
     "topic": "kinas-historie"
   },
   {
+    "term": "Koranen",
+    "definition": "Islams hellige bok. Muslimer tror den er Guds egne ord, gitt til Muhammad gjennom engelen Gabriel.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Koran",
+      "Koranens"
+    ],
+    "tags": [
+      "islam",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Kosher",
+    "definition": "Mat som er tillatt etter jødiske regler. Svin og skalldyr er ikke kosher, og kjøtt og melk skal ikke blandes.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kosjer"
+    ],
+    "tags": [
+      "jødedom"
+    ]
+  },
+  {
+    "term": "Kreasjonisme",
+    "definition": "Troen på at skapelsesfortellingen i Bibelen skal leses helt bokstavelig, og at verden derfor ble til på seks dager.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "kreasjonismen",
+      "kreasjonister",
+      "kreasjonistisk"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Kreativitet",
     "definition": "Evnen til å skape noe nytt og verdifullt. Drives ofte fram av kombinasjonen av tvang (begrensninger) og frihet.",
     "type": "concept"
@@ -1662,6 +3273,18 @@
     "subject": "historie"
   },
   {
+    "term": "Krishna",
+    "definition": "En av de mest elskede gudeskikkelsene i hinduismen, og en av formene Vishnu tar. Han er hovedperson i Bhagavadgita.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Krishnas"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
     "term": "Kulturrevolusjonen",
     "aliases": [
       "Kulturrevolusjonen",
@@ -1680,10 +3303,46 @@
     "link": "/historie/kinas-historie/store-spranget"
   },
   {
+    "term": "Kumbh Mela",
+    "definition": "Verdens største religiøse samling. Millioner av hinduer bader i hellige elver i India for å bli renset.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "høytid"
+    ]
+  },
+  {
     "term": "Kunnskap",
     "definition": "Det vi vet og kan begrunne. Filosofer skiller mellom å kjenne til noe (informasjon), å forstå hvorfor (innsikt), og å vite hvordan (ferdighet).",
     "type": "concept",
     "link": "/historie/teknologi-og-hverdagsliv/boktrykkerkunsten"
+  },
+  {
+    "term": "Lære og pakter",
+    "definition": "En av de fire hellige bøkene i mormonkirken. Den samler tekster kirken mener Gud ga til Joseph Smith og senere ledere.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "mormonisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Læstadianismen",
+    "definition": "En streng kristen vekkelsesbevegelse med samiske røtter, startet av presten Lars Levi Læstadius på 1800-tallet. Den brukte samisk språk i kirken.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "læstadianisme",
+      "læstadianere",
+      "læstadiansk",
+      "læstadianske"
+    ],
+    "tags": [
+      "kristendom",
+      "samisk"
+    ]
   },
   {
     "term": "langar",
@@ -1812,6 +3471,52 @@
     "type": "concept"
   },
   {
+    "term": "Mahabharata",
+    "definition": "Et enormt indisk heltedikt om en krig mellom to slektsgrener. Bhagavadgita er en liten del av det.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Mahayana",
+    "definition": "Den andre av buddhismens to store hovedretninger, vanligst i Øst-Asia. Her står bodhisattvaene sentralt som hjelpere folk kan be til.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "mahayana-buddhismen",
+      "mahayanabuddhismen"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Mahr",
+    "definition": "Gaven mannen gir kona ved inngåelsen av ekteskapet. Den skal stå nevnt i ekteskapskontrakten.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "mahren"
+    ],
+    "tags": [
+      "islam",
+      "overgangsriter"
+    ]
+  },
+  {
+    "term": "Maimonides",
+    "definition": "Jødisk lege og filosof (1138-1204). Han skrev tretten setninger om hva jødedommen tror på, og de brukes fortsatt.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jødedom",
+      "filosofi"
+    ]
+  },
+  {
     "term": "Mandatområde",
     "definition": "Et område som administreres av en stat på vegne av Folkeforbundet (senere FN), ofte en tidligere koloni.",
     "subject": "historie",
@@ -1847,6 +3552,20 @@
     "type": "concept"
   },
   {
+    "term": "Manifestasjon",
+    "definition": "Bahá'íenes ord for de store sendebudene fra Gud, blant andre Abraham, Buddha, Jesus, Muhammad og Bahá'u'lláh. De speiler Guds egenskaper for menneskene.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "manifestasjoner",
+      "manifestasjonene",
+      "Guds manifestasjoner"
+    ],
+    "tags": [
+      "bahai"
+    ]
+  },
+  {
     "term": "Mannebot",
     "aliases": [
       "manngjeld"
@@ -1860,6 +3579,21 @@
       "norront"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Mantra",
+    "definition": "Ord eller korte setninger som gjentas mange ganger under bønn eller meditasjon. Lyden i seg selv regnes som viktig.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "mantraer",
+      "mantraet",
+      "mantraene"
+    ],
+    "tags": [
+      "hinduisme",
+      "buddhisme"
+    ]
   },
   {
     "term": "Marshallhjelpen",
@@ -1891,6 +3625,20 @@
     "term": "Meditasjon",
     "definition": "Øvelse der man fokuserer oppmerksomheten for å oppnå indre ro eller åndelig innsikt. Sentral i buddhismen, hinduismen og kristen mystikk.",
     "type": "concept"
+  },
+  {
+    "term": "Menighet",
+    "definition": "Den lokale gruppa av troende som møtes fast et sted, for eksempel i en kirke eller en forsamlingssal.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "menigheten",
+      "menigheter",
+      "menighetene"
+    ],
+    "tags": [
+      "religion"
+    ]
   },
   {
     "term": "Menneskeheten",
@@ -1935,9 +3683,75 @@
     "link": "/historie/middelalderen/tidlig-middelalder"
   },
   {
+    "term": "Messias",
+    "definition": "Betyr den salvede. I jødedommen en konge Gud skal sende for å redde folket. Kristne mener Jesus allerede er denne redningsmannen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "messiansk"
+    ],
+    "tags": [
+      "jødedom",
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Metafysikk",
+    "definition": "Den delen av filosofien som spør hva som egentlig finnes, bak det vi kan se og måle.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "metafysisk",
+      "metafysiske"
+    ],
+    "tags": [
+      "filosofi"
+    ]
+  },
+  {
+    "term": "Middelveien",
+    "definition": "Å holde seg midt mellom to ytterpunkter. Buddha mente veien går mellom luksus og streng selvpining, og Aristoteles mente mot ligger mellom feighet og dumdristighet.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "den gyldne middelvei",
+      "gyldne middelvei"
+    ],
+    "tags": [
+      "buddhisme",
+      "etikk"
+    ]
+  },
+  {
+    "term": "Midrasj",
+    "definition": "Tekster som graver i bibelversene og leter etter mening mellom linjene. Midrasj dikter ofte videre på fortellingen for å få fram et poeng.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "midrasjer",
+      "midrasjen"
+    ],
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
+  },
+  {
     "term": "Migrasjon",
     "definition": "Når mennesker flytter fra ett område til et annet. Folkevandringer har formet historie og kultur i alle tidsepoker.",
     "type": "concept"
+  },
+  {
+    "term": "Mihrab",
+    "definition": "En fordypning i veggen i en moské, som regel formet som en portal. Den viser hvilken vei Mekka ligger.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "mihraben"
+    ],
+    "tags": [
+      "islam"
+    ]
   },
   {
     "term": "Millet",
@@ -1957,9 +3771,71 @@
     "subject": "historie"
   },
   {
+    "term": "Minjan",
+    "definition": "De ti voksne som etter tradisjonen må være til stede for at bønnen skal regnes som offentlig gudstjeneste og ikke bare privat bønn.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "minjanen"
+    ],
+    "tags": [
+      "jødedom",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Minnehøytiden",
+    "definition": "Den eneste årlige høytiden hos Jehovas vitner, til minne om Jesu død. Brød og vin sendes rundt, men bare de få i den salvede resten smaker på det.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "minnehøytid"
+    ],
+    "tags": [
+      "jehovas vitner"
+    ]
+  },
+  {
+    "term": "Mishna",
+    "definition": "Den eldste nedskrevne samlingen av jødiske lovtolkninger, satt sammen rundt år 200.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Misjna"
+    ],
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
+  },
+  {
     "term": "Mission Civilisatrice",
     "definition": "Fransk: «sivilisasjonsoppdraget». Frankrikes selvrettferdige rettferdiggjøring av koloniseringen - de skulle bringe sivilisasjon til andre folk.",
     "type": "concept"
+  },
+  {
+    "term": "Mitzva",
+    "definition": "En religiøs plikt eller et bud. Jødedommen regner med 613 slike bud i Toraen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "mitzvot",
+      "mitsva",
+      "mitsvot",
+      "mitzvaer"
+    ],
+    "tags": [
+      "jødedom"
+    ]
+  },
+  {
+    "term": "Moksha",
+    "definition": "Å slippe ut av kretsløpet med stadig nye liv. Hinduer er uenige om hva det innebærer: å bli ett med alt som finnes, eller å leve evig nær en gud.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme"
+    ]
   },
   {
     "term": "Molotov-Ribbentrop-pakten",
@@ -2003,6 +3879,71 @@
     "subject": "krle"
   },
   {
+    "term": "Mormons bok",
+    "definition": "Boka Joseph Smith sa han oversatte fra gullplater han fikk vist av engelen Moroni. Den handler om folk som skal ha levd i Amerika i gammel tid.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "mormonisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Moroni",
+    "definition": "Engelen som ifølge Joseph Smith viste ham hvor gullplatene lå gjemt. Statuen på toppen av mormontemplene forestiller ham.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "engelen Moroni"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
+    "term": "Mosebøkene",
+    "definition": "De fem første bøkene i Bibelen. De heter Første til Femte Mosebok, og utgjør Toraen i jødedommen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Mosebok"
+    ],
+    "tags": [
+      "jødedom",
+      "kristendom",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Moseloven",
+    "definition": "Budene og reglene som ifølge Bibelen ble gitt gjennom Moses, blant annet de ti bud.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Moselovene"
+    ],
+    "tags": [
+      "jødedom",
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Moské",
+    "definition": "Muslimenes forsamlingshus. Her ber folk sammen, særlig ved fredagsbønnen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "moskeen",
+      "moskeer",
+      "moskeene",
+      "moskéen"
+    ],
+    "tags": [
+      "islam"
+    ],
+    "link": "/krle/sammenligning/hellige-rom"
+  },
+  {
     "term": "motiv",
     "definition": "Drivkraften bak en karakters handlinger. Det de ønsker å oppnå eller unngå. Uten et tydelig motiv blir karakteren ofte passiv og handlingen retningsløs.",
     "subject": "norsk",
@@ -2029,9 +3970,58 @@
     ]
   },
   {
+    "term": "Mukti",
+    "definition": "Målet i sikhismen: å slippe å bli født på nytt igjen og igjen, og i stedet bli ett med Gud. De fleste sikher mener mukti kan nås mens du lever.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Mul Mantar",
+    "definition": "Den aller første linja i sikhenes hellige bok. Den beskriver Gud i åtte korte punkter, blant annet at Gud er én og uten frykt.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Mul Mantra",
+      "grunnlinja"
+    ],
+    "tags": [
+      "sikhisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Murti",
+    "definition": "Gudebildet eller figuren på alteret i et hindutempel. Etter at den er innviet, blir den behandlet som levende: den vaskes, kles på og får mat.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "murtien",
+      "murtier",
+      "murtiene"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
     "term": "Mutual Assured Destruction",
     "definition": "Doktrinen om gjensidig garantert ødeleggelse. USA og Sovjet hadde så mange atomvåpen at angrep ville ødelegge begge - derfor turte ingen angripe.",
     "type": "concept"
+  },
+  {
+    "term": "Nåde",
+    "definition": "At Gud tilgir og tar imot mennesket gratis, uten at man har gjort seg fortjent til det.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "nåden"
+    ],
+    "tags": [
+      "kristendom"
+    ]
   },
   {
     "term": "Nakba",
@@ -2048,6 +4038,19 @@
       "israel",
       "flukt",
       "1948"
+    ]
+  },
+  {
+    "term": "Nam simran",
+    "definition": "Å gjenta Guds navn, oftest Vahiguru, om og om igjen. Dette er kjernen i sikhenes bønn.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "simran"
+    ],
+    "tags": [
+      "sikhisme",
+      "bønn"
     ]
   },
   {
@@ -2108,6 +4111,18 @@
     "topic": "nasjonalstatenes-tid"
   },
   {
+    "term": "Nattverd",
+    "definition": "Måltidet med brød og vin i gudstjenesten, til minne om Jesu siste måltid med vennene sine.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "nattverden"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "id": "naturalhandel",
     "term": "Naturalhandel (Byttehandel)",
     "definition": "En økonomisk ordning der man bytter varer eller tjenester direkte mot hverandre uten å bruke penger som mellomledd.",
@@ -2125,9 +4140,60 @@
     "type": "concept"
   },
   {
+    "term": "Neviim",
+    "definition": "Profetene, den andre delen av den hebraiske bibelen.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
+  },
+  {
     "term": "The New Deal",
     "definition": "En rekke økonomiske reformer og programmer innført av president Roosevelt for å bekjempe depresjonen i USA gjennom statlig inngripen og støtte.",
     "type": "concept"
+  },
+  {
+    "term": "Nihilisme",
+    "definition": "Troen på at noe vi tar for gitt, egentlig ikke finnes. Moralsk nihilisme sier at ingen handling er rett eller gal i seg selv.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "nihilismen",
+      "nihilist",
+      "nihilistisk"
+    ],
+    "tags": [
+      "filosofi",
+      "etikk"
+    ],
+    "link": "/krle/etikk/nihilisme"
+  },
+  {
+    "term": "Nirvana",
+    "definition": "Målet i buddhismen: at begjæret slukner, og at du dermed slipper å bli født på nytt igjen og igjen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "nirvanaen"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Noaidi",
+    "definition": "Den religiøse lederen i samisk tradisjon. Han kunne reise i åndeverdenen ved hjelp av tromme og joik.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "noaiden",
+      "noaider"
+    ],
+    "tags": [
+      "samisk"
+    ]
   },
   {
     "term": "Nøytralitet",
@@ -2170,6 +4236,19 @@
     "subject": "samfunnskunnskap"
   },
   {
+    "term": "Ny verden-oversettelsen",
+    "definition": "Jehovas vitners egen bibeloversettelse. Den skriver navnet Jehova mange steder der andre oversettelser skriver Herren.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Ny verden-oversettelse"
+    ],
+    "tags": [
+      "jehovas vitner",
+      "tekster"
+    ]
+  },
+  {
     "term": "nykolonialisme",
     "definition": "Når rike land og store selskaper styrer fattigere land økonomisk - gjennom lån, gjeld og handel - selv etter at landene formelt har blitt frie og selvstendige.",
     "subject": "historie",
@@ -2184,12 +4263,39 @@
     "type": "concept"
   },
   {
+    "term": "Økumenikk",
+    "definition": "Arbeidet for at kirkesamfunn skal forstå hverandre og samarbeide igjen. Ordet kommer av det greske ordet for den bebodde verden.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "økumenisk",
+      "økumeniske",
+      "økumenikken"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "oligarki",
     "definition": "En liten gruppe mennesker (fåmannsvelde) har all makten. Ofte er dette de rikeste i samfunnet, eller en militærjunta.",
     "subject": "samfunnskunnskap",
     "topic": "styringsformer",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Omelas",
+    "definition": "Byen i Ursula K. Le Guins fortelling der alle har det perfekt, men bare fordi ett barn holdes innelåst i lidelse. Den spør om lykke kan bygges på urett.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "byen Omelas"
+    ],
+    "tags": [
+      "filosofi",
+      "etikk"
+    ]
   },
   {
     "term": "Omveisproduksjon",
@@ -2256,9 +4362,63 @@
     "type": "concept"
   },
   {
+    "term": "Oppstandelsen",
+    "definition": "Troen på at Jesus ble levende igjen tredje dagen etter at han døde på korset, og at menneskene også skal stå opp fra de døde.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "oppstandelse",
+      "oppstandelsen fra de døde"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Organisasjon",
     "definition": "En strukturert gruppe mennesker som jobber mot felles mål, med fordelte roller og regler. Bedrifter, idrettslag og FN er alle organisasjoner.",
     "type": "concept"
+  },
+  {
+    "term": "Ortodoks",
+    "definition": "Betyr rettroende. Ordet brukes både om de ortodokse kirkene i øst og om jøder og andre som holder strengt på den gamle læren og reglene.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "ortodokse",
+      "ortodoksi"
+    ],
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "term": "Overgangsrite",
+    "definition": "En seremoni som markerer at et menneske går fra en fase i livet til en annen, for eksempel fødsel, voksenliv, bryllup eller død.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "overgangsriter",
+      "overgangsriten",
+      "overgangsritene",
+      "rite de passage"
+    ],
+    "tags": [
+      "religion",
+      "ritual"
+    ]
+  },
+  {
+    "term": "Overmennesket",
+    "definition": "Nietzsches idé om et menneske som lager sine egne verdier i stedet for å arve dem, og som sier ja til livet slik det er, med all smerten.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "overmenneske"
+    ],
+    "tags": [
+      "filosofi"
+    ]
   },
   {
     "term": "OVRA",
@@ -2375,12 +4535,70 @@
     "type": "concept"
   },
   {
+    "term": "Pesach",
+    "definition": "Den jødiske påsken. Den feirer at israelittene slapp fri fra slaveriet i Egypt.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "pesah"
+    ],
+    "tags": [
+      "jødedom",
+      "høytid"
+    ]
+  },
+  {
     "term": "petrodollar",
     "definition": "Amerikanske dollar tjent på salg av olje. Fordi nesten all olje i verden kjøpes i dollar, trenger alle land dollar, noe som holder den amerikanske valutaen sterk.",
     "subject": "samfunnskunnskap",
     "topic": "okonomi",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Pilegrim",
+    "definition": "En som reiser til et hellig sted for å be, takke eller komme nærmere Gud.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "pilegrimer",
+      "pilegrimen",
+      "pilegrimsreise",
+      "pilegrimsreiser",
+      "pilegrimsreisen"
+    ],
+    "tags": [
+      "religion"
+    ]
+  },
+  {
+    "term": "Pinse",
+    "definition": "Den kristne høytiden femti dager etter påske. Da skal Den hellige ånd ha kommet over apostlene, og kirken regner det som sin fødselsdag.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "pinsen",
+      "pinsedag",
+      "pinsedagen"
+    ],
+    "tags": [
+      "kristendom",
+      "høytid"
+    ]
+  },
+  {
+    "term": "Pinsebevegelsen",
+    "definition": "En kristen bevegelse som startet tidlig på 1900-tallet, og som legger stor vekt på Den hellige ånd, voksendåp og tungetale.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "pinsevenner",
+      "pinsebevegelse",
+      "pinsemenighet"
+    ],
+    "tags": [
+      "kristendom"
+    ]
   },
   {
     "term": "Pliktetikk",
@@ -2433,6 +4651,33 @@
     "type": "concept"
   },
   {
+    "term": "Prestedømmet",
+    "definition": "Retten til å utføre hellige handlinger på Guds vegne. I mormonkirken kan gutter få dette fra de er tolv år, men kvinner kan ikke.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "prestedømme"
+    ],
+    "tags": [
+      "mormonisme",
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Profet",
+    "definition": "Et menneske som ifølge troen taler på Guds vegne og bringer beskjeder fra Gud videre til andre.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "profeten",
+      "profeter",
+      "profetene"
+    ],
+    "tags": [
+      "religion"
+    ]
+  },
+  {
     "term": "Proxy-krig",
     "aliases": [
       "proxy-kriger",
@@ -2451,6 +4696,80 @@
     ]
   },
   {
+    "term": "Puja",
+    "definition": "Tilbedelse av en gud, hjemme eller i tempelet. Man gir blomster, lys, mat og røkelse til gudebildet.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "pujaen",
+      "pujaer"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Punya",
+    "definition": "God karma som samles opp ved gode handlinger, for eksempel når folk gir mat og klær til munkene. Punya kan også gis videre til en som er død.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Purusha-hymnen",
+    "definition": "En hymne i Rigveda der verden blir til når urvesenet Purusha ofres. De fire varna-gruppene kommer ut av hver sin kroppsdel.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Purusha",
+      "Purusha-sukta"
+    ],
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Qibla",
+    "definition": "Retningen muslimer vender seg mot når de ber. Den peker mot Kaba i Mekka.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "qiblaen",
+      "bønneretningen"
+    ],
+    "tags": [
+      "islam",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Qiblih",
+    "definition": "Punktet bahá'íer vender seg mot når de ber: Bahá'u'lláhs grav ved Bahjí, like utenfor byen Akko i dagens Israel.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "bahai",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Rabbiner",
+    "definition": "En jødisk lærer som kan de hellige tekstene og svarer på hvordan reglene skal forstås. En rabbiner er ikke prest.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "rabbinere",
+      "rabbineren",
+      "rabbinerne"
+    ],
+    "tags": [
+      "jødedom"
+    ]
+  },
+  {
     "term": "Radar",
     "definition": "Teknologi som bruker radiobølger til å fastslå avstand, retning og hastighet til gjenstander som fly og skip.",
     "subject": "historie",
@@ -2465,6 +4784,29 @@
     "topic": "andre-verdenskrig",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Ramadan",
+    "definition": "Måneden da muslimer faster fra soloppgang til solnedgang. Det er da Koranen ifølge troen ble gitt til Muhammad.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "ramadanen"
+    ],
+    "tags": [
+      "islam",
+      "høytid"
+    ]
+  },
+  {
+    "term": "Ramayana",
+    "definition": "Det indiske heltediktet om prins Rama, som redder kona Sita fra demonkongen Ravana.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
   },
   {
     "term": "Rasisme",
@@ -2498,6 +4840,36 @@
     "type": "concept"
   },
   {
+    "term": "Reformjødedom",
+    "definition": "Retningen i jødedommen som mener budene må tilpasses vår egen tid. Her kan kvinner bli rabbinere.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "reformjødedommen",
+      "reformjøder",
+      "reformjødiske"
+    ],
+    "tags": [
+      "jødedom"
+    ]
+  },
+  {
+    "term": "Reinkarnasjon",
+    "definition": "Troen på at et menneske fødes på nytt i en ny kropp etter døden. Hinduisme, buddhisme og sikhisme regner med mange liv, ikke bare ett.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "reinkarnasjonen",
+      "gjenfødsel",
+      "gjenfødsler",
+      "gjenfødelse"
+    ],
+    "tags": [
+      "religion",
+      "død"
+    ]
+  },
+  {
     "term": "Rekognosering",
     "definition": "Militær speiding for å samle informasjon om fiendens posisjoner og styrker.",
     "subject": "historie",
@@ -2514,6 +4886,19 @@
     "term": "Religionsfrihet",
     "definition": "Retten til selv å velge tro og praktisere religion uten forfølgelse. Innebærer også retten til å ikke tro.",
     "type": "concept"
+  },
+  {
+    "term": "Rene land-buddhisme",
+    "definition": "En retning i mahayana der folk ber til buddhaen Amitabha om å bli født på nytt i hans rene land, et sted der det er lett å nå nirvana.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "rene land-buddhismen",
+      "rene land"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
   },
   {
     "term": "representativt demokrati",
@@ -2553,6 +4938,18 @@
     "type": "concept"
   },
   {
+    "term": "Rettferdiggjørelse",
+    "definition": "Å bli erklært rettferdig for Gud. Luther mente dette skjer bare gjennom tro, ikke gjennom gode gjerninger.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "rettferdiggjørelsen"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Rettferdighet",
     "definition": "At alle får det de fortjener etter rettferdige regler. Det kan bety lik fordeling, lik mulighet, eller at folk får igjen for det de gjør.",
     "type": "concept"
@@ -2585,9 +4982,62 @@
     "subject": "historie"
   },
   {
+    "term": "Ridván",
+    "definition": "Bahá'íenes viktigste høytid, i april og mai. Den minner om hagen der Bahá'u'lláh i 1863 sa hvem han var.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Ridvan",
+      "Ridván-hagen"
+    ],
+    "tags": [
+      "bahai",
+      "høytid"
+    ]
+  },
+  {
+    "term": "Rigveda",
+    "definition": "Den eldste av vedaene, en samling hymner til gudene.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
+  },
+  {
     "term": "Rikdom",
     "definition": "Å ha mer enn man trenger - ofte målt i penger, men også som tid, helse eller kunnskap. Hvordan rikdom fordeles bestemmer mye av et samfunns konflikter.",
     "type": "concept"
+  },
+  {
+    "term": "Rite",
+    "definition": "En handling som gjøres på en fast, bestemt måte fordi den betyr noe religiøst. Ordet brukes nesten likt med ritual.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "riter",
+      "riten",
+      "ritene"
+    ],
+    "tags": [
+      "religion",
+      "ritual"
+    ]
+  },
+  {
+    "term": "Ritual",
+    "definition": "En handling som gjentas etter faste regler og gir mening til dem som gjør den, for eksempel å tenne lys, vaske seg før bønn eller si de samme ordene hver gang.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "ritualer",
+      "ritualet",
+      "ritualene"
+    ],
+    "tags": [
+      "religion"
+    ]
   },
   {
     "term": "Det glade 20-tall",
@@ -2617,6 +5067,32 @@
     "type": "concept"
   },
   {
+    "term": "Rosenkrans",
+    "definition": "En perlesnor katolikker bruker til å holde tellingen når de ber de samme bønnene mange ganger.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "rosenkransen"
+    ],
+    "tags": [
+      "kristendom",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Rosh hashana",
+    "definition": "Det jødiske nyttåret. Da blåses det i et værhorn, og folk spiser eple med honning for et godt år.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "rosj hashana"
+    ],
+    "tags": [
+      "jødedom",
+      "høytid"
+    ]
+  },
+  {
     "term": "Royal Navy",
     "definition": "Storbritannias marine, verdens mektigste fra 1700-tallet til midten av 1900-tallet. Royal Navys herredømme gjorde Pax Britannica mulig.",
     "type": "concept"
@@ -2633,9 +5109,78 @@
     "subject": "historie"
   },
   {
+    "term": "Runebomme",
+    "definition": "Den samiske trommen noaiden brukte for å komme i kontakt med åndeverdenen. Mange ble brent av misjonærer på 1600- og 1700-tallet.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "runebommer",
+      "runebommene",
+      "runebomma",
+      "runebommen"
+    ],
+    "tags": [
+      "samisk"
+    ]
+  },
+  {
     "term": "Sårbarhet",
     "definition": "Når man kan bli skadet eller såret. Å vise sårbarhet kan være både en svakhet og en styrke i menneskelige relasjoner.",
     "type": "concept"
+  },
+  {
+    "term": "Sabbat",
+    "definition": "Den jødiske hviledagen, fra fredag kveld til lørdag kveld. Da skal man ikke arbeide, men hvile og feire.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sabbaten",
+      "shabbat",
+      "sjabbat",
+      "hviledagen"
+    ],
+    "tags": [
+      "jødedom",
+      "høytid"
+    ]
+  },
+  {
+    "term": "Sakrament",
+    "definition": "En hellig handling der Gud selv har bestemt hvordan den skal gjøres, for eksempel dåp og nattverd.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sakramenter",
+      "sakramentet",
+      "sakramentene"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Salat",
+    "definition": "De faste bønnene muslimer ber fem ganger i døgnet, til bestemte tider fra før soloppgang til kvelden.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "salah",
+      "bønnetidene",
+      "bønnetider"
+    ],
+    "tags": [
+      "islam",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Samadhi",
+    "definition": "Dyp konsentrasjon i meditasjon. Det er den ene av de tre delene Den åttedelte veien samles i.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "buddhisme"
+    ]
   },
   {
     "term": "Samfunnskontrakt",
@@ -2643,10 +5188,62 @@
     "type": "concept"
   },
   {
+    "term": "Samsara",
+    "definition": "Kretsløpet av fødsel, død og ny fødsel som alle levende vesener er fanget i. Målet i disse religionene er å komme ut av kretsløpet.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "samsaraen"
+    ],
+    "tags": [
+      "hinduisme",
+      "buddhisme",
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Samskara",
+    "definition": "Overgangsritene i hinduismen. De fleste holdes hjemme hos familien, ikke i et tempel.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "samskaraer",
+      "samskaraene"
+    ],
+    "tags": [
+      "hinduisme",
+      "overgangsriter"
+    ]
+  },
+  {
+    "term": "Sangha",
+    "definition": "Fellesskapet i buddhismen. Ordet brukes oftest om munkene og nonnene, men kan også bety alle buddhister.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sanghaen"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
     "term": "Sannhet",
     "definition": "Det som faktisk stemmer med virkeligheten. Filosofer skiller mellom sannhet som overensstemmelse med fakta, sannhet som indre opplevelse, og sannhet som det vi blir enige om.",
     "type": "concept",
     "link": "/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie"
+  },
+  {
+    "term": "Sanseverdenen",
+    "definition": "Platons ord for verden slik vi ser, hører og tar på den. Den er en ufullkommen kopi av idéverdenen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sanseverden"
+    ],
+    "tags": [
+      "filosofi"
+    ]
   },
   {
     "term": "Sapere aude",
@@ -2729,6 +5326,53 @@
     "type": "concept"
   },
   {
+    "term": "Seva",
+    "definition": "Uegennyttig tjeneste for andre, for eksempel å lage mat eller vaske gulv i gurdwaraen. Alle gjør det, uansett hvor rike de er.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sevaen"
+    ],
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Shahada",
+    "definition": "Trosbekjennelsen i islam: «Det finnes ingen gud utenom Gud, og Muhammad er hans profet.» Den som sier den høyt foran vitner, går over til islam.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "shahadaen",
+      "trosbekjennelsen i islam"
+    ],
+    "tags": [
+      "islam"
+    ]
+  },
+  {
+    "term": "Shaktismen",
+    "definition": "Retningen i hinduismen som setter gudinnen øverst, og som ser kraften bak verden som kvinnelig.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "shaktisme"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Shankara",
+    "definition": "Indisk tenker fra rundt år 800. Han utviklet advaita, læren om at sjelen din og verdenskraften brahman er nøyaktig det samme.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "filosofi"
+    ]
+  },
+  {
     "term": "Sharia",
     "aliases": [
       "sharialov",
@@ -2744,6 +5388,30 @@
       "osmanske-riket"
     ],
     "subject": "krle"
+  },
+  {
+    "term": "Shavuot",
+    "definition": "Den jødiske høytiden som feirer at folket fikk Toraen på Sinaifjellet.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jødedom",
+      "høytid"
+    ]
+  },
+  {
+    "term": "Shema",
+    "definition": "Den viktigste jødiske bønnen: «Hør, Israel! Herren er vår Gud, Herren er én.» Den sies morgen og kveld.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sjema",
+      "Shema Jisrael"
+    ],
+    "tags": [
+      "jødedom",
+      "bønn"
+    ]
   },
   {
     "term": "Shiaislam",
@@ -2766,10 +5434,103 @@
     ]
   },
   {
+    "term": "Shirk",
+    "definition": "Å sette noe eller noen ved siden av Gud. Koranen sier at Gud tilgir alt annet, men ikke dette.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "islam"
+    ]
+  },
+  {
+    "term": "Shiva",
+    "definition": "En av hinduismens to største guder. Han både ødelegger og skaper på nytt, og blir ofte framstilt dansende.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Shivas"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Shivaismen",
+    "definition": "Retningen i hinduismen som setter Shiva øverst av alle guder.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "shivaisme"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Shoghi Effendi",
+    "definition": "Oldebarnet til Bahá'u'lláh, som ledet bahá'í-troen i 36 år og oversatte tekstene til engelsk.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "bahai"
+    ]
+  },
+  {
     "term": "Show, don't tell",
     "definition": "En skriveteknikk der man viser hva som skjer eller hva en karakter føler gjennom handlinger, sanser og detaljer, i stedet for å bare fortelle det direkte til leseren (f.eks. ved å beskrive skjelvende hender i stedet for å skrive «han var redd»).",
     "link": "/norsk/skrivehjelp/hvordan-lage-karakterer",
     "type": "concept"
+  },
+  {
+    "term": "Shruti",
+    "definition": "Betyr det som er hørt. De aller helligste tekstene, som vedaene, og som hinduer mener ikke er laget av mennesker.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Siddhartha Gautama",
+    "definition": "Prinsen som ifølge tradisjonen forlot rikdommen sin, søkte svar på hvorfor mennesker lider, og ble Buddha.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Siddhartha",
+      "Gautama"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Siddur",
+    "definition": "Den jødiske bønneboka. Den inneholder alle gudstjenestene gjennom året, salmer og velsignelser til bryllup, begravelse og bar mitzva.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "siddurer",
+      "siddurens"
+    ],
+    "tags": [
+      "jødedom",
+      "bønn"
+    ]
+  },
+  {
+    "term": "Sieidi",
+    "definition": "Et offersted i samisk religion, ofte en spesiell stein eller foss. Folk la igjen reinhorn, fiskebein eller mat for å takke for et godt år.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sieidier",
+      "sieidiene",
+      "sieide"
+    ],
+    "tags": [
+      "samisk"
+    ]
   },
   {
     "term": "sikh",
@@ -2780,6 +5541,20 @@
       "sikhisme"
     ],
     "type": "concept"
+  },
+  {
+    "term": "Simone de Beauvoir",
+    "definition": "Fransk filosof (1908-1986). Hun skrev at man ikke fødes som kvinne, men blir det, og at kjønnsroller er noe samfunnet lager.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "de Beauvoir",
+      "Beauvoir"
+    ],
+    "tags": [
+      "filosofi"
+    ],
+    "link": "/krle/filosofi/beauvoir"
   },
   {
     "term": "Sionisme",
@@ -2801,6 +5576,19 @@
     ]
   },
   {
+    "term": "Sira",
+    "definition": "De gamle livshistoriene om Muhammad. Sammen med Koranen og hadith er de hovedkildene til livet hans.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "siraen"
+    ],
+    "tags": [
+      "islam",
+      "tekster"
+    ]
+  },
+  {
     "term": "Sivilisasjon",
     "definition": "Et samfunn med byer, skrift, statsmakt og spesialiserte yrker. De tidligste sivilisasjonene oppsto langs store elver for rundt 5000 år siden.",
     "type": "concept",
@@ -2819,6 +5607,24 @@
     "subject": "historie"
   },
   {
+    "term": "Skapelsesmyte",
+    "definition": "En fortelling om hvordan verden ble til. Myte betyr her ikke løgn, men en hellig fortelling som forklarer noe grunnleggende om verden og menneskene.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "skapelsesmyter",
+      "skapelsesmyten",
+      "skapelsesfortelling",
+      "skapelsesfortellingen",
+      "skapelsesfortellinger",
+      "skapelsesfortellingene"
+    ],
+    "tags": [
+      "religion",
+      "skapelse"
+    ]
+  },
+  {
     "term": "Skyttergravskrig",
     "definition": "En form for krigføring hvor soldatene beskytter seg i utgravde grøfter, ofte preget av stillstand.",
     "subject": "historie",
@@ -2828,9 +5634,32 @@
     "link": "/historie/forste-verdenskrig/skyttergravskrig"
   },
   {
+    "term": "Smriti",
+    "definition": "Betyr det som er husket. Tekster som er skrevet av mennesker, for eksempel de store heltediktene, og som står et hakk under shruti.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
+  },
+  {
     "term": "Sol Invictus",
     "definition": "Romersk solgud, populær fra 200-tallet. Mange kjennetegn ved kulten ble senere overtatt av kristendommen, blant annet feiringen av 25. desember.",
     "type": "concept"
+  },
+  {
+    "term": "Søren Kierkegaard",
+    "definition": "Dansk filosof (1813-1855) som mente sannheten må leves, ikke bare tenkes. Han beskrev troen som et sprang du tar uten garantier.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Kierkegaard"
+    ],
+    "tags": [
+      "filosofi"
+    ],
+    "link": "/krle/filosofi/kierkegaard"
   },
   {
     "term": "sosialisme",
@@ -2862,6 +5691,20 @@
     ],
     "subject": "historie",
     "topic": "kinas-historie"
+  },
+  {
+    "term": "Sporvognsproblemet",
+    "definition": "Tankeeksperimentet der du kan vri på et spor så en vogn dreper én person i stedet for fem. Det tvinger fram spørsmålet om det å telle liv er nok.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "trikkeproblemet",
+      "sporvognsdilemmaet"
+    ],
+    "tags": [
+      "filosofi",
+      "etikk"
+    ]
   },
   {
     "id": "sprangmodellen",
@@ -2900,6 +5743,32 @@
     "term": "Stamford Bridge",
     "definition": "Slag i England 25. september 1066 der Harald Hardråde og hans vikinger ble beseiret av engelskmennene. Markerer slutten på vikingtiden.",
     "type": "concept"
+  },
+  {
+    "term": "Standardverkene",
+    "definition": "De fire hellige bøkene i Jesu Kristi Kirke av Siste Dagers Hellige: Bibelen, Mormons bok, Lære og pakter og Den kostelige perle.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "standardverk"
+    ],
+    "tags": [
+      "mormonisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Statskirke",
+    "definition": "En kirke som staten styrer og betaler for. Norge hadde statskirke fram til 2012.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "statskirken"
+    ],
+    "tags": [
+      "kristendom",
+      "samfunn"
+    ]
   },
   {
     "term": "Østfronten",
@@ -2976,6 +5845,20 @@
     "type": "concept"
   },
   {
+    "term": "Stupa",
+    "definition": "Et kuppelformet byggverk som ofte inneholder rester etter Buddha eller en annen hellig person. Mange stupaer er mål for pilegrimsreiser.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "stupaer",
+      "stupaen",
+      "stupaene"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
     "term": "Subjektet",
     "definition": "Den delen av en setning som forteller hvem eller hva som utfører handlingen (verbalet).",
     "type": "concept",
@@ -3004,6 +5887,18 @@
     "subject": "historie"
   },
   {
+    "term": "Sunna",
+    "definition": "Måten Muhammad levde og handlet på. Sunnaen er et forbilde for muslimer og en av kildene til islamsk lov.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sunnaen"
+    ],
+    "tags": [
+      "islam"
+    ]
+  },
+  {
     "term": "Sunniislam",
     "aliases": [
       "sunni",
@@ -3021,6 +5916,50 @@
       "religion",
       "saudi-arabia",
       "sunni"
+    ]
+  },
+  {
+    "term": "Sure",
+    "definition": "Et kapittel i Koranen. Koranen har 114 surer, og hver sure er delt inn i vers.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sura",
+      "suraen",
+      "surer",
+      "suraer"
+    ],
+    "tags": [
+      "islam",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Sutra",
+    "definition": "Tekster som gjengir det Buddha skal ha sagt. På pali heter de sutta.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sutraer",
+      "sutraene"
+    ],
+    "tags": [
+      "buddhisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Sutta",
+    "definition": "Palispråkets ord for sutra, altså en tekst med Buddhas egne taler.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "suttaer",
+      "suttaene"
+    ],
+    "tags": [
+      "buddhisme",
+      "tekster"
     ]
   },
   {
@@ -3076,12 +6015,86 @@
     "subject": "historie"
   },
   {
+    "term": "Synagoge",
+    "definition": "Jødenes forsamlingshus. Her leses Toraen, og her ber folk sammen.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "synagogen",
+      "synagoger",
+      "synagogene"
+    ],
+    "tags": [
+      "jødedom"
+    ]
+  },
+  {
+    "term": "Syndefallet",
+    "definition": "Fortellingen om at Adam og Eva brøt Guds bud i hagen, og at forholdet mellom Gud og mennesker ble ødelagt.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "syndefall"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "synsvinkel",
     "definition": "Perspektivet fortellingen sees fra. Det avgjør hva leseren får vite og ikke. Vanlige synsvinkler er personal (førsteperson 'jeg' eller tredjeperson 'han/hun') og autoral (allvitende eller refererende).",
     "subject": "norsk",
     "topic": "skrivehjelp",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Tabula rasa",
+    "definition": "Latin for blank tavle. John Lockes tanke om at mennesket fødes uten ferdige ideer, og at alt vi kan, kommer fra erfaring.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "blank tavle"
+    ],
+    "tags": [
+      "filosofi"
+    ]
+  },
+  {
+    "term": "Tafsir",
+    "definition": "Arbeidet med å tolke Koranen, og også den ferdige forklaringsboka. Slike verk går gjennom teksten ord for ord.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "islam",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Talmud",
+    "definition": "Den store samlingen av jødiske diskusjoner om hvordan budene skal forstås. Den består av Mishna og gemara.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Talmuden"
+    ],
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Tanakh",
+    "definition": "Den hebraiske bibelen. Navnet er satt sammen av forbokstavene i de tre delene: Toraen, Neviim og Ketuvim.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Tanach"
+    ],
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
   },
   {
     "term": "tankereferat",
@@ -3118,12 +6131,35 @@
     "subject": "samfunnskunnskap"
   },
   {
+    "term": "Tawhid",
+    "definition": "Læren om at Gud er én. Dette er det aller viktigste i islam, og det er derfor Gud ikke kan avbildes.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "islam"
+    ]
+  },
+  {
     "term": "te",
     "definition": "En drikk laget av blader fra tebusken. Ble ekstremt populært i Storbritannia på 1700-tallet.",
     "subject": "historie",
     "topic": "kolonialisering",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Tefillin",
+    "definition": "To små skinnesker med bibelvers inni, som bindes på armen og pannen under morgenbønnen på hverdager.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "bønneremmer",
+      "bønneremmene"
+    ],
+    "tags": [
+      "jødedom",
+      "bønn"
+    ]
   },
   {
     "term": "teknokrati",
@@ -3170,6 +6206,33 @@
     "type": "concept"
   },
   {
+    "term": "Tenjur",
+    "definition": "Den tibetanske samlingen av kommentarer og forklaringer til Buddhas ord.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Tenjuren"
+    ],
+    "tags": [
+      "buddhisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Teodise",
+    "definition": "Fagordet for forsøkene på å forsvare troen på en god og allmektig Gud mot all lidelsen i verden.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "teodiseen",
+      "teodisé"
+    ],
+    "tags": [
+      "religion",
+      "filosofi"
+    ]
+  },
+  {
     "term": "teokrati",
     "definition": "Gud eller religiøse ledere styrer samfunnet basert på hellige skrifter. Lovene i landet er basert på religionen. Eksempler er Vatikanstaten eller Iran.",
     "subject": "samfunnskunnskap",
@@ -3183,6 +6246,18 @@
     "type": "concept"
   },
   {
+    "term": "Tetragrammet",
+    "definition": "De fire hebraiske bokstavene som er Guds egennavn i den hebraiske bibelen. Jøder sier dem ikke høyt, og ingen vet sikkert hvordan de skal uttales.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "JHVH"
+    ],
+    "tags": [
+      "jødedom"
+    ]
+  },
+  {
     "term": "The Roaring Twenties",
     "definition": "De brølende 20-årene - perioden etter første verdenskrig med økonomisk boom, jazz, biler og frigjøring. Endte brått med børskrakket i 1929.",
     "type": "concept",
@@ -3192,6 +6267,35 @@
     "term": "The Troubles",
     "definition": "Konflikten i Nord-Irland 1968-1998 mellom katolske nasjonalister og protestantiske unionister. Over 3500 mennesker mistet livet.",
     "type": "concept"
+  },
+  {
+    "term": "Theravada",
+    "definition": "Den ene av buddhismens to store hovedretninger. Den er vanligst i Sri Lanka og Sørøst-Asia, og legger stor vekt på munkelivet.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "theravadabuddhisme",
+      "theravada-buddhismen",
+      "theravadabuddhismen",
+      "theravada-skolen"
+    ],
+    "tags": [
+      "buddhisme"
+    ]
+  },
+  {
+    "term": "Tidebønner",
+    "definition": "Faste bønner til bestemte tider gjennom hele døgnet. De brukes særlig i klostre.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "tidebønn",
+      "tidebønnene"
+    ],
+    "tags": [
+      "kristendom",
+      "bønn"
+    ]
   },
   {
     "term": "Tidspreferanse",
@@ -3211,9 +6315,36 @@
     "subject": "samfunnskunnskap"
   },
   {
+    "term": "Tikkun olam",
+    "definition": "Å reparere verden. Uttrykket brukes om plikten til å gjøre verden litt bedre enn du fant den.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jødedom",
+      "etikk"
+    ]
+  },
+  {
     "term": "Tilhørighet",
     "definition": "Å føle seg som en del av et fellesskap. Et grunnleggende menneskelig behov, ifølge psykolog Abraham Maslow.",
     "type": "concept"
+  },
+  {
+    "term": "Toraen",
+    "definition": "De fem første bøkene i den hebraiske bibelen, og den helligste delen. I synagogen leses den fra en håndskrevet rull.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Tora",
+      "Torah",
+      "Toraens",
+      "torarullen",
+      "torarullene"
+    ],
+    "tags": [
+      "jødedom",
+      "tekster"
+    ]
   },
   {
     "term": "Total krig",
@@ -3254,9 +6385,73 @@
     "subject": "historie"
   },
   {
+    "term": "Transsubstansiasjon",
+    "definition": "Den katolske læren om at brød og vin i nattverden virkelig blir Jesu kropp og blod, selv om de fortsatt smaker og ser ut som før.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
     "term": "Treenigheten",
     "definition": "Den kristne læren om at Gud er én, men finnes som tre personer: Faderen, Sønnen og Den hellige ånd. Sentral forskjell mellom kristendom og jødedom/islam.",
     "type": "concept"
+  },
+  {
+    "term": "Tripitaka",
+    "definition": "De eldste buddhistiske skriftene, samlet i tre avdelinger som kalles kurver: vinaya, sutra og abhidharma.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Tipitaka",
+      "de tre kurvene",
+      "tre kurvene"
+    ],
+    "tags": [
+      "buddhisme",
+      "tekster"
+    ]
+  },
+  {
+    "term": "Trosartiklene",
+    "definition": "De tretten korte setningene Joseph Smith skrev for å oppsummere hva kirken tror på.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "trosartikler"
+    ],
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
+    "term": "Trosbekjennelsen",
+    "definition": "En kort tekst som sier hva kirken tror på. Den leses høyt i fellesskap under gudstjenesten.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "trosbekjennelse",
+      "den apostoliske trosbekjennelsen"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Trossamfunn",
+    "definition": "En organisert gruppe mennesker som deler samme tro. I Norge kan et trossamfunn registrere seg og få støtte fra staten.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "trossamfunnet",
+      "trossamfunnene",
+      "trossamfund"
+    ],
+    "tags": [
+      "religion",
+      "samfunn"
+    ]
   },
   {
     "term": "Truman-doktrinen",
@@ -3279,6 +6474,33 @@
     "term": "Tsar Bomba",
     "definition": "Verdens kraftigste atombombe noensinne, sprengt av Sovjet i 1961. Sprengkraften var 3000 ganger sterkere enn Hiroshima-bomben.",
     "type": "concept"
+  },
+  {
+    "term": "Tungetale",
+    "definition": "Å snakke i lyder eller språk man selv ikke forstår. Noen kristne mener det er et tegn på at Den hellige ånd virker.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "tungetalen"
+    ],
+    "tags": [
+      "kristendom"
+    ]
+  },
+  {
+    "term": "Turban",
+    "definition": "Hodeplagget mange sikh-menn bruker for å dekke det uklipte håret. Det er et av de tydeligste tegnene på at noen er sikh.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "turbanen",
+      "turbaner",
+      "dastar"
+    ],
+    "tags": [
+      "sikhisme",
+      "klær"
+    ]
   },
   {
     "term": "Uavhengighet",
@@ -3344,6 +6566,30 @@
     "link": "/historie/sveriges-historie/sveriges-historie"
   },
   {
+    "term": "Upanayana",
+    "definition": "Riten der en gutt får den hellige snoren over skulderen og regnes som voksen i religiøs forstand. Bare de tre øverste varna-gruppene hadde denne riten.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "hinduisme",
+      "overgangsriter"
+    ]
+  },
+  {
+    "term": "Upanishadene",
+    "definition": "Tekster som kom etter vedaene, og som spør hva verden egentlig består av. Det er her tankene om brahman og atman utvikles.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "upanishader",
+      "upanishad"
+    ],
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
+  },
+  {
     "id": "urbanisering",
     "term": "Urbanisering",
     "definition": "En prosess der befolkningen flytter fra landsbygda til byer og tettsteder, slik at byområdene vokser og blir viktigere.",
@@ -3370,12 +6616,46 @@
     "type": "concept"
   },
   {
+    "term": "Uvitenhetens slør",
+    "definition": "John Rawls sitt tankeeksperiment: lag reglene for samfunnet uten å vite hvem du selv blir i det. Da lager du regler som er til å leve med for alle.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "sløret av uvitenhet"
+    ],
+    "tags": [
+      "filosofi",
+      "etikk"
+    ]
+  },
+  {
     "term": "V2",
     "definition": "Verdens første langdistanse ballistiske rakett, utviklet av Tyskland.",
     "subject": "historie",
     "topic": "andre-verdenskrig",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Vahiguru",
+    "definition": "Sikhenes navn på Gud. Ordet betyr omtrent den vidunderlige læreren.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Waheguru"
+    ],
+    "tags": [
+      "sikhisme"
+    ]
+  },
+  {
+    "term": "Vakttårnet",
+    "definition": "Bladet Charles Taze Russell begynte å gi ut i 1879, og som fortsatt er Jehovas vitners viktigste tidsskrift.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "jehovas vitner"
+    ]
   },
   {
     "term": "Valide Sultan",
@@ -3405,6 +6685,36 @@
       "moral"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Varna",
+    "definition": "De fire brede gruppene det gamle indiske samfunnet ble delt i: brahmaner (prester), kshatriyaer (krigere), vaishyaer (bønder og handelsfolk) og shudraer (tjenere).",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "varnaene",
+      "varna-gruppene",
+      "varnagruppene"
+    ],
+    "tags": [
+      "hinduisme",
+      "samfunn"
+    ]
+  },
+  {
+    "term": "Vedaene",
+    "definition": "De eldste hellige tekstene i hinduismen. De ble husket og sunget i hundrevis av år før noen skrev dem ned.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "veda",
+      "vedaen",
+      "vedatekstene"
+    ],
+    "tags": [
+      "hinduisme",
+      "tekster"
+    ]
   },
   {
     "term": "Vennskap",
@@ -3450,12 +6760,39 @@
     "subject": "historie"
   },
   {
+    "term": "Vesak",
+    "definition": "Buddhistenes viktigste høytid. Den feirer Buddhas fødsel, oppvåkning og død, ofte på samme dag.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "vesakdagen"
+    ],
+    "tags": [
+      "buddhisme",
+      "høytid"
+    ]
+  },
+  {
     "term": "Vestfronten",
     "definition": "Krigssonen i Vest-Europa, hovedsakelig i Frankrike og Belgia.",
     "subject": "historie",
     "topic": "forste-verdenskrig",
     "tags": [],
     "type": "concept"
+  },
+  {
+    "term": "Vinaya",
+    "definition": "Reglene for munkene og nonnene. Reglene skal alle komme fra Buddha selv, og det er derfor de gjelder.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "vinaya-samlingene",
+      "vinayasamlingene"
+    ],
+    "tags": [
+      "buddhisme",
+      "tekster"
+    ]
   },
   {
     "term": "Virkelighet",
@@ -3466,6 +6803,39 @@
     "term": "Visdom",
     "definition": "Å kunne bruke kunnskap og erfaring til å gjøre kloke valg. Skiller seg fra ren kunnskap ved at det handler om dømmekraft og innsikt i livet.",
     "type": "concept"
+  },
+  {
+    "term": "Visdomsordet",
+    "definition": "Teksten kirken mener Joseph Smith fikk fra Gud i 1833. I praksis betyr den nei til alkohol, tobakk, kaffe og te.",
+    "type": "concept",
+    "subject": "krle",
+    "tags": [
+      "mormonisme"
+    ]
+  },
+  {
+    "term": "Vishnu",
+    "definition": "En av hinduismens to største guder. Han passer på verden og kommer til jorda i ulike skikkelser når noe går galt, blant annet som Krishna og Rama.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "Vishnus"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
+  },
+  {
+    "term": "Vishnuismen",
+    "definition": "Retningen i hinduismen som setter Vishnu øverst av alle guder.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "vishnuisme"
+    ],
+    "tags": [
+      "hinduisme"
+    ]
   },
   {
     "term": "Vitenskap",
@@ -3518,6 +6888,18 @@
     "term": "Ytringsfrihet",
     "definition": "Retten til å si og skrive det man mener, også upopulære meninger. Grunnloven §100 og menneskerettighetene beskytter ytringsfriheten.",
     "type": "concept"
+  },
+  {
+    "term": "Zakat",
+    "definition": "Den religiøse avgiften i islam. Den er ikke en frivillig gave, men noe du må betale, vanligvis 2,5 prosent av det du har igjen etter et år.",
+    "type": "concept",
+    "subject": "krle",
+    "aliases": [
+      "zakaten"
+    ],
+    "tags": [
+      "islam"
+    ]
   },
   {
     "term": "Zeppeliner",

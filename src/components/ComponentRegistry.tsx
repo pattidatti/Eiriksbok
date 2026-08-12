@@ -186,6 +186,7 @@ const LivetsTrapp = lazy(() => import('./content/interactive/LivetsTrapp').then(
 const TerskelVerkstedet = lazy(() => import('./content/interactive/TerskelVerkstedet').then(m => ({ default: m.TerskelVerkstedet })));
 const EtterlivsKartet = lazy(() => import('./content/interactive/EtterlivsKartet').then(m => ({ default: m.EtterlivsKartet })));
 const FrelsensStige = lazy(() => import('./content/interactive/FrelsensStige').then(m => ({ default: m.FrelsensStige })));
+const Plottmaskinen = lazy(() => import('./content/interactive/Plottmaskinen').then(m => ({ default: m.Plottmaskinen })));
 const TekstensReise = lazy(() => import('./content/interactive/TekstensReise').then(m => ({ default: m.TekstensReise })));
 const StemmeneFraFortiden = lazy(() => import('./content/interactive/StemmeneFraFortiden').then(m => ({ default: m.StemmeneFraFortiden })));
 const GyllenRegelVeven = lazy(() => import('./content/interactive/GyllenRegelVeven').then(m => ({ default: m.GyllenRegelVeven })));
@@ -654,6 +655,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     TerskelVerkstedet,
     EtterlivsKartet,
     FrelsensStige,
+    Plottmaskinen,
     TekstensReise,
     StemmeneFraFortiden,
     GyllenRegelVeven,

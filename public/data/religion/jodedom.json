@@ -3,228 +3,390 @@
     "color": "#3b82f6",
     "dimensions": {
         "ritual": {
-            "type": "root",
-            "children": [
+            "summary": "Sabbaten deler uka i to: fra fredag kveld til lørdag kveld legges alt arbeid bort.",
+            "image": "/images/krle/jodedom/jodedom-sentrale-trekk-hero.webp",
+            "imageAlt": "Torarull åpnet på lesepulten i en synagoge",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Sabbaten er den viktigste rytmen i jødisk liv. Fra fredag kveld til lørdag kveld hviler familien, tenner lys og spiser festmåltid sammen, slik Gud hvilte etter skapelsen. Mange følger også kosher-reglene for mat: ikke svinekjøtt, ikke kjøtt og melk i samme måltid, og kjøttet må komme fra dyr som er slaktet på en bestemt måte."
-                        }
-                    ]
+                    "term": "sabbat",
+                    "explanation": "Hviledagen fra fredag kveld til lørdag kveld. Familien tenner lys og spiser festmåltid sammen."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Livet er fullt av overgangsritualer. Gutter omskjæres på den åttende dagen etter fødselen som tegn på pakten med Gud, mens jenter får navnet sitt i synagogen. Når gutter fyller 13 år, feires bar mitsva, og jenter feirer bat mitsva når de er 12. Da regnes de som religiøst voksne med ansvar for å følge budene selv."
-                        }
-                    ]
+                    "term": "kosher",
+                    "explanation": "Matreglene i jødedommen: ikke svinekjøtt, ikke kjøtt og melk i samme måltid, og kjøttet må slaktes på en bestemt måte."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Bønnen kalles tefillah. Ortodokse jødiske menn ber tre faste ganger om dagen, og trosbekjennelsen shema leses morgen og kveld. Under morgenbønnen bruker mange bønnesjal (tallit), bønneremmer (tefillin) og en liten kalott på hodet (kippa)."
-                        }
-                    ]
+                    "term": "bar og bat mitsva",
+                    "explanation": "Feiringen når gutter fyller 13 år og jenter 12. Da regnes de som religiøst voksne med ansvar for budene selv."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: dagen du leser selv",
+                "text": "Ved bar eller bat mitsva leser ungdommen for første gang høyt fra torarullen i synagogen. Teksten er håndskrevet på hebraisk uten vokaler, så den må øves inn lenge i forveien. Etterpå er du selv ansvarlig for å følge budene."
+            },
+            "question": "Sabbaten betyr at all jobb og alle skjermer legges bort ett døgn i uka. Hva tror du det gjør med en familie?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Sabbaten er den viktigste rytmen i jødisk liv. Fra fredag kveld til lørdag kveld hviler familien, tenner lys og spiser festmåltid sammen, slik Gud hvilte etter skapelsen. Mange følger også kosher-reglene for mat: ikke svinekjøtt, ikke kjøtt og melk i samme måltid, og kjøttet må komme fra dyr som er slaktet på en bestemt måte."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Livet er fullt av overgangsritualer. Gutter omskjæres på den åttende dagen etter fødselen som tegn på pakten med Gud, mens jenter får navnet sitt i synagogen. Når gutter fyller 13 år, feires bar mitsva, og jenter feirer bat mitsva når de er 12. Da regnes de som religiøst voksne med ansvar for å følge budene selv."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Bønnen kalles tefillah. Ortodokse jødiske menn ber tre faste ganger om dagen, og trosbekjennelsen shema leses morgen og kveld. Under morgenbønnen bruker mange bønnesjal (tallit), bønneremmer (tefillin) og en liten kalott på hodet (kippa)."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "narrative": {
-            "type": "root",
-            "children": [
+            "summary": "Fortellingen begynner med Abrahams pakt med Gud og fortsetter med Moses, som førte folket ut av slaveriet i Egypt.",
+            "image": "/images/krle/religion/jodedom_tanakh.webp",
+            "imageAlt": "Torarull med sølvkrone i en synagoge",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Den store fortellingen begynner med Abraham, som for rundt 4000 år siden inngikk en pakt med Gud. Gud lovet ham etterkommere uten tall og et eget land. Senere ledet profeten Moses folket ut av slaveriet i Egypt, og på Sinaifjellet tok han imot Toraen med De ti bud. Utvandringen fra Egypt minner folket om at Gud satte dem fri."
-                        }
-                    ]
+                    "term": "pakt",
+                    "explanation": "Avtalen mellom Gud og folket. Gud lovet Abraham etterkommere uten tall og et eget land."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Den hebraiske bibelen kalles Tanak og har tre deler: Toraen (Loven), Neviim (Profetene) og Ketuvim (Skriftene). Toraen er de fem Mosebøkene og forteller historien fra skapelsen til Moses' død. Talmud, som ofte kalles den muntlige Toraen, er en stor samling diskusjoner og tolkninger av lovene."
-                        }
-                    ]
+                    "term": "Tanak",
+                    "explanation": "Den hebraiske bibelen. Den har tre deler: Toraen (Loven), Neviim (Profetene) og Ketuvim (Skriftene)."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Fortellingen peker også fremover. Jøder venter fortsatt på Messias, en menneskelig hersker av kong Davids slekt. Han skal samle det jødiske folket, gjenreise tempelet i Jerusalem og skape en verden med fred og rettferdighet."
-                        }
-                    ]
+                    "term": "Talmud",
+                    "explanation": "Den muntlige Toraen: en stor samling diskusjoner og tolkninger av lovene."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: fjellet og de ti budene",
+                "text": "På Sinaifjellet tok Moses imot Toraen med De ti bud. Fortellingen om utvandringen fra Egypt gjentas hvert år i påsken, og poenget er alltid det samme: folket var slaver, og Gud satte dem fri."
+            },
+            "question": "Jøder venter fortsatt på Messias. Hva gjør det med en religion at det viktigste ennå ikke har skjedd?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Den store fortellingen begynner med Abraham, som for rundt 4000 år siden inngikk en pakt med Gud. Gud lovet ham etterkommere uten tall og et eget land. Senere ledet profeten Moses folket ut av slaveriet i Egypt, og på Sinaifjellet tok han imot Toraen med De ti bud. Utvandringen fra Egypt minner folket om at Gud satte dem fri."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Den hebraiske bibelen kalles Tanak og har tre deler: Toraen (Loven), Neviim (Profetene) og Ketuvim (Skriftene). Toraen er de fem Mosebøkene og forteller historien fra skapelsen til Moses' død. Talmud, som ofte kalles den muntlige Toraen, er en stor samling diskusjoner og tolkninger av lovene."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Fortellingen peker også fremover. Jøder venter fortsatt på Messias, en menneskelig hersker av kong Davids slekt. Han skal samle det jødiske folket, gjenreise tempelet i Jerusalem og skape en verden med fred og rettferdighet."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "experiential": {
-            "type": "root",
-            "children": [
+            "summary": "Det hellige finnes i hverdagen: i lysene fredag kveld, i sangen rundt bordet og i roen når arbeidet legges bort.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "For mange jøder er troen først og fremst en følelse av å høre til, både hos Gud og i et folk med en svært lang historie. Gud oppleves ikke som fjern, men som en som bryr seg, inngår avtaler og hører bønner. Shema er ofte det første et jødisk barn lærer, og de siste ordene mange sier før de dør."
-                        }
-                    ]
+                    "term": "shema",
+                    "explanation": "Trosbekjennelsen som leses morgen og kveld: Hør, Israel, Herren er vår Gud, Herren er én."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Jødedommen er noe du gjør, ikke bare noe du tenker. Opplevelsen av det hellige kommer gjennom hverdagen: sabbatslysene som tennes fredag kveld, sangen rundt bordet og roen når alt arbeid legges bort. Slik blir hele livet hellig, ikke bare det som skjer i synagogen."
-                        }
-                    ]
+                    "term": "Klagemuren",
+                    "explanation": "Rest av muren rundt tempelet i Jerusalem. Jøder fra hele verden ber der, og mange legger bønnelapper i sprekkene."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Ved Klagemuren i Jerusalem ber jøder fra hele verden, og mange legger små lapper med bønner inn i sprekkene mellom steinene. For mange er det en sterk opplevelse å stå der folket har bedt i hundrevis av år, tett på minnet om tempelet."
-                        }
-                    ]
+                    "term": "hverdagshellighet",
+                    "explanation": "Tanken om at det hellige finnes i hverdagen: i måltidet, i lysene og i roen, ikke bare i synagogen."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: de første og de siste ordene",
+                "text": "Shema er ofte det første et jødisk barn lærer utenat, og de siste ordene mange sier før de dør. Den samme setningen følger et helt liv, fra begynnelse til slutt."
+            },
+            "question": "Jødedommen er noe du gjør, ikke bare noe du tenker. Kan handlinger skape en følelse, og ikke bare omvendt?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "For mange jøder er troen først og fremst en følelse av å høre til, både hos Gud og i et folk med en svært lang historie. Gud oppleves ikke som fjern, men som en som bryr seg, inngår avtaler og hører bønner. Shema er ofte det første et jødisk barn lærer, og de siste ordene mange sier før de dør."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Jødedommen er noe du gjør, ikke bare noe du tenker. Opplevelsen av det hellige kommer gjennom hverdagen: sabbatslysene som tennes fredag kveld, sangen rundt bordet og roen når alt arbeid legges bort. Slik blir hele livet hellig, ikke bare det som skjer i synagogen."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Ved Klagemuren i Jerusalem ber jøder fra hele verden, og mange legger små lapper med bønner inn i sprekkene mellom steinene. For mange er det en sterk opplevelse å stå der folket har bedt i hundrevis av år, tett på minnet om tempelet."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "social": {
-            "type": "root",
-            "children": [
+            "summary": "Synagogen er stedet for bønn og opplæring, men mange av de viktigste ritualene skjer hjemme rundt bordet.",
+            "image": "/images/krle/religion/jodedom_hero.webp",
+            "imageAlt": "Synagogeinteriør med toraskap og lesepult",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Synagogen er stedet for bønn, opplæring og fellesskap, og rabbineren er menighetens lærer og veileder i religiøse spørsmål. Samtidig står familien helt sentralt: mange av de viktigste ritualene, som sabbatsmåltidet, skjer hjemme rundt bordet."
-                        }
-                    ]
+                    "term": "rabbiner",
+                    "explanation": "Menighetens lærer og veileder i religiøse spørsmål. En rabbiner er ikke prest og ofrer ikke."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Jødedommen er ikke én enhetlig religion. De tre største retningene er ortodoks, konservativ og reform. Ortodokse jøder mener de 613 budene skal følges slik de alltid har blitt fulgt. Konservative mener budene gjelder, men kan tilpasses nye tider med forsiktighet. Reformjøder holder fast på det etiske kjerneinnholdet, men lar mange ritualer være opp til den enkelte."
-                        }
-                    ]
+                    "term": "ortodoks, konservativ og reform",
+                    "explanation": "De tre største retningene. De er uenige om hvor mye budene kan tilpasses en ny tid."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Jøder ser på seg selv som Guds utvalgte folk. Det betyr ikke at de er bedre enn andre, men at de har fått et særlig ansvar for å leve etter Guds bud. I Norge er det jødiske miljøet lite, med synagoger i Oslo og Trondheim. Menighetene er viktige møteplasser for både tro, kultur og fellesskap."
-                        }
-                    ]
+                    "term": "utvalgt folk",
+                    "explanation": "Jøder ser på seg selv som valgt ut til et særlig ansvar for å leve etter Guds bud, ikke som bedre enn andre."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: et lite miljø i Norge",
+                "text": "Det jødiske miljøet i Norge er lite, med synagoger i Oslo og Trondheim. Menighetene er derfor både gudshus, kulturhus og møteplass. Når gruppa er liten, må det samme rommet dekke mange behov."
+            },
+            "question": "De tre retningene tolker de samme budene ulikt. Er det en styrke eller en svakhet for en religion?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Synagogen er stedet for bønn, opplæring og fellesskap, og rabbineren er menighetens lærer og veileder i religiøse spørsmål. Samtidig står familien helt sentralt: mange av de viktigste ritualene, som sabbatsmåltidet, skjer hjemme rundt bordet."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Jødedommen er ikke én enhetlig religion. De tre største retningene er ortodoks, konservativ og reform. Ortodokse jøder mener de 613 budene skal følges slik de alltid har blitt fulgt. Konservative mener budene gjelder, men kan tilpasses nye tider med forsiktighet. Reformjøder holder fast på det etiske kjerneinnholdet, men lar mange ritualer være opp til den enkelte."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Jøder ser på seg selv som Guds utvalgte folk. Det betyr ikke at de er bedre enn andre, men at de har fått et særlig ansvar for å leve etter Guds bud. I Norge er det jødiske miljøet lite, med synagoger i Oslo og Trondheim. Menighetene er viktige møteplasser for både tro, kultur og fellesskap."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "ethical": {
-            "type": "root",
-            "children": [
+            "summary": "Toraen har 613 bud som styrer nesten alt, og kjernen er at du skal elske din neste som deg selv.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Toraen inneholder 613 bud, mitzvot, som regulerer nesten alt: hva du spiser, når du hviler, hvordan du behandler andre og hva du gir til fattige. De ti bud er de mest kjente. Kjernen finnes i Toraen selv: du skal elske din neste som deg selv."
-                        }
-                    ]
+                    "term": "mitzvot",
+                    "explanation": "De 613 budene i Toraen. De handler om alt fra mat og hviledag til hvordan du behandler andre."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Et sentralt begrep er tikkun olam, å reparere verden. Tanken er at verden ble skapt ufullstendig, og at hvert menneske har ansvar for å gjøre den bedre. Det er ikke nok å unngå det onde, du skal aktivt bidra til det gode."
-                        }
-                    ]
+                    "term": "tikkun olam",
+                    "explanation": "Å reparere verden. Tanken om at verden ble skapt ufullstendig, og at hvert menneske skal gjøre den bedre."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Å gi til fattige kalles tzedaka og regnes som en plikt, ikke frivillig veldedighet, fordi det handler om rettferdighet. Aller tyngst veier plikten til å redde liv, pikuach nefesh. Talmud sier det slik: den som redder ett liv, redder hele verden."
-                        }
-                    ]
+                    "term": "tzedaka",
+                    "explanation": "Å gi til fattige. Ordet henger sammen med rettferdighet, og derfor er det en plikt og ikke veldedighet."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: å redde ett liv",
+                "text": "Plikten til å redde liv, pikuach nefesh, veier tyngst av alle bud. Er det fare for liv, skal du bryte både sabbaten og matreglene. Talmud sier det slik: den som redder ett liv, redder hele verden."
+            },
+            "question": "Tikkun olam sier at det ikke holder å la være å gjøre noe galt. Hva krever det av deg i praksis?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Toraen inneholder 613 bud, mitzvot, som regulerer nesten alt: hva du spiser, når du hviler, hvordan du behandler andre og hva du gir til fattige. De ti bud er de mest kjente. Kjernen finnes i Toraen selv: du skal elske din neste som deg selv."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Et sentralt begrep er tikkun olam, å reparere verden. Tanken er at verden ble skapt ufullstendig, og at hvert menneske har ansvar for å gjøre den bedre. Det er ikke nok å unngå det onde, du skal aktivt bidra til det gode."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Å gi til fattige kalles tzedaka og regnes som en plikt, ikke frivillig veldedighet, fordi det handler om rettferdighet. Aller tyngst veier plikten til å redde liv, pikuach nefesh. Talmud sier det slik: den som redder ett liv, redder hele verden."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "doctrinal": {
-            "type": "root",
-            "children": [
+            "summary": "Det finnes bare én Gud, og navnet hans regnes som så hellig at det ikke uttales.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Jødedommen er strengt monoteistisk: det finnes bare én Gud, og han har skapt alt. Trosbekjennelsen shema sier det kort: Hør, Israel, Herren er vår Gud, Herren er én. Guds navn regnes som så hellig at det tradisjonelt ikke uttales. I stedet sier man Adonai (Herren) eller HaShem (Navnet)."
-                        }
-                    ]
+                    "term": "monoteisme",
+                    "explanation": "Troen på at det bare finnes én Gud, som har skapt alt."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Pakten (brit) mellom Gud og folket er en toveis avtale: Gud har forpliktelser overfor folket, og folket forplikter seg til å leve etter budene. Jøder venter fortsatt på Messias, en menneskelig hersker som skal skape fred. Derfor mener jødedommen at Jesus ikke var Messias, blant annet fordi tempelet ikke ble gjenreist og verden ikke ble fredelig."
-                        }
-                    ]
+                    "term": "HaShem",
+                    "explanation": "Betyr Navnet. Et av ordene jøder bruker i stedet for å uttale Guds navn, sammen med Adonai (Herren)."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Om livet etter døden finnes det ingen fastlagt lære slik som i kristendommen. Noen tror på sjelens udødelighet, andre på en fremtidig oppstandelse. Jødedommen legger mest vekt på livet her og nå: frelse handler om å gjøre verden hellig ved å følge budene, ikke om å bli reddet fra synd."
-                        }
-                    ]
+                    "term": "Messias",
+                    "explanation": "En menneskelig hersker av kong Davids slekt som skal samle folket og skape fred. Jøder venter fortsatt på ham."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: hvorfor Jesus ikke ble Messias",
+                "text": "Jødedommen mener Jesus ikke var Messias, og begrunnelsen er konkret: tempelet ble ikke gjenreist, og verden ble ikke fredelig. Messias kjennes på det som faktisk skjer i verden, ikke bare på hva noen sier om ham."
+            },
+            "question": "Jødedommen legger mest vekt på livet her og nå, ikke på livet etter døden. Hva gjør det med hvordan man lever?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Jødedommen er strengt monoteistisk: det finnes bare én Gud, og han har skapt alt. Trosbekjennelsen shema sier det kort: Hør, Israel, Herren er vår Gud, Herren er én. Guds navn regnes som så hellig at det tradisjonelt ikke uttales. I stedet sier man Adonai (Herren) eller HaShem (Navnet)."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Pakten (brit) mellom Gud og folket er en toveis avtale: Gud har forpliktelser overfor folket, og folket forplikter seg til å leve etter budene. Jøder venter fortsatt på Messias, en menneskelig hersker som skal skape fred. Derfor mener jødedommen at Jesus ikke var Messias, blant annet fordi tempelet ikke ble gjenreist og verden ikke ble fredelig."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Om livet etter døden finnes det ingen fastlagt lære slik som i kristendommen. Noen tror på sjelens udødelighet, andre på en fremtidig oppstandelse. Jødedommen legger mest vekt på livet her og nå: frelse handler om å gjøre verden hellig ved å følge budene, ikke om å bli reddet fra synd."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "material": {
-            "type": "root",
-            "children": [
+            "summary": "Det viktigste symbolet er menoraen, den sjuarmede lysestaken. Bilder av Gud er forbudt.",
+            "image": "/images/krle/religion/jodedom_menora.webp",
+            "imageAlt": "Sjuarmet lysestake med tente lys",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Synagogen er jødedommens gudshus. Innerst står aron hakodesj, det hellige skapet der torarullene oppbevares, med et evig lys over. Midt i rommet står bimaen, en forhøyning der Toraen leses høyt. Torarullen er håndskrevet på pergament og behandles med stor respekt."
-                        }
-                    ]
+                    "term": "menora",
+                    "explanation": "Den sjuarmede lysestaken, jødedommens viktigste symbol."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Gud er ånd og kan ikke begrenses til en form, og derfor er det forbudt å lage bilder av ham. Det viktigste symbolet er i stedet menoraen, den sjuarmede lysestaken. Mange menn dekker hodet med kippa, en liten kalott, og bruker bønnesjal (tallit) og bønneremmer (tefillin) under morgenbønnen."
-                        }
-                    ]
+                    "term": "aron hakodesj",
+                    "explanation": "Det hellige skapet innerst i synagogen, der torarullene oppbevares under et evig lys."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Det helligste stedet er Klagemuren i Jerusalem, en rest av muren rundt tempelet som ble ødelagt. Minnet om tempelet dukker opp flere steder i jødisk liv, for eksempel når brudgommen knuser et glass under vielsen, som skjer under en baldakin som kalles chuppa."
-                        }
-                    ]
+                    "term": "kippa, tallit og tefillin",
+                    "explanation": "Kalotten på hodet, bønnesjalet og bønneremmene som mange menn bruker under morgenbønnen."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: glasset som knuses",
+                "text": "I et jødisk bryllup knuser brudgommen et glass under baldakinen. Lyden minner om tempelet som ble ødelagt. Midt i den største gleden legges det inn en påminnelse om et tap folket bærer på."
+            },
+            "question": "Torarullen er håndskrevet på pergament og behandles med stor respekt. Hvorfor tror du selve gjenstanden betyr så mye?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Synagogen er jødedommens gudshus. Innerst står aron hakodesj, det hellige skapet der torarullene oppbevares, med et evig lys over. Midt i rommet står bimaen, en forhøyning der Toraen leses høyt. Torarullen er håndskrevet på pergament og behandles med stor respekt."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Gud er ånd og kan ikke begrenses til en form, og derfor er det forbudt å lage bilder av ham. Det viktigste symbolet er i stedet menoraen, den sjuarmede lysestaken. Mange menn dekker hodet med kippa, en liten kalott, og bruker bønnesjal (tallit) og bønneremmer (tefillin) under morgenbønnen."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Det helligste stedet er Klagemuren i Jerusalem, en rest av muren rundt tempelet som ble ødelagt. Minnet om tempelet dukker opp flere steder i jødisk liv, for eksempel når brudgommen knuser et glass under vielsen, som skjer under en baldakin som kalles chuppa."
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     }
 }

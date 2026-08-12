@@ -1,0 +1,14 @@
+{
+  "term": "Rabbiner",
+  "definition": "En jødisk lærer som kan de hellige tekstene og svarer på hvordan reglene skal forstås. En rabbiner er ikke prest.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "rabbinere",
+    "rabbineren",
+    "rabbinerne"
+  ],
+  "tags": [
+    "jødedom"
+  ]
+}

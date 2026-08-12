@@ -1,0 +1,13 @@
+{
+  "term": "Kanon",
+  "definition": "Samlingen av tekster som et fellesskap har godtatt som de gyldige og hellige. Tekster utenfor kanon regnes ikke med.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "kanonen"
+  ],
+  "tags": [
+    "religion",
+    "tekster"
+  ]
+}

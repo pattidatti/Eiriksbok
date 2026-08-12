@@ -3,228 +3,396 @@
     "color": "#f59e0b",
     "dimensions": {
         "ritual": {
-            "type": "root",
-            "children": [
+            "summary": "Buddhister trener sinnet med meditasjon, og viser Buddha respekt med lys, røkelse og blomster.",
+            "image": "/images/buddhisme/bonn-01.webp",
+            "imageAlt": "Kvinne som sitter på kne foran et alter med buddhastatue, lys og lotusblomster",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Meditasjon er den viktigste øvelsen i buddhismen. Ved å sitte stille og legge merke til pust, kropp og tanker trener buddhister sinnet til ro og innsikt. Mange bruker også mantraer, hellige lyder som Om mani padme hum, som gjentas for å samle sinnet og bygge god karma."
-                        }
-                    ]
+                    "term": "puja",
+                    "explanation": "Seremoni foran en buddhastatue. Man tenner lys og røkelse, legger fram blomster og bøyer seg."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Puja er en tilbedelsesseremoni foran en buddhastatue. Man tenner lys og røkelse, ofrer blomster og bøyer seg i respekt for Buddhas lære. Ved begravelser resiterer munker hellige tekster for å hjelpe den døde til en god gjenfødsel, og kremasjon er vanlig."
-                        }
-                    ]
+                    "term": "mantra",
+                    "explanation": "En hellig lyd eller setning som gjentas mange ganger for å samle sinnet."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Munkelivet er et rituale i seg selv. I land som Thailand er det vanlig at unge gutter lever som munker i en periode, som en viktig overgang som også gir familien god karma. Den største høytiden er vesak, da buddhister feirer Buddhas fødsel, oppvåkning og død."
-                        }
-                    ]
+                    "term": "vesak",
+                    "explanation": "Den største høytiden. Da feirer buddhister Buddhas fødsel, oppvåkning og død på én og samme dag."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: gutten som blir munk",
+                "text": "I Thailand er det vanlig at gutter bor i kloster en periode, noen ganger bare noen uker. De barberer av seg håret, får en oransje kappe og lever etter klosterets regler. Familien er stolt, for de mener oppholdet gir god karma til alle sammen."
+            },
+            "question": "Hvorfor tror du det betyr noe å gjøre den samme handlingen om og om igjen, år etter år?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Meditasjon er den viktigste øvelsen i buddhismen. Ved å sitte stille og legge merke til pust, kropp og tanker trener buddhister sinnet til ro og innsikt. Mange bruker også mantraer, hellige lyder som Om mani padme hum, som gjentas for å samle sinnet og bygge god karma."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Puja er en tilbedelsesseremoni foran en buddhastatue. Man tenner lys og røkelse, ofrer blomster og bøyer seg i respekt for Buddhas lære. Ved begravelser resiterer munker hellige tekster for å hjelpe den døde til en god gjenfødsel, og kremasjon er vanlig."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Munkelivet er et rituale i seg selv. I land som Thailand er det vanlig at unge gutter lever som munker i en periode, som en viktig overgang som også gir familien god karma. Den største høytiden er vesak, da buddhister feirer Buddhas fødsel, oppvåkning og død."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "narrative": {
-            "type": "root",
-            "children": [
+            "summary": "Alt starter med en prins som forlot rikdommen sin for å finne ut hvorfor mennesker lider.",
+            "image": "/images/buddhisme/grunnleggere-hero.webp",
+            "imageAlt": "Bodhitreet i Bodh Gaya med bønneflagg og en munk som mediterer",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Hovedfortellingen handler om Siddharta Gautama, som ble født som prins i Nord-India, i dagens Nepal, for rundt 2500 år siden. Han levde et liv i luksus bak palassets murer, helt til han møtte tre syn som forandret alt: en syk mann, en gammel mann og et lik. Som 29-åring forlot han alt for å finne en vei ut av lidelsen."
-                        }
-                    ]
+                    "term": "Siddharta Gautama",
+                    "explanation": "Mannen som ble Buddha. Han levde i Nord-India for rundt 2500 år siden."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Verken luksuslivet eller streng selvpining ga svar. Til slutt satte han seg under et bodhitre i Bodh Gaya og bestemte seg for å bli sittende til han fant sannheten. Etter 49 dagers meditasjon fikk han den store erkjennelsen og ble Buddha, den oppvåknede. Han brukte de neste 45 årene på å vandre rundt og undervise."
-                        }
-                    ]
+                    "term": "bodhitre",
+                    "explanation": "Treet i Bodh Gaya der Siddharta satt da han fikk den store innsikten. Stedet er fortsatt et pilegrimsmål."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "De hellige tekstene kalles Tripitaka, de tre kurvene: regler for munker og nonner, Buddhas taler og filosofiske forklaringer. De ble overlevert muntlig i flere hundre år før de ble skrevet ned på palmeblader. I tillegg finnes jataka-fortellingene, historier om Buddhas tidligere liv."
-                        }
-                    ]
+                    "term": "Tripitaka",
+                    "explanation": "De tre kurvene: buddhismens eldste hellige tekster. Navnet kommer av at palmebladene ble oppbevart i tre kurver."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: de tre synene",
+                "text": "Faren skjermet Siddharta for alt som var vondt. Likevel så han en dag en syk mann, en gammel mann og et lik utenfor palasset. Da forsto han at verken rikdom eller ungdom varer, og han bestemte seg for å finne en vei ut av lidelsen."
+            },
+            "question": "Hva tror du skal til for at et menneske gir fra seg alt det eier?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Hovedfortellingen handler om Siddharta Gautama, som ble født som prins i Nord-India, i dagens Nepal, for rundt 2500 år siden. Han levde et liv i luksus bak palassets murer, helt til han møtte tre syn som forandret alt: en syk mann, en gammel mann og et lik. Som 29-åring forlot han alt for å finne en vei ut av lidelsen."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Verken luksuslivet eller streng selvpining ga svar. Til slutt satte han seg under et bodhitre i Bodh Gaya og bestemte seg for å bli sittende til han fant sannheten. Etter 49 dagers meditasjon fikk han den store erkjennelsen og ble Buddha, den oppvåknede. Han brukte de neste 45 årene på å vandre rundt og undervise."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "De hellige tekstene kalles Tripitaka, de tre kurvene: regler for munker og nonner, Buddhas taler og filosofiske forklaringer. De ble overlevert muntlig i flere hundre år før de ble skrevet ned på palmeblader. I tillegg finnes jataka-fortellingene, historier om Buddhas tidligere liv."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "experiential": {
-            "type": "root",
-            "children": [
+            "summary": "Målet er nirvana: en full ro der grådighet, hat og uvitenhet er sluknet som en flamme.",
+            "image": "/images/buddhisme/gudsbilde-02.webp",
+            "imageAlt": "Munk som mediterer i et stille rom med utsikt til en hage",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Målet for en buddhist er nirvana, tilstanden der de tre giftene grådighet, hat og uvitenhet er sluknet. Ordet betyr utblåsing, som når man blåser ut en flamme. Nirvana er ikke et sted man reiser til, men en tilstand av full frihet og ro."
-                        }
-                    ]
+                    "term": "nirvana",
+                    "explanation": "Tilstanden der lidelsen tar slutt. Ordet betyr utblåsing, som når man blåser ut en flamme."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Veien dit går gjennom opplevelsen av meditasjon. Rett oppmerksomhet, ofte kalt mindfulness, er å være helt til stede i øyeblikket og legge merke til pust, kropp og følelser uten å bli revet med. Rett konsentrasjon er å samle sinnet i en dyp, stille ro. Mange som ikke er religiøse, bruker i dag slike øvelser som stammer fra Buddhas undervisning."
-                        }
-                    ]
+                    "term": "de tre giftene",
+                    "explanation": "Grådighet, hat og uvitenhet. Buddhister mener det er disse tre som holder oss fast i lidelsen."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Buddhismen legger vekt på egen erfaring fremfor blind tro. Buddha sa at du selv må gjøre arbeidet, buddhaene peker bare ut veien. Den indre roen og innsikten som kommer gjennom trening av sinnet, er derfor kjernen i buddhistisk religiøs opplevelse."
-                        }
-                    ]
+                    "term": "rett oppmerksomhet",
+                    "explanation": "Å være helt til stede i det som skjer akkurat nå. I dag kalles det ofte mindfulness."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: ti minutter på en pute",
+                "text": "Den som mediterer sitter stille og følger pusten inn og ut. Tankene stikker av hele tiden, og hele jobben er å legge merke til det og komme tilbake til pusten. Buddhister mener sinnet kan trenes akkurat som en muskel."
+            },
+            "question": "Har du prøvd lignende øvelser på skolen eller i idretten? Hva skjedde med tankene dine da?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Målet for en buddhist er nirvana, tilstanden der de tre giftene grådighet, hat og uvitenhet er sluknet. Ordet betyr utblåsing, som når man blåser ut en flamme. Nirvana er ikke et sted man reiser til, men en tilstand av full frihet og ro."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Veien dit går gjennom opplevelsen av meditasjon. Rett oppmerksomhet, ofte kalt mindfulness, er å være helt til stede i øyeblikket og legge merke til pust, kropp og følelser uten å bli revet med. Rett konsentrasjon er å samle sinnet i en dyp, stille ro. Mange som ikke er religiøse, bruker i dag slike øvelser som stammer fra Buddhas undervisning."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Buddhismen legger vekt på egen erfaring fremfor blind tro. Buddha sa at du selv må gjøre arbeidet, buddhaene peker bare ut veien. Den indre roen og innsikten som kommer gjennom trening av sinnet, er derfor kjernen i buddhistisk religiøs opplevelse."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "social": {
-            "type": "root",
-            "children": [
+            "summary": "Fellesskapet heter sangha. Munker og nonner får mat av vanlige folk, og gir undervisning tilbake.",
+            "image": "/images/buddhisme/overgangsriter-01.webp",
+            "imageAlt": "Munker i oransje kapper som får ris i tiggerskålene sine av folk fra landsbyen",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Fellesskapet i buddhismen kalles sangha. Munker og nonner vier livet sitt til religionen og lever etter strenge regler i kloster, mens lekfolk, vanlige troende, støtter dem med mat og gaver og får undervisning tilbake. Buddhismen har ingen sentral leder som bestemmer over alle."
-                        }
-                    ]
+                    "term": "sangha",
+                    "explanation": "Fellesskapet av buddhister. Ordet brukes særlig om munkene og nonnene."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Over tid delte buddhismen seg i to hovedretninger. Theravada, de eldstes lære, står sterkt i Sri Lanka, Thailand og Kambodsja og ser veien mest som den enkeltes reise mot nirvana. Mahayana, det store fartøyet, er utbredt i Kina, Japan, Korea og Tibet og løfter frem bodhisattva-idealet: å hjelpe alle andre til frigjøring. Tibetansk buddhisme er en gren av mahayana, med Dalai Lama som åndelig leder."
-                        }
-                    ]
+                    "term": "theravada",
+                    "explanation": "De eldstes lære. Retningen står sterkest i Thailand, Sri Lanka og Kambodsja."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Rundt 500 millioner mennesker følger buddhismen i dag, de fleste i Asia. I Norge er buddhismen det tredje største registrerte trossamfunnet, etter kristendommen og islam, med templer og buddhistsentre flere steder i landet."
-                        }
-                    ]
+                    "term": "mahayana",
+                    "explanation": "Det store fartøyet. Retningen er utbredt i Kina, Japan, Korea og Tibet, og løfter fram det å hjelpe andre."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: morgenrunden",
+                "text": "Tidlig om morgenen går munkene i rekke gjennom landsbyen med tiggerskåler. Folk legger ris og mat i skålene. Munkene sier ikke takk, for det er giveren som får noe: sjansen til å gjøre en god handling."
+            },
+            "question": "Hvilke fellesskap er du selv en del av, og hva forventer de av deg?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Fellesskapet i buddhismen kalles sangha. Munker og nonner vier livet sitt til religionen og lever etter strenge regler i kloster, mens lekfolk, vanlige troende, støtter dem med mat og gaver og får undervisning tilbake. Buddhismen har ingen sentral leder som bestemmer over alle."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Over tid delte buddhismen seg i to hovedretninger. Theravada, de eldstes lære, står sterkt i Sri Lanka, Thailand og Kambodsja og ser veien mest som den enkeltes reise mot nirvana. Mahayana, det store fartøyet, er utbredt i Kina, Japan, Korea og Tibet og løfter frem bodhisattva-idealet: å hjelpe alle andre til frigjøring. Tibetansk buddhisme er en gren av mahayana, med Dalai Lama som åndelig leder."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Rundt 500 millioner mennesker følger buddhismen i dag, de fleste i Asia. I Norge er buddhismen det tredje største registrerte trossamfunnet, etter kristendommen og islam, med templer og buddhistsentre flere steder i landet."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "ethical": {
-            "type": "root",
-            "children": [
+            "summary": "Den åttedelte veien er oppskriften på et godt liv. De åtte delene henger sammen som eikene i et hjul.",
+            "image": "/images/krle/buddhisme/den-attedelte-vei-hjul.webp",
+            "imageAlt": "Utskåret dharmahjul med åtte eiker i en tempelhage",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Den åttedelte veien er buddhismens oppskrift på et godt liv. Den samler åtte deler, fra rett forståelse og rett tanke til rett tale, rett handling, rett levevei, rett innsats, rett oppmerksomhet og rett konsentrasjon. Veien er ikke åtte trinn etter hverandre, men et hjul der alt henger sammen."
-                        }
-                    ]
+                    "term": "den åttedelte veien",
+                    "explanation": "Åtte deler som til sammen viser hvordan en buddhist bør tenke, snakke og handle."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Etikken er konkret: snakk sant og ikke spre sladder eller sårende ord. Ikke drep, ikke stjel, ikke juks. Til og med jobben din er en del av etikken, for du skal tjene til livets opphold uten å skade mennesker eller dyr. Prinsippet om å ikke skade noe levende kalles ahimsa (ikkevold)."
-                        }
-                    ]
+                    "term": "ahimsa",
+                    "explanation": "Å ikke skade noe som lever, verken mennesker eller dyr."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Buddhistisk etikk handler ikke om regler du følger fordi en gud befaler det. Handlingene dine former deg selv og verden gjennom karma: gode handlinger skaper gode følger, dårlige handlinger skaper dårlige. Derfor står medfølelse med alle levende vesener helt sentralt."
-                        }
-                    ]
+                    "term": "karma",
+                    "explanation": "Handlingene dine får følger. Gode handlinger skaper gode følger, dårlige skaper dårlige."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: rett levevei",
+                "text": "En av de åtte delene handler om jobben du har. En buddhist skal ikke tjene penger på noe som skader mennesker eller dyr. Da faller for eksempel våpenhandel og slakteri utenfor, uansett hvor godt betalt jobben er."
+            },
+            "question": "Hvorfor tror du buddhismen regner jobben du har som et spørsmål om rett og galt?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Den åttedelte veien er buddhismens oppskrift på et godt liv. Den samler åtte deler, fra rett forståelse og rett tanke til rett tale, rett handling, rett levevei, rett innsats, rett oppmerksomhet og rett konsentrasjon. Veien er ikke åtte trinn etter hverandre, men et hjul der alt henger sammen."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Etikken er konkret: snakk sant og ikke spre sladder eller sårende ord. Ikke drep, ikke stjel, ikke juks. Til og med jobben din er en del av etikken, for du skal tjene til livets opphold uten å skade mennesker eller dyr. Prinsippet om å ikke skade noe levende kalles ahimsa (ikkevold)."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Buddhistisk etikk handler ikke om regler du følger fordi en gud befaler det. Handlingene dine former deg selv og verden gjennom karma: gode handlinger skaper gode følger, dårlige handlinger skaper dårlige. Derfor står medfølelse med alle levende vesener helt sentralt."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "doctrinal": {
-            "type": "root",
-            "children": [
+            "summary": "De fire edle sannheter er stilt opp som en legetime: sykdommen, årsaken, beskjeden om at du kan bli frisk, og kuren.",
+            "image": "/images/buddhisme/gudsbilde-hero.webp",
+            "imageAlt": "Forgylt buddhastatue foran en tempelvegg med utskårne gudefigurer",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Kjernen i læren er de fire edle sannheter: alt liv inneholder lidelse, lidelsen skyldes begjær, lidelsen kan ta slutt, og veien dit er den åttedelte veien. Buddha sammenlignet seg med en lege som stiller diagnosen, finner årsaken, slår fast at kuren finnes og skriver ut resepten."
-                        }
-                    ]
+                    "term": "de fire edle sannheter",
+                    "explanation": "Buddhismens fire hovedpunkter: lidelsen finnes, den har en årsak, den kan ta slutt, og det finnes en vei dit."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Buddhister tror at de fleste vesener gjenfødes igjen og igjen i et kretsløp som kalles samsara. Hva du gjenfødes som, avhenger av din karma. Målet er å bryte ut av kretsløpet og nå nirvana. Læren om anatta sier at det ikke finnes noe fast, evig selv eller noen udødelig sjel."
-                        }
-                    ]
+                    "term": "samsara",
+                    "explanation": "Kretsløpet av gjenfødsler som de fleste vesener er fanget i. Målet er å komme ut av det."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Buddhismen har ingen tro på en allmektig skapergud som styrer verden. Buddhister benekter ikke at guder finnes, men mener at også gudene er fanget i samsara og ikke kan frelse mennesker. Frelsen er ikke noe en gud gir deg, den er noe du oppnår selv. Buddha tilbes derfor ikke som en gud, men æres som lærer og forbilde."
-                        }
-                    ]
+                    "term": "anatta",
+                    "explanation": "Læren om at det ikke finnes noe fast, evig selv eller noen udødelig sjel."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: guder uten makt",
+                "text": "Buddhister nekter ikke for at guder finnes. Men gudene sitter fast i det samme kretsløpet som mennesker, og kan derfor ikke frelse noen. En buddhist ber ikke om frelse. Arbeidet må hver enkelt gjøre selv."
+            },
+            "question": "Hva er forskjellen på en religion som lover frelse fra en gud, og en som sier at du må klare det selv?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Kjernen i læren er de fire edle sannheter: alt liv inneholder lidelse, lidelsen skyldes begjær, lidelsen kan ta slutt, og veien dit er den åttedelte veien. Buddha sammenlignet seg med en lege som stiller diagnosen, finner årsaken, slår fast at kuren finnes og skriver ut resepten."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Buddhister tror at de fleste vesener gjenfødes igjen og igjen i et kretsløp som kalles samsara. Hva du gjenfødes som, avhenger av din karma. Målet er å bryte ut av kretsløpet og nå nirvana. Læren om anatta sier at det ikke finnes noe fast, evig selv eller noen udødelig sjel."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Buddhismen har ingen tro på en allmektig skapergud som styrer verden. Buddhister benekter ikke at guder finnes, men mener at også gudene er fanget i samsara og ikke kan frelse mennesker. Frelsen er ikke noe en gud gir deg, den er noe du oppnår selv. Buddha tilbes derfor ikke som en gud, men æres som lærer og forbilde."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "material": {
-            "type": "root",
-            "children": [
+            "summary": "Templer, statuer, stupaer og hjulet med åtte eiker: buddhismen er full av ting du kan se og ta på.",
+            "image": "/images/buddhisme/bonn-03.webp",
+            "imageAlt": "Rekke med bønnehjul i messing og fargerike bønneflagg i et fjellandskap",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Templene er buddhismens samlingssteder, ofte med en stor buddhastatue i midten. Foran statuen ofrer folk lys, røkelse og blomster under puja. Statuene viser Buddha i ulike stillinger, gjerne i dyp meditasjon, og minner om målet: ro og oppvåkning."
-                        }
-                    ]
+                    "term": "stupa",
+                    "explanation": "Tårnformet monument som ofte har relikvier inni, altså hellige levninger."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Stupaer er tårnformede monumenter som ofte inneholder relikvier, hellige levninger. I tibetansk buddhisme brukes bønnehjul, sylindre med mantraer inni som snurres rundt, og fargerike bønneflagg som henges opp slik at vinden sprer de gode ønskene."
-                        }
-                    ]
+                    "term": "bønnehjul",
+                    "explanation": "Sylinder med mantraer inni. Når hjulet snurres, regnes mantraene som lest."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Buddhismens fremste symbol er dharmahjulet med åtte eiker, én for hver del av den åttedelte veien. Det finnes på flagg og templer, og til og med på Indias nasjonalflagg. Bodhitreet i Bodh Gaya, der Buddha våknet opp, er et av de helligste stedene for pilegrimer."
-                        }
-                    ]
+                    "term": "dharmahjulet",
+                    "explanation": "Symbolet med åtte eiker, én for hver del av den åttedelte veien. Det finnes til og med på Indias flagg."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: vinden leser for deg",
+                "text": "I Himalaya henger det fargerike bønneflagg med trykte bønner på. Når vinden river i flaggene, mener folk at de gode ønskene spres utover fjellsidene. Det samme skjer når et bønnehjul snurres rundt."
+            },
+            "question": "Hvorfor tror du et hjul passer så godt som symbol for en lære med åtte deler som henger sammen?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Templene er buddhismens samlingssteder, ofte med en stor buddhastatue i midten. Foran statuen ofrer folk lys, røkelse og blomster under puja. Statuene viser Buddha i ulike stillinger, gjerne i dyp meditasjon, og minner om målet: ro og oppvåkning."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Stupaer er tårnformede monumenter som ofte inneholder relikvier, hellige levninger. I tibetansk buddhisme brukes bønnehjul, sylindre med mantraer inni som snurres rundt, og fargerike bønneflagg som henges opp slik at vinden sprer de gode ønskene."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Buddhismens fremste symbol er dharmahjulet med åtte eiker, én for hver del av den åttedelte veien. Det finnes på flagg og templer, og til og med på Indias nasjonalflagg. Bodhitreet i Bodh Gaya, der Buddha våknet opp, er et av de helligste stedene for pilegrimer."
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     }
 }

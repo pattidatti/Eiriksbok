@@ -5,13 +5,13 @@
       "name": "Bahai",
       "color": "#14b8a6",
       "dimensions": {
-        "ritual": 839,
-        "narrative": 873,
-        "experiential": 768,
-        "social": 865,
-        "ethical": 761,
-        "doctrinal": 917,
-        "material": 775
+        "ritual": 940,
+        "narrative": 1020,
+        "experiential": 878,
+        "social": 957,
+        "ethical": 864,
+        "doctrinal": 1027,
+        "material": 880
       }
     },
     {
@@ -19,13 +19,13 @@
       "name": "Buddhisme",
       "color": "#f59e0b",
       "dimensions": {
-        "ritual": 784,
-        "narrative": 920,
-        "experiential": 833,
-        "social": 903,
-        "ethical": 848,
-        "doctrinal": 876,
-        "material": 756
+        "ritual": 879,
+        "narrative": 1010,
+        "experiential": 920,
+        "social": 1001,
+        "ethical": 950,
+        "doctrinal": 993,
+        "material": 855
       }
     },
     {
@@ -33,13 +33,13 @@
       "name": "Hinduisme",
       "color": "#ec4899",
       "dimensions": {
-        "ritual": 876,
-        "narrative": 764,
-        "experiential": 774,
-        "social": 921,
-        "ethical": 743,
-        "doctrinal": 1039,
-        "material": 747
+        "ritual": 979,
+        "narrative": 846,
+        "experiential": 844,
+        "social": 1010,
+        "ethical": 822,
+        "doctrinal": 1142,
+        "material": 843
       }
     },
     {
@@ -47,13 +47,13 @@
       "name": "Islam",
       "color": "#10b981",
       "dimensions": {
-        "ritual": 818,
-        "narrative": 959,
-        "experiential": 892,
-        "social": 873,
-        "ethical": 779,
-        "doctrinal": 800,
-        "material": 822
+        "ritual": 890,
+        "narrative": 1056,
+        "experiential": 997,
+        "social": 957,
+        "ethical": 893,
+        "doctrinal": 885,
+        "material": 917
       }
     },
     {
@@ -61,13 +61,13 @@
       "name": "Jehovas vitner",
       "color": "#0ea5e9",
       "dimensions": {
-        "ritual": 795,
-        "narrative": 834,
-        "experiential": 716,
-        "social": 858,
-        "ethical": 826,
-        "doctrinal": 763,
-        "material": 829
+        "ritual": 886,
+        "narrative": 955,
+        "experiential": 800,
+        "social": 960,
+        "ethical": 920,
+        "doctrinal": 863,
+        "material": 928
       }
     },
     {
@@ -75,13 +75,13 @@
       "name": "Jødedom",
       "color": "#3b82f6",
       "dimensions": {
-        "ritual": 881,
-        "narrative": 846,
-        "experiential": 796,
-        "social": 903,
-        "ethical": 710,
-        "doctrinal": 922,
-        "material": 815
+        "ritual": 964,
+        "narrative": 961,
+        "experiential": 909,
+        "social": 1009,
+        "ethical": 807,
+        "doctrinal": 1003,
+        "material": 903
       }
     },
     {
@@ -89,13 +89,13 @@
       "name": "Kristendom",
       "color": "#6366f1",
       "dimensions": {
-        "ritual": 660,
-        "narrative": 720,
-        "experiential": 669,
-        "social": 730,
-        "ethical": 690,
-        "doctrinal": 800,
-        "material": 800
+        "ritual": 757,
+        "narrative": 780,
+        "experiential": 758,
+        "social": 834,
+        "ethical": 774,
+        "doctrinal": 869,
+        "material": 908
       }
     },
     {
@@ -103,13 +103,13 @@
       "name": "Mormonisme",
       "color": "#8b5cf6",
       "dimensions": {
-        "ritual": 831,
-        "narrative": 903,
-        "experiential": 750,
-        "social": 911,
-        "ethical": 805,
-        "doctrinal": 857,
-        "material": 826
+        "ritual": 901,
+        "narrative": 1011,
+        "experiential": 852,
+        "social": 1019,
+        "ethical": 886,
+        "doctrinal": 957,
+        "material": 906
       }
     },
     {
@@ -117,13 +117,13 @@
       "name": "Sikhisme",
       "color": "#ff9933",
       "dimensions": {
-        "ritual": 948,
-        "narrative": 947,
-        "experiential": 773,
-        "social": 783,
-        "ethical": 722,
-        "doctrinal": 764,
-        "material": 773
+        "ritual": 1044,
+        "narrative": 1022,
+        "experiential": 889,
+        "social": 864,
+        "ethical": 811,
+        "doctrinal": 844,
+        "material": 843
       }
     }
   ],

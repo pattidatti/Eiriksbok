@@ -1,160 +1,205 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { RichText } from '../ui/RichText';
-import type { Religion } from '../../types';
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { DIMENSIONS, type DimensionKey } from './dimensionMeta';
 
 interface DimensionWheelProps {
-    religion: Religion;
+    religionName: string;
+    /** Religionens egen farge - brukes på navet og fremdriftsringen */
+    color: string;
+    selected: DimensionKey;
+    /** Dimensjoner eleven har åpnet. Fylles gradvis, og fyller hjulet. */
+    visited: Set<DimensionKey>;
+    /** Dimensjoner som faktisk har innhold i datafila */
+    available: Set<DimensionKey>;
+    onSelect: (key: DimensionKey) => void;
 }
 
-const DIMENSIONS = [
-    { key: 'ritual', label: 'Ritualer og kult', angle: 0 },
-    { key: 'narrative', label: 'Fortellinger og myter', angle: 51.4 },
-    { key: 'experiential', label: 'Opplevelser og erfaringer', angle: 102.8 },
-    { key: 'social', label: 'Sosial organisering', angle: 154.2 },
-    { key: 'ethical', label: 'Etikk og moral', angle: 205.6 },
-    { key: 'doctrinal', label: 'Lære og filosofi', angle: 257 },
-    { key: 'material', label: 'Materielle uttrykk', angle: 308.4 },
-] as const;
+const SIZE = 320;
+const CENTER = SIZE / 2;
+const R_OUTER = 148;
+const R_INNER = 58;
+const R_HUB = 52;
+const SLICE = 360 / DIMENSIONS.length;
+// Luft mellom kilene, i grader. Gjør hjulet til sju tydelige felt i stedet
+// for én sammenhengende skive.
+const GAP = 2;
+const LABEL_RADIUS = 104;
 
-export const DimensionWheel: React.FC<DimensionWheelProps> = ({ religion }) => {
-    const [selectedDim, setSelectedDim] = useState<typeof DIMENSIONS[number]['key'] | null>(null);
+const polar = (radius: number, degrees: number) => {
+    const rad = ((degrees - 90) * Math.PI) / 180;
+    return [CENTER + radius * Math.cos(rad), CENTER + radius * Math.sin(rad)] as const;
+};
 
-    // Calculate wedge path
-    // 360 / 7 = ~51.4 degrees
-    // We'll use SVG for the wheel
-    const radius = 150;
-    const center = 160; // slightly larger than radius to avoid clipping
+/** Ringutsnitt (donut-kile) mellom to vinkler */
+function wedgePath(startDeg: number, endDeg: number) {
+    const [x0, y0] = polar(R_OUTER, startDeg);
+    const [x1, y1] = polar(R_OUTER, endDeg);
+    const [x2, y2] = polar(R_INNER, endDeg);
+    const [x3, y3] = polar(R_INNER, startDeg);
+    return [
+        `M ${x0} ${y0}`,
+        `A ${R_OUTER} ${R_OUTER} 0 0 1 ${x1} ${y1}`,
+        `L ${x2} ${y2}`,
+        `A ${R_INNER} ${R_INNER} 0 0 0 ${x3} ${y3}`,
+        'Z',
+    ].join(' ');
+}
 
-    const createWedge = (startAngle: number, endAngle: number) => {
-        const x1 = center + radius * Math.cos(Math.PI * startAngle / 180);
-        const y1 = center + radius * Math.sin(Math.PI * startAngle / 180);
-        const x2 = center + radius * Math.cos(Math.PI * endAngle / 180);
-        const y2 = center + radius * Math.sin(Math.PI * endAngle / 180);
+export const DimensionWheel: React.FC<DimensionWheelProps> = ({
+    religionName,
+    color,
+    selected,
+    visited,
+    available,
+    onSelect,
+}) => {
+    const pathRefs = useRef<(SVGPathElement | null)[]>([]);
+    const progress = visited.size / DIMENSIONS.length;
+    const hubCircumference = 2 * Math.PI * R_HUB;
 
-        return `M ${center} ${center} L ${x1} ${y1} A ${radius} ${radius} 0 0 1 ${x2} ${y2} Z`;
+    const move = (delta: number) => {
+        const current = DIMENSIONS.findIndex((d) => d.key === selected);
+        const next = (current + delta + DIMENSIONS.length) % DIMENSIONS.length;
+        onSelect(DIMENSIONS[next].key);
+        pathRefs.current[next]?.focus();
     };
 
     return (
-        <div className="flex flex-col md:flex-row items-center gap-8 p-8 bg-white/50 rounded-3xl backdrop-blur-md border border-white/20 shadow-sm">
-            {/* The Wheel */}
-            <div
-                className="relative w-[320px] h-[320px] flex-shrink-0"
-                role="radiogroup"
-                aria-label={`Velg dimensjon for ${religion.name}`}
-                onKeyDown={(event) => {
-                    const currentIndex = DIMENSIONS.findIndex((d) => d.key === selectedDim);
-                    let nextIndex = -1;
-                    if (event.key === 'ArrowRight' || event.key === 'ArrowDown')
-                        nextIndex = (currentIndex + 1) % DIMENSIONS.length;
-                    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp')
-                        nextIndex = (currentIndex - 1 + DIMENSIONS.length) % DIMENSIONS.length;
-                    if (nextIndex >= 0) {
-                        event.preventDefault();
-                        setSelectedDim(DIMENSIONS[nextIndex].key);
-                    }
-                }}
+        <div
+            className="relative w-full max-w-[340px] mx-auto aspect-square select-none"
+            role="radiogroup"
+            aria-label={`Velg dimensjon for ${religionName}`}
+            onKeyDown={(event) => {
+                if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+                    event.preventDefault();
+                    move(1);
+                }
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+                    event.preventDefault();
+                    move(-1);
+                }
+            }}
+        >
+            <svg
+                viewBox={`0 0 ${SIZE} ${SIZE}`}
+                className="w-full h-full overflow-visible"
+                aria-hidden="false"
             >
-                <svg width="320" height="320" viewBox="0 0 320 320" className="transform -rotate-90">
-                    {DIMENSIONS.map((dim, index) => {
-                        const startAngle = index * (360 / 7);
-                        const endAngle = (index + 1) * (360 / 7);
-                        const isSelected = selectedDim === dim.key;
-
-                        return (
-                            <motion.path
-                                key={dim.key}
-                                d={createWedge(startAngle, endAngle)}
-                                fill={isSelected ? (religion.color || '#6366f1') : 'var(--bg-card)'}
-                                stroke="var(--border)"
-                                strokeWidth="2"
-                                whileHover={{ scale: 1.05, originX: 0.5, originY: 0.5 }}
-                                onClick={() => setSelectedDim(dim.key)}
-                                role="radio"
-                                aria-checked={isSelected}
-                                aria-label={dim.label}
-                                tabIndex={isSelected || (!selectedDim && index === 0) ? 0 : -1}
-                                onKeyDown={(event) => {
-                                    if (event.key === 'Enter' || event.key === ' ') {
-                                        event.preventDefault();
-                                        setSelectedDim(dim.key);
-                                    }
-                                }}
-                                className="cursor-pointer transition-colors duration-300 hover:fill-indigo-500/20 focus:outline-none focus-visible:stroke-indigo-500 focus-visible:[stroke-width:4]"
-                                style={{
-                                    fill: isSelected ? (religion.color || '#6366f1') : undefined
-                                }}
-                            />
-                        );
-                    })}
-                    {/* Center Circle */}
-                    <circle cx={center} cy={center} r="40" fill="var(--bg-main)" stroke="var(--border)" strokeWidth="2" />
-                </svg>
-
-                {/* Labels positioned around */}
                 {DIMENSIONS.map((dim, index) => {
-                    const angle = index * (360 / 7) + (360 / 14); // middle of wedge
-                    // Adjust radius for label placement
-                    const labelRadius = 110;
-                    const x = 160 + labelRadius * Math.cos((angle - 90) * Math.PI / 180);
-                    const y = 160 + labelRadius * Math.sin((angle - 90) * Math.PI / 180);
+                    const isSelected = selected === dim.key;
+                    const isVisited = visited.has(dim.key);
+                    const hasContent = available.has(dim.key);
+                    const mid = index * SLICE + SLICE / 2;
+                    // Valgt kile skyves litt ut fra navet, som et uttrekk i en skuff
+                    const [ox, oy] = polar(6, mid);
 
                     return (
-                        <div
+                        <motion.path
                             key={dim.key}
-                            className="absolute text-xs font-bold text-center pointer-events-none text-slate-700 drop-shadow-sm"
-                            style={{
-                                left: x,
-                                top: y,
-                                transform: 'translate(-50%, -50%)',
-                                width: '80px'
+                            ref={(el) => {
+                                pathRefs.current[index] = el;
                             }}
-                        >
-                            {dim.label.split(' ')[0]}
-                        </div>
+                            d={wedgePath(index * SLICE + GAP / 2, (index + 1) * SLICE - GAP / 2)}
+                            fill={dim.color}
+                            fillOpacity={isSelected ? 0.92 : isVisited ? 0.34 : 0.13}
+                            stroke={dim.color}
+                            strokeOpacity={isSelected ? 1 : 0.35}
+                            strokeWidth={isSelected ? 2 : 1}
+                            animate={{
+                                x: isSelected ? ox - CENTER : 0,
+                                y: isSelected ? oy - CENTER : 0,
+                                opacity: hasContent ? 1 : 0.4,
+                            }}
+                            transition={{ type: 'spring', stiffness: 320, damping: 24 }}
+                            whileHover={{ scale: 1.035 }}
+                            whileTap={{ scale: 0.99 }}
+                            style={{ transformBox: 'view-box', transformOrigin: '160px 160px' }}
+                            role="radio"
+                            aria-checked={isSelected}
+                            aria-label={`${dim.label}. ${dim.question}`}
+                            tabIndex={isSelected ? 0 : -1}
+                            onClick={() => onSelect(dim.key)}
+                            onKeyDown={(event) => {
+                                if (event.key === 'Enter' || event.key === ' ') {
+                                    event.preventDefault();
+                                    onSelect(dim.key);
+                                }
+                            }}
+                            className="cursor-pointer focus:outline-none focus-visible:stroke-slate-900 focus-visible:[stroke-width:3]"
+                        />
                     );
                 })}
 
-                {/* Center Text */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">
-                        {religion.name}
-                    </span>
-                </div>
-            </div>
+                {/* Navet: fremdriftsring rundt religionsnavnet */}
+                <circle cx={CENTER} cy={CENTER} r={R_HUB} fill="#ffffff" />
+                <circle
+                    cx={CENTER}
+                    cy={CENTER}
+                    r={R_HUB}
+                    fill="none"
+                    stroke={color}
+                    strokeOpacity={0.15}
+                    strokeWidth={4}
+                />
+                <motion.circle
+                    cx={CENTER}
+                    cy={CENTER}
+                    r={R_HUB}
+                    fill="none"
+                    stroke={color}
+                    strokeWidth={4}
+                    strokeLinecap="round"
+                    transform={`rotate(-90 ${CENTER} ${CENTER})`}
+                    style={{ strokeDasharray: hubCircumference }}
+                    animate={{ strokeDashoffset: hubCircumference * (1 - progress) }}
+                    transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+                />
+            </svg>
 
-            {/* Content Area */}
-            <div className="flex-1 min-h-[300px] w-full">
-                <AnimatePresence mode="wait">
-                    {selectedDim ? (
-                        <motion.div
-                            key={selectedDim}
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -20 }}
-                            className="bg-white/80 p-6 rounded-2xl border border-white/50 h-full shadow-sm"
+            {/* Etiketter og ikoner legges over SVG-en som HTML, i prosent av
+                boksen, slik at de følger med når hjulet skalerer. */}
+            {DIMENSIONS.map((dim, index) => {
+                const mid = index * SLICE + SLICE / 2;
+                const [x, y] = polar(LABEL_RADIUS, mid);
+                const isSelected = selected === dim.key;
+                const Icon = dim.icon;
+
+                return (
+                    <div
+                        key={dim.key}
+                        className="absolute flex flex-col items-center gap-0.5 pointer-events-none"
+                        style={{
+                            left: `${(x / SIZE) * 100}%`,
+                            top: `${(y / SIZE) * 100}%`,
+                            transform: 'translate(-50%, -50%)',
+                            width: '72px',
+                        }}
+                    >
+                        <Icon
+                            size={18}
+                            strokeWidth={2.2}
+                            style={{ color: isSelected ? '#ffffff' : dim.color }}
+                        />
+                        <span
+                            className={`text-[10px] leading-tight font-bold text-center ${
+                                isSelected ? 'text-white' : 'text-slate-700'
+                            }`}
                         >
-                            <h3 className="text-2xl font-display font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">
-                                {DIMENSIONS.find(d => d.key === selectedDim)?.label}
-                            </h3>
-                            <div className="prose prose-slate max-w-none">
-                                {religion.dimensions[selectedDim] ? (
-                                    <RichText content={religion.dimensions[selectedDim]} />
-                                ) : (
-                                    <p className="text-slate-500 italic">Ingen beskrivelse lagt til ennå.</p>
-                                )}
-                            </div>
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="flex items-center justify-center h-full text-slate-500 italic text-center p-8 border-2 border-dashed border-slate-300 rounded-2xl"
-                        >
-                            Klikk på en del av hjulet for å utforske de 7 dimensjonene.
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                            {dim.short}
+                        </span>
+                    </div>
+                );
+            })}
+
+            {/* Navteksten */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 text-center px-6">
+                    {religionName}
+                </span>
+                <span className="text-lg font-display font-bold" style={{ color }}>
+                    {visited.size}/{DIMENSIONS.length}
+                </span>
+                <span className="text-[9px] uppercase tracking-wider text-slate-400">lest</span>
             </div>
         </div>
     );

@@ -1,0 +1,12 @@
+{
+  "term": "Halal",
+  "definition": "Det som er tillatt etter islamske regler. Ordet brukes mest om mat, og motsatsen er haram, det forbudte.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "halalmat"
+  ],
+  "tags": [
+    "islam"
+  ]
+}

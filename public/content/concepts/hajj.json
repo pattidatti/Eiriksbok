@@ -1,0 +1,12 @@
+{
+  "term": "Hajj",
+  "definition": "Pilegrimsreisen til Mekka. Alle muslimer som har helse og råd, skal dra minst én gang i livet.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "hajjen"
+  ],
+  "tags": [
+    "islam"
+  ]
+}

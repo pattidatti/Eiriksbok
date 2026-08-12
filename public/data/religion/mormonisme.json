@@ -3,228 +3,382 @@
     "color": "#8b5cf6",
     "dimensions": {
         "ritual": {
-            "type": "root",
-            "children": [
+            "summary": "Ingen døpes som spedbarn. Du må være minst åtte år og velge det selv.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Dåpen skjer ved full neddykking i vann, tidligst når barnet er 8 år og regnes som gammelt nok til å velge selv. Etter dåpen blir man konfirmert og mottar Den hellige ånd ved at prestedømsbærere legger hendene på hodet. Hver søndag deles nadverden ut i møtehuset, med brød og vann som minner om Jesu offer."
-                        }
-                    ]
+                    "term": "nadverd",
+                    "explanation": "Måltidet med brød og vann som deles ut hver søndag i møtehuset, til minne om Jesu offer."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "De helligste ritualene foregår i tempelet, som bare er åpent for medlemmer med gyldig anbefaling. Der kan familier forsegles, det vil si vies for tid og evighet, ikke bare til døden skiller dem. Medlemmene utfører også dåp for døde: en levende person døpes på vegne av en avdød slektning, slik at den døde kan velge å ta imot dåpen i det neste livet."
-                        }
-                    ]
+                    "term": "forsegling",
+                    "explanation": "Vielse i tempelet som gjelder for tid og evighet, ikke bare til døden skiller paret."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Bønnen preger hverdagen. Medlemmene ber morgen og kveld, holder daglig familiebønn og ber en bordbønn før måltidene. Bønnen rettes til den himmelske Fader i Jesu Kristi navn."
-                        }
-                    ]
+                    "term": "dåp for døde",
+                    "explanation": "En levende person døpes på vegne av en avdød slektning, slik at den døde kan velge å ta imot dåpen i det neste livet."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: hvorfor åtte år",
+                "text": "Kirken døper ingen som barn. Grensen går ved åtte år, fordi medlemmene mener et menneske da er gammelt nok til å forstå hva det velger. Valget skal være ditt eget, ikke foreldrenes."
+            },
+            "question": "Familiebønn, bordbønn og bønn morgen og kveld. Hva tror du gjentakelsen gjør med en familie?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Dåpen skjer ved full neddykking i vann, tidligst når barnet er 8 år og regnes som gammelt nok til å velge selv. Etter dåpen blir man konfirmert og mottar Den hellige ånd ved at prestedømsbærere legger hendene på hodet. Hver søndag deles nadverden ut i møtehuset, med brød og vann som minner om Jesu offer."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "De helligste ritualene foregår i tempelet, som bare er åpent for medlemmer med gyldig anbefaling. Der kan familier forsegles, det vil si vies for tid og evighet, ikke bare til døden skiller dem. Medlemmene utfører også dåp for døde: en levende person døpes på vegne av en avdød slektning, slik at den døde kan velge å ta imot dåpen i det neste livet."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Bønnen preger hverdagen. Medlemmene ber morgen og kveld, holder daglig familiebønn og ber en bordbønn før måltidene. Bønnen rettes til den himmelske Fader i Jesu Kristi navn."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "narrative": {
-            "type": "root",
-            "children": [
+            "summary": "En 14-åring ba om å få vite hvilken kirke som var den rette. Svaret han fortalte om, ble starten på kirken.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Den sentrale fortellingen begynner i 1820, da 14 år gamle Joseph Smith ba til Gud for å finne ut hvilken kirke som var den rette. Han fortalte at Gud Faderen og Jesus Kristus viste seg for ham i et syn. Medlemmene tror at den opprinnelige kirken Jesus grunnla, gikk tapt, og at Gud kalte Joseph Smith som profet for å gjenopprette den."
-                        }
-                    ]
+                    "term": "Joseph Smith",
+                    "explanation": "Grunnleggeren. Medlemmene tror Gud kalte ham som profet for å gjenopprette kirken Jesus hadde grunnlagt."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Smith fortalte at en engel viste ham gullplater gjemt i en høyde, og at han oversatte dem ved Guds kraft. Resultatet ble Mormons bok, som handler om folk som reiste fra Jerusalem til Amerika i oldtiden, og om at Jesus besøkte dem etter oppstandelsen. Boka regnes som hellig skrift ved siden av Bibelen, sammen med Lære og pakter og Den kostelige perle."
-                        }
-                    ]
+                    "term": "Mormons bok",
+                    "explanation": "Hellig skrift ved siden av Bibelen. Den handler om folk som reiste fra Jerusalem til Amerika i oldtiden."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Joseph Smith ble drept av en mobb i 1844. Etterpå ledet Brigham Young medlemmene på en lang utvandring vestover til Utah, der de bygde Salt Lake City. Denne reisen er en viktig del av kirkens historie og identitet."
-                        }
-                    ]
+                    "term": "gjenopprettelse",
+                    "explanation": "Troen på at den opprinnelige kirken gikk tapt, og at Gud satte den opp igjen gjennom Joseph Smith."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: reisen vestover",
+                "text": "Joseph Smith ble drept av en mobb i 1844. Brigham Young ledet da medlemmene på en lang vandring vestover, til de nådde ørkenen i Utah og grunnla Salt Lake City. Reisen er fortsatt en viktig del av kirkens identitet."
+            },
+            "question": "Hvorfor tror du en gruppe som blir forfulgt, ofte ender opp med å reise langt bort og bygge noe helt nytt?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Den sentrale fortellingen begynner i 1820, da 14 år gamle Joseph Smith ba til Gud for å finne ut hvilken kirke som var den rette. Han fortalte at Gud Faderen og Jesus Kristus viste seg for ham i et syn. Medlemmene tror at den opprinnelige kirken Jesus grunnla, gikk tapt, og at Gud kalte Joseph Smith som profet for å gjenopprette den."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Smith fortalte at en engel viste ham gullplater gjemt i en høyde, og at han oversatte dem ved Guds kraft. Resultatet ble Mormons bok, som handler om folk som reiste fra Jerusalem til Amerika i oldtiden, og om at Jesus besøkte dem etter oppstandelsen. Boka regnes som hellig skrift ved siden av Bibelen, sammen med Lære og pakter og Den kostelige perle."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Joseph Smith ble drept av en mobb i 1844. Etterpå ledet Brigham Young medlemmene på en lang utvandring vestover til Utah, der de bygde Salt Lake City. Denne reisen er en viktig del av kirkens historie og identitet."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "experiential": {
-            "type": "root",
-            "children": [
+            "summary": "Det viktigste er det personlige vitnesbyrdet: en indre visshet om at Gud finnes og at kirken er sann.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Det personlige vitnesbyrdet står i sentrum av troslivet. Et vitnesbyrd er en indre visshet om at Gud finnes, at Jesus er Kristus og at kirken er sann. Medlemmene tror at hver enkelt kan få denne vissheten selv, ved å be oppriktig og lytte til Den hellige ånd."
-                        }
-                    ]
+                    "term": "vitnesbyrd",
+                    "explanation": "Den indre vissheten om at troen er sann. Medlemmene mener hver enkelt kan få den selv, ved å be oppriktig."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Mange beskriver svaret fra Gud som en varm følelse i brystet, en slags indre ild, eller som en stille og rolig visshet. På møtene deler medlemmene ofte vitnesbyrdene sine med hverandre, og det å høre andre fortelle styrker troen."
-                        }
-                    ]
+                    "term": "personlig åpenbaring",
+                    "explanation": "Troen på at Gud svarer den som spør, også i små og store valg i hverdagen."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Troen på personlig åpenbaring gjelder alle, ikke bare profeten. Medlemmene ber om veiledning i små og store valg i livet, og opplever at Gud svarer den som spør. Tempelet beskrives av mange som et sted med spesiell fred, der de kjenner seg nær Gud og familien."
-                        }
-                    ]
+                    "term": "Den hellige ånd",
+                    "explanation": "Den som gir svaret. Mange beskriver det som en varm følelse i brystet eller en stille, rolig visshet."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: møtet der alle kan snakke",
+                "text": "På vitnesbyrdsmøtene er det ingen fast taleliste. Den som vil, går fram og forteller hva han eller hun tror og hvorfor. Å høre andre fortelle regnes som en av de sterkeste måtene troen styrkes på."
+            },
+            "question": "Kan en følelse være et bevis? Hvordan tror du et medlem ville svart, og hvordan ville en skeptiker svart?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Det personlige vitnesbyrdet står i sentrum av troslivet. Et vitnesbyrd er en indre visshet om at Gud finnes, at Jesus er Kristus og at kirken er sann. Medlemmene tror at hver enkelt kan få denne vissheten selv, ved å be oppriktig og lytte til Den hellige ånd."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Mange beskriver svaret fra Gud som en varm følelse i brystet, en slags indre ild, eller som en stille og rolig visshet. På møtene deler medlemmene ofte vitnesbyrdene sine med hverandre, og det å høre andre fortelle styrker troen."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Troen på personlig åpenbaring gjelder alle, ikke bare profeten. Medlemmene ber om veiledning i små og store valg i livet, og opplever at Gud svarer den som spør. Tempelet beskrives av mange som et sted med spesiell fred, der de kjenner seg nær Gud og familien."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "social": {
-            "type": "root",
-            "children": [
+            "summary": "Kirken har ingen lønnede prester i menighetene. Vanlige medlemmer får oppgavene ved siden av jobb og skole.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Kirken heter egentlig Jesu Kristi Kirke av Siste Dagers Hellige og ledes fra Salt Lake City i USA. Øverst står presidenten, som medlemmene regner som en levende profet, sammen med tolv apostler. Kirken har ikke lønnede prester i menighetene. I stedet har den et legmannspresteskap, der vanlige medlemmer får ansvar og oppgaver ved siden av jobb og skole."
-                        }
-                    ]
+                    "term": "legmannspresteskap",
+                    "explanation": "At vanlige medlemmer, ikke ansatte prester, har ansvaret og oppgavene i menigheten."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Medlemmene hører til lokale menigheter, som igjen er samlet i større områder som kalles staver. Menighetene er tette fellesskap der folk hjelper hverandre, besøker hverandre og har oppgaver i søndagsskole, ungdomsarbeid og musikk. Mange unge reiser ut som misjonærer i opptil to år, ofte til et annet land, og betaler det meste selv."
-                        }
-                    ]
+                    "term": "levende profet",
+                    "explanation": "Kirkens president i Salt Lake City, som medlemmene tror mottar veiledning fra Gud i dag."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Familien er selve kjernen i det sosiale livet. Medlemmene tror at familier kan være sammen for evig hvis de forsegles i tempelet, og mange setter av en fast kveld i uka til familieaktiviteter, bønn og skriftstudium hjemme."
-                        }
-                    ]
+                    "term": "misjonær",
+                    "explanation": "Ung person som reiser ut i opptil to år for å forkynne, ofte til et annet land, og betaler det meste selv."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: to år, egen regning",
+                "text": "Mange unge reiser ut som misjonærer rett etter videregående. De lærer et nytt språk, bor sammen med en makker, følger en stram dagsplan og betaler oppholdet selv eller med hjelp fra familien."
+            },
+            "question": "Hva tror du det gjør med et fellesskap at alle har en oppgave, og at ingen får betalt for den?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Kirken heter egentlig Jesu Kristi Kirke av Siste Dagers Hellige og ledes fra Salt Lake City i USA. Øverst står presidenten, som medlemmene regner som en levende profet, sammen med tolv apostler. Kirken har ikke lønnede prester i menighetene. I stedet har den et legmannspresteskap, der vanlige medlemmer får ansvar og oppgaver ved siden av jobb og skole."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Medlemmene hører til lokale menigheter, som igjen er samlet i større områder som kalles staver. Menighetene er tette fellesskap der folk hjelper hverandre, besøker hverandre og har oppgaver i søndagsskole, ungdomsarbeid og musikk. Mange unge reiser ut som misjonærer i opptil to år, ofte til et annet land, og betaler det meste selv."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Familien er selve kjernen i det sosiale livet. Medlemmene tror at familier kan være sammen for evig hvis de forsegles i tempelet, og mange setter av en fast kveld i uka til familieaktiviteter, bønn og skriftstudium hjemme."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "ethical": {
-            "type": "root",
-            "children": [
+            "summary": "Visdomsordet er en helselov: medlemmene avstår fra alkohol, tobakk, kaffe og te.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Den mest kjente leveregelen er visdomsordet, en helselov som medlemmene tror ble åpenbart til Joseph Smith. Den sier at man skal avstå fra alkohol, tobakk, kaffe og te, og ellers ta godt vare på kroppen. For medlemmene handler dette om at kroppen er en gave fra Gud."
-                        }
-                    ]
+                    "term": "visdomsordet",
+                    "explanation": "Helseloven medlemmene tror ble åpenbart til Joseph Smith. Kroppen regnes som en gave fra Gud."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Ærlighet er en grunnverdi: man skal snakke sant, holde avtaler og være til å stole på i jobb og skole. Kyskhetsloven sier at seksualitet hører hjemme i ekteskapet. Medlemmene betaler også tiende, det vil si en tidel av inntekten sin, til kirken. Pengene brukes til templer, møtehus og kirkens arbeid."
-                        }
-                    ]
+                    "term": "kyskhetsloven",
+                    "explanation": "Regelen om at seksualitet hører hjemme i ekteskapet."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Tjeneste for andre står sterkt. Medlemmene oppfordres til å hjelpe naboer, gi til fattige og stille opp for hverandre i menigheten. Fordi målet er evig utvikling, ses hele livet som en mulighet til å lære, vokse og bli et bedre menneske."
-                        }
-                    ]
+                    "term": "tiende",
+                    "explanation": "En tidel av inntekten, som gis til kirken og brukes til templer, møtehus og kirkens arbeid."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: en tidel av alt",
+                "text": "Tiende regnes ut av inntekten, ikke av det du har til overs. For en elev med deltidsjobb betyr det at en tidel av lønna går videre før pengene brukes på noe annet. Til gjengjeld dekker den samme kassa alt kirken bygger."
+            },
+            "question": "Kirken ser hele livet som en mulighet til å lære og vokse. Hva gjør en slik tanke med motgang?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Den mest kjente leveregelen er visdomsordet, en helselov som medlemmene tror ble åpenbart til Joseph Smith. Den sier at man skal avstå fra alkohol, tobakk, kaffe og te, og ellers ta godt vare på kroppen. For medlemmene handler dette om at kroppen er en gave fra Gud."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Ærlighet er en grunnverdi: man skal snakke sant, holde avtaler og være til å stole på i jobb og skole. Kyskhetsloven sier at seksualitet hører hjemme i ekteskapet. Medlemmene betaler også tiende, det vil si en tidel av inntekten sin, til kirken. Pengene brukes til templer, møtehus og kirkens arbeid."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Tjeneste for andre står sterkt. Medlemmene oppfordres til å hjelpe naboer, gi til fattige og stille opp for hverandre i menigheten. Fordi målet er evig utvikling, ses hele livet som en mulighet til å lære, vokse og bli et bedre menneske."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "doctrinal": {
-            "type": "root",
-            "children": [
+            "summary": "Medlemmene tror på Gud, Jesus og Den hellige ånd som tre atskilte personer, ikke som en treenighet.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Medlemmene tror på Gud Faderen, Jesus Kristus og Den hellige ånd, men ikke på treenighetslæren slik de fleste andre kirker gjør. De ser guddommen som tre atskilte personer som er helt enige og samarbeider om alt. Gud Faderen og Jesus har herliggjorte kropper av kjøtt og ben, mens Den hellige ånd er en åndeperson."
-                        }
-                    ]
+                    "term": "frelsesplanen",
+                    "explanation": "Læren om at menneskene levde hos Gud før de ble født, og at livet på jorden er en prøvetid."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Alle mennesker regnes som Guds åndebarn som levde hos ham før de ble født. Livet på jorden er en del av frelsesplanen: en prøvetid der man skal lære, velge det gode og utvikle seg. Gjennom tro på Jesus, omvendelse, dåp og Den hellige ånds gave kan mennesket bli frelst."
-                        }
-                    ]
+                    "term": "de tre herlighetsriker",
+                    "explanation": "Det celestiale, det terrestriale og det telestiale. Nesten alle kommer til et av dem etter dommen."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Etter dommen kommer nesten alle til et av tre herlighetsriker: det celestiale, det terrestriale eller det telestiale. Det høyeste målet kalles opphøyelse, å leve evig sammen med Gud og sin familie og fortsette å utvikle seg til å bli lik ham. Dette kalles evig progresjon."
-                        }
-                    ]
+                    "term": "evig progresjon",
+                    "explanation": "Troen på at mennesket kan fortsette å utvikle seg mot å bli lik Gud, sammen med familien sin."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: nesten alle kommer et sted",
+                "text": "I stedet for himmel eller helvete lærer kirken at nesten alle mennesker havner i et av tre riker etter dommen. Spørsmålet er ikke om du kommer inn, men hvor langt du kommer."
+            },
+            "question": "Hva er forskjellen på en religion som deler i to, og en som deler i flere trinn?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Medlemmene tror på Gud Faderen, Jesus Kristus og Den hellige ånd, men ikke på treenighetslæren slik de fleste andre kirker gjør. De ser guddommen som tre atskilte personer som er helt enige og samarbeider om alt. Gud Faderen og Jesus har herliggjorte kropper av kjøtt og ben, mens Den hellige ånd er en åndeperson."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Alle mennesker regnes som Guds åndebarn som levde hos ham før de ble født. Livet på jorden er en del av frelsesplanen: en prøvetid der man skal lære, velge det gode og utvikle seg. Gjennom tro på Jesus, omvendelse, dåp og Den hellige ånds gave kan mennesket bli frelst."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Etter dommen kommer nesten alle til et av tre herlighetsriker: det celestiale, det terrestriale eller det telestiale. Det høyeste målet kalles opphøyelse, å leve evig sammen med Gud og sin familie og fortsette å utvikle seg til å bli lik ham. Dette kalles evig progresjon."
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "material": {
-            "type": "root",
-            "children": [
+            "summary": "To slags hus: møtehuset alle kan gå inn i, og tempelet bare noen slipper inn i.",
+            "keyTerms": [
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Kirken skiller mellom to typer bygg. Møtehusene, eller kapellene, er åpne for alle og brukes til søndagsmøter, nadverd og aktiviteter. Templene er hellige bygg som bare medlemmer med gyldig anbefaling kan gå inn i. Der utføres forseglinger, dåp for døde og andre hellige ritualer, og alle bærer hvite klær som symbol på renhet."
-                        }
-                    ]
+                    "term": "møtehus",
+                    "explanation": "Kapellet der søndagsmøter, nadverd og aktiviteter holdes. Det er åpent for alle."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Det mest kjente tempelet er Salt Lake-tempelet i Utah, som det tok 40 år å bygge. På spiret til mange templer står en gyllen statue av engelen Moroni med en basun. Ifølge Joseph Smith var det denne engelen som viste ham gullplatene."
-                        }
-                    ]
+                    "term": "tempel",
+                    "explanation": "Hellig bygg for forseglinger og dåp for døde. Alle bærer hvite klær som symbol på renhet."
                 },
                 {
-                    "type": "p",
-                    "children": [
-                        {
-                            "type": "text",
-                            "text": "Fordi dåp for døde krever at man vet hvem forfedrene var, driver kirken noen av verdens største slektsforskningssentre og databaser. Mange medlemmer har også Mormons bok og bilder av templer hjemme, og misjonærene kjennes lett igjen på hvite skjorter og navneskilt."
-                        }
-                    ]
+                    "term": "engelen Moroni",
+                    "explanation": "Engelen som ifølge Joseph Smith viste ham gullplatene. En gyllen statue av ham står på mange tempelspir."
                 }
-            ]
+            ],
+            "example": {
+                "title": "Nærbilde: verdens største slektsarkiv",
+                "text": "Dåp for døde krever at man vet hvem forfedrene var. Derfor driver kirken noen av verdens største slektsforskningssentre, og databasene brukes av folk over hele verden, uansett hva de tror på."
+            },
+            "question": "Hvorfor tror du kirken bygger to typer hus, ett alle kan gå inn i og ett som er lukket?",
+            "body": {
+                "type": "root",
+                "children": [
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Kirken skiller mellom to typer bygg. Møtehusene, eller kapellene, er åpne for alle og brukes til søndagsmøter, nadverd og aktiviteter. Templene er hellige bygg som bare medlemmer med gyldig anbefaling kan gå inn i. Der utføres forseglinger, dåp for døde og andre hellige ritualer, og alle bærer hvite klær som symbol på renhet."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Det mest kjente tempelet er Salt Lake-tempelet i Utah, som det tok 40 år å bygge. På spiret til mange templer står en gyllen statue av engelen Moroni med en basun. Ifølge Joseph Smith var det denne engelen som viste ham gullplatene."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "p",
+                        "children": [
+                            {
+                                "type": "text",
+                                "text": "Fordi dåp for døde krever at man vet hvem forfedrene var, driver kirken noen av verdens største slektsforskningssentre og databaser. Mange medlemmer har også Mormons bok og bilder av templer hjemme, og misjonærene kjennes lett igjen på hvite skjorter og navneskilt."
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     }
 }

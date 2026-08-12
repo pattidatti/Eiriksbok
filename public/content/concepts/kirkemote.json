@@ -1,0 +1,15 @@
+{
+  "term": "Kirkemøte",
+  "definition": "En stor forsamling av biskoper og ledere som avgjorde hva kirken skulle mene. Møtene i Nikea i 325 og Kalkedon i 451 er de mest kjente.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "kirkemøter",
+    "kirkemøtene",
+    "konsil",
+    "konsilet"
+  ],
+  "tags": [
+    "kristendom"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "term": "Qibla",
+  "definition": "Retningen muslimer vender seg mot når de ber. Den peker mot Kaba i Mekka.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "qiblaen",
+    "bønneretningen"
+  ],
+  "tags": [
+    "islam",
+    "bønn"
+  ]
+}

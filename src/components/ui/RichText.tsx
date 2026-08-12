@@ -1,4 +1,6 @@
 import React from 'react';
+import { useGlossary } from '../../context/GlossaryContext';
+import { getTermMatcher, highlightTerms } from '../glossaryTerms';
 
 /**
  * Rendrer den enkle rich-text-strukturen som ligger i `public/data/religion/*.json`.
@@ -28,13 +30,17 @@ interface RichTextNode {
     alt?: string;
 }
 
-function renderNode(node: RichTextNode, key: React.Key): React.ReactNode {
+type TermMatcher = ReturnType<typeof getTermMatcher>;
+
+function renderNode(node: RichTextNode, key: React.Key, matcher: TermMatcher): React.ReactNode {
     if (!node || typeof node !== 'object') return null;
 
     // Bladnode: ren tekst, eventuelt med marks.
     if (typeof node.text === 'string') {
         if (!node.text) return null;
-        let el: React.ReactNode = node.text;
+        // Begreper fra ordlista markeres her, slik at eleven får forklaringen ved
+        // å holde musa over ordet - også på religionssidene og i sammenligningen.
+        let el: React.ReactNode = highlightTerms(node.text, matcher, `t-${key}`);
         if (node.bold) el = <strong>{el}</strong>;
         if (node.italic) el = <em>{el}</em>;
         if (node.underline) el = <u>{el}</u>;
@@ -42,7 +48,7 @@ function renderNode(node: RichTextNode, key: React.Key): React.ReactNode {
         return <React.Fragment key={key}>{el}</React.Fragment>;
     }
 
-    const children = (node.children ?? []).map((child, i) => renderNode(child, i));
+    const children = (node.children ?? []).map((child, i) => renderNode(child, i, matcher));
 
     switch (node.type) {
         case 'root':
@@ -96,15 +102,20 @@ interface RichTextProps {
 }
 
 export const RichText: React.FC<RichTextProps> = ({ content }) => {
+    const { entries } = useGlossary();
+    const matcher = React.useMemo(() => getTermMatcher(entries), [entries]);
+
     if (!content) return null;
 
     // Feltet kan være et enkelt tre, en liste av noder, eller ren tekst.
-    if (typeof content === 'string') return <p>{content}</p>;
+    if (typeof content === 'string') {
+        return <p>{highlightTerms(content, matcher, 't-0')}</p>;
+    }
     if (Array.isArray(content)) {
-        return <>{content.map((n, i) => renderNode(n as RichTextNode, i))}</>;
+        return <>{content.map((n, i) => renderNode(n as RichTextNode, i, matcher))}</>;
     }
     if (typeof content === 'object') {
-        return <>{renderNode(content as RichTextNode, 0)}</>;
+        return <>{renderNode(content as RichTextNode, 0, matcher)}</>;
     }
     return null;
 };

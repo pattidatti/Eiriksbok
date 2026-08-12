@@ -1,11 +1,26 @@
 {
-  "buildId": 47000343602336,
+  "buildId": 245632168193959,
   "contentMap": {
+    "concept-abdul-baha": [
+      "content/concepts/abdul-baha.json"
+    ],
+    "concept-abhidharma": [
+      "content/concepts/abhidharma.json"
+    ],
+    "concept-abrahamittiske-religioner": [
+      "content/concepts/abrahamittiske-religioner.json"
+    ],
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
     ],
     "concept-adel": [
       "content/concepts/adel.json"
+    ],
+    "concept-adonai": [
+      "content/concepts/adonai.json"
+    ],
+    "concept-advaita": [
+      "content/concepts/advaita.json"
     ],
     "concept-aerlighet": [
       "content/concepts/aerlighet.json"
@@ -22,11 +37,32 @@
     "concept-aksjeselskap": [
       "content/concepts/aksjeselskap.json"
     ],
+    "concept-allah": [
+      "content/concepts/allah.json"
+    ],
     "concept-allianse": [
       "content/concepts/allianse.json"
     ],
     "concept-alternativkostnad": [
       "content/concepts/alternativkostnad.json"
+    ],
+    "concept-amitabha": [
+      "content/concepts/amitabha.json"
+    ],
+    "concept-amrit-sanskar": [
+      "content/concepts/amrit-sanskar.json"
+    ],
+    "concept-amrit": [
+      "content/concepts/amrit.json"
+    ],
+    "concept-amritsar": [
+      "content/concepts/amritsar.json"
+    ],
+    "concept-amritvela": [
+      "content/concepts/amritvela.json"
+    ],
+    "concept-anand-karaj": [
+      "content/concepts/anand-karaj.json"
     ],
     "concept-anarki": [
       "content/concepts/anarki.json"
@@ -37,6 +73,9 @@
     "concept-anarko-kommunisme": [
       "content/concepts/anarko-kommunisme.json"
     ],
+    "concept-andebarn": [
+      "content/concepts/andebarn.json"
+    ],
     "concept-anforselstegn": [
       "content/concepts/anforselstegn.json"
     ],
@@ -46,8 +85,20 @@
     "concept-anschluss": [
       "content/concepts/anschluss.json"
     ],
+    "concept-antam-sanskar": [
+      "content/concepts/antam-sanskar.json"
+    ],
     "concept-antisemittisme": [
       "content/concepts/antisemittisme.json"
+    ],
+    "concept-apokryfer": [
+      "content/concepts/apokryfer.json"
+    ],
+    "concept-apostel": [
+      "content/concepts/apostel.json"
+    ],
+    "concept-aqiqa": [
+      "content/concepts/aqiqa.json"
     ],
     "concept-arabisk-var-begrep": [
       "content/concepts/arabisk-var-begrep.json"
@@ -58,8 +109,14 @@
     "concept-arbeidsspesialisering": [
       "content/concepts/arbeidsspesialisering.json"
     ],
+    "concept-ardas": [
+      "content/concepts/ardas.json"
+    ],
     "concept-argumentasjon": [
       "content/concepts/argumentasjon.json"
+    ],
+    "concept-arhat": [
+      "content/concepts/arhat.json"
     ],
     "concept-armada": [
       "content/concepts/armada.json"
@@ -67,8 +124,14 @@
     "concept-artilleri": [
       "content/concepts/artilleri.json"
     ],
+    "concept-arvesynd": [
+      "content/concepts/arvesynd.json"
+    ],
     "concept-asherah": [
       "content/concepts/asherah.json"
+    ],
+    "concept-atman": [
+      "content/concepts/atman.json"
     ],
     "concept-autoritaert-diktatur": [
       "content/concepts/autoritaert-diktatur.json"
@@ -76,11 +139,23 @@
     "concept-autoritet": [
       "content/concepts/autoritet.json"
     ],
+    "concept-avalokiteshvara": [
+      "content/concepts/avalokiteshvara.json"
+    ],
     "concept-avkolonisering": [
       "content/concepts/avkolonisering.json"
     ],
     "concept-avsnitt": [
       "content/concepts/avsnitt.json"
+    ],
+    "concept-bab": [
+      "content/concepts/bab.json"
+    ],
+    "concept-bahai": [
+      "content/concepts/bahai.json"
+    ],
+    "concept-bahaullah": [
+      "content/concepts/bahaullah.json"
     ],
     "concept-balfour-erklaeringen": [
       "content/concepts/balfour-erklaeringen.json"
@@ -88,14 +163,44 @@
     "concept-bananrepublikk": [
       "content/concepts/bananrepublikk.json"
     ],
+    "concept-bar-mitzva": [
+      "content/concepts/bar-mitzva.json"
+    ],
+    "concept-bardo": [
+      "content/concepts/bardo.json"
+    ],
+    "concept-barzakh": [
+      "content/concepts/barzakh.json"
+    ],
     "concept-bayt-al-hikma": [
       "content/concepts/bayt-al-hikma.json"
+    ],
+    "concept-bedehus": [
+      "content/concepts/bedehus.json"
+    ],
+    "concept-begavelsen": [
+      "content/concepts/begavelsen.json"
     ],
     "concept-belte-og-vei": [
       "content/concepts/belte-og-vei.json"
     ],
+    "concept-besegling": [
+      "content/concepts/besegling.json"
+    ],
     "concept-bevissthet": [
       "content/concepts/bevissthet.json"
+    ],
+    "concept-bhagavadgita": [
+      "content/concepts/bhagavadgita.json"
+    ],
+    "concept-bhakti": [
+      "content/concepts/bhakti.json"
+    ],
+    "concept-bhikkhu": [
+      "content/concepts/bhikkhu.json"
+    ],
+    "concept-bildeforbudet": [
+      "content/concepts/bildeforbudet.json"
     ],
     "concept-bindeord": [
       "content/concepts/bindeord.json"
@@ -121,6 +226,9 @@
     "concept-blodhevn": [
       "content/concepts/blodhevn.json"
     ],
+    "concept-blodoverforing": [
+      "content/concepts/blodoverforing.json"
+    ],
     "concept-blokade": [
       "content/concepts/blokade.json"
     ],
@@ -130,17 +238,47 @@
     "concept-boddel": [
       "content/concepts/boddel.json"
     ],
+    "concept-bodhisattva": [
+      "content/concepts/bodhisattva.json"
+    ],
     "concept-bolgemodellen": [
       "content/concepts/bolgemodellen.json"
+    ],
+    "concept-bonnehjul": [
+      "content/concepts/bonnehjul.json"
+    ],
+    "concept-bonneropet": [
+      "content/concepts/bonneropet.json"
+    ],
+    "concept-bonnesjal": [
+      "content/concepts/bonnesjal.json"
     ],
     "concept-borskrakk": [
       "content/concepts/borskrakk.json"
     ],
+    "concept-brahma": [
+      "content/concepts/brahma.json"
+    ],
+    "concept-brahman": [
+      "content/concepts/brahman.json"
+    ],
+    "concept-brahmaner": [
+      "content/concepts/brahmaner.json"
+    ],
     "concept-bretton-woods": [
       "content/concepts/bretton-woods.json"
     ],
+    "concept-brigham-young": [
+      "content/concepts/brigham-young.json"
+    ],
+    "concept-brit-mila": [
+      "content/concepts/brit-mila.json"
+    ],
     "concept-brutalitet": [
       "content/concepts/brutalitet.json"
+    ],
+    "concept-buddha": [
+      "content/concepts/buddha.json"
     ],
     "concept-budskap": [
       "content/concepts/budskap.json"
@@ -154,6 +292,9 @@
     "concept-casus-belli": [
       "content/concepts/casus-belli.json"
     ],
+    "concept-charles-taze-russell": [
+      "content/concepts/charles-taze-russell.json"
+    ],
     "concept-civil-rights-act": [
       "content/concepts/civil-rights-act.json"
     ],
@@ -163,8 +304,14 @@
     "concept-code-civil": [
       "content/concepts/code-civil.json"
     ],
+    "concept-cogito-ergo-sum": [
+      "content/concepts/cogito-ergo-sum.json"
+    ],
     "concept-corpus-juris-civilis": [
       "content/concepts/corpus-juris-civilis.json"
+    ],
+    "concept-creatio-ex-nihilo": [
+      "content/concepts/creatio-ex-nihilo.json"
     ],
     "concept-cura-annonae": [
       "content/concepts/cura-annonae.json"
@@ -175,11 +322,26 @@
     "concept-dachau": [
       "content/concepts/dachau.json"
     ],
+    "concept-dap-for-dode": [
+      "content/concepts/dap-for-dode.json"
+    ],
+    "concept-dap": [
+      "content/concepts/dap.json"
+    ],
+    "concept-darshan": [
+      "content/concepts/darshan.json"
+    ],
     "concept-das-ding-an-sich": [
       "content/concepts/das-ding-an-sich.json"
     ],
     "concept-das-man": [
       "content/concepts/das-man.json"
+    ],
+    "concept-dasein": [
+      "content/concepts/dasein.json"
+    ],
+    "concept-davidsstjernen": [
+      "content/concepts/davidsstjernen.json"
     ],
     "concept-de-100-ydmykelsenes-ar": [
       "content/concepts/de-100-ydmykelsenes-ar.json"
@@ -187,8 +349,20 @@
     "concept-de-allierte": [
       "content/concepts/de-allierte.json"
     ],
+    "concept-de-fem-soylene": [
+      "content/concepts/de-fem-soylene.json"
+    ],
+    "concept-de-fire-edle-sannheter": [
+      "content/concepts/de-fire-edle-sannheter.json"
+    ],
     "concept-de-forente-nasjoner-fn": [
       "content/concepts/de-forente-nasjoner-fn.json"
+    ],
+    "concept-de-tre-herlighetsrikene": [
+      "content/concepts/de-tre-herlighetsrikene.json"
+    ],
+    "concept-de-tre-juvelene": [
+      "content/concepts/de-tre-juvelene.json"
     ],
     "concept-defenestrasjon": [
       "content/concepts/defenestrasjon.json"
@@ -205,20 +379,53 @@
     "concept-demokrati": [
       "content/concepts/demokrati.json"
     ],
+    "concept-den-attedelte-veien": [
+      "content/concepts/den-attedelte-veien.json"
+    ],
+    "concept-den-hellige-and": [
+      "content/concepts/den-hellige-and.json"
+    ],
+    "concept-den-kostelige-perle": [
+      "content/concepts/den-kostelige-perle.json"
+    ],
     "concept-den-lange-marsjen": [
       "content/concepts/den-lange-marsjen.json"
+    ],
+    "concept-den-salvede-resten": [
+      "content/concepts/den-salvede-resten.json"
     ],
     "concept-dendrokronologi": [
       "content/concepts/dendrokronologi.json"
     ],
+    "concept-det-gamle-testamentet": [
+      "content/concepts/det-gamle-testamentet.json"
+    ],
     "concept-det-kategoriske-imperativ": [
       "content/concepts/det-kategoriske-imperativ.json"
+    ],
+    "concept-det-nye-testamentet": [
+      "content/concepts/det-nye-testamentet.json"
     ],
     "concept-det-oestindiske-kompani": [
       "content/concepts/det-oestindiske-kompani.json"
     ],
+    "concept-det-styrende-rad": [
+      "content/concepts/det-styrende-rad.json"
+    ],
+    "concept-det-universelle-rettferdighetens-hus": [
+      "content/concepts/det-universelle-rettferdighetens-hus.json"
+    ],
     "concept-devsirme": [
       "content/concepts/devsirme.json"
+    ],
+    "concept-dhammapada": [
+      "content/concepts/dhammapada.json"
+    ],
+    "concept-dharma": [
+      "content/concepts/dharma.json"
+    ],
+    "concept-dharmahjulet": [
+      "content/concepts/dharmahjulet.json"
     ],
     "concept-diktatur": [
       "content/concepts/diktatur.json"
@@ -226,14 +433,26 @@
     "concept-direkte-demokrati": [
       "content/concepts/direkte-demokrati.json"
     ],
+    "concept-dissenterloven": [
+      "content/concepts/dissenterloven.json"
+    ],
     "concept-dolkestotlegenden": [
       "content/concepts/dolkestotlegenden.json"
+    ],
+    "concept-dua": [
+      "content/concepts/dua.json"
+    ],
+    "concept-durga": [
+      "content/concepts/durga.json"
     ],
     "concept-dygdsetikk": [
       "content/concepts/dygdsetikk.json"
     ],
     "concept-dynastisyklus": [
       "content/concepts/dynastisyklus.json"
+    ],
+    "concept-dyreetikk": [
+      "content/concepts/dyreetikk.json"
     ],
     "concept-east-india-company": [
       "content/concepts/east-india-company.json"
@@ -277,11 +496,23 @@
     "concept-ettpartistat": [
       "content/concepts/ettpartistat.json"
     ],
+    "concept-eudaimonia": [
+      "content/concepts/eudaimonia.json"
+    ],
+    "concept-evangelium": [
+      "content/concepts/evangelium.json"
+    ],
+    "concept-fadervar": [
+      "content/concepts/fadervar.json"
+    ],
     "concept-fagforening": [
       "content/concepts/fagforening.json"
     ],
     "concept-fascisme": [
       "content/concepts/fascisme.json"
+    ],
+    "concept-faste": [
+      "content/concepts/faste.json"
     ],
     "concept-fattigdom": [
       "content/concepts/fattigdom.json"
@@ -294,6 +525,9 @@
     ],
     "concept-femarsplan": [
       "content/concepts/femarsplan.json"
+    ],
+    "concept-filioque": [
+      "content/concepts/filioque.json"
     ],
     "concept-filosofi": [
       "content/concepts/filosofi.json"
@@ -313,14 +547,29 @@
     "concept-folkevandringstiden": [
       "content/concepts/folkevandringstiden.json"
     ],
+    "concept-foruttilvaerelsen": [
+      "content/concepts/foruttilvaerelsen.json"
+    ],
+    "concept-fredagsbonnen": [
+      "content/concepts/fredagsbonnen.json"
+    ],
+    "concept-frelsesplanen": [
+      "content/concepts/frelsesplanen.json"
+    ],
     "concept-frihet": [
       "content/concepts/frihet.json"
+    ],
+    "concept-fronesis": [
+      "content/concepts/fronesis.json"
     ],
     "concept-frontfagmodellen": [
       "content/concepts/frontfagmodellen.json"
     ],
     "concept-fullmaktsloven": [
       "content/concepts/fullmaktsloven.json"
+    ],
+    "concept-gemara": [
+      "content/concepts/gemara.json"
     ],
     "concept-generasjon": [
       "content/concepts/generasjon.json"
@@ -334,6 +583,12 @@
     "concept-gini-koeffisient": [
       "content/concepts/gini-koeffisient.json"
     ],
+    "concept-gjendopere": [
+      "content/concepts/gjendopere.json"
+    ],
+    "concept-gjenopprettelsen": [
+      "content/concepts/gjenopprettelsen.json"
+    ],
     "concept-glasnost": [
       "content/concepts/glasnost.json"
     ],
@@ -346,17 +601,29 @@
     "concept-group-areas-act": [
       "content/concepts/group-areas-act.json"
     ],
+    "concept-gudsbilde": [
+      "content/concepts/gudsbilde.json"
+    ],
     "concept-gulag": [
       "content/concepts/gulag.json"
     ],
     "concept-gullalder": [
       "content/concepts/gullalder.json"
     ],
+    "concept-gullplatene": [
+      "content/concepts/gullplatene.json"
+    ],
     "concept-gullstandard": [
       "content/concepts/gullstandard.json"
     ],
+    "concept-gurbani": [
+      "content/concepts/gurbani.json"
+    ],
     "concept-gurdwara": [
       "content/concepts/gurdwara.json"
+    ],
+    "concept-gurmukhi": [
+      "content/concepts/gurmukhi.json"
     ],
     "concept-guru-gobind-singh": [
       "content/concepts/guru-gobind-singh.json"
@@ -370,8 +637,20 @@
     "concept-guru": [
       "content/concepts/guru.json"
     ],
+    "concept-gyges-ring": [
+      "content/concepts/gyges-ring.json"
+    ],
     "concept-habsburgerne": [
       "content/concepts/habsburgerne.json"
+    ],
+    "concept-hadith": [
+      "content/concepts/hadith.json"
+    ],
+    "concept-hajj": [
+      "content/concepts/hajj.json"
+    ],
+    "concept-halal": [
+      "content/concepts/halal.json"
     ],
     "concept-hamartia": [
       "content/concepts/hamartia.json"
@@ -379,8 +658,20 @@
     "concept-hamas": [
       "content/concepts/hamas.json"
     ],
+    "concept-hanukka": [
+      "content/concepts/hanukka.json"
+    ],
     "concept-harem": [
       "content/concepts/harem.json"
+    ],
+    "concept-harmageddon": [
+      "content/concepts/harmageddon.json"
+    ],
+    "concept-harmandir-sahib": [
+      "content/concepts/harmandir-sahib.json"
+    ],
+    "concept-haumai": [
+      "content/concepts/haumai.json"
     ],
     "concept-helhet": [
       "content/concepts/helhet.json"
@@ -412,14 +703,23 @@
     "concept-holodomor": [
       "content/concepts/holodomor.json"
     ],
+    "concept-hukam": [
+      "content/concepts/hukam.json"
+    ],
     "concept-humanisme": [
       "content/concepts/humanisme.json"
     ],
     "concept-humes-giljotin": [
       "content/concepts/humes-giljotin.json"
     ],
+    "concept-huppa": [
+      "content/concepts/huppa.json"
+    ],
     "concept-hyperinflasjon": [
       "content/concepts/hyperinflasjon.json"
+    ],
+    "concept-id-al-fitr": [
+      "content/concepts/id-al-fitr.json"
     ],
     "concept-identitet": [
       "content/concepts/identitet.json"
@@ -427,8 +727,20 @@
     "concept-ideologi": [
       "content/concepts/ideologi.json"
     ],
+    "concept-ideverdenen": [
+      "content/concepts/ideverdenen.json"
+    ],
+    "concept-ikonostas": [
+      "content/concepts/ikonostas.json"
+    ],
     "concept-il-duce": [
       "content/concepts/il-duce.json"
+    ],
+    "concept-imago-dei": [
+      "content/concepts/imago-dei.json"
+    ],
+    "concept-imam": [
+      "content/concepts/imam.json"
     ],
     "concept-imperialisme": [
       "content/concepts/imperialisme.json"
@@ -448,6 +760,9 @@
     "concept-ingenmannsland": [
       "content/concepts/ingenmannsland.json"
     ],
+    "concept-inkarnasjon": [
+      "content/concepts/inkarnasjon.json"
+    ],
     "concept-innovasjon": [
       "content/concepts/innovasjon.json"
     ],
@@ -457,8 +772,17 @@
     "concept-iznik-fliser": [
       "content/concepts/iznik-fliser.json"
     ],
+    "concept-jahve": [
+      "content/concepts/jahve.json"
+    ],
     "concept-janitsjar": [
       "content/concepts/janitsjar.json"
+    ],
+    "concept-japji": [
+      "content/concepts/japji.json"
+    ],
+    "concept-jati": [
+      "content/concepts/jati.json"
     ],
     "concept-jazz-age": [
       "content/concepts/jazz-age.json"
@@ -466,11 +790,23 @@
     "concept-jazz": [
       "content/concepts/jazz.json"
     ],
+    "concept-jehova": [
+      "content/concepts/jehova.json"
+    ],
     "concept-jernteppet": [
       "content/concepts/jernteppet.json"
     ],
+    "concept-jesusbonnen": [
+      "content/concepts/jesusbonnen.json"
+    ],
     "concept-jim-crow-lovene": [
       "content/concepts/jim-crow-lovene.json"
+    ],
+    "concept-john-rawls": [
+      "content/concepts/john-rawls.json"
+    ],
+    "concept-jom-kippur": [
+      "content/concepts/jom-kippur.json"
     ],
     "concept-justinianerpesten": [
       "content/concepts/justinianerpesten.json"
@@ -478,11 +814,26 @@
     "concept-justinianske-pest": [
       "content/concepts/justinianske-pest.json"
     ],
+    "concept-kaba": [
+      "content/concepts/kaba.json"
+    ],
     "concept-kalifat": [
       "content/concepts/kalifat.json"
     ],
+    "concept-kalkedon": [
+      "content/concepts/kalkedon.json"
+    ],
     "concept-kalmarunionen": [
       "content/concepts/kalmarunionen.json"
+    ],
+    "concept-kalpa": [
+      "content/concepts/kalpa.json"
+    ],
+    "concept-kanjur": [
+      "content/concepts/kanjur.json"
+    ],
+    "concept-kanon": [
+      "content/concepts/kanon.json"
     ],
     "concept-kapitalisme": [
       "content/concepts/kapitalisme.json"
@@ -490,11 +841,26 @@
     "concept-kapitalstruktur": [
       "content/concepts/kapitalstruktur.json"
     ],
+    "concept-karah-prasad": [
+      "content/concepts/karah-prasad.json"
+    ],
     "concept-karakterarketyper": [
       "content/concepts/karakterarketyper.json"
     ],
     "concept-karakterutvikling": [
       "content/concepts/karakterutvikling.json"
+    ],
+    "concept-karma": [
+      "content/concepts/karma.json"
+    ],
+    "concept-kastesystemet": [
+      "content/concepts/kastesystemet.json"
+    ],
+    "concept-kaur": [
+      "content/concepts/kaur.json"
+    ],
+    "concept-ketuvim": [
+      "content/concepts/ketuvim.json"
     ],
     "concept-keynesiansk-okonomi": [
       "content/concepts/keynesiansk-okonomi.json"
@@ -505,8 +871,17 @@
     "concept-kildekritikk": [
       "content/concepts/kildekritikk.json"
     ],
+    "concept-kipa": [
+      "content/concepts/kipa.json"
+    ],
+    "concept-kirkemote": [
+      "content/concepts/kirkemote.json"
+    ],
     "concept-kirtan": [
       "content/concepts/kirtan.json"
+    ],
+    "concept-kitab-i-aqdas": [
+      "content/concepts/kitab-i-aqdas.json"
     ],
     "concept-kjaerlighet": [
       "content/concepts/kjaerlighet.json"
@@ -532,6 +907,15 @@
     "concept-konfusianisme": [
       "content/concepts/konfusianisme.json"
     ],
+    "concept-koranen": [
+      "content/concepts/koranen.json"
+    ],
+    "concept-kosher": [
+      "content/concepts/kosher.json"
+    ],
+    "concept-kreasjonisme": [
+      "content/concepts/kreasjonisme.json"
+    ],
     "concept-kreativitet": [
       "content/concepts/kreativitet.json"
     ],
@@ -544,11 +928,23 @@
     "concept-kriseforliket": [
       "content/concepts/kriseforliket.json"
     ],
+    "concept-krishna": [
+      "content/concepts/krishna.json"
+    ],
     "concept-kulturrevolusjonen": [
       "content/concepts/kulturrevolusjonen.json"
     ],
+    "concept-kumbh-mela": [
+      "content/concepts/kumbh-mela.json"
+    ],
     "concept-kunnskap": [
       "content/concepts/kunnskap.json"
+    ],
+    "concept-laere-og-pakter": [
+      "content/concepts/laere-og-pakter.json"
+    ],
+    "concept-laestadianismen": [
+      "content/concepts/laestadianismen.json"
     ],
     "concept-langar": [
       "content/concepts/langar.json"
@@ -589,6 +985,18 @@
     "concept-mad": [
       "content/concepts/mad.json"
     ],
+    "concept-mahabharata": [
+      "content/concepts/mahabharata.json"
+    ],
+    "concept-mahayana": [
+      "content/concepts/mahayana.json"
+    ],
+    "concept-mahr": [
+      "content/concepts/mahr.json"
+    ],
+    "concept-maimonides": [
+      "content/concepts/maimonides.json"
+    ],
     "concept-mandatomrde": [
       "content/concepts/mandatomrde.json"
     ],
@@ -598,8 +1006,14 @@
     "concept-manhattan-prosjektet": [
       "content/concepts/manhattan-prosjektet.json"
     ],
+    "concept-manifestasjon": [
+      "content/concepts/manifestasjon.json"
+    ],
     "concept-mannebot": [
       "content/concepts/mannebot.json"
+    ],
+    "concept-mantra": [
+      "content/concepts/mantra.json"
     ],
     "concept-marshallhjelpen": [
       "content/concepts/marshallhjelpen.json"
@@ -609,6 +1023,9 @@
     ],
     "concept-meditasjon": [
       "content/concepts/meditasjon.json"
+    ],
+    "concept-menighet": [
+      "content/concepts/menighet.json"
     ],
     "concept-menneskeheten": [
       "content/concepts/menneskeheten.json"
@@ -625,14 +1042,44 @@
     "concept-merovingerne": [
       "content/concepts/merovingerne.json"
     ],
+    "concept-messias": [
+      "content/concepts/messias.json"
+    ],
+    "concept-metafysikk": [
+      "content/concepts/metafysikk.json"
+    ],
+    "concept-middelveien": [
+      "content/concepts/middelveien.json"
+    ],
+    "concept-midrasj": [
+      "content/concepts/midrasj.json"
+    ],
     "concept-migrasjon": [
       "content/concepts/migrasjon.json"
+    ],
+    "concept-mihrab": [
+      "content/concepts/mihrab.json"
     ],
     "concept-millet": [
       "content/concepts/millet.json"
     ],
+    "concept-minjan": [
+      "content/concepts/minjan.json"
+    ],
+    "concept-minnehoytiden": [
+      "content/concepts/minnehoytiden.json"
+    ],
+    "concept-mishna": [
+      "content/concepts/mishna.json"
+    ],
     "concept-mission-civilisatrice": [
       "content/concepts/mission-civilisatrice.json"
+    ],
+    "concept-mitzva": [
+      "content/concepts/mitzva.json"
+    ],
+    "concept-moksha": [
+      "content/concepts/moksha.json"
     ],
     "concept-molotov-ribbentrop-pakten": [
       "content/concepts/molotov-ribbentrop-pakten.json"
@@ -646,17 +1093,47 @@
     "concept-monoteisme": [
       "content/concepts/monoteisme.json"
     ],
+    "concept-mormons-bok": [
+      "content/concepts/mormons-bok.json"
+    ],
+    "concept-moroni": [
+      "content/concepts/moroni.json"
+    ],
+    "concept-mosebokene": [
+      "content/concepts/mosebokene.json"
+    ],
+    "concept-moseloven": [
+      "content/concepts/moseloven.json"
+    ],
+    "concept-moske": [
+      "content/concepts/moske.json"
+    ],
     "concept-motiv": [
       "content/concepts/motiv.json"
     ],
     "concept-mujahedin": [
       "content/concepts/mujahedin.json"
     ],
+    "concept-mukti": [
+      "content/concepts/mukti.json"
+    ],
+    "concept-mul-mantar": [
+      "content/concepts/mul-mantar.json"
+    ],
+    "concept-murti": [
+      "content/concepts/murti.json"
+    ],
     "concept-mutual-assured-destruction": [
       "content/concepts/mutual-assured-destruction.json"
     ],
+    "concept-nade": [
+      "content/concepts/nade.json"
+    ],
     "concept-nakba": [
       "content/concepts/nakba.json"
+    ],
+    "concept-nam-simran": [
+      "content/concepts/nam-simran.json"
     ],
     "concept-nasjon": [
       "content/concepts/nasjon.json"
@@ -676,6 +1153,9 @@
     "concept-nasjonsbygging": [
       "content/concepts/nasjonsbygging.json"
     ],
+    "concept-nattverd": [
+      "content/concepts/nattverd.json"
+    ],
     "concept-naturalhandel": [
       "content/concepts/naturalhandel.json"
     ],
@@ -685,8 +1165,20 @@
     "concept-nazisme": [
       "content/concepts/nazisme.json"
     ],
+    "concept-neviim": [
+      "content/concepts/neviim.json"
+    ],
     "concept-new-deal": [
       "content/concepts/new-deal.json"
+    ],
+    "concept-nihilisme": [
+      "content/concepts/nihilisme.json"
+    ],
+    "concept-nirvana": [
+      "content/concepts/nirvana.json"
+    ],
+    "concept-noaidi": [
+      "content/concepts/noaidi.json"
     ],
     "concept-noeytralitet": [
       "content/concepts/noeytralitet.json"
@@ -703,14 +1195,23 @@
     "concept-nullrentepolitikk": [
       "content/concepts/nullrentepolitikk.json"
     ],
+    "concept-ny-verden-oversettelsen": [
+      "content/concepts/ny-verden-oversettelsen.json"
+    ],
     "concept-nykolonialisme": [
       "content/concepts/nykolonialisme.json"
     ],
     "concept-observasjon": [
       "content/concepts/observasjon.json"
     ],
+    "concept-okumenikk": [
+      "content/concepts/okumenikk.json"
+    ],
     "concept-oligarki": [
       "content/concepts/oligarki.json"
+    ],
+    "concept-omelas": [
+      "content/concepts/omelas.json"
     ],
     "concept-omveisproduksjon": [
       "content/concepts/omveisproduksjon.json"
@@ -730,8 +1231,20 @@
     "concept-oppdemming": [
       "content/concepts/oppdemming.json"
     ],
+    "concept-oppstandelsen": [
+      "content/concepts/oppstandelsen.json"
+    ],
     "concept-organisasjon": [
       "content/concepts/organisasjon.json"
+    ],
+    "concept-ortodoks": [
+      "content/concepts/ortodoks.json"
+    ],
+    "concept-overgangsrite": [
+      "content/concepts/overgangsrite.json"
+    ],
+    "concept-overmennesket": [
+      "content/concepts/overmennesket.json"
     ],
     "concept-ovra": [
       "content/concepts/ovra.json"
@@ -772,8 +1285,20 @@
     "concept-perestrojka": [
       "content/concepts/perestrojka.json"
     ],
+    "concept-pesach": [
+      "content/concepts/pesach.json"
+    ],
     "concept-petrodollar": [
       "content/concepts/petrodollar.json"
+    ],
+    "concept-pilegrim": [
+      "content/concepts/pilegrim.json"
+    ],
+    "concept-pinse": [
+      "content/concepts/pinse.json"
+    ],
+    "concept-pinsebevegelsen": [
+      "content/concepts/pinsebevegelsen.json"
     ],
     "concept-pliktetikk": [
       "content/concepts/pliktetikk.json"
@@ -793,14 +1318,44 @@
     "concept-president-republikk": [
       "content/concepts/president-republikk.json"
     ],
+    "concept-prestedommet": [
+      "content/concepts/prestedommet.json"
+    ],
+    "concept-profet": [
+      "content/concepts/profet.json"
+    ],
     "concept-proxy-krig": [
       "content/concepts/proxy-krig.json"
+    ],
+    "concept-puja": [
+      "content/concepts/puja.json"
+    ],
+    "concept-punya": [
+      "content/concepts/punya.json"
+    ],
+    "concept-purusha-hymnen": [
+      "content/concepts/purusha-hymnen.json"
+    ],
+    "concept-qibla": [
+      "content/concepts/qibla.json"
+    ],
+    "concept-qiblih": [
+      "content/concepts/qiblih.json"
+    ],
+    "concept-rabbiner": [
+      "content/concepts/rabbiner.json"
     ],
     "concept-radar": [
       "content/concepts/radar.json"
     ],
     "concept-raf": [
       "content/concepts/raf.json"
+    ],
+    "concept-ramadan": [
+      "content/concepts/ramadan.json"
+    ],
+    "concept-ramayana": [
+      "content/concepts/ramayana.json"
     ],
     "concept-rasisme": [
       "content/concepts/rasisme.json"
@@ -817,6 +1372,12 @@
     "concept-reformasjon": [
       "content/concepts/reformasjon.json"
     ],
+    "concept-reformjodedom": [
+      "content/concepts/reformjodedom.json"
+    ],
+    "concept-reinkarnasjon": [
+      "content/concepts/reinkarnasjon.json"
+    ],
     "concept-rekognosering": [
       "content/concepts/rekognosering.json"
     ],
@@ -825,6 +1386,9 @@
     ],
     "concept-religionsfrihet": [
       "content/concepts/religionsfrihet.json"
+    ],
+    "concept-rene-land-buddhisme": [
+      "content/concepts/rene-land-buddhisme.json"
     ],
     "concept-replikk": [
       "content/concepts/replikk.json"
@@ -838,6 +1402,9 @@
     "concept-rettferdiggjore": [
       "content/concepts/rettferdiggjore.json"
     ],
+    "concept-rettferdiggjorelse": [
+      "content/concepts/rettferdiggjorelse.json"
+    ],
     "concept-rettferdighet": [
       "content/concepts/rettferdighet.json"
     ],
@@ -850,8 +1417,20 @@
     "concept-rhinland": [
       "content/concepts/rhinland.json"
     ],
+    "concept-ridvan": [
+      "content/concepts/ridvan.json"
+    ],
+    "concept-rigveda": [
+      "content/concepts/rigveda.json"
+    ],
     "concept-rikdom": [
       "content/concepts/rikdom.json"
+    ],
+    "concept-rite": [
+      "content/concepts/rite.json"
+    ],
+    "concept-ritual": [
+      "content/concepts/ritual.json"
     ],
     "concept-roaring-20s": [
       "content/concepts/roaring-20s.json"
@@ -862,20 +1441,53 @@
     "concept-roede-kors": [
       "content/concepts/roede-kors.json"
     ],
+    "concept-rosenkrans": [
+      "content/concepts/rosenkrans.json"
+    ],
+    "concept-rosh-hashana": [
+      "content/concepts/rosh-hashana.json"
+    ],
     "concept-royal-navy": [
       "content/concepts/royal-navy.json"
     ],
     "concept-rubicon": [
       "content/concepts/rubicon.json"
     ],
+    "concept-runebomme": [
+      "content/concepts/runebomme.json"
+    ],
     "concept-saarbarhet": [
       "content/concepts/saarbarhet.json"
+    ],
+    "concept-sabbat": [
+      "content/concepts/sabbat.json"
+    ],
+    "concept-sakrament": [
+      "content/concepts/sakrament.json"
+    ],
+    "concept-salat": [
+      "content/concepts/salat.json"
+    ],
+    "concept-samadhi": [
+      "content/concepts/samadhi.json"
     ],
     "concept-samfunnskontrakt": [
       "content/concepts/samfunnskontrakt.json"
     ],
+    "concept-samsara": [
+      "content/concepts/samsara.json"
+    ],
+    "concept-samskara": [
+      "content/concepts/samskara.json"
+    ],
+    "concept-sangha": [
+      "content/concepts/sangha.json"
+    ],
     "concept-sannhet": [
       "content/concepts/sannhet.json"
+    ],
+    "concept-sanseverdenen": [
+      "content/concepts/sanseverdenen.json"
     ],
     "concept-sapere-aude": [
       "content/concepts/sapere-aude.json"
@@ -904,20 +1516,68 @@
     "concept-sepoy": [
       "content/concepts/sepoy.json"
     ],
+    "concept-seva": [
+      "content/concepts/seva.json"
+    ],
+    "concept-shahada": [
+      "content/concepts/shahada.json"
+    ],
+    "concept-shaktismen": [
+      "content/concepts/shaktismen.json"
+    ],
+    "concept-shankara": [
+      "content/concepts/shankara.json"
+    ],
     "concept-sharia": [
       "content/concepts/sharia.json"
+    ],
+    "concept-shavuot": [
+      "content/concepts/shavuot.json"
+    ],
+    "concept-shema": [
+      "content/concepts/shema.json"
     ],
     "concept-shiaislam": [
       "content/concepts/shiaislam.json"
     ],
+    "concept-shirk": [
+      "content/concepts/shirk.json"
+    ],
+    "concept-shiva": [
+      "content/concepts/shiva.json"
+    ],
+    "concept-shivaismen": [
+      "content/concepts/shivaismen.json"
+    ],
+    "concept-shoghi-effendi": [
+      "content/concepts/shoghi-effendi.json"
+    ],
     "concept-show-dont-tell": [
       "content/concepts/show-dont-tell.json"
+    ],
+    "concept-shruti": [
+      "content/concepts/shruti.json"
+    ],
+    "concept-siddhartha-gautama": [
+      "content/concepts/siddhartha-gautama.json"
+    ],
+    "concept-siddur": [
+      "content/concepts/siddur.json"
+    ],
+    "concept-sieidi": [
+      "content/concepts/sieidi.json"
     ],
     "concept-sikh": [
       "content/concepts/sikh.json"
     ],
+    "concept-simone-de-beauvoir": [
+      "content/concepts/simone-de-beauvoir.json"
+    ],
     "concept-sionisme": [
       "content/concepts/sionisme.json"
+    ],
+    "concept-sira": [
+      "content/concepts/sira.json"
     ],
     "concept-sivilisasjon": [
       "content/concepts/sivilisasjon.json"
@@ -925,11 +1585,20 @@
     "concept-skagerrak": [
       "content/concepts/skagerrak.json"
     ],
+    "concept-skapelsesmyte": [
+      "content/concepts/skapelsesmyte.json"
+    ],
     "concept-skyttergravskrig": [
       "content/concepts/skyttergravskrig.json"
     ],
+    "concept-smriti": [
+      "content/concepts/smriti.json"
+    ],
     "concept-sol-invictus": [
       "content/concepts/sol-invictus.json"
+    ],
+    "concept-soren-kierkegaard": [
+      "content/concepts/soren-kierkegaard.json"
     ],
     "concept-sosialisme": [
       "content/concepts/sosialisme.json"
@@ -939,6 +1608,9 @@
     ],
     "concept-spesiell-okonomisk-sone": [
       "content/concepts/spesiell-okonomisk-sone.json"
+    ],
+    "concept-sporvognsproblemet": [
+      "content/concepts/sporvognsproblemet.json"
     ],
     "concept-sprangmodellen": [
       "content/concepts/sprangmodellen.json"
@@ -954,6 +1626,12 @@
     ],
     "concept-stamford-bridge": [
       "content/concepts/stamford-bridge.json"
+    ],
+    "concept-standardverkene": [
+      "content/concepts/standardverkene.json"
+    ],
+    "concept-statskirke": [
+      "content/concepts/statskirke.json"
     ],
     "concept-stfronten": [
       "content/concepts/stfronten.json"
@@ -979,6 +1657,9 @@
     "concept-strukturtilpasning": [
       "content/concepts/strukturtilpasning.json"
     ],
+    "concept-stupa": [
+      "content/concepts/stupa.json"
+    ],
     "concept-subjektet": [
       "content/concepts/subjektet.json"
     ],
@@ -988,8 +1669,20 @@
     "concept-sultan": [
       "content/concepts/sultan.json"
     ],
+    "concept-sunna": [
+      "content/concepts/sunna.json"
+    ],
     "concept-sunniislam": [
       "content/concepts/sunniislam.json"
+    ],
+    "concept-sure": [
+      "content/concepts/sure.json"
+    ],
+    "concept-sutra": [
+      "content/concepts/sutra.json"
+    ],
+    "concept-sutta": [
+      "content/concepts/sutta.json"
     ],
     "concept-suverenitet": [
       "content/concepts/suverenitet.json"
@@ -1006,8 +1699,26 @@
     "concept-sykes-picot": [
       "content/concepts/sykes-picot.json"
     ],
+    "concept-synagoge": [
+      "content/concepts/synagoge.json"
+    ],
+    "concept-syndefallet": [
+      "content/concepts/syndefallet.json"
+    ],
     "concept-synsvinkel": [
       "content/concepts/synsvinkel.json"
+    ],
+    "concept-tabula-rasa": [
+      "content/concepts/tabula-rasa.json"
+    ],
+    "concept-tafsir": [
+      "content/concepts/tafsir.json"
+    ],
+    "concept-talmud": [
+      "content/concepts/talmud.json"
+    ],
+    "concept-tanakh": [
+      "content/concepts/tanakh.json"
     ],
     "concept-tankereferat": [
       "content/concepts/tankereferat.json"
@@ -1018,8 +1729,14 @@
     "concept-tariffavtale": [
       "content/concepts/tariffavtale.json"
     ],
+    "concept-tawhid": [
+      "content/concepts/tawhid.json"
+    ],
     "concept-te": [
       "content/concepts/te.json"
+    ],
+    "concept-tefillin": [
+      "content/concepts/tefillin.json"
     ],
     "concept-teknokrati": [
       "content/concepts/teknokrati.json"
@@ -1039,11 +1756,20 @@
     "concept-temasetning": [
       "content/concepts/temasetning.json"
     ],
+    "concept-tenjur": [
+      "content/concepts/tenjur.json"
+    ],
+    "concept-teodise": [
+      "content/concepts/teodise.json"
+    ],
     "concept-teokrati": [
       "content/concepts/teokrati.json"
     ],
     "concept-teologi": [
       "content/concepts/teologi.json"
+    ],
+    "concept-tetragrammet": [
+      "content/concepts/tetragrammet.json"
     ],
     "concept-the-roaring-twenties": [
       "content/concepts/the-roaring-twenties.json"
@@ -1051,11 +1777,23 @@
     "concept-the-troubles": [
       "content/concepts/the-troubles.json"
     ],
+    "concept-theravada": [
+      "content/concepts/theravada.json"
+    ],
+    "concept-tidebonner": [
+      "content/concepts/tidebonner.json"
+    ],
     "concept-tidspreferanse": [
       "content/concepts/tidspreferanse.json"
     ],
+    "concept-tikkun-olam": [
+      "content/concepts/tikkun-olam.json"
+    ],
     "concept-tilhoerighet": [
       "content/concepts/tilhoerighet.json"
+    ],
+    "concept-toraen": [
+      "content/concepts/toraen.json"
     ],
     "concept-total-krig": [
       "content/concepts/total-krig.json"
@@ -1069,8 +1807,23 @@
     "concept-traktbegerkulturen": [
       "content/concepts/traktbegerkulturen.json"
     ],
+    "concept-transsubstansiasjon": [
+      "content/concepts/transsubstansiasjon.json"
+    ],
     "concept-treenigheten": [
       "content/concepts/treenigheten.json"
+    ],
+    "concept-tripitaka": [
+      "content/concepts/tripitaka.json"
+    ],
+    "concept-trosartiklene": [
+      "content/concepts/trosartiklene.json"
+    ],
+    "concept-trosbekjennelsen": [
+      "content/concepts/trosbekjennelsen.json"
+    ],
+    "concept-trossamfunn": [
+      "content/concepts/trossamfunn.json"
     ],
     "concept-truman-doktrinen": [
       "content/concepts/truman-doktrinen.json"
@@ -1080,6 +1833,12 @@
     ],
     "concept-tsar-bomba": [
       "content/concepts/tsar-bomba.json"
+    ],
+    "concept-tungetale": [
+      "content/concepts/tungetale.json"
+    ],
+    "concept-turban": [
+      "content/concepts/turban.json"
     ],
     "concept-uavhengighet": [
       "content/concepts/uavhengighet.json"
@@ -1102,6 +1861,12 @@
     "concept-unionsopplosningen-1905": [
       "content/concepts/unionsopplosningen-1905.json"
     ],
+    "concept-upanayana": [
+      "content/concepts/upanayana.json"
+    ],
+    "concept-upanishadene": [
+      "content/concepts/upanishadene.json"
+    ],
     "concept-urbanisering": [
       "content/concepts/urbanisering.json"
     ],
@@ -1114,14 +1879,29 @@
     "concept-utmattelseskrig": [
       "content/concepts/utmattelseskrig.json"
     ],
+    "concept-uvitenhetens-slor": [
+      "content/concepts/uvitenhetens-slor.json"
+    ],
     "concept-v2": [
       "content/concepts/v2.json"
+    ],
+    "concept-vahiguru": [
+      "content/concepts/vahiguru.json"
+    ],
+    "concept-vakttarnet": [
+      "content/concepts/vakttarnet.json"
     ],
     "concept-valide-sultan": [
       "content/concepts/valide-sultan.json"
     ],
     "concept-vanaere": [
       "content/concepts/vanaere.json"
+    ],
+    "concept-varna": [
+      "content/concepts/varna.json"
+    ],
+    "concept-vedaene": [
+      "content/concepts/vedaene.json"
     ],
     "concept-vennskap": [
       "content/concepts/vennskap.json"
@@ -1138,14 +1918,29 @@
     "concept-versaillestraktaten": [
       "content/concepts/versaillestraktaten.json"
     ],
+    "concept-vesak": [
+      "content/concepts/vesak.json"
+    ],
     "concept-vestfronten": [
       "content/concepts/vestfronten.json"
+    ],
+    "concept-vinaya": [
+      "content/concepts/vinaya.json"
     ],
     "concept-virkelighet": [
       "content/concepts/virkelighet.json"
     ],
     "concept-visdom": [
       "content/concepts/visdom.json"
+    ],
+    "concept-visdomsordet": [
+      "content/concepts/visdomsordet.json"
+    ],
+    "concept-vishnu": [
+      "content/concepts/vishnu.json"
+    ],
+    "concept-vishnuismen": [
+      "content/concepts/vishnuismen.json"
     ],
     "concept-vitenskap": [
       "content/concepts/vitenskap.json"
@@ -1164,6 +1959,9 @@
     ],
     "concept-ytringsfrihet": [
       "content/concepts/ytringsfrihet.json"
+    ],
+    "concept-zakat": [
+      "content/concepts/zakat.json"
     ],
     "concept-zeppeliner": [
       "content/concepts/zeppeliner.json"
@@ -2599,6 +3397,9 @@
     "sammenligning-hellige-tekster": [
       "content/krle/sammenligning/hellige-tekster.json"
     ],
+    "hovedplottet-sti": [
+      "content/krle/sammenligning/hovedplottet-sti.json"
+    ],
     "hoytider": [
       "content/krle/sammenligning/hoytider.json"
     ],
@@ -3845,38 +4646,73 @@
     ]
   },
   "hierarchicalMap": {
+    "concepts/abdul-baha.json/abdul-baha": "content/concepts/abdul-baha.json",
+    "concepts/abhidharma.json/abhidharma": "content/concepts/abhidharma.json",
+    "concepts/abrahamittiske-religioner.json/abrahamittiske-religioner": "content/concepts/abrahamittiske-religioner.json",
     "concepts/absolutt-fortrinn.json/absolutt-fortrinn": "content/concepts/absolutt-fortrinn.json",
     "concepts/adel.json/adel": "content/concepts/adel.json",
+    "concepts/adonai.json/adonai": "content/concepts/adonai.json",
+    "concepts/advaita.json/advaita": "content/concepts/advaita.json",
     "concepts/aerlighet.json/aerlighet": "content/concepts/aerlighet.json",
     "concepts/agens.json/agens": "content/concepts/agens.json",
     "concepts/ahura-mazda.json/ahura-mazda": "content/concepts/ahura-mazda.json",
     "concepts/aksemaktene.json/aksemaktene": "content/concepts/aksemaktene.json",
     "concepts/aksjeselskap.json/aksjeselskap": "content/concepts/aksjeselskap.json",
+    "concepts/allah.json/allah": "content/concepts/allah.json",
     "concepts/allianse.json/allianse": "content/concepts/allianse.json",
     "concepts/alternativkostnad.json/alternativkostnad": "content/concepts/alternativkostnad.json",
+    "concepts/amitabha.json/amitabha": "content/concepts/amitabha.json",
+    "concepts/amrit-sanskar.json/amrit-sanskar": "content/concepts/amrit-sanskar.json",
+    "concepts/amrit.json/amrit": "content/concepts/amrit.json",
+    "concepts/amritsar.json/amritsar": "content/concepts/amritsar.json",
+    "concepts/amritvela.json/amritvela": "content/concepts/amritvela.json",
+    "concepts/anand-karaj.json/anand-karaj": "content/concepts/anand-karaj.json",
     "concepts/anarki.json/anarki": "content/concepts/anarki.json",
     "concepts/anarko-kapitalisme.json/anarko-kapitalisme": "content/concepts/anarko-kapitalisme.json",
     "concepts/anarko-kommunisme.json/anarko-kommunisme": "content/concepts/anarko-kommunisme.json",
+    "concepts/andebarn.json/andebarn": "content/concepts/andebarn.json",
     "concepts/anforselstegn.json/anforselstegn": "content/concepts/anforselstegn.json",
     "concepts/angra-mainyu.json/angra-mainyu": "content/concepts/angra-mainyu.json",
     "concepts/anschluss.json/anschluss": "content/concepts/anschluss.json",
+    "concepts/antam-sanskar.json/antam-sanskar": "content/concepts/antam-sanskar.json",
     "concepts/antisemittisme.json/antisemittisme": "content/concepts/antisemittisme.json",
+    "concepts/apokryfer.json/apokryfer": "content/concepts/apokryfer.json",
+    "concepts/apostel.json/apostel": "content/concepts/apostel.json",
+    "concepts/aqiqa.json/aqiqa": "content/concepts/aqiqa.json",
     "concepts/arabisk-var-begrep.json/arabisk-var-begrep": "content/concepts/arabisk-var-begrep.json",
     "concepts/arbeidsmiljoloven.json/arbeidsmiljoloven": "content/concepts/arbeidsmiljoloven.json",
     "concepts/arbeidsspesialisering.json/arbeidsspesialisering": "content/concepts/arbeidsspesialisering.json",
+    "concepts/ardas.json/ardas": "content/concepts/ardas.json",
     "concepts/argumentasjon.json/argumentasjon": "content/concepts/argumentasjon.json",
+    "concepts/arhat.json/arhat": "content/concepts/arhat.json",
     "concepts/armada.json/armada": "content/concepts/armada.json",
     "concepts/artilleri.json/artilleri": "content/concepts/artilleri.json",
+    "concepts/arvesynd.json/arvesynd": "content/concepts/arvesynd.json",
     "concepts/asherah.json/asherah": "content/concepts/asherah.json",
+    "concepts/atman.json/atman": "content/concepts/atman.json",
     "concepts/autoritaert-diktatur.json/autoritaert-diktatur": "content/concepts/autoritaert-diktatur.json",
     "concepts/autoritet.json/autoritet": "content/concepts/autoritet.json",
+    "concepts/avalokiteshvara.json/avalokiteshvara": "content/concepts/avalokiteshvara.json",
     "concepts/avkolonisering.json/avkolonisering": "content/concepts/avkolonisering.json",
     "concepts/avsnitt.json/avsnitt": "content/concepts/avsnitt.json",
+    "concepts/bab.json/bab": "content/concepts/bab.json",
+    "concepts/bahai.json/bahai": "content/concepts/bahai.json",
+    "concepts/bahaullah.json/bahaullah": "content/concepts/bahaullah.json",
     "concepts/balfour-erklaeringen.json/balfour-erklaeringen": "content/concepts/balfour-erklaeringen.json",
     "concepts/bananrepublikk.json/bananrepublikk": "content/concepts/bananrepublikk.json",
+    "concepts/bar-mitzva.json/bar-mitzva": "content/concepts/bar-mitzva.json",
+    "concepts/bardo.json/bardo": "content/concepts/bardo.json",
+    "concepts/barzakh.json/barzakh": "content/concepts/barzakh.json",
     "concepts/bayt-al-hikma.json/bayt-al-hikma": "content/concepts/bayt-al-hikma.json",
+    "concepts/bedehus.json/bedehus": "content/concepts/bedehus.json",
+    "concepts/begavelsen.json/begavelsen": "content/concepts/begavelsen.json",
     "concepts/belte-og-vei.json/belte-og-vei": "content/concepts/belte-og-vei.json",
+    "concepts/besegling.json/besegling": "content/concepts/besegling.json",
     "concepts/bevissthet.json/bevissthet": "content/concepts/bevissthet.json",
+    "concepts/bhagavadgita.json/bhagavadgita": "content/concepts/bhagavadgita.json",
+    "concepts/bhakti.json/bhakti": "content/concepts/bhakti.json",
+    "concepts/bhikkhu.json/bhikkhu": "content/concepts/bhikkhu.json",
+    "concepts/bildeforbudet.json/bildeforbudet": "content/concepts/bildeforbudet.json",
     "concepts/bindeord.json/bindeord": "content/concepts/bindeord.json",
     "concepts/biologi.json/biologi": "content/concepts/biologi.json",
     "concepts/birkebeiner.json/birkebeiner": "content/concepts/birkebeiner.json",
@@ -3885,44 +4721,82 @@
     "concepts/bletchley-park.json/bletchley-park": "content/concepts/bletchley-park.json",
     "concepts/blitzkrieg.json/blitzkrieg": "content/concepts/blitzkrieg.json",
     "concepts/blodhevn.json/blodhevn": "content/concepts/blodhevn.json",
+    "concepts/blodoverforing.json/blodoverforing": "content/concepts/blodoverforing.json",
     "concepts/blokade.json/blokade": "content/concepts/blokade.json",
     "concepts/bloody-sunday.json/bloody-sunday": "content/concepts/bloody-sunday.json",
     "concepts/boddel.json/boddel": "content/concepts/boddel.json",
+    "concepts/bodhisattva.json/bodhisattva": "content/concepts/bodhisattva.json",
     "concepts/bolgemodellen.json/bolgemodellen": "content/concepts/bolgemodellen.json",
+    "concepts/bonnehjul.json/bonnehjul": "content/concepts/bonnehjul.json",
+    "concepts/bonneropet.json/bonneropet": "content/concepts/bonneropet.json",
+    "concepts/bonnesjal.json/bonnesjal": "content/concepts/bonnesjal.json",
     "concepts/borskrakk.json/borskrakk": "content/concepts/borskrakk.json",
+    "concepts/brahma.json/brahma": "content/concepts/brahma.json",
+    "concepts/brahman.json/brahman": "content/concepts/brahman.json",
+    "concepts/brahmaner.json/brahmaner": "content/concepts/brahmaner.json",
     "concepts/bretton-woods.json/bretton-woods": "content/concepts/bretton-woods.json",
+    "concepts/brigham-young.json/brigham-young": "content/concepts/brigham-young.json",
+    "concepts/brit-mila.json/brit-mila": "content/concepts/brit-mila.json",
     "concepts/brutalitet.json/brutalitet": "content/concepts/brutalitet.json",
+    "concepts/buddha.json/buddha": "content/concepts/buddha.json",
     "concepts/budskap.json/budskap": "content/concepts/budskap.json",
     "concepts/byraakrati.json/byraakrati": "content/concepts/byraakrati.json",
     "concepts/bysants.json/bysants": "content/concepts/bysants.json",
     "concepts/casus-belli.json/casus-belli": "content/concepts/casus-belli.json",
+    "concepts/charles-taze-russell.json/charles-taze-russell": "content/concepts/charles-taze-russell.json",
     "concepts/civil-rights-act.json/civil-rights-act": "content/concepts/civil-rights-act.json",
     "concepts/cizye.json/cizye": "content/concepts/cizye.json",
     "concepts/code-civil.json/code-civil": "content/concepts/code-civil.json",
+    "concepts/cogito-ergo-sum.json/cogito-ergo-sum": "content/concepts/cogito-ergo-sum.json",
     "concepts/corpus-juris-civilis.json/corpus-juris-civilis": "content/concepts/corpus-juris-civilis.json",
+    "concepts/creatio-ex-nihilo.json/creatio-ex-nihilo": "content/concepts/creatio-ex-nihilo.json",
     "concepts/cura-annonae.json/cura-annonae": "content/concepts/cura-annonae.json",
     "concepts/d-dagen.json/d-dagen": "content/concepts/d-dagen.json",
     "concepts/dachau.json/dachau": "content/concepts/dachau.json",
+    "concepts/dap-for-dode.json/dap-for-dode": "content/concepts/dap-for-dode.json",
+    "concepts/dap.json/dap": "content/concepts/dap.json",
+    "concepts/darshan.json/darshan": "content/concepts/darshan.json",
     "concepts/das-ding-an-sich.json/das-ding-an-sich": "content/concepts/das-ding-an-sich.json",
     "concepts/das-man.json/das-man": "content/concepts/das-man.json",
+    "concepts/dasein.json/dasein": "content/concepts/dasein.json",
+    "concepts/davidsstjernen.json/davidsstjernen": "content/concepts/davidsstjernen.json",
     "concepts/de-100-ydmykelsenes-ar.json/de-100-ydmykelsenes-ar": "content/concepts/de-100-ydmykelsenes-ar.json",
     "concepts/de-allierte.json/de-allierte": "content/concepts/de-allierte.json",
+    "concepts/de-fem-soylene.json/de-fem-soylene": "content/concepts/de-fem-soylene.json",
+    "concepts/de-fire-edle-sannheter.json/de-fire-edle-sannheter": "content/concepts/de-fire-edle-sannheter.json",
     "concepts/de-forente-nasjoner-fn.json/de-forente-nasjoner-fn": "content/concepts/de-forente-nasjoner-fn.json",
+    "concepts/de-tre-herlighetsrikene.json/de-tre-herlighetsrikene": "content/concepts/de-tre-herlighetsrikene.json",
+    "concepts/de-tre-juvelene.json/de-tre-juvelene": "content/concepts/de-tre-juvelene.json",
     "concepts/defenestrasjon.json/defenestrasjon": "content/concepts/defenestrasjon.json",
     "concepts/delegat.json/delegat": "content/concepts/delegat.json",
     "concepts/demilitarisert.json/demilitarisert": "content/concepts/demilitarisert.json",
     "concepts/demografisk-overgang.json/demografisk-overgang": "content/concepts/demografisk-overgang.json",
     "concepts/demokrati.json/demokrati": "content/concepts/demokrati.json",
+    "concepts/den-attedelte-veien.json/den-attedelte-veien": "content/concepts/den-attedelte-veien.json",
+    "concepts/den-hellige-and.json/den-hellige-and": "content/concepts/den-hellige-and.json",
+    "concepts/den-kostelige-perle.json/den-kostelige-perle": "content/concepts/den-kostelige-perle.json",
     "concepts/den-lange-marsjen.json/den-lange-marsjen": "content/concepts/den-lange-marsjen.json",
+    "concepts/den-salvede-resten.json/den-salvede-resten": "content/concepts/den-salvede-resten.json",
     "concepts/dendrokronologi.json/dendrokronologi": "content/concepts/dendrokronologi.json",
+    "concepts/det-gamle-testamentet.json/det-gamle-testamentet": "content/concepts/det-gamle-testamentet.json",
     "concepts/det-kategoriske-imperativ.json/det-kategoriske-imperativ": "content/concepts/det-kategoriske-imperativ.json",
+    "concepts/det-nye-testamentet.json/det-nye-testamentet": "content/concepts/det-nye-testamentet.json",
     "concepts/det-oestindiske-kompani.json/det-oestindiske-kompani": "content/concepts/det-oestindiske-kompani.json",
+    "concepts/det-styrende-rad.json/det-styrende-rad": "content/concepts/det-styrende-rad.json",
+    "concepts/det-universelle-rettferdighetens-hus.json/det-universelle-rettferdighetens-hus": "content/concepts/det-universelle-rettferdighetens-hus.json",
     "concepts/devsirme.json/devsirme": "content/concepts/devsirme.json",
+    "concepts/dhammapada.json/dhammapada": "content/concepts/dhammapada.json",
+    "concepts/dharma.json/dharma": "content/concepts/dharma.json",
+    "concepts/dharmahjulet.json/dharmahjulet": "content/concepts/dharmahjulet.json",
     "concepts/diktatur.json/diktatur": "content/concepts/diktatur.json",
     "concepts/direkte-demokrati.json/direkte-demokrati": "content/concepts/direkte-demokrati.json",
+    "concepts/dissenterloven.json/dissenterloven": "content/concepts/dissenterloven.json",
     "concepts/dolkestotlegenden.json/dolkestotlegenden": "content/concepts/dolkestotlegenden.json",
+    "concepts/dua.json/dua": "content/concepts/dua.json",
+    "concepts/durga.json/durga": "content/concepts/durga.json",
     "concepts/dygdsetikk.json/dygdsetikk": "content/concepts/dygdsetikk.json",
     "concepts/dynastisyklus.json/dynastisyklus": "content/concepts/dynastisyklus.json",
+    "concepts/dyreetikk.json/dyreetikk": "content/concepts/dyreetikk.json",
     "concepts/east-india-company.json/east-india-company": "content/concepts/east-india-company.json",
     "concepts/eiendom.json/eiendom": "content/concepts/eiendom.json",
     "concepts/eksistensialisme.json/eksistensialisme": "content/concepts/eksistensialisme.json",
@@ -3937,41 +4811,65 @@
     "concepts/etos.json/etos": "content/concepts/etos.json",
     "concepts/ettergivenhetspolitikk.json/ettergivenhetspolitikk": "content/concepts/ettergivenhetspolitikk.json",
     "concepts/ettpartistat.json/ettpartistat": "content/concepts/ettpartistat.json",
+    "concepts/eudaimonia.json/eudaimonia": "content/concepts/eudaimonia.json",
+    "concepts/evangelium.json/evangelium": "content/concepts/evangelium.json",
+    "concepts/fadervar.json/fadervar": "content/concepts/fadervar.json",
     "concepts/fagforening.json/fagforening": "content/concepts/fagforening.json",
     "concepts/fascisme.json/fascisme": "content/concepts/fascisme.json",
+    "concepts/faste.json/faste": "content/concepts/faste.json",
     "concepts/fattigdom.json/fattigdom": "content/concepts/fattigdom.json",
     "concepts/federal-reserve.json/federal-reserve": "content/concepts/federal-reserve.json",
     "concepts/fellesskap.json/fellesskap": "content/concepts/fellesskap.json",
     "concepts/femarsplan.json/femarsplan": "content/concepts/femarsplan.json",
+    "concepts/filioque.json/filioque": "content/concepts/filioque.json",
     "concepts/filosofi.json/filosofi": "content/concepts/filosofi.json",
     "concepts/foerromersk-jernalder.json/foerromersk-jernalder": "content/concepts/foerromersk-jernalder.json",
     "concepts/foeydalisme.json/foeydalisme": "content/concepts/foeydalisme.json",
     "concepts/folkeforbundet.json/folkeforbundet": "content/concepts/folkeforbundet.json",
     "concepts/folkemord.json/folkemord": "content/concepts/folkemord.json",
     "concepts/folkevandringstiden.json/folkevandringstiden": "content/concepts/folkevandringstiden.json",
+    "concepts/foruttilvaerelsen.json/foruttilvaerelsen": "content/concepts/foruttilvaerelsen.json",
+    "concepts/fredagsbonnen.json/fredagsbonnen": "content/concepts/fredagsbonnen.json",
+    "concepts/frelsesplanen.json/frelsesplanen": "content/concepts/frelsesplanen.json",
     "concepts/frihet.json/frihet": "content/concepts/frihet.json",
+    "concepts/fronesis.json/fronesis": "content/concepts/fronesis.json",
     "concepts/frontfagmodellen.json/frontfagmodellen": "content/concepts/frontfagmodellen.json",
     "concepts/fullmaktsloven.json/fullmaktsloven": "content/concepts/fullmaktsloven.json",
+    "concepts/gemara.json/gemara": "content/concepts/gemara.json",
     "concepts/generasjon.json/generasjon": "content/concepts/generasjon.json",
     "concepts/ghazi.json/ghazi": "content/concepts/ghazi.json",
     "concepts/gig-okonomi.json/gig-okonomi": "content/concepts/gig-okonomi.json",
     "concepts/gini-koeffisient.json/gini-koeffisient": "content/concepts/gini-koeffisient.json",
+    "concepts/gjendopere.json/gjendopere": "content/concepts/gjendopere.json",
+    "concepts/gjenopprettelsen.json/gjenopprettelsen": "content/concepts/gjenopprettelsen.json",
     "concepts/glasnost.json/glasnost": "content/concepts/glasnost.json",
     "concepts/goebekli-tepe.json/goebekli-tepe": "content/concepts/goebekli-tepe.json",
     "concepts/good-friday-agreement.json/good-friday-agreement": "content/concepts/good-friday-agreement.json",
     "concepts/group-areas-act.json/group-areas-act": "content/concepts/group-areas-act.json",
+    "concepts/gudsbilde.json/gudsbilde": "content/concepts/gudsbilde.json",
     "concepts/gulag.json/gulag": "content/concepts/gulag.json",
     "concepts/gullalder.json/gullalder": "content/concepts/gullalder.json",
+    "concepts/gullplatene.json/gullplatene": "content/concepts/gullplatene.json",
     "concepts/gullstandard.json/gullstandard": "content/concepts/gullstandard.json",
+    "concepts/gurbani.json/gurbani": "content/concepts/gurbani.json",
     "concepts/gurdwara.json/gurdwara": "content/concepts/gurdwara.json",
+    "concepts/gurmukhi.json/gurmukhi": "content/concepts/gurmukhi.json",
     "concepts/guru-gobind-singh.json/guru-gobind-singh": "content/concepts/guru-gobind-singh.json",
     "concepts/guru-granth-sahib.json/guru-granth-sahib": "content/concepts/guru-granth-sahib.json",
     "concepts/guru-nanak.json/guru-nanak": "content/concepts/guru-nanak.json",
     "concepts/guru.json/guru": "content/concepts/guru.json",
+    "concepts/gyges-ring.json/gyges-ring": "content/concepts/gyges-ring.json",
     "concepts/habsburgerne.json/habsburgerne": "content/concepts/habsburgerne.json",
+    "concepts/hadith.json/hadith": "content/concepts/hadith.json",
+    "concepts/hajj.json/hajj": "content/concepts/hajj.json",
+    "concepts/halal.json/halal": "content/concepts/halal.json",
     "concepts/hamartia.json/hamartia": "content/concepts/hamartia.json",
     "concepts/hamas.json/hamas": "content/concepts/hamas.json",
+    "concepts/hanukka.json/hanukka": "content/concepts/hanukka.json",
     "concepts/harem.json/harem": "content/concepts/harem.json",
+    "concepts/harmageddon.json/harmageddon": "content/concepts/harmageddon.json",
+    "concepts/harmandir-sahib.json/harmandir-sahib": "content/concepts/harmandir-sahib.json",
+    "concepts/haumai.json/haumai": "content/concepts/haumai.json",
     "concepts/helhet.json/helhet": "content/concepts/helhet.json",
     "concepts/helsetning.json/helsetning": "content/concepts/helsetning.json",
     "concepts/henoteisme.json/henoteisme": "content/concepts/henoteisme.json",
@@ -3982,38 +4880,66 @@
     "concepts/hizbollah.json/hizbollah": "content/concepts/hizbollah.json",
     "concepts/holocaust.json/holocaust": "content/concepts/holocaust.json",
     "concepts/holodomor.json/holodomor": "content/concepts/holodomor.json",
+    "concepts/hukam.json/hukam": "content/concepts/hukam.json",
     "concepts/humanisme.json/humanisme": "content/concepts/humanisme.json",
     "concepts/humes-giljotin.json/humes-giljotin": "content/concepts/humes-giljotin.json",
+    "concepts/huppa.json/huppa": "content/concepts/huppa.json",
     "concepts/hyperinflasjon.json/hyperinflasjon": "content/concepts/hyperinflasjon.json",
+    "concepts/id-al-fitr.json/id-al-fitr": "content/concepts/id-al-fitr.json",
     "concepts/identitet.json/identitet": "content/concepts/identitet.json",
     "concepts/ideologi.json/ideologi": "content/concepts/ideologi.json",
+    "concepts/ideverdenen.json/ideverdenen": "content/concepts/ideverdenen.json",
+    "concepts/ikonostas.json/ikonostas": "content/concepts/ikonostas.json",
     "concepts/il-duce.json/il-duce": "content/concepts/il-duce.json",
+    "concepts/imago-dei.json/imago-dei": "content/concepts/imago-dei.json",
+    "concepts/imam.json/imam": "content/concepts/imam.json",
     "concepts/imperialisme.json/imperialisme": "content/concepts/imperialisme.json",
     "concepts/index-librorum-prohibitorum.json/index-librorum-prohibitorum": "content/concepts/index-librorum-prohibitorum.json",
     "concepts/indirekte-tale.json/indirekte-tale": "content/concepts/indirekte-tale.json",
     "concepts/indre-monolog.json/indre-monolog": "content/concepts/indre-monolog.json",
     "concepts/inflasjon.json/inflasjon": "content/concepts/inflasjon.json",
     "concepts/ingenmannsland.json/ingenmannsland": "content/concepts/ingenmannsland.json",
+    "concepts/inkarnasjon.json/inkarnasjon": "content/concepts/inkarnasjon.json",
     "concepts/innovasjon.json/innovasjon": "content/concepts/innovasjon.json",
     "concepts/investiturstriden.json/investiturstriden": "content/concepts/investiturstriden.json",
     "concepts/iznik-fliser.json/iznik-fliser": "content/concepts/iznik-fliser.json",
+    "concepts/jahve.json/jahve": "content/concepts/jahve.json",
     "concepts/janitsjar.json/janitsjar": "content/concepts/janitsjar.json",
+    "concepts/japji.json/japji": "content/concepts/japji.json",
+    "concepts/jati.json/jati": "content/concepts/jati.json",
     "concepts/jazz-age.json/jazz-age": "content/concepts/jazz-age.json",
     "concepts/jazz.json/jazz": "content/concepts/jazz.json",
+    "concepts/jehova.json/jehova": "content/concepts/jehova.json",
     "concepts/jernteppet.json/jernteppet": "content/concepts/jernteppet.json",
+    "concepts/jesusbonnen.json/jesusbonnen": "content/concepts/jesusbonnen.json",
     "concepts/jim-crow-lovene.json/jim-crow-lovene": "content/concepts/jim-crow-lovene.json",
+    "concepts/john-rawls.json/john-rawls": "content/concepts/john-rawls.json",
+    "concepts/jom-kippur.json/jom-kippur": "content/concepts/jom-kippur.json",
     "concepts/justinianerpesten.json/justinianerpesten": "content/concepts/justinianerpesten.json",
     "concepts/justinianske-pest.json/justinianske-pest": "content/concepts/justinianske-pest.json",
+    "concepts/kaba.json/kaba": "content/concepts/kaba.json",
     "concepts/kalifat.json/kalifat": "content/concepts/kalifat.json",
+    "concepts/kalkedon.json/kalkedon": "content/concepts/kalkedon.json",
     "concepts/kalmarunionen.json/kalmarunionen": "content/concepts/kalmarunionen.json",
+    "concepts/kalpa.json/kalpa": "content/concepts/kalpa.json",
+    "concepts/kanjur.json/kanjur": "content/concepts/kanjur.json",
+    "concepts/kanon.json/kanon": "content/concepts/kanon.json",
     "concepts/kapitalisme.json/kapitalisme": "content/concepts/kapitalisme.json",
     "concepts/kapitalstruktur.json/kapitalstruktur": "content/concepts/kapitalstruktur.json",
+    "concepts/karah-prasad.json/karah-prasad": "content/concepts/karah-prasad.json",
     "concepts/karakterarketyper.json/karakterarketyper": "content/concepts/karakterarketyper.json",
     "concepts/karakterutvikling.json/karakterutvikling": "content/concepts/karakterutvikling.json",
+    "concepts/karma.json/karma": "content/concepts/karma.json",
+    "concepts/kastesystemet.json/kastesystemet": "content/concepts/kastesystemet.json",
+    "concepts/kaur.json/kaur": "content/concepts/kaur.json",
+    "concepts/ketuvim.json/ketuvim": "content/concepts/ketuvim.json",
     "concepts/keynesiansk-okonomi.json/keynesiansk-okonomi": "content/concepts/keynesiansk-okonomi.json",
     "concepts/khalsa.json/khalsa": "content/concepts/khalsa.json",
     "concepts/kildekritikk.json/kildekritikk": "content/concepts/kildekritikk.json",
+    "concepts/kipa.json/kipa": "content/concepts/kipa.json",
+    "concepts/kirkemote.json/kirkemote": "content/concepts/kirkemote.json",
     "concepts/kirtan.json/kirtan": "content/concepts/kirtan.json",
+    "concepts/kitab-i-aqdas.json/kitab-i-aqdas": "content/concepts/kitab-i-aqdas.json",
     "concepts/kjaerlighet.json/kjaerlighet": "content/concepts/kjaerlighet.json",
     "concepts/koloni.json/koloni": "content/concepts/koloni.json",
     "concepts/kommentarsetning.json/kommentarsetning": "content/concepts/kommentarsetning.json",
@@ -4022,12 +4948,19 @@
     "concepts/komsakulturen.json/komsakulturen": "content/concepts/komsakulturen.json",
     "concepts/konfirmasjon.json/konfirmasjon": "content/concepts/konfirmasjon.json",
     "concepts/konfusianisme.json/konfusianisme": "content/concepts/konfusianisme.json",
+    "concepts/koranen.json/koranen": "content/concepts/koranen.json",
+    "concepts/kosher.json/kosher": "content/concepts/kosher.json",
+    "concepts/kreasjonisme.json/kreasjonisme": "content/concepts/kreasjonisme.json",
     "concepts/kreativitet.json/kreativitet": "content/concepts/kreativitet.json",
     "concepts/krigserstatning.json/krigserstatning": "content/concepts/krigserstatning.json",
     "concepts/kriminalitet.json/kriminalitet": "content/concepts/kriminalitet.json",
     "concepts/kriseforliket.json/kriseforliket": "content/concepts/kriseforliket.json",
+    "concepts/krishna.json/krishna": "content/concepts/krishna.json",
     "concepts/kulturrevolusjonen.json/kulturrevolusjonen": "content/concepts/kulturrevolusjonen.json",
+    "concepts/kumbh-mela.json/kumbh-mela": "content/concepts/kumbh-mela.json",
     "concepts/kunnskap.json/kunnskap": "content/concepts/kunnskap.json",
+    "concepts/laere-og-pakter.json/laere-og-pakter": "content/concepts/laere-og-pakter.json",
+    "concepts/laestadianismen.json/laestadianismen": "content/concepts/laestadianismen.json",
     "concepts/langar.json/langar": "content/concepts/langar.json",
     "concepts/lebensraum.json/lebensraum": "content/concepts/lebensraum.json",
     "concepts/leddsetning.json/leddsetning": "content/concepts/leddsetning.json",
@@ -4041,54 +4974,93 @@
     "concepts/lydighet.json/lydighet": "content/concepts/lydighet.json",
     "concepts/lydrike.json/lydrike": "content/concepts/lydrike.json",
     "concepts/mad.json/mad": "content/concepts/mad.json",
+    "concepts/mahabharata.json/mahabharata": "content/concepts/mahabharata.json",
+    "concepts/mahayana.json/mahayana": "content/concepts/mahayana.json",
+    "concepts/mahr.json/mahr": "content/concepts/mahr.json",
+    "concepts/maimonides.json/maimonides": "content/concepts/maimonides.json",
     "concepts/mandatomrde.json/mandatomrde": "content/concepts/mandatomrde.json",
     "concepts/mandatsystem.json/mandatsystem": "content/concepts/mandatsystem.json",
     "concepts/manhattan-prosjektet.json/manhattan-prosjektet": "content/concepts/manhattan-prosjektet.json",
+    "concepts/manifestasjon.json/manifestasjon": "content/concepts/manifestasjon.json",
     "concepts/mannebot.json/mannebot": "content/concepts/mannebot.json",
+    "concepts/mantra.json/mantra": "content/concepts/mantra.json",
     "concepts/marshallhjelpen.json/marshallhjelpen": "content/concepts/marshallhjelpen.json",
     "concepts/marsjen-mot-roma.json/marsjen-mot-roma": "content/concepts/marsjen-mot-roma.json",
     "concepts/meditasjon.json/meditasjon": "content/concepts/meditasjon.json",
+    "concepts/menighet.json/menighet": "content/concepts/menighet.json",
     "concepts/menneskeheten.json/menneskeheten": "content/concepts/menneskeheten.json",
     "concepts/menneskerettigheter.json/menneskerettigheter": "content/concepts/menneskerettigheter.json",
     "concepts/meritokrati.json/meritokrati": "content/concepts/meritokrati.json",
     "concepts/merkantilisme.json/merkantilisme": "content/concepts/merkantilisme.json",
     "concepts/merovingerne.json/merovingerne": "content/concepts/merovingerne.json",
+    "concepts/messias.json/messias": "content/concepts/messias.json",
+    "concepts/metafysikk.json/metafysikk": "content/concepts/metafysikk.json",
+    "concepts/middelveien.json/middelveien": "content/concepts/middelveien.json",
+    "concepts/midrasj.json/midrasj": "content/concepts/midrasj.json",
     "concepts/migrasjon.json/migrasjon": "content/concepts/migrasjon.json",
+    "concepts/mihrab.json/mihrab": "content/concepts/mihrab.json",
     "concepts/millet.json/millet": "content/concepts/millet.json",
+    "concepts/minjan.json/minjan": "content/concepts/minjan.json",
+    "concepts/minnehoytiden.json/minnehoytiden": "content/concepts/minnehoytiden.json",
+    "concepts/mishna.json/mishna": "content/concepts/mishna.json",
     "concepts/mission-civilisatrice.json/mission-civilisatrice": "content/concepts/mission-civilisatrice.json",
+    "concepts/mitzva.json/mitzva": "content/concepts/mitzva.json",
+    "concepts/moksha.json/moksha": "content/concepts/moksha.json",
     "concepts/molotov-ribbentrop-pakten.json/molotov-ribbentrop-pakten": "content/concepts/molotov-ribbentrop-pakten.json",
     "concepts/monarki.json/monarki": "content/concepts/monarki.json",
     "concepts/monopol.json/monopol": "content/concepts/monopol.json",
     "concepts/monoteisme.json/monoteisme": "content/concepts/monoteisme.json",
+    "concepts/mormons-bok.json/mormons-bok": "content/concepts/mormons-bok.json",
+    "concepts/moroni.json/moroni": "content/concepts/moroni.json",
+    "concepts/mosebokene.json/mosebokene": "content/concepts/mosebokene.json",
+    "concepts/moseloven.json/moseloven": "content/concepts/moseloven.json",
+    "concepts/moske.json/moske": "content/concepts/moske.json",
     "concepts/motiv.json/motiv": "content/concepts/motiv.json",
     "concepts/mujahedin.json/mujahedin": "content/concepts/mujahedin.json",
+    "concepts/mukti.json/mukti": "content/concepts/mukti.json",
+    "concepts/mul-mantar.json/mul-mantar": "content/concepts/mul-mantar.json",
+    "concepts/murti.json/murti": "content/concepts/murti.json",
     "concepts/mutual-assured-destruction.json/mutual-assured-destruction": "content/concepts/mutual-assured-destruction.json",
+    "concepts/nade.json/nade": "content/concepts/nade.json",
     "concepts/nakba.json/nakba": "content/concepts/nakba.json",
+    "concepts/nam-simran.json/nam-simran": "content/concepts/nam-simran.json",
     "concepts/nasjon.json/nasjon": "content/concepts/nasjon.json",
     "concepts/nasjonal-samling.json/nasjonal-samling": "content/concepts/nasjonal-samling.json",
     "concepts/nasjonalisere.json/nasjonalisere": "content/concepts/nasjonalisere.json",
     "concepts/nasjonalisering.json/nasjonalisering": "content/concepts/nasjonalisering.json",
     "concepts/nasjonalisme.json/nasjonalisme": "content/concepts/nasjonalisme.json",
     "concepts/nasjonsbygging.json/nasjonsbygging": "content/concepts/nasjonsbygging.json",
+    "concepts/nattverd.json/nattverd": "content/concepts/nattverd.json",
     "concepts/naturalhandel.json/naturalhandel": "content/concepts/naturalhandel.json",
     "concepts/naturrett.json/naturrett": "content/concepts/naturrett.json",
     "concepts/nazisme.json/nazisme": "content/concepts/nazisme.json",
+    "concepts/neviim.json/neviim": "content/concepts/neviim.json",
     "concepts/new-deal.json/new-deal": "content/concepts/new-deal.json",
+    "concepts/nihilisme.json/nihilisme": "content/concepts/nihilisme.json",
+    "concepts/nirvana.json/nirvana": "content/concepts/nirvana.json",
+    "concepts/noaidi.json/noaidi": "content/concepts/noaidi.json",
     "concepts/noeytralitet.json/noeytralitet": "content/concepts/noeytralitet.json",
     "concepts/norges-bank.json/norges-bank": "content/concepts/norges-bank.json",
     "concepts/norges-grunnlov.json/norges-grunnlov": "content/concepts/norges-grunnlov.json",
     "concepts/nrnbergprosessene.json/nrnbergprosessene": "content/concepts/nrnbergprosessene.json",
     "concepts/nullrentepolitikk.json/nullrentepolitikk": "content/concepts/nullrentepolitikk.json",
+    "concepts/ny-verden-oversettelsen.json/ny-verden-oversettelsen": "content/concepts/ny-verden-oversettelsen.json",
     "concepts/nykolonialisme.json/nykolonialisme": "content/concepts/nykolonialisme.json",
     "concepts/observasjon.json/observasjon": "content/concepts/observasjon.json",
+    "concepts/okumenikk.json/okumenikk": "content/concepts/okumenikk.json",
     "concepts/oligarki.json/oligarki": "content/concepts/oligarki.json",
+    "concepts/omelas.json/omelas": "content/concepts/omelas.json",
     "concepts/omveisproduksjon.json/omveisproduksjon": "content/concepts/omveisproduksjon.json",
     "concepts/ondskap.json/ondskap": "content/concepts/ondskap.json",
     "concepts/opec.json/opec": "content/concepts/opec.json",
     "concepts/operasjon-barbarossa.json/operasjon-barbarossa": "content/concepts/operasjon-barbarossa.json",
     "concepts/opium.json/opium": "content/concepts/opium.json",
     "concepts/oppdemming.json/oppdemming": "content/concepts/oppdemming.json",
+    "concepts/oppstandelsen.json/oppstandelsen": "content/concepts/oppstandelsen.json",
     "concepts/organisasjon.json/organisasjon": "content/concepts/organisasjon.json",
+    "concepts/ortodoks.json/ortodoks": "content/concepts/ortodoks.json",
+    "concepts/overgangsrite.json/overgangsrite": "content/concepts/overgangsrite.json",
+    "concepts/overmennesket.json/overmennesket": "content/concepts/overmennesket.json",
     "concepts/ovra.json/ovra": "content/concepts/ovra.json",
     "concepts/parlamentarisk-republikk.json/parlamentarisk-republikk": "content/concepts/parlamentarisk-republikk.json",
     "concepts/parlamentarisk-stat.json/parlamentarisk-stat": "content/concepts/parlamentarisk-stat.json",
@@ -4102,41 +5074,74 @@
     "concepts/pearl-harbor.json/pearl-harbor": "content/concepts/pearl-harbor.json",
     "concepts/penicillin.json/penicillin": "content/concepts/penicillin.json",
     "concepts/perestrojka.json/perestrojka": "content/concepts/perestrojka.json",
+    "concepts/pesach.json/pesach": "content/concepts/pesach.json",
     "concepts/petrodollar.json/petrodollar": "content/concepts/petrodollar.json",
+    "concepts/pilegrim.json/pilegrim": "content/concepts/pilegrim.json",
+    "concepts/pinse.json/pinse": "content/concepts/pinse.json",
+    "concepts/pinsebevegelsen.json/pinsebevegelsen": "content/concepts/pinsebevegelsen.json",
     "concepts/pliktetikk.json/pliktetikk": "content/concepts/pliktetikk.json",
     "concepts/polyteisme.json/polyteisme": "content/concepts/polyteisme.json",
     "concepts/pontifex-maximus.json/pontifex-maximus": "content/concepts/pontifex-maximus.json",
     "concepts/population-registration-act.json/population-registration-act": "content/concepts/population-registration-act.json",
     "concepts/pragmatisme.json/pragmatisme": "content/concepts/pragmatisme.json",
     "concepts/president-republikk.json/president-republikk": "content/concepts/president-republikk.json",
+    "concepts/prestedommet.json/prestedommet": "content/concepts/prestedommet.json",
+    "concepts/profet.json/profet": "content/concepts/profet.json",
     "concepts/proxy-krig.json/proxy-krig": "content/concepts/proxy-krig.json",
+    "concepts/puja.json/puja": "content/concepts/puja.json",
+    "concepts/punya.json/punya": "content/concepts/punya.json",
+    "concepts/purusha-hymnen.json/purusha-hymnen": "content/concepts/purusha-hymnen.json",
+    "concepts/qibla.json/qibla": "content/concepts/qibla.json",
+    "concepts/qiblih.json/qiblih": "content/concepts/qiblih.json",
+    "concepts/rabbiner.json/rabbiner": "content/concepts/rabbiner.json",
     "concepts/radar.json/radar": "content/concepts/radar.json",
     "concepts/raf.json/raf": "content/concepts/raf.json",
+    "concepts/ramadan.json/ramadan": "content/concepts/ramadan.json",
+    "concepts/ramayana.json/ramayana": "content/concepts/ramayana.json",
     "concepts/rasisme.json/rasisme": "content/concepts/rasisme.json",
     "concepts/realisme.json/realisme": "content/concepts/realisme.json",
     "concepts/refleksjon.json/refleksjon": "content/concepts/refleksjon.json",
     "concepts/refleksjonsmarkorer.json/refleksjonsmarkorer": "content/concepts/refleksjonsmarkorer.json",
     "concepts/reformasjon.json/reformasjon": "content/concepts/reformasjon.json",
+    "concepts/reformjodedom.json/reformjodedom": "content/concepts/reformjodedom.json",
+    "concepts/reinkarnasjon.json/reinkarnasjon": "content/concepts/reinkarnasjon.json",
     "concepts/rekognosering.json/rekognosering": "content/concepts/rekognosering.json",
     "concepts/relativitetsteorien.json/relativitetsteorien": "content/concepts/relativitetsteorien.json",
     "concepts/religionsfrihet.json/religionsfrihet": "content/concepts/religionsfrihet.json",
+    "concepts/rene-land-buddhisme.json/rene-land-buddhisme": "content/concepts/rene-land-buddhisme.json",
     "concepts/replikk.json/replikk": "content/concepts/replikk.json",
     "concepts/representativt-demokrati.json/representativt-demokrati": "content/concepts/representativt-demokrati.json",
     "concepts/republikk.json/republikk": "content/concepts/republikk.json",
     "concepts/rettferdiggjore.json/rettferdiggjore": "content/concepts/rettferdiggjore.json",
+    "concepts/rettferdiggjorelse.json/rettferdiggjorelse": "content/concepts/rettferdiggjorelse.json",
     "concepts/rettferdighet.json/rettferdighet": "content/concepts/rettferdighet.json",
     "concepts/rettigheter.json/rettigheter": "content/concepts/rettigheter.json",
     "concepts/rhinen.json/rhinen": "content/concepts/rhinen.json",
     "concepts/rhinland.json/rhinland": "content/concepts/rhinland.json",
+    "concepts/ridvan.json/ridvan": "content/concepts/ridvan.json",
+    "concepts/rigveda.json/rigveda": "content/concepts/rigveda.json",
     "concepts/rikdom.json/rikdom": "content/concepts/rikdom.json",
+    "concepts/rite.json/rite": "content/concepts/rite.json",
+    "concepts/ritual.json/ritual": "content/concepts/ritual.json",
     "concepts/roaring-20s.json/roaring-20s": "content/concepts/roaring-20s.json",
     "concepts/rodegardistene.json/rodegardistene": "content/concepts/rodegardistene.json",
     "concepts/roede-kors.json/roede-kors": "content/concepts/roede-kors.json",
+    "concepts/rosenkrans.json/rosenkrans": "content/concepts/rosenkrans.json",
+    "concepts/rosh-hashana.json/rosh-hashana": "content/concepts/rosh-hashana.json",
     "concepts/royal-navy.json/royal-navy": "content/concepts/royal-navy.json",
     "concepts/rubicon.json/rubicon": "content/concepts/rubicon.json",
+    "concepts/runebomme.json/runebomme": "content/concepts/runebomme.json",
     "concepts/saarbarhet.json/saarbarhet": "content/concepts/saarbarhet.json",
+    "concepts/sabbat.json/sabbat": "content/concepts/sabbat.json",
+    "concepts/sakrament.json/sakrament": "content/concepts/sakrament.json",
+    "concepts/salat.json/salat": "content/concepts/salat.json",
+    "concepts/samadhi.json/samadhi": "content/concepts/samadhi.json",
     "concepts/samfunnskontrakt.json/samfunnskontrakt": "content/concepts/samfunnskontrakt.json",
+    "concepts/samsara.json/samsara": "content/concepts/samsara.json",
+    "concepts/samskara.json/samskara": "content/concepts/samskara.json",
+    "concepts/sangha.json/sangha": "content/concepts/sangha.json",
     "concepts/sannhet.json/sannhet": "content/concepts/sannhet.json",
+    "concepts/sanseverdenen.json/sanseverdenen": "content/concepts/sanseverdenen.json",
     "concepts/sapere-aude.json/sapere-aude": "content/concepts/sapere-aude.json",
     "concepts/schlieffen-planen.json/schlieffen-planen": "content/concepts/schlieffen-planen.json",
     "concepts/sekterisme.json/sekterisme": "content/concepts/sekterisme.json",
@@ -4146,23 +5151,45 @@
     "concepts/sennepsgass.json/sennepsgass": "content/concepts/sennepsgass.json",
     "concepts/sentralmaktene.json/sentralmaktene": "content/concepts/sentralmaktene.json",
     "concepts/sepoy.json/sepoy": "content/concepts/sepoy.json",
+    "concepts/seva.json/seva": "content/concepts/seva.json",
+    "concepts/shahada.json/shahada": "content/concepts/shahada.json",
+    "concepts/shaktismen.json/shaktismen": "content/concepts/shaktismen.json",
+    "concepts/shankara.json/shankara": "content/concepts/shankara.json",
     "concepts/sharia.json/sharia": "content/concepts/sharia.json",
+    "concepts/shavuot.json/shavuot": "content/concepts/shavuot.json",
+    "concepts/shema.json/shema": "content/concepts/shema.json",
     "concepts/shiaislam.json/shiaislam": "content/concepts/shiaislam.json",
+    "concepts/shirk.json/shirk": "content/concepts/shirk.json",
+    "concepts/shiva.json/shiva": "content/concepts/shiva.json",
+    "concepts/shivaismen.json/shivaismen": "content/concepts/shivaismen.json",
+    "concepts/shoghi-effendi.json/shoghi-effendi": "content/concepts/shoghi-effendi.json",
     "concepts/show-dont-tell.json/show-dont-tell": "content/concepts/show-dont-tell.json",
+    "concepts/shruti.json/shruti": "content/concepts/shruti.json",
+    "concepts/siddhartha-gautama.json/siddhartha-gautama": "content/concepts/siddhartha-gautama.json",
+    "concepts/siddur.json/siddur": "content/concepts/siddur.json",
+    "concepts/sieidi.json/sieidi": "content/concepts/sieidi.json",
     "concepts/sikh.json/sikh": "content/concepts/sikh.json",
+    "concepts/simone-de-beauvoir.json/simone-de-beauvoir": "content/concepts/simone-de-beauvoir.json",
     "concepts/sionisme.json/sionisme": "content/concepts/sionisme.json",
+    "concepts/sira.json/sira": "content/concepts/sira.json",
     "concepts/sivilisasjon.json/sivilisasjon": "content/concepts/sivilisasjon.json",
     "concepts/skagerrak.json/skagerrak": "content/concepts/skagerrak.json",
+    "concepts/skapelsesmyte.json/skapelsesmyte": "content/concepts/skapelsesmyte.json",
     "concepts/skyttergravskrig.json/skyttergravskrig": "content/concepts/skyttergravskrig.json",
+    "concepts/smriti.json/smriti": "content/concepts/smriti.json",
     "concepts/sol-invictus.json/sol-invictus": "content/concepts/sol-invictus.json",
+    "concepts/soren-kierkegaard.json/soren-kierkegaard": "content/concepts/soren-kierkegaard.json",
     "concepts/sosialisme.json/sosialisme": "content/concepts/sosialisme.json",
     "concepts/spekulasjon.json/spekulasjon": "content/concepts/spekulasjon.json",
     "concepts/spesiell-okonomisk-sone.json/spesiell-okonomisk-sone": "content/concepts/spesiell-okonomisk-sone.json",
+    "concepts/sporvognsproblemet.json/sporvognsproblemet": "content/concepts/sporvognsproblemet.json",
     "concepts/sprangmodellen.json/sprangmodellen": "content/concepts/sprangmodellen.json",
     "concepts/squadristi.json/squadristi": "content/concepts/squadristi.json",
     "concepts/stabilitet.json/stabilitet": "content/concepts/stabilitet.json",
     "concepts/stalingrad.json/stalingrad": "content/concepts/stalingrad.json",
     "concepts/stamford-bridge.json/stamford-bridge": "content/concepts/stamford-bridge.json",
+    "concepts/standardverkene.json/standardverkene": "content/concepts/standardverkene.json",
+    "concepts/statskirke.json/statskirke": "content/concepts/statskirke.json",
     "concepts/stfronten.json/stfronten": "content/concepts/stfronten.json",
     "concepts/stolthet.json/stolthet": "content/concepts/stolthet.json",
     "concepts/stormaktstiden.json/stormaktstiden": "content/concepts/stormaktstiden.json",
@@ -4171,40 +5198,67 @@
     "concepts/streikerett.json/streikerett": "content/concepts/streikerett.json",
     "concepts/stridsvogn.json/stridsvogn": "content/concepts/stridsvogn.json",
     "concepts/strukturtilpasning.json/strukturtilpasning": "content/concepts/strukturtilpasning.json",
+    "concepts/stupa.json/stupa": "content/concepts/stupa.json",
     "concepts/subjektet.json/subjektet": "content/concepts/subjektet.json",
     "concepts/subtekst.json/subtekst": "content/concepts/subtekst.json",
     "concepts/sultan.json/sultan": "content/concepts/sultan.json",
+    "concepts/sunna.json/sunna": "content/concepts/sunna.json",
     "concepts/sunniislam.json/sunniislam": "content/concepts/sunniislam.json",
+    "concepts/sure.json/sure": "content/concepts/sure.json",
+    "concepts/sutra.json/sutra": "content/concepts/sutra.json",
+    "concepts/sutta.json/sutta": "content/concepts/sutta.json",
     "concepts/suverenitet.json/suverenitet": "content/concepts/suverenitet.json",
     "concepts/suverenitetsprinsippet.json/suverenitetsprinsippet": "content/concepts/suverenitetsprinsippet.json",
     "concepts/svartskjortene.json/svartskjortene": "content/concepts/svartskjortene.json",
     "concepts/sykdom.json/sykdom": "content/concepts/sykdom.json",
     "concepts/sykes-picot.json/sykes-picot": "content/concepts/sykes-picot.json",
+    "concepts/synagoge.json/synagoge": "content/concepts/synagoge.json",
+    "concepts/syndefallet.json/syndefallet": "content/concepts/syndefallet.json",
     "concepts/synsvinkel.json/synsvinkel": "content/concepts/synsvinkel.json",
+    "concepts/tabula-rasa.json/tabula-rasa": "content/concepts/tabula-rasa.json",
+    "concepts/tafsir.json/tafsir": "content/concepts/tafsir.json",
+    "concepts/talmud.json/talmud": "content/concepts/talmud.json",
+    "concepts/tanakh.json/tanakh": "content/concepts/tanakh.json",
     "concepts/tankereferat.json/tankereferat": "content/concepts/tankereferat.json",
     "concepts/tanzimat.json/tanzimat": "content/concepts/tanzimat.json",
     "concepts/tariffavtale.json/tariffavtale": "content/concepts/tariffavtale.json",
+    "concepts/tawhid.json/tawhid": "content/concepts/tawhid.json",
     "concepts/te.json/te": "content/concepts/te.json",
+    "concepts/tefillin.json/tefillin": "content/concepts/tefillin.json",
     "concepts/teknokrati.json/teknokrati": "content/concepts/teknokrati.json",
     "concepts/teknologi.json/teknologi": "content/concepts/teknologi.json",
     "concepts/tekstil.json/tekstil": "content/concepts/tekstil.json",
     "concepts/telegrafen.json/telegrafen": "content/concepts/telegrafen.json",
     "concepts/tema.json/tema": "content/concepts/tema.json",
     "concepts/temasetning.json/temasetning": "content/concepts/temasetning.json",
+    "concepts/tenjur.json/tenjur": "content/concepts/tenjur.json",
+    "concepts/teodise.json/teodise": "content/concepts/teodise.json",
     "concepts/teokrati.json/teokrati": "content/concepts/teokrati.json",
     "concepts/teologi.json/teologi": "content/concepts/teologi.json",
+    "concepts/tetragrammet.json/tetragrammet": "content/concepts/tetragrammet.json",
     "concepts/the-roaring-twenties.json/the-roaring-twenties": "content/concepts/the-roaring-twenties.json",
     "concepts/the-troubles.json/the-troubles": "content/concepts/the-troubles.json",
+    "concepts/theravada.json/theravada": "content/concepts/theravada.json",
+    "concepts/tidebonner.json/tidebonner": "content/concepts/tidebonner.json",
     "concepts/tidspreferanse.json/tidspreferanse": "content/concepts/tidspreferanse.json",
+    "concepts/tikkun-olam.json/tikkun-olam": "content/concepts/tikkun-olam.json",
     "concepts/tilhoerighet.json/tilhoerighet": "content/concepts/tilhoerighet.json",
+    "concepts/toraen.json/toraen": "content/concepts/toraen.json",
     "concepts/total-krig.json/total-krig": "content/concepts/total-krig.json",
     "concepts/totalitaert-diktatur.json/totalitaert-diktatur": "content/concepts/totalitaert-diktatur.json",
     "concepts/traktat.json/traktat": "content/concepts/traktat.json",
     "concepts/traktbegerkulturen.json/traktbegerkulturen": "content/concepts/traktbegerkulturen.json",
+    "concepts/transsubstansiasjon.json/transsubstansiasjon": "content/concepts/transsubstansiasjon.json",
     "concepts/treenigheten.json/treenigheten": "content/concepts/treenigheten.json",
+    "concepts/tripitaka.json/tripitaka": "content/concepts/tripitaka.json",
+    "concepts/trosartiklene.json/trosartiklene": "content/concepts/trosartiklene.json",
+    "concepts/trosbekjennelsen.json/trosbekjennelsen": "content/concepts/trosbekjennelsen.json",
+    "concepts/trossamfunn.json/trossamfunn": "content/concepts/trossamfunn.json",
     "concepts/truman-doktrinen.json/truman-doktrinen": "content/concepts/truman-doktrinen.json",
     "concepts/trygghet.json/trygghet": "content/concepts/trygghet.json",
     "concepts/tsar-bomba.json/tsar-bomba": "content/concepts/tsar-bomba.json",
+    "concepts/tungetale.json/tungetale": "content/concepts/tungetale.json",
+    "concepts/turban.json/turban": "content/concepts/turban.json",
     "concepts/uavhengighet.json/uavhengighet": "content/concepts/uavhengighet.json",
     "concepts/uinnskrenket-ubtkrig.json/uinnskrenket-ubtkrig": "content/concepts/uinnskrenket-ubtkrig.json",
     "concepts/ulikeverdige-traktater.json/ulikeverdige-traktater": "content/concepts/ulikeverdige-traktater.json",
@@ -4212,27 +5266,40 @@
     "concepts/ultimatum.json/ultimatum": "content/concepts/ultimatum.json",
     "concepts/undring.json/undring": "content/concepts/undring.json",
     "concepts/unionsopplosningen-1905.json/unionsopplosningen-1905": "content/concepts/unionsopplosningen-1905.json",
+    "concepts/upanayana.json/upanayana": "content/concepts/upanayana.json",
+    "concepts/upanishadene.json/upanishadene": "content/concepts/upanishadene.json",
     "concepts/urbanisering.json/urbanisering": "content/concepts/urbanisering.json",
     "concepts/urettferdighet.json/urettferdighet": "content/concepts/urettferdighet.json",
     "concepts/utilitarisme.json/utilitarisme": "content/concepts/utilitarisme.json",
     "concepts/utmattelseskrig.json/utmattelseskrig": "content/concepts/utmattelseskrig.json",
+    "concepts/uvitenhetens-slor.json/uvitenhetens-slor": "content/concepts/uvitenhetens-slor.json",
     "concepts/v2.json/v2": "content/concepts/v2.json",
+    "concepts/vahiguru.json/vahiguru": "content/concepts/vahiguru.json",
+    "concepts/vakttarnet.json/vakttarnet": "content/concepts/vakttarnet.json",
     "concepts/valide-sultan.json/valide-sultan": "content/concepts/valide-sultan.json",
     "concepts/vanaere.json/vanaere": "content/concepts/vanaere.json",
+    "concepts/varna.json/varna": "content/concepts/varna.json",
+    "concepts/vedaene.json/vedaene": "content/concepts/vedaene.json",
     "concepts/vennskap.json/vennskap": "content/concepts/vennskap.json",
     "concepts/verbalet.json/verbalet": "content/concepts/verbalet.json",
     "concepts/verdighet.json/verdighet": "content/concepts/verdighet.json",
     "concepts/versailles-traktaten.json/versailles-traktaten": "content/concepts/versailles-traktaten.json",
     "concepts/versaillestraktaten.json/versaillestraktaten": "content/concepts/versaillestraktaten.json",
+    "concepts/vesak.json/vesak": "content/concepts/vesak.json",
     "concepts/vestfronten.json/vestfronten": "content/concepts/vestfronten.json",
+    "concepts/vinaya.json/vinaya": "content/concepts/vinaya.json",
     "concepts/virkelighet.json/virkelighet": "content/concepts/virkelighet.json",
     "concepts/visdom.json/visdom": "content/concepts/visdom.json",
+    "concepts/visdomsordet.json/visdomsordet": "content/concepts/visdomsordet.json",
+    "concepts/vishnu.json/vishnu": "content/concepts/vishnu.json",
+    "concepts/vishnuismen.json/vishnuismen": "content/concepts/vishnuismen.json",
     "concepts/vitenskap.json/vitenskap": "content/concepts/vitenskap.json",
     "concepts/wall-street.json/wall-street": "content/concepts/wall-street.json",
     "concepts/weimarrepublikken.json/weimarrepublikken": "content/concepts/weimarrepublikken.json",
     "concepts/wergild.json/wergild": "content/concepts/wergild.json",
     "concepts/yam.json/yam": "content/concepts/yam.json",
     "concepts/ytringsfrihet.json/ytringsfrihet": "content/concepts/ytringsfrihet.json",
+    "concepts/zakat.json/zakat": "content/concepts/zakat.json",
     "concepts/zeppeliner.json/zeppeliner": "content/concepts/zeppeliner.json",
     "concepts/zimmermann-telegrammet.json/zimmermann-telegrammet": "content/concepts/zimmermann-telegrammet.json",
     "config/progression.json/progression": "content/config/progression.json",
@@ -4711,6 +5778,7 @@
     "krle/sammenligning/gudsbilde": "content/krle/sammenligning/gudsbilde.json",
     "krle/sammenligning/hellige-rom": "content/krle/sammenligning/hellige-rom.json",
     "krle/sammenligning/hellige-tekster": "content/krle/sammenligning/hellige-tekster.json",
+    "krle/sammenligning/hovedplottet-sti": "content/krle/sammenligning/hovedplottet-sti.json",
     "krle/sammenligning/hoytider": "content/krle/sammenligning/hoytider.json",
     "krle/sammenligning/lidelse": "content/krle/sammenligning/lidelse.json",
     "krle/sammenligning/mat-og-renhet": "content/krle/sammenligning/mat-og-renhet.json",

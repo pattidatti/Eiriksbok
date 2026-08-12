@@ -1,0 +1,14 @@
+{
+  "term": "Siddur",
+  "definition": "Den jødiske bønneboka. Den inneholder alle gudstjenestene gjennom året, salmer og velsignelser til bryllup, begravelse og bar mitzva.",
+  "type": "concept",
+  "subject": "krle",
+  "aliases": [
+    "siddurer",
+    "siddurens"
+  ],
+  "tags": [
+    "jødedom",
+    "bønn"
+  ]
+}

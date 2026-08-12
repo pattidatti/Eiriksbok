@@ -257,14 +257,38 @@ export interface InteractiveComponentProps {
     onComplete?: () => void;
     className?: string;
 }
+// Et nøkkelbegrep i en dimensjon - vises som chip eleven kan folde ut.
+export interface ReligionDimensionTerm {
+    term: string;
+    explanation: string;
+}
+
+// Dimensjonskortet i `public/data/religion/*.json`. Alle felter utenom `body`
+// er valgfrie, og eldre filer der dimensjonen bare er et rich-text-tre leses
+// som `{ body }` av `normalizeDimension()` i utils/religionDimensions.ts.
+export interface ReligionDimensionEntry {
+    // Ett svar i én setning, vist som ingress over brødteksten
+    summary?: string;
+    image?: string;
+    imageAlt?: string;
+    keyTerms?: ReligionDimensionTerm[];
+    // Et konkret nærbilde som gjør dimensjonen håndfast
+    example?: { title: string; text: string };
+    // Refleksjonsspørsmål eleven tar med seg videre
+    question?: string;
+    // Brødteksten: rich-text-AST fra det gamle TinaCMS-formatet, eller ren tekst
+    body?: unknown;
+}
+
 export interface Religion {
     id: string;
     name: string;
     color?: string;
     icon?: string;
-    // Verdiene er rich-text-AST fra det gamle TinaCMS-formatet, eller ren
-    // tekst. `unknown` er riktig her: strukturen varierer, og <RichText />
-    // tar imot nettopp unknown og snevrer inn selv.
+    // Verdiene er enten et ReligionDimensionEntry eller - i filer som ennå
+    // ikke er løftet - rich-text-AST fra det gamle TinaCMS-formatet.
+    // `unknown` er riktig her: strukturen varierer, og normalizeDimension()
+    // snevrer inn selv.
     dimensions: {
         ritual?: unknown;
         narrative?: unknown;

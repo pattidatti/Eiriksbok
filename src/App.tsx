@@ -49,6 +49,7 @@ const ScannerPage = React.lazy(routeFactories.ScannerPage);
 const WordSorterGame = React.lazy(routeFactories.WordSorterGame);
 const ConceptSnakeGame = React.lazy(routeFactories.ConceptSnakeGame);
 const PersonGallery = React.lazy(routeFactories.PersonGallery);
+const PersonDetailPage = React.lazy(routeFactories.PersonDetailPage);
 const PhilosophyOdyssey = React.lazy(routeFactories.PhilosophyOdyssey);
 const DetectiveHubPage = React.lazy(routeFactories.DetectiveHubPage);
 const DetectiveCasePage = React.lazy(routeFactories.DetectiveCasePage);
@@ -110,7 +111,7 @@ const router = createBrowserRouter([
       { path: "himmel", element: <SkyPage /> },
       { path: "atlas", element: <AtlasPage /> },
       { path: "persongalleri", element: <PersonGallery /> },
-      { path: "persongalleri/:slug", element: <PersonGallery /> },
+      { path: "persongalleri/:slug", element: <PersonDetailPage /> },
       { path: "colonization", element: <ColonizationMap /> },
       { path: "infrastruktur-atlas", element: <InfrastrukturAtlas /> },
       { path: "samfunnskunnskap/okonomi/verden", element: <OkonomiVerden /> },

@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useManifest } from '../hooks/useManifest';
 import { useScrollLock } from '../hooks/useScrollLock';
 import type { Manifest, ManifestLesson } from '../types';
-import { Search, X, Map } from 'lucide-react';
+import { Search, X, Map, User } from 'lucide-react';
+import { usePeople } from '../hooks/usePeople';
+import type { PeopleData } from '../types/people';
 import { motion, AnimatePresence } from 'framer-motion';
 import { textLibraryData } from '../data/textLibraryData';
 import { learningPathsData } from '../data/learningPathsHelper';
@@ -15,7 +17,7 @@ interface SearchOverlayProps {
 }
 
 interface SearchResult {
-    type: 'lesson' | 'topic' | 'concept' | 'library' | 'learning-path';
+    type: 'lesson' | 'topic' | 'concept' | 'library' | 'learning-path' | 'person';
     title: string;
     path: string;
     description?: string;
@@ -24,10 +26,16 @@ interface SearchResult {
 
 // Fuse-indeksen bygges én gang per manifest-referanse (modulcache), ikke per
 // tastetrykk/åpning - indeksering av 1000+ items blokkerer ellers main thread.
-let fuseCache: { manifest: Manifest; fuse: Fuse<SearchResult> } | null = null;
+let fuseCache: {
+    manifest: Manifest;
+    people: PeopleData | undefined;
+    fuse: Fuse<SearchResult>;
+} | null = null;
 
-function getFuse(manifest: Manifest): Fuse<SearchResult> {
-    if (fuseCache && fuseCache.manifest === manifest) return fuseCache.fuse;
+function getFuse(manifest: Manifest, people: PeopleData | undefined): Fuse<SearchResult> {
+    if (fuseCache && fuseCache.manifest === manifest && fuseCache.people === people) {
+        return fuseCache.fuse;
+    }
 
     const allItems: SearchResult[] = [];
 
@@ -105,6 +113,20 @@ function getFuse(manifest: Manifest): Fuse<SearchResult> {
         });
     });
 
+    // 4. Personer. Persongalleriet var tidligere usynlig i søket, så eleven som
+    // søkte på «Hannah Arendt» fikk ingen treff selv om vi har en side om henne.
+    people?.people.forEach((person) => {
+        allItems.push({
+            type: 'person',
+            title: person.name,
+            path: `/persongalleri/${person.slug}`,
+            description: person.lifespan
+                ? `${person.lifespan} - ${person.definition}`
+                : person.definition,
+            tags: [...person.tags, ...person.aliases],
+        });
+    });
+
     const fuse = new Fuse(allItems, {
         keys: [
             { name: 'title', weight: 0.7 },
@@ -115,7 +137,7 @@ function getFuse(manifest: Manifest): Fuse<SearchResult> {
         includeScore: true
     });
 
-    fuseCache = { manifest, fuse };
+    fuseCache = { manifest, people, fuse };
     return fuse;
 }
 
@@ -126,6 +148,8 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
     const inputRef = useRef<HTMLInputElement>(null);
     const listRef = useRef<HTMLDivElement>(null);
     const { data: manifest } = useManifest();
+    // Persondataene hentes først når eleven faktisk åpner søket.
+    const { data: peopleData } = usePeople({ enabled: isOpen });
     const navigate = useNavigate();
 
     useScrollLock(isOpen);
@@ -184,7 +208,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
             return;
         }
 
-        const searchResults = getFuse(manifest).search(query);
+        const searchResults = getFuse(manifest, peopleData).search(query);
         setResults(searchResults.map(result => result.item).slice(0, 50)); // Limit to 50 results
         setSelectedIndex(0); // Reset selection on new results
 
@@ -209,7 +233,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
 
         return () => clearTimeout(logTimer);
 
-    }, [query, manifest]);
+    }, [query, manifest, peopleData]);
 
     return (
         <AnimatePresence>
@@ -281,6 +305,7 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                                         <div className="flex-1 min-w-0 mr-4">
                                             <div className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors truncate flex items-center gap-2">
                                                 {result.type === 'learning-path' && <Map className="w-4 h-4 text-emerald-400" />}
+                                                {result.type === 'person' && <User className="w-4 h-4 text-amber-400" />}
                                                 {result.title}
                                             </div>
                                             <div className="text-sm text-slate-400 truncate">
@@ -303,11 +328,17 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                                         </div>
                                         <div className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded whitespace-nowrap ${result.type === 'learning-path'
                                             ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                                            : result.type === 'library'
-                                                ? 'bg-white/10 text-slate-300'
+                                            : result.type === 'person'
+                                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
                                                 : 'bg-white/10 text-slate-300'
                                             }`}>
-                                            {result.type === 'learning-path' ? 'læringssti' : result.type === 'library' ? 'bibliotek' : result.type}
+                                            {result.type === 'learning-path'
+                                                ? 'læringssti'
+                                                : result.type === 'library'
+                                                    ? 'bibliotek'
+                                                    : result.type === 'person'
+                                                        ? 'person'
+                                                        : result.type}
                                         </div>
                                     </motion.div>
                                 </Link>

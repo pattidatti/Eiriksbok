@@ -86,7 +86,14 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
     const entitiesLoading = entityQueries.some((q) => q.isLoading);
 
     // --- Dimensjonsfaner med piltastnavigasjon ---
-    const [activeDimKey, setActiveDimKey] = useState(config.dimensions[0].key);
+    // ?dim=<nøkkel> lar andre sider (f.eks. religionsprofilen) lenke rett inn
+    // på én dimensjon. Leses kun ved oppstart; etterpå eier fanene tilstanden.
+    const [activeDimKey, setActiveDimKey] = useState(() => {
+        const fromUrl = searchParams.get('dim');
+        return config.dimensions.some((d) => d.key === fromUrl)
+            ? (fromUrl as string)
+            : config.dimensions[0].key;
+    });
     const activeDim =
         config.dimensions.find((d) => d.key === activeDimKey) ?? config.dimensions[0];
     const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);

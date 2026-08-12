@@ -47,6 +47,7 @@ export const routeFactories: Record<string, PageFactory> = {
     WordSorterGame: () => import('./games/word-sorter/WordSorterGame'),
     ConceptSnakeGame: () => import('./games/concept-snake/ConceptSnakeGame'),
     PersonGallery: () => import('./pages/PersonGallery').then(module => ({ default: module.PersonGallery })),
+    PersonDetailPage: () => import('./pages/PersonDetailPage').then(module => ({ default: module.PersonDetailPage })),
     PhilosophyOdyssey: () => import('./pages/PhilosophyOdysseyPage').then(module => ({ default: module.PhilosophyOdysseyPage })),
     DetectiveHubPage: () => import('./pages/DetectiveHubPage').then(module => ({ default: module.DetectiveHubPage })),
     DetectiveCasePage: () => import('./pages/DetectiveCasePage').then(module => ({ default: module.DetectiveCasePage })),

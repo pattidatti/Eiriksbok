@@ -64,9 +64,9 @@ export const PracticePage: React.FC = () => {
         {
             id: 'persongalleri',
             title: 'Persongalleri',
-            description: 'Møt de mest sentrale historiske personene og tenkerne.',
+            description: 'Slå opp 224 personer fra boka. Sorter dem på tidslinjen og se hvem som levde samtidig.',
             icon: Users,
-            color: 'bg-orange-500',
+            color: 'bg-indigo-600',
             link: '/persongalleri'
         },
         {

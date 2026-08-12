@@ -1,0 +1,368 @@
+{
+    "id": "hovedplottet-sti",
+    "title": "Læringssti: Hovedplottet",
+    "description": "Alle religioner forteller den samme historien: noe er galt, og noe skal fikse det. De er dypt uenige om hvem som er helten.",
+    "layout": "learning-path",
+    "category": "Læringssti",
+    "readTime": "2 timer",
+    "heroImage": "/images/placeholder.webp",
+    "subject": "krle",
+    "topic": "sammenligning",
+    "kompetansemaal": ["rle01-03-10-06", "rle01-03-10-13", "rle01-03-10-15"],
+    "createdDate": "2026-08-12T14:00:00Z",
+    "learningPathData": {
+        "id": "hovedplottet-sti",
+        "title": "Hovedplottet",
+        "description": "Du starter med en film du er glad i, og oppdager at ni religioner bruker nøyaktig samme skjelett som den. Fire ledd ligner hverandre mistenkelig mye. Det femte spriker fra ende til annen, og det er der hele uenigheten sitter.",
+        "targetSubjectId": "krle",
+        "targetTopicId": "sammenligning",
+        "steps": [
+            {
+                "id": "filmen-du-saa-sist",
+                "phase": "Prolog",
+                "title": "Filmen du så sist",
+                "type": "refleksjon",
+                "icon": "sparkles",
+                "difficulty": "easy",
+                "content": "Før du leser et eneste ord om religion, skal du gjøre noe helt annet. Du skal tenke på en film.\n\nVelg en du er glad i. Det kan like gjerne være en serie, en bok eller et spill. Det viktige er at du husker den godt nok til å fortelle den videre.\n\nNå tar du den fra hverandre i fem deler.\n\nNoe er galt i starten. Det er alltid noe galt i starten, ellers hadde det ikke vært en historie. Så finnes det en grunn til at det er galt. Det finnes et sted historien skal ende. Det finnes noe som må gjøres for å komme dit. Og til slutt: det er noen som gjør det.\n\nDet siste leddet er det viktigste, og det er det du kommer til å bruke resten av denne stien på. Noen historier lar helten fikse alt selv. Andre sender inn en trollmann, en gud eller en heldig tilfeldighet som redder alt i siste sekund. De to typene føles helt forskjellige, selv om alt annet i historien er likt.\n\nDu trenger ingen forkunnskaper for å svare her. Det finnes ingen fasit, og det er hele poenget. Du skal ha ditt eget svar liggende, slik at du har noe å måle de ni andre svarene mot. I siste steg henter du det fram igjen.",
+                "tasks": [
+                    "Velg en film, serie, bok eller et spill du er glad i, og skriv ned tittelen. (Fakta)",
+                    "Skriv de fem leddene for historien din: hva er galt, hvorfor er det galt, hvor skal det ende, hva må til, og hvem gjør jobben. (Fakta)",
+                    "Hvorfor klarer ikke helten å fikse problemet med en gang? Hva står i veien? (Forståelse)",
+                    "Skriv om slutten slik at noen helt utenfra kommer og ordner alt. Blir historien bedre eller dårligere? Begrunn svaret. (Anvendelse)",
+                    "Ta vare på arket. Du henter det fram igjen i siste steg. (Refleksjon)"
+                ]
+            },
+            {
+                "id": "diagnosen-sagt-hoyt",
+                "phase": "Akt 1: Diagnosen",
+                "title": "Diagnosen som ble sagt høyt",
+                "type": "fakta",
+                "icon": "book-open",
+                "difficulty": "easy",
+                "content": "Du har nettopp laget et femdelt skjema for en film. Nå skal du møte en religion som bruker nøyaktig samme skjema om hele livet, og som sier det rett ut.\n\nFor rundt 2400 år siden satt en indisk prins som het Siddhartha Gautama under et tre og grublet på ett spørsmål: hvorfor har livet så mye vondt i seg, og finnes det en vei ut? Svaret han kom fram til, samlet han i fire punkter. De kalles De fire edle sannhetene, og de er bygget som en legejournal.\n\nFørst kommer symptomet. Så årsaken. Så beskjeden om at pasienten faktisk kan bli frisk. Og til slutt behandlingen.\n\nLegg merke til hva som ikke står i den journalen. Ingen gud griper inn og redder pasienten. Legen kan stille diagnosen og skrive ut medisinen, men du må ta den selv.\n\nDet er dette som gjør buddhismen til den beste inngangen i stien. Alle de andre tradisjonene har også et plott. Buddhismen er den ene som legger det åpent på bordet og nummererer det.\n\nMens du leser, skal du se etter én ting: hvilke av de fem leddene fra prologen din dekker de fire sannhetene, og hvilket ledd må du lete etter et annet sted?",
+                "component": {
+                    "name": "MicroGame",
+                    "props": {
+                        "gameId": "attedelt-vei-hjulet"
+                    }
+                },
+                "tasks": [
+                    "Les artikkelen [En diagnose og en behandling](/krle/religion/buddhisme/sentrale-trekk)",
+                    "Skriv De fire edle sannhetene med egne ord, én setning på hver. (Fakta)",
+                    "Bruk hjulet under. Hvilke tre grupper samles de åtte delene av veien i? (Fakta)",
+                    "Hva er tørsten, og hvorfor regnes den som årsaken og ikke som symptomet? (Forståelse)",
+                    "Still en diagnose på noe i ditt eget liv etter samme mal: symptom, årsak, kan det bli bedre, behandling. (Anvendelse)"
+                ],
+                "links": [
+                    {
+                        "title": "En diagnose og en behandling",
+                        "url": "/krle/religion/buddhisme/sentrale-trekk"
+                    }
+                ]
+            },
+            {
+                "id": "hva-er-galt",
+                "phase": "Akt 1: Diagnosen",
+                "title": "Hva er galt?",
+                "type": "utfordring",
+                "icon": "alert-triangle",
+                "difficulty": "medium",
+                "content": "Buddhismen ga deg én diagnose. Nå skal du se ni.\n\nEt jordskjelv river ned en by mens folk sover. Ingen har gjort noe galt, og likevel dør tusen mennesker på tolv sekunder. Hvis det finnes en Gud som både er god og kan alt, hvorfor stanset han det ikke?\n\nDette er stiens tyngste steg, og det skal det være. Et plott har ingen kraft hvis diagnosen er lettvint. Er det bare småting som er galt med verden, trenger ingen å bli reddet.\n\nArtikkelen viser at tradisjonene ikke engang er enige om hva slags spørsmål dette er. De abrahamittiske religionene, altså jødedom, kristendom og islam, må forsvare en god Gud mot en verden som gjør vondt. Selve forsøket på å forsvare Gud har fått et eget navn: teodise. De indiske religionene slipper unna hele forsvaret, fordi karma forklarer lidelsen uten at noen må stå til ansvar for den.\n\nInne i artikkelen ligger Teodiseverkstedet. Der kan du sette innvendingene opp mot svarene og se hvor godt de holder. Bruk den, og vær ærlig med deg selv om hvilke svar du synes er svake.\n\nLegg også merke til det artikkelen sier rett ut mot slutten: ingen av svarene er ferdige. Kristendommen mangler en løsning, Gud gir Job ingen forklaring, og Koranen avgjør ikke striden om hvor fritt mennesket egentlig velger.",
+                "tasks": [
+                    "Les artikkelen [Lidelse: Hvorfor finnes det vondt?](/krle/sammenligning/lidelse)",
+                    "Hva betyr teodise, og hvem fant på ordet? (Fakta)",
+                    "Forklar forskjellen på lidelse som kommer av naturen, og lidelse mennesker påfører hverandre. (Forståelse)",
+                    "Bruk Teodiseverkstedet i artikkelen. Velg innvendingen du selv synes er sterkest, og skriv hvorfor svarene ikke holder mot den. (Analyse)",
+                    "En venn mister noen hun er glad i. Hvilket av svarene i artikkelen ville du aldri sagt høyt til henne, og hvorfor? (Etikk)"
+                ],
+                "links": [
+                    {
+                        "title": "Lidelse: Hvorfor finnes det vondt?",
+                        "url": "/krle/sammenligning/lidelse"
+                    }
+                ]
+            },
+            {
+                "id": "gaven",
+                "phase": "Akt 2: Utveien",
+                "title": "Gaven",
+                "type": "fakta",
+                "icon": "gift",
+                "difficulty": "medium",
+                "content": "Nå begynner svarene. Fire tradisjoner, fire steg, og fire helt ulike måter å svare på det femte leddet: hvem gjør jobben?\n\nKristendommen ligger så langt ute på den ene kanten som det går an å komme.\n\nDen 31. oktober 1999 satt to grupper utsendinger rundt et bord i den tyske byen Augsburg. Den ene kom fra Vatikanet, den andre fra Det lutherske verdensforbund. Papiret de skrev under på, handlet verken om penger eller land. Det handlet om ett eneste spørsmål: hvordan blir et menneske frelst? Det spørsmålet hadde delt kristendommen i Vest-Europa i nesten 500 år.\n\nTenk på det et øyeblikk. En uenighet om nøyaktig hvem som gjør jobben, var stor nok til å sprenge en kirke i to.\n\nDet kristne svaret heter nåde. Nåde er en gave, ikke en lønn. Du kan ikke jobbe deg til den, du kan ikke gjøre deg fortjent til den, og prøver du å betale for den, har du ikke skjønt hva en gave er.\n\nMen her ligger en felle mange går i. Den enkle forklaringen sier at protestanter tror på tro og katolikker tror på gjerninger. Den stemmer ikke. Begge sier at nåden kommer først. Uenigheten sitter på et mye smalere punkt, og artikkelen viser deg nøyaktig hvor.\n\nBruk Signeringsbordet i Augsburg inne i artikkelen. Legg merke til hvilken søyle som blir fullest.",
+                "tasks": [
+                    "Les artikkelen [Gaven ingen kan fortjene](/krle/religion/kristendom/frelse)",
+                    "Hva betyr nåde, og hva ligger i at frelsen er en gave og ikke en lønn? (Fakta)",
+                    "Hva er arvesynden, og hvorfor er den svaret på spørsmålet om hva mennesket skal reddes fra? (Forståelse)",
+                    "Hvis gaven er gratis, hva er da poenget med å gjøre gode gjerninger? Bruk det luthersk lære sier om rekkefølge. (Analyse)",
+                    "Fyll ut de fem leddene for kristendommen, én setning på hver. Ta vare på arket. (Anvendelse)"
+                ],
+                "links": [
+                    {
+                        "title": "Gaven ingen kan fortjene",
+                        "url": "/krle/religion/kristendom/frelse"
+                    }
+                ]
+            },
+            {
+                "id": "vekten",
+                "phase": "Akt 2: Utveien",
+                "title": "Vekten",
+                "type": "fakta",
+                "icon": "scale",
+                "difficulty": "medium",
+                "content": "Samme familie. Samme ene Gud. Samme tid som går rett fram mot en dom. Og et tydelig annet svar.\n\nEn gammel skålvekt har to skåler og en arm mellom dem. Legger du noe i den ene skålen, synker den. Legger du noe tyngre i den andre, snur det. Vekten lyver ikke, og den bryr seg ikke om hvem du er eller hvor mye du eier.\n\nNettopp dette bildet bruker Koranen om dagen da alle mennesker skal stilles til ansvar. Ingen taler, ingen unnskyldninger. Bare det du faktisk har gjort, lagt i en skål.\n\nKommer du rett fra forrige steg, kan dette høres ut som det motsatte av en gave. Det er lett å tenke slik, og det blir feil. Vekten er bare halve bildet. Gud kalles Den barmhjertige, og Koranen sier rett ut at Gud vil tilgi. Regnskapet føres nøye, men Gud har det siste ordet.\n\nMens du leser, skal du se etter to ting. Det første er hvor lite som skal til: Koranen sier at den som har gjort et støvfnuggs vekt av godt, skal se det. Ingenting er for lite til å bli veid. Det andre er striden som startet tidlig i islams historie og aldri ble avgjort: velger mennesket fritt selv, eller er alt bestemt på forhånd?\n\nPrøv Vektskålen på dommens dag inne i artikkelen. Legg merke til at også den minste handlingen flytter armen.",
+                "tasks": [
+                    "Les artikkelen [Vekten som ikke lyver](/krle/religion/islam/frelse)",
+                    "Hva er forskjellen på al-dunya og al-akhira? (Fakta)",
+                    "Forklar hvorfor vekten ikke er hele bildet. Hva er det som kommer i tillegg? (Forståelse)",
+                    "Sett gaven fra forrige steg ved siden av vekten. Skriv i én setning den ene tingen de er mest uenige om. (Analyse)",
+                    "Fyll ut de fem leddene for islam, og legg arket ved siden av det du lagde for kristendommen. (Anvendelse)"
+                ],
+                "links": [
+                    {
+                        "title": "Vekten som ikke lyver",
+                        "url": "/krle/religion/islam/frelse"
+                    }
+                ]
+            },
+            {
+                "id": "ut-ikke-opp",
+                "phase": "Akt 2: Utveien",
+                "title": "Ut, ikke opp",
+                "type": "fakta",
+                "icon": "refresh-cw",
+                "difficulty": "medium",
+                "content": "Til nå har alle svarene handlet om å komme til et sted. Himmel, paradis, den kommende verden. Nå slutter det.\n\nI den indiske byen Varanasi ligger stedene der de døde brennes, midt inne i byen. Noen svært få mennesker reiser hit for å dø. Byens egne pilegrimstekster hevdet at den som døde her, var garantert å slippe fri fra å bli født på nytt.\n\nLegg merke til hva belønningen er. Ikke en plass i en himmel. Ikke et rikere liv neste gang. Belønningen er å slippe å bli født igjen i det hele tatt.\n\nHer brytes en antakelse du kanskje ikke visste at du hadde. Du har lest tre svar nå som alle pekte mot et bedre sted. I hinduismen er målet utgangen. Ikke et bedre rom i huset, men ut av huset.\n\nFor å skjønne hvorfor det er noe godt, må du vite hva man slipper ut av. Kretsløpet der du blir født, dør og blir født på nytt, heter samsara. Det som holder det i gang, heter karma.\n\nOg her ligger poenget som er lett å gå glipp av: uansett hvor god karma du samler, flytter du deg bare til et annet sted i det samme kretsløpet. Du kommer aldri ut av det. Å samle god karma er å forbedre plassen sin inne i systemet. Moksha er å forlate systemet. Bare det siste regnes som frelse.",
+                "tasks": [
+                    "Les artikkelen [Ikke et bedre sted, men ut](/krle/religion/hinduisme/frelse)",
+                    "Hva betyr samsara, og hva betyr moksha? (Fakta)",
+                    "Forklar hvorfor god karma ikke er nok til å nå målet. (Forståelse)",
+                    "Hinduismen peker på tre veier ut. Nevn dem, og forklar hvilken av dem som ligner mest på det kristne svaret fra steget Gaven. (Analyse)",
+                    "Fyll ut de fem leddene for hinduismen. Nå har du tre ark. Legg dem ved siden av hverandre og se etter noe som går igjen. (Anvendelse)"
+                ],
+                "links": [
+                    {
+                        "title": "Ikke et bedre sted, men ut",
+                        "url": "/krle/religion/hinduisme/frelse"
+                    }
+                ]
+            },
+            {
+                "id": "plottet-som-nekter",
+                "phase": "Akt 2: Utveien",
+                "title": "Plottet som nekter",
+                "type": "refleksjon",
+                "icon": "help-circle",
+                "difficulty": "hard",
+                "content": "Tre ark ligger på bordet. Skjemaet har fungert hver gang. Nå skal det slutte å fungere.\n\nTenk deg at du spør en rabbiner hva som skjer når du dør. En rabbiner er en jødisk lærd og religiøs leder. Svaret kan bli kortere enn du venter. Jødedommen har noen tanker om et liv etter døden, men de er få, og det sies lite om hvordan det er der. Til gjengjeld har tradisjonen svært mye å si om hvordan du skal leve i dag.\n\nSelve ordet frelse kommer fra kristen tradisjon, og det passer dårlig på jødedommen. Rabbinerne har aldri lest noen arvesynd ut av fortellingen om Adam og Eva. Mennesket er ikke født med en synd det må reddes ut av. Hvert menneske fødes med både gode og dårlige lyster, og velger selv mellom dem.\n\nSå hva er målet, hvis det ikke er at du skal reddes? Svaret ligger i to ord: tikkun olam, å reparere verden.\n\nDette steget er annerledes enn de andre. Du skal fortsatt prøve å fylle ut de fem leddene, men denne gangen kommer minst ett av dem til å nekte. Det er ikke en feil du har gjort. Når en tradisjon ikke passer inn i skjemaet ditt, er det lurt å sjekke om skjemaet var godt nok.",
+                "tasks": [
+                    "Les artikkelen [Verden er ikke ferdig](/krle/religion/jodedom/frelse)",
+                    "Hva betyr tikkun olam, og hva er halakha? (Fakta)",
+                    "Forklar hvorfor jødedommen sier lite om livet etter døden, men mye om hvordan du lever nå. (Forståelse)",
+                    "Prøv å fylle ut de fem leddene for jødedommen. Hvilket ledd nekter å bli fylt ut, og hva sier det oss? (Anvendelse)",
+                    "Er en religion dårligere fordi den ikke lover deg noe etter døden? Skriv et kort svar med begrunnelse. (Refleksjon)"
+                ],
+                "links": [
+                    {
+                        "title": "Verden er ikke ferdig",
+                        "url": "/krle/religion/jodedom/frelse"
+                    }
+                ]
+            },
+            {
+                "id": "hvem-gjor-jobben",
+                "phase": "Akt 3: Mønsteret",
+                "title": "Hvem gjør jobben?",
+                "type": "utfordring",
+                "icon": "arrow-up",
+                "difficulty": "hard",
+                "content": "En luthersk prest sier at det ikke finnes noe som helst du kan gjøre for å bli frelst. Gaven er allerede gitt.\n\nFlere tusen kilometer unna sitter en buddhistisk munk stille og gjør det stikk motsatte. Han jobber med seg selv, dag etter dag, fordi ingen andre kan gjøre den jobben for ham.\n\nBegge mener at de er på vei mot noe godt.\n\nDu har nå lest fire tradisjoner grundig. I dette steget kommer de fem andre inn, og alle ni skal sorteres på det femte leddet. Inne i artikkelen ligger Frelsens stige. Der plasserer du hver tradisjon på et trinn, fra helt og holdent en gave i den ene enden til ingen andre kan gjøre det for deg i den andre.\n\nSe etter to ting mens du sorterer.\n\nDet første: nesten ingen havner ytterst. Kristendommen ligger nær gave-enden, buddhismen nær innsats-enden, og resten ligger et sted imellom. De som havner på midten, er ikke vage eller halvveis. De mener begge deler, helt med vilje.\n\nDet andre: svarene spriker også inne i én og samme religion. Bhakti-hinduismen og rent land-buddhismen ligger nærmere nåden enn resten av sine egne tradisjoner. En religion er ikke én stemme.",
+                "tasks": [
+                    "Les artikkelen [Frelse: Målet med det hele](/krle/sammenligning/frelse)",
+                    "Hva betyr nirvana, moksha og mukti? (Fakta)",
+                    "Bruk Frelsens stige i artikkelen og plasser alle ni tradisjonene. (Anvendelse)",
+                    "Hvilke to tradisjoner overrasket deg mest med plasseringen sin? Skriv hva du hadde ventet i stedet. (Analyse)",
+                    "Sikhismen sier både at du må huske Guds navn, og at nåden er det eneste punktet du ikke rår over selv. Kan begge deler stemme samtidig? (Analyse)"
+                ],
+                "links": [
+                    {
+                        "title": "Frelse: Målet med det hele",
+                        "url": "/krle/sammenligning/frelse"
+                    }
+                ]
+            },
+            {
+                "id": "bygg-plottet",
+                "phase": "Akt 3: Mønsteret",
+                "title": "Bygg plottet",
+                "type": "utfordring",
+                "icon": "layers",
+                "difficulty": "hard",
+                "content": "Nå setter du alt sammen.\n\nUnder ligger Plottmaskinen. Den har fem tomme ledd og en kortstokk. Du velger en tradisjon, og bygger plottet dens ett kort om gangen.\n\nKortstokken er ikke ren. Noen av kortene tilhører andre tradisjoner, og de er lagt inn med vilje. Når du prøver å legge paradis inn som buddhismens mål, kommer det til å kjennes feil. Den følelsen er selve poenget. Du merker at det er galt før du klarer å forklare hvorfor, og så finner du forklaringen.\n\nBygg minst tre tradisjoner. Da låses knappen som legger dem oppå hverandre opp, og du får se det du kanskje allerede har begynt å ane.\n\nDe fire første leddene kommer til å ligne på hverandre. Alle sier at noe er galt, alle har en forklaring på hvorfor, alle har et mål, og alle har en vei dit. Det er det samme skjelettet.\n\nDet femte leddet gjør ikke det. Det spretter ut på en akse, og tradisjonene lander på hver sin kant.\n\nDet er hovedplottet i religion: ni utkast til den samme historien, som er nesten enige om alt bortsett fra hvem som er helten.",
+                "component": {
+                    "name": "Plottmaskinen",
+                    "props": {
+                        "title": "Plottmaskinen",
+                        "intro": "Velg en tradisjon, og bygg plottet dens i fem ledd. Bygg tre, så kan du legge dem oppå hverandre.",
+                        "distractors": 3,
+                        "compareAt": 3,
+                        "revealTitle": "Se hva som skjedde",
+                        "revealText": "De fire første leddene sier omtrent det samme, uansett hvilke tradisjoner du valgte. Det femte gjør ikke det. Det er der uenigheten sitter, og det er derfor religionene ikke bare er ulike utgaver av hverandre.",
+                        "sharedLabel": "her ligner utkastene",
+                        "spreadLabel": "her skiller de lag",
+                        "completeMessage": "Plottet er ferdig bygget.",
+                        "slots": [
+                            {
+                                "id": "diagnose",
+                                "label": "Hva er galt?",
+                                "hint": "Symptomet. Hva er det som ikke stemmer med tilværelsen?"
+                            },
+                            {
+                                "id": "aarsak",
+                                "label": "Hvorfor er det galt?",
+                                "hint": "Årsaken bak symptomet."
+                            },
+                            {
+                                "id": "maal",
+                                "label": "Hvor skal vi?",
+                                "hint": "Målet. Hvordan ser det ut når problemet er løst?"
+                            },
+                            {
+                                "id": "vei",
+                                "label": "Hvordan kommer vi dit?",
+                                "hint": "Veien. Hva må gjøres?"
+                            },
+                            {
+                                "id": "regi",
+                                "label": "Hvem gjør jobben?",
+                                "hint": "Regien. Er det deg, eller noe utenfor deg?"
+                            }
+                        ],
+                        "traditions": [
+                            { "id": "jodedom", "name": "Jødedom", "color": "#3b82f6", "group": "abrahamittisk" },
+                            { "id": "kristendom", "name": "Kristendom", "color": "#6366f1", "group": "abrahamittisk" },
+                            { "id": "islam", "name": "Islam", "color": "#10b981", "group": "abrahamittisk" },
+                            { "id": "hinduisme", "name": "Hinduisme", "color": "#ec4899", "group": "indisk" },
+                            { "id": "buddhisme", "name": "Buddhisme", "color": "#f59e0b", "group": "indisk" },
+                            { "id": "sikhisme", "name": "Sikhisme", "color": "#ff9933", "group": "indisk" },
+                            { "id": "bahai", "name": "Bahá'í", "color": "#14b8a6", "group": "nyere" },
+                            { "id": "mormonisme", "name": "Mormonisme", "color": "#8b5cf6", "group": "nyere" },
+                            { "id": "jehovas-vitner", "name": "Jehovas vitner", "color": "#0ea5e9", "group": "nyere" }
+                        ],
+                        "cards": [
+                            { "id": "jod-1", "traditionId": "jodedom", "slotId": "diagnose", "text": "Verden er ikke slik den skal være" },
+                            { "id": "jod-2", "traditionId": "jodedom", "slotId": "aarsak", "text": "Mennesker velger de dårlige lystene og lar urett stå" },
+                            { "id": "jod-3", "traditionId": "jodedom", "slotId": "maal", "text": "En reparert verden, og de messianske tidene" },
+                            { "id": "jod-4", "traditionId": "jodedom", "slotId": "vei", "text": "Holde budene og gjøre rett mot andre, her og nå" },
+                            { "id": "jod-5", "traditionId": "jodedom", "slotId": "regi", "text": "Gud tok første steg med pakten. Resten av jobben er din" },
+
+                            { "id": "kri-1", "traditionId": "kristendom", "slotId": "diagnose", "text": "Forholdet mellom Gud og mennesker er ødelagt" },
+                            { "id": "kri-2", "traditionId": "kristendom", "slotId": "aarsak", "text": "Synd: mennesket er vendt bort fra Gud" },
+                            { "id": "kri-3", "traditionId": "kristendom", "slotId": "maal", "text": "Tilgivelse og evig liv sammen med Gud" },
+                            { "id": "kri-4", "traditionId": "kristendom", "slotId": "vei", "text": "Tro på Jesus, som sonet for synden" },
+                            { "id": "kri-5", "traditionId": "kristendom", "slotId": "regi", "text": "Gud gjør jobben. Du får den som gave" },
+
+                            { "id": "isl-1", "traditionId": "islam", "slotId": "diagnose", "text": "Mennesket glemmer Gud og skal stilles til ansvar" },
+                            { "id": "isl-2", "traditionId": "islam", "slotId": "aarsak", "text": "Vi velger selv, og vi velger ofte galt" },
+                            { "id": "isl-3", "traditionId": "islam", "slotId": "maal", "text": "Hagen, al-janna, etter dommens dag" },
+                            { "id": "isl-4", "traditionId": "islam", "slotId": "vei", "text": "Gode handlinger som veier tyngre enn de gale" },
+                            { "id": "isl-5", "traditionId": "islam", "slotId": "regi", "text": "Du fyller skålen. Gud er barmhjertig og har siste ord" },
+
+                            { "id": "hin-1", "traditionId": "hinduisme", "slotId": "diagnose", "text": "Du blir født, dør og født på nytt, uten stopp" },
+                            { "id": "hin-2", "traditionId": "hinduisme", "slotId": "aarsak", "text": "Karma binder deg til kretsløpet" },
+                            { "id": "hin-3", "traditionId": "hinduisme", "slotId": "maal", "text": "Moksha: ut av kretsløpet, ikke til et bedre sted" },
+                            { "id": "hin-4", "traditionId": "hinduisme", "slotId": "vei", "text": "Handlingens, kunnskapens eller hengivelsens vei" },
+                            { "id": "hin-5", "traditionId": "hinduisme", "slotId": "regi", "text": "Du går veien selv. På hengivelsens vei hjelper guden deg" },
+
+                            { "id": "bud-1", "traditionId": "buddhisme", "slotId": "diagnose", "text": "Alt gjør vondt, for ingenting varer" },
+                            { "id": "bud-2", "traditionId": "buddhisme", "slotId": "aarsak", "text": "Tørsten: du vil hele tiden ha noe mer" },
+                            { "id": "bud-3", "traditionId": "buddhisme", "slotId": "maal", "text": "Nirvana: flammen slukner fordi den ikke har mer å brenne på" },
+                            { "id": "bud-4", "traditionId": "buddhisme", "slotId": "vei", "text": "Den åttedelte veien" },
+                            { "id": "bud-5", "traditionId": "buddhisme", "slotId": "regi", "text": "Du må ta medisinen selv. Ingen gud griper inn" },
+
+                            { "id": "sik-1", "traditionId": "sikhisme", "slotId": "diagnose", "text": "Du er skilt fra Gud og fødes på nytt" },
+                            { "id": "sik-2", "traditionId": "sikhisme", "slotId": "aarsak", "text": "Lyster, egoisme og uvitenhet styrer deg" },
+                            { "id": "sik-3", "traditionId": "sikhisme", "slotId": "maal", "text": "Mukti: dråpen forenes med Gud" },
+                            { "id": "sik-4", "traditionId": "sikhisme", "slotId": "vei", "text": "Huske Guds navn, arbeide ærlig og dele med andre" },
+                            { "id": "sik-5", "traditionId": "sikhisme", "slotId": "regi", "text": "Du gjør ditt. Møtet med Gud er nåde du ikke rår over" },
+
+                            { "id": "bah-1", "traditionId": "bahai", "slotId": "diagnose", "text": "Menneskeheten er splittet, og sjelen kjenner ikke Gud" },
+                            { "id": "bah-2", "traditionId": "bahai", "slotId": "aarsak", "text": "Det vonde er ikke en egen ting, men mangel på det gode" },
+                            { "id": "bah-3", "traditionId": "bahai", "slotId": "maal", "text": "Sjelen nærmer seg Gud i all evighet, uten målstrek" },
+                            { "id": "bah-4", "traditionId": "bahai", "slotId": "vei", "text": "Bønn, kunnskap, gode egenskaper og arbeid for andre" },
+                            { "id": "bah-5", "traditionId": "bahai", "slotId": "regi", "text": "Ingen prester. Ingen kan gjøre jobben for deg" },
+
+                            { "id": "mor-1", "traditionId": "mormonisme", "slotId": "diagnose", "text": "Vi er skilt fra vår himmelske Far, og alle dør" },
+                            { "id": "mor-2", "traditionId": "mormonisme", "slotId": "aarsak", "text": "Uten motsetninger finnes verken godt eller vondt" },
+                            { "id": "mor-3", "traditionId": "mormonisme", "slotId": "maal", "text": "Opphøyelse i det høyeste av tre nivåer, sammen med familien" },
+                            { "id": "mor-4", "traditionId": "mormonisme", "slotId": "vei", "text": "Tro, dåp, holde budene og gifte seg i tempelet" },
+                            { "id": "mor-5", "traditionId": "mormonisme", "slotId": "regi", "text": "Oppstandelsen er gratis. Til topps må du kvalifisere deg" },
+
+                            { "id": "jeh-1", "traditionId": "jehovas-vitner", "slotId": "diagnose", "text": "Verden styres feil, og døden tar alle" },
+                            { "id": "jeh-2", "traditionId": "jehovas-vitner", "slotId": "aarsak", "text": "De første menneskene gjorde opprør og ville bestemme selv" },
+                            { "id": "jeh-3", "traditionId": "jehovas-vitner", "slotId": "maal", "text": "Evig liv på en jord som er gjort til et paradis" },
+                            { "id": "jeh-4", "traditionId": "jehovas-vitner", "slotId": "vei", "text": "Lære Bibelen, døpe seg og forkynne for andre" },
+                            { "id": "jeh-5", "traditionId": "jehovas-vitner", "slotId": "regi", "text": "Jehova rydder opp. Du må velge side i tide" }
+                        ],
+                        "regiAxis": {
+                            "leftLabel": "Du gjør jobben selv",
+                            "rightLabel": "Noe utenfor deg gjør jobben",
+                            "positions": {
+                                "buddhisme": 0.04,
+                                "bahai": 0.2,
+                                "hinduisme": 0.26,
+                                "jodedom": 0.32,
+                                "mormonisme": 0.5,
+                                "islam": 0.56,
+                                "sikhisme": 0.62,
+                                "jehovas-vitner": 0.78,
+                                "kristendom": 0.95
+                            },
+                            "notes": {
+                                "jodedom": "mener egentlig at hele spørsmålet er stilt med feil ord",
+                                "hinduisme": "hengivelsens vei ligger nærmere nåden enn de to andre veiene",
+                                "buddhisme": "unntaket er rent land-buddhismen, der du stoler på buddhaen Amitabha"
+                            }
+                        }
+                    }
+                },
+                "tasks": [
+                    "Bygg plottet for minst tre tradisjoner i Plottmaskinen. (Anvendelse)",
+                    "Legg dem oppå hverandre. Hvilke ledd lignet mest på hverandre? (Fakta)",
+                    "Hvilket ledd spriket mest, og hvorfor tror du det er akkurat det leddet? (Analyse)",
+                    "Hvilket kort var vanskeligst å plassere riktig? Skriv hva som forvirret deg. (Analyse)",
+                    "Skriv én setning som er sann for alle ni tradisjonene, og én som bare er sann for én av dem. (Syntese)"
+                ]
+            },
+            {
+                "id": "ditt-eget-plott-igjen",
+                "phase": "Akt 3: Mønsteret",
+                "title": "Ditt eget plott, andre gang",
+                "type": "oppgave",
+                "icon": "sparkles",
+                "difficulty": "hard",
+                "content": "Hent fram arket fra prologen. Filmen din ligger nå ved siden av ni religioner, og alle ti har det samme skjelettet.\n\nSå kommer den siste vendingen, og den handler ikke om religion.\n\nTenk på klimakampen. Noe er galt: vi ødelegger kloden vi bor på. Det er en årsak: utslipp, forbruk, og at det lønner seg for noen å fortsette. Det er et mål: en klode som fortsatt tåler oss. Det er en vei: kutte utslipp, bygge om, endre måten vi lever på. Og det er en regi: vi må gjøre det selv. Ingen kommer utenfra og fikser det.\n\nFem ledd. Det samme skjemaet.\n\nPoenget er ikke at klimakamp er en religion. Det er den ikke. Poenget er at mennesker bruker det samme skjelettet hver gang de skal forklare hva som er galt og hva som må til. Du bruker det når du forteller om en film, og du bruker det når du forklarer hvorfor du vil bli god til noe. Bli den beste versjonen av deg selv er også fem ledd: noe er galt med deg, årsaken er dine egne vaner, målet er et bedre deg, veien er disiplin, og regien er hundre prosent din.\n\nReligionene fant ikke opp dette skjelettet. De har bare brukt det lengst, og de har vært mest uenige om det siste leddet.",
+                "tasks": [
+                    "Les det du skrev i prologen. Hva vil du legge til nå? (Refleksjon)",
+                    "Fyll ut de fem leddene for klimakampen, eller for en annen sak du bryr deg om. (Anvendelse)",
+                    "Hva er den viktigste forskjellen mellom et religiøst og et ikke-religiøst plott? Bruk det femte leddet i svaret. (Analyse)",
+                    "Livssynshumanister mener at lidelsen ikke skal forklares, men bekjempes her og nå. Er det en trøst eller en byrde at ingen kommer og ordner opp for deg? Begrunn svaret. (Etikk)",
+                    "Skriv fem setninger som svarer på spørsmålet: hva er hovedplottet i religion? Bruk minst fire fagord fra stien. (Syntese)"
+                ],
+                "links": [
+                    {
+                        "title": "Lidelse: Hvorfor finnes det vondt?",
+                        "url": "/krle/sammenligning/lidelse"
+                    },
+                    {
+                        "title": "Frelse: Målet med det hele",
+                        "url": "/krle/sammenligning/frelse"
+                    }
+                ]
+            }
+        ]
+    },
+    "timeline": []
+}
