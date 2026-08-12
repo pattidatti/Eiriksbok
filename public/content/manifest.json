@@ -8783,7 +8783,7 @@
               "link": "/krle/sammenligning/overgangsriter-sti",
               "icon": "map",
               "createdDate": "2026-08-12T10:00:34.254Z",
-              "lastUpdated": "2026-08-12T13:16:10+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             }
           ],
           "lessons": [
@@ -8798,7 +8798,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T01:56:55+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "gudsbilde",
@@ -8811,7 +8811,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T04:17:49+02:00",
-              "lastUpdated": "2026-08-12T04:17:49+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "bonn",
@@ -8824,7 +8824,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:36:20+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "overgangsriter",
@@ -8837,7 +8837,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:46:58+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "doden",
@@ -8850,7 +8850,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:46:58+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "frelse",
@@ -8863,7 +8863,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:36:20+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "hellige-tekster",
@@ -8876,7 +8876,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:36:20+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "grunnleggere",
@@ -8889,7 +8889,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:36:20+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "etikk-og-leveregler",
@@ -8902,7 +8902,7 @@
                 "ethical"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T11:33:45+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "hoytider",
@@ -8915,7 +8915,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T08:39:55+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "hellige-rom",
@@ -8928,7 +8928,7 @@
                 "material"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T11:33:45+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "symboler-og-klaer",
@@ -8941,7 +8941,7 @@
                 "material"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T11:33:45+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "mat-og-renhet",
@@ -8954,7 +8954,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T08:39:55+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             },
             {
               "id": "lidelse",
@@ -8967,7 +8967,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T11:33:45+02:00"
+              "lastUpdated": "2026-08-12T13:39:47+02:00"
             }
           ]
         },

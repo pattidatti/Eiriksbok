@@ -47,11 +47,11 @@ export const LessonCard = React.memo<LessonCardProps & { badgeText?: string }>((
                         {topicTitle}
                     </div>
 
-                    {/* To linjer er reservert: titler med tema-prefiks ("Bønn: Å snakke med
-                        det hellige") får plass, og alle kort i samme rad flukter. */}
+                    {/* Titler med tema-prefiks ("Bønn: Å snakke med det hellige") får bruke to
+                        linjer, men ingen høyde er reservert: korte titler tar én linje som før. */}
                     <h3
                         title={lesson.title}
-                        className="text-base font-bold text-text-main mb-1 leading-snug line-clamp-2 min-h-[2.75rem] group-hover:text-blue-400 transition-colors"
+                        className="text-base font-bold text-text-main mb-1 leading-snug line-clamp-2 group-hover:text-blue-400 transition-colors"
                     >
                         {lesson.title}
                     </h3>
