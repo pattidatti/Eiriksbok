@@ -14,11 +14,11 @@
     "readTime": "7 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Islams fem søyler er de religiøse pliktene som pålegges enhver voksen muslim, og de gjelder både kvinner og menn.",
+        "Islams fem søyler er de fem tingene enhver voksen muslim må gjøre, og de gjelder både kvinner og menn.",
         "Bare den første søylen, trosbekjennelsen, sier noe om hva du tror. De fire andre er handlinger: bønn, avgift, faste og reise.",
-        "Ordet islam betyr underkastelse eller hengivelse under den ene Guden.",
-        "Islam hadde anslagsvis 1,7 milliarder tilhengere i 2017 og er dermed den nest største verdensreligionen.",
-        "Omkring 85 prosent av verdens muslimer er sunnimuslimer, og de resterende 15 prosentene fordeler seg på flere sjiamuslimske grupper."
+        "Ordet islam betyr å bøye seg for den ene Guden og gi seg helt over til ham.",
+        "Islam hadde rundt 1,7 milliarder tilhengere i 2017 og er dermed den nest største verdensreligionen.",
+        "Omkring 85 prosent av verdens muslimer er sunnimuslimer, og de siste 15 prosentene er fordelt på flere sjiamuslimske grupper."
     ],
     "createdDate": "2025-12-04T10:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -26,7 +26,7 @@
         {
             "id": "islams-fem-soyler",
             "term": "Islams fem søyler",
-            "definition": "De religiøse pliktene som pålegges enhver voksen muslim: trosbekjennelsen, den rituelle bønnen, den rituelle avgiften, fasten i ramadan og pilegrimsferden til Mekka."
+            "definition": "De fem tingene enhver voksen muslim må gjøre: si trosbekjennelsen, be de faste bønnene, betale den religiøse avgiften, faste i ramadan og reise til Mekka."
         },
         {
             "id": "shahada",
@@ -36,12 +36,12 @@
         {
             "id": "zakat",
             "term": "Zakat",
-            "definition": "Den religiøse avgiften i islam. I hadith-litteraturen er den fastsatt til 2,5 prosent av det årlige overskuddet, og pengene skal gå til dem som trenger dem."
+            "definition": "Den religiøse avgiften i islam. Ifølge fortellingene om Muhammad er den satt til 2,5 prosent av det du har igjen på et år, og pengene skal gå til dem som trenger dem."
         },
         {
             "id": "umma",
             "term": "Umma",
-            "definition": "Arabisk ord for folk eller fellesskap. Brukes om det islamske fellesskapet, altså alle som bekjenner seg til islam."
+            "definition": "Arabisk ord for folk eller fellesskap. Brukes om det islamske fellesskapet, altså alle som er muslimer."
         },
         {
             "id": "sjiaislam",
@@ -56,7 +56,7 @@
         },
         {
             "type": "text",
-            "content": "Ordet islam betyr underkastelse eller hengivelse under den ene Guden, og en muslim er en som bekjenner seg til islam. Islam er den yngste av verdensreligionene og ble til på Den arabiske halvøy på 600-tallet. Med anslagsvis 1,7 milliarder tilhengere i 2017 er islam den nest største verdensreligionen, etter kristendommen (Vogt, 2026b). I Norge var 201 899 personer medlemmer i islamske tros- og livssynssamfunn som søker offentlig støtte, per 1. januar 2026 (Statistisk sentralbyrå, 2026)."
+            "content": "Ordet islam betyr å bøye seg for den ene Guden og gi seg helt over til ham. En muslim er en som følger islam. Islam er den yngste av verdensreligionene og ble til på Den arabiske halvøy på 600-tallet. Med rundt 1,7 milliarder tilhengere i 2017 er islam den nest største verdensreligionen, etter kristendommen (Vogt, 2026b). I Norge var 201 899 personer medlemmer i islamske tros- og livssynssamfunn som søker offentlig støtte, per 1. januar 2026 (Statistisk sentralbyrå, 2026)."
         },
         {
             "type": "image",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "De fem søylene er de religiøse pliktene som pålegges enhver voksen muslim, og de gjelder begge kjønn. At det er akkurat fem, bygger på et utsagn som hadith-litteraturen sier at profeten Muhammad kom med. Hadith er de overleverte fortellingene om hva Muhammad skal ha sagt og gjort. Utsagnet er overlevert både i sunni- og sjiamuslimske kilder: «Islam bygger på fem prinsipper». Ingen av pliktene er obligatoriske før etter puberteten (Store norske leksikon, 2024)."
+            "content": "De fem søylene er de fem tingene enhver voksen muslim må gjøre, og de gjelder både kvinner og menn. At det er akkurat fem, bygger på noe profeten Muhammad skal ha sagt, ifølge hadith. Hadith er de overleverte fortellingene om hva Muhammad skal ha sagt og gjort. Setningen finnes både i sunnimuslimske og sjiamuslimske kilder: «Islam bygger på fem prinsipper». Ingen av pliktene gjelder før barnet har kommet i puberteten (Store norske leksikon, 2024)."
         },
         {
             "type": "header",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "Rekkefølgen er fast. Først trosbekjennelsen, shahada. Så den rituelle bønnen, salah. Så den rituelle avgiften, zakat. Så fasten i måneden ramadan, sawm. Og til slutt pilegrimsferden til Mekka, hajj (Vogt, 2026b). Legg merke til hva slags liste dette er. Den sier ikke først og fremst hva du skal mene. Den sier hva du skal gjøre, og når du skal gjøre det."
+            "content": "Rekkefølgen er fast. Først trosbekjennelsen, shahada. Så den faste bønnen, salah. Så den religiøse avgiften, zakat. Så fasten i måneden ramadan, sawm. Og til slutt pilegrimsferden til Mekka, hajj (Vogt, 2026b). Legg merke til hva slags liste dette er. Den sier ikke først og fremst hva du skal mene. Den sier hva du skal gjøre, og når du skal gjøre det."
         },
         {
             "type": "component",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Selv den første søylen er en handling. Trosbekjennelsen lyder: Det er ingen gud uten Gud, og Muhammad er hans profet. Setningen understreker to ting, læren om den ene Guden og læren om profetene. Men søylen er ikke å tenke setningen, den er å si den. Å uttale shahada på arabisk regnes i seg selv som en overgangsrite, altså et ritual som flytter deg fra én tilstand til en annen. Den som sier den i vitners nærvær med den hensikten å høre til fellesskapet, er blitt muslim (Vogt, 2025). Mer om troen på den ene Guden står i artikkelen om [gudsbildet](/krle/religion/islam/gudsbilde), og mer om setningens plass i livsløpet i artikkelen om [overgangsriter](/krle/religion/islam/overgangsriter)."
+            "content": "Selv den første søylen er en handling. Trosbekjennelsen lyder: Det er ingen gud uten Gud, og Muhammad er hans profet. Setningen understreker to ting, læren om den ene Guden og læren om profetene. Men søylen er ikke å tenke setningen, den er å si den. Å uttale shahada på arabisk regnes i seg selv som en overgangsrite, altså et ritual som flytter deg fra én tilstand til en annen. Den som sier den mens vitner hører på, og virkelig vil høre til fellesskapet, har blitt muslim (Vogt, 2025). Mer om troen på den ene Guden står i artikkelen om [gudsbildet](/krle/religion/islam/gudsbilde), og mer om setningens plass i livsløpet i artikkelen om [overgangsriter](/krle/religion/islam/overgangsriter)."
         },
         {
             "type": "header",
@@ -93,19 +93,19 @@
         },
         {
             "type": "text",
-            "content": "De fire siste søylene trener fire forskjellige ting. Bønnen trener døgnet. Salah utføres på arabisk og består av vers fra Koranen, den hellige boka i islam, sammen med faste bevegelser: stående, bøyd, knelende med pannen mot bakken, og til slutt sittende. I sunnitradisjonen bes den fem ganger daglig, mens sjiamuslimer ber like mange bønner, men samler dem i tre tidspunkter (Vogt & Selhi, 2026). Du kan lese mer i artikkelen om [bønnen](/krle/religion/islam/bonn). Avgiften trener lommeboka. Zakat er en plikt, ikke en frivillig gave, og i hadith-litteraturen er den fastsatt til 2,5 prosent av det årlige overskuddet. Den som ikke har noe overskudd, betaler heller ikke zakat (Vogt, 2026d)."
+            "content": "De fire siste søylene trener fire forskjellige ting. Bønnen trener døgnet. Salah bes på arabisk og består av vers fra Koranen, den hellige boka i islam, sammen med faste bevegelser: stående, bøyd, knelende med pannen mot bakken, og til slutt sittende. I sunnitradisjonen bes den fem ganger daglig, mens sjiamuslimer ber like mange bønner, men samler dem i tre tidspunkter (Vogt & Selhi, 2026). Du kan lese mer i artikkelen om [bønnen](/krle/religion/islam/bonn). Avgiften trener lommeboka. Zakat er noe du må betale, ikke en frivillig gave, og ifølge hadith er den satt til 2,5 prosent av det du har igjen på et år. Den som ikke har noe igjen, betaler heller ikke zakat (Vogt, 2026d)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hva skjer under hajj?",
-                "content": "Pilegrimsferden til Mekka feires hvert år i den tolvte måneden i det islamske året. Målet er Kaba, det firkantede byggverket midt i hovedmoskeen i Mekka. Pilegrimene går sju ganger rundt Kaba og passerer så gjennom den 385 meter lange passasjen mellom høydene al-Safa og al-Marwa. Den sentrale delen er turen til Arafat-sletten utenfor byen, der pilegrimene står fra middagshøyde til solnedgang. Uten dette oppholdet er ikke hajj gyldig. De fleste ritene er knyttet til den islamske versjonen av fortellingen om Abraham (Vogt, 2026a)."
+                "content": "Pilegrimsferden til Mekka feires hvert år i den tolvte måneden i det islamske året. Målet er Kaba, det firkantede byggverket midt i hovedmoskeen i Mekka. Pilegrimene går sju ganger rundt Kaba og passerer så gjennom den 385 meter lange passasjen mellom høydene al-Safa og al-Marwa. Den sentrale delen er turen til Arafat-sletten utenfor byen, der pilegrimene står fra middagshøyde til solnedgang. Uten dette oppholdet er ikke hajj gyldig. De fleste handlingene henger sammen med den islamske versjonen av fortellingen om Abraham (Vogt, 2026a)."
             }
         },
         {
             "type": "text",
-            "content": "Fasten trener kroppen. I ramadan avstår den troende fra å spise, drikke og røyke fra daggry til solnedgang, og er seksuelt avholdende. Pilegrimsferden trener hele livet, for den krever penger, helse og tid. Den pålegges den troende én gang i livet, og bare den som er helsemessig, økonomisk og praktisk i stand til å reise (Store norske leksikon, 2024). Fire plikter, fire slags disiplin. Til sammen legger de en rytme over dagen, over året og over et helt liv."
+            "content": "Fasten trener kroppen. I ramadan lar den troende være å spise, drikke og røyke fra det lysner til sola går ned, og har heller ikke sex. Pilegrimsferden trener hele livet, for den krever penger, helse og tid. Man skal dra én gang i livet, men bare hvis man har helse, penger og mulighet til det (Store norske leksikon, 2024). Fire plikter, fire slags disiplin. Til sammen legger de en rytme over dagen, over året og over et helt liv."
         },
         {
             "type": "image",
@@ -119,15 +119,15 @@
         },
         {
             "type": "text",
-            "content": "Det islamske fellesskapet kalles umma. Men fellesskapet er ikke ensartet. Det deles i to hovedgrupper. Sunnimuslimene utgjør flertallet, omkring 85 prosent. De resterende 15 prosentene fordeler seg på flere sjiamuslimske grupper (Vogt, 2026b). Skillet oppsto som en strid om hvem som skulle lede fellesskapet etter at Muhammad døde i 632. De som senere ble kalt sjiamuslimer, mente at lederen måtte være i slekt med profeten, og pekte ut fetteren og svigersønnen Ali ibn Abi Talib (Vogt, 2026c)."
+            "content": "Det islamske fellesskapet kalles umma. Men fellesskapet er ikke likt overalt. Det deles i to hovedgrupper. Sunnimuslimene utgjør flertallet, omkring 85 prosent. De siste 15 prosentene er fordelt på flere sjiamuslimske grupper (Vogt, 2026b). Skillet oppsto som en strid om hvem som skulle lede fellesskapet etter at Muhammad døde i 632. De som senere ble kalt sjiamuslimer, mente at lederen måtte være i slekt med profeten, og pekte ut fetteren og svigersønnen Ali ibn Abi Talib (Vogt, 2026c)."
         },
         {
             "type": "text",
-            "content": "Forskjellene er reelle. De viser seg blant annet i hvordan bønnetidene samles gjennom døgnet (Vogt & Selhi, 2026). Sjiaislam har i tillegg en egen lære om imamene, lederne som regnes som Alis etterkommere, og bygger den religiøse autoriteten annerledes opp. De to retningene markerer også noen av høytidene ulikt. Samtidig står de på felles grunn, Koranen og læren om Muhammad som Guds sendebud, og de framstår utad som ett fellesskap (Vogt, 2026c). Sufismen, som regnes som en mystisk retning i islam, finnes i begge (Vogt, 2026b)."
+            "content": "Forskjellene er ekte. De viser seg blant annet i hvordan bønnetidene samles gjennom døgnet (Vogt & Selhi, 2026). Sjiaislam har i tillegg en egen lære om imamene, lederne som regnes som Alis etterkommere, og bygger opp hvem som får bestemme i religionen, på en annen måte. De to retningene markerer også noen av høytidene ulikt. Samtidig står de på felles grunn, Koranen og læren om Muhammad som Guds sendebud, og de framstår utad som ett fellesskap (Vogt, 2026c). Sufismen, som regnes som en mystisk retning i islam, finnes i begge (Vogt, 2026b)."
         },
         {
             "type": "text",
-            "content": "Mangfoldet stopper ikke der. Sunniislam har verken et organisert presteskap eller et sentralisert læreembete, altså ingen øverste instans som kan bestemme hva som er rett lære. I praksis har de rettslærde, kalt ulama, fått særlig autoritet, og sunniislam har i dag fire dominerende lovskoler som tolker reglene noe ulikt. Sharia, den religiøse loven, blir dessuten tolket og praktisert svært forskjellig fra stat til stat, fra lokal kultur til lokal kultur og fra person til person (Vogt, 2026b). Å si «muslimer mener» uten flere ord er derfor sjelden helt presist."
+            "content": "Mangfoldet stopper ikke der. Sunniislam har verken prester i et fast system eller noen øverste ledelse som kan bestemme hva som er rett lære. I praksis er det de lovlærde, kalt ulama, folk lytter mest til, og sunniislam har i dag fire store lovskoler som tolker reglene litt ulikt. Sharia, den religiøse loven, er dessuten ingen ferdig lovbok du kan slå opp i. Den blir tolket og fulgt svært forskjellig fra stat til stat, fra kultur til kultur og fra person til person (Vogt, 2026b). Å si «muslimer mener» uten flere ord er derfor sjelden helt presist."
         },
         {
             "type": "image",
@@ -141,7 +141,7 @@
         },
         {
             "type": "text",
-            "content": "Hvorfor er det handlingene som står øverst? Svaret henger sammen med menneskesynet. Ifølge Koranen er mennesket Guds stedfortreder på jorden. Slik islam ser det, er mennesket ikke ondt, men svakt, og trenger derfor lovens veiledning. Religionen stiller store krav til hvordan man lever, og i denne læren står både den enkelte og fellesskapet ansvarlig overfor Gud på dommens dag (Vogt, 2026b). Det som skal telle da, er ifølge islam det du har gjort, ikke bare det du har ment. Mer om det står i artikkelen om [frelse](/krle/religion/islam/frelse)."
+            "content": "Hvorfor er det handlingene som står øverst? Svaret henger sammen med menneskesynet. Ifølge Koranen er mennesket satt til å styre jorda på Guds vegne. Slik islam ser det, er mennesket ikke ondt, men svakt, og trenger derfor at loven viser vei. Religionen stiller store krav til hvordan man lever, og i denne læren står både den enkelte og fellesskapet ansvarlig overfor Gud på dommens dag (Vogt, 2026b). Det som skal telle da, er ifølge islam det du har gjort, ikke bare det du har ment. Mer om det står i artikkelen om [frelse](/krle/religion/islam/frelse)."
         },
         {
             "type": "text",
@@ -181,7 +181,7 @@
                             "Fasten i ramadan",
                             "Trosbekjennelsen",
                             "Pilegrimsferden til Mekka",
-                            "Den rituelle avgiften"
+                            "Den religiøse avgiften"
                         ],
                         "correctAnswer": 1,
                         "explanation": "Trosbekjennelsen, shahada, er den eneste søylen som sier noe om innholdet i troen. De fire andre er handlinger: bønn, avgift, faste og reise. Men også trosbekjennelsen utføres, ved at setningen sies høyt."
@@ -195,40 +195,40 @@
                             "Omkring 99 prosent"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Sunnimuslimene utgjør flertallet, omkring 85 prosent. De resterende 15 prosentene fordeler seg på flere sjiamuslimske grupper."
+                        "explanation": "Sunnimuslimene utgjør flertallet, omkring 85 prosent. De siste 15 prosentene er fordelt på flere sjiamuslimske grupper."
                     },
                     {
                         "question": "Hva er zakat?",
                         "options": [
                             "En frivillig gave man gir når man har lyst",
-                            "En religiøs avgift som er en plikt, i hadith fastsatt til 2,5 prosent av årlig overskudd",
+                            "En religiøs avgift du må betale, satt til 2,5 prosent av det du har igjen på et år",
                             "En avgift alle muslimer betaler til staten der de bor",
                             "Betalingen for reisen til Mekka"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Rettslitteraturen skiller mellom sadaqa, den frivillige almissen, og zakat, som er en plikt. I hadith-litteraturen er zakat satt til 2,5 prosent av årlig overskudd. Den som ikke har overskudd, betaler ikke."
+                        "explanation": "De lovlærde skiller mellom sadaqa, som er en frivillig gave til fattige, og zakat, som du må betale. Ifølge hadith er zakat satt til 2,5 prosent av det du har igjen på et år. Den som ikke har noe igjen, betaler ikke."
                     },
                     {
                         "question": "Hvorfor er det akkurat fem søyler?",
                         "options": [
                             "Fordi Koranen har fem kapitler om plikter",
                             "Fordi de fire lovskolene ble enige om det på 900-tallet",
-                            "Fordi det bygger på et utsagn fra Muhammad i hadith: «Islam bygger på fem prinsipper»",
+                            "Fordi det bygger på noe Muhammad skal ha sagt, ifølge hadith: «Islam bygger på fem prinsipper»",
                             "Fordi det er fem bønnetider i døgnet"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Tallet fem bygger på et utsagn som hadith-litteraturen tillegger profeten Muhammad. Utsagnet er overlevert både i sunnimuslimske og sjiamuslimske kilder."
+                        "explanation": "Tallet fem bygger på noe profeten Muhammad skal ha sagt, ifølge hadith. Setningen finnes både i sunnimuslimske og sjiamuslimske kilder."
                     },
                     {
-                        "question": "Hva var det historiske utgangspunktet for skillet mellom sunni- og sjiaislam?",
+                        "question": "Hva var det som skapte skillet mellom sunni- og sjiaislam?",
                         "options": [
                             "Uenighet om hvilket språk Koranen skulle leses på",
-                            "Striden om hvem som skulle lede fellesskapet etter Muhammads død i 632",
+                            "Striden om hvem som skulle lede fellesskapet etter at Muhammad døde i 632",
                             "Uenighet om hvorvidt kvinner skulle be i moskeen",
                             "En krig mellom to arabiske byer på 900-tallet"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Striden startet umiddelbart etter at Muhammad døde i 632. De som senere ble kalt sjiamuslimer, mente at lederen måtte være i slekt med profeten, og pekte ut Ali ibn Abi Talib."
+                        "explanation": "Striden startet med en gang Muhammad døde i 632. De som senere ble kalt sjiamuslimer, mente at lederen måtte være i slekt med profeten, og pekte ut Ali ibn Abi Talib."
                     }
                 ]
             }

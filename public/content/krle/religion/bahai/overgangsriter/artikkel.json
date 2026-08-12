@@ -15,11 +15,11 @@
     "readTime": "7 min lesning",
     "heroImage": "/images/bahai/overgangsriter-hero.webp",
     "details": [
-        "Et bahá'í-bryllup krever bare to ting: samtykke fra alle foreldre som er i live, og én setning som begge sier.",
+        "Et bahá'í-bryllup krever bare to ting: at alle foreldre som lever sier ja, og at begge sier én bestemt setning.",
         "Setningen lyder: Sannelig, vi vil alle holde fast ved Guds vilje.",
-        "Bahá'í har ingen prester og ingen dåp. En navnefest er lov, men den er ikke påbudt.",
+        "Bahá'í har ingen prester og ingen dåp. En navnefest er lov, men ingen må holde den.",
         "Fra fylte 15 år er man selv ansvarlig for daglig bønn og faste. Ingen seremoni markerer dagen.",
-        "Den døde skal ikke kremeres, og skal ikke fraktes mer enn én times reise fra byen der personen døde."
+        "Den døde skal ikke brennes, og skal ikke fraktes mer enn én times reise fra byen der personen døde."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -43,7 +43,7 @@
         {
             "id": "myndighetsalder",
             "term": "Myndighetsalder",
-            "definition": "Alderen da man selv blir ansvarlig for de religiøse pliktene. I bahá'í er den 15 år."
+            "definition": "Alderen da du selv får ansvaret for det religionen krever av deg. I bahá'í er den 15 år."
         },
         {
             "id": "bonnen-for-de-dode",
@@ -54,7 +54,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Et bahá'í-bryllup kan holdes med fire mennesker i rommet. Bruden, brudgommen og to vitner. Det er ingen prest til stede, for bahá'í har ikke presteskap i det hele tatt (Vogt og Winje, 2026). Det finnes heller ingen fast rekke av salmer og bønner som må følges."
+            "content": "Et bahá'í-bryllup kan holdes med fire mennesker i rommet. Bruden, brudgommen og to vitner. Det er ingen prest til stede, for bahá'í har ingen prester i det hele tatt (Vogt og Winje, 2026). Det finnes heller ingen fast rekke av salmer og bønner som må følges."
         },
         {
             "type": "text",
@@ -68,7 +68,7 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í er en religion som oppsto i Iran på 1800-tallet. Bahá'u'lláh erklærte seg som profet i Bagdad i 1863, og du kan lese mer om ham i artikkelen om [grunnleggerne](/krle/religion/bahai/grunnleggere). I dag er bahá'í et registrert trossamfunn i Norge med rundt 1100 medlemmer (Vogt og Winje, 2026)."
+            "content": "Bahá'í er en religion som oppsto i Iran på 1800-tallet. Bahá'u'lláh sa at han var profet i Bagdad i 1863, og du kan lese mer om ham i artikkelen om [grunnleggerne](/krle/religion/bahai/grunnleggere). I dag er bahá'í et registrert trossamfunn i Norge med rundt 1100 medlemmer (Vogt og Winje, 2026)."
         },
         {
             "type": "text",
@@ -88,7 +88,7 @@
         },
         {
             "type": "text",
-            "content": "Tre ting gjør denne regelen uvanlig. Alderen på paret spiller ingen rolle: en mann på seksti må spørre moren sin på nitti. Troen til foreldrene spiller ingen rolle: en far som ikke er bahá'í, må også si ja. Og det holder ikke at tre av fire sier ja. Alle som lever, må gi sitt samtykke."
+            "content": "Tre ting gjør denne regelen uvanlig. Alderen på paret spiller ingen rolle: en mann på seksti må spørre moren sin på nitti. Troen til foreldrene spiller ingen rolle: en far som ikke er bahá'í, må også si ja. Og det holder ikke at tre av fire sier ja. Alle som lever, må si ja."
         },
         {
             "type": "text",
@@ -103,7 +103,7 @@
         },
         {
             "type": "text",
-            "content": "Foreldrene kan ikke velge hvem barnet skal gifte seg med. 'Abdu'l-Bahá sa det rett ut: før du har valgt selv, har de ingen rett til å blande seg (Bahá'í International Community, u.å.-e). Men når valget er tatt, kan familien stanse bryllupet ved å si nei. Tanken bak er at et ekteskap ikke bare binder sammen to personer, men to familier, og at enhet mellom mennesker er kjernen i hele troen. Du kan lese mer om den tanken i artikkelen om [sentrale trekk](/krle/religion/bahai/sentrale-trekk). Regelen er streng, og den gjør det vanskelig for et par som ikke får ja fra alle."
+            "content": "Foreldrene kan ikke velge hvem barnet skal gifte seg med. 'Abdu'l-Bahá sa det rett ut: før du har valgt selv, har de ingen rett til å blande seg (Bahá'í International Community, u.å.-e). Men når valget er tatt, kan familien stanse bryllupet ved å si nei. Tanken bak er at et ekteskap ikke bare binder sammen to personer, men to familier, og at samhold mellom mennesker er kjernen i hele troen. Du kan lese mer om den tanken i artikkelen om [sentrale trekk](/krle/religion/bahai/sentrale-trekk). Regelen er streng, og den gjør det vanskelig for et par som ikke får ja fra alle."
         },
         {
             "type": "header",
@@ -111,29 +111,29 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í har ingen dåp. Når et barn blir født, finnes det ikke noe rituale som må utføres. Foreldrene gir barnet et navn, og familien kan samle venner til en navnefest hvis de har lyst. Bahá'u'lláhs sønn 'Abdu'l-Bahá foreslo at man kunne lese bønner og vers, be for barnet og så si navnet høyt."
+            "content": "Bahá'í har ingen dåp. Når et barn blir født, finnes det ingen seremoni som må gjøres. Foreldrene gir barnet et navn, og familien kan samle venner til en navnefest hvis de har lyst. Bahá'u'lláhs sønn 'Abdu'l-Bahá foreslo at man kunne lese bønner og vers, be for barnet og så si navnet høyt."
         },
         {
             "type": "text",
-            "content": "Men han ga ingen fast oppskrift. Shoghi Effendi skrev i 1938 at bahá'í ikke har noen dåpsseremoni slik kristne har, og Det universelle rettferdighetens hus gjentok i 1997 at ingen slik seremoni er påbudt (Bahaipedia, u.å.)."
+            "content": "Men han ga ingen fast oppskrift. Shoghi Effendi skrev i 1938 at bahá'í ikke har noen dåpsseremoni slik kristne har, og rådet som leder bahá'í i verden, Det universelle rettferdighetens hus, gjentok i 1997 at ingen må holde en slik seremoni (Bahaipedia, u.å.)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hva som skjer når du fyller 15",
-                "content": "Bahá'u'lláh satte myndighetsalderen til 15 år. Fra den dagen har du selv ansvaret for de religiøse pliktene: den daglige obligatoriske bønnen og fasten. Femten år er også laveste alder for å gifte seg (Bahá'í International Community, u.å.-c). Fasten varer nitten dager, i bahá'í-måneden 'Alá, som regel fra 2. til 20. mars (Bahá'í International Community, u.å.-d). Det finnes ingen seremoni som markerer dagen. Overgangen skjer ikke ved at noen gjør noe med deg, men ved at du begynner å gjøre noe selv."
+                "content": "Bahá'u'lláh satte myndighetsalderen til 15 år. Fra den dagen har du selv ansvaret for det religionen krever: den daglige bønnen du må be, og fasten. Femten år er også laveste alder for å gifte seg (Bahá'í International Community, u.å.-c). Fasten varer nitten dager, i bahá'í-måneden 'Alá, som regel fra 2. til 20. mars (Bahá'í International Community, u.å.-d). Det finnes ingen seremoni som markerer dagen. Overgangen skjer ikke ved at noen gjør noe med deg, men ved at du begynner å gjøre noe selv."
             }
         },
         {
             "type": "text",
-            "content": "Sammenlign det med konfirmasjonen i Norge. Der er det en dato alle husker, et lokale, gjester og gaver. I bahá'í er det ingen dag som feires. Den unge begynner rett og slett å be den obligatoriske bønnen. Hvordan de bønnene fungerer, kan du lese om i artikkelen om [bønn](/krle/religion/bahai/bonn)."
+            "content": "Sammenlign det med konfirmasjonen i Norge. Der er det en dato alle husker, et lokale, gjester og gaver. I bahá'í er det ingen dag som feires. Den unge begynner rett og slett å be den daglige bønnen. Hvordan de bønnene fungerer, kan du lese om i artikkelen om [bønn](/krle/religion/bahai/bonn)."
         },
         {
             "type": "image",
             "src": "/images/bahai/overgangsriter-02.webp",
             "alt": "Ungdom som leser en bønn alene ved et vindu tidlig om morgenen",
-            "caption": "Fra fylte 15 år ber bahá'íer en obligatorisk bønn hver dag. Ingen fest markerer den første gangen."
+            "caption": "Fra fylte 15 år må bahá'íer be en bønn hver dag. Ingen fest markerer den første gangen."
         },
         {
             "type": "header",
@@ -141,7 +141,7 @@
         },
         {
             "type": "text",
-            "content": "Reglene for gravferd er de mest detaljerte bahá'í har. Kroppen skal vaskes og svøpes i fem tøystykker av silke eller bomull, men har familien lite penger, holder det med ett. Den som var 15 år eller eldre, skal ha en ring på fingeren med en innskrift. Kista skal være av krystall, hard stein eller fint og holdbart treverk (Bahá'í International Community, u.å.-a)."
+            "content": "Reglene for gravferd er de mest detaljerte bahá'í har. Kroppen skal vaskes og pakkes inn i fem tøystykker av silke eller bomull, men har familien lite penger, holder det med ett. Den som var 15 år eller eldre, skal ha en ring på fingeren med en innskrift. Kista skal være av krystall, hard stein eller fint og holdbart treverk (Bahá'í International Community, u.å.-a)."
         },
         {
             "type": "text",
@@ -161,13 +161,13 @@
         },
         {
             "type": "text",
-            "content": "Under seremonien leses Bønnen for de døde. Den er den eneste bønnen bahá'íer ber sammen, for all annen felles bønn ble avskaffet av Bahá'u'lláh (Bahá'í International Community, u.å.-c). Én person leser høyt mens de andre står. Bønnen brukes for dem som var 15 år eller eldre (Bahá'í International Community, u.å.-d). Ut over dette bestemmer familien selv hvordan seremonien skal være, og hvem som skal lede den."
+            "content": "Under seremonien leses Bønnen for de døde. Den er den eneste bønnen bahá'íer ber sammen, for Bahá'u'lláh fjernet all annen felles bønn (Bahá'í International Community, u.å.-c). Én person leser høyt mens de andre står. Bønnen brukes for dem som var 15 år eller eldre (Bahá'í International Community, u.å.-d). Ut over dette bestemmer familien selv hvordan seremonien skal være, og hvem som skal lede den."
         },
         {
             "type": "image",
             "src": "/images/bahai/overgangsriter-03.webp",
             "alt": "Enkel grav med hvite blomster på en norsk gravlund",
-            "caption": "Bahá'íer gravlegges. Kremasjon regnes som forbudt, og graven ligger nær stedet der døden skjedde."
+            "caption": "Bahá'íer gravlegges. Å brenne kroppen regnes som forbudt, og graven ligger nær stedet der døden skjedde."
         },
         {
             "type": "header",
@@ -175,11 +175,11 @@
         },
         {
             "type": "text",
-            "content": "Ser du de tre seremoniene i sammenheng, ser du et mønster. Hver av dem har en liten kjerne som ikke kan endres, og et stort rom rundt kjernen som familien fyller selv. Kjernen i bryllupet er samtykket og setningen. Kjernen i gravferden er bønnen, jorden og timen. Alt annet, altså musikken, talene og maten, bestemmer de som står nærmest."
+            "content": "Ser du de tre seremoniene i sammenheng, ser du et mønster. Hver av dem har en liten kjerne som ikke kan endres, og et stort rom rundt kjernen som familien fyller selv. Kjernen i bryllupet er samtykket og setningen. Kjernen i gravferden er bønnen, at kroppen legges i jorda, og timesregelen. Alt annet, altså musikken, talene og maten, bestemmer de som står nærmest."
         },
         {
             "type": "text",
-            "content": "Derfor ser et bahá'í-bryllup i Norge ganske annerledes ut enn et i Iran eller India, selv om de to kravene er de samme. Bahá'íer gjør heller ikke alt likt. De har ingen prester som avgjør spørsmål, men valgte råd som kalles åndelige råd, og mye blir bestemt lokalt. Det gir plass til stor variasjon innenfor de samme reglene."
+            "content": "Derfor ser et bahá'í-bryllup i Norge ganske annerledes ut enn et i Iran eller India, selv om de to kravene er de samme. Bahá'íer gjør heller ikke alt likt. De har ingen prester som avgjør spørsmål, men valgte råd som kalles åndelige råd, og mye blir bestemt lokalt. Derfor kan mye se ulikt ut, selv om reglene er de samme."
         },
         {
             "type": "text",
@@ -196,14 +196,14 @@
                     "Nevn tre regler for hvordan en bahá'í skal gravlegges."
                 ],
                 "reflekter": [
-                    "Regelen om samtykke gjelder uansett hvor gammelt paret er. Hva tror du er begrunnelsen for det?",
+                    "Regelen om samtykke gjelder uansett hvor gammelt paret er. Hva tror du er grunnen til det?",
                     "Bahá'í har ingen dåp og ingen konfirmasjon. Hva mister et samfunn når det ikke har slike fester, og hva vinner det?",
                     "Den døde skal gravlegges innen én times reise fra byen der personen døde. Hvilke praktiske problemer kan den regelen skape for en familie i Norge?",
                     "Bruk van Genneps tre trinn (løsrivelse, mellomtilstand, ny status) på bahá'í-bryllupet. Passer modellen godt eller dårlig?"
                 ],
                 "gaaVidere": [
                     "Sammenlign bahá'í-bryllupet med et bryllup i en annen religion. Hva er den største forskjellen i hvem som har makt over seremonien?",
-                    "Finn ut hvordan gravferd uten kremasjon organiseres i din kommune, og hvilke regler som gjelder.",
+                    "Finn ut hvordan begravelse uten brenning av kroppen foregår i kommunen din, og hvilke regler som gjelder.",
                     "Diskuter i klassen: Bør foreldre ha rett til å nekte to voksne å gifte seg?"
                 ]
             }
@@ -216,7 +216,7 @@
                     {
                         "question": "Hva er det eneste som må sies i et bahá'í-bryllup?",
                         "options": [
-                            "En trosbekjennelse på arabisk",
+                            "En fast trossetning på arabisk",
                             "Setningen: Sannelig, vi vil alle holde fast ved Guds vilje",
                             "Et løfte som presten leser opp",
                             "Fire vers fra Kitáb-i-Aqdas"
@@ -244,18 +244,18 @@
                             "Man må velge om man vil være bahá'í eller ikke"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Femten år er myndighetsalderen. Fra da av gjelder den obligatoriske bønnen og fasten, men ingen seremoni markerer dagen."
+                        "explanation": "Femten år er myndighetsalderen. Fra da av må du be den daglige bønnen og faste, men ingen seremoni markerer dagen."
                     },
                     {
-                        "question": "Hva sier bahá'í-reglene om kremasjon?",
+                        "question": "Hva sier bahá'í-reglene om å brenne den døde?",
                         "options": [
-                            "Kremasjon er påbudt",
-                            "Kremasjon regnes som forbudt, den døde skal gravlegges",
+                            "Kroppen må brennes",
+                            "Å brenne kroppen regnes som forbudt, den døde skal gravlegges",
                             "Familien velger fritt",
-                            "Kremasjon er tillatt hvis den døde ba om det"
+                            "Å brenne kroppen er lov hvis den døde ba om det"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Kitáb-i-Aqdas krever kiste og grav. 'Abdu'l-Bahá og Shoghi Effendi slo fast at dette utelukker kremasjon."
+                        "explanation": "Kitáb-i-Aqdas krever kiste og grav. 'Abdu'l-Bahá og Shoghi Effendi slo fast at dette betyr at kroppen ikke kan brennes."
                     },
                     {
                         "question": "Hvor langt kan den døde fraktes før gravferden?",

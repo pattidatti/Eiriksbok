@@ -16,7 +16,7 @@
         "Guru Granth Sahib er ikke en bok om guruen. Sikher ærer den som den levende guruen.",
         "I trykt utgave med gurmukhi-skrift er boka alltid på 1430 sider og har rundt 6000 hymner.",
         "Boka ligger opphøyd under en himling, med puter, rene tøystykker og en vifte som kalles chaur.",
-        "Sikhismen har ikke prester som eier tolkningen. Regelverket sier at hver sikh bør lære gurmukhi og lese selv.",
+        "Sikhismen har ingen prester som bestemmer hvordan teksten skal forstås. Regelverket sier at hver sikh bør lære gurmukhi og lese selv.",
         "Teksten er ordnet etter melodier og skal synges, ikke bare leses."
     ],
     "createdDate": "2025-12-24T10:00:00Z",
@@ -40,7 +40,7 @@
         {
             "id": "rag",
             "term": "Rag",
-            "definition": "Indisk melodityp. Den store midtdelen av Guru Granth Sahib er ordnet etter rag, ikke etter fortelling."
+            "definition": "En type melodi i indisk musikk. Den store midtdelen av Guru Granth Sahib er ordnet etter rag, ikke etter fortelling."
         },
         {
             "id": "chaur",
@@ -55,7 +55,7 @@
         },
         {
             "type": "text",
-            "content": "Boka heter Guru Granth Sahib, og den er sikhismens hellige skrift. I trykt utgave med gurmukhi, som er skriften teksten er skrevet med, er den alltid på 1430 sider, og den inneholder rundt 6000 hymner (Jacobsen, 2026a). Men sidetallet er ikke det viktigste her. Det viktigste er hva boka er for sikher. I alle gurdwaraer ligger et eksemplar av den, og der blir den behandlet som en levende person (Jacobsen, 2026b). Sikher regner den ikke som en bok om guruen. For dem er den guruen."
+            "content": "Boka heter Guru Granth Sahib, og den er sikhismens hellige skrift. I trykt utgave med gurmukhi, som er skriften teksten er skrevet med, er den alltid på 1430 sider, og den inneholder rundt 6000 hymner, altså religiøse sanger (Jacobsen, 2026a). Men sidetallet er ikke det viktigste her. Det viktigste er hva boka er for sikher. I alle gurdwaraer ligger et eksemplar av den, og der blir den behandlet som en levende person (Jacobsen, 2026b). Sikher regner den ikke som en bok om guruen. For dem er den guruen."
         },
         {
             "type": "image",
@@ -69,7 +69,7 @@
         },
         {
             "type": "header",
-            "text": "Et hoff, ikke en bokhylle"
+            "text": "Behandlet som en konge"
         },
         {
             "type": "text",
@@ -84,7 +84,7 @@
         },
         {
             "type": "text",
-            "content": "Legg merke til hva slags utstyr dette er. Himlingen, viften, det opphøyde setet og personen som sitter klar ved siden av: utstyret ligner det man brukte rundt en konge. Poenget er ikke at boka skal se fin ut. Poenget er hvor makten ligger. Etter 1708 er det ingen levende person som har guruens plass i sikhismen, og slik sikhismen er bygd opp, finnes det derfor ingen som kan overprøve teksten."
+            "content": "Legg merke til hva slags utstyr dette er. Himlingen, viften, det opphøyde setet og personen som sitter klar ved siden av: utstyret ligner det man brukte rundt en konge. Poenget er ikke at boka skal se fin ut. Poenget er hvor makten ligger. Etter 1708 er det ingen levende person som har guruens plass i sikhismen, og slik sikhismen er bygd opp, finnes det derfor ingen som kan overstyre det som står i teksten."
         },
         {
             "type": "text",
@@ -96,14 +96,14 @@
         },
         {
             "type": "text",
-            "content": "Sikhismen har ikke et presteskap som eier tolkningen. Regelverket sier at bare en sikh, mann eller kvinne, kan sitte hos Guru Granth Sahib under en samling, og at hver sikh, gutt eller jente, bør lære gurmukhi for å kunne lese boka selv (Shiromani Gurdwara Parbandhak Committee, u.å.-b). Menn og kvinner deltar sammen i gudstjenesten, som består i lesning eller sang av hymner fra boka (Kristiansen mfl., 2026). Veien inn i teksten er altså åpen for alle. Det som er stramt regulert, er hvordan man omgås den. Mer om hva sikher tror og gjør, finner du i artikkelen om [sentrale trekk](/krle/religion/sikhisme/sentrale-trekk)."
+            "content": "Sikhismen har ingen prester som bestemmer hvordan teksten skal forstås. Regelverket sier at bare en sikh, mann eller kvinne, kan sitte hos Guru Granth Sahib under en samling, og at hver sikh, gutt eller jente, bør lære gurmukhi for å kunne lese boka selv (Shiromani Gurdwara Parbandhak Committee, u.å.-b). Menn og kvinner deltar sammen i gudstjenesten, som består i lesning eller sang av hymner fra boka (Kristiansen mfl., 2026). Veien inn i teksten er altså åpen for alle. Det som har strenge regler, er hvordan man skal behandle boka. Mer om hva sikher tror og gjør, finner du i artikkelen om [sentrale trekk](/krle/religion/sikhisme/sentrale-trekk)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Akhand path: 48 timer uten pause",
-                "content": "En akhand path er en sammenhengende opplesning av hele Guru Granth Sahib. Den varer i 48 timer og stopper aldri underveis. Lesingen skal være tydelig og korrekt, og det er ikke bestemt hvor mange som skal dele på jobben (Shiromani Gurdwara Parbandhak Committee, u.å.-b)."
+                "content": "En akhand path er en sammenhengende opplesning av hele Guru Granth Sahib. Den varer i 48 timer og stopper aldri underveis. Lesingen skal være tydelig og riktig, og det er ikke bestemt hvor mange som skal dele på jobben (Shiromani Gurdwara Parbandhak Committee, u.å.-b)."
             }
         },
         {
@@ -122,11 +122,11 @@
         },
         {
             "type": "text",
-            "content": "Guru Granth Sahib er ikke ordnet som en fortelling fra begynnelse til slutt. Den er ordnet etter melodier. De første sidene, side 1 til 13, er innledende hymner som fremføres uten musikk. Den store midtdelen, side 14 til 1353, er ordnet etter rag, som er indiske melodityper. Resten, side 1354 til 1430, er blandet stoff (Jacobsen, 2026a). Musikerne som synger hymnene i gurdwaraen kalles ragier, og forsamlingen mediterer på ordene mens de blir sunget (Jacobsen, 2026a). Mer om dette finner du i artikkelen om [bønn](/krle/religion/sikhisme/bonn)."
+            "content": "Guru Granth Sahib er ikke ordnet som en fortelling fra begynnelse til slutt. Den er ordnet etter melodier. De første sidene, side 1 til 13, er innledende hymner som fremføres uten musikk. Den store midtdelen, side 14 til 1353, er ordnet etter rag, som er ulike typer melodi i indisk musikk. Resten, side 1354 til 1430, er blandet stoff (Jacobsen, 2026a). Musikerne som synger hymnene i gurdwaraen kalles ragier, og forsamlingen mediterer på ordene mens de blir sunget (Jacobsen, 2026a). Mer om dette finner du i artikkelen om [bønn](/krle/religion/sikhisme/bonn)."
         },
         {
             "type": "text",
-            "content": "Også her setter regelverket grenser. I en forsamling kan man bare synge tekster fra Guru Granth Sahib, hymner av Guru Gobind Singh og verk av de to dikterne Bhai Gurdas og Bhai Nand Lal. Man skal ikke finne på egne omkved. Bare en linje fra hymnen selv kan brukes som omkved (Shiromani Gurdwara Parbandhak Committee, u.å.-b). Teksten skal ikke pyntes på mens den synges."
+            "content": "Også her setter regelverket grenser. I en forsamling kan man bare synge tekster fra Guru Granth Sahib, hymner av Guru Gobind Singh og verk av de to dikterne Bhai Gurdas og Bhai Nand Lal. Man skal ikke finne på egne omkved, altså faste linjer som gjentas. Bare en linje fra hymnen selv kan brukes slik (Shiromani Gurdwara Parbandhak Committee, u.å.-b). Teksten skal ikke pyntes på mens den synges."
         },
         {
             "type": "image",
@@ -148,11 +148,11 @@
         },
         {
             "type": "text",
-            "content": "Guru Granth Sahib rommer flere stemmer enn sikhenes egne guruer. Der finnes også hymner av hinduiske diktere og av muslimske sufi-diktere, altså diktere fra en mystisk retning i islam, og språket er en blanding av panjabi og hindi (Jacobsen, 2026a). Guru Nanak, som grunnla sikhismen og levde fra 1469 til 1539, har alene 974 hymner i boka (Jacobsen, 2025). Her er det verdt å skille mellom to slags kunnskap. Ifølge janamsakhiene, fortellingene sikher regner som troverdige, fikk Nanak en åpenbaring som kalte ham til å forkynne. Historikere har samtidig lite sikker kunnskap om livet hans, nettopp fordi kildene i hovedsak er disse fortellingene (Jacobsen, 2025)."
+            "content": "Guru Granth Sahib rommer flere stemmer enn sikhenes egne guruer. Der finnes også hymner av hinduiske diktere og av muslimske sufi-diktere, altså diktere fra en mystisk retning i islam, og språket er en blanding av panjabi og hindi (Jacobsen, 2026a). Guru Nanak, som grunnla sikhismen og levde fra 1469 til 1539, har alene 974 hymner i boka (Jacobsen, 2025). Her er det verdt å skille mellom to slags kunnskap. Ifølge janamsakhiene, fortellingene sikher regner som troverdige, fikk Nanak en åpenbaring, altså et budskap fra Gud, som ba ham gå ut og fortelle andre om det. Historikere har samtidig lite sikker kunnskap om livet hans, nettopp fordi kildene i hovedsak er disse fortellingene (Jacobsen, 2025)."
         },
         {
             "type": "text",
-            "content": "Samlingen er lukket. Guru Gobind Singh ga teksten sin endelige form, og siden 1708 har det ikke vært noen levende guru som kan legge noe til (Jacobsen, 2026a). Oversettelser til andre språk finnes, og de brukes for å forstå innholdet, men regelverket sier at hver sikh bør lære gurmukhi og lese boka selv (Shiromani Gurdwara Parbandhak Committee, u.å.-b). Sikher har heller ikke alltid gjort ting helt likt. Sikh Rehat Maryada ble arbeidet fram fra 1931 av Shiromani Gurdwara Parbandhak Committee og godkjent av Akal Takht, sikhenes øverste myndighet, nettopp for å gi sikher over hele verden en mest mulig lik praksis (Shiromani Gurdwara Parbandhak Committee, u.å.-a). Og hver kveld, i tusenvis av gurdwaraer, blir den samme boka lagt til hvile."
+            "content": "Samlingen er lukket. Guru Gobind Singh ga teksten sin endelige form, og siden 1708 har det ikke vært noen levende guru som kan legge noe til (Jacobsen, 2026a). Oversettelser til andre språk finnes, og de brukes for å forstå innholdet, men regelverket sier at hver sikh bør lære gurmukhi og lese boka selv (Shiromani Gurdwara Parbandhak Committee, u.å.-b). Sikher har heller ikke alltid gjort ting helt likt. Sikh Rehat Maryada ble arbeidet fram fra 1931 av Shiromani Gurdwara Parbandhak Committee og godkjent av Akal Takht, sikhenes øverste råd, nettopp for at sikher over hele verden skulle gjøre ting mest mulig likt (Shiromani Gurdwara Parbandhak Committee, u.å.-a). Og hver kveld, i tusenvis av gurdwaraer, blir den samme boka lagt til hvile."
         },
         {
             "type": "component",
@@ -166,7 +166,7 @@
                 ],
                 "reflekter": [
                     "Artikkelen sier at boka ikke handler om guruen, men er guruen. Forklar med egne ord hva som er forskjellen.",
-                    "Utstyret rundt boka er utstyret rundt en trone. Hva sier det om hvor autoriteten ligger i sikhismen?",
+                    "Utstyret rundt boka er utstyret rundt en trone. Hva sier det om hvem eller hva som har makten i sikhismen?",
                     "Hukam betyr at man åpner boka tilfeldig og leser hymnen øverst på venstre side. Hva er fordelen med en slik måte å søke råd på, og hva kan være ulempen?",
                     "Hvorfor kan det være viktig å skille mellom hva janamsakhiene forteller om Guru Nanak, og hva historikere mener de kan vite?"
                 ],
@@ -198,11 +198,11 @@
                         "options": [
                             "Etter årstall, fra eldst til nyest",
                             "Etter guru, én guru per kapittel",
-                            "Etter rag, altså etter melodityper",
+                            "Etter rag, altså etter typer melodi",
                             "Alfabetisk etter tittel"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Side 14 til 1353 er ordnet etter rag, indiske melodityper. Teksten er poesi som skal synges, ikke en fortelling som skal leses fra perm til perm."
+                        "explanation": "Side 14 til 1353 er ordnet etter rag, altså ulike typer melodi i indisk musikk. Teksten er poesi som skal synges, ikke en fortelling som skal leses fra perm til perm."
                     },
                     {
                         "question": "Hva sier Sikh Rehat Maryada om hvem som kan sitte hos Guru Granth Sahib under en samling?",
@@ -213,7 +213,7 @@
                             "Hvem som helst som er til stede"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Regelverket sier at bare en sikh, mann eller kvinne, kan sitte hos boka under en samling. Sikhismen har ikke et presteskap som eier tolkningen."
+                        "explanation": "Regelverket sier at bare en sikh, mann eller kvinne, kan sitte hos boka under en samling. Sikhismen har ingen prester som bestemmer hvordan teksten skal forstås."
                     },
                     {
                         "question": "Hva vil det si å ta hukam?",

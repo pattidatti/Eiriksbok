@@ -15,10 +15,10 @@
     "readTime": "8 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Bar mitzva betyr forpliktelsens sønn. Dagen er et juridisk skifte, ikke først og fremst en fest.",
-        "Gutter blir religiøst myndige ved 13 år og én dag. Jenter regnes tradisjonelt som voksne ved 12 år.",
+        "Bar mitzva betyr forpliktelsens sønn. Denne dagen bytter ansvaret hender, den er ikke først og fremst en fest.",
+        "Gutter får selv ansvaret for å følge budene når de er 13 år og én dag. Jenter regnes tradisjonelt som voksne ved 12 år.",
         "Brit mila, omskjæring på den åttende dagen, markerer at gutten tas inn i pakten med Abraham.",
-        "Vielsen skjer under baldakinen huppa, og brudgommen knuser et glass til minne om tempelet i Jerusalem.",
+        "Vielsen skjer under huppa, et tak av stoff på fire stenger, og brudgommen knuser et glass til minne om tempelet i Jerusalem.",
         "Begravelsen skal skje innen et døgn, i enkel trekiste og med likklær som er like for alle."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
@@ -32,17 +32,17 @@
         {
             "id": "bar-mitzva",
             "term": "Bar mitzva",
-            "definition": "Hebraisk for forpliktelsens sønn. Dagen en jødisk gutt blir religiøst myndig og selv svarer for budene."
+            "definition": "Hebraisk for forpliktelsens sønn. Dagen da en jødisk gutt selv får ansvaret for å følge budene."
         },
         {
             "id": "halakha",
             "term": "Halakha",
-            "definition": "Systemet av jødiske religiøse forpliktelser og lover, utviklet gjennom to tusen år."
+            "definition": "Alle de jødiske religiøse pliktene og lovene samlet. De er blitt til gjennom to tusen år."
         },
         {
             "id": "huppa",
             "term": "Huppa",
-            "definition": "Baldakinen brudeparet vies under. Den står for hjemmet paret skal bygge sammen."
+            "definition": "Taket av stoff på fire stenger som brudeparet vies under. Det står for hjemmet paret skal bygge sammen."
         },
         {
             "id": "sjiva",
@@ -67,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Overgangsriter er seremonier som markerer at et menneske går fra en plass i samfunnet til en annen. Jødedommen har fire slike merkedager: den åttende dagen etter fødselen, myndighetsdagen, bryllupet og begravelsen. Alle fire henger sammen med det samme, nemlig budene. Rabbinerne har utledet 613 bud, mitzvot, fra Mosebøkene. 248 av dem er ting du skal gjøre, og 365 er ting du ikke skal gjøre (Groth, 2024). Reglene for hvordan budene følges i praksis, kalles halakha. Mer om dem finner du i artikkelen om [sentrale trekk i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+            "content": "Overgangsriter er seremonier som markerer at et menneske går fra en plass i samfunnet til en annen. Jødedommen har fire slike merkedager: den åttende dagen etter fødselen, myndighetsdagen, bryllupet og begravelsen. Alle fire henger sammen med det samme, nemlig budene. Rabbinerne, de jødiske lærde, har hentet 613 bud, mitzvot, ut av Mosebøkene. 248 av dem er ting du skal gjøre, og 365 er ting du ikke skal gjøre (Groth, 2024). Reglene for hvordan budene følges i praksis, kalles halakha. Mer om dem finner du i artikkelen om [sentrale trekk i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
         },
         {
             "type": "header",
@@ -75,11 +75,11 @@
         },
         {
             "type": "text",
-            "content": "En jødisk gutt blir religiøst myndig når han har fylt tretten år og én dag. Da får han alle religiøse rettigheter, blant annet å bli talt med i en bønnegruppe, og han må følge halakha (Groth, 2026a). En jente regnes tradisjonelt som voksen når hun har fylt tolv (Groth, 2026b). Selve markeringen holdes gjerne den første sabbaten etter bursdagen. Gutten leser opp ukens toraavsnitt og den tilhørende teksten fra Profetene, og han bruker bønneremmene tefillin for første gang (Groth, 2026a). Slik gjøres det også i Norge. Det jødiske trossamfunnet i Oslo regner tolv år for jenter og tretten år for gutter som overgangen til voksenverdenen (Det Mosaiske Trossamfund, u.å.). Fra 1970-tallet innførte reformjødedommen stadig større likhet mellom kjønnene. I dag er det gamle skillet borte der, og begge kjønn feirer dagen ved tretten år (Groth, 2026a)."
+            "content": "En jødisk gutt får selv ansvaret for religionen sin når han har fylt tretten år og én dag. Da får han alle religiøse rettigheter, blant annet å bli talt med i en bønnegruppe, og han må følge halakha selv (Groth, 2026a). En jente regnes tradisjonelt som voksen når hun har fylt tolv (Groth, 2026b). Selve markeringen holdes gjerne den første sabbaten etter bursdagen. Gutten leser opp ukens toraavsnitt og den tilhørende teksten fra Profetene, og han bruker bønneremmene tefillin for første gang (Groth, 2026a). Slik gjøres det også i Norge. Det jødiske trossamfunnet i Oslo regner tolv år for jenter og tretten år for gutter som overgangen til voksenverdenen (Det Mosaiske Trossamfund, u.å.). Fra 1970-tallet innførte reformjødedommen stadig større likhet mellom kjønnene. I dag er det gamle skillet borte der, og begge kjønn feirer dagen ved tretten år (Groth, 2026a)."
         },
         {
             "type": "text",
-            "content": "Legg merke til hva som ikke står der. Ingen blir jøde denne dagen. Ingen avlegger et løfte om å tro. Det som skjer, er et skifte i ansvar: en plikt bytter eier. Sorter kortene under, og se hvor kort listen over ting som faktisk endrer seg, egentlig er."
+            "content": "Legg merke til hva som ikke står der. Ingen blir jøde denne dagen, for det var gutten fra før. Ingen lover å tro på noe. Det som skjer, er at ansvaret skifter hender. Sorter kortene under, og se hvor kort listen over ting som faktisk endrer seg, egentlig er."
         },
         {
             "type": "component",
@@ -98,23 +98,23 @@
         },
         {
             "type": "text",
-            "content": "Den første overgangen skjer lenge før barnet kan huske noe. På den åttende dagen etter fødselen blir jødiske gutter omskåret. Handlingen heter brit mila og markerer at gutten blir tatt inn i pakten som ifølge Første Mosebok 17,10-12 ble inngått mellom Gud og Abraham og alle etterkommerne hans. Gutten blir velsignet og får navnet sitt i den samme seremonien (Groth, 2026c)."
+            "content": "Den første overgangen skjer lenge før barnet kan huske noe. På den åttende dagen etter fødselen blir jødiske gutter omskåret. Handlingen heter brit mila og markerer at gutten blir tatt inn i pakten, den høytidelige avtalen som ifølge Første Mosebok 17,10-12 ble inngått mellom Gud og Abraham og hele slekten hans. Gutten blir velsignet og får navnet sitt i den samme seremonien (Groth, 2026c)."
         },
         {
             "type": "text",
-            "content": "Etter jødisk tradisjon er det faren som har ansvaret for at sønnen blir omskåret, men selve inngrepet utføres av en mohel, en person med egen opplæring i akkurat dette, helst mens minst ti myndige menn er til stede. Barnet ligger på en pute på fanget til gudfaren. Jøder med bakgrunn fra Sentral-Europa og fra Middelhavsområdet har litt ulike skikker rundt seremonien, men alle steder ender dagen med familiefest (Groth, 2026c)."
+            "content": "Etter jødisk tradisjon er det faren som har ansvaret for at sønnen blir omskåret, men selve inngrepet gjøres av en mohel, en person som er lært opp til akkurat dette, helst mens minst ti voksne menn er til stede. Barnet ligger på en pute på fanget til gudfaren. Jøder med bakgrunn fra Sentral-Europa og fra Middelhavsområdet har litt ulike skikker rundt seremonien, men alle steder ender dagen med familiefest (Groth, 2026c)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Brit mila i Norge",
-                "content": "I Norge er rituell omskjæring regulert i egen lov fra 2014. Inngrepet skal gjøres av en lege, eller av andre hvis en lege er til stede og står ansvarlig for det (Lov om rituell omskjæring av gutter, 2014, paragraf 5). En mohel kan altså utføre selve handlingen, men da med lege til stede. Brit mila er en av de jødiske skikkene som holdes av aller flest, også i familier som ikke er ortodokse eller troende (Groth, 2026c)."
+                "content": "I Norge finnes det en egen lov om rituell omskjæring fra 2014. Inngrepet skal gjøres av en lege, eller av andre hvis en lege er til stede og står ansvarlig for det (Lov om rituell omskjæring av gutter, 2014, paragraf 5). En mohel kan altså utføre selve handlingen, men da med lege til stede. Brit mila er en av de jødiske skikkene som holdes av aller flest, også i familier som ikke er ortodokse eller troende (Groth, 2026c)."
             }
         },
         {
             "type": "text",
-            "content": "Alle jøder er ikke enige om denne skikken. Blant ikke-ortodokse jøder går det en debatt om omskjæring av nyfødte, og på 1980-tallet vokste det fram en alternativ navnefest som heter brit shalom. Den holdes også på den åttende dagen, med velsignelser og hebraisk navn, men uten omskjæring. Brit shalom praktiseres ikke i Norge (Groth og Skatvik, 2024). Noen reformjøder lar en lege gjøre inngrepet i stedet for en mohel, og det regnes ikke som gyldig i ortodokse menigheter (Groth, 2026c)."
+            "content": "Alle jøder er ikke enige om denne skikken. Blant ikke-ortodokse jøder diskuteres det om nyfødte bør omskjæres, og på 1980-tallet vokste det fram en annen slags navnefest som heter brit shalom. Den holdes også på den åttende dagen, med velsignelser og hebraisk navn, men uten omskjæring. Brit shalom brukes ikke i Norge (Groth og Skatvik, 2024). Noen reformjøder lar en lege gjøre inngrepet i stedet for en mohel, og det regnes ikke som gyldig i ortodokse menigheter (Groth, 2026c)."
         },
         {
             "type": "image",
@@ -128,15 +128,15 @@
         },
         {
             "type": "text",
-            "content": "Det jødiske bryllupet foregår under en baldakin som heter huppa. Ordet betydde opprinnelig brudekammeret, altså rommet der ekteskapet ble fullbyrdet. I dag er huppa et tak av silke eller fløyel på fire stenger, og det står for hjemmet paret skal bygge sammen. Et vanlig bønnesjal festet til fire stenger kan brukes i stedet (Groth, 2025c)."
+            "content": "Det jødiske bryllupet foregår under en baldakin som heter huppa. Ordet betydde opprinnelig brudekammeret, altså rommet der brudeparet skulle være alene sammen etter bryllupet. I dag er huppa et tak av silke eller fløyel på fire stenger, og det står for hjemmet paret skal bygge sammen. Et vanlig bønnesjal festet til fire stenger kan brukes i stedet (Groth, 2025c)."
         },
         {
             "type": "text",
-            "content": "Vielsen har to deler. Først kommer kiddushin. Rabbineren velsigner vinen, og brudgommen setter en ring på brudens finger og sier at hun er helliget til ham i samsvar med Moses' og Israels lover. Ekteskapskontrakten ketuba blir lest høyt, og brudgommen gir den til bruden. Så kommer nisuin, der sju velsignelser til Guds pris leses opp. Til slutt knuser brudgommen et glass med foten, til minne om at tempelet i Jerusalem ble ødelagt (Groth, 2025a)."
+            "content": "Vielsen har to deler. Først kommer kiddushin. Rabbineren velsigner vinen, og brudgommen setter en ring på brudens finger og sier at hun er helliget til ham etter Moses' og Israels lover. Ekteskapskontrakten ketuba, som skriver ned pliktene i ekteskapet, blir lest høyt, og brudgommen gir den til bruden. Så kommer nisuin, der sju velsignelser som hyller Gud, leses opp. Til slutt knuser brudgommen et glass med foten, til minne om at tempelet i Jerusalem ble ødelagt (Groth, 2025a)."
         },
         {
             "type": "text",
-            "content": "Her er forskjellene mellom retningene store. De fleste ortodokse menigheter holder på den gamle formen, der mannen tar kvinnen til hustru. Jødedommen rommer flere retninger som vekter tradisjon og tilpasning ulikt (Groth, 2026d), og konservativ jødedom, reformjødedom og rekonstruksjonismen har endret seremonien slik at brud og brudgom står likere (Groth, 2025c). I ortodokse menigheter går bruden tradisjonelt sju ganger rundt brudgommen før vielsen, mens sefardiske brudepar ikke har den skikken (Groth, 2025a)."
+            "content": "Her er forskjellene mellom retningene store. De fleste ortodokse menigheter holder på den gamle formen, der mannen tar kvinnen til hustru. Jødedommen rommer flere retninger som legger ulik vekt på gammel tradisjon og på å tilpasse seg nye tider (Groth, 2026d), og konservativ jødedom, reformjødedom og rekonstruksjonismen har endret seremonien slik at brud og brudgom står likere (Groth, 2025c). I ortodokse menigheter går bruden tradisjonelt sju ganger rundt brudgommen før vielsen, mens brudepar med bakgrunn fra Spania og Midtøsten ikke har den skikken (Groth, 2025a)."
         },
         {
             "type": "image",
@@ -150,11 +150,11 @@
         },
         {
             "type": "text",
-            "content": "Den siste overgangen er rask og stram. Begravelsen skal skje så snart som mulig etter dødsfallet, helst innen ett døgn. Menighetens egne medlemmer, kalt hevra kadisha, steller den døde. Kroppen vaskes rituelt og kles i hvite likklær som skal være like for alle. Menn svøpes i tillegg i bønnesjalet sitt. Kisten er en enkel trekiste, om mulig med litt jord fra Israel under hodet (Groth, 2025b)."
+            "content": "Den siste overgangen går fort, og den følger strenge regler. Begravelsen skal skje så snart som mulig etter dødsfallet, helst innen ett døgn. Medlemmer av menigheten, kalt hevra kadisha, steller den døde. Kroppen vaskes etter faste regler og kles i hvite likklær som skal være like for alle. Menn svøpes i tillegg i bønnesjalet sitt. Kisten er en enkel trekiste, om mulig med litt jord fra Israel under hodet (Groth, 2025b)."
         },
         {
             "type": "text",
-            "content": "Likheten er ikke tilfeldig. Ingen skal kunne lese ut av kisten eller klærne hvem som var rik og hvem som var fattig. Den eldste sønnen, i dag ofte også en datter eller en annen nær slektning, leser bønnen kaddish. Den bønnen nevner ikke døden med et eneste ord. Den priser Gud (Groth, 2025b). Mer om jødisk bønn finner du i artikkelen om [bønn i jødedommen](/krle/religion/jodedom/bonn)."
+            "content": "Likheten er ikke tilfeldig. Ingen skal kunne lese ut av kisten eller klærne hvem som var rik og hvem som var fattig. Den eldste sønnen, i dag ofte også en datter eller en annen nær slektning, leser bønnen kaddish. Den bønnen nevner ikke døden med et eneste ord. Den hyller Gud (Groth, 2025b). Mer om jødisk bønn finner du i artikkelen om [bønn i jødedommen](/krle/religion/jodedom/bonn)."
         },
         {
             "type": "text",
@@ -162,7 +162,7 @@
         },
         {
             "type": "text",
-            "content": "Ser du de fire ritene under ett, trer et mønster fram. På den åttende dagen blir barnet tatt inn i pakten uten å ha bedt om det. På myndighetsdagen overtar det ansvaret for pakten selv. I bryllupet blir ansvaret skrevet ned i en kontrakt som brudgommen overrekker. I begravelsen er alle kledd i det samme. Budene er den røde tråden gjennom hele livsløpet, og tekstene budene står i, kan du lese om i artikkelen om [hellige tekster i jødedommen](/krle/religion/jodedom/hellige-tekster)."
+            "content": "Ser du de fire seremoniene under ett, kommer det fram et mønster. På den åttende dagen blir barnet tatt inn i pakten uten å ha bedt om det. På myndighetsdagen overtar det ansvaret for pakten selv. I bryllupet blir ansvaret skrevet ned i en kontrakt som brudgommen gir bruden. I begravelsen er alle kledd i det samme. Budene er den røde tråden gjennom hele livsløpet, og tekstene budene står i, kan du lese om i artikkelen om [hellige tekster i jødedommen](/krle/religion/jodedom/hellige-tekster)."
         },
         {
             "type": "component",
@@ -175,7 +175,7 @@
                     "Nevn tre ting som skjer i en jødisk vielse under huppa."
                 ],
                 "reflekter": [
-                    "Forklar med egne ord hvorfor bar mitzva kan kalles et skifte i ansvar og ikke bare en fest.",
+                    "Forklar med egne ord hvorfor bar mitzva handler om at ansvaret skifter hender, og ikke bare om en fest.",
                     "Ved en jødisk begravelse er kisten enkel og likklærne like for alle. Hvorfor tror du tradisjonen har lagt det slik?",
                     "Sørgetiden er lengst når du har mistet en av foreldrene dine. Hva sier det om hvordan tradisjonen ser på slike bånd?",
                     "Brit shalom er en navnefest uten omskjæring. Hva forteller det om uenighet innad i en religion?"
@@ -212,18 +212,18 @@
                             "Ved bryllupet"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Brit mila skjer på den åttende dagen, forutsatt at gutten er frisk. Han får også navnet sitt i den samme seremonien."
+                        "explanation": "Brit mila skjer på den åttende dagen, så lenge gutten er frisk. Han får også navnet sitt i den samme seremonien."
                     },
                     {
                         "question": "Hva er huppa?",
                         "options": [
                             "Ekteskapskontrakten brudgommen gir bruden",
                             "Glasset brudgommen knuser",
-                            "Baldakinen paret vies under",
+                            "Taket av stoff som paret vies under",
                             "Bønnen som leses ved graven"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Huppa er et tak på fire stenger. Ordet betydde opprinnelig brudekammeret, og baldakinen står i dag for parets nye hjem."
+                        "explanation": "Huppa er et tak på fire stenger. Ordet betydde opprinnelig brudekammeret, og i dag står taket for parets nye hjem."
                     },
                     {
                         "question": "Hvorfor er likklærne og kisten like for alle ved en jødisk begravelse?",
@@ -234,7 +234,7 @@
                             "Fordi kroppen skal kremeres etterpå"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Likheten er et poeng i seg selv. Den døde vaskes rituelt og kles i hvite klær som skal være like for alle."
+                        "explanation": "Likheten er et poeng i seg selv. Den døde vaskes etter faste regler og kles i hvite klær som skal være like for alle."
                     },
                     {
                         "question": "Hva er sjiva?",

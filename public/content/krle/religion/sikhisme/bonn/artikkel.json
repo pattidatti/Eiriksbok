@@ -15,7 +15,7 @@
     "Bønn i sikhismen handler mest om å huske Guds navn, ikke om å be om ting.",
     "Dagen begynner i timene før daggry og rammes inn av tre faste bønner.",
     "I gurdwaraen blir bønnen sunget av musikere, ikke lest opp av en prest.",
-    "Fellesmåltidet langar regnes som en del av det samme: bønn med hendene.",
+    "Fellesmåltidet langar regnes som en del av det samme: å be med hendene ved å lage og dele ut mat.",
     "Alle setter seg på det samme gulvet og spiser den samme maten."
   ],
   "concepts": [
@@ -37,7 +37,7 @@
     {
       "id": "kirtan",
       "term": "Kirtan",
-      "definition": "Å tilbe gjennom sang. Musikere synger salmer fra den hellige boka."
+      "definition": "Å tilbe Gud ved å synge. Musikere synger salmer fra den hellige boka."
     },
     {
       "id": "ardas",
@@ -52,7 +52,7 @@
     {
       "id": "seva",
       "term": "Seva",
-      "definition": "Frivillig arbeid for andre. I sikhismen regnes det som en måte å tjene Gud på."
+      "definition": "Frivillig arbeid for andre, uten betaling. I sikhismen regnes det som en måte å tjene Gud på."
     }
   ],
   "content": [
@@ -76,7 +76,7 @@
     },
     {
       "type": "text",
-      "content": "For å skjønne hvorfor det å huske er så sentralt, må vi vite hva sikhene mener er problemet med mennesket. Sikhismen bruker ordet haumai om det å være opptatt av seg selv. Så lenge du kretser rundt ditt eget, er du fanget. Målet er å bli fri mens du fortsatt lever, og veien dit går gjennom å huske Guds navn i stedet for å utføre ytre ritualer (Singh, 2018). Sikhismen vokste fram i et miljø som la vekt på et indre liv framfor faste ritualer (Kristiansen, Kværne og Jacobsen, 2024)."
+      "content": "For å skjønne hvorfor det å huske er så sentralt, må vi vite hva sikhene mener er problemet med mennesket. Sikhismen bruker ordet haumai om det å være opptatt av seg selv. Så lenge du bare tenker på deg selv, er du fanget. Målet er å bli fri mens du fortsatt lever, og veien dit går gjennom å huske Guds navn i stedet for å gjøre bestemte seremonier (Singh, 2018). Sikhismen vokste fram i et miljø som la vekt på et indre liv framfor faste ritualer (Kristiansen, Kværne og Jacobsen, 2024)."
     },
     {
       "type": "text",
@@ -143,7 +143,7 @@
     },
     {
       "type": "text",
-      "content": "Boka blir tatt fram hver morgen og lagt til ro hver kveld. Den ligger under en baldakin, dekket av fine klær, og en person vifter over den med en vifte som kalles chauri (Breidlid, 2026). Menn og kvinner deltar sammen i gudstjenesten (Kristiansen, Kværne og Jacobsen, 2024)."
+      "content": "Boka blir tatt fram hver morgen og lagt til ro hver kveld. Den ligger under en baldakin, altså en liten himmel av stoff over boka, dekket av fine klær, og en person vifter over den med en vifte som kalles chauri (Breidlid, 2026). Menn og kvinner deltar sammen i gudstjenesten (Kristiansen, Kværne og Jacobsen, 2024)."
     },
     {
       "type": "image",
@@ -177,7 +177,7 @@
     },
     {
       "type": "text",
-      "content": "Samlingen avsluttes med ardas, fellesbønnen. Den nevner blant annet dem som døde for troen gjennom sikhenes historie. Etter ardas blir det delt ut karah prasad, en søt puding, til alle som er til stede. Alle får det samme, både sikher og de som ikke er sikher. Det er ikke bare en kos i etterkant. Det skal vise at ingen står over noen andre (Breidlid, 2026)."
+      "content": "Samlingen avsluttes med ardas, fellesbønnen. Den nevner blant annet dem som døde for troen gjennom sikhenes historie. Etter ardas blir det delt ut karah prasad, en søt puding, til alle som er til stede. Alle får det samme, både sikher og de som ikke er sikher. Det er ikke bare noe godt å avslutte med. Det skal vise at ingen står over noen andre (Breidlid, 2026)."
     },
     {
       "type": "header",
@@ -193,7 +193,7 @@
     },
     {
       "type": "text",
-      "content": "Både råvarene og selve matlagingen er seva, altså frivillig arbeid som noen gir bort uten å få betalt for det (Breidlid, 2026). Skalaen kan bli enorm. Ved Harmandir Sahib i Amritsar, tempelet mange kaller Det gylne tempel, ligger et av verdens største kjøkken. Det gir gratis mat til over hundre tusen mennesker hver eneste dag (Jacobsen, 2024)."
+      "content": "Både råvarene og selve matlagingen er seva, altså frivillig arbeid som noen gir bort uten å få betalt for det (Breidlid, 2026). Det kan bli enormt stort. Ved Harmandir Sahib i Amritsar, tempelet mange kaller Det gylne tempel, ligger et av verdens største kjøkken. Det gir gratis mat til over hundre tusen mennesker hver eneste dag (Jacobsen, 2024)."
     },
     {
       "type": "component",
@@ -214,7 +214,7 @@
     },
     {
       "type": "text",
-      "content": "Nå henger bitene sammen. Sikhene mener at målet med et religiøst liv er å bli forent med Gud, som er én, evig, allvitende og allmektig (Kristiansen, Kværne og Jacobsen, 2024). Veien dit går ikke gjennom å utføre riktige ritualer på riktig måte, men gjennom å huske Guds navn og la det forandre hvordan du lever (Singh, 2018)."
+      "content": "Nå henger bitene sammen. Sikhene mener at målet med et religiøst liv er å bli ett med Gud, som er én, evig, allvitende og allmektig (Kristiansen, Kværne og Jacobsen, 2024). Veien dit går ikke gjennom å utføre riktige ritualer på riktig måte, men gjennom å huske Guds navn og la det forandre hvordan du lever (Singh, 2018)."
     },
     {
       "type": "text",
@@ -222,7 +222,7 @@
     },
     {
       "type": "text",
-      "content": "Neste gang du hører ordet bønn, er det verdt å spørre hva slags bønn det er snakk om. I sikhismen er svaret verken en bønneliste eller en fast stilling. Det er et navn som blir husket, morgen, kveld og natt, og et par hender som deler ut mat mens navnet huskes."
+      "content": "Neste gang du hører ordet bønn, er det verdt å spørre hva slags bønn det er snakk om. I sikhismen er svaret verken en liste med ønsker eller en bestemt kroppsstilling. Det er et navn som blir husket, morgen, kveld og natt, og et par hender som deler ut mat mens navnet huskes."
     },
     {
       "type": "component",
@@ -278,7 +278,7 @@
               "Den ble lagt til så sent som på 1900-tallet"
             ],
             "correctIndex": 1,
-            "explanation": "Japji Sahib står først i boka og resiteres uten musikk. Resten av boka er ordnet etter melodier og blir sunget (Jacobsen, 2020)."
+            "explanation": "Japji Sahib står først i boka og blir lest opp uten musikk. Resten av boka er ordnet etter melodier og blir sunget (Jacobsen, 2020)."
           },
           {
             "question": "Hvorfor sitter alle på gulvet under langar?",
@@ -289,7 +289,7 @@
               "Fordi maten er varm og må avkjøles"
             ],
             "correctIndex": 2,
-            "explanation": "Å sitte sammen på gulvet uttrykker likeverd, og det utfordret kasteinndelingen i det indiske samfunnet (Jacobsen, 2023; Singh, 2018)."
+            "explanation": "Å sitte sammen på gulvet viser at alle er like mye verdt, og det utfordret kasteinndelingen i det indiske samfunnet (Jacobsen, 2023; Singh, 2018)."
           },
           {
             "question": "Hva menes med seva?",
@@ -300,7 +300,7 @@
               "Musikerne som synger salmene"
             ],
             "correctIndex": 0,
-            "explanation": "Seva er frivillig tjeneste. Både råvarene og matlagingen i langar regnes som seva (Breidlid, 2026)."
+            "explanation": "Seva er frivillig arbeid for andre. Både råvarene og matlagingen i langar regnes som seva (Breidlid, 2026)."
           }
         ]
       }

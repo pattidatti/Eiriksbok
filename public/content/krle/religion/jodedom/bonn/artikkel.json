@@ -26,7 +26,7 @@
     {
       "id": "minjan",
       "term": "Minjan",
-      "definition": "Et bønnefellesskap. Etter tradisjonen må ti voksne menn være til stede for at gudstjenesten skifter fra privat til offentlig."
+      "definition": "Et bønnefellesskap. Etter tradisjonen må ti voksne menn være til stede for at bønnen regnes som en offentlig gudstjeneste og ikke bare privat bønn."
     },
     {
       "id": "siddur",
@@ -56,7 +56,7 @@
     },
     {
       "type": "text",
-      "content": "Alt dette kan han gjøre alene. Å be regnes som en religiøs plikt, en mitzva, og bønnene kan sies både alene og sammen med andre (Groth, 2026a). Men det finnes én ting han ikke får til på egen hånd, uansett hvor godt han ber. For at samlingen skal skifte karakter fra privat bønn til offentlig gudstjeneste, må det være ti voksne til stede. Der holder det ikke å være from. Der må man være mange."
+      "content": "Alt dette kan han gjøre alene. Å be regnes som en religiøs plikt, en mitzva, og bønnene kan sies både alene og sammen med andre (Groth, 2026a). Men det finnes én ting han ikke får til på egen hånd, uansett hvor godt han ber. For at samlingen skal gå fra å være privat bønn til å være offentlig gudstjeneste, må det være ti voksne til stede. Der hjelper det ikke hvor flink han er til å be. Der må de være mange."
     },
     {
       "type": "image",
@@ -66,7 +66,7 @@
     },
     {
       "type": "text",
-      "content": "Ortodokse jødiske menn ber tre faste bønner hver dag: shaharit om morgenen, minha om ettermiddagen og maariv om kvelden (Groth, 2026b). Bønnene fremsies stående, med ansiktet vendt mot Jerusalem, og hodet skal være dekket av en kipa eller en hatt (Groth, 2026a). Tefillin er etter jødisk religiøs lov påbudt for menn og gutter fra 13 år, altså fra bar mitzva (Groth, 2024b)."
+      "content": "Ortodokse jødiske menn ber tre faste bønner hver dag: shaharit om morgenen, minha om ettermiddagen og maariv om kvelden (Groth, 2026b). Bønnene sies stående, med ansiktet vendt mot Jerusalem, og hodet skal være dekket av en kipa eller en hatt (Groth, 2026a). Jødisk religiøs lov sier at menn og gutter skal bruke tefillin fra de er 13 år, altså fra bar mitzva, dagen da gutten selv får ansvaret for å følge budene (Groth, 2024b)."
     },
     {
       "type": "header",
@@ -74,7 +74,7 @@
     },
     {
       "type": "text",
-      "content": "En minjan er et bønnefellesskap. Etter tradisjonen må det være en minjan, ti voksne menn, til stede for at gudstjenesten skifter karakter fra det private til det offentlige (Groth, 2026a). Å be alene teller fullt ut, men å be sammen med andre regnes som mest verdifullt."
+      "content": "En minjan er et bønnefellesskap. Etter tradisjonen må det være en minjan, ti voksne menn, til stede for at bønnen regnes som en offentlig gudstjeneste og ikke bare privat bønn (Groth, 2026a). Å be alene teller fullt ut, men å be sammen med andre regnes som mest verdifullt."
     },
     {
       "type": "text",
@@ -109,7 +109,7 @@
     },
     {
       "type": "text",
-      "content": "Den andre store bønnen er Amida, på norsk kalt Attenbønnen. Den bes stille og stående, og utgjør kjernen i de fleste jødiske gudstjenester, ved siden av lesingen fra Toraen. I den lovpriser og takker man Gud, og ber om visdom, tilgivelse og helbredelse. Man ber også om at Messias snart må komme. Ifølge tradisjonen ble bønnen utformet allerede av skriveren Esra på 400-tallet fvt. (Groth, 2026a). Et helt rom kan altså stå stille samtidig, hver for seg, og likevel be den samme bønnen."
+      "content": "Den andre store bønnen er Amida, på norsk kalt Attenbønnen. Den bes stille og stående, og utgjør kjernen i de fleste jødiske gudstjenester, ved siden av lesingen fra Toraen. I den hyller og takker man Gud, og ber om visdom, tilgivelse og at syke skal bli friske. Man ber også om at Messias snart må komme. Ifølge tradisjonen ble bønnen laget allerede av skriveren Esra på 400-tallet fvt. (Groth, 2026a). Et helt rom med mennesker kan altså stå tause, hver for seg, og likevel be den samme bønnen."
     },
     {
       "type": "image",
@@ -123,7 +123,7 @@
     },
     {
       "type": "text",
-      "content": "Bønnene er samlet i en egen bønnebok, siddur, ved siden av de [hellige skriftene](/krle/religion/jodedom/hellige-tekster). Ordet kommer av seder, som betyr orden, og hver type gudstjeneste har sine faste bønner (Groth, 2026a). En fullstendig siddur inneholder liturgien som brukes i synagogen gjennom hele året, salmer, bønner til bruk i hjemmet og velsignelser til spesielle anledninger, som bryllup, begravelse og bar mitzva (Groth, 2022). Askenasiske og sefardiske jøder bruker ulike bønnebøker, og de ikke-ortodokse retningene har laget sine egne. Likevel er de viktigste bønnene fremdeles felles for alle retningene (Groth, 2026a)."
+      "content": "Bønnene er samlet i en egen bønnebok, siddur, ved siden av de [hellige skriftene](/krle/religion/jodedom/hellige-tekster). Ordet kommer av seder, som betyr orden, og hver type gudstjeneste har sine faste bønner (Groth, 2026a). En fullstendig siddur inneholder alle gudstjenestene som brukes i synagogen gjennom hele året, salmer, bønner til bruk hjemme og velsignelser til spesielle anledninger, som bryllup, begravelse og bar mitzva (Groth, 2022). Jøder med bakgrunn fra Sentral- og Øst-Europa og jøder med bakgrunn fra Spania og Midtøsten bruker ulike bønnebøker, og de ikke-ortodokse retningene har laget sine egne. Likevel er de viktigste bønnene fremdeles felles for alle retningene (Groth, 2026a)."
     },
     {
       "type": "text",
@@ -141,11 +141,11 @@
     },
     {
       "type": "text",
-      "content": "Slik har det ikke alltid vært. Så lenge tempelet i Jerusalem sto, var det der hele folket ba og ofret. Da romerne brente tempelet i år 70 evt., forsto rabbinerne at senteret for det hellige livet måtte flyttes hvis jødedommen skulle overleve som levende religion. Det ble flyttet to steder: til synagogen og til hjemmet (Groth, 2026a). Bønnen tok over plassen ofringene hadde hatt."
+      "content": "Slik har det ikke alltid vært. Så lenge tempelet i Jerusalem sto, var det der hele folket ba og ofret. Da romerne brente tempelet i år 70 evt., forsto de jødiske lærde, rabbinerne, at det religiøse livet måtte få nye steder å være hvis jødedommen skulle overleve. Det fikk to: synagogen og hjemmet (Groth, 2026a). Bønnen tok over plassen ofringene hadde hatt."
     },
     {
       "type": "text",
-      "content": "Derfor er det heller ikke mulig å gi ett svar på når og hvordan jøder ber i dag. Noen følger den gamle rabbinske tradisjonen og ber gjennom hele dagen, andre møtes bare på sabbaten og høytidene, og noen ser på seg selv mest som kulturelle jøder (Groth, 2026a). I Norge holder Det Mosaiske Trossamfund gudstjeneste hver sabbat og på alle helligdager (Det Mosaiske Trossamfund, u.å.), og i 2021 ga de ut sidduren i norsk oversettelse, med kommentarer (Groth, 2022). Mannen i stua kan be alene. Men han venter på ni til."
+      "content": "Derfor er det heller ikke mulig å gi ett svar på når og hvordan jøder ber i dag. Noen følger den gamle tradisjonen fra rabbinerne og ber gjennom hele dagen, andre møtes bare på sabbaten og høytidene, og noen ser på seg selv mest som kulturelle jøder (Groth, 2026a). I Norge holder Det Mosaiske Trossamfund gudstjeneste hver sabbat og på alle helligdager (Det Mosaiske Trossamfund, u.å.), og i 2021 ga de ut sidduren i norsk oversettelse, med kommentarer (Groth, 2022). Mannen i stua kan be alene. Men han venter på ni til."
     },
     {
       "type": "component",
@@ -165,7 +165,7 @@
         ],
         "gaaVidere": [
           "Finn ut hva Kaddish er, og i hvilke situasjoner den bes.",
-          "Skriv en kort tekst om en handling du bare kan gjøre sammen med andre, og forklar hva fellesskapet tilfører.",
+          "Skriv en kort tekst om noe du bare kan gjøre sammen med andre, og forklar hva de andre gjør med det.",
           "Diskuter i klassen: er det en fordel eller en ulempe at bønnene er de samme hver dag?"
         ]
       }
@@ -184,7 +184,7 @@
               "Den stille bønnen som bes stående"
             ],
             "correctAnswer": 1,
-            "explanation": "Etter tradisjonen må ti voksne menn være til stede for at gudstjenesten skifter karakter fra det private til det offentlige."
+            "explanation": "Etter tradisjonen må ti voksne menn være til stede for at bønnen regnes som en offentlig gudstjeneste og ikke bare privat bønn."
           },
           {
             "question": "Hva heter de tre faste daglige bønnene?",

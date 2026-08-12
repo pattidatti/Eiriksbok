@@ -6,17 +6,22 @@
     "topic": "religioner",
     "religion": "mormonisme",
     "dimension": "narrative",
-    "comparison_tags": ["skapelse", "narrative"],
+    "comparison_tags": [
+        "skapelse",
+        "narrative"
+    ],
     "category": "Mormonismen",
     "readTime": "9 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Jesu Kristi Kirke av Siste Dagers Hellige avviser at Gud skapte verden av ingenting.",
-        "Gud organiserte materie og elementer som allerede fantes, slik en byggmester bruker materialer.",
+        "Jesu Kristi Kirke av Siste Dagers Hellige sier nei til at Gud skapte verden av ingenting.",
+        "Gud ordnet materie og materialer som allerede fantes, slik en byggmester bygger med det han har.",
         "Grunnstoffene er evige, og kjernen i et menneske ble aldri skapt.",
         "Menneskene levde som Guds åndebarn før jorda ble til.",
-        "Fordi ånd også regnes som en form for materie, blir kroppen sett på som noe godt."
+        "Fordi ånd også er en slags materie, ser kirken på kroppen som noe godt."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "creatio-ex-nihilo",
@@ -36,7 +41,7 @@
         {
             "id": "elementer-sdh",
             "term": "Elementer",
-            "definition": "Byggematerialet Gud brukte da jorda ble organisert. Ifølge mormonismen har de alltid eksistert."
+            "definition": "Byggematerialene Gud brukte da han ordnet jorda. Ifølge mormonismen har de alltid vært der."
         },
         {
             "id": "siste-dagers-hellige",
@@ -51,7 +56,7 @@
         },
         {
             "type": "text",
-            "content": "Læren de fleste kristne kirker deler, har et latinsk navn: creatio ex nihilo, som betyr skapelse ut av intet. Den sier at Gud ikke hadde noe å bygge med i det hele tatt. Han talte, og da fantes verden. Nettopp dette skiller den kristne Gud fra Platons håndverkergud, som bare formet materie som allerede lå der (Tjønneland, 2024). Siste dagers hellige avviser creatio ex nihilo. De mener Gud gjorde omtrent det håndverkerguden gjorde: han ordnet noe som fantes fra før."
+            "content": "Læren de fleste kristne kirker deler, har et latinsk navn: creatio ex nihilo, som betyr skapelse ut av intet. Den sier at Gud ikke hadde noe å bygge med i det hele tatt. Han talte, og da fantes verden. Nettopp dette skiller den kristne Gud fra Platons håndverkergud, som bare formet materie som allerede lå der (Tjønneland, 2024). Siste dagers hellige sier nei til creatio ex nihilo. De mener Gud gjorde omtrent det håndverkerguden gjorde: han ordnet noe som fantes fra før."
         },
         {
             "type": "image",
@@ -61,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Kirken ble formelt stiftet i 1830 av Joseph Smith, som levde fra 1805 til 1844. Siden 1847 har hovedsetet ligget i Salt Lake City i Utah (Bloch-Hoell mfl., 2024). Du kan lese mer om ham i artikkelen om [Joseph Smith](/krle/religion/mormonisme/grunnleggere). Kirken ser på seg selv som den kristne kirken gjenopprettet, og bruker flere hellige tekster i tillegg til Bibelen, blant annet Mormons bok. Medlemmene har lenge blitt kalt mormoner, men kirken ber i dag om at den omtales med sitt fulle navn, og at medlemmene kalles siste dagers hellige (Bloch-Hoell mfl., 2024)."
+            "content": "Kirken ble formelt stiftet i 1830 av Joseph Smith, som levde fra 1805 til 1844. Siden 1847 har hovedkvarteret ligget i Salt Lake City i Utah (Bloch-Hoell mfl., 2024). Du kan lese mer om ham i artikkelen om [Joseph Smith](/krle/religion/mormonisme/grunnleggere). Kirken mener den er den kristne kirken satt opp igjen slik den var i starten, og bruker flere hellige tekster i tillegg til Bibelen, blant annet Mormons bok. Medlemmene har lenge blitt kalt mormoner, men kirken ber i dag om å bli kalt ved sitt fulle navn, og at medlemmene kalles siste dagers hellige (Bloch-Hoell mfl., 2024)."
         },
         {
             "type": "header",
@@ -69,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "I en preken i 1839 sa Joseph Smith at jord og vann i sin grunnleggende tilstand hadde eksistert i all evighet. Kirkens eget essay Bli som Gud sier rett ut at han med dette forkastet læren om skapelse ut av intet, og at Gud organiserte universet av grunnstoffer som allerede fantes (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a)."
+            "content": "I en preken i 1839 sa Joseph Smith at jord og vann, helt ned til de minste delene, alltid hadde vært der. Kirkens eget essay Bli som Gud sier rett ut at han med dette sa nei til læren om skapelse ut av intet, og at Gud ordnet universet av grunnstoffer som allerede fantes (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a)."
         },
         {
             "type": "text",
@@ -80,7 +85,7 @@
             "items": [
                 "Grunnstoffene er evige. De har alltid vært der (Lære og pakter 93:33).",
                 "Intelligens, eller sannhetens lys, ble ikke skapt eller dannet, og kan heller ikke bli det (Lære og pakter 93:29).",
-                "Det finnes ikke noe slikt som immaterielt stoff. All ånd er materie, men den er finere og renere (Lære og pakter 131:7)."
+                "Det finnes ikke noe stoff som er uten materie. All ånd er materie, men den er finere og renere (Lære og pakter 131:7)."
             ]
         },
         {
@@ -104,7 +109,7 @@
         },
         {
             "type": "text",
-            "content": "Abrahams bok er en av tekstene i Den kostelige perle. Der fortelles det at Abraham fikk se de intelligenser som var organisert før verden ble til. Blant dem sto en som var Gud lik, og han la fram en plan for de andre (Abrahams bok 3:22-24). Ordene han bruker, er ikke ordene til en som lager noe av ingenting."
+            "content": "Abrahams bok er en av tekstene i Den kostelige perle. Der står det at Abraham fikk se de intelligensene som var ordnet før verden ble til. Blant dem sto en som var Gud lik, og han la fram en plan for de andre (Abrahams bok 3:22-24). Ordene han bruker, er ikke ordene til en som lager noe av ingenting."
         },
         {
             "type": "component",
@@ -124,7 +129,7 @@
         },
         {
             "type": "text",
-            "content": "Rett etter planen står begrunnelsen. Vi vil prøve dem ved dette for å se om de vil gjøre alt som Herren deres Gud befaler dem, heter det (Abrahams bok 3:25). Livet på jorda er altså tenkt som en prøve, ikke som en straff. Hva siste dagers hellige mener skjer etterpå, kan du lese om i artikkelen om [evig progresjon](/krle/religion/mormonisme/frelse)."
+            "content": "Rett etter planen står grunnen. Vi vil prøve dem ved dette for å se om de vil gjøre alt som Herren deres Gud befaler dem, heter det (Abrahams bok 3:25). Livet på jorda er altså tenkt som en prøve, ikke som en straff. Hva siste dagers hellige mener skjer etterpå, kan du lese om i artikkelen om [frelse](/krle/religion/mormonisme/frelse)."
         },
         {
             "type": "image",
@@ -138,7 +143,7 @@
         },
         {
             "type": "text",
-            "content": "Ifølge kirkens egen studieveiledning utførte Jesus Kristus skapelsen under ledelse av Gud Faderen. Jorda ble til i seks trinn som kalles dager, men Herren har ikke åpenbart hvor lang hver dag var (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Fordi kirken lar dette spørsmålet stå åpent, kan medlemmer mene forskjellig om hvor gammel jorda er. Siste dagers hellige ser dessuten Faderen og Sønnen som to atskilte personer med hver sin kropp (Bloch-Hoell mfl., 2024). Mer om det finner du i artikkelen om [Guddommen](/krle/religion/mormonisme/gudsbilde)."
+            "content": "Ifølge kirkens egen studieveiledning var det Jesus Kristus som skapte verden, mens Gud Faderen ledet arbeidet. Jorda ble til i seks trinn som kalles dager, men Gud har ikke fortalt hvor lang hver dag var (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Fordi kirken lar dette spørsmålet stå åpent, kan medlemmer mene forskjellig om hvor gammel jorda er. Siste dagers hellige ser dessuten Faderen og Sønnen som to atskilte personer med hver sin kropp (Bloch-Hoell mfl., 2024). Mer om det finner du i artikkelen om [Guddommen](/krle/religion/mormonisme/gudsbilde)."
         },
         {
             "type": "text",
@@ -156,7 +161,7 @@
         },
         {
             "type": "text",
-            "content": "Når materie er evig, blir mennesket noe annet enn et påfunn. Slik siste dagers hellige ser det, ble den innerste kjernen i et menneske aldri laget, og den kan ikke bli borte. Kirken lærer at mennesker kan utvikle guddommelige egenskaper over tid, og essayet Bli som Gud viser til at Joseph Smith mente et menneske selv kan bli en gud (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Kirken sier samtidig at lite er åpenbart om denne tanken, og at den derfor blir lite undervist. Men den henger tett sammen med troen på at Gud ikke lagde menneskene fra bunnen av. De fantes allerede."
+            "content": "Når materien alltid har vært der, er ikke mennesket noe Gud fant på. Slik siste dagers hellige ser det, ble den innerste kjernen i et menneske aldri laget, og den kan ikke bli borte. Kirken lærer at mennesker kan utvikle guddommelige egenskaper over tid, og essayet Bli som Gud viser til at Joseph Smith mente et menneske selv kan bli en gud (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Kirken sier samtidig at Gud har fortalt lite om denne tanken, og at den derfor blir lite undervist. Men den henger tett sammen med troen på at Gud ikke lagde menneskene fra bunnen av. De fantes allerede."
         },
         {
             "type": "text",
@@ -167,10 +172,10 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva betyr creatio ex nihilo, og hvorfor avviser Jesu Kristi Kirke av Siste Dagers Hellige den?",
+                    "Hva betyr creatio ex nihilo, og hvorfor sier Jesu Kristi Kirke av Siste Dagers Hellige nei til den?",
                     "Hva sier Lære og pakter 93:33 om grunnstoffene?",
                     "Hva menes med det førjordiske livet?",
-                    "Hvem utførte selve skapelsen ifølge kirkens studieveiledning, og under hvem sin ledelse?"
+                    "Hvem skapte verden ifølge kirkens studieveiledning, og hvem ledet arbeidet?"
                 ],
                 "reflekter": [
                     "Forklar med egne ord hvorfor det betyr noe om Gud skapte av ingenting eller ordnet materie som fantes fra før.",
@@ -199,18 +204,18 @@
                             "Skapelse som gjentar seg"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Creatio ex nihilo er latin for skapelse ut av intet. Det er den vanlige kristne læren, og den avvises av Jesu Kristi Kirke av Siste Dagers Hellige."
+                        "explanation": "Creatio ex nihilo er latin for skapelse ut av intet. Det er den vanlige kristne læren, men Jesu Kristi Kirke av Siste Dagers Hellige sier nei til den."
                     },
                     {
                         "question": "Hva mener siste dagers hellige at Gud gjorde da verden ble til?",
                         "options": [
                             "Han skapte alt av ingenting med ordet sitt",
-                            "Han organiserte materie og elementer som fantes fra før",
+                            "Han ordnet materie og materialer som fantes fra før",
                             "Han lot verden bli til av seg selv",
                             "Han kopierte en verden som fantes et annet sted"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Kirkens essay Bli som Gud sier at Gud organiserte universet av grunnstoffer som allerede fantes. Joseph Smith forkastet uttrykkelig skapelse ut av intet."
+                        "explanation": "Kirkens essay Bli som Gud sier at Gud ordnet universet av grunnstoffer som allerede fantes. Joseph Smith sa tydelig nei til skapelse ut av intet."
                     },
                     {
                         "question": "Hva sier Lære og pakter 131:7 om ånd?",
@@ -221,7 +226,7 @@
                             "At ånd blir til når kroppen dør"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Verset sier at det ikke finnes noe slikt som immaterielt stoff, og at all ånd er materie, bare finere og renere. Derfor står ikke ånd og kropp mot hverandre."
+                        "explanation": "Verset sier at det ikke finnes noe stoff uten materie, og at all ånd er materie, bare finere og renere. Derfor står ikke ånd og kropp mot hverandre."
                     },
                     {
                         "question": "Hva lærer kirken om menneskene før jorda ble til?",
@@ -239,11 +244,11 @@
                         "options": [
                             "Nøyaktig 24 timer",
                             "Nøyaktig tusen år",
-                            "At Herren ikke har åpenbart hvor lang hver dag var",
+                            "At Gud ikke har fortalt hvor lang hver dag var",
                             "At dagene er en ren fortelling uten mening"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Studieveiledningen slår fast at Herren ikke har åpenbart hvor lang hver dag var. Derfor kan medlemmer mene ulikt om alderen på jorda."
+                        "explanation": "Studieveiledningen slår fast at Gud ikke har fortalt hvor lang hver dag var. Derfor kan medlemmer mene ulikt om alderen på jorda."
                     }
                 ]
             }

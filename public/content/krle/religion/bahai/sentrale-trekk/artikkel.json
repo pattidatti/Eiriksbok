@@ -16,9 +16,9 @@
     "details": [
         "Kjernen er enhet: én Gud, én religion og én menneskehet. De tre henger sammen som ledd i en kjede.",
         "Bahá'íer mener at Gud har sendt budbringere gjennom historien med det samme budskapet, tilpasset sin egen tid. Det kalles progressiv åpenbaring.",
-        "Religionen oppsto i Iran på 1800-tallet. Bahá'u'lláh (1817-1892) erklærte seg som profet i Bagdad i 1863.",
+        "Religionen oppsto i Iran på 1800-tallet. Bahá'u'lláh (1817-1892) sa at han var profet i Bagdad i 1863.",
         "Det finnes rundt seks millioner bahá'íer i verden i dag, og omtrent 1100 medlemmer i Norge i 2024.",
-        "Bahá'í har verken prester eller én øverste leder. Et valgt råd på ni, Det universelle rettferdighetens hus, leder verdenssamfunnet."
+        "Bahá'í har verken prester eller én øverste leder. Et valgt råd på ni, Det universelle rettferdighetens hus, leder bahá'íene i hele verden."
     ],
     "createdDate": "2025-12-04T10:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -41,7 +41,7 @@
         {
             "id": "bab",
             "term": "Báb",
-            "definition": "Ali Muhammad (1819-1850) kalte seg Báb, som betyr port. Han sa han var forløperen til den som var ventet, og ble henrettet i 1850."
+            "definition": "Ali Muhammad (1819-1850) kalte seg Báb, som betyr port. Han sa at han kom rett før den som folk ventet på, og ble henrettet i 1850."
         },
         {
             "id": "det-universelle-rettferdighetens-hus",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Ordet som binder alt sammen, er enhet. Bahá'íer snakker om tre enheter som henger i hverandre. Guds enhet: det finnes bare én Gud, som har skapt alt. Religionenes enhet: alle de store religionene kommer fra den samme Gud. Menneskehetens enhet: alle mennesker er likeverdige (Vogt & Winje, 2026). Dette er ikke tre løsrevne læresetninger. Det er tre sider av den samme tanken, og tar du bort én av dem, faller de to andre."
+            "content": "Ordet som binder alt sammen, er enhet. Bahá'íer snakker om tre enheter som henger i hverandre. Guds enhet: det finnes bare én Gud, som har skapt alt. Religionenes enhet: alle de store religionene kommer fra den samme Gud. Menneskehetens enhet: alle mennesker er likeverdige (Vogt & Winje, 2026). Dette er ikke tre løse setninger som står hver for seg. Det er tre sider av den samme tanken, og tar du bort én av dem, faller de to andre."
         },
         {
             "type": "header",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "Men hvordan kan religionene være den samme religionen når de sier så ulike ting? Bahá'íer forklarer det slik: Gud sender budbringere gjennom historien, én etter én. Blant dem regner de Krishna, Buddha, Moses, Jesus og Muhammed (Vogt & Winje, 2026). Bahá'í-samfunnet nevner også Abraham, Zarathustra, Báb og Bahá'u'lláh i den samme rekka (Bahá'í International Community, u.a.-b). Budskapet er det samme hver gang. Det som skifter, er tiden, kulturen og hvor langt menneskene er kommet. Religionene er derfor ikke konkurrenter, men kapitler i den samme fortellingen. Tanken kalles progressiv åpenbaring. Hvem budbringerne var, kan du lese mer om i artikkelen om [grunnleggerne](/krle/religion/bahai/grunnleggere)."
+            "content": "Men hvordan kan religionene være den samme religionen når de sier så ulike ting? Bahá'íer forklarer det slik: Gud sender budbringere gjennom historien, én etter én. Blant dem regner de Krishna, Buddha, Moses, Jesus og Muhammad (Vogt & Winje, 2026). Bahá'í-samfunnet nevner også Abraham, Zarathustra, Báb og Bahá'u'lláh i den samme rekka (Bahá'í International Community, u.a.-b). Budskapet er det samme hver gang. Det som skifter, er tiden, kulturen og hvor langt menneskene er kommet. Religionene er derfor ikke konkurrenter, men kapitler i den samme fortellingen. Tanken kalles progressiv åpenbaring. Hvem budbringerne var, kan du lese mer om i artikkelen om [grunnleggerne](/krle/religion/bahai/grunnleggere)."
         },
         {
             "type": "component",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Legg merke til hva denne tanken gjør med et gammelt stridsspørsmål. Hvem har den rette troen? I bahá'í blir spørsmålet nesten meningsløst. Bahá'u'lláh, som religionen har navn etter, regnes som Guds budbringer for vår tid, og bahá'íer mener at læren hans passer særlig godt til en verden der alt henger sammen (Vogt & Winje, 2026). Men de tidligere budbringerne blir ikke avvist. De regnes som ekte. Hvordan bahá'íer tenker om Gud selv, står i artikkelen om [gudsbildet](/krle/religion/bahai/gudsbilde)."
+            "content": "Legg merke til hva denne tanken gjør med et gammelt stridsspørsmål. Hvem har den rette troen? I bahá'í blir spørsmålet nesten meningsløst. Bahá'u'lláh, som religionen har navn etter, regnes som Guds budbringer for vår tid, og bahá'íer mener at læren hans passer særlig godt til en verden der alt henger sammen (Vogt & Winje, 2026). Men de tidligere budbringerne blir ikke vraket. Bahá'íer mener de var ekte. Hvordan bahá'íer tenker om Gud selv, står i artikkelen om [gudsbildet](/krle/religion/bahai/gudsbilde)."
         },
         {
             "type": "header",
@@ -93,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í vokste ut av bestemte forventninger om endetiden i sjiaislam, den nest største retningen i islam. Sjiamuslimer venter på at den tolvte imamen, en religiøs leder som forsvant på 800-tallet, skal komme tilbake. I 1844, tusen år etter at han forsvant, sa Ali Muhammad (1819-1850) at han var Báb, som betyr port, og at han var forløperen til den som var ventet. Báb ble henrettet i 1850. Etter hans død var det flere som mente seg utpekt til å oppfylle det Báb hadde varslet. Iraneren Mirza Husayn-Ali Núri (1817-1892) tok navnet Bahá'u'lláh, som betyr Guds herlighet, og samlet de fleste tilhengerne. I 1863 erklærte han seg som profet i Bagdad. Under ledelsen til Bahá'u'lláh, sønnen hans Abdu'l-Bahá (1844-1921) og Shoghi Effendi (1897-1957), som var dattersønnen til Abdu'l-Bahá, vokste bahá'í fram som en egen verdensreligion (Vogt & Winje, 2026)."
+            "content": "Bahá'í vokste ut av bestemte forventninger om verdens slutt i sjiaislam, den nest største retningen i islam. Sjiamuslimer venter på at den tolvte imamen, en religiøs leder som forsvant på 800-tallet, skal komme tilbake. I 1844, tusen år etter at han forsvant, sa Ali Muhammad (1819-1850) at han var Báb, som betyr port, og at han kom rett før den som folk ventet på. Báb ble henrettet i 1850. Etter at han døde, var det flere som mente at de var den Báb hadde varslet. Iraneren Mirza Husayn-Ali Núri (1817-1892) tok navnet Bahá'u'lláh, som betyr Guds herlighet, altså Guds glans og storhet, og fikk med seg de fleste av dem som hadde fulgt Báb. I 1863 sa han at han var profet i Bagdad. Under ledelsen til Bahá'u'lláh, sønnen hans Abdu'l-Bahá (1844-1921) og Shoghi Effendi (1897-1957), som var dattersønnen til Abdu'l-Bahá, vokste bahá'í fram som en egen verdensreligion (Vogt & Winje, 2026)."
         },
         {
             "type": "component",
@@ -105,13 +105,13 @@
         },
         {
             "type": "text",
-            "content": "Sitatet er også en arbeidsplan. Enhet er ikke bare noe bahá'íer tror på, det er noe de mener må gjøres. Men tanken har kostet dem dyrt. Tradisjonell islam regner bahá'í som en vranglære, altså en lære som bryter med det som er rett tro, fordi bahá'íer anerkjenner en profet etter Muhammed, som i islam kalles profetenes segl, altså den siste profeten. I Iran ble religionen forbudt i 1983. Bahá'íer der får eiendom tatt fra seg, blir fengslet, og henrettelser har rammet mange (Vogt & Winje, 2026)."
+            "content": "Sitatet er også en oppgave å jobbe med. Enhet er ikke bare noe bahá'íer tror på, det er noe de mener må gjøres. Men tanken har kostet dem dyrt. Tradisjonell islam regner bahá'í som en vranglære, altså en lære som bryter med det som er rett tro, fordi bahá'íer godtar en profet etter Muhammad, som i islam kalles profetenes segl, altså den aller siste profeten. I Iran ble religionen forbudt i 1983. Bahá'íer der får eiendommen sin tatt fra seg og blir satt i fengsel, og mange er blitt henrettet (Vogt & Winje, 2026)."
         },
         {
             "type": "image",
             "src": "/images/bahai/sentrale-trekk-02.webp",
             "alt": "Gammel bydel i Bagdad ved elvebredden",
-            "caption": "I Bagdad erklærte Bahá'u'lláh seg som profet i 1863."
+            "caption": "I Bagdad sa Bahá'u'lláh at han var profet i 1863."
         },
         {
             "type": "header",
@@ -119,11 +119,11 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í har verken presteskap eller én øverste leder. I stedet ledes verdenssamfunnet av et råd på ni medlemmer som velges, Det universelle rettferdighetens hus, opprettet i 1963 (Vogt & Winje, 2026; Bahá'í International Community, u.a.-d). Verdenssenteret ligger på Karmel-fjellet i Haifa i Israel. Felles gudstjeneste har mindre plass enn i mange andre religioner, men bønn og meditasjon betyr mye for den enkelte, og bahá'íer regner det som like viktig som samfunnsarbeidet (Vogt & Winje, 2026). Mer om hvordan bahá'íer ber, står i artikkelen om [bønn](/krle/religion/bahai/bonn)."
+            "content": "Bahá'í har verken prester eller én øverste leder. I stedet ledes bahá'íene i verden av et råd på ni medlemmer som velges, Det universelle rettferdighetens hus, opprettet i 1963 (Vogt & Winje, 2026; Bahá'í International Community, u.a.-d). Verdenssenteret ligger på Karmel-fjellet i Haifa i Israel. Felles gudstjeneste har mindre plass enn i mange andre religioner, men bønn og meditasjon betyr mye for den enkelte, og bahá'íer regner det som like viktig som samfunnsarbeidet (Vogt & Winje, 2026). Mer om hvordan bahá'íer ber, står i artikkelen om [bønn](/krle/religion/bahai/bonn)."
         },
         {
             "type": "text",
-            "content": "Tidsregningen bygger på tallene ni og nitten. Året deles i 19 måneder på 19 dager, og den nittende dagen i hver måned feires som nittendagsfest. Ni hellige dager markeres i året. Den viktigste er ridván i april og mai, som minner om at Bahá'u'lláh erklærte seg som profet. Bahá'í har fjorten templer. Hvert tempel har én kuppel, som skal symbolisere enheten mellom Gud og menneskeheten, og ni inngangsdører, som skal vise at alle religioner kan forstås som innganger til bahá'í. Templene er åpne for alle, uansett hva de tror (Vogt & Winje, 2026)."
+            "content": "Tidsregningen bygger på tallene ni og nitten. Året deles i 19 måneder på 19 dager, og den nittende dagen i hver måned samles bahá'íene lokalt til det som kalles nittendagsfesten. Ni dager i året er hellige. Den viktigste er ridván i april og mai, som minner om at Bahá'u'lláh sa at han var profet. Bahá'í har fjorten templer. Hvert tempel har én kuppel, som skal symbolisere enheten mellom Gud og menneskeheten, og ni inngangsdører, som skal vise at alle religioner kan forstås som innganger til bahá'í. Templene er åpne for alle, uansett hva de tror (Vogt & Winje, 2026)."
         },
         {
             "type": "image",
@@ -137,11 +137,11 @@
         },
         {
             "type": "text",
-            "content": "Menneskehetens enhet er ikke ment som en fin tanke man nikker til. Bahá'í-samfunnet samarbeider med FN og andre organisasjoner og arbeider for et verdensparlament, en øverste domstol, et felles økonomisk system og et felles verdensspråk (Vogt & Winje, 2026). Likestilling mellom kvinner og menn er uttalt lære, og det samme er kampen mot alle former for fordommer, allmenn utdanning og å fjerne ytterpunktene av rikdom og fattigdom (Bahá'í International Community, u.a.-a; Bahá'í International Community, u.a.-c). Bahá'íer mener også at religion og vitenskap må stemme overens. Slik de ser det, henger dette sammen: er Gud én og sannheten én, kan ikke tro og fornuft peke i hver sin retning."
+            "content": "Menneskehetens enhet er ikke ment som en fin tanke man nikker til. Bahá'í-samfunnet samarbeider med FN og andre organisasjoner og arbeider for et verdensparlament, en øverste domstol, et felles økonomisk system og et felles verdensspråk (Vogt & Winje, 2026). Likestilling mellom kvinner og menn står tydelig i læren, og det samme gjør kampen mot alle slags fordommer, skole for alle, og det å fjerne både den ekstreme rikdommen og den ekstreme fattigdommen (Bahá'í International Community, u.a.-a; Bahá'í International Community, u.a.-c). Bahá'íer mener også at religion og vitenskap må stemme overens. Slik de ser det, henger dette sammen: er Gud én og sannheten én, kan ikke tro og fornuft peke i hver sin retning."
         },
         {
             "type": "text",
-            "content": "Som alle religioner rommer bahá'í uenighet. Det har vært forsøk på splittelse og noen utbrytergrupper, blant annet de såkalte frie bahá'íene. Striden har først og fremst handlet om hvem som skulle lede bevegelsen (Vogt & Winje, 2026). De aller fleste bahá'íer i dag følger Det universelle rettferdighetens hus, mens utbrytergruppene er små. Bahá'íer bor dessuten i svært mange land og kulturer, og lever ut troen på ulike måter. Når du leser «bahá'íer mener», er det altså hovedlinjen i læren det er snakk om, ikke en fasit alle er enige om. En religion som gjør enhet til hovedsaken, slipper altså ikke unna spørsmålet om hvem som har myndighet. Selve læren henter bahá'íer fra [de hellige tekstene](/krle/religion/bahai/hellige-tekster), og hva de håper på for det enkelte mennesket, kan du lese om i artikkelen om [frelse](/krle/religion/bahai/frelse)."
+            "content": "Som i alle religioner er ikke alle bahá'íer enige. Det har vært forsøk på splittelse og noen utbrytergrupper, blant annet de såkalte frie bahá'íene. Striden har først og fremst handlet om hvem som skulle lede bevegelsen (Vogt & Winje, 2026). De aller fleste bahá'íer i dag følger Det universelle rettferdighetens hus, mens utbrytergruppene er små. Bahá'íer bor dessuten i svært mange land og kulturer, og lever ut troen på ulike måter. Når du leser «bahá'íer mener», er det altså hovedlinjen i læren det er snakk om, ikke en fasit alle er enige om. En religion som gjør enhet til hovedsaken, slipper altså ikke unna spørsmålet om hvem som bestemmer. Selve læren henter bahá'íer fra [de hellige tekstene](/krle/religion/bahai/hellige-tekster), og hva de håper på for det enkelte mennesket, kan du lese om i artikkelen om [frelse](/krle/religion/bahai/frelse)."
         },
         {
             "type": "component",
@@ -191,7 +191,7 @@
                             "At mennesker gradvis finner opp religionene selv"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Bahá'íer regner blant andre Krishna, Buddha, Moses, Jesus og Muhammed som budbringere fra Gud. Budskapet er det samme, men formen passer til tiden og kulturen."
+                        "explanation": "Bahá'íer regner blant andre Krishna, Buddha, Moses, Jesus og Muhammad som budbringere fra Gud. Budskapet er det samme, men formen passer til tiden og kulturen."
                     },
                     {
                         "question": "Hvor og når oppsto bahá'í?",
@@ -202,7 +202,7 @@
                             "I Irak under første verdenskrig"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Bahá'í er en religion av iransk opprinnelse, grunnlagt i andre halvdel av 1800-tallet. Bahá'u'lláh erklærte seg som profet i Bagdad i 1863."
+                        "explanation": "Bahá'í startet i Iran i andre halvdel av 1800-tallet. Bahá'u'lláh sa at han var profet i Bagdad i 1863."
                     },
                     {
                         "question": "Hvordan ledes bahá'í-samfunnet i verden i dag?",
@@ -213,7 +213,7 @@
                             "Av et møte mellom alle nasjonale prester"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Bahá'í har verken presteskap eller én verdensleder. Det universelle rettferdighetens hus, et valgt råd på ni, ble opprettet i 1963."
+                        "explanation": "Bahá'í har verken prester eller én verdensleder. Det universelle rettferdighetens hus, et valgt råd på ni, ble opprettet i 1963."
                     },
                     {
                         "question": "Omtrent hvor mange bahá'íer finnes det i verden i dag?",

@@ -14,11 +14,11 @@
     "readTime": "6 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Bønn beskrives som en oppriktig samtale med den himmelske Faderen.",
+        "Bønn er en ærlig samtale med Gud, som medlemmene kaller den himmelske Faderen.",
         "Bønnen har fire deler: tiltale, takk, det du ber om, og avslutning i Jesu Kristi navn.",
-        "Ordene er ikke fastlagt. Veiledningen fraråder utenatlærte fraser uten mening.",
+        "Ordene er ikke bestemt på forhånd. Kirken advarer mot pugget tekst du ikke mener noe med.",
         "Moronis løfte gjør bønn til en måte å finne ut om noe er sant.",
-        "Medlemmene rådes til å be alene morgen og kveld, sammen med familien, og før hvert måltid."
+        "Kirken ber medlemmene be alene morgen og kveld, sammen med familien og før hvert måltid."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -26,7 +26,7 @@
         {
             "id": "moronis-lofte",
             "term": "Moronis løfte",
-            "definition": "Avsnittet bakerst i Mormons bok som sier at den som spør Gud oppriktig, skal få vite om det som står der er sant."
+            "definition": "Avsnittet bakerst i Mormons bok som sier at den som spør Gud ærlig, skal få vite om det som står der er sant."
         },
         {
             "id": "himmelske-fader",
@@ -56,7 +56,7 @@
         },
         {
             "type": "text",
-            "content": "Avsnittet er skrevet i navnet til Moroni, og i Jesu Kristi Kirke av Siste Dagers Hellige kalles det Moronis løfte. Der står det at den som spør Gud «av et oppriktig hjerte, med ærlig hensikt» og har tro på Kristus, skal få sannheten åpenbart ved Den hellige ånds kraft (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Bønn er altså ikke bare noe medlemmene sier. Det er også måten de mener et menneske kan finne ut om noe stemmer."
+            "content": "Avsnittet er skrevet i navnet til Moroni, og i Jesu Kristi Kirke av Siste Dagers Hellige kalles det Moronis løfte. Der står det at den som spør Gud «av et oppriktig hjerte, med ærlig hensikt» og tror på Kristus, skal få vite hva som er sant. Svaret kommer gjennom Den hellige ånd (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Bønn er altså ikke bare noe medlemmene sier. Det er også måten de mener et menneske kan finne ut om noe stemmer."
         },
         {
             "type": "image",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Kirkens egen veiledning beskriver bønn som «en oppriktig, dypfølt samtale med vår himmelske Fader», og sier at man skal be til Gud og ikke til noen annen (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Hvordan kirken tenker om denne Guden, kan du lese mer om i artikkelen om [gudsbildet](/krle/religion/mormonisme/gudsbilde). Ordet samtale er verdt å merke seg. En samtale har to sider. Noen sier noe, og noe kommer tilbake. Bønnen er derfor ikke tenkt som en formel som virker hvis den sies riktig, men som en henvendelse fra en person til en annen."
+            "content": "Kirkens egen veiledning beskriver bønn som «en oppriktig, dypfølt samtale med vår himmelske Fader», og sier at man skal be til Gud og ikke til noen annen (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Hvordan kirken tenker om denne Guden, kan du lese mer om i artikkelen om [gudsbildet](/krle/religion/mormonisme/gudsbilde). Ordet samtale er verdt å merke seg. En samtale har to sider. Noen sier noe, og noe kommer tilbake. Bønnen er derfor ikke tenkt som en trylleformel som virker hvis du sier den riktig, men som at én person snakker til en annen."
         },
         {
             "type": "header",
@@ -74,11 +74,11 @@
         },
         {
             "type": "text",
-            "content": "Selve bønnen følger et enkelt mønster som medlemmene lærer tidlig. Du begynner med å tiltale din himmelske Fader. Så uttrykker du takknemlighet for det du har fått. Så stiller du spørsmål, søker veiledning og ber om det du trenger. Til slutt avslutter du med «I Jesu Kristi navn. Amen» (Jesu Kristi Kirke av Siste Dagers Hellige, 2023). Fire deler, alltid i den rekkefølgen, enten bønnen tar ti sekunder eller ti minutter."
+            "content": "Selve bønnen følger et enkelt mønster som medlemmene lærer tidlig. Du begynner med å tiltale din himmelske Fader. Så takker du for det du har fått. Så stiller du spørsmål, ber om hjelp og om det du trenger. Til slutt avslutter du med «I Jesu Kristi navn. Amen» (Jesu Kristi Kirke av Siste Dagers Hellige, 2023). Fire deler, alltid i den rekkefølgen, enten bønnen tar ti sekunder eller ti minutter."
         },
         {
             "type": "text",
-            "content": "Det som ikke ligger fast, er ordene. Veiledningen ber medlemmene fortelle Gud hva de virkelig føler, og fraråder «meningsløse ord og setninger» (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Rammen er gitt, innholdet er ditt eget. Sett sammen en bønn i verktøyet under, og se hva som skjer når den er hel."
+            "content": "Det som ikke ligger fast, er ordene. Kirken ber medlemmene fortelle Gud hva de virkelig føler, og advarer mot «meningsløse ord og setninger» (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Formen er gitt, men innholdet er ditt eget. Sett sammen en bønn i verktøyet under, og se hva som skjer når den er hel."
         },
         {
             "type": "component",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Legg merke til at rekkefølgen ikke er tilfeldig. Takken kommer før det du ber om, og ikke etter. Mønsteret gjør også noe praktisk: det gir et barn på seks år en form å begynne i, uten at noen må lære det utenat en tekst det ikke forstår. Og bønnen ender ikke med at du er ferdig, men med at noe kan komme tilbake. Det er nettopp den forventningen om svar kirken legger mest vekt på."
+            "content": "Legg merke til at rekkefølgen ikke er tilfeldig. Takken kommer før det du ber om, og ikke etter. Mønsteret gjør også noe praktisk: det gir et barn på seks år en enkel oppskrift å følge, uten at barnet må pugge en tekst det ikke forstår. Og bønnen slutter ikke med at du er ferdig, men med at noe kan komme tilbake. Nettopp det å vente seg svar er det kirken legger mest vekt på."
         },
         {
             "type": "header",
@@ -97,7 +97,7 @@
         },
         {
             "type": "text",
-            "content": "Kirken ble formelt grunnlagt i 1830 av [Joseph Smith](/krle/religion/mormonisme/grunnleggere) (1805-1844). Han fortalte selv at han som fjortenåring hadde et syn der Gud Faderen og Jesus viste seg for ham som to atskilte skikkelser, og at han der fikk beskjed om ikke å slutte seg til noen av kirkesamfunnene som fantes. Sju år senere sa han at engelen Moroni pekte ut hvor det lå gullplater med teksten som ble Mormons bok (Bloch-Hoell mfl., 2024). Tanken om at et menneske kan spørre og få svar ligger altså helt i bunnen av kirkens fortelling om seg selv."
+            "content": "Kirken ble formelt grunnlagt i 1830 av [Joseph Smith](/krle/religion/mormonisme/grunnleggere) (1805-1844). Han fortalte selv at han som fjortenåring hadde et syn der Gud Faderen og Jesus viste seg for ham som to atskilte skikkelser, og at han der fikk beskjed om ikke å bli med i noen av kirkene som fantes fra før. Sju år senere sa han at engelen Moroni pekte ut hvor det lå gullplater med teksten som ble Mormons bok (Bloch-Hoell mfl., 2024). Tanken om at et menneske kan spørre og få svar ligger altså helt i bunnen av kirkens fortelling om seg selv."
         },
         {
             "type": "component",
@@ -109,7 +109,7 @@
         },
         {
             "type": "text",
-            "content": "Det er dette løftet misjonærene bygger på når de deler ut Mormons bok. De ber ikke folk om å ta boka på tro. De ber dem lese den, tenke over den og be om den (Jesu Kristi Kirke av Siste Dagers Hellige, 2023). Rundt 84 000 medlemmer var ute i misjonstjeneste i 2018, og det er vanlig at tjenesten varer fra halvannet til to år (Bloch-Hoell mfl., 2024). Hva boka faktisk inneholder, står det mer om i artikkelen om [kirkens hellige tekster](/krle/religion/mormonisme/hellige-tekster). Mange av samtalene misjonærene har, ender med den samme oppfordringen: spør selv."
+            "content": "Det er dette løftet misjonærene bygger på når de deler ut Mormons bok. De ber ikke folk om å ta boka på tro. De ber dem lese den, tenke over den og be om den (Jesu Kristi Kirke av Siste Dagers Hellige, 2023). Rundt 84 000 medlemmer var ute som misjonærer i 2018, og det er vanlig at en slik tur varer fra halvannet til to år (Bloch-Hoell mfl., 2024). Hva boka faktisk inneholder, står det mer om i artikkelen om [kirkens hellige tekster](/krle/religion/mormonisme/hellige-tekster). Mange av samtalene misjonærene har, ender med den samme oppfordringen: spør selv."
         },
         {
             "type": "image",
@@ -123,11 +123,11 @@
         },
         {
             "type": "text",
-            "content": "Ved siden av de store spørsmålene ligger et helt vanlig hverdagsmønster. Kirken råder medlemmene til å be alene minst hver morgen og hver kveld. Familier rådes til å be sammen morgen og kveld. Før hvert måltid er det vanlig å be en bordbønn med takk for maten og om en velsignelse av den. Møter i kirken åpnes og avsluttes også med bønn (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a)."
+            "content": "Ved siden av de store spørsmålene ligger et helt vanlig hverdagsmønster. Kirken råder medlemmene til å be alene minst hver morgen og hver kveld. Familier rådes til å be sammen morgen og kveld. Før hvert måltid er det vanlig å be en bordbønn med takk for maten og om en velsignelse av den. Møter i kirken begynner og slutter også med bønn (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a)."
         },
         {
             "type": "text",
-            "content": "Det betyr at en hverdag kan ha flere bønner i seg, og at flere av dem sies høyt sammen med andre. Familiebønnen er den som skiller seg mest ut for en utenforstående. Hele husstanden stopper opp, og som regel ber én person høyt på vegne av alle. Det er også her de fleste barna lærer formen, ved å høre den brukt hver dag før de bruker den selv. Hvor mye av dette som faktisk skjer, varierer fra familie til familie, akkurat som i alle andre religioner. Noen husstander holder på hele mønsteret, andre ber bare av og til. I Norge er det over 4600 medlemmer fordelt på 22 lokale menigheter, og på verdensbasis hadde kirken rundt 15,5 millioner medlemmer i over 150 land i 2015 (Bloch-Hoell mfl., 2024)."
+            "content": "Det betyr at en hverdag kan ha flere bønner i seg, og at flere av dem sies høyt sammen med andre. Familiebønnen er den som skiller seg mest ut for en utenforstående. Hele husstanden stopper opp, og som regel ber én person høyt for alle. Det er også her de fleste barna lærer formen, ved å høre den brukt hver dag før de bruker den selv. Hvor mye av dette som faktisk skjer, varierer fra familie til familie, akkurat som i alle andre religioner. Noen husstander holder på hele mønsteret, andre ber bare av og til. I Norge er det over 4600 medlemmer fordelt på 22 lokale menigheter, og på verdensbasis hadde kirken rundt 15,5 millioner medlemmer i over 150 land i 2015 (Bloch-Hoell mfl., 2024)."
         },
         {
             "type": "image",
@@ -141,11 +141,11 @@
         },
         {
             "type": "text",
-            "content": "Hvis bønn er en samtale, hva er da svaret? Kirkens veiledning lover ikke at man alltid får det man ber om. Svaret kan være ja, det kan være nei, og det kan være at man må vente. Kirken lærer at svaret kommer når Herren vet at det er til størst hjelp. Ofte kommer det gjennom andre mennesker som blir inspirert til å handle, eller som kraft til å løse problemet selv (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Man skal også be om at Guds vilje skal skje, ikke bare sin egen."
+            "content": "Hvis bønn er en samtale, hva er da svaret? Kirkens veiledning lover ikke at man alltid får det man ber om. Svaret kan være ja, det kan være nei, og det kan være at man må vente. Kirken lærer at svaret kommer når Herren vet at det er til størst hjelp. Ofte kommer det gjennom andre mennesker som gjør noe for deg, eller som styrke til å løse problemet selv (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Man skal også be om at Guds vilje skal skje, ikke bare sin egen."
         },
         {
             "type": "text",
-            "content": "Bønn er en fellesbetegnelse for de ulike måtene mennesker snakker med høyere makter på, og det å be finnes i nesten alle kulturer (Jacobsen mfl., 2024). Det spesielle her er derfor ikke at noen ber, eller at bønnen har faste deler. Det er at bønnen får en oppgave til: den er også metoden. I mange tradisjoner er det lærde, hellige tekster eller fellesskapet som avgjør hva som er sant. Her får den enkelte i tillegg beskjed om å spørre selv, og så vurdere svaret som kommer."
+            "content": "Bønn er et samlenavn på de ulike måtene mennesker snakker med gud eller guder på, og nesten alle kulturer har en form for bønn (Jacobsen mfl., 2024). Det spesielle her er derfor ikke at noen ber, eller at bønnen har faste deler. Det er at bønnen får en jobb til: den er også måten du sjekker om noe er sant. I mange religioner er det eksperter, hellige tekster eller fellesskapet som avgjør hva som er sant. Her får hver enkelt i tillegg beskjed om å spørre selv, og så tenke over svaret som kommer."
         },
         {
             "type": "component",
@@ -159,8 +159,8 @@
                 ],
                 "reflekter": [
                     "Forklar med egne ord hvorfor kirken kaller bønn en samtale og ikke bare en bønn.",
-                    "Veiledningen fraråder «meningsløse ord og setninger». Hvorfor kan det være et poeng at ordene ikke er fastlagt på forhånd?",
-                    "Kirken sier at svaret kan være ja, nei eller vent. Hva gjør det med måten man kan snakke om ubesvarte bønner på?",
+                    "Kirken advarer mot «meningsløse ord og setninger». Hvorfor kan det være et poeng at ordene ikke er bestemt på forhånd?",
+                    "Kirken sier at svaret kan være ja, nei eller vent. Hva betyr det for hvordan man kan forklare bønner som ikke blir oppfylt?",
                     "Moronis løfte ber leseren teste boka selv. Hva er styrken ved en slik framgangsmåte, og hva kan være vanskelig med den?"
                 ],
                 "gaaVidere": [
@@ -195,7 +195,7 @@
                             "At bare kirkens ledere kan få svar på bønn"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Moroni 10:4 sier at den som spør av et oppriktig hjerte, med ærlig hensikt og med tro på Kristus, skal få sannheten åpenbart ved Den hellige ånds kraft."
+                        "explanation": "Moroni 10:4 sier at den som spør av et oppriktig hjerte, med ærlig hensikt og med tro på Kristus, skal få vite hva som er sant gjennom Den hellige ånd."
                     },
                     {
                         "question": "Hvem lærer kirken at medlemmene skal be til?",
@@ -206,7 +206,7 @@
                             "Til kirkens president"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Veiledningen slår fast at man skal be til Gud og ikke til noen annen, og at bønnen skjer i Jesu Kristi navn."
+                        "explanation": "Kirken slår fast at man skal be til Gud og ikke til noen annen, og at bønnen skjer i Jesu Kristi navn."
                     },
                     {
                         "question": "Hvilke svar på bønn beskriver kirkens veiledning?",
@@ -220,7 +220,7 @@
                         "explanation": "Svaret kan være ja, nei eller vent, og det kommer ofte gjennom andre mennesker eller som kraft til å løse saken selv."
                     },
                     {
-                        "question": "Hva sier veiledningen om ordene man bruker i bønnen?",
+                        "question": "Hva sier kirken om ordene man bruker i bønnen?",
                         "options": [
                             "De skal leses ordrett fra en fastsatt tekst",
                             "De skal være på hebraisk",

@@ -14,11 +14,11 @@
     "readTime": "8 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Kristne tror at Jesus gjennom sin død og oppstandelse sonet for menneskenes synd og overvant døden.",
+        "Kristne tror at Jesus tok straffen for menneskenes synd da han døde, og at han beseiret døden da han sto opp igjen.",
         "Frelsen kalles nåde: en ufortjent gave, ikke en lønn for gode handlinger.",
         "Uenigheten om hvordan frelsen virker, splittet den vestlige kirken fra 1517.",
-        "Luthersk lære sier ved tro alene. Katolsk lære sier at mennesket samarbeider med nåden.",
-        "31. oktober 1999 skrev katolikker og lutheranere under på at de er enige om grunnprinsippene."
+        "Luthersk lære sier at troen alene er nok. Katolsk lære sier at mennesket selv er med på det Gud gjør.",
+        "31. oktober 1999 skrev katolikker og lutheranere under på at de er enige om det viktigste i denne læren."
     ],
     "createdDate": "2025-12-04T12:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -46,13 +46,13 @@
         {
             "id": "avlat",
             "term": "Avlat",
-            "definition": "Ordning der folk kunne betale penger til kirken i stedet for å gjøre bot for syndene sine. Luther angrep denne i 1517."
+            "definition": "Ordning der folk kunne betale penger til kirken i stedet for å angre og gjøre opp for syndene sine. Luther angrep denne i 1517."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Den 31. oktober 1999 satt to delegasjoner rundt et bord i den tyske byen Augsburg. Den ene kom fra Vatikanet, den andre fra Det lutherske verdensforbund. Papiret de skrev under på, handlet verken om penger eller land. Det handlet om ett eneste spørsmål: hvordan blir et menneske frelst? Det spørsmålet hadde delt kristendommen i Vest-Europa i nesten 500 år (Kristiansen, 2024)."
+            "content": "Den 31. oktober 1999 satt to grupper utsendinger rundt et bord i den tyske byen Augsburg. Den ene kom fra Vatikanet, den andre fra Det lutherske verdensforbund. Papiret de skrev under på, handlet verken om penger eller land. Det handlet om ett eneste spørsmål: hvordan blir et menneske frelst? Det spørsmålet hadde delt kristendommen i Vest-Europa i nesten 500 år (Kristiansen, 2024)."
         },
         {
             "type": "text",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "Det kristne svaret på problemet heter nåde. Nåde er Guds kjærlighet og barmhjertighet: Gud fritar den skyldige fra straffen og gir tilgivelse og evig liv i stedet (Elstad & Store norske leksikon, 2026). Paulus gjorde nåden til kjernen i det han skrev. Mennesket kan ikke opparbeide frelsen gjennom gjerninger eller egen fortjeneste, og kan bare bli frelst av nåde alene, sola gratia på latin (Elstad & Store norske leksikon, 2026). Grunntanken er den samme i læren om forsoning, altså om hvordan det ødelagte forholdet mellom Gud og mennesker blir reparert. Mennesket kan ikke forsone seg med Gud på egen hånd, og det er Gud som tar det første steget (Leivestad & Rasmussen, 2026). Under kan du selv sortere hva de to største kirkeretningene i Vesten faktisk sier."
+            "content": "Det kristne svaret på problemet heter nåde. Nåde er Guds kjærlighet og barmhjertighet: Gud fritar den skyldige fra straffen og gir tilgivelse og evig liv i stedet (Elstad & Store norske leksikon, 2026). Paulus gjorde nåden til kjernen i det han skrev. Mennesket kan ikke jobbe seg til frelsen med gode gjerninger eller egen innsats, og kan bare bli frelst av nåde alene, sola gratia på latin (Elstad & Store norske leksikon, 2026). Grunntanken er den samme i læren om forsoning, altså om hvordan det ødelagte forholdet mellom Gud og mennesker blir reparert. Mennesket kan ikke forsone seg med Gud på egen hånd, og det er Gud som tar det første steget (Leivestad & Rasmussen, 2026). Under kan du selv sortere hva de to største kirkeretningene i Vesten faktisk sier."
         },
         {
             "type": "component",
@@ -93,11 +93,11 @@
         },
         {
             "type": "text",
-            "content": "Den 31. oktober 1517 ble 95 læresetninger fra munken Martin Luther kjent (Rasmussen, 2026). En av tingene han gikk løs på, var avlaten. Avlat gikk ut på at folk kunne betale for syndene sine med penger til kirken i stedet for å vise anger eller gjøre bot (Rasmussen, 2026). For Luther var dette et bevis på at kirken hadde snudd frelsen på hodet og gjort den til en handel."
+            "content": "Den 31. oktober 1517 ble 95 læresetninger fra munken Martin Luther kjent (Rasmussen, 2026). En av tingene han gikk løs på, var avlaten. Avlat gikk ut på at folk kunne betale for syndene sine med penger til kirken i stedet for å angre og gjøre opp for dem (Rasmussen, 2026). For Luther var dette et bevis på at kirken hadde snudd frelsen på hodet og gjort den til en handel."
         },
         {
             "type": "text",
-            "content": "Luther og reformatoren Jean Calvin satte i stedet Paulus sin lære om rettferdiggjørelse i sentrum. Rettferdiggjørelse betyr å bli erklært rettferdig for Gud. De sa at det skjer ved tro alene, sola fide på latin, og at menneskelig fortjeneste er utelukket (Molland mfl., 2024). Nettopp dette ble et hovedskille mellom protestanter og katolikker, og reformasjonen delte den vestlige kristendommen i en katolsk, en luthersk og en reformert gren, der den reformerte fulgte Calvin (Rasmussen, 2026). Mer om de ulike retningene finner du i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
+            "content": "Luther og Jean Calvin, som også ville forandre kirken, satte i stedet Paulus sin lære om rettferdiggjørelse i sentrum. Rettferdiggjørelse betyr å bli erklært rettferdig for Gud. De sa at det skjer ved tro alene, sola fide på latin, og at det mennesket selv gjør, ikke teller med (Molland mfl., 2024). Nettopp dette ble et hovedskille mellom protestanter og katolikker, og reformasjonen, altså oppgjøret med den katolske kirken, delte den vestlige kristendommen i en katolsk, en luthersk og en reformert gren, der den reformerte fulgte Calvin (Rasmussen, 2026). Mer om de ulike retningene finner du i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
         },
         {
             "type": "component",
@@ -109,7 +109,7 @@
         },
         {
             "type": "text",
-            "content": "Den katolske kirken svarte med et stort kirkemøte i byen Trient i Nord-Italia. Møtet gikk over tre bolker, i 1545-1547, 1551-1552 og 1562-1563, og regnes som starten på motreformasjonen, altså den katolske kirkens eget svar på reformasjonen (Stensvold & Store norske leksikon, 2026). Også katolsk lære sier at nåden kommer først. Katekismen, som er kirkens offisielle læreoversikt, slår fast at selv den forberedelsen mennesket gjør for å ta imot nåden, allerede er nådens eget verk (Den katolske kirke, u.å.). Men den legger til noe: når Gud rører ved hjertet, er mennesket ikke helt passivt, samtidig som mennesket heller ikke kan løfte seg opp til rettferdighet uten nåden (Den katolske kirke, u.å.)."
+            "content": "Den katolske kirken svarte med et stort kirkemøte i byen Trient i Nord-Italia. Møtet gikk over tre bolker, i 1545-1547, 1551-1552 og 1562-1563, og regnes som starten på motreformasjonen, altså den katolske kirkens eget svar på reformasjonen (Stensvold & Store norske leksikon, 2026). Også katolsk lære sier at nåden kommer først. Katekismen, som er kirkens offisielle læreoversikt, slår fast at selv det mennesket gjør for å gjøre seg klar til å ta imot nåden, er noe nåden selv har satt i gang (Den katolske kirke, u.å.). Men den legger til noe: når Gud rører ved hjertet, sitter ikke mennesket helt stille, men det kan heller ikke bli rettferdig for Gud på egen hånd, uten nåden (Den katolske kirke, u.å.)."
         },
         {
             "type": "image",
@@ -123,11 +123,11 @@
         },
         {
             "type": "text",
-            "content": "Karikaturen sier at protestanter tror på tro og katolikker tror på gjerninger. Den stemmer ikke. Den norske kirke er evangelisk-luthersk, altså bygd på Luthers lære, og hviler på tre setninger med ordet alene i seg: ved tro alene, av nåde alene og etter Skriften alene (Den norske kirke, u.å.). Men luthersk lære sier ikke at gjerninger er likegyldige. Poenget er rekkefølgen. Den som er blitt rettferdiggjort ved tro, blir fri til å elske sin neste og skaperverket rundt seg (Den norske kirke, u.å.). Gjerningene er frukten, ikke veien. Kirken bruker også ordet nådemidler om Guds ord, dåpen og nattverden, altså kanalene nåden virker gjennom (Den norske kirke, u.å.). Dem kan du lese mer om i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene)."
+            "content": "Den enkle forklaringen sier at protestanter tror på tro og katolikker tror på gjerninger. Den stemmer ikke. Den norske kirke er evangelisk-luthersk, altså bygd på Luthers lære, og hviler på tre setninger med ordet alene i seg: ved tro alene, av nåde alene og etter Skriften alene, altså etter det som står i Bibelen (Den norske kirke, u.å.). Men luthersk lære sier ikke at gode gjerninger er uviktige. Poenget er rekkefølgen. Den som Gud har erklært rettferdig gjennom troen, blir fri til å elske andre mennesker og naturen rundt seg (Den norske kirke, u.å.). Gjerningene er frukten, ikke veien. Kirken bruker også ordet nådemidler om Guds ord, dåpen og nattverden, altså det nåden når fram gjennom (Den norske kirke, u.å.). Dem kan du lese mer om i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene)."
         },
         {
             "type": "text",
-            "content": "Katolsk lære snur ikke dette til det motsatte. Den sier ikke at man kan kjøpe seg frelse eller samle nok gode handlinger til å fortjene den. Kirkefaderen Augustin forsto rettferdiggjørelsen som en forvandling av mennesket innenfra, og den tanken preget katolsk teologi videre (Molland mfl., 2024). Katolsk lære holder fast på ordet fortjeneste, men snur på det: fortjeneste finnes bare fordi Gud har bestemt at mennesket skal få være med i sitt eget nådeverk. Katekismen sier det kort. Våre fortjenester er Guds gaver (Den katolske kirke, u.å.). Uenigheten handler altså om hvor stor plass mennesket får i sin egen frelse, ikke om nåden er nødvendig."
+            "content": "Katolsk lære snur ikke dette til det motsatte. Den sier ikke at man kan kjøpe seg frelse eller samle nok gode handlinger til å fortjene den. Kirkefaderen Augustin, en av de viktigste kristne lærerne i oldtiden, mente at Gud forandrer mennesket innenfra når det blir erklært rettferdig, og den tanken har preget katolsk lære siden (Molland mfl., 2024). Katolsk lære holder fast på ordet fortjeneste, men snur på det: fortjeneste finnes bare fordi Gud har bestemt at mennesket skal få være med på det Gud selv gjør. Katekismen sier det kort. Våre fortjenester er Guds gaver (Den katolske kirke, u.å.). Uenigheten handler altså om hvor stor plass mennesket får i sin egen frelse, ikke om nåden er nødvendig."
         },
         {
             "type": "image",
@@ -141,11 +141,11 @@
         },
         {
             "type": "text",
-            "content": "Frelsen peker framover. Mange kristne tror at de rettferdige kommer til paradis etter døden, og at dette er én form for frelse ved siden av den endelige frelsen ved tidens slutt (Jacobsen mfl., 2026). Kristne tekster forteller også at Kristus skal komme tilbake og opprette et tusenårsrike der Satan er bundet, og at Gud til slutt skaper et evig rike der døden og det onde er borte (Jacobsen mfl., 2026). Teologer har forklart hvordan selve forsoningen virker på ulike måter. Anselm av Canterbury mente Kristus oppfylte Guds krav og bar straffen mennesket hadde fortjent, mens Peter Abélard mente forsoningen først får virkning når mennesket selv tar imot den (Leivestad & Rasmussen, 2026)."
+            "content": "Frelsen peker framover. Mange kristne tror at de rettferdige kommer til paradis etter døden, og at dette er én form for frelse ved siden av den endelige frelsen ved tidens slutt (Jacobsen mfl., 2026). Kristne tekster forteller også at Kristus skal komme tilbake og opprette et tusenårsrike der Satan er bundet, og at Gud til slutt skaper et evig rike der døden og det onde er borte (Jacobsen mfl., 2026). De som studerer kristen lære, har forklart på ulike måter hvordan forsoningen virker. Anselm av Canterbury mente Kristus oppfylte Guds krav og bar straffen mennesket hadde fortjent, mens Peter Abélard mente forsoningen først får virkning når mennesket selv tar imot den (Leivestad & Rasmussen, 2026)."
         },
         {
             "type": "text",
-            "content": "Så hvor tett kan de to sidene komme hverandre? I 1990-årene arbeidet katolske og lutherske teologer fram en felleserklæring om rettferdiggjørelsen (Molland mfl., 2024). Den ble skrevet under i Augsburg 31. oktober 1999. Partene slo fast at de er enige om grunnprinsippene, at hver kirke fortsatt har sine egne tilføyelser i læren, og at fordømmelsene de rettet mot hverandre på 1500-tallet, ikke lenger rammer den andres lære slik den står i dag (Kristiansen, 2024). Datoen var ikke tilfeldig valgt. Det var 482 år på dagen etter at Luthers 95 setninger ble kjent."
+            "content": "Så hvor tett kan de to sidene komme hverandre? I 1990-årene arbeidet katolske og lutherske teologer fram en felleserklæring om rettferdiggjørelsen (Molland mfl., 2024). Den ble skrevet under i Augsburg 31. oktober 1999. Partene slo fast at de er enige om grunnprinsippene, at hver kirke fortsatt har sine egne tillegg i læren, og at de harde dommene de felte over hverandre på 1500-tallet, ikke lenger passer på det den andre lærer i dag (Kristiansen, 2024). Datoen var ikke tilfeldig valgt. Det var 482 år på dagen etter at Luthers 95 setninger ble kjent."
         },
         {
             "type": "component",
@@ -161,7 +161,7 @@
                     "Både katolsk og luthersk lære sier at nåden kommer først. Forklar med egne ord hva de likevel er uenige om.",
                     "Luthersk lære kaller gode gjerninger frukten av troen. Hva betyr det, og hvorfor er rekkefølgen viktig for lutheranere?",
                     "Hvorfor tror du en uenighet om hvordan frelsen virker, kunne føre til at en hel kirke ble splittet?",
-                    "Felleserklæringen ble skrevet under 31. oktober, samme dato som Luthers teser ble kjent. Hva ville partene si med det valget?"
+                    "Felleserklæringen ble skrevet under 31. oktober, samme dato som Luthers 95 læresetninger ble kjent. Hva ville partene si med det valget?"
                 ],
                 "gaaVidere": [
                     "Finn ut hva Anselm av Canterbury og Peter Abélard mente om forsoningen, og skriv en kort tekst om hvordan de to forklaringene skiller seg fra hverandre.",
@@ -195,7 +195,7 @@
                             "At Bibelen inneholdt for mange bøker"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Avlat gikk ut på at folk kunne betale for syndene sine med penger til kirken i stedet for å vise anger eller gjøre bot. Luther mente det gjorde frelsen til en handel."
+                        "explanation": "Avlat gikk ut på at folk kunne betale for syndene sine med penger til kirken i stedet for å angre og gjøre opp for dem. Luther mente det gjorde frelsen til en handel."
                     },
                     {
                         "question": "Hva er den viktigste forskjellen mellom luthersk og katolsk syn på frelsen?",
@@ -206,7 +206,7 @@
                             "Hvor stor plass mennesket får i sin egen frelse etter at nåden er gitt"
                         ],
                         "correctAnswer": 3,
-                        "explanation": "Begge sier at nåden kommer først og er ufortjent. Luthersk lære sier ved tro alene, mens katolsk lære sier at mennesket samarbeider med nåden."
+                        "explanation": "Begge sier at nåden kommer først og er ufortjent. Luthersk lære sier at troen alene er nok, mens katolsk lære sier at mennesket selv er med på det Gud gjør."
                     },
                     {
                         "question": "Hva sier den katolske katekismen om menneskets fortjeneste?",
@@ -217,13 +217,13 @@
                             "At bare prester kan ha fortjeneste"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Katolsk lære holder fast på ordet fortjeneste, men sier at den finnes bare fordi Gud har bestemt at mennesket skal få være med i sitt eget nådeverk."
+                        "explanation": "Katolsk lære holder fast på ordet fortjeneste, men sier at den finnes bare fordi Gud har bestemt at mennesket skal få være med på det Gud selv gjør."
                     },
                     {
                         "question": "Hva skjedde i Augsburg 31. oktober 1999?",
                         "options": [
                             "Den katolske kirken og Det lutherske verdensforbund slo seg sammen til én kirke",
-                            "Trientkonsilet ble avsluttet",
+                            "Kirkemøtet i Trient ble avsluttet",
                             "Luther slo opp de 95 læresetningene sine",
                             "Vatikanet og Det lutherske verdensforbund skrev under på en felleserklæring om rettferdiggjørelsen"
                         ],

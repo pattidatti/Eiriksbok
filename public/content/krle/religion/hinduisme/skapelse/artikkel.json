@@ -51,7 +51,7 @@
         },
         {
             "type": "text",
-            "content": "Hinduismen har ingen enkelt skapelsesfortelling. De hellige tekstene rommer flere, og noen av dem passer dårlig sammen. Det er ikke en glipp som ingen har rukket å rette opp. Hinduisme er et samlenavn for et mangfold av religiøse tradisjoner som har vokst fram på det indiske subkontinentet gjennom flere tusen år, og religionen har verken et sentrum eller en sentral organisasjon (Kværne & Jacobsen, 2026). Ingen har myndighet til å bestemme at én fortelling er den eneste rette. Hinduismen har tre store hovedretninger som dyrker hver sin gud eller gudinne mest, og de vektlegger ikke de samme tekstene (Kværne & Jacobsen, 2026). Derfor er svaret på hvordan verden ble til, litt ulikt avhengig av hvem du spør."
+            "content": "Hinduismen har ingen enkelt skapelsesfortelling. De hellige tekstene rommer flere, og noen av dem passer dårlig sammen. Det er ikke en glipp som ingen har rukket å rette opp. Hinduisme er et samlenavn for mange ulike religiøse tradisjoner som har vokst fram i India og landene rundt gjennom flere tusen år, og religionen har verken noe sentrum eller noen felles organisasjon (Kværne & Jacobsen, 2026). Ingen har makt til å bestemme at én fortelling er den eneste rette. Hinduismen har tre store hovedretninger som dyrker hver sin gud eller gudinne mest, og de legger vekt på ulike tekster (Kværne & Jacobsen, 2026). Derfor er svaret på hvordan verden ble til, litt ulikt avhengig av hvem du spør."
         },
         {
             "type": "image",
@@ -69,7 +69,7 @@
         },
         {
             "type": "text",
-            "content": "Tre guder deler på arbeidet i denne kretsgangen. Brahma skaper verden, Vishnu holder den i gang, og Shiva løser den opp igjen. De tre kalles trimurti (Jacobsen, 2022). Du kan lese mer om dem i artikkelen om [Brahman og guder](/krle/religion/hinduisme/gudsbilde). Tekstene setter tall på hvor lenge hver runde varer, og tallene er svimlende. Trykk deg gjennom noen runder i hjulet lenger nede, så ser du hvordan det henger sammen."
+            "content": "Tre guder deler på arbeidet i denne runden. Brahma skaper verden, Vishnu holder den i gang, og Shiva løser den opp igjen. De tre kalles trimurti (Jacobsen, 2022). Du kan lese mer om dem i artikkelen om [Brahman og guder](/krle/religion/hinduisme/gudsbilde). Tekstene setter tall på hvor lenge hver runde varer, og tallene er svimlende. Trykk deg gjennom noen runder i hjulet lenger nede, så ser du hvordan det henger sammen."
         },
         {
             "type": "list",
@@ -97,25 +97,25 @@
         },
         {
             "type": "text",
-            "content": "Hver skapelsesperiode er delt inn i fire tidsaldre. Verden begynner fullkommen og blir gradvis dårligere for hver alder som går (Løøv, 2024). Den siste og verste heter kaliyuga, og en vanlig oppfatning blant hinduer er at det er der vi befinner oss nå. Det får følger for hvordan man ser på seg selv. I kaliyuga forventer man ikke at mennesker skal klare å leve opp til den høyeste dharma, altså den rette måten å leve på. At folk feiler, er ventet. Derfor regnes overbærenhet med menneskelig svakhet som en god egenskap nettopp i vår tidsalder (Jacobsen, 2025)."
+            "content": "Hver skapelsesperiode er delt inn i fire tidsaldre. Verden begynner perfekt og blir litt dårligere for hver alder som går (Løøv, 2024). Den siste og verste heter kaliyuga, og mange hinduer mener at det er der vi er nå. Det får følger for hvordan man ser på seg selv. I kaliyuga venter ingen at mennesker skal klare å leve helt etter dharma, altså den rette måten å leve på. At folk mislykkes, er ventet. Derfor er det å ha tålmodighet med folk som ikke får det til, regnet som en god egenskap nettopp i vår tidsalder (Jacobsen, 2025)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Brahma er ikke en evig skapergud",
-                "content": "Det er lett å tenke at Brahma er hinduismens utgave av Gud i Bibelen. Det stemmer dårlig. Brahma skaper verden, men han er ikke evig: han lever i 100 av sine egne år, og så kommer det en ny Brahma. Han er heller ikke den viktigste guden i praksis. I dag er få templer viet til ham, mens Vishnu, Shiva og gudinnen Durga står langt mer sentralt (Jacobsen, 2022; Kværne & Jacobsen, 2026). Brahma må heller ikke forveksles med brahman, som er navnet på den guddommelige enheten i verden og universet."
+                "content": "Det er lett å tenke at Brahma er hinduismens utgave av Gud i Bibelen. Det stemmer dårlig. Brahma skaper verden, men han er ikke evig: han lever i 100 av sine egne år, og så kommer det en ny Brahma. Han er heller ikke den viktigste guden i praksis. I dag er få templer viet til ham, mens Vishnu, Shiva og gudinnen Durga er langt viktigere (Jacobsen, 2022; Kværne & Jacobsen, 2026). Brahma må heller ikke blandes sammen med brahman, som er navnet på det guddommelige som binder hele verden sammen til én ting."
             }
         },
         {
             "type": "text",
-            "content": "At vi lever i den verste tidsalderen høres dystert ut. Men undergangen er ikke slutten på fortellingen slik den er i en religion med rett tidslinje. Den er halvveis. Etter kaliyuga kommer oppløsningen, og etter oppløsningen kommer en ny og fullkommen verden. Det er ikke et endelig punktum, bare et komma."
+            "content": "At vi lever i den verste tidsalderen høres dystert ut. Men undergangen er ikke slutten på fortellingen, slik den er i en religion der tiden går i en rett strek. Den er halvveis. Etter kaliyuga kommer oppløsningen, og etter oppløsningen kommer en ny og fullkommen verden. Det er ikke et endelig punktum, bare et komma."
         },
         {
             "type": "image",
             "src": "/images/placeholder.webp",
             "alt": "Steinrelieff av dansende Shiva omgitt av en ring av flammer",
-            "caption": "Shiva løser verden opp igjen. I hinduistisk tenkning er ødeleggelsen en betingelse for at noe nytt skal kunne skapes."
+            "caption": "Shiva løser verden opp igjen. I hinduistisk tenkning må noe ødelegges for at noe nytt skal kunne bli skapt."
         },
         {
             "type": "header",
@@ -123,7 +123,7 @@
         },
         {
             "type": "text",
-            "content": "En av de eldste fortellingene står i Rigveda, den eldste av de fire vedaene. Rigveda inneholder 1028 sanger fordelt på ti bøker, og de fleste forskere mener at hovedmengden av dem ble diktet i århundrene før år 1000 fvt. (Store norske leksikon, 2026). I den tiende boka, sang 90, møter vi Purusha. Han er et urvesen med tusen hoder, tusen øyne og tusen føtter."
+            "content": "En av de eldste fortellingene står i Rigveda, den eldste av de fire vedaene. Rigveda inneholder 1028 sanger fordelt på ti bøker, og de fleste forskere mener at de aller fleste av dem ble diktet i hundreårene før år 1000 fvt. (Store norske leksikon, 2026). I den tiende boka, sang 90, møter vi Purusha. Han er et urvesen med tusen hoder, tusen øyne og tusen føtter."
         },
         {
             "type": "text",
@@ -153,7 +153,7 @@
         },
         {
             "type": "text",
-            "content": "Tenk over hvor uvanlig det er. En hellig tekst som ender med å innrømme at den ikke vet. Mange hinduer leser dette som ydmykhet: verden er større enn det et menneske kan fatte. Andre legger mest vekt på fortellingene i de senere tekstene, der Brahma skaper og Shiva ødelegger. Purusha-hymnen har på sin side et vers som er blitt mye omstridt. Der står det at de fire varna, de gamle samfunnsklassene i India, kom fra munnen, armene, lårene og føttene til urvesenet. Mange forskere mener at nettopp dette verset ble lagt til senere for å gi de sosiale forskjellene et guddommelig forsvar (Wikipedia, 2026b). Hvordan slike tekster skal leses i dag, er hinduer dypt uenige om."
+            "content": "Tenk over hvor uvanlig det er. En hellig tekst som ender med å innrømme at den ikke vet. Mange hinduer leser dette som ydmykhet: verden er større enn det et menneske kan forstå. Andre legger mest vekt på fortellingene i de senere tekstene, der Brahma skaper og Shiva ødelegger. Purusha-hymnen har på sin side et vers som mange har kranglet om. Der står det at de fire varna, de gamle samfunnsklassene i India, kom fra munnen, armene, lårene og føttene til urvesenet. Mange forskere mener at nettopp dette verset ble lagt til senere, slik at forskjellene mellom folk skulle se ut som noe gudene hadde bestemt (Wikipedia, 2026b). Hvordan slike tekster skal leses i dag, er hinduer dypt uenige om."
         },
         {
             "type": "text",
@@ -172,7 +172,7 @@
                 "reflekter": [
                     "Nasadiya-hymnen sier at kanskje ikke engang guden vet hvordan alt begynte. Hvorfor tror du en hellig tekst kan velge å ikke svare?",
                     "Hva er forskjellen på å tenke at tiden går i en rett strek og at den går i ring? Hva gjør det med hvordan man ser på verdens undergang?",
-                    "Artikkelen sier at ingenting blir skapt av ingenting i Purusha-hymnen. Hvorfor er det en viktig forskjell fra en skapelse ut av intet?",
+                    "Artikkelen sier at ingenting blir skapt av ingenting i Purusha-hymnen. Hvorfor er det en viktig forskjell fra en skapelse der alt blir til av ingenting?",
                     "Mange forskere mener verset om de fire samfunnsklassene ble lagt til senere. Hvorfor kan det være viktig å vite hvem som skrev en tekst, og når?"
                 ],
                 "gaaVidere": [
@@ -196,7 +196,7 @@
                             "At alle hinduer feirer nyttår på samme dag"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Verden blir skapt, består en stund og går under, og så begynner alt på nytt. Derfor har den ingen absolutt begynnelse."
+                        "explanation": "Verden blir skapt, består en stund og går under, og så begynner alt på nytt. Derfor finnes det ingen aller første begynnelse."
                     },
                     {
                         "question": "Hvor lenge varer én dag for Brahma?",

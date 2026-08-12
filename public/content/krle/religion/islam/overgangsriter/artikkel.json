@@ -15,11 +15,11 @@
     "readTime": "7 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Trosbekjennelsen hviskes i øret på det nyfødte barnet, og mange muslimer ønsker at den skal være deres siste ord.",
-        "Navngiving markeres kort tid etter fødselen, ofte sammen med et offer som kalles aqiqa.",
+        "Trosbekjennelsen, altså setningen som gjør deg til muslim, hviskes i øret på det nyfødte barnet. Mange muslimer ønsker at den skal være deres siste ord.",
+        "Barnet får navn kort tid etter fødselen, ofte sammen med at et dyr blir slaktet. Dette kalles aqiqa.",
         "Omskjæring av gutter er det ytre tegnet på at en mann hører til fellesskapet. Det nevnes ikke i Koranen.",
         "Ekteskapet er en kontrakt med vitner og en avtalt gave, mahr, fra mannen til kvinnen.",
-        "Den døde vaskes, svøpes i enkle hvite tekstiler og gravlegges så raskt som mulig, vendt mot Mekka."
+        "Den døde blir vasket, pakket inn i enkle hvite tøystykker og gravlagt så raskt som mulig, vendt mot Mekka."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -42,12 +42,12 @@
         {
             "id": "mahr",
             "term": "Mahr",
-            "definition": "Gaven mannen gir kona ved ekteskapsinngåelsen. Den er hennes egen og sikrer henne økonomisk."
+            "definition": "Gaven mannen gir kona når de gifter seg. Den er hennes egen og gir henne trygghet for penger."
         },
         {
             "id": "janaza",
             "term": "Janaza",
-            "definition": "Den islamske gravferden. Den består av vask, svøping, gravferdsbønn og begravelse."
+            "definition": "Den islamske gravferden. Den består av vask, innpakking i tøy, gravferdsbønn og begravelse."
         }
     ],
     "content": [
@@ -67,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Seremonier som markerer at et menneske går fra en plass i samfunnet til en annen, kalles overgangsriter. De finnes i alle samfunn, som dåp, konfirmasjon, bryllup og begravelse. Den franske forskeren Arnold van Gennep innførte begrepet rundt 1909 og delte slike riter i tre: du føres bort fra det gamle, du er en stund i en mellomtilstand, og så tas du inn igjen med ny status (Bertelsen, 2024). Islam markerer fødsel, ekteskap og død, men uten et eget innvielsesritual for ungdom. Du kan lese mer om grunnlaget i artikkelen om [sentrale trekk i islam](/krle/religion/islam/sentrale-trekk)."
+            "content": "Seremonier som markerer at et menneske går fra en plass i samfunnet til en annen, kalles overgangsriter. De finnes i alle samfunn, som dåp, konfirmasjon, bryllup og begravelse. Den franske forskeren Arnold van Gennep innførte begrepet rundt 1909 og delte slike riter i tre: du føres bort fra det gamle, du er en stund i en mellomtilstand, og så tas du inn igjen med ny status (Bertelsen, 2024). Islam markerer fødsel, ekteskap og død, men har ingen egen seremoni for ungdom, slik konfirmasjonen er i Norge. Du kan lese mer om grunnlaget i artikkelen om [sentrale trekk i islam](/krle/religion/islam/sentrale-trekk)."
         },
         {
             "type": "header",
@@ -102,7 +102,7 @@
         },
         {
             "type": "text",
-            "content": "Ved en aqiqa slaktes et dyr, og kjøttet deles med familie, venner og folk i nabolaget som trenger det. Barnets hode barberes, og en gave i sølv tilsvarende vekten av håret gis bort. Tradisjonen er å ofre to sauer eller geiter for en gutt og én for en jente (Islamic Relief, u.å.)."
+            "content": "Ved en aqiqa slaktes et dyr, og kjøttet deles med familie, venner og folk i nabolaget som trenger det. Barnets hode blir barbert, og familien gir bort sølv som veier like mye som håret. Tradisjonen er å ofre to sauer eller geiter for en gutt og én for en jente (Islamic Relief, u.å.)."
         },
         {
             "type": "component",
@@ -128,11 +128,11 @@
         },
         {
             "type": "text",
-            "content": "Ekteskapet står høyt i islam, og det å leve i sølibat, altså ugift og uten sex, regnes ikke som et ideal (Vogt, 2025a). Selve inngåelsen er nøktern. Ekteskapet er en kontrakt som begge parter må si ja til, og den kan sies opp igjen. Det kreves ett eller to vitner, og gaven mahr må være nevnt i avtalen."
+            "content": "Ekteskapet står høyt i islam, og det å leve i sølibat, altså ugift og uten sex, regnes ikke som noe å strebe etter (Vogt, 2025a). Selve vielsen er enkel. Ekteskapet er en kontrakt som begge parter må si ja til, og den kan sies opp igjen. Det kreves ett eller to vitner, og gaven mahr må være nevnt i avtalen."
         },
         {
             "type": "text",
-            "content": "Mahr er en gave fra mannen til kvinnen. Den er ikke medgift, altså noe kvinnen tar med seg inn i ekteskapet, men går motsatt vei og blir hennes egen. Poenget er å sikre henne økonomisk hvis mannen velger å avslutte ekteskapet. I mange muslimske miljøer har kvinnen en wali, en verge, som kan inngå kontrakten på hennes vegne dersom hun ønsker det (Vogt, 2025a)."
+            "content": "Mahr er en gave fra mannen til kvinnen. Den er ikke medgift, altså noe kvinnen tar med seg inn i ekteskapet, men går motsatt vei og blir hennes egen. Poenget er å sikre henne økonomisk hvis mannen velger å avslutte ekteskapet. I mange muslimske miljøer har kvinnen en wali, en verge, som kan skrive under kontrakten for henne hvis hun vil det (Vogt, 2025a)."
         },
         {
             "type": "component",
@@ -144,7 +144,7 @@
         },
         {
             "type": "text",
-            "content": "Kontrakten kan undertegnes i en moské, men det er ikke nødvendig. Det religiøse innslaget er lite: ofte leses Koranens første kapittel, al-fatiha, og noen ganger holder imamen en kort tale. Festen etterpå er derimot stor og varierer mye fra land til land. I mange familier holdes en hennakveld for kvinnene først, med bruden i sentrum, og selve bryllupsfesten dagen etter. Et høydepunkt er når brudgommen kommer for å hente bruden fra kvinnenes selskap (Vogt, 2025a). Det som ser helt ulikt ut i Pakistan, Tyrkia og Marokko, er den samme kontrakten i bunnen."
+            "content": "Kontrakten kan undertegnes i en moské, men det er ikke nødvendig. Det religiøse er det lite av: ofte leses Koranens første kapittel, al-fatiha, og noen ganger holder imamen en kort tale. Festen etterpå er derimot stor og varierer mye fra land til land. I mange familier holdes en hennakveld for kvinnene først, med bruden i sentrum, og selve bryllupsfesten dagen etter. Et høydepunkt er når brudgommen kommer for å hente bruden fra kvinnenes selskap (Vogt, 2025a). Det som ser helt ulikt ut i Pakistan, Tyrkia og Marokko, er den samme kontrakten i bunnen."
         },
         {
             "type": "header",
@@ -152,15 +152,15 @@
         },
         {
             "type": "text",
-            "content": "Når noen ligger for døden, samles familien og sier trosbekjennelsen sakte, slik at den døende kan si den etter. Så snart døden har inntruffet, starter gravferden, som kalles janaza. Den har fire deler: vask, svøping, bønn og begravelse (Selhi, 2025)."
+            "content": "Når noen ligger for døden, samles familien og sier trosbekjennelsen sakte, slik at den døende kan si den etter. Så snart personen er død, starter gravferden, som kalles janaza. Den har fire deler: vask, innpakking i tøy, bønn og begravelse (Selhi, 2025)."
         },
         {
             "type": "text",
-            "content": "Kroppen vaskes minst tre ganger med rent vann, ofte tilsatt noe som lukter godt. Menn vasker menn og kvinner vasker kvinner, med unntak for ektefeller. Deretter svøpes den døde i enkle hvite tøystykker som kalles kafan. Menn svøpes vanligvis i tre tøystykker og kvinner i fem. Ingen får smykker eller eiendeler med seg. De hvite tekstilene betyr at alle er like (Selhi, 2025)."
+            "content": "Kroppen vaskes minst tre ganger med rent vann, ofte tilsatt noe som lukter godt. Menn vasker menn og kvinner vasker kvinner, med unntak for ektefeller. Deretter blir den døde pakket inn i enkle hvite tøystykker som kalles kafan. Menn pakkes vanligvis inn i tre tøystykker og kvinner i fem. Ingen får smykker eller eiendeler med seg. Det hvite tøyet betyr at alle er like (Selhi, 2025)."
         },
         {
             "type": "text",
-            "content": "Så holdes gravferdsbønnen salat al-janaza, vanligvis i moskeen eller ved graven. Den skiller seg fra vanlig bønn ved at den bes stående, uten bøying og uten å legge pannen mot bakken. Den består av fire deler som hver innledes med at forsamlingen sier Allahu akbar, Gud er størst. Begravelsen skal skje så raskt som mulig, helst innen ett døgn. Den døde legges på høyre side med ansiktet vendt mot Mekka. Kremasjon er ikke tillatt (Selhi, 2025). Hva som skjer videre med mennesket etter døden, kan du lese om i artikkelen om [frelse i islam](/krle/religion/islam/frelse)."
+            "content": "Så holdes gravferdsbønnen salat al-janaza, vanligvis i moskeen eller ved graven. Den skiller seg fra vanlig bønn ved at den bes stående, uten bøying og uten å legge pannen mot bakken. Den har fire deler, og hver del begynner med at forsamlingen sier Allahu akbar, Gud er størst. Begravelsen skal skje så raskt som mulig, helst innen ett døgn. Den døde legges på høyre side med ansiktet vendt mot Mekka. Kroppen skal ikke brennes (Selhi, 2025). Hva som skjer videre med mennesket etter døden, kan du lese om i artikkelen om [frelse i islam](/krle/religion/islam/frelse)."
         },
         {
             "type": "image",
@@ -174,11 +174,11 @@
         },
         {
             "type": "text",
-            "content": "I Norge må ritene tilpasses norske regler. Tradisjonelt legges den døde rett i jorda, men norsk lov krever kiste, så kista senkes ned i stedet. Mange sykehus har egne rom for rituell vask, og flere store kommuner har egne muslimske gravfelt der gravene ligger vendt mot Mekka. Det første muslimske gravfeltet i Norge ble opprettet på Gamlebyen gravlund i Oslo i 1972 (Selhi, 2025). I 2018 bodde det noe over 200 000 muslimer her i landet, og rundt 150 000 av dem var med i en moské eller en islamsk organisasjon (Vogt, 2026)."
+            "content": "I Norge må seremoniene tilpasses norske regler. Tradisjonelt legges den døde rett i jorda, men norsk lov krever kiste, så kista senkes ned i stedet. Mange sykehus har egne rom der de døde kan vaskes slik islam krever, og flere store kommuner har egne muslimske gravfelt der gravene ligger vendt mot Mekka. Det første muslimske gravfeltet i Norge ble opprettet på Gamlebyen gravlund i Oslo i 1972 (Selhi, 2025). I 2018 bodde det noe over 200 000 muslimer her i landet, og rundt 150 000 av dem var med i en moské eller en islamsk organisasjon (Vogt, 2026)."
         },
         {
             "type": "text",
-            "content": "Se de tre overgangene under ett, så blir mønsteret tydelig. Fødselen markeres med ord i et øre og mat som deles. Ekteskapet inngås med en avtale og to vitner. Døden møtes med rent vann, hvitt tøy og en bønn som står. Ingen av delene krever et praktbygg eller en spesiell prest. Det som binder det hele sammen, er en setning på noen få ord, sagt første gang av en far til et barn som ikke skjønner den ennå, og siste gang av et menneske som knapt orker å snakke."
+            "content": "Se de tre overgangene under ett, så blir mønsteret tydelig. Fødselen markeres med ord i et øre og mat som deles. Ekteskapet inngås med en avtale og to vitner. Døden møtes med rent vann, hvitt tøy og en bønn som blir bedt stående. Ingen av delene krever et praktbygg eller en spesiell prest. Det som binder det hele sammen, er en setning på noen få ord, sagt første gang av en far til et barn som ikke skjønner den ennå, og siste gang av et menneske som knapt orker å snakke."
         },
         {
             "type": "component",
@@ -192,7 +192,7 @@
                 ],
                 "reflekter": [
                     "Hvorfor tror du det betyr noe for mange muslimer at trosbekjennelsen er både det første og det siste et menneske hører?",
-                    "Alle svøpes i enkle hvite tøystykker, uten smykker eller eiendeler. Hva sier den regelen om synet på mennesker?",
+                    "Alle blir pakket inn i enkle hvite tøystykker, uten smykker eller eiendeler. Hva sier den regelen om synet på mennesker?",
                     "Ekteskapet i islam er en kontrakt som kan sies opp. Hvordan er det likt og ulikt måten ekteskap inngås på i Norge i dag?",
                     "Bruk van Genneps tre trinn på gravferden. Hvor i ritualet finner du hvert av de tre trinnene?"
                 ],
@@ -231,7 +231,7 @@
                         "explanation": "Mahr går fra mannen til kvinnen og skal sikre henne økonomisk. Den må være nevnt i ekteskapskontrakten."
                     },
                     {
-                        "question": "Hva sier islamsk tradisjon om kremasjon?",
+                        "question": "Hva sier islam om å brenne den døde?",
                         "options": [
                             "Det er påbudt",
                             "Det er tillatt hvis familien ønsker det",
@@ -242,7 +242,7 @@
                         "explanation": "Muslimer gravlegges. Kroppen legges på høyre side med ansiktet vendt mot Mekka, helst innen ett døgn."
                     },
                     {
-                        "question": "Hvorfor svøpes den døde i enkle hvite tøystykker uten smykker?",
+                        "question": "Hvorfor blir den døde pakket inn i enkle hvite tøystykker uten smykker?",
                         "options": [
                             "Fordi hvitt er sørgefargen i alle muslimske land",
                             "For å vise at alle mennesker er like",
@@ -250,7 +250,7 @@
                             "For at kroppen skal bevares lenger"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "De hvite tekstilene og fraværet av eiendeler markerer likhet og enkelhet."
+                        "explanation": "Det hvite tøyet, og det at ingen får med seg eiendeler, viser at alle er like."
                     },
                     {
                         "question": "Hva er riktig om omskjæring av gutter i islam?",

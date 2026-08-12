@@ -41,7 +41,7 @@
         {
             "id": "nirvana",
             "term": "nirvana",
-            "definition": "Målet i buddhismen: at lidelsen tar helt slutt og gjenfødelsen opphører."
+            "definition": "Målet i buddhismen: at all lidelse tar slutt, og at du ikke blir født på nytt."
         }
     ],
     "content": [
@@ -69,15 +69,15 @@
         },
         {
             "type": "text",
-            "content": "Buddha levde i Nord-India. Forskerne er ikke helt sikre på når, men mener i dag at han levde rundt år 400 før vår tidsregning, og at han ble åtti år gammel (Kværne & Borgland, 2026b). Da hadde han undervist i flere tiår, og elevene var vant til å få svar av ham. Nettopp derfor la de merke til det når han tidde. En munk som het Malunkyaputta ble til slutt lei av å ikke få vite. Han oppsøkte Buddha og stilte et ultimatum: enten svarer du, eller så forlater jeg ordenen. Så ramset han opp ti spørsmål han krevde svar på (Thanissaro Bhikkhu, 1998). Spørsmålene kom parvis, og det siste hadde fire svaralternativer. Til sammen blir de ti, og de dekker omtrent alt et menneske kan lure på om verden i det store:"
+            "content": "Buddha levde i Nord-India. Forskerne er ikke helt sikre på når, men mener i dag at han levde rundt år 400 før vår tidsregning, og at han ble åtti år gammel (Kværne & Borgland, 2026b). Da hadde han undervist i flere tiår, og elevene var vant til å få svar av ham. Nettopp derfor la de merke til det når han tidde. En munk som het Malunkyaputta ble til slutt lei av å ikke få vite. Han oppsøkte Buddha og stilte ham et krav: enten svarer du, eller så forlater jeg munkeordenen. Så ramset han opp ti spørsmål han krevde svar på (Thanissaro Bhikkhu, 1998). Spørsmålene kom to og to, og det siste hadde fire mulige svar. Til sammen blir de ti, og de dekker omtrent alt et menneske kan lure på om verden i det store:"
         },
         {
             "type": "list",
             "items": [
-                "Er verden evig, eller har den ikke vart bestandig?",
+                "Er verden evig, eller har den ikke alltid vært til?",
                 "Har verden en ytterkant, eller er den uendelig?",
                 "Er sjelen og kroppen det samme, eller er de to ulike ting?",
-                "Finnes den opplyste etter døden, finnes han ikke, både og, eller verken eller?"
+                "Finnes den som er blitt opplyst, etter at han dør? Finnes han ikke? Både og? Eller verken eller?"
             ]
         },
         {
@@ -97,19 +97,19 @@
         },
         {
             "type": "text",
-            "content": "Grunnen han oppga selv, var ikke at spørsmålene var dumme eller for vanskelige. Grunnen var at svaret ikke ville hjelpe. Enten verden er evig eller ikke, sa han, så blir folk født, blir gamle, mister det de er glad i og dør. Spørsmålene hører ikke sammen med målet, og de fører ikke til at lidelsen slutter (Thanissaro Bhikkhu, 1998). Tenk deg at du fikk det endelige svaret på om verden er evig, skrevet ned på en lapp. Hva ville forandret seg i livet ditt neste morgen? Det var slik Buddha så på det. I en annen tekst går han lenger og kaller slike standpunkter et kratt av meninger som ingen blir fri av (Thanissaro Bhikkhu, 1997b). Buddha var også skarp i kritikken av de religiøse spekulasjonene om verdens innerste natur som var vanlige i samtiden hans (Kværne & Borgland, 2026b)."
+            "content": "Grunnen han oppga selv, var ikke at spørsmålene var dumme eller for vanskelige. Grunnen var at svaret ikke ville hjelpe. Enten verden er evig eller ikke, sa han, så blir folk født, blir gamle, mister det de er glad i og dør. Spørsmålene hører ikke sammen med målet, og de fører ikke til at lidelsen slutter (Thanissaro Bhikkhu, 1998). Tenk deg at du fikk det endelige svaret på om verden er evig, skrevet ned på en lapp. Hva ville forandret seg i livet ditt neste morgen? Det var slik Buddha så på det. I en annen tekst går han lenger og kaller slike syn et kratt av meninger som ingen blir fri av (Thanissaro Bhikkhu, 1997b). Buddha kritiserte også hardt de religiøse gjetningene om hva verden innerst inne er, som var vanlige på hans tid (Kværne & Borgland, 2026b)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Guden som trodde han hadde skapt verden",
-                "content": "En av de eldste buddhistiske tekstene forteller om et vesen som blir født inn i en tom verden som akkurat har begynt å utvide seg igjen. Det sitter alene i lang tid og ønsker seg selskap. Så dukker det opp andre vesener, og det første tenker: Jeg er Brahma, den store Brahma, og disse vesenene har jeg skapt, for jeg ønsket det, og så kom de. Teksten sier at han tar feil. De andre kom av helt andre grunner. I buddhismen er altså troen på en skapergud ikke bare avvist, den blir forklart som en misforståelse (Bodhi, 2010)."
+                "content": "En av de eldste buddhistiske tekstene forteller om et vesen som blir født inn i en tom verden som akkurat har begynt å utvide seg igjen. Det sitter alene i lang tid og ønsker seg selskap. Så dukker det opp andre vesener, og det første tenker: Jeg er Brahma, den store Brahma, og disse vesenene har jeg skapt, for jeg ønsket det, og så kom de. Teksten sier at han tar feil. De andre kom av helt andre grunner. I buddhismen sier man altså ikke bare nei til troen på en skapergud. Teksten forklarer også hvordan misforståelsen oppsto (Bodhi, 2010)."
             }
         },
         {
             "type": "text",
-            "content": "Derfor kalles buddhismen ofte en ikke-teistisk religion. Det betyr ikke at buddhister nekter for at guder finnes, men at ingen gud står over kretsløpet og styrer det. Gudene er selv med i det. Du kan lese mer om dette i artikkelen om [ingen skapergud](/krle/religion/buddhisme/gudsbilde)."
+            "content": "Derfor sier man ofte at buddhismen er en religion uten en skapergud. Det betyr ikke at buddhister nekter for at guder finnes, men at ingen gud står over kretsløpet og styrer det. Gudene er selv med i det. Du kan lese mer om dette i artikkelen om [ingen skapergud](/krle/religion/buddhisme/gudsbilde)."
         },
         {
             "type": "image",
@@ -123,11 +123,11 @@
         },
         {
             "type": "text",
-            "content": "Men hva svarer buddhismen da, hvis noen spør hvor verden kommer fra? Tekstene gir et svar som egentlig er et ikke-svar. Kretsløpet av fødsel, død og ny fødsel kalles samsara. Om samsara sier tekstene at begynnelsen ikke lar seg tenke, og at ingen kan få øye på noe startpunkt, mens vesener holdes fast av uvitenhet og begjær og vandrer videre (Thanissaro Bhikkhu, 1997a). Verden har altså ingen første side. Den har alltid vært i gang."
+            "content": "Men hva svarer buddhismen da, hvis noen spør hvor verden kommer fra? Tekstene gir et svar som egentlig er et ikke-svar. Kretsløpet av fødsel, død og ny fødsel kalles samsara. Om samsara sier tekstene at begynnelsen ikke lar seg tenke, og at ingen kan få øye på noe startpunkt. Levende vesener holdes fast fordi de ikke vet bedre og fordi de hele tiden vil ha noe, og slik vandrer de videre (Thanissaro Bhikkhu, 1997a). Verden har altså ingen første side. Den har alltid vært i gang."
         },
         {
             "type": "text",
-            "content": "I stedet for en skapelse har buddhismen en forklaring på hvordan ting oppstår i det hele tatt. Den kalles betinget tilblivelse, og formelen er enkel: fordi dette er der, blir dette til. Tekstene setter opp en kjede på tolv ledd, der uvitenhet fører til det neste, som fører til det neste, helt fram til fødsel, alderdom og død (Thanissaro Bhikkhu, 1997c). Poenget er ikke å pugge kjeden. Poenget er at ingenting står alene og ingenting starter av seg selv. Alt oppstår fordi noe annet allerede er der. Et bål brenner så lenge det er ved, luft og varme. Ingen trenger å spørre hvem som fant opp ilden for å slukke det som brenner nå. Klipper du et ledd, stopper resten. Det er der buddhister mener frigjøringen ligger. Målet kalles [nirvana](/krle/religion/buddhisme/frelse), og betyr at lidelsen tar helt slutt og at gjenfødelsen opphører (Kværne & Borgland, 2025)."
+            "content": "I stedet for en skapelse har buddhismen en forklaring på hvordan ting oppstår i det hele tatt. Den kalles betinget tilblivelse, og formelen er enkel: fordi dette er der, blir dette til. Tekstene setter opp en kjede på tolv ledd, der uvitenhet fører til det neste, som fører til det neste, helt fram til fødsel, alderdom og død (Thanissaro Bhikkhu, 1997c). Poenget er ikke å pugge kjeden. Poenget er at ingenting står alene og ingenting starter av seg selv. Alt oppstår fordi noe annet allerede er der. Et bål brenner så lenge det er ved, luft og varme. Ingen trenger å spørre hvem som fant opp ilden for å slukke det som brenner nå. Klipper du et ledd, stopper resten. Det er der buddhister mener veien ut ligger. Målet kalles [nirvana](/krle/religion/buddhisme/frelse), og betyr at all lidelse tar slutt, og at du ikke blir født på nytt (Kværne & Borgland, 2025)."
         },
         {
             "type": "image",
@@ -141,7 +141,7 @@
         },
         {
             "type": "text",
-            "content": "I 2020 var det rundt 324 millioner buddhister i verden, og buddhismen er delt i to hovedtradisjoner, theravada og mahayana (Kværne & Borgland, 2026a). De er ikke enige om alt. Noen buddhister leser tekstene om verdensaldre og himler nokså bokstavelig, andre ser på dem som bilder. Noen synes fortsatt at spørsmålet om verdens opphav er spennende å tenke på, selv om Buddha lot det ligge. Mange buddhister mener at det er lov å undre seg, så lenge undringen ikke tar plassen til det som faktisk hjelper. Innenfor mahayana finnes det i tillegg egne retninger som zen og tantrisk buddhisme, med hver sine måter å øve på (Kværne & Borgland, 2026a). Men på ett punkt møtes de fleste: den som skal komme videre, må begynne med pilen som sitter i skulderen, ikke med bueskytteren. Det er derfor buddhismen ikke åpner med en skapelse. Den åpner med et sår."
+            "content": "I 2020 var det rundt 324 millioner buddhister i verden, og buddhismen er delt i to hovedtradisjoner, theravada og mahayana (Kværne & Borgland, 2026a). De er ikke enige om alt. Noen buddhister leser tekstene om verdensaldre og himler nokså bokstavelig, andre ser på dem som bilder. Noen synes fortsatt at spørsmålet om hvor verden kommer fra, er spennende å tenke på, selv om Buddha lot det ligge. Mange buddhister mener at det er lov å undre seg, så lenge undringen ikke tar plassen til det som faktisk hjelper. Innenfor mahayana finnes det i tillegg egne retninger som zen og tantrisk buddhisme, med hver sine måter å øve på (Kværne & Borgland, 2026a). Men på ett punkt møtes de fleste: den som skal komme videre, må begynne med pilen som sitter i skulderen, ikke med bueskytteren. Det er derfor buddhismen ikke åpner med en skapelse. Den åpner med et sår."
         },
         {
             "type": "component",
@@ -154,8 +154,8 @@
                     "Hva sier buddhistiske tekster om begynnelsen på samsara?"
                 ],
                 "reflekter": [
-                    "Buddha sa at svaret på spørsmålet om verdens opphav ikke ville hjelpe. Er du enig i at et spørsmål må være nyttig for å være verdt å svare på?",
-                    "Hvorfor tror du Malunkyaputta ble så frustrert at han truet med å forlate ordenen?",
+                    "Buddha sa at svaret på hvor verden kommer fra, ikke ville hjelpe noen. Er du enig i at et spørsmål må være nyttig for å være verdt å svare på?",
+                    "Hvorfor tror du Malunkyaputta ble så irritert at han truet med å forlate munkeordenen?",
                     "Forklar med egne ord hvorfor betinget tilblivelse gjør at man ikke trenger en skaper.",
                     "Historien om Brahma sier at han tar feil om sin egen rolle. Hvorfor tror du en religion forteller en slik historie om en gud?"
                 ],

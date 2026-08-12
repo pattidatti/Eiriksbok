@@ -16,7 +16,7 @@
   "details": [
     "Fadervår er den bønnen Jesus ifølge evangeliene lærte disiplene sine, og den eneste bønnen alle kristne kirker har felles.",
     "Bønnen har sju ledd. De tre første handler om Gud, de fire siste om det menneskene trenger.",
-    "Kristen bønn spenner fra faste liturgiske ord til helt fri bønn med egne ord.",
+    "Kristen bønn kan være faste ord som gjentas hver gang, eller helt frie ord du finner på selv.",
     "I den katolske kirken bes tidebønner åtte ganger i døgnet, og rosenkransen brukes til å telle bønner.",
     "I den ortodokse kirken gjentas Jesusbønnen til den følger pusten og hjerteslagene."
   ],
@@ -31,7 +31,7 @@
     {
       "id": "liturgisk-bonn",
       "term": "Liturgisk bønn",
-      "definition": "Bønn med faste ord som gjentas hver gang, slik de brukes i en gudstjeneste."
+      "definition": "Bønn med faste ord som gjentas hver gang, slik de sies i en gudstjeneste."
     },
     {
       "id": "tidebonner",
@@ -66,7 +66,7 @@
     },
     {
       "type": "text",
-      "content": "Bønn i kristendommen er langt mer enn Fadervår. Bønn er et samlenavn på måter mennesker kommuniserer med høyere makter på, og finnes i alle religioner (Jacobsen mfl., 2024). Kristen bønn kan være ferdige ord fra en bønnebok, mange egne ord, helt uten ord, eller bare et sukk. Den norske kirke skriver at det viktigste er at man kan snakke med Gud rett fra hjertet (Den norske kirke, u.å.). Likevel er det Fadervår alt annet måles mot."
+      "content": "Bønn i kristendommen er langt mer enn Fadervår. Bønn er et samlenavn på måter mennesker snakker med høyere makter på, og finnes i alle religioner (Jacobsen mfl., 2024). Kristen bønn kan være ferdige ord fra en bønnebok, mange egne ord, helt uten ord, eller bare et sukk. Den norske kirke skriver at det viktigste er at man kan snakke med Gud rett fra hjertet (Den norske kirke, u.å.). Likevel er det Fadervår alt annet måles mot."
     },
     {
       "type": "header",
@@ -74,7 +74,7 @@
     },
     {
       "type": "text",
-      "content": "Fadervår står to steder i [Bibelen](/krle/religion/kristendom/hellige-tekster). Hos Matteus i kapittel 6, vers 9 til 13, og hos Lukas i kapittel 11, vers 2 til 4. Versjonen hos Lukas er tydelig kortere, og det er Matteus sin versjon kirkene bruker (Seim, 2025). Den har sju ledd. De tre første handler om at Gud skal virkeliggjøre herredømmet sitt. De fire siste er bønn om det man trenger for å leve, og om hjelp i det som er vanskelig (Seim, 2025). Prøv å plassere leddene selv under, ett om gangen."
+      "content": "Fadervår står to steder i [Bibelen](/krle/religion/kristendom/hellige-tekster). Hos Matteus i kapittel 6, vers 9 til 13, og hos Lukas i kapittel 11, vers 2 til 4. Versjonen hos Lukas er tydelig kortere, og det er Matteus sin versjon kirkene bruker (Seim, 2025). Den har sju ledd. De tre første handler om at Gud skal få styre verden slik han vil. De fire siste er bønn om det man trenger for å leve, og om hjelp i det som er vanskelig (Seim, 2025). Prøv å plassere leddene selv under, ett om gangen."
     },
     {
       "type": "component",
@@ -104,12 +104,12 @@
       "name": "FactBox",
       "props": {
         "title": "Bønn etter klokka",
-        "content": "Tidebønner er bønner knyttet til bestemte tider av døgnet, og i den katolske kirken bes de åtte ganger daglig: matutin, laudes, prim, ters, sekst, non, vesper og completorium. Alle prester og diakoner, og alle medlemmer av ordenssamfunn, er forpliktet til å be dem hver dag. Bønnene består av salmer, tekster fra Bibelen og lesninger fra kirkefedrene (Halvorsen, 2026)."
+        "content": "Tidebønner er bønner knyttet til bestemte tider av døgnet, og i den katolske kirken bes de åtte ganger daglig: matutin, laudes, prim, ters, sekst, non, vesper og completorium. Alle prester og diakoner, altså kirkelige medhjelpere, og alle som bor i kloster, må be dem hver dag. Bønnene består av salmer, tekster fra Bibelen og tekster fra kirkefedrene, altså de første kristne lærerne (Halvorsen, 2026)."
       }
     },
     {
       "type": "text",
-      "content": "I gudstjenesten møtes begge former. En gudstjeneste er en religiøs samling der troende møtes for å be, og der [dåp og nattverd](/krle/religion/kristendom/sakramentene) hører hjemme, og bibellesing og bønn er minstekravet (Thomassen, 2024). Den norske kirke følger en fast liturgi i luthersk tradisjon. Frikirkelige menigheter, særlig i pinsebevegelsen, har friere former der spontanitet betyr mer enn faste ledd (Thomassen, 2024). Katolske og ortodokse kirker holder på de mest faste formene. Alt dette er kristen bønn, og kristne er ikke enige om hvilken form som gir mest."
+      "content": "I gudstjenesten møtes begge former. En gudstjeneste er en religiøs samling der troende møtes for å be, og der [dåp og nattverd](/krle/religion/kristendom/sakramentene) hører hjemme, og bibellesing og bønn er minstekravet (Thomassen, 2024). Den norske kirke følger en fast liturgi i luthersk tradisjon. Frikirkelige menigheter, altså menigheter som står utenfor Den norske kirke, har friere former, særlig i pinsebevegelsen. Der betyr det å finne på ting der og da mer enn faste ledd (Thomassen, 2024). Katolske og ortodokse kirker holder på de mest faste formene. Alt dette er kristen bønn, og kristne er ikke enige om hvilken form som gir mest."
     },
     {
       "type": "image",
@@ -123,11 +123,11 @@
     },
     {
       "type": "text",
-      "content": "I flere religioner brukes bønnekjeder for å holde styr på hvor mange ganger en bønn er sagt (Jacobsen mfl., 2024). I den katolske kirken heter kjedet rosenkrans. Den tradisjonelle formen har 150 perler i grupper på ti, skilt av femten større perler, mens den vanligste i dag har femti små og fem store. På de små perlene bes Ave Maria, på de store Fadervår. Tallet 150 svarte opprinnelig til antallet salmer i Salmenes bok. Dominikanerne gjorde rosenkransen utbredt mot slutten av middelalderen (Store norske leksikon, 2026)."
+      "content": "I flere religioner brukes bønnekjeder for å holde styr på hvor mange ganger en bønn er sagt (Jacobsen mfl., 2024). I den katolske kirken heter kjedet rosenkrans. Den tradisjonelle formen har 150 perler i grupper på ti, skilt av femten større perler, mens den vanligste i dag har femti små og fem store. På de små perlene bes Ave Maria, på de store Fadervår. Tallet 150 svarte opprinnelig til antallet salmer i Salmenes bok. Dominikanerne, en katolsk munkeorden, gjorde rosenkransen vanlig mot slutten av middelalderen (Store norske leksikon, 2026)."
     },
     {
       "type": "text",
-      "content": "I den ortodokse kirken finnes noe som ligner i form, men som er noe helt annet i innhold. Jesusbønnen er en enkel bønn som gjentas igjen og igjen: over en bestemt tid, et bestemt antall ganger, eller i perioder gjennom dagen mens man gjør vanlig hverdagsarbeid. Mange bruker en bønnesnor av ull med knuter for å telle, og ber i stillhet. Målet er at bønnen etter hvert skal følge pusten og hjerteslagene, slik at man kommer til indre ro (Thorbjørnsrud og Paulsen, 2018)."
+      "content": "I den ortodokse kirken finnes noe som ser nesten likt ut, men som betyr noe helt annet. Jesusbønnen er en enkel bønn som gjentas igjen og igjen: over en bestemt tid, et bestemt antall ganger, eller i perioder gjennom dagen mens man gjør vanlig hverdagsarbeid. Mange bruker en bønnesnor av ull med knuter for å telle, og ber i stillhet. Målet er at bønnen etter hvert skal følge pusten og hjerteslagene, slik at man kommer til indre ro (Thorbjørnsrud og Paulsen, 2018)."
     },
     {
       "type": "component",
@@ -153,7 +153,7 @@
     },
     {
       "type": "text",
-      "content": "Fadervår er karakteristisk for det Jesus forkynte, og den eneste bønnen alle kristne kirker deler. Derfor har den stor økumenisk betydning, altså betydning på tvers av kirkesamfunnene (Seim, 2025). Men selv den er ikke helt lik overalt. Avslutningen som begynner med at riket er ditt, er trolig et tillegg som speiler tidlig bruk i gudstjenesten, og noen kirker regner den ikke som en del av selve bønnen (Seim, 2025)."
+      "content": "Fadervår viser godt hva Jesus lærte bort, og den er den eneste bønnen alle kristne kirker deler. Derfor har den stor økumenisk betydning, altså betydning på tvers av kirkesamfunnene (Seim, 2025). Men selv den er ikke helt lik overalt. Avslutningen som begynner med at riket er ditt, er trolig et tillegg som viser hvordan bønnen ble brukt i gudstjenesten helt fra tidlig av, og noen kirker regner den ikke som en del av selve bønnen (Seim, 2025)."
     },
     {
       "type": "text",
@@ -202,7 +202,7 @@
             "question": "Hva handler de tre første leddene i Fadervår om?",
             "options": [
               "Mat, klær og husly",
-              "At Gud skal virkeliggjøre herredømmet sitt",
+              "At Gud skal få styre verden slik han vil",
               "Tilgivelse for det man har gjort galt",
               "Beskyttelse mot fristelser"
             ],
@@ -218,7 +218,7 @@
               "Bønner som bare prester kan høre på"
             ],
             "correctAnswer": 1,
-            "explanation": "I den katolske kirken bes de åtte ganger daglig, og prester, diakoner og ordensfolk er forpliktet til å be dem."
+            "explanation": "I den katolske kirken bes de åtte ganger daglig, og prester, diakoner og folk som bor i kloster, må be dem."
           },
           {
             "question": "Hva bes på de små perlene i en rosenkrans?",

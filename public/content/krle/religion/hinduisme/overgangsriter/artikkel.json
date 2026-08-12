@@ -16,9 +16,9 @@
     "heroImage": "/images/placeholder.webp",
     "details": [
         "Overgangsritene i hinduismen heter samskara. Ritualtekstene setter opp seksten av dem i fast rekkefølge.",
-        "Den første holdes før barnet er unnfanget, den siste er kremasjonen.",
+        "Den første holdes før barnet er unnfanget, den siste er når kroppen brennes etter døden.",
         "Nesten ingen familie holder alle seksten. Fire grupper er vanlige i dag: fødsel og barndom, innvielse, bryllup og begravelse.",
-        "Upanayana, den hellige snoren, ble regnet som nødvendig for de tre øverste varna-gruppene, de tvefødte.",
+        "Upanayana, den hellige snoren, måtte de tre øverste gruppene i samfunnet gjennom. De ble kalt de tvefødte.",
         "I bryllupet går paret fire runder rundt ilden og tar sju skritt mot nord. Skrittene gjør ritualet gyldig."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
@@ -27,7 +27,7 @@
         {
             "id": "samskara",
             "term": "Samskara",
-            "definition": "Overgangsritene i hinduismen. Tradisjonen setter opp seksten av dem, fra før unnfangelsen til kremasjonen."
+            "definition": "Overgangsritene i hinduismen. Tradisjonen setter opp seksten av dem, fra før barnet er unnfanget til kroppen brennes etter døden."
         },
         {
             "id": "upanayana",
@@ -37,7 +37,7 @@
         {
             "id": "antyeshti",
             "term": "Antyeshti",
-            "definition": "Det siste offeret. Kremasjonsritualet i hinduismen."
+            "definition": "Det siste offeret. Seremonien der den døde kroppen brennes."
         },
         {
             "id": "shraddha",
@@ -47,7 +47,7 @@
         {
             "id": "moksha",
             "term": "Moksha",
-            "definition": "Frigjøringen fra gjenfødsel. Det endelige målet i hinduismen."
+            "definition": "Å slippe å bli født på nytt igjen og igjen. Det er det siste målet i hinduismen."
         }
     ],
     "content": [
@@ -57,7 +57,7 @@
         },
         {
             "type": "text",
-            "content": "Seremonier som markerer at et menneske går fra én plass i samfunnet til en annen, kalles overgangsriter. Alle samfunn har dem (Bertelsen, 2024). Den franske forskeren Arnold van Gennep innførte begrepet rundt 1909, og han delte slike riter i tre faser: du føres bort fra det gamle, du er en stund i en mellomtilstand, og så tas du inn igjen med ny status (Bertelsen, 2024). I Norge kjenner de fleste fire slike markeringer: dåp, konfirmasjon, bryllup og begravelse. Hinduismen har mange flere."
+            "content": "Seremonier som markerer at et menneske går fra én plass i samfunnet til en annen, kalles overgangsriter. Alle samfunn har dem (Bertelsen, 2024). Den franske forskeren Arnold van Gennep tok ordet i bruk rundt 1909, og han delte slike riter i tre faser: du føres bort fra det gamle, du er en stund i et mellomrom der du verken er det ene eller det andre, og så tas du inn igjen med en ny plass (Bertelsen, 2024). I Norge kjenner de fleste fire slike markeringer: dåp, konfirmasjon, bryllup og begravelse. Hinduismen har mange flere."
         },
         {
             "type": "image",
@@ -67,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Hinduisme er et samlenavn for et mangfold av religiøse tradisjoner som har vokst fram på det indiske subkontinentet gjennom flere tusen år (Kværne og Jacobsen, 2026). Det finnes ingen felles kirke, ingen felles ledelse og ingen felles regelbok. Familien er derfor grunnleggende, og de daglige ritualene og livsritene hører hjemme i huset (Kværne og Jacobsen, 2026). Nettopp derfor varierer praksis mye fra region til region og fra familie til familie. Vil du vite mer om hva som likevel binder tradisjonene sammen, kan du lese om [sentrale trekk i hinduismen](/krle/religion/hinduisme/sentrale-trekk)."
+            "content": "Hinduisme er et samlenavn for mange ulike religiøse tradisjoner som har vokst fram i India og landene rundt gjennom flere tusen år (Kværne og Jacobsen, 2026). Det finnes ingen felles kirke, ingen felles ledelse og ingen felles regelbok. Derfor er familien det viktigste, og både de daglige ritualene og livsritene hører hjemme i huset (Kværne og Jacobsen, 2026). Og derfor gjøres ting svært ulikt fra sted til sted og fra familie til familie. Vil du vite mer om hva som likevel binder tradisjonene sammen, kan du lese om [sentrale trekk i hinduismen](/krle/religion/hinduisme/sentrale-trekk)."
         },
         {
             "type": "header",
@@ -75,7 +75,7 @@
         },
         {
             "type": "text",
-            "content": "Listen på seksten står i gamle ritualtekster som hører til [de hellige tekstene i hinduismen](/krle/religion/hinduisme/hellige-tekster) (ISKCON Educational Services, u.å.-b). Den starter før unnfangelsen. Så følger riter i svangerskapet, ved fødselen og ved navngivningen. Deretter kommer første gang barnet bæres ut av huset, første gang det spiser fast føde, første hårklipp og hull i ørene. Så følger skoleritene: den første bokstaven, opptaket til studier, starten på Veda-lesningen, den første barberingen, og hjemkomsten når studiet er ferdig. Til slutt bryllupet og kremasjonen. Noen tradisjoner opererer med ti riter, noen med seksten, noen med enda flere (ISKCON Educational Services, u.å.-a). Prøv listen under."
+            "content": "Listen på seksten står i gamle ritualtekster som hører til [de hellige tekstene i hinduismen](/krle/religion/hinduisme/hellige-tekster) (ISKCON Educational Services, u.å.-b). Den starter før unnfangelsen. Så følger riter i svangerskapet, ved fødselen og ved navngivningen. Deretter kommer første gang barnet bæres ut av huset, første gang det spiser fast føde, første hårklipp og hull i ørene. Så følger skoleritene: den første bokstaven, opptaket til studier, starten på Veda-lesningen, den første barberingen, og hjemkomsten når studiet er ferdig. Til slutt bryllupet og kremasjonen. Noen tradisjoner har ti riter, noen seksten, noen enda flere (ISKCON Educational Services, u.å.-a). Prøv listen under."
         },
         {
             "type": "component",
@@ -101,12 +101,12 @@
             "name": "FactBox",
             "props": {
                 "title": "Hva betyr tvefødt?",
-                "content": "De tre øverste varna-gruppene ble kalt tvefødte. Den første fødselen er den fysiske. Den andre er innvielsen med snoren, som gav rett til å lese de hellige tekstene. Shudraene og gruppene som stod helt utenfor varna-systemet, fikk ikke denne innvielsen. Kaste bestemmes ved fødselen og ligger fast livet ut."
+                "content": "De tre øverste varna-gruppene ble kalt tvefødte. Den første fødselen er den vanlige, den dagen du blir født. Den andre er innvielsen med snoren, som ga rett til å lese de hellige tekstene. Shudraene og gruppene som stod helt utenfor varna-systemet, fikk ikke denne innvielsen. Kaste bestemmes ved fødselen og ligger fast livet ut."
             }
         },
         {
             "type": "text",
-            "content": "Dette er et av punktene der en overgangsrite sier noe om mer enn seremonien selv. Snoren markerte ikke bare at gutten hadde begynt å lese. Den markerte hvem som fikk lov til det. Kastene er ordnet i et hierarki, og i moderne tid har indiske myndigheter satt inn tiltak mot diskrimineringen som særlig rammet de gruppene som ble kalt uberørbare (Schackt, 2026). Hvor stor plass upanayana har i dag, varierer sterkt mellom regioner, retninger og familier."
+            "content": "Her sier en overgangsrite noe om mer enn seremonien i seg selv. Snoren markerte ikke bare at gutten hadde begynt å lese. Den markerte hvem som fikk lov til det. Kastene er ordnet i en rangstige, og i nyere tid har indiske myndigheter satt i gang tiltak mot den urettferdige behandlingen som særlig rammet gruppene som ble kalt uberørbare (Schackt, 2026). Hvor stor plass upanayana har i dag, varierer sterkt mellom regioner, retninger og familier."
         },
         {
             "type": "image",
@@ -124,7 +124,7 @@
         },
         {
             "type": "text",
-            "content": "Så tar paret sju skritt sammen mot nord. Det er disse skrittene som gjør ritualet gyldig. Presten leser et mantra for hvert skritt. Paret bytter blomsterkranser, presten stenker vann på pannen deres, mat ofres til ilden, og de mater hverandre som tegn på kjærlighet. Noen bytter også ringer, en skikk som er hentet fra Vesten (Jacobsen, 2024a). Blant tamiler, som utgjør de fleste hinduene i Norge, er det en annen del som er høydepunktet: bruden får et thali av brudgommen, et gullsmykke hun bærer resten av livet. Toppunktet er når han fester det, mens musikken spiller og publikum kaster blomster (Jacobsen, 2024a). Sivasubramanyar Alayam på Rommen i Oslo er det største hindutempelet i Norge. Selve tempelet ligger i andre etasje, mens første etasje har kjøkken og festsal til felles måltider og bryllup (Jacobsen, 2024c)."
+            "content": "Så tar paret sju skritt sammen mot nord. Det er disse skrittene som gjør ritualet gyldig. Presten leser et mantra, en hellig formel, for hvert skritt. Paret bytter blomsterkranser, presten stenker vann på pannen deres, mat ofres til ilden, og de mater hverandre som tegn på kjærlighet. Noen bytter også ringer, en skikk som er hentet fra Vesten (Jacobsen, 2024a). Blant tamiler, som utgjør de fleste hinduene i Norge, er det en annen del som er høydepunktet: bruden får et thali av brudgommen, et gullsmykke hun bærer resten av livet. Toppunktet er når han fester det, mens musikken spiller og publikum kaster blomster (Jacobsen, 2024a). Sivasubramanyar Alayam på Rommen i Oslo er det største hindutempelet i Norge. Selve tempelet ligger i andre etasje, mens første etasje har kjøkken og festsal til felles måltider og bryllup (Jacobsen, 2024c)."
         },
         {
             "type": "image",
@@ -138,19 +138,19 @@
         },
         {
             "type": "text",
-            "content": "Dødsritualet heter antyeshti, det siste offeret, og det er et kremasjonsritual (Jacobsen, 2024b). Den døde skal helst kremeres samme dag, fordi den døde kroppen regnes som rituelt uren. Familien er uren helt til ritualet er ferdig. Den eldste sønnen, og noen ganger andre nære mannlige slektninger, barberer seg og klipper håret, faster og går i hvite klær. Hvitt er sorgens farge. Meningen med kremasjonen er å gi kroppen en verdig slutt og å løse sjelen fra den (Jacobsen, 2024b)."
+            "content": "Dødsritualet heter antyeshti, det siste offeret, og det går ut på å brenne den døde (Jacobsen, 2024b). Kroppen skal helst brennes samme dag, fordi en død kropp regnes som uren etter religiøse regler. Familien er uren helt til ritualet er ferdig. Den eldste sønnen, og noen ganger andre nære mannlige slektninger, barberer seg og klipper håret, faster og går i hvite klær. Hvitt er sorgens farge. Meningen med å brenne kroppen er å gi den en verdig slutt og å løsne sjelen fra den (Jacobsen, 2024b)."
         },
         {
             "type": "text",
-            "content": "Mange hinduer mener at sjelen etter kremasjonen blir en ånd som kalles preta, og som er på vei mot forfedrenes verden. I ti dager settes det fram små riskuler, pinda, som skal hjelpe den døde videre. Sønnen sørger formelt i et år, og på årsdagen ofres det ris i et ritual som heter shraddha. Andre hinduer mener sjelen går rett videre til en ny fødsel (Jacobsen, 2024b). Ritualene har to oppgaver samtidig. De skal føre den døde videre, og de skal hjelpe de levende gjennom sorgen."
+            "content": "Mange hinduer mener at sjelen, etter at kroppen er brent, blir en ånd som kalles preta, og som er på vei mot forfedrenes verden. I ti dager settes det fram små riskuler, pinda, som skal hjelpe den døde videre. Sønnen har offisiell sørgetid i et år, og på årsdagen ofres det ris i et ritual som heter shraddha. Andre hinduer mener sjelen går rett videre til en ny fødsel (Jacobsen, 2024b). Ritualene har to oppgaver samtidig. De skal føre den døde videre, og de skal hjelpe de levende gjennom sorgen."
         },
         {
             "type": "text",
-            "content": "Asken og beinrestene skal legges i rennende vann, helst i elva Ganges. Enhver elv kan bli en Ganges ved at man heller litt vann fra Ganges opp i den. Mange hinduer i Norge oppbevarer asken hjemme til de er på ferie i Sør-Asia, og legger den i en elv der (Jacobsen, 2024b). Én gruppe kremeres ikke. Hellige personer fikk dødsritualet sitt holdt allerede den dagen de ble asketer og forlot familielivet. De gravlegges i stedet, og graven kalles samadhisthana (Jacobsen, 2024b)."
+            "content": "Asken og beinrestene skal legges i rennende vann, helst i elva Ganges. Enhver elv kan bli en Ganges ved at man heller litt vann fra Ganges opp i den. Mange hinduer i Norge oppbevarer asken hjemme til de er på ferie i Sør-Asia, og legger den i en elv der (Jacobsen, 2024b). Én gruppe blir ikke brent. Hellige personer fikk dødsritualet sitt holdt allerede den dagen de ga fra seg alt de eide og forlot familielivet. De gravlegges i stedet, og graven kalles samadhisthana (Jacobsen, 2024b)."
         },
         {
             "type": "text",
-            "content": "Døden er ingen endestasjon i hinduismen. Bare kroppen dør. Sjelen lever videre i en usynlig, fin kropp og fødes på nytt i en ny materiell kropp, om og om igjen, helt til den når moksha, frigjøringen fra gjenfødsel (Jacobsen, 2024b). Det målet kan du lese mer om i artikkelen om [frelse i hinduismen](/krle/religion/hinduisme/frelse). Ser du de seksten ritene under ett, ser du hvor tett et hinduliv er tenkt vevd inn i ritualer. Men listen er et ideal, ikke en fasit over hva folk faktisk gjør."
+            "content": "Døden er ingen endestasjon i hinduismen. Bare kroppen dør. Sjelen lever videre i en usynlig, fin kropp og fødes på nytt i en ny kropp av kjøtt og blod, om og om igjen, helt til den når moksha og slipper å bli født på nytt (Jacobsen, 2024b). Det målet kan du lese mer om i artikkelen om [frelse i hinduismen](/krle/religion/hinduisme/frelse). Ser du de seksten ritene under ett, ser du hvor tett et hinduliv er tenkt vevd sammen med ritualer. Men listen viser hvordan det burde være, ikke hva folk faktisk gjør."
         },
         {
             "type": "component",
@@ -163,9 +163,9 @@
                     "Beskriv de to delene av bryllupsritualet som skjer ved ilden."
                 ],
                 "reflekter": [
-                    "Nesten ingen familie holder alle seksten ritene. Hva sier det om forskjellen mellom en religions tekster og folks praksis?",
+                    "Nesten ingen familie holder alle seksten ritene. Hva sier det om forskjellen mellom det som står i en religions tekster, og det folk faktisk gjør?",
                     "Snoren markerte hvem som fikk lov til å lese de hellige tekstene. Hvorfor kan en overgangsrite fortelle mye om makt i et samfunn?",
-                    "Bruk van Genneps tre faser (løsrivelse, mellomtilstand, ny status) på ett av ritene i artikkelen. Passer modellen?",
+                    "Bruk van Genneps tre faser (bort fra det gamle, mellomtiden, ny plass) på ett av ritene i artikkelen. Passer de tre fasene?",
                     "Dødsritualene skal både føre den døde videre og hjelpe de levende. Hvorfor tror du de to oppgavene henger sammen?"
                 ],
                 "gaaVidere": [
@@ -189,7 +189,7 @@
                             "Et pilegrimssted ved Ganges"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Samskara er overgangsritene i hinduismen. Ritualtekstene setter opp seksten av dem, fra før unnfangelsen til kremasjonen."
+                        "explanation": "Samskara er overgangsritene i hinduismen. Ritualtekstene setter opp seksten av dem, fra før barnet er unnfanget til kroppen brennes etter døden."
                     },
                     {
                         "question": "Når holdes den første av de seksten ritene?",
@@ -225,7 +225,7 @@
                         "explanation": "Etter de fire rundene rundt ilden tar paret sju skritt sammen mot nord. Det er skrittene som gjør ritualet gyldig."
                     },
                     {
-                        "question": "Hva skjer med asken etter en hinduistisk kremasjon?",
+                        "question": "Hva skjer med asken etter at en hindu er blitt brent?",
                         "options": [
                             "Den settes ned i en grav med gravstein",
                             "Den legges i rennende vann, helst i Ganges",
@@ -233,7 +233,7 @@
                             "Den blandes med jord i familiens hage"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Aske og beinrester skal legges i rennende vann, helst i Ganges. Mange hinduer i Norge tar asken med når de reiser til Sør-Asia."
+                        "explanation": "Asken og beinrestene skal legges i rennende vann, helst i Ganges. Mange hinduer i Norge tar asken med når de reiser til Sør-Asia."
                     }
                 ]
             }

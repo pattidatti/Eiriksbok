@@ -31,7 +31,7 @@
         {
             "id": "midrasj",
             "term": "Midrasj",
-            "definition": "Jødisk tolkningslitteratur der lærde leter etter mening i bibelteksten. Midrasj dikter ofte videre på fortellingen for å få fram et poeng."
+            "definition": "Jødiske tekster der lærde leter etter mening i bibelteksten. Midrasj dikter ofte videre på fortellingen for å få fram et poeng."
         },
         {
             "id": "talmud",
@@ -75,7 +75,7 @@
             "type": "list",
             "items": [
                 "Dag 1: lyset, som skilles fra mørket.",
-                "Dag 2: en hvelving som skiller vannet over fra vannet under.",
+                "Dag 2: en hvelving, en slags kuppel, som skiller vannet over fra vannet under.",
                 "Dag 3: tørt land og hav, og planter som gror.",
                 "Dag 4: sol, måne og stjerner, som skiller dag fra natt.",
                 "Dag 5: fisk og andre sjødyr, og fugler.",
@@ -106,7 +106,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Sabbaten: dagen som kom ut av fortellingen",
-                "content": "Sabbaten er den siste dagen i uka, satt av til hvile og gudstjeneste, og den regnes som jødedommens viktigste helligdag. Den varer fra fredag ettermiddag til lørdag kveld. Dagen skal minne om tre ting samtidig: skapelsen, utvandringen fra Egypt og pakten ved Sinai. Ut fra budet om å holde sabbaten har rabbinerne utledet 39 former for arbeid som ikke skal gjøres, blant annet skriving, håndarbeid og bilkjøring. Hvor strengt dette følges, varierer mye fra familie til familie (Cohen & Groth, 2025)."
+                "content": "Sabbaten er den siste dagen i uka, satt av til hvile og gudstjeneste, og den regnes som jødedommens viktigste helligdag. Den varer fra fredag ettermiddag til lørdag kveld. Dagen skal minne om tre ting samtidig: skapelsen, utvandringen fra Egypt og pakten ved Sinai. Ut fra budet om å holde sabbaten har rabbinerne kommet fram til 39 typer arbeid som ikke skal gjøres, blant annet skriving, håndarbeid og bilkjøring. Hvor strengt dette følges, varierer mye fra familie til familie (Cohen & Groth, 2025)."
             }
         },
         {
@@ -143,7 +143,7 @@
         },
         {
             "type": "text",
-            "content": "Etter at tempelet i Jerusalem ble ødelagt i år 70, vokste det fram en enorm tolkningslitteratur. Talmud er den største samlingen, og den består av lovtekster og lange, åpne diskusjoner mellom rabbinere som ofte ikke blir enige (Groth, 2024b). Ved siden av Talmud står midrasj, tekster som graver i bibelversene og leter etter mening mellom linjene (Mendelsohn mfl., 2026). En midrasj til 1. Mosebok forteller for eksempel at Gud lagde verdener og ødela dem igjen, helt til han lagde denne og sa: Denne behager meg (Bereshit Rabba 3,7). Det står ikke der som en opplysning om hva som faktisk hendte. Det er en måte å tenke over hvorfor verden ble akkurat slik."
+            "content": "Etter at tempelet i Jerusalem ble ødelagt i år 70, vokste det fram en enorm mengde tekster som tolker skriftene. Talmud er den største samlingen, og den består av lovtekster og lange, åpne diskusjoner mellom rabbinere som ofte ikke blir enige (Groth, 2024b). Ved siden av Talmud står midrasj, tekster som graver i bibelversene og leter etter mening mellom linjene (Mendelsohn mfl., 2026). En midrasj til 1. Mosebok forteller for eksempel at Gud lagde verdener og ødela dem igjen, helt til han lagde denne og sa: Denne behager meg (Bereshit Rabba 3,7). Det står ikke der som en opplysning om hva som faktisk hendte. Det er en måte å tenke over hvorfor verden ble akkurat slik."
         },
         {
             "type": "text",
@@ -161,14 +161,14 @@
                 ],
                 "reflekter": [
                     "Hvorfor tror du det betyr noe at Gud skaper ved å si noe, og ikke ved å bygge eller kjempe?",
-                    "Fortellingen kaller en dag hellig, ikke et sted. Hva slags religion blir det plass til når hvile er det helligste?",
+                    "Fortellingen kaller en dag hellig, ikke et sted. Hva sier det om religionen at hvile er det helligste?",
                     "Jødisk tradisjon lot begge skapelsesfortellingene stå, selv om de ikke passer sammen. Hva er styrken og hva er svakheten ved å gjøre det?",
                     "Midrasjen om verdener som ble ødelagt, skal ikke leses bokstavelig. Hva kan en fortelling gi deg som en faktaopplysning ikke kan?"
                 ],
                 "gaaVidere": [
                     "Sammenlign den jødiske lesningen med [skapelsen i islam](/krle/religion/islam/skapelse). Skriv fem punkter om hva som er likt og hva som skiller.",
                     "Skriv din egen korte midrasj: velg én setning fra 1. Mosebok 1 og dikt videre på den for å få fram et poeng.",
-                    "Undersøk hva de 39 arbeidsforbudene på sabbaten går ut på, og diskuter i klassen hva de tilsvarer i dagens hverdag."
+                    "Undersøk hva de 39 arbeidsforbudene på sabbaten går ut på, og diskuter i klassen hva de vil bety i hverdagen i dag."
                 ]
             }
         },
@@ -230,7 +230,7 @@
                             "Ved å oversette den til latin"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Talmud og midrasj er tolkningslitteratur der rabbinere diskuterer og dikter videre på teksten i stedet for å lese den som naturvitenskap."
+                        "explanation": "Talmud og midrasj er tekster der rabbinere tolker, diskuterer og dikter videre på skapelsesteksten i stedet for å lese den som naturvitenskap."
                     }
                 ]
             }

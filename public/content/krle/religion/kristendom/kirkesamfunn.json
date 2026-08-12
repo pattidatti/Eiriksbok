@@ -27,7 +27,7 @@
         {
             "id": "filioque",
             "term": "Filioque",
-            "definition": "Latin for og fra Sønnen. Et tillegg om Den hellige ånd som vestkirken satte inn i trosbekjennelsen, og som østkirken avviste."
+            "definition": "Latin for og fra Sønnen. Et tillegg om Den hellige ånd som vestkirken satte inn i trosbekjennelsen, altså den korte teksten om hva kristne tror. Østkirken sa nei til tillegget."
         },
         {
             "id": "reformasjonen",
@@ -42,13 +42,13 @@
         {
             "id": "okumenikk",
             "term": "Økumenikk",
-            "definition": "Arbeid som skal gi bedre forståelse og samarbeid mellom kirkesamfunn, og gjøre kirkelig enhet synlig."
+            "definition": "Arbeid som skal gi bedre forståelse og samarbeid mellom kirkesamfunn, og vise at kirkene hører sammen."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Det er om lag 2,2 milliarder kristne i verden (Elstad & Allkunne, 2026). De går i kirker som ser helt ulike ut. I én kirke synger prestene på gresk foran en vegg full av ikoner. I en annen lukter det røkelse, og altertavlen glitrer av gull. I en tredje er veggene hvitkalkede, og gudstjenesten er en preken og noen salmer. Alle bygger på Bibelen. Likevel hører de til ulike kirkesamfunn."
+            "content": "Det er om lag 2,2 milliarder kristne i verden (Elstad & Allkunne, 2026). De går i kirker som ser helt ulike ut. I én kirke synger prestene på gresk foran en vegg full av ikoner, altså malte helgenbilder. I en annen lukter det røkelse, og altertavlen glitrer av gull. I en tredje er veggene hvitkalkede, og gudstjenesten er en preken og noen salmer. Alle bygger på Bibelen. Likevel hører de til ulike kirkesamfunn."
         },
         {
             "type": "text",
@@ -62,7 +62,7 @@
         },
         {
             "type": "text",
-            "content": "Kirken vokste fram som en egen organisasjon etter at den romerske keiseren Konstantin anerkjente kristendommen på 300-tallet. Etter hvert fikk ledelsen ulik form i øst og vest. I den østlige delen av Romerriket var biskopene sammen den øverste myndigheten. I vest ble paven i Roma regnet som leder for kirken (Halvorsen & Stensvold, 2025). I vest brukte man latin, i øst gresk. Sakte gled de to halvdelene fra hverandre."
+            "content": "Kirken vokste fram som en egen organisasjon etter at den romerske keiseren Konstantin godtok kristendommen på 300-tallet. Etter hvert fikk ledelsen ulik form i øst og vest. I den østlige delen av Romerriket bestemte biskopene sammen. I vest ble paven i Roma regnet som leder for kirken (Halvorsen & Stensvold, 2025). I vest brukte man latin, i øst gresk. Sakte gled de to halvdelene fra hverandre."
         },
         {
             "type": "header",
@@ -70,7 +70,7 @@
         },
         {
             "type": "text",
-            "content": "Uenigheten handlet særlig om treenighetslæren, altså hvordan man skal beskrive forholdet mellom Gud Fader, Sønnen og Den hellige ånd (Stensvold, 2026). Begge sider mente at det er én Gud i tre personer. Men vestkirken sa at Den hellige ånd utgår både fra Faderen og fra Sønnen, mens østkirken sa at Ånden utgår fra Faderen (Stensvold, 2026). Det latinske tillegget som betyr og fra Sønnen, heter filioque. Det ble vanlig i vest på 400- og 500-tallet (Store norske leksikon, 2025). I 1054 ekskommuniserte paven og patriarken i Konstantinopel hverandre. En patriark er lederen for en av de store kirkene i øst, og å ekskommunisere vil si å stenge noen ute av kirken. Etter dette kalte vestkirken seg katolsk, som betyr universell, mens østkirken samlet seg om ordet ortodoks, som betyr rett lære (Halvorsen & Stensvold, 2025). Hva kirkene fortsatt deler, kan du lese om i artikkelen om [sentrale trekk](/krle/religion/kristendom/sentrale-trekk)."
+            "content": "Uenigheten handlet særlig om treenighetslæren, altså hvordan man skal beskrive forholdet mellom Gud Fader, Sønnen og Den hellige ånd (Stensvold, 2026). Begge sider mente at det er én Gud i tre personer. Men vestkirken sa at Den hellige ånd kommer fra både Faderen og Sønnen, mens østkirken sa at Ånden bare kommer fra Faderen (Stensvold, 2026). Det latinske tillegget som betyr og fra Sønnen, heter filioque. Det ble vanlig i vest på 400- og 500-tallet (Store norske leksikon, 2025). I 1054 ekskommuniserte paven og patriarken i Konstantinopel hverandre. En patriark er lederen for en av de store kirkene i øst, og å ekskommunisere vil si å stenge noen ute av kirken. Etter dette kalte vestkirken seg katolsk, som betyr universell, mens østkirken samlet seg om ordet ortodoks, som betyr rett lære (Halvorsen & Stensvold, 2025). Hva kirkene fortsatt deler, kan du lese om i artikkelen om [sentrale trekk](/krle/religion/kristendom/sentrale-trekk)."
         },
         {
             "type": "component",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Nesten 500 år senere kom det neste bruddet. Den tyske teologen Martin Luther angrep avlatshandelen. Avlat gikk ut på at folk kunne betale penger til kirken for syndene sine i stedet for å vise anger eller gjøre bot (Rasmussen, 2026). Kritikken sto i 95 læresetninger som ble kjent 31. oktober 1517 (Rasmussen, 2026). Skriftene hans ble trykt og solgt i by etter by, og ideene spredte seg raskt. Paven erklærte Luther for kjetter i 1521, altså en som lærer noe galt. En riksdag var et stort møte der keiseren samlet fyrstene i det tyske riket. På riksdagen i byen Worms samme år nektet Luther å ta tilbake det han hadde sagt, hvis ingen kunne overbevise ham ut fra Bibelen og fornuften (Rasmussen, 2026)."
+            "content": "Nesten 500 år senere kom det neste bruddet. Martin Luther, en tysk munk som underviste i kristen lære, angrep avlatshandelen. Avlat gikk ut på at folk kunne betale penger til kirken for syndene sine i stedet for å angre og gjøre opp for dem (Rasmussen, 2026). Kritikken sto i 95 læresetninger som ble kjent 31. oktober 1517 (Rasmussen, 2026). Skriftene hans ble trykt og solgt i by etter by, og ideene spredte seg raskt. Paven erklærte Luther for kjetter i 1521, altså en som lærer noe galt. En riksdag var et stort møte der keiseren samlet fyrstene i det tyske riket. På riksdagen i byen Worms samme år nektet Luther å ta tilbake det han hadde sagt, hvis ingen kunne overbevise ham ut fra Bibelen og fornuften (Rasmussen, 2026)."
         },
         {
             "type": "component",
@@ -132,11 +132,11 @@
         },
         {
             "type": "text",
-            "content": "Den katolske kirke er størst. I 2020 oppga kirken selv om lag 1,36 milliarder medlemmer, drøyt 17 prosent av verdens befolkning (Halvorsen & Stensvold, 2025). Den ledes av paven i Vatikanet og er hierarkisk organisert. De ortodokse kirkene teller i dag om lag 260 millioner (Thorbjørnsrud & Kværne, 2026). De har ikke ett overhode, men består av mange selvstyrende kirker. Patriarken i Konstantinopel kalles den første blant likemenn, men de ortodokse er selv uenige om hvor mye makt den tittelen gir (Thorbjørnsrud & Kværne, 2026). De protestantiske kirkene teller i dag om lag 800 millioner (Elstad & Allkunne, 2026) og har ingen felles organisasjon. Derfor oppstår det stadig nye menigheter uten at det kalles skisma (Stensvold, 2026). Et sakrament er en hellig handling som kirken mener gir mennesker del i Guds nåde. Reformatorene beholdt to eller tre av den katolske kirkens sju sakramenter, som regel dåp og nattverd (Elstad & Allkunne, 2026). Mer om det står i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene)."
+            "content": "Den katolske kirke er størst. I 2020 oppga kirken selv om lag 1,36 milliarder medlemmer, drøyt 17 prosent av verdens befolkning (Halvorsen & Stensvold, 2025). Den ledes av paven i Vatikanet, og makten går ovenfra og ned. De ortodokse kirkene teller i dag om lag 260 millioner (Thorbjørnsrud & Kværne, 2026). De har ikke ett overhode, men består av mange selvstyrende kirker. Patriarken i Konstantinopel kalles den første blant likemenn, men de ortodokse er selv uenige om hvor mye makt den tittelen gir (Thorbjørnsrud & Kværne, 2026). De protestantiske kirkene teller i dag om lag 800 millioner (Elstad & Allkunne, 2026) og har ingen felles organisasjon. Derfor oppstår det stadig nye menigheter uten at det kalles skisma (Stensvold, 2026). Et sakrament er en hellig handling som kirken mener at Gud gir noe godt gjennom. Reformatorene beholdt to eller tre av den katolske kirkens sju sakramenter, som regel dåp og nattverd (Elstad & Allkunne, 2026). Mer om det står i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene)."
         },
         {
             "type": "text",
-            "content": "Norge er et uvanlig eksempel. Her ble reformasjonen innført ovenfra av den danske kongen Christian 3. i 1536, samtidig som Norge mistet statusen som eget rike med eget riksråd (Rasmussen, 2026). Før det fantes det nesten ingen reformatorisk bevegelse i landet. Ny kirkelov kom med Kirkeordinansen i 1537. Klostrene ble lagt ned, og kirkegods gikk til kongen. Statskirkeordningen varte helt til grunnlovsendringen i 2012, og fra 1. januar 2017 ble Den norske kirke en selvstendig organisasjon, skilt fra staten. I 2024 var 62 prosent av befolkningen, 3,4 millioner mennesker, medlemmer (Rasmussen mfl., 2026)."
+            "content": "Norge er et uvanlig eksempel. Her ble reformasjonen innført ovenfra av den danske kongen Christian 3. i 1536, samtidig som Norge mistet statusen som eget rike med eget riksråd (Rasmussen, 2026). Før det fantes det nesten ingen i landet som kjempet for å forandre kirken. Ny kirkelov kom med Kirkeordinansen i 1537. Klostrene ble lagt ned, og eiendommene kirken eide, gikk til kongen. Statskirkeordningen varte helt til grunnlovsendringen i 2012, og fra 1. januar 2017 ble Den norske kirke en selvstendig organisasjon, skilt fra staten. I 2024 var 62 prosent av befolkningen, 3,4 millioner mennesker, medlemmer (Rasmussen mfl., 2026)."
         },
         {
             "type": "image",
@@ -162,7 +162,7 @@
         },
         {
             "type": "text",
-            "content": "Den katolske kirke er ikke medlem av rådet, men deltar i noen av kommisjonene (Seim mfl., 2024) og driver egne økumeniske samtaler med andre kirkesamfunn (Den katolske kirke, u.å.). I 1965 trakk pave Paul 6. og patriark Athenagoras tilbake bannlysningene fra 1054 (Stensvold, 2026). I Norge har Den norske kirke og Metodistkirken en avtale om utvidet fellesskap, og Porvoo-avtalen knytter lutherske kirker i Norden og Baltikum til anglikanske kirker i Storbritannia (Seim mfl., 2024). Av protestantene har særlig pinsevennene nølt med å slutte seg til bevegelsen (Seim mfl., 2024); mer om dem står i artikkelen om [pinsebevegelsen](/krle/religion/kristendom/pinse). Kirkene har også gått i seg selv. I 2016 tok Bispemøtet i Den norske kirke avstand fra Luthers antisemittisme og beklaget den overfor det jødiske folket (Den norske kirke, u.å.). Uenighetene fra 1054 og 1517 er ikke løst, og kirkene er fortsatt atskilte. Men de snakker sammen, og mange av dem samarbeider."
+            "content": "Den katolske kirke er ikke medlem av rådet, men er med i noen av utvalgene (Seim mfl., 2024) og driver egne økumeniske samtaler med andre kirkesamfunn (Den katolske kirke, u.å.). I 1965 trakk pave Paul 6. og patriark Athenagoras tilbake utestengingene fra 1054 (Stensvold, 2026). I Norge har Den norske kirke og Metodistkirken en avtale om utvidet fellesskap, og Porvoo-avtalen knytter lutherske kirker i Norden og Baltikum til anglikanske kirker i Storbritannia (Seim mfl., 2024). Av protestantene har særlig pinsevennene nølt med å slutte seg til bevegelsen (Seim mfl., 2024); mer om dem står i artikkelen om [pinsebevegelsen](/krle/religion/kristendom/pinse). Kirkene har også sett kritisk på sin egen historie. I 2016 tok Bispemøtet i Den norske kirke avstand fra Luthers jødehat og ba det jødiske folket om unnskyldning (Den norske kirke, u.å.). Uenighetene fra 1054 og 1517 er ikke løst, og kirkene er fortsatt atskilte. Men de snakker sammen, og mange av dem samarbeider."
         },
         {
             "type": "component",
@@ -177,7 +177,7 @@
                 "reflekter": [
                     "Reformasjonen delte vesten i tre, ikke i to. Hvorfor er det viktig å få med den reformerte greina?",
                     "De protestantiske kirkene har ingen felles ledelse. Hvilke fordeler og ulemper kan det gi?",
-                    "I 1965 trakk paven og patriarken tilbake bannlysningene fra 1054, men kirkene er fortsatt atskilte. Hva sier det om hva økumenikk er, og hva den ikke er?",
+                    "I 1965 trakk paven og patriarken tilbake utestengingene fra 1054, men kirkene er fortsatt atskilte. Hva sier det om hva økumenikk er, og hva den ikke er?",
                     "Norge fikk reformasjonen ovenfra i 1536. Hvordan tror du det påvirket hva vanlige folk mente om den?"
                 ],
                 "gaaVidere": [
@@ -208,11 +208,11 @@
                         "options": [
                             "Om paven skulle bo i Roma eller i Konstantinopel",
                             "Om prester fikk gifte seg",
-                            "Om Den hellige ånd utgår fra Faderen alene, eller også fra Sønnen",
+                            "Om Den hellige ånd kommer fra Faderen alene, eller også fra Sønnen",
                             "Om Bibelen skulle oversettes til folkespråket"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Vestkirken la til at Ånden utgår også fra Sønnen. Østkirken sa at Ånden utgår fra Faderen, og avviste tillegget."
+                        "explanation": "Vestkirken la til at Ånden også kommer fra Sønnen. Østkirken sa at Ånden bare kommer fra Faderen, og sa nei til tillegget."
                     },
                     {
                         "question": "Hvilke tre kirker vokste fram av reformasjonen i vest?",
@@ -223,7 +223,7 @@
                             "Den lutherske, den ortodokse og den reformerte"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Reformasjonen delte vestlig kristendom i tre: en katolsk, en luthersk og en reformert kirke. Østkirken ble ikke berørt."
+                        "explanation": "Reformasjonen delte vestlig kristendom i tre: en katolsk, en luthersk og en reformert kirke. Østkirken ble ikke rammet av dette."
                     },
                     {
                         "question": "Hvilken av disse er størst i antall medlemmer?",

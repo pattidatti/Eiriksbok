@@ -15,10 +15,10 @@
   "heroImage": "/images/placeholder.webp",
   "details": [
     "Jesu Kristi Kirke av Siste Dagers Hellige lærer at Faderen, Sønnen og Den hellige ånd er tre atskilte vesener.",
-    "De tre er ikke ett vesen, men ett i hensikt. De vil det samme.",
+    "De tre er ikke ett vesen. De henger sammen fordi de vil nøyaktig det samme.",
     "Faderen og Sønnen har kropp av kjøtt og bein. Den hellige ånd er en person uten kropp.",
-    "Mennesket regnes som Guds barn i bokstavelig forstand, med både en himmelsk Far og en himmelsk Mor.",
-    "Kirken sier selv at lite om dette er åpenbart, og siterer Joseph Smith på at ikke alt kan forstås i denne verden."
+    "Mennesker er Guds barn på ordentlig, med både en himmelsk Far og en himmelsk Mor.",
+    "Kirken sier selv at Gud har fortalt lite om dette, og viser til Joseph Smith, som sa at ikke alt kan forstås mens vi lever her."
   ],
   "createdDate": "2025-12-04T12:00:00Z",
   "lastUpdated": "2026-08-11T12:00:00Z",
@@ -26,7 +26,7 @@
     {
       "id": "guddommen",
       "term": "Guddommen",
-      "definition": "Fellesnavnet på Faderen, Sønnen og Den hellige ånd, forstått som tre atskilte vesener som er ett i hensikt."
+      "definition": "Fellesnavnet på Faderen, Sønnen og Den hellige ånd. Kirken ser dem som tre atskilte vesener som vil nøyaktig det samme."
     },
     {
       "id": "treenigheten",
@@ -71,7 +71,7 @@
     },
     {
       "type": "text",
-      "content": "Kirken [Smith](/krle/religion/mormonisme/grunnleggere) grunnla, ble formelt stiftet i 1830, og siden 1847 har hovedsetet ligget i Salt Lake City i Utah (Bloch-Hoell mfl., 2024). Mange kaller medlemmene mormonere, men kirken ber selv om at trossamfunnet omtales med hele navnet sitt, Jesu Kristi Kirke av Siste Dagers Hellige, og at medlemmene kalles siste dagers hellige (Bloch-Hoell mfl., 2024). Og nettopp synet på Gud er der kirken skiller lag med resten av kristendommen."
+      "content": "Kirken [Smith](/krle/religion/mormonisme/grunnleggere) grunnla, ble formelt stiftet i 1830, og siden 1847 har hovedkvarteret ligget i Salt Lake City i Utah (Bloch-Hoell mfl., 2024). Mange kaller medlemmene mormonere, men kirken vil helst at trossamfunnet blir kalt ved hele navnet sitt, Jesu Kristi Kirke av Siste Dagers Hellige, og at medlemmene kalles siste dagers hellige (Bloch-Hoell mfl., 2024). Og det er nettopp synet på Gud som skiller kirken fra resten av kristendommen."
     },
     {
       "type": "header",
@@ -79,15 +79,15 @@
     },
     {
       "type": "text",
-      "content": "De aller fleste kristne kirker lærer treenigheten. Den går ut på at Gud er tre personer eller framtredelsesformer i ett vesen: Faderen, Sønnen og Den hellige ånd (Leivestad og Elstad, 2026). Tre, men likevel én. Det er en tanke som er lett å si og vanskelig å tegne."
+      "content": "De aller fleste kristne kirker lærer treenigheten. Den går ut på at Gud er tre personer, eller tre måter å vise seg på, men bare ett vesen: Faderen, Sønnen og Den hellige ånd (Leivestad og Elstad, 2026). Tre, men likevel én. Det er en tanke som er lett å si og vanskelig å tegne."
     },
     {
       "type": "text",
-      "content": "Siste dagers hellige teller annerledes. Den første trosartikkelen deres lyder: «Vi tror på Gud, den evige Fader, og på hans Sønn, Jesus Kristus, og på Den hellige ånd» (Bloch-Hoell mfl., 2024). Ordene ligner på det andre kristne sier. Men bak ordene ligger et annet bilde: Faderen og Sønnen forstås som to atskilte, menneskelige og fysiske vesener, mens Den hellige ånd er en person uten kropp (Bloch-Hoell mfl., 2024)."
+      "content": "Siste dagers hellige teller annerledes. Den første trosartikkelen deres lyder: «Vi tror på Gud, den evige Fader, og på hans Sønn, Jesus Kristus, og på Den hellige ånd» (Bloch-Hoell mfl., 2024). Ordene ligner på det andre kristne sier. Men bak ordene ligger et annet bilde: Faderen og Sønnen er to atskilte vesener som ser ut som mennesker og har ekte kropper, mens Den hellige ånd er en person uten kropp (Bloch-Hoell mfl., 2024)."
     },
     {
       "type": "text",
-      "content": "Sett sammen modellen selv i ruta under, og se hva forskjellen egentlig består i."
+      "content": "Sett sammen modellen selv i ruta under, og se hva forskjellen egentlig går ut på."
     },
     {
       "type": "component",
@@ -98,7 +98,7 @@
     },
     {
       "type": "text",
-      "content": "Det du bygde, kalles Guddommen. Tre selvstendige vesener som vil nøyaktig det samme. Enheten ligger i hensikten, ikke i selve vesenet. Derfor kan et medlem av kirken si at hun tror på Faderen, Sønnen og Den hellige ånd, uten å mene det samme som naboen i den lutherske kirken mener med de samme ordene."
+      "content": "Det du bygde, kalles Guddommen. Tre selvstendige vesener som vil nøyaktig det samme. Det som binder dem sammen, er viljen deres, ikke at de er samme vesen. Derfor kan et medlem av kirken si at hun tror på Faderen, Sønnen og Den hellige ånd, uten å mene det samme som naboen i den lutherske kirken mener med de samme ordene."
     },
     {
       "type": "header",
@@ -106,7 +106,7 @@
     },
     {
       "type": "text",
-      "content": "Den skarpeste setningen står i Lære og pakter. Det er en av kirkens hellige bøker, ved siden av Bibelen, [Mormons bok](/krle/religion/mormonisme/hellige-tekster) og Den kostelige perle (Bloch-Hoell mfl., 2024)."
+      "content": "Den tydeligste setningen står i Lære og pakter. Det er en av kirkens hellige bøker, ved siden av Bibelen, [Mormons bok](/krle/religion/mormonisme/hellige-tekster) og Den kostelige perle (Bloch-Hoell mfl., 2024)."
     },
     {
       "type": "component",
@@ -118,7 +118,7 @@
     },
     {
       "type": "text",
-      "content": "Videre i det samme verset står det at Den hellige ånd ikke har et slikt legeme, men er en åndeperson, og at han ellers ikke kunne bo i oss (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Kroppen er altså ikke en detalj i denne læren. Den forklarer hvorfor de tre har hver sin oppgave."
+      "content": "Videre i det samme verset står det at Den hellige ånd ikke har en slik kropp, men er en ånd, og at han ellers ikke kunne bo inni oss (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Kroppen er altså ikke en detalj i denne læren. Den forklarer hvorfor de tre har hver sin oppgave."
     },
     {
       "type": "text",
@@ -136,15 +136,15 @@
     },
     {
       "type": "text",
-      "content": "Hvis Gud har en kropp, hva er da mennesket? Svaret i denne kirken er kort: Guds barn, og det menes bokstavelig. Kirken lærer at alle mennesker er elskede åndebarn av himmelske foreldre, en himmelsk Far og en himmelsk Mor (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Allerede i 1909 uttalte kirkens ledelse at alle menn og kvinner er skapt i den evige Faders og Moders bilde (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c)."
+      "content": "Hvis Gud har en kropp, hva er da mennesket? Svaret i denne kirken er kort: Guds barn, og det er ment helt bokstavelig. Kirken lærer at alle mennesker er elskede åndebarn av himmelske foreldre, en himmelsk Far og en himmelsk Mor (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Allerede i 1909 uttalte kirkens ledelse at alle menn og kvinner er skapt i den evige Faders og Moders bilde (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c)."
     },
     {
       "type": "text",
-      "content": "Siste dagers hellige ber til den himmelske Faderen, ikke til Moren, fordi de mener Jesus viste det mønsteret. Kirken understreker samtidig at dette ikke betyr at hun nedvurderes (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Kirken sier likevel lite om henne, og skriver selv at kunnskapen om henne er begrenset."
+      "content": "Siste dagers hellige ber til den himmelske Faderen, ikke til Moren, fordi de mener Jesus viste det mønsteret. Kirken sier samtidig at dette ikke betyr at hun er mindre verdt (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Kirken sier likevel lite om henne, og skriver selv at de vet lite om henne."
     },
     {
       "type": "text",
-      "content": "Mennesket har også en historie før fødselen. Siste dagers hellige lærer at vi levde som ånder nær Gud før vi ble født på jorden med en kropp, at livet her handler om å ta viktige valg, og at vi etter døden kommer til en åndeverden før ånden forenes med en oppstanden kropp (Bloch-Hoell mfl., 2024). Kirken avviser også arvesyndslæren, og ser positivt på fortellingen om syndefallet, fordi kunnskap om godt og ondt er det som gjør frie valg mulig (Bloch-Hoell mfl., 2024)."
+      "content": "Mennesket har også en historie før fødselen. Siste dagers hellige lærer at vi levde som ånder nær Gud før vi ble født på jorden med en kropp, at livet her handler om å ta viktige valg, og at vi etter døden kommer til en åndeverden før ånden får kroppen sin tilbake når de døde står opp igjen (Bloch-Hoell mfl., 2024). Kirken sier også nei til arvesynden, altså tanken om at alle mennesker fødes med skyld etter Adam og Eva. Den ser tvert imot positivt på fortellingen om syndefallet, fordi det er kunnskapen om godt og ondt som gjør at vi kan velge fritt (Bloch-Hoell mfl., 2024)."
     },
     {
       "type": "header",
@@ -152,18 +152,18 @@
     },
     {
       "type": "text",
-      "content": "Her går læren enda et skritt. Kirken skriver at alle mennesker er Guds barn i ordets hele og fulle betydning, og at de har guddommelighetens kime i seg. Gjennom Kristi forsoning kan mennesket utvikle seg mot fullkommenhet og til sist virkeliggjøre sitt guddommelige potensial (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d)."
+      "content": "Her går læren enda et skritt. Kirken skriver at alle mennesker er Guds barn helt og fullt, og at det allerede ligger noe guddommelig i dem. Fordi Jesus led og døde for menneskene, kan de vokse og bli bedre og bedre, og til slutt bli slik Gud er (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d)."
     },
     {
       "type": "text",
-      "content": "Samtidig er kirken tydelig på hvor mye den ikke vet. I det samme skrivet står det at lite er åpenbart om hvordan dette henger sammen, og en av kirkens presidenter, Gordon B. Hinckley, sa at temaet kommer inn på ganske dyp teologi som vi ikke vet så mye om (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Skrivet siterer også Joseph Smith på at ikke alt kan forstås i denne verden. Når kilden selv er så åpen, er det ikke rart at siste dagers hellige forstår detaljene ulikt."
+      "content": "Samtidig er kirken tydelig på hvor mye den ikke vet. I det samme skrivet står det at Gud har fortalt lite om hvordan dette henger sammen, og en av kirkens presidenter, Gordon B. Hinckley, sa at temaet handler om dyp teologi, altså vanskelige spørsmål om Gud, som vi ikke vet så mye om (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Skrivet viser også til Joseph Smith, som sa at ikke alt kan forstås mens vi lever her. Når kirken selv er så åpen om hva den ikke vet, er det ikke rart at medlemmene forstår detaljene ulikt."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
         "title": "To ord som ligner, men betyr ulikt",
-        "content": "Andre kristne bruker ordet treenighet: tre personer i ett og samme vesen. Siste dagers hellige bruker ordet Guddommen: tre atskilte vesener som er ett i hensikt. Begge sier tre, og begge bruker navnene Faderen, Sønnen og Den hellige ånd. Uenigheten handler om hvor mange vesener det er snakk om."
+        "content": "Andre kristne bruker ordet treenighet: tre personer i ett og samme vesen. Siste dagers hellige bruker ordet Guddommen: tre atskilte vesener som vil nøyaktig det samme. Begge sier tre, og begge bruker navnene Faderen, Sønnen og Den hellige ånd. Uenigheten handler om hvor mange vesener det er snakk om."
       }
     },
     {
@@ -178,7 +178,7 @@
     },
     {
       "type": "text",
-      "content": "Se hele bildet samlet. Gud har kropp. Mennesket er hans barn. Vi bodde hos ham før vi kom hit, og vi kan utvikle oss videre etterpå. I denne læren er ikke Gud en helt annen slags virkelighet enn oss. Gud er nærmere slekt."
+      "content": "Se hele bildet samlet. Gud har kropp. Mennesket er hans barn. Vi bodde hos ham før vi kom hit, og vi kan utvikle oss videre etterpå. I denne læren er ikke Gud noe helt annet enn oss. Gud er nærmere en slektning."
     },
     {
       "type": "text",
@@ -199,9 +199,9 @@
           "Hva menes med foruttilværelsen?"
         ],
         "reflekter": [
-          "Forklar med egne ord forskjellen på «ett vesen i tre personer» og «tre vesener som er ett i hensikt».",
+          "Forklar med egne ord forskjellen på «ett vesen i tre personer» og «tre vesener som vil det samme».",
           "Hva gjør det med avstanden mellom Gud og menneske at Gud beskrives med en kropp? Begrunn svaret.",
-          "Kirken sier selv at lite er åpenbart om hvordan mennesket kan utvikle seg videre. Hvorfor kan det være greit for en religion å ha ubesvarte spørsmål?",
+          "Kirken sier selv at den vet lite om hvordan mennesket kan utvikle seg videre. Hvorfor kan det være greit for en religion å ha spørsmål den ikke har svar på?",
           "Siste dagers hellige og andre kristne bruker de samme navnene på Gud, men mener ulike ting. Hvorfor kan felles ord skape misforståelser?"
         ],
         "gaaVidere": [
@@ -220,7 +220,7 @@
             "question": "Hva lærer Jesu Kristi Kirke av Siste Dagers Hellige om Faderen, Sønnen og Den hellige ånd?",
             "options": [
               "At de er tre personer i ett og samme vesen",
-              "At de er tre atskilte vesener som er ett i hensikt",
+              "At de er tre atskilte vesener som vil nøyaktig det samme",
               "At de er tre navn på den samme personen",
               "At de er tre krefter uten personlighet"
             ],
@@ -228,15 +228,15 @@
             "explanation": "Kirken lærer at de tre er atskilte vesener. Enheten ligger i at de vil det samme, ikke i at de er ett vesen."
           },
           {
-            "question": "Hvem av de tre har ikke et legeme av kjøtt og bein?",
+            "question": "Hvem av de tre har ikke en kropp av kjøtt og bein?",
             "options": [
               "Faderen",
               "Sønnen",
               "Den hellige ånd",
-              "Alle tre har legeme"
+              "Alle tre har kropp"
             ],
             "correctAnswer": 2,
-            "explanation": "Lære og pakter 130:22 sier at Faderen og Sønnen har legeme, mens Den hellige ånd er en åndeperson og derfor kan bo i mennesker."
+            "explanation": "Lære og pakter 130:22 sier at Faderen og Sønnen har kropp, mens Den hellige ånd er en ånd og derfor kan bo inni mennesker."
           },
           {
             "question": "Hva kalles læren om at Gud er tre personer i ett vesen?",
@@ -247,7 +247,7 @@
               "Forsoningen"
             ],
             "correctAnswer": 1,
-            "explanation": "Treenigheten er oppfatningen i kristendommen om at Gud er tre personer eller framtredelsesformer i ett vesen."
+            "explanation": "Treenigheten er troen i kristendommen på at Gud er tre personer, eller tre måter å vise seg på, men bare ett vesen."
           },
           {
             "question": "Hva lærer kirken om mennesket før det ble født på jorden?",
@@ -261,15 +261,15 @@
             "explanation": "Siste dagers hellige lærer at vi levde som ånder nær Gud, og at vi så ble født på jorden med en kropp."
           },
           {
-            "question": "Hva sier kirken selv om læren om at mennesket kan virkeliggjøre sitt guddommelige potensial?",
+            "question": "Hva sier kirken selv om læren om at mennesket kan bli slik Gud er?",
             "options": [
               "At alt er nøye forklart, og at ingen er i tvil",
-              "At lite er åpenbart, og at ikke alt kan forstås i denne verden",
+              "At de vet lite, og at ikke alt kan forstås mens vi lever her",
               "At læren er avskaffet",
               "At bare kirkens ledere har lov til å tenke på den"
             ],
             "correctAnswer": 1,
-            "explanation": "Kirkens eget skriv sier at lite er åpenbart om hvordan dette henger sammen, og siterer Joseph Smith på at ikke alt kan forstås i denne verden."
+            "explanation": "Kirkens eget skriv sier at de vet lite om hvordan dette henger sammen, og viser til Joseph Smith, som sa at ikke alt kan forstås mens vi lever her."
           }
         ]
       }

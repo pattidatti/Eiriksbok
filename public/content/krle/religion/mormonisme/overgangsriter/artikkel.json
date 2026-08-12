@@ -18,7 +18,7 @@
     "Spedbarn får navn og velsignelse i menigheten, men de blir ikke døpt.",
     "Dåpen skjer først ved åtte år, som kirken kaller ansvarlighetsalderen, og hele kroppen dyppes under vann.",
     "I tempelet blir ektepar og familier beseglet for tid og all evighet, ikke til døden skiller dem.",
-    "Medlemmer kan la seg døpe som stedfortredere for slektninger som er døde.",
+    "Medlemmer kan la seg døpe i stedet for slektninger som er døde.",
     "Det finnes ikke noe tempel i Norge. De nærmeste ligger i Stockholm og København."
   ],
   "createdDate": "2025-12-04T11:00:00Z",
@@ -32,7 +32,7 @@
     {
       "id": "ordinans",
       "term": "Ordinans",
-      "definition": "Kirkens ord for en hellig handling der Gud har bestemt formen, for eksempel dåp eller besegling."
+      "definition": "Kirkens ord for en hellig handling der Gud har bestemt hvordan den skal gjøres, for eksempel dåp eller besegling."
     },
     {
       "id": "ansvarlighetsalderen",
@@ -42,12 +42,12 @@
     {
       "id": "stedfortredende-dap",
       "term": "Stedfortredende dåp",
-      "definition": "Et levende medlem lar seg døpe i tempelet på vegne av en slektning som er død."
+      "definition": "Et levende medlem lar seg døpe i tempelet i stedet for en slektning som er død."
     },
     {
       "id": "begavelse",
       "term": "Begavelse",
-      "definition": "Tempelseremoni der medlemmet får undervisning og inngår løfter til Gud. Regnes som en forberedelse til beseglingen."
+      "definition": "Seremoni i tempelet der medlemmet får undervisning og gir løfter til Gud. Den må gjøres før beseglingen."
     }
   ],
   "content": [
@@ -57,7 +57,7 @@
     },
     {
       "type": "text",
-      "content": "Han kommer til å si for tid og all evighet. I Jesu Kristi Kirke av Siste Dagers Hellige tar ikke ekteskapet slutt når en av ektefellene dør. Seremonien heter besegling, og den kan bare utføres i et tempel, av en mann som har det kirken kaller prestedømmet, altså myndighet fra Gud (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Barn som blir født etter en slik besegling, regnes automatisk som beseglet til foreldrene sine."
+      "content": "Han kommer til å si for tid og all evighet. I Jesu Kristi Kirke av Siste Dagers Hellige tar ikke ekteskapet slutt når en av ektefellene dør. Seremonien heter besegling, og den kan bare utføres i et tempel, av en mann som har det kirken kaller prestedømmet, altså retten Gud gir til å gjøre slike handlinger (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Barn som blir født etter en slik besegling, regnes automatisk som beseglet til foreldrene sine."
     },
     {
       "type": "image",
@@ -67,7 +67,7 @@
     },
     {
       "type": "text",
-      "content": "Overgangsriter er seremonier som markerer at et menneske går fra én plass i samfunnet til en annen (Bertelsen, 2024). Dåp, konfirmasjon, bryllup og begravelse er de vanligste norske eksemplene. Denne kirken har alle sammen. Men ritene er delt i to grupper, og det er delingen som gjør dem særegne. Noen skjer i det vanlige møtehuset, som er åpent for hvem som helst. Andre skjer bare i tempelet."
+      "content": "Overgangsriter er seremonier som markerer at et menneske går fra én plass i samfunnet til en annen (Bertelsen, 2024). Dåp, konfirmasjon, bryllup og begravelse er de vanligste norske eksemplene. Denne kirken har alle sammen. Men seremoniene er delt i to grupper, og det er den delingen som gjør dem spesielle. Noen skjer i det vanlige møtehuset, som er åpent for hvem som helst. Andre skjer bare i tempelet."
     },
     {
       "type": "header",
@@ -75,11 +75,11 @@
     },
     {
       "type": "text",
-      "content": "Et nyfødt barn blir ikke døpt. Barnet bæres fram i menigheten, får navnet sitt og en velsignelse, som regel på et faste- og vitnesbyrdsmøte. Faren utfører det gjerne selv hvis han bærer det melkisedekske prestedømmet. Velsignelsen regnes likevel ikke som en frelsende ordinans (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-e). Ordinans er kirkens ord for en hellig handling der Gud har bestemt formen."
+      "content": "Et nyfødt barn blir ikke døpt. Barnet blir båret fram i menigheten, får navnet sitt og en velsignelse, som regel på et møte der medlemmene faster og forteller om troen sin. Faren gjør det gjerne selv, hvis han har det øverste prestedømmet, som heter det melkisedekske. Men velsignelsen er ikke en ordinans som frelser barnet (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-e). Ordinans er kirkens ord for en hellig handling der Gud har bestemt hvordan den skal gjøres."
     },
     {
       "type": "text",
-      "content": "Dåpen kommer først når barnet fyller åtte år. Kirken kaller dette ansvarlighetsalderen og begrunner den med at små barn er syndfrie for Gud, fordi de ennå ikke skjønner nok til å velge mellom rett og galt (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Den som døpes, blir dyppet helt under vann. Rett etterpå blir barnet konfirmert og får det kirken kaller Den hellige ånds gave. Under kan du selv se hva alle disse ritene til slutt skal bygge."
+      "content": "Dåpen kommer først når barnet fyller åtte år. Kirken kaller dette ansvarlighetsalderen og forklarer det med at små barn er uten synd for Gud, fordi de ennå ikke skjønner nok til å velge mellom rett og galt (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Den som døpes, blir dyppet helt under vann. Rett etterpå blir barnet konfirmert og får det kirken kaller Den hellige ånds gave. Under kan du selv se hva alle disse seremoniene til slutt skal bygge opp."
     },
     {
       "type": "component",
@@ -90,7 +90,7 @@
     },
     {
       "type": "text",
-      "content": "Legg merke til hva du bygde. Ritene i denne kirken er ikke bare markeringer av ett enkelt liv. De er ledd i en kjede som skal binde generasjoner sammen. Derfor er slektsgransking en religiøs oppgave her, ikke bare en hobby: du må vite hva folk het for å kunne gjøre noe for dem. Kirken lærer at familien er den viktigste enheten både på jorden og i evigheten (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Hvorfor dette betyr så mye, henger sammen med hva kirken mener skjer etter døden. Det kan du lese mer om i artikkelen om [frelse](/krle/religion/mormonisme/frelse)."
+      "content": "Legg merke til hva du bygde. Seremoniene i denne kirken markerer ikke bare ett enkelt liv. De er ledd i en kjede som skal binde slektsledd sammen. Derfor er slektsgransking en religiøs oppgave her, ikke bare en hobby: du må vite hva folk het for å kunne gjøre noe for dem. Kirken lærer at familien er den viktigste gruppen både på jorden og i evigheten (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Hvorfor dette betyr så mye, henger sammen med hva kirken mener skjer etter døden. Det kan du lese mer om i artikkelen om [frelse](/krle/religion/mormonisme/frelse)."
     },
     {
       "type": "header",
@@ -98,19 +98,19 @@
     },
     {
       "type": "text",
-      "content": "Tempelet er ikke et vanlig kirkerom. Dit slipper bare medlemmer som annethvert år bekrefter overfor lederne sine at de lever etter kirkens grunnregler. Tre store handlinger hører hjemme der: begavelsen, beseglingen og dåp på vegne av døde (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-g). Begavelsen kommer først. Den som er minst 18 år og ikke lenger går på videregående, kan få den etter samtaler med biskopen og lederen i distriktet. I begavelsen får medlemmet undervisning om det kirken kaller frelsesplanen, og lover blant annet å holde Guds bud, å leve i kyskhet og å bruke tid og evner på kirkens arbeid (The Church of Jesus Christ of Latter-day Saints, u.å.). Først etter begavelsen kan et par bli beseglet."
+      "content": "Tempelet er ikke et vanlig kirkerom. Dit slipper bare medlemmer som annethvert år må vise lederne sine at de lever etter kirkens grunnregler. Tre store handlinger hører hjemme der: begavelsen, beseglingen og dåp på vegne av døde (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-g). Begavelsen kommer først. Den som er minst 18 år og ikke lenger går på videregående, kan få den etter samtaler med biskopen og lederen i distriktet. I begavelsen får medlemmet undervisning om det kirken kaller frelsesplanen, altså Guds plan for menneskene, og lover blant annet å holde Guds bud, å ikke ha sex utenfor ekteskapet og å bruke tid og krefter på kirkens arbeid (The Church of Jesus Christ of Latter-day Saints, u.å.). Først etter begavelsen kan et par bli beseglet."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Misjonen: to år som forandrer folk",
-        "content": "Mange unge medlemmer reiser ut som misjonærer når de er rundt 18 eller 19 år. Tjenesten varer fra 18 måneder til to år, den er frivillig og ubetalt, og kontakten med familien hjemme er begrenset mens den pågår (Bloch-Hoell mfl., 2026). Misjonen er ingen ordinans, og ingen må reise. Men for mange fungerer den i praksis som overgangen til voksenlivet, og den ligger rett foran begavelsen og beseglingen i tid."
+        "content": "Mange unge medlemmer reiser ut som misjonærer når de er rundt 18 eller 19 år. Turen varer fra 18 måneder til to år, den er frivillig og ubetalt, og de har lite kontakt med familien hjemme mens den varer (Bloch-Hoell mfl., 2026). Misjonen er ingen ordinans, og ingen må reise. Men for mange blir den i praksis overgangen til voksenlivet, og den kommer rett før begavelsen og beseglingen."
       }
     },
     {
       "type": "text",
-      "content": "Prestedømmet er forbeholdt gutter og menn. Fra 18 år kan menn få det melkisedekske prestedømmet, som gir myndighet til misjonstjeneste og lederstillinger (Bloch-Hoell mfl., 2026). Kvinner mottar begavelsen og blir beseglet, men de utfører ikke selv ordinansene. Mer om hvordan kirken er bygd opp, finner du i artikkelen om [sentrale trekk](/krle/religion/mormonisme/sentrale-trekk)."
+      "content": "Bare gutter og menn kan få prestedømmet. Fra 18 år kan menn få det melkisedekske prestedømmet, som gir rett til å reise som misjonær og til å ha lederstillinger (Bloch-Hoell mfl., 2026). Kvinner får begavelsen og blir beseglet, men de gjennomfører ikke ordinansene selv. Mer om hvordan kirken er bygd opp, finner du i artikkelen om [sentrale trekk](/krle/religion/mormonisme/sentrale-trekk)."
     },
     {
       "type": "image",
@@ -124,11 +124,11 @@
     },
     {
       "type": "text",
-      "content": "Her kommer den delen som er vanskeligst å forstå utenfra. Kirken lærer at dåpen er nødvendig, men at milliarder av mennesker har levd og dødd uten å få tilbudet. Løsningen er stedfortredende dåp: et levende medlem går ned i vannet på vegne av en avdød person, som regel en slektning. Dette skjer bare i templene (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Fra januar det året de fyller tolv, kan ungdommer få en egen anbefaling som lar dem være med på dette (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-f). Gutter kan få det aronske prestedømmet fra samme alder, men det er de eldste blant dem som har fullmakt til å døpe (Bloch-Hoell mfl., 2026). Kirken viser til et vers i Første korinterbrev der Paulus nevner folk som lot seg døpe for de døde, og til åpenbaringer Joseph Smith mente å ha fått. Ham kan du lese mer om i artikkelen om [grunnleggerne](/krle/religion/mormonisme/grunnleggere)."
+      "content": "Her kommer den delen som er vanskeligst å forstå utenfra. Kirken lærer at dåpen er nødvendig, men at milliarder av mennesker har levd og dødd uten å få tilbudet. Løsningen er stedfortredende dåp: et levende medlem går ned i vannet i stedet for en som er død, som regel en slektning. Dette skjer bare i templene (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Fra januar det året de fyller tolv, kan ungdommer få en egen tempelanbefaling, altså et kort som slipper dem inn i tempelet for å være med på dette (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-f). Gutter kan få det aronske prestedømmet fra samme alder, men det er de eldste blant dem som har lov til å døpe (Bloch-Hoell mfl., 2026). Kirken viser til et vers i Første korinterbrev der Paulus nevner folk som lot seg døpe for de døde, og til beskjeder Joseph Smith mente han hadde fått fra Gud. Ham kan du lese mer om i artikkelen om [grunnleggerne](/krle/religion/mormonisme/grunnleggere)."
     },
     {
       "type": "text",
-      "content": "Et poeng er verdt å merke seg. Kirken hevder ikke at den døde blir medlem mot sin vilje. Læren er at mennesket beholder retten til å velge også etter døden, og at den døde selv avgjør om tilbudet tas imot (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Praksisen har likevel skapt strid. I 2012 ble det kjent at navn på kjente Holocaust-ofre var brukt i slike seremonier, blant andre Anne Frank og foreldrene til Simon Wiesenthal. Kirkens president Thomas Monson sendte da ut et brev der han skrev at medlemmene bare skal levere inn navn på sine egne slektninger, og at det ville få følger å bryte regelen (Pedersen og Jahr, 2012)."
+      "content": "Ett poeng er verdt å merke seg. Kirken mener ikke at den døde blir medlem mot sin vilje. Kirken lærer at mennesket får velge selv også etter døden, og at den døde selv bestemmer om han vil ta imot tilbudet (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Det har likevel blitt bråk om dette. I 2012 ble det kjent at navn på kjente Holocaust-ofre var brukt i slike seremonier, blant andre Anne Frank og foreldrene til Simon Wiesenthal. Kirkens president Thomas Monson sendte da ut et brev der han skrev at medlemmene bare skal levere inn navn på sine egne slektninger, og at det ville få følger å bryte regelen (Pedersen og Jahr, 2012)."
     },
     {
       "type": "image",
@@ -142,15 +142,15 @@
     },
     {
       "type": "text",
-      "content": "Begravelsen skjer ikke i tempelet. Den holdes i et vanlig møtehus, i et hjem, i et kapell eller ved graven, og biskopen leder når den er i en av kirkens bygninger. Møtet skal handle om Jesu død og oppstandelse, og lederne blir bedt om å passe på at minnetaler ikke tar over hele seremonien (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Både kistebegravelse og kremasjon er tillatt. Medlemmer som har mottatt begavelsen, blir så langt det lar seg gjøre gravlagt eller kremert i tempelklærne sine, og en prestedømsbærer kan innvie graven."
+      "content": "Begravelsen skjer ikke i tempelet. Den holdes i et vanlig møtehus, i et hjem, i et kapell eller ved graven, og biskopen leder når den er i en av kirkens bygninger. Møtet skal handle om Jesu død og oppstandelse, og lederne blir bedt om å passe på at minnetaler ikke tar over hele seremonien (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Både vanlig begravelse med kiste og kremasjon, altså at kroppen brennes, er lov. Medlemmer som har fått begavelsen, blir om mulig gravlagt eller brent i tempelklærne sine, og en mann med prestedømmet kan velsigne graven."
     },
     {
       "type": "text",
-      "content": "Selve begravelsen er altså nøktern og ligner mye på andre kristne begravelser i Norge. Det store løftet er allerede gitt, år i forveien, inne i et tempel. Slik ser kirken det: døden bryter ikke båndet, den setter det bare på prøve."
+      "content": "Selve begravelsen er altså enkel og ligner mye på andre kristne begravelser i Norge. Det store løftet er allerede gitt, år i forveien, inne i et tempel. Slik ser kirken det: døden bryter ikke båndet mellom dem som er beseglet. Den skiller dem bare for en stund."
     },
     {
       "type": "text",
-      "content": "Det finnes indre mangfold her også. Da Joseph Smith ble drept i 1844, fulgte ikke alle Brigham Young vestover. I 1860 dannet noen av dem en egen kirke som i dag heter Community of Christ, og som har rundt 50 medlemmer i Norge (Bloch-Hoell mfl., 2026). Den utviklet seg i en annen retning. Selve ordet mormon betyr en tilhenger av Jesu Kristi Kirke av Siste Dagers Hellige, og navnet kommer av Mormons bok (Store norske leksikon, 2025). Den boka kan du lese mer om i artikkelen om [hellige tekster](/krle/religion/mormonisme/hellige-tekster)."
+      "content": "Det finnes ulike retninger her også. Da Joseph Smith ble drept i 1844, fulgte ikke alle Brigham Young vestover. I 1860 dannet noen av dem en egen kirke som i dag heter Community of Christ, og som har rundt 50 medlemmer i Norge (Bloch-Hoell mfl., 2026). Den utviklet seg i en annen retning. Selve ordet mormon betyr en tilhenger av Jesu Kristi Kirke av Siste Dagers Hellige, og navnet kommer av Mormons bok (Store norske leksikon, 2025). Den boka kan du lese mer om i artikkelen om [hellige tekster](/krle/religion/mormonisme/hellige-tekster)."
     },
     {
       "type": "component",
@@ -165,13 +165,13 @@
         "reflekter": [
           "Forklar med egne ord hvorfor slektsgransking er en religiøs oppgave i denne kirken.",
           "Kirken sier at den døde selv velger om den tar imot en stedfortredende dåp. Hvorfor tror du jødiske organisasjoner likevel har protestert mot praksisen?",
-          "Begravelsen er nøktern, mens beseglingen er den store seremonien. Hva sier den rekkefølgen om hvordan kirken ser på døden?",
-          "Bruk van Genneps tre trinn, løsrivelse, mellomtilstand og ny status, på misjonen. Passer modellen?"
+          "Begravelsen er enkel, mens beseglingen er den store seremonien. Hva sier den rekkefølgen om hvordan kirken ser på døden?",
+          "Mange overgangsriter har tre trinn: du løsrives fra det gamle, du er en stund i en mellomfase, og til slutt får du en ny plass. Passer de tre trinnene på misjonen?"
         ],
         "gaaVidere": [
           "Sammenlign dåpen her med dåpen i Den norske kirke. Skriv en kort tekst om hva som er likt og hva som skiller dem.",
           "Finn ut hvor mange templer det finnes i Norden i dag, og hvor langt den nærmeste ligger fra der du bor.",
-          "Diskuter i klassen: Bør en religion kunne utføre en seremoni på vegne av et menneske som ikke selv har bedt om det?"
+          "Diskuter i klassen: Bør en religion få lov til å gjøre en seremoni for et menneske som ikke selv har bedt om det?"
         ]
       }
     },
@@ -189,7 +189,7 @@
               "Når de kommer hjem fra misjon"
             ],
             "correctAnswer": 1,
-            "explanation": "Åtte år kalles ansvarlighetsalderen. Kirken mener små barn er syndfrie fordi de ennå ikke kan velge mellom rett og galt. Spedbarn får bare navn og velsignelse."
+            "explanation": "Åtte år kalles ansvarlighetsalderen. Kirken mener små barn er uten synd fordi de ennå ikke kan velge mellom rett og galt. Spedbarn får bare navn og velsignelse."
           },
           {
             "question": "Hva betyr det at et par blir beseglet i tempelet?",
@@ -200,7 +200,7 @@
               "At paret får en egen plass i menigheten"
             ],
             "correctAnswer": 2,
-            "explanation": "Beseglingen kan bare utføres i et tempel, og den binder ektefeller og barn sammen også etter døden."
+            "explanation": "Beseglingen kan bare skje i et tempel, og den binder ektefeller og barn sammen også etter døden."
           },
           {
             "question": "Hva er stedfortredende dåp?",
@@ -208,10 +208,10 @@
               "En dåp der fadderen svarer for barnet",
               "En dåp som gjentas hvis man har brutt løftene sine",
               "En dåp uten vann, bare med håndspåleggelse",
-              "En dåp der et levende medlem døpes på vegne av en som er død"
+              "En dåp der et levende medlem døpes i stedet for en som er død"
             ],
             "correctAnswer": 3,
-            "explanation": "Den utføres bare i templene. Kirken lærer at den døde selv bestemmer om tilbudet tas imot."
+            "explanation": "Den skjer bare i templene. Kirken lærer at den døde selv bestemmer om han vil ta imot tilbudet."
           },
           {
             "question": "Hvilken av disse handlingene skjer IKKE i tempelet?",
@@ -227,13 +227,13 @@
           {
             "question": "Hvorfor er slektsgransking en religiøs oppgave i denne kirken?",
             "options": [
-              "Fordi medlemmene må dokumentere at de er etterkommere av Joseph Smith",
+              "Fordi medlemmene må bevise at de stammer fra Joseph Smith",
               "Fordi man må vite navnene på døde slektninger for å kunne gjøre ordinanser for dem",
               "Fordi kirken krever slektstre før man kan bli døpt",
               "Fordi bare de med norske aner kan reise til tempelet i Stockholm"
             ],
             "correctAnswer": 1,
-            "explanation": "Ritene skal binde generasjoner sammen i en sammenhengende kjede. Da må navnene finnes først."
+            "explanation": "Seremoniene skal binde slektsledd sammen i én lang kjede. Da må navnene finnes først."
           }
         ]
       }

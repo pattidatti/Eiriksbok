@@ -7,9 +7,9 @@
     "readTime": "9 min lesning",
     "heroImage": "/images/samisk/laestadianismen-hero.webp",
     "details": [
-        "Presten Lars Levi Læstadius startet en vekkelse i 1840-årene og forkynte på samisk og finsk",
+        "Presten Lars Levi Læstadius startet en religiøs vekkelse i 1840-årene og talte på samisk og finsk",
         "Kautokeino-opprøret i 1852 endte med drap, dødsdommer og to henrettelser",
-        "Bedehuset ble et av få steder der samisk og kvensk fikk leve videre under fornorskingen"
+        "Bedehuset ble et av få steder der samisk og kvensk fikk leve videre mens staten prøvde å gjøre samer og kvener norske"
     ],
     "content": [
         {
@@ -36,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "I 1844 møtte han en samisk kvinne som ble kalt Maria, egentlig Milla Clemensdotter. Samtalen med henne forandret ham. Etter dette begynte han å forkynne på en helt annen måte enn før: sterkt, direkte og med bilder hentet fra livet folk faktisk levde. Han talte om omvendelse, om å snu livet sitt rundt, og han gikk hardt ut mot fyll. Faren hans hadde slitt med alkohol, og Læstadius så hva brennevinet gjorde med bygdene rundt ham (Rasmussen, 2025)."
+            "content": "I 1844 møtte han en samisk kvinne som ble kalt Maria, egentlig Milla Clemensdotter. Samtalen med henne forandret ham. Etter dette begynte han å preke på en helt annen måte enn før: sterkt, direkte og med bilder hentet fra livet folk faktisk levde. Han talte om omvendelse, om å snu livet sitt rundt, og han gikk hardt ut mot fyll. Faren hans hadde slitt med alkohol, og Læstadius så hva brennevinet gjorde med bygdene rundt ham (Rasmussen, 2025)."
         },
         {
             "type": "text",
@@ -155,7 +155,7 @@
         },
         {
             "type": "text",
-            "content": "Det er verdt å stoppe opp ved det. Kristendommen kom til Sápmi som et middel for å knuse den gamle troen, med misjonærer som brente runebommer og jaktet på noaidene, altså sjamanene. Du kan lese om den tida i artikkelen om [samisk religion](/krle/religion/samisk/intro). Hundre år seinere var en kristen bevegelse blitt det stedet der samisk språk fikk leve. Religionen som skulle utslette kulturen, endte med å bære en bit av den videre."
+            "content": "Det er verdt å stoppe opp ved det. Kristendommen kom til Sápmi som et middel for å knuse den gamle troen, med misjonærer som brente runebommer, altså de hellige trommene, og jaktet på noaidene, altså sjamanene. Du kan lese om den tida i artikkelen om [samisk religion](/krle/religion/samisk/intro). Hundre år seinere var en kristen bevegelse blitt det stedet der samisk språk fikk leve. Religionen som skulle utslette kulturen, endte med å bære en bit av den videre."
         },
         {
             "type": "component",
@@ -170,7 +170,7 @@
         },
         {
             "type": "text",
-            "content": "Et læstadiansk møte er enkelt. Ingen bilder, ingen utsmykning, ofte ingen instrumenter. Folk sitter tett, det synges salmer, og en predikant taler. Læren er streng luthersk, og troen skal merkes på hvordan man lever."
+            "content": "Et læstadiansk møte er enkelt. Ingen bilder, ingen pynt, ofte ingen instrumenter. Folk sitter tett, det synges salmer, og en predikant taler. Læren er streng luthersk, og troen skal merkes på hvordan man lever."
         },
         {
             "type": "list",

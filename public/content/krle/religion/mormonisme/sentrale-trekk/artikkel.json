@@ -14,11 +14,11 @@
     "readTime": "7 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Kjernen er én påstand: kirken Jesus grunnla gikk tapt, og ble gjenopprettet gjennom Joseph Smith fra 1820-årene.",
-        "Av den påstanden følger nye hellige skrifter, levende profeter, et gjenopprettet prestedømme og templer.",
+        "Kjernen er én påstand: kirken Jesus grunnla gikk tapt, og Gud satte den opp igjen gjennom Joseph Smith fra 1820-årene.",
+        "Fordi de tror dette, trenger de nye hellige bøker, levende profeter, et prestedømme Gud har gitt tilbake, og templer.",
         "Kirkens fulle navn er Jesu Kristi Kirke av Siste Dagers Hellige. Den ble formelt etablert i 1830.",
-        "Visdomsordet, en tekst kirken regner som en åpenbaring fra 1833, praktiseres i dag som avhold fra alkohol, tobakk, kaffe og te.",
-        "Kirken oppga selv 17 887 212 medlemmer i verden per 31. desember 2025. Medlemslistene i Norge har i overkant av 4600 navn."
+        "Visdomsordet er en tekst kirken mener Gud ga dem i 1833. I dag betyr den at medlemmene ikke drikker alkohol, kaffe eller te, og ikke røyker.",
+        "Kirken oppga selv 17 887 212 medlemmer i verden per 31. desember 2025. Medlemslistene i Norge har litt over 4600 navn."
     ],
     "createdDate": "2025-12-04T10:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -31,32 +31,32 @@
         {
             "id": "siste-dagers-hellige",
             "term": "Siste dagers hellige",
-            "definition": "Navnet kirken selv foretrekker på medlemmene sine. Betegnelsen mormoner er også i bruk, etter Mormons bok."
+            "definition": "Navnet kirken helst vil at medlemmene skal kalles. Ordet mormoner er også i bruk, etter Mormons bok."
         },
         {
             "id": "prestedomme",
             "term": "Prestedømme",
-            "definition": "Fullmakten til å utføre hellige handlinger som dåp og nattverd. Kirken lærer at fullmakten må gis videre fra Gud, og at den ble gitt tilbake gjennom Joseph Smith."
+            "definition": "Retten til å gjøre hellige handlinger som dåp og nattverd. Kirken lærer at denne retten må komme fra Gud, og at Gud ga den tilbake gjennom Joseph Smith."
         },
         {
             "id": "visdomsordet",
             "term": "Visdomsordet",
-            "definition": "Kirkens helselov, en tekst kirken regner som en åpenbaring fra 1833. Den står i Lære og pakter kapittel 89, og praktiseres i dag som avhold fra alkohol, tobakk, kaffe og te."
+            "definition": "Kirkens regler for helse. Kirken mener Gud ga dem teksten i 1833, og den står i Lære og pakter kapittel 89. I dag betyr den at medlemmene ikke drikker alkohol, kaffe eller te, og ikke røyker."
         },
         {
             "id": "tempel",
             "term": "Tempel",
-            "definition": "En egen bygning der siste dagers hellige utfører hellige handlinger, blant annet dåp på vegne av døde slektninger og besegling av familier."
+            "definition": "En egen bygning der siste dagers hellige gjør hellige handlinger, blant annet dåp i stedet for døde slektninger og besegling av familier."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "To unge mennesker i hvit skjorte ringer på døra. De er langt hjemmefra, de kjenner ingen i gata, og de skal være borte i opptil to år. Hvorfor gjør noen det? Svaret ligger ikke i misjonen selv. Det ligger i én eneste påstand, og den påstanden bærer så å si alt annet i Jesu Kristi Kirke av Siste Dagers Hellige."
+            "content": "To unge mennesker i hvit skjorte ringer på døra. De er langt hjemmefra, de kjenner ingen i gata, og de skal være borte i opptil to år. Hvorfor gjør noen det? Svaret ligger ikke i misjonen selv. Det ligger i én eneste påstand, og den påstanden ligger under nesten alt annet i Jesu Kristi Kirke av Siste Dagers Hellige."
         },
         {
             "type": "text",
-            "content": "Påstanden er denne: kirken Jesus selv grunnla, gikk tapt etter apostlenes tid, og Gud satte den opp igjen i vår tid gjennom Joseph Smith. Kirken beskriver seg selv som en gjenopprettet kristen kirke, etablert av Gud i de siste dager, fordi ingen andre kirkesamfunn er fullt ut i samsvar med hans vilje (Bloch-Hoell mfl., 2026). Dette er hva medlemmene tror. Historikere kan slå fast at kirken ble formelt etablert i 1830, men de kan ikke avgjøre om selve påstanden om gjenopprettelsen stemmer."
+            "content": "Påstanden er denne: kirken Jesus selv grunnla, gikk tapt etter apostlenes tid, og Gud satte den opp igjen i vår tid gjennom Joseph Smith. Kirken beskriver seg selv som en gjenopprettet kristen kirke, startet av Gud i de siste dager, fordi ingen andre kirker helt følger det Gud vil (Bloch-Hoell mfl., 2026). Dette er hva medlemmene tror. Historikere kan slå fast at kirken ble formelt etablert i 1830, men de kan ikke avgjøre om selve påstanden om gjenopprettelsen stemmer."
         },
         {
             "type": "image",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Et ord om navn før vi går videre. Medlemmene har lenge blitt kalt mormoner, etter Mormons bok. Kirken har tidvis godtatt det navnet, men har de siste årene bedt om at trossamfunnet omtales med sitt fulle navn, og at medlemmene kalles siste dagers hellige (Bloch-Hoell mfl., 2026). Begge ordene er i bruk, og du møter begge i denne artikkelen."
+            "content": "Et ord om navn før vi går videre. Medlemmene har lenge blitt kalt mormoner, etter Mormons bok. Kirken har tidvis godtatt det navnet, men har de siste årene bedt om å bli kalt ved sitt fulle navn, og om at medlemmene kalles siste dagers hellige (Bloch-Hoell mfl., 2026). Begge ordene er i bruk, og du møter begge i denne artikkelen."
         },
         {
             "type": "header",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "Godtar du påstanden, følger en rekke ting nesten av seg selv. Gikk kirken tapt, må Gud ha talt på nytt, og da trengs nye hellige skrifter. Har Gud talt på nytt, må noen levende kunne ta imot beskjeden, og da trengs en profet. Skal en dåp være gyldig, må fullmakten være gitt videre fra Gud, og da trengs et gjenopprettet prestedømme. Og skal alle som døde før 1830 få en sjanse, må noen kunne handle på deres vegne, og da trengs templer. Fire helt ulike ting, én felles rot."
+            "content": "Godtar du påstanden, følger en rekke ting nesten av seg selv. Gikk kirken tapt, må Gud ha talt på nytt, og da trengs nye hellige skrifter. Har Gud talt på nytt, må noen levende kunne ta imot beskjeden, og da trengs en profet. Skal en dåp gjelde, må retten til å døpe komme fra Gud, og da trengs et prestedømme Gud har gitt tilbake. Og skal alle som døde før 1830 få en sjanse, må noen kunne gjøre det for dem, og da trengs templer. Fire helt ulike ting, én felles rot."
         },
         {
             "type": "component",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Se hva kjeden gjør med spørsmålet om [hellige tekster](/krle/religion/mormonisme/hellige-tekster). Kirken har fire hellige bøker: Bibelen, Mormons bok, Lære og pakter og Den kostelige perle (Bloch-Hoell mfl., 2026). Trosartiklene, tretten korte setninger kirken bruker for å oppsummere troen sin, sier hvorfor. Trosartikkel 8 sier at Bibelen er Guds ord «så langt som den er riktig oversatt», og legger til at Mormons bok også er Guds ord. Trosartikkel 9 går enda lenger: kirken tror på alt Gud har åpenbart, alt han nå åpenbarer, og at han fortsatt vil åpenbare mye (Jesu Kristi Kirke av Siste Dagers Hellige, u.a.-a). En åpen bokhylle er ikke en tilfeldighet. Den er nødvendig hvis påstanden skal holde."
+            "content": "Se hva kjeden gjør med spørsmålet om [hellige tekster](/krle/religion/mormonisme/hellige-tekster). Kirken har fire hellige bøker: Bibelen, Mormons bok, Lære og pakter og Den kostelige perle (Bloch-Hoell mfl., 2026). Trosartiklene, tretten korte setninger kirken bruker for å oppsummere troen sin, sier hvorfor. Trosartikkel 8 sier at Bibelen er Guds ord «så langt som den er riktig oversatt», og legger til at Mormons bok også er Guds ord. Trosartikkel 9 går enda lenger: kirken tror på alt Gud har åpenbart, alt han nå åpenbarer, og at han fortsatt vil åpenbare mye (Jesu Kristi Kirke av Siste Dagers Hellige, u.a.-a). At samlingen av hellige bøker kan vokse, er ingen tilfeldighet. Den må kunne vokse hvis påstanden skal holde."
         },
         {
             "type": "header",
@@ -93,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Trosartikkel 6 sier det rett ut: kirken tror på den samme organisasjonen som fantes i den opprinnelige kirken, altså apostler, profeter, hyrder, lærere og evangelister (Jesu Kristi Kirke av Siste Dagers Hellige, u.a.-a). Derfor ledes trossamfunnet i dag av en president med to rådgivere, kalt Det første presidentskap, og under dem De tolv apostlers quorum. Et quorum er rett og slett et fast råd av menn med samme oppgave. Ifølge kirken mottar mennene i begge organene åpenbaringer direkte fra Gud. Fullmakten til å døpe og lede kalles prestedømmet. Det aronske prestedømmet innehas av gutter fra tolv år og oppover, mens det melkisedekske gjelder fra 18 år og gir rett til blant annet å reise ut som misjonær (Bloch-Hoell mfl., 2026). Mer om mannen påstanden begynte med, finner du i artikkelen om [grunnleggeren](/krle/religion/mormonisme/grunnleggere)."
+            "content": "Trosartikkel 6 sier det rett ut: kirken tror på den samme organisasjonen som fantes i den opprinnelige kirken, altså apostler, profeter, hyrder, lærere og evangelister (Jesu Kristi Kirke av Siste Dagers Hellige, u.a.-a). Derfor ledes trossamfunnet i dag av en president med to rådgivere, kalt Det første presidentskap, og under dem De tolv apostlers quorum. Et quorum er rett og slett et fast råd av menn med samme oppgave. Ifølge kirken får mennene i begge disse gruppene beskjeder direkte fra Gud. Retten til å døpe og lede kalles prestedømmet. Gutter fra tolv år og oppover kan få det aronske prestedømmet, mens det melkisedekske gjelder fra 18 år og gir rett til blant annet å reise ut som misjonær (Bloch-Hoell mfl., 2026). Mer om mannen påstanden begynte med, finner du i artikkelen om [grunnleggeren](/krle/religion/mormonisme/grunnleggere)."
         },
         {
             "type": "component",
@@ -105,7 +105,7 @@
         },
         {
             "type": "text",
-            "content": "Templene er den fjerde konsekvensen, og kanskje den mest synlige. Der kan levende mennesker la seg døpe på vegne av slektninger som er døde, og familier kan bli beseglet til hverandre. Kirken lærer at en slik besegling gjør at familien hører sammen også etter døden. Nettopp derfor har kirken bygd opp et omfattende slektsarkiv (Bloch-Hoell mfl., 2026). Målet kirken beskriver, kalles opphøyelse: ikke bare å bli reddet, men å leve videre sammen med Gud og familien. Både templene og hva som skjer der, hører hjemme i artiklene om [overgangsriter](/krle/religion/mormonisme/overgangsriter) og [frelse](/krle/religion/mormonisme/frelse)."
+            "content": "Templene er det fjerde som følger, og kanskje det man ser tydeligst. Der kan levende mennesker la seg døpe i stedet for slektninger som er døde, og familier kan bli beseglet til hverandre. Kirken lærer at en slik besegling gjør at familien hører sammen også etter døden. Nettopp derfor har kirken bygd opp et enormt arkiv over slekter (Bloch-Hoell mfl., 2026). Målet kirken beskriver, kalles opphøyelse: ikke bare å bli reddet, men å leve videre sammen med Gud og familien. Både templene og hva som skjer der, hører hjemme i artiklene om [overgangsriter](/krle/religion/mormonisme/overgangsriter) og [frelse](/krle/religion/mormonisme/frelse)."
         },
         {
             "type": "image",
@@ -119,11 +119,11 @@
         },
         {
             "type": "text",
-            "content": "En av de tingene folk oftest legger merke til, kommer fra samme logikk. Hvis Gud taler på nytt, kan han også gi råd om hverdagen. Visdomsordet er en tekst kirken regner som en åpenbaring Joseph Smith fikk i Kirtland i Ohio 27. februar 1833, og den står i Lære og pakter kapittel 89. Teksten sier blant annet at sterk drikk ikke er for magen, at tobakk ikke er godt for mennesket, og at «hete drikker» ikke er for kroppen (Jesu Kristi Kirke av Siste Dagers Hellige, u.a.-b). I dag praktiseres dette som avhold fra alkohol, tobakk, kaffe og te (Bloch-Hoell mfl., 2026). Teksten lover også noe til dem som følger den: de skal løpe og ikke bli trette. En regel som utenfra kan se ut som en tilfeldig forbudsliste, er sett innenfra en beskjed fra en Gud som fortsatt snakker."
+            "content": "En av de tingene folk oftest legger merke til, kommer av den samme tankegangen. Hvis Gud taler på nytt, kan han også gi råd om hverdagen. Visdomsordet er en tekst kirken mener Joseph Smith fikk fra Gud i Kirtland i Ohio 27. februar 1833, og den står i Lære og pakter kapittel 89. Teksten sier blant annet at sterk drikk ikke er for magen, at tobakk ikke er godt for mennesket, og at «hete drikker» ikke er for kroppen (Jesu Kristi Kirke av Siste Dagers Hellige, u.a.-b). I dag betyr dette at medlemmene ikke drikker alkohol, kaffe eller te, og ikke røyker (Bloch-Hoell mfl., 2026). Teksten lover også noe til dem som følger den: de skal løpe og ikke bli trette. Utenfra kan reglene se ut som en tilfeldig liste over ting du ikke får lov til. Innenfra er de en beskjed fra en Gud som fortsatt snakker."
         },
         {
             "type": "text",
-            "content": "Misjonen hører til det samme mønsteret. Hvis kirken virkelig er gjenopprettet, må andre få vite det. Det er vanlig at unge menn, unge kvinner og eldre av begge kjønn reiser ut som misjonærer, og tjenesten varer som regel fra halvannet til to år. De fleste er 18 eller 19 år når de reiser, de reiser dit kirken ber dem reise, og de har begrenset kontakt med familien i perioden, slik at de kan konsentrere seg fullt om tjenesten (Bloch-Hoell mfl., 2026). Per 31. desember 2025 oppga kirken 78 596 heltidsmisjonærer (Jesu Kristi Kirke av Siste Dagers Hellige, 2025)."
+            "content": "Misjonen hører til det samme mønsteret. Hvis kirken virkelig er gjenopprettet, må andre få vite det. Det er vanlig at unge menn, unge kvinner og eldre av begge kjønn reiser ut som misjonærer, og tjenesten varer som regel fra halvannet til to år. De fleste er 18 eller 19 år når de reiser, de reiser dit kirken ber dem reise, og de har lite kontakt med familien i denne tiden, slik at de kan konsentrere seg helt om oppdraget (Bloch-Hoell mfl., 2026). Per 31. desember 2025 oppga kirken 78 596 heltidsmisjonærer (Jesu Kristi Kirke av Siste Dagers Hellige, 2025)."
         },
         {
             "type": "image",
@@ -137,11 +137,11 @@
         },
         {
             "type": "text",
-            "content": "Per 31. desember 2025 oppga kirken selv 17 887 212 medlemmer, 32 046 menigheter og 211 templer i drift i verden (Jesu Kristi Kirke av Siste Dagers Hellige, 2025). Tall for Norge er vanskeligere. Store norske leksikon oppgir i overkant av 4600 medlemmer fordelt på 22 lokale menigheter, og at kirken er registrert som kristent trossamfunn, men ikke mottar offentlig støtte (Bloch-Hoell mfl., 2026). Nettopp derfor er den heller ikke med i statistikken til Statistisk sentralbyrå, som bare teller trossamfunn som søker om statstilskudd. SSB nevner faktisk kirken selv som eksempel på et samfunn som ikke søker (Statistisk sentralbyrå, 2026). Når du møter et medlemstall, er det altså lurt å spørre hvem som har talt."
+            "content": "Per 31. desember 2025 oppga kirken selv 17 887 212 medlemmer, 32 046 menigheter og 211 templer i drift i verden (Jesu Kristi Kirke av Siste Dagers Hellige, 2025). Tall for Norge er vanskeligere. Store norske leksikon oppgir i overkant av 4600 medlemmer fordelt på 22 lokale menigheter, og at kirken er registrert som kristent trossamfunn, men ikke får penger fra staten (Bloch-Hoell mfl., 2026). Nettopp derfor er den heller ikke med i statistikken til Statistisk sentralbyrå, som bare teller trossamfunn som søker om støtte fra staten. SSB nevner faktisk kirken selv som eksempel på et trossamfunn som ikke søker (Statistisk sentralbyrå, 2026). Når du møter et medlemstall, er det altså lurt å spørre hvem som har talt."
         },
         {
             "type": "text",
-            "content": "Til slutt: dette er ikke én ensartet bevegelse. Da Joseph Smith ble drept i 1844, fulgte de fleste Brigham Young til Utah, men ikke alle. I 1860 grunnla en annen gruppe Den Reorganiserte Jesu Kristi Kirke av Siste Dagers Hellige, som i dag heter Community of Christ og har rundt 50 medlemmer i Norge. Gjennom årene er det stiftet mange trossamfunn som bygger på Mormons bok og på Joseph Smith som profet, men kirken Young ledet, har hele tiden vært den største. Praksis har også endret seg. Flerkoneri var en tid tillatt og praktisert, men da Utah ble amerikansk stat i 1896, måtte kirken i Salt Lake City tilpasse seg amerikansk lov og avvikle slike ekteskap (Bloch-Hoell mfl., 2026). Påstanden om gjenopprettelsen står fast. Hvordan den har blitt forstått og levd ut, har vært i bevegelse hele veien."
+            "content": "Til slutt: dette er ikke én eneste, lik bevegelse. Da Joseph Smith ble drept i 1844, fulgte de fleste Brigham Young til Utah, men ikke alle. I 1860 grunnla en annen gruppe Den Reorganiserte Jesu Kristi Kirke av Siste Dagers Hellige, som i dag heter Community of Christ og har rundt 50 medlemmer i Norge. Gjennom årene har mange trossamfunn blitt startet med utgangspunkt i Mormons bok og i Joseph Smith som profet, men kirken Young ledet, har hele tiden vært den største. Ting har også endret seg. En periode var det lov å ha flere koner, og noen gjorde det, men da Utah ble amerikansk delstat i 1896, måtte kirken i Salt Lake City følge amerikansk lov og slutte med slike ekteskap (Bloch-Hoell mfl., 2026). Påstanden om gjenopprettelsen står fast. Men hvordan folk har forstått den og levd etter den, har endret seg hele veien."
         },
         {
             "type": "component",
@@ -150,7 +150,7 @@
                 "forstaa": [
                     "Hva går selve påstanden om gjenopprettelsen ut på?",
                     "Nevn de fire hellige bøkene i Jesu Kristi Kirke av Siste Dagers Hellige.",
-                    "Hva er Visdomsordet, og hva innebærer det i praksis i dag?",
+                    "Hva er Visdomsordet, og hva betyr det i praksis i dag?",
                     "Hva kan siste dagers hellige gjøre i et tempel som de ikke gjør i en vanlig menighet?"
                 ],
                 "reflekter": [
@@ -160,9 +160,9 @@
                     "Hvorfor kan medlemstall for Norge være usikre, og hva bør du sjekke før du bruker et slikt tall?"
                 ],
                 "gaaVidere": [
-                    "Sammenlign med en annen religion i sammenligningsemnet: har den også én bærende påstand alt annet henger på?",
+                    "Sammenlign med en annen religion i sammenligningsemnet: har den også én påstand som alt annet hviler på?",
                     "Undersøk hva Community of Christ er, og hvordan de skiller seg fra kirken i Salt Lake City.",
-                    "Diskuter i klassen: hva skjer med en religion hvis den mener at Gud fortsatt taler?"
+                    "Diskuter i klassen: hva skjer med en religion hvis den mener at Gud fortsatt snakker til menneskene?"
                 ]
             }
         },
@@ -180,7 +180,7 @@
                             "At Jesus kom tilbake til jorda i 1830"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Kirken beskriver seg selv som en gjenopprettet kristen kirke, etablert av Gud i de siste dager, fordi ingen andre kirkesamfunn er fullt ut i samsvar med hans vilje."
+                        "explanation": "Kirken beskriver seg selv som en gjenopprettet kristen kirke, startet av Gud i de siste dager, fordi ingen andre kirker helt følger det Gud vil."
                     },
                     {
                         "question": "Hvilke fire bøker regnes som hellige skrifter i kirken?",
@@ -191,29 +191,29 @@
                             "Bare Bibelen og Mormons bok"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Bibelen deles med andre kristne. Mormons bok, Lære og pakter og Den kostelige perle er særegne for kirken."
+                        "explanation": "Bibelen deles med andre kristne. Mormons bok, Lære og pakter og Den kostelige perle er kirkens egne."
                     },
                     {
                         "question": "Hva er Visdomsordet?",
                         "options": [
                             "En bønn som leses før hvert måltid",
-                            "En helselov fra en åpenbaring i 1833, i dag praktisert som avhold fra alkohol, tobakk, kaffe og te",
+                            "Helseregler kirken mener Gud ga dem i 1833: ingen alkohol, kaffe, te eller røyk",
                             "Navnet på kirkens tidsskrift i Norge",
                             "Et krav om å gi ti prosent av inntekten sin"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Visdomsordet står i Lære og pakter kapittel 89 og regnes som kirkens helselov. Åpenbaringen ble gitt i Kirtland i Ohio 27. februar 1833."
+                        "explanation": "Visdomsordet står i Lære og pakter kapittel 89 og er kirkens helseregler. Kirken mener Joseph Smith fikk teksten fra Gud i Kirtland i Ohio 27. februar 1833."
                     },
                     {
                         "question": "Hvorfor har kirken bygd opp et omfattende slektsarkiv?",
                         "options": [
                             "For å finne ut hvem som skal arve kirkens eiendom",
-                            "For å kunne utføre dåp på vegne av slektninger som er døde",
+                            "For å kunne døpe medlemmer i stedet for slektninger som er døde",
                             "For å bevise at Mormons bok ble skrevet i år 400",
                             "For å avgjøre hvem som kan bli president i kirken"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "I templene kan levende mennesker la seg døpe på vegne av døde slektninger. Uten navn og slektsdata er ikke det mulig."
+                        "explanation": "I templene kan levende mennesker la seg døpe i stedet for døde slektninger. Uten navn og opplysninger om slekta går ikke det."
                     },
                     {
                         "question": "Hvor mange medlemmer oppga kirken selv i verden per 31. desember 2025?",
@@ -224,7 +224,7 @@
                             "Rundt 17,9 millioner"
                         ],
                         "correctAnswer": 3,
-                        "explanation": "Kirkens egen statistikk oppga 17 887 212 medlemmer per 31. desember 2025. Tallet kommer fra kirken selv, ikke fra en uavhengig teller."
+                        "explanation": "Kirkens egen statistikk oppga 17 887 212 medlemmer per 31. desember 2025. Tallet kommer fra kirken selv, ikke fra noen utenfor som har talt."
                     }
                 ]
             }

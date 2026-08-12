@@ -14,11 +14,11 @@
     "readTime": "8 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Bibelen ble ikke skrevet som én bok. Den ble satt sammen av tekster som gradvis fikk status som hellige skrifter.",
+        "Bibelen ble ikke skrevet som én bok. Den ble satt sammen av tekster som litt etter litt ble regnet som hellige.",
         "Verken en enkeltperson eller et kirkemøte bestemte hva som skulle med i Det nye testamentet.",
-        "Protestantiske bibler har 66 bøker. Katolske og ortodokse bibler har flere, fordi de tar med apokryfene.",
-        "Oversettelse har alltid vært tillatt og ønsket. Hele Bibelen finnes i dag på over 750 språk.",
-        "Samlingen er lukket, men uenigheten om kantene og om hvordan tekstene skal leses, lever fortsatt."
+        "Protestantiske bibler har 66 bøker. Katolske og ortodokse bibler har flere, fordi de tar med noen ekstra skrifter som kalles apokryfer.",
+        "Kristne har alltid ment at Bibelen kan og bør oversettes. Hele Bibelen finnes i dag på over 750 språk.",
+        "Ingen nye bøker kan komme til, men kristne er fortsatt uenige om noen av bøkene i ytterkanten og om hvordan tekstene skal leses."
     ],
     "createdDate": "2025-12-04T12:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -46,7 +46,7 @@
         {
             "id": "evangelium",
             "term": "Evangelium",
-            "definition": "Betyr godt budskap. Brukes om de fire fortellingene i Det nye testamentet om Jesu liv og gjerning."
+            "definition": "Betyr godt budskap. Brukes om de fire fortellingene i Det nye testamentet om livet til Jesus og det han gjorde."
         }
     ],
     "content": [
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Samlingen av tekster som regnes som hellige, kalles kanon. Ordet betyr rettesnor. Dette er tekstene kirken måler lære og liv mot (Hvalvik, 2026a). Men hvem trakk streken? Verken en enkeltperson eller et kirkemøte. Det nye testamentet ble til ved at en rekke tekster gradvis ble anerkjent som hellige skrifter, lenge før noen i det hele tatt begynte å snakke om en kanon (Hvalvik, 2026b)."
+            "content": "Samlingen av tekster som regnes som hellige, kalles kanon. Ordet betyr rettesnor. Dette er tekstene kirken måler lære og liv mot (Hvalvik, 2026a). Men hvem trakk streken? Verken en enkeltperson eller et kirkemøte. Det nye testamentet ble til ved at flere og flere tekster litt etter litt ble godtatt som hellige skrifter, lenge før noen i det hele tatt begynte å snakke om en kanon (Hvalvik, 2026b)."
         },
         {
             "type": "header",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Hva skulle til for at et skrift kom med? Tre ting gikk igjen: at det var gammelt nok til å kunne føres tilbake til apostlenes tid, at det var utbredt og i vanlig bruk i menighetene, og at det stemte med trosregelen, kirkens korte sammenfatning av apostlenes forkynnelse (Hvalvik, 2026b). Skriftet Hyrden av Hermas ble for eksempel anbefalt lest, men ikke i gudstjenesten. Begrunnelsen som ble gitt, var ikke at innholdet var farlig, men at skriftet var blitt til etter apostlenes tid (Hvalvik, 2026b). Teologen Origenes fra Alexandria oppsummerte holdningen på 200-tallet. Heretikerne han nevner, er de kirken mente lærte feil:"
+            "content": "Hva skulle til for at et skrift kom med? Tre ting gikk igjen: at det var gammelt nok til å stamme fra apostlenes tid, altså tiden da Jesu nærmeste venner levde, at det ble brukt i mange menigheter, og at det stemte med trosregelen, altså den korte oppsummeringen kirken hadde laget av det apostlene lærte bort (Hvalvik, 2026b). Skriftet Hyrden av Hermas ble for eksempel anbefalt lest, men ikke i gudstjenesten. Begrunnelsen som ble gitt, var ikke at innholdet var farlig, men at skriftet var blitt til etter apostlenes tid (Hvalvik, 2026b). Origenes fra Alexandria, som forsket på kristen lære, oppsummerte holdningen på 200-tallet. Heretikerne han nevner, er de kirken mente lærte feil:"
         },
         {
             "type": "component",
@@ -108,12 +108,12 @@
             "name": "FactBox",
             "props": {
                 "title": "Apokryfene i norske bibler",
-                "content": "Fra den første bibelen trykt i Danmark-Norge i 1550 og i århundrene etter var apokryfene med. Endringen kom på 1800-tallet. Det britiske bibelselskapet, som støttet det norske økonomisk, bestemte i 1827 at det ikke ville betale for bibler med apokryfer. I løpet av 1800-tallet ble det anslagsvis trykt 100 000 slike bibler i Norge, og mange ble vant til den mindre utgaven. Da Bibelselskapet kom med en revidert oversettelse i 1930, var apokryfene ute. Siden har de stort sett vært utgitt som egen bok, sist i ny oversettelse i 2018. I 2024 ga Bibelselskapet ut en katolsk utgave der bøkene står slik de tradisjonelt gjør i katolske bibler (Hvalvik, 2025)."
+                "content": "Fra den første bibelen trykt i Danmark-Norge i 1550 og i århundrene etter var apokryfene med. Endringen kom på 1800-tallet. Det britiske bibelselskapet, som støttet det norske økonomisk, bestemte i 1827 at det ikke ville betale for bibler med apokryfer. I løpet av 1800-tallet ble det trykt omtrent 100 000 slike bibler i Norge, og mange ble vant til den mindre utgaven. Da Bibelselskapet kom med en ny og gjennomgått oversettelse i 1930, var apokryfene ute. Siden har de stort sett vært utgitt som egen bok, sist i ny oversettelse i 2018. I 2024 ga Bibelselskapet ut en katolsk utgave der bøkene står slik de tradisjonelt gjør i katolske bibler (Hvalvik, 2025)."
             }
         },
         {
             "type": "text",
-            "content": "Den katolske kirken avgjorde spørsmålet formelt på kirkemøtet i Trient i 1546, kalt Trientkonsilet. Der ble Vulgata slått fast som kirkens bibel, og skrifter som Tobit, Judit, Visdommens bok, Sirak, Baruk og Første og Andre Makkabeerbok står på listen (Hvalvik, 2025). I katolske bibler kalles de ikke apokryfer, men deuterokanoniske bøker, og de er plassert inne blant de andre gammeltestamentlige skriftene, ikke skilt ut (Hvalvik, 2025). Det sies ofte at reformatorene, kirkelederne som brøt med paven på 1500-tallet, kastet bøkene ut av Bibelen. Det stemmer ikke. Da Martin Luther ga ut hele Bibelen på tysk i 1534, tok han dem med, samlet i en egen bolk med overskriften at de ikke er likestilt med de kanoniske bøkene, men likevel er nyttige og gode å lese (Hvalvik, 2025). Først fra omkring år 1600 ble det vanlig å trykke bibler uten apokryfene i de reformerte kirkene (Hvalvik, 2025). Ulike [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn) landet altså ulikt."
+            "content": "Den katolske kirken avgjorde spørsmålet formelt på kirkemøtet i Trient i 1546, kalt Trientkonsilet. Der ble Vulgata slått fast som kirkens bibel, og skrifter som Tobit, Judit, Visdommens bok, Sirak, Baruk og Første og Andre Makkabeerbok står på listen (Hvalvik, 2025). I katolske bibler kalles de ikke apokryfer, men deuterokanoniske bøker, og de er plassert inne blant de andre gammeltestamentlige skriftene, ikke skilt ut (Hvalvik, 2025). Det sies ofte at reformatorene, kirkelederne som brøt med paven på 1500-tallet, kastet bøkene ut av Bibelen. Det stemmer ikke. Da Martin Luther ga ut hele Bibelen på tysk i 1534, tok han dem med, samlet i en egen bolk. Overskriften sa at de ikke er like viktige som de andre bøkene i Bibelen, men at de likevel er nyttige og gode å lese (Hvalvik, 2025). Først fra omkring år 1600 ble det vanlig å trykke bibler uten apokryfene i de reformerte kirkene (Hvalvik, 2025). Ulike [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn) landet altså ulikt."
         },
         {
             "type": "image",
@@ -131,7 +131,7 @@
         },
         {
             "type": "text",
-            "content": "Norge fikk sin første selvstendige oversettelse av hele Bibelen fra hebraisk og gresk så sent som i 1904. Før det brukte man den danske. Det nye testamentet på nynorsk kom i 1889, hele Bibelen på nynorsk i 1921, og en ny oversettelse til nordsamisk ble ferdig i 2019 (Kvalbein mfl., 2026). At oversettelse er tillatt, betyr ikke at det er enkelt. Oversettere må velge mellom å følge grunnteksten ord for ord, kalt konkordant metode, og å gjengi meningen med naturlige norske uttrykk, kalt idiomatisk metode. Valget har skapt strid. Da Bibelselskapet gikk idiomatisk til verks i 1978, kom det i 1988 en alternativ og mer ordnær utgave, Norsk Bibel 88 (Kvalbein mfl., 2026)."
+            "content": "Norge fikk sin første selvstendige oversettelse av hele Bibelen fra hebraisk og gresk så sent som i 1904. Før det brukte man den danske. Det nye testamentet på nynorsk kom i 1889, hele Bibelen på nynorsk i 1921, og en ny oversettelse til nordsamisk ble ferdig i 2019 (Kvalbein mfl., 2026). At oversettelse er tillatt, betyr ikke at det er enkelt. Oversettere må velge mellom å følge grunnteksten ord for ord, kalt konkordant metode, og å gjengi meningen med naturlige norske uttrykk, kalt idiomatisk metode. Valget har skapt strid. Da Bibelselskapet valgte mening for mening i 1978, kom det i 1988 en annen utgave som lå tettere på ordene i grunnteksten, Norsk Bibel 88 (Kvalbein mfl., 2026)."
         },
         {
             "type": "image",
@@ -145,15 +145,15 @@
         },
         {
             "type": "text",
-            "content": "Her går et av de store skillene i kristendommen. På Trientkonsilet slo den katolske kirken fast at Bibelen og kirkens tradisjon er likeverdige normer for hva kirken skal lære (Store norske leksikon, 2025). Reformatorene avviste dette og satte opp Skriften alene, på latin sola scriptura, som prinsipp (Barstad & Skogvang, 2026). Nettopp fordi tradisjonen ble avvist som lærenorm, ble det nødvendig å begrunne at Bibelen har absolutt autoritet. Det er bakgrunnen for læren om at hvert eneste tegn i Skriften er inspirert av Den hellige ånd og derfor ufeilbarlig, kalt verbalinspirasjon (Molland & Leivestad, 2025)."
+            "content": "Her går et av de store skillene i kristendommen. På Trientkonsilet slo den katolske kirken fast at Bibelen og kirkens tradisjon, altså det kirken har lært videre gjennom hundreårene, teller like mye når kirken skal avgjøre hva den skal lære (Store norske leksikon, 2025). Reformatorene sa nei til dette og holdt fast på Skriften alene, sola scriptura på latin, altså at bare Bibelen gjelder (Barstad & Skogvang, 2026). Når tradisjonen ikke lenger fikk telle, måtte de forklare hvorfor Bibelen alene kan bestemme alt. Derfor kom læren om at hvert eneste tegn i Bibelen er gitt av Den hellige ånd og derfor ikke kan ta feil. Den læren kalles verbalinspirasjon (Molland & Leivestad, 2025)."
         },
         {
             "type": "text",
-            "content": "Kristne leser ikke likt. Noen leser bibeltekstene bokstavelig og ser dem som et lukket, tidløst system der man kan hente ut evige sannheter. Denne holdningen kalles gjerne biblisisme (Barstad & Skogvang, 2026). Andre mener at tekstene må forstås ut fra sin egen tid, og at man må vite hva slags tekst man leser, siden Bibelen rommer alt fra lover og historiefortellinger til dikt, ordspråk, profetier og brev (Hvalvik, 2026a). Læren om verbalinspirasjon er i dag oppgitt innenfor teologien, men holder seg fortsatt hos noen (Molland & Leivestad, 2025). Mer om forskjellene finner du i artikkelen om [sentrale trekk ved kristendommen](/krle/religion/kristendom/sentrale-trekk)."
+            "content": "Kristne leser ikke likt. Noen leser bibeltekstene helt bokstavelig og ser dem som en ferdig samling sannheter som gjelder til alle tider, uansett når de ble skrevet. Denne holdningen kalles gjerne biblisisme (Barstad & Skogvang, 2026). Andre mener at tekstene må forstås ut fra sin egen tid, og at man må vite hva slags tekst man leser, siden Bibelen rommer alt fra lover og historiefortellinger til dikt, ordspråk, profetier og brev (Hvalvik, 2026a). De fleste som forsker på kristen lære, har i dag gitt opp læren om verbalinspirasjon, men noen holder fortsatt fast på den (Molland & Leivestad, 2025). Mer om forskjellene finner du i artikkelen om [sentrale trekk ved kristendommen](/krle/religion/kristendom/sentrale-trekk)."
         },
         {
             "type": "text",
-            "content": "Kan det komme mer tekst? Nei. Athanasius, biskop i Alexandria, var den første som brukte ordet kanon om den nytestamentlige skriftsamlingen. I et påskebrev fra år 367 listet han opp nøyaktig de skriftene som står i Det nye testamentet i dag, og la til: «La ingen legge noe til disse, la ikke noe bli tatt bort fra dem.» Det ble kirkens syn (Hvalvik, 2026b). Boka er lukket, men bruken er det ikke. I gudstjenesten leses det høyt fra Bibelen, det holdes preken, og menigheten ber og synger (Thomassen, 2026). Teksten står stille. Det er leserne som beveger seg."
+            "content": "Kan det komme mer tekst? Nei. Athanasius, biskop i Alexandria, var den første som brukte ordet kanon om skriftene i Det nye testamentet. I et påskebrev fra år 367 listet han opp nøyaktig de skriftene som står i Det nye testamentet i dag, og la til: «La ingen legge noe til disse, la ikke noe bli tatt bort fra dem.» Det ble kirkens syn (Hvalvik, 2026b). Boka er lukket, men bruken er det ikke. I gudstjenesten leses det høyt fra Bibelen, det holdes preken, og menigheten ber og synger (Thomassen, 2026). Teksten står stille. Det er leserne som beveger seg."
         },
         {
             "type": "component",
@@ -161,13 +161,13 @@
             "props": {
                 "forstaa": [
                     "Hva betyr ordet kanon, og hva viser det til i kristendommen?",
-                    "Hvilke tre ting måtte til for at et skrift skulle bli anerkjent som hellig skrift i den tidlige kirken?",
+                    "Hvilke tre ting måtte til for at et skrift skulle bli godtatt som hellig skrift i den tidlige kirken?",
                     "Hva er apokryfene, og hvilke kirker har dem med i bibelen sin?",
                     "Hva er forskjellen på konkordant og idiomatisk oversettelse?"
                 ],
                 "reflekter": [
                     "Verken en enkeltperson eller et kirkemøte bestemte hva som skulle med i Det nye testamentet. Hvordan kan en samling likevel bli lukket?",
-                    "Hyrden av Hermas ble anbefalt lest, men ikke i gudstjenesten. Hva sier det om at en tekst kan ha ulike grader av autoritet?",
+                    "Hyrden av Hermas ble anbefalt lest, men ikke i gudstjenesten. Hva sier det om at en tekst kan telle mer eller mindre?",
                     "Hvorfor tror du valget mellom ord for ord og mening for mening skaper så mye strid blant bibeloversettere?",
                     "Sammenlign prinsippet om Skriften alene med det katolske synet på Bibelen og tradisjonen. Hvilke følger får de to synene for hvem som får tolke?"
                 ],
@@ -187,12 +187,12 @@
                         "question": "Hvem bestemte hvilke skrifter som skulle med i Det nye testamentet?",
                         "options": [
                             "Apostelen Paulus, i et brev til menighetene",
-                            "Verken en enkeltperson eller et kirkemøte, tekstene ble anerkjent gradvis",
+                            "Verken en enkeltperson eller et kirkemøte, tekstene ble godtatt litt etter litt",
                             "Kirkemøtet i Nikea i år 325",
                             "Martin Luther under reformasjonen"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Det nye testamentet ble til ved at en rekke tekster gradvis ble anerkjent som hellige skrifter. Først på 300-tallet begynte man å snakke om en kanon."
+                        "explanation": "Det nye testamentet ble til ved at flere og flere tekster litt etter litt ble godtatt som hellige skrifter. Først på 300-tallet begynte man å snakke om en kanon."
                     },
                     {
                         "question": "Hvorfor har katolske bibler flere bøker enn de fleste protestantiske?",
@@ -214,7 +214,7 @@
                             "At en biskop hadde godkjent det personlig"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Skriftene måtte kunne føres tilbake til apostlenes tid, være i vanlig bruk i menighetene og stemme med trosregelen. Hyrden av Hermas ble ikke lest i gudstjenesten nettopp fordi den var for ny."
+                        "explanation": "Skriftene måtte stamme fra apostlenes tid, være i vanlig bruk i menighetene og stemme med det kirken lærte fra før. Hyrden av Hermas ble ikke lest i gudstjenesten nettopp fordi den var for ny."
                     },
                     {
                         "question": "Hvilken status har oversettelser av Bibelen i kristendommen?",
@@ -233,10 +233,10 @@
                             "At Bibelen bare skal leses alene, ikke i grupper",
                             "At bare Det nye testamentet gjelder for kristne",
                             "At Bibelen skal leses uten oversettelse",
-                            "At Bibelen alene er norm for læren, ikke kirkens tradisjon ved siden av"
+                            "At bare Bibelen bestemmer hva kirken skal lære, ikke kirkens tradisjon i tillegg"
                         ],
                         "correctAnswer": 3,
-                        "explanation": "Reformatorene avviste tradisjonen som lærenorm. Den katolske kirken slo derimot fast på Trientkonsilet at Bibelen og tradisjonen er likeverdige normer."
+                        "explanation": "Reformatorene mente at tradisjonen ikke skulle telle når læren ble avgjort. Den katolske kirken slo derimot fast på kirkemøtet i Trient at Bibelen og tradisjonen teller like mye."
                     }
                 ]
             }

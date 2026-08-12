@@ -14,11 +14,11 @@
     "readTime": "7 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Tanakh er et akronym for de tre delene Toraen, Neviim og Ketuvim. Tekstene er nesten alle skrevet på hebraisk.",
+        "Tanakh er Den hebraiske bibelen. Navnet er satt sammen av forbokstavene i de tre delene Toraen, Neviim og Ketuvim. Nesten alle tekstene er skrevet på hebraisk.",
         "Jødedommen regner med to Toraer: den skriftlige, som er de fem Mosebøkene, og den muntlige, som ble skrevet ned i Mishna rundt år 200.",
-        "En side i Talmud har mishna-teksten og gemara i midten og kommentarer fra ulike århundrer i margene rundt.",
+        "En side i Talmud har mishna-teksten og gemara i midten, og kommentarer skrevet flere hundre år fra hverandre i margene rundt.",
         "Uenighet mellom de lærde blir stående på siden. Den blir ikke strøket ut.",
-        "Den skriftlige Toraen regnes som uforanderlig, mens den muntlige Toraen fremdeles er under utvikling."
+        "Den skriftlige Toraen kan ikke endres, mens den muntlige Toraen fortsatt vokser."
     ],
     "createdDate": "2025-12-04T12:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -26,7 +26,7 @@
         {
             "id": "tanakh",
             "term": "Tanakh",
-            "definition": "Den jødiske betegnelsen på Den hebraiske bibelen. Navnet er satt sammen av forbokstavene i de tre delene Toraen, Neviim og Ketuvim."
+            "definition": "Det jødiske navnet på Den hebraiske bibelen. Navnet er satt sammen av forbokstavene i de tre delene Toraen, Neviim og Ketuvim."
         },
         {
             "id": "toraen",
@@ -41,7 +41,7 @@
         {
             "id": "gemara",
             "term": "Gemara",
-            "definition": "Rabbinernes omfattende kommentarer til og diskusjoner om Mishna. Mishna og gemara utgjør til sammen Talmud."
+            "definition": "De lange kommentarene rabbinerne skrev til Mishna, og diskusjonene deres om den. Mishna og gemara utgjør til sammen Talmud."
         },
         {
             "id": "talmud",
@@ -52,11 +52,11 @@
     "content": [
         {
             "type": "text",
-            "content": "Slå opp en side i Talmud, og den ser ikke ut som en vanlig bokside. Midt på arket står en kort tekst. Rundt den ligger spalter med tettere skrift. Skriften skifter form flere ganger på samme side, teksten kan være på flere språk, og delene av siden stammer fra ulike perioder. Det er ikke rot. Det er meningen. Hver spalte er en stemme fra sin egen tid, og de står sammen fordi ingen av dem er strøket ut (Groth, 2026c)."
+            "content": "Slå opp en side i Talmud, og den ser ikke ut som en vanlig bokside. Midt på arket står en kort tekst. Rundt den ligger spalter med tettere skrift. Skriften skifter form flere ganger på samme side, teksten kan være på flere språk, og de ulike delene av siden er skrevet i hver sin tid. Det er ikke rot. Det er meningen. Hver spalte er en stemme fra sin egen tid, og de står sammen fordi ingen av dem er strøket ut (Groth, 2026c)."
         },
         {
             "type": "text",
-            "content": "Jødedommens eldste hellige skriftsamling heter Tanakh. Navnet er et akronym, altså et ord laget av forbokstavene i tre deler: Toraen, Neviim (Profetene) og Ketuvim (Skriftene). Nesten alle tekstene er skrevet på hebraisk (Groth, 2026d). Toraen er den første delen og regnes som den helligste. Den består av de fem Mosebøkene. Ordet tora betyr lære. Derfor blir den vanlige oversettelsen Loven lett misvisende, for tekstene inneholder også fortellinger, poesi, ordspråk og visdomsord (Groth, 2026e)."
+            "content": "Jødedommens eldste hellige skriftsamling heter Tanakh. Navnet er et akronym, altså et ord laget av forbokstavene i tre deler: Toraen, Neviim (Profetene) og Ketuvim (Skriftene). Nesten alle tekstene er skrevet på hebraisk (Groth, 2026d). Toraen er den første delen og regnes som den helligste. Den består av de fem Mosebøkene. Ordet tora betyr lære. Derfor blir det lett feil å oversette det med Loven, for tekstene inneholder også fortellinger, dikt, ordtak og visdomsord (Groth, 2026e)."
         },
         {
             "type": "image",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Men Toraen finnes i to former. Den skriftlige Toraen er Mosebøkene. Den muntlige Toraen er forklaringene som trengs for å bruke lovene når tidene endrer seg. I rabbinsk jødedom, som alle dagens hovedretninger springer ut av, hører begge to med til Toraen. Ifølge jødisk tradisjon ble den muntlige læren overlevert fra munn til munn i mange hundre år, helt tilbake til Moses. Den ble skrevet ned i Mishna, en samling av religiøs lov som ble ferdig redigert i Galilea rundt år 200 (Groth, 2024a, 2026a, 2026e). Mer om hvordan dette henger sammen, står i artikkelen om [sentrale trekk ved jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+            "content": "Men Toraen finnes i to former. Den skriftlige Toraen er Mosebøkene. Den muntlige Toraen er forklaringene som trengs for å bruke lovene når tidene endrer seg. I rabbinsk jødedom, som alle dagens hovedretninger kommer fra, hører begge to med til Toraen. Ifølge jødisk tradisjon ble den muntlige læren gitt videre fra munn til munn i mange hundre år, helt tilbake til Moses. Den ble skrevet ned i Mishna, en samling av religiøse lover som ble gjort ferdig i Galilea rundt år 200 (Groth, 2024a, 2026a, 2026e). Mer om hvordan dette henger sammen, står i artikkelen om [sentrale trekk ved jødedommen](/krle/religion/jodedom/sentrale-trekk)."
         },
         {
             "type": "header",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "Mishna ble raskt gjenstand for nye diskusjoner. Rabbinernes forklaringer og tolkninger kalles gemara, og Mishna og gemara utgjør til sammen Talmud. Talmud finnes i to utgaver. Den ene ble ferdig i Galilea rundt år 400. Den andre, den babylonske Talmud, ble redigert i Babylonia, dagens Irak, fram til slutten av 500-tallet, og det er den folk oftest mener når de sier Talmud. Slik ser en standardutgave ut: midt på siden står en kort mishna-tekst på hebraisk sammen med sin gemara på arameisk, et språk som var mye brukt i Midtøsten på den tiden, og rundt den står kommentarene fra de lærde, både til teksten og til hverandres tolkninger (Groth, 2026c)."
+            "content": "Det tok ikke lang tid før de lærde begynte å diskutere Mishna også. Forklaringene og tolkningene deres kalles gemara, og Mishna og gemara utgjør til sammen Talmud. Talmud finnes i to utgaver. Den ene ble ferdig i Galilea rundt år 400. Den andre, den babylonske Talmud, ble redigert i Babylonia, dagens Irak, fram til slutten av 500-tallet, og det er den folk oftest mener når de sier Talmud. Slik ser en standardutgave ut: midt på siden står en kort mishna-tekst på hebraisk sammen med sin gemara på arameisk, et språk som var mye brukt i Midtøsten på den tiden, og rundt den står kommentarene fra de lærde, både til teksten og til hverandres tolkninger (Groth, 2026c)."
         },
         {
             "type": "component",
@@ -93,19 +93,19 @@
         },
         {
             "type": "text",
-            "content": "Måten det diskuteres på i Talmud, er spesiell. Poenget var ikke å holde seg strengt til den ene saken. Finessen lå i å trekke inn assosiasjoner, paralleller og annet stoff. Metoden krever stor hukommelse, og den øves fortsatt ved jeshivaer, som er jødiske religiøse skoler for tekststudier (Groth, 2026c). Rundt to tredjedeler av Talmud er ikke lovtekst, men visdomsord, fortellinger, korte tankevekkere og allegorier, altså fortellinger med en dypere mening bak. Dette stoffet kalles aggada (Groth, 2026c)."
+            "content": "Måten det diskuteres på i Talmud, er spesiell. Poenget var ikke å holde seg strengt til én sak. Det fine var å dra inn andre tekster, sammenligne med noe som lignet, og hente stoff utenfra. Å gjøre det krever god hukommelse, og det øves fortsatt på jeshivaer, som er jødiske skoler der man studerer tekstene (Groth, 2026c). Rundt to tredjedeler av Talmud er ikke lovtekst, men visdomsord, fortellinger, korte tankevekkere og allegorier, altså fortellinger med en dypere mening bak. Dette stoffet kalles aggada (Groth, 2026c)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Kan det komme mer tekst?",
-                "content": "I jødisk tradisjon regnes de fem Mosebøkene som en uforanderlig åpenbaringstekst. Den muntlige Toraen er derimot ikke ferdig. Den omfatter også rabbinske tolkninger og avgjørelser fra tiden etter Talmud, og den er fremdeles under utvikling. Endringer i samfunnet og nye medisinske og teknologiske oppfinnelser krever nye tilpasninger som likevel skal kunne forenes med budene i Toraen og med tidligere rabbineres tolkninger (Groth, 2026e). Også uttalelsene til rabbinere som lever i dag, regnes med til den rabbinske litteraturen (Groth, 2026a)."
+                "content": "I jødisk tradisjon er de fem Mosebøkene ord Gud har gitt én gang for alle, og de kan ikke endres. Den muntlige Toraen er derimot ikke ferdig. Den rommer også tolkninger og avgjørelser rabbinerne har gjort etter Talmud, og den vokser fortsatt. Når samfunnet endrer seg, og når det kommer nye oppfinnelser i medisin og teknologi, må reglene tilpasses. Samtidig må de nye svarene passe med budene i Toraen og med det tidligere rabbinere har ment (Groth, 2026e). Også det rabbinere som lever i dag sier, regnes med til den rabbinske litteraturen (Groth, 2026a)."
             }
         },
         {
             "type": "text",
-            "content": "Det finnes ikke ett kontor som avgjør hva tekstene betyr. Rabbinere fra de ulike retningene i jødedommen kommer ofte fram til forskjellige svar, ikke minst når det gjelder likestilling og medisinsk etikk. Talmud regnes som bindende innenfor ortodoks jødedom og delvis innenfor konservativ jødedom, mens reformjødedom og rekonstruksjonisme verdsetter Talmud, men velger bort lover og tolkninger de mener ikke passer i et moderne liv (Groth, 2026a). Talmud er dessuten utarbeidet av menn, og kvinnenes stemme høres ikke i den. Talmudstudiene har tradisjonelt vært forbeholdt menn, og først i vår tid er det blitt mulig for kvinner å fordype seg i teksten. Alle de ikke-ortodokse retningene utdanner nå også kvinnelige rabbinere (Groth, 2026a, 2026c)."
+            "content": "Det finnes ikke ett kontor som avgjør hva tekstene betyr. Rabbinere fra de ulike retningene i jødedommen kommer ofte fram til forskjellige svar, ikke minst når det gjelder likestilling og spørsmål om rett og galt i medisin. Ortodokse jøder mener at Talmud må følges, og konservative jøder mener det delvis. Reformjøder og rekonstruksjonister setter Talmud høyt, men velger bort lover og tolkninger de mener ikke passer i et moderne liv (Groth, 2026a). Talmud er dessuten skrevet av menn, og kvinner kommer ikke til orde i den. Å studere Talmud har tradisjonelt vært noe bare menn gjorde, og først i vår tid har kvinner fått mulighet til å gå i dybden på teksten. Alle de ikke-ortodokse retningene utdanner nå også kvinnelige rabbinere (Groth, 2026a, 2026c)."
         },
         {
             "type": "image",
@@ -119,11 +119,11 @@
         },
         {
             "type": "text",
-            "content": "Toraen ble opprinnelig skrevet på pergamentruller, og fra lesepulten i synagogen resiterer man fortsatt fra håndskrevne toraruller. Rullene oppbevares i et eget skap på den veggen som vender mot Jerusalem, og de regnes som synagogens og menighetens mest verdifulle gjenstander. De pakkes gjerne inn i broderte duker eller settes i rikt utsmykkede beholdere av tre eller metall (Groth, 2026b, 2026e). Et avsnitt av teksten leses fortløpende gjennom året i bestemte gudstjenester, slik at hele Toraen blir lest i løpet av ett år. Noen steder bruker de en syklus på tre år (Groth, 2026e). Toraen står altså midt i [bønnelivet](/krle/religion/jodedom/bonn) i menigheten."
+            "content": "Toraen ble opprinnelig skrevet på pergamentruller, og fra lesepulten i synagogen leser man fortsatt høyt fra håndskrevne toraruller. Rullene oppbevares i et eget skap på den veggen som vender mot Jerusalem, og de regnes som synagogens og menighetens mest verdifulle gjenstander. De pakkes gjerne inn i broderte duker eller settes i rikt pyntede beholdere av tre eller metall (Groth, 2026b, 2026e). Et stykke av teksten leses i bestemte gudstjenester gjennom året, slik at hele Toraen blir lest i løpet av ett år. Noen steder bruker de tre år på runden (Groth, 2026e). Toraen står altså midt i [bønnelivet](/krle/religion/jodedom/bonn) i menigheten."
         },
         {
             "type": "text",
-            "content": "Hjemme og på skolen brukes trykte utgaver som kalles Humash. En Humash har ofte den hebraiske grunnteksten på den ene siden og en oversettelse til landets språk på siden rett overfor, og mange har rabbinske kommentarer i margen (Groth, 2026e). Oversettelse er altså tillatt. Tradisjonen er likevel at Tanakh skal leses på originalspråket, og derfor står undervisning i bibelhebraisk sentralt i jødiske skoler (Groth, 2026d). I religiøse jødiske skoler begynner barna å lese bibeltekster allerede i første klasse, mens Talmud er så vanskelig at den må vente til de er i tiårsalderen (Eskild & Groth, 2026). Overgangsritualet bar mitsva feires i synagogen, og du kan lese mer om det i artikkelen om [overgangsriter](/krle/religion/jodedom/overgangsriter)."
+            "content": "Hjemme og på skolen brukes trykte utgaver som kalles Humash. En Humash har ofte den hebraiske grunnteksten på den ene siden og en oversettelse til landets språk på siden rett overfor, og mange har rabbinske kommentarer i margen (Groth, 2026e). Oversettelse er altså tillatt. Tradisjonen er likevel at Tanakh skal leses på det språket den ble skrevet på, og derfor er bibelhebraisk et viktig fag i jødiske skoler (Groth, 2026d). I religiøse jødiske skoler begynner barna å lese bibeltekster allerede i første klasse, mens Talmud er så vanskelig at den må vente til de er i tiårsalderen (Eskild & Groth, 2026). Overgangsritualet bar mitsva feires i synagogen, og du kan lese mer om det i artikkelen om [overgangsriter](/krle/religion/jodedom/overgangsriter)."
         },
         {
             "type": "image",
@@ -137,7 +137,7 @@
         },
         {
             "type": "text",
-            "content": "Her er det viktig å skille to ting. Ifølge jødisk tradisjon ble Mosebøkene skrevet av Moses etter diktat fra Gud, mens de andre bøkene ble til under guddommelig inspirasjon (Groth, 2026d). Rabbinsk jødedom bygger dessuten på tanken om at også den muntlige læren kan føres tilbake til Moses på Sinai (Groth, 2026a). Tekstforskerne stiller andre spørsmål. Det er ikke kjent hvem som opprinnelig skrev de ulike tekstene, og moderne bibelforskning mener at Mosebøkene i den formen vi har dem i dag, ble redigert på 500-tallet fvt., altså før vår tidsregning. Disse teoriene godtas ikke innenfor ortodoks jødedom, men godtas i stor grad innenfor de andre retningene (Groth, 2026d, 2026e). Forskerne er heller ikke enige om når nedskrivingen av talmudstoffet begynte (Groth, 2026c). Selve inndelingen i kapitler og vers ble for øvrig ikke laget av jøder. Den ble utført av kristne teologer i middelalderen og ble etter hvert brukt også i trykte utgaver av Tanakh (Groth, 2026d)."
+            "content": "Her er det viktig å skille to ting. Ifølge jødisk tradisjon skrev Moses ned Mosebøkene ord for ord slik Gud sa dem, mens de andre bøkene ble til fordi Gud ga menneskene tankene bak dem (Groth, 2026d). Rabbinsk jødedom bygger dessuten på tanken om at også den muntlige læren kan føres tilbake til Moses på Sinai (Groth, 2026a). Tekstforskerne stiller andre spørsmål. Det er ikke kjent hvem som opprinnelig skrev de ulike tekstene, og moderne bibelforskning mener at Mosebøkene ble satt sammen slik vi kjenner dem i dag på 500-tallet fvt., altså før vår tidsregning. Ortodokse jøder godtar ikke disse teoriene, mens de andre retningene i stor grad gjør det (Groth, 2026d, 2026e). Forskerne er heller ikke enige om når man begynte å skrive ned stoffet i Talmud (Groth, 2026c). Selve inndelingen i kapitler og vers ble for øvrig ikke laget av jøder. Den ble laget av kristne lærde i middelalderen og ble etter hvert brukt også i trykte utgaver av Tanakh (Groth, 2026d)."
         },
         {
             "type": "component",
@@ -147,12 +147,12 @@
                     "Hva står de tre bokstavene i Tanakh for?",
                     "Hva er forskjellen på den skriftlige og den muntlige Toraen?",
                     "Hva står midt på en side i Talmud, og hva står rundt?",
-                    "Hvorfor blir oversettelsen Loven regnet som misvisende for ordet tora?"
+                    "Hvorfor blir det lett feil å oversette ordet tora med Loven?"
                 ],
                 "reflekter": [
-                    "Uenighet mellom rabbinere blir stående på siden i stedet for å bli strøket ut. Hva sier det om hva slags autoritet teksten har?",
-                    "Den skriftlige Toraen regnes som uforanderlig, mens den muntlige er under utvikling. Forklar med egne ord hvorfor begge deler kan være viktig samtidig.",
-                    "Artikkelen skiller mellom hva tradisjonen forteller og hva tekstforskerne mener. Hvorfor er det viktig å holde de to fra hverandre?",
+                    "Uenighet mellom rabbinere blir stående på siden i stedet for å bli strøket ut. Hva sier det om hvordan jøder mener teksten skal brukes?",
+                    "Den skriftlige Toraen kan ikke endres, mens den muntlige fortsatt vokser. Forklar med egne ord hvorfor begge deler kan være viktig samtidig.",
+                    "Artikkelen skiller mellom det tradisjonen forteller og det tekstforskerne mener. Hvorfor er det viktig å holde de to tingene fra hverandre?",
                     "I jødedommen er oversettelse tillatt, men originalspråket har en egen plass. Hvilke fordeler og ulemper kan en slik ordning gi?"
                 ],
                 "gaaVidere": [
@@ -209,10 +209,10 @@
                             "At de ble oversatt fra arameisk"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Moderne bibelforskning mener at Mosebøkene i sin overleverte form ble redigert på 500-tallet fvt. Innenfor ortodoks jødedom godtas ikke disse teoriene, mens de i stor grad godtas i de andre retningene."
+                        "explanation": "Moderne bibelforskning mener at Mosebøkene ble satt sammen slik vi kjenner dem i dag på 500-tallet fvt. Ortodokse jøder godtar ikke disse teoriene, mens de andre retningene i stor grad gjør det."
                     },
                     {
-                        "question": "Hvilken del av Toraen regnes som fremdeles under utvikling?",
+                        "question": "Hvilken del av Toraen vokser fortsatt?",
                         "options": [
                             "Den skriftlige Toraen",
                             "Den muntlige Toraen",
@@ -220,7 +220,7 @@
                             "Begge to like mye"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Mosebøkene regnes i jødisk tradisjon som uforanderlige, mens den muntlige Toraen også omfatter rabbinske tolkninger og avgjørelser etter Talmud og fortsatt utvikles."
+                        "explanation": "Mosebøkene kan ikke endres, sier jødisk tradisjon. Den muntlige Toraen rommer også tolkninger og avgjørelser fra tiden etter Talmud, og den vokser fortsatt."
                     }
                 ]
             }
