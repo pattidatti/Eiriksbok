@@ -8775,6 +8775,17 @@
           "title": "Sammenligne religion",
           "description": "Ett menneskelig spørsmål om gangen, og ni religioner som svarer i samme rom.",
           "image": "/images/placeholder.webp",
+          "tools": [
+            {
+              "id": "overgangsriter-sti",
+              "title": "Læringssti: Overgangsritualer",
+              "description": "Fire overganger, ni tradisjoner og mønsteret som ligger under. Du starter med ditt eget svar, og henter det fram igjen til slutt.",
+              "link": "/krle/sammenligning/overgangsriter-sti",
+              "icon": "map",
+              "createdDate": "2026-08-12T10:00:34.254Z",
+              "lastUpdated": "2026-08-12T10:09:15.561Z"
+            }
+          ],
           "lessons": [
             {
               "id": "skapelse",
@@ -8891,7 +8902,7 @@
                 "ethical"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T08:39:55+02:00"
+              "lastUpdated": "2026-08-12T11:33:45+02:00"
             },
             {
               "id": "hoytider",
@@ -8917,7 +8928,7 @@
                 "material"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T09:13:54.554Z"
+              "lastUpdated": "2026-08-12T11:33:45+02:00"
             },
             {
               "id": "symboler-og-klaer",
@@ -8930,7 +8941,7 @@
                 "material"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T09:11:14.872Z"
+              "lastUpdated": "2026-08-12T11:33:45+02:00"
             },
             {
               "id": "mat-og-renhet",
@@ -8956,7 +8967,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T09:30:29.148Z"
+              "lastUpdated": "2026-08-12T11:33:45+02:00"
             }
           ]
         },

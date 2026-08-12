@@ -183,6 +183,7 @@ const SkapelsesVeven = lazy(() => import('./content/interactive/SkapelsesVeven')
 const BliOgDetBle = lazy(() => import('./content/interactive/BliOgDetBle').then(m => ({ default: m.BliOgDetBle })));
 const BonneKompasset = lazy(() => import('./content/interactive/BonneKompasset').then(m => ({ default: m.BonneKompasset })));
 const LivetsTrapp = lazy(() => import('./content/interactive/LivetsTrapp').then(m => ({ default: m.LivetsTrapp })));
+const TerskelVerkstedet = lazy(() => import('./content/interactive/TerskelVerkstedet').then(m => ({ default: m.TerskelVerkstedet })));
 const EtterlivsKartet = lazy(() => import('./content/interactive/EtterlivsKartet').then(m => ({ default: m.EtterlivsKartet })));
 const FrelsensStige = lazy(() => import('./content/interactive/FrelsensStige').then(m => ({ default: m.FrelsensStige })));
 const TekstensReise = lazy(() => import('./content/interactive/TekstensReise').then(m => ({ default: m.TekstensReise })));
@@ -650,6 +651,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     BliOgDetBle,
     BonneKompasset,
     LivetsTrapp,
+    TerskelVerkstedet,
     EtterlivsKartet,
     FrelsensStige,
     TekstensReise,

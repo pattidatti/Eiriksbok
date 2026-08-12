@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-03T18:03:39.457Z",
-  "count": 19,
+  "updatedAt": "2026-08-12T10:01:00.219Z",
+  "count": 20,
   "paths": [
     {
       "id": "romerriket-sti",
@@ -117,6 +117,18 @@
       "readTime": "5-6 timer",
       "path": "/historie/etterkrigstiden/etterkrigstiden-sti",
       "fileRelativePath": "historie/etterkrigstiden/etterkrigstiden-sti.json",
+      "version": 1
+    },
+    {
+      "id": "overgangsriter-sti",
+      "title": "Læringssti: Overgangsritualer",
+      "description": "Fire overganger, ni tradisjoner og mønsteret som ligger under. Du starter med ditt eget svar, og henter det fram igjen til slutt.",
+      "subjectId": "krle",
+      "subjectName": "KRLE",
+      "topicId": "sammenligning",
+      "readTime": "1,5-2 timer",
+      "path": "/krle/sammenligning/overgangsriter-sti",
+      "fileRelativePath": "krle/sammenligning/overgangsriter-sti.json",
       "version": 1
     },
     {
@@ -237,7 +249,7 @@
     {
       "id": "handel-og-infrastruktur-sti",
       "title": "Læringssti: Verdens årer",
-      "description": "Fra komparativt fortrinn til kaskadefeil — utforsk nettverkene som binder verden sammen og holder sivilisasjonen i gang.",
+      "description": "Fra komparativt fortrinn til kaskadefeil - utforsk nettverkene som binder verden sammen og holder sivilisasjonen i gang.",
       "subjectId": "samfunnskunnskap",
       "subjectName": "Samfunnskunnskap",
       "topicId": "handel-og-infrastruktur",

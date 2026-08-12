@@ -1,0 +1,607 @@
+{
+    "id": "overgangsriter-sti",
+    "title": "Læringssti: Overgangsritualer",
+    "description": "Fire overganger, ni tradisjoner og mønsteret som ligger under. Du starter med ditt eget svar, og henter det fram igjen til slutt.",
+    "layout": "learning-path",
+    "category": "Læringssti",
+    "readTime": "1,5-2 timer",
+    "heroImage": "/images/placeholder.webp",
+    "subject": "krle",
+    "topic": "sammenligning",
+    "createdDate": "2026-08-12T12:00:00Z",
+    "learningPathData": {
+        "id": "overgangsriter-sti",
+        "title": "Overgangsritualer",
+        "description": "Alle mennesker blir født, slutter å være barn, finner noen å leve med og dør. Alle kulturer har laget seremonier rundt de samme fire punktene. I denne stien finner du ut hva en slik seremoni egentlig gjør, og hvorfor den tomme ruta i en oversikt kan være selve svaret.",
+        "targetSubjectId": "krle",
+        "targetTopicId": "sammenligning",
+        "steps": [
+            {
+                "id": "prolog-ditt-eget-svar",
+                "phase": "Prolog",
+                "title": "Da du sluttet å være barn",
+                "type": "refleksjon",
+                "icon": "sparkles",
+                "difficulty": "easy",
+                "content": "Før du leser noe som helst, skal du svare selv.\n\nTenk på ditt eget liv. Et sted mellom bleier og førerkort er det noen dager som teller mer enn andre. Første skoledag. Konfirmasjon eller ingen konfirmasjon. Dagen du fikk lov til å gå hjem alene. Kanskje en begravelse du husker altfor godt.\n\nNoen av dagene ble markert med kake, taler og folk du ikke hadde sett på flere år. Andre gled forbi uten at noen sa noe, og likevel vet du at noe skiftet.\n\nDu trenger ingen forkunnskaper for å svare på dette steget. Det finnes ingen fasit her, og det er poenget: du skal ha ditt eget svar å måle de andre svarene mot. I siste steg henter du fram det du skrev nå, og ser om du har flyttet deg.",
+                "tasks": [
+                    "Skriv ned tre øyeblikk i ditt eget liv der du gikk fra å være én ting til å bli noe annet. (Fakta)",
+                    "Velg ett av dem. Hvem andre måtte være til stede for at overgangen skulle telle? (Forståelse)",
+                    "Hva hadde blitt annerledes hvis ingen hadde markert den dagen i det hele tatt? (Forståelse)",
+                    "Lag din egen definisjon på én setning: hva er en overgang i et menneskeliv? (Anvendelse)",
+                    "Ta vare på svarene. Du skal bruke dem igjen i siste steg. (Refleksjon)"
+                ]
+            },
+            {
+                "id": "fire-dorer",
+                "phase": "Akt 1: Spørsmålet",
+                "title": "Fire dører alle går gjennom",
+                "type": "fakta",
+                "icon": "book-open",
+                "difficulty": "easy",
+                "content": "Nå får du fakta-fundamentet.\n\nDet finnes tusenvis av religioner og livssyn i verden, og de er uenige om nesten alt. Men fire punkter går igjen overalt: fødselen, veien ut av barndommen, ekteskapet og døden. Ingen kultur lar alle fire passere i stillhet.\n\nArtikkelen du skal lese nå stiller alle ni tradisjonene opp ved siden av hverandre på nettopp disse fire punktene. Legg merke til to ting mens du leser. Det første er begrepet overgangsrite: en seremoni som flytter et menneske fra én plass i samfunnet til en annen. Det andre er de tomme rutene. Noen tradisjoner har ingen egen rite ved en av de fire overgangene. Det er ikke et hull i oversikten. Det er et svar.\n\nBruk gjerne Livets trapp inne i artikkelen mens du leser. Du møter den igjen i steg 6, og da med tre andre tradisjoner valgt.",
+                "tasks": [
+                    "Les artikkelen [Fra vugge til grav](/krle/sammenligning/overgangsriter)",
+                    "Hvilke fire overganger går igjen i alle de ni tradisjonene? (Fakta)",
+                    "Forklar med egne ord hva det betyr at en rite flytter et menneske fra én status til en annen. (Forståelse)",
+                    "Arnold van Gennep delte riten i tre faser. Skriv én setning om hva som skjer i hver av dem. (Forståelse)",
+                    "Finn ett eksempel i artikkelen på en tradisjon som mangler en egen rite ved en av de fire overgangene. Hva forteller den tomme ruta oss? (Analyse)"
+                ],
+                "links": [
+                    {
+                        "title": "Fra vugge til grav",
+                        "url": "/krle/sammenligning/overgangsriter"
+                    }
+                ]
+            },
+            {
+                "id": "terskelen",
+                "phase": "Akt 1: Spørsmålet",
+                "title": "Terskelen",
+                "type": "utfordring",
+                "icon": "layers",
+                "difficulty": "medium",
+                "content": "Den franske forskeren Arnold van Gennep satte ord på noe ingen hadde sett tydelig før. Rundt 1909 sammenlignet han seremonier fra hele verden, og oppdaget at de fulgte den samme oppskriften i tre trinn.\n\nFørst skilles du ut fra det du var. Du forbereder deg, du trekkes bort fra hverdagen, du forlater plassen din.\n\nSå kommer terskelen. Det er det merkelige mellomrommet der du verken er det gamle eller det nye. Gutten som står midt i lesningen. Paret som har gått to av fire runder. Konfirmanten i kappa som er lik for alle.\n\nTil slutt tas du inn igjen, som noe annet. Fest, taler, en ny plass i fellesskapet.\n\nI verktøyet under sorterer du seks øyeblikk fra én rite. Bytt så til en helt annen rite og gjør det på nytt. Innholdet er ulikt. Formen er den samme.",
+                "component": {
+                    "name": "TerskelVerkstedet",
+                    "props": {
+                        "title": "Terskelen",
+                        "intro": "Velg en rite, og plasser hvert øyeblikk i den fasen det hører hjemme i.",
+                        "phases": [
+                            {
+                                "id": "skille",
+                                "label": "Skille",
+                                "hint": "Du løsrives fra det du var"
+                            },
+                            {
+                                "id": "terskel",
+                                "label": "Terskel",
+                                "hint": "Verken det gamle eller det nye"
+                            },
+                            {
+                                "id": "innlemming",
+                                "label": "Innlemming",
+                                "hint": "Du tas inn igjen som noe annet"
+                            }
+                        ],
+                        "rites": [
+                            {
+                                "id": "bar-mitsva",
+                                "name": "Bar mitsva",
+                                "tradition": "Jødedom",
+                                "color": "#3b82f6",
+                                "moments": [
+                                    {
+                                        "id": "bm1",
+                                        "text": "Månedene før dagen bruker han på å øve inn akkurat de setningene han skal lese.",
+                                        "phase": "skille",
+                                        "feedback": "Forberedelsen løfter ham ut av hverdagen. Han er på vei bort fra det han var."
+                                    },
+                                    {
+                                        "id": "bm2",
+                                        "text": "Fram til nå har foreldrene svart for at han følger budene.",
+                                        "phase": "skille",
+                                        "feedback": "Dette er utgangspunktet han skal forlate. Ansvaret ligger ennå hos noen andre."
+                                    },
+                                    {
+                                        "id": "bm3",
+                                        "text": "Han står foran menigheten og leser høyt fra den håndskrevne rullen for første gang.",
+                                        "phase": "terskel",
+                                        "feedback": "Selve lesningen er mellomrommet. Den er begynt, men ingenting er sluttført."
+                                    },
+                                    {
+                                        "id": "bm4",
+                                        "text": "Ingen kan hjelpe ham mens han leser. Han er ikke barn lenger, og ikke ferdig med seremonien.",
+                                        "phase": "terskel",
+                                        "feedback": "Han står alene i mellomrommet. Det er nøyaktig det van Gennep kaller terskelen."
+                                    },
+                                    {
+                                        "id": "bm5",
+                                        "text": "Fra nå av kan han telles med i en bønnegruppe på ti.",
+                                        "phase": "innlemming",
+                                        "feedback": "Han har fått en plass i fellesskapet som han ikke hadde før."
+                                    },
+                                    {
+                                        "id": "bm6",
+                                        "text": "Etterpå blir det fest, taler og gaver fra familien.",
+                                        "phase": "innlemming",
+                                        "feedback": "Festen er fellesskapets måte å bekrefte at han er noe annet nå."
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "anand-karaj",
+                                "name": "Anand Karaj",
+                                "tradition": "Sikhisme",
+                                "color": "#ff9933",
+                                "moments": [
+                                    {
+                                        "id": "ak1",
+                                        "text": "Paret forlater plassene sine blant gjestene og setter seg på gulvet foran Guru Granth Sahib.",
+                                        "phase": "skille",
+                                        "feedback": "De trer ut av rollen som gjester og inn i seremonien."
+                                    },
+                                    {
+                                        "id": "ak2",
+                                        "text": "Gjestene blir stille, og salmesangen begynner. Festen utenfor stopper.",
+                                        "phase": "skille",
+                                        "feedback": "Rommet skifter fra fest til seremoni. Det gamle legges til side."
+                                    },
+                                    {
+                                        "id": "ak3",
+                                        "text": "Det første verset synges, og paret reiser seg og går den første runden rundt boka.",
+                                        "phase": "terskel",
+                                        "feedback": "Nå er de i gang, men ikke ferdige. Etter én runde er de verken ugifte eller gifte."
+                                    },
+                                    {
+                                        "id": "ak4",
+                                        "text": "Tre runder er gått. Ett vers står igjen.",
+                                        "phase": "terskel",
+                                        "feedback": "Alt er begynt og ingenting er avgjort. Det er selve mellomtilstanden."
+                                    },
+                                    {
+                                        "id": "ak5",
+                                        "text": "Etter den fjerde runden er de gift. Ingen ekstra erklæring trengs.",
+                                        "phase": "innlemming",
+                                        "feedback": "Gjennomføringen er det som gjør ekteskapet gyldig. Ingen prest sier det i tillegg."
+                                    },
+                                    {
+                                        "id": "ak6",
+                                        "text": "Slekta tar imot dem som et gift par, og feiringen fortsetter utenfor.",
+                                        "phase": "innlemming",
+                                        "feedback": "Fellesskapet bekrefter den nye statusen. Uten det skjedde det egentlig ingenting."
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "konfirmasjon",
+                                "name": "Konfirmasjon",
+                                "tradition": "Den norske kirke",
+                                "color": "#6366f1",
+                                "moments": [
+                                    {
+                                        "id": "kf1",
+                                        "text": "Gjennom høsten og vinteren går du på konfirmasjonsundervisning sammen med andre på din alder.",
+                                        "phase": "skille",
+                                        "feedback": "Du trekkes ut av vanlig fritid og inn i en gruppe som forbereder seg på det samme."
+                                    },
+                                    {
+                                        "id": "kf2",
+                                        "text": "På selve dagen samles konfirmantene i et eget rom, borte fra gjestene.",
+                                        "phase": "skille",
+                                        "feedback": "Du skilles fysisk fra familien din og hører nå til gruppa som skal gjennom noe."
+                                    },
+                                    {
+                                        "id": "kf3",
+                                        "text": "Du får på deg den hvite kappa, som er lik for alle konfirmantene.",
+                                        "phase": "terskel",
+                                        "feedback": "I terskelfasen viskes forskjellene ut. Ingen skal kunne se hvem som er hvem."
+                                    },
+                                    {
+                                        "id": "kf4",
+                                        "text": "Presten legger hendene på hodet ditt og ber en bønn for deg.",
+                                        "phase": "terskel",
+                                        "feedback": "Selve øyeblikket. I Den norske kirke er konfirmasjonen i dag en forbønn for konfirmanten."
+                                    },
+                                    {
+                                        "id": "kf5",
+                                        "text": "Etterpå er det fest hjemme, med taler og gaver.",
+                                        "phase": "innlemming",
+                                        "feedback": "Familien og nabolaget bekrefter at du er noe annet nå."
+                                    },
+                                    {
+                                        "id": "kf6",
+                                        "text": "Fra nå av blir du regnet som ungdom, ikke som barn.",
+                                        "phase": "innlemming",
+                                        "feedback": "Statusen er endret i andres øyne. Det er nettopp det riten er til for."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "tasks": [
+                    "Sorter alle seks øyeblikkene i bar mitsva i verktøyet over. (Anvendelse)",
+                    "Bytt til Anand Karaj og gjør det samme. Hvilken fase var lettest å kjenne igjen? (Anvendelse)",
+                    "Hvorfor kalte van Gennep midtfasen for terskel? (Forståelse)",
+                    "Ta en av overgangene du skrev ned i prologen, og del den i de tre fasene. (Anvendelse)",
+                    "Finnes det overganger uten en tydelig terskelfase? Gi et eksempel og begrunn. (Analyse)"
+                ]
+            },
+            {
+                "id": "ansvaret-bytter-eier",
+                "phase": "Akt 2: Svarene",
+                "title": "Dagen ansvaret bytter eier",
+                "type": "fakta",
+                "icon": "book-open",
+                "difficulty": "medium",
+                "content": "Nå går du inn i den første av tre tradisjoner, og du velger dem ikke tilfeldig. Jødedommen, buddhismen og sikhismen svarer så ulikt på det samme spørsmålet at mønsteret bak blir lettere å se.\n\nVi begynner med jødedommen, fordi den viser tydeligst hva en rite faktisk gjør. En trettenåring står foran menigheten og leser fra en håndskrevet rull. Det ser ut som en prøve han skal bestå.\n\nDet er det ikke. Ingen blir jøde denne dagen, og ingen avlegger noe løfte om å tro. Det som skjer, er at en plikt bytter eier. Fram til nå har foreldrene svart for at budene blir fulgt. Fra og med tretten år og én dag svarer han for det selv.\n\nSe etter forskjellen mellom de fire jødiske ritene: hvem har bedt om dem, og hvem har bare fått dem?",
+                "tasks": [
+                    "Les artikkelen [Dagen ansvaret bytter eier](/krle/religion/jodedom/overgangsriter)",
+                    "Hvor gammel må en gutt være før han regnes som religiøst myndig? (Fakta)",
+                    "Ingen blir jøde på denne dagen. Hva er det egentlig som skifter? (Forståelse)",
+                    "Brit mila skjer på den åttende dagen, uten at barnet kan si nei. Bar mitsva krever at han selv står fram. Skriv to setninger om hva den forskjellen betyr. (Anvendelse)",
+                    "Blant ikke-ortodokse jøder går det en debatt om omskjæring av nyfødte. Hvilke hensyn står mot hverandre? Gjengi begge sidene så rettferdig du klarer. (Etikk)"
+                ],
+                "links": [
+                    {
+                        "title": "Dagen ansvaret bytter eier",
+                        "url": "/krle/religion/jodedom/overgangsriter"
+                    }
+                ]
+            },
+            {
+                "id": "riten-som-ikke-finnes",
+                "phase": "Akt 2: Svarene",
+                "title": "Riten som ikke finnes",
+                "type": "refleksjon",
+                "icon": "help-circle",
+                "difficulty": "medium",
+                "content": "I flere buddhistiske land begynner bryllupsdagen hjemme hos brudeparet. Munkene kommer på besøk tidlig om morgenen. De får mat, de resiterer noen tekster, og så går de tilbake til klosteret. Vielsen skjer etter at de har gått.\n\nDet er lett å tro at det mangler noe. Det gjør det ikke. Buddhistiske munker og nonner vier rett og slett ikke folk, fordi ekteskapet ikke regnes som en religiøs handling.\n\nMen døden slipper buddhismen ikke unna. I Øst-Asia er det som regel munkene som utfører ritualene ved en begravelse.\n\nDette er den tomme ruta fra steg 1, sett innenfra. Klosteret tar hånd om det som handler om karma og gjenfødelse. Resten får landsbyen ordne selv. Fraværet av en rite er et valg, ikke en glemsel.",
+                "tasks": [
+                    "Les artikkelen [Riten som ikke finnes](/krle/religion/buddhisme/overgangsriter)",
+                    "Hva gjør munkene på bryllupsdagen, og når går de? (Fakta)",
+                    "Hvorfor tar buddhismen hånd om begravelsen, men ikke bryllupet? (Forståelse)",
+                    "Novisevigslingen i Myanmar og Thailand ligner litt på en konfirmasjon. Sett opp to likheter og to forskjeller. (Anvendelse)",
+                    "En novise kan gå tilbake til livet som lekfolk når han vil. Gjør det riten mindre viktig? Begrunn svaret. (Analyse)"
+                ],
+                "links": [
+                    {
+                        "title": "Riten som ikke finnes",
+                        "url": "/krle/religion/buddhisme/overgangsriter"
+                    }
+                ]
+            },
+            {
+                "id": "fire-runder",
+                "phase": "Akt 2: Svarene",
+                "title": "Boka i midten",
+                "type": "utfordring",
+                "icon": "gamepad-2",
+                "difficulty": "medium",
+                "content": "Den tredje tradisjonen gjør noe ingen av de to andre gjør: den setter en bok i midten.\n\nI et sikh-bryllup sier paret ingen ja foran en prest, og de undertegner ingen kontrakt inne i gudshuset. De setter seg på gulvet foran Guru Granth Sahib. Så synges et dikt i fire vers, og for hvert vers reiser paret seg og går en runde rundt boka. Etter den fjerde runden er de gift.\n\nDet samme gjelder de andre ritene. Navnet ditt får du fra en tilfeldig side i den samme boka. Alle får etternavnet Singh eller Kaur, slik at ingen kan lese kaste ut av navnet ditt.\n\nSpill gjennom seremonien under, og tell rundene. Legg merke til hva som står i midten, og hva som ikke gjør det.",
+                "component": {
+                    "name": "MicroGame",
+                    "props": {
+                        "gameId": "anand-karaj-3d"
+                    }
+                },
+                "tasks": [
+                    "Les artikkelen [Overgangsriter i sikhismen](/krle/religion/sikhisme/overgangsriter)",
+                    "Spill gjennom Anand Karaj over. Hva skjer etter den fjerde runden? (Fakta)",
+                    "Alle sikher får etternavnet Singh eller Kaur. Hvorfor er det et poeng i seg selv? (Forståelse)",
+                    "Amrit sanskar er den ene overgangen du må be om selv. Sammenlign den med dåpen hos Jehovas vitner, slik den er beskrevet i «Fra vugge til grav». (Anvendelse)",
+                    "I midten står en bok, ikke en person. Hva sier det om hvem som har makt i sikhismen? (Analyse)"
+                ],
+                "links": [
+                    {
+                        "title": "Overgangsriter i sikhismen",
+                        "url": "/krle/religion/sikhisme/overgangsriter"
+                    }
+                ]
+            },
+            {
+                "id": "den-tomme-ruta",
+                "phase": "Akt 3: Mønsteret",
+                "title": "Den tomme ruta",
+                "type": "utfordring",
+                "icon": "layers",
+                "difficulty": "hard",
+                "content": "Du har nå lest om tre tradisjoner som svarer helt ulikt. Tid for å stille dem opp ved siden av hverandre.\n\nI verktøyet under står jødedom, buddhisme og sikhisme klare fra start. Klikk deg gjennom de fire overgangene og se hva som skjer trinn for trinn. Ved fødselen har alle tre noe. Ved veien ut av barndommen har alle tre noe, men de er uenige om hvem som bestemmer. Ved ekteskapet skjer det noe interessant: én av rutene blir stående tom.\n\nDen tomme ruta er ikke en feil i oversikten, og den betyr ikke at buddhister ikke gifter seg. Den betyr at religionen har bestemt seg for hva den skal blande seg i.\n\nDøden er den ene overgangen ingen av de ni lar være å markere. Spør deg selv hvorfor akkurat den.",
+                "component": {
+                    "name": "LivetsTrapp",
+                    "props": {
+                        "title": "Livets trapp",
+                        "intro": "De tre tradisjonene du har lest om står klare. Klikk deg opp gjennom de fire overgangene.",
+                        "maxVisible": 3,
+                        "defaultSelection": ["jodedom", "buddhisme", "sikhisme"],
+                        "emptyText": "Her har ikke denne tradisjonen en egen fast rite.",
+                        "groups": [
+                            {
+                                "id": "abrahamittisk",
+                                "label": "Abrahamittiske røtter"
+                            },
+                            {
+                                "id": "indisk",
+                                "label": "Indiske tradisjoner"
+                            },
+                            {
+                                "id": "nyere",
+                                "label": "Nyere bevegelser"
+                            }
+                        ],
+                        "stages": [
+                            {
+                                "id": "fodsel",
+                                "label": "Fødsel",
+                                "age": "0 år"
+                            },
+                            {
+                                "id": "voksen",
+                                "label": "Fra barn til voksen",
+                                "age": "8-20 år"
+                            },
+                            {
+                                "id": "ekteskap",
+                                "label": "Ekteskap",
+                                "age": "voksen"
+                            },
+                            {
+                                "id": "doden",
+                                "label": "Døden",
+                                "age": "til slutt"
+                            }
+                        ],
+                        "traditions": [
+                            {
+                                "id": "jodedom",
+                                "name": "Jødedom",
+                                "color": "#3b82f6",
+                                "group": "abrahamittisk",
+                                "rites": {
+                                    "fodsel": {
+                                        "name": "Brit mila",
+                                        "text": "Gutter omskjæres på den åttende dagen og får navnet sitt. Handlingen viser tilbake til pakten mellom Gud og Abraham slik Første Mosebok forteller den."
+                                    },
+                                    "voksen": {
+                                        "name": "Bar og bat mitzva",
+                                        "text": "Ved 13 år og én dag svarer gutten selv for budene. Jenter regnes tradisjonelt som voksne ved 12. I reformjødedommen er alderen lik for begge."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Vielse under huppa",
+                                        "text": "Paret vies under en baldakin. Brudgommen overrekker ekteskapskontrakten ketuba, og knuser til slutt et glass."
+                                    },
+                                    "doden": {
+                                        "name": "Begravelse innen et døgn",
+                                        "text": "Enkel trekiste og hvite likklær som er like for alle. De nærmeste sitter sjiva, en uke hjemme med besøk."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "kristendom",
+                                "name": "Kristendom",
+                                "color": "#6366f1",
+                                "group": "abrahamittisk",
+                                "rites": {
+                                    "fodsel": {
+                                        "name": "Dåp",
+                                        "text": "Vann tre ganger over hodet, og barnet får faddere. Baptister og pinsevenner døper først den som selv kan tro."
+                                    },
+                                    "voksen": {
+                                        "name": "Konfirmasjon",
+                                        "text": "I Den norske kirke er den i dag en forbønn for konfirmanten. I 2023 ble omtrent 48 prosent av femtenåringene konfirmert der."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Vielse i kirken",
+                                        "text": "Presten velsigner paret og ringene. Kirkesamfunnene er uenige om likekjønnet vigsel."
+                                    },
+                                    "doden": {
+                                        "name": "Gravferd med jordpåkastelse",
+                                        "text": "Presten kaster jord tre ganger på kisten. I 2024 fikk 80,4 prosent av de døde i Norge kirkelig gravferd."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "islam",
+                                "name": "Islam",
+                                "color": "#10b981",
+                                "group": "abrahamittisk",
+                                "rites": {
+                                    "fodsel": {
+                                        "name": "Shahada i øret, og aqiqa",
+                                        "text": "Trosbekjennelsen hviskes i øret på den nyfødte. Kort etter får barnet navn, håret klippes og kjøtt deles ut i nabolaget."
+                                    },
+                                    "voksen": {
+                                        "none": true,
+                                        "text": "Islam markerer fødsel, ekteskap og død, men har ikke et eget innvielsesritual for ungdom."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Nikah",
+                                        "text": "En kontrakt begge må si ja til, med vitner og gaven mahr fra mannen til kvinnen. Det religiøse innslaget er kort, festen etterpå kan være stor."
+                                    },
+                                    "doden": {
+                                        "name": "Janaza",
+                                        "text": "Vask, hvite tøystykker, gravferdsbønn og begravelse så raskt som mulig, vendt mot Mekka. Kremasjon er ikke tillatt."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "bahai",
+                                "name": "Bahá'í",
+                                "color": "#14b8a6",
+                                "group": "nyere",
+                                "rites": {
+                                    "fodsel": {
+                                        "name": "Navnefest, men frivillig",
+                                        "text": "Bahá'í har ingen dåp. Familien kan samle folk til en navnefest, men ingen seremoni er påbudt."
+                                    },
+                                    "voksen": {
+                                        "none": true,
+                                        "text": "Fra fylte 15 år har du selv ansvaret for daglig bønn og faste. Ingen seremoni markerer dagen. Du bare begynner."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Bahá'í-bryllup",
+                                        "text": "Alle foreldre som lever, må si ja. Så sier begge den samme setningen foran to vitner, og de er gift. Ingen prest deltar."
+                                    },
+                                    "doden": {
+                                        "name": "Gravferd nær dødsstedet",
+                                        "text": "Den døde skal ikke fraktes lenger enn én times reise fra byen der døden skjedde. Bønnen for de døde leses. Kremasjon regnes som forbudt."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "mormonisme",
+                                "name": "Mormonisme",
+                                "color": "#8b5cf6",
+                                "group": "nyere",
+                                "rites": {
+                                    "fodsel": {
+                                        "name": "Navn og velsignelse",
+                                        "text": "Spedbarnet bæres fram i menigheten og får navn og en velsignelse, men det blir ikke døpt."
+                                    },
+                                    "voksen": {
+                                        "name": "Dåp ved åtte år",
+                                        "text": "Kirken kaller åtte år ansvarlighetsalderen, fordi den mener små barn ennå ikke kan velge mellom rett og galt. Hele kroppen senkes under vann."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Besegling i tempelet",
+                                        "text": "Kirken lærer at paret hører sammen for tid og all evighet, ikke bare til døden skiller dem. Beseglingen kan bare skje i et tempel."
+                                    },
+                                    "doden": {
+                                        "name": "Nøktern begravelse",
+                                        "text": "Holdes i møtehuset, i et hjem eller ved graven, ikke i tempelet. Både kistebegravelse og kremasjon er tillatt."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "jehovas-vitner",
+                                "name": "Jehovas vitner",
+                                "color": "#0ea5e9",
+                                "group": "nyere",
+                                "rites": {
+                                    "fodsel": {
+                                        "none": true,
+                                        "text": "Ingen dåp og ingen navneseremoni. Jehovas vitner døper ikke spedbarn i det hele tatt."
+                                    },
+                                    "voksen": {
+                                        "name": "Dåp du ber om selv",
+                                        "text": "Måneder med studier, en innvielsesbønn du ber alene, og to spørsmål du svarer ja på. Så full neddykking, som regel på et stevne. Ingen fast aldersgrense."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Tale i Rikets sal",
+                                        "text": "Kjernen er en tale på omtrent en halvtime om hva Bibelen sier om ekteskapet. Paret kan bytte løfter og ringer. Det serveres ikke mat i salen."
+                                    },
+                                    "doden": {
+                                        "name": "Enkel begravelse",
+                                        "text": "En bibeltale om døden og håpet om oppstandelse, gjerne en sang, og en bønn. Ingen likvake, og det tas ikke opp kollekt."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "hinduisme",
+                                "name": "Hinduisme",
+                                "color": "#ec4899",
+                                "group": "indisk",
+                                "rites": {
+                                    "fodsel": {
+                                        "name": "Samskara rundt fødselen",
+                                        "text": "Riter før unnfangelsen, i svangerskapet, ved fødselen, ved navngivningen og ved første hårklipp. Noen tradisjoner teller ti slike riter i alt, andre seksten."
+                                    },
+                                    "voksen": {
+                                        "name": "Upanayana",
+                                        "text": "Gutten får den hellige snoren og tas opp som elev. Riten ble regnet som nødvendig for de tre øverste varna-gruppene. Hvor mye den brukes i dag, varierer sterkt."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Vivaha",
+                                        "text": "Fire runder rundt ilden, og så sju skritt mot nord. Det er skrittene som gjør ekteskapet gyldig."
+                                    },
+                                    "doden": {
+                                        "name": "Antyeshti",
+                                        "text": "Det siste offeret. Kroppen kremeres helst samme dag, og asken legges i rennende vann, aller helst i Ganges."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "buddhisme",
+                                "name": "Buddhisme",
+                                "color": "#f59e0b",
+                                "group": "indisk",
+                                "rites": {
+                                    "fodsel": {
+                                        "none": true,
+                                        "text": "Ingen rite som er felles for hele buddhismen. Klosteret tar hånd om det som handler om karma og gjenfødelse, og lar resten være opp til lokale skikker."
+                                    },
+                                    "voksen": {
+                                        "name": "Novisevigsling",
+                                        "text": "I Myanmar, Thailand, Laos og Kambodsja blir gutter noviser i klosteret. Hodet barberes, og de får gule kapper. Noen blir noen dager, andre i flere år."
+                                    },
+                                    "ekteskap": {
+                                        "none": true,
+                                        "text": "Munker og nonner vier ingen. Ekteskapet regnes ikke som en religiøs handling, og formen kommer fra lokal kultur."
+                                    },
+                                    "doden": {
+                                        "name": "Kremasjon og resitasjon",
+                                        "text": "Munkene resiterer, og familien gir mat og klær til klosteret på vegne av den døde. Tanken er at gaven skaper fortjeneste som kan overføres til den døde."
+                                    }
+                                }
+                            },
+                            {
+                                "id": "sikhisme",
+                                "name": "Sikhisme",
+                                "color": "#ff9933",
+                                "group": "indisk",
+                                "rites": {
+                                    "fodsel": {
+                                        "name": "Naam Karan",
+                                        "text": "Guru Granth Sahib slås opp på måfå, og bokstaven øverst blir barnets forbokstav. Alle får etternavnet Singh eller Kaur."
+                                    },
+                                    "voksen": {
+                                        "name": "Amrit Sanskar",
+                                        "text": "Innvielsen i fellesskapet khalsa. Fem sikher rører sukkervann med et tveegget sverd, og alle drikker av den samme skålen. Du må be om den selv."
+                                    },
+                                    "ekteskap": {
+                                        "name": "Anand Karaj",
+                                        "text": "Paret går fire runder rundt den hellige boka mens fire vers synges. Etter fjerde runde er de gift."
+                                    },
+                                    "doden": {
+                                        "name": "Antam Sanskar",
+                                        "text": "Kroppen kremeres. Kveldsbønnen Sohila synges, og fellesbønnen Ardas avslutter. Ingen stor gravstein og ingen ekstra pynt."
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "tasks": [
+                    "Klikk deg gjennom alle fire overgangene i Livets trapp over, med jødedom, buddhisme og sikhisme valgt. (Anvendelse)",
+                    "På hvilket trinn står buddhismen uten en egen rite? (Fakta)",
+                    "Forklar hva den tomme ruta faktisk forteller oss. (Forståelse)",
+                    "Bytt ut én av de tre med en tradisjon du ikke har lest om. Hva overrasket deg mest? (Anvendelse)",
+                    "Døden markeres av alle ni tradisjonene. Skriv tre setninger om hvorfor akkurat den overgangen er umulig å hoppe over. (Analyse)"
+                ]
+            },
+            {
+                "id": "ditt-eget-svar-andre-gang",
+                "phase": "Akt 3: Mønsteret",
+                "title": "Ditt eget svar, andre gang",
+                "type": "oppgave",
+                "icon": "sparkles",
+                "difficulty": "hard",
+                "content": "Riter overlever ofte troen som skapte dem.\n\nI 2023 ble omtrent 48 prosent av femtenåringene konfirmert i Den norske kirke. I 2024 fikk 80,4 prosent av de døde i Norge kirkelig gravferd. Mange av dem som satt i kirkebenken, ville sagt at de ikke tror på noe særlig. De kom likevel.\n\nDet sier noe om hva en rite er. Den er ikke bare en påstand om himmelen. Den er samfunnets måte å si «nå er du noe annet», høyt nok til at alle hører det.\n\nVed de tre første overgangene kan mennesket det gjelder si noe selv. Ved den siste kan det ikke det. Da er riten helt og holdent de gjenlevendes arbeid.\n\nNå henter du fram det du skrev i prologen.",
+                "tasks": [
+                    "Les det du skrev i prologen. Hva vil du legge til nå? (Refleksjon)",
+                    "48 prosent lar seg konfirmere, men 80,4 prosent får kirkelig gravferd. Hva kan forklare forskjellen? (Analyse)",
+                    "Kan en rite bety noe for deg selv om du ikke tror på det den bygger på? Skriv et kort svar med begrunnelse. (Etikk)",
+                    "Lag din egen overgangsrite for en overgang som ikke markeres i dag. Beskriv den med van Genneps tre faser. (Anvendelse)",
+                    "Skriv fem setninger som svarer på spørsmålet: hva gjør en overgangsrite? Bruk minst tre fagord fra stien. (Syntese)"
+                ],
+                "links": [
+                    {
+                        "title": "Fra vugge til grav",
+                        "url": "/krle/sammenligning/overgangsriter"
+                    }
+                ]
+            }
+        ]
+    }
+}

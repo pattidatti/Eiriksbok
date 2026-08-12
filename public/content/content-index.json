@@ -1,5 +1,5 @@
 {
-  "buildId": 64753277585362,
+  "buildId": 47000343602336,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2608,6 +2608,9 @@
     "mat-og-renhet": [
       "content/krle/sammenligning/mat-og-renhet.json"
     ],
+    "overgangsriter-sti": [
+      "content/krle/sammenligning/overgangsriter-sti.json"
+    ],
     "sammenligning-overgangsriter": [
       "content/krle/sammenligning/overgangsriter.json"
     ],
@@ -4711,6 +4714,7 @@
     "krle/sammenligning/hoytider": "content/krle/sammenligning/hoytider.json",
     "krle/sammenligning/lidelse": "content/krle/sammenligning/lidelse.json",
     "krle/sammenligning/mat-og-renhet": "content/krle/sammenligning/mat-og-renhet.json",
+    "krle/sammenligning/overgangsriter-sti": "content/krle/sammenligning/overgangsriter-sti.json",
     "krle/sammenligning/overgangsriter": "content/krle/sammenligning/overgangsriter.json",
     "krle/sammenligning/skapelse": "content/krle/sammenligning/skapelse.json",
     "krle/sammenligning/symboler-og-klaer": "content/krle/sammenligning/symboler-og-klaer.json",

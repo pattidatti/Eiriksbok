@@ -107,6 +107,7 @@ De 17 temaene i prioritert byggerekkefølge, pluss stiene. Kolonnen «Kilder» =
 
 | Sti-ID | Tittel | Type | Bygges i |
 |---|---|---|---|
+| `overgangsriter-sti` | Overgangsritualer | Fordypning | ✅ Bygget 2026-08-12 - se §8.4 |
 | `skapelse-sti` | Før alt fantes | Fordypning | Fase 2 |
 | `sammenligning-sti` | Å se med to øyne | Metode | Fase 4 |
 | `gudsbilde-sti` | Hvem er Gud? | Fordypning | Fase 5 |
@@ -609,7 +610,55 @@ Lærer eleven *hvordan* man sammenligner, ikke *hva*. Treffer LK20-mål 6 (fagbe
 
 Bygges i fase 4, når det finnes 3-4 temaartikler å peke på.
 
-### 8.4 Øvrige fordypningsstier
+### 8.4 `overgangsriter-sti` - «Overgangsritualer» (8 steg) ✅ BYGGET
+
+* **Fil:** `public/content/krle/sammenligning/overgangsriter-sti.json`
+* **Manifest:** `sammenligning.tools[]`, `icon: "map"` - emnets første `tools`-oppføring, og
+  den første læringsstien i hele KRLE-faget
+* **Estimert tid:** 1,5-2 timer
+* **v1** (`layout: "learning-path"`). v2 er ikke ferdig utviklet.
+
+Bygget først fordi `overgangsriter` er det eneste temaet med **9/9 ferdige kildeartikler**
+etter R4. Kort med vilje: 8 steg, ikke 11, slik at stien går inn i to skoletimer.
+
+| # | Fase | Tittel | Type | Komponent | Lesing |
+|---|---|---|---|---|---|
+| 0 | Prolog | Da du sluttet å være barn | refleksjon | - | ingen |
+| 1 | Akt 1: Spørsmålet | Fire dører alle går gjennom | fakta | - | `sammenligning/overgangsriter` |
+| 2 | Akt 1: Spørsmålet | Terskelen | utfordring | `TerskelVerkstedet` (NY) | - |
+| 3 | Akt 2: Svarene | Dagen ansvaret bytter eier | fakta | - | `jodedom/overgangsriter` |
+| 4 | Akt 2: Svarene | Riten som ikke finnes | refleksjon | - | `buddhisme/overgangsriter` |
+| 5 | Akt 2: Svarene | Boka i midten | utfordring | `MicroGame` ↻ `anand-karaj-3d` | `sikhisme/overgangsriter` |
+| 6 | Akt 3: Mønsteret | Den tomme ruta | utfordring | `LivetsTrapp` ↻ | - |
+| 7 | Akt 3: Mønsteret | Ditt eget svar, andre gang | oppgave | - | - |
+
+**Dypdykkene i Akt 2 er valgt for kontrast:** jødedommen viser hva en rite *gjør* (en plikt
+bytter eier), buddhismen viser at fraværet av en rite er et valg, sikhismen setter en bok i
+midten der andre setter en person.
+
+**`TerskelVerkstedet`** er stiens egen signaturkomponent: eleven sorterer seks øyeblikk fra
+én rite inn i van Genneps tre faser, og bytter så rite. Tre riter i props: bar mitsva,
+anand karaj og konfirmasjon i Den norske kirke. Klikk-for-å-plassere, ikke drag-and-drop.
+
+**`LivetsTrapp` i steg 6** gjenbruker props fra `overgangsriter.json`, men med
+`defaultSelection: ["jodedom", "buddhisme", "sikhisme"]` - nøyaktig de tre eleven nettopp
+har lest om. Da står ruta «Ekteskap» tom for buddhismen, og den tomme ruta blir stegets
+poeng i stedet for en fotnote.
+
+**Avvik som er tatt bevisst:**
+
+1. **8 steg, ikke 10-20** som `LEARNING_PATH_GUIDE.md` anbefaler. Stien skal gå inn i to
+   skoletimer. `kildeforing-sti` er til sammenligning 11 steg / 1,5-2 timer.
+2. **Prologen har ingen leseoppgave.** Guiden vil at steg 0 skal bygge på en
+   oversiktsartikkel; §8.1 i denne blueprinten vil at eleven skal svare selv først. Her
+   vinner §8.1, og fakta-fundamentet kommer i steg 1 i stedet.
+3. **Ingen `Kildeliste`.** v1-stier har ikke en slik blokk. Stien innfører derfor ingen nye
+   faktapåstander - alt fagstoff står i de fire artiklene den lenker til, som selv har
+   APA-kilder.
+4. **Livssynshumanisme og samisk gjestestemme er utelatt** som egne steg, etter avklaring
+   med eier. Se merknaden i §9.6 punkt 6.
+
+### 8.5 Øvrige fordypningsstier
 
 `gudsbilde-sti`, `bonn-sti` og `doden-sti` følger samme mal som §8.2, 9-12 steg hver. Detaljeres i egne læringssti-blueprints etter mønster av `docs/Design documents/skapende-skriving-laeringssti-blueprint.md`.
 
@@ -672,6 +721,12 @@ Disse ble valgt for å komme videre og kan overstyres:
 3. ~~Samisk religion og historiske religioner står utenfor de ni. Skal de inn som gjestestemmer?~~ **Avklart 2026-08-10:** samisk religion kommer inn som gjestestemme i seks utvalgte temaer - se §5.4. Historiske religioner holdes utenfor foreløpig.
 4. Skal emnet ha en egen quiz-battle-pakke eller flashcard-sett på tvers av temaene?
 5. ~~Skal mikrospill-kravet i plan_article gjelde absolutt alle de 89 artiklene som skal opprustes?~~ **Avklart 2026-08-10:** nei. Mikrospill lages kun der temaet er romlig, og de hører til sammenligningsartiklene - ikke til per-religion-artiklene. Testen og begrunnelsen står i `docs/KRLE_OPPRUSTNING.md` §2.1. Det tar prosjektet fra ~89 nye mikrospill til ~6.
+6. **`overgangsriter.json` mangler den livssynshumanistiske stemmen.** §4 (Article 4) og
+   §9.5 punkt 2 sier at temaet skal ha «Og de som ikke tror?» med Human-Etisk Forbunds
+   navnefest, borgerlig konfirmasjon og gravferd. Ordet «Human-Etisk» finnes ikke i fila.
+   Oppdaget 2026-08-12 under bygging av `overgangsriter-sti`. Hullet er i artikkelen, ikke
+   i stien, og stien ble bevisst bygget uten den stemmen. Bør lukkes når artikkelen neste
+   gang røres.
 
 ---
 
