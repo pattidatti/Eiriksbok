@@ -926,15 +926,15 @@
       "count": 22
     },
     {
+      "tag": "doctrinal",
+      "count": 22
+    },
+    {
       "tag": "islam",
       "count": 21
     },
     {
       "tag": "mysterier",
-      "count": 21
-    },
-    {
-      "tag": "doctrinal",
       "count": 21
     },
     {
@@ -1010,6 +1010,10 @@
       "count": 14
     },
     {
+      "tag": "sammenligning",
+      "count": 14
+    },
+    {
       "tag": "fn",
       "count": 13
     },
@@ -1071,10 +1075,6 @@
     },
     {
       "tag": "apartheid",
-      "count": 11
-    },
-    {
-      "tag": "sammenligning",
       "count": 11
     },
     {
@@ -3202,6 +3202,10 @@
       "count": 2
     },
     {
+      "tag": "material",
+      "count": 2
+    },
+    {
       "tag": "aristoteles",
       "count": 2
     },
@@ -3818,7 +3822,19 @@
       "count": 1
     },
     {
+      "tag": "hellige-rom",
+      "count": 1
+    },
+    {
+      "tag": "symboler-og-klaer",
+      "count": 1
+    },
+    {
       "tag": "mat-og-renhet",
+      "count": 1
+    },
+    {
+      "tag": "lidelse",
       "count": 1
     },
     {

@@ -1,5 +1,5 @@
 {
-  "buildId": 55311001574432,
+  "buildId": 64753277585362,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2572,7 +2572,8 @@
       "content/krle/religion-og-kultur/religion-i-medier.json"
     ],
     "symboler-og-klaer": [
-      "content/krle/religion-og-kultur/symboler-og-klaer.json"
+      "content/krle/religion-og-kultur/symboler-og-klaer.json",
+      "content/krle/sammenligning/symboler-og-klaer.json"
     ],
     "sammenligning-bonn": [
       "content/krle/sammenligning/bonn.json"
@@ -2592,11 +2593,17 @@
     "sammenligning-gudsbilde": [
       "content/krle/sammenligning/gudsbilde.json"
     ],
+    "hellige-rom": [
+      "content/krle/sammenligning/hellige-rom.json"
+    ],
     "sammenligning-hellige-tekster": [
       "content/krle/sammenligning/hellige-tekster.json"
     ],
     "hoytider": [
       "content/krle/sammenligning/hoytider.json"
+    ],
+    "lidelse": [
+      "content/krle/sammenligning/lidelse.json"
     ],
     "mat-og-renhet": [
       "content/krle/sammenligning/mat-og-renhet.json"
@@ -4699,11 +4706,14 @@
     "krle/sammenligning/frelse": "content/krle/sammenligning/frelse.json",
     "krle/sammenligning/grunnleggere": "content/krle/sammenligning/grunnleggere.json",
     "krle/sammenligning/gudsbilde": "content/krle/sammenligning/gudsbilde.json",
+    "krle/sammenligning/hellige-rom": "content/krle/sammenligning/hellige-rom.json",
     "krle/sammenligning/hellige-tekster": "content/krle/sammenligning/hellige-tekster.json",
     "krle/sammenligning/hoytider": "content/krle/sammenligning/hoytider.json",
+    "krle/sammenligning/lidelse": "content/krle/sammenligning/lidelse.json",
     "krle/sammenligning/mat-og-renhet": "content/krle/sammenligning/mat-og-renhet.json",
     "krle/sammenligning/overgangsriter": "content/krle/sammenligning/overgangsriter.json",
     "krle/sammenligning/skapelse": "content/krle/sammenligning/skapelse.json",
+    "krle/sammenligning/symboler-og-klaer": "content/krle/sammenligning/symboler-og-klaer.json",
     "microgame-map.json/undefined/microgame-map": "content/microgame-map.json",
     "musikk/grunnleggende/akkorder-og-harmoni": "content/musikk/grunnleggende/akkorder-og-harmoni.json",
     "musikk/grunnleggende/notasjon": "content/musikk/grunnleggende/notasjon.json",

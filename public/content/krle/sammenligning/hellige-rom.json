@@ -1,0 +1,769 @@
+{
+  "id": "hellige-rom",
+  "title": "Rommene vi bygger for det hellige",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "material",
+  "comparison_tags": [
+    "hellige-rom",
+    "material"
+  ],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": [
+    "rle01-03-10-01"
+  ],
+  "details": [
+    "Nesten alle hellige rom har en retning: mot Mekka, mot Jerusalem, mot øst eller innover mot det mørkeste punktet.",
+    "Det som står fremst i rommet, er det tradisjonen mener er viktigst: en bok, et gudebilde, et bord eller en tom nisje.",
+    "Moskeen har ingen bilder av mennesker, mens en ortodoks kirke har en hel billedvegg mellom koret og menigheten.",
+    "Noen bygg er åpne for alle, andre bare for medlemmer som er forberedt på bestemte handlinger.",
+    "Samisk religion snur på hele ideen: helligdommen er noe du finner i landskapet, ikke noe du bygger."
+  ],
+  "concepts": [
+    {
+      "id": "mihrab",
+      "term": "Mihrab",
+      "definition": "Bønnenisjen i en moské. Den viser qibla, retningen mot Kaba i Mekka, og er ofte formet som en port."
+    },
+    {
+      "id": "aron-ha-kodesh",
+      "term": "Aron ha-kodesh",
+      "definition": "Det hellige skapet i en synagoge, der torarullene oppbevares. Det står i veggen som vender mot Jerusalem."
+    },
+    {
+      "id": "ikonostas",
+      "term": "Ikonostas",
+      "definition": "Billedveggen som skiller koret fra kirkerommet i ortodokse kirker. Den har tre dører og er dekket av ikoner."
+    },
+    {
+      "id": "garbhagriha",
+      "term": "Garbhagriha",
+      "definition": "Det innerste, mørke rommet i et hindutempel, der gudebildet står. Navnet betyr «livmorhuset»."
+    },
+    {
+      "id": "sieidi",
+      "term": "Sieidi",
+      "definition": "En særegen naturformasjon, ofte en stor stein, der man i førkristen samisk religion kunne komme i kontakt med åndeverdenen."
+    }
+  ],
+  "createdDate": "2026-08-12T12:00:00Z",
+  "lastUpdated": "2026-08-12T12:00:00Z",
+  "factChecked": "2026-08-12",
+  "content": [
+    {
+      "type": "text",
+      "content": "En moské har ingen bilder av mennesker på veggene. En ortodoks kirke er dekket av bilder, fra gulv til tak. De to byggene vil fortelle deg det samme: at du nå står på et sted som ikke er som utsiden. De gjør det bare på stikk motsatt måte."
+    },
+    {
+      "type": "header",
+      "text": "Spørsmålet alle stiller"
+    },
+    {
+      "type": "text",
+      "content": "Alle tradisjoner som samler mennesker, trenger et sted å samle dem. Og i det øyeblikket noen bygger et rom, må de bestemme noe: Hvor skal folk se? Hva skal stå fremst? Hvem får komme inn, og hvem får stå nærmest? Ingen av disse valgene er tilfeldige. Rommet er tradisjonens svar på hva den mener er aller viktigst, bare støpt i stein og tre i stedet for skrevet ned."
+    },
+    {
+      "type": "text",
+      "content": "Derfor kan du lese en bygning nesten som en setning. Den har de samme leddene om og om igjen: en inngang, en plass til folket, et sted der ordet føres fram, og et punkt blikket trekkes mot. Det er dette vi kaller rommets grammatikk. Leddene går igjen overalt. Rekkefølgen og vekten er helt ulik. Der én tradisjon setter et gudebilde, setter en annen en bok, og en tredje lar plassen stå tom."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Tomt bønnerom med lys fra høye vinduer",
+      "caption": "Et rom sier hva som er viktigst, lenge før noen har sagt et ord."
+    },
+    {
+      "type": "component",
+      "name": "RommetsGrammatikk",
+      "props": {
+        "title": "Rommets grammatikk",
+        "intro": "Fem rom, de samme fire leddene. Velg en bygning og se hvor leddene flytter seg.",
+        "note": "Plantegningene er forenklet. Ingen av byggene ser helt slik ut i virkeligheten.",
+        "defaultBuilding": "moske",
+        "roles": [
+          {
+            "id": "inngang",
+            "label": "Inngangen",
+            "hint": "hvor du kommer inn",
+            "icon": "dor"
+          },
+          {
+            "id": "folket",
+            "label": "Folket",
+            "hint": "hvor de som kommer, er",
+            "icon": "folk"
+          },
+          {
+            "id": "ordet",
+            "label": "Ordet",
+            "hint": "hvor det føres fram",
+            "icon": "bok"
+          },
+          {
+            "id": "blikket",
+            "label": "Blikket",
+            "hint": "dit rommet fører øyet",
+            "icon": "oye"
+          }
+        ],
+        "buildings": [
+          {
+            "id": "moske",
+            "name": "Moské",
+            "tradition": "Islam",
+            "color": "#10b981",
+            "orientation": "mot Kaba i Mekka",
+            "outline": [
+              [
+                6,
+                10
+              ],
+              [
+                94,
+                10
+              ],
+              [
+                94,
+                90
+              ],
+              [
+                6,
+                90
+              ]
+            ],
+            "inner": [
+              {
+                "points": [
+                  [
+                    94,
+                    42
+                  ],
+                  [
+                    99,
+                    44
+                  ],
+                  [
+                    99,
+                    56
+                  ],
+                  [
+                    94,
+                    58
+                  ]
+                ]
+              }
+            ],
+            "gaze": {
+              "from": [
+                50,
+                50
+              ],
+              "to": [
+                84,
+                50
+              ]
+            },
+            "elements": {
+              "inngang": {
+                "name": "Renselsen",
+                "text": "Skoene tas av utenfor, og der er det rennende vann til wudu, vaskingen før bønn.",
+                "x": 14,
+                "y": 50
+              },
+              "folket": {
+                "name": "Bønnerommet",
+                "text": "All bønn her inne foregår vendt mot nisjen. Menn og kvinner har hver sin del av rommet.",
+                "x": 45,
+                "y": 50
+              },
+              "ordet": {
+                "name": "Minbar",
+                "text": "Talerstolen til høyre for nisjen, brukt til fredagsprekenen. Veggene har mønster og skrift, ikke bilder.",
+                "x": 82,
+                "y": 25
+              },
+              "blikket": {
+                "name": "Mihrab",
+                "text": "En nisje i veggen som viser qibla, retningen mot Mekka.",
+                "x": 89,
+                "y": 50
+              }
+            }
+          },
+          {
+            "id": "kirke",
+            "name": "Kirke",
+            "tradition": "Kristendom",
+            "color": "#6366f1",
+            "orientation": "ofte mot øst, mot soloppgangen",
+            "outline": [
+              [
+                6,
+                22
+              ],
+              [
+                94,
+                22
+              ],
+              [
+                94,
+                78
+              ],
+              [
+                6,
+                78
+              ]
+            ],
+            "inner": [
+              {
+                "points": [
+                  [
+                    74,
+                    22
+                  ],
+                  [
+                    94,
+                    22
+                  ],
+                  [
+                    94,
+                    78
+                  ],
+                  [
+                    74,
+                    78
+                  ]
+                ],
+                "label": "Koret",
+                "labelAt": [
+                  84,
+                  32
+                ]
+              }
+            ],
+            "gaze": {
+              "from": [
+                46,
+                50
+              ],
+              "to": [
+                80,
+                50
+              ]
+            },
+            "elements": {
+              "inngang": {
+                "name": "Vestporten",
+                "text": "Inngangen ligger ofte i vest, der sola går ned. Du går innover mot lyset i øst.",
+                "x": 13,
+                "y": 50
+              },
+              "folket": {
+                "name": "Skipet",
+                "text": "Menigheten sitter i rader vendt framover. Nyere kirker har svakere skille mellom prest og folk.",
+                "x": 42,
+                "y": 50
+              },
+              "ordet": {
+                "name": "Prekestolen",
+                "text": "I protestantiske kirker ble den flyttet godt fram, fordi prekenen er hovedsaken.",
+                "x": 63,
+                "y": 30
+              },
+              "blikket": {
+                "name": "Alteret",
+                "text": "Står hevet over gulvet. I ortodokse kirker er det skjult bak en billedvegg, en ikonostas.",
+                "x": 86,
+                "y": 52
+              }
+            }
+          },
+          {
+            "id": "synagoge",
+            "name": "Synagoge",
+            "tradition": "Jødedom",
+            "color": "#3b82f6",
+            "orientation": "mot Jerusalem",
+            "outline": [
+              [
+                6,
+                14
+              ],
+              [
+                94,
+                14
+              ],
+              [
+                94,
+                86
+              ],
+              [
+                6,
+                86
+              ]
+            ],
+            "inner": [
+              {
+                "points": [
+                  [
+                    24,
+                    14
+                  ],
+                  [
+                    94,
+                    14
+                  ],
+                  [
+                    94,
+                    27
+                  ],
+                  [
+                    24,
+                    27
+                  ]
+                ],
+                "label": "Galleri",
+                "labelAt": [
+                  40,
+                  23
+                ]
+              }
+            ],
+            "gaze": {
+              "from": [
+                42,
+                58
+              ],
+              "to": [
+                80,
+                52
+              ]
+            },
+            "elements": {
+              "inngang": {
+                "name": "Døra",
+                "text": "Ordet synagoge betyr forsamlingshus. Rommet er også skole og møtested.",
+                "x": 13,
+                "y": 52
+              },
+              "folket": {
+                "name": "Benkene",
+                "text": "I ortodokse synagoger følger kvinner gudstjenesten fra et galleri eller et eget rom.",
+                "x": 39,
+                "y": 58
+              },
+              "ordet": {
+                "name": "Bimaen",
+                "text": "Lesepulten for torarullen. Den sto opprinnelig midt i rommet, i dag ofte nærmere skapet.",
+                "x": 61,
+                "y": 40
+              },
+              "blikket": {
+                "name": "Aron ha-kodesh",
+                "text": "Skapet med torarullene, i veggen mot Jerusalem. Over det brenner et evig lys.",
+                "x": 85,
+                "y": 53
+              }
+            }
+          },
+          {
+            "id": "hindutempel",
+            "name": "Hindutempel",
+            "tradition": "Hinduisme",
+            "color": "#ec4899",
+            "orientation": "innover, mot det mørkeste rommet",
+            "outline": [
+              [
+                6,
+                24
+              ],
+              [
+                94,
+                24
+              ],
+              [
+                94,
+                76
+              ],
+              [
+                6,
+                76
+              ]
+            ],
+            "inner": [
+              {
+                "points": [
+                  [
+                    76,
+                    33
+                  ],
+                  [
+                    94,
+                    33
+                  ],
+                  [
+                    94,
+                    67
+                  ],
+                  [
+                    76,
+                    67
+                  ]
+                ]
+              }
+            ],
+            "gaze": {
+              "from": [
+                44,
+                50
+              ],
+              "to": [
+                79,
+                50
+              ]
+            },
+            "elements": {
+              "inngang": {
+                "name": "Gopura",
+                "text": "Høyt porttårn i muren rundt tempelet. Du går fra lys og larm innover i mørket.",
+                "x": 13,
+                "y": 50
+              },
+              "folket": {
+                "name": "Mandapa",
+                "text": "Åpne haller der folk samles. Templet regnes som gudens bolig, ikke som et forsamlingslokale.",
+                "x": 41,
+                "y": 50
+              },
+              "ordet": {
+                "name": "Pujaen",
+                "text": "Prester steller gudebildet med bad, mat, lys og musikk. Ingen bok er midtpunktet.",
+                "x": 64,
+                "y": 31
+              },
+              "blikket": {
+                "name": "Garbhagriha",
+                "text": "Det innerste, mørke rommet. Der står murtien, gudebildet du kommer for å se.",
+                "x": 85,
+                "y": 52
+              }
+            }
+          },
+          {
+            "id": "gurdwara",
+            "name": "Gurdwara",
+            "tradition": "Sikhisme",
+            "color": "#ff9933",
+            "orientation": "ingen himmelretning, rommet peker mot boka",
+            "outline": [
+              [
+                10,
+                14
+              ],
+              [
+                90,
+                14
+              ],
+              [
+                90,
+                86
+              ],
+              [
+                10,
+                86
+              ]
+            ],
+            "inner": [
+              {
+                "points": [
+                  [
+                    10,
+                    68
+                  ],
+                  [
+                    40,
+                    68
+                  ],
+                  [
+                    40,
+                    86
+                  ],
+                  [
+                    10,
+                    86
+                  ]
+                ],
+                "label": "Langar",
+                "labelAt": [
+                  25,
+                  80
+                ]
+              }
+            ],
+            "gaze": {
+              "from": [
+                46,
+                44
+              ],
+              "to": [
+                76,
+                48
+              ]
+            },
+            "elements": {
+              "inngang": {
+                "name": "Flaggstanga",
+                "text": "Utenfor står nishan sahib, et oransje eller blått flagg. Her er det gurdwara.",
+                "x": 17,
+                "y": 44
+              },
+              "folket": {
+                "name": "Gulvet",
+                "text": "Alle sitter på gulvet, og i langar spiser alle sammen. Ingen sitter høyere.",
+                "x": 44,
+                "y": 44
+              },
+              "ordet": {
+                "name": "Musikerne",
+                "text": "Tre musikere framfører salmene mens forsamlingen mediterer over ordene.",
+                "x": 62,
+                "y": 26
+              },
+              "blikket": {
+                "name": "Guru Granth Sahib",
+                "text": "Boka ligger opphøyd fremst i rommet, og behandles med samme respekt som et menneske.",
+                "x": 81,
+                "y": 50
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "De abrahamittiske: alle peker et sted"
+    },
+    {
+      "type": "text",
+      "content": "Jødedom, kristendom og islam bygger alle rom med retning. Synagogen skal alltid være vendt mot Jerusalem, og på den veggen står aron ha-kodesh, skapet med torarullene, med et evig lys brennende over. Moskeen vender mot Mekka, og retningen er merket med en nisje i veggen, en mihrab. Mange kirker er lagt slik at alterenden vender mot øst, mot soloppgangen, mens inngangen ligger i vest der sola går ned. Les mer om [de sentrale trekkene i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+    },
+    {
+      "type": "text",
+      "content": "Men de svarer helt ulikt på bildespørsmålet. I en moské er det ikke bilder av mennesker. Der bærer veggene mønster, farger og arabisk skrift i stedet. I en ortodoks kirke skiller en hel billedvegg, en ikonostas, koret fra resten av rommet, og ikonene på den står i en fast rekkefølge. Da reformasjonen kom, flyttet protestantene prekestolen godt fram, fordi prekenen ble hovedsaken. Innad varierer det mye: katolske og ortodokse kirker markerer skillet mellom prest og menighet sterkere enn de protestantiske, og i nyere kirkebygg er løsningene mer åpne enn i de gamle. Hvordan retning virker i selve bønnen, kan du lese om i [Å snakke med det hellige](/krle/sammenligning/bonn)."
+    },
+    {
+      "type": "header",
+      "text": "De indiske: innover i mørket, eller ned på gulvet"
+    },
+    {
+      "type": "text",
+      "content": "Et hindutempel er ikke først og fremst et forsamlingslokale. Det regnes som gudens bolig. Innerst ligger garbhagriha, «livmorhuset», et lite og mørkt rom der murtien står, altså gudebildet. Utenfor ligger åpne haller, mandapa, der folk samles. Du går fra lys og larm innover mot noe stadig mørkere og trangere, og det du kommer for, er darshan: å se guden og bli sett av guden. Prester steller bildet med bad, mat, lys og musikk. Nordindiske templer kjennes igjen på avrundede tårn, sørindiske på pyramideformede, og mange tempelanlegg har høye porttårn, gopura, i muren rundt. Stilene er ulike i ulike deler av India."
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen samler seg oftere om klosteret og om stupaen, et kuppelformet byggverk som opprinnelig var gravminne, og som gjerne er omgitt av murer og portaler ut mot de fire himmelretningene. Kuppelen skal minne om himmelhvelvet, og hele byggverket om at Buddha nådde nirvana da han døde. Gurdwaraen, sikhenes bygg, er noe helt annet igjen. Her har Guru Granth Sahib, den hellige boka, sin egen opphøyde plass fremst i rommet, og blir behandlet med samme respekt som et levende menneske. Alle sitter på gulvet, og i langar, fellesmåltidet, spiser alle sammen. Les mer om [de sentrale trekkene i sikhismen](/krle/religion/sikhisme/sentrale-trekk)."
+    },
+    {
+      "type": "header",
+      "text": "De nyere: også det du lar være å bygge, er et valg"
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í, mormonismen og Jehovas vitner settes ofte i samme gruppe fordi de er unge. Det er en forenkling: bahá'í vokste fram i sjia-islam, mens de to andre vokste ut av kristendommen. De er også mye mindre enn moderreligionene: rundt seks millioner bahá'íer, vel åtte millioner Jehovas vitner og rundt femten millioner mormoner, mot milliarder for kristendom og islam. Men nettopp fordi de er nye, viser de tydelig hva et byggevalg betyr."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í har fjorten templer, alle med én kuppel og ni dører. Kuppelen står for at Gud og menneskeheten hører sammen, og de ni dørene for at alle religioner kan forstås som innganger til bahá'í. Templene er åpne for alle, uansett tro, og bevegelsen har ikke noe presteskap. Men templene er få, så de fleste møtene skjer i vanlige forsamlingshus, blant annet i Oslo. Mormonene bygger to slags hus: menighetshus for vanlige møter, og templer for egne hellige handlinger. Etter at et tempel er innviet, får bare medlemmer som er forberedt på disse handlingene, gå inn. Jehovas vitner kaller møtelokalet Rikets sal. Det er innredet for bibelstudium, uten religiøs utsmykking, og det eneste som henger på veggen, er årets bibelvers. Møtene er åpne for hvem som helst, og det tas aldri opp kollekt. Hva som faktisk skjer inne i mormontemplene, kan du lese mer om i [Fra vugge til grav](/krle/sammenligning/overgangsriter)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nærbilde av mønstre og skrift på en vegg",
+      "caption": "Der bildene mangler, tar skrift, mønster og lys over."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Legger du plantegningene ved siden av hverandre, trer noen trekk fram. De handler ikke om hvem som har det fineste bygget, men om hva rommet prioriterer:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Nesten alle rommene har en retning: mot Mekka, mot Jerusalem, mot øst, eller innover mot det mørkeste punktet.",
+        "Det som står fremst, er det tradisjonen mener er viktigst: en bok, et gudebilde, et bord eller en tom nisje.",
+        "Noen rom har et tydelig skille mellom leder og folk, andre har det ikke. Skillet i rommet følger tradisjonens syn på hva en leder er.",
+        "Bildeforbud gir ikke tomme rom. Der bildene mangler, tar skrift, mønster og lys over.",
+        "Noen bygg er åpne for hvem som helst, andre bare for noen. Også det er en del av grammatikken."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Samtidig sier ikke bygningen alt. Hvor ofte folk faktisk går dit, og hvor strengt de følger reglene inne i rommet, varierer mye innad i alle tradisjonene. Vil du se hvordan bøkene som ligger fremst i mange av disse rommene ble til, les [Bøkene som styrer liv](/krle/sammenligning/hellige-tekster)."
+    },
+    {
+      "type": "header",
+      "text": "Gjestestemme: samisk religion"
+    },
+    {
+      "type": "text",
+      "content": "Alle rommene over har én ting felles: noen har bygget dem. Samisk religion snur på det. Her er helligdommen noe du finner, ikke noe du reiser."
+    },
+    {
+      "type": "text",
+      "content": "Et sieidi er en særegen naturformasjon, ofte en stor stein eller en steinblokk, der man i førkristen samisk religion kunne komme i kontakt med åndeverdenen. Fjell, steinformasjoner, sprekker i fjellsida, kilder og sjøer kunne bli tilskrevet åndelig kraft. Ved Kvalsund i Hammerfest ligger offersteinen Ákkánjárstábba, der folk la ned offergaver. Da mangler grammatikken vår flere ledd: her er det ingen dør, ingen benkerad og ingen prekestol. Men retning og midtpunkt finnes likevel. De ligger bare i landskapet i stedet for i en vegg. Misjonærene arbeidet systematisk fra slutten av 1600-tallet for å bryte ned samisk religiøs praksis. Ordet lever likevel videre i stedsnavn som Geađgesieidi i Kautokeino, og i dag er interessen for denne religiøse geografien, for hellige fjell og offersteder, på vei tilbake."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "lalibela-kirke-3d"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Steinkirke hugget ned i berget sett ovenfra",
+      "caption": "I Lalibela i Etiopia ble kirkene hugget nedover ut av fjellet i stedet for bygget oppover."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Denne artikkelen legger tradisjonene ved siden av hverandre. Vil du heller lese hva hver enkelt religion selv sier, tema for tema, ligger artiklene stilt opp side om side på /krle/sammenlign."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er en mihrab, og hva viser den?",
+          "Hvor i synagogen står aron ha-kodesh, og hvorfor står det akkurat der?",
+          "Hva er garbhagriha, og hva finnes inne i det rommet?",
+          "Hva er forskjellen på et mormonsk menighetshus og et mormonsk tempel?"
+        ],
+        "reflekter": [
+          "I moskeen finnes ingen bilder av mennesker, i den ortodokse kirken er veggen dekket av dem. Hva kan hver av løsningene si om hvordan tradisjonen tenker om Gud?",
+          "I gurdwaraen sitter alle på gulvet. I mange kirker sitter presten hevet over menigheten. Hva forteller møbleringen om forholdet mellom leder og folk?",
+          "Rikets sal har ingen religiøs utsmykking i det hele tatt. Er et rom uten pynt mindre hellig, eller er tomheten også et budskap?",
+          "Et sieidi er ikke bygget av mennesker. Hva slags forhold til naturen ligger i det, sammenlignet med å reise et hus for Gud?"
+        ],
+        "gaaVidere": [
+          "Tegn plantegningen av et rom du kjenner godt, for eksempel klasserommet eller gymsalen. Marker de fire leddene: inngang, folket, ordet og blikket. Hva forteller rommet om hva som er viktigst der?",
+          "Velg to av byggene i komponenten og skriv et avsnitt der du sammenligner hvor blikket føres, uten å si at den ene løsningen er bedre enn den andre.",
+          "Finn ut hvilke religiøse bygg som finnes i kommunen din. Hvem eier dem, og hvem har lov til å gå inn?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva viser en mihrab i en moské?",
+            "options": [
+              "Hvor imamen bor",
+              "Retningen mot Mekka",
+              "Hvor kvinnene skal sitte",
+              "Når bønnetidene er"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Mihraben er en nisje i veggen som viser qibla, retningen mot Kaba i Mekka. All bønn og koranlesing inne i moskeen foregår vendt mot den."
+          },
+          {
+            "question": "Hvorfor står toraskapet akkurat der det står i en synagoge?",
+            "options": [
+              "Fordi det er nærmest utgangen",
+              "Fordi rullene tåler minst lys der",
+              "Fordi synagogen og menigheten skal være vendt mot Jerusalem",
+              "Fordi det alltid står i nord"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Aron ha-kodesh står i den veggen som vender mot Jerusalem. Over skapet brenner et evig lys, ner tamid, som skal minne om lysene i tempelet i Jerusalem."
+          },
+          {
+            "question": "Hva er en ikonostas?",
+            "options": [
+              "En billedvegg som skiller koret fra kirkerommet i ortodokse kirker",
+              "Et alter som står midt i rommet",
+              "Et tårn over inngangen til et tempel",
+              "En bok som ligger fremst i rommet"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Ikonostasen er en vegg dekket av ikoner, med tre dører som åpnes på bestemte punkter i gudstjenesten. Bildene står i en fast rekkefølge."
+          },
+          {
+            "question": "Hva kjennetegner Rikets sal hos Jehovas vitner?",
+            "options": [
+              "Et høyt tårn med klokker",
+              "En billedvegg med ikoner",
+              "Et lokale innredet for bibelstudium, uten religiøs utsmykking",
+              "Et mørkt innerste rom bare eldste får gå inn i"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Rikets sal er innredet for bibelstudium og mangler religiøs utsmykking. Det eneste som henger på veggen, er årets bibelvers. Møtene er åpne for alle, og det tas ikke opp kollekt."
+          },
+          {
+            "question": "Hva er et sieidi i samisk religion?",
+            "options": [
+              "Et lite trehus bygget for ofring",
+              "En naturformasjon, ofte en stor stein, der man kunne komme i kontakt med åndeverdenen",
+              "En tromme brukt av noaiden",
+              "En sang som fremføres ved graven"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Et sieidi er en særegen naturformasjon, ofte en stor stein eller steinblokk. Helligdommen er altså noe man finner i landskapet, ikke noe man bygger."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Naguib, S.-A. & Vogt, K. (2026). *Moské*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/moské](https://snl.no/mosk%C3%A9)",
+          "Store norske leksikon. (2025). *Mihrab*. Hentet 12.08.2026 fra [snl.no/mihrab](https://snl.no/mihrab)",
+          "Groth, B. (2026). *Synagoge*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/synagoge](https://snl.no/synagoge)",
+          "Store norske leksikon & Rasmussen, T. (2026). *Kirke*. Hentet 12.08.2026 fra [snl.no/kirke](https://snl.no/kirke)",
+          "Molland, E. & Thorbjørnsrud, B. S. (2025). *Ikonostas*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/ikonostas](https://snl.no/ikonostas)",
+          "Groth, B. (2026). *Tempel*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/tempel](https://snl.no/tempel)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Kværne, P. (2025). *Puja*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/puja](https://snl.no/puja)",
+          "Gunnarsjaa, A. & Kværne, P. (2026). *Stupa*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/stupa](https://snl.no/stupa)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+          "Jacobsen, K. A. (2026a). *Gurdwara*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/gurdwara](https://snl.no/gurdwara)",
+          "Jacobsen, K. A. (2026b). *Guru Granth Sahib*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Guru_Granth_Sahib](https://snl.no/Guru_Granth_Sahib)",
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Why Latter-day Saints Build Temples*. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/temples/why-latter-day-saints-build-temples)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Jehovas vitner. (u.å.). *Meetings of Jehovah's Witnesses*. Hentet 12.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/meetings/)",
+          "Løøv, M., Kraft, S. E., Gaski, H. & Fonneland, T. (2026). *Samisk religion*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/samisk_religion](https://snl.no/samisk_religion)",
+          "Store norske leksikon. (2026). *Sieidi*. Hentet 12.08.2026 fra [snl.no/sieidi](https://snl.no/sieidi)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

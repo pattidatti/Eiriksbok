@@ -906,7 +906,7 @@
                 "saktekst"
               ],
               "createdDate": "2026-03-11T10:03:11+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-12T08:52:57+02:00"
             },
             {
               "id": "hvordan-skrive-gode-saktekster",
@@ -968,7 +968,7 @@
                 "dikt"
               ],
               "createdDate": "2025-12-02T09:42:14+01:00",
-              "lastUpdated": "2026-07-06T20:42:04+02:00"
+              "lastUpdated": "2026-08-12T08:52:57+02:00"
             },
             {
               "id": "hvordan-skrive-roman",
@@ -993,7 +993,7 @@
                 "fortelleteknikk"
               ],
               "createdDate": "2025-12-02T15:29:37+01:00",
-              "lastUpdated": "2026-07-06T20:42:04+02:00"
+              "lastUpdated": "2026-08-12T08:52:57+02:00"
             },
             {
               "id": "hvordan-skrive-dialog",
@@ -8891,7 +8891,7 @@
                 "ethical"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T06:28:39.541Z"
+              "lastUpdated": "2026-08-12T08:39:55+02:00"
             },
             {
               "id": "hoytider",
@@ -8904,7 +8904,33 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T06:24:49.744Z"
+              "lastUpdated": "2026-08-12T08:39:55+02:00"
+            },
+            {
+              "id": "hellige-rom",
+              "title": "Rommene vi bygger for det hellige",
+              "description": "Moskeen har ingen bilder, den ortodokse kirken er dekket av dem. Les fem plantegninger som setninger, og se hva et rom forteller om hva en tradisjon mener er viktigst.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "hellige-rom",
+                "material"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T09:13:54.554Z"
+            },
+            {
+              "id": "symboler-og-klaer",
+              "title": "Tro du kan se",
+              "description": "Korset var et henrettelsesredskap, halvmånen er eldre enn islam, og davidsstjernen ble regnet som jødisk først på 1800-tallet. Ni tegn og plagg fra ni tradisjoner: hva mange tror, hva kildene sier, og hvor figuren faktisk kommer fra.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "symboler-og-klaer",
+                "material"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T09:11:14.872Z"
             },
             {
               "id": "mat-og-renhet",
@@ -8917,7 +8943,20 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T06:21:51.438Z"
+              "lastUpdated": "2026-08-12T08:39:55+02:00"
+            },
+            {
+              "id": "lidelse",
+              "title": "Hvorfor finnes det vondt?",
+              "description": "Ni tradisjoner møter det samme jordskjelvet. Noen må forsvare Gud, andre stiller ikke spørsmålet i det hele tatt, og ingen av dem har et ferdig svar.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "lidelse",
+                "doctrinal"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T09:30:29.148Z"
             }
           ]
         },

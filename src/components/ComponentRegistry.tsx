@@ -190,6 +190,9 @@ const StemmeneFraFortiden = lazy(() => import('./content/interactive/StemmeneFra
 const GyllenRegelVeven = lazy(() => import('./content/interactive/GyllenRegelVeven').then(m => ({ default: m.GyllenRegelVeven })));
 const HelligKalender = lazy(() => import('./content/interactive/HelligKalender').then(m => ({ default: m.HelligKalender })));
 const MatbordetsRegler = lazy(() => import('./content/interactive/MatbordetsRegler').then(m => ({ default: m.MatbordetsRegler })));
+const RommetsGrammatikk = lazy(() => import('./content/interactive/RommetsGrammatikk').then(m => ({ default: m.RommetsGrammatikk })));
+const SymbolLeksikon = lazy(() => import('./content/interactive/SymbolLeksikon').then(m => ({ default: m.SymbolLeksikon })));
+const TeodiseVerkstedet = lazy(() => import('./content/interactive/TeodiseVerkstedet').then(m => ({ default: m.TeodiseVerkstedet })));
 const GudsbildeAksen = lazy(() => import('./content/interactive/GudsbildeAksen').then(m => ({ default: m.GudsbildeAksen })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
@@ -654,6 +657,9 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     GyllenRegelVeven,
     HelligKalender,
     MatbordetsRegler,
+    RommetsGrammatikk,
+    SymbolLeksikon,
+    TeodiseVerkstedet,
     GudsbildeAksen,
     DagenSomBonn,
     MaatBalansen,

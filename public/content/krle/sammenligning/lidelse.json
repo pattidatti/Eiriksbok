@@ -1,0 +1,529 @@
+{
+  "id": "lidelse",
+  "title": "Hvorfor finnes det vondt?",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "11 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "lidelse",
+    "doctrinal"
+  ],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": [
+    "rle01-03-10-13",
+    "rle01-03-10-15"
+  ],
+  "details": [
+    "Teodise er fagordet for forsøkene på å forsvare troen på en god og allmektig Gud mot lidelsen i verden.",
+    "De abrahamittiske religionene må svare på hvordan en god Gud kan tillate lidelse. De indiske tradisjonene stiller ikke spørsmålet slik.",
+    "Buddhismen begynner med lidelsen som premiss, ikke som problem: alt er forgjengelig.",
+    "Karma forklarer lidelse uten en dommer, men mange innenfor tradisjonene avviser at den som lider har fortjent det.",
+    "Ingen av tradisjonene gir et ferdig svar. Kristen teologi regner Guds forhold til det onde som et mysterium."
+  ],
+  "concepts": [
+    {
+      "id": "teodise",
+      "term": "Teodise",
+      "definition": "Forsøk på å forsvare troen på en god og allmektig Gud mot innvendingen at det finnes lidelse i verden. Ordet ble laget av filosofen Leibniz i 1710."
+    },
+    {
+      "id": "fysisk-og-moralsk-ondt",
+      "term": "Fysisk og moralsk ondt",
+      "definition": "Fysisk ondt er sykdom, ulykker og naturkatastrofer. Moralsk ondt er lidelse mennesker påfører hverandre."
+    },
+    {
+      "id": "karma",
+      "term": "Karma",
+      "definition": "Læren om at handlinger har en innebygd kraft som gjør at de før eller siden gir tilsvarende følger for den som handlet, i dette livet eller i et senere."
+    },
+    {
+      "id": "samsara",
+      "term": "Samsara",
+      "definition": "Kretsløpet av fødsel, død og gjenfødsel i indiske religioner. Å komme ut av kretsløpet er selve målet."
+    },
+    {
+      "id": "hukam",
+      "term": "Hukam",
+      "definition": "Guds vilje eller orden i sikhismen. Å leve i tråd med hukam er veien mot forening med Gud."
+    }
+  ],
+  "createdDate": "2026-08-12T12:00:00Z",
+  "lastUpdated": "2026-08-12T12:00:00Z",
+  "factChecked": "2026-08-12",
+  "content": [
+    {
+      "type": "text",
+      "content": "Et jordskjelv river ned en by mens folk sover. Ingen har gjort noe galt, og likevel dør tusen mennesker på tolv sekunder. Hvis det finnes en Gud som både er god og kan alt, hvorfor stanset han det ikke? Buddhismen stiller ikke spørsmålet slik, for den begynner et annet sted."
+    },
+    {
+      "type": "header",
+      "text": "Spørsmålet ingen slipper unna"
+    },
+    {
+      "type": "text",
+      "content": "Dette er temaet der tradisjonene er uenige om selve spørsmålet. Forsøkene på å forsvare Gud mot anklagen kalles teodise. Filosofen Gottfried Leibniz laget ordet i 1710, men problemet er eldre: grekeren Epikur tok det opp flere hundre år før vår tidsregning. Formen er enkel: vil og kan Gud fjerne lidelsen, burde den ikke være der."
+    },
+    {
+      "type": "text",
+      "content": "Teologer skiller mellom to slags vondt: det fysiske, som sykdom, ulykker og naturkatastrofer, og det moralske, som mennesker påfører hverandre. Få tradisjoner svarer likt på begge."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Sammenraste hus etter et jordskjelv i grått morgenlys",
+      "caption": "Fysisk ondt: lidelse ingen mennesker har bestemt skal skje."
+    },
+    {
+      "type": "component",
+      "name": "TeodiseVerkstedet",
+      "props": {
+        "title": "Teodiseverkstedet",
+        "intro": "Velg et tilfelle, les hva tre tradisjoner svarer, og trykk deg inn på et svar for å reise innvendingen mot det. Hver innvending får et ekte motsvar fra den samme tradisjonen.",
+        "defaultCase": "jordskjelvet",
+        "defaultGroup": "abrahamittisk",
+        "objectionLabel": "Innvendingen",
+        "revealLabel": "Hva svarer de på det?",
+        "replyLabel": "Svaret tilbake",
+        "openEndNote": "Verkstedet lukker ikke spørsmålet. Ingen av svarene regnes som ferdige.",
+        "cases": [
+          {
+            "id": "jordskjelvet",
+            "label": "Jordskjelvet",
+            "text": "Et jordskjelv river ned en by om natta. Tusen mennesker dør i søvne. Ingen mennesker har bestemt at det skulle skje."
+          },
+          {
+            "id": "krigen",
+            "label": "Krigen",
+            "text": "En krig driver en familie på flukt. Barna mister hjemmet, skolen og faren sin. Alt sammen er bestemt av mennesker."
+          }
+        ],
+        "groups": [
+          {
+            "id": "abrahamittisk",
+            "label": "Abrahamittiske røtter",
+            "note": "Én god og allmektig Gud. Da blir lidelsen noe som må forklares."
+          },
+          {
+            "id": "indisk",
+            "label": "Indiske tradisjoner",
+            "note": "Karma og gjenfødsel. Sikhismen har i tillegg én allmektig Gud."
+          },
+          {
+            "id": "nyere",
+            "label": "Nyere bevegelser",
+            "note": "Bahá'í vokste fram i sjia-islam, mormonismen og Jehovas vitner ut av kristendommen."
+          }
+        ],
+        "traditions": [
+          {
+            "id": "jodedom",
+            "name": "Jødedom",
+            "color": "#3b82f6",
+            "group": "abrahamittisk",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Jobs bok nekter å si at den som rammes har fortjent det. Gud svarer Job, men forklarer ingenting.",
+                "objection": "Et svar som ikke forklarer noe, er vel ikke et svar?",
+                "reply": "Jobs bok mener nettopp det: vennene som hadde en ferdig forklaring, får urett. Å nekte å pynte på lidelsen er også et standpunkt."
+              },
+              "krigen": {
+                "answer": "Mennesket har fri vilje og må selv svare for det det gjør mot andre. Anger kan gi tilgivelse.",
+                "objection": "Men barna som rammes, har ikke valgt noe.",
+                "reply": "Jobs bok stiller den samme innvendingen: Job insisterer på at han er uskyldig. Etter Holocaust leste tenkere som Buber og Wiesel boka på nytt."
+              }
+            }
+          },
+          {
+            "id": "kristendom",
+            "name": "Kristendom",
+            "color": "#6366f1",
+            "group": "abrahamittisk",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Kristen teologi har ingen ferdig løsning. Nyere teologi sier at Gud er til stede hos den som lider.",
+                "objection": "Å være til stede stanser ikke jordskjelvet.",
+                "reply": "Nei, og det innrømmes: Guds forhold til det onde kalles et mysterium. Vekten flyttes fra forklaring til nærvær."
+              },
+              "krigen": {
+                "answer": "Mennesket er skapt i Guds bilde. Gud begrenset sin egen makt og ga mennesket frihet og ansvar.",
+                "objection": "Da har Gud gitt noen frihet til å ødelegge andres liv.",
+                "reply": "Det er prisen svaret krever: uten frihet til å gjøre galt finnes ingen ekte frihet til å gjøre rett."
+              }
+            }
+          },
+          {
+            "id": "islam",
+            "name": "Islam",
+            "color": "#10b981",
+            "group": "abrahamittisk",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Koranen sier at mennesket settes på prøve med frykt, sult og tap, og lover godt nytt til de tålmodige.",
+                "objection": "En prøve som dreper deg, kan du ikke bestå.",
+                "reply": "Derfor er ikke regnskapet ferdig her. Islam holder fast på at Gud er både allmektig og allkjærlig, og at oppgjøret kommer på dommens dag."
+              },
+              "krigen": {
+                "answer": "Mennesket er ikke ondt, men svakt, og trenger veiledning. Hver og en står til ansvar for handlingene sine.",
+                "objection": "Hvis Gud har makt over alt, hvor mye velger mennesket egentlig selv?",
+                "reply": "Det ble en av de store stridssakene i tidlig islamsk historie. Koranen avgjør den ikke, og de lærde holder fast på begge deler."
+              }
+            }
+          },
+          {
+            "id": "hinduisme",
+            "name": "Hinduisme",
+            "color": "#ec4899",
+            "group": "indisk",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Lidelse hører til samsara, kretsløpet av fødsel og gjenfødsel. Målet er å komme ut, ikke å forklare.",
+                "objection": "Det høres ut som en unnskyldning for å la være å hjelpe.",
+                "reply": "Dharma, plikten, krever tvert imot handling. Og karma er ingen låst dom: ritualer og pilegrimsreiser regnes for å kunne rense den bort."
+              },
+              "krigen": {
+                "answer": "Karma sier at handlinger har en innebygd kraft og gir tilsvarende følger, uten at noen dommer deler ut straffen.",
+                "objection": "Så barna på flukt får bare igjen for noe de gjorde i et tidligere liv?",
+                "reply": "Mange hinduer avviser den lesningen. Ingen kan vite hva et annet menneske har gjort, og indisk filosofi holder fast på at mennesket har fri vilje."
+              }
+            }
+          },
+          {
+            "id": "buddhisme",
+            "name": "Buddhisme",
+            "color": "#f59e0b",
+            "group": "indisk",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Første edle sannhet: alt er lidelse, alt er forgjengelig, ingenting har et evig vesen.",
+                "objection": "Å kalle alt lidelse er å gi opp.",
+                "reply": "Tvert imot: de tre neste sannhetene sier hvor lidelsen kommer fra, at den kan ta slutt, og hvilken vei som fører dit."
+              },
+              "krigen": {
+                "answer": "I buddhismen er karma selve hensikten bak handlingen. Den som velger å skade andre, skaper følgene selv.",
+                "objection": "Da bærer offeret sin egen skyld.",
+                "reply": "Det følger ikke av læren. Karma er intensjonen bak handlingen, og i noen buddhistiske retninger kan god karma overføres til andre."
+              }
+            }
+          },
+          {
+            "id": "sikhisme",
+            "name": "Sikhisme",
+            "color": "#ff9933",
+            "group": "indisk",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Én allmektig Gud og karma samtidig. Alt som kommer og går, skjer under Guds vilje, hukam.",
+                "objection": "Da er Gud ansvarlig for jordskjelvet.",
+                "reply": "Sikhisk lære svarer ikke med en forklaring, men med en retning: å kjenne igjen hukam og leve i tråd med den."
+              },
+              "krigen": {
+                "answer": "Mennesket er bundet av begjær, egoisme og uvitenhet. Det er der volden mot andre kommer fra.",
+                "objection": "Er det alt? Noen som starter kriger, er ikke bare uvitende.",
+                "reply": "Derfor holder ikke innsikt alene. Sikhismen lærer at mennesket trenger Guds nåde for å bli fri fra kretsløpet."
+              }
+            }
+          },
+          {
+            "id": "bahai",
+            "name": "Bahá'í",
+            "color": "#14b8a6",
+            "group": "nyere",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "'Abdu'l-Bahá skriver at alt Gud skapte, skapte han godt. Det vonde er fravær av det gode, som mørke er av lys.",
+                "objection": "Fortell det til noen som ligger under et sammenrast hus.",
+                "reply": "Poenget er ikke at det ikke gjør vondt, men at Gud ikke har skapt noe ondt. Døden beskrives som mangel på liv, ikke som en egen kraft."
+              },
+              "krigen": {
+                "answer": "Ondskap regnes ikke som noe eget. Grusomhet er mangel på det gode, slik uvitenhet er mangel på kunnskap.",
+                "objection": "Da blir jo ingen ansvarlig for noe.",
+                "reply": "'Abdu'l-Bahá skriver at fellesskapet har rett til å straffe for å beskytte, men at utdanning virker bedre enn strenge straffer."
+              }
+            }
+          },
+          {
+            "id": "mormonisme",
+            "name": "Mormonisme",
+            "color": "#8b5cf6",
+            "group": "nyere",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Mormons bok sier at det må finnes en motsetning i alle ting. Uten sorg ville glede ikke betydd noe.",
+                "objection": "Trengs det tusen døde for at jeg skal kjenne glede?",
+                "reply": "Læren sier ikke at hver ulykke er nødvendig, men at en verden uten motsetninger ville stått stille: ingen valg, ingen vekst."
+              },
+              "krigen": {
+                "answer": "Uten motsetningen mellom godt og vondt finnes verken rettferdighet eller ondskap, står det i Mormons bok.",
+                "objection": "Så krigen er prisen for at vi skal få velge?",
+                "reply": "Setningen mange husker, er at Adam falt for at menneskene skulle bli til, og menneskene er til for at de skal ha glede. Friheten er meningen, ikke krigen."
+              }
+            }
+          },
+          {
+            "id": "jehovas-vitner",
+            "name": "Jehovas vitner",
+            "color": "#0ea5e9",
+            "group": "nyere",
+            "cases": {
+              "jordskjelvet": {
+                "answer": "Lidelse var aldri en del av Guds hensikt. Gud verken fristes av det onde eller frister noen, sier Jakobs brev.",
+                "objection": "Men han lar det jo skje.",
+                "reply": "Etter deres lære er Satan verdens usynlige hersker inntil videre. Ved Harmageddon tar det slutt, og jorda blir et paradis."
+              },
+              "krigen": {
+                "answer": "Etter deres lære kom lidelsen da de første menneskene satte sine egne mål for godt og vondt.",
+                "objection": "Skal folk i dag betale for noe som skjedde helt i begynnelsen?",
+                "reply": "Læren sier at følgene fortsatt virker, men skal oppheves: de fleste døde skal stå opp igjen og få leve på en renset jord."
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "De abrahamittiske: en god Gud og en verden som gjør vondt"
+    },
+    {
+      "type": "text",
+      "content": "Jødedommen har ingen ferdig forklaring, men en bok som stiller spørsmålet rått. I Jobs bok er Job from og rettskaffen, men mister likevel alt: barna, eiendommen og helsa. Tre venner hevder at han må ha fortjent det. Til slutt svarer Gud, men forklarer ingenting. Han peker på avstanden mellom skaperen og det skapte, og Job trekker anklagene tilbake. Etter Holocaust leste jødiske tenkere som Martin Buber og Elie Wiesel boka på nytt, hver på sin måte. Les mer om [de sentrale trekkene i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+    },
+    {
+      "type": "text",
+      "content": "I kristendommen er dette et hovedproblem. Det vanligste svaret handler om frihet: mennesket er skapt i Guds bilde, og Gud begrenset sin egen makt ved å gi mennesket fri vilje og ansvar. Et annet svar er at lidelsen blir gjort opp for etter døden. Samtidig sier kristen teologi selv at den ikke har noen løsning. Nyere teologi legger derfor mindre vekt på å forklare og mer på at Gud er til stede hos den som lider."
+    },
+    {
+      "type": "text",
+      "content": "Islam holder fast på to ting samtidig: Gud er allmektig, og Gud er allkjærlig. Koranen sier at mennesket blir satt på prøve med frykt, sult og tap, og lover godt nytt til dem som holder ut. Lidelsen er altså ikke et bevis mot Gud, men noe som hører livet til før dommens dag. Hvor mye mennesket velger selv, ble en stridssak tidlig i islams historie. Koranen avgjør den ikke, og de lærde holdt fast på begge deler: mennesket står til ansvar, og Gud har makten over alt."
+    },
+    {
+      "type": "header",
+      "text": "De indiske: lidelsen trenger ingen forsvarer"
+    },
+    {
+      "type": "text",
+      "content": "I de indiske tradisjonene ser problemet annerledes ut, fordi premisset er et annet. Mye av lidelsen forklares med karma. Ordet betyr handling, og læren sier at handlinger har en innebygd kraft som før eller siden gir tilsvarende følger, i dette livet eller et senere. Da trengs ingen dommer som deler ut straff, og dermed ingen som må forsvares. Samsara er kretsløpet av fødsel, død og gjenfødsel, og målet er å komme ut av det."
+    },
+    {
+      "type": "text",
+      "content": "Karma kan lett leses som at den som lider, har fortjent det. Mange innenfor tradisjonene avviser den lesningen. Ingen kan vite hva et annet menneske gjorde i et tidligere liv, og karma er ingen låst dom: i hinduismen regnes ritualer og pilegrimsreiser for å rense bort dårlig karma, og i noen buddhistiske retninger kan god karma overføres til andre. Mennesket har alltid et valg."
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen snur hele oppgaven. De fire edle sannhetene begynner med at alt er lidelse, alt er forgjengelig og ingenting har et evig vesen. Lidelsen er utgangspunktet, ikke noe som må bortforklares. Den andre sier hvor den kommer fra, nemlig begjæret, den tredje at den kan ta slutt, og den fjerde peker på veien dit. Ingen gud nevnes. Les om [de sentrale trekkene i buddhismen](/krle/religion/buddhisme/sentrale-trekk)."
+    },
+    {
+      "type": "text",
+      "content": "Sikhismen ligger mellom gruppene. Den har én Gud som er evig, allvitende og allmektig, men overtok også karma og gjenfødsel fra hinduismen. Mennesket er bundet av begjær, egoisme og uvitenhet, og det holder det fast i kretsløpet. Utveien er ikke å forklare lidelsen, men å leve i tråd med Guds vilje, hukam, og få del i Guds nåde."
+    },
+    {
+      "type": "header",
+      "text": "De nyere bevegelsene: tre ulike utveier"
+    },
+    {
+      "type": "text",
+      "content": "De tre nyeste settes ofte i samme gruppe, men det er en forenkling: bahá'í vokste fram i sjia-islam, de to andre ut av kristendommen. Ingen av dem teller mer enn rundt femten millioner medlemmer, mot milliarder i kristendom og islam. Og de svarer svært ulikt."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í nekter for at det vonde finnes som noe eget. 'Abdu'l-Bahá skriver at alt Gud skapte, skapte han godt, og at det vonde er fravær av det gode, slik mørke er fravær av lys. Mormonismen svarer motsatt: uten en motsetning i alle ting finnes verken godt eller vondt, verken glede eller sorg, står det i Mormons bok. Boka sier videre at Adam falt for at menneskene skulle bli til, og at menneskene er til for at de skal ha glede."
+    },
+    {
+      "type": "text",
+      "content": "Jehovas vitner flytter skylden bort fra Gud. Lidelse var aldri en del av Guds hensikt: Jakobs brev sier at Gud verken fristes av det onde eller frister noen. Læren deres er at lidelsen kom da de første menneskene gjorde opprør og satte sine egne mål for godt og vondt, at Satan er verdens usynlige hersker fram til Harmageddon, og at jorda deretter skal bli et paradis. Hvor strengt den enkelte følger læren, varierer i alle tre bevegelsene."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Tre veier som går fra samme punkt i ulike retninger",
+      "caption": "Samme spørsmål, tre helt ulike utveier blant de nyere bevegelsene."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Det handler ikke om hvem som svarer best, men om hva slags spørsmål hver tradisjon svarer på:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "De abrahamittiske må forsvare Gud. Har du én god og allmektig skaper, blir hvert jordskjelv noe han kunne ha stanset.",
+        "De indiske trenger ikke det forsvaret. Karma forklarer lidelse uten at noen gud må stilles til ansvar.",
+        "Sikhismen viser at grensa ikke er skarp: den har både allmektig Gud og karma.",
+        "To slags svar krysser gruppene: noen forklarer hvorfor lidelsen finnes, andre hva du skal gjøre med den.",
+        "Ingen svar er ferdige. Kristendommen mangler en løsning, Gud gir Job ingen forklaring, og Koranen avgjør ikke striden om fri vilje."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Svarene henger sammen med to andre spørsmål: hva som skjer etter døden, og hva livet skal ende i. Les [Hva skjer når vi dør?](/krle/sammenligning/doden) og [Målet med det hele](/krle/sammenligning/frelse)."
+    },
+    {
+      "type": "header",
+      "text": "Gjestestemme: samisk religion"
+    },
+    {
+      "type": "text",
+      "content": "Samisk religion stiller ikke spørsmålet som et filosofisk problem. Verdensbildet er animistisk: ting i naturen er besjelet, og verden har flere lag, blant annet dødsriket Jábmiid áibmu og paradiset Sáivu. Blir noen syk eller rammet av ulykke, er svaret å handle. Noaiden, den rituelle eksperten, kunne søke råd hos gudene eller de døde og helbrede den syke. Ofring hørte til dagliglivet."
+    },
+    {
+      "type": "text",
+      "content": "Her hører også en annen slags lidelse hjemme. Kristne misjonærer samlet inn og brente runebommene, og fra rundt 1850 skulle norsk fornorskingspolitikk gjøre samer til nordmenn. Kong Olav V ba om unnskyldning i 1989, kong Harald V i 1997 og statsminister Kjell Magne Bondevik i nyttårstalen for 1999. Spørsmålet er ikke bare hvorfor det vonde finnes, men hva som skjer med et folks tro når den blir forbudt. Mange samer bærer tradisjonen videre i språk, joik og stedsnavn."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "En sieidi-stein i et åpent nordnorsk fjellandskap",
+      "caption": "I samisk tradisjon er svaret på ulykke å handle: å spørre, ofre og helbrede."
+    },
+    {
+      "type": "header",
+      "text": "Og de som ikke tror?"
+    },
+    {
+      "type": "text",
+      "content": "Livssynshumanismen avviser overnaturlige forklaringer på virkeligheten. Da faller spørsmålet bort: finnes det ingen gud, er det ingen å forsvare. Et jordskjelv er geologi, ikke en beskjed. Mennesket er fritt, står til ansvar for valgene sine og gir livet mening selv. Lidelsen skal ikke forklares, men bekjempes her."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt religion selv sier om lære og gudsbilde, finner du artiklene stilt opp side om side på /krle/sammenlign. Vil du sammenligne selve gudsbildene, les Én, mange eller ingen gud? på /krle/sammenligning/gudsbilde."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr ordet teodise, og hvem laget det?",
+          "Hva er forskjellen på fysisk og moralsk ondt? Gi ett eksempel på hver.",
+          "Hva skjer i Jobs bok, og hvorfor er svaret Gud gir Job så uvanlig?",
+          "Hvorfor trenger de indiske tradisjonene strengt tatt ingen teodise?"
+        ],
+        "reflekter": [
+          "Frihetssvaret sier at Gud ga mennesket frihet til å gjøre galt. Hva er styrken og svakheten ved det svaret når det gjelder et jordskjelv?",
+          "Karma kan leses som at den som lider har fortjent det. Hvorfor avviser mange innenfor tradisjonene den lesningen?",
+          "Bahá'í sier at det vonde er fravær av det gode, mormonismen at motsetningen må være der. Hvilket av svarene er lettest å bruke i praksis, og hvorfor?",
+          "Buddhismen svarer ikke på hvorfor lidelsen finnes, men på hvordan den kan opphøre. Er det et svik mot spørsmålet, eller en annen måte å ta det på alvor?"
+        ],
+        "gaaVidere": [
+          "Velg to tradisjoner fra ulike grupper i verkstedet. Skriv et avsnitt der du sammenligner både svaret og innvendingen, uten å si at den ene er bedre enn den andre.",
+          "Skriv ditt eget svar på jordskjelv-tilfellet i fem setninger. Marker hvor svaret ditt låner fra en av tradisjonene i artikkelen.",
+          "Finn en nyhetssak om en naturkatastrofe. Hvilke av forklaringene i artikkelen brukes av dem som uttaler seg, og hvilke brukes ikke?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr teodise?",
+            "options": [
+              "Læren om at alt er forgjengelig",
+              "Forsøk på å forsvare troen på en god og allmektig Gud mot lidelsen i verden",
+              "Navnet på kretsløpet av fødsel og gjenfødsel",
+              "Et annet ord for dommens dag"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ordet ble laget av filosofen Leibniz i 1710, men problemet er mye eldre. Epikur tok det opp flere hundre år før vår tidsregning."
+          },
+          {
+            "question": "Hva er det spesielle med svaret Gud gir Job i Jobs bok?",
+            "options": [
+              "Gud forklarer nøyaktig hvorfor Job måtte lide",
+              "Gud sier at Job hadde fortjent det",
+              "Gud forklarer ingenting, men peker på avstanden mellom skaperen og det skapte",
+              "Gud svarer ikke i det hele tatt"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Vennene til Job hadde en ferdig forklaring, og de får urett. Selve boka gir ingen løsning på hvorfor gode mennesker rammes."
+          },
+          {
+            "question": "Hvorfor sier vi at buddhismen begynner et annet sted enn de abrahamittiske religionene?",
+            "options": [
+              "Fordi den mener lidelsen ikke finnes",
+              "Fordi den starter med lidelsen som premiss og spør hvordan den kan opphøre",
+              "Fordi den mener bare noen mennesker lider",
+              "Fordi den forklarer lidelsen med Satan"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Første edle sannhet sier at alt er lidelse og alt er forgjengelig. De tre neste sier hvor lidelsen kommer fra, at den kan ta slutt, og hvilken vei som fører dit."
+          },
+          {
+            "question": "Hva sier bahá'í-læren om det vonde?",
+            "options": [
+              "At det er skapt av Gud for å prøve mennesket",
+              "At det er en egen kraft som kjemper mot Gud",
+              "At det ikke finnes som noe eget, men er fravær av det gode",
+              "At det er følgen av karma fra tidligere liv"
+            ],
+            "correctAnswer": 2,
+            "explanation": "'Abdu'l-Bahá sammenligner det med mørke, som ikke er noe i seg selv, men fravær av lys. Alt Gud skapte, skapte han godt."
+          },
+          {
+            "question": "Hvorfor er sikhismen vanskelig å plassere i dette temaet?",
+            "options": [
+              "Fordi den ikke sier noe om lidelse",
+              "Fordi den har én allmektig Gud og samtidig karma og gjenfødsel",
+              "Fordi den regner lidelse som noe godt",
+              "Fordi den bare gjelder i India"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Sikhismen deler premisset med de abrahamittiske religionene og med de indiske tradisjonene på én gang. Utveien er å leve i tråd med Guds vilje, hukam, og å få del i Guds nåde."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Kværne, P. & Elstad, H. (2026). *Teodicé*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/teodicé](https://snl.no/teodic%C3%A9)",
+          "Kværne, P. & Elstad, H. (2026). *Det ondes problem*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/det_ondes_problem](https://snl.no/det_ondes_problem)",
+          "Eidsvåg, G. M. (2026). *Jobs bok*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jobs_bok](https://snl.no/Jobs_bok)",
+          "Groth, B. (2026). *Jødedom*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Vogt, K. (2026). *Islam*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+          "Koranen. (u.å.). *Sure 2, vers 155* (Saheeh International). AlQuran Cloud. Hentet 12.08.2026 fra [alquran.cloud](https://api.alquran.cloud/v1/ayah/2:155/en.sahih)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+          "Jacobsen, K. A. (2026). *Karma*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/karma](https://snl.no/karma)",
+          "Jacobsen, K. A. (2025). *Samsara*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/samsara](https://snl.no/samsara)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "Sikhs.org. (u.å.). *Sikh Religious Philosophy*. Hentet 12.08.2026 fra [sikhs.org/philos.htm](https://www.sikhs.org/philos.htm)",
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+          "'Abdu'l-Bahá. (u.å.). *Some Answered Questions*, kapittel 74: The Nonexistence of Evil. Bahá'í Reference Library. Hentet 12.08.2026 fra [reference.bahai.org](https://reference.bahai.org/en/t/ab/SAQ/saq-75.html)",
+          "'Abdu'l-Bahá. (u.å.). *Some Answered Questions*, kapittel 77: The Right Method of Treating Criminals. Bahá'í Reference Library. Hentet 12.08.2026 fra [reference.bahai.org](https://reference.bahai.org/en/t/ab/SAQ/saq-78.html)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *2 Nephi 2*. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/2)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Jehovas vitner. (u.å.). *Is God to Blame for Our Suffering?* Hentet 12.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/our-suffering/)",
+          "Løøv, M., Kraft, S. E., Gaski, H. & Fonneland, T. (2026). *Samisk religion*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/samisk_religion](https://snl.no/samisk_religion)",
+          "Skogvang, S. F. (2025). *Fornorskingspolitikk*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/fornorskingspolitikk](https://snl.no/fornorskingspolitikk)",
+          "Aas, P. A. (2025). *Livssynshumanisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/livssynshumanisme](https://snl.no/livssynshumanisme)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
