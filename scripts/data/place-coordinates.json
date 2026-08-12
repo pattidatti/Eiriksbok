@@ -914,15 +914,15 @@
       "count": 24
     },
     {
+      "tag": "ritual",
+      "count": 24
+    },
+    {
       "tag": "musikk",
       "count": 24
     },
     {
       "tag": "kristendom",
-      "count": 22
-    },
-    {
-      "tag": "ritual",
       "count": 22
     },
     {
@@ -1074,6 +1074,10 @@
       "count": 11
     },
     {
+      "tag": "sammenligning",
+      "count": 11
+    },
+    {
       "tag": "forhistorie",
       "count": 10
     },
@@ -1219,10 +1223,6 @@
     },
     {
       "tag": "jodedom",
-      "count": 8
-    },
-    {
-      "tag": "sammenligning",
       "count": 8
     },
     {
@@ -3194,6 +3194,10 @@
       "count": 2
     },
     {
+      "tag": "ethical",
+      "count": 2
+    },
+    {
       "tag": "doden",
       "count": 2
     },
@@ -3754,10 +3758,6 @@
       "count": 1
     },
     {
-      "tag": "ethical",
-      "count": 1
-    },
-    {
       "tag": "jødedom",
       "count": 1
     },
@@ -3807,6 +3807,18 @@
     },
     {
       "tag": "bonn",
+      "count": 1
+    },
+    {
+      "tag": "etikk-og-leveregler",
+      "count": 1
+    },
+    {
+      "tag": "hoytider",
+      "count": 1
+    },
+    {
+      "tag": "mat-og-renhet",
       "count": 1
     },
     {

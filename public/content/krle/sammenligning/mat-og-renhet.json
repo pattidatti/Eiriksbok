@@ -1,0 +1,717 @@
+{
+    "id": "mat-og-renhet",
+    "title": "Hva får du spise?",
+    "subject": "krle",
+    "topic": "sammenligning",
+    "layout": "rich",
+    "category": "Sammenligning",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "ritual",
+    "comparison_tags": ["mat-og-renhet", "ritual"],
+    "religions": [
+        "jodedom",
+        "kristendom",
+        "islam",
+        "bahai",
+        "mormonisme",
+        "jehovas-vitner",
+        "hinduisme",
+        "buddhisme",
+        "sikhisme"
+    ],
+    "kompetansemaal": ["rle01-03-10-01"],
+    "details": [
+        "Matregler handler sjelden om maten selv, men om å høre til, å lyde eller å ikke skade.",
+        "Kosher og halal ligner hverandre, men listene og slaktereglene er ikke de samme.",
+        "Mange hinduer er vegetarianere på grunn av ahimsa, tanken om ikke å skade. Langt fra alle er det.",
+        "Jehovas vitner har ingen liste over forbudte dyr, men sier nei til blod.",
+        "Noen matvarer er verken tillatt eller forbudt, men omdiskutert innad i tradisjonen."
+    ],
+    "concepts": [
+        {
+            "id": "kosher",
+            "term": "Kosher",
+            "definition": "Hebraisk ord for mat som er tillatt for jøder etter reglene i Mosebøkene."
+        },
+        {
+            "id": "halal",
+            "term": "Halal",
+            "definition": "Arabisk ord som betyr tillatt eller lovlig. Motsatsen er haram, det forbudte."
+        },
+        {
+            "id": "ahimsa",
+            "term": "Ahimsa",
+            "definition": "Ikke-skade. Tanken om at man ikke skal skade levende vesener. Står sentralt i indiske tradisjoner."
+        },
+        {
+            "id": "langar",
+            "term": "Langar",
+            "definition": "Det frie fellesmåltidet i en gurdwara, der alle sitter sammen på gulvet og spiser."
+        },
+        {
+            "id": "visdomsordet",
+            "term": "Visdomsordet",
+            "definition": "Mormonismens helselov i Lære og pakter kapittel 89. Praktiseres som avhold fra alkohol, tobakk, kaffe og te."
+        }
+    ],
+    "createdDate": "2026-08-12T12:00:00Z",
+    "lastUpdated": "2026-08-12T12:00:00Z",
+    "factChecked": "2026-08-12",
+    "content": [
+        {
+            "type": "text",
+            "content": "For mange hinduer er kua et hellig dyr som ikke skal slaktes. For jøder og muslimer er det grisen som er utelukket. For en buddhist er ikke spørsmålet hvilket dyr det er, men at noe måtte dø."
+        },
+        {
+            "type": "header",
+            "text": "Spørsmålet alle stiller"
+        },
+        {
+            "type": "text",
+            "content": "Alle mennesker må spise, hver dag, hele livet. Derfor har nesten alle religioner noe å si om måltidet. Men reglene handler sjelden om maten selv. De handler om å høre til et fellesskap, om å lyde det man tror Gud har sagt, eller om å la være å skade noe som lever."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Et dekket langbord sett ovenfra med mange ulike retter",
+            "caption": "Det samme bordet ser helt ulikt ut avhengig av hvem som skal spise ved det."
+        },
+        {
+            "type": "component",
+            "name": "MatbordetsRegler",
+            "props": {
+                "title": "Matbordets regler",
+                "intro": "Velg inntil tre tradisjoner, og klikk deg gjennom maten på bordet. Legg merke til hvor ofte svaret er «omdiskutert».",
+                "note": "Merkelappene beskriver reglene slik de er skrevet ned. De sier ingenting om hva den enkelte faktisk gjør.",
+                "tableLabel": "Bordet",
+                "maxVisible": 3,
+                "defaultSelection": ["jodedom", "islam", "hinduisme"],
+                "defaultDish": "svinekjott",
+                "statuses": {
+                    "tillatt": { "label": "Tillatt" },
+                    "forbudt": { "label": "Forbudt" },
+                    "omdiskutert": { "label": "Omdiskutert" },
+                    "ingen-regel": { "label": "Ingen egen regel" }
+                },
+                "groups": [
+                    { "id": "abrahamittisk", "label": "Abrahamittiske røtter" },
+                    { "id": "indisk", "label": "Indiske tradisjoner" },
+                    { "id": "nyere", "label": "Nyere bevegelser" }
+                ],
+                "traditions": [
+                    {
+                        "id": "jodedom",
+                        "name": "Jødedom",
+                        "color": "#3b82f6",
+                        "group": "abrahamittisk"
+                    },
+                    {
+                        "id": "kristendom",
+                        "name": "Kristendom",
+                        "color": "#6366f1",
+                        "group": "abrahamittisk"
+                    },
+                    {
+                        "id": "islam",
+                        "name": "Islam",
+                        "color": "#10b981",
+                        "group": "abrahamittisk"
+                    },
+                    {
+                        "id": "hinduisme",
+                        "name": "Hinduisme",
+                        "color": "#ec4899",
+                        "group": "indisk"
+                    },
+                    {
+                        "id": "buddhisme",
+                        "name": "Buddhisme",
+                        "color": "#f59e0b",
+                        "group": "indisk"
+                    },
+                    {
+                        "id": "sikhisme",
+                        "name": "Sikhisme",
+                        "color": "#ff9933",
+                        "group": "indisk"
+                    },
+                    { "id": "bahai", "name": "Bahá'í", "color": "#14b8a6", "group": "nyere" },
+                    {
+                        "id": "mormonisme",
+                        "name": "Mormonisme",
+                        "color": "#8b5cf6",
+                        "group": "nyere"
+                    },
+                    {
+                        "id": "jehovas-vitner",
+                        "name": "Jehovas vitner",
+                        "color": "#0ea5e9",
+                        "group": "nyere"
+                    }
+                ],
+                "dishes": [
+                    {
+                        "id": "svinekjott",
+                        "name": "Svinekjøtt",
+                        "hint": "Kotelett, skinke, bacon",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "forbudt",
+                                "why": "Grisen har klover, men tygger ikke drøv. Derfor er den ikke kosher."
+                            },
+                            "kristendom": {
+                                "status": "tillatt",
+                                "why": "Ingen kirke forbyr svinekjøtt. Apostelmøtet ba de første kristne holde seg unna blod og kvalt kjøtt, ikke unna gris."
+                            },
+                            "islam": {
+                                "status": "forbudt",
+                                "why": "Koranen nevner svinekjøtt sammen med blod og selvdøde dyr som noe som er forbudt."
+                            },
+                            "bahai": {
+                                "status": "ingen-regel",
+                                "why": "Lovene i Kitáb-i-Aqdas lister ikke opp forbudte dyr. Det er drikken som er regulert."
+                            },
+                            "mormonisme": {
+                                "status": "ingen-regel",
+                                "why": "Visdomsordet handler om alkohol, tobakk, kaffe og te, ikke om hvilke dyr du kan spise."
+                            },
+                            "jehovas-vitner": {
+                                "status": "ingen-regel",
+                                "why": "Forbudet gjelder blodet, ikke dyreslaget."
+                            },
+                            "hinduisme": {
+                                "status": "omdiskutert",
+                                "why": "Mange hinduer spiser ikke kjøtt i det hele tatt. De som gjør det, har som regel ikke noe eget forbud mot gris."
+                            },
+                            "buddhisme": {
+                                "status": "omdiskutert",
+                                "why": "Det finnes ingen liste over forbudte dyr, men den første av de fem forskriftene er å avstå fra å drepe."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikhismen har ingen absolutte matforskrifter."
+                            }
+                        }
+                    },
+                    {
+                        "id": "storfekjott",
+                        "name": "Storfekjøtt",
+                        "hint": "Biff, kjøttdeig av okse",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "tillatt",
+                                "why": "Kua har klover og tygger drøv. Kjøttet er kosher når dyret er slaktet etter reglene."
+                            },
+                            "kristendom": {
+                                "status": "tillatt",
+                                "why": "Ingen regel om dyreslag. Katolikker og ortodokse lar likevel kjøttet stå i fastetidene."
+                            },
+                            "islam": {
+                                "status": "tillatt",
+                                "why": "Koranen anbefaler kjøtt fra husdyr. Dyret må være slaktet på riktig måte."
+                            },
+                            "bahai": {
+                                "status": "ingen-regel",
+                                "why": "Ingen regler om hvilke dyr som er tillatt."
+                            },
+                            "mormonisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen regler om hvilke dyr som er tillatt."
+                            },
+                            "jehovas-vitner": {
+                                "status": "ingen-regel",
+                                "why": "Ingen regler om dyreslag, så lenge blodet er tappet ut."
+                            },
+                            "hinduisme": {
+                                "status": "forbudt",
+                                "why": "Kua regnes som hellig, og slakting er forbudt i de fleste delstatene i India. Selv hinduer som spiser kjøtt, lar som regel oksekjøtt være."
+                            },
+                            "buddhisme": {
+                                "status": "omdiskutert",
+                                "why": "Ingen egen regel om ku. Om kjøtt i det hele tatt er greit, svarer buddhister ulikt på."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikhismen har ingen absolutte matforskrifter."
+                            }
+                        }
+                    },
+                    {
+                        "id": "skalldyr",
+                        "name": "Skalldyr",
+                        "hint": "Reker, krabbe, hummer",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "forbudt",
+                                "why": "Bare fisk med finner og skjell er kosher. Skjelldyr og krepsdyr er det ikke."
+                            },
+                            "kristendom": {
+                                "status": "tillatt",
+                                "why": "Ingen regel om sjømat."
+                            },
+                            "islam": {
+                                "status": "omdiskutert",
+                                "why": "I sjiaislam må fisk ha finner og skjell. Reker er lov, mens hummer, ål og hvalkjøtt ikke er det."
+                            },
+                            "bahai": {
+                                "status": "ingen-regel",
+                                "why": "Ingen regler om sjømat."
+                            },
+                            "mormonisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen regler om sjømat."
+                            },
+                            "jehovas-vitner": {
+                                "status": "ingen-regel",
+                                "why": "Ingen regler om sjømat."
+                            },
+                            "hinduisme": {
+                                "status": "omdiskutert",
+                                "why": "For hinduer som lever vegetarisk, er skalldyr kjøtt på linje med alt annet. Andre spiser det."
+                            },
+                            "buddhisme": {
+                                "status": "omdiskutert",
+                                "why": "Ingen liste over forbudte dyr, men skalldyr må drepes for å spises."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikhismen har ingen absolutte matforskrifter."
+                            }
+                        }
+                    },
+                    {
+                        "id": "blod",
+                        "name": "Blod i maten",
+                        "hint": "Blodpudding, blodklubb",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "forbudt",
+                                "why": "Tredje Mosebok sier at livet er i blodet, og at ingen skal spise det."
+                            },
+                            "kristendom": {
+                                "status": "omdiskutert",
+                                "why": "Apostelmøtet ba de første kristne holde seg unna blod. De aller fleste kirker praktiserer ikke det forbudet i dag."
+                            },
+                            "islam": {
+                                "status": "forbudt",
+                                "why": "Blod står på Koranens korte liste over det som er forbudt. Derfor tappes blodet ut ved slakting."
+                            },
+                            "hinduisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om blod."
+                            },
+                            "buddhisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om blod."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikhismen har ingen absolutte matforskrifter."
+                            },
+                            "bahai": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om blod."
+                            },
+                            "mormonisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om blod."
+                            },
+                            "jehovas-vitner": {
+                                "status": "forbudt",
+                                "why": "Jehovas vitner unngår blod både som mat og som blodoverføring, og viser til Første og Tredje Mosebok og til apostelmøtet."
+                            }
+                        }
+                    },
+                    {
+                        "id": "kjott-og-melk",
+                        "name": "Kjøtt og melk i samme måltid",
+                        "hint": "Ostesmørbrød med skinke",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "forbudt",
+                                "why": "All blanding av melk og kjøtt er forbudt. Ortodokse hjem har egne sett med redskaper og venter gjerne seks timer mellom de to."
+                            },
+                            "kristendom": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om å blande."
+                            },
+                            "islam": {
+                                "status": "ingen-regel",
+                                "why": "Halal skiller ikke melk fra kjøtt. Her går grensen et helt annet sted enn i kosher."
+                            },
+                            "bahai": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om å blande."
+                            },
+                            "mormonisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om å blande."
+                            },
+                            "jehovas-vitner": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om å blande."
+                            },
+                            "hinduisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om å blande. Melk fra kua er tvert imot høyt verdsatt."
+                            },
+                            "buddhisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om å blande."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikhismen har ingen absolutte matforskrifter."
+                            }
+                        }
+                    },
+                    {
+                        "id": "alkohol",
+                        "name": "Alkohol",
+                        "hint": "Vin og øl",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "tillatt",
+                                "why": "Vin har fast plass i jødisk fest. Kiddush er velsignelsen over vinen når sabbaten begynner."
+                            },
+                            "kristendom": {
+                                "status": "tillatt",
+                                "why": "Vin brukes i nattverden. I Norge brukes både alkoholholdig og alkoholfri vin, av og til rød saft."
+                            },
+                            "islam": {
+                                "status": "forbudt",
+                                "why": "Koranen forbyr alkohol, og forbudet regnes som strengt."
+                            },
+                            "bahai": {
+                                "status": "forbudt",
+                                "why": "Lovene i Kitáb-i-Aqdas forbyr berusende drikk og opium."
+                            },
+                            "mormonisme": {
+                                "status": "forbudt",
+                                "why": "Visdomsordet praktiseres i dag som avhold fra alkohol, tobakk, kaffe og te."
+                            },
+                            "jehovas-vitner": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om alkohol. Tobakk har derimot vært formelt forbudt siden 1973."
+                            },
+                            "hinduisme": {
+                                "status": "omdiskutert",
+                                "why": "Ingen felles regel om alkohol. Samtidig kan alkohol være en offergave til guder med en skremmende karakter, som Kali og Bhairava."
+                            },
+                            "buddhisme": {
+                                "status": "forbudt",
+                                "why": "En av de fem forskriftene er å avstå fra rusdrikk."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikher avstår fra tobakk, men sikhismen har ingen absolutte matforskrifter."
+                            }
+                        }
+                    },
+                    {
+                        "id": "kaffe-te",
+                        "name": "Kaffe og te",
+                        "hint": "Koffein, ikke alkohol",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "tillatt",
+                                "why": "Alt som kommer fra planteriket er kosher."
+                            },
+                            "kristendom": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om koffein."
+                            },
+                            "islam": {
+                                "status": "ingen-regel",
+                                "why": "Forbudet gjelder rusdrikk, ikke koffein."
+                            },
+                            "bahai": {
+                                "status": "ingen-regel",
+                                "why": "Forbudet gjelder berusende drikk og opium, ikke koffein."
+                            },
+                            "mormonisme": {
+                                "status": "forbudt",
+                                "why": "Visdomsordet praktiseres i dag som avhold fra alkohol, tobakk, kaffe og te."
+                            },
+                            "jehovas-vitner": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om koffein."
+                            },
+                            "hinduisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om koffein."
+                            },
+                            "buddhisme": {
+                                "status": "ingen-regel",
+                                "why": "Forskriften gjelder rusdrikk, ikke koffein."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikhismen har ingen absolutte matforskrifter."
+                            }
+                        }
+                    },
+                    {
+                        "id": "alt-kjott",
+                        "name": "Kjøtt i det hele tatt",
+                        "hint": "Alt som kommer fra et dyr som er drept",
+                        "verdicts": {
+                            "jodedom": {
+                                "status": "tillatt",
+                                "why": "Kjøtt er tillatt når dyret hører til på lista og er slaktet etter reglene."
+                            },
+                            "kristendom": {
+                                "status": "tillatt",
+                                "why": "Tillatt. Katolikker og ortodokse lar likevel kjøttet stå i fastetidene."
+                            },
+                            "islam": {
+                                "status": "tillatt",
+                                "why": "Koranen anbefaler både plantekost og kjøtt fra husdyr som sau, geit og kamel."
+                            },
+                            "bahai": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om kjøtt."
+                            },
+                            "mormonisme": {
+                                "status": "ingen-regel",
+                                "why": "Ingen egen regel om kjøtt."
+                            },
+                            "jehovas-vitner": {
+                                "status": "tillatt",
+                                "why": "Tillatt så lenge blodet er tappet ut av dyret."
+                            },
+                            "hinduisme": {
+                                "status": "omdiskutert",
+                                "why": "Vegetarkost er den vanligste måten å leve ut ahimsa på i hinduismen, men langt fra alle hinduer er vegetarianere."
+                            },
+                            "buddhisme": {
+                                "status": "omdiskutert",
+                                "why": "Den første forskriften er å avstå fra å drepe. Munkene ble forsørget av lekfolket, og buddhister svarer ulikt på om kjøtt er greit."
+                            },
+                            "sikhisme": {
+                                "status": "ingen-regel",
+                                "why": "Sikhismen har ingen absolutte matforskrifter."
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "De abrahamittiske: like lister, ulik logikk"
+        },
+        {
+            "type": "text",
+            "content": "Jødedommen har flest nedskrevne matregler. Kosher er det hebraiske ordet for mat som er tillatt. Reglene står i Mosebøkene, og rabbinerne har senere utvidet og forklart dem (Groth, 2026). Landdyr må ha kløvde klover og tygge drøv, fisk må ha finner og skjell, og alt fra planteriket er greit. Kamel, hare og gris faller utenfor, og det samme gjør skalldyr (Groth, 2026; 3 Mos 11,2-8). Én regel har ingen av de andre åtte: melk og kjøtt skal aldri møtes, og ortodokse hjem har egne sett med redskaper. Hvor strengt reglene følges, varierer. Ortodokse jøder følger dem strengest, konservative jøder lar den enkelte velge, og reformjøder regner dem ikke som bindende (Groth, 2026). Mer om det mangfoldet står i [Mange måter å være jøde på](/krle/religion/jodedom/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "Islam bruker ordparet halal og haram, tillatt og forbudt (Vogt, 2026). Koranen anbefaler plantekost og kjøtt fra husdyr som sau, geit og kamel, og forbyr svinekjøtt, blod, selvdøde dyr og rovdyr. Alkohol er strengt forbudt (Vogt, 2026; Koranen 2,173). Ved slakting sier man Guds navn og lar blodet renne ut. Kosher og halal ligner altså uten å være det samme: begge fjerner grisen og blodet, men listene stemmer ikke overens, og halal skiller ikke melk fra kjøtt. Muslimer gjør det heller ikke likt overalt. I sjiaislam må fisk ha finner og skjell, slik at reker er lov mens hummer og ål ikke er det (Vogt, 2026). Se også [Fire av fem søyler er noe du gjør](/krle/religion/islam/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "Kristendommen har nesten ingen regler om hva som kan spises. Apostlenes gjerninger forteller at den første kirken måtte avgjøre hva som skulle gjelde for kristne som ikke var jøder, og at svaret ble kort: hold dere unna blod, kvalt kjøtt og mat ofret til avguder (Apg 15,28-29). Blodforbudet er stort sett gått ut av bruk, og i dag har de fleste kirkesamfunn ingen liste. Til gjengjeld finnes kalenderen. Den ortodokse kirken har fire lange fastetider i året, mange katolikker lar kjøttet stå i fasten, mens de protestantiske kirkene ikke regner faste som en plikt (Kværne mfl., 2026). Vin er ikke forbudt, men brukt, for nattverden består av brød og vin (Thomassen og Rasmussen, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "De indiske: å ikke skade det som lever"
+        },
+        {
+            "type": "text",
+            "content": "I de indiske tradisjonene flytter spørsmålet seg. Her teller ikke dyreslaget først og fremst, men om noe måtte lide. Ahimsa betyr ikke-skade. Tanken er over 2500 år gammel og finnes i buddhismen, i jainismen og i upanishadene, og vegetarkost er den vanligste formen for ahimsa i hinduismen (Store norske leksikon og Jacobsen, 2025). Men langt fra alle hinduer er vegetarianere. Mat som settes fram for gudene, er som regel søtsaker, ris og vegetarretter, mens guder med en skremmende karakter, som Kali og Bhairava, kan få kjøtt og alkohol (Kværne og Jacobsen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Kua er et kapittel for seg. Mange hinduer ser på kua som en mor, fordi melka følger mennesket gjennom hele livet, og slakting er forbudt i de fleste delstatene i India. Selv hinduer som spiser kjøtt, lar som regel oksekjøtt være (Jacobsen, 2024). Legg merke til at kua ikke holdes unna fordi den er uren, slik grisen er det, men fordi den er høyt verdsatt."
+        },
+        {
+            "type": "text",
+            "content": "Buddhismen har ingen liste over forbudte dyr. Blant de fem forskriftene er å avstå fra å drepe og fra rusdrikk. Munkene ble kalt bhikkhu, som betyr tigger, og de ble forsørget av lekfolket (Kværne og Borgland, 2026). Klosterreglene i vinaya skal hindre både overdreven askese og luksus (Borgland, 2026). Derfor svarer buddhister i ulike skoler og land ulikt på om kjøtt er greit. Mer i [En diagnose og en behandling](/krle/religion/buddhisme/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "Sikhismen flytter spørsmålet en tredje gang. Sikher avstår fra tobakk, men har ingen absolutte matforskrifter (Kristiansen mfl., 2026). Uten faste regler blir valget den enkeltes, og sikher spiser derfor ulikt. Til gjengjeld har hver eneste gurdwara et langar, et fellesskjøkken der maten lages og deles ut gratis. Alle sitter ved siden av hverandre på gulvet, nettopp for å markere at alle er like (Jacobsen, 2026). Her er det ikke fatet som bærer budskapet, men hvem som får plass ved bordet."
+        },
+        {
+            "type": "header",
+            "text": "De nyere bevegelsene: få regler, men tydelige"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í, mormonismen og Jehovas vitner samles ofte i én gruppe. Det er en forenkling som skjuler ulikt opphav: bahá'í-troen vokste ut av sjiaislam i Iran på 1800-tallet, de to andre ut av kristendommen i USA. De er også langt mindre enn de store tradisjonene. Bahá'í-troen har rundt 6 millioner medlemmer (Vogt og Winje, 2026), Jehovas vitner om lag 8,6 millioner (Ringnes mfl., 2026) og mormonkirken rundt 15,5 millioner (Bloch-Hoell mfl., 2026), mens kristne og muslimer telles i milliarder. Felles for de tre er få matregler, men til gjengjeld tydelige."
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í-troen lister ikke opp forbudte dyr. Forbudt er berusende drikk og opium. I tillegg gjelder en faste fra soloppgang til solnedgang, bindende fra fylte 15 år, med unntak for blant andre reisende, syke og gravide (Bahá'u'lláh, u.å.). Mormonismen har Visdomsordet, en helselov i Lære og pakter kapittel 89, som i dag praktiseres som avhold fra alkohol, tobakk, kaffe og te (Bloch-Hoell mfl., 2026). Det er den eneste av de ni der kaffekoppen står på lista."
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner har ingen liste over dyr, men én regel som griper dypt: de unngår blod både som mat og som blodoverføring. De viser til Første og Tredje Mosebok og til apostelmøtet, og trossamfunnet har lagt ned mye arbeid i å finne andre medisinske løsninger enn blodoverføring (Ringnes mfl., 2026). Her går grensen ikke ved måltidet, men ved ett enkelt stoff."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Elever i en skolekantine velger mat fra ulike fat",
+            "caption": "I en norsk skolekantine møtes flere av disse reglene hver dag."
+        },
+        {
+            "type": "header",
+            "text": "Mønsteret"
+        },
+        {
+            "type": "text",
+            "content": "Legg svarene ved siden av hverandre, og tre logikker trer fram. Noen spør hva Gud har sagt, og da blir dyreslag og slaktemåte avgjørende. Noen spør hva som lider, og da flytter grensen seg til drapet. Noen spør hvem du deler måltidet med, og da handler regelen om bordet."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Kosher og halal ligner, men er ikke det samme. Begge holder grisen og blodet unna, men bare kosher skiller melk fra kjøtt.",
+                "Et forbud kan komme av respekt like gjerne som av avsky. Grisen holdes unna fordi den er uren, kua fordi den er høyt verdsatt.",
+                "Noen regulerer ett stoff i stedet for en meny: Jehovas vitner blodet, mormonismen alkohol, tobakk, kaffe og te, bahá'í-troen berusende drikk og opium.",
+                "Kategorien omdiskutert er ikke rot, men virkelighet. Hinduer og buddhister er uenige om kjøtt, og jøder følger kosher ulikt strengt.",
+                "Ingen av systemene er mer fornuftig eller mer riktig enn de andre. De svarer på ulike spørsmål."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Én ting er felles for alle ni: maten er noe man deler. Derfor blir reglene synlige nettopp der folk møtes, i kantina, i bursdagen og på leirskolen. Det samme gjelder bønnen, som du kan sammenligne i [Å snakke med det hellige](/krle/sammenligning/bonn)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "matreglerbordet-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Mange hender rekker etter fat på et fellesmåltid",
+            "caption": "Et måltid er også en beskjed om hvem som hører sammen."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Vil du grave dypere?",
+                "content": "Denne artikkelen legger ni tradisjoner ved siden av hverandre. Vil du heller ta ett tema om gangen, med faste og med hverdagseksempler fra norske skoler, går [Mat og religion](/krle/religion-og-kultur/mat-og-religion) videre der denne artikkelen stopper."
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Forklar hva kosher og halal betyr, og nevn to ting som er felles og én ting som skiller dem.",
+                    "Hva betyr ahimsa, og hvordan henger det sammen med at mange hinduer er vegetarianere?",
+                    "Hvorfor lar mange hinduer oksekjøtt være, og hvorfor er den grunnen en annen enn grunnen til at jøder lar grisen være?",
+                    "Hvilken matregel har Jehovas vitner, og hvilken har mormonismen?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at matregler sjelden handler om maten selv. Velg to tradisjoner og forklar hva reglene deres egentlig handler om.",
+                    "I langar sitter alle på gulvet og spiser det samme. Hva sier den ordningen om hva sikhismen mener er viktigst ved et måltid?",
+                    "Mange av rutene i komponenten er merket omdiskutert. Er det en svakhet ved religionene, eller ved måten vi stiller spørsmålet på? Begrunn svaret.",
+                    "Kristendommen har nesten ingen matregler igjen, men har beholdt fastetidene. Hva mister og hva vinner en tradisjon på å slippe reglene om hva, og beholde reglene om når?"
+                ],
+                "gaaVidere": [
+                    "Velg tre tradisjoner fra ulike grupper. Lag din egen tabell over fem matvarer, og skriv én setning om hvorfor hver rute ble slik den ble, uten å si at noen har mer rett enn andre.",
+                    "Planlegg en klassemiddag der alle ni tradisjonene kunne spist samme rett. Skriv ned hva du velger og hvorfor, og hva som ble vanskelig.",
+                    "Undersøk hva som står om halal, vegetar og allergier i kantina eller på skolekjøkkenet ditt. Sammenlign det du finner med reglene i artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilken matregel har jødedommen som ingen av de åtte andre tradisjonene har?",
+                        "options": [
+                            "Forbud mot svinekjøtt",
+                            "Forbud mot å blande melk og kjøtt",
+                            "Forbud mot alkohol",
+                            "Forbud mot å spise blod"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Både kosher og halal holder grisen og blodet unna. Men skillet mellom melk og kjøtt finnes bare i kosher, og i ortodokse hjem betyr det egne redskaper og gjerne seks timers pause."
+                    },
+                    {
+                        "question": "Hva er hovedgrunnen til at mange hinduer ikke spiser kjøtt?",
+                        "options": [
+                            "Kjøtt regnes som urent å ta på",
+                            "Ahimsa, tanken om ikke å skade det som lever",
+                            "Et forbud i Koranen",
+                            "Fordi kjøtt er dyrt i India"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Vegetarkost er den vanligste måten å leve ut ahimsa på i hinduismen. Samtidig er langt fra alle hinduer vegetarianere."
+                    },
+                    {
+                        "question": "Hva sier Visdomsordet i mormonismen at man skal la være?",
+                        "options": [
+                            "Svinekjøtt og skalldyr",
+                            "Blod og kvalt kjøtt",
+                            "Alkohol, tobakk, kaffe og te",
+                            "Alt kjøtt fra pattedyr"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Visdomsordet står i Lære og pakter kapittel 89 og praktiseres i dag som avhold fra alkohol, tobakk, kaffe og te."
+                    },
+                    {
+                        "question": "Hva er langar?",
+                        "options": [
+                            "Sikhenes navn på rituell slakting",
+                            "Det frie fellesmåltidet i en gurdwara",
+                            "En fastetid i buddhismen",
+                            "Et forbud mot å spise kjøtt"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Hver gurdwara har et langar, et gratis kjøkken. Alle sitter sammen på gulvet for å vise at de er likeverdige."
+                    },
+                    {
+                        "question": "Hvorfor er flere ruter i matbordet merket omdiskutert?",
+                        "options": [
+                            "Fordi forskerne ikke har rukket å undersøke dem",
+                            "Fordi reglene ikke alltid er entydige, og folk innad i en tradisjon svarer ulikt",
+                            "Fordi reglene er hemmelige",
+                            "Fordi de gjelder bare for prester og munker"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Buddhister er uenige om kjøtt, hinduer lever både vegetarisk og ikke, og jøder følger kosher ulikt strengt. Uenigheten er en del av bildet."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Groth, B. (2026). *Kosher*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/kosher](https://snl.no/kosher)",
+                    "Vogt, K. (2026). *Halal*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/halal](https://snl.no/halal)",
+                    "Store norske leksikon & Jacobsen, K. A. (2025). *Ahimsa*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/ahimsa](https://snl.no/ahimsa)",
+                    "Jacobsen, K. A. (2024). *Hellig ku*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hellig_ku](https://snl.no/hellig_ku)",
+                    "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+                    "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+                    "Borgland, J. W. (2026). *Vinaya*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/vinaya](https://snl.no/vinaya)",
+                    "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+                    "Jacobsen, K. A. (2026). *Gurdwara*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/gurdwara](https://snl.no/gurdwara)",
+                    "Kværne, P., Jacobsen, K. A., Groth, B. & Vogt, K. (2026). *Faste - religion*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/faste_-_religion](https://snl.no/faste_-_religion)",
+                    "Thomassen, M. & Rasmussen, T. (2026). *Nattverd*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/nattverd](https://snl.no/nattverd)",
+                    "Groth, B. & Cohen, K. J. (2024). *Kiddush*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/kiddush](https://snl.no/kiddush)",
+                    "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+                    "Bahá'u'lláh. (u.å.). *The Kitáb-i-Aqdas: A Synopsis and Codification of the Laws and Ordinances*. Bahá'í Reference Library. Hentet 12.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas/11)",
+                    "Koranen. (u.å.). *Sura 2 (al-Baqara), vers 173* (engelsk oversettelse ved Saheeh International). Al Quran Cloud. Hentet 12.08.2026 fra [alquran.cloud](https://api.alquran.cloud/v1/ayah/2:173/en.sahih)",
+                    "Tanakh. (2023). *Tredje Mosebok 11,2-8 og 17,10-14* (The JPS Tanakh: Gender-Sensitive Edition). Sefaria. Hentet 12.08.2026 fra [sefaria.org](https://www.sefaria.org/Leviticus.11.2-8)",
+                    "Bibelen. (u.å.). *Apostlenes gjerninger 15,28-29* (World English Bible). Bible-API. Hentet 12.08.2026 fra [bible-api.com](https://bible-api.com/acts+15:28-29)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

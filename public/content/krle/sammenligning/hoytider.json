@@ -1,0 +1,605 @@
+{
+    "id": "hoytider",
+    "title": "Den hellige kalenderen",
+    "subject": "krle",
+    "topic": "sammenligning",
+    "layout": "rich",
+    "category": "Sammenligning",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "ritual",
+    "comparison_tags": ["hoytider", "ritual"],
+    "religions": [
+        "jodedom",
+        "kristendom",
+        "islam",
+        "bahai",
+        "mormonisme",
+        "jehovas-vitner",
+        "hinduisme",
+        "buddhisme",
+        "sikhisme"
+    ],
+    "kompetansemaal": ["rle01-03-10-01", "rle01-03-10-09"],
+    "details": [
+        "Tolv månemåneder er elleve dager kortere enn ett solår. Det er hele forklaringen.",
+        "Ramadan vandrer gjennom årstidene fordi den islamske kalenderen bare følger månen.",
+        "Jødedommen skyter inn en skuddmåned sju ganger i hver nittenårsperiode.",
+        "Julen står stille på 25. desember, men påsken beregnes fortsatt ut fra fullmånen.",
+        "Ni religioner, tre måter å måle året på: bare måne, bare sol, eller begge deler."
+    ],
+    "concepts": [
+        {
+            "id": "manekalender",
+            "term": "Månekalender",
+            "definition": "En kalender der månedene følger månens faser. Tolv slike måneder blir omtrent 354 dager, altså elleve dager kortere enn et solår."
+        },
+        {
+            "id": "solkalender",
+            "term": "Solkalender",
+            "definition": "En kalender som følger jordas runde rundt sola. Datoene holder seg på samme sted i årstidene år etter år."
+        },
+        {
+            "id": "lunisolar",
+            "term": "Lunisolar kalender",
+            "definition": "En kalender som bruker både månen og sola. Månedene følger månen, men det legges inn ekstra dager eller en ekstra måned så året holder følge med årstidene."
+        },
+        {
+            "id": "skuddmaaned",
+            "term": "Skuddmåned",
+            "definition": "En hel ekstra måned som settes inn i året for å ta igjen det månekalenderen taper mot sola. I jødedommen heter den adar sheni."
+        },
+        {
+            "id": "hijra-aret",
+            "term": "Hijra-året",
+            "definition": "Den islamske tidsregningen. År 1 er 622 evt., året profeten Muhammad flyttet fra Mekka til Medina."
+        }
+    ],
+    "createdDate": "2026-08-12T12:00:00Z",
+    "lastUpdated": "2026-08-12T12:00:00Z",
+    "factChecked": "2026-08-12",
+    "content": [
+        {
+            "type": "text",
+            "content": "Ramadan flytter seg. Den som fastet i augustvarmen som barn, faster i februarmørket som voksen. Julaften har ligget på 24. desember hele livet ditt, og kommer til å gjøre det livet ut. Begge kalenderne gjør akkurat det de er bygget for. Forskjellen er at de teller på hver sin klokke."
+        },
+        {
+            "type": "header",
+            "text": "Spørsmålet alle stiller"
+        },
+        {
+            "type": "text",
+            "content": "Hvert samfunn har måttet svare på det samme: hvordan deler vi tiden i biter alle er enige om? Det henger to klokker på himmelen. Månen er lettest å lese, for alle ser om den vokser eller minker. Sola gir årstidene. Men de går ikke i takt. Jorda bruker litt under 365 døgn og seks timer rundt sola, mens tolv månemåneder blir 354 dager og åtte timer (Ringnes mfl., 2026a)."
+        },
+        {
+            "type": "text",
+            "content": "Elleve dager i året blir en hel måned på tre år, og en hel årstid på ni. Derfor finnes det bare tre løsninger. La månen bestemme alene, og godta at høytidene vandrer. La sola bestemme alene, og godta at månedene mister kontakten med månen. Eller bruk begge, og skyt inn en ekstra måned innimellom. Den tredje typen kalles lunisolar, altså en måne-og-sol-kalender. Hvordan høytidene feires i Norge, står i [Høytider: Hvor kommer fridagene fra?](/krle/religion-og-kultur/hoytider-og-kultur). Her handler det om hvorfor datoene havner der de havner."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nymåne og lav vintersol over samme horisont",
+            "caption": "To klokker på himmelen som aldri går helt i takt."
+        },
+        {
+            "type": "component",
+            "name": "HelligKalender",
+            "props": {
+                "title": "Årshjulet",
+                "intro": "Velg tradisjon, og dra i årvelgeren. Se hvilke høytider som står stille, og hvilke som vandrer bakover.",
+                "maxVisible": 3,
+                "aarAntall": 12,
+                "aarLabel": "År",
+                "note": "Hjulet er en modell. Startpunktene er omtrentlige, og det er bevegelsen som er poenget, ikke den eksakte datoen.",
+                "defaultSelection": ["islam", "kristendom", "jodedom"],
+                "groups": [
+                    {
+                        "id": "abrahamittisk",
+                        "label": "Abrahamittiske"
+                    },
+                    {
+                        "id": "indisk",
+                        "label": "Indiske"
+                    },
+                    {
+                        "id": "nyere",
+                        "label": "Nyere bevegelser"
+                    }
+                ],
+                "maaneder": [
+                    {
+                        "navn": "januar",
+                        "kort": "J",
+                        "dager": 31
+                    },
+                    {
+                        "navn": "februar",
+                        "kort": "F",
+                        "dager": 28
+                    },
+                    {
+                        "navn": "mars",
+                        "kort": "M",
+                        "dager": 31
+                    },
+                    {
+                        "navn": "april",
+                        "kort": "A",
+                        "dager": 30
+                    },
+                    {
+                        "navn": "mai",
+                        "kort": "M",
+                        "dager": 31
+                    },
+                    {
+                        "navn": "juni",
+                        "kort": "J",
+                        "dager": 30
+                    },
+                    {
+                        "navn": "juli",
+                        "kort": "J",
+                        "dager": 31
+                    },
+                    {
+                        "navn": "august",
+                        "kort": "A",
+                        "dager": 31
+                    },
+                    {
+                        "navn": "september",
+                        "kort": "S",
+                        "dager": 30
+                    },
+                    {
+                        "navn": "oktober",
+                        "kort": "O",
+                        "dager": 31
+                    },
+                    {
+                        "navn": "november",
+                        "kort": "N",
+                        "dager": 30
+                    },
+                    {
+                        "navn": "desember",
+                        "kort": "D",
+                        "dager": 31
+                    }
+                ],
+                "traditions": [
+                    {
+                        "id": "jodedom",
+                        "name": "Jødedom",
+                        "color": "#3b82f6",
+                        "group": "abrahamittisk",
+                        "kalender": "Måne og sol",
+                        "forklaring": "Året har 354 dager, men en skuddmåned settes inn sju ganger i hver nittenårsperiode. Høytidene sklir litt, men forlater aldri årstiden sin.",
+                        "drift": -11,
+                        "skuddDager": 30,
+                        "skuddGrense": -18,
+                        "hoytider": [
+                            {
+                                "navn": "Pesach",
+                                "dag": 95,
+                                "tekst": "I måneden nisan, om våren."
+                            },
+                            {
+                                "navn": "Rosh hashana",
+                                "dag": 258,
+                                "tekst": "Nyttår, den 1. tishri."
+                            },
+                            {
+                                "navn": "Hanukka",
+                                "dag": 348,
+                                "tekst": "I måneden kislev, november eller desember."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "kristendom",
+                        "name": "Kristendom",
+                        "color": "#6366f1",
+                        "group": "abrahamittisk",
+                        "kalender": "Sol, med ett unntak",
+                        "forklaring": "Datoene ligger fast i solkalenderen. Men påsken beregnes fortsatt ut fra fullmånen, og derfor flytter den seg innenfor et vindu på over en måned.",
+                        "drift": 0,
+                        "hoytider": [
+                            {
+                                "navn": "Påske",
+                                "dag": 80,
+                                "spenn": 34,
+                                "tekst": "Første søndag etter første fullmåne etter 21. mars."
+                            },
+                            {
+                                "navn": "Jul",
+                                "dag": 358,
+                                "tekst": "25. desember, samme dato hvert år."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "islam",
+                        "name": "Islam",
+                        "color": "#10b981",
+                        "group": "abrahamittisk",
+                        "kalender": "Bare måne",
+                        "forklaring": "Tolv månemåneder, 354 dager. Ingenting retter opp mot sola, så hele året skyves ti eller elleve dager bakover hver gang.",
+                        "drift": -11,
+                        "hoytider": [
+                            {
+                                "navn": "Ramadan",
+                                "dag": 48,
+                                "spenn": 29,
+                                "tekst": "Fastemåneden, den niende måneden."
+                            },
+                            {
+                                "navn": "Id al-fitr",
+                                "dag": 78,
+                                "tekst": "Første dag i shawwal, når fasten er over."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hinduisme",
+                        "name": "Hinduisme",
+                        "color": "#ec4899",
+                        "group": "indisk",
+                        "kalender": "Måne og sol",
+                        "forklaring": "Mange hinduer følger kalendere der månen bestemmer dagen og sola holder årstiden på plass. Datoen skifter, årstiden gjør det ikke.",
+                        "drift": -11,
+                        "skuddDager": 30,
+                        "skuddGrense": -18,
+                        "hoytider": [
+                            {
+                                "navn": "Holi",
+                                "dag": 65,
+                                "tekst": "Om våren, i Nord-India."
+                            },
+                            {
+                                "navn": "Dashara",
+                                "dag": 275,
+                                "tekst": "September eller oktober."
+                            },
+                            {
+                                "navn": "Divali",
+                                "dag": 305,
+                                "tekst": "Lysfesten, oktober eller november."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "buddhisme",
+                        "name": "Buddhisme",
+                        "color": "#f59e0b",
+                        "group": "indisk",
+                        "kalender": "Måne og sol",
+                        "forklaring": "Fullmånen bestemmer dagen. I theravada markeres Buddhas fødsel, oppvåkning og død på samme dato, mens andre retninger deler dem opp.",
+                        "drift": -11,
+                        "skuddDager": 30,
+                        "skuddGrense": -18,
+                        "hoytider": [
+                            {
+                                "navn": "Vesak",
+                                "dag": 120,
+                                "tekst": "Fullmånedagen i måneden vaishakha, april eller mai."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "sikhisme",
+                        "name": "Sikhisme",
+                        "color": "#ff9933",
+                        "group": "indisk",
+                        "kalender": "Blandet",
+                        "forklaring": "Vaisakhi ligger som regel på 13. april, altså en fast dato. Gurpurb-dagene og bandi chor divas følger månen, og buene viser vinduet de faller innenfor.",
+                        "drift": 0,
+                        "hoytider": [
+                            {
+                                "navn": "Vaisakhi",
+                                "dag": 102,
+                                "tekst": "Khalsa ble innstiftet i 1699."
+                            },
+                            {
+                                "navn": "Bandi chor divas",
+                                "dag": 292,
+                                "spenn": 30,
+                                "tekst": "Feires sammen med divali, i oktober."
+                            },
+                            {
+                                "navn": "Guru Nanaks fødselsdag",
+                                "dag": 315,
+                                "spenn": 25,
+                                "tekst": "Som regel i november."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "bahai",
+                        "name": "Bahá'í",
+                        "color": "#14b8a6",
+                        "group": "nyere",
+                        "kalender": "Egen solkalender",
+                        "forklaring": "Året deles i nitten måneder på nitten dager, og hver nittende dag holdes en nittendagersfest. Noen ekstra dager settes inn så året treffer sola.",
+                        "drift": 0,
+                        "hoytider": [
+                            {
+                                "navn": "Fasten",
+                                "dag": 60,
+                                "spenn": 19,
+                                "tekst": "Starter når mellomdagene er over."
+                            },
+                            {
+                                "navn": "Naw-Rúz",
+                                "dag": 79,
+                                "tekst": "Nyttår, og slutten på fasten."
+                            },
+                            {
+                                "navn": "Ridván",
+                                "dag": 110,
+                                "spenn": 12,
+                                "tekst": "Den viktigste høytiden, april eller mai."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "mormonisme",
+                        "name": "Mormonisme",
+                        "color": "#8b5cf6",
+                        "group": "nyere",
+                        "kalender": "Vanlig solkalender",
+                        "forklaring": "Kirken har ingen egen tidsregning. Den faste markeringen som er kirkens egen, er generalkonferansen to ganger i året.",
+                        "drift": 0,
+                        "hoytider": [
+                            {
+                                "navn": "Generalkonferansen",
+                                "dag": 95,
+                                "tekst": "Første helg i april."
+                            },
+                            {
+                                "navn": "Generalkonferansen",
+                                "dag": 277,
+                                "tekst": "Første helg i oktober."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "jehovas-vitner",
+                        "name": "Jehovas vitner",
+                        "color": "#0ea5e9",
+                        "group": "nyere",
+                        "kalender": "Låner måne og sol",
+                        "forklaring": "Én markering i året. Datoen settes til 14. nisan i den jødiske kalenderen, så den vandrer innenfor våren.",
+                        "drift": -11,
+                        "skuddDager": 30,
+                        "skuddGrense": -18,
+                        "hoytider": [
+                            {
+                                "navn": "Minnehøytiden",
+                                "dag": 100,
+                                "tekst": "Minnemåltid for Jesu død, én gang i året."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "De abrahamittiske: tre regnestykker under samme himmel"
+        },
+        {
+            "type": "text",
+            "content": "Islam bruker bare månen. Tolv månemåneder går fra nymåne til nymåne, og ingenting korrigeres mot sola. År 1 er 622 evt., året profeten Muhammad flyttet fra Mekka til Medina (Ringnes mfl., 2026b). Hele kalenderen skyves ti eller elleve dager bakover hvert år. Ramadan er den niende måneden, og fasten varer fra daggry til solnedgang. Når måneden vandrer, vandrer fastedagen med: kort og mørk om vinteren, svært lang om sommeren (Vogt, 2025). Det tar rundt 33 år før ramadan har vært innom hele året. Id al-fitr avslutter fasten, men datoen er ikke lik overalt: noen ser etter månen, andre regner den ut på forhånd (Vogt & Eggen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Jødedommen valgte kompromisset. Året er også her 354 dager, men sju ganger i hver nittenårsperiode legges det inn en hel ekstra måned om våren: adar sheni, den andre adar (Groth, 2025). Systemet ble satt i fast form av rabbi Hillel 2. i år 358. Resultatet er en kalender som sklir og retter seg opp igjen. Hanukka faller i måneden kislev og havner derfor i november eller desember, aldri i juli (Groth, 2026). Datoen skifter, men årstiden gjør det aldri."
+        },
+        {
+            "type": "text",
+            "content": "Kristendommen gikk lengst mot sola, men slapp aldri månen helt. Julen ligger på 25. desember, selv om ingen vet når Jesus ble født. Datoen falt sammen med romerske fester rundt vintersolverv (Stovner mfl., 2026). Påsken er en annen historie: første søndag etter første fullmåne etter 21. mars. Prinsippet ble vedtatt på kirkemøtet i Nikea i 325, og selve regnemåten fikk sin form på 500-tallet (Stordalen mfl., 2026). Derfor kan påsken sprette over fem uker. De ortodokse kirkene bruker dessuten den eldre julianske kalenderen, og julen deres havner på det som i vår kalender er 7. januar (Stovner mfl., 2026). Påsken kom fra jødisk pesach, og de to skilte lag fordi de regnet året med hver sin kalender (Stordalen mfl., 2026)."
+        },
+        {
+            "type": "header",
+            "text": "De indiske: fullmåne, årstid og én fast dato"
+        },
+        {
+            "type": "text",
+            "content": "Mange hinduer følger kalendere der månen bestemmer dagen og sola holder årstiden på plass. Det gir samme mønster som i jødedommen: fast årstid, skiftende dato. Holi feires om våren i Nord-India, med farget pulver og vann (Eskild, 2026). Divali, lysfesten, faller i oktober eller november (Jacobsen, 2025). Hinduismen er samtidig den tradisjonen der det er vanskeligst å si noe som gjelder alle, for feiringene varierer sterkt fra landsdel til landsdel. Divali er heller ikke bare hinduistisk: sikher markerer den som bandi chor divas (Jacobsen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Buddhismen lar fullmånen bestemme. Vesak faller på fullmånedagen i måneden vaishakha, altså april eller mai. I theravada regnes Buddhas fødsel, oppvåkning og død som tre ting som skjedde på samme dato, og de markeres sammen. Andre retninger deler dem opp gjennom året (Store norske leksikon, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Sikhismen bruker begge deler. Den viktigste dagen er vaisakhi, som regel 13. april, en fast dato i solkalenderen. Da markerer sikher at Guru Gobind Singh innstiftet khalsa i 1699. Gurpurb-dagene, minnedagene for gurenes fødsel og død, skifter derimot dato: Guru Nanaks fødselsdag ligger som regel i november, Guru Gobind Singhs i desember eller januar. Da leses hele Guru Granth Sahib høyt uten opphold i omtrent 48 timer (Gale, 2018; Kristiansen mfl., 2026)."
+        },
+        {
+            "type": "header",
+            "text": "De nyere bevegelsene: hvem bestemmer datoen?"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í, mormonismen og Jehovas vitner samles ofte i én gruppe. Det er en forenkling, for bahá'í vokste ut av sjia-islam, mens de to andre vokste ut av kristendommen. De er også langt mindre enn tradisjonene som teller milliarder. En ung bevegelse må bestemme noe de eldre avgjorde for lenge siden: skal vi lage vår egen kalender, eller låne en?"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í-troen laget sin egen solkalender. Året deles i nitten måneder på nitten dager, og hver nittende dag samles menigheten til en nittendagersfest (Vogt & Winje, 2026). Nitten ganger nitten blir 361, altså fire dager for lite, så det settes inn noen mellomdager. Fasten begynner når mellomdagene er over, og slutter med nyttårsfesten Naw-Rúz (Bahá'u'lláh, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Jesu Kristi Kirke av Siste Dagers Hellige lagde ingen egen tidsregning. Kirkens egen markering ligger fast i den vanlige kalenderen: generalkonferansen holdes første helg i april og første helg i oktober (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Jehovas vitner gjør noe tredje. De markerer verken jul eller bursdager, fordi de mener slike feiringer ikke står i Bibelen. Men de har én markering i året: minnehøytiden, et minnemåltid for Jesu død, den 14. nisan i den jødiske kalenderen (Ringnes, H. K., mfl., 2026). En bevegelse som ikke feirer jul, henter altså sin eneste dato fra en eldgammel måne-og-sol-kalender."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lys tent på et bord under en mørk høstkveld",
+            "caption": "Lysfester dukker opp i nesten alle kalendere, men sjelden på samme dag."
+        },
+        {
+            "type": "header",
+            "text": "Mønsteret"
+        },
+        {
+            "type": "text",
+            "content": "Sett de ni ved siden av hverandre, og det er ikke troen som skiller dem i årshjulet. Det er regnestykket: hva gjør du med de elleve dagene?"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Lar du månen bestemme alene, vandrer høytiden gjennom hele året. Derfor kan ramadan falle både i juli og i desember.",
+                "Lar du sola bestemme alene, står datoen bom fast. Det gjør julen, generalkonferansen og bahá'í-kalenderen.",
+                "Bruker du begge, sklir datoen fram og tilbake, men aldri ut av årstiden. Det gjør jødedommen, mange hinduer, vesak og minnehøytiden.",
+                "Ingen holder seg helt til ett system. Kristendommen er en solkalender som fortsatt spør månen om påsken.",
+                "En vandrende høytid er ikke mer unøyaktig enn en fast. Den er bygget for å følge månen, og gjør nøyaktig det.",
+                "Flere av kalenderne har en lysfest i den mørke delen av året. Hanukka, divali og julen ligner mer på hverandre i innhold enn i dato."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Gjestestemme: de åtte årstidene"
+        },
+        {
+            "type": "text",
+            "content": "I nord finnes en fjerde måte å dele året på, og den teller verken måner eller soldøgn. Reindriftsåret deles i åtte årstider, og samer ble fra gammelt av kalt de åtte årstiders folk fordi de flyttet med reinen (Ravna mfl., 2026). Året er ikke et tall, men et arbeid: kalvingen, sommerbeitet, brunsten, den mørke vinteren. I samisk religiøs tradisjon ble solguden kalt Beaivi, som også er det samiske ordet for sol (Løøv mfl., 2026). De åtte årstidene er ikke fortid. Mange samer bruker dem fortsatt, og de minner om at et år kan deles etter det som skjer."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "festens-lys-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Reinflokk krysser et snødekt vidde i lavt vinterlys",
+            "caption": "Et år kan også måles i hva dyret gjør."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Se rådataene",
+                "content": "Vil du sammenligne religionene tema for tema, med kilder for hver enkelt, ligger alle artiklene side om side på /krle/sammenlign.\nHva som skjer inne i selve høytiden, står i [Å snakke med det hellige](/krle/sammenligning/bonn) og [Fra vugge til grav](/krle/sammenligning/overgangsriter).\nKalenderen henger tett sammen med praksisen, som er beskrevet i [sentrale trekk i islam](/krle/religion/islam/sentrale-trekk) og [sentrale trekk i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange dager er tolv månemåneder, og hvor mange dager er ett solår? Hva blir forskjellen?",
+                    "Forklar med egne ord hva en skuddmåned gjør, og hva den jødiske skuddmåneden heter.",
+                    "Hvorfor ligger julen fast på samme dato, mens påsken flytter seg?",
+                    "Hvilken dato faller vaisakhi som regel på, og hvorfor er det uvanlig sammenlignet med de andre høytidene i artikkelen?"
+                ],
+                "reflekter": [
+                    "Ramadan vandrer gjennom hele året i løpet av rundt 33 år. Hva gjør det med en muslim i Norge, der sommerdagene er svært lange og vinterdagene svært korte?",
+                    "Jehovas vitner markerer ikke jul, men henter datoen for minnehøytiden fra den jødiske kalenderen. Hva sier det valget om hva de mener er viktigst?",
+                    "En fast dato er lett å planlegge rundt. En vandrende dato er lettere å legge merke til. Hvilken av de to tror du binder et fellesskap sterkest sammen? Begrunn svaret.",
+                    "De åtte samiske årstidene måler året i arbeid og lys i stedet for i tall. Hva vinner en slik kalender, og hva taper den?"
+                ],
+                "gaaVidere": [
+                    "Velg to tradisjoner fra ulike grupper i årshjulet. Skriv et avsnitt der du forklarer hvorfor høytidene deres havner der de havner, uten å si at den ene kalenderen er bedre enn den andre.",
+                    "Lag din egen kalender for skoleåret med åtte årstider, slik reindriftsåret er delt. Gi hver årstid et navn etter hva som faktisk skjer.",
+                    "Finn ut når ramadan, påsken og divali faller de neste tre årene. Sett datoene i en tabell, og forklar mønsteret du ser."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvorfor flytter ramadan seg gjennom årstidene?",
+                        "options": [
+                            "Fordi muslimer velger ny fastemåned hvert år",
+                            "Fordi den islamske kalenderen bare følger månen og er elleve dager kortere enn solåret",
+                            "Fordi fasten alltid skal falle i den mørkeste tiden",
+                            "Fordi ulike land bruker ulike kalendere"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Tolv månemåneder blir 354 dager. Ingenting rettes opp mot sola, så hele året skyves ti eller elleve dager bakover hver gang."
+                    },
+                    {
+                        "question": "Hva er adar sheni?",
+                        "options": [
+                            "En ekstra dag som legges til i februar",
+                            "Navnet på det jødiske nyttåret",
+                            "En hel ekstra måned som settes inn sju ganger i hver nittenårsperiode",
+                            "Den siste dagen i hanukka"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Skuddmåneden gjør at det jødiske året tar igjen sola. Derfor blir pesach liggende om våren og hanukka i november eller desember."
+                    },
+                    {
+                        "question": "Hvordan bestemmes datoen for påske i vestlige kirker?",
+                        "options": [
+                            "Første søndag etter første fullmåne etter 21. mars",
+                            "Alltid den siste søndagen i mars",
+                            "Førti dager etter jul",
+                            "Samme dag som jødisk pesach"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Prinsippet ble vedtatt på kirkemøtet i Nikea i 325. Månen er altså fortsatt med i den kristne kalenderen."
+                    },
+                    {
+                        "question": "Hvordan er bahá'í-året bygget opp?",
+                        "options": [
+                            "Tolv måneder på tretti dager",
+                            "Nitten måneder på nitten dager, pluss noen mellomdager",
+                            "Ti måneder på 36 dager",
+                            "Det følger den islamske månekalenderen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Hver nittende dag holdes en nittendagersfest. Fasten begynner når mellomdagene er over og slutter med nyttårsfesten Naw-Rúz."
+                    },
+                    {
+                        "question": "Når settes datoen for Jehovas vitners minnehøytid?",
+                        "options": [
+                            "Første søndag i april",
+                            "24. desember",
+                            "14. nisan i den jødiske kalenderen",
+                            "På fullmånen i vaishakha"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "De markerer verken jul eller bursdager, men henter datoen for det årlige minnemåltidet fra den jødiske måne-og-sol-kalenderen."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ringnes, T., Tønnesson, K., Vogt, K., Groth, B., Ekern, S., Tjernshaugen, A. & Dybdahl, A. (2026a). *Kalender*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/kalender](https://snl.no/kalender)",
+                    "Ringnes, T., Vogt, K. & Eggen, N. S. (2026b). *Den islamske kalenderen*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/den_islamske_kalenderen](https://snl.no/den_islamske_kalenderen)",
+                    "Groth, B. (2025). *Den jødiske kalenderen*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/den_jødiske_kalenderen](https://snl.no/den_j%C3%B8diske_kalenderen)",
+                    "Groth, B. (2026). *Hanukka*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hanukka](https://snl.no/hanukka)",
+                    "Vogt, K. (2025). *Ramadan*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/ramadan](https://snl.no/ramadan)",
+                    "Vogt, K. & Eggen, N. S. (2026). *Id al-fitr*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/id_al-fitr](https://snl.no/id_al-fitr)",
+                    "Stordalen, T., Thorbjørnsrud, B. S., Stensvold, A., Kværne, P., Winje, G. & Barstad, H. M. (2026). *Påske*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/påske](https://snl.no/p%C3%A5ske)",
+                    "Stovner, I. L., Lutro, S. & Groth, B. (2026). *Jul*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/jul](https://snl.no/jul)",
+                    "Jacobsen, K. A. (2025). *Divali*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/divali](https://snl.no/divali)",
+                    "Eskild, H. (2026). *Høytider i hinduismen*. Store norske leksikon. Hentet 12.08.2026 fra [lille.snl.no/høytider_i_hinduismen](https://lille.snl.no/h%C3%B8ytider_i_hinduismen)",
+                    "Store norske leksikon. (2026). *Vesak*. Hentet 12.08.2026 fra [snl.no/vesak](https://snl.no/vesak)",
+                    "Gale. (2018). *Sikhism*. Encyclopedia.com. Hentet 12.08.2026 fra [encyclopedia.com](https://www.encyclopedia.com/philosophy-and-religion/eastern-religions/buddhism/sikhism)",
+                    "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+                    "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+                    "Bahá'u'lláh. (u.å.). *The Kitáb-i-Aqdas: A Synopsis and Codification of the Laws and Ordinances*. Bahá'í Reference Library. Hentet 12.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas/11)",
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *General Conference*. Newsroom. Hentet 12.08.2026 fra [newsroom.churchofjesuschrist.org](https://newsroom.churchofjesuschrist.org/article/general-conference)",
+                    "Ravna, Ø., Benjaminsen, T. A. & Jernsletten, K. (2026). *Reindrift*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/reindrift](https://snl.no/reindrift)",
+                    "Løøv, M., Kraft, S. E., Gaski, H., Religioner.no & Fonneland, T. (2026). *Samisk religion*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/samisk_religion](https://snl.no/samisk_religion)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

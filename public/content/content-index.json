@@ -1,5 +1,5 @@
 {
-  "buildId": 217010788610129,
+  "buildId": 55311001574432,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2580,6 +2580,9 @@
     "doden": [
       "content/krle/sammenligning/doden.json"
     ],
+    "etikk-og-leveregler": [
+      "content/krle/sammenligning/etikk-og-leveregler.json"
+    ],
     "sammenligning-frelse": [
       "content/krle/sammenligning/frelse.json"
     ],
@@ -2591,6 +2594,12 @@
     ],
     "sammenligning-hellige-tekster": [
       "content/krle/sammenligning/hellige-tekster.json"
+    ],
+    "hoytider": [
+      "content/krle/sammenligning/hoytider.json"
+    ],
+    "mat-og-renhet": [
+      "content/krle/sammenligning/mat-og-renhet.json"
     ],
     "sammenligning-overgangsriter": [
       "content/krle/sammenligning/overgangsriter.json"
@@ -4686,10 +4695,13 @@
     "krle/religion-og-kultur/symboler-og-klaer": "content/krle/religion-og-kultur/symboler-og-klaer.json",
     "krle/sammenligning/bonn": "content/krle/sammenligning/bonn.json",
     "krle/sammenligning/doden": "content/krle/sammenligning/doden.json",
+    "krle/sammenligning/etikk-og-leveregler": "content/krle/sammenligning/etikk-og-leveregler.json",
     "krle/sammenligning/frelse": "content/krle/sammenligning/frelse.json",
     "krle/sammenligning/grunnleggere": "content/krle/sammenligning/grunnleggere.json",
     "krle/sammenligning/gudsbilde": "content/krle/sammenligning/gudsbilde.json",
     "krle/sammenligning/hellige-tekster": "content/krle/sammenligning/hellige-tekster.json",
+    "krle/sammenligning/hoytider": "content/krle/sammenligning/hoytider.json",
+    "krle/sammenligning/mat-og-renhet": "content/krle/sammenligning/mat-og-renhet.json",
     "krle/sammenligning/overgangsriter": "content/krle/sammenligning/overgangsriter.json",
     "krle/sammenligning/skapelse": "content/krle/sammenligning/skapelse.json",
     "microgame-map.json/undefined/microgame-map": "content/microgame-map.json",

@@ -8826,7 +8826,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:36:20+02:00"
+              "lastUpdated": "2026-08-12T07:46:58+02:00"
             },
             {
               "id": "doden",
@@ -8839,7 +8839,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T07:36:20+02:00"
+              "lastUpdated": "2026-08-12T07:46:58+02:00"
             },
             {
               "id": "frelse",
@@ -8879,6 +8879,45 @@
               ],
               "createdDate": "2026-08-12T12:00:00Z",
               "lastUpdated": "2026-08-12T07:36:20+02:00"
+            },
+            {
+              "id": "etikk-og-leveregler",
+              "title": "Hva er et godt liv?",
+              "description": "Den gylne regel dukker opp i ni tradisjoner som aldri hadde kontakt. Noen sier «ikke gjør», andre sier «gjør» - og sikhismen sier «del». Vi sammenligner form og begrunnelse, med samisk religion som gjestestemme.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "etikk-og-leveregler",
+                "ethical"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T06:28:39.541Z"
+            },
+            {
+              "id": "hoytider",
+              "title": "Den hellige kalenderen",
+              "description": "Ni religioner teller det samme aaret paa hver sin klokke. Dra i aarshjulet og se hvorfor ramadan vandrer gjennom aarstidene mens julen staar bom fast paa 25. desember.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "hoytider",
+                "ritual"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T06:24:49.744Z"
+            },
+            {
+              "id": "mat-og-renhet",
+              "title": "Hva får du spise?",
+              "description": "Kosher, halal, ahimsa og Visdomsordet: ni tradisjoner svarer på det samme hverdagslige spørsmålet. Sammenlign hva som er tillatt, forbudt og omdiskutert ved matbordet - og hvorfor grensene går så ulike steder.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "mat-og-renhet",
+                "ritual"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T06:21:51.438Z"
             }
           ]
         },

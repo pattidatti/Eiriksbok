@@ -1,0 +1,454 @@
+{
+    "id": "etikk-og-leveregler",
+    "title": "Hva er et godt liv?",
+    "subject": "krle",
+    "topic": "sammenligning",
+    "layout": "rich",
+    "category": "Sammenligning",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "ethical",
+    "comparison_tags": ["etikk-og-leveregler", "ethical"],
+    "religions": [
+        "jodedom",
+        "kristendom",
+        "islam",
+        "bahai",
+        "mormonisme",
+        "jehovas-vitner",
+        "hinduisme",
+        "buddhisme",
+        "sikhisme"
+    ],
+    "kompetansemaal": ["rle01-03-10-10", "rle01-03-10-15"],
+    "details": [
+        "Den gylne regel finnes i nesten alle tradisjonene, men i to former: en som sier «ikke gjør» og en som sier «gjør».",
+        "Hillel formulerte den negativt, Jesus positivt. Forskjellen er om regelen krever at du lar være, eller at du handler.",
+        "I de abrahamittiske religionene kommer levereglene som bud fra Gud.",
+        "I de indiske tradisjonene virker handlingene tilbake på den som handler, gjennom karma.",
+        "Sikhismen formulerer det annerledes: arbeid ærlig, del det du tjener, og tjen andre."
+    ],
+    "concepts": [
+        {
+            "id": "den-gylne-regel",
+            "term": "Den gylne regel",
+            "definition": "Et etisk prinsipp om at du skal behandle andre slik du selv ønsker å bli behandlet. Finnes både i en negativ og en positiv form."
+        },
+        {
+            "id": "karma",
+            "term": "Karma",
+            "definition": "Læren om at handlinger gjort mot andre får konsekvenser for en selv, i dette livet eller i et senere."
+        },
+        {
+            "id": "dharma",
+            "term": "Dharma",
+            "definition": "Rett handling og plikt i hinduismen. Hva som er rett, varierer med alder, kjønn, yrke og livsfase."
+        },
+        {
+            "id": "ahimsa",
+            "term": "Ahimsa",
+            "definition": "Å ikke skade. Idealet om ikkevold i indiske tradisjoner, som for mange viser seg i vegetarkost."
+        },
+        {
+            "id": "zakat",
+            "term": "Zakat",
+            "definition": "Religiøs avgift i islam på 2,5 prosent av det du har til overs i løpet av året. En av de fem søylene."
+        }
+    ],
+    "createdDate": "2026-08-12T12:00:00Z",
+    "lastUpdated": "2026-08-12T12:00:00Z",
+    "factChecked": "2026-08-12",
+    "content": [
+        {
+            "type": "text",
+            "content": "Talmud forteller at en mann ba rabbi Hillel forklare hele Toraen mens han sto på ett bein. Hillel svarte med én setning: det du ikke vil at andre skal gjøre mot deg, skal du heller ikke gjøre mot andre. Resten er forklaring. En generasjon eller to senere står nesten det samme i Matteusevangeliet, men snudd: alt dere vil at andre skal gjøre mot dere, skal dere gjøre mot dem."
+        },
+        {
+            "type": "header",
+            "text": "Spørsmålet alle stiller"
+        },
+        {
+            "type": "text",
+            "content": "Hva er et godt liv? Ingen religion nøyer seg med å forklare hvor verden kom fra. Før eller siden kommer alle til det samme spørsmålet: hvordan skal jeg behandle menneskene rundt meg? Svarene spriker, men én setning dukker opp igjen og igjen, hos folk som aldri hadde hørt om hverandre. Vi kaller den den gylne regel."
+        },
+        {
+            "type": "text",
+            "content": "Regelen finnes i to hovedformer. Den negative sier hva du ikke skal gjøre, den positive hva du skal gjøre. Den negative kan du oppfylle ved å la være, den positive slutter ikke å kreve før du har handlet. Hvilken form som er best, er de lærde uenige om: den positive krever mer av deg, men den negative presser ikke dine egne ønsker på andre. Noen formulerer det på en tredje måte, som en oppfordring til å dele."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To hender som rekkes mot hverandre over et bord",
+            "caption": "Den samme setningen dukker opp i tradisjoner som aldri hadde kontakt."
+        },
+        {
+            "type": "component",
+            "name": "GyllenRegelVeven",
+            "props": {
+                "title": "Den gylne regel-veven",
+                "intro": "Ni setninger fra ni tradisjoner. Les dem uten å vite hvem som sa dem, og finn den felles kjernen. Trykk «Avslør» når du har gjettet.",
+                "defaultGroup": "abrahamittisk",
+                "hiddenLabel": "Hvem sa dette?",
+                "revealLabel": "Avslør hvem som sa det",
+                "hideLabel": "Skjul avsenderne igjen",
+                "coreTitle": "Den felles kjernen",
+                "core": "Åtte av de ni setningene bruker deg selv som målestokk: det du vil ha eller ikke vil ha, skal styre hva du gjør mot andre. Den niende peker samme vei, men gjennom deling framfor gjensidighet.",
+                "note": "Kortene viser form, ikke hvem som mener mest alvor. Rekkefølgen sier ingenting om alder eller størrelse.",
+                "forms": [
+                    {
+                        "id": "negativ",
+                        "label": "Ikke gjør",
+                        "description": "La være å gjøre mot andre det du ikke vil at de skal gjøre mot deg."
+                    },
+                    {
+                        "id": "positiv",
+                        "label": "Gjør",
+                        "description": "Gjør mot andre det du vil at de skal gjøre mot deg."
+                    },
+                    {
+                        "id": "annen",
+                        "label": "En annen vei",
+                        "description": "Regelen sier verken «gjør» eller «ikke gjør», men «del det du har»."
+                    }
+                ],
+                "groups": [
+                    {
+                        "id": "abrahamittisk",
+                        "label": "Abrahamittiske røtter",
+                        "note": "Jødedom, kristendom og islam regner alle Abraham som stamfar. Kristendom og islam har over en milliard tilhengere hver, jødedommen rundt femten millioner."
+                    },
+                    {
+                        "id": "indisk",
+                        "label": "Indiske tradisjoner",
+                        "note": "Hinduisme, buddhisme og sikhisme vokste fram i India. Alle tre regner med karma, læren om at handlinger får følger for den som handler."
+                    },
+                    {
+                        "id": "nyere",
+                        "label": "Nyere bevegelser",
+                        "note": "Bahá'í vokste fram i sjia-islam, mormonismen og Jehovas vitner ut av kristendommen. Alle tre er langt mindre enn moderreligionene: mellom seks og femten millioner medlemmer hver, mot milliarder."
+                    }
+                ],
+                "threads": [
+                    {
+                        "id": "jodedom",
+                        "name": "Jødedom",
+                        "color": "#3b82f6",
+                        "group": "abrahamittisk",
+                        "form": "negativ",
+                        "quote": "Det du ikke vil at andre skal gjøre mot deg, skal du heller ikke gjøre mot andre. Resten er forklaring. Gå og lær.",
+                        "source": "Rabbi Hillel, Babylonske Talmud, Shabbat 31a",
+                        "note": "Svaret Hillel ga en mann som ba om å få hele Toraen forklart mens han sto på ett bein."
+                    },
+                    {
+                        "id": "kristendom",
+                        "name": "Kristendom",
+                        "color": "#6366f1",
+                        "group": "abrahamittisk",
+                        "form": "positiv",
+                        "quote": "Alt dere vil at andre skal gjøre mot dere, det skal også dere gjøre mot dem.",
+                        "source": "Jesus, Matteus 7,12",
+                        "note": "Jesus legger til at dette er «loven og profetene», altså et sammendrag av hele den jødiske skriften."
+                    },
+                    {
+                        "id": "islam",
+                        "name": "Islam",
+                        "color": "#10b981",
+                        "group": "abrahamittisk",
+                        "form": "positiv",
+                        "quote": "Ingen av dere tror fullt ut før han ønsker for sin bror det han ønsker for seg selv.",
+                        "source": "Hadith etter Anas, Sahih al-Bukhari",
+                        "note": "I islam bygger den gylne regel først og fremst på hadith, fortellinger om hva Muhammad sa og gjorde."
+                    },
+                    {
+                        "id": "hinduisme",
+                        "name": "Hinduisme",
+                        "color": "#ec4899",
+                        "group": "indisk",
+                        "form": "negativ",
+                        "quote": "Man skal ikke gjøre mot andre det man selv regner som skadelig for seg selv.",
+                        "source": "Mahabharata, gjengitt i Store norske leksikon",
+                        "note": "Mahabharata er et av de store indiske eposene, og bruker over 200 000 verselinjer på å drøfte hva rett handling er."
+                    },
+                    {
+                        "id": "buddhisme",
+                        "name": "Buddhisme",
+                        "color": "#f59e0b",
+                        "group": "indisk",
+                        "form": "negativ",
+                        "quote": "Alle skjelver for vold, alle frykter døden. Sett deg selv i den andres sted, og du skal verken drepe eller la andre drepe.",
+                        "source": "Dhammapada, vers 129",
+                        "note": "Regelen begrunnes med at den andre kjenner det samme som deg, ikke med at noen har befalt det."
+                    },
+                    {
+                        "id": "sikhisme",
+                        "name": "Sikhisme",
+                        "color": "#ff9933",
+                        "group": "indisk",
+                        "form": "annen",
+                        "quote": "Den som spiser det han har tjent med eget arbeid, og gir noe av det bort til andre, han vet hva livet er.",
+                        "source": "Guru Granth Sahib, Rag Sarang, side 1245",
+                        "note": "Her er ikke regelen gjensidighet, men deling. Vi fant ingen sikhisk formulering av den gylne regel som lot seg belegge."
+                    },
+                    {
+                        "id": "bahai",
+                        "name": "Bahá'í",
+                        "color": "#14b8a6",
+                        "group": "nyere",
+                        "form": "negativ",
+                        "quote": "Tillegg ikke noen sjel det du ikke ville hatt tillagt deg selv, og si ikke det du ikke gjør.",
+                        "source": "Bahá'u'lláh, De skjulte ord, arabisk nr. 29",
+                        "note": "Setningen kobler den gylne regel til ærlighet: du skal ikke si noe du ikke selv følger."
+                    },
+                    {
+                        "id": "mormonisme",
+                        "name": "Mormonisme",
+                        "color": "#8b5cf6",
+                        "group": "nyere",
+                        "form": "positiv",
+                        "quote": "Alt hva dere vil at andre skal gjøre mot dere, det skal også dere gjøre mot dem, for dette er loven og profetene.",
+                        "source": "Mormons bok, 3. Nephi 14,12",
+                        "note": "Mormons bok forteller at Jesus holdt den samme talen på det amerikanske kontinentet."
+                    },
+                    {
+                        "id": "jehovas-vitner",
+                        "name": "Jehovas vitner",
+                        "color": "#0ea5e9",
+                        "group": "nyere",
+                        "form": "positiv",
+                        "quote": "Alt dere vil at menneskene skal gjøre mot dere, det skal også dere gjøre mot dem.",
+                        "source": "Matteus 7,12 slik jw.org gjengir verset",
+                        "note": "Jehovas vitner legger vekt på at regelen handler om å gi, ikke om å bytte tjenester."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "De abrahamittiske: bud som kommer utenfra"
+        },
+        {
+            "type": "text",
+            "content": "I jødedom, kristendom og islam kommer levereglene fra Gud. De ti bud står to steder i Den hebraiske bibelen, i Andre Mosebok kapittel 20 og Femte Mosebok kapittel 5. I samme skrift står påbudet om å elske din neste som deg selv. Mange jøder leser Hillels setning som et sammendrag av budene, ikke som et tillegg. Les om [de sentrale trekkene i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "I kristendommen er nestekjærligheten hovednormen. Jesus setter kjærligheten til Gud og kjærligheten til nesten ved siden av hverandre, og i fortellingen om den barmhjertige samaritanen blir «nesten» hvem som helst du møter. Den kristne formen er positiv: den ber deg gjøre noe, ikke bare la være."
+        },
+        {
+            "type": "text",
+            "content": "I islam er levereglene samlet i sharia. Sharia er ingen ferdig lovbok, men en lærd tradisjon bygget på Koranen og hadith gjennom flere hundre år, og den deles i regler for gudsdyrkelsen og regler for samlivet mellom mennesker. En av de fem søylene er zakat, en avgift på 2,5 prosent av det du har til overs i året, som går til fattige og gjeldstyngede. Koranen sier at fromhet ikke er å vende ansiktet mot øst eller vest, men å gi bort av det du er glad i."
+        },
+        {
+            "type": "header",
+            "text": "De indiske: reglene virker tilbake på deg"
+        },
+        {
+            "type": "text",
+            "content": "I hinduisme, buddhisme og sikhisme er begrunnelsen en annen. Her står karma sentralt, læren om at handlinger gjort mot andre får følger for deg selv, i dette livet eller i et senere. Da trengs det strengt tatt ingen som befaler deg noe: i denne tenkningen kommer regningen uansett. Mange hinduer knytter dette til dharma, rett handling og plikt, som ikke er likt for alle, men varierer med alder, kjønn, yrke og livsfase. Et annet ideal er ahimsa, å ikke skade, som for mange viser seg i vegetarkost."
+        },
+        {
+            "type": "text",
+            "content": "Buddhismen har fem leveregler: hold deg unna drap, tyveri, løgn, rusdrikk og seksuell utnytting. I buddhistisk lære er karma selve intensjonen, og følger du ikke hadde tenkt deg, gir ingen karma. Dhammapada begrunner regelen uten å nevne noen gud: alle skjelver for vold, alle frykter døden, sett deg derfor i den andres sted. Se [de sentrale trekkene i buddhismen](/krle/religion/buddhisme/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "Sikhismen skiller seg ut. Vi fant ingen sikhisk formulering av selve den gylne regel som lot seg belegge, og da dikter vi ikke opp en. Sikhismen forkastet kastesystemet og bygger levereglene på tre ting: ærlig arbeid, deling av det du tjener, og tjeneste for andre. Fellesmåltidet langar i gurdwaraen viser det i praksis, og menn og kvinner deltar sammen. Les mer om [de sentrale trekkene i sikhismen](/krle/religion/sikhisme/sentrale-trekk)."
+        },
+        {
+            "type": "header",
+            "text": "De nyere bevegelsene: samme setning, ny ramme"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í, mormonismen og Jehovas vitner settes ofte i samme gruppe fordi de er unge. Det er en forenkling: bahá'í vokste fram i sjia-islam, de to andre ut av kristendommen. De er også langt mindre enn moderreligionene, med mellom seks og femten millioner medlemmer hver. De viser likevel noe viktig: den gylne regel følger med når en ny bevegelse bryter ut, men rammen rundt blir ny."
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í har formuleringen i De skjulte ord av Bahá'u'lláh: tillegg ikke noen sjel det du ikke ville hatt tillagt deg selv. Rundt setningen ligger et program for hele menneskeheten: likeverd mellom kjønn og mellom etniske grupper, og arbeid for at verden skal henge sammen også politisk. Bønn regnes som like viktig som det sosiale arbeidet."
+        },
+        {
+            "type": "text",
+            "content": "Mormonismen har regelen ordrett i Mormons bok, som forteller at Jesus holdt den samme talen på det amerikanske kontinentet. Rundt den ligger et tydelig regelverk: Visdomsordet, i dag praktisert som avhold fra alkohol, tobakk, kaffe og te, tiende på ti prosent av inntekten, og vekt på familielivet. Jehovas vitner gjør samme vers om til tre råd: legg merke til folk, sett deg i deres sted, og tilpass hjelpen. De er politisk nøytrale, avviser blodoverføring og feirer verken bursdager eller jul. Hvor strengt den enkelte følger slike regler, varierer i alle tre bevegelsene."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Fargede tråder som krysser hverandre i en vev",
+            "caption": "Samme kjerne, ulike tråder: noen sier «ikke gjør», andre sier «gjør»."
+        },
+        {
+            "type": "header",
+            "text": "Mønsteret"
+        },
+        {
+            "type": "text",
+            "content": "Legger du setningene side om side, trer et mønster fram. Det handler ikke om hvem som er snillest, men om hvordan regelen er bygget:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Formen varierer, kjernen gjør det ikke. Åtte av ni setninger bruker deg selv som målestokk.",
+                "De to formene krysser gruppene. Jødedommen, hinduismen, buddhismen og bahá'í sier «ikke gjør». Kristendommen, islam, mormonismen og Jehovas vitner sier «gjør».",
+                "Begrunnelsen skiller mer enn ordlyden. I de abrahamittiske religionene kommer regelen fra Gud. I de indiske virker handlingen tilbake på deg.",
+                "Tre av kortene siterer samme bibelvers, men hører til trossamfunn med svært ulike regler ellers.",
+                "Ingen stopper ved én setning. Rundt regelen ligger alltid et system: bud, lov, plikt eller praksis."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Regelen har en kjent svakhet: mennesker ønsker seg ulike ting, og det du vil ha, er ikke alltid det andre vil ha. Derfor kan den ikke brukes blindt. Vil du se hva tradisjonene mener livet skal ende i, les [Målet med det hele](/krle/sammenligning/frelse)."
+        },
+        {
+            "type": "header",
+            "text": "Gjestestemme: samisk religion"
+        },
+        {
+            "type": "text",
+            "content": "Samisk religion har ingen hellig bok. Levereglene ble båret videre i praksis og fortellinger, ikke i paragrafer. Grunnsynet er at ting i naturen er besjelet: fjell, steiner og trær har kraft. Da blir stedet en part, ikke et lager."
+        },
+        {
+            "type": "text",
+            "content": "Ofring var en viktig handling. Noaiden var den rituelle eksperten, men i det daglige ofret folk gjerne hjemme eller ute i naturen, uten noaide. Man ofret tran, fiskerester, kjøtt, blod, metall eller mynter. Bjørnen ble regnet som hellig, og bjørnejakten hadde egne ritualer. Her er ikke etikken en setning om gjensidighet, men en praksis: du gir noe tilbake til stedet du tar fra. Mange samer viderefører dette i språk, joik og stedsnavn, selv om misjonærene i sin tid samlet inn og brente runebommene."
+        },
+        {
+            "type": "header",
+            "text": "Og de som ikke tror?"
+        },
+        {
+            "type": "text",
+            "content": "Den gylne regel er ikke bundet til tro. Humanister bruker den uten å kreve at du tror på en gud, og begrunner den med at mennesker kan sette seg inn i hverandres situasjon. Kanskje er det derfor regelen er så utbredt: den trenger ingen åpenbaring, bare at du klarer å forestille deg hvordan noe kjennes for en annen. Vil du vite hvem som formulerte setningene, les [Menneskene bak](/krle/sammenligning/grunnleggere)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdommer sitter i ring og snakker sammen i et klasserom",
+            "caption": "Regelen krever ikke tro, bare at du klarer å sette deg i den andres sted."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Se rådataene",
+                "content": "Vil du lese hva hver enkelt religion selv sier om etikk og leveregler, finner du artiklene stilt opp side om side på /krle/sammenlign/tema/ethical."
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på den negative og den positive formen av den gylne regel? Gi et eksempel på hver.",
+                    "Hvem var Hillel, og hva svarte han mannen som sto på ett bein?",
+                    "Hva betyr karma, og hvorfor gjør karma at levereglene virker tilbake på den som handler?",
+                    "Hvilke tre ting bygger sikhismen levereglene sine på?"
+                ],
+                "reflekter": [
+                    "Den negative formen krever at du lar være, den positive at du handler. Hva er styrken og svakheten ved hver av dem?",
+                    "I de abrahamittiske religionene kommer regelen fra Gud. I de indiske kommer følgene av seg selv gjennom karma. Gjør det noen forskjell for hvordan folk faktisk oppfører seg?",
+                    "Kritikken mot den gylne regel er at mennesker ønsker seg ulike ting. Finn et eksempel der regelen gir feil svar hvis du følger den blindt.",
+                    "Tre av kortene i veven siterer det samme bibelverset, men trossamfunnene har svært ulike regler ellers. Hva sier det om hvor mye én enkelt setning kan forklare?"
+                ],
+                "gaaVidere": [
+                    "Velg to tradisjoner fra ulike grupper i veven. Skriv et avsnitt der du sammenligner både formen på regelen og begrunnelsen bak, uten å si at den ene er bedre enn den andre.",
+                    "Skriv din egen versjon av den gylne regel i én setning. Er den negativ, positiv eller en tredje form? Begrunn valget.",
+                    "Undersøk hvordan skolen din formulerer sine egne regler. Ligner de mest på «ikke gjør» eller på «gjør»?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva kjennetegner den negative formen av den gylne regel?",
+                        "options": [
+                            "Den sier hva du skal gjøre mot andre",
+                            "Den sier hva du ikke skal gjøre mot andre",
+                            "Den gjelder bare for religiøse mennesker",
+                            "Den kommer alltid fra en gud"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Den negative formen krever at du lar være. Hillels versjon er negativ, mens versjonen i Matteus 7,12 er positiv og krever at du handler."
+                    },
+                    {
+                        "question": "Hva betyr karma i de indiske tradisjonene?",
+                        "options": [
+                            "Skjebne som er bestemt på forhånd",
+                            "Straff gitt av en dommer etter døden",
+                            "Læren om at handlinger mot andre får følger for deg selv",
+                            "Et sett med ti bud"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Karma er læren om at handlinger gjort mot andre får konsekvenser for en selv, i dette livet eller i et senere. I buddhismen er det hensikten bak handlingen som teller."
+                    },
+                    {
+                        "question": "Hva er zakat i islam?",
+                        "options": [
+                            "En pilegrimsreise til Mekka",
+                            "En religiøs avgift på 2,5 prosent av det du har til overs i året",
+                            "Et forbud mot å spise svinekjøtt",
+                            "Bønn fem ganger om dagen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Zakat er en av de fem søylene og går blant annet til fattige, gjeldstyngede og reisende. Den skal bidra til jevnere fordeling."
+                    },
+                    {
+                        "question": "Hvorfor tar artikkelen ikke med en sikhisk versjon av den gylne regel?",
+                        "options": [
+                            "Fordi sikhismen ikke har etikk",
+                            "Fordi det ikke fantes en formulering som lot seg belegge i en kilde",
+                            "Fordi sikhismen er for ny",
+                            "Fordi sikher ikke bruker skriftlige tekster"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Sikhismen har tydelige leveregler om ærlig arbeid, deling og tjeneste, men vi fant ingen belagt sikhisk formulering av selve den gylne regel. Da er det bedre å si det enn å gjette."
+                    },
+                    {
+                        "question": "Hva er hovedskillet mellom de abrahamittiske og de indiske begrunnelsene?",
+                        "options": [
+                            "Abrahamittiske regler kommer fra Gud, indiske følger av at handlingen virker tilbake på deg",
+                            "Abrahamittiske regler er negative, indiske er positive",
+                            "Bare de indiske tradisjonene har leveregler",
+                            "Bare de abrahamittiske tradisjonene har den gylne regel"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Ordlyden krysser gruppene, men begrunnelsen skiller. I de abrahamittiske religionene er reglene bud fra Gud, mens karma gjør at følgene kommer av seg selv."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Groth, B. (2026). *Den gylne regel*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/den_gylne_regel](https://snl.no/den_gylne_regel)",
+                    "Joachimsen, K. & Stordalen, T. (2026). *De ti bud*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/De_ti_bud](https://snl.no/De_ti_bud)",
+                    "Elstad, H. (2024). *Nestekjærlighet*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/nestekjærlighet](https://snl.no/nestekj%C3%A6rlighet)",
+                    "Vikør, K. S. (2025). *Sharia*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/sharia](https://snl.no/sharia)",
+                    "Vogt, K. (2026). *Zakat*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/zakat](https://snl.no/zakat)",
+                    "Jacobsen, K. A. (2026a). *Karma*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/karma](https://snl.no/karma)",
+                    "Jacobsen, K. A. (2026b). *Dharma*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/dharma](https://snl.no/dharma)",
+                    "Jacobsen, K. A. (2025). *Ahimsa*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/ahimsa](https://snl.no/ahimsa)",
+                    "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+                    "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+                    "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bahai](https://snl.no/bahai)",
+                    "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Løøv, M., Kraft, S. E., Gaski, H. & Fonneland, T. (2026). *Samisk religion*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/samisk_religion](https://snl.no/samisk_religion)",
+                    "Sefaria. (u.å.). *Shabbat 31a* (William Davidson Talmud). Hentet 12.08.2026 fra [sefaria.org](https://www.sefaria.org/Shabbat.31a)",
+                    "Al-Bukhari. (u.å.). *Sahih al-Bukhari, bok 2, hadith 12*. QuranX. Hentet 12.08.2026 fra [quranx.com](https://quranx.com/hadith/Bukhari/USC-MSA/Volume-1/Book-2/Hadith-12/)",
+                    "Koranen. (u.å.). *Sure 2, vers 177* (Saheeh International). AlQuran Cloud. Hentet 12.08.2026 fra [alquran.cloud](https://api.alquran.cloud/v1/ayah/2:177/en.sahih)",
+                    "Buddharakkhita, A. (overs.). (u.å.). *Dhammapada, kapittel 10: Dandavagga - Violence*. Access to Insight. Hentet 12.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/kn/dhp/dhp.10.budd.html)",
+                    "Sikhs.org. (u.å.). *Sikh Religious Philosophy*. Hentet 12.08.2026 fra [sikhs.org/philos.htm](https://www.sikhs.org/philos.htm)",
+                    "Bahá'u'lláh. (u.å.). *The Hidden Words*, arabisk nr. 29. Bahá'í Reference Library. Hentet 12.08.2026 fra [reference.bahai.org](https://reference.bahai.org/en/t/b/HW/hw-30.html)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *3 Nephi 14*. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/14)",
+                    "Jehovas vitner. (u.å.). *What Is the Golden Rule?* Hentet 12.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/golden-rule/)",
+                    "Bibelen. (u.å.). *Matteus 7,12* (World English Bible). Bible-API. Hentet 12.08.2026 fra [bible-api.com](https://bible-api.com/matthew+7:12)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
