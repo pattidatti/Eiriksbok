@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "En kommentar er en sjanger innen journalistikken der skribenten analyserer, tolker og uttrykker sin mening om en aktuell sak. I motsetning til en nyhetsartikkel, som skal være objektiv, er kommentaren subjektiv. Målet er å gi leseren innsikt, bakgrunn og forståelse for en sak, ofte ved å sette den inn i en større sammenheng."
+            "content": "En kommentar er en sjanger innen journalistikken der skribenten bruker sin egen stemme og analyserer en aktuell sak i nyhetsbildet (Hågvar, 2026a). I motsetning til en nyhetsartikkel, som refererer andre kilders syn og holder journalistens egne vurderinger utenfor, er kommentaren subjektiv: her kan skribenten argumentere åpent for sitt eget standpunkt (Hågvar, 2026b). Målet er å gi leseren innsikt, bakgrunn og forståelse for en sak, ofte ved å sette den inn i en større sammenheng."
         },
         {
             "type": "header",
@@ -19,7 +19,7 @@
             "items": [
                 "**Subjektiv:** Skribenten uttrykker egne meninger og vurderinger.",
                 "**Analyserende:** Teksten går i dybden og forklarer *hvorfor* noe skjer, ikke bare *hva* som har skjedd.",
-                "**Kunnskapsbasert:** Meningene er bygget på fakta, kunnskap og logiske resonnementer, ikke bare løse påstander.",
+                "**Kunnskapsbasert:** Meningene er bygget på fakta, kunnskap og logiske resonnementer, ikke bare løse påstander. En kommentar er fortsatt journalistikk og må følge Vær varsom-plakaten (Hågvar, 2026b).",
                 "**Aktuell:** Kommentaren tar ofte utgangspunkt i en nyhetssak eller en pågående debatt.",
                 "**Personlig stemme:** Skribenten har ofte en tydelig stemme og stil."
             ]
@@ -30,7 +30,7 @@
         },
         {
             "type": "text",
-            "content": "En kommentar har ofte en friere form enn en nyhetsartikkel, men følger gjerne denne strukturen:"
+            "content": "En kommentar har ofte en friere form enn en nyhetsartikkel, men følger gjerne denne strukturen. Der nyhetsartikkelen skynder seg å få det viktigste først, bygger kommentaren i stedet opp et sammenhengende resonnement fram mot en klar konklusjon (Hågvar, 2026a). Ingressen er den korte, innledende delen som oppsummerer hovedinnholdet og lokker leseren videre (Orgeret, 2025)."
         },
         {
             "type": "list",
@@ -76,6 +76,17 @@
                     "Diskuter i klassen: Er det en fordel eller en ulempe at en kommentar er subjektiv? Kom med argumenter for begge sider."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hågvar, Y. B. (2026a). *Kommentar - journalistisk sjanger*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/kommentar_-_journalistisk_sjanger](https://snl.no/kommentar_-_journalistisk_sjanger)",
+                    "Hågvar, Y. B. (2026b). *Kommentarjournalistikk*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/kommentarjournalistikk](https://snl.no/kommentarjournalistikk)",
+                    "Orgeret, K. S. (2025). *Ingress*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/ingress](https://snl.no/ingress)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -85,5 +96,5 @@
         "journalistikk"
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-12T00:00:00Z"
 }

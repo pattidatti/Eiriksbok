@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Et debattinnlegg (eller leserinnlegg) er en argumenterende tekst der forfatteren uttrykker sin personlige mening om en aktuell sak. Målet er å overbevise leseren om at du har rett, eller å kaste lys over en sak fra ditt ståsted. Debattinnlegg finner vi i aviser, på nettdebatter og i sosiale medier. Det er en viktig del av demokratiet at alle kan komme til orde og si sin mening."
+            "content": "Et debattinnlegg (eller leserinnlegg) er en argumenterende tekst der forfatteren uttrykker sin personlige mening om en aktuell sak (Hågvar, 2026). Målet er å overbevise leseren om at du har rett, eller å kaste lys over en sak fra ditt ståsted. Debattinnlegg finner vi først og fremst i aviser og andre journalistiske medier, både på papir og på nett. Det er en viktig del av demokratiet at alle kan komme til orde og si sin mening: sjangeren styrker ytringsfriheten ved at vanlige folk slipper til i mediene (Hågvar, 2026)."
         },
         {
             "type": "header",
@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "I motsetning til fagartikkelen, er debattinnlegget sterkt *subjektivt*. Det er dine meninger som teller."
+            "content": "I motsetning til fagartikkelen, er debattinnlegget sterkt *subjektivt*. Det er dine meninger som teller. Ifølge Hågvar (2026) er et debattinnlegg nettopp en subjektiv meningsytring, og skribenten er som regel en person utenfor redaksjonen."
         },
         {
             "type": "list",
@@ -33,7 +33,7 @@
         },
         {
             "type": "text",
-            "content": "For å overbevise, bruker vi ofte de tre retoriske appellformene fra antikken:"
+            "content": "For å overbevise, bruker vi ofte de tre retoriske appellformene fra antikken: etos, logos og patos (Svendsen & Grue, 2025). Etos handler om troverdigheten til den som snakker eller skriver, og publikum godtar lettere et budskap fra en avsender de stoler på (Grue & Alfredsen, 2025)."
         },
         {
             "type": "list",
@@ -49,14 +49,14 @@
         },
         {
             "type": "text",
-            "content": "Et godt debattinnlegg går ofte rett på sak:"
+            "content": "Et godt debattinnlegg går ofte rett på sak. I klassisk retorikk består bevisdelen både av å legge fram egne argumenter og av å angripe motpartens (Grue, 2024). Begge deler hører hjemme i et debattinnlegg:"
         },
         {
             "type": "list",
             "items": [
                 "**Fengende overskrift:** Må vekke nysgjerrighet eller provosere.",
                 "**Innledning:** Presenter saken og ditt hovedsyn (tesen) med en gang.",
-                "**Hoveddel:** Presenter argumentene dine. Gjerne ett avsnitt per argument. Husk også å nevne motargumenter og tilbakevise dem (gendrivelse).",
+                "**Hoveddel:** Presenter argumentene dine. Gjerne ett avsnitt per argument. Husk også å nevne motargumenter og tilbakevise dem (gjendrivelse).",
                 "**Avslutning:** Oppsummer kort og kom med en appell eller oppfordring til slutt. «Derfor må politikerne handle nå!»"
             ]
         },
@@ -82,6 +82,18 @@
                     "Diskuter med en medelev: Er det greit å spille på følelser (patos) for å vinne en debatt, eller bør man holde seg til fakta og fornuft?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Grue, J. (2024). *Argumentatio*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/argumentatio](https://snl.no/argumentatio)",
+                    "Grue, J. & Alfredsen, F. (2025). *Etos*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/etos](https://snl.no/etos)",
+                    "Hågvar, Y. B. (2026). *Debattinnlegg*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/debattinnlegg](https://snl.no/debattinnlegg)",
+                    "Svendsen, L. F. H. & Grue, J. (2025). *Retorikk*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/retorikk](https://snl.no/retorikk)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -92,5 +104,5 @@
         "demokrati"
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-12T00:00:00Z"
 }
