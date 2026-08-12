@@ -870,6 +870,10 @@
       "count": 29
     },
     {
+      "tag": "narrative",
+      "count": 29
+    },
+    {
       "tag": "imperium",
       "count": 28
     },
@@ -880,10 +884,6 @@
     {
       "tag": "1800-tallet",
       "count": 28
-    },
-    {
-      "tag": "narrative",
-      "count": 27
     },
     {
       "tag": "verdensorden",
@@ -922,11 +922,19 @@
       "count": 22
     },
     {
+      "tag": "ritual",
+      "count": 22
+    },
+    {
       "tag": "islam",
       "count": 21
     },
     {
       "tag": "mysterier",
+      "count": 21
+    },
+    {
+      "tag": "doctrinal",
       "count": 21
     },
     {
@@ -938,19 +946,11 @@
       "count": 20
     },
     {
-      "tag": "ritual",
-      "count": 20
-    },
-    {
       "tag": "samfunn",
       "count": 19
     },
     {
       "tag": "olje",
-      "count": 19
-    },
-    {
-      "tag": "doctrinal",
       "count": 19
     },
     {
@@ -1050,6 +1050,10 @@
       "count": 11
     },
     {
+      "tag": "grunnleggere",
+      "count": 11
+    },
+    {
       "tag": "hinduisme",
       "count": 11
     },
@@ -1082,10 +1086,6 @@
       "count": 10
     },
     {
-      "tag": "grunnleggere",
-      "count": 10
-    },
-    {
       "tag": "diplomati",
       "count": 10
     },
@@ -1107,6 +1107,14 @@
     },
     {
       "tag": "gudsbilde",
+      "count": 10
+    },
+    {
+      "tag": "frelse",
+      "count": 10
+    },
+    {
+      "tag": "overgangsriter",
       "count": 10
     },
     {
@@ -1142,15 +1150,11 @@
       "count": 9
     },
     {
-      "tag": "frelse",
-      "count": 9
-    },
-    {
       "tag": "bønn",
       "count": 9
     },
     {
-      "tag": "overgangsriter",
+      "tag": "hellige-tekster",
       "count": 9
     },
     {
@@ -1214,11 +1218,11 @@
       "count": 8
     },
     {
-      "tag": "hellige-tekster",
+      "tag": "jodedom",
       "count": 8
     },
     {
-      "tag": "jodedom",
+      "tag": "sammenligning",
       "count": 8
     },
     {
@@ -3190,7 +3194,7 @@
       "count": 2
     },
     {
-      "tag": "sammenligning",
+      "tag": "doden",
       "count": 2
     },
     {
@@ -3774,10 +3778,6 @@
       "count": 1
     },
     {
-      "tag": "doden",
-      "count": 1
-    },
-    {
       "tag": "dodeboken",
       "count": 1
     },
@@ -3803,6 +3803,10 @@
     },
     {
       "tag": "nord-norge",
+      "count": 1
+    },
+    {
+      "tag": "bonn",
       "count": 1
     },
     {

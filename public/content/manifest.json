@@ -8251,7 +8251,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-11T19:40:07+02:00"
+                  "lastUpdated": "2026-08-12T07:36:20+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8277,7 +8277,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-11T09:38:59+02:00"
+                  "lastUpdated": "2026-08-12T07:36:20+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8303,7 +8303,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-11T18:53:46+02:00"
+                  "lastUpdated": "2026-08-12T07:36:20+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -8316,7 +8316,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T00:36:07+02:00"
+                  "lastUpdated": "2026-08-12T07:36:20+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -8801,6 +8801,84 @@
               ],
               "createdDate": "2026-08-12T04:17:49+02:00",
               "lastUpdated": "2026-08-12T04:17:49+02:00"
+            },
+            {
+              "id": "bonn",
+              "title": "Å snakke med det hellige",
+              "description": "Fem ganger i døgnet snur muslimer seg mot Mekka. En buddhist som mediterer, snur seg ikke mot noe. Sammenlign bønn i ni tradisjoner langs fire akser: retning, tid, kropp og ord.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "bonn",
+                "ritual"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T07:36:20+02:00"
+            },
+            {
+              "id": "overgangsriter",
+              "title": "Fra vugge til grav",
+              "description": "Fødsel, veien ut av barndommen, ekteskap og død. Alle ni tradisjonene kjenner de samme fire overgangene, men de vekter dem helt ulikt - og noen har ingen rite i det hele tatt.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "overgangsriter",
+                "ritual"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T07:36:20+02:00"
+            },
+            {
+              "id": "doden",
+              "title": "Hva skjer når vi dør?",
+              "description": "Dør du én gang, eller mange? Ni tradisjoner svarer på hva som skjer etter døden, og du ser hvordan formen på tiden avgjør hvem som holder regnskapet.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "doden",
+                "doctrinal"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T07:36:20+02:00"
+            },
+            {
+              "id": "frelse",
+              "title": "Målet med det hele",
+              "description": "Ni tradisjoner svarer på hva målet med livet er - og på hvem som gjør jobben for å komme dit. Fra nåde som ren gave til frigjøring ingen andre kan gi deg.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "frelse",
+                "doctrinal"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T07:36:20+02:00"
+            },
+            {
+              "id": "hellige-tekster",
+              "title": "Bøkene som styrer liv",
+              "description": "Koranen ble diktert, Bibelen ble satt sammen, Vedaene ble husket i tusen år, og Guru Granth Sahib legges i seng hver kveld. Følg fire stopp fra munn til bok, og se hvorfor en tekst blir hellig av det folk gjør med den.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "hellige-tekster",
+                "narrative"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T07:36:20+02:00"
+            },
+            {
+              "id": "grunnleggere",
+              "title": "Menneskene bak",
+              "description": "Ni tradisjoner gir ni ulike svar på hvem som startet det hele: sammenlign hvilken rolle grunnleggeren fikk, fra Gud til profet til ingen stifter i det hele tatt, og se hva som overtok da han døde.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "grunnleggere",
+                "narrative"
+              ],
+              "createdDate": "2026-08-12T12:00:00Z",
+              "lastUpdated": "2026-08-12T07:36:20+02:00"
             }
           ]
         },
