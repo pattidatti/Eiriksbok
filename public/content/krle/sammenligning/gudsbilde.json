@@ -30,9 +30,9 @@
   ],
   "details": [
     "Å telle guder måler bare den ene halvparten av et gudsbilde.",
-    "Den andre aksen er nærhet: er guden en person, eller en kraft uten ansikt?",
+    "Det andre spørsmålet er nærhet: er guden en person, eller en kraft uten ansikt?",
     "Islam og sikhismen sier begge «én gud», men mener ulike ting med det.",
-    "Hinduismen har mange guder som mange forstår som former av én virkelighet.",
+    "Hinduismen har mange guder, men mange hinduer ser på dem som ulike former av det samme.",
     "Buddhismen passer ikke i rutenettet, fordi spørsmålet om antall ikke gir mening der."
   ],
   "concepts": [
@@ -59,7 +59,7 @@
     {
       "id": "brahman",
       "term": "Brahman",
-      "definition": "I hinduismen: den ene guddommelige virkeligheten som er til stede i alt."
+      "definition": "I hinduismen: det ene guddommelige som finnes i alt."
     },
     {
       "id": "ik-onkar",
@@ -81,15 +81,15 @@
     },
     {
       "type": "text",
-      "content": "Det enkleste spørsmålet vi kan stille en religion, er hvor mange guder den har. Det gir oss to kjente fagord. Monoteisme er «troen på at det bare finnes én sann gud», og denne guden blir forstått som hellig, allmektig, allvitende og god, og som en skaper som griper inn i livene til menneskene (Jacobsen & Groth, 2026). Polyteisme er det motsatte: en religion med flere guder, slik som den norrøne, den greske, den romerske og den egyptiske (Kværne, 2025)."
+      "content": "Det enkleste spørsmålet vi kan stille en religion, er hvor mange guder den har. Det gir oss to fagord. Monoteisme betyr troen på at det bare finnes én ekte gud. Denne guden er hellig, kan alt, vet alt, er god, har skapt verden og blander seg inn i livene våre (Jacobsen & Groth, 2026). Polyteisme er det motsatte: en religion med mange guder, slik som den norrøne, den greske, den romerske og den egyptiske (Kværne, 2025)."
     },
     {
       "type": "text",
-      "content": "I en polyteistisk religion henger gudene sammen i et panteon, altså en samling guder som er ordnet omtrent som en familie eller et kongehoff. De har menneskelige trekk, og ingen av dem er allmektig, selv om noen kan være mektigere enn resten (Kværne, 2025). Det er en viktig forskjell fra den ene guden i monoteismen: Tor kan bli lurt, og Zevs kan bli sint og angre."
+      "content": "I en religion med mange guder henger gudene sammen i et panteon, altså et helt gudeselskap som er satt sammen omtrent som en familie eller et kongehoff. De har menneskelige trekk, og ingen av dem kan alt, selv om noen er mektigere enn resten (Kværne, 2025). Det er en viktig forskjell fra den ene guden i monoteismen: Tor kan bli lurt, og Zevs kan bli sint og angre etterpå."
     },
     {
       "type": "text",
-      "content": "Men tellingen tar oss bare halvveis. Store norske leksikon definerer en gud som «et overmenneskelig vesen som oppfattes som en person eller tilsvarende en person», og legger til at «vekslingene i gudsbildet kan være nesten uendelige» (Kværne, Sky & Jacobsen, 2026). Der ligger den andre aksen. Er guden en person du kan snakke med, bli sint på og be til? Eller er det en kraft uten ansikt, som er til stede i alt, men aldri svarer deg med ord? Det ytterste svaret på den siden heter panteisme, læren om at «alt er Gud», altså at Gud og verden er ett og det samme (Svendsen, 2025)."
+      "content": "Men å telle tar oss bare halvveis. Store norske leksikon forklarer en gud som et vesen over mennesket, som vi tenker på omtrent som en person, og legger til at bildene av gud kan variere nesten uendelig (Kværne, Sky & Jacobsen, 2026). Der kommer det andre spørsmålet inn. Er guden en person du kan snakke med, bli sint på og be til? Eller er guden en kraft uten ansikt, som finnes i alt, men aldri svarer deg med ord? Det ytterste svaret på den siden heter panteisme: alt er Gud, altså at Gud og verden er nøyaktig det samme (Svendsen, 2025)."
     },
     {
       "type": "image",
@@ -102,7 +102,7 @@
       "name": "GudsbildeAksen",
       "props": {
         "title": "Gudsbilde-aksen",
-        "intro": "Velg et kort, og klikk feltet du tror det hører hjemme i. Ett av kortene passer ikke i rutenettet.",
+        "intro": "Velg et kort, og klikk på feltet du tror det hører hjemme i. Ett av kortene passer ikke inn noe sted.",
         "axes": {
           "x": {
             "minLabel": "Én gud",
@@ -114,15 +114,15 @@
           }
         },
         "outsideLabel": "Passer ikke i rutenettet",
-        "outsideHint": "Noen tradisjoner svarer ikke på spørsmålet om antall i det hele tatt.",
+        "outsideHint": "Noen tradisjoner svarer ikke på spørsmålet om hvor mange guder som finnes.",
         "cards": [
           {
             "id": "jodedom",
             "name": "Jødedom",
             "color": "#3b82f6",
             "correctZone": "en-personlig",
-            "clue": "Gud er én og udelelig, og har inngått en pakt med et folk.",
-            "feedback": "Jødedommen: én Gud, og Guds udelelighet er selve kjernen. Samtidig er dette en Gud som handler i historien og stiller krav til hvordan du behandler naboen din."
+            "clue": "Gud er én og kan ikke deles opp, og har inngått en avtale med et helt folk.",
+            "feedback": "Jødedommen: én Gud, og det aller viktigste er at han er én og ikke kan deles opp. Samtidig er dette en Gud som griper inn i historien og stiller krav til hvordan du behandler naboen din."
           },
           {
             "id": "kristendom",
@@ -130,15 +130,15 @@
             "color": "#6366f1",
             "correctZone": "en-personlig",
             "clue": "Én Gud, men i tre skikkelser: Faderen, Sønnen og Den hellige ånd.",
-            "feedback": "Kristendommen: Gud er tre personer i ett vesen. Det er fortsatt én Gud, og han er svært personlig - han er en far, og han ble et menneske."
+            "feedback": "Kristendommen: Gud er én, men viser seg på tre måter. Det er fortsatt bare én Gud, og han er svært nær - han kalles far, og han ble selv et menneske."
           },
           {
             "id": "islam",
             "name": "Islam",
             "color": "#10b981",
             "correctZone": "en-personlig",
-            "clue": "Gud er én og kan ikke deles opp i deler eller personer.",
-            "feedback": "Islam: Gud er én og udelelig, og læren om Guds enhet avviser både flere guder og tanken om tre personer. Men Gud er ikke fjern - han griper inn i menneskenes liv."
+            "clue": "Gud er én og kan ikke deles opp i biter eller personer.",
+            "feedback": "Islam: Gud er én og kan ikke deles opp. Læren om at Gud er én sier nei både til flere guder og til tanken om tre personer. Men Gud er ikke langt borte - han griper inn i livene til menneskene."
           },
           {
             "id": "sikhisme",
@@ -146,15 +146,15 @@
             "color": "#ff9933",
             "correctZone": "en-upersonlig",
             "clue": "Gud er én, men uten form, og kan ikke tegnes eller avbildes.",
-            "feedback": "Sikhismen: Ik Onkar betyr «én gud». Men Gud er formløs og har ikke personlige trekk som kjønn, og kan ikke avbildes. Derfor havner sikhismen lenger mot det upersonlige enn islam - selv om mange sikher opplever Gud som nær."
+            "feedback": "Sikhismen: Ik Onkar betyr «én gud». Men denne guden har ingen form, er verken mann eller kvinne, og kan ikke tegnes. Derfor havner sikhismen lenger mot det upersonlige enn islam, selv om mange sikher føler at Gud er helt nær."
           },
           {
             "id": "hinduisme",
             "name": "Hinduisme",
             "color": "#ec4899",
             "correctZone": "mange-upersonlig",
-            "clue": "Tusenvis av guder, og bak dem en usynlig virkelighet som finnes i alt.",
-            "feedback": "Hinduismen: gudene er mange, men mange hinduer forstår dem som former av brahman, den ene virkeligheten som er usynlig, uforanderlig og til stede i alt. Samtidig ber mange til en personlig gud med navn og ansikt."
+            "clue": "Tusenvis av guder, og bak dem noe usynlig som finnes i alt.",
+            "feedback": "Hinduismen: gudene er mange, men mange hinduer ser på dem som ulike former av brahman, det ene som er usynlig, aldri forandrer seg og finnes i alt. Samtidig ber mange til en gud med navn og ansikt."
           },
           {
             "id": "norron",
@@ -162,15 +162,15 @@
             "color": "#0891b2",
             "correctZone": "mange-personlig",
             "clue": "Mange guder med hvert sitt navn, humør og familieforhold.",
-            "feedback": "Norrøn religion: gudene utgjør et panteon ordnet som en familie. De har menneskelige trekk, de krangler og de dør - og ingen av dem er allmektig."
+            "feedback": "Norrøn religion: gudene henger sammen som en stor familie. De har menneskelige trekk, de krangler og de dør, og ingen av dem kan alt."
           },
           {
             "id": "buddhisme",
             "name": "Buddhisme",
             "color": "#f59e0b",
             "correctZone": "utenfor",
-            "clue": "Guder finnes, men de har en birolle. Ingen av dem har skapt verden.",
-            "feedback": "Buddhismen: her passer ikke rutenettet. Gudene spiller en underordnet rolle, og det finnes ingen skapergud. Buddha ble selv regnet som en lærer, ikke en gud. Spørsmålet om antall gir rett og slett ikke mening her."
+            "clue": "Guder finnes, men de er ikke viktige. Ingen av dem har skapt verden.",
+            "feedback": "Buddhismen: her passer ikke rutenettet. Gudene er ikke viktige, og ingen gud har skapt verden. Buddha ble selv regnet som en lærer, ikke en gud. Spørsmålet om hvor mange guder som finnes, gir rett og slett ikke mening her."
           }
         ]
       }
@@ -185,31 +185,31 @@
     },
     {
       "type": "text",
-      "content": "Jødedom, kristendom og islam kalles ofte abrahamittiske religioner, fordi alle tre regner Abraham som en stamfar. Alle tre er monoteistiske. Jødedommen og islam legger sterk vekt på at Gud er udelelig, mens kristendommen utviklet læren om treenigheten (Jacobsen & Groth, 2026). Profetene i Israel utviklet også tanken om etisk monoteisme: det du gjør mot naboen din, gjør du mot Gud."
+      "content": "Jødedom, kristendom og islam kalles ofte abrahamittiske religioner, fordi alle tre regner Abraham som stamfar. Alle tre tror på én gud. Jødedommen og islam legger sterk vekt på at Gud er én og ikke kan deles opp, mens kristendommen utviklet læren om treenigheten (Jacobsen & Groth, 2026). Profetene i Israel la til noe viktig: det du gjør mot naboen din, gjør du mot Gud."
     },
     {
       "type": "text",
-      "content": "Treenigheten er tanken om at «Gud er tre personer eller framtredelsesformer i ett vesen: Faderen (Gud), Sønnen (Jesus Kristus) og Den hellige ånd» (Leivestad & Elstad, 2026). Denne læren står ikke ferdig formulert i Bibelen. Den ble slått fast på kirkemøtene i Nikea i 325 og i Konstantinopel i 381, som bestemte at Kristus har samme vesen som Faderen, men er en egen person (Leivestad & Elstad, 2026). At kristne kaller dette monoteisme, mens muslimer mener det bryter med Guds enhet, er en av de eldste uenighetene mellom de to religionene."
+      "content": "Treenigheten er tanken om at Gud er én, men viser seg på tre måter: som Faderen, som Sønnen (Jesus Kristus) og som Den hellige ånd (Leivestad & Elstad, 2026). Denne læren står ikke ferdig skrevet i Bibelen. Den ble slått fast på kirkemøtene i Nikea i år 325 og i Konstantinopel i år 381. Der bestemte de at Kristus er laget av det samme som Faderen, men samtidig er en egen person (Leivestad & Elstad, 2026). Kristne mener at dette fortsatt er troen på én gud. Muslimer mener at det deler Gud opp. Dette er en av de eldste kranglene mellom de to religionene."
     },
     {
       "type": "text",
-      "content": "Uenigheten viser seg også i hva du får lov til å tegne. I islamsk tradisjon skal man ikke lage bilder av levende vesener, og islamsk kunst er derfor ofte bygd på mønstre og geometri i stedet for ansikter (Vogt & Farstad, 2026). Forbudet står ikke i Koranen, men i hadith-tekstene, og begrunnelsen er at det å skape levende former er noe bare Gud kan. Her finnes det indre uenighet: sunni-islam er strengest, mens sjia-islam og sufismen tolker forbudet mildere, og i klassisk bokkunst ble profeter faktisk avbildet (Vogt & Farstad, 2026). Vil du lese mer om dette, finnes det en egen artikkel om [gudsbildet i islam](/krle/religion/islam/gudsbilde)."
+      "content": "Uenigheten viser seg også i hva du får lov til å tegne. I islam skal man ikke lage bilder av levende vesener. Derfor er islamsk kunst full av mønstre og geometriske former i stedet for ansikter (Vogt & Farstad, 2026). Forbudet står ikke i Koranen. Det står i hadith, fortellingene om hva Muhammad sa og gjorde, og begrunnelsen er at bare Gud kan skape noe levende. Muslimer er ikke enige om hvor strengt dette er: sunni-islam er strengest, mens sjia-islam og sufismen tolker det mildere. I gamle bokmalerier ble profeter faktisk tegnet (Vogt & Farstad, 2026). Vil du lese mer om dette, finnes det en egen artikkel om [gudsbildet i islam](/krle/religion/islam/gudsbilde)."
     },
     {
       "type": "header",
-      "text": "De indiske: mange former, én virkelighet"
+      "text": "De indiske: mange former, men bare én bak dem"
     },
     {
       "type": "text",
-      "content": "Hinduismen ser ved første øyekast ut som ren polyteisme. Men i den filosofiske tradisjonen står brahman i sentrum: enheten i verden og universet, den guddommelige virkeligheten bak mangfoldet av guder. Brahman er «usynlig, uforanderlig og til stede i alt», og finnes i hvert menneske som atman, det udødelige selvet (Jacobsen, 2024). Moderne hinduisme skiller mellom nirguna brahman, som er formløs og upersonlig, og saguna brahman, som er en personlig gud med form. Det er dette skillet som gjør at mange guder kan forstås som uttrykk for én guddommelighet (Jacobsen, 2024). Noen kaller det derfor ikke polyteisme, men kosmologisk monoteisme (Jacobsen & Groth, 2026)."
+      "content": "Ved første øyekast ser hinduismen ut som en religion med mange guder. Men blant hinduiske tenkere står brahman i sentrum: det som binder hele verden sammen, og som ligger bak alle gudene. Brahman er usynlig, forandrer seg aldri og finnes i alt. I hvert menneske finnes brahman som atman, det udødelige selvet (Jacobsen, 2024). I dag skiller hinduene mellom brahman uten form, som ikke er noen person, og brahman med form, som er en gud du kan møte og be til. Det er dette skillet som gjør at alle gudene kan forstås som ulike sider av det samme (Jacobsen, 2024). Derfor mener noen at hinduismen egentlig ikke tror på mange guder, men på én, som viser seg i tusen former (Jacobsen & Groth, 2026)."
     },
     {
       "type": "text",
-      "content": "Buddhismen svarer på en helt annen måte. Guder finnes i buddhistiske tekster, men de spiller en underordnet rolle, i motsetning til kristendom, islam og hinduisme der gudene er det viktigste (Kværne, Sky & Jacobsen, 2026). Det finnes ingen skapergud, og Buddha selv ble av de eldste tradisjonene regnet som en lærer for både guder og mennesker, ikke som en gud. Å spørre en buddhist hvor mange guder hun tror på, er derfor litt som å spørre en fotballspiller hvor mange mål hun svømmer på: spørsmålet passer ikke til det hun holder på med."
+      "content": "Buddhismen svarer på en helt annen måte. Guder finnes i buddhistiske tekster, men de er ikke viktige. Slik er det ikke i kristendom, islam og hinduisme, der gudene er hovedsaken (Kværne, Sky & Jacobsen, 2026). Ingen gud har skapt verden, og de eldste tekstene ser på Buddha selv som en lærer for både guder og mennesker, ikke som en gud. Å spørre en buddhist hvor mange guder hun tror på, er derfor litt som å spørre en fotballspiller hvor mange mål hun svømmer på: spørsmålet passer ikke til det hun holder på med."
     },
     {
       "type": "text",
-      "content": "Sikhismen ligger geografisk midt imellom, og teologisk et sted for seg selv. Sikher innleder de hellige tekstene sine med Ik Onkar, som betyr «én gud». Samtidig er denne guden formløs og har ikke personlige trekk som kjønn, og kan ikke avbildes. Løsningen er at sikher framstiller de ti menneskelige guruene i stedet for Gud selv (Breidlid, 2020). Én gud, altså, men ikke et ansikt du kan tegne."
+      "content": "Sikhismen ligger midt imellom på kartet, men helt for seg selv når det gjelder gudsbildet. De hellige tekstene begynner med Ik Onkar, som betyr «én gud». Men denne guden har ingen form, er verken mann eller kvinne, og kan ikke tegnes. Derfor lager sikhene bilder av de ti guruene i stedet for av Gud (Breidlid, 2020). Én gud, altså, men ikke et ansikt du kan tegne."
     },
     {
       "type": "image",
@@ -223,11 +223,11 @@
     },
     {
       "type": "text",
-      "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte samlet under merkelappen «nyere bevegelser». Det er en pedagogisk forenkling, og den skjuler at de har ulikt opphav: bahá'í springer ut av sjia-islam, mens de to andre springer ut av kristendommen. De er også langt mindre enn de store tradisjonene. Til gjengjeld er de svært interessante her, for alle tre plasserer seg annerledes på nettopp den aksen kristendommen bygger på."
+      "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte slått sammen til én gruppe som kalles «nyere bevegelser». Det blir litt for enkelt, for de kommer fra hvert sitt sted: bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen. De er også mye mindre enn de store religionene. Men her er de ekstra spennende, for alle tre svarer annerledes på nettopp det spørsmålet kristendommen bygger på: hvem er Jesus?"
     },
     {
       "type": "text",
-      "content": "Bahá'í lærer at «det finnes bare én Gud», som er verdens skaper, allvitende, kjærlig og nåderik. Samtidig understreker bahá'íer at vi aldri kan forstå Gud helt, fordi «vår erkjennelse av det guddommelige er begrenset av det menneskelige sinn». Derfor sender Gud budbringere, og blant dem regnes både Krishna, Buddha, Moses, Jesus og Muhammad (Vogt & Winje, 2026). Mormonismen går i motsatt retning: Faderen og Sønnen forstås som to atskilte, fysiske skikkelser, og siden mennesket er skapt i Guds bilde, er «Gud og mennesket like av utseende» (Bloch-Hoell mfl., 2024). Jehovas vitner forkaster treenighetslæren og mener den er en senere konstruksjon vedtatt på kirkemøter på 300- og 400-tallet. De legger stor vekt på å bruke Guds egennavn, Jehova, og mener at Jesus er underordnet Gud (Ringnes mfl., 2026)."
+      "content": "Bahá'í lærer at det bare finnes én Gud, som har skapt verden, vet alt, er kjærlig og full av nåde. Samtidig sier bahá'íene at vi aldri kan forstå Gud helt, rett og slett fordi hjernen vår er for liten. Derfor sender Gud budbringere i stedet, og blant dem regner de både Krishna, Buddha, Moses, Jesus og Muhammad (Vogt & Winje, 2026). Mormonismen går motsatt vei: Faderen og Sønnen er to atskilte skikkelser med hver sin kropp, og siden mennesket er skapt i Guds bilde, ser Gud og mennesket like ut (Bloch-Hoell mfl., 2024). Jehovas vitner sier nei til hele treenigheten. De mener den ble funnet på senere, på kirkemøter på 300- og 400-tallet. De bruker Guds eget navn, Jehova, så ofte de kan, og mener at Jesus står under Gud (Ringnes mfl., 2026)."
     },
     {
       "type": "header",
@@ -235,20 +235,20 @@
     },
     {
       "type": "text",
-      "content": "Legg kortene fra rutenettet ved siden av hverandre, og et mønster trer fram. Islam og sikhismen sier begge at det finnes nøyaktig én gud. Likevel havner de i hver sin rute, fordi de er uenige om noe annet enn antall: om guden har trekk du kan gjenkjenne og gi form. Det er den andre aksen i arbeid."
+      "content": "Legg kortene fra rutenettet ved siden av hverandre, så ser du et mønster. Islam og sikhismen sier begge at det finnes nøyaktig én gud. Likevel havner de i hver sin rute, fordi de er uenige om noe helt annet enn antallet: om guden har trekk du kan kjenne igjen og gi form. Det er det andre spørsmålet som skiller dem."
     },
     {
       "type": "list",
       "items": [
-        "Antall sier hvor mange guder som finnes, men ikke hva slags gud det er.",
-        "Nærhet sier om guden er en person du kan snakke med, eller en kraft som gjennomsyrer alt.",
-        "En religion kan flytte seg på begge akser samtidig, og de fleste rommer flere syn innad.",
-        "Bildene og kunsten avslører ofte gudsbildet raskere enn læresetningene gjør."
+        "Antallet sier hvor mange guder som finnes, men ikke hva slags gud det er.",
+        "Nærhet sier om guden er en person du kan snakke med, eller en kraft som finnes i alt.",
+        "En religion kan flytte seg på begge spørsmålene samtidig, og i de fleste finnes det flere syn side om side.",
+        "Kunsten røper ofte mer om gudsbildet enn selve læren gjør."
       ]
     },
     {
       "type": "text",
-      "content": "Og så er det buddhismen, som ikke lot seg plassere. Det er ikke fordi vi mangler informasjon, men fordi kartet er tegnet for et annet landskap. Når en tradisjon nekter å svare på spørsmålet ditt, er det verdt å sjekke om spørsmålet var godt nok. Det samme skjedde i artikkelen [Hvor kommer alt fra?](/krle/sammenligning/skapelse), der buddhismen lot den første ruta stå tom."
+      "content": "Og så er det buddhismen, som ikke lot seg plassere noe sted. Det er ikke fordi vi vet for lite. Det er fordi vi har tegnet et kart som passer til noe annet. Når en tradisjon nekter å svare på spørsmålet ditt, er det verdt å sjekke om spørsmålet var godt nok. Det samme skjedde i artikkelen [Hvor kommer alt fra?](/krle/sammenligning/skapelse), der buddhismen lot den første ruta stå tom."
     },
     {
       "type": "component",
@@ -268,7 +268,7 @@
       "name": "FactBox",
       "props": {
         "title": "Se rådataene",
-        "content": "Vil du lese hva hver enkelt religion selv sier om Gud, med kilder, finner du artiklene side om side på /krle/sammenlign/tema/gudsbilde. Der ligger også [Brahman og gudene](/krle/religion/hinduisme/gudsbilde) og [Ingen skapergud](/krle/religion/buddhisme/gudsbilde), som denne artikkelen bygger videre på."
+        "content": "Vil du lese hva hver enkelt religion selv sier om Gud, finner du artiklene side om side på /krle/sammenlign/tema/gudsbilde. Der ligger også [Brahman og gudene](/krle/religion/hinduisme/gudsbilde) og [Ingen skapergud](/krle/religion/buddhisme/gudsbilde), som denne artikkelen bygger videre på."
       }
     },
     {
@@ -277,19 +277,19 @@
       "props": {
         "forstaa": [
           "Forklar med egne ord hva monoteisme og polyteisme betyr.",
-          "Hvorfor er ingen av gudene i en polyteistisk religion allmektig?",
-          "Hva er forskjellen på nirguna brahman og saguna brahman?",
-          "Hvor står bildeforbudet i islam, og hva er begrunnelsen for det?"
+          "Hvorfor er det ingen av gudene i en polyteistisk religion som kan alt?",
+          "Hva er forskjellen på brahman uten form og brahman med form?",
+          "Hvor står forbudet mot å lage bilder i islam, og hvorfor gjelder det?"
         ],
         "reflekter": [
           "Islam og sikhismen sier begge at det finnes én gud, men havner i hver sin rute i rutenettet. Forklar hvorfor.",
-          "Buddhismen passer ikke i rutenettet i det hele tatt. Er det en mangel ved buddhismen, eller ved rutenettet? Begrunn svaret.",
-          "Hvorfor kan det å se på kunsten i et gudshus fortelle deg mer om gudsbildet enn å lese læresetningene?",
-          "Jehovas vitner mener treenigheten er noe kirkemøtene fant på lenge etter Jesus. Hva slags argument er dette, og hvordan kan man undersøke om det stemmer?"
+          "Buddhismen passer ikke i rutenettet i det hele tatt. Sier det noe om buddhismen, eller om rutenettet vi har laget? Begrunn svaret.",
+          "Hvorfor kan kunsten i et gudshus fortelle deg mer om gudsbildet enn selve læren gjør?",
+          "Jehovas vitner mener at treenigheten er noe kirkemøtene fant på lenge etter Jesus. Hva slags argument er dette, og hvordan kan man sjekke om det stemmer?"
         ],
         "gaaVidere": [
           "Velg to tradisjoner fra ulike grupper. Skriv et avsnitt der du forklarer gudsbildet deres uten å si at den ene har mer rett enn den andre.",
-          "Lag ditt eget rutenett med to andre akser, for eksempel «griper inn i verden» mot «lar verden gå sin gang». Plasser de samme sju tradisjonene, og se om mønsteret endrer seg.",
+          "Lag ditt eget rutenett med to andre spørsmål, for eksempel «griper inn i verden» mot «lar verden gå sin gang». Plasser de samme sju tradisjonene, og se om mønsteret endrer seg.",
           "Diskuter i klassen: hjelper det å dele religioner inn i båser som monoteisme og polyteisme, eller skjuler båsene mer enn de viser?"
         ]
       }
@@ -300,15 +300,15 @@
       "props": {
         "questions": [
           {
-            "question": "Hva kjennetegner gudene i en polyteistisk religion, ifølge Store norske leksikon?",
+            "question": "Hva kjennetegner gudene i en religion med mange guder, ifølge Store norske leksikon?",
             "options": [
               "Én av dem er allmektig og styrer de andre",
-              "Ingen av dem er allmektig, selv om noen kan dominere",
+              "Ingen av dem kan alt, selv om noen er mektigere enn resten",
               "De har ingen menneskelige trekk",
               "De er alle former av den samme guden"
             ],
             "correctAnswer": 1,
-            "explanation": "Gudene er ordnet i et panteon som en familie eller et kongehoff, og ingen av dem er allmektig."
+            "explanation": "Gudene henger sammen som en familie eller et kongehoff, og ingen av dem kan alt."
           },
           {
             "question": "Hvor ble treenighetslæren slått fast?",
@@ -319,40 +319,40 @@
               "På reformasjonstiden"
             ],
             "correctAnswer": 1,
-            "explanation": "Bibelen inneholder ingen ferdig lære om forholdet mellom de tre. Formuleringen kom på de to kirkemøtene."
+            "explanation": "Bibelen sier ingenting ferdig om hvordan de tre henger sammen. Den formuleringen kom på de to kirkemøtene."
           },
           {
-            "question": "Hva betyr det at brahman er nirguna?",
+            "question": "Hva betyr det når hinduene sier at brahman er uten form?",
             "options": [
-              "At brahman er en personlig gud med form",
-              "At brahman er formløs og upersonlig",
+              "At brahman er en gud med form som du kan be til",
+              "At brahman ikke har noen form og ikke er en person",
               "At brahman er én av mange guder",
               "At brahman bare finnes i templene"
             ],
             "correctAnswer": 1,
-            "explanation": "Nirguna brahman er den formløse, upersonlige virkeligheten. Saguna brahman er den personlige guden med form."
+            "explanation": "Brahman uten form er ikke en person i det hele tatt. Brahman med form er en gud du kan møte og be til."
           },
           {
             "question": "Hvorfor avbilder ikke sikher Gud?",
             "options": [
-              "Fordi Gud er formløs og ikke har personlige trekk",
+              "Fordi Gud ikke har noen form og heller ikke er mann eller kvinne",
               "Fordi bare guruene har lov til å se Gud",
               "Fordi Gud bor i et annet univers",
               "Fordi sikhismen ikke tror på Gud"
             ],
             "correctAnswer": 0,
-            "explanation": "Gud er formløs og kan ikke avbildes. I stedet framstiller sikher de ti menneskelige guruene."
+            "explanation": "Gud har ingen form og kan ikke tegnes. I stedet lager sikhene bilder av de ti guruene."
           },
           {
             "question": "Hvilken rolle har gudene i buddhismen?",
             "options": [
               "De har skapt verden sammen",
               "De er alle former av Buddha",
-              "De finnes, men spiller en underordnet rolle, og ingen av dem er skapergud",
+              "De finnes, men de er ikke viktige, og ingen av dem har skapt verden",
               "Buddhismen benekter at guder finnes"
             ],
             "correctAnswer": 2,
-            "explanation": "Guder finnes i tekstene, men de har en birolle. Buddha ble regnet som en lærer, ikke som en gud."
+            "explanation": "Guder finnes i tekstene, men de er ikke viktige. Buddha ble regnet som en lærer, ikke som en gud."
           }
         ]
       }

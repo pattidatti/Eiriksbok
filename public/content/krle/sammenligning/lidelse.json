@@ -30,9 +30,9 @@
   "details": [
     "Teodise er fagordet for forsøkene på å forsvare troen på en god og allmektig Gud mot lidelsen i verden.",
     "De abrahamittiske religionene må svare på hvordan en god Gud kan tillate lidelse. De indiske tradisjonene stiller ikke spørsmålet slik.",
-    "Buddhismen begynner med lidelsen som premiss, ikke som problem: alt er forgjengelig.",
-    "Karma forklarer lidelse uten en dommer, men mange innenfor tradisjonene avviser at den som lider har fortjent det.",
-    "Ingen av tradisjonene gir et ferdig svar. Kristen teologi regner Guds forhold til det onde som et mysterium."
+    "Buddhismen starter med lidelsen i stedet for å se den som et problem: ingenting varer evig.",
+    "Karma forklarer lidelsen uten noen dommer, men mange i disse tradisjonene sier nei til at den som lider, har fortjent det.",
+    "Ingen av tradisjonene gir et ferdig svar. Kristne lærde sier selv at forholdet mellom Gud og det onde er et mysterium."
   ],
   "concepts": [
     {
@@ -75,11 +75,11 @@
     },
     {
       "type": "text",
-      "content": "Dette er temaet der tradisjonene er uenige om selve spørsmålet. Forsøkene på å forsvare Gud mot anklagen kalles teodise. Filosofen Gottfried Leibniz laget ordet i 1710, men problemet er eldre: grekeren Epikur tok det opp flere hundre år før vår tidsregning. Formen er enkel: vil og kan Gud fjerne lidelsen, burde den ikke være der."
+      "content": "Dette er temaet der tradisjonene ikke engang er enige om spørsmålet. Når noen prøver å forsvare Gud mot anklagen, kalles det teodise. Filosofen Gottfried Leibniz fant på ordet i 1710, men problemet er mye eldre: grekeren Epikur tok det opp flere hundre år før vår tidsregning. Selve tanken er enkel: hvis Gud både vil og kan fjerne lidelsen, burde den ikke finnes."
     },
     {
       "type": "text",
-      "content": "Teologer skiller mellom to slags vondt: det fysiske, som sykdom, ulykker og naturkatastrofer, og det moralske, som mennesker påfører hverandre. Få tradisjoner svarer likt på begge."
+      "content": "De som forsker på religion, skiller mellom to slags vondt. Det ene er sykdom, ulykker og naturkatastrofer. Det andre er det mennesker gjør mot hverandre. Få tradisjoner svarer likt på begge."
     },
     {
       "type": "image",
@@ -154,7 +154,7 @@
             "group": "abrahamittisk",
             "cases": {
               "jordskjelvet": {
-                "answer": "Kristen teologi har ingen ferdig løsning. Nyere teologi sier at Gud er til stede hos den som lider.",
+                "answer": "Kristne lærde har ingen ferdig løsning. I dag legger mange heller vekt på at Gud er hos den som lider.",
                 "objection": "Å være til stede stanser ikke jordskjelvet.",
                 "reply": "Nei, og det innrømmes: Guds forhold til det onde kalles et mysterium. Vekten flyttes fra forklaring til nærvær."
               },
@@ -197,7 +197,7 @@
               "krigen": {
                 "answer": "Karma sier at handlinger har en innebygd kraft og gir tilsvarende følger, uten at noen dommer deler ut straffen.",
                 "objection": "Så barna på flukt får bare igjen for noe de gjorde i et tidligere liv?",
-                "reply": "Mange hinduer avviser den lesningen. Ingen kan vite hva et annet menneske har gjort, og indisk filosofi holder fast på at mennesket har fri vilje."
+                "reply": "Mange hinduer sier nei til den forståelsen. Ingen kan vite hva et annet menneske har gjort før, og indiske tenkere holder fast på at mennesket velger fritt."
               }
             }
           },
@@ -231,7 +231,7 @@
                 "reply": "Sikhisk lære svarer ikke med en forklaring, men med en retning: å kjenne igjen hukam og leve i tråd med den."
               },
               "krigen": {
-                "answer": "Mennesket er bundet av begjær, egoisme og uvitenhet. Det er der volden mot andre kommer fra.",
+                "answer": "Mennesket er bundet av lyster, egoisme og uvitenhet. Det er derfra volden mot andre kommer.",
                 "objection": "Er det alt? Noen som starter kriger, er ikke bare uvitende.",
                 "reply": "Derfor holder ikke innsikt alene. Sikhismen lærer at mennesket trenger Guds nåde for å bli fri fra kretsløpet."
               }
@@ -244,7 +244,7 @@
             "group": "nyere",
             "cases": {
               "jordskjelvet": {
-                "answer": "'Abdu'l-Bahá skriver at alt Gud skapte, skapte han godt. Det vonde er fravær av det gode, som mørke er av lys.",
+                "answer": "'Abdu'l-Bahá skriver at alt Gud skapte, skapte han godt. Det vonde er bare mangel på det gode, akkurat som mørke er mangel på lys.",
                 "objection": "Fortell det til noen som ligger under et sammenrast hus.",
                 "reply": "Poenget er ikke at det ikke gjør vondt, men at Gud ikke har skapt noe ondt. Døden beskrives som mangel på liv, ikke som en egen kraft."
               },
@@ -300,15 +300,15 @@
     },
     {
       "type": "text",
-      "content": "Jødedommen har ingen ferdig forklaring, men en bok som stiller spørsmålet rått. I Jobs bok er Job from og rettskaffen, men mister likevel alt: barna, eiendommen og helsa. Tre venner hevder at han må ha fortjent det. Til slutt svarer Gud, men forklarer ingenting. Han peker på avstanden mellom skaperen og det skapte, og Job trekker anklagene tilbake. Etter Holocaust leste jødiske tenkere som Martin Buber og Elie Wiesel boka på nytt, hver på sin måte. Les mer om [de sentrale trekkene i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+      "content": "Jødedommen har ingen ferdig forklaring, men en bok som stiller spørsmålet helt uten pynt. I Jobs bok er Job et godt menneske som gjør alt riktig, og likevel mister han alt: barna, eiendommen og helsa. Tre venner påstår at han må ha fortjent det. Til slutt svarer Gud, men han forklarer ingenting. Han sier bare at avstanden mellom den som skapte verden og den som er skapt, er for stor. Da tar Job anklagene tilbake. Etter Holocaust leste jødiske tenkere som Martin Buber og Elie Wiesel boka på nytt, hver på sin måte. Les mer om [de sentrale trekkene i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
     },
     {
       "type": "text",
-      "content": "I kristendommen er dette et hovedproblem. Det vanligste svaret handler om frihet: mennesket er skapt i Guds bilde, og Gud begrenset sin egen makt ved å gi mennesket fri vilje og ansvar. Et annet svar er at lidelsen blir gjort opp for etter døden. Samtidig sier kristen teologi selv at den ikke har noen løsning. Nyere teologi legger derfor mindre vekt på å forklare og mer på at Gud er til stede hos den som lider."
+      "content": "I kristendommen er dette et av de største problemene. Det vanligste svaret handler om frihet: mennesket er skapt i Guds bilde, og Gud gav fra seg litt av sin egen makt da han lot mennesket velge selv. Et annet svar er at alt blir gjort opp etter døden. Samtidig innrømmer kristne lærde selv at de ikke har noen løsning. Derfor er mange i dag mindre opptatt av å forklare, og mer opptatt av at Gud er hos den som har det vondt."
     },
     {
       "type": "text",
-      "content": "Islam holder fast på to ting samtidig: Gud er allmektig, og Gud er allkjærlig. Koranen sier at mennesket blir satt på prøve med frykt, sult og tap, og lover godt nytt til dem som holder ut. Lidelsen er altså ikke et bevis mot Gud, men noe som hører livet til før dommens dag. Hvor mye mennesket velger selv, ble en stridssak tidlig i islams historie. Koranen avgjør den ikke, og de lærde holdt fast på begge deler: mennesket står til ansvar, og Gud har makten over alt."
+      "content": "Islam holder fast på to ting på én gang: Gud kan alt, og Gud er full av kjærlighet. Koranen sier at mennesket blir satt på prøve med frykt, sult og tap, og lover gode nyheter til dem som holder ut. Lidelsen er altså ikke et bevis på at Gud ikke finnes. Den hører livet til fram til dommens dag. Hvor mye mennesket egentlig velger selv, ble det strid om tidlig i islams historie. Koranen avgjør det ikke, og de lærde ble stående med begge deler: mennesket har ansvar, og Gud har makten over alt."
     },
     {
       "type": "header",
@@ -316,19 +316,19 @@
     },
     {
       "type": "text",
-      "content": "I de indiske tradisjonene ser problemet annerledes ut, fordi premisset er et annet. Mye av lidelsen forklares med karma. Ordet betyr handling, og læren sier at handlinger har en innebygd kraft som før eller siden gir tilsvarende følger, i dette livet eller et senere. Da trengs ingen dommer som deler ut straff, og dermed ingen som må forsvares. Samsara er kretsløpet av fødsel, død og gjenfødsel, og målet er å komme ut av det."
+      "content": "I de indiske tradisjonene ser problemet helt annerledes ut, fordi de starter et annet sted. Mye av lidelsen forklares med karma. Ordet betyr handling, og tanken er at alt du gjør, før eller siden slår tilbake på deg selv, enten i dette livet eller i et senere. Da trengs ingen dommer som deler ut straff, og dermed er det heller ingen som må forsvares. Samsara er kretsløpet av fødsel, død og ny fødsel, og målet er å komme seg ut av det."
     },
     {
       "type": "text",
-      "content": "Karma kan lett leses som at den som lider, har fortjent det. Mange innenfor tradisjonene avviser den lesningen. Ingen kan vite hva et annet menneske gjorde i et tidligere liv, og karma er ingen låst dom: i hinduismen regnes ritualer og pilegrimsreiser for å rense bort dårlig karma, og i noen buddhistiske retninger kan god karma overføres til andre. Mennesket har alltid et valg."
+      "content": "Karma kan lett forstås som at den som har det vondt, har fortjent det. Mange i disse tradisjonene sier tydelig nei til den forståelsen. Ingen kan vite hva et annet menneske gjorde i et tidligere liv, og karma er ingen dom som er låst: i hinduismen mener mange at ritualer og pilegrimsreiser kan vaske bort dårlig karma, og i noen buddhistiske retninger kan god karma gis videre til andre. Mennesket kan alltid velge."
     },
     {
       "type": "text",
-      "content": "Buddhismen snur hele oppgaven. De fire edle sannhetene begynner med at alt er lidelse, alt er forgjengelig og ingenting har et evig vesen. Lidelsen er utgangspunktet, ikke noe som må bortforklares. Den andre sier hvor den kommer fra, nemlig begjæret, den tredje at den kan ta slutt, og den fjerde peker på veien dit. Ingen gud nevnes. Les om [de sentrale trekkene i buddhismen](/krle/religion/buddhisme/sentrale-trekk)."
+      "content": "Buddhismen snur hele oppgaven på hodet. De fire edle sannhetene starter med at livet gjør vondt, at alt tar slutt, og at ingenting varer evig. Lidelsen er altså utgangspunktet, ikke noe som må bortforklares. Den andre sannheten sier hvor lidelsen kommer fra: at vi hele tiden vil ha mer. Den tredje sier at den kan ta slutt, og den fjerde viser veien dit. Ingen gud nevnes med et ord. Les om [de sentrale trekkene i buddhismen](/krle/religion/buddhisme/sentrale-trekk)."
     },
     {
       "type": "text",
-      "content": "Sikhismen ligger mellom gruppene. Den har én Gud som er evig, allvitende og allmektig, men overtok også karma og gjenfødsel fra hinduismen. Mennesket er bundet av begjær, egoisme og uvitenhet, og det holder det fast i kretsløpet. Utveien er ikke å forklare lidelsen, men å leve i tråd med Guds vilje, hukam, og få del i Guds nåde."
+      "content": "Sikhismen ligger mellom de to gruppene. Den har én Gud som alltid har vært til, vet alt og kan alt, men den tok også med seg karma og gjenfødsel fra hinduismen. Mennesket er bundet av lyster, egoisme og uvitenhet, og det er dette som holder det fast i kretsløpet. Veien ut går ikke gjennom å forklare lidelsen, men gjennom å leve slik Gud vil, kalt hukam, og få del i Guds nåde."
     },
     {
       "type": "header",
@@ -336,15 +336,15 @@
     },
     {
       "type": "text",
-      "content": "De tre nyeste settes ofte i samme gruppe, men det er en forenkling: bahá'í vokste fram i sjia-islam, de to andre ut av kristendommen. Ingen av dem teller mer enn rundt femten millioner medlemmer, mot milliarder i kristendom og islam. Og de svarer svært ulikt."
+      "content": "De tre nyeste blir ofte satt i samme gruppe, men det blir litt for enkelt: bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen. Ingen av dem har mer enn rundt femten millioner medlemmer, mot milliarder i kristendom og islam. Og de svarer svært ulikt."
     },
     {
       "type": "text",
-      "content": "Bahá'í nekter for at det vonde finnes som noe eget. 'Abdu'l-Bahá skriver at alt Gud skapte, skapte han godt, og at det vonde er fravær av det gode, slik mørke er fravær av lys. Mormonismen svarer motsatt: uten en motsetning i alle ting finnes verken godt eller vondt, verken glede eller sorg, står det i Mormons bok. Boka sier videre at Adam falt for at menneskene skulle bli til, og at menneskene er til for at de skal ha glede."
+      "content": "Bahá'í mener at det vonde ikke finnes som noe eget i det hele tatt. 'Abdu'l-Bahá skriver at alt Gud skapte, skapte han godt, og at det vonde bare er mangel på det gode, akkurat som mørke bare er mangel på lys. Mormonismen svarer stikk motsatt: uten motsetninger finnes verken godt eller vondt, verken glede eller sorg, står det i Mormons bok. Videre står det at Adam måtte falle for at menneskene skulle bli til, og at menneskene er til for å ha det godt."
     },
     {
       "type": "text",
-      "content": "Jehovas vitner flytter skylden bort fra Gud. Lidelse var aldri en del av Guds hensikt: Jakobs brev sier at Gud verken fristes av det onde eller frister noen. Læren deres er at lidelsen kom da de første menneskene gjorde opprør og satte sine egne mål for godt og vondt, at Satan er verdens usynlige hersker fram til Harmageddon, og at jorda deretter skal bli et paradis. Hvor strengt den enkelte følger læren, varierer i alle tre bevegelsene."
+      "content": "Jehovas vitner flytter skylden vekk fra Gud. Lidelse var aldri noe Gud ville ha: Jakobs brev sier at Gud verken lokkes av det onde eller frister noen. De lærer at lidelsen kom da de første menneskene gjorde opprør og begynte å bestemme selv hva som var rett og galt. Videre mener de at Satan i hemmelighet styrer verden fram til det siste store slaget, Harmageddon, og at jorda etterpå skal bli et paradis. Hvor strengt den enkelte følger læren, varierer i alle tre bevegelsene."
     },
     {
       "type": "image",
@@ -363,11 +363,11 @@
     {
       "type": "list",
       "items": [
-        "De abrahamittiske må forsvare Gud. Har du én god og allmektig skaper, blir hvert jordskjelv noe han kunne ha stanset.",
-        "De indiske trenger ikke det forsvaret. Karma forklarer lidelse uten at noen gud må stilles til ansvar.",
-        "Sikhismen viser at grensa ikke er skarp: den har både allmektig Gud og karma.",
-        "To slags svar krysser gruppene: noen forklarer hvorfor lidelsen finnes, andre hva du skal gjøre med den.",
-        "Ingen svar er ferdige. Kristendommen mangler en løsning, Gud gir Job ingen forklaring, og Koranen avgjør ikke striden om fri vilje."
+        "De abrahamittiske religionene må forsvare Gud. Har du én god skaper som kan alt, blir hvert eneste jordskjelv noe han kunne ha stoppet.",
+        "De indiske religionene slipper det forsvaret. Karma forklarer lidelsen uten at noen gud må stå til ansvar.",
+        "Sikhismen viser at grensa ikke er skarp: den har både en Gud som kan alt, og karma.",
+        "To slags svar går på tvers av gruppene: noen forklarer hvorfor lidelsen finnes, andre hva du skal gjøre med den.",
+        "Ingen av svarene er ferdige. Kristendommen mangler en løsning, Gud gir Job ingen forklaring, og Koranen avgjør ikke striden om hvor fritt mennesket velger."
       ]
     },
     {
@@ -380,11 +380,11 @@
     },
     {
       "type": "text",
-      "content": "Samisk religion stiller ikke spørsmålet som et filosofisk problem. Verdensbildet er animistisk: ting i naturen er besjelet, og verden har flere lag, blant annet dødsriket Jábmiid áibmu og paradiset Sáivu. Blir noen syk eller rammet av ulykke, er svaret å handle. Noaiden, den rituelle eksperten, kunne søke råd hos gudene eller de døde og helbrede den syke. Ofring hørte til dagliglivet."
+      "content": "Samisk religion behandler ikke dette som et filosofisk problem. Her lever naturen: fjell, steiner og trær har sin egen kraft, og verden har flere lag, blant annet dødsriket Jábmiid áibmu og paradiset Sáivu. Blir noen syk eller rammet av ulykke, gjelder det å gjøre noe. Noaiden, altså sjamanen, kunne spørre gudene eller de døde om råd og gjøre den syke frisk. Å ofre var en helt vanlig del av hverdagen."
     },
     {
       "type": "text",
-      "content": "Her hører også en annen slags lidelse hjemme. Kristne misjonærer samlet inn og brente runebommene, og fra rundt 1850 skulle norsk fornorskingspolitikk gjøre samer til nordmenn. Kong Olav V ba om unnskyldning i 1989, kong Harald V i 1997 og statsminister Kjell Magne Bondevik i nyttårstalen for 1999. Spørsmålet er ikke bare hvorfor det vonde finnes, men hva som skjer med et folks tro når den blir forbudt. Mange samer bærer tradisjonen videre i språk, joik og stedsnavn."
+      "content": "Her hører også en annen slags lidelse hjemme. Kristne misjonærer samlet inn og brente runebommene, og fra rundt 1850 førte Norge en politikk som skulle gjøre samer om til nordmenn. Kong Olav V ba om unnskyldning i 1989, kong Harald V i 1997 og statsminister Kjell Magne Bondevik i nyttårstalen for 1999. Spørsmålet er ikke bare hvorfor det vonde finnes, men hva som skjer med et folks tro når den blir forbudt. Mange samer bærer tradisjonen videre i språk, joik og stedsnavn."
     },
     {
       "type": "image",
@@ -398,7 +398,7 @@
     },
     {
       "type": "text",
-      "content": "Livssynshumanismen avviser overnaturlige forklaringer på virkeligheten. Da faller spørsmålet bort: finnes det ingen gud, er det ingen å forsvare. Et jordskjelv er geologi, ikke en beskjed. Mennesket er fritt, står til ansvar for valgene sine og gir livet mening selv. Lidelsen skal ikke forklares, men bekjempes her."
+      "content": "Livssynshumanister tror ikke på noe overnaturlig. Da forsvinner hele spørsmålet: finnes det ingen gud, er det ingen å forsvare heller. Et jordskjelv er geologi, ikke en beskjed fra noen. Mennesket er fritt, har ansvar for valgene sine og gir livet mening selv. Lidelsen skal ikke forklares. Den skal bekjempes, her og nå."
     },
     {
       "type": "component",
@@ -420,8 +420,8 @@
         ],
         "reflekter": [
           "Frihetssvaret sier at Gud ga mennesket frihet til å gjøre galt. Hva er styrken og svakheten ved det svaret når det gjelder et jordskjelv?",
-          "Karma kan leses som at den som lider har fortjent det. Hvorfor avviser mange innenfor tradisjonene den lesningen?",
-          "Bahá'í sier at det vonde er fravær av det gode, mormonismen at motsetningen må være der. Hvilket av svarene er lettest å bruke i praksis, og hvorfor?",
+          "Karma kan forstås som at den som lider, har fortjent det. Hvorfor sier mange i disse tradisjonene nei til den forståelsen?",
+          "Bahá'í sier at det vonde bare er mangel på det gode. Mormonismen sier at motsetningen må være der. Hvilket av svarene er lettest å bruke i hverdagen, og hvorfor?",
           "Buddhismen svarer ikke på hvorfor lidelsen finnes, men på hvordan den kan opphøre. Er det et svik mot spørsmålet, eller en annen måte å ta det på alvor?"
         ],
         "gaaVidere": [
@@ -462,7 +462,7 @@
             "question": "Hvorfor sier vi at buddhismen begynner et annet sted enn de abrahamittiske religionene?",
             "options": [
               "Fordi den mener lidelsen ikke finnes",
-              "Fordi den starter med lidelsen som premiss og spør hvordan den kan opphøre",
+              "Fordi den starter med lidelsen og spør hvordan den kan ta slutt",
               "Fordi den mener bare noen mennesker lider",
               "Fordi den forklarer lidelsen med Satan"
             ],
@@ -474,11 +474,11 @@
             "options": [
               "At det er skapt av Gud for å prøve mennesket",
               "At det er en egen kraft som kjemper mot Gud",
-              "At det ikke finnes som noe eget, men er fravær av det gode",
+              "At det ikke finnes som noe eget, men bare er mangel på det gode",
               "At det er følgen av karma fra tidligere liv"
             ],
             "correctAnswer": 2,
-            "explanation": "'Abdu'l-Bahá sammenligner det med mørke, som ikke er noe i seg selv, men fravær av lys. Alt Gud skapte, skapte han godt."
+            "explanation": "'Abdu'l-Bahá sammenligner det med mørke. Mørke er ikke noe i seg selv, det er bare mangel på lys. Alt Gud skapte, skapte han godt."
           },
           {
             "question": "Hvorfor er sikhismen vanskelig å plassere i dette temaet?",
@@ -489,7 +489,7 @@
               "Fordi den bare gjelder i India"
             ],
             "correctAnswer": 1,
-            "explanation": "Sikhismen deler premisset med de abrahamittiske religionene og med de indiske tradisjonene på én gang. Utveien er å leve i tråd med Guds vilje, hukam, og å få del i Guds nåde."
+            "explanation": "Sikhismen står med ett bein i hver leir: den har både én allmektig Gud og karma. Veien ut går gjennom å leve slik Gud vil, kalt hukam, og få del i Guds nåde."
           }
         ]
       }

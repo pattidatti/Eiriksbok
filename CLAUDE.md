@@ -23,6 +23,29 @@ Alt innhold i Eiriksbok skal være forståelig for en gjennomsnittlig 14-åring.
 - Bruk alltid korrekte norske tegn: **å, ø, æ** - aldri aa, oe, ae som erstatning.
 - Test deg selv: Ville en 14-åring forstått dette uten hjelp? Hvis ikke - skriv om.
 
+### Skriv for 14-åringen, ikke for kollegaen din
+
+Den vanligste svakheten i tekstene våre er ikke faktafeil, men voksen essayist-stemme: korte,
+tettpakkede setninger som høres skarpe ut for en voksen, men som ikke gir eleven noe bilde.
+Fire feiltyper går igjen:
+
+1. **Fortettet metafor uten dekning.** «Men døden eier tradisjonen.» «En plikt bytter eier.»
+   «Sikhismen bruker samme grep rundt noe annet.» Eleven må gjette hva som faktisk skjer.
+   Skriv hva som skjer i klartekst først. Bildet kan komme etterpå, men bare hvis det gjør
+   noe klarere.
+2. **Fremmedord der hverdagsordet holder.** motsats, resitere, nøktern, obligatorisk,
+   ensartet, forpliktet, tilskrives, opphav, praksis, forestilling. Velg det korteste ordet
+   som gir riktig mening.
+3. **Fagbegrep uten forklaring i samme setning.** Skriver du samskara, minjan, qibla,
+   kremasjon, sakrament eller besegling, må forklaringen stå der og da - ikke i en ordliste
+   eleven ikke åpner.
+4. **Abstrakt substantiv der en handling hører hjemme.** «Det religiøse innslaget er kort»
+   → «selve seremonien er kort». «Riten ble regnet som nødvendig for de tre øverste
+   varna-gruppene» → «bare gutter fra de tre øverste lagene i samfunnet fikk lov».
+
+Testen: les setningen høyt og spør *hva ser en 14-åring for seg her?* Får du ikke et bilde,
+skriv om. En setning som er upresis men forstått, slår en setning som er elegant men ubrukelig.
+
 ---
 
 ## Tech Stack

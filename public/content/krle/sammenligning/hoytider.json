@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "content": "Elleve dager i året blir en hel måned på tre år, og en hel årstid på ni. Derfor finnes det bare tre løsninger. La månen bestemme alene, og godta at høytidene vandrer. La sola bestemme alene, og godta at månedene mister kontakten med månen. Eller bruk begge, og skyt inn en ekstra måned innimellom. Den tredje typen kalles lunisolar, altså en måne-og-sol-kalender. Hvordan høytidene feires i Norge, står i [Høytider: Hvor kommer fridagene fra?](/krle/religion-og-kultur/hoytider-og-kultur). Her handler det om hvorfor datoene havner der de havner."
+            "content": "Elleve dager i året blir en hel måned på tre år, og en hel årstid på ni. Derfor finnes det bare tre løsninger. Du kan la månen bestemme alene, og leve med at høytidene flytter seg. Du kan la sola bestemme alene, og leve med at månedene mister kontakten med månen. Eller du kan bruke begge, og legge inn en ekstra måned innimellom. Den siste typen kalles en måne-og-sol-kalender. Hvordan høytidene feires i Norge, står i [Høytider: Hvor kommer fridagene fra?](/krle/religion-og-kultur/hoytider-og-kultur). Her handler det om hvorfor datoene havner der de havner."
         },
         {
             "type": "image",
@@ -299,7 +299,7 @@
                             {
                                 "navn": "Vaisakhi",
                                 "dag": 102,
-                                "tekst": "Khalsa ble innstiftet i 1699."
+                                "tekst": "Fellesskapet khalsa ble opprettet i 1699."
                             },
                             {
                                 "navn": "Bandi chor divas",
@@ -391,15 +391,15 @@
         },
         {
             "type": "text",
-            "content": "Islam bruker bare månen. Tolv månemåneder går fra nymåne til nymåne, og ingenting korrigeres mot sola. År 1 er 622 evt., året profeten Muhammad flyttet fra Mekka til Medina (Ringnes mfl., 2026b). Hele kalenderen skyves ti eller elleve dager bakover hvert år. Ramadan er den niende måneden, og fasten varer fra daggry til solnedgang. Når måneden vandrer, vandrer fastedagen med: kort og mørk om vinteren, svært lang om sommeren (Vogt, 2025). Det tar rundt 33 år før ramadan har vært innom hele året. Id al-fitr avslutter fasten, men datoen er ikke lik overalt: noen ser etter månen, andre regner den ut på forhånd (Vogt & Eggen, 2026)."
+            "content": "Islam bruker bare månen. Tolv måneder går fra nymåne til nymåne, og ingenting justeres etter sola. År 1 er år 622, året profeten Muhammad flyttet fra Mekka til Medina (Ringnes mfl., 2026b). Hele kalenderen skyves ti eller elleve dager bakover hvert eneste år. Ramadan er den niende måneden, og fasten varer fra daggry til solnedgang. Når måneden vandrer, vandrer fastedagen med: kort og mørk om vinteren, svært lang om sommeren (Vogt, 2025). Det tar rundt 33 år før ramadan har vært innom hele året. Id al-fitr avslutter fasten, men datoen er ikke lik overalt: noen ser etter månen, andre regner den ut på forhånd (Vogt & Eggen, 2026)."
         },
         {
             "type": "text",
-            "content": "Jødedommen valgte kompromisset. Året er også her 354 dager, men sju ganger i hver nittenårsperiode legges det inn en hel ekstra måned om våren: adar sheni, den andre adar (Groth, 2025). Systemet ble satt i fast form av rabbi Hillel 2. i år 358. Resultatet er en kalender som sklir og retter seg opp igjen. Hanukka faller i måneden kislev og havner derfor i november eller desember, aldri i juli (Groth, 2026). Datoen skifter, men årstiden gjør det aldri."
+            "content": "Jødedommen valgte midtveien. Året er også her 354 dager, men sju ganger i løpet av nitten år legges det inn en hel ekstra måned om våren, kalt adar sheni, den andre adar (Groth, 2025). Rabbi Hillel 2. satte systemet i fast form i år 358. Resultatet er en kalender som sklir litt ut og retter seg opp igjen. Hanukka faller i måneden kislev og havner derfor i november eller desember, aldri i juli (Groth, 2026). Datoen skifter, men årstiden gjør det aldri."
         },
         {
             "type": "text",
-            "content": "Kristendommen gikk lengst mot sola, men slapp aldri månen helt. Julen ligger på 25. desember, selv om ingen vet når Jesus ble født. Datoen falt sammen med romerske fester rundt vintersolverv (Stovner mfl., 2026). Påsken er en annen historie: første søndag etter første fullmåne etter 21. mars. Prinsippet ble vedtatt på kirkemøtet i Nikea i 325, og selve regnemåten fikk sin form på 500-tallet (Stordalen mfl., 2026). Derfor kan påsken sprette over fem uker. De ortodokse kirkene bruker dessuten den eldre julianske kalenderen, og julen deres havner på det som i vår kalender er 7. januar (Stovner mfl., 2026). Påsken kom fra jødisk pesach, og de to skilte lag fordi de regnet året med hver sin kalender (Stordalen mfl., 2026)."
+            "content": "Kristendommen gikk lengst mot sola, men slapp aldri månen helt. Julen ligger på 25. desember, selv om ingen vet når Jesus faktisk ble født. Datoen falt sammen med romerske fester rundt årets korteste dag (Stovner mfl., 2026). Påsken er en helt annen historie: den er første søndag etter første fullmåne etter 21. mars. Regelen ble vedtatt på kirkemøtet i Nikea i år 325, og selve utregningen ble ferdig på 500-tallet (Stordalen mfl., 2026). Derfor kan påsken hoppe fram og tilbake over fem uker. De ortodokse kirkene bruker dessuten den eldre julianske kalenderen, og julen deres havner på det som i vår kalender er 7. januar (Stovner mfl., 2026). Påsken kom fra jødisk pesach, og de to skilte lag fordi de regnet året med hver sin kalender (Stordalen mfl., 2026)."
         },
         {
             "type": "header",
@@ -407,7 +407,7 @@
         },
         {
             "type": "text",
-            "content": "Mange hinduer følger kalendere der månen bestemmer dagen og sola holder årstiden på plass. Det gir samme mønster som i jødedommen: fast årstid, skiftende dato. Holi feires om våren i Nord-India, med farget pulver og vann (Eskild, 2026). Divali, lysfesten, faller i oktober eller november (Jacobsen, 2025). Hinduismen er samtidig den tradisjonen der det er vanskeligst å si noe som gjelder alle, for feiringene varierer sterkt fra landsdel til landsdel. Divali er heller ikke bare hinduistisk: sikher markerer den som bandi chor divas (Jacobsen, 2025)."
+            "content": "Mange hinduer følger kalendere der månen bestemmer dagen og sola holder årstiden på plass. Det gir samme mønster som i jødedommen: fast årstid, skiftende dato. Holi feires om våren i Nord-India, med farget pulver og vann (Eskild, 2026). Divali, lysfesten, faller i oktober eller november (Jacobsen, 2025). Hinduismen er samtidig den tradisjonen der det er vanskeligst å si noe som gjelder alle, for feiringene er svært ulike fra sted til sted i India. Divali er heller ikke bare hinduistisk: sikher markerer den som bandi chor divas (Jacobsen, 2025)."
         },
         {
             "type": "text",
@@ -415,7 +415,7 @@
         },
         {
             "type": "text",
-            "content": "Sikhismen bruker begge deler. Den viktigste dagen er vaisakhi, som regel 13. april, en fast dato i solkalenderen. Da markerer sikher at Guru Gobind Singh innstiftet khalsa i 1699. Gurpurb-dagene, minnedagene for gurenes fødsel og død, skifter derimot dato: Guru Nanaks fødselsdag ligger som regel i november, Guru Gobind Singhs i desember eller januar. Da leses hele Guru Granth Sahib høyt uten opphold i omtrent 48 timer (Gale, 2018; Kristiansen mfl., 2026)."
+            "content": "Sikhismen bruker begge deler. Den viktigste dagen er vaisakhi, som regel 13. april, en fast dato i solkalenderen. Da feirer sikhene at Guru Gobind Singh opprettet fellesskapet khalsa i 1699. Minnedagene for guruenes fødsel og død, kalt gurpurb, flytter seg derimot: Guru Nanaks fødselsdag ligger som regel i november, Guru Gobind Singhs i desember eller januar. Da leses hele Guru Granth Sahib høyt uten opphold i omtrent 48 timer (Gale, 2018; Kristiansen mfl., 2026)."
         },
         {
             "type": "header",
@@ -423,15 +423,15 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í, mormonismen og Jehovas vitner samles ofte i én gruppe. Det er en forenkling, for bahá'í vokste ut av sjia-islam, mens de to andre vokste ut av kristendommen. De er også langt mindre enn tradisjonene som teller milliarder. En ung bevegelse må bestemme noe de eldre avgjorde for lenge siden: skal vi lage vår egen kalender, eller låne en?"
+            "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte slått sammen til én gruppe. Det blir litt for enkelt, for bahá'í vokste fram fra sjia-islam, mens de to andre kom fra kristendommen. De er også mye mindre enn religionene som teller milliarder. En ung bevegelse må ta et valg de eldre tok for lenge siden: skal vi lage vår egen kalender, eller låne en?"
         },
         {
             "type": "text",
-            "content": "Bahá'í-troen laget sin egen solkalender. Året deles i nitten måneder på nitten dager, og hver nittende dag samles menigheten til en nittendagersfest (Vogt & Winje, 2026). Nitten ganger nitten blir 361, altså fire dager for lite, så det settes inn noen mellomdager. Fasten begynner når mellomdagene er over, og slutter med nyttårsfesten Naw-Rúz (Bahá'u'lláh, u.å.)."
+            "content": "Bahá'í laget sin egen solkalender. Året deles i nitten måneder på nitten dager hver, og hver nittende dag samles menigheten til fest (Vogt & Winje, 2026). Nitten ganger nitten blir 361, altså fire dager for lite, så de legger inn noen ekstra dager. Fasten begynner når mellomdagene er over, og slutter med nyttårsfesten Naw-Rúz (Bahá'u'lláh, u.å.)."
         },
         {
             "type": "text",
-            "content": "Jesu Kristi Kirke av Siste Dagers Hellige lagde ingen egen tidsregning. Kirkens egen markering ligger fast i den vanlige kalenderen: generalkonferansen holdes første helg i april og første helg i oktober (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Jehovas vitner gjør noe tredje. De markerer verken jul eller bursdager, fordi de mener slike feiringer ikke står i Bibelen. Men de har én markering i året: minnehøytiden, et minnemåltid for Jesu død, den 14. nisan i den jødiske kalenderen (Ringnes, H. K., mfl., 2026). En bevegelse som ikke feirer jul, henter altså sin eneste dato fra en eldgammel måne-og-sol-kalender."
+            "content": "Jesu Kristi Kirke av Siste Dagers Hellige lagde ingen egen kalender. Deres viktigste samling ligger fast i den vanlige kalenderen: den store fellesmøtet holdes første helg i april og første helg i oktober (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Jehovas vitner gjør noe helt tredje. De feirer verken jul eller bursdager, fordi de mener slike feiringer ikke står i Bibelen. Men de har én dag i året: minnehøytiden, et måltid til minne om at Jesus døde. Den holdes 14. nisan i den jødiske kalenderen (Ringnes, H. K., mfl., 2026). En bevegelse som ikke feirer jul, henter altså sin eneste dato fra en eldgammel måne-og-sol-kalender."
         },
         {
             "type": "image",
@@ -445,16 +445,16 @@
         },
         {
             "type": "text",
-            "content": "Sett de ni ved siden av hverandre, og det er ikke troen som skiller dem i årshjulet. Det er regnestykket: hva gjør du med de elleve dagene?"
+            "content": "Sett de ni ved siden av hverandre. Det er ikke troen som skiller dem her. Det er regnestykket: hva gjør du med de elleve dagene?"
         },
         {
             "type": "list",
             "items": [
                 "Lar du månen bestemme alene, vandrer høytiden gjennom hele året. Derfor kan ramadan falle både i juli og i desember.",
-                "Lar du sola bestemme alene, står datoen bom fast. Det gjør julen, generalkonferansen og bahá'í-kalenderen.",
-                "Bruker du begge, sklir datoen fram og tilbake, men aldri ut av årstiden. Det gjør jødedommen, mange hinduer, vesak og minnehøytiden.",
+                "Lar du sola bestemme alene, står datoen helt fast. Slik er det med julen, mormonenes fellesmøte og bahá'í-kalenderen.",
+                "Bruker du begge, flytter datoen seg fram og tilbake, men aldri ut av årstiden. Slik er det i jødedommen, hos mange hinduer, og med vesak og minnehøytiden.",
                 "Ingen holder seg helt til ett system. Kristendommen er en solkalender som fortsatt spør månen om påsken.",
-                "En vandrende høytid er ikke mer unøyaktig enn en fast. Den er bygget for å følge månen, og gjør nøyaktig det.",
+                "En høytid som flytter seg, er ikke mer unøyaktig enn en fast. Den er laget for å følge månen, og gjør nøyaktig det.",
                 "Flere av kalenderne har en lysfest i den mørke delen av året. Hanukka, divali og julen ligner mer på hverandre i innhold enn i dato."
             ]
         },
@@ -464,7 +464,7 @@
         },
         {
             "type": "text",
-            "content": "I nord finnes en fjerde måte å dele året på, og den teller verken måner eller soldøgn. Reindriftsåret deles i åtte årstider, og samer ble fra gammelt av kalt de åtte årstiders folk fordi de flyttet med reinen (Ravna mfl., 2026). Året er ikke et tall, men et arbeid: kalvingen, sommerbeitet, brunsten, den mørke vinteren. I samisk religiøs tradisjon ble solguden kalt Beaivi, som også er det samiske ordet for sol (Løøv mfl., 2026). De åtte årstidene er ikke fortid. Mange samer bruker dem fortsatt, og de minner om at et år kan deles etter det som skjer."
+            "content": "I nord finnes en fjerde måte å dele året på, og den teller verken måner eller soldøgn. Året i reindrifta deles i åtte årstider, og samene ble fra gammelt av kalt de åtte årstiders folk fordi de flyttet med reinen (Ravna mfl., 2026). Året er ikke et tall, men en rekke arbeidsoppgaver: kalvingen, sommerbeitet, paringstiden, den mørke vinteren. I samisk religiøs tradisjon ble solguden kalt Beaivi, som også er det samiske ordet for sol (Løøv mfl., 2026). De åtte årstidene er ikke fortid. Mange samer bruker dem fortsatt, og de minner om at et år kan deles etter det som skjer."
         },
         {
             "type": "component",

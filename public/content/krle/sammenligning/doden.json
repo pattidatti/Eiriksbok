@@ -47,7 +47,7 @@
         {
             "id": "moksha",
             "term": "Moksha",
-            "definition": "Frigjøringen fra gjenfødsel. Frihet fra individualitet, materie, tid og forgjengelighet."
+            "definition": "Å komme fri fra gjenfødelsen. Du slutter å være et eget jeg, og blir fri fra kroppen og fra tiden."
         },
         {
             "id": "oppstandelse",
@@ -61,7 +61,7 @@
     "content": [
         {
             "type": "text",
-            "content": "En muslim gravlegges helst innen ett døgn, svøpt i hvitt, vendt mot Mekka. En hindu brennes helst samme dag, og asken legges i rennende vann. Begge har hastverk, men av stikk motsatte grunner. Den ene kroppen skal ligge klar til dommens dag. Den andre var bare et sted sjelen bodde en stund."
+            "content": "En muslim blir helst begravet innen ett døgn, svøpt i hvitt og vendt mot Mekka. En hindu blir helst brent samme dag, og asken legges i rennende vann. Begge har det travelt, men av stikk motsatte grunner. Den ene kroppen skal ligge klar til dommens dag. Den andre var bare et sted sjelen bodde en stund."
         },
         {
             "type": "header",
@@ -69,11 +69,11 @@
         },
         {
             "type": "text",
-            "content": "Ingen religion kommer utenom døden. Fagordet for svarene er eskatologi, altså læren om de siste ting: verdens ende, og hva som skjer med det enkelte mennesket etterpå (Kværne og Sky, 2025). Én ting bør sies straks: ingen av svarene kan etterprøves. Det vi kan gjøre, er å beskrive hva hver tradisjon selv mener."
+            "content": "Ingen religion kommer utenom døden. Fagordet for svarene er eskatologi, som betyr læren om det som skjer helt til slutt: verdens ende, og hva som skjer med hvert enkelt menneske etterpå (Kværne og Sky, 2025). Én ting må sies med en gang: ingen av svarene kan bevises eller motbevises. Det vi kan gjøre, er å beskrive hva hver tradisjon selv mener."
         },
         {
             "type": "text",
-            "content": "Da dukker det opp et mønster. Formen på etterlivet følger formen på tiden. Er tiden en rett linje, ender livet i et oppgjør og en tilstand som varer evig. Går tiden i ring, slutter ingenting av seg selv, og spørsmålet blir ikke hvor du havner, men hvordan du kommer ut. Prøv begge formene i kartet under."
+            "content": "Da dukker det opp et mønster. Hva folk tror om livet etter døden, henger sammen med hvordan de tenker om tiden. Tenker du at tiden går i en rett linje, ender livet i et oppgjør, og så kommer noe som varer for alltid. Tenker du at tiden går i ring, slutter ingenting av seg selv. Da blir spørsmålet ikke hvor du havner, men hvordan du kommer deg ut. Prøv begge formene i kartet under."
         },
         {
             "type": "image",
@@ -87,7 +87,7 @@
             "props": {
                 "title": "Etterlivskartet",
                 "intro": "To former for det som kommer etter døden. Klikk deg gjennom punktene, og bytt tradisjon for å se hvordan den samme formen fylles ulikt.",
-                "footnote": "Den ene veien ender. Den andre gjør det ikke, og derfor ligger utgangen utenfor ringen.",
+                "footnote": "Den ene veien tar slutt. Den andre gjør det ikke, og derfor ligger utgangen utenfor ringen.",
                 "paths": [
                     {
                         "id": "linje",
@@ -98,7 +98,7 @@
                             {
                                 "id": "doden",
                                 "label": "Døden",
-                                "text": "Livet slutter én gang. Kroppen legges som regel i jorda, og flere av tradisjonene her tillater ikke kremasjon."
+                                "text": "Livet slutter én gang. Kroppen legges som regel i jorda, og flere av tradisjonene her forbyr at den brennes."
                             },
                             {
                                 "id": "ventetid",
@@ -108,12 +108,12 @@
                             {
                                 "id": "dommen",
                                 "label": "Dommen",
-                                "text": "Gud holder dom over gode og onde. Forestillingen om et slikt endelig oppgjør møter vi først i den iranske religionen zoroastrismen, og senere i jødedom, kristendom og islam."
+                                "text": "Gud dømmer mellom gode og onde. Tanken om et slikt siste oppgjør møter vi først i den iranske religionen zoroastrismen, og siden i jødedom, kristendom og islam."
                             },
                             {
                                 "id": "evig",
                                 "label": "Evig tilstand",
-                                "text": "Etter dommen kommer noe som ikke tar slutt. Paradis er et navn flere av tradisjonene bruker, men de beskriver innholdet ulikt."
+                                "text": "Etter dommen kommer noe som aldri tar slutt. Paradis er et navn flere av tradisjonene bruker, men de beskriver det ulikt."
                             }
                         ],
                         "traditions": [
@@ -123,10 +123,10 @@
                                 "color": "#3b82f6",
                                 "group": "Abrahamittiske røtter",
                                 "notes": {
-                                    "doden": "Begravelsen skjer helst innen ett døgn, i enkel trekiste, og likklærne er like for alle.",
-                                    "ventetid": "Jødisk tradisjon lærer at sjelen lever videre, og at døden er en overgang fra den materielle verden til den neste.",
-                                    "dommen": "Rabbinsk jødedom har ingen fast lære om de siste ting. Flere syn står side om side.",
-                                    "evig": "Olam ha-ba, den kommende verden, er navnet på håpet."
+                                    "doden": "Begravelsen skjer helst innen ett døgn, i en enkel trekiste, og klærne den døde svøpes i, er like for alle.",
+                                    "ventetid": "Jødisk tradisjon lærer at sjelen lever videre, og at døden bare er en overgang fra denne verden til den neste.",
+                                    "dommen": "Jødedommen har ingen fast lære om hva som skjer helt til slutt. Flere ulike syn får stå side om side.",
+                                    "evig": "Håpet har et navn: olam ha-ba, verden som kommer."
                                 }
                             },
                             {
@@ -136,9 +136,9 @@
                                 "group": "Abrahamittiske røtter",
                                 "notes": {
                                     "doden": "Ved graven sier presten at av jord er du kommet, til jord skal du bli, av jord skal du igjen oppstå.",
-                                    "ventetid": "I middelalderen vokste læren om skjærsilden fram, en renselse på veien.",
+                                    "ventetid": "I middelalderen vokste tanken om skjærsilden fram, et sted der sjelen renses på veien.",
                                     "dommen": "Jesus regnes som den som skal dømme alle mennesker.",
-                                    "evig": "Oppstandelsen er en av de mest sentrale trosforestillingene, og hele religionen hviler på troen på at Jesus stod opp."
+                                    "evig": "At de døde skal stå opp igjen, er en av de viktigste tankene i kristendommen, og hele religionen bygger på at Jesus selv stod opp."
                                 }
                             },
                             {
@@ -147,10 +147,10 @@
                                 "color": "#10b981",
                                 "group": "Abrahamittiske røtter",
                                 "notes": {
-                                    "doden": "Den døde vaskes, svøpes i hvitt tøy og gravlegges vendt mot Mekka. Kremasjon er ikke tillatt.",
+                                    "doden": "Den døde vaskes, svøpes i hvitt tøy og begraves vendt mot Mekka. Kroppen skal ikke brennes.",
                                     "ventetid": "Dommens dag har ikke kommet ennå. De døde venter på den.",
-                                    "dommen": "Dommedag regnes som en grunnleggende sannhet, og mange kapitler i Koranen handler om den.",
-                                    "evig": "Muslimsk teologi legger vekt på at Gud setter kroppene sammen igjen på dommens dag."
+                                    "dommen": "Dommedag er en av de mest grunnleggende sannhetene, og mange kapitler i Koranen handler om den.",
+                                    "evig": "Muslimske lærde legger vekt på at Gud setter kroppene sammen igjen på dommens dag."
                                 }
                             },
                             {
@@ -159,10 +159,10 @@
                                 "color": "#14b8a6",
                                 "group": "Nyere bevegelser",
                                 "notes": {
-                                    "doden": "Den døde skal gravlegges, ikke brennes, og ikke fraktes lenger enn én times reise fra byen der personen døde. De som var 15 år eller eldre, får en ring på fingeren.",
-                                    "ventetid": "Sjelen skilles fra kroppen og fortsetter å utvikle seg. Bønnen for de døde er den eneste bønnen bahá'íer ber sammen.",
-                                    "dommen": "Dommedag har mindre plass her enn i jødedom, kristendom og islam. Gjenfødelse hører heller ikke hjemme i troen.",
-                                    "evig": "Verken paradis eller helvete regnes som fysiske steder. Ordene leses som bilder på hvor nær Gud et menneske er."
+                                    "doden": "Den døde skal begraves og ikke brennes, og kroppen skal ikke fraktes lenger enn én times reise fra byen der personen døde. De som var 15 år eller eldre, får en ring på fingeren.",
+                                    "ventetid": "Sjelen løsner fra kroppen og fortsetter å utvikle seg. Bønnen for de døde er den eneste bønnen bahá'íer ber sammen.",
+                                    "dommen": "Dommedag betyr mindre her enn i jødedom, kristendom og islam. De tror heller ikke på gjenfødelse.",
+                                    "evig": "Verken paradis eller helvete er steder du kan reise til. Ordene er bilder på hvor nær Gud et menneske er."
                                 }
                             },
                             {
@@ -171,10 +171,10 @@
                                 "color": "#8b5cf6",
                                 "group": "Nyere bevegelser",
                                 "notes": {
-                                    "doden": "Begravelsen er nøktern. Det store løftet er allerede gitt, år i forveien, inne i et tempel.",
+                                    "doden": "Begravelsen er enkel. Det store løftet ble gitt for lenge siden, inne i et tempel.",
                                     "ventetid": "Kirken lærer at mennesket beholder retten til å velge også etter døden.",
-                                    "dommen": "Etter dommen finnes det tre riker med ulik grad av herlighet, ikke bare himmel eller helvete.",
-                                    "evig": "Ektepar og familier er beseglet for tid og all evighet, ikke bare til døden skiller dem."
+                                    "dommen": "Etter dommen finnes det tre riker, det ene finere enn det andre, ikke bare himmel eller helvete.",
+                                    "evig": "Ektepar og familier er bundet sammen for alltid, ikke bare til døden skiller dem."
                                 }
                             },
                             {
@@ -183,9 +183,9 @@
                                 "color": "#0ea5e9",
                                 "group": "Nyere bevegelser",
                                 "notes": {
-                                    "doden": "De døde er ikke ved bevissthet. Derfor holdes det ingen likvake, og ingen ber til de døde.",
-                                    "ventetid": "Årsdagen for dødsfallet markeres ikke, for de døde kan verken følge med på de levende eller påvirke dem.",
-                                    "dommen": "Læren er at Gud snart skal gjøre ende på den verdensordningen vi lever i nå. Evig pine i et brennende helvete avvises.",
+                                    "doden": "De døde merker ingenting. Derfor sitter ingen våke ved kisten, og ingen ber til de døde.",
+                                    "ventetid": "Dagen noen døde, markeres ikke, for de døde kan verken se de levende eller hjelpe dem.",
+                                    "dommen": "De lærer at Gud snart skal gjøre slutt på verden slik den er nå. At noen skal pines for alltid i et brennende helvete, tror de ikke på.",
                                     "evig": "Håpet er at de aller fleste døde får livet tilbake på en jord gjort om til et paradis, mens 144 000 skal styre med Jesus i himmelen."
                                 }
                             }
@@ -201,22 +201,22 @@
                             {
                                 "id": "doden",
                                 "label": "Døden",
-                                "text": "Kroppen dør, men det som bærer livet videre, gjør det ikke. Døden er et skifte, ikke et punktum."
+                                "text": "Kroppen dør, men det som bærer livet videre, dør ikke. Døden er et bytte, ikke et punktum."
                             },
                             {
                                 "id": "karma",
                                 "label": "Karma",
-                                "text": "Karma betyr handling og resultatet av handlinger. Gode handlinger gir en bedre neste fødsel, dårlige gir en verre. Både gudeverdener og helvetestilstander finnes, men oppholdene der er midlertidige."
+                                "text": "Karma betyr handling, og det du gjør, får følger. Gode handlinger gir en bedre neste fødsel, dårlige gir en verre. Det finnes både gudeverdener og helveter, men ingen blir der for alltid."
                             },
                             {
                                 "id": "gjenfodsel",
                                 "label": "Gjenfødsel",
-                                "text": "Når mennesket dør, driver karma gjenfødelsen videre, fordi virkningene av handlingene ennå ikke er ferdige. Dette livet er bare ett i en lang rekke."
+                                "text": "Når et menneske dør, skyver karma det videre inn i et nytt liv, fordi følgene av handlingene ikke er ferdige ennå. Dette livet er bare ett av mange."
                             },
                             {
                                 "id": "utgangen",
                                 "label": "Utgangen",
-                                "text": "Kretsløpet av fødsel, død og gjenfødsel stopper ikke av seg selv. Den eneste veien ut er frigjøring.",
+                                "text": "Kretsløpet av fødsel, død og ny fødsel stopper ikke av seg selv. Den eneste veien ut er å bli fri.",
                                 "exit": true
                             }
                         ],
@@ -227,10 +227,10 @@
                                 "color": "#ec4899",
                                 "group": "Indiske tradisjoner",
                                 "notes": {
-                                    "doden": "Kroppen kremeres, helst samme dag. Asken legges i rennende vann, helst i Ganges.",
-                                    "karma": "Karma henger tett sammen med dharma, altså plikten din. Noen hellige steder regnes som i stand til å rense dårlig karma.",
+                                    "doden": "Kroppen brennes, helst samme dag. Asken legges i rennende vann, helst i elven Ganges.",
+                                    "karma": "Karma henger tett sammen med dharma, altså pliktene dine. Noen hellige steder skal kunne vaske bort dårlig karma.",
                                     "gjenfodsel": "Mange hinduer mener sjelen først blir en ånd på vei mot forfedrenes verden. Andre mener den går rett videre til en ny fødsel.",
-                                    "utgangen": "Moksha er frihet fra individualitet og materie, fra tid og forgjengelighet, og dermed fra gjenfødelse."
+                                    "utgangen": "Moksha er å slutte å være et eget jeg. Du blir fri fra kroppen og fra tiden, og du blir ikke født på nytt."
                                 }
                             },
                             {
@@ -239,10 +239,10 @@
                                 "color": "#f59e0b",
                                 "group": "Indiske tradisjoner",
                                 "notes": {
-                                    "doden": "Kremasjon er vanligst, og det henger sammen med at Buddha selv ble kremert.",
-                                    "karma": "Her regnes karma etter hensikten bak handlingen, ikke bare handlingen i seg selv.",
-                                    "gjenfodsel": "I tibetansk tradisjon varer mellomtilstanden bardo i 49 dager. I theravada skjer gjenfødelsen med en gang.",
-                                    "utgangen": "Nirvana er lidelsens endelige opphør og frigjøring fra uvitenhet og videre gjenfødelse. Verken paradis eller ingenting."
+                                    "doden": "Som regel brennes kroppen, og det henger sammen med at Buddha selv ble brent.",
+                                    "karma": "Her teller det du mente med handlingen, ikke bare det du gjorde.",
+                                    "gjenfodsel": "I Tibet mener de at det er en mellomstopp på 49 dager som heter bardo. Theravada-buddhister mener det nye livet begynner med en gang.",
+                                    "utgangen": "I nirvana tar all lidelse slutt, og du blir ikke født på nytt. Det er verken et paradis eller ingenting."
                                 }
                             },
                             {
@@ -251,10 +251,10 @@
                                 "color": "#ff9933",
                                 "group": "Indiske tradisjoner",
                                 "notes": {
-                                    "doden": "Kroppen kremeres. Familien bygger ingen stor grav og setter ingen stein, og asken spres gjerne i rennende vann.",
-                                    "karma": "Sikhismen deler læren om karma og gjenfødelse med hinduismen. Det som holder mennesket fast, kalles haumai, altså egoismen.",
-                                    "gjenfodsel": "Kretsløpet er det samme som i de to andre, men veien ut går gjennom familie og arbeid, ikke gjennom å forlate samfunnet.",
-                                    "utgangen": "Sikhene kaller utgangen mukti. Den regnes som mulig å nå mens du fortsatt lever, og siste steg er Guds nåde."
+                                    "doden": "Kroppen brennes. Familien lager ingen stor grav og setter ingen stein, og asken spres gjerne i rennende vann.",
+                                    "karma": "Sikhene tror på karma og gjenfødelse, akkurat som hinduene. Det som holder mennesket fast i kretsløpet, kalles haumai, altså det å bare tenke på seg selv.",
+                                    "gjenfodsel": "Kretsløpet er det samme som hos de to andre, men veien ut går gjennom familie og arbeid, ikke gjennom å trekke seg vekk fra samfunnet.",
+                                    "utgangen": "Sikhene kaller utgangen mukti. Du kan nå den mens du fortsatt lever, men det siste steget må Gud gi deg."
                                 }
                             }
                         ]
@@ -268,15 +268,15 @@
         },
         {
             "type": "text",
-            "content": "Jødedom, kristendom og islam regner alle Abraham som stamfar, og de deler grunnformen: du lever ett liv, og så kommer et oppgjør. Forestillingen om at Gud skal holde dom over gode og onde, møter vi først i den iranske religionen zoroastrismen, og senere i disse tre (Leivestad, Vogt og Groth, 2026)."
+            "content": "Jødedom, kristendom og islam regner alle Abraham som stamfar, og de tenker likt om det store bildet: du lever ett liv, og så kommer et oppgjør. Tanken om at Gud skal dømme mellom gode og onde, møter vi først i den iranske religionen zoroastrismen, og siden i disse tre (Leivestad, Vogt og Groth, 2026)."
         },
         {
             "type": "text",
-            "content": "Ritene viser troen tydeligere enn læresetningene. I jødedommen skjer begravelsen helst innen ett døgn, i enkel trekiste. Jødisk tradisjon lærer at sjelen lever videre, og at døden er en overgang fra den materielle verden til den neste (Groth, 2025). Samtidig har rabbinsk jødedom ingen fast lære om de siste ting, og flere syn står side om side. Se [den enkle kisten](/krle/religion/jodedom/overgangsriter)."
+            "content": "Det folk gjør, viser troen tydeligere enn det de skriver. I jødedommen skjer begravelsen helst innen ett døgn, i en enkel trekiste. Jødisk tradisjon lærer at sjelen lever videre, og at døden bare er en overgang fra denne verden til den neste (Groth, 2025). Samtidig har jødedommen ingen fast lære om hva som skjer helt til slutt, så flere ulike syn får stå side om side. Se [den enkle kisten](/krle/religion/jodedom/overgangsriter)."
         },
         {
             "type": "text",
-            "content": "I kristendommen sier presten ved graven at av jord er du kommet, til jord skal du bli, av jord skal du igjen oppstå. Oppstandelsen er en sentral trosforestilling, og hele religionen hviler på troen på at Jesus stod opp (Endsjø, 2026). Islam venter det samme: at Gud setter kroppene sammen igjen på dommens dag. Derfor gravlegges muslimer, og kremasjon er ikke tillatt (Selhi, 2025). Alle tre bruker ordet paradis, men beskriver det ulikt (Groth, 2026). Se [de siste ordene](/krle/religion/islam/overgangsriter)."
+            "content": "I kristendommen sier presten ved graven at av jord er du kommet, til jord skal du bli, av jord skal du igjen oppstå. At de døde skal stå opp igjen, er en av de viktigste tankene i kristendommen, og hele religionen bygger på at Jesus selv stod opp (Endsjø, 2026). Islam venter det samme: at Gud setter kroppene sammen igjen på dommens dag. Derfor blir muslimer begravet, og kroppen skal ikke brennes (Selhi, 2025). Alle tre bruker ordet paradis, men de beskriver det ulikt (Groth, 2026). Se [de siste ordene](/krle/religion/islam/overgangsriter)."
         },
         {
             "type": "header",
@@ -284,19 +284,19 @@
         },
         {
             "type": "text",
-            "content": "I hinduismen, buddhismen og sikhismen ser kartet helt annerledes ut. Døden er ikke en dør ut av livet, men inn i det neste. Fagordet er samsara: gjenfødelsens verden, der individet stadig fødes, dør og fødes på nytt (Jacobsen, 2025a)."
+            "content": "I hinduismen, buddhismen og sikhismen ser kartet helt annerledes ut. Døden er ingen dør ut av livet. Den er en dør inn i det neste. Fagordet er samsara, kretsløpet der du blir født, dør og blir født på nytt, om og om igjen (Jacobsen, 2025a)."
         },
         {
             "type": "text",
-            "content": "Motoren heter karma, som betyr handling og resultatet av handlinger. Når et menneske dør, driver karma gjenfødelsen videre, fordi virkningene av handlingene ennå ikke er ferdige. Gode handlinger gir en bedre neste fødsel, dårlige gir en verre, men ingen av delene varer evig. Legg merke til hvem som fører regnskapet: ingen dommer går gjennom livet ditt. Karma virker av seg selv. Buddhismen regner etter hensikten bak handlingen (Jacobsen, 2026)."
+            "content": "Det som driver kretsløpet rundt, heter karma. Ordet betyr handling, og det du gjør, får følger. Når et menneske dør, skyver karma det videre inn i et nytt liv, fordi følgene av handlingene ikke er ferdige ennå. Gode handlinger gir en bedre neste fødsel, dårlige gir en verre, men ingen av delene varer for alltid. Legg merke til hvem som fører regnskapet: ingen dommer går gjennom livet ditt. Karma virker helt av seg selv. I buddhismen teller det du mente med handlingen, ikke bare det du gjorde (Jacobsen, 2026)."
         },
         {
             "type": "text",
-            "content": "Målet er derfor ikke å komme til et bedre sted, men å komme ut. Moksha er frihet fra individualitet, materie og tid, og dermed fra gjenfødelse (Jacobsen, 2025b). I buddhismen heter utgangen nirvana: lidelsens endelige opphør. Vestlige framstillinger setter ofte likhetstegn mellom nirvana og enten paradis eller ingenting, og begge deler bommer (Kværne og Borgland, 2025). Sikhene kaller utgangen mukti, og mener den kan nås mens du fortsatt lever."
+            "content": "Målet er derfor ikke å komme til et bedre sted, men å komme seg helt ut. I hinduismen heter utgangen moksha. Da slutter du å være et eget jeg, du er fri fra kroppen og fra tiden, og du blir ikke født på nytt (Jacobsen, 2025b). I buddhismen heter utgangen nirvana, og der tar all lidelse slutt. Vi i Vesten pleier å tro at nirvana enten er et paradis eller ingenting i det hele tatt. Begge deler bommer (Kværne og Borgland, 2025). Sikhene kaller utgangen mukti, og mener du kan nå den mens du fortsatt lever."
         },
         {
             "type": "text",
-            "content": "Innad er de uenige om detaljene. Mange hinduer mener sjelen først blir en ånd på vei mot forfedrenes verden, mens andre mener den går rett videre til en ny fødsel (Jacobsen, 2024). Buddhister er uenige om det finnes en mellomtilstand: i tibetansk tradisjon varer bardo 49 dager, mens gjenfødelsen i theravada skjer med en gang (Borgland, 2026). Les [det siste offeret](/krle/religion/hinduisme/overgangsriter) og [overgangen buddhismen eier](/krle/religion/buddhisme/overgangsriter)."
+            "content": "Om detaljene er de uenige seg imellom. Mange hinduer mener sjelen først blir en ånd på vei mot forfedrenes verden, mens andre mener den går rett inn i en ny fødsel (Jacobsen, 2024). Buddhistene er uenige om det finnes en mellomstopp underveis: i Tibet mener de at den varer 49 dager og heter bardo, mens theravada-buddhister mener det nye livet begynner med en gang (Borgland, 2026). Les [det siste offeret](/krle/religion/hinduisme/overgangsriter) og [overgangen buddhismen eier](/krle/religion/buddhisme/overgangsriter)."
         },
         {
             "type": "header",
@@ -304,19 +304,19 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í, mormonismen og Jehovas vitner samles ofte under merkelappen nyere bevegelser. Det er en forenkling: bahá'í springer ut av sjia-islam, mens de to andre springer ut av kristendommen. Alle tre er dessuten små ved siden av de store tradisjonene. Der kristendom og islam teller milliarder, teller disse noen millioner. Ensartede er de heller ikke: bahá'í-samfunnet har hatt splittelser om ledelsen, og hos Jehovas vitner går det en skillelinje mellom de 144 000 og alle de andre."
+            "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte slått sammen til én gruppe som kalles nyere bevegelser. Det blir litt for enkelt, for de kommer fra hvert sitt sted: bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen. Alle tre er dessuten små ved siden av de store religionene. Kristendom og islam teller milliarder, disse teller noen millioner. Like er de heller ikke innad: bahá'íene har vært uenige om hvem som skal lede, og Jehovas vitner deler de troende i to grupper, de 144 000 og alle de andre."
         },
         {
             "type": "text",
-            "content": "Jehovas vitner mener de døde ikke er ved bevissthet. Derfor holder de ikke likvake, og de markerer ikke årsdagen for dødsfallet. Håpet er at de aller fleste skal få livet tilbake på en jord som er gjort om til et paradis, mens 144 000 skal styre sammen med Jesus i himmelen (Ringnes mfl., 2026)."
+            "content": "Jehovas vitner mener at de døde ikke merker noe som helst. De sover, som de sier selv. Derfor sitter de ikke våke ved den døde, og de markerer ikke dagen noen døde. Håpet er at nesten alle skal få livet tilbake på en jord som er gjort om til et paradis, mens 144 000 skal styre sammen med Jesus i himmelen (Ringnes mfl., 2026)."
         },
         {
             "type": "text",
-            "content": "Mormonismen flytter tyngdepunktet. Der de fleste kristne vies til døden skiller dem, blir ektepar her beseglet for tid og all evighet inne i et tempel. Kirken lærer også at mennesket beholder retten til å velge etter døden, og at et levende medlem kan la seg døpe på vegne av en avdød slektning (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Se [ikke til døden skiller dere](/krle/religion/mormonisme/overgangsriter)."
+            "content": "Mormonismen legger vekten et annet sted. De fleste kristne gifter seg til døden skiller dem. Her blir ektepar bundet sammen for alltid i en seremoni inne i et tempel. Kirken lærer også at mennesket fortsatt kan velge etter at det er dødt, og at et levende medlem kan la seg døpe på vegne av en slektning som er død (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Se [ikke til døden skiller dere](/krle/religion/mormonisme/overgangsriter)."
         },
         {
             "type": "text",
-            "content": "Bahá'í fyller den samme linja annerledes. Her regnes verken paradis eller helvete som fysiske steder, og dommedag har mindre plass enn i jødedom, kristendom og islam (Vogt og Winje, 2026). Gravferdsreglene er til gjengjeld blant de mest detaljerte bahá'í-loven har: den døde skal gravlegges, ikke brennes, og ikke fraktes lenger enn én times reise fra byen der personen døde. De som var 15 år eller eldre, får en ring med en innskrift som begynner slik: Jeg kom fra Gud og vender tilbake til ham (Bahá'í International Community, u.å.)."
+            "content": "Bahá'í fyller den samme linja med noe annet. Her er verken paradis eller helvete steder du kan reise til, og dommedag betyr mindre enn i jødedom, kristendom og islam (Vogt og Winje, 2026). Til gjengjeld har de noen av sine strengeste regler for begravelsen: den døde skal begraves og ikke brennes, og kroppen skal ikke fraktes lenger enn én times reise fra byen der personen døde. De som var 15 år eller eldre, får en ring med en innskrift som begynner slik: Jeg kom fra Gud og vender tilbake til ham (Bahá'í International Community, u.å.)."
         },
         {
             "type": "image",
@@ -330,21 +330,21 @@
         },
         {
             "type": "text",
-            "content": "Legg de to kartene ved siden av hverandre. Den viktigste forskjellen er ikke hva folk håper på, men hvem som holder regnskapet."
+            "content": "Legg de to kartene ved siden av hverandre. Den viktigste forskjellen er ikke hva folk håper på, men hvem som fører regnskapet."
         },
         {
             "type": "list",
             "items": [
-                "Er tiden en linje, ender livet i en dom, og noen utenfor deg feller den.",
-                "Er tiden en ring, ender ingenting av seg selv, og handlingene dine fører regnskapet.",
+                "Går tiden i en linje, ender livet i en dom, og det er noen utenfor deg som dømmer.",
+                "Går tiden i ring, tar ingenting slutt av seg selv, og det er handlingene dine som fører regnskapet.",
                 "En linje gjør døden til en grense. En ring gjør døden til en dør.",
-                "Ritene følger etter: venter du oppstandelse, legges kroppen i jorda. Venter du et nytt liv, brennes den.",
+                "Seremoniene følger etter: venter du at kroppen skal stå opp igjen, legger du den i jorda. Venter du et helt nytt liv, brenner du den.",
                 "Begge svarer på det samme: skal urettferdighet få det siste ordet?"
             ]
         },
         {
             "type": "text",
-            "content": "Ingen av dem svarer ja. Den ene sier at oppgjøret kommer, bare senere. Den andre sier at det allerede pågår, i hvert eneste liv. To helt ulike svar, men de trøster på samme måte."
+            "content": "Ingen av dem svarer ja. Den ene sier at oppgjøret kommer, det bare tar litt tid. Den andre sier at oppgjøret allerede er i gang, i hvert eneste liv. To helt ulike svar, men begge trøster på samme måte."
         },
         {
             "type": "header",
@@ -352,11 +352,11 @@
         },
         {
             "type": "text",
-            "content": "I samisk religion har man regnet med flere verdener ved siden av vår egen. Blant dem er et rike for de døde, Jábmiid áibmu, et paradis som heter Sáivu, et dyrerike, et himmelrike og en underverden (Løøv mfl., 2026). Noaiden, den åndelige spesialisten, kunne foreta sjelereiser dit."
+            "content": "I samisk religion regnet man med flere verdener ved siden av vår egen. Blant dem er et rike for de døde, Jábmiid áibmu, et paradis som heter Sáivu, et dyrerike, et himmelrike og en underverden (Løøv mfl., 2026). Noaiden, altså sjamanen, kunne reise dit med sjelen sin mens kroppen ble liggende igjen."
         },
         {
             "type": "text",
-            "content": "Her ligger forskjellen et annet sted enn i de andre svarene. De dødes rike lå ikke langt borte og lenge til. Det lå i det samme landskapet som de levende, og noen kunne reise dit og komme hjem. Det henger sammen med et animistisk verdensbilde, der fjell, steiner og sjøer kan tilskrives åndelig kraft (Løøv mfl., 2026). I dag er kristendommen mest utbredt i Sápmi, og mange samer er sekulære. Men dette er ikke bare fortid: siden 1970-tallet har interessen for den gamle religionen vokst igjen."
+            "content": "Her ligger forskjellen et helt annet sted. De dødes rike lå ikke langt borte og langt fram i tid. Det lå i det samme landskapet som de levende bodde i, og noen kunne dra dit og komme hjem igjen. Det henger sammen med troen på at fjell, steiner og sjøer har en egen åndelig kraft (Løøv mfl., 2026). I dag er kristendommen mest utbredt i Sápmi, og mange samer er ikke religiøse i det hele tatt. Men dette er ikke bare fortid: siden 1970-tallet har flere blitt interessert i den gamle religionen igjen."
         },
         {
             "type": "header",
@@ -364,7 +364,7 @@
         },
         {
             "type": "text",
-            "content": "Mange mennesker regner ikke med noe etterliv i det hele tatt. I livssynshumanismen er tanken at bevisstheten slutter når kroppen slutter, og at et menneske lever videre bare i det det etterlot seg hos andre. Da blir svaret på spørsmålet over et nei: urettferdighet kan faktisk bli stående. Nettopp derfor, sier mange humanister, teller dette livet, og uretten må rettes opp her."
+            "content": "Mange mennesker tror ikke på noe liv etter døden i det hele tatt. Livssynshumanister mener at tankene og følelsene dine slutter når kroppen slutter, og at du lever videre bare i det du gav til andre. Da blir svaret på spørsmålet over et nei: urettferdighet kan faktisk få det siste ordet. Nettopp derfor, sier mange humanister, er det dette livet som teller, og uretten må rettes opp her."
         },
         {
             "type": "component",
@@ -384,7 +384,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Se rådataene",
-                "content": "Vil du lese hva hver enkelt religion selv sier om døden og ritene rundt den, med kilder, finner du artiklene side om side på /krle/sammenlign/tema/doden. Formen på tiden ble også tema i artikkelen [Hvor kommer alt fra?](/krle/sammenligning/skapelse), der den samme linja og den samme ringen dukket opp i skapelsesfortellingene."
+                "content": "Vil du lese hva hver enkelt religion selv sier om døden og seremoniene rundt den, finner du artiklene side om side på /krle/sammenlign/tema/doden. Formen på tiden ble også tema i artikkelen [Hvor kommer alt fra?](/krle/sammenligning/skapelse), der den samme linja og den samme ringen dukket opp i skapelsesfortellingene."
             }
         },
         {
@@ -392,19 +392,19 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva betyr fagordet eskatologi?",
+                    "Hva betyr fagordet eskatologi, og hva handler det om?",
                     "Forklar med egne ord hva samsara og karma er, og hvordan de henger sammen.",
-                    "Hvor møter vi forestillingen om en dommedag først, og hvilke tre religioner utviklet den videre?",
+                    "Hvor møter vi tanken om en dommedag først, og hvilke tre religioner tok den videre?",
                     "Hva er forskjellen på moksha og nirvana, slik artikkelen beskriver dem?"
                 ],
                 "reflekter": [
-                    "Islam tillater ikke kremasjon, mens hinduismen krever den. Forklar hvordan de to reglene henger sammen med hva tradisjonene mener kroppen skal brukes til etterpå.",
-                    "På den lineære veien felles dommen av noen utenfor deg. På ringen virker karma av seg selv. Hvilken av dem synes du er strengest, og hvorfor?",
-                    "Jehovas vitner mener de døde ikke er ved bevissthet, og markerer derfor ikke årsdagen for et dødsfall. Hva gjør en slik lære med måten en familie sørger på?",
+                    "Islam forbyr at kroppen brennes, mens hinduismen krever det. Forklar hvordan de to reglene henger sammen med hva de to tror skjer med kroppen etterpå.",
+                    "På den rette linja er det noen utenfor deg som dømmer. På ringen virker karma helt av seg selv. Hvilken av dem synes du er strengest, og hvorfor?",
+                    "Jehovas vitner mener at de døde ikke merker noe, og markerer derfor ikke dagen noen døde. Hva gjør en slik tro med måten en familie sørger på?",
                     "Artikkelen sier at begge former trøster på samme måte. Er du enig? Begrunn svaret."
                 ],
                 "gaaVidere": [
-                    "Velg én tradisjon fra hver av de to veiene i kartet. Skriv et avsnitt der du forklarer begge uten å si at den ene er mer logisk enn den andre.",
+                    "Velg én tradisjon fra hver av de to veiene i kartet. Skriv et avsnitt der du forklarer begge, uten å si at den ene henger bedre sammen enn den andre.",
                     "Finn ut hvilke regler som gjelder for gravferd og askespredning i din egen kommune, og hvilke av de ni tradisjonene som lettest kan følge sine egne regler her.",
                     "Diskuter i klassen: forandrer det hvordan du lever, om du tror at du får ett liv eller mange?"
                 ]
@@ -419,15 +419,15 @@
                         "question": "Hva betyr eskatologi?",
                         "options": [
                             "Læren om hvordan verden ble til",
-                            "Læren om de siste ting, verdens ende og hva som skjer etter døden",
+                            "Læren om det som skjer helt til slutt, verdens ende og hva som skjer etter døden",
                             "Læren om hellige tekster",
                             "Læren om hvordan man ber"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Eskatologi handler om verdens ende og om hva som skjer med det enkelte mennesket etterpå. Alle de ni tradisjonene svarer på dette, men svarene har ulik form."
+                        "explanation": "Eskatologi handler om verdens ende og om hva som skjer med hvert enkelt menneske etterpå. Alle de ni tradisjonene svarer på dette, men de svarer ulikt."
                     },
                     {
-                        "question": "Hvor møter vi først forestillingen om at Gud skal holde dom over gode og onde?",
+                        "question": "Hvor møter vi først tanken om at Gud skal dømme mellom gode og onde?",
                         "options": [
                             "I zoroastrismen",
                             "I hinduismen",
@@ -435,7 +435,7 @@
                             "I buddhismen"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Vi møter forestillingen først i den iranske religionen zoroastrismen, og senere i jødedom, kristendom og islam."
+                        "explanation": "Vi møter tanken først i den iranske religionen zoroastrismen, og siden i jødedom, kristendom og islam."
                     },
                     {
                         "question": "Hva driver gjenfødelsen videre i de indiske tradisjonene?",
@@ -453,7 +453,7 @@
                         "options": [
                             "Det er buddhismens navn på paradis",
                             "Det betyr at alt blir til ingenting",
-                            "Det er lidelsens endelige opphør og frigjøring fra videre gjenfødelse",
+                            "All lidelse tar slutt, og du blir ikke født på nytt",
                             "Det er stedet de døde venter på dommens dag"
                         ],
                         "correctAnswer": 2,
@@ -464,7 +464,7 @@
                         "options": [
                             "At det lå i en helt annen verden ingen kunne nå",
                             "At det var én av flere verdener, og at noaiden kunne foreta sjelereiser dit",
-                            "At det bare fantes for dem som ble kremert",
+                            "At det bare fantes for dem som ble brent",
                             "At det var det samme som kristendommens himmel"
                         ],
                         "correctAnswer": 1,

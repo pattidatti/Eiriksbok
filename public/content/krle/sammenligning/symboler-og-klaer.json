@@ -47,7 +47,7 @@
         {
             "id": "khalsa",
             "term": "Khalsa",
-            "definition": "Sikhenes fellesskap, opprinnelig organisert som et krigersamfunn. Medlemmene ble pålagt fem kjennetegn: uklipt hår, kam, stålarmring, sverd og kortbukse."
+            "definition": "Sikhenes fellesskap, som i starten var organisert som et krigerfellesskap. Medlemmene måtte ha fem kjennetegn: uklipt hår, kam, armring av stål, sverd og kortbukse."
         },
         {
             "id": "kipa",
@@ -61,7 +61,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Romerne brukte korsfestelse på slaver, opprørere og forrædere. Det var den mest vanærende straffen de hadde, og døden kunne ta flere dager. Keiser Konstantin avskaffet den i år 315. I dag henger det samme redskapet i kjede rundt halsen på folk over hele verden, som smykke og trosbekjennelse på én gang."
+            "content": "Romerne korsfestet slaver, opprørere og forrædere. Det var den mest ydmykende straffen de hadde, og det kunne ta flere dager å dø. Keiser Konstantin fjernet straffen i år 315. I dag henger det samme drapsredskapet i en kjede rundt halsen på folk over hele verden. Det er både et smykke og en måte å si «jeg tror» på."
         },
         {
             "type": "header",
@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "content": "Men symboler eldes dårlig. De skifter mening, de lånes, og de misforstås. Nesten ingen av tegnene i denne artikkelen begynte som symbol for den religionen som bruker dem i dag. Det finnes mye løs forklaring i omløp om hvor de kommer fra, så her holder vi oss til det kildene faktisk sier."
+            "content": "Men symboler forandrer seg med tiden. De skifter mening, de lånes av andre, og de blir misforstått. Nesten ingen av tegnene i denne artikkelen startet som symbol for den religionen som bruker dem i dag. Det svirrer mange løse påstander om hvor de kommer fra, så her holder vi oss til det kildene faktisk sier."
         },
         {
             "type": "image",
@@ -106,7 +106,7 @@
                     {
                         "id": "nyere",
                         "label": "Nyere bevegelser",
-                        "note": "Bahá'í vokste fram i sjia-islam, mormonismen og Jehovas vitner ut av kristendommen. De er små mot moderreligionene, fra rundt seks til over femten millioner medlemmer."
+                        "note": "Bahá'í vokste fram fra sjia-islam, mormonismen og Jehovas vitner fra kristendommen. De er små mot religionene de kom fra, med mellom seks og femten millioner medlemmer."
                     }
                 ],
                 "symbols": [
@@ -119,7 +119,7 @@
                         "glyph": "✝",
                         "myth": "At Bibelen beskriver nøyaktig hvordan korset så ut.",
                         "fact": "Evangeliene forteller at Jesus ble korsfestet, men beskriver ikke hvordan korset så ut. Latinsk og gresk kors er former kristen tradisjon har bestemt i ettertid.",
-                        "origin": "Korsfestelse ble brukt i Assyria og Persia før romerne. Det var den mest vanærende straffen, og rammet slaver og opprørere. Konstantin avskaffet den i 315."
+                        "origin": "Korsfestelse ble brukt i Assyria og Persia før romerne. Det var den mest ydmykende straffen som fantes, og den rammet slaver og opprørere. Konstantin fjernet den i år 315."
                     },
                     {
                         "id": "halvmane",
@@ -129,7 +129,7 @@
                         "group": "abrahamittisk",
                         "glyph": "☪",
                         "myth": "At halvmånen har vært islams eget tegn helt fra profeten Muhammads tid.",
-                        "fact": "Halvmånen var opprinnelig ikke et symbol for islam. Den ble gradvis vanligere i arabisk kultur gjennom middelalderen.",
+                        "fact": "Halvmånen var i starten ikke et symbol for islam. Den ble litt etter litt vanligere i arabisk kultur gjennom middelalderen.",
                         "origin": "Halvmåner finnes i Mesopotamia og på greske og romerske mynter, og sasanidekongene bar dem på tiaraen. Det osmanske riket satte den i flagget i 1844."
                     },
                     {
@@ -140,7 +140,7 @@
                         "group": "abrahamittisk",
                         "glyph": "✡",
                         "myth": "At sekskantstjernen har vært jødedommens hovedsymbol siden kong Davids tid.",
-                        "fact": "Stjernen ble ikke regnet som særskilt jødisk i det gamle Israel eller i tidlig rabbinsk tid. Først på 1800-tallet ble den et spesifikt jødisk symbol.",
+                        "fact": "Stjernen ble ikke regnet som jødisk i det gamle Israel eller i århundrene etter. Først på 1800-tallet ble den et typisk jødisk symbol.",
                         "origin": "Figuren ble brukt til pynt og magi i Egypt, Iran, India og Kina. Sionistkongressen i Basel gjorde den til nasjonalt merke i 1897, og i 1948 kom den i Israels flagg."
                     },
                     {
@@ -152,7 +152,7 @@
                         "glyph": "☸",
                         "myth": "At hjulet betyr lykke, eller at det er det samme som livshjulet med gjenfødsler.",
                         "fact": "Hjulet står for dharma, selve læren. Buddhas første tale beskrives som at han satte dharmahjulet i bevegelse.",
-                        "origin": "Hjulet er et gammelt soltegn, en sirkel med korsstilte diametre, kjent fra nordiske helleristninger. Livshjulet bhavachakra er et annet bilde, med gjenfødsler i eikene."
+                        "origin": "Hjulet er et gammelt soltegn: en sirkel med et kryss inni, kjent fra norske helleristninger. Livshjulet bhavachakra er noe helt annet, der eikene viser de ulike måtene du kan bli født på nytt."
                     },
                     {
                         "id": "svastika",
@@ -163,7 +163,7 @@
                         "glyph": "卍",
                         "myth": "At figuren er nazistenes oppfinnelse, og at den bare kan bety én ting.",
                         "fact": "Svastikaen er et lykkebringende tegn i hinduismen og buddhismen, brukt i begge dreieretninger. I den tibetanske bon-tradisjonen bare mot klokka.",
-                        "origin": "Figuren oppsto uavhengig i flere kulturer, fra kobberalderen i Elam til jernalderen i Norge. Hitler gjorde den til partisymbol i 1920, og i 1945 ble den forbudt i Tyskland."
+                        "origin": "Figuren dukket opp helt for seg selv i flere kulturer, fra kobberalderen i Elam til jernalderen i Norge. Hitler gjorde den til merke for partiet sitt i 1920, og i 1945 ble den forbudt i Tyskland."
                     },
                     {
                         "id": "turban",
@@ -172,7 +172,7 @@
                         "color": "#ff9933",
                         "group": "indisk",
                         "myth": "At turbanen bare er hodepynt, eller at alle med turban er muslimer.",
-                        "fact": "For sikher er turbanen, dastar, et religiøst plagg. Tanken er at det er galt å klippe hår Gud har skapt, og hodehåret hører til intimsfæren.",
+                        "fact": "For sikher er turbanen, dastar, et religiøst plagg. Tanken er at det er galt å klippe hår Gud har gitt deg, og at håret er noe privat som ikke alle skal se.",
                         "origin": "Medlemmene av khalsa ble pålagt fem kjennetegn: uklipt hår og skjegg under turban, kam, stålarmring, sverd og kortbukse. Barn bruker et kortere tørkle, patka."
                     },
                     {
@@ -207,8 +207,8 @@
                         "glyph": "✝",
                         "negated": true,
                         "myth": "At alle kristne trossamfunn er enige om at Jesus døde på et kors.",
-                        "fact": "Jehovas vitner avviser korset. De viser til at det greske ordet stauros grunnleggende betyr påle eller staur, og at korset er et hedensk symbol.",
-                        "origin": "Rikets sal minner mer om et undervisningsbygg enn om en kirke, fordi den er laget for bibelstudier. Eneste faste utsmykning er årsteksten, et bibelvers for året."
+                        "fact": "Jehovas vitner sier nei til korset. De mener at det greske ordet stauros egentlig betyr påle eller staur, og at korset kommer fra andre religioner.",
+                        "origin": "Rikets sal ligner mer på et skolebygg enn på en kirke, fordi den er laget for å lese Bibelen sammen. Det eneste som henger fast på veggen, er årets bibelvers."
                     }
                 ]
             }
@@ -223,15 +223,15 @@
         },
         {
             "type": "text",
-            "content": "Halvmånen har en enda mer overraskende historie. Den var opprinnelig ikke et symbol for islam. Halvmåner finnes i Mesopotamia og på greske og romerske mynter, og persiske sasanidekonger bar halvmåne på tiaraen. I kristen middelalder ble halvmånen knyttet til jomfru Maria. Først gjennom middelalderen ble den vanlig i arabisk kultur, og tyrkerne tok den i bruk som merke mot korsfanen til de kristne motstanderne. Det osmanske riket satte halvmåne og stjerne i flagget i 1844."
+            "content": "Halvmånen har en enda mer overraskende historie. Den var i starten ikke et symbol for islam i det hele tatt. Halvmåner finnes i det gamle Mesopotamia og på greske og romerske mynter, og persiske konger bar halvmåne på kronen. I kristen middelalder ble halvmånen knyttet til jomfru Maria. Det var først i middelalderen at den ble vanlig i arabisk kultur, og tyrkerne begynte å bruke den som sitt merke mot korset til de kristne fiendene. Det osmanske riket satte halvmåne og stjerne i flagget i 1844."
         },
         {
             "type": "text",
-            "content": "Davidsstjernen ble ikke regnet som særskilt jødisk verken i det gamle Israel eller i tidlig rabbinsk tid. Den samme sekskantstjernen ble brukt til pynt og magi i Egypt, Iran, India og Kina. På 900-tallet ble den lykketegn på mezuzaen, den lille skriftkapselen som festes til jødiske dørkarmer. Først på 1800-tallet ble den oppfattet som et spesifikt jødisk symbol, ikke minst fordi det oppsto et ønske om et eget jødisk tegn ved siden av det kristne korset. Les mer om [de sentrale trekkene i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+            "content": "Davidsstjernen ble lenge ikke regnet som jødisk i det hele tatt. Den samme sekskantede stjernen ble brukt til pynt og magi i Egypt, Iran, India og Kina. På 900-tallet ble den et lykketegn på mezuzaen, den lille kapselen med en tekst inni som jøder fester på dørkarmen. Først på 1800-tallet ble stjernen oppfattet som noe typisk jødisk, mye fordi jøder ønsket seg sitt eget tegn ved siden av det kristne korset. Les mer om [de sentrale trekkene i jødedommen](/krle/religion/jodedom/sentrale-trekk)."
         },
         {
             "type": "text",
-            "content": "Klærne forteller noe av det samme. Kipaen, den lille kalotten mange jødiske gutter og menn bruker ved bønn, skriftstudium og måltider, er ikke påbudt i noe bud i Tanakh. Skikken vokste fram gjennom hundrevis av år med rabbinsk diskusjon, og i dag varierer bruken mellom retningene. Ordet hijab kommer av et arabisk ord som betyr å skjule, og i Koranen viser det først og fremst til atskillelse, ikke til et bestemt plagg. At ordet betyr hodeplagg, er en bruk som slo gjennom rundt 1970-tallet. Muslimske kvinner tenker ulikt om plagget, og det finnes muslimske lærde som støtter kvinners valgfrihet. I Norge diskuteres det jevnlig hvor mye tro som skal få vises i uniform og på jobb. Den debatten går vi ikke inn i her, men du kan lese mer i [religiøse symboler og klær i samfunnet](/krle/religion-og-kultur/symboler-og-klaer)."
+            "content": "Klærne forteller noe av det samme. Kipaen, den lille runde luen mange jødiske gutter og menn bruker når de ber, leser hellige tekster eller spiser, står ikke som et bud noe sted i Tanakh. Skikken vokste fram gjennom flere hundre år med diskusjon blant rabbinerne, og i dag bruker de ulike retningene den ulikt. Ordet hijab kommer av et arabisk ord som betyr å skjule. I Koranen handler det mest om å skille noe fra noe annet, ikke om et bestemt plagg. At ordet i dag betyr et hodeplagg, er noe som slo gjennom rundt 1970-tallet. Muslimske kvinner tenker svært ulikt om plagget, og det finnes muslimske lærde som mener kvinner må få velge selv. I Norge diskuteres det jevnlig hvor mye tro som skal få vises i uniform og på jobb. Den debatten går vi ikke inn i her, men du kan lese mer i [religiøse symboler og klær i samfunnet](/krle/religion-og-kultur/symboler-og-klaer)."
         },
         {
             "type": "header",
@@ -239,15 +239,15 @@
         },
         {
             "type": "text",
-            "content": "Hjulet er et gammelt og utbredt soltegn, en sirkel med korsstilte diametre, kjent helt fra nordiske helleristninger. I buddhismen står hjulet for dharma, altså selve læren, og Buddhas første tale beskrives som at han satte dharmahjulet i bevegelse. Det er ikke det samme som livshjulet, bhavachakra, der navet viser årsakene til lidelse og eikene ulike former for gjenfødsel. To hjul, to helt ulike poeng."
+            "content": "Hjulet er et gammelt soltegn: en sirkel med et kryss inni. Vi finner det helt tilbake til norske helleristninger. I buddhismen står hjulet for dharma, altså selve læren, og om Buddhas første tale sier man at han satte dharmahjulet i gang. Det må ikke forveksles med livshjulet, bhavachakra. Der viser midten av hjulet årsakene til lidelse, og eikene viser de ulike måtene du kan bli født på nytt. To hjul, to helt ulike poeng."
         },
         {
             "type": "text",
-            "content": "Svastikaen er det vanskeligste tegnet i hele artikkelen. I hinduismen og buddhismen er den et lykkebringende tegn, brukt i begge dreieretninger, mens den tibetanske bon-tradisjonen bare bruker varianten mot klokka. Figuren dukket opp uavhengig i flere kulturer, og i Norge er den kjent fra jernalderen, blant annet fra Osebergfunnet. I 1920 tok Hitler den i bruk som partisymbol, rettet ut armene og dreide dem med klokka. Siden 1945 har hakekorset vært forbudt i Tyskland. Samme figur, to historier som ikke kan blandes."
+            "content": "Svastikaen er det vanskeligste tegnet i hele artikkelen. I hinduismen og buddhismen er den et lykketegn, og armene kan peke begge veier. Den tibetanske bon-tradisjonen bruker bare den som går mot klokka. Figuren dukket opp helt uavhengig i flere kulturer, og i Norge kjenner vi den fra jernalderen, blant annet fra Osebergfunnet. I 1920 tok Hitler den i bruk som merke for partiet sitt, rettet ut armene og snudde dem med klokka. Siden 1945 har hakekorset vært forbudt i Tyskland. Samme figur, men to historier som aldri må blandes sammen."
         },
         {
             "type": "text",
-            "content": "Turbanen i sikhismen er ikke pynt. Under press fra muslimske herskere organiserte sikhene seg etter hvert som et krigersamfunn, khalsa, og medlemmene ble pålagt fem kjennetegn: uklipt hår og skjegg under turban, kam, stålarmring, sverd og kortbukse. Turbanen dekker det uklipte håret, fordi sikher mener det er galt å klippe hår Gud har skapt, og fordi hodehåret hører til intimsfæren. Fargen kan si noe om religiøs gruppe eller politisk sympati, og barn bruker et kortere tørkle kalt patka. Turbanen er obligatorisk for mannlige sikher med uklipt hår, mens sikh-kvinner bare unntaksvis bruker den. Les om [de sentrale trekkene i sikhismen](/krle/religion/sikhisme/sentrale-trekk)."
+            "content": "Turbanen i sikhismen er ikke pynt. Under press fra muslimske herskere organiserte sikhene seg etter hvert som et krigerfellesskap, khalsa. Medlemmene måtte ha fem kjennetegn: uklipt hår og skjegg under turbanen, en kam, en armring av stål, et sverd og en kortbukse. Turbanen dekker det uklipte håret. Sikhene mener nemlig at det er galt å klippe hår Gud har gitt deg, og at håret er noe privat som ikke alle skal se. Fargen på turbanen kan fortelle hvilken gruppe du hører til, eller hva du mener politisk. Barn bruker et kortere tørkle som heter patka. Sikhiske menn med uklipt hår må bruke turban, mens sikhiske kvinner sjelden gjør det. Les om [de sentrale trekkene i sikhismen](/krle/religion/sikhisme/sentrale-trekk)."
         },
         {
             "type": "header",
@@ -255,21 +255,21 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í, mormonismen og Jehovas vitner settes ofte i samme gruppe fordi de er unge. Det er en forenkling: bahá'í vokste fram i sjia-islam, de to andre ut av kristendommen. De er også langt mindre enn moderreligionene, fra rundt seks til over femten millioner medlemmer hver. Likevel viser de noe viktig om symboler."
+            "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte satt i samme gruppe fordi de er unge. Det blir litt for enkelt: bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen. De er også mye mindre enn religionene de kom fra, med mellom seks og femten millioner medlemmer hver. Likevel viser de noe viktig om symboler."
         },
         {
             "type": "text",
-            "content": "Bahá'í-templene bygger meningen inn i selve huset. Én kuppel står for enheten mellom Gud og menneskeheten, og ni inngangsdører viser at alle religioner kan forstås som innganger. Tallet ni går igjen: rådet som styrer hele bevegelsen, har ni medlemmer, og året deles i nitten måneder med nitten dager i hver."
+            "content": "Bahá'í-templene bygger meningen rett inn i huset. Én kuppel betyr at Gud og menneskene hører sammen, og ni inngangsdører betyr at alle religioner er ulike veier inn til det samme. Tallet ni går igjen: rådet som styrer hele bevegelsen, har ni medlemmer, og året deles i nitten måneder med nitten dager i hver."
         },
         {
             "type": "text",
-            "content": "Mormonismen og Jehovas vitner kjennes derimot på et fravær. Jesu Kristi Kirke av Siste Dagers Hellige skriver selv at den ikke viser korset på byggene sine, i kapellene eller i klasserommene, men legger vekten på den oppstandne Kristus. Kirkens offisielle symbol er nettopp et bilde av ham. Jehovas vitner avviser korset av en annen grunn: de viser til at det greske ordet stauros grunnleggende betyr påle eller staur, og at korset er et hedensk symbol som kom inn senere. Rikets sal minner mer om et undervisningsbygg enn om en kirke, fordi den er laget for bibelstudier, og den eneste faste utsmykningen er årsteksten, et bibelvers valgt for året."
+            "content": "Mormonismen og Jehovas vitner kjenner du derimot igjen på noe de ikke bruker. Jesu Kristi Kirke av Siste Dagers Hellige skriver selv at de ikke henger opp korset, verken på byggene, i kirkerommene eller i klasserommene. De vil heller vise Kristus som lever, og kirkens offisielle symbol er nettopp et bilde av ham. Jehovas vitner sier nei til korset av en annen grunn: de mener at det greske ordet stauros egentlig betyr påle eller staur, og at korset er et symbol fra andre religioner som kom inn i kristendommen senere. Rikets sal ligner mer på et skolebygg enn på en kirke, fordi den er laget for å lese Bibelen sammen. Det eneste som henger på veggen, er årets bibelvers."
         },
         {
             "type": "image",
             "src": "/images/placeholder.webp",
             "alt": "Tomt lyst forsamlingsrom med stoler og talerstol",
-            "caption": "Et rom uten bilder sier også noe. Fravær er et valg, ikke en mangel."
+            "caption": "Et rom uten bilder sier også noe. Det å la være er et valg, ikke en mangel."
         },
         {
             "type": "header",
@@ -277,22 +277,22 @@
         },
         {
             "type": "text",
-            "content": "Legger du historiene ved siden av hverandre, kommer det fram et mønster som gjelder på tvers av gruppene:"
+            "content": "Legger du historiene ved siden av hverandre, ser du et mønster som går på tvers av gruppene:"
         },
         {
             "type": "list",
             "items": [
                 "Nesten ingen av tegnene begynte som symbol for religionen som bruker dem i dag. De ble lånt, arvet eller tatt i bruk lenge etterpå.",
-                "Et symbol blir hellig ved bruk, ikke ved vedtak. Ingen bestemte at davidsstjernen skulle bli jødisk. Det skjedde over tid.",
+                "Et symbol blir hellig fordi folk bruker det, ikke fordi noen bestemmer det. Ingen vedtok at davidsstjernen skulle bli jødisk. Det skjedde litt etter litt.",
                 "Samme figur kan bety to helt ulike ting. Svastikaen er lykketegn i India og forbudt i Tyskland.",
-                "Klær handler oftest om noe annet enn å vise seg fram: hår som ikke skal klippes, et hode som dekkes av respekt.",
-                "Fravær er også et språk. Mormonismen og Jehovas vitner sier noe tydelig ved å la korset være.",
+                "Klær handler som regel om noe annet enn å vise seg fram: hår som ikke skal klippes, eller et hode som dekkes av respekt.",
+                "Også det du lar være, sier noe. Mormonismen og Jehovas vitner er tydelige nettopp ved å droppe korset.",
                 "Ikke alle i en tradisjon bruker tegnene. Det du ser, forteller deg noe om personen, men ikke alt."
             ]
         },
         {
             "type": "text",
-            "content": "Det siste punktet er kanskje det viktigste. Et tegn forteller deg hva noen hører til, ikke hvor mye de tror eller hvordan de tenker om troen sin. Vil du se hvordan de samme tradisjonene markerer tid i stedet for tegn, les [Den hellige kalenderen](/krle/sammenligning/hoytider)."
+            "content": "Det siste punktet er kanskje det viktigste. Et tegn forteller deg hvor noen hører hjemme. Det sier ingenting om hvor sterkt de tror, eller hva de selv tenker om troen sin. Vil du se hvordan de samme tradisjonene markerer tid i stedet for tegn, les [Den hellige kalenderen](/krle/sammenligning/hoytider)."
         },
         {
             "type": "component",
@@ -328,7 +328,7 @@
                 "reflekter": [
                     "Halvmånen var ikke islams tegn fra starten, og davidsstjernen var ikke jødedommens. Hva sier det om hvordan et symbol blir hellig?",
                     "Svastikaen er lykketegn i India og forbudt i Tyskland. Hvordan bør en lærebok behandle et tegn som betyr to helt ulike ting?",
-                    "Mormonismen og Jehovas vitner kjennes på et symbol de ikke bruker. Kan et fravær si like mye som et tegn? Begrunn.",
+                    "Mormonismen og Jehovas vitner kjennes igjen på et symbol de ikke bruker. Kan det å droppe et tegn si like mye som å bruke det? Begrunn.",
                     "Turbanen dekker uklipt hår, kipaen dekker hodet under bønn. Hvorfor tror du så mange tradisjoner har regler nettopp om hodet og håret?"
                 ],
                 "gaaVidere": [
@@ -359,7 +359,7 @@
                         "options": [
                             "Halvmånen var islams symbol fra profeten Muhammads tid",
                             "Halvmånen ble oppfunnet av det osmanske riket i 1844",
-                            "Halvmånen var opprinnelig ikke et symbol for islam, men ble vanligere gjennom middelalderen",
+                            "Halvmånen var i starten ikke et symbol for islam, men ble vanligere gjennom middelalderen",
                             "Halvmånen har aldri vært brukt i noen annen religion"
                         ],
                         "correctAnswer": 2,
@@ -385,7 +385,7 @@
                             "Fordi Guru Granth Sahib påbyr blå farge"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Uklipt hår er ett av de fem kjennetegnene medlemmene av khalsa ble pålagt. Turbanen dekker håret, som regnes som en del av intimsfæren. Sikh-kvinner bruker den bare unntaksvis."
+                        "explanation": "Uklipt hår er ett av de fem kjennetegnene medlemmene av khalsa måtte ha. Turbanen dekker håret, som regnes som noe privat. Sikhiske kvinner bruker den bare sjelden."
                     },
                     {
                         "question": "Hva står dharmahjulet for i buddhismen?",

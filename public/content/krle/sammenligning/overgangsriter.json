@@ -23,10 +23,10 @@
     "kompetansemaal": ["rle01-03-10-01", "rle01-03-10-13"],
     "details": [
         "Fire overganger går igjen overalt: fødsel, veien ut av barndommen, ekteskap og død.",
-        "Alle ni tradisjonene kjenner de fire, men de vekter dem svært ulikt.",
+        "Alle ni tradisjonene kjenner de fire, men de gjør veldig ulikt ut av dem.",
         "Buddhismen har ikke noe eget bryllupsrituale, men munkene tar seg av begravelsen.",
         "Jehovas vitner døper ikke spedbarn i det hele tatt. Dåpen må du be om selv.",
-        "Mormonismen lærer at et ekteskap beseglet i tempelet varer for tid og all evighet.",
+        "Mormonismen lærer at et ekteskap som er beseglet i tempelet, varer for alltid.",
         "Døden er den ene overgangen ingen av de ni lar være å markere."
     ],
     "concepts": [
@@ -38,7 +38,7 @@
         {
             "id": "liminalfase",
             "term": "Liminalfase",
-            "definition": "Mellomtilstanden i et ritual, der du verken er det du var eller det du skal bli."
+            "definition": "Fasen midt i et ritual, der du verken er det du var eller det du skal bli."
         },
         {
             "id": "samskara",
@@ -48,7 +48,7 @@
         {
             "id": "upanayana",
             "term": "Upanayana",
-            "definition": "Hinduistisk innvielse der en gutt får den hellige snoren og tas opp som elev."
+            "definition": "Hinduistisk seremoni der en gutt får den hellige snoren og blir elev."
         },
         {
             "id": "besegling",
@@ -62,7 +62,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Noen steder i den buddhistiske verden begynner bryllupsdagen hjemme hos brudeparet. Munkene fra klosteret kommer på besøk, får mat og resiterer noen tekster, og går så tilbake. Senere på dagen blir paret gift, uten at noen munk er til stede. Buddhistiske munker og nonner vier rett og slett ikke folk (Borgland, 2026a). Men når paret en dag dør, er det munkene som tar hånd om ritualene."
+            "content": "Noen steder i den buddhistiske verden begynner bryllupsdagen hjemme hos brudeparet. Munkene fra klosteret kommer på besøk, får mat og leser høyt fra hellige tekster, og går så tilbake til klosteret. Senere på dagen blir paret gift, uten at en eneste munk er til stede. Buddhistiske munker og nonner gifter rett og slett ikke bort folk (Borgland, 2026a). Men den dagen en av dem dør, er det munkene som styrer seremonien."
         },
         {
             "type": "header",
@@ -74,11 +74,11 @@
         },
         {
             "type": "text",
-            "content": "Den franske forskeren Arnold van Gennep innførte begrepet rundt 1909. Han delte slike riter i tre trinn: du løsrives fra det gamle, du er en stund i en mellomtilstand som fagfolk kaller liminalfasen, og så tas du inn igjen med ny status (Bertelsen, 2024). Det siste trinnet er poenget. En rite forandrer ikke først og fremst deg, men hva andre forventer av deg."
+            "content": "Den franske forskeren Arnold van Gennep gav dem navnet rundt 1909. Han så at slike seremonier har tre trinn: først slipper du taket i det du var, så er du en stund midt imellom, og til slutt tar de andre imot deg som noe nytt (Bertelsen, 2024). Mellomtilstanden kalles liminalfasen. Det siste trinnet er det viktigste. En overgangsrite forandrer ikke deg så mye som den forandrer hva alle andre venter seg av deg."
         },
         {
             "type": "text",
-            "content": "Alle de ni tradisjonene kjenner de fire overgangene, men vekter dem helt ulikt. Noen har ingen egen rite på et av trinnene. Prøv trappa under, tre tradisjoner om gangen, og se etter de stiplete rutene."
+            "content": "Alle de ni tradisjonene kjenner de fire overgangene, men de gjør veldig ulikt ut av dem. Noen har ingen seremoni i det hele tatt på ett av trinnene. Prøv trappa under, tre tradisjoner om gangen, og se etter de stiplete rutene."
         },
         {
             "type": "image",
@@ -140,19 +140,19 @@
                         "rites": {
                             "fodsel": {
                                 "name": "Brit mila",
-                                "text": "Gutter omskjæres på den åttende dagen og får navnet sitt. Handlingen viser tilbake til pakten mellom Gud og Abraham slik Første Mosebok forteller den."
+                                "text": "Gutter omskjæres den åttende dagen og får navnet sitt. Det minner om avtalen Gud og Abraham inngikk i Første Mosebok."
                             },
                             "voksen": {
                                 "name": "Bar og bat mitzva",
-                                "text": "Ved 13 år og én dag svarer gutten selv for budene. Jenter regnes tradisjonelt som voksne ved 12. I reformjødedommen er alderen lik for begge."
+                                "text": "Ved 13 år og én dag har gutten selv ansvaret for å følge budene. Jenter regnes tradisjonelt som voksne ved 12 år. I reformjødedommen er alderen lik for begge."
                             },
                             "ekteskap": {
                                 "name": "Vielse under huppa",
-                                "text": "Paret vies under en baldakin. Brudgommen overrekker ekteskapskontrakten ketuba, og knuser til slutt et glass."
+                                "text": "Paret gifter seg under en huppa, et tak av tøy på fire stolper. Brudgommen gir bruden ekteskapskontrakten ketuba, og til slutt knuser han et glass."
                             },
                             "doden": {
                                 "name": "Begravelse innen et døgn",
-                                "text": "Enkel trekiste og hvite likklær som er like for alle. De nærmeste sitter sjiva, en uke hjemme med besøk."
+                                "text": "Enkel trekiste og hvite klær som er like for alle, uansett hvor rik du var. Familien sitter sjiva, en uke hjemme der folk kommer på besøk."
                             }
                         }
                     },
@@ -168,15 +168,15 @@
                             },
                             "voksen": {
                                 "name": "Konfirmasjon",
-                                "text": "I Den norske kirke er den i dag en forbønn for konfirmanten. I 2023 ble omtrent 48 prosent av femtenåringene konfirmert der."
+                                "text": "I Den norske kirke ber menigheten i dag for konfirmanten. I 2023 ble omtrent 48 prosent av femtenåringene konfirmert i kirken."
                             },
                             "ekteskap": {
                                 "name": "Vielse i kirken",
-                                "text": "Presten velsigner paret og ringene. Kirkesamfunnene er uenige om likekjønnet vigsel."
+                                "text": "Presten velsigner paret og ringene. Kirkene er uenige om to av samme kjønn kan gifte seg."
                             },
                             "doden": {
                                 "name": "Gravferd med jordpåkastelse",
-                                "text": "Presten kaster jord tre ganger på kisten. I 2024 fikk 80,4 prosent av de døde i Norge kirkelig gravferd."
+                                "text": "Presten kaster jord tre ganger på kisten. I 2024 ble 80,4 prosent av de døde i Norge begravet i kirkens regi."
                             }
                         }
                     },
@@ -192,15 +192,15 @@
                             },
                             "voksen": {
                                 "none": true,
-                                "text": "Islam markerer fødsel, ekteskap og død, men har ikke et eget innvielsesritual for ungdom."
+                                "text": "Islam markerer fødsel, ekteskap og død, men har ingen egen seremoni for ungdom."
                             },
                             "ekteskap": {
                                 "name": "Nikah",
-                                "text": "En kontrakt begge må si ja til, med vitner og gaven mahr fra mannen til kvinnen. Det religiøse innslaget er kort, festen etterpå kan være stor."
+                                "text": "En avtale begge må si ja til, med vitner til stede og en gave, mahr, fra mannen til kvinnen. Selve seremonien er kort, men festen etterpå kan være svær."
                             },
                             "doden": {
                                 "name": "Janaza",
-                                "text": "Vask, hvite tøystykker, gravferdsbønn og begravelse så raskt som mulig, vendt mot Mekka. Kremasjon er ikke tillatt."
+                                "text": "Kroppen vaskes og svøpes i hvite tøystykker. Så kommer bønnen og begravelsen, så raskt som mulig, med den døde vendt mot Mekka. Å brenne kroppen er ikke lov."
                             }
                         }
                     },
@@ -224,7 +224,7 @@
                             },
                             "doden": {
                                 "name": "Gravferd nær dødsstedet",
-                                "text": "Den døde skal ikke fraktes lenger enn én times reise fra byen der døden skjedde. Bønnen for de døde leses. Kremasjon regnes som forbudt."
+                                "text": "Den døde skal ikke fraktes lenger enn én times reise fra byen der han eller hun døde. En egen bønn for de døde leses. Kroppen skal ikke brennes."
                             }
                         }
                     },
@@ -240,15 +240,15 @@
                             },
                             "voksen": {
                                 "name": "Dåp ved åtte år",
-                                "text": "Kirken kaller åtte år ansvarlighetsalderen, fordi den mener små barn ennå ikke kan velge mellom rett og galt. Hele kroppen senkes under vann."
+                                "text": "Kirken mener barn under åtte år ennå ikke kan velge mellom rett og galt. Ved dåpen senkes hele kroppen under vann."
                             },
                             "ekteskap": {
                                 "name": "Besegling i tempelet",
-                                "text": "Kirken lærer at paret hører sammen for tid og all evighet, ikke bare til døden skiller dem. Beseglingen kan bare skje i et tempel."
+                                "text": "Kirken lærer at paret hører sammen for alltid, ikke bare til den ene dør. Denne seremonien kan bare skje i et tempel."
                             },
                             "doden": {
-                                "name": "Nøktern begravelse",
-                                "text": "Holdes i møtehuset, i et hjem eller ved graven, ikke i tempelet. Både kistebegravelse og kremasjon er tillatt."
+                                "name": "Enkel begravelse",
+                                "text": "Holdes i møtehuset, hjemme eller ved graven, aldri i tempelet. Familien kan velge om kroppen skal begraves eller brennes."
                             }
                         }
                     },
@@ -264,15 +264,15 @@
                             },
                             "voksen": {
                                 "name": "Dåp du ber om selv",
-                                "text": "Måneder med studier, en innvielsesbønn du ber alene, og to spørsmål du svarer ja på. Så full neddykking, som regel på et stevne. Ingen fast aldersgrense."
+                                "text": "Måneder med opplæring, en bønn du ber alene, og to spørsmål du svarer ja på. Så senkes hele kroppen under vann, som regel på et stort møte. Ingen fast aldersgrense."
                             },
                             "ekteskap": {
                                 "name": "Tale i Rikets sal",
-                                "text": "Kjernen er en tale på omtrent en halvtime om hva Bibelen sier om ekteskapet. Paret kan bytte løfter og ringer. Det serveres ikke mat i salen."
+                                "text": "Det viktigste er en tale på omtrent en halvtime om hva Bibelen sier om ekteskapet. Paret kan gi hverandre løfter og ringer. Det serveres ikke mat i salen."
                             },
                             "doden": {
                                 "name": "Enkel begravelse",
-                                "text": "En bibeltale om døden og håpet om oppstandelse, gjerne en sang, og en bønn. Ingen likvake, og det tas ikke opp kollekt."
+                                "text": "En tale om hva Bibelen sier om døden og håpet om å stå opp igjen, gjerne en sang, og en bønn. Ingen vake ved den døde, og ingen innsamling av penger."
                             }
                         }
                     },
@@ -284,11 +284,11 @@
                         "rites": {
                             "fodsel": {
                                 "name": "Samskara rundt fødselen",
-                                "text": "Riter før unnfangelsen, i svangerskapet, ved fødselen, ved navngivningen og ved første hårklipp. Noen tradisjoner teller ti slike riter i alt, andre seksten."
+                                "text": "Egne seremonier før barnet blir til, mens mor er gravid, ved fødselen, ved navnet og ved første hårklipp. Noen tradisjoner teller ti slike riter i alt, andre seksten."
                             },
                             "voksen": {
                                 "name": "Upanayana",
-                                "text": "Gutten får den hellige snoren og tas opp som elev. Riten ble regnet som nødvendig for de tre øverste varna-gruppene. Hvor mye den brukes i dag, varierer sterkt."
+                                "text": "Gutten får den hellige snoren og blir elev. Bare de tre øverste lagene i det gamle standssystemet hadde rett til denne riten. Hvor mye den brukes i dag, varierer sterkt."
                             },
                             "ekteskap": {
                                 "name": "Vivaha",
@@ -296,7 +296,7 @@
                             },
                             "doden": {
                                 "name": "Antyeshti",
-                                "text": "Det siste offeret. Kroppen kremeres helst samme dag, og asken legges i rennende vann, aller helst i Ganges."
+                                "text": "Det siste offeret. Kroppen brennes helst samme dag, og asken legges i rennende vann, aller helst i elven Ganges."
                             }
                         }
                     },
@@ -308,19 +308,19 @@
                         "rites": {
                             "fodsel": {
                                 "none": true,
-                                "text": "Ingen rite som er felles for hele buddhismen. Klosteret tar hånd om det som handler om karma og gjenfødelse, og lar resten være opp til lokale skikker."
+                                "text": "Ingen seremoni som er felles for hele buddhismen. Klosteret tar seg av det som handler om karma og gjenfødelse. Resten følger lokale skikker."
                             },
                             "voksen": {
-                                "name": "Novisevigsling",
-                                "text": "I Myanmar, Thailand, Laos og Kambodsja blir gutter noviser i klosteret. Hodet barberes, og de får gule kapper. Noen blir noen dager, andre i flere år."
+                                "name": "Gutten som flytter i kloster",
+                                "text": "I Myanmar, Thailand, Laos og Kambodsja flytter gutter inn i klosteret en periode. Hodet barberes, og de får gule kapper. Noen blir noen dager, andre i flere år."
                             },
                             "ekteskap": {
                                 "none": true,
-                                "text": "Munker og nonner vier ingen. Ekteskapet regnes ikke som en religiøs handling, og formen kommer fra lokal kultur."
+                                "text": "Munker og nonner gifter ikke bort noen. Bryllupet regnes ikke som en religiøs handling, så det følger skikkene på stedet."
                             },
                             "doden": {
-                                "name": "Kremasjon og resitasjon",
-                                "text": "Munkene resiterer, og familien gir mat og klær til klosteret på vegne av den døde. Tanken er at gaven skaper fortjeneste som kan overføres til den døde."
+                                "name": "Bålet og munkenes sang",
+                                "text": "Kroppen brennes mens munkene synger hellige tekster. Familien gir mat og klær til klosteret i den dødes navn, fordi de tror den gode handlingen kan gis videre til ham eller henne."
                             }
                         }
                     },
@@ -332,11 +332,11 @@
                         "rites": {
                             "fodsel": {
                                 "name": "Naam Karan",
-                                "text": "Guru Granth Sahib slås opp på måfå, og bokstaven øverst blir barnets forbokstav. Alle får etternavnet Singh eller Kaur."
+                                "text": "Den hellige boka Guru Granth Sahib slås opp på en tilfeldig side, og den første bokstaven øverst blir barnets forbokstav. Alle får etternavnet Singh eller Kaur."
                             },
                             "voksen": {
                                 "name": "Amrit Sanskar",
-                                "text": "Innvielsen i fellesskapet khalsa. Fem sikher rører sukkervann med et tveegget sverd, og alle drikker av den samme skålen. Du må be om den selv."
+                                "text": "Opptaket i fellesskapet khalsa. Fem sikher rører sukkervann med et sverd, og alle drikker av den samme skålen. Du må selv be om å få bli med."
                             },
                             "ekteskap": {
                                 "name": "Anand Karaj",
@@ -344,7 +344,7 @@
                             },
                             "doden": {
                                 "name": "Antam Sanskar",
-                                "text": "Kroppen kremeres. Kveldsbønnen Sohila synges, og fellesbønnen Ardas avslutter. Ingen stor gravstein og ingen ekstra pynt."
+                                "text": "Kroppen brennes. Kveldsbønnen Sohila synges, og fellesbønnen Ardas avslutter. Ingen stor gravstein og ingen ekstra pynt."
                             }
                         }
                     }
@@ -357,15 +357,15 @@
         },
         {
             "type": "text",
-            "content": "I jødedommen kommer den første riten før barnet kan huske noe: brit mila, omskjæring på den åttende dagen. Gutten tas inn i pakten som ifølge Første Mosebok ble inngått mellom Gud og Abraham, og han får navnet sitt samtidig (Groth, 2026b). Tretten år senere skjer det motsatte: ved 13 år og én dag flytter ansvaret for budene seg fra foreldrene til ungdommen selv (Groth, 2026a). Ingen blir jøde den dagen. En plikt bytter eier. Mer står i artikkelen om [dagen ansvaret bytter eier](/krle/religion/jodedom/overgangsriter)."
+            "content": "I jødedommen skjer den første riten før barnet kan huske noe: brit mila, omskjæring på den åttende dagen. Gutten blir med i avtalen Gud og Abraham inngikk ifølge Første Mosebok, og han får navnet sitt samtidig (Groth, 2026b). Tretten år senere gjør ungdommen selv jobben: ved 13 år og én dag går ansvaret for å følge budene over fra foreldrene til den unge (Groth, 2026a). Ingen blir jøde den dagen, for det var gutten fra før. Det er ansvaret som skifter hender. Les mer i artikkelen om [dagen ansvaret bytter eier](/krle/religion/jodedom/overgangsriter)."
         },
         {
             "type": "text",
-            "content": "Kristendommen har den samme rekka, men har brukt mest tid på å diskutere den første riten. Dåpen gjør et menneske til en del av kirken, og de fleste kirkesamfunn kaller den det viktigste sakramentet (Elstad, 2026). De fleste kirker døper spedbarn, mens baptister og pinsevenner mener dåpen må være for den som selv kan stå inne for troen. Den 500 år gamle striden står i artikkelen om [uenigheten om vannet](/krle/religion/kristendom/overgangsriter)."
+            "content": "Kristendommen markerer de samme fire overgangene, men har kranglet mest om den første. Dåpen gjør et menneske til en del av kirken, og de fleste kirker kaller den den viktigste hellige handlingen de har (Elstad, 2026). De fleste døper spedbarn. Baptister og pinsevenner mener derimot at du må være gammel nok til å velge troen selv før du kan døpes. Den 500 år gamle uenigheten står i artikkelen om [uenigheten om vannet](/krle/religion/kristendom/overgangsriter)."
         },
         {
             "type": "text",
-            "content": "Islam markerer fødsel, ekteskap og død, men har ikke et eget innvielsesritual for ungdom. Til gjengjeld går den samme setningen igjen hele livet. Trosbekjennelsen shahada er det første som hviskes i øret på den nyfødte, og den er fast del av bønneropet og den daglige bønnen (Vogt, 2025). Ekteskapet er nøkternt: en kontrakt med vitner og gaven mahr fra mannen til kvinnen. Gravferden er rask: vask, hvite tøystykker og begravelse vendt mot Mekka (Selhi, 2025)."
+            "content": "Islam markerer fødsel, ekteskap og død, men har ingen egen seremoni for ungdom. Til gjengjeld følger én og samme setning deg hele livet. Trosbekjennelsen shahada er det første som hviskes i øret på den nyfødte, og den er fast del av både bønneropet og den daglige bønnen (Vogt, 2025). Bryllupet er enkelt: en avtale med vitner og en gave, mahr, fra mannen til kvinnen. Begravelsen går fort: kroppen vaskes, svøpes i hvite tøystykker og legges i graven vendt mot Mekka (Selhi, 2025)."
         },
         {
             "type": "header",
@@ -373,15 +373,15 @@
         },
         {
             "type": "text",
-            "content": "Hinduismen har flest riter av alle ni. Ritualtekstene rommer en lang rekke samskara, fra før barnet er unnfanget til kremasjonen. Noen tradisjoner teller ti av dem, andre seksten, og i dag er bare fire vanlige: ritene rundt fødsel og barndom, innvielsen med den hellige snoren, bryllupet og begravelsen (ISKCON Educational Services, u.å.). Ved innvielsen upanayana får gutten snoren og lov til å lese de hellige tekstene. Men riten ble regnet som nødvendig bare for de tre øverste varna-gruppene, altså de tre øverste lagene i det gamle standssystemet. Den fortalte ikke bare at gutten var blitt elev, men hvem som fikk lov til å bli det."
+            "content": "Hinduismen har flest seremonier av alle ni. De gamle tekstene beskriver en lang rekke riter som kalles samskara, fra før barnet er blitt til og helt fram til bålet. Noen tradisjoner teller ti av dem, andre seksten. I dag er bare fire vanlige: ritene rundt fødsel og barndom, seremonien med den hellige snoren, bryllupet og begravelsen (ISKCON Educational Services, u.å.). Ved snorseremonien upanayana får gutten lov til å lese de hellige tekstene. Men bare gutter fra de tre øverste lagene i det gamle standssystemet, kalt varna, hadde rett til den. Riten sa altså ikke bare at gutten var blitt elev. Den sa også hvem som fikk lov til å bli det."
         },
         {
             "type": "text",
-            "content": "Bryllupet, vivaha, er blant hinduismens største fester. Paret går fire runder rundt en offerild og tar deretter sju skritt mot nord. Det er skrittene som gjør ritualet gyldig (Jacobsen, 2024). Sikhismen bruker samme grep rundt noe annet: i Anand Karaj går paret én runde rundt Guru Granth Sahib for hvert av de fire versene i laavan (Sikh Missionary Society, 2004). Midtpunktet er en bok, ikke en prest (Kristiansen mfl., 2026)."
+            "content": "Bryllupet, vivaha, er blant hinduismens største fester. Paret går fire runder rundt et bål og tar så sju skritt mot nord. Det er de sju skrittene som gjør dem gift (Jacobsen, 2024). Sikhene gjør noe av det samme, men går rundt noe annet: i bryllupet Anand Karaj går paret én runde rundt den hellige boka Guru Granth Sahib for hvert av de fire versene som synges (Sikh Missionary Society, 2004). I midten står altså en bok, ikke en prest (Kristiansen mfl., 2026)."
         },
         {
             "type": "text",
-            "content": "Buddhismen er den tydeligste motsatsen. Ekteskapet regnes ikke som en religiøs handling (Borgland, 2026a). Men døden eier tradisjonen. Munkene resiterer, og familien gir mat og klær til klosteret på vegne av den døde. Tanken er at gaven skaper religiøs fortjeneste, punya, som kan overføres til den døde (Borgland, 2026b). Den som lever, samler god karma selv; den døde er avhengig av andre. Buddhister er uenige om hvor lang tid den døde har: i tibetansk tradisjon varer mellomtilstanden bardo i 49 dager, mens theravada-retningen mener gjenfødelsen skjer straks. Mer står i artikkelen om [riten som ikke finnes](/krle/religion/buddhisme/overgangsriter)."
+            "content": "Buddhismen gjør det stikk motsatte av hinduismen. Bryllupet er ingen religiøs handling i det hele tatt (Borgland, 2026a). Men i begravelsen tar religionen full plass. Munkene synger hellige tekster, og familien gir mat og klær til klosteret i den dødes navn. Buddhister tror nemlig at en god handling gir noe de kaller punya, og at den kan gis videre til en som er død (Borgland, 2026b). Så lenge du lever, samler du god karma selv. Når du er død, er du avhengig av at andre gjør det for deg. Hvor lang tid den døde har, er buddhistene uenige om: i Tibet mener de at det går 49 dager i en mellomtilstand som heter bardo, mens theravada-buddhister mener det nye livet begynner med én gang. Les mer i artikkelen om [riten som ikke finnes](/krle/religion/buddhisme/overgangsriter)."
         },
         {
             "type": "header",
@@ -389,19 +389,19 @@
         },
         {
             "type": "text",
-            "content": "Bahá'í, mormonismen og Jehovas vitner samles ofte under merkelappen nyere bevegelser. Det er en forenkling: bahá'í springer ut av sjia-islam, de to andre ut av kristendommen, og alle tre er langt mindre enn de store tradisjonene. De flytter likevel alle tre på et trinn de andre tar for gitt."
+            "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte slått sammen til én sekk som kalles nyere bevegelser. Det blir litt for enkelt. Bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen, og alle tre er mye mindre enn de store religionene. Men de har én ting felles: alle tre gjør om på et trinn som de andre tar for gitt."
         },
         {
             "type": "text",
-            "content": "Bahá'í har verken dåp eller konfirmasjon. Familien kan holde en navnefest, men ingen seremoni er påbudt (Bahaipedia, u.å.). Ved 15 år overtar den unge selv ansvaret for daglig bønn og faste, uten at noen dag markerer skiftet. Bryllupet er derimot strengt: begge parters foreldre må si ja, og så sier begge den samme setningen (Bahá'í International Community, u.å.). Religionen har ikke presteskap, og mye avgjøres lokalt (Vogt og Winje, 2026), så to navnefester kan se ganske ulike ut."
+            "content": "Bahá'í har verken dåp eller konfirmasjon. Familien kan holde en navnefest, men ingen må gjøre det (Bahaipedia, u.å.). Ved 15 år får den unge selv ansvaret for å be og faste, uten at noen dag markerer det. Bryllupet har derimot strenge regler: alle foreldre som lever, må si ja, og så sier begge to den samme setningen foran vitner (Bahá'í International Community, u.å.). Bahá'í har ingen prester, og mye bestemmes lokalt (Vogt og Winje, 2026). Derfor kan to navnefester se ganske ulike ut."
         },
         {
             "type": "text",
-            "content": "Mormonismen gjør i stedet ekteskapet til den største riten den har. Kirken lærer at et par som blir beseglet i tempelet, hører sammen for tid og all evighet, ikke bare til døden skiller dem (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Spedbarn døpes ikke, og dåpen kommer først ved åtte år, som kirken kaller ansvarlighetsalderen (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b)."
+            "content": "Mormonismen gjør i stedet bryllupet til den største seremonien de har. Kirken lærer at et par som blir beseglet i tempelet, hører sammen for alltid, ikke bare fram til den ene dør (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Spedbarn døpes ikke. Dåpen skjer først når barnet er åtte år, for da mener kirken at du er gammel nok til å velge mellom rett og galt (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b)."
         },
         {
             "type": "text",
-            "content": "Jehovas vitner markerer ikke fødselen i det hele tatt. De døper ikke spedbarn, fordi den som døpes, selv må ha forstått hva det handler om (Jehovas vitner, u.å.). De feirer heller ikke bursdager eller jul (Ringnes mfl., 2026). Til gjengjeld er den ene riten de har, tung. Etter måneder med studier ber du en innvielsesbønn alene. Siden svarer du ja på to spørsmål og blir senket helt under vann på et av de årlige stevnene (Ringnes mfl., 2026). Overgangen må du selv be om. Mer står i artikkelen om [dåpen du må be om selv](/krle/religion/jehovas-vitner/overgangsriter)."
+            "content": "Jehovas vitner markerer ikke fødselen i det hele tatt. De døper ikke spedbarn, fordi de mener at den som døpes, selv må ha forstått hva det handler om (Jehovas vitner, u.å.). De feirer heller ikke bursdager eller jul (Ringnes mfl., 2026). Den ene seremonien de har, krever til gjengjeld mye. Etter måneder med opplæring ber du en bønn alene der du lover å følge Gud. Siden svarer du ja på to spørsmål foran forsamlingen og blir senket helt under vann på et av de store møtene (Ringnes mfl., 2026). Ingen gir deg denne overgangen. Du må be om den selv. Les mer i artikkelen om [dåpen du må be om selv](/krle/religion/jehovas-vitner/overgangsriter)."
         },
         {
             "type": "image",
@@ -415,24 +415,24 @@
         },
         {
             "type": "text",
-            "content": "Sett de fire trinnene ved siden av hverandre, og et mønster trer fram. Det som skiller, er ikke om tradisjonene kjenner overgangene, men hvilken de vekter mest."
+            "content": "Setter du de fire trinnene ved siden av hverandre, ser du et mønster. Forskjellen ligger ikke i hvilke overganger tradisjonene kjenner, men i hvilken de bryr seg mest om."
         },
         {
             "type": "list",
             "items": [
                 "Fødselen markeres nesten overalt, men bare noen tradisjoner gjør barnet til medlem samtidig.",
                 "Veien ut av barndommen varierer mest: fra åtte år i mormonismen til et valg du kan ta som voksen hos Jehovas vitner.",
-                "Ekteskapet får mest religiøst innhold der religionen selv eier avtalen, minst der formen kommer fra lokal kultur.",
+                "Bryllupet blir mest religiøst der religionen selv bestemmer reglene, og minst der bryllupet følger lokale skikker.",
                 "Døden er den ene overgangen ingen av de ni lar være å markere."
             ]
         },
         {
             "type": "text",
-            "content": "Ved de tre første overgangene kan mennesket det gjelder si noe selv. Ved den siste kan det ikke det. Nettopp der er tradisjonene mest detaljerte: kisten som er lik for alle, gavene til klosteret, jorden som kastes tre ganger. En overgangsrite handler like mye om dem som blir igjen."
+            "content": "Ved de tre første overgangene kan den det gjelder si noe selv. Ved den siste kan hun eller han ikke det. Og nettopp der har tradisjonene flest regler: kisten som er lik for alle, gavene til klosteret, jorden som kastes tre ganger. Kanskje er det fordi en begravelse ikke bare handler om den som er død, men like mye om dem som blir igjen."
         },
         {
             "type": "text",
-            "content": "Riter overlever ofte troen som skapte dem. Andelen konfirmanter i Den norske kirke har falt fra 93 prosent i 1960 til rundt 48 prosent i 2023, mens nesten 13 800 femtenåringer valgte humanistisk konfirmasjon i 2022 (Elstad mfl., 2026). Samtidig fikk 80,4 prosent av dem som døde i 2024, kirkelig gravferd (Dybdahl mfl., 2025). Færre bruker kirken når livet begynner, de fleste når det slutter."
+            "content": "Folk holder ofte fast på seremoniene lenge etter at de har sluttet å tro. I 1960 ble 93 prosent av norske femtenåringer konfirmert i kirken. I 2023 var tallet rundt 48 prosent, og i 2022 valgte nesten 13 800 ungdommer humanistisk konfirmasjon i stedet (Elstad mfl., 2026). Men av dem som døde i 2024, ble hele 80,4 prosent begravet i kirkens regi (Dybdahl mfl., 2025). Færre bruker kirken når livet begynner. De fleste bruker den fortsatt når det slutter."
         },
         {
             "type": "component",
@@ -452,7 +452,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Se rådataene",
-                "content": "Vil du lese hva hver enkelt tradisjon selv sier om overgangsritene sine, med kilder, finner du alle ni artiklene side om side på /krle/sammenlign/tema/overgangsriter."
+                "content": "Vil du lese hva hver enkelt tradisjon selv sier om overgangsritene sine, finner du alle ni artiklene side om side på /krle/sammenlign/tema/overgangsriter."
             }
         },
         {
@@ -492,29 +492,29 @@
                             "Festen etterpå"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Først løsrivelse, så en mellomtilstand, og til slutt at fellesskapet tar deg inn igjen med en ny plass."
+                        "explanation": "Først slipper du taket i det du var, så er du en stund midt imellom, og til slutt tar fellesskapet imot deg med en ny plass."
                     },
                     {
                         "question": "Hvorfor har ikke buddhismen et eget bryllupsrituale?",
                         "options": [
                             "Fordi munkene ikke har lov til å være ute om kvelden",
-                            "Fordi ekteskapet ikke regnes som en religiøs handling, og formen kommer fra lokal kultur",
+                            "Fordi bryllupet ikke regnes som en religiøs handling, og formen følger lokale skikker",
                             "Fordi buddhister ikke gifter seg",
                             "Fordi ritualet gikk tapt i middelalderen"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Munker og nonner vier ingen. Til gjengjeld er det som regel munkene som utfører ritualene ved en begravelse."
+                        "explanation": "Munker og nonner gifter ikke bort noen. Til gjengjeld er det som regel munkene som styrer seremonien i en begravelse."
                     },
                     {
                         "question": "Hva skiller mormonismens syn på ekteskapet fra de andre tradisjonenes?",
                         "options": [
                             "At paret må ha samtykke fra alle foreldre som lever",
                             "At paret går fire runder rundt en hellig bok",
-                            "At ekteskapet beseglet i tempelet gjelder for tid og all evighet",
-                            "At ekteskapet er en kontrakt som kan sies opp"
+                            "At ekteskapet varer for alltid når det er beseglet i tempelet",
+                            "At ekteskapet er en avtale som kan sies opp"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Beseglingen kan bare skje i et tempel, og den binder ektefeller og barn sammen også etter døden."
+                        "explanation": "Beseglingen kan bare skje i et tempel, og den binder ektefeller og barn sammen også etter at de er døde."
                     },
                     {
                         "question": "Hvilken tradisjon markerer ikke fødselen med noen rite i det hele tatt?",
