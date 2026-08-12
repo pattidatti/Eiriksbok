@@ -533,3 +533,147 @@ Før opp hver ferdigstilte artikkel her fra og med nå, så er historikken synli
 | 2026-08-12 | Kristendom: Verdens største religion | `KristendomsGrenerUtforsker` | ↻ | - |
 | 2026-08-12 | Kristendom: Pinse: Den dagen kirken ble til | `PinseNasjoner` | ↻ | - |
 | 2026-08-12 | Kristendom: Baptistene: frihet gjennom dåpen | `BaptismComparator` | ↻ | - |
+
+---
+
+## 10. Lærdommer fra R0-R6 og sammenligningsemnet
+
+Skrevet ned 2026-08-12, etter at 99 av 126 KRLE-artikler og 14 av 17
+sammenligningsartikler var bygget med parallelle agenter. Dette er ikke en dagbok, men
+den korteste lista over ting som faktisk gikk galt, og hva som forhindrer at det gjentar seg.
+
+### 10.1 Kjør alltid en fersk skanning rett før en runde starter
+
+Planen i §5 er et øyeblikksbilde og driver fra virkeligheten på tre måter:
+
+- **Boten bygger samtidig.** Den daglige innholdscronen følger de samme dokumentene. I R3
+  hadde den laget `sikhisme/bonn` (1226 ord, egen signaturkomponent, eget mikrospill) noen
+  timer før runden startet. Agenten min fikk beskjed om at fila ikke fantes, og overskrev
+  den med en kortere versjon. Oppdaget bare fordi manifest-skriptet meldte «opprettet 0»
+  der jeg ventet «opprettet 1». Bot-versjonen ble gjenopprettet.
+- **Rundeomfang definert på filnavn i stedet for kvalitet.** R1 var definert som «`skapelse`
+  for de religionene som mangler den». `islam/skapelse` fantes, men var en stubb på 45 ord,
+  og slapp derfor gjennom hele runden. Tema 1 i sammenligningsemnet sto som 9/9 i tellingen
+  mens det reelt var 8/9. **Definer runder på terskelen i §2, aldri på om fila finnes.**
+- **Samme artikkel under flere navn.** R6 var definert som «de åtte kristendom-artiklene i
+  325-396-båndet». Sju av dem het også `gudsbilde`, `bonn`, `overgangsriter` og ble tatt i
+  R2-R5. Bare `skapelse` sto igjen, mens sju helt andre kristendom-artikler manglet hale.
+
+### 10.2 Delte filer må aldri røres av agenter
+
+`public/content/manifest.json` og `src/components/ComponentRegistry.tsx` skrives av hver
+eneste artikkel. Parallelle agenter som redigerer dem samtidig korrumperer dem.
+
+**Mønsteret som virker:** agentene eier kun sine to egne filer (artikkel-JSON og
+`.tsx`-komponenten) og *returnerer* manifest-oppføringen og det endelige komponentnavnet
+som strukturert data. Orkestratoren gjør begge registreringene serielt etterpå.
+
+Komponentnavn må returneres selv om agenten beholder det foreslåtte, fordi agenter ofte
+bytter navn når vinkelen forskyver seg under kildearbeidet. `DeNittiniNavnene` ble
+`TawhidEllerShirk`, `GudMedKropp` ble `GuddommenModellen`, `TreBonnerOmDagen` ble
+`MinjanRommet`. Registreres feil navn, viser artikkelen en feilboks.
+
+### 10.3 `args` til Workflow ankommer som streng
+
+Sendes et lenkekart eller annen konfigurasjon via `args`, kommer det fram som en
+JSON-streng, ikke som objekt. `LENKER[rel.id]` blir da `undefined`, og prompten får en tom
+liste uten at noe feiler. I R2 fikk fem av åtte artikler null innlenker på den måten, i R3
+to av ni.
+
+**Legg konfigurasjonen som literal i selve skriptet**, og legg inn en vakt:
+
+```js
+if (!lenker.length) log(`ADVARSEL: tom lenkeliste for ${rel.id}`)
+```
+
+### 10.4 Sesjonsgrenser dreper midt i skrivingen
+
+Traff tre ganger. Konsekvensen er halvferdig tilstand på disk: noen artikler komplette,
+noen komponenter uten artikkel, én artikkel som refererer en komponent som aldri ble
+skrevet.
+
+- **Del runder i puljer på tre og commit mellom hver.** Ni parallelle byggagenter som hver
+  henter fem kilder tømmer budsjettet. Tre artikler koster rundt 930k agent-tokens, seks
+  koster 2,5M.
+- **Etter et avbrudd: vurder hver fil for seg.** Komplette artikkel-og-komponent-par kan
+  beholdes. Artikler uten komponentfil rulles tilbake. Foreldreløse komponenter slettes
+  hvis de er avkuttede fragmenter, men beholdes hvis de kompilerer og er hele.
+- **Overlevende artikler er ALDRI verifiserte.** Kjør verifiseringsagenter på dem i neste
+  runde. Det var der de groveste feilene lå: islam/hellige-tekster hadde fire setninger på
+  rad der tradisjonens fortelling sto som dokumentert historie, og lå 135 ord over taket.
+
+### 10.5 Bildecronen sveiper inn uferdig arbeid
+
+`agy-generate-images.sh` kjører 07:30, `git add`-er bredt og committer alt som ligger i
+arbeidstreet. Den tok alle seks sammenligningsartiklene fra en workflow som fortsatt
+kjørte, midt i skrivingen. Den registrerer verken leksjoner i manifestet eller komponenter
+i registryet, så artiklene landet på main uten å være nåbare og med feilbokser der
+signaturkomponenten skulle stått.
+
+**Ikke la uferdig arbeid ligge over natta.** Commit før 07:30, eller regn med å rydde.
+
+### 10.6 Feiltypene som faktisk forekommer
+
+Rangert etter hvor alvorlige de er og hvor vanskelige de er å se:
+
+1. **Skjult fabrikasjon.** En riktig påstand festet på en kilde som ikke nevner temaet.
+   Den vanligste alvorlige feilen. Eksempler: en FactBox om norsk lov kreditert
+   `snl.no/brit_mila`, som ikke nevner norsk lov; «Paulus brukte oppstandelsen som bevis»
+   kreditert `snl.no/oppstandelse`, der det ikke står; mihraben «formet som en port mot
+   paradis» uten dekning i noen av nitten kilder. **Motmiddel:** gå gjennom minst åtte til
+   ti kildehenvisninger én for én og bekreft at kilden dekker akkurat den påstanden.
+2. **Trosinnhold framstilt som historie.** Sjangerfeilen. «Gud inngikk en pakt med Abraham»
+   mot «I fortellingen inngår Gud en pakt». Særlig hyppig i `grunnleggere` og
+   `hellige-tekster`, der tradisjonens egen fortelling om opphavet lett glir over i
+   indikativ. **Motmiddel:** eget verifiseringspunkt som krever gjennomgang av hele teksten.
+3. **Feil inne i komponenten, i en tilstand teksten rundt ikke avslører.** Kjønnsvelgeren i
+   `PliktenSomFlytterSeg` endret bare alderen, ikke kortstokken, og påstod dermed at en
+   jente i ortodoks tradisjon leser fra Tora-rullene. **Motmiddel:** faktasjekk komponenten
+   i *alle* tilstander, ikke bare den første.
+4. **Tekst skrevet uten kilder inneholder rundt femten faktafeil per artikkel.** Målt: 46
+   feil i tre artikler (R5d pulje B), 130 i sju (R6). En artikkel som ser ferdig ut med
+   riktig lengde og egen komponent kan være full av feil hvis den aldri ble skrevet fra
+   kilder. Det er en annen feiltype enn stubbene, og vanskeligere å få øye på.
+5. **Sammenligningen motsier sin egen kildeartikkel.** `bonn`-sammenligningen skrev «ti
+   voksne» om minjan der både SNL og `jodedom/bonn` sier «ti voksne menn». **Motmiddel:**
+   kryssjekk fem påstander mot den tilhørende per-religion-artikkelen.
+6. **Rangering i sammenligningsartikler.** Artikkelen tar stilling der kilden sier at de
+   lærde er uenige. Den negative gylne regel framstilt som «noe du kan oppfylle ved å sitte
+   helt stille» gjorde fire tradisjoner mindre forpliktende enn de andre.
+7. **Tall uten årstall, og spenn gjort om til presisjon.** Medlemstall er ferskvare og må
+   dateres. «82 språk» var en avledning som gjorde engelsk til en oversettelse; kilden sa
+   81 ikke-engelske. Der kilden sier «rundt», skal det stå «rundt».
+
+### 10.7 Tekniske fallgruver
+
+- **Framer Motion og SVG-attributter.** Animeres `r`, `cx` eller `pathLength` uten at
+  attributtet også settes direkte, er det `undefined` i første frame og konsollen får
+  `<circle> attribute r: Expected length`. `pathLength` overstyrer i tillegg
+  `strokeDasharray`, så statisk stipling forsvinner.
+- **Tailwind-breakpoints måler vinduet, ikke spalta.** Artikkelspalta er 712 px bred i et
+  1366 px vindu, så `xl:grid-cols-3` slår aldri inn mens `sm:` alltid gjør det.
+- **Komponenthøyde.** Hold under 700 px i artikkelspalta. Den vanligste årsaken til at den
+  sprenger, er at samme innhold vises både som merkelapper på hvert kort og i et
+  detaljpanel. Velg ett sted. Byggagentens eget anslag er upålitelig; `MatbordetsRegler`
+  ble 1090 px og `RommetsGrammatikk` 719 px der agenten anslo 660. **Mål i Chromium.**
+- **`/krle/sammenlign/tema/:tag` matcher hva som helst.** Lenkesjekkeren godkjenner derfor
+  data-ugyldige lenker. Bare de ti slugene `generate-comparison-manifest.mjs` faktisk lager
+  er gyldige; dimensjonsnavn som `ethical` eller `material` er det aldri.
+- **Generatoren ser bare `krle/religion/*/*/artikkel.json`.** Flate filer er usynlige.
+  `sikhisme/overgangsriter.json` lå flatt OG manglet `comparison_tags` helt, så
+  referansemalen i hele opprustningen var usynlig i sammenligningssystemet.
+- **`comparison_tags` som ser inkonsekvente ut, er ofte aliaser.** `hellige_tekster` med
+  understrek og `skapelsesmyte` normaliseres av generatoren. «Rydder» man i dem, faller
+  artikkelen ut av et tema. La dem stå.
+
+### 10.8 Det som gjør en runde god
+
+- **Én faglig vinkel per artikkel, formulert som DET SÆREGNE.** Uten den lager ni agenter
+  ni varianter av samme komponent. Advar eksplisitt mot den late mekanikken: «fire
+  livsfaser på en tidslinje», «klikk på fem kort og les en faktatekst», «bla i en bok».
+- **La agenten si fra framfor å gjette.** Et eget felt for «dette klarte jeg ikke å
+  belegge» ga bedre artikler enn å presse fram et svar. Etikk-agenten fant ingen
+  verifiserbar sikhisk formulering av den gylne regel, og skrev det i artikkelen.
+- **Verifiseringsagenten skal være motstander, ikke godkjenner.** Den skal hente hver
+  kilde-URL på nytt, bruke `snl.no/<oppslagsord>.json` for å lese forfatter og `changed_at`
+  direkte, og rette selv. Alle de alvorlige funnene i denne serien kom derfra.

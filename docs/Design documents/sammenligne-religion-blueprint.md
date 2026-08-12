@@ -1,9 +1,9 @@
 # Subject Blueprint: Sammenligne religion
 
-> **Status:** `Draft`
-> **Version:** 1.0
-> **Opprettet:** 2026-08-10
-> **Omfang:** Flerårsprosjekt, bygges i faser. Denne blueprinten er komplett; ingen filer er bygget ennå.
+> **Status:** `Under bygging`
+> **Version:** 1.1
+> **Opprettet:** 2026-08-10 · **Sist oppdatert:** 2026-08-12
+> **Omfang:** Flerårsprosjekt, bygges i faser. 14 av 17 artikler er bygget. Gjenstår: kjonn-og-roller, ledelse-og-fellesskap, pilegrim. Erfaringer i §10.5.
 
 ---
 
@@ -691,6 +691,27 @@ Alle bilder er `placeholder.webp` inntil fase 8. Format: WebP, 16:9, maks 1600px
 
 Prompt-mal (fra `docs/image-style-guide.md`):
 `A highly realistic 4K cinematic photograph of [scene]. [Lighting description]. [Composition/camera angle]. 16:9 ratio.`
+
+---
+
+## 10.5 Erfaringer fra de fjorten første artiklene
+
+Praktiske lærdommer fra byggingen av tema 1-14 er samlet i
+`docs/KRLE_OPPRUSTNING.md` §10. Les den før neste byggerunde. De fire punktene som
+oftest har slått til i akkurat dette emnet:
+
+- **Komponenthøyde.** Hold under 700 px i artikkelspalta på 712 px. Byggagentens eget
+  anslag er upålitelig; mål i Chromium. Vanligste årsak til overskridelse er at samme
+  innhold vises både som merkelapper på hvert kort og i et detaljpanel.
+- **«Se rådataene»-lenka.** Bare de ti slugene `generate-comparison-manifest.mjs` faktisk
+  lager er gyldige. Dimensjonsnavn som `ethical` eller `material` er aldri en slug, og
+  lenkesjekkeren fanger det ikke fordi ruta `/tema/:tag` matcher alt. Har temaet ingen
+  slug, pek på `/krle/sammenlign`.
+- **Rangering.** Den hyppigste tonefeilen er at artikkelen tar stilling der kilden sier at
+  de lærde er uenige. Sammenligning er ikke rangering, og det er lettest å bryte i
+  temaer om regler og levemåte.
+- **Samisk gjestestemme i preteritum.** Toneregel 1 i §5.4 brytes nesten automatisk.
+  Kildene beskriver fornyet interesse for hellige fjell og offersteder i dag.
 
 ---
 
