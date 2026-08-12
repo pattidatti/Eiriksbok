@@ -180,6 +180,7 @@ const HvaSkjerMedBrodet = lazy(() => import('./content/interactive/HvaSkjerMedBr
 const ToStoreBrudd = lazy(() => import('./content/interactive/ToStoreBrudd').then(m => ({ default: m.ToStoreBrudd })));
 const AvgjorelsenSomAapnetDoren = lazy(() => import('./content/interactive/AvgjorelsenSomAapnetDoren').then(m => ({ default: m.AvgjorelsenSomAapnetDoren })));
 const SkapelsesVeven = lazy(() => import('./content/interactive/SkapelsesVeven').then(m => ({ default: m.SkapelsesVeven })));
+const BliOgDetBle = lazy(() => import('./content/interactive/BliOgDetBle').then(m => ({ default: m.BliOgDetBle })));
 const GudsbildeAksen = lazy(() => import('./content/interactive/GudsbildeAksen').then(m => ({ default: m.GudsbildeAksen })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
@@ -634,6 +635,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ToStoreBrudd,
     AvgjorelsenSomAapnetDoren,
     SkapelsesVeven,
+    BliOgDetBle,
     GudsbildeAksen,
     DagenSomBonn,
     MaatBalansen,

@@ -935,7 +935,7 @@
         },
         {
           "religion": "islam",
-          "title": "Skapelsen i Islam",
+          "title": "Seks dager, og ingen hvile",
           "file": "content/krle/religion/islam/skapelse/artikkel.json",
           "link": "/krle/religion/islam/skapelse"
         },
@@ -1331,7 +1331,7 @@
     },
     {
       "religion": "islam",
-      "title": "Skapelsen i Islam",
+      "title": "Seks dager, og ingen hvile",
       "link": "/krle/religion/islam/skapelse",
       "dimension": "narrative",
       "tags": [

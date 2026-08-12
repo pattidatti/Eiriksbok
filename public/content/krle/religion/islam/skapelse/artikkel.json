@@ -1,79 +1,264 @@
 {
-    "id": "skapelse",
-    "title": "Skapelsen i Islam",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "islam",
-    "dimension": "narrative",
-    "comparison_tags": [
-        "fortellinger",
-        "skapelsesmyte",
-        "opprinnelse"
-    ],
-    "fact": "Koranen beskriver at Allah skapte verden, men nevner ikke en hviledag.",
-    "tags": [
-        "islam",
-        "narrative",
-        "skapelse"
-    ],
-    "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2026-08-10T12:00:00Z",
-    "content": [
-        {
-            "type": "text",
-            "content": "Koranen forteller at Allah skapte himlene og jorden på seks perioder (dager). Alt er skapt med en hensikt. Mennesket (Adam) ble skapt av leire og fikk livets pust fra Allah. I motsetning til Bibelen, sier ikke Koranen at Gud hvilte, for Allah blir aldri trett."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "allah",
-            "term": "Allah",
-            "definition": "Det arabiske ordet for Gud. Skaperen av alt."
-        },
-        {
-            "id": "adam",
-            "term": "Adam",
-            "definition": "Det første mennesket, skapt av leire. Også den første profeten i islam."
-        },
-        {
-            "id": "khalifa",
-            "term": "Khalifa",
-            "definition": "Stedsfortreder eller forvalter. Menneskets rolle på jorden."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva ble det første mennesket skapt av ifølge Koranen?",
-            "options": [
-                "Lys",
-                "Ild",
-                "Leire"
-            ],
-            "answer": "Leire"
-        },
-        {
-            "question": "Hvilte Allah etter skapelsen?",
-            "options": [
-                "Ja, på den syvende dagen",
-                "Nei, Allah blir aldri trett",
-                "Koranen sier ingenting om det"
-            ],
-            "answer": "Nei, Allah blir aldri trett"
-        },
-        {
-            "question": "Hva er menneskets oppgave på jorden?",
-            "options": [
-                "Å være Guds forvalter",
-                "Å gjøre som man vil",
-                "Å herske over andre"
-            ],
-            "answer": "Å være Guds forvalter"
-        }
-    ],
-    "quote": {
-        "text": "Han er himlenes og jordens Skaper. Når Han bestemmer en sak, sier Han bare til den: 'Bli!', og den blir.",
-        "source": "Koranen",
-        "reference": "Sura 2:117"
+  "id": "skapelse",
+  "title": "Seks dager, og ingen hvile",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "islam",
+  "dimension": "narrative",
+  "comparison_tags": ["fortellinger", "skapelsesmyte", "opprinnelse"],
+  "layout": "rich",
+  "category": "Islam",
+  "readTime": "7 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Koranen forteller at Gud skapte himlene og jorden på seks dager.",
+    "Men her hviler Gud ikke. Teksten sier at ingen tretthet rørte ham.",
+    "Gud skaper ved å si ett ord: Bli. Ingen materialer og ingen redskaper nevnes.",
+    "Mennesket ble formet av leire og satt til å være Guds forvalter på jorda.",
+    "Skapelsen er ikke bare noe som skjedde. Den peker på hvem Gud er."
+  ],
+  "concepts": [
+    {
+      "id": "kun-fa-yakun",
+      "term": "Kun fa-yakun",
+      "definition": "Arabisk for Bli, og det blir. Uttrykket for at Gud skaper ved å ville det."
     },
-    "timeline": []
+    {
+      "id": "khalifa",
+      "term": "Khalifa",
+      "definition": "Stedfortreder eller forvalter. Menneskets oppgave på jorda ifølge Koranen."
+    },
+    {
+      "id": "tawhid",
+      "term": "Tawhid",
+      "definition": "Læren om at Gud er én og udelelig. Islams mest grunnleggende tanke."
+    },
+    {
+      "id": "ex-nihilo",
+      "term": "Ex nihilo",
+      "definition": "Latin for av ingenting. Tanken om at Gud ikke brukte noe materiale som fantes fra før."
+    }
+  ],
+  "createdDate": "2023-01-01T12:00:00Z",
+  "lastUpdated": "2026-08-12T12:00:00Z",
+  "content": [
+    {
+      "type": "text",
+      "content": "Både Bibelen og Koranen forteller at Gud brukte seks dager på å skape verden. Så skiller de lag. I den bibelske teksten hviler Gud på den sjuende dagen. I Koranen står det tvert imot: «Vi skapte visselig himlene og jorden og det som er mellom dem på seks dager, og ingen tretthet rørte Oss» (Koranen 50,38)."
+    },
+    {
+      "type": "text",
+      "content": "En liten forskjell, kanskje. Men den forteller noe helt sentralt om hvordan muslimer forstår Gud."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Stjernehimmel over ørkenlandskap ved daggry",
+      "caption": "Koranen kaller himmelen og jorden tegn på Guds makt."
+    },
+    {
+      "type": "header",
+      "text": "Ordet som er nok"
+    },
+    {
+      "type": "text",
+      "content": "Islam er en streng monoteistisk religion, og det viktigste av alt er at Gud er én (Vogt, 2026). Fagordet er tawhid. Alt annet i troen henger på det, og det gjelder også skapelsen. I sure 112 heter det: «Ikke har Han avlet og ikke er Han født» (Vogt, 2026). Gud er altså ikke en del av slektskjeden som resten av verden hører til. Han står utenfor det han selv har laget."
+    },
+    {
+      "type": "text",
+      "content": "Islam hører til den gruppen religioner som lærer at Gud skaper av ingenting, gjennom sitt ord, sin tanke eller sin vilje (Kværne, Groth og Løøv, 2025). Det latinske uttrykket er ex nihilo, av ingenting. Koranen sier det slik: Gud er «himlenes og jordens opphavsmann. Når han bestemmer en sak, sier han bare til den: Bli, og den blir» (Koranen 2,117). På arabisk er det to ord: kun fa-yakun."
+    },
+    {
+      "type": "text",
+      "content": "Det er verdt å vite at dette ikke er den eneste måten religioner har forklart begynnelsen på. Religionshistorikere skiller mellom tre hovedtyper: skapelse av ingenting, skapelse av et kaos eller et urstoff som alt lå der, og skapelse ved at et urvesen blir delt opp og blir til verden (Kværne, Groth og Løøv, 2025). I mesopotamisk og gresk tradisjon finner vi den andre typen, i norrøn og vedisk tradisjon den tredje. Islam hører helt og holdent til den første."
+    },
+    {
+      "type": "text",
+      "content": "Prøv det i ruta under. Se om du finner noe å bygge med."
+    },
+    {
+      "type": "component",
+      "name": "BliOgDetBle",
+      "props": {
+        "title": "Prøv å skape en verden"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva du ikke fant. Ingen leire som ligger klar, ingen redskaper, ingen kamp mot noe som gjør motstand. Flere gamle skapelsesfortellinger begynner nettopp der, med et kaos eller et urstoff som må ordnes (Kværne, Groth og Løøv, 2025). Koranen gjør ikke det."
+    },
+    {
+      "type": "text",
+      "content": "Derfor blir hviledagen unødvendig. Å hvile forutsetter at noe har vært slitsomt. Når skapelsen ikke koster Gud noe, er det ingenting å hvile ut fra. Du kan lese mer om dette gudsbildet i artikkelen om [Guds enhet](/krle/religion/islam/gudsbilde)."
+    },
+    {
+      "type": "header",
+      "text": "Hva er da de seks dagene?"
+    },
+    {
+      "type": "text",
+      "content": "Spørsmålet melder seg av seg selv: hvorfor nevne dager i det hele tatt, hvis tida ikke koster noe? Koranen sier flere steder at Gud skapte himlene og jorden på seks dager, og at han deretter «tok plass på tronen» (Koranen 7,54)."
+    },
+    {
+      "type": "text",
+      "content": "Muslimske lærde har lest dette ulikt gjennom historien. Det arabiske ordet som oversettes med dag, ayyam, brukes ikke bare om et døgn, men også om lengre perioder. Mange leser derfor dagene som faser eller tidsrom, ikke som seks ganger tjuefire timer. Andre holder på en mer bokstavelig lesning. Som i alle religioner finnes det ulike syn blant muslimer på hvor bokstavelig en slik tekst skal forstås."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ingen egen skapelsesberetning",
+        "content": "Koranen har ikke ett samlet kapittel om skapelsen slik 1. Mosebok har. Fortellingen ligger spredt i korte avsnitt gjennom hele boka, ofte som en påminnelse midt i noe annet: se på himmelen, se på regnet, se på deg selv. Skapelsen brukes som argument, ikke som en fortelling med begynnelse og slutt."
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hender som former leire på en dreieskive",
+      "caption": "Mennesket ble ifølge Koranen formet av leire."
+    },
+    {
+      "type": "header",
+      "text": "Mennesket av leire"
+    },
+    {
+      "type": "text",
+      "content": "Om mennesket sier Koranen at Gud «fullkommengjorde alt han skapte, og begynte skapelsen av mennesket av leire» (Koranen 32,7). Bildet er velkjent også fra jødiske og kristne tekster, og du finner det igjen i artikkelen om [de to skapelsesfortellingene i Bibelen](/krle/religion/kristendom/skapelse)."
+    },
+    {
+      "type": "text",
+      "content": "Men så kommer noe som skiller. Da Gud skulle sette mennesket på jorda, forteller Koranen at han sa til englene: «Jeg vil sette en stedfortreder på jorden.» Englene innvendte at mennesket ville skape ufred og utøse blod, og Gud svarte: «Jeg vet det dere ikke vet» (Koranen 2,30)."
+    },
+    {
+      "type": "text",
+      "content": "Ordet som brukes er khalifa, stedfortreder eller forvalter. Ifølge Koranen er mennesket Guds stedfortreder på jorden, og mennesket er ikke ondt, men svakt, og trenger derfor lovens veiledning (Vogt, 2026). Det er en nøktern beskrivelse: mennesket får et oppdrag det så vidt er i stand til å utføre."
+    },
+    {
+      "type": "header",
+      "text": "Skapelsen som argument"
+    },
+    {
+      "type": "text",
+      "content": "I islamsk tenkning står skaperverkets totale avhengighet av Gud sentralt (Vogt, 2026). Verden holder ikke seg selv i gang. Den finnes fordi Gud vil at den skal finnes, hvert eneste øyeblikk."
+    },
+    {
+      "type": "text",
+      "content": "Det gir skapelsen en annen rolle enn å være en fortelling om noe som skjedde for lenge siden. Den beskriver et forhold som pågår. Koranen framstiller både Guds allmakt og hans barmhjertighet, og tegnet på barmhjertigheten er nettopp at han griper inn i historien og taler til menneskene gjennom profetene sine (Vogt, 2026). Den som skapte, er den samme som siden har snakket."
+    },
+    {
+      "type": "text",
+      "content": "Det er derfor skapelsen dukker opp igjen og igjen i Koranen, ofte som en oppfordring til å se seg om. Regnet som får noe dødt til å gro, natten som avløser dagen, ditt eget legeme: alt sammen leses som tegn. Den som ser etter, skal ifølge teksten kunne slutte seg til at det finnes én som står bak."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Regn som faller over tørr jord med grønne spirer",
+      "caption": "Regn over tørt land brukes i Koranen som bilde på Guds makt."
+    },
+    {
+      "type": "header",
+      "text": "Den sjuende dagen som ikke kom"
+    },
+    {
+      "type": "text",
+      "content": "Gå tilbake til der vi begynte. To tekster, seks dager hver, og så en forskjell på ett eneste punkt. Den bibelske fortellingen gir hviledagen en egen plass, og både [jødedommen](/krle/religion/jodedom/skapelse) og kristendommen har bygget en ukentlig helligdag på den. Islam har fredagsbønnen, men den er ikke en hviledag i samme forstand, og den er ikke begrunnet i skapelsen."
+    },
+    {
+      "type": "text",
+      "content": "Én setning om tretthet, og et helt annet gudsbilde trer fram. Det er verdt å huske neste gang to fortellinger ser like ut ved første øyekast."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvor mange dager sier Koranen at skapelsen tok?",
+          "Hva står det i Koranen 50,38 om Gud og tretthet?",
+          "Hva betyr uttrykket kun fa-yakun?",
+          "Hva vil det si at mennesket er khalifa på jorda?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor en hviledag blir unødvendig når skapelsen ikke koster Gud noe.",
+          "Koranen har ingen samlet skapelsesberetning, men korte avsnitt spredt gjennom boka. Hva gjør det med hvordan teksten virker på en leser?",
+          "Englene innvender at mennesket vil skape ufred. Hvorfor tror du den innvendingen står i teksten i det hele tatt?",
+          "Sammenlign med [skapelsen i Bibelen](/krle/religion/kristendom/skapelse). Hva er den viktigste forskjellen, etter din mening?"
+        ],
+        "gaaVidere": [
+          "Finn tre steder i naturen som Koranen kunne brukt som tegn, og skriv en kort tekst om hvorfor nettopp de.",
+          "Diskuter i klassen: betyr det noe for et menneskesyn om mennesket kalles forvalter framfor eier?",
+          "Undersøk hvordan fredagsbønnen i islam skiller seg fra sabbaten i jødedommen."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er den viktigste forskjellen mellom skapelsen i Koranen og i 1. Mosebok?",
+            "options": [
+              "Antall dager",
+              "At Gud i Koranen ikke hviler etterpå",
+              "At Koranen ikke nevner mennesket",
+              "At Koranen bruker sju dager"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Begge tekster nevner seks dager, men Koranen 50,38 sier at ingen tretthet rørte Gud."
+          },
+          {
+            "question": "Hva betyr kun fa-yakun?",
+            "options": [
+              "Gud er én",
+              "Bli, og det blir",
+              "Mennesket er forvalter",
+              "I begynnelsen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Uttrykket står i Koranen 2,117 og beskriver at Gud skaper ved å ville det."
+          },
+          {
+            "question": "Hva ble mennesket formet av, ifølge Koranen 32,7?",
+            "options": ["Lys", "Vann", "Leire", "Ild"],
+            "correctAnswer": 2,
+            "explanation": "Verset sier at Gud begynte skapelsen av mennesket av leire."
+          },
+          {
+            "question": "Hva betyr det at mennesket er khalifa?",
+            "options": [
+              "At mennesket eier jorda",
+              "At mennesket er Guds stedfortreder eller forvalter",
+              "At mennesket er skapt sist",
+              "At mennesket er uten synd"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ifølge Koranen er mennesket Guds stedfortreder på jorden, med et oppdrag det trenger veiledning for å klare."
+          },
+          {
+            "question": "Hvorfor sier artikkelen at Koranen ikke har en egen skapelsesberetning?",
+            "options": [
+              "Fordi kapittelet har gått tapt",
+              "Fordi bare lærde får lese det",
+              "Fordi fortellingen ligger spredt i korte avsnitt gjennom hele boka",
+              "Fordi islam ikke tror på skapelsen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Skapelsen brukes som argument og påminnelse mange steder, ikke som én sammenhengende fortelling."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Vogt, K. (2026). *Islam*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+          "Kværne, P., Groth, B. & Løøv, M. (2025). *Skapelsesmyter*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/skapelsesmyter](https://snl.no/skapelsesmyter)",
+          "Saheeh International. (u.å.). *Koranen 2,30; 2,117; 7,54; 32,7 og 50,38*. Al Quran Cloud. Hentet 12.08.2026 fra [alquran.cloud](https://alquran.cloud/)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
 }

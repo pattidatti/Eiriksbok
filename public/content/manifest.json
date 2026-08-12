@@ -7741,16 +7741,16 @@
                 },
                 {
                   "id": "skapelse",
-                  "title": "Skapelsen i Islam",
-                  "description": "Allah skapte verden på seks perioder - men hvilte aldri.",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "title": "Seks dager, og ingen hvile",
+                  "description": "Både Bibelen og Koranen bruker seks dager. Så skiller de lag: her hviler Gud ikke, og det forteller noe helt sentralt om hvem han er.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "skapelse",
                     "narrative"
                   ],
                   "createdDate": "2025-12-02T22:54:02+01:00",
-                  "lastUpdated": "2026-08-10T22:16:47+02:00"
+                  "lastUpdated": "2026-08-12T12:00:00Z"
                 },
                 {
                   "id": "frelse",
