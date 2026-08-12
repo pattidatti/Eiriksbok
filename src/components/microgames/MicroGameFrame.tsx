@@ -12,6 +12,73 @@ interface MicroGameEmbedCfg {
 const MicroGameEmbedContext = createContext<MicroGameEmbedCfg | null>(null);
 export const MicroGameEmbedProvider = MicroGameEmbedContext.Provider;
 
+// Tittellinjen er skilt ut fordi den må kunne tegnes uten at spillmodulen er
+// lastet. Et 3D-mikrospill drar med seg rundt en megabyte three.js, og den skal
+// ikke over nettet før eleven faktisk åpner spillet. MicroGameBlock tegner
+// derfor denne linjen selv i sammenslått tilstand - se der.
+interface MicroGameTitleButtonProps {
+    title: string;
+    subtitle?: string;
+    open: boolean;
+    onToggle: () => void;
+}
+
+export const MicroGameTitleButton: React.FC<MicroGameTitleButtonProps> = ({
+    title,
+    subtitle,
+    open,
+    onToggle,
+}) => (
+    <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="group flex items-center gap-2 min-w-0 flex-1 text-left rounded-md -mx-1 px-1 py-0.5 hover:bg-slate-100/70 transition"
+    >
+        <span className="w-6 h-6 rounded-md bg-slate-700 text-white flex items-center justify-center shadow-sm flex-shrink-0">
+            <Gamepad2 className="w-3.5 h-3.5" />
+        </span>
+        {/* Når spillet er lukket får undertittelen plass som en liten teaser
+            under tittelen; ved åpning forsvinner den så scenen får all
+            oppmerksomheten. */}
+        <span className="min-w-0">
+            <h3 className="text-sm font-bold leading-snug text-slate-900 [text-wrap:balance] line-clamp-2">
+                {title}
+            </h3>
+            {/* Ikke sett `block` her: den overstyrer display:-webkit-box som
+                line-clamp trenger, og da klippes teksten aldri. Uskyldig så
+                lenge spillene sendte korte undertitler, men MicroGameBlock
+                sender registerets beskrivelse - et helt avsnitt. */}
+            {!open && subtitle && (
+                <span className="text-xs text-slate-500 leading-snug line-clamp-2">
+                    {subtitle}
+                </span>
+            )}
+        </span>
+        <span className="ml-auto pl-2 flex items-center gap-1 flex-shrink-0 text-slate-400 group-hover:text-slate-600">
+            {!open && <span className="hidden sm:inline text-xs font-semibold">Spill</span>}
+            <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+        </span>
+    </button>
+);
+
+// Ytterskallet og header-raden, delt med MicroGameBlock så den sammenslåtte
+// plassholderen står nøyaktig der spillet selv vil stå. Ingen hopp ved bytte.
+export const MicroGameShell: React.FC<{ withBorder: boolean; children: React.ReactNode }> = ({
+    withBorder,
+    children,
+}) => (
+    <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <header
+            className={`flex items-center justify-between gap-3 px-3.5 py-2 bg-white/60 ${
+                withBorder ? 'border-b border-slate-200' : ''
+            }`}
+        >
+            {children}
+        </header>
+    </div>
+);
+
 interface MicroGameFrameProps {
     title: string;
     subtitle?: string;
@@ -53,39 +120,12 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
                 }`}
             >
                 {collapsible ? (
-                    <button
-                        type="button"
-                        onClick={() => setOpen((o) => !o)}
-                        aria-expanded={open}
-                        className="group flex items-center gap-2 min-w-0 flex-1 text-left rounded-md -mx-1 px-1 py-0.5 hover:bg-slate-100/70 transition"
-                    >
-                        <span className="w-6 h-6 rounded-md bg-slate-700 text-white flex items-center justify-center shadow-sm flex-shrink-0">
-                            <Gamepad2 className="w-3.5 h-3.5" />
-                        </span>
-                        {/* Når spillet er lukket får undertittelen plass som en
-                            liten teaser under tittelen; ved åpning forsvinner den
-                            så scenen får all oppmerksomheten. */}
-                        <span className="min-w-0">
-                            <h3 className="text-sm font-bold leading-snug text-slate-900 [text-wrap:balance] line-clamp-2">
-                                {title}
-                            </h3>
-                            {!open && subtitle && (
-                                <span className="block text-xs text-slate-500 leading-snug line-clamp-1">
-                                    {subtitle}
-                                </span>
-                            )}
-                        </span>
-                        <span className="ml-auto pl-2 flex items-center gap-1 flex-shrink-0 text-slate-400 group-hover:text-slate-600">
-                            {!open && (
-                                <span className="hidden sm:inline text-xs font-semibold">
-                                    Spill
-                                </span>
-                            )}
-                            <ChevronDown
-                                className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`}
-                            />
-                        </span>
-                    </button>
+                    <MicroGameTitleButton
+                        title={title}
+                        subtitle={subtitle}
+                        open={open}
+                        onToggle={() => setOpen((o) => !o)}
+                    />
                 ) : (
                     <div className="flex items-start gap-2 min-w-0">
                         <div className="w-6 h-6 mt-0.5 rounded-md bg-slate-700 text-white flex items-center justify-center shadow-sm flex-shrink-0">

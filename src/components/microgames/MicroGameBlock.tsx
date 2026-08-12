@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Loader2 } from 'lucide-react';
 import { getMicroGame } from './registry';
-import { MicroGameEmbedProvider } from './MicroGameFrame';
+import { MicroGameEmbedProvider, MicroGameShell, MicroGameTitleButton } from './MicroGameFrame';
 import type { MicroGameProps, MicroGameResult } from './types';
 import { useProgressStore } from '../../features/progress/useProgressStore';
 
@@ -24,6 +24,9 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
     // Flere spill kaller onComplete både ved seier og i WinScreen "Gå videre" -
     // dedupliser så én seier aldri gir dobbel XP. (Må stå før early return.)
     const completedOnce = React.useRef(false);
+    // Har eleven åpnet spillet? Styrer om spillmodulen i det hele tatt hentes.
+    // (Må stå før early return.)
+    const [started, setStarted] = React.useState(false);
 
     if (!entry) {
         return (
@@ -61,27 +64,44 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
     // I artikkel starter spillet sammenslått (kun tittellinjen) - eleven åpner
     // det bevisst. Da mountes ikke 3D-scenen, og en lang artikkel spinner ikke
     // opp WebGL for hvert spill før det faktisk er i bruk.
+    //
+    // Tittellinjen tegnes her, ikke av spillet selv. Rammen ligger inne i
+    // spillmodulen, så bare det å vise en sammenslått linje ville tvunget fram
+    // nedlasting av modulen - og for et 3D-spill følger rundt en megabyte
+    // three.js med. Nå ligger tittel og beskrivelse i registeret, som allerede
+    // er lastet, og selve spillet hentes først når eleven trykker «Spill».
     return (
-        <MicroGameEmbedProvider value={{ collapsible: true, defaultOpen: false }}>
-            <div className="my-6" data-microgame={gameId}>
-                <Suspense
-                    fallback={
-                        // Spillet starter sammenslått, så plassholderen matcher
-                        // tittellinjens høyde - ikke hele spillet - for å unngå
-                        // et hopp fra høy loader til tynn header ved første maling.
-                        <div className="flex items-center gap-2 px-3.5 py-3 text-sm bg-white/70 border border-slate-200 text-slate-500 rounded-2xl">
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            Laster {entry.title}...
-                        </div>
-                    }
-                >
-                    <GameComponent
-                        {...(rest as Partial<MicroGameProps>)}
-                        onComplete={handleComplete}
+        <div className="my-6" data-microgame={gameId}>
+            {!started ? (
+                <MicroGameShell withBorder={false}>
+                    <MicroGameTitleButton
+                        title={entry.title}
+                        subtitle={entry.description}
+                        open={false}
+                        onToggle={() => setStarted(true)}
                     />
-                </Suspense>
-            </div>
-        </MicroGameEmbedProvider>
+                </MicroGameShell>
+            ) : (
+                <MicroGameEmbedProvider value={{ collapsible: true, defaultOpen: true }}>
+                    <Suspense
+                        fallback={
+                            // Plassholderen matcher tittellinjens høyde - ikke hele
+                            // spillet - for å unngå et hopp fra høy loader til tynn
+                            // header ved første maling.
+                            <div className="flex items-center gap-2 px-3.5 py-3 text-sm bg-white/70 border border-slate-200 text-slate-500 rounded-2xl">
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                Laster {entry.title}...
+                            </div>
+                        }
+                    >
+                        <GameComponent
+                            {...(rest as Partial<MicroGameProps>)}
+                            onComplete={handleComplete}
+                        />
+                    </Suspense>
+                </MicroGameEmbedProvider>
+            )}
+        </div>
     );
 }
 
