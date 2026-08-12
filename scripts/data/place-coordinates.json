@@ -950,6 +950,10 @@
       "count": 19
     },
     {
+      "tag": "doctrinal",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
@@ -963,10 +967,6 @@
     },
     {
       "tag": "holocaust",
-      "count": 18
-    },
-    {
-      "tag": "doctrinal",
       "count": 18
     },
     {
@@ -1106,6 +1106,10 @@
       "count": 10
     },
     {
+      "tag": "gudsbilde",
+      "count": 10
+    },
+    {
       "tag": "skapelse",
       "count": 10
     },
@@ -1135,10 +1139,6 @@
     },
     {
       "tag": "sentrale_trekk",
-      "count": 9
-    },
-    {
-      "tag": "gudsbilde",
       "count": 9
     },
     {
@@ -3190,6 +3190,10 @@
       "count": 2
     },
     {
+      "tag": "sammenligning",
+      "count": 2
+    },
+    {
       "tag": "aristoteles",
       "count": 2
     },
@@ -3799,10 +3803,6 @@
     },
     {
       "tag": "nord-norge",
-      "count": 1
-    },
-    {
-      "tag": "sammenligning",
       "count": 1
     },
     {

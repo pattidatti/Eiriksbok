@@ -8788,6 +8788,18 @@
               ],
               "createdDate": "2026-08-12T12:00:00Z",
               "lastUpdated": "2026-08-11T23:53:20.455Z"
+            },
+            {
+              "id": "gudsbilde",
+              "title": "Én, mange eller ingen gud?",
+              "description": "Buddhismen har ingen skapergud. Hinduismen har guder i tusentall som mange sier er én. Se hvorfor det trengs to akser for å sammenligne gudsbilder.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "gudsbilde",
+                "doctrinal"
+              ],
+              "createdDate": "2026-08-12T00:00:00Z"
             }
           ]
         },

@@ -29,6 +29,7 @@ const SvanvikenKontrakten3D = lazy(() => import('./SvanvikenKontrakten3D'));
 const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
+const Gudsformer3D = lazy(() => import('./Gudsformer3D'));
 const AnandKaraj3D = lazy(() => import('./AnandKaraj3D'));
 const LangarKjokkenet3D = lazy(() => import('./LangarKjokkenet3D'));
 const Spredning3D = lazy(() => import('./Spredning3D'));
@@ -1777,6 +1778,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Vinteren1847'),
         Component: Vinteren1847 as never,
+    },
+    'gudsformer-3d': {
+        id: 'gudsformer-3d',
+        title: 'Gudsformene',
+        description:
+            'Bygg gudsbildet selv over en liten verden som svever i lyset. Spaken bestemmer hvor mange gudsformer som finnes, og du drar hver av dem inn mot mennesket eller ut i det fjerne. En andre spak løser dem opp, så lyset finnes i alt i stedet for i egne former. Fire runder, og den siste ber om ingen gudsformer i det hele tatt. Lyspæra: hvor mange guder er bare den ene aksen - hvor nær guden står mennesket er den andre, og for noen tradisjoner passer ikke spørsmålet i det hele tatt.',
+        estimatedSeconds: 170,
+        loader: () => import('./Gudsformer3D'),
+        Component: Gudsformer3D as never,
     },
     'sydpolsferden-3d': {
         id: 'sydpolsferden-3d',
