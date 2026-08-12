@@ -6,10 +6,13 @@
     "topic": "religioner",
     "religion": "buddhisme",
     "dimension": "narrative",
-    "comparison_tags": ["skapelse", "narrative"],
+    "comparison_tags": [
+        "skapelse",
+        "narrative"
+    ],
     "category": "Buddhismen",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/buddhisme/skapelse-hero.webp",
     "details": [
         "Buddhismen har ingen skapelsesfortelling og ingen gud som har laget verden.",
         "Ifølge tekstene nektet Buddha å svare på ti spørsmål, blant dem om verden er evig.",
@@ -55,7 +58,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/skapelse-01.webp",
             "alt": "Såret mann med pil i skulderen holder lege tilbake med hånden",
             "caption": "Lignelsen om pilen er Buddhas eget bilde. Mannen krever svar før han lar seg behandle."
         },
@@ -109,7 +112,8 @@
         },
         {
             "type": "text",
-            "content": "Derfor sier man ofte at buddhismen er en religion uten en skapergud. Det betyr ikke at buddhister nekter for at guder finnes, men at ingen gud står over kretsløpet og styrer det. Gudene er selv med i det. Du kan lese mer om dette i artikkelen om [ingen skapergud](/krle/religion/buddhisme/gudsbilde)."
+            "content": "Derfor sier man ofte at buddhismen er en religion uten en skapergud. Det betyr ikke at buddhister nekter for at guder finnes, men at ingen gud står over kretsløpet og styrer det. Gudene er selv med i det. Du kan lese mer om dette i artikkelen om [ingen skapergud](/krle/religion/buddhisme/gudsbilde).",
+            "src": "/images/buddhisme/skapelse-02.webp"
         },
         {
             "type": "image",

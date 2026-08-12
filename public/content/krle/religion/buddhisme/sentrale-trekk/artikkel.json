@@ -13,7 +13,7 @@
   ],
   "createdDate": "2025-12-04T10:00:00Z",
   "lastUpdated": "2026-08-11T12:00:00Z",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/buddhisme/sentrale-trekk-hero.webp",
   "readTime": "9 min lesning",
   "details": [
     "Buddhismen bygger på De fire edle sannhetene: en diagnose av lidelsen og en behandling",
@@ -41,7 +41,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/sentrale-trekk-01.webp",
       "alt": "Buddhastatue i meditasjonsstilling under et stort tre",
       "caption": "Buddha regnes ikke som en gud, men som en læremester."
     },
@@ -93,7 +93,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/sentrale-trekk-02.webp",
       "alt": "Buddhistiske munker i oransje kapper utenfor et kloster",
       "caption": "Sanghaen, munke- og nonneordenen, er den tredje av De tre juvelene."
     },
@@ -139,7 +139,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/sentrale-trekk-03.webp",
       "alt": "Kart over Asia som viser buddhismens utbredelse",
       "caption": "Theravada dominerer i sør og sørøst, mahayana i nord og øst."
     },
