@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "En reflekterende tekst er en sjanger der forfatteren undersøker egne tanker, følelser og erfaringer knyttet til et bestemt tema. I motsetning til en rent informerende tekst, handler ikke den reflekterende teksten bare om å presentere fakta, men om å vise selve *tankeprosessen*. Det er en undrende og utforskende sjanger der målet ofte er å forstå noe bedre eller se en sak fra nye perspektiver."
+            "content": "En reflekterende tekst er en sjanger der forfatteren undersøker egne tanker, følelser og erfaringer knyttet til et bestemt tema. I motsetning til en rent informerende tekst, handler ikke den reflekterende teksten bare om å presentere fakta, men om å vise selve *tankeprosessen*. Det er en undrende og utforskende sjanger der målet ofte er å forstå noe bedre eller se en sak fra nye perspektiver. Essayet er den klassiske reflekterende sjangeren. Hamm (2025) beskriver essayet som en utprøvende og reflekterende tekst som tar utgangspunkt i skribentens egen situasjon, og som ikke prøver å gi et fullstendig og systematisk svar."
         },
         {
             "type": "header",
@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Her er de viktigste kjennetegnene på en reflekterende tekst:"
+            "content": "Flere av kjennetegnene kjenner vi igjen fra essayet, som er preget av assosiasjoner, ironi, metaforer og paradokser (Hamm, 2025). Her er de viktigste kjennetegnene på en reflekterende tekst:"
         },
         {
             "type": "list",
@@ -36,8 +36,8 @@
         {
             "type": "list",
             "items": [
-                "**Retoriske spørsmål:** Spørsmål som får leseren til å tenke, men som forfatteren ikke venter svar på.",
-                "**Sammenligninger og metaforer:** Brukes for å forklare abstrakte tanker eller følelser på en forståelig måte.",
+                "**Retoriske spørsmål:** Spørsmål som får leseren til å tenke, men som forfatteren ikke venter eller ønsker svar på (Grue, 2026).",
+                "**Sammenligninger og metaforer:** Brukes for å forklare abstrakte tanker eller følelser på en forståelig måte. En metafor bruker noe konkret og kjent for å få fram noe abstrakt, som når livet blir kalt en reise (Grue, 2025).",
                 "**Kontraster:** Å stille to ulike tanker eller situasjoner opp mot hverandre for å få frem poenget.",
                 "**Eksempler:** Bruk av konkrete eksempler fra eget liv for å illustrere et generelt poeng."
             ]
@@ -48,7 +48,7 @@
         },
         {
             "type": "text",
-            "content": "Vi skriver ofte reflekterende i personlige tekster som *leserhistorier*, *blogger* eller *essays*. Men refleksjon er også en viktig del av litterær analyse og oppgaver der du skal vurdere et budskap eller et tema i lys av din egen verden."
+            "content": "Vi skriver ofte reflekterende i personlige tekster som *leserhistorier*, *blogger* eller *essays* (Hamm, 2025). Men refleksjon er også en viktig del av litterær analyse og oppgaver der du skal vurdere et budskap eller et tema i lys av din egen verden."
         },
         {
             "type": "header",
@@ -57,9 +57,9 @@
         {
             "type": "list",
             "items": [
-                "[Aldri godt nok](/norsk/bibliotek/aldri-godt-nok) – En tekst om prestasjonspress og det å aldri føle at man strekker til.",
-                "[Min leserhistorie](/norsk/bibliotek/min-leserhistorie) – Alise reflekterer over hvordan hennes forhold til bøker har endret seg gjennom oppveksten.",
-                "[Fordummende intelligent teknologi](/norsk/bibliotek/fordummende-intelligent-teknologi) – En refleksjon over hvordan KI påvirker vår egen evne til å tenke."
+                "[Aldri godt nok](/norsk/bibliotek/aldri-godt-nok) - En tekst om prestasjonspress og det å aldri føle at man strekker til.",
+                "[Min leserhistorie](/norsk/bibliotek/min-leserhistorie) - Alise reflekterer over hvordan hennes forhold til bøker har endret seg gjennom oppveksten.",
+                "[Fordummende intelligent teknologi](/norsk/bibliotek/fordummende-intelligent-teknologi) - En refleksjon over hvordan KI påvirker vår egen evne til å tenke."
             ]
         },
         {
@@ -84,6 +84,17 @@
                     "Diskuter med en medelev: Er det lettere eller vanskeligere å skrive en tekst der du ikke trenger å ha alle svarene? Begrunn svaret."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Grue, J. (2025). *Metafor*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/metafor](https://snl.no/metafor)",
+                    "Grue, J. (2026). *Retorisk spørsmål*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/retorisk_spørsmål](https://snl.no/retorisk_sp%C3%B8rsm%C3%A5l)",
+                    "Hamm, C. (2025). *Essay*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/essay](https://snl.no/essay)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -96,5 +107,6 @@
         "text": "Hvordan skrive reflekterende",
         "url": "/norsk/skrivehjelp/hvordan-skrive-reflekterende"
     },
-    "createdDate": "2026-02-06T10:00:00Z"
+    "createdDate": "2026-02-06T10:00:00Z",
+    "lastUpdated": "2026-08-12T00:00:00Z"
 }
