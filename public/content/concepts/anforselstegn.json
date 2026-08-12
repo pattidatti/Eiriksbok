@@ -1,7 +1,12 @@
 {
-    "id": "anforselstegn",
-    "title": "Anførselstegn",
-    "explanation": "Tegn som brukes for å markere direkte tale eller sitater. På norsk bruker vi ofte « » eller \" \". I denne guiden bruker vi \" \".",
-    "usage": "Husk å sette anførselstegn før og etter det personen sier.",
-    "links": []
+    "term": "Anførselstegn",
+    "definition": "Tegn som viser at noen snakker, eller at du siterer noen. På norsk bruker vi «slike» eller \"slike\".",
+    "example": "Husk å sette anførselstegn både før og etter det personen sier.",
+    "subject": "norsk",
+    "topic": "skrivehjelp",
+    "tags": [
+        "skriving",
+        "tegnsetting"
+    ],
+    "type": "concept"
 }

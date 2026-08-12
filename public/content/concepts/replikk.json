@@ -1,7 +1,12 @@
 {
-    "id": "replikk",
-    "title": "Replikk",
-    "explanation": "Det som blir sagt av en person i en tekst eller et skuespill.",
-    "usage": "Hver nye replikk skal starte på en ny linje når en ny person snakker.",
-    "links": []
+    "term": "Replikk",
+    "definition": "Det en person sier høyt i en tekst eller et skuespill.",
+    "example": "Hver gang en ny person begynner å snakke, skal replikken starte på en ny linje.",
+    "subject": "norsk",
+    "topic": "skrivehjelp",
+    "tags": [
+        "skriving",
+        "dialog"
+    ],
+    "type": "concept"
 }

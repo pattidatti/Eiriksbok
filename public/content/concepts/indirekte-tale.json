@@ -1,7 +1,12 @@
 {
-    "id": "indirekte-tale",
-    "title": "Indirekte tale",
-    "explanation": "Når man refererer hva noen har sagt, uten å bruke de nøyaktige ordene.",
-    "usage": "Eksempel: 'Han sa at han var sulten' (Indirekte) vs 'Jeg er sulten,' sa han (Direkte).",
-    "links": []
+    "term": "Indirekte tale",
+    "definition": "Når du forteller hva noen har sagt, uten å bruke de nøyaktige ordene deres.",
+    "example": "«Han sa at han var sulten» er indirekte tale. «Jeg er sulten», sa han, er direkte tale.",
+    "subject": "norsk",
+    "topic": "skrivehjelp",
+    "tags": [
+        "skriving",
+        "dialog"
+    ],
+    "type": "concept"
 }

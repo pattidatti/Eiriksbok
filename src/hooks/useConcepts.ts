@@ -119,7 +119,9 @@ export const useConcepts = () => {
             });
         });
 
-        // 2. Extract from Text Library (if needed in future)
+        // 2. Ordforklaringene som hører til tekstene i biblioteket. Det er 395 av
+        // dem, og de lå tidligere uten fag - da havnet de i en usorterbar sekk
+        // sammen med alt annet utagget. De hører alle hjemme i norsk.
         textLibraryData.forEach(text => {
             if (text.definitions) {
                 text.definitions.forEach((def, index) => {
@@ -128,6 +130,8 @@ export const useConcepts = () => {
                         term: def.term,
                         definition: def.definition,
                         sourceType: 'library',
+                        subjectId: 'norsk',
+                        topicId: 'bibliotek',
                         libraryId: text.id,
                         libraryTitle: text.title
                     });

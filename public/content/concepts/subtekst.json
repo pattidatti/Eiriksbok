@@ -1,7 +1,12 @@
 {
-    "id": "subtekst",
-    "title": "Subtekst",
-    "explanation": "Det som ligger under overflaten av teksten. Hva personene egentlig mener, føler eller tenker, men ikke sier høyt.",
-    "usage": "God dialog har ofte mye subtekst. De snakker om været, men krangler egentlig om ekteskapet.",
-    "links": []
+    "term": "Subtekst",
+    "definition": "Det som ligger under overflaten i en tekst. Det personene egentlig mener eller føler, men ikke sier høyt.",
+    "example": "To personer snakker om været, men krangler egentlig om ekteskapet sitt. Da er krangelen subtekst.",
+    "subject": "norsk",
+    "topic": "skrivehjelp",
+    "tags": [
+        "skriving",
+        "litterær analyse"
+    ],
+    "type": "concept"
 }
