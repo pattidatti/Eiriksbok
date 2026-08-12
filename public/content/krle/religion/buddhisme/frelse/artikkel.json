@@ -12,7 +12,7 @@
   ],
   "category": "Buddhisme",
   "readTime": "7 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/buddhisme/frelse-hero.webp",
   "details": [
     "Nirvana betyr utslukning. Det er ikke et sted man reiser til, men navnet på at en brann tar slutt.",
     "Det som slukner, er begjæret, hatet og uvitenheten. De eldste tekstene kaller dem tre ilder.",
@@ -65,7 +65,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/frelse-01.webp",
       "alt": "Liten oljelampe med flamme som holder på å dø ut",
       "caption": "Nirvana betyr utslukning. Bildet er hentet fra en lampe som går tom for olje, ikke fra et lys noen blåser ut."
     },
@@ -118,7 +118,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/frelse-02.webp",
       "alt": "Munk i meditasjon foran gammelt tempel i morgenlys",
       "caption": "Veien til nirvana er delt i tre: visdom, etikk og meditasjon. Ingen av delene kan stå alene."
     },
@@ -140,7 +140,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/frelse-03.webp",
       "alt": "Røyktråd stiger fra nettopp slukket veke",
       "caption": "Vaccha kunne ikke si hvilken vei flammen hadde dratt. Det var hele poenget til Buddha."
     },

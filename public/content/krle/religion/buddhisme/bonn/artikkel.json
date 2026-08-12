@@ -12,7 +12,7 @@
     ],
     "category": "Buddhisme",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/buddhisme/bonn-hero.webp",
     "details": [
         "Buddhismen har ingen skapergud, men bønn er likevel vanlig i buddhistiske tradisjoner.",
         "Grensen mellom bønn, lovprising, resitasjon, ritual og meditasjon er ikke skarp.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/bonn-01.webp",
             "alt": "Kvinne bøyer seg foran buddhastatue med blomster og lys",
             "caption": "Handlingen ser ut som bønn. Spørsmålet er hvem den peker mot."
         },
@@ -113,7 +113,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/bonn-02.webp",
             "alt": "Nærbilde av visnende blomster og røkelse foran alter",
             "caption": "Gaven er også en påminnelse om at alt forgår."
         },
@@ -135,7 +135,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/bonn-03.webp",
             "alt": "Rad med tibetanske bønnehjul og fargerike bønneflagg",
             "caption": "Hjulet snurres i stedet for at ordene sies høyt."
         },

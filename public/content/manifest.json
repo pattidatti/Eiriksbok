@@ -1062,7 +1062,7 @@
               "id": "muntlig",
               "title": "Muntlig eksamen",
               "description": "Fra forberedelse til samtale: slik mestrer du muntlig eksamen.",
-              "image": "/images/samfunnskunnskap/eksamen/muntlig-hero.webp",
+              "image": "/images/norsk/eksamen/muntlig_hero.webp",
               "tags": [
                 "eksamen",
                 "muntlig",
@@ -1076,7 +1076,7 @@
               "id": "muntlig-modell",
               "title": "Modellsvar: 6-er på muntlig",
               "description": "Et komplett modellsvar på temaet framgang og motgang, med manus og fagsamtale.",
-              "image": "/images/samfunnskunnskap/eksamen/muntlig-modell-hero.webp",
+              "image": "/images/norsk/eksamen/muntlig-modell-hero.webp",
               "tags": [
                 "eksamen",
                 "muntlig",
@@ -1341,7 +1341,7 @@
               ],
               "createdDate": "2025-12-21T13:37:14+01:00",
               "lastUpdated": "2026-08-05T15:54:45+02:00",
-              "image": "/images/krle/religion/jehovas-vitner_hero.webp"
+              "image": "/images/lessons/demografi/demografi_overgang_hero.webp"
             },
             {
               "id": "km-6-levekaar-verden",
@@ -2634,7 +2634,7 @@
               "id": "oversikt",
               "title": "Historiens store gåter",
               "description": "Et interaktivt gåtekart over 17 av historiens største mysterier og kontroverser - og hva som står på spill.",
-              "image": "/images/historie/dekolonisering/oversikt_hero.webp",
+              "image": "/images/historiens-store-gater/oversikt-hero.webp",
               "tags": [
                 "historie",
                 "kildekritikk",
@@ -3667,7 +3667,7 @@
               "id": "oversikt",
               "title": "Oversikt",
               "description": "En introduksjon til andre verdenskrig.",
-              "image": "/images/historie/dekolonisering/oversikt_hero.webp",
+              "image": "/images/historie/andre-verdenskrig/oversikt_hero.webp",
               "tags": [
                 "krig",
                 "oversikt"
@@ -3691,7 +3691,7 @@
               "id": "krigens-lop",
               "title": "Krigens løp",
               "description": "Fra Blitzkrieg til atombomben.",
-              "image": "/images/historie/forste-verdenskrig/krigens_lop_hero.webp",
+              "image": "/images/historie/andre-verdenskrig/krigens_lop_hero.webp",
               "tags": [
                 "krigføring",
                 "slag"
@@ -3703,7 +3703,7 @@
               "id": "teknologi",
               "title": "Teknologi",
               "description": "Radar, Enigma og atombomben.",
-              "image": "/images/historie/forste-verdenskrig/teknologi_hero.webp",
+              "image": "/images/historie/andre-verdenskrig/teknologi_hero.webp",
               "tags": [
                 "teknologi",
                 "våpen"
@@ -3728,7 +3728,7 @@
               "id": "konsekvenser",
               "title": "Konsekvenser",
               "description": "Den kalde krigen og FN.",
-              "image": "/images/historie/forste-verdenskrig/konsekvenser_hero.webp",
+              "image": "/images/historie/andre-verdenskrig/konsekvenser_hero.webp",
               "tags": [
                 "konsekvenser",
                 "politikk"
@@ -3847,7 +3847,7 @@
               "id": "oversikt",
               "title": "Oversikt",
               "description": "En introduksjon til første verdenskrig.",
-              "image": "/images/historie/dekolonisering/oversikt_hero.webp",
+              "image": "/images/historie/forste-verdenskrig/oversikt_hero.webp",
               "tags": [
                 "krig",
                 "oversikt"
@@ -3983,7 +3983,7 @@
               "id": "oversikt",
               "title": "En verden i ubalanse",
               "description": "Oversikt over mellomkrigstiden og krigens etterspill.",
-              "image": "/images/historie/dekolonisering/oversikt_hero.webp",
+              "image": "/images/mellomkrigstiden/hero_oversikt.webp",
               "tags": [
                 "historie",
                 "oversikt",
@@ -4167,7 +4167,7 @@
               "id": "oversikt",
               "title": "Oversikt: Den Kalde Krigen",
               "description": "Terrorbalanse, spionasje og proxykriger.",
-              "image": "/images/historie/dekolonisering/oversikt_hero.webp",
+              "image": "/images/lessons/den-kalde-krigen/oversikt.webp",
               "tags": [
                 "historie",
                 "kald-krig",
@@ -4245,7 +4245,7 @@
               "id": "kultur",
               "title": "Kultur og Propaganda",
               "description": "Kampen om hjerter og hjerner.",
-              "image": "/images/mellomkrigstiden/hero_kultur.webp",
+              "image": "/images/lessons/den-kalde-krigen/kultur.webp",
               "tags": [
                 "kultur",
                 "media",
@@ -4888,7 +4888,7 @@
               "id": "intro",
               "title": "Den franske revolusjon",
               "description": "En kort introduksjon til hendelsene 1789-1799 og hvordan de formet moderne demokrati.",
-              "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+              "image": "/images/den-franske-revolusjon/intro-hero.webp",
               "layout": "rich",
               "tags": [
                 "frankrike",
@@ -6166,7 +6166,7 @@
               "id": "boktrykkerkunsten",
               "title": "Boktrykkerkunsten",
               "description": "Revolusjonen som spredte kunnskap.",
-              "image": "/images/teknologi-og-hverdagsliv/boktrykkerkunsten-hero.webp",
+              "image": "/images/middelalderen/boktrykkerkunsten-hero.webp",
               "tags": [
                 "oppfinnelser",
                 "teknologi",
@@ -6503,7 +6503,7 @@
               "id": "oversikt",
               "title": "Riket mellom to verdener",
               "description": "Et rike på tre kontinenter, styrt fra én by. Hvorfor posisjonen mellom Europa og Asia ga osmanerne både rikdom og makt.",
-              "image": "/images/historie/dekolonisering/oversikt_hero.webp",
+              "image": "/images/osmanske-riket/oversikt-hero.webp",
               "layout": "rich",
               "tags": [
                 "osmanske-riket",
@@ -6681,7 +6681,7 @@
               "id": "artikkel",
               "title": "Perserriket",
               "description": "Det første verdensriket.",
-              "image": "/images/norsk/tekstsjangre/artikkel-hero.webp",
+              "image": "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&q=80",
               "tags": [
                 "antikken",
                 "midtøsten",
@@ -7032,7 +7032,7 @@
               "id": "oversikt",
               "title": "Midtens rike: 3000 år i korte trekk",
               "description": "Dynastisyklusen, konfusianisme og Kinas selvbilde som verdens sentrum.",
-              "image": "/images/historie/dekolonisering/oversikt_hero.webp",
+              "image": "/images/kinas-historie/oversikt-hero.webp",
               "tags": [
                 "kina",
                 "dynastier",
@@ -7469,7 +7469,7 @@
                   "id": "intro",
                   "title": "Verdens største religion",
                   "description": "Verdens største religion begynte med en henrettelse i Jerusalem. Se hva historikere faktisk kan slå fast, hva kristne tror, og hvordan de tre hovedgrenene skiller lag.",
-                  "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "intro"
@@ -7493,7 +7493,7 @@
                   "id": "grunnleggere",
                   "title": "Mannen som ikke grunnla en religion",
                   "description": "Jesus grunnla aldri kristendommen. Han levde og døde som jøde, og religionen ble bygd av dem som kom etter ham. Sorter byggesteinene og se hvor liten grunnmuren egentlig er.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "grunnleggere",
@@ -7506,7 +7506,7 @@
                   "id": "gudsbilde",
                   "title": "Én Gud, tre personer",
                   "description": "To menn i Alexandria ble uenige om hvem Jesus egentlig var. Krangelen varte i seksti år og endte i setninger kirken fortsatt leser høyt.",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "gudsbilde",
@@ -7532,7 +7532,7 @@
                   "id": "frelse",
                   "title": "Gaven ingen kan fortjene",
                   "description": "I 500 år kranglet katolikker og lutheranere om hvordan et menneske blir frelst - finn ut hva de faktisk var uenige om, og hvorfor de til slutt satte seg ned og skrev under.",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "frelse",
@@ -7545,7 +7545,7 @@
                   "id": "bonn",
                   "title": "Bønnen som snur etter tredje ledd",
                   "description": "Fadervår ber ikke om brød først. Tre ledd handler om Gud før bønnen snur seg mot deg - og den rekkefølgen er hele poenget.",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "bønn",
@@ -7558,7 +7558,7 @@
                   "id": "overgangsriter",
                   "title": "Uenigheten om vannet",
                   "description": "Dåp, konfirmasjon, vielse og gravferd. Kristne har kranglet i 500 år om når dåpen skal skje - og striden kostet liv.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "overgangsriter",
@@ -7571,7 +7571,7 @@
                   "id": "skapelse",
                   "title": "To fortellinger om begynnelsen",
                   "description": "1. Mosebok åpner med to skapelsesfortellinger som setter hendelsene i ulik rekkefølge. Finn mønsteret i de seks dagene, og se hvorfor kristne leser den samme teksten så ulikt.",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "skapelse",
@@ -7678,7 +7678,7 @@
                   "id": "bonn",
                   "title": "Bønnen som følger sola",
                   "description": "Muslimer ber fem ganger i døgnet, men ingen klokke bestemmer når. Det gjør sola - og derfor er tidene ulike i Mekka, Oslo og Tromsø.",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "bønn",
@@ -7691,7 +7691,7 @@
                   "id": "overgangsriter",
                   "title": "Setningen som rammer inn livet",
                   "description": "Trosbekjennelsen hviskes i øret på det nyfødte barnet og er det siste mange muslimer vil si. Se hvordan islam markerer fødsel, ekteskap og død.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "overgangsriter",
@@ -7704,7 +7704,7 @@
                   "id": "grunnleggere",
                   "title": "Profeten som ikke skal tilbes",
                   "description": "Muslimer regner Muhammad som Guds siste profet, men aldri som Gud. Bli med fra Mekka til Medina, se hvorfor 622 ble år én, og oppdag hvordan striden etter 632 delte muslimene i sunni og sjia.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "grunnleggere",
@@ -7730,7 +7730,7 @@
                   "id": "gudsbilde",
                   "title": "Én, og ingen ved siden av",
                   "description": "Gud er én, og ingenting står ved siden av ham. Men hvordan beskriver du en Gud det ikke finnes ett eneste bilde av?",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "gudsbilde",
@@ -7756,7 +7756,7 @@
                   "id": "frelse",
                   "title": "Vekten som ikke lyver",
                   "description": "Alt du gjør skal veies, helt ned til et støvfnuggs vekt - men er det vekten eller Gud som har det siste ordet?",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "frelse",
@@ -7815,7 +7815,7 @@
                   "id": "bonn",
                   "title": "Hvem snakker du til?",
                   "description": "Buddhismen har ingen skapergud. Så hvem er det egentlig folk henvender seg til når de bøyer seg foran statuen, gjentar mantraer og snurrer bønnehjul?",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/buddhisme/bonn-hero.webp",
                   "tags": [
                     "buddhisme",
                     "bønn",
@@ -7828,7 +7828,7 @@
                   "id": "overgangsriter",
                   "title": "Riten som ikke finnes",
                   "description": "Buddhismen har ikke noe eget bryllupsrituale, men eier begravelsen fullstendig. Om munkevigsling som overgang til voksenlivet, om fortjeneste som kan gis til de døde, og om hvilke overganger en religion velger å ta hånd om.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "overgangsriter",
@@ -7841,7 +7841,7 @@
                   "id": "grunnleggere",
                   "title": "Mannen som våknet",
                   "description": "Buddha er ikke et navn, men en ærestittel. Bli kjent med Siddhartha Gautama, mannen forskerne mener levde rundt år 400 fvt., og se hvorfor buddhister er uenige om han var menneske eller noe langt mer.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/buddhisme/grunnleggere-hero.webp",
                   "tags": [
                     "buddhisme",
                     "grunnleggere",
@@ -7867,7 +7867,7 @@
                   "id": "gudsbilde",
                   "title": "Gudene som ikke kan redde deg",
                   "description": "Buddhismen har ingen skapergud, men den har guder. De lever lenge og godt, og de dør. Finn ut hvorfor ingen av dem kan hjelpe deg ut.",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "gudsbilde",
@@ -7880,7 +7880,7 @@
                   "id": "skapelse",
                   "title": "Spørsmålet Buddha ikke svarte på",
                   "description": "Nesten alle religioner begynner med en skapelse. Buddhismen begynner med en mann som har en pil i skulderen og krever svar før han lar seg behandle.",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "skapelse",
@@ -7893,7 +7893,7 @@
                   "id": "frelse",
                   "title": "Hvor ble det av flammen?",
                   "description": "Blås ut et stearinlys og spør hvor flammen ble av: nettopp det bildet brukte Buddha da han skulle forklare hva nirvana er.",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/buddhisme/frelse-hero.webp",
                   "tags": [
                     "buddhisme",
                     "frelse",
@@ -7939,7 +7939,7 @@
                   "id": "bonn",
                   "title": "Bønnen som trenger ni til",
                   "description": "Han kan be alene, med bønneremmer og ansiktet vendt mot Jerusalem. Men det er én ting han ikke får til uten ni andre.",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "bønn",
@@ -7952,7 +7952,7 @@
                   "id": "overgangsriter",
                   "title": "Dagen ansvaret bytter eier",
                   "description": "Bar mitzva betyr forpliktelsens sønn. Bli med gjennom fire jødiske overganger, fra brit mila på den åttende dagen til den enkle kisten, og se hvordan ansvaret for budene flytter seg fra foreldrene til barnet.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "overgangsriter",
@@ -7965,7 +7965,7 @@
                   "id": "grunnleggere",
                   "title": "Ingen stifter, men en pakt",
                   "description": "Jødedommen har ingen enkelt stifter. Møt Abraham og Moses, og finn ut hvorfor pakten mellom Gud og folket er viktigere enn personene i fortellingen.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "grunnleggere",
@@ -7991,7 +7991,7 @@
                   "id": "gudsbilde",
                   "title": "Navnet ingen sier høyt",
                   "description": "Gud har et eget navn i de jødiske skriftene, men ingen sier det. Finn ut hvorfor lyden forsvant, og hva jøder sier i stedet.",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "gudsbilde",
@@ -8004,7 +8004,7 @@
                   "id": "skapelse",
                   "title": "Skapelsen: Verden som blir til av ord",
                   "description": "Gud bygger ikke verden med hendene, Gud sier den. Og den viktigste dagen i uka er den eneste der Gud ikke sier noe i det hele tatt.",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "skapelse",
@@ -8017,7 +8017,7 @@
                   "id": "frelse",
                   "title": "Verden er ikke ferdig",
                   "description": "Jødedommen snakker knapt om frelse - finn ut hvorfor svarene om livet her og nå er mye tydeligere enn svarene om det som kommer etterpå.",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "frelse",
@@ -8030,7 +8030,7 @@
                   "id": "intro",
                   "title": "Introduksjon",
                   "description": "Grunnleggende om jødedommen.",
-                  "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+                  "image": "/images/krle/religion/jodedom_hero.webp",
                   "tags": [
                     "jødedom",
                     "intro"
@@ -8063,7 +8063,7 @@
                   "id": "bonn",
                   "title": "Bønn du gjør med hendene",
                   "description": "Hos mange hinduer blir guden tatt imot som en æresgjest: vasket, pyntet, matet og sett i øynene. Dekk brettet selv og finn ut hva du får tilbake.",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "bønn",
@@ -8076,7 +8076,7 @@
                   "id": "overgangsriter",
                   "title": "Seksten riter gjennom et liv",
                   "description": "Hinduismen har en liste på seksten overgangsriter, samskara. Den første holdes før barnet er unnfanget, den siste er kremasjonen. Men nesten ingen familie holder alle seksten.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "overgangsriter",
@@ -8089,7 +8089,7 @@
                   "id": "grunnleggere",
                   "title": "Religionen ingen fant opp",
                   "description": "Hinduismen har ingen stifter, ingen startdato og ingen fast ledelse. Bli med på letingen etter en grunnlegger som ikke finnes, og se hva som holder religionen sammen i stedet.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "grunnleggere",
@@ -8115,7 +8115,7 @@
                   "id": "gudsbilde",
                   "title": "Én eller millioner?",
                   "description": "Hindutempelet er fullt av guder, men mange hinduer sier at det bare finnes én. Begge svarene er riktige, og her får du se hvorfor.",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "gudsbilde",
@@ -8128,7 +8128,7 @@
                   "id": "skapelse",
                   "title": "Verden uten begynnelse",
                   "description": "Hva om verden aldri ble skapt for foerste gang? I hinduismen har universet blitt til og gaatt under utallige ganger - og Rigveda sier selv at kanskje ingen vet hvordan det startet.",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "skapelse",
@@ -8141,7 +8141,7 @@
                   "id": "frelse",
                   "title": "Ikke et bedre sted, men ut",
                   "description": "Hva om belønningen ikke er en plass i himmelen, men å slippe å bli født igjen i det hele tatt? Bli med på hjulet av liv og død, og finn de tre veiene ut.",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "frelse",
@@ -8381,7 +8381,7 @@
                   "id": "bonn",
                   "title": "Bønnen som stiller et spørsmål",
                   "description": "I Jesu Kristi Kirke av Siste Dagers Hellige er bønn ikke bare noe du sier - det er også måten du kan finne ut om noe er sant.",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "bønn",
@@ -8394,7 +8394,7 @@
                   "id": "overgangsriter",
                   "title": "Ikke til døden skiller dere",
                   "description": "I et tempel i Stockholm sier et norsk brudepar noe annet enn «til døden skiller dere». Bli med gjennom overgangene som skal binde generasjoner sammen.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "overgangsriter",
@@ -8407,7 +8407,7 @@
                   "id": "grunnleggere",
                   "title": "Profeten som elleve menn gikk god for",
                   "description": "Elleve menn skrev under på at de hadde sett gullplatene, og navnene deres står fortsatt trykt foran i Mormons bok. Møt Joseph Smith som profet, ikke guddom, og se hvordan rollen hans levde videre etter drapet i Carthage i 1844.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "grunnleggere",
@@ -8433,7 +8433,7 @@
                   "id": "gudsbilde",
                   "title": "Guden med en kropp",
                   "description": "De fleste kristne sier at Gud er ett vesen i tre personer. Siste dagers hellige teller helt annerledes, og mener Faderen og Sønnen har kropp av kjøtt og bein.",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "gudsbilde",
@@ -8446,7 +8446,7 @@
                   "id": "skapelse",
                   "title": "Skapelsen i mormonismen",
                   "description": "De fleste kristne mener Gud skapte verden av ingenting. Siste dagers hellige mener han hadde materialer - og det endrer hva et menneske er.",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "skapelse",
@@ -8459,7 +8459,7 @@
                   "id": "frelse",
                   "title": "Tre slags himmel",
                   "description": "Ikke himmel eller helvete, men tre slags himmel, og nesten hvert eneste menneske havner i en av dem.",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "frelse",
@@ -8505,7 +8505,7 @@
                   "id": "bonn",
                   "title": "Til Jehova, gjennom Jesus",
                   "description": "Bønnen slutter i Jesu navn, men ikke ett ord er stilet til Jesus. Hvorfor er Jehovas vitner så nøye på hvem bønnen sendes til?",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "bønn",
@@ -8518,7 +8518,7 @@
                   "id": "overgangsriter",
                   "title": "Dåpen du må be om selv",
                   "description": "Jehovas vitner døper ikke spedbarn. Dåpen skjer først når en person selv har studert, angret og bedt innvielsesbønnen, og den bekreftes med to spørsmål som svares høyt på et stevne. Bryllup og begravelse holdes enkelt i Rikets sal.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "overgangsriter",
@@ -8531,7 +8531,7 @@
                   "id": "grunnleggere",
                   "title": "Grunnleggeren som ikke ville være grunnlegger",
                   "description": "Jehovas vitner sier at Jesus grunnla bevegelsen deres, mens historikere peker på Charles Taze Russell og bibelstudentene på 1870-tallet. Bli med og fordel æren mellom Russell, Rutherford og Jesus, og se hvorfor årstall som 1914 måtte forklares på nytt.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "grunnleggere",
@@ -8557,7 +8557,7 @@
                   "id": "gudsbilde",
                   "title": "Gud med fornavn",
                   "description": "Jehovas vitner mener Gud har et personlig navn - men ingen vet sikkert hvordan det skal uttales. Se hvorfor de sier nei til treenigheten.",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "gudsbilde",
@@ -8570,7 +8570,7 @@
                   "id": "skapelse",
                   "title": "Seks dager eller seks tidsaldre?",
                   "description": "Jehovas vitner leser skapelsesfortellingen bokstavelig, og mener likevel at jorda kan være milliarder av år gammel. Hvordan henger det sammen?",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "skapelse",
@@ -8583,7 +8583,7 @@
                   "id": "frelse",
                   "title": "Et tall, og en skare ingen kan telle",
                   "description": "Hvorfor mener Jehovas vitner at nøyaktig 144 000 mennesker skal til himmelen, mens alle andre frelste skal bli igjen på en jord som gjøres om til et paradis?",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "frelse",
@@ -8629,7 +8629,7 @@
                   "id": "grunnleggere",
                   "title": "Da guruen ble en bok",
                   "description": "Guru Nanak og de ni som fulgte etter ham. Hvorfor sikhene sluttet med menneskelige guruer i 1708 og lot en bok overta rollen.",
-                  "image": "/images/bahai/grunnleggere-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "sikhisme",
                     "grunnleggere"
@@ -8678,7 +8678,7 @@
                   "id": "skapelse",
                   "title": "Mørket før verden: skapelsen i sikhismen",
                   "description": "I utallige tidsaldre fantes bare mørke og Guds vilje. Så ville Gud det, og alt ble til på ett øyeblikk - men ingen vet når.",
-                  "image": "/images/bahai/skapelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "sikhisme",
                     "skapelse",
@@ -8691,7 +8691,7 @@
                   "id": "gudsbilde",
                   "title": "Gud du ikke kan tegne",
                   "description": "Åtte beskrivelser av Gud, og ikke ett eneste ord om hvordan Gud ser ut.",
-                  "image": "/images/bahai/gudsbilde-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "sikhisme",
                     "gudsbilde",
@@ -8704,7 +8704,7 @@
                   "id": "frelse",
                   "title": "Dråpen som ikke ble borte",
                   "description": "Hva skjer med en vanndråpe som faller i havet, og hvorfor er nettopp det sikhenes bilde på det største et menneske kan oppnå?",
-                  "image": "/images/bahai/frelse-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "sikhisme",
                     "frelse",
@@ -8717,7 +8717,7 @@
                   "id": "bonn",
                   "title": "Bønn i sikhismen: å huske et navn",
                   "description": "Bønn som ikke ber om noe, men husker et navn - fra mørket klokka fire til fatet i langar.",
-                  "image": "/images/bahai/bonn-hero.webp",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "sikhisme",
                     "bønn",
@@ -9062,7 +9062,7 @@
               "id": "intro",
               "title": "Hva er filosofi?",
               "description": "Opphavet til filosofi og de ulike grenene som undersøker virkeligheten.",
-              "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+              "image": "/images/filosofi/intro_hero.webp",
               "tags": [
                 "intro",
                 "filosofi",
@@ -9345,7 +9345,7 @@
               "id": "intro",
               "title": "Hva er etikk?",
               "description": "En introduksjon til moralens fundamenter og vanskelige valg.",
-              "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+              "image": "/images/etikk/intro_hero.webp",
               "tags": [
                 "intro",
                 "etikk",
