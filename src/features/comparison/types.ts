@@ -1,6 +1,9 @@
 // Typer for den generiske sammenligningsmotoren bak /krle/sammenlign og
 // /krle/filosofi/sammenlign. Ingen React her - kun datatyper.
 
+import type { LucideIcon } from 'lucide-react';
+import type { ReligionDimensionEntry } from '../../types';
+
 // Religion-data er Tina rich text, filosofi-data er rene strenger.
 // Det diskriminerte formatet lar én og samme motor rendre begge.
 export type ComparisonContent =
@@ -13,11 +16,20 @@ export interface ComparisonEntity {
     color?: string;
     group?: string;
     dimensions: Record<string, ComparisonContent | undefined>;
+    // Dimensjonskortene fra public/data/religion/*.json: ingress, bilde og
+    // nøkkelbegrep. Finnes bare for religion; filosofi har ren tekst.
+    cards?: Record<string, ReligionDimensionEntry | undefined>;
 }
 
 export interface ComparisonDimension {
     key: string;
     label: string;
+    // Kortform til faner der det er trangt
+    short?: string;
+    // Dimensjonen som spørsmål, vist som overskrift over sammenligningen
+    question?: string;
+    color?: string;
+    icon?: LucideIcon;
     // Refleksjonsspørsmål eleven får under «Test deg selv»
     reflection?: string;
 }
@@ -45,6 +57,8 @@ export interface ComparisonDomainConfig {
     topicId: string;
     // Kuraterte «Likt eller ulikt?»-oppgaver (relativt til BASE_URL), valgfri
     tasksUrl?: string;
+    // Sammenligningsmatrisen (relativt til BASE_URL), valgfri
+    matrixUrl?: string;
     // Fordypningslenker per kort for aktiv dimensjon, valgfri
     articleLinks?: (
         manifest: ComparisonManifest,
@@ -94,6 +108,26 @@ export interface ComparisonManifest {
     philosophers: ManifestEntity[];
     topics: ManifestTopic[];
     religionArticles: ManifestReligionArticle[];
+}
+
+// --- Sammenligningsmatrisen (public/data/comparison/religion-matrix.json) ---
+
+export interface MatrixCell {
+    text: string;
+    // Settes kun der flere religioner har samme svar. Celler som deler bucket
+    // blant de valgte religionene får samme farge i tabellen.
+    bucket?: string;
+}
+
+export interface MatrixRow {
+    key: string;
+    label: string;
+    values: Record<string, MatrixCell | undefined>;
+}
+
+export interface ComparisonMatrixData {
+    domain: string;
+    dimensions: Record<string, MatrixRow[]>;
 }
 
 // --- «Likt eller ulikt?»-oppgaver (public/data/comparison/*-tasks.json) ---

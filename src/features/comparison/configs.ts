@@ -1,6 +1,29 @@
 import { fetchReligion, fetchPhilosopher } from '../../utils/contentLoader';
-import { dimensionBody } from '../../utils/religionDimensions';
-import type { ComparisonContent, ComparisonDomainConfig, ComparisonEntity } from './types';
+import { dimensionBody, normalizeDimension } from '../../utils/religionDimensions';
+import { getDimension } from '../../components/religion/dimensionMeta';
+import type { ReligionDimensionEntry } from '../../types';
+import type {
+    ComparisonContent,
+    ComparisonDimension,
+    ComparisonDomainConfig,
+    ComparisonEntity,
+} from './types';
+
+// Religionsdimensjonene er de samme sju som i religionsprofilen. Spørsmålet,
+// fargen og ikonet hentes derfra, slik at eleven møter «Hva gjør de?» både på
+// /krle/religion/:id og her.
+function religionDimension(key: string, reflection: string): ComparisonDimension {
+    const meta = getDimension(key);
+    return {
+        key,
+        label: meta?.label ?? key,
+        short: meta?.short,
+        question: meta?.question,
+        color: meta?.color,
+        icon: meta?.icon,
+        reflection,
+    };
+}
 
 function wrapDimensions(
     dimensions: Record<string, unknown> | undefined,
@@ -22,60 +45,52 @@ function wrapDimensions(
 export const religionConfig: ComparisonDomainConfig = {
     domain: 'religion',
     title: 'Sammenlign religioner',
-    intro: 'Velg religionene du vil sammenligne, og utforsk likheter og forskjeller gjennom Ninian Smarts sju dimensjoner.',
+    intro: 'Velg to til fire religioner, og se hvor de ligner og hvor de skiller lag.',
     manifestKey: 'religions',
     dimensions: [
-        {
-            key: 'ritual',
-            label: 'Ritualer og kult',
-            reflection:
-                'Velg to av religionene du sammenligner. Hva tror du ritualene betyr for en som utøver dem i hverdagen?',
-        },
-        {
-            key: 'narrative',
-            label: 'Fortellinger og myter',
-            reflection:
-                'Hvilke likheter finner du mellom fortellingene? Hvorfor tror du fortellinger er så viktige i religioner?',
-        },
-        {
-            key: 'experiential',
-            label: 'Opplevelser og erfaringer',
-            reflection:
-                'Hvordan tror du det oppleves å delta i en av disse religionenes viktigste seremonier?',
-        },
-        {
-            key: 'social',
-            label: 'Sosial organisering',
-            reflection:
-                'Hvordan er fellesskapene organisert ulikt? Hva kan det ha å si for medlemmene?',
-        },
-        {
-            key: 'ethical',
-            label: 'Etikk og moral',
-            reflection:
-                'Finn en leveregel som ligner på tvers av religionene. Hvorfor tror du så mange religioner deler den?',
-        },
-        {
-            key: 'doctrinal',
-            label: 'Lære og filosofi',
-            reflection:
-                'Hva er den største forskjellen i lære mellom religionene du har valgt?',
-        },
-        {
-            key: 'material',
-            label: 'Materielle uttrykk',
-            reflection:
-                'Hvorfor tror du bygninger og gjenstander betyr så mye i religioner?',
-        },
+        religionDimension(
+            'ritual',
+            'Velg to av religionene du sammenligner. Hva tror du ritualene betyr for en som utøver dem i hverdagen?'
+        ),
+        religionDimension(
+            'narrative',
+            'Hvilke likheter finner du mellom fortellingene? Hvorfor tror du fortellinger er så viktige i religioner?'
+        ),
+        religionDimension(
+            'experiential',
+            'Hvordan tror du det oppleves å delta i en av disse religionenes viktigste seremonier?'
+        ),
+        religionDimension(
+            'social',
+            'Hvordan er fellesskapene organisert ulikt? Hva kan det ha å si for medlemmene?'
+        ),
+        religionDimension(
+            'ethical',
+            'Finn en leveregel som ligner på tvers av religionene. Hvorfor tror du så mange religioner deler den?'
+        ),
+        religionDimension(
+            'doctrinal',
+            'Hva er den største forskjellen i lære mellom religionene du har valgt?'
+        ),
+        religionDimension(
+            'material',
+            'Hvorfor tror du bygninger og gjenstander betyr så mye i religioner?'
+        ),
     ],
     fetchEntity: async (id) => {
         const religion = await fetchReligion(id);
         if (!religion) return null;
+        const cards: Record<string, ReligionDimensionEntry | undefined> = {};
+        for (const [key, value] of Object.entries(religion.dimensions ?? {})) {
+            const entry = normalizeDimension(value);
+            if (entry?.summary) cards[key] = entry;
+        }
         const entity: ComparisonEntity = {
             id: religion.id,
             name: religion.name,
             color: religion.color,
             dimensions: wrapDimensions(religion.dimensions, 'rich'),
+            cards,
         };
         return entity;
     },
@@ -87,6 +102,7 @@ export const religionConfig: ComparisonDomainConfig = {
     subjectId: 'krle',
     topicId: 'religion',
     tasksUrl: 'data/comparison/religion-tasks.json',
+    matrixUrl: 'data/comparison/religion-matrix.json',
     articleLinks: (manifest, entityId, dimensionKey) =>
         manifest.religionArticles
             .filter((a) => a.religion === entityId && a.dimension === dimensionKey)
@@ -97,7 +113,7 @@ export const religionConfig: ComparisonDomainConfig = {
 export const philosophyConfig: ComparisonDomainConfig = {
     domain: 'filosofi',
     title: 'Sammenlign filosofer',
-    intro: 'Velg tenkerne du vil sammenligne, og utforsk hvordan de svarer ulikt på de samme store spørsmålene.',
+    intro: 'Velg to til fire tenkere, og se hvor ulikt de svarer på de samme store spørsmålene.',
     manifestKey: 'philosophers',
     dimensions: [
         {

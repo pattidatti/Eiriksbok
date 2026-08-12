@@ -736,3 +736,32 @@ dimensjonen.
 feilen da kortene ble skrevet: ingressen ble en omskrivning av åpningen, og eleven leste det
 samme to ganger. Ingressen skal svare på dimensjonens spørsmål med et annet grep enn
 brødteksten - et konkret bilde, en følge, en motsetning.
+
+---
+
+## 9. Sammenligningsmatrisen på /krle/sammenlign
+
+Fire tekstspalter side om side var ikke en sammenligning: eleven måtte gjøre hele
+sammenligningen i hodet. Siden er derfor lagt om i tre lag:
+
+1. **Rask oversikt** - en matrise med 3-4 korte faktarader per dimensjon. Celler der to
+   eller flere av de *valgte* religionene har samme svar, får samme farge. Fargen betyr
+   «dette svaret deler du med noen andre her», og den regnes ut fra utvalget, ikke fra
+   dataene. Velger eleven bort en religion, forsvinner fargen.
+2. **Kortene** - bilde, ingressen fra dimensjonskortet, nøkkelbegrep som chips, og
+   «Vis hele teksten» for brødteksten. Fire ingresser kan leses side om side; fire
+   brødtekster kan ikke.
+3. **Test deg selv** - ny oppgave «Hvem ligner?» som bygger på matrisen: den finner rader
+   der nøyaktig to av de valgte deler svar, og spør hvem som ligner på hvem. Den krever
+   minst tre valgte religioner og skjuler seg ellers.
+
+**Dataene:** `public/data/comparison/religion-matrix.json`. 22 rader, 198 celler, alle ni
+religionene i hver rad. Regelen for `bucket` står i `_om`-feltet øverst i fila: sett den
+**bare** der flere religioner har samme svar og det er verdt å legge merke til. En bucket
+som bare én religion bruker, gir aldri farge og er derfor støy.
+
+Dimensjonsfanene henter spørsmål, farge og ikon fra `dimensionMeta.ts`, samme kilde som
+religionsprofilen. Legger du til en dimensjon ett sted, dukker den opp begge steder.
+
+Filosofisammenligningen deler motor, men har verken matrise eller dimensjonskort. Den
+faller tilbake til brødtekst uten ingress, og skal fortsatt gjøre det.

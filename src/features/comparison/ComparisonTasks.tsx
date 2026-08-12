@@ -10,12 +10,53 @@ import type {
     ComparisonDimension,
     ComparisonDomainConfig,
     ComparisonEntity,
+    MatrixRow,
 } from './types';
 
 interface ComparisonTasksProps {
     config: ComparisonDomainConfig;
     dimension: ComparisonDimension;
     entities: ComparisonEntity[];
+    // Radene i sammenligningsmatrisen for aktiv dimensjon, om de finnes
+    matrixRows?: MatrixRow[];
+}
+
+interface PairQuestion {
+    rowLabel: string;
+    anchor: ComparisonEntity;
+    anchorText: string;
+    answerId: string;
+    answerText: string;
+    options: ComparisonEntity[];
+}
+
+// «Hvem ligner?»: finn rader der nøyaktig to av de valgte religionene deler
+// svar. Da har spørsmålet ett riktig svar, og eleven må lese på tvers av
+// tabellen i stedet for nedover i én kolonne.
+function buildPairQuestions(rows: MatrixRow[], entities: ComparisonEntity[]): PairQuestion[] {
+    if (entities.length < 3) return [];
+    const questions: PairQuestion[] = [];
+    for (const row of rows) {
+        const byBucket = new Map<string, ComparisonEntity[]>();
+        for (const entity of entities) {
+            const bucket = row.values[entity.id]?.bucket;
+            if (!bucket) continue;
+            byBucket.set(bucket, [...(byBucket.get(bucket) ?? []), entity]);
+        }
+        for (const members of byBucket.values()) {
+            if (members.length !== 2) continue;
+            const [first, second] = members;
+            questions.push({
+                rowLabel: row.label,
+                anchor: first,
+                anchorText: row.values[first.id]?.text ?? '',
+                answerId: second.id,
+                answerText: row.values[second.id]?.text ?? '',
+                options: entities.filter((e) => e.id !== first.id),
+            });
+        }
+    }
+    return questions;
 }
 
 const ROUND_SIZE = 3;
@@ -56,6 +97,7 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
     config,
     dimension,
     entities,
+    matrixRows,
 }) => {
     const selectedIds = useMemo(() => entities.map((e) => e.id), [entities]);
     const entityLabel = config.domain === 'religion' ? 'religionen' : 'tenkeren';
@@ -140,7 +182,27 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
         setClaimIndex((i) => i + 1);
     };
 
-    // --- Oppgave 3: Refleksjon ---
+    // --- Oppgave 3: «Hvem ligner?» (fra sammenligningsmatrisen) ---
+    const pairQuestions = useMemo(
+        () => buildPairQuestions(matrixRows ?? [], entities),
+        [matrixRows, entities]
+    );
+    const [pairIndex, setPairIndex] = useState(0);
+    const [pairAnswer, setPairAnswer] = useState<string | null>(null);
+    const activePair = pairQuestions[pairIndex % Math.max(pairQuestions.length, 1)];
+
+    const answerPair = (id: string) => {
+        if (pairAnswer || !activePair) return;
+        setPairAnswer(id);
+        registerAnswer(id === activePair.answerId);
+    };
+
+    const nextPair = () => {
+        setPairAnswer(null);
+        setPairIndex((i) => i + 1);
+    };
+
+    // --- Oppgave 4: Refleksjon ---
     // Komponenten remountes per dimensjon (key i ComparisonPage), så lazy init holder
     const reflectionKey = `comparison-reflection:${config.domain}:${dimension.key}`;
     const [reflection, setReflection] = useState(
@@ -162,17 +224,21 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
         celebrateCompletion();
     };
 
-    const [activeTab, setActiveTab] = useState<'gjett' | 'pastand' | 'refleksjon'>('gjett');
-    // Faller tilbake til gjett-fanen hvis påstandene forsvinner (endret utvalg)
-    const effectiveTab = activeTab === 'pastand' && claims.length === 0 ? 'gjett' : activeTab;
-
-    if (!question && claims.length === 0 && !dimension.reflection) return null;
+    type TabId = 'ligner' | 'gjett' | 'pastand' | 'refleksjon';
+    const [activeTab, setActiveTab] = useState<TabId>('ligner');
 
     const tabs = [
+        pairQuestions.length > 0 && { id: 'ligner' as const, label: 'Hvem ligner?' },
         question && { id: 'gjett' as const, label: 'Hvem hører dette til?' },
         claims.length > 0 && { id: 'pastand' as const, label: 'Likt eller ulikt?' },
         dimension.reflection && { id: 'refleksjon' as const, label: 'Refleksjon' },
-    ].filter(Boolean) as { id: 'gjett' | 'pastand' | 'refleksjon'; label: string }[];
+    ].filter(Boolean) as { id: TabId; label: string }[];
+
+    if (tabs.length === 0) return null;
+
+    // Endrer eleven utvalget, kan fanen som var valgt forsvinne. Da faller vi
+    // tilbake til den første som finnes, aldri til et tomt panel.
+    const effectiveTab: TabId = tabs.some((t) => t.id === activeTab) ? activeTab : tabs[0].id;
 
     return (
         <section className="bg-bg-card border border-border-main rounded-2xl p-5 md:p-6 shadow-sm">
@@ -220,6 +286,67 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
                             {tab.label}
                         </button>
                     ))}
+                </div>
+            )}
+
+            {effectiveTab === 'ligner' && activePair && (
+                <div>
+                    <p className="text-sm text-text-muted mb-1">
+                        {activePair.rowLabel}: {activePair.anchor.name} svarer «
+                        {activePair.anchorText}».
+                    </p>
+                    <p className="text-text-main font-medium mb-4">
+                        Hvem av de andre har samme svar?
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                        {activePair.options.map((option) => {
+                            const isAnswer = option.id === activePair.answerId;
+                            const isPicked = pairAnswer === option.id;
+                            const revealed = pairAnswer !== null;
+                            return (
+                                <motion.button
+                                    key={option.id}
+                                    type="button"
+                                    disabled={revealed}
+                                    onClick={() => answerPair(option.id)}
+                                    animate={
+                                        revealed && isPicked
+                                            ? isAnswer
+                                                ? correctPop
+                                                : wrongShake
+                                            : undefined
+                                    }
+                                    whileTap={{ scale: 0.95 }}
+                                    className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors ${
+                                        revealed && isAnswer
+                                            ? 'bg-emerald-100 border-emerald-400 text-emerald-800'
+                                            : revealed && isPicked
+                                              ? 'bg-rose-100 border-rose-400 text-rose-800'
+                                              : 'bg-bg-subtle border-border-main text-text-main hover:border-indigo-400'
+                                    }`}
+                                >
+                                    {option.name}
+                                </motion.button>
+                            );
+                        })}
+                    </div>
+                    {pairAnswer && (
+                        <div>
+                            <p className="text-sm text-text-muted mb-2">
+                                Svaret er {entities.find((e) => e.id === activePair.answerId)?.name}
+                                : «{activePair.answerText}».
+                            </p>
+                            {pairQuestions.length > 1 && (
+                                <button
+                                    type="button"
+                                    onClick={nextPair}
+                                    className="text-sm font-bold text-indigo-600 hover:text-indigo-800"
+                                >
+                                    Neste spørsmål →
+                                </button>
+                            )}
+                        </div>
+                    )}
                 </div>
             )}
 

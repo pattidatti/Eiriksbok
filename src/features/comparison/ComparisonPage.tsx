@@ -1,18 +1,24 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useQueries } from '@tanstack/react-query';
+import { useQueries, useQuery } from '@tanstack/react-query';
 import { PageSkeleton } from '../../components/Skeleton';
-import { useComparisonManifest } from './manifest';
+import { useComparisonManifest, fetchJsonAsset } from './manifest';
 import { EntityPicker } from './EntityPicker';
+import { ComparisonMatrix } from './ComparisonMatrix';
 import { ComparisonCell } from './ComparisonCell';
 import { ComparisonTasks } from './ComparisonTasks';
-import type { ComparisonDomainConfig, ComparisonEntity, ManifestEntity } from './types';
+import type {
+    ComparisonDomainConfig,
+    ComparisonEntity,
+    ComparisonMatrixData,
+    ManifestEntity,
+} from './types';
 
 interface ComparisonPageProps {
     config: ComparisonDomainConfig;
-    // Ekstra innhold mellom intro og velger (f.eks. tema-chips for religion)
-    headerExtra?: React.ReactNode;
+    // Ekstra innhold nederst på siden (f.eks. tema-chips for religion)
+    footerExtra?: React.ReactNode;
 }
 
 const GRID_BY_COUNT: Record<number, string> = {
@@ -21,7 +27,7 @@ const GRID_BY_COUNT: Record<number, string> = {
     4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
 };
 
-export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerExtra }) => {
+export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerExtra }) => {
     const manifestQuery = useComparisonManifest();
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -96,6 +102,7 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
     });
     const activeDim =
         config.dimensions.find((d) => d.key === activeDimKey) ?? config.dimensions[0];
+    const accent = activeDim.color ?? '#6366f1';
     const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
     const onTablistKeyDown = (event: React.KeyboardEvent) => {
@@ -112,6 +119,17 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
             tabRefs.current[nextIndex]?.focus();
         }
     };
+
+    // --- Sammenligningsmatrisen ---
+    const { data: matrix } = useQuery({
+        queryKey: ['comparison-matrix', config.domain],
+        queryFn: () =>
+            config.matrixUrl
+                ? fetchJsonAsset<ComparisonMatrixData>(config.matrixUrl)
+                : Promise.resolve(null),
+        staleTime: Infinity,
+    });
+    const matrixRows = matrix?.dimensions?.[activeDim.key] ?? [];
 
     if (manifestQuery.isLoading) return <PageSkeleton />;
 
@@ -136,29 +154,29 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
     }
 
     const gridClass = GRID_BY_COUNT[Math.min(Math.max(entities.length, 2), 4)];
+    const ActiveIcon = activeDim.icon;
 
     return (
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
             <motion.div
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: -12 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-8 text-center"
+                className="mb-5 text-center"
             >
                 <Link
                     to="/krle"
-                    className="text-sm text-text-muted hover:text-text-main mb-4 inline-block"
+                    className="text-sm text-text-muted hover:text-text-main mb-1 inline-block"
                 >
                     ← Tilbake til oversikt
                 </Link>
-                <h1 className="text-3xl md:text-5xl font-display font-bold text-text-main mb-4">
+                <h1 className="text-3xl md:text-4xl font-display font-bold text-text-main mb-2">
                     {config.title}
                 </h1>
-                <p className="text-lg text-text-muted max-w-2xl mx-auto mb-6">{config.intro}</p>
-                {headerExtra}
+                <p className="text-text-muted max-w-2xl mx-auto">{config.intro}</p>
             </motion.div>
 
-            {/* Velger */}
-            <div className="sticky top-0 z-20 -mx-4 md:-mx-6 px-4 md:px-6 py-3 bg-bg-main/85 backdrop-blur border-b border-border-main mb-6">
+            {/* Velger + dimensjonsfaner i én sticky rad */}
+            <div className="sticky top-0 z-20 -mx-4 md:-mx-6 px-4 md:px-6 py-3 bg-bg-main/90 backdrop-blur border-b border-border-main mb-6 space-y-3">
                 <EntityPicker
                     entities={availableEntities}
                     selected={selected}
@@ -166,35 +184,71 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
                     maxSelected={config.maxSelected}
                     minSelected={config.minSelected}
                 />
+
+                <div
+                    role="tablist"
+                    aria-label="Velg dimensjon"
+                    onKeyDown={onTablistKeyDown}
+                    className="flex flex-wrap gap-1.5 justify-center"
+                >
+                    {config.dimensions.map((dim, index) => {
+                        const isActive = activeDimKey === dim.key;
+                        const Icon = dim.icon;
+                        const color = dim.color ?? '#6366f1';
+                        return (
+                            <button
+                                key={dim.key}
+                                ref={(el) => {
+                                    tabRefs.current[index] = el;
+                                }}
+                                role="tab"
+                                aria-selected={isActive}
+                                tabIndex={isActive ? 0 : -1}
+                                onClick={() => setActiveDimKey(dim.key)}
+                                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs md:text-sm font-bold border transition-all ${
+                                    isActive ? 'text-white shadow-md' : 'text-text-muted bg-bg-card'
+                                }`}
+                                style={{
+                                    backgroundColor: isActive ? color : undefined,
+                                    borderColor: isActive ? color : `${color}44`,
+                                }}
+                            >
+                                {Icon && (
+                                    <Icon
+                                        size={15}
+                                        style={{ color: isActive ? '#ffffff' : color }}
+                                    />
+                                )}
+                                {dim.short ?? dim.label}
+                            </button>
+                        );
+                    })}
+                </div>
             </div>
 
-            {/* Dimensjonsfaner */}
-            <div
-                role="tablist"
-                aria-label="Velg dimensjon"
-                onKeyDown={onTablistKeyDown}
-                className="flex flex-wrap gap-2 justify-center mb-8"
-            >
-                {config.dimensions.map((dim, index) => (
-                    <button
-                        key={dim.key}
-                        ref={(el) => {
-                            tabRefs.current[index] = el;
-                        }}
-                        role="tab"
-                        aria-selected={activeDimKey === dim.key}
-                        tabIndex={activeDimKey === dim.key ? 0 : -1}
-                        onClick={() => setActiveDimKey(dim.key)}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                            activeDimKey === dim.key
-                                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 scale-105'
-                                : 'bg-bg-card border border-border-main text-text-muted hover:text-text-main hover:border-indigo-500/50'
-                        }`}
+            {/* Spørsmålet dimensjonen stiller */}
+            <div className="mb-5 text-center">
+                {/* Fagbegrepet står over spørsmålet. Har dimensjonen ikke fått
+                    et spørsmål (filosofi), er label alene nok. */}
+                {activeDim.question && (
+                    <p
+                        className="text-xs font-bold uppercase tracking-wider mb-1"
+                        style={{ color: accent }}
                     >
-                        {dim.label}
-                    </button>
-                ))}
+                        {ActiveIcon && (
+                            <ActiveIcon size={14} className="inline-block mr-1 -mt-0.5" />
+                        )}
+                        {activeDim.label}
+                    </p>
+                )}
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-text-main">
+                    {activeDim.question ?? activeDim.label}
+                </h2>
             </div>
+
+            {!entitiesLoading && matrixRows.length > 0 && (
+                <ComparisonMatrix rows={matrixRows} entities={entities} />
+            )}
 
             {/* Sammenligningskort */}
             {entitiesLoading ? (
@@ -231,6 +285,8 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
                                 </div>
                                 <ComparisonCell
                                     content={entity.dimensions[activeDim.key]}
+                                    card={entity.cards?.[activeDim.key]}
+                                    accent={entity.color || '#6366f1'}
                                     compact={entities.length === 4}
                                     articleLinks={
                                         config.articleLinks && manifestQuery.data
@@ -241,7 +297,7 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
                                               )
                                             : undefined
                                     }
-                                    detailLink={config.detailLink(entity.id)}
+                                    detailLink={`${config.detailLink(entity.id)}?dim=${activeDim.key}`}
                                     detailLabel={`Les mer om ${entity.name}`}
                                 />
                             </motion.article>
@@ -258,8 +314,11 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, headerEx
                     config={config}
                     dimension={activeDim}
                     entities={entities}
+                    matrixRows={matrixRows}
                 />
             )}
+
+            {footerExtra}
         </div>
     );
 };

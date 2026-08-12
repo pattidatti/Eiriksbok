@@ -1,0 +1,350 @@
+{
+    "_om": "Sammenligningsmatrisen bak /krle/sammenlign. Hver rad er ett spørsmål som kan besvares kort for alle ni religionene. `text` er svaret eleven leser. `bucket` settes KUN der to eller flere religioner har samme svar, og det er verdt å legge merke til - da fargelegges cellene likt i tabellen. Verdier uten bucket står nøytralt. Tallene er omtrentlige.",
+    "domain": "religion",
+    "dimensions": {
+        "ritual": [
+            {
+                "key": "bonnetider",
+                "label": "Faste bønnetider",
+                "values": {
+                    "bahai": { "text": "Ja, én daglig bønn", "bucket": "ja" },
+                    "buddhisme": { "text": "Nei, meditasjon når man vil", "bucket": "nei" },
+                    "hinduisme": { "text": "Nei, puja hjemme og i tempelet", "bucket": "nei" },
+                    "islam": { "text": "Ja, fem ganger om dagen", "bucket": "ja" },
+                    "jehovas-vitner": { "text": "Nei, bønn når som helst", "bucket": "nei" },
+                    "jodedom": { "text": "Ja, tre ganger om dagen", "bucket": "ja" },
+                    "kristendom": { "text": "Nei, bønn når som helst", "bucket": "nei" },
+                    "mormonisme": { "text": "Ja, morgen, kveld og til måltid", "bucket": "ja" },
+                    "sikhisme": { "text": "Ja, morgen og kveld", "bucket": "ja" }
+                }
+            },
+            {
+                "key": "hviledag",
+                "label": "Fast hviledag",
+                "values": {
+                    "bahai": { "text": "Ingen, men fest hver 19. dag", "bucket": "ingen" },
+                    "buddhisme": { "text": "Ingen fast ukedag", "bucket": "ingen" },
+                    "hinduisme": { "text": "Ingen fast ukedag", "bucket": "ingen" },
+                    "islam": { "text": "Fredag, med fredagsbønn" },
+                    "jehovas-vitner": { "text": "Ingen hellig dag", "bucket": "ingen" },
+                    "jodedom": { "text": "Lørdag (sabbat)" },
+                    "kristendom": { "text": "Søndag", "bucket": "sondag" },
+                    "mormonisme": { "text": "Søndag", "bucket": "sondag" },
+                    "sikhisme": { "text": "Ingen fast dag", "bucket": "ingen" }
+                }
+            },
+            {
+                "key": "matregler",
+                "label": "Regler for mat",
+                "values": {
+                    "bahai": { "text": "Ingen faste regler", "bucket": "nei" },
+                    "buddhisme": { "text": "Mange er vegetarianere", "bucket": "ja" },
+                    "hinduisme": { "text": "Ikke storfe, mange vegetarianere", "bucket": "ja" },
+                    "islam": { "text": "Halal: ikke svin, ikke alkohol", "bucket": "ja" },
+                    "jehovas-vitner": { "text": "Ikke mat med blod i", "bucket": "ja" },
+                    "jodedom": { "text": "Kosher: ikke svin, ikke kjøtt og melk sammen", "bucket": "ja" },
+                    "kristendom": { "text": "Ingen faste regler", "bucket": "nei" },
+                    "mormonisme": { "text": "Ikke alkohol, tobakk, kaffe og te", "bucket": "ja" },
+                    "sikhisme": { "text": "Vegetarmat i fellesmåltidet", "bucket": "ja" }
+                }
+            },
+            {
+                "key": "faste",
+                "label": "Faste",
+                "values": {
+                    "bahai": { "text": "19 dager i mars" },
+                    "buddhisme": { "text": "Munker spiser ikke etter middag" },
+                    "hinduisme": { "text": "Faster ved høytider" },
+                    "islam": { "text": "Ramadan, én måned i året" },
+                    "jehovas-vitner": { "text": "Faster ikke", "bucket": "nei" },
+                    "jodedom": { "text": "Jom kippur og andre fastedager" },
+                    "kristendom": { "text": "Frivillig, i fastetiden før påske" },
+                    "mormonisme": { "text": "Én fastesøndag i måneden" },
+                    "sikhisme": { "text": "Faster ikke", "bucket": "nei" }
+                }
+            }
+        ],
+        "narrative": [
+            {
+                "key": "grunnlegger",
+                "label": "Grunnlegger",
+                "values": {
+                    "bahai": { "text": "Bahaullah" },
+                    "buddhisme": { "text": "Siddharta Gautama (Buddha)" },
+                    "hinduisme": { "text": "Ingen enkelt grunnlegger" },
+                    "islam": { "text": "Muhammad" },
+                    "jehovas-vitner": { "text": "Charles Taze Russell" },
+                    "jodedom": { "text": "Abraham og Moses" },
+                    "kristendom": { "text": "Jesus" },
+                    "mormonisme": { "text": "Joseph Smith" },
+                    "sikhisme": { "text": "Guru Nanak" }
+                }
+            },
+            {
+                "key": "startet",
+                "label": "Når startet den",
+                "values": {
+                    "bahai": { "text": "1800-tallet, i Persia", "bucket": "1800" },
+                    "buddhisme": { "text": "For rundt 2500 år siden", "bucket": "oldtid" },
+                    "hinduisme": { "text": "Vokst fram gjennom 5000 år", "bucket": "oldtid" },
+                    "islam": { "text": "År 610, i Mekka" },
+                    "jehovas-vitner": { "text": "1870-tallet, i USA", "bucket": "1800" },
+                    "jodedom": { "text": "For rundt 4000 år siden", "bucket": "oldtid" },
+                    "kristendom": { "text": "For rundt 2000 år siden", "bucket": "oldtid" },
+                    "mormonisme": { "text": "1830, i USA", "bucket": "1800" },
+                    "sikhisme": { "text": "1469, i Punjab" }
+                }
+            },
+            {
+                "key": "hellig-bok",
+                "label": "Hellig bok",
+                "values": {
+                    "bahai": { "text": "Kitab-i-Aqdas og Bahaullahs skrifter" },
+                    "buddhisme": { "text": "Tripitaka" },
+                    "hinduisme": { "text": "Vedaene og Bhagavadgita" },
+                    "islam": { "text": "Koranen" },
+                    "jehovas-vitner": { "text": "Bibelen, i egen oversettelse", "bucket": "bibel" },
+                    "jodedom": { "text": "Tanak, med Toraen" },
+                    "kristendom": { "text": "Bibelen", "bucket": "bibel" },
+                    "mormonisme": { "text": "Bibelen og Mormons bok", "bucket": "bibel" },
+                    "sikhisme": { "text": "Guru Granth Sahib" }
+                }
+            }
+        ],
+        "experiential": [
+            {
+                "key": "maal",
+                "label": "Målet med livet",
+                "values": {
+                    "bahai": { "text": "At sjelen kommer nærmere Gud", "bucket": "gud" },
+                    "buddhisme": { "text": "Nirvana, ut av gjenfødslene", "bucket": "ut" },
+                    "hinduisme": { "text": "Moksha, ut av gjenfødslene", "bucket": "ut" },
+                    "islam": { "text": "Paradiset hos Gud", "bucket": "gud" },
+                    "jehovas-vitner": { "text": "Evig liv på en paradisisk jord" },
+                    "jodedom": { "text": "Å leve etter budene her og nå" },
+                    "kristendom": { "text": "Evig liv hos Gud", "bucket": "gud" },
+                    "mormonisme": { "text": "Å leve evig med Gud og familien", "bucket": "gud" },
+                    "sikhisme": { "text": "Forening med Gud, ut av gjenfødslene", "bucket": "ut" }
+                }
+            },
+            {
+                "key": "ovelse",
+                "label": "Viktigste øvelse",
+                "values": {
+                    "bahai": { "text": "Bønn og lesning av hellige tekster" },
+                    "buddhisme": { "text": "Meditasjon" },
+                    "hinduisme": { "text": "Puja og darshan i tempelet" },
+                    "islam": { "text": "De fem daglige bønnene" },
+                    "jehovas-vitner": { "text": "Bibelstudium og forkynnelse" },
+                    "jodedom": { "text": "Bønn og sabbatsmåltid" },
+                    "kristendom": { "text": "Bønn" },
+                    "mormonisme": { "text": "Bønn og eget vitnesbyrd" },
+                    "sikhisme": { "text": "Sang (kirtan) og tjeneste (seva)" }
+                }
+            },
+            {
+                "key": "pilegrim",
+                "label": "Pilegrimsreise",
+                "values": {
+                    "bahai": { "text": "Til Haifa og Akko i Israel" },
+                    "buddhisme": { "text": "Til Bodh Gaya og andre hellige steder" },
+                    "hinduisme": { "text": "Til Ganges og hellige byer" },
+                    "islam": { "text": "Hajj til Mekka, en plikt" },
+                    "jehovas-vitner": { "text": "Nei, men store stevner", "bucket": "nei" },
+                    "jodedom": { "text": "Til Klagemuren i Jerusalem" },
+                    "kristendom": { "text": "Frivillig, blant annet til Roma og Nidaros" },
+                    "mormonisme": { "text": "Nei, men besøk i tempelet", "bucket": "nei" },
+                    "sikhisme": { "text": "Til Det gylne tempel i Amritsar" }
+                }
+            }
+        ],
+        "social": [
+            {
+                "key": "prester",
+                "label": "Egne prester",
+                "values": {
+                    "bahai": { "text": "Nei, valgte råd styrer" },
+                    "buddhisme": { "text": "Nei, men munker og nonner" },
+                    "hinduisme": { "text": "Ja, brahmanske prester", "bucket": "ja" },
+                    "islam": { "text": "Nei, imamen leder bønnen" },
+                    "jehovas-vitner": { "text": "Nei, eldste uten lønn" },
+                    "jodedom": { "text": "Nei, rabbineren er lærer" },
+                    "kristendom": { "text": "Ja, prester og biskoper", "bucket": "ja" },
+                    "mormonisme": { "text": "Nei, medlemmene har oppgavene" },
+                    "sikhisme": { "text": "Nei, en granthi passer boka" }
+                }
+            },
+            {
+                "key": "leder",
+                "label": "Øverste leder",
+                "values": {
+                    "bahai": { "text": "Rettferdighetens hus i Haifa" },
+                    "buddhisme": { "text": "Ingen felles leder", "bucket": "ingen" },
+                    "hinduisme": { "text": "Ingen felles leder", "bucket": "ingen" },
+                    "islam": { "text": "Ingen felles leder", "bucket": "ingen" },
+                    "jehovas-vitner": { "text": "Det styrende råd i USA" },
+                    "jodedom": { "text": "Ingen felles leder", "bucket": "ingen" },
+                    "kristendom": { "text": "Paven for katolikker, ellers ulikt" },
+                    "mormonisme": { "text": "Kirkens president i Salt Lake City" },
+                    "sikhisme": { "text": "Ingen felles leder", "bucket": "ingen" }
+                }
+            },
+            {
+                "key": "storrelse",
+                "label": "Hvor mange i verden",
+                "values": {
+                    "bahai": { "text": "Noen millioner", "bucket": "faa" },
+                    "buddhisme": { "text": "Rundt 500 millioner" },
+                    "hinduisme": { "text": "Over en milliard", "bucket": "milliard" },
+                    "islam": { "text": "Over en milliard", "bucket": "milliard" },
+                    "jehovas-vitner": { "text": "Noen millioner", "bucket": "faa" },
+                    "jodedom": { "text": "Rundt 15 millioner", "bucket": "titalls" },
+                    "kristendom": { "text": "Over en milliard", "bucket": "milliard" },
+                    "mormonisme": { "text": "Rundt 17 millioner", "bucket": "titalls" },
+                    "sikhisme": { "text": "Over 25 millioner", "bucket": "titalls" }
+                }
+            }
+        ],
+        "ethical": [
+            {
+                "key": "rettesnor",
+                "label": "Viktigste rettesnor",
+                "values": {
+                    "bahai": { "text": "Menneskehetens enhet" },
+                    "buddhisme": { "text": "Den åttedelte veien" },
+                    "hinduisme": { "text": "Dharma og karma" },
+                    "islam": { "text": "Sharia, fra Koranen og sunna" },
+                    "jehovas-vitner": { "text": "Bibelens bud, tolket av Det styrende råd" },
+                    "jodedom": { "text": "De 613 budene i Toraen" },
+                    "kristendom": { "text": "Det doble kjærlighetsbudet" },
+                    "mormonisme": { "text": "Budene og visdomsordet" },
+                    "sikhisme": { "text": "De tre pilarene" }
+                }
+            },
+            {
+                "key": "dyr",
+                "label": "Å ikke skade dyr",
+                "values": {
+                    "bahai": { "text": "Ingen egen regel", "bucket": "ingen" },
+                    "buddhisme": { "text": "Ahimsa: ikke skade noe levende", "bucket": "ahimsa" },
+                    "hinduisme": { "text": "Ahimsa: ikke skade noe levende", "bucket": "ahimsa" },
+                    "islam": { "text": "Regler for hvordan dyr slaktes", "bucket": "slakt" },
+                    "jehovas-vitner": { "text": "Ingen egen regel", "bucket": "ingen" },
+                    "jodedom": { "text": "Regler for hvordan dyr slaktes", "bucket": "slakt" },
+                    "kristendom": { "text": "Ingen egen regel", "bucket": "ingen" },
+                    "mormonisme": { "text": "Ingen egen regel", "bucket": "ingen" },
+                    "sikhisme": { "text": "Vegetarmat i fellesmåltidet" }
+                }
+            },
+            {
+                "key": "giving",
+                "label": "Å gi til fattige",
+                "values": {
+                    "bahai": { "text": "Frivillig, men forventet" },
+                    "buddhisme": { "text": "Gaver til munkene" },
+                    "hinduisme": { "text": "Dana: frivillige gaver" },
+                    "islam": { "text": "Zakat: en fast andel", "bucket": "andel" },
+                    "jehovas-vitner": { "text": "Frivillige bidrag" },
+                    "jodedom": { "text": "Tzedaka: en plikt, ikke veldedighet", "bucket": "plikt" },
+                    "kristendom": { "text": "Frivillig" },
+                    "mormonisme": { "text": "Tiende: en tidel av inntekten", "bucket": "andel" },
+                    "sikhisme": { "text": "Vand chakko: å dele det man har", "bucket": "plikt" }
+                }
+            }
+        ],
+        "doctrinal": [
+            {
+                "key": "gudsbilde",
+                "label": "Gudsbilde",
+                "values": {
+                    "bahai": { "text": "Én Gud, som ingen kan forstå helt", "bucket": "en" },
+                    "buddhisme": { "text": "Ingen skapergud" },
+                    "hinduisme": { "text": "Én kraft (Brahman) i mange former" },
+                    "islam": { "text": "Én Gud, udelt (tawhid)", "bucket": "en" },
+                    "jehovas-vitner": { "text": "Én Gud, Jehova, ingen treenighet", "bucket": "en" },
+                    "jodedom": { "text": "Én Gud", "bucket": "en" },
+                    "kristendom": { "text": "Én Gud i tre personer" },
+                    "mormonisme": { "text": "Tre atskilte personer" },
+                    "sikhisme": { "text": "Én Gud (Ik Onkar)", "bucket": "en" }
+                }
+            },
+            {
+                "key": "etter-doden",
+                "label": "Etter døden",
+                "values": {
+                    "bahai": { "text": "Sjelen utvikler seg videre mot Gud" },
+                    "buddhisme": { "text": "Gjenfødsel, til nirvana bryter den", "bucket": "gjenfodsel" },
+                    "hinduisme": { "text": "Gjenfødsel, til moksha bryter den", "bucket": "gjenfodsel" },
+                    "islam": { "text": "Dommens dag: paradis eller helvete", "bucket": "dom" },
+                    "jehovas-vitner": { "text": "Oppstandelse til liv på jorden" },
+                    "jodedom": { "text": "Ingen fastlagt lære" },
+                    "kristendom": { "text": "Dom, og evig liv hos Gud", "bucket": "dom" },
+                    "mormonisme": { "text": "Tre herlighetsriker" },
+                    "sikhisme": { "text": "Gjenfødsel, til forening med Gud", "bucket": "gjenfodsel" }
+                }
+            },
+            {
+                "key": "frelse",
+                "label": "Veien til målet",
+                "values": {
+                    "bahai": { "text": "Å øve opp gode egenskaper" },
+                    "buddhisme": { "text": "Egen innsats, ingen gud hjelper", "bucket": "selv" },
+                    "hinduisme": { "text": "Kunnskap, handling eller hengivelse" },
+                    "islam": { "text": "Gjerninger og Guds barmhjertighet" },
+                    "jehovas-vitner": { "text": "Tro og lojalitet mot Guds rike" },
+                    "jodedom": { "text": "Å følge budene, ikke å bli reddet" },
+                    "kristendom": { "text": "Nåde: en gave fra Gud" },
+                    "mormonisme": { "text": "Tro, omvendelse, dåp og egne valg" },
+                    "sikhisme": { "text": "Egen innsats i hverdagen", "bucket": "selv" }
+                }
+            }
+        ],
+        "material": [
+            {
+                "key": "gudshus",
+                "label": "Gudshus",
+                "values": {
+                    "bahai": { "text": "Tilbedelseshus med ni innganger" },
+                    "buddhisme": { "text": "Tempel og kloster" },
+                    "hinduisme": { "text": "Mandir (tempel)" },
+                    "islam": { "text": "Moské" },
+                    "jehovas-vitner": { "text": "Rikets sal" },
+                    "jodedom": { "text": "Synagoge" },
+                    "kristendom": { "text": "Kirke" },
+                    "mormonisme": { "text": "Møtehus og tempel" },
+                    "sikhisme": { "text": "Gurdwara" }
+                }
+            },
+            {
+                "key": "bilder",
+                "label": "Bilder av Gud",
+                "values": {
+                    "bahai": { "text": "Nei, ingen bilder i templene", "bucket": "nei" },
+                    "buddhisme": { "text": "Buddhastatuer, men ingen gud" },
+                    "hinduisme": { "text": "Ja, gudestatuer (murti)", "bucket": "ja" },
+                    "islam": { "text": "Nei, bildeforbud", "bucket": "nei" },
+                    "jehovas-vitner": { "text": "Nei, ingen bilder eller symboler", "bucket": "nei" },
+                    "jodedom": { "text": "Nei, bildeforbud", "bucket": "nei" },
+                    "kristendom": { "text": "Ja, ikoner og altertavler", "bucket": "ja" },
+                    "mormonisme": { "text": "Ja, bilder av Jesus", "bucket": "ja" },
+                    "sikhisme": { "text": "Nei, men bilder av guruene", "bucket": "nei" }
+                }
+            },
+            {
+                "key": "helligste-sted",
+                "label": "Helligste sted",
+                "values": {
+                    "bahai": { "text": "Haifa og Akko i Israel" },
+                    "buddhisme": { "text": "Bodh Gaya i India" },
+                    "hinduisme": { "text": "Elven Ganges og byen Varanasi" },
+                    "islam": { "text": "Kaba i Mekka" },
+                    "jehovas-vitner": { "text": "Ingen hellige steder" },
+                    "jodedom": { "text": "Klagemuren i Jerusalem", "bucket": "jerusalem" },
+                    "kristendom": { "text": "Jerusalem", "bucket": "jerusalem" },
+                    "mormonisme": { "text": "Templene, særlig i Salt Lake City" },
+                    "sikhisme": { "text": "Det gylne tempel i Amritsar" }
+                }
+            }
+        ]
+    }
+}
