@@ -1,0 +1,467 @@
+{
+    "id": "bonn",
+    "title": "Å snakke med det hellige",
+    "subject": "krle",
+    "topic": "sammenligning",
+    "layout": "rich",
+    "category": "Sammenligning",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "ritual",
+    "comparison_tags": ["bonn", "ritual"],
+    "religions": [
+        "jodedom",
+        "kristendom",
+        "islam",
+        "bahai",
+        "mormonisme",
+        "jehovas-vitner",
+        "hinduisme",
+        "buddhisme",
+        "sikhisme"
+    ],
+    "kompetansemaal": ["rle01-03-10-01", "rle01-03-10-13"],
+    "details": [
+        "Bønn finnes i nesten alle kulturer, men nesten ingen gjør det likt.",
+        "Fire akser avslører forskjellene: retning, tid, kropp og ord.",
+        "Islam har fast retning og faste tider. Jødedommen krever ti voksne for offentlig gudstjeneste.",
+        "I hinduismen gjøres bønnen med hendene, og i buddhismen virker den ofte innover.",
+        "Fast form og fri form finnes side om side innenfor hver eneste tradisjon."
+    ],
+    "concepts": [
+        {
+            "id": "qibla",
+            "term": "Qibla",
+            "definition": "Bønneretningen i islam. Den peker mot Kaba i Mekka."
+        },
+        {
+            "id": "minjan",
+            "term": "Minjan",
+            "definition": "Ti voksne, etter tradisjonen ti menn, som må være til stede for at jødisk bønn regnes som offentlig gudstjeneste."
+        },
+        {
+            "id": "puja",
+            "term": "Puja",
+            "definition": "Tilbedelse med gaver som vann, blomster, røkelse, lys og mat. Brukes i hinduismen og buddhismen."
+        },
+        {
+            "id": "nam-simran",
+            "term": "Nam simran",
+            "definition": "Å gjenta og huske Guds navn. Kjernen i sikhisk bønn."
+        },
+        {
+            "id": "liturgisk-bonn",
+            "term": "Liturgisk bønn",
+            "definition": "Bønn med faste ord som gjentas hver gang, slik de brukes i en gudstjeneste."
+        }
+    ],
+    "createdDate": "2026-08-12T12:00:00Z",
+    "lastUpdated": "2026-08-12T12:00:00Z",
+    "factChecked": "2026-08-12",
+    "content": [
+        {
+            "type": "text",
+            "content": "Fem ganger i døgnet snur muslimer over hele verden seg mot det samme punktet på jorda. En buddhist som setter seg ned for å meditere, snur seg ikke mot noe."
+        },
+        {
+            "type": "header",
+            "text": "Spørsmålet alle stiller"
+        },
+        {
+            "type": "text",
+            "content": "Bønn er et samlenavn på de måtene mennesker snakker med høyere makter på, og det å be finnes i nesten alle kulturer (Jacobsen mfl., 2024). Derfor er det lett å tenke at bønn er én ting. Utenfra ser det jo nokså likt ut: noen blir stille, lukker øynene og sier noe."
+        },
+        {
+            "type": "text",
+            "content": "Skal du få øye på forskjellene, hjelper det å se etter fire ting. Hvilken vei vender den som ber seg? Når på døgnet skjer det? Hva gjør kroppen imens? Og hvem sine ord er det som blir sagt? Ingen av spørsmålene handler direkte om hva folk tror. De handler om hva folk gjør. Men formen røper som regel troen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Hender i ulike bønnestillinger sett ovenfra i mykt sidelys",
+            "caption": "Fire par hender, fire helt ulike måter å gjøre det samme på."
+        },
+        {
+            "type": "component",
+            "name": "BonneKompasset",
+            "props": {
+                "title": "Bønnekompasset",
+                "intro": "Velg en tradisjon, og se hvordan de fire ringene stiller seg inn. Klikk en ring for å sammenligne den på tvers.",
+                "maxVisible": 3,
+                "defaultSelection": ["islam", "buddhisme", "kristendom"],
+                "note": "Velg inntil tre tradisjoner om gangen. Ringene viser form, ikke hvem som tror mest.",
+                "legend": {
+                    "fast": "Formen ligger fast",
+                    "begge": "Litt av begge",
+                    "fri": "Den enkelte velger"
+                },
+                "groups": [
+                    { "id": "abrahamittisk", "label": "Abrahamittiske røtter" },
+                    { "id": "indisk", "label": "Indiske tradisjoner" },
+                    { "id": "nyere", "label": "Nyere bevegelser" }
+                ],
+                "rings": [
+                    {
+                        "id": "retning",
+                        "label": "Retning",
+                        "question": "Hvilken vei vender du deg?"
+                    },
+                    { "id": "tid", "label": "Tid", "question": "Når på døgnet?" },
+                    { "id": "kropp", "label": "Kropp", "question": "Hva gjør kroppen?" },
+                    { "id": "ord", "label": "Ord", "question": "Hvem sine ord?" }
+                ],
+                "traditions": [
+                    {
+                        "id": "jodedom",
+                        "name": "Jødedom",
+                        "color": "#3b82f6",
+                        "group": "abrahamittisk",
+                        "retning": "Mot Jerusalem, uansett hvor i verden du står.",
+                        "tid": "Tre faste bønner: morgen, ettermiddag og kveld.",
+                        "kropp": "Stående, med hodet dekket. På hverdager festes bønneremmene tefillin til panne og venstre arm ved morgenbønnen.",
+                        "ord": "Faste bønner fra bønneboka siddur. Egne ord er også lov ved siden av dem.",
+                        "retningVinkel": 139,
+                        "retningKort": "Mot Jerusalem",
+                        "tidAntall": 3,
+                        "fast": {
+                            "retning": "fast",
+                            "tid": "fast",
+                            "kropp": "fast",
+                            "ord": "begge"
+                        }
+                    },
+                    {
+                        "id": "kristendom",
+                        "name": "Kristendom",
+                        "color": "#6366f1",
+                        "group": "abrahamittisk",
+                        "retning": "Ingen bønneretning som gjelder alle.",
+                        "tid": "Ingen tider som gjelder alle. I den katolske kirken bes tidebønner åtte ganger i døgnet.",
+                        "kropp": "Foldede hender, knelende, stående eller sittende. Ingen fast rekke av bevegelser.",
+                        "ord": "Fadervår er felles for alle kirker, men fri bønn med egne ord er like vanlig.",
+                        "tidAntall": 0,
+                        "fast": { "retning": "fri", "tid": "begge", "kropp": "fri", "ord": "begge" }
+                    },
+                    {
+                        "id": "islam",
+                        "name": "Islam",
+                        "color": "#10b981",
+                        "group": "abrahamittisk",
+                        "retning": "Mot Kaba i Mekka. Retningen heter qibla.",
+                        "tid": "Fem faste tider som følger solas gang, ikke klokka.",
+                        "kropp": "Stående, bøyd, knelende med pannen mot bakken. Renselsen wudu kommer først.",
+                        "ord": "Faste vers fra Koranen på arabisk. Den frie bønnen dua kommer i tillegg.",
+                        "retningVinkel": 139,
+                        "retningKort": "Mot Mekka",
+                        "tidAntall": 5,
+                        "fast": {
+                            "retning": "fast",
+                            "tid": "fast",
+                            "kropp": "fast",
+                            "ord": "begge"
+                        }
+                    },
+                    {
+                        "id": "bahai",
+                        "name": "Bahá'í",
+                        "color": "#14b8a6",
+                        "group": "nyere",
+                        "retning": "Mot Bahá'u'lláhs gravsted ved Bahjí nær Akko.",
+                        "tid": "Én av de tre obligatoriske bønnene hvert døgn, og du velger selv hvilken.",
+                        "kropp": "Hender og ansikt vaskes først. Den lange bønnen har egne bevegelser, den korte nesten ingen.",
+                        "ord": "Faste tekster gitt av Bahá'u'lláh. Felles bønn er ikke tillatt, bortsett fra bønnen for de døde.",
+                        "retningVinkel": 138,
+                        "retningKort": "Mot Bahjí",
+                        "tidAntall": 1,
+                        "fast": {
+                            "retning": "fast",
+                            "tid": "fast",
+                            "kropp": "begge",
+                            "ord": "fast"
+                        }
+                    },
+                    {
+                        "id": "mormonisme",
+                        "name": "Mormonisme",
+                        "color": "#8b5cf6",
+                        "group": "nyere",
+                        "retning": "Ingen retning å vende seg mot.",
+                        "tid": "Rådet er å be alene morgen og kveld, sammen med familien og før hvert måltid.",
+                        "kropp": "Ingen faste bevegelser. Ofte bøyd hode og lukkede øyne.",
+                        "ord": "Fire faste deler: tiltale, takk, det du ber om, og avslutning i Jesu Kristi navn. Ordene velger du selv.",
+                        "tidAntall": 2,
+                        "fast": { "retning": "fri", "tid": "begge", "kropp": "fri", "ord": "begge" }
+                    },
+                    {
+                        "id": "jehovas-vitner",
+                        "name": "Jehovas vitner",
+                        "color": "#0ea5e9",
+                        "group": "nyere",
+                        "retning": "Ingen retning. Rikets sal har verken bilder eller statuer å vende seg mot.",
+                        "tid": "Ingen faste klokkeslett. Møtene i Rikets sal åpnes og avsluttes med sang og bønn.",
+                        "kropp": "Ingen regler. Du kan sitte, stå, knele eller bøye deg.",
+                        "ord": "Egne ord. Fadervår brukes som mønster, ikke som fast tekst. Bønnen avsluttes i Jesu navn.",
+                        "tidAntall": 0,
+                        "fast": { "retning": "fri", "tid": "fri", "kropp": "fri", "ord": "begge" }
+                    },
+                    {
+                        "id": "hinduisme",
+                        "name": "Hinduisme",
+                        "color": "#ec4899",
+                        "group": "indisk",
+                        "retning": "Mot husalteret eller gudebildet i tempelet, ikke mot et sted på kartet.",
+                        "tid": "Puja gjøres ofte om morgenen, men det finnes ingen fast klokke for alle.",
+                        "kropp": "Hendene gjør jobben: vann, blomster, røkelse, lys og mat settes fram.",
+                        "ord": "Mantraer på sanskrit følger med, men handlingene bærer bønnen.",
+                        "tidAntall": 0,
+                        "fast": {
+                            "retning": "begge",
+                            "tid": "fri",
+                            "kropp": "begge",
+                            "ord": "begge"
+                        }
+                    },
+                    {
+                        "id": "buddhisme",
+                        "name": "Buddhisme",
+                        "color": "#f59e0b",
+                        "group": "indisk",
+                        "retning": "Ingen retning utover. Meditasjonen virker på den som utfører den.",
+                        "tid": "Ingen faste tider. Klostrene har sine rytmer, lekfolk sine egne.",
+                        "kropp": "Sittende i meditasjon, tre bøyninger foran statuen, eller en hånd på et bønnehjul.",
+                        "ord": "Mantraer som gjentas, av og til hundretusenvis av ganger. Vinden i et bønneflagg kan si dem for deg.",
+                        "tidAntall": 0,
+                        "fast": { "retning": "fri", "tid": "fri", "kropp": "begge", "ord": "begge" }
+                    },
+                    {
+                        "id": "sikhisme",
+                        "name": "Sikhisme",
+                        "color": "#ff9933",
+                        "group": "indisk",
+                        "retning": "Mot Guru Granth Sahib, boka som blir behandlet som en levende lærer.",
+                        "tid": "Tre faste bønner: før daggry, ved solnedgang og rett før leggetid.",
+                        "kropp": "Sittende på gulvet med tildekket hode. Skoene av før du går inn.",
+                        "ord": "Faste tekster fra Guru Granth Sahib, som oftest sunget av musikere.",
+                        "tidAntall": 3,
+                        "fast": {
+                            "retning": "begge",
+                            "tid": "fast",
+                            "kropp": "fast",
+                            "ord": "fast"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "De abrahamittiske: retning og klokke"
+        },
+        {
+            "type": "text",
+            "content": "Jødedom, kristendom og islam regner alle Abraham som stamfar, og alle tre ber til én Gud. Likevel er det her de tydeligste forskjellene i form dukker opp. Islam har den fasteste rammen. Den rituelle bønnen salah bes fem ganger i døgnet, og tidene står ikke i en timeplan, men på himmelen: daggry, midt på dagen, ettermiddag, solnedgang og natt (Vogt og Selhi, 2026). Alle vender seg mot Kaba i Mekka, i retningen som heter qibla, og den samme retningen brukes også når døde gravlegges (Vogt, 2025). Mer om dette står i [Bønnen som følger sola](/krle/religion/islam/bonn)."
+        },
+        {
+            "type": "text",
+            "content": "Jødedommen har tre faste bønner: morgen, ettermiddag og kveld. De bes stående, med hodet dekket og ansiktet vendt mot Jerusalem (Groth, 2026). Men her kommer et krav ingen av de andre har. For at en samling skal skifte fra privat bønn til offentlig gudstjeneste, må ti voksne være til stede, etter tradisjonen ti menn (Groth, 2026). Det kalles en minjan. Du kan altså be alene, men du kan ikke bli mange alene. Hvem som telles blant de ti, er jøder uenige om: i reformjødiske menigheter telles kvinner med på lik linje med menn, mens konservative menigheter avgjør spørsmålet selv (Groth, 2026). Se [Bønnen som trenger ni til](/krle/religion/jodedom/bonn)."
+        },
+        {
+            "type": "text",
+            "content": "Formen er friest i kristendommen. Det finnes ingen bønneretning og ingen tider som gjelder alle. Fadervår er bønnen alle kristne kirker har felles (Seim, 2025), og ved siden av den står fri bønn med egne ord. Faste tider finnes likevel noen steder: i den katolske kirken bes tidebønner åtte ganger i døgnet, og alle prester, diakoner og medlemmer av ordenssamfunn er forpliktet til å be dem hver dag (Halvorsen, 2026). Muslimer gjør det heller ikke likt overalt: sjiamuslimer ber det samme antallet bønner, men samler dem i tre tidspunkter (Vogt og Selhi, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "De indiske: hendene, sangen og den som ber"
+        },
+        {
+            "type": "text",
+            "content": "I hinduismen gjøres den viktigste bønnehandlingen med hendene. Puja er tilbedelse av en guddom, og den kan bestå av mat og drikke, lys og røkelse, underholdning med sang og dans, og av å vaske, salve og pynte gudebildet (Kværne, 2024b). Tanken er at guden blir tatt imot som en æresgjest. De fleste hinduer har et alter hjemme, og der gjør familien pujaen selv, uten prest og uten fast klokkeslett. Mantraer er med, men de kommer sammen med handlingene, ikke i stedet for dem. Les mer i [Bønn du gjør med hendene](/krle/religion/hinduisme/bonn)."
+        },
+        {
+            "type": "text",
+            "content": "Sikhismen legger vekten et tredje sted. Kjernen er nam simran, å gjenta og huske Guds navn, og døgnet rammes inn av tre faste bønner: en i timene før daggry, en ved solnedgang og en rett før leggetid (Singh, 2018). I forsamlingshuset gurdwara blir tekstene sunget av musikere i stedet for lest opp, fordi Guru Granth Sahib er ordnet etter melodier og ikke etter tema (Jacobsen, 2020). Alle sitter på det samme gulvet, med tildekket hode. Fortsettelsen står i [Bønn i sikhismen](/krle/religion/sikhisme/bonn)."
+        },
+        {
+            "type": "text",
+            "content": "Buddhismen snur hele retningen. Her finnes ingen skapergud, og mange handlinger virker på den som utfører dem i stedet for å bli sendt til noen. Fagfolk sier rett ut at grensene mellom bønn, lovprising, resitasjon, ritual og meditasjon ikke er skarpe (Borgland, 2022). Samtidig finnes det mottakere: i rene land-buddhismen påkalles buddha Amitabha, og mange ber til bodhisattvaer om hjelp (Borgland, 2022). Ordene kan gjentas svært mange ganger, og tibetanske bønnekjeder er laget for å holde tellingen på inntil flere hundre tusen gjentakelser (Kværne, 2024a). Når flagg med bønnetekster vaier i vinden, er det som om bønnene blir framsagt (Kværne og Løøv, 2025). Spørsmålet stilles skarpere i [Hvem snakker du til?](/krle/religion/buddhisme/bonn)"
+        },
+        {
+            "type": "header",
+            "text": "De nyere bevegelsene: hvem bestemmer formen?"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte samlet i én gruppe. Det er en forenkling som skjuler ulikt opphav: bahá'í springer ut av sjia-islam, de to andre ut av kristendommen. De er også langt mindre enn de store tradisjonene, og skal ikke settes opp som like store kolonner. Til gjengjeld svarer de tydelig på ett spørsmål: hvem bestemmer formen på bønnen? Også her varierer praksis fra person til person, for i alle tre kommer den frie bønnen i tillegg til det som er pålagt."
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í-troen har ingen prester. Bahá'u'lláh ga tre obligatoriske bønner, og den enkelte leser én av dem hvert døgn og velger selv hvilken. Alle tre krever at hender og ansikt vaskes først, og at man vender seg mot Bahá'u'lláhs gravsted ved Bahjí nær Akko. Felles bønn er ikke tillatt, bortsett fra bønnen for de døde (Bahá'u'lláh, u.å.). Mormonismen legger rammen i selve oppbygningen: du tiltaler din himmelske Fader, takker, ber om det du trenger og avslutter i Jesu Kristi navn (Jesu Kristi Kirke av Siste Dagers Hellige, 2023). Ordene skal derimot være dine egne, og veiledningen fraråder meningsløse ord og setninger (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner styrer noe helt annet, nemlig adressen. Bønnen går til Gud, som de kaller Jehova, og den går i Jesu navn (Ringnes mfl., 2026). Den går aldri til Jesus selv, til Maria eller til helgener (Jehovas vitner, u.å.-b). For kroppen finnes det derimot ingen regler i det hele tatt. Tre trossamfunn, tre ulike ringer strammet: bahá'í strammer ordene, mormonismen strammer rekkefølgen, Jehovas vitner strammer mottakeren."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Bønnekjede med perler holdt i en hånd",
+            "caption": "Perler som holder tellingen finnes både i katolsk og i buddhistisk tradisjon."
+        },
+        {
+            "type": "header",
+            "text": "Mønsteret"
+        },
+        {
+            "type": "text",
+            "content": "Sett ringene ved siden av hverandre, og et mønster trer fram. Ingen religion har bare mye form eller bare lite. De fire ringene kan strammes eller løsnes hver for seg, og de fleste tradisjonene strammer noen og slipper resten."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Retning binder deg til et sted. Islam, jødedommen og bahá'í-troen har hvert sitt punkt på kartet, mens hinduismen vender seg mot alteret i stua.",
+                "Tid binder deg til de andre. Fem, tre eller én fast bønn i døgnet betyr at mange gjør det samme samtidig.",
+                "Kropp gjør troen synlig. Der bevegelsene ligger fast, ser en fremmed hva som skjer uten å forstå et eneste ord.",
+                "Ord avgjør hvem bønnen tilhører. Faste ord kan alle si sammen. Egne ord kan bare du si.",
+                "Ingen av delene gjør en bønn bedre eller mer ekte enn en annen. Fast og fri form finnes side om side innenfor hver eneste av de ni."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til to ting til slutt. Fra Norge peker Mekka, Jerusalem og Bahjí omtrent samme vei, mot sørøst, selv om de tre stedene ligger langt fra hverandre og betyr helt ulike ting for dem som vender seg dit. Og legg merke til buddhismen, der nåla mangler helt. Det er ikke fordi vi mangler informasjon, men fordi handlingen virker innover, og da finnes det ingen retning å ha."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "vend-mot-mekka"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom sitter alene ved et vindu i morgenlys med lukkede øyne",
+            "caption": "Uansett hvor mange regler formen har, er det et enkeltmenneske som gjør handlingen."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Se rådataene",
+                "content": "Vil du lese hva hver enkelt religion selv sier om bønn, med kilder, finner du alle ni artiklene side om side på /krle/sammenlign/tema/bonn."
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Nevn de fire aksene bønnekompasset bruker, og forklar hva hver av dem måler.",
+                    "Hva er qibla, og hva er en minjan?",
+                    "Hvorfor sier artikkelen at hinduistisk bønn gjøres med hendene?",
+                    "Hvilken av de fire ringene er strammest i sikhismen, og hvilken er løsest i kristendommen?"
+                ],
+                "reflekter": [
+                    "Islam og jødedommen har begge en fast retning, men til hvert sitt sted. Hva gjør en fast retning med følelsen av å være en del av noe større?",
+                    "Buddhismen mangler nål på kompasset. Er det en mangel ved buddhismen, eller ved kompasset? Begrunn svaret.",
+                    "Faste ord kan alle si sammen, egne ord kan bare du si. Hva vinner og hva taper en tradisjon på hver av de to løsningene?",
+                    "Jehovas vitner har ingen regler for kroppen, men strenge regler for hvem bønnen går til. Hva sier det om hva de mener er viktigst?"
+                ],
+                "gaaVidere": [
+                    "Velg to tradisjoner fra ulike grupper i kompasset. Skriv et avsnitt der du sammenligner dem på alle fire aksene, uten å si at den ene gjør det riktigere enn den andre.",
+                    "Lag en femte ring du mener mangler, for eksempel «sammen eller alene». Plasser minst fire av tradisjonene på den.",
+                    "Diskuter i klassen: hjelper det den som ber at formen ligger fast, eller kommer formen i veien?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva bestemmer når de fem daglige bønnene i islam skal utføres?",
+                        "options": [
+                            "Faste klokkeslett som er like over hele verden",
+                            "Solas plass på himmelen der du er",
+                            "Imamen i den lokale moskeen",
+                            "Månefasene gjennom måneden"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Tidene følger daggry, midt på dagen, ettermiddag, solnedgang og mørke. Derfor flytter de seg gjennom året og varierer med hvor du er."
+                    },
+                    {
+                        "question": "Hva skal til for at jødisk bønn regnes som offentlig gudstjeneste?",
+                        "options": [
+                            "At en rabbiner leder den",
+                            "At den holdes i en synagoge",
+                            "At ti voksne er til stede, en minjan",
+                            "At den bes på hebraisk"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Etter tradisjonen er det ti voksne menn. Å be alene teller fullt ut, men samlingen skifter først karakter når de ti er på plass, og retningene er uenige om hvem som telles med."
+                    },
+                    {
+                        "question": "Hvor mange obligatoriske bønner leser en bahá'í hvert døgn?",
+                        "options": [
+                            "Alle tre",
+                            "Én av tre, valgt av den enkelte",
+                            "Fem, til faste tider",
+                            "Ingen, bønn er helt frivillig"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bahá'u'lláh ga tre obligatoriske bønner, og den enkelte velger selv hvilken av dem hun leser den dagen."
+                    },
+                    {
+                        "question": "Hvorfor er grensen mellom bønn og meditasjon uklar i buddhismen?",
+                        "options": [
+                            "Fordi buddhister ikke har hellige tekster",
+                            "Fordi mange handlinger virker på den som utfører dem, ikke på en mottaker",
+                            "Fordi alle buddhister ber til den samme guden",
+                            "Fordi meditasjon er forbudt for lekfolk"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Det finnes ingen skapergud, og mye peker innover. Samtidig finnes det mottakere, for eksempel buddha Amitabha i rene land-buddhismen."
+                    },
+                    {
+                        "question": "Hva er kjernen i sikhisk bønn?",
+                        "options": [
+                            "Å be om hjelp til det man trenger",
+                            "Å ofre mat til gudebildet",
+                            "Å gjenta og huske Guds navn",
+                            "Å vende seg mot et bestemt sted på kartet"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Nam simran er å gjenta det guddommelige navnet. Dagen rammes inn av tre faste bønner, og i gurdwaraen blir tekstene sunget."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Jacobsen, K. A., Borgland, J. W., Groth, B. & Kværne, P. (2024). *Bønn*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bønn](https://snl.no/b%C3%B8nn)",
+                    "Vogt, K. & Selhi, J. (2026). *Bønn - islam*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bønn_-_islam](https://snl.no/b%C3%B8nn_-_islam)",
+                    "Vogt, K. (2025). *Qibla*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/qibla](https://snl.no/qibla)",
+                    "Groth, B. (2026). *Bønn - jødedom*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bønn_-_jødedom](https://snl.no/b%C3%B8nn_-_j%C3%B8dedom)",
+                    "Seim, T. K. (2025). *Fadervår*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Fadervår](https://snl.no/Faderv%C3%A5r)",
+                    "Halvorsen, P. B. (2026). *Tidebønner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/tidebønner](https://snl.no/tideb%C3%B8nner)",
+                    "Kværne, P. (2024a). *Bønnekjede*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bønnekjede](https://snl.no/b%C3%B8nnekjede)",
+                    "Kværne, P. (2024b). *Puja*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/puja](https://snl.no/puja)",
+                    "Kværne, P. & Løøv, M. (2025). *Magi*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/magi](https://snl.no/magi)",
+                    "Borgland, J. W. (2022). *Bønn - buddhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bønn_-_buddhisme](https://snl.no/b%C3%B8nn_-_buddhisme)",
+                    "Jacobsen, K. A. (2020). *Guru Granth Sahib*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Guru_Granth_Sahib](https://snl.no/Guru_Granth_Sahib)",
+                    "Singh, P. (2018). *Sikhism*. Encyclopedia.com. Hentet 12.08.2026 fra [encyclopedia.com](https://www.encyclopedia.com/philosophy-and-religion/eastern-religions/buddhism/sikhism)",
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Jehovas vitner. (u.å.-a). *Congregation Meetings of Jehovah's Witnesses*. Hentet 12.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/meetings/)",
+                    "Jehovas vitner. (u.å.-b). *How to Pray - Is the Lord's Prayer the Best Way?* Hentet 12.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/how-to-pray-lords-prayer-model/)",
+                    "Bahá'u'lláh. (u.å.). *The Kitáb-i-Aqdas: A Synopsis and Codification of the Laws and Ordinances*. Bahá'í Reference Library. Hentet 12.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas/11)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Kapittel 8: Bønn til vår himmelske Fader*. Evangeliets prinsipper. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-principles/chapter-8-praying-to-our-heavenly-father?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (2023). *Kapittel 3, leksjon 1: Budskapet om gjengivelsen av Jesu Kristi evangelium*. Forkynn mitt evangelium. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023/04-chapter-3/08-chapter-3-lesson-1?lang=nor)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

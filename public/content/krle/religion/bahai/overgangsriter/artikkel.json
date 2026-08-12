@@ -13,7 +13,7 @@
     ],
     "category": "Bahá'í",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/bahai/overgangsriter-hero.webp",
     "details": [
         "Et bahá'í-bryllup krever bare to ting: samtykke fra alle foreldre som er i live, og én setning som begge sier.",
         "Setningen lyder: Sannelig, vi vil alle holde fast ved Guds vilje.",
@@ -62,7 +62,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/overgangsriter-01.webp",
             "alt": "Brudepar og to vitner i et enkelt, lyst rom",
             "caption": "Et bahá'í-bryllup kan holdes med bare fire personer til stede."
         },
@@ -131,7 +131,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/overgangsriter-02.webp",
             "alt": "Ungdom som leser en bønn alene ved et vindu tidlig om morgenen",
             "caption": "Fra fylte 15 år ber bahá'íer en obligatorisk bønn hver dag. Ingen fest markerer den første gangen."
         },
@@ -165,7 +165,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/overgangsriter-03.webp",
             "alt": "Enkel grav med hvite blomster på en norsk gravlund",
             "caption": "Bahá'íer gravlegges. Kremasjon regnes som forbudt, og graven ligger nær stedet der døden skjedde."
         },

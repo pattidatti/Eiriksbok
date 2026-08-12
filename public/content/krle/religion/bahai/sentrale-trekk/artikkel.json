@@ -12,7 +12,7 @@
     ],
     "category": "Bahá'í",
     "readTime": "6 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/bahai/sentrale-trekk-hero.webp",
     "details": [
         "Kjernen er enhet: én Gud, én religion og én menneskehet. De tre henger sammen som ledd i en kjede.",
         "Bahá'íer mener at Gud har sendt budbringere gjennom historien med det samme budskapet, tilpasset sin egen tid. Det kalles progressiv åpenbaring.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/sentrale-trekk-01.webp",
             "alt": "Tempel med rund kuppel omgitt av terrassehager",
             "caption": "Bahá'í-templene har én kuppel og ni dører inn."
         },

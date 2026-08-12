@@ -305,7 +305,7 @@
                 "debattinnlegg"
               ],
               "createdDate": "2025-11-30T18:12:18+01:00",
-              "lastUpdated": "2026-07-06T20:42:04+02:00"
+              "lastUpdated": "2026-08-12T05:46:05+02:00"
             },
             {
               "id": "kommentar",
@@ -319,7 +319,7 @@
                 "kommentar"
               ],
               "createdDate": "2025-12-02T20:16:56+01:00",
-              "lastUpdated": "2026-07-06T20:42:04+02:00"
+              "lastUpdated": "2026-08-12T05:46:05+02:00"
             },
             {
               "id": "reflekterende-tekst",
@@ -331,7 +331,7 @@
                 "refleksjon"
               ],
               "createdDate": "2026-02-06T11:55:26+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-12T05:46:05+02:00"
             }
           ]
         },
@@ -7750,7 +7750,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-02T22:54:02+01:00",
-                  "lastUpdated": "2026-08-12T12:00:00Z"
+                  "lastUpdated": "2026-08-12T06:34:40+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8245,7 +8245,7 @@
                   "id": "sentrale-trekk",
                   "title": "Én Gud, én religion, én menneskehet",
                   "description": "Enhet er kjernen i bahá'í: én Gud, én religion og én menneskehet. Bli kjent med progressiv åpenbaring, et trossamfunn uten prester og arbeidet for en forent verden.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/bahai/sentrale-trekk-hero.webp",
                   "tags": [
                     "bahai",
                     "sentrale_trekk"
@@ -8270,7 +8270,7 @@
                   "id": "overgangsriter",
                   "title": "Én setning, og alle foreldrenes ja",
                   "description": "Bahá'í har ingen prester og nesten ingen seremonier. Bryllupet krever samtykke fra alle foreldre som lever, og består av én setning begge sier. Gravferden har strenge regler: ingen kremasjon, og grav innen én times reise.",
-                  "image": "/images/sikhisme/overgangsriter-hero.webp",
+                  "image": "/images/bahai/overgangsriter-hero.webp",
                   "tags": [
                     "bahai",
                     "overgangsriter",
@@ -8296,7 +8296,7 @@
                   "id": "hellige-tekster",
                   "title": "Boka grunnleggeren skrev selv",
                   "description": "Bahá'u'lláh skrev bahá'í-skriftene i sin egen levetid. Bli kjent med Kitáb-i-Aqdas, tavlene og de autoriserte oversettelsene, og finn ut hvem som har rett til å si hva ordene betyr.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/bahai/hellige-tekster-hero.webp",
                   "tags": [
                     "bahai",
                     "hellige-tekster",
@@ -8787,7 +8787,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-11T23:53:20.455Z"
+              "lastUpdated": "2026-08-12T01:56:55+02:00"
             },
             {
               "id": "gudsbilde",
@@ -8799,7 +8799,8 @@
                 "gudsbilde",
                 "doctrinal"
               ],
-              "createdDate": "2026-08-12T00:00:00Z"
+              "createdDate": "2026-08-12T04:17:49+02:00",
+              "lastUpdated": "2026-08-12T04:17:49+02:00"
             }
           ]
         },

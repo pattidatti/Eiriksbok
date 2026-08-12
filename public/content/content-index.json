@@ -1,5 +1,5 @@
 {
-  "buildId": 257274064388440,
+  "buildId": 217010788610129,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2574,8 +2574,26 @@
     "symboler-og-klaer": [
       "content/krle/religion-og-kultur/symboler-og-klaer.json"
     ],
+    "sammenligning-bonn": [
+      "content/krle/sammenligning/bonn.json"
+    ],
+    "doden": [
+      "content/krle/sammenligning/doden.json"
+    ],
+    "sammenligning-frelse": [
+      "content/krle/sammenligning/frelse.json"
+    ],
+    "sammenligning-grunnleggere": [
+      "content/krle/sammenligning/grunnleggere.json"
+    ],
     "sammenligning-gudsbilde": [
       "content/krle/sammenligning/gudsbilde.json"
+    ],
+    "sammenligning-hellige-tekster": [
+      "content/krle/sammenligning/hellige-tekster.json"
+    ],
+    "sammenligning-overgangsriter": [
+      "content/krle/sammenligning/overgangsriter.json"
     ],
     "sammenligning-skapelse": [
       "content/krle/sammenligning/skapelse.json"
@@ -4666,7 +4684,13 @@
     "krle/religion-og-kultur/mat-og-religion": "content/krle/religion-og-kultur/mat-og-religion.json",
     "krle/religion-og-kultur/religion-i-medier": "content/krle/religion-og-kultur/religion-i-medier.json",
     "krle/religion-og-kultur/symboler-og-klaer": "content/krle/religion-og-kultur/symboler-og-klaer.json",
+    "krle/sammenligning/bonn": "content/krle/sammenligning/bonn.json",
+    "krle/sammenligning/doden": "content/krle/sammenligning/doden.json",
+    "krle/sammenligning/frelse": "content/krle/sammenligning/frelse.json",
+    "krle/sammenligning/grunnleggere": "content/krle/sammenligning/grunnleggere.json",
     "krle/sammenligning/gudsbilde": "content/krle/sammenligning/gudsbilde.json",
+    "krle/sammenligning/hellige-tekster": "content/krle/sammenligning/hellige-tekster.json",
+    "krle/sammenligning/overgangsriter": "content/krle/sammenligning/overgangsriter.json",
     "krle/sammenligning/skapelse": "content/krle/sammenligning/skapelse.json",
     "microgame-map.json/undefined/microgame-map": "content/microgame-map.json",
     "musikk/grunnleggende/akkorder-og-harmoni": "content/musikk/grunnleggende/akkorder-og-harmoni.json",

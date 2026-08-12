@@ -1,0 +1,427 @@
+{
+  "id": "frelse",
+  "title": "Målet med det hele",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "doctrinal",
+  "comparison_tags": ["frelse", "doctrinal"],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": ["rle01-03-10-06", "rle01-03-10-13"],
+  "details": [
+    "Spørsmålet er ikke bare hva målet er, men hvem som gjør jobben for å komme dit.",
+    "I den ene enden ligger nåden: en gave mennesket ikke har gjort seg fortjent til.",
+    "I den andre enden ligger innsatsen: ingen andre kan gjøre arbeidet for deg.",
+    "De fleste tradisjonene ligger et sted på midten, og det er et bevisst valg.",
+    "Noen tradisjoner, som jødedommen, mener at selve ordet frelse passer dårlig på dem."
+  ],
+  "concepts": [
+    {
+      "id": "nade",
+      "term": "Nåde",
+      "definition": "Guds tilgivelse gitt som en gave, uten at mennesket har gjort seg fortjent til den."
+    },
+    {
+      "id": "samsara",
+      "term": "Samsara",
+      "definition": "Kretsløpet der individet stadig fødes, dør og fødes på nytt."
+    },
+    {
+      "id": "moksha",
+      "term": "Moksha",
+      "definition": "Hinduismens ord for frigjøring fra gjenfødelse og fra den tvangen karma legger på mennesket."
+    },
+    {
+      "id": "nirvana",
+      "term": "Nirvana",
+      "definition": "Buddhismens mål. Ordet betyr utslukning: lidelsen tar slutt fordi den ikke får mer å brenne på."
+    },
+    {
+      "id": "mukti",
+      "term": "Mukti",
+      "definition": "Sikhenes ord for frelse: å bli fri fra nye fødsler og forent med Gud."
+    }
+  ],
+  "createdDate": "2026-08-12T12:00:00Z",
+  "lastUpdated": "2026-08-12T12:00:00Z",
+  "factChecked": "2026-08-12",
+  "content": [
+    {
+      "type": "text",
+      "content": "En luthersk prest sier at det ikke finnes noe du kan gjøre for å bli frelst. Gaven er alt gitt, og prøver du å betale for den, har du misforstått hva en gave er. Flere tusen kilometer unna sitter en buddhistisk munk i stillhet og gjør det motsatte. Han arbeider, dag etter dag, fordi ingen andre kan gjøre jobben for ham. Begge mener at de er på vei mot noe godt. Spørsmålet er derfor ikke bare hva målet er. Det er hvem som gjør jobben."
+    },
+    {
+      "type": "header",
+      "text": "Frelse fra hva, egentlig?"
+    },
+    {
+      "type": "text",
+      "content": "Frelse betyr at et menneske blir fritt fra en tilstand av ufullkommenhet. Religionene er enige om at en slik tilstand finnes, men uenige om hva den er, og dermed også om hva mennesket skal bli fri fra (Jacobsen, Løøv & Eggen, 2026). Kristne snakker om synd og skyld. Hinduer og buddhister snakker om å bli født om og om igjen uten å komme ut. Noen tradisjoner mener at selve ordet frelse passer dårlig på dem."
+    },
+    {
+      "type": "text",
+      "content": "Skal du reddes ut av noe du ikke kan fikse selv, må noen andre hente deg. Skal du ut av et kretsløp du selv holder i gang, må du slippe taket. Derfor går det en akse gjennom temaet, fra gjort for deg til gjort av deg. Det kristne ordet for den ene enden er nåde: Gud fritar den skyldige for straff og gir tilgivelse uten at mennesket har gjort seg fortjent til det (Elstad & Store norske leksikon, 2026). Prøv å plassere tradisjonene i stigen under."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Sti som deler seg i to retninger i åpent landskap",
+      "caption": "To veier mot det samme målet. Den ene går oppover av seg selv, den andre må gås."
+    },
+    {
+      "type": "component",
+      "name": "FrelsensStige",
+      "props": {
+        "title": "Frelsens stige",
+        "intro": "Velg en tradisjon, og klikk trinnet du tror den hører hjemme på. Bytt gruppe med knappene over.",
+        "topLabel": "Gjort for deg",
+        "bottomLabel": "Gjort av deg",
+        "completeMessage": "Alle ni er på plass. Legg merke til at bare to av dem havnet ytterst. Midten er ikke et unnvikende svar, den er et bevisst svar.",
+        "groups": [
+          {
+            "id": "abrahamittisk",
+            "label": "Abrahamittiske røtter",
+            "hint": "Jødedom, kristendom og islam regner alle Abraham som en stamfar. Men de svarer ulikt på hvem som gjør jobben."
+          },
+          {
+            "id": "indisk",
+            "label": "Indiske tradisjoner",
+            "hint": "Her er problemet at man fødes på nytt igjen og igjen. Det endrer hva slags hjelp som gir mening."
+          },
+          {
+            "id": "nyere",
+            "label": "Nyere bevegelser",
+            "hint": "Tre yngre og langt mindre trossamfunn. To vokste ut av kristendommen, den tredje ut av sjia-islam, og de svarer ulikt."
+          }
+        ],
+        "rungs": [
+          {
+            "id": "rein-gave",
+            "label": "Helt og holdent en gave",
+            "description": "Mennesket kan ikke bidra. Gode handlinger er frukten, ikke veien."
+          },
+          {
+            "id": "gave-forst",
+            "label": "Gaven først, svaret ditt etterpå",
+            "description": "Gaven kommer fra Gud, men du må vise at du tar imot den."
+          },
+          {
+            "id": "begge",
+            "label": "Nåde og innsats i samme setning",
+            "description": "Arbeidet er nødvendig, men det siste ordet er ikke ditt."
+          },
+          {
+            "id": "din-vei",
+            "label": "Din vei, men det finnes hjelp",
+            "description": "Tyngden ligger på hva du gjør. Gud eller fellesskapet støtter underveis."
+          },
+          {
+            "id": "helt-selv",
+            "label": "Ingen andre kan gjøre det for deg",
+            "description": "Ingen redder deg utenfra. Arbeidet må gjøres innenfra."
+          }
+        ],
+        "traditions": [
+          {
+            "id": "kristendom",
+            "name": "Kristendom",
+            "color": "#6366f1",
+            "group": "abrahamittisk",
+            "correctRung": "rein-gave",
+            "clue": "Paulus skrev at mennesket ikke kan opparbeide frelsen gjennom egne gjerninger.",
+            "feedback": "Kristendommen: frelsen er nåde, en ufortjent gave. Luther og Calvin skjerpet dette til ved tro alene, og sa at menneskelig fortjeneste er utelukket. Gode gjerninger regnes som frukten av troen, ikke som veien til den. Katolsk lære sier også at nåden kommer først, men legger til at mennesket ikke er helt passivt når Gud rører ved hjertet."
+          },
+          {
+            "id": "islam",
+            "name": "Islam",
+            "color": "#10b981",
+            "group": "abrahamittisk",
+            "correctRung": "begge",
+            "clue": "Gjerningene veies på en vekt. Men Gud kalles også Den barmhjertige.",
+            "feedback": "Islam: både den enkelte og fellesskapet står ansvarlig overfor Gud på dommens dag, og Koranen sier at riktige vektskåler settes opp så ingen skal lide den minste urett. Samtidig sier Koranen at Gud ikke tilgir at man setter noe ved hans side, men tilgir alt annet, overfor den han vil. Regnskapet føres, og så er det Gud som har siste ord."
+          },
+          {
+            "id": "jodedom",
+            "name": "Jødedom",
+            "color": "#3b82f6",
+            "group": "abrahamittisk",
+            "correctRung": "din-vei",
+            "clue": "Her finnes ingen arvesynd. Da er det heller ikke noe å bli reddet ut av.",
+            "feedback": "Jødedommen: rabbinerne har aldri utledet noen lære om arvesynd, og jødedommen er ikke opptatt av individuell frelse på samme måte som mange andre religioner. Gud tok det første steget da pakten ble inngått, men arbeidet med de 613 budene er ditt. Mange jøder vil si at spørsmålet vårt er stilt med feil ord."
+          },
+          {
+            "id": "hinduisme",
+            "name": "Hinduisme",
+            "color": "#ec4899",
+            "group": "indisk",
+            "correctRung": "din-vei",
+            "clue": "Tre veier ut av kretsløpet. To av dem er noe du gjør.",
+            "feedback": "Hinduismen: målet er moksha, frigjøring fra gjenfødelse og fra den tvangen karma legger på mennesket. Tradisjonen peker på tre veier: handlingens, kunnskapens og hengivelsens vei. Mange hinduer går den siste, bhaktimarga, som bygger på et personlig forhold til en gud full av nåde. Svarene ligger altså på ulike trinn innenfor én og samme religion."
+          },
+          {
+            "id": "buddhisme",
+            "name": "Buddhisme",
+            "color": "#f59e0b",
+            "group": "indisk",
+            "correctRung": "helt-selv",
+            "clue": "Nirvana betyr utslukning. Ingen slipper deg inn noe sted.",
+            "feedback": "Buddhismen: frigjøringen skjer gjennom egen moral, egen meditasjon og egen innsikt. Nirvana er ikke et sted noen gir deg adgang til, men navnet på at en brann tar slutt. Men heller ikke her er tradisjonen enig med seg selv: i rent land-buddhismen setter den troende sin lit til buddhaen Amitabha, ikke til egen innsats."
+          },
+          {
+            "id": "sikhisme",
+            "name": "Sikhisme",
+            "color": "#ff9933",
+            "group": "indisk",
+            "correctRung": "begge",
+            "clue": "Meditasjon, tjeneste og ærlig arbeid. Og til slutt noe du ikke rår over.",
+            "feedback": "Sikhismen: veien går gjennom meditasjon over Guds navn, tjeneste for andre og ærlig arbeid, midt i et vanlig liv. Likevel sier læren at foreningen med Gud bare er mulig ved en nådeshandling fra Guds side. Nåden, kirpa, er det eneste punktet på lista mennesket ikke kan bestemme over selv."
+          },
+          {
+            "id": "mormonisme",
+            "name": "Mormonisme",
+            "color": "#8b5cf6",
+            "group": "nyere",
+            "correctRung": "begge",
+            "clue": "Å bli frelst og å bli opphøyet er to forskjellige ord her.",
+            "feedback": "Mormonismen: kirken lærer at alle døde skal gjenoppstå til evig liv, men på ulike herlighetsnivåer. Selve oppstandelsen er en gave alle får. Det høyeste nivået, som kirken kaller opphøyelse, krever derimot tro, dåp, at man holder budene, og vielse i tempelet. Svaret er altså ja og nei på én gang, avhengig av hvilken del av spørsmålet du stiller."
+          },
+          {
+            "id": "jehovas-vitner",
+            "name": "Jehovas vitner",
+            "color": "#0ea5e9",
+            "group": "nyere",
+            "correctRung": "gave-forst",
+            "clue": "En gave, sier de. Men tro uten handling er ikke levende tro.",
+            "feedback": "Jehovas vitner: frelsen er en gave fra Gud som ingen kan gjøre seg fortjent til. Samtidig sier de at tro uten handling ikke er levende tro, og at frelsen kan mistes igjen. Hvem som havner blant de 144 000 i himmelen, er det dessuten Gud som velger, ikke mennesket."
+          },
+          {
+            "id": "bahai",
+            "name": "Bahá'í",
+            "color": "#14b8a6",
+            "group": "nyere",
+            "correctRung": "din-vei",
+            "clue": "Ingen prestestand. Ingen kan gjøre arbeidet på vegne av deg.",
+            "feedback": "Bahá'í-troen: veien går gjennom bønn, kunnskap, gode egenskaper og tjeneste for andre, og det finnes ingen prestestand som kan gjøre dette for deg. Målet er å komme nær Gud, og utviklingen tar aldri slutt. Det finnes altså ingen målstrek der arbeidet er ferdig."
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "De abrahamittiske: gaven, vekten og pakten"
+    },
+    {
+      "type": "text",
+      "content": "Kristendommen ligger så langt mot gave-enden som det går an å komme. Paulus gjorde nåden til kjernen i det han skrev: mennesket kan ikke opparbeide frelsen gjennom gjerninger, men blir frelst av nåde alene (Elstad & Store norske leksikon, 2026). Luther og Calvin skjerpet dette til at mennesket blir erklært rettferdig for Gud ved tro alene, og at menneskelig fortjeneste er utelukket (Molland, Leivestad & Elstad, 2024). Kristne er likevel ikke enige om alt her. Du kan lese hele striden i artikkelen [Gaven ingen kan fortjene](/krle/religion/kristendom/frelse)."
+    },
+    {
+      "type": "text",
+      "content": "Islam bruker et helt annet bilde: en vekt. Både den enkelte og fellesskapet står ansvarlig overfor Gud på dommens dag (Vogt, 2026), og Koranen sier at riktige vektskåler settes opp, så ingen skal lide den minste urett (Koranen 21,47). Det høres ut som ren innsats, men vekten er bare halve bildet. Gud kalles Den barmhjertige, og Koranen sier at han ikke tilgir at man setter noe ved hans side, men tilgir alt annet, overfor den han vil (Koranen 4,48). Regnskapet føres, og Gud har det siste ordet. Se [Vekten som ikke lyver](/krle/religion/islam/frelse)."
+    },
+    {
+      "type": "text",
+      "content": "Jødedommen faller nesten utenfor hele spørsmålet. Rabbinerne har aldri utledet noen lære om arvesynd av fortellingen om Adam og Eva, og jødedommen er derfor ikke opptatt av individuell frelse slik mange andre religioner er (Groth, 2026). Tyngdepunktet ligger på pakten og de 613 budene, altså på hvordan du lever nå. Ifølge tradisjonen tok Gud det første steget da pakten ble inngått, men arbeidet er ditt."
+    },
+    {
+      "type": "header",
+      "text": "De indiske: veier du må gå selv"
+    },
+    {
+      "type": "text",
+      "content": "I hinduismen, buddhismen og sikhismen er problemet et annet. Der er verden et kretsløp der individet stadig fødes, dør og fødes på nytt, og det heter samsara (Jacobsen, 2025b). Ifølge læren er det dine egne handlinger som holder hjulet i gang. Da hjelper det lite at noen tilgir deg. Målet i hinduismen heter moksha, frigjøring fra gjenfødelse og fra den tvangen karma legger på mennesket (Jacobsen, 2025a). Tradisjonen peker på tre veier ut: handlingens, kunnskapens og hengivelsens vei. To av dem er tydelig noe du gjør. Den tredje, bhakti, bygger på et personlig forhold til en gud full av nåde. Se [Ikke et bedre sted, men ut](/krle/religion/hinduisme/frelse)."
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen ligger ytterst i den andre enden. Nirvana er også kjent som utslukning, og betyr at lidelsen tar helt slutt. Det er ikke et paradis, slik ordet ofte brukes i Vesten (Kværne & Borgland, 2025). Buddha brukte selv bildet av en flamme som slukner fordi den ikke har mer å brenne på, se [Hvor ble det av flammen?](/krle/religion/buddhisme/frelse). Frigjøringen skjer gjennom egen moral, egen meditasjon og egen innsikt (Kværne & Borgland, 2026). Men heller ikke her er tradisjonen enig med seg selv. I rent land-buddhismen, som står sterkt i Kina og Japan, er ikke egen innsats avgjørende. Den troende setter sin lit til buddhaen Amitabha (Borgland & Store norske leksikon, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Sikhismen er det tydeligste eksempelet på at midten finnes. Veien går gjennom meditasjon over Guds navn, tjeneste for andre og ærlig arbeid, midt i et vanlig liv med familie og jobb. Likevel sier læren at foreningen med Gud bare er mulig ved en nådeshandling fra Guds side, fordi mennesket er styrt av begjær, egoisme og uvitenhet (Kristiansen, Kværne & Jacobsen, 2026). Nåden, kirpa, er det eneste punktet på lista som mennesket ikke kan bestemme over selv (Nekī, u.å.). Les mer i [Dråpen som ikke ble borte](/krle/religion/sikhisme/frelse)."
+    },
+    {
+      "type": "header",
+      "text": "De nyere bevegelsene: tre yngre svar"
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte samlet under merkelappen nyere bevegelser. Det er en forenkling, og den skjuler at bahá'í springer ut av sjia-islam mens de to andre springer ut av kristendommen. De er også langt mindre enn de store tradisjonene: rundt seks millioner bahá'íer i verden (Vogt & Winje, 2026), mot milliarder av kristne og muslimer."
+    },
+    {
+      "type": "text",
+      "content": "Mormonismen svarer ja og nei på én gang. Kirken lærer at alle døde skal gjenoppstå til evig liv, men på ulike herlighetsnivåer (Bloch-Hoell mfl., 2026). Oppstandelsen er en gave alle får. Det høyeste nivået, som kirken kaller opphøyelse, krever derimot tro, dåp, budene og vielse i tempelet (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Jehovas vitner kaller frelsen en gave fra Gud, men sier at handlinger må vise at troen er levende, og at den kan mistes igjen (Jehovas vitner, u.å.). Hvem som kommer blant de 144 000 i himmelen, velger Gud. Bare et lite mindretall regner seg dit, så her går det et skille inne i trossamfunnet (Ringnes mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í-troen legger vekten et helt annet sted. Religionen har ikke presteskap, så ingen kan gjøre arbeidet på vegne av deg (Vogt & Winje, 2026). Veien går gjennom bønn, kunnskap, gode egenskaper og tjeneste for andre, og sjelen fortsetter å nærme seg Gud i all evighet (Bahá'í International Community, u.å.). Det finnes ingen målstrek."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Gammel skålvekt og en åpen hånd på et bord",
+      "caption": "Et regnskap som gjøres opp, eller en hånd som rekker deg noe. De fleste tradisjonene bruker begge bildene."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Sett brikkene i stigen ved siden av hverandre, og noe blir tydelig. Ytterpunktene er lette å beskrive, men få tradisjoner bor der. Kristendommen ligger nær gave-enden, buddhismen nær innsats-enden, og resten fordeler seg mellom dem. Og de som ligger på midten, er ikke uklare eller halvhjertede. De sier begge deler med vilje."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Ligger målet utenfor deg, må noen slippe deg inn. Da blir nåde et naturlig svar.",
+        "Ligger problemet inne i deg selv, må du løse det opp selv. Da blir innsats et naturlig svar.",
+        "Flere tradisjoner sier begge deler: gjør arbeidet, men vit at det siste ordet ikke er ditt.",
+        "Innenfor én og samme religion kan svarene ligge på ulike trinn. Bhakti-hinduismen og rent land-buddhismen ligger nærmere nåden enn resten av sine egne tradisjoner.",
+        "Noen tradisjoner, som jødedommen, mener at hele spørsmålet er formulert med feil ord."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Det siste punktet er verdt å stoppe ved. Når en tradisjon nekter å svare på spørsmålet ditt, er det lurt å sjekke om spørsmålet var godt nok. Det samme skjedde med buddhismen i [Én, mange eller ingen gud?](/krle/sammenligning/gudsbilde), der den ikke lot seg plassere i rutenettet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Lang trapp i stein som forsvinner opp i morgentåke",
+      "caption": "Noen mener at trappen allerede er gått for dem. Andre mener at det er trappen som er poenget."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt religion selv sier om målet med livet, med kilder, finner du alle ni artiklene side om side på /krle/sammenlign/tema/frelse. Denne artikkelen bygger videre på dem."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr frelse, og hvorfor svarer religionene ulikt på hva mennesket skal bli fri fra?",
+          "Forklar med egne ord hva nåde betyr.",
+          "Hva er samsara, og hvorfor gjør kretsløpet at tilgivelse ikke løser problemet i indiske tradisjoner?",
+          "Hva er forskjellen på å bli frelst og å bli opphøyet i mormonismen?"
+        ],
+        "reflekter": [
+          "Luther sa at du ikke kan gjøre noe for å bli frelst. Buddha lærte at ingen andre kan gjøre det for deg. Forklar hvorfor begge kan mene at de peker mot noe godt.",
+          "Sikhismen sier at arbeidet er nødvendig, men at nåden er avgjørende. Hvorfor er dette et bevisst svar, og ikke et rot?",
+          "Jødedommen mener at ordet frelse passer dårlig. Hva sier det om hvordan vi bør stille spørsmål når vi sammenligner religioner?",
+          "Rent land-buddhismen ligger nærmere nåden enn resten av buddhismen. Hva sier det om å snakke om «hva buddhister mener»?"
+        ],
+        "gaaVidere": [
+          "Velg to tradisjoner fra ulike grupper i stigen. Skriv et avsnitt der du forklarer hvem som gjør jobben i hver av dem, uten å si at den ene har mer rett enn den andre.",
+          "Lag din egen stige med en annen akse, for eksempel «målet er et sted» mot «målet er en tilstand». Plasser de samme ni, og se om mønsteret endrer seg.",
+          "Diskuter i klassen: gjør det noen praktisk forskjell i hverdagen om du tror målet er en gave eller en oppgave?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr nåde i kristen sammenheng?",
+            "options": [
+              "En belønning for gode gjerninger",
+              "En gave mennesket ikke har gjort seg fortjent til",
+              "En straff som må sones",
+              "Et løfte man gir ved dåpen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Gud fritar den skyldige for straff og gir tilgivelse uten at mennesket har gjort seg fortjent til det. Luther skjerpet dette til ved tro alene."
+          },
+          {
+            "question": "Hvorfor løser ikke tilgivelse problemet i hinduismen og buddhismen?",
+            "options": [
+              "Fordi de ikke tror at mennesker gjør noe galt",
+              "Fordi problemet er kretsløpet av nye fødsler, som dine egne handlinger holder i gang",
+              "Fordi de mener at gudene ikke bryr seg",
+              "Fordi de ikke har hellige tekster om emnet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Samsara er kretsløpet der individet stadig fødes, dør og fødes på nytt. Det drives av egne handlinger, og målet er å komme ut, ikke å bli tilgitt."
+          },
+          {
+            "question": "Hva sier sikhismen om forholdet mellom innsats og nåde?",
+            "options": [
+              "At bare innsats teller, og at nåde ikke finnes",
+              "At bare nåde teller, og at arbeid er unødvendig",
+              "At arbeidet er nødvendig, men at foreningen med Gud krever en nådeshandling fra Gud",
+              "At spørsmålet ikke gir mening"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Veien går gjennom meditasjon, tjeneste og ærlig arbeid. Likevel er nåden, kirpa, avgjørende, og den er det eneste mennesket ikke rår over selv."
+          },
+          {
+            "question": "Hvorfor passer ordet frelse dårlig på jødedommen?",
+            "options": [
+              "Fordi jødedommen ikke tror på Gud",
+              "Fordi rabbinerne ikke har utledet noen lære om arvesynd, og mennesket derfor ikke må reddes ut av en medfødt tilstand",
+              "Fordi jødedommen ikke har noe liv etter døden i det hele tatt",
+              "Fordi ordet er forbudt i jødiske tekster"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Uten arvesynd er det ikke noe mennesket må reddes ut av. Tyngdepunktet ligger på pakten og budene, altså på hvordan man lever nå."
+          },
+          {
+            "question": "Hva er særegent for rent land-buddhismen i denne sammenhengen?",
+            "options": [
+              "Den avviser at nirvana finnes",
+              "Den setter tilliten til buddhaen Amitabha i sentrum i stedet for egen innsats",
+              "Den mener at bare munker kan bli frie",
+              "Den har fjernet gjenfødelsen fra læren"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Der buddhismen ellers legger alt på egen moral, meditasjon og innsikt, setter rent land-buddhismen sin lit til Amitabha. Det er omtrent så nær nåde en buddhist kommer."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bahá'í International Community. (u.å.). *The Life of the Spirit*. The Bahá'í Faith. Hentet 12.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/life-spirit/)",
+          "Berg, E. (overs.). (1980). *Koranen*. Universitetsforlaget. Versene 4,48 og 21,47 er hentet 12.08.2026 fra [alquran.cloud](https://alquran.cloud/)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Borgland, J. W. & Store norske leksikon. (2025). *Amitabha*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Amitabha](https://snl.no/Amitabha)",
+          "Elstad, H. & Store norske leksikon. (2026). *Nåde - teologi*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/nåde_-_teologi](https://snl.no/n%C3%A5de_-_teologi)",
+          "Groth, B. (2026). *Jødedom*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Jacobsen, K. A. (2025a). *Moksha*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/moksha](https://snl.no/moksha)",
+          "Jacobsen, K. A. (2025b). *Samsara*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/samsara](https://snl.no/samsara)",
+          "Jacobsen, K. A., Løøv, M. & Eggen, N. S. (2026). *Frelse*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/frelse](https://snl.no/frelse)",
+          "Jehovas vitner. (u.å.). *Hva er frelse?* jw.org. Hentet 12.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/hva-er-frelse/)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Opphøyelse*. Evangeliets prinsipper, kapittel 47. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-principles/chapter-47-exaltation?lang=nor)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "Kværne, P. & Borgland, J. W. (2025). *Nirvana*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/nirvana](https://snl.no/nirvana)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+          "Molland, E., Leivestad, R. & Elstad, H. (2024). *Rettferdiggjørelse*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/rettferdiggjørelse](https://snl.no/rettferdiggj%C3%B8relse)",
+          "Nekī, J. S. (u.å.). *Mukt (Mukti)*. *Encyclopaedia of Sikhism* (nettutgave). Punjabi University, Patiala. Hentet 12.08.2026 fra [learnpunjabi.org](https://www.learnpunjabi.org/eos/MUKTI.html)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Vogt, K. (2026). *Islam*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

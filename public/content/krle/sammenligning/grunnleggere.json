@@ -1,0 +1,448 @@
+{
+  "id": "grunnleggere",
+  "title": "Menneskene bak",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "narrative",
+  "comparison_tags": [
+    "grunnleggere",
+    "narrative"
+  ],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": [
+    "rle01-03-10-10"
+  ],
+  "details": [
+    "Rollen stifteren får, varierer mye mer enn livshistorien hans.",
+    "Kristne regner Jesus som Gud. Muslimer regner uttrykkelig ikke Muhammad som det.",
+    "Hinduismen har ingen stifter i det hele tatt, og navnet på religionen kom utenfra.",
+    "I sikhismen stoppet rekken av menneskelige guruer i 1708, da en bok overtok rollen.",
+    "De etiske setningene fra skikkelsene ligner hverandre langt mer enn rollene gjør."
+  ],
+  "concepts": [
+    {
+      "id": "profet",
+      "term": "Profet",
+      "definition": "Et menneske som tar imot budskap fra en gud og bringer det videre til andre. En profet er ikke selv en gud."
+    },
+    {
+      "id": "sendebud",
+      "term": "Sendebud",
+      "definition": "I bahá'í: en budbringer Gud sender til menneskene. Bahá'ier regner blant andre Buddha, Moses, Jesus, Muhammad og Bahá'u'lláh som sendebud."
+    },
+    {
+      "id": "guru",
+      "term": "Guru",
+      "definition": "Religiøs lærer i indiske religioner. Ordet betyr lærer, og brukes i sikhismen også om den hellige boka."
+    },
+    {
+      "id": "pakt",
+      "term": "Pakt",
+      "definition": "En høytidelig avtale med plikter og rettigheter på begge sider. I jødedommen går pakten mellom Gud og det jødiske folket."
+    },
+    {
+      "id": "trosinnhold",
+      "term": "Trosinnhold",
+      "definition": "Det en religion tror på, og som historikere verken kan bekrefte eller avkrefte. Skiller seg fra det forskere kan undersøke."
+    }
+  ],
+  "createdDate": "2026-08-12T12:00:00Z",
+  "lastUpdated": "2026-08-12T12:00:00Z",
+  "factChecked": "2026-08-12",
+  "content": [
+    {
+      "type": "text",
+      "content": "Kristne tilber grunnleggeren sin som Gud. Muslimer regner sin som et menneske, og avviser all dyrkelse av ham. Buddhister forteller om en mann som våknet ved egen kraft, uten hjelp fra noen gud. Og hinduismen? Der blir feltet stående tomt. Ingen stifter, ingen startdato, ingen som fant den opp. Samme rubrikk i skjemaet, fire helt ulike svar."
+    },
+    {
+      "type": "header",
+      "text": "Spørsmålet alle stiller"
+    },
+    {
+      "type": "text",
+      "content": "Vi er vant til at ting har en oppfinner. Et selskap har en gründer, en app har en utvikler. Derfor er «hvem startet det?» ofte det første vi spør en religion om. Men svarene viser fort at rubrikken er for trang: noen tradisjoner har én stifter, noen har to, noen har ti, og noen har ingen."
+    },
+    {
+      "type": "text",
+      "content": "Det som skiller mest, er dessuten ikke hvem personen var. Det er hvilken rolle han fikk. Gud, profet, lærer, tjener eller redaktør - plasseringen avgjør hvordan hele religionen er bygd. Er stifteren Gud, kan du be til ham. Er han lærer, kan du bare gjøre som han sa."
+    },
+    {
+      "type": "text",
+      "content": "Vi må også holde to spørsmål fra hverandre hele veien: hva tradisjonen forteller, og hva historikere mener de kan slå fast. Historikere regner det som sikkert at Jesus levde og ble korsfestet rundt år 30 (Seim & Elstad, 2024). At han sto opp igjen, er trosinnhold, altså noe kristne tror. Forskere er enige om at Buddha fantes, men usikre på når han levde (Kværne & Borgland, 2026), og svært få bibelforskere vil i dag hevde at Abraham var en historisk person (Groth mfl., 2026). Derfor skriver vi «muslimer mener at», ikke «slik var det»."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Rekke av tomme stoler i et gammelt forsamlingsrom",
+      "caption": "Alle stolene er tomme. Det er ikke personene som er igjen, men rollene de fikk."
+    },
+    {
+      "type": "component",
+      "name": "StemmeneFraFortiden",
+      "props": {
+        "title": "Stemmene fra fortiden",
+        "intro": "Sju sitater, alle ekte, alle fra en skikkelse en tradisjon regner som sentral. Les setningen først, og gjett hvem som sa det. Legg merke til hvor like de etiske ideene er - og hvor ulikt skikkelsene beskriver seg selv.",
+        "traditions": [
+          {
+            "id": "jodedom",
+            "name": "Jødedom",
+            "color": "#3b82f6",
+            "group": "abrahamittisk"
+          },
+          {
+            "id": "kristendom",
+            "name": "Kristendom",
+            "color": "#6366f1",
+            "group": "abrahamittisk"
+          },
+          {
+            "id": "islam",
+            "name": "Islam",
+            "color": "#10b981",
+            "group": "abrahamittisk"
+          },
+          {
+            "id": "bahai",
+            "name": "Bahá'í",
+            "color": "#14b8a6",
+            "group": "nyere"
+          },
+          {
+            "id": "mormonisme",
+            "name": "Mormonisme",
+            "color": "#8b5cf6",
+            "group": "nyere"
+          },
+          {
+            "id": "buddhisme",
+            "name": "Buddhisme",
+            "color": "#f59e0b",
+            "group": "indisk"
+          },
+          {
+            "id": "sikhisme",
+            "name": "Sikhisme",
+            "color": "#ff9933",
+            "group": "indisk"
+          }
+        ],
+        "quotes": [
+          {
+            "id": "neste",
+            "text": "Du skal ikke hevne deg og ikke gjemme på vrede mot ditt folks barn, men du skal elske din neste som deg selv.",
+            "speaker": "Toraen, ord jødisk tradisjon regner som gitt gjennom Moses",
+            "traditionId": "jodedom",
+            "source": "3. Mosebok 19,18 (Norsk Bibel 88/07)",
+            "reveal": "Jødedommen har ingen stifter å sitere. Moses kalles Moshe rabbenu, Moses vår lærer, og ordene han bærer fram, hører til pakten mellom Gud og folket - ikke til ham selv.",
+            "options": [
+              "jodedom",
+              "kristendom",
+              "islam"
+            ]
+          },
+          {
+            "id": "gylne-regel",
+            "text": "Derfor, alt dere vil at menneskene skal gjøre mot dere, gjør det også mot dem! For dette er loven og profetene.",
+            "speaker": "Jesus",
+            "traditionId": "kristendom",
+            "source": "Matteus 7,12 (Norsk Bibel 88/07)",
+            "reveal": "Setningen ligner på det flere av de andre sier. Det som skiller kristendommen, er ikke innholdet i den, men rollen Jesus fikk etterpå: kristne regner ham som Gud.",
+            "options": [
+              "jodedom",
+              "kristendom",
+              "buddhisme"
+            ]
+          },
+          {
+            "id": "bare-et-menneske",
+            "text": "Si: Jeg er bare et vanlig menneske som dere. Men meg er åpenbart at Gud er én Gud.",
+            "speaker": "Muhammad, slik Koranen ber ham si det",
+            "traditionId": "islam",
+            "source": "Koranen 18,110, norsk gjengivelse hos Store norske leksikon",
+            "reveal": "Muslimer regner Muhammad som Guds siste profet, men avviser all dyrkelse av ham. Her står beskjeden om hva han skal si om seg selv, i den helligste teksten i religionen.",
+            "options": [
+              "islam",
+              "mormonisme",
+              "kristendom"
+            ]
+          },
+          {
+            "id": "alle-skjelver",
+            "text": "Alle skjelver for vold, alle frykter døden. Sett deg selv i den andres sted, og du skal verken drepe eller få andre til å drepe.",
+            "speaker": "Buddha",
+            "traditionId": "buddhisme",
+            "source": "Dhammapada, vers 129, i norsk oversettelse",
+            "reveal": "Ifølge tradisjonen var Buddha et menneske som våknet ved egen kraft. Da han døde, pekte han ikke ut noen arvtaker, men sa at læren selv skulle være læreren.",
+            "options": [
+              "buddhisme",
+              "sikhisme",
+              "bahai"
+            ]
+          },
+          {
+            "id": "guds-tjener",
+            "text": "Den som kaller meg Gud, skal brenne i helvetes ild. For jeg er bare Guds tjener.",
+            "speaker": "Guru Gobind Singh, den tiende guruen",
+            "traditionId": "sikhisme",
+            "source": "Vachitra Natak, i norsk oversettelse",
+            "reveal": "Guru betyr lærer. Da Guru Gobind Singh døde i 1708, gikk tittelen ikke videre til et menneske, men til boka Guru Granth Sahib.",
+            "options": [
+              "sikhisme",
+              "islam",
+              "mormonisme"
+            ]
+          },
+          {
+            "id": "ett-land",
+            "text": "Jorden er bare ett land, og menneskene er innbyggerne i det.",
+            "speaker": "Bahá'u'lláh",
+            "traditionId": "bahai",
+            "source": "Lawh-i-Maqsúd, i norsk oversettelse",
+            "reveal": "Bahá'í har to grunnleggere, og den første kunngjorde den andre. Begge regnes som Guds sendebud, altså budbringere - ikke som Gud selv.",
+            "options": [
+              "bahai",
+              "buddhisme",
+              "jodedom"
+            ]
+          },
+          {
+            "id": "trosartikkel",
+            "text": "Vi tror at vi må være ærlige, pålitelige, kyske, kjærlige, dydige og at vi må gjøre godt mot alle mennesker.",
+            "speaker": "Joseph Smith",
+            "traditionId": "mormonisme",
+            "source": "Den trettende trosartikkelen, Den kostelige perle",
+            "reveal": "Joseph Smith regnes som profet, ikke som guddom. Rollen hans ble til en stilling: presidenten i kirken regnes i dag som Guds profet på jorden.",
+            "options": [
+              "mormonisme",
+              "kristendom",
+              "bahai"
+            ]
+          }
+        ],
+        "noFounder": {
+          "name": "Hinduisme",
+          "color": "#ec4899",
+          "title": "Og hinduismen?",
+          "text": "Her finnes det ingen stemme å spille av. Hinduismen har ingen stifter, og de eldste tekstene, vedaene, regnes etter hinduisk oppfatning ikke som skrevet av noen i det hele tatt - de ble skuet av hellige seere. Hinduismen mangler altså ikke et sitat i denne kortstokken. Den mangler en grunnlegger å sitere."
+        }
+      }
+    },
+    {
+      "type": "header",
+      "text": "De abrahamittiske: pakten, profeten og Gud selv"
+    },
+    {
+      "type": "text",
+      "content": "Jødedom, kristendom og islam regner alle Abraham som stamfar. Likevel plasserer de stifteren tre helt ulike steder. Jødedommen har ingen stifter i vanlig forstand. Det dukker opp to navn, Abraham og Moses, og et tredje ord som er viktigere enn begge: pakten, altså den høytidelige avtalen mellom Gud og folket. Moses blir kalt Moshe rabbenu, Moses vår lærer, ikke Moses vår frelser (Groth, 2026). Han blir æret, men ikke tilbedt. Du kan lese mer i artikkelen [Ingen stifter, men en pakt](/krle/religion/jodedom/grunnleggere)."
+    },
+    {
+      "type": "text",
+      "content": "Kristendommen plasserer sin skikkelse høyest av alle ni. Jesus grunnla ikke kristendommen. Han var jøde, og bevegelsen rundt ham var en fornyelsesbevegelse inne i jødedommen (Seim & Elstad, 2024). Religionen ble til etter at han døde, av folk som var overbevist om at han hadde stått opp igjen. Så gikk det nesten 300 år før kirkemøtet i Nikea i 325 slo fast at Kristus er sann Gud, av samme vesen som Faderen (Elstad, 2026). Samtidig er ikke alle kristne enige: kirkene i Egypt, Syria og Armenia sa nei til den senere læren fra Kalkedon i 451."
+    },
+    {
+      "type": "text",
+      "content": "Islam trekker den motsatte grensen, og den er absolutt. Muslimer regner Muhammad som Guds største og siste profet, samtidig som all dyrkelse av religionsstifteren blir avvist (Vogt, 2026a). Han står i selve trosbekjennelsen, men på menneskesiden av streken."
+    },
+    {
+      "type": "header",
+      "text": "De indiske: ingen stifter, en lærer og en bok"
+    },
+    {
+      "type": "text",
+      "content": "De tre indiske tradisjonene ligger nær hverandre på kartet, men svarer helt ulikt. Hinduismen har ingen stifter i det hele tatt. Den oppsto ikke på ett tidspunkt eller ett sted, og har verken trosartikler eller fast organisert ledelse (Kværne & Jacobsen, 2026). Selv navnet kom utenfra: hindu var gammelpersisk for folk ved elva Indus. I stedet for én person i midten går læren videre fra guru til elev. Guru betyr lærer, og rekkene kalles guruparampara. Flere retninger inne i hinduismen har egne stiftere, men religionen som helhet har ingen. Mer om dette står i [Religionen ingen fant opp](/krle/religion/hinduisme/grunnleggere)."
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen har en stifter, men ikke en gud. Buddha er ikke et personnavn, men en ærestittel som betyr den oppvåknede (Kværne & Borgland, 2026). Den eldste tradisjonen så ham som læremester for både guder og mennesker, ikke som en gud. Men her er buddhister uenige med hverandre: mahayana-buddhismen gjorde etter hvert Buddha-skikkelsen kosmisk, evig og guddommelig, mens theravada i store trekk holdt fast på den tidligste læren. Ifølge de eldste tekstene pekte han ikke ut noen etterfølger da han døde, men på læren selv."
+    },
+    {
+      "type": "text",
+      "content": "Sikhismen løste det på en tredje måte. Guru Nanak levde fra 1469 til 1539, og etter ham fulgte ni guruer til. Den tiende, Guru Gobind Singh, erklærte i 1708 at han var den siste menneskelige guruen, og at boka Guru Granth Sahib skulle overta rollen (Kristiansen mfl., 2026). Sikher godtar i dag ingen levende menneskelig guru, og ingen kan derfor overstyre boka med en ny beskjed fra Gud. Se [Da guruen ble en bok](/krle/religion/sikhisme/grunnleggere)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Åpen håndskrevet bok på en pute foran tomme sitteplasser",
+      "caption": "I sikhismen gikk lærerrollen over fra mennesker til en bok. Rekken ble ikke brutt, den ble flyttet."
+    },
+    {
+      "type": "header",
+      "text": "De nyere bevegelsene: grunnleggere vi kan følge i papirene"
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í, mormonismen og Jehovas vitner blir ofte samlet under merkelappen nyere bevegelser. Merkelappen er en forenkling, for de har ulikt opphav: bahá'í springer ut av sjia-islam, mens de to andre springer ut av kristendommen. De er også langt mindre enn de store tradisjonene. Bahá'í har rundt seks millioner medlemmer i verden (Vogt & Winje, 2026), mens kristendom og islam har milliarder. Til gjengjeld levde grunnleggerne deres i en tid med aviser, folketellinger og trykkerier."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í er den eneste her med to grunnleggere, og den første kunngjorde den andre. Báb sto fram i 1844 og sa at han var porten, og at et større sendebud skulle komme etter ham. I 1863 sa Bahá'u'lláh at han var den Báb hadde varslet om (Vogt & Winje, 2026). Mormonismen har Joseph Smith (1805-1844), som grunnla kirken (Bloch-Hoell mfl., 2026). Han regnes som profet, ikke som guddom: den første trosartikkelen nevner Gud Faderen, Jesus Kristus og Den hellige ånd, ikke Smith selv (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Etter at Smith døde, delte bevegelsen seg i flere trossamfunn (Bloch-Hoell mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Jehovas vitner avviser hele spørsmålet. De sier selv at Charles Taze Russell ikke grunnla noen ny religion, og peker på Jesus som grunnleggeren av organisasjonen sin. Historikere beskriver det annerledes og regner bevegelsen som oppstått i USA på 1870-tallet, da Russell startet bibelstudiegrupper. Noen grupper brøt siden ut og kalte seg fortsatt bibelstudenter (Ringnes mfl., 2026). Derfor har Jehovas vitner heller ikke noe kort i kortstokken over. Les mer i [Grunnleggeren som ikke ville være grunnlegger](/krle/religion/jehovas-vitner/grunnleggere)."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Still svarene opp ved siden av hverandre, og to akser trer fram. Den ene er hvor høyt skikkelsen blir plassert: Gud, sendebud, profet, lærer, tjener - eller ingen i det hele tatt. Den andre er hva som overtok da han døde. Et embete som fylles på nytt, et råd som bestemmer, en bok, eller bare læren selv. Den andre avgjør hvem som bestemmer i dag."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Bare kristendommen regner grunnleggeren sin som Gud. Islam avviser det uttrykkelig om sin.",
+        "Jødedommen og hinduismen mangler begge en stifter, men av helt ulike grunner: den ene har en pakt i sentrum, den andre har ingen begynnelse.",
+        "Når skikkelsen dør, må rollen plasseres et sted: hos rabbinerne, hos kirkemøtene, hos et styrende råd, hos en president eller i en bok.",
+        "Innad i hver tradisjon finnes det uenighet, både om hvem skikkelsen var og om hvem som får bestemme etter ham."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Legg sitatene ved siden av hverandre en gang til. Gjør mot andre det du vil at de skal gjøre mot deg. Elsk din neste som deg selv. Sett deg selv i den andres sted, og ikke drep. Gjør godt mot alle mennesker. Jorden er ett land. Fem tradisjoner, fem ulike århundrer, og nesten samme setning. Det er rollene som skiller dem mest, ikke rådene om hvordan vi skal behandle hverandre."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung person som leser i en gammel bok ved et vindu",
+      "caption": "Ordene overlevde menneskene. Det er det de fleste av disse fortellingene har til felles."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt tradisjon selv sier om grunnleggeren sin, med kilder, finner du artiklene side om side på /krle/sammenlign/tema/grunnleggere. Der ligger blant annet [Profeten som ikke skal tilbes](/krle/religion/islam/grunnleggere), som denne artikkelen bygger videre på."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvilken av de ni tradisjonene har ingen stifter i det hele tatt, og hvorfor?",
+          "Hva er forskjellen på rollen Jesus har i kristendommen og rollen Muhammad har i islam?",
+          "Hva skjedde med guru-rollen i sikhismen i 1708?",
+          "Hva mener Jehovas vitner selv om hvem som grunnla bevegelsen deres, og hva mener historikere?"
+        ],
+        "reflekter": [
+          "Flere av skikkelsene sier med egne ord at de ikke er guder. Hvorfor kan det være viktig for en religion å slå det fast?",
+          "Jødedommen og hinduismen mangler begge en stifter. Forklar med egne ord hvorfor de to tomrommene ikke betyr det samme.",
+          "Da Jesus, Buddha og Guru Gobind Singh døde, gikk rollen deres ulike veier. Hva slags fordeler og ulemper har det å legge autoriteten i en bok framfor i et menneske?",
+          "De etiske sitatene ligner hverandre mye mer enn lærene om hvem skikkelsene var. Hva kan det komme av?"
+        ],
+        "gaaVidere": [
+          "Velg to tradisjoner fra ulike grupper. Skriv et avsnitt om hva som skjedde med lederrollen etter at skikkelsen døde, uten å si at den ene løsningen er bedre enn den andre.",
+          "Lag din egen akse fra «regnes som Gud» til «regnes ikke som noe spesielt», og plasser sju av skikkelsene på den. Begrunn tre av plasseringene.",
+          "Diskuter i klassen: Blir en religion sterkere eller svakere av å ha én person i sentrum?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvilken av disse tradisjonene har ingen stifter i det hele tatt?",
+            "options": [
+              "Sikhismen",
+              "Hinduismen",
+              "Bahá'í",
+              "Buddhismen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Hinduismen oppsto ikke på ett tidspunkt eller ett sted, og har verken stifter, trosartikler eller fast organisert ledelse. Flere retninger inne i hinduismen har egne stiftere, men religionen som helhet har ingen."
+          },
+          {
+            "question": "Hva er det spesielle ved rollen Jesus har i kristendommen, sammenlignet med de andre skikkelsene i artikkelen?",
+            "options": [
+              "Han er den eneste som skrev ned læren sin selv",
+              "Han er den eneste som blir regnet som Gud",
+              "Han er den eneste som pekte ut en etterfølger",
+              "Han er den eneste som levde etter år 1000"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Kirkemøtet i Nikea i 325 slo fast at Kristus er sann Gud, av samme vesen som Faderen. Ingen av de andre tradisjonene i artikkelen sier noe lignende om skikkelsen sin."
+          },
+          {
+            "question": "Hva sier islam om Muhammad?",
+            "options": [
+              "At han er Gud i menneskelig skikkelse",
+              "At han er Guds sønn",
+              "At han er Guds største og siste profet, men et menneske",
+              "At han er den ellevte guruen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Muslimer regner Muhammad som Guds siste profet, samtidig som all dyrkelse av religionsstifteren blir avvist. Han står i trosbekjennelsen, men på menneskesiden av grensen."
+          },
+          {
+            "question": "Hva skjedde med guru-rollen i sikhismen i 1708?",
+            "options": [
+              "Guru Gobind Singhs sønn overtok",
+              "Rollen ble delt mellom prestene i gurdwaraene",
+              "Boka Guru Granth Sahib overtok som sikhenes guru",
+              "Sikhene valgte en ny guru hvert tiende år"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Guru Gobind Singh erklærte seg som den siste menneskelige guruen og ga boka rollen som levende guru. Sikher godtar i dag ingen levende menneskelig guru."
+          },
+          {
+            "question": "Hvorfor har Jehovas vitner ikke noe sitatkort i den interaktive kortstokken i artikkelen?",
+            "options": [
+              "Fordi Charles Taze Russell aldri skrev noe",
+              "Fordi bevegelsen selv peker på Jesus som grunnlegger og ikke gir Russell den rollen",
+              "Fordi bevegelsen ble stiftet i Norge",
+              "Fordi Det styrende råd forbyr sitater"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Jehovas vitner sier selv at Russell ikke grunnla en ny religion, og peker på Jesus som grunnleggeren av organisasjonen. Historikere regner bevegelsen som oppstått i USA på 1870-tallet."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Seim, T. K. & Elstad, H. (2024). *Jesus*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesus](https://snl.no/Jesus)",
+          "Elstad, H. (2026). *Kristologi*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/kristologi](https://snl.no/kristologi)",
+          "Groth, B. (2026). *Moses*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Moses](https://snl.no/Moses)",
+          "Groth, B., Barstad, H. M. & Skatvik, F. (2026). *Abraham*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Abraham](https://snl.no/Abraham)",
+          "Vogt, K. (2026a). *Islam*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+          "Vogt, K. (2026b). *Muhammed*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Muhammed](https://snl.no/Muhammed)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddha*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Buddha](https://snl.no/Buddha)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Norsk Bibel. (u.å.). *Matteus 7*. Norsk Bibel 88/07, hos YouVersion. Hentet 12.08.2026 fra [bible.com](https://www.bible.com/bible/102/MAT.7)",
+          "Norsk Bibel. (u.å.). *3. Mosebok 19*. Norsk Bibel 88/07, hos YouVersion. Hentet 12.08.2026 fra [bible.com](https://www.bible.com/bible/102/LEV.19)",
+          "Buddharakkhita, A. (overs.). (u.å.). *Dhammapada X: Dandavagga - Violence*. Access to Insight. Hentet 12.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/kn/dhp/dhp.10.budd.html)",
+          "The Quranic Arabic Corpus. (u.å.). *Verse (18:110) - English translation*. University of Leeds. Hentet 12.08.2026 fra [corpus.quran.com](https://corpus.quran.com/translation.jsp?chapter=18&verse=110)",
+          "Sikhism Home Page. (u.å.). *The Tenth Master Guru Gobind Singh (1666-1708)*. Hentet 12.08.2026 fra [sikhs.org/guru10.htm](https://www.sikhs.org/guru10.htm)",
+          "Bahá'í International Community. (u.å.). *Quotations from Bahá'u'lláh*. Hentet 12.08.2026 fra [bahai.org/bahaullah/quotations](https://www.bahai.org/bahaullah/quotations)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Trosartiklene*. Den kostelige perle. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=nor)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -1,0 +1,608 @@
+{
+  "id": "hellige-tekster",
+  "title": "Bøkene som styrer liv",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "11 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "narrative",
+  "comparison_tags": ["hellige-tekster", "narrative"],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": ["rle01-03-10-06", "rle01-03-10-07"],
+  "details": [
+    "Alle ni tradisjonene har en hellig tekst, men de behandler den svært ulikt.",
+    "En oversettelse av Koranen regnes ikke som Koranen. I buddhismen er oversettelse selve normalen.",
+    "Guru Granth Sahib er ikke en bok om guruen. Sikher ærer den som guruen, og legger den til hvile hver kveld.",
+    "Nesten alle samlinger er lukket. Mormonismens er det ikke.",
+    "En tekst blir hellig ved at et fellesskap setter den til side og omgir den med regler."
+  ],
+  "concepts": [
+    {
+      "id": "kanon",
+      "term": "Kanon",
+      "definition": "Den offisielle lista over hvilke tekster som gjelder som hellig skrift i en religion. Ordet betyr rettesnor."
+    },
+    {
+      "id": "muntlig-overlevering",
+      "term": "Muntlig overlevering",
+      "definition": "At en tekst blir husket og sagt fram videre fra person til person, uten at den skrives ned."
+    },
+    {
+      "id": "grunntekst",
+      "term": "Grunntekst",
+      "definition": "Teksten på originalspråket. Det er den oversettelser blir laget fra."
+    },
+    {
+      "id": "resitasjon",
+      "term": "Resitasjon",
+      "definition": "Å si eller synge fram en tekst høyt, ofte etter faste regler for hvordan hver enkelt lyd skal uttales."
+    },
+    {
+      "id": "autorisert-oversettelse",
+      "term": "Autorisert oversettelse",
+      "definition": "En oversettelse som en religiøs myndighet har godkjent som gyldig utgave."
+    }
+  ],
+  "createdDate": "2026-08-12T12:00:00Z",
+  "lastUpdated": "2026-08-12T12:00:00Z",
+  "factChecked": "2026-08-12",
+  "content": [
+    {
+      "type": "text",
+      "content": "Hver kveld skjer det samme i tusenvis av forsamlingshus. En bok blir lukket, løftet opp på hodet og båret inn i sitt eget rom, der den blir lagt i en seng. Neste morgen hentes den ut igjen. Noen kilometer unna ligger det en bibel i en ryggsekk, understreket med gul tusj. Begge er hellige tekster. Men de blir ikke behandlet likt."
+    },
+    {
+      "type": "header",
+      "text": "Spørsmålet alle stiller"
+    },
+    {
+      "type": "text",
+      "content": "Alle de ni tradisjonene har tekster de regner som hellige. En religion som skal vare lenger enn ett menneskeliv, må ha en måte å ta vare på det den mener er sant. Men å ha en bok er ikke det samme som å bruke den likt."
+    },
+    {
+      "type": "text",
+      "content": "Fire spørsmål skiller dem, og sammen danner de en reise. Hvor lenge levde teksten i munnen på folk? Når ble den skrevet ned? Når ble lista over hva som hører med, slått fast, altså kanonisert? Og kan teksten bytte språk uten å slutte å være seg selv?"
+    },
+    {
+      "type": "text",
+      "content": "Ikke alle reiser hele ruta. Noen begynner ikke i det muntlige, fordi grunnleggeren skrev selv. Noen lukker aldri lista. For noen er siste stopp umulig, fordi ordlyden selv er hellig. Prøv reisene under, tre tradisjoner om gangen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Bøker med ulike bind stablet ved siden av hverandre",
+      "caption": "Samme form, helt ulik status. Hva slags tekst dette er, avgjøres av hva folk gjør med den."
+    },
+    {
+      "type": "component",
+      "name": "TekstensReise",
+      "props": {
+        "title": "Tekstens reise: fra munn til bok",
+        "intro": "Velg inntil tre tradisjoner, og klikk deg gjennom de fire stoppene. Søylene viser hvor lang tid hvert steg tok.",
+        "maxVisible": 3,
+        "defaultSelection": ["islam", "buddhisme", "mormonisme"],
+        "note": "Tall og årstall er hentet fra kildene nederst i artikkelen",
+        "steps": [
+          { "id": "muntlig", "label": "Muntlig" },
+          { "id": "nedskrevet", "label": "Nedskrevet" },
+          { "id": "lukket", "label": "Lukket" },
+          { "id": "oversatt", "label": "Oversatt" }
+        ],
+        "traditions": [
+          {
+            "id": "jodedom",
+            "name": "Jødedom",
+            "color": "#3b82f6",
+            "group": "abrahamittisk",
+            "textName": "Tanakh og Talmud",
+            "stops": {
+              "muntlig": {
+                "status": "gjort",
+                "when": "Mange hundre år",
+                "spanLabel": "Ifølge jødisk tradisjon helt tilbake til Moses. Det lar seg ikke tallfeste.",
+                "text": "Ifølge jødisk tradisjon ble den muntlige Toraen overlevert fra munn til munn i mange hundre år, helt tilbake til Moses."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "Ca. år 200-590",
+                "spanYears": 390,
+                "text": "Den muntlige Toraen ble skrevet ned i Mishna rundt år 200. Diskusjonene om Mishna ble redigert til den babylonske Talmud fram til slutten av 500-tallet."
+              },
+              "lukket": {
+                "status": "delvis",
+                "when": "Bare halvveis",
+                "text": "Ifølge jødisk tradisjon er de fem Mosebøkene en uforanderlig åpenbaringstekst. Den muntlige Toraen er derimot ikke ferdig, og vokser fortsatt med nye rabbinske avgjørelser."
+              },
+              "oversatt": {
+                "status": "delvis",
+                "when": "Tillatt",
+                "text": "Oversettelse er tillatt, og i en Humash står grunnteksten og oversettelsen ofte side om side. Tradisjonen er likevel at Tanakh skal leses på originalspråket."
+              }
+            }
+          },
+          {
+            "id": "kristendom",
+            "name": "Kristendom",
+            "color": "#6366f1",
+            "group": "abrahamittisk",
+            "textName": "Bibelen",
+            "stops": {
+              "muntlig": {
+                "status": "gjort",
+                "when": "Ca. år 30-50",
+                "spanYears": 20,
+                "text": "Jesus ble korsfestet omkring år 30. Evangeliene bygger på fortellinger og sitat som først ble overlevert muntlig."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "Ca. år 50-110",
+                "spanYears": 60,
+                "text": "Det nye testamentet ble skrevet på gresk mellom omkring år 50 og begynnelsen av 100-tallet. Det gamle testamentet er langt eldre, og ble til mellom omkring 950 og 150 fvt."
+              },
+              "lukket": {
+                "status": "gjort",
+                "when": "År 367",
+                "spanYears": 260,
+                "spanLabel": "Omtrent 260 år fra de siste tekstene ble skrevet til lista sto svart på hvitt.",
+                "text": "Ingen enkeltperson og intet kirkemøte bestemte. Tekstene ble gradvis anerkjent, og først i et påskebrev fra år 367 listet biskop Athanasius opp nøyaktig de skriftene Det nye testamentet har i dag."
+              },
+              "oversatt": {
+                "status": "gjort",
+                "when": "Over 750 språk",
+                "text": "Bibelen har vært oversatt så lenge den har eksistert. Hele Bibelen finnes i dag på over 750 språk."
+              }
+            }
+          },
+          {
+            "id": "islam",
+            "name": "Islam",
+            "color": "#10b981",
+            "group": "abrahamittisk",
+            "textName": "Koranen",
+            "stops": {
+              "muntlig": {
+                "status": "gjort",
+                "when": "Ca. 610-632",
+                "spanYears": 22,
+                "text": "Ifølge muslimsk historieskriving mottok Muhammed åpenbaringene muntlig over noen og tjue år, fram til han døde i 632."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "Før år 656",
+                "spanYears": 24,
+                "text": "Tradisjonen forteller at nedtegningen begynte alt mens Muhammed levde, og den klassiske overleveringen er enstemmig om at teksten fant sin endelige form før år 656."
+              },
+              "lukket": {
+                "status": "gjort",
+                "when": "Med det samme",
+                "spanYears": 0,
+                "spanLabel": "Ingen ventetid. Lista var lukket i samme øyeblikk som teksten var ferdig.",
+                "text": "Muhammed regnes som den siste profeten, og det kan ikke komme mer korantekst."
+              },
+              "oversatt": {
+                "status": "delvis",
+                "when": "Ikke som Koranen",
+                "text": "Oversettelser finnes og brukes, men enhver oversettelse regnes som en tolkning av grunnteksten, ikke som Koranen selv. Den første fullstendige norske kom i 1980."
+              }
+            }
+          },
+          {
+            "id": "bahai",
+            "name": "Bahá'í",
+            "color": "#14b8a6",
+            "group": "nyere",
+            "textName": "Bahá'u'lláhs skrifter",
+            "stops": {
+              "muntlig": {
+                "status": "ikke",
+                "when": "-",
+                "text": "Det finnes ingen muntlig fase. Bahá'u'lláh skrev selv, og skriftene ble til mens han levde."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "Ca. 1857-1892",
+                "spanYears": 35,
+                "text": "Han skrev gjennom flere tiår. Samlet ville brevene, tavlene og bøkene fylt mer enn 100 bind. Lovboka Kitáb-i-Aqdas ble skrevet på arabisk rundt 1873."
+              },
+              "lukket": {
+                "status": "gjort",
+                "when": "1892",
+                "spanYears": 0,
+                "spanLabel": "Skriftene ble avsluttet den dagen han døde.",
+                "text": "Skriftene er avsluttet. Det universelle rettferdighetens hus kan likevel gi regler i saker tekstene ikke dekker uttrykkelig."
+              },
+              "oversatt": {
+                "status": "gjort",
+                "when": "1873-1992",
+                "spanYears": 119,
+                "spanLabel": "Omtrent 119 år fra lovboka ble skrevet til den forelå i autorisert engelsk utgave.",
+                "text": "Nesten alle bahá'íer leser skriftene i oversettelse. Den første autoriserte engelske utgaven av Kitáb-i-Aqdas kom i 1992."
+              }
+            }
+          },
+          {
+            "id": "mormonisme",
+            "name": "Mormonisme",
+            "color": "#8b5cf6",
+            "group": "nyere",
+            "textName": "Standardverkene",
+            "stops": {
+              "muntlig": {
+                "status": "ikke",
+                "when": "-",
+                "text": "Ingen muntlig fase. Ifølge kirkens egen fortelling ble Mormons bok oversatt fra gullplater. Mange kritikere mener teksten ble skrevet på 1800-tallet."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "1830",
+                "spanYears": 0,
+                "spanLabel": "Boka kom ut samme år som kirken ble grunnlagt.",
+                "text": "Mormons bok kom ut i 1830. Ved siden av den står Bibelen, Lære og pakter og Den kostelige perle."
+              },
+              "lukket": {
+                "status": "apen",
+                "when": "Aldri",
+                "spanLabel": "Fortsatt åpen. Sist ny tekst kom inn, var i 1978.",
+                "text": "Den niende trosartikkelen sier at Gud fortsatt vil åpenbare mange store og viktige ting. Ny tekst må gjennom åpenbaring til kirkens president, tilslutning fra apostlene og en avstemning blant medlemmene."
+              },
+              "oversatt": {
+                "status": "gjort",
+                "when": "81 språk",
+                "text": "Åttende trosartikkel tar forbehold om oversettelsen, ikke om Guds ord bak den. Mormons bok er utgitt i sin helhet på 81 språk i tillegg til engelsk."
+              }
+            }
+          },
+          {
+            "id": "jehovas-vitner",
+            "name": "Jehovas vitner",
+            "color": "#0ea5e9",
+            "group": "nyere",
+            "textName": "Bibelen i egen oversettelse",
+            "stops": {
+              "muntlig": {
+                "status": "ikke",
+                "when": "-",
+                "text": "Bevegelsen oppsto på 1800-tallet og bruker en tekst som alt var skrevet. Den muntlige fasen hører til Bibelens egen historie."
+              },
+              "nedskrevet": {
+                "status": "delvis",
+                "when": "Arvet",
+                "text": "Jehovas vitner skriver ikke sin egen hellige tekst. De lærer at Bibelen ble skrevet ned av mennesker som Gud styrte mens de skrev."
+              },
+              "lukket": {
+                "status": "gjort",
+                "when": "Teksten står stille",
+                "text": "Bibelen er lukket, men forståelsen av den er det ikke. Det styrende råd er de eneste som kan lansere nye forståelser, og endringene forklares med at Gud har kastet nytt lys over Bibelen."
+              },
+              "oversatt": {
+                "status": "gjort",
+                "when": "1950-2017",
+                "spanYears": 67,
+                "spanLabel": "Fra den første engelske utgaven i 1950 til den reviderte norske i 2017.",
+                "text": "Her ligger det særegne. Ny verden-oversettelsen skriver Jehova der de fleste norske bibler skriver Herren. Den kom på norsk i 1996 og finnes på over 200 språk."
+              }
+            }
+          },
+          {
+            "id": "hinduisme",
+            "name": "Hinduisme",
+            "color": "#ec4899",
+            "group": "indisk",
+            "textName": "Vedaene og eposene",
+            "stops": {
+              "muntlig": {
+                "status": "gjort",
+                "when": "Svært lang tid",
+                "spanLabel": "Kildene tallfester det ikke. Overleveringen omtales som den eldste ubrutte religiøse tradisjonen i verden, og den pågår fortsatt.",
+                "text": "Vedaene ble overlevert muntlig i svært lang tid, og resiteres fortsatt av brahmaner. Målet er at ordlyden ikke skal endre seg."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "Lenge etterpå",
+                "spanLabel": "Nedskrivingen kom lenge etter framføringen, og kildene gir ikke ett sikkert årstall.",
+                "text": "Mahabharata ser ut til å ha fått sin nåværende form i siste halvdel av siste årtusen før vår tidsregning."
+              },
+              "lukket": {
+                "status": "delvis",
+                "when": "Bare den ene hylla",
+                "text": "Shruti er lukket, for det gir ikke mening å skrive en ny veda. Smriti er en åpnere samling, og grensen er ikke skarp: noen upanishader er så sene som fra 1500-tallet."
+              },
+              "oversatt": {
+                "status": "delvis",
+                "when": "Ikke i ritualet",
+                "text": "Bhagavadgita er oversatt til flere språk enn noen annen hinduistisk tekst. I ritualet er det likevel den nøyaktige lyden på sanskrit som gjelder."
+              }
+            }
+          },
+          {
+            "id": "buddhisme",
+            "name": "Buddhisme",
+            "color": "#f59e0b",
+            "group": "indisk",
+            "textName": "Tripitaka og mer til",
+            "stops": {
+              "muntlig": {
+                "status": "gjort",
+                "when": "Ca. 300 år",
+                "spanYears": 300,
+                "spanLabel": "Forskere mener i dag at Buddha levde rundt år 400 fvt. En eldre og vanlig datering er 566-486 fvt.",
+                "text": "Den tidligste buddhistiske litteraturen var utelukkende muntlig. Ifølge tradisjonen ble læren gjentatt høyt på et stort møte etter at Buddha døde."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "Ca. 1000 år",
+                "spanYears": 1000,
+                "spanLabel": "Theravadas Tripitaka ble trolig skrevet ned i det første århundret fvt. Ny litteratur fortsatte å komme gjennom det neste årtusenet.",
+                "text": "Theravada-skolens Tripitaka ble trolig først skrevet ned på Sri Lanka. Fra omtrent samme tid og gjennom det neste årtusenet ble mahayana-sutraene skrevet i India."
+              },
+              "lukket": {
+                "status": "delvis",
+                "when": "Ulikt svar",
+                "text": "Theravada hevder å ha bevart læren uten tillegg, men selv den lista har fått ny tekst i nyere tid. I mahayana vokste samlingen i tusen år, fordi en tekst får myndighet ved å bli tilskrevet Buddha."
+              },
+              "oversatt": {
+                "status": "gjort",
+                "when": "Normalen",
+                "text": "Oversettelse er ikke et problem som må løses, men selve normalen. Det meste av den indiske buddhistiske litteraturen finnes i dag bare på kinesisk og tibetansk."
+              }
+            }
+          },
+          {
+            "id": "sikhisme",
+            "name": "Sikhisme",
+            "color": "#ff9933",
+            "group": "indisk",
+            "textName": "Guru Granth Sahib",
+            "stops": {
+              "muntlig": {
+                "status": "gjort",
+                "when": "1469-1604",
+                "spanYears": 135,
+                "spanLabel": "Fra Guru Nanaks fødsel til Guru Arjan samlet hymnene i 1604.",
+                "text": "Hymnene levde som sang før de ble samlet. Guru Nanak, som grunnla sikhismen, levde fra 1469 til 1539 og har alene 974 hymner i boka."
+              },
+              "nedskrevet": {
+                "status": "gjort",
+                "when": "1604-1708",
+                "spanYears": 104,
+                "text": "Guru Arjan samlet tekstene i 1604 under navnet Adi Granth. Guru Gobind Singh utvidet samlingen med den niende guruens dikt, men tok ikke med sine egne."
+              },
+              "lukket": {
+                "status": "gjort",
+                "when": "1708",
+                "spanYears": 0,
+                "spanLabel": "Lukket på én dag, ved at guru-embetet gikk over til boka.",
+                "text": "Før han døde i 1708, erklærte Guru Gobind Singh seg som den siste menneskelige guruen og pekte ut boka som sikhenes øverste veileder. Siden har ingen kunnet legge noe til."
+              },
+              "oversatt": {
+                "status": "delvis",
+                "when": "Les selv",
+                "text": "Oversettelser finnes og brukes for å forstå innholdet. Regelverket sier likevel at hver sikh bør lære gurmukhi og lese boka selv, og teksten er ordnet etter melodier og skal synges."
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "De abrahamittiske: samlet, diktert, kommentert"
+    },
+    {
+      "type": "text",
+      "content": "Jødedommens eldste samling heter Tanakh, et ord laget av forbokstavene i delene Toraen, Neviim og Ketuvim. Ved siden av den skriftlige Toraen står den muntlige, altså forklaringene som trengs når tidene endrer seg (Groth, 2026b). Den ble skrevet ned i Mishna rundt år 200, og diskusjonene om Mishna ble til Talmud (Groth, 2026a). Slik er en talmudside satt opp: midt på arket en kort tekst, og rundt den kommentarer fra ulike århundrer. Uenigheten blir stående."
+    },
+    {
+      "type": "text",
+      "content": "Bibelen ble ikke skrevet som én bok. Den ble satt sammen. Jesus ble korsfestet omkring år 30, og evangeliene bygger på fortellinger og sitat som først ble overlevert muntlig (Seim & Elstad, 2024). Men hvem trakk streken? Verken en enkeltperson eller et kirkemøte. Tekstene ble gradvis anerkjent, og først i et påskebrev fra år 367 listet biskop Athanasius opp nøyaktig de skriftene Det nye testamentet har i dag (Hvalvik, 2026b). Kantene er fremdeles omstridt: katolske og ortodokse bibler har flere bøker enn de fleste protestantiske (Hvalvik, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Islam gir et helt annet svar. Slik muslimer ser det, er den arabiske ordlyden ikke en innpakning rundt budskapet, men selve åpenbaringen. Allerede på 800-tallet ble et kompromiss formulert som fortsatt gjelder: teksten kan gjengis på andre språk, men enhver oversettelse blir vurdert som en tolkning av grunnteksten (Eggen & Vogt, 2026). En norsk koran er altså ikke Koranen. Merk samtidig at ingen av de tre er enige innad. Rabbinere fra ulike retninger lander ulikt, og sunniislam har verken presteskap eller noe øverste kontor som avgjør hva teksten betyr. Les mer i [Boka som ikke kan oversettes](/krle/religion/islam/hellige-tekster)."
+    },
+    {
+      "type": "header",
+      "text": "De indiske: lyden, kurvene og guruen som er en bok"
+    },
+    {
+      "type": "text",
+      "content": "Hinduismen har ingen sentral ledelse som avgjør hva som gjelder, og ulike retninger legger vekt på ulike tekster. Selve samlingen deles i to klasser. Shruti betyr det som er hørt: tekster som regnes som evige og uten menneskelig forfatter. Smriti betyr det som er husket, og knyttes alltid til en forfatter. Vedaene er shruti, og overleveringen av dem blir omtalt som den eldste ubrutte religiøse tradisjonen i verden (Kværne & Jacobsen, 2026). Her er det lyden som holder teksten uforandret, ikke boka. Likevel er Bhagavadgita, som hører til den klassen som regnes som mindre evig, den mest oversatte hinduistiske teksten. Se [Hørt eller husket](/krle/religion/hinduisme/hellige-tekster)."
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen har ingen felles hellig bok. Den eldste samlingen heter Tripitaka, de tre kurvene: klosterreglene, talene som tilskrives Buddha, og utlegningen av læren. Forskere mener i dag at Buddha levde rundt år 400 fvt., mens en eldre og vanlig datering var 566 til 486 fvt. (Kværne & Borgland, 2026). Nedskrivingen kom flere hundre år senere. Her ligger poenget: en tekst får myndighet ved å bli tilskrevet Buddha, og derfor kunne samlingen vokse i nesten tusen år (Borgland & Kværne, 2026). Mer i [Tre kurver, flere kanoner](/krle/religion/buddhisme/hellige-tekster)."
+    },
+    {
+      "type": "text",
+      "content": "Sikhismen svarer med en bok som er en person. Guru Arjan samlet tekstene i 1604, og i 1708 erklærte Guru Gobind Singh seg som den siste menneskelige guruen og pekte ut boka som sikhenes øverste veileder (Jacobsen, 2026). Guru Granth Sahib er derfor ikke en bok om guruen. Mange sikher vil si at den er guruen, og det er den som bæres til hvile hver kveld. Ingen levende person kan overprøve teksten. Les videre i [Guruen som er en bok](/krle/religion/sikhisme/hellige-tekster)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hender som forsiktig løfter en tung innbundet bok",
+      "caption": "Reglene rundt boka forteller ofte mer om hvor hellig den er enn det som står inni den."
+    },
+    {
+      "type": "header",
+      "text": "De nyere: kort vei fra penn til leser"
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í, mormonismen og Jehovas vitner samles ofte under merkelappen nyere bevegelser. Det er en forenkling: bahá'í springer ut av sjia-islam, de to andre ut av kristendommen, og alle tre er langt mindre enn de store tradisjonene. Til gjengjeld er reisen deres kort, fordi den skjedde i moderne tid."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'u'lláh, som levde fra 1817 til 1892, skrev selv. Lovboka Kitáb-i-Aqdas ble skrevet på arabisk rundt 1873 mens han satt fengslet (Bahá'í International Community, u.å.). Det finnes altså ingen muntlig fase å diskutere. Til gjengjeld tok siste stopp lang tid: den første autoriserte engelske utgaven kom i 1992, nesten 120 år etter."
+    },
+    {
+      "type": "text",
+      "content": "Mormonismen skiller seg fra nesten alle de andre på ett punkt. Samlingen er ikke lukket. Kirken har fire hellige bøker, kalt standardverkene (Bloch-Hoell mfl., 2026), og den niende trosartikkelen sier at Gud fortsatt vil åpenbare mange store og viktige ting (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.). Ny tekst må gjennom tre trinn: åpenbaring til kirkens president, tilslutning fra apostlene, og en avstemning blant medlemmene. Heller ikke mormonismen er én bevegelse. En gruppe brøt ut alt i 1860, og heter i dag Community of Christ. Les mer i [Fire bøker, og plass til mer](/krle/religion/mormonisme/hellige-tekster)."
+    },
+    {
+      "type": "text",
+      "content": "Jehovas vitner har ingen egen hellig bok ved siden av Bibelen. Det særegne ligger i oversettelsen. I den hebraiske grunnteksten står gudsnavnet som fire konsonanttegn, JHVH, og der de fleste norske bibler skriver Herren, skriver Ny verden-oversettelsen Jehova. Kritikere mener oversettelsen noen steder gjenspeiler bevegelsens egen lære. Tolkningen er dessuten samlet på ett sted: Det styrende råd er de eneste som kan lansere nye forståelser (Ringnes mfl., 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Sett de ni reisene ved siden av hverandre. Det som skiller dem, er ikke hvor gammel teksten er."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Er det budskapet som er hellig, eller ordlyden selv? Svaret avgjør om teksten kan bytte språk.",
+        "Er lista over hva som hører med, lukket? Svaret avgjør om det kan komme noe nytt.",
+        "Hvem eier tolkningen? Noen har ett kontor som avgjør. Andre har ingen.",
+        "Ingen av de ni er enige innad. Overalt finnes det ulike syn på hvordan teksten skal leses."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Og hva gjør egentlig en tekst hellig? Den forklaringen som er mest brukt i religionsvitenskapen i dag, kommer fra den franske sosiologen Émile Durkheim. Han definerte det hellige ut fra hva folk gjør med det: det som er satt til side og omgitt av forbud (Kværne & Stensvold, 2024). Da kan du se hvor hellig en tekst er uten å lese et ord i den. Se på reglene. Koranen løftet opp på et stativ. Torarullene i et skap på veggen mot Jerusalem. Boka som får sitt eget soverom."
+    },
+    {
+      "type": "text",
+      "content": "Det forklarer noe som virker rart ved første øyekast. To personer kan lese den samme setningen i den samme boka, og likevel ikke ha den samme teksten i hendene. Det samme mønsteret møtte du i [Én, mange eller ingen gud?](/krle/sammenligning/gudsbilde)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung leser ved et bord med en åpen bok foran seg",
+      "caption": "Til slutt er en tekst hellig fordi et fellesskap behandler den som hellig."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt tradisjon selv sier om tekstene sine, med kilder, finner du alle ni artiklene side om side på /krle/sammenlign/tema/hellige-tekster. Det er de artiklene denne teksten bygger videre på."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Nevn de fire stoppene på tekstens reise, og forklar hva som skjer i hvert av dem.",
+          "Hvorfor regnes ikke en norsk utgave av Koranen som Koranen selv?",
+          "Hva er forskjellen på shruti og smriti i hinduismen?",
+          "Hvilke tre trinn må en ny tekst gjennom før den blir hellig skrift i mormonismen?"
+        ],
+        "reflekter": [
+          "Buddhismens samling vokste i nesten tusen år, mens Koranen var lukket med det samme. Forklar hvordan de to måtene å gi en tekst myndighet på fører til så ulikt resultat.",
+          "Jehovas vitner og de fleste andre kristne leser den samme Bibelen, men ikke den samme teksten. Hvordan kan det henge sammen?",
+          "Durkheim mente at det hellige er det som er satt til side og omgitt av forbud. Bruk den definisjonen på to av tradisjonene i artikkelen.",
+          "Hvem eier tolkningen der det ikke finnes noen øverste myndighet? Nevn en fordel og en ulempe med en slik ordning."
+        ],
+        "gaaVidere": [
+          "Velg to tradisjoner fra ulike grupper i ruta over. Skriv et avsnitt som forklarer reisene deres uten å si at den ene løsningen er bedre enn den andre.",
+          "Finn ut hvordan din egen skole eller klasse behandler noe den regner som viktig. Hvilke uskrevne regler finnes rundt det?",
+          "Diskuter i klassen: blir en religion sterkere eller svakere av at det fortsatt kan komme nye hellige tekster?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvilken status har en oversettelse av Koranen i islamsk tradisjon?",
+            "options": [
+              "Den regnes som like mye Koranen som den arabiske teksten",
+              "Den regnes som en tolkning av grunnteksten",
+              "Den er forbudt og finnes ikke",
+              "Den erstatter den arabiske teksten når det leses høyt i moskeen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Allerede på 800-tallet ble kompromisset formulert: teksten kan gjengis på andre språk, men enhver oversettelse regnes som en tolkning av grunnteksten."
+          },
+          {
+            "question": "Hvem bestemte hvilke skrifter som skulle med i Det nye testamentet?",
+            "options": [
+              "Kirkemøtet i Nikea i år 325",
+              "Keiseren i Roma",
+              "Verken en enkeltperson eller et kirkemøte. Tekstene ble anerkjent gradvis",
+              "Martin Luther på 1500-tallet"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Tekstene ble gradvis anerkjent som hellige skrifter. Først i et påskebrev fra år 367 listet Athanasius opp nøyaktig de skriftene Det nye testamentet har i dag."
+          },
+          {
+            "question": "Hva gjør at en buddhistisk tekst får myndighet?",
+            "options": [
+              "At den er skrevet på pali",
+              "At et konsil har stemt over den",
+              "At Buddha skrev den selv",
+              "At den blir tilskrevet Buddha"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Buddha skrev ingenting selv. En tekst får myndighet ved å bli tilskrevet ham, og nettopp derfor kunne samlingen fortsette å vokse i nesten tusen år."
+          },
+          {
+            "question": "Hva er særegent ved mormonismens samling av hellige tekster?",
+            "options": [
+              "Den er ikke lukket, og det kan komme ny tekst",
+              "Den finnes bare på engelsk",
+              "Den ble overlevert muntlig i mange hundre år",
+              "Den består av bare én bok"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Den niende trosartikkelen sier at Gud fortsatt vil åpenbare mange store og viktige ting. Ny tekst må gjennom åpenbaring, tilslutning fra apostlene og en avstemning blant medlemmene."
+          },
+          {
+            "question": "Hvordan definerte Émile Durkheim det hellige?",
+            "options": [
+              "Som en spesiell følelse hos den enkelte",
+              "Som det som er satt til side og omgitt av forbud",
+              "Som alt som står i en gammel bok",
+              "Som det bare prester får ta på"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Durkheim ga det hellige en funksjonell definisjon: det hellige er det som er satt til side og omgitt av forbud. Den forståelsen er rådende i religionsvitenskapen i dag."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bahá'í International Community. (u.å.). *The Kitáb-i-Aqdas*. Hentet 12.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas/)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Wallin Weihe, H.-J. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Borgland, J. W. & Kværne, P. (2026). *Buddhistisk litteratur*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/buddhistisk_litteratur](https://snl.no/buddhistisk_litteratur)",
+          "Eggen, N. S. & Vogt, K. (2026). *Koranen*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Koranen](https://snl.no/Koranen)",
+          "Groth, B. (2026a). *Talmud*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Talmud](https://snl.no/Talmud)",
+          "Groth, B. (2026b). *Toraen*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Toraen](https://snl.no/Toraen)",
+          "Hvalvik, R. (2026a). *Bibelen*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Bibelen](https://snl.no/Bibelen)",
+          "Hvalvik, R. (2026b). *Den kristne kanon*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/den_kristne_kanon](https://snl.no/den_kristne_kanon)",
+          "Jacobsen, K. A. (2026). *Guru Granth Sahib*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Guru_Granth_Sahib](https://snl.no/Guru_Granth_Sahib)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Trosartiklene*. Hentet 12.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=nor)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddha*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Buddha](https://snl.no/Buddha)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Kværne, P. & Stensvold, A. (2024). *Hellig*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hellig](https://snl.no/hellig)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Seim, T. K. & Elstad, H. (2024). *Jesus*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Jesus](https://snl.no/Jesus)",
+          "Shiromani Gurdwara Parbandhak Committee. (u.å.). *Rehat Maryada, del tre: Gurdwaraen, kirtan og lesning av Guru Granth Sahib*. Hentet 12.08.2026 fra [sikhs.org/reht3.htm](https://www.sikhs.org/reht3.htm)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

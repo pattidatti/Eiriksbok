@@ -587,6 +587,10 @@
     "subjectId": "krle",
     "topicId": "religion-og-kultur"
   },
+  "tidens-former-3d": {
+    "subjectId": "krle",
+    "topicId": "sammenligning"
+  },
   "gudsformer-3d": {
     "subjectId": "krle",
     "topicId": "sammenligning"
@@ -626,10 +630,6 @@
   "argumentbroen-3d": {
     "subjectId": "samfunnskunnskap",
     "topicId": "eksamen"
-  },
-  "tidens-former-3d": {
-    "subjectId": "samfunnskunnskap",
-    "topicId": "ideer-og-verdenssyn"
   },
   "monument-torget-3d": {
     "subjectId": "samfunnskunnskap",

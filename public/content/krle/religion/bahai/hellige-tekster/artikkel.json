@@ -12,7 +12,7 @@
     ],
     "category": "Bahá'í",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/bahai/hellige-tekster-hero.webp",
     "details": [
         "Skriftene ble til mens Bahá'u'lláh (1817-1892) levde. Brevene, tavlene og bøkene ville fylt mer enn 100 bind.",
         "Kitáb-i-Aqdas, Den helligste bok, er lovboka. Den ble skrevet på arabisk rundt 1873 i fengselsbyen Akká.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/hellige-tekster-01.webp",
             "alt": "Håndskrevet ark med persisk skrift på et bord",
             "caption": "Bahá'u'lláh skrev gjennom flere tiår. Tekstene kalles tavler."
         },
@@ -109,7 +109,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/hellige-tekster-02.webp",
             "alt": "Gruppe mennesker sitter i ring og leser høyt",
             "caption": "På andaktssamlinger settes lesning og bønn ofte sammen med sang."
         },
@@ -127,7 +127,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/hellige-tekster-03.webp",
             "alt": "To utgaver av samme bok på ulike språk",
             "caption": "Bahá'í-skriftene leses over hele verden i godkjente oversettelser."
         },
