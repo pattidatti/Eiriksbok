@@ -15,7 +15,7 @@
     "heroImage": "/images/placeholder.webp",
     "details": [
         "Jehovas vitner ber bare til Gud, som de kaller Jehova.",
-        "Bønnen avsluttes i Jesu navn, men den er aldri stilet til Jesus selv.",
+        "Bønnen slutter med i Jesu navn, men den er aldri rettet til Jesus selv.",
         "De ber verken til Maria eller til helgener, slik katolikker og ortodokse kan gjøre.",
         "Fadervår regnes som et mønster å lære av, ikke en tekst som skal gjentas ordrett.",
         "Møtene i Rikets sal begynner og slutter med sang og bønn."
@@ -52,7 +52,7 @@
     "content": [
         {
             "type": "text",
-            "content": "En bønn i Rikets sal slutter nesten alltid på samme måte: i Jesu navn, amen. Likevel har ikke ett eneste ord i bønnen vært stilet til Jesus. Han er ikke mottakeren. Han er veien fram."
+            "content": "En bønn i Rikets sal slutter nesten alltid på samme måte: i Jesu navn, amen. Likevel har ikke ett eneste ord i bønnen vært rettet til Jesus. Han er ikke den som får bønnen. Han er veien fram."
         },
         {
             "type": "text",
@@ -105,18 +105,18 @@
         },
         {
             "type": "text",
-            "content": "Jehovas vitner avviser treenighetslæren. De mener Jesus er Guds sønn og det første Gud skapte, og at han er underordnet Gud. Før han levde som menneske, mener de at han var erkeengelen Mikael (Ringnes mfl., 2026). Er Jesus skapt, kan han ikke motta bønnen. Da ville en skapning fått den æren de mener bare Gud skal ha."
+            "content": "Jehovas vitner tror ikke på treenighetslæren, altså læren om at Gud er én og samtidig tre personer. De mener at Jesus er Guds sønn og det første Gud skapte, og at han står under Gud. Før han levde som menneske, mener de at han var erkeengelen Mikael (Ringnes mfl., 2026). Er Jesus skapt, kan han ikke ta imot bønnen. Da ville noe skapt fått den æren de mener bare Gud skal ha."
         },
         {
             "type": "text",
-            "content": "Samtidig kan de ikke hoppe over ham. I sitt eget studiemateriale forklarer Jehovas vitner at Jehova krever at vi anerkjenner den stillingen sønnen hans har, og de viser til at Jesus sa: Ingen kommer til Faderen uten gjennom meg (Jehovas vitner, u.å.-a). Derfor blir Jesus ikke mottaker, men mellomledd. Bønnen går til Jehova, men den går i Jesu navn."
+            "content": "Samtidig kan de ikke hoppe over ham. I sitt eget studiemateriale forklarer Jehovas vitner at Jehova krever at vi godtar den plassen sønnen hans har, og de viser til at Jesus sa: Ingen kommer til Faderen uten gjennom meg (Jehovas vitner, u.å.-a). Derfor blir ikke Jesus den som får bønnen, men den som bønnen går gjennom. Bønnen går til Jehova, men den går i Jesu navn."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Der veiene skiller lag",
-                "content": "I katolsk og ortodoks kristendom er helgener viktige. Man feirer festdagene deres og ber dem om hjelp, og katolikker ber dem særlig om forbønn. Reformatorene på 1500-tallet avviste helgendyrkelsen (Skjoldli, 2026). Jehovas vitner går enda et skritt: bønnen skal ikke gå til Jesus, Maria eller helgener, men til Gud alene (Jehovas vitner, u.å.-b)."
+                "content": "I katolsk og ortodoks kristendom er helgener viktige. Man feirer festdagene deres og ber dem om hjelp, og katolikker ber særlig helgenene om å be til Gud for seg. På 1500-tallet sa de som brøt ut og startet de protestantiske kirkene, nei til å dyrke helgener (Skjoldli, 2026). Jehovas vitner går enda et skritt: bønnen skal ikke gå til Jesus, Maria eller helgener, men til Gud alene (Jehovas vitner, u.å.-b)."
             }
         },
         {
@@ -135,7 +135,7 @@
         },
         {
             "type": "text",
-            "content": "De fleste kristne kjenner Fadervår, den viktigste bønnen i kristenheten (Jacobsen mfl., 2024). Jehovas vitner bruker den også, men på en annen måte. De leser den som et mønster å lære av. At bønnen åpner med Vår Far, er for dem selve beviset på at bønnen skal gå til Gud alene (Jehovas vitner, u.å.-b)."
+            "content": "De fleste kristne kjenner Fadervår, den viktigste bønnen i kristendommen (Jacobsen mfl., 2024). Jehovas vitner bruker den også, men på en annen måte. De leser den som et mønster å lære av. At bønnen åpner med Vår Far, er for dem selve beviset på at bønnen skal gå til Gud alene (Jehovas vitner, u.å.-b)."
         },
         {
             "type": "text",
@@ -151,7 +151,7 @@
         },
         {
             "type": "text",
-            "content": "Innholdet er ganske åpent. Studiematerialet nevner egne bekymringer, hjelp til å ta valg, styrke i vanskelige tider, tilgivelse, familie og trosfeller, og takk og lovprisning. Men det som gjelder Gud selv, skal komme først (Jehovas vitner, u.å.-a). Kroppen er det ingen regler for. Du kan sitte, bøye deg, knele eller stå. Det er innstillingen i hjertet som teller, ikke hva andre ser. Bønnen kan også være stille, midt i noe annet, uten at noen rundt deg merker det (Jehovas vitner, u.å.-a)."
+            "content": "Innholdet er ganske åpent. Studiematerialet nevner egne bekymringer, hjelp til å ta valg, styrke i vanskelige tider, tilgivelse, familie og andre som tror det samme, og takk og ros til Gud. Men det som gjelder Gud selv, skal komme først (Jehovas vitner, u.å.-a). Kroppen er det ingen regler for. Du kan sitte, bøye deg, knele eller stå. Det er innstillingen i hjertet som teller, ikke hva andre ser. Bønnen kan også være stille, midt i noe annet, uten at noen rundt deg merker det (Jehovas vitner, u.å.-a)."
         },
         {
             "type": "image",
@@ -165,7 +165,7 @@
         },
         {
             "type": "text",
-            "content": "Jehovas vitner møtes to ganger i uka i Rikets sal (Ringnes mfl., 2026). Møtene begynner og slutter med sang og bønn, og de er åpne for alle. Det samles aldri inn penger, og formen ligner mer på en samtale i et klasserom enn på en preken (Jehovas vitner, u.å.-c). I 2019 hadde trossamfunnet i underkant av 12 000 aktive forkynnere i Norge, fordelt på rundt 167 menigheter (Ringnes mfl., 2026)."
+            "content": "Jehovas vitner møtes to ganger i uka i Rikets sal (Ringnes mfl., 2026). Møtene begynner og slutter med sang og bønn, og de er åpne for alle. Det samles aldri inn penger, og formen ligner mer på en samtale i et klasserom enn på en preken (Jehovas vitner, u.å.-c). I 2019 hadde trossamfunnet i underkant av 12 000 aktive forkynnere i Norge, altså medlemmer som går ut og forteller om troen, fordelt på rundt 167 menigheter (Ringnes mfl., 2026)."
         },
         {
             "type": "text",
@@ -173,7 +173,7 @@
         },
         {
             "type": "text",
-            "content": "Menighetene ledes av eldste, og bare menn kan ha den rollen. Læren bestemmes av det styrende råd ved hovedkontoret i USA, og medlemmene forventes å følge påleggene derfra (Ringnes mfl., 2026). Det gir mindre rom for lokale varianter enn i mange andre trossamfunn. Men i den personlige bønnen er variasjonen stor likevel: hver enkelt velger sine egne ord, sin egen stilling og sitt eget tidspunkt."
+            "content": "Menighetene ledes av noen som kalles eldste, og bare menn kan ha den rollen. Læren bestemmes av det styrende råd ved hovedkontoret i USA, og medlemmene skal følge det rådet bestemmer (Ringnes mfl., 2026). Det gir mindre rom for lokale varianter enn i mange andre trossamfunn. Men i den personlige bønnen er variasjonen stor likevel: hver enkelt velger sine egne ord, sin egen stilling og sitt eget tidspunkt."
         },
         {
             "type": "header",
@@ -181,7 +181,7 @@
         },
         {
             "type": "text",
-            "content": "Regelen om hvem bønnen går til, er ikke bare et formkrav. Den er hele gudsbildet skrevet om til en handling du kan gjøre hver dag. Hver gang et Jehovas vitne avslutter med i Jesu navn, gjentar hen samtidig at Jesus er stor, men ikke Gud selv."
+            "content": "Regelen om hvem bønnen går til, handler om mer enn form. Den gjør hele troen deres på hvem Gud er, om til noe du gjør hver eneste dag. Hver gang et Jehovas vitne avslutter med i Jesu navn, gjentar hen samtidig at Jesus er stor, men ikke Gud selv."
         },
         {
             "type": "text",

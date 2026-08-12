@@ -13,11 +13,11 @@
     "content": [
         {
             "type": "text",
-            "content": "For rundt 2500 år siden satt en ung mann ved navn Siddhartha Gautama fast mellom to umulige liv. Som prins hadde han vokst opp bak palassets murer, omgitt av silke, fester og alt han kunne ønske seg. Men luksusen gjorde ham ikke lykkelig - den fylte ham bare med en uro han ikke klarte å forklare. Så han forlot alt og gikk motsatt vei: han ble asket. Han sultet seg, sov på bakken og pinte kroppen i håp om at smerten skulle gi ham svar. Det gjorde den ikke. Han ble bare svak og syk, og sannheten var like langt unna som før."
+            "content": "For rundt 2500 år siden satt en ung mann ved navn Siddhartha Gautama fast mellom to umulige liv. Som prins hadde han vokst opp bak palassets murer, omgitt av silke, fester og alt han kunne ønske seg. Men luksusen gjorde ham ikke lykkelig - den fylte ham bare med en uro han ikke klarte å forklare. Så han forlot alt og gikk motsatt vei: han ble asket, en som nekter seg selv alt. Han sultet seg, sov på bakken og plaget kroppen i håp om at smerten skulle gi ham svar. Det gjorde den ikke. Han ble bare svak og syk, og sannheten var like langt unna som før."
         },
         {
             "type": "text",
-            "content": "Da skjønte Siddhartha noe viktig. Verken et liv i overflod eller et liv i selvpining førte fram. Svaret måtte ligge et sted midt imellom. Denne innsikten ble starten på det han siden kalte Den åttedelte veien. Den dagen han for første gang delte den med andre, sa buddhistene at han satte selve dharmahjulet i bevegelse - og det hjulet ruller fortsatt."
+            "content": "Da skjønte Siddhartha noe viktig. Verken et liv i overflod eller et liv i selvpining førte fram. Svaret måtte ligge et sted midt imellom. Denne innsikten ble starten på det han siden kalte Den åttedelte veien. Den dagen han for første gang fortalte andre om den, sa buddhistene at han satte dharmahjulet i gang, hjulet som står for læren hans. Og det hjulet ruller fortsatt."
         },
         {
             "type": "header",
@@ -93,12 +93,12 @@
             "items": [
                 "Rett tale: snakk sant, og la være å spre løgn, sladder eller sårende ord.",
                 "Rett handling: ikke skad andre - ikke drep, stjel eller jukse.",
-                "Rett levevei: tjen til livets opphold på en måte som ikke skader mennesker eller dyr."
+                "Rett levevei: tjen penger på en måte som ikke skader mennesker eller dyr."
             ]
         },
         {
             "type": "text",
-            "content": "Det siste punktet overrasker mange. Buddha mente at også jobben din er en del av etikken. Å tjene penger på noe som skader andre trekker deg bort fra veien, uansett hvor lovlig det er. Etikk i buddhismen er ikke regler du følger fordi en gud befaler det, men fordi handlingene dine former både deg selv og verden rundt deg. Dette henger tett sammen med karma: gode handlinger skaper gode følger, dårlige handlinger dårlige."
+            "content": "Det siste punktet overrasker mange. Buddha mente at også jobben din er en del av etikken. Å tjene penger på noe som skader andre trekker deg bort fra veien, uansett hvor lovlig det er. Etikk i buddhismen er ikke regler du følger fordi en gud befaler det, men fordi handlingene dine former både deg selv og verden rundt deg. Dette henger tett sammen med karma, tanken om at alt du gjør får følger: gode handlinger gir gode følger, dårlige handlinger gir dårlige."
         },
         {
             "type": "header",
@@ -157,7 +157,7 @@
         },
         {
             "type": "text",
-            "content": "Buddhismen delte seg over tid i to hovedretninger, og de legger litt ulik vekt på veien. Theravada-buddhismen, som er utbredt i land som Thailand og Sri Lanka, ser veien mest som den enkeltes egen reise mot frigjøring, ofte gjennom et liv som munk med mye meditasjon. Mahayana-buddhismen, som er stor i Kina, Japan og Tibet, legger sterkere vekt på medfølelse med alle andre. Her er idealet en bodhisattva - et menneske som går veien ikke bare for sin egen skyld, men for å hjelpe alle andre fram også."
+            "content": "Buddhismen delte seg over tid i to hovedretninger, og de legger litt ulik vekt på veien. Theravada-buddhismen, som er utbredt i land som Thailand og Sri Lanka, ser veien mest som den enkeltes egen reise mot å bli fri fra lidelsen, ofte gjennom et liv som munk med mye meditasjon. Mahayana-buddhismen, som er stor i Kina, Japan og Tibet, legger sterkere vekt på medfølelse med alle andre. Her er idealet en bodhisattva - et menneske som går veien ikke bare for sin egen skyld, men for å hjelpe alle andre fram også."
         },
         {
             "type": "text",
@@ -247,7 +247,7 @@
         {
             "id": "middelveien",
             "term": "Middelveien",
-            "definition": "Buddhas grunnprinsipp: å leve i balanse mellom ytterpunktene et liv i overflod og et liv i selvpining. Verken for mye eller for lite."
+            "definition": "Buddhas grunnregel: å leve i balanse mellom to ytterpunkter, et liv i overflod og et liv der du plager deg selv. Verken for mye eller for lite."
         },
         {
             "id": "samma-rett",
@@ -257,12 +257,12 @@
         {
             "id": "prajna",
             "term": "Prajna (visdom)",
-            "definition": "Den første treningen på veien: rett forståelse og rett tanke. Å se klart hvordan ting henger sammen, og å ha rene motiver."
+            "definition": "Den første treningen på veien: rett forståelse og rett tanke. Å se klart hvordan ting henger sammen, og å ville andre vel."
         },
         {
             "id": "sila",
             "term": "Sila (etikk)",
-            "definition": "Den andre treningen på veien: rett tale, rett handling og rett levevei. Å oppføre seg slik at man ikke skader andre."
+            "definition": "Den andre treningen på veien: rett tale, rett handling og rett levevei. Å oppføre seg slik at du ikke skader andre."
         },
         {
             "id": "samadhi",

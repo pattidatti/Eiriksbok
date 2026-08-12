@@ -14,11 +14,11 @@
     "readTime": "9 min lesning",
     "heroImage": "/images/bahai/gudsbilde-hero.webp",
     "details": [
-        "Bahá'íer tror på én Gud, men mener at Gud i seg selv er umulig for mennesker å fatte.",
+        "Bahá'íer tror på én Gud, men mener at ingen mennesker kan forstå Gud helt.",
         "Vi kan bare lære Gud å kjenne gjennom manifestasjonene, sendebudene som speiler Guds egenskaper.",
         "Bildet som brukes er solen og speilet: du ser aldri solen direkte, bare gjenskinnet.",
         "Abraham, Moses, Buddha, Jesus, Muhammad og Bahá'u'lláh regnes alle som speil for det samme lyset.",
-        "Læren om at Gud sender veiledning i etapper kalles progressiv åpenbaring."
+        "At Gud har sendt budskapet sitt litt etter litt gjennom historien, kalles progressiv åpenbaring."
     ],
     "createdDate": "2025-12-04T12:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -26,7 +26,7 @@
         {
             "id": "ukjennbar",
             "term": "Ukjennbar",
-            "definition": "At noe er så stort at mennesker ikke kan fatte det. Bahá'íer sier dette om Guds eget vesen."
+            "definition": "At noe er så stort at mennesker ikke kan forstå det. Bahá'íer sier dette om Gud selv."
         },
         {
             "id": "manifestasjon",
@@ -36,7 +36,7 @@
         {
             "id": "progressiv-apenbaring",
             "term": "Progressiv åpenbaring",
-            "definition": "Læren om at Gud har sendt veiledning i etapper, tilpasset ulike tider og kulturer."
+            "definition": "At Gud har sendt budskapet sitt litt etter litt, tilpasset ulike tider og kulturer."
         },
         {
             "id": "bahaullah",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Dette bildet står helt i sentrum av bahá'í-troen. Det er en religion med iransk opphav som ble stiftet i andre halvdel av 1800-tallet, og som i dag har rundt seks millioner tilhengere i verden og omtrent 1100 registrerte medlemmer i Norge (Vogt og Winje, 2026). Solen er Gud. Speilene er de menneskene [bahá'íer](/krle/religion/bahai/sentrale-trekk) kaller Guds manifestasjoner."
+            "content": "Dette bildet står helt i sentrum av bahá'í-troen. Religionen startet i Iran i andre halvdel av 1800-tallet, og i dag har den rundt seks millioner tilhengere i verden og omtrent 1100 registrerte medlemmer i Norge (Vogt og Winje, 2026). Solen er Gud. Speilene er de menneskene [bahá'íer](/krle/religion/bahai/sentrale-trekk) kaller Guds manifestasjoner."
         },
         {
             "type": "header",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "Bahá'íer tror at det bare finnes én Gud. Gud er verdens skaper, allvitende, kjærlig og nåderik (Vogt og Winje, 2026). Så langt likner troen ganske mye på jødedom, kristendom og islam. Men så kommer et trekk mange synes er uvant. Bahá'í-troen sier at Gud i seg selv er helt utenfor rekkevidde for mennesker. Det hjelper ikke hvor smart du er, eller hvor mye du leser. Tanken din er laget for menneskenes verden, og Gud hører ikke hjemme der (Bahá'í International Community, u.å.-c)."
+            "content": "Bahá'íer tror at det bare finnes én Gud. Gud har skapt verden, vet alt, er kjærlig og god mot menneskene (Vogt og Winje, 2026). Så langt likner troen ganske mye på jødedom, kristendom og islam. Men så kommer noe mange synes er uvant. Bahá'í-troen sier at Gud i seg selv er helt utenfor rekkevidde for mennesker. Det hjelper ikke hvor smart du er, eller hvor mye du leser. Tanken din er laget for menneskenes verden, og Gud hører ikke hjemme der (Bahá'í International Community, u.å.-c)."
         },
         {
             "type": "text",
@@ -93,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Bahá'u'lláh, som grunnla religionen, skrev at Gud fra evighet av har vært skjult i sitt eget opphøyde vesen, og alltid vil være hyllet inn i mysteriet om et vesen ingen kan kjenne. Hvert forsøk på å nå fram til en forståelse av Guds utilgjengelige virkelighet ender ifølge ham i full forvirring (Bahá'u'lláh, u.å.)."
+            "content": "Bahá'u'lláh, som grunnla religionen, skrev at Gud alltid har vært skjult, og alltid vil være en gåte ingen kan løse. Prøver du å forstå hva Gud egentlig er, ender du ifølge ham bare i full forvirring (Bahá'u'lláh, u.å.)."
         },
         {
             "type": "text",
@@ -135,19 +135,19 @@
         },
         {
             "type": "text",
-            "content": "Tanken som holder dette sammen kalles progressiv åpenbaring. Bahá'íer mener at alle religioner deler evige sannheter, og at budskapene ble gitt i etapper som passet til ulike tider og kulturer (Vogt og Winje, 2026). Speilene er ulike fordi menneskene de kom til var ulike. Det som skinner i dem, er det samme. Bahá'íer beskriver det som at Guds lys faller over hele skaperverket, slik den fysiske solen skinner på verden (Bahá'í International Community, u.å.-a)."
+            "content": "Tanken som holder dette sammen kalles progressiv åpenbaring. Bahá'íer mener at alle religioner har de samme sannhetene i bunnen, og at budskapet kom litt etter litt, slik at det passet til den tiden og den kulturen det kom til (Vogt og Winje, 2026). Speilene er ulike fordi menneskene de kom til var ulike. Det som skinner i dem, er det samme. Bahá'íer beskriver det som at Guds lys faller over hele skaperverket, slik den fysiske solen skinner på verden (Bahá'í International Community, u.å.-a)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Andre religioner er ikke enige",
-                "content": "Det er viktig å huske at dette er bahá'íenes eget syn. En kristen vil vanligvis ikke godta at Jesus er ett speil blant flere, og en muslim regner Muhammad som den siste profeten. I Iran, der religionen oppsto, har bahá'í vært forbudt siden 1983, og bahá'íer blir forfulgt fordi tradisjonell islam avviser læren deres (Vogt og Winje, 2026)."
+                "content": "Det er viktig å huske at dette er bahá'íenes eget syn. En kristen vil vanligvis ikke godta at Jesus er ett speil blant flere, og en muslim regner Muhammad som den siste profeten. I Iran, der religionen oppsto, har bahá'í vært forbudt siden 1983, og bahá'íer blir forfulgt fordi islam ikke godtar læren deres (Vogt og Winje, 2026)."
             }
         },
         {
             "type": "text",
-            "content": "Bahá'íer selv er heller ikke én ensartet gruppe. De bor i svært mange land og kulturer, og de leser de eldre religionenes skrifter med ulike briller. Bildet med solen og speilet er nettopp et bilde, ikke en nøyaktig beskrivelse. Hvor langt bildet rekker, og hva det betyr for troende i andre religioner, er noe bahá'íer kan lande forskjellig på."
+            "content": "Bahá'íer er heller ikke like. De bor i svært mange land og kulturer, og de leser de eldre religionenes skrifter med ulike briller. Bildet med solen og speilet er nettopp et bilde, ikke en nøyaktig beskrivelse. Hvor langt bildet rekker, og hva det betyr for troende i andre religioner, er bahá'íer uenige om."
         },
         {
             "type": "image",
@@ -161,11 +161,11 @@
         },
         {
             "type": "text",
-            "content": "Et gudsbilde er ikke bare en tanke. Det former hvordan mennesker organiserer seg. Hvis ingen kan kjenne Gud direkte, kan heller ingen si at de har fasiten på Gud. Bahá'í har derfor ingen prester. I stedet ledes religionen av Det universelle rettferdighetens hus, et demokratisk valgt råd på ni medlemmer. Verdenssenteret ligger på Karmelberget i Haifa i Israel. Templene bevegelsen har rundt om i verden, har alle én kuppel som skal symbolisere at Gud og menneskeheten hører sammen (Vogt og Winje, 2026)."
+            "content": "Et gudsbilde, altså det bildet du har av Gud, er ikke bare en tanke. Det avgjør også hvordan de troende organiserer seg. Hvis ingen kan kjenne Gud direkte, kan heller ingen si at de har fasiten på Gud. Bahá'í har derfor ingen prester. I stedet ledes religionen av Det universelle rettferdighetens hus, et råd på ni medlemmer som velges. Hovedsetet ligger på Karmelberget i Haifa i Israel. Templene rundt om i verden har alle én kuppel, som skal vise at Gud og menneskene hører sammen (Vogt og Winje, 2026)."
         },
         {
             "type": "text",
-            "content": "Religionen vokste fram i en shiamuslimsk verden som ventet på en frelserskikkelse. I 1844 sa Ali Muhammad at han var Báb, som betyr porten, og han ble henrettet i 1850. Mirza Husayn-Ali Núri tok deretter navnet Bahá'u'lláh, samlet de fleste tilhengerne og gjorde bevegelsen til en egen religion. Den viktigste høytiden, Ridván, minnes at han sto fram som profet i Bagdad i 1863 (Vogt og Winje, 2026). Går du tilbake til speilene i begynnelsen av artikkelen, ser du hva bahá'íer mener skjedde da: enda et speil ble vendt mot den samme gamle solen."
+            "content": "Religionen vokste fram blant sjiamuslimer som ventet på en frelser. I 1844 sa Ali Muhammad at han var Báb, som betyr porten, og han ble henrettet i 1850. Mirza Husayn-Ali Núri tok deretter navnet Bahá'u'lláh, samlet de fleste tilhengerne og gjorde bevegelsen til en egen religion. Den viktigste høytiden, Ridván, minnes at han sto fram som profet i Bagdad i 1863 (Vogt og Winje, 2026). Går du tilbake til speilene i begynnelsen av artikkelen, ser du hva bahá'íer mener skjedde da: enda et speil ble vendt mot den samme gamle solen."
         },
         {
             "type": "component",
@@ -199,12 +199,12 @@
                         "question": "Hva mener bahá'íer om Guds eget vesen?",
                         "options": [
                             "At det kan forstås av de som studerer lenge nok",
-                            "At det er utenfor det mennesker kan fatte",
+                            "At ingen mennesker kan forstå det",
                             "At det bare kan sees i drømmer",
                             "At det finnes i naturen og kan måles"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Bahá'í-troen lærer at Guds virkelighet er utenfor rekkevidde for menneskesinnet. Vi kan bare kjenne Gud gjennom manifestasjonene."
+                        "explanation": "Bahá'í-troen sier at Gud er for stor til at et menneske kan forstå ham. Vi kan bare bli kjent med Gud gjennom manifestasjonene."
                     },
                     {
                         "question": "Hva står solen for i bildet bahá'íer bruker?",
@@ -237,7 +237,7 @@
                             "At mennesker gradvis blir guddommelige"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Bahá'íer mener religionene deler evige sannheter, og at budskapet ble gitt trinnvis slik at det passet til den tiden og kulturen det kom til."
+                        "explanation": "Bahá'íer mener at religionene har de samme sannhetene i bunnen, og at budskapet kom litt etter litt, slik at det passet til den tiden og kulturen det kom til."
                     },
                     {
                         "question": "Hvorfor har bahá'í ingen prester?",
@@ -248,7 +248,7 @@
                             "Fordi Bahá'u'lláh mente at bønn er unødvendig"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Bahá'í har ikke noe presteskap. Religionen ledes av Det universelle rettferdighetens hus, et råd på ni medlemmer som velges."
+                        "explanation": "Bahá'í har ingen prester. Religionen ledes av Det universelle rettferdighetens hus, et råd på ni medlemmer som velges."
                     }
                 ]
             }

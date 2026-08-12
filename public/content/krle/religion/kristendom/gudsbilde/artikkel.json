@@ -18,7 +18,7 @@
         "Bibelen inneholder ingen ferdig lære om hvordan de tre henger sammen. Den måtte kirken formulere selv.",
         "Striden startet i Alexandria rundt år 318, da presten Arius mente at Sønnen var skapt.",
         "Kirkemøtet i Nikea i 325 vedtok at Sønnen er av samme vesen som Faderen. Saken ble først avgjort i Konstantinopel i 381.",
-        "Kristne er fortsatt uenige om detaljer, blant annet om Ånden utgår fra Faderen alene eller fra Faderen og Sønnen."
+        "Kristne er fortsatt uenige om detaljer, blant annet om Ånden kommer fra Faderen alene eller fra både Faderen og Sønnen."
     ],
     "createdDate": "2025-12-04T12:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -31,7 +31,7 @@
         {
             "id": "inkarnasjon",
             "term": "Inkarnasjon",
-            "definition": "At en guddommelig skikkelse trer fram som menneske. Kristne mener dette skjedde i Jesus."
+            "definition": "At en guddommelig skikkelse viser seg som et menneske. Kristne mener dette skjedde i Jesus."
         },
         {
             "id": "arianisme",
@@ -46,7 +46,7 @@
         {
             "id": "filioque",
             "term": "Filioque",
-            "definition": "Uenigheten om Den hellige ånd utgår fra Faderen alene eller fra både Faderen og Sønnen."
+            "definition": "Uenigheten om Den hellige ånd kommer fra Faderen alene eller fra både Faderen og Sønnen."
         }
     ],
     "content": [
@@ -116,7 +116,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Hva de vedtok i Nikea",
-                "content": "Møtet gikk imot Arius. Vedtaket var at Sønnen er av samme vesen som Faderen. Det greske ordet er homoousios, og det ble selve prøvesteinen: enten deler Sønnen Faderens guddom helt, eller så gjør han det ikke. I trosbekjennelsen som kom ut av arbeidet, står det at Jesus er født, ikke skapt (Elstad og Hvalvik, 2026)."
+                "content": "Møtet gikk imot Arius. Vedtaket var at Sønnen er av samme vesen som Faderen. Det greske ordet er homoousios, og det ble selve testen: enten er Sønnen like mye Gud som Faderen, eller så er han det ikke. I trosbekjennelsen som kom ut av arbeidet, står det at Jesus er født, ikke skapt (Elstad og Hvalvik, 2026)."
             }
         },
         {
@@ -143,7 +143,7 @@
         },
         {
             "type": "text",
-            "content": "Hvorfor kranglet de i over seksti år om ett ord? Fordi svaret avgjorde hva kristendommen egentlig påstår. Inkarnasjon betyr at en guddommelig skikkelse trer fram som menneske (Leivestad og Groth, 2024). Kristne mener at det er dette som skjedde i Jesus: Gud ble ikke bare kjent gjennom en budbringer, Gud kom selv."
+            "content": "Hvorfor kranglet de i over seksti år om ett ord? Fordi svaret avgjorde hva kristendommen egentlig påstår. Inkarnasjon betyr at en guddommelig skikkelse viser seg som et menneske (Leivestad og Groth, 2024). Kristne mener at det er dette som skjedde i Jesus: Gud ble ikke bare kjent gjennom en budbringer, Gud kom selv."
         },
         {
             "type": "text",
@@ -155,11 +155,11 @@
         },
         {
             "type": "text",
-            "content": "Den tredje personen kom sist i formuleringene. Kristne feirer pinse til minne om at Den hellige ånd kom til apostlene og satte dem i stand til å tale andre språk. Pinsen faller på den femtiende dagen etter påske, og selve ordet kommer av det greske tallordet for femti (Rasmussen mfl., 2024). I mange protestantiske kirkesamfunn regnes dagen som kirkens fødselsdag. Men at Ånden er en tredje person i guddommen, ble først slått fast på møtet i Konstantinopel i 381 (Seim, 2025)."
+            "content": "Den tredje personen ble tatt med til slutt. Kristne feirer pinse til minne om at Den hellige ånd kom til apostlene og gjorde at de kunne snakke andre språk. Pinsen faller på den femtiende dagen etter påske, og selve ordet kommer av det greske tallordet for femti (Rasmussen mfl., 2024). I mange protestantiske kirkesamfunn regnes dagen som kirkens fødselsdag. Men at Ånden er en tredje person i guddommen, ble først slått fast på møtet i Konstantinopel i 381 (Seim, 2025)."
         },
         {
             "type": "text",
-            "content": "Kristne er ikke enige om alt her. Et av de eldste stridsspørsmålene handler om Ånden utgår fra Faderen alene, eller fra Faderen og Sønnen. Denne uenigheten kalles filioque, og den gjorde skillet mellom kirken i øst og kirken i vest dypere. Den er fortsatt et tema når kirkesamfunn snakker sammen (Seim, 2025). Noen kristne grupper avviser dessuten treenighetslæren helt. Jehovas vitner mener for eksempel at bare Faderen er Gud, og at Jesus er den første Gud skapte. Det kan du lese om i artikkelen om [gudsbildet hos Jehovas vitner](/krle/religion/jehovas-vitner/gudsbilde). Treenigheten er altså ikke et ferdig regnestykke alle kristne leser helt likt. Vil du se hvordan andre religioner svarer på det samme spørsmålet, kan du sammenligne i [oversikten over gudsbilder](/krle/sammenlign/tema/gudsbilde)."
+            "content": "Kristne er ikke enige om alt her. Et av de eldste stridsspørsmålene handler om hvor Ånden kommer fra: fra Faderen alene, eller fra både Faderen og Sønnen. Denne uenigheten kalles filioque, og den gjorde skillet mellom kirken i øst og kirken i vest dypere. Den er fortsatt et tema når kirkesamfunn snakker sammen (Seim, 2025). Noen kristne grupper sier dessuten helt nei til treenighetslæren. Jehovas vitner mener for eksempel at bare Faderen er Gud, og at Jesus er den første Gud skapte. Det kan du lese om i artikkelen om [gudsbildet hos Jehovas vitner](/krle/religion/jehovas-vitner/gudsbilde). Treenigheten er altså ikke et ferdig svar som alle kristne leser helt likt. Vil du se hvordan andre religioner svarer på det samme spørsmålet, kan du sammenligne i [oversikten over gudsbilder](/krle/sammenlign/tema/gudsbilde)."
         },
         {
             "type": "image",
@@ -177,7 +177,7 @@
         },
         {
             "type": "text",
-            "content": "Der ligger poenget med hele striden. Mange kristne mener at Gud ikke er en fjern kraft du bare kan lese om, men noen som har kommet nær nok til å bli snakket til. Treenigheten er forsøket på å si nettopp det uten å miste noe på veien. Vil du lese mer om hvordan resten av kristendommen henger sammen, finner du det på [siden om kristendommen](/krle/religion/kristendom)."
+            "content": "Der ligger poenget med hele striden. Mange kristne mener at Gud ikke er en fjern kraft du bare kan lese om, men noen du kan snakke med. Treenigheten er forsøket på å si nettopp det uten å miste noe på veien. Vil du lese mer om hvordan resten av kristendommen henger sammen, finner du det på [siden om kristendommen](/krle/religion/kristendom)."
         },
         {
             "type": "component",
@@ -233,7 +233,7 @@
                         "question": "Hva betyr inkarnasjon?",
                         "options": [
                             "At Gud er usynlig for mennesker",
-                            "At en guddommelig skikkelse trer fram som menneske",
+                            "At en guddommelig skikkelse viser seg som et menneske",
                             "At sjelen fødes på nytt i en ny kropp",
                             "At Gud skapte verden av ingenting"
                         ],
@@ -256,7 +256,7 @@
                         "options": [
                             "Om Jesus virkelig sto opp fra de døde",
                             "Om Bibelen skal leses på gresk eller latin",
-                            "Om Ånden utgår fra Faderen alene eller fra Faderen og Sønnen",
+                            "Om Ånden kommer fra Faderen alene eller fra både Faderen og Sønnen",
                             "Om barn eller voksne skal døpes"
                         ],
                         "correctAnswer": 2,

@@ -11,9 +11,9 @@
     "readTime": "7 min lesning",
     "heroImage": "/images/placeholder.webp",
     "details": [
-        "Hinduismen oppstod ikke på ett tidspunkt eller ett sted, og har ingen stifter, ingen trosartikler og ingen fast organisert ledelse.",
+        "Hinduismen ble ikke til på ett tidspunkt eller ett sted. Ingen startet den, den har ingen felles liste over hva man må tro, og ingen fast ledelse.",
         "Ordet hindu kom utenfra. Det var det gammelpersiske navnet på folk som bodde ved elva Indus.",
-        "Vedaene regnes som tidløse. Etter hinduisk oppfatning er de ikke forfattet, men skuet av hellige seere kalt rishier.",
+        "Vedaene regnes som tidløse. Hinduer mener at ingen har skrevet dem. Hellige seere som kalles rishier, fikk se dem.",
         "I stedet for én stifter går læren videre fra guru til elev, i rekker som kalles guruparampara.",
         "Flere retninger inne i hinduismen har egne stiftere, men religionen som helhet har ingen."
     ],
@@ -33,12 +33,12 @@
         {
             "id": "rishi",
             "term": "Rishi",
-            "definition": "En hellig seer. Etter hinduisk oppfatning diktet ikke rishiene vedahymnene, de skuet dem."
+            "definition": "En hellig seer. Hinduer mener at rishiene ikke diktet vedasangene selv, de fikk bare se dem."
         },
         {
             "id": "guru",
             "term": "Guru",
-            "definition": "En religiøs lærer i indiske religioner. Guruen innvier elever og veileder dem videre."
+            "definition": "En religiøs lærer i indiske religioner. Guruen tar imot nye elever og viser dem veien videre."
         },
         {
             "id": "sampradaya",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "Det er ikke fordi noen har rotet bort opplysningene. Hinduisme er et samlenavn for et mangfold av religiøse tradisjoner, ideer og praksiser som oppstod på det indiske subkontinentet gjennom flere tusen år. Den oppstod ikke på ett tidspunkt eller på ett sted, og den har ingen stifter, ingen trosartikler og ingen fast organisert ledelse. Likevel er den blant verdens største religioner: i 2023 var det rundt 1,2 milliarder hinduer, altså omtrent 15 prosent av alle mennesker i verden (Kværne & Jacobsen, 2026)."
+            "content": "Det er ikke fordi noen har rotet bort opplysningene. Hinduisme er et samlenavn for mange ulike religiøse tradisjoner, tanker og skikker som vokste fram på det indiske subkontinentet gjennom flere tusen år. Den ble ikke til på ett tidspunkt eller på ett sted, og ingen startet den. Den har ingen felles liste over hva man må tro, og ingen fast ledelse. Likevel er den blant verdens største religioner: i 2023 var det rundt 1,2 milliarder hinduer, altså omtrent 15 prosent av alle mennesker i verden (Kværne & Jacobsen, 2026)."
         },
         {
             "type": "image",
@@ -63,7 +63,7 @@
         },
         {
             "type": "text",
-            "content": "Så hvor begynner vi å lete? Den eldste bykulturen i området vokste fram langs elva Indus for rundt 4500 år siden. Forskerne har ennå ikke klart å tyde skriftsystemet fra denne kulturen, og derfor er det vanskelig å si hvor mye den påvirket hinduismen. Etter omtrent 1700 fvt. begynte grupper av nomader å vandre inn på slettelandet i Nord-India. Fvt. betyr før vår tidsregning. Nomadene snakket indoeuropeiske språk, blant annet sanskrit, og religionen deres kalles vedisk religion. Den var dominert av offerritualer rettet mot guder som Indra og Varuna (Kværne & Jacobsen, 2026). Ingen av disse trådene har en grunnlegger i den andre enden. De fletter seg bare sammen, lag på lag."
+            "content": "Så hvor begynner vi å lete? Den eldste bykulturen i området vokste fram langs elva Indus for rundt 4500 år siden. Forskerne har ennå ikke klart å lese skriften fra denne kulturen, og derfor er det vanskelig å si hvor mye den påvirket hinduismen. Etter omtrent 1700 fvt. begynte grupper av nomader å vandre inn på slettelandet i Nord-India. Fvt. betyr før vår tidsregning. Nomadene snakket indoeuropeiske språk, blant annet sanskrit, og religionen deres kalles vedisk religion. Den handlet mest om offerritualer til guder som Indra og Varuna (Kværne & Jacobsen, 2026). Ingen av disse trådene har en grunnlegger i den andre enden. De fletter seg bare sammen, lag på lag."
         },
         {
             "type": "header",
@@ -71,7 +71,7 @@
         },
         {
             "type": "text",
-            "content": "Et av de tydeligste tegnene på at ingen fant opp hinduismen, er navnet. Hindu var det gammelpersiske navnet på befolkningen i området perserne kalte Hindu, etter sanskritordet Sindhu, som betyr elva Indus og landet omkring den (Jacobsen & Store norske leksikon, 2024). Ordet pekte altså på et sted, ikke på en tro. Først etter at muslimer bosatte seg i Nord-India, og noen indere gikk over til islam, fikk hindu en religiøs betydning. Så sent som på 1800-tallet ble ordet ofte brukt i betydningen inder (Jacobsen & Store norske leksikon, 2024). Ingen stifter kalte tilhengerne sine hinduer. Naboene i vest gjorde det."
+            "content": "Et av de tydeligste tegnene på at ingen fant opp hinduismen, er navnet. Hindu var det gamle persiske navnet på folkene i området perserne kalte Hindu, etter sanskritordet Sindhu, som betyr elva Indus og landet omkring den (Jacobsen & Store norske leksikon, 2024). Ordet pekte altså på et sted, ikke på en tro. Først etter at muslimer bosatte seg i Nord-India, og noen indere gikk over til islam, fikk hindu en religiøs betydning. Så sent som på 1800-tallet ble ordet ofte brukt om alle indere (Jacobsen & Store norske leksikon, 2024). Ingen stifter kalte tilhengerne sine hinduer. Naboene i vest gjorde det."
         },
         {
             "type": "component",
@@ -90,7 +90,7 @@
         },
         {
             "type": "text",
-            "content": "Vedaene er de eldste kjente hellige skriftene i India. Ofte nevnes tre av dem, Rigveda, Yajurveda og Samaveda, mens de fire vedaene også omfatter Atharvaveda (Store norske leksikon, 2025b). Så kommer et poeng som er lett å overse: etter hinduisk oppfatning er Veda tidløs. Tekstene er ikke forfattet, men skuet av hellige seere som kalles rishier (Store norske leksikon, 2025b). Etter dette synet er ikke en rishi en forfatter. Rishiene er de mytologiske vismennene som skal ha hørt vedahymnene, og på den måten åpenbart dem for menneskene (Kværne, 2024). Den eldste samlingen heter Rigveda (Store norske leksikon, 2026). Mer om skriftene finner du i artikkelen om [hellige tekster](/krle/religion/hinduisme/hellige-tekster)."
+            "content": "Vedaene er de eldste kjente hellige skriftene i India. Ofte nevnes tre av dem, Rigveda, Yajurveda og Samaveda, mens de fire vedaene også omfatter Atharvaveda (Store norske leksikon, 2025b). Så kommer et poeng som er lett å overse: hinduer mener at Veda er tidløs. Ingen har skrevet tekstene. Hellige seere som kalles rishier, fikk se dem (Store norske leksikon, 2025b). En rishi er altså ikke en forfatter. Rishiene er de vise mennene i mytene, de som skal ha hørt vedasangene og slik gjort dem kjent for menneskene (Kværne, 2024). Den eldste samlingen heter Rigveda (Store norske leksikon, 2026). Mer om skriftene finner du i artikkelen om [hellige tekster](/krle/religion/hinduisme/hellige-tekster)."
         },
         {
             "type": "component",
@@ -104,22 +104,22 @@
                     },
                     {
                         "label": "Bok 2 til 7",
-                        "value": "blir tilskrevet navngitte presteætter, men etter indisk syn har seerne ikke diktet hymnene, bare skuet dem"
+                        "value": "blir knyttet til bestemte prestefamilier, men etter indisk syn har seerne ikke diktet sangene, bare fått se dem"
                     },
                     {
                         "label": "Før 1000 fvt.",
-                        "value": "de fleste forskere mener nå at hovedmengden av hymnene hører hjemme i århundrene før dette. Dateringen har vært omstridt"
+                        "value": "de fleste forskere mener nå at de aller fleste sangene ble til i århundrene før dette. Forskerne har vært uenige om alderen"
                     },
                     {
                         "label": "Muntlig først",
-                        "value": "Rigveda ble skrevet ned sent, men den muntlige tradisjonen har bevart eldgamle språkformer med stor nøyaktighet"
+                        "value": "Rigveda ble skrevet ned sent, men folk lærte den utenat og førte den videre så nøyaktig at eldgamle ordformer har overlevd"
                     }
                 ]
             }
         },
         {
             "type": "text",
-            "content": "Den siste delen av Veda kalles upanishadene. De eldste stammer sannsynligvis fra 500-tallet fvt. og århundrene etter, men samlingen omfatter over 100 tekster, og noen er så sene som fra 1500-tallet. Ordet upanishad kan bety å sette ved siden av, men også å sitte ved siden av, og mange hinduer tenker da på disiplene som sitter ved føttene til læreren sin (Jacobsen, 2025b). Det bildet sier mye. Kunnskapen kommer ikke fra en stifter på en talerstol, men fra en som setter seg ned sammen med deg. I upanishadene møter vi også tanken om moksha, å slippe unna gjenfødelsen (Kværne & Jacobsen, 2026). Mer om det målet står i artikkelen om [frelse i hinduismen](/krle/religion/hinduisme/frelse)."
+            "content": "Den siste delen av Veda kalles upanishadene. De eldste er trolig fra 500-tallet fvt. og århundrene etter, men samlingen har over 100 tekster, og noen er så sene som fra 1500-tallet. Ordet upanishad kan bety å sette ved siden av, men også å sitte ved siden av, og mange hinduer tenker da på elevene som sitter ved føttene til læreren sin (Jacobsen, 2025b). Det bildet sier mye. Kunnskapen kommer ikke fra en stifter på en talerstol, men fra en som setter seg ned sammen med deg. I upanishadene møter vi også tanken om moksha, å slippe unna gjenfødelsen (Kværne & Jacobsen, 2026). Mer om det målet står i artikkelen om [frelse i hinduismen](/krle/religion/hinduisme/frelse)."
         },
         {
             "type": "image",
@@ -133,11 +133,11 @@
         },
         {
             "type": "text",
-            "content": "Hvis ingen grunnla hinduismen, hvem holdt den da i live? Mye av svaret ligger i guruene. En guru er en religiøs lærer i indiske religioner, en som har nådd høy åndelig innsikt og derfor blir regnet som egnet til å lede andre (Jacobsen, 2025a). Guruen innvier elever, gir dem mantraer til meditasjon og veileder dem i alt fra tolkning av tekster til utdanning, yrkesvalg og samlivsproblemer (Jacobsen, 2025a). En læretradisjon kan bestå av en rekke guruer etter hverandre, kalt guruparampara, og som regel er det en av elevene som blir ny guru når læreren dør (Jacobsen, 2025a). Der andre religioner har én stifter og en linje nedover, har hinduismen tusenvis av slike korte linjer ved siden av hverandre."
+            "content": "Hvis ingen grunnla hinduismen, hvem holdt den da i live? Mye av svaret ligger i guruene. En guru er en religiøs lærer i indiske religioner, en som har kommet langt i å forstå det åndelige og derfor blir regnet som god nok til å lede andre (Jacobsen, 2025a). Guruen tar imot nye elever, gir dem mantraer å meditere på, og gir råd om alt fra hvordan tekstene skal forstås til skole, yrkesvalg og problemer i parforholdet (Jacobsen, 2025a). En læretradisjon kan bestå av en rekke guruer etter hverandre, kalt guruparampara, og som regel er det en av elevene som blir ny guru når læreren dør (Jacobsen, 2025a). Der andre religioner har én stifter og en linje nedover, har hinduismen tusenvis av slike korte linjer ved siden av hverandre."
         },
         {
             "type": "text",
-            "content": "Er guruene da hevet over kritikk? Nei. Når mange tilhengere konkurrerer om nærhet til den samme guruen, kan det åpne for maktmisbruk og utnytting. Stadige oppslag om slikt misbruk i indiske aviser gjør at mange hinduer er skeptiske til hele guru-institusjonen (Jacobsen, 2025a). Uenigheten om guruers rolle er altså en uenighet inne i hinduismen selv."
+            "content": "Er guruene da hevet over kritikk? Nei. Når mange tilhengere kjemper om å komme nær den samme guruen, blir det lett at noen bruker makten sin galt og utnytter andre. Indiske aviser skriver stadig om slike saker, og derfor er mange hinduer skeptiske til hele guru-ordningen (Jacobsen, 2025a). Striden om hva en guru skal være, er altså en strid inne i hinduismen selv."
         },
         {
             "type": "image",
@@ -151,19 +151,19 @@
         },
         {
             "type": "text",
-            "content": "Noen navn dukker likevel stadig opp. Shankara var en indisk hinduisk filosof og religiøs organisator som grunnla tallrike klostersamfunn, og som skrev kommentarer til upanishadene, Bhagavadgita og Brahmasutra (Store norske leksikon, 2025a). Han levde trolig rundt år 800, og fødselsåret 788 blir regnet som omtrentlig (Store norske leksikon, 2025a). Han blir sett på som et hellig forbilde, uten at han nødvendigvis framstår som guddommelig (Kværne & Jacobsen, 2026). Men han grunnla ikke hinduismen. Han systematiserte en filosofi inne i den. Slik er det med flere: Chaitanya (1486-1533) blir av tilhengerne sine vurdert som en inkarnasjon av guden Krishna, og Mohandas Gandhi (1869-1948) blir kalt mahatma, den store sjela (Kværne & Jacobsen, 2026). Ingen av dem blir kalt stifter av religionen."
+            "content": "Noen navn dukker likevel stadig opp. Shankara var en indisk filosof og organisator som startet en lang rekke klostre, og som skrev forklaringer til upanishadene, Bhagavadgita og Brahmasutra (Store norske leksikon, 2025a). Han levde trolig rundt år 800, og fødselsåret 788 blir regnet som omtrentlig (Store norske leksikon, 2025a). Han blir sett på som et hellig forbilde, men ikke nødvendigvis som en gud (Kværne & Jacobsen, 2026). Men han grunnla ikke hinduismen. Han satte en tenkemåte som allerede fantes inne i den, i system. Slik er det med flere: Chaitanya (1486-1533) blir regnet av tilhengerne sine som guden Krishna i menneskeskikkelse, og Mohandas Gandhi (1869-1948) blir kalt mahatma, den store sjela (Kværne & Jacobsen, 2026). Ingen av dem blir kalt stifter av religionen."
         },
         {
             "type": "text",
-            "content": "Hinduismen er en mosaikk av tradisjoner uten sentrum og uten sentral organisasjon. Retningene blir gjerne delt i tre grupper: vishnuismen, shivaismen og shaktismen, og de enkelte trossamfunnene kalles sampradayaer. Selv om hinduismen som helhet ikke har noen grunnlegger, har det gjennom hundreårene oppstått en rekke retninger som har det, med egne hellige tekster og rituelle tradisjoner (Kværne & Jacobsen, 2026). Hinduer teller heller ikke likt selv. Det hinduiske tidsskriftet Hinduism Today deler religionen i fire hovedretninger: saivisme, shaktisme, vaishnavisme og smartisme (Hinduism Today, 2020). At tellingen varierer, er i seg selv et poeng. Ingen har myndighet til å bestemme fasiten."
+            "content": "Hinduismen er satt sammen av mange tradisjoner, som små biter i en mosaikk, og har verken et sentrum eller en sentral ledelse. Retningene blir gjerne delt i tre grupper: vishnuismen, shivaismen og shaktismen, og de enkelte trossamfunnene kalles sampradayaer. Selv om hinduismen som helhet ikke har noen grunnlegger, har det gjennom hundreårene oppstått en rekke retninger som har det, med egne hellige tekster og rituelle tradisjoner (Kværne & Jacobsen, 2026). Hinduer teller heller ikke likt selv. Det hinduiske tidsskriftet Hinduism Today deler religionen i fire hovedretninger: saivisme, shaktisme, vaishnavisme og smartisme (Hinduism Today, 2020). At de teller ulikt, er i seg selv et poeng. Ingen har makt til å bestemme hva som er fasit."
         },
         {
             "type": "text",
-            "content": "Samme sted beskriver de tre bærebjelker i hinduismen: tilbedelsen i tempelet, de hellige skriftene og tradisjonen mellom guru og elev. Hinduismen blir der også kalt Sanatana Dharma, den evige veien (Hinduism Today, 2020). I det navnet ligger hele forskjellen fra de andre religionene i dette emnet. En religion med en stifter begynte da stifteren begynte. En religion som kaller seg evig, kan ikke ha begynt i det hele tatt. Det er ikke en historisk påstand forskere kan etterprøve. Det er slik mange hinduer selv forstår tradisjonen sin."
+            "content": "Samme sted peker de på tre ting som bærer hinduismen: gudsdyrkingen i tempelet, de hellige skriftene og forholdet mellom guru og elev. Hinduismen blir der også kalt Sanatana Dharma, den evige veien (Hinduism Today, 2020). I det navnet ligger hele forskjellen fra de andre religionene i dette emnet. En religion med en stifter begynte da stifteren begynte. En religion som kaller seg evig, kan ikke ha begynt i det hele tatt. Det er ikke noe forskere kan sjekke om stemmer. Det er slik mange hinduer selv forstår tradisjonen sin."
         },
         {
             "type": "text",
-            "content": "Men mye av religionen leves ikke i tempelet. Den leves hjemme. Familien er grunnleggende i hinduismen, og den daglige tilbedelsen av en eller flere utvalgte guder er selve nerven i religionen. Da muslimske hærer erobret India, gikk buddhismen der til grunne, mens hinduismen overlevde. Forankringen i familien var utvilsomt en viktig grunn til det: buddhismen var samlet i store klostre, hinduismen satt i hvert enkelt hjem (Kværne & Jacobsen, 2026). En religion uten stifter har heller ikke ett punkt der den kan knekkes. Vil du se hvordan denne hverdagstilbedelsen ser ut, kan du lese om [bønn og tilbedelse](/krle/religion/hinduisme/bonn)."
+            "content": "Men mye av religionen leves ikke i tempelet. Den leves hjemme. Familien er selve grunnmuren i hinduismen, og det viktigste av alt er at familien dyrker en eller flere utvalgte guder hver dag. Da muslimske hærer erobret India, gikk buddhismen der til grunne, mens hinduismen overlevde. At hinduismen satt så godt fast i familiene, var uten tvil en viktig grunn: buddhismen var samlet i store klostre, hinduismen bodde i hvert enkelt hjem (Kværne & Jacobsen, 2026). En religion uten stifter har heller ikke ett punkt der den kan knekkes. Vil du se hvordan denne hverdagstilbedelsen ser ut, kan du lese om [bønn og tilbedelse](/krle/religion/hinduisme/bonn)."
         },
         {
             "type": "component",
@@ -197,12 +197,12 @@
                         "question": "Hvem grunnla hinduismen?",
                         "options": [
                             "Shankara, rundt år 800",
-                            "Ingen. Hinduismen oppstod ikke på ett tidspunkt eller ett sted",
+                            "Ingen. Hinduismen ble ikke til på ett tidspunkt eller ett sted",
                             "Rishiene, som skrev vedahymnene",
                             "Mohandas Gandhi på 1900-tallet"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Hinduisme er et samlenavn for et mangfold av tradisjoner som vokste fram over flere tusen år. Religionen har ingen stifter, ingen trosartikler og ingen fast organisert ledelse."
+                        "explanation": "Hinduisme er et samlenavn for mange tradisjoner som vokste fram over flere tusen år. Ingen startet religionen, den har ingen felles liste over hva man må tro, og ingen fast ledelse."
                     },
                     {
                         "question": "Hvor kommer ordet hindu fra?",
@@ -218,13 +218,13 @@
                     {
                         "question": "Hva sier hinduisk tradisjon om hvordan Vedaene ble til?",
                         "options": [
-                            "De er tidløse og ble ikke forfattet, men skuet av hellige seere",
+                            "De er tidløse. Ingen skrev dem, hellige seere fikk se dem",
                             "De ble diktet av kong Rama",
                             "De ble skrevet ned av Shankara rundt år 800",
                             "De ble oversatt fra persisk"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Etter hinduisk oppfatning er Veda tidløs. Rishiene, de hellige seerne, har ikke diktet hymnene, men hørt og skuet noe som allerede fantes."
+                        "explanation": "Hinduer mener at Veda er tidløs. Rishiene, de hellige seerne, diktet ikke sangene. De hørte og så noe som allerede fantes."
                     },
                     {
                         "question": "Hva er en guruparampara?",
@@ -241,12 +241,12 @@
                         "question": "Hvorfor kalles Shankara ikke grunnlegger av hinduismen?",
                         "options": [
                             "Fordi han levde for kort tid til å rekke det",
-                            "Fordi han grunnla klostersamfunn og systematiserte en filosofi inne i en religion som allerede fantes",
+                            "Fordi han startet klostre og satte i system en tenkemåte inne i en religion som allerede fantes",
                             "Fordi hinduer ikke regner ham som en viktig person",
                             "Fordi han egentlig var buddhist"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Shankara blir sett på som et hellig forbilde og grunnla tallrike klostersamfunn. Flere retninger inne i hinduismen har egne stiftere, men religionen som helhet har ingen."
+                        "explanation": "Shankara blir sett på som et hellig forbilde og startet en lang rekke klostre. Flere retninger inne i hinduismen har egne stiftere, men religionen som helhet har ingen."
                     }
                 ]
             }

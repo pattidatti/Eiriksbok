@@ -17,7 +17,7 @@
         "Ni guruer fulgte etter ham. Guru betyr lærer, ikke gud.",
         "Guru Arjan samlet de første hymnene i boka Adi Granth i 1604.",
         "Guru Gobind Singh bygde opp khalsa-fellesskapet og avsluttet rekken av menneskelige guruer.",
-        "Siden 1708 regnes boka Guru Granth Sahib som sikhenes levende guru. Sikher godtar ingen levende menneskelig guru."
+        "Siden 1708 regnes boka Guru Granth Sahib som sikhenes levende guru. Sikher godtar ingen levende guru av kjøtt og blod."
     ],
     "createdDate": "2025-12-24T10:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -25,7 +25,7 @@
         {
             "id": "guru",
             "term": "Guru",
-            "definition": "Religiøs lærer i indiske religioner. En guru har nådd høy åndelig innsikt og regnes derfor som egnet til å lede andre. I sikhismen brukes tittelen om de ti guruene og om boka Guru Granth Sahib."
+            "definition": "Religiøs lærer i indiske religioner. En guru har lært mye om Gud og om livet, og kan derfor lede andre. I sikhismen brukes tittelen om de ti guruene og om boka Guru Granth Sahib."
         },
         {
             "id": "guru-granth-sahib",
@@ -35,7 +35,7 @@
         {
             "id": "khalsa",
             "term": "Khalsa",
-            "definition": "Fellesskapet av innvidde sikher, bygd opp av Guru Gobind Singh. Medlemmene bærer fem kjennetegn og navnene Singh eller Kaur."
+            "definition": "Fellesskapet av sikher som er tatt opp gjennom en egen seremoni. Guru Gobind Singh bygde det opp. Medlemmene bærer fem kjennetegn og navnene Singh eller Kaur."
         },
         {
             "id": "gurdwara",
@@ -45,7 +45,7 @@
         {
             "id": "janamsakhi",
             "term": "Janamsakhi",
-            "definition": "Fortellinger om Guru Nanaks liv. Sikher regner dem som troverdige, men historikere har lite annet materiale å sammenligne dem med."
+            "definition": "Fortellinger om Guru Nanaks liv. Sikher tror på dem, men historikere har få andre kilder å sammenligne dem med."
         }
     ],
     "content": [
@@ -55,7 +55,7 @@
         },
         {
             "type": "text",
-            "content": "Guru betyr lærer. I indiske religioner er en guru en som har nådd høy åndelig innsikt, og som derfor kan lede andre som ikke har kommet like langt (Jacobsen, 2025a). Ordet sikh betyr elev, guruens elev (Jacobsen, 2025a). Hele religionen ligger altså gjemt i to navn: læreren og elevene. Men i sikhismen fikk lærerrollen en form som ikke finnes noe annet sted."
+            "content": "Guru betyr lærer. I indiske religioner er en guru en som har nådd høy åndelig innsikt, og som derfor kan lede andre som ikke har kommet like langt (Jacobsen, 2025a). Ordet sikh betyr elev, guruens elev (Jacobsen, 2025a). Hele religionen ligger altså i to ord: læreren og elevene. Men ingen andre religioner har løst lærerrollen slik sikhene gjorde."
         },
         {
             "type": "image",
@@ -65,7 +65,7 @@
         },
         {
             "type": "text",
-            "content": "Rekken begynte med Guru Nanak, som levde fra 1469 til 1539 (Kristiansen mfl., 2026). Historikere vet lite sikkert om livet hans. Det meste vi har, er fortellinger som kalles janamsakhier. Sikher regner dem som troverdige, men det finnes lite annet materiale å sammenligne dem med (Jacobsen & Store norske leksikon, 2025). Ifølge disse fortellingene ble Nanak født i Talwandi, i dagens Pakistan. Han giftet seg ung og fikk barn. I byen Sultanpur skal han så ha fått en åpenbaring, altså en beskjed fra Gud. Sikher tror at Gud der kalte ham til å forkynne Nam, det hellige navnet, som veien til frelse (Jacobsen & Store norske leksikon, 2025). Historikere kan ikke slå fast at dette skjedde. De kan bare slå fast at fortellingene om det er gamle og viktige for sikher."
+            "content": "Rekken begynte med Guru Nanak, som levde fra 1469 til 1539 (Kristiansen mfl., 2026). Historikere vet lite sikkert om livet hans. Det meste vi har, er fortellinger som kalles janamsakhier. Sikher tror på dem, men det finnes lite annet å sammenligne dem med (Jacobsen & Store norske leksikon, 2025). Ifølge disse fortellingene ble Nanak født i Talwandi, i dagens Pakistan. Han giftet seg ung og fikk barn. I byen Sultanpur skal han så ha fått en åpenbaring, altså en beskjed fra Gud. Sikher tror at Gud der ba ham fortelle alle om Nam, det hellige navnet, som er veien til frelse (Jacobsen & Store norske leksikon, 2025). Historikere kan ikke slå fast at dette skjedde. De kan bare slå fast at fortellingene om det er gamle og viktige for sikher."
         },
         {
             "type": "header",
@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "content": "Det er lett å tenke seg at en religionsstifter må være enten Gud eller et sendebud fra Gud. Sikhismen svarer nei på det første. Guru Gobind Singh, den tiende guruen, skrev om seg selv at han bare var Guds tjener, og advarte skarpt mot dem som kalte ham Gud (Sikhism Home Page, u.å.-b). Guruene er lærere og forbilder, ikke guddommer. Samtidig brukes selve ordet guru også om Gud: det vanligste navnet sikher bruker på Gud, er Vaheguru, som betyr den vidunderlige guruen (Jacobsen, 2025a). Mer om det finner du i artikkelen om [gudsbildet i sikhismen](/krle/religion/sikhisme/gudsbilde). Under kan du selv teste hvem og hva som faktisk bærer guru-tittelen."
+            "content": "Det er lett å tro at den som starter en religion, må være enten Gud selv eller et sendebud fra Gud. Sikhismen svarer nei på det første. Guru Gobind Singh, den tiende guruen, skrev om seg selv at han bare var Guds tjener, og advarte skarpt mot dem som kalte ham Gud (Sikhism Home Page, u.å.-b). Guruene er lærere og forbilder, ikke guder. Samtidig brukes selve ordet guru også om Gud: det vanligste navnet sikher bruker på Gud, er Vaheguru, som betyr den vidunderlige guruen (Jacobsen, 2025a). Mer om det finner du i artikkelen om [gudsbildet i sikhismen](/krle/religion/sikhisme/gudsbilde). Under kan du selv teste hvem og hva som faktisk bærer guru-tittelen."
         },
         {
             "type": "component",
@@ -84,7 +84,7 @@
         },
         {
             "type": "text",
-            "content": "Legg merke til at ingen levende person kommer inn på lista. Sikher aksepterer ingen levende menneskelige guruer, bare boka (Jacobsen, 2025a). Det er en uvanlig løsning. I mange andre religioner er det nettopp levende ledere som avgjør hva som er rett lære."
+            "content": "Legg merke til at ingen levende person kommer inn på lista. Sikher godtar ingen levende guru av kjøtt og blod, bare boka (Jacobsen, 2025a). Det er en uvanlig løsning. I mange andre religioner er det nettopp levende ledere som avgjør hva som er rett lære."
         },
         {
             "type": "header",
@@ -92,7 +92,7 @@
         },
         {
             "type": "text",
-            "content": "Tittelen gikk ikke i arv i familien. Guru Nanak pekte ut Guru Angad som etterfølger i stedet for en av sønnene sine, fordi det var egenskapene som skulle telle, ikke slekten (Jacobsen & Store norske leksikon, 2025). Hver guru la noe til. Under den fjerde, Guru Ram Das, ble byen Amritsar grunnlagt. Den femte, Guru Arjan (1563-1606), begynte byggingen av Det gylne tempel der (Kristiansen mfl., 2026). Han samlet også hymnene i boka Adi Granth, og det første eksemplaret ble satt inn i tempelet i 1604 (Jacobsen & Store norske leksikon, 2024). Under den sjette, Guru Hargobind, begynte sikhene å organisere seg som et krigersamfunn under press fra muslimske herskere, og den utviklingen ble fullført under den tiende (Kristiansen mfl., 2026)."
+            "content": "Tittelen gikk ikke i arv i familien. Guru Nanak pekte ut Guru Angad som etterfølger i stedet for en av sønnene sine, fordi det var hva slags menneske du var som skulle telle, ikke hvilken familie du kom fra (Jacobsen & Store norske leksikon, 2025). Hver guru la noe til. Under den fjerde, Guru Ram Das, ble byen Amritsar grunnlagt. Den femte, Guru Arjan (1563-1606), begynte byggingen av Det gylne tempel der (Kristiansen mfl., 2026). Han samlet også hymnene i boka Adi Granth, og det første eksemplaret ble satt inn i tempelet i 1604 (Jacobsen & Store norske leksikon, 2024). Under den sjette, Guru Hargobind, begynte sikhene å bygge seg opp som et krigersamfunn, fordi muslimske herskere presset dem. Den tiende guruen gjorde det arbeidet ferdig (Kristiansen mfl., 2026)."
         },
         {
             "type": "component",
@@ -104,17 +104,17 @@
         },
         {
             "type": "text",
-            "content": "Den niende guruen, Guru Tegh Bahadur, ble drept på ordre fra Aurangzeb. Han var mogulkeiser, altså hersker over det store muslimske riket som styrte mesteparten av India på 1600-tallet. Sønnen hans, Guru Gobind Singh (1666-1708), kom i hard strid med den samme keiseren, og bygde opp khalsa, et disiplinert fellesskap blant sikhene (Jacobsen & Store norske leksikon, 2026). Ifølge tradisjonen skjedde grunnleggelsen i 1699 (Sikhism Home Page, u.å.-a). Sikher feirer den hvert år på vårfesten baisakhi, som faller 13. eller 14. april (Store norske leksikon & Winje, 2026)."
+            "content": "Den niende guruen, Guru Tegh Bahadur, ble drept på ordre fra Aurangzeb. Han var mogulkeiser, altså hersker over det store muslimske riket som styrte mesteparten av India på 1600-tallet. Sønnen hans, Guru Gobind Singh (1666-1708), kom i hard strid med den samme keiseren, og bygde opp khalsa, et fellesskap av sikher med strenge leveregler (Jacobsen & Store norske leksikon, 2026). Ifølge fortellingene ble khalsa til i 1699 (Sikhism Home Page, u.å.-a). Sikher feirer den hvert år på vårfesten baisakhi, som faller 13. eller 14. april (Store norske leksikon & Winje, 2026)."
         },
         {
             "type": "text",
-            "content": "Guru Gobind Singh innførte etternavnet Singh, som betyr løve, for innvidde menn, og Kaur, som betyr prinsesse, for kvinner. Grunnen var å fjerne skillene mellom kastene, altså de arvelige gruppene i India som avgjorde hvilken plass du fikk i samfunnet, og understreke at alle er like (Jacobsen & Store norske leksikon, 2026). De som er innvidd i khalsa, skal bære fem kjennetegn: uklippet hår og skjegg skjult under turban, en kam, et armbånd av stål, et sverd og en kortbukse (Kristiansen mfl., 2026). Mer om dette står i artikkelen om [sentrale trekk i sikhismen](/krle/religion/sikhisme/sentrale-trekk)."
+            "content": "Guru Gobind Singh innførte etternavnet Singh, som betyr løve, for menn som ble tatt opp i khalsa, og Kaur, som betyr prinsesse, for kvinner. Grunnen var å viske ut skillene mellom kastene, altså gruppene folk i India ble født inn i, og som bestemte hvilken plass de fikk i samfunnet. Alle skulle være like (Jacobsen & Store norske leksikon, 2026). De som er tatt opp i khalsa, skal bære fem kjennetegn: uklippet hår og skjegg skjult under turban, en kam, et armbånd av stål, et sverd og en kortbukse (Kristiansen mfl., 2026). Mer om dette står i artikkelen om [sentrale trekk i sikhismen](/krle/religion/sikhisme/sentrale-trekk)."
         },
         {
             "type": "image",
             "src": "/images/placeholder.webp",
             "alt": "Stålarmbånd og trekam liggende på enkelt tøystykke",
-            "caption": "To av de fem kjennetegnene innvidde sikher bærer: armbåndet kara og kammen kangha."
+            "caption": "To av de fem kjennetegnene sikher i khalsa bærer: armbåndet kara og kammen kangha."
         },
         {
             "type": "header",
@@ -122,7 +122,7 @@
         },
         {
             "type": "text",
-            "content": "Boka hadde ikke alltid vært guru. Guru Arjan samlet den i 1604 og kalte den Adi Granth (Jacobsen, 2025b). Guru Gobind Singh utvidet den med tekstene til faren, Guru Tegh Bahadur, men tok ikke med noen av sine egne (Jacobsen, 2026). Så ga han boka et nytt navn, Guru Granth Sahib, og en ny rolle: sikhenes levende guru (Jacobsen, 2025b). Selve rekken av lærere ble altså ikke brutt, den ble flyttet over i et skrift."
+            "content": "Boka hadde ikke alltid vært guru. Guru Arjan samlet den i 1604 og kalte den Adi Granth (Jacobsen, 2025b). Guru Gobind Singh utvidet den med tekstene til faren, Guru Tegh Bahadur, men tok ikke med noen av sine egne (Jacobsen, 2026). Så ga han boka et nytt navn, Guru Granth Sahib, og en ny rolle: sikhenes levende guru (Jacobsen, 2025b). Rekken av lærere tok altså ikke slutt. Den ble flyttet over i en bok."
         },
         {
             "type": "text",
@@ -140,15 +140,15 @@
         },
         {
             "type": "text",
-            "content": "Når sikhene regner en bok som sin guru, kan ingen enkeltperson si at han har fått en ny beskjed fra Gud som overstyrer det som står der. Autoriteten ligger i en tekst alle kan lese, høre og lære utenat. Mange sikher kan særlig den første delen av boka utenat (Jacobsen, 2026). Sikhismen har heller ikke noe presteskap, og menn og kvinner deltar sammen i gudstjenesten (Kristiansen mfl., 2026). Boka står i sentrum i gurdwaraen, sikhenes tempel, og selve ordet gurdwara betyr døren til guruen (Jacobsen, 2025a). Hvordan en gudstjeneste ser ut i praksis, kan du lese mer om i artikkelen om [bønn i sikhismen](/krle/religion/sikhisme/bonn)."
+            "content": "Når sikhene regner en bok som sin guru, kan ingen enkeltperson si at han har fått en ny beskjed fra Gud som overstyrer det som står der. Makten ligger i en tekst alle kan lese, høre og lære utenat. Mange sikher kan særlig den første delen av boka utenat (Jacobsen, 2026). Sikhismen har heller ingen prester, og menn og kvinner deltar sammen i gudstjenesten (Kristiansen mfl., 2026). Boka står i sentrum i gurdwaraen, sikhenes tempel, og selve ordet gurdwara betyr døren til guruen (Jacobsen, 2025a). Hvordan en gudstjeneste ser ut i praksis, kan du lese mer om i artikkelen om [bønn i sikhismen](/krle/religion/sikhisme/bonn)."
         },
         {
             "type": "text",
-            "content": "Det betyr ikke at sikher er enige om alt. Kravet om de fem kjennetegnene gjelder dem som er innvidd i khalsa (Kristiansen mfl., 2026). I dag bor det sikher over hele verden, blant annet i Storbritannia, Canada og Norge, der det er rundt 5000 (Kristiansen mfl., 2026). Om politiske spørsmål har uenigheten vært dyp. På 1980-tallet fikk kravet om en egen sikhstat, Khalistan, økende støtte, men bevegelsen mistet etter hvert oppslutning fordi den rammet økonomien og ble svært voldelig (Kristiansen mfl., 2026)."
+            "content": "Det betyr ikke at sikher er enige om alt. Kravet om de fem kjennetegnene gjelder dem som er innvidd i khalsa (Kristiansen mfl., 2026). I dag bor det sikher over hele verden, blant annet i Storbritannia, Canada og Norge, der det er rundt 5000 (Kristiansen mfl., 2026). Om politiske spørsmål har uenigheten vært dyp. På 1980-tallet fikk kravet om en egen sikhstat, Khalistan, økende støtte, men færre og færre støttet den, fordi den skadet økonomien og ble svært voldelig (Kristiansen mfl., 2026)."
         },
         {
             "type": "text",
-            "content": "Så hva slags rolle har stifteren i sikhismen i dag? Guru Nanak blir husket og feiret, og fødselsdagen hans er en av de store festene (Kristiansen mfl., 2026). Men han blir ikke tilbedt som Gud. Han er den første læreren i en rekke på ti, og det han lærte bort, lever videre som ord på et papir. Rekken av mennesker stoppet i 1708. Ordene gjorde det ikke."
+            "content": "Så hva slags rolle har stifteren i sikhismen i dag? Guru Nanak blir husket og feiret, og fødselsdagen hans er en av de store festene (Kristiansen mfl., 2026). Men sikher ber ikke til ham slik de ber til Gud. Han er den første læreren i en rekke på ti, og det han lærte bort, lever videre som ord på et papir. Rekken av mennesker stoppet i 1708. Ordene gjorde det ikke."
         },
         {
             "type": "component",
@@ -163,7 +163,7 @@
                 "reflekter": [
                     "Guru Gobind Singh skrev at han bare var Guds tjener. Hvorfor er det viktig for sikher at guruene ikke var guder?",
                     "Guru Nanak pekte ut en etterfølger utenfor sin egen familie. Hva sier det valget om hva en guru skal være?",
-                    "Hva er forskjellen på å ha en bok som høyeste autoritet og å ha en levende person? Nevn en fordel og en ulempe med hver løsning.",
+                    "Hva er forskjellen på å ha en bok som øverste veileder og å ha en levende person? Nevn en fordel og en ulempe med hver løsning.",
                     "Historikere vet lite sikkert om Guru Nanaks liv, men janamsakhiene forteller mye. Hvorfor er det viktig å skille mellom disse to typene kunnskap?"
                 ],
                 "gaaVidere": [
@@ -187,7 +187,7 @@
                             "Profet"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Guru betyr lærer. I indiske religioner er en guru en som har nådd høy åndelig innsikt og derfor kan lede andre. Ordet sikh betyr elev."
+                        "explanation": "Guru betyr lærer. I indiske religioner er en guru en som har lært mye om Gud og om livet, og som derfor kan lede andre. Ordet sikh betyr elev."
                     },
                     {
                         "question": "Hvor mange menneskelige guruer har sikhismen hatt?",
@@ -209,7 +209,7 @@
                             "Rollen ble delt mellom prestene i gurdwaraene"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Guru Gobind Singh erklærte seg som den siste menneskelige guruen og ga boka ny tittel og ny rolle. Sikher aksepterer ingen levende menneskelig guru."
+                        "explanation": "Guru Gobind Singh sa at han var den siste guruen som var et menneske, og ga boka nytt navn og ny rolle. Sikher godtar ingen levende guru av kjøtt og blod."
                     },
                     {
                         "question": "Hva skrev Guru Gobind Singh om seg selv?",
@@ -220,7 +220,7 @@
                             "At han var viktigere enn Guru Nanak"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Han kalte seg Guds tjener og advarte mot dem som kalte ham Gud. Guruene regnes som lærere og forbilder, ikke som guddommer."
+                        "explanation": "Han kalte seg Guds tjener og advarte mot dem som kalte ham Gud. Guruene regnes som lærere og forbilder, ikke som guder."
                     },
                     {
                         "question": "Hva vet historikere sikkert om Guru Nanaks liv?",
@@ -231,7 +231,7 @@
                             "Bare det som står i mogulkeiserens arkiver"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Kildene er sparsomme. Janamsakhiene regnes som troverdige av sikher, men det finnes lite annet materiale å sammenligne dem med."
+                        "explanation": "Det finnes få kilder. Sikher tror på janamsakhiene, men det finnes lite annet å sammenligne dem med."
                     }
                 ]
             }

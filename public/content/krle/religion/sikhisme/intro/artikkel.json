@@ -14,19 +14,19 @@
         },
         {
             "type": "text",
-            "content": "Sikhismen er en av verdens yngste store religioner, grunnlagt i Punjab-regionen i det nåværende India og Pakistan på slutten av 1400-tallet. Kjernen i troen er budskapet om at det bare finnes én Gud, og at alle mennesker er like mye verdt, uavhengig av kjønn, kaste eller religion."
+            "content": "Sikhismen er en av de yngste store religionene i verden. Den startet på slutten av 1400-tallet i Punjab, et område som i dag ligger både i India og Pakistan. Kjernen i troen er at det bare finnes én Gud, og at alle mennesker er like mye verdt. Det spiller ingen rolle om du er gutt eller jente, hvilken religion du har, eller hvilken kaste du er født inn i."
         },
         {
             "type": "header",
-            "text": "Guru Nanaks åpenbaring"
+            "text": "Da Gud snakket til Guru Nanak"
         },
         {
             "type": "text",
-            "content": "Det hele startet med Guru Nanak (1469–1539). Etter en åpenbaring der han var borte i tre dager, kom han tilbake med de berømte ordene: 'Det finnes ingen hindu, det finnes ingen muslim'. Med dette mente han at Gud ser forbi merkelappene vi setter på hverandre, og heller ser på hjertet og handlingene våre."
+            "content": "Det hele startet med Guru Nanak (1469-1539). En dag ble han borte i tre døgn. Da han kom tilbake, sa han at Gud hadde snakket til ham, og han kom med de berømte ordene: 'Det finnes ingen hindu, det finnes ingen muslim'. Med dette mente han at Gud ikke bryr seg om merkelappene vi setter på hverandre, men ser på hjertet og på hva vi gjør."
         },
         {
             "type": "quote",
-            "text": "Sannheten er høyere enn alt, men enda høyere er sannferdig livsførsel.",
+            "text": "Sannheten er høyere enn alt, men enda høyere er det å leve sant.",
             "source": "Guru Nanak",
             "reference": "Guru Granth Sahib"
         },
@@ -36,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "Ordet 'sikh' betyr 'elev' eller 'læregutt'. En sikh er altså en som lærer av guruene. I dag er sikhismen den femte største religionen i verden, med over 25 millioner tilhengere over hele kloden."
+            "content": "Ordet 'sikh' betyr 'elev'. En sikh er altså en som lærer av guruene. I dag er sikhismen den femte største religionen i verden, med over 25 millioner tilhengere over hele verden."
         }
     ],
     "concepts": [
@@ -48,7 +48,7 @@
         {
             "id": "guru",
             "term": "Guru",
-            "definition": "En åndelig lærer. I sikhismen refererer det til de ti menneskelige guruene og den hellige boken."
+            "definition": "En religiøs lærer. I sikhismen brukes ordet om de ti guruene som var mennesker, og om den hellige boka."
         }
     ],
     "quiz": [

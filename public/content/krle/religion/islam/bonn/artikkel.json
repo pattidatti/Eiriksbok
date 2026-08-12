@@ -21,9 +21,9 @@
         "salah"
     ],
     "details": [
-        "Salah er den rituelle bønnen i islam, og en av islams fem søyler.",
+        "Salah er den faste bønnen i islam, og en av islams fem søyler.",
         "De fem bønnetidene følger solas gang, ikke klokka, og flytter seg gjennom året.",
-        "Før bønnen kommer riktig intensjon (niyya) og den lille renselsen (wudu).",
+        "Før bønnen bestemmer du deg for at du nå skal be (niyya), og du vasker deg (wudu).",
         "Alle vender seg mot Kaba i Mekka. Retningen heter qibla.",
         "I Norge gjør lyse sommernetter det vanskelig å bestemme tidene for fajr og isha."
     ],
@@ -33,17 +33,17 @@
         {
             "id": "salah",
             "term": "Salah",
-            "definition": "Den rituelle bønnen i islam. Den utføres fem ganger i døgnet og er en av de fem søylene."
+            "definition": "Den faste bønnen i islam. Den bes fem ganger i døgnet og er en av de fem søylene."
         },
         {
             "id": "wudu",
             "term": "Wudu",
-            "definition": "Den lille renselsen før bønnen. Man vasker ansikt, armer opp til albuene, stryker over hodet og vasker føttene."
+            "definition": "Vaskingen som kommer før bønnen. Du vasker ansiktet og armene opp til albuene, stryker over hodet og vasker føttene."
         },
         {
             "id": "qibla",
             "term": "Qibla",
-            "definition": "Bønneretningen mot Kaba i Mekka. I moskeen vises den av en nisje i veggen som heter mihrab."
+            "definition": "Retningen muslimer vender seg mot når de ber, mot Kaba i Mekka. I moskeen vises den av en fordypning i veggen som heter mihrab."
         },
         {
             "id": "dua",
@@ -53,7 +53,7 @@
         {
             "id": "adhan",
             "term": "Adhan",
-            "definition": "Bønneropet som kunngjør at tida for bønn er inne. Den som roper, kalles muadhdhin."
+            "definition": "Bønneropet som forteller at det er tid for bønn. Den som roper, kalles muadhdhin."
         }
     ],
     "content": [
@@ -63,7 +63,7 @@
         },
         {
             "type": "text",
-            "content": "Den rituelle bønnen heter salah. Den er en av [islams fem søyler](/krle/religion/islam/sentrale-trekk), altså en av de fem pliktene som bærer troen. Salah utføres på arabisk og består av resitasjon av utvalgte vers og surer fra [Koranen](/krle/religion/islam/hellige-tekster) (Vogt & Selhi, 2026a). Barn blir gjerne oppmuntret til å be sammen med de voksne, men selve plikten gjelder først etter puberteten (Store norske leksikon, 2024a)."
+            "content": "Bønnen heter salah. Den er en av [islams fem søyler](/krle/religion/islam/sentrale-trekk), altså en av de fem pliktene som bærer troen. Salah bes på arabisk, og du leser utvalgte vers og kapitler fra [Koranen](/krle/religion/islam/hellige-tekster) høyt (Vogt & Selhi, 2026a). Barn får gjerne være med og be sammen med de voksne, men plikten gjelder først fra puberteten (Store norske leksikon, 2024a)."
         },
         {
             "type": "image",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "At tida er inne, blir kunngjort med adhan, bønneropet fra moskeen. Den som roper, kalles muadhdhin, og det er vanlig å velge en med klar og vakker stemme som når ut til flest mulig (Vogt & Selhi, 2026b). Flytt sola langs banen under, og finn de fem punktene selv. Bytt så sted og årstid, og se hva som skjer med dem."
+            "content": "Når tida er inne, ropes det ut fra moskeen. Ropet heter adhan. Den som roper, kalles muadhdhin, og det er vanlig å velge en med klar og vakker stemme som når ut til flest mulig (Vogt & Selhi, 2026b). Flytt sola langs banen under, og finn de fem punktene selv. Bytt så sted og årstid, og se hva som skjer med dem."
         },
         {
             "type": "component",
@@ -104,25 +104,25 @@
         },
         {
             "type": "text",
-            "content": "Før bønnen kommer to ting. Det første er niyya, riktig intensjon. Det betyr at du skal være bevisst på handlingen du skal utføre, ikke bare gjøre bevegelsene på autopilot. Det andre er rituell renhet. Den lille renselsen heter wudu. Da vasker man ansiktet og armene opp til albuene, stryker over hodet og vasker føttene opp til anklene (Vogt & Selhi, 2026a)."
+            "content": "Før bønnen kommer to ting. Det første heter niyya. Det betyr at du bestemmer deg for at det er bønn du skal gjøre nå, ikke bare kjøre gjennom bevegelsene på autopilot. Det andre er at du skal være ren. Vaskingen før bønnen heter wudu. Da vasker du ansiktet og armene opp til albuene, stryker over hodet og vasker føttene opp til anklene (Vogt & Selhi, 2026a)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Salah og dua er to slags bønn",
-                "content": "Salah er den faste, rituelle bønnen. Den har sine tider, sitt språk og sine bevegelser. Dua er noe annet: en fri og personlig bønn som kan bes på hvilket som helst språk. Dua krever verken faste tider, faste steder eller rituell renhet. En vanlig gest er å løfte hendene med håndflatene vendt opp (Vogt & Selhi, 2026a)."
+                "content": "Salah er den faste bønnen. Den har sine tider, sitt språk og sine bevegelser. Dua er noe annet: en fri og personlig bønn du kan be med dine egne ord, på hvilket som helst språk. Dua krever verken faste tider, faste steder eller at du har vasket deg først. Det vanlige er å løfte hendene med håndflatene opp (Vogt & Selhi, 2026a)."
             }
         },
         {
             "type": "text",
-            "content": "Selve salah er en fast rekke bevegelser: stående, bøyd, knelende med panne og hender mot bakken, og til slutt sittende. Bevegelsene utgjør en enhet som kalles rakaa, og antallet varierer med hvilken bønn som utføres (Vogt & Selhi, 2026a). Mange muslimer bruker dua ved siden av, til å takke, be om tilgivelse eller be om hjelp med noe helt hverdagslig. Salah er formen alle deler. Dua er den enkeltes egen stemme."
+            "content": "Selve salah er en fast rekke bevegelser. Du står, bøyer deg, kneler med pannen og hendene mot bakken, og til slutt sitter du. Hele runden kalles en rakaa, og hvor mange runder du gjør, kommer an på hvilken av de fem bønnene det er (Vogt & Selhi, 2026a). Mange muslimer bruker dua ved siden av, til å takke, be om tilgivelse eller be om hjelp med noe helt hverdagslig. Salah er formen alle deler. Dua er den enkeltes egen stemme."
         },
         {
             "type": "image",
             "src": "/images/placeholder.webp",
             "alt": "Hender som vaskes i rennende vann ved en vaskeplass",
-            "caption": "Wudu er den lille renselsen som kommer før bønnen."
+            "caption": "Wudu er vaskingen som kommer før bønnen."
         },
         {
             "type": "header",
@@ -134,7 +134,7 @@
         },
         {
             "type": "text",
-            "content": "Slik har det ikke alltid vært. De første muslimene ba vendt mot Jerusalem. Etter hijra, utvandringen [Muhammad](/krle/religion/islam/grunnleggere) og de første muslimene gjorde fra Mekka til Medina i år 622, ble retningen endret til Mekka, og skiftet er omtalt i Koranen i sure 2, vers 142 og 144 (Vogt, 2025). I moskeen er retningen bygd inn i veggen: mihrab er en nisje som peker mot Mekka, og den er som regel formet som en portal (Naguib & Vogt, 2024). Qibla brukes ikke bare i bønn. Døde gravlegges vendt mot qibla, og Koranen resiteres i samme retning (Vogt, 2025). En fast retning er heller ikke noe islam er alene om. Jøder vender seg mot Jerusalem når de ber, og du kan lese om det i artikkelen om [bønn i jødedommen](/krle/religion/jodedom/bonn)."
+            "content": "Slik har det ikke alltid vært. De første muslimene ba vendt mot Jerusalem. I år 622 flyttet [Muhammad](/krle/religion/islam/grunnleggere) og de første muslimene fra Mekka til Medina, og den flyttingen kalles hijra. Etter den ble retningen endret til Mekka, og skiftet står omtalt i Koranen, i sure 2, vers 142 og 144 (Vogt, 2025). I moskeen er retningen bygd inn i veggen. Mihrab er en fordypning som peker mot Mekka, og den er som regel formet som en portal (Naguib & Vogt, 2024). Retningen brukes ikke bare i bønn. Døde gravlegges vendt mot Mekka, og Koranen leses høyt i samme retning (Vogt, 2025). En fast retning er heller ikke noe islam er alene om. Jøder vender seg mot Jerusalem når de ber, og du kan lese om det i artikkelen om [bønn i jødedommen](/krle/religion/jodedom/bonn)."
         },
         {
             "type": "image",
@@ -148,7 +148,7 @@
         },
         {
             "type": "text",
-            "content": "Bønn kan utføres alene og på et hvilket som helst rent sted, men det anbefales å be i fellesskap, helst i moskeen (Vogt & Selhi, 2026a). Én gang i uka blir fellesskapet ekstra tydelig. Fredagsbønnen, salatu l-jumua, erstatter middagsbønnen. Den består av en tale, khutba, etterfulgt av en rituell bønn ledet av imamen. Den er obligatorisk for menn og anbefalt for kvinner (Vogt & Selhi, 2026a)."
+            "content": "Du kan be alene, og på et hvilket som helst rent sted, men det er best å be sammen med andre, helst i moskeen (Vogt & Selhi, 2026a). Én gang i uka blir fellesskapet ekstra tydelig. Fredagsbønnen, salatu l-jumua, kommer i stedet for middagsbønnen. Først holdes en tale, khutba, og så leder imamen selve bønnen. Menn må delta, kvinner kan velge selv (Vogt & Selhi, 2026a)."
         },
         {
             "type": "text",
@@ -173,13 +173,13 @@
                 "forstaa": [
                     "Hva heter de fem bønnene, og hva skjer med sola ved hver av dem?",
                     "Hva er forskjellen på salah og dua?",
-                    "Hva gjør man under wudu, og hva betyr niyya?",
+                    "Hva gjør du under wudu, og hva betyr niyya?",
                     "Hva er qibla, og hva viser mihrab i en moské?"
                 ],
                 "reflekter": [
                     "Forklar med egne ord hvorfor bønnetidene ikke kan skrives som faste klokkeslett som gjelder over alt.",
                     "Hvorfor tror du det er viktig for mange muslimer at alle vender seg mot det samme punktet når de ber?",
-                    "Fredagsbønnen er obligatorisk for menn og anbefalt for kvinner. Hva sier den forskjellen om hvordan plikter kan være ulike i en religion?",
+                    "Menn må delta i fredagsbønnen, mens kvinner kan velge selv. Hva sier den forskjellen om hvordan plikter kan være ulike i en religion?",
                     "Sjiamuslimer samler de fem bønnene i tre tidspunkter. Hvorfor kan det finnes flere måter å gjøre det samme ritualet på?"
                 ],
                 "gaaVidere": [
@@ -195,7 +195,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva bestemmer når de fem daglige bønnene skal utføres?",
+                        "question": "Hva bestemmer når de fem daglige bønnene skal bes?",
                         "options": [
                             "Faste klokkeslett som er like over hele verden",
                             "Solas plass på himmelen der du er",
@@ -210,17 +210,17 @@
                         "options": [
                             "Bønneropet fra moskeen",
                             "Talen som holdes på fredager",
-                            "Den lille renselsen før bønnen",
+                            "Vaskingen som kommer før bønnen",
                             "Retningen mot Mekka"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Under wudu vasker man ansikt og armer opp til albuene, stryker over hodet og vasker føttene opp til anklene."
+                        "explanation": "Under wudu vasker du ansiktet og armene opp til albuene, stryker over hodet og vasker føttene opp til anklene."
                     },
                     {
                         "question": "Hva er forskjellen på salah og dua?",
                         "options": [
                             "Salah bes bare i moskeen, dua bare hjemme",
-                            "Salah er fast og rituell, dua er fri og personlig",
+                            "Salah er fast og lik hver gang, dua er fri og personlig",
                             "Salah er for menn, dua er for kvinner",
                             "Salah bes om natta, dua om dagen"
                         ],

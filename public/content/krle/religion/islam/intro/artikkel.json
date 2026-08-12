@@ -20,7 +20,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Fem ganger hver dag lyder et rop fra minareten på en moské. Det kalles bønneropet, og det minner muslimer om at det er tid for å be. I dag følger nesten to milliarder mennesker denne kallelsen. Det er omtrent én av fire mennesker på jorda. Islam er verdens nest største religion, og den vokser raskt. Men hva tror en muslim egentlig på, og hvor kommer denne religionen fra?"
+            "content": "Fem ganger hver dag lyder et rop fra minareten på en moské. Det kalles bønneropet, og det minner muslimer om at det er tid for å be. I dag er det nesten to milliarder mennesker som følger dette ropet. Det er omtrent én av fire mennesker på jorda. Islam er verdens nest største religion, og den vokser raskt. Men hva tror en muslim egentlig på, og hvor kommer denne religionen fra?"
         },
         {
             "type": "image",
@@ -42,7 +42,7 @@
         },
         {
             "type": "text",
-            "content": "Kjernen i islam er så enkel at den kan sies med noen få ord: Det finnes bare én Gud. På arabisk heter Gud Allah, som rett og slett er det arabiske ordet for Gud. Det er den samme Gud som jøder og kristne tror på. Denne troen på at Gud er én og udelt, kaller vi tawhid. Den er selve grunnvollen i islam."
+            "content": "Kjernen i islam er så enkel at den kan sies med noen få ord: Det finnes bare én Gud. På arabisk heter Gud Allah, som rett og slett er det arabiske ordet for Gud. Det er den samme Gud som jøder og kristne tror på. Denne troen på at Gud er én og udelt, kaller vi tawhid. Den er selve grunnmuren i islam."
         },
         {
             "type": "text",
@@ -76,7 +76,7 @@
         },
         {
             "type": "text",
-            "content": "Koranen blir ofte lest høyt med en vakker, syngende stemme. Noen muslimer kan hele boka utenat. Å kunne resitere Koranen er noe mange er stolte av. Ved siden av Koranen støtter muslimer seg også på fortellinger om hva Muhammad sa og gjorde. Disse fortellingene hjelper dem å forstå hvordan de skal leve."
+            "content": "Koranen blir ofte lest høyt med en vakker, syngende stemme. Noen muslimer kan hele boka utenat. Å kunne lese hele boka høyt på den måten er noe mange er stolte av. Ved siden av Koranen støtter muslimer seg også på fortellinger om hva Muhammad sa og gjorde. Disse fortellingene hjelper dem å forstå hvordan de skal leve."
         },
         {
             "type": "header",
@@ -84,7 +84,7 @@
         },
         {
             "type": "text",
-            "content": "Hvordan lever en muslim ut troen sin i praksis? Svaret er de fem søylene. Det er fem plikter som til sammen bærer et muslimsk liv, på samme måte som fem søyler kan bære taket på et hus. De handler ikke om vanskelige tanker, men om konkrete handlinger som gjentar seg. Reis søylene selv i verktøyet under, så ser du hva hver av dem betyr."
+            "content": "Hvordan lever en muslim ut troen sin i hverdagen? Svaret er de fem søylene. Det er fem plikter som til sammen bærer et muslimsk liv, på samme måte som fem søyler kan bære taket på et hus. De handler ikke om vanskelige tanker, men om konkrete handlinger som gjentar seg. Reis søylene selv i verktøyet under, så ser du hva hver av dem betyr."
         },
         {
             "type": "component",
@@ -173,7 +173,7 @@
                         "question": "Hva kaller vi troen på at det bare finnes én Gud?",
                         "options": ["Qibla", "Ramadan", "Tawhid", "Zakat"],
                         "correctAnswer": 2,
-                        "explanation": "Tawhid er troen på at Gud er én og udelt. Det er selve grunnvollen i islam."
+                        "explanation": "Tawhid er troen på at Gud er én og udelt. Det er selve grunnmuren i islam."
                     },
                     {
                         "question": "Hvorfor kalles Muhammad seglet på profetene?",

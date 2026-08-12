@@ -14,10 +14,10 @@
     "readTime": "6 min lesning",
     "heroImage": "/images/bahai/bonn-hero.webp",
     "details": [
-        "Bahá'íer har en obligatorisk bønn hver dag, men velger selv mellom tre ulike bønner.",
-        "Den korte leses mellom middag og solnedgang, den middels lange morgen, middag og kveld, den lange en gang i døgnet.",
-        "Alle tre krever at man vasker hender og ansikt først, og at man vender seg mot Bahá'u'lláhs gravsted ved Bahjí nær Akko.",
-        "Bahá'í-troen har ikke prester. Felles bønn er ikke tillatt, bortsett fra bønnen for de døde.",
+        "Bahá'íer må be en bønn hver dag, men velger selv mellom tre ulike bønner.",
+        "Den korte leses mellom middag og solnedgang. Den middels lange leses morgen, middag og kveld. Den lange leses en gang i døgnet.",
+        "Uansett hvilken du velger, må du vaske hender og ansikt først og snu deg mot Bahá'u'lláhs grav ved Bahjí nær Akko.",
+        "Bahá'í har ingen prester. Å be sammen er ikke lov, bortsett fra bønnen for de døde.",
         "I nitten dager i mars faster voksne bahá'íer fra soloppgang til solnedgang."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
@@ -31,12 +31,12 @@
         {
             "id": "qiblih",
             "term": "Qiblih",
-            "definition": "Retningen man vender seg mot under den obligatoriske bønnen. For bahá'íer er det Bahá'u'lláhs gravsted ved Bahjí nær Akko."
+            "definition": "Retningen en bahá'í snur seg mot under den daglige bønnen. Det er Bahá'u'lláhs grav ved Bahjí nær Akko."
         },
         {
             "id": "ablusjon",
             "term": "Ablusjon",
-            "definition": "Vask av hender og ansikt før bønnen. Vasken må gjøres på nytt før hver enkelt bønn."
+            "definition": "Å vaske hender og ansikt før bønnen. Du må vaske deg på nytt før hver bønn."
         },
         {
             "id": "andaktssamling",
@@ -56,7 +56,7 @@
         },
         {
             "type": "text",
-            "content": "[Bahá'u'lláh](/krle/religion/bahai/grunnleggere), som grunnla bahá'í-troen på 1800-tallet, ga tre obligatoriske bønner. En bahá'í leser en av dem hver dag. Ikke alle tre. En. Den korte, den middels lange eller den lange, og du kan gjøre et nytt valg i morgen (Bahá'í International Community, u.å.-c)."
+            "content": "[Bahá'u'lláh](/krle/religion/bahai/grunnleggere), som grunnla bahá'í-troen på 1800-tallet, gav tre bønner du må be. Slike bønner kalles obligatoriske. En bahá'í leser en av dem hver dag. Ikke alle tre. En. Den korte, den middels lange eller den lange, og du kan gjøre et nytt valg i morgen (Bahá'í International Community, u.å.-c)."
         },
         {
             "type": "image",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Det kan virke som en liten detalj. Det er det ikke. Bahá'í-troen har ikke prester (Vogt og Winje, 2026). Ingen står foran og bestemmer hva du skal gjøre i dag. Ansvaret ligger hos den enkelte, og valget mellom de tre bønnene er kanskje det tydeligste stedet det synes."
+            "content": "Det kan virke som en liten detalj. Det er det ikke. Bahá'í har ingen prester (Vogt og Winje, 2026). Ingen står foran og bestemmer hva du skal gjøre i dag. Du har ansvaret selv, og valget mellom de tre bønnene er kanskje det tydeligste stedet du ser det."
         },
         {
             "type": "header",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "De tre bønnene stiller ulike krav. Den korte er bare noen få linjer, og leses en gang i døgnet mellom middag og solnedgang. Den middels lange leses tre ganger samme døgn: morgen, middag og kveld. Den lange leses en gang i døgnet, men er den mest omfattende av dem, med bevegelser der man står, løfter hendene, kneler og bøyer pannen mot bakken (Bahá'u'lláh, u.å.-c). Prøv de tre valgene under, og følg med på hva som forandrer seg."
+            "content": "De tre bønnene stiller ulike krav. Den korte er bare noen få linjer, og leses en gang i døgnet mellom middag og solnedgang. Den middels lange leses tre ganger samme døgn: morgen, middag og kveld. Den lange leses en gang i døgnet, men den tar lengst tid. Du står, løfter hendene, kneler og bøyer pannen mot bakken (Bahá'u'lláh, u.å.-c). Prøv de tre valgene under, og følg med på hva som forandrer seg."
         },
         {
             "type": "component",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Tidspunktene er heller ikke minutter du kan bomme på. De er vinduer. Morgen betyr fra soloppgang til middag, middag betyr fra middag til solnedgang, og kveld betyr fra solnedgang og to timer fram (Bahá'u'lláh, u.å.-a). En som velger den middels lange bønnen, får altså tre vinduer å legge dagen inn i, mens en som velger den korte, har ett."
+            "content": "Tidspunktene er ikke klokkeslett du kan bomme på. De er lange tidsrom. Morgen betyr fra soloppgang til middag, middag betyr fra middag til solnedgang, og kveld betyr fra solnedgang og to timer fram (Bahá'u'lláh, u.å.-a). En som velger den middels lange bønnen, har altså tre tidsrom å be i, mens en som velger den korte, har ett."
         },
         {
             "type": "header",
@@ -97,14 +97,14 @@
         },
         {
             "type": "text",
-            "content": "Under den obligatoriske bønnen vender bahá'íer seg mot et bestemt punkt på jorda. Punktet kalles Qiblih, og det er Bahá'u'lláhs gravsted ved Bahjí, like ved byen Akko i dagens Israel (Bahá'u'lláh, u.å.-b). En bahá'í i Bergen snur seg altså mot sørøst, og en bahá'í i India snur seg mot vest. Alle peker mot det samme stedet."
+            "content": "Under den obligatoriske bønnen vender bahá'íer seg mot et bestemt punkt på jorda. Punktet kalles Qiblih, og det er Bahá'u'lláhs grav ved Bahjí, like ved byen Akko i dagens Israel (Bahá'u'lláh, u.å.-b). En bahá'í i Bergen snur seg altså mot sørøst, og en bahá'í i India snur seg mot vest. Alle peker mot det samme stedet."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Reglene rundt bønnen",
-                "content": "Man vasker hender og ansikt før bønnen. Vasken må gjøres på nytt før hver enkelt bønn, ikke bare en gang om dagen. Plikten begynner ved femten års alder. Syke og de som er over sytti år er unntatt, og det finnes egne ordninger for kvinner som har menstruasjon (Bahá'u'lláh, u.å.-a). Er du et sted der det rett og slett ikke er trygt å be, kan bønnen erstattes og tas igjen senere. Det gjelder enten du er på reise eller hjemme (Bahá'u'lláh, u.å.-b)."
+                "content": "Du vasker hender og ansikt før bønnen, og du må vaske deg på nytt før hver bønn, ikke bare en gang om dagen. Du må begynne å be den fra du er femten år. Syke og de som er over sytti år slipper, og det finnes egne regler for kvinner som har menstruasjon (Bahá'u'lláh, u.å.-a). Er du et sted der det rett og slett ikke er trygt å be, kan bønnen erstattes og tas igjen senere. Det gjelder enten du er på reise eller hjemme (Bahá'u'lláh, u.å.-b)."
             }
         },
         {
@@ -117,7 +117,7 @@
         },
         {
             "type": "text",
-            "content": "Slik begynner den korteste av de tre. Hele bønnen er noen få setninger om at mennesket er lite og [Gud er stor](/krle/religion/bahai/gudsbilde), og den avsluttes med at Gud er hjelperen i fare (Bahá'í Prayers, u.å.). Den tar under et minutt å lese. Likevel teller den like mye som den lange."
+            "content": "Slik begynner den korteste av de tre. Hele bønnen er noen få setninger om at mennesket er lite og [Gud er stor](/krle/religion/bahai/gudsbilde), og den slutter med at Gud hjelper den som er i fare (Bahá'í Prayers, u.å.). Den tar under et minutt å lese. Likevel teller den like mye som den lange."
         },
         {
             "type": "image",
@@ -131,19 +131,19 @@
         },
         {
             "type": "text",
-            "content": "Den obligatoriske bønnen er personlig. Felles bønn, altså at en gruppe leser den samme bønnen sammen i takt, er ikke tillatt i bahá'í-troen. Det finnes ett unntak: bønnen for de døde (Bahá'u'lláh, u.å.-a). Det betyr at den daglige plikten alltid utføres alene, også om du sitter i samme rom som andre."
+            "content": "Den daglige bønnen ber du alene. Å be sammen, altså at en gruppe leser den samme bønnen i takt, er ikke lov i bahá'í. Det finnes ett unntak: bønnen for de døde (Bahá'u'lláh, u.å.-a). Du ber altså alltid alene, også om du sitter i samme rom som andre."
         },
         {
             "type": "text",
-            "content": "Ved siden av den obligatoriske bønnen står den frie andakten. Bahá'íer samles til andaktssamlinger der de leser [hellige tekster](/krle/religion/bahai/hellige-tekster) høyt, ber og synger (Bahá'í International Community, u.å.-c). Det finnes ingen fast liturgi, altså ingen ferdig rekkefølge av ledd som må følges, og ingen har noen egen rolle i samlingen (Bahá'í International Community, u.å.-a). En samling hjemme hos en familie kan derfor se helt annerledes ut enn en samling i nabobyen."
+            "content": "Ved siden av den daglige bønnen finnes det bønn ingen har bestemt formen på. Bahá'íer samles til andaktssamlinger der de leser [hellige tekster](/krle/religion/bahai/hellige-tekster) høyt, ber og synger (Bahá'í International Community, u.å.-c). Det finnes ingen fast liturgi, altså ingen ferdig rekkefølge av ledd som må følges, og ingen har noen egen rolle i samlingen (Bahá'í International Community, u.å.-a). En samling hjemme hos en familie kan derfor se helt annerledes ut enn en samling i nabobyen."
         },
         {
             "type": "text",
-            "content": "Det finnes likevel en fast rytme i fellesskapet. Hver nittende dag samles bahá'íene til det som kalles nittendagsfesten, og det er også der de tar opp saker som angår lokalsamfunnet (Vogt og Winje, 2026). Beslutningene tas ikke av en religiøs leder. På verdensbasis styres bahá'í-troen av et råd på ni medlemmer som velges, Det universelle rettferdighetens hus (Vogt og Winje, 2026). Det samme prinsippet går igjen både i det store og i det små: valgte organer i fellesskapet, og eget ansvar i bønnen."
+            "content": "Det finnes likevel en fast rytme i fellesskapet. Hver nittende dag samles bahá'íene til det som kalles nittendagsfesten, og det er også der de tar opp saker som angår lokalsamfunnet (Vogt og Winje, 2026). Det er ingen religiøs leder som bestemmer. Over hele verden styres bahá'í av et råd på ni medlemmer som velges. Rådet heter Det universelle rettferdighetens hus (Vogt og Winje, 2026). Det samme går igjen i stort og smått: fellesskapet velger dem som skal bestemme, og hver enkelt har ansvaret for sin egen bønn."
         },
         {
             "type": "text",
-            "content": "Hva folk faktisk gjør, varierer også. Noen bahá'íer holder seg til den korte bønnen i årevis fordi den passer inn i en travel hverdag. Andre bytter mellom de tre etter hvordan dagen ser ut, eller velger den lange når de vil bruke lengre tid. Bahá'í-troen legger vekt på at bønn og meditasjon betyr like mye som samfunnsarbeid og politisk engasjement (Vogt og Winje, 2026), men hvordan balansen mellom dem ser ut, avgjør den enkelte."
+            "content": "Hva folk faktisk gjør, varierer også. Noen bahá'íer holder seg til den korte bønnen i årevis fordi den passer inn i en travel hverdag. Andre bytter mellom de tre etter hvordan dagen ser ut, eller velger den lange når de vil bruke lengre tid. Bahá'í-troen legger vekt på at bønn og meditasjon betyr like mye som samfunnsarbeid og politisk engasjement (Vogt og Winje, 2026), men hvor mye tid hver av delene får, bestemmer hver enkelt selv."
         },
         {
             "type": "image",
@@ -157,30 +157,30 @@
         },
         {
             "type": "text",
-            "content": "En gang i året får bønnen en helt egen ramme. Fra 2. til 20. mars faster voksne bahá'íer fra soloppgang til solnedgang. Perioden er en hel måned i bahá'í-kalenderen, som deler året i nitten måneder på nitten dager hver (Vogt og Winje, 2026). Måneden heter Alá, som betyr opphøyelse, og den ligger rett før bahá'í-nyttåret Naw-Rúz (Bahá'í International Community, u.å.-b)."
+            "content": "En gang i året får bønnen en helt egen ramme. Fra 2. til 20. mars faster voksne bahá'íer fra soloppgang til solnedgang. Perioden er en hel måned i bahá'í-kalenderen, som deler året i nitten måneder på nitten dager hver (Vogt og Winje, 2026). Måneden heter Alá, som betyr det høyeste, og den ligger rett før Naw-Rúz, som er nyttårsdagen i bahá'í (Bahá'í International Community, u.å.-b)."
         },
         {
             "type": "text",
-            "content": "Fasten er ikke ment som straff eller som en prøve i selvpining. Den blir beskrevet som en tid for bønn, meditasjon og fornyelse, og det finnes egne bønner for perioden (Bahá'í International Community, u.å.-b). Reglene er praktiske: man faster fra man er femten til man er sytti, og syke, gravide, ammende, reisende og folk med tungt kroppsarbeid er unntatt (Bahá'u'lláh, u.å.-a). Også her er det den enkelte som må vurdere sin egen situasjon."
+            "content": "Fasten er ikke straff, og den er ingen test i å plage seg selv. Bahá'íer beskriver den som en tid for bønn, ettertanke og å begynne på nytt, og det finnes egne bønner for disse dagene (Bahá'í International Community, u.å.-b). Reglene er praktiske: du faster fra du er femten til du er sytti, og syke, gravide, ammende, reisende og folk med tungt kroppsarbeid slipper (Bahá'u'lláh, u.å.-a). Også her er det den enkelte som må vurdere sin egen situasjon."
         },
         {
             "type": "text",
-            "content": "Gå tilbake til valget du gjorde i verktøyet lenger opp. Det er ikke et valg mellom en lett og en vanskelig løsning, og heller ikke mellom en god og en dårlig. Det er tre former som gjør nøyaktig den samme jobben. En religion uten prester må legge avgjørelsen et sted, og bahá'í-troen legger den hos den som ber. Vil du se hvordan andre religioner løser det samme, kan du sammenligne [bønn på tvers av religioner](/krle/sammenlign/tema/bonn)."
+            "content": "Gå tilbake til valget du gjorde i verktøyet lenger opp. Det er ikke et valg mellom en lett og en vanskelig løsning, og heller ikke mellom en god og en dårlig. Det er tre måter som gjør nøyaktig den samme jobben. En religion uten prester må legge avgjørelsen et sted, og bahá'í legger den hos den som ber. Vil du se hvordan andre religioner løser det samme, kan du sammenligne [bønn på tvers av religioner](/krle/sammenlign/tema/bonn)."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor mange obligatoriske bønner kan en bahá'í velge mellom, og hvor mange skal leses hver dag?",
+                    "Hvor mange bønner kan en bahá'í velge mellom, og hvor mange skal leses hver dag?",
                     "Når på døgnet skal den korte bønnen leses, og når skal den middels lange leses?",
-                    "Hva er Qiblih, hvor ligger stedet, og hva må gjøres før hver obligatorisk bønn?",
+                    "Hva er Qiblih, hvor ligger stedet, og hva må du gjøre før hver bønn?",
                     "Når faster bahá'íer, og hvor lenge varer fasten hver dag?"
                 ],
                 "reflekter": [
-                    "Bahá'í-troen har ingen prester. Hva betyr det for hvem som bestemmer hvordan den enkelte ber?",
+                    "Bahá'í har ingen prester. Hva betyr det for hvem som bestemmer hvordan hver enkelt ber?",
                     "Den korte bønnen tar under et minutt, den lange tar mye lenger tid. Likevel teller de like mye. Hva sier det om hva bønnen handler om?",
-                    "Felles bønn er ikke tillatt, bortsett fra bønnen for de døde. Hvorfor tror du en religion kan velge å gjøre den daglige bønnen personlig?",
+                    "Å be sammen er ikke lov, bortsett fra bønnen for de døde. Hvorfor tror du en religion kan velge at hver enkelt skal be alene?",
                     "Er det en styrke eller en svakhet for en religion at medlemmene selv velger form? Begrunn svaret."
                 ],
                 "gaaVidere": [
@@ -196,18 +196,18 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hvor mange obligatoriske bønner leser en bahá'í hver dag?",
+                        "question": "Hvor mange bønner må en bahá'í be hver dag?",
                         "options": [
                             "Alle tre",
-                            "En av tre, valgt av den enkelte",
+                            "En av tre, og hver enkelt velger selv",
                             "Fem, til faste tider",
                             "Ingen, bønn er helt frivillig"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Bahá'u'lláh ga tre obligatoriske bønner. En bahá'í leser en av dem hvert døgn og velger selv hvilken."
+                        "explanation": "Bahá'u'lláh gav tre bønner du må be. En bahá'í leser en av dem hvert døgn og velger selv hvilken."
                     },
                     {
-                        "question": "Når skal den korte obligatoriske bønnen leses?",
+                        "question": "Når skal den korte bønnen leses?",
                         "options": [
                             "Ved soloppgang",
                             "Mellom middag og solnedgang",
@@ -222,22 +222,22 @@
                         "options": [
                             "Kaba i Mekka",
                             "Karmelberget i Haifa",
-                            "Bahá'u'lláhs gravsted ved Bahjí nær Akko",
+                            "Bahá'u'lláhs grav ved Bahjí nær Akko",
                             "Retningen mot øst, uansett hvor man er"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Under den obligatoriske bønnen vender bahá'íer seg mot Bahá'u'lláhs gravsted ved Bahjí, like ved Akko."
+                        "explanation": "Under den daglige bønnen snur bahá'íer seg mot Bahá'u'lláhs grav ved Bahjí, like ved Akko."
                     },
                     {
-                        "question": "Hva gjelder for felles bønn i bahá'í-troen?",
+                        "question": "Hva gjelder for det å be sammen i bahá'í?",
                         "options": [
-                            "Den er påbudt hver uke",
-                            "Den er ikke tillatt, bortsett fra bønnen for de døde",
-                            "Den ledes alltid av en prest",
-                            "Den erstatter den obligatoriske bønnen"
+                            "Det er påbudt hver uke",
+                            "Det er ikke lov, bortsett fra bønnen for de døde",
+                            "Det skjer alltid med en prest til stede",
+                            "Det erstatter den daglige bønnen"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Den daglige plikten utføres personlig. Bønnen for de døde er det eneste unntaket fra forbudet mot felles bønn."
+                        "explanation": "Hver enkelt ber alene. Bønnen for de døde er det eneste unntaket."
                     },
                     {
                         "question": "Når og hvordan faster bahá'íer?",

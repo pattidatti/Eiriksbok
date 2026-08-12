@@ -15,10 +15,10 @@
   "heroImage": "/images/placeholder.webp",
   "details": [
     "Buddhismen har ingen skapergud, og har heller aldri vært særlig opptatt av spørsmålet om skapelsen.",
-    "Guder finnes likevel i det buddhistiske verdensbildet, men de har en underordnet rolle.",
+    "Guder finnes likevel i buddhismens bilde av verden, men de er ikke de viktigste.",
     "Gudene lever lenge og godt, men de dør også, og fødes på nytt som alle andre.",
     "Buddha ble ikke regnet som en gud, men som læreren til både guder og mennesker.",
-    "I deler av mahayana bes det likevel til bodhisattvaer, og mange forholder seg i tillegg til lokale ånder."
+    "I deler av mahayana ber folk likevel til bodhisattvaer, og mange dyrker i tillegg lokale ånder."
   ],
   "createdDate": "2025-12-04T12:00:00Z",
   "lastUpdated": "2026-08-11T12:00:00Z",
@@ -36,17 +36,17 @@
     {
       "id": "nirvana",
       "term": "Nirvana",
-      "definition": "Målet i buddhismen: at lidelsen tar slutt og gjenfødelsen stopper."
+      "definition": "Målet i buddhismen: at lidelsen tar slutt og at du ikke blir født på nytt igjen."
     },
     {
       "id": "bodhisattva",
       "term": "Bodhisattva",
-      "definition": "En som streber mot å bli en buddha. I mahayana dyrkes noen av dem som hjelpere."
+      "definition": "En som er på vei til å bli en buddha. I mahayana blir noen av dem dyrket som hjelpere."
     },
     {
       "id": "mahayana",
       "term": "Mahayana",
-      "definition": "Hovedretningen i buddhismen i Tibet, Kina, Korea, Japan og Vietnam. Her dyrkes flere buddhaer og bodhisattvaer."
+      "definition": "Hovedretningen i buddhismen i Tibet, Kina, Korea, Japan og Vietnam. Her dyrker folk flere buddhaer og bodhisattvaer."
     }
   ],
   "quote": {
@@ -57,11 +57,11 @@
   "content": [
     {
       "type": "text",
-      "content": "Spør en kristen hvem som skapte verden, og du får et svar. Spør en muslim, og du får et svar. Spør en buddhist, og du kan bli møtt med et motspørsmål: hvorfor er det så viktig å vite? Buddhismen har rett og slett ikke vært opptatt av å utforme forestillinger om skapelsen (Kværne, Groth og Løøv, 2025). Det betyr ikke at spørsmålet er dumt. Det betyr at buddhismen stiller et annet spørsmål først: hvorfor gjør det vondt å leve, og hva kan vi gjøre med det?"
+      "content": "Spør en kristen hvem som skapte verden, og du får et svar. Spør en muslim, og du får et svar. Spør en buddhist, og du kan bli møtt med et motspørsmål: hvorfor er det så viktig å vite? Buddhismen har rett og slett ikke vært så opptatt av å lage fortellinger om hvordan verden ble til (Kværne, Groth og Løøv, 2025). Det betyr ikke at spørsmålet er dumt. Det betyr at buddhismen stiller et annet spørsmål først: hvorfor gjør det vondt å leve, og hva kan vi gjøre med det?"
     },
     {
       "type": "text",
-      "content": "Mange trekker en rask slutning av dette: buddhismen må være en religion uten guder. Men det stemmer ikke. Gudene finnes i det buddhistiske verdensbildet, og de finnes i mengder. De kalles devaer, de bor i egne himler, og de har det langt bedre enn oss. Forskjellen ligger et annet sted. I buddhismen spiller gudene en underordnet rolle, mens de i kristendommen, islam og hinduismen spiller en dominerende rolle (Kværne, Sky og Jacobsen, 2026)."
+      "content": "Mange tenker da raskt at buddhismen må være en religion uten guder. Men det stemmer ikke. Gudene finnes i det buddhistiske verdensbildet, og de finnes i mengder. De kalles devaer, de bor i egne himler, og de har det langt bedre enn oss. Forskjellen ligger et annet sted. I buddhismen er ikke gudene de viktigste, mens de i kristendommen, islam og hinduismen står helt i sentrum (Kværne, Sky og Jacobsen, 2026)."
     },
     {
       "type": "image",
@@ -71,7 +71,7 @@
     },
     {
       "type": "text",
-      "content": "Så hva er det gudene ikke kan? Svaret er kort, og det er hele poenget i denne artikkelen: de kan ikke få deg ut."
+      "content": "Så hva er det gudene ikke kan? Svaret er kort, og det er hele poenget i denne artikkelen: de kan ikke få deg ut av kretsløpet der alle fødes, dør og fødes på nytt."
     },
     {
       "type": "header",
@@ -79,15 +79,15 @@
     },
     {
       "type": "text",
-      "content": "Det buddhistiske verdensbildet kan tegnes som en bygning med mange etasjer. Sanseverdenen, den delen vi selv hører hjemme i, har elleve slike plan. Øverst ligger seks himler der devaene bor. Under dem kommer menneskene, så asuraene, som er mektige vesener i stadig strid, så de sultne åndene, så dyrene, og helt nederst helvetesplanene (Access to Insight, 2005)."
+      "content": "Det buddhistiske verdensbildet kan tegnes som en bygning med mange etasjer. Sanseverdenen, den delen vi selv hører hjemme i, har elleve slike plan. Øverst ligger seks himler der devaene bor. Under dem kommer menneskene, så asuraene, mektige vesener som alltid slåss, så de sultne åndene, så dyrene, og helt nederst helvetesplanene (Access to Insight, 2005)."
     },
     {
       "type": "text",
-      "content": "Alle disse planene ligger inne i samsara. Samsara er den verdenen vi lever i, preget av at individet fødes, dør og fødes på nytt uten stans (Jacobsen, 2025). Hvor du havner neste gang, henger sammen med karma, altså virkningen av det du har gjort. Gjør du mye godt, kan du bli født som en deva. Det høres ut som en gevinst."
+      "content": "Alle disse planene ligger inne i samsara. Samsara er verdenen vi lever i, der alle fødes, dør og fødes på nytt uten stans (Jacobsen, 2025). Hvor du havner neste gang, henger sammen med karma, altså virkningen av det du har gjort. Gjør du mye godt, kan du bli født som en deva. Det høres ut som en gevinst."
     },
     {
       "type": "text",
-      "content": "Men så kommer setningen som snur alt: ingen av planene varer evig. I buddhistisk kosmologi finnes det verken en evig himmel eller et evig helvete (Access to Insight, 2005). Prøv selv i modellen under. Klatre så høyt du klarer, og se om du kommer ut."
+      "content": "Men så kommer det som snur alt: ingen av planene varer evig. I buddhismens bilde av verden finnes det verken en evig himmel eller et evig helvete (Access to Insight, 2005). Prøv selv i modellen under. Klatre så høyt du klarer, og se om du kommer ut."
     },
     {
       "type": "component",
@@ -106,7 +106,7 @@
     },
     {
       "type": "text",
-      "content": "Her ligger også svaret på hva [Buddha](/krle/religion/buddhisme/grunnleggere) egentlig er. Buddha var et menneske. Verken han selv eller den eldste tradisjonen regnet ham som en gud. Han ble sett på som læremesteren til både guder og mennesker, et enestående vesen som ved egen kraft nådde fram til den forløsende innsikten (Kværne og Borgland, 2026a)."
+      "content": "Her ligger også svaret på hva [Buddha](/krle/religion/buddhisme/grunnleggere) egentlig er. Buddha var et menneske. Verken han selv eller den eldste tradisjonen regnet ham som en gud. Han ble sett på som læremesteren til både guder og mennesker, et helt spesielt vesen som ved egen kraft fant den innsikten som gjør fri (Kværne og Borgland, 2026a)."
     },
     {
       "type": "text",
@@ -117,12 +117,12 @@
       "name": "FactBox",
       "props": {
         "title": "Å finnes er ikke det samme som å kunne hjelpe",
-        "content": "Buddhismen benekter ikke at gudene finnes. Den sier noe annet, og noe skarpere: gudene har ikke det du trenger. De kan ikke gi deg innsikt, for innsikt er ikke en gave noen kan rekke deg. Den må vokse fram i deg selv. Derfor blir gudene i buddhismen mektige naboer i et hus vi alle bor i, ikke eiere av huset."
+        "content": "Buddhismen sier ikke at gudene ikke finnes. Den sier noe annet: gudene har ikke det du trenger. De kan ikke gi deg innsikt, for innsikt er ikke en gave noen kan rekke deg. Den må vokse fram i deg selv. Derfor blir gudene i buddhismen mektige naboer i et hus vi alle bor i, ikke eiere av huset."
       }
     },
     {
       "type": "text",
-      "content": "Målet i buddhismen er nirvana. Nirvana er ikke en bedre etasje i bygningen, men at lidelsen tar helt slutt og at uvitenheten og den videre gjenfødelsen opphører (Kværne og Borgland, 2025). Kanskje har du hørt ordet nirvana brukt om et paradis, eller om det store intet. Ingen av delene treffer helt. Nirvana er ikke et sted du flytter til. Det er at kretsløpet stopper."
+      "content": "Målet i buddhismen er nirvana. Nirvana er ikke en bedre etasje i bygningen. Det er at lidelsen tar helt slutt, at uvitenheten forsvinner, og at du ikke blir født på nytt igjen (Kværne og Borgland, 2025). Kanskje har du hørt ordet nirvana brukt om et paradis, eller om det store intet. Ingen av delene treffer helt. Nirvana er ikke et sted du flytter til. Det er at kretsløpet stopper."
     },
     {
       "type": "image",
@@ -140,11 +140,11 @@
     },
     {
       "type": "text",
-      "content": "I mahayana, hovedretningen i Tibet, Kina, Korea, Japan og Vietnam, står bodhisattvaene sentralt, og veien mot [nirvana](/krle/religion/buddhisme/frelse) ser annerledes ut (Kværne og Borgland, 2026b). En bodhisattva er en som streber mot å bli en buddha, og i mahayana blir noen av dem regnet som frelserskikkelser som griper inn i menneskers liv. De blir dyrket med bønn og tilbedelse. Avalokiteshvara og Manjushri er de mest kjente, og Tara har en spesiell plass i tibetansk buddhisme (Borgland, 2025). Slike skikkelser blir uttrykkelig sett på som guddommelige vesener, og buddhaen Amitabha får sin egen dyrkelse i flere mahayana-retninger (Kværne, 2026)."
+      "content": "I mahayana, hovedretningen i Tibet, Kina, Korea, Japan og Vietnam, står bodhisattvaene sentralt, og veien mot [nirvana](/krle/religion/buddhisme/frelse) ser annerledes ut (Kværne og Borgland, 2026b). En bodhisattva er en som er på vei til å bli en buddha, og i mahayana mener mange at noen av dem kan redde folk og gripe inn i livene deres. De blir dyrket med bønn og tilbedelse. Avalokiteshvara og Manjushri er de mest kjente, og Tara har en spesiell plass i tibetansk buddhisme (Borgland, 2025). Slike skikkelser blir tydelig regnet som guddommelige vesener, og buddhaen Amitabha blir dyrket for seg selv i flere mahayana-retninger (Kværne, 2026)."
     },
     {
       "type": "text",
-      "content": "Også Buddha selv fikk etter hvert en annen plass enn han hadde i live. Han ble gjenstand for store æresbevisninger, levningene hans ble tatt vare på i stupaer og dyrket, og i mahayana ble Buddha-skikkelsen forstått som kosmisk, evig og guddommelig (Kværne og Borgland, 2026a). I tillegg lever eldre tro videre side om side med buddhismen mange steder. I Myanmar dyrkes fortsatt gudene og åndene som kalles nater, med egne prester og egne fester (Kværne og Lundbo, 2026)."
+      "content": "Også Buddha selv fikk etter hvert en annen plass enn han hadde i live. Han ble vist stor ære, restene etter ham ble tatt vare på i stupaer og dyrket, og i mahayana ble Buddha til noe evig og guddommelig som fyller hele verden (Kværne og Borgland, 2026a). I tillegg lever eldre tro videre side om side med buddhismen mange steder. I Myanmar dyrker folk fortsatt gudene og åndene som kalles nater, med egne prester og egne fester (Kværne og Lundbo, 2026)."
     },
     {
       "type": "image",
@@ -158,11 +158,11 @@
     },
     {
       "type": "text",
-      "content": "Så finnes det et spenn i buddhismen, mellom en lære som sier at ingen kan frelse deg, og en praksis der mange likevel ber om hjelp. Buddhister har ulike syn på hvordan de to henger sammen. Noen ser bønnen som et middel til å øve opp sinnet, andre som ekte hjelp fra en som har kommet lenger enn dem selv."
+      "content": "Så er det en avstand i buddhismen mellom læren, som sier at ingen kan frelse deg, og hverdagen, der mange likevel ber om hjelp. Buddhister mener ulike ting om hvordan de to henger sammen. Noen mener bønnen er en måte å trene sinnet på, andre mener den gir ekte hjelp fra en som har kommet lenger enn dem selv."
     },
     {
       "type": "text",
-      "content": "Men grunntonen i den eldste tradisjonen er tydelig. Ifølge fortellingen om Buddhas siste tid sa han dette til eleven Ananda, mens han selv var alvorlig syk:"
+      "content": "Men den eldste tradisjonen er tydelig. Ifølge fortellingen om Buddhas siste tid sa han dette til eleven Ananda, mens han selv var alvorlig syk:"
     },
     {
       "type": "component",
@@ -208,12 +208,12 @@
             "question": "Hvilken plass har gudene i buddhismen?",
             "options": [
               "De finnes ikke i det hele tatt",
-              "De finnes, men har en underordnet rolle",
+              "De finnes, men de er ikke de viktigste",
               "De styrer verden og skaper alt liv",
               "De er de eneste som kan nå nirvana"
             ],
             "correctAnswer": 1,
-            "explanation": "Guder finnes i buddhismen, men de spiller en underordnet rolle, i motsetning til i kristendommen, islam og hinduismen."
+            "explanation": "Guder finnes i buddhismen, men de er ikke de viktigste. Slik er det ikke i kristendommen, islam og hinduismen."
           },
           {
             "question": "Hvorfor kan ikke en deva frelse et menneske?",
@@ -224,7 +224,7 @@
               "Fordi Buddha har forbudt dem å hjelpe"
             ],
             "correctAnswer": 2,
-            "explanation": "Ingen av planene i buddhistisk kosmologi varer evig. Også devaene dør og fødes på nytt, og kan derfor ikke tilby noen vei ut."
+            "explanation": "Ingen av planene i buddhismens bilde av verden varer evig. Også devaene dør og fødes på nytt, og kan derfor ikke gi noen en vei ut."
           },
           {
             "question": "Hva ble Buddha regnet som av den eldste tradisjonen?",
@@ -235,29 +235,29 @@
               "En bodhisattva som aldri ble ferdig"
             ],
             "correctAnswer": 2,
-            "explanation": "Buddha ble ikke betraktet som en gud, men som et enestående vesen som ved egen kraft nådde den forløsende innsikten, og som lærte opp både guder og mennesker."
+            "explanation": "Buddha ble ikke regnet som en gud, men som et helt spesielt vesen som ved egen kraft fant den innsikten som gjør fri, og som lærte opp både guder og mennesker."
           },
           {
             "question": "Hva er nirvana i buddhismen?",
             "options": [
               "Den øverste himmelen der devaene bor",
-              "At lidelsen tar slutt og gjenfødelsen opphører",
+              "At lidelsen tar slutt og at du ikke blir født på nytt igjen",
               "En ny fødsel som menneske",
               "Navnet på Buddhas hjemsted"
             ],
             "correctAnswer": 1,
-            "explanation": "Nirvana er lidelsens endelige opphør og frigjøring fra uvitenhet og videre gjenfødelse. Det er ikke en høyere etasje i kretsløpet."
+            "explanation": "I nirvana tar all lidelse slutt, uvitenheten forsvinner, og du blir ikke født på nytt igjen. Det er ikke en høyere etasje i kretsløpet."
           },
           {
-            "question": "Hva er riktig om praksisen i deler av mahayana?",
+            "question": "Hva stemmer om det folk gjør i deler av mahayana?",
             "options": [
               "Der ber ingen til noen skikkelse i det hele tatt",
               "Der regnes bodhisattvaer som Avalokiteshvara og Tara som guddommelige og dyrkes med bønn",
-              "Der tilbes bare Buddha, og alle andre skikkelser er forbudt",
+              "Der dyrker de bare Buddha, og alle andre skikkelser er forbudt",
               "Der er samsara og nirvana det samme ordet"
             ],
             "correctAnswer": 1,
-            "explanation": "I mahayana blir enkelte bodhisattvaer sett på som guddommelige frelserskikkelser og dyrkes med bønn og tilbedelse."
+            "explanation": "I mahayana blir noen bodhisattvaer sett på som guddommelige og i stand til å redde folk, og de blir dyrket med bønn og tilbedelse."
           }
         ]
       }

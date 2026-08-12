@@ -16,9 +16,9 @@
     "heroImage": "/images/placeholder.webp",
     "details": [
         "Jehovas vitner døper ikke spedbarn. Dåpen er noe man ber om selv, etter å ha studert i månedsvis eller år.",
-        "Dåpen skjer ved full neddykking, som regel på de store stevnene som arrangeres hvert år.",
+        "Dåpen skjer ved at hele kroppen senkes under vann, som regel på de store stevnene, altså fellesmøtene, som holdes hvert år.",
         "Rett før neddykkingen svarer alle kandidatene ja på to spørsmål som leses høyt i salen.",
-        "Bryllup og begravelse holdes enkelt i Rikets sal, med en tale som kjerne. Det tas ikke opp kollekt.",
+        "Bryllup og begravelse holdes enkelt i Rikets sal, og en tale er det viktigste. Det samles ikke inn penger.",
         "Jul, påske og bursdager markeres ikke. Den ene faste markeringen i året er minnehøytiden."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
@@ -57,7 +57,7 @@
         },
         {
             "type": "text",
-            "content": "Dette er dåpen hos Jehovas vitner, og det er den viktigste overgangsriten de har. En overgangsrite er en seremoni som markerer at et menneske går fra én plass i samfunnet til en annen (Bertelsen, 2024). Forskeren Arnold van Gennep beskrev rundt 1909 at slike riter ofte har tre trinn: du løsrives fra det gamle, du er en stund i en mellomtilstand, og så tas du inn igjen med ny status (Bertelsen, 2024). Jehovas vitner har færre slike seremonier enn de fleste andre. Til gjengjeld er den ene de har, tung."
+            "content": "Dette er dåpen hos Jehovas vitner, og det er den viktigste overgangsriten de har. En overgangsrite er en seremoni som markerer at et menneske går fra én plass i samfunnet til en annen (Bertelsen, 2024). Forskeren Arnold van Gennep beskrev rundt 1909 at slike riter ofte har tre trinn: du løsrives fra det gamle, du er en stund i en mellomfase der du verken er det ene eller det andre, og så blir du tatt inn igjen med en ny plass i fellesskapet (Bertelsen, 2024). Jehovas vitner har færre slike seremonier enn de fleste andre. Til gjengjeld betyr den ene de har, desto mer."
         },
         {
             "type": "image",
@@ -79,7 +79,7 @@
         },
         {
             "type": "text",
-            "content": "Før noen kan bli døpt, må flere ting være på plass. Man studerer Bibelen slik Jehovas vitner leser den, ofte i månedsvis. Man skal leve etter det man lærer. Man skal angre. Så ber man en bønn alene der man lover Gud å gjøre hans vilje. Den bønnen kalles innvielsen. Til slutt går de eldste i menigheten gjennom spørsmål med den som vil døpes, for å se at hen har forstått hva dette betyr (Jehovas vitner, u.å.-a). Prøv rekkefølgen under."
+            "content": "Før noen kan bli døpt, må flere ting være på plass. Man studerer Bibelen slik Jehovas vitner leser den, ofte i månedsvis. Man skal leve etter det man lærer. Man skal angre. Så ber man en bønn alene der man lover Gud å gjøre hans vilje. Den bønnen kalles innvielsen. Til slutt går de eldste, som er lederne i menigheten, gjennom spørsmål med den som vil døpes, for å se at hen har forstått hva dette betyr (Jehovas vitner, u.å.-a). Prøv rekkefølgen under."
         },
         {
             "type": "component",
@@ -128,15 +128,15 @@
         },
         {
             "type": "text",
-            "content": "Bryllupet er enkelt. Mange gifter seg i Rikets sal når den er ledig. Kjernen i seremonien er en tale på omtrent en halvtime om hva Bibelen sier om ekteskapet (Jehovas vitner, u.å.-c). Paret kan utveksle løfter og ringer. I noen land kan en av Jehovas vitner vie folk med juridisk virkning. I andre land må paret innom det offentlige, enten rett før eller rett etter talen. Det serveres ikke mat i salen. Vil paret ha fest, holdes den et annet sted, og hvordan festen ser ut, varierer fra land til land og fra par til par (Jehovas vitner, u.å.-c)."
+            "content": "Bryllupet er enkelt. Mange gifter seg i Rikets sal når den er ledig. Kjernen i seremonien er en tale på omtrent en halvtime om hva Bibelen sier om ekteskapet (Jehovas vitner, u.å.-c). Paret kan utveksle løfter og ringer. I noen land kan en av Jehovas vitner vie folk slik at ekteskapet blir gyldig etter loven. I andre land må paret innom det offentlige, enten rett før eller rett etter talen. Det serveres ikke mat i salen. Vil paret ha fest, holdes den et annet sted, og hvordan festen ser ut, varierer fra land til land og fra par til par (Jehovas vitner, u.å.-c)."
         },
         {
             "type": "text",
-            "content": "Begravelsen følger samme mønster. En taler holder en tale som bygger på Bibelen, om døden og om håpet om oppstandelse. Ofte sies det noe om hvordan den døde levde. Det synges gjerne en sang, og det avsluttes med en bønn. Familien velger selv om det skal skje i Rikets sal, i et kapell, hjemme, i et krematorium eller ved graven. Det koster ingenting, og det tas ikke opp kollekt. Andre enn medlemmer er velkomne (Jehovas vitner, u.å.-d)."
+            "content": "Begravelsen følger samme mønster. En taler holder en tale som bygger på Bibelen, om døden og om håpet om oppstandelse. Ofte sies det noe om hvordan den døde levde. Det synges gjerne en sang, og det avsluttes med en bønn. Familien velger selv om det skal skje i Rikets sal, i et kapell, hjemme, i et krematorium eller ved graven. Det koster ingenting, og det samles ikke inn penger. Andre enn medlemmer er velkomne (Jehovas vitner, u.å.-d)."
         },
         {
             "type": "text",
-            "content": "Noen skikker holdes bevisst utenfor. Jehovas vitner mener at de døde ikke er ved bevissthet, og at de derfor verken kan følge med på de levende eller påvirke dem. Derfor holder de ikke likvake, de markerer ikke årsdagen for dødsfallet, og de verken snakker til de døde eller ber dem om noe (Jehovas vitner, u.å.-d). De unngår også dyre kister og påkostede seremonier. Håpet deres er at de aller fleste døde skal få livet tilbake på en jord som er gjort om til et paradis, mens et mindretall på 144 000 skal styre sammen med Jesus i himmelen (Ringnes mfl., 2026). Mer om dette står i artikkelen om [frelse](/krle/religion/jehovas-vitner/frelse)."
+            "content": "Noen skikker holdes bevisst utenfor. Jehovas vitner mener at de døde ikke merker noe, og at de derfor verken kan følge med på de levende eller påvirke dem. Derfor sitter ingen våke ved kisten, de markerer ikke årsdagen for dødsfallet, og de verken snakker til de døde eller ber dem om noe (Jehovas vitner, u.å.-d). De unngår også dyre kister og store, kostbare seremonier. Håpet deres er at de aller fleste døde skal få livet tilbake på en jord som er gjort om til et paradis, mens et mindretall på 144 000 skal styre sammen med Jesus i himmelen (Ringnes mfl., 2026). Mer om dette står i artikkelen om [frelse](/krle/religion/jehovas-vitner/frelse)."
         },
         {
             "type": "image",
@@ -158,7 +158,7 @@
         },
         {
             "type": "text",
-            "content": "Bildet som trer fram, er stramt. Ingen navneseremoni ved fødselen, ingen konfirmasjon fordi man har fylt fjorten, ingen bursdager. Det som blir igjen, er en dag du selv har bedt om, et bryllup uten stas og en begravelse uten pynt. Overgangene som markeres, er nettopp de man har valgt."
+            "content": "Samlet blir dette et stramt mønster. Ingen navneseremoni ved fødselen, ingen konfirmasjon fordi man har fylt fjorten, ingen bursdager. Det som blir igjen, er en dag du selv har bedt om, et bryllup uten stas og en begravelse uten pynt. Overgangene som markeres, er nettopp de man har valgt."
         },
         {
             "type": "component",
@@ -173,7 +173,7 @@
                 "reflekter": [
                     "Innvielsesbønnen ber man alene, og ingen andre hører den. Hvorfor tror du den likevel regnes som selve vendepunktet?",
                     "Forklar med egne ord forskjellen på en overgangsrite som skjer med deg, og en du må be om selv.",
-                    "Bruk van Genneps tre trinn (løsrivelse, mellomtilstand, ny status) på dåpen hos Jehovas vitner. Passer modellen?",
+                    "Bruk van Genneps tre trinn (løsrivelse, mellomfase, ny plass i fellesskapet) på dåpen hos Jehovas vitner. Passer modellen?",
                     "Jehovas vitner markerer verken bursdager eller jul. Hva tror du det gjør med hvor mye de få seremoniene de har, betyr?"
                 ],
                 "gaaVidere": [
@@ -224,13 +224,13 @@
                     {
                         "question": "Hva er kjernen i en begravelse hos Jehovas vitner?",
                         "options": [
-                            "En likvake natten før",
+                            "At noen våker ved kisten natten før",
                             "En tale som bygger på Bibelen, om døden og håpet om oppstandelse",
                             "En bønn til den døde",
                             "En messe med nattverd"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Talen er kjernen. Det synges gjerne en sang og avsluttes med bønn. Seremonien skal være enkel, og det tas ikke opp kollekt."
+                        "explanation": "Talen er kjernen. Det synges gjerne en sang og avsluttes med bønn. Seremonien skal være enkel, og det samles ikke inn penger."
                     },
                     {
                         "question": "Hvilken markering holder Jehovas vitner én gang i året?",

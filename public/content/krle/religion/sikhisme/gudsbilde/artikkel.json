@@ -12,8 +12,8 @@
   "heroImage": "/images/placeholder.webp",
   "details": [
     "Sikhene tror på én Gud som verken er født eller kommer til å dø.",
-    "Den hellige boka åpner med linja Mul Mantar, som beskriver Gud med åtte korte ledd.",
-    "Ingen av leddene sier noe om hvordan Gud ser ut.",
+    "Den hellige boka åpner med linja Mul Mantar, som beskriver Gud i åtte korte punkter.",
+    "Ingen av punktene sier noe om hvordan Gud ser ut.",
     "Derfor står det ingen gudestatue i en gurdwara. Der en statue kunne stått, ligger boka.",
     "Gud har mange navn i sikhismen, blant dem Vahiguru, Nam og Akal Purakh."
   ],
@@ -36,7 +36,7 @@
     {
       "id": "nam-simaran",
       "term": "Nam simaran",
-      "definition": "Å gjenta og meditere over Guds navn. En av hovedmåtene sikher nærmer seg Gud på."
+      "definition": "Å gjenta Guds navn og tenke på det. En av de viktigste måtene sikher nærmer seg Gud på."
     },
     {
       "id": "gurdwara",
@@ -69,15 +69,15 @@
     },
     {
       "type": "text",
-      "content": "Guru Granth Sahib inneholder rundt 6000 salmer, skrevet av de første fem guruene, den niende guruen, og noen hinduiske og sufiske dikterhelgener (Jacobsen, 2020). Men aller først, før alt det andre, står en kort linje. Den kalles Mul Mantar, grunnlinja."
+      "content": "Guru Granth Sahib inneholder rundt 6000 salmer, skrevet av de fem første guruene, den niende guruen, og noen hinduiske og muslimske diktere som ble regnet som hellige (Jacobsen, 2020). Men aller først, før alt det andre, står en kort linje. Den kalles Mul Mantar, grunnlinja."
     },
     {
       "type": "text",
-      "content": "Den begynner med to ord som er blitt selve kjennetegnet på sikhismen: Ik Onkar. Det betyr omtrent at det finnes én. Én virkelighet, én Gud, som alt annet henger sammen i. Hele åpningen sier at det bare finnes én Gud, og at navnet hans er sannhet (Jacobsen, 2020)."
+      "content": "Den begynner med to ord som er blitt selve kjennetegnet på sikhismen: Ik Onkar. Det betyr omtrent at det finnes én. Én Gud, og alt annet henger sammen i den ene. Hele åpningen sier at det bare finnes én Gud, og at navnet hans er sannhet (Jacobsen, 2020)."
     },
     {
       "type": "text",
-      "content": "Så kommer resten av linja, ledd for ledd. Til sammen er det åtte korte beskrivelser, og så en niende setning om at Gud nås gjennom guruens nåde. Heng de åtte opp i rammen under, én om gangen, og følg med på hva som skjer med bildet."
+      "content": "Så kommer resten av linja, punkt for punkt. Til sammen er det åtte korte beskrivelser, og så en niende setning: du kommer bare fram til Gud hvis guruen gir deg hjelpen du ikke klarer å skaffe selv. Heng de åtte opp i rammen under, én om gangen, og følg med på hva som skjer med bildet."
     },
     {
       "type": "component",
@@ -88,7 +88,7 @@
     },
     {
       "type": "text",
-      "content": "Legg merke til hva som skjedde. Du hengte opp åtte beskrivelser, og du vet fortsatt ingenting om hvordan Gud ser ut. Hvert ledd sier hvordan Gud er, eller hva Gud ikke er. Ingen av dem sier noe om form, farge, ansikt eller kropp."
+      "content": "Legg merke til hva som skjedde. Du hengte opp åtte beskrivelser, og du vet fortsatt ingenting om hvordan Gud ser ut. Hvert punkt sier hvordan Gud er, eller hva Gud ikke er. Ingen av dem sier noe om form, farge, ansikt eller kropp."
     },
     {
       "type": "header",
@@ -96,19 +96,19 @@
     },
     {
       "type": "text",
-      "content": "Ett av leddene gjør mer av jobben enn de andre. Ajuni betyr aldri født. Gud har aldri kommet til verden som noen eller noe, og skal aldri gjøre det. Der andre religioner forteller om en Gud som blir menneske, eller om guder som viser seg i en bestemt skikkelse, sier sikhismen nei. Ingen fødsel, ingen kropp. Og har Gud aldri hatt en kropp, finnes det heller ingenting å avbilde."
+      "content": "Ett av punktene sier mer enn de andre. Ajuni betyr aldri født. Gud har aldri kommet til verden som noen eller noe, og skal aldri gjøre det. Der andre religioner forteller om en Gud som blir menneske, eller om guder som viser seg i en bestemt skikkelse, sier sikhismen nei. Ingen fødsel, ingen kropp. Og har Gud aldri hatt en kropp, finnes det heller ingenting å avbilde."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Hvorfor dette er en stor forskjell",
-        "content": "Mange hinduer møter det guddommelige gjennom en murti, et innviet bilde eller en figur i tempelet. Det er ikke slik at figuren er Gud, men den er et sted å møte Gud. Sikhismen har ikke noe tilsvarende. Der plassen for det hellige bildet ville vært, ligger i stedet ordene."
+        "content": "Mange hinduer møter det hellige gjennom en murti, altså et hellig bilde eller en figur i tempelet. Figuren er ikke Gud, men den er et sted å møte Gud. Sikhismen har ikke noe slikt. Der det hellige bildet kunne ligget, ligger ordene i stedet."
       }
     },
     {
       "type": "text",
-      "content": "Samtidig er ikke Gud langt borte. Sikhismen framhever én samlet, altomfattende guddom som er én, evig, allvitende og allmektig, og som er å finne i menneskets egen sjel (Kristiansen, Kværne og Jacobsen, 2024). Gud er altså ikke usynlig fordi Gud er fjern, men fordi Gud ikke har noen ytterside å se på. Du kan lese mer om boka som holder disse ordene i artikkelen om [Guru Granth Sahib](/krle/religion/sikhisme/hellige-tekster)."
+      "content": "Samtidig er ikke Gud langt borte. Sikhene tror på én eneste Gud som finnes overalt. Gud er evig, vet alt og kan alt, og finnes inne i mennesket selv (Kristiansen, Kværne og Jacobsen, 2024). Gud er altså ikke usynlig fordi Gud er langt borte, men fordi Gud ikke har noen utside å se på. Du kan lese mer om boka som holder disse ordene i artikkelen om [Guru Granth Sahib](/krle/religion/sikhisme/hellige-tekster)."
     },
     {
       "type": "image",
@@ -122,15 +122,15 @@
     },
     {
       "type": "text",
-      "content": "Hvis du spør en sikh hva Gud heter, får du ofte svaret Vahiguru. Men det er ikke det eneste navnet. Guru Nanak brukte flere: Nam, Akal Purakh, Ram og andre. Poenget er at Gud går utover språket (Jacobsen, 2025). Ingen av navnene tar hele Gud."
+      "content": "Hvis du spør en sikh hva Gud heter, får du ofte svaret Vahiguru. Men det er ikke det eneste navnet. Guru Nanak brukte flere: Nam, Akal Purakh, Ram og andre. Poenget er at ingen ord klarer å fange Gud helt (Jacobsen, 2025). Ingen av navnene sier alt."
     },
     {
       "type": "text",
-      "content": "Dette er verdt å stoppe ved. Ram er et navn mange hinduer bruker, og flere av navnene har røtter i den samme verdenen som islam og hinduismen vokste i. Sikhismen låner ikke bare ordene, den sier noe med det: den ene Gud er den samme uansett hvilket språk folk bruker. Guru Granth Sahib inneholder også dikt av både hinduiske og muslimske helgener (Jacobsen, 2020). Det er ikke vanlig at en hellig bok gjør plass til andre tradisjoners stemmer."
+      "content": "Dette er verdt å stoppe ved. Ram er et navn mange hinduer bruker, og flere av navnene har røtter i den samme verdenen som islam og hinduismen vokste i. Sikhismen låner ikke ordene bare for å låne. Meningen er at den ene Guden er den samme, uansett hvilket språk folk bruker. Guru Granth Sahib inneholder også dikt av både hinduiske og muslimske helgener (Jacobsen, 2020). Det er ikke vanlig at en hellig bok gjør plass til stemmer fra andre religioner."
     },
     {
       "type": "text",
-      "content": "Som i alle religioner finnes det ulike syn blant sikher selv, blant annet på hvor bokstavelig ordene i Mul Mantar skal forstås, og på hvor mye av det som lar seg oversette i det hele tatt. Guru Nanak lærte at Vahiguru er altomfattende og styrer verden, og at verden ble skapt gjennom Guds vilje (Jacobsen, 2025). Hvordan det skal forstås, har sikher diskutert i fem hundre år."
+      "content": "Som i alle religioner finnes det ulike syn blant sikher selv, blant annet på hvor ordrett ordene i Mul Mantar skal forstås, og på hvor mye av dem som i det hele tatt lar seg oversette. Guru Nanak lærte at Vahiguru finnes overalt og styrer verden, og at verden ble til fordi Gud ville det (Jacobsen, 2025). Hvordan det skal forstås, har sikher diskutert i fem hundre år."
     },
     {
       "type": "header",
@@ -138,7 +138,7 @@
     },
     {
       "type": "text",
-      "content": "Hvis du ikke kan se Gud, hvordan kommer du da nær? Svaret i sikhismen handler om navnet, ikke om bildet. Nam simaran betyr å gjenta og meditere over Guds navn. Sammen med seva, det å gjøre noe for andre, og kirat, det å arbeide ærlig, er dette veien Guru Nanak pekte på for å bli fri fra gjenfødelsen (Jacobsen, 2025)."
+      "content": "Hvis du ikke kan se Gud, hvordan kommer du da nær? Svaret i sikhismen handler om navnet, ikke om bildet. Nam simaran betyr å gjenta Guds navn og holde det i tankene. Sammen med seva, det å gjøre noe for andre, og kirat, det å arbeide ærlig, er dette veien Guru Nanak pekte på for å bli fri fra gjenfødelsen (Jacobsen, 2025)."
     },
     {
       "type": "component",
@@ -150,11 +150,11 @@
     },
     {
       "type": "text",
-      "content": "Legg merke til at ingen av de tre veiene krever et bilde. Du synger, du hjelper, du arbeider. I gurdwaraen synges ordene av musikere til orgel og tromme, og de som er der mediterer over det som blir sunget som guddommelig tale (Jacobsen, 2020). Boka er ikke pynt. Den er det stedet Gud blir tilgjengelig."
+      "content": "Legg merke til at ingen av de tre veiene krever et bilde. Du synger, du hjelper, du arbeider. I gurdwaraen synges ordene av musikere til orgel og tromme, og de som sitter der lytter til sangen som om det er Gud selv som snakker (Jacobsen, 2020). Boka er ikke pynt. Den er stedet der Gud blir mulig å nå."
     },
     {
       "type": "text",
-      "content": "Samtidig er ikke veien noe du klarer på egen hånd. Det siste leddet i Mul Mantar sier at Gud nås gjennom guruens nåde. Å bli forent med Gud krever nåde, ikke bare menneskelig innsats (Kristiansen, Kværne og Jacobsen, 2024). Du kan gjenta navnet i femti år, men gaven kommer fra den andre siden."
+      "content": "Samtidig er ikke veien noe du klarer på egen hånd. Det siste punktet i Mul Mantar sier at du bare når Gud gjennom guruens nåde. Nåde betyr å få noe du ikke har gjort deg fortjent til. Selve møtet med Gud kan du ikke få til alene, uansett hvor hardt du prøver. Det må Gud gi deg (Kristiansen, Kværne og Jacobsen, 2024). Du kan gjenta navnet i femti år, men det siste steget er en gave."
     },
     {
       "type": "image",
@@ -168,7 +168,7 @@
     },
     {
       "type": "text",
-      "content": "Gå tilbake til gurdwaraen en siste gang. Rommet er ikke tomt fordi sikhene mangler noe. Det er tomt fordi de mener at et bilde ville gjort Gud mindre. Alt som kan tegnes, har en kant. Har det en kant, er det ikke altomfattende lenger."
+      "content": "Gå tilbake til gurdwaraen en siste gang. Rommet er ikke tomt fordi sikhene mangler noe. Det er tomt fordi de mener at et bilde ville gjort Gud mindre. Alt som kan tegnes, har en kant. Og har noe en kant, finnes det ikke lenger overalt."
     },
     {
       "type": "text",
@@ -181,14 +181,14 @@
         "forstaa": [
           "Hva ligger fremme i rommet i en gurdwara, der andre religioner ville hatt et gudebilde?",
           "Hva betyr de to første ordene i Guru Granth Sahib, Ik Onkar?",
-          "Hva betyr leddet ajuni, og hvorfor har det så mye å si for om Gud kan avbildes?",
+          "Hva betyr ordet ajuni, og hvorfor har det så mye å si for om Gud kan tegnes?",
           "Nevn minst tre navn sikhene bruker om Gud."
         ],
         "reflekter": [
-          "Forklar med egne ord hvorfor ingen av leddene i Mul Mantar gjør det mulig å tegne Gud.",
+          "Forklar med egne ord hvorfor ingen av punktene i Mul Mantar gjør det mulig å tegne Gud.",
           "Guru Granth Sahib inneholder dikt av både hinduiske og muslimske helgener. Hva sier det om sikhismens syn på andre religioner?",
           "Artikkelen sier at alt som kan tegnes, har en kant. Er det et godt argument mot gudebilder? Begrunn svaret.",
-          "Sikhismen sier at Gud finnes i menneskets egen sjel, men også at forening med Gud krever nåde. Hvordan henger de to tankene sammen?"
+          "Sikhismen sier at Gud finnes inne i mennesket selv, men også at bare Gud kan gi deg det siste steget fram til seg. Hvordan henger de to tankene sammen?"
         ],
         "gaaVidere": [
           "Sammenlign gudsbildet i sikhismen med [Tawhid i islam](/krle/religion/islam/gudsbilde). Hva er likt, og hva skiller?",
@@ -214,7 +214,7 @@
             "explanation": "Sikhene regner Guru Granth Sahib som sin levende guru, og et eksemplar ligger på alteret i hver gurdwara."
           },
           {
-            "question": "Hva betyr leddet ajuni i Mul Mantar?",
+            "question": "Hva betyr ordet ajuni i Mul Mantar?",
             "options": [
               "Uten frykt",
               "Til av seg selv",
@@ -244,7 +244,7 @@
               "Navneseremonien for nyfødte"
             ],
             "correctAnswer": 1,
-            "explanation": "Nam simaran er meditasjon over det hellige navnet, og hører sammen med seva og ærlig arbeid."
+            "explanation": "Nam simaran er å gjenta det hellige navnet og holde det i tankene. Det hører sammen med seva og ærlig arbeid."
           },
           {
             "question": "Hva er spesielt med hvem som har skrevet i Guru Granth Sahib?",
@@ -255,7 +255,7 @@
               "Ingen vet hvem som skrev den"
             ],
             "correctAnswer": 1,
-            "explanation": "I tillegg til guruene inneholder boka religiøs poesi av hinduiske og sufiske dikterhelgener."
+            "explanation": "I tillegg til guruene inneholder boka dikt av hinduiske og muslimske diktere som ble regnet som hellige."
           }
         ]
       }

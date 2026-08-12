@@ -15,20 +15,20 @@
         "urfolk"
     ],
     "details": [
-        "I samisk religion er naturen selv hellig — fjell, vann og dyr har sin egen ånd.",
-        "Noaiden var brua mellom denne verden og åndeverdenen, og brukte runebommen som verktøy.",
+        "I samisk religion er naturen selv hellig: fjell, vann og dyr har sin egen ånd.",
+        "Noaiden, altså sjamanen, var brua mellom denne verden og åndeverdenen, og brukte trommen sin som verktøy.",
         "På 1600- og 1700-tallet ble nesten alt forbudt og brent av norske misjonærer."
     ],
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg at du står på et fjell i Nord-Norge. Snøen ligger fortsatt i kløftene, selv om det er juni. Under deg ser du en lavvu med røyk som siver opp. Du føler at noen ser deg — men det er ingen mennesker i nærheten. For samene som bodde her før, var den følelsen helt forståelig. Naturen var ikke tom. Den var full av åndelige vesener som lå og fulgte med."
+            "content": "Tenk deg at du står på et fjell i Nord-Norge. Snøen ligger fortsatt i kløftene, selv om det er juni. Under deg ser du en lavvu med røyk som siver opp. Du føler at noen ser deg, men det er ingen mennesker i nærheten. For samene som bodde her før, var den følelsen helt forståelig. Naturen var ikke tom. Den var full av åndelige vesener som lå og fulgte med."
         },
         {
             "type": "image",
             "src": "/images/samisk/intro-01.webp",
             "alt": "Snødekt samisk vidde med en lavvu og røyk om vinteren",
-            "caption": "Naturen var ikke et bakteppe — den var selve det hellige rommet."
+            "caption": "Naturen var ikke bare en bakgrunn. Den var selve det hellige rommet."
         },
         {
             "type": "header",
@@ -36,23 +36,23 @@
         },
         {
             "type": "text",
-            "content": "Samisk religion ligner ikke på kristendom, islam eller jødedom. Det fantes ingen kirker, ingen hellig bok og ingen prester som leste fra en preken. Troen lå i landskapet selv. Et bestemt fjell kunne være hellig fordi forfedrene mente at en sterk ånd bodde der. En foss eller en stein kunne være et sieidi — et offersted der folk la igjen reinhorn, fiskebein eller litt mat for å takke for et godt år."
+            "content": "Samisk religion ligner ikke på kristendom, islam eller jødedom. Det fantes ingen kirker, ingen hellig bok og ingen prester som leste fra en preken. Troen lå i landskapet selv. Et bestemt fjell kunne være hellig fordi forfedrene mente at en sterk ånd bodde der. En foss eller en stein kunne være et sieidi, altså et offersted der folk la igjen reinhorn, fiskebein eller litt mat for å takke for et godt år."
         },
         {
             "type": "text",
-            "content": "Verden hadde tre lag. Øverst var gudene og sola. I midten levde menneskene, reinen og alt annet liv. Nederst lå Jábmiidáibmu — de dødes rike, der forfedrene fortsatte å leve. De tre lagene hang sammen, og det var mulig å bevege seg mellom dem hvis man visste hvordan."
+            "content": "Verden hadde tre lag. Øverst var gudene og sola. I midten levde menneskene, reinen og alt annet liv. Nederst lå Jábmiidáibmu, de dødes rike, der forfedrene fortsatte å leve. De tre lagene hang sammen, og det var mulig å bevege seg mellom dem hvis man visste hvordan."
         },
         {
             "type": "header",
-            "text": "Noaiden — brua mellom verdenene"
+            "text": "Noaiden - brua mellom verdenene"
         },
         {
             "type": "text",
-            "content": "I hver siida, altså i hvert lille slektsfellesskap, fantes det gjerne en noaide. Det var en åndelig leder som visste hvordan man tok kontakt med åndene. Noaiden var hverken bare lege eller bare prest — hen var litt av begge deler. Når noen ble syk, når reinflokken forsvant, eller når folk trengte råd om en stor avgjørelse, gikk de til noaiden."
+            "content": "I hver siida, altså i hvert lille slektsfellesskap, fantes det gjerne en noaide. Det var en åndelig leder som visste hvordan man tok kontakt med åndene. Noaiden var verken bare lege eller bare prest, men litt av begge deler. Når noen ble syk, når reinflokken forsvant, eller når folk trengte råd om en stor avgjørelse, gikk de til noaiden."
         },
         {
             "type": "text",
-            "content": "Noaiden brukte trommen for å komme i kontakt med åndene. Etter lange seremonier med joik, røyk og trommeslag falt noaiden i en slags dyp drøm. Folk sa at noaidens sjel da forlot kroppen og reiste til de andre verdenene. Hen kunne snakke med forfedrene i Jábmiidáibmu eller forhandle med gudene i øvre verden — og komme tilbake med svar."
+            "content": "Noaiden brukte trommen for å komme i kontakt med åndene. Etter lange seremonier med joik, røyk og trommeslag falt noaiden i en slags dyp drøm. Folk sa at noaidens sjel da forlot kroppen og reiste til de andre verdenene. Noaiden kunne snakke med forfedrene i Jábmiidáibmu eller be gudene i øvre verden om hjelp, og så komme tilbake med svar."
         },
         {
             "type": "component",
@@ -64,22 +64,22 @@
         },
         {
             "type": "header",
-            "text": "Levende natur — et eget verdenssyn"
+            "text": "Levende natur - et eget verdenssyn"
         },
         {
             "type": "text",
-            "content": "Et viktig trekk ved samisk religion er at alle ting har en ånd. Et tre er ikke bare et tre. En bjørn er ikke bare et dyr. Bjørnen ble holdt for å være så hellig at jegerne ikke engang nevnte navnet hans rett ut — de kalte hen heller for besten i skogen. Etter et vellykket bjørnejakt fulgte lange seremonier for å takke bjørnens ånd og be om at hen kom tilbake neste år."
+            "content": "Et viktig trekk ved samisk religion er at alle ting har en ånd. Et tre er ikke bare et tre. En bjørn er ikke bare et dyr. Bjørnen var så hellig at jegerne ikke engang sa navnet på den rett ut. De kalte den heller besten i skogen, altså den gamle i skogen. Etter en vellykket bjørnejakt fulgte lange seremonier der folk takket bjørnens ånd og ba om at den kom tilbake neste år."
         },
         {
             "type": "text",
-            "content": "Denne måten å se naturen på har et navn: animisme. Det betyr at alt levende — og mange ting vi vil kalle livløse, som steiner og vann — bærer på en åndelig kraft. For et menneske i en slik tro er det ikke mulig å bare ta fra naturen. Du må alltid gi noe tilbake. Et godt liv handlet om balanse, ikke om å eie mest."
+            "content": "Denne måten å se naturen på har et navn: animisme. Det betyr at alt levende har en åndelig kraft, og det samme har mange ting vi vil kalle døde, som steiner og vann. Tror du på dette, kan du ikke bare ta fra naturen. Du må alltid gi noe tilbake. Et godt liv handlet om balanse, ikke om å eie mest."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Joik — bønn formet som sang",
-                "content": "Joik er ikke en sang om noen, men en sang som er noen. Du joiker fjellet, ikke om fjellet. Joiken var en åndelig handling som knyttet personen, dyret eller stedet tett til den som joiket. Kirken forbød joik i mange områder helt fram til 1950-tallet."
+                "title": "Joik - bønn formet som sang",
+                "content": "Du joiker ikke om fjellet. Du joiker fjellet. En joik skal ikke fortelle om noen, den skal på et vis være den personen, det dyret eller det stedet du joiker. Joiken var en åndelig handling som knyttet personen, dyret eller stedet tett til den som joiket. Kirken forbød joik i mange områder helt fram til 1950-tallet."
             }
         },
         {
@@ -98,7 +98,7 @@
         },
         {
             "type": "text",
-            "content": "Misjonærene samlet inn runebommer fra hele Sápmi. De ble brent på bål, eller sendt til samlinger i København. I dag er rundt 70 runebommer bevart i hele verden — av kanskje tusenvis som fantes. Noaidene ble jaktet på. Noen ble dømt for trolldom og henrettet. Joik ble straffet. Sieidiene ble veltet, og barn ble fortalt at hvis de fortsatte med den gamle troen, ville de havne i helvete."
+            "content": "Misjonærene samlet inn runebommer fra hele Sápmi. De ble brent på bål, eller sendt til samlinger i København. I dag er rundt 70 runebommer bevart i hele verden, av kanskje tusenvis som fantes. Noaidene ble jaktet på. Noen ble dømt for trolldom og henrettet. Joik ble straffet. Sieidiene ble veltet, og barn ble fortalt at hvis de fortsatte med den gamle troen, ville de havne i helvete."
         },
         {
             "type": "text",
@@ -110,11 +110,11 @@
         },
         {
             "type": "text",
-            "content": "I dag er de fleste samer kristne — mange tilhører den læstadianske vekkelsen, som har samiske røtter og bruker samisk språk i kirken. Men de siste tiårene har det også vokst fram en ny interesse for den gamle troen. Noen samer kaller seg igjen for naturreligiøse. De besøker gamle sieidi-steder, joiker åpent, og lager nye runebommer som ikke skal brukes til seid, men som kunstverk og minne om hva som ble tatt bort."
+            "content": "I dag er de fleste samer kristne, og mange er med i den læstadianske vekkelsen, en kristen bevegelse med samiske røtter som bruker samisk språk i kirken. Men de siste tiårene har det også vokst fram en ny interesse for den gamle troen. Noen samer kaller seg igjen for naturreligiøse. De besøker gamle sieidi-steder, joiker åpent, og lager nye runebommer som ikke skal brukes til å reise til åndeverdenen, men som kunstverk og minne om det som ble tatt bort."
         },
         {
             "type": "text",
-            "content": "I 2017 ba Den norske kirke offentlig om unnskyldning for fornorskingen og misjonen mot samene. Det er en del av et større forsøk på å rette opp gammel urett. Samtidig pågår diskusjonen om hvem som har rett til de gamle runebommene som ligger i museer i utlandet — og om de bør komme hjem."
+            "content": "I 2017 ba Den norske kirke offentlig om unnskyldning for misjonen mot samene og for fornorskingen, altså politikken som skulle gjøre samer om til nordmenn. Det er en del av et større forsøk på å rette opp gammel urett. Samtidig diskuteres det hvem som eier de gamle runebommene som ligger i museer i utlandet, og om de bør komme hjem."
         },
         {
             "type": "component",
@@ -130,7 +130,7 @@
         },
         {
             "type": "text",
-            "content": "Samisk religion er en av de eldste religiøse tradisjonene i Norge. Den ble nesten utslettet, men den har overlevd. I dag er den både en åndelig praksis, en del av samisk identitet, og et speil for resten av oss: når vi snakker om klima, natur og bærekraft, har samisk tradisjon allerede sagt noe viktig. Du tar ikke uten å gi tilbake. Du eier ikke naturen — du er en del av den."
+            "content": "Samisk religion er en av de eldste religiøse tradisjonene i Norge. Den ble nesten utslettet, men den har overlevd. I dag er den både en levende tro, en del av det å være same, og noe resten av oss kan lære av: når vi snakker om klima, natur og bærekraft, har samisk tradisjon allerede sagt noe viktig. Du tar ikke uten å gi tilbake. Du eier ikke naturen. Du er en del av den."
         },
         {
             "type": "component",
@@ -147,18 +147,18 @@
                             "En type runebomme"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Sieidi var et hellig sted i landskapet — gjerne en stein, foss eller fjellformasjon — der folk la igjen offergaver for å takke åndene."
+                        "explanation": "Sieidi var et hellig sted i naturen, gjerne en stein, en foss eller et fjell, der folk la igjen gaver for å takke åndene."
                     },
                     {
                         "question": "Hvilken rolle hadde noaiden?",
                         "options": [
-                            "Hen var konge over samene",
-                            "Hen var den eneste som kunne joike",
-                            "Hen var brua mellom denne verden og åndeverdenen",
-                            "Hen styrte handel mellom samer og nordmenn"
+                            "Noaiden var konge over samene",
+                            "Noaiden var den eneste som kunne joike",
+                            "Noaiden var brua mellom denne verden og åndeverdenen",
+                            "Noaiden styrte handel mellom samer og nordmenn"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Noaiden var en åndelig leder som kunne 'reise' til andre verdener for å hente råd, helbrede syke og snakke med forfedrene."
+                        "explanation": "Noaiden var en åndelig leder som kunne reise til andre verdener med sjelen sin for å hente råd, gjøre syke friske og snakke med forfedrene."
                     },
                     {
                         "question": "Hva skjedde med runebommene på 1700-tallet?",
@@ -169,7 +169,7 @@
                             "De ble brukt i kirkene"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Misjonærer som Thomas von Westen samlet inn runebommene og brente dem. Bare rundt 70 er bevart i dag — mange i utenlandske museer."
+                        "explanation": "Misjonærer som Thomas von Westen samlet inn runebommene og brente dem. Bare rundt 70 er bevart i dag, og mange av dem står i museer i utlandet."
                     },
                     {
                         "question": "Hva betyr animisme?",
@@ -180,7 +180,7 @@
                             "Troen på at livet slutter ved døden"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Animisme er troen på at alt i naturen — dyr, planter, steiner, vann — bærer på en åndelig kraft. Det er kjernen i samisk religion."
+                        "explanation": "Animisme er troen på at alt i naturen har en åndelig kraft: dyr, planter, steiner og vann. Det er kjernen i samisk religion."
                     },
                     {
                         "question": "Hvorfor er samisk religion fortsatt viktig i dag?",
@@ -191,7 +191,7 @@
                             "Den krever at alle skal være medlem"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Samisk religion bærer videre et verdenssyn der mennesket er en del av naturen, ikke over den. Den er også en sentral del av samisk identitet og kulturarv."
+                        "explanation": "Samisk religion bærer videre en måte å se verden på der mennesket er en del av naturen, ikke over den. Den er også en sentral del av samisk identitet og kulturarv."
                     }
                 ]
             }

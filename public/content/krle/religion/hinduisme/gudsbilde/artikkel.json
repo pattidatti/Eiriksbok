@@ -15,10 +15,10 @@
     "heroImage": "/images/placeholder.webp",
     "details": [
         "Hinduismen har ingen felles lære om hvem Gud er som alle hinduer er enige om.",
-        "Brahman er den ene, usynlige virkeligheten som finnes i alt, også i mennesket selv.",
-        "De mange gudene kan forstås som navn og former på den samme enheten.",
+        "Brahman er det ene, usynlige som finnes i alt, også inne i mennesket.",
+        "De mange gudene kan forstås som ulike navn og skikkelser for det samme ene.",
         "Vaishnaver setter Vishnu høyest, shaivaer setter Shiva høyest, shaktaer setter gudinnen høyest.",
-        "Murti er det innviede gudebildet, og darshan er å se guden og bli sett av guden."
+        "Murti er gudebildet som er gjort hellig, og darshan er å se guden og bli sett av guden."
     ],
     "createdDate": "2025-12-04T12:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -26,7 +26,7 @@
         {
             "id": "brahman",
             "term": "Brahman",
-            "definition": "Verdens og universets enhet. Den usynlige virkeligheten som finnes i alt."
+            "definition": "Det som binder hele verden sammen, og som ligger bak alle gudene. Usynlig, og til stede i alt."
         },
         {
             "id": "atman",
@@ -41,12 +41,12 @@
         {
             "id": "murti",
             "term": "Murti",
-            "definition": "Et innviet gudebilde. Stedet der mange hinduer møter guden."
+            "definition": "Et gudebilde som er gjort hellig i en egen seremoni. Her møter mange hinduer guden."
         },
         {
             "id": "darshan",
             "term": "Darshan",
-            "definition": "Å se guddommen i det innviede bildet, og selv bli sett av guddommen."
+            "definition": "Å se guden i det hellige bildet, og selv bli sett av guden."
         }
     ],
     "quote": {
@@ -79,15 +79,15 @@
         },
         {
             "type": "text",
-            "content": "Det viktigste ordet er Brahman. Brahman er verdens og universets enhet, og blir beskrevet som usynlig, uforanderlig og til stede i alt (Jacobsen, 2024a). Brahman er altså ikke en gud som sitter et sted og ser ned på verden. Brahman er den virkeligheten alt annet er en del av."
+            "content": "Det viktigste ordet er Brahman. Brahman er det som binder verden og universet sammen til ett, og blir beskrevet som usynlig, uforanderlig og til stede i alt (Jacobsen, 2024a). Brahman er altså ikke en gud som sitter et sted og ser ned på verden. Brahman er det alt annet er en del av."
         },
         {
             "type": "text",
-            "content": "Inne i hvert menneske finnes atman, det udødelige selvet (Jacobsen, 2024a). Her begynner en av de eldste diskusjonene i hinduismen. Filosofen Shankara, som levde rundt år 800, lærte at atman og Brahman er nøyaktig det samme, og at alt annet ikke har noen virkelig eksistens (Jacobsen, 2024a). Ramanuja, som levde noen hundre år senere, mente derimot at Brahman alltid er noe annet enn det enkelte selvet (Jacobsen, 2024a). Uenigheten er over tusen år gammel og lever fortsatt."
+            "content": "Inne i hvert menneske finnes atman, det udødelige selvet (Jacobsen, 2024a). Her begynner en av de eldste diskusjonene i hinduismen. Filosofen Shankara, som levde rundt år 800, lærte at atman og Brahman er nøyaktig det samme, og at alt annet egentlig ikke finnes (Jacobsen, 2024a). Ramanuja, som levde noen hundre år senere, mente derimot at Brahman alltid er noe annet enn det enkelte selvet (Jacobsen, 2024a). Uenigheten er over tusen år gammel og lever fortsatt."
         },
         {
             "type": "text",
-            "content": "Så hvor blir det da av alle gudene i tempelet? Mange hinduer skiller mellom Brahman uten egenskaper, som ikke har noen form i det hele tatt, og Brahman med egenskaper, som er en gud du kan snakke til. Det er denne tanken som binder det hele sammen: Shiva, Vishnu og Durga blir da personifikasjoner av den samme guddommelige enheten (Jacobsen, 2024a). Prøv det i linsene under. Gudene er de samme hele tiden. Det er blikket som flytter seg."
+            "content": "Så hvor blir det da av alle gudene i tempelet? Mange hinduer skiller mellom Brahman uten egenskaper, som ikke har noen form i det hele tatt, og Brahman med egenskaper, som er en gud du kan snakke til. Det er denne tanken som binder det hele sammen: Shiva, Vishnu og Durga blir da ulike skikkelser av det samme ene guddommelige (Jacobsen, 2024a). Prøv det i linsene under. Gudene er de samme hele tiden. Det er blikket som flytter seg."
         },
         {
             "type": "component",
@@ -111,14 +111,14 @@
         {
             "type": "list",
             "items": [
-                "Vaishnavisme: Vishnu er den som skaper, opprettholder og beskytter verden (Jacobsen, 2025b).",
-                "Shaivisme: Shiva er høyest. For shaivaer er det Shiva som også skaper og opprettholder verden, ikke bare ødelegger den (Jacobsen, 2025a).",
-                "Shaktisme: gudinnen er høyest. I teksten Devimahatmya er Durga verdenssjelen og universets høyeste guddom, og fordi hun selv er Brahman, finnes det ingen mannlig gud som er hennes like (Jacobsen, 2024b)."
+                "Vaishnavisme: Vishnu er den som skaper verden, holder den i gang og verner den (Jacobsen, 2025b).",
+                "Shaivisme: Shiva er høyest. For shaivaer er det Shiva som også skaper verden og holder den i gang, ikke bare ødelegger den (Jacobsen, 2025a).",
+                "Shaktisme: gudinnen er høyest. I teksten Devimahatmya er Durga sjelen i hele verden og den høyeste guden i universet. Fordi hun selv er Brahman, finnes det ingen mannlig gud som er hennes like (Jacobsen, 2024b)."
             ]
         },
         {
             "type": "text",
-            "content": "Se hva de tre har til felles. De er ikke uenige om at det finnes én høyeste virkelighet. De er uenige om hva den heter og hvilken skikkelse den viser seg i. Det er en annen type uenighet enn den man ofte tror finnes mellom religioner."
+            "content": "Se hva de tre har til felles. De er ikke uenige om at det finnes noe ene og høyeste. De er uenige om hva det heter og hvilken skikkelse det viser seg i. Det er en annen type uenighet enn den man ofte tror finnes mellom religioner."
         },
         {
             "type": "component",
@@ -130,7 +130,7 @@
         },
         {
             "type": "text",
-            "content": "Linja over er rundt tre tusen år gammel og står i Rigveda, den eldste av de hinduiske tekstene. I verset ramses flere gudenavn opp, og poenget er at de peker mot det samme (Wisdomlib, u.å.). Verset blir stadig brukt som et tidlig uttrykk for tanken om at det bare finnes én virkelighet bak navnene. Du kan lese mer om disse tekstene i artikkelen om [Vedaene og Bhagavad Gita](/krle/religion/hinduisme/hellige-tekster)."
+            "content": "Linja over er rundt tre tusen år gammel og står i Rigveda, den eldste av de hinduiske tekstene. I verset blir flere gudenavn ramset opp, og poenget er at de peker mot det samme (Wisdomlib, u.å.). Verset blir stadig brukt for å vise at tanken om at det bare finnes én ting bak alle navnene, er svært gammel. Du kan lese mer om disse tekstene i artikkelen om [Vedaene og Bhagavad Gita](/krle/religion/hinduisme/hellige-tekster)."
         },
         {
             "type": "text",
@@ -148,23 +148,23 @@
         },
         {
             "type": "text",
-            "content": "Fram til nå har alt handlet om tanker. Men for de aller fleste hinduer begynner ikke troen i en filosofibok. Den begynner foran et bilde. Murti, det innviede gudebildet, og puja, tilbedelsen av guden, er kjernen i hinduistisk religiøst liv (Kværne og Jacobsen, 2026)."
+            "content": "Fram til nå har alt handlet om tanker. Men for de aller fleste hinduer begynner ikke troen i en filosofibok. Den begynner foran et bilde. Murti, gudebildet som er gjort hellig, og puja, det å dyrke guden, er kjernen i hinduenes religiøse liv (Kværne og Jacobsen, 2026)."
         },
         {
             "type": "text",
-            "content": "Puja kan foregå i et tempel, ved et lite alter hjemme eller ute (Kværne, 2024). Man steller med guden omtrent som man ville stelt med en konge eller en høyt aktet gjest: bad, mat, røkelse, lys og musikk (Kværne, 2024; Kværne og Jacobsen, 2026). Det høres kanskje rart ut å gi mat til en figur i stein. Men det gir mening hvis du tenker på bildet som et sted guden er å møte, ikke som en gjenstand som skal beundres."
+            "content": "Puja kan foregå i et tempel, ved et lite alter hjemme eller ute (Kværne, 2024). Man steller med guden omtrent som man ville stelt med en konge eller en gjest man ser veldig opp til: bad, mat, røkelse, lys og musikk (Kværne, 2024; Kværne og Jacobsen, 2026). Det høres kanskje rart ut å gi mat til en figur i stein. Men det gir mening hvis du tenker på bildet som et sted du kan møte guden, ikke som en ting du bare skal se på."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Darshan: blikket som går begge veier",
-                "content": "Darshan betyr syn eller det å se. Det er å se en guddom slik den viser seg i et innviet bilde i et tempel, eller i en hellig person eller guru. Å ha sett guddommen regnes som en velsignelsesbringende åpenbaring. Og det viktige er at blikket går begge veier: du ser guden, og guden ser deg (Kværne, 2025; Kværne og Jacobsen, 2026)."
+                "content": "Darshan betyr syn eller det å se. Det er å se en gud slik guden viser seg i et hellig bilde i et tempel, eller i en hellig person eller guru. Å ha sett guden regnes som et møte som gir velsignelse. Og det viktige er at blikket går begge veier: du ser guden, og guden ser deg (Kværne, 2025; Kværne og Jacobsen, 2026)."
             }
         },
         {
             "type": "text",
-            "content": "Dette er verdt å ha med seg når noen sier at hinduer tilber statuer. Figuren er innviet gjennom en seremoni (Kværne, 2025), og mange hinduer vil si at guden er til stede i den uten å være begrenset til den. Den som står i kø for darshan, mener selv at hun står i kø for å møte en gud, ikke for å se på stein. Samtidig er ikke alle hinduer enige om dette heller. Noen retninger legger mest vekt på bildene, andre mest på meditasjon og indre erkjennelse."
+            "content": "Dette er verdt å ha med seg når noen sier at hinduer tilber statuer. Figuren er gjort hellig i en egen seremoni (Kværne, 2025), og mange hinduer vil si at guden er til stede i den, men ikke bare der. Den som står i kø for darshan, mener selv at hun står i kø for å møte en gud, ikke for å se på stein. Samtidig er ikke alle hinduer enige om dette heller. Noen retninger legger mest vekt på bildene, andre mest på meditasjon og på å forstå med sitt eget indre."
         },
         {
             "type": "image",
@@ -220,23 +220,23 @@
                         "question": "Hva er Brahman i hinduismen?",
                         "options": [
                             "Den øverste presten i tempelet",
-                            "Verdens og universets enhet, som er til stede i alt",
+                            "Det som binder verden og universet sammen, og som er til stede i alt",
                             "En hellig bok fra middelalderen",
                             "Navnet på gudinnen som rir på en løve"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Brahman beskrives som usynlig, uforanderlig og til stede i alt, altså verdens og universets enhet."
+                        "explanation": "Brahman blir beskrevet som usynlig, uforanderlig og til stede i alt. Brahman binder verden og universet sammen til ett."
                     },
                     {
                         "question": "Hva mener mange hinduer om forholdet mellom Brahman og de mange gudene?",
                         "options": [
                             "Gudene kjemper mot Brahman",
-                            "Gudene er personifikasjoner av den samme enheten",
+                            "Gudene er ulike skikkelser av det samme ene",
                             "Brahman er den eneste guden som finnes bilder av",
                             "Gudene kom først, og Brahman ble oppfunnet senere"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Guder som Shiva, Vishnu og Durga kan forstås som personifikasjoner av den ene guddommelige enheten."
+                        "explanation": "Guder som Shiva, Vishnu og Durga kan forstås som ulike skikkelser av det ene guddommelige."
                     },
                     {
                         "question": "Hvem setter shaktaene høyest?",
@@ -247,7 +247,7 @@
                             "Brahma"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "I shaktismen er gudinnen høyest. Devimahatmya kaller Durga verdenssjelen og universets høyeste guddom."
+                        "explanation": "I shaktismen er gudinnen høyest. Devimahatmya kaller Durga sjelen i hele verden og den høyeste guden i universet."
                     },
                     {
                         "question": "Hva er en avatar?",
@@ -255,7 +255,7 @@
                             "En ny gud som oppstår når en gammel dør",
                             "En skikkelse Vishnu stiger ned til jorden i, som Krishna eller Rama",
                             "En prest som leder puja i tempelet",
-                            "Et bilde som ennå ikke er innviet"
+                            "Et bilde som ennå ikke er gjort hellig"
                         ],
                         "correctAnswer": 1,
                         "explanation": "Vishnu stiger ned i ulike skikkelser for å redde verden. Krishna og Rama er de mest kjente."
@@ -264,12 +264,12 @@
                         "question": "Hva betyr darshan?",
                         "options": [
                             "Å ofre mat til guden",
-                            "Å se guddommen i det innviede bildet, og bli sett av guddommen",
+                            "Å se guden i det hellige bildet, og bli sett av guden",
                             "Å bade i en hellig elv",
                             "Å lære Rigveda utenat"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Darshan er å se guddommen slik den viser seg i et innviet bilde, og blikket går begge veier."
+                        "explanation": "Darshan er å se guden slik guden viser seg i et hellig bilde, og blikket går begge veier."
                     }
                 ]
             }

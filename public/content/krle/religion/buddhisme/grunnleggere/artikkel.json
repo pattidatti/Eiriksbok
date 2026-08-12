@@ -15,9 +15,9 @@
     "heroImage": "/images/buddhisme/grunnleggere-hero.webp",
     "details": [
         "Buddha er ikke et navn, men en ærestittel som betyr den oppvåknede. Personen het Siddhartha Gautama.",
-        "Forskere er enige om at han var en virkelig person, men usikre på når han levde. Konsensus i dag er rundt år 400 fvt.",
+        "Forskere er enige om at han var en virkelig person, men usikre på når han levde. De fleste mener i dag at det var rundt år 400 fvt.",
         "Den eldste tradisjonen så ham ikke som en gud, men som læremester for både guder og mennesker.",
-        "I mahayana-buddhismen ble Buddha-skikkelsen kosmisk, evig og guddommelig.",
+        "I mahayana-buddhismen ble Buddha noe langt mer: en evig, guddommelig kraft som fyller hele verden.",
         "Han pekte ikke ut en arvtaker. Ifølge tradisjonen sa han at læren selv skulle være læreren."
     ],
     "createdDate": "2025-12-04T12:00:00Z",
@@ -46,13 +46,13 @@
         {
             "id": "stupa",
             "term": "Stupa",
-            "definition": "Kuppelformet byggverk som tar vare på relikvier etter Buddha eller andre hellige personer. Mange stupaer er mål for pilegrimsreiser."
+            "definition": "Rundt byggverk med kuppel som tar vare på rester etter Buddha eller andre hellige personer. Mange stupaer er mål for pilegrimsreiser."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Det finnes ingen tekst som Siddhartha Gautama skrev selv. Det finnes ikke noe bilde som ble laget mens han levde. Likevel er forskere i dag enige om at han var en virkelig person, og om hovedtrekkene i livet hans (Kværne & Borgland, 2026a). Men de er ikke enige om når han levde. En vanlig datering har vært 566-486 fvt. Den er sannsynligvis for tidlig. Foreløpig er de fleste forskere enige om at han levde rundt år 400 fvt. (Kværne & Borgland, 2026a). Når du leser årstall om Buddha, bør du altså lese dem med blyant."
+            "content": "Det finnes ingen tekst som Siddhartha Gautama skrev selv. Det finnes ikke noe bilde som ble laget mens han levde. Likevel er forskere i dag enige om at han var en virkelig person, og om hovedtrekkene i livet hans (Kværne & Borgland, 2026a). Men de er ikke enige om når han levde. En vanlig datering har vært 566-486 fvt. Den er sannsynligvis for tidlig. Foreløpig er de fleste forskere enige om at han levde rundt år 400 fvt. (Kværne & Borgland, 2026a). Når du leser årstall om Buddha, bør du altså huske at de ikke er helt sikre."
         },
         {
             "type": "text",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Fortellingen de fleste kjenner, går slik: en ung mann vokser opp bekymringsløst i Kapilavatthu, hovedstaden til Sakya-ætten, på grensen mellom dagens Nepal og India. Så slår erkjennelsen av sykdom, alderdom og død ned i ham som en åndelig krise. Tretti år gammel forlater han familien og blir en hjemløs asket (Kværne & Borgland, 2026a). En asket er en som lever helt enkelt og gir avkall på nytelse for å søke innsikt. I flere år søkte han svar hos tidens filosofer og drev streng askese, uten at det hjalp."
+            "content": "Fortellingen de fleste kjenner, går slik: en ung mann vokser opp bekymringsløst i Kapilavatthu, hovedstaden til Sakya-ætten, på grensen mellom dagens Nepal og India. Så går det opp for ham at alle blir syke, gamle og dør, og det kaster ham ut i en dyp krise. Tretti år gammel forlater han familien og blir en hjemløs asket (Kværne & Borgland, 2026a). En asket er en som lever helt enkelt og nekter seg selv alt godt for å lete etter svar. I flere år lette han etter svar hos datidens tenkere og levde strengt og hardt, uten at det hjalp."
         },
         {
             "type": "header",
@@ -74,7 +74,7 @@
         },
         {
             "type": "text",
-            "content": "Til slutt satte han seg i meditasjon under et fikentre ved dagens Bodh Gaya. Ifølge tradisjonen kom gjennombruddet samme natt: en klar erkjennelse av hvordan tilværelsen henger sammen, og av veien til at lidelsen tar slutt (Kværne & Borgland, 2026a). Kort tid etter skal han ha holdt sin første preken i Sarnath. Fram til han døde i Kushinagari, 80 år gammel, vandret han rundt i Nord-India og underviste (Kværne & Borgland, 2026a). Legg merke til forskjellen: at han levde og underviste, er historikere trygge på. Hva som skjedde inne i ham den natten, er det bare troen som kan uttale seg om. Veien han pekte ut, kan du lese mer om i artikkelen om [den åttedelte vei](/krle/religion/buddhisme/den-attedelte-vei)."
+            "content": "Til slutt satte han seg i meditasjon under et fikentre ved dagens Bodh Gaya. Ifølge tradisjonen kom gjennombruddet samme natt: han så plutselig klart hvordan alt henger sammen, og hvilken vei som fører til at lidelsen tar slutt (Kværne & Borgland, 2026a). Kort tid etter skal han ha holdt sin første preken i Sarnath. Fram til han døde i Kushinagari, 80 år gammel, vandret han rundt i Nord-India og underviste (Kværne & Borgland, 2026a). Legg merke til forskjellen: at han levde og underviste, er historikere trygge på. Hva som skjedde inne i ham den natten, er det bare troen som kan si noe om. Veien han pekte ut, kan du lese mer om i artikkelen om [den åttedelte vei](/krle/religion/buddhisme/den-attedelte-vei)."
         },
         {
             "type": "component",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Ingen av kolonnene er «feil». Begge finnes i buddhismen i dag. Buddhismen er delt i to hovedtradisjoner: theravada, som er dominerende i Sør- og Sørøst-Asia, og mahayana, som nådde Tibet, Kina, Korea og Japan (Kværne & Borgland, 2026b). Theravada har i store trekk holdt fast på den tidligste læren (Kværne & Borgland, 2026b). Mahayana bygde videre og gjorde Buddha-skikkelsen kosmisk, evig og guddommelig (Kværne & Borgland, 2026a). Buddhistforbundet, som er en paraply over flere buddhistiske samfunn i Norge, sier det rett ut: samfunnene representerer ulike retninger med ulike syn på mange spørsmål (Buddhistforbundet, u.å.-b). Det er verdt å ha med seg når noen sier at buddhister mener det ene eller det andre."
+            "content": "Ingen av kolonnene er «feil». Begge finnes i buddhismen i dag. Buddhismen er delt i to hovedtradisjoner: theravada, som er dominerende i Sør- og Sørøst-Asia, og mahayana, som nådde Tibet, Kina, Korea og Japan (Kværne & Borgland, 2026b). Theravada har i store trekk holdt fast på den tidligste læren (Kværne & Borgland, 2026b). Mahayana bygde videre og gjorde Buddha til noe evig og guddommelig, en kraft som fyller hele verden (Kværne & Borgland, 2026a). Buddhistforbundet, som samler flere buddhistiske menigheter i Norge, sier det rett ut: menighetene tilhører ulike retninger og mener ulike ting om mange spørsmål (Buddhistforbundet, u.å.-b). Det er verdt å ha med seg når noen sier at buddhister mener det ene eller det andre."
         },
         {
             "type": "header",
@@ -93,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Her ligger kanskje det mest særegne ved buddhismen sammenlignet med de andre religionene i dette emnet. En av de eldste tekstene forteller at Buddha på dødsleiet vendte seg til disippelen Ananda, fordi noen av dem kunne komme til å tenke at de nå sto igjen uten lærer. Svaret hans var ikke et navn."
+            "content": "Her er kanskje den største forskjellen mellom buddhismen og de andre religionene i dette emnet. En av de eldste tekstene forteller at Buddha på dødsleiet snakket med Ananda, en av de nærmeste elevene sine, fordi noen av dem kunne komme til å tro at de nå sto igjen uten lærer. Svaret hans var ikke et navn."
         },
         {
             "type": "component",
@@ -105,13 +105,13 @@
         },
         {
             "type": "text",
-            "content": "I denne teksten peker han altså ikke ut en arvtaker. Han peker på læren. Så må vi være ærlige om hva slags kilde dette er. Teksten er hellig for buddhister, men den ble ikke skrevet ned med det samme. Ifølge tradisjonen samlet de fremste disiplene seg til et første konsil, altså et stort møte, i Rajagriha etter dødsfallet, og der ble læren og klosterreglene resitert og satt sammen (Borgland & Kværne, 2026). Selve tekstene ble trolig først skrevet ned flere hundre år senere, sannsynligvis på Sri Lanka i det første århundret fvt. (Borgland & Kværne, 2026). Historikere kan altså slå fast at tekstene finnes og hvor gamle håndskriftene er. De kan ikke slå fast at hvert ord er nøyaktig slik det ble sagt. Mer om disse tekstene finner du i artikkelen om [hellige tekster](/krle/religion/buddhisme/hellige-tekster)."
+            "content": "I denne teksten peker han altså ikke ut en arvtaker. Han peker på læren. Så må vi være ærlige om hva slags kilde dette er. Teksten er hellig for buddhister, men den ble ikke skrevet ned med det samme. Ifølge tradisjonen samlet de nærmeste elevene seg til et første konsil, altså et stort møte, i Rajagriha etter at han døde. Der leste de opp læren og klosterreglene høyt og satte alt sammen (Borgland & Kværne, 2026). Selve tekstene ble trolig først skrevet ned flere hundre år senere, sannsynligvis på Sri Lanka i det første århundret fvt. (Borgland & Kværne, 2026). Historikere kan altså slå fast at tekstene finnes og hvor gamle håndskriftene er. De kan ikke slå fast at hvert ord er nøyaktig slik det ble sagt. Mer om disse tekstene finner du i artikkelen om [hellige tekster](/krle/religion/buddhisme/hellige-tekster)."
         },
         {
             "type": "image",
             "src": "/images/placeholder.webp",
             "alt": "Gamle palmebladmanuskripter stablet mellom to trelokk",
-            "caption": "Læren ble husket og resitert i flere hundre år før den ble skrevet ned på palmeblader."
+            "caption": "Læren ble husket og sagt høyt fra elev til elev i flere hundre år før den ble skrevet ned på palmeblader."
         },
         {
             "type": "header",
@@ -119,11 +119,11 @@
         },
         {
             "type": "text",
-            "content": "Det som overtok etter Buddha, var altså ikke én person, men tre ting som buddhister kaller De tre juvelene: Buddha, dharma og sangha (Store norske leksikon, 2026). Dharma betyr læren hans (Jacobsen, 2026). Sangha betyr fellesskapet, og brukes oftest om munkene og nonnene, men kan også bety alle buddhister (Borgland, 2026). Den som sier fram en kort formel om at han eller hun tar tilflukt i De tre juvelene, regnes som buddhist (Store norske leksikon, 2026). Buddhistforbundet forklarer juvelene som læremesteren som har nådd full oppvåkning, læren og praksisveien han viste, og fellesskapet av dem som har fulgt ham (Buddhistforbundet, u.å.-b)."
+            "content": "Det som overtok etter Buddha, var altså ikke én person, men tre ting som buddhister kaller De tre juvelene: Buddha, dharma og sangha (Store norske leksikon, 2026). Dharma betyr læren hans (Jacobsen, 2026). Sangha betyr fellesskapet, og brukes oftest om munkene og nonnene, men kan også bety alle buddhister (Borgland, 2026). Den som sier høyt en kort setning om at han eller hun søker tilflukt hos De tre juvelene, regnes som buddhist (Store norske leksikon, 2026). Buddhistforbundet forklarer juvelene som læremesteren som har våknet helt, læren og veien han viste at man skal gå, og fellesskapet av dem som har fulgt ham (Buddhistforbundet, u.å.-b)."
         },
         {
             "type": "text",
-            "content": "Sanghaen har ingen pave og ingen sjef på toppen. Ifølge klosterreglene må alle avgjørelser i et lokalt kloster vedtas enstemmig, og rangordningen bygger på hvor mange år man har vært ordinert (Borgland, 2026). Å bli ordinert vil si å bli tatt opp i munke- eller nonneordenen gjennom en egen seremoni. Det betyr ikke at alt er likt for alle. Nonneordenen ble opprettet senere enn munkeordenen, og i dag er det omstridt i theravada-buddhismen og i tibetansk tradisjon om kvinner kan ordineres som nonner i det hele tatt (Borgland, 2026). Munker står alltid over nonner i klosterhierarkiet (Borgland, 2026). Dette er en av de virkelige uenighetene mellom buddhister i dag."
+            "content": "Sanghaen har ingen pave og ingen sjef på toppen. Ifølge klosterreglene må alle i et lokalt kloster være enige før noe blir bestemt, og rangen bygger på hvor mange år man har vært ordinert (Borgland, 2026). Å bli ordinert vil si å bli tatt opp i munke- eller nonneordenen gjennom en egen seremoni. Det betyr ikke at alt er likt for alle. Nonneordenen ble laget senere enn munkeordenen, og i dag er buddhister i theravada og i tibetansk tradisjon uenige om kvinner i det hele tatt kan bli ordinert som nonner (Borgland, 2026). Munker står alltid over nonner i rangordningen i klosteret (Borgland, 2026). Dette er en av de virkelige uenighetene mellom buddhister i dag."
         },
         {
             "type": "image",
@@ -137,7 +137,7 @@
         },
         {
             "type": "text",
-            "content": "Betyr dette at Buddha er ute av bildet? Nei. Den eldste tradisjonen tenkte ikke at han var virksom etter døden, men han ble likevel æret som forbilde og veiviser allerede mens han levde (Kværne & Borgland, 2026a). Etter at kroppen hans var kremert, ble restene ifølge tradisjonen fordelt på åtte stupaer. Senere skal keiser Ashoka ha åpnet disse stupaene, bygd flere rundt om i India og fordelt relikviene på dem (Borgland, 2024). Relikvier er rester etter en hellig person, eller gjenstander som har tilhørt vedkommende. Blant de mest kjente i dag er en tann som oppbevares i Tanntempelet i Kandy på Sri Lanka, og relikviedyrkelse er fortsatt en viktig del av mange buddhisters religiøse liv (Borgland, 2024). Så rollen hans er dobbel: han er borte, og han er samtidig overalt. Hva buddhister mener om guder, kan du lese om i artikkelen om [gudsbilde](/krle/religion/buddhisme/gudsbilde), og om målet nirvana i artikkelen om [frelse](/krle/religion/buddhisme/frelse)."
+            "content": "Betyr dette at Buddha er ute av bildet? Nei. Den eldste tradisjonen mente ikke at han gjorde noe etter at han døde, men han ble likevel æret som forbilde og veiviser allerede mens han levde (Kværne & Borgland, 2026a). Etter at kroppen hans var brent, ble restene ifølge tradisjonen delt mellom åtte stupaer. Senere skal keiser Ashoka ha åpnet disse stupaene, bygd flere rundt om i India og delt restene mellom dem (Borgland, 2024). Slike rester etter en hellig person, eller ting som har tilhørt personen, kalles relikvier. Blant de mest kjente i dag er en tann som oppbevares i Tanntempelet i Kandy på Sri Lanka, og det å dyrke slike relikvier er fortsatt viktig for mange buddhister (Borgland, 2024). Så rollen hans er dobbel: han er borte, og han er samtidig overalt. Hva buddhister mener om guder, kan du lese om i artikkelen om [gudsbilde](/krle/religion/buddhisme/gudsbilde), og om målet nirvana i artikkelen om [frelse](/krle/religion/buddhisme/frelse)."
         },
         {
             "type": "component",
@@ -153,7 +153,7 @@
                     "Den eldste tradisjonen så ikke Buddha som en gud, mens mahayana-buddhismen ser ham som kosmisk og guddommelig. Forklar med egne ord hvordan det samme mennesket kan forstås så ulikt.",
                     "Buddha pekte ikke ut en arvtaker, men sa at læren skulle være læreren. Hva slags fordeler og ulemper kan en religion få av å ordne seg slik?",
                     "Tekstene om Buddha ble skrevet ned flere hundre år etter at han døde. Hva betyr det for hva historikere kan si sikkert om ham?",
-                    "Nonneordenen er omstridt i flere buddhistiske retninger. Hvorfor er det viktig å få fram slike uenigheter når man beskriver en religion?"
+                    "Flere buddhistiske retninger er uenige om nonneordenen. Hvorfor er det viktig å få fram slike uenigheter når man beskriver en religion?"
                 ],
                 "gaaVidere": [
                     "Finn ut hva theravada og mahayana er, og lag en enkel oversikt over tre forskjeller mellom dem.",
@@ -187,7 +187,7 @@
                             "At han ikke var en virkelig person"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Dateringen 566-486 fvt. har vært vanlig, men er sannsynligvis for tidlig. Foreløpig konsensus blant forskere er rundt år 400 fvt. At han var en virkelig person, er det enighet om."
+                        "explanation": "Dateringen 566-486 fvt. har vært vanlig, men er sannsynligvis for tidlig. De fleste forskere mener nå at det var rundt år 400 fvt. At han var en virkelig person, er det enighet om."
                     },
                     {
                         "question": "Hvordan så den eldste buddhistiske tradisjonen på Buddha?",
@@ -198,18 +198,18 @@
                             "Som en konge med guddommelig makt"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Den eldste tradisjonen så ham ikke som en gud, men som et enestående menneske som ved egen kraft nådde fram til den forløsende innsikten."
+                        "explanation": "Den eldste tradisjonen så ham ikke som en gud, men som et helt spesielt menneske som ved egen kraft fant den innsikten som gjør fri."
                     },
                     {
                         "question": "Hva skjedde med Buddha-skikkelsen i mahayana-buddhismen?",
                         "options": [
                             "Han ble glemt og erstattet av lokale guder",
                             "Han ble regnet som en vanlig munk",
-                            "Han ble kosmisk, evig og guddommelig",
+                            "Han ble evig og guddommelig, en kraft som fyller hele verden",
                             "Han ble sett på som en oppdiktet figur"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "I mahayana fikk Buddha-skikkelsen en ny dimensjon og ble kosmisk, evig og guddommelig. Fødselen og døden blir betraktet som et skuespill for å undervise menneskene."
+                        "explanation": "I mahayana ble Buddha noe langt mer: evig og guddommelig, en kraft som fyller hele verden. Fødselen og døden hans blir sett på som et skuespill han satte opp for å lære menneskene noe."
                     },
                     {
                         "question": "Hva sier tradisjonen at Buddha svarte da disiplene var redde for å stå igjen uten lærer?",

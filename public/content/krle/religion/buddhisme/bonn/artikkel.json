@@ -15,10 +15,10 @@
     "heroImage": "/images/buddhisme/bonn-hero.webp",
     "details": [
         "Buddhismen har ingen skapergud, men bønn er likevel vanlig i buddhistiske tradisjoner.",
-        "Grensen mellom bønn, lovprising, resitasjon, ritual og meditasjon er ikke skarp.",
-        "Mange handlinger virker innover, på den som utfører dem, og ikke utover mot en mottaker.",
-        "I rene land-buddhismen påkalles buddha Amitabha, og i mahayana bes det til bodhisattvaer.",
-        "Tibetanske bønnehjul og bønneflagg lar ordene bli framsagt uten at noen sier dem høyt."
+        "Grensen mellom bønn, lovprising, opplesing av hellige tekster, ritualer og meditasjon er ikke skarp.",
+        "Mange handlinger virker innover, på den som gjør dem, og ikke utover mot noen som tar imot.",
+        "I rene land-buddhismen ber folk til buddhaen Amitabha, og i retningen mahayana ber de til bodhisattvaer, hjelpere som er på vei til å bli buddhaer.",
+        "Tibetanske bønnehjul og bønneflagg sier ordene for deg, uten at noen sier dem høyt."
     ],
     "createdDate": "2025-12-04T11:00:00Z",
     "lastUpdated": "2026-08-11T12:00:00Z",
@@ -31,7 +31,7 @@
         {
             "id": "mantra",
             "term": "Mantra",
-            "definition": "Hellige eller kraftfylte setninger, ord eller stavelser, ofte på sanskrit."
+            "definition": "Hellige ord, setninger eller enkeltlyder som skal ha kraft i seg. Ofte på sanskrit, et gammelt indisk språk."
         },
         {
             "id": "bonnehjul",
@@ -41,12 +41,12 @@
         {
             "id": "triratna",
             "term": "De tre juveler",
-            "definition": "Buddha, læren og munkeordenen. Den som offentlig tar tilflukt til dem, regnes som buddhist."
+            "definition": "Buddha, læren og munkeordenen. Den som sier høyt at han eller hun søker tilflukt hos disse tre, regnes som buddhist."
         },
         {
             "id": "rene-land",
             "term": "Rene land-buddhisme",
-            "definition": "Retning i mahayana der man påkaller buddha Amitabha for å bli gjenfødt i hans rene land."
+            "definition": "Retning innenfor mahayana der man ber til buddhaen Amitabha om å bli født på nytt i hans rene land."
         }
     ],
     "content": [
@@ -56,7 +56,7 @@
         },
         {
             "type": "text",
-            "content": "Buddhismen har ingen skapergud. Guder finnes i det buddhistiske verdensbildet, men de dør også, og de kan ikke frelse noen. Det er temaet i artikkelen [Gudene som ikke kan redde deg](/krle/religion/buddhisme/gudsbilde). Men da står vi igjen med et spørsmål som er lettere å stille enn å svare på. Hvis ingen lytter, hva er det egentlig folk holder på med når de bøyer seg, resiterer og snurrer hjul?"
+            "content": "Buddhismen har ingen skapergud. Guder finnes i det buddhistiske verdensbildet, men de dør også, og de kan ikke frelse noen. Det er temaet i artikkelen [Gudene som ikke kan redde deg](/krle/religion/buddhisme/gudsbilde). Men da står vi igjen med et spørsmål som er lettere å stille enn å svare på. Hvis ingen lytter, hva er det egentlig folk holder på med når de bøyer seg, leser hellige ord høyt og snurrer hjul?"
         },
         {
             "type": "image",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "Fagfolk sier rett ut at dette er vanskelig å avgrense. Bønn er vanlig i buddhistiske tradisjoner, men det er ikke alltid klare grenser mellom hva man skal regne som bønn, lovprising, resitasjon, ritual og meditativ visualisering (Borgland, 2022). Meditativ visualisering betyr å bygge opp et bilde inne i hodet med vilje. Hvilken rolle slik kommunikasjon har, og hvilken form den tar, varierer mye fra retning til retning. Det finnes altså ikke ett buddhistisk svar på spørsmålet. Det finnes flere, og de peker ikke samme vei."
+            "content": "Fagfolk sier rett ut at dette er vanskelig å sette grenser rundt. Bønn er vanlig i buddhistiske tradisjoner, men det er ikke alltid klare grenser mellom hva man skal regne som bønn, lovprising, resitasjon, ritual og meditativ visualisering (Borgland, 2022). Med det siste mener de å bygge opp et bilde inne i hodet med vilje. Hvor viktig slik kontakt er, og hvordan den ser ut, varierer mye fra retning til retning. Det finnes altså ikke ett buddhistisk svar på spørsmålet. Det finnes flere, og de peker ikke samme vei."
         },
         {
             "type": "header",
@@ -74,11 +74,11 @@
         },
         {
             "type": "text",
-            "content": "Begynn med det som ikke er bønn i det hele tatt. Meditasjon står sentralt i buddhismen (Kværne og Borgland, 2026). Meditasjon betyr her øvelser som trener sinnet. I theravada, som regnes som den eldste hovedretningen, består meditasjonen i en systematisk, betraktende observasjon av kroppen, dens funksjoner og fornemmelser, og av alt som rører seg i tanken (Løøv, 2025). Du sitter, og du ser på deg selv. I mahayana kan meditasjon i tillegg bestå i å holde fast på en visjon av en himmelsk buddha, et paradis, eller et symbolsk diagram som kalles mandala (Løøv, 2025)."
+            "content": "Begynn med det som ikke er bønn i det hele tatt. Meditasjon står sentralt i buddhismen (Kværne og Borgland, 2026). Meditasjon betyr her øvelser som trener sinnet. I theravada, som regnes som den eldste hovedretningen, går meditasjonen ut på at du rolig og systematisk følger med på kroppen din, på hva den gjør og hva den kjenner, og på alt som rører seg i tankene (Løøv, 2025). Du sitter, og du ser på deg selv. I mahayana kan meditasjon i tillegg gå ut på å holde fast på et indre bilde: en himmelsk buddha, et paradis, eller et mønster fullt av symboler som kalles mandala (Løøv, 2025)."
         },
         {
             "type": "text",
-            "content": "Legg merke til retningen. Ingenting blir sendt noe sted. Handlingen virker på den som gjør den. Det er en helt annen mekanikk enn å be noen om noe. I rammen under får du seks buddhistiske handlinger. Jobben din er å avgjøre hvilken vei hver av dem peker."
+            "content": "Legg merke til retningen. Ingenting blir sendt noe sted. Handlingen virker på den som gjør den. Det er noe helt annet enn å be noen om noe. I rammen under får du seks buddhistiske handlinger. Jobben din er å avgjøre hvilken vei hver av dem peker."
         },
         {
             "type": "component",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Nålen pekte ikke samme vei hver gang. Det er nettopp derfor spørsmålet er vanskelig. Buddhismen mangler en skapergud, men den mangler ikke mottakere."
+            "content": "Nålen pekte ikke samme vei hver gang. Det er nettopp derfor spørsmålet er vanskelig. Buddhismen har ingen skapergud, men det finnes likevel noen å be til."
         },
         {
             "type": "header",
@@ -97,19 +97,19 @@
         },
         {
             "type": "text",
-            "content": "Ordet for tilbedelse er puja. Det kommer fra sanskrit og betyr egentlig oppvarting. En puja uttrykker respekt og gjestfrihet, og kan bestå av gaver i form av mat og drikke, lys og røkelse, underholdning med sang og dans, og av at figuren vaskes, salves og pyntes (Kværne, 2024b). Det ser ut som å ta imot en fin gjest, og det er også tanken bak. Puja kan skje i et tempel, ved et husalter eller ute i det fri, og den kan rettes mot [Buddha](/krle/religion/buddhisme/grunnleggere) selv eller mot andre skikkelser."
+            "content": "Ordet for tilbedelse er puja. Det kommer fra sanskrit og betyr egentlig oppvarting. En puja viser respekt og gjestfrihet. Den kan være gaver som mat og drikke, lys og røkelse, sang og dans, og at figuren blir vasket, smurt inn med olje og pyntet (Kværne, 2024b). Det ser ut som å ta imot en fin gjest, og det er også tanken bak. Puja kan skje i et tempel, ved et husalter eller ute i det fri, og den kan være rettet mot [Buddha](/krle/religion/buddhisme/grunnleggere) selv eller mot andre skikkelser."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Men hvem er gjesten?",
-                "content": "I theravada-buddhismen understrekes det at Buddha etter sin død ikke lenger kan kommuniseres med. Tilbedelse, bønn og offer tjener likevel til å rette oppmerksomheten mot sentrale sannheter, som at alt forgår, eller til å ære Buddhas minne som den store veiviseren (Borgland, 2022). Blomstene foran statuen visner. De er ikke først og fremst en gave til noen. De er en påminnelse til den som la dem der."
+                "content": "I theravada-buddhismen sier de tydelig at Buddha er død, og at ingen kan snakke med ham lenger. Tilbedelse, bønn og offergaver skal likevel minne den som gjør det om viktige sannheter, for eksempel at alt tar slutt, eller hedre minnet om Buddha som den store veiviseren (Borgland, 2022). Blomstene foran statuen visner. De er ikke først og fremst en gave til noen. De er en påminnelse til den som la dem der."
             }
         },
         {
             "type": "text",
-            "content": "Dette er verdt å stoppe ved. Handlingen ser utover, men virkningen går innover. Mange buddhistiske ritualer fungerer slik. Selv den korte formelen som gjør et menneske til buddhist, virker på den måten: den som offentlig tar sin tilflukt til De tre juveler, altså Buddha, læren og munke- og nonneordenen, regnes fra da av som buddhist (Kværne, 2025b). Ordene nevner tre ting utenfor deg. Men det er den som sier dem, som endrer seg."
+            "content": "Dette er verdt å stoppe ved. Handlingen ser utover, men virkningen går innover. Mange buddhistiske ritualer fungerer slik. Selv den korte setningen som gjør et menneske til buddhist, virker på den måten: den som sier høyt at han eller hun søker tilflukt hos De tre juveler, altså Buddha, læren og ordenen av munker og nonner, regnes fra da av som buddhist (Kværne, 2025b). Ordene nevner tre ting utenfor deg. Men det er den som sier dem, som endrer seg."
         },
         {
             "type": "image",
@@ -123,15 +123,15 @@
         },
         {
             "type": "text",
-            "content": "Mantraer er hellige eller kraftfylte setninger, ord eller stavelser, ofte på sanskrit. De brukes i meditasjon for å lede sinnet og for å påkalle guder, og lyden om er selv et mantra (Jacobsen, 2025). Det mest kjente buddhistiske mantraet er om mani padme hum."
+            "content": "Mantraer er hellige ord, setninger eller enkeltlyder som skal ha kraft i seg, ofte på sanskrit. De brukes i meditasjon for å styre tankene og for å kalle på guder, og lyden om er selv et mantra (Jacobsen, 2025). Det mest kjente buddhistiske mantraet er om mani padme hum."
         },
         {
             "type": "text",
-            "content": "Gjentakelsen kan gå svært langt. I buddhismen, og særlig i den tibetanske, bruker munker, nonner og lekfolk bønnekranser som er laget slik at man kan holde tellingen på inntil flere hundre tusen gjentakelser av en bønneformel (Kværne, 2024a). Tibetanske bønnehjul har bønner skrevet utenpå eller inni seg, og de snurres rundt i stedet for at de hellige ordene sies høyt. Når flagg med bønnetekster vaier i vinden, er det som om bønnene blir framsagt, og det skal gi hell og lykke (Kværne og Løøv, 2025)."
+            "content": "Gjentakelsen kan gå svært langt. I buddhismen, og særlig i den tibetanske, bruker munker, nonner og vanlige folk bønnekranser. De er laget slik at du kan holde tellingen på flere hundre tusen gjentakelser av den samme bønnen (Kværne, 2024a). Tibetanske bønnehjul har bønner skrevet utenpå eller inni seg, og de snurres rundt i stedet for at de hellige ordene sies høyt. Når flagg med bønnetekster vaier i vinden, er det som om bønnene blir framsagt, og det skal gi hell og lykke (Kværne og Løøv, 2025)."
         },
         {
             "type": "text",
-            "content": "Her blir det tydelig hvor rart spørsmålet er. Hvis vinden kan si bønnen for deg, hvem er det da som ber? Og hvem tar imot? Buddhister svarer ulikt på det, og det er ikke sikkert alle som snurrer et hjul har tenkt gjennom det i det hele tatt. Slik er det i alle religioner: lære og folkelig praksis er ikke alltid det samme."
+            "content": "Her blir det tydelig hvor rart spørsmålet er. Hvis vinden kan si bønnen for deg, hvem er det da som ber? Og hvem tar imot? Buddhister svarer ulikt på det, og det er ikke sikkert alle som snurrer et hjul har tenkt gjennom det i det hele tatt. Slik er det i alle religioner: det som står i læren, og det folk faktisk gjør, er ikke alltid det samme."
         },
         {
             "type": "image",
@@ -145,11 +145,11 @@
         },
         {
             "type": "text",
-            "content": "I noen grener av mahayana-buddhismen er bønnen en sentral religiøs praksis. I rene land-buddhismen påkalles buddha Amitabha gjennom formelen namu Amida butsu. Å resitere dette mantraet skal sikre gjenfødsel i hans rene land, Sukhavati, der man kan nå [nirvana](/krle/religion/buddhisme/frelse) (Borgland, 2022). Retningen er ikke til å ta feil av. Du ber noen om noe, og du venter deg et svar."
+            "content": "I noen grener av mahayana-buddhismen er bønn noe av det viktigste man gjør. I rene land-buddhismen kaller folk på buddhaen Amitabha med setningen namu Amida butsu. Sier du dette mantraet, skal du bli født på nytt i det rene landet hans, Sukhavati, og der kan du nå [nirvana](/krle/religion/buddhisme/frelse), tilstanden der all lidelse tar slutt (Borgland, 2022). Retningen er ikke til å ta feil av. Du ber noen om noe, og du venter deg et svar."
         },
         {
             "type": "text",
-            "content": "Andre sentrale skikkelser som påkalles, er medisin-buddhaen og bodhisattvaen Avalokiteshvara. Han påkalles blant annet gjennom mantraet om mani padme hum, og regnes for å kunne redde fra farer og hjelpe med problemer som barnløshet (Borgland, 2022). En bodhisattva er en som streber mot å bli en buddha, og som i mahayana dyrkes som hjelper. Avalokiteshvara kjennetegnes særlig ved medlidenhet, altså evnen til å føle med andre som har det vondt, og i Kina ble han omformet til den kvinnelige skikkelsen Kuan-yin (Kværne, 2025a). Kommunikasjon med skyttsguder og ånder er dessuten viktig i mange tradisjoner, også i de tantriske, der slike vesener kan bistå på veien mot nirvana (Borgland, 2022)."
+            "content": "Andre viktige skikkelser folk kaller på, er medisin-buddhaen og bodhisattvaen Avalokiteshvara. Ham kaller de blant annet på med mantraet om mani padme hum, og de mener han kan redde folk fra farer og hjelpe med problemer som barnløshet (Borgland, 2022). En bodhisattva er en som er på vei til å bli en buddha, og som i mahayana blir dyrket som en hjelper. Avalokiteshvara er mest kjent for medlidenhet, altså evnen til å føle med andre som har det vondt, og i Kina ble han gjort om til den kvinnelige skikkelsen Kuan-yin (Kværne, 2025a). I mange retninger er det dessuten viktig å snakke med skyttsguder og ånder. Det gjelder også i de tantriske retningene, der slike vesener kan hjelpe deg på veien mot nirvana (Borgland, 2022)."
         },
         {
             "type": "component",
@@ -169,7 +169,7 @@
         },
         {
             "type": "text",
-            "content": "Det som likevel går igjen, er tanken om at arbeidet er ditt eget. Selv der noen svarer, må du selv resitere, selv bøye deg, selv snurre hjulet. Buddhismen flytter tyngdepunktet fra den som eventuelt lytter, over til den som snakker. Kanskje er det det mest uvanlige med bønn her: ordene betyr fortsatt noe, også når ingen tar imot dem."
+            "content": "Det som likevel går igjen, er tanken om at arbeidet er ditt eget. Selv der noen svarer, må du selv si ordene, selv bøye deg, selv snurre hjulet. I buddhismen er det den som snakker som er viktigst, ikke den som eventuelt lytter. Kanskje er det det mest uvanlige med bønn her: ordene betyr fortsatt noe, også når ingen tar imot dem."
         },
         {
             "type": "component",
@@ -177,15 +177,15 @@
             "props": {
                 "forstaa": [
                     "Hvorfor er det vanskelig å sette et skarpt skille mellom bønn og meditasjon i buddhismen?",
-                    "Hva består meditasjon i innenfor theravada, ifølge artikkelen?",
+                    "Hva går meditasjon ut på i theravada, ifølge artikkelen?",
                     "Hva er puja, og hva kan en puja bestå av?",
-                    "Hvem påkalles med formelen namu Amida butsu, og hva skal det føre til?"
+                    "Hvem kaller folk på med setningen namu Amida butsu, og hva skal det føre til?"
                 ],
                 "reflekter": [
                     "Forklar med egne ord forskjellen på en handling som peker innover og en som peker utover.",
                     "Blomstene foran buddhastatuen visner. Hvorfor kan det være selve poenget med gaven?",
                     "Når et bønneflagg vaier i vinden, er det som om bønnen blir framsagt. Hvem er det da som ber, mener du?",
-                    "Artikkelen sier at lære og folkelig praksis ikke alltid er det samme. Hvorfor er det viktig å vite når man skal forstå en religion?"
+                    "Artikkelen sier at læren og det folk faktisk gjør, ikke alltid er det samme. Hvorfor er det viktig å vite når du skal forstå en religion?"
                 ],
                 "gaaVidere": [
                     "Sammenlign bønn i buddhismen med bønn i en religion som har en skapergud. Hva er den største forskjellen?",
@@ -200,18 +200,18 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva understrekes i theravada-buddhismen om Buddha etter hans død?",
+                        "question": "Hva sier theravada-buddhismen om Buddha etter at han døde?",
                         "options": [
                             "At han lytter til alle bønner",
-                            "At han ikke lenger kan kommuniseres med",
+                            "At ingen kan snakke med ham lenger",
                             "At han er gjenfødt som en gud",
                             "At han svarer gjennom munkene"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Tilbedelse og offer tjener likevel til å rette oppmerksomheten mot sentrale sannheter, eller til å ære Buddhas minne som den store veiviseren."
+                        "explanation": "Tilbedelse og offergaver skal likevel minne folk om viktige sannheter, eller hedre minnet om Buddha som den store veiviseren."
                     },
                     {
-                        "question": "Hvem påkalles med formelen namu Amida butsu?",
+                        "question": "Hvem kaller folk på med setningen namu Amida butsu?",
                         "options": [
                             "Bodhisattvaen Avalokiteshvara",
                             "Medisin-buddhaen",
@@ -219,7 +219,7 @@
                             "Siddhartha Gautama"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "I rene land-buddhismen skal resitasjonen sikre gjenfødsel i Amitabhas rene land, Sukhavati, der man kan nå nirvana."
+                        "explanation": "I rene land-buddhismen skal ordene sørge for at du blir født på nytt i Amitabhas rene land, Sukhavati, der du kan nå nirvana."
                     },
                     {
                         "question": "Hva er et bønnehjul?",
@@ -237,22 +237,22 @@
                         "options": [
                             "Å gi tre gaver til et kloster",
                             "Å meditere tre ganger om dagen",
-                            "Å framsi en kort formel om Buddha, læren og munkeordenen, og dermed regnes som buddhist",
+                            "Å si høyt en kort setning om Buddha, læren og munkeordenen, og dermed regnes som buddhist",
                             "Å love å bli munk eller nonne"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Enhver som offentlig tar sin tilflukt til De tre juveler ved å framsi en kort formel, regnes som buddhist."
+                        "explanation": "Alle som offentlig søker tilflukt hos De tre juveler ved å si en kort setning, regnes som buddhist."
                     },
                     {
                         "question": "Hva er et mantra?",
                         "options": [
-                            "En hellig eller kraftfylt setning, et ord eller en stavelse, ofte på sanskrit",
+                            "Et hellig ord, en setning eller en enkeltlyd som skal ha kraft i seg, ofte på sanskrit",
                             "En bønn som bare munker har lov til å si",
                             "En tekst i de buddhistiske skriftene",
                             "En gave man legger fram foran en statue"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Mantraer brukes i meditasjon for å lede sinnet og for å påkalle guder. Om mani padme hum er det mest kjente buddhistiske eksemplet."
+                        "explanation": "Mantraer brukes i meditasjon for å styre tankene og for å kalle på guder. Om mani padme hum er det mest kjente buddhistiske eksemplet."
                     }
                 ]
             }

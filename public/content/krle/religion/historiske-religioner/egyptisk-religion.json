@@ -13,14 +13,14 @@
     "comparison_tags": ["døden", "frelse", "gudsbildet", "etikk", "hellige-skrifter"],
     "details": [
         "Egyptisk religion varte i rundt 3500 år, fra ca. 2900 fvt. til det siste tempelet ble stengt i år 550.",
-        "Alt hvilte på ett ord: ma'at, den rette ordenen. Motstykket het isfet, uorden og løgn.",
+        "Alt hvilte på ett ord: ma'at, den rette ordenen. Det motsatte het isfet, altså uorden og løgn.",
         "Etter døden ble hjertet ditt lagt på en vekt. Motvekten var en fjær.",
-        "Hjertet var det eneste organet balsamererne lot ligge igjen i kroppen."
+        "Hjertet var det eneste organet som fikk ligge igjen i kroppen når den ble gjort til mumie."
     ],
     "content": [
         {
             "type": "text",
-            "content": "Du er død. Du står i en sal med søyler, og foran deg står en høy vekt av gull. På den ene skåla ligger hjertet ditt. På den andre ligger en fjær. Sjakalhodede Anubis passer vekten, guden Thoth står klar med skrivetøyet, og Osiris sitter på tronen bakerst i salen. Ved siden av vekten venter et dyr med krokodillekjeft. Det heter Ammit, «slukeren»."
+            "content": "Du er død. Du står i en sal med søyler, og foran deg står en høy vekt av gull. På den ene skåla ligger hjertet ditt. På den andre ligger en fjær. Anubis, guden med hode som en sjakal, passer vekten. Guden Thoth står klar med skrivesakene, og Osiris sitter på tronen bakerst i salen. Ved siden av vekten venter et dyr med krokodillekjeft. Det heter Ammit, «slukeren»."
         },
         {
             "type": "text",
@@ -29,21 +29,21 @@
         {
             "type": "image",
             "src": "/images/historiske-religioner/egyptisk-religion-01.webp",
-            "alt": "Sjakalhodet gud veier et hjerte mot en fjær i tempelsal",
+            "alt": "Gud med sjakalhode veier et hjerte mot en fjær i tempelsal",
             "caption": "Dommen over den døde: Anubis passer vekten mens hjertet veies mot Ma'ats fjær."
         },
         { "type": "header", "text": "Ma'at: ordenen som holdt verden oppe" },
         {
             "type": "text",
-            "content": "Ma'at er det viktigste ordet i egyptisk religion. Det finnes ikke ett norsk ord som dekker det. Ma'at betyr sannhet, rettferdighet, harmoni, balanse, måtehold og godhet på én gang (Rønaasen mfl., 2024). Enklest er det å tenke på ma'at som «den rette ordenen»: slik verden skal være."
+            "content": "Ma'at er det viktigste ordet i egyptisk religion. Det finnes ikke ett norsk ord som dekker det. Ma'at betyr sannhet, rettferdighet, balanse, ro, godhet og det å ikke ta mer enn du trenger, alt på én gang (Rønaasen mfl., 2024). Enklest er det å tenke på ma'at som «den rette ordenen»: slik verden skal være."
         },
         {
             "type": "text",
-            "content": "Ma'at var ikke bare en idé. Hun var også en gudinne, og hun ble tegnet som en kvinne med en strutsefjær på hodet. Fjæren ble selve symbolet for balanse og rettferdighet. Egypterne sa at gudene og kongene «lever av ma'at» - de trengte den for å eksistere i det hele tatt (Rønaasen mfl., 2024)."
+            "content": "Ma'at var ikke bare en idé. Hun var også en gudinne, og hun ble tegnet som en kvinne med en strutsefjær på hodet. Fjæren ble selve symbolet for balanse og rettferdighet. Egypterne sa at gudene og kongene «lever av ma'at» - de trengte den for å finnes i det hele tatt (Rønaasen mfl., 2024)."
         },
         {
             "type": "text",
-            "content": "Motstykket het isfet: uorden, løgn og urett. Bak isfet lå Nun, urkaoset, og slangen Apofis, som hver natt prøvde å stanse solbåten på veien gjennom mørket. Verden var altså aldri trygg av seg selv. Ma'at måtte holdes oppe, hver eneste dag, av gudene, av kongen og av vanlige mennesker. Det er denne tanken hele resten av religionen henger på."
+            "content": "Det motsatte het isfet: uorden, løgn og urett. Bak isfet lå Nun, det store kaoset som fantes før verden ble til, og slangen Apofis, som hver natt prøvde å stanse solbåten på veien gjennom mørket. Verden var altså aldri trygg av seg selv. Ma'at måtte holdes oppe hver eneste dag, av gudene, av kongen og av vanlige mennesker. Det er denne tanken hele resten av religionen bygger på."
         },
         {
             "type": "component",
@@ -60,14 +60,14 @@
         },
         {
             "type": "text",
-            "content": "Faraos viktigste oppgave var å holde ma'at oppe. Han var bindeleddet mellom menneskene og gudene, og han ble sett på som Horus i levende skikkelse på jorda (Bettum, 2025). Når han ofret i tempelet, dømte rettferdig eller slo tilbake en fiende, gjorde han det samme arbeidet som gudene gjorde i himmelen: han holdt kaoset ute. Politikk og religion var ikke to ting i Egypt. Det var én ting."
+            "content": "Faraos viktigste oppgave var å holde ma'at oppe. Han var leddet mellom menneskene og gudene, og folk så på ham som guden Horus i levende live på jorda (Bettum, 2025). Når han ofret i tempelet, dømte rettferdig eller slo tilbake en fiende, gjorde han det samme arbeidet som gudene gjorde i himmelen: han holdt kaoset ute. Politikk og religion var ikke to ting i Egypt. Det var én ting."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "En religion som varte i 3500 år",
-                "content": "Egyptisk religion kan følges fra tidlig dynastisk tid, omkring 2900 fvt., og helt fram til år 550, da tempelet for gudinnen Iset (Isis) på øya Philae ble stengt. Det er rundt 3500 år. Til sammenligning har det gått litt over 1000 år siden Norge ble kristnet."
+                "content": "Egyptisk religion kan følges fra omkring 2900 fvt., da de første kongeslektene styrte, og helt fram til år 550, da tempelet for gudinnen Iset (Isis) på øya Philae ble stengt. Det er rundt 3500 år. Til sammenligning har det gått litt over 1000 år siden Norge ble kristnet."
             }
         },
         { "type": "header", "text": "Nesten 1500 guder" },
@@ -77,11 +77,11 @@
         },
         {
             "type": "text",
-            "content": "Prestene stelte gudene som en konge i sitt eget palass. Hver morgen ble gudestatuen vekket, vasket, kledd på og servert mat (Bettum, 2025). Vanlige folk kom sjelden inn i tempelet. De møtte gudene når statuene ble båret ut i store prosesjoner på festdagene. Tempelet var altså ikke et forsamlingshus slik en kirke eller en moské er i dag. Det var gudens bolig."
+            "content": "Prestene stelte gudene som en konge i sitt eget palass. Hver morgen ble gudestatuen vekket, vasket, kledd på og servert mat (Bettum, 2025). Vanlige folk kom sjelden inn i tempelet. De møtte gudene når statuene ble båret ut i store opptog på festdagene. Tempelet var altså ikke et sted der folk samlet seg, slik en kirke eller en moské er i dag. Det var gudens bolig."
         },
         {
             "type": "text",
-            "content": "Denne gudeverdenen er noe helt annet enn den vi møter i [Hadde Gud en kone?](/krle/religion/historiske-religioner/monoteismens-fodsel), der én gud etter hvert skyver alle de andre til side. Egypterne så ingen motsetning i å ha mange guder som overlappet hverandre. Ulike byer kunne til og med sette sammen guder til nye, som Amon-Ra."
+            "content": "Denne gudeverdenen er noe helt annet enn den vi møter i [Hadde Gud en kone?](/krle/religion/historiske-religioner/monoteismens-fodsel), der én gud etter hvert skyver alle de andre til side. Egypterne syntes ikke det var noe problem at gudene lignet på hverandre og hadde de samme oppgavene. Ulike byer kunne til og med sette sammen guder til nye, som Amon-Ra."
         },
         {
             "type": "image",
@@ -96,11 +96,11 @@
         },
         {
             "type": "text",
-            "content": "Horus vokste opp i skjul i sivet ved Nilen mens Seth prøvde å drepe ham gang på gang. Da han ble voksen, kjempet han mot Seth om Egypt. Gudenes råd avgjorde til slutt: Horus fikk kongemakten på jorda, Osiris fikk herredømmet over dødsriket, og Seth ble jaget ut i ørkenen (Bettum, 2024)."
+            "content": "Horus vokste opp i skjul i sivet ved Nilen mens Seth prøvde å drepe ham gang på gang. Da han ble voksen, kjempet han mot Seth om Egypt. Gudenes råd avgjorde til slutt: Horus fikk kongemakten på jorda, Osiris fikk makten over dødsriket, og Seth ble jaget ut i ørkenen (Bettum, 2024)."
         },
         {
             "type": "text",
-            "content": "Fortellingen var mer enn underholdning. Den var mønsteret for hele begravelsesritualet. I den eldste tiden var den levende kongen Horus, mens den døde kongen ble Osiris. Senere fikk vanlige egyptere del i det samme, og til slutt ble «Osiris» rett og slett en tittel foran navnet på enhver død (Bettum, 2024). Poenget var alltid det samme: livet vinner over døden."
+            "content": "Fortellingen var mer enn underholdning. Den var mønsteret for hvordan alle begravelser ble gjennomført. I den eldste tiden var den levende kongen Horus, mens den døde kongen ble Osiris. Senere fikk vanlige egyptere del i det samme, og til slutt ble «Osiris» rett og slett en tittel foran navnet på alle døde (Bettum, 2024). Poenget var alltid det samme: livet vinner over døden."
         },
         {
             "type": "component",
@@ -113,7 +113,7 @@
         { "type": "header", "text": "Dommen: hjertet mot fjæren" },
         {
             "type": "text",
-            "content": "Egypterne mente at et menneske ble delt i flere deler ved døden: navnet, ka og ba. Målet var at delene skulle finne sammen igjen, slik at den døde kunne stå opp som en akh, et lysvesen (Bettum, 2025). Men først måtte den døde stå til ansvar for livet sitt foran en dødedomstol. Der ble hjertet veid, og motvekten var en fjær."
+            "content": "Egypterne mente at et menneske ble delt i flere deler ved døden: navnet, ka som var livskraften, og ba som var det personlige, altså det som gjorde deg til deg. Målet var at delene skulle finne sammen igjen, slik at den døde kunne stå opp som en akh, et lysvesen (Bettum, 2025). Men først måtte den døde svare for livet sitt foran en domstol i dødsriket. Der ble hjertet veid, og motvekten var en fjær."
         },
         {
             "type": "text",
@@ -121,7 +121,7 @@
         },
         {
             "type": "text",
-            "content": "I kapittel 125 av Dødeboken sverger den døde foran 42 guder, ledet av Ma'at, at han ikke har handlet mot ma'at: jeg har ikke stjålet, jeg har ikke løyet, jeg har ikke flyttet grensesteinen, jeg har ikke jukset med vekten (Rønaasen mfl., 2024). Den som hadde levd etter ma'at, fikk evig liv. Den som ikke hadde det, ble slettet helt ut. Egypterne fryktet ikke straff i et pinested. De fryktet å forsvinne."
+            "content": "I kapittel 125 av Dødeboken sverger den døde foran 42 guder, ledet av Ma'at, at han ikke har handlet mot ma'at: jeg har ikke stjålet, jeg har ikke løyet, jeg har ikke flyttet grensesteinen, jeg har ikke jukset med vekten (Rønaasen mfl., 2024). Den som hadde levd etter ma'at, fikk evig liv. Den som ikke hadde det, ble slettet helt ut. Egypterne var ikke redde for å bli straffet på et sted med evig pine. De var redde for å forsvinne helt."
         },
         {
             "type": "component",
@@ -131,11 +131,11 @@
         { "type": "header", "text": "Dødeboken: en bok for å gå ut i dagen" },
         {
             "type": "text",
-            "content": "Det vi kaller Dødeboken, kalte egypterne «boken for å gå ut i dagen». Navnet sier alt: den skulle hjelpe den døde ut i lyset igjen. Den er ikke én bok, men en samling på 192 ganske selvstendige kapitler med tekst og bilder (Bettum, 2025). Ingen fikk alle. Familien valgte ut de kapitlene de hadde råd til og mente den døde trengte."
+            "content": "Det vi kaller Dødeboken, kalte egypterne «boken for å gå ut i dagen». Navnet sier alt: den skulle hjelpe den døde ut i lyset igjen. Den er ikke én bok, men en samling på 192 kapitler med tekst og bilder som ikke henger så tett sammen (Bettum, 2025). Ingen fikk alle. Familien valgte ut de kapitlene de hadde råd til og mente den døde trengte."
         },
         {
             "type": "text",
-            "content": "Rullen ble lagt i graven, ofte i en beholder formet som en gud, eller rett oppå den døde inne i kista. Enkelte kapitler ble også skrevet på amuletter og på selve bindene rundt mumien. Den fineste rullen vi har er laget for skriveren Ani i det 19. dynastiet, rundt 1292-1191 fvt. Rullet ut er den nesten 24 meter lang, og den ligger i dag på British Museum (Bettum, 2025)."
+            "content": "Rullen ble lagt i graven, ofte i en beholder formet som en gud, eller rett oppå den døde inne i kista. Enkelte kapitler ble også skrevet på amuletter, altså små smykker som skulle beskytte, og på selve tøystrimlene som mumien var pakket inn i. Den fineste rullen vi har er laget for skriveren Ani i det 19. dynastiet, rundt 1292-1191 fvt. Rullet ut er den nesten 24 meter lang, og den ligger i dag på British Museum (Bettum, 2025)."
         },
         {
             "type": "text",
@@ -144,11 +144,11 @@
         { "type": "header", "text": "Kroppen måtte være der" },
         {
             "type": "text",
-            "content": "Hvis den døde skulle leve videre, måtte kroppen finnes. Derfor balsamerte egypterne likene sine. Innvollene ble tatt ut gjennom et snitt i magen, hjernen ble trukket ut gjennom nesa, og kroppen ble tørket og behandlet med natron, salt, palmevin og myrra (Store norske leksikon, 2025). En balsamering kunne ta fra to til ti måneder."
+            "content": "Hvis den døde skulle leve videre, måtte kroppen finnes. Derfor balsamerte egypterne de døde, altså behandlet kroppen slik at den ikke råtnet. Innvollene ble tatt ut gjennom et snitt i magen, hjernen ble trukket ut gjennom nesa, og kroppen ble tørket og behandlet med natron, salt, palmevin og myrra (Store norske leksikon, 2025). En balsamering kunne ta fra to til ti måneder."
         },
         {
             "type": "text",
-            "content": "Mat og redskaper ble lagt i graven, og de rikes graver ble praktfullt utsmykket. Egypterne tenkte seg dødsriket, Duat, som et sted der livet kunne fortsette omtrent som før. Sola beveget seg gjennom dødsriket om natten og ga lys også der (Bettum, 2025). Det er en tydelig forskjell fra nabofolkene i [Mesopotamia](/historie/jordbruk-og-sivilisasjoner/mesopotamia), som så for seg dødsriket som et grått og trist sted."
+            "content": "Mat og redskaper ble lagt i graven, og gravene til de rike ble pyntet med det aller fineste. Egypterne tenkte seg dødsriket, Duat, som et sted der livet kunne fortsette omtrent som før. Sola beveget seg gjennom dødsriket om natten og ga lys også der (Bettum, 2025). Det er en tydelig forskjell fra nabofolkene i [Mesopotamia](/historie/jordbruk-og-sivilisasjoner/mesopotamia), som så for seg dødsriket som et grått og trist sted."
         },
         {
             "type": "image",
@@ -163,7 +163,7 @@
         },
         {
             "type": "text",
-            "content": "Men ideene forsvant ikke. Tanken om at et menneske skal stilles til ansvar etter døden, og at det finnes en rettferdig målestokk, finner vi igjen i mange religioner. Zoroastrismen i Persia bygde på en lignende dom, som du kan lese om i [Zarathustra og zoroastrismen](/historie/perserriket/zarathustra-og-zoroastrismen), og i kristendommen møter vi tanken igjen i læren om [frelse](/krle/religion/kristendom/frelse). Kulten rundt Iset spredte seg til og med inn i Romerriket og holdt stand der i flere hundre år."
+            "content": "Men ideene forsvant ikke. Tanken om at et menneske skal stilles til ansvar etter døden, og at det finnes en rettferdig målestokk, finner vi igjen i mange religioner. Zoroastrismen, religionen i Persia, hadde en lignende dom, som du kan lese om i [Zarathustra og zoroastrismen](/historie/perserriket/zarathustra-og-zoroastrismen), og i kristendommen møter vi tanken igjen i læren om [frelse](/krle/religion/kristendom/frelse). Dyrkingen av Iset spredte seg til og med inn i Romerriket og holdt seg der i flere hundre år."
         },
         {
             "type": "text",
@@ -176,7 +176,7 @@
                 "forstaa": [
                     "Hva betyr ordet ma'at, og hva het motstykket til ma'at?",
                     "Hva var faraos viktigste oppgave, ifølge teksten?",
-                    "Hvilket organ ble liggende igjen i kroppen under balsameringen, og hvorfor?",
+                    "Hvilket organ fikk ligge igjen i kroppen når den ble balsamert, og hvorfor?",
                     "Hva sverger den døde foran de 42 gudene i kapittel 125 av Dødeboken?"
                 ],
                 "reflekter": [
@@ -187,7 +187,7 @@
                 ],
                 "gaaVidere": [
                     "Sammenlign dommen over den døde i egyptisk religion med det du vet om dommedag i kristendommen eller islam. Skriv fem-seks setninger om hva som ligner og hva som er ulikt.",
-                    "Skriv din egen «negative bekjennelse» med fem punkter om hva et godt menneske ikke gjør i dag. Sammenlign med en du sitter ved siden av.",
+                    "Den døde ramset opp alt han ikke hadde gjort. Skriv din egen liste med fem punkter om hva et godt menneske ikke gjør i dag. Sammenlign med en du sitter ved siden av.",
                     "Diskuter i klassen: Egypterne mente at det du gjorde hjemme hang sammen med at verden holdt sammen. Finnes det noe lignende i måten vi snakker om klima og miljø på i dag?"
                 ]
             }
@@ -206,7 +206,7 @@
                             "En type gravkiste"
                         ],
                         "answer": "Sannhet, rettferdighet og balanse - den rette ordenen",
-                        "explanation": "Ma'at samlet sannhet, rettferdighet, harmoni, balanse, måtehold og godhet i ett ord. Hun var også en gudinne med en strutsefjær på hodet."
+                        "explanation": "Ma'at samlet sannhet, rettferdighet, balanse, ro og godhet i ett ord. Hun var også en gudinne med en strutsefjær på hodet."
                     },
                     {
                         "question": "Hva ble hjertet veid mot i dommen over den døde?",
@@ -239,7 +239,7 @@
                             "Osiris kjempet mot Ra om solen"
                         ],
                         "answer": "Osiris ble drept av broren Seth, satt sammen igjen av Iset og ble hersker over dødsriket",
-                        "explanation": "Sønnen Horus fikk kongemakten på jorda, Osiris fikk dødsriket, og Seth ble jaget ut i ørkenen. Fortellingen ble mønsteret for begravelsesritualet."
+                        "explanation": "Sønnen Horus fikk kongemakten på jorda, Osiris fikk dødsriket, og Seth ble jaget ut i ørkenen. Fortellingen ble mønsteret for hvordan egypterne gjennomførte begravelser."
                     },
                     {
                         "question": "Hvor lenge varte egyptisk religion omtrent?",
@@ -250,7 +250,7 @@
                             "Rundt 6000 år"
                         ],
                         "answer": "Rundt 3500 år",
-                        "explanation": "Fra tidlig dynastisk tid omkring 2900 fvt. til tempelet for Iset på Philae ble stengt i år 550."
+                        "explanation": "Fra omkring 2900 fvt. og fram til tempelet for Iset på Philae ble stengt i år 550."
                     }
                 ]
             }
