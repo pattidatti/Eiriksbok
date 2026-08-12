@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Christopher Booker hevder i sin bok *The Seven Basic Plots* at alle historier i verden kan kokes ned til syv grunnleggende mønstre. Å kjenne til disse kan være et fantastisk verktøy når du står fast i skrivingen din, eller når du vil forstå hvorfor favorittfilmene dine fungerer som de gjør."
+            "content": "Christopher Booker (2004) hevder i boka *The Seven Basic Plots* at alle historier i verden kan kokes ned til syv grunnleggende mønstre. Å kjenne til disse kan være et fantastisk verktøy når du står fast i skrivingen din, eller når du vil forstå hvorfor favorittfilmene dine fungerer som de gjør."
         },
         {
             "type": "header",
@@ -20,7 +20,7 @@
         },
         {
             "type": "text",
-            "content": "Eksempler: *Beowulf*, *Jaws*, *Star Wars (A New Hope)*, *Harry Potter*."
+            "content": "Eksempler: *Beowulf*, *Jaws*, *Star Wars (A New Hope)*, *Harry Potter*. I det gamle diktet *Beowulf* dreper helten først uhyret Grendel, så Grendels mor, og faller til slutt i kamp mot en drage (Store norske leksikon, 2025)."
         },
         {
             "type": "component",
@@ -108,7 +108,7 @@
         },
         {
             "type": "text",
-            "content": "Eksempler: *Ringenes Herre*, *Odysseen*, *Indiana Jones*."
+            "content": "Eksempler: *Ringenes Herre*, *Odysseen*, *Indiana Jones*. *Odysseen* forteller om Odyssevs' ti år lange hjemreise etter krigen i Troja, med alle problemene han møter underveis (Svelstad, 2026)."
         },
         {
             "type": "component",
@@ -192,7 +192,7 @@
         },
         {
             "type": "text",
-            "content": "Ikke nødvendigvis 'morsom', men en historie preget av forvirring, misforståelser og kaos som til slutt løses opp i harmoni og klarhet. Ofte ender det med bryllup eller fest."
+            "content": "Ikke nødvendigvis 'morsom', men en historie preget av forvirring, misforståelser og kaos som til slutt løses opp i harmoni og klarhet. Ofte ender det med bryllup eller fest, slik Shakespeares romantiske komedier gjerne gjør (Hamm, 2025a)."
         },
         {
             "type": "text",
@@ -234,7 +234,7 @@
         },
         {
             "type": "text",
-            "content": "Det motsatte av 'Fra fattig til rik'. Helten har ofte en fatal svakhet (hubris) som fører til deres undergang. Vi følger ferden mot den uunngåelige katastrofen."
+            "content": "Det motsatte av 'Fra fattig til rik'. Helten har ofte en fatal svakhet, hubris, som betyr overmot: du går over grensene gudene har satt, og rammes av hevnen deres (Gundersen, 2025). Vi følger ferden mot den uunngåelige katastrofen, og tragedien ender sorgfullt - gjerne med at hovedpersonen dør (Hamm, 2025b)."
         },
         {
             "type": "text",
@@ -334,6 +334,20 @@
                     "Noen historier passer i flere plot samtidig. Diskuter med en medelev om en film dere begge kjenner, og prøv å bli enige om hvilket plot som passer best. Hvor er dere uenige, og hvorfor?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Booker, C. (2004). *The Seven Basic Plots: Why We Tell Stories*. Continuum.",
+                    "Gundersen, D. (2025). *Hybris*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/hybris](https://snl.no/hybris)",
+                    "Hamm, C. (2025a). *Komedie*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/komedie](https://snl.no/komedie)",
+                    "Hamm, C. (2025b). *Tragedie*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/tragedie](https://snl.no/tragedie)",
+                    "Store norske leksikon. (2025). *Beowulf*. Hentet 12.08.2026 fra [snl.no/Beowulf](https://snl.no/Beowulf)",
+                    "Svelstad, P. E. (2026). *Odysseen*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Odysseen](https://snl.no/Odysseen)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -342,5 +356,5 @@
         "fortelleteknikk"
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-12T00:00:00Z"
 }
