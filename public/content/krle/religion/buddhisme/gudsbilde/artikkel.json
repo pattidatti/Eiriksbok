@@ -12,7 +12,7 @@
   ],
   "category": "Buddhisme",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/buddhisme/gudsbilde-hero.webp",
   "details": [
     "Buddhismen har ingen skapergud, og har heller aldri vært særlig opptatt av spørsmålet om skapelsen.",
     "Guder finnes likevel i buddhismens bilde av verden, men de er ikke de viktigste.",
@@ -65,7 +65,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/gudsbilde-01.webp",
       "alt": "Buddhastatue i tempel omgitt av mindre gudefigurer",
       "caption": "Gudene er ikke borte i buddhismen. De står bare ikke i sentrum."
     },
@@ -126,7 +126,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/gudsbilde-02.webp",
       "alt": "Munk mediterer alene i enkelt rom ved daggry",
       "caption": "Innsikt er ikke en gave. Den må vokse fram i den enkelte."
     },
@@ -148,7 +148,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/buddhisme/gudsbilde-03.webp",
       "alt": "Mennesker tenner røkelse foran forgylt bodhisattva-figur",
       "caption": "I deler av mahayana bes det til bodhisattvaer som Avalokiteshvara og Tara."
     },

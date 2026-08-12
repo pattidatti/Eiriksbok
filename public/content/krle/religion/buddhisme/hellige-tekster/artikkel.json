@@ -12,7 +12,7 @@
     ],
     "category": "Buddhisme",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/buddhisme/hellige-tekster-hero.webp",
     "details": [
         "Buddhismen har ingen felles hellig bok. Tripitaka betyr de tre kurvene, og bare theravada-skolens versjon er fullstendig bevart.",
         "De tre kurvene er klosterreglene, talene som skal komme fra Buddha, og en ryddig gjennomgang av hva læren går ut på.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/hellige-tekster-01.webp",
             "alt": "Gamle palmebladmanuskripter bundet sammen mellom to trelokk",
             "caption": "Theravada-skolens Tripitaka ble skrevet ned på pali, trolig i det første århundret fvt."
         },
@@ -109,7 +109,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/hellige-tekster-02.webp",
             "alt": "Lange smale tekstblad stablet i hyller i et tibetansk kloster",
             "caption": "I Tibet ble skriftene ordnet i to samlinger på 1300-tallet: Kanjur og Tenjur."
         },
@@ -127,7 +127,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/hellige-tekster-03.webp",
             "alt": "Munker i oransje kapper resiterer høyt sammen i en tempelhall",
             "caption": "Paritta: munker sier fram korte tekster fra Tripitaka høyt, til beskyttelse."
         },

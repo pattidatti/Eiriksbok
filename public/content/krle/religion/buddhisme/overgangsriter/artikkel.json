@@ -8,7 +8,7 @@
     "dimension": "ritual",
     "category": "Buddhisme",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/buddhisme/overgangsriter-hero.webp",
     "comparison_tags": [
         "overgangsriter",
         "ritual",
@@ -61,7 +61,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/buddhisme/overgangsriter-01.webp",
             "alt": "Brudepar gir mat til munker i gule kapper om morgenen",
             "caption": "Munkene får mat på bryllupsdagen og resiterer tekster. Selve vielsen er de ikke med på."
         },
