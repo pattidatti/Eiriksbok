@@ -727,6 +727,14 @@ Disse ble valgt for å komme videre og kan overstyres:
    Oppdaget 2026-08-12 under bygging av `overgangsriter-sti`. Hullet er i artikkelen, ikke
    i stien, og stien ble bevisst bygget uten den stemmen. Bør lukkes når artikkelen neste
    gang røres.
+7. **83 KRLE-filer peker på `/images/placeholder.webp`, som ikke finnes på disk.** Alle 13
+   gjenværende sammenligningsartikler og rundt 70 per-religion-artikler viser derfor en tom
+   oransje gradient-boks som fyller hele første skjerm. Siden ser blank ut, og eleven må
+   scrolle over 1000 px før første tekst. Oppdaget 2026-08-12. To mulige løsninger: legg en
+   ekte `public/images/placeholder.webp` på disk (fikser alle 83 uten å røre innholdet, og
+   `⏳`-markøren i `KRLE_OPPRUSTNING.md` §6 virker fortsatt, siden bildecronen greper etter
+   strengen i JSON-en, ikke etter fila), eller la fase 8 produsere ekte hero-bilder. Den
+   første er en linje med arbeid og bør tas først.
 
 ---
 
@@ -743,6 +751,12 @@ Alle bilder er `placeholder.webp` inntil fase 8. Format: WebP, 16:9, maks 1600px
 | `[ ]` | Hero | `overgangsriter` - Fire dører på rekke, hver med sitt lys. 16:9. | `overgangsriter-hero.webp` |
 | `[ ]` | Hero | `doden` - En sti som deler seg: én går rett fram, én bøyer av i sirkel. Tåkete morgenlys. 16:9. | `doden-hero.webp` |
 | `[ ]` | Hero ×12 | Resterende temaer, prompter skrives ved bygging | `<slug>-hero.webp` |
+| `[~]` | Hero (sti) | `overgangsriter-sti` - fire dører på rekke, hver med sitt lys, sett innenfra et halvmørkt rom. 16:9. **Låner i mellomtiden `/images/sikhisme/overgangsriter-hero.webp`**, en navneseremoni i en gurdwara. | `overgangsriter-sti-hero.webp` |
+
+> **Ikke sett `heroImage` til `/images/placeholder.webp`.** Den fila finnes ikke på disk.
+> Resultatet er at hele første skjerm blir en tom oransje gradient-boks, og siden ser blank
+> ut for eleven. 86 andre KRLE-filer har den samme feilen i dag - se §9.6 punkt 7. Bruk et
+> ekte bilde som finnes, eller la feltet stå tomt til fase 8.
 
 Prompt-mal (fra `docs/image-style-guide.md`):
 `A highly realistic 4K cinematic photograph of [scene]. [Lighting description]. [Composition/camera angle]. 16:9 ratio.`
