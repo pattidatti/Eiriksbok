@@ -47,14 +47,21 @@ export const LessonCard = React.memo<LessonCardProps & { badgeText?: string }>((
                         {topicTitle}
                     </div>
 
-                    <h3 className="text-base font-bold text-text-main mb-1 line-clamp-1 group-hover:text-blue-400 transition-colors">
+                    {/* To linjer er reservert: titler med tema-prefiks ("Bønn: Å snakke med
+                        det hellige") får plass, og alle kort i samme rad flukter. */}
+                    <h3
+                        title={lesson.title}
+                        className="text-base font-bold text-text-main mb-1 leading-snug line-clamp-2 min-h-[2.75rem] group-hover:text-blue-400 transition-colors"
+                    >
                         {lesson.title}
                     </h3>
 
                     {lesson.description && (
-                        <p className="text-xs text-text-muted line-clamp-2 mb-2 flex-grow">
-                            {lesson.description}
-                        </p>
+                        <div className="flex-grow mb-2">
+                            <p className="text-xs text-text-muted line-clamp-2">
+                                {lesson.description}
+                            </p>
+                        </div>
                     )}
 
                     <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">

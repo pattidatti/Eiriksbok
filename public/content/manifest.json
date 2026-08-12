@@ -7822,7 +7822,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-11T08:44:47+02:00"
+                  "lastUpdated": "2026-08-12T13:22:02+02:00"
                 },
                 {
                   "id": "overgangsriter",
@@ -7848,7 +7848,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-11T14:16:17+02:00"
+                  "lastUpdated": "2026-08-12T13:22:02+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -7900,7 +7900,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-11T13:42:47+02:00"
+                  "lastUpdated": "2026-08-12T13:22:02+02:00"
                 },
                 {
                   "id": "intro",
@@ -8251,7 +8251,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T07:36:20+02:00"
+                  "lastUpdated": "2026-08-12T13:22:02+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8329,7 +8329,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-11T00:33:11+02:00"
+                  "lastUpdated": "2026-08-12T13:22:02+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8783,13 +8783,13 @@
               "link": "/krle/sammenligning/overgangsriter-sti",
               "icon": "map",
               "createdDate": "2026-08-12T10:00:34.254Z",
-              "lastUpdated": "2026-08-12T10:09:15.561Z"
+              "lastUpdated": "2026-08-12T13:16:10+02:00"
             }
           ],
           "lessons": [
             {
               "id": "skapelse",
-              "title": "Hvor kommer alt fra?",
+              "title": "Skapelse: Hvor kommer alt fra?",
               "description": "Bibelen bruker seks dager. Hinduismen bruker ikke dager i det hele tatt. Se hvordan ni tradisjoner svarer på det samme spørsmålet.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8802,7 +8802,7 @@
             },
             {
               "id": "gudsbilde",
-              "title": "Én, mange eller ingen gud?",
+              "title": "Gudsbilde: Én, mange eller ingen gud?",
               "description": "Buddhismen har ingen skapergud. Hinduismen har guder i tusentall som mange sier er én. Se hvorfor det trengs to akser for å sammenligne gudsbilder.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8815,7 +8815,7 @@
             },
             {
               "id": "bonn",
-              "title": "Å snakke med det hellige",
+              "title": "Bønn: Å snakke med det hellige",
               "description": "Fem ganger i døgnet snur muslimer seg mot Mekka. En buddhist som mediterer, snur seg ikke mot noe. Sammenlign bønn i ni tradisjoner langs fire akser: retning, tid, kropp og ord.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8828,7 +8828,7 @@
             },
             {
               "id": "overgangsriter",
-              "title": "Fra vugge til grav",
+              "title": "Overgangsriter: Fra vugge til grav",
               "description": "Fødsel, veien ut av barndommen, ekteskap og død. Alle ni tradisjonene kjenner de samme fire overgangene, men de vekter dem helt ulikt - og noen har ingen rite i det hele tatt.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8841,7 +8841,7 @@
             },
             {
               "id": "doden",
-              "title": "Hva skjer når vi dør?",
+              "title": "Døden: Hva skjer når vi dør?",
               "description": "Dør du én gang, eller mange? Ni tradisjoner svarer på hva som skjer etter døden, og du ser hvordan formen på tiden avgjør hvem som holder regnskapet.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8854,7 +8854,7 @@
             },
             {
               "id": "frelse",
-              "title": "Målet med det hele",
+              "title": "Frelse: Målet med det hele",
               "description": "Ni tradisjoner svarer på hva målet med livet er - og på hvem som gjør jobben for å komme dit. Fra nåde som ren gave til frigjøring ingen andre kan gi deg.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8867,7 +8867,7 @@
             },
             {
               "id": "hellige-tekster",
-              "title": "Bøkene som styrer liv",
+              "title": "Hellige tekster: Bøkene som styrer liv",
               "description": "Koranen ble diktert, Bibelen ble satt sammen, Vedaene ble husket i tusen år, og Guru Granth Sahib legges i seng hver kveld. Følg fire stopp fra munn til bok, og se hvorfor en tekst blir hellig av det folk gjør med den.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8880,7 +8880,7 @@
             },
             {
               "id": "grunnleggere",
-              "title": "Menneskene bak",
+              "title": "Grunnleggere: Menneskene bak",
               "description": "Ni tradisjoner gir ni ulike svar på hvem som startet det hele: sammenlign hvilken rolle grunnleggeren fikk, fra Gud til profet til ingen stifter i det hele tatt, og se hva som overtok da han døde.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8893,7 +8893,7 @@
             },
             {
               "id": "etikk-og-leveregler",
-              "title": "Hva er et godt liv?",
+              "title": "Etikk og leveregler: Hva er et godt liv?",
               "description": "Den gylne regel dukker opp i ni tradisjoner som aldri hadde kontakt. Noen sier «ikke gjør», andre sier «gjør» - og sikhismen sier «del». Vi sammenligner form og begrunnelse, med samisk religion som gjestestemme.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8906,8 +8906,8 @@
             },
             {
               "id": "hoytider",
-              "title": "Den hellige kalenderen",
-              "description": "Ni religioner teller det samme aaret paa hver sin klokke. Dra i aarshjulet og se hvorfor ramadan vandrer gjennom aarstidene mens julen staar bom fast paa 25. desember.",
+              "title": "Høytider: Den hellige kalenderen",
+              "description": "Ni religioner teller det samme året på hver sin klokke. Dra i årshjulet og se hvorfor ramadan vandrer gjennom årstidene mens julen står bom fast på 25. desember.",
               "image": "/images/placeholder.webp",
               "tags": [
                 "sammenligning",
@@ -8919,7 +8919,7 @@
             },
             {
               "id": "hellige-rom",
-              "title": "Rommene vi bygger for det hellige",
+              "title": "Hellige rom: Moské, kirke og tempel",
               "description": "Moskeen har ingen bilder, den ortodokse kirken er dekket av dem. Les fem plantegninger som setninger, og se hva et rom forteller om hva en tradisjon mener er viktigst.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8932,7 +8932,7 @@
             },
             {
               "id": "symboler-og-klaer",
-              "title": "Tro du kan se",
+              "title": "Symboler og klær: Tro du kan se",
               "description": "Korset var et henrettelsesredskap, halvmånen er eldre enn islam, og davidsstjernen ble regnet som jødisk først på 1800-tallet. Ni tegn og plagg fra ni tradisjoner: hva mange tror, hva kildene sier, og hvor figuren faktisk kommer fra.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8945,7 +8945,7 @@
             },
             {
               "id": "mat-og-renhet",
-              "title": "Hva får du spise?",
+              "title": "Mat og renhet: Hva får du spise?",
               "description": "Kosher, halal, ahimsa og Visdomsordet: ni tradisjoner svarer på det samme hverdagslige spørsmålet. Sammenlign hva som er tillatt, forbudt og omdiskutert ved matbordet - og hvorfor grensene går så ulike steder.",
               "image": "/images/placeholder.webp",
               "tags": [
@@ -8958,7 +8958,7 @@
             },
             {
               "id": "lidelse",
-              "title": "Hvorfor finnes det vondt?",
+              "title": "Lidelse: Hvorfor finnes det vondt?",
               "description": "Ni tradisjoner møter det samme jordskjelvet. Noen må forsvare Gud, andre stiller ikke spørsmålet i det hele tatt, og ingen av dem har et ferdig svar.",
               "image": "/images/placeholder.webp",
               "tags": [
