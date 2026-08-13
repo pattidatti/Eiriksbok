@@ -11504,6 +11504,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "rwanda-1994",
+      "title": "Folkemordet i Rwanda: Forskjellen som ble skrevet ned",
+      "description": "Hutu og tutsi var sosiale grupper til Belgia skrev forskjellen ned på et identitetskort. Seksti år senere avgjorde kortet hvem som fikk leve.",
+      "startDate": 1994,
+      "endDate": null,
+      "displayDate": "1994",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dekolonisering",
+      "link": "/historie/dekolonisering/rwanda-1994",
+      "tags": [
+        "rwanda",
+        "afrika",
+        "folkemord",
+        "kolonialisme",
+        "menneskerettigheter",
+        "fn"
+      ],
+      "lat": 2,
+      "lng": 20,
+      "placeLabel": "Afrika",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "den-unipolare-verden-sub-1",
       "title": "WTO opprettes",
       "description": "Verdens handelsorganisasjon skal få varer og penger til å flyte fritt over grensene.",

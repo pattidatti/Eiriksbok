@@ -58,6 +58,7 @@ const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
 const Telegraflinja3D = lazy(() => import('./Telegraflinja3D'));
 const Konsekvensbolgen3D = lazy(() => import('./Konsekvensbolgen3D'));
 const Levekaarsgapet3D = lazy(() => import('./Levekaarsgapet3D'));
+const Kollina3D = lazy(() => import('./Kollina3D'));
 const Streikefronten3D = lazy(() => import('./Streikefronten3D'));
 const Perspektivkjernen3D = lazy(() => import('./Perspektivkjernen3D'));
 const Datasporet3D = lazy(() => import('./Datasporet3D'));
@@ -1121,6 +1122,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./Konsekvensbolgen3D'),
         Component: Konsekvensbolgen3D as never,
+    },
+    'kollina-1933': {
+        id: 'kollina-1933',
+        title: 'Åsen i 1933',
+        description:
+            'Du står på en rwandisk ås og blir kjent med seks husstander som er naboer, slektninger og gift på tvers. Så sveiver du folketellingen fra 1933 gjennom bygda. Ingen flytter, ingen bygger om - men når sveiva står i bunn, er åsen delt i to grupper, og to familier er delt midt i mellom.',
+        estimatedSeconds: 150,
+        loader: () => import('./Kollina3D'),
+        Component: Kollina3D as never,
     },
     'levekaarsgapet-3d': {
         id: 'levekaarsgapet-3d',
