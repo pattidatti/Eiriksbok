@@ -45,6 +45,9 @@ Bruk all informasjon fra steg 2 til å designe den komplette læringsreisen.
 
 *   **Perspektiv/Tone:** Definer "Du"-stemmen. Hvem er eleven i denne reisen? (F.eks. "Du er en ung bonde som ser riket vokse" eller "Du er journalist som dekker krisen"). Stemmen skal utvikle seg gjennom aktene.
 *   **Samlende metafor:** Gi stien en gjennomgående metafor som gir eleven et mentalt bilde av reisen og binder alle steg sammen. (F.eks. "Forfatterens Verksted" med skuffer og verktøy, "Tidsmaskinen" med destinasjoner, "Rettssalen" med vitner og bevis.) Metaforen bør gjennomsyre stegtitler, content-tekst og oppgaveformuleringer.
+*   **Språknivå:** Hele stien skal bestå «Skriv for 14-åringen»-testen i `CLAUDE.md`.
+    Poetiske titler og samlende metafor er krav, men forståelighet slår eleganse.
+    Noter i blueprinten hvilke fagbegreper stien innfører, og hvor hvert av dem forklares.
 *   **Poetiske stegtitler (stil):** Definer stilen for stegtitler. De bør være evokative og nysgjerrighetsskapende — ikke generiske. "Hjertet i teksten" > "Tema og budskap". "Mennesker av blekk" > "Karakterbygging". "Mal med ord" > "Språklige virkemidler".
 *   **Emosjonell bue:** Beskriv den emosjonelle reisen (nysgjerrighet → spenning → empati → refleksjon).
 *   **Rød tråd:** Hva er det gjennomgående spørsmålet som binder alle steg sammen? (F.eks. "Hvorfor faller sivilisasjoner?" eller "Hva gjør en leder god?")

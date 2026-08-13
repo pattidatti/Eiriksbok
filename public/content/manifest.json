@@ -8802,13 +8802,13 @@
               "lastUpdated": "2026-08-12T14:15:16+02:00"
             },
             {
-              "id": "hovedplottet-sti",
-              "title": "Læringssti: Hovedplottet",
+              "id": "lidelse-og-frelse-sti",
+              "title": "Læringssti: Lidelse og frelse",
               "description": "Alle religioner forteller den samme historien: noe er galt, og noe skal fikse det. De er dypt uenige om hvem som er helten.",
-              "link": "/krle/sammenligning/hovedplottet-sti",
+              "link": "/krle/sammenligning/lidelse-og-frelse-sti",
               "icon": "map",
               "createdDate": "2026-08-12T14:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-08-13T07:41:19.472Z"
             },
             {
               "id": "skapelse-sti",
@@ -8817,7 +8817,7 @@
               "link": "/krle/sammenligning/skapelse-sti",
               "icon": "map",
               "createdDate": "2026-08-13T15:00:00Z",
-              "lastUpdated": "2026-08-13T07:11:11.023Z"
+              "lastUpdated": "2026-08-13T09:20:09+02:00"
             }
           ],
           "lessons": [

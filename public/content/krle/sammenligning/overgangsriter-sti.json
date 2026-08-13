@@ -23,7 +23,7 @@
                 "type": "refleksjon",
                 "icon": "sparkles",
                 "difficulty": "easy",
-                "content": "Før du leser noe som helst, skal du svare selv.\n\nTenk på ditt eget liv. Et sted mellom bleier og førerkort er det noen dager som teller mer enn andre. Første skoledag. Konfirmasjon eller ingen konfirmasjon. Dagen du fikk lov til å gå hjem alene. Kanskje en begravelse du husker altfor godt.\n\nNoen av dagene ble markert med kake, taler og folk du ikke hadde sett på flere år. Andre gled forbi uten at noen sa noe, og likevel vet du at noe skiftet.\n\nDu trenger ingen forkunnskaper for å svare på dette steget. Det finnes ingen fasit her, og det er poenget: du skal ha ditt eget svar å måle de andre svarene mot. I siste steg henter du fram det du skrev nå, og ser om du har flyttet deg.",
+                "content": "Før du leser noe som helst, skal du svare selv.\n\nTenk på ditt eget liv. Et sted mellom bleier og førerkort er det noen dager som teller mer enn andre. Første skoledag. Konfirmasjon eller ingen konfirmasjon. Dagen du fikk lov til å gå hjem alene. Kanskje en begravelse du husker altfor godt.\n\nNoen av dagene ble markert med kake, taler og folk du ikke hadde sett på flere år. Andre gled forbi uten at noen sa noe, og likevel vet du at noe endret seg.\n\nDu trenger ikke kunne noe om religion for å svare på dette steget. Det finnes ingen fasit her, og det er poenget: du skal ha ditt eget svar å måle de andre svarene mot. I siste steg henter du fram det du skrev nå, og ser om du har endret mening.",
                 "tasks": [
                     "Skriv ned tre øyeblikk i ditt eget liv der du gikk fra å være én ting til å bli noe annet. (Fakta)",
                     "Velg ett av dem. Hvem andre måtte være til stede for at overgangen skulle telle? (Forståelse)",
@@ -39,7 +39,7 @@
                 "type": "fakta",
                 "icon": "book-open",
                 "difficulty": "easy",
-                "content": "Nå får du fakta-fundamentet.\n\nDet finnes tusenvis av religioner og livssyn i verden, og de er uenige om nesten alt. Men fire punkter går igjen overalt: fødselen, veien ut av barndommen, ekteskapet og døden. Ingen kultur lar alle fire passere i stillhet.\n\nArtikkelen du skal lese nå stiller alle ni tradisjonene opp ved siden av hverandre på nettopp disse fire punktene. Legg merke til to ting mens du leser. Det første er begrepet overgangsrite: en seremoni som flytter et menneske fra én plass i samfunnet til en annen. Det andre er de tomme rutene. Noen tradisjoner har ingen egen rite ved en av de fire overgangene. Det er ikke et hull i oversikten. Det er et svar.\n\nBruk gjerne Livets trapp inne i artikkelen mens du leser. Du møter den igjen i steg 6, og da med tre andre tradisjoner valgt.",
+                "content": "Nå skal du få oversikten.\n\nDet finnes tusenvis av religioner og livssyn i verden, og de er uenige om nesten alt. Men fire punkter går igjen overalt: fødselen, veien ut av barndommen, ekteskapet og døden. Ingen kultur lar alle fire gå upåaktet forbi.\n\nArtikkelen du skal lese nå stiller alle ni tradisjonene opp ved siden av hverandre på nettopp disse fire punktene. Legg merke til to ting mens du leser. Det første er ordet overgangsrite: en seremoni som flytter et menneske fra én plass i samfunnet til en annen. Det andre er de tomme rutene. Noen tradisjoner har ingen egen seremoni ved en av de fire overgangene. Det er ikke et hull i oversikten, det er et svar i seg selv.\n\nBruk gjerne Livets trapp inne i artikkelen mens du leser. Du møter den igjen i steg 7, og da med tre andre tradisjoner valgt.",
                 "tasks": [
                     "Les artikkelen [Overgangsriter: Fra vugge til grav](/krle/sammenligning/overgangsriter)",
                     "Hvilke fire overganger går igjen i alle de ni tradisjonene? (Fakta)",
@@ -61,7 +61,7 @@
                 "type": "utfordring",
                 "icon": "layers",
                 "difficulty": "medium",
-                "content": "Den franske forskeren Arnold van Gennep satte ord på noe ingen hadde sett tydelig før. Rundt 1909 sammenlignet han seremonier fra hele verden, og oppdaget at de fulgte den samme oppskriften i tre trinn.\n\nFørst skilles du ut fra det du var. Du forbereder deg, du trekkes bort fra hverdagen, du forlater plassen din.\n\nSå kommer terskelen. Det er det merkelige mellomrommet der du verken er det gamle eller det nye. Gutten som står midt i lesningen. Paret som har gått to av fire runder. Konfirmanten i kappa som er lik for alle.\n\nTil slutt tas du inn igjen, som noe annet. Fest, taler, en ny plass i fellesskapet.\n\nI verktøyet under sorterer du seks øyeblikk fra én rite. Bytt så til en helt annen rite og gjør det på nytt. Innholdet er ulikt. Formen er den samme.",
+                "content": "Den franske forskeren Arnold van Gennep satte ord på noe ingen hadde sett tydelig før. Rundt 1909 sammenlignet han seremonier fra hele verden, og oppdaget at de fulgte den samme oppskriften i tre trinn.\n\nFørst skilles du ut fra det du var. Du forbereder deg, du trekkes bort fra hverdagen, du forlater plassen din.\n\nSå kommer terskelen. En terskel er listen du tråkker over i en døråpning, og her betyr den det merkelige mellomrommet der du verken er det gamle eller det nye. Gutten som står midt i opplesningen i synagogen. Paret som har gått to av fire runder. Konfirmanten i kappe som er lik for alle.\n\nTil slutt tas du inn igjen, som noe annet. Fest, taler, en ny plass i fellesskapet.\n\nI verktøyet under sorterer du seks øyeblikk fra én seremoni. Bytt så til en helt annen seremoni og gjør det på nytt. Innholdet er ulikt. Formen er den samme.",
                 "component": {
                     "name": "TerskelVerkstedet",
                     "props": {
@@ -223,7 +223,7 @@
                 "tasks": [
                     "Sorter alle seks øyeblikkene i bar mitsva i verktøyet over. (Anvendelse)",
                     "Bytt til Anand Karaj og gjør det samme. Hvilken fase var lettest å kjenne igjen? (Anvendelse)",
-                    "Hvorfor kalte van Gennep midtfasen for terskel? (Forståelse)",
+                    "Hvorfor kalte van Gennep midtfasen for terskelen? (Forståelse)",
                     "Ta en av overgangene du skrev ned i prologen, og del den i de tre fasene. (Anvendelse)",
                     "Finnes det overganger uten en tydelig terskelfase? Gi et eksempel og begrunn. (Analyse)"
                 ]
@@ -235,13 +235,13 @@
                 "type": "fakta",
                 "icon": "book-open",
                 "difficulty": "medium",
-                "content": "Nå går du inn i den første av tre tradisjoner, og du velger dem ikke tilfeldig. Jødedommen, buddhismen og sikhismen svarer så ulikt på det samme spørsmålet at mønsteret bak blir lettere å se.\n\nVi begynner med jødedommen, fordi den viser tydeligst hva en rite faktisk gjør. En trettenåring står foran menigheten og leser fra en håndskrevet rull. Det ser ut som en prøve han skal bestå.\n\nDet er det ikke. Ingen blir jøde denne dagen, og ingen avlegger noe løfte om å tro. Det som skjer, er at en plikt bytter eier. Fram til nå har foreldrene svart for at budene blir fulgt. Fra og med tretten år og én dag svarer han for det selv.\n\nSe etter forskjellen mellom de fire jødiske ritene: hvem har bedt om dem, og hvem har bare fått dem?",
+                "content": "Nå går du inn i den første av tre tradisjoner, og de er ikke valgt tilfeldig. Jødedommen, buddhismen og sikhismen svarer så ulikt på det samme spørsmålet at mønsteret bak blir lettere å se.\n\nVi begynner med jødedommen, fordi den viser tydeligst hva en slik seremoni faktisk gjør. En trettenåring står foran menigheten og leser høyt fra en håndskrevet rull. Det ser ut som en prøve han skal bestå.\n\nDet er det ikke. Ingen blir jøde denne dagen, og ingen lover å tro på noe. Det som skjer, er at ansvaret flytter seg fra foreldrene til gutten selv. Fram til nå har foreldrene svart for at han følger budene. Fra og med tretten år og én dag svarer han for det selv.\n\nSe etter forskjellen mellom de fire jødiske seremoniene: hvem har bedt om dem selv, og hvem har bare fått dem?",
                 "tasks": [
                     "Les artikkelen [Dagen ansvaret bytter eier](/krle/religion/jodedom/overgangsriter)",
                     "Hvor gammel må en gutt være før han selv har ansvaret for å følge budene? (Fakta)",
-                    "Ingen blir jøde på denne dagen. Hva er det egentlig som skifter? (Forståelse)",
-                    "Brit mila skjer på den åttende dagen, uten at barnet kan si nei. Bar mitsva krever at han selv står fram. Skriv to setninger om hva den forskjellen betyr. (Anvendelse)",
-                    "Blant jøder som ikke er ortodokse, diskuteres det om nyfødte bør omskjæres. Hva er argumentene på hver side? Gjengi begge sidene så rettferdig du klarer. (Etikk)"
+                    "Ingen blir jøde på denne dagen. Hva er det egentlig som endrer seg? (Forståelse)",
+                    "Brit mila, omskjæringen på den åttende dagen, skjer uten at barnet kan si nei. Bar mitsva krever at gutten selv står fram. Skriv to setninger om hva den forskjellen betyr. (Anvendelse)",
+                    "Noen jøder som ikke er ortodokse, diskuterer om nyfødte gutter bør omskjæres. Hva er argumentene på hver side? Gjengi begge sidene så rettferdig du klarer. (Etikk)"
                 ],
                 "links": [
                     {
@@ -257,13 +257,13 @@
                 "type": "refleksjon",
                 "icon": "help-circle",
                 "difficulty": "medium",
-                "content": "I flere buddhistiske land begynner bryllupsdagen hjemme hos brudeparet. Munkene kommer på besøk tidlig om morgenen. De får mat, de leser høyt fra hellige tekster, og så går de tilbake til klosteret. Selve bryllupet skjer etter at de har gått.\n\nDet er lett å tro at det mangler noe her. Det gjør det ikke. Buddhistiske munker og nonner gifter rett og slett ikke bort folk, fordi bryllupet ikke regnes som en religiøs handling.\n\nMen døden slipper buddhismen ikke unna. I Øst-Asia er det som regel munkene som styrer seremonien i en begravelse.\n\nDette er den tomme ruta fra steg 1, sett innenfra. Klosteret tar seg av det som handler om karma og gjenfødelse. Resten får landsbyen ordne selv. At riten mangler, er altså et valg. Ingen har glemt den.",
+                "content": "I flere buddhistiske land begynner bryllupsdagen hjemme hos brudeparet. Munkene kommer på besøk tidlig om morgenen. De får mat, de leser høyt fra hellige tekster, og så går de tilbake til klosteret. Selve bryllupet skjer etter at de har gått.\n\nDet er lett å tro at det mangler noe her. Det gjør det ikke. Buddhistiske munker og nonner gifter rett og slett ikke bort folk, fordi bryllupet ikke regnes som en religiøs handling.\n\nMen døden slipper buddhismen ikke unna. I Øst-Asia er det som regel munkene som styrer begravelsen.\n\nDette er den tomme ruta fra oversikten i steg 2, sett innenfra. Klosteret tar seg av det som handler om karma og gjenfødelse. Resten får landsbyen ordne selv. At seremonien mangler, er altså et valg. Ingen har glemt den.",
                 "tasks": [
                     "Les artikkelen [Riten som ikke finnes](/krle/religion/buddhisme/overgangsriter)",
                     "Hva gjør munkene på bryllupsdagen, og når går de? (Fakta)",
                     "Hvorfor tar buddhismen hånd om begravelsen, men ikke bryllupet? (Forståelse)",
-                    "Novisevigslingen i Myanmar og Thailand ligner litt på en konfirmasjon. Sett opp to likheter og to forskjeller. (Anvendelse)",
-                    "En gutt som bor i klosteret, kan flytte hjem igjen når han vil. Gjør det riten mindre viktig? Begrunn svaret. (Analyse)"
+                    "Novisevigslingen i Myanmar og Thailand, der en gutt flytter inn i klosteret en periode, ligner litt på en konfirmasjon. Sett opp to likheter og to forskjeller. (Anvendelse)",
+                    "En gutt som bor i klosteret, kan flytte hjem igjen når han vil. Gjør det seremonien mindre viktig? Begrunn svaret. (Analyse)"
                 ],
                 "links": [
                     {
@@ -279,7 +279,7 @@
                 "type": "utfordring",
                 "icon": "gamepad-2",
                 "difficulty": "medium",
-                "content": "Den tredje tradisjonen gjør noe ingen av de to andre gjør: den setter en bok i midten.\n\nI et sikh-bryllup sier paret ikke ja foran en prest, og de skriver ikke under på noen avtale inne i gudshuset. De setter seg på gulvet foran Guru Granth Sahib. Så synges et dikt i fire vers, og for hvert vers reiser paret seg og går en runde rundt boka. Etter den fjerde runden er de gift.\n\nDet samme gjelder de andre ritene. Navnet ditt får du fra en tilfeldig side i den samme boka. Alle får etternavnet Singh eller Kaur, slik at ingen kan lese kaste ut av navnet ditt.\n\nSpill gjennom seremonien under, og tell rundene. Legg merke til hva som står i midten, og hva som ikke gjør det.",
+                "content": "Den tredje tradisjonen gjør noe ingen av de to andre gjør: den setter en bok i midten.\n\nI et sikh-bryllup sier paret ikke ja foran en prest, og de skriver ikke under på noen avtale inne i gudshuset. De setter seg på gulvet foran Guru Granth Sahib, den hellige boka til sikhene. Så synges et dikt i fire vers, og for hvert vers reiser paret seg og går en runde rundt boka. Etter den fjerde runden er de gift.\n\nDet samme gjelder de andre seremoniene. Navnet ditt får du fra en tilfeldig side i den samme boka. Alle får etternavnet Singh eller Kaur, slik at ingen kan lese kaste ut av navnet. Kaste vil si hvilket lag i samfunnet familien din hører til, og i India har det avgjort mye om hvordan folk blir behandlet.\n\nSpill gjennom seremonien under, og tell rundene. Legg merke til hva som står i midten, og hva som ikke gjør det.",
                 "component": {
                     "name": "MicroGame",
                     "props": {
@@ -578,7 +578,7 @@
                 },
                 "tasks": [
                     "Klikk deg gjennom alle fire overgangene i Livets trapp over, med jødedom, buddhisme og sikhisme valgt. (Anvendelse)",
-                    "På hvilket trinn står buddhismen uten en egen rite? (Fakta)",
+                    "På hvilken av de fire overgangene står buddhismen uten en egen seremoni? (Fakta)",
                     "Forklar hva den tomme ruta faktisk forteller oss. (Forståelse)",
                     "Bytt ut én av de tre med en tradisjon du ikke har lest om. Hva overrasket deg mest? (Anvendelse)",
                     "Døden markeres av alle ni tradisjonene. Skriv tre setninger om hvorfor akkurat den overgangen er umulig å hoppe over. (Analyse)"
@@ -591,11 +591,11 @@
                 "type": "oppgave",
                 "icon": "sparkles",
                 "difficulty": "hard",
-                "content": "Folk holder ofte fast på seremoniene lenge etter at de har sluttet å tro.\n\nI 2023 ble omtrent 48 prosent av femtenåringene konfirmert i Den norske kirke. I 2024 ble 80,4 prosent av de døde i Norge begravet i kirkens regi. Mange av dem som satt i kirkebenken, ville sagt at de ikke tror på noe særlig. De kom likevel.\n\nDet sier noe om hva en overgangsrite er. Den er ikke bare en påstand om himmelen. Den er samfunnets måte å si «nå er du noe annet», høyt nok til at alle hører det.\n\nVed de tre første overgangene kan den det gjelder si noe selv. Ved den siste kan hun eller han ikke det. Da er hele seremonien jobben til dem som er igjen.\n\nNå henter du fram det du skrev i prologen.",
+                "content": "Folk holder ofte fast på seremoniene lenge etter at de har sluttet å tro.\n\nI 2023 ble omtrent 48 prosent av femtenåringene konfirmert i Den norske kirke. I 2024 fikk 80,4 prosent av de døde i Norge en begravelse i kirken. Mange av dem som satt i kirkebenken, ville sagt at de ikke tror på noe særlig. De kom likevel.\n\nDet sier noe om hva en overgangsrite er. Den sier ikke bare noe om himmelen. Den er samfunnets måte å si «nå er du noe annet», høyt nok til at alle hører det.\n\nVed de tre første overgangene kan den det gjelder si noe selv. Ved den siste kan hun eller han ikke det. Da er hele seremonien jobben til dem som er igjen.\n\nNå henter du fram det du skrev i prologen.",
                 "tasks": [
                     "Les det du skrev i prologen. Hva vil du legge til nå? (Refleksjon)",
-                    "48 prosent lar seg konfirmere, men 80,4 prosent får kirkelig gravferd. Hva kan forklare forskjellen? (Analyse)",
-                    "Kan en rite bety noe for deg selv om du ikke tror på det den bygger på? Skriv et kort svar med begrunnelse. (Etikk)",
+                    "48 prosent lar seg konfirmere, men 80,4 prosent får en begravelse i kirken. Hva kan forklare forskjellen? (Analyse)",
+                    "Kan en seremoni bety noe for deg selv om du ikke tror på det den bygger på? Skriv et kort svar med begrunnelse. (Etikk)",
                     "Lag din egen overgangsrite for en overgang som ikke markeres i dag. Beskriv den med van Genneps tre faser. (Anvendelse)",
                     "Skriv fem setninger som svarer på spørsmålet: hva gjør en overgangsrite? Bruk minst tre fagord fra stien. (Syntese)"
                 ],

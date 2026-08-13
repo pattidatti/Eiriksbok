@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-12T17:22:34.101Z",
-  "count": 21,
+  "updatedAt": "2026-08-13T07:54:53.376Z",
+  "count": 22,
   "paths": [
     {
       "id": "romerriket-sti",
@@ -120,15 +120,27 @@
       "version": 1
     },
     {
-      "id": "hovedplottet-sti",
-      "title": "Læringssti: Hovedplottet",
+      "id": "skapelse-sti",
+      "title": "Læringssti: Før alt fantes",
+      "description": "Ni tradisjoner forteller hver sin historie om hvordan verden ble til. Du skal oppdage at læresetningene ikke kom først. De ble trukket ut av fortellingene etterpå.",
+      "subjectId": "krle",
+      "subjectName": "KRLE",
+      "topicId": "sammenligning",
+      "readTime": "3 timer",
+      "path": "/krle/sammenligning/skapelse-sti",
+      "fileRelativePath": "krle/sammenligning/skapelse-sti.json",
+      "version": 1
+    },
+    {
+      "id": "lidelse-og-frelse-sti",
+      "title": "Læringssti: Lidelse og frelse",
       "description": "Alle religioner forteller den samme historien: noe er galt, og noe skal fikse det. De er dypt uenige om hvem som er helten.",
       "subjectId": "krle",
       "subjectName": "KRLE",
       "topicId": "sammenligning",
       "readTime": "2 timer",
-      "path": "/krle/sammenligning/hovedplottet-sti",
-      "fileRelativePath": "krle/sammenligning/hovedplottet-sti.json",
+      "path": "/krle/sammenligning/lidelse-og-frelse-sti",
+      "fileRelativePath": "krle/sammenligning/lidelse-og-frelse-sti.json",
       "version": 1
     },
     {

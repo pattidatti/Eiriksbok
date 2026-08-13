@@ -1,10 +1,10 @@
-# Blueprint: Læringssti - Hovedplottet
+# Blueprint: Læringssti - Lidelse og frelse
 
 **Status:** Bygget (12.08.2026)
 **Fag:** krle
 **Emne:** sammenligning
-**Sti-ID:** hovedplottet-sti
-**Fil:** `public/content/krle/sammenligning/hovedplottet-sti.json`
+**Sti-ID:** lidelse-og-frelse-sti
+**Fil:** `public/content/krle/sammenligning/lidelse-og-frelse-sti.json`
 **Målgruppe:** Ungdomsskole (10. trinn)
 **Estimert tid:** 2 timer
 **Kompetansemål:** rle01-03-10-06, rle01-03-10-13, rle01-03-10-15 (arvet fra `lidelse` og `frelse`)
@@ -347,7 +347,7 @@ Gurmukhi and Latin - the paper aged to different shades of cream and amber. A si
 warm desk lamp lights the table from the left, leaving the far edges in shadow. Shallow
 depth of field on the nearest page. No people. 16:9 ratio.
 
-**Fil:** `/images/krle/hovedplottet-hero.webp`
+**Fil:** `/images/krle/lidelse-og-frelse-hero.webp`
 
 **Status:** stien står med `"heroImage": "/images/placeholder.webp"`, samme markør som
 `lidelse` og `frelse` bruker. Det er den markøren bildegenereringscronen leter etter, så
@@ -357,10 +357,10 @@ bildet kommer av seg selv. Kjør `/bilde` om det haster.
 
 ## Registrering
 
-1. Fil: `public/content/krle/sammenligning/hovedplottet-sti.json`
+1. Fil: `public/content/krle/sammenligning/lidelse-og-frelse-sti.json`
 2. `manifest.json`: legges under `krle` → `sammenligning` → **`tools`** (ikke `lessons`),
    ved siden av `overgangsriter-sti`.
-3. `link`: `/krle/sammenligning/hovedplottet-sti`, `icon`: `map`.
+3. `link`: `/krle/sammenligning/lidelse-og-frelse-sti`, `icon`: `map`.
 4. Ny komponent registreres i `src/components/ComponentRegistry.tsx`.
 5. `npm run scan:content` etter at fila er på plass.
 
@@ -371,7 +371,7 @@ bildet kommer av seg selv. Kjør `/bilde` om det haster.
 - [x] Steg 0 finnes, null forkunnskaper
 - [x] Alle lenker absolutte, verifisert mot filsystemet
 - [x] Bloom-trapp i hvert steg, 5 oppgaver, minst én anvendelsesoppgave
-- [x] Ingen duplikat-ID (`hovedplottet` finnes ikke i manifest.json)
+- [x] Ingen duplikat-ID (`lidelse-og-frelse-sti` finnes ikke fra før i manifest.json)
 - [x] Fire interaktive berøringspunkter, plassert ved vendepunkt
 - [x] Kun gyldige stegtyper: fakta, refleksjon, utfordring, oppgave
 - [x] Én artikkel per steg

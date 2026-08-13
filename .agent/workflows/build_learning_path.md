@@ -243,6 +243,29 @@ Steg som inneholder en komponent bruker `type: "utfordring"`, `"oppgave"` eller 
 
 ---
 
+### 3.5 Språk i `content` og `tasks`
+
+Les seksjonen **«Skriv for 14-åringen, ikke for kollegaen din»** i `CLAUDE.md` før du skriver
+en eneste stegtekst, og bruk den som fasit. Kravene om samlende metafor, poetiske stegtitler
+og minst 150 ord per steg gjelder fortsatt - men de er underordnet forståelighet. En sti som
+er vakker og uforståelig, er en feilet sti.
+
+De fire feiltypene som går igjen i læringsstier spesielt:
+
+1.  **Fortettet metafor uten dekning.** «Et plott har ingen kraft hvis diagnosen er lettvint.»
+    Skriv hva som faktisk skjer først; bildet kan komme etterpå.
+2.  **Fagbegrep uten forklaring i samme setning.** Skriver du teodise, samsara, moksha,
+    arvesynd, tikkun olam eller halakha i `content`, må forklaringen stå der og da.
+    I `tasks` er et uforklart fagord greit *hvis* svaret finnes i artikkelen steget lenker til.
+3.  **Fremmedord der hverdagsordet holder.** regi, forkunnskaper, innvending, praksis,
+    obligatorisk, forestilling.
+4.  **Abstrakt substantiv der en handling hører hjemme.** «Selve forsøket på å forsvare Gud
+    har fått et eget navn» → «Når noen prøver å forsvare Gud på den måten, kalles det …».
+
+Test hver setning: *hva ser en 14-åring for seg her?* Får du ikke et bilde, skriv om.
+
+---
+
 ## 4. Valider JSON
 
 Kjør gjennom denne sjekklisten:
@@ -252,6 +275,9 @@ Kjør gjennom denne sjekklisten:
 - [ ] **Absolutte stier:** Alle lenker i `tasks` og `links` starter med `/`
 - [ ] **"Les artikkelen" først:** Der artikkelen kreves, er dette den første oppgaven
 - [ ] **Ghost-Fact Audit:** Les faktisk innholdet i de refererte artiklene og verifiser at alle fakta-spørsmål kan besvares fra kildematerialet. Fjern eller omformuler spørsmål som refererer til informasjon som ikke finnes i artikkelen.
+- [ ] **Språk (14-åringstesten):** Hver `content`-tekst og hver oppgave er sjekket mot
+      «Skriv for 14-åringen» i `CLAUDE.md` - ingen uforklarte fagbegreper i `content`,
+      ingen fremmedord der hverdagsordet holder, ingen metafor uten klartekst først
 - [ ] **Content-lengde:** Hvert stegs `content`-felt er minst 150 ord
 - [ ] **Oppgaver per steg:** 4-7 oppgaver per steg, med minst én anvendelsesoppgave
 - [ ] **Bloom-rekkefølge:** Oppgavene følger Fakta → Forståelse → Anvendelse → Refleksjon
@@ -342,6 +368,7 @@ Sjekkliste:
 - [ ] Minst 2 interaktive komponenter er implementert — plassert ved vendepunkt/klimaks
 - [ ] Alle steg har 4-7 oppgaver med Bloom-progresjon (Fakta → Forståelse → Anvendelse → Refleksjon)
 - [ ] Minst én anvendelsesoppgave per steg (eleven *skaper* noe)
+- [ ] Språket er vasket mot «Skriv for 14-åringen» i `CLAUDE.md` (se §3.5)
 - [ ] Samlende metafor er gjennomgående i content-tekst og stegtitler
 - [ ] Poetiske stegtitler — evokative, ikke generiske
 - [ ] Én artikkel per steg
