@@ -1,0 +1,217 @@
+{
+    "id": "rwanda-1994",
+    "title": "Folkemordet i Rwanda: Forskjellen som ble skrevet ned",
+    "layout": "rich",
+    "year": "1994",
+    "category": "Afrika",
+    "readTime": "11 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Hutu og tutsi var opprinnelig sosiale grupper, ikke to folkeslag. Skillet fulgte hva folk levde av.",
+        "Belgia gjennomførte folketelling i 1933-34, og fra 1935 måtte alle bære et identitetskort med gruppa si.",
+        "Mellom 800 000 og én million mennesker ble drept på hundre dager i 1994.",
+        "FN hadde soldater i landet og var advart på forhånd, men grep ikke inn."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Om morgenen 7. april 1994 sto det menn med veisperringer i gatene i Kigali. De stanset alle som kom forbi og krevde å få se ett papir: identitetskortet. På kortet sto det ett ord. Hutu, tutsi eller twa. Ordet avgjorde om du fikk gå videre.\n\nDet er lett å tenke at kortet bare beskrev noe som allerede fantes, slik et pass forteller hvor du er født. Men det stemmer ikke. Ordet på kortet var skrevet av en europeisk kolonimakt seksti år tidligere. Og det er kjernen i denne historien: forskjellen som drepte nesten en million mennesker, var ikke funnet. Den var laget."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Veisperring av tømmer i en gate i Kigali i 1994",
+            "caption": "Ved veisperringene i 1994 var det identitetskortet, ikke ansiktet, som avgjorde hvem som slapp forbi."
+        },
+        {
+            "type": "header",
+            "text": "Én ås, mange naboer"
+        },
+        {
+            "type": "text",
+            "content": "Rwanda blir kalt landet med tusen åser. Folk bodde spredt oppover de grønne åssidene, i små gårder med bønner, bananer og kyr. Alle snakket det samme språket, kinyarwanda. De hadde de samme kongene, de samme fortellingene og ofte den samme religionen.\n\nHutu, tutsi og twa fantes lenge før europeerne kom. Men de var ikke tre folkeslag som hadde flyttet inn fra hver sin kant. Store norske leksikon slår fast at forskjellen mellom hutu og tutsi ikke først og fremst handlet om slektskap, men var «et klasseskille basert på sosial rangordning» (Pedersen & Leraand, 2025). Twa var jegere og samlere. Hutu dyrket jorda. Tutsi levde av kyr, og kyr var rikdom.\n\nDet betydde noe viktig: grensene var myke. Hvem du var, hang sammen med hva du gjorde og eide. Folk giftet seg på tvers, bodde vegg i vegg og delte ås."
+        },
+        {
+            "type": "header",
+            "text": "Belgierne skriver det ned"
+        },
+        {
+            "type": "text",
+            "content": "Da europeerne delte Afrika mellom seg under [kappløpet om Afrika](/historie/kolonialisering/kapplopet-om-afrika), havnet Rwanda først under Tyskland. Etter første verdenskrig overtok Belgia, som også styrte nabolandet [Kongo](/historie/dekolonisering/kongo).\n\nBelgierne så ikke myke sosiale grupper. De så raser. De trodde på en idé som kalles hamittehypotesen: at tutsiene stammet fra et folk lenger nord og derfor var «finere» enn hutuene. Ideen var oppdiktet, men den var praktisk. Kolonimakten trengte noen til å styre for seg, og valgte tutsiene. De fikk skolegang, jobber for kolonistyret og makt over naboene sine.\n\nSå kom det avgjørende grepet. I 1933-34 gjennomførte belgierne en folketelling der hver eneste innbygger ble ført inn i én gruppe. Fra 1935 måtte alle bære et identitetskort som viste hvilken gruppe de tilhørte. Store norske leksikon beskriver dette som «en permanent inndeling av befolkningen» (Pedersen & Leraand, 2025).\n\nLegg merke til ordet permanent. Før 1933 kunne livet ditt endre gruppa di. Etter 1935 kunne ingenting det. Du kunne miste alle kyrne, flytte, gifte deg, bli rik eller fattig. Kortet sto stille."
+        },
+        {
+            "type": "component",
+            "name": "KategoriMaskinen",
+            "props": {
+                "title": "Kategorimaskinen",
+                "subtitle": "Endre livet til en person og se hva som skjer med gruppa. Kjør så folketellingen."
+            }
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "kollina-1933"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Da makten snudde"
+        },
+        {
+            "type": "text",
+            "content": "Belgia hadde bygd et system der én gruppe styrte over den andre. Da kolonitiden gikk mot slutten, snudde belgierne brått og støttet hutuene i stedet. Resultatet ble det som kalles den sosiale revolusjonen i 1959-1962. Kongedømmet, som hadde vært styrt av tutsier, ble veltet.\n\nVolden som fulgte, drev over 100 000 tutsier på flukt til nabolandene (Pedersen & Leraand, 2025). Rwanda ble selvstendig 1. juli 1962 med en hutu som president. Flyktningene fikk aldri komme hjem.\n\nDe ble værende i Uganda og andre naboland i tretti år. Der vokste barna deres opp. I 1990 gikk en opprørshær av flyktninger, Rwandas patriotiske front (RPF), til angrep for å tvinge seg tilbake. Borgerkrigen var i gang. Samme år ble hutu-militsen Interahamwe opprettet (Pedersen, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Hundre dager"
+        },
+        {
+            "type": "text",
+            "content": "6. april 1994 ble flyet til president Juvénal Habyarimana skutt ned over Kigali. Hvem som sto bak, er fortsatt uklart, men nedskytingen «blir ofte sett på som startskuddet for folkemordet» (Pedersen, 2026).\n\nDrapene begynte neste morgen og var planlagt på forhånd. Interahamwe-militsen gjorde jobben, men de gjorde den ikke alene. Myndighetene brukte radiostasjonen RTLM til å lese opp navnelister over folk som skulle drepes (Pedersen, 2026). På listene sto tutsier og moderate hutuer, altså hutuer som ikke ville være med på drapene. Radioen kalte tutsiene kakerlakker. Slik ble helt vanlige mennesker trukket inn.\n\nDette er det vondeste ved Rwanda, og det som skiller folkemordet fra mange andre. HL-senteret skriver at «det var ingen distanse mellom offer og overgriper: De kunne være venner, naboer, slektninger til og med familiemedlemmer» (HL-senteret, 2023). Folk ble drept av dem de bodde ved siden av.\n\nPå hundre dager, fra 6. april til midten av juli, ble mellom 800 000 og én million tutsier, moderate hutuer og rundt 30 prosent av twa-befolkningen drept (Pedersen, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tomt klasserom med forlatte skolepulter og bøker på gulvet",
+            "caption": "På hundre dager forsvant hele nabolag. Skoler, kirker og markeder sto tomme."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva er folkemord?",
+                "content": "Folkemord betyr at noen forsøker å utrydde en hel gruppe mennesker, helt eller delvis, fordi de tilhører den gruppa. Det holder ikke at mange blir drept. Det avgjørende er hensikten: at målet er selve gruppa. FN vedtok i 1948, rett etter andre verdenskrig, en folkemordkonvensjon. Det er en avtale mellom land om å hindre og straffe folkemord. Rwanda viser hvor lite en slik avtale hjelper hvis ingen er villige til å bruke den."
+            }
+        },
+        {
+            "type": "header",
+            "text": "FN visste det"
+        },
+        {
+            "type": "text",
+            "content": "FN hadde soldater i Rwanda. Styrken het UNAMIR og ble ledet av den canadiske generalen Roméo Dallaire. Allerede 10. januar 1994, nesten tre måneder før drapene startet, sendte Dallaire beskjed til FNs hovedkvarter om at et massedrap var under planlegging. Han ba om lov til å beslaglegge våpenlagrene han hadde fått vite om. Svaret var at han ikke hadde mandat til å gripe inn (Pedersen, 2026).\n\nDa drapene begynte, ba Dallaire om å få doble styrken fra 2500 til 5000 soldater. Forslaget ble avvist i FNs sikkerhetsråd (Rosvold, 2024). Ti belgiske FN-soldater ble drept tidlig i aprildagene, og reaksjonen ble den motsatte av forsterkninger: Sikkerhetsrådet bestemte i slutten av april at styrken skulle kuttes til rundt 450 soldater (Rosvold, 2024).\n\nSamtidig unngikk regjeringer i vesten å bruke selve ordet folkemord. Grunnen var enkel og kald: sier du folkemord, har du en plikt til å handle (HL-senteret, 2023). Først i 2004 beklaget FNs generalsekretær at organisasjonen ikke hadde gjort nok (Rosvold, 2024)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "quote": "Det var ingen distanse mellom offer og overgriper: De kunne være venner, naboer, slektninger til og med familiemedlemmer.",
+                "author": "HL-senteret, 2023"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Etterpå"
+        },
+        {
+            "type": "text",
+            "content": "Det var ikke FN som stanset folkemordet. Det var opprørshæren RPF, som tok kontroll over Kigali 4. juli 1994 og deretter satte inn en midlertidig regjering (Pedersen, 2026). Paul Kagame, som ledet RPF, ble visepresident og siden president.\n\nEtterpå sto landet med et umulig regnestykke: hundretusener hadde deltatt i drapene. FN opprettet en egen domstol for Rwanda i byen Arusha i Tanzania. I 1998 dømte den statsminister Jean Kambanda for folkemord. Det var første gang siden [Nürnbergprosessen](/historie/lov-og-rett/nurnbergprosessen) etter andre verdenskrig at en statsminister ble dømt av en internasjonal domstol (Pedersen, 2026).\n\nMen domstolen i Arusha kunne bare ta noen få saker. Fra 2001 tok Rwanda i bruk gacaca, tradisjonelle folkedomstoler der dommere og vanlige folk fra lokalmiljøet behandlet sakene ute i bygdene (Pedersen, 2026). Mange ble dømt. Mange satt også lenge i fengsel uten dom (HL-senteret, 2023).\n\nI dag er Rwanda et av Afrikas mest stabile land. Grunnloven fra 2003 krever at minst 30 prosent av de folkevalgte er kvinner. Samtidig får Kagame «sterk kritikk for brudd på menneskerettighetene og diktatorisk styring», blant annet for vold mot journalister og valgfusk (Leraand & Pedersen, 2022). Landet er trygt i dag. Men det er ikke fritt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Grønne terrasserte åser i Rwanda med små gårdshus i dagslys",
+            "caption": "Åsene ser ut som før. Det er menneskene som må finne ut hvordan de skal bo der sammen igjen."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor dette angår oss"
+        },
+        {
+            "type": "text",
+            "content": "Det er fristende å lese om Rwanda og tenke at dette handler om et fjernt land og et gammelt hat. Men hatet var ikke gammelt. Det var yngre enn besteforeldrene til dem som drepte.\n\nDet som gjorde folkemordet mulig, var en kjede: først en kolonimakt som fant opp en forskjell, så et papir som gjorde forskjellen umulig å komme ut av, så politikere som brukte den til å skaffe seg makt, så en radio som fortalte folk at naboen var et dyr. Hvert ledd i kjeden virker lite. Til sammen tok de en million liv. Du finner den samme kjeden igjen når du leser om [hvordan hat blir til folkemord](/samfunnskunnskap/styringsformer/km-8-terror-folkemord) andre steder.\n\nDerfor er spørsmålet vi tar med oss ikke «hvorfor hatet de hverandre», men noe vanskeligere: hvem er det som bestemmer hvilke grupper vi deles inn i, og hva skjer når noen får makt til å skrive den inndelingen ned?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva sto det på identitetskortet som folk måtte vise fram ved veisperringene i 1994?",
+                    "Teksten sier at hutu og tutsi opprinnelig var sosiale grupper. Forklar hva som avgjorde hvilken gruppe en person hørte til før kolonitiden.",
+                    "Hva gjorde belgierne i 1933-34, og hva skjedde fra 1935? Bruk ordet permanent i svaret ditt.",
+                    "Hvor mange ble drept, og hvor lang tid tok folkemordet? Når startet og sluttet det?",
+                    "Hva ba general Roméo Dallaire om i januar 1994, og hvilket svar fikk han?"
+                ],
+                "reflekter": [
+                    "Teksten sier at forskjellen som drepte nesten en million mennesker ikke var funnet, men laget. Forklar med egne ord hva som menes, og bruk minst to eksempler fra teksten.",
+                    "Hvorfor unngikk regjeringer i vesten å bruke ordet folkemord mens drapene pågikk? Vurder om du synes det var forsvarlig.",
+                    "HL-senteret skriver at det ikke var noen avstand mellom offer og overgriper. Forklar hvorfor nettopp dette gjør folkemordet i Rwanda så vanskelig å forstå og å leve videre med.",
+                    "Rwanda i dag er stabilt, men Kagame kritiseres for å styre diktatorisk. Diskuter: kan et land kjøpe fred for prisen av frihet?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign Rwanda med [apartheid i Sør-Afrika](/historie/dekolonisering/apartheid-syd-afrika). Begge steder ble folk registrert i grupper av staten. Skriv 6-8 setninger om hva som er likt og hva som er ulikt.",
+                    "Radioen RTLM kalte tutsiene kakerlakker. Undersøk hva som menes med avhumanisering, og finn ett eksempel på språk som brukes om mennesker i dag som du mener ligner.",
+                    "Skriv et kort brev (8-10 setninger) fra Dallaire til FNs sikkerhetsråd i januar 1994. Bruk fakta fra teksten og forklar hvorfor han trenger et annet mandat."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var hutu og tutsi opprinnelig, før kolonitiden?",
+                        "options": [
+                            "To folkeslag som hadde innvandret fra hver sin kant",
+                            "Sosiale grupper knyttet til hva folk levde av",
+                            "To religioner",
+                            "To ulike språkgrupper"
+                        ],
+                        "answer": "Sosiale grupper knyttet til hva folk levde av"
+                    },
+                    {
+                        "question": "Hva gjorde Belgia i 1933-34 og 1935?",
+                        "options": [
+                            "Ga Rwanda selvstendighet",
+                            "Forbød folk å eie kyr",
+                            "Gjennomførte folketelling og innførte identitetskort med gruppetilhørighet",
+                            "Flyttet tutsiene til Kongo"
+                        ],
+                        "answer": "Gjennomførte folketelling og innførte identitetskort med gruppetilhørighet"
+                    },
+                    {
+                        "question": "Hvor mange dager varte folkemordet i 1994?",
+                        "options": ["Rundt 30 dager", "Rundt 100 dager", "Rundt 200 dager", "Over to år"],
+                        "answer": "Rundt 100 dager"
+                    },
+                    {
+                        "question": "Hva svarte FNs hovedkvarter da Dallaire varslet om massedrap i januar 1994?",
+                        "options": [
+                            "At han fikk doble styrken sin",
+                            "At han skulle beslaglegge våpnene umiddelbart",
+                            "At han ikke hadde mandat til å gripe inn",
+                            "At Sikkerhetsrådet ville møtes samme uke"
+                        ],
+                        "answer": "At han ikke hadde mandat til å gripe inn"
+                    },
+                    {
+                        "question": "Hva var gacaca?",
+                        "options": [
+                            "FNs domstol i Arusha",
+                            "Lokale folkedomstoler i Rwanda fra 2001",
+                            "Navnet på hutu-militsen",
+                            "Radiostasjonen som leste opp navnelister"
+                        ],
+                        "answer": "Lokale folkedomstoler i Rwanda fra 2001"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "HL-senteret. (2023). *Folkemordet i Rwanda*. Senter for studier av Holocaust og livssynsminoriteter. Hentet 13.08.2026 fra [hlsenteret.no](https://www.hlsenteret.no/undervisning/kunnskapsbasen/Ulike%20folkemord/andre-folkemord/folkemordet-i-rwanda.html)",
+                    "Leraand, D. & Pedersen, F. L. (2022). *Rwandas samtidshistorie*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Rwandas_samtidshistorie](https://snl.no/Rwandas_samtidshistorie)",
+                    "Pedersen, F. L. (2026). *Folkemordet i Rwanda*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Folkemordet_i_Rwanda](https://snl.no/Folkemordet_i_Rwanda)",
+                    "Pedersen, F. L. & Leraand, D. (2025). *Rwandas historie*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Rwandas_historie](https://snl.no/Rwandas_historie)",
+                    "Rosvold, M. (2024). *30 år siden folkemordet i Rwanda - sviktet FN?* FN-sambandet. Hentet 13.08.2026 fra [fn.no](https://fn.no/nyheter/30-aar-siden-folkemordet-i-rwanda-sviktet-fn)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

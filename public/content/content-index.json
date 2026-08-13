@@ -1,5 +1,5 @@
 {
-  "buildId": 245632168193959,
+  "buildId": 61296277408757,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2097,6 +2097,9 @@
     ],
     "dekolonisering-oversikt": [
       "content/historie/dekolonisering/oversikt.json"
+    ],
+    "rwanda-1994": [
+      "content/historie/dekolonisering/rwanda-1994.json"
     ],
     "siste-skanse": [
       "content/historie/dekolonisering/siste-skanse.json"
@@ -5345,6 +5348,7 @@
     "historie/dekolonisering/nykolonialisme": "content/historie/dekolonisering/nykolonialisme.json",
     "historie/dekolonisering/okonomiske-leiemordere": "content/historie/dekolonisering/okonomiske-leiemordere.json",
     "historie/dekolonisering/oversikt": "content/historie/dekolonisering/oversikt.json",
+    "historie/dekolonisering/rwanda-1994": "content/historie/dekolonisering/rwanda-1994.json",
     "historie/dekolonisering/siste-skanse": "content/historie/dekolonisering/siste-skanse.json",
     "historie/dekolonisering/sorost-asia": "content/historie/dekolonisering/sorost-asia.json",
     "historie/dekolonisering/usa-frigjoring": "content/historie/dekolonisering/usa-frigjoring.json",

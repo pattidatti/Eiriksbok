@@ -974,6 +974,10 @@
       "count": 17
     },
     {
+      "tag": "folkemord",
+      "count": 17
+    },
+    {
       "tag": "sivilisasjon",
       "count": 16
     },
@@ -982,11 +986,15 @@
       "count": 16
     },
     {
+      "tag": "menneskerettigheter",
+      "count": 16
+    },
+    {
       "tag": "geopolitikk",
       "count": 16
     },
     {
-      "tag": "folkemord",
+      "tag": "fn",
       "count": 15
     },
     {
@@ -995,10 +1003,6 @@
     },
     {
       "tag": "reformasjonen",
-      "count": 14
-    },
-    {
-      "tag": "menneskerettigheter",
       "count": 14
     },
     {
@@ -1012,10 +1016,6 @@
     {
       "tag": "sammenligning",
       "count": 14
-    },
-    {
-      "tag": "fn",
-      "count": 13
     },
     {
       "tag": "arkeologi",
@@ -1087,6 +1087,10 @@
     },
     {
       "tag": "rettsstat",
+      "count": 10
+    },
+    {
+      "tag": "kolonialisme",
       "count": 10
     },
     {
@@ -1187,10 +1191,6 @@
     },
     {
       "tag": "adel",
-      "count": 8
-    },
-    {
-      "tag": "kolonialisme",
       "count": 8
     },
     {
@@ -2895,6 +2895,10 @@
     },
     {
       "tag": "eos",
+      "count": 2
+    },
+    {
+      "tag": "rwanda",
       "count": 2
     },
     {
