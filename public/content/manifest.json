@@ -5726,7 +5726,8 @@
                 "menneskerettigheter",
                 "fn"
               ],
-              "createdDate": "2026-08-13T00:00:00Z"
+              "createdDate": "2026-08-13T04:15:15+02:00",
+              "lastUpdated": "2026-08-13T04:15:15+02:00"
             }
           ]
         },
@@ -7811,7 +7812,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-13T00:33:59+02:00"
                 },
                 {
                   "id": "den-attedelte-vei",
@@ -7850,7 +7851,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T18:53:00+02:00"
+                  "lastUpdated": "2026-08-13T00:33:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -7902,7 +7903,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-13T00:33:59+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8992,6 +8993,45 @@
               ],
               "createdDate": "2026-08-12T12:00:00Z",
               "lastUpdated": "2026-08-12T19:59:52+02:00"
+            },
+            {
+              "id": "kjonn-og-roller",
+              "title": "Kjønn og roller: Prinsipp mot praksis",
+              "description": "Alle religioner må svare på hvem som kan lede, lese høyt og arve. Skill mellom prinsippet, altså hva læren sier, og praksis, altså hva som faktisk skjer, og se hvorfor gapet mellom dem er selve historien.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "kjonn-og-roller",
+                "social"
+              ],
+              "createdDate": "2026-08-13T12:00:00Z",
+              "lastUpdated": "2026-08-13T06:32:06.718Z"
+            },
+            {
+              "id": "ledelse-og-fellesskap",
+              "title": "Ledelse: Hvem bestemmer?",
+              "description": "Katolikkene har én pave. Sunniislam har ingen. Hvem avgjør da hva som er riktig? Ni tradisjoner løser spørsmålet ulikt, fra pyramide til nettverk uten topp.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "ledelse-og-fellesskap",
+                "social"
+              ],
+              "createdDate": "2026-08-13T12:00:00Z",
+              "lastUpdated": "2026-08-13T06:32:06.718Z"
+            },
+            {
+              "id": "pilegrim",
+              "title": "Pilegrim: Reisen til det hellige",
+              "description": "Hva gjør et sted hellig, og hva gjør reisen med den som går? To millioner går rundt den samme steinen samtidig, andre går alene til Nidaros i tre uker.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sammenligning",
+                "pilegrim",
+                "material"
+              ],
+              "createdDate": "2026-08-13T12:00:00Z",
+              "lastUpdated": "2026-08-13T06:32:06.718Z"
             }
           ]
         },

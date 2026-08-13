@@ -2,8 +2,8 @@
 
 > **Status:** `Under bygging`
 > **Version:** 1.1
-> **Opprettet:** 2026-08-10 · **Sist oppdatert:** 2026-08-12
-> **Omfang:** Flerårsprosjekt, bygges i faser. 14 av 17 artikler er bygget. Gjenstår: kjonn-og-roller, ledelse-og-fellesskap, pilegrim. Erfaringer i §10.5.
+> **Opprettet:** 2026-08-10 · **Sist oppdatert:** 2026-08-13
+> **Omfang:** Flerårsprosjekt, bygges i faser. Alle 17 artikler er bygget, med signaturkomponent, kildeliste og fast hale. Gjenstår: læringsstiene i §8 (2 av 5 bygget), heltebildene i §10, og de nye mikrospillene merket `NY` i §3. Erfaringer i §10.5.
 
 ---
 
@@ -416,7 +416,7 @@ Alle nye komponenter legges i `src/components/content/interactive/` og registrer
 | 14 | kjonn-og-roller | `RolleneOverTid` | Tidslinje i to spor: hva teksten sier, og hva praksis har vært. |
 | 15 | ledelse-og-fellesskap | `MaktensForm` | Organisasjonsdiagram som skifter form: pyramide, nettverk, eller ingenting. |
 | 16 | pilegrim | `PilegrimsKartet` | Verdenskart med pilegrimsruter. Gjenbruker `d3-geo`-oppsettet i `src/components/atlas/`. |
-| 17 | lidelse | `TeodicéVerkstedet` | Eleven møter et konkret tilfelle av lidelse og får hver tradisjons svar, med mulighet til å innvende. |
+| 17 | lidelse | `TeodiseVerkstedet` | Eleven møter et konkret tilfelle av lidelse og får hver tradisjons svar, med mulighet til å innvende. |
 
 ### 6.1 Props-skisser for de fem første
 
@@ -763,9 +763,9 @@ Prompt-mal (fra `docs/image-style-guide.md`):
 
 ---
 
-## 10.5 Erfaringer fra de fjorten første artiklene
+## 10.5 Erfaringer fra byggingen av de sytten artiklene
 
-Praktiske lærdommer fra byggingen av tema 1-14 er samlet i
+Praktiske lærdommer fra byggingen er samlet i
 `docs/KRLE_OPPRUSTNING.md` §10. Les den før neste byggerunde. De fire punktene som
 oftest har slått til i akkurat dette emnet:
 
@@ -781,6 +781,24 @@ oftest har slått til i akkurat dette emnet:
   temaer om regler og levemåte.
 - **Samisk gjestestemme i preteritum.** Toneregel 1 i §5.4 brytes nesten automatisk.
   Kildene beskriver fornyet interesse for hellige fjell og offersteder i dag.
+
+Fire feil til, funnet i den siste runden (tema 14-16) og verdt å lete etter spesielt:
+
+- **Fabrikert tilskrivning.** Påstanden er sann, men kilden den er festet på sier den
+  ikke. At sikher tar navnene Singh og Kaur står i SNL Sikhisme; at hensikten var å viske
+  ut kasteskillene står bare i SNL Guru Gobind Singh. Feilen er usynlig for alle som ikke
+  åpner lenken. Den var den vanligste alvorlige feilen i alle tre artiklene.
+- **SNL-oppslag som ikke finnes.** `snl.no/khalsa` er 404 og `snl.no/kvinnelige_prester`
+  er en 301 til `snl.no/prest`. Begge produserte tilsynelatende gyldige APA-referanser -
+  den ene med et fabrikert årstall, den andre som en dublett av en kilde som allerede sto
+  i lista med et annet år. Hent hver URL, ikke bare de du er i tvil om.
+- **Etikett og verdi som ikke hører sammen.** I komponent-props kan et felt merket «Hvor
+  mange» inneholde et svar på «hvem». Ingen leser dette som en faktafeil, men eleven ser
+  et tall-felt uten tall. Gå gjennom hver datapost felt for felt, ikke bare påstand for
+  påstand.
+- **Sjangerfeil ved generalisering.** «Islam har ingen pave» er feil: sunniislam har
+  ingen, mens tolversjiaismen har et geistlig hierarki med marja på toppen. Den samme
+  glidningen fra en retning til hele religionen dukket opp fire ganger.
 
 ---
 

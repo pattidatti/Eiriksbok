@@ -2533,6 +2533,16 @@
           "title": "Høytider: Den hellige kalenderen",
           "url": "/krle/sammenligning/hoytider",
           "subject": "krle"
+        },
+        {
+          "title": "Kjønn og roller: Prinsipp mot praksis",
+          "url": "/krle/sammenligning/kjonn-og-roller",
+          "subject": "krle"
+        },
+        {
+          "title": "Ledelse: Hvem bestemmer?",
+          "url": "/krle/sammenligning/ledelse-og-fellesskap",
+          "subject": "krle"
         }
       ],
       "aliasSlugs": [
@@ -2570,6 +2580,16 @@
         {
           "title": "Hellige tekster: Bøkene som styrer liv",
           "url": "/krle/sammenligning/hellige-tekster",
+          "subject": "krle"
+        },
+        {
+          "title": "Kjønn og roller: Prinsipp mot praksis",
+          "url": "/krle/sammenligning/kjonn-og-roller",
+          "subject": "krle"
+        },
+        {
+          "title": "Ledelse: Hvem bestemmer?",
+          "url": "/krle/sammenligning/ledelse-og-fellesskap",
           "subject": "krle"
         }
       ],
@@ -4143,6 +4163,11 @@
         {
           "title": "Introduksjon til Mormonisme",
           "url": "/krle/religion/mormonisme/intro",
+          "subject": "krle"
+        },
+        {
+          "title": "Kjønn og roller: Prinsipp mot praksis",
+          "url": "/krle/sammenligning/kjonn-og-roller",
           "subject": "krle"
         }
       ],
@@ -6100,6 +6125,11 @@
           "subject": "historie"
         },
         {
+          "title": "Kjønn og roller: Prinsipp mot praksis",
+          "url": "/krle/sammenligning/kjonn-og-roller",
+          "subject": "krle"
+        },
+        {
           "title": "Nykolonialisme: Kolonimakt uten kolonier",
           "url": "/historie/dekolonisering/nykolonialisme",
           "subject": "historie"
@@ -6532,6 +6562,11 @@
           "title": "Kristningen og Vikingtidens Slutt",
           "url": "/historie/vikingtiden/kristningen-av-norge",
           "subject": "historie"
+        },
+        {
+          "title": "Pilegrim: Reisen til det hellige",
+          "url": "/krle/sammenligning/pilegrim",
+          "subject": "krle"
         }
       ],
       "aliasSlugs": []

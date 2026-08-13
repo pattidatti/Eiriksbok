@@ -1,0 +1,839 @@
+{
+  "id": "ledelse-og-fellesskap",
+  "title": "Ledelse: Hvem bestemmer?",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "11 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "social",
+  "comparison_tags": [
+    "ledelse-og-fellesskap",
+    "social"
+  ],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": [
+    "rle01-03-10-01",
+    "rle01-03-10-04"
+  ],
+  "details": [
+    "Den katolske kirke er et hierarki med paven på toppen. Sunniislam har verken organisert presteskap eller sentral læremyndighet.",
+    "Når ingen kan avgjøre alene, avgjøres det likevel: gjennom de lærdes enighet, gjennom en tolkningstradisjon eller gjennom en tekst.",
+    "Autoritet kan komme ovenfra eller nedenfra. Paven utnevner biskopene sine, mens rådet som styrer bahá'í blir valgt.",
+    "Sikhismen satte en bok i midten der andre satte en person: Guru Granth Sahib regnes som den levende guruen.",
+    "Religiøs praksis foregår også utenfor trossamfunnene, der den enkelte selv setter sammen sitt eget livssyn."
+  ],
+  "concepts": [
+    {
+      "id": "ijma",
+      "term": "Ijma",
+      "definition": "Enighet, konsensus. I sunniislam regnes de lærdes enighet som den tredje av de fire røttene islamsk rett bygger på, etter Koranen og profetens tradisjon."
+    },
+    {
+      "id": "ulama",
+      "term": "Ulama",
+      "definition": "Islamsk lærd, «den som har religiøs kunnskap». Ordet blir av og til oversatt med presteskap, men det er feil: sunniislam har ikke noe organisert presteskap."
+    },
+    {
+      "id": "halakha",
+      "term": "Halakha",
+      "definition": "Jødisk religiøs lov. Ordet kommer av et verb som betyr å gå, altså veien man går for å leve et hellig liv. Rabbinere har utviklet den videre gjennom nesten to tusen år."
+    },
+    {
+      "id": "det-alminnelige-prestedomme",
+      "term": "Det alminnelige prestedømme",
+      "definition": "Tanken om at alle troende og døpte i prinsippet kan være pastor. Baptistmenighetene velger og ansetter derfor sine egne pastorer."
+    },
+    {
+      "id": "guruparampara",
+      "term": "Guruparampara",
+      "definition": "En rekke av lærere i indiske religioner, der en elev typisk blir den neste guruen."
+    }
+  ],
+  "createdDate": "2026-08-13T12:00:00Z",
+  "lastUpdated": "2026-08-13T12:00:00Z",
+  "factChecked": "2026-08-13",
+  "content": [
+    {
+      "type": "text",
+      "content": "Den katolske kirke hadde rundt 1,36 milliarder medlemmer i 2020, og på toppen står én mann. Leo 14 ble valgt til pave i 2025, og avgjørelsene hans kan ikke ankes. Sunniislam har ingen slik person. Ingen pave, ingen sjef, ikke noe hovedkontor. Likevel blir det bestemt hva som er riktig også der. Hvordan går det til?"
+    },
+    {
+      "type": "header",
+      "text": "Alle fellesskap må løse det samme problemet"
+    },
+    {
+      "type": "text",
+      "content": "Så snart flere enn én person deler en tro, dukker spørsmålet opp: hvem har rett når to er uenige? Kan en kvinne lede bønnen? Hva svarer vi når medisinen stiller et helt nytt spørsmål? Enten må noen avgjøre, eller så må det finnes en måte å avgjøre på uten en sjef."
+    },
+    {
+      "type": "text",
+      "content": "Religionene har landet svært ulikt: hierarki med en tydelig topp, valgte råd, eller et nettverk av lærde uten topp. Det er ikke bare svarene som er ulike. Selve formen på spørsmålet er det."
+    },
+    {
+      "type": "component",
+      "name": "MaktensForm",
+      "props": {
+        "title": "Maktens form",
+        "intro": "Sju tradisjoner, sju ulike former. Bytt tradisjon og se hva som skjer med diagrammet: hvor pilene peker, og om det i det hele tatt finnes en topp. Hver tradisjon rommer mer enn diagrammet viser.",
+        "questionLabel": "Hvem avgjør til slutt?",
+        "note": "Diagrammene er forenklinger. De viser hovedformen, ikke alle ledd i organisasjonen.",
+        "defaultTradition": "katolsk",
+        "traditions": [
+          {
+            "id": "katolsk",
+            "name": "Den katolske kirke",
+            "color": "#6366f1",
+            "formLabel": "Pyramide",
+            "arrows": true,
+            "answer": "Paven. Han har den øverste læremyndigheten og den øverste rettsmyndigheten i kirken, han utnevner biskopene, og det finnes ingen anke fra en pavelig avgjørelse.",
+            "nodes": [
+              {
+                "id": "pave",
+                "label": "Paven",
+                "x": 50,
+                "y": 8,
+                "emphasis": true
+              },
+              {
+                "id": "b1",
+                "label": "Biskop",
+                "x": 24,
+                "y": 48
+              },
+              {
+                "id": "b2",
+                "label": "Biskop",
+                "x": 76,
+                "y": 48
+              },
+              {
+                "id": "p1",
+                "label": "Prest",
+                "x": 8,
+                "y": 88
+              },
+              {
+                "id": "p2",
+                "label": "Prest",
+                "x": 36,
+                "y": 88
+              },
+              {
+                "id": "p3",
+                "label": "Prest",
+                "x": 64,
+                "y": 88
+              },
+              {
+                "id": "p4",
+                "label": "Prest",
+                "x": 92,
+                "y": 88
+              }
+            ],
+            "edges": [
+              {
+                "from": "pave",
+                "to": "b1"
+              },
+              {
+                "from": "pave",
+                "to": "b2"
+              },
+              {
+                "from": "b1",
+                "to": "p1"
+              },
+              {
+                "from": "b1",
+                "to": "p2"
+              },
+              {
+                "from": "b2",
+                "to": "p3"
+              },
+              {
+                "from": "b2",
+                "to": "p4"
+              }
+            ]
+          },
+          {
+            "id": "sunni",
+            "name": "Sunniislam",
+            "color": "#10b981",
+            "formLabel": "Nettverk uten topp",
+            "arrows": false,
+            "answer": "Ingen enkeltperson. Sunniislam har verken organisert presteskap eller sentral læremyndighet. De lærde søker enighet, ijma, og fire lovskoler deler de samme hovedprinsippene, men lander merkbart ulikt på enkeltspørsmål.",
+            "nodes": [
+              {
+                "id": "hanafi",
+                "label": "Hanafi",
+                "x": 16,
+                "y": 20
+              },
+              {
+                "id": "maliki",
+                "label": "Maliki",
+                "x": 84,
+                "y": 20
+              },
+              {
+                "id": "shafii",
+                "label": "Shafi'i",
+                "x": 16,
+                "y": 74
+              },
+              {
+                "id": "hanbali",
+                "label": "Hanbali",
+                "x": 84,
+                "y": 74
+              }
+            ],
+            "edges": [
+              {
+                "from": "hanafi",
+                "to": "maliki"
+              },
+              {
+                "from": "hanafi",
+                "to": "shafii"
+              },
+              {
+                "from": "hanafi",
+                "to": "hanbali"
+              },
+              {
+                "from": "maliki",
+                "to": "shafii"
+              },
+              {
+                "from": "maliki",
+                "to": "hanbali"
+              },
+              {
+                "from": "shafii",
+                "to": "hanbali"
+              }
+            ]
+          },
+          {
+            "id": "jodedom",
+            "name": "Jødedom",
+            "color": "#3b82f6",
+            "formLabel": "En samtale gjennom tid",
+            "arrows": true,
+            "answer": "Ingen sentral ledelse. Rabbinerne tolker loven videre, og rabbinere fra ulike retninger lander ofte ulikt. Det finnes ikke ett jødisk svar på vanskelige spørsmål.",
+            "nodes": [
+              {
+                "id": "tora",
+                "label": "Tora",
+                "x": 4,
+                "y": 46
+              },
+              {
+                "id": "mishna",
+                "label": "Mishna, ca. 200",
+                "x": 30,
+                "y": 46
+              },
+              {
+                "id": "talmud",
+                "label": "Talmud, ca. 500",
+                "x": 56,
+                "y": 46
+              },
+              {
+                "id": "rabb",
+                "label": "Rabbinere i dag",
+                "x": 82,
+                "y": 46,
+                "emphasis": true
+              },
+              {
+                "id": "m1",
+                "label": "Menighet",
+                "x": 99,
+                "y": 8
+              },
+              {
+                "id": "m2",
+                "label": "Menighet",
+                "x": 99,
+                "y": 84
+              }
+            ],
+            "edges": [
+              {
+                "from": "tora",
+                "to": "mishna"
+              },
+              {
+                "from": "mishna",
+                "to": "talmud"
+              },
+              {
+                "from": "talmud",
+                "to": "rabb"
+              },
+              {
+                "from": "rabb",
+                "to": "m1"
+              },
+              {
+                "from": "rabb",
+                "to": "m2"
+              }
+            ]
+          },
+          {
+            "id": "bahai",
+            "name": "Bahá'í",
+            "color": "#14b8a6",
+            "formLabel": "Valgt råd, pilene peker opp",
+            "arrows": true,
+            "answer": "Et demokratisk valgt råd på ni medlemmer, Det universelle rettferdighetens hus. Det velges hvert femte år av medlemmene i de nasjonale åndelige rådene. Bahá'í har ingen prestestand og ingen overordnet leder.",
+            "nodes": [
+              {
+                "id": "hus",
+                "label": "Rettferdighetens hus",
+                "x": 50,
+                "y": 8,
+                "emphasis": true
+              },
+              {
+                "id": "r1",
+                "label": "Åndelig råd",
+                "x": 24,
+                "y": 48
+              },
+              {
+                "id": "r2",
+                "label": "Åndelig råd",
+                "x": 76,
+                "y": 48
+              },
+              {
+                "id": "m1",
+                "label": "Medlemmer",
+                "x": 8,
+                "y": 88
+              },
+              {
+                "id": "m2",
+                "label": "Medlemmer",
+                "x": 36,
+                "y": 88
+              },
+              {
+                "id": "m3",
+                "label": "Medlemmer",
+                "x": 64,
+                "y": 88
+              },
+              {
+                "id": "m4",
+                "label": "Medlemmer",
+                "x": 92,
+                "y": 88
+              }
+            ],
+            "edges": [
+              {
+                "from": "m1",
+                "to": "r1"
+              },
+              {
+                "from": "m2",
+                "to": "r1"
+              },
+              {
+                "from": "m3",
+                "to": "r2"
+              },
+              {
+                "from": "m4",
+                "to": "r2"
+              },
+              {
+                "from": "r1",
+                "to": "hus"
+              },
+              {
+                "from": "r2",
+                "to": "hus"
+              }
+            ]
+          },
+          {
+            "id": "baptist",
+            "name": "Baptistmenigheten",
+            "color": "#8b5cf6",
+            "formLabel": "Forsamlingen bestemmer selv",
+            "arrows": true,
+            "answer": "Menigheten selv. Den velger og ansetter sin egen pastor, og nabomenigheten gjør sitt eget valg. Kirkene og menighetene er organisert nedenfra.",
+            "nodes": [
+              {
+                "id": "m1",
+                "label": "Menighet",
+                "x": 12,
+                "y": 22
+              },
+              {
+                "id": "p1",
+                "label": "Pastor",
+                "x": 12,
+                "y": 74
+              },
+              {
+                "id": "m2",
+                "label": "Menighet",
+                "x": 50,
+                "y": 22
+              },
+              {
+                "id": "p2",
+                "label": "Pastor",
+                "x": 50,
+                "y": 74
+              },
+              {
+                "id": "m3",
+                "label": "Menighet",
+                "x": 88,
+                "y": 22
+              },
+              {
+                "id": "p3",
+                "label": "Pastor",
+                "x": 88,
+                "y": 74
+              }
+            ],
+            "edges": [
+              {
+                "from": "m1",
+                "to": "p1"
+              },
+              {
+                "from": "m2",
+                "to": "p2"
+              },
+              {
+                "from": "m3",
+                "to": "p3"
+              }
+            ]
+          },
+          {
+            "id": "buddhisme",
+            "name": "Buddhistisk lærerlinje",
+            "color": "#f59e0b",
+            "formLabel": "Linje fra lærer til elev",
+            "arrows": true,
+            "answer": "Læreren, og forsamlingen. Kunnskapen går fra lærer til elev, og eleven kan selv bli neste lærer. Sanghaen avgjør sine egne saker demokratisk, men alle vedtak i et lokalt fellesskap må være enstemmige.",
+            "nodes": [
+              {
+                "id": "l1",
+                "label": "Lærer",
+                "x": 6,
+                "y": 24
+              },
+              {
+                "id": "e1",
+                "label": "Elev",
+                "x": 34,
+                "y": 24
+              },
+              {
+                "id": "l2",
+                "label": "Ny lærer",
+                "x": 64,
+                "y": 24
+              },
+              {
+                "id": "e2",
+                "label": "Elev",
+                "x": 94,
+                "y": 24
+              },
+              {
+                "id": "sangha",
+                "label": "Sanghaen",
+                "x": 50,
+                "y": 82,
+                "emphasis": true
+              }
+            ],
+            "edges": [
+              {
+                "from": "l1",
+                "to": "e1"
+              },
+              {
+                "from": "e1",
+                "to": "l2"
+              },
+              {
+                "from": "l2",
+                "to": "e2"
+              },
+              {
+                "from": "sangha",
+                "to": "l1",
+                "dashed": true,
+                "arrow": false
+              },
+              {
+                "from": "sangha",
+                "to": "e1",
+                "dashed": true,
+                "arrow": false
+              },
+              {
+                "from": "sangha",
+                "to": "l2",
+                "dashed": true,
+                "arrow": false
+              },
+              {
+                "from": "sangha",
+                "to": "e2",
+                "dashed": true,
+                "arrow": false
+              }
+            ]
+          },
+          {
+            "id": "utenfor",
+            "name": "Uten organisasjon",
+            "color": "#64748b",
+            "formLabel": "Nesten ingen struktur",
+            "arrows": true,
+            "answer": "Den enkelte selv. Mange setter sammen sitt eget livssyn av det de finner, og i flere av disse miljøene er det et poeng å ikke ha noen absolutt autoritet utenom seg selv.",
+            "nodes": [
+              {
+                "id": "meg",
+                "label": "Den enkelte",
+                "x": 50,
+                "y": 48,
+                "emphasis": true
+              },
+              {
+                "id": "a",
+                "label": "Meditasjon",
+                "x": 12,
+                "y": 10
+              },
+              {
+                "id": "b",
+                "label": "Healing",
+                "x": 88,
+                "y": 10
+              },
+              {
+                "id": "c",
+                "label": "Yoga",
+                "x": 12,
+                "y": 84
+              },
+              {
+                "id": "d",
+                "label": "Bøker og nett",
+                "x": 88,
+                "y": 84
+              }
+            ],
+            "edges": [
+              {
+                "from": "meg",
+                "to": "a",
+                "dashed": true
+              },
+              {
+                "from": "meg",
+                "to": "b",
+                "dashed": true
+              },
+              {
+                "from": "meg",
+                "to": "c",
+                "dashed": true
+              },
+              {
+                "from": "meg",
+                "to": "d",
+                "dashed": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Abrahamittiske røtter: én stol, ingen stol, og en samtale som aldri tar slutt"
+    },
+    {
+      "type": "text",
+      "content": "Den katolske kirke er det tydeligste hierarkiet. Paven velges av kardinalene i et konklave, der de holdes atskilt fra omverdenen til to tredeler av dem er enige. Han velges på livstid, men kan gå av. Paven har den øverste læremyndigheten, men bare i helt spesielle tilfeller regnes uttalelsene hans som ufeilbarlige, og det har skjedd to ganger: i 1854 og i 1950. Han har også den øverste rettsmyndigheten, og utnevner biskopene."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Kardinaler i røde kapper på vei inn i Det sixtinske kapell",
+      "caption": "Kardinalene stemmer fire ganger om dagen til én kandidat har to tredeler bak seg."
+    },
+    {
+      "type": "text",
+      "content": "Protestantiske kirker har brutt pyramiden opp på ulike måter. Den norske kirke hadde 3,4 millioner medlemmer i 2024, 62 prosent av befolkningen, og styres i en dobbel struktur: en rådsstruktur som velges, og et embete av prester og biskoper. Øverste organ er Kirkemøtet, med medlemmer fra alle bispedømmerådene. Fra 2017 er kirken et eget rettssubjekt, skilt fra staten. Baptistene går lenger: menighetene velger og ansetter sine egne pastorer. Les mer om [de ulike kirkesamfunnene](/krle/religion/kristendom/kirkesamfunn)."
+    },
+    {
+      "type": "text",
+      "content": "Islam ser helt annerledes ut. Sunniislam har verken organisert presteskap eller sentral læremyndighet. Ordet ulama betyr «de som har religiøs kunnskap», og blir av og til oversatt med presteskap, men det er feil. Ulama er lærde med lang skolering i islamsk tradisjon og rett. Noen gir juridiske råd, kalt fatwa, og heter da mufti. Andre er dommere, qadi. Et råd er ikke en dom: det er dommeren som avgjør."
+    },
+    {
+      "type": "text",
+      "content": "Når det ikke finnes noen sjef, blir enigheten selv autoriteten. Ijma betyr konsensus, og i sunniislam er dette den tredje av de fire røttene retten bygger på. Prinsippet hviler på en hadith om at samfunnet ikke kan samles om det urette. Juristen al-Shafi'i, som døde i 820, mente at enigheten måtte omfatte alle troende, og derfor bare kunne gjelde det mest grunnleggende. Senere lærde begrenset ijma til juristenes enighet. Kalifen var en gang muslimenes politiske leder, men kalifatet ble opphevet i 1924."
+    },
+    {
+      "type": "text",
+      "content": "Sjiaislam løste det annerledes. I tolversjiaismen bæres autoriteten av et hierarki av geistlige. Hver troende skal ha en marja, «et forbilde til etterligning», og kravet om lojalitet er tydeligere enn hos ulama i sunniislam."
+    },
+    {
+      "type": "text",
+      "content": "Jødedommen har heller ingen sentral ledelse. Ordet rabbiner kommer av rabbi, «min lærer», og rabbineren er både veileder i jødisk lov og dommer i religiøse domstoler. Etter at tempelet ble ødelagt i år 70, overtok de lærde som ledere. Halakha, den jødiske religiøse loven, er utviklet av rabbinere gjennom nesten to tusen år: Mishna ble redigert rundt år 200, Talmud mellom år 400 og 500. Arbeidet fortsetter, og rabbinere fra ulike retninger kommer ofte til ulike svar. Jødedommen har ingen læresetninger alle må slutte seg til, og åpen uenighet preger tradisjonen."
+    },
+    {
+      "type": "header",
+      "text": "Indiske tradisjoner: læreren, boka og forsamlingen"
+    },
+    {
+      "type": "text",
+      "content": "Hinduismen har verken grunnlegger, felles trosbekjennelse eller sentral organisasjon. Store templer har egne prester, som regel brahminer, og det finnes mange retninger, kalt sampradaya, med sine egne grunnleggere og tekster. Å ha en guru regnes som viktig, i noen retninger som en forutsetning for frelse. Samtidig er mange hinduer skeptiske til guru-institusjonen, fordi indiske aviser stadig melder om misbruk."
+    },
+    {
+      "type": "text",
+      "content": "I buddhismen heter fellesskapet av munker og nonner sangha, den tredje av de tre juvelene ved siden av Buddha og læren. Sanghaen avgjør sine egne saker demokratisk, men alle vedtak i et lokalt fellesskap må være enstemmige, og rangen følger hvor lenge du har vært ordinert. Munker går foran nonner, og nonneordenen er fortsatt omstridt i theravada og i tibetansk buddhisme."
+    },
+    {
+      "type": "text",
+      "content": "Ved siden av forsamlingen står linjen fra lærer til elev, en guruparampara, der eleven selv kan bli den neste læreren. Lama er det tibetanske ordet for guru. Dalai Lama er den høyeste geistlige tittelen i den største tibetanske retningen, og en ny Dalai Lama blir ikke valgt, men funnet: tradisjonen er at han fødes på nytt som et barn som må kjenne igjen eiendelene til forgjengeren sin."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Åpen bok på et opphøyd sete under en baldakin i en gurdwara",
+      "caption": "I sikhismen er det ikke en person som sitter på setet, men en bok."
+    },
+    {
+      "type": "text",
+      "content": "Sikhismen gjorde noe helt eget. Ti guruer fulgte etter hverandre, fra Guru Nanak til Guru Gobind Singh. Før Gobind Singh døde i 1708, sa han at han var den siste menneskelige guruen, og at sikhene heretter skulle se på boka som sin høyeste veileder. Guru Granth Sahib æres derfor som den levende guruen. Mer om dette i [Bøkene som styrer liv](/krle/sammenligning/hellige-tekster)."
+    },
+    {
+      "type": "header",
+      "text": "Nyere bevegelser: valgt råd, apostler og et styrende råd"
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í har ingen prestestand. Bevegelsen styres av et demokratisk valgt råd på ni medlemmer, Det universelle rettferdighetens hus, med hovedsenter i Haifa i Israel. Rådet velges hvert femte år av medlemmene i de nasjonale åndelige rådene. Det finnes ingen overordnet leder. I Norge er bahá'í et registrert trossamfunn med rundt 1100 medlemmer i 2024. Les mer i [introduksjonen til bahá'í](/krle/religion/bahai/intro)."
+    },
+    {
+      "type": "text",
+      "content": "Jesu Kristi Kirke av Siste Dagers Hellige har et tydelig hierarki. Øverst står Det første presidentskap: en president med to rådgivere. Presidenten er alltid den som har vært apostel lengst, og regnes som profet. Under står De tolv apostlers quorum, som overtar ledelsen når profeten dør. Ifølge kirken mottar mennene i begge organene åpenbaringer direkte fra Gud. Kirkens egen statistikk oppgav nesten 17,9 millioner medlemmer ved utgangen av 2025."
+    },
+    {
+      "type": "text",
+      "content": "Jehovas vitner er sentralstyrt. Det styrende råd bestemmer læren og er de eneste som kan legge fram nye forståelser. Rådet har hatt fra sju til atten medlemmer. Bare menn kan bli med, og bare ved invitasjon fra dem som allerede sitter der. Lokalt ledes menighetene av eldste, også det menn. I 2019 hadde bevegelsen rundt 8,6 millioner aktive forkynnere."
+    },
+    {
+      "type": "text",
+      "content": "At et titalls menn styrer rundt 8,6 millioner forkynnere, og at én pave står over 1,36 milliarder katolikker, er ikke det samme, selv om begge deler kan tegnes som en pyramide. Formen er lik, størrelsen er det ikke."
+    },
+    {
+      "type": "header",
+      "text": "Utenfor organisasjonene"
+    },
+    {
+      "type": "text",
+      "content": "Ikke all religiøs praksis skjer inne i et trossamfunn. Fra 1980-tallet ble mye nyreligiøsitet kommersialisert og organisert i nettverk, og den enkelte kunne sette sammen sitt eget livssyn av tanker, ideer og praksiser. Mange avgjør selv hva som virker for dem: yoga, meditasjon eller healing. I flere av disse miljøene er det et poeng å ikke ha noen absolutt autoritet utenom seg selv. Her mangler det ikke en ledelse. Det er poenget."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Det handler ikke om hvem som har den beste ordningen, men om hvilken form spørsmålet har fått:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Fire former går igjen: én person på toppen, et valgt råd, et nettverk uten topp, og en linje fra lærer til elev.",
+        "Autoriteten kan komme ovenfra eller nedenfra. Paven utnevner biskopene sine, mens Det universelle rettferdighetens hus blir valgt av dem det skal lede.",
+        "Der ingen kan avgjøre alene, avgjøres det likevel: sunniislam bruker de lærdes enighet, jødedommen en tolkningstradisjon på to tusen år, sikhismen en bok.",
+        "Ingen struktur er også en ordning. Hinduismen har aldri hatt noe senter, og i alternativmiljøene er fraværet av en autoritet selve prinsippet."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Hvem som får bestemme, henger sammen med hvem som får være med. I flere av eksemplene over er de øverste vervene forbeholdt menn. Les [Kjønn, roller og likeverd](/krle/sammenligning/kjonn-og-roller)."
+    },
+    {
+      "type": "header",
+      "text": "Og de som ikke tror?"
+    },
+    {
+      "type": "text",
+      "content": "Livssynshumanismen har ingen prestestand. Ifølge nettverket Humanists International finnes det ikke noe hierarki du må høre til for å være humanist. I Norge er livssynet organisert gjennom Human-Etisk Forbund, stiftet i 1956. I stedet for en ledelse som avgjør, hviler livssynet på erklæringer som er blitt til i fellesskap: Amsterdam-erklæringen fra 1952, revidert i 2002 og på nytt i 2022, og et norsk humanistmanifest fra 2006."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt religion selv sier om sentrale trekk, organisasjon og ledelse, finner du artiklene stilt opp side om side i [Sammenlign religioner](/krle/sammenlign). Der ser du også hvilke temaer som er dekket for hver tradisjon."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvem velger paven, og hva må til for at en kandidat blir valgt?",
+          "Hva betyr ijma, og hvorfor er begrepet viktig når sunniislam ikke har noen sentral læremyndighet?",
+          "Hva er forskjellen på en mufti og en qadi?",
+          "Hva skjedde med sikhenes ledelse i 1708?"
+        ],
+        "reflekter": [
+          "Bahá'í og Den katolske kirke kan begge tegnes som en pyramide, men pilene peker motsatt vei. Hva betyr det i praksis for et vanlig medlem?",
+          "Jødedommen har ingen læresetninger alle må slutte seg til, og rabbinere lander ofte ulikt. Hva er styrken og svakheten ved en slik ordning?",
+          "I baptistmenighetene ansetter forsamlingen sin egen pastor. Hvilke saker tror du blir lettere å avgjøre slik, og hvilke blir vanskeligere?",
+          "Er det riktig å si at et fellesskap uten ledelse mangler noe? Begrunn svaret med minst to eksempler fra artikkelen."
+        ],
+        "gaaVidere": [
+          "Velg to tradisjoner med ulik form i komponenten. Skriv et avsnitt der du sammenligner hvordan en uenighet om en ny sak ville blitt avgjort i hver av dem, uten å si at den ene ordningen er bedre.",
+          "Tegn organisasjonen i en klubb, et lag eller en elevorganisasjon du kjenner. Hvilken av formene i artikkelen ligner den mest?",
+          "Finn ut hvordan et trossamfunn i nærmiljøet ditt er organisert. Hvem velger lederen, og hvor lenge sitter hen?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvem velger en ny pave?",
+            "options": [
+              "Alle katolske prester i verden",
+              "Kardinalene, samlet i et konklave",
+              "Biskopene i Italia",
+              "Menighetene, ved direkte valg"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Kardinalene holdes atskilt fra omverdenen og stemmer fire ganger om dagen til én kandidat har to tredeler bak seg. Ordningen ble innført i 1274."
+          },
+          {
+            "question": "Hva betyr ijma i sunniislam?",
+            "options": [
+              "Kalifens avgjørelse",
+              "Enighet, konsensus - regnet som den tredje av de fire røttene retten bygger på",
+              "Et juridisk råd fra en mufti",
+              "Navnet på den øverste religiøse domstolen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Prinsippet hviler på en hadith om at samfunnet ikke kan samles om det urette. Etter al-Shafi'i ble ijma begrenset til de lærdes enighet."
+          },
+          {
+            "question": "Hva er Guru Granth Sahib for sikher?",
+            "options": [
+              "En samling regler skrevet av dagens ledere",
+              "Den levende guruen, som overtok etter den siste menneskelige guruen i 1708",
+              "En biografi om Guru Nanak",
+              "En bok bare prestene får lese"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Guru Gobind Singh sa før han døde i 1708 at han var den siste menneskelige guruen, og at boka heretter var sikhenes høyeste veileder. Sikher godtar ikke levende menneskelige guruer."
+          },
+          {
+            "question": "Hvordan styres bahá'í på verdensbasis?",
+            "options": [
+              "Av en overordnet leder i Haifa",
+              "Av et demokratisk valgt råd på ni medlemmer",
+              "Av et presteskap som utdannes i Iran",
+              "Av de eldste i hver enkelt menighet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Rådet heter Det universelle rettferdighetens hus. Bahá'í har verken prestestand eller overordnet leder."
+          },
+          {
+            "question": "Hva er øverste organ i Den norske kirke etter skillet fra staten?",
+            "options": [
+              "Kongen",
+              "Bispemøtet",
+              "Kirkemøtet",
+              "Stortinget"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Fra 1. januar 2017 er Den norske kirke et eget rettssubjekt med Kirkemøtet som høyeste myndighet. Kirkemøtet har medlemmer fra alle bispedømmerådene."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Flottorp, H., Molland, E. & Stensvold, A. (2026). *Pave*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/pave](https://snl.no/pave)",
+          "Halvorsen, P. B. & Stensvold, A. (2025). *Den katolske kirke*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Den_katolske_kirke](https://snl.no/Den_katolske_kirke)",
+          "Stensvold, A. (2025). *Konklave*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/konklave](https://snl.no/konklave)",
+          "Stensvold, A. (2025). *Leo 14.*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Leo_14.](https://snl.no/Leo_14.)",
+          "Rasmussen, T., Lundal, S. O. & Elstad, H. (2026). *Den norske kirke*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Den_norske_kirke](https://snl.no/Den_norske_kirke)",
+          "Rasmussen, T. (2025). *Baptisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/baptisme](https://snl.no/baptisme)",
+          "Vogt, K. (2026). *Islam*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+          "Vogt, K. & Vikør, K. S. (2025). *Ijma*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/ijma](https://snl.no/ijma)",
+          "Vogt, K. (2025). *Ulama*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/ulama](https://snl.no/ulama)",
+          "Vikør, K. S. (2025). *Sharia*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/sharia](https://snl.no/sharia)",
+          "Vogt, K. (2026). *Sjiaislam*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/sjiaislam](https://snl.no/sjiaislam)",
+          "Vogt, K. & Eggen, N. S. (2026). *Kalif*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/kalif](https://snl.no/kalif)",
+          "Groth, B. (2025). *Rabbiner*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/rabbiner](https://snl.no/rabbiner)",
+          "Groth, B. (2025). *Halakha*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/halakha](https://snl.no/halakha)",
+          "Groth, B. (2026). *Jødedom*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Borgland, J. W. (2026). *Sangha*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/sangha](https://snl.no/sangha)",
+          "Jacobsen, K. A. (2025). *Guru*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/guru](https://snl.no/guru)",
+          "Borgland, J. W. (2025). *Dalai Lama*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Dalai_Lama](https://snl.no/Dalai_Lama)",
+          "Jacobsen, K. A. (2026). *Guru Granth Sahib*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Guru_Granth_Sahib](https://snl.no/Guru_Granth_Sahib)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+          "Bahá'í International Community. (u.å.). *The Universal House of Justice*. Hentet 13.08.2026 fra [bahai.org](https://www.bahai.org/the-universal-house-of-justice/)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *First Presidency*. Gospel Topics. Hentet 13.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/first-presidency)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Quorum of the Twelve Apostles*. Gospel Topics. Hentet 13.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/quorum-of-the-twelve-apostles)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (2025). *Facts and Statistics*. Hentet 13.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/learn/facts-statistics)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Løøv, M., Winje, G. & Romarheim, A. (2026). *Nyreligiøsitet*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/nyreligiøsitet](https://snl.no/nyreligi%C3%B8sitet)",
+          "Aas, P. A. (2025). *Livssynshumanisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/livssynshumanisme](https://snl.no/livssynshumanisme)",
+          "Humanists International. (u.å.). *What is humanism?*. Hentet 13.08.2026 fra [humanists.international](https://humanists.international/what-is-humanism/)",
+          "Humanists International. (2022). *The Amsterdam Declaration*. Hentet 13.08.2026 fra [humanists.international](https://humanists.international/what-is-humanism/the-amsterdam-declaration/)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

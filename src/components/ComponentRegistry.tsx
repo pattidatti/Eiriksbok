@@ -195,6 +195,9 @@ const MatbordetsRegler = lazy(() => import('./content/interactive/MatbordetsRegl
 const RommetsGrammatikk = lazy(() => import('./content/interactive/RommetsGrammatikk').then(m => ({ default: m.RommetsGrammatikk })));
 const SymbolLeksikon = lazy(() => import('./content/interactive/SymbolLeksikon').then(m => ({ default: m.SymbolLeksikon })));
 const TeodiseVerkstedet = lazy(() => import('./content/interactive/TeodiseVerkstedet').then(m => ({ default: m.TeodiseVerkstedet })));
+const RolleneOverTid = lazy(() => import('./content/interactive/RolleneOverTid').then(m => ({ default: m.RolleneOverTid })));
+const MaktensForm = lazy(() => import('./content/interactive/MaktensForm').then(m => ({ default: m.MaktensForm })));
+const PilegrimsKartet = lazy(() => import('./content/interactive/PilegrimsKartet').then(m => ({ default: m.PilegrimsKartet })));
 const GudsbildeAksen = lazy(() => import('./content/interactive/GudsbildeAksen').then(m => ({ default: m.GudsbildeAksen })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
@@ -664,6 +667,9 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RommetsGrammatikk,
     SymbolLeksikon,
     TeodiseVerkstedet,
+    RolleneOverTid,
+    MaktensForm,
+    PilegrimsKartet,
     GudsbildeAksen,
     DagenSomBonn,
     MaatBalansen,

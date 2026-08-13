@@ -978,6 +978,10 @@
       "count": 17
     },
     {
+      "tag": "sammenligning",
+      "count": 17
+    },
+    {
       "tag": "sivilisasjon",
       "count": 16
     },
@@ -1011,10 +1015,6 @@
     },
     {
       "tag": "skrivehjelp",
-      "count": 14
-    },
-    {
-      "tag": "sammenligning",
       "count": 14
     },
     {
@@ -1899,6 +1899,10 @@
     },
     {
       "tag": "religionshistorie",
+      "count": 3
+    },
+    {
+      "tag": "material",
       "count": 3
     },
     {
@@ -3206,7 +3210,7 @@
       "count": 2
     },
     {
-      "tag": "material",
+      "tag": "social",
       "count": 2
     },
     {
@@ -3839,6 +3843,18 @@
     },
     {
       "tag": "lidelse",
+      "count": 1
+    },
+    {
+      "tag": "kjonn-og-roller",
+      "count": 1
+    },
+    {
+      "tag": "ledelse-og-fellesskap",
+      "count": 1
+    },
+    {
+      "tag": "pilegrim",
       "count": 1
     },
     {

@@ -1,5 +1,5 @@
 {
-  "buildId": 61296277408757,
+  "buildId": 219269126622914,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3406,6 +3406,12 @@
     "hoytider": [
       "content/krle/sammenligning/hoytider.json"
     ],
+    "kjonn-og-roller": [
+      "content/krle/sammenligning/kjonn-og-roller.json"
+    ],
+    "ledelse-og-fellesskap": [
+      "content/krle/sammenligning/ledelse-og-fellesskap.json"
+    ],
     "lidelse": [
       "content/krle/sammenligning/lidelse.json"
     ],
@@ -3417,6 +3423,9 @@
     ],
     "sammenligning-overgangsriter": [
       "content/krle/sammenligning/overgangsriter.json"
+    ],
+    "pilegrim": [
+      "content/krle/sammenligning/pilegrim.json"
     ],
     "sammenligning-skapelse": [
       "content/krle/sammenligning/skapelse.json"
@@ -5784,10 +5793,13 @@
     "krle/sammenligning/hellige-tekster": "content/krle/sammenligning/hellige-tekster.json",
     "krle/sammenligning/hovedplottet-sti": "content/krle/sammenligning/hovedplottet-sti.json",
     "krle/sammenligning/hoytider": "content/krle/sammenligning/hoytider.json",
+    "krle/sammenligning/kjonn-og-roller": "content/krle/sammenligning/kjonn-og-roller.json",
+    "krle/sammenligning/ledelse-og-fellesskap": "content/krle/sammenligning/ledelse-og-fellesskap.json",
     "krle/sammenligning/lidelse": "content/krle/sammenligning/lidelse.json",
     "krle/sammenligning/mat-og-renhet": "content/krle/sammenligning/mat-og-renhet.json",
     "krle/sammenligning/overgangsriter-sti": "content/krle/sammenligning/overgangsriter-sti.json",
     "krle/sammenligning/overgangsriter": "content/krle/sammenligning/overgangsriter.json",
+    "krle/sammenligning/pilegrim": "content/krle/sammenligning/pilegrim.json",
     "krle/sammenligning/skapelse": "content/krle/sammenligning/skapelse.json",
     "krle/sammenligning/symboler-og-klaer": "content/krle/sammenligning/symboler-og-klaer.json",
     "microgame-map.json/undefined/microgame-map": "content/microgame-map.json",

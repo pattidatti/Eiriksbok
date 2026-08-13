@@ -1,0 +1,495 @@
+{
+  "id": "pilegrim",
+  "title": "Pilegrim: Reisen til det hellige",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "11 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "material",
+  "comparison_tags": [
+    "pilegrim",
+    "material"
+  ],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": [
+    "rle01-03-10-01"
+  ],
+  "details": [
+    "En pilegrim reiser av religiøse grunner til et sted som regnes som hellig. Religionsforskere beskriver reisen som en overgangsrite i tre trinn: bryte opp, være underveis, komme tilbake.",
+    "Bare i islam og i bahá'í-læren er pilegrimsferden en plikt. Hajj til Mekka er en av islams fem søyler.",
+    "I noen tradisjoner er det å komme fram som teller. I andre er selve gåingen poenget.",
+    "Jødenes valfart til tempelet i Jerusalem tok slutt da tempelet ble ødelagt i år 70.",
+    "Jehovas vitner har ingen pilegrimsreise, og regner ingen bygning som hellig i seg selv."
+  ],
+  "concepts": [
+    {
+      "id": "pilegrim",
+      "term": "Pilegrim",
+      "definition": "Et menneske som av religiøse grunner reiser til et sted som blir regnet som hellig i religionen. Selve reisen kalles en pilegrimsferd eller en valfart."
+    },
+    {
+      "id": "hajj",
+      "term": "Hajj",
+      "definition": "Pilegrimsferden til Mekka. Alle voksne muslimer som er praktisk og økonomisk i stand til det, har plikt til å gjennomføre den minst én gang i livet."
+    },
+    {
+      "id": "tawaf",
+      "term": "Tawaf",
+      "definition": "Å gå sju runder rundt Kaba i Mekka. Handlingen hører til både hajj og den lille pilegrimsferden umra."
+    },
+    {
+      "id": "umra",
+      "term": "Umra",
+      "definition": "Den lille pilegrimsferden til Mekka. Den kan gjøres når som helst på året, og er ikke en av islams fem søyler."
+    },
+    {
+      "id": "ghat",
+      "term": "Ghat",
+      "definition": "Trapper som går ned i en elv, brukt til rituell bading. Langs vestbredden av Ganges i Varanasi strekker de seg over åtte kilometer."
+    }
+  ],
+  "createdDate": "2026-08-13T12:00:00Z",
+  "lastUpdated": "2026-08-13T12:00:00Z",
+  "factChecked": "2026-08-13",
+  "content": [
+    {
+      "type": "text",
+      "content": "I pilegrimsmåneden samles rundt to millioner mennesker i Mekka, og alle går sju runder rundt den samme firkantede steinbygningen. Den samme sommeren går andre mennesker gjennom Gudbrandsdalen mot Trondheim, rundt tjue kilometer om dagen i opptil en måned. Den ene reisen er en plikt. Den andre har ingen bedt dem om å gjøre."
+    },
+    {
+      "type": "header",
+      "text": "Hva gjør et sted hellig?"
+    },
+    {
+      "type": "text",
+      "content": "En pilegrim er et menneske som av religiøse grunner reiser til et sted som blir regnet som hellig i religionen. Reisen kalles en pilegrimsferd eller en valfart. Grunnene er mange: takknemlighet, et løfte man har gitt, eller et ønske om å få del i velsignelsen stedet regnes for å ha."
+    },
+    {
+      "type": "text",
+      "content": "Religionsforskere beskriver pilegrimsferden som en overgangsrite i tre trinn. Først bryter du opp fra hverdagen. Så er du underveis, i en tilstand der du regnes for å være i noe hellig. Til slutt trer du inn i hverdagen igjen. Spørsmålet er altså ikke bare hvor målet ligger, men hva reisen gjør med den som drar."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Slitte steintrapper som fører oppover mot en åpen port i tidlig morgenlys",
+      "caption": "Et pilegrimsmål er et sted mennesker mener det er kortere avstand til det hellige."
+    },
+    {
+      "type": "component",
+      "name": "PilegrimsKartet",
+      "props": {
+        "title": "Pilegrimskartet",
+        "intro": "Målene ligger spredt fra Atlanterhavskysten til Ganges, men bevegelsen er den samme. Trykk på et mål.",
+        "whoLabel": "Hvem reiser",
+        "countLabel": "Hvor mange",
+        "arrivalLabel": "Framme",
+        "defaultDestination": "mekka",
+        "destinations": [
+          {
+            "id": "mekka",
+            "name": "Mekka",
+            "short": "Mekka",
+            "tradition": "Islam",
+            "color": "#10b981",
+            "lat": 21.42,
+            "lng": 39.83,
+            "labelDx": 7,
+            "labelDy": 4,
+            "duty": "Plikt",
+            "dutyKind": "plikt",
+            "who": "Voksne muslimer som er i stand til det, minst én gang i livet.",
+            "count": "Rundt to millioner under hajj.",
+            "arrival": "Sju runder rundt Kaba, 385 meter mellom al-Safa og al-Marwa, og en stans på Arafat-sletten fra middag til solnedgang."
+          },
+          {
+            "id": "jerusalem",
+            "name": "Jerusalem",
+            "short": "Jerusalem",
+            "tradition": "Jødedom, kristendom og islam",
+            "color": "#3b82f6",
+            "lat": 31.78,
+            "lng": 35.23,
+            "labelDx": 7,
+            "labelDy": 11,
+            "duty": "Ingen plikt i dag",
+            "dutyKind": "frivillig",
+            "who": "Jøder, kristne og muslimer. Fram til år 70 dro jødiske menn hit til tempelet.",
+            "count": "Ingen samlet telling. Et annet jødisk mål, Meron i Galilea, samler over 100 000 i året.",
+            "arrival": "Vestmuren er jødedommens helligste bønnested. Den hellige gravs kirke ble innviet i 335."
+          },
+          {
+            "id": "haifa",
+            "name": "Haifa",
+            "short": "Haifa",
+            "tradition": "Bahá'í",
+            "color": "#14b8a6",
+            "lat": 32.82,
+            "lng": 34.99,
+            "offsetX": -18,
+            "offsetY": -18,
+            "labelDx": -7,
+            "labelDy": 3,
+            "labelAnchor": "end",
+            "duty": "Plikt for dem som kan",
+            "dutyKind": "plikt",
+            "who": "Bahá'íer som er i stand til det. Kvinner er fritatt.",
+            "count": "Ingen tall for reisende. Det finnes rundt seks millioner bahá'íer i verden.",
+            "arrival": "Et tempelområde på Karmelberget. Her ligger Báb begravet."
+          },
+          {
+            "id": "roma",
+            "name": "Roma",
+            "short": "Roma",
+            "tradition": "Kristendom",
+            "color": "#6366f1",
+            "lat": 41.9,
+            "lng": 12.5,
+            "labelDx": 6,
+            "labelDy": -7,
+            "duty": "Ingen plikt",
+            "dutyKind": "frivillig",
+            "who": "Kristne. Roma var middelalderens viktigste valfartssted i Europa.",
+            "count": "Ingen sikre tall. Roma har vært pilegrimsmål siden kirkens tidligste år.",
+            "arrival": "Målet er apostelen Peters grav."
+          },
+          {
+            "id": "santiago",
+            "name": "Santiago de Compostela",
+            "short": "Santiago",
+            "tradition": "Kristendom",
+            "color": "#6366f1",
+            "lat": 42.88,
+            "lng": -8.55,
+            "labelDx": -7,
+            "labelDy": 3,
+            "labelAnchor": "end",
+            "duty": "Ingen plikt",
+            "dutyKind": "frivillig",
+            "who": "Kristne og andre vandrere. Nest viktigst i middelalderen, etter Roma.",
+            "count": "Hundretusener av pilegrimer hvert år.",
+            "arrival": "På 800-tallet ble det reist en kirke over en grav folk mente var apostelen Jakobs.",
+            "route": {
+              "fromLat": 43.16,
+              "fromLng": -1.24,
+              "fromLabel": "Pyreneene",
+              "text": "Middelalderens pilegrimer bar et kamskjell som merke."
+            }
+          },
+          {
+            "id": "nidaros",
+            "name": "Nidaros",
+            "short": "Nidaros",
+            "tradition": "Kristendom",
+            "color": "#6366f1",
+            "lat": 63.43,
+            "lng": 10.4,
+            "labelDx": 8,
+            "labelDy": 3,
+            "duty": "Ingen plikt",
+            "dutyKind": "frivillig",
+            "who": "Nordboere i middelalderen. I dag også turfolk og folk med annen tro.",
+            "count": "1793 kom fram til pilegrimsmottaket i Trondheim i 2025.",
+            "arrival": "Etter tradisjonen står høyalteret der Olav Haraldsson ble gravlagt i 1030.",
+            "route": {
+              "fromLat": 59.91,
+              "fromLng": 10.75,
+              "fromLabel": "Oslo",
+              "text": "Gudbrandsdalsleden er 643 km. Det kan ta opptil 32 dager."
+            }
+          },
+          {
+            "id": "amritsar",
+            "name": "Amritsar",
+            "short": "Amritsar",
+            "tradition": "Sikhisme",
+            "color": "#ff9933",
+            "lat": 31.63,
+            "lng": 74.87,
+            "labelDx": -7,
+            "labelDy": -7,
+            "labelAnchor": "end",
+            "duty": "Ingen plikt",
+            "dutyKind": "frivillig",
+            "who": "Sikher og besøkende. Byen ble grunnlagt rundt en dam i 1577.",
+            "count": "Tempelkjøkkenet gir gratis mat til over 100 000 hver dag.",
+            "arrival": "Det gylne tempel. Her la guru Arjan sikhenes hellige skrift i 1604."
+          },
+          {
+            "id": "varanasi",
+            "name": "Varanasi",
+            "short": "Varanasi",
+            "tradition": "Hinduisme",
+            "color": "#ec4899",
+            "lat": 25.32,
+            "lng": 83.01,
+            "labelDx": -7,
+            "labelDy": 3,
+            "labelAnchor": "end",
+            "duty": "Ingen plikt",
+            "dutyKind": "frivillig",
+            "who": "Hinduer. En av hinduismens helligste byer, særlig for shiva-dyrkere.",
+            "count": "Byen har rundt 1500 hindutempler.",
+            "arrival": "Over åtte kilometer med trapper, ghater, fører ned i Ganges."
+          },
+          {
+            "id": "bodhgaya",
+            "name": "Bodh Gaya",
+            "short": "Bodh Gaya",
+            "tradition": "Buddhisme",
+            "color": "#f59e0b",
+            "lat": 24.7,
+            "lng": 84.99,
+            "offsetX": 10,
+            "offsetY": 18,
+            "labelDx": 7,
+            "labelDy": 4,
+            "duty": "Ingen plikt",
+            "dutyKind": "frivillig",
+            "who": "Buddhister fra hele verden, ikke minst lekfolk.",
+            "count": "Det viktigste av stedene knyttet til Buddhas liv.",
+            "arrival": "Her satt Siddhartha under et tre og våknet til klar innsikt."
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Abrahamittiske røtter: plikten, tempelet og gravene"
+    },
+    {
+      "type": "text",
+      "content": "I islam er pilegrimsferden en av religionens grunnpilarer. Hajj er reisen til Mekka, og alle voksne muslimer som er praktisk og økonomisk i stand til det, har plikt til å gjennomføre den minst én gang i livet. Den hører til de fem søylene og foregår i dhu al-hijja, den tolvte måneden i den islamske kalenderen. Først går pilegrimen inn i ihram, en tilstand av rituell renhet. Les mer om [de sentrale trekkene i islam](/krle/religion/islam/sentrale-trekk)."
+    },
+    {
+      "type": "text",
+      "content": "Vel framme går pilegrimene sju runder rundt Kaba. Det er en steinbygning på tolv ganger ti meter og femten meters høyde, dekket av et svart brokadeteppe. Dette kalles tawaf. Så går de strekningen på 385 meter mellom haugene al-Safa og al-Marwa. Den sentrale delen av hajj er likevel noe helt annet: på den niende dagen står alle sammen på Arafat-sletten fra middag til solnedgang. Etterpå kastes det stein mot tre søyler ved Mina, og det ofres et dyr. Den lille pilegrimsferden, umra, kan gjøres når som helst på året og er ikke en av søylene. Siden midten av 600-tallet har bare muslimer hatt adgang til Mekka."
+    },
+    {
+      "type": "text",
+      "content": "I jødedommen gikk reisen til ett bestemt bygg. Sukkot var en av de tre gamle pilegrimshøytidene, da menn dro opp til Jerusalem for å ofre i tempelet. I år 70 stormet romerne tempelet, det brant, og tempelkulten tok slutt. Igjen står Vestmuren, en del av støttemuren Herodes bygde rundt tempelplassen, og den er jødedommens helligste bønnested i dag. Moderne jødiske pilegrimsmål er blant annet Jerusalem, Rakels grav og gravene til lærde i Galilea. Ved graven til rabbi Simeon ben Jochai i Meron har over 100 000 mennesker samlet seg hvert år siden 1500-tallet."
+    },
+    {
+      "type": "text",
+      "content": "Kristendommen har aldri hatt noen pilegrimsplikt, men middelalderens Europa var likevel vevd sammen av pilegrimsveier. Folk dro til Betlehem og Jerusalem, til Peters grav i Roma, til apostelen Jakobs grav i Santiago de Compostela og til Thomas Beckets grav i Canterbury. Nordboere valfartet særlig til Olav den helliges grav i Nidaros, til Røldal stavkirke og til Odense. Senere kom Maria-stedene: Lourdes i 1858, Fátima i 1917 og Medjugorje i 1981. Reformasjonen satte en stopper for helgenvalfarten her hjemme, og 26 av de 28 middelalderaltrene i Nidarosdomen ble fjernet. I dag går mange igjen: Gudbrandsdalsleden fra Oslo til Trondheim er 643 kilometer, og det kan ta opptil 32 dager å gå hele veien."
+    },
+    {
+      "type": "header",
+      "text": "Indiske tradisjoner: elva, treet og dammen"
+    },
+    {
+      "type": "text",
+      "content": "I hinduismen er pilegrimsmålene mange slags steder: elver, fjell, store templer og hele byer. Mest kjent er Varanasi ved Ganges, en av hinduismens helligste byer, særlig for dem som dyrker guden Shiva. Langs vestbredden ligger over åtte kilometer med trapper ned i elva. Trappene kalles ghater. Byens gamle pilegrimstekster lærte at å dø her ga en sikker vei ut av gjenfødslene, det som heter moksha. Les mer om [målet med det hele](/krle/sammenligning/frelse)."
+    },
+    {
+      "type": "text",
+      "content": "Verdens største folkesamling er også hinduistisk. Kumbh Mela er en badefest som går på omgang mellom fire nordindiske byer, hvert tolvte år i hver av dem. I 2025 var det Prayagrajs tur, og det var en utgave som bare kommer hvert 144. år. Flere hundre millioner mennesker kom for å dukke seg tre ganger i elva. Mange mener badet fjerner moralsk urenhet og er bra for karmaen."
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen har målene sine der Buddha levde. Han ble født i Lumbini, våknet til klar innsikt under et tre ved Buddh Gaya i Bihar, holdt sin første tale i Sarnath ved Varanasi og døde i Kushinagari. Bodh Gaya er det viktigste av dem. Pilegrimsreiser er en viktig religiøs aktivitet både i theravada og i mahayana, ikke minst for lekfolket, og hvert buddhistisk land har i tillegg sine egne mål."
+    },
+    {
+      "type": "text",
+      "content": "Sikhenes hellige by er Amritsar i Punjab. Guru Ram Das grunnla byen rundt en dam som sto ferdig i 1577, og navnet betyr nektardammen. Guru Arjan startet byggingen av Det gylne tempel der, og la den første utgaven av sikhenes hellige skrift inn i bygget i 1604. Kjøkkenet i tempelet, langar, gir gratis mat til over 100 000 mennesker hver dag. Å reise dit er ingen plikt for noen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Brede steintrapper som fører ned i en bred elv i morgendis, med mennesker som står i vannet",
+      "caption": "I Varanasi er målet ikke et bygg, men elva selv."
+    },
+    {
+      "type": "header",
+      "text": "Nyere bevegelser: fra plikt til ingenting"
+    },
+    {
+      "type": "text",
+      "content": "De tre nyeste bevegelsene svarer helt ulikt, og de er langt mindre enn kristendom og islam, som teller milliarder. Det finnes rundt seks millioner bahá'íer. Mormonkirken oppgir selv rundt 15,5 millioner medlemmer (2015), og Jehovas vitner rundt 8,6 millioner (2019)."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í-læren har en pilegrimsplikt. I Kitáb-i-Aqdas står det at de som er i stand til det, skal reise til det hellige huset, og at kvinner er fritatt som en nåde. Verdenssenteret til bahá'í ligger på Karmelberget i Haifa i Israel, et tempelområde der Báb er begravet etter at han ble henrettet i 1850."
+    },
+    {
+      "type": "text",
+      "content": "Mormonismen har ingen slik plikt, men den har reiser. Kirken hadde 154 templer rundt om i verden i 2016, og noen ritualer skjer bare der: dåp på vegne av slektninger som er døde, og beseglinger som skal binde familien sammen også etter døden. De skandinaviske templene ligger i Stockholm og København, så for medlemmer i Norge betyr det en tur ut av landet."
+    },
+    {
+      "type": "text",
+      "content": "Jehovas vitner har ingen pilegrimsferd. Møtelokalet deres heter Rikets sal og blir beskrevet som et undervisningsbygg, uten religiøs utsmykning ut over et bibelvers som byttes hvert år. De møtes to ganger i uka og samles på årlige stevner. Her finnes altså ikke noe sted som er hellig i seg selv, og dermed heller ikke noe å reise til."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Det er ikke målene som skiller de ni mest. Det er reglene rundt reisen:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Bare islam og bahá'í-læren gjør pilegrimsferden til en plikt, og begge har unntak. Du må være i stand til det, og i bahá'í-læren er kvinner fritatt.",
+        "Noen steder er det å komme fram som teller. Rundt Kaba er det handlingene på selve stedet som utgjør hajj.",
+        "Andre steder er det gåingen som er poenget. De fleste på Gudbrandsdalsleden går rundt tjue kilometer om dagen i flere uker.",
+        "Et hellig sted kan være et bygg, en grav, en elv, et tre eller en dam. Hva stedet er, henger sammen med hvor tradisjonen mener det guddommelige er nærmest.",
+        "En tradisjon kan miste målet sitt. Da tempelet i Jerusalem ble ødelagt i år 70, forsvant valfarten dit, og bønn ved Vestmuren tok over.",
+        "Og noen har ingen reise. Jehovas vitner regner ingen bygning som hellig."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Reisen henger tett sammen med to andre temaer i boka: hva slags rom mennesker bygger for det hellige, og hvilke dager de setter av. Les [Rommene vi bygger for det hellige](/krle/sammenligning/hellige-rom) og [Den hellige kalenderen](/krle/sammenligning/hoytider)."
+    },
+    {
+      "type": "header",
+      "text": "Og de som ikke tror?"
+    },
+    {
+      "type": "text",
+      "content": "De norske pilegrimsledene er en statlig satsing. Nasjonalt pilegrimssenter skriver at arbeidet skal ha en tydelig kirkelig forankring, og samtidig være åpent og inkluderende for mennesker med ulik tro, kultur og tradisjon. I 2025 kom 1793 pilegrimer fram til pilegrimsmottaket i Trondheim, 13 prosent flere enn året før. De siste årene har vandrere fra nesten 40 land gått pilegrimsleder i Norge. Senteret skriver at det som var en kristen tradisjon i middelalderen, i dag er populært både blant turfolk, kulturinteresserte og dem som søker en indre reise. Formen er tusen år gammel. Innholdet fyller hver enkelt inn selv."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt religion selv sier, finner du artiklene stilt opp side om side i [Sammenlign religioner](/krle/sammenlign)."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er en pilegrim, og hva er forskjellen på hajj og umra?",
+          "Nevn de tre trinnene religionsforskere deler pilegrimsferden inn i.",
+          "Hvorfor sluttet jødene å valfarte til tempelet i Jerusalem?",
+          "Hvilke to av de ni tradisjonene gjør pilegrimsferden til en plikt, og hvilke unntak finnes?"
+        ],
+        "reflekter": [
+          "I noen tradisjoner er det å komme fram som teller, i andre er selve gåingen poenget. Hva slags mennesker tror du hver av dem passer for?",
+          "Varanasi, Bodh Gaya og Amritsar er en elv, et tre og en dam. Hva sier valget av sted om hva hver tradisjon mener det hellige er?",
+          "Jehovas vitner regner ingen bygning som hellig. Hva vinner og hva taper en bevegelse på det?",
+          "Nasjonalt pilegrimssenter vil at leden skal være både kirkelig forankret og åpen for alle. Går det an å være begge deler samtidig?"
+        ],
+        "gaaVidere": [
+          "Velg to mål fra kartet i ulike grupper. Skriv et avsnitt der du sammenligner hvem som reiser, om det er plikt, og hva som skjer når de kommer fram, uten å si at det ene er bedre enn det andre.",
+          "Tegn din egen rute på et kart over Norge: hvor ville du gått, og hva skulle vært målet? Begrunn valget med noe annet enn at det er fint der.",
+          "Finn et intervju med noen som har gått Pilegrimsleden. Hvilke av grunnene i artikkelen kjenner du igjen, og hvilke er nye?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvilken av disse reisene er en religiøs plikt?",
+            "options": [
+              "Å gå Gudbrandsdalsleden til Nidaros",
+              "Hajj til Mekka",
+              "Å bade i Ganges under Kumbh Mela",
+              "Å besøke Det gylne tempel i Amritsar"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Hajj er en av islams fem søyler. Alle voksne muslimer som er praktisk og økonomisk i stand til det, skal gjennomføre den minst én gang i livet."
+          },
+          {
+            "question": "Hva er tawaf?",
+            "options": [
+              "Å stå på Arafat-sletten fra middag til solnedgang",
+              "Å gå de 385 meterne mellom al-Safa og al-Marwa",
+              "Å gå sju runder rundt Kaba",
+              "Å kaste stein mot tre søyler ved Mina"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Tawaf hører til både hajj og den lille pilegrimsferden umra. Kaba er en steinbygning dekket av et svart brokadeteppe."
+          },
+          {
+            "question": "Hvorfor er året 70 viktig for jødisk pilegrimshistorie?",
+            "options": [
+              "Da ble Vestmuren bygget",
+              "Da ble tempelet i Jerusalem ødelagt, og valfarten dit tok slutt",
+              "Da ble sukkot innført som høytid",
+              "Da flyttet pilegrimsmålet til Meron i Galilea"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Romerne stormet tempelet, det brant, og tempelkulten opphørte. Vestmuren, en rest av støttemuren, er jødedommens helligste bønnested i dag."
+          },
+          {
+            "question": "Hva er Kumbh Mela?",
+            "options": [
+              "En buddhistisk vandring til stedene der Buddha levde",
+              "En hinduistisk badefest som går på omgang mellom fire byer",
+              "Et sikhisk fellesmåltid i Amritsar",
+              "En kristen valfart til Jakobs grav"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Festen holdes hvert tolvte år i hver av de fire byene. I Prayagraj i 2025 kom flere hundre millioner mennesker for å bade i elva."
+          },
+          {
+            "question": "Hvilken av bevegelsene har ingen pilegrimsreise i det hele tatt?",
+            "options": [
+              "Bahá'í",
+              "Mormonismen",
+              "Jehovas vitner",
+              "Sikhismen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Møtelokalet Rikets sal beskrives som et undervisningsbygg uten religiøs utsmykning. Ingen bygning regnes som hellig i seg selv."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Redaksjonen i Store norske leksikon. (2025). *Pilegrim*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/pilegrim](https://snl.no/pilegrim)",
+          "Store norske leksikon & Kværne, P. (2026). *Pilegrimsreise*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/pilegrimsreise](https://snl.no/pilegrimsreise)",
+          "Vogt, K. (2026). *Hajj*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/hajj](https://snl.no/hajj)",
+          "Skjønberg, G.-R. & Vogt, K. (2026). *Umra*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/umra](https://snl.no/umra)",
+          "Vogt, K. (2025). *Ihram*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/ihram](https://snl.no/ihram)",
+          "Vogt, K. (2026). *Mekka*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Mekka](https://snl.no/Mekka)",
+          "Store norske leksikon. (2026). *Kaba*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Kaba](https://snl.no/Kaba)",
+          "Røsnes, A. E., Groth, B. & Heian-Engdal, M. (2025). *Jerusalem*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Jerusalem](https://snl.no/Jerusalem)",
+          "Groth, B. (2026). *Tempelet i Jerusalem*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/tempelet_i_Jerusalem](https://snl.no/tempelet_i_Jerusalem)",
+          "Groth, B. (2024). *Løvhyttefesten*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/løvhyttefesten](https://snl.no/l%C3%B8vhyttefesten)",
+          "Halvorsen, P. B. (2026). *Santiago de Compostela*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Santiago_de_Compostela](https://snl.no/Santiago_de_Compostela)",
+          "Brochmann, O., Tschudi-Madsen, S., Storsletten, O., Ekroll, Ø., Rise, H. & Ebert, B. (2026). *Nidarosdomen*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Nidarosdomen](https://snl.no/Nidarosdomen)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Store norske leksikon, Samuelsen, G. W. & Jacobsen, K. A. (2026). *Varanasi*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Varanasi](https://snl.no/Varanasi)",
+          "Jacobsen, K. A. (2025). *Kumbh Mela*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Kumbh_Mela](https://snl.no/Kumbh_Mela)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddha*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Buddha](https://snl.no/Buddha)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "Store norske leksikon & Jacobsen, K. A. (2024). *Det gylne tempel*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Det_gylne_tempel](https://snl.no/Det_gylne_tempel)",
+          "Store norske leksikon. (2025). *Amritsar*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Amritsar](https://snl.no/Amritsar)",
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+          "Bahá'u'lláh. (u.å.). *Kitáb-i-Aqdas*, avsnitt 32. Bahá'í Reference Library. Hentet 13.08.2026 fra [reference.bahai.org](https://reference.bahai.org/en/t/b/KA/ka-4.html)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Nasjonalt pilegrimssenter. (u.å.). *Gudbrandsdalsleden*. Pilegrimsleden. Hentet 13.08.2026 fra [pilegrimsleden.no/gudbrandsdalsleden](https://pilegrimsleden.no/gudbrandsdalsleden)",
+          "Nasjonalt pilegrimssenter. (u.å.). *Nasjonalt pilegrimssenter*. Pilegrimsleden. Hentet 13.08.2026 fra [pilegrimsleden.no/nasjonalt-pilegrimssenter](https://www.pilegrimsleden.no/nasjonalt-pilegrimssenter)",
+          "Nasjonalt pilegrimssenter. (2026). *Flere pilegrimer i 2025*. Pilegrimsleden. Hentet 13.08.2026 fra [pilegrimsleden.no/artikler/flere-pilegrimer](https://www.pilegrimsleden.no/artikler/flere-pilegrimer)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

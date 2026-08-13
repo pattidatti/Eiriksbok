@@ -1,0 +1,617 @@
+{
+  "id": "kjonn-og-roller",
+  "title": "Kjønn og roller: Prinsipp mot praksis",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "11 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "social",
+  "comparison_tags": [
+    "kjonn-og-roller",
+    "social"
+  ],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "kompetansemaal": [
+    "rle01-03-10-08",
+    "rle01-03-10-12"
+  ],
+  "details": [
+    "Skill mellom prinsipp, altså hva læren sier, og praksis, altså hva som faktisk skjer. Gapet mellom dem er selve temaet.",
+    "Den norske kirke åpnet for kvinnelige prester i 1938. Den første ble ordinert i 1961, og motstanden var hard.",
+    "Uenigheten går like ofte innad i en tradisjon som mellom tradisjonene: ortodokse jøder og reformjøder leser de samme tekstene ulikt.",
+    "Ordinasjon av buddhistiske nonner er omstridt akkurat nå, både i theravada og i tibetansk tradisjon.",
+    "Sikhismen og bahá'í har ikke noe presteskap. Da ser spørsmålet om hvem som kan lede, helt annerledes ut."
+  ],
+  "concepts": [
+    {
+      "id": "ordinasjon",
+      "term": "Ordinasjon",
+      "definition": "Handlingen der en person blir innsatt i prestetjeneste. I Den norske kirke gjøres den av en biskop."
+    },
+    {
+      "id": "rabbiner",
+      "term": "Rabbiner",
+      "definition": "Lærer og veileder i jødisk lov og tradisjon. Rabbinere er også dommere i religiøse jødiske domstoler, kalt bet din."
+    },
+    {
+      "id": "minjan",
+      "term": "Minjan",
+      "definition": "Antallet personer som må være til stede for at en jødisk gudstjeneste skal være gyldig. I ortodoks tradisjon minst ti voksne jødiske menn."
+    },
+    {
+      "id": "sangha",
+      "term": "Sangha",
+      "definition": "Fellesskapet av buddhistiske munker og nonner. Ordet kan også brukes om alle buddhister, også lekfolk."
+    },
+    {
+      "id": "prestedomme",
+      "term": "Prestedømme",
+      "definition": "I Jesu Kristi Kirke av Siste Dagers Hellige: myndighet til å handle på Guds vegne. Det er forbeholdt menn og har to nivåer, det aronske og det melkisedekske."
+    }
+  ],
+  "createdDate": "2026-08-13T12:00:00Z",
+  "lastUpdated": "2026-08-13T12:00:00Z",
+  "factChecked": "2026-08-13",
+  "content": [
+    {
+      "type": "text",
+      "content": "I 1938 fikk kvinner adgang til å bli prester i Den norske kirke. Den første ble ordinert i 1961, tjuetre år seinere. Da hun sto der, ga seks av landets biskoper en erklæring om at prester og vanlige kirkemedlemmer burde kunne boikotte henne. Regelen var altså på plass lenge før virkeligheten var det."
+    },
+    {
+      "type": "header",
+      "text": "Regelen og virkeligheten"
+    },
+    {
+      "type": "text",
+      "content": "Alle religioner må svare på de samme spørsmålene om kjønn. Hvem kan lede en gudstjeneste? Hvem får lese høyt fra den hellige teksten? Hvem arver, og hvem bestemmer hjemme? Svarene er ulike, men spørsmålene er de samme. Og de diskuteres nå."
+    },
+    {
+      "type": "text",
+      "content": "Det viktigste å forstå er dette: i nesten alle tradisjonene finnes både konservative og reformvennlige retninger, og de leser de samme tekstene helt ulikt. To muslimer kan være uenige om hva et koranvers betyr. To jøder kan være uenige om hvem som kan være rabbiner, altså lærer i jødisk lov. Uenigheten er ikke unntaket. Den er regelen."
+    },
+    {
+      "type": "text",
+      "content": "Derfor lønner det seg å skille mellom to ting. Prinsippet er hva læren sier. Praksis er hva som faktisk skjer. Noen ganger ligger praksis århundrer bak prinsippet, noen ganger går det motsatt vei, og noen ganger er et spor uenig med seg selv."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "En tom prekestol i en norsk kirke, fotografert fra kirkebenkene i dagslys",
+      "caption": "Regelen kom i 1938. Det tok tjuetre år før en kvinne sto her."
+    },
+    {
+      "type": "component",
+      "name": "RolleneOverTid",
+      "props": {
+        "title": "Rollene over tid",
+        "intro": "Øvre spor er prinsippet: hva læren eller grunnteksten sier. Nedre spor er praksis: hva som faktisk skjedde. Velg en tradisjon, trykk på punktene, og se hvor stor avstanden mellom sporene er.",
+        "principleLabel": "Prinsippet",
+        "practiceLabel": "Praksis",
+        "defaultTradition": "kristendom",
+        "note": "Noen punkter har et eksakt årstall, andre har bare en epoke. Der årstallet mangler, viser plasseringen på linja rekkefølge, ikke dato.",
+        "traditions": [
+          {
+            "id": "kristendom",
+            "name": "Kristendom (Norge)",
+            "color": "#6366f1",
+            "summary": "Den norske kirke: regelen kom først, virkeligheten kom etter.",
+            "events": [
+              {
+                "id": "k-1938",
+                "year": 1938,
+                "displayYear": "1938",
+                "track": "prinsipp",
+                "short": "Adgang, med forbehold",
+                "text": "Kvinner fikk formell adgang til prestetjeneste i Den norske kirke. Men den enkelte menighet kunne fortsatt reservere seg mot å få en kvinnelig prest.",
+                "source": "Store norske leksikon, Prest",
+                "linkTo": "k-1961",
+                "linkLabel": "23 år"
+              },
+              {
+                "id": "k-1954",
+                "year": 1954,
+                "displayYear": "1954",
+                "track": "praksis",
+                "short": "Metodistene først",
+                "text": "Agnes Nilsen Howard ble ordinert som den første kvinnelige presten i Metodistkirken i Norge, sju år før Den norske kirke fulgte etter.",
+                "source": "Store norske leksikon, Prest"
+              },
+              {
+                "id": "k-1956",
+                "year": 1956,
+                "displayYear": "1956",
+                "track": "prinsipp",
+                "short": "Reservasjonsretten bort",
+                "text": "Stortinget fjernet menighetenes rett til å reservere seg. Kvinner fikk dermed lik adgang til prestestillinger.",
+                "source": "Store norske leksikon, Prest"
+              },
+              {
+                "id": "k-1961",
+                "year": 1961,
+                "displayYear": "1961",
+                "track": "praksis",
+                "short": "Ingrid Bjerkås ordinert",
+                "text": "Ingrid Bjerkås ble ordinert i Vang kirke av biskop Kristian Schjelderup 19. mars. Seks av biskopene i landet ga en erklæring om at prester og lekfolk burde kunne boikotte henne.",
+                "source": "Store norske leksikon, Ingrid Bjerkås"
+              },
+              {
+                "id": "k-1963",
+                "year": 1963,
+                "displayYear": "1963",
+                "track": "praksis",
+                "short": "Striden fortsetter",
+                "text": "Da Bjerkås søkte medlemskap i presteforeningen, truet motstandere av kvinnelige prester med å melde seg ut.",
+                "source": "Store norske leksikon, Ingrid Bjerkås"
+              },
+              {
+                "id": "k-1993",
+                "year": 1993,
+                "displayYear": "1993",
+                "track": "praksis",
+                "short": "Første kvinnelige biskop",
+                "text": "Rosemarie Köhn ble den første kvinnelige biskopen i Den norske kirke.",
+                "source": "Store norske leksikon, Prest"
+              },
+              {
+                "id": "k-2024",
+                "year": 2024,
+                "displayYear": "2024",
+                "track": "praksis",
+                "short": "Seks av tolv biskoper",
+                "text": "Norge har seks kvinnelige og seks mannlige biskoper. I 2016 var rundt 30 prosent av prestene i Den norske kirke kvinner.",
+                "source": "Store norske leksikon, Prest"
+              }
+            ]
+          },
+          {
+            "id": "jodedom",
+            "name": "Jødedom",
+            "color": "#3b82f6",
+            "summary": "Tre retninger, tre svar - på de samme tekstene.",
+            "events": [
+              {
+                "id": "j-1800",
+                "year": 1800,
+                "displayYear": "1800-tallet",
+                "track": "prinsipp",
+                "short": "Reformjødedommen",
+                "text": "Reformjødedommen vokste fram i Tyskland tidlig på 1800-tallet. Familier fikk sitte sammen i synagogen i stedet for å sitte kjønnsdelt, og vekten ble flyttet fra ritualer til etikk.",
+                "source": "Store norske leksikon, Reformjødedom",
+                "linkTo": "j-1935",
+                "linkLabel": "over 100 år"
+              },
+              {
+                "id": "j-1885",
+                "year": 1885,
+                "displayYear": "1885",
+                "track": "prinsipp",
+                "short": "Pittsburgh-plattformen",
+                "text": "Reformbevegelsen i USA samlet prinsippene sine i Pittsburgh-plattformen.",
+                "source": "Store norske leksikon, Reformjødedom"
+              },
+              {
+                "id": "j-1935",
+                "year": 1935,
+                "displayYear": "1935",
+                "track": "praksis",
+                "short": "Regina Jonas",
+                "text": "Regina Jonas (1902-1944) ble ordinert i Berlin som den første kvinnelige rabbineren. Hun fikk likevel ikke preke fra prekestolen i synagogen. Nazistene drepte henne i Auschwitz i 1944.",
+                "source": "Store norske leksikon, Reformjødedom"
+              },
+              {
+                "id": "j-1972",
+                "year": 1972,
+                "displayYear": "1972",
+                "track": "praksis",
+                "short": "Sally Priesand",
+                "text": "Sally Priesand ble den første kvinnelige reformrabbineren i USA.",
+                "source": "Store norske leksikon, Reformjødedom"
+              },
+              {
+                "id": "j-naa",
+                "year": 2026,
+                "displayYear": "I dag",
+                "track": "praksis",
+                "short": "To spor samtidig",
+                "text": "I de ikke-ortodokse retningene deltar kvinner på lik linje med menn og virker som rabbinere og kantorer. I ortodoks tradisjon kreves det fortsatt minst ti voksne jødiske menn for at en gudstjeneste skal være gyldig.",
+                "source": "Store norske leksikon, Jødedom"
+              }
+            ]
+          },
+          {
+            "id": "islam",
+            "name": "Islam",
+            "color": "#10b981",
+            "summary": "Samme bok, ulike lesninger - og striden går fortsatt.",
+            "events": [
+              {
+                "id": "i-koranen",
+                "year": 630,
+                "displayYear": "600-tallet",
+                "track": "prinsipp",
+                "short": "Koranen om likhet",
+                "text": "Koranen ble etter tradisjonen åpenbart for Muhammed fra rundt år 610 til han døde i 632. Den sier at den som gjør det gode, mann eller kvinne, kommer til paradiset, og lover troende menn og troende kvinner det samme.",
+                "source": "Koranen 4:124 og 33:35"
+              },
+              {
+                "id": "i-434",
+                "year": 631,
+                "displayYear": "600-tallet",
+                "track": "prinsipp",
+                "short": "Bestyrerrett",
+                "text": "Et annet vers sier at menn har bestyrerrett over kvinner. De to versene har vært lest sammen på svært ulike måter helt siden.",
+                "source": "Koranen 4:34 og Store norske leksikon, Islam"
+              },
+              {
+                "id": "i-skolene",
+                "year": 900,
+                "displayYear": "Rettsskolene",
+                "track": "prinsipp",
+                "short": "Arv og vitnemål",
+                "text": "Loven som ble bygd på tekstene, gir kvinner halvparten så mye arv som menn, og lar vitnemålet deres telle halvt i noen økonomiske saker. Samtidig har kvinner full rett til å eie og styre sin egen formue.",
+                "source": "Store norske leksikon, Islam"
+              },
+              {
+                "id": "i-1050",
+                "year": 1050,
+                "displayYear": "1000-tallet",
+                "track": "praksis",
+                "short": "Familieplanlegging",
+                "text": "Helt fra 1000-tallet har de rettslærde med få unntak godtatt familieplanlegging, altså prevensjon. Abort ble avvist.",
+                "source": "Store norske leksikon, Islam"
+              },
+              {
+                "id": "i-1950",
+                "year": 1950,
+                "displayYear": "Etter 1950",
+                "track": "praksis",
+                "short": "Strid om loven",
+                "text": "Fra andre halvdel av 1900-tallet har det vært intern debatt i mange muslimske land om hvor mye av sharia som skal stå i landets lov. Familieretten, med spørsmål om flerkoneri og skilsmisse, står sentralt.",
+                "source": "Store norske leksikon, Islam"
+              },
+              {
+                "id": "i-2005",
+                "year": 2005,
+                "displayYear": "2005",
+                "track": "praksis",
+                "short": "Amina Wadud",
+                "text": "Aktivisten og forfatteren Amina Wadud ledet fredagsbønnen i en blandet forsamling i en moské i New York. Det utløste voldsom debatt i store deler av den muslimske verden.",
+                "source": "Store norske leksikon, Imam"
+              },
+              {
+                "id": "i-naa",
+                "year": 2026,
+                "displayYear": "I dag",
+                "track": "praksis",
+                "short": "Hvem leder bønnen",
+                "text": "I sunni-islam kan kvinner lede bønnen for andre kvinner, men ikke i en blandet forsamling. Ikke alle muslimske kvinner godtar denne grensen. Reformtenkere peker på at rettighetene Koranen faktisk gir kvinner, ofte ikke er fulgt opp i praksis.",
+                "source": "Store norske leksikon, Imam og Islam"
+              }
+            ]
+          },
+          {
+            "id": "buddhisme",
+            "name": "Buddhisme",
+            "color": "#f59e0b",
+            "summary": "Åpent i prinsippet, omstridt i praksis - også i dag.",
+            "events": [
+              {
+                "id": "b-start",
+                "year": -400,
+                "displayYear": "Fra starten",
+                "track": "prinsipp",
+                "short": "Åpen for nesten alle",
+                "text": "Sanghaen, fellesskapet av munker og nonner, har i prinsippet vært åpen for nesten alle, uavhengig av stand og kjønn, selv om det alltid har vært visse begrensninger.",
+                "source": "Store norske leksikon, Sangha"
+              },
+              {
+                "id": "b-rang",
+                "year": -399,
+                "displayYear": "Fra starten",
+                "track": "praksis",
+                "short": "Rangordningen",
+                "text": "Nonneordenen ble opprettet seinere enn munkeordenen, og munker står alltid over nonner i rangordningen i klostrene. Nonnene er også færre.",
+                "source": "Store norske leksikon, Sangha og Buddhisme"
+              },
+              {
+                "id": "b-1200",
+                "year": 1250,
+                "displayYear": "1200-tallet",
+                "track": "praksis",
+                "short": "Ordenen dør ut",
+                "text": "Theravada-buddhismens nonneorden døde sannsynligvis ut så langt tilbake som på 1200-tallet.",
+                "source": "Store norske leksikon, Sangha"
+              },
+              {
+                "id": "b-tibet",
+                "year": 1400,
+                "displayYear": "Tibet",
+                "track": "praksis",
+                "short": "Aldri etablert",
+                "text": "I den tibetanske tradisjonen ble nonneordenen sannsynligvis aldri etablert i det hele tatt.",
+                "source": "Store norske leksikon, Sangha"
+              },
+              {
+                "id": "b-naa",
+                "year": 2026,
+                "displayYear": "I dag",
+                "track": "praksis",
+                "short": "Fortsatt omstridt",
+                "text": "Om kvinner kan ordineres på nytt, er omstridt både i theravada-buddhismen og i tibetansk tradisjon. Dette er en levende uenighet mellom buddhister akkurat nå.",
+                "source": "Store norske leksikon, Sangha"
+              }
+            ]
+          },
+          {
+            "id": "sikhisme",
+            "name": "Sikhisme",
+            "color": "#ff9933",
+            "summary": "Ingen prester i det hele tatt. Da ser spørsmålet annerledes ut.",
+            "events": [
+              {
+                "id": "s-nanak",
+                "year": 1500,
+                "displayYear": "1500-tallet",
+                "track": "prinsipp",
+                "short": "Nanaks forsamling",
+                "text": "Guru Nanak levde fra 1469 til 1539. Ifølge sikhenes egen framstilling tok han kvinner inn i forsamlingen uten forbehold, og guruene oppmuntret kvinner til å delta som likeverdige.",
+                "source": "Sikhism Home Page og Store norske leksikon, Guru Nanak"
+              },
+              {
+                "id": "s-khalsa",
+                "year": 1700,
+                "displayYear": "Khalsa",
+                "track": "prinsipp",
+                "short": "Singh og Kaur",
+                "text": "Guru Gobind Singh, den tiende guruen, døde i 1708. Han innstiftet at menn som var innviet i khalsa skulle bære etternavnet Singh, som betyr løve, og kvinner navnet Kaur, som betyr prinsesse. Tiltaket var ment å fjerne kastesystemet, som kjennes igjen på etternavn, og framheve likhet.",
+                "source": "Store norske leksikon, Guru Gobind Singh"
+              },
+              {
+                "id": "s-naa",
+                "year": 2026,
+                "displayYear": "I dag",
+                "track": "praksis",
+                "short": "Sammen i gurdwaraen",
+                "text": "Sikhismen har ingen prester, og menn og kvinner deltar sammen i gudstjenesten. Merk at kilden til likeverdet i stor grad er sikhenes egen framstilling av seg selv.",
+                "source": "Store norske leksikon, Sikhisme"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Abrahamittiske røtter: samme bok, ulike lesninger"
+    },
+    {
+      "type": "text",
+      "content": "I jødedommen svarer retningene svært ulikt. Tradisjonelt var kvinner fritatt fra plikter som er bundet til bestemte tidspunkt, som de faste bønnene. De hadde tre plikter av sitt eget: å tenne sabbatslysene fredag kveld, å følge renhetsreglene, og å ta ut prestenes del når de bakte. Kvinnen var heller ikke forpliktet til å studere Tora, slik mannen var, og satt ofte på et galleri eller bak et forheng i synagogen. I ortodoks tradisjon kreves fortsatt minst ti voksne jødiske menn for at en gudstjeneste skal være gyldig. Reformjødedommen gikk en annen vei, og i dag virker kvinner som rabbinere og kantorer i alle de ikke-ortodokse retningene."
+    },
+    {
+      "type": "text",
+      "content": "Kristendommen er heller ikke ett svar, men mange. Den norske kirke åpnet prestetjenesten for kvinner i 1938, men lot menighetene reservere seg mot å få en kvinnelig prest. Den retten fjernet Stortinget i 1956. I 1961 ordinerte biskop Kristian Schjelderup Ingrid Bjerkås i Vang kirke. Motstanden var hard: på Senja nektet 96 medlemmer å godta henne. I 1993 ble Rosemarie Köhn den første kvinnelige biskopen, og i 2024 hadde Norge seks kvinnelige og seks mannlige biskoper. Metodistkirken i Norge var først ute, med Agnes Nilsen Howard i 1954. I Den katolske kirke, det største kirkesamfunnet i verden, er kvinnelige prester fortsatt ikke tillatt. Les mer om forskjellene i [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
+    },
+    {
+      "type": "text",
+      "content": "Muslimer leser den samme boka, men trekker ulike slutninger av den. Koranen sier at den som gjør det gode, mann eller kvinne, kommer til paradiset, og et annet vers lover troende menn og troende kvinner det samme. I frelsessammenheng stiller kvinner og menn altså likt. Samtidig sier et tredje vers at menn har bestyrerrett over kvinner. Loven som ble bygd på tekstene, gir kvinner halvparten så mye arv som menn, men også full råderett over egen formue. Fra andre halvdel av 1900-tallet har det vært strid i mange muslimske land om hvor mye av dette som skal stå i landets lov. Reformtenkere peker på at rettighetene Koranen faktisk gir kvinner, ofte ikke er fulgt opp i praksis. Mer i [innføringen om islam](/krle/religion/islam/intro)."
+    },
+    {
+      "type": "header",
+      "text": "Indiske tradisjoner: nonner, kaster og en religion uten prester"
+    },
+    {
+      "type": "text",
+      "content": "Hinduismen har verken felles ledelse eller én bok som gjelder for alle. En gammel hymne i Rigveda forteller at prestene oppsto fra munnen til urmennesket og tjenerne fra føttene. Slik ble kastene, gruppene folk fødes inn i, forklart som en del av verdens orden. Brahminene, den øverste kasten, utfører fortsatt tempeltjenesten puja og de store livsritualene. Samtidig har bhakti, veien som legger vekt på kjærlighet til guden, alltid henvendt seg til alle: menn og kvinner, høy og lav. Enkebrenning, sati, fikk aldri stor utbredelse, men fantes særlig blant høykaster i Bengal og Rajasthan. Reformatoren Ram Mohan Roy kjempet mot skikken, som ble forbudt i Bengal i 1829 og i årene etter i hele India. I dag har den ingen tilhengere."
+    },
+    {
+      "type": "text",
+      "content": "I buddhismen er sanghaen, fellesskapet av munker og nonner, selve kjernen. I prinsippet har sanghaen vært åpen for nesten alle, uansett stand og kjønn, selv om det alltid har vært visse begrensninger. I praksis står munker alltid over nonner i rangordningen, og nonneordenen ble opprettet seinere enn munkeordenen. Nonnene er også færre. Her er gapet fortsatt åpent. Theravada-buddhismens nonneorden døde sannsynligvis ut alt på 1200-tallet, og om kvinner kan ordineres på nytt, er buddhister uenige om i dag. I tibetansk tradisjon er det like omstridt, fordi nonneordenen sannsynligvis aldri ble etablert der."
+    },
+    {
+      "type": "text",
+      "content": "Sikhismen har ingen prester, og menn og kvinner deltar sammen i gudstjenesten i gurdwaraen, sikhenes forsamlingshus. Guru Nanak, som levde fra 1469 til 1539, tok ifølge sikhenes egen framstilling kvinner inn i forsamlingen uten forbehold. Den tiende guruen, Guru Gobind Singh, ga menn i khalsa etternavnet Singh, som betyr løve, og kvinner navnet Kaur, som betyr prinsesse, for å viske ut skillene mellom kastene. Merk hvem som er kilden: dette er i stor grad sikhenes egen framstilling, ikke en måling utenfra. Les mer i [Da guruen ble en bok](/krle/religion/sikhisme/grunnleggere)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "To rader med sko utenfor døren til et bønnerom, den ene raden større enn den andre",
+      "caption": "Hvem som får gå inn, og hvor de får sette seg, er et spørsmål alle tradisjoner må svare på."
+    },
+    {
+      "type": "header",
+      "text": "Nyere bevegelser: likestilling i læren, roller i praksis"
+    },
+    {
+      "type": "text",
+      "content": "De tre nyeste bevegelsene settes ofte i samme gruppe, men det er en forenkling: bahá'í vokste fram fra sjia-islam, mormonismen og Jehovas vitner fra kristendommen. Alle tre er små ved siden av kristendom og islam, som teller milliarder. Store norske leksikon anslo i 2026 at bahá'í har rundt seks millioner medlemmer. Mormonkirken oppga selv rundt 15,5 millioner medlemmer i 2015, og Jehovas vitner rundt 8,6 millioner aktive forkynnere i 2019."
+    },
+    {
+      "type": "text",
+      "content": "Bahá'í-troen regner full likestilling mellom kjønnene som en av grunnsetningene sine, og har ikke noe presteskap. Styringen ligger hos valgte råd. På toppen sitter Det universelle rettferdighetens hus, ni medlemmer som velges hvert femte år av alle nasjonale råd, første gang i 1963."
+    },
+    {
+      "type": "text",
+      "content": "I Jesu Kristi Kirke av Siste Dagers Hellige, ofte kalt mormonerne, er prestedømmet forbeholdt menn. Gutter kan få det aronske prestedømmet fra januar det året de fyller tolv, og forbereder seg der på det høyere melkisedekske prestedømmet. Kirken selv sier at det er menn som forvalter prestedømmet, men at menn og kvinner har ulike roller som verdsettes like høyt. Kvinnene har sin egen organisasjon, Hjelpeforeningen, som Joseph Smith opprettet i 1842 med kona si, Emma Hale Smith, som første leder."
+    },
+    {
+      "type": "text",
+      "content": "Hos Jehovas vitner kan bare menn være eldste i menigheten eller sitte i Det styrende råd, som avgjør hva som er rett lære. Rådet har hatt mellom sju og atten medlemmer, og man kommer inn ved invitasjon."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Ser du alle tradisjonene samtidig, dukker det opp linjer som går på tvers:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Nesten alle har både et prinsipp og en praksis, og de to henger sjelden helt sammen. Gapet er ikke det samme som løgn. Det er tid.",
+        "Gapet peker som regel én vei: prinsippet kommer først, praksis følger etter. Den norske kirke brukte tjuetre år.",
+        "Uenigheten går like ofte innad i en tradisjon som mellom tradisjonene. Ortodokse jøder og reformjøder leser de samme tekstene.",
+        "Har en tradisjon ikke noe presteskap, ser hele spørsmålet annerledes ut. Sikhismen og bahá'í har ingen prester, og da handler striden om andre roller.",
+        "Størrelse betyr noe. En avgjørelse i Den katolske kirke gjelder rundt 1,36 milliarder døpte katolikker (2020). En avgjørelse i et lite trossamfunn gjelder færre, men betyr like mye for dem det gjelder.",
+        "Ingen av tradisjonene er ferdige. Både ordinasjon av buddhistiske nonner og innholdet i islamsk familierett er levende strid akkurat nå."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Spørsmålet om kjønn henger sammen med to andre: hvem som har makt i et trossamfunn, og hvordan de hellige tekstene skal leses. Les [Hvem bestemmer?](/krle/sammenligning/ledelse-og-fellesskap) og [Bøkene som styrer liv](/krle/sammenligning/hellige-tekster)."
+    },
+    {
+      "type": "header",
+      "text": "Og de som ikke tror?"
+    },
+    {
+      "type": "text",
+      "content": "Livssynshumanister har ingen hellig tekst å tolke. Etikken deres bygger på etiske og demokratiske verdier slik de er formulert i menneskerettighetene, med gjensidighet som kjerne. Da blir likestilling ikke et spørsmål om hvordan en gammel tekst skal leses, men om et menneskeverd alle har. Humanister internasjonalt sier at de avviser alle former for rasisme og fordommer. Human-Etisk Forbund ble stiftet i 1956. Også her er folk uenige om hvordan prinsippene skal brukes i praksis."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt religion selv sier om lære, ledelse og fellesskap, finner du artiklene stilt opp side om side i [Sammenlign religioner](/krle/sammenlign). Vil du følge maktspørsmålet videre, les [Hvem bestemmer?](/krle/sammenligning/ledelse-og-fellesskap)."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er forskjellen på prinsipp og praksis slik artikkelen bruker ordene? Gi ett eksempel på hver.",
+          "Hvor mange år gikk det fra Den norske kirke åpnet for kvinnelige prester til den første ble ordinert, og hva skjedde i mellomtiden?",
+          "Hvorfor er ordinasjon av nonner fortsatt omstridt i theravada-buddhismen?",
+          "Hvilke to av tradisjonene i artikkelen har ikke noe presteskap i det hele tatt?"
+        ],
+        "reflekter": [
+          "Artikkelen sier at et gap mellom prinsipp og praksis ikke er det samme som løgn. Er du enig? Begrunn svaret.",
+          "To muslimer kan lese de samme koranversene og lande på helt ulike svar. Hva sier det om hvordan hellige tekster virker?",
+          "Sikhismens likeverd er i stor grad belagt med sikhenes egen framstilling av seg selv. Hvorfor er det viktig å vite hvem som er kilden?",
+          "Er det mulig å beskrive ulike syn på kjønn uten å rangere dem? Prøv å forklare hvor grensa går."
+        ],
+        "gaaVidere": [
+          "Velg to tradisjoner fra ulike grupper i tidslinja. Skriv et avsnitt der du sammenligner gapet mellom sporene deres, uten å si at den ene er bedre enn den andre.",
+          "Finn en nyhetssak fra det siste året om kjønn og religion. Er det prinsippet eller praksisen det er strid om?",
+          "Lag din egen tidslinje i to spor for et tema du kjenner godt, for eksempel stemmerett eller idrett. Hvor stort er gapet der?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Når åpnet Den norske kirke for kvinnelige prester, og når ble den første ordinert?",
+            "options": [
+              "1938 og 1961",
+              "1956 og 1961",
+              "1938 og 1993",
+              "1954 og 1972"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Kvinner fikk adgang i 1938, men menighetene kunne reservere seg fram til 1956. Ingrid Bjerkås ble ordinert i Vang kirke i 1961."
+          },
+          {
+            "question": "Hva menes med gapet mellom prinsipp og praksis?",
+            "options": [
+              "At en religion sier noe den ikke mener",
+              "Avstanden mellom hva læren sier og hva som faktisk skjer",
+              "Forskjellen mellom to religioner",
+              "At de hellige tekstene motsier hverandre"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Prinsippet er hva læren eller grunnteksten sier. Praksis er hva folk faktisk gjør. Gapet betyr ikke at noen lyver, men at historien beveger seg saktere enn teksten."
+          },
+          {
+            "question": "Hvorfor er ordinasjon av nonner omstridt i theravada-buddhismen i dag?",
+            "options": [
+              "Fordi buddhismen ikke har nonner",
+              "Fordi nonneordenen sannsynligvis døde ut alt på 1200-tallet",
+              "Fordi kvinner ikke får bo i kloster",
+              "Fordi sanghaen aldri har vært åpen for kvinner"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Sanghaen har i prinsippet vært åpen for nesten alle uavhengig av kjønn. Men theravadas nonneorden døde sannsynligvis ut på 1200-tallet, og om linjen kan startes på nytt, er buddhister uenige om."
+          },
+          {
+            "question": "Hva er felles for sikhismen og bahá'í i dette temaet?",
+            "options": [
+              "Begge har kvinnelige prester",
+              "Begge har ikke noe presteskap i det hele tatt",
+              "Begge forbyr kvinner å delta i gudstjenesten",
+              "Begge oppsto i Norge"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ingen av dem har prester. Da forsvinner spørsmålet om hvem som kan ordineres, og striden handler i stedet om andre roller."
+          },
+          {
+            "question": "Hva er den vanligste feilen når man sammenligner syn på kjønn i religioner?",
+            "options": [
+              "Å tro at alle tradisjoner er like store",
+              "Å tro at hver tradisjon har ett samlet syn, når retningene innad leser de samme tekstene ulikt",
+              "Å tro at ingen religioner har endret seg",
+              "Å tro at kjønn ikke betyr noe i religion"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I nesten alle tradisjonene finnes både konservative og reformvennlige retninger. Ortodokse jøder og reformjøder leser de samme tekstene, og det samme gjør konservative og reformvennlige muslimer."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Kværne, P., Rasmussen, T., Elstad, H. & Løøv, M. (2026). *Prest*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/prest](https://snl.no/prest)",
+          "Norderval, K. M. (2025). *Ingrid Bjerkås*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Ingrid_Bjerkås](https://snl.no/Ingrid_Bjerk%C3%A5s)",
+          "Halvorsen, P. B. & Stensvold, A. (2025). *Den katolske kirke*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Den_katolske_kirke](https://snl.no/Den_katolske_kirke)",
+          "Groth, B. (2026). *Jødedom*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Groth, B. (2026). *Reformjødedom*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/reformjødedom](https://snl.no/reformj%C3%B8dedom)",
+          "Groth, B. (2025). *Rabbiner*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/rabbiner](https://snl.no/rabbiner)",
+          "Vogt, K. (2026). *Islam*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+          "Vogt, K. (2026). *Imam*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/imam](https://snl.no/imam)",
+          "Eggen, N. S. & Vogt, K. (2026). *Koranen*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Koranen](https://snl.no/Koranen)",
+          "Koranen. (u.å.). *Sure 4, vers 34 og 124, og sure 33, vers 35* (Saheeh International). AlQuran Cloud. Hentet 13.08.2026 fra [alquran.cloud](https://api.alquran.cloud/v1/ayah/33:35/en.sahih)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Jacobsen, K. A. (2024). *Enkebrenning*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/enkebrenning](https://snl.no/enkebrenning)",
+          "Store norske leksikon (2024). *Ram Mohan Roy*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Ram_Mohan_Roy](https://snl.no/Ram_Mohan_Roy)",
+          "Borgland, J. W. (2026). *Sangha*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/sangha](https://snl.no/sangha)",
+          "Kværne, P. & Borgland, J. W. (2026). *Buddhisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "Store norske leksikon & Jacobsen, K. A. (2025). *Guru Nanak*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Guru_Nanak](https://snl.no/Guru_Nanak)",
+          "Store norske leksikon & Jacobsen, K. A. (2026). *Guru Gobind Singh*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Guru_Gobind_Singh](https://snl.no/Guru_Gobind_Singh)",
+          "Sikhism Home Page. (u.å.). *Sikh Women*. Hentet 13.08.2026 fra [sikhs.org/women.htm](https://www.sikhs.org/women.htm)",
+          "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+          "Bahá'í International Community. (u.å.). *What Bahá'ís Believe*. Hentet 13.08.2026 fra [bahai.org/beliefs](https://www.bahai.org/beliefs/)",
+          "Bahá'í International Community. (u.å.). *The Universal House of Justice*. Hentet 13.08.2026 fra [bahai.org](https://www.bahai.org/the-universal-house-of-justice/)",
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Priesthood*. Gospel Topics. Hentet 13.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/priesthood?lang=eng)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Aaronic Priesthood*. Gospel Topics. Hentet 13.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/aaronic-priesthood?lang=eng)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Relief Society*. Gospel Topics. Hentet 13.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/relief-society?lang=eng)",
+          "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+          "Aas, P. A. (2025). *Livssynshumanisme*. Store norske leksikon. Hentet 13.08.2026 fra [snl.no/livssynshumanisme](https://snl.no/livssynshumanisme)",
+          "Humanists International. (u.å.). *What is Humanism?* Hentet 13.08.2026 fra [humanists.international](https://humanists.international/what-is-humanism/)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
