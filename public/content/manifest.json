@@ -8809,6 +8809,15 @@
               "icon": "map",
               "createdDate": "2026-08-12T14:00:00Z",
               "lastUpdated": "2026-08-12T19:59:52+02:00"
+            },
+            {
+              "id": "skapelse-sti",
+              "title": "Læringssti: Før alt fantes",
+              "description": "Ni fortellinger om hvordan verden ble til, og oppdagelsen av at læren ble trukket ut av dem etterpå. Du starter med ditt eget svar og henter det fram igjen til slutt.",
+              "link": "/krle/sammenligning/skapelse-sti",
+              "icon": "map",
+              "createdDate": "2026-08-13T15:00:00Z",
+              "lastUpdated": "2026-08-13T07:11:11.023Z"
             }
           ],
           "lessons": [
@@ -9005,7 +9014,7 @@
                 "social"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-08-13T06:32:06.718Z"
+              "lastUpdated": "2026-08-13T08:37:49+02:00"
             },
             {
               "id": "ledelse-og-fellesskap",
@@ -9018,7 +9027,7 @@
                 "social"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-08-13T06:32:06.718Z"
+              "lastUpdated": "2026-08-13T08:37:49+02:00"
             },
             {
               "id": "pilegrim",
@@ -9031,7 +9040,7 @@
                 "material"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-08-13T06:32:06.718Z"
+              "lastUpdated": "2026-08-13T08:37:49+02:00"
             }
           ]
         },

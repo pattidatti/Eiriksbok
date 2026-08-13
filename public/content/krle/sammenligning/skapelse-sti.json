@@ -1,0 +1,838 @@
+{
+  "id": "skapelse-sti",
+  "title": "Læringssti: Før alt fantes",
+  "description": "Ni tradisjoner forteller hver sin historie om hvordan verden ble til. Du skal oppdage at læresetningene ikke kom først. De ble trukket ut av fortellingene etterpå.",
+  "layout": "learning-path",
+  "category": "Læringssti",
+  "readTime": "3 timer",
+  "heroImage": "/images/placeholder.webp",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "kompetansemaal": [
+    "rle01-03-10-01",
+    "rle01-03-10-06",
+    "rle01-03-10-13"
+  ],
+  "createdDate": "2026-08-13T15:00:00Z",
+  "learningPathData": {
+    "id": "skapelse-sti",
+    "title": "Før alt fantes",
+    "description": "En religion er ikke først og fremst en liste med regler. Den er en samling fortellinger, og læren er noe folk har trukket ut av dem i ettertid. I denne stien leser du ni fortellinger om begynnelsen, og til slutt går du veien fra fortelling til lære selv.",
+    "targetSubjectId": "krle",
+    "targetTopicId": "sammenligning",
+    "steps": [
+      {
+        "id": "ditt-eget-svar",
+        "phase": "Prolog",
+        "title": "Før alt fantes",
+        "type": "refleksjon",
+        "icon": "sparkles",
+        "difficulty": "easy",
+        "content": "Før du leser noe som helst om religion, skal du svare selv.\n\nTenk deg helt tilbake. Ikke til du var liten, og ikke til dinosaurene. Lenger. Til før jorda fantes, før sola fantes, før noe i det hele tatt fantes.\n\nHva var der da?\n\nDe fleste oppdager at spørsmålet er vanskeligere enn det ser ut. Sier du ingenting, må du forklare hvordan ingenting kan bli til noe. Sier du at det alltid har vært noe der, må du forklare hvordan noe kan ha vart uendelig lenge. Begge svarene er rare. Det er derfor mennesker har holdt på med dette spørsmålet i flere tusen år uten å bli ferdige.\n\nDu trenger ingen forkunnskaper her, og det finnes ingen fasit. Poenget er at du skal ha ditt eget svar liggende når du møter de ni andre. Da merker du forskjellen på å lese noe du er enig i og noe du ikke hadde tenkt på.\n\nTa vare på arket. Du henter det fram igjen i siste steg, og da skal du se om du har flyttet deg.",
+        "tasks": [
+          "Skriv fem til ti setninger om hva du selv tror var der før verden ble til. (Fakta)",
+          "Har verden etter din mening en begynnelse, eller har den alltid vært der? Begrunn valget. (Forståelse)",
+          "Hvis verden har en begynnelse, må noen ha satt den i gang? Hvorfor, eller hvorfor ikke? (Refleksjon)",
+          "Spør en voksen hjemme hva de tror, og skriv ned svaret ordrett. Ikke diskuter med dem ennå. (Anvendelse)",
+          "Legg arket i sekken eller ta bilde av det. Du trenger det i siste steg. (Refleksjon)"
+        ]
+      },
+      {
+        "id": "hvorfor-forteller-alle",
+        "phase": "Akt 1: Spørsmålet",
+        "title": "Hvorfor forteller alle en fortelling?",
+        "type": "fakta",
+        "icon": "book-open",
+        "difficulty": "easy",
+        "content": "Nesten alle kulturer vi kjenner til, har en fortelling om hvordan verden ble til. Fagordet er kosmogoni. De er ikke like, men de finnes overalt, og det i seg selv er verdt å stoppe ved.\n\nHer er det viktigste du tar med deg videre i hele stien: religioner er i stor grad samlinger av fortellinger. Læresetningene kom ikke først. Noen leste en fortelling, tenkte over hva den betydde, og trakk ut en lære. Så kom neste generasjon og tenkte litt annerledes om den samme fortellingen.\n\nDet forklarer noe som ellers er vanskelig å forstå: hvorfor to grupper som leser nøyaktig den samme teksten, kan lande på to ulike læresetninger. De er ikke uenige om hva som står. De er uenige om hva som følger av det.\n\nForskere sorterer skapelsesfortellinger i tre hovedtyper. Gud kan skape av ingenting. Verden kan bli laget av et rot eller et stoff som allerede lå der. Eller et gigantisk urvesen kan deles opp og bli til verden. Du møter alle tre i denne stien.\n\nBruk Skapelsesveven inne i artikkelen. Sett tre tradisjoner ved siden av hverandre og se hvor de går hver sin vei.",
+        "tasks": [
+          "Les artikkelen [Skapelse: Hvor kommer alt fra?](/krle/sammenligning/skapelse)",
+          "Hva betyr ordet kosmogoni? (Fakta)",
+          "Nevn de tre hovedtypene skapelsesfortellinger, med ett eksempel på hver. (Fakta)",
+          "Artikkelen sier at slike fortellinger sjelden bare handler om fortiden. Hva mener den at de egentlig svarer på? (Forståelse)",
+          "Forklar med egne ord hvorfor to grupper kan lese den samme teksten og likevel lære noe ulikt av den. (Analyse)"
+        ],
+        "links": [
+          {
+            "title": "Skapelse: Hvor kommer alt fra?",
+            "url": "/krle/sammenligning/skapelse"
+          }
+        ]
+      },
+      {
+        "id": "lese-uten-aa-le",
+        "phase": "Akt 1: Spørsmålet",
+        "title": "Å lese en fortelling uten å le av den",
+        "type": "utfordring",
+        "icon": "eye",
+        "difficulty": "medium",
+        "content": "Nå kommer et verktøy du trenger resten av stien.\n\nDet er lett å lese en skapelsesfortelling som om den var en dårlig naturfagbok. Verden på seks dager? Et urvesen med tusen hoder? Da ler man, og så er man ferdig med teksten.\n\nProblemet er at man har lest den som noe den ikke prøver å være. Ingen av tekstene du skal møte, ble skrevet for å svare på hvor mange år noe tok. De ble skrevet for å svare på hva slags sted verden er, og hva et menneske er for noe.\n\nDet finnes en enkel test. Spør deg selv: hva er det denne fortellingen bryr seg om? Se hvor den bruker plass. Den jødiske skapelsesfortellingen bruker knapt to setninger på solen og månen, men blir stående ved den sjuende dagen. Da vet du hva den handler om.\n\nDen motsatte feilen finnes også. Man kan lese teksten så velvillig at man dikter inn noe fint som ikke står der. Begge deler er å ta feil av hva man har foran seg.\n\nBruk lupen under. Du får se den samme hendelsen beskrevet av ulike stemmer, og skal finne ut hva hver av dem er ute etter.",
+        "component": {
+          "name": "BiasLens",
+          "props": {
+            "title": "Fire lesere, samme tekst",
+            "sources": [
+              {
+                "name": "En troende leser",
+                "type": "Leser innenfra",
+                "stance": "Spør hva teksten betyr for livet nå",
+                "content": "På den sjuende dagen stanset Gud, velsignet dagen og gjorde den hellig. Ikke et fjell, ikke et tempel, ikke en person. En dag. Derfor slår jeg av datamaskinen fredag kveld."
+              },
+              {
+                "name": "En religionsforsker",
+                "type": "Leser utenfra, om teksten",
+                "stance": "Nyansert: spør hvordan teksten ble til",
+                "content": "Første Mosebok inneholder to skapelsesfortellinger etter hverandre, og de er ikke like. Forskere forklarer det med at Mosebøkene er satt sammen av flere eldre tekster, skrevet i ulike miljøer og til ulike tider."
+              },
+              {
+                "name": "En som leser den som naturfag",
+                "type": "Leser teksten i feil sjanger",
+                "stance": "Svarer på et spørsmål teksten ikke stilte",
+                "content": "Lys før sol er umulig. Planter før sollys er umulig. Altså kan ikke fortellingen stemme."
+              },
+              {
+                "name": "En som ikke tror",
+                "type": "Forklarer hvorfor teksten finnes",
+                "stance": "Forklarer troen, men ikke innholdet",
+                "content": "Alle folkeslag har laget slike fortellinger fordi mennesker ikke tåler å ikke vite. Fortellingen sier mer om oss enn om verden."
+              }
+            ]
+          }
+        },
+        "tasks": [
+          "Hva menes med at en tekst har en sjanger, og hvorfor gjør det noe å lese en tekst i feil sjanger? (Forståelse)",
+          "Bruk testen i teksten: velg en fortelling du kjenner fra før, og finn ut hvor den bruker mest plass. Hva forteller det deg? (Anvendelse)",
+          "I lupen over: hvilke to lesere svarer egentlig på helt ulike spørsmål? Forklar forskjellen. (Analyse)",
+          "Hva er den motsatte feilen av å le av teksten, og hvorfor er den også en feil? (Analyse)",
+          "Skriv en regel til deg selv, på én setning, om hvordan du vil lese de neste ni fortellingene. (Refleksjon)"
+        ]
+      },
+      {
+        "id": "seks-dager-og-en-sjuende",
+        "phase": "Akt 2: Fortellingene",
+        "title": "Seks dager og en sjuende",
+        "type": "fakta",
+        "icon": "sun",
+        "difficulty": "medium",
+        "content": "Nå begynner fortellingene. Vi starter der to religioner leser den samme teksten og legger vekt på hver sin del av den.\n\nFørste Mosebok åpner med at Gud sier noe, og så blir det slik. Gud bygger ikke med hendene og kjemper ikke mot noe uhyre, slik gudene gjør i flere andre gamle fortellinger fra Midtøsten. Gud snakker. Uttrykket Gud sa står ti ganger i kapittelet, og de jødiske lærde festet seg ved akkurat det tallet.\n\nSå kommer bruddet. På den sjuende dagen sier Gud ingenting. Gud stopper, velsigner dagen og gjør den hellig.\n\nLegg merke til hva det er som får ordet hellig. Ikke et fjell. Ikke et tempel. En dag. Mange jøder leser derfor hele kapittelet baklengs: de seks dagene er opptakten, og hvilen er målet. Her ser du læren bli trukket ut av fortellingen rett foran deg. Fordi noen stopper i teksten, stopper folk i virkeligheten, hver uke.\n\nKristendommen leser den samme teksten, men blir stående et annet sted: at mennesket er skapt i Guds bilde og har fått ansvar for jorda. Og allerede i kapittel 2 begynner fortellingen nesten på nytt, i en versjon som ikke er lik den første. Jødisk tradisjon strøk aldri den ene for å redde den andre. Begge står, rett etter hverandre. Motsetningen ble noe å tenke over i stedet for noe å fjerne.",
+        "tasks": [
+          "Les artikkelen [Skapelsen: Verden som blir til av ord](/krle/religion/jodedom/skapelse)",
+          "Les artikkelen [To fortellinger om begynnelsen](/krle/religion/kristendom/skapelse)",
+          "Hvordan skaper Gud i Første Mosebok 1, og hva gjør Gud ikke? (Fakta)",
+          "Hva er det som blir kalt hellig i fortellingen, og hvorfor er det uvanlig? (Forståelse)",
+          "Jødedommen og kristendommen leser samme tekst, men vektlegger ulike deler. Sett opp de to vektleggingene mot hverandre og forklar hva forskjellen fører til i praksis. (Analyse)",
+          "Hvorfor lot jødisk tradisjon begge skapelsesfortellingene stå, i stedet for å velge én? Hva sier det om hvordan de leser tekster? (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Skapelsen: Verden som blir til av ord",
+            "url": "/krle/religion/jodedom/skapelse"
+          },
+          {
+            "title": "To fortellinger om begynnelsen",
+            "url": "/krle/religion/kristendom/skapelse"
+          }
+        ]
+      },
+      {
+        "id": "bli-og-det-ble",
+        "phase": "Akt 2: Fortellingene",
+        "title": "«Bli!» og det ble",
+        "type": "fakta",
+        "icon": "zap",
+        "difficulty": "medium",
+        "content": "Både Bibelen og Koranen forteller at Gud brukte seks dager. Så skiller de lag på ett eneste punkt, og det punktet er verdt hele dette steget.\n\nI den bibelske teksten hviler Gud på den sjuende dagen. I Koranen står det motsatte: Gud skapte himlene og jorden på seks dager, og ingen tretthet rørte ham.\n\nÉn setning om tretthet, og du får et helt annet bilde av Gud.\n\nKoranen sier at når Gud bestemmer noe, sier han bare til det: Bli, og det blir. På arabisk er det to ord. Det finnes ikke materialer, ikke redskaper, ingen motstand som må overvinnes. Og da blir hviledagen unødvendig, for man hviler bare ut fra noe som har vært slitsomt.\n\nDette er det samme grepet som i forrige steg, bare med motsatt fortegn. Fordi det står at Gud ikke ble sliten, følger det at det ikke finnes noen hviledag bygget på skapelsen. Islam har fredagsbønnen, men den er ikke en hviledag på samme måte, og den bygger ikke på skapelsen.\n\nBruk boksen inne i artikkelen. Du skal lete etter noe å bygge med, og oppdage at du ikke finner det.",
+        "tasks": [
+          "Les artikkelen [Seks dager, og ingen hvile](/krle/religion/islam/skapelse)",
+          "Hva betyr uttrykket ex nihilo? (Fakta)",
+          "Hva er tawhid, og hvorfor henger det sammen med hvordan Gud skaper? (Forståelse)",
+          "Forklar hvorfor det ikke finnes noen hviledag i den koranske skapelsesfortellingen. Bruk ordet tretthet i svaret. (Analyse)",
+          "Koranen nevner seks dager selv om tida ikke koster Gud noe. Hvordan har muslimske lærde forklart dagene, og hvorfor er de ikke enige? (Analyse)",
+          "Mennesket kalles khalifa, altså stedfortreder. Hva slags oppgave gir det mennesket, og hvordan er det likt og ulikt ansvaret mennesket får i Første Mosebok? (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Seks dager, og ingen hvile",
+            "url": "/krle/religion/islam/skapelse"
+          }
+        ]
+      },
+      {
+        "id": "morket-som-varte",
+        "phase": "Akt 2: Fortellingene",
+        "title": "Mørket som varte i tidsaldre",
+        "type": "fakta",
+        "icon": "moon",
+        "difficulty": "medium",
+        "content": "Skru av alt. Ikke bare lyset i rommet, men sola og månen. Ta bort himmelen, ta bort bakken. Ta bort dag og natt, så det ikke lenger er forskjell på når du sover og når du er våken.\n\nHva er igjen?\n\nSikhismens skapelsestekst svarer: mørke. Bare mørke, i utallige tidsaldre. Verset står i Guru Granth Sahib og er skrevet av Guru Nanak, den første av de ti guruene.\n\nGuru Nanak bruker overraskende lang tid på å ramse opp hva som ikke fantes. Ingen dag, ingen natt, ingen sol, ingen måne. Og gudene selv står på lista over det som ikke fantes. Sikhismen vokste fram i Punjab, der mange fortellinger handler om flere guder. Teksten nevner dem ved navn og slår fast at ingen av dem var der ennå.\n\nDet eneste som finnes før verden, er hukam: Guds vilje. Ikke et sted, ikke et lys, ikke en gjenstand. Bare en vilje.\n\nOg her ligger læren som er trukket ut: hukam er ikke noe som skjedde den ene gangen i starten. Sikher mener det er den samme viljen som holder alt sammen akkurat nå, mens du leser dette.\n\nEn ting til, som er sjelden. Teksten stiller selv spørsmålet om når dette skjedde, og nekter så å svare. Dagen er ikke kjent, står det, og ikke måneden heller. Bare skaperen vet det. Guru Nanak kunne lett satt inn et årstall. Han lar det være, og det er et poeng i seg selv.",
+        "tasks": [
+          "Les artikkelen [Mørket før verden: skapelsen i sikhismen](/krle/religion/sikhisme/skapelse)",
+          "Hva betyr hukam, og hva var det eneste som fantes før verden? (Fakta)",
+          "Hvorfor er det verdt å legge merke til at gudene står på lista over det som ikke fantes? (Forståelse)",
+          "Sikher mener hukam virker akkurat nå, ikke bare i starten. Hvordan endrer det hva en skapelsesfortelling er for noe? (Analyse)",
+          "Teksten nekter å oppgi når skapelsen skjedde. Hva slags lære trekker sikher ut av den nektelsen? (Analyse)",
+          "Sammenlign med forrige steg: både Koranen og Guru Nanak lar Gud skape uten anstrengelse. Hva er likevel forskjellen på de to fortellingene? (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Mørket før verden: skapelsen i sikhismen",
+            "url": "/krle/religion/sikhisme/skapelse"
+          }
+        ]
+      },
+      {
+        "id": "universet-som-puster",
+        "phase": "Akt 2: Fortellingene",
+        "title": "Universet som puster",
+        "type": "utfordring",
+        "icon": "refresh-cw",
+        "difficulty": "medium",
+        "content": "Til nå har alle fortellingene hatt en begynnelse. Nå forsvinner den.\n\nSpør du en hindu når alt begynte, kan du få et motspørsmål tilbake: hvilken begynnelse tenker du på? For i hinduismen har verden blitt skapt før. Mange ganger.\n\nHinduismen har ikke én skapelsesfortelling, men flere som lever side om side, og noen av dem passer dårlig sammen. Det er ingen glipp. Hinduisme er et samlenavn for mange tradisjoner som har vokst fram gjennom flere tusen år, uten sentrum og uten felles organisasjon. Ingen har makt til å bestemme at én fortelling er den rette.\n\nDet som går igjen, er ikke én fortelling, men én form: sirkelen. Verden blir skapt, består en stund, går under, og så begynner det på nytt. En rett strek har et startpunkt. En sirkel har ingen.\n\nEn av de eldste fortellingene handler om urvesenet Purusha. Gudene ofrer ham, og av kroppen hans blir verden til. Månen kommer fra tankene, sola fra øynene, jorda fra føttene. Legg merke til at ingenting blir laget av ingenting her. Noe som allerede fantes, blir gjort om til noe annet.\n\nOg en av tekstene gjør noe helt uvanlig: Nasadiya-hymnen spør rett ut hvem som egentlig vet hvor alt kom fra, og svarer at gudene selv kom til etter at verden ble til, så hvordan skulle de kunne vite det? En hellig tekst som innrømmer at den ikke vet.\n\nBruk veven under. Sett hinduismen ved siden av to tradisjoner du allerede har lest om.",
+        "component": {
+          "name": "SkapelsesVeven",
+          "props": {
+            "title": "Skapelsesveven",
+            "intro": "Fire faser, tre tradisjoner om gangen. De tomme rutene er like viktige som de fulle.",
+            "maxVisible": 3,
+            "defaultSelection": [
+              "hinduisme",
+              "jodedom",
+              "buddhisme"
+            ],
+            "phases": [
+              {
+                "id": "kaos",
+                "label": "Før begynnelsen"
+              },
+              {
+                "id": "ordning",
+                "label": "Verden blir til"
+              },
+              {
+                "id": "mennesket",
+                "label": "Mennesket kommer"
+              },
+              {
+                "id": "oppdraget",
+                "label": "Hva skal vi her?"
+              }
+            ],
+            "traditions": [
+              {
+                "id": "jodedom",
+                "name": "Jødedom",
+                "color": "#3b82f6",
+                "group": "abrahamittisk",
+                "beats": {
+                  "kaos": {
+                    "text": "Mørke over dypet. Gud er der før alt annet."
+                  },
+                  "ordning": {
+                    "text": "Gud sier noe, og det blir til. Uttrykket Gud sa står ti ganger."
+                  },
+                  "mennesket": {
+                    "text": "Skapt sist i den første fortellingen, først i den andre."
+                  },
+                  "oppdraget": {
+                    "text": "Holde budene og hvile på den sjuende dagen."
+                  }
+                }
+              },
+              {
+                "id": "kristendom",
+                "name": "Kristendom",
+                "color": "#6366f1",
+                "group": "abrahamittisk",
+                "beats": {
+                  "kaos": {
+                    "text": "Mørke over dypet, slik den jødiske teksten forteller det."
+                  },
+                  "ordning": {
+                    "text": "Seks dager, bygget som tre par: tre tomme rom, så fylles de."
+                  },
+                  "mennesket": {
+                    "text": "Skapt i Guds bilde."
+                  },
+                  "oppdraget": {
+                    "text": "Ta vare på jorda."
+                  }
+                }
+              },
+              {
+                "id": "islam",
+                "name": "Islam",
+                "color": "#10b981",
+                "group": "abrahamittisk",
+                "beats": {
+                  "kaos": {
+                    "text": "Gud er der før himlene og jorden."
+                  },
+                  "ordning": {
+                    "text": "Seks dager, men ingen hviledag. Ingen tretthet rørte Gud."
+                  },
+                  "mennesket": {
+                    "text": "Adam formet av leire."
+                  },
+                  "oppdraget": {
+                    "text": "Være Guds forvalter på jorda."
+                  }
+                }
+              },
+              {
+                "id": "bahai",
+                "name": "Bahá'í",
+                "color": "#14b8a6",
+                "group": "nyere",
+                "beats": {
+                  "ordning": {
+                    "text": "Gud har alltid skapt. En skaper uten skaperverk er ingen skaper."
+                  },
+                  "mennesket": {
+                    "text": "Alt som finnes har vært til før, i andre former."
+                  },
+                  "oppdraget": {
+                    "text": "Utvikle sjelen mot Gud."
+                  }
+                }
+              },
+              {
+                "id": "mormonisme",
+                "name": "Mormonisme",
+                "color": "#8b5cf6",
+                "group": "nyere",
+                "beats": {
+                  "kaos": {
+                    "text": "Materie og grunnstoffer finnes fra evighet av."
+                  },
+                  "ordning": {
+                    "text": "Gud organiserer det som alt er der, slik en byggmester bruker materialer."
+                  },
+                  "mennesket": {
+                    "text": "Menneskene levde som Guds åndebarn før jorda ble til."
+                  },
+                  "oppdraget": {
+                    "text": "Vokse videre mot å bli lik Gud."
+                  }
+                }
+              },
+              {
+                "id": "jehovas-vitner",
+                "name": "Jehovas vitner",
+                "color": "#0ea5e9",
+                "group": "nyere",
+                "beats": {
+                  "kaos": {
+                    "text": "Jorda og universet fantes lenge før den første skapelsesdagen."
+                  },
+                  "ordning": {
+                    "text": "Seks dager, men hver dag er en lang tidsperiode, ikke et døgn."
+                  },
+                  "mennesket": {
+                    "text": "Skapt av Jehova på den sjette perioden."
+                  },
+                  "oppdraget": {
+                    "text": "Gjøre jorda til et paradis."
+                  }
+                }
+              },
+              {
+                "id": "hinduisme",
+                "name": "Hinduisme",
+                "color": "#ec4899",
+                "group": "indisk",
+                "beats": {
+                  "ordning": {
+                    "text": "Verden blir til, består og går under, om og om igjen."
+                  },
+                  "mennesket": {
+                    "text": "I Purusha-hymnen blir verden til av kroppen til et urvesen."
+                  },
+                  "oppdraget": {
+                    "text": "Slippe ut av kretsløpet."
+                  }
+                }
+              },
+              {
+                "id": "buddhisme",
+                "name": "Buddhisme",
+                "color": "#f59e0b",
+                "group": "indisk",
+                "beats": {
+                  "oppdraget": {
+                    "text": "Få slutt på lidelsen. Spørsmålet om begynnelsen hjelper ikke."
+                  }
+                }
+              },
+              {
+                "id": "sikhisme",
+                "name": "Sikhisme",
+                "color": "#ff9933",
+                "group": "indisk",
+                "beats": {
+                  "kaos": {
+                    "text": "Utallige tidsaldre der det bare fantes mørke."
+                  },
+                  "ordning": {
+                    "text": "Gud ville det, og alt ble til. Ingen kamp, ingen motstander."
+                  },
+                  "oppdraget": {
+                    "text": "Huske Guds navn, arbeide ærlig og dele med andre."
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "tasks": [
+          "Les artikkelen [Verden uten begynnelse](/krle/religion/hinduisme/skapelse)",
+          "Hva betyr det at hinduismen har en syklisk tidsforståelse? (Fakta)",
+          "Hva er en kalpa, og hva skjer når du prøver å finne den aller første? (Forståelse)",
+          "Purusha-fortellingen hører til en annen hovedtype enn den jødiske og den islamske. Hvilken, og hva er forskjellen? (Analyse)",
+          "Mange hinduer mener vi lever i kaliyuga, den dårligste tidsalderen. Artikkelen sier at det får følger for hvordan man ser på folk som mislykkes. Forklar sammenhengen. (Analyse)",
+          "En hellig tekst som sier at den ikke vet: hva slags holdning trekker mange hinduer ut av det? (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Verden uten begynnelse",
+            "url": "/krle/religion/hinduisme/skapelse"
+          }
+        ]
+      },
+      {
+        "id": "buddhas-taushet",
+        "phase": "Akt 2: Fortellingene",
+        "title": "Buddhas taushet",
+        "type": "refleksjon",
+        "icon": "help-circle",
+        "difficulty": "hard",
+        "content": "Tenk deg at du blir truffet av en pil. Den sitter i skulderen, giften sprer seg, og legen står klar. Men før hun får røre pilen, sier du stopp. Først vil du vite hvem som skjøt. Hvilken familie han kommer fra. Hvor høy han er. Hva slags tre buen er laget av.\n\nDu kommer til å dø lenge før du får svar på alt sammen.\n\nBildet står i en av buddhismens eldste tekster, og der er det Buddha selv som forteller det. Han bruker det som svar på et av de største spørsmålene mennesker har stilt: hvor kommer verden fra?\n\nEn munk som het Malunkyaputta ble lei av å ikke få vite. Han stilte Buddha et krav: enten svarer du, eller så forlater jeg munkeordenen. Så ramset han opp ti spørsmål. Buddha svarte ikke på ett eneste av dem. I stedet fortalte han om pilen, og sa hva han faktisk hadde lært bort: dette er lidelse, dette er grunnen til at den oppstår, dette er hvordan den tar slutt, og dette er veien dit.\n\nGrunnen han oppga, var ikke at spørsmålene var dumme. Grunnen var at svaret ikke ville hjelpe. Enten verden er evig eller ikke, sa han, så blir folk født, blir gamle, mister det de er glad i og dør.\n\nDette er stiens vanskeligste steg, for her er det tomrommet som er innholdet. Buddhismen har ingen skapelsesfortelling, og det er ikke fordi kildene har gått tapt. Det er fordi tradisjonen mener spørsmålet ikke fører noen steder.",
+        "tasks": [
+          "Les artikkelen [Spørsmålet Buddha ikke svarte på](/krle/religion/buddhisme/skapelse)",
+          "Hva er lignelsen om pilen, og hvem forteller den? (Fakta)",
+          "Hvilken grunn oppga Buddha selv for at han ikke svarte? (Forståelse)",
+          "Buddhismen har guder, men ingen skaper. Forklar forskjellen. (Analyse)",
+          "Hva menes med betinget tilblivelse, og hvordan er det et svar på hvor ting kommer fra, uten å være en skapelsesfortelling? (Analyse)",
+          "I de andre stegene ble læren trukket ut av en fortelling. Her blir den trukket ut av en taushet. Er det egentlig samme sak? Begrunn svaret. (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Spørsmålet Buddha ikke svarte på",
+            "url": "/krle/religion/buddhisme/skapelse"
+          }
+        ]
+      },
+      {
+        "id": "tre-nyere-svar",
+        "phase": "Akt 2: Fortellingene",
+        "title": "Tre nyere svar",
+        "type": "fakta",
+        "icon": "layers",
+        "difficulty": "hard",
+        "content": "De tre siste tradisjonene er de yngste, og de er langt mindre enn de store. Jehovas vitner og Jesu Kristi Kirke av Siste Dagers Hellige har noen millioner medlemmer hver, og bahá'í rundt seks millioner. Til sammenligning har kristendom og islam milliarder. De skal ikke settes opp som fjerde og femte verdensreligion, men de er interessante nettopp fordi de leser kjente tekster på uventede måter.\n\nSiste dagers hellige stiller det samme spørsmålet som alle andre kristne: hva fantes før Gud skapte? De fleste kristne kirker svarer ingenting. Denne kirken svarer materialene. Joseph Smith sa at jord og vann, ned til de minste delene, alltid hadde vært der. Å skape er å ordne, ikke å lage av intet. Følgen er stor: hvis Gud og menneske er laget av samme slags stoff, blir avstanden mellom dem noe annet enn uendelig.\n\nJehovas vitner leser den samme åpningen av Bibelen som alle andre, og stopper ved et ord de fleste leser fort forbi: dag. Det hebraiske ordet kan stå for helt ulike lengder tid. De leser derfor dagene som perioder, ikke døgn. De peker også på at den aller første setningen sier at Gud skapte himmelen og jorda, og at dag én først starter etterpå. Argumentet deres er hentet fra teksten selv, ikke fra naturvitenskap.\n\nBahá'í går lengst. Der har skapelsen aldri begynt. Argumentet er ikke en måling, det er en tanke: ordet skaper betyr ingenting hvis det aldri har vært noe å skape. En herre uten noen som lyder ham, går ikke an å tenke seg. Har Gud alltid vært skaper, må det alltid ha vært noe der.",
+        "tasks": [
+          "Les artikkelen [Skapelsen i mormonismen](/krle/religion/mormonisme/skapelse)",
+          "Les artikkelen [Seks dager eller seks tidsaldre?](/krle/religion/jehovas-vitner/skapelse)",
+          "Les artikkelen [Skapelsen som aldri begynte](/krle/religion/bahai/skapelse)",
+          "Hva betyr creatio ex nihilo, og hvilken av de tre sier tydeligst nei til den? (Fakta)",
+          "Hvorfor mener Jehovas vitner at jorda kan være eldre enn den første skapelsesdagen? (Forståelse)",
+          "Bahá'í-argumentet er et tankeargument, ikke en måling. Forklar hva det betyr, og hvorfor artikkelen understreker forskjellen. (Analyse)",
+          "Alle tre er små i antall. Hvorfor er det likevel viktig å si det tydelig når man sammenligner dem med kristendom og islam? (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Skapelsen i mormonismen",
+            "url": "/krle/religion/mormonisme/skapelse"
+          },
+          {
+            "title": "Seks dager eller seks tidsaldre?",
+            "url": "/krle/religion/jehovas-vitner/skapelse"
+          },
+          {
+            "title": "Skapelsen som aldri begynte",
+            "url": "/krle/religion/bahai/skapelse"
+          }
+        ]
+      },
+      {
+        "id": "fortellingene-fra-nord",
+        "phase": "Akt 2: Fortellingene",
+        "title": "Fortellingene fra nord",
+        "type": "fakta",
+        "icon": "mountain",
+        "difficulty": "medium",
+        "content": "Du står på et fjell i Nord-Norge. Snøen ligger i kløftene selv om det er juni. Du føler at noen ser deg, men det er ingen mennesker i nærheten.\n\nI samisk tradisjon er den følelsen ikke rar. Naturen er ikke tom.\n\nSamisk religion hadde ingen kirker, ingen hellig bok og ingen prester. Troen lå i landskapet selv. Et bestemt fjell kunne være hellig, en foss eller en stein kunne være et sieidi, altså et offersted der folk la igjen reinhorn eller litt mat for å takke for et godt år. Verden hadde tre lag: gudene og sola øverst, menneskene og dyrene i midten, og de dødes rike nederst.\n\nHer ligger forskjellen et helt annet sted enn i de forrige stegene. Spørsmålet er ikke bare når verden ble til, men hva slags sted verden er. Er landskapet noe som ble laget og gitt til oss, eller lever det selv? Samisk tradisjon svarer det siste. At alt levende, og mye vi vil kalle dødt, har en åndelig kraft, kalles animisme. Læren som følger av det, er praktisk: du kan ikke bare ta fra naturen, du må gi noe tilbake.\n\nDette er ikke bare noe som var. På 1600- og 1700-tallet ble runebommer brent, sieidier veltet og joik straffet. Mye ble likevel båret videre i det stille, og de siste tiårene har det vokst fram ny interesse for den gamle troen. Noen samer besøker gamle sieidi-steder igjen og joiker åpent. Skriv derfor mange samer, ikke samene trodde.",
+        "tasks": [
+          "Les artikkelen [Samisk religion: trommen, naturen og forfedrene](/krle/religion/samisk/intro)",
+          "Hva er et sieidi, og hva er en noaidi? (Fakta)",
+          "Hva betyr animisme, og hvilken leveregel følger av den? (Forståelse)",
+          "De andre tradisjonene i stien svarer på når verden ble til. Hva er det samisk tradisjon svarer på i stedet? (Analyse)",
+          "Hvorfor er det galt å skrive om samisk religion bare i fortid? Bruk noe konkret fra artikkelen i svaret. (Analyse)",
+          "Hva slags sammenheng ser du mellom animisme og dagens diskusjon om natur og klima? (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Samisk religion: trommen, naturen og forfedrene",
+            "url": "/krle/religion/samisk/intro"
+          }
+        ]
+      },
+      {
+        "id": "fra-fortelling-til-laere",
+        "phase": "Akt 3: Mønsteret",
+        "title": "Fra fortelling til lære",
+        "type": "utfordring",
+        "icon": "layers",
+        "difficulty": "hard",
+        "content": "Nå skal du gjøre selv det tradisjonene har gjort i århundrer.\n\nDu får ti steder fra fortellingene du har lest. Ikke oppsummeringer, men konkrete punkter: Gud stopper på den sjuende dagen. Buddha nekter å svare. Urvesenet blir delt opp. For hvert av dem skal du finne læren som er trukket ut.\n\nDette er hele poenget med stien. Læresetningene falt ikke ned ferdige. Noen leste en fortelling, tenkte over hva den betydde, og trakk en slutning. Neste generasjon leste den samme fortellingen og trakk kanskje en litt annen.\n\nDu kommer til å bomme på noen. Det er meningen. Flere av alternativene er slutninger et menneske godt kunne trukket, men som tradisjonen faktisk ikke trakk. Nettopp der ser du at veien fra fortelling til lære ikke er automatisk. Den er et valg noen har tatt.\n\nNår du er ferdig, får du se hele veien samlet: ti fortellinger til venstre, ti læresetninger til høyre.",
+        "component": {
+          "name": "FraFortellingTilLaere",
+          "props": {
+            "title": "Fra fortelling til lære",
+            "intro": "Ti steder i ni fortellinger. Finn læren tradisjonen har trukket ut av hvert av dem.",
+            "questionLabel": "Hvilken lære er utledet av dette?",
+            "revealTitle": "Se hva du nettopp gjorde",
+            "revealText": "Ti ganger gikk du fra en fortelling til en lære. Det er slik det har skjedd i virkeligheten også. Ingen av disse læresetningene ble funnet opp først og illustrert med en historie etterpå. Fortellingen kom først, og folk har brukt århundrer på å bli enige om hva som følger av den. Derfor er religioner ikke først og fremst lister med regler. De er samlinger av fortellinger, med lære utledet av dem.",
+            "note": "Alle fortellingene er hentet fra artiklene du har lest i denne stien.",
+            "cards": [
+              {
+                "id": "jod-sjuende",
+                "tradition": "Jødedom",
+                "color": "#3b82f6",
+                "beat": "På den sjuende dagen sier Gud ingenting. Gud stopper, velsigner dagen og gjør den hellig.",
+                "source": "Første Mosebok 2,1-3",
+                "options": [
+                  {
+                    "text": "Én dag i uka skal stå stille, og den dagen er hellig.",
+                    "correct": true,
+                    "feedback": "Riktig. Sabbaten er trukket rett ut av dette punktet i fortellingen. Gud stopper, og mennesket får lov til å gjøre det samme en gang i uka. Legg merke til at det er en dag som blir kalt hellig, ikke et fjell eller et tempel."
+                  },
+                  {
+                    "text": "Gud ble sliten av å skape verden og trengte hvile.",
+                    "feedback": "Nei, og forskjellen er viktig. Teksten sier at Gud stopper, ikke at Gud var utslitt. Koranen sier uttrykkelig at ingen tretthet rørte Gud, og lander derfor på det motsatte: ingen hviledag i det hele tatt."
+                  },
+                  {
+                    "text": "Verden var ferdig etter seks dager, så nummer sju er bare en oppsummering.",
+                    "feedback": "Nei. Mange jøder leser kapittelet baklengs: de seks dagene er opptakten, og hvilen er målet. Den sjuende dagen er ikke et etterord, den er poenget."
+                  }
+                ]
+              },
+              {
+                "id": "isl-ingen-tretthet",
+                "tradition": "Islam",
+                "color": "#10b981",
+                "beat": "«Vi skapte visselig himlene og jorden og det som er mellom dem på seks dager, og ingen tretthet rørte Oss.»",
+                "source": "Koranen 50,38",
+                "options": [
+                  {
+                    "text": "Gud er sterkere enn mennesket, og derfor skal mennesket adlyde.",
+                    "feedback": "Det er en slutning noen kunne trukket, men det er ikke den tradisjonen trekker her. Verset handler om hva skapelsen koster, ikke om lydighet. Setningen om tretthet står nettopp for å svare på hviledagen."
+                  },
+                  {
+                    "text": "De seks dagene må forstås som seks vanlige døgn.",
+                    "feedback": "Nei, og her er muslimske lærde tvert imot uenige. Det arabiske ordet for dag kan bety både et døgn og en lengre periode. Mange leser dagene som faser, andre som døgn."
+                  },
+                  {
+                    "text": "Skapelsen koster Gud ingenting, og derfor finnes det ingen hviledag.",
+                    "correct": true,
+                    "feedback": "Riktig. Man hviler bare ut fra noe som har vært slitsomt. Islam har fredagsbønnen, men den er ikke en hviledag på samme måte, og den bygger ikke på skapelsen."
+                  }
+                ]
+              },
+              {
+                "id": "kri-guds-bilde",
+                "tradition": "Kristendom",
+                "color": "#6366f1",
+                "beat": "Mennesket blir skapt til slutt, som mann og kvinne, i Guds bilde, og får ansvar for jorda.",
+                "source": "Første Mosebok 1",
+                "options": [
+                  {
+                    "text": "Mennesket er det siste og derfor det minst viktige i skapelsen.",
+                    "feedback": "Nei. Rekkefølgen leses motsatt vei: mennesket kommer sist fordi alt annet er gjort klart først. Men vær oppmerksom på at kapittel 2 forteller det i en annen rekkefølge, der mennesket formes først."
+                  },
+                  {
+                    "text": "Alle mennesker har samme verdi, og mennesket har fått et oppdrag med jorda.",
+                    "correct": true,
+                    "feedback": "Riktig. Dette er stedet kristen tradisjon blir stående lengst ved, og menneskeverdet er trukket ut nettopp herfra. Legg merke til at jødedommen leser den samme setningen, men blir stående ved den sjuende dagen i stedet."
+                  },
+                  {
+                    "text": "Gud ser ut som et menneske.",
+                    "feedback": "Nei. Uttrykket i Guds bilde handler i kristen og jødisk tradisjon om verdi og ansvar, ikke om utseende. Det er verdt å vite at siste dagers hellige leser forholdet mellom Gud og menneske annerledes enn de fleste andre kristne."
+                  }
+                ]
+              },
+              {
+                "id": "hin-purusha",
+                "tradition": "Hinduisme",
+                "color": "#ec4899",
+                "beat": "Gudene ofrer urvesenet Purusha. Månen blir til av tankene hans, sola av øynene, jorda av føttene.",
+                "source": "Rigveda, tiende bok, sang 90",
+                "options": [
+                  {
+                    "text": "Gudene er sterkere enn mennesker fordi de kan ofre.",
+                    "feedback": "Nei, det er ikke det fortellingen brukes til. Poenget er hva verden er laget av. Legg merke til at gudene her er innenfor verden, ikke utenfor den slik en skaper er."
+                  },
+                  {
+                    "text": "Verden begynte på et bestemt tidspunkt langt tilbake.",
+                    "feedback": "Nei, og dette er nettopp det hinduismen ikke sier. Tiden går i ring: verden blir til, består, går under, og begynner på nytt. Uansett hvor langt tilbake du går, ligger det alltid en runde til bak den forrige."
+                  },
+                  {
+                    "text": "Verden er ikke laget av ingenting. Den er laget om, av noe som fantes fra før.",
+                    "correct": true,
+                    "feedback": "Riktig. Dette er en av de tre hovedtypene: et urvesen deles opp og blir til verden. Det er en helt annen type fortelling enn den abrahamittiske skapelsen av intet."
+                  }
+                ]
+              },
+              {
+                "id": "hin-kalpa",
+                "tradition": "Hinduisme",
+                "color": "#ec4899",
+                "beat": "Uansett hvor langt tilbake du regner, ligger det alltid en verdensperiode til bak den forrige.",
+                "source": "Om kalpa-syklusene",
+                "options": [
+                  {
+                    "text": "Undergangen er ikke et punktum, men et komma. Etterpå kommer en ny verden.",
+                    "correct": true,
+                    "feedback": "Riktig. Vi lever ifølge mange hinduer i kaliyuga, den dårligste tidsalderen. Men i en sirkel er undergangen halvveis, ikke slutten."
+                  },
+                  {
+                    "text": "Verden er uendelig gammel, og derfor finnes det ingen guder.",
+                    "feedback": "Nei. Hinduismen har mange guder, og tre av dem deler på arbeidet med å skape, holde i gang og løse opp verden. Det er buddhismen som klarer seg uten en skapergud, av helt andre grunner."
+                  },
+                  {
+                    "text": "Ingen kan vite noe om begynnelsen, så det er ikke lov å spørre.",
+                    "feedback": "Nei. Nasadiya-hymnen spør faktisk rett ut hvor alt kom fra, og innrømmer at den ikke vet. Å spørre er lov. Det som mangler, er et første øyeblikk å spørre om."
+                  }
+                ]
+              },
+              {
+                "id": "bud-pilen",
+                "tradition": "Buddhisme",
+                "color": "#f59e0b",
+                "beat": "En munk krever å få vite om verden er evig. Buddha svarer ikke, men forteller om mannen som nekter legen å ta ut pila før han vet hvem som skjøt.",
+                "source": "Fra Culamalunkya-sutta",
+                "options": [
+                  {
+                    "text": "Buddha visste ikke svaret og ville ikke innrømme det.",
+                    "feedback": "Nei, og teksten sier noe annet. Han sier rett ut hva han har lært bort, og hvorfor han lot de ti spørsmålene ligge. Tausheten er et valg, ikke en mangel."
+                  },
+                  {
+                    "text": "Spørsmålet fører ingen vei. Begynn med lidelsen som er her nå.",
+                    "correct": true,
+                    "feedback": "Riktig. Grunnen Buddha oppga, var ikke at spørsmålet var for vanskelig, men at svaret ikke ville hjelpe. Enten verden er evig eller ikke, blir folk født, blir gamle og dør."
+                  },
+                  {
+                    "text": "Buddhister mener at guder ikke finnes.",
+                    "feedback": "Nei. Mange buddhister dyrker både guddommer, buddhaer og bodhisattvaer. Forskjellen er at ingen av dem har rollen som skaper. Gudene er selv med i kretsløpet."
+                  }
+                ]
+              },
+              {
+                "id": "sik-hukam",
+                "tradition": "Sikhisme",
+                "color": "#ff9933",
+                "beat": "I endeløse tidsaldre fantes bare mørke, og hukam uten grenser. Da Gud ville det, ble verden til.",
+                "source": "Guru Granth Sahib, side 1035",
+                "options": [
+                  {
+                    "text": "Mørket er ondt, og lyset er godt.",
+                    "feedback": "Nei. Mørket i verset er ikke en motstander, bare en beskrivelse av at ingenting ennå var der. Det finnes ingen kamp i denne skapelsen, og ingen som måtte beseires."
+                  },
+                  {
+                    "text": "Verden ble til for utallige tidsaldre siden, og teksten sier nøyaktig når.",
+                    "feedback": "Nei, og teksten nekter uttrykkelig å si det. Dagen er ikke kjent, står det, og ikke måneden heller. Bare skaperen vet det. Nektelsen er selv en lære: mennesket får ikke vite alt."
+                  },
+                  {
+                    "text": "Alt som finnes, finnes fordi Gud vil det, også akkurat nå.",
+                    "correct": true,
+                    "feedback": "Riktig. Hukam er ikke noe som skjedde den ene gangen i starten. Sikher mener det er den samme viljen som holder alt sammen i dette øyeblikket."
+                  }
+                ]
+              },
+              {
+                "id": "mor-organisere",
+                "tradition": "Mormonisme",
+                "color": "#8b5cf6",
+                "beat": "Joseph Smith sa i 1839 at jord og vann, helt ned til de minste delene, alltid hadde vært der.",
+                "source": "Fra kirkens essay «Bli som Gud»",
+                "options": [
+                  {
+                    "text": "Å skape er å ordne noe som fantes, ikke å lage av ingenting.",
+                    "correct": true,
+                    "feedback": "Riktig, og følgen er stor. Når materien alltid har vært der, er ikke mennesket noe Gud fant på. Gud og menneske blir laget av samme slags stoff."
+                  },
+                  {
+                    "text": "Jorda er rundt 6000 år gammel.",
+                    "feedback": "Nei, det er kreasjonismens tall. Kirken sier at jorda ble til i seks trinn som kalles dager, men at Gud ikke har fortalt hvor lang hver dag var. Derfor kan medlemmer mene ulikt om alderen."
+                  },
+                  {
+                    "text": "Gud er mektigere enn i vanlig kristendom, siden han hadde mer å arbeide med.",
+                    "feedback": "Nei, slutningen går motsatt vei. For de fleste kristne er Gud den som lager noe av ingenting, og avstanden til mennesket blir uendelig. Her blir avstanden mindre, ikke større."
+                  }
+                ]
+              },
+              {
+                "id": "jeh-dag",
+                "tradition": "Jehovas vitner",
+                "color": "#0ea5e9",
+                "beat": "Den aller første setningen sier at Gud i begynnelsen skapte himmelen og jorda. Først etterpå starter fortellingen om dag én.",
+                "source": "Fra deres lesning av Første Mosebok",
+                "options": [
+                  {
+                    "text": "Bibelen tar feil på dette punktet, og naturvitenskapen har rett.",
+                    "feedback": "Nei. De mener Bibelen er pålitelig fra første til siste side. Poenget deres er at en ordrett lesning krever at du først finner ut hva ordet faktisk betyr."
+                  },
+                  {
+                    "text": "Jorda kan være mye eldre enn den første skapelsesdagen, og dagene er perioder.",
+                    "correct": true,
+                    "feedback": "Riktig. Legg merke til hvor argumentet kommer fra: rekkefølgen i teksten selv, ikke fra geologi. De mener det hebraiske ordet for dag kan stå for helt ulike lengder tid."
+                  },
+                  {
+                    "text": "Artene har utviklet seg fra felles forfedre over lang tid.",
+                    "feedback": "Nei. Her sier de tvert imot nei til evolusjonslæren. De tar imot geologenes lange tidsrom, men mener Gud skapte grunntypene av planter og dyr."
+                  }
+                ]
+              },
+              {
+                "id": "bah-herre",
+                "tradition": "Bahá'í",
+                "color": "#14b8a6",
+                "beat": "En herre uten noen som lyder ham, går ikke an å tenke seg. En hersker uten folk finnes ikke.",
+                "source": "Etter 'Abdu'l-Bahá",
+                "options": [
+                  {
+                    "text": "Gud trenger menneskene for å kunne eksistere.",
+                    "feedback": "Nei, og artikkelen advarer mot nettopp denne misforståelsen. Poenget er ikke at Gud trenger oss, men at ordet skaper ikke betyr noe hvis det aldri har vært noe å skape."
+                  },
+                  {
+                    "text": "Har Gud alltid vært skaper, må det alltid ha vært noe å skape. Skapelsen har ingen begynnelse.",
+                    "correct": true,
+                    "feedback": "Riktig. Legg merke til hva slags argument dette er: et tankeargument, ikke en måling. Ingen har målt at universet er uendelig gammelt. Slutningen går fra hva Gud er, ikke fra hva teleskopet viser."
+                  },
+                  {
+                    "text": "Big Bang er feil, og bahá'íer avviser teorien.",
+                    "feedback": "Nei. Bahá'í-troen har en grunnregel om at vitenskap og religion skal stemme overens. Mange leser Big Bang som en forklaring på hvordan vårt univers fikk formen sin, ikke som et bevis på at alt startet fra ingenting."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "tasks": [
+          "Gå gjennom alle ti kortene i verktøyet over. (Fakta)",
+          "Velg ett kort du bommet på. Hvorfor virket ditt svar rimelig, og hvorfor gikk tradisjonen en annen vei? (Analyse)",
+          "Finn to kort der to tradisjoner trekker motsatt lære av nesten samme fortelling. Skriv ned begge. (Analyse)",
+          "Hva er forskjellen på å si at en lære står i en tekst, og å si at den er utledet av en tekst? (Refleksjon)",
+          "Lag ditt eget kort: velg en fortelling du kjenner fra før, og skriv en lære noen kunne trukket ut av den. (Anvendelse)"
+        ]
+      },
+      {
+        "id": "kan-begge-ha-rett",
+        "phase": "Akt 3: Mønsteret",
+        "title": "Kan begge ha rett?",
+        "type": "refleksjon",
+        "icon": "message-circle",
+        "difficulty": "hard",
+        "content": "Ett svar mangler fortsatt, og det er kanskje det som er mest utbredt i Norge i dag.\n\nNaturvitenskapen har også en fortelling om begynnelsen. Tanken om at universet startet som noe ufattelig tett og varmt, ble først lagt fram av belgiske Georges Lemaître. Han var både fysiker og prest. Nettopp det er verdt å stoppe ved, for det viser at grensen mellom tro og vitenskap er mindre skarp enn mange later som.\n\nForskjellen ligger i hva fortellingene svarer på. Big Bang forteller hvordan det skjedde, ikke hvorfor. Humanister og andre som ikke tror på en gud, mener at ingen har gitt universet en mening utenfra, og at mennesket derfor må lage mening selv. Det er ikke et svar som mangler noe. Det er et annet svar på det samme spørsmålet.\n\nOg legg merke til hvor ulikt tradisjonene du har lest om, forholder seg til dette. Bahá'í har en regel om at vitenskap og religion skal stemme overens. Jehovas vitner tar imot geologenes lange tidsrom, men sier nei til evolusjonslæren. Mange jøder leser aldri Første Mosebok som naturvitenskap i det hele tatt. De er ikke uenige om fysikken. De er uenige om hva slags tekst de har foran seg.\n\nNå skal du prøve å holde to posisjoner samtidig i en samtale.",
+        "component": {
+          "name": "DebateSimulator",
+          "props": {
+            "topic": "Utelukker Big Bang en skapelsesfortelling?",
+            "opponentName": "Motstemmen",
+            "context": "Du møter en som mener at når vitenskapen forklarer hvordan universet ble til, er skapelsesfortellingene overflødige. Velg det argumentet du mener står seg best i hver runde.",
+            "winningScore": 11,
+            "arguments": [
+              {
+                "id": "r1a",
+                "text": "De to fortellingene svarer på ulike spørsmål: hvordan mot hvorfor.",
+                "strength": 5,
+                "response": "Greit, men da har religionen trukket seg tilbake til det som ikke kan sjekkes. Er ikke det en retrett?"
+              },
+              {
+                "id": "r1b",
+                "text": "Vitenskapen kan ikke si noe om mening, og mennesker trenger mening.",
+                "strength": 2,
+                "response": "At vi trenger noe, gjør det ikke sant. Humanister lager mening selv uten å tro på en gud."
+              },
+              {
+                "id": "r1c",
+                "text": "Ingen kan bevise at Big Bang faktisk skjedde.",
+                "strength": 1,
+                "response": "Jo, det er godt underbygget. Vil du forsvare troen ved å svekke det som er best undersøkt?"
+              },
+              {
+                "id": "r2a",
+                "text": "Skapelsesfortellingene ble aldri skrevet for å svare på hvor lang tid noe tok.",
+                "strength": 5,
+                "response": "Men noen leser dem faktisk slik i dag. Skal de få bestemme hva teksten er, eller skal du?"
+              },
+              {
+                "id": "r2b",
+                "text": "Georges Lemaître var både fysiker og prest, så noen har åpenbart holdt begge deler.",
+                "strength": 3,
+                "response": "At én person klarte det, betyr ikke at posisjonene henger sammen. Folk kan tro to ting som ikke passer."
+              },
+              {
+                "id": "r2c",
+                "text": "Naturvitenskapen har tatt feil før, så den kan ta feil her også.",
+                "strength": 1,
+                "response": "Det argumentet rammer alt, også ditt eget syn. Da har du ikke sagt noe om akkurat denne saken."
+              },
+              {
+                "id": "r3a",
+                "text": "Tradisjonene svarer selv ulikt: bahá’í krever at vitenskap og religion stemmer overens.",
+                "strength": 4,
+                "response": "Da har du vist at de er uenige med hverandre. Hjelper det saken din?"
+              },
+              {
+                "id": "r3b",
+                "text": "Big Bang beskriver hvordan vårt univers fikk formen sin, ikke at alt startet fra ingenting.",
+                "strength": 4,
+                "response": "Det er en lesning enkelte fysikere deler, men den er ikke fasit. Du kan ikke velge modellen som passer troen best."
+              },
+              {
+                "id": "r3d",
+                "text": "Folk flest tror på en gud, så det må ligge noe i det.",
+                "strength": 1,
+                "response": "Hvor mange som mener noe, avgjør ikke om det er sant. Det vet du godt fra andre fag."
+              }
+            ]
+          }
+        },
+        "tasks": [
+          "Hvem var Georges Lemaître, og hvorfor er det interessant hvem han var? (Fakta)",
+          "Forklar forskjellen på et hvordan-spørsmål og et hvorfor-spørsmål med eget eksempel. (Forståelse)",
+          "Tre tradisjoner i stien forholder seg ulikt til naturvitenskap. Sett opp de tre måtene mot hverandre. (Analyse)",
+          "Motstemmen sier at religionen har trukket seg tilbake til det som ikke kan sjekkes. Er det et godt poeng? Svar både med og mot. (Refleksjon)",
+          "Skriv det beste argumentet du klarer for det synet du selv er minst enig i. (Anvendelse)"
+        ]
+      },
+      {
+        "id": "ditt-eget-svar-igjen",
+        "phase": "Akt 3: Mønsteret",
+        "title": "Ditt eget svar, andre gang",
+        "type": "oppgave",
+        "icon": "sparkles",
+        "difficulty": "hard",
+        "content": "Hent fram arket fra første steg. Ikke les det ennå.\n\nSkriv først svaret på nytt, slik du ville svart i dag. Bruk like mange setninger som sist. Så, og først da, leser du det gamle.\n\nDe fleste oppdager én av tre ting. Noen har flyttet seg, og kan peke på hvilken fortelling som gjorde det. Noen mener det samme, men kan begrunne det bedre enn før. Og noen har fått vanskeligere for å svare kort enn de hadde i starten. Alle tre er tegn på at du har lært noe.\n\nHusk det du oppdaget i nest siste steg. Ingen av læresetningene du har møtt, falt ned ferdige. De ble trukket ut av fortellinger, av mennesker som tenkte over hva fortellingene betydde, og som ikke alltid ble enige. Slik er det med ditt eget svar også. Du har hørt ti fortellinger nå, og det du sitter igjen med, er noe du har trukket ut selv.\n\nDet siste spørsmålet er det vanskeligste i hele stien, og du skal ikke svare kort på det.",
+        "tasks": [
+          "Skriv svaret på nytt, uten å ha lest det gamle først. (Anvendelse)",
+          "Les det gamle svaret. Hva har endret seg, og hva står fast? (Analyse)",
+          "Hvilken av de ni tradisjonene lå nærmest ditt eget svar i steg 0? Ble du overrasket? (Refleksjon)",
+          "Hvilken lå lengst unna, og hva var det som gjorde den vanskeligst å forstå? (Refleksjon)",
+          "Svar utfyllende: en religion er ikke bare en liste med regler, men en samling fortellinger med lære utledet av dem. Bruk minst tre eksempler fra stien til å forklare hva den setningen betyr. (Refleksjon)"
+        ],
+        "links": [
+          {
+            "title": "Skapelse: Hvor kommer alt fra?",
+            "url": "/krle/sammenligning/skapelse"
+          },
+          {
+            "title": "Sammenlign religionene side om side",
+            "url": "/krle/sammenlign"
+          }
+        ]
+      }
+    ]
+  },
+  "timeline": []
+}

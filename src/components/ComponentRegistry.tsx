@@ -198,6 +198,7 @@ const TeodiseVerkstedet = lazy(() => import('./content/interactive/TeodiseVerkst
 const RolleneOverTid = lazy(() => import('./content/interactive/RolleneOverTid').then(m => ({ default: m.RolleneOverTid })));
 const MaktensForm = lazy(() => import('./content/interactive/MaktensForm').then(m => ({ default: m.MaktensForm })));
 const PilegrimsKartet = lazy(() => import('./content/interactive/PilegrimsKartet').then(m => ({ default: m.PilegrimsKartet })));
+const FraFortellingTilLaere = lazy(() => import('./content/interactive/FraFortellingTilLaere').then(m => ({ default: m.FraFortellingTilLaere })));
 const GudsbildeAksen = lazy(() => import('./content/interactive/GudsbildeAksen').then(m => ({ default: m.GudsbildeAksen })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
@@ -670,6 +671,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RolleneOverTid,
     MaktensForm,
     PilegrimsKartet,
+    FraFortellingTilLaere,
     GudsbildeAksen,
     DagenSomBonn,
     MaatBalansen,

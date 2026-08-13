@@ -3,7 +3,7 @@
 > **Status:** `Under bygging`
 > **Version:** 1.1
 > **Opprettet:** 2026-08-10 · **Sist oppdatert:** 2026-08-13
-> **Omfang:** Flerårsprosjekt, bygges i faser. Alle 17 artikler er bygget, med signaturkomponent, kildeliste og fast hale. Gjenstår: læringsstiene i §8 (2 av 5 bygget), heltebildene i §10, og de nye mikrospillene merket `NY` i §3. Erfaringer i §10.5.
+> **Omfang:** Flerårsprosjekt, bygges i faser. Alle 17 artikler er bygget, med signaturkomponent, kildeliste og fast hale. Gjenstår: læringsstiene i §8 (3 av 5 bygget), heltebildene i §10, og de nye mikrospillene merket `NY` i §3. Erfaringer i §10.5.
 
 ---
 
@@ -569,28 +569,40 @@ Fil: `public/content/krle/sammenligning/<slug>.json`
 
 Grepet med steg 0 er det som gjør comparison-first pedagogisk: eleven har en egen posisjon å måle de andre svarene mot, og opplever i siste steg at hen har flyttet seg.
 
-### 8.2 `skapelse-sti` - «Før alt fantes» (11 steg)
+### 8.2 `skapelse-sti` - «Før alt fantes» (13 steg) ✅ BYGGET
 
 * **Fil:** `public/content/krle/sammenligning/skapelse-sti.json`
 * **Manifest:** `sammenligning.tools[]`, `icon: "map"`
-* **Estimert tid:** 3-4 timer
+* **Estimert tid:** 3 timer
+
+**Tesen stien bygger på:** en religion er ikke først og fremst en liste med regler. Den er en samling fortellinger, og læren er trukket ut av dem i ettertid. Det forklarer hvorfor to grupper kan lese nøyaktig samme tekst og lande på ulik lære: de er ikke uenige om hva som står, men om hva som følger av det. Tesen settes i steg 1, holdes levende gjennom hvert fortellingssteg, og betales ut i steg 11.
 
 | # | Fase | Tittel | Type | Komponent |
 |---|---|---|---|---|
 | 0 | Prolog | Før alt fantes | refleksjon | - |
-| 1 | Akt 1 | Hvorfor forteller alle en skapelsesfortelling? | fakta | - |
-| 2 | Akt 1 | Å lese en myte uten å le av den | fakta | `BiasLens` |
-| 3 | Akt 2 | Seks dager og et hvileår | fakta | - |
-| 4 | Akt 2 | «Vær!» - og det ble | fakta | - |
-| 5 | Akt 2 | Universet som puster | utfordring | `SkapelsesVeven` |
-| 6 | Akt 2 | Buddhas taushet | refleksjon | - |
-| 7 | Akt 2 | Fortellingene fra nord | fakta | - |
-| 8 | Akt 2 | Big Bang som fortelling | fakta | - |
-| 9 | Akt 3 | Linje eller sirkel? | utfordring | `EtterlivsKartet` (forsmak) |
-| 10 | Akt 3 | Kan begge ha rett? | refleksjon | `DebateSimulator` |
-| 11 | Akt 3 | Ditt eget svar, andre gang | oppgave | - |
+| 1 | Akt 1 | Hvorfor forteller alle en fortelling? | fakta | - |
+| 2 | Akt 1 | Å lese en fortelling uten å le av den | utfordring | `BiasLens` (`sources`-format) |
+| 3 | Akt 2 | Seks dager og en sjuende | fakta | - |
+| 4 | Akt 2 | «Bli!» og det ble | fakta | - |
+| 5 | Akt 2 | Mørket som varte i tidsaldre | fakta | - |
+| 6 | Akt 2 | Universet som puster | utfordring | `SkapelsesVeven` |
+| 7 | Akt 2 | Buddhas taushet | refleksjon | - |
+| 8 | Akt 2 | Tre nyere svar | fakta | - |
+| 9 | Akt 2 | Fortellingene fra nord | fakta | - |
+| 10 | Akt 3 | Fra fortelling til lære | utfordring | `FraFortellingTilLaere` (ny) |
+| 11 | Akt 3 | Kan begge ha rett? | refleksjon | `DebateSimulator` |
+| 12 | Akt 3 | Ditt eget svar, andre gang | oppgave | - |
 
 Hvert steg som krever lesing starter med `Les artikkelen [Tittel](/absolutt/sti)`. Oppgavene følger Bloom-trappen med nivået markert i parentes.
+
+**Avvik fra den opprinnelige planen, med grunn:**
+
+- **13 steg, ikke 12.** Planen dekket fem av de ni tradisjonene. Sikhisme fikk eget steg (`hukam` er en for god fortelling til å pakkes inn i et samlesteg), og mormonisme, Jehovas vitner og bahá'í deler steg 8.
+- **`EtterlivsKartet` er ute.** Planen brukte den som forsmak på `doden`-temaet, men stien har ikke bruk for et etterliv-kart. Plassen gikk til `FraFortellingTilLaere`, som er det steget som faktisk innfrir tesen.
+- **«Big Bang som fortelling» ble slått sammen med «Kan begge ha rett?».** De sa det samme to ganger.
+- **`BiasLens` tar ikke `perspectives`.** Linse-visningen har hardkodede perspektiv-id-er (`neutral | german | french`) og er ubrukelig i KRLE. Bruk `sources`-aliaset: `{ name, type, stance, content }`. Merk at `stance` fargelegges grønn bare hvis strengen inneholder «Nøytral» eller «Nyansert».
+- **`DebateSimulator` krever ni argumenter.** Den deler ut tre per runde i tre runder (`slice(round * 3, round * 3 + 3)`), og tar `topic`, `opponentName`, `context` og `winningScore`. Den har verken `title` eller `intro`, og `type`-feltet på argumentene brukes ikke til noe.
+- **`SkapelsesVeven` har ingen innebygde data.** `phases` og `traditions` må sendes inn, ellers rendrer den tomt. Gjenbruk propsene fra `skapelse.json`.
 
 ### 8.3 `sammenligning-sti` - «Å se med to øyne» (metode, 9 steg)
 

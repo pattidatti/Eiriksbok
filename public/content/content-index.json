@@ -1,5 +1,5 @@
 {
-  "buildId": 219269126622914,
+  "buildId": 85542676190031,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3427,6 +3427,9 @@
     "pilegrim": [
       "content/krle/sammenligning/pilegrim.json"
     ],
+    "skapelse-sti": [
+      "content/krle/sammenligning/skapelse-sti.json"
+    ],
     "sammenligning-skapelse": [
       "content/krle/sammenligning/skapelse.json"
     ],
@@ -5800,6 +5803,7 @@
     "krle/sammenligning/overgangsriter-sti": "content/krle/sammenligning/overgangsriter-sti.json",
     "krle/sammenligning/overgangsriter": "content/krle/sammenligning/overgangsriter.json",
     "krle/sammenligning/pilegrim": "content/krle/sammenligning/pilegrim.json",
+    "krle/sammenligning/skapelse-sti": "content/krle/sammenligning/skapelse-sti.json",
     "krle/sammenligning/skapelse": "content/krle/sammenligning/skapelse.json",
     "krle/sammenligning/symboler-og-klaer": "content/krle/sammenligning/symboler-og-klaer.json",
     "microgame-map.json/undefined/microgame-map": "content/microgame-map.json",
