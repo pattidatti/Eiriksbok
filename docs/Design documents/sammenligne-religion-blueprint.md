@@ -3,7 +3,7 @@
 > **Status:** `Under bygging`
 > **Version:** 1.1
 > **Opprettet:** 2026-08-10 · **Sist oppdatert:** 2026-08-13
-> **Omfang:** Flerårsprosjekt, bygges i faser. Alle 17 artikler er bygget, med signaturkomponent, kildeliste og fast hale. Gjenstår: læringsstiene i §8 (3 av 5 bygget), heltebildene i §10, og de nye mikrospillene merket `NY` i §3. Erfaringer i §10.5.
+> **Omfang:** Flerårsprosjekt, bygges i faser. Alle 17 artikler er bygget, med signaturkomponent, kildeliste og fast hale. Gjenstår: læringsstiene i §8 (3 bygget, 4 igjen), heltebildene i §10, og de nye mikrospillene merket `NY` i §3. Erfaringer i §10.5.
 
 ---
 
@@ -673,6 +673,23 @@ poeng i stedet for en fotnote.
 ### 8.5 Øvrige fordypningsstier
 
 `gudsbilde-sti`, `bonn-sti` og `doden-sti` følger samme mal som §8.2, 9-12 steg hver. Detaljeres i egne læringssti-blueprints etter mønster av `docs/Design documents/skapende-skriving-laeringssti-blueprint.md`.
+
+### 8.6 `hovedplottet-sti` - «Hovedplottet» (10 steg) ✅ BYGGET
+
+* **Fil:** `public/content/krle/sammenligning/hovedplottet-sti.json`
+* Sto ikke i den opprinnelige planen. Bygget 2026-08-12 på tvers av temaene `frelse`, `lidelse` og `gudsbilde`: alle religioner forteller at noe er galt og at noe skal fikse det, og er dypt uenige om hvem som gjør jobben. Egen signaturkomponent `Plottmaskinen`.
+
+### 8.7 Status for stiene
+
+| Sti | Steg | Status |
+|---|---|---|
+| `overgangsriter-sti` | 8 | ✅ bygget |
+| `hovedplottet-sti` | 10 | ✅ bygget |
+| `skapelse-sti` | 13 | ✅ bygget |
+| `sammenligning-sti` | 9 | gjenstår (§8.3, metodesti) |
+| `gudsbilde-sti` | 9-12 | gjenstår (§8.5) |
+| `bonn-sti` | 9-12 | gjenstår (§8.5) |
+| `doden-sti` | 9-12 | gjenstår (§8.5) |
 
 ---
 
