@@ -1,0 +1,270 @@
+{
+    "id": "innvandringen-til-norge",
+    "title": "Innvandringen til Norge",
+    "layout": "rich",
+    "year": "1960-2026",
+    "category": "Norge",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-14",
+    "details": [
+        "Norge gikk fra å være et land folk reiste fra, til et land folk reiser til",
+        "Innvandringsstoppen i 1975 stanset arbeidsinnvandringen, men ikke familie og flukt",
+        "I dag har omtrent én av fem som bor i Norge innvandrerbakgrunn"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "En vinterdag tidlig på 1970-tallet står en ung mann på en fabrikkport i Oslo. Han har reist fra Punjab i Pakistan, og han kan omtrent tre ord norsk. I lomma har han adressen til en fetter og navnet på en formann som visstnok trenger folk. Han vet ikke det ennå, men han er en av de første i en historie som skal endre hvordan Norge ser ut."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ung mann med koffert utenfor en fabrikkport i Oslo på 1970-tallet",
+            "caption": "De første arbeidsinnvandrerne ble kalt fremmedarbeidere. De fleste var unge menn som kom alene, og som regnet med å reise hjem igjen."
+        },
+        {
+            "type": "header",
+            "text": "Landet folk reiste fra"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne hvor rart dette var, må vi begynne motsatt vei. Gjennom hele 1800-tallet var Norge et fattig land som folk forlot. Mellom 1836 og 1915 dro over 750 000 nordmenn til Amerika. Du kan lese hele den historien i artikkelen om [utvandringen til Amerika](/historie/norge-i-moderne-tid/utvandringen-til-amerika)."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig er det en myte at Norge var lukket. Bare på 1800-tallet kom det over 100 000 svenske arbeidere til Østlandet, og før dem hadde tyske bergverksfolk, nederlandske kjøpmenn og hanseatiske handelsmenn satt spor i norske byer i flere hundre år (Gursli-Berg, Myhre & Tønnessen, 2026). Folk har alltid flyttet på seg. Det nye etter 1960 var hvem som kom, hvor de kom fra, og hvor mange."
+        },
+        {
+            "type": "header",
+            "text": "Fremmedarbeiderne"
+        },
+        {
+            "type": "text",
+            "content": "Etter andre verdenskrig gikk det bratt oppover i Norge. Fabrikker, verft og byggeplasser trengte hender, og norske ungdommer tok stadig lengre utdanning i stedet for å gå rett i produksjonen. Fra begynnelsen av 1960-tallet og fram til 1975 kom det derfor arbeidsinnvandrere fra Sørøst-Europa, Jugoslavia, Tyrkia og Pakistan (Gursli-Berg, Myhre & Tønnessen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "De ble kalt fremmedarbeidere, og ordet forteller noe. Både de selv og staten så på oppholdet som midlertidig. Man skulle jobbe noen år, spare penger, sende noe hjem og så reise tilbake. Jobbene de tok var som regel dem nordmenn ikke lenger ville ha:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Skiftarbeid i industrien, ofte nattskift",
+                "Oppvask og renhold på restauranter og hoteller",
+                "Tungt anleggs- og byggearbeid",
+                "Jobber uten fast ansettelse og uten oppsigelsesvern"
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Innvandringsstoppen i 1975"
+        },
+        {
+            "type": "text",
+            "content": "Så snudde stemningen. Arbeidsledigheten steg, og mange var bekymret for boligmangel og for at fremmedarbeiderne levde under svært dårlige forhold. Den 10. januar 1975 vedtok norske myndigheter en forskrift som fra 1. februar innførte en generell stopp i adgangen til å få arbeidstillatelse (Forskrift om innvandringsstopp, 1975)."
+        },
+        {
+            "type": "text",
+            "content": "Men en stopp er sjelden så absolutt som navnet høres ut. Meningen var ikke å stanse all innvandring, bare å begrense arbeidsinnvandringen (Myhre & Tønnessen, 2026). Forskriften hadde en lang liste unntak: ektefeller og barn av norske borgere, flyktninger, forskere, kunstnere og spesialister som en bedrift ikke kunne klare seg uten. I tillegg var Norge bundet av internasjonale avtaler som krever at asylsøknader blir behandlet."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Ordet du trenger: familiegjenforening",
+                "content": "Familiegjenforening betyr at noen som allerede har lovlig opphold i Norge, får hente ektefelle og barn hit. Fordi innvandringsstoppen gjaldt arbeid og ikke familie, ble dette hovedveien inn på 1970- og 80-tallet. Menn som hadde tenkt å reise hjem igjen, hentet i stedet familien til Norge. Da ble de boende."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Familie ankommer flyplass i Norge med kofferter på 1970-tallet",
+            "caption": "Innvandringsstoppen fikk en virkning nesten ingen hadde planlagt: den gjorde midlertidige arbeidere til faste familier."
+        },
+        {
+            "type": "text",
+            "content": "Dette er en av de merkeligste vendingene i moderne norsk historie. Vedtaket som skulle begrense innvandringen, bidro i praksis til å gjøre den permanent. Så lenge grensa var åpen, kunne folk reise fram og tilbake. Da den ble stengt, ble det for risikabelt å dra hjem, for da kom man kanskje ikke inn igjen. Løsningen ble å hente familien hit i stedet."
+        },
+        {
+            "type": "component",
+            "name": "HvorforKomDe",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Når krigen bestemmer"
+        },
+        {
+            "type": "text",
+            "content": "Fra 1980-tallet og framover er det ofte krig, ikke jobb, som avgjør hvem som banker på. Da Jugoslavia falt fra hverandre, kom det to store grupper flyktninger til Norge: bosniere i 1993 og kosovoalbanere i 1999 (Gursli-Berg, Myhre & Tønnessen, 2026). Du kan lese om selve sammenbruddet i artikkelen om [Jugoslavias oppløsning](/historie/etterkrigstiden/jugoslavias-opplosning)."
+        },
+        {
+            "type": "text",
+            "content": "Sommeren 2015 nådde antallet asylsøkere fra Syria og Afghanistan en topp i hele Europa. Etterpå strammet Norge inn grensekontrollen (Myhre & Tønnessen, 2026). Bakgrunnen for den syriske krigen henger sammen med opprørene som beskrives i artikkelen om [den arabiske våren](/historie/midtoesten/arabisk-var)."
+        },
+        {
+            "type": "text",
+            "content": "Den siste store bølgen kom brått. Da Russland angrep Ukraina i februar 2022, flyktet millioner vestover, og over 90 000 kom til Norge bare det første året (Myhre & Tønnessen, 2026). Ved inngangen til 2025 bodde det nesten 80 000 ukrainere i landet, mot rundt 6 500 to år tidligere (IMDi, 2025). På to år gikk ukrainerne fra å være en liten gruppe til å bli en av de aller største."
+        },
+        {
+            "type": "header",
+            "text": "2004: da Europa åpnet seg"
+        },
+        {
+            "type": "text",
+            "content": "Midt oppe i alt dette skjedde det noe helt annet. I 2004 ble EU utvidet med ti nye land, blant dem Polen og Litauen. Fordi Norge er med i EØS, fikk borgerne deres rett til å søke jobb her på samme vilkår som nordmenn. Resultatet ble den største arbeidsinnvandringen i norsk historie: mellom 2004 og 2016 kom det nærmere 240 000 arbeidsinnvandrere, og nesten 160 000 av dem var fra de nye EU-landene (Østby, 2017)."
+        },
+        {
+            "type": "text",
+            "content": "Toppåret var 2011, med rundt 27 000 arbeidsinnvandrere på ett år. Men det mest overraskende er hvor de bosatte seg. De tidligere gruppene hadde samlet seg i hovedstaden. Denne gangen spredte folk seg utover: bare 30 prosent av polakkene bodde i Oslo og Akershus, og av litauerne bodde bare 7 prosent i Oslo (Østby, 2017). Grunnen er enkel når du tenker etter. Jobbene lå ikke lenger bare i hovedstaden. De lå på byggeplasser, verft, fiskebruk og gårder over hele landet, ikke minst i næringene rundt [oljealderen](/historie/norge-i-moderne-tid/oljealderen)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "hvor-er-jobbene-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Norge i dag"
+        },
+        {
+            "type": "text",
+            "content": "Ved inngangen til 2026 bodde det 987 120 innvandrere i Norge. Det er 17,5 prosent av folket. I tillegg kommer 238 507 personer som er født i Norge av to innvandrerforeldre, altså 4,2 prosent (Statistisk sentralbyrå, 2026). Til sammen betyr det at omtrent én av fem som bor i landet, har innvandrerbakgrunn."
+        },
+        {
+            "type": "text",
+            "content": "Tallene sier likevel ingenting om hvem folk er. De største gruppene kommer fra land som ikke ligner på hverandre i det hele tatt:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Polen: rundt 111 000 - de fleste kom for å jobbe",
+                "Ukraina: rundt 80 000 - de aller fleste kom som flyktninger etter 2022",
+                "Litauen: rundt 43 000 - arbeidsinnvandring etter 2004",
+                "Syria: rundt 40 700 - flukt fra krig",
+                "Sverige: rundt 37 200 - nordisk arbeidsmarked helt uten søknad"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Lista viser noe viktig: én av de aller største innvandrergruppene i Norge er svensker. Når vi snakker om innvandring, tenker vi sjelden på dem. Det sier kanskje mer om oss enn om tallene."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Skolegård i norsk by med elever fra mange bakgrunner",
+            "caption": "I dag har omtrent én av fem som bor i Norge innvandrerbakgrunn. De fleste av dem er norske statsborgere, og mange er født her."
+        },
+        {
+            "type": "header",
+            "text": "Hva slags land har vi blitt?"
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til mønsteret gjennom hele denne historien. Norge har sjelden bestemt selv hvem som kom. Det var behovet for arbeidskraft, en forskrift fra 1975, krigen på Balkan, EU-utvidelsen i 2004, borgerkrigen i Syria og et russisk angrep på Ukraina som avgjorde. De samme kreftene som fikk 750 000 nordmenn til å reise til Amerika, virker fortsatt, bare i motsatt retning. De kalles push- og pull-faktorer, og du finner modellen forklart i artikkelen om [migrasjon](/samfunnskunnskap/demografi/migrasjon-push-pull)."
+        },
+        {
+            "type": "text",
+            "content": "På under seksti år har Norge gått fra å være et land folk reiste fra, til et land folk reiser til. Det er ikke lang tid. Bestemoren til en elev i dag kan huske et Norge der nesten alle så like ut og snakket likt. Den unge mannen fra Punjab som sto ved fabrikkporten på 1970-tallet, trodde han skulle hjem igjen om noen år. I stedet ble barnebarna hans nordmenn."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet fremmedarbeider, og hvorfor ble akkurat det ordet brukt på 1960- og 70-tallet?",
+                    "Når ble innvandringsstoppen vedtatt, og hva var det egentlig den stanset?",
+                    "Nevn tre grupper som fikk unntak fra innvandringsstoppen i 1975.",
+                    "Hvor mange innvandrere bodde det i Norge ved inngangen til 2026, og hvor stor andel av folket var det?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor innvandringsstoppen førte til at flere ble boende i Norge i stedet for færre.",
+                    "Teksten sier at bare 30 prosent av polakkene bosatte seg i Oslo og Akershus, mens tidligere grupper samlet seg i hovedstaden. Hva forklarer forskjellen?",
+                    "Sammenlign de tre grunnene til å komme: arbeid, familie og flukt. Hvilken av dem tror du gir best utgangspunkt for å finne seg til rette i et nytt land, og hvorfor?",
+                    "Hvorfor tror du vi sjelden tenker på svensker når vi snakker om innvandring, selv om de er en av de største gruppene?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign utvandringen til Amerika på 1800-tallet med innvandringen til Norge etter 1960. Skriv fem til åtte setninger om hva som er likt og hva som er ulikt.",
+                    "Finn ut når familien din kom dit dere bor nå. Snakk med noen hjemme, og lag en enkel tidslinje over flyttingene bakover i tid.",
+                    "Diskuter i klassen: Hvem bestemmer egentlig hvem som får komme til Norge, når så mye av det som skjer starter i andre land?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva stanset innvandringsstoppen fra 1975 først og fremst?",
+                        "options": [
+                            "All innvandring til Norge",
+                            "Arbeidsinnvandringen",
+                            "Flyktninger fra Balkan",
+                            "Innvandring fra Sverige"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Meningen var ikke å stanse all innvandring, men å begrense adgangen til arbeidstillatelse. Familiegjenforening og asyl fortsatte."
+                    },
+                    {
+                        "question": "Hvorfor ble mange arbeidsinnvandrere boende i Norge etter 1975?",
+                        "options": [
+                            "De fikk gratis bolig av staten",
+                            "De ble nektet å reise hjem",
+                            "De hentet familien hit, fordi de risikerte å ikke slippe inn igjen om de dro",
+                            "De fikk høyere lønn enn nordmenn"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Da grensa ble stengt for arbeid, ble det for risikabelt å reise fram og tilbake. Familiegjenforening gjorde midlertidige arbeidere til faste familier."
+                    },
+                    {
+                        "question": "Hva skjedde i 2004 som fikk stor betydning for Norge?",
+                        "options": [
+                            "EU ble utvidet med ti nye land, blant dem Polen og Litauen",
+                            "Norge meldte seg inn i EU",
+                            "Innvandringsstoppen ble opphevet",
+                            "Krigen i Syria startet"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Gjennom EØS fikk borgere i de nye EU-landene rett til å søke jobb i Norge. Det ble den største arbeidsinnvandringen i norsk historie."
+                    },
+                    {
+                        "question": "Hvor bosatte arbeidsinnvandrerne etter 2004 seg?",
+                        "options": [
+                            "Nesten bare i Oslo",
+                            "Bare i Nord-Norge",
+                            "Spredt over hele landet, der jobbene var",
+                            "I egne leirer utenfor byene"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Bare 30 prosent av polakkene bodde i Oslo og Akershus. Jobbene lå på byggeplasser, verft og fiskebruk over hele landet."
+                    },
+                    {
+                        "question": "Omtrent hvor stor andel av dem som bor i Norge har innvandrerbakgrunn i dag?",
+                        "options": ["Én av femti", "Én av tjue", "Én av fem", "Halvparten"],
+                        "correctAnswer": 2,
+                        "explanation": "17,5 prosent er innvandrere og 4,2 prosent er født i Norge av to innvandrerforeldre. Til sammen omtrent én av fem."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Forskrifter om innføring av innvandringsstopp med dispensasjonsregler (FOR-1975-01-10-4). (1975). Lovdata. Hentet 14.08.2026 fra [lovdata.no](https://lovdata.no/forskrift/1975-01-10-4)",
+                    "Gursli-Berg, G., Myhre, J. E. & Tønnessen, M. (2026). *Norsk innvandringshistorie*. Store norske leksikon. Hentet 14.08.2026 fra [snl.no/Norsk_innvandringshistorie](https://snl.no/Norsk_innvandringshistorie)",
+                    "Integrerings- og mangfoldsdirektoratet. (2025). *Befolkningen med innvandrerbakgrunn i Norge*. Indikatorrapport 2025. Hentet 14.08.2026 fra [imdi.no](https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/befolkningen-med-innvandrerbakgrunn-i-norge/)",
+                    "Myhre, J. E. & Tønnessen, M. (2026). *Innvandring*. Store norske leksikon. Hentet 14.08.2026 fra [snl.no/innvandring](https://snl.no/innvandring)",
+                    "Statistisk sentralbyrå. (2026). *Innvandrere og norskfødte med innvandrerforeldre*. Hentet 14.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre)",
+                    "Østby, L. (2017). *Arbeidsinnvandrere - fra hovedstadsfenomen til vanlig syn i hele landet*. Statistisk sentralbyrå. Hentet 14.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/artikler-og-publikasjoner/arbeidsinnvandrere-fra-hovedstadsfenomen-til-vanlig-syn-i-hele-landet)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

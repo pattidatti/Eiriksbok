@@ -1,5 +1,5 @@
 {
-  "buildId": 151894753108783,
+  "buildId": 1512412622756,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2594,6 +2594,9 @@
     ],
     "samlingen-av-italia-og-tyskland": [
       "content/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland.json"
+    ],
+    "innvandringen-til-norge": [
+      "content/historie/norge-i-moderne-tid/innvandringen-til-norge.json"
     ],
     "kapplopet-mot-sydpolen": [
       "content/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen.json"
@@ -5525,6 +5528,7 @@
     "historie/nasjonalstatenes-tid/nasjonenes-gullaldre": "content/historie/nasjonalstatenes-tid/nasjonenes-gullaldre.json",
     "historie/nasjonalstatenes-tid/revolusjonene-1848": "content/historie/nasjonalstatenes-tid/revolusjonene-1848.json",
     "historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland": "content/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland.json",
+    "historie/norge-i-moderne-tid/innvandringen-til-norge": "content/historie/norge-i-moderne-tid/innvandringen-til-norge.json",
     "historie/norge-i-moderne-tid/kapplopet-mot-sydpolen": "content/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen.json",
     "historie/norge-i-moderne-tid/nasjonale-minoriteter": "content/historie/norge-i-moderne-tid/nasjonale-minoriteter.json",
     "historie/norge-i-moderne-tid/oljealderen": "content/historie/norge-i-moderne-tid/oljealderen.json",

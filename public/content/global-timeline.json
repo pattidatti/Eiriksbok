@@ -9829,6 +9829,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "innvandringen-til-norge",
+      "title": "Innvandringen til Norge",
+      "description": "Hvordan Norge på under seksti år gikk fra å være et land folk reiste fra, til et land folk reiser til.",
+      "startDate": 1960,
+      "endDate": 2026,
+      "displayDate": "1960-2026",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/innvandringen-til-norge",
+      "tags": [
+        "norge",
+        "innvandring",
+        "migrasjon",
+        "arbeidsliv",
+        "etterkrigstid"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "kongo",
       "title": "Kongo: Kaos i hjertet av Afrika",
       "description": "Lumumba, CIA og ressursforbannelsen.",
