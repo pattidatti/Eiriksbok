@@ -1042,6 +1042,10 @@
       "count": 12
     },
     {
+      "tag": "arbeidsliv",
+      "count": 12
+    },
+    {
       "tag": "grammatikk",
       "count": 12
     },
@@ -1095,10 +1099,6 @@
     },
     {
       "tag": "diplomati",
-      "count": 10
-    },
-    {
-      "tag": "arbeidsliv",
       "count": 10
     },
     {
@@ -1224,6 +1224,10 @@
     {
       "tag": "jodedom",
       "count": 8
+    },
+    {
+      "tag": "migrasjon",
+      "count": 7
     },
     {
       "tag": "ytringsfrihet",
@@ -1380,10 +1384,6 @@
     {
       "tag": "kulturhistorie",
       "count": 6
-    },
-    {
-      "tag": "migrasjon",
-      "count": 5
     },
     {
       "tag": "eskatologi",
@@ -1671,6 +1671,10 @@
     },
     {
       "tag": "okkupasjon",
+      "count": 4
+    },
+    {
+      "tag": "etterkrigstid",
       "count": 4
     },
     {
@@ -2782,10 +2786,6 @@
       "count": 2
     },
     {
-      "tag": "etterkrigstid",
-      "count": 2
-    },
-    {
       "tag": "frykt",
       "count": 2
     },
@@ -2819,6 +2819,10 @@
     },
     {
       "tag": "hungersnød",
+      "count": 2
+    },
+    {
+      "tag": "innvandring",
       "count": 2
     },
     {

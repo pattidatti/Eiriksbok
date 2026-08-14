@@ -3339,6 +3339,20 @@
               "lastUpdated": "2026-07-31T06:00:25+02:00"
             },
             {
+              "id": "innvandringen-til-norge",
+              "title": "Innvandringen til Norge",
+              "description": "Hvordan Norge på under seksti år gikk fra å være et land folk reiste fra, til et land folk reiser til.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "innvandring",
+                "migrasjon",
+                "arbeidsliv",
+                "etterkrigstid"
+              ],
+              "createdDate": "2026-08-14T00:00:00Z"
+            },
+            {
               "id": "kvinnekampen",
               "title": "Kvinnekampen",
               "description": "Hvordan kvinner i Norge vant rettigheter som utdanning, egen lønn og stemmerett, dør for dør.",

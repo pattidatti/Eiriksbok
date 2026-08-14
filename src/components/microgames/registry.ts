@@ -33,6 +33,7 @@ const Gudsformer3D = lazy(() => import('./Gudsformer3D'));
 const AnandKaraj3D = lazy(() => import('./AnandKaraj3D'));
 const LangarKjokkenet3D = lazy(() => import('./LangarKjokkenet3D'));
 const Spredning3D = lazy(() => import('./Spredning3D'));
+const HvorErJobbene3D = lazy(() => import('./HvorErJobbene3D'));
 const UtvandringenFraAfrika3D = lazy(() => import('./UtvandringenFraAfrika3D'));
 const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
 const DampmaskinHjerte3D = lazy(() => import('./DampmaskinHjerte3D'));
@@ -187,6 +188,15 @@ const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'hvor-er-jobbene-3d': {
+        id: 'hvor-er-jobbene-3d',
+        title: 'Hvor er jobbene?',
+        description:
+            'Dra arbeidslaget over et stilisert Norgeskart og fyll jobbene som lyser opp før de slukner. I 1970 dukker nesten alt opp rundt Oslo. Etter 2004 popper jobbene opp fra Rogaland til Finnmark, og du må dra kryss og tvers - eleven kjenner selv hvorfor arbeidsinnvandrerne spredte seg over hele landet.',
+        estimatedSeconds: 150,
+        loader: () => import('./HvorErJobbene3D'),
+        Component: HvorErJobbene3D as never,
+    },
     'bedehuset-motet': {
         id: 'bedehuset-motet',
         title: 'Møtet i bedehuset',
