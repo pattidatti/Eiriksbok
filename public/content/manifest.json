@@ -9123,6 +9123,29 @@
           ]
         },
         {
+          "id": "livssyn",
+          "title": "Livssyn uten religion",
+          "description": "Ikke-religiøse livssyn: hvordan mennesker svarer på de store spørsmålene uten å regne med en gud.",
+          "image": "/images/placeholder.webp",
+          "lessons": [
+            {
+              "id": "livssynshumanisme",
+              "title": "Livssynshumanisme: mennesket som målestokk",
+              "description": "Et livssyn uten gud, med egne svar på de store spørsmålene og egne seremonier for livets fire vendepunkter.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "livssyn",
+                "livssynshumanisme",
+                "etikk",
+                "human-etisk-forbund",
+                "norge",
+                "seremonier"
+              ],
+              "createdDate": "2026-08-15T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "filosofi",
           "title": "Filosofi",
           "description": "Utforsk de store tankene som har formet vår verden.",

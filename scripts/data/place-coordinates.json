@@ -886,6 +886,10 @@
       "count": 28
     },
     {
+      "tag": "etikk",
+      "count": 26
+    },
+    {
       "tag": "verdensorden",
       "count": 26
     },
@@ -903,10 +907,6 @@
     },
     {
       "tag": "vitenskap",
-      "count": 24
-    },
-    {
-      "tag": "etikk",
       "count": 24
     },
     {
@@ -2815,6 +2815,22 @@
     },
     {
       "tag": "ansvar",
+      "count": 2
+    },
+    {
+      "tag": "livssyn",
+      "count": 2
+    },
+    {
+      "tag": "livssynshumanisme",
+      "count": 2
+    },
+    {
+      "tag": "human-etisk-forbund",
+      "count": 2
+    },
+    {
+      "tag": "seremonier",
       "count": 2
     },
     {

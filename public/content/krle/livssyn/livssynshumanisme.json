@@ -1,0 +1,415 @@
+{
+    "id": "livssynshumanisme",
+    "title": "Livssynshumanisme: mennesket som målestokk",
+    "subject": "krle",
+    "topic": "livssyn",
+    "layout": "rich",
+    "year": "1951-1956",
+    "category": "Livssyn",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "doctrinal",
+    "comparison_tags": ["livssyn", "etikk", "seremonier", "doctrinal"],
+    "kompetansemaal": ["rle-10-3"],
+    "details": [
+        "Livssynshumanisme er et verdslig livssyn. Verdslig betyr at det ikke regner med noen gud eller noe overnaturlig.",
+        "Livssynet svarer på de samme store spørsmålene som religionene: hva finnes, hva er sant, hva er rett, og hvordan markerer vi livets store øyeblikk.",
+        "Moralen hentes fra mennesker selv, fra fornuft og fra evnen til å kjenne at noe gjør vondt eller godt.",
+        "Den første humanistiske konfirmasjonen ble holdt i Oslo 6. mai 1951 med 34 ungdommer.",
+        "Human-Etisk Forbund ble stiftet i 1956 og har rundt 180 000 medlemmer i 2026."
+    ],
+    "concepts": [
+        {
+            "id": "livssyn",
+            "term": "Livssyn",
+            "definition": "Et samlet svar på de store spørsmålene i livet: hva som finnes, hva som er sant, hva som er rett, og hva som gir mening. Både religioner og ikke-religiøse retninger er livssyn."
+        },
+        {
+            "id": "livssynshumanisme",
+            "term": "Livssynshumanisme",
+            "definition": "Et verdslig livssyn som setter mennesket i sentrum. Det bygger på fornuft og forskning, henter moralen fra mennesker selv, og regner ikke med noen gud."
+        },
+        {
+            "id": "verdslig",
+            "term": "Verdslig",
+            "definition": "Noe som hører til denne verden og ikke regner med noe overnaturlig. Et annet ord for det samme er sekulær."
+        },
+        {
+            "id": "amsterdam-erklaeringen",
+            "term": "Amsterdam-erklæringen",
+            "definition": "Teksten som samler hva humanister i verden står for. Den ble vedtatt i 1952 og skrevet om i 2002 og 2022."
+        },
+        {
+            "id": "navnefest",
+            "term": "Navnefest",
+            "definition": "En seremoni der et nyfødt barn ønskes velkommen og får navnet sitt feiret, uten noe religiøst innhold. Den humanistiske parallellen til dåp."
+        }
+    ],
+    "createdDate": "2026-08-15T00:00:00Z",
+    "factChecked": "2026-08-15",
+    "content": [
+        {
+            "type": "text",
+            "content": "Den 6. mai 1951 satt 34 ungdommer i Universitetets aula i Oslo. De skulle konfirmeres. Men det sto ingen prest foran dem, det ble ikke bedt noen bønn, og ingen leste fra Bibelen. De aller fleste jevnaldrende satt i kirken den våren. Disse 34 gjorde noe helt nytt i Norge: de markerte overgangen fra barn til ungdom uten å blande inn noen gud (Elstad mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I dag gjør over 13 000 norske ungdommer det samme hvert år. Bak den seremonien ligger et helt livssyn, med egne svar på de største spørsmålene et menneske kan stille. Det livssynet heter livssynshumanisme."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdommer sitter i en universitetsaula under en seremoni i 1951",
+            "caption": "Universitetets aula i Oslo, 6. mai 1951. Den første humanistiske konfirmasjonen i Norge samlet 34 ungdommer."
+        },
+        {
+            "type": "header",
+            "text": "Hva er egentlig et livssyn?"
+        },
+        {
+            "type": "text",
+            "content": "Et livssyn er et samlet svar på de store spørsmålene i livet. Hva finnes egentlig? Hvordan kan vi vite noe sikkert? Hva er rett og hva er galt? Hva gjør vi når noen dør? Alle mennesker svarer på disse spørsmålene, enten de tenker over det eller ikke."
+        },
+        {
+            "type": "text",
+            "content": "Religioner er livssyn. Men et livssyn trenger ikke å ha en gud i seg. Livssynshumanismen er et verdslig livssyn. Verdslig betyr at det bare regner med denne verden, og ikke med noe overnaturlig. Store norske leksikon beskriver livssynshumanismen som et livssyn som rommer både et syn på mennesket, et syn på virkeligheten og en etikk, altså en lære om hva som er rett og galt (Aas, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Det er verdt å legge merke til hva som ikke står der. Livssynshumanismen er ikke bare et nei til gud. Den er et helt sett med svar, på linje med svarene du finner i artikkelen om [gudsbilde i religionene](/krle/sammenligning/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Mennesket er målestokken"
+        },
+        {
+            "type": "text",
+            "content": "Kjernen i livssynshumanismen er at mennesket står i sentrum. Ikke fordi mennesket er fullkomment, men fordi det er mennesker som må finne ut av ting selv. Vi har ingen fasit å slå opp i."
+        },
+        {
+            "type": "text",
+            "content": "Tanken er gammel. Den greske tenkeren Protagoras sa for over 2400 år siden at mennesket er alle tings målestokk. Livssynshumanismen henter også mye fra opplysningstiden på 1700-tallet og fra naturvitenskapen på 1800-tallet, da stadig flere mente at verden kunne forklares uten å peke på noe overnaturlig (Aas, 2025). Du kan lese mer om den lange linjen i artikkelen om [humanismens historie](/samfunnskunnskap/ideer-og-verdenssyn/humanisme)."
+        },
+        {
+            "type": "text",
+            "content": "Fra dette følger tre ting som henger sammen. Mennesket har en verdi i seg selv, og skal aldri behandles bare som et redskap for andre. Kunnskap kommer fra fornuft, forskning og fri tenkning, ikke fra hellige tekster. Og reglene for hvordan vi skal leve, må mennesker finne ut av sammen."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Renessansehumanisme og livssynshumanisme er ikke det samme",
+                "content": "Renessansehumanismen var en bevegelse blant lærde på 1300- og 1400-tallet som gravde fram glemte tekster fra antikken. De aller fleste av dem var kristne. Livssynshumanismen er noe annet: et moderne livssyn for hvordan man skal leve, som ikke regner med noen gud. De to henger historisk sammen, men de er ikke samme sak (Bøhn, 2025)."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvor kommer reglene fra, hvis ikke fra Gud?"
+        },
+        {
+            "type": "text",
+            "content": "Dette er spørsmålet livssynshumanister får oftest. Hvis ingen gud har bestemt hva som er rett, hvorfor skal du da la være å lyve eller slå?"
+        },
+        {
+            "type": "text",
+            "content": "Svaret er at moralen kommer fra oss selv. Du vet hva det vil si å ha vondt, og du vet hva det vil si å ha det godt. Det gjør alle andre også. Når du skjønner at den du står overfor kan kjenne akkurat det samme som deg, har du allerede grunnlaget for en regel: ikke gjør mot andre det du ikke vil at de skal gjøre mot deg. Til det trengs det fornuft og medfølelse, men ingen befaling ovenfra."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "quote": "Vi mener at moralen hører mennesket til. Den bygger på at levende vesener kan lide og ha det godt, og den trenger ingen kilde utenfor menneskeheten.",
+                "author": "Amsterdam-erklæringen 2022, i norsk oversettelse"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Amsterdam-erklæringen er teksten som samler hva humanister over hele verden står for. Den ble vedtatt på den første verdenskongressen for humanister i 1952, og senere skrevet om i 2002 og 2022 (Humanists International, 2022). Den samme tanken finner du igjen i [artikkelen om etikk](/krle/etikk/intro), der hele poenget er å begrunne hva som er rett ut fra følger, plikter eller egenskaper, i stedet for ut fra hva noen har befalt."
+        },
+        {
+            "type": "component",
+            "name": "LivssynsByggeren",
+            "props": {
+                "title": "Bygg livssynet",
+                "intro": "Alle livssyn må svare på de samme fire spørsmålene. Bygg livssynshumanismens svar, ett spørsmål om gangen.",
+                "successTitle": "Livssynet er ferdig bygd",
+                "successText": "Fire spørsmål, fire svar. Legg merke til at ingen av spørsmålene var spesielle for et livssyn uten gud. Religionene svarer på nøyaktig de samme fire, bare med andre svar. Det er derfor livssynshumanismen regnes som et livssyn og ikke bare som mangel på tro.",
+                "slots": [
+                    {
+                        "id": "virkelighet",
+                        "tag": "Virkeligheten",
+                        "question": "Hva finnes?",
+                        "options": [
+                            {
+                                "id": "v1",
+                                "label": "Verden er skapt av én Gud, som fortsatt styrer den.",
+                                "feedback": "Slik svarer jødedom, kristendom og islam. Det er et ekte svar på spørsmålet, men ikke livssynshumanismens."
+                            },
+                            {
+                                "id": "v2",
+                                "label": "Bare den verden vi kan undersøke. Det finnes ikke noe overnaturlig bak den.",
+                                "correct": true,
+                                "feedback": "Riktig. Livssynshumanismen er et verdslig livssyn, altså et livssyn som bare regner med denne verden (Aas, 2025)."
+                            },
+                            {
+                                "id": "v3",
+                                "label": "Alt levende går gjennom mange liv i et evig kretsløp.",
+                                "feedback": "Slik svarer mange hinduer og buddhister. Livssynshumanismen svarer noe annet."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "kunnskap",
+                        "tag": "Kunnskapen",
+                        "question": "Hvordan kan vi vite noe sikkert?",
+                        "options": [
+                            {
+                                "id": "k1",
+                                "label": "Gjennom hellige tekster som er gitt til menneskene ovenfra.",
+                                "feedback": "Slik svarer mange religiøse tradisjoner. Livssynshumanismen bygger kunnskap på noe annet."
+                            },
+                            {
+                                "id": "k2",
+                                "label": "Gjennom tradisjonen, slik de eldste alltid har lært det videre.",
+                                "feedback": "Tradisjon betyr mye i mange livssyn. Men livssynshumanismen mener at alt må kunne undersøkes på nytt."
+                            },
+                            {
+                                "id": "k3",
+                                "label": "Gjennom fornuft, forskning og fri tenkning. Alt kan prøves på nytt.",
+                                "correct": true,
+                                "feedback": "Riktig. Livssynshumanismen setter fornuften og den frie tanken først, og henter mye fra naturvitenskapen (Aas, 2025)."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "etikk",
+                        "tag": "Etikken",
+                        "question": "Hva er rett og galt?",
+                        "options": [
+                            {
+                                "id": "e1",
+                                "label": "Mennesker finner det ut selv, ut fra at vi kan lide og ha det godt.",
+                                "correct": true,
+                                "feedback": "Riktig. Amsterdam-erklæringen sier at moralen bygger på at levende vesener kan lide og blomstre, og at den ikke trenger noen kilde utenfor menneskeheten."
+                            },
+                            {
+                                "id": "e2",
+                                "label": "Gud har gitt bud som sier hva som er rett.",
+                                "feedback": "Slik svarer mange religiøse. Livssynshumanismen mener vi klarer å finne fram til reglene selv."
+                            },
+                            {
+                                "id": "e3",
+                                "label": "Handlingene dine får følger for deg senere, gjennom karma.",
+                                "feedback": "Slik svarer mange hinduer, buddhister og sikher. Livssynshumanismen bruker ikke karma i begrunnelsen sin."
+                            }
+                        ]
+                    },
+                    {
+                        "id": "seremonier",
+                        "tag": "Seremoniene",
+                        "question": "Hvordan markerer vi livets store øyeblikk?",
+                        "options": [
+                            {
+                                "id": "s1",
+                                "label": "Med dåp, konfirmasjon, bryllup og begravelse i kirken.",
+                                "feedback": "Slik gjør mange kristne i Norge. Livssynshumanismen markerer de samme fire punktene, men på sin egen måte."
+                            },
+                            {
+                                "id": "s2",
+                                "label": "Vi markerer dem ikke. Slike øyeblikk trenger ingen seremoni.",
+                                "feedback": "Dette er den vanligste misforståelsen. Livssynshumanismen har tvert imot fire egne seremonier, og de er blant de mest synlige delene av livssynet."
+                            },
+                            {
+                                "id": "s3",
+                                "label": "Med egne seremonier: navnefest, konfirmasjon, vigsel og gravferd, uten noen gud.",
+                                "correct": true,
+                                "feedback": "Riktig. Dette er de fire seremoniene Human-Etisk Forbund holder (Svendsen & Aas, 2026)."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "De fire seremoniene"
+        },
+        {
+            "type": "text",
+            "content": "Livet har noen få øyeblikk som nesten alle kulturer stopper opp ved: når et barn blir født, når et barn blir ungdom, når to bestemmer seg for å dele livet, og når noen dør. Du kan lese om hvordan religionene markerer de samme punktene i artikkelen om [overgangsriter](/krle/sammenligning/overgangsriter)."
+        },
+        {
+            "type": "text",
+            "content": "Livssynshumanismen dropper ikke disse øyeblikkene. Den gir dem sin egen form. Human-Etisk Forbund holder fire seremonier som svarer til de fire punktene (Svendsen & Aas, 2026):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Navnefest: det nyfødte barnet ønskes velkommen og får navnet sitt feiret.",
+                "Humanistisk konfirmasjon: et kurs på rundt 20 timer om etikk, livssyn og samfunn, som avsluttes med en høytidelig seremoni.",
+                "Humanistisk vigsel: en bryllupsseremoni uten religiøst innhold.",
+                "Humanistisk gravferd: en avskjed som handler om livet den døde levde."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Konfirmasjonen er den mest kjente. Kurset handler om å tenke kritisk, ta gode valg og reflektere over hva som er rett og galt, med menneskerettighetene som en rød tråd (Human-Etisk Forbund, 2026). I 2022 ble nesten 13 800 ungdommer konfirmert humanistisk, altså litt over 21 prosent av alle norske 15-åringer (Elstad mfl., 2026). Én av fem tenåringer i Norge går altså gjennom et livssynskurs uten gud."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "livsveien-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdommer i en lys sal under en humanistisk konfirmasjonsseremoni",
+            "caption": "Humanistisk konfirmasjon i dag. Kurset varer rundt 20 timer og handler om etikk, livssyn og samfunn."
+        },
+        {
+            "type": "header",
+            "text": "Human-Etisk Forbund"
+        },
+        {
+            "type": "text",
+            "content": "Biologen Kristian Horn samlet i 1956 rundt 400 mennesker til et stiftelsesmøte. Der ble Human-Etisk Forbund til. I 2026 har forbundet omtrent 180 000 medlemmer og er den klart største organisasjonen for livssynshumanister i Norge (Svendsen & Aas, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Forbundet gjør to ting. Det arrangerer de fire seremoniene over hele landet. Og det arbeider politisk for at staten skal behandle alle livssyn likt, enten de har en gud i seg eller ikke. Internasjonalt hører norske humanister til i Humanists International, en paraplyorganisasjon som ble stiftet i 1952 og som lenge het IHEU."
+        },
+        {
+            "type": "header",
+            "text": "Ikke det samme som å være imot religion"
+        },
+        {
+            "type": "text",
+            "content": "Her er det lett å ta feil. Livssynshumanisme betyr ikke at man bruker tiden sin på å angripe religion. Det er et livssyn man lever etter, ikke en kampanje mot andres."
+        },
+        {
+            "type": "text",
+            "content": "Det finnes også ulike syn innad. Store norske leksikon skiller mellom sekulær humanisme, som ikke regner med noe overnaturlig, og religiøs humanisme, der mennesker holder fast på de humanistiske verdiene samtidig som de tror på Gud (Bøhn, 2025). Mange kristne, muslimer og jøder kaller seg humanister i den siste betydningen. Grunnloven vår sier til og med at verdiene i Norge bygger på både den kristne og den humanistiske arven. De to står altså side om side i selve fundamentet for landet."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To hender som holder hverandre foran en enkel lys sal uten religiøse symboler",
+            "caption": "En humanistisk vigsel. Seremonirommet er bevisst uten religiøse symboler."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor dette er verdt å kunne"
+        },
+        {
+            "type": "text",
+            "content": "Når du skal sammenligne livssyn, er det fristende å sette religionene i én bunke og alle som ikke tror i en annen. Men det siste er ingen bunke. En som ikke tror på noen gud, kan likevel ha gjennomtenkte svar på hvor kunnskap kommer fra, hva som er rett, og hvordan man tar farvel med noen man er glad i."
+        },
+        {
+            "type": "text",
+            "content": "Det er nettopp dette som gjør livssynshumanismen til et livssyn og ikke bare et fravær av tro. Den svarer på de samme fire spørsmålene som religionene gjør. Den markerer de samme fire øyeblikkene i livet. Forskjellen ligger ikke i hvilke spørsmål som stilles, men i hvor svarene hentes fra. Livssynshumanismen henter dem fra mennesker. Vil du se hvordan filosofer har jobbet med de samme spørsmålene, finner du dem i [artikkelen om filosofi](/krle/filosofi/intro)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det at livssynshumanismen er et verdslig livssyn?",
+                    "Når og hvor ble den første humanistiske konfirmasjonen i Norge holdt, og hvor mange deltok?",
+                    "Hvilke fire seremonier holder Human-Etisk Forbund?",
+                    "Hva er forskjellen på renessansehumanisme og livssynshumanisme?"
+                ],
+                "reflekter": [
+                    "Livssynshumanismen sier at moralen ikke trenger noen kilde utenfor menneskene. Hva er styrken ved det svaret, og hva er den mest nærliggende innvendingen?",
+                    "Hvorfor tror du livssynshumanismen har beholdt seremonier i det hele tatt, når den har fjernet gudstroen fra dem?",
+                    "Artikkelen sier at en som ikke tror, ikke dermed mangler et livssyn. Forklar hva som menes med det, med egne ord.",
+                    "Grunnloven sier at verdiene i Norge bygger på både kristen og humanistisk arv. Hva kan det bety i praksis for en skole?"
+                ],
+                "gaaVidere": [
+                    "Lag en tabell med de fire spørsmålene fra Livssynsbyggeren. Fyll inn hvordan livssynshumanismen svarer, og hvordan én religion du kan godt svarer. Skriv til slutt én setning om hva som er likt.",
+                    "Skriv et kort innlegg på fem til åtte setninger der du svarer på påstanden «uten Gud finnes det ingen grunn til å være god». Bruk minst ett argument fra artikkelen.",
+                    "Undersøk hvordan konfirmasjonen markeres i din egen kommune. Hvor mange velger humanistisk, og hvor mange velger kirkelig?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr det at livssynshumanismen er verdslig?",
+                        "options": [
+                            "At den er imot alle religioner",
+                            "At den bare regner med denne verden og ikke med noe overnaturlig",
+                            "At den bare gjelder i Norge",
+                            "At den handler om penger og materielle ting"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Verdslig, eller sekulær, betyr at livssynet ikke regner med noe overnaturlig. Det betyr ikke at man er imot dem som tror."
+                    },
+                    {
+                        "question": "Hvor henter livssynshumanismen begrunnelsen for hva som er rett og galt?",
+                        "options": [
+                            "Fra hellige tekster",
+                            "Fra karma og gjenfødsel",
+                            "Fra mennesker selv, ut fra at vi kan lide og ha det godt",
+                            "Fra det staten til enhver tid bestemmer"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Amsterdam-erklæringen sier at moralen bygger på evnen levende vesener har til å lide og blomstre, og at den ikke trenger noen kilde utenfor menneskeheten."
+                    },
+                    {
+                        "question": "Når ble Human-Etisk Forbund stiftet, og av hvem?",
+                        "options": [
+                            "I 1951, av en gruppe konfirmanter",
+                            "I 1956, av biologen Kristian Horn og andre",
+                            "I 1952, av FN",
+                            "I 1972, av Stortinget"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Rundt 400 mennesker møtte opp på stiftelsesmøtet i 1956. Den første humanistiske konfirmasjonen kom fem år tidligere, i 1951."
+                    },
+                    {
+                        "question": "Hvilke fire seremonier holder Human-Etisk Forbund?",
+                        "options": [
+                            "Dåp, nattverd, bryllup og begravelse",
+                            "Navnefest, konfirmasjon, vigsel og gravferd",
+                            "Bare konfirmasjon",
+                            "Navnefest, dåp, konfirmasjon og vigsel"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "De fire markerer de samme punktene i livet som religionene markerer, men uten religiøst innhold."
+                    },
+                    {
+                        "question": "Hvorfor sier vi at livssynshumanisme er et livssyn, og ikke bare mangel på tro?",
+                        "options": [
+                            "Fordi den har egne hellige tekster",
+                            "Fordi den er størst i Norge",
+                            "Fordi den gir egne svar på de samme store spørsmålene som religionene stiller",
+                            "Fordi den er nevnt i Grunnloven"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Et livssyn er et samlet svar på hva som finnes, hva som er sant, hva som er rett, og hvordan livets store øyeblikk markeres. Livssynshumanismen svarer på alle fire."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aas, P. A. (2025). *Livssynshumanisme*. Store norske leksikon. Hentet 15.08.2026 fra [snl.no/livssynshumanisme](https://snl.no/livssynshumanisme)",
+                    "Bøhn, E. D. (2025). *Humanisme*. Store norske leksikon. Hentet 15.08.2026 fra [snl.no/humanisme](https://snl.no/humanisme)",
+                    "Svendsen, L. F. H. & Aas, P. A. (2026). *Human-Etisk Forbund*. Store norske leksikon. Hentet 15.08.2026 fra [snl.no/Human-Etisk_Forbund](https://snl.no/Human-Etisk_Forbund)",
+                    "Elstad, H., Aas, P. A., Thomassen, M. & Løøv, M. (2026). *Konfirmasjon*. Store norske leksikon. Hentet 15.08.2026 fra [snl.no/konfirmasjon](https://snl.no/konfirmasjon)",
+                    "Humanists International. (2022). *The Amsterdam Declaration 2022*. Hentet 15.08.2026 fra [humanists.international](https://humanists.international/what-is-humanism/the-amsterdam-declaration/)",
+                    "Human-Etisk Forbund. (2026). *Alt om humanistisk konfirmasjon*. Hentet 15.08.2026 fra [human.no](https://www.human.no/seremonier/humanistisk-konfirmasjon/alt-om-humanistisk-konfirmasjon)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
