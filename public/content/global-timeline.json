@@ -9305,6 +9305,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "livssynshumanisme",
+      "title": "Livssynshumanisme: mennesket som målestokk",
+      "description": "Et livssyn uten gud, med egne svar på de store spørsmålene og egne seremonier for livets fire vendepunkter.",
+      "startDate": 1951,
+      "endDate": 1956,
+      "displayDate": "1951-1956",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "livssyn",
+      "link": "/krle/livssyn/livssynshumanisme",
+      "tags": [
+        "livssyn",
+        "livssynshumanisme",
+        "etikk",
+        "human-etisk-forbund",
+        "norge",
+        "seremonier"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "korea-dmz-etablert",
       "title": "DMZ etableres i Korea",
       "description": "Koreakrigen avsluttes med en våpenhvile. En 250 km lang demilitarisert sone deler halvøya. Ingen fredsavtale er signert.",

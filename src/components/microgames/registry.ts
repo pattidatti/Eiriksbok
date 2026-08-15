@@ -16,6 +16,7 @@ const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
+const Livsveien3D = lazy(() => import('./Livsveien3D'));
 const Kornskuta3D = lazy(() => import('./Kornskuta3D'));
 const Vikinghjelmen3D = lazy(() => import('./Vikinghjelmen3D'));
 const Vesterled3D = lazy(() => import('./Vesterled3D'));
@@ -247,7 +248,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Finn Howland',
         description:
             'Amelia Earhart skulle finne Howland - en øy bare 2,4 km lang - etter 4000 km over åpent hav. Juster kursen med spaken og se hvor mange kilometer du bommer for hver lille grad du er feil. Lyspæren: en feil på bare én grad bommer med rundt 70 km, og øya er en prikk i havet. Uten radiopeiling var oppgaven nesten umulig, og derfor er forsvinningen fortsatt en gåte.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./EarhartStillehavet3D'),
         Component: EarhartStillehavet3D as never,
     },
@@ -274,7 +275,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Den lange vinteren',
         description:
             'Dra i årstallet fra 985 til 1450 og se den norrøne gården på Grønland sakte tømmes: beitet blir hvitt, sauene blir færre, det siste skipet fra Norge blir borte, og til slutt ligger gården tom. Lyspæren: slutten for nordboerne kom ikke som ett brått slag, men som en lang vinter der kaldere klima, tapt handel og isolasjon virket sammen over hundre år.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./DenLangeVinteren3D'),
         Component: DenLangeVinteren3D as never,
     },
@@ -346,7 +347,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Slaget ved Fimreite',
         description:
             'Sognefjorden, 15. juni 1184. Kong Magnus Erlingsson har lenket skipene sine sammen på rekke for å stå stødig i kamp. Dra birkebeiner-skipet ditt ut til flåten, og klikk kongsskipet Mariasuden for å gå til angrep. Se hvordan lenken som skulle gjøre flåten sterk, drar naboskipene ned i dypet sammen med den. Lyspæren: det som skal gjøre deg trygg, kan bli fellen som senker deg.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./Fimreite3D'),
         Component: Fimreite3D as never,
     },
@@ -1156,7 +1157,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Streikefronten',
         description:
             'Rekrutter alle fem arbeidergruppene til streiken i en 1890-talls fabrikk i Kristiania. Klikk på gruppene og se dem marsjere til streikefronten. Når alle er med, stanser fabrikken. Lyspæren: alene kan du klage - men organisert kan du endre.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./Streikefronten3D'),
         Component: Streikefronten3D as never,
     },
@@ -1219,7 +1220,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Bygg argumentbroen',
         description:
             'Et bredt gap skiller Belegg-tårnet fra Påstand-tårnet. Tre planker svever i lufta - klikk den som virkelig forklarer hvorfor belegget støtter påstanden. Riktig planke glir på plass og broen holder. Feil planke faller i kløften. Lyspæren: uten forklaringen henger påstand og belegg på hver sin side av tomrommet.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./Argumentbroen3D'),
         Component: Argumentbroen3D as never,
     },
@@ -1426,7 +1427,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Samsaras kretsløp',
         description:
             'Kjenn buddhismens kjerneinnsikt på kroppen: tre orbiterende gifter - Grådighet, Hat og Uvitenhet - holder sjelen fanget i Samsaras kretsløp. Klikk bort én gift om gangen og se sjelen lysne. Når alle tre er sluknet, oppnår sjelen Nirvana. Lyspæren: "Nirvana" betyr bokstavelig "utblåsing" - som å blåse ut en flamme.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./SamsaraSyklusen3D'),
         Component: SamsaraSyklusen3D as never,
     },
@@ -1453,7 +1454,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Atman søker Brahman',
         description:
             'Kjenn hinduismens kjerneidé på kroppen: Atman (sjelen) kretser rundt Brahman (det universelle) fanget i Samsara. Aktiver de tre yoga-veiene - Karma Yoga, Jnana Yoga og Bhakti Yoga - og se sjelen spirale innover og smelte inn i Brahman. Lyspæren: Atman og Brahman er identiske - gjenforeningen ER Moksha.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./MokshaVeien3D'),
         Component: MokshaVeien3D as never,
     },
@@ -1462,7 +1463,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Vekten i Wien',
         description:
             'Etter Napoleon var Frankrike blitt en kjempe. Dra de fire stormaktene Storbritannia, Russland, Preussen og Østerrike opp på den tomme siden av vippevekten, og se at den først blir vannrett når alle fire er på plass. Lyspæren: det krevde flere stormakter sammen å balansere én sterk stat, og denne maktbalansen holdt Europa stabilt i nesten hundre år.',
-        estimatedSeconds: 90,
+        estimatedSeconds: 110,
         loader: () => import('./VektenIWien3D'),
         Component: VektenIWien3D as never,
     },
@@ -1807,6 +1808,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 170,
         loader: () => import('./Gudsformer3D'),
         Component: Gudsformer3D as never,
+    },
+    'livsveien-3d': {
+        id: 'livsveien-3d',
+        title: 'Livsveien',
+        description:
+            'En person går fra fødsel til livets slutt langs en vei, og hen stopper ikke opp for å vente på deg. Fire milepæler står ubemerket langs veien. Dra riktig seremoni ut til hver av dem før vandreren rekker fram, ellers passerer øyeblikket i stillhet. Lyspæra: livssynshumanismen markerer nøyaktig de samme fire punktene i livet som religionene gjør, men det er mennesker som gir øyeblikket vekt.',
+        estimatedSeconds: 110,
+        loader: () => import('./Livsveien3D'),
+        Component: Livsveien3D as never,
     },
     'sydpolsferden-3d': {
         id: 'sydpolsferden-3d',

@@ -1,5 +1,5 @@
 {
-  "buildId": 1512412622756,
+  "buildId": 266577507274448,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3090,6 +3090,9 @@
     "sokrates": [
       "content/krle/filosofi/sokrates.json"
     ],
+    "livssynshumanisme": [
+      "content/krle/livssyn/livssynshumanisme.json"
+    ],
     "bahai-bonn": [
       "content/krle/religion/bahai/bonn/artikkel.json"
     ],
@@ -5694,6 +5697,7 @@
     "krle/filosofi/rothbard": "content/krle/filosofi/rothbard.json",
     "krle/filosofi/rousseau": "content/krle/filosofi/rousseau.json",
     "krle/filosofi/sokrates": "content/krle/filosofi/sokrates.json",
+    "krle/livssyn/livssynshumanisme": "content/krle/livssyn/livssynshumanisme.json",
     "krle/religion/bahai/bonn": "content/krle/religion/bahai/bonn/artikkel.json",
     "krle/religion/bahai/frelse": "content/krle/religion/bahai/frelse/artikkel.json",
     "krle/religion/bahai/grunnleggere": "content/krle/religion/bahai/grunnleggere/artikkel.json",
