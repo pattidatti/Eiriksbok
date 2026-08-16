@@ -1,0 +1,317 @@
+{
+    "id": "ateisme-og-agnostisme",
+    "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
+    "subject": "krle",
+    "topic": "livssyn",
+    "layout": "rich",
+    "year": "1859-1895",
+    "category": "Livssyn",
+    "readTime": "11 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "doctrinal",
+    "comparison_tags": ["livssyn", "gudsbilde", "doctrinal"],
+    "kompetansemaal": ["rle-10-3", "rle-10-6"],
+    "details": [
+        "Ateisme handler om hva du tror: en ateist tror ikke at det finnes noen gud.",
+        "Agnostisme handler om hva mennesker kan vite: en agnostiker mener at ingen kan vite det sikkert.",
+        "Fordi de svarer på hvert sitt spørsmål, kan du være ateist og agnostiker samtidig.",
+        "Ordet agnostiker ble laget av briten Thomas Henry Huxley på 1800-tallet.",
+        "Ateisme er ikke et helt livssyn. Det er svaret på ett enkelt spørsmål."
+    ],
+    "concepts": [
+        {
+            "id": "ateisme",
+            "term": "Ateisme",
+            "definition": "Fravær av gudstro, ut fra en antakelse om at Gud eller guder ikke finnes. Ateisme er et svar på ett spørsmål, ikke et helt livssyn."
+        },
+        {
+            "id": "agnostisisme",
+            "term": "Agnostisme",
+            "definition": "Standpunktet at hvis noe ligger utenfor det mennesker kan erfare, kan vi verken vite om det finnes eller vite noe om det. Handler om kunnskap, ikke om tro."
+        },
+        {
+            "id": "teisme",
+            "term": "Teisme",
+            "definition": "Troen på at det finnes en gud eller flere guder. Motstykket til ateisme."
+        },
+        {
+            "id": "sekularisering",
+            "term": "Sekularisering",
+            "definition": "At religion mister innflytelse over enkeltmennesker, kultur og samfunn. Skjer både i lovverket, i organisasjoner og hos den enkelte."
+        },
+        {
+            "id": "livssynssamfunn",
+            "term": "Livssynssamfunn",
+            "definition": "En organisasjon som samler mennesker rundt et livssyn uten religiøs tro, og som kan få offentlig støtte på lik linje med trossamfunn."
+        }
+    ],
+    "createdDate": "2026-08-16T00:00:00Z",
+    "factChecked": "2026-08-16",
+    "content": [
+        {
+            "type": "text",
+            "content": "I år 399 fvt. sto en gammel mann foran en domstol i Athen. Sokrates var anklaget for ikke å godta gudene byen trodde på. Han nektet selv for anklagen, men ble dømt til døden likevel (Fastvold, 2026). Å la være å tro var ikke en privat mening. Det var en forbrytelse."
+        },
+        {
+            "type": "text",
+            "content": "I dag kan du si i klasserommet at du ikke tror på noen gud, uten at det skjer deg noe. Men to ord blir stadig blandet sammen når folk snakker om dette: ateisme og agnostisme. De ligner på hverandre, og mange tror de betyr omtrent det samme. Det gjør de ikke. De svarer på hvert sitt spørsmål, og når du har sett forskjellen, blir hele samtalen om tro mye lettere å følge."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En gammel mann står foran en domstol av borgere i antikkens Athen",
+            "caption": "Athen, år 399 fvt. Sokrates ble anklaget for ikke å godta byens guder, og dømt til døden."
+        },
+        {
+            "type": "header",
+            "text": "To ord, to helt ulike spørsmål"
+        },
+        {
+            "type": "text",
+            "content": "Ateisme betyr fravær av gudstro, ut fra en antakelse om at Gud eller guder ikke finnes (Fastvold, 2026). En ateist svarer altså nei på dette spørsmålet: tror du at det finnes en gud?"
+        },
+        {
+            "type": "text",
+            "content": "Agnostisme handler om noe helt annet. En agnostiker mener at hvis noe ligger utenfor det vi kan erfare, så kan vi verken vite om det finnes, eller vite noe om det hvis det skulle finnes (Tjønneland, 2025). Legg merke til hva dette ikke er. Det er ikke et svar på om det finnes en gud. Det er et svar på om vi kan vite det."
+        },
+        {
+            "type": "text",
+            "content": "Ordet agnostiker ble laget av den britiske naturforskeren Thomas Henry Huxley (1825-1895), og fikk stor betydning i religionsdebatten på 1800-tallet (Tjønneland, 2025). Huxley var en av dem som kjempet hardest for Charles Darwins utviklingslære, og ble kalt Darwins bulldog (Løkken, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Tro og viten er to akser, ikke én linje"
+        },
+        {
+            "type": "text",
+            "content": "Sett de to spørsmålene ved siden av hverandre. Det ene er: hva tror du? Det andre er: hva kan mennesker vite? Dette er to ulike spørsmål, og du svarer på dem hver for seg."
+        },
+        {
+            "type": "text",
+            "content": "Derfor er ateisme og agnostisme ikke to punkter på samme linje, slik mange tror. De er to akser. Du kan tro på Gud og samtidig mene at ingen kan vite det sikkert. Og du kan la være å tro, og samtidig mene at ingen kan vite det sikkert. Da er du både ateist og agnostiker på én gang, og det er ikke selvmotsigende i det hele tatt."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv i rutenettet under. Sett ett svar på hvert spørsmål, og se hvor du havner."
+        },
+        {
+            "type": "component",
+            "name": "TroOgVitenMatrisen",
+            "props": {
+                "title": "Tro og viten: to spørsmål, ikke ett"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Ruten nederst til høyre er kanskje den mest interessante. Kjente ateister som Bertrand Russell (1872-1970) og Richard Dawkins (født 1941) godtar at det verken går an å bevise eller motbevise at Gud finnes. Likevel mener de at sjansen for at en gud finnes er så forsvinnende liten at det er rimelig å leve som om ingen guder finnes (Fastvold, 2026). Strengt tatt er de altså agnostiske ateister."
+        },
+        {
+            "type": "header",
+            "text": "Hvor går grensa for hva vi kan undersøke?"
+        },
+        {
+            "type": "text",
+            "content": "Agnostismen bygger på en eldre tanke. Filosofen Immanuel Kant mente at de aller største spørsmålene ligger utenfor det fornuften kan avgjøre, og flere britiske tenkere bygde videre på ham (Tjønneland, 2025). Du kan lese mer om ham i artikkelen om [Kant](/krle/filosofi/kant)."
+        },
+        {
+            "type": "text",
+            "content": "Tanken er enklere enn den høres ut. Noen spørsmål kan vi avgjøre med målinger. Hvor langt er det til månen? Hvor gammel er en stein? Hvor mange bor i Norge? Vi måler, og alle som måler riktig får samme svar. Andre spørsmål har ingen måling som kan avgjøre dem. Finnes det en gud? Hva skjer etter døden? Er det galt å lyve?"
+        },
+        {
+            "type": "text",
+            "content": "Prøv å trekke den grensa selv i spillet under. Dra hvert spørsmål ut på målerplatået eller ut i tåka."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "taakegrensa-3d"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som havnet på den andre siden av grensa. Ikke bare spørsmålet om Gud, men også spørsmålet om hva som er rett og galt. Det er et viktig poeng. At noe ikke kan måles, betyr ikke at det er uviktig eller tullete. Det betyr bare at målebåndet ikke rekker dit. En agnostiker sier ikke at spørsmålet om Gud er dumt. En agnostiker sier at det ligger utenfor rekkevidde."
+        },
+        {
+            "type": "header",
+            "text": "Hvordan ideene vokste fram"
+        },
+        {
+            "type": "text",
+            "content": "Tanken om at verden kan forklares uten guder er svært gammel. Naturfilosofen Anaxagoras (500-428 fvt.) avviste de religiøse mytene, og Epikur (341-270 fvt.) lærte at sjelen løses opp når vi dør (Fastvold, 2026). I middelalderen så folk stort sett på ateisme som ufornuftig, mer enn som kjetteri."
+        },
+        {
+            "type": "text",
+            "content": "På 1600-tallet begynte Galileo Galilei og Isaac Newton å rokke ved kirkens bilde av verdensrommet. Og i 1859 ga Charles Darwin ut boka Om artenes opprinnelse, som for første gang ga et vitenskapelig grunnlag for å forstå livet uten en skaper (Fastvold, 2026). Det var i årene etter dette at Huxley trengte et nytt ord, og laget agnostiker."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Et viktoriansk studerkammer med bøker, en globus og et oppslått verk om arter",
+            "caption": "London, 1859. Da Darwin ga ut Om artenes opprinnelse, endret debatten om tro og vitenskap seg for alltid."
+        },
+        {
+            "type": "header",
+            "text": "Er ateisme et livssyn?"
+        },
+        {
+            "type": "text",
+            "content": "Her går mange i en felle. Et livssyn er en sammenhengende oppfatning av hva menneskelivet er, hva det er verdt, og hvordan det bør leves (Tranøy, 2024). Et livssyn svarer på mange spørsmål samtidig."
+        },
+        {
+            "type": "text",
+            "content": "Ateisme gjør ikke det. Ateisme er bare antakelsen om at det ikke finnes guder, altså ett spørsmål blant mange om tilværelsen (Fastvold, 2026). Ateismen sier ingenting om hva som er rett og galt, hva som gir livet mening, eller hvordan du bør markere at et barn blir født."
+        },
+        {
+            "type": "text",
+            "content": "Vil du ha svar på alt dette uten en gud, trenger du et helt livssyn. Det er nettopp det [livssynshumanismen](/krle/livssyn/livssynshumanisme) er. Der ateisme er et nei til ett spørsmål, er livssynshumanisme et ja til en hel måte å forstå livet på. Blander man de to sammen, får ateister spørsmål de aldri har påstått at de kan svare på."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Tre ord verdt å holde fra hverandre",
+                "content": "Teisme er troen på at det finnes en gud eller flere guder. Ateisme er fraværet av den troen. Agnostisme er noe annet enn begge to: den sier ikke hva som finnes, men hva vi kan vite. Derfor er det ikke rart at samme person kan være både ateist og agnostiker (Fastvold, 2026; Tjønneland, 2025)."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Norge i dag"
+        },
+        {
+            "type": "text",
+            "content": "Over 800 000 mennesker i Norge er medlem i et tros- eller livssynssamfunn utenfor Den norske kirke (Statistisk sentralbyrå, 2026). Av disse hører rundt 159 000 til livssynssamfunn, altså samfunn uten religiøs tro. Den gruppa vokste med 8,5 prosent på bare ett år (Statistisk sentralbyrå, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig endrer selve samfunnet seg. Sekularisering betyr at religion mister innflytelse over enkeltmennesker, kultur og samfunn (Løøv & Kværne, 2025). Det skjer på flere nivåer på én gang: i lovverket, i organisasjoner og hos den enkelte. I Norge ble Den norske kirke formelt skilt fra staten i 2017 (Løøv & Kværne, 2025). En spørreundersøkelse fra 2018 viste at 26 prosent av de spurte ikke trodde på Gud (Fastvold, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I Skandinavia er det fullt akseptert å være ateist, så lenge det følges av humanistiske og demokratiske verdier. I mange land utenfor Vesten er det fortsatt strengt forbudt (Fastvold, 2026). Friheten du har til å svare hva du vil på de to spørsmålene i denne artikkelen, er altså ikke selvsagt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En norsk skolegård der ungdommer i ulike klær står og prater sammen",
+            "caption": "I Norge kan elever i samme klasse svare helt ulikt på begge spørsmålene, uten at det får følger for noen."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor dette er verdt å kunne"
+        },
+        {
+            "type": "text",
+            "content": "Når du snakker om tro med noen som tror annerledes enn deg, er det lett å kjøre seg fast med én gang. Du kan ikke bevise at Gud finnes. Du kan ikke bevise at han ikke finnes. Der stopper samtalen."
+        },
+        {
+            "type": "text",
+            "content": "Skiller du de to spørsmålene, kommer du videre. Spør først: hva tror du? Spør så: mener du at dette er noe man kan vite, eller er det noe du velger å tro? Svært mange, både troende og ikke-troende, svarer det samme på det siste spørsmålet. Der ligger et felles utgangspunkt de færreste oppdager at de har."
+        },
+        {
+            "type": "text",
+            "content": "Det er også derfor det å [sammenligne gudsbilder](/krle/sammenligning/gudsbilde) i ulike religioner er noe helt annet enn å diskutere om Gud finnes. Det første kan undersøkes. Det andre ligger i tåka."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva svarer en ateist nei på?",
+                    "Hva er det agnostismen egentlig uttaler seg om, hvis det ikke er om Gud finnes?",
+                    "Hvem laget ordet agnostiker, og i hvilket århundre?",
+                    "Hvor mange i Norge er medlem i et livssynssamfunn, ifølge Statistisk sentralbyrå?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor en person kan være både ateist og agnostiker samtidig.",
+                    "Artikkelen sier at ateisme ikke er et livssyn. Hva mangler ateismen, som et livssyn må ha?",
+                    "I spillet havnet spørsmålet «er det galt å lyve?» utenfor det målbare. Hva sier det om forholdet mellom vitenskap og moral?",
+                    "Russell og Dawkins mener at gudsspørsmålet ikke kan avgjøres, men lever likevel som om ingen gud finnes. Er det et fornuftig standpunkt? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Lag rutenettet fra artikkelen på et ark. Skriv inn i hver rute ett eksempel på en person eller en gruppe som kunne stått der, og én setning om hvorfor.",
+                    "Skriv et innlegg på fem til åtte setninger om påstanden «ateisme er også en slags tro». Bruk minst ett argument fra artikkelen.",
+                    "Intervju to voksne. Still dem begge de to spørsmålene fra rutenettet, hver for seg. Skriv ned hva de svarte, og om noe overrasket deg."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva handler ateisme om?",
+                        "options": [
+                            "Om vi kan vite noe sikkert",
+                            "Om man tror at det finnes en gud eller ikke",
+                            "Om man er medlem i et livssynssamfunn",
+                            "Om man er imot religion"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Ateisme er fravær av gudstro, ut fra en antakelse om at Gud eller guder ikke finnes. Det er et svar på spørsmålet om hva du tror."
+                    },
+                    {
+                        "question": "Hva mener en agnostiker?",
+                        "options": [
+                            "At det helt sikkert finnes en gud",
+                            "At det helt sikkert ikke finnes noen gud",
+                            "At mennesker ikke kan vite om det finnes en gud",
+                            "At alle religioner er like sanne"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Agnostisme handler om kunnskap. Ligger noe utenfor det vi kan erfare, kan vi verken vite om det finnes eller vite noe om det."
+                    },
+                    {
+                        "question": "Hvorfor kan en person være både ateist og agnostiker?",
+                        "options": [
+                            "Fordi ordene betyr det samme",
+                            "Fordi de svarer på to ulike spørsmål: hva du tror, og hva vi kan vite",
+                            "Fordi ingen bryr seg om forskjellen",
+                            "Fordi ateisme er en religion"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Tro og viten er to akser. Du kan la være å tro, og samtidig mene at ingen kan vite det sikkert."
+                    },
+                    {
+                        "question": "Hvem laget ordet agnostiker?",
+                        "options": [
+                            "Charles Darwin",
+                            "Immanuel Kant",
+                            "Thomas Henry Huxley",
+                            "Bertrand Russell"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Den britiske naturforskeren Thomas Henry Huxley (1825-1895) laget begrepet, og det ble viktig i religionsdebatten på 1800-tallet."
+                    },
+                    {
+                        "question": "Hvorfor er ateisme ikke et helt livssyn?",
+                        "options": [
+                            "Fordi for få mennesker er ateister",
+                            "Fordi den bare svarer på ett spørsmål, og ikke sier noe om mening eller moral",
+                            "Fordi den ikke er godkjent av staten",
+                            "Fordi den ikke har noen seremonier"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Ateisme er bare antakelsen om at det ikke finnes guder. Et livssyn må i tillegg svare på hva livet er verdt og hvordan det bør leves. Livssynshumanismen gjør det."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Fastvold, M. (2026). *Ateisme*. Store norske leksikon. Hentet 16.08.2026 fra [snl.no/ateisme](https://snl.no/ateisme)",
+                    "Tjønneland, E. (2025). *Agnostisisme*. Store norske leksikon. Hentet 16.08.2026 fra [snl.no/agnostisisme](https://snl.no/agnostisisme)",
+                    "Tranøy, K. E. (2024). *Livssyn*. Store norske leksikon. Hentet 16.08.2026 fra [snl.no/livssyn](https://snl.no/livssyn)",
+                    "Løøv, M. & Kværne, P. (2025). *Sekularisering*. Store norske leksikon. Hentet 16.08.2026 fra [snl.no/sekularisering](https://snl.no/sekularisering)",
+                    "Løkken, S. (2026). *Thomas Henry Huxley*. Store norske leksikon. Hentet 16.08.2026 fra [snl.no/Thomas_Henry_Huxley](https://snl.no/Thomas_Henry_Huxley)",
+                    "Statistisk sentralbyrå. (2026). *Trus- og livssynssamfunn utanfor Den norske kyrkja*. Hentet 16.08.2026 fra [ssb.no](https://www.ssb.no/kultur-og-fritid/religion-og-livssyn/statistikk/trus-og-livssynssamfunn-utanfor-den-norske-kyrkja)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

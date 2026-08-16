@@ -1046,6 +1046,10 @@
       "count": 12
     },
     {
+      "tag": "gudsbilde",
+      "count": 12
+    },
+    {
       "tag": "grammatikk",
       "count": 12
     },
@@ -1111,10 +1115,6 @@
     },
     {
       "tag": "demografi",
-      "count": 10
-    },
-    {
-      "tag": "gudsbilde",
       "count": 10
     },
     {
@@ -1635,6 +1635,10 @@
     },
     {
       "tag": "utvandring",
+      "count": 4
+    },
+    {
+      "tag": "livssyn",
       "count": 4
     },
     {
@@ -2626,6 +2630,18 @@
       "count": 2
     },
     {
+      "tag": "ateisme",
+      "count": 2
+    },
+    {
+      "tag": "agnostisme",
+      "count": 2
+    },
+    {
+      "tag": "sekularisering",
+      "count": 2
+    },
+    {
       "tag": "lincoln",
       "count": 2
     },
@@ -2815,10 +2831,6 @@
     },
     {
       "tag": "ansvar",
-      "count": 2
-    },
-    {
-      "tag": "livssyn",
       "count": 2
     },
     {

@@ -30,6 +30,7 @@ const SvanvikenKontrakten3D = lazy(() => import('./SvanvikenKontrakten3D'));
 const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
+const Taakegrensa3D = lazy(() => import('./Taakegrensa3D'));
 const Gudsformer3D = lazy(() => import('./Gudsformer3D'));
 const AnandKaraj3D = lazy(() => import('./AnandKaraj3D'));
 const LangarKjokkenet3D = lazy(() => import('./LangarKjokkenet3D'));
@@ -971,6 +972,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./TidensFormer3D'),
         Component: TidensFormer3D as never,
+    },
+    'taakegrensa-3d': {
+        id: 'taakegrensa-3d',
+        title: 'Tåkegrensa',
+        description:
+            'Dra seks spørsmål ut på målerplatået eller ut i tåka, og finn grensa for hva mennesker kan undersøke. Bommer du tre ganger, ruller tåka over platået. Slik kjenner du på hva agnostikere mener med at noe ikke lar seg vite.',
+        estimatedSeconds: 140,
+        loader: () => import('./Taakegrensa3D'),
+        Component: Taakegrensa3D as never,
     },
     'anand-karaj-3d': {
         id: 'anand-karaj-3d',
