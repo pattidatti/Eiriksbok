@@ -6427,6 +6427,31 @@
       ]
     },
     {
+      "id": "ateisme-og-agnostisme",
+      "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
+      "description": "Ateisme handler om hva du tror, agnostisme om hva vi kan vite. To ulike spørsmål som stadig blandes sammen.",
+      "startDate": 1859,
+      "endDate": 1895,
+      "displayDate": "1859-1895",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "livssyn",
+      "link": "/krle/livssyn/ateisme-og-agnostisme",
+      "tags": [
+        "livssyn",
+        "ateisme",
+        "agnostisme",
+        "gudsbilde",
+        "sekularisering",
+        "norge"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "faderen",
       "title": "Faderen",
       "description": "Utgitt av Bjørnstjerne Bjørnson",

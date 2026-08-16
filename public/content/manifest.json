@@ -9142,6 +9142,21 @@
                 "seremonier"
               ],
               "createdDate": "2026-08-15T00:00:00Z"
+            },
+            {
+              "id": "ateisme-og-agnostisme",
+              "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
+              "description": "Ateisme handler om hva du tror, agnostisme om hva vi kan vite. To ulike spørsmål som stadig blandes sammen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "livssyn",
+                "ateisme",
+                "agnostisme",
+                "gudsbilde",
+                "sekularisering",
+                "norge"
+              ],
+              "createdDate": "2026-08-16T00:00:00Z"
             }
           ]
         },
