@@ -90,8 +90,13 @@ export interface ManifestTopicEntry {
 export interface ManifestTopic {
     slug: string;
     label: string;
+    // Kortform der etiketten er for lang (kolonneoverskrifter i innholdskartet)
+    short?: string;
     count: number;
     total: number;
+    // Tema som viste seg å være et annet navn på dette (samme artikler).
+    // Gamle lenker som /tema/doden løses videre hit.
+    aliases?: string[];
     entries: ManifestTopicEntry[];
 }
 

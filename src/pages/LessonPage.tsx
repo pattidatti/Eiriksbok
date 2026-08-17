@@ -24,6 +24,7 @@ import { LearningPathErrorState } from '../components/content/LearningPathErrorS
 import { LessonNotFoundError } from '../utils/contentLoader';
 import type { LessonNav } from '../components/LessonNavFooter';
 import { ArticleContent } from '../components/ArticleContent';
+import { ReligionCrossLinks } from '../components/religion/ReligionCrossLinks';
 
 
 const getFirstTextContent = (blocks: ContentBlock[]): string | undefined => {
@@ -341,6 +342,13 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                     event={articleData}
                     sidebarConfig={sidebarConfig}
                     lessonNav={lessonNav}
+                    footerSlot={
+                        subjectId === 'krle' && topicId === 'religion' && subTopicId ? (
+                            <ReligionCrossLinks
+                                path={`/krle/religion/${subTopicId}/${lessonId}`}
+                            />
+                        ) : undefined
+                    }
                 />
             </ErrorBoundary>
         );

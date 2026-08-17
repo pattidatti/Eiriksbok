@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Columns3, HelpCircle } from 'lucide-react';
+import { ArrowRight, HelpCircle } from 'lucide-react';
 import { Image } from '../Image';
 import { RichText } from '../ui/RichText';
+import { CompareInvite } from './CompareInvite';
+import { topicHref } from '../../features/religion-nav/links';
 import type { DimensionMeta } from './dimensionMeta';
 import type { ReligionDimensionEntry } from '../../types';
 
 export interface DimensionArticleLink {
     title: string;
     link: string;
+    // Temaet artikkelen hører til, når det finnes: gir eleven veien til de
+    // andre religionenes artikkel om det samme
+    topicSlug?: string;
+    topicLabel?: string;
 }
 
 interface DimensionPanelProps {
@@ -167,7 +173,7 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
                         </h3>
                         <ul className="space-y-1.5">
                             {articles.map((article) => (
-                                <li key={article.link}>
+                                <li key={article.link} className="flex flex-wrap items-center gap-2">
                                     <Link
                                         to={article.link}
                                         className="group inline-flex items-center gap-2 font-bold text-slate-700 hover:text-slate-900"
@@ -179,18 +185,34 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
                                         />
                                         {article.title}
                                     </Link>
+                                    {article.topicSlug && (
+                                        <Link
+                                            to={topicHref(article.topicSlug, {
+                                                fra: religionId,
+                                                dim: dimension.key,
+                                            })}
+                                            title={`Se ${article.topicLabel?.toLowerCase()} i alle religionene`}
+                                            className="px-2 py-0.5 rounded-full text-[11px] font-bold border transition-colors hover:bg-white"
+                                            style={{
+                                                color: accent,
+                                                borderColor: `${accent}40`,
+                                                backgroundColor: `${accent}0d`,
+                                            }}
+                                        >
+                                            #{article.topicLabel} hos alle
+                                        </Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>
                     </div>
                 )}
-                <Link
-                    to={`/krle/sammenlign?velg=${religionId}&dim=${dimension.key}`}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-bold text-slate-700 hover:border-slate-300 hover:shadow-sm transition-all"
-                >
-                    <Columns3 size={16} style={{ color: accent }} />
-                    Sammenlign med andre religioner
-                </Link>
+
+                <CompareInvite
+                    religionId={religionId}
+                    religionName={religionName}
+                    dimension={dimension}
+                />
             </footer>
         </motion.article>
     );

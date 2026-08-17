@@ -1,6 +1,7 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 import { useQueries, useQuery } from '@tanstack/react-query';
 import { PageSkeleton } from '../../components/Skeleton';
 import { useComparisonManifest, fetchJsonAsset } from './manifest';
@@ -8,6 +9,7 @@ import { EntityPicker } from './EntityPicker';
 import { ComparisonMatrix } from './ComparisonMatrix';
 import { ComparisonCell } from './ComparisonCell';
 import { ComparisonTasks } from './ComparisonTasks';
+import { readStoredLens, storeLens } from '../religion-nav/links';
 import type {
     ComparisonDomainConfig,
     ComparisonEntity,
@@ -92,14 +94,31 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
     const entitiesLoading = entityQueries.some((q) => q.isLoading);
 
     // --- Dimensjonsfaner med piltastnavigasjon ---
-    // ?dim=<nøkkel> lar andre sider (f.eks. religionsprofilen) lenke rett inn
-    // på én dimensjon. Leses kun ved oppstart; etterpå eier fanene tilstanden.
-    const [activeDimKey, setActiveDimKey] = useState(() => {
+    // ?dim=<nøkkel> er fasit så lenge siden står åpen: andre sider lenker rett
+    // inn på én dimensjon, og fanebytte skrives tilbake til URL-en slik at
+    // lenken eleven deler eller bokmerker beholder linsen.
+    const activeDimKey = useMemo(() => {
         const fromUrl = searchParams.get('dim');
-        return config.dimensions.some((d) => d.key === fromUrl)
-            ? (fromUrl as string)
-            : config.dimensions[0].key;
-    });
+        if (config.dimensions.some((d) => d.key === fromUrl)) return fromUrl as string;
+        // Kom eleven hit uten `dim`, arves linsen fra forrige side i økta.
+        const stored = config.domain === 'religion' ? readStoredLens() : null;
+        if (stored && config.dimensions.some((d) => d.key === stored)) return stored;
+        return config.dimensions[0].key;
+    }, [searchParams, config]);
+
+    const setActiveDimKey = useCallback(
+        (key: string) => {
+            storeLens(key);
+            setSearchParams(
+                (params) => {
+                    params.set('dim', key);
+                    return params;
+                },
+                { replace: true }
+            );
+        },
+        [setSearchParams]
+    );
     const activeDim =
         config.dimensions.find((d) => d.key === activeDimKey) ?? config.dimensions[0];
     const accent = activeDim.color ?? '#6366f1';
@@ -274,14 +293,30 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
                                 className="bg-bg-card border border-border-main rounded-2xl overflow-hidden flex flex-col shadow-sm"
                             >
                                 <div
-                                    className="p-4 border-b border-border-main flex items-center gap-3"
+                                    className="p-4 border-b border-border-main flex items-center gap-2"
                                     style={{
                                         borderTop: `4px solid ${entity.color || '#6366f1'}`,
                                     }}
                                 >
-                                    <h3 className="font-display font-bold text-lg text-text-main">
+                                    {/* Navnet er alltid veien inn til profilen, med linsen i behold */}
+                                    <Link
+                                        to={`${config.detailLink(entity.id)}?dim=${activeDim.key}`}
+                                        className="font-display font-bold text-lg text-text-main hover:underline decoration-2 underline-offset-2"
+                                        style={{ textDecorationColor: entity.color || '#6366f1' }}
+                                    >
                                         {entity.name}
-                                    </h3>
+                                    </Link>
+                                    {entities.length > config.minSelected && (
+                                        <button
+                                            type="button"
+                                            onClick={() => toggleEntity(entity.id)}
+                                            aria-label={`Fjern ${entity.name} fra sammenligningen`}
+                                            title={`Fjern ${entity.name}`}
+                                            className="ml-auto p-1 rounded-lg text-text-muted hover:text-text-main hover:bg-black/5 transition-colors"
+                                        >
+                                            <X size={16} />
+                                        </button>
+                                    )}
                                 </div>
                                 <ComparisonCell
                                     content={entity.dimensions[activeDim.key]}

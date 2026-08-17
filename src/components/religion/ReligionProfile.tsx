@@ -1,11 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PartyPopper } from 'lucide-react';
+import { Columns3, PartyPopper } from 'lucide-react';
 import { DimensionWheel } from './DimensionWheel';
 import { DimensionPanel, type DimensionArticleLink } from './DimensionPanel';
 import { DIMENSIONS, getDimension, type DimensionKey } from './dimensionMeta';
 import { useComparisonManifest } from '../../features/comparison/manifest';
+import { resolveLens, storeLens, compareHref } from '../../features/religion-nav/links';
+import { loadVisitedDimensions, saveVisitedDimensions } from '../../features/religion-nav/progress';
+import { bestTopicForLink } from '../../features/religion-nav/topics';
 import { useProgressStore } from '../../features/progress/useProgressStore';
 import { celebrateCompletion } from '../ui/answerFeedback';
 import { normalizeDimension } from '../../utils/religionDimensions';
@@ -15,28 +18,13 @@ interface ReligionProfileProps {
     religion: Religion;
 }
 
-// Fortellingen er inngangen: den er lettest å henge de andre dimensjonene på.
-const DEFAULT_DIMENSION: DimensionKey = 'narrative';
-
-const storageKey = (religionId: string) => `eiriksbok:religion-profil:${religionId}`;
-
-function loadVisited(religionId: string): Set<DimensionKey> {
-    try {
-        const raw = localStorage.getItem(storageKey(religionId));
-        if (!raw) return new Set();
-        const parsed = JSON.parse(raw) as string[];
-        return new Set(parsed.filter((key): key is DimensionKey => Boolean(getDimension(key))));
-    } catch {
-        return new Set();
-    }
-}
-
 export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) => {
     const [searchParams, setSearchParams] = useSearchParams();
     const manifestQuery = useComparisonManifest();
     const color = religion.color || '#6366f1';
 
-    const selected = getDimension(searchParams.get('dim'))?.key ?? DEFAULT_DIMENSION;
+    // Linsen kommer fra URL-en, ellers fra forrige side i økta
+    const selected = resolveLens(searchParams.get('dim'));
     const dimension = getDimension(selected)!;
 
     const entries = useMemo(() => {
@@ -60,9 +48,9 @@ export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) =>
     // hentes settet for den nye religionen fra localStorage.
     const [store, setStore] = useState(() => ({
         id: religion.id,
-        visited: loadVisited(religion.id),
+        visited: loadVisitedDimensions(religion.id),
     }));
-    let visited = store.id === religion.id ? store.visited : loadVisited(religion.id);
+    let visited = store.id === religion.id ? store.visited : loadVisitedDimensions(religion.id);
     if (!visited.has(selected)) {
         visited = new Set(visited);
         visited.add(selected);
@@ -72,11 +60,7 @@ export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) =>
     }
 
     useEffect(() => {
-        try {
-            localStorage.setItem(storageKey(religion.id), JSON.stringify([...visited]));
-        } catch {
-            // Full eller avslått lagring skal ikke velte siden
-        }
+        saveVisitedDimensions(religion.id, visited);
     }, [religion.id, visited]);
 
     // Alle sju lest = profilen er fullført. Registreres én gang per økt;
@@ -103,13 +87,25 @@ export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) =>
 
     const articles: DimensionArticleLink[] = useMemo(() => {
         const all = manifestQuery.data?.religionArticles ?? [];
+        const topics = manifestQuery.data?.topics;
         return all
             .filter((a) => a.religion === religion.id && a.dimension === selected)
             .slice(0, 3)
-            .map((a) => ({ title: a.title, link: a.link }));
+            .map((a) => {
+                // Temaet gir eleven veien til de andre religionenes artikkel
+                // om det samme
+                const topic = bestTopicForLink(topics, a.link);
+                return {
+                    title: a.title,
+                    link: a.link,
+                    topicSlug: topic?.slug,
+                    topicLabel: topic?.label,
+                };
+            });
     }, [manifestQuery.data, religion.id, selected]);
 
     const handleSelect = (key: DimensionKey) => {
+        storeLens(key);
         setSearchParams(
             (params) => {
                 params.set('dim', key);
@@ -141,14 +137,25 @@ export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) =>
                             initial={{ opacity: 0, y: 8 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0 }}
-                            className="rounded-2xl border p-4 flex gap-3 items-start"
+                            className="rounded-2xl border p-4 space-y-3"
                             style={{ borderColor: `${color}55`, backgroundColor: `${color}12` }}
                         >
-                            <PartyPopper size={20} style={{ color }} className="flex-shrink-0" />
-                            <p className="text-sm text-slate-700 leading-relaxed">
-                                Du har vært innom alle sju sidene av {religion.name.toLowerCase()}.
-                                Nå kan du sammenligne dem med en annen religion.
-                            </p>
+                            <div className="flex gap-3 items-start">
+                                <PartyPopper size={20} style={{ color }} className="flex-shrink-0" />
+                                <p className="text-sm text-slate-700 leading-relaxed">
+                                    Du har vært innom alle sju sidene av{' '}
+                                    {religion.name.toLowerCase()}. Nå kan du sammenligne dem med en
+                                    annen religion.
+                                </p>
+                            </div>
+                            <Link
+                                to={compareHref([religion.id], selected)}
+                                className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl text-sm font-bold text-white shadow-sm hover:brightness-110 transition-all"
+                                style={{ backgroundColor: color }}
+                            >
+                                <Columns3 size={16} />
+                                Ta med {religion.name} inn i sammenligningen
+                            </Link>
                         </motion.div>
                     )}
                 </AnimatePresence>

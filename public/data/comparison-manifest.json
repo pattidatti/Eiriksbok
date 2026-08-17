@@ -475,69 +475,10 @@
         }
       ],
       "count": 9,
-      "total": 9
-    },
-    {
-      "slug": "doden",
-      "label": "Døden",
-      "entries": [
-        {
-          "religion": "bahai",
-          "title": "Én setning, og alle foreldrenes ja",
-          "file": "content/krle/religion/bahai/overgangsriter/artikkel.json",
-          "link": "/krle/religion/bahai/overgangsriter"
-        },
-        {
-          "religion": "buddhisme",
-          "title": "Riten som ikke finnes",
-          "file": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/buddhisme/overgangsriter"
-        },
-        {
-          "religion": "hinduisme",
-          "title": "Seksten riter gjennom et liv",
-          "file": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/hinduisme/overgangsriter"
-        },
-        {
-          "religion": "islam",
-          "title": "Setningen som rammer inn livet",
-          "file": "content/krle/religion/islam/overgangsriter/artikkel.json",
-          "link": "/krle/religion/islam/overgangsriter"
-        },
-        {
-          "religion": "jehovas-vitner",
-          "title": "Dåpen du må be om selv",
-          "file": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
-          "link": "/krle/religion/jehovas-vitner/overgangsriter"
-        },
-        {
-          "religion": "jodedom",
-          "title": "Dagen ansvaret bytter eier",
-          "file": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
-          "link": "/krle/religion/jodedom/overgangsriter"
-        },
-        {
-          "religion": "kristendom",
-          "title": "Uenigheten om vannet",
-          "file": "content/krle/religion/kristendom/overgangsriter/artikkel.json",
-          "link": "/krle/religion/kristendom/overgangsriter"
-        },
-        {
-          "religion": "mormonisme",
-          "title": "Ikke til døden skiller dere",
-          "file": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/mormonisme/overgangsriter"
-        },
-        {
-          "religion": "sikhisme",
-          "title": "Overgangsriter i sikhismen",
-          "file": "content/krle/religion/sikhisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/sikhisme/overgangsriter"
-        }
-      ],
-      "count": 9,
-      "total": 9
+      "total": 9,
+      "aliases": [
+        "dagligliv"
+      ]
     },
     {
       "slug": "frelse",
@@ -789,7 +730,7 @@
     },
     {
       "slug": "overgangsriter",
-      "label": "Overgangsriter",
+      "label": "Overgangsriter og døden",
       "entries": [
         {
           "religion": "bahai",
@@ -846,8 +787,12 @@
           "link": "/krle/religion/sikhisme/overgangsriter"
         }
       ],
+      "short": "Overgangsriter",
       "count": 9,
-      "total": 9
+      "total": 9,
+      "aliases": [
+        "doden"
+      ]
     },
     {
       "slug": "sentrale-trekk",
@@ -873,9 +818,9 @@
         },
         {
           "religion": "islam",
-          "title": "Introduksjon til Islam",
-          "file": "content/krle/religion/islam/intro/artikkel.json",
-          "link": "/krle/religion/islam/intro"
+          "title": "Fire av fem søyler er noe du gjør",
+          "file": "content/krle/religion/islam/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/islam/sentrale-trekk"
         },
         {
           "religion": "jehovas-vitner",
@@ -891,9 +836,9 @@
         },
         {
           "religion": "kristendom",
-          "title": "Verdens største religion",
-          "file": "content/krle/religion/kristendom/intro/artikkel.json",
-          "link": "/krle/religion/kristendom/intro"
+          "title": "Det alle kristne er enige om",
+          "file": "content/krle/religion/kristendom/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/kristendom/sentrale-trekk"
         },
         {
           "religion": "mormonisme",
@@ -972,26 +917,6 @@
       ],
       "count": 9,
       "total": 9
-    },
-    {
-      "slug": "dagligliv",
-      "label": "Dagligliv",
-      "entries": [
-        {
-          "religion": "islam",
-          "title": "Bønnen som følger sola",
-          "file": "content/krle/religion/islam/bonn/artikkel.json",
-          "link": "/krle/religion/islam/bonn"
-        },
-        {
-          "religion": "sikhisme",
-          "title": "Bønn i sikhismen: å huske et navn",
-          "file": "content/krle/religion/sikhisme/bonn/artikkel.json",
-          "link": "/krle/religion/sikhisme/bonn"
-        }
-      ],
-      "count": 2,
-      "total": 9
     }
   ],
   "religionArticles": [
@@ -1043,6 +968,15 @@
       "tags": [
         "hellige-tekster",
         "narrative"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "Introduksjon til Bahá'í",
+      "link": "/krle/religion/bahai/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
       ]
     },
     {
@@ -1138,6 +1072,15 @@
     },
     {
       "religion": "buddhisme",
+      "title": "Introduksjon til Buddhisme",
+      "link": "/krle/religion/buddhisme/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "buddhisme",
       "title": "Riten som ikke finnes",
       "link": "/krle/religion/buddhisme/overgangsriter",
       "dimension": "ritual",
@@ -1219,6 +1162,15 @@
     },
     {
       "religion": "hinduisme",
+      "title": "Introduksjon til Hinduisme",
+      "link": "/krle/religion/hinduisme/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "hinduisme",
       "title": "Seksten riter gjennom et liv",
       "link": "/krle/religion/hinduisme/overgangsriter",
       "dimension": "ritual",
@@ -1246,6 +1198,44 @@
       "tags": [
         "skapelse",
         "narrative"
+      ]
+    },
+    {
+      "religion": "historiske-religioner",
+      "title": "Egyptisk religion: hjertet på vekten",
+      "link": "/krle/religion/historiske-religioner/egyptisk-religion",
+      "dimension": "doctrinal",
+      "tags": [
+        "doden",
+        "frelse",
+        "gudsbildet",
+        "etikk",
+        "hellige-skrifter"
+      ]
+    },
+    {
+      "religion": "historiske-religioner",
+      "title": "Mesopotamisk religion: flommen som gikk igjen",
+      "link": "/krle/religion/historiske-religioner/mesopotamisk-religion",
+      "dimension": "narrative",
+      "tags": [
+        "narrative",
+        "doden",
+        "gudsbildet",
+        "hellige-skrifter",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "historiske-religioner",
+      "title": "Hadde Gud en kone?",
+      "link": "/krle/religion/historiske-religioner/monoteismens-fodsel",
+      "dimension": "narrative",
+      "tags": [
+        "gudsbildet",
+        "monoteisme",
+        "kilder-til-tro",
+        "religioners-utvikling"
       ]
     },
     {
@@ -1392,6 +1382,15 @@
     },
     {
       "religion": "jehovas-vitner",
+      "title": "Introduksjon til Jehovas vitner",
+      "link": "/krle/religion/jehovas-vitner/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
       "title": "Dåpen du må be om selv",
       "link": "/krle/religion/jehovas-vitner/overgangsriter",
       "dimension": "ritual",
@@ -1473,6 +1472,15 @@
     },
     {
       "religion": "jodedom",
+      "title": "Introduksjon til Jødedom",
+      "link": "/krle/religion/jodedom/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "jodedom",
       "title": "Dagen ansvaret bytter eier",
       "link": "/krle/religion/jodedom/overgangsriter",
       "dimension": "ritual",
@@ -1500,6 +1508,19 @@
       "tags": [
         "skapelse",
         "narrative"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Baptistene: frihet gjennom dåpen",
+      "link": "/krle/religion/kristendom/baptistene",
+      "dimension": "social",
+      "tags": [
+        "baptistene",
+        "frikirke",
+        "dap",
+        "voksendap",
+        "protestanter"
       ]
     },
     {
@@ -1563,6 +1584,18 @@
     },
     {
       "religion": "kristendom",
+      "title": "Kirkesamfunn: Splittelse og enhet",
+      "link": "/krle/religion/kristendom/kirkesamfunn",
+      "dimension": "social",
+      "tags": [
+        "kirkesamfunn",
+        "reformasjonen",
+        "skisma",
+        "okumenikk"
+      ]
+    },
+    {
+      "religion": "kristendom",
       "title": "Uenigheten om vannet",
       "link": "/krle/religion/kristendom/overgangsriter",
       "dimension": "ritual",
@@ -1570,6 +1603,41 @@
         "overgangsriter",
         "ritual",
         "doden"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Avgjørelsen som åpnet døren",
+      "link": "/krle/religion/kristendom/paulus-og-misjonen",
+      "dimension": "narrative",
+      "tags": [
+        "misjon",
+        "kirke",
+        "spredning"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Pinse: Den dagen kirken ble til",
+      "link": "/krle/religion/kristendom/pinse",
+      "dimension": "ritual",
+      "tags": [
+        "pinse",
+        "hoytider",
+        "den-hellige-and",
+        "kristendom"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Sakramentene: Dåp og nattverd",
+      "link": "/krle/religion/kristendom/sakramentene",
+      "dimension": "ritual",
+      "tags": [
+        "ritual",
+        "dap",
+        "nattverd",
+        "sakrament"
       ]
     },
     {
@@ -1644,6 +1712,15 @@
     },
     {
       "religion": "mormonisme",
+      "title": "Introduksjon til Mormonisme",
+      "link": "/krle/religion/mormonisme/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "mormonisme",
       "title": "Ikke til døden skiller dere",
       "link": "/krle/religion/mormonisme/overgangsriter",
       "dimension": "ritual",
@@ -1672,6 +1749,25 @@
         "skapelse",
         "narrative"
       ]
+    },
+    {
+      "religion": "samisk",
+      "title": "Samisk religion: trommen, naturen og forfedrene",
+      "link": "/krle/religion/samisk/intro",
+      "dimension": "ritual",
+      "tags": [
+        "natur",
+        "forfedre",
+        "sjamanisme",
+        "urfolk"
+      ]
+    },
+    {
+      "religion": "samisk",
+      "title": "Læstadianismen: da kristendommen ble samisk",
+      "link": "/krle/religion/samisk/laestadianismen",
+      "dimension": null,
+      "tags": []
     },
     {
       "religion": "sikhisme",
@@ -1762,6 +1858,17 @@
   ],
   "_warnings": {
     "philosophersMissingDimensions": [],
+    "articlesOutsideProfiles": [
+      "/krle/religion/historiske-religioner/egyptisk-religion",
+      "/krle/religion/historiske-religioner/mesopotamisk-religion",
+      "/krle/religion/historiske-religioner/monoteismens-fodsel",
+      "/krle/religion/samisk/intro",
+      "/krle/religion/samisk/laestadianismen"
+    ],
+    "mergedTopics": [
+      "dagligliv -> bonn",
+      "doden -> overgangsriter"
+    ],
     "thinReligionDimensions": []
   }
 }

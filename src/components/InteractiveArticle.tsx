@@ -59,6 +59,8 @@ interface InteractiveArticleProps {
     event: ArticleData;
     sidebarConfig?: SidebarConfig;
     lessonNav?: LessonNav;
+    // Fagspesifikke krysslenker, vist rett over forrige/neste-navigasjonen
+    footerSlot?: React.ReactNode;
 }
 
 
@@ -77,7 +79,7 @@ const FactBox: React.FC<{ content: string }> = React.memo(({ content }) => (
 
 
 
-export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, sidebarConfig, lessonNav }) => {
+export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, sidebarConfig, lessonNav, footerSlot }) => {
     const navigate = useNavigate();
     const { events: globalEvents } = useGlobalTimeline();
     const { speak, pause, resume, cancel, playBlock, isPlaying, isPaused, hasVoice, activeBlockIndex, rate, setRate } = useTTS();
@@ -460,6 +462,8 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
                                         </details>
                                     </div>
                                 )}
+
+                                {footerSlot && event.layout !== 'tool' && footerSlot}
 
                                 {lessonNav && event.layout !== 'tool' && (
                                     <LessonNavFooter nav={lessonNav} />
