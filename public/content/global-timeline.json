@@ -4036,6 +4036,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "sekularisering",
+      "title": "Sekularisering: da staten sluttet å bestemme hva du skulle tro",
+      "description": "Fra statskirke i 1537 til skilsmisse i 2017: hvordan religionen mistet makten over lovene, over organisasjonene og til slutt over den enkelte.",
+      "startDate": 1537,
+      "endDate": 2017,
+      "displayDate": "1537-2017",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "livssyn",
+      "link": "/krle/livssyn/sekularisering",
+      "tags": [
+        "livssyn",
+        "sekularisering",
+        "statskirke",
+        "religionsfrihet",
+        "grunnloven",
+        "norge"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "mottreformasjonen",
       "title": "Mottreformasjonen",
       "description": "Da Luther splittet kirken, slo Roma tilbake: med jesuitter, kirkemøte og forbudte bøker. Slik ble Europa for alltid delt i to.",

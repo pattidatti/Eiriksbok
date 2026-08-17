@@ -1,0 +1,327 @@
+{
+    "id": "sekularisering",
+    "title": "Sekularisering: da staten sluttet å bestemme hva du skulle tro",
+    "subject": "krle",
+    "topic": "livssyn",
+    "layout": "rich",
+    "year": "1537-2017",
+    "category": "Livssyn",
+    "readTime": "12 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "social",
+    "comparison_tags": ["livssyn", "sekularisering", "social"],
+    "kompetansemaal": ["rle-10-2", "rle-10-3", "rle-10-6"],
+    "details": [
+        "Sekularisering betyr at religion mister makt over mennesker, kultur og samfunn.",
+        "Det skjer på tre nivåer: i lovene, i organisasjonene og hos den enkelte.",
+        "I 1741 ble det forbudt å samle folk til religiøse møter uten at presten var med. Forbudet varte til 1842.",
+        "Statskirkeordningen ble oppløst i 2012, og i 2017 ble Den norske kirke skilt fra staten.",
+        "Religionen har ikke forsvunnet. Den har mistet makt, og folk velger nå selv."
+    ],
+    "concepts": [
+        {
+            "id": "sekularisering",
+            "term": "Sekularisering",
+            "definition": "At religion mister innflytelse over enkeltmennesker, kultur og samfunn. Skjer på tre nivåer: i samfunnet, i organisasjonene og hos den enkelte."
+        },
+        {
+            "id": "statskirke",
+            "term": "Statskirke",
+            "definition": "En kirke som staten styrer og betaler for. Norge hadde statskirke fra 1537 til 2012."
+        },
+        {
+            "id": "konventikkel",
+            "term": "Konventikkel",
+            "definition": "Et religiøst møte som vanlige folk holder hjemme hos seg selv, uten prest. Slike møter var forbudt i Norge fra 1741 til 1842."
+        },
+        {
+            "id": "dissenter",
+            "term": "Dissenter",
+            "definition": "En som tilhører et annet trossamfunn enn statskirken. Ordet ble brukt i norsk lov fra 1845."
+        },
+        {
+            "id": "folkekirke",
+            "term": "Folkekirke",
+            "definition": "Ordet Grunnloven bruker om Den norske kirke i dag. Kirken er ikke lenger statens kirke, men får fortsatt penger fra staten."
+        }
+    ],
+    "createdDate": "2026-08-17T00:00:00Z",
+    "factChecked": "2026-08-17",
+    "content": [
+        {
+            "type": "text",
+            "content": "Høsten 1804 ble en bondesønn fra Østfold arrestert på Eiker og fraktet til Christiania. Han hadde ikke stjålet noe og ikke skadet noen. Han hadde reist rundt i landet og samlet folk i stuene sine for å synge og lese fra Bibelen. Det holdt. Hans Nielsen Hauge satt fengslet nesten sammenhengende fra 1804 til 1814 (Aarflot & Elstad, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I dag kan du samle vennene dine hjemme og snakke om hva du vil tro på. Ingen kommer og banker på. Mellom Hauges celle og din stue ligger det en lang endring som har et navn: sekularisering."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Bønder samlet rundt et talglys i en mørk norsk stue tidlig på 1800-tallet",
+            "caption": "Norge rundt 1804. Å samle naboene til bønn og bibellesing hjemme var straffbart hvis presten ikke var med."
+        },
+        {
+            "type": "header",
+            "text": "Hva ordet faktisk betyr"
+        },
+        {
+            "type": "text",
+            "content": "Sekularisering er når religion mister innflytelse over enkeltmennesker, kultur eller samfunn (Løøv & Kværne, 2025). Legg merke til hva som ikke står der. Det står ikke at religionen forsvinner, og det står ikke at folk slutter å tro. Det står at religionen mister makt."
+        },
+        {
+            "type": "text",
+            "content": "Det er lettere å forstå hvis du deler det opp. Forskerne pleier å skille mellom tre nivåer, og de tre henger sammen uten å skje samtidig (Løøv & Kværne, 2025):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "I samfunnet: lover og offentlige oppgaver løsner fra kirken. Det er staten, ikke presten, som bestemmer.",
+                "I organisasjonene: skoler, hjelpeorganisasjoner og idrettslag blir mindre religiøse i det de driver med.",
+                "Hos den enkelte: færre tror, færre går i kirken, færre er medlem."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Det viktigste å få med seg er at de tre nivåene beveger seg i ulikt tempo. Et lovvedtak kan endre hele landet på én dag. At folk endrer hva de tror på, tar generasjoner."
+        },
+        {
+            "type": "header",
+            "text": "Nivå 1: da loven slapp taket"
+        },
+        {
+            "type": "text",
+            "content": "Da reformasjonen kom til Norge i 1537, ble kirken lagt under staten (Løøv & Kværne, 2025). Kongen var sjefen, og alle som bodde i landet skulle være lutherske. Det var ikke et valg du tok. Det var noe du var, på samme måte som du var undersått av kongen. Du kan lese mer om hvordan det skjedde i artikkelen om [reformasjonen i Norge](/historie/reformasjonen/reformasjonen-i-norge)."
+        },
+        {
+            "type": "text",
+            "content": "Staten passet også på at ingen samlet folk om troen på egen hånd. Konventikkelplakaten av 1741 forbød privatpersoner å holde religiøse møter uten at presten var med, og forbød omreisende predikanter (Roos, 2026). Et konventikkel er nettopp et slikt møte: naboer som samles hjemme i stua for å be og lese, uten prest. Det var dette Hauge gjorde, og i 1814 ble han dømt for å ha brutt plakaten (Aarflot & Elstad, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv hvordan et slikt møte kjentes. Du sitter i stua, og ute på veien går lensmannen med lykt."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "forbudt-mote-1820"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Konventikkelplakaten ble opphevet i 1842 (Roos, 2026). Tre år senere kom dissenterloven av 1845, som ga andre kristne enn statskirkens medlemmer rett til å samles og danne egne menigheter med egne prester (Rasmussen, 2024). Loven var langt fra full religionsfrihet. Jøder fikk ikke adgang til riket før Grunnloven ble endret i 1851, og mormoner ble av Høyesterett i 1853 slått fast å ikke være kristne, og falt dermed utenfor loven (Rasmussen, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Likevel var 1842 og 1845 et brudd. For første gang siden 1537 kunne du i praksis tilhøre noe annet enn statskirken uten å bli straffet for det."
+        },
+        {
+            "type": "header",
+            "text": "1814, 2012 og 2017"
+        },
+        {
+            "type": "text",
+            "content": "Grunnloven av 1814 slo fast i paragraf 2 at lutherdommen var statens religion (Rasmussen & Elstad, 2024). Kongen i statsråd utnevnte biskopene og prostene, og Stortinget vedtok kirkelovene. Slik var det i nesten to hundre år."
+        },
+        {
+            "type": "text",
+            "content": "I 2012 ble Grunnloven endret, og statskirkeordningen ble oppløst (Rasmussen & Elstad, 2024). Staten hadde ikke lenger en egen religion, og regjeringen sluttet å utnevne biskoper. Fra 1. januar 2017 ble Den norske kirke et eget rettssubjekt, altså en selvstendig organisasjon i stedet for en del av staten, og i 2020 kom trossamfunnsloven som samlet reglene for alle tros- og livssynssamfunn (Rasmussen, Lundal & Elstad, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Skilt fra staten, men ikke helt",
+                "content": "Grunnloven paragraf 16 kaller fortsatt Den norske kirke Norges folkekirke, og sier at den skal støttes av staten. Kirken finansieres derfor fortsatt over offentlige budsjetter, og den har en særstilling ingen andre trossamfunn har (Rasmussen, Lundal & Elstad, 2026). Skillet i 2017 var altså en skilsmisse der de to fortsatt bor i samme hus."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Stortingssalen med representanter som stemmer over en grunnlovsendring",
+            "caption": "Stortinget, 2012. Grunnloven ble endret, og Norge sluttet å ha en offisiell statsreligion."
+        },
+        {
+            "type": "header",
+            "text": "Nivå 2: organisasjonene"
+        },
+        {
+            "type": "text",
+            "content": "Samtidig skjedde noe stillere. Oppgaver som kirken en gang eide, gled over til andre. Skoler, hjelpeorganisasjoner og idrettslag ble mindre religiøse i måten de arbeidet på (Løøv & Kværne, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Tenk på skoledagen din. Den begynner ikke med bønn. KRLE-faget lærer om flere religioner og livssyn ved siden av hverandre, i stedet for å lære deg én tro. Det er ikke fordi noen bestemte seg for at religion er dumt. Det er fordi skolen har fått en annen oppgave enn den hadde i 1850."
+        },
+        {
+            "type": "header",
+            "text": "Nivå 3: menneskene"
+        },
+        {
+            "type": "text",
+            "content": "Det tredje nivået er det tregeste, og det som er lettest å måle. I 1994 var 85 prosent av befolkningen medlem i Den norske kirke (Østhus, 2021). I 2025 var tallet 60,9 prosent, altså 3 427 657 mennesker (Statistisk sentralbyrå, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Men medlemstallet er bare ett tall. Se hva som skjer når du deler livet opp i det som faktisk markeres i kirken. Gjett først, så får du fasiten."
+        },
+        {
+            "type": "component",
+            "name": "LivetsFireStunder",
+            "props": {
+                "title": "Fire tall om Den norske kirke i 2025"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det siste tallet er det mest overraskende. I 2025 ble 51,7 prosent av alle nyfødte døpt og 48,8 prosent av femtenåringene konfirmert, men 80,1 prosent av alle som døde fikk gravferd i regi av Den norske kirke (Statistisk sentralbyrå, 2026). Gravferden ligger altså høyere enn medlemstallet."
+        },
+        {
+            "type": "text",
+            "content": "Det er ikke rart når du tenker etter. De som dør i dag ble født i en tid da nesten alle var medlemmer, og familier som ellers ikke bruker kirken velger den likevel når noen dør. Sekulariseringen har med andre ord ikke truffet hele livet likt. Den har tømt begynnelsen av livet raskere enn slutten."
+        },
+        {
+            "type": "text",
+            "content": "Endringen går fort. I 2001 ble 80 prosent av barna døpt. I 2020 var andelen under 50 prosent, og antall gudstjenestebesøk falt fra 6,7 millioner i 2005 til 5,2 millioner i 2019 (Østhus, 2021)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En norsk kirke i sollys med en nesten tom parkeringsplass utenfor",
+            "caption": "Kirkene står der fortsatt. Det er bruken av dem som har endret seg mest."
+        },
+        {
+            "type": "header",
+            "text": "Betyr det at religionen forsvinner?"
+        },
+        {
+            "type": "text",
+            "content": "Nei. Den norske kirke er fremdeles det klart største trossamfunnet i landet med 3,4 millioner medlemmer (Rasmussen, Lundal & Elstad, 2026). Og mens statskirken har blitt mindre, har noe annet vokst: medlemstallet i tros- og livssynssamfunn utenfor Den norske kirke steg fra 384 000 i 2006 til 697 000 i 2020 (Østhus, 2021)."
+        },
+        {
+            "type": "text",
+            "content": "Noe av veksten kommer fra innvandring, som har gjort islam, buddhisme og ortodoks kristendom til vanlige religioner i Norge. Noe kommer fra at flere melder seg inn i livssynssamfunn uten gudstro. Du kan lese mer om det viktigste av dem i artikkelen om [livssynshumanisme](/krle/livssyn/livssynshumanisme)."
+        },
+        {
+            "type": "text",
+            "content": "Det som virkelig er borte, er ikke troen. Det er tvangen. Der staten før bestemte hva alle skulle tro, er spørsmålet nå ditt eget. Da blir det også viktigere å vite forskjellen på å ikke tro og å ikke vite, som artikkelen om [ateisme og agnostisme](/krle/livssyn/ateisme-og-agnostisme) handler om."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor dette er verdt å kunne"
+        },
+        {
+            "type": "text",
+            "content": "Når noen sier at Norge er et kristent land, eller at Norge er blitt et gudløst land, snakker de som regel om hvert sitt nivå. Den ene tenker på lovene og historien. Den andre tenker på hva folk faktisk tror. Begge kan ha rett samtidig, fordi de måler ulike ting."
+        },
+        {
+            "type": "text",
+            "content": "Det er derfor begrepet er nyttig. Når du hører en påstand om religion i Norge, kan du spørre: hvilket nivå snakker du om? Loven, organisasjonene eller menneskene? Da blir en krangel til en samtale."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr sekularisering, med dine egne ord?",
+                    "Hva forbød Konventikkelplakaten, og hvilke år gjaldt forbudet?",
+                    "Hva skjedde i 2012, og hva skjedde i 2017?",
+                    "Hvor stor andel av befolkningen var medlem i Den norske kirke i 1994, og hvor stor andel var det i 2025?"
+                ],
+                "reflekter": [
+                    "Forklar de tre nivåene for sekularisering, og gi ett eksempel på hver.",
+                    "Hvorfor tar det lengre tid å endre hva folk tror enn å endre en lov? Bruk tallene i artikkelen i svaret.",
+                    "Flere får gravferd i kirken enn det er medlemmer i kirken. Hvordan kan det henge sammen?",
+                    "Grunnloven kaller fortsatt Den norske kirke for folkekirke og gir den penger. Er skillet fra staten da fullført? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Lag en tidslinje med de seks årstallene 1537, 1741, 1842, 1845, 2012 og 2017. Skriv én setning ved hvert om hva som endret seg.",
+                    "Spør en voksen i familien din om de er medlem i Den norske kirke, om de er døpt og om de er konfirmert. Sammenlign svarene med tallene i artikkelen.",
+                    "Skriv et innlegg på seks til åtte setninger om påstanden «Norge burde ikke gi Den norske kirke en særstilling i Grunnloven». Bruk minst to opplysninger fra artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr sekularisering?",
+                        "options": [
+                            "At religion blir forbudt",
+                            "At religion mister innflytelse over mennesker, kultur og samfunn",
+                            "At alle blir ateister",
+                            "At staten overtar kirkene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Sekularisering handler om at religion mister makt, ikke om at den forsvinner eller blir forbudt."
+                    },
+                    {
+                        "question": "Hva forbød Konventikkelplakaten av 1741?",
+                        "options": [
+                            "Å lese Bibelen hjemme",
+                            "Å bygge kirker uten kongens tillatelse",
+                            "At vanlige folk holdt religiøse møter uten at presten var med",
+                            "At kvinner talte i kirken"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Plakaten forbød privatpersoner å samle andre til religiøse møter uten prest, og forbød omreisende predikanter. Den ble opphevet i 1842."
+                    },
+                    {
+                        "question": "Hva skjedde med statskirkeordningen i 2012?",
+                        "options": [
+                            "Den ble innført",
+                            "Den ble utvidet til å gjelde flere trossamfunn",
+                            "Den ble oppløst da Grunnloven ble endret",
+                            "Den ble stemt over i en folkeavstemning"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Grunnlovsendringene i 2012 oppløste statskirkeordningen. Fra 2017 ble Den norske kirke et eget rettssubjekt."
+                    },
+                    {
+                        "question": "Hvilke tre nivåer skjer sekularisering på?",
+                        "options": [
+                            "By, bygd og utland",
+                            "Samfunnet, organisasjonene og den enkelte",
+                            "Fortid, nåtid og framtid",
+                            "Stat, kommune og fylke"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Lovene endres i samfunnet, arbeidet endres i organisasjonene, og troen endres hos den enkelte. De tre går i ulikt tempo."
+                    },
+                    {
+                        "question": "Hvilket av disse tallene var høyest i Norge i 2025?",
+                        "options": [
+                            "Andelen nyfødte som ble døpt",
+                            "Andelen femtenåringer som ble konfirmert",
+                            "Andelen av befolkningen som var medlem i Den norske kirke",
+                            "Andelen døde som fikk gravferd i regi av Den norske kirke"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "80,1 prosent av gravferdene skjedde i regi av Den norske kirke. Det er høyere enn både medlemsandelen på 60,9 prosent og dåpsandelen på 51,7 prosent."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aarflot, A. & Elstad, H. (2026). *Hans Nielsen Hauge*. Store norske leksikon. Hentet 17.08.2026 fra [snl.no/Hans_Nielsen_Hauge](https://snl.no/Hans_Nielsen_Hauge)",
+                    "Løøv, M. & Kværne, P. (2025). *Sekularisering*. Store norske leksikon. Hentet 17.08.2026 fra [snl.no/sekularisering](https://snl.no/sekularisering)",
+                    "Rasmussen, T. (2024). *Dissenterloven*. Store norske leksikon. Hentet 17.08.2026 fra [snl.no/dissenterloven](https://snl.no/dissenterloven)",
+                    "Rasmussen, T. & Elstad, H. (2024). *Statskirke*. Store norske leksikon. Hentet 17.08.2026 fra [snl.no/statskirke](https://snl.no/statskirke)",
+                    "Rasmussen, T., Lundal, S. O. & Elstad, H. (2026). *Den norske kirke*. Store norske leksikon. Hentet 17.08.2026 fra [snl.no/Den_norske_kirke](https://snl.no/Den_norske_kirke)",
+                    "Roos, M. (2026). *Konventikkelplakaten*. Store norske leksikon. Hentet 17.08.2026 fra [snl.no/Konventikkelplakaten](https://snl.no/Konventikkelplakaten)",
+                    "Statistisk sentralbyrå. (2026). *Den norske kirke*. Hentet 17.08.2026 fra [ssb.no](https://www.ssb.no/kultur-og-fritid/religion-og-livssyn/statistikk/den-norske-kirke)",
+                    "Østhus, A. (2021). *Sekularisering i Norge*. Statistisk sentralbyrå. Hentet 17.08.2026 fra [ssb.no](https://www.ssb.no/kultur-og-fritid/religion-og-livssyn/artikler/sekularisering-i-norge)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

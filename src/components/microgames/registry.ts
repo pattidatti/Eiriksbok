@@ -188,6 +188,7 @@ const Vinteren1847 = lazy(() => import('./Vinteren1847'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
+const ForbudtMote3D = lazy(() => import('./ForbudtMote3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -1836,6 +1837,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 170,
         loader: () => import('./Sydpolsferden3D'),
         Component: Sydpolsferden3D as never,
+    },
+    'forbudt-mote-1820': {
+        id: 'forbudt-mote-1820',
+        title: 'Møtet som var forbudt',
+        description:
+            'Norge, 1820. Du sitter i stua sammen med sju naboer som er samlet for å synge og lese, og det er straffbart. Hold inne for å holde møtet i gang, og dra pekeren opp for høy sang eller ned for hvisking. Ute på veien går lensmannen med lykt, og høy sang bærer langt ut i natten. Synger du for høyt når lykta er utenfor vinduet, banker han på. Lyspæra: Konventikkelplakaten gjorde det ulovlig å samles om troen uten presten, og religionsfriheten vi har i dag måtte kjempes fram.',
+        estimatedSeconds: 160,
+        loader: () => import('./ForbudtMote3D'),
+        Component: ForbudtMote3D as never,
     },
 };
 
