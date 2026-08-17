@@ -1,5 +1,5 @@
 {
-  "buildId": 60956443554945,
+  "buildId": 117164916310572,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3096,6 +3096,9 @@
     "livssynshumanisme": [
       "content/krle/livssyn/livssynshumanisme.json"
     ],
+    "sekularisering": [
+      "content/krle/livssyn/sekularisering.json"
+    ],
     "bahai-bonn": [
       "content/krle/religion/bahai/bonn/artikkel.json"
     ],
@@ -5702,6 +5705,7 @@
     "krle/filosofi/sokrates": "content/krle/filosofi/sokrates.json",
     "krle/livssyn/ateisme-og-agnostisme": "content/krle/livssyn/ateisme-og-agnostisme.json",
     "krle/livssyn/livssynshumanisme": "content/krle/livssyn/livssynshumanisme.json",
+    "krle/livssyn/sekularisering": "content/krle/livssyn/sekularisering.json",
     "krle/religion/bahai/bonn": "content/krle/religion/bahai/bonn/artikkel.json",
     "krle/religion/bahai/frelse": "content/krle/religion/bahai/frelse/artikkel.json",
     "krle/religion/bahai/grunnleggere": "content/krle/religion/bahai/grunnleggere/artikkel.json",

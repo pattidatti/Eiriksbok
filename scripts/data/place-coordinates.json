@@ -1330,6 +1330,10 @@
       "count": 6
     },
     {
+      "tag": "livssyn",
+      "count": 6
+    },
+    {
       "tag": "teori",
       "count": 6
     },
@@ -1602,6 +1606,10 @@
       "count": 4
     },
     {
+      "tag": "sekularisering",
+      "count": 4
+    },
+    {
       "tag": "galileo",
       "count": 4
     },
@@ -1635,10 +1643,6 @@
     },
     {
       "tag": "utvandring",
-      "count": 4
-    },
-    {
-      "tag": "livssyn",
       "count": 4
     },
     {
@@ -2342,6 +2346,18 @@
       "count": 2
     },
     {
+      "tag": "statskirke",
+      "count": 2
+    },
+    {
+      "tag": "religionsfrihet",
+      "count": 2
+    },
+    {
+      "tag": "grunnloven",
+      "count": 2
+    },
+    {
       "tag": "katolisisme",
       "count": 2
     },
@@ -2635,10 +2651,6 @@
     },
     {
       "tag": "agnostisme",
-      "count": 2
-    },
-    {
-      "tag": "sekularisering",
       "count": 2
     },
     {

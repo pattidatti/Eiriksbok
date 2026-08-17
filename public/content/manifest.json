@@ -9157,6 +9157,21 @@
                 "norge"
               ],
               "createdDate": "2026-08-16T00:00:00Z"
+            },
+            {
+              "id": "sekularisering",
+              "title": "Sekularisering: da staten sluttet å bestemme hva du skulle tro",
+              "description": "Fra statskirke i 1537 til skilsmisse i 2017: hvordan religionen mistet makten over lovene, over organisasjonene og til slutt over den enkelte.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "livssyn",
+                "sekularisering",
+                "statskirke",
+                "religionsfrihet",
+                "grunnloven",
+                "norge"
+              ],
+              "createdDate": "2026-08-17T00:00:00Z"
             }
           ]
         },

@@ -105,6 +105,7 @@ const TestPaastanden = lazy(() => import('./content/interactive/TestPaastanden')
 const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansionMap').then(m => ({ default: m.RomanExpansionMap })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
 const TroOgVitenMatrisen = lazy(() => import('./content/interactive/TroOgVitenMatrisen').then(m => ({ default: m.TroOgVitenMatrisen })));
+const LivetsFireStunder = lazy(() => import('./content/interactive/LivetsFireStunder').then(m => ({ default: m.LivetsFireStunder })));
 const TraktatFellen = lazy(() => import('./content/interactive/TraktatFellen').then(m => ({ default: m.TraktatFellen })));
 const TroensRotter = lazy(() => import('./content/interactive/TroensRotter').then(m => ({ default: m.TroensRotter })));
 const VeilOfIgnorance = lazy(() => import('./content/interactive/VeilOfIgnorance').then(m => ({ default: m.VeilOfIgnorance })));
@@ -580,6 +581,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     SuverenitetsSkala,
     TrolleyProblem,
     TroOgVitenMatrisen,
+    LivetsFireStunder,
     TraktatFellen,
     TroensRotter,
     VeilOfIgnorance,
