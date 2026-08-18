@@ -663,6 +663,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "konfusianisme",
+      "title": "Konfusianisme: plikten som går begge veier",
+      "description": "Kinas store livssyn uten en gud: fem bånd mellom mennesker der plikten alltid går begge veier.",
+      "startDate": -551,
+      "endDate": null,
+      "displayDate": "551 fvt",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "livssyn",
+      "link": "/krle/livssyn/konfusianisme",
+      "tags": [
+        "kina",
+        "livssyn",
+        "etikk",
+        "konfusianisme",
+        "filosofi"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "athen-demokrati",
       "title": "Demokratiet i Athen",
       "description": "Verdens første direkte demokrati blomstrer i Athen.",

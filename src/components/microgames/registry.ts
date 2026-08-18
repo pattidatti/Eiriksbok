@@ -189,6 +189,7 @@ const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
 const ForbudtMote3D = lazy(() => import('./ForbudtMote3D'));
+const Forfedrehallen3D = lazy(() => import('./Forfedrehallen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -1846,6 +1847,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./ForbudtMote3D'),
         Component: ForbudtMote3D as never,
+    },
+    'forfedrehallen-3d': {
+        id: 'forfedrehallen-3d',
+        title: 'Seremonien i forfedrehallen',
+        description:
+            'Du står som yngste embetsmann bakerst i en konfusiansk forfedrehall i Kina rundt år 500 fvt. Den eldste slår gongen ved alteret, og et bukk ruller nedover rekkene mot deg. Hold inne for å bøye deg, og treff øyeblikket da bukket når fram til din plass. Uroen i hallen vokser både når du glemmer bukket og når du blir stående bøyd hele tiden, og blir den for stor, bryter seremonien sammen. Lyspæra: li - de faste formene - var ikke pynt for Konfucius. Å gjøre riktig ting til riktig tid var selve treningen i å høre til et fellesskap.',
+        estimatedSeconds: 110,
+        loader: () => import('./Forfedrehallen3D'),
+        Component: Forfedrehallen3D as never,
     },
 };
 

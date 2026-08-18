@@ -827,7 +827,7 @@
     },
     {
       "tag": "filosofi",
-      "count": 57
+      "count": 59
     },
     {
       "tag": "handel",
@@ -878,16 +878,16 @@
       "count": 28
     },
     {
+      "tag": "etikk",
+      "count": 28
+    },
+    {
       "tag": "revolusjon",
       "count": 28
     },
     {
       "tag": "1800-tallet",
       "count": 28
-    },
-    {
-      "tag": "etikk",
-      "count": 26
     },
     {
       "tag": "verdensorden",
@@ -1178,6 +1178,10 @@
       "count": 9
     },
     {
+      "tag": "livssyn",
+      "count": 8
+    },
+    {
       "tag": "historiens-store-gater",
       "count": 8
     },
@@ -1327,10 +1331,6 @@
     },
     {
       "tag": "psykologi",
-      "count": 6
-    },
-    {
-      "tag": "livssyn",
       "count": 6
     },
     {
@@ -2007,6 +2007,10 @@
     },
     {
       "tag": "kyros",
+      "count": 2
+    },
+    {
+      "tag": "konfusianisme",
       "count": 2
     },
     {
