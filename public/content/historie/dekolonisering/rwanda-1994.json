@@ -5,7 +5,7 @@
     "year": "1994",
     "category": "Afrika",
     "readTime": "11 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dekolonisering/rwanda-1994-hero.webp",
     "details": [
         "Hutu og tutsi var opprinnelig sosiale grupper, ikke to folkeslag. Skillet fulgte hva folk levde av.",
         "Belgia gjennomførte folketelling i 1933-34, og fra 1935 måtte alle bære et identitetskort med gruppa si.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dekolonisering/rwanda-1994-01.webp",
             "alt": "Veisperring av tømmer i en gate i Kigali i 1994",
             "caption": "Ved veisperringene i 1994 var det identitetskortet, ikke ansiktet, som avgjorde hvem som slapp forbi."
         },
@@ -72,7 +72,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dekolonisering/rwanda-1994-02.webp",
             "alt": "Tomt klasserom med forlatte skolepulter og bøker på gulvet",
             "caption": "På hundre dager forsvant hele nabolag. Skoler, kirker og markeder sto tomme."
         },
@@ -110,7 +110,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dekolonisering/rwanda-1994-03.webp",
             "alt": "Grønne terrasserte åser i Rwanda med små gårdshus i dagslys",
             "caption": "Åsene ser ut som før. Det er menneskene som må finne ut hvordan de skal bo der sammen igjen."
         },

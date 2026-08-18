@@ -5,7 +5,7 @@
     "year": "1960-2026",
     "category": "Norge",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norge-i-moderne-tid/innvandringen-til-norge-hero.webp",
     "factChecked": "2026-08-14",
     "details": [
         "Norge gikk fra å være et land folk reiste fra, til et land folk reiser til",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/innvandringen-til-norge-01.webp",
             "alt": "Ung mann med koffert utenfor en fabrikkport i Oslo på 1970-tallet",
             "caption": "De første arbeidsinnvandrerne ble kalt fremmedarbeidere. De fleste var unge menn som kom alene, og som regnet med å reise hjem igjen."
         },
@@ -78,7 +78,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/innvandringen-til-norge-02.webp",
             "alt": "Familie ankommer flyplass i Norge med kofferter på 1970-tallet",
             "caption": "Innvandringsstoppen fikk en virkning nesten ingen hadde planlagt: den gjorde midlertidige arbeidere til faste familier."
         },
@@ -154,7 +154,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/innvandringen-til-norge-03.webp",
             "alt": "Skolegård i norsk by med elever fra mange bakgrunner",
             "caption": "I dag har omtrent én av fem som bor i Norge innvandrerbakgrunn. De fleste av dem er norske statsborgere, og mange er født her."
         },

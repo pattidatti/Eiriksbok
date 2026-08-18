@@ -7,7 +7,7 @@
     "year": "1859-1895",
     "category": "Livssyn",
     "readTime": "11 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/krle/livssyn/ateisme-og-agnostisme-hero.webp",
     "dimension": "doctrinal",
     "comparison_tags": ["livssyn", "gudsbilde", "doctrinal"],
     "kompetansemaal": ["rle-10-3", "rle-10-6"],
@@ -58,7 +58,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/ateisme-og-agnostisme-01.webp",
             "alt": "En gammel mann står foran en domstol av borgere i antikkens Athen",
             "caption": "Athen, år 399 fvt. Sokrates ble anklaget for ikke å godta byens guder, og dømt til døden."
         },
@@ -146,7 +146,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/ateisme-og-agnostisme-02.webp",
             "alt": "Et viktoriansk studerkammer med bøker, en globus og et oppslått verk om arter",
             "caption": "London, 1859. Da Darwin ga ut Om artenes opprinnelse, endret debatten om tro og vitenskap seg for alltid."
         },
@@ -192,7 +192,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/ateisme-og-agnostisme-03.webp",
             "alt": "En norsk skolegård der ungdommer i ulike klær står og prater sammen",
             "caption": "I Norge kan elever i samme klasse svare helt ulikt på begge spørsmålene, uten at det får følger for noen."
         },
