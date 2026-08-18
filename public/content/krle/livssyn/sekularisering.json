@@ -7,7 +7,7 @@
     "year": "1537-2017",
     "category": "Livssyn",
     "readTime": "12 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/krle/livssyn/sekularisering-hero.webp",
     "dimension": "social",
     "comparison_tags": ["livssyn", "sekularisering", "social"],
     "kompetansemaal": ["rle-10-2", "rle-10-3", "rle-10-6"],
@@ -58,7 +58,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/sekularisering-01.webp",
             "alt": "Bønder samlet rundt et talglys i en mørk norsk stue tidlig på 1800-tallet",
             "caption": "Norge rundt 1804. Å samle naboene til bønn og bibellesing hjemme var straffbart hvis presten ikke var med."
         },
@@ -139,7 +139,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/sekularisering-02.webp",
             "alt": "Stortingssalen med representanter som stemmer over en grunnlovsendring",
             "caption": "Stortinget, 2012. Grunnloven ble endret, og Norge sluttet å ha en offisiell statsreligion."
         },
@@ -188,7 +188,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/sekularisering-03.webp",
             "alt": "En norsk kirke i sollys med en nesten tom parkeringsplass utenfor",
             "caption": "Kirkene står der fortsatt. Det er bruken av dem som har endret seg mest."
         },

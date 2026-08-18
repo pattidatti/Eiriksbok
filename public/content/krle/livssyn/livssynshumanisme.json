@@ -7,7 +7,7 @@
     "year": "1951-1956",
     "category": "Livssyn",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/krle/livssyn/livssynshumanisme-hero.webp",
     "dimension": "doctrinal",
     "comparison_tags": ["livssyn", "etikk", "seremonier", "doctrinal"],
     "kompetansemaal": ["rle-10-3"],
@@ -58,7 +58,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/livssynshumanisme-01.webp",
             "alt": "Ungdommer sitter i en universitetsaula under en seremoni i 1951",
             "caption": "Universitetets aula i Oslo, 6. mai 1951. Den første humanistiske konfirmasjonen i Norge samlet 34 ungdommer."
         },
@@ -264,7 +264,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/livssynshumanisme-02.webp",
             "alt": "Ungdommer i en lys sal under en humanistisk konfirmasjonsseremoni",
             "caption": "Humanistisk konfirmasjon i dag. Kurset varer rundt 20 timer og handler om etikk, livssyn og samfunn."
         },
@@ -294,7 +294,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/krle/livssyn/livssynshumanisme-03.webp",
             "alt": "To hender som holder hverandre foran en enkel lys sal uten religiøse symboler",
             "caption": "En humanistisk vigsel. Seremonirommet er bevisst uten religiøse symboler."
         },
