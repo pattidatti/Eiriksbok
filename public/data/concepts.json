@@ -2822,6 +2822,23 @@
     "id": "innovasjon"
   },
   {
+    "term": "Innskuddspenger",
+    "aliases": [
+      "kontopenger",
+      "bankinnskudd",
+      "innskuddspengene"
+    ],
+    "definition": "Pengene du ser i bank-appen. Det er ikke sedler i et hvelv, men et løfte fra banken om at du kan få beløpet når du vil. Nesten alle pengene i Norge er av denne typen, og de lages av vanlige banker.",
+    "type": "concept",
+    "tags": [
+      "økonomi",
+      "penger",
+      "bank"
+    ],
+    "subject": "samfunnskunnskap",
+    "id": "innskuddspenger"
+  },
+  {
     "term": "Investiturstriden",
     "definition": "En konflikt mellom kirken og staten i middelalderen (ca. 1075–1122) om hvem som hadde rett til å utnevne biskoper og abbeder.",
     "type": "concept",
@@ -4757,6 +4774,23 @@
     "id": "pearl-harbor"
   },
   {
+    "term": "Pengeskaping",
+    "aliases": [
+      "pengeskapingen",
+      "skape penger",
+      "skaper penger"
+    ],
+    "definition": "At det oppstår nye penger i økonomien. Mesteparten skjer når en bank gir et lån: kunden får et nytt innskudd på kontoen, og banken får et gjeldsbrev tilbake. Betales lånet ned, slettes pengene igjen.",
+    "type": "concept",
+    "tags": [
+      "økonomi",
+      "penger",
+      "bank"
+    ],
+    "subject": "samfunnskunnskap",
+    "id": "pengeskaping"
+  },
+  {
     "term": "Penicillin",
     "definition": "En type antibiotika som dreper bakterier og forhindrer infeksjoner.",
     "subject": "historie",
@@ -5602,6 +5636,23 @@
     "id": "sennepsgass"
   },
   {
+    "term": "Sentralbankreserver",
+    "aliases": [
+      "sentralbankreserve",
+      "bankreserver",
+      "reserver"
+    ],
+    "definition": "Bankenes egne penger på konto i Norges Bank. Bare banker kan bruke dem, og bare Norges Bank kan lage dem. Når et innskudd flytter fra en bank til en annen, gjør bankene opp seg imellom med reserver.",
+    "type": "concept",
+    "tags": [
+      "økonomi",
+      "penger",
+      "bank"
+    ],
+    "subject": "samfunnskunnskap",
+    "id": "sentralbankreserver"
+  },
+  {
     "term": "Sentralmaktene",
     "definition": "Alliansen mellom Tyskland, Østerrike-Ungarn og Det osmanske riket.",
     "subject": "historie",
@@ -6176,6 +6227,22 @@
       "buddhisme"
     ],
     "id": "stupa"
+  },
+  {
+    "term": "Styringsrente",
+    "aliases": [
+      "styringsrenta",
+      "styringsrenten"
+    ],
+    "definition": "Renta bankene får på pengene sine i Norges Bank. Den smitter videre til alle andre renter i landet og er Norges Banks viktigste verktøy for å holde prisveksten nær 2 prosent i året.",
+    "type": "concept",
+    "tags": [
+      "økonomi",
+      "penger",
+      "bank"
+    ],
+    "subject": "samfunnskunnskap",
+    "id": "styringsrente"
   },
   {
     "term": "Subjektet",

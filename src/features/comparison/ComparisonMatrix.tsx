@@ -53,9 +53,9 @@ export const ComparisonMatrix: React.FC<ComparisonMatrixProps> = ({ rows, entiti
     return (
         <section className="mb-8" aria-label="Rask oversikt">
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
-                <h2 className="font-display font-bold text-lg text-text-main">Rask oversikt</h2>
+                <h2 className="font-bold text-lg text-slate-900">Rask oversikt</h2>
                 {hasAnyTint && (
-                    <p className="text-xs text-text-muted">
+                    <p className="text-xs text-slate-500">
                         Like farger i en rad betyr samme svar.
                     </p>
                 )}
@@ -63,12 +63,12 @@ export const ComparisonMatrix: React.FC<ComparisonMatrixProps> = ({ rows, entiti
 
             <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
                 <div
-                    className="min-w-[560px] rounded-2xl border border-border-main bg-bg-card overflow-hidden"
+                    className="min-w-[560px] rounded-2xl border border-slate-200 bg-white overflow-hidden"
                     role="table"
                 >
                     <div
                         role="row"
-                        className="grid border-b border-border-main bg-bg-subtle/60"
+                        className="grid border-b border-slate-200 bg-slate-50/60"
                         style={{ gridTemplateColumns: gridTemplate }}
                     >
                         <span role="columnheader" className="sr-only">
@@ -79,7 +79,7 @@ export const ComparisonMatrix: React.FC<ComparisonMatrixProps> = ({ rows, entiti
                             <div
                                 key={entity.id}
                                 role="columnheader"
-                                className="px-3 py-2.5 font-display font-bold text-sm text-text-main border-l border-border-main"
+                                className="px-3 py-2.5 font-bold text-sm text-slate-900 border-l border-slate-200"
                                 style={{ boxShadow: `inset 0 3px 0 ${entity.color || '#6366f1'}` }}
                             >
                                 {entity.name}
@@ -94,13 +94,13 @@ export const ComparisonMatrix: React.FC<ComparisonMatrixProps> = ({ rows, entiti
                                 key={row.key}
                                 role="row"
                                 className={`grid ${
-                                    rowIndex > 0 ? 'border-t border-border-main' : ''
+                                    rowIndex > 0 ? 'border-t border-slate-200' : ''
                                 }`}
                                 style={{ gridTemplateColumns: gridTemplate }}
                             >
                                 <div
                                     role="rowheader"
-                                    className="px-3 py-3 text-xs font-bold uppercase tracking-wide text-text-muted self-center"
+                                    className="px-3 py-3 text-xs font-bold uppercase tracking-wide text-slate-500 self-center"
                                 >
                                     {row.label}
                                 </div>
@@ -111,7 +111,7 @@ export const ComparisonMatrix: React.FC<ComparisonMatrixProps> = ({ rows, entiti
                                         <div
                                             key={entity.id}
                                             role="cell"
-                                            className="px-2 py-2 border-l border-border-main"
+                                            className="px-2 py-2 border-l border-slate-200"
                                         >
                                             <motion.span
                                                 layout

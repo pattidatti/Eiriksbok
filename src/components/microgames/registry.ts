@@ -15,6 +15,7 @@ const Dialektgrensa3D = lazy(() => import('./Dialektgrensa3D'));
 const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
+const BankensBalansegang3D = lazy(() => import('./BankensBalansegang3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
 const Livsveien3D = lazy(() => import('./Livsveien3D'));
 const Kornskuta3D = lazy(() => import('./Kornskuta3D'));
@@ -911,6 +912,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./Kornskuta3D'),
         Component: Kornskuta3D as never,
+    },
+    'bankens-balansegang': {
+        id: 'bankens-balansegang',
+        title: 'Bankens balansegang',
+        description:
+            'Du er banken: klikk lånekundene for å innvilge lån, og se nye penger bli til. Men i det kunden bruker lånet, flytter innskuddet til en annen bank, og du må sende sentralbankreserver etter. Går reservene tomme, er det likviditetskrise. Eleven kjenner selv hvorfor bankene ikke kan lage uendelig mye penger.',
+        estimatedSeconds: 120,
+        loader: () => import('./BankensBalansegang3D'),
+        Component: BankensBalansegang3D as never,
     },
     'vikingskip-3d': {
         id: 'vikingskip-3d',

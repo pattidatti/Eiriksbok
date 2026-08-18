@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { motionPresets } from '../styles/motion-presets';
 import { LessonCard } from '../components/LessonCard';
 import { TopicCard } from '../components/TopicCard';
-import { ChevronRight, Grid, List, Map, Download } from 'lucide-react';
+import { ChevronRight, Grid, List, Download } from 'lucide-react';
 import { HistoryLongLines } from '../components/HistoryLongLines';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 import { TopicInteractiveModel } from '../components/TopicInteractiveModel';
@@ -16,6 +16,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import { PageSkeleton } from '../components/Skeleton';
 import { useAnalytics } from '../hooks/useAnalytics';
 import { TopicPrintView } from '../components/TopicPrintView';
+import { toolIcon } from '../utils/toolIcon';
 
 type ViewMode = 'grid' | 'list';
 type SortMode = 'alphabetical' | 'year' | 'newest';
@@ -87,19 +88,12 @@ export const TopicPage: React.FC = () => {
     useAnalytics(topicId ? analyticsPath : undefined);
 
     if (isLoading) return <PageSkeleton />;
-    if (!subjectData || !currentTopic) return <div className="p-8 text-center text-text-muted">Laster emne...</div>;
+    if (!subjectData || !currentTopic) return <div className="p-8 text-center text-slate-500">Laster emne...</div>;
 
     if (subTopicId === 'lange-linjer') {
         return <ErrorBoundary><HistoryLongLines /></ErrorBoundary>;
     }
 
-
-    console.log('TopicPage Debug Stringified:', JSON.stringify({
-        topicId,
-        hasTools: !!activeItem?.tools,
-        toolsLength: activeItem?.tools?.length,
-        tools: activeItem?.tools
-    }, null, 2));
 
     // Safe to assume activeItem exists here due to earlier checks
     const subTopics = !currentSubTopic && currentTopic.subTopics ? currentTopic.subTopics : [];
@@ -114,11 +108,11 @@ export const TopicPage: React.FC = () => {
                 <motion.div
                     {...motionPresets.slideUp}
                 >
-                    <h1 className="text-2xl font-display font-bold text-text-main mb-1">
+                    <h1 className="text-2xl font-bold text-slate-900 mb-1">
                         {title}
                     </h1>
                     {description && (
-                        <p className="text-base text-text-muted max-w-3xl leading-relaxed">
+                        <p className="text-base text-slate-500 max-w-3xl leading-relaxed">
                             {description}
                         </p>
                     )}
@@ -129,23 +123,23 @@ export const TopicPage: React.FC = () => {
                     {activeItem?.lessons && activeItem.lessons.length > 0 && (
                         <button
                             onClick={() => setShowPrint(true)}
-                            className="p-2 rounded-lg text-text-muted hover:text-text-main hover:bg-white/10 transition"
+                            className="p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-white/10 transition"
                             title="Last ned emne som PDF"
                         >
                             <Download className="w-4 h-4" />
                         </button>
                     )}
-                    <div className="flex gap-0.5 bg-surface-card rounded-lg p-0.5 border border-white/10">
+                    <div className="flex gap-0.5 bg-white rounded-lg p-0.5 border border-white/10">
                         <button
                             onClick={() => setViewMode('grid')}
-                            className={`p-1.5 rounded-md transition-colors ${viewMode === 'grid' ? 'bg-neon-accent/20 text-neon-accent' : 'text-text-muted hover:text-text-main'}`}
+                            className={`p-1.5 rounded-md transition-colors ${viewMode === 'grid' ? 'bg-indigo-100 text-indigo-600' : 'text-slate-500 hover:text-slate-900'}`}
                             title="Rutenett"
                         >
                             <Grid size={16} />
                         </button>
                         <button
                             onClick={() => setViewMode('list')}
-                            className={`p-1.5 rounded-md transition-colors ${viewMode === 'list' ? 'bg-neon-accent/20 text-neon-accent' : 'text-text-muted hover:text-text-main'}`}
+                            className={`p-1.5 rounded-md transition-colors ${viewMode === 'list' ? 'bg-indigo-100 text-indigo-600' : 'text-slate-500 hover:text-slate-900'}`}
                             title="Liste"
                         >
                             <List size={16} />
@@ -154,7 +148,7 @@ export const TopicPage: React.FC = () => {
                     <select
                         value={sortMode}
                         onChange={(e) => setSortMode(e.target.value as SortMode)}
-                        className="text-sm bg-surface-card border border-white/10 rounded-lg px-2 py-1.5 text-text-main cursor-pointer"
+                        className="text-sm bg-white border border-white/10 rounded-lg px-2 py-1.5 text-slate-900 cursor-pointer"
                     >
                         <option value="alphabetical">A-Å</option>
                         <option value="year">Kronologisk</option>
@@ -175,17 +169,20 @@ export const TopicPage: React.FC = () => {
             {/* Tools Section - Pill ribbon */}
             {activeItem!.tools && activeItem!.tools.length > 0 && (
                 <div className="flex gap-2 overflow-x-auto pb-1 mb-6 scrollbar-hide">
-                    {activeItem!.tools.map((tool) => (
-                        <Link
-                            key={tool.id}
-                            to={tool.link}
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-surface-card border border-white/10 rounded-full text-sm font-medium whitespace-nowrap hover:bg-neon-accent/10 hover:text-neon-accent transition-all shrink-0"
-                            title={tool.description}
-                        >
-                            <Map className="w-4 h-4 text-neon-accent" />
-                            {tool.title}
-                        </Link>
-                    ))}
+                    {activeItem!.tools.map((tool) => {
+                        const Icon = toolIcon(tool.icon);
+                        return (
+                            <Link
+                                key={tool.id}
+                                to={tool.link}
+                                className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-bold text-slate-700 whitespace-nowrap hover:border-indigo-300 hover:text-indigo-600 hover:shadow-sm transition-all shrink-0"
+                                title={tool.description}
+                            >
+                                <Icon className="w-4 h-4 text-indigo-600" />
+                                {tool.title}
+                            </Link>
+                        );
+                    })}
                 </div>
             )}
 
@@ -203,7 +200,7 @@ export const TopicPage: React.FC = () => {
 
             {subTopics.length > 0 && (
                 <div className="mb-8">
-                    <h2 className="text-lg font-display font-bold text-text-main mb-4">Emner</h2>
+                    <h2 className="text-lg font-bold text-slate-900 mb-4">Emner</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                         {subTopics.map((subTopic, index: number) => (
                             <motion.div
@@ -242,7 +239,7 @@ export const TopicPage: React.FC = () => {
 
             {filteredLessons.length > 0 && (
                 <div>
-                    {subTopics.length > 0 && <h2 className="text-lg font-display font-bold text-text-main mb-4">Leksjoner</h2>}
+                    {subTopics.length > 0 && <h2 className="text-lg font-bold text-slate-900 mb-4">Leksjoner</h2>}
                     <div className={`grid gap-4 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4' : 'grid-cols-1'}`}>
                         {filteredLessons.map((lesson, index) => (
                             <motion.div
@@ -261,21 +258,21 @@ export const TopicPage: React.FC = () => {
                                 ) : (
                                     <Link
                                         to={`/${subjectId}/${topicId}${currentSubTopic ? `/${currentSubTopic.id}` : ''}/${lesson.id}`}
-                                        className="block bg-surface-card hover:bg-surface-card-hover border border-white/10 rounded-lg p-4 transition-all group"
+                                        className="block bg-white hover:bg-slate-50 border border-white/10 rounded-lg p-4 transition-all group"
                                     >
                                         <div className="flex items-center justify-between">
                                             <div>
-                                                <h3 className="text-xl font-bold text-text-main group-hover:text-neon-accent transition-colors mb-1">{lesson.title}</h3>
-                                                {lesson.description && <p className="text-text-muted">{lesson.description}</p>}
+                                                <h3 className="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors mb-1">{lesson.title}</h3>
+                                                {lesson.description && <p className="text-slate-500">{lesson.description}</p>}
                                                 {lesson.tags && (
                                                     <div className="flex gap-2 mt-2">
                                                         {lesson.tags.map(tag => (
-                                                            <span key={tag} className="text-xs px-2 py-1 bg-white/5 rounded-full text-text-muted">#{tag}</span>
+                                                            <span key={tag} className="text-xs px-2 py-1 bg-white/5 rounded-full text-slate-500">#{tag}</span>
                                                         ))}
                                                     </div>
                                                 )}
                                             </div>
-                                            <ChevronRight className="text-text-muted group-hover:text-neon-accent transition-colors" />
+                                            <ChevronRight className="text-slate-500 group-hover:text-indigo-600 transition-colors" />
                                         </div>
                                     </Link>
                                 )}
@@ -287,7 +284,7 @@ export const TopicPage: React.FC = () => {
 
             {subTopics.length === 0 && filteredLessons.length === 0 && (
                 <div className="col-span-full text-center py-12 bg-slate-50 rounded-2xl border border-slate-100">
-                    <p className="text-text-muted italic">Ingen leksjoner funnet i dette emnet.</p>
+                    <p className="text-slate-500 italic">Ingen leksjoner funnet i dette emnet.</p>
                 </div>
             )}
         </div>

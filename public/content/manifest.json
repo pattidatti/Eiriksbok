@@ -3350,7 +3350,8 @@
                 "arbeidsliv",
                 "etterkrigstid"
               ],
-              "createdDate": "2026-08-14T00:00:00Z"
+              "createdDate": "2026-08-14T03:52:27+02:00",
+              "lastUpdated": "2026-08-14T03:52:27+02:00"
             },
             {
               "id": "kvinnekampen",
@@ -7461,8 +7462,8 @@
       "tools": [
         {
           "id": "compare-religions",
-          "title": "Sammenlign Religioner",
-          "description": "Se likheter og forskjeller side om side.",
+          "title": "Sammenlign religioner",
+          "description": "Ett spørsmål om gangen, og ni religioner som svarer i samme rom.",
           "link": "/krle/sammenlign",
           "icon": "columns"
         },
@@ -7475,7 +7476,7 @@
         },
         {
           "id": "compare-philosophy",
-          "title": "Sammenlign Filosofer",
+          "title": "Sammenlign filosofer",
           "description": "Se hvordan ulike filosofer svarer på de store spørsmålene.",
           "link": "/krle/filosofi/sammenlign",
           "icon": "library"
@@ -8807,13 +8808,20 @@
           "image": "/images/placeholder.webp",
           "tools": [
             {
+              "id": "compare-religions",
+              "title": "Sammenlign religioner",
+              "description": "Ett spørsmål om gangen, og ni religioner som svarer i samme rom.",
+              "link": "/krle/sammenlign",
+              "icon": "columns"
+            },
+            {
               "id": "overgangsriter-sti",
               "title": "Læringssti: Overgangsritualer",
               "description": "Fire overganger, ni tradisjoner og mønsteret som ligger under. Du starter med ditt eget svar, og henter det fram igjen til slutt.",
               "link": "/krle/sammenligning/overgangsriter-sti",
               "icon": "map",
               "createdDate": "2026-08-12T10:00:34.254Z",
-              "lastUpdated": "2026-08-12T14:15:16+02:00"
+              "lastUpdated": "2026-08-13T09:57:36+02:00"
             },
             {
               "id": "lidelse-og-frelse-sti",
@@ -8822,7 +8830,7 @@
               "link": "/krle/sammenligning/lidelse-og-frelse-sti",
               "icon": "map",
               "createdDate": "2026-08-12T14:00:00Z",
-              "lastUpdated": "2026-08-13T07:41:19.472Z"
+              "lastUpdated": "2026-08-13T09:57:36+02:00"
             },
             {
               "id": "skapelse-sti",
@@ -8831,7 +8839,7 @@
               "link": "/krle/sammenligning/skapelse-sti",
               "icon": "map",
               "createdDate": "2026-08-13T15:00:00Z",
-              "lastUpdated": "2026-08-13T09:20:09+02:00"
+              "lastUpdated": "2026-08-13T09:57:36+02:00"
             }
           ],
           "lessons": [
@@ -9141,7 +9149,8 @@
                 "norge",
                 "seremonier"
               ],
-              "createdDate": "2026-08-15T00:00:00Z"
+              "createdDate": "2026-08-15T03:53:29+02:00",
+              "lastUpdated": "2026-08-15T03:53:29+02:00"
             },
             {
               "id": "ateisme-og-agnostisme",
@@ -9156,7 +9165,8 @@
                 "sekularisering",
                 "norge"
               ],
-              "createdDate": "2026-08-16T00:00:00Z"
+              "createdDate": "2026-08-16T03:46:57+02:00",
+              "lastUpdated": "2026-08-16T03:46:57+02:00"
             },
             {
               "id": "sekularisering",
@@ -9171,7 +9181,8 @@
                 "grunnloven",
                 "norge"
               ],
-              "createdDate": "2026-08-17T00:00:00Z"
+              "createdDate": "2026-08-17T04:00:32+02:00",
+              "lastUpdated": "2026-08-17T04:00:32+02:00"
             },
             {
               "id": "konfusianisme",
@@ -9185,7 +9196,8 @@
                 "konfusianisme",
                 "filosofi"
               ],
-              "createdDate": "2026-08-18T00:00:00Z"
+              "createdDate": "2026-08-18T04:27:25+02:00",
+              "lastUpdated": "2026-08-18T04:27:25+02:00"
             }
           ]
         },
@@ -9196,6 +9208,13 @@
           "image": "/images/filosofi/intro_hero.webp",
           "defaultView": "chronological",
           "tools": [
+            {
+              "id": "compare-philosophy",
+              "title": "Sammenlign filosofer",
+              "description": "Se hvordan ulike filosofer svarer på de store spørsmålene.",
+              "link": "/krle/filosofi/sammenlign",
+              "icon": "library"
+            },
             {
               "id": "philosophy-odyssey",
               "title": "Den Filosofiske Odysseen",

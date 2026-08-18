@@ -8,6 +8,8 @@
   "heroImage": "/images/placeholder.webp",
   "subject": "krle",
   "topic": "sammenligning",
+  "dimension": "narrative",
+  "comparison_tags": ["skapelse"],
   "kompetansemaal": [
     "rle01-03-10-01",
     "rle01-03-10-06",

@@ -36,11 +36,11 @@ export const ReligionTopicMap: React.FC = () => {
     if (religions.length === 0) return null;
 
     return (
-        <section className="mt-8 pt-6 border-t border-border-main">
-            <h2 className="font-display font-bold text-lg text-text-main mb-1 text-center">
+        <section className="mt-8 pt-6 border-t border-slate-200">
+            <h2 className="font-bold text-lg text-slate-900 mb-1 text-center">
                 Innholdskartet
             </h2>
-            <p className="text-sm text-text-muted text-center mb-4">
+            <p className="text-sm text-slate-500 text-center mb-4">
                 Religionene nedover, temaene bortover. Klikk på et navn for profilen, på et tema
                 for å se alle religionene side ved side, eller rett på en artikkel.
             </p>
@@ -49,14 +49,14 @@ export const ReligionTopicMap: React.FC = () => {
                 <table className="border-separate border-spacing-1 text-left">
                     <thead>
                         <tr>
-                            <th className="sticky left-0 z-10 bg-bg-main w-[130px]">
+                            <th className="sticky left-0 z-10 bg-slate-50 w-[130px]">
                                 <span className="sr-only">Religion</span>
                             </th>
                             {data.topics.map((topic) => (
                                 <th key={topic.slug} className="w-[118px] align-bottom p-0">
                                     <Link
                                         to={topicHref(topic.slug, { dim })}
-                                        className="block px-2 py-1.5 rounded-lg text-xs font-bold text-text-muted hover:text-indigo-600 hover:bg-indigo-500/10 transition-colors"
+                                        className="block px-2 py-1.5 rounded-lg text-xs font-bold text-slate-500 hover:text-indigo-600 hover:bg-indigo-500/10 transition-colors"
                                     >
                                         #{topic.short ?? topic.label}
                                         <span className="block font-medium opacity-70">
@@ -75,14 +75,14 @@ export const ReligionTopicMap: React.FC = () => {
                                 <tr key={religion.id}>
                                     <th
                                         scope="row"
-                                        className="sticky left-0 z-10 bg-bg-main p-0 align-middle"
+                                        className="sticky left-0 z-10 bg-slate-50 p-0 align-middle"
                                     >
                                         <Link
                                             to={profileHref(religion.id, {
                                                 dim,
                                                 visning: 'profil',
                                             })}
-                                            className="flex items-center gap-2 px-2 py-2 rounded-lg text-sm font-bold text-text-main hover:bg-black/5 transition-colors"
+                                            className="flex items-center gap-2 px-2 py-2 rounded-lg text-sm font-bold text-slate-900 hover:bg-black/5 transition-colors"
                                         >
                                             <span
                                                 aria-hidden
@@ -98,7 +98,7 @@ export const ReligionTopicMap: React.FC = () => {
                                             return (
                                                 <td
                                                     key={topic.slug}
-                                                    className="rounded-lg bg-bg-subtle/60 border border-dashed border-border-main"
+                                                    className="rounded-lg bg-slate-50/60 border border-dashed border-slate-200"
                                                 >
                                                     <span className="sr-only">
                                                         Ingen artikkel om {topic.label} i{' '}
@@ -112,7 +112,7 @@ export const ReligionTopicMap: React.FC = () => {
                                                 <Link
                                                     to={cell.link}
                                                     title={`${religion.name}: ${cell.title}`}
-                                                    className="block h-full min-h-[3.25rem] px-2 py-1.5 rounded-lg text-[11px] leading-tight font-medium text-text-main bg-bg-card border border-border-main hover:shadow-sm transition-all"
+                                                    className="block h-full min-h-[3.25rem] px-2 py-1.5 rounded-lg text-[11px] leading-tight font-medium text-slate-900 bg-white border border-slate-200 hover:shadow-sm transition-all"
                                                     style={{ borderLeft: `3px solid ${color}` }}
                                                 >
                                                     <span className="line-clamp-3">{cell.title}</span>

@@ -24,6 +24,7 @@ export const routeFactories: Record<string, PageFactory> = {
     DailyReviewPage: () => import('./pages/DailyReviewPage').then(module => ({ default: module.DailyReviewPage })),
     QuizPage: () => import('./pages/QuizPage').then(module => ({ default: module.QuizPage })),
     ReligionPage: () => import('./pages/ReligionPage').then(module => ({ default: module.ReligionPage })),
+    ReligionHubPage: () => import('./pages/ReligionHubPage').then(module => ({ default: module.ReligionHubPage })),
     ReligionComparisonPage: () => import('./pages/ReligionComparisonPage').then(module => ({ default: module.ReligionComparisonPage })),
     PhilosophyComparisonPage: () => import('./pages/PhilosophyComparisonPage').then(module => ({ default: module.PhilosophyComparisonPage })),
     TopicComparisonPage: () => import('./pages/TopicComparisonPage').then(module => ({ default: module.TopicComparisonPage })),

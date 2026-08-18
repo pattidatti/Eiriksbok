@@ -1,5 +1,5 @@
 {
-  "buildId": 191031543675614,
+  "buildId": 215762708379516,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -766,6 +766,9 @@
     "concept-innovasjon": [
       "content/concepts/innovasjon.json"
     ],
+    "concept-innskuddspenger": [
+      "content/concepts/innskuddspenger.json"
+    ],
     "concept-investiturstriden": [
       "content/concepts/investiturstriden.json"
     ],
@@ -1279,6 +1282,9 @@
     "concept-pearl-harbor": [
       "content/concepts/pearl-harbor.json"
     ],
+    "concept-pengeskaping": [
+      "content/concepts/pengeskaping.json"
+    ],
     "concept-penicillin": [
       "content/concepts/penicillin.json"
     ],
@@ -1510,6 +1516,9 @@
     "concept-sennepsgass": [
       "content/concepts/sennepsgass.json"
     ],
+    "concept-sentralbankreserver": [
+      "content/concepts/sentralbankreserver.json"
+    ],
     "concept-sentralmaktene": [
       "content/concepts/sentralmaktene.json"
     ],
@@ -1659,6 +1668,9 @@
     ],
     "concept-stupa": [
       "content/concepts/stupa.json"
+    ],
+    "concept-styringsrente": [
+      "content/concepts/styringsrente.json"
     ],
     "concept-subjektet": [
       "content/concepts/subjektet.json"
@@ -4569,6 +4581,9 @@
     "finanskriser": [
       "content/samfunnskunnskap/okonomi/finanskriser.json"
     ],
+    "hvordan-penger-blir-til": [
+      "content/samfunnskunnskap/okonomi/hvordan-penger-blir-til.json"
+    ],
     "inflasjon-og-rente": [
       "content/samfunnskunnskap/okonomi/inflasjon-og-rente.json"
     ],
@@ -4931,6 +4946,7 @@
     "concepts/ingenmannsland.json/ingenmannsland": "content/concepts/ingenmannsland.json",
     "concepts/inkarnasjon.json/inkarnasjon": "content/concepts/inkarnasjon.json",
     "concepts/innovasjon.json/innovasjon": "content/concepts/innovasjon.json",
+    "concepts/innskuddspenger.json/innskuddspenger": "content/concepts/innskuddspenger.json",
     "concepts/investiturstriden.json/investiturstriden": "content/concepts/investiturstriden.json",
     "concepts/iznik-fliser.json/iznik-fliser": "content/concepts/iznik-fliser.json",
     "concepts/jahve.json/jahve": "content/concepts/jahve.json",
@@ -5102,6 +5118,7 @@
     "concepts/pax-mongolica.json/pax-mongolica": "content/concepts/pax-mongolica.json",
     "concepts/pax-romana.json/pax-romana": "content/concepts/pax-romana.json",
     "concepts/pearl-harbor.json/pearl-harbor": "content/concepts/pearl-harbor.json",
+    "concepts/pengeskaping.json/pengeskaping": "content/concepts/pengeskaping.json",
     "concepts/penicillin.json/penicillin": "content/concepts/penicillin.json",
     "concepts/perestrojka.json/perestrojka": "content/concepts/perestrojka.json",
     "concepts/pesach.json/pesach": "content/concepts/pesach.json",
@@ -5179,6 +5196,7 @@
     "concepts/selvstendighet.json/selvstendighet": "content/concepts/selvstendighet.json",
     "concepts/senantikken.json/senantikken": "content/concepts/senantikken.json",
     "concepts/sennepsgass.json/sennepsgass": "content/concepts/sennepsgass.json",
+    "concepts/sentralbankreserver.json/sentralbankreserver": "content/concepts/sentralbankreserver.json",
     "concepts/sentralmaktene.json/sentralmaktene": "content/concepts/sentralmaktene.json",
     "concepts/sepoy.json/sepoy": "content/concepts/sepoy.json",
     "concepts/seva.json/seva": "content/concepts/seva.json",
@@ -5229,6 +5247,7 @@
     "concepts/stridsvogn.json/stridsvogn": "content/concepts/stridsvogn.json",
     "concepts/strukturtilpasning.json/strukturtilpasning": "content/concepts/strukturtilpasning.json",
     "concepts/stupa.json/stupa": "content/concepts/stupa.json",
+    "concepts/styringsrente.json/styringsrente": "content/concepts/styringsrente.json",
     "concepts/subjektet.json/subjektet": "content/concepts/subjektet.json",
     "concepts/subtekst.json/subtekst": "content/concepts/subtekst.json",
     "concepts/sultan.json/sultan": "content/concepts/sultan.json",
@@ -6206,6 +6225,7 @@
     "samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot": "content/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot.json",
     "samfunnskunnskap/okonomi/arbeidsspesialisering": "content/samfunnskunnskap/okonomi/arbeidsspesialisering.json",
     "samfunnskunnskap/okonomi/finanskriser": "content/samfunnskunnskap/okonomi/finanskriser.json",
+    "samfunnskunnskap/okonomi/hvordan-penger-blir-til": "content/samfunnskunnskap/okonomi/hvordan-penger-blir-til.json",
     "samfunnskunnskap/okonomi/inflasjon-og-rente": "content/samfunnskunnskap/okonomi/inflasjon-og-rente.json",
     "samfunnskunnskap/okonomi/komparativt-fortrinn": "content/samfunnskunnskap/okonomi/komparativt-fortrinn.json",
     "samfunnskunnskap/okonomi/naturlig-rente": "content/samfunnskunnskap/okonomi/naturlig-rente.json",

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { DIMENSIONS, type DimensionKey } from './dimensionMeta';
 
 interface DimensionWheelProps {
+    /** Teksten i navet. På profilen religionens navn, ellers hva hjulet styrer. */
     religionName: string;
     /** Religionens egen farge - brukes på navet og fremdriftsringen */
     color: string;
@@ -12,6 +13,16 @@ interface DimensionWheelProps {
     /** Dimensjoner som faktisk har innhold i datafila */
     available: Set<DimensionKey>;
     onSelect: (key: DimensionKey) => void;
+    /**
+     * `progress`: hjulet måler hvor mye av profilen eleven har lest - uleste
+     * kiler er bleke, og navet teller.
+     * `picker`: hjulet er bare en velger, slik det er på sammenligningssiden.
+     * Der finnes det ingen «lest»-tilstand å måle, så alle kilene er like
+     * synlige og navet viser hvilket spørsmål som gjelder.
+     */
+    mode?: 'progress' | 'picker';
+    /** Bredden hjulet tegnes i. 320 er profilens, 260 passer i en smal kolonne. */
+    maxWidth?: number;
 }
 
 const SIZE = 320;
@@ -52,7 +63,14 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({
     visited,
     available,
     onSelect,
+    mode = 'progress',
+    maxWidth = 340,
 }) => {
+    const isPicker = mode === 'picker';
+    const activeMeta = DIMENSIONS.find((d) => d.key === selected);
+    // Etikettene ligger som HTML over SVG-en og skalerer ikke med viewBoxen.
+    // Uten dette kolliderer navteksten med kileetikettene i en smal kolonne.
+    const scale = maxWidth / 340;
     const pathRefs = useRef<(SVGPathElement | null)[]>([]);
     const progress = visited.size / DIMENSIONS.length;
     const hubCircumference = 2 * Math.PI * R_HUB;
@@ -66,7 +84,8 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({
 
     return (
         <div
-            className="relative w-full max-w-[340px] mx-auto aspect-square select-none"
+            className="relative w-full mx-auto aspect-square select-none"
+            style={{ maxWidth }}
             role="radiogroup"
             aria-label={`Velg dimensjon for ${religionName}`}
             onKeyDown={(event) => {
@@ -101,7 +120,9 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({
                             }}
                             d={wedgePath(index * SLICE + GAP / 2, (index + 1) * SLICE - GAP / 2)}
                             fill={dim.color}
-                            fillOpacity={isSelected ? 0.92 : isVisited ? 0.34 : 0.13}
+                            fillOpacity={
+                                isSelected ? 0.92 : isPicker ? 0.3 : isVisited ? 0.34 : 0.13
+                            }
                             stroke={dim.color}
                             strokeOpacity={isSelected ? 1 : 0.35}
                             strokeWidth={isSelected ? 2 : 1}
@@ -137,23 +158,25 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({
                     cy={CENTER}
                     r={R_HUB}
                     fill="none"
-                    stroke={color}
-                    strokeOpacity={0.15}
+                    stroke={isPicker ? activeMeta?.color || color : color}
+                    strokeOpacity={isPicker ? 0.35 : 0.15}
                     strokeWidth={4}
                 />
-                <motion.circle
-                    cx={CENTER}
-                    cy={CENTER}
-                    r={R_HUB}
-                    fill="none"
-                    stroke={color}
-                    strokeWidth={4}
-                    strokeLinecap="round"
-                    transform={`rotate(-90 ${CENTER} ${CENTER})`}
-                    style={{ strokeDasharray: hubCircumference }}
-                    animate={{ strokeDashoffset: hubCircumference * (1 - progress) }}
-                    transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-                />
+                {!isPicker && (
+                    <motion.circle
+                        cx={CENTER}
+                        cy={CENTER}
+                        r={R_HUB}
+                        fill="none"
+                        stroke={color}
+                        strokeWidth={4}
+                        strokeLinecap="round"
+                        transform={`rotate(-90 ${CENTER} ${CENTER})`}
+                        style={{ strokeDasharray: hubCircumference }}
+                        animate={{ strokeDashoffset: hubCircumference * (1 - progress) }}
+                        transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+                    />
+                )}
             </svg>
 
             {/* Etiketter og ikoner legges over SVG-en som HTML, i prosent av
@@ -172,18 +195,19 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({
                             left: `${(x / SIZE) * 100}%`,
                             top: `${(y / SIZE) * 100}%`,
                             transform: 'translate(-50%, -50%)',
-                            width: '72px',
+                            width: `${72 * scale}px`,
                         }}
                     >
                         <Icon
-                            size={18}
+                            size={Math.round(18 * scale)}
                             strokeWidth={2.2}
                             style={{ color: isSelected ? '#ffffff' : dim.color }}
                         />
                         <span
-                            className={`text-[10px] leading-tight font-bold text-center ${
+                            className={`leading-tight font-bold text-center ${
                                 isSelected ? 'text-white' : 'text-slate-700'
                             }`}
+                            style={{ fontSize: `${10 * scale}px` }}
                         >
                             {dim.short}
                         </span>
@@ -193,13 +217,39 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({
 
             {/* Navteksten */}
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500 text-center px-6">
+                <span
+                    className="font-bold uppercase tracking-widest text-slate-500 text-center"
+                    style={{ fontSize: `${11 * scale}px`, paddingInline: `${24 * scale}px` }}
+                >
                     {religionName}
                 </span>
-                <span className="text-lg font-display font-bold" style={{ color }}>
-                    {visited.size}/{DIMENSIONS.length}
-                </span>
-                <span className="text-[9px] uppercase tracking-wider text-slate-400">lest</span>
+                {isPicker ? (
+                    <span
+                        className="font-bold text-center leading-tight"
+                        style={{
+                            color: activeMeta?.color || color,
+                            fontSize: `${14 * scale}px`,
+                            paddingInline: `${20 * scale}px`,
+                        }}
+                    >
+                        {activeMeta?.short}
+                    </span>
+                ) : (
+                    <>
+                        <span
+                            className="font-bold"
+                            style={{ color, fontSize: `${18 * scale}px` }}
+                        >
+                            {visited.size}/{DIMENSIONS.length}
+                        </span>
+                        <span
+                            className="uppercase tracking-wider text-slate-400"
+                            style={{ fontSize: `${9 * scale}px` }}
+                        >
+                            lest
+                        </span>
+                    </>
+                )}
             </div>
         </div>
     );

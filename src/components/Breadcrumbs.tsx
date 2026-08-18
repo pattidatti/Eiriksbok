@@ -22,6 +22,9 @@ export const Breadcrumbs: React.FC = () => {
         // Manual overrides - Check these first!
         if (id === 'oving') return 'Øving';
         if (id === 'flashcards') return 'Fagbegreper';
+        // KRLE-religionsrommet er ruter uten emne i manifestet
+        if (id === 'sammenlign') return 'Sammenlign';
+        if (id === 'tema') return 'Temaer';
 
         if (!manifest) return id;
 
@@ -47,10 +50,10 @@ export const Breadcrumbs: React.FC = () => {
     };
 
     return (
-        <nav className="flex items-center space-x-2 text-sm text-text-muted mb-2 overflow-x-auto whitespace-nowrap py-2">
+        <nav className="flex items-center space-x-2 text-sm text-slate-500 mb-2 overflow-x-auto whitespace-nowrap py-2">
             <Link
                 to="/"
-                className="flex items-center hover:text-text-main transition-colors"
+                className="flex items-center hover:text-slate-900 transition-colors"
             >
                 <Home className="w-4 h-4" />
             </Link>
@@ -64,13 +67,13 @@ export const Breadcrumbs: React.FC = () => {
                     <React.Fragment key={path}>
                         <ChevronRight className="w-4 h-4 text-slate-300 flex-shrink-0" />
                         {isLast ? (
-                            <span className="font-medium text-text-main">
+                            <span className="font-medium text-slate-900">
                                 {title}
                             </span>
                         ) : (
                             <Link
                                 to={path}
-                                className="hover:text-text-main transition-colors"
+                                className="hover:text-slate-900 transition-colors"
                             >
                                 {title}
                             </Link>

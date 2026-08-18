@@ -30,6 +30,7 @@ const QuizLobby = React.lazy(routeFactories.QuizLobby);
 const QuizHost = React.lazy(routeFactories.QuizHost);
 const QuizPlayer = React.lazy(routeFactories.QuizPlayer);
 const ReligionPage = React.lazy(routeFactories.ReligionPage);
+const ReligionHubPage = React.lazy(routeFactories.ReligionHubPage);
 const ReligionComparisonPage = React.lazy(routeFactories.ReligionComparisonPage);
 const PhilosophyComparisonPage = React.lazy(routeFactories.PhilosophyComparisonPage);
 const TopicComparisonPage = React.lazy(routeFactories.TopicComparisonPage);
@@ -160,6 +161,7 @@ const router = createBrowserRouter([
       { path: "krle/filosofi/odyssey", element: <PhilosophyOdyssey /> },
       { path: "krle/filosofi/sammenlign", element: <PhilosophyComparisonPage /> },
       { path: "krle/sammenlign/tema/:tag", element: <TopicComparisonPage /> },
+      { path: "krle/religion", element: <ReligionHubPage /> },
       { path: "krle/religion/:religionId", element: <ReligionPage /> },
       { path: ":subjectId/:topicId/present/:lessonId", element: <PresentationPage /> },
       { path: ":subjectId/:topicId/present/:lessonId/projector", element: <PresentationPage /> },

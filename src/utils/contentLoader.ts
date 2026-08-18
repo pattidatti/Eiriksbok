@@ -380,6 +380,11 @@ export async function fetchReligion(id: string): Promise<Religion | null> {
         const cleanId = id.replace(/\.json$/, '').split('/').pop();
         const response = await fetch(`${basePath}data/religion/${cleanId}.json`, { cache: 'no-cache' });
         if (!response.ok) return null;
+        // Samisk religion og de historiske religionene har ingen profilfil, og
+        // det er en gyldig tilstand - siden viser leksjonene i stedet. Dev-
+        // serveren svarer med index.html på ukjente stier, så uten denne
+        // sjekken logges en JSON-parsefeil for noe som ikke er en feil.
+        if (!response.headers.get('content-type')?.includes('json')) return null;
         const data = await response.json();
         // Religions-JSON-ene mangler id-felt; injiser fra filnavnet
         return { id: cleanId, ...data } as Religion;

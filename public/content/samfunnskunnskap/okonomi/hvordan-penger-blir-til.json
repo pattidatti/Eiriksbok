@@ -1,0 +1,359 @@
+{
+  "id": "hvordan-penger-blir-til",
+  "title": "Hvordan penger blir til",
+  "description": "Du får 200 kroner på Vipps. Ingen trykte en seddel. Så hvor kom de fra?",
+  "image": "/images/placeholder.webp",
+  "heroImage": "/images/placeholder.webp",
+  "layout": "rich",
+  "readTime": "9 min lesning",
+  "factChecked": "2026-08-18",
+  "tags": [
+    "økonomi",
+    "penger",
+    "bank",
+    "norges bank"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Du får 200 kroner på Vipps av en venn. Ingen trykte en seddel. Ingen kjørte en koffert med kontanter over byen. Det eneste som skjedde, var at et tall ble mindre ett sted og større et annet sted. Men de 200 kronene fantes jo ikke fra evighet av. Noen laget dem en gang. Hvem?"
+    },
+    {
+      "type": "text",
+      "content": "Svaret overrasker de fleste. Det var ikke staten. Det var som regel ikke Norges Bank heller. Det var en helt vanlig bank, og den laget pengene i det øyeblikket noen tok opp et lån."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom betaler med mobiltelefon i norsk butikk",
+      "caption": "Nesten alle pengene vi bruker er tall i en database, ikke sedler."
+    },
+    {
+      "type": "header",
+      "text": "Tre slags penger"
+    },
+    {
+      "type": "text",
+      "content": "I Norge finnes penger i tre former, og det er ikke de samme som lager dem. Kontanter er sedler og mynt. Dem er det bare Norges Bank som får lage. Sentralbankloven sier det rett ut: Norges Bank har enerett til å utstede norske pengesedler og mynter (Sentralbankloven, 2019, § 3-4). Lager du dem selv, heter det falskmynteri."
+    },
+    {
+      "type": "text",
+      "content": "Bankinnskudd er tallet du ser når du åpner bank-appen. Det er ikke sedler som ligger i et hvelv med navnet ditt på. Det er et løfte fra banken om at du kan få pengene når du vil ha dem. Den tredje formen ser du aldri: sentralbankreserver. Bankene har sine egne kontoer i Norges Bank, og reservene er pengene som står der. De brukes bare mellom banker, aldri av deg og meg."
+    },
+    {
+      "type": "text",
+      "content": "Forskjellen i størrelse er enorm. I 2022 var alle sedler, mynter og reserver til sammen rundt 77 milliarder kroner. Den samlede pengemengden, der bankinnskuddene er med, lå på over 2 800 milliarder (Norges Bank, u.å.-b). Nesten alle pengene du kommer til å bruke i livet ditt, er altså laget av en privat bank. Hvordan penger i det hele tatt ble noe vi stoler på, kan du lese om i [Penger vs. byttehandel](/samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "De tre pengeformene",
+        "variant": "grid",
+        "items": [
+          {
+            "label": "Kontanter",
+            "value": "Sedler og mynt. Laget av Norges Bank. Kan brukes av alle."
+          },
+          {
+            "label": "Bankinnskudd",
+            "value": "Tallet i bank-appen din. Laget av vanlige banker. Kan brukes av alle."
+          },
+          {
+            "label": "Sentralbankreserver",
+            "value": "Bankenes egne penger på konto i Norges Bank. Laget av Norges Bank. Kan bare brukes av banker."
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Banken låner ikke ut andre folks penger"
+    },
+    {
+      "type": "text",
+      "content": "De fleste tenker seg banken som et lager. Noen setter inn sparepengene sine, banken passer på dem, og så låner banken de samme pengene videre til en som skal kjøpe bolig. Det er en ryddig historie. Den er også feil."
+    },
+    {
+      "type": "text",
+      "content": "Norges Bank forklarer hva som faktisk skjer: når en bank og en kunde inngår en låneavtale, skaper banken nye penger ved at lånekunden får et nytt innskudd på kontoen sin, og banken får et gjeldsbrev i retur (Norges Bank, u.å.-a). Et gjeldsbrev er rett og slett et papir der du lover å betale tilbake. Banken skriver altså to nye tall i samme sekund: innskuddet ditt, som er noe banken skylder deg, og gjeldsbrevet, som er noe du skylder banken. De to er like store, og de balanserer hverandre. Ingen andres konto ble rørt."
+    },
+    {
+      "type": "component",
+      "name": "Pengeskaperen",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Det samme skjer motsatt vei. Når du betaler ned på lånet, slettes de bankpengene som ble skapt da lånet ble gitt (Norges Bank, u.å.-a). Pengemengden i Norge puster altså inn og ut med hvor mye vi låner. Låner vi mer enn vi betaler tilbake, vokser den. Betaler vi ned mer enn vi låner, krymper den (Store norske leksikon, 2023)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Bankrådgiver signerer boliglån med ungt par ved skrivebord",
+      "caption": "I dette øyeblikket blir det laget nye penger i Norge."
+    },
+    {
+      "type": "header",
+      "text": "Hva stopper banken fra å lage uendelig mye?"
+    },
+    {
+      "type": "text",
+      "content": "Hvis en bank kan lage penger med noen tastetrykk, hvorfor gjør den ikke det hele dagen? Arne Kloster i Norges Bank peker på tre bremser (Kloster, 2019)."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Lønnsomhet. Det er ikke uendelig mange som vil ha lån. Skal banken lokke til seg flere låntakere, må den sette ned renta, og da tjener den mindre på hvert lån.",
+        "Kredittrisiko. Jo flere lån banken gir, jo større er sjansen for at noen ikke klarer å betale tilbake. De som eier banken, er de første som taper penger når det skjer.",
+        "Likviditetsrisiko. Denne er strengest. I det du bruker lånet, for eksempel til å kjøpe en leilighet, flytter innskuddet seg over til selgerens bank. Da må din bank sende ekte sentralbankreserver dit. Og reserver kan ingen bank lage selv."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Den siste bremsen er verdt å kjenne på kroppen. I spillet under er du banken. Hvert lån du innvilger lager nye penger, men tapper reservene dine i det kunden bruker dem. Går reservene tomme, står du i en likviditetskrise. Det er nøyaktig det som skjer med ekte banker som har lånt ut for mye, og når mange banker gjør det samtidig, får vi det du kan lese om i [Finanskriser](/samfunnskunnskap/okonomi/finanskriser)."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "bankens-balansegang"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Norges Bank holder i den andre enden"
+    },
+    {
+      "type": "text",
+      "content": "Bankene lager mesteparten av pengene, men de gjør det ikke uten oppsyn. Stortinget har gitt Norges Bank i oppdrag å passe på at pengene beholder verdien sin."
+    },
+    {
+      "type": "quote",
+      "content": "Formålet for sentralbankvirksomheten er å opprettholde en stabil pengeverdi og fremme stabilitet i det finansielle systemet og et effektivt og sikkert betalingssystem.",
+      "author": "Sentralbankloven § 1-2",
+      "source": "Lov 21. juni 2019 nr. 31"
+    },
+    {
+      "type": "text",
+      "content": "Hva stabil pengeverdi betyr i praksis, står i en egen forskrift: prisveksten skal over tid ligge nær 2 prosent i året (Bestemmelse om pengepolitikken, 2019). Verktøyet heter styringsrenta. Teknisk sett er den bare renta bankene får på pengene sine i Norges Bank, men den smitter videre til alle andre renter i landet (Norges Bank, u.å.-c)."
+    },
+    {
+      "type": "text",
+      "content": "Sammenhengen er enkel når du først ser den. Settes styringsrenta opp, blir det dyrere for bankene å skaffe penger, og dermed dyrere for deg å låne. Færre tar opp lån. Da blir det laget færre nye penger, og prisveksten dempes. En komité på fem personer møtes åtte ganger i året og bestemmer hvor renta skal ligge. Hva som så skjer med prisene i butikken, står i [Inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor er tallet på skjermen verdt noe?"
+    },
+    {
+      "type": "text",
+      "content": "Før i tiden var pengene knyttet til gull. Det er de ikke lenger. Dagens penger kalles fiatpenger, og de er verdt noe utelukkende fordi vi er enige om at de er det. Tilliten til pengene henger dermed ikke på gull, men på at sentralbanken tar fornuftige valg (Meinich, 2025). Det høres skjørt ut."
+    },
+    {
+      "type": "text",
+      "content": "Men tilliten er ikke bare en følelse. Den er bygget inn i regler du kan slå opp. Går banken din konkurs, dekker innskuddsgarantien opptil to millioner kroner av det du har stående (Finansdepartementet, 2024). Og siden 2024 har du rett til å betale med kontanter i butikker som tar imot andre betalingsmåter, så lenge beløpet er under 20 000 kroner (Finansavtaleloven, 2024). Når slike regler svikter, kan tilliten ryke fort. I Tyskland i 1923 ble pengene nesten verdiløse, og hva det gjorde med samfunnet kan du lese om i [Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Norges Banks bygning i Oslo sentrum sett fra gaten",
+      "caption": "Norges Bank lager bare en liten del av pengene, men setter rammene for resten."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Kontanter og sentralbankreserver lages av Norges Bank. Bankinnskudd lages av vanlige banker.",
+        "Nesten alle penger i Norge er bankinnskudd, altså laget av private banker.",
+        "En bank låner ikke ut andres innskudd. Den skriver et innskudd og et gjeldsbrev samtidig.",
+        "Betaler du ned lånet, slettes pengene igjen.",
+        "Lønnsomhet, kredittrisiko og likviditetsrisiko begrenser hvor mye bankene kan lage.",
+        "Norges Bank styrer helheten med styringsrenta, med et mål om rundt 2 prosent prisvekst."
+      ]
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvilke tre former for penger finnes i Norge, og hvem lager hver av dem?",
+          "Hva er et gjeldsbrev, og hva får banken det for?",
+          "Hva skjer med pengene som ble skapt, når låntakeren betaler ned lånet?",
+          "Hvilket tall for prisvekst styrer Norges Bank mot, og hvor står det tallet?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor det er feil å si at banken låner ut sparepengene til andre kunder.",
+          "Av de tre bremsene Kloster nevner, hvorfor er likviditetsrisiko den som biter hardest på en enkelt bank?",
+          "Sentralbankreserver kan ingen bank lage selv. Hvorfor er det viktig at det er sånn?",
+          "Teksten sier at nesten alle pengene i Norge er laget av private banker. Hva slags makt gir det bankene, og hvem passer på at de ikke misbruker den?"
+        ],
+        "gaaVidere": [
+          "Innskuddsgarantien dekker to millioner kroner per bank. Diskuter i klassen: hvorfor har staten en slik garanti, og hva ville skjedd uten den?",
+          "Skriv en kort tekst der du forklarer for en i familien din hvordan penger blir til. Bruk boliglån som eksempel, og prøv å klare deg uten fagord.",
+          "Siden 2024 har du rett til å betale kontant i butikk. Finn ut hvorfor Stortinget mente den regelen var nødvendig i et land der nesten ingen bruker kontanter."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvem lager mesteparten av pengene i Norge?",
+            "options": [
+              "Vanlige banker, når de gir lån",
+              "Norges Bank, som trykker sedler",
+              "Staten, gjennom statsbudsjettet",
+              "Oljefondet"
+            ],
+            "answer": "Vanlige banker, når de gir lån"
+          },
+          {
+            "question": "Hva skjer i banken i det øyeblikket du får innvilget et boliglån?",
+            "options": [
+              "Banken skriver et nytt innskudd på kontoen din og får et gjeldsbrev i retur",
+              "Banken flytter penger fra en annen kundes sparekonto til din konto",
+              "Norges Bank trykker nye sedler tilsvarende lånebeløpet",
+              "Banken henter kontanter fra hvelvet sitt"
+            ],
+            "answer": "Banken skriver et nytt innskudd på kontoen din og får et gjeldsbrev i retur"
+          },
+          {
+            "question": "Hvorfor kan ikke en bank lage uendelig mye penger?",
+            "options": [
+              "Lønnsomhet, kredittrisiko og likviditetsrisiko setter grenser",
+              "Norges Bank teller opp pengene hver måned",
+              "Det finnes ikke nok gull i verden til å dekke dem",
+              "Stortinget bestemmer et tak hvert år"
+            ],
+            "answer": "Lønnsomhet, kredittrisiko og likviditetsrisiko setter grenser"
+          },
+          {
+            "question": "Hva er styringsrenta, helt konkret?",
+            "options": [
+              "Renta bankene får på pengene sine i Norges Bank",
+              "Renta du betaler på boliglånet ditt",
+              "Gjennomsnittsrenta i alle norske banker",
+              "Renta staten betaler når den låner penger"
+            ],
+            "answer": "Renta bankene får på pengene sine i Norges Bank"
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bestemmelse om pengepolitikken. (2019). *FOR-2019-12-13-1775*. Lovdata. Hentet 18.08.2026 fra [lovdata.no](https://lovdata.no/dokument/INS/forskrift/2019-12-13-1775)",
+          "Bårdsen, G. & Stoltz, G. (2026). *Inflasjon*. Store norske leksikon. Hentet 18.08.2026 fra [snl.no/inflasjon](https://snl.no/inflasjon)",
+          "Finansavtaleloven. (2024). *Lov om endringer i finansavtaleloven mv. (forbrukeres rett til kontant betaling mv.) (LOV-2024-06-07-29)*. Lovdata. Hentet 18.08.2026 fra [lovdata.no](https://lovdata.no/lov/2024-06-07-29/kapI)",
+          "Finansdepartementet. (2024). *Den norske innskuddsgarantiordningen og krisehåndtering av banker*. Regjeringen.no. Hentet 18.08.2026 fra [regjeringen.no](https://www.regjeringen.no/no/tema/okonomi-og-budsjett/finansmarkedene/den-norske-innskuddsgarantiordningen/id634479/)",
+          "Kloster, A. (2019). *Hvordan skapes penger?* Bankplassen, Norges Bank. Hentet 18.08.2026 fra [norges-bank.no](https://www.norges-bank.no/bankplassen/arkiv/2019/hvordan-skapes-penger/)",
+          "Meinich, P. (2025). *Penger*. Store norske leksikon. Hentet 18.08.2026 fra [snl.no/penger](https://snl.no/penger)",
+          "Norges Bank. (u.å.-a). *Hvordan skapes penger?* Hentet 18.08.2026 fra [norges-bank.no](https://www.norges-bank.no/kort-forklart/penger/hvordan-skapes-penger/)",
+          "Norges Bank. (u.å.-b). *Penger*. Hentet 18.08.2026 fra [norges-bank.no](https://www.norges-bank.no/en/explainers/money/)",
+          "Norges Bank. (u.å.-c). *Styringsrenten*. Hentet 18.08.2026 fra [norges-bank.no](https://www.norges-bank.no/tema/pengepolitikk/Styringsrenten/)",
+          "*Sentralbankloven. Lov om Norges Bank og pengevesenet mv. (LOV-2019-06-21-31)*. (2019). Lovdata. Hentet 18.08.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/2019-06-21-31)",
+          "Store norske leksikon. (2023). *Pengemengde*. Hentet 18.08.2026 fra [snl.no/pengemengde](https://snl.no/pengemengde)"
+        ]
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "id": "pengeskaping",
+      "term": "Pengeskaping",
+      "aliases": [
+        "pengeskapingen",
+        "skape penger"
+      ],
+      "definition": "At det oppstår nye penger i økonomien. Mesteparten skjer når en bank gir et lån: kunden får et nytt innskudd, og banken får et gjeldsbrev tilbake."
+    },
+    {
+      "id": "gjeldsbrev",
+      "term": "Gjeldsbrev",
+      "aliases": [
+        "gjeldsbrevet",
+        "gjeldsbrevene"
+      ],
+      "definition": "Et dokument der låntakeren lover å betale lånebeløpet pluss renter tilbake. For banken er gjeldsbrevet en eiendel som balanserer innskuddet den nettopp laget."
+    },
+    {
+      "id": "sentralbankreserver",
+      "term": "Sentralbankreserver",
+      "aliases": [
+        "sentralbankreserve",
+        "reserver"
+      ],
+      "definition": "Bankenes egne penger på konto i Norges Bank. Bare banker kan bruke dem, og bare Norges Bank kan lage dem. Bankene gjør opp seg imellom med reserver."
+    },
+    {
+      "id": "styringsrente",
+      "term": "Styringsrente",
+      "aliases": [
+        "styringsrenta",
+        "styringsrenten"
+      ],
+      "definition": "Renta bankene får på pengene sine i Norges Bank. Den smitter videre til alle andre renter i landet og er Norges Banks viktigste verktøy for å holde prisveksten nær 2 prosent."
+    },
+    {
+      "id": "fiatpenger",
+      "term": "Fiatpenger",
+      "aliases": [
+        "fiatpenge",
+        "fiat-penger"
+      ],
+      "definition": "Penger som ikke kan byttes inn i gull eller sølv. De er verdt noe fordi vi stoler på at andre godtar dem, og fordi sentralbanken holder verdien stabil."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Hvem lager mesteparten av pengene i Norge?",
+      "options": [
+        "Vanlige banker, når de gir lån",
+        "Norges Bank, som trykker sedler",
+        "Staten, gjennom statsbudsjettet",
+        "Oljefondet"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": "q2",
+      "question": "Hva skjer i banken i det øyeblikket du får innvilget et boliglån?",
+      "options": [
+        "Banken skriver et nytt innskudd på kontoen din og får et gjeldsbrev i retur",
+        "Banken flytter penger fra en annen kundes sparekonto til din konto",
+        "Norges Bank trykker nye sedler tilsvarende lånebeløpet",
+        "Banken henter kontanter fra hvelvet sitt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": "q3",
+      "question": "Hvorfor kan ikke en bank lage uendelig mye penger?",
+      "options": [
+        "Lønnsomhet, kredittrisiko og likviditetsrisiko setter grenser",
+        "Norges Bank teller opp pengene hver måned",
+        "Det finnes ikke nok gull i verden til å dekke dem",
+        "Stortinget bestemmer et tak hvert år"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": "q4",
+      "question": "Hva er styringsrenta, helt konkret?",
+      "options": [
+        "Renta bankene får på pengene sine i Norges Bank",
+        "Renta du betaler på boliglånet ditt",
+        "Gjennomsnittsrenta i alle norske banker",
+        "Renta staten betaler når den låner penger"
+      ],
+      "correctAnswer": 0
+    }
+  ],
+  "timeline": []
+}

@@ -8,6 +8,8 @@
     "heroImage": "/images/sikhisme/overgangsriter-hero.webp",
     "subject": "krle",
     "topic": "sammenligning",
+    "dimension": "ritual",
+    "comparison_tags": ["overgangsriter"],
     "createdDate": "2026-08-12T12:00:00Z",
     "learningPathData": {
         "id": "overgangsriter-sti",

@@ -30,6 +30,8 @@ export interface ComparisonDimension {
     question?: string;
     color?: string;
     icon?: LucideIcon;
+    // Én setning om hva dimensjonen dekker, vist ved siden av linsen
+    blurb?: string;
     // Refleksjonsspørsmål eleven får under «Test deg selv»
     reflection?: string;
 }
@@ -40,6 +42,12 @@ export interface ArticleLinkRef {
 }
 
 export interface ComparisonDomainConfig {
+    /**
+     * Bruk dimensjonshjulet som linsevelger i en sidekolonne, slik
+     * religionsprofilen gjør, i stedet for en pillerad over innholdet.
+     * Krever at domenets dimensjoner er de sju i dimensionMeta.
+     */
+    wheelLens?: boolean;
     domain: 'religion' | 'filosofi';
     title: string;
     intro: string;
@@ -76,6 +84,9 @@ export interface ManifestEntity {
     group?: string;
     // dimensjonsnøkkel -> antall tegn ren tekst
     dimensions: Record<string, number>;
+    // dimensjonsnøkkel -> ingressen fra profilen. Lar oversiktsflater vise
+    // svaret uten å laste hele profilfila.
+    summaries?: Record<string, string>;
     hasArticle?: boolean;
     hasDimensions?: boolean;
 }
@@ -108,11 +119,34 @@ export interface ManifestReligionArticle {
     tags: string[];
 }
 
+/** Én artikkel et sti-steg sender eleven til. */
+export interface ManifestPathArticle {
+    link: string;
+    /** Stegnummer i stien, 1-indeksert */
+    step: number;
+    stepTitle: string | null;
+}
+
+/** Læringssti i KRLE-sammenligning, slik krysslenkene ser den. */
+export interface ManifestLearningPath {
+    id: string;
+    title: string;
+    description: string | null;
+    link: string;
+    /** Linsen stien åpner i, fra `dimension` på toppnivå i sti-fila */
+    dimension: string | null;
+    /** Temaene stien dekker, fra `comparison_tags` */
+    topics: string[];
+    steps: number;
+    articleLinks: ManifestPathArticle[];
+}
+
 export interface ComparisonManifest {
     religions: ManifestEntity[];
     philosophers: ManifestEntity[];
     topics: ManifestTopic[];
     religionArticles: ManifestReligionArticle[];
+    learningPaths: ManifestLearningPath[];
 }
 
 // --- Sammenligningsmatrisen (public/data/comparison/religion-matrix.json) ---

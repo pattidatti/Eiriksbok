@@ -21,6 +21,7 @@ function religionDimension(key: string, reflection: string): ComparisonDimension
         question: meta?.question,
         color: meta?.color,
         icon: meta?.icon,
+        blurb: meta?.blurb,
         reflection,
     };
 }
@@ -44,6 +45,10 @@ function wrapDimensions(
 
 export const religionConfig: ComparisonDomainConfig = {
     domain: 'religion',
+    // De sju dimensjonene er de samme som profilen tegner som hjul. Da skal de
+    // se like ut begge steder - det er hele grunnen til at eleven kjenner igjen
+    // rommet når hen går fra én religion til flere.
+    wheelLens: true,
     title: 'Sammenlign religioner',
     intro: 'Velg to til fire religioner, og se hvor de ligner og hvor de skiller lag.',
     manifestKey: 'religions',

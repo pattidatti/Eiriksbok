@@ -133,7 +133,23 @@ function extractText(node) {
     return '';
 }
 
-function scanEntities(dir, groups) {
+/**
+ * Navnene slik eleven skal lese dem. Datafilene skriver «Bahai» fordi filnavnet
+ * er bahai.json, mens manifest.json har «Bahá'í» - det er den som er fasit, og
+ * den som står i bytteren og i brødsmulene.
+ */
+function manifestReligionNames() {
+    const manifest = readJson(path.join(PUBLIC, 'content', 'manifest.json'));
+    const names = {};
+    const subTopics =
+        manifest?.subjects
+            ?.find((s) => s.id === 'krle')
+            ?.topics?.find((t) => t.id === 'religion')?.subTopics ?? [];
+    for (const st of subTopics) if (st.id && st.title) names[st.id] = st.title;
+    return names;
+}
+
+function scanEntities(dir, groups, nameOverrides = {}) {
     const entities = [];
     if (!fs.existsSync(dir)) return entities;
     for (const file of fs.readdirSync(dir).sort()) {
@@ -142,16 +158,23 @@ function scanEntities(dir, groups) {
         const data = readJson(path.join(dir, file));
         if (!data || !data.dimensions) continue;
         const dimensionLengths = {};
+        const summaries = {};
         for (const [key, value] of Object.entries(data.dimensions)) {
             const text = extractText(value).trim();
             if (text) dimensionLengths[key] = text.length;
+            // Ingressen tas med i manifestet slik at oversiktsflater kan vise
+            // *svaret* uten å laste hele profilfila. Religionshuben bruker den
+            // til å la alle kortene snu innhold når eleven bytter linse.
+            const summary = typeof value?.summary === 'string' ? value.summary.trim() : '';
+            if (summary) summaries[key] = summary;
         }
         const entity = {
             id,
-            name: data.name || id.charAt(0).toUpperCase() + id.slice(1),
+            name: nameOverrides[id] || data.name || id.charAt(0).toUpperCase() + id.slice(1),
             color: data.color || null,
             dimensions: dimensionLengths,
         };
+        if (Object.keys(summaries).length > 0) entity.summaries = summaries;
         if (groups) entity.group = data.group || groups[id] || 'Moderne';
         entities.push(entity);
     }
@@ -168,6 +191,60 @@ function scanEntities(dir, groups) {
  * Regelen holder seg selv i orden: får «Dagligliv» en egen artikkel i en tredje
  * religion, er den ikke lenger en delmengde og dukker opp som eget tema igjen.
  */
+/**
+ * Læringsstiene i public/content/krle/sammenligning/*-sti.json er registrert
+ * som `tools` i manifest.json, og har derfor bare vært synlige på sin egen
+ * emneside. De dekker nøyaktig de samme artiklene som temaene og profilene,
+ * så de hører hjemme i krysslenkevevet.
+ *
+ * Her plukkes artikkellenkene ut av stegenes markdown («Les artikkelen
+ * [Tittel](/krle/religion/islam/bonn)»), slik at en artikkel kan si hvilket
+ * steg den er i, og et tema kan si at det finnes en sti om det.
+ */
+function scanLearningPaths(religionIds) {
+    const dir = path.join(PUBLIC, 'content', 'krle', 'sammenligning');
+    if (!fs.existsSync(dir)) return [];
+
+    const paths = [];
+    for (const file of fs.readdirSync(dir).sort()) {
+        if (!file.endsWith('-sti.json')) continue;
+        const data = readJson(path.join(dir, file));
+        if (!data) continue;
+        const steps = data.learningPathData?.steps ?? [];
+
+        // Artikkellenkene ligger som markdown i oppgavetekst og brødtekst
+        const seen = new Set();
+        const articleLinks = [];
+        for (const [index, step] of steps.entries()) {
+            const haystack = [step.content, ...(step.tasks ?? [])]
+                .map((t) => (typeof t === 'string' ? t : (t?.text ?? t?.task ?? '')))
+                .join('\n');
+            for (const match of haystack.matchAll(/\]\((\/krle\/religion\/[^)\s]+)\)/g)) {
+                const link = match[1];
+                if (seen.has(link)) continue;
+                // Bare artikler (fire segmenter), ikke profil-lenker
+                if (link.split('/').filter(Boolean).length !== 4) continue;
+                if (!religionIds.has(link.split('/')[3])) continue;
+                seen.add(link);
+                articleLinks.push({ link, step: index + 1, stepTitle: step.title ?? null });
+            }
+        }
+
+        paths.push({
+            id: data.id ?? file.replace(/\.json$/, ''),
+            title: data.learningPathData?.title ?? data.title ?? data.id,
+            description: data.description ?? null,
+            link: `/krle/sammenligning/${data.id ?? file.replace(/\.json$/, '')}`,
+            // Settes på toppnivå i sti-fila; styrer hvilken linse stien åpner i
+            dimension: data.dimension ?? null,
+            topics: (data.comparison_tags ?? []).map(normalizeTagSlug),
+            steps: steps.length,
+            articleLinks,
+        });
+    }
+    return paths;
+}
+
 function mergeSubsetTopics(topics) {
     // Hvor mange av temaets artikler ligger i en mappe som heter det samme?
     // Det skiller temaets egne artikler fra dem som bare nevner det i en tag.
@@ -199,7 +276,7 @@ function mergeSubsetTopics(topics) {
 }
 
 function buildManifest() {
-    const religions = scanEntities(path.join(PUBLIC, 'data', 'religion'), null);
+    const religions = scanEntities(path.join(PUBLIC, 'data', 'religion'), null, manifestReligionNames());
     const philosophers = scanEntities(path.join(PUBLIC, 'data', 'philosophy'), PHILOSOPHER_GROUPS);
 
     // Filosofer som har full artikkel i content/krle/filosofi/
@@ -301,6 +378,8 @@ function buildManifest() {
         .filter((t) => t.count >= 2);
     const topics = mergeSubsetTopics(allTopics);
 
+    const learningPaths = scanLearningPaths(new Set(religions.map((r) => r.id)));
+
     return {
         // Ingen tidsstempel her. Det ble skrevet ved hver build og ga fila en
         // diff selv når ingenting var endret; ingen leser det, og fila ligger
@@ -309,6 +388,7 @@ function buildManifest() {
         philosophers,
         topics,
         religionArticles,
+        learningPaths,
         _warnings: {
             philosophersMissingDimensions: missingDimensions.sort(),
             // Artikler om religioner uten sju-dimensjonsprofil. De vises ikke i
@@ -318,6 +398,12 @@ function buildManifest() {
             mergedTopics: topics
                 .filter((t) => t.aliases)
                 .map((t) => `${t.aliases.join(', ')} -> ${t.slug}`)
+                .sort(),
+            // Stier uten `dimension`/`comparison_tags` på toppnivå havner
+            // ikke i krysslenkene, bare i sin egen emneside
+            unwiredLearningPaths: learningPaths
+                .filter((p) => !p.dimension || p.topics.length === 0)
+                .map((p) => p.id)
                 .sort(),
             thinReligionDimensions: religions
                 .flatMap((r) =>
@@ -336,7 +422,8 @@ fs.writeFileSync(OUT_FILE, JSON.stringify(manifest, null, 2) + '\n', 'utf-8');
 
 console.log(
     `[comparison-manifest] ${manifest.religions.length} religioner, ` +
-        `${manifest.philosophers.length} filosofer, ${manifest.topics.length} tema -> ${path.relative(ROOT, OUT_FILE)}`
+        `${manifest.philosophers.length} filosofer, ${manifest.topics.length} tema, ` +
+        `${manifest.learningPaths.length} stier -> ${path.relative(ROOT, OUT_FILE)}`
 );
 if (manifest._warnings.philosophersMissingDimensions.length > 0) {
     console.log(

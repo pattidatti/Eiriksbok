@@ -2,7 +2,7 @@
   "religions": [
     {
       "id": "bahai",
-      "name": "Bahai",
+      "name": "Bahá'í",
       "color": "#14b8a6",
       "dimensions": {
         "ritual": 940,
@@ -12,6 +12,15 @@
         "ethical": 864,
         "doctrinal": 1027,
         "material": 880
+      },
+      "summaries": {
+        "ritual": "En bahai ber en fast bønn hver dag, vendt mot Bahaullahs gravsted, og faster nitten dager hver mars.",
+        "narrative": "To menn i Persia på 1800-tallet står i sentrum: Bab, som varslet at noen større skulle komme, og Bahaullah, som bahaier mener var den han varslet.",
+        "experiential": "Bahaier beskriver troen som en opplevelse av enhet: at mennesker med ulik bakgrunn ber sammen som én familie.",
+        "social": "Ni personer velges hvert år til å lede fellesskapet, og ingen får lov til å drive valgkamp.",
+        "ethical": "Den viktigste leveregelen er at hele menneskeheten er én familie, og at fordommer derfor må bekjempes.",
+        "doctrinal": "Bahaier tror alle de store religionene kommer fra den samme Gud, og at de er kapitler i én lang undervisning.",
+        "material": "De åtte tilbedelseshusene har alle ni sider og ni innganger, som et bygget bilde på at alle er velkomne."
       }
     },
     {
@@ -26,6 +35,15 @@
         "ethical": 950,
         "doctrinal": 993,
         "material": 855
+      },
+      "summaries": {
+        "ritual": "Buddhister trener sinnet med meditasjon, og viser Buddha respekt med lys, røkelse og blomster.",
+        "narrative": "Alt starter med en prins som forlot rikdommen sin for å finne ut hvorfor mennesker lider.",
+        "experiential": "Målet er nirvana: en full ro der grådighet, hat og uvitenhet er sluknet som en flamme.",
+        "social": "Fellesskapet heter sangha. Munker og nonner får mat av vanlige folk, og gir undervisning tilbake.",
+        "ethical": "Den åttedelte veien er oppskriften på et godt liv. De åtte delene henger sammen som eikene i et hjul.",
+        "doctrinal": "De fire edle sannheter er stilt opp som en legetime: sykdommen, årsaken, beskjeden om at du kan bli frisk, og kuren.",
+        "material": "Templer, statuer, stupaer og hjulet med åtte eiker: buddhismen er full av ting du kan se og ta på."
       }
     },
     {
@@ -40,6 +58,15 @@
         "ethical": 822,
         "doctrinal": 1142,
         "material": 843
+      },
+      "summaries": {
+        "ritual": "Det viktigste ritualet er puja, der guden inviteres som en gjest og får mat, lys, blomster og røkelse.",
+        "narrative": "Ingen har startet hinduismen. Den har vokst fram i India gjennom mer enn 5000 år.",
+        "experiential": "I tempelet handler det om øyekontakt: du ser guden, og guden ser deg.",
+        "social": "Slekt og familie bærer religionen videre, mens kastesystemet fortsatt preger manges liv.",
+        "ethical": "Å leve godt er å gjøre din plikt, dharma, uten å jage etter belønning for det.",
+        "doctrinal": "Bak alle gudene står Brahman, verdenssjelen, og inne i hvert menneske bor atman, den udødelige sjelen.",
+        "material": "Gudestatuen i tempelet er ikke pynt. Den vaskes, pyntes og får mat, som en gjest man er glad i."
       }
     },
     {
@@ -54,6 +81,15 @@
         "ethical": 893,
         "doctrinal": 885,
         "material": 917
+      },
+      "summaries": {
+        "ritual": "Bønn fem ganger om dagen, vendt mot Mekka, gir hverdagen en fast rytme.",
+        "narrative": "Muslimer tror Koranen er Guds egne ord, gitt til Muhammad litt etter litt gjennom mer enn 20 år.",
+        "experiential": "Mange muslimer beskriver troen som en ro som kommer når man slutter å kjempe imot og stoler helt på Gud.",
+        "social": "Islam har ingen prester. Imamen leder bønnen, men er en vanlig person med kunnskap.",
+        "ethical": "Handlinger deles inn i halal, det som er tillatt, og haram, det som er forbudt, og det gjelder langt mer enn mat.",
+        "doctrinal": "Grunnvollen er tawhid: Gud er én og udelt, og ingenting kan settes ved siden av ham.",
+        "material": "Moskeen har ingen bilder av Gud. I stedet pyntes den med vakker skrift og geometriske mønstre."
       }
     },
     {
@@ -68,6 +104,15 @@
         "ethical": 920,
         "doctrinal": 863,
         "material": 928
+      },
+      "summaries": {
+        "ritual": "Å fortelle andre om troen regnes som en oppgave for alle medlemmer, ikke bare for noen få.",
+        "narrative": "Bevegelsen startet på 1870-tallet i USA, da Charles Taze Russell ville finne tilbake til den opprinnelige kristendommen.",
+        "experiential": "Håpet om en jord uten sykdom, krig og død gir livet retning, også når det er tungt.",
+        "social": "Bevegelsen ledes av Det styrende råd i USA, og de samme leksjonene brukes i alle menigheter i verden.",
+        "ethical": "De stemmer ikke ved valg, nekter militærtjeneste og feirer verken jul, påske eller bursdager.",
+        "doctrinal": "De tror at Gud heter Jehova, og de avviser treenighetslæren: Jesus er Guds sønn, men ikke Gud selv.",
+        "material": "Rikets sal har verken alter, kors eller bilder. Det viktigste materielle uttrykket er trykksakene."
       }
     },
     {
@@ -82,6 +127,15 @@
         "ethical": 807,
         "doctrinal": 1003,
         "material": 903
+      },
+      "summaries": {
+        "ritual": "Sabbaten deler uka i to: fra fredag kveld til lørdag kveld legges alt arbeid bort.",
+        "narrative": "Fortellingen begynner med Abrahams pakt med Gud og fortsetter med Moses, som førte folket ut av slaveriet i Egypt.",
+        "experiential": "Det hellige finnes i hverdagen: i lysene fredag kveld, i sangen rundt bordet og i roen når arbeidet legges bort.",
+        "social": "Synagogen er stedet for bønn og opplæring, men mange av de viktigste ritualene skjer hjemme rundt bordet.",
+        "ethical": "Toraen har 613 bud som styrer nesten alt, og kjernen er at du skal elske din neste som deg selv.",
+        "doctrinal": "Det finnes bare én Gud, og navnet hans regnes som så hellig at det ikke uttales.",
+        "material": "Det viktigste symbolet er menoraen, den sjuarmede lysestaken. Bilder av Gud er forbudt."
       }
     },
     {
@@ -96,6 +150,15 @@
         "ethical": 774,
         "doctrinal": 869,
         "material": 908
+      },
+      "summaries": {
+        "ritual": "Dåp og nattverd er de to sakramentene, og gudstjenesten søndag formiddag er den faste samlingen.",
+        "narrative": "Den sentrale fortellingen er Jesu liv, død og oppstandelse.",
+        "experiential": "Bønnen er samtalen med Gud, og den kan handle om alt fra takk og glede til sorg og tvil.",
+        "social": "Fra paven i Roma til en menighet som styrer seg selv: kristendommen er organisert på svært ulike måter.",
+        "ethical": "Grunnlaget er det doble kjærlighetsbudet: elsk Gud, og elsk din neste som deg selv.",
+        "doctrinal": "Kristne tror at Gud er tre i én: Faderen, Sønnen og Den hellige ånd.",
+        "material": "Korset finnes på kirketårn, vegger og smykker, og selve kirkerommet viser hva menigheten mener er viktigst."
       }
     },
     {
@@ -110,6 +173,15 @@
         "ethical": 886,
         "doctrinal": 957,
         "material": 906
+      },
+      "summaries": {
+        "ritual": "Ingen døpes som spedbarn. Du må være minst åtte år og velge det selv.",
+        "narrative": "En 14-åring ba om å få vite hvilken kirke som var den rette. Svaret han fortalte om, ble starten på kirken.",
+        "experiential": "Det viktigste er det personlige vitnesbyrdet: en indre visshet om at Gud finnes og at kirken er sann.",
+        "social": "Kirken har ingen lønnede prester i menighetene. Vanlige medlemmer får oppgavene ved siden av jobb og skole.",
+        "ethical": "Visdomsordet er en helselov: medlemmene avstår fra alkohol, tobakk, kaffe og te.",
+        "doctrinal": "Medlemmene tror på Gud, Jesus og Den hellige ånd som tre atskilte personer, ikke som en treenighet.",
+        "material": "To slags hus: møtehuset alle kan gå inn i, og tempelet bare noen slipper inn i."
       }
     },
     {
@@ -124,6 +196,15 @@
         "ethical": 811,
         "doctrinal": 844,
         "material": 843
+      },
+      "summaries": {
+        "ritual": "Det mest kjente ritualet er langar, det gratis fellesmåltidet der alle sitter på gulvet sammen.",
+        "narrative": "Ti guruer formet sikhismen mellom 1469 og 1708. Den første var Guru Nanak.",
+        "experiential": "Når rik og fattig sitter på samme gulv og spiser samme mat, blir likeverd noe du kjenner, ikke bare noe du tror på.",
+        "social": "Gurdwaraen er midtpunktet, og den er åpen for alle. Sikhismen har ingen prester.",
+        "ethical": "Arbeid ærlig, del med andre, og husk på Gud. Tre setninger dekker hele sikhismens etikk.",
+        "doctrinal": "Gud er én og tilhører ingen bestemt religion. Slik åpner også den hellige boka.",
+        "material": "Det oransje flagget utenfor gurdwaraen viser at alle er velkomne inn."
       }
     }
   ],
@@ -1856,6 +1937,133 @@
       ]
     }
   ],
+  "learningPaths": [
+    {
+      "id": "lidelse-og-frelse-sti",
+      "title": "Lidelse og frelse",
+      "description": "Alle religioner forteller den samme historien: noe er galt, og noe skal fikse det. De er dypt uenige om hvem som er helten.",
+      "link": "/krle/sammenligning/lidelse-og-frelse-sti",
+      "dimension": "doctrinal",
+      "topics": [
+        "frelse",
+        "sentrale-trekk"
+      ],
+      "steps": 10,
+      "articleLinks": [
+        {
+          "link": "/krle/religion/buddhisme/sentrale-trekk",
+          "step": 2,
+          "stepTitle": "Diagnosen som ble sagt høyt"
+        },
+        {
+          "link": "/krle/religion/kristendom/frelse",
+          "step": 4,
+          "stepTitle": "Gaven"
+        },
+        {
+          "link": "/krle/religion/islam/frelse",
+          "step": 5,
+          "stepTitle": "Vekten"
+        },
+        {
+          "link": "/krle/religion/hinduisme/frelse",
+          "step": 6,
+          "stepTitle": "Ut, ikke opp"
+        },
+        {
+          "link": "/krle/religion/jodedom/frelse",
+          "step": 7,
+          "stepTitle": "Plottet som nekter"
+        }
+      ]
+    },
+    {
+      "id": "overgangsriter-sti",
+      "title": "Overgangsritualer",
+      "description": "Fire overganger, ni tradisjoner og mønsteret som ligger under. Du starter med ditt eget svar, og henter det fram igjen til slutt.",
+      "link": "/krle/sammenligning/overgangsriter-sti",
+      "dimension": "ritual",
+      "topics": [
+        "overgangsriter"
+      ],
+      "steps": 8,
+      "articleLinks": [
+        {
+          "link": "/krle/religion/jodedom/overgangsriter",
+          "step": 4,
+          "stepTitle": "Dagen ansvaret bytter eier"
+        },
+        {
+          "link": "/krle/religion/buddhisme/overgangsriter",
+          "step": 5,
+          "stepTitle": "Riten som ikke finnes"
+        },
+        {
+          "link": "/krle/religion/sikhisme/overgangsriter",
+          "step": 6,
+          "stepTitle": "Boka i midten"
+        }
+      ]
+    },
+    {
+      "id": "skapelse-sti",
+      "title": "Før alt fantes",
+      "description": "Ni tradisjoner forteller hver sin historie om hvordan verden ble til. Du skal oppdage at læresetningene ikke kom først. De ble trukket ut av fortellingene etterpå.",
+      "link": "/krle/sammenligning/skapelse-sti",
+      "dimension": "narrative",
+      "topics": [
+        "skapelse"
+      ],
+      "steps": 13,
+      "articleLinks": [
+        {
+          "link": "/krle/religion/jodedom/skapelse",
+          "step": 4,
+          "stepTitle": "Seks dager og en sjuende"
+        },
+        {
+          "link": "/krle/religion/kristendom/skapelse",
+          "step": 4,
+          "stepTitle": "Seks dager og en sjuende"
+        },
+        {
+          "link": "/krle/religion/islam/skapelse",
+          "step": 5,
+          "stepTitle": "«Bli!» og det ble"
+        },
+        {
+          "link": "/krle/religion/sikhisme/skapelse",
+          "step": 6,
+          "stepTitle": "Mørket som varte i tidsaldre"
+        },
+        {
+          "link": "/krle/religion/hinduisme/skapelse",
+          "step": 7,
+          "stepTitle": "Universet som puster"
+        },
+        {
+          "link": "/krle/religion/buddhisme/skapelse",
+          "step": 8,
+          "stepTitle": "Buddhas taushet"
+        },
+        {
+          "link": "/krle/religion/mormonisme/skapelse",
+          "step": 9,
+          "stepTitle": "Tre nyere svar"
+        },
+        {
+          "link": "/krle/religion/jehovas-vitner/skapelse",
+          "step": 9,
+          "stepTitle": "Tre nyere svar"
+        },
+        {
+          "link": "/krle/religion/bahai/skapelse",
+          "step": 9,
+          "stepTitle": "Tre nyere svar"
+        }
+      ]
+    }
+  ],
   "_warnings": {
     "philosophersMissingDimensions": [],
     "articlesOutsideProfiles": [
@@ -1869,6 +2077,7 @@
       "dagligliv -> bonn",
       "doden -> overgangsriter"
     ],
+    "unwiredLearningPaths": [],
     "thinReligionDimensions": []
   }
 }

@@ -1,0 +1,16 @@
+{
+    "term": "Innskuddspenger",
+    "aliases": [
+        "kontopenger",
+        "bankinnskudd",
+        "innskuddspengene"
+    ],
+    "definition": "Pengene du ser i bank-appen. Det er ikke sedler i et hvelv, men et løfte fra banken om at du kan få beløpet når du vil. Nesten alle pengene i Norge er av denne typen, og de lages av vanlige banker.",
+    "type": "concept",
+    "tags": [
+        "økonomi",
+        "penger",
+        "bank"
+    ],
+    "subject": "samfunnskunnskap"
+}

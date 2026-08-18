@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { RichText } from '../../components/ui/RichText';
 import { Image } from '../../components/Image';
+import { KeyTermChips } from '../../components/religion/KeyTermChips';
 import type { ArticleLinkRef, ComparisonContent } from './types';
 import type { ReligionDimensionEntry } from '../../types';
 
@@ -35,10 +36,10 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
         content.format === 'rich' ? (
             <RichText content={content.value} />
         ) : (
-            <p className="text-text-muted leading-relaxed">{content.value}</p>
+            <p className="text-slate-500 leading-relaxed">{content.value}</p>
         )
     ) : (
-        <p className="text-text-muted italic">Ingen informasjon tilgjengelig.</p>
+        <p className="text-slate-500 italic">Ingen informasjon tilgjengelig.</p>
     );
 
     return (
@@ -54,7 +55,7 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
 
             {hasSummary && (
                 <p
-                    className={`text-text-main font-medium leading-snug mb-3 ${
+                    className={`text-slate-900 font-medium leading-snug mb-3 ${
                         compact ? 'text-sm' : 'text-base'
                     }`}
                 >
@@ -63,22 +64,26 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
             )}
 
             {card?.keyTerms && card.keyTerms.length > 0 && (
-                <ul className="flex flex-wrap gap-1.5 mb-4">
-                    {card.keyTerms.map((term) => (
-                        <li
-                            key={term.term}
-                            title={term.explanation}
-                            className="px-2 py-0.5 rounded-full text-[11px] font-bold border"
-                            style={{
-                                backgroundColor: `${accent}12`,
-                                borderColor: `${accent}33`,
-                                color: '#334155',
-                            }}
-                        >
-                            {term.term}
-                        </li>
-                    ))}
-                </ul>
+                <div className="mb-4">
+                    <KeyTermChips
+                        terms={card.keyTerms}
+                        accent={accent}
+                        heading={null}
+                        compact
+                    />
+                </div>
+            )}
+
+            {/* Nærbildet som gjør dimensjonen håndfast. Sto bare i profilen;
+                nå får sammenligningen samme konkrete eksempel å hvile på. */}
+            {card?.example && !compact && (
+                <section
+                    className="rounded-xl p-3 border-l-4 mb-4"
+                    style={{ borderColor: accent, backgroundColor: `${accent}0d` }}
+                >
+                    <h4 className="font-bold text-sm text-slate-900 mb-1">{card.example.title}</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">{card.example.text}</p>
+                </section>
             )}
 
             {hasSummary ? (
@@ -87,7 +92,7 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
                         type="button"
                         onClick={() => setExpanded((v) => !v)}
                         aria-expanded={expanded}
-                        className="self-start inline-flex items-center gap-1 text-xs font-bold text-text-muted hover:text-text-main transition-colors mb-2"
+                        className="self-start inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors mb-2"
                     >
                         <ChevronDown
                             size={14}
@@ -103,7 +108,7 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
                                 exit={{ opacity: 0, height: 0 }}
                                 className="overflow-hidden"
                             >
-                                <div className="space-y-3 text-sm text-text-muted leading-relaxed pb-2">
+                                <div className="space-y-3 text-sm text-slate-500 leading-relaxed pb-2">
                                     {body}
                                 </div>
                             </motion.div>
@@ -112,7 +117,7 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
                 </>
             ) : (
                 <div
-                    className={`space-y-3 text-text-muted leading-relaxed mb-4 ${
+                    className={`space-y-3 text-slate-500 leading-relaxed mb-4 ${
                         compact ? 'text-sm' : ''
                     }`}
                 >
@@ -121,10 +126,10 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
             )}
 
             {((articleLinks && articleLinks.length > 0) || detailLink) && (
-                <div className="mt-auto pt-3 border-t border-border-main space-y-1.5">
+                <div className="mt-auto pt-3 border-t border-slate-200 space-y-1.5">
                     {articleLinks && articleLinks.length > 0 && (
                         <>
-                            <h4 className="text-[10px] font-bold text-text-muted uppercase tracking-wider">
+                            <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
                                 Fordypning
                             </h4>
                             <ul className="space-y-1">

@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Columns3, LayoutGrid } from 'lucide-react';
+import { ArrowLeft, Columns3, LayoutGrid, Map as MapIcon } from 'lucide-react';
 import { useComparisonManifest } from '../../features/comparison/manifest';
 import { compareHref, profileHref, topicHref } from '../../features/religion-nav/links';
 import { bestTopicForLink } from '../../features/religion-nav/topics';
 import { getDimension } from './dimensionMeta';
+import { BAND } from './surfaces';
 
 interface ReligionCrossLinksProps {
     /** Artikkelens egen sti, f.eks. /krle/religion/islam/bonn */
@@ -29,12 +30,20 @@ export const ReligionCrossLinks: React.FC<ReligionCrossLinksProps> = ({ path }) 
         // Religionen står i stien selv om artikkelen ikke er tagget
         const religionId = article?.religion ?? path.split('/')[3] ?? '';
         const religion = data.religions.find((r) => r.id === religionId) ?? null;
-        return { article, topic, religion };
+        // Er artikkelen et steg i en læringssti, skal eleven få vite det -
+        // stien tar den samme turen, men i rekkefølge og med oppgaver.
+        const inPaths = data.learningPaths
+            .map((learningPath) => {
+                const step = learningPath.articleLinks.find((a) => a.link === path);
+                return step ? { path: learningPath, step } : null;
+            })
+            .filter((x): x is NonNullable<typeof x> => x !== null);
+        return { article, topic, religion, inPaths };
     }, [data, path]);
 
     if (!resolved?.religion) return null;
 
-    const { article, topic, religion } = resolved;
+    const { article, topic, religion, inPaths } = resolved;
     const dimension = getDimension(article?.dimension);
     const accent = religion.color || '#6366f1';
     const others = topic?.entries.filter((e) => e.link !== path) ?? [];
@@ -44,9 +53,9 @@ export const ReligionCrossLinks: React.FC<ReligionCrossLinksProps> = ({ path }) 
     return (
         <section
             aria-label="Videre herfra"
-            className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5 md:p-6 space-y-5"
+            className={`${BAND} p-5 md:p-6 space-y-5`}
         >
-            <h2 className="font-display font-bold text-xl text-slate-900">Videre herfra</h2>
+            <h2 className="font-bold text-xl text-slate-900">Videre herfra</h2>
 
             {/* 1. Tilbake til profilen, i samme dimensjon som artikkelen hører til */}
             <Link
@@ -104,7 +113,31 @@ export const ReligionCrossLinks: React.FC<ReligionCrossLinksProps> = ({ path }) 
                 </div>
             )}
 
-            {/* 3. De to sammenligningene */}
+            {/* 3. Stien artikkelen er et steg i */}
+            {inPaths.length > 0 && (
+                <div>
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                        Denne artikkelen er et steg i en sti
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                        {inPaths.map(({ path: learningPath, step }) => (
+                            <Link
+                                key={learningPath.id}
+                                to={learningPath.link}
+                                className="group inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-bold text-slate-700 hover:border-slate-300 hover:shadow-sm transition-all"
+                            >
+                                <MapIcon size={16} className="text-emerald-600" />
+                                {learningPath.title}
+                                <span className="text-[11px] font-medium text-slate-400">
+                                    steg {step.step} av {learningPath.steps}
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* 4. De to sammenligningene */}
             <div className="flex flex-wrap gap-2 pt-1">
                 {topic && (
                     <Link

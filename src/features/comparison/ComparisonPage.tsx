@@ -10,6 +10,10 @@ import { ComparisonMatrix } from './ComparisonMatrix';
 import { ComparisonCell } from './ComparisonCell';
 import { ComparisonTasks } from './ComparisonTasks';
 import { readStoredLens, storeLens } from '../religion-nav/links';
+import { ReligionShellHeader } from '../../components/religion/ReligionShellHeader';
+import { DimensionWheel } from '../../components/religion/DimensionWheel';
+import { DIMENSIONS, type DimensionKey } from '../../components/religion/dimensionMeta';
+import { GLASS_CARD, GLASS_PANEL } from '../../components/religion/surfaces';
 import type {
     ComparisonDomainConfig,
     ComparisonEntity,
@@ -19,8 +23,12 @@ import type {
 
 interface ComparisonPageProps {
     config: ComparisonDomainConfig;
-    // Ekstra innhold nederst på siden (f.eks. tema-chips for religion)
-    footerExtra?: React.ReactNode;
+    /**
+     * Avslutningen på siden. Tar imot utvalget og linsen, slik at «Videre
+     * herfra» kan navngi nettopp de religionene eleven har på skjermen i
+     * stedet for å tilby generiske lenker.
+     */
+    footerExtra?: (context: { selected: string[]; dim: string }) => React.ReactNode;
 }
 
 const GRID_BY_COUNT: Record<number, string> = {
@@ -155,10 +163,10 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
     if (manifestQuery.isError || availableEntities.length === 0) {
         return (
             <div className="max-w-2xl mx-auto px-6 py-24 text-center">
-                <h1 className="text-2xl font-display font-bold text-text-main mb-3">
+                <h1 className="text-2xl font-bold text-slate-900 mb-3">
                     Kunne ikke laste sammenligningen
                 </h1>
-                <p className="text-text-muted mb-6">
+                <p className="text-slate-500 mb-6">
                     Noe gikk galt da vi hentet innholdet. Sjekk netttilkoblingen og prøv igjen.
                 </p>
                 <button
@@ -175,95 +183,131 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
     const gridClass = GRID_BY_COUNT[Math.min(Math.max(entities.length, 2), 4)];
     const ActiveIcon = activeDim.icon;
 
-    return (
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
-            <motion.div
-                initial={{ opacity: 0, y: -12 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mb-5 text-center"
-            >
-                <Link
-                    to="/krle"
-                    className="text-sm text-text-muted hover:text-text-main mb-1 inline-block"
-                >
-                    ← Tilbake til oversikt
-                </Link>
-                <h1 className="text-3xl md:text-4xl font-display font-bold text-text-main mb-2">
-                    {config.title}
-                </h1>
-                <p className="text-text-muted max-w-2xl mx-auto">{config.intro}</p>
-            </motion.div>
-
-            {/* Velger + dimensjonsfaner i én sticky rad */}
-            <div className="sticky top-0 z-20 -mx-4 md:-mx-6 px-4 md:px-6 py-3 bg-bg-main/90 backdrop-blur border-b border-border-main mb-6 space-y-3">
-                <EntityPicker
-                    entities={availableEntities}
-                    selected={selected}
-                    onToggle={toggleEntity}
-                    maxSelected={config.maxSelected}
-                    minSelected={config.minSelected}
-                />
-
-                <div
-                    role="tablist"
-                    aria-label="Velg dimensjon"
-                    onKeyDown={onTablistKeyDown}
-                    className="flex flex-wrap gap-1.5 justify-center"
-                >
-                    {config.dimensions.map((dim, index) => {
-                        const isActive = activeDimKey === dim.key;
-                        const Icon = dim.icon;
-                        const color = dim.color ?? '#6366f1';
-                        return (
-                            <button
-                                key={dim.key}
-                                ref={(el) => {
-                                    tabRefs.current[index] = el;
-                                }}
-                                role="tab"
-                                aria-selected={isActive}
-                                tabIndex={isActive ? 0 : -1}
-                                onClick={() => setActiveDimKey(dim.key)}
-                                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs md:text-sm font-bold border transition-all ${
-                                    isActive ? 'text-white shadow-md' : 'text-text-muted bg-bg-card'
-                                }`}
-                                style={{
-                                    backgroundColor: isActive ? color : undefined,
-                                    borderColor: isActive ? color : `${color}44`,
-                                }}
-                            >
-                                {Icon && (
-                                    <Icon
-                                        size={15}
-                                        style={{ color: isActive ? '#ffffff' : color }}
-                                    />
-                                )}
-                                {dim.short ?? dim.label}
-                            </button>
-                        );
-                    })}
-                </div>
-            </div>
-
-            {/* Spørsmålet dimensjonen stiller */}
-            <div className="mb-5 text-center">
-                {/* Fagbegrepet står over spørsmålet. Har dimensjonen ikke fått
-                    et spørsmål (filosofi), er label alene nok. */}
-                {activeDim.question && (
-                    <p
-                        className="text-xs font-bold uppercase tracking-wider mb-1"
-                        style={{ color: accent }}
+    const dimensionTabs = (
+        <div
+            role="tablist"
+            aria-label="Velg dimensjon"
+            onKeyDown={onTablistKeyDown}
+            className="flex flex-wrap gap-1.5"
+        >
+            {config.dimensions.map((dim, index) => {
+                const isActive = activeDimKey === dim.key;
+                const Icon = dim.icon;
+                const color = dim.color ?? '#6366f1';
+                return (
+                    <button
+                        key={dim.key}
+                        ref={(el) => {
+                            tabRefs.current[index] = el;
+                        }}
+                        role="tab"
+                        aria-selected={isActive}
+                        tabIndex={isActive ? 0 : -1}
+                        onClick={() => setActiveDimKey(dim.key)}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs md:text-sm font-bold border transition-all ${
+                            isActive ? 'text-white shadow-md' : 'text-slate-500 bg-white'
+                        }`}
+                        style={{
+                            backgroundColor: isActive ? color : undefined,
+                            borderColor: isActive ? color : `${color}44`,
+                        }}
                     >
-                        {ActiveIcon && (
-                            <ActiveIcon size={14} className="inline-block mr-1 -mt-0.5" />
+                        {Icon && <Icon size={15} style={{ color: isActive ? '#ffffff' : color }} />}
+                        {dim.short ?? dim.label}
+                    </button>
+                );
+            })}
+        </div>
+    );
+
+    // Sidekolonnen krymper når fire kort skal dele resten av bredden.
+    // Klassene står som hele strenger, ellers finner ikke Tailwind dem.
+    const gridClassName =
+        entities.length >= 4 ? 'lg:grid-cols-[240px_1fr]' : 'lg:grid-cols-[280px_1fr]';
+    const wheelWidth = entities.length >= 4 ? 240 : 280;
+
+    return (
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6">
+            <ReligionShellHeader
+                eyebrow="KRLE"
+                title={config.title}
+                subtitle={config.intro}
+                surface="sammenlign"
+                accent={accent}
+                // Hjulet i sidekolonnen er linsevelgeren. Uten hjul (filosofi)
+                // ligger fanene i sidekolonnen i stedet - heller ikke der
+                // trengs shell-railen, som bare kjenner religionsdimensjonene.
+                showLens={false}
+                showSurfaceNav={Boolean(config.wheelLens)}
+            />
+
+            <div className={`grid gap-6 items-start ${gridClassName}`}>
+                    {/* Sidekolonne: linsen og hvem som er med */}
+                    <div className="lg:sticky lg:top-24 space-y-4">
+                        {config.wheelLens ? (
+                            <>
+                                <div className="hidden lg:block">
+                                    <DimensionWheel
+                                        religionName="Spørsmålet"
+                                        color={accent}
+                                        selected={activeDimKey as DimensionKey}
+                                        visited={new Set(DIMENSIONS.map((d) => d.key))}
+                                        available={new Set(DIMENSIONS.map((d) => d.key))}
+                                        onSelect={(key) => setActiveDimKey(key)}
+                                        mode="picker"
+                                        maxWidth={wheelWidth}
+                                    />
+                                </div>
+                                {/* Under lg er det ikke plass til hjulet */}
+                                <div className="lg:hidden">{dimensionTabs}</div>
+                            </>
+                        ) : (
+                            dimensionTabs
                         )}
-                        {activeDim.label}
-                    </p>
-                )}
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-text-main">
-                    {activeDim.question ?? activeDim.label}
-                </h2>
-            </div>
+
+                        <div className={`${GLASS_PANEL} p-4`}>
+                            {/* Fagbegrepet står over spørsmålet. Har dimensjonen
+                                ikke fått et spørsmål (filosofi), ville etiketten
+                                bare gjentatt seg selv. */}
+                            {activeDim.question && (
+                                <p
+                                    className="text-xs font-bold uppercase tracking-wider mb-1"
+                                    style={{ color: accent }}
+                                >
+                                    {ActiveIcon && (
+                                        <ActiveIcon size={14} className="inline-block mr-1 -mt-0.5" />
+                                    )}
+                                    {activeDim.label}
+                                </p>
+                            )}
+                            <p className="text-lg font-bold text-slate-900 leading-snug">
+                                {activeDim.question ?? activeDim.label}
+                            </p>
+                            {/* Blurb, ikke reflection: refleksjonsspørsmålet
+                                hører til oppgavelaget lenger nede. Her skal det
+                                stå hva dimensjonen handler om. */}
+                            {activeDim.blurb && (
+                                <p className="text-sm text-slate-500 leading-relaxed mt-2">
+                                    {activeDim.blurb}
+                                </p>
+                            )}
+                        </div>
+
+                        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4">
+                            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                                Hvem er med
+                            </h2>
+                            <EntityPicker
+                                entities={availableEntities}
+                                selected={selected}
+                                onToggle={toggleEntity}
+                                maxSelected={config.maxSelected}
+                                minSelected={config.minSelected}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="min-w-0">
 
             {!entitiesLoading && matrixRows.length > 0 && (
                 <ComparisonMatrix rows={matrixRows} entities={entities} />
@@ -275,7 +319,7 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
                     {selected.map((id) => (
                         <div
                             key={id}
-                            className="h-64 rounded-2xl bg-bg-card border border-border-main animate-pulse"
+                            className="h-64 rounded-3xl bg-white/60 border border-white/60 animate-pulse"
                         />
                     ))}
                 </div>
@@ -290,10 +334,10 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.92 }}
                                 transition={{ type: 'spring', stiffness: 320, damping: 26 }}
-                                className="bg-bg-card border border-border-main rounded-2xl overflow-hidden flex flex-col shadow-sm"
+                                className={`${GLASS_CARD} overflow-hidden flex flex-col`}
                             >
                                 <div
-                                    className="p-4 border-b border-border-main flex items-center gap-2"
+                                    className="p-4 border-b border-slate-200 flex items-center gap-2"
                                     style={{
                                         borderTop: `4px solid ${entity.color || '#6366f1'}`,
                                     }}
@@ -301,7 +345,7 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
                                     {/* Navnet er alltid veien inn til profilen, med linsen i behold */}
                                     <Link
                                         to={`${config.detailLink(entity.id)}?dim=${activeDim.key}`}
-                                        className="font-display font-bold text-lg text-text-main hover:underline decoration-2 underline-offset-2"
+                                        className="font-bold text-lg text-slate-900 hover:underline decoration-2 underline-offset-2"
                                         style={{ textDecorationColor: entity.color || '#6366f1' }}
                                     >
                                         {entity.name}
@@ -312,7 +356,7 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
                                             onClick={() => toggleEntity(entity.id)}
                                             aria-label={`Fjern ${entity.name} fra sammenligningen`}
                                             title={`Fjern ${entity.name}`}
-                                            className="ml-auto p-1 rounded-lg text-text-muted hover:text-text-main hover:bg-black/5 transition-colors"
+                                            className="ml-auto p-1 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-black/5 transition-colors"
                                         >
                                             <X size={16} />
                                         </button>
@@ -353,7 +397,10 @@ export const ComparisonPage: React.FC<ComparisonPageProps> = ({ config, footerEx
                 />
             )}
 
-            {footerExtra}
+                </div>
+            </div>
+
+            {footerExtra?.({ selected, dim: activeDimKey })}
         </div>
     );
 };

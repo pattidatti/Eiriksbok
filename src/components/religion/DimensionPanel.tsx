@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, HelpCircle } from 'lucide-react';
 import { Image } from '../Image';
 import { RichText } from '../ui/RichText';
 import { CompareInvite } from './CompareInvite';
+import { KeyTermChips } from './KeyTermChips';
 import { topicHref } from '../../features/religion-nav/links';
 import type { DimensionMeta } from './dimensionMeta';
 import type { ReligionDimensionEntry } from '../../types';
+import { GLASS_CARD } from './surfaces';
 
 export interface DimensionArticleLink {
     title: string;
@@ -33,7 +35,6 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
     religionName,
     articles,
 }) => {
-    const [openTerm, setOpenTerm] = useState<string | null>(null);
     const Icon = dimension.icon;
     const accent = dimension.color;
 
@@ -44,7 +45,7 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25 }}
-            className="bg-white/85 backdrop-blur-md rounded-3xl border border-white/60 shadow-sm overflow-hidden"
+            className={`${GLASS_CARD} overflow-hidden`}
         >
             <header
                 className="px-6 py-5 border-b border-slate-100"
@@ -58,7 +59,7 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
                         <Icon size={22} className="text-white" strokeWidth={2.2} />
                     </span>
                     <div className="min-w-0">
-                        <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
                             {dimension.question}
                         </h2>
                         <p className="text-sm font-bold uppercase tracking-wider mt-1" style={{ color: accent }}>
@@ -79,7 +80,7 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
                 )}
 
                 {entry?.summary && (
-                    <p className="text-lg md:text-xl font-display text-slate-900 leading-snug">
+                    <p className="text-lg md:text-xl text-slate-900 leading-snug">
                         {entry.summary}
                     </p>
                 )}
@@ -97,47 +98,7 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
                 )}
 
                 {entry?.keyTerms && entry.keyTerms.length > 0 && (
-                    <div>
-                        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                            Ord du bør kunne
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                            {entry.keyTerms.map((term) => {
-                                const isOpen = openTerm === term.term;
-                                return (
-                                    <button
-                                        key={term.term}
-                                        type="button"
-                                        onClick={() => setOpenTerm(isOpen ? null : term.term)}
-                                        aria-expanded={isOpen}
-                                        className="px-3 py-1.5 rounded-full text-sm font-bold transition-all border"
-                                        style={{
-                                            backgroundColor: isOpen ? accent : `${accent}14`,
-                                            borderColor: isOpen ? accent : `${accent}40`,
-                                            color: isOpen ? '#ffffff' : '#334155',
-                                        }}
-                                    >
-                                        {term.term}
-                                    </button>
-                                );
-                            })}
-                        </div>
-                        <AnimatePresence mode="wait">
-                            {openTerm && (
-                                <motion.p
-                                    key={openTerm}
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: 'auto' }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    className="text-slate-600 text-sm leading-relaxed overflow-hidden"
-                                >
-                                    <span className="block pt-3">
-                                        {entry.keyTerms.find((t) => t.term === openTerm)?.explanation}
-                                    </span>
-                                </motion.p>
-                            )}
-                        </AnimatePresence>
-                    </div>
+                    <KeyTermChips terms={entry.keyTerms} accent={accent} />
                 )}
 
                 {entry?.example && (
@@ -145,7 +106,7 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
                         className="rounded-2xl p-5 border-l-4"
                         style={{ borderColor: accent, backgroundColor: `${accent}0d` }}
                     >
-                        <h3 className="font-display font-bold text-slate-900 mb-1.5">
+                        <h3 className="font-bold text-slate-900 mb-1.5">
                             {entry.example.title}
                         </h3>
                         <p className="text-slate-600 leading-relaxed">{entry.example.text}</p>
@@ -166,6 +127,16 @@ export const DimensionPanel: React.FC<DimensionPanelProps> = ({
             </div>
 
             <footer className="px-6 py-5 border-t border-slate-100 bg-slate-50/60 space-y-3">
+                {/* Artikkeldekningen er skjev: fire av de sju dimensjonene har
+                    ennå ingen egne artikler. Da forsvant hele blokken uten et
+                    ord, og eleven satt igjen med et hull. Nå står det hva som
+                    finnes i stedet. */}
+                {articles.length === 0 && (
+                    <p className="text-sm text-slate-500">
+                        Ingen egen artikkel om dette ennå. Sammenligningen nedenfor viser hvordan
+                        de andre religionene svarer på det samme spørsmålet.
+                    </p>
+                )}
                 {articles.length > 0 && (
                     <div>
                         <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">

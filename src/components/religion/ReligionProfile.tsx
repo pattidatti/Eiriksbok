@@ -13,6 +13,7 @@ import { useProgressStore } from '../../features/progress/useProgressStore';
 import { celebrateCompletion } from '../ui/answerFeedback';
 import { normalizeDimension } from '../../utils/religionDimensions';
 import type { Religion } from '../../types';
+import { GLASS_PANEL } from './surfaces';
 
 interface ReligionProfileProps {
     religion: Religion;
@@ -68,6 +69,10 @@ export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) =>
     const rewarded = useRef<string | null>(null);
     const countBefore = useRef<number | null>(null);
     const complete = visited.size === DIMENSIONS.length;
+    const allReligionIds = useMemo(
+        () => (manifestQuery.data?.religions ?? []).map((r) => r.id),
+        [manifestQuery.data]
+    );
     useEffect(() => {
         const before = countBefore.current;
         countBefore.current = visited.size;
@@ -80,10 +85,29 @@ export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) =>
             topicId: 'religion',
             title: `Religionsprofil: ${religion.name}`,
         });
+
+        // Var dette den siste profilen som manglet, er hele religionsrommet
+        // gjennomgått. Det er en større ting enn én profil, og fortjener sin
+        // egen registrering.
+        const allDone =
+            allReligionIds.length > 0 &&
+            allReligionIds.every((id) =>
+                id === religion.id ? true : loadVisitedDimensions(id).size >= DIMENSIONS.length
+            );
+        if (allDone) {
+            useProgressStore.getState().recordActivity({
+                kind: 'article-read',
+                activityId: 'krle/religion/alle-profiler',
+                subjectId: 'krle',
+                topicId: 'religion',
+                title: 'Alle religionsprofilene gjennomgått',
+            });
+        }
+
         // Konfetti bare når den siste dimensjonen åpnes her og nå - ikke hver
         // gang eleven kommer tilbake til en profil som alt er fullført.
         if (before !== null && before < DIMENSIONS.length) celebrateCompletion();
-    }, [complete, visited.size, religion.id, religion.name]);
+    }, [complete, visited.size, religion.id, religion.name, allReligionIds]);
 
     const articles: DimensionArticleLink[] = useMemo(() => {
         const all = manifestQuery.data?.religionArticles ?? [];
@@ -127,7 +151,7 @@ export const ReligionProfile: React.FC<ReligionProfileProps> = ({ religion }) =>
                     onSelect={handleSelect}
                 />
 
-                <div className="bg-white/70 backdrop-blur-md rounded-2xl border border-white/60 p-4 text-center">
+                <div className={`${GLASS_PANEL} p-4 text-center`}>
                     <p className="text-sm text-slate-600 leading-relaxed">{dimension.blurb}</p>
                 </div>
 

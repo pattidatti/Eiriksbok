@@ -57,9 +57,9 @@ export const EntityPicker: React.FC<EntityPickerProps> = ({
     return (
         <div className="space-y-3">
             {groups.map(({ group, items }) => (
-                <div key={group ?? 'alle'} className="flex flex-wrap items-center justify-center gap-2">
+                <div key={group ?? 'alle'} className="flex flex-wrap items-center gap-1.5">
                     {group && (
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-text-muted w-full text-center sm:w-auto">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 w-full">
                             {group}
                         </span>
                     )}
@@ -75,10 +75,10 @@ export const EntityPicker: React.FC<EntityPickerProps> = ({
                                 whileTap={{ scale: 0.94 }}
                                 transition={{ type: 'spring', stiffness: 400, damping: 24 }}
                                 onClick={() => handleClick(entity.id)}
-                                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+                                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold border transition-colors ${
                                     isSelected
                                         ? 'bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-500/25'
-                                        : 'bg-bg-card text-text-muted border-border-main hover:text-text-main hover:border-indigo-400'
+                                        : 'bg-white text-slate-500 border-slate-200 hover:text-slate-900 hover:border-indigo-400'
                                 }`}
                             >
                                 <span
@@ -92,7 +92,7 @@ export const EntityPicker: React.FC<EntityPickerProps> = ({
                     })}
                 </div>
             ))}
-            <div aria-live="polite" className="text-center min-h-[1.25rem]">
+            <div aria-live="polite" className="min-h-[1.25rem]">
                 {hint && <span className="text-xs text-amber-600 font-medium">{hint}</span>}
             </div>
         </div>

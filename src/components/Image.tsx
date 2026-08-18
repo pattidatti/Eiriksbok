@@ -77,7 +77,7 @@ export const Image: React.FC<ImageProps> = ({
     // If no src or error, show placeholder
     if (!currentSrc || error) {
         return (
-            <div className={`relative overflow-hidden bg-surface-card ${className}`} style={wrapperStyle}>
+            <div className={`relative overflow-hidden bg-slate-100 ${className}`} style={wrapperStyle}>
                 <PlaceholderImage seed={seed || alt} className="w-full h-full object-cover" />
             </div>
         );

@@ -8,6 +8,8 @@
     "heroImage": "/images/placeholder.webp",
     "subject": "krle",
     "topic": "sammenligning",
+    "dimension": "doctrinal",
+    "comparison_tags": ["frelse", "sentrale-trekk"],
     "kompetansemaal": ["rle01-03-10-06", "rle01-03-10-13", "rle01-03-10-15"],
     "createdDate": "2026-08-12T14:00:00Z",
     "learningPathData": {

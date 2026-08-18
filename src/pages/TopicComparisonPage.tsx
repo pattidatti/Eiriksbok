@@ -1,14 +1,33 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useQueries } from '@tanstack/react-query';
-import { Columns3 } from 'lucide-react';
+import { ChevronDown, Columns3 } from 'lucide-react';
 import { PageSkeleton } from '../components/Skeleton';
 import { ArticleContent } from '../components/ArticleContent';
 import { useComparisonManifest, fetchJsonAsset } from '../features/comparison/manifest';
 import { compareHref, profileHref, topicHref, resolveLens } from '../features/religion-nav/links';
 import { getDimension } from '../components/religion/dimensionMeta';
 import { normalizeTagSlug } from '../utils/slug';
+import { ReligionShellHeader } from '../components/religion/ReligionShellHeader';
+import { ReligionNextSteps } from '../components/religion/ReligionNextSteps';
+import { markTopicVisited } from '../features/religion-nav/progress';
+import { useProgressStore } from '../features/progress/useProgressStore';
+
+/**
+ * Ingressen fra en artikkel: første tekstblokk, avkortet. Gir kortene like
+ * høyder uten å skjule hva artikkelen handler om.
+ */
+function lead(data: Record<string, unknown> | undefined): string | null {
+    const content = data?.content;
+    if (!Array.isArray(content)) return null;
+    const first = content.find(
+        (block) => (block as { type?: string })?.type === 'text'
+    ) as { content?: string } | undefined;
+    const text = first?.content?.trim();
+    if (!text) return null;
+    return text.length > 240 ? `${text.slice(0, 237).trimEnd()}…` : text;
+}
 
 export const TopicComparisonPage: React.FC = () => {
     const { tag } = useParams<{ tag: string }>();
@@ -19,6 +38,7 @@ export const TopicComparisonPage: React.FC = () => {
     // religionens kort og tilby veien tilbake
     const fra = searchParams.get('fra');
     const lens = resolveLens(searchParams.get('dim'));
+    const [openLink, setOpenLink] = useState<string | null>(null);
 
     // Manifestet er kilden til sannhet: det lister nøyaktig hvilke artikler
     // som finnes for temaet (ingen blind fetching mot gjettede mappenavn)
@@ -65,6 +85,21 @@ export const TopicComparisonPage: React.FC = () => {
         return map;
     }, [manifestQuery.data]);
 
+    // Temaet regnes som besøkt så snart siden åpnes: det er et navigasjonsspor
+    // som fyller «Temaer besøkt» i huben. XP gis én gang per tema, og
+    // recordActivity holder selv styr på om den alt er gitt.
+    useEffect(() => {
+        if (!topic) return;
+        markTopicVisited(topic.slug);
+        useProgressStore.getState().recordActivity({
+            kind: 'article-read',
+            activityId: `krle/tema/${topic.slug}`,
+            subjectId: 'krle',
+            topicId: 'sammenligning',
+            title: `Tema på tvers: ${topic.label}`,
+        });
+    }, [topic]);
+
     const articleQueries = useQueries({
         queries: (topic?.entries ?? []).map((entry) => ({
             queryKey: ['topic-article', entry.file],
@@ -80,10 +115,10 @@ export const TopicComparisonPage: React.FC = () => {
     if (manifestQuery.isError) {
         return (
             <div className="max-w-2xl mx-auto px-6 py-24 text-center">
-                <h1 className="text-2xl font-display font-bold text-text-main mb-3">
+                <h1 className="text-2xl font-bold text-slate-900 mb-3">
                     Kunne ikke laste sammenligningen
                 </h1>
-                <p className="text-text-muted mb-6">
+                <p className="text-slate-500 mb-6">
                     Noe gikk galt da vi hentet innholdet. Sjekk netttilkoblingen og prøv igjen.
                 </p>
                 <button
@@ -112,33 +147,29 @@ export const TopicComparisonPage: React.FC = () => {
 
     return (
         <div className="max-w-7xl mx-auto px-6 py-8">
-            <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
-                <div className="flex flex-wrap items-center gap-4 mb-3">
-                    <Link
-                        to={compareHref([], lens)}
-                        className="text-sm text-text-muted hover:text-text-main"
-                    >
-                        ← Tilbake til sammenligningen
-                    </Link>
-                    {fra && religionMeta.has(fra) && (
+            <ReligionShellHeader
+                eyebrow="Tema på tvers"
+                title={topic?.label ?? tag ?? 'Tema'}
+                subtitle={
+                    topic
+                        ? `Slik behandler ${topic.count} av ${topic.total} religioner dette temaet.`
+                        : undefined
+                }
+                surface="tema"
+                showLens={false}
+                right={
+                    fra && religionMeta.has(fra) ? (
                         <Link
                             to={profileHref(fra, { dim: lens, visning: 'profil' })}
-                            className="text-sm text-text-muted hover:text-text-main"
+                            className="text-sm font-bold text-slate-500 hover:text-slate-900 px-3 py-1.5"
                         >
-                            ← Tilbake til {religionMeta.get(fra)?.name}
+                            ← {religionMeta.get(fra)?.name}
                         </Link>
-                    )}
-                </div>
+                    ) : undefined
+                }
+            />
 
-                <h1 className="text-3xl md:text-4xl font-display font-bold text-text-main mb-2">
-                    {topic?.label ?? tag}
-                </h1>
-                {topic && (
-                    <p className="text-text-muted mb-4">
-                        Slik behandler {topic.count} av {topic.total} religioner dette temaet.
-                    </p>
-                )}
-
+            <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} className="mb-6">
                 {/* Temarailen: hopp rett videre til neste tema uten å gå tilbake */}
                 {allTopics.length > 1 && (
                     <nav aria-label="Bytt tema" className="flex flex-wrap gap-2">
@@ -155,7 +186,7 @@ export const TopicComparisonPage: React.FC = () => {
                                     className={`shrink-0 px-3 py-1.5 rounded-full text-sm font-bold border transition-colors ${
                                         isActive
                                             ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                                            : 'bg-bg-card text-text-muted border-border-main hover:text-text-main hover:border-indigo-400'
+                                            : 'bg-white text-slate-500 border-slate-200 hover:text-slate-900 hover:border-indigo-400'
                                     }`}
                                 >
                                     #{other.label}
@@ -179,12 +210,12 @@ export const TopicComparisonPage: React.FC = () => {
                             key={entry.file}
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className={`bg-bg-card border rounded-2xl overflow-hidden flex flex-col shadow-sm ${
-                                isOrigin ? 'border-indigo-400 ring-2 ring-indigo-200' : 'border-border-main'
+                            className={`bg-white border rounded-2xl overflow-hidden flex flex-col shadow-sm ${
+                                isOrigin ? 'border-indigo-400 ring-2 ring-indigo-200' : 'border-slate-200'
                             }`}
                         >
                             <div
-                                className="p-4 border-b border-border-main bg-bg-subtle flex items-center gap-3"
+                                className="p-4 border-b border-slate-200 bg-slate-50 flex items-center gap-3"
                                 style={{
                                     borderLeft: meta?.color ? `4px solid ${meta.color}` : undefined,
                                 }}
@@ -195,7 +226,7 @@ export const TopicComparisonPage: React.FC = () => {
                                         dim,
                                         visning: 'profil',
                                     })}
-                                    className="font-display font-bold text-lg text-text-main capitalize hover:underline decoration-2 underline-offset-2"
+                                    className="font-bold text-lg text-slate-900 hover:underline decoration-2 underline-offset-2"
                                     style={{ textDecorationColor: meta?.color ?? '#6366f1' }}
                                 >
                                     {meta?.name ?? entry.religion}
@@ -206,25 +237,62 @@ export const TopicComparisonPage: React.FC = () => {
                                     </span>
                                 )}
                             </div>
-                            <div className="p-6 flex flex-col h-full">
-                                <h4 className="text-xl font-bold mb-4 text-text-main">
+                            <div className="p-5 flex flex-col flex-1">
+                                <h3 className="text-lg font-bold mb-2 text-slate-900 leading-snug">
                                     {entry.title}
-                                </h4>
-                                <div className="flex-grow prose prose-indigo max-w-none mb-6">
-                                    {data && Array.isArray(data.content) ? (
-                                        <ArticleContent content={data.content as never} />
-                                    ) : (
-                                        <p className="text-text-muted italic">
-                                            Ingen innhold tilgjengelig.
-                                        </p>
-                                    )}
-                                </div>
-                                <div className="mt-auto pt-4 border-t border-border-subtle">
+                                </h3>
+                                {/* Ni fulle artikler i tre kolonner ga vilt
+                                    ujevne korthøyder og var uleselig. Ingressen
+                                    står framme; resten folder eleven ut selv. */}
+                                <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                                    {lead(data ?? undefined) ?? 'Ingen innhold tilgjengelig.'}
+                                </p>
+                                {data && Array.isArray(data.content) && (
+                                    <>
+                                        <button
+                                            type="button"
+                                            onClick={() =>
+                                                setOpenLink(
+                                                    openLink === entry.link ? null : entry.link
+                                                )
+                                            }
+                                            aria-expanded={openLink === entry.link}
+                                            className="self-start inline-flex items-center gap-1 text-xs font-bold text-slate-500 hover:text-slate-900 transition-colors"
+                                        >
+                                            <ChevronDown
+                                                size={14}
+                                                className={`transition-transform ${
+                                                    openLink === entry.link ? 'rotate-180' : ''
+                                                }`}
+                                            />
+                                            {openLink === entry.link
+                                                ? 'Skjul teksten'
+                                                : 'Les hele her'}
+                                        </button>
+                                        <AnimatePresence initial={false}>
+                                            {openLink === entry.link && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: 'auto' }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="pt-3 text-sm">
+                                                        <ArticleContent
+                                                            content={data.content as never}
+                                                        />
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </>
+                                )}
+                                <div className="mt-auto pt-4">
                                     <Link
                                         to={entry.link}
-                                        className="text-sm text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1"
+                                        className="text-sm text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1"
                                     >
-                                        Gå til full artikkel →
+                                        Gå til artikkelen →
                                     </Link>
                                 </div>
                             </div>
@@ -235,7 +303,7 @@ export const TopicComparisonPage: React.FC = () => {
 
             {/* Utgangen: fra tema tilbake til dimensjonssammenligningen */}
             {topic && compareIds.length >= 2 && (
-                <div className="mt-8 pt-6 border-t border-border-main text-center">
+                <div className="mt-8 text-center">
                     <Link
                         to={compareHref(compareIds, topicDimension?.key ?? lens)}
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition-colors"
@@ -248,8 +316,17 @@ export const TopicComparisonPage: React.FC = () => {
                 </div>
             )}
 
+            {topic && (
+                <ReligionNextSteps
+                    surface="tema"
+                    dim={topicDimension?.key ?? lens}
+                    topicSlug={topic.slug}
+                    selectedIds={compareIds}
+                />
+            )}
+
             {(!topic || articles.length === 0) && (
-                <div className="text-center text-text-muted py-12 bg-bg-subtle rounded-2xl border border-dashed border-border-main">
+                <div className="text-center text-slate-500 py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
                     <p>Ingen artikler funnet for dette temaet.</p>
                     <p className="text-sm mt-2">
                         Gå tilbake til oversikten og velg et av temaene der.

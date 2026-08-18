@@ -1,0 +1,16 @@
+{
+    "term": "Sentralbankreserver",
+    "aliases": [
+        "sentralbankreserve",
+        "bankreserver",
+        "reserver"
+    ],
+    "definition": "Bankenes egne penger på konto i Norges Bank. Bare banker kan bruke dem, og bare Norges Bank kan lage dem. Når et innskudd flytter fra en bank til en annen, gjør bankene opp seg imellom med reserver.",
+    "type": "concept",
+    "tags": [
+        "økonomi",
+        "penger",
+        "bank"
+    ],
+    "subject": "samfunnskunnskap"
+}

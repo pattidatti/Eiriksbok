@@ -241,9 +241,9 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
     const effectiveTab: TabId = tabs.some((t) => t.id === activeTab) ? activeTab : tabs[0].id;
 
     return (
-        <section className="bg-bg-card border border-border-main rounded-2xl p-5 md:p-6 shadow-sm">
+        <section className="bg-white border border-slate-200 rounded-2xl p-5 md:p-6 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <h2 className="font-display font-bold text-lg text-text-main">Test deg selv</h2>
+                <h2 className="font-bold text-lg text-slate-900">Test deg selv</h2>
                 <div className="flex items-center gap-1.5" aria-label="Fremdrift i runden">
                     {Array.from({ length: ROUND_SIZE }).map((_, i) => (
                         <span
@@ -280,7 +280,7 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
                             className={`px-3 py-1.5 rounded-full text-xs font-bold transition-colors ${
                                 effectiveTab === tab.id
                                     ? 'bg-indigo-100 text-indigo-700'
-                                    : 'bg-bg-subtle text-text-muted hover:text-text-main'
+                                    : 'bg-slate-50 text-slate-500 hover:text-slate-900'
                             }`}
                         >
                             {tab.label}
@@ -291,11 +291,11 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
 
             {effectiveTab === 'ligner' && activePair && (
                 <div>
-                    <p className="text-sm text-text-muted mb-1">
+                    <p className="text-sm text-slate-500 mb-1">
                         {activePair.rowLabel}: {activePair.anchor.name} svarer «
                         {activePair.anchorText}».
                     </p>
-                    <p className="text-text-main font-medium mb-4">
+                    <p className="text-slate-900 font-medium mb-4">
                         Hvem av de andre har samme svar?
                     </p>
                     <div className="flex flex-wrap gap-2 mb-3">
@@ -322,7 +322,7 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
                                             ? 'bg-emerald-100 border-emerald-400 text-emerald-800'
                                             : revealed && isPicked
                                               ? 'bg-rose-100 border-rose-400 text-rose-800'
-                                              : 'bg-bg-subtle border-border-main text-text-main hover:border-indigo-400'
+                                              : 'bg-slate-50 border-slate-200 text-slate-900 hover:border-indigo-400'
                                     }`}
                                 >
                                     {option.name}
@@ -332,7 +332,7 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
                     </div>
                     {pairAnswer && (
                         <div>
-                            <p className="text-sm text-text-muted mb-2">
+                            <p className="text-sm text-slate-500 mb-2">
                                 Svaret er {entities.find((e) => e.id === activePair.answerId)?.name}
                                 : «{activePair.answerText}».
                             </p>
@@ -352,10 +352,10 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
 
             {effectiveTab === 'gjett' && question && (
                 <div>
-                    <p className="text-sm text-text-muted mb-1">
+                    <p className="text-sm text-slate-500 mb-1">
                         Hvilken {entityLabel} hører dette utsagnet til?
                     </p>
-                    <blockquote className="text-text-main font-medium border-l-4 border-indigo-300 pl-4 py-1 mb-4">
+                    <blockquote className="text-slate-900 font-medium border-l-4 border-indigo-300 pl-4 py-1 mb-4">
                         «{question.sentence}»
                     </blockquote>
                     <div className="flex flex-wrap gap-2 mb-3">
@@ -382,7 +382,7 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
                                             ? 'bg-emerald-100 border-emerald-400 text-emerald-800'
                                             : revealed && isPicked
                                               ? 'bg-rose-100 border-rose-400 text-rose-800'
-                                              : 'bg-bg-subtle border-border-main text-text-main hover:border-indigo-400'
+                                              : 'bg-slate-50 border-slate-200 text-slate-900 hover:border-indigo-400'
                                     }`}
                                 >
                                     {option.name}
@@ -404,10 +404,10 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
 
             {effectiveTab === 'pastand' && activeClaim && (
                 <div>
-                    <p className="text-sm text-text-muted mb-1">
+                    <p className="text-sm text-slate-500 mb-1">
                         Gjelder dette begge? ({activeClaim.entities.join(' og ')})
                     </p>
-                    <blockquote className="text-text-main font-medium border-l-4 border-indigo-300 pl-4 py-1 mb-4">
+                    <blockquote className="text-slate-900 font-medium border-l-4 border-indigo-300 pl-4 py-1 mb-4">
                         {activeClaim.claim}
                     </blockquote>
                     <div className="flex gap-2 mb-3">
@@ -434,7 +434,7 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
                                             ? 'bg-emerald-100 border-emerald-400 text-emerald-800'
                                             : revealed && isPicked
                                               ? 'bg-rose-100 border-rose-400 text-rose-800'
-                                              : 'bg-bg-subtle border-border-main text-text-main hover:border-indigo-400'
+                                              : 'bg-slate-50 border-slate-200 text-slate-900 hover:border-indigo-400'
                                     }`}
                                 >
                                     {answer === 'likt' ? 'Likt' : 'Ulikt'}
@@ -444,7 +444,7 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
                     </div>
                     {claimAnswer && (
                         <div>
-                            <p className="text-sm text-text-muted mb-2">{activeClaim.explanation}</p>
+                            <p className="text-sm text-slate-500 mb-2">{activeClaim.explanation}</p>
                             {claims.length > 1 && (
                                 <button
                                     type="button"
@@ -461,13 +461,13 @@ export const ComparisonTasks: React.FC<ComparisonTasksProps> = ({
 
             {effectiveTab === 'refleksjon' && dimension.reflection && (
                 <div>
-                    <p className="text-sm text-text-main font-medium mb-3">{dimension.reflection}</p>
+                    <p className="text-sm text-slate-900 font-medium mb-3">{dimension.reflection}</p>
                     <textarea
                         value={reflection}
                         onChange={(e) => setReflection(e.target.value)}
                         rows={4}
                         placeholder="Skriv tankene dine her (minst 30 tegn)..."
-                        className="w-full rounded-xl border border-border-main bg-bg-subtle p-3 text-sm text-text-main focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     />
                     <div className="flex items-center gap-3 mt-2">
                         <button
