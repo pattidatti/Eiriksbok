@@ -175,6 +175,7 @@ const TreKurverOgFlereKanoner = lazy(() => import('./content/interactive/TreKurv
 const BokaSomLeggerSeg = lazy(() => import('./content/interactive/BokaSomLeggerSeg').then(m => ({ default: m.BokaSomLeggerSeg })));
 const DetAlleErEnigeOm = lazy(() => import('./content/interactive/DetAlleErEnigeOm').then(m => ({ default: m.DetAlleErEnigeOm })));
 const FemHandlingerIkkeFemTanker = lazy(() => import('./content/interactive/FemHandlingerIkkeFemTanker').then(m => ({ default: m.FemHandlingerIkkeFemTanker })));
+const FemRelasjonene = lazy(() => import('./content/interactive/FemRelasjonene').then(m => ({ default: m.FemRelasjonene })));
 const TreEnheter = lazy(() => import('./content/interactive/TreEnheter').then(m => ({ default: m.TreEnheter })));
 const GjenopprettelsensPaastand = lazy(() => import('./content/interactive/GjenopprettelsensPaastand').then(m => ({ default: m.GjenopprettelsensPaastand })));
 const HvaSomSkillerDem = lazy(() => import('./content/interactive/HvaSomSkillerDem').then(m => ({ default: m.HvaSomSkillerDem })));
@@ -652,6 +653,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     BokaSomLeggerSeg,
     DetAlleErEnigeOm,
     FemHandlingerIkkeFemTanker,
+    FemRelasjonene,
     TreEnheter,
     GjenopprettelsensPaastand,
     HvaSomSkillerDem,

@@ -9172,6 +9172,20 @@
                 "norge"
               ],
               "createdDate": "2026-08-17T00:00:00Z"
+            },
+            {
+              "id": "konfusianisme",
+              "title": "Konfusianisme: plikten som går begge veier",
+              "description": "Kinas store livssyn uten en gud: fem bånd mellom mennesker der plikten alltid går begge veier.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "kina",
+                "livssyn",
+                "etikk",
+                "konfusianisme",
+                "filosofi"
+              ],
+              "createdDate": "2026-08-18T00:00:00Z"
             }
           ]
         },
