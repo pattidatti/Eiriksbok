@@ -9,8 +9,9 @@
     "factChecked": "2026-08-19",
     "details": [
         "Norge bygde velferdsstaten mens landet fortsatt var fattig, lenge før oljepengene kom",
+        "Norge hadde alt fem trygder da krigen kom i 1940; etterkrigstiden fullførte nettet",
         "Trygdene kom én etter én mellom 1946 og 1960, og ble samlet i folketrygden i 1967",
-        "Både Arbeiderpartiet og de borgerlige partiene sto bak utbyggingen"
+        "Nettet henger i dem som er i jobb: modellen krever at mange betaler inn og få tar ut"
     ],
     "content": [
         {
@@ -25,7 +26,7 @@
         },
         {
             "type": "text",
-            "content": "Tretti år senere var alt dette snudd. Da hadde faren din krav på penger fordi han var syk, og på uføretrygd fordi han ikke kunne jobbe mer. Han fikk det ikke fordi noen syntes synd på ham. Han fikk det fordi han hadde rett til det. Det er dette skiftet vi kaller velferdsstaten, og denne artikkelen handler om hvordan det skjedde."
+            "content": "Tretti år senere var alt snudd. Da hadde faren din krav på sykepenger og uføretrygd. Han fikk det ikke fordi noen syntes synd på ham, men fordi han hadde rett til det. Det skiftet kaller vi velferdsstaten."
         },
         {
             "type": "header",
@@ -33,11 +34,23 @@
         },
         {
             "type": "text",
-            "content": "En velferdsstat er en stat som i stor grad garanterer innbyggerne hjelp hvis de blir syke, havner i nød eller mister inntekten sin (Christensen & Berg, 2025). Ordet velferd betyr rett og slett at det går bra med folk. Det spesielle er ordet garanterer. Hjelpen er ikke en gave noen kan velge å gi eller la være. Den er en rettighet som står i loven."
+            "content": "En velferdsstat garanterer innbyggerne hjelp hvis de blir syke, havner i nød eller mister inntekten sin (Christensen & Berg, 2025). Det viktige ordet er garanterer. Hjelpen er ikke en gave noen kan velge å gi eller la være. Den er en rettighet som står i loven."
         },
         {
             "type": "text",
-            "content": "Den norske modellen har tre trekk som henger sammen. Ordningene gjelder alle, ikke bare de fattigste. De betales med skatt, ikke med private forsikringer du må kjøpe selv. Og fordi alle betaler etter evne og alle får etter behov, jevner systemet ut forskjellene mellom rike og fattige (Christensen & Berg, 2025). På 1700- og 1800-tallet var det kommunene som tok seg av fattigdom, og hjelpen var liten og tilfeldig. Velferdsstaten flyttet ansvaret opp til staten og gjorde det likt over hele landet."
+            "content": "Den norske modellen har tre trekk. Ordningene gjelder alle, ikke bare de fattigste. De betales med skatt, ikke med private forsikringer du må kjøpe selv. Og fordi alle betaler etter evne og får etter behov, jevner systemet ut forskjellene mellom rike og fattige (Christensen & Berg, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Nettet begynte ikke i 1945"
+        },
+        {
+            "type": "text",
+            "content": "Vi snakker gjerne om velferdsstaten som noe som ble til etter krigen. Men de første trådene kom mye tidligere. Allerede i 1894 fikk fabrikkarbeidere forsikring hvis de ble skadet på jobben. Fra 1911 var sykeforsikring påbudt for dem som tjente minst. I 1936 kom alderstrygd for hele landet, og hjelp til blinde og uføre. I 1939 kom arbeidsløshetstrygd (Mæland, Hatland & Pedersen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Da krigen kom i 1940, hadde Norge altså fem trygder allerede. Men de var små, de gjaldt bare noen grupper, og de hang ikke sammen. En fabrikkarbeider kunne være dekket, mens naboen som fisket eller drev gård, ikke var det. Det som skjedde etter 1945, var ikke at nettet ble funnet opp. Det var at det ble spent ut over alle."
         },
         {
             "type": "header",
@@ -45,19 +58,23 @@
         },
         {
             "type": "text",
-            "content": "Vi tenker gjerne at Norge fikk råd til velferd fordi vi ble rike. Historien går motsatt vei. Da krigen sluttet i 1945, var Norge et fattig land. Nord-Troms og Finnmark lå i aske. Folk bodde i kjellere, brakker og på kjøkkenbenker hos slektninger. Maten var rasjonert, altså delt ut i faste porsjoner mot kuponger. Melk, ost og egg kom først i fritt salg etter fire år, og kjøtt, kaffe og sukker var rasjonert helt fram til 1952 (Lange, 2015)."
+            "content": "Vi tenker gjerne at Norge fikk råd til velferd fordi vi ble rike. Historien går motsatt vei. Da krigen sluttet i 1945, var Norge fattig. Nord-Troms og Finnmark lå i aske, og folk bodde i kjellere og brakker. Maten var rasjonert, altså delt ut i faste porsjoner mot kuponger, og kjøtt, kaffe og sukker var det helt fram til 1952 (Lange, 2015)."
         },
         {
             "type": "text",
-            "content": "Norge fikk hjelp utenfra. Gjennom Marshallhjelpen kom det omtrent tre milliarder kroner i gaver og lån fra USA fra 1948, og de pengene var viktige for at gjenreisningen, altså gjenoppbyggingen av landet, gikk så fort (Sejersted, 2026). Du kan lese mer om hvorfor USA ga bort penger i artikkelen om [hvordan verden ble bygd på nytt i 1945](/historie/etterkrigstiden/verden-bygges-pa-nytt)."
+            "content": "Norge fikk hjelp utenfra. Gjennom Marshallhjelpen kom det omtrent tre milliarder kroner i gaver og lån fra USA fra 1948, og de pengene gjorde at gjenoppbyggingen gikk fort (Sejersted, 2026). Hvorfor USA ga bort penger, kan du lese om i artikkelen om [hvordan verden ble bygd på nytt i 1945](/historie/etterkrigstiden/verden-bygges-pa-nytt)."
         },
         {
             "type": "text",
-            "content": "Men mesteparten måtte Norge skaffe selv, og det krevde harde valg. Regjeringen brukte pengene på kraftverk, industri og boliger i stedet for på forbruk. Kraftproduksjonen ble firedoblet mellom 1946 og 1965, og den strømmen gjorde det mulig å bygge store fabrikker som Norsk Jernverk og aluminiumsverkene (Sejersted, 2026). Husbanken ble opprettet i 1946 og ga billige lån til folk som ville bygge hus. Fram til 1970 kom det rundt 650 000 nye boliger i Norge (Sejersted, 2026)."
+            "content": "Resten måtte Norge skaffe selv, og det krevde harde valg. Regjeringen brukte pengene på kraftverk, industri og boliger i stedet for på forbruk. Kraftproduksjonen ble firedoblet mellom 1946 og 1965, og Husbanken ga fra 1946 billige lån til folk som ville bygge hus (Sejersted, 2026)."
         },
         {
             "type": "text",
-            "content": "Mannen som ledet dette arbeidet, het Einar Gerhardsen. Han var sønn av en veiarbeider, begynte selv i Veivesenet som attenåring, og hadde aldri sittet på Stortinget da han fikk beskjed om å danne regjering sommeren 1945. Han ble statsminister i til sammen omtrent sytten år, lenger enn noen annen i Norge, og folk kalte ham Landsfaderen, altså landets far (Kjølås, 2025)."
+            "content": "Statsminister i mesteparten av disse årene var Einar Gerhardsen. Han var sønn av en veiarbeider, begynte selv i Veivesenet som attenåring, og hadde aldri sittet på Stortinget da han dannet regjering sommeren 1945. Til sammen styrte han i omtrent sytten år. I avisene og i hans eget parti ble han kalt «landsfaderen». Det er verdt å vite hvem som ga ham navnet: den gangen eide partiene de fleste avisene, så bildet folk fikk av statsministeren, ble tegnet av hans egne (Kjølås, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "De årene hadde også en bakside. Arbeiderpartiet hadde flertall alene på Stortinget fra 1945 til 1961, og kunne vedta nesten hva det ville uten å spørre andre. Politiet og forsvaret førte i all hemmelighet lister over nordmenn som var kommunister eller langt ute på venstresiden. Det var ulovlig, og ble først kjent da Lund-kommisjonen la fram rapporten sin i 1996 (Store norske leksikon, 2026). Makten var heller ikke evig. Da 21 gruvearbeidere omkom i Kings Bay på Svalbard i 1962, mente Stortinget at regjeringen hadde sviktet, og året etter felte det regjeringen med 76 mot 74 stemmer (Agøy, 2026)."
         },
         {
             "type": "component",
@@ -72,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Velferdsstaten kom ikke som én stor reform. Den ble vevd tråd for tråd, og hver tråd var et eget vedtak i Stortinget. Barnetrygden kom i 1946 og var den første trygden som gjaldt alle, uansett hvor mye foreldrene tjente (Lange, 2015). Så fulgte syketrygd i 1946 og arbeidsløshetstrygd i 1949 (Sejersted, 2026). I 1957 kom full alderstrygd uten behovsprøving, altså pensjon uten at noen først skulle måle hvor fattig du var, og rundt tre år senere kom uføretrygden (Lange, 2015)."
+            "content": "Velferdsstaten kom ikke som én stor reform. Den ble vevd tråd for tråd, og hver tråd var et eget vedtak i Stortinget. Barnetrygden i 1946 var den første som gjaldt alle familier, uansett hvor mye foreldrene tjente (Lange, 2015). Alderstrygd uten behovsprøving, altså pensjon uten at noen først målte hvor fattig du var, kom i 1957 (Lange, 2015)."
         },
         {
             "type": "list",
@@ -93,7 +110,7 @@
         },
         {
             "type": "text",
-            "content": "Legg merke til rekkefølgen. Barn og syke kom først, gamle og uføre sist. Det sier noe om hva politikerne mente hastet mest i et land der mange familier hadde altfor lite å leve av."
+            "content": "Legg merke til rekkefølgen. Barn og syke kom først, gamle og uføre sist. Det sier noe om hva politikerne mente hastet mest."
         },
         {
             "type": "image",
@@ -107,11 +124,11 @@
         },
         {
             "type": "text",
-            "content": "Problemet med å bygge nettet tråd for tråd var at systemet ble uoversiktlig. Hver ordning hadde sine egne regler, sine egne kontorer og sine egne skjemaer. Løsningen ble folketrygden. Stortinget vedtok loven 17. juni 1966, og den trådte i kraft 1. januar 1967 (Mæland, Hatland & Pedersen, 2025). Fra da av hadde Norge én felles lov som ga penger ved sykdom, svangerskap og fødsel, arbeidsløshet, alderdom, uførhet, dødsfall og tap av den som forsørget deg."
+            "content": "Problemet med å bygge nettet tråd for tråd var at systemet ble uoversiktlig. Hver ordning hadde sine egne regler og sine egne kontorer. Løsningen ble folketrygden. Stortinget vedtok loven 17. juni 1966, og den trådte i kraft 1. januar 1967 (Mæland, Hatland & Pedersen, 2025). Nå hadde Norge én lov som dekket sykdom, fødsel, arbeidsløshet, alderdom, uførhet og dødsfall."
         },
         {
             "type": "text",
-            "content": "Her er et poeng mange overser. Folketrygden ble innført av Borten-regjeringen, som var borgerlig, ikke av Arbeiderpartiet (Mæland, Hatland & Pedersen, 2025). Velferdsstaten var ikke ett partis prosjekt. Alle de politiske partiene sto bak ønsket om trygghet og utjevning (Lange, 2015). De var uenige om mye annet, men ikke om dette. Uten fagbevegelsen og samarbeidet mellom arbeidsgivere og arbeidstakere hadde det heller ikke gått. Du kan lese om hvordan det samarbeidet vokste fram i artikkelen om [fagforeningene](/samfunnskunnskap/arbeidsliv/fagforeninger)."
+            "content": "Her er et poeng mange overser. Folketrygden ble lagt fram av Borten-regjeringen, som var borgerlig, ikke av Arbeiderpartiet (Mæland, Hatland & Pedersen, 2025). Velferdsstaten var ikke ett partis prosjekt. Men enigheten var ikke total. Bondepartiet fryktet at trygder kunne svekke lysten til å jobbe, og noen liberalere mente staten tok over et ansvar folk burde ha selv. Høyre tok avstand fra den kritikken (Lange, 2015). De var enige om målet, og uenige om hvor langt det skulle gå."
         },
         {
             "type": "component",
@@ -122,16 +139,36 @@
             }
         },
         {
+            "type": "text",
+            "content": "Folketrygden var ikke slutten. Full lønn under sykdom kom i 1978, foreldrepermisjonen vokste fra 18 til 42 uker mellom 1987 og 1993, og skolen ble en del av nettet da ni år ble påbudt for alle i 1969 (Sejersted, 2026)."
+        },
+        {
             "type": "header",
-            "text": "Nettet vokser videre"
+            "text": "Hvem holder nettet oppe?"
         },
         {
             "type": "text",
-            "content": "Folketrygden var ikke slutten. I 1971 ble syketrygd, arbeidsløshetstrygd og yrkesskadetrygd flyttet inn i den samme loven. I 1978 fikk arbeidstakere full lønn under sykdom. Mellom 1987 og 1993 vokste foreldrepermisjonen fra 18 til 42 uker. I 2011 kom en pensjonsreform som gjorde det mulig å velge selv når du vil gå av, mellom 62 og 75 år (Mæland, Hatland & Pedersen, 2025). Skolen ble også en del av nettet: ni år på skolen ble påbudt for alle i 1969 (Sejersted, 2026)."
+            "content": "Det koster å holde nettet oppe. I 2018 brukte folketrygden 470 milliarder kroner, altså rundt 35 prosent av hele statsbudsjettet (Mæland, Hatland & Pedersen, 2025). Alle disse kronene kommer fra ett sted: fra folk som er i jobb og betaler skatt. Det finnes ingen annen pott."
         },
         {
             "type": "text",
-            "content": "Det koster. I 2018 brukte folketrygden 470 milliarder kroner, altså rundt 35 prosent av hele statsbudsjettet (Mæland, Hatland & Pedersen, 2025). Ser vi på alle offentlige utgifter under ett, gikk over 40 prosent av dem til sosiale formål i 2016, altså til trygder, helse og omsorg (Gran-Henriksen, 2017). Nesten halvparten av alt fellesskapet bruker penger på, går altså til å holde sikkerhetsnettet oppe."
+            "content": "Derfor hviler hele modellen på et regnestykke. Ordninger som gjelder alle, blir bare mulige å betale fordi de aller fleste ikke bruker dem samtidig. Nettet holder så lenge mange betaler inn og få tar ut. Blir det færre som holder, og flere som henger i nettet, må noe gi etter."
+        },
+        {
+            "type": "text",
+            "content": "Slik ser regnestykket ut i dag. Av dem mellom 20 og 64 år var 79,7 prosent i jobb i 2025, ned fra 81,2 prosent i 2022 (Horgen, 2025). Ved utgangen av 2025 fikk 374 900 personer uføretrygd, altså 10,5 prosent av alle mellom 18 og 67 år (Nav, 2026). Samtidig blir Norge eldre, og for hver pensjonist blir det færre i arbeidsfør alder (Christensen & Berg, 2025)."
+        },
+        {
+            "type": "component",
+            "name": "Sikkerhetsnettet",
+            "props": {
+                "initialAct": 2,
+                "title": "Prøv selv: hvor mange må holde?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Dette er regnestykke, ikke politikk, og alle partier er enige om at det stemmer. Uenigheten handler om hva man skal gjøre. Noen vil få flere i jobb. Noen vil stramme inn på hvem som skal få ytelser. Noen vil øke skatten. Noen vil at folk skal jobbe lenger før de går av med pensjon. Hvilket svar du liker best, henger sammen med hva du mener er rettferdig. Det er derfor vi stemmer ved valg."
         },
         {
             "type": "image",
@@ -141,11 +178,7 @@
         },
         {
             "type": "text",
-            "content": "Nettet er ikke ferdig, og det er ikke garantert. Norge blir eldre, og da skal færre i arbeid betale for flere som får utbetalinger. Hvordan systemet fungerer i dag, og hvilke utfordringer det møter, kan du lese mer om i artikkelen om [det norske demokratiet i dag](/samfunnskunnskap/styringsformer/km-15-norsk-demokrati). Og hva oljen gjorde med Norge etter 1969, står i artikkelen om [oljealderen](/historie/norge-i-moderne-tid/oljealderen)."
-        },
-        {
-            "type": "text",
-            "content": "Det viktigste å ta med seg er dette: velferdsstaten falt ikke ned i fanget på Norge sammen med oljepengene. Den ble bygd av et fattig land som brukte tjue år på å ta ett vedtak av gangen. Hver tråd i nettet var en beslutning noen tok, og som noen andre kunne ha latt være å ta."
+            "content": "Nettet er ikke ferdig, og det er ikke garantert. Det viktigste å ta med seg er dette: velferdsstaten falt ikke ned i fanget på Norge sammen med oljepengene. Den ble bygd av et fattig land, tråd for tråd, og hver tråd var en beslutning noen tok, og som noen andre kunne ha latt være å ta. Hvordan systemet fungerer i dag, kan du lese om i artikkelen om [det norske demokratiet i dag](/samfunnskunnskap/styringsformer/km-15-norsk-demokrati), og hva oljen gjorde med Norge etter 1969, står i artikkelen om [oljealderen](/historie/norge-i-moderne-tid/oljealderen)."
         },
         {
             "type": "component",
@@ -153,6 +186,7 @@
             "props": {
                 "forstaa": [
                     "Hva var fattigkassa, og hvorfor opplevde mange det som ydmykende å ta imot hjelp derfra?",
+                    "Hvilke trygder fantes i Norge allerede da krigen kom i 1940?",
                     "Hvilket år kom barnetrygden, og hva var nytt med den sammenlignet med tidligere hjelp?",
                     "Når ble folketrygdloven vedtatt, og når trådte den i kraft?",
                     "Nevn tre ting Norge brukte penger på i årene rett etter 1945 i stedet for på forbruk."
@@ -161,12 +195,14 @@
                     "Forklar med egne ord forskjellen mellom å få hjelp og å ha rett på hjelp.",
                     "Hvorfor tror du politikerne innførte barnetrygd og syketrygd før alderstrygd og uføretrygd?",
                     "Teksten sier at det var en borgerlig regjering som innførte folketrygden. Hvorfor er det et viktig poeng når vi skal forstå hvordan velferdsstaten ble til?",
-                    "Norge var fattig i 1945. Hvordan kunne landet likevel begynne å bygge ut trygder samtidig som det manglet både boliger og mat?"
+                    "Norge var fattig i 1945. Hvordan kunne landet likevel begynne å bygge ut trygder samtidig som det manglet både boliger og mat?",
+                    "Velferdsordningene gjelder alle. Hvorfor blir de likevel vanskeligere å betale jo flere som trenger dem samtidig?"
                 ],
                 "gaaVidere": [
                     "Intervju en person som er over 70 år om hvordan familien fikk hjelp da de var barn. Skriv ti setninger om hva som var annerledes.",
                     "Diskuter i klassen: bør alle få barnetrygd, også familier med høy inntekt? Finn ett argument for og ett imot.",
-                    "Velg ett av landene USA, Tyskland eller Sverige og finn ut hvordan de organiserer helsehjelp. Sammenlign med Norge i fem til åtte setninger."
+                    "Velg ett av landene USA, Tyskland eller Sverige og finn ut hvordan de organiserer helsehjelp. Sammenlign med Norge i fem til åtte setninger.",
+                    "Teksten nevner fire forslag for å få regnestykket til å gå opp: flere i jobb, strammere regler, høyere skatt, eller lenger arbeidsliv. Velg to av dem og finn ett argument for og ett imot hvert."
                 ]
             }
         },
@@ -228,7 +264,29 @@
                             "Fagforeningene alene, uten Stortinget"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Alle partiene sto bak ønsket om trygghet og utjevning, og folketrygden ble innført av en borgerlig regjering."
+                        "explanation": "Støtten var bred på tvers av partiene, og folketrygden ble lagt fram av en borgerlig regjering. Men de var uenige om hvor langt ordningene skulle gå."
+                    },
+                    {
+                        "question": "Hva er riktig om trygder i Norge før andre verdenskrig?",
+                        "options": [
+                            "Det fantes ingen trygder i Norge før 1945",
+                            "Norge hadde alt fem trygder da krigen kom i 1940",
+                            "Bare de aller rikeste var forsikret",
+                            "Alle trygder ble innført samtidig i 1936"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Ulykkesforsikring kom i 1894, sykeforsikring i 1909, alderstrygd og hjelp til blinde og uføre i 1936, og arbeidsløshetstrygd i 1939. De var små og hang ikke sammen."
+                    },
+                    {
+                        "question": "Hva er den norske velferdsmodellen avhengig av for å kunne betales?",
+                        "options": [
+                            "At staten låner penger i utlandet hvert år",
+                            "At oljefondet dekker alle utgiftene",
+                            "At mange er i arbeid og betaler skatt, mens få mottar ytelser samtidig",
+                            "At de rikeste gir frivillige gaver til fellesskapet"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Pengene kommer fra dem som er i jobb og betaler skatt. Nettet holder så lenge mange betaler inn og få tar ut samtidig."
                     }
                 ]
             }
@@ -238,13 +296,16 @@
             "name": "Kildeliste",
             "props": {
                 "sources": [
+                    "Agøy, N. I. (2026). *Kings Bay-saken*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no/Kings_Bay-saken](https://snl.no/Kings_Bay-saken)",
                     "Christensen, J. & Berg, O. T. (2025). *Velferdsstat*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no/velferdsstat](https://snl.no/velferdsstat)",
-                    "Gran-Henriksen, B. (2017). *Mest penger til sosiale formål*. Statistisk sentralbyrå. Hentet 19.08.2026 fra [ssb.no](https://www.ssb.no/offentlig-sektor/artikler-og-publikasjoner/mest-penger-til-sosiale-formal)",
+                    "Horgen, E. H. (2025). *Sysselsettingsandelen har gått ned siden 2022*. Statistisk sentralbyrå. Hentet 19.08.2026 fra [ssb.no](https://www.ssb.no/arbeid-og-lonn/sysselsetting/statistikk/arbeidskraftundersokelsen/artikler/sysselsettingsandelen-har-gatt-ned-siden-2022)",
                     "Kjølås, H. (2025). *Einar Gerhardsen*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no/Einar_Gerhardsen](https://snl.no/Einar_Gerhardsen)",
                     "Lange, E. (2015). *Trygghet og økt velferd*. Norgeshistorie.no, Universitetet i Oslo. Hentet 19.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/velferdsstat-og-vestvending/1801-trygghet-og-okt-velferd.html)",
-                    "Norsk Oljemuseum. (2026). *Ekofisk*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no/Ekofisk](https://snl.no/Ekofisk)",
                     "Mæland, J. G., Hatland, A. & Pedersen, A. W. (2025). *Folketrygden*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no/folketrygden](https://snl.no/folketrygden)",
-                    "Sejersted, F. (2026). *Norge i etterkrigstiden - 1945-1970*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no](https://snl.no/Norge_i_etterkrigstiden_-_1945%E2%80%931970)"
+                    "Nav. (2026). *Lav vekst i antall uføretrygdede i 2025*. Arbeids- og velferdsetaten. Hentet 19.08.2026 fra [nav.no](https://www.nav.no/no/nav-og-samfunn/statistikk/aap-nedsatt-arbeidsevne-og-uforetrygd-statistikk/nyheter/lav-vekst-i-antall-uforetrygdede-i-2025)",
+                    "Norsk Oljemuseum. (2026). *Ekofisk*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no/Ekofisk](https://snl.no/Ekofisk)",
+                    "Sejersted, F. (2026). *Norge i etterkrigstiden - 1945-1970*. Store norske leksikon. Hentet 19.08.2026 fra [snl.no](https://snl.no/Norge_i_etterkrigstiden_-_1945%E2%80%931970)",
+                    "Store norske leksikon. (2026). *Lund-kommisjonen*. Hentet 19.08.2026 fra [snl.no/Lund-kommisjonen](https://snl.no/Lund-kommisjonen)"
                 ]
             }
         }
