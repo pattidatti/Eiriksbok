@@ -12,7 +12,7 @@
     ],
     "category": "Hinduisme",
     "readTime": "8 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/hinduisme/sentrale-trekk-hero.webp",
     "details": [
         "Hinduisme er et samlenavn på mange tradisjoner, ikke navnet på én religion.",
         "Den har ingen grunnlegger, ingen trosbekjennelse og ingen felles ledelse.",
@@ -45,7 +45,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/sentrale-trekk-01.webp",
             "alt": "Tempeltårn i sør-India med hundrevis av gudefigurer",
             "caption": "Ingen sentral kirke, men tusenvis av lokale templer med egne tradisjoner."
         },

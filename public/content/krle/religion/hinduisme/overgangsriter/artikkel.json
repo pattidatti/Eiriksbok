@@ -13,7 +13,7 @@
     ],
     "category": "Hinduisme",
     "readTime": "8 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/hinduisme/overgangsriter-hero.webp",
     "details": [
         "Overgangsritene i hinduismen heter samskara. Ritualtekstene setter opp seksten av dem i fast rekkefølge.",
         "Den første holdes før barnet er unnfanget, den siste er når kroppen brennes etter døden.",
@@ -61,7 +61,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/overgangsriter-01.webp",
             "alt": "Hindufamilie samlet rundt en liten offerild hjemme i stua",
             "caption": "De fleste samskara holdes hjemme hos familien, ikke i et tempel."
         },
@@ -110,7 +110,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/overgangsriter-02.webp",
             "alt": "Gutt får hellig snor lagt over skulderen av en prest",
             "caption": "Upanayana. Snoren markerer at gutten er tatt opp som elev."
         },
@@ -128,7 +128,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/overgangsriter-03.webp",
             "alt": "Brudepar går rundt liten offerild med blomsterkranser",
             "caption": "Fire runder rundt ilden. Brudgommen leder de tre første, bruden den fjerde."
         },

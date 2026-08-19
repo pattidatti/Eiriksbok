@@ -12,7 +12,7 @@
     ],
     "category": "Hinduisme",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/hinduisme/hellige-tekster-hero.webp",
     "details": [
         "Hinduismen deler tekstene i to klasser: shruti, det som er hørt, og smriti, det som er husket.",
         "Shruti regnes som evig og uforanderlig, og ingen mennesker skal ha skrevet den. Vedaene er det viktigste eksempelet.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/hellige-tekster-01.webp",
             "alt": "Gamle håndskrevne palmebladmanuskripter på et bord",
             "caption": "Gamle indiske tekster ble skrevet ned lenge etter at de først ble framført muntlig."
         },
@@ -109,7 +109,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/hellige-tekster-02.webp",
             "alt": "Prest som resiterer foran et alter i et hindutempel",
             "caption": "I ritualet er det den nøyaktige lyden på sanskrit som teller, ikke oversettelsen."
         },
@@ -127,7 +127,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/hellige-tekster-03.webp",
             "alt": "Vognfestival med pyntet tempelvogn og folkemengde",
             "caption": "Fortellingene fra de huskede tekstene lever videre i fester, sang og teater."
         },
