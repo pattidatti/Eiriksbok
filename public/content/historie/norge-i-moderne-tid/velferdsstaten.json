@@ -5,7 +5,7 @@
     "year": "1945-1967",
     "category": "Norge",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norge-i-moderne-tid/velferdsstaten-hero.webp",
     "factChecked": "2026-08-19",
     "details": [
         "Norge bygde velferdsstaten mens landet fortsatt var fattig, lenge før oljepengene kom",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/velferdsstaten-01.webp",
             "alt": "Norsk arbeiderfamilie i trangt kjellerrom på 1930-tallet",
             "caption": "Før velferdsstaten fantes det nesten ikke noe sikkerhetsnett. Falt du ut av arbeidslivet, falt du helt ned."
         },
@@ -97,7 +97,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/velferdsstaten-02.webp",
             "alt": "Nybygde boligblokker i norsk drabantby på 1950-tallet",
             "caption": "Drabantbyene reiste seg rundt de store byene. Bad, varmt vann og eget rom var nytt for mange."
         },
@@ -135,7 +135,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/velferdsstaten-03.webp",
             "alt": "Elever på vei inn i norsk skolebygning i dag",
             "caption": "Gratis skole, fastlege og trygd er så vanlig at vi glemmer at noen måtte bestemme at det skulle være slik."
         },
