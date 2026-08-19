@@ -12,7 +12,7 @@
     ],
     "category": "Hinduisme",
     "readTime": "6 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/hinduisme/bonn-hero.webp",
     "details": [
         "Den viktigste måten å be på i hinduismen heter puja, og den handler mer om gaver enn om ord.",
         "Guden blir tatt imot som en konge eller en æresgjest: vasket, pyntet, matet og underholdt.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/bonn-01.webp",
             "alt": "Messingbrett med oljelampe, blomster, røkelse og vannskål",
             "caption": "Alt dette er bønn. Ikke ett ord på brettet."
         },
@@ -125,7 +125,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/bonn-02.webp",
             "alt": "Familie foran lite husalter med bilder og oljelampe",
             "caption": "Hjemme er det familien selv som gjør pujaen."
         },
@@ -143,7 +143,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/bonn-03.webp",
             "alt": "Tempelbesøkende ser inn mot opplyst gudebilde",
             "caption": "Darshan: du ser guden, og guden ser deg."
         },

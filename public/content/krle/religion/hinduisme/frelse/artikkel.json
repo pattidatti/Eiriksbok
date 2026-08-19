@@ -12,7 +12,7 @@
   ],
   "category": "Hinduisme",
   "readTime": "7 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/hinduisme/frelse-hero.webp",
   "details": [
     "Målet er ikke å komme til et bedre sted, men å slippe ut av gjenfødelsene.",
     "Kretsløpet av fødsel, død og ny fødsel heter samsara, og det drives av karma.",
@@ -60,7 +60,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/hinduisme/frelse-01.webp",
       "alt": "Trapper ned til elv i Varanasi med røyk fra likbål",
       "caption": "Langs Ganges i Varanasi går det trapper, kalt ghat, i over åtte kilometer. Stedet der de døde brennes, ble liggende midt i sentrum da byen vokste."
     },
@@ -109,7 +109,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/hinduisme/frelse-02.webp",
       "alt": "Kvinne setter blomster og lys foran hjemmealter",
       "caption": "Hengivelsens vei, bhakti, bygger på et personlig forhold til en gud."
     },
@@ -127,7 +127,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/hinduisme/frelse-03.webp",
       "alt": "To gamle håndskrevne bøker på sanskrit side om side",
       "caption": "Uenigheten om atman og brahman går tilbake til ulike tolkninger av de samme tekstene."
     },

@@ -9,7 +9,7 @@
     "comparison_tags": ["grunnleggere", "narrative"],
     "category": "Hinduisme",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/hinduisme/grunnleggere-hero.webp",
     "details": [
         "Hinduismen ble ikke til på ett tidspunkt eller ett sted. Ingen startet den, den har ingen felles liste over hva man må tro, og ingen fast ledelse.",
         "Ordet hindu kom utenfra. Det var det gammelpersiske navnet på folk som bodde ved elva Indus.",
@@ -57,7 +57,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/grunnleggere-01.webp",
             "alt": "Bred elv med brede steintrapper ned mot vannet",
             "caption": "Hinduismen vokste fram i India og landene rundt gjennom flere tusen år, uten et startpunkt noen kan peke på."
         },
@@ -123,7 +123,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/grunnleggere-02.webp",
             "alt": "Gammelt palmebladmanuskript med håndskrevet tekst på sanskrit",
             "caption": "Vedaene ble gitt videre muntlig i århundrer før de ble skrevet ned."
         },
@@ -141,7 +141,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/hinduisme/grunnleggere-03.webp",
             "alt": "Eldre lærer sitter på gulvet mens unge elever lytter",
             "caption": "Guru og elev. Læren går videre i mange korte linjer, ikke ut fra én stifter."
         },
