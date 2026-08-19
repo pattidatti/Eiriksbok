@@ -47,6 +47,17 @@ function withParams(path: string, params: Record<string, string | undefined>): s
     return suffix ? `${path}?${suffix}` : path;
 }
 
+/**
+ * Religionsrommet - hub-flaten med linser, temaer og innholdskart.
+ * Ligger på egen rute fordi /krle/religion skal være en vanlig emneside.
+ */
+export function hubHref(options: { dim?: string; hash?: string } = {}): string {
+    const path = withParams('/krle/religionsrommet', {
+        dim: getDimension(options.dim)?.key,
+    });
+    return options.hash ? `${path}#${options.hash}` : path;
+}
+
 export function profileHref(
     religionId: string,
     options: { dim?: string; visning?: ProfileView } = {}

@@ -7518,6 +7518,22 @@
                     "title": "Verdensreligioner",
                     "description": "Utforsk de store verdensreligionene.",
                     "image": "/images/krle/religion/mangfold_hero.webp",
+                    "tools": [
+                        {
+                            "id": "religionsrommet",
+                            "title": "Religionsrommet",
+                            "description": "Se alle religionene svare på det samme spørsmålet, med temaer og innholdskart.",
+                            "link": "/krle/religionsrommet",
+                            "icon": "compass"
+                        },
+                        {
+                            "id": "compare-religions-topic",
+                            "title": "Sammenlign religioner",
+                            "description": "Sett opptil fire religioner side ved side.",
+                            "link": "/krle/sammenlign",
+                            "icon": "columns"
+                        }
+                    ],
                     "subTopics": [
                         {
                             "id": "kristendom",

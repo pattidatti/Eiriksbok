@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Columns3, LayoutGrid, Map as MapIcon } from 'lucide-react';
 import { useComparisonManifest } from '../../features/comparison/manifest';
-import { compareHref, profileHref, topicHref } from '../../features/religion-nav/links';
+import { compareHref, hubHref, profileHref, topicHref } from '../../features/religion-nav/links';
 import { getDimension } from './dimensionMeta';
 import { BAND } from './surfaces';
 
@@ -127,7 +127,7 @@ export const ReligionNextSteps: React.FC<ReligionNextStepsProps> = ({
             {/* 4. De to andre flatene */}
             <div className="flex flex-wrap gap-2 pt-1">
                 <Link
-                    to={`/krle/religion?dim=${dim}`}
+                    to={hubHref({ dim })}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-bold text-slate-700 hover:border-slate-300 hover:shadow-sm transition-all"
                 >
                     <Compass size={16} style={{ color: accent }} />
@@ -144,7 +144,7 @@ export const ReligionNextSteps: React.FC<ReligionNextStepsProps> = ({
                 ) : (
                     topicSlug === undefined && (
                         <Link
-                            to={`/krle/religion?dim=${dim}#temaer`}
+                            to={hubHref({ dim, hash: 'temaer' })}
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-bold text-slate-700 hover:border-slate-300 hover:shadow-sm transition-all"
                         >
                             <LayoutGrid size={16} style={{ color: accent }} />

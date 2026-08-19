@@ -23,6 +23,7 @@ export const Breadcrumbs: React.FC = () => {
         if (id === 'oving') return 'Øving';
         if (id === 'flashcards') return 'Fagbegreper';
         // KRLE-religionsrommet er ruter uten emne i manifestet
+        if (id === 'religionsrommet') return 'Religionsrommet';
         if (id === 'sammenlign') return 'Sammenlign';
         if (id === 'tema') return 'Temaer';
 

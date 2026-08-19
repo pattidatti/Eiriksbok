@@ -234,6 +234,7 @@ The app uses a manifest-driven routing system:
 /krle/sammenlign                Religion comparison
 /krle/sammenlign/tema/:tag      Topic comparison på tvers av religioner
 /krle/religion/:religionId      Religion-detaljside (7-dimensjons-modell)
+/krle/religionsrommet           Religionsrommet - hub med linser, temaer og innholdskart
 /krle/filosofi/odyssey          Philosophy odyssey
 /krle/filosofi/sammenlign       Philosophy comparison
 

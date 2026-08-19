@@ -161,7 +161,10 @@ const router = createBrowserRouter([
       { path: "krle/filosofi/odyssey", element: <PhilosophyOdyssey /> },
       { path: "krle/filosofi/sammenlign", element: <PhilosophyComparisonPage /> },
       { path: "krle/sammenlign/tema/:tag", element: <TopicComparisonPage /> },
-      { path: "krle/religion", element: <ReligionHubPage /> },
+      // Religionsrommet (huben med linser, temaer og innholdskart) er et
+      // verktøy, ikke inngangen. /krle/religion er en vanlig emneside som alle
+      // andre emner, og huben ligger ett klikk unna via verktøybåndet.
+      { path: "krle/religionsrommet", element: <ReligionHubPage /> },
       { path: "krle/religion/:religionId", element: <ReligionPage /> },
       { path: ":subjectId/:topicId/present/:lessonId", element: <PresentationPage /> },
       { path: ":subjectId/:topicId/present/:lessonId/projector", element: <PresentationPage /> },

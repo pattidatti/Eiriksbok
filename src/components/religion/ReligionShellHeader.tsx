@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Columns3, LayoutGrid, Compass } from 'lucide-react';
 import { LensRail } from './LensRail';
 import { getDimension } from './dimensionMeta';
-import { useLens, compareHref } from '../../features/religion-nav/links';
+import { useLens, compareHref, hubHref } from '../../features/religion-nav/links';
 
 export type ReligionSurface = 'hub' | 'profil' | 'sammenlign' | 'tema';
 
@@ -55,9 +55,9 @@ export const ReligionShellHeader: React.FC<ReligionShellHeaderProps> = ({
     const dimension = getDimension(dim);
 
     const surfaces: { key: ReligionSurface; label: string; to: string; icon: typeof Columns3 }[] = [
-        { key: 'hub', label: 'Religionene', to: `/krle/religion?dim=${dim}`, icon: Compass },
+        { key: 'hub', label: 'Religionene', to: hubHref({ dim }), icon: Compass },
         { key: 'sammenlign', label: 'Sammenlign', to: compareHref([], dim), icon: Columns3 },
-        { key: 'tema', label: 'Temaer', to: `/krle/religion?dim=${dim}#temaer`, icon: LayoutGrid },
+        { key: 'tema', label: 'Temaer', to: hubHref({ dim, hash: 'temaer' }), icon: LayoutGrid },
     ];
 
     return (
