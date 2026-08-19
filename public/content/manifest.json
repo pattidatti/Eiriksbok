@@ -3301,6 +3301,22 @@
                             "lastUpdated": "2026-07-31T06:00:25+02:00"
                         },
                         {
+                            "id": "velferdsstaten",
+                            "title": "Velferdsstaten",
+                            "description": "Hvordan et fattig Norge vevde sikkerhetsnettet sitt tråd for tråd mellom 1945 og 1967, lenge før oljepengene kom.",
+                            "image": "/images/placeholder.webp",
+                            "year": "1945-1967",
+                            "layout": "rich",
+                            "tags": [
+                                "historie",
+                                "norge",
+                                "velferdsstat",
+                                "etterkrigstiden",
+                                "folketrygden"
+                            ],
+                            "createdDate": "2026-08-19T00:00:00Z"
+                        },
+                        {
                             "id": "svalbard",
                             "title": "Svalbard: øyene ingen eide",
                             "description": "Svalbard var ingenmannsland til kullet ble funnet. Traktaten av 1920 ga Norge suverenitet, men på tre betingelser som fortsatt gjelder.",
