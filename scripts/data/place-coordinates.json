@@ -807,7 +807,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 331
+      "count": 333
     },
     {
       "tag": "dekolonisering",
@@ -819,7 +819,7 @@
     },
     {
       "tag": "økonomi",
-      "count": 68
+      "count": 69
     },
     {
       "tag": "teknologi",
@@ -1358,6 +1358,10 @@
       "count": 6
     },
     {
+      "tag": "velferdsstat",
+      "count": 6
+    },
+    {
       "tag": "gandhi",
       "count": 6
     },
@@ -1666,10 +1670,6 @@
       "count": 4
     },
     {
-      "tag": "velferdsstat",
-      "count": 4
-    },
-    {
       "tag": "suverenitet",
       "count": 4
     },
@@ -1707,6 +1707,10 @@
     },
     {
       "tag": "symbol",
+      "count": 4
+    },
+    {
+      "tag": "penger",
       "count": 4
     },
     {
@@ -1859,10 +1863,6 @@
     },
     {
       "tag": "samtidshistorie",
-      "count": 3
-    },
-    {
-      "tag": "penger",
       "count": 3
     },
     {
@@ -2818,6 +2818,14 @@
       "count": 2
     },
     {
+      "tag": "etterkrigstiden",
+      "count": 2
+    },
+    {
+      "tag": "folketrygden",
+      "count": 2
+    },
+    {
       "tag": "frykt",
       "count": 2
     },
@@ -3675,6 +3683,14 @@
     },
     {
       "tag": "østerriksk skole",
+      "count": 1
+    },
+    {
+      "tag": "bank",
+      "count": 1
+    },
+    {
+      "tag": "norges bank",
       "count": 1
     },
     {

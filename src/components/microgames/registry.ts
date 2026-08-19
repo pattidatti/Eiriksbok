@@ -10,6 +10,7 @@ const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
+const Gjenreisningen3D = lazy(() => import('./Gjenreisningen3D'));
 const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
 const Dialektgrensa3D = lazy(() => import('./Dialektgrensa3D'));
 const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
@@ -849,6 +850,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./Telegraflinja3D'),
         Component: Telegraflinja3D as never,
+    },
+    'gjenreisningen-3d': {
+        id: 'gjenreisningen-3d',
+        title: 'Gjenreisningen',
+        description:
+            'Bygg Norge på nytt mellom 1945 og 1970. Seks tomter, altfor lite penger, og en bolignød som stiger hvert sekund.',
+        estimatedSeconds: 120,
+        loader: () => import('./Gjenreisningen3D'),
+        Component: Gjenreisningen3D as never,
     },
     'hamskiftet-3d': {
         id: 'hamskiftet-3d',

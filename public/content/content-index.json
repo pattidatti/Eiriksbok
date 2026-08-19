@@ -1,5 +1,5 @@
 {
-  "buildId": 215762708379516,
+  "buildId": 198877719693760,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2621,6 +2621,9 @@
     ],
     "svalbard": [
       "content/historie/norge-i-moderne-tid/svalbard.json"
+    ],
+    "velferdsstaten": [
+      "content/historie/norge-i-moderne-tid/velferdsstaten.json"
     ],
     "22-juli-2011": [
       "content/historie/norgeshistorie/22-juli-2011.json"
@@ -5564,6 +5567,7 @@
     "historie/norge-i-moderne-tid/nasjonale-minoriteter": "content/historie/norge-i-moderne-tid/nasjonale-minoriteter.json",
     "historie/norge-i-moderne-tid/oljealderen": "content/historie/norge-i-moderne-tid/oljealderen.json",
     "historie/norge-i-moderne-tid/svalbard": "content/historie/norge-i-moderne-tid/svalbard.json",
+    "historie/norge-i-moderne-tid/velferdsstaten": "content/historie/norge-i-moderne-tid/velferdsstaten.json",
     "historie/norgeshistorie/22-juli-2011": "content/historie/norgeshistorie/22-juli-2011.json",
     "historie/norgeshistorie/fornorskingen-av-samene": "content/historie/norgeshistorie/fornorskingen-av-samene.json",
     "historie/norgeshistorie/hamskiftet": "content/historie/norgeshistorie/hamskiftet.json",

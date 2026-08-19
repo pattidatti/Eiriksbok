@@ -8590,6 +8590,30 @@
       ]
     },
     {
+      "id": "velferdsstaten",
+      "title": "Velferdsstaten",
+      "description": "Hvordan et fattig Norge vevde sikkerhetsnettet sitt tråd for tråd mellom 1945 og 1967, lenge før oljepengene kom.",
+      "startDate": 1945,
+      "endDate": 1967,
+      "displayDate": "1945-1967",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/velferdsstaten",
+      "tags": [
+        "historie",
+        "norge",
+        "velferdsstat",
+        "etterkrigstiden",
+        "folketrygden"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "japans-okonomiske-mirakel",
       "title": "Japans økonomiske mirakel",
       "description": "Fra ruiner i 1945 til en av verdens rikeste nasjoner på 40 år. Hvordan skoler, kvalitet og eksport gjorde Japan til en supermakt.",
