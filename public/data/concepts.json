@@ -147,6 +147,22 @@
     "id": "allianse"
   },
   {
+    "term": "Allmueskole",
+    "definition": "Den første skolen for alle barn i Norge, innført i 1739. Barna gikk der fra de var sju år til de ble konfirmert, og lærte mest kristendom og lesing.",
+    "type": "concept",
+    "subject": "historie",
+    "aliases": [
+      "allmueskolen",
+      "omgangsskole",
+      "omgangsskolen"
+    ],
+    "tags": [
+      "skole",
+      "dansketiden"
+    ],
+    "id": "allmueskole"
+  },
+  {
     "id": "alternativkostnad",
     "term": "Alternativkostnad",
     "definition": "Det beste du gir opp når du velger å bruke tid eller ressurser på noe annet. Hver time legen skriver brev, er en time hun ikke behandler pasienter. Alternativkostnaden er kjernen i komparativt fortrinn.",
@@ -3405,6 +3421,22 @@
     "id": "konfusianisme"
   },
   {
+    "term": "Konventikkel",
+    "definition": "Et privat, kristent møte utenfor kirken, gjerne hjemme i en stue. Fra 1741 til 1842 var slike møter forbudt i Norge uten at presten var med.",
+    "type": "concept",
+    "subject": "historie",
+    "aliases": [
+      "konventikler",
+      "konventikkelen",
+      "Konventikkelplakaten"
+    ],
+    "tags": [
+      "kristendom",
+      "dansketiden"
+    ],
+    "id": "konventikkel"
+  },
+  {
     "term": "Koranen",
     "definition": "Islams hellige bok. Muslimer tror den er Guds egne ord, gitt til Muhammad gjennom engelen Gabriel.",
     "type": "concept",
@@ -3607,6 +3639,23 @@
     "topic": "reformasjonen",
     "tags": [],
     "id": "leiesoldater"
+  },
+  {
+    "term": "Lekmannsbevegelse",
+    "definition": "Kristen bevegelse drevet av vanlige medlemmer uten prestevigsel. I Norge vokste den ut av Hans Nielsen Hauges tilhengere og møttes på bedehusene.",
+    "type": "concept",
+    "subject": "historie",
+    "aliases": [
+      "lekmannsbevegelsen",
+      "lekfolk",
+      "haugianere",
+      "haugianerne"
+    ],
+    "tags": [
+      "kristendom",
+      "norge"
+    ],
+    "id": "lekmannsbevegelse"
   },
   {
     "term": "Lex Salica",
@@ -4831,6 +4880,23 @@
     "topic": "okonomi",
     "tags": [],
     "id": "petrodollar"
+  },
+  {
+    "term": "Pietisme",
+    "definition": "Kristen retning fra slutten av 1600-tallet som mente at troen må være personlig, og at det du gjør betyr mer enn hva kirken lærer.",
+    "type": "concept",
+    "subject": "historie",
+    "aliases": [
+      "pietismen",
+      "pietistisk",
+      "pietister",
+      "pietistene"
+    ],
+    "tags": [
+      "kristendom",
+      "dansketiden"
+    ],
+    "id": "pietisme"
   },
   {
     "term": "Pilegrim",
@@ -6135,6 +6201,20 @@
       "samfunn"
     ],
     "id": "statskirke"
+  },
+  {
+    "term": "Statspietisme",
+    "definition": "Da kongen i Danmark-Norge gjorde pietismen til lov for alle. Under Christian 6. (1730-1746) ble kirkegang, konfirmasjon og skolegang plikt.",
+    "type": "concept",
+    "subject": "historie",
+    "aliases": [
+      "statspietismen"
+    ],
+    "tags": [
+      "kristendom",
+      "dansketiden"
+    ],
+    "id": "statspietisme"
   },
   {
     "term": "Østfronten",

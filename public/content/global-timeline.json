@@ -4770,6 +4770,31 @@
       ]
     },
     {
+      "id": "pietismen",
+      "title": "Pietismen: sporet vi fortsatt går i",
+      "description": "Kirkeplikt, konfirmasjon og skole for alle ble lov på 1730-tallet. Hvor mye av dagens Norge stammer fra statspietismen?",
+      "startDate": 1730,
+      "endDate": 1746,
+      "displayDate": "1730-1746",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/pietismen",
+      "tags": [
+        "dansketiden",
+        "pietisme",
+        "kirke",
+        "norge",
+        "lovgivning",
+        "1700-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "george-washington",
       "title": "George Washington",
       "description": "Generalen som vant krigen og to ganger ga fra seg makten i stedet for å bli konge.",

@@ -3281,6 +3281,21 @@
               ],
               "createdDate": "2026-08-20T03:59:09+02:00",
               "lastUpdated": "2026-08-20T07:31:44+02:00"
+            },
+            {
+              "id": "pietismen",
+              "title": "Pietismen: sporet vi fortsatt går i",
+              "description": "Kirkeplikt, konfirmasjon og skole for alle ble lov på 1730-tallet. Hvor mye av dagens Norge stammer fra statspietismen?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "dansketiden",
+                "pietisme",
+                "kirke",
+                "norge",
+                "lovgivning",
+                "1700-tallet"
+              ],
+              "createdDate": "2026-08-20T10:06:58.069Z"
             }
           ]
         },

@@ -86,7 +86,13 @@ if (!baseUrl) {
 }
 
 // --- Render + skjermbilde per spill ---
-const browser = await chromium.launch();
+// Lokal chromium kan være en annen build enn den Playwright-versjonen pinner.
+// PLAYWRIGHT_CHROMIUM_EXECUTABLE lar en kjøre revisjonen mot den som finnes.
+const browser = await chromium.launch(
+    process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE
+        ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }
+        : {}
+);
 const page = await browser.newPage({ viewport: { width: 1366, height: 768 } });
 const summary = [];
 
