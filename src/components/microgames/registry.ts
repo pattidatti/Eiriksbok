@@ -133,6 +133,7 @@ const Rutebyen3D = lazy(() => import('./Rutebyen3D'));
 const Trekanthandelen3D = lazy(() => import('./Trekanthandelen3D'));
 const StorZimbabweMur3D = lazy(() => import('./StorZimbabweMur3D'));
 const Stromveien3D = lazy(() => import('./Stromveien3D'));
+const KongensArmer3D = lazy(() => import('./KongensArmer3D'));
 const SmittenIByen3D = lazy(() => import('./SmittenIByen3D'));
 const Standardklokka3D = lazy(() => import('./Standardklokka3D'));
 const ArkimedesKronen3D = lazy(() => import('./ArkimedesKronen3D'));
@@ -571,6 +572,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Standardklokka3D'),
         Component: Standardklokka3D as never,
+    },
+    'kongens-armer-3d': {
+        id: 'kongens-armer-3d',
+        title: 'Kongens armer',
+        description:
+            'Skattefristen tikker. Bygg kommandolinjen i eneveldets Danmark-Norge ved å klikke punktene sammen ett trinn om gangen: fra kongen i København til stattholderen i Christiania, videre til de to amtmennene, og helt ned til fogdene i bygdene. Hopper du over et ledd, stiger forvirringen i apparatet, og tre bom stopper beskjeden helt. Får du kjeden hel, ruller skattevognene fra bygdene opp gjennom hvert ledd til kongen. Lyspæren: eneveldet ga ikke bare kongen et papir som sa at han bestemte alt. Det ga ham et apparat av lønnede embetsmenn som nådde helt ned i hver eneste bygd.',
+        estimatedSeconds: 170,
+        loader: () => import('./KongensArmer3D'),
+        Component: KongensArmer3D as never,
     },
     'stromveien-3d': {
         id: 'stromveien-3d',

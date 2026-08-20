@@ -1,5 +1,5 @@
 {
-  "buildId": 198877719693760,
+  "buildId": 33988368141012,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2055,6 +2055,9 @@
     ],
     "christian-iv": [
       "content/historie/dansketiden/christian-iv.json"
+    ],
+    "eneveldet": [
+      "content/historie/dansketiden/eneveldet.json"
     ],
     "nodsarene": [
       "content/historie/dansketiden/nodsarene.json"
@@ -5379,6 +5382,7 @@
     "historie/antikkens-hellas/olympiske-leker": "content/historie/antikkens-hellas/olympiske-leker.json",
     "historie/antikkens-hellas/peloponneskrigen": "content/historie/antikkens-hellas/peloponneskrigen.json",
     "historie/dansketiden/christian-iv": "content/historie/dansketiden/christian-iv.json",
+    "historie/dansketiden/eneveldet": "content/historie/dansketiden/eneveldet.json",
     "historie/dansketiden/nodsarene": "content/historie/dansketiden/nodsarene.json",
     "historie/dansketiden/trelasthandelen": "content/historie/dansketiden/trelasthandelen.json",
     "historie/dekolonisering/amerikanske-borgerkrigen": "content/historie/dekolonisering/amerikanske-borgerkrigen.json",

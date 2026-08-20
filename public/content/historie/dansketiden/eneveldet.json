@@ -1,0 +1,259 @@
+{
+  "id": "eneveldet",
+  "title": "Eneveldet: Da kongen fikk all makt",
+  "layout": "rich",
+  "year": "1660-1814",
+  "category": "Dansketiden",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "factChecked": "2026-08-20",
+  "details": [
+    "I oktober 1660 gikk Danmark-Norge fra valgkongedømme til enevelde på fire dager, uten at et eneste slag ble utkjempet",
+    "Håndfestningen, kontrakten som bandt kongen, ble opphevet, og riksrådet sluttet å fungere",
+    "Kongeloven av 1665 ga kongen all makt og var hemmelig i fem år",
+    "For Norge betydde det at lensherrer ble byttet ut med amtmenn og fogder på fast lønn, og at staten nådde helt ned i hver bygd"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "København, oktober 1660. Byportene er stengt. Soldater står vakt i gatene, og ingen slipper ut. Inne i byen sitter landets mektigste menn og forhandler med kongen sin. Fire dager senere er alt snudd på hodet. Frederik 3. har fått en makt ingen konge i Danmark-Norge har hatt før. Ingen er drept. Det er ikke utkjempet et eneste slag. Likevel er dette et av de største maktskiftene i vår historie."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Adelsmenn og kongen forhandler i en sal i København 1660",
+      "caption": "Høsten 1660 møttes adelen, prestene og borgerne i København for å snakke om skatt. De endte med å gi kongen all makt."
+    },
+    {
+      "type": "text",
+      "content": "Det som skjedde, kaller vi eneveldet. Ordet betyr at én person råder alene. All makt i staten ligger hos kongen, og han svarer ikke til noen andre enn Gud (Thorsen, 2025). Enevelde var ikke noe Danmark-Norge fant på selv. Det bredte seg i Europa på 1600- og 1700-tallet, og Ludvig 14. i Frankrike er det mest kjente eksempelet. Men få steder kom det så fort, og få steder varte det så lenge, som hos oss."
+    },
+    {
+      "type": "header",
+      "text": "Kongen som måtte spørre om lov"
+    },
+    {
+      "type": "text",
+      "content": "For å skjønne hva som endret seg i 1660, må vi først se hvordan det var før. Danmark-Norge var et valgkongedømme. Det betyr at kongen ikke arvet tronen automatisk. Han ble valgt av riksrådet, som var et råd av danske adelsmenn."
+    },
+    {
+      "type": "text",
+      "content": "Før de valgte ham, måtte kongen skrive under på en håndfestning. Det var en kontrakt der han lovte hva han ikke fikk lov til å gjøre. Han lovte blant annet å møte adelen jevnlig, og å ikke fengsle eller dømme folk uten lov og dom. Skrev han ikke under, fikk han ingen krone."
+    },
+    {
+      "type": "text",
+      "content": "Kongen var altså sjefen, men han var ikke den siste som bestemte. Ville han ha en ny skatt eller en ny lov, måtte riksrådet si ja først. Og adelen selv betalte ikke skatt i det hele tatt. Skattefritaket var det aller viktigste de eide (Sandmo, 2015)."
+    },
+    {
+      "type": "header",
+      "text": "Krigen som tømte kassa"
+    },
+    {
+      "type": "text",
+      "content": "Grunnen til at hele systemet raknet, var penger. Den danske kongen tapte en lang rekke kriger mellom 1625 og 1660, og satt igjen med en enorm krigsgjeld (Rian, 2015). Det begynte under [Christian 4.](/historie/dansketiden/christian-iv), som regjerte i nesten seksti år og kastet landet inn i den ene krigen etter den andre. Verst gikk det helt på slutten, i krigene mot svenskekongen Karl 10. Gustav. Våren 1660 var Danmark-Norge i dyp økonomisk krise."
+    },
+    {
+      "type": "text",
+      "content": "Høsten 1660 kalte Frederik 3. inn til et stendermøte i København. Et stendermøte var et møte mellom de tre gruppene som hadde noe å si i samfunnet: adelen, geistligheten (altså prestene) og borgerne i byene. Kongen trengte at de godkjente nye skatter, for kassa var tom (Rian, 2015)."
+    },
+    {
+      "type": "header",
+      "text": "Fire dager som snudde alt"
+    },
+    {
+      "type": "text",
+      "content": "På møtet skjedde noe kongen neppe hadde regnet med. Prestene og borgerne kom med et helt annet forslag: gjør kongedømmet arvelig. Da ville adelen miste det viktigste maktmiddelet sitt, nemlig retten til å velge kongen. Adelen på sin side ville helst beholde skattefritaket sitt (Sandmo, 2015)."
+    },
+    {
+      "type": "text",
+      "content": "Kongen nølte. Men etter fire dager med diskusjon erklærte han unntakstilstand i København, stengte byen og satte de danske soldatene i beredskap. 13. oktober fikk han arveriket, og 18. oktober 1660 ble Frederik 3. hyllet som arvekonge (Sandmo, 2015; Thorsen, 2025). Håndfestningen var opphevet. Riksrådet sluttet å fungere."
+    },
+    {
+      "type": "text",
+      "content": "Ingen ble drept, og ingen ble kastet i fengsel. Det var et statskupp der ingen kom til skade. Men noe var likevel borte for godt: alle som kunne si nei til kongen."
+    },
+    {
+      "type": "component",
+      "name": "KongensSegl",
+      "props": {
+        "title": "Kongens segl: hva slapp igjennom?"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Norge skriver under"
+    },
+    {
+      "type": "text",
+      "content": "Papirene kom etterpå. 10. januar 1661 utstedte Frederik 3. suverenitetsakten. Der sto det at folket overdro all makt til kongen. I august samme år skrev utsendinger fra Norge under på en tilsvarende akt på et møte i Kristiania, og i 1662 gjaldt det samme for Island og Færøyene (Rian, 2015)."
+    },
+    {
+      "type": "text",
+      "content": "Selve grunnloven for eneveldet kom fire år senere. Den heter Kongeloven, og den ble skrevet av Peder Schumacher, som seinere ble adlet under navnet Griffenfeld. Frederik 3. signerte den 14. november 1665. Der står det at kongen er det høyeste og øverste hodet på jorden, over alle menneskelige lover, og at han kan lage lover og forordninger akkurat slik han selv vil. Rundt førti paragrafer handler om arverekkefølgen, altså hvem som skal bli konge etter hvem (Viken & Gisle, 2024)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Grunnloven ingen fikk lese",
+        "content": "Kongeloven var hemmelig i fem år. Den ble ikke lest opp før i 1670, da Christian 5. ble kronet.\nTrykt på papir ble den først i 1709, over førti år etter at den ble signert.\nI Norge gjaldt den som statsforfatning helt til 1814 (Viken & Gisle, 2024)."
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Kongeloven fra 1665 oppslått med kongens røde voksegl",
+      "caption": "Kongeloven av 1665 var eneveldets grunnlov. Den fastslo at kongen sto over alle menneskelige lover."
+    },
+    {
+      "type": "header",
+      "text": "Hva betydde det for Norge?"
+    },
+    {
+      "type": "text",
+      "content": "For folk flest i Norge betydde ikke 1660 at kongen plutselig sto i stua. Det betydde noe annet, og på lang sikt noe større: staten kom nærmere."
+    },
+    {
+      "type": "text",
+      "content": "Adelen ble politisk umyndiggjort. Det vil si at de mistet retten til å være med og bestemme (Weidling & Njåstad, 2025). Før hadde store deler av landet vært styrt av lensherrer. Mange av dem var adelsmenn som satt langt unna og styrte lenet nesten som sitt eget. Nå ble de byttet ut med amtmenn, som var kongelige embetsmenn på fast lønn. Under amtmennene sto fogdene. De krevde inn skatten og rapporterte rett til København (Weidling & Njåstad, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Her ligger noe overraskende. Eneveldet var på én måte moderne. Når kongen utnevnte alle embetsmenn selv, trengte han ikke lenger å velge en adelsmann. Han kunne velge den dyktigste. Dermed åpnet embetsverket seg for vanlige borgere som hadde skaffet seg utdanning (Sandmo, 2015). Kongen fikk mer makt, men han fikk den ved å bygge et apparat som var åpnere enn det gamle."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "kongens-armer-3d"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Norge fikk også sin egen lovbok. Christian 5.s Norske Lov ble vedtatt 15. april 1687 og begynte å gjelde 29. september 1688. Fire norske jurister tok den danske loven fra 1683 og tilpasset den til norske forhold. Den erstattet [Magnus Lagabøtes landslov](/historie/lov-og-rett/magnus-landslov) fra 1274 og Christian 4.s norske lovbok fra 1604 (Gisle, 2026). Noen få paragrafer om avtaler og gjeld gjelder faktisk fortsatt i dag. Det gjør Norske Lov til en av de eldste lovtekstene i Europa som fremdeles er i bruk."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Amtmann i frakk rir inn i en norsk bygd på 1700-tallet",
+      "caption": "Amtmenn og fogder var kongens folk ute i landet. Med dem nådde staten helt ned i den minste bygd."
+    },
+    {
+      "type": "header",
+      "text": "Slutten på eneveldet"
+    },
+    {
+      "type": "text",
+      "content": "Eneveldet varte lenge. Kongeloven var statsforfatningen i Norge helt fram til 1814, og i Danmark holdt eneveldet seg enda noen tiår til (Thorsen, 2025; Viken & Gisle, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Underveis begynte folk å tenke helt nye tanker om hvor makten egentlig kommer fra. Tenkerne i [opplysningstiden](/samfunnskunnskap/styringsformer/opplysningstid) mente at makten kommer nedenfra, fra folket, og ikke ovenfra, fra Gud. Da Norge fikk [Grunnloven i 1814](/samfunnskunnskap/styringsformer/grunnloven), var det nettopp dette som ble snudd rundt. Makten skulle deles mellom flere, og kongen skulle ikke lenger stå over loven."
+    },
+    {
+      "type": "text",
+      "content": "Det er verdt å legge merke til hvem som møttes på Eidsvoll i 1814. Mange av dem var embetsmenn: prester, sorenskrivere og amtmenn. Selve yrket deres var noe eneveldet hadde skapt. Staten som skulle gi Norge en fri forfatning, var bygd av en konge som mente han sto over alle lover."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva var en håndfestning, og hva måtte kongen love når han skrev under på den?",
+          "Hvorfor kalte Frederik 3. inn til stendermøte i København høsten 1660?",
+          "Hvilken dato ble Frederik 3. hyllet som arvekonge, og hva skjedde med riksrådet etterpå?",
+          "Hva var forskjellen på en lensherre og en amtmann?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor prestene og borgerne ville ha arvekongedømme, mens adelen var imot.",
+          "Teksten sier at eneveldet på én måte var moderne. Hva menes med det, og er du enig?",
+          "Kongeloven var hemmelig i fem år. Hvorfor er det et problem at innbyggerne ikke får lese loven som styrer landet?",
+          "Kongen ble ikke sterkere som person i 1660. Hva var det egentlig som endret seg? Bruk gjerne det du oppdaget i «Kongens segl»."
+        ],
+        "gaaVidere": [
+          "Sammenlign Kongeloven av 1665 med Grunnloven av 1814. Skriv fem setninger om hva som er den viktigste forskjellen.",
+          "Diskuter i klassen: Finnes det land i dag der én person har nesten all makt? Hva ligner, og hva er annerledes?",
+          "Skriv et kort brev fra en dansk adelsmann til familien sin, datert 19. oktober 1660. Hva har han nettopp mistet?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr enevelde?",
+            "options": [
+              "At all makt i staten ligger hos én person alene",
+              "At adelen og kongen deler makten likt",
+              "At folket velger kongen ved avstemning",
+              "At kirken bestemmer over kongen"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Enevelde betyr at én råder alene. Kongen svarte ikke til noen andre enn Gud."
+          },
+          {
+            "question": "Hva var en håndfestning?",
+            "options": [
+              "En avtale mellom Danmark og Sverige om grensen",
+              "En kontrakt kongen måtte skrive under på for å bli valgt",
+              "En skatt adelen betalte til kongen hvert år",
+              "En lovbok som gjaldt bare i Norge"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Håndfestningen var kontrakten som begrenset kongens makt. Uten signatur, ingen krone."
+          },
+          {
+            "question": "Hvilket år ble Kongeloven signert?",
+            "options": [
+              "1660",
+              "1661",
+              "1665",
+              "1687"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Frederik 3. signerte Kongeloven 14. november 1665. Den var hemmelig helt til 1670."
+          },
+          {
+            "question": "Hva erstattet lensherrene ute i Norge etter 1660?",
+            "options": [
+              "Riksrådet",
+              "Valgte ordførere i hver bygd",
+              "Biskoper med militær makt",
+              "Amtmenn, som var kongelige embetsmenn på fast lønn"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Amtmenn på fast lønn overtok lokalstyringen, og under dem krevde fogdene inn skatten."
+          },
+          {
+            "question": "Hvor lenge gjaldt Kongeloven som statsforfatning i Norge?",
+            "options": [
+              "Til 1687",
+              "Til 1721",
+              "Til 1814",
+              "Til 1905"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Kongeloven var Norges statsforfatning helt til Grunnloven kom i 1814."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Gisle, J. (2026). *Christian 5.s Norske Lov*. Store norske leksikon. Hentet 20.08.2026 fra [snl.no/Norske_Lov](https://snl.no/Norske_Lov)",
+          "Rian, Ø. (2015). *Eneveldet av 1660/1661*. Norgeshistorie.no, Universitetet i Oslo. Hentet 20.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/enevelde/1230-eneveldet-av-1660-1661.html)",
+          "Sandmo, E. (2015). *Innføringen av eneveldet*. Norgeshistorie.no, Universitetet i Oslo. Hentet 20.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/enevelde/1211-innforingen-av-eneveldet.html)",
+          "Thorsen, D. E. (2025). *Enevelde*. Store norske leksikon. Hentet 20.08.2026 fra [snl.no/enevelde](https://snl.no/enevelde)",
+          "Viken, Ø. L. I. & Gisle, J. (2024). *Kongelova*. Store norske leksikon. Hentet 20.08.2026 fra [snl.no/Kongelova](https://snl.no/Kongelova)",
+          "Weidling, T. R. & Njåstad, M. (2025). *Norge under dansk styre - 1537-1814*. Store norske leksikon. Hentet 20.08.2026 fra [snl.no/Norge_under_dansk_styre_-_1537-1814](https://snl.no/Norge_under_dansk_styre_-_1537-1814)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
