@@ -112,6 +112,7 @@ const GOAL_EVENT_KINDS: Record<GoalKind, string[]> = {
     'path-step': ['path-step-completed', 'path-completed'],
     practice: [
         'practice-game',
+        'flashcard-session',
         'minigame-played',
         'microgame-played',
         'virkemiddel-exercise',

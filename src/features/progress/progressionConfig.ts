@@ -48,6 +48,7 @@ export const DEFAULT_PROGRESSION_CONFIG: ProgressionConfig = {
         'path-step-completed': 25,
         'path-completed': 150,
         'review-session': 30,
+        'flashcard-session': 20,
         'minigame-played': 60,
         'detective-solved': 100,
         'scenario-completed': 80,

@@ -8,7 +8,8 @@ import type { QuizQuestion } from '../types';
 import { djb2Hash, normalizeText, slugifyTerm, todayLocal } from './reviewScheduler';
 import { getQuizCorrectAnswer } from './quizUtils';
 
-const conceptId = (term: string) => `concept:${slugifyTerm(term)}`;
+export const conceptItemId = (term: string) => `concept:${slugifyTerm(term)}`;
+const conceptId = conceptItemId;
 export const quizItemId = (question: string) => `quiz:${djb2Hash(normalizeText(question))}`;
 
 // Begreper eleven møter i et læringssti-steg
@@ -25,16 +26,22 @@ export const captureConceptEncounters = (terms: string[]) => {
     }
 };
 
-// Første flipp av et flashcard
-export const captureFlashcardFlip = (concept: Pick<ConceptItem, 'term'>) => {
+// Selvvurdering av et flashcard i /oving/flashcards: kortet entrer køen og
+// graderes i samme bevegelse. Merk at selve flippen ikke skriver noe - å bla
+// gjennom banken skal ikke fylle repetisjonskøen med hundrevis av kort eleven
+// aldri tok stilling til. Køen skal speile arbeid, ikke nysgjerrighet.
+export const captureFlashcardGrade = (
+    concept: Pick<ConceptItem, 'term'>,
+    correct: boolean
+) => {
     try {
         if (!concept.term) return;
-        useReviewStore
-            .getState()
-            .addItem(
-                { id: conceptId(concept.term), type: 'concept', term: concept.term },
-                todayLocal()
-            );
+        const store = useReviewStore.getState();
+        const today = todayLocal();
+        const id = conceptId(concept.term);
+        // addItem er no-op hvis kortet allerede ligger i køen
+        store.addItem({ id, type: 'concept', term: concept.term }, today);
+        store.gradeItem(id, correct, today);
     } catch {
         // Innsamling er best-effort
     }

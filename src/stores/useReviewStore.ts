@@ -33,14 +33,30 @@ interface ReviewState {
     resetAll: () => void;
 }
 
-// Ved overflow: kast boks-5-items (best lærte) med eldst lastReviewedAt først
-const evictIfNeeded = (items: Record<string, ReviewItem>): Record<string, ReviewItem> => {
+// Ved overflow: kast først items eleven aldri har jobbet med (reps === 0),
+// eldste først - deretter boks-5-items (best lærte) med eldst lastReviewedAt.
+// Reps-skillet skjermer kort eleven har jobbet seg opp gjennom uker med
+// «Dagens økt» mot å bli presset ut av ferske, ubesvarte items.
+//
+// `protectId` er alltid item-et som nettopp ble lagt til. Uten det ville et
+// ferskt kort (reps === 0, nyest) vært selvsagt førstevalg til utkasting i det
+// øyeblikket køen er full - og aldri sluppet inn i det hele tatt.
+const evictIfNeeded = (
+    items: Record<string, ReviewItem>,
+    protectId?: string
+): Record<string, ReviewItem> => {
     const all = Object.values(items);
     if (all.length <= MAX_ITEMS) return items;
-    const sorted = [...all].sort((a, b) => {
-        if (a.box !== b.box) return b.box - a.box;
-        return (a.lastReviewedAt ?? 0) - (b.lastReviewedAt ?? 0);
-    });
+    const sorted = all
+        .filter((i) => i.id !== protectId)
+        .sort((a, b) => {
+            const aUntouched = a.reps === 0;
+            const bUntouched = b.reps === 0;
+            if (aUntouched !== bUntouched) return aUntouched ? -1 : 1;
+            if (aUntouched) return a.addedAt - b.addedAt;
+            if (a.box !== b.box) return b.box - a.box;
+            return (a.lastReviewedAt ?? 0) - (b.lastReviewedAt ?? 0);
+        });
     const toEvict = new Set(sorted.slice(0, all.length - MAX_ITEMS).map((i) => i.id));
     const next: Record<string, ReviewItem> = {};
     for (const item of all) {
@@ -79,7 +95,7 @@ export const useReviewStore = create<ReviewState>()(
                         lastReviewedAt: null,
                     };
                     return {
-                        items: evictIfNeeded({ ...state.items, [item.id]: newItem }),
+                        items: evictIfNeeded({ ...state.items, [item.id]: newItem }, item.id),
                     };
                 }),
 

@@ -56,7 +56,7 @@ export const PracticePage: React.FC = () => {
         {
             id: 'flashcards',
             title: 'Flashcards',
-            description: 'Øv på viktige fagbegreper med interaktive kort.',
+            description: 'Snu kort og si om du kunne begrepet. Systemet husker hva du sliter med, og gir deg det igjen når du trenger det.',
             icon: Brain,
             color: 'bg-indigo-500',
             link: '/oving/flashcards'

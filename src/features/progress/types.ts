@@ -7,6 +7,7 @@ export type ActivityKind =
     | 'path-step-completed'
     | 'path-completed'
     | 'review-session'
+    | 'flashcard-session'
     | 'minigame-played'
     | 'detective-solved'
     | 'scenario-completed'

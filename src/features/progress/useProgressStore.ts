@@ -209,6 +209,7 @@ const KIND_COUNTERS: Record<string, string> = {
     'path-step-completed': 'pathStepsCompleted',
     'path-completed': 'pathsCompleted',
     'review-session': 'reviewSessions',
+    'flashcard-session': 'flashcardSessions',
     'minigame-played': 'minigamesPlayed',
     'detective-solved': 'detectivesSolved',
     'scenario-completed': 'scenariosCompleted',
