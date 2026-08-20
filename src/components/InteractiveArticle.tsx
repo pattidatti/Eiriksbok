@@ -23,6 +23,7 @@ import { ImageWithFallback } from './ImageWithFallback';
 import { useRelatedContent } from '../hooks/useRelatedContent';
 import { renderInlineMarkdown } from './markdownUtils';
 import { LessonNavFooter } from './LessonNavFooter';
+import { AudioPlayerBar } from './AudioPlayerBar';
 import type { LessonNav } from './LessonNavFooter';
 import type { SidebarConfig } from '../types';
 
@@ -136,14 +137,22 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
 
     const handleBlockClick = useCallback((contentIndex: number) => {
         const speechIndex = speechData.mapContentToSpeech[contentIndex];
-        if (speechIndex !== undefined) {
-            if (isPlaying) {
-                playBlock(speechIndex);
-            } else {
-                speak(speechData.blocks, speechIndex);
-            }
+        if (speechIndex === undefined) return;
+
+        // Nytt trykk på avsnittet som leses akkurat nå = pause/fortsett.
+        // Et trykk startet opplesningen, så det samme trykket bør kunne stanse den.
+        if (isPlaying && speechIndex === activeBlockIndex) {
+            if (isPaused) resume();
+            else pause();
+            return;
         }
-    }, [speechData.mapContentToSpeech, speechData.blocks, playBlock, speak, isPlaying]);
+
+        if (isPlaying) {
+            playBlock(speechIndex);
+        } else {
+            speak(speechData.blocks, speechIndex);
+        }
+    }, [speechData.mapContentToSpeech, speechData.blocks, playBlock, speak, isPlaying, isPaused, activeBlockIndex, pause, resume]);
 
     // Memoize sidebar props to prevent re-renders in RichSidebar
     const audioState = useMemo(() => ({
@@ -488,6 +497,18 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
                     )}
                 </div>
             </div>
+
+            <AudioPlayerBar
+                isPlaying={isPlaying}
+                isPaused={isPaused}
+                onToggle={handleListenClick}
+                onStop={cancel}
+                rate={rate}
+                setRate={setRate}
+                current={activeBlockIndex > 0 ? activeBlockIndex : undefined}
+                total={speechData.blocks.length - 1}
+                hideOnDesktop={event.layout !== 'tool'}
+            />
         </div>
     );
 };
