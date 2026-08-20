@@ -608,6 +608,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 | Script | Purpose |
 |---|---|
 | `scripts/generateContentIndex.js` | Builds `content-index.json` for fast search |
+| `scripts/lib/manifest-io.cjs` | Eneste lovlige lese-/skrivevei til `manifest.json`. Eier formatet (innrykk 2 + avsluttende linjeskift) |
 | `scripts/sync-manifest-dates.js` | Syncs `createdDate` in manifest |
 | `scripts/generate-timeline.js` | Rebuilds `global-timeline.json` + geo-beriker events (lat/lng/placeCountryId) |
 | `scripts/generate-place-coordinates.js` | Genererer `scripts/data/place-coordinates.json` (tag → koordinat-ordbok for `/atlas`) |
@@ -657,7 +658,12 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 6. **Timeline-data i artikler**: Sett `year` (eller `date`) på toppnivå i artikkel-JSON-en for at artikkelen skal vises som event i `/tidslinje`. Sub-events for samme artikkel legges i artikkelens `timeline[]`-array (de blir automatisk plukket opp). `public/content/global-timeline.json` regenereres av `scripts/generate-timeline.js` (kjøres som del av `npm run scan:content`) — **ikke rediger fila direkte**. Hand-kuraterte events uten tilhørende leksjon legges i `public/content/global-timeline.manual.json`.
 7. **Learning paths in `lessons`**: Learning paths (`-sti.json`) must be registered under `tools`, not `lessons` in the manifest.
 8. **Relative links in tasks**: Always use absolute paths starting with `/` in learning path task links.
-9. **Mini-spill (3D-motor)**: Egne fallgruver for `userData.solid`-kollisjon, sol/hemi-registrering, dollhouse-tak, prosedyrale plasseringer, hav-overlapp og fysikk-damping er dokumentert i `BUILD_GAME_GUIDE.md` §6.1 og §8. Les de seksjonene før du tester et nytt `preset: 'open'`-spill.
+9. **Skriv aldri `manifest.json` med rå `JSON.stringify`**: Bruk `writeManifest()` fra
+   `scripts/lib/manifest-io.cjs`. Tre skript skriver denne fila, og da de var uenige om
+   innrykk flip-floppet den mellom 2 og 4 tretten ganger - hver flipp en commit på 10 000
+   linjer der ingenting egentlig var endret. `public/` ligger i `.prettierignore` av samme
+   grunn: prettier formaterer JSON på en tredje måte og ville blitt en fjerde part i krigen.
+10. **Mini-spill (3D-motor)**: Egne fallgruver for `userData.solid`-kollisjon, sol/hemi-registrering, dollhouse-tak, prosedyrale plasseringer, hav-overlapp og fysikk-damping er dokumentert i `BUILD_GAME_GUIDE.md` §6.1 og §8. Les de seksjonene før du tester et nytt `preset: 'open'`-spill.
 
 ---
 

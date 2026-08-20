@@ -1,8 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const manifestIo = require('./lib/manifest-io.cjs');
 
-const MANIFEST_PATH = path.join(process.cwd(), 'public', 'content', 'manifest.json');
-const CONTENT_DIR = path.join(process.cwd(), 'public', 'content');
+// Stien kommer fra manifest-io slik at skriptet ikke er avhengig av hvilken
+// mappe cronen står i når den kaller det.
+const MANIFEST_PATH = manifestIo.MANIFEST_PATH;
+const CONTENT_DIR = path.resolve(__dirname, '../public/content');
 
 function syncImages() {
     console.log('Starting manifest image sync...');
@@ -12,7 +15,7 @@ function syncImages() {
         return;
     }
 
-    const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+    const manifest = manifestIo.readManifest();
     let updates = 0;
 
     manifest.subjects.forEach(subject => {
@@ -40,7 +43,7 @@ function syncImages() {
     });
 
     if (updates > 0) {
-        fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 4), 'utf8');
+        manifestIo.writeManifest(manifest);
         console.log(`\nSync complete. Updated ${updates} lessons.`);
     } else {
         console.log('\nSync complete. No updates needed.');

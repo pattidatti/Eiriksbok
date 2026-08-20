@@ -1,0 +1,14 @@
+# Innhold og generert data er ikke kildekode, og prettier er ikke autoritet der.
+#
+# manifest.json og de andre JSON-filene under public/ skrives av skriptene i
+# scripts/ (se scripts/lib/manifest-io.cjs). Prettier formaterer JSON på en
+# tredje måte - den kollapser korte arrays under 100 kolonner - så et
+# format-on-save her ville startet den samme flip-flop-krigen om igjen, bare
+# med tre parter i stedet for to. Kjører man prettier --write på public/ i dag,
+# endres 1389 filer.
+public/
+
+# Generert av build/skript.
+dist/
+stats.html
+scripts/data/place-coordinates.json

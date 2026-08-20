@@ -1,15 +1,16 @@
 const fs = require('fs');
 const path = require('path');
+const manifestIo = require('./lib/manifest-io.cjs');
 
 const CONTENT_DIR = path.resolve(__dirname, '../public/content');
-const MANIFEST_PATH = path.resolve(__dirname, '../public/content/manifest.json');
+const MANIFEST_PATH = manifestIo.MANIFEST_PATH;
 const DESIGN_DOCS_DIR = path.resolve(__dirname, '../docs/Design documents');
 
 // --- Helper Functions ---
 
 function getManifest() {
     if (!fs.existsSync(MANIFEST_PATH)) return { subjects: [] };
-    return JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+    return manifestIo.readManifest();
 }
 
 function saveDesignDoc(subjectSlug, content) {
@@ -235,7 +236,7 @@ function registerToManifest(topicId) {
     });
 
     if (addedCount > 0) {
-        fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2), 'utf8');
+        manifestIo.writeManifest(manifest);
         console.log(`[SUCCESS] Registered ${addedCount} new articles in manifest.json under '${parentId}' > '${simpleId}'.`);
     } else {
         console.log(`[INFO] No new articles to register for '${simpleId}'.`);

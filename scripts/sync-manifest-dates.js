@@ -27,12 +27,13 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
+import manifestIo from './lib/manifest-io.cjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const ROOT = path.join(__dirname, '..');
-const MANIFEST_PATH = path.join(ROOT, 'public/content/manifest.json');
+const MANIFEST_PATH = manifestIo.MANIFEST_PATH;
 const CONTENT_INDEX_PATH = path.join(ROOT, 'public/content/content-index.json');
 const PUBLIC_DIR = path.join(ROOT, 'public');
 
@@ -153,7 +154,7 @@ function syncDates() {
         return;
     }
 
-    const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+    const manifest = manifestIo.readManifest();
     const contentIndex = JSON.parse(fs.readFileSync(CONTENT_INDEX_PATH, 'utf8'));
     const gitDatoer = lesGitDatoer();
     let changed = false;
@@ -227,7 +228,7 @@ function syncDates() {
     });
 
     if (changed) {
-        fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
+        manifestIo.writeManifest(manifest);
         console.log('[SUCCESS] updated manifest.json with synchronized dates.');
     } else {
         console.log('[INFO] No date updates needed in manifest.json.');
