@@ -36,3 +36,11 @@ stats.html
 # Skjermbilder fra scripts/audit-microgames.mjs. Genereres på nytt ved hver
 # revisjon av et mikrospill og leses lokalt - ikke noe som hører hjemme i git.
 .screenshots/
+
+# Arbeidsfiler som lett blir liggende igjen under public/ og dermed havner i
+# deploy-output. En manifest.json.bak på 197 KB ble sendt til hver elev en
+# stund - derfor står disse her, ikke bare i hodet vårt.
+*.bak
+*.tmp
+*.orig
+*.code-workspace

@@ -7,6 +7,7 @@ import { useGlossary } from '../context/GlossaryContext';
 import type { Concept, ContentBlock, RawContentBlock } from '../types';
 import { CONTENT_BLOCK_TYPES } from '../types';
 import { renderInlineMarkdown } from './markdownUtils';
+import { getArticleHeadings } from '../utils/articleHeadings';
 
 // Eldre innhold fra GraphQL-laget hadde blokk-typen i __typename.
 const LEGACY_TYPENAMES: Record<string, ContentBlock['type']> = {
@@ -213,6 +214,14 @@ interface ArticleContentProps {
 export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ content, concepts: explicitConcepts, activeBlockIndex, onBlockClick, isTool = false, audioControls }) => {
     const { entries: globalEntries } = useGlossary();
 
+    // Ankere for innholdsfortegnelsen i RichSidebar. Nøkkelen er blokkindeksen,
+    // så to seksjoner med samme tittel likevel får hver sin id.
+    const headingIds = React.useMemo(() => {
+        const map = new Map<number, string>();
+        for (const h of getArticleHeadings(content)) map.set(h.index, h.id);
+        return map;
+    }, [content]);
+
     // OPTIMIZATION: Memoize concept merging to avoid O(N*M) loop on every render.
     // Use a Set for O(1) lookups instead of .some().
     const mergedConcepts = React.useMemo(() => {
@@ -379,7 +388,14 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
 
                     case 'header':
                         return (
-                            <h2 key={index} className="text-2xl font-bold text-slate-900 mb-4 mt-8 tracking-tight">
+                            <h2
+                                key={index}
+                                id={headingIds.get(index)}
+                                // Toppmenyen er festet, så et rent hopp legger
+                                // overskriften under den. Marginen dytter
+                                // hoppmålet ned i stedet.
+                                className="text-2xl font-bold text-slate-900 mb-4 mt-8 tracking-tight scroll-mt-24"
+                            >
                                 {b.content || b.text || b.value}
                             </h2>
                         );

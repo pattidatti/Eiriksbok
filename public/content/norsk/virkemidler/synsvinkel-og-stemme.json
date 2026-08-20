@@ -48,88 +48,84 @@
             }
         },
         {
-            "type": "section",
-            "title": "Del 1: Hvem ser?",
-            "content": [
-                {
-                    "type": "header",
-                    "text": "1. Personal synsvinkel (Jeg)"
-                },
-                {
-                    "type": "text",
-                    "content": "Her er vi fanget inne i hodet til én karakter, vanligvis hovedpersonen. Vi ser verden utelukkende gjennom deres øyne. Det betyr at vi vet alt om hva denne personen tenker, føler, drømmer og frykter. Men det betyr også at vi er blinde for alt annet. Vi aner ikke hva de andre karakterene tenker, med mindre de sier det høyt.\n\nDette skaper en intens nærhet. Vi blir «venner» med hovedpersonen og tar ofte deres parti i konflikter, fordi vi forstår hvorfor de gjør som de gjør. Begrensningen er at vi kan bli lurt. Hvis hovedpersonen misforstår en situasjon, misforstår vi den også. Vi er låst til deres versjon av sannheten."
-                },
-                {
-                    "type": "quote",
-                    "content": "Jeg visste at han løy. Jeg kunne se det på måten han flakket med blikket.",
-                    "author": "(Subjektiv tolkning)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Det skaper maksimal identifikasjon. Leseren opplever historien *som* hovedpersonen."
-                },
-                {
-                    "type": "header",
-                    "text": "2. Autoral synsvinkel (Flue på veggen)"
-                },
-                {
-                    "type": "text",
-                    "content": "Her trekker forfatteren seg tilbake og blir et objektivt filmkamera. Vi ser bare det som kan sees og høres utenfra: Handlinger, dialog, utseende og omgivelser. Vi får aldri vite hva noen tenker eller føler direkte. Hvis en person er sint, står det ikke «han var sint». I stedet står det «han smalt hånden i bordet og ble rød i ansiktet».\n\nDette kalles ofte «referende» synsvinkel. Det krever mer av leseren, fordi vi må tolke tegnene selv. Vi må være detektiver som leser kroppsspråk og replikker for å forstå hva som foregår under overflaten. Ernest Hemingway var mesteren av denne stilen."
-                },
-                {
-                    "type": "quote",
-                    "content": "Han reiste seg brått. Stolen veltet bak ham.",
-                    "author": "(Objektiv observasjon)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Det føles realistisk og rått. Forfatteren tvinger ikke sin mening på leseren (Show, don't tell)."
-                },
-                {
-                    "type": "header",
-                    "text": "3. Allvitende synsvinkel (Gud)"
-                },
-                {
-                    "type": "text",
-                    "content": "Her er fortelleren som en gud som svever over handlingen. Denne fortelleren vet absolutt alt. Han kan se inn i hodet på alle karakterene samtidig. Han vet hva som har skjedd i fortiden, og ofte hva som skal skje i fremtiden. Han kan hoppe fra sted til sted på et øyeblikk.\n\nForfatteren kan også kommentere handlingen direkte, og si ting som «liten visste de at dette var deres siste måltid». Dette gir en enorm frihet til å fortelle store, kompliserte historier med mange karakterer. Ulempen er at det kan skape distanse. Vi kommer kanskje ikke like tett innpå én enkelt person som i personal synsvinkel."
-                },
-                {
-                    "type": "quote",
-                    "content": "Mens hun gråt på soverommet, satt han i stuen og smilte, uvitende om sorgen.",
-                    "author": "(Full oversikt)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Gir full kontroll og oversikt. Perfekt for episke fortellinger og for å skape ironi (når leseren vet mer enn karakterene)."
-                }
-            ]
+            "type": "header",
+            "content": "Del 1: Hvem ser?"
         },
         {
-            "type": "section",
-            "title": "Del 2: Kan vi stole på dem?",
-            "content": [
-                {
-                    "type": "header",
-                    "text": "4. Den upålitelige forteller"
-                },
-                {
-                    "type": "text",
-                    "content": "Dette er et av de mest spennende grepene i moderne litteratur. Vanligvis stoler vi på at «Jeg»-personen forteller sannheten. Men hva om «Jeg»-personen er en lystløgner? Eller et barn som ikke forstår hva de voksne gjør? Eller en morder som prøver å rettferdiggjøre handlingene sine?\n\nEn upålitelig forteller gir oss en versjon av historien som er vridd. Leseren må hele tiden være på vakt og lese «mellom linjene» for å finne ut hva som egentlig er sant. Det skaper en dobbel bunn i historien: Det fortelleren *sier*, og det vi *skjønner* at faktisk skjer."
-                },
-                {
-                    "type": "quote",
-                    "content": "Jeg måtte låse henne inne i kjelleren. Det var det eneste trygge stedet for henne.",
-                    "author": "(Beskyttelse eller kidnapping?)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Det aktiverer leseren maksimalt. Vi må avsløre fortelleren. Det skaper psykologisk dybde og uhygge."
-                }
-            ]
+            "type": "header",
+            "text": "1. Personal synsvinkel (Jeg)"
+        },
+        {
+            "type": "text",
+            "content": "Her er vi fanget inne i hodet til én karakter, vanligvis hovedpersonen. Vi ser verden utelukkende gjennom deres øyne. Det betyr at vi vet alt om hva denne personen tenker, føler, drømmer og frykter. Men det betyr også at vi er blinde for alt annet. Vi aner ikke hva de andre karakterene tenker, med mindre de sier det høyt.\n\nDette skaper en intens nærhet. Vi blir «venner» med hovedpersonen og tar ofte deres parti i konflikter, fordi vi forstår hvorfor de gjør som de gjør. Begrensningen er at vi kan bli lurt. Hvis hovedpersonen misforstår en situasjon, misforstår vi den også. Vi er låst til deres versjon av sannheten."
+        },
+        {
+            "type": "quote",
+            "content": "Jeg visste at han løy. Jeg kunne se det på måten han flakket med blikket.",
+            "author": "(Subjektiv tolkning)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Det skaper maksimal identifikasjon. Leseren opplever historien *som* hovedpersonen."
+        },
+        {
+            "type": "header",
+            "text": "2. Autoral synsvinkel (Flue på veggen)"
+        },
+        {
+            "type": "text",
+            "content": "Her trekker forfatteren seg tilbake og blir et objektivt filmkamera. Vi ser bare det som kan sees og høres utenfra: Handlinger, dialog, utseende og omgivelser. Vi får aldri vite hva noen tenker eller føler direkte. Hvis en person er sint, står det ikke «han var sint». I stedet står det «han smalt hånden i bordet og ble rød i ansiktet».\n\nDette kalles ofte «referende» synsvinkel. Det krever mer av leseren, fordi vi må tolke tegnene selv. Vi må være detektiver som leser kroppsspråk og replikker for å forstå hva som foregår under overflaten. Ernest Hemingway var mesteren av denne stilen."
+        },
+        {
+            "type": "quote",
+            "content": "Han reiste seg brått. Stolen veltet bak ham.",
+            "author": "(Objektiv observasjon)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Det føles realistisk og rått. Forfatteren tvinger ikke sin mening på leseren (Show, don't tell)."
+        },
+        {
+            "type": "header",
+            "text": "3. Allvitende synsvinkel (Gud)"
+        },
+        {
+            "type": "text",
+            "content": "Her er fortelleren som en gud som svever over handlingen. Denne fortelleren vet absolutt alt. Han kan se inn i hodet på alle karakterene samtidig. Han vet hva som har skjedd i fortiden, og ofte hva som skal skje i fremtiden. Han kan hoppe fra sted til sted på et øyeblikk.\n\nForfatteren kan også kommentere handlingen direkte, og si ting som «liten visste de at dette var deres siste måltid». Dette gir en enorm frihet til å fortelle store, kompliserte historier med mange karakterer. Ulempen er at det kan skape distanse. Vi kommer kanskje ikke like tett innpå én enkelt person som i personal synsvinkel."
+        },
+        {
+            "type": "quote",
+            "content": "Mens hun gråt på soverommet, satt han i stuen og smilte, uvitende om sorgen.",
+            "author": "(Full oversikt)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Gir full kontroll og oversikt. Perfekt for episke fortellinger og for å skape ironi (når leseren vet mer enn karakterene)."
+        },
+        {
+            "type": "header",
+            "content": "Del 2: Kan vi stole på dem?"
+        },
+        {
+            "type": "header",
+            "text": "4. Den upålitelige forteller"
+        },
+        {
+            "type": "text",
+            "content": "Dette er et av de mest spennende grepene i moderne litteratur. Vanligvis stoler vi på at «Jeg»-personen forteller sannheten. Men hva om «Jeg»-personen er en lystløgner? Eller et barn som ikke forstår hva de voksne gjør? Eller en morder som prøver å rettferdiggjøre handlingene sine?\n\nEn upålitelig forteller gir oss en versjon av historien som er vridd. Leseren må hele tiden være på vakt og lese «mellom linjene» for å finne ut hva som egentlig er sant. Det skaper en dobbel bunn i historien: Det fortelleren *sier*, og det vi *skjønner* at faktisk skjer."
+        },
+        {
+            "type": "quote",
+            "content": "Jeg måtte låse henne inne i kjelleren. Det var det eneste trygge stedet for henne.",
+            "author": "(Beskyttelse eller kidnapping?)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Det aktiverer leseren maksimalt. Vi må avsløre fortelleren. Det skaper psykologisk dybde og uhygge."
         },
         {
             "type": "header",

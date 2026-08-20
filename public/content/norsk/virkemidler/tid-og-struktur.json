@@ -36,88 +36,84 @@
             }
         },
         {
-            "type": "section",
-            "title": "Del 1: Rekkefølge",
-            "content": [
-                {
-                    "type": "header",
-                    "text": "1. In medias res (Pangstarten)"
-                },
-                {
-                    "type": "text",
-                    "content": "In medias res er latin og betyr «midt i tingene». Dette er det motsatte av eventyrstarten «Det var en gang». Her blir vi kastet rett inn i en dramatisk situasjon uten oppvarming. Vi kan lande midt i en krangel, en biljakt, eller rett etter at et mord har skjedd. Vi aner ikke hvem karakterene er eller hvorfor de løper, men vi blir umiddelbart nysgjerrige.\n\nDette grepet tvinger leseren til å være aktiv. Vi må raskt prøve å orientere oss og forstå sammenhengene. Det skaper et høyt tempo fra første side, og brukes ofte i noveller og krim, der det er viktig å fange leserens interesse før de rekker å legge fra seg boka."
-                },
-                {
-                    "type": "quote",
-                    "content": "Smellet vekket meg. Rommet var fylt av røyk.",
-                    "author": "(Ingen introduksjon)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Det skaper umiddelbar spenning og nysgjerrighet. Leseren må lese videre for å forstå hva som skjer."
-                },
-                {
-                    "type": "header",
-                    "text": "2. Retrospektiv (Tilbakeblikk)"
-                },
-                {
-                    "type": "text",
-                    "content": "Noen ganger stopper handlingen helt opp, og vi blir tatt med tilbake i tid. Dette kalles retrospektiv teknikk, eller tilbakeblikk. Dette er Henrik Ibsens favorittmetode. I stykkene hans skjer det meste *før* teppet går opp. Handlingen på scenen handler egentlig bare om å rulle opp gamle hemmeligheter som karakterene har prøvd å skjule.\n\nTilbakeblikk er helt nødvendige for å forstå *hvorfor* ting skjer. Hvis en karakter er redd for vann, forstår vi det ikke før vi får et tilbakeblikk til da han holdt på å drukne som barn. Det gir dybde til karakterene og forklarer motivasjonen deres uten at forfatteren trenger å fortelle historien kronologisk (fra fødsel til død)."
-                },
-                {
-                    "type": "quote",
-                    "content": "Alt minnet ham om den sommeren for ti år siden, den gangen hun fortsatt var i live.",
-                    "author": "(Fortiden hjemsøker nåtiden)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Det gir oss nøkkelen til å forstå nåtiden. Det fungerer ofte som en «avsløring» av hemmeligheter."
-                },
-                {
-                    "type": "header",
-                    "text": "3. Frampek (Hinting)"
-                },
-                {
-                    "type": "text",
-                    "content": "Frampek er små, diskret hint om hva som kommer til å skje senere i historien. Det er som skygger som kastes foran en hendelse. Forfatteren kan nevne en kniv i første kapittel, som ikke blir brukt før i siste kapittel (Tsjekhovs lov). Eller han kan skrive: «Han visste ikke da at dette var siste gang han skulle se henne».\n\nDette skaper en uhyggelig stemning av skjebne. Leseren skjønner at noe dramatisk er på vei, men vet ikke nøyaktig hva eller når. Det bygger opp spenning og forventning, og gjør at slutten føles logisk når den kommer, fordi vi har blitt advart underveis."
-                },
-                {
-                    "type": "quote",
-                    "content": "Været slo om. Tunge, svarte skyer samlet seg over fjellet de skulle krysse.",
-                    "author": "(Været varsler fare)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Det skaper forventning og bindestrek i teksten. Det gir leseren en følelse av at ingenting er tilfeldig."
-                }
-            ]
+            "type": "header",
+            "content": "Del 1: Rekkefølge"
         },
         {
-            "type": "section",
-            "title": "Del 2: Tempo",
-            "content": [
-                {
-                    "type": "header",
-                    "text": "4. Utvidet øyeblikk (Slow-motion)"
-                },
-                {
-                    "type": "text",
-                    "content": "Har du noen gang vært i en bilulykke, eller falt ned fra et tre? Da føles det ofte som om tiden går i sakte film. Du rekker å tenke tusen tanker, legge merke til ørsmå detaljer, og høre rare lyder på bare ett sekund. Forfattere bruker «utvidet øyeblikk» for å skape denne effekten i tekst.\n\nHer bruker forfatteren gjerne flere sider på å beskrive noe som bare varer et øyeblikk. De zoomer inn på detaljer – en svettedråpe, en lyd, en følelse. Dette forteller leseren: «Stopp opp! Dette er viktig.» Det brukes ofte i høydepunkter i spenningskurven for å melke dramaet for alt det er verdt."
-                },
-                {
-                    "type": "quote",
-                    "content": "Glasset falt. Det roterte langsomt i luften, fanget lyset fra vinduet, og jeg så hver eneste dråpe som løsnet fra kanten før det traff gulvet.",
-                    "author": "(Tiden fryses)"
-                },
-                {
-                    "type": "info_box",
-                    "title": "Hvorfor virker det?",
-                    "content": "Det intensiverer opplevelsen. Det tvinger leseren til å dvele ved de viktigste øyeblikkene i historien."
-                }
-            ]
+            "type": "header",
+            "text": "1. In medias res (Pangstarten)"
+        },
+        {
+            "type": "text",
+            "content": "In medias res er latin og betyr «midt i tingene». Dette er det motsatte av eventyrstarten «Det var en gang». Her blir vi kastet rett inn i en dramatisk situasjon uten oppvarming. Vi kan lande midt i en krangel, en biljakt, eller rett etter at et mord har skjedd. Vi aner ikke hvem karakterene er eller hvorfor de løper, men vi blir umiddelbart nysgjerrige.\n\nDette grepet tvinger leseren til å være aktiv. Vi må raskt prøve å orientere oss og forstå sammenhengene. Det skaper et høyt tempo fra første side, og brukes ofte i noveller og krim, der det er viktig å fange leserens interesse før de rekker å legge fra seg boka."
+        },
+        {
+            "type": "quote",
+            "content": "Smellet vekket meg. Rommet var fylt av røyk.",
+            "author": "(Ingen introduksjon)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Det skaper umiddelbar spenning og nysgjerrighet. Leseren må lese videre for å forstå hva som skjer."
+        },
+        {
+            "type": "header",
+            "text": "2. Retrospektiv (Tilbakeblikk)"
+        },
+        {
+            "type": "text",
+            "content": "Noen ganger stopper handlingen helt opp, og vi blir tatt med tilbake i tid. Dette kalles retrospektiv teknikk, eller tilbakeblikk. Dette er Henrik Ibsens favorittmetode. I stykkene hans skjer det meste *før* teppet går opp. Handlingen på scenen handler egentlig bare om å rulle opp gamle hemmeligheter som karakterene har prøvd å skjule.\n\nTilbakeblikk er helt nødvendige for å forstå *hvorfor* ting skjer. Hvis en karakter er redd for vann, forstår vi det ikke før vi får et tilbakeblikk til da han holdt på å drukne som barn. Det gir dybde til karakterene og forklarer motivasjonen deres uten at forfatteren trenger å fortelle historien kronologisk (fra fødsel til død)."
+        },
+        {
+            "type": "quote",
+            "content": "Alt minnet ham om den sommeren for ti år siden, den gangen hun fortsatt var i live.",
+            "author": "(Fortiden hjemsøker nåtiden)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Det gir oss nøkkelen til å forstå nåtiden. Det fungerer ofte som en «avsløring» av hemmeligheter."
+        },
+        {
+            "type": "header",
+            "text": "3. Frampek (Hinting)"
+        },
+        {
+            "type": "text",
+            "content": "Frampek er små, diskret hint om hva som kommer til å skje senere i historien. Det er som skygger som kastes foran en hendelse. Forfatteren kan nevne en kniv i første kapittel, som ikke blir brukt før i siste kapittel (Tsjekhovs lov). Eller han kan skrive: «Han visste ikke da at dette var siste gang han skulle se henne».\n\nDette skaper en uhyggelig stemning av skjebne. Leseren skjønner at noe dramatisk er på vei, men vet ikke nøyaktig hva eller når. Det bygger opp spenning og forventning, og gjør at slutten føles logisk når den kommer, fordi vi har blitt advart underveis."
+        },
+        {
+            "type": "quote",
+            "content": "Været slo om. Tunge, svarte skyer samlet seg over fjellet de skulle krysse.",
+            "author": "(Været varsler fare)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Det skaper forventning og bindestrek i teksten. Det gir leseren en følelse av at ingenting er tilfeldig."
+        },
+        {
+            "type": "header",
+            "content": "Del 2: Tempo"
+        },
+        {
+            "type": "header",
+            "text": "4. Utvidet øyeblikk (Slow-motion)"
+        },
+        {
+            "type": "text",
+            "content": "Har du noen gang vært i en bilulykke, eller falt ned fra et tre? Da føles det ofte som om tiden går i sakte film. Du rekker å tenke tusen tanker, legge merke til ørsmå detaljer, og høre rare lyder på bare ett sekund. Forfattere bruker «utvidet øyeblikk» for å skape denne effekten i tekst.\n\nHer bruker forfatteren gjerne flere sider på å beskrive noe som bare varer et øyeblikk. De zoomer inn på detaljer – en svettedråpe, en lyd, en følelse. Dette forteller leseren: «Stopp opp! Dette er viktig.» Det brukes ofte i høydepunkter i spenningskurven for å melke dramaet for alt det er verdt."
+        },
+        {
+            "type": "quote",
+            "content": "Glasset falt. Det roterte langsomt i luften, fanget lyset fra vinduet, og jeg så hver eneste dråpe som løsnet fra kanten før det traff gulvet.",
+            "author": "(Tiden fryses)"
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor virker det?",
+            "content": "Det intensiverer opplevelsen. Det tvinger leseren til å dvele ved de viktigste øyeblikkene i historien."
         },
         {
             "type": "header",

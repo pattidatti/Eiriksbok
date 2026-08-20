@@ -65,6 +65,7 @@ export const routeFactories: Record<string, PageFactory> = {
     GitarstudioPage: () => import('./features/music/pages/GitarstudioPage'),
     InfrastrukturAtlas: () => import('./features/infrastruktur/InfrastrukturAtlasPage').then(module => ({ default: module.InfrastrukturAtlasPage })),
     OkonomiVerden: () => import('./features/okonomi-verden/OkonomiVerdenPage').then(module => ({ default: module.OkonomiVerdenPage })),
+    DemographyPage: () => import('./pages/DemographyPage').then(module => ({ default: module.DemographyPage })),
     VirkemiddelverkstedetPage: () => import('./pages/VirkemiddelverkstedetPage').then(module => ({ default: module.VirkemiddelverkstedetPage })),
     MiniGamesPage: () => import('./pages/MiniGamesPage').then(module => ({ default: module.MiniGamesPage })),
     GamePage: () => import('./pages/GamePage').then(module => ({ default: module.GamePage })),

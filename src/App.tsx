@@ -67,6 +67,7 @@ const EarTrainerPage = React.lazy(routeFactories.EarTrainerPage);
 const GitarstudioPage = React.lazy(routeFactories.GitarstudioPage);
 const InfrastrukturAtlas = React.lazy(routeFactories.InfrastrukturAtlas);
 const OkonomiVerden = React.lazy(routeFactories.OkonomiVerden);
+const DemographyPage = React.lazy(routeFactories.DemographyPage);
 const VirkemiddelverkstedetPage = React.lazy(routeFactories.VirkemiddelverkstedetPage);
 const MiniGamesPage = React.lazy(routeFactories.MiniGamesPage);
 const GamePage = React.lazy(routeFactories.GamePage);
@@ -116,6 +117,7 @@ const router = createBrowserRouter([
       { path: "colonization", element: <ColonizationMap /> },
       { path: "infrastruktur-atlas", element: <InfrastrukturAtlas /> },
       { path: "samfunnskunnskap/okonomi/verden", element: <OkonomiVerden /> },
+      { path: "samfunnskunnskap/demografi/utforsker", element: <DemographyPage /> },
       { path: "laeringsstier", element: <LearningPathsHub /> },
       { path: "norsk/virkemidler/desk", element: <WorkstationLayout /> },
       { path: "musikk/komposisjon", element: <CompositionTool /> },

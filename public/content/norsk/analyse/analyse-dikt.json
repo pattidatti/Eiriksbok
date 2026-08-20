@@ -91,19 +91,17 @@
             "content": "Nå har vi samlet alle bevisene vi trenger for å si hva diktet egentlig handler om. Vi har sett en person som gjemmer seg bak en «perfekt» fasade (strofe 1 med rim), men som egentlig har det vondt (strofe 2 uten rim).\n\nDiktet handler altså om kontrasten mellom hvordan vi fremstiller oss selv på sosiale medier, og hvordan vi egentlig har det. Det handler om ensomheten som kan oppstå når ingen ser hvem vi egentlig er bak skjermen."
         },
         {
-            "type": "section",
-            "title": "Eksempel på fullstendig analyse",
-            "content": [
-                {
-                    "type": "paragraph",
-                    "text": "Her ser du hvordan punktene over kan skrives sammen til en ferdig tekst. Slik kan du gjøre det på prøve eller eksamen."
-                },
-                {
-                    "type": "expandable",
-                    "title": "Les analysen av «Bak glasset»",
-                    "content": "Diktet «Bak glasset» handler om kontrasten mellom den perfekte fasaden vi viser frem på sosiale medier, og den sårbare virkeligheten som skjuler seg bak skjermen. Motivet er en person som legger ut et feilfritt bilde av seg selv, men som sitter alene og gråter når telefonen legges bort.\n\nFormen i diktet underbygger denne kontrasten tydelig. I den første strofen bruker forfatteren faste enderim (AABB) og en jevn rytme. Dette skaper en følelse av orden og harmoni, som speiler det «perfekte» livet jeg-personen viser frem på nettet. Alt virker kontrollert og pyntet på, akkurat som et Instagram-feed.\n\nI den andre strofen skjer det imidlertid et markant brudd. Rimet forsvinner fullstendig, og rytmen blir oppstykket og ujevn. Dette formbruddet markerer overgangen fra fasade til virkelighet. Når jeg-personen forteller at det er «mørkt» og at hun gråter, slutter diktet å være «lyst og lett». Det manglende rimet gjør at smerten føles mer ekte og naken.\n\nDiktet avsluttes med en enkeltstående, løs linje: «Er jeg alene nå?». Ved å la denne linjen stå helt for seg selv, fungerer den som en spotlight på diktets hovedbudskap. Spørsmålet blir hengende i luften, og tvinger leseren til å reflektere over ensomheten som teknologien kan skape. Glasset i mobilskjermen blir en barriere som gjør at vi kan se hverandre, men ikke nå inn til hverandre."
-                }
-            ]
+            "type": "header",
+            "content": "Eksempel på fullstendig analyse"
+        },
+        {
+            "type": "paragraph",
+            "text": "Her ser du hvordan punktene over kan skrives sammen til en ferdig tekst. Slik kan du gjøre det på prøve eller eksamen."
+        },
+        {
+            "type": "expandable",
+            "title": "Les analysen av «Bak glasset»",
+            "content": "Diktet «Bak glasset» handler om kontrasten mellom den perfekte fasaden vi viser frem på sosiale medier, og den sårbare virkeligheten som skjuler seg bak skjermen. Motivet er en person som legger ut et feilfritt bilde av seg selv, men som sitter alene og gråter når telefonen legges bort.\n\nFormen i diktet underbygger denne kontrasten tydelig. I den første strofen bruker forfatteren faste enderim (AABB) og en jevn rytme. Dette skaper en følelse av orden og harmoni, som speiler det «perfekte» livet jeg-personen viser frem på nettet. Alt virker kontrollert og pyntet på, akkurat som et Instagram-feed.\n\nI den andre strofen skjer det imidlertid et markant brudd. Rimet forsvinner fullstendig, og rytmen blir oppstykket og ujevn. Dette formbruddet markerer overgangen fra fasade til virkelighet. Når jeg-personen forteller at det er «mørkt» og at hun gråter, slutter diktet å være «lyst og lett». Det manglende rimet gjør at smerten føles mer ekte og naken.\n\nDiktet avsluttes med en enkeltstående, løs linje: «Er jeg alene nå?». Ved å la denne linjen stå helt for seg selv, fungerer den som en spotlight på diktets hovedbudskap. Spørsmålet blir hengende i luften, og tvinger leseren til å reflektere over ensomheten som teknologien kan skape. Glasset i mobilskjermen blir en barriere som gjør at vi kan se hverandre, men ikke nå inn til hverandre."
         },
         {
             "type": "component",
