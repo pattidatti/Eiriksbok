@@ -193,6 +193,7 @@ const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
 const ForbudtMote3D = lazy(() => import('./ForbudtMote3D'));
 const Forfedrehallen3D = lazy(() => import('./Forfedrehallen3D'));
+const Helligdagsplikten3D = lazy(() => import('./Helligdagsplikten3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -1877,6 +1878,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./ForbudtMote3D'),
         Component: ForbudtMote3D as never,
+    },
+    'helligdagsplikten-1740': {
+        id: 'helligdagsplikten-1740',
+        title: 'Søndag morgen 1740',
+        description:
+            'En norsk gård en søndag morgen i 1740. Du er husbond, kirkeklokka har begynt å ringe, og loven sier at hele husholdet skal møte fram. Ute i tunet hogger drengen ved, husmannen spiller kort, budeia danser, naboen selger fisk og tjenestejenta sover ut - alt sammen forbudt på en helligdag. Hold inne for å gå og pek dit du vil styre, men slipp og bli stående helt stille tett ved folk for å få dem med deg. Somler du, driver de lenger vekk, og de som mangler når klokka stopper, ender i gapestokken på kirkegården. Lyspæra: sabbatsforordningen av 1735 la ansvaret på husbonden, og dermed nådde statspietismen helt inn på gårdstunet og inn i søndagen.',
+        estimatedSeconds: 170,
+        loader: () => import('./Helligdagsplikten3D'),
+        Component: Helligdagsplikten3D as never,
     },
     'forfedrehallen-3d': {
         id: 'forfedrehallen-3d',

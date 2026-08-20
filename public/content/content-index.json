@@ -1,5 +1,5 @@
 {
-  "buildId": 33988368141012,
+  "buildId": 182077032819817,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -42,6 +42,9 @@
     ],
     "concept-allianse": [
       "content/concepts/allianse.json"
+    ],
+    "concept-allmueskole": [
+      "content/concepts/allmueskole.json"
     ],
     "concept-alternativkostnad": [
       "content/concepts/alternativkostnad.json"
@@ -910,6 +913,9 @@
     "concept-konfusianisme": [
       "content/concepts/konfusianisme.json"
     ],
+    "concept-konventikkel": [
+      "content/concepts/konventikkel.json"
+    ],
     "concept-koranen": [
       "content/concepts/koranen.json"
     ],
@@ -966,6 +972,9 @@
     ],
     "concept-leiesoldater": [
       "content/concepts/leiesoldater.json"
+    ],
+    "concept-lekmannsbevegelse": [
+      "content/concepts/lekmannsbevegelse.json"
     ],
     "concept-lex-salica": [
       "content/concepts/lex-salica.json"
@@ -1296,6 +1305,9 @@
     ],
     "concept-petrodollar": [
       "content/concepts/petrodollar.json"
+    ],
+    "concept-pietisme": [
+      "content/concepts/pietisme.json"
     ],
     "concept-pilegrim": [
       "content/concepts/pilegrim.json"
@@ -1641,6 +1653,9 @@
     ],
     "concept-statskirke": [
       "content/concepts/statskirke.json"
+    ],
+    "concept-statspietisme": [
+      "content/concepts/statspietisme.json"
     ],
     "concept-stfronten": [
       "content/concepts/stfronten.json"
@@ -2061,6 +2076,9 @@
     ],
     "nodsarene": [
       "content/historie/dansketiden/nodsarene.json"
+    ],
+    "pietismen": [
+      "content/historie/dansketiden/pietismen.json"
     ],
     "trelasthandelen": [
       "content/historie/dansketiden/trelasthandelen.json"
@@ -4711,6 +4729,7 @@
     "concepts/aksjeselskap.json/aksjeselskap": "content/concepts/aksjeselskap.json",
     "concepts/allah.json/allah": "content/concepts/allah.json",
     "concepts/allianse.json/allianse": "content/concepts/allianse.json",
+    "concepts/allmueskole.json/allmueskole": "content/concepts/allmueskole.json",
     "concepts/alternativkostnad.json/alternativkostnad": "content/concepts/alternativkostnad.json",
     "concepts/amitabha.json/amitabha": "content/concepts/amitabha.json",
     "concepts/amrit-sanskar.json/amrit-sanskar": "content/concepts/amrit-sanskar.json",
@@ -5000,6 +5019,7 @@
     "concepts/komsakulturen.json/komsakulturen": "content/concepts/komsakulturen.json",
     "concepts/konfirmasjon.json/konfirmasjon": "content/concepts/konfirmasjon.json",
     "concepts/konfusianisme.json/konfusianisme": "content/concepts/konfusianisme.json",
+    "concepts/konventikkel.json/konventikkel": "content/concepts/konventikkel.json",
     "concepts/koranen.json/koranen": "content/concepts/koranen.json",
     "concepts/kosher.json/kosher": "content/concepts/kosher.json",
     "concepts/kreasjonisme.json/kreasjonisme": "content/concepts/kreasjonisme.json",
@@ -5019,6 +5039,7 @@
     "concepts/legalitet.json/legalitet": "content/concepts/legalitet.json",
     "concepts/legitimitet.json/legitimitet": "content/concepts/legitimitet.json",
     "concepts/leiesoldater.json/leiesoldater": "content/concepts/leiesoldater.json",
+    "concepts/lekmannsbevegelse.json/lekmannsbevegelse": "content/concepts/lekmannsbevegelse.json",
     "concepts/lex-salica.json/lex-salica": "content/concepts/lex-salica.json",
     "concepts/liberalisme.json/liberalisme": "content/concepts/liberalisme.json",
     "concepts/logos.json/logos": "content/concepts/logos.json",
@@ -5129,6 +5150,7 @@
     "concepts/perestrojka.json/perestrojka": "content/concepts/perestrojka.json",
     "concepts/pesach.json/pesach": "content/concepts/pesach.json",
     "concepts/petrodollar.json/petrodollar": "content/concepts/petrodollar.json",
+    "concepts/pietisme.json/pietisme": "content/concepts/pietisme.json",
     "concepts/pilegrim.json/pilegrim": "content/concepts/pilegrim.json",
     "concepts/pinse.json/pinse": "content/concepts/pinse.json",
     "concepts/pinsebevegelsen.json/pinsebevegelsen": "content/concepts/pinsebevegelsen.json",
@@ -5244,6 +5266,7 @@
     "concepts/stamford-bridge.json/stamford-bridge": "content/concepts/stamford-bridge.json",
     "concepts/standardverkene.json/standardverkene": "content/concepts/standardverkene.json",
     "concepts/statskirke.json/statskirke": "content/concepts/statskirke.json",
+    "concepts/statspietisme.json/statspietisme": "content/concepts/statspietisme.json",
     "concepts/stfronten.json/stfronten": "content/concepts/stfronten.json",
     "concepts/stolthet.json/stolthet": "content/concepts/stolthet.json",
     "concepts/stormaktstiden.json/stormaktstiden": "content/concepts/stormaktstiden.json",
@@ -5384,6 +5407,7 @@
     "historie/dansketiden/christian-iv": "content/historie/dansketiden/christian-iv.json",
     "historie/dansketiden/eneveldet": "content/historie/dansketiden/eneveldet.json",
     "historie/dansketiden/nodsarene": "content/historie/dansketiden/nodsarene.json",
+    "historie/dansketiden/pietismen": "content/historie/dansketiden/pietismen.json",
     "historie/dansketiden/trelasthandelen": "content/historie/dansketiden/trelasthandelen.json",
     "historie/dekolonisering/amerikanske-borgerkrigen": "content/historie/dekolonisering/amerikanske-borgerkrigen.json",
     "historie/dekolonisering/apartheid-syd-afrika": "content/historie/dekolonisering/apartheid-syd-afrika.json",

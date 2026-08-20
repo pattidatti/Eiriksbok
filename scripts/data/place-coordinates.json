@@ -950,6 +950,10 @@
       "count": 20
     },
     {
+      "tag": "1700-tallet",
+      "count": 20
+    },
+    {
       "tag": "olje",
       "count": 19
     },
@@ -959,10 +963,6 @@
     },
     {
       "tag": "imperialisme",
-      "count": 18
-    },
-    {
-      "tag": "1700-tallet",
       "count": 18
     },
     {
@@ -1198,6 +1198,10 @@
       "count": 8
     },
     {
+      "tag": "dansketiden",
+      "count": 8
+    },
+    {
       "tag": "1500-tallet",
       "count": 8
     },
@@ -1319,10 +1323,6 @@
     },
     {
       "tag": "kunst",
-      "count": 6
-    },
-    {
-      "tag": "dansketiden",
       "count": 6
     },
     {
@@ -1595,6 +1595,10 @@
     },
     {
       "tag": "union",
+      "count": 4
+    },
+    {
+      "tag": "kirke",
       "count": 4
     },
     {
@@ -2274,10 +2278,6 @@
       "count": 2
     },
     {
-      "tag": "kirke",
-      "count": 2
-    },
-    {
       "tag": "hanseatene",
       "count": 2
     },
@@ -2483,6 +2483,14 @@
     },
     {
       "tag": "rousseau",
+      "count": 2
+    },
+    {
+      "tag": "pietisme",
+      "count": 2
+    },
+    {
+      "tag": "lovgivning",
       "count": 2
     },
     {
