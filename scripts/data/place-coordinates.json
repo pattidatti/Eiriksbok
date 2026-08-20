@@ -942,12 +942,12 @@
       "count": 20
     },
     {
-      "tag": "renessansen",
+      "tag": "samfunn",
       "count": 20
     },
     {
-      "tag": "samfunn",
-      "count": 19
+      "tag": "renessansen",
+      "count": 20
     },
     {
       "tag": "olje",
@@ -1086,6 +1086,10 @@
       "count": 11
     },
     {
+      "tag": "demografi",
+      "count": 11
+    },
+    {
       "tag": "forhistorie",
       "count": 10
     },
@@ -1111,10 +1115,6 @@
     },
     {
       "tag": "sosiale-medier",
-      "count": 10
-    },
-    {
-      "tag": "demografi",
       "count": 10
     },
     {
@@ -1895,6 +1895,14 @@
     },
     {
       "tag": "produksjon",
+      "count": 3
+    },
+    {
+      "tag": "befolkning",
+      "count": 3
+    },
+    {
+      "tag": "statistikk",
       "count": 3
     },
     {
@@ -3090,10 +3098,6 @@
       "count": 2
     },
     {
-      "tag": "befolkning",
-      "count": 2
-    },
-    {
       "tag": "globale-ulikheter",
       "count": 2
     },
@@ -3243,10 +3247,6 @@
     },
     {
       "tag": "samfunnsfag",
-      "count": 2
-    },
-    {
-      "tag": "statistikk",
       "count": 2
     },
     {

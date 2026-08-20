@@ -1277,6 +1277,20 @@
                             "lastUpdated": "2026-08-05T08:59:34+02:00"
                         },
                         {
+                            "id": "befolkningspyramider",
+                            "title": "Befolkningspyramider: Samfunnets fingeravtrykk",
+                            "description": "Formen på en befolkningspyramide avslører kriger, babyboomer og hvor mange pensjonister landet får.",
+                            "image": "/images/lessons/demografi/befolkning_hero.webp",
+                            "tags": [
+                                "demografi",
+                                "statistikk",
+                                "befolkning",
+                                "samfunn"
+                            ],
+                            "createdDate": "2025-11-29T13:57:16+01:00",
+                            "lastUpdated": "2026-08-05T08:59:34+02:00"
+                        },
+                        {
                             "id": "migrasjon-push-pull",
                             "title": "Migrasjon: Hvorfor flytter vi?",
                             "description": "Om krig, håp og jakten på et bedre liv. Push- og pull-faktorer forklart.",
