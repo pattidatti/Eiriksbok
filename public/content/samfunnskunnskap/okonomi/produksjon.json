@@ -39,14 +39,12 @@
             "content": "En planøkonomi er et system der det offentlige har kontroll over varer, tjenester og produksjonsmidler i en stat (Thomassen & Brekke, 2025). Da er det fellesskapet, representert ved staten eller kommunen, som bestemmer hva som skal produseres. Den mest gjennomførte formen for planøkonomi så vi historisk i de kommunistiske landene, som Sovjetunionen, Cuba og Nord-Korea (Thomassen & Brekke, 2025).\n\nI et demokrati har velgerne stor makt her. De stemmer på politikere som lover å bygge mer av det de ønsker seg, for eksempel sykehus, skoler eller jernbane. Politikernes jobb blir da å oppfylle disse valgløftene på vegne av folket.\n\nIdéen er at man gjennom valg kan styre ressursene dit samfunnet trenger dem mest, i stedet for dit det er mest lønnsomt. Betalingen skjer ofte over skatteseddelen."
         },
         {
-            "type": "section",
-            "title": "Refleksjon",
-            "content": [
-                {
-                    "type": "text",
-                    "content": "Tenk deg at du skulle bestemme hva alle i din kommune skulle ha til middag hver dag i en uke. Hvilke utfordringer ville du møtt på? Hvordan ville du vite hvem som er allergiske, hvem som hater fisk, eller hvem som plutselig fikk gjester?"
-                }
-            ]
+            "type": "header",
+            "content": "Refleksjon"
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg at du skulle bestemme hva alle i din kommune skulle ha til middag hver dag i en uke. Hvilke utfordringer ville du møtt på? Hvordan ville du vite hvem som er allergiske, hvem som hater fisk, eller hvem som plutselig fikk gjester?"
         },
         {
             "type": "header",
@@ -134,14 +132,12 @@
             ]
         },
         {
-            "type": "section",
-            "title": "Videre tenkning",
-            "content": [
-                {
-                    "type": "text",
-                    "content": "De aller fleste land i verden er blandingsøkonomier: markedene og de private aktørene spiller en stor rolle, men staten og fagforeningene griper inn på mange måter. Norge er ikke noe unntak, og forble en blandingsøkonomi gjennom hele etterkrigstiden (Thomassen, 2026; Thomassen & Brekke, 2025). Vi har både private bedrifter (som selger mat og klær) og offentlig produksjon (som sykehus og skoler). \n\nHvorfor tror du vi har valgt å la staten ta seg av akkurat sykehusene, mens vi lar Rema 1000 og Kiwi selge oss maten? Kunne det vært omvendt?"
-                }
-            ]
+            "type": "header",
+            "content": "Videre tenkning"
+        },
+        {
+            "type": "text",
+            "content": "De aller fleste land i verden er blandingsøkonomier: markedene og de private aktørene spiller en stor rolle, men staten og fagforeningene griper inn på mange måter. Norge er ikke noe unntak, og forble en blandingsøkonomi gjennom hele etterkrigstiden (Thomassen, 2026; Thomassen & Brekke, 2025). Vi har både private bedrifter (som selger mat og klær) og offentlig produksjon (som sykehus og skoler). \n\nHvorfor tror du vi har valgt å la staten ta seg av akkurat sykehusene, mens vi lar Rema 1000 og Kiwi selge oss maten? Kunne det vært omvendt?"
         },
         {
             "type": "component",

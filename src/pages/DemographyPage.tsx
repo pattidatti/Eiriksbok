@@ -66,14 +66,15 @@ export const DemographyPage: React.FC = () => {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
                     <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
 
-                    <h2 className="text-4xl md:text-5xl font-black mb-6 relative z-10 text-white font-display">Klar for Samfunnssimulatoren?</h2>
+                    <h2 className="text-4xl md:text-5xl font-black mb-6 relative z-10 text-white font-display">Prøv deg som bankdirektør</h2>
                     <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto relative z-10">
-                        Bruk kunnskapen du har lært om demografi, Malthus og inflasjon for å bygge en sivilisasjon fra bunnen av. Klarer du å balansere matproduksjon med befolkningsvekst uten å krasje økonomien?
+                        Nå vet du hvordan penger, renter og inflasjon henger sammen. Klarer du å holde
+                        en bank flytende når kundene vil ha pengene sine tilbake samtidig?
                     </p>
 
-                    <Link to="/game" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-indigo-900 font-bold rounded-full text-xl hover:scale-105 transition-transform shadow-2xl relative z-10">
+                    <Link to="/mikrospill/bankens-balansegang" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-indigo-900 font-bold rounded-full text-xl hover:scale-105 transition-transform shadow-2xl relative z-10">
                         <span>🎮</span>
-                        Start Simulatoren
+                        Start spillet
                         <span>→</span>
                     </Link>
                 </div>

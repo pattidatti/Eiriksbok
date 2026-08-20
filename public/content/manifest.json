@@ -1253,6 +1253,15 @@
                     "title": "Demografi",
                     "description": "Lær om befolkningens utvikling, migrasjon og fremtidens utfordringer.",
                     "image": "/images/topics/demografi_hero.webp",
+                    "tools": [
+                        {
+                            "id": "demografi-utforsker",
+                            "title": "Utforsker: Demografi og økonomi",
+                            "description": "Sju interaktive seksjoner om befolkning, Malthus, penger, inflasjon og rikdom i verden.",
+                            "link": "/samfunnskunnskap/demografi/utforsker",
+                            "icon": "chart"
+                        }
+                    ],
                     "lessons": [
                         {
                             "id": "den-demografiske-overgangen",

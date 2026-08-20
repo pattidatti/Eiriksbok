@@ -246,6 +246,8 @@ export interface SidebarConfig {
     showConcepts?: boolean;
     showTools?: boolean;
     showAudio?: boolean;
+    /** Innholdsfortegnelsen. Vises som standard når artikkelen har seksjoner. */
+    showToc?: boolean;
 }
 
 export interface Manifest {

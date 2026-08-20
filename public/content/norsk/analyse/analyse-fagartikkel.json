@@ -122,19 +122,17 @@
             "content": "Hvorfor reagerer han så sterkt på hygienen deres? Hvorfor blir han sint?\n\nFor å forstå dette, må vi se på *konteksten*. Ibn Fadlan kom med en delegasjon fra Bagdad, en av datidens store byer. Han var muslim, og den rituelle bønnen salah forutsetter at den troende er rituelt ren. Derfor er den lille renselsen wudu, der man vasker ansiktet, armene, hodet og føttene, en fast del av bønnen (Vogt, 2024). Renslighet er altså ikke bare hygiene, det er religion. Når han ser vikingene dele samme vaskevannsfat, krasjer det med hele hans verdensbilde.\n\nHan ser dem altså gjennom sine egne «kulturbriller». Fordi de ikke følger *hans* regler for renslighet, stempler han dem som «ville esler». Dette er et perfekt eksempel på etnosentrisme: å måle andres samfunn, kultur, verdier og normer med de forståelsesrammene som preger ditt eget samfunn, slik at de andre framstår som ufullstendige og mindreverdige utgaver av ditt eget (Johannessen, 2024)."
         },
         {
-            "type": "section",
-            "title": "Modelltekst: Slik syr du det sammen",
-            "content": [
-                {
-                    "type": "paragraph",
-                    "text": "Her er et eksempel på hvordan du kan skrive en kildekritisk analyse."
-                },
-                {
-                    "type": "expandable",
-                    "title": "Les analysen av «Reisebrev»",
-                    "content": "Ibn Fadlans reisebeskrivelse fra år 921 gir oss et unikt, men sterkt farget innblikk i vikingenes liv. Teksten er en hybrid av objektiv rapportering og subjektiv fordømmelse, og analysen krever at vi klarer å skille mellom disse to nivåene.\n\nPå den ene siden opptrer Ibn Fadlan som en presis feltarbeider. Han skildrer vikingenes «fullkomne kropper» med beundring, og gir detaljerte, nøytrale beskrivelser av kvinnenes smykker og draktskikker. Disse observasjonene har høy kildeverdi fordi de virker å være basert på direkte observasjon uten moralsk dom.\n\nMen teksten skifter brått karakter når temaet beveger seg inn på hygiene og moral. Som muslim fra en høykultur, ser Ibn Fadlan ned på vikingenes skikker. Når han beskriver dem som «de skitneste av Guds skapninger» og bruker metaforer som «ville esler», trer han ut av rollen som observatør. Han vurderer det han ser gjennom et strengt religiøst kulturfilter. Hans dom over vikingene sier derfor egentlig mer om hans egne verdier enn om vikingenes faktiske renslighet. Teksten er dermed et klassisk eksempel på etnosentrisk sakprosa, hvor forfatteren bruker sin egen kultur som målestokk for å dømme andre."
-                }
-            ]
+            "type": "header",
+            "content": "Modelltekst: Slik syr du det sammen"
+        },
+        {
+            "type": "paragraph",
+            "text": "Her er et eksempel på hvordan du kan skrive en kildekritisk analyse."
+        },
+        {
+            "type": "expandable",
+            "title": "Les analysen av «Reisebrev»",
+            "content": "Ibn Fadlans reisebeskrivelse fra år 921 gir oss et unikt, men sterkt farget innblikk i vikingenes liv. Teksten er en hybrid av objektiv rapportering og subjektiv fordømmelse, og analysen krever at vi klarer å skille mellom disse to nivåene.\n\nPå den ene siden opptrer Ibn Fadlan som en presis feltarbeider. Han skildrer vikingenes «fullkomne kropper» med beundring, og gir detaljerte, nøytrale beskrivelser av kvinnenes smykker og draktskikker. Disse observasjonene har høy kildeverdi fordi de virker å være basert på direkte observasjon uten moralsk dom.\n\nMen teksten skifter brått karakter når temaet beveger seg inn på hygiene og moral. Som muslim fra en høykultur, ser Ibn Fadlan ned på vikingenes skikker. Når han beskriver dem som «de skitneste av Guds skapninger» og bruker metaforer som «ville esler», trer han ut av rollen som observatør. Han vurderer det han ser gjennom et strengt religiøst kulturfilter. Hans dom over vikingene sier derfor egentlig mer om hans egne verdier enn om vikingenes faktiske renslighet. Teksten er dermed et klassisk eksempel på etnosentrisk sakprosa, hvor forfatteren bruker sin egen kultur som målestokk for å dømme andre."
         },
         {
             "type": "component",

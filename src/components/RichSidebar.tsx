@@ -4,14 +4,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, Map, ChevronDown, ChevronUp, Volume2, Pause, Play, Square, History, ShieldCheck } from 'lucide-react';
 import { TimelineComponent, type TimelineEvent } from './TimelineComponent';
 import { formatNorwegianDate } from '../utils/dateUtils';
-import type { MapData, SidebarConfig } from '../types';
+import type { SidebarConfig } from '../types';
 import type { RelatedLesson } from '../hooks/useRelatedContent';
+import type { ArticleHeading } from '../utils/articleHeadings';
+import { TableOfContents } from './TableOfContents';
 
 interface RichSidebarProps {
     details: string[];
     timelineEvents: TimelineEvent[];
     relatedArticles: RelatedLesson[];
-    mapData?: MapData;
+    /** Seksjonene i artikkelen, til innholdsfortegnelsen. */
+    headings?: ArticleHeading[];
     tags?: string[];
     config?: SidebarConfig;
     learningPaths?: { id: string; title: string; url: string }[];
@@ -32,13 +35,6 @@ interface RichSidebarProps {
         factChecked?: string;
     };
 }
-
-const InteractiveMapPlaceholder: React.FC = () => (
-    <div className="bg-slate-100 rounded-2xl p-4 border border-slate-200 aspect-video flex flex-col items-center justify-center text-slate-500 mb-8">
-        <Map className="w-8 h-8 mb-2 opacity-50" />
-        <span className="text-sm font-medium">Interaktivt kart kommer</span>
-    </div>
-);
 
 const ExpandableSection: React.FC<{ title: string; children: React.ReactNode; defaultOpen?: boolean }> = ({ title, children, defaultOpen = false }) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -76,7 +72,7 @@ const ExpandableSection: React.FC<{ title: string; children: React.ReactNode; de
     );
 };
 
-export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, timelineEvents, relatedArticles, mapData, tags, config, learningPaths, audioState, metadata }) => {
+export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, timelineEvents, relatedArticles, headings, tags, config, learningPaths, audioState, metadata }) => {
     const lastUpdatedText = formatNorwegianDate(metadata?.lastUpdated);
     const factCheckedText = formatNorwegianDate(metadata?.factChecked);
 
@@ -184,6 +180,8 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
                     </div>
                 )}
 
+                {config?.showToc !== false && headings && <TableOfContents headings={headings} />}
+
                 {learningPaths && learningPaths.length > 0 && (
                     <div className="space-y-3 mb-8">
                         {learningPaths.map(path => (
@@ -229,8 +227,6 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
 
                     </div>
                 )}
-
-                {mapData && <InteractiveMapPlaceholder />}
 
                 <div className="mt-8">
                     <h3 className="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Fordypning</h3>

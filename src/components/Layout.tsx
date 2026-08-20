@@ -58,7 +58,13 @@ export const Layout: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-bg-main text-text-main font-sans relative overflow-hidden">
+        // overflow-x-clip, ikke overflow-hidden: «hidden» gjør elementet til en
+        // scroll-container, og da slutter position: sticky å virke for alt
+        // under - inkludert hele RichSidebar (innholdsfortegnelse, tidslinje,
+        // nøkkelpunkter), som fulgte scrollen bort etter første skjerm. «clip»
+        // klipper det som stikker ut sidelengs uten å lage en scroll-container.
+        // Gløden under klippes uansett av sin egen fixed inset-0-boks.
+        <div className="min-h-screen bg-bg-main text-text-main font-sans relative overflow-x-clip">
             {/* Ambient Background Glow.
                 Statisk, ikke pulserende: to lag på 60%x60% med blur-[120px] som
                 animerer må komposittes på nytt hvert bilde, hele tiden, på hver

@@ -15,136 +15,126 @@
             "content": "Å skrive en god saktekst handler ikke om å bruke de vanskeligste ordene, men om å bygge en bro av forståelse mellom deg og leseren. For å få til dette, trenger du et stødig fundament. I denne guiden skal vi se hvordan vi bygger et perfekt avsnitt, stein for stein, ved å følge utviklingen av en tekst om et av kroppens viktigste behov: *søvn*."
         },
         {
-            "type": "section",
-            "title": "Steg 1: Grunnmuren (Temasetningen)",
-            "content": [
-                {
-                    "type": "text",
-                    "content": "Hvert avsnitt i en saktekst bør starte med en temasetning. Dette er avsnittets 'sjef' – en setning som forteller leseren nøyaktig hva de neste linjene skal handle om. Tenk på det som et løfte du gir til leseren."
-                },
-                {
-                    "type": "comparison",
-                    "before": {
-                        "label": "Vag temasetning",
-                        "content": "Søvn er noe vi alle gjør hver natt."
-                    },
-                    "after": {
-                        "label": "Tydelig temasetning",
-                        "content": "Søvn fungerer som hjernens eget renovasjonsanlegg."
-                    }
-                },
-                {
-                    "type": "info_box",
-                    "title": "Løftet",
-                    "content": "Den første setningen lover oss at dette avsnittet skal handle om hvordan søvn 'vasker' hjernen. Nå må vi holde det løftet!"
-                }
-            ]
+            "type": "header",
+            "content": "Steg 1: Grunnmuren (Temasetningen)"
         },
         {
-            "type": "section",
-            "title": "Steg 2: Kjøtt på beina (Kommentarsetninger)",
-            "content": [
-                {
-                    "type": "text",
-                    "content": "Nå som vi har planen klar, må vi fylle på med informasjon. Vi gjør dette med kommentarsetninger. Dette er setninger som forklarer, utdyper eller gir eksempler på det vi sa i temasetningen."
-                },
-                {
-                    "type": "comparison",
-                    "before": {
-                        "label": "Bare temasetning",
-                        "content": "Søvn fungerer som hjernens eget renovasjonsanlegg."
-                    },
-                    "after": {
-                        "label": "Med fakta",
-                        "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. Kroppen fjerner giftstoffer som har samlet seg i løpet av dagen. Det skjer spesielt i den dype søvnen."
-                    }
-                },
-                {
-                    "type": "text",
-                    "content": "Nå har vi innholdet, men teksten føles litt 'hakkete'. Setningene står hver for seg som øyer i havet. Vi trenger noe som binder dem sammen."
-                }
-            ]
+            "type": "text",
+            "content": "Hvert avsnitt i en saktekst bør starte med en temasetning. Dette er avsnittets 'sjef' – en setning som forteller leseren nøyaktig hva de neste linjene skal handle om. Tenk på det som et løfte du gir til leseren."
         },
         {
-            "type": "section",
-            "title": "Steg 3: Tekstens lim (Bindeord)",
-            "content": [
-                {
-                    "type": "text",
-                    "content": "Bindeord er de små ordene som skaper flyt og viser sammenheng. Ved å bruke ord som *derfor*, *samtidig* eller *for det første*, hjelper du leseren å forstå logikken din."
-                },
-                {
-                    "type": "comparison",
-                    "before": {
-                        "label": "Uten lim",
-                        "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. Kroppen fjerner giftstoffer som har samlet seg i løpet av dagen. Det skjer spesielt i den dype søvnen."
-                    },
-                    "after": {
-                        "label": "Med bindeord",
-                        "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. *Når vi sover*, fjerner kroppen nemlig giftstoffer som har samlet seg i løpet av dagen. *Dette* skjer spesielt i den dype søvnen, *slik at* vi våkner med en uthvilt hjerne."
-                    }
-                },
-                {
-                    "type": "info_box",
-                    "title": "Magien med bindeord",
-                    "content": "Legg merke til hvordan ord som 'nemlig' og 'slik at' gjør at setningene snakker sammen. Teksten føles nå som en sammenhengende tanke."
-                }
-            ]
+            "type": "comparison",
+            "before": {
+                "label": "Vag temasetning",
+                "content": "Søvn er noe vi alle gjør hver natt."
+            },
+            "after": {
+                "label": "Tydelig temasetning",
+                "content": "Søvn fungerer som hjernens eget renovasjonsanlegg."
+            }
         },
         {
-            "type": "section",
-            "title": "Steg 4: Avslutningen (Konklusjon)",
-            "content": [
-                {
-                    "type": "text",
-                    "content": "For å gjøre avsnittet komplett, trenger vi en avslutningssetning. Denne setningen runder av poenget og kan gjerne peke fremover mot neste avsnitt."
-                },
-                {
-                    "type": "image",
-                    "src": "/images/lessons/norsk/saktekst_sleep_renovation.webp",
-                    "alt": "En person som sover rolig i et nordisk soverom",
-                    "caption": "Søvn er som en 'vaskemaskin' for hjernen."
-                },
-                {
-                    "type": "quote",
-                    "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. Når vi sover, fjerner kroppen nemlig giftstoffer som har samlet seg i løpet av dagen. Dette skjer spesielt i den dype søvnen, slik at vi våkner med en uthvilt hjerne. Uten nok hvile vil altså hjernen fungere dårligere, og vi vil slite med å lære nye ting."
-                },
-                {
-                    "type": "text",
-                    "content": "Her er avsnittet helt ferdig. Vi har startet med et løfte, fylt på med fakta, limt det sammen med bindeord, og landet trygt med en konklusjon."
-                }
-            ]
+            "type": "info_box",
+            "title": "Løftet",
+            "content": "Den første setningen lover oss at dette avsnittet skal handle om hvordan søvn 'vasker' hjernen. Nå må vi holde det løftet!"
         },
         {
-            "type": "section",
-            "title": "Steg 5: Stafettpinnen (Overganger)",
-            "content": [
-                {
-                    "type": "text",
-                    "content": "En god tekst består av mange avsnitt som jobber sammen. Overgangen mellom avsnittene er som en stafettpinne som gis videre. Du kan skape overgang ved å koble slutten på ett avsnitt til starten på det neste."
-                },
-                {
-                    "type": "image",
-                    "src": "/images/lessons/norsk/saktekst_relay_baton.webp",
-                    "alt": "Stafettveksling",
-                    "caption": "Gode overganger fungerer som en stafettveksling mellom avsnittene."
-                },
-                {
-                    "type": "comparison",
-                    "before": {
-                        "label": "Avsnitt 1 (Slutt)",
-                        "content": "...Uten nok hvile vil hjernen fungere dårligere, og vi vil slite med å lære nye ting."
-                    },
-                    "after": {
-                        "label": "Avsnitt 2 (Start)",
-                        "content": "*I tillegg til* å rense hjernen, spiller søvn en viktig rolle for immunforsvaret vårt..."
-                    }
-                },
-                {
-                    "type": "text",
-                    "content": "Ved å starte neste avsnitt med 'I tillegg til', minner du leseren på hva du nettopp skrev, samtidig som du introduserer et nytt poeng (immunforsvaret)."
-                }
-            ]
+            "type": "header",
+            "content": "Steg 2: Kjøtt på beina (Kommentarsetninger)"
+        },
+        {
+            "type": "text",
+            "content": "Nå som vi har planen klar, må vi fylle på med informasjon. Vi gjør dette med kommentarsetninger. Dette er setninger som forklarer, utdyper eller gir eksempler på det vi sa i temasetningen."
+        },
+        {
+            "type": "comparison",
+            "before": {
+                "label": "Bare temasetning",
+                "content": "Søvn fungerer som hjernens eget renovasjonsanlegg."
+            },
+            "after": {
+                "label": "Med fakta",
+                "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. Kroppen fjerner giftstoffer som har samlet seg i løpet av dagen. Det skjer spesielt i den dype søvnen."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Nå har vi innholdet, men teksten føles litt 'hakkete'. Setningene står hver for seg som øyer i havet. Vi trenger noe som binder dem sammen."
+        },
+        {
+            "type": "header",
+            "content": "Steg 3: Tekstens lim (Bindeord)"
+        },
+        {
+            "type": "text",
+            "content": "Bindeord er de små ordene som skaper flyt og viser sammenheng. Ved å bruke ord som *derfor*, *samtidig* eller *for det første*, hjelper du leseren å forstå logikken din."
+        },
+        {
+            "type": "comparison",
+            "before": {
+                "label": "Uten lim",
+                "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. Kroppen fjerner giftstoffer som har samlet seg i løpet av dagen. Det skjer spesielt i den dype søvnen."
+            },
+            "after": {
+                "label": "Med bindeord",
+                "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. *Når vi sover*, fjerner kroppen nemlig giftstoffer som har samlet seg i løpet av dagen. *Dette* skjer spesielt i den dype søvnen, *slik at* vi våkner med en uthvilt hjerne."
+            }
+        },
+        {
+            "type": "info_box",
+            "title": "Magien med bindeord",
+            "content": "Legg merke til hvordan ord som 'nemlig' og 'slik at' gjør at setningene snakker sammen. Teksten føles nå som en sammenhengende tanke."
+        },
+        {
+            "type": "header",
+            "content": "Steg 4: Avslutningen (Konklusjon)"
+        },
+        {
+            "type": "text",
+            "content": "For å gjøre avsnittet komplett, trenger vi en avslutningssetning. Denne setningen runder av poenget og kan gjerne peke fremover mot neste avsnitt."
+        },
+        {
+            "type": "image",
+            "src": "/images/lessons/norsk/saktekst_sleep_renovation.webp",
+            "alt": "En person som sover rolig i et nordisk soverom",
+            "caption": "Søvn er som en 'vaskemaskin' for hjernen."
+        },
+        {
+            "type": "quote",
+            "content": "Søvn fungerer som hjernens eget renovasjonsanlegg. Når vi sover, fjerner kroppen nemlig giftstoffer som har samlet seg i løpet av dagen. Dette skjer spesielt i den dype søvnen, slik at vi våkner med en uthvilt hjerne. Uten nok hvile vil altså hjernen fungere dårligere, og vi vil slite med å lære nye ting."
+        },
+        {
+            "type": "text",
+            "content": "Her er avsnittet helt ferdig. Vi har startet med et løfte, fylt på med fakta, limt det sammen med bindeord, og landet trygt med en konklusjon."
+        },
+        {
+            "type": "header",
+            "content": "Steg 5: Stafettpinnen (Overganger)"
+        },
+        {
+            "type": "text",
+            "content": "En god tekst består av mange avsnitt som jobber sammen. Overgangen mellom avsnittene er som en stafettpinne som gis videre. Du kan skape overgang ved å koble slutten på ett avsnitt til starten på det neste."
+        },
+        {
+            "type": "image",
+            "src": "/images/lessons/norsk/saktekst_relay_baton.webp",
+            "alt": "Stafettveksling",
+            "caption": "Gode overganger fungerer som en stafettveksling mellom avsnittene."
+        },
+        {
+            "type": "comparison",
+            "before": {
+                "label": "Avsnitt 1 (Slutt)",
+                "content": "...Uten nok hvile vil hjernen fungere dårligere, og vi vil slite med å lære nye ting."
+            },
+            "after": {
+                "label": "Avsnitt 2 (Start)",
+                "content": "*I tillegg til* å rense hjernen, spiller søvn en viktig rolle for immunforsvaret vårt..."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Ved å starte neste avsnitt med 'I tillegg til', minner du leseren på hva du nettopp skrev, samtidig som du introduserer et nytt poeng (immunforsvaret)."
         },
         {
             "type": "task",

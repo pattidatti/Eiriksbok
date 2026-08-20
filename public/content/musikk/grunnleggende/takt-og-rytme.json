@@ -6,18 +6,27 @@
     "content": [
         {
             "type": "text",
-            "title": "Puls: Musikkens klokke",
-            "content": "Se for deg en klokke som tikker. *Tikk-takk-tikk-takk*. Dette jevne slaget er det vi kaller puls. Når du tramper takten til en sang på radioen, tramper du pulsen.\n\nRytme handler om hvordan lydene i et musikkstykke er ordnet i lange og korte, sterke og svake slag over tid (Sundberg & Eilertsen, 2024). Uten en fast puls vil musikken føles rotete. Det er grunnmuren alt annet bygges på."
+            "content": "Se for deg en klokke som tikker. *Tikk-takk-tikk-takk*. Dette jevne slaget er det vi kaller puls. Når du tramper takten til en sang på radioen, tramper du pulsen."
         },
         {
             "type": "text",
-            "title": "Takt: Å telle til fire",
-            "content": "For å holde orden på pulsslagene, deler vi dem inn i grupper. Dette kalles en takt (Holter, 2025).\n\nDen aller vanligste inndelingen i pop og rock er å telle til fire. Prøv å si høyt: 1 - 2 - 3 - 4. Når du kommer til 4, begynner du på 1 igjen. Dette er en 4/4-takt. Tallet nederst sier hvilken noteverdi vi teller i, og tallet øverst sier hvor mange av dem det er i hver takt (Holter, 2025)."
+            "content": "Rytme handler om hvordan lydene i et musikkstykke er ordnet i lange og korte, sterke og svake slag over tid (Sundberg & Eilertsen, 2024). Uten en fast puls vil musikken føles rotete. Det er grunnmuren alt annet bygges på."
         },
         {
             "type": "text",
-            "title": "Prøv selv: Bygg en 4/4-takt",
-            "content": "Nedfor ser du vår Beat Builder. Den er delt inn i 16 ruter. Hver rute er en liten del av takten.\n\nOppgave:"
+            "content": "For å holde orden på pulsslagene, deler vi dem inn i grupper. Dette kalles en takt (Holter, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Den aller vanligste inndelingen i pop og rock er å telle til fire. Prøv å si høyt: 1 - 2 - 3 - 4. Når du kommer til 4, begynner du på 1 igjen. Dette er en 4/4-takt. Tallet nederst sier hvilken noteverdi vi teller i, og tallet øverst sier hvor mange av dem det er i hver takt (Holter, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Nedfor ser du vår Beat Builder. Den er delt inn i 16 ruter. Hver rute er en liten del av takten."
+        },
+        {
+            "type": "text",
+            "content": "Oppgave:"
         },
         {
             "type": "list",
@@ -29,26 +38,27 @@
             ]
         },
         {
-            "type": "text",
-            "content": ""
-        },
-        {
             "type": "component",
             "component": "BeatBuilder"
         },
         {
             "type": "text",
-            "title": "Noteverdier: Hvor lenge varer en tone?",
-            "content": "I Beat Builderen over så du at hver takt var delt inn i 16 små ruter. Hver av disse kalles en sekstendelsnote. Noteverdiene er halvparten av hverandre hele veien nedover: en helnote varer like lenge som 2 halvnoter, 4 fjerdedeler, 8 åttedeler eller 16 sekstendeler (Holter, 2024).\n\n* Helnote: Varer hele takten (alle 16 ruter).\n* Fjerdedelsnote: Varer 1/4 av takten (4 ruter). Det er disse du trampet til i sted (kick på 1, 5, 9, 13).\n* Åttedelsnote: Varer 1/8 av takten (2 ruter). Brukes ofte på Hi-hat."
+            "content": "I Beat Builderen over så du at hver takt var delt inn i 16 små ruter. Hver av disse kalles en sekstendelsnote. Noteverdiene er halvparten av hverandre hele veien nedover: en helnote varer like lenge som 2 halvnoter, 4 fjerdedeler, 8 åttedeler eller 16 sekstendeler (Holter, 2024)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Helnote: Varer hele takten (alle 16 ruter).",
+                "Fjerdedelsnote: Varer 1/4 av takten (4 ruter). Det er disse du trampet til i sted (kick på 1, 5, 9, 13).",
+                "Åttedelsnote: Varer 1/8 av takten (2 ruter). Brukes ofte på Hi-hat."
+            ]
         },
         {
             "type": "text",
-            "title": "Andre taktarter: Vals (3/4)",
             "content": "Ikke all musikk teller til fire. I en vals teller vi bare til tre: 1 - 2 - 3. En vals blir alltid skrevet i 3/4-takt (Holter, 2025). Vals er både en musikkform og en pardans, der paret snurrer rundt sin egen akse mens de danser (Bakka & Knudsen, 2024). Tenk på Donau-valsen, som Johann Strauss den yngre skrev i 1867 (Andersen, 2025). Da får musikken en mer 'svingende' følelse."
         },
         {
             "type": "text",
-            "title": "Tren rytmesansen",
             "content": "Det er én ting å lese om rytme - det er noe annet å kjenne den i kroppen. I Rytme-klikkeren får du noter på skjermen og en metronom i øret. Du tapper i takt, og verktøyet måler hvor presis du er - ned til millisekundet."
         },
         {

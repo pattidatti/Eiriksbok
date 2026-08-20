@@ -12,6 +12,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { ArticleContent } from './ArticleContent';
 import { RichSidebar } from './RichSidebar';
+import { getArticleHeadings } from '../utils/articleHeadings';
 import { LearningPath } from './content/LearningPath';
 import { LearningPathV2 } from './content/LearningPathV2';
 import type { ContentBlock, LearningPathData, LearningPathV2Data, MapData, Concept, GlobalTimelineEvent } from '../types';
@@ -257,6 +258,8 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
 
     const relatedArticles = useMemo(() => relatedArticlesResult.slice(0, 5), [relatedArticlesResult]);
 
+    const headings = useMemo(() => getArticleHeadings(event.content), [event.content]);
+
     // Diagnostic logging
     console.log(`[InteractiveArticle] Rendering: title="${event.title}", layout="${event.layout}", hasContent=${!!event.content}, hasLPData=${!!event.learningPathData}, LPSteps=${event.learningPathData?.steps?.length}`);
 
@@ -476,7 +479,7 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
                                     details={event.details}
                                     timelineEvents={combinedTimeline}
                                     relatedArticles={relatedArticles}
-                                    mapData={event.mapData}
+                                    headings={headings}
                                     tags={event.tags}
                                     config={sidebarConfig}
                                     learningPaths={event.learningPaths}
