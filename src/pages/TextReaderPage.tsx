@@ -8,6 +8,7 @@ import { Tooltip } from '../components/Tooltip';
 import { useTTS } from '../hooks/useTTS';
 import { usePreGeneratedAudio } from '../hooks/usePreGeneratedAudio';
 import { cleanMarkdown } from '../utils/speechUtils';
+import { AudioPlayerBar } from '../components/AudioPlayerBar';
 
 
 const genreToAnalysisMap: Record<string, string> = {
@@ -436,10 +437,15 @@ export const TextReaderPage: React.FC = () => {
                                     key={index}
                                     className={contentWrapperClass}
                                     onClick={() => {
-                                        if (!isSplitView) {
-                                            const speechIndex = speechData.mapContentToSpeech[index];
-                                            if (speechIndex !== undefined) playBlock(speechIndex);
+                                        if (isSplitView) return;
+                                        const speechIndex = speechData.mapContentToSpeech[index];
+                                        if (speechIndex === undefined) return;
+                                        // Nytt trykk på avsnittet som leses = pause/fortsett.
+                                        if (isPlaying && speechIndex === activeBlockIndex) {
+                                            handleListenClick();
+                                            return;
                                         }
+                                        playBlock(speechIndex);
                                     }}
                                 >
                                     {/* Left Column / Main Content */}
@@ -683,6 +689,18 @@ export const TextReaderPage: React.FC = () => {
                     </footer>
                 )}
             </motion.article>
+
+            <AudioPlayerBar
+                isPlaying={isPlaying}
+                isPaused={isPaused}
+                onToggle={handleListenClick}
+                onStop={cancel}
+                rate={rate}
+                setRate={setRate}
+                current={activeBlockIndex > 0 ? activeBlockIndex : undefined}
+                total={speechData.blocks.length - 1}
+                hideOnDesktop={false}
+            />
         </div >
     );
 };
