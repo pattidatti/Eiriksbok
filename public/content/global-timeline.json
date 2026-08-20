@@ -4607,6 +4607,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "eneveldet",
+      "title": "Eneveldet: Da kongen fikk all makt",
+      "description": "På fire dager i oktober 1660 mistet adelen makten, og kongen i Danmark-Norge fikk alt. Slik forandret det Norge.",
+      "startDate": 1660,
+      "endDate": 1814,
+      "displayDate": "1660-1814",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/eneveldet",
+      "tags": [
+        "danmark-norge",
+        "kongemakt",
+        "styringsformer",
+        "norge",
+        "1600-tallet"
+      ],
+      "lat": 56,
+      "lng": 10,
+      "placeLabel": "Danmark-Norge",
+      "placeCountryId": 208,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "forfallet",
       "title": "\"Europas syke mann\"",
       "description": "Det lange forfallet etter Wien 1683: tapte kriger, Tanzimat-reformene og nasjonalisme på Balkan som gjorde riket til 'Europas kruttønne'.",

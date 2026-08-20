@@ -63,6 +63,7 @@ const HandelsnettKollaps = lazy(() => import('./content/interactive/HandelsnettK
 const RessurskollapsSimulator = lazy(() => import('./content/interactive/RessurskollapsSimulator').then(m => ({ default: m.RessurskollapsSimulator })));
 const TorkensVippepunkt = lazy(() => import('./content/interactive/TorkensVippepunkt').then(m => ({ default: m.TorkensVippepunkt })));
 const KongensMaktBinding = lazy(() => import('./content/interactive/KongensMaktBinding').then(m => ({ default: m.KongensMaktBinding })));
+const KongensSegl = lazy(() => import('./content/interactive/KongensSegl').then(m => ({ default: m.KongensSegl })));
 const GullSaltVekten = lazy(() => import('./content/interactive/GullSaltVekten').then(m => ({ default: m.GullSaltVekten })));
 const TondibiSlaget = lazy(() => import('./content/interactive/TondibiSlaget').then(m => ({ default: m.TondibiSlaget })));
 const DenTauseHandelen = lazy(() => import('./content/interactive/DenTauseHandelen').then(m => ({ default: m.DenTauseHandelen })));
@@ -940,6 +941,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     CascadeFailureSim: lazy(() => import('./content/interactive/infrastruktur/CascadeFailureSim').then(m => ({ default: m.CascadeFailureSim }))),
     RettighetsLas: lazy(() => import('./content/interactive/RettighetsLas').then(m => ({ default: m.RettighetsLas }))),
     KongensMaktBinding,
+    KongensSegl,
     MalstangaTest,
     MapCarousel,
     KontekstKompasset,
