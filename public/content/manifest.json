@@ -3191,6 +3191,21 @@
               ],
               "createdDate": "2026-07-15T12:20:07+00:00",
               "lastUpdated": "2026-07-15T15:39:00+02:00"
+            },
+            {
+              "id": "borgerkrigstiden",
+              "title": "Borgerkrigstiden: da Norge manglet en arveregel",
+              "description": "I 110 år kjempet nordmenn om kronen fordi ingen hadde bestemt hvem som skulle arve den. Se hvordan én lovendring gjorde slutt på krigen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "middelalder",
+                "kongemakt",
+                "borgerkrig",
+                "birkebeinere",
+                "baglere"
+              ],
+              "createdDate": "2026-08-21T00:00:00Z"
             }
           ]
         },

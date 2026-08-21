@@ -858,11 +858,11 @@
       "count": 36
     },
     {
-      "tag": "demokrati",
-      "count": 32
+      "tag": "middelalder",
+      "count": 34
     },
     {
-      "tag": "middelalder",
+      "tag": "demokrati",
       "count": 32
     },
     {
@@ -1098,6 +1098,10 @@
       "count": 10
     },
     {
+      "tag": "borgerkrig",
+      "count": 10
+    },
+    {
       "tag": "rettsstat",
       "count": 10
     },
@@ -1183,10 +1187,6 @@
     },
     {
       "tag": "historiens-store-gater",
-      "count": 8
-    },
-    {
-      "tag": "borgerkrig",
       "count": 8
     },
     {
@@ -1319,6 +1319,10 @@
     },
     {
       "tag": "vikingtid",
+      "count": 6
+    },
+    {
+      "tag": "kongemakt",
       "count": 6
     },
     {
@@ -1578,15 +1582,15 @@
       "count": 4
     },
     {
+      "tag": "birkebeinere",
+      "count": 4
+    },
+    {
       "tag": "konge",
       "count": 4
     },
     {
       "tag": "miljo",
-      "count": 4
-    },
-    {
-      "tag": "kongemakt",
       "count": 4
     },
     {
@@ -2210,7 +2214,7 @@
       "count": 2
     },
     {
-      "tag": "birkebeinere",
+      "tag": "baglere",
       "count": 2
     },
     {

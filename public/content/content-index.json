@@ -1,5 +1,5 @@
 {
-  "buildId": 182077032819817,
+  "buildId": 86880026974913,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2690,6 +2690,9 @@
     "alv-erlingsson": [
       "content/historie/norsk-middelalder/alv-erlingsson.json",
       "content/people/alv-erlingsson.json"
+    ],
+    "borgerkrigstiden": [
+      "content/historie/norsk-middelalder/borgerkrigstiden.json"
     ],
     "hansadrapet-1455": [
       "content/historie/norsk-middelalder/hansadrapet-1455.json"
@@ -5610,6 +5613,7 @@
     "historie/norgeshistorie/unionsopplosningen-1905": "content/historie/norgeshistorie/unionsopplosningen-1905.json",
     "historie/norgeshistorie/utvandringen-til-amerika": "content/historie/norgeshistorie/utvandringen-til-amerika.json",
     "historie/norsk-middelalder/alv-erlingsson": "content/historie/norsk-middelalder/alv-erlingsson.json",
+    "historie/norsk-middelalder/borgerkrigstiden": "content/historie/norsk-middelalder/borgerkrigstiden.json",
     "historie/norsk-middelalder/hansadrapet-1455": "content/historie/norsk-middelalder/hansadrapet-1455.json",
     "historie/norsk-middelalder/sverre-sigurdsson": "content/historie/norsk-middelalder/sverre-sigurdsson.json",
     "historie/osmanske-riket/forfallet": "content/historie/osmanske-riket/forfallet.json",

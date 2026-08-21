@@ -2591,6 +2591,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "borgerkrigstiden",
+      "title": "Borgerkrigstiden: da Norge manglet en arveregel",
+      "description": "I 110 år kjempet nordmenn om kronen fordi ingen hadde bestemt hvem som skulle arve den. Se hvordan én lovendring gjorde slutt på krigen.",
+      "startDate": 1130,
+      "endDate": 1240,
+      "displayDate": "1130-1240",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norsk-middelalder",
+      "link": "/historie/norsk-middelalder/borgerkrigstiden",
+      "tags": [
+        "norge",
+        "middelalder",
+        "kongemakt",
+        "borgerkrig",
+        "birkebeinere",
+        "baglere"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "sverre-sigurdsson",
       "title": "Sverre Sigurdsson: presten som ble konge",
       "description": "En prest fra Færøyene hevdet han var en konges hemmelige sønn, samlet birkebeinerne og ble Norges enekonge etter slaget ved Fimreite i 1184.",

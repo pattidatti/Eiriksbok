@@ -167,6 +167,7 @@ const ByggKongsberg3D = lazy(() => import('./ByggKongsberg3D'));
 const VeienTilVikingtid3D = lazy(() => import('./VeienTilVikingtid3D'));
 const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
 const Fimreite3D = lazy(() => import('./Fimreite3D'));
+const Kongsemnene3D = lazy(() => import('./Kongsemnene3D'));
 const Barrikaden1848 = lazy(() => import('./Barrikaden1848'));
 const BakSloret3D = lazy(() => import('./BakSloret3D'));
 const GreskOpproret3D = lazy(() => import('./GreskOpproret3D'));
@@ -348,6 +349,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./FolketSamles3D'),
         Component: FolketSamles3D as never,
+    },
+    'kongsemnene-1130': {
+        id: 'kongsemnene-1130',
+        title: 'Kongsemnene',
+        description:
+            'Norge, 1100-tallet. Kongen er død, og flere menn har lovlig krav på kronen. Du er den nye kongen. Klikk kongsemnene som marsjerer mot tronen for å slå ned opprørene deres - men de kommer bare tettere. Klikk lovrullen på pulten for å stramme inn arveloven ett hakk om gangen, helt til bare én arving står igjen. Lyspæren: å slå ned et opprør hjelper i noen sekunder, men å endre arveregelen fjerner selve krigsgrunnen for godt.',
+        estimatedSeconds: 150,
+        loader: () => import('./Kongsemnene3D'),
+        Component: Kongsemnene3D as never,
     },
     'fimreite-1184': {
         id: 'fimreite-1184',

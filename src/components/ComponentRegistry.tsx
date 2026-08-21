@@ -57,6 +57,7 @@ const RoadToRevolution = lazy(() => import('./content/interactive/RoadToRevoluti
 const MaktensFristelse = lazy(() => import('./content/interactive/MaktensFristelse').then(m => ({ default: m.MaktensFristelse })));
 const MaktfordelingSjekk = lazy(() => import('./content/interactive/MaktfordelingSjekk').then(m => ({ default: m.MaktfordelingSjekk })));
 const Legitimitetsvekten = lazy(() => import('./content/interactive/Legitimitetsvekten').then(m => ({ default: m.Legitimitetsvekten })));
+const Tronfolgevelgeren = lazy(() => import('./content/interactive/Tronfolgevelgeren').then(m => ({ default: m.Tronfolgevelgeren })));
 const MaktensKilde = lazy(() => import('./content/interactive/MaktensKilde').then(m => ({ default: m.MaktensKilde })));
 const KollapsDiagnose = lazy(() => import('./content/interactive/KollapsDiagnose').then(m => ({ default: m.KollapsDiagnose })));
 const HandelsnettKollaps = lazy(() => import('./content/interactive/HandelsnettKollaps').then(m => ({ default: m.HandelsnettKollaps })));
@@ -491,6 +492,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RoadToRevolution,
     MaktfordelingSjekk,
     Legitimitetsvekten,
+    Tronfolgevelgeren,
     MaktensKilde,
     KollapsDiagnose,
     HandelsnettKollaps,
