@@ -1,0 +1,267 @@
+{
+  "id": "borgerkrigstiden",
+  "title": "Borgerkrigstiden: da Norge manglet en arveregel",
+  "layout": "rich",
+  "year": "1130-1240",
+  "category": "Norge",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "I 110 år kjempet nordmenn mot nordmenn om hvem som skulle være konge.",
+    "Årsaken var enkel: alle sønnene til en konge kunne kreve kronen, også de som var født utenfor ekteskap.",
+    "Krigene tok slutt da loven ble endret slik at bare én mann kunne arve tronen."
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "En dag på 1120-tallet gikk en mann barbeint over ni glødende plogjern inne i en norsk kirke. To biskoper sto og så på. Mannen het Harald Gille. Han var født rundt år 1102, trolig i Irland eller på Hebridene, og han var kommet til Norge for å bevise én eneste ting: at han var sønn av en norsk konge. Han brente seg ikke. Dermed var saken avgjort, og Norge hadde fått enda en mann med rett til kronen (Arstad & Norseng, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Prøven Harald gikk gjennom, het jernbyrd. Det var en gudsdom: folk trodde at Gud selv grep inn og lot den uskyldige slippe unna uten sår. Snorre Sturlason skrev senere at dette var den største gudsdommen som noen gang var holdt i Norge. Kong Sigurd Jorsalfare godtok beviset, men bare på ett vilkår. Harald måtte sverge at han ikke skulle kreve kongemakt så lenge Sigurd eller sønnen hans Magnus levde (Arstad & Norseng, 2024)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Mann går barbeint over glødende plogjern foran to biskoper i kirke",
+      "caption": "Jernbyrd var en gudsdom. Klarte du å gå over glødende jern uten å bli skadet, mente folk at Gud hadde talt din sak."
+    },
+    {
+      "type": "text",
+      "content": "Så døde kong Sigurd i 1130. Harald brøt eden med det samme. Han sa at han hadde blitt tvunget til å sverge, og krevde halve riket. På Haugating ble han godtatt som konge ved siden av Magnus. De to styrte landet sammen i tre år før de gikk til krig mot hverandre i 1134 (Arstad & Norseng, 2024). Året 1130 regnes som starten på borgerkrigstiden, en periode med strid om kongemakten som varte helt til 1240 (Orning, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Regelen som manglet"
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor kunne dette skje? Fordi Norge ikke hadde noen klar regel for hvem som skulle arve tronen. Før 1163 var det å bli konge en blanding av arv og valg. Alle sønnene til en konge kunne kreve makten, også de som var født utenfor ekteskap. Slike sønner ble kalt frillesønner, og de hadde like god arverett til kronen som brødrene sine. Bøndene på tinget måtte godkjenne den som skulle bli konge, men reglene sa ikke tydelig hvem det burde være (Norgeshistorie, 2019)."
+    },
+    {
+      "type": "text",
+      "content": "I tillegg var det helt lov å ha flere konger samtidig. Det kalles samkongedømme. Norge var langt, veiene var dårlige og en enkelt konge slet med å holde styr på hele landet, så det var praktisk at brødre delte riket mellom seg. Problemet var at samkongene sjelden var gode venner. Rivaliseringen mellom dem lå der nesten hele tiden (Norgeshistorie, 2019)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Hva var et kongsemne?",
+        "content": "Et kongsemne var en mann som hadde, eller påsto at han hadde, arverett til kongedømmet. Under borgerkrigene dukket det opp en lang rekke slike menn, ofte med tynne bevis for at de var av kongsætt. Hver av dem kunne bli samlingspunkt for en ny opprørsflokk. Noen brukte jernbyrd for å få kravet sitt godkjent, slik Harald Gille gjorde."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Tenk deg en klasse der læreren aldri har sagt hvem som skal lede gruppa, bare at det må være en som er født i januar. Er dere fem stykker som passer, krangler dere hver eneste gang. Slik var det med den norske kronen. Regelen fantes, men den var ikke streng nok til å peke ut én person. Hver gang en konge døde, sto det flere menn klare med like godt krav (Salvesen & Arntzen, 2024)."
+    },
+    {
+      "type": "component",
+      "name": "Tronfolgevelgeren",
+      "props": {
+        "title": "Tronfølgevelgeren"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hundre år i tre bølger"
+    },
+    {
+      "type": "text",
+      "content": "Historikere deler vanligvis borgerkrigstiden i tre faser (Orning, 2026):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Cirka 1130 til 1160: løst sammensatte flokker slåss om makten, og mektige stormenn og rådgivere styrte ofte mer enn kongene selv.",
+        "Cirka 1160 til 1208: gruppene ble fastere organisert, og to navn tok over hele bildet, birkebeinere og baglere.",
+        "1208 til 1240: birkebeinerne ble den sterkeste gruppen, og motstanden mot dem ble til opprør i stedet for åpen krig mellom likeverdige parter."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å tro at landet lå i sammenhengende krig i 110 år. Det gjorde det ikke. Mellom slagene var det lange rolige perioder der folk sådde, høstet og handlet som før. Men uroen kom alltid tilbake, for grunnen til den ble aldri fjernet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Norske krigere med skjold og spyd i skogkledd dalside om vinteren",
+      "caption": "Birkebeinerne kjempet ofte fra skogen og fjellet. De var færre enn motstanderne, men kjente terrenget bedre."
+    },
+    {
+      "type": "header",
+      "text": "Birkebeinere og baglere"
+    },
+    {
+      "type": "text",
+      "content": "Birkebeinerne blir nevnt for første gang i 1174, da de støttet kongsemnet Øystein Møyla. Navnet var opprinnelig et skjellsord fra fiendene deres. De skal ha rekruttert folk som var så fattige at de bandt bjørkebark rundt føttene fordi de ikke hadde skikkelig fottøy. I stedet for å skamme seg tok birkebeinerne navnet til seg selv. Kjerneområdet deres var Trøndelag, med Nidaros som viktigste base (Norseng, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Fra 1177 samlet birkebeinerne seg rundt [Sverre Sigurdsson](/historie/norsk-middelalder/sverre-sigurdsson), en prest fra Færøyene som hevdet at han var sønn av kong Sigurd Munn. Sverre slo kong Magnus Erlingsson i 1184 og ble enekonge i Norge (Norseng, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Baglerne ble dannet i 1196 av biskop Nikolas Arnesson, som motstandere av Sverre. Navnet kommer fra det norrøne ordet bagall, som betyr bispestav, og peker på at kirkens menn ledet flokken. Kjerneområdene deres var Viken og Opplandene, altså Østlandet. Baglerne ville at kirken skulle styre seg selv og svare til paven, mens birkebeinerne mente kongen skulle ha kontroll over kirken i Norge. Tre menn ble utropt til konge av baglerne: Inge Magnusson, Erling Steinvegg og Filippus Simonsson (Norseng mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Konflikten handlet altså om mer enn hvem som skulle sitte på tronen. Den handlet også om hvor grensen gikk mellom kongens makt og kirkens makt, et spørsmål som fulgte i kjølvannet av [kristningen av Norge](/historie/vikingtiden/kristningen-av-norge)."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "kongsemnene-1130"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Kronen som skulle stoppe krigen"
+    },
+    {
+      "type": "text",
+      "content": "I 1163 prøvde noen å løse problemet én gang for alle. Stormannen Erling Skakke ville gjøre sønnen sin Magnus til konge. Det var et djervt trekk, for gutten var bare fem år gammel og var av kongsætt bare på morssiden. Erling gikk derfor til kirken og fikk den med på laget. Magnus Erlingsson ble kronet, og det var første gang en konge ble kronet i Norden (Norseng & Opsahl, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Sammen med kroningen kom en tronfølgelov. Den slo fast at den som skulle bli konge i Norge, måtte være sønn av Norges konge og født i ekteskap. Var den eldste sønnen uegnet, skulle erkebiskopen og de andre biskopene sammen med tolv kloke menn fra hvert bispedømme velge den beste av brødrene. Når kongen døde, skulle alle biskoper, abbeder og stormenn dra nordover til Nidaros innen en måned for å bli enige (Norgeshistorie, 2019)."
+    },
+    {
+      "type": "text",
+      "content": "Loven var et stort skritt. Nå fantes det endelig en skriftlig regel, og kirken fikk en tydelig rolle i å peke ut kongen. Men loven virket ikke med en gang. Sverre Sigurdsson brydde seg lite om den, og krigen fortsatte i førti år til."
+    },
+    {
+      "type": "header",
+      "text": "Slutten kom i to trinn"
+    },
+    {
+      "type": "text",
+      "content": "Det første trinnet kom i 1217. Da døde baglerkongen Filippus Simonsson. I stedet for å velge en ny konge valgte baglerne å underkaste seg den unge birkebeinerkongen Håkon Håkonsson. Dermed løste hele motstandergruppen seg opp, ikke gjennom et slag, men gjennom et forlik (Norseng mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Det andre trinnet kom 23 år senere. Håkon Håkonsson hadde en jarl som het Skule Bårdsson, og forholdet mellom dem ble stadig verre. I 1239 utropte Skule seg selv til konge. Han tapte, og 24. mai 1240 ble han drept. Med det var borgerkrigstiden over (Orning, 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Middelalderkonge i kappe foran forsamling av stormenn i trehall",
+      "caption": "Håkon Håkonsson ble konge i 1217 og styrte i 46 år. Under ham nådde Norge sin største utstrekning."
+    },
+    {
+      "type": "header",
+      "text": "Loven som gjorde slutt på det"
+    },
+    {
+      "type": "text",
+      "content": "Håkon Håkonsson gjorde noe klokt. Han fjernet ikke bare motstanderne sine, han fjernet grunnen til at nye kunne komme. I 1260 vedtok et riksmøte en ny tronfølgelov. Den gjorde Norge til et rent arvekongedømme: den eldste sønnen født i ekteskap skulle bli konge, punktum. Det var uvanlig i Europa på den tiden. Både Danmark og Sverige var fortsatt valgkongedømmer, der stormennene kunne velge blant flere kandidater (Norseng & Opsahl, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Nå fantes det ikke lenger flere menn med lovlig krav som kunne reise hær mot hverandre. Sønnen til Håkon, Magnus Lagabøte, bygde videre på dette arbeidet og ga landet [en felles lov for hele riket](/historie/lov-og-rett/magnus-landslov). Norge gikk fra å være et land der makten ble avgjort med våpen, til et land der den ble avgjort med regler."
+    },
+    {
+      "type": "text",
+      "content": "Historikere er fortsatt uenige om hva som egentlig satte krigene i gang. Noen peker på at det ble for mange folk og for lite jord, andre på at stormennene mistet inntektene sine da vikingferdene tok slutt, og andre igjen på at den nye erkebiskopen i Nidaros brakte med seg en helt ny tanke om kongemakt. Nyere forskning mener også at kildene overdriver hvor voldelig perioden var, og at motstanden mot en sterk kongemakt var større enn man lenge trodde (Orning, 2026; Orning, 2015). Men på ett punkt er de fleste enige: da bare én mann kunne arve kronen, forsvant selve grunnen til å slåss om den."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva var jernbyrd, og hvorfor gikk Harald Gille over glødende plogjern?",
+          "Hvem kunne kreve å bli konge i Norge før 1163?",
+          "Hva betyr samkongedømme, og hvorfor var det praktisk i et land som Norge?",
+          "Hvor kommer navnene birkebeiner og bagler fra?",
+          "Hva bestemte tronfølgeloven av 1260?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor uklare arveregler førte til krig igjen og igjen i over hundre år.",
+          "Erling Skakke fikk sønnen sin kronet selv om gutten bare var av kongsætt på morssiden. Hvorfor tror du han trengte kirken for å få det til?",
+          "Baglerne valgte i 1217 å underkaste seg Håkon Håkonsson i stedet for å utrope en ny konge. Hva kan ha gjort at de tok det valget?",
+          "Tronfølgeloven av 1260 ga all makt til den eldste sønnen. Hva er styrken ved en slik regel, og hva er svakheten?"
+        ],
+        "gaaVidere": [
+          "Finn ut hvordan tronfølgen i Norge fungerer i dag. Hva er endret siden 1260, og hva er likt?",
+          "Henrik Ibsen skrev skuespillet Kongsemnerne om striden mellom Håkon Håkonsson og Skule Bårdsson. Finn ut hvordan Ibsen framstiller de to mennene.",
+          "Diskuter i klassen: Kan en lov alene stoppe en konflikt, eller må noe annet også endre seg først? Bruk gjerne eksempler fra vår egen tid."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvilken hendelse regnes som starten på borgerkrigstiden?",
+            "options": [
+              "Kong Sigurd Jorsalfares død i 1130",
+              "Slaget ved Stiklestad i 1030",
+              "Kroningen av Magnus Erlingsson i 1163",
+              "Svartedauden i 1349"
+            ],
+            "answer": "Kong Sigurd Jorsalfares død i 1130"
+          },
+          {
+            "question": "Hvem kunne kreve kongemakten i Norge før 1163?",
+            "options": [
+              "Alle sønnene til en konge, også de født utenfor ekteskap",
+              "Bare den eldste sønnen født i ekteskap",
+              "Bare menn som kirken hadde kronet",
+              "Den som vant en kamp på tinget"
+            ],
+            "answer": "Alle sønnene til en konge, også de født utenfor ekteskap"
+          },
+          {
+            "question": "Hva betyr ordet bagall, som baglerne har navnet sitt fra?",
+            "options": [
+              "Bispestav",
+              "Bjørkebark",
+              "Kongekrone",
+              "Skjold"
+            ],
+            "answer": "Bispestav"
+          },
+          {
+            "question": "Hvordan endte baglernes motstand i 1217?",
+            "options": [
+              "De underkastet seg Håkon Håkonsson i stedet for å velge ny konge",
+              "De vant et stort slag ved Nidaros",
+              "De ble utvist fra landet av paven",
+              "De valgte Skule Bårdsson til konge"
+            ],
+            "answer": "De underkastet seg Håkon Håkonsson i stedet for å velge ny konge"
+          },
+          {
+            "question": "Hva gjorde tronfølgeloven av 1260 med Norge?",
+            "options": [
+              "Den gjorde Norge til et rent arvekongedømme",
+              "Den gjorde Norge til et valgkongedømme som Sverige",
+              "Den ga kirken rett til å velge konge alene",
+              "Den innførte samkongedømme som fast ordning"
+            ],
+            "answer": "Den gjorde Norge til et rent arvekongedømme"
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Orning, H. J. (2026). *Borgerkrigstiden*. Store norske leksikon. Hentet 21.08.2026 fra [snl.no/borgerkrigstiden](https://snl.no/borgerkrigstiden)",
+          "Norseng, P. G. & Opsahl, E. (2026). *Norge i høymiddelalderen*. Store norske leksikon. Hentet 21.08.2026 fra [snl.no/Norge_i_høymiddelalderen](https://snl.no/Norge_i_h%C3%B8ymiddelalderen)",
+          "Arstad, K. P. L. & Norseng, P. G. (2024). *Harald 4. Gille*. Store norske leksikon. Hentet 21.08.2026 fra [snl.no/Harald_4._Gille](https://snl.no/Harald_4._Gille)",
+          "Norseng, P. G. (2024). *Birkebeiner*. Store norske leksikon. Hentet 21.08.2026 fra [snl.no/birkebeiner](https://snl.no/birkebeiner)",
+          "Norseng, P. G., Salvesen, H. & Holmboe, H. (2024). *Baglere*. Store norske leksikon. Hentet 21.08.2026 fra [snl.no/baglere](https://snl.no/baglere)",
+          "Salvesen, H. & Arntzen, J. G. (2024). *Kongsemne*. Store norske leksikon. Hentet 21.08.2026 fra [snl.no/kongsemne](https://snl.no/kongsemne)",
+          "Orning, H. J. (2015). *Borgerkrigene i Norge*. Norgeshistorie, Universitetet i Oslo. Hentet 21.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/hoymiddelalder/0909-borgerkrigene-i-norge.html)",
+          "Norgeshistorie. (2019). *To tronfølgelover* [kildetekst]. Universitetet i Oslo. Hentet 21.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/kilder/hoymiddelalder/K0943-To-tronf%C3%B8lgelover.html)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
