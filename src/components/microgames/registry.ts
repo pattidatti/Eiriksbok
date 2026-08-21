@@ -1893,7 +1893,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'helligdagsplikten-1740',
         title: 'Søndag morgen 1740',
         description:
-            'En norsk gård en søndag morgen i 1740. Du er husbond, kirkeklokka har begynt å ringe, og loven sier at hele husholdet skal møte fram. Ute i tunet hogger drengen ved, husmannen spiller kort, budeia danser, naboen selger fisk og tjenestejenta sover ut - alt sammen forbudt på en helligdag. Hold inne for å gå og pek dit du vil styre, men slipp og bli stående helt stille tett ved folk for å få dem med deg. Somler du, driver de lenger vekk, og de som mangler når klokka stopper, ender i gapestokken på kirkegården. Lyspæra: sabbatsforordningen av 1735 la ansvaret på husbonden, og dermed nådde statspietismen helt inn på gårdstunet og inn i søndagen.',
+            'En norsk gård en søndag morgen i 1740. Du er husbond, kirkeklokka har begynt å ringe, og loven sier at hele husholdet skal møte fram. Ute i tunet hogger drengen ved, husmannen spiller kort, budeia danser, naboen selger fisk og tjenestejenta sover ut - alt sammen forbudt på en helligdag. Du ser hele tunet ovenfra. Klikk på en person, så går husbonden bort til dem og blir stående, og mens han står helt stille, fylles ringen rundt dem. Når den er full, blir de med. Klikk innenfor kirkegårdsporten for å levere følget. Somler du, driver de lenger vekk, og de som mangler når klokka stopper, ender i gapestokken på kirkegården. Lyspæra: sabbatsforordningen av 1735 la ansvaret på husbonden, og dermed nådde statspietismen helt inn på gårdstunet og inn i søndagen.',
         estimatedSeconds: 170,
         loader: () => import('./Helligdagsplikten3D'),
         Component: Helligdagsplikten3D as never,
