@@ -15,18 +15,22 @@ const TIMELINE_PATH = path.join(CONTENT_DIR, 'global-timeline.json');
 const TOPICS_IMAGE_DIR = path.join(__dirname, '../public/images/topics');
 const OUTPUT_PATH = path.join(CONTENT_DIR, 'global-timeline-images.json');
 
-// Speiler isPendingImage() i src/utils/imageAvailability.ts. Artikler som venter på
-// bildegenerering har heroImage = "/images/placeholder.webp" - en fil som med vilje
-// ikke finnes. Slike stier skal aldri inn i bilde-mapsen: da faller eventet videre
-// til topic-hero, og til slutt til epoke-fargestripen som er laget nettopp for
-// events uten bilde.
-const PENDING_IMAGE_PATTERN = /(^|\/)placeholder(-\w+)?\.(webp|png|jpe?g|avif)$/i;
+const PUBLIC_DIR = path.join(__dirname, '../public');
 
-function isPendingImage(src) {
-    if (typeof src !== 'string') return true;
+// Her har vi disken foran oss, så vi trenger ingen navneregel: et bilde kommer med
+// i mapsen bare hvis fila faktisk finnes. Det fanger både placeholder-markøren
+// ("/images/placeholder.webp", som med vilje ikke finnes) og skrivefeil i stier.
+// Faller eventet gjennom, arver det topic-hero, og til slutt epoke-fargestripen
+// som er laget nettopp for events uten bilde.
+function imageExists(src) {
+    if (typeof src !== 'string') return false;
     const trimmed = src.trim();
-    if (!trimmed) return true;
-    return PENDING_IMAGE_PATTERN.test(trimmed.split(/[?#]/)[0]);
+    if (!trimmed) return false;
+    // Eksterne bilder kan vi ikke sjekke herfra - de slippes gjennom som før.
+    if (/^https?:\/\//i.test(trimmed)) return true;
+    const cleaned = trimmed.split(/[?#]/)[0];
+    if (!cleaned.startsWith('/')) return false;
+    return fs.existsSync(path.join(PUBLIC_DIR, cleaned));
 }
 
 function resolveArticlePath(link) {
@@ -51,10 +55,10 @@ function resolveArticlePath(link) {
 function readHeroImage(filePath) {
     try {
         const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        if (!isPendingImage(json.heroImage)) {
+        if (imageExists(json.heroImage)) {
             return json.heroImage;
         }
-        if (!isPendingImage(json.image)) {
+        if (imageExists(json.image)) {
             return json.image;
         }
     } catch {
@@ -112,7 +116,7 @@ export function generate() {
 
     for (const event of events) {
         // 0) Explicit event image override
-        if (!isPendingImage(event.image)) {
+        if (imageExists(event.image)) {
             result[event.id] = event.image;
             stats.hero += 1;
             continue;
