@@ -575,6 +575,32 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 [Lighting description]. [Composition/camera angle]. 16:9 ratio.
 ```
 
+### Bilder som ikke er generert ennå
+
+Artikkel-workflowene skriver `"/images/placeholder.webp"` inn i JSON-en som en *markør*:
+"her skal det et bilde, men det er ikke laget ennå". Fila finnes med vilje ikke på disk -
+det er slik `/bilde`-workflowen finner ut hva som skal genereres.
+
+**Regelen i appen: et bilde som ikke er der, vises ikke.** Markøren blir stående i JSON-en
+til bildet faktisk er generert, og i samme øyeblikk fila legges inn dukker bildet opp av seg
+selv. Ingen JSON skal redigeres for å skjule eller vise et bilde.
+
+- Kilden er `src/utils/imageAvailability.ts` (`isPendingImage`). Bruk den - aldri
+  strengsammenlikning mot `'/images/placeholder.webp'` direkte.
+- `src/hooks/useImageAvailability.ts` legger på lag to: et bilde som feiler ved lasting
+  (skrivefeil i stien, slettet fil) skrus av på samme måte som en markør.
+- **Inline bildeblokker** (`{ "type": "image" }`) rendres av `src/components/ArticleImage.tsx`,
+  som fjerner hele figuren - også bildeteksten. En bildetekst som henger under ingenting ser
+  like ødelagt ut som den brutte bilderammen den skulle forklare.
+- **Hero-bilder og leksjonskort** beholder det genererte mønsteret (`PlaceholderImage`), fordi
+  en tom flate der ville brutt layouten. Send `hideWhenMissing` til `Image` /
+  `ImageWithFallback` om et enkelt sted heller skal vise ingenting.
+- **Gallery, MapCarousel og tidslinja** filtrerer bort bilder som mangler før de teller
+  elementer, slik at to ekte bilder blir to kolonner - ikke to av fire hull.
+
+Ikke slett placeholder-blokker fra JSON for å "rydde opp". Da mister `/bilde` sporet av hva
+som skal genereres, og artikkelen ender uten bilder for godt.
+
 ---
 
 ## Firebase / Backend

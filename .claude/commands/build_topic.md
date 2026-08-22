@@ -74,6 +74,8 @@ Each with a descriptive `alt` (5–10 words, Norwegian, concrete scene descripti
 
 Images are generated separately by running `/bilde`.
 
+Leave the placeholder blocks in the JSON. The app hides any image that does not exist (`src/utils/imageAvailability.ts`), so students never see an empty image frame, and each image appears on its own the moment `/bilde` has generated the file.
+
 ### Global Data Sync
 - Set `year` (or `date`) on the article JSON top level for timeline inclusion
 - Add new terms to `public/content/concepts/`

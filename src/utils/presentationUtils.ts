@@ -8,6 +8,7 @@ import type {
     SlidePhase,
     SlideRevealItem,
 } from '../types';
+import { isPendingImage } from './imageAvailability';
 
 /**
  * Feltene mapperen leter etter. De kan ligge rett på leksjonen, på
@@ -124,7 +125,10 @@ export const mapContentToPresentation = (
     // 3. Fallback: Hybrid Generation
     const slides: Slide[] = [];
     const title = source.title || source.learningPathData?.title || 'Uten Tittel';
-    const heroImage = source.heroImage || source.learningPathData?.heroImage || '/og-image.png';
+    // Et hero-bilde som ikke er generert ennå skal ikke bli bakgrunn på hvert
+    // eneste lysbilde - da faller vi tilbake til delingsbildet i stedet.
+    const heroCandidate = source.heroImage || source.learningPathData?.heroImage;
+    const heroImage = isPendingImage(heroCandidate) ? '/og-image.png' : heroCandidate;
     const category = source.category || 'Undervisning';
 
     // A. Intro Slide

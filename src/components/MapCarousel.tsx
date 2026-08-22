@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 import { Image } from './Image';
+import { isPendingImage } from '../utils/imageAvailability';
 
 interface MapItem {
     image: string;
@@ -14,11 +15,18 @@ interface MapCarouselProps {
     items: MapItem[];
 }
 
-export const MapCarousel: React.FC<MapCarouselProps> = ({ title, items }) => {
+export const MapCarousel: React.FC<MapCarouselProps> = ({ title, items: allItems }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-    if (!items || items.length === 0) return null;
+    // Kart som ikke er tegnet ennå skal ikke telle med: de ville gitt karusellen
+    // en tom slide og en prikk som fører til ingenting.
+    const items = React.useMemo(
+        () => (allItems || []).filter((mapItem) => !isPendingImage(mapItem.image)),
+        [allItems]
+    );
+
+    if (items.length === 0) return null;
 
     const nextSlide = () => {
         setCurrentIndex((prev) => (prev + 1) % items.length);

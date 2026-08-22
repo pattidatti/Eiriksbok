@@ -15,6 +15,24 @@ const TIMELINE_PATH = path.join(CONTENT_DIR, 'global-timeline.json');
 const TOPICS_IMAGE_DIR = path.join(__dirname, '../public/images/topics');
 const OUTPUT_PATH = path.join(CONTENT_DIR, 'global-timeline-images.json');
 
+const PUBLIC_DIR = path.join(__dirname, '../public');
+
+// Her har vi disken foran oss, så vi trenger ingen navneregel: et bilde kommer med
+// i mapsen bare hvis fila faktisk finnes. Det fanger både placeholder-markøren
+// ("/images/placeholder.webp", som med vilje ikke finnes) og skrivefeil i stier.
+// Faller eventet gjennom, arver det topic-hero, og til slutt epoke-fargestripen
+// som er laget nettopp for events uten bilde.
+function imageExists(src) {
+    if (typeof src !== 'string') return false;
+    const trimmed = src.trim();
+    if (!trimmed) return false;
+    // Eksterne bilder kan vi ikke sjekke herfra - de slippes gjennom som før.
+    if (/^https?:\/\//i.test(trimmed)) return true;
+    const cleaned = trimmed.split(/[?#]/)[0];
+    if (!cleaned.startsWith('/')) return false;
+    return fs.existsSync(path.join(PUBLIC_DIR, cleaned));
+}
+
 function resolveArticlePath(link) {
     // link forms: "/historie/vikingtiden/rikssamlingen" or
     // "/historie/vikingtiden/sub/lesson" or "/norsk/bibliotek?text=..."
@@ -37,10 +55,10 @@ function resolveArticlePath(link) {
 function readHeroImage(filePath) {
     try {
         const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        if (typeof json.heroImage === 'string' && json.heroImage.length > 0) {
+        if (imageExists(json.heroImage)) {
             return json.heroImage;
         }
-        if (typeof json.image === 'string' && json.image.length > 0) {
+        if (imageExists(json.image)) {
             return json.image;
         }
     } catch {
@@ -98,7 +116,7 @@ export function generate() {
 
     for (const event of events) {
         // 0) Explicit event image override
-        if (event.image) {
+        if (imageExists(event.image)) {
             result[event.id] = event.image;
             stats.hero += 1;
             continue;

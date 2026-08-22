@@ -63,7 +63,8 @@ Bruk AskUserQuestion ved reelle valg (hvor mye av eksisterende komponenter behol
    alias-sikkerhetsnett i komponenten (slik `ScenarioRoleplay` allerede har fått).
 4. **Bilder:** behold/legg `"heroImage": "/images/placeholder.webp"`, 3 inline placeholders med
    beskrivende norsk `alt`, og `"image": "/images/placeholder.webp"` i manifest-oppføringen. Ikke
-   generer bilder selv — det skjer senere i Antigravity.
+   generer bilder selv — det skjer senere i Antigravity. La placeholderne stå: appen skjuler
+   automatisk et bilde som ikke finnes, og viser det av seg selv når fila er generert.
 
 ### Ufravikelige designkrav
 - **Lyst tema** alltid (glassmorphism), `rounded-xl`, Lucide-ikoner. Aldri mørk default-bakgrunn.
