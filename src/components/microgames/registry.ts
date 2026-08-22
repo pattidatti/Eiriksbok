@@ -194,6 +194,7 @@ const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
 const ForbudtMote3D = lazy(() => import('./ForbudtMote3D'));
 const Forfedrehallen3D = lazy(() => import('./Forfedrehallen3D'));
+const MyraUnderByen3D = lazy(() => import('./MyraUnderByen3D'));
 const Helligdagsplikten3D = lazy(() => import('./Helligdagsplikten3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
@@ -1906,6 +1907,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 110,
         loader: () => import('./Forfedrehallen3D'),
         Component: Forfedrehallen3D as never,
+    },
+    'myra-under-byen': {
+        id: 'myra-under-byen',
+        title: 'Byen på myra',
+        description:
+            'Nevadeltaet, 1703. Tsar Peter har pekt på en sump og sagt at her skal hovedstaden ligge, men ingenting kan stå på bløt myr. Du står bak rambukken. Sikt med pekeren på en av de fem pålene og hold inne for å slå den ned mot fast bunn. Slipp innimellom, for slitasjemåleren stiger så lenge rambukken går, og blir arbeidslaget utslitt, stopper alt. Rekker du ikke alle fem før høstflommen kommer, tar Neva byggeplassen. Lyspæra: Sankt Petersburg sto ferdig i 1712 fordi rundt 40 000 tvangsarbeidere banket byen ned i en myr - Peters vindu mot vest ble betalt av folk som aldri fikk se det ferdig.',
+        estimatedSeconds: 150,
+        loader: () => import('./MyraUnderByen3D'),
+        Component: MyraUnderByen3D as never,
     },
 };
 

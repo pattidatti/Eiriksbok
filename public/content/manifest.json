@@ -3638,6 +3638,28 @@
           ]
         },
         {
+          "id": "russlands-historie",
+          "title": "Russlands historie",
+          "description": "Fra elvefarten i øst til keiserriket ved Østersjøen. Hvordan Russland ble en stormakt, og hva det kostet.",
+          "image": "/images/placeholder.webp",
+          "lessons": [
+            {
+              "id": "peter-den-store",
+              "title": "Peter den store: tsaren som snudde Russland vestover",
+              "description": "Peter reiste til Europa under falskt navn, slo Sverige og bygde en ny hovedstad i en myr - men regningen ble betalt av bøndene.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "russland",
+                "peter-den-store",
+                "stormakt",
+                "enevelde",
+                "sankt-petersburg"
+              ],
+              "createdDate": "2026-08-22T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "indias-historie",
           "title": "Indias historie",
           "image": "/images/indias-historie/mogulriket-hero.webp",

@@ -4656,6 +4656,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "peter-den-store",
+      "title": "Peter den store: tsaren som snudde Russland vestover",
+      "description": "Peter reiste til Europa under falskt navn, slo Sverige og bygde en ny hovedstad i en myr - men regningen ble betalt av bøndene.",
+      "startDate": 1682,
+      "endDate": 1725,
+      "displayDate": "1682-1725",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "russlands-historie",
+      "link": "/historie/russlands-historie/peter-den-store",
+      "tags": [
+        "russland",
+        "peter-den-store",
+        "stormakt",
+        "enevelde",
+        "sankt-petersburg"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "forfallet",
       "title": "\"Europas syke mann\"",
       "description": "Det lange forfallet etter Wien 1683: tapte kriger, Tanzimat-reformene og nasjonalisme på Balkan som gjorde riket til 'Europas kruttønne'.",
