@@ -1,0 +1,302 @@
+{
+    "id": "peter-den-store",
+    "title": "Peter den store: tsaren som snudde Russland vestover",
+    "layout": "rich",
+    "year": "1682-1725",
+    "category": "Russlands historie",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-22",
+    "details": [
+        "Peter var tsar fra 1682 til 1725, og fra 1721 kalte han seg keiser",
+        "I 1697 reiste han til Vest-Europa under falskt navn og jobbet som skipstømmermann i Nederland",
+        "Han slo Sverige i den store nordiske krigen og gjorde Russland til stormakt i Nord-Europa",
+        "Sankt Petersburg ble bygd i en myr av rundt 40 000 tvangsarbeidere",
+        "Reformene gjorde staten sterk, men bøndene fikk tyngre skatt og mindre frihet"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Sommeren 1697 kom det en kjempe til skipsverftet i Nederland. Han var over to meter høy, snakket dårlig nederlandsk og kalte seg sersjant Pjotr Mikhailovitsj. Han bar tømmer, svingte øks og lærte å bygge skip sammen med de andre arbeiderne. Det de fleste ikke visste, var at mannen i arbeidsklær var tsar over verdens største land. Peter hadde reist hjemmefra for å lære av Europa med sine egne hender (Goplen & Myklebost, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ung tsar i arbeidsklær på et nederlandsk skipsverft",
+            "caption": "Peter ville ikke bare lese om skipsbygging. Han ville kjenne verktøyet i hånda."
+        },
+        {
+            "type": "header",
+            "text": "Gutten som vokste opp utenfor makten"
+        },
+        {
+            "type": "text",
+            "content": "Peter ble født i Moskva i 1672. Bare ti år gammel ble han utropt til tsar, altså keiser over Russland. Men han fikk ikke styre. Halvsøsteren Sofia tok den virkelige makten, og Peter og moren måtte flytte ut av Kreml til landsbyen Preobrazjenskoje utenfor byen (Goplen & Myklebost, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det ble avgjørende. Rett ved landsbyen lå en koloni der utlendinger fikk lov til å bo. Der møtte gutten nederlandske og tyske håndverkere, soldater og handelsmenn. Han så verktøy, skip og maskiner han aldri hadde sett i Moskva. Interessen for det Vest-Europa kunne, ble tent nettopp der (Goplen & Myklebost, 2026). Da Sofia mistet makten i 1689, satt Russland plutselig med en hersker som var mer opptatt av verft enn av gamle hoffskikker."
+        },
+        {
+            "type": "header",
+            "text": "Reisen som forandret alt"
+        },
+        {
+            "type": "text",
+            "content": "I 1697 og 1698 dro Peter på en lang reise gjennom Vest-Europa. Følget var på rundt 250 personer, og tsaren selv reiste inkognito, det vil si under falskt navn. Han arbeidet som skipstømmermann i Nederland, studerte matematikk og astronomi, kjøpte verktøy og instrumenter og hyret inn engelske og nederlandske håndverkere som kunne bli med hjem. Han besøkte fabrikker, skoler og museer, og han satt til og med og hørte på en debatt i det britiske parlamentet (Goplen & Myklebost, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Hjemreisen ble brå. Gardemusketerene, kalt strelitsene, hadde gjort opprør mens han var borte. Peter kom hjem til et oppgjør som viser hvor hardt han var villig til å slå: rundt 2000 av dem ble henrettet, og hele korpset ble oppløst. I stedet begynte han som den første russiske herskeren å bygge opp en fast, øvd hær (Goplen & Myklebost, 2026). Fra nå av skulle Russland styres og forsvares på europeisk vis, enten folk ville eller ikke."
+        },
+        {
+            "type": "component",
+            "name": "TsarensDekreter",
+            "props": {
+                "title": "Tsarens dekreter",
+                "lead": "Klikk et dekret for å signere det, og se hva som skjer med begge stripene.",
+                "target": 70,
+                "conclusion": "Russland ble en stormakt. Se på den nederste stripa: den steg like fort. Peter fikk aldri det ene uten det andre.",
+                "decrees": [
+                    {
+                        "id": "haer",
+                        "year": "1698",
+                        "title": "Ny hær etter vestlig mønster",
+                        "gain": "Russland får en fast, øvd hær i stedet for gardemusketerer.",
+                        "cost": "Bøndene må stille sønnene sine som soldater.",
+                        "power": 18,
+                        "burden": 15
+                    },
+                    {
+                        "id": "krig",
+                        "year": "1700",
+                        "title": "Krig om Østersjøen",
+                        "gain": "Russland kjemper seg fram til havet og en vei til Europa.",
+                        "cost": "Krigen varer i 21 år og koster titusener av liv.",
+                        "power": 22,
+                        "burden": 20
+                    },
+                    {
+                        "id": "by",
+                        "year": "1703",
+                        "title": "Ny hovedstad i myra",
+                        "gain": "Sankt Petersburg blir Russlands vindu mot vest.",
+                        "cost": "Rundt 40 000 tvangsarbeidere graver byen fram av sumpen.",
+                        "power": 18,
+                        "burden": 24
+                    },
+                    {
+                        "id": "stat",
+                        "year": "1711",
+                        "title": "Senat og nye kontorer",
+                        "gain": "Staten får et styringsapparat som virker uten tsaren til stede.",
+                        "cost": "Flere embetsmenn må lønnes, og skattene stiger.",
+                        "power": 14,
+                        "burden": 9
+                    },
+                    {
+                        "id": "kirke",
+                        "year": "1721",
+                        "title": "Kirken under staten",
+                        "gain": "Ingen kirkeleder kan lenger si nei til tsaren.",
+                        "cost": "Kirken mister sin egen stemme i samfunnet.",
+                        "power": 12,
+                        "burden": 10
+                    },
+                    {
+                        "id": "rang",
+                        "year": "1722",
+                        "title": "Rangtabellen",
+                        "gain": "Du klatrer på tjenesten din, ikke på familienavnet ditt.",
+                        "cost": "Adelen får tvungen tjenesteplikt, og bøndene får ingen stige.",
+                        "power": 16,
+                        "burden": 18
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "Landet uten havn"
+        },
+        {
+            "type": "text",
+            "content": "Russland var enormt, men nesten innestengt. Landet manglet gode utganger til havet både i sør og i nordvest, og uten havner er det vanskelig å handle med resten av verden. Å skaffe Russland kyst ble derfor hovedmålet i utenrikspolitikken. I 1696 tok Peter festningen Azov i sør, og i 1698 gikk han sammen med den polske kongen August 2. og Danmark-Norge om et felles angrep på Sverige (Goplen & Myklebost, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Slik startet den store nordiske krigen, som varte fra 1700 til 1721. Det begynte katastrofalt for Peter. Ved Narva høsten 1700 slo den svenske kongen [Karl 12. tilbake en russisk hær som var langt større enn hans egen](/historie/sveriges-historie/stormaktstiden). Men Karl snudde seg mot Polen etterpå, og det ga Peter pusterommet han trengte til å bygge opp hæren og ta svenske områder ved Østersjøen (Goplen & Myklebost, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Slagmark med rader av soldater og røyk foran en festning",
+            "caption": "27. juni 1709 møttes Karl 12. og Peter ved Poltava. Der snudde krigen for godt."
+        },
+        {
+            "type": "text",
+            "content": "Vendepunktet kom ved Poltava i Ukraina 27. juni 1709. Peter knuste den svenske hæren, og to tredeler av Karls egne soldater døde av frost og sult under felttoget (Viken, 2026). Ved freden i Nystad i 1721 fikk Russland de fleste av de svenske områdene ved Østersjøen. Sverige var ikke lenger stormakt i Norden. Det var Russland (Goplen & Myklebost, 2026). Samme år la Peter bort den gamle tsartittelen og kalte seg keiser, som et signal til hele Europa om at Russland nå regnet seg som likemann (Moe & Nielsen, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Byen i myra"
+        },
+        {
+            "type": "text",
+            "content": "Mens krigen pågikk, gjorde Peter noe som virket vanvittig. I 1703 anla han en festning på en øy i elva Neva, og rundt den begynte han å bygge en helt ny hovedstad: Sankt Petersburg. Stedet var sumpmark, altså bløt og våt myr der ingenting kan stå av seg selv. Alt måtte hvile på påler som ble banket ned til fast bunn (Holm-Hansen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Byen sto ferdig i 1712, bygd av rundt 40 000 tvangsarbeidere. Det var bønder og soldater som ble hentet inn med makt, og arbeidet krevde tusenvis av liv (Holm-Hansen, 2025). Samme år flyttet Peter hovedstaden fra Moskva til den nye byen (Moe & Nielsen, 2026). Valget var ikke tilfeldig. Moskva var det gamle Russland med sine tradisjoner. Sankt Petersburg lå ved havet, vendt mot Europa, og var bygd fra bunnen av slik tsaren ville ha den."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "myra-under-byen"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvem betalte regningen?"
+        },
+        {
+            "type": "text",
+            "content": "Peter bygde også om selve staten. Riket ble delt i åtte guvernementer, altså store fylker, og et senat overtok for det gamle rådet av stormenn. Kirken ble lagt under staten gjennom et råd som tsaren selv utnevnte, og dermed fantes det ingen som kunne si ham imot i Guds navn (Goplen & Myklebost, 2026). Dette er [enevelde, der én person har all makt alene](/historie/dansketiden/eneveldet), akkurat som kongen hadde i Danmark-Norge på samme tid."
+        },
+        {
+            "type": "text",
+            "content": "I 1722 kom rangtabellen. Den delte all statstjeneste inn i tre stiger med fjorten trinn hver: én for forvaltningen, én for militæret og én for hoffet. Klatret du høyt nok, ble du adelig, uansett hvilken familie du kom fra. Samtidig fikk den gamle adelen tjenesteplikt, noe den slapp i Vest-Europa (Moe & Nielsen, 2026). Det var altså mulig å stige, men bare hvis du allerede var innenfor."
+        },
+        {
+            "type": "text",
+            "content": "Bøndene, som var det store flertallet, klatret ingen steder. Under Peter ble de enda mer avhengige av godseierne sine, og alle måtte betale den samme koppskatten, en fast sum per person uansett hvor lite du eide. Bondestanden bar nesten hele skattebyrden og hadde svak beskyttelse i loven (Moe & Nielsen, 2026). Staten ble sterkere. Livet nederst ble tyngre."
+        },
+        {
+            "type": "text",
+            "content": "Regningen nådde helt til Norge. Den store nordiske krigen var den lengste og dødeligste krigen Norge har vært med i (Viken, 2026). I Bergen stift ble 9 153 mann skrevet ut til soldattjeneste, omtrent 20 prosent av mennene. Regner vi likt for hele landet, ble rundt 50 000 nordmenn kalt inn. I tillegg kom store ekstraskatter: en koppskatt og egne skatter på parykker, hester og tjenestefolk. De fleste soldatene døde ikke i kamp, men av sykdom (Teige, 2015)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Norske bønder som møter fram til soldatutskrivning i en bygd",
+            "caption": "Krigen om Østersjøen ble også en norsk krig. Rundt 50 000 mann ble skrevet ut til tjeneste."
+        },
+        {
+            "type": "header",
+            "text": "Arven etter Peter"
+        },
+        {
+            "type": "text",
+            "content": "Peter døde i 1725, i byen han selv hadde reist opp av myra. Han regnes som det moderne Russlands far (Goplen & Myklebost, 2026). På under førti år hadde han gjort et land som mange i Europa knapt tenkte på, til en makt ingen kunne overse."
+        },
+        {
+            "type": "text",
+            "content": "Men han gjorde det ovenfra og med tvang. Ingen spurte bøndene om de ville betale for flåten, byen og krigen. Det er derfor Peter er så omstridt: han er både mannen som åpnet Russland mot verden, og mannen som viste hvor mye en stat kan kreve av folket sitt når den vil noe fort."
+        },
+        {
+            "type": "text",
+            "content": "Historien om ham lever fortsatt. Russland forteller om seg selv som et land som alltid har vært stort, og [Peter er en av hovedpersonene i den fortellingen](/historie/nasjonalstatenes-tid/nasjonenes-gullaldre). Røttene stikker enda lenger tilbake, til [vikingene som rodde østover langs elvene og ga navn til riket](/historie/vikingtiden/veien-mot-ost). Men det var Peter som ga Russland en havn, en hovedstad og en plass ved bordet i Europa."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor gammel var Peter da han ble utropt til tsar, og hvem styrte egentlig landet de første årene?",
+                    "Hva gjorde Peter på reisen til Vest-Europa i 1697 og 1698?",
+                    "Hvilke to slag i den store nordiske krigen nevnes i teksten, og hvordan gikk de for Russland?",
+                    "Hva var rangtabellen fra 1722, og hvor mange trinn hadde hver stige?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor det var så viktig for Russland å få en havn ved Østersjøen.",
+                    "Peter bygde hovedstaden sin i en myr i stedet for å bli i Moskva. Hva ville han oppnå med det?",
+                    "I «Tsarens dekreter» så du to striper vokse samtidig. Velg ett av dekretene og forklar hvem som tjente på det, og hvem som betalte.",
+                    "Teksten sier at Peter er omstridt. Hva er de beste argumentene for og mot ham?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign Peters enevelde med eneveldet i Danmark-Norge. Skriv fem setninger om hva som ligner og hva som er ulikt.",
+                    "Diskuter i klassen: Kan store forandringer i et samfunn gjennomføres uten at noen betaler en høy pris? Finn et eksempel fra vår egen tid.",
+                    "Skriv et kort brev fra en norsk bondesønn som er skrevet ut til soldattjeneste i 1716. Hva tenker han om en krig som startet i Russland?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva gjorde Peter under reisen til Vest-Europa i 1697?",
+                        "options": [
+                            "Han forhandlet fram fred med Sverige",
+                            "Han arbeidet som skipstømmermann i Nederland under falskt navn",
+                            "Han studerte teologi ved et kloster i Roma",
+                            "Han giftet seg med en engelsk prinsesse"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Peter reiste inkognito som «sersjant Pjotr Mikhailovitsj» og lærte skipsbygging med hendene."
+                    },
+                    {
+                        "question": "Hvilket slag var vendepunktet i den store nordiske krigen?",
+                        "options": [
+                            "Narva i 1700",
+                            "Azov i 1696",
+                            "Poltava i 1709",
+                            "Nystad i 1721"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Ved Poltava 27. juni 1709 knuste Peter den svenske hæren. Etter det var Russland den sterkeste makten i Norden."
+                    },
+                    {
+                        "question": "Hvorfor måtte Sankt Petersburg bygges på påler?",
+                        "options": [
+                            "Fordi byen ble bygd på sumpmark i Nevadeltaet",
+                            "Fordi det var billigere enn stein",
+                            "Fordi tsaren ville ha en by som kunne flyttes",
+                            "Fordi husene skulle stå over snøen om vinteren"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Grunnen var bløt myr. Alt måtte hvile på påler som ble banket ned til fast bunn."
+                    },
+                    {
+                        "question": "Hva betydde rangtabellen fra 1722?",
+                        "options": [
+                            "At bøndene ble fri fra godseierne",
+                            "At kirken fikk bestemme over tsaren",
+                            "At bare gammel adel kunne få statsstillinger",
+                            "At du kunne stige i rang og bli adelig gjennom tjeneste"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Rangtabellen ga tre karrierestiger med fjorten trinn hver. Tjenesten avgjorde, ikke familienavnet."
+                    },
+                    {
+                        "question": "Hva betydde den store nordiske krigen for Norge?",
+                        "options": [
+                            "Norge slapp unna både soldatutskrivning og skatt",
+                            "Det ble den lengste og dødeligste krigen Norge har vært med i",
+                            "Norge ble en del av Russland",
+                            "Krigen ga Norge egen konge"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Rundt 50 000 mann ble skrevet ut, ekstraskattene var tunge, og de fleste døde av sykdom."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Goplen, Å. & Myklebost, K. A. (2026). *Peter den store*. Store norske leksikon. Hentet 22.08.2026 fra [snl.no/Peter_den_store](https://snl.no/Peter_den_store)",
+                    "Holm-Hansen, J. (2025). *St. Petersburg*. Store norske leksikon. Hentet 22.08.2026 fra [snl.no/St._Petersburg](https://snl.no/St._Petersburg)",
+                    "Moe, A. & Nielsen, J. P. (2026). *Det russiske keiserdømmet fra 1721 til 1917*. Store norske leksikon. Hentet 22.08.2026 fra [snl.no/Det_russiske_keiserdømmet_fra_1721_til_1917](https://snl.no/Det_russiske_keiserd%C3%B8mmet_fra_1721_til_1917)",
+                    "Teige, O. (2015). *Krigsbyrder i Norge under den store nordiske krig*. Norgeshistorie.no, Universitetet i Oslo. Hentet 22.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/enevelde/1226-krigsbyrder-i-norge-under-store-nordiske-krig.html)",
+                    "Viken, Ø. L. I. (2026). *Den store nordiske krigen*. Store norske leksikon. Hentet 22.08.2026 fra [snl.no/den_store_nordiske_krigen](https://snl.no/den_store_nordiske_krigen)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
