@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ERAS, getEraForYear } from '../data/timelineEras';
 import type { GlobalTimelineEvent } from '../types';
+import { isPendingImage } from '../utils/imageAvailability';
 
 const FALLBACK_ERA = ERAS[ERAS.length - 1];
 
@@ -16,7 +17,13 @@ function loadImageMap(): Promise<Record<string, string>> {
     inflight = fetch('/content/global-timeline-images.json')
         .then((r) => (r.ok ? r.json() : {}))
         .then((data) => {
-            cache = data && typeof data === 'object' ? (data as Record<string, string>) : {};
+            const raw = data && typeof data === 'object' ? (data as Record<string, string>) : {};
+            // Vask bort bilder som ikke er generert ennå én gang, her ved lastingen.
+            // Da slipper hver forbruker å huske på det, og eventet får epoke-
+            // fargestripen sin i stedet for en brutt bilderamme.
+            cache = Object.fromEntries(
+                Object.entries(raw).filter(([, src]) => !isPendingImage(src))
+            );
             return cache;
         })
         .catch(() => {

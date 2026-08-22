@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import { PlaceholderImage } from './PlaceholderImage';
+import { isPendingImage } from '../utils/imageAvailability';
 
 interface ImageWithFallbackProps {
     src?: string;
     alt: string;
     seed: string;
     className?: string;
+    /** Vis ingenting i stedet for det genererte mønsteret når bildet mangler. */
+    hideWhenMissing?: boolean;
 }
 
-export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({ src, alt, seed, className = '' }) => {
+export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
+    src,
+    alt,
+    seed,
+    className = '',
+    hideWhenMissing = false,
+}) => {
     const [error, setError] = useState(false);
 
     // Nullstill feilen når src endres. Justeres under render i stedet for i en
@@ -20,7 +29,10 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({ src, alt, 
         setError(false);
     }
 
-    if (!src || error) {
+    // Placeholder-markøren kjennes igjen på stien, så vi ber aldri om en fil vi
+    // vet ikke finnes. `error` fanger alt annet som ikke lot seg laste.
+    if (isPendingImage(src) || error) {
+        if (hideWhenMissing) return null;
         return <PlaceholderImage seed={seed} className={className} />;
     }
 

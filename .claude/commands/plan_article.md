@@ -148,6 +148,7 @@ Focus on the "Bones" of the JSON structure.
   ```json
   { "type": "image", "src": "/images/placeholder.webp", "alt": "Norske vikingskip i havn, 900-tallet", "caption": "Langskip brukt på raids" }
   ```
+  Placeholder-blokkene skal bli stående i JSON-en: appen skjuler automatisk et bilde som ikke finnes (`src/utils/imageAvailability.ts`), så eleven ser ingen tom bilderamme, og bildet dukker opp av seg selv når `/bilde` har generert fila.
 
 ### 3. Global Data Sync
 - **Timeline:** Sett `year` (eller `date`) på artikkel-JSON-objektet for at artikkelen skal havne i `/tidslinje`. Sub-events for samme artikkel legges i artikkelens egen `timeline[]`-array. `global-timeline.json` regenereres automatisk av `npm run scan:content` — **ikke rediger fila direkte**. Hand-kuraterte events uten tilhørende leksjon legges i `public/content/global-timeline.manual.json`.

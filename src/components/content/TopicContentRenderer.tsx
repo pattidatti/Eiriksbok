@@ -4,7 +4,7 @@ import { FactBox } from '../FactBox';
 import { Comparison } from '../Comparison';
 import { TimelineComponent } from '../TimelineComponent';
 import { GlossaryText } from '../GlossaryText';
-import { Image } from '../Image';
+import { ArticleImage } from '../ArticleImage';
 import { QuoteBlock } from '../QuoteBlock';
 import { GrammarRuleCard } from './interactive/GrammarRuleCard';
 import { WritingFix } from '../WritingFix';
@@ -101,23 +101,17 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                         );
 
                     case 'image':
+                        // ArticleImage returnerer null når bildet ikke finnes ennå, så
+                        // hverken ramme eller bildetekst blir stående igjen.
                         return (
-                            <motion.div key={index} variants={item} className="my-8">
-                                <figure className="rounded-xl overflow-hidden shadow-lg bg-surface-card border border-slate-100">
-                                    <div className="aspect-video w-full relative">
-                                        <Image
-                                            src={block.url || block.src}
-                                            alt={block.alt || block.caption || 'Article image'}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    {block.caption && (
-                                        <figcaption className="p-4 text-sm text-slate-500 bg-slate-50 border-t border-slate-100 italic">
-                                            {block.caption}
-                                        </figcaption>
-                                    )}
-                                </figure>
-                            </motion.div>
+                            <ArticleImage
+                                key={index}
+                                variant="framed"
+                                motionVariants={item}
+                                src={block.url || block.src}
+                                alt={block.alt || block.caption || 'Article image'}
+                                caption={block.caption}
+                            />
                         );
 
                     case 'component': {

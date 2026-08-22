@@ -8,6 +8,7 @@ import type { Concept, ContentBlock, RawContentBlock } from '../types';
 import { CONTENT_BLOCK_TYPES } from '../types';
 import { renderInlineMarkdown } from './markdownUtils';
 import { getArticleHeadings } from '../utils/articleHeadings';
+import { ArticleImage } from './ArticleImage';
 
 // Eldre innhold fra GraphQL-laget hadde blokk-typen i __typename.
 const LEGACY_TYPENAMES: Record<string, ContentBlock['type']> = {
@@ -493,28 +494,16 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                     }
 
                     case 'image': {
-                        const imgStyle = b.width ? { width: b.width } : {};
-                        // Use inline style to override w-full if width is provided.
-                        // We keep w-full as base class for responsiveness if no width is set,
-                        // but inline width will take precedence.
-
+                        // ArticleImage fjerner hele figuren når bildet ikke finnes ennå,
+                        // i stedet for å etterlate en brutt bilderamme i teksten.
                         return (
-                            <figure key={index} className={`my-8 ${b.width ? 'flex flex-col items-center' : ''}`}>
-                                <img
-                                    src={b.src}
-                                    alt={b.alt || ''}
-                                    loading="lazy"
-                                    className="w-full rounded-xl shadow-lg"
-                                    // 'auto 16 / 9' reserverer 16:9-plass FØR lasting (unngår
-                                    // layout-hopp); etter lasting gjelder bildets egne proporsjoner.
-                                    style={{ aspectRatio: 'auto 16 / 9', ...imgStyle }}
-                                />
-                                {b.caption && (
-                                    <figcaption className="mt-2 text-center text-sm text-gray-400 italic">
-                                        {b.caption}
-                                    </figcaption>
-                                )}
-                            </figure>
+                            <ArticleImage
+                                key={index}
+                                src={b.src}
+                                alt={b.alt}
+                                caption={b.caption}
+                                width={b.width}
+                            />
                         );
                     }
 

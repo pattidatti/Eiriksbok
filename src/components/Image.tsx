@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PlaceholderImage } from './PlaceholderImage';
+import { isPendingImage } from '../utils/imageAvailability';
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     src?: string;
@@ -11,6 +12,10 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     // bildet er lastet så layouten ikke hopper (CLS). Bruk der wrapperen ikke
     // får fast høyde via className.
     aspectRatio?: string;
+    // Hva skal skje når bildet ikke finnes? Standard er det genererte mønsteret,
+    // som er riktig der en tom flate ville brutt layouten (kort, hero, karusell).
+    // Sett `true` der ingenting er bedre enn noe - da forsvinner elementet helt.
+    hideWhenMissing?: boolean;
 }
 
 export const Image: React.FC<ImageProps> = ({
@@ -20,6 +25,7 @@ export const Image: React.FC<ImageProps> = ({
     className = '',
     priority = false,
     aspectRatio,
+    hideWhenMissing = false,
     ...props
 }) => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -74,8 +80,10 @@ export const Image: React.FC<ImageProps> = ({
 
     const wrapperStyle = aspectRatio ? { aspectRatio } : undefined;
 
-    // If no src or error, show placeholder
-    if (!currentSrc || error) {
+    // Bildet finnes ikke: enten en placeholder-markør (kjent på strengen alene,
+    // så vi slipper 404-runden og blinket), eller en sti som feilet ved lasting.
+    if (isPendingImage(currentSrc) || error) {
+        if (hideWhenMissing) return null;
         return (
             <div className={`relative overflow-hidden bg-slate-100 ${className}`} style={wrapperStyle}>
                 <PlaceholderImage seed={seed || alt} className="w-full h-full object-cover" />

@@ -15,6 +15,20 @@ const TIMELINE_PATH = path.join(CONTENT_DIR, 'global-timeline.json');
 const TOPICS_IMAGE_DIR = path.join(__dirname, '../public/images/topics');
 const OUTPUT_PATH = path.join(CONTENT_DIR, 'global-timeline-images.json');
 
+// Speiler isPendingImage() i src/utils/imageAvailability.ts. Artikler som venter på
+// bildegenerering har heroImage = "/images/placeholder.webp" - en fil som med vilje
+// ikke finnes. Slike stier skal aldri inn i bilde-mapsen: da faller eventet videre
+// til topic-hero, og til slutt til epoke-fargestripen som er laget nettopp for
+// events uten bilde.
+const PENDING_IMAGE_PATTERN = /(^|\/)placeholder(-\w+)?\.(webp|png|jpe?g|avif)$/i;
+
+function isPendingImage(src) {
+    if (typeof src !== 'string') return true;
+    const trimmed = src.trim();
+    if (!trimmed) return true;
+    return PENDING_IMAGE_PATTERN.test(trimmed.split(/[?#]/)[0]);
+}
+
 function resolveArticlePath(link) {
     // link forms: "/historie/vikingtiden/rikssamlingen" or
     // "/historie/vikingtiden/sub/lesson" or "/norsk/bibliotek?text=..."
@@ -37,10 +51,10 @@ function resolveArticlePath(link) {
 function readHeroImage(filePath) {
     try {
         const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        if (typeof json.heroImage === 'string' && json.heroImage.length > 0) {
+        if (!isPendingImage(json.heroImage)) {
             return json.heroImage;
         }
-        if (typeof json.image === 'string' && json.image.length > 0) {
+        if (!isPendingImage(json.image)) {
             return json.image;
         }
     } catch {
@@ -98,7 +112,7 @@ export function generate() {
 
     for (const event of events) {
         // 0) Explicit event image override
-        if (event.image) {
+        if (!isPendingImage(event.image)) {
             result[event.id] = event.image;
             stats.hero += 1;
             continue;
