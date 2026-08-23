@@ -3656,6 +3656,20 @@
                 "sankt-petersburg"
               ],
               "createdDate": "2026-08-22T00:00:00Z"
+            },
+            {
+              "id": "katarina-den-store",
+              "title": "Katarina den store: keiserinnen mellom idealer og makt",
+              "description": "Hun skrev til opplysningsfilosofene om frihet og fornuft, og gjorde samtidig livegenskapet sterkere. Hver gang idealene kolliderte med makten, valgte hun makten.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "russland",
+                "katarina-den-store",
+                "opplyst-enevelde",
+                "livegenskap",
+                "1700-tallet"
+              ],
+              "createdDate": "2026-08-23T00:00:00Z"
             }
           ]
         },

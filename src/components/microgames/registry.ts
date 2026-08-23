@@ -196,6 +196,7 @@ const ForbudtMote3D = lazy(() => import('./ForbudtMote3D'));
 const Forfedrehallen3D = lazy(() => import('./Forfedrehallen3D'));
 const MyraUnderByen3D = lazy(() => import('./MyraUnderByen3D'));
 const Helligdagsplikten3D = lazy(() => import('./Helligdagsplikten3D'));
+const PotemkinFerden3D = lazy(() => import('./PotemkinFerden3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -1916,6 +1917,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./MyraUnderByen3D'),
         Component: MyraUnderByen3D as never,
+    },
+    'potemkin-ferden-3d': {
+        id: 'potemkin-ferden-3d',
+        title: 'Ferden nedover Dnepr',
+        description:
+            'Du står på dekket av Katarina den stores lystbåt i 1787. Landsby etter landsby glir forbi på bredden, og tre av dem er bare malte plater som er reist for å bli sett fra elva. Vent til synsvinkelen åpner seg, og rop ut kulissene før de sklir forbi - eleven kjenner selv at en fasade bare holder fra ett eneste ståsted.',
+        estimatedSeconds: 120,
+        loader: () => import('./PotemkinFerden3D'),
+        Component: PotemkinFerden3D as never,
     },
 };
 
