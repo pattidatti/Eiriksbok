@@ -926,6 +926,10 @@
       "count": 22
     },
     {
+      "tag": "1700-tallet",
+      "count": 22
+    },
+    {
       "tag": "doctrinal",
       "count": 22
     },
@@ -947,10 +951,6 @@
     },
     {
       "tag": "renessansen",
-      "count": 20
-    },
-    {
-      "tag": "1700-tallet",
       "count": 20
     },
     {
@@ -2515,6 +2515,18 @@
     },
     {
       "tag": "ledelse",
+      "count": 2
+    },
+    {
+      "tag": "katarina-den-store",
+      "count": 2
+    },
+    {
+      "tag": "opplyst-enevelde",
+      "count": 2
+    },
+    {
+      "tag": "livegenskap",
       "count": 2
     },
     {

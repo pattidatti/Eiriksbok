@@ -4989,6 +4989,30 @@
       ]
     },
     {
+      "id": "katarina-den-store",
+      "title": "Katarina den store: keiserinnen mellom idealer og makt",
+      "description": "Hun skrev til opplysningsfilosofene om frihet og fornuft, og gjorde samtidig livegenskapet sterkere. Hver gang idealene kolliderte med makten, valgte hun makten.",
+      "startDate": 1762,
+      "endDate": 1796,
+      "displayDate": "1762-1796",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "russlands-historie",
+      "link": "/historie/russlands-historie/katarina-den-store",
+      "tags": [
+        "russland",
+        "katarina-den-store",
+        "opplyst-enevelde",
+        "livegenskap",
+        "1700-tallet"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "napoleon",
       "title": "Napoleon Bonaparte",
       "description": "Fra korsikansk soldat til keiser til eksil på Sankt Helena: hvordan Napoleon var både reformator og diktator, og hvorfor Code Civil overlevde ham.",

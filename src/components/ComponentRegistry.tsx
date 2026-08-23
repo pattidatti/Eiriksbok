@@ -460,6 +460,7 @@ const DemokratietFaller = lazy(() => import('./content/interactive/DemokratietFa
 const VeienTilFrihet = lazy(() => import('./content/interactive/VeienTilFrihet').then(m => ({ default: m.VeienTilFrihet })));
 const MonokulturAkeren = lazy(() => import('./content/interactive/MonokulturAkeren').then(m => ({ default: m.MonokulturAkeren })));
 const TsarensDekreter = lazy(() => import('./content/interactive/TsarensDekreter').then(m => ({ default: m.TsarensDekreter })));
+const KatarinasValg = lazy(() => import('./content/interactive/KatarinasValg').then(m => ({ default: m.KatarinasValg })));
 
 // Mikrospill: lett, embeddbart spill inline i artikkel. gameId-prop velger spillet
 // fra mikrospill-registeret (src/components/microgames/registry.ts).
@@ -962,6 +963,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     DemokratietFaller,
     MonokulturAkeren,
     TsarensDekreter,
+    KatarinasValg,
 };
 
 export const getComponent = (name: string) => {
