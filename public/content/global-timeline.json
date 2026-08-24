@@ -4060,6 +4060,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "ivan-den-grusomme",
+      "title": "Ivan den grusomme: tsaren som fjernet alle som kunne si nei",
+      "description": "Ivan 4. tok tittelen tsar i 1547, delte riket i to og knekte adelen. Da han døde, satt han igjen med all makt og et land som ikke lenger kunne styres.",
+      "startDate": 1533,
+      "endDate": 1584,
+      "displayDate": "1533-1584",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "russlands-historie",
+      "link": "/historie/russlands-historie/ivan-den-grusomme",
+      "tags": [
+        "russland",
+        "ivan-den-grusomme",
+        "tsar",
+        "opritsjnina",
+        "enevelde",
+        "1500-tallet"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "reformasjonen-i-norge",
       "title": "Reformasjonen i Norge",
       "description": "Hvordan en dansk konge tvang fram protestantismen i Norge i 1537 — og samtidig avskaffet det norske riket.",

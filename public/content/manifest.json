@@ -3644,6 +3644,21 @@
           "image": "/images/placeholder.webp",
           "lessons": [
             {
+              "id": "ivan-den-grusomme",
+              "title": "Ivan den grusomme: tsaren som fjernet alle som kunne si nei",
+              "description": "Ivan 4. tok tittelen tsar i 1547, delte riket i to og knekte adelen. Da han døde, satt han igjen med all makt og et land som ikke lenger kunne styres.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "russland",
+                "ivan-den-grusomme",
+                "tsar",
+                "opritsjnina",
+                "enevelde",
+                "1500-tallet"
+              ],
+              "createdDate": "2026-08-24T00:00:00Z"
+            },
+            {
               "id": "peter-den-store",
               "title": "Peter den store: tsaren som snudde Russland vestover",
               "description": "Peter reiste til Europa under falskt navn, slo Sverige og bygde en ny hovedstad i en myr - men regningen ble betalt av bøndene.",

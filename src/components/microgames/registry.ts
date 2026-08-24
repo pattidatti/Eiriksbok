@@ -33,6 +33,7 @@ const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
 const Taakegrensa3D = lazy(() => import('./Taakegrensa3D'));
+const RiketDeltITo = lazy(() => import('./RiketDeltITo'));
 const Gudsformer3D = lazy(() => import('./Gudsformer3D'));
 const AnandKaraj3D = lazy(() => import('./AnandKaraj3D'));
 const LangarKjokkenet3D = lazy(() => import('./LangarKjokkenet3D'));
@@ -1026,6 +1027,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./Taakegrensa3D'),
         Component: Taakegrensa3D as never,
+    },
+    'riket-delt-i-to': {
+        id: 'riket-delt-i-to',
+        title: 'Riket delt i to',
+        description:
+            'Ivan den grusomme tok en tredjedel av Russland som sitt private område i 1565. Klikk de fire adelsgodsene inn i opritsjninaen. Tar du en bondelandsby i stedet, stiger uroen - og blir uroen full, faller riket sammen.',
+        estimatedSeconds: 150,
+        loader: () => import('./RiketDeltITo'),
+        Component: RiketDeltITo as never,
     },
     'anand-karaj-3d': {
         id: 'anand-karaj-3d',
