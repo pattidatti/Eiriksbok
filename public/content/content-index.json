@@ -1,5 +1,5 @@
 {
-  "buildId": 262169955933033,
+  "buildId": 136069666694886,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2822,6 +2822,9 @@
     ],
     "vestromerrikets-fall": [
       "content/historie/romerriket/vestromerrikets-fall.json"
+    ],
+    "ivan-den-grusomme": [
+      "content/historie/russlands-historie/ivan-den-grusomme.json"
     ],
     "katarina-den-store": [
       "content/historie/russlands-historie/katarina-den-store.json"
@@ -5662,6 +5665,7 @@
     "historie/romerriket/romerske-guder": "content/historie/romerriket/romerske-guder.json",
     "historie/romerriket/romerske-keisere": "content/historie/romerriket/romerske-keisere.json",
     "historie/romerriket/vestromerrikets-fall": "content/historie/romerriket/vestromerrikets-fall.json",
+    "historie/russlands-historie/ivan-den-grusomme": "content/historie/russlands-historie/ivan-den-grusomme.json",
     "historie/russlands-historie/katarina-den-store": "content/historie/russlands-historie/katarina-den-store.json",
     "historie/russlands-historie/peter-den-store": "content/historie/russlands-historie/peter-den-store.json",
     "historie/sveriges-historie/gustav-vasa": "content/historie/sveriges-historie/gustav-vasa.json",

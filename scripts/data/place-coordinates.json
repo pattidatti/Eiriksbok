@@ -1114,6 +1114,10 @@
       "count": 10
     },
     {
+      "tag": "1500-tallet",
+      "count": 10
+    },
+    {
       "tag": "auschwitz",
       "count": 10
     },
@@ -1199,10 +1203,6 @@
     },
     {
       "tag": "dansketiden",
-      "count": 8
-    },
-    {
-      "tag": "1500-tallet",
       "count": 8
     },
     {
@@ -1419,6 +1419,10 @@
     },
     {
       "tag": "makt",
+      "count": 5
+    },
+    {
+      "tag": "enevelde",
       "count": 5
     },
     {
@@ -1807,10 +1811,6 @@
     },
     {
       "tag": "global-historie",
-      "count": 3
-    },
-    {
-      "tag": "enevelde",
       "count": 3
     },
     {
@@ -2359,6 +2359,18 @@
     },
     {
       "tag": "mogulriket",
+      "count": 2
+    },
+    {
+      "tag": "ivan-den-grusomme",
+      "count": 2
+    },
+    {
+      "tag": "tsar",
+      "count": 2
+    },
+    {
+      "tag": "opritsjnina",
       "count": 2
     },
     {
