@@ -19,6 +19,7 @@ import {
     type LessonTagIndex,
 } from './interest';
 import { mulberry32, shuffleWithinTiers, weightedSample } from './rng';
+import { todayLocal } from '../../../utils/reviewScheduler';
 
 export type RecommendationType =
     | 'path'
@@ -325,6 +326,21 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
             score: 90,
         });
     });
+
+    // 2c. Dagens kryssord - en kort, daglig runde med begreper og personer.
+    // Faller bort så snart eleven har løst dagens brett; spillet logger det som
+    // practice-game med activityId «kryssord-dagens-<dato>».
+    const crosswordDay = todayLocal();
+    if (!firstCompletions[`practice-game:kryssord-dagens-${crosswordDay}`]) {
+        recs.push({
+            id: `crossword-${crosswordDay}`,
+            type: 'game',
+            title: 'Dagens kryssord',
+            reason: 'Et nytt brett hver dag. Fem minutter med begreper og personer du har lest om.',
+            link: '/oving/kryssord',
+            score: 64,
+        });
+    }
 
     // 3. Neste artikkel i et emne eleven er midt i.
     const ongoing = topics

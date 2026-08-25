@@ -73,6 +73,9 @@ export interface DifficultyPreset {
     hints: number;
     // Skal et fullt utfylt, men feil ord si fra med en gang?
     autoCheck: boolean;
+    // Hvor mange ganger eleven kan trykke «Sjekk». Uten en grense kan et
+    // vanskelig brett brute-forces med sjekk mellom hvert forsøk.
+    checks: number;
 }
 
 export const DIFFICULTIES: DifficultyPreset[] = [
@@ -86,6 +89,7 @@ export const DIFFICULTIES: DifficultyPreset[] = [
         maxLength: 8,
         hints: 3,
         autoCheck: true,
+        checks: 5,
     },
     {
         id: 'middels',
@@ -97,6 +101,7 @@ export const DIFFICULTIES: DifficultyPreset[] = [
         maxLength: 11,
         hints: 2,
         autoCheck: true,
+        checks: 3,
     },
     {
         id: 'vanskelig',
@@ -108,6 +113,7 @@ export const DIFFICULTIES: DifficultyPreset[] = [
         maxLength: 12,
         hints: 1,
         autoCheck: false,
+        checks: 2,
     },
 ];
 

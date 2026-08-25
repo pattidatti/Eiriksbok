@@ -128,13 +128,16 @@ const tryBuild = (pool: BankEntry[], preset: DifficultyPreset, rng: () => number
     const usedAnswers = new Set<string>();
 
     // Startordet legges vannrett midt på brettet, og bør være langt nok til at
-    // mange andre ord kan hekte seg på.
+    // mange andre ord kan hekte seg på. Blant dem som er lange nok trekker vi
+    // fritt: tar vi alltid det aller lengste, åpner hvert eneste brett i faget
+    // med det samme ordet.
     const seedCandidates = pool.filter(
         (entry) =>
             entry.answer.length >= Math.min(6, preset.maxLength) &&
             entry.answer.length <= preset.maxSize
     );
-    const first = (seedCandidates.length ? seedCandidates : pool)[0];
+    const bag = seedCandidates.length ? seedCandidates : pool;
+    const first = bag[Math.floor(rng() * bag.length)];
     if (!first) return { words: [] };
 
     const firstRow = Math.floor(board.size / 2);
@@ -284,11 +287,23 @@ const finalize = (words: WorkingWord[], seed: number): Puzzle => {
     return { rows, cols, cells, words: placedWords, seed };
 };
 
+// Hvor mye et ord eleven nettopp har hatt skyves bakover i køen. Straffen er
+// stor nok til å legge ordet bak nesten alle andre, men den stenger det ikke
+// ute: i et tynt fag som norsk er hele banken rundt tretti ord, og da må de
+// samme ordene få komme igjen.
+const RECENT_PENALTY = 15;
+
+// Hvor tilfeldig rekkefølgen i banken er. Lengden teller fortsatt litt, for
+// lange ord gir tettere brett, men den skal ikke bestemme alene.
+const ORDER_NOISE = 20;
+
 export interface GenerateOptions {
     entries: BankEntry[];
     preset: DifficultyPreset;
     seed: number;
     attempts?: number;
+    // Svar eleven nettopp har hatt. De blir nedprioritert, ikke utelatt.
+    recentAnswers?: string[];
 }
 
 export const generatePuzzle = ({
@@ -296,6 +311,7 @@ export const generatePuzzle = ({
     preset,
     seed,
     attempts = 10,
+    recentAnswers,
 }: GenerateOptions): Puzzle | null => {
     const usable = entries.filter(
         (entry) =>
@@ -304,18 +320,27 @@ export const generatePuzzle = ({
     );
     if (usable.length < 4) return null;
 
+    const recent = new Set((recentAnswers || []).map((answer) => answer.toUpperCase()));
     let bestAttempt: WorkingWord[] = [];
 
     for (let attempt = 0; attempt < attempts; attempt++) {
         const rng = mulberry32(seed + attempt * 7919);
-        // Litt tilfeldig vekting rundt lengden: lange ord først gir tettere
-        // brett, men vi vil ikke ha nøyaktig samme brett hver gang.
+        // Rekkefølgen i banken er stort sett tilfeldig, med et lite dytt til de
+        // lange ordene. Før veide lengden så tungt at de femten lengste alltid
+        // lå øverst og alltid ble valgt - PERESTROJKA kom i ti av tjue brett.
+        // Ord eleven nettopp har hatt skyves bakerst i køen.
         // Vekten regnes ut én gang per ord, ikke inne i sammenlikneren: en
         // komparator som trekker nye tilfeldige tall gir ustabil rekkefølge, og
         // da blir ikke samme frø samme kryssord.
         const pool = shuffle(usable, rng)
             .slice(0, 320)
-            .map((entry) => ({ entry, weight: entry.answer.length + rng() * 3 }))
+            .map((entry) => ({
+                entry,
+                weight:
+                    entry.answer.length +
+                    rng() * ORDER_NOISE -
+                    (recent.has(entry.answer) ? RECENT_PENALTY : 0),
+            }))
             .sort((a, b) => b.weight - a.weight)
             .map((item) => item.entry);
 

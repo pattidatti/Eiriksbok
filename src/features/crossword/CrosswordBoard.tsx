@@ -73,7 +73,7 @@ const CellView = React.memo(
                 type="button"
                 onClick={() => onSelect(row, col)}
                 aria-label={`Rute rad ${row + 1} kolonne ${col + 1}`}
-                className="relative flex items-center justify-center rounded-[18%] font-bold uppercase select-none"
+                className="relative flex touch-manipulation items-center justify-center rounded-[18%] font-bold uppercase select-none"
                 style={{
                     width: size,
                     height: size,

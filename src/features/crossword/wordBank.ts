@@ -73,39 +73,93 @@ const NAME_PARTICLES = new Set([
     'the',
 ]);
 
+// Hva et navn gir oss: leddet som skal ned i rutene, og navnet med det leddet
+// byttet ut med understreker.
+interface NamePick {
+    token: string;
+    // 'Harald ________'. Tom streng hvis navnet bare har ett ledd - da finnes
+    // det ikke noe synlig ledd å vise fram.
+    masked: string;
+}
+
 // Velger hvilket ord i et navn som blir svaret. Siste egentlige navneledd
 // vinner ('Adam Smith' -> SMITH), men tilnavn som «den grusomme» hopper vi over.
-const pickNameToken = (name: string): string | null => {
+const pickNameToken = (name: string): NamePick | null => {
     const tokens = name.split(/\s+/).filter(Boolean);
-    const usable = tokens.filter((token) => {
-        if (NAME_PARTICLES.has(token.toLowerCase())) return false;
-        if (token[0] !== token[0].toUpperCase()) return false;
-        return toAnswer(token) !== null;
-    });
+    const usable = tokens
+        .map((token, index) => ({ token, index }))
+        .filter(({ token }) => {
+            if (NAME_PARTICLES.has(token.toLowerCase())) return false;
+            if (token[0] !== token[0].toUpperCase()) return false;
+            return toAnswer(token) !== null;
+        });
     if (usable.length === 0) return null;
     // «Håkon den Gode» - siste ledd er et tilnavn, ikke et navn. Da er det
     // fornavnet eleven skal skrive, ikke adjektivet.
     const hasByname = tokens.some((token) => NAME_PARTICLES.has(token.toLowerCase()));
-    return hasByname ? usable[0] : usable[usable.length - 1];
+    const chosen = hasByname ? usable[0] : usable[usable.length - 1];
+    const answer = toAnswer(chosen.token);
+    if (!answer) return null;
+
+    const blank = '_'.repeat(answer.length);
+    const masked =
+        tokens.length > 1
+            ? tokens.map((token, index) => (index === chosen.index ? blank : token)).join(' ')
+            : '';
+    return { token: chosen.token, masked };
 };
 
 const escapeRegExp = (value: string): string => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+// Bare bokstavene i en tekst, store og uten aksenter. Slik ser vi at svaret
+// gjemmer seg inne i «hyperinflasjon» eller «Bomullstekstiler».
+const lettersOnly = (text: string): string =>
+    stripForeign(text)
+        .toUpperCase()
+        .replace(/[^A-ZÆØÅ]/g, '');
+
+const revealsAnswer = (text: string, answer: string): boolean => lettersOnly(text).includes(answer);
+
+const HOLE = '_____';
+
+// Hvor mange hull en ledetråd tåler før den blir ren gjetting.
+const MAX_HOLES = 2;
+
 // Fasiten står som regel midt i sin egen definisjon. Vi stryker den ut, ellers
-// er kryssordet løst før eleven har skrevet en bokstav.
-const maskAnswer = (text: string, words: string[]): string => {
+// er kryssordet løst før eleven har skrevet en bokstav. Men vi maskerer bare
+// ord som faktisk røper svaret: før strøk vi hvert eneste navneledd, og da
+// forsvant vanlige ord som «Guru» ut av ledetråden sammen med fasiten.
+const maskAnswer = (text: string, targets: string[], answer: string): string => {
     let masked = text;
-    const targets = words.filter((word) => word.length >= 4).sort((a, b) => b.length - a.length);
-    for (const word of targets) {
+    const words = targets
+        .map((word) => word.trim())
+        .filter((word) => word.length >= 4 && revealsAnswer(word, answer))
+        .sort((a, b) => b.length - a.length);
+    for (const word of words) {
         // \p{L} holder på æ, ø, å og aksenter der \w gir opp
         const pattern = new RegExp(
             `(?<![\\p{L}])${escapeRegExp(word)}[\\p{L}]{0,4}(?![\\p{L}])`,
             'giu'
         );
-        masked = masked.replace(pattern, '_____');
+        masked = masked.replace(pattern, HOLE);
     }
-    return masked;
+    // Sikkerhetsnett: svaret kan sitte midt inne i et sammensatt ord
+    // («hyperinflasjon», «Luddittene», «sikhismen») der mønsteret over ikke
+    // rekker. Da stryker vi hele ordet.
+    return masked.replace(/[\p{L}]+/gu, (word) => (revealsAnswer(word, answer) ? HOLE : word));
 };
+
+const holeCount = (text: string): number => (text.match(/_+/g) || []).length;
+
+// Blir det for mange hull, prøver vi å berge ledetråden ved å beholde bare de
+// setningene som fortsatt er hele. Å miste en setning er billigere enn å gi
+// eleven en ledetråd hun umulig kan løse.
+const dropHoledSentences = (text: string): string =>
+    text
+        .split(/(?<=[.!?])\s+/)
+        .filter((sentence) => !sentence.includes('_'))
+        .join(' ')
+        .trim();
 
 // Ledetråden skal få plass i en liste uten å bli en artikkel. Vi kutter på
 // setningsslutt der vi kan, ellers på siste hele ord.
@@ -126,6 +180,20 @@ const trimClue = (text: string, limit = 190): string => {
     if (sentenceEnd > limit * 0.5) return cut.slice(0, sentenceEnd + 1);
     const wordEnd = cut.lastIndexOf(' ');
     return `${cut.slice(0, wordEnd > 0 ? wordEnd : limit)} ...`;
+};
+
+// Siste finpuss på en maskert definisjon: for mange hull redder vi ved å
+// beholde de hele setningene, og er det ikke nok tekst igjen, forkaster vi
+// ordet helt.
+const settleClue = (masked: string, limit?: number): string | null => {
+    let text = masked;
+    if (holeCount(text) > MAX_HOLES) {
+        const rescued = dropHoledSentences(text);
+        if (rescued.length < 25) return null;
+        text = rescued;
+    }
+    const trimmed = trimClue(text, limit);
+    return trimmed.length < 20 ? null : trimmed;
 };
 
 interface GlossaryRaw {
@@ -184,8 +252,11 @@ const buildConceptEntry = (raw: GlossaryRaw, mentions?: string[]): BankEntry | n
     }
     if (!answer) return null;
 
-    const clue = trimClue(maskAnswer(definition, [source, raw.term, ...(raw.aliases || [])]));
-    if (clue.length < 20) return null;
+    const clue = settleClue(
+        maskAnswer(definition, [source, raw.term, ...(raw.aliases || [])], answer)
+    );
+    // Siste skanse: står svaret fortsatt i ledetråden, er ordet ubrukelig.
+    if (!clue || revealsAnswer(clue, answer)) return null;
 
     return {
         id: `begrep-${answer}`,
@@ -201,22 +272,33 @@ const buildConceptEntry = (raw: GlossaryRaw, mentions?: string[]): BankEntry | n
 const buildPersonEntry = (raw: PersonRaw): BankEntry | null => {
     const definition = (raw.definition || '').trim();
     if (definition.length < 20) return null;
-    const token = pickNameToken(raw.name);
-    if (!token) return null;
-    const answer = toAnswer(token);
+    const pick = pickNameToken(raw.name);
+    if (!pick) return null;
+    const answer = toAnswer(pick.token);
     if (!answer) return null;
 
-    const nameWords = raw.name.split(/\s+/).filter(Boolean);
-    const clue = trimClue(maskAnswer(definition, [raw.name, ...nameWords, ...(raw.aliases || [])]));
-    if (clue.length < 20) return null;
+    const lived = raw.lifespan
+        ? ` (${raw.lifespan.replace(/[\u2010-\u2015]/g, '-').replace(/\s*-\s*/, '-')})`
+        : '';
+    // Navnet og levetiden spiser av plassen, så definisjonen får resten.
+    const room = Math.max(120, 190 - pick.masked.length - lived.length);
+    const body = settleClue(
+        maskAnswer(definition, [raw.name, pick.token, ...(raw.aliases || [])], answer),
+        room
+    );
+    if (!body) return null;
 
-    const lived = raw.lifespan ? ` (${raw.lifespan.replace(/\s*-\s*/, '-')})` : '';
+    // Navnet med hullet i står først. Uten det vet ikke eleven om det er
+    // fornavnet, etternavnet eller tilnavnet som skal ned i rutene, og skriver
+    // HARALD der fasiten er HARDRÅDE.
+    const clue = pick.masked ? `${pick.masked} - ${body}${lived}` : `${body}${lived}`;
+    if (revealsAnswer(clue, answer)) return null;
 
     return {
         id: `person-${raw.slug}`,
         answer,
         display: raw.name,
-        clue: `${clue}${lived}`,
+        clue,
         kind: 'person',
         subject: raw.subject || undefined,
         era: raw.era || undefined,

@@ -1,7 +1,7 @@
 // Bittesmå lyder til Kryssord. Ren WebAudio - ingen lydfiler å laste ned, og
 // ingenting skjer før eleven har trykket første gang (nettleserne krever det).
 
-type SoundName = 'move' | 'letter' | 'erase' | 'solve' | 'error' | 'hint' | 'win';
+type SoundName = 'move' | 'letter' | 'erase' | 'solve' | 'error' | 'hint' | 'reveal' | 'win';
 
 const MUTE_KEY = 'kryssord-lyd-av';
 
@@ -94,6 +94,13 @@ export const playSound = (name: SoundName, intensity = 0) => {
             blip(audio, { freq: 1180, duration: 0.1, type: 'sine', gain: 0.09 });
             blip(audio, { freq: 1560, at: 0.07, duration: 0.14, type: 'sine', gain: 0.06 });
             break;
+        case 'reveal': {
+            // Nøktern og litt nedadgående: ordet kom på plass, men eleven fikk
+            // det servert. Det skal ikke høres ut som en seier.
+            blip(audio, { freq: 440, duration: 0.16, type: 'triangle', gain: 0.09 });
+            blip(audio, { freq: 330, at: 0.13, duration: 0.26, type: 'sine', gain: 0.08 });
+            break;
+        }
         case 'win': {
             const fanfare = [523.25, 659.25, 783.99, 1046.5, 1318.5];
             fanfare.forEach((freq, index) => {

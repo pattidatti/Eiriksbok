@@ -84,3 +84,40 @@ export const captureQuizAnswer = (question: QuizQuestion, wasCorrect: boolean) =
         // Innsamling er best-effort
     }
 };
+
+// Kryssord: ordene eleven nettopp løste. Kalles to ganger av spillet - én gang
+// med ordene som satt løst (correct = true), og én gang med ordene eleven
+// trengte hint eller avsløring på (correct = false).
+//
+// Bare begreper er nyttige her. «Dagens økt» slår opp begreper mot
+// concepts.json på småbokstavert term, og personer finnes ikke der - de ville
+// bare blitt filtrert bort igjen og fylt køen med støy underveis.
+export const captureCrosswordWords = (
+    words: { display: string; kind: 'begrep' | 'person' }[],
+    correct: boolean
+) => {
+    try {
+        const store = useReviewStore.getState();
+        const today = todayLocal();
+        for (const word of words) {
+            if (word.kind !== 'begrep') continue;
+            const term = word.display?.trim();
+            if (!term) continue;
+            const id = conceptId(term);
+            const exists = !!store.items[id];
+
+            if (correct) {
+                // Et ord eleven klarte selv skal ikke dra nye kort inn i køen -
+                // det graderer bare det som allerede ligger der.
+                if (exists) store.gradeItem(id, true, today);
+                continue;
+            }
+            // Trengte eleven hjelp: ligger kortet der fra før, skal det ned
+            // igjen i køen, ikke bare bekreftes.
+            if (exists) store.demoteItem(id, today);
+            else store.addItem({ id, type: 'concept', term }, today);
+        }
+    } catch {
+        // Innsamling er best-effort
+    }
+};
