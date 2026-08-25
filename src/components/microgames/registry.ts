@@ -10,6 +10,7 @@ const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
+const Skattekaravanen3D = lazy(() => import('./Skattekaravanen3D'));
 const Gjenreisningen3D = lazy(() => import('./Gjenreisningen3D'));
 const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
 const Dialektgrensa3D = lazy(() => import('./Dialektgrensa3D'));
@@ -892,6 +893,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Hamskiftet3D'),
         Component: Hamskiftet3D as never,
+    },
+    'skattekaravanen-3d': {
+        id: 'skattekaravanen-3d',
+        title: 'Skattekaravanen',
+        description:
+            'Du er fyrsten i Moskva og krever inn skatten for khanen. Behold nok til å bygge byen, men svikt aldri kvoten.',
+        estimatedSeconds: 120,
+        loader: () => import('./Skattekaravanen3D'),
+        Component: Skattekaravanen3D as never,
     },
     'dialektgrensa-3d': {
         id: 'dialektgrensa-3d',

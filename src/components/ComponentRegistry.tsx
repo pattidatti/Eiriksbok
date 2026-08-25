@@ -117,6 +117,7 @@ const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBril
 const KiAnsvarskjeden = lazy(() => import('./content/interactive/KiAnsvarskjeden').then(m => ({ default: m.KiAnsvarskjeden })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
 const Maktvekten = lazy(() => import('./content/interactive/Maktvekten').then(m => ({ default: m.Maktvekten })));
+const Skatteoppkreveren = lazy(() => import('./content/interactive/Skatteoppkreveren').then(m => ({ default: m.Skatteoppkreveren })));
 const LivssynsByggeren = lazy(() => import('./content/interactive/LivssynsByggeren').then(m => ({ default: m.LivssynsByggeren })));
 const SikhNavneseremoni = lazy(() => import('./content/interactive/SikhNavneseremoni').then(m => ({ default: m.SikhNavneseremoni })));
 const SkapelseVedOrd = lazy(() => import('./content/interactive/SkapelseVedOrd').then(m => ({ default: m.SkapelseVedOrd })));
@@ -602,6 +603,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     MaktensFristelse,
     GoldenMeanSlider,
     Maktvekten,
+    Skatteoppkreveren,
     LivssynsByggeren,
     SikhNavneseremoni,
     SkapelseVedOrd,
