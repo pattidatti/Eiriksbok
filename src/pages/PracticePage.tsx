@@ -112,7 +112,7 @@ export const PracticePage: React.FC = () => {
         {
             id: 'kryssord',
             title: 'Kryssord',
-            description: 'Fyll rutene med begreper og personer fra boka. Velg fag, tidsrom og hvor tøft det skal være.',
+            description: 'Fyll rutene med begreper og personer fra boka - eller bare med ord fra artiklene du har lest.',
             icon: Grid3x3,
             color: 'bg-violet-600',
             link: '/oving/kryssord'

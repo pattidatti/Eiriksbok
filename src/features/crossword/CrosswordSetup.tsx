@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Feather, Flame, Layers, Users, Zap } from 'lucide-react';
+import { ArrowRight, BookMarked, BookOpen, Feather, Flame, Layers, Users, Zap } from 'lucide-react';
 import type { BankEntry, ContentFilter, Difficulty, PuzzleFilters } from './types';
 import { DIFFICULTIES } from './types';
 import { filterBank } from './wordBank';
@@ -29,6 +29,8 @@ const MIN_WORDS = 14;
 interface SetupProps {
     entries: BankEntry[];
     eras: { key: string; label: string }[];
+    // Artikkelstier eleven har lest ferdig, fra progresjonssystemet
+    readArticles: Set<string>;
     difficulty: Difficulty;
     filters: PuzzleFilters;
     onDifficulty: (value: Difficulty) => void;
@@ -63,6 +65,7 @@ const Chip = ({
 export const CrosswordSetup = ({
     entries,
     eras,
+    readArticles,
     difficulty,
     filters,
     onDifficulty,
@@ -80,19 +83,31 @@ export const CrosswordSetup = ({
     }, [entries]);
 
     const available = useMemo(() => {
-        const pool = filterBank(entries, filters);
+        const pool = filterBank(entries, filters, readArticles);
         return pool.filter(
             (entry) =>
                 entry.answer.length >= preset.minLength &&
                 entry.answer.length <= Math.min(preset.maxLength, preset.maxSize)
         ).length;
-    }, [entries, filters, preset]);
+    }, [entries, filters, preset, readArticles]);
+
+    // Hvor mye har eleven å gå på i lest-modus? Vi teller ord, ikke artikler:
+    // det er ordene som skal fylle rutene.
+    const readWordCount = useMemo(
+        () =>
+            readArticles.size === 0
+                ? 0
+                : entries.filter((entry) => entry.articles?.some((path) => readArticles.has(path)))
+                      .length,
+        [entries, readArticles]
+    );
+    const hasReadEnough = readWordCount >= MIN_WORDS;
 
     const canStart = available >= MIN_WORDS;
     const showEras = filters.content !== 'begreper';
 
     return (
-        <div className="mx-auto w-full max-w-5xl px-4 py-4">
+        <div className="mx-auto w-full max-w-5xl px-4 pt-4 pb-2">
             <motion.header
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -184,6 +199,59 @@ export const CrosswordSetup = ({
                 </div>
             </section>
 
+            <motion.button
+                type="button"
+                disabled={!hasReadEnough}
+                onClick={() => onFilters({ ...filters, onlyRead: !filters.onlyRead })}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                whileHover={hasReadEnough ? { y: -2 } : undefined}
+                whileTap={hasReadEnough ? { scale: 0.99 } : undefined}
+                className={`mb-3 flex w-full items-center gap-3 rounded-2xl border p-3 text-left transition-colors ${
+                    filters.onlyRead
+                        ? 'border-indigo-500 bg-gradient-to-r from-indigo-50 to-violet-50 shadow-lg shadow-indigo-500/10'
+                        : hasReadEnough
+                          ? 'border-slate-200 bg-white/70 hover:border-indigo-300'
+                          : 'cursor-not-allowed border-slate-200 bg-slate-50'
+                }`}
+            >
+                <span
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
+                        filters.onlyRead
+                            ? 'bg-indigo-600 text-white'
+                            : 'bg-slate-100 text-slate-400'
+                    }`}
+                >
+                    <BookMarked size={18} />
+                </span>
+                <span className="min-w-0 flex-1">
+                    <span className="block text-base font-bold text-slate-800">
+                        Bare det du har lest
+                    </span>
+                    <span className="block text-xs leading-snug text-slate-500">
+                        {readArticles.size === 0
+                            ? 'Du har ikke lest ferdig noen artikler ennå. Les én, så bygger vi kryssord av ordene i den.'
+                            : hasReadEnough
+                              ? `Ord fra de ${readArticles.size} artiklene du har lest. ${readWordCount} ord å velge mellom.`
+                              : `Du har lest ${readArticles.size} ${readArticles.size === 1 ? 'artikkel' : 'artikler'}, og det gir bare ${readWordCount} ord. Les én til.`}
+                    </span>
+                </span>
+                <span
+                    className={`flex h-6 w-11 shrink-0 items-center rounded-full p-0.5 transition-colors ${
+                        filters.onlyRead ? 'bg-indigo-600' : 'bg-slate-300'
+                    }`}
+                >
+                    <motion.span
+                        layout
+                        transition={{ type: 'spring', stiffness: 600, damping: 30 }}
+                        className={`block h-5 w-5 rounded-full bg-white shadow ${
+                            filters.onlyRead ? 'ml-auto' : ''
+                        }`}
+                    />
+                </span>
+            </motion.button>
+
             <section className="mb-4 rounded-2xl border border-slate-200 bg-white/70 p-4 backdrop-blur">
                 <div className="grid gap-4 sm:grid-cols-2">
                     <div>
@@ -262,7 +330,9 @@ export const CrosswordSetup = ({
                 )}
             </section>
 
-            <div className="flex flex-col items-center gap-2">
+            {/* Klebrig bunn: knappen skal være innenfor rekkevidde på en
+                Chromebook uansett hvor mange filterrader som er åpne. */}
+            <div className="sticky bottom-0 -mx-4 flex flex-col items-center gap-1.5 border-t border-slate-200/70 bg-white/85 px-4 pt-2.5 pb-3 backdrop-blur">
                 <motion.p
                     key={available}
                     initial={{ scale: 0.9, opacity: 0 }}
@@ -271,7 +341,9 @@ export const CrosswordSetup = ({
                 >
                     {canStart
                         ? `${available} ord passer til valget ditt`
-                        : `Bare ${available} ord passer. Prøv et bredere valg eller en lettere grad.`}
+                        : filters.onlyRead
+                          ? `Bare ${available} ord fra det du har lest passer her. Prøv en lettere grad, eller les en artikkel til.`
+                          : `Bare ${available} ord passer. Prøv et bredere valg eller en lettere grad.`}
                 </motion.p>
                 <motion.button
                     type="button"

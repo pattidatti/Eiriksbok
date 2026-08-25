@@ -21,6 +21,9 @@ export interface BankEntry {
     era?: string;
     // Lenke til artikkel/persongalleri, vises etter at ordet er løst
     link?: string;
+    // Artiklene ordet er nevnt i ('historie/vikingtiden/rikssamlingen').
+    // Grunnlaget for modusen «det du har lest».
+    articles?: string[];
 }
 
 // Et ord som faktisk fikk plass i rutenettet
@@ -114,4 +117,6 @@ export interface PuzzleFilters {
     subject: string | null;
     content: ContentFilter;
     era: string | null;
+    // Bare ord som står i artikler eleven har lest
+    onlyRead: boolean;
 }

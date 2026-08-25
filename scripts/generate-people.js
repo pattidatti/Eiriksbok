@@ -18,6 +18,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildCorpus, needleRegex } from './lib/article-corpus.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -138,73 +139,6 @@ function slugVariants(name) {
 // Vi utleder artikkel-URL fra filstien, ikke fra manifest.json. Manifestet har
 // oppføringer der emne-id-en ikke stemmer med hvor fila faktisk ligger, og de
 // URL-ene 404-er. Filstien er det som faktisk resolver i appen.
-const SKIP_DIRS = new Set([
-    'people',
-    'concepts',
-    'config',
-    'kompetansemal',
-    'scenarios',
-    'interactive',
-    'kjeder',
-]);
-
-function collectArticleFiles(dir, relParts = [], out = []) {
-    if (!fs.existsSync(dir)) return out;
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        if (entry.isDirectory()) {
-            if (relParts.length === 0 && SKIP_DIRS.has(entry.name)) continue;
-            collectArticleFiles(path.join(dir, entry.name), [...relParts, entry.name], out);
-        } else if (entry.name.endsWith('.json')) {
-            // Artikler ligger på fag/emne/leksjon eller fag/emne/underemne/leksjon.
-            if (relParts.length < 2 || relParts.length > 3) continue;
-            const id = entry.name.replace(/\.json$/, '');
-            if (id.endsWith('-sti')) continue; // læringsstier, ikke artikler
-            out.push({ file: path.join(dir, entry.name), segments: [...relParts, id] });
-        }
-    }
-    return out;
-}
-
-// Plukker ut all lesbar tekst fra en artikkels content-tre, inkludert props på
-// interaktive komponenter (der personnavn ofte står).
-function extractText(node, depth = 0) {
-    if (depth > 12 || node === null || node === undefined) return '';
-    if (typeof node === 'string') return node + ' ';
-    if (typeof node === 'number') return '';
-    if (Array.isArray(node)) return node.map((n) => extractText(n, depth + 1)).join('');
-    if (typeof node === 'object') {
-        return Object.values(node)
-            .map((v) => extractText(v, depth + 1))
-            .join('');
-    }
-    return '';
-}
-
-function buildCorpus() {
-    const files = collectArticleFiles(CONTENT_DIR);
-    const corpus = [];
-    for (const { file, segments } of files) {
-        let data;
-        try {
-            data = JSON.parse(fs.readFileSync(file, 'utf-8'));
-        } catch {
-            continue;
-        }
-        if (!data || !data.title || !data.content) continue;
-        corpus.push({
-            title: data.title,
-            url: '/' + segments.join('/'),
-            subject: segments[0],
-            text: (data.title + ' ' + extractText(data.content)).toLowerCase(),
-        });
-    }
-    return corpus;
-}
-
-/* ------------------------------------------------------------------ *
- * Les og normaliser personfilene
- * ------------------------------------------------------------------ */
-
 // Artiklene skriver «Süleyman», ikke «Süleyman 1. (den store)». Vi utleder derfor
 // et kortnavn uten parentes og regenttall. Kravet om minst 5 tegn holder vanlige
 // fornavn som «Karl» og «Olav» ute, der treffet ville blitt for løst.
@@ -221,14 +155,6 @@ function shortNameOf(name) {
         .replace(/\s+/g, ' ')
         .trim();
     return cleaned.length >= 5 ? cleaned : null;
-}
-
-// «Osman» skal ikke treffe inni «osmanske», og «Karl» ikke inni «Karluk». Vanlig
-// \b duger ikke, for den regner æøåü som ordgrense midt i et navn. Vi bruker
-// derfor Unicode-lookaround på begge sider.
-function needleRegex(needle) {
-    const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return new RegExp(`(?<!\\p{L})${escaped}(?!\\p{L})`, 'u');
 }
 
 function normalizeTag(tag) {
@@ -355,7 +281,7 @@ console.log('Bygger persongalleri-data...');
 
 const raw = readPeople();
 const people = dedupe(raw);
-const corpus = buildCorpus();
+const corpus = buildCorpus(CONTENT_DIR);
 
 console.log(`  Leste ${raw.length} personfiler -> ${people.length} unike personer.`);
 console.log(`  Skanner ${corpus.length} artikler for omtaler...`);

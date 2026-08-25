@@ -214,6 +214,7 @@ The app uses a manifest-driven routing system:
 /oving/konsept-snake            Konseptslange (norsk-spill)
 /oving/retorikk                 Retorikk-spill
 /oving/hengemann                Hengemann (ordgjetting)
+/oving/kryssord                 Kryssord (begreps- og persondrevet, m/ «det du har lest»-modus)
 /oving/kjedereaksjonen          Kjedereaksjonen (2D-sidescroller om årsak og virkning)
 /oving/virkemidler              Virkemiddel-verkstedet
 /oving/detektiv                 Detektiv-hub
@@ -640,6 +641,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 | `scripts/generate-place-coordinates.js` | Genererer `scripts/data/place-coordinates.json` (tag → koordinat-ordbok for `/atlas`) |
 | `scripts/generate-quest-bank.mjs` | Bygger `public/data/rpg/quest-bank.json` fra Quiz-komponentene i artiklene (spørsmålsbanken til rollespillet) |
 | `scripts/validate-kjeder.mjs` | Validerer årsakskjedene i `public/content/kjeder/` og genererer `kjede-oversikt.json` (Kjedereaksjonen) |
+| `scripts/generate-glossary-articles.js` | Bygger `public/data/glossary-articles.json` (reversindeks begrep → artikler, brukt av Kryssord sin «det du har lest»-modus) |
 | `scripts/scan-concepts.js` | Scans articles for potential new concept terms |
 | `scripts/optimize-images.js` | Optimaliserer WebP-bilder under `public/`. Kvitterer for hver fil i `scripts/image-ledger.json`, så et bilde komprimeres én gang - ikke én gang per build |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |

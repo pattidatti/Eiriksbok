@@ -4,6 +4,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CrosswordGame } from '../features/crossword/CrosswordGame';
+import { useProgressStore } from '../features/progress/useProgressStore';
 import { CrosswordSetup } from '../features/crossword/CrosswordSetup';
 import { generatePuzzle } from '../features/crossword/generator';
 import { filterBank, loadWordBank } from '../features/crossword/wordBank';
@@ -37,6 +38,7 @@ const readUrlSetup = (): {
             subject: params.get('fag'),
             content: innhold === 'begreper' || innhold === 'personer' ? innhold : 'blandet',
             era: params.get('epoke'),
+            onlyRead: params.get('lest') === '1',
         },
     };
 };
@@ -48,6 +50,9 @@ const writeUrlSetup = (seed: number, difficulty: Difficulty, filters: PuzzleFilt
     params.set('innhold', filters.content);
     if (filters.subject) params.set('fag', filters.subject);
     if (filters.era) params.set('epoke', filters.era);
+    // «Lest»-kryssord er personlige: lenken gjenskaper det for eleven selv,
+    // men en annen elev har lest andre artikler og får et annet brett.
+    if (filters.onlyRead) params.set('lest', '1');
     window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`);
 };
 
@@ -80,11 +85,28 @@ export const CrosswordPage = () => {
         () => readUrlSetup()?.difficulty ?? 'middels'
     );
     const [filters, setFilters] = useState<PuzzleFilters>(
-        () => readUrlSetup()?.filters ?? { subject: null, content: 'blandet', era: null }
+        () =>
+            readUrlSetup()?.filters ?? {
+                subject: null,
+                content: 'blandet',
+                era: null,
+                onlyRead: false,
+            }
     );
     const [puzzle, setPuzzle] = useState<Puzzle | null>(null);
     const [buildError, setBuildError] = useState<string | null>(null);
     const pendingSeed = useRef<number>(randomSeed());
+
+    // Hva eleven har lest ligger i progresjonssystemet som
+    // 'article-read:<fag>/<emne>/<leksjon>'. Vi trenger bare stiene.
+    const firstCompletions = useProgressStore((store) => store.firstCompletions);
+    const readArticles = useMemo(() => {
+        const paths = new Set<string>();
+        for (const key of Object.keys(firstCompletions)) {
+            if (key.startsWith('article-read:')) paths.add(key.slice('article-read:'.length));
+        }
+        return paths;
+    }, [firstCompletions]);
 
     useEffect(() => {
         let cancelled = false;
@@ -115,10 +137,14 @@ export const CrosswordPage = () => {
             // Ett bilde med byggeanimasjonen før vi låser hovedtråden i ~40 ms
             requestAnimationFrame(() => {
                 window.setTimeout(() => {
-                    const entries = filterBank(bank.entries, filters);
+                    const entries = filterBank(bank.entries, filters, readArticles);
                     const next = generatePuzzle({ entries, preset, seed });
                     if (!next) {
-                        setBuildError('Det ble for få ord til et kryssord. Prøv et bredere valg.');
+                        setBuildError(
+                            filters.onlyRead
+                                ? 'Det ble for få ord fra det du har lest. Les en artikkel til, eller skru av lest-modus.'
+                                : 'Det ble for få ord til et kryssord. Prøv et bredere valg.'
+                        );
                         setPhase('setup');
                         return;
                     }
@@ -127,7 +153,7 @@ export const CrosswordPage = () => {
                 }, 260);
             });
         },
-        [bank, filters, preset, difficulty]
+        [bank, filters, preset, difficulty, readArticles]
     );
 
     // Delt lenke: bygg kryssordet med en gang, uten å gå via valgskjermen
@@ -162,6 +188,7 @@ export const CrosswordPage = () => {
                 puzzle={puzzle}
                 preset={preset}
                 subjectId={filters.subject}
+                modeLabel={filters.onlyRead ? 'Det du har lest' : undefined}
                 onNewPuzzle={() => build(randomSeed())}
                 onBackToSetup={() => setPhase('setup')}
             />
@@ -178,6 +205,7 @@ export const CrosswordPage = () => {
             <CrosswordSetup
                 entries={bank.entries}
                 eras={bank.eras}
+                readArticles={readArticles}
                 difficulty={difficulty}
                 filters={filters}
                 onDifficulty={setDifficulty}

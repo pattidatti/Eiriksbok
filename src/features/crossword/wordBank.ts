@@ -145,6 +145,14 @@ interface PersonRaw {
     subject?: string | null;
     lifespan?: string;
     aliases?: string[];
+    mentionedIn?: { url: string }[];
+}
+
+// public/data/glossary-articles.json: artikkelstiene står én gang, og hvert
+// begrep peker på indekser inn i lista.
+interface GlossaryArticles {
+    articles: string[];
+    terms: Record<string, number[]>;
 }
 
 interface PeopleFile {
@@ -157,7 +165,7 @@ export interface WordBank {
     eras: { key: string; label: string }[];
 }
 
-const buildConceptEntry = (raw: GlossaryRaw): BankEntry | null => {
+const buildConceptEntry = (raw: GlossaryRaw, mentions?: string[]): BankEntry | null => {
     const definition = (raw.definition || raw.description || '').trim();
     if (definition.length < 20) return null;
 
@@ -186,6 +194,7 @@ const buildConceptEntry = (raw: GlossaryRaw): BankEntry | null => {
         clue,
         kind: 'begrep',
         subject: raw.subject,
+        articles: mentions,
     };
 };
 
@@ -212,6 +221,8 @@ const buildPersonEntry = (raw: PersonRaw): BankEntry | null => {
         subject: raw.subject || undefined,
         era: raw.era || undefined,
         link: `/persongalleri/${raw.slug}`,
+        // Personene har alt sin egen reversindeks fra generate-people.js
+        articles: (raw.mentionedIn || []).map((mention) => mention.url.replace(/^\//, '')),
     };
 };
 
@@ -222,12 +233,23 @@ export const loadWordBank = (): Promise<WordBank> => {
     cached = Promise.all([
         fetch('/data/glossary.json').then((res) => res.json() as Promise<GlossaryRaw[]>),
         fetch('/data/people.json').then((res) => res.json() as Promise<PeopleFile>),
-    ]).then(([glossary, peopleFile]) => {
+        // Reversindeksen er en bonus: uten den mister vi bare «det du har
+        // lest»-modusen, ikke selve kryssordet.
+        fetch('/data/glossary-articles.json')
+            .then((res) => (res.ok ? (res.json() as Promise<GlossaryArticles>) : null))
+            .catch(() => null),
+    ]).then(([glossary, peopleFile, mentions]) => {
         const entries: BankEntry[] = [];
         const seen = new Set<string>();
 
+        const articlesFor = (term: string): string[] | undefined => {
+            const indexes = mentions?.terms[term];
+            if (!indexes) return undefined;
+            return indexes.map((index) => mentions.articles[index]).filter(Boolean);
+        };
+
         for (const raw of glossary) {
-            const entry = buildConceptEntry(raw);
+            const entry = buildConceptEntry(raw, articlesFor(raw.term));
             if (entry && !seen.has(entry.answer)) {
                 seen.add(entry.answer);
                 entries.push(entry);
@@ -255,9 +277,20 @@ const matchesContent = (entry: BankEntry, content: ContentFilter): boolean => {
     return true;
 };
 
-export const filterBank = (entries: BankEntry[], filters: PuzzleFilters): BankEntry[] =>
+export const filterBank = (
+    entries: BankEntry[],
+    filters: PuzzleFilters,
+    readArticles?: Set<string>
+): BankEntry[] =>
     entries.filter((entry) => {
         if (!matchesContent(entry, filters.content)) return false;
+        // «Det du har lest»: ordet må stå i en artikkel eleven har åpnet og
+        // lest ferdig. Uten lesehistorikk slipper ingenting gjennom - det er
+        // meningen, og oppsettskjermen sier fra i stedet for å jukse.
+        if (filters.onlyRead) {
+            if (!readArticles || readArticles.size === 0) return false;
+            if (!entry.articles?.some((path) => readArticles.has(path))) return false;
+        }
         if (filters.subject && entry.subject !== filters.subject) return false;
         // Epoke gjelder bare personer - begreper har ingen levetid
         if (filters.era && entry.kind === 'person' && entry.era !== filters.era) return false;

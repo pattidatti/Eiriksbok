@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import {
     ArrowLeft,
+    BookMarked,
     ChevronLeft,
     ChevronRight,
     Clock,
@@ -35,6 +36,8 @@ interface GameProps {
     puzzle: Puzzle;
     preset: DifficultyPreset;
     subjectId: string | null;
+    // Vises som merke ved siden av vanskelighetsgraden, f.eks. «Det du har lest»
+    modeLabel?: string;
     onNewPuzzle: () => void;
     onBackToSetup: () => void;
 }
@@ -43,6 +46,7 @@ export const CrosswordGame = ({
     puzzle,
     preset,
     subjectId,
+    modeLabel,
     onNewPuzzle,
     onBackToSetup,
 }: GameProps) => {
@@ -219,6 +223,12 @@ export const CrosswordGame = ({
                 <span className="rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-700">
                     {preset.label}
                 </span>
+                {modeLabel && (
+                    <span className="flex items-center gap-1 rounded-full bg-violet-100 px-3 py-1 text-xs font-bold text-violet-700">
+                        <BookMarked size={12} />
+                        {modeLabel}
+                    </span>
+                )}
 
                 <div className="ml-auto flex items-center gap-2">
                     <div className="flex items-center gap-1.5 rounded-lg bg-slate-100 px-2.5 py-1.5 text-sm font-bold text-slate-600 tabular-nums">
