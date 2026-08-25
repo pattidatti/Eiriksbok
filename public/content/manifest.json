@@ -3644,6 +3644,22 @@
           "image": "/images/placeholder.webp",
           "lessons": [
             {
+              "id": "mongolaket-og-moskvas-oppgang",
+              "title": "Mongolåket: byen som ble stor på å kreve inn andres skatt",
+              "description": "Mongolene krevde skatt, ikke tronene. Moskva tok jobben med å kreve den inn for dem, og vokste seg større enn alle naboene på veien.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "russland",
+                "mongolene",
+                "den-gylne-horde",
+                "moskva",
+                "ivan-kalita",
+                "middelalderen",
+                "skatt"
+              ],
+              "createdDate": "2026-08-25T00:00:00Z"
+            },
+            {
               "id": "ivan-den-grusomme",
               "title": "Ivan den grusomme: tsaren som fjernet alle som kunne si nei",
               "description": "Ivan 4. tok tittelen tsar i 1547, delte riket i to og knekte adelen. Da han døde, satt han igjen med all makt og et land som ikke lenger kunne styres.",

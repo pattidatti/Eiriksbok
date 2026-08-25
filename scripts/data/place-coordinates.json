@@ -890,12 +890,12 @@
       "count": 28
     },
     {
-      "tag": "verdensorden",
-      "count": 26
+      "tag": "middelalderen",
+      "count": 27
     },
     {
-      "tag": "middelalderen",
-      "count": 25
+      "tag": "verdensorden",
+      "count": 26
     },
     {
       "tag": "vikingtiden",
@@ -2247,6 +2247,22 @@
     },
     {
       "tag": "magna-carta",
+      "count": 2
+    },
+    {
+      "tag": "den-gylne-horde",
+      "count": 2
+    },
+    {
+      "tag": "moskva",
+      "count": 2
+    },
+    {
+      "tag": "ivan-kalita",
+      "count": 2
+    },
+    {
+      "tag": "skatt",
       "count": 2
     },
     {

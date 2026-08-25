@@ -1,5 +1,5 @@
 {
-  "buildId": 136069666694886,
+  "buildId": 113698985957544,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2828,6 +2828,9 @@
     ],
     "katarina-den-store": [
       "content/historie/russlands-historie/katarina-den-store.json"
+    ],
+    "mongolaket-og-moskvas-oppgang": [
+      "content/historie/russlands-historie/mongolaket-og-moskvas-oppgang.json"
     ],
     "peter-den-store": [
       "content/historie/russlands-historie/peter-den-store.json"
@@ -5667,6 +5670,7 @@
     "historie/romerriket/vestromerrikets-fall": "content/historie/romerriket/vestromerrikets-fall.json",
     "historie/russlands-historie/ivan-den-grusomme": "content/historie/russlands-historie/ivan-den-grusomme.json",
     "historie/russlands-historie/katarina-den-store": "content/historie/russlands-historie/katarina-den-store.json",
+    "historie/russlands-historie/mongolaket-og-moskvas-oppgang": "content/historie/russlands-historie/mongolaket-og-moskvas-oppgang.json",
     "historie/russlands-historie/peter-den-store": "content/historie/russlands-historie/peter-den-store.json",
     "historie/sveriges-historie/gustav-vasa": "content/historie/sveriges-historie/gustav-vasa.json",
     "historie/sveriges-historie/stockholm-blodbadet": "content/historie/sveriges-historie/stockholm-blodbadet.json",
