@@ -5,19 +5,22 @@
     "topic": "religioner",
     "religion": "buddhisme",
     "dimension": "ethical",
-    "comparison_tags": ["den_attedelte_vei", "ethical"],
+    "comparison_tags": [
+        "den_attedelte_vei",
+        "ethical"
+    ],
     "createdDate": "2026-06-17T00:00:00+02:00",
-    "lastUpdated": "2026-06-17T00:00:00+02:00",
+    "lastUpdated": "2026-08-25T00:00:00Z",
     "heroImage": "/images/krle/buddhisme/den-attedelte-vei-hero.webp",
     "readTime": "12 min lesning",
     "content": [
         {
             "type": "text",
-            "content": "For rundt 2500 år siden satt en ung mann ved navn Siddhartha Gautama fast mellom to umulige liv. Som prins hadde han vokst opp bak palassets murer, omgitt av silke, fester og alt han kunne ønske seg. Men luksusen gjorde ham ikke lykkelig - den fylte ham bare med en uro han ikke klarte å forklare. Så han forlot alt og gikk motsatt vei: han ble asket, en som nekter seg selv alt. Han sultet seg, sov på bakken og plaget kroppen i håp om at smerten skulle gi ham svar. Det gjorde den ikke. Han ble bare svak og syk, og sannheten var like langt unna som før."
+            "content": "For rundt 2500 år siden satt en ung mann ved navn Siddhartha Gautama fast mellom to umulige liv. Han var en indisk prins og vokste opp uten bekymringer. Men da det gikk opp for ham at alle mennesker blir syke, gamle og dør, fikk han en krise han ikke klarte å riste av seg. Da han var 30 år, forlot han familien og ble en hjemløs asket, en som nekter seg selv alt. I flere år levde han i streng askese - men det førte ikke fram (Kværne & Borgland, 2026a). Han ble bare svak, og sannheten var like langt unna som før."
         },
         {
             "type": "text",
-            "content": "Da skjønte Siddhartha noe viktig. Verken et liv i overflod eller et liv i selvpining førte fram. Svaret måtte ligge et sted midt imellom. Denne innsikten ble starten på det han siden kalte Den åttedelte veien. Den dagen han for første gang fortalte andre om den, sa buddhistene at han satte dharmahjulet i gang, hjulet som står for læren hans. Og det hjulet ruller fortsatt."
+            "content": "Da skjønte Siddhartha noe viktig. Verken et liv i overflod eller et liv i selvpining førte fram. Svaret måtte ligge et sted midt imellom, og den midtveien er nettopp Den åttedelte veien (Lopez, 2026). Den dagen han for første gang fortalte andre om den, sier buddhistene at han satte dharmahjulet i gang - hjulet som står for læren hans, dharma (Borgland, 2025). Og det hjulet ruller fortsatt."
         },
         {
             "type": "header",
@@ -25,20 +28,20 @@
         },
         {
             "type": "text",
-            "content": "Buddha sammenlignet ofte seg selv med en lege. En god lege gjør fire ting: stiller en diagnose, finner årsaken til sykdommen, slår fast at den kan kureres, og skriver ut en resept. Buddhas fire edle sannheter følger akkurat samme mønster."
+            "content": "De fire edle sannhetene er bygd opp omtrent slik en lege tenker. En god lege gjør fire ting: stiller en diagnose, finner årsaken til sykdommen, slår fast at den kan kureres, og skriver ut en resept. Buddhas fire edle sannheter følger akkurat samme mønster (Lopez, u.å.)."
         },
         {
             "type": "list",
             "items": [
-                "Diagnosen: alt liv inneholder lidelse (dukkha) - sykdom, tap, skuffelse og uro hører med.",
-                "Årsaken: lidelsen kommer av begjær - at vi hele tiden vil ha mer, holder fast, og frykter å miste.",
+                "Diagnosen: alt er lidelse (dukkha), alt er forgjengelig, og ingenting har et evig vesen.",
+                "Årsaken: lidelsen kommer av «tørst» - at vi hele tiden vil ha mer, holder fast, og frykter å miste.",
                 "Den gode nyheten: lidelsen kan faktisk ta slutt.",
                 "Resepten: veien dit er Den åttedelte veien."
             ]
         },
         {
             "type": "text",
-            "content": "De tre første sannhetene forteller deg hva som er galt, og at det kan bli bedre. Men det er den fjerde - veien - som forteller deg hva du faktisk skal gjøre. På sanskrit heter den Magga. Uten den blir buddhismen bare en fin beskrivelse av et problem. Med den blir den en oppskrift du kan følge gjennom hele livet. Og legg merke til én ting: i buddhismen er ikke frelse noe en gud gir deg. Det er noe du oppnår selv, som en pasient som tar medisinen legen har skrevet ut."
+            "content": "De tre første sannhetene forteller deg hva som er galt, og at det kan bli bedre. Men det er den fjerde - veien - som forteller deg hva du faktisk skal gjøre. Den heter magga, og lidelsen tar slutt ved at man følger nettopp den åttedelte veien (Kværne & Borgland, 2026b). Uten den blir buddhismen bare en fin beskrivelse av et problem. Med den blir den en oppskrift du kan følge gjennom hele livet. Og legg merke til én ting: i buddhismen er ikke frelse noe en gud gir deg. Det er noe du oppnår selv, som en pasient som tar medisinen legen har skrevet ut."
         },
         {
             "type": "header",
@@ -50,11 +53,11 @@
         },
         {
             "type": "text",
-            "content": "Et liv i ren nytelse gjør oss aldri tilfredse. Vi får det vi vil ha, og kort etter vil vi ha noe nytt. Begjæret blir aldri mett. Men det motsatte - å pine seg selv og nekte kroppen alt - gjør oss bare svake og bitre, og hjelper like lite. Middelveien er den smale stien mellom disse to. Den handler ikke om å gi opp alt, men om balanse: nok til å leve godt, ikke så mye at begjæret tar styringen."
+            "content": "Et liv i ren nytelse gjør oss aldri tilfredse. Vi får det vi vil ha, og kort etter vil vi ha noe nytt. «Tørsten» blir aldri slukket. Men det motsatte - å pine kroppen - hjelper like lite. Middelveien er den smale stien mellom disse to ytterpunktene, mellom askese og sanselig nytelse (Lopez, 2026). Den handler ikke om å gi opp alt, men om balanse: nok til å leve godt, ikke så mye at begjæret tar styringen."
         },
         {
             "type": "text",
-            "content": "Det finnes en gammel fortelling om dette. En av Buddhas elever, Sona, hadde vært musiker før han ble munk. Nå mediterte han så hardt at han nesten slet seg ut, men kom likevel ingen vei. Da spurte Buddha ham: Hvordan låt strengene på instrumentet ditt da de var altfor slakke? De ga ingen tone, svarte Sona. Og da de var strammet altfor hardt? Da røk de. Bare når spenningen var passe, klang de rent, sa Sona. Slik er det også med veien, svarte Buddha. Ikke for slapt, ikke for hardt - men i balanse."
+            "content": "Det finnes en gammel fortelling om dette. En av Buddhas elever, Sona, var flink til å spille lutt (vina) før han ble munk. Nå anstrengte han seg så hardt i meditasjonen at han bare ble rastløs, og han kom likevel ingen vei. Da spurte Buddha ham: Var lutten stemt og spillbar da strengene var altfor slakke? Nei, svarte Sona. Og da de var strammet altfor hardt? Nei, da heller ikke. Slik er det også med innsatsen din, svarte Buddha: for hard innsats gjør deg urolig, for slapp innsats gjør deg lat. Du må finne den rette spenningen (Thanissaro Bhikkhu, 1997)."
         },
         {
             "type": "header",
@@ -62,11 +65,11 @@
         },
         {
             "type": "text",
-            "content": "Veien kalles åttedelt fordi den består av åtte deler. Men de åtte henger ikke løst i lufta. De er samlet i tre store treningsområder, og på norsk kaller vi dem visdom, etikk og fordypning. Tenk på dem som tre muskler som må trenes sammen for at veien skal bære."
+            "content": "Veien kalles åttedelt fordi den består av åtte deler. Men de åtte henger ikke løst i lufta. De er samlet i tre store treningsområder: visdom (prajna), etikk (sila) og fordypning eller meditasjon (samadhi) (Borgland, 2026). Tenk på dem som tre muskler som må trenes sammen for at veien skal bære."
         },
         {
             "type": "text",
-            "content": "Men først må vi rydde opp i ett ord, for det kan lure deg. Hver av de åtte delene begynner med rett: rett tale, rett handling, og så videre. På norsk høres rett ut som lydig eller korrekt, som svaret på en prøve. Det er ikke det Buddha mente. Ordet han brukte, samma, betyr noe mer som hel, klok og i balanse. Rett tale er altså ikke å si det læreren vil høre - det er å bruke ord på en klok og hel måte."
+            "content": "Men først må vi rydde opp i ett ord, for det kan lure deg. Hver av de åtte delene begynner med rett: rett tale, rett handling, og så videre. På norsk høres rett ut som lydig eller korrekt, som svaret på en prøve. Det er ikke helt det ordet betyr. Ordet Buddha brukte, samma, betyr «grundig», «ordentlig», «slik det bør være» og «fullkomment» (Pali Text Society, u.å.). Rett tale er altså ikke å si det læreren vil høre - det er å bruke ord grundig og ordentlig, slik de bør brukes."
         },
         {
             "type": "header",
@@ -74,11 +77,11 @@
         },
         {
             "type": "text",
-            "content": "Den første treningen handler om hvordan du ser verden. Den har to deler: rett forståelse og rett tanke."
+            "content": "Den første treningen handler om hvordan du ser verden. Den har to deler: rett forståelse og rett tanke - i Store norske leksikon kalt riktig syn og riktig tenkning (Borgland, 2026)."
         },
         {
             "type": "text",
-            "content": "Rett forståelse er å se ærlig hvordan ting egentlig henger sammen - at alt forandrer seg, at ingenting varer evig, og at det er begjæret som skaper lidelse. Rett tanke handler om hva du innerst inne vil: ønsker du andre vel, eller styres du av grådighet og uvilje? Buddhistene mener at gode handlinger må starte i et godt sinn. Du kan ikke gå riktig vei før du skjønner hvor du står og hvorfor du går. Derfor kommer visdommen først."
+            "content": "Rett forståelse er å se ærlig hvordan ting egentlig henger sammen - at alt forandrer seg, at ingenting varer evig, og at det er «tørsten» som skaper lidelse. Rett tanke handler om hva du innerst inne vil: ønsker du andre vel, eller styres du av grådighet og uvilje? Buddhistene mener at gode handlinger må starte i et godt sinn. Du kan ikke gå riktig vei før du skjønner hvor du står og hvorfor du går. Derfor kommer visdommen først."
         },
         {
             "type": "header",
@@ -98,7 +101,7 @@
         },
         {
             "type": "text",
-            "content": "Det siste punktet overrasker mange. Buddha mente at også jobben din er en del av etikken. Å tjene penger på noe som skader andre trekker deg bort fra veien, uansett hvor lovlig det er. Etikk i buddhismen er ikke regler du følger fordi en gud befaler det, men fordi handlingene dine former både deg selv og verden rundt deg. Dette henger tett sammen med karma, tanken om at alt du gjør får følger: gode handlinger gir gode følger, dårlige handlinger gir dårlige."
+            "content": "Det siste punktet overrasker mange. Buddha mente at også jobben din er en del av etikken. Å tjene penger på noe som skader andre trekker deg bort fra veien, uansett hvor lovlig det er. Etikk i buddhismen er ikke regler du følger fordi en gud befaler det, men fordi handlingene dine former både deg selv og verden rundt deg. Dette henger tett sammen med karma, «gjerningenes lov»: den situasjonen du lever i, blir sett på som et resultat av gode og onde handlinger i tidligere liv (Kværne & Borgland, 2026b)."
         },
         {
             "type": "header",
@@ -122,7 +125,7 @@
         },
         {
             "type": "text",
-            "content": "Buddhistene tenker heller på veien som et hjul - dharmahjulet. Et hjul har gjerne åtte eiker, og det er ingen tilfeldighet: hver eike er en del av veien. Et hjul ruller ikke hvis bare én eike er på plass. Det trenger alle åtte samtidig, ellers knekker det sammen. På samme måte øver en buddhist på alle de åtte delene på én gang. Du blir ikke ferdig med etikk for så å begynne på meditasjon - delene støtter hverandre hele veien. Klarere sinn gir bedre handlinger, og bedre handlinger gir et roligere sinn."
+            "content": "De åtte delene er ikke trinn du følger etter hverandre, ett om gangen. De er heller deler som virker sammen (Bodhi, 1999). Buddhistene tenker derfor på veien som et hjul - dharmahjulet. Hjulet tegnes gjerne med åtte eiker, og det er ingen tilfeldighet: hver eike er en del av veien. Et hjul ruller ikke hvis bare én eike er på plass. Det trenger alle åtte samtidig. På samme måte øver en buddhist på alle de åtte delene på én gang. Du blir ikke ferdig med etikk for så å begynne på meditasjon - delene støtter hverandre hele veien. Klarere sinn gir bedre handlinger, og bedre handlinger gir et roligere sinn."
         },
         {
             "type": "image",
@@ -132,7 +135,7 @@
         },
         {
             "type": "text",
-            "content": "Det er nettopp derfor symbolet for buddhismen er et hjul med åtte eiker. Du finner det på flagg, på templer og til og med midt på Indias nasjonalflagg. Hver gang noen ser det, minnes de om at veien henger sammen: visdom, etikk og fordypning som én eneste bevegelse framover."
+            "content": "Det er nettopp derfor symbolet for buddhismen er et hjul. I buddhistisk kunst er hjulet selve bildet på læren (Borgland, 2025). Du finner det på templer og på flagg. Midt på Indias nasjonalflagg står det også et blått hjul, Ashoka-hjulet, men det har 24 eiker (Roede, 2026). Hver gang noen ser et slikt hjul, minnes de om at veien henger sammen: visdom, etikk og fordypning som én eneste bevegelse framover."
         },
         {
             "type": "header",
@@ -157,7 +160,7 @@
         },
         {
             "type": "text",
-            "content": "Buddhismen delte seg over tid i to hovedretninger, og de legger litt ulik vekt på veien. Theravada-buddhismen, som er utbredt i land som Thailand og Sri Lanka, ser veien mest som den enkeltes egen reise mot å bli fri fra lidelsen, ofte gjennom et liv som munk med mye meditasjon. Mahayana-buddhismen, som er stor i Kina, Japan og Tibet, legger sterkere vekt på medfølelse med alle andre. Her er idealet en bodhisattva - et menneske som går veien ikke bare for sin egen skyld, men for å hjelpe alle andre fram også."
+            "content": "Buddhismen er i dag delt i to hovedtradisjoner, og de legger litt ulik vekt på veien. Theravada er dominerende i Sør- og Sørøst-Asia, i land som Thailand og Sri Lanka. Den legger vekt på at den enkelte skal nå nirvana gjennom meditasjon og innsikt. Mahayana er stor i Kina, Japan og Tibet, og her står bodhisattva-idealet sentralt: et menneske som går veien ikke bare for sin egen skyld, men for å hjelpe alle andre fram også (Kværne & Borgland, 2026b)."
         },
         {
             "type": "text",
@@ -174,7 +177,9 @@
         {
             "type": "component",
             "name": "MicroGame",
-            "props": { "gameId": "attedelt-vei-hjulet" }
+            "props": {
+                "gameId": "attedelt-vei-hjulet"
+            }
         },
         {
             "type": "header",
@@ -229,11 +234,30 @@
                         "question": "Hva betyr ordet rett (samma) i navnene som rett tale og rett handling?",
                         "options": [
                             "Lydig og korrekt, som svaret på en prøve",
-                            "Hel, klok og i balanse",
+                            "Grundig og ordentlig - slik det bør være",
                             "Rask og effektiv"
                         ],
-                        "answer": "Hel, klok og i balanse"
+                        "answer": "Grundig og ordentlig - slik det bør være"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bodhi, B. (1999). *The Noble Eightfold Path: The Way to the End of Suffering*. Access to Insight. Hentet 25.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/lib/authors/bodhi/waytoend.html)",
+                    "Borgland, J. W. (2025). *dharma - buddhistisk lære*. Store norske leksikon. Hentet 25.08.2026 fra [snl.no/dharma_-_buddhistisk_lære](https://snl.no/dharma_-_buddhistisk_l%C3%A6re)",
+                    "Borgland, J. W. (2026). *den åttedelte veien*. Store norske leksikon. Hentet 25.08.2026 fra [snl.no/den_åttedelte_veien](https://snl.no/den_%C3%A5ttedelte_veien)",
+                    "Kværne, P., & Borgland, J. W. (2026a). *Buddha*. Store norske leksikon. Hentet 25.08.2026 fra [snl.no/Buddha](https://snl.no/Buddha)",
+                    "Kværne, P., & Borgland, J. W. (2026b). *buddhisme*. Store norske leksikon. Hentet 25.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+                    "Lopez, D. S. Jr. (2026). *Eightfold Path*. Encyclopaedia Britannica. Hentet 25.08.2026 fra [britannica.com/topic/Eightfold-Path](https://www.britannica.com/topic/Eightfold-Path)",
+                    "Lopez, D. S. Jr. (u.å.). *Four Noble Truths*. Encyclopaedia Britannica. Hentet 25.08.2026 fra [britannica.com/topic/Four-Noble-Truths](https://www.britannica.com/topic/Four-Noble-Truths)",
+                    "Pali Text Society. (u.å.). *sammā*. I *The Pali Text Society's Pali-English Dictionary*. Digital Dictionaries of South Asia. Hentet 25.08.2026 fra [dsal.uchicago.edu](https://dsal.uchicago.edu/cgi-bin/app/pali_query.py?qs=samma&searchhws=yes)",
+                    "Roede, L. (2026). *Indias flagg og våpen*. Store norske leksikon. Hentet 25.08.2026 fra [snl.no/Indias_flagg_og_våpen](https://snl.no/Indias_flagg_og_v%C3%A5pen)",
+                    "Thanissaro Bhikkhu. (1993). *Dhammacakkappavattana Sutta: Setting the Wheel of Dhamma in Motion*. Access to Insight. Hentet 25.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/sn/sn56/sn56.011.than.html)",
+                    "Thanissaro Bhikkhu. (1997). *Sona Sutta: About Sona*. Access to Insight. Hentet 25.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/an/an06/an06.055.than.html)"
                 ]
             }
         }
@@ -242,7 +266,7 @@
         {
             "id": "magga",
             "term": "Magga",
-            "definition": "Sanskrit/pali for veien - den fjerde av De fire edle sannheter. Selve oppskriften som fører ut av lidelsen, nemlig Den åttedelte veien."
+            "definition": "Den fjerde av De fire edle sannheter: veien. Selve oppskriften som fører ut av lidelsen, nemlig Den åttedelte veien."
         },
         {
             "id": "middelveien",
@@ -252,7 +276,7 @@
         {
             "id": "samma-rett",
             "term": "Samma (rett)",
-            "definition": "Ordet foran hver del av veien. Betyr ikke lydig eller korrekt, men hel, klok og i balanse."
+            "definition": "Ordet foran hver del av veien. Betyr ikke lydig eller korrekt som på en prøve, men grundig, ordentlig og slik det bør være."
         },
         {
             "id": "prajna",
@@ -272,12 +296,13 @@
         {
             "id": "dharmahjulet",
             "term": "Dharmahjulet",
-            "definition": "Hjulet med åtte eiker som er symbolet for buddhismen. Hver eike er en del av Den åttedelte veien, og hjulet ruller bare når alle åtte er på plass."
+            "definition": "Hjulet som er symbolet for buddhismen og står for læren (dharma). Det tegnes gjerne med åtte eiker, én for hver del av Den åttedelte veien, og ruller bare når alle åtte er på plass."
         }
     ],
     "quote": {
         "text": "Det finnes en midtvei som åpner øynene og gir innsikt, og som fører til fred, til oppvåkning og til nirvana.",
         "source": "Dhammacakkappavattana-sutta (Buddhas første tale)",
         "reference": "Buddha"
-    }
+    },
+    "factChecked": "2026-08-25"
 }
