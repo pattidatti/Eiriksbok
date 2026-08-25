@@ -26,6 +26,7 @@ export const FULL_WIDTH_PATHS = [
     '/musikk/gitarstudio',
     '/himmel',
     '/oving/kjedereaksjonen',
+    '/oving/kryssord',
 ];
 
 export const useLayout = () => {

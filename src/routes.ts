@@ -44,6 +44,7 @@ export const routeFactories: Record<string, PageFactory> = {
     ScannerPage: () => import('./pages/admin/ScannerPage').then(module => ({ default: module.ScannerPage })),
     RhetoricGamePage: () => import('./pages/RhetoricGamePage').then(module => ({ default: module.RhetoricGamePage })),
     HangmanPage: () => import('./pages/HangmanPage').then(module => ({ default: module.HangmanPage })),
+    CrosswordPage: () => import('./pages/CrosswordPage').then(module => ({ default: module.CrosswordPage })),
     ChronoGliderPage: () => import('./games/chrono-glider/ChronoGliderPage'),
     WordSorterGame: () => import('./games/word-sorter/WordSorterGame'),
     ConceptSnakeGame: () => import('./games/concept-snake/ConceptSnakeGame'),
