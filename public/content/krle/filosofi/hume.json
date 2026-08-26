@@ -23,7 +23,7 @@
     "content": [
         {
             "type": "text",
-            "content": "David Hume (1711–1776) var kanskje historiens blideste skeptiker. Han var kjent som 'le bon David' i Frankrike, en mann som elsket god mat, godt selskap og backgammon. Samtidig var han filosofien store uromoment. Han tok [Lockes](/krle/filosofi/locke) empirisme og dro den til sin logiske, og skremmende, konklusjon: Vi vet egentlig ingenting om verden utenfor oss selv."
+            "content": "David Hume (1711-1776) var kanskje historiens blideste skeptiker (Alnes, 2025). Da han kom til Paris i 1763, ble han hyllet av byens forfattere og tenkere slik han lenge hadde drømt om (Qu & Radcliffe, 2026). Han skrev selv at når de mørke tankene ble for tunge, spiste han middag, spilte et parti backgammon og koste seg med vennene sine - og da virket hele grublingen kald og latterlig (Hume, 1739). Samtidig var han filosofiens store uromoment. Han tok [Lockes](/krle/filosofi/locke) empirisme og dro den til sin logiske, og skremmende, konklusjon: vi vet egentlig ingenting sikkert om verden utenfor oss selv."
         },
         {
             "type": "header",
@@ -43,19 +43,19 @@
         },
         {
             "type": "text",
-            "content": "Du så aldri selve årsaken. Du så ingen usynlig kraft som hoppet fra den hvite til den røde kulen. Du så bare en rekkefølge av hendelser. Likevel er vi helt overbevist om at det er en nødvendig sammenheng. Hvorfor?"
+            "content": "Du så aldri selve årsaken. Du så ingen usynlig kraft som hoppet fra den hvite til den røde kulen. Du så bare en rekkefølge av hendelser. Vi har rett og slett aldri et sanseinntrykk av selve kraften (Lorkowski, u.å.). Likevel er vi helt overbevist om at det er en nødvendig sammenheng. Hvorfor?"
         },
         {
             "type": "text",
-            "content": "Humes svar er provoserende enkelt: Det er bare en vane. Fordi vi har sett det skje tusen ganger før, forventer vi at det skal skje igjen. Men denne forventningen er en følelse i oss, ikke en lov ute i verden."
+            "content": "Humes svar er provoserende enkelt: det er bare en vane. Fordi vi har sett det skje tusen ganger før, forventer vi at det skal skje igjen. Men denne forventningen oppstår inne i oss, den er ikke en lov ute i verden (Lorkowski, u.å.). Hume mente at hver eneste gang to biljardkuler støter sammen, er det en helt egen hendelse - den har ingen tråd som binder den til gangen før (Hume, 1739)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Causation is nothing but a habit of the mind.",
-                "author": "David Hume",
-                "translation": "Årsakssammenheng er intet annet enn en vane i sinnet."
+                "text": "All inferences from experience, therefore, are effects of custom, not of reasoning.",
+                "author": "David Hume, An Enquiry Concerning Human Understanding (1748)",
+                "translation": "Alle slutninger vi trekker av erfaring, er altså virkninger av vane, ikke av fornuft."
             }
         },
         {
@@ -64,7 +64,7 @@
         },
         {
             "type": "text",
-            "content": "Dette leder oss til induksjonsproblemet. Hele vitenskapen vår bygger på induksjon: Vi ser mange enkelttilfeller (solen står opp hver dag) og lager en generell regel (solen står alltid opp).\n\nMen kan vi bevise logisk at solen vil stå opp i morgen? Nei, sier Hume. Det er ingen logisk selvmotsigelse i å si at solen ikke vil stå opp. At den har gjort det til nå, beviser ingenting om fremtiden, med mindre vi antar at 'fremtiden vil ligne fortiden'. Men hvordan vet vi at fremtiden vil ligne fortiden? Bare fordi den har gjort det før. Det er en sirkelargumentasjon!\n\nVi kan ikke vite noe sikkert om fremtiden. Vi kan bare tro."
+            "content": "Dette leder oss til induksjonsproblemet. Hele vitenskapen vår bygger på induksjon: vi ser mange enkelttilfeller (solen står opp hver dag) og lager en generell regel (solen står alltid opp).\n\nMen kan vi bevise logisk at solen vil stå opp i morgen? Nei, sier Hume. At den har gjort det til nå, beviser ingenting om fremtiden, med mindre vi først antar at fremtiden vil ligne fortiden. Men hvordan vet vi det? Bare fordi det har vært slik før. Vi bruker altså regelen for å bevise regelen - det går i sirkel (Lorkowski, u.å.).\n\nDerfor er vanen, ikke fornuften, det som får oss til å regne med morgendagen. Hume kalte vanen den store veiviseren i menneskelivet: det er den alene som gjør erfaringen vår nyttig, og som får oss til å vente det samme av fremtiden som vi har sett i fortiden (Hume, 1748)."
         },
         {
             "type": "header",
@@ -72,7 +72,7 @@
         },
         {
             "type": "text",
-            "content": "Som Locke, mente Hume at sinnet var tomt ved fødselen. Han delte innholdet i bevisstheten vår i to:"
+            "content": "Som Locke mente Hume at all kunnskap starter i sanseerfaringen. Han delte innholdet i bevisstheten vår i to, der den ene delen er en svakere kopi av den andre (Alnes, 2025):"
         },
         {
             "type": "list",
@@ -83,7 +83,7 @@
         },
         {
             "type": "text",
-            "content": "Du kan ikke ha en idé uten å ha hatt inntrykket først. En blind mann kan ikke ha en idé om fargen rød. Dette betyr også at ord som 'Gud', 'Sjel' eller 'Selv' er meningsløse hvis vi ikke kan peke på hvilket inntrykk de kommer fra. Hume 'kikket inn i seg selv' for å finne sitt 'Jeg', men fant bare en strøm av skiftende følelser – kulde, varme, sult, glede. Han fant aldri noe fast 'Jeg' bak følelsene."
+            "content": "Du kan ikke ha en idé uten å ha hatt inntrykket først. Alle enkle idéer er nøyaktig like kopier av enkle inntrykk, mente Hume (Qu & Radcliffe, 2026). En blind mann kan derfor ikke ha en idé om fargen rød. Dette betyr også at ord som 'Gud', 'Sjel' eller 'Selv' blir tomme hvis vi ikke kan peke på hvilket inntrykk de kommer fra.\n\nHume kikket inn i seg selv for å finne sitt 'Jeg', men fant bare en strøm av skiftende inntrykk - kulde, varme, sult, glede. Han fant aldri noe fast 'Jeg' bak dem. Selvet er ikke en kjerne, konkluderte han, men en bunt av inntrykk som henger sammen (Qu & Radcliffe, 2026)."
         },
         {
             "type": "component",
@@ -117,20 +117,20 @@
         },
         {
             "type": "text",
-            "content": "I motsetning til de fleste filosofer før ham, som mente fornuften skulle sjefe over følelsene, snudde Hume opp ned på alt. Fornuften kan fortelle oss hvordan vi skal bygge et hus, eller hvordan vi kan drepe noen, men den kan aldri fortelle oss *hvorfor* vi bør gjøre det ene eller det andre. Det er det bare følelsene våre (lidenskapene) som kan."
+            "content": "I motsetning til de fleste filosofer før ham, som mente fornuften skulle sjefe over følelsene, snudde Hume opp ned på alt. Fornuften kan fortelle oss hvordan vi skal bygge et hus, eller hvordan vi kan drepe noen, men den kan aldri fortelle oss *hvorfor* vi bør gjøre det ene eller det andre. Det er det bare følelsene våre, det Hume kalte lidenskapene, som kan (Alnes, 2025)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Reason is, and ought only to be the slave of the passions.",
-                "author": "David Hume",
-                "translation": "Fornuften er, og bør bare være, lidenskapenes slave."
+                "text": "Reason is, and ought only to be the slave of the passions, and can never pretend to any other office than to serve and obey them.",
+                "author": "David Hume, A Treatise of Human Nature (1739)",
+                "translation": "Fornuften er, og bør bare være, lidenskapenes slave, og kan aldri gjøre krav på noen annen oppgave enn å tjene og adlyde dem."
             }
         },
         {
             "type": "text",
-            "content": "Moral er altså ikke logikk, men følelser. Vi dømmer en handling som 'god' fordi den vekker en følelse av sympati eller behag i oss, ikke fordi den oppfyller en matematisk formel."
+            "content": "Moral er altså ikke logikk, men følelser. Vi dømmer en handling som 'god' fordi den vekker en følelse av sympati eller behag i oss, ikke fordi den oppfyller en matematisk formel. Skillet mellom last og dyd bygger ikke på forholdet mellom ting, og det er ikke fornuften som oppdager det, skrev Hume (1739)."
         },
         {
             "type": "header",
@@ -138,14 +138,28 @@
         },
         {
             "type": "text",
-            "content": "Hume oppdaget en feil mange gjør. De starter med å beskrive hvordan verden *er* (f.eks. 'Mennesker spiser kjøtt fra naturens side'), og glir umerkelig over til å si hvordan den *bør* være ('Derfor er det riktig å spise kjøtt').\n\nDette er logisk ugyldig, sa Hume. Du kan ikke utlede et 'bør' fra et 'er'. At noe *er* på en bestemt måte, forteller oss ingenting om det *er riktig* at det er slik. Denne skarpheten kalles 'Humes Giljotin', fordi den kutter hodet av mange dårlige argumenter."
+            "content": "Hume oppdaget en feil mange gjør. De starter med å beskrive hvordan verden *er* (f.eks. 'Mennesker spiser kjøtt fra naturens side'), og glir umerkelig over til å si hvordan den *bør* være ('Derfor er det riktig å spise kjøtt').\n\nHume skrev at han hadde lest en rekke moralbøker der forfatteren plutselig gikk fra setninger med 'er' og 'er ikke' til setninger med 'bør' og 'bør ikke' - og at overgangen skjer så umerkelig at ingen legger merke til den (Hume, 1739). Men et 'bør' sier noe helt nytt, mente han, og da må noen forklare hvordan det følger av et 'er'.\n\nDu kan altså ikke uten videre utlede et 'bør' fra et 'er'. At noe *er* på en bestemt måte, forteller oss ingenting om det *er riktig* at det er slik. Dette kalles gjerne 'Humes giljotin', fordi det kutter hodet av mange dårlige argumenter."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Våknet av dvalen",
-                "content": "Den tyske filosofen [Immanuel Kant](/krle/filosofi/kant) var sjokkert da han leste Hume. Han innså at Hume hadde rett i at erfaring alene ikke kan gi oss sikker viten (som at solen må stå opp). For å redde vitenskapen måtte Kant finne på noe helt nytt. Han sa senere at det var Hume som 'vekket ham fra hans dogmatiske slummer'."
+                "content": "Den tyske filosofen [Immanuel Kant](/krle/filosofi/kant) ble rystet da han leste Hume på begynnelsen av 1770-tallet. Hume hadde vist at vi aldri kan få sikker viten om nødvendige årsakssammenhenger - verken gjennom sansene eller ved ren tenkning. I et tilbakeblikk i 1783 skrev Kant at det var Hume som vekket ham av hans 'dogmatiske slummer' (Jankowiak, u.å.). For å redde vitenskapen måtte Kant finne på noe helt nytt."
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Alnes, J. H. (2025). *David Hume*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/David_Hume](https://snl.no/David_Hume)",
+                    "Hume, D. (1739). *A Treatise of Human Nature*. Project Gutenberg. Hentet 26.08.2026 fra [gutenberg.org/ebooks/4705](https://www.gutenberg.org/ebooks/4705)",
+                    "Hume, D. (1748). *An Enquiry Concerning Human Understanding*. Project Gutenberg. Hentet 26.08.2026 fra [gutenberg.org/ebooks/9662](https://www.gutenberg.org/ebooks/9662)",
+                    "Jankowiak, T. (u.å.). *Kant, Immanuel*. Internet Encyclopedia of Philosophy. Hentet 26.08.2026 fra [iep.utm.edu/kantview](https://iep.utm.edu/kantview/)",
+                    "Lorkowski, C. M. (u.å.). *Hume, David: Causation*. Internet Encyclopedia of Philosophy. Hentet 26.08.2026 fra [iep.utm.edu/hume-causation](https://iep.utm.edu/hume-causation/)",
+                    "Qu, H. & Radcliffe, E. S. (2026). *David Hume*. Stanford Encyclopedia of Philosophy. Hentet 26.08.2026 fra [plato.stanford.edu/entries/hume](https://plato.stanford.edu/entries/hume/)"
+                ]
             }
         }
     ],
@@ -182,5 +196,5 @@
         }
     ],
     "createdDate": "2025-12-22T23:55:00Z",
-    "lastUpdated": "2025-12-22T23:55:00Z"
+    "lastUpdated": "2026-08-26T00:00:00Z"
 }
