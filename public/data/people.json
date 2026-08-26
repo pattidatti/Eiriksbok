@@ -48,17 +48,20 @@
         {
           "title": "Arbeidsspesialisering: Samarbeidets magi",
           "url": "/samfunnskunnskap/okonomi/arbeidsspesialisering",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 5
         },
         {
           "title": "Penger vs. byttehandel: Tillitens historie",
           "url": "/samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Uavhengighetserklæringen",
           "url": "/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -84,22 +87,26 @@
         {
           "title": "Diktaturet: Makt uten grenser",
           "url": "/samfunnskunnskap/styringsformer/diktaturet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Hannah Arendt",
           "url": "/krle/filosofi/arendt",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Konsentrasjonsleirene",
           "url": "/historie/andre-verdenskrig/konsentrasjonsleirene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Nürnbergprosessen - ingen er over loven",
           "url": "/historie/lov-og-rett/nurnbergprosessen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -127,42 +134,50 @@
         {
           "title": "Andre verdenskrig: En oversikt",
           "url": "/historie/andre-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Geopolitikk og Opptakt: Veien mot stupet",
           "url": "/historie/andre-verdenskrig/bakgrunn",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Konsekvenser: Et nytt Europa",
           "url": "/historie/forste-verdenskrig/konsekvenser",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Konsentrasjonsleirene",
           "url": "/historie/andre-verdenskrig/konsentrasjonsleirene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Krigens løp: Fra lynkrig til ragnarok",
           "url": "/historie/andre-verdenskrig/krigens-lop",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Mytteri og Forræderi: Den Tyske Revolusjon",
           "url": "/historie/forste-verdenskrig/tyske-revolusjon",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Slik ser en 6-er ut: Muntlig eksamen i samfunnsfag",
           "url": "/samfunnskunnskap/eksamen/muntlig-modell",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Tyskland: Veien mot nazismen",
           "url": "/historie/mellomkrigstiden/tyskland",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": [
@@ -191,17 +206,20 @@
         {
           "title": "Det gamle Egypt: Riket ved Nilen",
           "url": "/historie/jordbruk-og-sivilisasjoner/egypt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         },
         {
           "title": "Egyptisk religion: hjertet på vekten",
           "url": "/krle/religion/historiske-religioner/egyptisk-religion",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Hadde Gud en kone?",
           "url": "/krle/religion/historiske-religioner/monoteismens-fodsel",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 14
         }
       ],
       "aliasSlugs": []
@@ -227,12 +245,14 @@
         {
           "title": "Kultur: Da alt ble relativt",
           "url": "/historie/mellomkrigstiden/kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Troen på framskrittet: Blir alt egentlig bedre?",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/framskrittstro",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -260,22 +280,26 @@
         {
           "title": "Novelle",
           "url": "/norsk/tekstsjangre/novelle",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 4
         },
         {
           "title": "Oljealderen: da Norge fant gullet under havet",
           "url": "/historie/norge-i-moderne-tid/oljealderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Realismen: Sannheten skal frem",
           "url": "/norsk/litteraturhistorie/realismen",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 4
         },
         {
           "title": "Roman",
           "url": "/norsk/tekstsjangre/roman",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -301,12 +325,14 @@
         {
           "title": "Alv Erlingsson: Piraten som utfordret kongen",
           "url": "/historie/norsk-middelalder/alv-erlingsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 10
         },
         {
           "title": "Hanseatene: Kjøpmennene som formet Norge og Europa gjennom tørrfisk, makt og språk",
           "url": "/historie/middelalderen/hanseatene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -332,17 +358,20 @@
         {
           "title": "Novelle",
           "url": "/norsk/tekstsjangre/novelle",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Realismen: Sannheten skal frem",
           "url": "/norsk/litteraturhistorie/realismen",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         },
         {
           "title": "Slik ser en 6-er ut: Muntlig eksamen",
           "url": "/norsk/eksamen/muntlig-modell",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -368,7 +397,8 @@
         {
           "title": "Skipet som ble brent",
           "url": "/historie/vikingtiden/myklebust-funnet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": []
@@ -397,17 +427,20 @@
         {
           "title": "Borgerkrigstiden: da Norge manglet en arveregel",
           "url": "/historie/norsk-middelalder/borgerkrigstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Den romerske legionen",
           "url": "/historie/romerriket/den-romerske-legionen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Suez-krisen 1956: Da de gamle imperiene falt",
           "url": "/historie/den-kalde-krigen/suez-krisen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": [
@@ -441,147 +474,176 @@
         {
           "title": "Al-Andalus: da Spania var muslimsk",
           "url": "/historie/middelalderen/al-andalus",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Aleksander den store: Eleven som erobret verden",
           "url": "/historie/perserriket/aleksander-den-store",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Antikkens visjoner: Platon og Aristoteles",
           "url": "/samfunnskunnskap/styringsformer/antikken-visjoner",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 14
         },
         {
           "title": "Aristoteles",
           "url": "/krle/filosofi/aristoteles",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 12
         },
         {
           "title": "Den vitenskapelige revolusjonen",
           "url": "/historie/renessansen/den-vitenskapelige-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 7
         },
         {
           "title": "Det bysantinske riket: Roma som overlevde",
           "url": "/historie/middelalderen/bysantinske-riket",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Det islamske gullaldet: Da Bagdad var verdens kunnskapssenter",
           "url": "/historie/midtoesten/islamsk-gullaldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Dygdsetikk",
           "url": "/krle/etikk/dygdsetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 15
         },
         {
           "title": "Galileo Galilei: Mannen som så himmelen først",
           "url": "/historie/renessansen/galileo-galilei",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         },
         {
           "title": "Gresk teater: tragedie og komedie",
           "url": "/historie/antikkens-hellas/gresk-teater",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Gresk vitenskap: Da fornuften forklarte verden",
           "url": "/historie/antikkens-hellas/gresk-vitenskap",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Hannah Arendt",
           "url": "/krle/filosofi/arendt",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Hva er etikk?",
           "url": "/krle/etikk/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 8
         },
         {
           "title": "Hva er filosofi?",
           "url": "/krle/filosofi/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 6
         },
         {
           "title": "Hva er retorikk?",
           "url": "/norsk/retorikk/grunnleggende-retorikk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 11
         },
         {
           "title": "Hvordan døde Aleksander den store?",
           "url": "/historie/historiens-store-gater/alexanders-dod",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Immanuel Kant",
           "url": "/krle/filosofi/kant",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Konfusianisme: plikten som går begge veier",
           "url": "/krle/livssyn/konfusianisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Korstogene: Hellig krig og kulturkollisjon",
           "url": "/historie/middelalderen/korstogene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Ludwig von Mises",
           "url": "/krle/filosofi/mises",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Martin Heidegger",
           "url": "/krle/filosofi/heidegger",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Middelalderen: En tusenårig forvandling",
           "url": "/historie/middelalderen/middelalderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Naturens sjel: Fra hellig til ressurs",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Penger vs. byttehandel: Tillitens historie",
           "url": "/samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Platon",
           "url": "/krle/filosofi/platon",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Renessansen: Gjenfødelsen av antikken",
           "url": "/historie/renessansen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Slik analyserer du: Debattinnlegg",
           "url": "/norsk/analyse/analyse-debattinnlegg",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Thomas Aquinas",
           "url": "/krle/filosofi/aquinas",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 8
         },
         {
           "title": "Ytringsvett vs ytringsmot",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -614,12 +676,14 @@
         {
           "title": "Augustin",
           "url": "/krle/filosofi/augustin",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 12
         },
         {
           "title": "Fra Princeps til Guds utvalgte",
           "url": "/historie/romerriket/legitimitet-og-kristendom",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -653,17 +717,20 @@
         {
           "title": "Den iranske revolusjonen 1979",
           "url": "/historie/midtoesten/iran-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 16
         },
         {
           "title": "Den kalde krigen i Midtøsten",
           "url": "/historie/midtoesten/kald-krig-midtosten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Krigen mellom USA og Iran",
           "url": "/historie/midtoesten/iran-usa-krigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": [
@@ -693,7 +760,8 @@
         {
           "title": "Det spanske imperiet: Gull, Gud og ære",
           "url": "/historie/kolonialisering/spansk-kolonialisering",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -747,7 +815,8 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 4
         }
       ],
       "aliasSlugs": [
@@ -776,17 +845,20 @@
         {
           "title": "Andre verdenskrig: En oversikt",
           "url": "/historie/andre-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Folkeforbundet: Drømmen om fred",
           "url": "/historie/mellomkrigstiden/folkeforbundet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Italia: Fascismens fødsel",
           "url": "/historie/mellomkrigstiden/italia",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": [
@@ -814,12 +886,14 @@
         {
           "title": "Kultur: Da alt ble relativt",
           "url": "/historie/mellomkrigstiden/kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "USA: Fra 'The Roaring 20s' til 'The New Deal'",
           "url": "/historie/mellomkrigstiden/usa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -847,7 +921,8 @@
         {
           "title": "De store dynastiene: Keisere og sivilisasjon",
           "url": "/historie/kinas-historie/dynastiene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -873,12 +948,14 @@
         {
           "title": "Bananrepublikken: Da et fruktselskap styrtet en regjering",
           "url": "/historie/dekolonisering/guatemala-1954",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Peace Lines: Murene som deler Belfast",
           "url": "/historie/den-kalde-krigen/peace-lines-belfast",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -904,12 +981,14 @@
         {
           "title": "Jazzens fødsel",
           "url": "/musikk/musikkhistorie/jazzens-fodsel",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 5
         },
         {
           "title": "Protestmusikk: Når sanger forandrer verden",
           "url": "/musikk/musikkhistorie/protestmusikk",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -935,7 +1014,8 @@
         {
           "title": "Norge under okkupasjonen",
           "url": "/historie/andre-verdenskrig/norge-under-okkupasjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -966,7 +1046,8 @@
         {
           "title": "Sveriges historie: Fra østfarere til moderne nasjon",
           "url": "/historie/sveriges-historie/sveriges-historie/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 9
         }
       ],
       "aliasSlugs": []
@@ -992,7 +1073,8 @@
         {
           "title": "Slik analyserer du: Debattinnlegg",
           "url": "/norsk/analyse/analyse-debattinnlegg",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -1020,37 +1102,44 @@
         {
           "title": "Folkemusikk: Hardingfela, slåtter og kveding",
           "url": "/musikk/musikkhistorie/folkemusikk",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 1
         },
         {
           "title": "Nasjonalromantikken: Da Norge fant sin sjel",
           "url": "/norsk/litteraturhistorie/nasjonalromantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Novelle",
           "url": "/norsk/tekstsjangre/novelle",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Realismen: Sannheten skal frem",
           "url": "/norsk/litteraturhistorie/realismen",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         },
         {
           "title": "Roman",
           "url": "/norsk/tekstsjangre/roman",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Slik analyserer du: Novelle",
           "url": "/norsk/analyse/analyse-novelle",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Unionsoppløsningen 1905",
           "url": "/historie/norgeshistorie/unionsopplosningen-1905",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -1079,7 +1168,8 @@
         {
           "title": "Republikkens fall: Borgerkrig og revolusjon",
           "url": "/historie/kinas-historie/borgerkrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 8
         }
       ],
       "aliasSlugs": []
@@ -1106,17 +1196,20 @@
         {
           "title": "Gustav Vasa - Sveriges grunnlegger",
           "url": "/historie/sveriges-historie/gustav-vasa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Stockholms blodbad",
           "url": "/historie/sveriges-historie/stockholm-blodbadet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 18
         },
         {
           "title": "Sveriges historie: Fra østfarere til moderne nasjon",
           "url": "/historie/sveriges-historie/sveriges-historie/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -1142,22 +1235,26 @@
         {
           "title": "Aleksander den store: Eleven som erobret verden",
           "url": "/historie/perserriket/aleksander-den-store",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Kyros den store: Imperiet som vant med mildhet",
           "url": "/historie/perserriket/kyros-den-store",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Perserkrigene: Da Hellas trosset verdens største rike",
           "url": "/historie/perserriket/perserkrigene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Perserriket: Det første verdensriket",
           "url": "/historie/perserriket/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 7
         }
       ],
       "aliasSlugs": []
@@ -1182,7 +1279,8 @@
         {
           "title": "Peace Lines: Murene som deler Belfast",
           "url": "/historie/den-kalde-krigen/peace-lines-belfast",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -1213,7 +1311,8 @@
         {
           "title": "David Hume",
           "url": "/krle/filosofi/hume",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -1240,22 +1339,26 @@
         {
           "title": "Deng Xiaoping: Kina åpner for verden",
           "url": "/historie/kinas-historie/deng-og-reformene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 10
         },
         {
           "title": "Det store spranget og kulturrevolusjonen",
           "url": "/historie/kinas-historie/store-spranget",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Kina som supermakt",
           "url": "/historie/kinas-historie/kina-supermakt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Tiananmen 1989: Da studentene krevde frihet",
           "url": "/historie/kinas-historie/tiananmen-1989",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -1286,22 +1389,26 @@
         {
           "title": "De romerske keiserne",
           "url": "/historie/romerriket/romerske-keisere",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Diokletian: Da Romerriket ble gjenfødt",
           "url": "/historie/romerriket/diokletian",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 31
         },
         {
           "title": "Fra Princeps til Guds utvalgte",
           "url": "/historie/romerriket/legitimitet-og-kristendom",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Tidlig middelalder: Folkevandring og forvandling",
           "url": "/historie/middelalderen/tidlig-middelalder",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": [
@@ -1329,12 +1436,14 @@
         {
           "title": "DMZ: Grensen verden glemte å åpne",
           "url": "/historie/den-kalde-krigen/korea-dmz",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Kjendismakt og influensere",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -1364,7 +1473,8 @@
         {
           "title": "Koreakrigen 1950-1953: Den glemte krigen som aldri tok slutt",
           "url": "/historie/den-kalde-krigen/koreakrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 17
         }
       ],
       "aliasSlugs": [
@@ -1415,17 +1525,20 @@
         {
           "title": "Jazzens fødsel",
           "url": "/musikk/musikkhistorie/jazzens-fodsel",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 1
         },
         {
           "title": "Kultur: Da alt ble relativt",
           "url": "/historie/mellomkrigstiden/kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "USA: Fra 'The Roaring 20s' til 'The New Deal'",
           "url": "/historie/mellomkrigstiden/usa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -1457,7 +1570,8 @@
         {
           "title": "Koreakrigen 1950-1953: Den glemte krigen som aldri tok slutt",
           "url": "/historie/den-kalde-krigen/koreakrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -1485,17 +1599,20 @@
         {
           "title": "Folkemusikk: Hardingfela, slåtter og kveding",
           "url": "/musikk/musikkhistorie/folkemusikk",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 3
         },
         {
           "title": "Gamle toner, nye stemmer",
           "url": "/musikk/musikkhistorie/gamle-toner-nye-stemmer",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 3
         },
         {
           "title": "Nasjonalromantikken: Da Norge fant sin sjel",
           "url": "/norsk/litteraturhistorie/nasjonalromantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -1521,7 +1638,8 @@
         {
           "title": "Kjendismakt og influensere",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 6
         }
       ],
       "aliasSlugs": []
@@ -1567,17 +1685,20 @@
         {
           "title": "Hvem nådde Amerika først?",
           "url": "/historie/historiens-store-gater/hvem-nadde-amerika-forst",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Hvorfor forsvant de norrøne på Grønland?",
           "url": "/historie/historiens-store-gater/gronlands-gate",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Oppdagelsesreiser i Vesterled",
           "url": "/historie/vikingtiden/oppdagelsesreiser",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -1604,7 +1725,8 @@
         {
           "title": "Hansadrapet i Bergen 1455: Da kjøpmennene var sterkere enn kongen",
           "url": "/historie/norsk-middelalder/hansadrapet-1455",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -1630,17 +1752,20 @@
         {
           "title": "Hvem eier historien? Synsvinkel og stemme",
           "url": "/norsk/virkemidler/synsvinkel-og-stemme",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Slik analyserer du: Novelle",
           "url": "/norsk/analyse/analyse-novelle",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Spania: Den spanske borgerkrig",
           "url": "/historie/mellomkrigstiden/spania",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -1667,7 +1792,8 @@
         {
           "title": "Malthus: Dommedag vs. Teknologi",
           "url": "/samfunnskunnskap/demografi/malthus-vs-boserup",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -1701,17 +1827,20 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 6
         },
         {
           "title": "Inflasjon og rente",
           "url": "/samfunnskunnskap/okonomi/inflasjon-og-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 4
         },
         {
           "title": "Ulike økonomiske skoler",
           "url": "/samfunnskunnskap/okonomi/okonomiske-skoler",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -1740,7 +1869,8 @@
         {
           "title": "Hadde Gud en kone?",
           "url": "/krle/religion/historiske-religioner/monoteismens-fodsel",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -1767,7 +1897,8 @@
         {
           "title": "Spania: Den spanske borgerkrig",
           "url": "/historie/mellomkrigstiden/spania",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -1796,17 +1927,20 @@
         {
           "title": "Andre verdenskrig: En oversikt",
           "url": "/historie/andre-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Berlinmuren: Symbolet på en delt verden",
           "url": "/historie/den-kalde-krigen/berlinmuren",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "USA: Fra 'The Roaring 20s' til 'The New Deal'",
           "url": "/historie/mellomkrigstiden/usa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -1830,22 +1964,26 @@
         {
           "title": "Casus Belli: Historiens farligste argumenter",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/casus-belli",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Første verdenskrig: En oversikt",
           "url": "/historie/forste-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Hvem hadde skylda for første verdenskrig?",
           "url": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Opptakten: Veien mot katastrofen",
           "url": "/historie/forste-verdenskrig/opptakt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -1871,7 +2009,8 @@
         {
           "title": "Korstogene: Hellig krig og kulturkollisjon",
           "url": "/historie/middelalderen/korstogene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -1896,7 +2035,8 @@
         {
           "title": "Karl Marx",
           "url": "/krle/filosofi/marx",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -1932,17 +2072,20 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 12
         },
         {
           "title": "Det store krakket: Keynes vs. Hayek",
           "url": "/historie/mellomkrigstiden/borskrakk",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 23
         },
         {
           "title": "Ulike økonomiske skoler",
           "url": "/samfunnskunnskap/okonomi/okonomiske-skoler",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 10
         }
       ],
       "aliasSlugs": [
@@ -1976,22 +2119,26 @@
         {
           "title": "Friedrich Nietzsche",
           "url": "/krle/filosofi/nietzsche",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Nihilisme i etikk",
           "url": "/krle/etikk/nihilisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Sannhetens historie: Fra åpenbaring til algoritme",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Ytringsvett vs ytringsmot",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2016,7 +2163,8 @@
         {
           "title": "Novelle",
           "url": "/norsk/tekstsjangre/novelle",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2047,7 +2195,8 @@
         {
           "title": "Fra republikk til keiserdømme: Augustus",
           "url": "/historie/romerriket/augustus-og-keiserdomme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2073,37 +2222,44 @@
         {
           "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
           "url": "/krle/livssyn/ateisme-og-agnostisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Den vitenskapelige revolusjonen",
           "url": "/historie/renessansen/den-vitenskapelige-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Flokkmentalitetens psykologi",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Galileo Galilei: Mannen som så himmelen først",
           "url": "/historie/renessansen/galileo-galilei",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Mottreformasjonen",
           "url": "/historie/reformasjonen/mottreformasjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Renessansen: Gjenfødelsen av antikken",
           "url": "/historie/renessansen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Sannhetens historie: Fra åpenbaring til algoritme",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -2133,27 +2289,32 @@
         {
           "title": "Den kalde krigen i Midtøsten",
           "url": "/historie/midtoesten/kald-krig-midtosten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Det britiske imperiet: Solen som aldri gikk ned",
           "url": "/historie/kolonialisering/britisk-imperium",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Europa erobrer verden",
           "url": "/historie/kolonialisering/europa-erobrer-verden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "NATO vs. Warszawapakten: En delt verden",
           "url": "/historie/den-kalde-krigen/nato-vs-warszawa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Suez-krisen 1956: Da de gamle imperiene falt",
           "url": "/historie/den-kalde-krigen/suez-krisen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 25
         }
       ],
       "aliasSlugs": [
@@ -2181,7 +2342,8 @@
         {
           "title": "Robotene kommer: Fremtidens arbeid og menneskets verdi",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -2203,17 +2365,20 @@
         {
           "title": "Første verdenskrig: En oversikt",
           "url": "/historie/forste-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Hvem hadde skylda for første verdenskrig?",
           "url": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Opptakten: Veien mot katastrofen",
           "url": "/historie/forste-verdenskrig/opptakt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2262,12 +2427,14 @@
         {
           "title": "Realismen: Sannheten skal frem",
           "url": "/norsk/litteraturhistorie/realismen",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 4
         },
         {
           "title": "Slik analyserer du: Romanutdrag",
           "url": "/norsk/analyse/analyse-roman",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2293,32 +2460,38 @@
         {
           "title": "Diktaturet: Makt uten grenser",
           "url": "/samfunnskunnskap/styringsformer/diktaturet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "En verden i to: Oversikt over den kalde krigen",
           "url": "/historie/den-kalde-krigen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Nasjonenes gullaldre: Fortiden landene bygger på",
           "url": "/historie/nasjonalstatenes-tid/nasjonenes-gullaldre",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Spania: Den spanske borgerkrig",
           "url": "/historie/mellomkrigstiden/spania",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Uten hersker: Anarkiets drøm og teorier",
           "url": "/samfunnskunnskap/styringsformer/uten-hersker",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Utopier: Drømmen om det perfekte samfunn",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/utopier",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2344,12 +2517,14 @@
         {
           "title": "Dampmaskinen: oppfinnelsen som forandret alt",
           "url": "/historie/industriell-revolusjon/dampmaskinen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Jernbanen: maskinen som krympet verden",
           "url": "/historie/industriell-revolusjon/jernbanen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2375,7 +2550,8 @@
         {
           "title": "Første verdenskrig: En oversikt",
           "url": "/historie/forste-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2401,7 +2577,8 @@
         {
           "title": "Hvem hadde skylda for første verdenskrig?",
           "url": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2428,7 +2605,8 @@
         {
           "title": "Italia: Fascismens fødsel",
           "url": "/historie/mellomkrigstiden/italia",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2454,7 +2632,8 @@
         {
           "title": "Galileo Galilei: Mannen som så himmelen først",
           "url": "/historie/renessansen/galileo-galilei",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2480,7 +2659,8 @@
         {
           "title": "Hip-hop: Fra gata til verdensscenen",
           "url": "/musikk/musikkhistorie/hip-hop",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2506,7 +2686,8 @@
         {
           "title": "Johan Calvin og kalvinismen",
           "url": "/historie/reformasjonen/kalvin-og-kalvinismen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2537,27 +2718,32 @@
         {
           "title": "Grunnleggere: Menneskene bak",
           "url": "/krle/sammenligning/grunnleggere",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 6
         },
         {
           "title": "Hellige tekster: Bøkene som styrer liv",
           "url": "/krle/sammenligning/hellige-tekster",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Høytider: Den hellige kalenderen",
           "url": "/krle/sammenligning/hoytider",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Kjønn og roller: Prinsipp mot praksis",
           "url": "/krle/sammenligning/kjonn-og-roller",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Ledelse: Hvem bestemmer?",
           "url": "/krle/sammenligning/ledelse-og-fellesskap",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -2590,22 +2776,26 @@
         {
           "title": "Grunnleggere: Menneskene bak",
           "url": "/krle/sammenligning/grunnleggere",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Hellige tekster: Bøkene som styrer liv",
           "url": "/krle/sammenligning/hellige-tekster",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Kjønn og roller: Prinsipp mot praksis",
           "url": "/krle/sammenligning/kjonn-og-roller",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Ledelse: Hvem bestemmer?",
           "url": "/krle/sammenligning/ledelse-og-fellesskap",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -2638,22 +2828,26 @@
         {
           "title": "30-årskrigen: Europa i flammer",
           "url": "/historie/reformasjonen/30-aarskrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Gustav Vasa - Sveriges grunnlegger",
           "url": "/historie/sveriges-historie/gustav-vasa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Stormaktstiden - Sveriges gullalder",
           "url": "/historie/sveriges-historie/stormaktstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 9
         },
         {
           "title": "Sveriges historie: Fra østfarere til moderne nasjon",
           "url": "/historie/sveriges-historie/sveriges-historie/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -2679,7 +2873,8 @@
         {
           "title": "Stockholms blodbad",
           "url": "/historie/sveriges-historie/stockholm-blodbadet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -2710,27 +2905,32 @@
         {
           "title": "Gustav Vasa - Sveriges grunnlegger",
           "url": "/historie/sveriges-historie/gustav-vasa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 13
         },
         {
           "title": "Kalmarunionen",
           "url": "/historie/norgeshistorie/kalmarunionen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Stockholms blodbad",
           "url": "/historie/sveriges-historie/stockholm-blodbadet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 12
         },
         {
           "title": "Stormaktstiden - Sveriges gullalder",
           "url": "/historie/sveriges-historie/stormaktstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Sveriges historie: Fra østfarere til moderne nasjon",
           "url": "/historie/sveriges-historie/sveriges-historie/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 9
         }
       ],
       "aliasSlugs": [
@@ -2758,12 +2958,14 @@
         {
           "title": "Aksum og Etiopia: riket som slo tilbake",
           "url": "/historie/afrikanske-riker/aksum-og-etiopia",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Folkeforbundet: Drømmen om fred",
           "url": "/historie/mellomkrigstiden/folkeforbundet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": [
@@ -2791,37 +2993,44 @@
         {
           "title": "Diktaturet: Makt uten grenser",
           "url": "/samfunnskunnskap/styringsformer/diktaturet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 6
         },
         {
           "title": "Hannah Arendt",
           "url": "/krle/filosofi/arendt",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Karl Marx",
           "url": "/krle/filosofi/marx",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Konsentrasjonsleirene",
           "url": "/historie/andre-verdenskrig/konsentrasjonsleirene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Martin Heidegger",
           "url": "/krle/filosofi/heidegger",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Nürnbergprosessen - ingen er over loven",
           "url": "/historie/lov-og-rett/nurnbergprosessen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Simone de Beauvoir",
           "url": "/krle/filosofi/beauvoir",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2847,7 +3056,8 @@
         {
           "title": "Romas grunnleggelse og republikken",
           "url": "/historie/romerriket/romersk-start",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -2873,27 +3083,32 @@
         {
           "title": "Danelagen: Da England var norsk",
           "url": "/historie/vikingtiden/danelagen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Kristningen og Vikingtidens Slutt",
           "url": "/historie/vikingtiden/kristningen-av-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Normandie: Fra Vikinger til Riddere",
           "url": "/historie/vikingtiden/normandie",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Rikssamlingen: Da Norge ble ett",
           "url": "/historie/vikingtiden/rikssamlingen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Veien mot Øst: Guder, Slaver og Keisere",
           "url": "/historie/vikingtiden/veien-mot-ost",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -2922,47 +3137,56 @@
         {
           "title": "Historiens store gåter",
           "url": "/historie/historiens-store-gater/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Hvem eier vikingene?",
           "url": "/historie/historiens-store-gater/hvem-eier-vikingene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Hvorfor forsvant de norrøne på Grønland?",
           "url": "/historie/historiens-store-gater/gronlands-gate",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Nasjonalromantikken: Da Norge fant sin sjel",
           "url": "/norsk/litteraturhistorie/nasjonalromantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Oppdagelsesreiser i Vesterled",
           "url": "/historie/vikingtiden/oppdagelsesreiser",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Rikssamlingen: Da Norge ble ett",
           "url": "/historie/vikingtiden/rikssamlingen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Samlet Harald Hårfagre virkelig Norge?",
           "url": "/historie/historiens-store-gater/harald-harfagre-gaten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 9
         },
         {
           "title": "Skipet som ble brent",
           "url": "/historie/vikingtiden/myklebust-funnet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Sverre Sigurdsson: presten som ble konge",
           "url": "/historie/norsk-middelalder/sverre-sigurdsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -2993,17 +3217,20 @@
         {
           "title": "En verden i to: Oversikt over den kalde krigen",
           "url": "/historie/den-kalde-krigen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         },
         {
           "title": "Koreakrigen 1950-1953: Den glemte krigen som aldri tok slutt",
           "url": "/historie/den-kalde-krigen/koreakrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 7
         },
         {
           "title": "Krigens løp: Fra lynkrig til ragnarok",
           "url": "/historie/andre-verdenskrig/krigens-lop",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -3032,52 +3259,62 @@
         {
           "title": "Borgerkrigstiden: da Norge manglet en arveregel",
           "url": "/historie/norsk-middelalder/borgerkrigstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "De nasjonale minoritetene: fem folk staten ville gjøre like",
           "url": "/historie/norge-i-moderne-tid/nasjonale-minoriteter",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Folkemusikk: Hardingfela, slåtter og kveding",
           "url": "/musikk/musikkhistorie/folkemusikk",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 1
         },
         {
           "title": "Knut Alvsson - ridderen som trosset kong Hans",
           "url": "/historie/norgeshistorie/knut-alvsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Nasjonalromantikken: Da Norge fant sin sjel",
           "url": "/norsk/litteraturhistorie/nasjonalromantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Nødsårene: da sjøveien ble stengt",
           "url": "/historie/dansketiden/nodsarene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Realismen: Sannheten skal frem",
           "url": "/norsk/litteraturhistorie/realismen",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         },
         {
           "title": "Roman",
           "url": "/norsk/tekstsjangre/roman",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Tidens tannhjul: Manipulasjon av tid",
           "url": "/norsk/virkemidler/tid-og-struktur",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Unionsoppløsningen 1905",
           "url": "/historie/norgeshistorie/unionsopplosningen-1905",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3108,7 +3345,8 @@
         {
           "title": "Knut Alvsson - ridderen som trosset kong Hans",
           "url": "/historie/norgeshistorie/knut-alvsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -3134,17 +3372,20 @@
         {
           "title": "Bokmål og nynorsk: Hvordan Norge fikk to skriftspråk",
           "url": "/norsk/sprakhistorie/bokmal-og-nynorsk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "De nasjonale minoritetene: fem folk staten ville gjøre like",
           "url": "/historie/norge-i-moderne-tid/nasjonale-minoriteter",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Grunnloven 1814: Da Norge fikk en ny start",
           "url": "/samfunnskunnskap/styringsformer/grunnloven",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3170,17 +3411,20 @@
         {
           "title": "Algerie & Vietnam: Krigens vei",
           "url": "/historie/dekolonisering/frigjoringskrigene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Sørøst-Asia: Vakuumet etter Japan",
           "url": "/historie/dekolonisering/sorost-asia",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Vietnamkrigen: Supermakten som møtte veggen i jungelen",
           "url": "/historie/den-kalde-krigen/vietnamkrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -3206,7 +3450,8 @@
         {
           "title": "Naturretten",
           "url": "/krle/etikk/naturrett",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -3253,17 +3498,20 @@
         {
           "title": "Kristningen og Vikingtidens Slutt",
           "url": "/historie/vikingtiden/kristningen-av-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Magnus Lagabøtes landslov - én lov for hele Norge",
           "url": "/historie/lov-og-rett/magnus-landslov",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Rikssamlingen: Da Norge ble ett",
           "url": "/historie/vikingtiden/rikssamlingen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -3315,32 +3563,38 @@
         {
           "title": "Alv Erlingsson: Piraten som utfordret kongen",
           "url": "/historie/norsk-middelalder/alv-erlingsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Kristningen og Vikingtidens Slutt",
           "url": "/historie/vikingtiden/kristningen-av-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Magnus Lagabøtes landslov - én lov for hele Norge",
           "url": "/historie/lov-og-rett/magnus-landslov",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Monarkiet: Fra Guds nåde til folkets konge",
           "url": "/samfunnskunnskap/styringsformer/monarkiet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 7
         },
         {
           "title": "Norge under okkupasjonen",
           "url": "/historie/andre-verdenskrig/norge-under-okkupasjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Rikssamlingen: Da Norge ble ett",
           "url": "/historie/vikingtiden/rikssamlingen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3366,12 +3620,14 @@
         {
           "title": "Skipet som ble brent",
           "url": "/historie/vikingtiden/myklebust-funnet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Slik analyserer du: Sakprosa",
           "url": "/norsk/analyse/analyse-fagartikkel",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 9
         }
       ],
       "aliasSlugs": []
@@ -3397,62 +3653,74 @@
         {
           "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
           "url": "/krle/livssyn/ateisme-og-agnostisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "David Hume",
           "url": "/krle/filosofi/hume",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Hva er etikk?",
           "url": "/krle/etikk/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Hva er filosofi?",
           "url": "/krle/filosofi/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Immanuel Kant",
           "url": "/krle/filosofi/kant",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "John Locke",
           "url": "/krle/filosofi/locke",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Opplysningstid og Samfunnskontrakten",
           "url": "/samfunnskunnskap/styringsformer/opplysningstid",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Pliktetikk",
           "url": "/krle/etikk/pliktetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Robespierre og skrekkveldet",
           "url": "/historie/den-franske-revolusjon/robespierre-og-skrekkveldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Troen på framskrittet: Blir alt egentlig bedre?",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/framskrittstro",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Utilitarisme",
           "url": "/krle/etikk/utilitarisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Ytringsvett vs ytringsmot",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3478,22 +3746,26 @@
         {
           "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
           "url": "/krle/livssyn/ateisme-og-agnostisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Den vitenskapelige revolusjonen",
           "url": "/historie/renessansen/den-vitenskapelige-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Eskatologi: Historien om verdens undergang",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/eskatologi",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Galileo Galilei: Mannen som så himmelen først",
           "url": "/historie/renessansen/galileo-galilei",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3519,32 +3791,38 @@
         {
           "title": "Bokmål og nynorsk: Hvordan Norge fikk to skriftspråk",
           "url": "/norsk/sprakhistorie/bokmal-og-nynorsk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 6
         },
         {
           "title": "Dialekter: Hvorfor snakker vi så ulikt?",
           "url": "/norsk/dialekter/hva-er-dialekter",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Geolekt: Hvor går grensen mellom to dialekter?",
           "url": "/norsk/dialekter/geolekt",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Hva er nasjonalisme?",
           "url": "/historie/nasjonalstatenes-tid/hva-er-nasjonalisme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Nasjonalromantikken: Da Norge fant sin sjel",
           "url": "/norsk/litteraturhistorie/nasjonalromantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 4
         },
         {
           "title": "Norrønt: Språket vikingene snakket",
           "url": "/norsk/sprakhistorie/norront",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -3570,32 +3848,38 @@
         {
           "title": "Dampmaskinen: oppfinnelsen som forandret alt",
           "url": "/historie/industriell-revolusjon/dampmaskinen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 8
         },
         {
           "title": "Den industrielle revolusjonen",
           "url": "/historie/industriell-revolusjon/industriell-revolusjon",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Dopapirets historie",
           "url": "/historie/industriell-revolusjon/dopapirets-historie",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Hvorfor begynte det i Storbritannia?",
           "url": "/historie/industriell-revolusjon/storbritannia",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Jernbanen: maskinen som krympet verden",
           "url": "/historie/industriell-revolusjon/jernbanen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Vannet som jobbet: vann- og vindmølla",
           "url": "/historie/teknologi-og-hverdagsliv/vann-og-vindmolla",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3621,7 +3905,8 @@
         {
           "title": "Martin Luther og reformasjonen",
           "url": "/historie/reformasjonen/martin-luther",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -3647,32 +3932,38 @@
         {
           "title": "Jean-Jacques Rousseau",
           "url": "/krle/filosofi/rousseau",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Makt og legitimitet: Hvorfor styres vi?",
           "url": "/samfunnskunnskap/styringsformer/makt-og-legitimitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Opplysningstid og Samfunnskontrakten",
           "url": "/samfunnskunnskap/styringsformer/opplysningstid",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "Rettferdighet: uvitenhetens slør",
           "url": "/krle/etikk/rettferdighetsetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Robespierre og skrekkveldet",
           "url": "/historie/den-franske-revolusjon/robespierre-og-skrekkveldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Å være medborger",
           "url": "/samfunnskunnskap/styringsformer/km-17-medborgar",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3697,17 +3988,20 @@
         {
           "title": "Nihilisme i etikk",
           "url": "/krle/etikk/nihilisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Pliktetikk",
           "url": "/krle/etikk/pliktetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Simone de Beauvoir",
           "url": "/krle/filosofi/beauvoir",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3757,22 +4051,26 @@
         {
           "title": "Barnearbeid i fabrikkene",
           "url": "/historie/industriell-revolusjon/barnearbeid",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Dyreetikk: Har dyr rettigheter?",
           "url": "/krle/etikk/dyreetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Naturretten",
           "url": "/krle/etikk/naturrett",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Utilitarisme",
           "url": "/krle/etikk/utilitarisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -3797,7 +4095,8 @@
         {
           "title": "Den iranske revolusjonen 1979",
           "url": "/historie/midtoesten/iran-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -3823,7 +4122,8 @@
         {
           "title": "Johan Calvin og kalvinismen",
           "url": "/historie/reformasjonen/kalvin-og-kalvinismen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -3849,12 +4149,14 @@
         {
           "title": "Norge i mellomkrigstiden",
           "url": "/historie/mellomkrigstiden/norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Norge under okkupasjonen",
           "url": "/historie/andre-verdenskrig/norge-under-okkupasjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3880,17 +4182,20 @@
         {
           "title": "Berlinmuren: Symbolet på en delt verden",
           "url": "/historie/den-kalde-krigen/berlinmuren",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Cuba-krisen 1962: Verden på kanten av utslettelse",
           "url": "/historie/den-kalde-krigen/cuba-krisen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Romkappløpet: Veien mot stjernene og månen",
           "url": "/historie/den-kalde-krigen/romkapplopet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -3916,7 +4221,8 @@
         {
           "title": "Johan Calvin og kalvinismen",
           "url": "/historie/reformasjonen/kalvin-og-kalvinismen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -3947,52 +4253,62 @@
         {
           "title": "Den amerikanske revolusjonen",
           "url": "/historie/den-amerikanske-revolusjonen/uavhengighetskrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Jean-Jacques Rousseau",
           "url": "/krle/filosofi/rousseau",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "John Locke",
           "url": "/krle/filosofi/locke",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Makt og legitimitet: Hvorfor styres vi?",
           "url": "/samfunnskunnskap/styringsformer/makt-og-legitimitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Naturretten",
           "url": "/krle/etikk/naturrett",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Norges lønnsmaskin",
           "url": "/samfunnskunnskap/arbeidsliv/frontfagmodellen",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Opplysningstid og Samfunnskontrakten",
           "url": "/samfunnskunnskap/styringsformer/opplysningstid",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "René Descartes",
           "url": "/krle/filosofi/descartes",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Robespierre og skrekkveldet",
           "url": "/historie/den-franske-revolusjon/robespierre-og-skrekkveldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Uavhengighetserklæringen",
           "url": "/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -4018,22 +4334,26 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Det store krakket: Keynes vs. Hayek",
           "url": "/historie/mellomkrigstiden/borskrakk",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Mellomkrigstiden: En verden i endring",
           "url": "/historie/mellomkrigstiden/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Ulike økonomiske skoler",
           "url": "/samfunnskunnskap/okonomi/okonomiske-skoler",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -4067,7 +4387,8 @@
         {
           "title": "Iran-Contra-skandalen",
           "url": "/historie/den-kalde-krigen/iran-contra",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -4093,12 +4414,14 @@
         {
           "title": "Utilitarisme",
           "url": "/krle/etikk/utilitarisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Ytringsvett vs ytringsmot",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -4123,7 +4446,8 @@
         {
           "title": "Joik: Stemmen til det samiske folket",
           "url": "/musikk/musikkhistorie/joik",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -4150,17 +4474,20 @@
         {
           "title": "Andre verdenskrig: En oversikt",
           "url": "/historie/andre-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "En verden i to: Oversikt over den kalde krigen",
           "url": "/historie/den-kalde-krigen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Sovjetunionen: Stalins jernhånd",
           "url": "/historie/mellomkrigstiden/sovjet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -4188,17 +4515,20 @@
         {
           "title": "Grunnleggere: Menneskene bak",
           "url": "/krle/sammenligning/grunnleggere",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Introduksjon til Mormonisme",
           "url": "/krle/religion/mormonisme/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Kjønn og roller: Prinsipp mot praksis",
           "url": "/krle/sammenligning/kjonn-og-roller",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -4229,62 +4559,74 @@
         {
           "title": "Casus Belli: Historiens farligste argumenter",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/casus-belli",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "De Romerske Gudene",
           "url": "/historie/romerriket/romerske-guder",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Fra republikk til keiserdømme: Augustus",
           "url": "/historie/romerriket/augustus-og-keiserdomme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Hva er retorikk?",
           "url": "/norsk/retorikk/grunnleggende-retorikk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Julius Cæsar - mannen som knuste republikken",
           "url": "/historie/romerriket/caesar",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Norge før vikingene",
           "url": "/historie/norgeshistorie/norge-for-vikingene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Pompeii: Byen som ble frosset i tid",
           "url": "/historie/romerriket/pompeii",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Retoriske grep og figurer",
           "url": "/norsk/retorikk/retoriske-grep",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Romas grunnleggelse og republikken",
           "url": "/historie/romerriket/romersk-start",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Slik ser en 6-er ut: Muntlig eksamen i samfunnsfag",
           "url": "/samfunnskunnskap/eksamen/muntlig-modell",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 4
         },
         {
           "title": "Uavhengighetserklæringen",
           "url": "/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Vestromerrikets fall",
           "url": "/historie/romerriket/vestromerrikets-fall",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -4310,22 +4652,26 @@
         {
           "title": "536 - Året da solen forsvant",
           "url": "/historie/norgeshistorie/klimakrisen-536",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Arven etter Romerriket",
           "url": "/historie/romerriket/arven-etter-romerriket",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Det bysantinske riket: Roma som overlevde",
           "url": "/historie/middelalderen/bysantinske-riket",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Tidlig middelalder: Folkevandring og forvandling",
           "url": "/historie/middelalderen/tidlig-middelalder",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -4356,32 +4702,38 @@
         {
           "title": "Casus Belli: Historiens farligste argumenter",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/casus-belli",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Det hellige romerske rike",
           "url": "/historie/middelalderen/det-hellige-romerske-rike",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Hypotesen: Norden vs. Frankrike",
           "url": "/historie/vikingtiden/hypotesen-norden-vs-frankrike",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Karl den Store: Europas Far",
           "url": "/historie/vikingtiden/karl-den-store",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Middelalderen: En tusenårig forvandling",
           "url": "/historie/middelalderen/middelalderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 7
         },
         {
           "title": "Tidlig middelalder: Folkevandring og forvandling",
           "url": "/historie/middelalderen/tidlig-middelalder",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": [
@@ -4409,12 +4761,14 @@
         {
           "title": "Mytteri og Forræderi: Den Tyske Revolusjon",
           "url": "/historie/forste-verdenskrig/tyske-revolusjon",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Tyskland: Veien mot nazismen",
           "url": "/historie/mellomkrigstiden/tyskland",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -4440,27 +4794,32 @@
         {
           "title": "Arbeidsspesialisering: Samarbeidets magi",
           "url": "/samfunnskunnskap/okonomi/arbeidsspesialisering",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "Karl Marx",
           "url": "/krle/filosofi/marx",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Uavhengighetserklæringen",
           "url": "/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Utopier: Drømmen om det perfekte samfunn",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/utopier",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Ytringsvett vs ytringsmot",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -4486,7 +4845,8 @@
         {
           "title": "Stormaktstiden - Sveriges gullalder",
           "url": "/historie/sveriges-historie/stormaktstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -4512,7 +4872,8 @@
         {
           "title": "Stormaktstiden - Sveriges gullalder",
           "url": "/historie/sveriges-historie/stormaktstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 23
         }
       ],
       "aliasSlugs": []
@@ -4537,7 +4898,8 @@
         {
           "title": "Göbekli Tepe — tempelet eldre enn jordbruket",
           "url": "/historie/menneskets-tidlige-historie/gobekli-tepe",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": []
@@ -4568,7 +4930,8 @@
         {
           "title": "Fra republikk til keiserdømme: Augustus",
           "url": "/historie/romerriket/augustus-og-keiserdomme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -4599,12 +4962,14 @@
         {
           "title": "Tidlig middelalder: Folkevandring og forvandling",
           "url": "/historie/middelalderen/tidlig-middelalder",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Wergild - drapets pris",
           "url": "/historie/lov-og-rett/wergild",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -4632,12 +4997,14 @@
         {
           "title": "Bokmål og nynorsk: Hvordan Norge fikk to skriftspråk",
           "url": "/norsk/sprakhistorie/bokmal-og-nynorsk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         },
         {
           "title": "Nasjonalromantikken: Da Norge fant sin sjel",
           "url": "/norsk/litteraturhistorie/nasjonalromantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -4668,12 +5035,14 @@
         {
           "title": "Kalmarunionen",
           "url": "/historie/norgeshistorie/kalmarunionen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Knut Alvsson - ridderen som trosset kong Hans",
           "url": "/historie/norgeshistorie/knut-alvsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 34
         }
       ],
       "aliasSlugs": [
@@ -4701,17 +5070,20 @@
         {
           "title": "Danelagen: Da England var norsk",
           "url": "/historie/vikingtiden/danelagen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Kristningen og Vikingtidens Slutt",
           "url": "/historie/vikingtiden/kristningen-av-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Samlet Harald Hårfagre virkelig Norge?",
           "url": "/historie/historiens-store-gater/harald-harfagre-gaten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -4737,22 +5109,26 @@
         {
           "title": "Nyromantikken: Mystikk, sjel og underbevissthet",
           "url": "/norsk/litteraturhistorie/ny-romantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 5
         },
         {
           "title": "Roman",
           "url": "/norsk/tekstsjangre/roman",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Slik analyserer du: Romanutdrag",
           "url": "/norsk/analyse/analyse-roman",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Slik ser en 6-er ut: Muntlig eksamen",
           "url": "/norsk/eksamen/muntlig-modell",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -4779,17 +5155,20 @@
         {
           "title": "Det store spranget og kulturrevolusjonen",
           "url": "/historie/kinas-historie/store-spranget",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Konfusianisme: plikten som går begge veier",
           "url": "/krle/livssyn/konfusianisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 21
         },
         {
           "title": "Midtens rike: 3000 år i korte trekk",
           "url": "/historie/kinas-historie/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -4815,7 +5194,8 @@
         {
           "title": "Knut Alvsson - ridderen som trosset kong Hans",
           "url": "/historie/norgeshistorie/knut-alvsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 14
         }
       ],
       "aliasSlugs": []
@@ -4841,7 +5221,8 @@
         {
           "title": "Hip-hop: Fra gata til verdensscenen",
           "url": "/musikk/musikkhistorie/hip-hop",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -4868,7 +5249,8 @@
         {
           "title": "Midtens rike: 3000 år i korte trekk",
           "url": "/historie/kinas-historie/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -4894,7 +5276,8 @@
         {
           "title": "Ghana & Pan-Afrikanismen",
           "url": "/historie/dekolonisering/ghana-panafrikanisme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -4920,27 +5303,32 @@
         {
           "title": "Historiens store gåter",
           "url": "/historie/historiens-store-gater/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Hvem nådde Amerika først?",
           "url": "/historie/historiens-store-gater/hvem-nadde-amerika-forst",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Hvorfor forsvant de norrøne på Grønland?",
           "url": "/historie/historiens-store-gater/gronlands-gate",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Oppdagelsesreiser i Vesterled",
           "url": "/historie/vikingtiden/oppdagelsesreiser",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Vikingtiden: En brytningstid for Norden",
           "url": "/historie/vikingtiden/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -4966,7 +5354,8 @@
         {
           "title": "Ydmykelsen: Opiumskrigene og europeisk imperialisme",
           "url": "/historie/kinas-historie/opiumskrigene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 11
         }
       ],
       "aliasSlugs": []
@@ -4992,17 +5381,20 @@
         {
           "title": "Jazzens fødsel",
           "url": "/musikk/musikkhistorie/jazzens-fodsel",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 7
         },
         {
           "title": "Kultur: Da alt ble relativt",
           "url": "/historie/mellomkrigstiden/kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "USA: Fra 'The Roaring 20s' til 'The New Deal'",
           "url": "/historie/mellomkrigstiden/usa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -5030,52 +5422,62 @@
         {
           "title": "Den franske revolusjon",
           "url": "/historie/den-franske-revolusjon/intro",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Eneveldet: Da kongen fikk all makt",
           "url": "/historie/dansketiden/eneveldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Folkemusikk: Hardingfela, slåtter og kveding",
           "url": "/musikk/musikkhistorie/folkemusikk",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 5
         },
         {
           "title": "Folkenes vår: Revolusjonene i 1848",
           "url": "/historie/nasjonalstatenes-tid/revolusjonene-1848",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Gamle toner, nye stemmer",
           "url": "/musikk/musikkhistorie/gamle-toner-nye-stemmer",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 6
         },
         {
           "title": "Karl den Store: Europas Far",
           "url": "/historie/vikingtiden/karl-den-store",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         },
         {
           "title": "Monarkiet: Fra Guds nåde til folkets konge",
           "url": "/samfunnskunnskap/styringsformer/monarkiet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 9
         },
         {
           "title": "Montesquieu",
           "url": "/krle/filosofi/montesquieu",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Robespierre og skrekkveldet",
           "url": "/historie/den-franske-revolusjon/robespierre-og-skrekkveldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Stormingen av Bastillen",
           "url": "/historie/den-franske-revolusjon/stormingen-av-bastillen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -5100,57 +5502,68 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Det store krakket: Keynes vs. Hayek",
           "url": "/historie/mellomkrigstiden/borskrakk",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Finanskriser: Byggmesterens Dilemma",
           "url": "/samfunnskunnskap/okonomi/finanskriser",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "John Locke",
           "url": "/krle/filosofi/locke",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Komparativt og absolutt fortrinn",
           "url": "/samfunnskunnskap/okonomi/komparativt-fortrinn",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Ludwig von Mises",
           "url": "/krle/filosofi/mises",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Murray Rothbard",
           "url": "/krle/filosofi/rothbard",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Norges lønnsmaskin",
           "url": "/samfunnskunnskap/arbeidsliv/frontfagmodellen",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Produksjon: Hvorfor vi lager ting",
           "url": "/samfunnskunnskap/okonomi/produksjon",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Ulike økonomiske skoler",
           "url": "/samfunnskunnskap/okonomi/okonomiske-skoler",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Uten hersker: Anarkiets drøm og teorier",
           "url": "/samfunnskunnskap/styringsformer/uten-hersker",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -5195,12 +5608,14 @@
         {
           "title": "Jim Crow: «Separate but equal»",
           "url": "/historie/dekolonisering/jim-crow-lovene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Vietnamkrigen: Supermakten som møtte veggen i jungelen",
           "url": "/historie/den-kalde-krigen/vietnamkrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -5226,7 +5641,8 @@
         {
           "title": "Naturretten",
           "url": "/krle/etikk/naturrett",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -5258,12 +5674,14 @@
         {
           "title": "Borgerkrigstiden: da Norge manglet en arveregel",
           "url": "/historie/norsk-middelalder/borgerkrigstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Sverre Sigurdsson: presten som ble konge",
           "url": "/historie/norsk-middelalder/sverre-sigurdsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -5290,17 +5708,20 @@
         {
           "title": "Borgerkrigstiden: da Norge manglet en arveregel",
           "url": "/historie/norsk-middelalder/borgerkrigstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Magna Carta - da kongen måtte bøye seg for loven",
           "url": "/historie/lov-og-rett/magna-carta",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Magnus Lagabøtes landslov - én lov for hele Norge",
           "url": "/historie/lov-og-rett/magnus-landslov",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -5329,7 +5750,8 @@
         {
           "title": "Janitsjarene: sultanens slavehær",
           "url": "/historie/osmanske-riket/janitsjarene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -5355,32 +5777,38 @@
         {
           "title": "Deng Xiaoping: Kina åpner for verden",
           "url": "/historie/kinas-historie/deng-og-reformene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Det store spranget og kulturrevolusjonen",
           "url": "/historie/kinas-historie/store-spranget",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "En verden i to: Oversikt over den kalde krigen",
           "url": "/historie/den-kalde-krigen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Koreakrigen 1950-1953: Den glemte krigen som aldri tok slutt",
           "url": "/historie/den-kalde-krigen/koreakrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Mao Zedong: Revolusjonens far",
           "url": "/historie/kinas-historie/mao-og-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 8
         },
         {
           "title": "Republikkens fall: Borgerkrig og revolusjon",
           "url": "/historie/kinas-historie/borgerkrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": []
@@ -5406,17 +5834,20 @@
         {
           "title": "Det Mongolske Riket",
           "url": "/historie/middelalderen/mongolske-riket",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Japan: Solens vei mot krig",
           "url": "/historie/mellomkrigstiden/japan",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Silkeveien: Da Kina handlet med verden",
           "url": "/historie/kinas-historie/silkeveien",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -5447,12 +5878,14 @@
         {
           "title": "Fra republikk til keiserdømme: Augustus",
           "url": "/historie/romerriket/augustus-og-keiserdomme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Julius Cæsar - mannen som knuste republikken",
           "url": "/historie/romerriket/caesar",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -5478,7 +5911,8 @@
         {
           "title": "De romerske keiserne",
           "url": "/historie/romerriket/romerske-keisere",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": []
@@ -5504,12 +5938,14 @@
         {
           "title": "Fra ufrihet til organisering",
           "url": "/samfunnskunnskap/arbeidsliv/fagforeninger",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 4
         },
         {
           "title": "Hamskiftet",
           "url": "/historie/norgeshistorie/hamskiftet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -5535,7 +5971,8 @@
         {
           "title": "Sveriges historie: Fra østfarere til moderne nasjon",
           "url": "/historie/sveriges-historie/sveriges-historie/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -5561,12 +5998,14 @@
         {
           "title": "Gamle toner, nye stemmer",
           "url": "/musikk/musikkhistorie/gamle-toner-nye-stemmer",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 2
         },
         {
           "title": "Joik: Stemmen til det samiske folket",
           "url": "/musikk/musikkhistorie/joik",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 8
         }
       ],
       "aliasSlugs": []
@@ -5592,12 +6031,14 @@
         {
           "title": "Den franske revolusjon",
           "url": "/historie/den-franske-revolusjon/intro",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Menneskerettighetserklæringen av 1789",
           "url": "/historie/den-franske-revolusjon/menneskerettighetserklaeringen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -5631,7 +6072,8 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 4
         }
       ],
       "aliasSlugs": [
@@ -5664,12 +6106,14 @@
         {
           "title": "Hannah Arendt",
           "url": "/krle/filosofi/arendt",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Martin Heidegger",
           "url": "/krle/filosofi/heidegger",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -5695,77 +6139,92 @@
         {
           "title": "Augustin",
           "url": "/krle/filosofi/augustin",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Boktrykkerkunsten",
           "url": "/historie/middelalderen/boktrykkerkunsten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Boktrykkerkunsten: kunnskap for folk flest",
           "url": "/historie/teknologi-og-hverdagsliv/boktrykkerkunsten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Det hellige romerske rike",
           "url": "/historie/middelalderen/det-hellige-romerske-rike",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Et rike av mange folk",
           "url": "/historie/osmanske-riket/millet-mangfold",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Gustav Vasa - Sveriges grunnlegger",
           "url": "/historie/sveriges-historie/gustav-vasa",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Hellige tekster: Bøkene som styrer liv",
           "url": "/krle/sammenligning/hellige-tekster",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Johan Calvin og kalvinismen",
           "url": "/historie/reformasjonen/kalvin-og-kalvinismen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Kirkesamfunn: Splittelse og enhet",
           "url": "/krle/religion/kristendom/kirkesamfunn",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Martin Luther og reformasjonen",
           "url": "/historie/reformasjonen/martin-luther",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Reformasjonen i Norge",
           "url": "/historie/reformasjonen/reformasjonen-i-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Renessansen: Gjenfødelsen av antikken",
           "url": "/historie/renessansen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Retoriske grep og figurer",
           "url": "/norsk/retorikk/retoriske-grep",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Sakramentene: Dåp og nattverd",
           "url": "/krle/religion/kristendom/sakramentene",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Süleyman den store og gullalderen",
           "url": "/historie/osmanske-riket/suleyman-gullalderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -5791,22 +6250,26 @@
         {
           "title": "Jim Crow: «Separate but equal»",
           "url": "/historie/dekolonisering/jim-crow-lovene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Makt og legitimitet: Hvorfor styres vi?",
           "url": "/samfunnskunnskap/styringsformer/makt-og-legitimitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Naturretten",
           "url": "/krle/etikk/naturrett",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Å kjempe for endring",
           "url": "/samfunnskunnskap/styringsformer/km-5-kamp-for-endring",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -5832,7 +6295,8 @@
         {
           "title": "Dampmaskinen: oppfinnelsen som forandret alt",
           "url": "/historie/industriell-revolusjon/dampmaskinen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -5858,12 +6322,14 @@
         {
           "title": "Johan Calvin og kalvinismen",
           "url": "/historie/reformasjonen/kalvin-og-kalvinismen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Makt og legitimitet: Hvorfor styres vi?",
           "url": "/samfunnskunnskap/styringsformer/makt-og-legitimitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 6
         }
       ],
       "aliasSlugs": []
@@ -5889,12 +6355,14 @@
         {
           "title": "Den franske revolusjon",
           "url": "/historie/den-franske-revolusjon/intro",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Robespierre og skrekkveldet",
           "url": "/historie/den-franske-revolusjon/robespierre-og-skrekkveldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -5921,22 +6389,26 @@
         {
           "title": "1453: Da Konstantinopel falt",
           "url": "/historie/osmanske-riket/konstantinopels-fall",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 11
         },
         {
           "title": "Kypros: Europas siste delte by",
           "url": "/historie/den-kalde-krigen/kypros-delingslinjen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 17
         },
         {
           "title": "Sammenbruddet og det nye Tyrkia",
           "url": "/historie/osmanske-riket/sammenbruddet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Topkapı: maktens palass",
           "url": "/historie/osmanske-riket/topkapi-palasset",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -5985,7 +6457,8 @@
         {
           "title": "Det 'unormale': Idéhistorien om sykdom og galskap",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/det-unormale",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -6015,17 +6488,20 @@
         {
           "title": "Atomvåpenkappløpet: Terrorbalanse på kanten av stupet",
           "url": "/historie/den-kalde-krigen/atomvapenkapplopet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Berlinmuren: Symbolet på en delt verden",
           "url": "/historie/den-kalde-krigen/berlinmuren",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Veien mot slutten: Sovjetunionens sammenbrudd",
           "url": "/historie/den-kalde-krigen/veien-mot-slutt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 20
         }
       ],
       "aliasSlugs": [
@@ -6055,12 +6531,14 @@
         {
           "title": "Handel, kaffe og kunst",
           "url": "/historie/osmanske-riket/handel-og-kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Süleyman den store og gullalderen",
           "url": "/historie/osmanske-riket/suleyman-gullalderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -6091,7 +6569,8 @@
         {
           "title": "Den kalde krigen i Midtøsten",
           "url": "/historie/midtoesten/kald-krig-midtosten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 10
         }
       ],
       "aliasSlugs": [
@@ -6127,87 +6606,104 @@
         {
           "title": "Den iranske revolusjonen 1979",
           "url": "/historie/midtoesten/iran-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Den kalde krigen i Midtøsten",
           "url": "/historie/midtoesten/kald-krig-midtosten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Det islamske gullaldet: Da Bagdad var verdens kunnskapssenter",
           "url": "/historie/midtoesten/islamsk-gullaldet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Etikk og leveregler: Hva er et godt liv?",
           "url": "/krle/sammenligning/etikk-og-leveregler",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Grunnleggere: Menneskene bak",
           "url": "/krle/sammenligning/grunnleggere",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 9
         },
         {
           "title": "Gudsbilde: Én, mange eller ingen gud?",
           "url": "/krle/sammenligning/gudsbilde",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Hellige tekster: Bøkene som styrer liv",
           "url": "/krle/sammenligning/hellige-tekster",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Høytider: Den hellige kalenderen",
           "url": "/krle/sammenligning/hoytider",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "India: Sjelenes frigjøring",
           "url": "/historie/dekolonisering/india",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Islams fødsel: Muhammed og de første kalifatene",
           "url": "/historie/midtoesten/islams-fodsel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 20
         },
         {
           "title": "Kjønn og roller: Prinsipp mot praksis",
           "url": "/krle/sammenligning/kjonn-og-roller",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Nykolonialisme: Kolonimakt uten kolonier",
           "url": "/historie/dekolonisering/nykolonialisme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Operasjon Ajax: Da oljen ble verdt et kupp",
           "url": "/historie/den-kalde-krigen/operasjon-ajax",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Orientering: Kart, folk og religioner",
           "url": "/historie/midtoesten/orientering",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Songhai-riket",
           "url": "/historie/afrikanske-riker/songhai-riket",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 10
         },
         {
           "title": "Zarathustra og zoroastrismen",
           "url": "/historie/perserriket/zarathustra-og-zoroastrismen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Økonomiske leiemordere: Slik kjøpes et helt land",
           "url": "/historie/dekolonisering/okonomiske-leiemordere",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -6238,27 +6734,32 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Ikke-aggresjonsprinsippet",
           "url": "/krle/etikk/non-aggression",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Ludwig von Mises",
           "url": "/krle/filosofi/mises",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Murray Rothbard",
           "url": "/krle/filosofi/rothbard",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Uten hersker: Anarkiets drøm og teorier",
           "url": "/samfunnskunnskap/styringsformer/uten-hersker",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -6285,12 +6786,14 @@
         {
           "title": "Konsekvenser: Et nytt Europa",
           "url": "/historie/forste-verdenskrig/konsekvenser",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Sammenbruddet og det nye Tyrkia",
           "url": "/historie/osmanske-riket/sammenbruddet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -6316,22 +6819,26 @@
         {
           "title": "Den franske revolusjon",
           "url": "/historie/den-franske-revolusjon/intro",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Det hellige romerske rike",
           "url": "/historie/middelalderen/det-hellige-romerske-rike",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Haiti: Den glemte revolusjonen",
           "url": "/historie/dekolonisering/haiti",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Napoleon Bonaparte",
           "url": "/historie/den-franske-revolusjon/napoleon",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -6357,12 +6864,14 @@
         {
           "title": "Den industrielle revolusjonen",
           "url": "/historie/industriell-revolusjon/industriell-revolusjon",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Robotene kommer: Fremtidens arbeid og menneskets verdi",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -6388,22 +6897,26 @@
         {
           "title": "Apartheid: Et samfunn delt i lov",
           "url": "/historie/dekolonisering/apartheid-syd-afrika",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 8
         },
         {
           "title": "Det Siste Imperiet",
           "url": "/historie/dekolonisering/siste-skanse",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Dygdsetikk",
           "url": "/krle/etikk/dygdsetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Protestmusikk: Når sanger forandrer verden",
           "url": "/musikk/musikkhistorie/protestmusikk",
-          "subject": "musikk"
+          "subject": "musikk",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -6429,7 +6942,8 @@
         {
           "title": "Geopolitikk og Opptakt: Veien mot stupet",
           "url": "/historie/andre-verdenskrig/bakgrunn",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -6474,22 +6988,26 @@
         {
           "title": "Cuba-krisen 1962: Verden på kanten av utslettelse",
           "url": "/historie/den-kalde-krigen/cuba-krisen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 10
         },
         {
           "title": "En verden i to: Oversikt over den kalde krigen",
           "url": "/historie/den-kalde-krigen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Kultur og propaganda: Kampen om hjerter og sinn",
           "url": "/historie/den-kalde-krigen/kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Suez-krisen 1956: Da de gamle imperiene falt",
           "url": "/historie/den-kalde-krigen/suez-krisen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -6518,17 +7036,20 @@
         {
           "title": "Den vitenskapelige revolusjonen",
           "url": "/historie/renessansen/den-vitenskapelige-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Galileo Galilei: Mannen som så himmelen først",
           "url": "/historie/renessansen/galileo-galilei",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Renessansen: Gjenfødelsen av antikken",
           "url": "/historie/renessansen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -6554,7 +7075,8 @@
         {
           "title": "Norges lønnsmaskin",
           "url": "/samfunnskunnskap/arbeidsliv/frontfagmodellen",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -6580,12 +7102,14 @@
         {
           "title": "Martin Luther og reformasjonen",
           "url": "/historie/reformasjonen/martin-luther",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Reformasjonen i Norge",
           "url": "/historie/reformasjonen/reformasjonen-i-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 11
         }
       ],
       "aliasSlugs": []
@@ -6611,12 +7135,14 @@
         {
           "title": "Kristningen og Vikingtidens Slutt",
           "url": "/historie/vikingtiden/kristningen-av-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Pilegrim: Reisen til det hellige",
           "url": "/krle/sammenligning/pilegrim",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -6642,12 +7168,14 @@
         {
           "title": "Hansadrapet i Bergen 1455: Da kjøpmennene var sterkere enn kongen",
           "url": "/historie/norsk-middelalder/hansadrapet-1455",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 17
         },
         {
           "title": "Hanseatene: Kjøpmennene som formet Norge og Europa gjennom tørrfisk, makt og språk",
           "url": "/historie/middelalderen/hanseatene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -6673,12 +7201,14 @@
         {
           "title": "Kristningen og Vikingtidens Slutt",
           "url": "/historie/vikingtiden/kristningen-av-norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Rikssamlingen: Da Norge ble ett",
           "url": "/historie/vikingtiden/rikssamlingen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -6710,7 +7240,8 @@
         {
           "title": "Iran-Contra-skandalen",
           "url": "/historie/den-kalde-krigen/iran-contra",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 11
         }
       ],
       "aliasSlugs": []
@@ -6741,17 +7272,20 @@
         {
           "title": "Kappløpet mot Sydpolen",
           "url": "/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Unionen med Sverige: To land, én konge",
           "url": "/historie/norgeshistorie/unionen-med-sverige",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Utopier: Drømmen om det perfekte samfunn",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/utopier",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -6778,17 +7312,20 @@
         {
           "title": "Den greske frigjøringskrigen",
           "url": "/historie/nasjonalstatenes-tid/gresk-frigjoringskrig",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Fra grensekrigere til imperium",
           "url": "/historie/osmanske-riket/osman-og-oppkomsten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 19
         },
         {
           "title": "Riket mellom to verdener",
           "url": "/historie/osmanske-riket/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -6813,17 +7350,20 @@
         {
           "title": "Kongo: Kaos i hjertet av Afrika",
           "url": "/historie/dekolonisering/kongo",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Nykolonialisme: Kolonimakt uten kolonier",
           "url": "/historie/dekolonisering/nykolonialisme",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Økonomiske leiemordere: Slik kjøpes et helt land",
           "url": "/historie/dekolonisering/okonomiske-leiemordere",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -6849,17 +7389,20 @@
         {
           "title": "Galileo Galilei: Mannen som så himmelen først",
           "url": "/historie/renessansen/galileo-galilei",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Korstogene: Hellig krig og kulturkollisjon",
           "url": "/historie/middelalderen/korstogene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Middelalderen: En tusenårig forvandling",
           "url": "/historie/middelalderen/middelalderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -6884,7 +7427,8 @@
         {
           "title": "Uten hersker: Anarkiets drøm og teorier",
           "url": "/samfunnskunnskap/styringsformer/uten-hersker",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -6910,12 +7454,14 @@
         {
           "title": "Dyreetikk: Har dyr rettigheter?",
           "url": "/krle/etikk/dyreetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Utilitarisme",
           "url": "/krle/etikk/utilitarisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -6946,112 +7492,134 @@
         {
           "title": "Aleksander den store: Eleven som erobret verden",
           "url": "/historie/perserriket/aleksander-den-store",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Antikkens visjoner: Platon og Aristoteles",
           "url": "/samfunnskunnskap/styringsformer/antikken-visjoner",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 16
         },
         {
           "title": "Aristoteles",
           "url": "/krle/filosofi/aristoteles",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 6
         },
         {
           "title": "Athen og Sparta: to byer, to verdener",
           "url": "/historie/antikkens-hellas/athen-og-sparta",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Atlantis - fantes øya som sank?",
           "url": "/historie/historiens-store-gater/atlantis",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 27
         },
         {
           "title": "Augustin",
           "url": "/krle/filosofi/augustin",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Det bysantinske riket: Roma som overlevde",
           "url": "/historie/middelalderen/bysantinske-riket",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Elitenes herredømme: Oligarki og Plutokrati",
           "url": "/samfunnskunnskap/styringsformer/elitenes-herredomme",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Friedrich Nietzsche",
           "url": "/krle/filosofi/nietzsche",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Historiens store gåter",
           "url": "/historie/historiens-store-gater/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Hva er etikk?",
           "url": "/krle/etikk/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 5
         },
         {
           "title": "Hva er filosofi?",
           "url": "/krle/filosofi/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Hva er retorikk?",
           "url": "/norsk/retorikk/grunnleggende-retorikk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Karl Marx",
           "url": "/krle/filosofi/marx",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Martin Heidegger",
           "url": "/krle/filosofi/heidegger",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Mennesket i sentrum: Humanismens fødsel",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/humanisme",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Naturens sjel: Fra hellig til ressurs",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Platon",
           "url": "/krle/filosofi/platon",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 9
         },
         {
           "title": "Renessansen: Gjenfødelsen av antikken",
           "url": "/historie/renessansen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Sokrates",
           "url": "/krle/filosofi/sokrates",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Utopier: Drømmen om det perfekte samfunn",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/utopier",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 8
         },
         {
           "title": "Ytringsvett vs ytringsmot",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -7080,12 +7648,14 @@
         {
           "title": "Japan: Solens vei mot krig",
           "url": "/historie/mellomkrigstiden/japan",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Republikkens fall: Borgerkrig og revolusjon",
           "url": "/historie/kinas-historie/borgerkrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -7111,12 +7681,14 @@
         {
           "title": "De store dynastiene: Keisere og sivilisasjon",
           "url": "/historie/kinas-historie/dynastiene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Det gamle Kina: Sivilisasjonen ved Den gule elven",
           "url": "/historie/jordbruk-og-sivilisasjoner/kina",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -7142,12 +7714,14 @@
         {
           "title": "De store syklusene: Sivilisasjoners vekst og fall",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 9
         },
         {
           "title": "Hvorfor imperier faller",
           "url": "/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -7173,12 +7747,14 @@
         {
           "title": "Naturens sjel: Fra hellig til ressurs",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "René Descartes",
           "url": "/krle/filosofi/descartes",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -7212,42 +7788,50 @@
         {
           "title": "Berlinmuren: Symbolet på en delt verden",
           "url": "/historie/den-kalde-krigen/berlinmuren",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "De store syklusene: Sivilisasjoners vekst og fall",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 5
         },
         {
           "title": "Få økonomien til å skrike: Kuppet i Chile",
           "url": "/historie/den-kalde-krigen/chile-1973",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Kultur og propaganda: Kampen om hjerter og sinn",
           "url": "/historie/den-kalde-krigen/kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 7
         },
         {
           "title": "Penger vs. byttehandel: Tillitens historie",
           "url": "/samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "Vietnamkrigen: Supermakten som møtte veggen i jungelen",
           "url": "/historie/den-kalde-krigen/vietnamkrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Økonomiske leiemordere: Slik kjøpes et helt land",
           "url": "/historie/dekolonisering/okonomiske-leiemordere",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -7274,7 +7858,8 @@
         {
           "title": "Elitenes herredømme: Oligarki og Plutokrati",
           "url": "/samfunnskunnskap/styringsformer/elitenes-herredomme",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -7300,17 +7885,20 @@
         {
           "title": "Ikke-aggresjonsprinsippet",
           "url": "/krle/etikk/non-aggression",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Rettferdighet: uvitenhetens slør",
           "url": "/krle/etikk/rettferdighetsetikk",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Utilitarisme",
           "url": "/krle/etikk/utilitarisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -7339,27 +7927,32 @@
         {
           "title": "Atomvåpenkappløpet: Terrorbalanse på kanten av stupet",
           "url": "/historie/den-kalde-krigen/atomvapenkapplopet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Berlinmuren: Symbolet på en delt verden",
           "url": "/historie/den-kalde-krigen/berlinmuren",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Den iranske revolusjonen 1979",
           "url": "/historie/midtoesten/iran-revolusjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Det store krakket: Keynes vs. Hayek",
           "url": "/historie/mellomkrigstiden/borskrakk",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Iran-Contra-skandalen",
           "url": "/historie/den-kalde-krigen/iran-contra",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 17
         }
       ],
       "aliasSlugs": [
@@ -7387,12 +7980,14 @@
         {
           "title": "Mytteri og Forræderi: Den Tyske Revolusjon",
           "url": "/historie/forste-verdenskrig/tyske-revolusjon",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Tyskland: Veien mot nazismen",
           "url": "/historie/mellomkrigstiden/tyskland",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -7418,17 +8013,20 @@
         {
           "title": "Flokkmentalitetens psykologi",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Jim Crow: «Separate but equal»",
           "url": "/historie/dekolonisering/jim-crow-lovene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 8
         },
         {
           "title": "Å kjempe for endring",
           "url": "/samfunnskunnskap/styringsformer/km-5-kamp-for-endring",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -7457,12 +8055,14 @@
         {
           "title": "11. september og krigen mot terror",
           "url": "/historie/midtoesten/krigen-mot-terror",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Golfkrigene: Fra Kuwait til Irak",
           "url": "/historie/midtoesten/golfkrigene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 23
         }
       ],
       "aliasSlugs": [
@@ -7490,7 +8090,8 @@
         {
           "title": "Det franske imperiet: Pels, allianser og sukker",
           "url": "/historie/kolonialisering/fransk-kolonirike",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -7516,7 +8117,8 @@
         {
           "title": "Romas grunnleggelse og republikken",
           "url": "/historie/romerriket/romersk-start",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -7542,17 +8144,20 @@
         {
           "title": "Nyromantikken: Mystikk, sjel og underbevissthet",
           "url": "/norsk/litteraturhistorie/ny-romantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         },
         {
           "title": "Språkets farger: Bilder og effekter",
           "url": "/norsk/virkemidler/bildesprak-og-effekter",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Tema og budskap",
           "url": "/norsk/analyse/tema-og-budskap",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         }
       ],
       "aliasSlugs": [
@@ -7581,17 +8186,20 @@
         {
           "title": "Det 'unormale': Idéhistorien om sykdom og galskap",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/det-unormale",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Hadde Gud en kone?",
           "url": "/krle/religion/historiske-religioner/monoteismens-fodsel",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Kultur: Da alt ble relativt",
           "url": "/historie/mellomkrigstiden/kultur",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -7622,112 +8230,134 @@
         {
           "title": "Aleksander den store: Eleven som erobret verden",
           "url": "/historie/perserriket/aleksander-den-store",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Antikkens visjoner: Platon og Aristoteles",
           "url": "/samfunnskunnskap/styringsformer/antikken-visjoner",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Aristoteles",
           "url": "/krle/filosofi/aristoteles",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
           "url": "/krle/livssyn/ateisme-og-agnostisme",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Athen og Sparta: to byer, to verdener",
           "url": "/historie/antikkens-hellas/athen-og-sparta",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Atlantis - fantes øya som sank?",
           "url": "/historie/historiens-store-gater/atlantis",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Det 'unormale': Idéhistorien om sykdom og galskap",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/det-unormale",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Friedrich Nietzsche",
           "url": "/krle/filosofi/nietzsche",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Gresk teater: tragedie og komedie",
           "url": "/historie/antikkens-hellas/gresk-teater",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Hannah Arendt",
           "url": "/krle/filosofi/arendt",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Hva er etikk?",
           "url": "/krle/etikk/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "Hva er filosofi?",
           "url": "/krle/filosofi/intro",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         },
         {
           "title": "Hva er retorikk?",
           "url": "/norsk/retorikk/grunnleggende-retorikk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Makt og legitimitet: Hvorfor styres vi?",
           "url": "/samfunnskunnskap/styringsformer/makt-og-legitimitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Mennesket i sentrum: Humanismens fødsel",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/humanisme",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Nasjonenes gullaldre: Fortiden landene bygger på",
           "url": "/historie/nasjonalstatenes-tid/nasjonenes-gullaldre",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Platon",
           "url": "/krle/filosofi/platon",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 5
         },
         {
           "title": "Sannhetens historie: Fra åpenbaring til algoritme",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 8
         },
         {
           "title": "Simone de Beauvoir",
           "url": "/krle/filosofi/beauvoir",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Sokrates",
           "url": "/krle/filosofi/sokrates",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 12
         },
         {
           "title": "Utopier: Drømmen om det perfekte samfunn",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/utopier",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Ytringsvett vs ytringsmot",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 10
         }
       ],
       "aliasSlugs": [
@@ -7754,7 +8384,8 @@
         {
           "title": "Flokkmentalitetens psykologi",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -7780,12 +8411,14 @@
         {
           "title": "Knut Alvsson - ridderen som trosset kong Hans",
           "url": "/historie/norgeshistorie/knut-alvsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Stockholms blodbad",
           "url": "/historie/sveriges-historie/stockholm-blodbadet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         }
       ],
       "aliasSlugs": []
@@ -7812,7 +8445,8 @@
         {
           "title": "Republikkens fall: Borgerkrig og revolusjon",
           "url": "/historie/kinas-historie/borgerkrigen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 9
         }
       ],
       "aliasSlugs": []
@@ -7845,12 +8479,14 @@
         {
           "title": "Borgerkrigstiden: da Norge manglet en arveregel",
           "url": "/historie/norsk-middelalder/borgerkrigstiden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Sverre Sigurdsson: presten som ble konge",
           "url": "/historie/norsk-middelalder/sverre-sigurdsson",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -7877,27 +8513,32 @@
         {
           "title": "\"Europas syke mann\"",
           "url": "/historie/osmanske-riket/forfallet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Riket mellom to verdener",
           "url": "/historie/osmanske-riket/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Sammenbruddet og det nye Tyrkia",
           "url": "/historie/osmanske-riket/sammenbruddet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Süleyman den store og gullalderen",
           "url": "/historie/osmanske-riket/suleyman-gullalderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 24
         },
         {
           "title": "Topkapı: maktens palass",
           "url": "/historie/osmanske-riket/topkapi-palasset",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": [
@@ -7925,12 +8566,14 @@
         {
           "title": "Bokmål og nynorsk: Hvordan Norge fikk to skriftspråk",
           "url": "/norsk/sprakhistorie/bokmal-og-nynorsk",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         },
         {
           "title": "Novelle",
           "url": "/norsk/tekstsjangre/novelle",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -7959,12 +8602,14 @@
         {
           "title": "Israel og Palestina: Et land, to folk",
           "url": "/historie/midtoesten/israel-og-palestina",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         },
         {
           "title": "Midtøsten: De nye grensene",
           "url": "/historie/mellomkrigstiden/midtoesten",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -7997,32 +8642,38 @@
         {
           "title": "Aristoteles",
           "url": "/krle/filosofi/aristoteles",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Augustin",
           "url": "/krle/filosofi/augustin",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Middelalderen: En tusenårig forvandling",
           "url": "/historie/middelalderen/middelalderen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Naturretten",
           "url": "/krle/etikk/naturrett",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 3
         },
         {
           "title": "René Descartes",
           "url": "/krle/filosofi/descartes",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Thomas Aquinas",
           "url": "/krle/filosofi/aquinas",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -8048,22 +8699,26 @@
         {
           "title": "Jean-Jacques Rousseau",
           "url": "/krle/filosofi/rousseau",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 1
         },
         {
           "title": "Makt og legitimitet: Hvorfor styres vi?",
           "url": "/samfunnskunnskap/styringsformer/makt-og-legitimitet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "Opplysningstid og Samfunnskontrakten",
           "url": "/samfunnskunnskap/styringsformer/opplysningstid",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 3
         },
         {
           "title": "Uten hersker: Anarkiets drøm og teorier",
           "url": "/samfunnskunnskap/styringsformer/uten-hersker",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -8090,7 +8745,8 @@
         {
           "title": "Malthus: Dommedag vs. Teknologi",
           "url": "/samfunnskunnskap/demografi/malthus-vs-boserup",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -8116,12 +8772,14 @@
         {
           "title": "Renessansen: Gjenfødelsen av antikken",
           "url": "/historie/renessansen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Utopier: Drømmen om det perfekte samfunn",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/utopier",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -8148,22 +8806,26 @@
         {
           "title": "Hvem eier vikingene?",
           "url": "/historie/historiens-store-gater/hvem-eier-vikingene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Monarkiet: Fra Guds nåde til folkets konge",
           "url": "/samfunnskunnskap/styringsformer/monarkiet",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Norge i mellomkrigstiden",
           "url": "/historie/mellomkrigstiden/norge",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Norge under okkupasjonen",
           "url": "/historie/andre-verdenskrig/norge-under-okkupasjonen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -8209,12 +8871,14 @@
         {
           "title": "Normandie: Fra Vikinger til Riddere",
           "url": "/historie/vikingtiden/normandie",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Vannet som jobbet: vann- og vindmølla",
           "url": "/historie/teknologi-og-hverdagsliv/vann-og-vindmolla",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": []
@@ -8240,7 +8904,8 @@
         {
           "title": "Nyromantikken: Mystikk, sjel og underbevissthet",
           "url": "/norsk/litteraturhistorie/ny-romantikken",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 3
         }
       ],
       "aliasSlugs": []
@@ -8264,17 +8929,20 @@
         {
           "title": "Rød Storm: Den Russiske Revolusjon",
           "url": "/historie/forste-verdenskrig/russiske-revolusjon",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 14
         },
         {
           "title": "Sovjetunionen: Stalins jernhånd",
           "url": "/historie/mellomkrigstiden/sovjet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Svalbard: øyene ingen eide",
           "url": "/historie/norge-i-moderne-tid/svalbard",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         }
       ],
       "aliasSlugs": [
@@ -8298,12 +8966,14 @@
         {
           "title": "Hvem hadde skylda for første verdenskrig?",
           "url": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Tyskland: Veien mot nazismen",
           "url": "/historie/mellomkrigstiden/tyskland",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -8329,37 +8999,44 @@
         {
           "title": "1945: Verden bygges på nytt",
           "url": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Andre verdenskrig: En oversikt",
           "url": "/historie/andre-verdenskrig/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Demokratiets mange ansikter",
           "url": "/samfunnskunnskap/styringsformer/demokrati-ansikter",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "En verden i to: Oversikt over den kalde krigen",
           "url": "/historie/den-kalde-krigen/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Konsekvenser: En delt verden",
           "url": "/historie/andre-verdenskrig/konsekvenser",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Nürnbergprosessen - ingen er over loven",
           "url": "/historie/lov-og-rett/nurnbergprosessen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Retoriske grep og figurer",
           "url": "/norsk/retorikk/retoriske-grep",
-          "subject": "norsk"
+          "subject": "norsk",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -8381,27 +9058,32 @@
         {
           "title": "Den naturlige renten",
           "url": "/samfunnskunnskap/okonomi/naturlig-rente",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 1
         },
         {
           "title": "Folkeforbundet: Drømmen om fred",
           "url": "/historie/mellomkrigstiden/folkeforbundet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 6
         },
         {
           "title": "Hvem hadde skylda for første verdenskrig?",
           "url": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Konsekvenser: Et nytt Europa",
           "url": "/historie/forste-verdenskrig/konsekvenser",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Mellomkrigstiden: En verden i endring",
           "url": "/historie/mellomkrigstiden/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -8428,12 +9110,14 @@
         {
           "title": "Deng Xiaoping: Kina åpner for verden",
           "url": "/historie/kinas-historie/deng-og-reformene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 4
         },
         {
           "title": "Kina som supermakt",
           "url": "/historie/kinas-historie/kina-supermakt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -8459,12 +9143,14 @@
         {
           "title": "Cuba-krisen 1962: Verden på kanten av utslettelse",
           "url": "/historie/den-kalde-krigen/cuba-krisen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Romkappløpet: Veien mot stjernene og månen",
           "url": "/historie/den-kalde-krigen/romkapplopet",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 5
         }
       ],
       "aliasSlugs": []
@@ -8490,22 +9176,26 @@
         {
           "title": "Egyptisk religion: hjertet på vekten",
           "url": "/krle/religion/historiske-religioner/egyptisk-religion",
-          "subject": "krle"
+          "subject": "krle",
+          "hits": 2
         },
         {
           "title": "Eskatologi: Historien om verdens undergang",
           "url": "/samfunnskunnskap/ideer-og-verdenssyn/eskatologi",
-          "subject": "samfunnskunnskap"
+          "subject": "samfunnskunnskap",
+          "hits": 2
         },
         {
           "title": "Perserriket: Det første verdensriket",
           "url": "/historie/perserriket/artikkel",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         },
         {
           "title": "Zarathustra og zoroastrismen",
           "url": "/historie/perserriket/zarathustra-og-zoroastrismen",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 15
         }
       ],
       "aliasSlugs": []
@@ -8531,17 +9221,20 @@
         {
           "title": "De store dynastiene: Keisere og sivilisasjon",
           "url": "/historie/kinas-historie/dynastiene",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 3
         },
         {
           "title": "Europa erobrer verden",
           "url": "/historie/kolonialisering/europa-erobrer-verden",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 2
         },
         {
           "title": "Midtens rike: 3000 år i korte trekk",
           "url": "/historie/kinas-historie/oversikt",
-          "subject": "historie"
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []

@@ -18,7 +18,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { buildCorpus, needleRegex } from './lib/article-corpus.mjs';
+import { buildCorpus, needleRegex, needleRegexAll } from './lib/article-corpus.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -335,6 +335,7 @@ for (const person of people) {
 
     const unique = Array.from(new Set(candidates));
     const patterns = unique.map(needleRegex);
+    const counters = unique.map(needleRegexAll);
     const masks = unique.flatMap(maskPatternsFor);
 
     const seen = new Set();
@@ -347,7 +348,20 @@ for (const person of people) {
         if (!patterns.some((re) => re.test(text))) continue;
         if (seen.has(article.url)) continue;
         seen.add(article.url);
-        mentionedIn.push({ title: article.title, url: article.url, subject: article.subject });
+        // Hvor mange ganger navnet står i artikkelen. Lista under er sortert
+        // alfabetisk fordi den vises slik i persongalleriet, men Kryssordet
+        // trenger å vite hvilken artikkel personen faktisk spiller en rolle i,
+        // ikke bare hvilken som kommer først i alfabetet.
+        const hits = counters.reduce((sum, re) => {
+            re.lastIndex = 0;
+            return sum + (text.match(re) || []).length;
+        }, 0);
+        mentionedIn.push({
+            title: article.title,
+            url: article.url,
+            subject: article.subject,
+            hits,
+        });
     }
     person.mentionedIn = mentionedIn.sort((a, b) => a.title.localeCompare(b.title, 'nb'));
 

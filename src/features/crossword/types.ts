@@ -7,6 +7,14 @@ export type BankKind = 'begrep' | 'person';
 
 export type Difficulty = 'lett' | 'middels' | 'vanskelig';
 
+// Hvor ordet kommer fra: artikkelen eleven kan lese for å møte det i sin egen
+// sammenheng. `label` er artikkeltittelen i klartekst, slik at lenken sier hvor
+// den går før eleven trykker.
+export interface WordSource {
+    link: string;
+    label: string;
+}
+
 // Ett mulig svar i ordbanken, ferdig normalisert.
 export interface BankEntry {
     id: string;
@@ -19,8 +27,9 @@ export interface BankEntry {
     kind: BankKind;
     subject?: string;
     era?: string;
-    // Lenke til artikkel/persongalleri, vises etter at ordet er løst
-    link?: string;
+    // Artikkelen (eller persongalleriet) ordet hører hjemme i. Vises først
+    // etter at ordet er løst - en tittel kan røpe svaret.
+    source?: WordSource;
     // Artiklene ordet er nevnt i ('historie/vikingtiden/rikssamlingen').
     // Grunnlaget for modusen «det du har lest».
     articles?: string[];
@@ -38,7 +47,7 @@ export interface PlacedWord {
     kind: BankKind;
     display: string;
     subject?: string;
-    link?: string;
+    source?: WordSource;
 }
 
 export interface PuzzleCell {

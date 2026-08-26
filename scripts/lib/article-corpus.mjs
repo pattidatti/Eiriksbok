@@ -82,6 +82,17 @@ export function buildCorpus(contentDir) {
 // \b duger ikke, for den regner æøåü som ordgrense midt i et navn. Vi bruker
 // derfor Unicode-lookaround på begge sider.
 export function needleRegex(needle) {
+    return buildNeedleRegex(needle, 'u');
+}
+
+// Samme mønster, men som teller: hvor mange ganger står ordet i teksten?
+// Egen funksjon fremfor et flagg-argument, fordi needleRegex sendes rett inn i
+// .map() flere steder - og da ville map-indeksen blitt tolket som regex-flagg.
+export function needleRegexAll(needle) {
+    return buildNeedleRegex(needle, 'gu');
+}
+
+function buildNeedleRegex(needle, flags) {
     const escaped = needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return new RegExp(`(?<!\\p{L})${escaped}(?!\\p{L})`, 'u');
+    return new RegExp(`(?<!\\p{L})${escaped}(?!\\p{L})`, flags);
 }

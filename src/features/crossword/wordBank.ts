@@ -1,7 +1,7 @@
 // Ordbanken til Kryssord: gjør glossary.json og people.json om til svar + ledetråd.
 // Alt som ikke kan skrives i en kryssordrute (mellomrom, tall, apostrof) faller ut.
 
-import type { BankEntry, ContentFilter, PuzzleFilters } from './types';
+import type { BankEntry, ContentFilter, PuzzleFilters, WordSource } from './types';
 
 // Bokstaver vi ikke har ruter for, oversatt til den norske naboen sin.
 const FOREIGN_LETTERS: Record<string, string> = {
@@ -213,13 +213,18 @@ interface PersonRaw {
     subject?: string | null;
     lifespan?: string;
     aliases?: string[];
-    mentionedIn?: { url: string }[];
+    links?: { title: string; url: string }[];
+    // `hits` = hvor mange ganger navnet står i artikkelen
+    mentionedIn?: { title: string; url: string; hits?: number }[];
 }
 
 // public/data/glossary-articles.json: artikkelstiene står én gang, og hvert
-// begrep peker på indekser inn i lista.
+// begrep peker på indekser inn i lista. `titles` løper parallelt med
+// `articles`. Første indeks er den artikkelen begrepet hører mest hjemme i -
+// generatoren sorterer dem.
 interface GlossaryArticles {
     articles: string[];
+    titles: string[];
     terms: Record<string, number[]>;
 }
 
@@ -233,7 +238,11 @@ export interface WordBank {
     eras: { key: string; label: string }[];
 }
 
-const buildConceptEntry = (raw: GlossaryRaw, mentions?: string[]): BankEntry | null => {
+const buildConceptEntry = (
+    raw: GlossaryRaw,
+    mentions?: string[],
+    articleSource?: WordSource
+): BankEntry | null => {
     const definition = (raw.definition || raw.description || '').trim();
     if (definition.length < 20) return null;
 
@@ -265,8 +274,44 @@ const buildConceptEntry = (raw: GlossaryRaw, mentions?: string[]): BankEntry | n
         clue,
         kind: 'begrep',
         subject: raw.subject,
+        source: articleSource,
         articles: mentions,
     };
+};
+
+// Hvor skal eleven lese om personen? Helst artikkelen som har navnet i
+// tittelen - den handler om ham. Ellers den kuraterte lenken fra persondataene,
+// ellers første artikkel han er nevnt i. Har vi ingenting, sender vi eleven til
+// persongalleriet, som alltid finnes.
+const pickPersonSource = (raw: PersonRaw): WordSource => {
+    const mentions = raw.mentionedIn || [];
+    const nameParts = raw.name
+        .split(/\s+/)
+        .filter((part) => part.length >= 4 && !NAME_PARTICLES.has(part.toLowerCase()))
+        .map((part) => lettersOnly(part));
+
+    const byTitle = mentions.find((mention) =>
+        nameParts.some((part) => lettersOnly(mention.title).includes(part))
+    );
+    // Den kuraterte lenken i persondataene brukes bare når artikkelen også
+    // står i nevningene. Nevningene er bygd fra filene som faktisk finnes,
+    // mens noen kuraterte lenker peker på artikler som er flyttet eller aldri
+    // ble skrevet - og en død lenke er verre enn ingen lenke. Bonus: da får vi
+    // den ekte tittelen i stedet for «Les artikkelen».
+    const curatedUrl = raw.links?.[0]?.url;
+    const curated = curatedUrl ? mentions.find((mention) => mention.url === curatedUrl) : undefined;
+
+    // Til slutt: artikkelen som nevner personen flest ganger. Lista er sortert
+    // alfabetisk for persongalleriets skyld, så «først i lista» sier ingenting
+    // om hvor personen faktisk hører hjemme.
+    const mostMentions = mentions.reduce<(typeof mentions)[number] | undefined>(
+        (best, mention) => ((mention.hits ?? 0) > (best?.hits ?? 0) ? mention : best),
+        undefined
+    );
+
+    const chosen = byTitle ?? curated ?? mostMentions ?? mentions[0];
+    if (chosen) return { link: chosen.url, label: chosen.title };
+    return { link: `/persongalleri/${raw.slug}`, label: 'Persongalleriet' };
 };
 
 const buildPersonEntry = (raw: PersonRaw): BankEntry | null => {
@@ -302,7 +347,7 @@ const buildPersonEntry = (raw: PersonRaw): BankEntry | null => {
         kind: 'person',
         subject: raw.subject || undefined,
         era: raw.era || undefined,
-        link: `/persongalleri/${raw.slug}`,
+        source: pickPersonSource(raw),
         // Personene har alt sin egen reversindeks fra generate-people.js
         articles: (raw.mentionedIn || []).map((mention) => mention.url.replace(/^\//, '')),
     };
@@ -330,8 +375,18 @@ export const loadWordBank = (): Promise<WordBank> => {
             return indexes.map((index) => mentions.articles[index]).filter(Boolean);
         };
 
+        // Første indeks er den artikkelen begrepet hører mest hjemme i.
+        const sourceFor = (term: string): WordSource | undefined => {
+            const first = mentions?.terms[term]?.[0];
+            if (first === undefined) return undefined;
+            const path = mentions?.articles[first];
+            const label = mentions?.titles?.[first];
+            if (!path || !label) return undefined;
+            return { link: `/${path}`, label };
+        };
+
         for (const raw of glossary) {
-            const entry = buildConceptEntry(raw, articlesFor(raw.term));
+            const entry = buildConceptEntry(raw, articlesFor(raw.term), sourceFor(raw.term));
             if (entry && !seen.has(entry.answer)) {
                 seen.add(entry.answer);
                 entries.push(entry);

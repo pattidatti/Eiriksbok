@@ -267,7 +267,7 @@ const finalize = (words: WorkingWord[], seed: number): Puzzle => {
                     kind: word.entry.kind,
                     display: word.entry.display,
                     subject: word.entry.subject,
-                    link: word.entry.link,
+                    source: word.entry.source,
                 });
             }
         }

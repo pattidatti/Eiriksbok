@@ -3,16 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-    Check,
-    Clipboard,
-    Clock,
-    Eye,
-    Lightbulb,
-    RotateCcw,
-    Sparkles,
-    Trophy,
-} from 'lucide-react';
+import { Check, Clipboard, Clock, Eye, Lightbulb, RotateCcw, Sparkles, Trophy } from 'lucide-react';
 import type { PlacedWord } from './types';
 import { useCountUp } from '../progress/components/useCountUp';
 
@@ -30,13 +21,6 @@ interface VictoryProps {
     // Lenken som gjenskaper akkurat dette brettet
     shareUrl: string;
     onNew: () => void;
-}
-
-// Reversindeksen begrep -> artikler (public/data/glossary-articles.json).
-// Artikkelstiene står én gang, og hvert begrep peker på indekser inn i lista.
-interface GlossaryArticles {
-    articles: string[];
-    terms: Record<string, number[]>;
 }
 
 const formatTime = (seconds: number): string => {
@@ -103,32 +87,6 @@ export const VictoryOverlay = ({
     onNew,
 }: VictoryProps) => {
     const xpShown = useCountUp(xp, 900, 350);
-
-    // Begrepene skal ha et sted å gå. Reversindeksen gir oss artikkelen der
-    // begrepet faktisk blir forklart.
-    const [conceptLinks, setConceptLinks] = useState<Record<string, string>>({});
-    useEffect(() => {
-        let alive = true;
-        fetch('/data/glossary-articles.json')
-            .then((res) => (res.ok ? (res.json() as Promise<GlossaryArticles>) : null))
-            .then((data) => {
-                if (!alive || !data) return;
-                const map: Record<string, string> = {};
-                for (const word of words) {
-                    if (word.kind !== 'begrep') continue;
-                    const first = data.terms[word.display]?.[0];
-                    const path = first === undefined ? undefined : data.articles[first];
-                    if (path) map[word.id] = `/${path}`;
-                }
-                setConceptLinks(map);
-            })
-            .catch(() => {
-                // Uten indeksen blir begrepene bare uklikkbare, som før
-            });
-        return () => {
-            alive = false;
-        };
-    }, [words]);
 
     const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
     const copyTimer = useRef<number>(0);
@@ -225,8 +183,8 @@ export const VictoryOverlay = ({
 
                 {revealed > 0 && (
                     <p className="mb-2 text-center text-xs font-semibold text-slate-400">
-                        Du åpnet {revealed} ord underveis. Å hente fram et ord du står fast på er
-                        en helt vanlig måte å komme videre på.
+                        Du åpnet {revealed} ord underveis. Å hente fram et ord du står fast på er en
+                        helt vanlig måte å komme videre på.
                     </p>
                 )}
 
@@ -239,17 +197,19 @@ export const VictoryOverlay = ({
                 <h3 className="mb-1 text-sm font-bold tracking-wide text-slate-500 uppercase">
                     Ordene du løste
                 </h3>
-                <p className="mb-2 text-xs text-slate-400">Trykk på et ord for å lese mer om det.</p>
+                <p className="mb-2 text-xs text-slate-400">
+                    Trykk på et ord for å lese artikkelen det kommer fra.
+                </p>
                 <div className="mb-6 flex flex-wrap gap-1.5">
                     {words.map((word, index) => {
-                        const href = word.link ?? conceptLinks[word.id];
+                        const source = word.source;
                         const chip = (
                             <motion.span
                                 initial={{ opacity: 0, scale: 0.7 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.25 + index * 0.03 }}
                                 className={`inline-block rounded-lg px-2.5 py-1 text-xs font-semibold ${
-                                    href
+                                    source
                                         ? 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100'
                                         : 'bg-slate-100 text-slate-600'
                                 }`}
@@ -257,8 +217,12 @@ export const VictoryOverlay = ({
                                 {word.display}
                             </motion.span>
                         );
-                        return href ? (
-                            <Link key={word.id} to={href} title={`Les mer om ${word.display}`}>
+                        return source ? (
+                            <Link
+                                key={word.id}
+                                to={source.link}
+                                title={`${word.display} - les «${source.label}»`}
+                            >
                                 {chip}
                             </Link>
                         ) : (

@@ -1,7 +1,8 @@
 // Ledetrådene ved siden av brettet. Klikk på en ledetråd hopper til ordet.
 
 import { motion } from 'framer-motion';
-import { Check, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, BookOpen, Check, User } from 'lucide-react';
 import type { Direction, PlacedWord } from './types';
 
 interface ClueListProps {
@@ -12,6 +13,14 @@ interface ClueListProps {
     solvedAt: Record<string, number>;
     onSelect: (word: PlacedWord) => void;
 }
+
+// Artikkeltitlene er bygd som «Hovedtittel: undertittel». I en smal liste er
+// det hovedtittelen som forteller eleven hvor lenken går; undertittelen bare
+// spiser plass. Hele tittelen ligger i title-attributtet.
+const articleName = (label: string): string => {
+    const colon = label.indexOf(': ');
+    return colon >= 12 ? label.slice(0, colon) : label;
+};
 
 export const ClueList = ({
     title,
@@ -34,7 +43,7 @@ export const ClueList = ({
                     {solved}/{list.length}
                 </span>
             </header>
-            <ul className="min-h-0 space-y-1 overflow-y-auto pr-1">
+            <ul className="min-h-0 space-y-2 overflow-y-auto pr-1">
                 {list.map((word) => {
                     const isSolved = solvedAt[word.id] !== undefined;
                     const isActive = word.id === activeId;
@@ -86,6 +95,36 @@ export const ClueList = ({
                                     </span>
                                 </span>
                             </motion.button>
+
+                            {/* Veien videre: lenken til artikkelen ordet kommer fra. Den
+                                folder seg ut i det ordet blir løst - før det ville
+                                artikkeltittelen kunne røpe svaret. Ny fane, slik at
+                                brettet står urørt mens eleven leser. */}
+                            {isSolved && word.source && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    transition={{ duration: 0.25, ease: 'easeOut' }}
+                                    className="overflow-hidden"
+                                >
+                                    <Link
+                                        to={word.source.link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        title={`Les «${word.source.label}» i ny fane`}
+                                        className="group mt-0.5 ml-7 flex items-center gap-1.5 rounded-lg px-2 py-1 text-[11px] font-bold text-indigo-600 transition-colors hover:bg-indigo-50 hover:text-indigo-800"
+                                    >
+                                        <BookOpen size={11} className="shrink-0" />
+                                        <span className="truncate">
+                                            {articleName(word.source.label)}
+                                        </span>
+                                        <ArrowUpRight
+                                            size={11}
+                                            className="-ml-0.5 shrink-0 text-indigo-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                        />
+                                    </Link>
+                                </motion.div>
+                            )}
                         </li>
                     );
                 })}
