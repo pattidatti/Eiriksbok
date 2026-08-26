@@ -26,10 +26,17 @@ belegge en påstand, følg den konservative opptrappingen under - ikke gjett, og
 ## Arbeidsområde (juster ved behov)
 
 ```
-SCOPE="public/content/historie"   # hele historie-faget (~222 artikler igjen per 2026-07-22)
-# Når historie er ferdig (grep under returnerer tomt), bytt til neste fag ved å endre denne linjen:
-# musikk og samfunnskunnskap har 0 sti-kobling (lavrisiko), deretter norsk og krle.
+SCOPE="public/content"   # hele innholdet - søket under skiller selv artikler fra alt annet
 ```
+
+Denne linja skal normalt ikke endres. Tidligere pekte den på ett fag om gangen, og måtte flyttes
+for hånd hver gang et fag ble tomt. Det ble glemt: linja sto på `historie` i tre uker etter at
+historie var ferdig, og hver kjøring brukte tid på å gjenoppdage det og velge fag selv. Søket i
+Jobb 0.5 finner nå de gjenstående artiklene uansett fag, så køen tømmer seg selv og rutinen kan
+faktisk melde «ferdig» én gang for alle.
+
+Vil du likevel begrense en kjøring til ett emne (f.eks. for å gjøre et fag ferdig først), sett
+`SCOPE="public/content/krle"` midlertidig. Søket virker likt.
 
 ---
 
@@ -88,10 +95,29 @@ innholdet - ingen egen flagg-fil.
 git fetch origin main && git checkout -B work origin/main
 
 # Artikler i SCOPE som IKKE har en Kildeliste = kandidater.
-# Ekskluder sti-filer (*-sti.json), oversikts-/indeksfiler, scenario-filer.
-grep -rL '"Kildeliste"' "$SCOPE" --include='*.json' \
-  | grep -vE '(-sti(-v2)?\.json$|/oversikt\.json$|scenario|manifest)' \
-  > /tmp/candidates.txt
+# Sti-filer, oversikts-/scenario-filer OG ikke-artikler siles bort. Se forklaringen under.
+node -e '
+const fs=require("fs"), path=require("path");
+const SKIP=/-sti(-v2)?\.json$|\/oversikt\.json$|scenario|manifest|\/quests\//;
+const ut=[];
+(function gaa(d){ for(const e of fs.readdirSync(d,{withFileTypes:true})){
+  const p=path.join(d,e.name);
+  if(e.isDirectory()) gaa(p);
+  else if(e.name.endsWith(".json") && !SKIP.test(p)){
+    let raw; try{ raw=fs.readFileSync(p,"utf8"); }catch{ continue; }
+    if(raw.includes("\"Kildeliste\"")) continue;
+    let j; try{ j=JSON.parse(raw); }catch{ continue; }
+    if(!j || !Array.isArray(j.content)) continue;      // datafil/verktøy, ikke artikkel
+    const tekst=[]; (function samle(o){
+      if(Array.isArray(o)) o.forEach(samle);
+      else if(o && typeof o==="object") Object.values(o).forEach(samle);
+      else if(typeof o==="string") tekst.push(o);
+    })(j.content);
+    if(tekst.join(" ").trim().split(/\s+/).length < 300) continue;   // stubb/kort
+    ut.push(p);
+  }}})(process.argv[1]);
+console.log(ut.sort().join("\n"));
+' "$SCOPE" > /tmp/candidates.txt
 
 # In-flight: artikler endret i main de siste 3 dagene (unngå kollisjon med annen kjøring)
 git log origin/main --since="3 days ago" --name-only --pretty=format: \
@@ -101,7 +127,39 @@ cat /tmp/candidates.txt
 ```
 
 Velg de **2-3 første** kandidatene som ikke står i `/tmp/inflight.txt`. Returnerer `candidates.txt`
-tomt → emnet er ferdig: rapportér det på tracking-issuet (Jobb 6) og avslutt uten PR.
+tomt → **rutinen er ferdig**: rapportér det på tracking-issuet (Jobb 6), be om at triggeren skrus av,
+og avslutt uten PR.
+
+### Hvorfor søket siler på to ting (ikke fjern dem)
+
+**`content`-array = artikkel.** Uten denne testen kommer `concepts/` (665 filer), `people/` (226),
+`interactive/`, `kjeder/`, `kompetansemal/`, `config/` og `scenarios/` inn i kandidatlista. Det er
+begrepskort, persondata og komponent-konfigurasjon - ingen av dem har brødtekst å kildebelegge.
+Testen ble målt mot alle 924 filene i de mappene og ga null falske kandidater.
+
+**300-ords-terskelen = bærer artikkelen påstander?** Under denne grensa ligger to ting som aldri kan
+kildebelegges meningsfullt:
+- **Verktøy-innpakninger** - `musikk/oppslag/latskriver.json` er 26 ord instruksjon rundt
+  `SongwriterStudio`-komponenten.
+- **Kort/teasere** - `krle/religion/*/intro.json` er typisk 30-50 ord med `dimension` og
+  `comparison_tags`, og mater sammenligningsmotoren.
+
+Dette er ikke kosmetikk: uten terskelen ville `grep` funnet de samme ~10 filene ved hver eneste
+kjøring, i det uendelige, og rutinen kunne aldri meldt seg ferdig. Nøyaktig det skjedde med
+`historie/demo-artikkel.json` og `historie/test-artikkel.json` - de ble gjenoppdaget og forklart på
+nytt i kjøring etter kjøring i tre uker.
+
+Bruk **ordtelling, ikke filnavn.** `krle/religion/samisk/intro.json` (1308 ord) og
+`krle/religion/islam/intro/artikkel.json` (1366 ord) er ekte artikler med samme filnavn som
+stubbene. Et mønster på `/intro.json$` ville kastet ut begge.
+
+### Artikkel som har Kildeliste, men svak forankring
+
+Har en artikkel allerede en kildeliste, er den **ikke** kandidat - selv om teksten mangler in-text-
+henvisninger. Flere slike finnes (bl.a. seks i `krle/sammenligning/` med 16-32 verifiserte kilder
+hver), og de er bevisst holdt utenfor: kildene der er ekte og dekkende, og gevinsten ved å feste dem
+til påstandene er mindre enn risikoen for at en kjøring bytter 32 gode kilder mot 5 nye. Skal de
+forankres, gjøres det som en egen, avgrenset jobb - ikke av denne rutinen.
 
 ---
 
