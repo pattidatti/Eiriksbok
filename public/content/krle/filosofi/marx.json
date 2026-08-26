@@ -19,18 +19,18 @@
         "Mente at historien drives av en kamp mellom samfunnsklasser.",
         "Utviklet teorien om merverdi: profitt kommer fra arbeidernes ubetalte arbeid.",
         "Skrev Det kommunistiske manifest sammen med Friedrich Engels i 1848.",
-        "Hans ideer formet hele arbeiderbevegelsen, Sovjetunionen og dagens velferdsstat."
+        "Ideene hans formet arbeiderbevegelser og kommunistiske partier over hele verden."
     ],
     "content": [
         {
             "type": "text",
-            "content": "Karl Marx (1818-1883) vokste opp i en jødisk-tysk advokatfamilie og var et lysende hode på universitetet. Han studerte jus og filosofi, men endte opp som journalist, eksilflyktning og verdens mest leste samfunnskritiker. Da han bodde i London på 1850-tallet, satt han hver dag på lesesalen i British Museum og prøvde å finne svaret på ett brennende spørsmål: Hvorfor blir noen så fryktelig rike i den nye industriverdenen, mens de som faktisk lager varene, knapt har mat på bordet?"
+            "content": "Karl Marx (1818-1883) ble født i Trier i Preussen, i en familie med jødiske røtter som gikk over til protestantismen. Faren var advokat. Marx studerte først jus og deretter filosofi i Berlin, men endte opp som journalist og redaktør, og måtte til slutt flykte fra land etter land: Paris, Brussel og fra 1849 London (Stølen, 2025b). Der brukte han resten av livet på ett brennende spørsmål: Hvorfor blir noen så fryktelig rike i den nye industriverdenen, mens de som faktisk lager varene, knapt har mat på bordet?"
         },
         {
             "type": "image",
             "src": "/images/filosofi/marx-01.webp",
-            "alt": "Karl Marx sittende ved skrivebordet i British Museum med bøker og notater rundt seg",
-            "caption": "Marx tilbrakte tiår på lesesalen i British Museum mens han skrev hovedverket Kapitalen."
+            "alt": "Karl Marx sittende ved et skrivebord med bøker og notater rundt seg",
+            "caption": "Marx brukte tiår i London på studier og skriving. Hovedverket hans, Kapitalen, kom i 1867."
         },
         {
             "type": "header",
@@ -38,7 +38,7 @@
         },
         {
             "type": "text",
-            "content": "Marx levde midt i den [industrielle revolusjonen](/historie/industriell-revolusjon/industriell-revolusjon). Han så [barn på fem år krype under spinnmaskinene](/historie/industriell-revolusjon/barnearbeid) i Manchester. Han så bønder presset av jorda og inn i fabrikker som spydde svart røyk over hustakene. Og han så hvordan en helt ny gruppe — fabrikkeierne — ble eventyrlig rike på arbeidet til disse menneskene.\n\nMarx mente at noe revolusjonerende hadde skjedd: For første gang i historien fantes det to klasser som var fullstendig avhengige av hverandre, men samtidig hadde motsatte interesser. Han kalte dem borgerskapet (de som eide fabrikkene) og proletariatet (de som bare hadde sin egen arbeidskraft å selge). Konflikten mellom dem var ifølge Marx historiens motor."
+            "content": "Marx levde midt i den [industrielle revolusjonen](/historie/industriell-revolusjon/industriell-revolusjon). I fabrikkbyene krøp [barn under maskinene](/historie/industriell-revolusjon/barnearbeid) for å hekte sammen tråder som røk. Bønder ble presset av jorda og inn i fabrikker som spydde svart røyk over hustakene. Og en helt ny gruppe, fabrikkeierne, ble eventyrlig rike på arbeidet til disse menneskene. Det var denne nye arbeiderklassen Marx rettet all sin oppmerksomhet mot (Stølen, 2025b).\n\nMarx mente at noe revolusjonerende hadde skjedd: for første gang i historien fantes det to klasser som var fullstendig avhengige av hverandre, men samtidig hadde motsatte interesser. Han kalte dem borgerskapet (de som eide fabrikkene) og proletariatet (de som bare hadde sin egen arbeidskraft å selge). I Det kommunistiske manifest skrev Marx og Engels at samfunnet mer og mer deler seg i to store fiendtlige leirer, to klasser som står rett mot hverandre (Marx & Engels, 1848). Konflikten mellom dem var ifølge Marx historiens motor."
         },
         {
             "type": "header",
@@ -46,14 +46,14 @@
         },
         {
             "type": "text",
-            "content": "Tidligere filosofer som [Platon](/krle/filosofi/platon) og [Kant](/krle/filosofi/kant) hadde lett etter evige sannheter i ideenes verden. Marx snudde dette på hodet. Han sa at det ikke er ideer som forandrer samfunnet, men kampen om hvem som eier maten, redskapene og fabrikkene. Dette kalles historisk materialisme.\n\nI antikken kjempet slaver mot herrer. I middelalderen kjempet bønder mot adelen. I dag, mente Marx, kjemper arbeidere mot kapitaleierne. Hver gang en gammel klasse blir styrtet, dukker en ny konflikt opp. Marx var overbevist om at denne siste kampen — mellom arbeider og kapitalist — ville bli den endelige. Etter den, hevdet han, ville klassesamfunnet være over."
+            "content": "Tidligere filosofer som [Platon](/krle/filosofi/platon) og [Kant](/krle/filosofi/kant) hadde lett etter evige sannheter i ideenes verden. Marx snudde dette på hodet. Han sa at det ikke er ideer som forandrer samfunnet, men kampen om hvem som eier maten, redskapene og fabrikkene. Dette kalles historisk materialisme, og er en fellesbetegnelse på historiesyn som gir materielle forhold hovedrollen som drivkraft i samfunnsutviklingen (Damslora, 2026).\n\nI antikken kjempet slaver mot herrer. I middelalderen kjempet bønder mot adelen. I dag, mente Marx, kjemper arbeidere mot kapitaleierne. All historie er en historie om klassekamp mellom to eller flere klasser med ulike mål, hevdet han (Damslora, 2026). Hver gang en gammel klasse blir styrtet, dukker en ny konflikt opp. Marx var overbevist om at denne siste kampen, mellom arbeider og kapitalist, ville bli den endelige. Etter den ville klassesamfunnet være over."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Historien til alle samfunn fram til i dag er historien om klassekamper.",
-                "author": "Karl Marx & Friedrich Engels, Det kommunistiske manifest (1848)"
+                "text": "Historien om alle samfunn som har eksistert til nå, er historien om klassekamper.",
+                "author": "Karl Marx og Friedrich Engels, Det kommunistiske manifest (1848)"
             }
         },
         {
@@ -62,7 +62,7 @@
         },
         {
             "type": "text",
-            "content": "Marx sin viktigste oppdagelse handler om hva som skjer på selve fabrikkgulvet. Tenk deg en sydame som lager skjorter for 1000 kroner om dagen, men får 200 kroner i lønn. Hvor blir det av de resterende 800 kronene?\n\nMarx kalte denne forskjellen merverdi. Det er denne ubetalte arbeidsmengden eieren stikker i lomma som profitt. Du må ikke jukse med vekta eller stjele varer for å bli rik som kapitalist — du bare betaler arbeidstakeren for noen av timene, og beholder verdien fra resten. Hele systemet, mente Marx, hviler på denne stille utbyttingen som blir gjemt bak lønnsslippen. Test selv hvordan dette ser ut i praksis:"
+            "content": "Marx sin viktigste oppdagelse handler om hva som skjer på selve fabrikkgulvet. Tenk deg en sydame som lager skjorter for 1000 kroner om dagen, men får 200 kroner i lønn. Hvor blir det av de resterende 800 kronene?\n\nMarx kalte denne forskjellen merverdi: differansen mellom den verdiøkningen arbeideren tilfører råvaren, og lønnen hun får utbetalt. Differansen tilfaller kapitaleieren som profitt (Fjeld & Store norske leksikon, 2024). Du må ikke jukse med vekta eller stjele varer for å bli rik som kapitalist - du betaler arbeidstakeren for noen av timene, og beholder verdien fra resten. Hele systemet, mente Marx, hviler på denne stille utbyttingen som blir gjemt bak lønnsslippen (Stølen, 2025b). Test selv hvordan dette ser ut i praksis:"
         },
         {
             "type": "component",
@@ -77,13 +77,13 @@
         },
         {
             "type": "text",
-            "content": "Marx mente at i den gamle håndverkstida laget en sko­maker en hel sko fra start til slutt. Han kjente leret, formet det, så det ferdige resultatet og kjente stolthet. I fabrikken er det helt annerledes: én arbeider syr på sålen hele dagen, en annen knytter snørebåndet, en tredje stempler logoen. Ingen ser hva de egentlig hjelper med å lage.\n\nDette kalte Marx fremmedgjøring. Mennesket blir fjernet fra sitt eget arbeid, fra sluttproduktet og til slutt fra seg selv. Du blir en del av en maskin du ikke kontrollerer. Mange mener begrepet er like aktuelt i dag — tenk på lagerarbeidere som styres av en app som forteller dem hvor de skal gå, eller [bartendere på et kjedested](/samfunnskunnskap/arbeidsliv/fremtidens-arbeidsliv) som ikke har lov til å improvisere en eneste drink."
+            "content": "Marx mente at i den gamle håndverkstida laget en skomaker en hel sko fra start til slutt. Han kjente leret, formet det, så det ferdige resultatet og kjente stolthet. I fabrikken er det helt annerledes: én arbeider syr på sålen hele dagen, en annen knytter snørebåndet, en tredje stempler logoen. Ingen ser hva de egentlig hjelper med å lage.\n\nDette kalte Marx fremmedgjøring. Arbeidet blir til en ting som får sitt eget liv utenfor arbeideren, og der ute blir det en fiendtlig og fremmed makt som virker tilbake på henne (Fjeld, 2026). Arbeideren blir redusert til en vare i en produksjonskjede, der det ferdige produktet tilhører kapitaleieren og går til et marked hun aldri ser (Fjeld, 2026). Du blir en del av en maskin du ikke kontrollerer. Mange mener begrepet er like aktuelt i dag - tenk på lagerarbeidere som styres av en app som forteller dem hvor de skal gå, eller [bartendere på et kjedested](/samfunnskunnskap/arbeidsliv/fremtidens-arbeidsliv) som ikke har lov til å improvisere en eneste drink."
         },
         {
             "type": "image",
             "src": "/images/filosofi/marx-02.webp",
             "alt": "Industriarbeidere ved et samlebånd i en victoriansk fabrikk med dampmaskiner og sentralhjul",
-            "caption": "Samlebåndet delte arbeidet i bittesmå biter — og med det, mente Marx, ble mennesket fremmed for sitt eget arbeid."
+            "caption": "Samlebåndet delte arbeidet i bittesmå biter - og med det, mente Marx, ble mennesket fremmed for sitt eget arbeid."
         },
         {
             "type": "header",
@@ -91,14 +91,14 @@
         },
         {
             "type": "text",
-            "content": "I 1848, samme år som det brøt ut revolusjoner over hele Europa, ga Marx og kameraten Friedrich Engels ut Det kommunistiske manifest. Det er på bare 30 sider, men det er et av de mest leste politiske skriftene i verdenshistorien.\n\nManifestet sier at arbeiderne i alle land må slå seg sammen, ta over fabrikkene, og bygge et samfunn der produksjonsmidlene — fabrikker, jord, maskiner — eies i fellesskap. Da, mente Marx, ville utbyttingen forsvinne. Han trodde dette ville skje av seg selv: når kapitalismen kollapset under sin egen vekt, ville arbeiderne reise seg. Det er denne tanken som senere skulle inspirere både [den russiske revolusjonen i 1917](/historie/forste-verdenskrig/russiske-revolusjon) og [den lange kalde krigen](/historie/den-kalde-krigen/oversikt) som fulgte."
+            "content": "Den 21. februar 1848, samme år som det brøt ut revolusjoner over hele Europa, kom Det kommunistiske manifest ut anonymt på tysk i London (Fjeld, 2025). Bak det sto Marx og kameraten Friedrich Engels, og skriftet bygde delvis på forarbeid Engels hadde gjort (Stølen, 2025a). Det er kort, men det er ett av de mest leste politiske skriftene i verdenshistorien.\n\nManifestet krever at privat eiendom avskaffes og at blant annet transport og kommunikasjon overtas av fellesskapet (Fjeld, 2025). Arbeiderne i alle land må slå seg sammen og bygge et samfunn der produksjonsmidlene - fabrikker, jord, maskiner - eies i fellesskap. Da, mente Marx, ville utbyttingen forsvinne. Skriftet fikk verdensomspennende betydning gjennom politikken på 1900-tallet, særlig etter oktoberrevolusjonen i 1917 (Fjeld, 2025). Det er denne tanken som senere skulle inspirere både [den russiske revolusjonen](/historie/forste-verdenskrig/russiske-revolusjon) og [den lange kalde krigen](/historie/den-kalde-krigen/oversikt) som fulgte."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Engels — vennen som finansierte revolusjonen",
-                "content": "Marx var lutfattig store deler av livet og ble forsørget av sin beste venn Friedrich Engels. Det artige er at Engels selv var en rik fabrikkeier i Manchester. Han brukte profitten fra fabrikken sin til å finansiere bøkene som forklarte hvordan fabrikker utbyttet arbeidere. Engels redigerte og fullførte mye av Marx sitt hovedverk Kapitalen etter at Marx døde."
+                "title": "Engels - vennen som finansierte revolusjonen",
+                "content": "Marx levde i fattigdom store deler av tida i London og var avhengig av hjelp fra familie og venner. Den viktigste av dem var Friedrich Engels, som var både moralsk og økonomisk støtte for Marx helt fram til Marx døde i 1883 (Stølen, 2025a). Det artige er at Engels selv var forretningsmann: han arbeidet i farens tekstilfirma i Manchester fra 1842 til 1844 og etablerte seg senere på nytt som forretningsmann i samme by (Stølen, 2025a). Etter Marx' død var det Engels som ga ut bind to og tre av hovedverket Kapitalen (Stølen, 2025a)."
             }
         },
         {
@@ -107,7 +107,7 @@
         },
         {
             "type": "text",
-            "content": "Marx er en av filosofene som har vært mest både elsket og hatet. På den ene siden formet ideene hans hele arbeiderbevegelsen, fagforeninger, åtte-timers-dagen og det meste av velferdsstaten vi i Norge tar for gitt. På den andre siden ble ideene hans brukt som rettferdiggjøring for diktaturer i Sovjetunionen, Kina og Nord-Korea, der titalls millioner mennesker døde under partistyret.\n\nFilosofer som [Mises](/krle/filosofi/mises) og [Hannah Arendt](/krle/filosofi/arendt) kritiserte Marx hardt. De mente at når staten tar over alt, forsvinner ikke makten — den samles bare hos et nytt herskersjikt, partiet. Andre kritiserte at Marx undervurderte hvordan kapitalismen klarer å reformere seg selv: åtte-timers-dagen, sykelønn og demokrati var nettopp tiltak som dempet konflikten han trodde var uunngåelig. I Norge ble dette tydelig allerede med [kriseforliket i 1935](/historie/mellomkrigstiden/norge), som banet vei for trepartssamarbeidet mellom stat, arbeidsgivere og fagforeninger.\n\nLikevel: hvis du noen gang har spurt deg selv hvorfor noen blir rike på andres arbeid, hvorfor du føler deg som et tannhjul på jobben, eller hvorfor klasse fortsatt betyr noe, har du tenkt en marxistisk tanke. Det er kanskje hans største ettermæle: vi diskuterer fortsatt verden i hans språk."
+            "content": "Marx er en av filosofene som har vært mest både elsket og hatet. På den ene siden formet ideene hans arbeiderbevegelser og kommunistiske partier over hele verden. På den andre siden er de fortsatt omstridte, nettopp fordi totalitære regimer brukte marxismen til å rettferdiggjøre undertrykkelse (Stølen, 2025b). Marx mente selv at veien til kommunismen gikk gjennom et 'proletariatets diktatur' (Stølen, 2025b).\n\n[Hannah Arendt](/krle/filosofi/arendt) analyserte nazismen og stalinismen og hevdet at de to, tross store forskjeller i ideologi, i bunn og grunn var samme styresett: totalitarisme (Aavitsland, 2025). Hun var også uenig med Marx om fremmedgjøring: mennesket blir ikke fremmed for seg selv, mente hun, men for verden rundt seg (Aavitsland, 2025). [Ludwig von Mises](/krle/filosofi/mises) gikk fra en annen kant og var en tydelig kritiker av planøkonomien og en sterk forsvarer av økonomisk liberalisme (Store norske leksikon, 2025).\n\nAndre kritiserte at Marx undervurderte hvordan kapitalismen klarer å reformere seg selv. I Norge kom [kriseforliket](/historie/mellomkrigstiden/norge) i mars 1935: Bondepartiet støttet Arbeiderpartiets budsjett for å få flere i arbeid, og fikk økte jordbrukssubsidier igjen (Dørum & Tvedt, 2025). Samme år inngikk LO og arbeidsgiverne i NAF en hovedavtale som ble regnet som arbeidslivets grunnlov, og som senere ble en del av trepartssamarbeidet (Dørum & Tvedt, 2025). Konflikten Marx trodde var uunngåelig, ble altså dempet gjennom forhandling.\n\nLikevel: hvis du noen gang har spurt deg selv hvorfor noen blir rike på andres arbeid, hvorfor du føler deg som et tannhjul på jobben, eller hvorfor klasse fortsatt betyr noe, har du tenkt en marxistisk tanke. Det er kanskje hans største ettermæle: vi diskuterer fortsatt verden i hans språk."
         },
         {
             "type": "component",
@@ -156,7 +156,7 @@
                             "Statens opphav"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Det kommunistiske manifest er på bare 30 sider, men er ett av de mest leste politiske skriftene noensinne."
+                        "explanation": "Det kommunistiske manifest kom ut i London i februar 1848 og er ett av de mest leste politiske skriftene noensinne."
                     },
                     {
                         "question": "Hvilken klasse mente Marx ville styrte kapitalismen?",
@@ -167,11 +167,30 @@
                             "Studentene og intellektuelle"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Marx mente at industriarbeiderne — proletariatet — ville organisere seg og ta over produksjonsmidlene når kapitalismens kriser ble for store."
+                        "explanation": "Marx mente at industriarbeiderne - proletariatet - ville organisere seg og ta over produksjonsmidlene når kapitalismens kriser ble for store."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aavitsland, V. L. (2025). *Hannah Arendt*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Hannah_Arendt](https://snl.no/Hannah_Arendt)",
+                    "Damslora, S. (2026). *historisk materialisme*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/historisk_materialisme](https://snl.no/historisk_materialisme)",
+                    "Dørum, K. & Tvedt, K. A. (2025). *kriseforliket*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/kriseforliket](https://snl.no/kriseforliket)",
+                    "Fjeld, A. (2025). *Det kommunistiske manifest*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Det_kommunistiske_manifest](https://snl.no/Det_kommunistiske_manifest)",
+                    "Fjeld, A. (2026). *fremmedgjøring*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/fremmedgjøring](https://snl.no/fremmedgj%C3%B8ring)",
+                    "Fjeld, A. & Store norske leksikon. (2024). *merverdi*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/merverdi](https://snl.no/merverdi)",
+                    "Marx, K. & Engels, F. (1848). *Manifesto of the Communist Party*. Marxists Internet Archive. Hentet 26.08.2026 fra [marxists.org](https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch01.htm)",
+                    "Store norske leksikon. (2025). *Ludwig von Mises*. Hentet 26.08.2026 fra [snl.no/Ludwig_von_Mises](https://snl.no/Ludwig_von_Mises)",
+                    "Stølen, T. (2025a). *Friedrich Engels*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Friedrich_Engels](https://snl.no/Friedrich_Engels)",
+                    "Stølen, T. (2025b). *Karl Marx*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Karl_Marx](https://snl.no/Karl_Marx)"
                 ]
             }
         }
     ],
-    "createdDate": "2026-05-17T00:00:00Z"
+    "createdDate": "2026-05-17T00:00:00Z",
+    "lastUpdated": "2026-08-26T00:00:00Z"
 }
