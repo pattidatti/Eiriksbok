@@ -1,5 +1,5 @@
 {
-  "buildId": 113698985957544,
+  "buildId": 123758871421527,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2365,6 +2365,9 @@
     ],
     "dopapirets-historie": [
       "content/historie/industriell-revolusjon/dopapirets-historie.json"
+    ],
+    "fossekraften": [
+      "content/historie/industriell-revolusjon/fossekraften.json"
     ],
     "industriell-revolusjon": [
       "content/historie/industriell-revolusjon/industriell-revolusjon.json"
@@ -5518,6 +5521,7 @@
     "historie/industriell-revolusjon/barnearbeid": "content/historie/industriell-revolusjon/barnearbeid.json",
     "historie/industriell-revolusjon/dampmaskinen": "content/historie/industriell-revolusjon/dampmaskinen.json",
     "historie/industriell-revolusjon/dopapirets-historie": "content/historie/industriell-revolusjon/dopapirets-historie.json",
+    "historie/industriell-revolusjon/fossekraften": "content/historie/industriell-revolusjon/fossekraften.json",
     "historie/industriell-revolusjon/industriell-revolusjon": "content/historie/industriell-revolusjon/industriell-revolusjon.json",
     "historie/industriell-revolusjon/jernbanen": "content/historie/industriell-revolusjon/jernbanen.json",
     "historie/industriell-revolusjon/storbritannia": "content/historie/industriell-revolusjon/storbritannia.json",

@@ -43,6 +43,7 @@ const HvorErJobbene3D = lazy(() => import('./HvorErJobbene3D'));
 const UtvandringenFraAfrika3D = lazy(() => import('./UtvandringenFraAfrika3D'));
 const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
 const DampmaskinHjerte3D = lazy(() => import('./DampmaskinHjerte3D'));
+const Fossekraftverket3D = lazy(() => import('./Fossekraftverket3D'));
 const Fabrikktomta3D = lazy(() => import('./Fabrikktomta3D'));
 const Falanksen3D = lazy(() => import('./Falanksen3D'));
 const LangeMurene3D = lazy(() => import('./LangeMurene3D'));
@@ -1100,6 +1101,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./DampmaskinHjerte3D'),
         Component: DampmaskinHjerte3D as never,
+    },
+    'fossekraftverket-3d': {
+        id: 'fossekraftverket-3d',
+        title: 'Bygg kraftverket i fjellet',
+        description:
+            'Bygg et norsk vannkraftverk i 3D: dra demningen på plass oppe ved fjellvannet, legg rørgata nedover fjellsiden og sett kraftstasjonen i dalen. Styr så luka i demningen i sanntid. Åpner du for mye, tømmes magasinet og alt stopper. Lukker du for mye, blir ovnene på kunstgjødselfabrikken kalde. Lyspæren: magasinet i fjellet er batteriet, og fossekraft handler om å dosere vannet jevnt gjennom hele året.',
+        estimatedSeconds: 170,
+        loader: () => import('./Fossekraftverket3D'),
+        Component: Fossekraftverket3D as never,
     },
     'fabrikktomta-3d': {
         id: 'fabrikktomta-3d',
