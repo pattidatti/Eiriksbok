@@ -29,18 +29,18 @@
         },
         {
             "type": "text",
-            "content": "I Norge kaller vi de offisielle fridagene for røde dager, fordi de står med rødt i kalenderen. Da har de fleste fri fra jobb og skole, og butikkene holder stengt. Hvis du teller dem, ser du noe tydelig: de aller fleste røde dagene er kristne høytider. Det er ikke tilfeldig. I tusen år var Norge et kristent land, og kirken bestemte hvilke dager som var hellige. Disse dagene ble en del av loven, og de henger igjen den dag i dag."
+            "content": "I Norge kaller vi de offisielle fridagene for røde dager, fordi de står med rødt i kalenderen. Da har de fleste fri fra jobb og skole, og butikkene holder stengt. Hvis du teller dem, ser du noe tydelig: de aller fleste røde dagene er kristne høytider. Det er ikke tilfeldig. I tusen år var Norge et kristent land, og kirken bestemte hvilke dager som var hellige. Disse dagene står fortsatt i loven: helligdagsloven fra 1995 regner opp skjærtorsdag, langfredag, påskedagene, Kristi himmelfartsdag, pinsedagene og juledagene som helligdager (Helligdagsloven, 1995)."
         },
         {
             "type": "text",
-            "content": "Selv den vanlige fridagen din har religiøse røtter. Hvorfor har vi nemlig fri på søndag? Fordi søndagen lenge var kristendommens hviledag, dagen folk gikk i kirken. Jødene hviler på lørdag og muslimene samles til bønn på fredag. Tanken om at én dag i uka skal være annerledes enn de andre, kommer altså rett fra religionen. I dag bruker de fleste søndagen til å sove lenge eller henge med venner, men dagen er fri fordi noen en gang mente den var hellig."
+            "content": "Selv den vanlige fridagen din har religiøse røtter. Hvorfor har vi nemlig fri på søndag? I kristendommen er søndagen helligdag fordi Jesus ifølge Det nye testamentet sto opp fra de døde en søndag. De første kristne kalte den «Herrens dag» (Thomassen, 2025). Jødene har sin hviledag på sabbaten, som varer fra fredag ettermiddag til lørdag kveld (Cohen & Groth, 2025), og muslimer samles til fredagsbønn i moskeen midt på dagen på fredager (Selhi & Vogt, 2026). Tanken om at én dag i uka skal være annerledes enn de andre, kommer altså rett fra religionen. I dag bruker de fleste søndagen til å sove lenge eller henge med venner, men dagen er fri fordi noen en gang mente den var hellig."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Røde dager i Norge",
-                "content": "Av de offisielle fridagene utenom søndagene er nesten alle kristne: 1. juledag, 2. juledag, skjærtorsdag, langfredag, 1. og 2. påskedag, Kristi himmelfartsdag og pinse. Bare 1. mai (arbeidernes dag) og 17. mai (grunnlovsdagen) er verdslige, altså ikke-religiøse."
+                "content": "Helligdagsloven fra 1995 regner disse dagene som helligdager, i tillegg til vanlige søndager: 1. nyttårsdag, skjærtorsdag, langfredag, 1. og 2. påskedag, Kristi himmelfartsdag, 1. og 2. pinsedag og 1. og 2. juledag. Alle hører hjemme i kirkeåret. 1. mai (arbeidernes dag) og 17. mai (grunnlovsdagen) står ikke på den lista. De er høytidsdager etter en egen lov fra 1947, og de er verdslige - altså ikke-religiøse."
             }
         },
         {
@@ -49,11 +49,11 @@
         },
         {
             "type": "text",
-            "content": "De tre store kristne høytidene markerer hver sin del av historien om Jesus. I julen feirer kristne at Jesus ble født. I påsken minnes de at han døde og sto opp igjen. Pinsen kommer femti dager etter påske og handler om at den hellige ånd kom til disiplene. Du kan lese mer om troen bak dette i artikkelen om [kristendommen](/krle/religion/kristendom/intro)."
+            "content": "De tre store kristne høytidene markerer hver sin del av historien om Jesus. I julen feirer kristne at Jesus ble født (Stovner et al., 2025). I påsken minnes de langfredag at han døde, og første påskedag at han sto opp igjen (Stordalen et al., 2025). Pinsen kommer femti dager etter påske og handler om at den hellige ånd kom til apostlene og lot dem snakke andre språk, slik at budskapet kunne spres (Rasmussen et al., 2024). Du kan lese mer om troen bak dette i artikkelen om [kristendommen](/krle/religion/kristendom/intro)."
         },
         {
             "type": "text",
-            "content": "Mange av skikkene rundt høytidene er eldre enn kristendommen selv. Da kristendommen kom til Norge, fantes det allerede gamle midtvinterfester der folk tente lys og spiste godt for å holde motet oppe i den mørkeste tiden. Kirken la julen sin oppå disse festene, og slik smeltet gammel og ny tradisjon sammen. Derfor har julen vår både krybbe og julenisse, både salmer og pepperkaker. Høytider er sjelden helt rene. De er lag på lag av historie."
+            "content": "Mange av skikkene rundt høytidene er eldre enn kristendommen selv. Før kristendommen kom til Norden, fantes det allerede en hedensk midtvinterfest som het jólablót på norrønt. Folk ofret dyr og drakk øl til ære for gudene for å sikre gode år. På 900-tallet bestemte kong Håkon den gode at feiringen skulle legges til 25. desember, slik den var i resten av Europa, og en del av de gamle skikkene levde videre inne i den kristne julen (Stovner et al., 2025). Derfor har julen vår både krybbe og julenisse, både salmer og pepperkaker. Høytider er sjelden helt rene. De er lag på lag av historie."
         },
         {
             "type": "text",
@@ -82,11 +82,11 @@
         },
         {
             "type": "text",
-            "content": "Norge er ikke det samme landet det var for hundre år siden. I dag bor det mennesker fra hele verden her, med mange ulike religioner. Derfor feires det nå høytider i Norge som var nesten ukjente før. Muslimske familier feirer id når fastemåneden ramadan er over. Hinduer markerer divali, [hinduismens](/krle/religion/hinduisme/intro) store lysfest. Jøder tenner lysene under hanukka, og du kan lese mer om deres tradisjoner i artikkelen om [jødedommen](/krle/religion/jodedom/intro)."
+            "content": "Norge er ikke det samme landet det var for hundre år siden. I dag bor det mennesker fra hele verden her, med mange ulike religioner. Derfor feires det nå høytider i Norge som var nesten ukjente før. Muslimske familier feirer id al-fitr, fastebrytingsfesten, når fastemåneden ramadan er over (Vogt & Eggen, 2025). Hinduer markerer divali, [hinduismens](/krle/religion/hinduisme/intro) store lysfest, der utallige små lys brenner tre netter på rad og lyset seirer over mørket. Også sikher og jainer feirer divali, men knytter den til hver sin fortelling (Jacobsen, 2025). Jøder tenner lys hjemme hver dag i åtte dager under hanukka, til minne om at tempelet i Jerusalem ble innviet på nytt (Groth, 2026). Du kan lese mer om jødiske tradisjoner i artikkelen om [jødedommen](/krle/religion/jodedom/intro)."
         },
         {
             "type": "text",
-            "content": "Noen skoler gir nå elever fri på sine viktigste religiøse høytider, selv om dagene ikke er røde i kalenderen. Det viser hvordan en kultur forandrer seg: når nye mennesker kommer, kommer det nye fester også. Kalenderen vår er ikke hugget i stein. Den vokser sakte, slik samfunnet rundt den gjør."
+            "content": "Disse dagene er ikke røde i kalenderen, men de teller likevel. Opplæringslova gir en elev som hører til et annet trossamfunn enn Den norske kirke rett til fri fra skolen de dagene trossamfunnet har helligdag, selv om dagene ikke er røde i kalenderen (Opplæringslova, 2023). Det viser hvordan en kultur forandrer seg: når nye mennesker kommer, kommer det nye fester også. Kalenderen vår er ikke hugget i stein. Den vokser sakte, slik samfunnet rundt den gjør."
         },
         {
             "type": "header",
@@ -94,11 +94,11 @@
         },
         {
             "type": "text",
-            "content": "Selve ordet høytid betyr egentlig høy tid, altså en tid som er løftet opp over det vanlige. En høytid bryter den grå hverdagen. Du gjør noe annet enn ellers: pynter huset, lager spesiell mat, tar på finklær og treffer slekta. Dette behovet for å gjøre noen dager spesielle ser ut til å være felles for mennesker over hele jorda, uansett hva de tror på."
+            "content": "En høytid er en tid som er løftet opp over det vanlige. Den bryter den grå hverdagen. Du gjør noe annet enn ellers: pynter huset, lager spesiell mat, tar på finklær og treffer slekta. Dette behovet for å gjøre noen dager spesielle ser ut til å være felles for mennesker over hele jorda, uansett hva de tror på."
         },
         {
             "type": "text",
-            "content": "Hvis du ser nøye på de store høytidene, finner du noe slående: de likner hverandre mer enn du skulle tro. Jul, hanukka, divali og id handler alle om lys, god mat og det å samles med dem du er glad i. Lyset i mørket går igjen i religion etter religion. Det er kanskje derfor vi ofte kjenner oss igjen i hverandres fester, selv når vi tror på helt ulike ting."
+            "content": "Hvis du ser nøye på de store høytidene, finner du noe slående: de likner hverandre mer enn du skulle tro. Jul, hanukka og divali fyller alle den mørke tiden med lys (Groth, 2026; Jacobsen, 2025). Og jul, hanukka, divali og id har dette til felles: god mat og det å samles med dem du er glad i. Det er kanskje derfor vi ofte kjenner oss igjen i hverandres fester, selv når vi tror på helt ulike ting."
         },
         {
             "type": "text",
@@ -163,17 +163,38 @@
                     {
                         "question": "Hva har høytider som jul, hanukka, divali og id til felles?",
                         "options": [
-                            "Lys, god mat og det å samles med dem du er glad i",
+                            "Fest, god mat og det å samles med dem du er glad i",
                             "De feires alle på nøyaktig samme dato",
                             "De handler alle om den samme guden",
                             "De er alle offisielle røde dager i Norge"
                         ],
-                        "explanation": "Selv om de tilhører ulike religioner, handler alle disse høytidene om lys i mørket, god mat og samvær. Derfor kjenner vi oss ofte igjen i hverandres fester.",
+                        "explanation": "Selv om de tilhører ulike religioner, handler alle disse høytidene om god mat og samvær, og flere av dem om lys i mørket. Derfor kjenner vi oss ofte igjen i hverandres fester.",
                         "correctAnswer": 0
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Cohen, K. J. & Groth, B. (2025). *Sabbat*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/sabbat](https://snl.no/sabbat)",
+                    "Groth, B. (2026). *Hanukka*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/hanukka](https://snl.no/hanukka)",
+                    "Helligdagsloven. (1995). *Lov om helligdager og helligdagsfred* (LOV-1995-02-24-12). Lovdata. Hentet 26.08.2026 fra [lovdata.no/dokument/NL/lov/1995-02-24-12](https://lovdata.no/dokument/NL/lov/1995-02-24-12)",
+                    "Jacobsen, K. A. (2025). *Divali*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/divali](https://snl.no/divali)",
+                    "Lov om 1. og 17. mai som høgtidsdagar. (1947). (LOV-1947-04-26-1). Lovdata. Hentet 26.08.2026 fra [lovdata.no/dokument/NL/lov/1947-04-26-1](https://lovdata.no/dokument/NL/lov/1947-04-26-1)",
+                    "Opplæringslova. (2023). *Lov om grunnskoleopplæringa og den vidaregåande opplæringa* (LOV-2023-06-09-30). Lovdata. Hentet 26.08.2026 fra [lovdata.no/dokument/NL/lov/2023-06-09-30](https://lovdata.no/dokument/NL/lov/2023-06-09-30)",
+                    "Rasmussen, T., Elstad, H., Langhelle, S. I. & Thomassen, M. (2024). *Pinse*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/pinse](https://snl.no/pinse)",
+                    "Selhi, J. & Vogt, K. (2026). *Fredagsbønn*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/fredagsbønn](https://snl.no/fredagsb%C3%B8nn)",
+                    "Stordalen, T., Thorbjørnsrud, B. S., Stensvold, A., Kværne, P., Winje, G. & Barstad, H. M. (2025). *Påske*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/påske](https://snl.no/p%C3%A5ske)",
+                    "Stovner, I. L., Lutro, S. & Groth, B. (2025). *Jul*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/jul](https://snl.no/jul)",
+                    "Thomassen, M. (2025). *Søndag*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/søndag](https://snl.no/s%C3%B8ndag)",
+                    "Vogt, K. & Eggen, N. S. (2025). *Id al-fitr*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/id_al-fitr](https://snl.no/id_al-fitr)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-26T00:00:00Z"
 }
