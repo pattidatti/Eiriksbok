@@ -22,7 +22,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg at du går tur langs en togskinne. Plutselig ser du et løpsk tog som dundrer avgårde i voldsom fart. Lenger fremme på skinnen ser du fem arbeidere som jobber uvitende om faren. De vil ikke rekke å flytte seg, og de vil garantert dø hvis toget treffer dem. Du står tilfeldigvis ved siden av en sporskifter. Hvis du drar i spaken, vil toget skifte spor. Men på det andre sporet står det én person som jobber. Hvis du gjør ingenting, dør fem personer. Hvis du handler, dør én person. Hva gjør du?\n\nDette er det berømte sporvognsproblemet, et av de mest kjente tankeeksperimentene i etikken. Det tvinger oss til å se nærmere på våre egne verdier: Er det resultatet som teller (fem liv mot ett), eller er det selve handlingen (å bevisst velge å drepe noen) som betyr mest? Dette er kjernen i etikk: Forsøket på å finne rasjonelle svar på hva som er rett og galt.\n\nFor å gjøre det enda vanskeligere, kan vi se på en variant: Tenk deg at du står på en bro over togskinnen. Det løpske toget kommer, og fem personer vil dø. Ved siden av deg på broen står en svært tung mann. Hvis du dytter ham ned på skinnen, vil hans tyngde stoppe toget. Han vil dø, men de fem vil overleve. Logikken er den samme (ett liv for fem), men de fleste av oss føler en dyp forskjell. Vi føler det er verre å fysisk dytte noen i døden enn å bare dra i en spak. Hvorfor føler vi det slik? Er følelsene våre en pålitelig guide til moral, eller bør vi bare lytte til den kalde logikken?"
+            "content": "Tenk deg at du går tur langs en togskinne. Plutselig ser du et løpsk tog som dundrer avgårde i voldsom fart. Lenger fremme på skinnen ser du fem arbeidere som jobber uvitende om faren. De vil ikke rekke å flytte seg, og de vil garantert dø hvis toget treffer dem. Du står tilfeldigvis ved siden av en sporskifter. Hvis du drar i spaken, vil toget skifte spor. Men på det andre sporet står det én person som jobber. Hvis du gjør ingenting, dør fem personer. Hvis du handler, dør én person. Hva gjør du?\n\nDette er det berømte sporvognsproblemet, et av de mest kjente tankeeksperimentene i etikken. Den britiske filosofen Philippa Foot formulerte det i 1967 (Duignan, 2026). Det tvinger oss til å se nærmere på våre egne verdier: Er det resultatet som teller (fem liv mot ett), eller er det selve handlingen (å bevisst velge å drepe noen) som betyr mest? Dette er kjernen i etikk: Forsøket på å finne rasjonelle svar på hva som er rett og galt.\n\nFor å gjøre det enda vanskeligere, kan vi se på en variant som filosofen Judith Jarvis Thomson lagde i 1976 (Duignan, 2026): Tenk deg at du står på en bro over togskinnen. Det løpske toget kommer, og fem personer vil dø. Ved siden av deg på broen står en svært tung mann. Hvis du dytter ham ned på skinnen, vil hans tyngde stoppe toget. Han vil dø, men de fem vil overleve. Logikken er den samme (ett liv for fem), men de fleste av oss føler en dyp forskjell. De fleste synes det er greit å dra i spaken, men galt å dytte mannen. Thomson mente at forskjellen ligger i at du da gjør noe direkte mot et bestemt menneske (Duignan, 2026). Er følelsene våre en pålitelig guide til moral, eller bør vi bare lytte til den kalde logikken?"
         },
         {
             "type": "component",
@@ -34,7 +34,7 @@
         },
         {
             "type": "text",
-            "content": "La oss se på et annet eksempel som ofte brukes for å forklare moral. Tenk deg to brødre som begge ønsker å hjelpe sin gamle mor. Den ene broren gjør det fordi han oppriktig elsker henne og ønsker henne alt godt. Den andre broren gjør det bare fordi han håper han vil få en større del av arven når hun dør. På utsiden ser handlingene helt like ut – begge vasker huset, handler mat og sitter og prater med henne. Men har de samme moralske verdi?\n\nDe fleste vil si nei. Vi mener at motivasjonen bak en handling betyr noe. Men hvorfor? Hvis resultatet er det samme (moren får hjelp), hvorfor bryr vi oss om hva som foregår inne i hodet på brødrene? Her ser vi forskjellen på en etikk som ser på konsekvenser, og en etikk som ser på sinnelag og plikt. Etikken hjelper oss å sette ord på disse forskjellene."
+            "content": "La oss se på et annet eksempel som ofte brukes for å forklare moral. Tenk deg to brødre som begge ønsker å hjelpe sin gamle mor. Den ene broren gjør det fordi han oppriktig elsker henne og ønsker henne alt godt. Den andre broren gjør det bare fordi han håper han vil få en større del av arven når hun dør. På utsiden ser handlingene helt like ut - begge vasker huset, handler mat og sitter og prater med henne. Men har de samme moralske verdi?\n\nDe fleste vil si nei. Vi mener at motivasjonen bak en handling betyr noe. Men hvorfor? Hvis resultatet er det samme (moren får hjelp), hvorfor bryr vi oss om hva som foregår inne i hodet på brødrene? Her ser vi forskjellen på en etikk som ser på konsekvenser, og en etikk som ser på sinnelag og plikt. Etikken hjelper oss å sette ord på disse forskjellene."
         },
         {
             "type": "header",
@@ -42,7 +42,7 @@
         },
         {
             "type": "text",
-            "content": "Ofte bruker vi ordene moral og etikk om hverandre, men i filosofien skiller vi mellom dem. Moral er de faktiske reglene og oppfatningene vi lever etter. Det er 'praksisen' – hva vi gjør i hverdagen. Etikk er selve læren om moralen. Det er 'teorien' – vi bruker fornuften til å undersøke hvorfor vi har de reglene vi har, og om de egentlig er gode.\n\nDu kan sammenligne det med å kjøre bil: Moral er trafikkreglene du følger når du sitter bak rattet. Etikk er samtalen ingeniørene og politikerne hadde da de bestemte hvorfor det skal være akkurat de reglene for å sikre flyt og trygghet. Etikken spør de store 'hvorfor'-spørsmålene: Hvorfor skal man ikke lyve? Er det alltid galt å stjele, selv om barna dine sulter? Hvem har rett til å bestemme over ditt liv?"
+            "content": "Ofte bruker vi ordene moral og etikk om hverandre. I filosofien pleier man likevel å skille mellom dem: etikk er læren om moral, altså moralfilosofi (Sagdahl, 2025a). Moral er de faktiske reglene og oppfatningene vi lever etter. Det er 'praksisen', altså hva vi gjør i hverdagen. Etikk er 'teorien': vi bruker fornuften til å undersøke hvorfor vi har de reglene vi har, og om de egentlig er gode. Men vær klar over at ingen av disse bruksmåtene er helt faste, verken blant fagfolk eller i dagligtalen (Sagdahl, 2025b).\n\nDu kan sammenligne det med å kjøre bil: Moral er trafikkreglene du følger når du sitter bak rattet. Etikk er samtalen ingeniørene og politikerne hadde da de bestemte hvorfor det skal være akkurat de reglene for å sikre flyt og trygghet. Etikken spør de store 'hvorfor'-spørsmålene: Hvorfor skal man ikke lyve? Er det alltid galt å stjele, selv om barna dine sulter? Hvem har rett til å bestemme over ditt liv?"
         },
         {
             "type": "header",
@@ -50,7 +50,7 @@
         },
         {
             "type": "text",
-            "content": "I Platons verk Staten fortelles historien om gjeteren Gyges. Etter et jordskjelv fant han en hule i fjellet der det lå en død kjempe. På kjempen satt en magisk gullring. Gyges tok med seg ringen, og oppdaget snart dens kraft: Når han vred på ringen, ble han helt usynlig for alle rundt seg. Han var ikke lenger bundet av samfunnets lover eller andres blikk.\n\nMed denne ringen kunne Gyges gjøre akkurat som han ville uten frykt for å bli tatt. Han snek seg inn i palasset, forførte dronningen, drepte kongen og overtok makten selv. Platon brukte dette eksempelet for å stille et provoserende spørsmål: Er vi rettferdige bare fordi vi er redde for å bli straffet? Hvis vi hadde en slik ring, ville vi da gjort det samme som Gyges?\n\nDenne historien utfordrer oss til å tenke på om moralen er noe som sitter inne i oss, eller om det bare er en maske vi tar på oss for å bli akseptert av andre. En etisk person vil si at rettferdighet har en verdi i seg selv, selv når ingen ser på. Men Gyges-historien viser hvor vanskelig det kan være å velge det rette når fristelsen er stor og konsekvensene er fraværende. Det reiser også spørsmålet om vi egentlig har en 'fri vilje' når vi følger regler, eller om vi bare er programmert til å lyde av frykt."
+            "content": "I Platons verk Staten forteller Glaukon historien om gjeteren Gyges for å utfordre Sokrates (Platon, u.å.-b). Gyges gjette sauer for kongen av Lydia. Etter et jordskjelv åpnet det seg en kløft i bakken. Nede i kløften fant han en hul bronsehest, og inni hesten lå et lik som var større enn et vanlig menneske. Det eneste liket hadde på seg, var en gullring. Gyges tok med seg ringen, og oppdaget snart dens kraft: Når han vred på ringen, ble han helt usynlig for alle rundt seg. Han var ikke lenger bundet av samfunnets lover eller andres blikk.\n\nMed denne ringen kunne Gyges gjøre akkurat som han ville uten frykt for å bli tatt. Han forførte dronningen, drepte kongen med hennes hjelp og tok over riket selv (Platon, u.å.-b). Glaukons poeng var et provoserende spørsmål: Er vi rettferdige bare fordi vi er redde for å bli straffet? Hvis vi hadde en slik ring, ville vi da gjort det samme som Gyges?\n\nDenne historien utfordrer oss til å tenke på om moralen er noe som sitter inne i oss, eller om det bare er en maske vi tar på oss for å bli akseptert av andre. En etisk person vil si at rettferdighet har en verdi i seg selv, selv når ingen ser på. Men Gyges-historien viser hvor vanskelig det kan være å velge det rette når fristelsen er stor og konsekvensene er fraværende. Det reiser også spørsmålet om vi egentlig har en 'fri vilje' når vi følger regler, eller om vi bare er programmert til å lyde av frykt."
         },
         {
             "type": "header",
@@ -58,7 +58,7 @@
         },
         {
             "type": "text",
-            "content": "For de gamle grekerne handlet etikk om mer enn bare å unngå å gjøre onde ting. Det handlet om eudaimonia – et ord som ofte oversettes med lykke, men som egentlig betyr å blomstre som menneske. De mente at målet med etikken var å finne ut hvordan man kan leve et liv som er verdt å leve.\n\nTenk på en kniv: Hva er en 'god' kniv? Det er en kniv som er skarp og som skjærer godt. Den oppfyller sitt formål. På samme måte spurte dygdsetikere som [Aristoteles](/krle/filosofi/aristoteles): Hva er et 'godt' menneske? Svaret var at det er et menneske som bruker sine unike evner (fornuft og fellesskap) på en best mulig måte. Etikk handler altså om å utvikle seg selv til å bli den beste versjonen av seg selv.\n\nDette betyr at etikken også er knyttet til helsen vår. Et menneske som lever i konstant konflikt med sin egen moral – som lyver og bedrar – vil sjelden finne indre ro. Derfor er etikken ikke en byrde vi bærer for andres skyld, men et verktøy vi bruker for å skape et meningsfullt og harmonisk liv for oss selv."
+            "content": "For de gamle grekerne handlet etikk om mer enn bare å unngå å gjøre onde ting. Det handlet om eudaimonia. Ordet oversettes ofte med lykke, men handler egentlig om å leve godt, og kalles derfor også menneskelig blomstring (Sagdahl, 2023). Aristoteles mente at eudaimonia er det høyeste gode for et menneske, og at etikken finnes for å undersøke hvordan vi kan nå dit (Sagdahl, 2023).\n\nTenk på en kniv: Hva er en 'god' kniv? Det er en kniv som er skarp og som skjærer godt. Den oppfyller sitt formål. På samme måte spurte dygdsetikere som [Aristoteles](/krle/filosofi/aristoteles): Hva er et 'godt' menneske? Svaret var at det er et menneske som bruker fornuften sin godt og lever i samspill med andre. For Aristoteles var mennesket nettopp et vesen som lever i sosialt og politisk samspill (Fossheim, 2026). Etikk handler altså om å utvikle seg selv til å bli den beste versjonen av seg selv.\n\nSamtidig mente Aristoteles at dygd alene ikke er nok for å leve godt. Også ting som helse, venner og et minimum av velstand spiller inn (Sagdahl, 2023). Et menneske som lever i stadig konflikt med sin egen moral, som lyver og bedrar, vil sjelden finne indre ro. Derfor er etikken ikke bare en byrde vi bærer for andres skyld, men et verktøy vi bruker for å skape et meningsfullt og harmonisk liv for oss selv."
         },
         {
             "type": "header",
@@ -83,7 +83,7 @@
         },
         {
             "type": "text",
-            "content": "En av de største debattene i etikken er om det finnes én sannhet for alle. Moralsk objektivisme hevder at visse handlinger er gale uansett hvor eller når de skjer. Å pine et uskyldig barn er galt, uavhengig av hva en kultur eller et individ måtte mene. Dette gir et fast fundament for menneskerettigheter.\n\nPå den andre siden har vi moralsk relativisme. Her mener man at moral bare er et uttrykk for vaner, følelser eller lokale tradisjoner. Det som er rett i én kultur, kan være galt i en annen. Utfordringen med dette synet er at det blir vanskelig å kritisere grusomheter i andre samfunn – for hvis alt er relativt, hvem er vi da til å si at en annen kultur tar feil?\n\nDe fleste moderne rettssamfunn prøver å finne en balanse: Vi respekterer ulike levemåter, men vi insisterer på at visse verdier, som retten til liv og frihet fra tortur, må gjelde for alle mennesker uansett bakgrunn."
+            "content": "En av de største debattene i etikken er om det finnes én sannhet for alle. Etisk relativisme går ut på at hva som er riktig eller godt, er relativt til den enkelte, til grupper eller til kulturer. Det motsatte synet kalles absoluttisme eller objektivisme (Holmen, 2025). Moralsk objektivisme hevder altså at visse handlinger er gale uansett hvor eller når de skjer. Å pine et uskyldig barn er galt, uavhengig av hva en kultur eller et individ måtte mene. Dette gir et fast fundament for menneskerettigheter.\n\nRelativismen kan brukes som et forsvar for toleranse og for respekt for at andre kulturer får bestemme selv (Holmen, 2025). Men en vanlig innvending er at synet gjør det vanskelig å si at grusomheter i andre samfunn, som Holocaust, var objektivt gale (Stanford Encyclopedia of Philosophy, 2026). For hvis alt er relativt, hvem er vi da til å si at en annen kultur tar feil?\n\nDe fleste moderne rettssamfunn prøver å finne en balanse: Vi respekterer ulike levemåter, men vi insisterer på at visse verdier, som retten til liv og frihet fra tortur, må gjelde for alle mennesker uansett bakgrunn."
         },
         {
             "type": "header",
@@ -91,7 +91,7 @@
         },
         {
             "type": "text",
-            "content": "For å hjelpe oss med å ta vanskelige valg, har filosofene utviklet tre hovedmodeller som vi skal utforske i dybden i de neste artiklene:"
+            "content": "For å hjelpe oss med å ta vanskelige valg, har filosofene utviklet tre hovedmodeller som vi skal utforske i dybden i de neste artiklene. Det er disse tre som regnes som de dominerende teoriene i normativ etikk (Sagdahl, 2025a):"
         },
         {
             "type": "list",
@@ -107,7 +107,24 @@
         },
         {
             "type": "text",
-            "content": "Etikk er ikke noe vi bare driver med i klasserommet. Vi tar etiske valg hver eneste dag: Skal jeg kjøpe produktet som er billig, eller det som er produsert under rettferdige forhold? Skal jeg fortelle sannheten selv om det sårer en venn? Skal jeg gripe inn når noen blir mobbet?\n\nI fremtiden vil etikken bli enda viktigere. Vi må ta stilling til kunstig intelligens (skal en selvkjørende bil drepe passasjeren eller en fotgjenger?), genredigering og hvordan vi skal dele jordas begrensede ressurser. Ved å lære oss etisk refleksjon, blir vi bedre rustet til å navigere i en kompleks verden og ta ansvar for fremtiden.\n\nSom den store filosofen [Sokrates](/krle/filosofi/sokrates) sa: 'Det viktigste er ikke å leve, men å leve rett'. I dette emnet skal vi lete etter hva det egentlig betyr."
+            "content": "Etikk er ikke noe vi bare driver med i klasserommet. Vi tar etiske valg hver eneste dag: Skal jeg kjøpe produktet som er billig, eller det som er produsert under rettferdige forhold? Skal jeg fortelle sannheten selv om det sårer en venn? Skal jeg gripe inn når noen blir mobbet?\n\nI fremtiden vil etikken bli enda viktigere. Vi må ta stilling til kunstig intelligens (skal en selvkjørende bil drepe passasjeren eller en fotgjenger?), genredigering og hvordan vi skal dele jordas begrensede ressurser. Ved å lære oss etisk refleksjon, blir vi bedre rustet til å navigere i en kompleks verden og ta ansvar for fremtiden.\n\nI dialogen Kriton sier [Sokrates](/krle/filosofi/sokrates) at det ikke er livet i seg selv, men det gode livet, som er det viktigste (Platon, u.å.-a). I dette emnet skal vi lete etter hva det egentlig betyr."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Duignan, B. (2026). *Trolley problem*. Encyclopaedia Britannica. Hentet 26.08.2026 fra [britannica.com/topic/trolley-problem](https://www.britannica.com/topic/trolley-problem)",
+                    "Fossheim, H. (2026). *Aristoteles*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Aristoteles](https://snl.no/Aristoteles)",
+                    "Holmen, H. A. (2025). *Relativisme*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/relativisme](https://snl.no/relativisme)",
+                    "Platon. (u.å.-a). *Crito* (B. Jowett, overs.). The Internet Classics Archive. Hentet 26.08.2026 fra [classics.mit.edu/Plato/crito.html](https://classics.mit.edu/Plato/crito.html)",
+                    "Platon. (u.å.-b). *The Republic* (B. Jowett, overs.). The Internet Classics Archive. Hentet 26.08.2026 fra [classics.mit.edu/Plato/republic.html](https://classics.mit.edu/Plato/republic.html)",
+                    "Sagdahl, M. S. (2023). *Eudaimonia*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/eudaimonia](https://snl.no/eudaimonia)",
+                    "Sagdahl, M. S. (2025a). *Etikk*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/etikk](https://snl.no/etikk)",
+                    "Sagdahl, M. S. (2025b). *Moral*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/moral](https://snl.no/moral)",
+                    "Stanford Encyclopedia of Philosophy. (2026). *Moral Relativism*. Hentet 26.08.2026 fra [plato.stanford.edu/entries/moral-relativism](https://plato.stanford.edu/entries/moral-relativism/)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -142,7 +159,7 @@
             "correctAnswer": 1
         },
         {
-            "question": "Hvem sa: 'Det viktigste er ikke å leve, men å leve rett'?",
+            "question": "Hvem sier i dialogen Kriton at det ikke er livet i seg selv, men det gode livet, som er viktigst?",
             "options": [
                 "Platon",
                 "Aristoteles",
@@ -153,5 +170,5 @@
         }
     ],
     "createdDate": "2025-12-21T13:30:00Z",
-    "lastUpdated": "2025-12-21T13:30:00Z"
+    "lastUpdated": "2026-08-26T00:00:00Z"
 }
