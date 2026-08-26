@@ -5,7 +5,7 @@
   "year": "1903-1917",
   "category": "Norge",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/industriell-revolusjon/fossekraften-hero.webp",
   "details": [
     "Norge hadde nesten ikke kull, men mer bratt vann enn noe annet land i Europa.",
     "Elektrisiteten gjorde fossen om til kraft man kunne sende, og da ble fjellet plutselig verdt penger.",
@@ -19,7 +19,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/fossekraften-01.webp",
       "alt": "Fysiker ved glødende lysbueovn i laboratorium rundt år 1903",
       "caption": "Birkelands lysbue var egentlig et uhell. Den ble starten på norsk storindustri."
     },
@@ -76,7 +76,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/fossekraften-02.webp",
       "alt": "Kraftstasjon med rørgate ned bratt fjellside i norsk dal",
       "caption": "Rørgata på Rjukan førte vannet flere hundre meter ned fjellsida og inn i turbinene."
     },

@@ -3196,7 +3196,7 @@
               "id": "borgerkrigstiden",
               "title": "Borgerkrigstiden: da Norge manglet en arveregel",
               "description": "I 110 år kjempet nordmenn om kronen fordi ingen hadde bestemt hvem som skulle arve den. Se hvordan én lovendring gjorde slutt på krigen.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/norsk-middelalder/borgerkrigstiden-hero.webp",
               "tags": [
                 "norge",
                 "middelalder",
@@ -3302,7 +3302,7 @@
               "id": "pietismen",
               "title": "Pietismen: sporet vi fortsatt går i",
               "description": "Kirkeplikt, konfirmasjon og skole for alle ble lov på 1730-tallet. Hvor mye av dagens Norge stammer fra statspietismen?",
-              "image": "/images/placeholder.webp",
+              "image": "/images/dansketiden/pietismen-hero.webp",
               "tags": [
                 "dansketiden",
                 "pietisme",
@@ -3657,7 +3657,8 @@
                 "middelalderen",
                 "skatt"
               ],
-              "createdDate": "2026-08-25T00:00:00Z"
+              "createdDate": "2026-08-25T04:40:46+02:00",
+              "lastUpdated": "2026-08-25T04:40:46+02:00"
             },
             {
               "id": "ivan-den-grusomme",
@@ -3672,7 +3673,8 @@
                 "enevelde",
                 "1500-tallet"
               ],
-              "createdDate": "2026-08-24T00:00:00Z"
+              "createdDate": "2026-08-24T03:43:49+02:00",
+              "lastUpdated": "2026-08-24T03:43:49+02:00"
             },
             {
               "id": "peter-den-store",
@@ -3686,7 +3688,8 @@
                 "enevelde",
                 "sankt-petersburg"
               ],
-              "createdDate": "2026-08-22T00:00:00Z"
+              "createdDate": "2026-08-22T04:03:40+02:00",
+              "lastUpdated": "2026-08-22T04:03:40+02:00"
             },
             {
               "id": "katarina-den-store",
@@ -3700,7 +3703,8 @@
                 "livegenskap",
                 "1700-tallet"
               ],
-              "createdDate": "2026-08-23T00:00:00Z"
+              "createdDate": "2026-08-23T04:03:52+02:00",
+              "lastUpdated": "2026-08-23T04:03:52+02:00"
             }
           ]
         },
@@ -4810,7 +4814,7 @@
               "id": "fossekraften",
               "title": "Fossekraften: da Norge fikk sin egen industri",
               "description": "Norge manglet kull, men hadde bratte elver. Elektrisiteten gjorde fossen til industri, og konsesjonslovene sørget for at den ble værende norsk.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/industriell-revolusjon/fossekraften-hero.webp",
               "tags": [
                 "norge",
                 "industri",

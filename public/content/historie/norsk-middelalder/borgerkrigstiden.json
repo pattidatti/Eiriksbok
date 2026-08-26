@@ -5,7 +5,7 @@
   "year": "1130-1240",
   "category": "Norge",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/norsk-middelalder/borgerkrigstiden-hero.webp",
   "details": [
     "I 110 år kjempet nordmenn mot nordmenn om hvem som skulle være konge.",
     "Årsaken var enkel: alle sønnene til en konge kunne kreve kronen, også de som var født utenfor ekteskap.",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norsk-middelalder/borgerkrigstiden-01.webp",
       "alt": "Mann går barbeint over glødende plogjern foran to biskoper i kirke",
       "caption": "Jernbyrd var en gudsdom. Klarte du å gå over glødende jern uten å bli skadet, mente folk at Gud hadde talt din sak."
     },
@@ -83,7 +83,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norsk-middelalder/borgerkrigstiden-02.webp",
       "alt": "Norske krigere med skjold og spyd i skogkledd dalside om vinteren",
       "caption": "Birkebeinerne kjempet ofte fra skogen og fjellet. De var færre enn motstanderne, men kjente terrenget bedre."
     },
@@ -144,7 +144,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norsk-middelalder/borgerkrigstiden-03.webp",
       "alt": "Middelalderkonge i kappe foran forsamling av stormenn i trehall",
       "caption": "Håkon Håkonsson ble konge i 1217 og styrte i 46 år. Under ham nådde Norge sin største utstrekning."
     },
