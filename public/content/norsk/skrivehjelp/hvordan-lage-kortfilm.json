@@ -15,15 +15,15 @@
     "content": [
         {
             "type": "text",
-            "content": "En kortfilm er en novelle du kan se — og de samme reglene gjelder. Karakterene dine trenger å ville noe, noe må stå i veien, og slutten skal bety noe. Forskjellen er at i stedet for ord bruker du lys, bevegelse og lyd. Har du arbeidet deg gjennom [Forfatterens Verksted](/norsk/virkemidler/skapende-skriving-sti)? Da har du allerede historien. Denne artikkelen handler om produksjonssteget: hvordan du får den historien fra hodet og ut i en film."
+            "content": "En kortfilm er en novelle du kan se - og de samme reglene gjelder. Karakterene dine trenger å ville noe, noe må stå i veien, og slutten skal bety noe. Forskjellen er at i stedet for ord bruker du lys, bevegelse og lyd. Har du arbeidet deg gjennom [Forfatterens Verksted](/norsk/virkemidler/skapende-skriving-sti)? Da har du allerede historien. Denne artikkelen handler om produksjonssteget: hvordan du får den historien fra hodet og ut i en film."
         },
         {
             "type": "header",
-            "text": "Fra manus til motiv — planlegg før du filmer"
+            "text": "Fra manus til motiv - planlegg før du filmer"
         },
         {
             "type": "text",
-            "content": "Det som skiller en god elevfilm fra en kaotisk en, er ikke kameraet — det er forberedelsen. Et enkelt scenenotat tar femten minutter å lage og redder dere fra to timer med opptak dere ikke kan bruke. Skriv ned scenene dine i kronologisk rekkefølge. Bestem hvilke filmtekniske grep du vil bruke i hver scene. Deretter kan du lage dem i den rekkefølgen som passer — og sette dem sammen slik historien krever."
+            "content": "Det som skiller en god elevfilm fra en kaotisk en, er ikke kameraet - det er forberedelsen. Et enkelt scenenotat tar femten minutter å lage og redder dere fra to timer med opptak dere ikke kan bruke. Skriv ned scenene dine i kronologisk rekkefølge. Bestem hvilke filmtekniske grep du vil bruke i hver scene. Deretter kan du lage dem i den rekkefølgen som passer - og sette dem sammen slik historien krever."
         },
         {
             "type": "component",
@@ -102,7 +102,7 @@
         },
         {
             "type": "header",
-            "text": "Scener — en scene gjør én ting"
+            "text": "Scener - en scene gjør én ting"
         },
         {
             "type": "text",
@@ -117,18 +117,18 @@
                     {
                         "bad": "Erik går til skolen. Han tar bussen, setter seg ned og stirrer ut av vinduet.",
                         "good": "Erik går forbi oppslagstavlen i gangen. Han stopper, river ned lappen med fotballkamp-datoen og stapper den i lommen.",
-                        "why": "I det første eksempelet skjer ingenting. I det andre forteller gåturen oss at Erik skjuler noe — uten at noen forklarer det."
+                        "why": "I det første eksempelet skjer ingenting. I det andre forteller gåturen oss at Erik skjuler noe - uten at noen forklarer det."
                     }
                 ]
             }
         },
         {
             "type": "header",
-            "text": "Vinkler og avstand — fortell med kameraet"
+            "text": "Vinkler og avstand - fortell med kameraet"
         },
         {
             "type": "text",
-            "content": "Kameraet velger hva vi ser — og det er et valg. Avstand bestemmer om vi er observatør eller vitne. Utforsk de fem standardavstandene og når du bruker dem:"
+            "content": "Kameraet velger hva vi ser - og det er et valg. Hvor nær du står, bestemmer hva seeren legger merke til: et vidt utsnitt gir oversikt over personen i omgivelsene og situasjonen, mens et nært utsnitt avslører følelser og viser hvordan en person reagerer (Aaberge & Tørdal, 2019). Utforsk de fem avstandene og når du bruker dem:"
         },
         {
             "type": "component",
@@ -181,7 +181,7 @@
         },
         {
             "type": "text",
-            "content": "I tillegg til avstand bestemmer høyden på kameraet hvem som har makt i scenen:"
+            "content": "I tillegg til avstand bestemmer høyden på kameraet hvem som har makt i scenen. Et kamera plassert over normal høyde skaper avstand til karakteren og gir oss overblikk over situasjonen, mens et kamera under normal høyde kan opphøye henne (Aaberge & Tørdal, 2019):"
         },
         {
             "type": "component",
@@ -206,11 +206,11 @@
         },
         {
             "type": "header",
-            "text": "Lyd — den usynlige halvdelen"
+            "text": "Lyd - den usynlige halvdelen"
         },
         {
             "type": "text",
-            "content": "Halvparten av filmopplevelsen er lyd. Publikum tolererer dårlig bilde — men dårlig lyd gjør at de slutter å se. Dette er det området der de fleste elevfilmer mister seerne, og det er fullt mulig å gjøre noe med det."
+            "content": "Lyden er en viktig del av filmopplevelsen (Skanding, 2018). Miljølydene på opptaksstedet - det som kalles kontentum eller reallyd - er med på å fortelle seeren hvor vi er. Dårlig lyd merkes med én gang, og det er her du kan løfte elevfilmen mest uten å kjøpe utstyr."
         },
         {
             "type": "component",
@@ -218,10 +218,10 @@
             "props": {
                 "title": "Overlev Chromebook-mikrofonen",
                 "items": [
-                    "Hold ansiktet 20 cm fra skjermen — ikke nærmere, ikke lengre.",
+                    "Hold ansiktet 20 cm fra skjermen - ikke nærmere, ikke lengre.",
                     "Film aldri ute i vind uten å legge et klede over mikrofonen.",
                     "Hvisking tas ikke opp. Snakk med normalvolum.",
-                    "Ta opp 10 sekunder stille bakgrunnslyd først — da kan du redigere bort støy etterpå.",
+                    "Ta opp 10 sekunder stille bakgrunnslyd først - da kan du redigere bort støy etterpå.",
                     "Unngå rom med ekko: tomme ganger og klasserom med harde vegger er verst."
                 ]
             }
@@ -236,11 +236,11 @@
         },
         {
             "type": "header",
-            "text": "Lys — bruk det lyset du allerede har"
+            "text": "Lys - bruk det lyset du allerede har"
         },
         {
             "type": "text",
-            "content": "Du trenger ikke lysutstyr. Du trenger å forstå lyset som allerede er der. Tre gyldne regler: Film aldri med et vindu bak personen. Vend personen mot vinduet. Bruk et hvitt A4-ark utenfor bildet som speil — det reflekterer naturlig lys inn i ansiktet og fjerner harde skygger."
+            "content": "Du trenger ikke lysutstyr. Du trenger å forstå lyset som allerede er der. Tre gyldne regler: Film aldri med et vindu bak personen. Vend personen mot vinduet. Bruk et hvitt A4-ark utenfor bildet som speil - det reflekterer naturlig lys inn i ansiktet og fjerner harde skygger."
         },
         {
             "type": "component",
@@ -258,18 +258,18 @@
                     },
                     {
                         "label": "For mørkt",
-                        "value": "Mørke rom gir kornete, støyfullt bilde. Løsning: Hold et hvitt A4-ark utenfor bildet slik at det reflekterer lys inn på ansiktet — billig og effektivt."
+                        "value": "Mørke rom gir kornete, støyfullt bilde. Løsning: Hold et hvitt A4-ark utenfor bildet slik at det reflekterer lys inn på ansiktet - billig og effektivt."
                     }
                 ]
             }
         },
         {
             "type": "header",
-            "text": "Tydelig dialog — muntlig skriving som fungerer på film"
+            "text": "Tydelig dialog - muntlig skriving som fungerer på film"
         },
         {
             "type": "text",
-            "content": "Filmreplikker er kortere, mer indirekte og mer ladede enn romandialog. Hvis karakteren kan si det direkte, bør de ikke si det i det hele tatt. Unngå eksponeringsdialog — replikker som bare forteller tilskueren noe de trenger å vite, men som ingen person i virkeligheten ville sagt."
+            "content": "Filmreplikker er kortere, mer indirekte og mer ladede enn romandialog. Hvis karakteren kan si det direkte, bør de ikke si det i det hele tatt. Unngå eksponeringsdialog - replikker som bare forteller tilskueren noe de trenger å vite, men som ingen person i virkeligheten ville sagt."
         },
         {
             "type": "component",
@@ -354,11 +354,11 @@
         },
         {
             "type": "header",
-            "text": "Klipping — fortell raskere enn du tror"
+            "text": "Klipping - fortell raskere enn du tror"
         },
         {
             "type": "text",
-            "content": "Du filmer 30 minutter for å ha 3 brukbare minutter. Klipping er der du forteller historien på nytt — nå med rytme og presisjon. Det finnes tre grunnleggende klippetyper: direkte klipp (brå overgang til neste scene), match-klipp (to liknende bevegelser binder scenene), og smash-klipp (overraskende, hard overgang for sjokk)."
+            "content": "Du filmer mye mer enn du kommer til å bruke. Klipping er der du forteller historien på nytt - nå med rytme og presisjon. Klippet gjøres ofte usynlig ved at det klippes i et punkt der motivet beveger seg, slik at filmen oppleves som ett sammenhengende forløp (Svendsen, 2024). En regel til bør du kjenne: når to personer snakker sammen, må kameraet bli på samme side av den tenkte linjen mellom dem, ellers ser det ut som om begge ser samme vei (Stokkedal, 2017). Det finnes tre grunnleggende klippetyper: direkte klipp (brå overgang til neste scene), match-klipp (to liknende bevegelser binder scenene), og smash-klipp (overraskende, hard overgang for sjokk)."
         },
         {
             "type": "component",
@@ -367,20 +367,20 @@
                 "title": "Klipperegler for nybegynnere",
                 "items": [
                     "Klipp på bevegelse, ikke på stillhet. La handlingen starte, deretter bytt.",
-                    "180-graders-regelen: Hold kameraet på én side av en tenkt rett linje mellom to karakterer — ellers snur synsretningen og forvirrer tilskueren.",
-                    "Match-klipp: To bevegelser som ligner binder scenene usynlig — f.eks. en arm som svinger, klipp til en annen som gjør det samme.",
-                    "Smash-klipp: Brå, overraskende overgang — bruk det for sjokk, vits eller tidshopp.",
+                    "180-graders-regelen: Hold kameraet på én side av en tenkt rett linje mellom to karakterer - ellers snur synsretningen og forvirrer tilskueren.",
+                    "Match-klipp: To bevegelser som ligner binder scenene usynlig - f.eks. en arm som svinger, klipp til en annen som gjør det samme.",
+                    "Smash-klipp: Brå, overraskende overgang - bruk det for sjokk, vits eller tidshopp.",
                     "Tøm aldri skjermen: Ha neste bilde klart idet det forrige slutter."
                 ]
             }
         },
         {
             "type": "header",
-            "text": "Aktiv klipping — rytme skaper spenning"
+            "text": "Aktiv klipping - rytme skaper spenning"
         },
         {
             "type": "text",
-            "content": "Lengden på hvert klipp kommuniserer noe til hjernen. Korte klipp gir hjertet fart. Lange klipp gir pusterom. Et reaksjonsklipp — å klippe til ansiktet til en person som ser på noe — forteller oss hva vi skal føle."
+            "content": "Lengden på hvert klipp betyr noe. En god klipper skaper en rytme som passer til innholdet i filmen (Svendsen, 2024). Korte klipp gir hjertet fart. Lange klipp gir pusterom. Et reaksjonsklipp - å klippe til ansiktet til en person som ser på noe - forteller oss hva vi skal føle."
         },
         {
             "type": "component",
@@ -407,18 +407,18 @@
                     {
                         "bad": "Vi ser Jonas ta opp telefonen, lese meldingen og legge den tilbake på pulten.",
                         "good": "Vi ser Jonas ta opp telefonen. Klipp. Vi ser ansiktet hans bli blankt.",
-                        "why": "Reaksjonsklippet forteller oss hva vi skal føle. Vi trenger ikke å se hva meldingen sier — vi ser det på ansiktet hans."
+                        "why": "Reaksjonsklippet forteller oss hva vi skal føle. Vi trenger ikke å se hva meldingen sier - vi ser det på ansiktet hans."
                     }
                 ]
             }
         },
         {
             "type": "header",
-            "text": "Teksting — gjør dårlig lyd til en styrke"
+            "text": "Teksting - gjør dårlig lyd til en styrke"
         },
         {
             "type": "text",
-            "content": "Teksting er ikke et tegn på at lyden er dårlig. Det er et profesjonelt grep som gjør filmen tilgjengelig for alle — inkludert de som ser den uten lyd. I CapCut (gratis i nettleseren på Chromebook) finner du tekstverktøyet under «Text» → «Add text». Legg alltid til teksting aller sist, etter at klippingen er ferdig."
+            "content": "Teksting er ikke et tegn på at lyden er dårlig. Teksting gir personer med nedsatt hørsel tilgang til innholdet, og den hjelper alle andre som ser filmen i støyende omgivelser. Teksten legges nederst i bilderuta, og den skal være lett å lese, ha god kontrast mot bakgrunnen og ikke gå for fort (Grolid, 2022). I CapCut (gratis i nettleseren på Chromebook) finner du tekstverktøyet under «Text» → «Add text». Legg alltid til teksting aller sist, etter at klippingen er ferdig."
         },
         {
             "type": "component",
@@ -427,10 +427,10 @@
                 "title": "Rettskrivingsregler for teksting",
                 "items": [
                     "Maks 2 linjer tekst på skjermen av gangen.",
-                    "Hvit tekst med svart skygge (i CapCut: 'Shadow' eller 'Stroke') — aldri bare hvit på lyst bilde.",
+                    "Hvit tekst med svart skygge (i CapCut: 'Shadow' eller 'Stroke') - aldri bare hvit på lyst bilde.",
                     "Plasser teksten nær bunnen, ikke midt i bildet.",
                     "Legg til teksting aller sist, etter at klippingen er ferdig.",
-                    "Skriv fulle setninger — ikke forkort som i SMS."
+                    "Skriv fulle setninger - ikke forkort som i SMS."
                 ]
             }
         },
@@ -511,6 +511,20 @@
                     "Diskuter to og to: Dere skal lage en 30 sekunders film om en elev som gruer seg til noe. Bli enige om ett totalbilde, ett nært bilde og ett reaksjonsklipp dere vil bruke, og forklar hva hvert av dem skal få seeren til å føle."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aaberge, A. & Tørdal, R. M. (2019). *Kameravinkler og bildeutsnitt*. NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/r/medie--og-informasjonskunnskap-1/kameravinkler-bildeutsnitt/bf8e6cc330)",
+                    "Grolid, S. Å. (2022). *Universell utforming av lyd og video*. NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/r/utvikling-im-itk-vg2/universell-utforming-av-lyd-og-video/bfbf97a39e)",
+                    "Skanding, T. (2018). *Lyd i film*. NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/r/medieuttrykk-2/lyd-i-film/0e35a6f432)",
+                    "Stokkedal, S. (2017). *Akser og aksebrudd*. NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/r/medie--og-informasjonskunnskap-1/akser-og-aksebrudd/ecd4efc77b)",
+                    "Svendsen, T. O. (2024). *Film - filmens uttrykksmidler*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/film_-_filmens_uttrykksmidler](https://snl.no/film_-_filmens_uttrykksmidler)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-26T00:00:00Z"
 }

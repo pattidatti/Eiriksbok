@@ -12,7 +12,7 @@
         },
         {
             "type": "text",
-            "content": "Å skrive en god saktekst handler ikke om å bruke de vanskeligste ordene, men om å bygge en bro av forståelse mellom deg og leseren. For å få til dette, trenger du et stødig fundament. I denne guiden skal vi se hvordan vi bygger et perfekt avsnitt, stein for stein, ved å følge utviklingen av en tekst om et av kroppens viktigste behov: *søvn*."
+            "content": "Å skrive en god saktekst handler ikke om å bruke de vanskeligste ordene, men om å bygge en bro av forståelse mellom deg og leseren. Sakprosa er tekster som leseren har grunn til å oppfatte som direkte ytringer om virkeligheten (Tønnesson, 2026). Derfor må de både være til å stole på og til å forstå. For å få til dette, trenger du et stødig fundament. I denne guiden skal vi se hvordan vi bygger et perfekt avsnitt, stein for stein, ved å følge utviklingen av en tekst om et av kroppens viktigste behov: *søvn*."
         },
         {
             "type": "header",
@@ -20,7 +20,7 @@
         },
         {
             "type": "text",
-            "content": "Hvert avsnitt i en saktekst bør starte med en temasetning. Dette er avsnittets 'sjef' – en setning som forteller leseren nøyaktig hva de neste linjene skal handle om. Tenk på det som et løfte du gir til leseren."
+            "content": "Hvert avsnitt i en saktekst bør starte med en temasetning. Dette er avsnittets 'sjef' - setningen som gjør det tydelig hva avsnittet skal handle om (Abusland, 2025). Tenk på det som et løfte du gir til leseren."
         },
         {
             "type": "comparison",
@@ -44,7 +44,7 @@
         },
         {
             "type": "text",
-            "content": "Nå som vi har planen klar, må vi fylle på med informasjon. Vi gjør dette med kommentarsetninger. Dette er setninger som forklarer, utdyper eller gir eksempler på det vi sa i temasetningen."
+            "content": "Nå som vi har planen klar, må vi fylle på med informasjon. Vi gjør dette med kommentarsetninger. Det er setninger som gir mer informasjon om temaet (Abusland, 2025): de forklarer, utdyper eller gir eksempler på det vi sa i temasetningen."
         },
         {
             "type": "comparison",
@@ -67,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Bindeord er de små ordene som skaper flyt og viser sammenheng. Ved å bruke ord som *derfor*, *samtidig* eller *for det første*, hjelper du leseren å forstå logikken din."
+            "content": "Bindeord er de små ordene som skaper flyt og viser sammenheng. Slike setningsbindere knytter setningene sammen og ordner avsnittet for leseren (Abusland, 2025). Ved å bruke ord som *derfor*, *samtidig* eller *for det første*, hjelper du leseren å forstå logikken din."
         },
         {
             "type": "comparison",
@@ -91,7 +91,7 @@
         },
         {
             "type": "text",
-            "content": "For å gjøre avsnittet komplett, trenger vi en avslutningssetning. Denne setningen runder av poenget og kan gjerne peke fremover mot neste avsnitt."
+            "content": "For å gjøre avsnittet komplett, trenger vi en avslutningssetning. Denne setningen runder av poenget og bør speile det du lovet i temasetningen (Abusland, 2018). Den kan gjerne også peke fremover mot neste avsnitt."
         },
         {
             "type": "image",
@@ -105,7 +105,7 @@
         },
         {
             "type": "text",
-            "content": "Her er avsnittet helt ferdig. Vi har startet med et løfte, fylt på med fakta, limt det sammen med bindeord, og landet trygt med en konklusjon."
+            "content": "Her er avsnittet helt ferdig. Vi har startet med et løfte, fylt på med fakta, limt det sammen med bindeord, og landet trygt med en konklusjon. Og faktaene holder: én av oppgavene til søvnen er å fjerne avfallsstoffer fra hjernen (Boccara, 2026), og det er de dype søvnfasene som brukes til slikt vedlikehold av hjernen (Norsk Helseinformatikk, 2023). Søvn er også nødvendig for hukommelse og læring (Boccara, 2026)."
         },
         {
             "type": "header",
@@ -169,8 +169,22 @@
                     "Finn et avsnitt fra en lærebok eller nettartikkel. Marker temasetningen, kommentarsetningene og bindeordene, og vurder om avsnittet holder løftet sitt."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2018). *Slik bygger du opp et avsnitt*. NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/subject:19/topic:1:195989/topic:1:196008/resource:1:176604)",
+                    "Abusland, Å. (2025). *Hvordan skrive ryddige avsnitt?* NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-pb/hvordan-skrive-ryddige-avsnitt/ed8be75208)",
+                    "Boccara, C. (2026). *Søvn*. Store medisinske leksikon. Hentet 26.08.2026 fra [sml.snl.no/søvn](https://sml.snl.no/s%C3%B8vn)",
+                    "Norsk Helseinformatikk. (2023). *Hva er søvn?* NHI.no. Hentet 26.08.2026 fra [nhi.no](https://nhi.no/kroppen-var/funksjoner/hva-er-sovn)",
+                    "Tønnesson, J. (2026). *Sakprosa*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/sakprosa](https://snl.no/sakprosa)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-08-26T00:00:00Z",
     "tags": [
         "skrivehjelp",
         "sakprosa",

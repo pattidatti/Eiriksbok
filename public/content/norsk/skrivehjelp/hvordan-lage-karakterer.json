@@ -12,27 +12,27 @@
         },
         {
             "type": "text",
-            "content": "En god historie handler sjelden bare om hva som skjer (plottet). Den handler om hvem det skjer med, og hvordan de endrer seg. I denne artikkelen skal vi bruke «Karaktersmien» – en prosess der vi banker ut en tynn skisse til en levende, tredimensjonal karakter."
+            "content": "En god historie handler sjelden bare om hva som skjer (plottet). Den handler om hvem det skjer med, og hvordan de endrer seg. En dynamisk karakter er nettopp en person som utvikler seg og forandrer seg på grunn av det hun opplever, mens en statisk karakter forblir slik hun alltid har vært (Grundvig, 2026). I denne artikkelen skal vi bruke «Karaktersmien» - en prosess der vi banker ut en tynn skisse til en levende, tredimensjonal karakter."
         },
         {
             "type": "FactBox",
             "title": "Dette skal vi gjøre",
             "content": "I denne artikkelen skal du følge Elias og Sara gjennom fem trinn for å forstå hvordan profesjonelle forfattere bygger karakterer. Målet er at du til slutt skal sitte igjen med et ferdig ID-kort for din egen karakter.",
             "items": [
-                "**Trinn 1: Funksjon** – Hvorfor er karakteren med?",
-                "**Trinn 2: Overflaten** – Hvordan ser de ut, og hva er deres unike kjennetegn?",
-                "**Trinn 3: Motoren** – Hva vil de ha, og hva trenger de egentlig?",
-                "**Trinn 4: Skyggen** – Hva er deres sårbarhet eller mørke fortid?",
-                "**Trinn 5: Kontrasten** – Hvordan skaper de gnisninger mot andre?"
+                "**Trinn 1: Funksjon** - Hvorfor er karakteren med?",
+                "**Trinn 2: Overflaten** - Hvordan ser de ut, og hva er deres unike kjennetegn?",
+                "**Trinn 3: Motoren** - Hva vil de ha, og hva trenger de egentlig?",
+                "**Trinn 4: Skyggen** - Hva er deres sårbarhet eller mørke fortid?",
+                "**Trinn 5: Kontrasten** - Hvordan skaper de gnisninger mot andre?"
             ]
         },
         {
             "type": "header",
-            "content": "Trinn 1: Funksjon – Hva er rollen deres?"
+            "content": "Trinn 1: Funksjon - Hva er rollen deres?"
         },
         {
             "type": "text",
-            "content": "Før du bestemmer fargen på øynene eller favorittmaten, må du vite hvorfor denne personen er med i historien. En karakter er et verktøy for å fortelle historien din."
+            "content": "Før du bestemmer fargen på øynene eller favorittmaten, må du vite hvorfor denne personen er med i historien. En karakter er et verktøy for å fortelle historien din. Hovedpersonen kalles gjerne protagonisten (Store norske leksikon, 2026), og den som kjemper imot henne, kalles antagonisten (Persvold, 2025)."
         },
         {
             "type": "text",
@@ -40,11 +40,11 @@
         },
         {
             "type": "header",
-            "content": "Trinn 2: Overflaten – Det ytre og «Kjennetegnet»"
+            "content": "Trinn 2: Overflaten - Det ytre og «Kjennetegnet»"
         },
         {
             "type": "text",
-            "content": "Det første leseren ser, er det ytre. Men i stedet for å liste opp alt, bør du velge én eller to ting som sier noe om hvem de er. Vi kaller dette et «kjennetegn» – en detalj som gjør at vi husker dem."
+            "content": "Det første leseren ser, er det ytre. Men i stedet for å liste opp alt, bør du velge én eller to ting som sier noe om hvem de er. Vi kaller dette et «kjennetegn» - en detalj som gjør at vi husker dem. Når fortelleren kommenterer utseende og egenskaper rett ut, kalles det direkte personskildring; lar du oss i stedet forstå personen gjennom replikker, handlinger, tanker og kroppsspråk, er det indirekte personskildring (Abusland, 2026)."
         },
         {
             "type": "WritingFix",
@@ -52,14 +52,14 @@
             "items": [
                 {
                     "bad": "Elias var en vanlig gutt med brunt hår og vanlige klær.",
-                    "good": "Elias trakk den falmede, røde hettegenseren over hodet. Han trommet urolig på urskiven til den gamle klokka på håndleddet – den som hadde stoppet for flere år siden, men som han nektet å ta av seg.",
+                    "good": "Elias trakk den falmede, røde hettegenseren over hodet. Han trommet urolig på urskiven til den gamle klokka på håndleddet - den som hadde stoppet for flere år siden, men som han nektet å ta av seg.",
                     "why": "Ved å gi ham en rød hettegenser og en klokke som ikke går, skaper vi umiddelbart nysgjerrighet. Hvorfor går ikke klokka? Hvorfor er den så viktig?"
                 }
             ]
         },
         {
             "type": "header",
-            "content": "Trinn 3: Motoren – Vilje vs. Behov"
+            "content": "Trinn 3: Motoren - Vilje vs. Behov"
         },
         {
             "type": "text",
@@ -75,15 +75,15 @@
         },
         {
             "type": "text",
-            "content": "Ingen er perfekte. Perfekte karakterer er faktisk ganske kjedelige å lese om. Det er feilene og sårbarheten som gjør at vi kjenner oss igjen."
+            "content": "Ingen er perfekte. Perfekte karakterer er faktisk ganske kjedelige å lese om. Det er feilene og sårbarheten som gjør at vi kjenner oss igjen. I eventyr er personene som regel enkle typer: helten er helt, skurken er skurk, og ingen av dem forandrer seg (Grundvig, 2026). I en roman er det motsatt, og det er derfor romanpersonene føles mer som mennesker."
         },
         {
             "type": "text",
-            "content": "Hvorfor vil Elias være usynlig? Kanskje han bærer på et «Ghost» – en hendelse fra fortiden som har gjort ham redd. La oss si at han en gang prøvde å si fra om noe viktig, men ble ledd av. Nå er hans største frykt å bli gjort narr av igjen. *Det er derfor han gjemmer seg i hettegenseren.*"
+            "content": "Hvorfor vil Elias være usynlig? Kanskje han bærer på et «Ghost» - en hendelse fra fortiden som har gjort ham redd. La oss si at han en gang prøvde å si fra om noe viktig, men ble ledd av. Nå er hans største frykt å bli gjort narr av igjen. *Det er derfor han gjemmer seg i hettegenseren.*"
         },
         {
             "type": "header",
-            "content": "Trinn 5: Kontrasten – Relasjoner og Gnisninger"
+            "content": "Trinn 5: Kontrasten - Relasjoner og Gnisninger"
         },
         {
             "type": "text",
@@ -91,7 +91,7 @@
         },
         {
             "type": "text",
-            "content": "Her kommer Sara inn. Sara er alt Elias ikke er: Hun snakker høyt, tar plass og bryr seg ikke om hva andre mener. Når Elias og Sara må samarbeide, oppstår det «gnisninger». Det er i disse gnisningene at historien virkelig begynner å leve."
+            "content": "Her kommer Sara inn. Sara er alt Elias ikke er: Hun snakker høyt, tar plass og bryr seg ikke om hva andre mener. Når Elias og Sara må samarbeide, oppstår det «gnisninger». Det er i disse gnisningene at historien virkelig begynner å leve. Roller som helten, mentoren og motstanderen går igjen i fortellinger over hele verden. Psykiateren Carl Gustav Jung kalte slike gjennomgangsfigurer arketyper: bilder som går igjen fra slekt til slekt, og som er felles for alle mennesker (Rzadkowska, 2026)."
         },
         {
             "type": "Comparison",
@@ -172,7 +172,7 @@
             "type": "Comparison",
             "title": "Sammenligning av karakter-ID",
             "leftTitle": "Elias (Protagonisten)",
-            "rightTitle": "Sara (Antagonisten)",
+            "rightTitle": "Sara (Hjelperen)",
             "items": [
                 {
                     "label": "Kjennetegn",
@@ -202,7 +202,7 @@
         },
         {
             "type": "text",
-            "content": "Nå er det på tide at du bruker de samme verktøyene. Du trenger ikke vite alt med en gang – start med en følelse eller et bilde, og bruk punktene under for å bygge dybde."
+            "content": "Nå er det på tide at du bruker de samme verktøyene. Du trenger ikke vite alt med en gang - start med en følelse eller et bilde, og bruk punktene under for å bygge dybde."
         },
         {
             "type": "FactBox",
@@ -257,8 +257,22 @@
                     "Velg en karakter fra en bok eller film du kjenner godt. Fyll ut Mester-sjekklisten for den karakteren: hva er kjennetegnet, viljen, behovet, frykten og gnisningen?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2026). *Hvordan lage personskildringer?* NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg1/hvordan-lage-personskildringer/75fac7542f)",
+                    "Grundvig, T. E. (2026). *Personskildring*. NDLA. Hentet 26.08.2026 fra [ndla.no](https://ndla.no/r/norsk-sf-vg1/personskildring/9cf83703d1)",
+                    "Persvold, A. Z. (2025). *Antagonist*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/antagonist](https://snl.no/antagonist)",
+                    "Rzadkowska, J. (2026). *Arketype*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/arketype](https://snl.no/arketype)",
+                    "Store norske leksikon. (2026). *Protagonist*. Hentet 26.08.2026 fra [snl.no/protagonist](https://snl.no/protagonist)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-08-26T00:00:00Z",
     "quiz": [
         {
             "question": "Hva menes med en karakter sitt «kjennetegn»?",
