@@ -358,6 +358,22 @@ n = 20 · snitt 511 ord · 0 stub / 17 halv / 3 ferdig
 | ☐ | `FERDIG` | `filosofi/rousseau.json` | 820 | ✅ | - | - | 5 | ✅ | ✅ har |
 | ☐ | `FERDIG` | `filosofi/montesquieu.json` | 872 | ✅ | - | - | 5 | ✅ | - |
 
+**`readTime` er snudd på hodet i hele mappa.** De halvskrevne artiklene lover 20-24 minutters
+lesning og leverer to-tre. De tre ferdige lover 10-14 og treffer omtrent. Eksempler:
+`locke.json` 312 ord / «20 min lesning», `kant.json` 368 ord / «24 min lesning», mot
+`marx.json` 816 ord / «10 min lesning».
+
+Feltet vises til eleven, så dette er ikke bare skitten metadata - en elev som setter av 24
+minutter til Kant og er ferdig på tre, lærer at tidsanslagene i boka ikke betyr noe. Rett
+`readTime` samtidig som artikkelen skrives ut i R7; da er tallet uansett feil av en ny grunn.
+Regn ~200 ord i minuttet for 14-åringer, altså 800-1200 ord ≈ 4-6 minutter.
+
+**Kildebeleggingsrutinen rører dem ikke.** `.agent/workflows/remediate_article.md` har en
+700-ords-terskel i kandidatsøket nettopp for å holde seg unna R7 - henvisningene måtte likevel
+vært flyttet når teksten dobles. De 17 kildebelegges som del av utskrivingen. De tre ferdige
+(`marx`, `rousseau`, `montesquieu`) ligger derimot i rutinens kø, siden `Kilde`-kolonnen
+deres står tom.
+
 ### Etikk
 
 n = 10 · snitt 1140 ord · 0 stub / 2 halv / 8 ferdig

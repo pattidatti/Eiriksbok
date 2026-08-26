@@ -113,7 +113,7 @@ const ut=[];
       else if(o && typeof o==="object") Object.values(o).forEach(samle);
       else if(typeof o==="string") tekst.push(o);
     })(j.content);
-    if(tekst.join(" ").trim().split(/\s+/).length < 300) continue;   // stubb/kort
+    if(tekst.join(" ").trim().split(/\s+/).length < 700) continue;   // stubb eller uferdig utkast
     ut.push(p);
   }}})(process.argv[1]);
 console.log(ut.sort().join("\n"));
@@ -137,12 +137,24 @@ og avslutt uten PR.
 begrepskort, persondata og komponent-konfigurasjon - ingen av dem har brødtekst å kildebelegge.
 Testen ble målt mot alle 924 filene i de mappene og ga null falske kandidater.
 
-**300-ords-terskelen = bærer artikkelen påstander?** Under denne grensa ligger to ting som aldri kan
-kildebelegges meningsfullt:
+**700-ords-terskelen = er artikkelen ferdigskrevet?** Husstandarden er 800-1200 ord. Under 700 ligger
+tre ting som ikke skal kildebelegges nå:
 - **Verktøy-innpakninger** - `musikk/oppslag/latskriver.json` er 26 ord instruksjon rundt
   `SongwriterStudio`-komponenten.
 - **Kort/teasere** - `krle/religion/*/intro.json` er typisk 30-50 ord med `dimension` og
   `comparison_tags`, og mater sammenligningsmotoren.
+- **Uferdige utkast** - de 17 filosofi-artiklene på 312-618 ord (`krle/filosofi/locke.json` og
+  følgende). De er ekte, registrerte leksjoner, men halvskrevne, og står i kø som **R7** i
+  `docs/KRLE_OPPRUSTNING.md` §5. Å kildebelegge dem nå ville vært å gjøre jobben to ganger:
+  henvisningene måtte uansett flyttes når teksten dobles. De kildebelegges som del av
+  utskrivingen, ikke før.
+
+Grensa gikk opprinnelig ved 300 ord, som bare skilte ut stubbene. 700 skiller i tillegg mellom
+*ferdig artikkel* og *utkast*, og er det som holder rutinen unna R7.
+
+**Grensetilfelle:** `krle/filosofi/hume.json` ligger rett over terskelen med denne målemetoden
+(som teller listepunkter og komponent-tekst) og rett under med målemetoden i `KRLE_OPPRUSTNING.md`
+§3. Havner den i en batch, er det uproblematisk - 800 ord tåler kildebelegging.
 
 Dette er ikke kosmetikk: uten terskelen ville `grep` funnet de samme ~10 filene ved hver eneste
 kjøring, i det uendelige, og rutinen kunne aldri meldt seg ferdig. Nøyaktig det skjedde med
