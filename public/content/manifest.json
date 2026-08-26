@@ -4805,6 +4805,20 @@
               ],
               "createdDate": "2026-08-10T03:52:32+02:00",
               "lastUpdated": "2026-08-10T07:31:29+02:00"
+            },
+            {
+              "id": "fossekraften",
+              "title": "Fossekraften: da Norge fikk sin egen industri",
+              "description": "Norge manglet kull, men hadde bratte elver. Elektrisiteten gjorde fossen til industri, og konsesjonslovene sørget for at den ble værende norsk.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "industri",
+                "vannkraft",
+                "teknologi",
+                "okonomi"
+              ],
+              "createdDate": "2026-08-26T00:00:00Z"
             }
           ]
         },

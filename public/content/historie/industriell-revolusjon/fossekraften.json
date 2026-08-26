@@ -1,0 +1,237 @@
+{
+  "id": "fossekraften",
+  "title": "Fossekraften: da Norge fikk sin egen industri",
+  "layout": "rich",
+  "year": "1903-1917",
+  "category": "Norge",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Norge hadde nesten ikke kull, men mer bratt vann enn noe annet land i Europa.",
+    "Elektrisiteten gjorde fossen om til kraft man kunne sende, og da ble fjellet plutselig verdt penger.",
+    "Stortinget slapp inn utenlandsk kapital, men skrev inn i loven at fossene skulle bli norske til slutt."
+  ],
+  "externalUrl": "https://snl.no/Sam_Eyde",
+  "content": [
+    {
+      "type": "text",
+      "content": "En vinterdag i 1903 sto fysikeren Kristian Birkeland i laboratoriet sitt i Kristiania og eksperimenterte med en elektromagnetisk kanon. Det gikk galt. En gnist slo over, og i stedet for en tynn lysbue spredte gnisten seg ut til en flat, glødende skive av ild. Birkeland hadde ikke lett etter noe slikt. Men han skjønte med en gang at han hadde funnet noe: en flamme han kunne styre med magneter, og som var varm nok til å rive lufta i stykker (Holtet, 2025)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Fysiker ved glødende lysbueovn i laboratorium rundt år 1903",
+      "caption": "Birkelands lysbue var egentlig et uhell. Den ble starten på norsk storindustri."
+    },
+    {
+      "type": "header",
+      "text": "Norge hadde ingen kull"
+    },
+    {
+      "type": "text",
+      "content": "For å forstå hvorfor den flammen betydde så mye, må vi se på hva Norge manglet. [Den industrielle revolusjonen](/historie/industriell-revolusjon/industriell-revolusjon) i Storbritannia gikk på kull. Kull fyrte dampmaskinene, dampmaskinene drev fabrikkene, og fabrikkene gjorde landet rikt. Norge hadde nesten ikke kull i bakken. Vi hadde fisk, skog og stein, og vi solgte det meste rått til andre land. De foredlet varene og tjente mest på dem."
+    },
+    {
+      "type": "text",
+      "content": "Resultatet var fattigdom. Mellom 1850 og 1900 pakket hundretusener av nordmenn kofferten og reiste over havet fordi det ikke fantes arbeid hjemme. Du kan lese mer om dem i artikkelen om [utvandringen til Amerika](/historie/norgeshistorie/utvandringen-til-amerika). I 1870 levde bare rundt fem prosent av befolkningen av industri (Myhre, 2015). Norge var et jordbruksland i utkanten av Europa."
+    },
+    {
+      "type": "text",
+      "content": "Men vi hadde én ting ingen andre i Europa hadde like mye av: bratte elver med mye vann. I hundrevis av år hadde fossen bare vært støy og fare. Den kunne drive ei kvern eller ei sag hvis du bygde rett ved sida av den, men lenger rakk ikke kraften."
+    },
+    {
+      "type": "header",
+      "text": "Fossen blir til kraft"
+    },
+    {
+      "type": "text",
+      "content": "Så kom [elektrisiteten](/historie/teknologi-og-hverdagsliv/elektrisiteten). Med generator og kraftlinje kunne vannet i fossen gjøres om til strøm, og strømmen kunne sendes dit du ville ha den. Plutselig var et vilt vassdrag høyt oppe i fjellet blitt verdt penger. Rundt år 1900 fantes det allerede omtrent 600 elektriske anlegg i Norge, de fleste knyttet til en fabrikk eller en gruve (Dørum, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Det som gjorde norske fosser så gode, var ikke at det rant mye vann i dem. Det var fallhøyden. Jo lenger vannet faller, jo hardere treffer det turbinen. Et fjellvann som ligger 300 meter over dalen er derfor et kraftlager: det samler smeltevann om våren og kan tappes jevnt resten av året. Et slikt oppdemt fjellvann kalles et magasin. I mikrospillet under bygger du hele anlegget selv og kjenner på hvor fort magasinet tømmes hvis du åpner luka for mye."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "fossekraftverket-3d"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Mannen som fanget lufta"
+    },
+    {
+      "type": "text",
+      "content": "Kristian Birkeland (1867-1917) var mest kjent som nordlysforsker. Men lysbuen fra uhellet i 1903 kunne brukes til noe helt annet. Lufta rundt oss er nesten fire femdeler nitrogen, og nitrogen er akkurat det plantene trenger for å vokse. Problemet var at nitrogenet i lufta sitter fast i molekyler som planter ikke får tak i. Birkelands flamme var varm nok til å bryte dem opp (Holtet, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Birkeland var forsker og hadde ikke penger til å bygge fabrikker. Det hadde derimot ingeniøren Sam Eyde (1866-1940). Eyde hadde allerede kjøpt opp rettighetene til flere store fossefall og lette etter noe å bruke kraften til. De to møtte hverandre i et selskap i 1903, og samarbeidet startet nesten med en gang (Grimnes & Rabben, 2025). Metoden deres fikk navnet Birkeland-Eydes metode: bruk enorme mengder strøm til å lage kunstgjødsel av lufta."
+    },
+    {
+      "type": "text",
+      "content": "Eyde stiftet Elektrokemisk, i dag kjent som Elkem, 2. januar 1904, og Norsk Hydro 2. desember 1905. Han var generaldirektør i Hydro fra 1905 til 1917 (Grimnes & Rabben, 2025). Verdens første fabrikk for kunstgjødsel kom i drift på Notodden i 1905. Produktet ble hetende norgessalpeter, og det ble solgt til bønder over hele verden. Ei enda større fabrikk ble bygd på Rjukan, der første byggetrinn sto ferdig i 1912 og andre i 1916. For å skaffe fabrikkene strøm bygde Hydro ut hele Vestfjorddalen, blant annet kraftstasjonen Vemork, som ble Norges største (Bryhn, Gram & Meyer, 2025)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Kraftstasjon med rørgate ned bratt fjellside i norsk dal",
+      "caption": "Rørgata på Rjukan førte vannet flere hundre meter ned fjellsida og inn i turbinene."
+    },
+    {
+      "type": "text",
+      "content": "På noen få år vokste det fram hele byer der det før hadde vært stille fjelldaler. Rjukan, Odda og Sarpsborg fikk fabrikker, arbeiderboliger, butikker og skoler fordi det var kraft der. Antallet folk som jobbet i fabrikk, gruve eller på anlegg steg fra rundt 250 000 i 1875 til omtrent 650 000 i 1920 (Dørum, 2026). Norge hadde blitt et industriland."
+    },
+    {
+      "type": "header",
+      "text": "Utenlandske penger bygde Norge"
+    },
+    {
+      "type": "text",
+      "content": "Et kraftverk koster svært mye å bygge, og Norge var fattig. Pengene måtte derfor komme utenfra. Eyde hentet dem hos den svenske Wallenberg-familien og banken deres, hos den franske banken Paribas, og fra 1906 også gjennom et samarbeid med det tyske kjemiselskapet BASF (Grimnes & Rabben, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Det gikk fort. I 1909 kontrollerte utlendinger 39 prosent av alle norske industriaksjeselskaper. I bergverk eide de 80 prosent, og i den kraftkrevende industrien hele 85 prosent (Dørum, 2026). Norge hadde nettopp løst seg fra Sverige i 1905, og mange var redde for at landet holdt på å bli kjøpt opp av utlendinger med en gang det var blitt fritt."
+    },
+    {
+      "type": "header",
+      "text": "Hvem skal eie fossen?"
+    },
+    {
+      "type": "text",
+      "content": "Her sto Stortinget overfor et ekte dilemma. Sa du nei til utenlandske penger, ble fossene liggende ubrukte, og folk fortsatte å reise til Amerika. Sa du ja uten regler, ville kraften og overskuddet tilhøre selskaper i Stockholm, Paris og Berlin for alltid. Prøv deg selv i valget de sto i:"
+    },
+    {
+      "type": "component",
+      "name": "Fossevalget",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Løsningen ble en mellomvei, og den kom i to trinn. Først kom en midlertidig lov i 1906 som raskt stanset det frie salget av fossefall. Den ble kalt panikkloven, fordi den ble hastet gjennom mens oppkjøpene pågikk (Askheim, 2024). Deretter vedtok Stortinget de faste konsesjonslovene i 1909. En konsesjon er en tillatelse fra staten: du får lov til å bruke noe som tilhører fellesskapet, på bestemte vilkår. Venstre-politikeren Gunnar Knudsen var en av dem som kjempet hardest for lovene (Askheim, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Det viktigste vilkåret het hjemfall. Hjemfallsrett vil si at staten får overta anlegget uten å betale noe når tillatelsen løper ut. Private selskaper fikk konsesjon i 60 år. De kunne bygge, drive og tjene penger i alle disse årene, men når tida var ute, gikk både fossen og kraftverket til staten gratis (Reusch, Eriksen & Rosvold, 2025). Tenk på det som å leie bort et jorde: den som leier får dyrke det i mange år, men til slutt får du både jordet og låven han bygde på det."
+    },
+    {
+      "type": "header",
+      "text": "Slik ser det ut i dag"
+    },
+    {
+      "type": "text",
+      "content": "Ordningen holdt i nesten hundre år. I 2007 slo EFTA-domstolen fast at det var urettferdig at bare private eiere måtte gi fra seg anleggene, mens kommuner og fylker slapp. Året etter, i 2008, svarte Stortinget med å gjøre vannkraften offentlig eid: nye konsesjoner gis ikke lenger til private, private kan eie inntil en tredel av et offentlig eid anlegg, og de kan leie i inntil 15 år (Reusch, Eriksen & Rosvold, 2025). Selve konsesjonsplikten gjelder fortsatt, og loven heter i dag vannfallrettighetsloven (Askheim, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Norge tjente altså penger to ganger på den samme fossen. Først fordi utenlandsk kapital bygde den ut da vi ikke hadde råd selv, og siden fordi vi hadde skrevet inn i loven at den skulle bli vår. Da [oljealderen](/historie/norge-i-moderne-tid/oljealderen) startet på 1970-tallet, hadde Norge allerede lang erfaring med å slippe utlendinger til uten å gi fra seg eierskapet. Erfaringen fra fossene ble brukt på nytt i Nordsjøen."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvorfor kunne ikke Norge industrialisere seg på samme måte som Storbritannia? Svaret står i avsnittet «Norge hadde ingen kull».",
+          "Hva var det Kristian Birkeland oppdaget i 1903, og hva kunne oppdagelsen brukes til?",
+          "Hvor og når åpnet verdens første kunstgjødselfabrikk, og hvem sto bak den?",
+          "Forklar med egne ord hva hjemfallsrett betyr."
+        ],
+        "reflekter": [
+          "Teksten sier at fallhøyden var viktigere enn vannmengden. Forklar hvorfor et lite fjellvann høyt oppe kan gi mer kraft enn ei stor elv i flatt landskap.",
+          "Hvorfor ble loven fra 1906 kalt panikkloven? Hva var politikerne redde for?",
+          "Stortinget kunne valgt å forby alt salg av fossefall til utlendinger. Forklar hva Norge da ville tapt, og hva vi ville vunnet.",
+          "Både i det interaktive valget og i mikrospillet må du finne en balanse. Hva er balansen i hvert av dem, og hva har de to til felles?"
+        ],
+        "gaaVidere": [
+          "Finn ut om det ligger et vannkraftverk i nærheten av der du bor. Når ble det bygd, og hvem eier det i dag?",
+          "Diskuter i klassen: bør naturressurser som vannkraft, olje og fisk alltid eies av fellesskapet, eller kan private eie dem like godt? Bruk argumenter fra artikkelen.",
+          "Skriv et kort leserinnlegg fra 1908, enten som en bonde i Telemark som ønsker fabrikken velkommen, eller som en stortingsmann som vil verne fossene."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvorfor ble fossefallene plutselig verdt store penger rundt år 1900?",
+            "options": [
+              "Fordi det ble oppdaget gull i norske elver",
+              "Fordi elektrisiteten gjorde det mulig å sende kraften fra fossen dit man ville",
+              "Fordi det ble forbudt å bruke kull i Europa",
+              "Fordi fossene ble brukt til drikkevann"
+            ],
+            "answer": 1,
+            "explanation": "Før elektrisiteten måtte fabrikken stå rett ved fossen. Med generator og kraftlinje kunne kraften sendes, og da ble selv en foss langt inne i fjellet verdifull."
+          },
+          {
+            "question": "Hva laget Norsk Hydro på Notodden og Rjukan?",
+            "options": [
+              "Aluminium",
+              "Papir og cellulose",
+              "Kunstgjødsel laget av nitrogen fra lufta",
+              "Stålskinner til jernbanen"
+            ],
+            "answer": 2,
+            "explanation": "Birkeland-Eydes metode brukte en elektrisk lysbue til å binde nitrogenet i lufta. Produktet, norgessalpeter, ble solgt som gjødsel over hele verden."
+          },
+          {
+            "question": "Hva betyr hjemfallsrett?",
+            "options": [
+              "At arbeiderne fikk gratis bolig ved fabrikken",
+              "At staten får overta anlegget uten å betale når konsesjonen løper ut",
+              "At utlendinger ikke fikk kjøpe foss i det hele tatt",
+              "At kommunen fikk skatt av all strømmen som ble solgt"
+            ],
+            "answer": 1,
+            "explanation": "Private fikk konsesjon i 60 år. Etter det gikk både fossen og kraftverket til staten gratis. Slik fikk Norge bygd ut kraften med utenlandske penger og beholdt den likevel."
+          },
+          {
+            "question": "Hvor stor del av de norske industriaksjeselskapene kontrollerte utlendinger i 1909?",
+            "options": [
+              "4 prosent",
+              "39 prosent",
+              "62 prosent",
+              "91 prosent"
+            ],
+            "answer": 1,
+            "explanation": "39 prosent av industriaksjeselskapene, 80 prosent av bergverkene og hele 85 prosent av den kraftkrevende industrien. Det var nettopp denne utviklingen konsesjonslovene skulle bremse."
+          },
+          {
+            "question": "Hva skjedde med hjemfallsordningen i 2007 og 2008?",
+            "options": [
+              "Den ble utvidet til også å gjelde oljefelt",
+              "EFTA-domstolen underkjente forskjellsbehandlingen, og Stortinget gjorde vannkraften offentlig eid",
+              "Den ble opphevet, og alle kraftverk ble solgt",
+              "Konsesjonstiden ble forlenget fra 60 til 120 år"
+            ],
+            "answer": 1,
+            "explanation": "EFTA-domstolen mente det stred mot EØS-avtalen at bare private måtte gi fra seg anleggene. I 2008 svarte Stortinget med å slå fast at vannkraften skal være offentlig eid."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Askheim, L. O. (2023). *Konsesjonslovene - opphevet*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/konsesjonslovene_-_opphevet](https://snl.no/konsesjonslovene_-_opphevet)",
+          "Askheim, L. O. (2024). *Vannfallrettighetsloven*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/vannfallrettighetsloven](https://snl.no/vannfallrettighetsloven)",
+          "Bryhn, R., Gram, T. & Meyer, F. (2025). *Norsk Hydro*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Norsk_Hydro](https://snl.no/Norsk_Hydro)",
+          "Dørum, K. (2026). *Norsk industrihistorie før 1940*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/norsk_industrihistorie_før_1940](https://snl.no/norsk_industrihistorie_f%C3%B8r_1940)",
+          "Grimnes, O. K. & Rabben, M. B. (2025). *Sam Eyde*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Sam_Eyde](https://snl.no/Sam_Eyde)",
+          "Holtet, J. A. (2025). *Kristian Birkeland*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Kristian_Birkeland](https://snl.no/Kristian_Birkeland)",
+          "Myhre, J. E. (2015). *Norge blir et industriland*. Norgeshistorie.no, Universitetet i Oslo. Hentet 26.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/industrialisering-og-demokrati/1504-norge-blir-et-industriland.html)",
+          "Reusch, M., Eriksen, G. & Rosvold, K. A. (2025). *Hjemfallsrett*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/hjemfallsrett](https://snl.no/hjemfallsrett)"
+        ]
+      }
+    }
+  ],
+  "timeline": [],
+  "factChecked": "2026-08-26"
+}

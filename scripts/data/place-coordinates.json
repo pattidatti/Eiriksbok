@@ -814,16 +814,16 @@
       "count": 73
     },
     {
+      "tag": "teknologi",
+      "count": 69
+    },
+    {
       "tag": "krig",
       "count": 69
     },
     {
       "tag": "økonomi",
       "count": 69
-    },
-    {
-      "tag": "teknologi",
-      "count": 67
     },
     {
       "tag": "filosofi",
@@ -1010,6 +1010,10 @@
       "count": 14
     },
     {
+      "tag": "industri",
+      "count": 14
+    },
+    {
       "tag": "nasjonalisme",
       "count": 14
     },
@@ -1035,10 +1039,6 @@
     },
     {
       "tag": "rettigheter",
-      "count": 12
-    },
-    {
-      "tag": "industri",
       "count": 12
     },
     {
@@ -1206,6 +1206,10 @@
       "count": 8
     },
     {
+      "tag": "okonomi",
+      "count": 8
+    },
+    {
       "tag": "slaveri",
       "count": 8
     },
@@ -1327,10 +1331,6 @@
     },
     {
       "tag": "kunst",
-      "count": 6
-    },
-    {
-      "tag": "okonomi",
       "count": 6
     },
     {
@@ -1567,6 +1567,10 @@
     },
     {
       "tag": "dynastier",
+      "count": 4
+    },
+    {
+      "tag": "vannkraft",
       "count": 4
     },
     {
@@ -2103,10 +2107,6 @@
     },
     {
       "tag": "mølle",
-      "count": 2
-    },
-    {
-      "tag": "vannkraft",
       "count": 2
     },
     {

@@ -7136,6 +7136,30 @@
       ]
     },
     {
+      "id": "fossekraften",
+      "title": "Fossekraften: da Norge fikk sin egen industri",
+      "description": "Norge manglet kull, men hadde bratte elver. Elektrisiteten gjorde fossen til industri, og konsesjonslovene sørget for at den ble værende norsk.",
+      "startDate": 1903,
+      "endDate": 1917,
+      "displayDate": "1903-1917",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "industriell-revolusjon",
+      "link": "/historie/industriell-revolusjon/fossekraften",
+      "tags": [
+        "norge",
+        "industri",
+        "vannkraft",
+        "teknologi",
+        "okonomi"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "union-dissolution-1905",
       "title": "Unionsoppløsningen",
       "description": "Sverige og Norge skiller lag fredelig etter Karlstad-forhandlingene.",

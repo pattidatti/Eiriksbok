@@ -156,6 +156,7 @@ const DenneVerdenFoerst = lazy(() => import('./content/interactive/DenneVerdenFo
 const Signeringsbordet = lazy(() => import('./content/interactive/Signeringsbordet').then(m => ({ default: m.Signeringsbordet })));
 const VektskaalenPaaDommensDag = lazy(() => import('./content/interactive/VektskaalenPaaDommensDag').then(m => ({ default: m.VektskaalenPaaDommensDag })));
 const Fosterkammeret = lazy(() => import('./content/interactive/Fosterkammeret').then(m => ({ default: m.Fosterkammeret })));
+const Fossevalget = lazy(() => import('./content/interactive/Fossevalget').then(m => ({ default: m.Fossevalget })));
 const TreGraderAvHerlighet = lazy(() => import('./content/interactive/TreGraderAvHerlighet').then(m => ({ default: m.TreGraderAvHerlighet })));
 const HundreOgFortiFireTusen = lazy(() => import('./content/interactive/HundreOgFortiFireTusen').then(m => ({ default: m.HundreOgFortiFireTusen })));
 const SamsaraHjulet = lazy(() => import('./content/interactive/SamsaraHjulet').then(m => ({ default: m.SamsaraHjulet })));
@@ -642,6 +643,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Signeringsbordet,
     VektskaalenPaaDommensDag,
     Fosterkammeret,
+    Fossevalget,
     TreGraderAvHerlighet,
     HundreOgFortiFireTusen,
     SamsaraHjulet,
