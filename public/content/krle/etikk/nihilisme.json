@@ -31,7 +31,7 @@
         },
         {
             "type": "text",
-            "content": "Ordet nihilisme kommer fra det latinske ordet nihil, som betyr ingenting. En nihilist mener altså at noe vi tar for gitt, egentlig ikke finnes. Men det er viktig å skille mellom to former, for de spør om to ulike ting."
+            "content": "Ordet nihilisme kommer fra det latinske ordet nihil, som betyr ingenting (Netland, 2025). En nihilist mener altså at noe vi tar for gitt, egentlig ikke finnes. Men det er viktig å skille mellom to former, for de spør om to ulike ting."
         },
         {
             "type": "list",
@@ -42,7 +42,7 @@
         },
         {
             "type": "text",
-            "content": "Denne artikkelen handler mest om den siste. Eksistensiell nihilisme spør 'hvorfor lever vi?'. Moralsk nihilisme spør noe enda mer ubehagelig: finnes det i det hele tatt noe som heter rett og galt?"
+            "content": "Denne artikkelen handler mest om den siste. Eksistensiell nihilisme spør 'hvorfor lever vi?', og svarer at tilværelsen ikke har noen innebygd mening eller hensikt. Moralsk nihilisme spør noe enda mer ubehagelig: finnes det i det hele tatt noe som heter rett og galt? Svaret er nei - det finnes ingen objektive moralske verdier og sannheter (Netland, 2025; Pratt, u.å.)."
         },
         {
             "type": "header",
@@ -50,7 +50,7 @@
         },
         {
             "type": "text",
-            "content": "En moralsk nihilist sier ikke nødvendigvis at vi bør være slemme. Han sier noe mer grunnleggende: at en setning som 'det er galt å stjele' ikke er sann på samme måte som '2 pluss 2 er 4'. Når du sier at noe er galt, beskriver du egentlig bare en følelse du har, eller en regel samfunnet ditt har laget. Du peker ikke på et faktum om verden."
+            "content": "En moralsk nihilist sier ikke nødvendigvis at vi bør være slemme. Han sier noe mer grunnleggende: at en setning som 'det er galt å stjele' ikke er sann på samme måte som '2 pluss 2 er 4'. Moralsk nihilisme avviser at det finnes objektive moralske verdier og sannheter i det hele tatt, og regnes derfor som en form for amoralisme (Netland, 2025). Når du sier at noe er galt, beskriver du egentlig bare en følelse du har, eller en regel samfunnet ditt har laget. Du peker ikke på et faktum om verden."
         },
         {
             "type": "text",
@@ -65,7 +65,7 @@
             "name": "QuoteBlock",
             "props": {
                 "text": "Hvis Gud ikke finnes, er alt tillatt.",
-                "author": "Fjodor Dostojevskij, Brødrene Karamasov"
+                "author": "Kjent oppsummering av Ivan Karamasovs tanke i Dostojevskijs Brødrene Karamasov"
             }
         },
         {
@@ -74,11 +74,11 @@
         },
         {
             "type": "text",
-            "content": "Nihilismen ble for alvor et tema i Europa på 1800-tallet. I lang tid hadde mange ment at moralen kom fra Gud: Gud bestemte hva som var rett og galt, og derfor var det sant for alle. Men etter hvert som vitenskapen vokste og religionen mistet grepet om samfunnet, begynte folk å spørre seg hva som skjer med moralen hvis troen forsvinner."
+            "content": "Nihilismen ble for alvor et tema i Europa på 1800-tallet. Ordet slo gjennom med Ivan Turgenevs roman *Fedre og sønner* fra 1862, og ble knyttet til radikale russiske bevegelser (Netland, 2025). I lang tid hadde mange ment at moralen kom fra Gud: Gud bestemte hva som var rett og galt, og derfor var det sant for alle. Men etter hvert som vitenskapen vokste og religionen mistet grepet om samfunnet, begynte folk å spørre seg hva som skjer med moralen hvis troen forsvinner."
         },
         {
             "type": "text",
-            "content": "Filosofen [Friedrich Nietzsche](/krle/filosofi/nietzsche) fanget dette i den berømte setningen 'Gud er død'. Han mente ikke at en faktisk person hadde dødd. Han mente at troen på Gud ikke lenger kunne bære moralen vår. Nietzsche så på nihilismen som en stor fare: når det gamle grunnlaget faller, står vi igjen i et tomrom der ingenting lenger ser ut til å bety noe. Spørsmålet ble: hva gjør vi nå?"
+            "content": "Filosofen [Friedrich Nietzsche](/krle/filosofi/nietzsche) fanget dette i den berømte setningen 'Gud er død', som han skrev i *Den muntre vitenskapen* (Stølen, 2025). Han mente ikke at en faktisk person hadde dødd. Han mente at troen på Gud ikke lenger kunne bære moralen og meningen i samfunnet. Da Gud døde, ble skillet mellom godt og ondt noe menneskene selv hadde laget gjennom historien, ikke noe Gud hadde bestemt (Stølen, 2025). Nietzsche beskrev nihilismen som en dyp verdikrise i den moderne vestlige kulturen, og han så den både som en fare og som en nødvendig overgangsfase (Netland, 2025). Spørsmålet ble: hva gjør vi nå?"
         },
         {
             "type": "header",
@@ -122,9 +122,9 @@
         {
             "type": "list",
             "items": [
-                "Nietzsche: i stedet for å synke ned i tomheten bør mennesket skape sine egne verdier og leve etter dem med full kraft. Han kalte det å si ja til livet.",
-                "Jean-Paul Sartre og eksistensialismen: mennesket er fritt og ikke bundet av noen fasit. Men nettopp derfor er vi fullt ansvarlige for hvert valg vi tar. Friheten er både en gave og en tung byrde.",
-                "Albert Camus og absurdismen: livet er kanskje meningsløst, men vi kan likevel velge å bry oss, hjelpe andre og leve godt. Det er menneskets opprør mot tomheten."
+                "Nietzsche: i stedet for å synke ned i tomheten må mennesket selv bygge sine egne verdier og si ja til livet i stedet for å godta arvede tradisjoner (Stølen, 2025).",
+                "Jean-Paul Sartre og eksistensialismen: mennesket er fritt og ikke bundet av noen fasit, for eksistensen kommer før essensen. Vi slipper ikke unna å velge, og derfor er vi 'dømt til å være frie' og har fullt ansvar for hvordan vi lever (Netland & Winther, 2026).",
+                "Albert Camus og absurdismen: det absurde oppstår når menneskets trang til klarhet møter en tilværelse som ikke er fornuftig. Men vi kan likevel svare med nøktern erkjennelse, måtehold, medmenneskelighet og solidaritet (Christensen et al., 2025). Det er menneskets opprør mot tomheten."
             ]
         },
         {
@@ -167,7 +167,21 @@
         },
         {
             "type": "text",
-            "content": "Moralsk nihilisme er ikke en oppskrift på hvordan du bør leve. Den er mer som et speil som tvinger oss til å spørre hvorfor vi egentlig mener det vi mener. Kanskje finner du ut at verdiene dine trenger en bedre begrunnelse enn at sånn har det alltid vært. Kanskje ender du, som Nietzsche og Sartre, med å ta ansvar for å reise dine egne verdier. Uansett er det vanskelig å leve helt uten å tro at noe betyr noe. Selv det å bry seg er et valg vi kan ta. For mange er det nettopp der ekte etikk begynner: ikke når vi får verdiene utdelt, men når vi selv bestemmer oss for hva vi vil stå for."
+            "content": "Moralsk nihilisme er ikke en oppskrift på hvordan du bør leve. Den er mer som et speil som tvinger oss til å spørre hvorfor vi egentlig mener det vi mener. Kanskje finner du ut at verdiene dine trenger en bedre begrunnelse enn at sånn har det alltid vært. Kanskje ender du, som Nietzsche og Sartre, med å ta ansvar for å reise dine egne verdier. Ifølge Aho (2023) er kjernen hos Sartre nettopp at det ikke finnes noen unnskyldninger bak oss og ingen fasit foran oss. Uansett er det vanskelig å leve helt uten å tro at noe betyr noe. Selv det å bry seg er et valg vi kan ta. For mange er det nettopp der ekte etikk begynner: ikke når vi får verdiene utdelt, men når vi selv bestemmer oss for hva vi vil stå for."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aho, K. (2023). *Existentialism*. Stanford Encyclopedia of Philosophy. Hentet 26.08.2026 fra [plato.stanford.edu/entries/existentialism](https://plato.stanford.edu/entries/existentialism/)",
+                    "Christensen, B., Winther, T. O. & Uvsløkk, G. (2025). *Albert Camus*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Albert_Camus](https://snl.no/Albert_Camus)",
+                    "Netland, T. (2025). *nihilisme*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/nihilisme](https://snl.no/nihilisme)",
+                    "Netland, T. & Winther, T. O. (2026). *Jean-Paul Sartre*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Jean-Paul_Sartre](https://snl.no/Jean-Paul_Sartre)",
+                    "Pratt, A. (u.å.). *Nihilism*. Internet Encyclopedia of Philosophy. Hentet 26.08.2026 fra [iep.utm.edu/nihilism](https://iep.utm.edu/nihilism/)",
+                    "Stølen, T. (2025). *Friedrich Nietzsche*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/Friedrich_Nietzsche](https://snl.no/Friedrich_Nietzsche)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -213,5 +227,5 @@
         }
     ],
     "createdDate": "2026-06-16T09:00:00+02:00",
-    "lastUpdated": "2026-06-16T09:00:00+02:00"
+    "lastUpdated": "2026-08-26T00:00:00+02:00"
 }
