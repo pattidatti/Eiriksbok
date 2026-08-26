@@ -9,11 +9,12 @@
     "readTime": "15 min lesning",
     "category": "Eksamen",
     "details": [
-        "Eksamen har to deler: kortsvarsoppgaver og langsvarsoppgaver.",
-        "Kortsvarsoppgavene er obligatoriske og varierer fra noen setninger til ca. 250 ord.",
-        "Langsvarsoppgavene gir valgmuligheter, ofte 2 oppgaver på ca. 450 ord hver.",
-        "Sensor vurderer etter kompetansemål fra LK20.",
-        "Øv på gamle eksamensoppgaver for å bli kjent med formatet."
+        "Eksamen varer fem timer og er heldigital. Du leverer alle svarene i ett dokument.",
+        "Oppgavesettet har tre oppgaver, og alle tre skal besvares.",
+        "Oppgave 1 tester lesing: tre korte spørsmål til ett eller to tekstvedlegg.",
+        "Oppgave 2 er den lange skriveoppgaven (450-900 ord). Her velger du mellom a og b.",
+        "Oppgave 3 kobler lesing og skriving: en kortere tekst (250-350 ord) ut fra vedlegg.",
+        "Sensor vurderer etter kompetansemål fra LK20."
     ],
     "externalUrl": "https://www.udir.no/lk20/nor01-07/kompetansemaal-og-vurdering/kv920",
     "timeline": [],
@@ -29,12 +30,12 @@
         },
         {
             "type": "paragraph",
-            "text": "Skriftlig eksamen i norsk varer i fem timer. Du får et oppgavehefte med tekstvedlegg og flere oppgaver. Eksamen har to hoveddeler: kortsvarsoppgaver og langsvarsoppgaver. Kortsvarsoppgavene er obligatoriske og skal alle besvares. De varierer i lengde - noen krever bare 2-4 setninger, andre kan være opptil ca. 250 ord. Langsvarsoppgavene gir deg valgmuligheter. Det er ofte 2 langsvarsoppgaver på ca. 450 ord hver, der du kan velge mellom å skrive en saktekst (for eksempel en drøftende eller reflekterende tekst) eller en skapende tekst (for eksempel en novelle eller et dikt)."
+            "text": "Skriftlig eksamen i norsk varer i fem timer (Utdanningsdirektoratet, u.å.-b). Oppgavesettet består av tre oppgaver, og til sammen skal de vise hele den norskfaglige kompetansen din (Skrivesenteret, 2026). Alle tre oppgavene skal besvares. Oppgave 1 tester lesing: du får ett eller to tekstvedlegg og tre spørsmål med korte svar. Oppgave 2 er den lange skriveoppgaven, der du velger mellom to alternativer (a eller b) og skriver 450-900 ord. Oppgave 3 kobler lesing og skriving: du skriver en kortere sammenhengende tekst på 250-350 ord ut fra vedlegg. Eksamen er heldigital, og du leverer alle svarene i ett dokument (Skrivesenteret, 2026)."
         },
         {
             "type": "info_box",
             "title": "Praktisk info",
-            "content": "Varighet: 5 timer. Du får et oppgavehefte med tekstvedlegg og flere oppgavealternativer. Hjelpemidler: Ordbok (bokmål/nynorsk), rettskrivningsordbok. Du får vite at du er trukket ut til eksamen i norsk, men ser ikke selve oppgavene før eksamensdagen. Tips: Du kan søke i tidligere eksamensoppgaver på sokeresultat.udir.no for å bli kjent med formatet."
+            "content": "Varighet: 5 timer. Eksamen er heldigital, og du leverer alle svarene i ett dokument. Oppgavesettet har tre oppgaver med tekstvedlegg. Hjelpemidler: ordlister på nett, som ordbokene.no og lexin.no. Skolen din sier fra nøyaktig hvilke hjelpemidler som er tillatt det året du går opp. Du får vite at du er trukket ut til eksamen i norsk, men ser ikke selve oppgavene før eksamensdagen. Tips: Du kan søke i tidligere eksamensoppgaver på sokeresultat.udir.no for å bli kjent med formatet."
         },
         {
             "type": "header",
@@ -43,7 +44,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Hver eneste oppgave på eksamen er designet for å teste kompetansemål fra læreplanen (LK20). Når du forstår hvilke mål som testes, forstår du også hva sensor leter etter i svaret ditt. Her er de viktigste kompetansemålene for skriftlig eksamen:"
+            "text": "Hver eneste oppgave på eksamen er laget for å teste kompetansemål fra læreplanen i norsk (LK20). Når du forstår hvilke mål som testes, forstår du også hva sensor leter etter i svaret ditt. Her er de viktigste kompetansemålene etter 10. trinn for skriftlig eksamen, slik de står i læreplanen (Utdanningsdirektoratet, u.å.-a):"
         },
         {
             "type": "component",
@@ -86,12 +87,12 @@
         },
         {
             "type": "header",
-            "text": "Kortsvarsoppgaven",
+            "text": "Oppgave 1: Lese og svare kort",
             "level": 2
         },
         {
             "type": "paragraph",
-            "text": "Kortsvarsoppgavene er den delen av eksamen der du viser at du kan lese en tekst grundig og si noe smart om den. Du får tekster (dikt, novelleutdrag, artikler eller visuelle tekster) og konkrete spørsmål. Alle kortsvarsoppgavene er obligatoriske. Lengden varierer - noen oppgaver krever bare 2-4 setninger, andre kan være opptil ca. 250 ord. Det viktigste er at du ikke bare gjenforteller hva teksten handler om. Du skal analysere og tolke, altså forklare hvordan teksten bygger opp sitt budskap gjennom virkemidler."
+            "text": "Oppgave 1 er den delen av eksamen der du viser at du kan lese en tekst grundig og si noe smart om den. Du får ett eller to tekstvedlegg - det kan være dikt, novelleutdrag, artikler eller visuelle tekster - og tre spørsmål til dem. Svarene skal være korte. På noen deler holder det med en til to setninger, mens andre deler legger opp til 100-150 ord (Skrivesenteret, 2026). Det viktigste er at du ikke bare gjenforteller hva teksten handler om. Du skal analysere og tolke, altså forklare hvordan teksten bygger opp budskapet sitt gjennom virkemidler."
         },
         {
             "type": "component",
@@ -109,7 +110,7 @@
         },
         {
             "type": "paragraph",
-            "text": "En god oppskrift for kortsvaret: Start med å identifisere sjangeren. Finn 2-3 virkemidler og forklar hvilken effekt de har. Knytt virkemidlene til tema og budskap. Bruk alltid sitater fra teksten som bevis."
+            "text": "En god oppskrift for de korte svarene: Start med å identifisere sjangeren. Finn 2-3 virkemidler og forklar hvilken effekt de har. Knytt virkemidlene til tema og budskap. Bruk alltid sitater fra teksten som bevis."
         },
         {
             "type": "info_box",
@@ -118,12 +119,12 @@
         },
         {
             "type": "header",
-            "text": "Langsvarsoppgaven",
+            "text": "Oppgave 2: Den lange skriveoppgaven",
             "level": 2
         },
         {
             "type": "paragraph",
-            "text": "Det er ofte 2 langsvarsoppgaver på eksamen, og hver skal være ca. 450 ord. Her velger du mellom å skrive en saktekst eller en skapende tekst. Valget handler om hva du er sterkest på og hva du har best tid til. Begge alternativene kan gi toppkarakter."
+            "text": "Oppgave 2 er den lengste teksten du skriver på eksamen: 450-900 ord, altså rundt en til to sider. Her får du to alternativer, a og b, og du velger ett av dem (Skrivesenteret, 2026). Det ene alternativet er gjerne en skapende tekst, det andre en saktekst der du skal informere, argumentere eller reflektere. Valget handler om hva du er sterkest på og hva du har best tid til. Begge alternativene kan gi toppkarakter."
         },
         {
             "type": "header",
@@ -142,7 +143,7 @@
                 "items": [
                     {
                         "bad": "Mange unge bruker sosiale medier. Det finnes fordeler og ulemper. Noen mener det er bra, andre mener det er dårlig. Det er viktig at vi diskuterer dette.",
-                        "good": "Sosiale medier gir unge en plattform for selvuttrykk og deltakelse i demokratiske samtaler. Et reelt motargument er at algoritmene systematisk favoriserer ekstremt innhold, noe som forskning fra MIT viser øker polarisering blant tenåringer. Etter en samlet vurdering er løsningen ikke å forby sosiale medier, men å regulere algoritmene, fordi selve plattformene har en demokratisk verdi som overstiger risikoen.",
+                        "good": "Sosiale medier gir unge en plattform for selvuttrykk og deltakelse i demokratiske samtaler. Et reelt motargument er at algoritmene systematisk favoriserer innhold som vekker sterke følelser, og at det trekker debatten mot ytterpunktene. Etter en samlet vurdering er løsningen ikke å forby sosiale medier, men å regulere algoritmene, fordi selve plattformene har en demokratisk verdi som overstiger risikoen.",
                         "why": "Det første svaret lister opp at det finnes ulike syn, men tar aldri stilling. Det andre bruker PAMK-modellen: påstand, argument, motargument og konklusjon."
                     }
                 ]
@@ -169,6 +170,15 @@
         },
         {
             "type": "header",
+            "text": "Oppgave 3: Lese og skrive i ett",
+            "level": 2
+        },
+        {
+            "type": "paragraph",
+            "text": "Den siste oppgaven kobler de to første. Du får ett eller flere tekstvedlegg - skjønnlitteratur, sakprosa eller begge deler - og skriver en sammenhengende tekst på 250-350 ord ut fra dem (Skrivesenteret, 2026). Denne oppgaven er kortere enn oppgave 2, men den krever at du både leser nøyaktig og skriver ryddig. Pass på tiden: mange bruker for lenge på oppgave 2 og får det travelt her."
+        },
+        {
+            "type": "header",
             "text": "Slik forbereder du deg",
             "level": 2
         },
@@ -180,7 +190,7 @@
             "type": "list",
             "items": [
                 "Gjør gamle eksamensoppgaver. Udir har et arkiv med tidligere oppgaver der du kan trene på realistiske oppgaver.",
-                "Øv på å analysere ukjente tekster under tidspress. Velg en tekst fra biblioteket, sett en klokke på 45 minutter, og skriv et kortsvar.",
+                "Øv på å analysere ukjente tekster under tidspress. Velg en tekst fra biblioteket, sett en klokke på 45 minutter, og svar kort på tre spørsmål til den.",
                 "Repeter de viktigste virkemidlene: metafor, kontrast, symbol, synsvinkel, gjentakelse. Øv på å forklare effekten, ikke bare navngi dem.",
                 "Tren på drøfting med PAMK-modellen (påstand, argument, motargument, konklusjon).",
                 "Øv på skapende skriving: velg et tema og skriv en novelle på 60 minutter. Tving deg selv til å bruke in medias res eller en bevisst synsvinkel.",
@@ -201,7 +211,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Sensor bruker kjennetegn på måloppnåelse fra Utdanningsdirektoratet. Disse er delt inn i nivåer (karakter 2, 4 og 6). Her er de viktigste kategoriene slik at du vet nøyaktig hva som skiller de ulike karakternivåene:"
+            "text": "Sensor bruker kjennetegn på måloppnåelse fra Utdanningsdirektoratet. Disse er delt inn i nivåer, med beskrivelser for lav kompetanse (karakter 2), god kompetanse (karakter 4) og høy kompetanse (karakter 6) (Utdanningsdirektoratet, 2020). Her er de viktigste kategoriene, slik at du vet nøyaktig hva som skiller karakternivåene:"
         },
         {
             "type": "component",
@@ -458,11 +468,11 @@
         {
             "type": "list",
             "items": [
-                "1. Les gjennom alle oppgavene grundig (15 min). Hvilke langsvarsoppgaver passer best for deg?",
-                "2. Start med kortsvarsoppgavene. De er obligatoriske og relativt korte (30-45 min totalt).",
-                "3. Les gjennom kortsvarene dine. Har du sitater? Har du koblet virkemidler til tema?",
-                "4. Gå over til langsvarsoppgavene. Lag en rask disposisjon for hver: innledning, hoveddel, avslutning.",
-                "5. Skriv langsvarene (ca. 450 ord hver). Ikke bruk for lang tid på innledningene.",
+                "1. Les gjennom alle tre oppgavene grundig (15 min). Hvilket alternativ i oppgave 2 passer best for deg, a eller b?",
+                "2. Start med oppgave 1. Svarene er korte, så sett av 30-45 minutter totalt.",
+                "3. Les gjennom svarene dine på oppgave 1. Har du sitater? Har du koblet virkemidler til tema?",
+                "4. Gå over til oppgave 2. Lag en rask disposisjon: innledning, hoveddel, avslutning.",
+                "5. Skriv oppgave 2 (450-900 ord). Ikke bruk for lang tid på innledningen. Sett så av tid til oppgave 3 (250-350 ord).",
                 "6. Skriv avslutning/konklusjon. I saktekst: konkluder tydelig. I novelle: sørg for et poeng.",
                 "7. Spar minst 30 minutter til gjennomlesing. Se etter: rettskriving, tegnsetting, tekstbinding.",
                 "8. Sjekk at du har kildeliste (saktekst) og at sjangertrekk er på plass."
@@ -473,7 +483,7 @@
             "name": "ScenarioRoleplay",
             "props": {
                 "title": "Tidspress på eksamen",
-                "intro": "Du har skrevet kortsvaret og er godt i gang med langsvaret. Klokken viser at du har 1 time igjen, men du er bare 2/3 ferdig med teksten. Hva gjør du?",
+                "intro": "Du har svart på oppgave 1 og er godt i gang med den lange skriveoppgaven. Klokken viser at du har 1 time igjen, men du er bare 2/3 ferdig med teksten. Hva gjør du?",
                 "startId": "start",
                 "scenarios": [
                     {
@@ -709,8 +719,8 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor lenge varer skriftlig eksamen i norsk, og hvilke to hoveddeler består den av?",
-                    "Hva er forskjellen på kortsvarsoppgavene og langsvarsoppgavene når det gjelder omfang og valgmuligheter?",
+                    "Hvor lenge varer skriftlig eksamen i norsk, og hvor mange oppgaver består oppgavesettet av?",
+                    "Hva er forskjellen på oppgave 1, oppgave 2 og oppgave 3 når det gjelder lengde og valgmuligheter?",
                     "Hva står bokstavene i PAMK-modellen for, og når skal du bruke denne modellen?",
                     "Hvilke hjelpemidler får du lov til å bruke på eksamen?"
                 ],
@@ -721,27 +731,39 @@
                     "Når du har én time igjen og bare er to tredjedeler ferdig, anbefaler artikkelen å kutte ned og skrive en kortere, men ferdig tekst. Begrunn hvorfor en ferdig tekst vurderes bedre enn en lengre, uferdig tekst."
                 ],
                 "gaaVidere": [
-                    "Velg en kort tekst fra biblioteket, sett klokken på 45 minutter, og skriv et kortsvar der du finner minst to virkemidler og forklarer effekten deres. Bruk sitat som bevis.",
+                    "Velg en kort tekst fra biblioteket, sett klokken på 45 minutter, og skriv et kort svar der du finner minst to virkemidler og forklarer effekten deres. Bruk sitat som bevis.",
                     "Skriv en kort drøftende tekst på cirka 200 ord om en påstand du er opptatt av. Bruk PAMK-modellen, og pass på at du lander på en tydelig konklusjon.",
                     "Finn en tidligere eksamensoppgave hos Udir, del den opp i alle leddene den består av, og skriv ned hva sensor leter etter i hvert enkelt ledd."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Skrivesenteret. (2026). *Norskeksamen på 10. trinn*. Nasjonalt senter for skriveopplæring og skriveforsking, NTNU. Hentet 26.08.2026 fra [skrivesenteret.no](https://skrivesenteret.no/ressurs/ny-norskeksamen-pa-10-trinn/)",
+                    "Utdanningsdirektoratet. (2020). *Kjennetegn på måloppnåelse - norsk 10. trinn*. Hentet 26.08.2026 fra [udir.no](https://www.udir.no/laring-og-trivsel/lareplanverket/kjennetegn/kjennetegn-pa-maloppnaelse-norsk-10.-trinn/)",
+                    "Utdanningsdirektoratet. (u.å.-a). *Kompetansemål etter 10. trinn - Læreplan i norsk (NOR01-07)*. Hentet 26.08.2026 fra [udir.no](https://www.udir.no/lk20/nor01-07/kompetansemaal-og-vurdering/kv920)",
+                    "Utdanningsdirektoratet. (u.å.-b). *NOR0218 - Norsk hovedmål 10. årstrinn, skriftlig*. Eksamensplan. Hentet 26.08.2026 fra [eksamensplan.udir.no](https://eksamensplan.udir.no/eksamen/NOR0218)"
                 ]
             }
         }
     ],
     "quiz": [
         {
-            "question": "Hva er de to hoveddelene av skriftlig eksamen i norsk?",
+            "question": "Hvor mange oppgaver består oppgavesettet på skriftlig eksamen i norsk av?",
             "options": [
-                "Grammatikkoppgaver og stiloppgaver",
-                "Kortsvarsoppgaver og langsvarsoppgaver",
-                "Lytteoppgaver og skriveoppgaver",
-                "Flervalgsoppgaver og tekstoppgaver"
+                "Én stor skriveoppgave",
+                "To oppgaver: ett kortsvar og ett langsvar",
+                "Tre oppgaver, og alle skal besvares",
+                "Fem oppgaver du velger tre av"
             ],
-            "answer": 1,
-            "explanation": "Eksamen består av obligatoriske kortsvarsoppgaver (analyse/tolkning) og langsvarsoppgaver med valgmuligheter (saktekst eller skapende skriving)."
+            "answer": 2,
+            "explanation": "Oppgavesettet har tre oppgaver. Oppgave 1 tester lesing med korte svar, oppgave 2 er den lange skriveoppgaven der du velger mellom a og b, og oppgave 3 kobler lesing og skriving. Alle tre skal besvares."
         },
         {
-            "question": "Hva er den viktigste forskjellen mellom et referat og en analyse i kortsvaret?",
+            "question": "Hva er den viktigste forskjellen mellom et referat og en analyse i de korte svarene?",
             "options": [
                 "En analyse er lengre enn et referat",
                 "En analyse gjengir handlingen, et referat tolker",
@@ -792,5 +814,6 @@
         "analyse",
         "vurdering"
     ],
-    "createdDate": "2026-03-15T00:00:00Z"
+    "createdDate": "2026-03-15T00:00:00Z",
+    "lastUpdated": "2026-08-26T00:00:00.000Z"
 }

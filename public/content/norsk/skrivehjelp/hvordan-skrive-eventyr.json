@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Eventyr er en sjanger med faste rammer og mye magi. Her er oppskriften på et godt eventyr."
+            "content": "Eventyr er en sjanger med faste rammer og mye magi. De samme grepene går igjen fra eventyr til eventyr, og det er nettopp det som gjør sjangeren lett å skrive i (Esborg et al., 2026). Her er oppskriften på et godt eventyr."
         },
         {
             "type": "header",
@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Start alltid med 'Det var en gang'. Introduser helten (Askeladden?) og målet (prinsessen og halve kongeriket?)."
+            "content": "De aller fleste eventyr begynner med «Det var en gang» (Esborg et al., 2026). Start der du også. Så introduserer du helten - for eksempel Askeladden - og målet helten vil nå. I mange norske eventyr er belønningen kongsdatteren og halve riket (Store norske leksikon, 2024a)."
         },
         {
             "type": "header",
@@ -24,7 +24,7 @@
         },
         {
             "type": "text",
-            "content": "Helten må gjennom tre prøvelser. De to første kan gå galt, eller brødrene feiler, men den tredje gangen lykkes helten."
+            "content": "Ting skjer gjerne tre ganger i et eventyr. Mange norske eventyr handler om tre brødre som må gjennom de samme prøvene, og bare den yngste klarer dem (Esborg et al., 2026). De to eldste brødrene heter ofte Per og Pål. De har verken mer hell eller flere evner enn folk flest, og de vinner aldri prinsessen (Store norske leksikon, 2024b). Bruk det samme mønsteret: la det gå galt to ganger før helten lykkes den tredje."
         },
         {
             "type": "header",
@@ -32,7 +32,7 @@
         },
         {
             "type": "text",
-            "content": "Helten møter ofte en magisk hjelper. Det kan være en gammel kone eller et dyr som gir gode råd eller magiske gjenstander."
+            "content": "Helten møter ofte en magisk hjelper underveis. I eventyrene finnes det både overnaturlige vesener og personer med magiske evner, og helten løser oppgavene sine ved hjelp av dem (Esborg et al., 2026). La hjelperen gi helten noe konkret: et godt råd, eller en gjenstand helten får bruk for senere."
         },
         {
             "type": "header",
@@ -40,28 +40,39 @@
         },
         {
             "type": "text",
-            "content": "Det gode vinner alltid over det onde. Og de lever lykkelig alle sine dager."
+            "content": "Eventyret har sin egen logikk: de gode får sin lønn, og de onde blir straffet (Esborg et al., 2026). Askeladden er den yngste og mest foraktede, men han seirer i alle prøvene og vinner kongsdatteren og halve riket (Store norske leksikon, 2024a). Avslutt gjerne slik eventyrene selv gjør det: «Så levde de lykkelig alle sine dager»."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvilke tre ord skal du alltid starte eventyret med?",
-                    "Hvor mange prøvelser må helten gjennom?",
+                    "Hvilke fire ord begynner de aller fleste eventyr med?",
+                    "Hvor mange ganger gjentas det som skjer i et eventyr, og hvem av brødrene er det som lykkes?",
                     "Hva slags hjelper møter helten ofte, og hva kan hjelperen gi?",
                     "Hvordan ender et eventyr, ifølge teksten?"
                 ],
                 "reflekter": [
                     "Teksten sier at de to første prøvelsene kan gå galt før helten lykkes på den tredje. Hvorfor tror du eventyret bygges opp slik i stedet for at helten lykkes med en gang?",
                     "Askeladden nevnes som et eksempel på en helt. Hva tror du gjør ham til en typisk eventyrhelt?",
-                    "Den magiske hjelperen er ofte en gammel kone eller et dyr. Hvorfor passer det godt at hjelpen kommer fra noen som ser svak eller uviktig ut?",
-                    "I eventyr vinner det gode alltid over det onde. Hva lærer denne faste slutten leseren, tror du?"
+                    "Teksten sier at helten møter en magisk hjelper. Hvorfor tror du helten trenger hjelp utenfra i stedet for å klare alt selv?",
+                    "I eventyr får de gode sin lønn og de onde sin straff. Hva lærer denne faste slutten leseren, tror du?"
                 ],
                 "gaaVidere": [
                     "Skriv starten på ditt eget eventyr. Bruk 'Det var en gang', introduser en helt og et mål helten vil oppnå.",
                     "Finn et eventyr du kjenner fra før, for eksempel om Askeladden. Pek ut de tre prøvelsene og den magiske hjelperen i det eventyret.",
                     "Diskuter med en medelev: Er det kjedelig at det gode alltid vinner, eller gjør det eventyret bedre? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Esborg, L., Alver, B., & Sara-Skree, J. F. (2026). *eventyr*. Store norske leksikon. Hentet 26.08.2026 fra [snl.no/eventyr](https://snl.no/eventyr)",
+                    "Store norske leksikon. (2024a). *askeladden*. Hentet 26.08.2026 fra [snl.no/askeladden](https://snl.no/askeladden)",
+                    "Store norske leksikon. (2024b). *Per og Pål*. Hentet 26.08.2026 fra [snl.no/Per_og_Pål](https://snl.no/Per_og_P%C3%A5l)"
                 ]
             }
         }
@@ -75,5 +86,5 @@
         "url": "/norsk/tekstsjangre/eventyr"
     },
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-26T00:00:00.000Z"
 }

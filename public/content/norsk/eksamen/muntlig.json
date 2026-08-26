@@ -10,7 +10,8 @@
     "category": "Eksamen",
     "details": [
         "Du får vite faget 48 timer før, og har 24 timer forberedelsestid.",
-        "Eksamen varer inntil 30 minutter: presentasjon + samtale.",
+        "Selve eksamen kan vare inntil 30 minutter for hver elev.",
+        "Å holde presentasjon er frivillig for eleven, men mange skoler legger opp til det.",
         "Forbered 3-4 tekster som passer temaet, med kobling til epoker.",
         "Ha en klar påstand i presentasjonen, ikke bare en oppsummering.",
         "Forbered ekstra tekster for samtalen med faglærer."
@@ -29,15 +30,15 @@
         },
         {
             "type": "paragraph",
-            "text": "Muntlig eksamen i norsk har tre faser: forberedelse, presentasjon og samtale. Det er i forberedelsen du legger grunnlaget for alt som skjer etterpå."
+            "text": "Muntlig eksamen har to hoveddeler: en forberedelsesdel og selve eksamen. Skolen skal gi deg melding om hvilket fag du er trukket ut i 48 timer før eksamen starter, og alle muntlige eksamener skal ha 24 timer forberedelse (Utdanningsdirektoratet, 2026). Selve eksamen kan vare inntil 30 minutter for hver elev (Utdanningsdirektoratet, 2026). Mange skoler legger opp eksamen som en presentasjon etterfulgt av en samtale, men å holde presentasjon er frivillig for eleven (Utdanningsdirektoratet, 2026). Muntlig eksamen lages lokalt, av kommunen eller fylkeskommunen (Store norske leksikon, 2025), så spør faglæreren din hvordan den er lagt opp hos dere. Uansett opplegg er det forberedelsen som legger grunnlaget for alt som skjer etterpå."
         },
         {
             "type": "component",
             "name": "Comparison",
             "props": {
-                "title": "De to delene av eksamen",
-                "leftTitle": "Presentasjonen (ca. 10 min)",
-                "rightTitle": "Samtalen (ca. 20 min)",
+                "title": "Presentasjon og samtale - to ulike moduser",
+                "leftTitle": "Presentasjonen",
+                "rightTitle": "Samtalen",
                 "items": [
                     {
                         "label": "Kontroll",
@@ -73,16 +74,16 @@
                         "value": "Du får vite hvilket fag du er trukket i."
                     },
                     {
-                        "label": "24 timer før (forberedelsesdagen)",
-                        "value": "Du får det overordnede temaet (for eksempel «Identitet»). Dette er en obligatorisk skoledag. Du har tilgang til skolens fasiliteter og kan samarbeide med medelever."
+                        "label": "24 timer forberedelse",
+                        "value": "Alle muntlige eksamener skal ha 24 timer forberedelse. Forberedelsesdagen er en obligatorisk skoledag. Du har rett til å bruke skolens lokaler, samarbeide med andre og få veiledning av en faglærer."
                     },
                     {
-                        "label": "30 min på eksamensdagen",
-                        "value": "Du får den spesifikke oppgaven og forbereder presentasjonen alene."
+                        "label": "Tema eller problemstilling",
+                        "value": "Du får eller trekker et tema eller en problemstilling å forberede deg på, for eksempel «Identitet». Muntlig eksamen lages lokalt, så skolen din bestemmer detaljene. Spør faglæreren din om nøyaktig hvordan det gjøres hos dere."
                     },
                     {
                         "label": "Selve eksamen",
-                        "value": "Inntil 30 minutter: presentasjon + samtale med faglærer."
+                        "value": "Inntil 30 minutter for hver elev."
                     }
                 ]
             }
@@ -480,7 +481,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Muntlig eksamen tester spesifikke kompetansemål fra LK20. Når du forstår hva hvert mål betyr i praksis, vet du også hva sensor leter etter."
+            "text": "Muntlig eksamen tester kompetansemål fra læreplanen i norsk (LK20). En overordnet føring er at eksamen skal gi deg mulighet til å vise kompetansen din i så stor del av faget som mulig, og sensorene skal lete etter den kompetansen du har (Utdanningsdirektoratet, 2026). Når du forstår hva hvert mål betyr i praksis, vet du også hva sensor leter etter (Utdanningsdirektoratet, u.å.)."
         },
         {
             "type": "component",
@@ -515,7 +516,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Kjennetegn på måloppnåelse for muntlig fra Udir: Ved lav kompetanse (karakter 2) kommuniserer eleven noe faglig innhold og begrunner til en viss grad egne oppfatninger. Ved god kompetanse (karakter 4) kommuniserer eleven faglig innhold klart og underbygger egne oppfatninger. Ved høy kompetanse (karakter 6) kommuniserer eleven faglig innhold klart og tydelig og argumenterer saklig."
+            "text": "Kjennetegn på måloppnåelse for muntlig kommunikasjon (Utdanningsdirektoratet, 2020): Ved lav kompetanse (karakter 2) kommuniserer eleven noe faglig innhold og begrunner til en viss grad egne oppfatninger og meninger. Ved god kompetanse (karakter 4) kommuniserer eleven faglig innhold klart og underbygger egne oppfatninger og meninger. Ved høy kompetanse (karakter 6) kommuniserer eleven faglig innhold klart og tydelig og argumenterer saklig. Dette gjelder i muntlige presentasjoner, samtaler og diskusjoner."
         },
         {
             "type": "link",
@@ -578,12 +579,12 @@
         },
         {
             "type": "header",
-            "text": "Scenario: 30 minutter forberedelse",
+            "text": "Scenario: en halvtime igjen til forberedelse",
             "level": 2
         },
         {
             "type": "paragraph",
-            "text": "På eksamensdagen får du den spesifikke oppgaven og har 30 minutter alene til å forberede presentasjonen. Hva gjør du?"
+            "text": "Tenk deg at du har en halvtime alene igjen før du skal inn til eksamen. Hva bruker du den siste tiden på?"
         },
         {
             "type": "component",
@@ -825,6 +826,18 @@
                     "Øv sammen med en medelev: den ene holder en kort presentasjon, den andre stiller oppfølgingsspørsmål slik faglærer ville gjort på eksamen."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Store norske leksikon. (2025). *eksamen*. Hentet 26.08.2026 fra [snl.no/eksamen](https://snl.no/eksamen)",
+                    "Utdanningsdirektoratet. (2020). *Kjennetegn på måloppnåelse - norsk 10. trinn*. Hentet 26.08.2026 fra [udir.no](https://www.udir.no/laring-og-trivsel/lareplanverket/kjennetegn/kjennetegn-pa-maloppnaelse-norsk-10.-trinn/)",
+                    "Utdanningsdirektoratet. (2026). *Regler for muntlig eksamen og muntlig-praktisk eksamen*. Hentet 26.08.2026 fra [udir.no](https://www.udir.no/eksamen-og-prover/eksamen/muntlig-eksamen/)",
+                    "Utdanningsdirektoratet. (u.å.). *Kompetansemål etter 10. trinn - Læreplan i norsk (NOR01-07)*. Hentet 26.08.2026 fra [udir.no](https://www.udir.no/lk20/nor01-07/kompetansemaal-og-vurdering/kv920)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -837,10 +850,10 @@
                 "1 uke"
             ],
             "answer": 1,
-            "explanation": "Du har 24 timer forberedelsestid (forberedelsesdagen). Du får vite faget 48 timer før, og på selve eksamensdagen får du 30 minutter til å tilpasse presentasjonen til den spesifikke oppgaven."
+            "explanation": "Alle muntlige eksamener skal ha 24 timer forberedelse, og forberedelsesdagen er en obligatorisk skoledag. Skolen gir deg melding om hvilket fag du er trukket ut i 48 timer før eksamen starter."
         },
         {
-            "question": "Hva bør du gjøre med de første 10 minuttene av de 30 minuttene på eksamensdagen?",
+            "question": "Hva bør du gjøre med de første minuttene av den siste forberedelsestiden før du går inn?",
             "options": [
                 "Skrive et fullstendig manus",
                 "Lese en ny tekst du ikke har sett før",
@@ -892,5 +905,5 @@
         "vurdering"
     ],
     "createdDate": "2026-03-15T00:00:00Z",
-    "lastUpdated": "2026-06-01T00:00:00Z"
+    "lastUpdated": "2026-08-26T00:00:00.000Z"
 }
