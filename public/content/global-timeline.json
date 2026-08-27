@@ -4870,6 +4870,31 @@
       ]
     },
     {
+      "id": "frihetstiden",
+      "title": "Frihetstiden - da riksdagen tok makten fra kongen",
+      "description": "I 53 år styrte den svenske riksdagen i stedet for kongen, helt til Gustav 3 tok makten tilbake med et kupp i 1772.",
+      "startDate": 1719,
+      "endDate": 1772,
+      "displayDate": "1719-1772",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "sveriges-historie",
+      "link": "/historie/sveriges-historie/frihetstiden",
+      "tags": [
+        "sverige",
+        "frihetstiden",
+        "gustav-iii",
+        "riksdagen",
+        "trykkefrihet",
+        "statskupp"
+      ],
+      "lat": 62,
+      "lng": 15,
+      "placeLabel": "Sverige",
+      "placeCountryId": 752,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "pietismen",
       "title": "Pietismen: sporet vi fortsatt går i",
       "description": "Kirkeplikt, konfirmasjon og skole for alle ble lov på 1730-tallet. Hvor mye av dagens Norge stammer fra statspietismen?",

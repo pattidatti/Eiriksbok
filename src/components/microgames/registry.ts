@@ -35,6 +35,7 @@ const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
 const Taakegrensa3D = lazy(() => import('./Taakegrensa3D'));
 const RiketDeltITo = lazy(() => import('./RiketDeltITo'));
+const Frihetsvakten3D = lazy(() => import('./Frihetsvakten3D'));
 const Gudsformer3D = lazy(() => import('./Gudsformer3D'));
 const AnandKaraj3D = lazy(() => import('./AnandKaraj3D'));
 const LangarKjokkenet3D = lazy(() => import('./LangarKjokkenet3D'));
@@ -1047,6 +1048,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./RiketDeltITo'),
         Component: RiketDeltITo as never,
+    },
+    'frihetsvakten-3d': {
+        id: 'frihetsvakten-3d',
+        title: 'Frihetsvakten',
+        description:
+            'Du er taleman i den svenske riksdagen under frihetstiden. Tronen bak deg er tom: etter 1720 var det de fire stendene som bestemte, ikke kongen. Men når makten ligger hos mange, blir hver enkelt stemme verdt å kjøpe. Fremmede makter legger pengepunger på benkene, og du har fire sekunder på deg til å klikke delegaten og skyve pengene tilbake. Rekker du det ikke, er stemmen kjøpt ut samlingen. Blir for mange kjøpt, klarer ikke riksdagen å bestemme noe. Lyspæren: da makten flyttet seg fra én konge til en hel forsamling, ble den ikke tryggere - den ble bare billigere å kjøpe, og det tomrommet red Gustav 3 inn i 19. august 1772.',
+        estimatedSeconds: 110,
+        loader: () => import('./Frihetsvakten3D'),
+        Component: Frihetsvakten3D as never,
     },
     'anand-karaj-3d': {
         id: 'anand-karaj-3d',
