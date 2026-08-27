@@ -642,6 +642,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 | `scripts/generate-quest-bank.mjs` | Bygger `public/data/rpg/quest-bank.json` fra Quiz-komponentene i artiklene (spørsmålsbanken til rollespillet) |
 | `scripts/validate-kjeder.mjs` | Validerer årsakskjedene i `public/content/kjeder/` og genererer `kjede-oversikt.json` (Kjedereaksjonen) |
 | `scripts/generate-glossary-articles.js` | Bygger `public/data/glossary-articles.json` (reversindeks begrep → artikler, brukt av Kryssord sin «det du har lest»-modus) |
+| `scripts/scan-image-queue.js` | Prioritert kø over manglende artikkelbilder (hero før inline). Inngangen til bildegenereringen i `.agent/workflows/generate_article_images.md` |
 | `scripts/scan-concepts.js` | Scans articles for potential new concept terms |
 | `scripts/optimize-images.js` | Optimaliserer WebP-bilder under `public/`. Kvitterer for hver fil i `scripts/image-ledger.json`, så et bilde komprimeres én gang - ikke én gang per build |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |

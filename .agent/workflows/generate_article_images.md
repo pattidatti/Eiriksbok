@@ -22,44 +22,59 @@ Disse reglene overstyrer alt annet. De gjelder uten unntak, uansett feilsituasjo
 
 ---
 
-## Steg 1: Skann etter artikler som mangler bilder
-
-**Kjør alltid begge fasene og behandle resultatene i denne rekkefølgen: Fase B først, deretter Fase A.** Brutte referanser er mer kritiske — de vises som ødelagte bilder i appen — mens plassholdere bare er generiske. Behandler du Fase A først risikerer du å bruke opp kvoten uten å fikse de### Fase B: Brutte bildereferanser (ekte sti i JSON, men fil mangler på disk) — KJØres FØRST
+## Steg 1: Hent den prioriterte bildekøen
 
 ```bash
-node scripts/scan-missing-images.js
+node scripts/scan-image-queue.js
 ```
 
-Merk: skriptet scanner **alle** JSON-filer, inkludert scenarier og andre filer uten `content`-array. Dette er bevisst — scenarier kan også ha manglende bildereferanser.
+Skriptet skanner alle artikler og scenarier og sorterer **alle** bildehull i én global kø:
 
-### Fase A: Plassholdere (placeholder.webp) — kjøres ETTER Fase B
+| Prioritet | Hva | Handling |
+|---|---|---|
+| 1 | Hero, brutt referanse (ekte sti i JSON, fil mangler) | Lagre til stien som allerede står i JSON-en |
+| 2 | Hero, plassholder (`placeholder.webp`) | Generer, lagre til `lagreTil`, oppdater JSON + manifest |
+| 3 | Inline, brutt referanse | Lagre til stien som står i JSON-en |
+| 4 | Inline, plassholder | Generer, lagre til `lagreTil`, oppdater JSON |
+| 5-6 | Andre bilder (komponent-props, scenario-noder) | Samme mønster, brutt før plassholder |
+
+**Jobb køen ovenfra og ned. Alle hero-bilder skal være ferdige før du rører det første
+inline-bildet.** Dette er ikke en stilpreferanse - hero-bildet er det eneste bildet som
+vises to steder, både øverst i artikkelen og på leksjonskortet i emneoversikten. En artikkel
+uten hero er et synlig hull i navigasjonen; et manglende inline-bilde skjuler appen selv
+(`isPendingImage`), og eleven merker det knapt. Kvoten tar slutt lenge før køen gjør det, så
+rekkefølgen avgjør hva elevene faktisk får se.
+
+Det følger av dette at du **ikke** ferdigstiller én artikkel om gangen. Du tar hero-bildet i
+artikkel A, så hero-bildet i artikkel B, og kommer tilbake til A sine inline-bilder først når
+hvert eneste hero i køen er dekket.
+
+Nyttige flagg:
 
 ```bash
-grep -rl "placeholder.webp" public/content/ --include="*.json" | sort
+node scripts/scan-image-queue.js --kun hero     # bare hero-nivået (prioritet 1-2)
+node scripts/scan-image-queue.js --limit 20     # de 20 øverste
+node scripts/scan-image-queue.js --json         # maskinlesbart, samme rekkefølge
 ```
 
-For hver treff, noter filsti og om det er `heroImage`, inline `"type": "image"`-blokker, eller begge.
+Hvert element i køen forteller deg alt du trenger: `fil` (artikkel-JSON-en), `felt` (hvilket
+bilde i artikkelen), `naavaerende` (dagens verdi), `lagreTil` (hvor bildet skal lagres) og
+`maaOppdatereJson` (om JSON og manifest må endres etterpå).
 
-Filtrer bort ikke-artikler (manifest.json, global-timeline-images.json osv.) ved å sjekke at filen har et `id`-felt og enten `"content": [...]` eller `"nodes": [...]` (scenarier).
-
-### Viktig: to ulike kjøringsmønstre
-
-| Tilfelle | JSON-tilstand | Handling |
-|----------|--------------|----------|
-| **Brukket referanse** | `heroImage: "/images/topic/fil-hero.webp"` (fil finnes ikke) | Generer bilde → **lagre til stien som allerede er i JSON** — ingen JSON-endring |
-| **Placeholder** | `heroImage: "/images/placeholder.webp"` | Generer bilde → **oppdater** JSON til ny sti + manifest |
-
-For brutte referanser er filnavnet allerede kjent fra JSON-en. Lagre generert bilde direkte til den eksisterende stien, og oppdater verken artikkel-JSON eller manifest.
+**Ikke finn på egne filnavn.** Bruk `lagreTil` fra køen - den håndterer også tilfellet der to
+artikler heter det samme i ulike mapper (alle religionene har en `skapelse`-artikkel, og uten
+denne logikken ville islams og hinduismens skapelsesbilde havnet i samme fil).
 
 ---
 
 ## Steg 2: Les og analyser artikkelen
 
-For hver artikkel (både Fase B og Fase A): les hele JSON-filen og trekk ut:
+For hvert element i køen: åpne artikkel-JSON-en som står i `fil` og trekk ut:
 
 - `id`, `title`, `year`, `category`, `subjectId` (fra filstien)
-- De tre første tekst-blokkene (kontekst for hero-bildet)
-- For inline `"type": "image"`-blokker: tekst-blokkene **rett før og etter** blokken (kontekst for hva bildet skal vise)
+- Hero-bilde (`felt: heroImage`): de tre første tekst-blokkene gir konteksten
+- Inline-bilde (`felt: content[type=image] #n`): tekst-blokkene **rett før og etter** akkurat
+  den blokken gir konteksten for hva bildet skal vise
 
 ---
 
@@ -110,11 +125,10 @@ Samme struktur, men motiv er hentet fra konteksten rundt bildeplasseringen i art
 
 **Viktig: behandle bildene ett for ett, ikke i en batch.** Etter hvert enkelt bilde: sjekk om Gemini returnerte feil. Fikk du 429 — stopp umiddelbart (se Kvotehåndtering under). Fikk du et annet kall-feil — logg det, hopp to neste bilde og fortsett.
 
-Filnavngivning:
-- Hero-bilde: `public/images/[topic]/[lesson-id]-hero.webp`
-- Inline-bilde 1: `public/images/[topic]/[lesson-id]-01.webp`
-- Inline-bilde 2: `public/images/[topic]/[lesson-id]-02.webp`
-- Inline-bilde 3: `public/images/[topic]/[lesson-id]-03.webp`
+Filnavngivning: bruk `lagreTil` fra køen i Steg 1. Mønsteret er
+`public/images/[emne]/[stamme]-hero.webp` for hero og `-01.webp`, `-02.webp` ... for
+inline-bilder, men køen har allerede regnet ut det riktige navnet - også for artikler som
+deler id på tvers av mapper.
 
 Eksempel for artikkelen `public/content/historie/vikingtiden/rikssamlingen.json`:
 - `public/images/vikingtiden/rikssamlingen-hero.webp`
@@ -155,7 +169,7 @@ Et ekte fotografi fra Gemini Imagen vil typisk være **50 KB–500 KB**. En SVG-
 
 ## Steg 6: Oppdater artikkel-JSON og manifest.json
 
-**Bare for placeholder-tilfeller (Fase A fra Steg 1).** For brutte referanser (Fase B) er stien allerede riktig i JSON — hopp over dette steget for dem.
+**Bare for elementer der køen sier `maaOppdatereJson: true`** (plassholderne). For brutte referanser står stien allerede riktig i JSON-en - hopp over dette steget for dem.
 
 For hvert bilde generert fra en placeholder, oppdater JSON-filen:
 
@@ -214,7 +228,7 @@ Hva du **ikke** gjør ved kvote-feil:
 - Oppdater ikke JSON-filer med stier til bilder som ikke er ekte Gemini-genererte fotografier
 - Reset ikke stier tilbake til `placeholder.webp` — la de som har spesifikke stier beholde dem
 
-La de ubehandlede artiklene beholde sine placeholder-stier. Neste kjøring plukker dem opp via Fase B.
+La de ubehandlede artiklene beholde sine placeholder-stier. Neste kjøring plukker dem opp igjen øverst i køen, og fordi hero-bildene ligger først, fortsetter neste kjøring akkurat der denne slapp.
 
 ---
 
@@ -222,4 +236,4 @@ La de ubehandlede artiklene beholde sine placeholder-stier. Neste kjøring plukk
 
 Workflowen er designet for **ukentlig kjøring** etter at den daglige innholdsrutinen har produsert nye artikler gjennom uken. Kjør den manuelt i Antigravity når du vil ta et batch med bilder.
 
-Har du ingen treff fra verken Fase B eller Fase A er det ingenting å gjøre — avslutt.
+Sier `scan-image-queue.js` at køen er tom, er det ingenting å gjøre - avslutt.
