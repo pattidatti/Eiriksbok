@@ -45,11 +45,11 @@
         },
         {
             "type": "text",
-            "content": "De fleste matreglene står i hellige tekster som er flere tusen år gamle. I jødedommen kaller man mat som er tillatt for kosher. Reglene sier blant annet at jøder ikke skal spise gris, og at de ikke skal blande kjøtt og melk i samme måltid. I islam kaller man tillatt mat for halal, mens forbudt mat heter haram. Svin og alkohol er haram. Du kan lese mer om disse troene i artiklene om [islam](/krle/religion/islam) og [jødedommen](/krle/religion/jodedom)."
+            "content": "De fleste matreglene står i hellige tekster som er flere tusen år gamle. I jødedommen kaller man mat som er tillatt for kosher, et hebraisk ord som betyr «passende». Reglene bygger på Mosebøkene, og de sier blant annet at jøder ikke skal spise gris, og at de ikke skal blande kjøtt og melk i samme måltid (Groth, 2026). I islam kaller man tillatt mat for halal, som betyr «tillatt» på arabisk. Det motsatte er haram, «forbudt». Koranen forbyr svinekjøtt, og alkohol er strengt forbudt (Vogt, 2025a). Du kan lese mer om disse troene i artiklene om [islam](/krle/religion/islam) og [jødedommen](/krle/religion/jodedom)."
         },
         {
             "type": "text",
-            "content": "I [hinduismen](/krle/religion/hinduisme) er kua et hellig dyr. Derfor spiser mange hinduer aldri oksekjøtt. Mange hinduer og buddhister er også vegetarianere. De vil ikke drepe dyr, fordi de mener at alt liv har en verdi. I kristendommen finnes det i dag få faste regler om mat, men noen kristne velger å spise enklere i fastetiden før påske."
+            "content": "I [hinduismen](/krle/religion/hinduisme) er kua et hellig dyr. Kua gir melk hele livet, og derfor blir den sett på som en slags mor for menneskene. Selv hinduer som spiser kjøtt, spiser aldri kukjøtt (Jacobsen, 2024). Mange hinduer er også vegetarianere. Det henger sammen med ahimsa, tanken om ikke å skade levende vesener, og vegetarmat er den vanligste måten å følge den tanken på i hinduismen (Jacobsen, 2025). Den samme tanken finner du igjen i buddhismen og jainismen. I kristendommen finnes det i dag få faste regler om mat, men i vestlig kristendom er det en fastetid på 40 dager før påske, og mange katolikker lar være å spise kjøtt i den perioden (Kværne et al., 2024)."
         },
         {
             "type": "component",
@@ -74,11 +74,11 @@
         },
         {
             "type": "text",
-            "content": "Mat handler ikke bare om hva man spiser, men også om når man lar være. Mange religioner har perioder med faste. Da spiser eller drikker man mindre, eller ingenting, i et bestemt tidsrom. For muslimer er ramadan en hel måned der man verken spiser eller drikker mens sola er oppe. Jøder faster en hel dag på den helligste dagen i året, som heter jom kippur. Faste er en måte å trene viljen og tenke på noe større enn seg selv. Mange som faster, sier også at det gjør dem mer takknemlige for maten de ellers tar for gitt, og at de tenker mer på dem som ikke har nok å spise."
+            "content": "Mat handler ikke bare om hva man spiser, men også om når man lar være. Å faste vil si å avstå fra mat, og noen ganger også drikke, helt eller delvis i et bestemt tidsrom. Det er en skikk som går igjen i mange religioner (Kværne et al., 2024). For muslimer er ramadan en hel måned der man verken spiser eller drikker fra daggry til solnedgang (Vogt, 2025b). Jøder faster i 25 timer på jom kippur, forsoningsdagen, som er den helligste dagen i det jødiske året (Groth, 2024). Faste er en måte å trene viljen og tenke på noe større enn seg selv. Mange som faster, sier også at det gjør dem mer takknemlige for maten de ellers tar for gitt, og at de tenker mer på dem som ikke har nok å spise."
         },
         {
             "type": "text",
-            "content": "Faste skaper også fellesskap. Når ramadan er over, samles familier og venner til store måltider. På samme måte feirer kristne påske med mat etter fasten, og jøder samles til måltid når sabbaten begynner. Maten markerer at noe spesielt skjer. Du kan lese mer om hvordan religion former [høytider og fridager](/krle/religion-og-kultur/hoytider-og-kultur) i Norge."
+            "content": "Faste skaper også fellesskap. Når ramadan er over, feires id al-fitr, «fastebrytingens fest», og familier og venner samles til måltid (Vogt, 2025b). På samme måte feirer kristne påske med mat etter fasten, og jøder samles til et festmåltid når sabbaten begynner fredag kveld (Cohen & Groth, 2025). Maten markerer at noe spesielt skjer. Du kan lese mer om hvordan religion former [høytider og fridager](/krle/religion-og-kultur/hoytider-og-kultur) i Norge."
         },
         {
             "type": "header",
@@ -179,7 +179,24 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Cohen, K. J. & Groth, B. (2025). *Sabbat*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/sabbat](https://snl.no/sabbat)",
+                    "Groth, B. (2024). *Forsoningsdagen*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/forsoningsdagen](https://snl.no/forsoningsdagen)",
+                    "Groth, B. (2026). *Kosher*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/kosher](https://snl.no/kosher)",
+                    "Jacobsen, K. A. (2024). *Hellig ku*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/hellig_ku](https://snl.no/hellig_ku)",
+                    "Jacobsen, K. A. (2025). *Ahimsa*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/ahimsa](https://snl.no/ahimsa)",
+                    "Kværne, P., Jacobsen, K. A., Groth, B. & Vogt, K. (2024). *Faste*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/faste](https://snl.no/faste)",
+                    "Vogt, K. (2025a). *Halal*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/halal](https://snl.no/halal)",
+                    "Vogt, K. (2025b). *Ramadan*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/ramadan](https://snl.no/ramadan)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-27T00:00:00Z"
 }
