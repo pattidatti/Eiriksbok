@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Dialog er pulsen i fortellingen din. Det er gjennom dialogen karakterene dine avslører hvem de er, uten at du trenger å forklare det. Men for at leseren skal henge med, må formateringen være sylskarp."
+            "content": "Dialog er pulsen i fortellingen din. En dialog er rett og slett en samtale mellom to eller flere personer, og i skjønnlitteratur, drama og film kalles den også replikkveksling (Persvold, 2025). Det er gjennom dialogen karakterene dine avslører hvem de er, uten at du trenger å forklare det. Men for at leseren skal henge med, må formateringen være sylskarp."
         },
         {
             "type": "header",
@@ -16,15 +16,15 @@
         },
         {
             "type": "text",
-            "content": "Det er to måter å markere dialog på i norsk: anførselstegn eller tankestrek. Vi anbefaler anførselstegn for å skape tydeligere skiller."
+            "content": "Det er to måter å markere dialog på i norsk: anførselstegn eller tankestrek. Språkrådet (2024) mener du bør kunne begge deler, og at valget kommer an på hva du skriver. Vi lærer deg anførselstegn først, fordi de gir tydeligere skiller."
         },
         {
             "type": "text",
-            "content": "Anførselstegn markerer nøyaktig hva som blir sagt. Dette forhindrer at replikken blander seg med fortelleren.\n\n\"Kommer du?\" spurte han."
+            "content": "Anførselstegn markerer nøyaktig hva som blir sagt. Dette forhindrer at replikken blander seg med fortelleren. Siterer du fra en skriftlig kilde, må du dessuten bruke anførselstegn (Språkrådet, 2024).\n\n\"Kommer du?\" spurte han."
         },
         {
             "type": "text",
-            "content": "Hver gang en ny person snakker, skal det skiftes linje. Dette er den viktigste regelen for å skape oversikt.\n\n\"Jeg vet ikke,\"\nsvarte hun.\n\n\"Jo, det vet du.\""
+            "content": "Hver gang en ny person snakker, skal det skiftes linje. Dette er den viktigste regelen for å skape oversikt, og du ser den brukt i alle dialogeksemplene hos Abusland (2019).\n\n\"Jeg vet ikke,\"\nsvarte hun.\n\n\"Jo, det vet du.\""
         },
         {
             "type": "component",
@@ -71,7 +71,7 @@
         },
         {
             "type": "text",
-            "content": "Mange forfatterspirer er redde for å bruke ordet \"sa\". De tror det blir kjedelig, og bruker heller ord som *utbrøt*, *konstaterte*, *bjeffet*, *hikstet* eller *repliserte*. Sannheten er motsatt: \"Sa\" er usynlig. Leseren legger ikke merke til det. De andre ordene stjeler oppmerksomhet fra det som blir sagt."
+            "content": "Mange forfatterspirer er redde for å bruke ordet \"sa\". De tror det blir kjedelig, og bruker heller ord som *utbrøt*, *konstaterte*, *bjeffet*, *hikstet* eller *repliserte*. Men \"sa\" er nesten usynlig. Leseren legger ikke merke til det, mens de andre ordene stjeler oppmerksomhet fra det som blir sagt. Abusland (2019) minner samtidig om at replikkmarkører som *hvisket* og *ropte* har en jobb å gjøre: de viser hvordan noe blir sagt. Rådet er altså ikke at du aldri skal bruke dem, men at du skal spare dem til de gangene du virkelig trenger dem."
         },
         {
             "type": "component",
@@ -82,7 +82,7 @@
                     {
                         "bad": "\"Gi meg den!\" utbrøt han.\n\"Aldri,\" freste hun tilbake.\n\"Jeg ber deg,\" bønnfalt han.\n\"Glem det,\" konstaterte hun kjølig.",
                         "good": "\"Gi meg den!\" sa han.\n\"Aldri,\" sa hun.\n\"Jeg ber deg.\"\n\"Glem det.\"",
-                        "why": "Når dialogen er sterk nok, trenger du ikke fancy verbe for å støtte den opp. La ordene gjøre jobben."
+                        "why": "Når dialogen er sterk nok, trenger du ikke fancy verb for å støtte den opp. La ordene gjøre jobben."
                     }
                 ]
             }
@@ -93,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Enda bedre enn å bruke \"sa\", er å bruke handlinger. Dette kalles handlingsmarkører. I stedet for å fortelle at noen er snille eller sinte, vis oss hva de *gjør* mens de snakker."
+            "content": "Enda bedre enn å bruke \"sa\", er å bruke handlinger. Dette kalles handlingsmarkører. I stedet for å fortelle at noen er snille eller sinte, vis oss hva de *gjør* mens de snakker. Abusland (2019) kaller dette å beskrive de kroppslige reaksjonene til personene, og Grundvig (2026) forklarer at når leseren selv må trekke slutninger ut fra hva folk sier og gjør, kalles det indirekte personskildring."
         },
         {
             "type": "component",
@@ -111,11 +111,11 @@
         },
         {
             "type": "header",
-            "text": "5. Dialogens tre funksjoner"
+            "text": "5. Dialogens funksjoner"
         },
         {
             "type": "text",
-            "content": "Før du skriver en replikk, spør deg selv: Hva gjør denne replikken? Hvis den ikke gjør en av disse tre tingene, bør den trolig slettes:"
+            "content": "Før du skriver en replikk, spør deg selv: Hva gjør denne replikken? Abusland (2019) peker på at dialog både kan vise hvem personene er, avsløre forholdet mellom dem, skape spenning og gjøre teksten mer levende. Gjør ikke replikken din noe av dette, bør den trolig slettes:"
         },
         {
             "type": "list",
@@ -141,7 +141,7 @@
         },
         {
             "type": "text",
-            "content": "Noen ganger er det kjedelig å lese nøyaktig hva folk sier. Da kan oppsummering (indirekte tale) være bedre. Bruk direkte tale når det er *viktig*."
+            "content": "Noen ganger er det kjedelig å lese nøyaktig hva folk sier. Da kan oppsummering være bedre. Indirekte tale er å gjengi det en annen har sagt med dine egne ord, i stedet for å sitere ordrett (Store norske leksikon, 2024). Bruk direkte tale når det er *viktig*."
         },
         {
             "type": "component",
@@ -170,7 +170,7 @@
                     "correctAnswer": 1
                 },
                 {
-                    "question": "Hvorfor bør du være forsiktig med verbe som 'utbrøt', 'hvinte' og 'bjeffet'?",
+                    "question": "Hvorfor bør du være forsiktig med verb som 'utbrøt', 'hvinte' og 'bjeffet'?",
                     "options": [
                         "Fordi de er for korte.",
                         "Fordi de stjeler oppmerksomhet fra det som blir sagt.",
@@ -201,19 +201,32 @@
                 "forstaa": [
                     "Hvilke to måter kan du markere dialog på i norsk, og hvilken av dem anbefaler artikkelen at du bruker?",
                     "Hva er hovedregelen for når du skal skifte til ny linje i en dialog?",
-                    "Hvorfor kaller artikkelen ordet 'sa' for usynlig?",
-                    "Hva er de tre funksjonene en replikk kan ha ifølge artikkelen?"
+                    "Hvorfor kaller artikkelen ordet 'sa' for nesten usynlig?",
+                    "Hvilke funksjoner kan en replikk ha ifølge artikkelen?"
                 ],
                 "reflekter": [
                     "Artikkelen sier at du ofte ikke trenger å skrive 'sa mamma' eller 'sa jeg'. Forklar hvordan leseren likevel skjønner hvem som snakker.",
                     "Hva er forskjellen på en replikkmarkører som 'sa pappa stresset' og en handlingsmarkør som 'Pappa rotet gjennom skuffen'? Hvorfor mener artikkelen at handlingen er sterkere?",
-                    "Artikkelen advarer mot ord som 'utbrøt', 'freste' og 'bønnfalt'. Hva er problemet med å bruke slike ord i stedet for 'sa'?",
+                    "Artikkelen råder deg til å spare på ord som 'utbrøt', 'freste' og 'bønnfalt'. Hva er problemet med å bruke slike ord hver gang i stedet for 'sa'?",
                     "Når bør du bruke direkte tale, og når er indirekte tale (oppsummering) bedre? Bruk eksempelet med Jonas og Maria til å forklare."
                 ],
                 "gaaVidere": [
                     "Skriv en kort dialog på minst seks replikker mellom to personer som krangler om noe. Følg regelen om ny linje for hver ny taler, og bruk kun 'sa' eller ingen replikkmarkør i det hele tatt.",
                     "Ta dialogen du skrev, og bytt ut minst to av 'sa'-ene med handlingsmarkører som viser hva personene gjør mens de snakker.",
                     "Skriv den samme scenen to ganger: én gang med direkte tale og én gang med indirekte tale. Skriv deretter et par setninger om hvilken versjon du synes fungerer best, og hvorfor."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2019). *Hvordan og hvorfor bruke dialoger?* NDLA. Hentet 27.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg1/hvordan-og-hvorfor-bruke-dialoger/28ec0567d6)",
+                    "Grundvig, T. E. (2026). *Personskildring*. NDLA. Hentet 27.08.2026 fra [ndla.no](https://ndla.no/subject:1:51a7271b-a9d5-4205-bade-1c125a8650b5/topic:2:b34684b3-3e91-44ee-88b4-1c3e588586dc/topic:2:1cc14972-df1f-4294-b19b-1c2472f5489a/topic:2:16901c14-d7b7-45a8-839b-96aabbf174e2/resource:1:48021)",
+                    "Persvold, A. Z. (2025). *dialog*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/dialog](https://snl.no/dialog)",
+                    "Store norske leksikon. (2024). *indirekte tale*. Hentet 27.08.2026 fra [snl.no/indirekte_tale](https://snl.no/indirekte_tale)",
+                    "Språkrådet. (2024). *Anførselstegn eller replikkstrek?* Hentet 27.08.2026 fra [sprakradet.no](https://sprakradet.no/spraksporsmal-og-svar/anforselstegn-eller-replikkstrek/)"
                 ]
             }
         }
@@ -228,5 +241,5 @@
         "url": "/norsk/skrivehjelp/hvordan-skrive-novelle"
     },
     "createdDate": "2026-02-02T12:00:00Z",
-    "lastUpdated": "2026-02-02T12:00:00Z"
+    "lastUpdated": "2026-08-27T12:00:00Z"
 }

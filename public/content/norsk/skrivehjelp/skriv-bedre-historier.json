@@ -12,7 +12,7 @@
         },
         {
             "type": "text",
-            "content": "Denne guiden gir deg verktøyene for å skrive meningsfulle og engasjerende historier. Mange tror at forfatterskap handler om inspirasjon, men sannheten er at gode historier bygges med presise teknikker. For at fortellingen din skal ha mål og mening, bør du også ha en stødig struktur i bunn – sjekk gjerne vår guide om [7 vanlige plot](/norsk/skrivehjelp/7-vanlige-plot) for å legge et godt fundament."
+            "content": "Denne guiden gir deg verktøyene for å skrive meningsfulle og engasjerende historier. Mange tror at forfatterskap handler om inspirasjon, men sannheten er at gode historier bygges med presise teknikker. For at fortellingen din skal ha mål og mening, bør du også ha en stødig struktur i bunn - sjekk gjerne vår guide om [7 vanlige plot](/norsk/skrivehjelp/7-vanlige-plot) for å legge et godt fundament."
         },
         {
             "type": "header",
@@ -22,19 +22,19 @@
             "type": "image",
             "src": "/images/topics/skrivehjelp_handling.webp",
             "alt": "En reisende ved et veiskille i skogen",
-            "caption": "Handling starter med valg – karakteren din må eie sin egen vei."
+            "caption": "Handling starter med valg - karakteren din må eie sin egen vei."
         },
         {
             "type": "text",
-            "content": "For å skape en historie som fenger, må karakterene dine ha en grunn til å handle. Det holder ikke at ting skjer *med* dem – de må få ting til å skje. Dette starter helt nede på setningsnivå med aktive valg og kraftfulle verb."
+            "content": "For å skape en historie som fenger, må karakterene dine ha en grunn til å handle. Det holder ikke at ting skjer *med* dem - de må få ting til å skje. Dette starter helt nede på setningsnivå med aktive valg og kraftfulle verb."
         },
         {
             "type": "subheader",
-            "text": "1. Unngå “Begynte å” – Bare Si Hva Som Skjer"
+            "text": "1. Unngå “Begynte å” - Bare Si Hva Som Skjer"
         },
         {
             "type": "text",
-            "content": "Når du skriver “begynte å”, bruker du en svak verbkonstruksjon som skaper en unødvendig barriere mellom leseren og handlingen. Ved å fjerne dette, blir språket mer direkte og energisk."
+            "content": "Når du skriver “begynte å”, bruker du en svak verbkonstruksjon som skaper en unødvendig barriere mellom leseren og handlingen. Ved å fjerne dette, blir språket mer direkte og energisk. Abusland (2025) viser hvor mye selve verbet gjør: bytter du ut *gikk* med *luska*, *tusla* eller *slentret*, forteller verbet i seg selv hvordan personen har det."
         },
         {
             "type": "component",
@@ -60,7 +60,7 @@
         },
         {
             "type": "text",
-            "content": "Agens betyr at en karakter har evnen til å påvirke sin egen situasjon. En passiv karakter lar bare omstendighetene styre seg, noe som sjelden er spennende å lese om. Gi karakteren din et problem og la dem forsøke å løse det selv."
+            "content": "Agens er den eller det som er årsak til en virkning - den som utfører handlingen (Nilstun, 2025). I en fortelling betyr det at hovedpersonen selv driver handlingen framover, i stedet for bare å bli dratt med. En passiv karakter lar bare omstendighetene styre seg, noe som sjelden er spennende å lese om. Gi karakteren din et problem og la dem forsøke å løse det selv."
         },
         {
             "type": "component",
@@ -81,7 +81,7 @@
         },
         {
             "type": "text",
-            "content": "Ordet “plutselig” er en tekstlig advarsel som tar brodden av overraskelsen. Hvis du vil at leseren skal bli sjokkert, må hendelsen komme brått på uten forvarsel. Beskriv heller det sanselige inntrykket som følger sjokket."
+            "content": "Ordet “plutselig” er en tekstlig advarsel som tar brodden av overraskelsen. Hvis du vil at leseren skal bli sjokkert, må hendelsen komme brått på uten forvarsel. Beskriv heller det sanselige inntrykket som følger sjokket. Det er dette Abusland (2025) kaller \"show, don't tell\": du viser hva som skjer, i stedet for å si det rett ut."
         },
         {
             "type": "component",
@@ -105,7 +105,7 @@
             "type": "task",
             "id": "workshop-handling",
             "title": "Skriveverksted: Skap Drivkraft",
-            "text": "Skriv en kort scene der en karakter må reagere på at en hemmelighet blir avslørt. Husk:\n\n1. Bruk aktive verb (ingen “begynte å”).\n2. Gi karakteren agens – de må ta et aktivt valg for å beskytte eller rømme fra hemmeligheten.\n3. Ikke bruk ordet “plutselig”."
+            "text": "Skriv en kort scene der en karakter må reagere på at en hemmelighet blir avslørt. Husk:\n\n1. Bruk aktive verb (ingen “begynte å”).\n2. Gi karakteren agens - de må ta et aktivt valg for å beskytte eller rømme fra hemmeligheten.\n3. Ikke bruk ordet “plutselig”."
         },
         {
             "type": "header",
@@ -119,7 +119,11 @@
         },
         {
             "type": "text",
-            "content": "En god historie føles ekte når vi får tilgang til karakterenes indre univers. Men det er en balansekunst – for mye indre monolog kan stoppe fremdriften, mens for lite kan gjøre karakterene flate."
+            "content": "Grundvig (2026) skiller mellom to måter å tegne en person på: direkte personskildring, der fortelleren rett ut sier hvordan personen er, og indirekte personskildring, der du selv må trekke slutninger ut fra hva personen sier, gjør og tenker. Rådene i denne delen handler om det siste."
+        },
+        {
+            "type": "text",
+            "content": "En god historie føles ekte når vi får tilgang til karakterenes indre univers. Men det er en balansekunst - for mye indre monolog kan stoppe fremdriften, mens for lite kan gjøre karakterene flate."
         },
         {
             "type": "subheader",
@@ -148,7 +152,7 @@
         },
         {
             "type": "text",
-            "content": "Dialog er ofte det leseren skummer raskest gjennom. For å bevare flyten må layouten være intuitiv. Ny linje ved hvert talerskifte er standard for profesjonell tekst. Se vår dypdykk-guide om [hvordan skrive dialog](/norsk/skrivehjelp/hvordan-skrive-dialog) for å lære alle reglene."
+            "content": "Dialog er ofte det leseren skummer raskest gjennom. For å bevare flyten må layouten være intuitiv. Ny linje ved hvert talerskifte er standarden, og du finner den brukt i alle dialogeksemplene hos Abusland (2019). Se vår dypdykk-guide om [hvordan skrive dialog](/norsk/skrivehjelp/hvordan-skrive-dialog) for å lære alle reglene."
         },
         {
             "type": "component",
@@ -169,7 +173,7 @@
         },
         {
             "type": "text",
-            "content": "Tankereferat oppsummerer hva noen tenker, mens indre monolog lar oss høre den faktiske stemmen deres i sanntid. Bruk begge deler for å skape variasjon."
+            "content": "Tankereferat oppsummerer hva noen tenker, mens indre monolog lar oss høre den faktiske stemmen deres i sanntid. Indre monolog ligger et sted mellom direkte og indirekte gjengivelse av tanker, og fortellerstemmen forsvinner nesten helt (Store norske leksikon, 2025). Bruk begge deler for å skape variasjon."
         },
         {
             "type": "component",
@@ -209,8 +213,8 @@
         {
             "type": "image",
             "src": "/images/topics/skrivehjelp_stil.webp",
-            "alt": "Nærbilde av en sjakkpiece som plasseres med presisjon",
-            "caption": "Stil handler om presisjon – hver detalj må ha en hensikt."
+            "alt": "Nærbilde av en sjakkbrikke som plasseres med presisjon",
+            "caption": "Stil handler om presisjon - hver detalj må ha en hensikt."
         },
         {
             "type": "text",
@@ -222,7 +226,7 @@
         },
         {
             "type": "text",
-            "content": "Hodehopping (å bytte synsvinkel midt i en scene) er en vanlig begynnerfeil. Det bryter illusjonen og gjør det vanskelig for leseren å knytte seg til én karakter av gangen. Lær mer om hvordan du mestrer dette i vår guide om [synsvinkel og stemme](/norsk/virkemidler/synsvinkel-og-stemme)."
+            "content": "Synsvinkel er den posisjonen fortelleren eller en av personene ser handlingen fra, og valget styrer hva leseren får vite (Lauvstad, 2026). En autoral forteller kan i prinsippet flytte synsvinkelen mellom flere personer. Men bytter du synsvinkel brått midt i en scene - det som kalles hodehopping - bryter du illusjonen, og det blir vanskelig for leseren å knytte seg til én karakter av gangen. Lær mer om hvordan du mestrer dette i vår guide om [synsvinkel og stemme](/norsk/virkemidler/synsvinkel-og-stemme)."
         },
         {
             "type": "component",
@@ -230,9 +234,9 @@
             "props": {
                 "items": [
                     {
-                        "bad": "Jeg snek meg lydløst over gulvet. Hjertet mitt hamret så hardt at jeg var sikker på at de hørte det.",
-                        "good": "Erik snek meg lydløst over gulvet. Han merket ikke at skyggen bak ham kom nærmere.",
-                        "why": "Hold deg til tredjeperson eller jeg-person konsekvent."
+                        "bad": "Jeg snek meg lydløst over gulvet. Hjertet mitt hamret så hardt at jeg var sikker på at de hørte det. Vakten ved døra syntes noe virket galt, men han orket ikke å snu seg.",
+                        "good": "Jeg snek meg lydløst over gulvet. Hjertet mitt hamret så hardt at jeg var sikker på at de hørte det. Vakten ved døra rørte seg ikke.",
+                        "why": "I det dårlige eksempelet hopper vi midt i scenen inn i hodet på vakten. Hold deg til én synsvinkel om gangen, så leseren vet hvem hen følger."
                     }
                 ]
             }
@@ -264,7 +268,7 @@
         },
         {
             "type": "text",
-            "content": "En god sammenligning belyser noe nytt. For mange sammenligninger overskygger selve handlingen. Bruk dem som krydder, ikke som hovedrett."
+            "content": "En sammenligning er et språklig bilde der du kobler noe til noe annet med et sammenlikningsord, som regel *som* (Nordbø, 2026). En god sammenligning belyser noe nytt. Men blir et bilde brukt for mye, ender det som en klisjé - en uttrykksmåte som er så overbrukt at den har mistet innholdet sitt (Persvold, 2026). Bruk sammenligninger som krydder, ikke som hovedrett."
         },
         {
             "type": "component",
@@ -298,7 +302,7 @@
                     "Hva betyr ordet agens, slik artikkelen forklarer det?",
                     "Hvorfor mener artikkelen at du bør kutte ordet begynte å, som i setningen Han begynte å løpe?",
                     "Hva er forskjellen på tankereferat og indre monolog ifølge teksten?",
-                    "Hva menes med hodehopping, og hvorfor kaller artikkelen det en vanlig begynnerfeil?"
+                    "Hva menes med hodehopping, og hvorfor gjør det teksten vanskeligere for leseren?"
                 ],
                 "reflekter": [
                     "Artikkelen bytter ut Plutselig gikk lyset med Et høyt smell fikk ham til å hoppe. Alt ble svart. Forklar hvorfor sanseinntrykket sjokkerer leseren mer enn ordet plutselig.",
@@ -312,6 +316,22 @@
                     "Skriv en kort dialog mellom to personer der du følger to av rådene i artikkelen samtidig: sett hver replikk på ny linje, og la minst én indre tanke komme fram som indre monolog."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2019). *Hvordan og hvorfor bruke dialoger?* NDLA. Hentet 27.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg1/hvordan-og-hvorfor-bruke-dialoger/28ec0567d6)",
+                    "Abusland, Å. (2025). *Kunsten å skrive variert*. NDLA. Hentet 27.08.2026 fra [ndla.no](https://ndla.no/r/norsk-sf-vg1/kunsten-a-skrive-variert/26336a48a3)",
+                    "Grundvig, T. E. (2026). *Personskildring*. NDLA. Hentet 27.08.2026 fra [ndla.no](https://ndla.no/subject:1:51a7271b-a9d5-4205-bade-1c125a8650b5/topic:2:b34684b3-3e91-44ee-88b4-1c3e588586dc/topic:2:1cc14972-df1f-4294-b19b-1c2472f5489a/topic:2:16901c14-d7b7-45a8-839b-96aabbf174e2/resource:1:48021)",
+                    "Lauvstad, H. (2026). *synsvinkel - litteratur*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no](https://snl.no/synsvinkel_-_litteratur)",
+                    "Nilstun, C. (2025). *agens*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/agens](https://snl.no/agens)",
+                    "Nordbø, B. (2026). *språklig bilde*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no](https://snl.no/spr%C3%A5klig_bilde)",
+                    "Persvold, A. Z. (2026). *klisjé*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no](https://snl.no/klisj%C3%A9)",
+                    "Store norske leksikon. (2025). *indre monolog*. Hentet 27.08.2026 fra [snl.no/indre_monolog](https://snl.no/indre_monolog)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -320,5 +340,6 @@
         "tips",
         "kreativ skriving"
     ],
-    "createdDate": "2026-01-19T12:00:00Z"
+    "createdDate": "2026-01-19T12:00:00Z",
+    "lastUpdated": "2026-08-27T12:00:00Z"
 }
