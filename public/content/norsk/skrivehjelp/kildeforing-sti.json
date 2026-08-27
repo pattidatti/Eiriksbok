@@ -239,12 +239,12 @@
                 "phase": "Akt 3: Spesialtilfellene",
                 "title": "Uten årstall og hentet-dato",
                 "type": "utfordring",
-                "content": "Noen ganger finner du ikke årstallet for når en kilde ble publisert. Kanskje nettsiden ikke viser det, eller kanskje artikkelen har blitt oppdatert så mange ganger at det opprinnelige årstallet er borte. Hva gjør du da?\n\nSvaret er forkortelsen u.å., som betyr «uten år». Du bruker den både i parenteshenvisningen i teksten og i kildelisten:\n\nI teksten: (Røde Kors, u.å.)\nI kildelisten: Røde Kors. (u.å.). *Førstehjelp*. Hentet 20.03.2024 fra https://www.rodekors.no/forstehjelp\n\nNår kilden mangler årstall, blir «Hentet dato» ekstra viktig. Den viser leseren når du leste kilden, slik at de kan sjekke om innholdet har endret seg siden da. Det samme gjelder for kilder som oppdateres ofte — som Wikipedia-artikler eller offentlige statistikksider.\n\nFor stabile kilder med kjent årstall (som avisartikler og YouTube-videoer) trenger du som regel ikke «Hentet dato».",
+                "content": "Noen ganger finner du ikke årstallet for når en kilde ble publisert. Kanskje nettsiden ikke viser det, eller kanskje artikkelen har blitt oppdatert så mange ganger at det opprinnelige årstallet er borte. Hva gjør du da?\n\nSvaret er forkortelsen u.å., som betyr «uten år». Du bruker den både i parenteshenvisningen i teksten og i kildelisten:\n\nI teksten: (Røde Kors, u.å.)\nI kildelisten: Røde Kors. (u.å.). *Førstehjelp*. Hentet 20.03.2024 fra https://www.rodekors.no/forstehjelp\n\nNår kilden mangler årstall, blir «Hentet dato» ekstra viktig. Den viser leseren når du leste kilden, slik at de kan sjekke om innholdet har endret seg siden da. Det samme gjelder kilder som er laget for å kunne endres, for eksempel et nettleksikon, en profil i sosiale medier eller en statistikkside som oppdateres ofte.\n\nFor stabile kilder med kjent årstall (som avisartikler og YouTube-videoer) trenger du som regel ikke «Hentet dato».",
                 "tasks": [
                     "Hva betyr forkortelsen «u.å.»?",
                     "Hvordan ser parenteshenvisningen ut i teksten for en kilde uten årstall?",
                     "Skriv kildeoppføringen for denne kilden: Du fant en artikkel om «Bærekraft» på regjeringen.no, men finner ikke publiseringsdato. URL: https://www.regjeringen.no/baerekraft. Du leste den 15. mars 2024.",
-                    "Hvorfor er «Hentet dato» spesielt viktig for Wikipedia-artikler?",
+                    "Nevn én type kilde der du alltid skal ta med «Hentet dato», og forklar hvorfor.",
                     "Hva ville du gjort hvis du fant en YouTube-video uten publiseringsdato?",
                     "Er det mer eller mindre troverdig å bruke en kilde uten årstall? Begrunn svaret."
                 ]
