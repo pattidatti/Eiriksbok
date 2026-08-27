@@ -5,7 +5,7 @@
   "year": "1533-1584",
   "category": "Russlands historie",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/russlands-historie/ivan-den-grusomme-hero.webp",
   "factChecked": "2026-08-24",
   "details": [
     "Ivan 4. ble storfyrste av Moskva i 1533, bare tre år gammel, og tsar i 1547",
@@ -21,7 +21,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/ivan-den-grusomme-01.webp",
       "alt": "Liten gutt alene i en stor russisk tronsal om vinteren",
       "caption": "Ivan var tre år da faren døde. I over ti år var det andre som styrte i hans navn."
     },
@@ -75,7 +75,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/ivan-den-grusomme-02.webp",
       "alt": "Russiske soldater og kanoner utenfor bymuren i Kazan",
       "caption": "Kazan falt i 1552. Med Volga under kontroll lå veien østover mot Sibir åpen."
     },
@@ -183,7 +183,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/ivan-den-grusomme-03.webp",
       "alt": "Eldre tsar alene ved et vindu i et tomt palass",
       "caption": "Ivan døde i 1584. Han hadde skaffet seg all makt, og etterlot seg et rike ingen klarte å styre."
     },

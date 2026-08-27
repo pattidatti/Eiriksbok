@@ -5,7 +5,7 @@
   "year": "1762-1796",
   "category": "Russlands historie",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/russlands-historie/katarina-den-store-hero.webp",
   "factChecked": "2026-08-23",
   "details": [
     "Katarina 2. var født i Tyskland i 1729 og styrte Russland fra 1762 til 1796",
@@ -25,7 +25,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/katarina-den-store-01.webp",
       "alt": "Ung keiserinne i uniform omgitt av gardesoldater",
       "caption": "Sommeren 1762 tok Katarina tronen med gardens hjelp. Hun var født i Tyskland og hadde ingen russisk slekt bak seg."
     },
@@ -84,7 +84,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/katarina-den-store-02.webp",
       "alt": "Russiske bønder i arbeid på et gods om høsten",
       "caption": "Flertallet av Katarinas undersåtter var livegne bønder. De kunne ikke flytte, og etter 1767 kunne de heller ikke klage."
     },
@@ -149,7 +149,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/katarina-den-store-03.webp",
       "alt": "Praktfullt palass speiler seg i elva ved solnedgang",
       "caption": "Sankt Petersburg under Katarina: en europeisk hovedstad bygd og driftet av mennesker som ikke fikk flytte dit de ville."
     },

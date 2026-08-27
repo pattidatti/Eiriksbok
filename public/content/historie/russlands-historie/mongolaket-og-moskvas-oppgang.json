@@ -5,7 +5,7 @@
   "year": "1237-1480",
   "category": "Russlands historie",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/russlands-historie/mongolaket-og-moskvas-oppgang-hero.webp",
   "factChecked": "2026-08-25",
   "details": [
     "Mongolhæren under Batu angrep de russiske fyrstedømmene i 1237 og 1238, og brente Kyiv i 1240",
@@ -21,7 +21,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/mongolaket-og-moskvas-oppgang-01.webp",
       "alt": "Mongolske ryttere over en frossen russisk slette om vinteren",
       "caption": "Mongolhæren kom om vinteren, når elvene var islagt og hestene kunne ri rett over dem."
     },
@@ -94,7 +94,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/mongolaket-og-moskvas-oppgang-02.webp",
       "alt": "Vogner med sølv kommer inn gjennom porten til et trebygd Moskva",
       "caption": "Skatten fra nabobyene gikk gjennom Moskva. En del av den ble aldri sendt videre."
     },
@@ -139,7 +139,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/russlands-historie/mongolaket-og-moskvas-oppgang-03.webp",
       "alt": "To hærer står mot hverandre på hver sin bredd av en islagt elv",
       "caption": "Ved elva Ugra i 1480 sto hærene og så på hverandre. Så snudde khanen og red hjem."
     },
