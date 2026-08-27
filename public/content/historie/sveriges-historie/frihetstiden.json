@@ -1,0 +1,306 @@
+{
+  "id": "frihetstiden",
+  "title": "Frihetstiden - da riksdagen tok makten fra kongen",
+  "layout": "rich",
+  "year": "1719-1772",
+  "category": "Sveriges historie",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "subject": "historie",
+  "topic": "Sveriges historie",
+  "details": [
+    "Da Karl 12 døde i 1718, mistet den svenske kongen nesten all makt til riksdagen.",
+    "Hattene og luene ble Sveriges første politiske partier og byttet på å styre landet.",
+    "I 1766 fikk Sverige verdens første lov om trykkefrihet.",
+    "19. august 1772 tok Gustav 3 makten tilbake med et kupp uten et eneste skudd."
+  ],
+  "tags": [
+    "sverige",
+    "frihetstiden",
+    "gustav-iii",
+    "riksdagen",
+    "trykkefrihet",
+    "statskupp"
+  ],
+  "fact": "Visste du at Sveriges to første partier fikk navnene sine av en fornærmelse? Motstanderne sa at Arvid Horn og folkene hans sov med nattlue på. Da kalte de seg selv hattene.",
+  "factChecked": "2026-08-27",
+  "content": [
+    {
+      "type": "text",
+      "content": "Den 11. desember 1718 lå den svenske hæren rundt Fredriksten festning i Halden. Det var vinter, det var mørkt, og kongen gikk selv fram i skyttergravene for å se hvordan arbeidet gikk. Så falt han. Karl 12 ble truffet av en kule, og ingen har senere klart å slå fast om skuddet kom fra festningen eller fra hans egne rekker (Mardal, 2026b). Kongen hadde styrt Sverige i 21 år, og han hadde ført krig i nesten alle sammen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Svenske soldater i snødekte skyttergraver foran Fredriksten festning om natten",
+      "caption": "Karl 12 falt utenfor Fredriksten festning i Halden 11. desember 1718. Med ham falt også Sveriges stormaktstid."
+    },
+    {
+      "type": "text",
+      "content": "Med Karl 12 mistet Sverige stillingen sin som stormakt (Mardal, 2026b). Men det som skjedde inne i landet de neste ukene, var enda mer uvanlig enn dødsfallet. Sverige byttet ikke bare plass i Europa. Landet byttet ut hele svaret på et grunnleggende spørsmål: hvem har lov til å bestemme?"
+    },
+    {
+      "type": "header",
+      "text": "Kongen som bestemte alt, var borte"
+    },
+    {
+      "type": "text",
+      "content": "I over hundre år hadde svenske konger bestemt det meste helt selv. Karl 12 var det tydeligste eksempelet. Store deler av tiden som konge var han ikke engang i Sverige, men ute i Europa med hæren sin. Den perioden kan du lese mer om i [Stormaktstiden](/historie/sveriges-historie/stormaktstiden), og selve statsbyggingen begynte allerede med [Gustav Vasa](/historie/sveriges-historie/gustav-vasa)."
+    },
+    {
+      "type": "text",
+      "content": "Karl 12 hadde verken kone eller barn. Søsteren Ulrika Eleonora overtok tronen, men ga den fra seg til mannen sin, Fredrik av Hessen, som ble kong Fredrik 1 (Salvesen mfl., 2025). De to fikk kronen, men de fikk den ikke gratis. Prisen var at de måtte godta helt nye regler for hvem som skulle styre landet."
+    },
+    {
+      "type": "header",
+      "text": "Makten flytter til riksdagen"
+    },
+    {
+      "type": "text",
+      "content": "De nye reglene kom i årene 1720 til 1723. De opphevet eneveldet og samlet makten hos riksdagens fire stender. De fleste avgjørelsene ble tatt av et råd på 16 menn, og i det rådet hadde kongen bare to stemmer (Salvesen mfl., 2025). Tenk på et klasseråd der læreren fortsatt sitter med rundt bordet, men bare har to stemmer av seksten. Læreren er ikke kastet ut. Læreren bestemmer bare ikke lenger."
+    },
+    {
+      "type": "text",
+      "content": "Perioden fra 1719 til 1772 kalles derfor frihetstiden, fordi eneveldet ble avskaffet i disse årene. Nå var det riksdagen som styrte. Og siden nesten alle som satt der, var embetsmenn, altså folk med jobb i statsapparatet, er perioden også blitt kalt byråkratiets gullalder (Salvesen mfl., 2025). Det er nyttig å sammenlikne med naboen: i [Danmark-Norge](/historie/dansketiden/eneveldet) gikk utviklingen motsatt vei i de samme årene, med en konge som fikk mer makt, ikke mindre."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "De fire stendene: hvem satt i riksdagen?",
+        "content": "Riksdagen besto av fire grupper som møttes og stemte hver for seg. Adelen kunne stille med opptil tusen medlemmer og var rundt 0,5 prosent av befolkningen. Prestene hadde omtrent 50 medlemmer og utgjorde rundt 1 prosent. Borgerne hadde omkring 90 medlemmer og rundt 2 prosent. Bøndene hadde 150 medlemmer, men bak dem sto over 90 prosent av alle som bodde i landet (Lindqvist, 2019)."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å bli imponert av ordet frihetstiden. Men friheten gjaldt ikke alle. Store grupper hadde ingen som talte for dem i det hele tatt: husmenn, leiesoldater, fattige, folk uten egen jord, og alle kvinner (Lindqvist, 2019). At bøndene i det hele tatt fikk sitte ved bordet, var uvanlig i Europa på 1700-tallet. Men bare bønder som eide jorda si selv, hadde stemmerett."
+    },
+    {
+      "type": "header",
+      "text": "Sveriges første partier: hattene og luene"
+    },
+    {
+      "type": "text",
+      "content": "Når en forsamling styrer i stedet for én person, må folk finne noen å stå sammen med. I Sverige skjedde det raskt. Kanslipresident Arvid Horn ledet regjeringen fram til 1738 og ville helst holde fred (Salvesen mfl., 2025). Motstanderne hans mente han var forsiktig til det pinlige, og sa at han og tilhengerne hans satt og snakket i nattlua. Selv tok de derfor navnet hattene. Fornærmelsen ble sittende: Horns folk ble kalt luene, og med det hadde Sverige to partier (Arntzen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Hattene ble stiftet i 1734 av Daniel von Höpken og Carl Gyllenborg. De ville ta tilbake områdene Sverige hadde måttet gi fra seg til Russland ved freden i Nystad i 1721, og de fikk støtte fra adelen og borgerskapet (Mardal, 2025). I 1741 fikk de viljen sin og startet krig mot Russland. Det gikk galt. I stedet for å vinne noe tilbake, mistet Sverige enda mer land i Finland (Salvesen mfl., 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Luene overtok makten i rådet ved riksdagen i 1765 (Arntzen, 2024). De prøvde å rydde opp i pengevesenet, men reformen deres gjorde varene billigere og lønningene mindre verdt, og landet havnet i en pengekrise. Slik gikk det fram og tilbake: hattene og luene byttet på å styre gjennom hele frihetstiden, og hver gang kom en ny kurs."
+    },
+    {
+      "type": "component",
+      "name": "Maktpendelen",
+      "props": {
+        "title": "Maktpendelen: hvor lå makten?",
+        "lead": "Dra merket dit du tror makten lå det året. Trykk så på Sett merket.",
+        "leftLabel": "Kongen bestemmer alt",
+        "rightLabel": "Riksdagen bestemmer alt",
+        "rounds": [
+          {
+            "year": "1718",
+            "situation": "Karl 12 har vært konge i 21 år og ført krig nesten hele tiden. Han tar avgjørelsene selv, og han er stort sett ute av landet med hæren.",
+            "truth": 8,
+            "explanation": "Kongen bestemte nesten alt. Karl 12 falt ved Fredriksten 11. desember 1718, og med ham mistet Sverige stormaktsstillingen."
+          },
+          {
+            "year": "1720",
+            "situation": "Ny regjeringsform. Eneveldet er avskaffet, og riksdagens fire stender har overtatt. Et råd på 16 menn tar de fleste avgjørelsene.",
+            "truth": 88,
+            "explanation": "Kongen fikk beholde to stemmer i rådet på 16. Han satt fortsatt med, men han kunne ikke lenger bestemme alene."
+          },
+          {
+            "year": "1766",
+            "situation": "Luene har flertall i rådet. De legger fram en helt ny lov om hva folk får lov til å skrive og trykke.",
+            "truth": 90,
+            "explanation": "Luene avskaffet sensuren og ga Sverige landets første trykkefrihetsforordning. Riksdagen var på sitt sterkeste."
+          },
+          {
+            "year": "1772",
+            "situation": "19. august rir den unge kong Gustav 3 gjennom Stockholm. Regjeringen blir arrestert samme dag.",
+            "truth": 32,
+            "explanation": "Kuppet lyktes uten et eneste skudd. To dager etter vedtok stendene en ny regjeringsform som ga kongen stor personlig makt."
+          },
+          {
+            "year": "1789",
+            "situation": "Sverige er i krig og har pengeproblemer. Adelen protesterer høyt mot kongen.",
+            "truth": 15,
+            "explanation": "Gustav 3 fengslet lederne i opposisjonen og fikk gjennom Forenings- og sikkerhetsakten. Da var pendelen nesten helt tilbake der den startet."
+          }
+        ],
+        "summary": "På 71 år svingte merket helt over og nesten helt tilbake igjen. Makt i et land ligger ikke fast."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Verdens første trykkefrihet"
+    },
+    {
+      "type": "text",
+      "content": "Det viktigste luene gjorde, handlet ikke om penger. I 1766 avskaffet de pressesensuren og ga Sverige landets første trykkefrihetsforordning (Arntzen, 2024). Sensur betyr at noen leser gjennom en tekst før den blir trykt og kan nekte at den kommer ut. Nå forsvant den kontrollen. Folk kunne skrive og trykke det de mente, også kritikk av dem som styrte."
+    },
+    {
+      "type": "text",
+      "content": "Dette er ingen liten fotnote. Det var den første loven i verden som skrev ytringsfrihet og trykkefrihet inn i lovverket, og den var et direkte resultat av at en forsamling, ikke en konge, satt med makten. Ideene bak kom fra [opplysningstiden](/samfunnskunnskap/styringsformer/opplysningstid), som spredte seg gjennom Europa i de samme tiårene."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Trykkpresse i et verksted på 1700-tallet med ferske avisark hengt til tørk",
+      "caption": "Fra 1766 kunne svenske trykkerier gi ut kritikk av makthaverne uten å spørre om lov først. Ingen andre land hadde en slik lov."
+    },
+    {
+      "type": "header",
+      "text": "Prisen på frihet: stemmer til salgs"
+    },
+    {
+      "type": "text",
+      "content": "Men frihetstiden hadde et problem den aldri løste. Når én konge bestemmer, må den som vil påvirke Sverige, overbevise én person. Når en forsamling bestemmer, blir hver eneste stemme i salen verdt noe. Og det som er verdt noe, kan kjøpes."
+    },
+    {
+      "type": "text",
+      "content": "Fremmede makter oppdaget dette raskt. Utenlandsk innblanding i svensk politikk vokste seg så stor at den til slutt ble selve begrunnelsen for at Gustav 3 grep inn (Salvesen mfl., 2025). Hattene var knyttet til Frankrike, luene førte en britiskvennlig politikk og hadde bånd til Russland (Mardal, 2025; Arntzen, 2024). Riksdagen som skulle være fri, ble et sted der andre lands penger fikk si sitt."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "frihetsvakten-3d"
+      }
+    },
+    {
+      "type": "header",
+      "text": "19. august 1772: makten flytter tilbake"
+    },
+    {
+      "type": "text",
+      "content": "Gustav 3 ble konge i 1771, 25 år gammel. Han hadde vokst opp i et Sverige der kongen var pynt, og han hadde ingen planer om å fortsette slik. Den 19. august 1772 gjennomførte han et statskupp i Stockholm (Mardal, 2026a). Regjeringen ble arrestert, og to dager etter vedtok stendene en ny regjeringsform som ga kongen stor personlig makt (Salvesen mfl., 2025). Det falt ikke et skudd."
+    },
+    {
+      "type": "text",
+      "content": "Gustav 3 var likevel ingen konge av den gamle sorten. Han hørte til det som kalles opplyst enevelde: en hersker som styrer alene, men som mener han skal bruke makten til å gjøre livet bedre for folk. Han fikk avskaffet tortur, fjernet dødsstraff for en rekke forbrytelser og innførte religionsfrihet (Mardal, 2026a). Han grunnla også Operaen og Svenska Akademien, den samme akademien som i dag deler ut Nobelprisen i litteratur."
+    },
+    {
+      "type": "text",
+      "content": "Men grepet strammet seg. Krigen han startet mot Russland i 1788, endte med mytteri i den finske hæren. Da adelen protesterte i 1789, fengslet han lederne i opposisjonen og fikk gjennom Forenings- og sikkerhetsakten, som svekket stendene enda mer (Mardal, 2026a). Tre år senere ble han skutt på et maskeradeball i Operaen 16. mars 1792 av Jacob Johan Anckarström. Kongen levde i tretten dager til og døde 29. mars (Mardal, 2026a)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Maskert folkemengde i en opplyst operasal på 1700-tallet, sett bakfra",
+      "caption": "Gustav 3 ble skutt under et maskeradeball i Operaen i Stockholm 16. mars 1792. Han døde tretten dager senere."
+    },
+    {
+      "type": "header",
+      "text": "Hva frihetstiden viser oss"
+    },
+    {
+      "type": "text",
+      "content": "Det er fristende å lese frihetstiden som en historie som gikk galt. Forsamlingen fikk makten, klarte det ikke, og en konge tok den tilbake. Men da forsvinner det viktigste. På 53 år viste Sverige at makt ikke er en naturlov. Den kan flyttes fra én person til mange, og den kan flyttes tilbake igjen. Begge deler skjedde, og begge deler ble bestemt av mennesker."
+    },
+    {
+      "type": "text",
+      "content": "Frihetstiden ga også noe som ble stående lenge etter at Gustav 3 var borte: tanken om at folk har rett til å skrive og si det de mener, også om dem som styrer. Den svenske loven fra 1766 kom nesten førti år før Norge fikk sin grunnlov i 1814, og den er fortsatt en av grunnpilarene i det svenske samfunnet. Frihetstiden endte i et kupp. Men ideene den slapp løs, gjorde ikke det."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Når og hvor døde Karl 12, og hvorfor er det uklart hvem som skjøt ham?",
+          "Hvor mange stemmer hadde kongen i rådet på 16 menn etter 1720?",
+          "Hvor fikk hattene og luene navnene sine fra, og hvilket av partiene ville helst holde fred?",
+          "Hva innebar trykkefrihetsforordningen fra 1766, og hvorfor var den spesiell i verdenssammenheng?"
+        ],
+        "reflekter": [
+          "Bøndene hadde 150 plasser i riksdagen, men bak dem sto over 90 prosent av befolkningen. Adelen hadde opptil tusen plasser og var 0,5 prosent. Forklar med egne ord hvorfor perioden likevel ble kalt frihetstiden, og hvem friheten faktisk gjaldt.",
+          "Da makten flyttet fra kongen til riksdagen, begynte fremmede makter å kjøpe stemmer i Stockholm. Forklar hvorfor en forsamling kan være lettere å påvirke utenfra enn en enkelt hersker.",
+          "Gustav 3 avskaffet tortur og innførte religionsfrihet, men han tok også makten med et kupp og fengslet motstanderne sine. Var han en god hersker? Argumenter for begge sider.",
+          "I Sverige mistet kongen makt på 1700-tallet, mens kongen i Danmark-Norge hadde full makt i de samme årene. Hva tror du en vanlig bonde merket til denne forskjellen i hverdagen sin?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: hvis noen betaler en politiker for å stemme på en bestemt måte i dag, hva kaller vi det, og hvorfor er det forbudt? Sammenlikn med det som skjedde i den svenske riksdagen på 1700-tallet.",
+          "Sverige fikk verdens første trykkefrihetslov i 1766. Finn ut hva Grunnloven av 1814 sier om ytringsfrihet i Norge, og skriv en kort tekst der du sammenlikner de to.",
+          "Skriv et innlegg på maks 200 ord fra en bonde i riksdagen i 1766, der du argumenterer for eller mot at sensuren skal avskaffes."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "title": "Test deg selv",
+        "questions": [
+          {
+            "question": "Hva utløste starten på frihetstiden i Sverige?",
+            "options": [
+              "Gustav Vasa ble valgt til konge",
+              "Karl 12 døde uten arvinger i 1718",
+              "Sverige tapte slaget ved Poltava",
+              "Riksdagen brant ned i Stockholm"
+            ],
+            "correct": 1,
+            "explanation": "Karl 12 falt ved Fredriksten i Halden 11. desember 1718. Han hadde verken kone eller barn, og de nye reglene fra 1720 til 1723 opphevet eneveldet."
+          },
+          {
+            "question": "Hvor mange stemmer hadde kongen i rådet som tok de fleste avgjørelsene etter 1720?",
+            "options": ["Ingen", "To av seksten", "Halvparten", "Alle"],
+            "correct": 1,
+            "explanation": "Rådet besto av 16 menn, og kongen hadde bare to stemmer. Han satt fortsatt med, men kunne ikke bestemme alene."
+          },
+          {
+            "question": "Hvor kom navnene hattene og luene fra?",
+            "options": [
+              "Fra uniformene i den svenske hæren",
+              "Fra en fornærmelse om at motstanderne satt i nattlue",
+              "Fra to landsdeler i Sverige",
+              "Fra to kongelige familier"
+            ],
+            "correct": 1,
+            "explanation": "Motstanderne av Arvid Horn sa at han og tilhengerne hans snakket i nattlua. Selv tok de navnet hattene, og Horns folk ble kalt luene."
+          },
+          {
+            "question": "Hva skjedde i Sverige i 1766?",
+            "options": [
+              "Landet fikk verdens første lov om trykkefrihet",
+              "Gustav 3 ble skutt på et maskeradeball",
+              "Sverige gikk til krig mot Russland",
+              "Eneveldet ble innført på nytt"
+            ],
+            "correct": 0,
+            "explanation": "Luene avskaffet pressesensuren og ga Sverige landets første trykkefrihetsforordning. Ingen andre land hadde en slik lov."
+          },
+          {
+            "question": "Hvordan endte frihetstiden?",
+            "options": [
+              "Riksdagen oppløste seg selv",
+              "Russland erobret Sverige",
+              "Gustav 3 tok makten med et statskupp 19. august 1772",
+              "Bøndene gjorde opprør"
+            ],
+            "correct": 2,
+            "explanation": "Gustav 3 gjennomførte kuppet uten et eneste skudd. To dager senere vedtok stendene en ny regjeringsform som ga kongen stor personlig makt."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Arntzen, J. G. (2024). *Luer*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/luer](https://snl.no/luer)",
+          "Lindqvist, H. (2019). *De fyra stånden och riksdagen under frihetstiden*. SO-rummet. Hentet 27.08.2026 fra [so-rummet.se](https://www.so-rummet.se/fakta-artiklar/de-fyra-standen-och-riksdagen-under-frihetstiden)",
+          "Mardal, M. A. (2025). *Hatter*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/hatter](https://snl.no/hatter)",
+          "Mardal, M. A. (2026a). *Gustav 3*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/Gustav_3](https://snl.no/Gustav_3)",
+          "Mardal, M. A. (2026b). *Karl 12*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/Karl_12](https://snl.no/Karl_12)",
+          "Salvesen, H., Norseng, P. G., Mardal, M. A. mfl. (2025). *Sveriges historie*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/Sveriges_historie](https://snl.no/Sveriges_historie)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

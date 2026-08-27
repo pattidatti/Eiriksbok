@@ -3634,6 +3634,21 @@
               ],
               "createdDate": "2026-05-16T03:18:55+02:00",
               "lastUpdated": "2026-08-02T08:51:16+02:00"
+            },
+            {
+              "id": "frihetstiden",
+              "title": "Frihetstiden - da riksdagen tok makten fra kongen",
+              "description": "I 53 år styrte den svenske riksdagen i stedet for kongen, helt til Gustav 3 tok makten tilbake med et kupp i 1772.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sverige",
+                "frihetstiden",
+                "gustav-iii",
+                "riksdagen",
+                "trykkefrihet",
+                "statskupp"
+              ],
+              "createdDate": "2026-08-27T00:00:00Z"
             }
           ]
         },

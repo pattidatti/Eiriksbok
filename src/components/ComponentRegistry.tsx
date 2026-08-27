@@ -116,6 +116,7 @@ const VeilOfIgnorance = lazy(() => import('./content/interactive/VeilOfIgnorance
 const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBrillene').then(m => ({ default: m.DyreetikkBrillene })));
 const KiAnsvarskjeden = lazy(() => import('./content/interactive/KiAnsvarskjeden').then(m => ({ default: m.KiAnsvarskjeden })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
+const Maktpendelen = lazy(() => import('./content/interactive/Maktpendelen').then(m => ({ default: m.Maktpendelen })));
 const Maktvekten = lazy(() => import('./content/interactive/Maktvekten').then(m => ({ default: m.Maktvekten })));
 const Skatteoppkreveren = lazy(() => import('./content/interactive/Skatteoppkreveren').then(m => ({ default: m.Skatteoppkreveren })));
 const LivssynsByggeren = lazy(() => import('./content/interactive/LivssynsByggeren').then(m => ({ default: m.LivssynsByggeren })));
@@ -603,6 +604,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KiAnsvarskjeden,
     MaktensFristelse,
     GoldenMeanSlider,
+    Maktpendelen,
     Maktvekten,
     Skatteoppkreveren,
     LivssynsByggeren,
