@@ -6,6 +6,8 @@
     "category": "Urfolks religion",
     "readTime": "9 min lesning",
     "heroImage": "/images/samisk/intro-hero.webp",
+    "lastUpdated": "2026-08-27T00:00:00Z",
+    "factChecked": "2026-08-27",
     "religion": "samisk",
     "dimension": "ritual",
     "comparison_tags": [
@@ -36,11 +38,11 @@
         },
         {
             "type": "text",
-            "content": "Samisk religion ligner ikke på kristendom, islam eller jødedom. Det fantes ingen kirker, ingen hellig bok og ingen prester som leste fra en preken. Troen lå i landskapet selv. Et bestemt fjell kunne være hellig fordi forfedrene mente at en sterk ånd bodde der. En foss eller en stein kunne være et sieidi, altså et offersted der folk la igjen reinhorn, fiskebein eller litt mat for å takke for et godt år."
+            "content": "Samisk religion ligner ikke på kristendom, islam eller jødedom. Det fantes ingen kirker, ingen hellig bok og ingen prester som leste fra en preken. Troen lå i landskapet selv. Fjell, steiner, trær og vannkilder ble sett på som besjelet, eller som bosted for egne ånder (Løøv mfl., 2024). En foss eller en stein kunne være et sieidi, altså en offerstein ute i naturen der folk la igjen gaver for å takke (Løøv mfl., 2024)."
         },
         {
             "type": "text",
-            "content": "Verden hadde tre lag. Øverst var gudene og sola. I midten levde menneskene, reinen og alt annet liv. Nederst lå Jábmiidáibmu, de dødes rike, der forfedrene fortsatte å leve. De tre lagene hang sammen, og det var mulig å bevege seg mellom dem hvis man visste hvordan."
+            "content": "Verden var større enn det øyet kunne se. Ved siden av menneskenes verden lå flere andre verdener: Jábmiid áibmu, de dødes rike der forfedrene fortsatte å leve, det gode Sáivu, en egen dyreverden, en himmel og en underverden (Løøv mfl., 2024). Verdenene hang sammen, og det var mulig å bevege seg mellom dem hvis man visste hvordan."
         },
         {
             "type": "header",
@@ -48,11 +50,11 @@
         },
         {
             "type": "text",
-            "content": "I hver siida, altså i hvert lille slektsfellesskap, fantes det gjerne en noaide. Det var en åndelig leder som visste hvordan man tok kontakt med åndene. Noaiden var verken bare lege eller bare prest, men litt av begge deler. Når noen ble syk, når reinflokken forsvant, eller når folk trengte råd om en stor avgjørelse, gikk de til noaiden."
+            "content": "I hver siida, altså i hvert lille slektsfellesskap, fantes det gjerne en noaide. Det var en åndelig leder som var bindeleddet mellom menneskene og åndeverdenen (Løøv, 2025). Noaiden var verken bare lege eller bare prest, men litt av begge deler. Når noen ble syk, når reinflokken forsvant, eller når folk trengte råd om det som skulle komme, gikk de til noaiden (Løøv, 2025)."
         },
         {
             "type": "text",
-            "content": "Noaiden brukte trommen for å komme i kontakt med åndene. Etter lange seremonier med joik, røyk og trommeslag falt noaiden i en slags dyp drøm. Folk sa at noaidens sjel da forlot kroppen og reiste til de andre verdenene. Noaiden kunne snakke med forfedrene i Jábmiidáibmu eller be gudene i øvre verden om hjelp, og så komme tilbake med svar."
+            "content": "Noaiden brukte trommen for å komme i transe, altså en slags dyp drøm (Løøv mfl., 2024). Da forlot frisjelen hans kroppen og reiste til de andre verdenene, mens kroppen lå livløs igjen (Løøv mfl., 2024; Løøv, 2025). Noaiden kunne snakke med forfedrene i de dødes rike eller hente hjelp hos hjelpeåndene sine, og så komme tilbake med svar (Løøv, 2025)."
         },
         {
             "type": "component",
@@ -68,18 +70,18 @@
         },
         {
             "type": "text",
-            "content": "Et viktig trekk ved samisk religion er at alle ting har en ånd. Et tre er ikke bare et tre. En bjørn er ikke bare et dyr. Bjørnen var så hellig at jegerne ikke engang sa navnet på den rett ut. De kalte den heller besten i skogen, altså den gamle i skogen. Etter en vellykket bjørnejakt fulgte lange seremonier der folk takket bjørnens ånd og ba om at den kom tilbake neste år."
+            "content": "Et viktig trekk ved samisk religion er at alle ting har en ånd. Et tre er ikke bare et tre. En bjørn er ikke bare et dyr. Bjørnen ble regnet som et hellig dyr, og jegerne sa ikke navnet på den rett ut (Store norske leksikon, 2026). De trodde bjørnen forsto vanlig menneskeprat, men ikke omskrivninger, og derfor fantes det rundt tjue andre navn på den (Store norske leksikon, 2026). Etter en vellykket bjørnejakt fulgte lange seremonier. Jegerne ba bjørnen om unnskyldning for at de hadde drept den, og alle beina ble gravd ned, for dem trengte bjørnen når den skulle bli født på nytt (Store norske leksikon, 2026)."
         },
         {
             "type": "text",
-            "content": "Denne måten å se naturen på har et navn: animisme. Det betyr at alt levende har en åndelig kraft, og det samme har mange ting vi vil kalle døde, som steiner og vann. Tror du på dette, kan du ikke bare ta fra naturen. Du må alltid gi noe tilbake. Et godt liv handlet om balanse, ikke om å eie mest."
+            "content": "Denne måten å se naturen på har et navn: animisme. Det betyr at alt levende har en åndelig kraft, og det samme har mange ting vi vil kalle døde, som steiner og vann (Løøv mfl., 2024). Tror du på dette, kan du ikke bare ta fra naturen. Du må alltid gi noe tilbake. Et godt liv handlet om balanse, ikke om å eie mest."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Joik - bønn formet som sang",
-                "content": "Du joiker ikke om fjellet. Du joiker fjellet. En joik skal ikke fortelle om noen, den skal på et vis være den personen, det dyret eller det stedet du joiker. Joiken var en åndelig handling som knyttet personen, dyret eller stedet tett til den som joiket. Kirken forbød joik i mange områder helt fram til 1950-tallet."
+                "content": "Du joiker ikke om fjellet. Du joiker fjellet. En joik skal ikke fortelle om noen, den skal på et vis være den personen, det dyret eller det stedet du joiker. Fikk du din egen joik, fikk du samtidig et slags tonenavn, en lyd som var bare din (Gaski mfl., 2024). Misjonærene så på joiken som syndig, og ville ha den bort (Risto, 2026)."
             }
         },
         {
@@ -88,21 +90,21 @@
         },
         {
             "type": "text",
-            "content": "På 1600- og 1700-tallet sendte den dansk-norske kongen og kirken misjonærer nordover. Den mest kjente var Thomas von Westen på 1720-tallet. Målet var klart: samene skulle bli kristne. Det var ikke bare snakk om å lære dem nye bønner. Det handlet om å bryte ned hele den gamle troen."
+            "content": "På 1600- og 1700-tallet sendte den dansk-norske kongen og kirken misjonærer nordover. Den mest kjente var Thomas von Westen, som gjorde tre misjonsreiser til Nord-Norge i årene 1716-1723 (Grankvist mfl., 2026). Målet var klart: samene skulle bli kristne. Det var ikke bare snakk om å lære dem nye bønner. Det handlet om å bryte ned hele den gamle troen (Løøv mfl., 2024)."
         },
         {
             "type": "image",
             "src": "/images/samisk/intro-02.webp",
             "alt": "Misjonær fra 1700-tallet brenner samiske runebommer og ofresteder",
-            "caption": "Runebommene ble brent. Sieidiene ble veltet. Joiken ble forbudt."
+            "caption": "Runebommene ble brent. Sieidiene ble veltet. Joiken ble kalt synd."
         },
         {
             "type": "text",
-            "content": "Misjonærene samlet inn runebommer fra hele Sápmi. De ble brent på bål, eller sendt til samlinger i København. I dag er rundt 70 runebommer bevart i hele verden, av kanskje tusenvis som fantes. Noaidene ble jaktet på. Noen ble dømt for trolldom og henrettet. Joik ble straffet. Sieidiene ble veltet, og barn ble fortalt at hvis de fortsatte med den gamle troen, ville de havne i helvete."
+            "content": "Misjonærene samlet inn runebommer fra hele Sápmi. Noen ble brent, andre havnet i samlinger i København (Løøv mfl., 2024; Kraft mfl., 2025). Flere hundre trommer forsvant fra de samiske områdene under misjonen på 1600- og 1700-tallet, og i dag finnes det bare rundt hundre igjen i hele verden (Kraft mfl., 2025). Noaidene ble jaktet på, og noen ble tiltalt og dømt til døden for trolldom (Løøv, 2025). Joiken ble kalt synd (Risto, 2026), og sieidiene ble veltet."
         },
         {
             "type": "text",
-            "content": "Likevel forsvant ikke alt. Mye av troen ble båret videre i hemmelighet. Bestemødre lærte barnebarn å vise respekt for naturen uten å bruke ordene som ville få dem i trøbbel. Joiken ble sunget bak fjellet, der presten ikke kunne høre. Slik overlevde en del av tradisjonen helt fram til vår tid."
+            "content": "Likevel forsvant ikke alt. Noen myter, forestillinger og skikker overlevde helt fram til vår tid (Løøv mfl., 2024). Respekten for naturen ble båret videre i familiene, og fra 1970-tallet har interessen for den gamle samiske religionen vokst igjen (Løøv mfl., 2024)."
         },
         {
             "type": "header",
@@ -110,11 +112,11 @@
         },
         {
             "type": "text",
-            "content": "I dag er de fleste samer kristne, og mange er med i den læstadianske vekkelsen, en kristen bevegelse med samiske røtter som bruker samisk språk i kirken. Men de siste tiårene har det også vokst fram en ny interesse for den gamle troen. Noen samer kaller seg igjen for naturreligiøse. De besøker gamle sieidi-steder, joiker åpent, og lager nye runebommer som ikke skal brukes til å reise til åndeverdenen, men som kunstverk og minne om det som ble tatt bort."
+            "content": "I dag er de fleste samer kristne, og mange er med i den læstadianske vekkelsen. Det er en kristen vekkelsesbevegelse som vokste fram rundt den svensk-samiske presten Lars Levi Læstadius på midten av 1800-tallet, og som spredte seg i samisk- og finsktalende områder i nord (Molland mfl., 2026). Men de siste tiårene har det også vokst fram en ny interesse for den gamle troen. Fra 1990-tallet har noen kalt de nye bevegelsene for samisk sjamanisme (Løøv mfl., 2024). Nye runebommer blir laget igjen, ikke for å reise til åndeverdenen, men som instrumenter og som tegn på samisk identitet (Kraft mfl., 2025)."
         },
         {
             "type": "text",
-            "content": "I 2017 ba Den norske kirke offentlig om unnskyldning for misjonen mot samene og for fornorskingen, altså politikken som skulle gjøre samer om til nordmenn. Det er en del av et større forsøk på å rette opp gammel urett. Samtidig diskuteres det hvem som eier de gamle runebommene som ligger i museer i utlandet, og om de bør komme hjem."
+            "content": "Fornorsking betyr at språket og kulturen til samene ble motarbeidet og byttet ut med norsk (Berg-Nordlie, 2025). I 2018 satte Stortinget ned en sannhets- og forsoningskommisjon som skulle granske denne politikken, og rapporten kom i 2023 (Berg-Nordlie, 2025). I 2024 erkjente Kirkemøtet, det øverste organet i Den norske kirke, at også kirken var med på fornorskingen, og vedtok en plan med 29 tiltak for forsoning (Den norske kirke, 2025). Samtidig diskuteres det hvem som eier de gamle runebommene. I 2022 ga Danmark fra seg eierskapet til trommen som ble tatt fra noaiden Anders Poulsen i 1691, slik at den nå eies av et samisk museum (Kraft mfl., 2025)."
         },
         {
             "type": "component",
@@ -147,7 +149,7 @@
                             "En type runebomme"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Sieidi var et hellig sted i naturen, gjerne en stein, en foss eller et fjell, der folk la igjen gaver for å takke åndene."
+                        "explanation": "Sieidi var en offerstein eller et hellig sted i naturen, gjerne en stein, en foss eller et fjell, der folk la igjen gaver for å takke åndene."
                     },
                     {
                         "question": "Hvilken rolle hadde noaiden?",
@@ -158,7 +160,7 @@
                             "Noaiden styrte handel mellom samer og nordmenn"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Noaiden var en åndelig leder som kunne reise til andre verdener med sjelen sin for å hente råd, gjøre syke friske og snakke med forfedrene."
+                        "explanation": "Noaiden var bindeleddet mellom menneskene og åndeverdenen, og kunne reise til andre verdener med sjelen sin for å hente råd, gjøre syke friske og snakke med de døde."
                     },
                     {
                         "question": "Hva skjedde med runebommene på 1700-tallet?",
@@ -169,7 +171,7 @@
                             "De ble brukt i kirkene"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Misjonærer som Thomas von Westen samlet inn runebommene og brente dem. Bare rundt 70 er bevart i dag, og mange av dem står i museer i utlandet."
+                        "explanation": "Misjonærer som Thomas von Westen samlet inn runebommene, og noen ble brent. Bare rundt hundre er bevart i dag, og mange av dem står i museer."
                     },
                     {
                         "question": "Hva betyr animisme?",
@@ -193,6 +195,24 @@
                         "correctAnswer": 1,
                         "explanation": "Samisk religion bærer videre en måte å se verden på der mennesket er en del av naturen, ikke over den. Den er også en sentral del av samisk identitet og kulturarv."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg-Nordlie, M. (2025). *Fornorsking*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/fornorsking](https://snl.no/fornorsking)",
+                    "Den norske kirke. (2025). *29 tiltak for forsoning*. Hentet 27.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/om-kirken/aktuelt/29%20tiltak%20for%20forsoning/)",
+                    "Gaski, H., Ledang, O. K. & Aksdal, B. (2024). *Joik*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/joik](https://snl.no/joik)",
+                    "Grankvist, R., Willumsen, L. H. & Weihe, H.-J. W. (2026). *Thomas von Westen*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/Thomas_von_Westen](https://snl.no/Thomas_von_Westen)",
+                    "Kraft, S. E., Fonneland, T., Knudsen, J. S. & Berg-Nordlie, M. (2025). *Runebomme*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/runebomme](https://snl.no/runebomme)",
+                    "Løøv, M. (2025). *Noaide*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/noaide](https://snl.no/noaide)",
+                    "Løøv, M., Kraft, S. E., Gaski, H. & Fonneland, T. (2024). *Samisk religion*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/samisk_religion](https://snl.no/samisk_religion)",
+                    "Molland, E., Bloch-Hoell, N. E. & Elstad, H. (2026). *Læstadianere*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/læstadianere](https://snl.no/l%C3%A6stadianere)",
+                    "Risto, T. (2026). *Samisk utdanningshistorie*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/samisk_utdanningshistorie](https://snl.no/samisk_utdanningshistorie)",
+                    "Store norske leksikon. (2026). *Bjørnekult*. Hentet 27.08.2026 fra [snl.no/bjørnekult](https://snl.no/bj%C3%B8rnekult)"
                 ]
             }
         }

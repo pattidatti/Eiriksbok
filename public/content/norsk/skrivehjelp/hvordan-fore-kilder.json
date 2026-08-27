@@ -6,6 +6,8 @@
     "heroImage": "/images/lessons/norsk/citation_hero.webp",
     "status": "published",
     "layout": "rich",
+    "lastUpdated": "2026-08-27T00:00:00Z",
+    "factChecked": "2026-08-27",
     "tags": [
         "skrivehjelp",
         "kildebruk",
@@ -15,7 +17,7 @@
     "content": [
         {
             "type": "text",
-            "value": "Å føre kilder handler om ærlighet og sporbarhet. Du skal gi æren til den som eier tankene, og du skal gi leseren et kart slik at de kan finne frem til kilden selv. I skolen bruker vi som regel stilen APA 7. Den kan virke streng, men den følger en enkel logikk som gjentar seg: Hvem har laget det? Når ble det laget? Hva heter det? Hvor finner jeg det?"
+            "content": "Å føre kilder handler om ærlighet og sporbarhet. Du skal gi æren til den som eier tankene, og du skal gi leseren et kart slik at de kan finne frem til kilden selv. I skolen bruker vi som regel stilen APA 7. Norske universiteter og høgskoler har laget en egen norsk utgave av den (Redaksjonen for norsk APA-stil, 2022), og universitetsbibliotekene har gratis veiledere du kan slå opp i (Kildekompasset, u.å.; OsloMet, 2026). Stilen kan virke streng, men den følger en enkel logikk som gjentar seg: Hvem har laget det? Når ble det laget? Hva heter det? Hvor finner jeg det? Det er nøyaktig de fire spørsmålene en oppføring i kildelisten skal svare på (Redaksjonen for norsk APA-stil, 2022)."
         },
         {
             "type": "header",
@@ -23,7 +25,7 @@
         },
         {
             "type": "text",
-            "value": "Når du skriver en setning hvor du bruker fakta fra en kilde, må du vise det med en gang. Dette kalles en løpende henvisning. Det enkleste er å sette en parentes til slutt i setningen med forfatterens navn og årstallet kilden ble publisert."
+            "content": "Når du skriver en setning hvor du bruker fakta fra en kilde, må du vise det med en gang. Dette kalles en løpende henvisning. Det enkleste er å sette en parentes til slutt i setningen med forfatterens navn og årstallet kilden ble publisert. Derfor kalles APA et forfatter-årstall-system: den korte henvisningen i teksten leder leseren videre til den fulle oppføringen i kildelisten (Redaksjonen for norsk APA-stil, 2022)."
         },
         {
             "type": "comparison",
@@ -42,7 +44,7 @@
         },
         {
             "type": "text",
-            "value": "Til slutt i teksten din skal du ha en liste over alle kildene dine. Denne listen skal sorteres alfabetisk etter forfatterens etternavn eller organisasjonens navn. Her er oppskriftene på de tre vanligste kildene:"
+            "content": "Til slutt i teksten din skal du ha en liste over alle kildene dine. Denne listen skal sorteres alfabetisk etter forfatterens etternavn eller organisasjonens navn (Redaksjonen for norsk APA-stil, 2022). Her er oppskriftene på de tre vanligste kildene:"
         },
         {
             "type": "subheader",
@@ -97,7 +99,7 @@
         },
         {
             "type": "text",
-            "value": "Mange nettsider har artikler skrevet av navngitte personer. Da bruker du personens navn, ikke organisasjonen. Sjekk alltid om artikkelen har en forfatter oppgitt."
+            "content": "Mange nettsider har artikler skrevet av navngitte personer. Da bruker du personens navn, ikke organisasjonen. Sjekk alltid om artikkelen har en forfatter oppgitt. Er det ingen navngitt person, er det organisasjonen bak siden som står som forfatter (Kildekompasset, u.å.; Redaksjonen for norsk APA-stil, 2022)."
         },
         {
             "type": "comparison",
@@ -120,7 +122,7 @@
         },
         {
             "type": "text",
-            "value": "Noen ganger finner du ikke årstallet for når en kilde ble publisert. Da skriver du (u.å.) i stedet, som betyr \"uten år\". I teksten ser det slik ut: (Røde Kors, u.å.). I kildelisten ser det slik ut:\n\nRøde Kors. (u.å.). *Førstehjelp*. Hentet 20.03.2024 fra https://www.rodekors.no/forstehjelp\n\nNår kilden mangler årstall, er det ekstra viktig å ta med datoen du hentet den. Slik kan leseren sjekke om innholdet har endret seg."
+            "content": "Noen ganger finner du ikke årstallet for når en kilde ble publisert. Da skriver du (u.å.) i stedet, som betyr \"uten år\" (Redaksjonen for norsk APA-stil, 2022). I teksten ser det slik ut: (Røde Kors, u.å.). I kildelisten ser det slik ut:\n\nRøde Kors. (u.å.). *Førstehjelp*. Hentet 20.03.2024 fra https://www.rodekors.no/forstehjelp\n\nFinner du verken en publiseringsdato eller en dato for sist oppdatert, skal du regne publiseringstidspunktet som ukjent (Redaksjonen for norsk APA-stil, 2022). Da er hentedatoen ekstra viktig: den viser leseren nøyaktig hvilken versjon av siden du brukte (Søk & Skriv, u.å.)."
         },
         {
             "type": "subheader",
@@ -128,7 +130,7 @@
         },
         {
             "type": "text",
-            "value": "Hva gjør du hvis du har brukt to artikler av Per Hansen, begge fra 2023? Da legger du til en bokstav etter årstallet: a, b, c. Bokstavene følger alfabetisk rekkefølge basert på tittelen i kildelisten.\n\nI teksten: (Hansen, 2023a) og (Hansen, 2023b)\n\nI kildelisten:\nHansen, P. (2023a). *Havnivåstigning i Norge*. Hentet 12.01.2024 fra https://www.eksempel.no/havniva\nHansen, P. (2023b). *Klimaendringer i Arktis*. Hentet 12.01.2024 fra https://www.eksempel.no/klima\n\n\"Havnivåstigning\" kommer før \"Klimaendringer\" alfabetisk, og får derfor bokstaven a."
+            "content": "Hva gjør du hvis du har brukt to artikler av Per Hansen, begge fra 2023? Da legger du til en bokstav etter årstallet: a, b, c. Bokstavene følger alfabetisk rekkefølge basert på tittelen i kildelisten, ikke rekkefølgen du siterte dem i teksten (Redaksjonen for norsk APA-stil, 2022).\n\nI teksten: (Hansen, 2023a) og (Hansen, 2023b)\n\nI kildelisten:\nHansen, P. (2023a). *Havnivåstigning i Norge*. Hentet 12.01.2024 fra https://www.eksempel.no/havniva\nHansen, P. (2023b). *Klimaendringer i Arktis*. Hentet 12.01.2024 fra https://www.eksempel.no/klima\n\n\"Havnivåstigning\" kommer før \"Klimaendringer\" alfabetisk, og får derfor bokstaven a."
         },
         {
             "type": "header",
@@ -136,7 +138,7 @@
         },
         {
             "type": "text",
-            "value": "Hvis en kilde ikke har et personlig forfatternavn, bruker du navnet på organisasjonen (som \"Store norske leksikon\" eller \"Utdanningsdirektoratet\"). Finner du ikke årstallet? Da skriver du (u.å.) som betyr \"uten år\". Du trenger som regel ikke ta med datoen du leste kilden, med mindre innholdet endrer seg ofte (som på Wikipedia) eller kilden mangler årstall."
+            "content": "Hvis en kilde ikke har et personlig forfatternavn, bruker du navnet på organisasjonen (som \"Store norske leksikon\" eller \"Utdanningsdirektoratet\"). Finner du ikke årstallet? Da skriver du (u.å.) som betyr \"uten år\". Du trenger som regel ikke ta med datoen du leste kilden. Men den skal alltid med når kilden er laget for å kunne endres eller oppdateres ofte, for eksempel et nettleksikon, en profil i sosiale medier eller et kart på nett (Redaksjonen for norsk APA-stil, 2022)."
         },
         {
             "type": "component",
@@ -159,6 +161,18 @@
                     "Finn en ekte artikkel på snl.no eller fn.no om et tema du liker. Skriv kilden riktig i litteraturlisten etter oppskriften for nettsider, med forfatter eller organisasjon, årstall, tittel i kursiv, hentedato og URL.",
                     "Skriv den samme setningen om Finland på begge måtene artikkelen viser: først med forfatteren i parentes til slutt, og deretter med forfatteren nevnt direkte inne i setningen.",
                     "Bytt tekst med en klassekamerat. Sjekk om kildene deres er ført riktig etter APA 7, og gi hverandre ett konkret tips til forbedring."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Kildekompasset. (u.å.). *APA 7th*. Universitetet i Agder, Universitetet i Sørøst-Norge og Universitetet i Stavanger. Hentet 27.08.2026 fra [kildekompasset.no](https://kildekompasset.no/referansestiler/apa-7th/)",
+                    "OsloMet. (2026). *APA og referering*. Universitetsbiblioteket, OsloMet. Hentet 27.08.2026 fra [oslomet.no](https://www.oslomet.no/ub/apa-referering)",
+                    "Redaksjonen for norsk APA-stil. (2022). *Norsk APA-manual: En nasjonal standard for norskspråklig APA-stil basert på APA 7th* (Versjon 1.8). Unit. Hentet 27.08.2026 fra [cms.sikt.no](https://cms.sikt.no/sites/default/files/2022-12/APA%207th%20norsk%202022,%20v1.8.pdf)",
+                    "Søk & Skriv. (u.å.). *APA 7th*. Høgskulen på Vestlandet, Universitetet i Bergen og Universitetet i Oslo. Hentet 27.08.2026 fra [sokogskriv.no](https://www.sokogskriv.no/referansestiler/apa-7th.html)"
                 ]
             }
         }
