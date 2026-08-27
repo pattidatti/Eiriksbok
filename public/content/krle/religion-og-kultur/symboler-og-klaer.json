@@ -33,7 +33,7 @@
         },
         {
             "type": "text",
-            "content": "De fleste store religioner har sitt eget tegn. Korset minner om at Jesus døde på et kors. Halvmånen og stjernen er blitt et kjent tegn for islam. Davidsstjernen er en sekskantet stjerne som står for jødisk tro. Buddhismen bruker et hjul, hinduismen tegnet Om, og sikhene tegnet khanda. Vil du se hvordan religionene ligner og skiller seg fra hverandre, kan du [sammenligne religioner](/krle/sammenlign) side om side."
+            "content": "De fleste store religioner har sitt eget tegn. Korset er særlig knyttet til kristendommen, og der står det for selve troen. Et krusifiks, altså et kors med Jesus-figuren på, viser lidelseshistorien og at han døde på korset (Mørstad, 2024). Halvmånen, hilal på arabisk, brukes ofte øverst på moskékuppelen eller på minareten, og halvmåne med stjerne er blitt et kjent tegn for islam (Vogt, 2025). Davidsstjernen er en sekstakket stjerne satt sammen av to trekanter, og i dag er den mest kjent som et jødisk symbol (Groth, 2026a). I buddhismen er hjulet et sentralt symbol som først og fremst står for Buddhas lære, dharma (Borgland, 2025). Hinduismen har tegnet Om, og sikhene tegnet khanda. Vil du se hvordan religionene ligner og skiller seg fra hverandre, kan du [sammenligne religioner](/krle/sammenlign) side om side."
         },
         {
             "type": "text",
@@ -41,7 +41,7 @@
         },
         {
             "type": "text",
-            "content": "Symbolene er ikke pynt som noen fant på i går. De har vokst fram gjennom hundrevis av år, og bærer med seg en historie. Klarer du å koble hvert tegn til riktig religion?"
+            "content": "Symbolene er ikke pynt som noen fant på i går. De har vokst fram gjennom hundrevis av år, og bærer med seg en historie. Om er en hellig lyd i hinduismen, og den kan uttrykke brahman, selve urgrunnen i universet (Jacobsen, 2025). Khanda er satt sammen av tre ting: et tveegget sverd i midten, en jernring rundt, og to sverd på hver side (Sikher i Norge, u.å.). Klarer du å koble hvert tegn til riktig religion?"
         },
         {
             "type": "component",
@@ -56,11 +56,11 @@
         },
         {
             "type": "text",
-            "content": "Det er ikke bare smykker og tegn som viser tro. Klær kan gjøre det samme. Mange muslimske jenter og kvinner bruker hijab, et skaut som dekker håret. En jødisk mann kan bære kippa, en liten rund lue på issen. Sikher lar håret gro og samler det under en turban. En katolsk nonne bruker drakt og slør. Alle disse klærne sier noe: «Jeg hører til denne troen.» Noen klær brukes hele tiden, andre bare i bønn eller på spesielle dager."
+            "content": "Det er ikke bare smykker og tegn som viser tro. Klær kan gjøre det samme. Mange muslimske jenter og kvinner bruker hijab, et skaut som dekker hår, hals og ører. Det kan knytes under haken eller legges løst over hodet (Vogt et al., 2026). En jødisk mann eller gutt kan bære kippa, på norsk også skrevet kipa, en rund lue uten brem som brukes til bønn, religiøse studier og måltider (Groth, 2026b). Sikhismens regler oppfordrer sikher til å la hår og skjegg gro uklippet, og håret samles i en knute under turbanen (Kristiansen et al., 2024). En katolsk nonne bruker drakt og slør. Alle disse klærne sier noe: «Jeg hører til denne troen.» Noen klær brukes hele tiden, andre bare i bønn eller på spesielle dager."
         },
         {
             "type": "text",
-            "content": "Hvorfor kler folk seg slik? For mange handler det om respekt for Gud eller for reglene i troen. For andre handler det om å vise hvem de er, akkurat som et fotballskjerf viser hvilket lag du heier på. Ofte er det begge deler på én gang. Det er viktig å huske at ikke alle som tilhører en religion, går med slike klær. Mange velger å la være, og det er helt vanlig."
+            "content": "Hvorfor kler folk seg slik? For mange handler det om respekt for Gud eller for reglene i troen. For andre handler det om å vise hvem de er, akkurat som et fotballskjerf viser hvilket lag du heier på. Ofte er det begge deler på én gang. Det er viktig å huske at ikke alle som tilhører en religion, går med slike klær. Bruken varierer mye fra land til land og fra person til person, og ikke alle muslimske kvinner ønsker å bruke hijab (Vogt et al., 2026)."
         },
         {
             "type": "image",
@@ -89,7 +89,11 @@
         },
         {
             "type": "text",
-            "content": "I Norge har vi lenge diskutert hvor mye tro som skal få vises i det offentlige. Skal en politi få bruke hijab til uniformen? Skal læreren ha lov til å bære et stort kors på skolen? Noen mener at alle bør få vise troen sin fritt, fordi religionsfrihet er en menneskerett. Andre mener at noen yrker bør være helt nøytrale, slik at alle blir behandlet likt."
+            "content": "I Norge har vi lenge diskutert hvor mye tro som skal få vises i det offentlige. Skal en politibetjent få bruke hijab til uniformen? Skal læreren ha lov til å bære et stort kors på skolen? Noen mener at alle bør få vise troen sin fritt, fordi religionsfrihet er en menneskerett. Den står i artikkel 18 i FNs menneskerettighetserklæring fra 1948, og Grunnloven § 16 slår fast at alle innbyggere i riket har fri religionsutøvelse (Elden & Larsen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Andre mener at noen yrker bør være helt nøytrale, slik at alle blir behandlet likt. Loven skiller nemlig mellom to sider av religionsfriheten. Hva du tror på inni deg, kan ingen forby. Men hvordan du viser troen utad, kan begrenses hvis det står i en lov, har et rimelig formål og ikke går lenger enn nødvendig. Derfor kan religiøse hodeplagg forbys sammen med politiuniformen, selv om ingen kan bestemme hva en politibetjent skal tro (Elden & Larsen, 2025)."
         },
         {
             "type": "text",
@@ -176,7 +180,26 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Borgland, J. W. (2025). *Hjul - symbol*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/hjul_-_symbol](https://snl.no/hjul_-_symbol)",
+                    "Elden, J. C. & Larsen, K. M. (2025). *Religionsfrihet*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/religionsfrihet](https://snl.no/religionsfrihet)",
+                    "Groth, B. (2026a). *Davidsstjerne*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/davidsstjerne](https://snl.no/davidsstjerne)",
+                    "Groth, B. (2026b). *Kipa*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/kipa](https://snl.no/kipa)",
+                    "Jacobsen, K. A. (2025). *Mantra*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/mantra](https://snl.no/mantra)",
+                    "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2024). *Sikhisme*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+                    "Mørstad, E. (2024). *Kors*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/kors](https://snl.no/kors)",
+                    "Sikher i Norge. (u.å.). *Symboler*. Hentet 27.08.2026 fra [sikher.no/symboler-1](https://www.sikher.no/symboler-1)",
+                    "Vogt, K. (2025). *Hilal*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/hilal](https://snl.no/hilal)",
+                    "Vogt, K., Eggen, N. S. & Farstad, M. H. (2026). *Hijab*. Store norske leksikon. Hentet 27.08.2026 fra [snl.no/hijab](https://snl.no/hijab)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-27T00:00:00Z"
 }
