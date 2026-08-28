@@ -27,6 +27,7 @@ export const FULL_WIDTH_PATHS = [
     '/himmel',
     '/oving/kjedereaksjonen',
     '/oving/kryssord',
+    '/oving/pengeliv',
 ];
 
 export const useLayout = () => {

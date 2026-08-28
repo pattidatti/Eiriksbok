@@ -74,5 +74,6 @@ export const routeFactories: Record<string, PageFactory> = {
     CompetencyGoalsPage: () => import('./pages/CompetencyGoalsPage').then(module => ({ default: module.CompetencyGoalsPage })),
     SkyPage: () => import('./pages/SkyPage').then(module => ({ default: module.SkyPage })),
     MicroGamePreviewPage: () => import('./pages/MicroGamePreviewPage').then(module => ({ default: module.MicroGamePreviewPage })),
+    Pengeliv: () => import('./features/okonomi/PengelivPage').then(module => ({ default: module.PengelivPage })),
 };
 

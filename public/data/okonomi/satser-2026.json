@@ -1,0 +1,34 @@
+{
+    "aar": 2026,
+    "sistKontrollert": "2026-08-28",
+    "kilder": [
+        "Skattesatser 2026, Finansdepartementet/regjeringen.no: https://www.regjeringen.no/no/tema/okonomi-og-budsjett/skatter-og-avgifter/skatte-og-avgiftssatser/skattesatser-2026/id3121978/ - hentet 28.08.2026. Hovedkilde for trygdeavgift, alle fem trinnskattrinn, sats på alminnelig inntekt, personfradrag, minstefradrag og BSU. Alle tall i denne fila er vedtatte 2026-tall.",
+        "Trinnskatt, Skatteetaten: https://www.skatteetaten.no/satser/trinnskatt/ - hentet 28.08.2026. Bekrefter innslagspunkt og sats for alle fem trinn i 2026.",
+        "Minstefradrag, Skatteetaten: https://www.skatteetaten.no/satser/minstefradrag/ - hentet 28.08.2026. Bekrefter 46 prosent og øvre grense 95 700 kr for lønnsinntekt i 2026.",
+        "Fradrag for boligsparing for ungdom (BSU), Skatteetaten: https://www.skatteetaten.no/satser/fradrag-for-boligsparing-for-ungdom-bsu/ - hentet 28.08.2026. Bekrefter for 2026: fradragssats 10,0 prosent, årlig tak 27 500 kr og samlet tak 300 000 kr. Merk at fradragssatsen ble satt ned fra 20 til 10 prosent i 2024. Aldersgrensen (til og med det året du fyller 33 år) står ikke på satssiden, men på Skatteetatens BSU-side: https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/bank-og-lan/bsu/ - hentet 28.08.2026.",
+        "Inflasjon: 0,02 er ikke en skattesats, men en forutsetning i simulatoren. Tallet er Norges Banks inflasjonsmål, som ble satt ned fra 2,5 til 2,0 prosent i 2018: https://www.norges-bank.no/tema/pengepolitikk/ - hentet 28.08.2026. Framtidig prisvekst kan ikke kildebelegges, bare antas."
+    ],
+    "skatt": {
+        "alminneligInntekt": 0.22,
+        "trygdeavgiftLonn": 0.076,
+        "trinnskatt": [
+            { "fra": 226100, "til": 318300, "sats": 0.017 },
+            { "fra": 318300, "til": 725050, "sats": 0.04 },
+            { "fra": 725050, "til": 980100, "sats": 0.137 },
+            { "fra": 980100, "til": 1467200, "sats": 0.168 },
+            { "fra": 1467200, "til": null, "sats": 0.178 }
+        ],
+        "personfradrag": 114540,
+        "minstefradrag": {
+            "sats": 0.46,
+            "maks": 95700
+        }
+    },
+    "bsu": {
+        "fradragssats": 0.1,
+        "arligTak": 27500,
+        "samletTak": 300000,
+        "maksAlder": 33
+    },
+    "inflasjon": 0.02
+}
