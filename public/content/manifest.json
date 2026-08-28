@@ -3639,7 +3639,7 @@
               "id": "frihetstiden",
               "title": "Frihetstiden - da riksdagen tok makten fra kongen",
               "description": "I 53 år styrte den svenske riksdagen i stedet for kongen, helt til Gustav 3 tok makten tilbake med et kupp i 1772.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sveriges-historie/frihetstiden-hero.webp",
               "tags": [
                 "sverige",
                 "frihetstiden",
@@ -3726,7 +3726,7 @@
               "id": "livegenskapet-i-russland",
               "title": "Livegenskapet i Russland: friheten som kom med en regning",
               "description": "I 1861 ble de ufrie russiske bøndene frie mennesker, men de måtte kjøpe tilbake jorda si og betale i 49 år.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/russlands-historie/livegenskapet-i-russland-hero.webp",
               "tags": [
                 "russland",
                 "livegenskap",
@@ -3736,7 +3736,7 @@
                 "krimkrigen"
               ],
               "createdDate": "2026-08-28T01:29:51.514Z",
-              "lastUpdated": "2026-08-28T01:29:51.514Z"
+              "lastUpdated": "2026-08-28T03:58:22+02:00"
             }
           ]
         },
@@ -7932,7 +7932,7 @@
                   "id": "sentrale-trekk",
                   "title": "Fire av fem søyler er noe du gjør",
                   "description": "Islams fem søyler er stort sett en liste over handlinger, ikke over trossetninger. Bli med gjennom shahada, bønn, zakat, faste og hajj, og se hvorfor plikten står først - og hvor sunni og sjia går hver sin vei.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/sentrale-trekk-hero.webp",
                   "tags": [
                     "islam",
                     "sentrale_trekk"
@@ -7944,7 +7944,7 @@
                   "id": "bonn",
                   "title": "Bønnen som følger sola",
                   "description": "Muslimer ber fem ganger i døgnet, men ingen klokke bestemmer når. Det gjør sola - og derfor er tidene ulike i Mekka, Oslo og Tromsø.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/bonn-hero.webp",
                   "tags": [
                     "islam",
                     "bønn",
@@ -7957,7 +7957,7 @@
                   "id": "overgangsriter",
                   "title": "Setningen som rammer inn livet",
                   "description": "Trosbekjennelsen hviskes i øret på det nyfødte barnet og er det siste mange muslimer vil si. Se hvordan islam markerer fødsel, ekteskap og død.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/overgangsriter-hero.webp",
                   "tags": [
                     "islam",
                     "overgangsriter",
@@ -7970,7 +7970,7 @@
                   "id": "grunnleggere",
                   "title": "Profeten som ikke skal tilbes",
                   "description": "Muslimer regner Muhammad som Guds siste profet, men aldri som Gud. Bli med fra Mekka til Medina, se hvorfor 622 ble år én, og oppdag hvordan striden etter 632 delte muslimene i sunni og sjia.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/grunnleggere-hero.webp",
                   "tags": [
                     "islam",
                     "grunnleggere",
@@ -7983,7 +7983,7 @@
                   "id": "hellige-tekster",
                   "title": "Boka som ikke kan oversettes",
                   "description": "Hvorfor er ikke en norsk Koran «Koranen»? Om surer og ayaer, resitasjon og utenatlæring, og skillet mellom hva tradisjonen forteller om tekstens opphav og hva forskerne kan slå fast.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/hellige-tekster-hero.webp",
                   "tags": [
                     "islam",
                     "hellige-tekster",
@@ -7996,7 +7996,7 @@
                   "id": "gudsbilde",
                   "title": "Én, og ingen ved siden av",
                   "description": "Gud er én, og ingenting står ved siden av ham. Men hvordan beskriver du en Gud det ikke finnes ett eneste bilde av?",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/gudsbilde-hero.webp",
                   "tags": [
                     "islam",
                     "gudsbilde",
@@ -8009,7 +8009,7 @@
                   "id": "skapelse",
                   "title": "Seks dager, og ingen hvile",
                   "description": "Både Bibelen og Koranen bruker seks dager. Så skiller de lag: her hviler Gud ikke, og det forteller noe helt sentralt om hvem han er.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/skapelse-hero.webp",
                   "tags": [
                     "islam",
                     "skapelse",
@@ -8022,7 +8022,7 @@
                   "id": "frelse",
                   "title": "Vekten som ikke lyver",
                   "description": "Alt du gjør skal veies, helt ned til et støvfnuggs vekt - men er det vekten eller Gud som har det siste ordet?",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/islam/frelse-hero.webp",
                   "tags": [
                     "islam",
                     "frelse",
@@ -8394,7 +8394,7 @@
                   "id": "skapelse",
                   "title": "Verden uten begynnelse",
                   "description": "Hva om verden aldri ble skapt for foerste gang? I hinduismen har universet blitt til og gaatt under utallige ganger - og Rigveda sier selv at kanskje ingen vet hvordan det startet.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/hinduisme/skapelse-hero.webp",
                   "tags": [
                     "hinduisme",
                     "skapelse",
