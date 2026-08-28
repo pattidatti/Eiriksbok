@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3 } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet } from 'lucide-react';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
@@ -12,6 +12,14 @@ export const PracticePage: React.FC = () => {
             icon: Swords,
             color: 'bg-slate-800',
             link: '/oving/rpg'
+        },
+        {
+            id: 'pengeliv',
+            title: 'Pengeliv',
+            description: 'Styr din egen økonomi gjennom et helt liv. Se hvor mye som forsvinner i skatt, hva et budsjett egentlig koster deg, og hvor store pengene blir hvis du begynner å spare tidlig.',
+            icon: Wallet,
+            color: 'bg-emerald-600',
+            link: '/oving/pengeliv'
         },
         {
             id: 'kompetansemal',
