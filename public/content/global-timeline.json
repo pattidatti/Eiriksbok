@@ -6716,6 +6716,31 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "livegenskapet-i-russland",
+      "title": "Livegenskapet i Russland: friheten som kom med en regning",
+      "description": "I 1861 ble de ufrie russiske bøndene frie mennesker, men de måtte kjøpe tilbake jorda si og betale i 49 år.",
+      "startDate": 1861,
+      "endDate": null,
+      "displayDate": "1861",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "russlands-historie",
+      "link": "/historie/russlands-historie/livegenskapet-i-russland",
+      "tags": [
+        "russland",
+        "livegenskap",
+        "aleksander-2",
+        "bondereform",
+        "1800-tallet",
+        "krimkrigen"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "amerikanske-borgerkrigen",
       "title": "Den amerikanske borgerkrigen: Krigen som avskaffet slaveriet",
       "description": "Nord mot Sør i en blodig krig om slaveriet – krigen som holdt USA samlet og gjorde fire millioner mennesker frie.",

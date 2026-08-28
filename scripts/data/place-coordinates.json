@@ -866,6 +866,10 @@
       "count": 32
     },
     {
+      "tag": "1800-tallet",
+      "count": 30
+    },
+    {
       "tag": "oppfinnelser",
       "count": 29
     },
@@ -883,10 +887,6 @@
     },
     {
       "tag": "revolusjon",
-      "count": 28
-    },
-    {
-      "tag": "1800-tallet",
       "count": 28
     },
     {
@@ -1647,6 +1647,10 @@
     },
     {
       "tag": "samfunnskontrakt",
+      "count": 4
+    },
+    {
+      "tag": "livegenskap",
       "count": 4
     },
     {
@@ -2534,6 +2538,26 @@
       "count": 2
     },
     {
+      "tag": "frihetstiden",
+      "count": 2
+    },
+    {
+      "tag": "gustav-iii",
+      "count": 2
+    },
+    {
+      "tag": "riksdagen",
+      "count": 2
+    },
+    {
+      "tag": "trykkefrihet",
+      "count": 2
+    },
+    {
+      "tag": "statskupp",
+      "count": 2
+    },
+    {
       "tag": "pietisme",
       "count": 2
     },
@@ -2551,10 +2575,6 @@
     },
     {
       "tag": "opplyst-enevelde",
-      "count": 2
-    },
-    {
-      "tag": "livegenskap",
       "count": 2
     },
     {
@@ -2739,6 +2759,18 @@
     },
     {
       "tag": "agnostisme",
+      "count": 2
+    },
+    {
+      "tag": "aleksander-2",
+      "count": 2
+    },
+    {
+      "tag": "bondereform",
+      "count": 2
+    },
+    {
+      "tag": "krimkrigen",
       "count": 2
     },
     {
