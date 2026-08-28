@@ -193,6 +193,7 @@ const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 const Vinteren1847 = lazy(() => import('./Vinteren1847'));
+const Innlosningen3D = lazy(() => import('./Innlosningen3D'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
@@ -1894,6 +1895,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Vinteren1847'),
         Component: Vinteren1847 as never,
+    },
+    'innlosningen-1861-3d': {
+        id: 'innlosningen-1861-3d',
+        title: 'Innløsningen',
+        description:
+            'Et russisk bondetun rett etter 1861. Du er fri, men jorda må kjøpes tilbake. Dra kornvogna mellom åkeren, skattefutens bord og huset, og velg hvem som skal få kornet når det ikke rekker til begge. Rekker du ikke terminen, tar skattefuten en teig, og da vokser det mindre neste år. Lyspæra: friheten kom med en regning som skulle betales med det samme kornet familien levde av.',
+        estimatedSeconds: 110,
+        loader: () => import('./Innlosningen3D'),
+        Component: Innlosningen3D as never,
     },
     'gudsformer-3d': {
         id: 'gudsformer-3d',
