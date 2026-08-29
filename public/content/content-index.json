@@ -1,5 +1,5 @@
 {
-  "buildId": 38424612477591,
+  "buildId": 198678743540954,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3255,6 +3255,9 @@
     "monoteismens-fodsel": [
       "content/krle/religion/historiske-religioner/monoteismens-fodsel.json"
     ],
+    "mysteriekultene": [
+      "content/krle/religion/historiske-religioner/mysteriekultene.json"
+    ],
     "islam-bonn": [
       "content/krle/religion/islam/bonn/artikkel.json"
     ],
@@ -5824,6 +5827,7 @@
     "krle/religion/historiske-religioner/egyptisk-religion": "content/krle/religion/historiske-religioner/egyptisk-religion.json",
     "krle/religion/historiske-religioner/mesopotamisk-religion": "content/krle/religion/historiske-religioner/mesopotamisk-religion.json",
     "krle/religion/historiske-religioner/monoteismens-fodsel": "content/krle/religion/historiske-religioner/monoteismens-fodsel.json",
+    "krle/religion/historiske-religioner/mysteriekultene": "content/krle/religion/historiske-religioner/mysteriekultene.json",
     "krle/religion/islam/bonn": "content/krle/religion/islam/bonn/artikkel.json",
     "krle/religion/islam/frelse": "content/krle/religion/islam/frelse/artikkel.json",
     "krle/religion/islam/grunnleggere": "content/krle/religion/islam/grunnleggere/artikkel.json",

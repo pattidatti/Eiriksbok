@@ -1786,6 +1786,10 @@
       "count": 4
     },
     {
+      "tag": "religionshistorie",
+      "count": 4
+    },
+    {
       "tag": "tradisjon",
       "count": 4
     },
@@ -1943,10 +1947,6 @@
     },
     {
       "tag": "metode",
-      "count": 3
-    },
-    {
-      "tag": "religionshistorie",
       "count": 3
     },
     {
@@ -3967,6 +3967,22 @@
     },
     {
       "tag": "gilgamesj",
+      "count": 1
+    },
+    {
+      "tag": "mysteriekult",
+      "count": 1
+    },
+    {
+      "tag": "mithras",
+      "count": 1
+    },
+    {
+      "tag": "isis",
+      "count": 1
+    },
+    {
+      "tag": "eleusis",
       "count": 1
     },
     {

@@ -1320,6 +1320,19 @@
       ]
     },
     {
+      "religion": "historiske-religioner",
+      "title": "Mysteriekultene: religionen bak lukkede dører",
+      "link": "/krle/religion/historiske-religioner/mysteriekultene",
+      "dimension": "ritual",
+      "tags": [
+        "ritual",
+        "doden",
+        "frelse",
+        "hellige-rom",
+        "fellesskap"
+      ]
+    },
+    {
       "religion": "islam",
       "title": "Bønnen som følger sola",
       "link": "/krle/religion/islam/bonn",
@@ -2070,6 +2083,7 @@
       "/krle/religion/historiske-religioner/egyptisk-religion",
       "/krle/religion/historiske-religioner/mesopotamisk-religion",
       "/krle/religion/historiske-religioner/monoteismens-fodsel",
+      "/krle/religion/historiske-religioner/mysteriekultene",
       "/krle/religion/samisk/intro",
       "/krle/religion/samisk/laestadianismen"
     ],
