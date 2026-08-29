@@ -8205,7 +8205,7 @@
                   "id": "bonn",
                   "title": "Bønnen som trenger ni til",
                   "description": "Han kan be alene, med bønneremmer og ansiktet vendt mot Jerusalem. Men det er én ting han ikke får til uten ni andre.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jodedom/bonn-hero.webp",
                   "tags": [
                     "jodedom",
                     "bønn",
@@ -8231,7 +8231,7 @@
                   "id": "grunnleggere",
                   "title": "Ingen stifter, men en pakt",
                   "description": "Jødedommen har ingen enkelt stifter. Møt Abraham og Moses, og finn ut hvorfor pakten mellom Gud og folket er viktigere enn personene i fortellingen.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jodedom/grunnleggere-hero.webp",
                   "tags": [
                     "jodedom",
                     "grunnleggere",
@@ -8257,7 +8257,7 @@
                   "id": "gudsbilde",
                   "title": "Navnet ingen sier høyt",
                   "description": "Gud har et eget navn i de jødiske skriftene, men ingen sier det. Finn ut hvorfor lyden forsvant, og hva jøder sier i stedet.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jodedom/gudsbilde-hero.webp",
                   "tags": [
                     "jodedom",
                     "gudsbilde",
@@ -8283,7 +8283,7 @@
                   "id": "frelse",
                   "title": "Verden er ikke ferdig",
                   "description": "Jødedommen snakker knapt om frelse - finn ut hvorfor svarene om livet her og nå er mye tydeligere enn svarene om det som kommer etterpå.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jodedom/frelse-hero.webp",
                   "tags": [
                     "jodedom",
                     "frelse",
@@ -8502,7 +8502,7 @@
                   "id": "mysteriekultene",
                   "title": "Mysteriekultene: religionen bak lukkede dører",
                   "description": "Statens religion i Roma lovte deg ingenting etter døden. Der svaret manglet, vokste de hemmelige kultene fram.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/historiske-religioner/mysteriekultene-hero.webp",
                   "tags": [
                     "religionshistorie",
                     "romerriket",
@@ -8774,7 +8774,7 @@
                   "id": "sentrale-trekk",
                   "title": "Regjeringen som snart skal overta",
                   "description": "Nesten alt som skiller Jehovas vitner ut, henger på én tro: at Guds rike er en virkelig regjering som snart skal overta. Bli med og se hvordan forkynnelsen, nøytraliteten og kalenderen henger sammen.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/sentrale-trekk-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "sentrale_trekk"
@@ -8786,7 +8786,7 @@
                   "id": "bonn",
                   "title": "Til Jehova, gjennom Jesus",
                   "description": "Bønnen slutter i Jesu navn, men ikke ett ord er stilet til Jesus. Hvorfor er Jehovas vitner så nøye på hvem bønnen sendes til?",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/bonn-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "bønn",
@@ -8799,7 +8799,7 @@
                   "id": "overgangsriter",
                   "title": "Dåpen du må be om selv",
                   "description": "Jehovas vitner døper ikke spedbarn. Dåpen skjer først når en person selv har studert, angret og bedt innvielsesbønnen, og den bekreftes med to spørsmål som svares høyt på et stevne. Bryllup og begravelse holdes enkelt i Rikets sal.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/overgangsriter-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "overgangsriter",
@@ -8812,7 +8812,7 @@
                   "id": "grunnleggere",
                   "title": "Grunnleggeren som ikke ville være grunnlegger",
                   "description": "Jehovas vitner sier at Jesus grunnla bevegelsen deres, mens historikere peker på Charles Taze Russell og bibelstudentene på 1870-tallet. Bli med og fordel æren mellom Russell, Rutherford og Jesus, og se hvorfor årstall som 1914 måtte forklares på nytt.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/grunnleggere-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "grunnleggere",
@@ -8825,7 +8825,7 @@
                   "id": "hellige-tekster",
                   "title": "Ett ord, to bibler",
                   "description": "Slå opp Jesaja 43,10 i to bibler, og du får to ulike ord. Finn ut hvorfor fire hebraiske bokstaver uten vokaler tvinger enhver oversetter til å velge, hvorfor Jehovas vitner laget sin egen bibel, og hvem som bestemmer hva teksten betyr.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/hellige-tekster-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "hellige-tekster",
@@ -8838,7 +8838,7 @@
                   "id": "gudsbilde",
                   "title": "Gud med fornavn",
                   "description": "Jehovas vitner mener Gud har et personlig navn - men ingen vet sikkert hvordan det skal uttales. Se hvorfor de sier nei til treenigheten.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/gudsbilde-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "gudsbilde",
@@ -8851,7 +8851,7 @@
                   "id": "skapelse",
                   "title": "Seks dager eller seks tidsaldre?",
                   "description": "Jehovas vitner leser skapelsesfortellingen bokstavelig, og mener likevel at jorda kan være milliarder av år gammel. Hvordan henger det sammen?",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/skapelse-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "skapelse",
@@ -8864,7 +8864,7 @@
                   "id": "frelse",
                   "title": "Et tall, og en skare ingen kan telle",
                   "description": "Hvorfor mener Jehovas vitner at nøyaktig 144 000 mennesker skal til himmelen, mens alle andre frelste skal bli igjen på en jord som gjøres om til et paradis?",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/jehovas-vitner/frelse-hero.webp",
                   "tags": [
                     "jehovas-vitner",
                     "frelse",
