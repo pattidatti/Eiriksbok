@@ -202,6 +202,7 @@ const Forfedrehallen3D = lazy(() => import('./Forfedrehallen3D'));
 const MyraUnderByen3D = lazy(() => import('./MyraUnderByen3D'));
 const Helligdagsplikten3D = lazy(() => import('./Helligdagsplikten3D'));
 const PotemkinFerden3D = lazy(() => import('./PotemkinFerden3D'));
+const MitreumInnvielsen3D = lazy(() => import('./MitreumInnvielsen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -1976,6 +1977,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 120,
         loader: () => import('./PotemkinFerden3D'),
         Component: PotemkinFerden3D as never,
+    },
+    'mitreum-innvielsen-3d': {
+        id: 'mitreum-innvielsen-3d',
+        title: 'Ned i mitreum',
+        description:
+            'Roma, rundt år 200. Du er på vei til din egen innvielse i mitraskulten, og veien går ned en smal, hvelvet gang under gata. Hold inne for å gå og styr med pekeren, men haster du, tar trekken flammen i oljelampen din - og under bakken finnes ikke annet lys. Stopp for å la flammen ta seg opp, men ikke så lenge at måltidet begynner uten deg. Underveis passerer du de sju gradene, fra Corax til Pater. Lyspæra: rommet du kommer fram til tar en liten flokk, mens templene oppe i dagslyset rommet hele byen. Det er hele forskjellen mellom statens religion og en mysteriekult.',
+        estimatedSeconds: 140,
+        loader: () => import('./MitreumInnvielsen3D'),
+        Component: MitreumInnvielsen3D as never,
     },
 };
 

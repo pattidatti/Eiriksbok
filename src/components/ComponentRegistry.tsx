@@ -191,6 +191,7 @@ const TreReglerOgFemTing = lazy(() => import('./content/interactive/TreReglerOgF
 const SeksDagersVerket = lazy(() => import('./content/interactive/SeksDagersVerket').then(m => ({ default: m.SeksDagersVerket })));
 const HvaSkjerMedBrodet = lazy(() => import('./content/interactive/HvaSkjerMedBrodet').then(m => ({ default: m.HvaSkjerMedBrodet })));
 const ToStoreBrudd = lazy(() => import('./content/interactive/ToStoreBrudd').then(m => ({ default: m.ToStoreBrudd })));
+const ToDorerIRoma = lazy(() => import('./content/interactive/ToDorerIRoma').then(m => ({ default: m.ToDorerIRoma })));
 const AvgjorelsenSomAapnetDoren = lazy(() => import('./content/interactive/AvgjorelsenSomAapnetDoren').then(m => ({ default: m.AvgjorelsenSomAapnetDoren })));
 const SkapelsesVeven = lazy(() => import('./content/interactive/SkapelsesVeven').then(m => ({ default: m.SkapelsesVeven })));
 const BliOgDetBle = lazy(() => import('./content/interactive/BliOgDetBle').then(m => ({ default: m.BliOgDetBle })));
@@ -680,6 +681,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     SeksDagersVerket,
     HvaSkjerMedBrodet,
     ToStoreBrudd,
+    ToDorerIRoma,
     AvgjorelsenSomAapnetDoren,
     SkapelsesVeven,
     BliOgDetBle,
