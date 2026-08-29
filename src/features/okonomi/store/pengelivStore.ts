@@ -345,10 +345,17 @@ export const usePengelivStore = create<PengelivState>()(
                 let ny = tilstand;
                 for (let i = 0; i < steg; i++) {
                     ny = tikk(ny, satser);
-                    // Samme regel som over: første milepæl avbryter spolingen.
-                    if (ny.milepaeler.length > tilstand.milepaeler.length) break;
-                    // En hendelse venter på et svar, og valget er hele poenget.
-                    // Uten dette kunne eleven spole rett forbi den.
+                    // Bare hendelser avbryter en spoling. De venter på et svar,
+                    // og valget er hele poenget - uten dette kunne eleven spole
+                    // rett forbi det.
+                    //
+                    // Milepæler stopper derimot ikke lenger spolingen. De
+                    // gjorde det før, og da flyttet «fram til jeg er 25» bare
+                    // ett år: bursdagen kom etter tolv måneder og avbrøt.
+                    // Toppbaren køer milepælene nå, og loggen tar vare på alle,
+                    // så ingenting går tapt av å samle dem opp underveis. Én
+                    // stopp per milepæl hører til når klokka går av seg selv;
+                    // en spoling er eleven som ber om å komme videre.
                     if (ny.aktivHendelse) break;
                 }
                 set({ tilstand: { ...ny, fart: 0 } });

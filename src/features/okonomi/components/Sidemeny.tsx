@@ -2,8 +2,7 @@
 //
 // Elleve moduler skal få plass på en Chromebook med 768 piksler skjermhøyde.
 // Derfor er radene kompakte, og de tre gruppene kan slås sammen når eleven
-// vil ha ro rundt det den jobber med. Alt er åpent fra start - modulene som
-// ikke er bygget ennå står der, men dempet.
+// vil ha ro rundt det den jobber med. Alt er åpent fra start.
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -107,9 +106,7 @@ export function Sidemeny({ moduler, aktiv, onVelg, className = '' }: SidemenyPro
                                                     className={`relative flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm transition-colors ${
                                                         valgt
                                                             ? 'font-bold text-indigo-700'
-                                                            : modul.kommer
-                                                              ? 'text-slate-400 hover:bg-slate-50'
-                                                              : 'text-slate-700 hover:bg-slate-50'
+                                                            : 'text-slate-700 hover:bg-slate-50'
                                                     }`}
                                                 >
                                                     {valgt && (
@@ -127,11 +124,6 @@ export function Sidemeny({ moduler, aktiv, onVelg, className = '' }: SidemenyPro
                                                     <span className="min-w-0 flex-1 truncate">
                                                         {modul.navn}
                                                     </span>
-                                                    {modul.kommer && (
-                                                        <span className="shrink-0 rounded bg-slate-100 px-1 py-0.5 text-[9px] font-bold uppercase text-slate-400">
-                                                            snart
-                                                        </span>
-                                                    )}
                                                 </button>
                                             </li>
                                         );

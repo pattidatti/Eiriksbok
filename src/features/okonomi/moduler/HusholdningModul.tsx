@@ -10,7 +10,7 @@
 // Her bor også `HendelseDialog`, som er valget eleven ikke skal kunne overse
 // når livet slår til. Se kommentaren over komponenten for hvor den bør henge.
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Baby, Sparkles, UserPlus, Users, Zap } from 'lucide-react';
@@ -257,7 +257,8 @@ export function HusholdningModul() {
                         <p className="mt-2 text-[11px] leading-snug text-slate-500">
                             {tilstand.hendelserPa
                                 ? 'Det kommer omtrent én hendelse annethvert år. Klokka stopper når den kommer, så du rekker å velge.'
-                                : 'Ingenting uventet vil skje. Formuen din framover er bare et resultat av valgene dine.'}
+                                : 'Ingenting uventet vil skje. Formuen din framover er bare et resultat av valgene dine.'}{' '}
+                            Du finner den samme bryteren oppe ved klokka.
                         </p>
                     </Kort>
                 </div>
@@ -279,9 +280,48 @@ export function HusholdningModul() {
 export function HendelseDialog() {
     const hendelse = usePengelivStore((s) => s.tilstand?.aktivHendelse ?? null);
     const svarPaaHendelse = usePengelivStore((s) => s.svarPaaHendelse);
+    const settFart = usePengelivStore((s) => s.settFart);
     const [valgt, settValgt] = useState<number | null>(null);
+    const boks = useRef<HTMLDivElement | null>(null);
 
     const valg = hendelse && valgt !== null ? hendelse.valg[valgt] : null;
+
+    // Fokusfelle. Dialogen er modal og stjeler skjermen, men tok ikke imot
+    // fokus: en tastaturbruker satt igjen med en skjerm der Tab fortsatte å
+    // vandre rundt i innholdet bak. Escape lukker den med vilje ikke - valget
+    // er hele poenget med hendelsen, og det finnes ingen vei utenom.
+    useEffect(() => {
+        if (!hendelse) return;
+        const forrigeFokus = document.activeElement as HTMLElement | null;
+
+        const fokuserbare = () =>
+            Array.from(
+                boks.current?.querySelectorAll<HTMLElement>('button:not([disabled])') ?? []
+            );
+
+        fokuserbare()[0]?.focus();
+
+        const paaTast = (e: KeyboardEvent) => {
+            if (e.key !== 'Tab') return;
+            const felt = fokuserbare();
+            if (felt.length === 0) return;
+            const forste = felt[0];
+            const siste = felt[felt.length - 1];
+            if (e.shiftKey && document.activeElement === forste) {
+                e.preventDefault();
+                siste.focus();
+            } else if (!e.shiftKey && document.activeElement === siste) {
+                e.preventDefault();
+                forste.focus();
+            }
+        };
+
+        window.addEventListener('keydown', paaTast);
+        return () => {
+            window.removeEventListener('keydown', paaTast);
+            forrigeFokus?.focus?.();
+        };
+    }, [hendelse]);
 
     return (
         <AnimatePresence>
@@ -296,6 +336,7 @@ export function HendelseDialog() {
                     aria-label={hendelse.tittel}
                 >
                     <motion.div
+                        ref={boks}
                         initial={{ opacity: 0, y: 16, scale: 0.97 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -330,6 +371,11 @@ export function HendelseDialog() {
                                             const indeks = valgt;
                                             settValgt(null);
                                             if (indeks !== null) svarPaaHendelse(indeks);
+                                            // Hendelsen stoppet klokka, ikke
+                                            // eleven. Da skal den gå videre av
+                                            // seg selv når valget er tatt -
+                                            // samme oppførsel som milepælene.
+                                            settFart(1);
                                         }}
                                     >
                                         Greit, gå videre

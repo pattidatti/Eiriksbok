@@ -13,7 +13,7 @@ import { kjopBolig } from './bolig';
 import { settSamboer } from './husholdning';
 import { BOLIGER } from '../data/boliger';
 import { SATSER, kontanter, medSaldo, nyTilstand } from './testhjelp';
-import type { Laan } from '../types';
+import type { Laan, Tilstand } from '../types';
 
 const FORBRUKSLAAN: Laan = {
     id: 'test-forbrukslan',
@@ -137,13 +137,10 @@ describe('skatteoppgjøret', () => {
         // aldri. Da var BSU bare 0,5 prosentpoeng bedre rente enn en vanlig
         // sparekonto - mot bindingstid og to tak - og en elev som prøvde seg
         // fram ville med rette konkludert med at BSU ikke er verdt bryet.
-        let naa = {
-            ...nyTilstand(),
-            profil: {
-                ...nyTilstand().profil,
-                manedligSparing: 2000,
-                sparingTilKontoId: 'bsu',
-            },
+        const start = nyTilstand();
+        let naa: Tilstand = {
+            ...start,
+            profil: { ...start.profil, manedligSparing: 2000, sparingTilKontoId: 'bsu' },
         };
 
         // Elleve måneder: BSU fylles opp, men skatteoppgjøret har ikke kommet.
@@ -169,8 +166,33 @@ describe('skatteoppgjøret', () => {
     it('gir ingenting til den som ikke har spart i BSU eller IPS', () => {
         // Personaene sparer i BSU fra start, så sparingen må skrus av her.
         const start = nyTilstand();
-        let naa = { ...start, profil: { ...start.profil, manedligSparing: 0 } };
+        let naa: Tilstand = { ...start, profil: { ...start.profil, manedligSparing: 0 } };
         for (let i = 0; i < 12; i++) naa = tikk(naa, SATSER);
         expect(naa.milepaeler.some((m) => m.type === 'skatteoppgjor')).toBe(false);
+    });
+});
+
+describe('milepælene', () => {
+    it('feirer hvert sparemål nøyaktig én gang', () => {
+        // Nettoformuen vipper fram og tilbake over en grense når en stor
+        // regning kommer måneden etter at den ble passert. Med måneden i id-en
+        // fikk eleven «Du passerte 500 000 kr» to ganger på rad, i en melding
+        // som sier «for første gang».
+        let naa = medSaldo(nyTilstand('nyutdannet'), 'spare', 480000);
+        for (let i = 0; i < 12 * 30; i++) naa = tikk(naa, SATSER);
+
+        const sparemaal = naa.milepaeler.filter((m) => m.type === 'sparemaal');
+        expect(sparemaal.length).toBeGreaterThan(0);
+        expect(new Set(sparemaal.map((m) => m.tittel)).size).toBe(sparemaal.length);
+    });
+
+    it('gjentar ikke «penger står stille» før beløpet har doblet seg', () => {
+        // Den kom hvert eneste år før, tjue ganger på tjue år, med nesten samme
+        // tall. En elev som bevisst lar pengene ligge, har tatt et valg.
+        let naa = medSaldo(nyTilstand('butikkansatt'), 'bruks', 300000);
+        for (let i = 0; i < 12 * 20; i++) naa = tikk(naa, SATSER);
+
+        const stille = naa.milepaeler.filter((m) => m.type === 'penger-ligger-stille');
+        expect(stille.length).toBeLessThan(8);
     });
 });

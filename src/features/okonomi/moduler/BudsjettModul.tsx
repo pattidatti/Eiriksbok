@@ -63,9 +63,22 @@ export function BudsjettModul() {
 
     const sluttverdi = punkter.length > 0 ? punkter[punkter.length - 1].nominelt : 0;
 
-    // Utgangspunktet da eleven åpnet modulen. Alt som endres måles mot dette,
-    // så en flyttet hundrelapp får et synlig svar med en gang.
-    const [startverdi] = useState(() => sluttverdi);
+    // Utgangspunktet alt måles mot, så en flyttet hundrelapp får et synlig svar
+    // med en gang.
+    //
+    // Det settes på nytt for hver måned klokka går. Fanget vi det bare én gang
+    // da modulen ble åpnet, ville tallet blandet to helt ulike ting: hva eleven
+    // valgte, og hva tida gjorde. En elev som lot klokka gå i et minutt fikk
+    // «+84 000 kr siden du åpnet budsjettet» uten å ha rørt en eneste knapp.
+    const maaned = tilstand?.maaned ?? 0;
+    const [grunnlinje, settGrunnlinje] = useState({ maaned, verdi: sluttverdi });
+    if (grunnlinje.maaned !== maaned) {
+        // React sitt mønster for tilstand som må justeres når noe utenfra
+        // endrer seg: sett den under render, så tegnes komponenten på nytt med
+        // en gang og eleven ser aldri det gamle tallet blinke.
+        settGrunnlinje({ maaned, verdi: sluttverdi });
+    }
+    const startverdi = grunnlinje.verdi;
     const endring = startverdi > 0 ? sluttverdi - startverdi : 0;
 
     if (!profil || !satser || !tall) {

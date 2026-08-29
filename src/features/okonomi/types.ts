@@ -388,11 +388,6 @@ export interface ModulDefinisjon {
     gruppe: ModulGruppe;
     /** Lucide-ikonnavn. */
     ikon: string;
-    /**
-     * Modulen finnes i menyen, men er ikke bygget ennå. Alt er åpent fra
-     * start; dette er bare byggestatus, ikke en sperre for eleven.
-     */
-    kommer?: boolean;
 }
 
 // ===========================================================================

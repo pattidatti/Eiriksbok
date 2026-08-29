@@ -11,7 +11,15 @@
 import { useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Coins, PiggyBank, Scale } from 'lucide-react';
+import {
+    ArrowDownRight,
+    ArrowRight,
+    ArrowUpRight,
+    Coins,
+    PiggyBank,
+    Play,
+    Scale,
+} from 'lucide-react';
 import { usePengelivStore } from '../store/pengelivStore';
 import { nokkeltall } from '../engine/nokkeltall';
 import { framskriv } from '../engine/projeksjon';
@@ -34,6 +42,7 @@ export function OversiktModul() {
     const satser = usePengelivStore((s) => s.satser);
     const [horisont, setHorisont] = useState<number>(25);
     const velgModul = usePengelivStore((s) => s.velgModul);
+    const settFart = usePengelivStore((s) => s.settFart);
 
     const profil = tilstand?.profil ?? null;
 
@@ -60,6 +69,12 @@ export function OversiktModul() {
 
     const aarNaa = tilstand.startAar + Math.floor(tilstand.maaned / 12);
     const sluttpunkt = punkter.length > 0 ? punkter[punkter.length - 1] : null;
+
+    // Klokka står stille som utgangspunkt, og det eneste som starter den er en
+    // 28 piksler bred «1x»-pille øverst til høyre. En livssimulator der livet
+    // ikke begynner før eleven har funnet en umerket knapp, mister folk i det
+    // første minuttet. Kortet står bare til klokka har gått sin første måned.
+    const ikkeStartet = tilstand.maaned === 0 && tilstand.fart === 0;
 
     return (
         <div className="flex flex-col gap-2">
@@ -123,6 +138,24 @@ export function OversiktModul() {
                     tone={overskudd < 0 ? 'negativ' : 'positiv'}
                 />
             </div>
+
+            {ikkeStartet && (
+                <motion.div
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-indigo-300 bg-gradient-to-br from-indigo-50 to-white px-4 py-2.5"
+                >
+                    <p className="text-sm leading-snug text-slate-700">
+                        <span className="font-semibold text-slate-900">Klokka står stille.</span>{' '}
+                        Start den, så begynner månedene å gå: lønna kommer inn, regningene går ut,
+                        og renta legger seg på. Du kan stoppe når som helst.
+                    </p>
+                    <Knapp onClick={() => settFart(1)}>
+                        <Play className="mr-1.5 inline h-3.5 w-3.5" aria-hidden="true" />
+                        Start livet ditt
+                    </Knapp>
+                </motion.div>
+            )}
 
             {visUbrukt && (
                 <motion.div

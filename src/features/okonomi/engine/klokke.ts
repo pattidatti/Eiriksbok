@@ -388,10 +388,19 @@ export function finnMilepaeler(
         // målt på formuen alene ville eleven fått fire feiringer på rad for en
         // handel som ikke gjorde henne rikere. Netto står nesten stille i det
         // øyeblikket, og det er riktig: du har byttet penger mot et hus.
+        //
+        // Id-en har ingen måned i seg, og det er med vilje: hvert sparemål skal
+        // feires nøyaktig én gang. Nettoformuen vipper fram og tilbake over en
+        // grense når en stor regning kommer måneden etter at den ble passert,
+        // og med måneden i id-en fikk eleven «Du passerte 500 000 kr» to ganger
+        // på rad. Meldingen sier «for første gang», og da skal den være sann.
+        const alleredeFeiret = new Set(ny.milepaeler.map((m) => m.id));
         for (const maal of SPAREMAAL) {
+            const id = `sparemaal-${maal}`;
+            if (alleredeFeiret.has(id)) continue;
             if (forrigeMaal.netto < maal && nyMaal.netto >= maal) {
                 funnet.push({
-                    id: `sparemaal-${maal}-${maaned}`,
+                    id,
                     type: 'sparemaal',
                     maaned,
                     tittel: `Du passerte ${kr(maal)}`,

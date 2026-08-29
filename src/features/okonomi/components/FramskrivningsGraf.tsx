@@ -156,10 +156,23 @@ export function FramskrivningsGraf({
         };
     }, [punkter, synlige]);
 
-    const maks = useMemo(() => {
+    // Taket må tåle at «lagt inn av deg» er større enn summen. Det skjer helt
+    // lovlig i et børsfall, og med bare `nominelt` her ble den lyse linja
+    // tegnet utenfor lerretet mens fyllet mellom kurvene pekte feil vei.
+    //
+    // Gulvet er null så lenge alt er positivt. Er nettoformuen negativ - og det
+    // er den for enhver som har et kredittkort før lønna har rukket å komme -
+    // legges det bare på så mye luft som det faktisk trengs. Uten dette satte
+    // Chart.js første merke under null på en hel million, og et blaff på
+    // -10 000 kr fikk grafen til å se ut som en katastrofe.
+    const { maks, min } = useMemo(() => {
         let hoyest = 0;
-        for (const p of punkter) hoyest = Math.max(hoyest, p.nominelt);
-        return hoyest * 1.08;
+        let lavest = 0;
+        for (const p of punkter) {
+            hoyest = Math.max(hoyest, p.nominelt, p.innskutt);
+            lavest = Math.min(lavest, p.nominelt, p.dagensKroner);
+        }
+        return { maks: hoyest * 1.08, min: lavest < 0 ? lavest * 1.15 : 0 };
     }, [punkter]);
 
     const options: ChartOptions<'line'> = useMemo(
@@ -194,7 +207,7 @@ export function FramskrivningsGraf({
             },
             scales: {
                 y: {
-                    beginAtZero: true,
+                    suggestedMin: min,
                     suggestedMax: maks > 0 ? maks : undefined,
                     border: { display: false },
                     grid: { color: 'rgba(148, 163, 184, 0.22)' },
@@ -221,7 +234,7 @@ export function FramskrivningsGraf({
                 },
             },
         }),
-        [kompakt, maks, punkter]
+        [kompakt, maks, min, punkter]
     );
 
     if (antall === 0) {
