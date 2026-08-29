@@ -6,36 +6,18 @@
 //
 // Blueprint: docs/Design documents/pengeliv-blueprint.md
 
-import type {
-    BudsjettPostId,
-    Konto,
-    Lonnsslipp,
-    Maalepunkt,
-    Milepael,
-    Profil,
-    Satser,
-    Tilstand,
-} from '../types';
-import { beregnLonnsslipp } from './skatt';
-import { bsuRom, leggTilRente, settInn, sumFormue, taUt } from './sparing';
-import { sumGjeld } from './laan';
+import type { Konto, Milepael, Satser, Tilstand } from '../types';
+import { bsuFradrag, bsuRom, leggTilRente, settInn, taUt } from './sparing';
+import { ipsFradrag } from './pensjon';
+import { budsjettutgifter, lonnsslippFor, maalepunktFor } from './nokkeltall';
 import { kjorSteg, STEG_ETTER_LONN, STEG_ETTER_RENTE, STEG_FOR_LONN } from './steg';
 import type { StegKontekst } from './steg';
 
-const MANEDER_I_AR = 12;
+// Nøkkeltallene regnes i nokkeltall.ts og bare der, slik at klokka og
+// skjermene aldri kan bli uenige om hva formuen eller utgiftene er.
+export { maalepunktFor } from './nokkeltall';
 
-/**
- * Utgiftene en samboer deler på. Husleie, strøm, mat, forsikring og
- * abonnementer er husholdningens; mobil, transport, klær og moro er dine
- * egne og blir ikke billigere av at noen flytter inn.
- */
-const DELTE_UTGIFTER: ReadonlySet<BudsjettPostId> = new Set<BudsjettPostId>([
-    'husleie',
-    'strom',
-    'mat',
-    'forsikring',
-    'abonnementer',
-]);
+const MANEDER_I_AR = 12;
 
 /**
  * Formuegrenser som er verdt å stoppe klokka for. Runde tall eleven kjenner
@@ -68,37 +50,6 @@ function prosent(desimal: number): string {
     return `${Math.round(desimal * 1000) / 10}`.replace('.', ',');
 }
 
-// Lønnsslippen er dyr å regne ut og endrer seg bare når eleven endrer lønn
-// eller fradrag. Framskrivningen kjører 480 tikk hver gang eleven flytter en
-// krone i budsjettet, på en Chromebook - uten dette mellomlageret ville hver
-// eneste av dem regnet ut det samme skatteoppgjøret på nytt.
-const lonnsslippLager = new Map<string, Lonnsslipp>();
-const LAGER_MAKS = 16;
-
-function lonnsslippFor(profil: Profil, satser: Satser): Lonnsslipp {
-    const f = profil.fradrag;
-    const noekkel = `${satser.aar}|${profil.bruttoArslonn}|${f.renterBetalt}|${f.pendling}|${f.fagforening}`;
-    const lagret = lonnsslippLager.get(noekkel);
-    if (lagret) return lagret;
-
-    const slipp = beregnLonnsslipp(profil, satser);
-    // Enkel utkasting: eleven jobber med noen få lønnsnivåer om gangen, og et
-    // lager som vokser i det uendelige er verre enn ett som tømmes.
-    if (lonnsslippLager.size >= LAGER_MAKS) lonnsslippLager.clear();
-    lonnsslippLager.set(noekkel, slipp);
-    return slipp;
-}
-
-/** Månedlige utgifter etter at samboeren har tatt sin del av det felles. */
-function utgifterFor(profil: Profil): number {
-    const { harSamboer, utgiftsandel } = profil.husholdning;
-    let sum = 0;
-    for (const post of profil.budsjett) {
-        sum += harSamboer && DELTE_UTGIFTER.has(post.id) ? post.belop * utgiftsandel : post.belop;
-    }
-    return sum;
-}
-
 /**
  * Flytter saldo uten å telle det som innskudd. Lønn inn og regninger ut er
  * ikke sparing, og skal ikke spise av BSU-taket.
@@ -129,25 +80,21 @@ export function kalenderAar(tilstand: Tilstand, maaned: number): number {
 }
 
 /**
- * Nøkkeltallene slik de står akkurat nå. Dette er råstoffet både grafene og
- * alle tall på skjermen leser fra, så det regnes ett sted og bare her.
+ * Skattepengene BSU og IPS gir tilbake for året som gikk.
+ *
+ * BSU-fradraget trekkes rett fra skatten, krone for krone. IPS-innskuddet
+ * trekkes fra inntekten, så det er verdt satsen på alminnelig inntekt. Begge
+ * regnes av årets innskudd, ikke av saldoen - det er innskuddet som utløser
+ * fradraget.
  */
-export function maalepunktFor(tilstand: Tilstand, satser: Satser): Maalepunkt {
-    const slipp = lonnsslippFor(tilstand.profil, satser);
-    const utgifter = utgifterFor(tilstand.profil);
-    const formue = sumFormue(tilstand.profil.kontoer);
-    const gjeld = sumGjeld(tilstand.laan);
-
-    return {
-        maaned: tilstand.maaned,
-        alder: tilstand.profil.alder,
-        formue,
-        gjeld,
-        netto: formue - gjeld,
-        inntekt: slipp.nettoManedlig,
-        utgifter,
-        overskudd: slipp.nettoManedlig - utgifter,
-    };
+function arsoppgjor(kontoer: readonly Konto[], satser: Satser): number {
+    let sum = 0;
+    for (const konto of kontoer) {
+        if (konto.innskuddIAr <= 0) continue;
+        if (konto.type === 'bsu') sum += bsuFradrag(konto.innskuddIAr, satser);
+        if (konto.type === 'ips') sum += ipsFradrag(konto.innskuddIAr, satser);
+    }
+    return sum;
 }
 
 /**
@@ -178,7 +125,9 @@ export function tikk(tilstand: Tilstand, satser: Satser): Tilstand {
 
     const profil = forLonn.profil;
     const slipp = lonnsslippFor(profil, satser);
-    const utgifter = utgifterFor(profil);
+    // Bare budsjettet her. Terminbeløpene på lån tas av `stegLaan`, som
+    // kjører rett før - de skal ikke trekkes to ganger.
+    const utgifter = budsjettutgifter(profil);
     const brukskonto = profil.kontoer.find((k) => k.type === 'bruks');
 
     const kontekst: StegKontekst = {
@@ -232,9 +181,27 @@ export function tikk(tilstand: Tilstand, satser: Satser): Tilstand {
     kontoer = kontoer.map(leggTilRente);
 
     let alder = profil.alder;
+    let skattepenger = 0;
     if (arsskifte) {
         alder += 1;
+        // Skatteoppgjøret, forenklet til én utbetaling ved nyttår.
+        //
+        // BSU gir 10 % av årets innskudd rett tilbake på skatten, og IPS gir
+        // 22 % av sitt. Før dette ble begge beløpene vist på skjermen som noe
+        // eleven «får tilbake», mens kronene aldri kom. Da var BSU i praksis
+        // bare 0,5 prosentpoeng bedre rente enn en vanlig sparekonto - mot
+        // bindingstid, årstak og livstak - og en elev som prøvde seg fram
+        // ville rimeligvis konkludert med at BSU ikke er verdt bryet. Det er
+        // det motsatte av hva modulen skal lære bort.
+        //
+        // I virkeligheten kommer pengene i juni året etter. Nyttår er valgt
+        // fordi det er der eleven allerede stopper og ser på året som gikk,
+        // og fordi et halvt års forsinkelse ikke lærer bort noe.
+        skattepenger = arsoppgjor(kontoer, satser);
         kontoer = kontoer.map((k) => (k.innskuddIAr === 0 ? k : { ...k, innskuddIAr: 0 }));
+        if (skattepenger > 0 && brukskonto) {
+            kontoer = justerSaldo(kontoer, brukskonto.id, skattepenger);
+        }
     }
 
     const utenMaaling: Tilstand = {
@@ -252,7 +219,7 @@ export function tikk(tilstand: Tilstand, satser: Satser): Tilstand {
         historikk: [...tilstand.historikk, maalepunktFor(etterRente, satser)],
     };
 
-    const nye = finnMilepaeler(tilstand, ny, satser);
+    const nye = finnMilepaeler(tilstand, ny, satser, skattepenger);
     if (nye.length === 0) return ny;
     return { ...ny, milepaeler: [...ny.milepaeler, ...nye] };
 }
@@ -271,13 +238,24 @@ export function tikk(tilstand: Tilstand, satser: Satser): Tilstand {
  * livstak og er bundet til boligkjøp, så «flytt pengene til BSU» ville vært
  * et råd eleven ofte ikke får lov til å følge.
  */
-function finnPengerSomStaarStille(ny: Tilstand, manedligeUtgifter: number): Milepael | null {
+function finnPengerSomStaarStille(
+    forrige: Tilstand,
+    ny: Tilstand,
+    manedligeUtgifter: number
+): Milepael | null {
     const bruks = ny.profil.kontoer.find((k) => k.type === 'bruks');
     if (!bruks || bruks.saldo <= 0 || manedligeUtgifter <= 0) return null;
 
     const buffer = manedligeUtgifter * BUFFER_MANEDER;
     const overskytende = bruks.saldo - buffer;
     if (overskytende <= 0) return null;
+
+    // Har eleven hørt dette før og latt pengene ligge, er det et valg. Da sier
+    // vi ikke fra igjen før beløpet har doblet seg. Uten dempingen kom
+    // meldingen hvert eneste år med nesten samme tall - tjue ganger på tjue år
+    // - og gikk fra opplysning til mas.
+    const sagtFor = forrige.milepaeler.filter((m) => m.type === 'penger-ligger-stille').pop();
+    if (sagtFor && overskytende < (sagtFor.grunnlag ?? 0) * 2) return null;
 
     let spare: Konto | undefined;
     for (const konto of ny.profil.kontoer) {
@@ -294,6 +272,7 @@ function finnPengerSomStaarStille(ny: Tilstand, manedligeUtgifter: number): Mile
         id: `penger-stille-${ny.maaned}`,
         type: 'penger-ligger-stille',
         maaned: ny.maaned,
+        grunnlag: overskytende,
         tittel: 'Penger som står stille',
         tekst: `Du har ${kr(bruks.saldo)} på brukskontoen. ${kr(buffer)} av det er tre måneders utgifter, og en slik buffer er lurt å ha liggende. Men ${kr(overskytende)} blir bare stående: der de er nå, gir de deg ${kr(blirNa)} i rente på ett år, mens de på ${spare.navn.toLowerCase()} ville gitt ${kr(blirDa)}. Det er ${kr(forskjell)} mer i året, og du bestemmer selv om du vil flytte dem.`,
     };
@@ -306,7 +285,12 @@ function finnPengerSomStaarStille(ny: Tilstand, manedligeUtgifter: number): Mile
  * to tilstander. Uten satser kan vi ikke se hvor BSU-takene går, og da hoppes
  * BSU-milepælene over i stedet for å gjettes.
  */
-export function finnMilepaeler(forrige: Tilstand, ny: Tilstand, satser?: Satser): Milepael[] {
+export function finnMilepaeler(
+    forrige: Tilstand,
+    ny: Tilstand,
+    satser?: Satser,
+    skattepenger = 0
+): Milepael[] {
     const funnet: Milepael[] = [];
     const maaned = ny.maaned;
 
@@ -332,6 +316,20 @@ export function finnMilepaeler(forrige: Tilstand, ny: Tilstand, satser?: Satser)
     // gang til. Den ene gangen i livet de kolliderer, vinner BSU-meldingen -
     // og året etter kommer den andre uansett, med et større beløp.
     let bsuBleFullNa = false;
+
+    // Skattepengene fra BSU og IPS. Dette er hele grunnen til at de to
+    // spareformene finnes, og eleven skal se kronene komme inn - ikke bare
+    // lese et tall på et kort.
+    if (skattepenger > 0) {
+        funnet.push({
+            id: `skatteoppgjor-${maaned}`,
+            type: 'skatteoppgjor',
+            maaned,
+            grunnlag: skattepenger,
+            tittel: 'Skattepengene kom',
+            tekst: `Du fikk ${kr(skattepenger)} tilbake på skatten fordi du sparte i BSU eller IPS i fjor. Det er ekte penger, og de står på brukskontoen din nå. Dette er forskjellen mellom de to spareformene og en vanlig sparekonto: staten betaler deg for å spare på denne måten.`,
+        });
+    }
 
     if (satser && bsu) {
         const naRom = bsuRom(bsu, ny.profil.alder, satser);
@@ -370,7 +368,7 @@ export function finnMilepaeler(forrige: Tilstand, ny: Tilstand, satser?: Satser)
     // Sjekken hører til årsskiftet, sammen med de andre årsskifte-milepælene,
     // og koster derfor ingenting i elleve av tolv tikk.
     if (maaned > 0 && maaned % MANEDER_I_AR === 0 && nyMaal && !bsuBleFullNa) {
-        const stille = finnPengerSomStaarStille(ny, nyMaal.utgifter);
+        const stille = finnPengerSomStaarStille(forrige, ny, nyMaal.utgifter);
         if (stille) funnet.push(stille);
     }
 
@@ -385,14 +383,19 @@ export function finnMilepaeler(forrige: Tilstand, ny: Tilstand, satser?: Satser)
             });
         }
 
+        // Målt på nettoformuen, ikke på det som står på kontoene. Et boligkjøp
+        // flytter millioner mellom konto, gjeld og eiendel på én måned, og
+        // målt på formuen alene ville eleven fått fire feiringer på rad for en
+        // handel som ikke gjorde henne rikere. Netto står nesten stille i det
+        // øyeblikket, og det er riktig: du har byttet penger mot et hus.
         for (const maal of SPAREMAAL) {
-            if (forrigeMaal.formue < maal && nyMaal.formue >= maal) {
+            if (forrigeMaal.netto < maal && nyMaal.netto >= maal) {
                 funnet.push({
                     id: `sparemaal-${maal}-${maaned}`,
                     type: 'sparemaal',
                     maaned,
                     tittel: `Du passerte ${kr(maal)}`,
-                    tekst: `Formuen din er over ${kr(maal)} for første gang. Herfra vokser den fortere av seg selv, fordi renta regnes av et større beløp enn før.`,
+                    tekst: `Det du eier minus det du skylder er over ${kr(maal)} for første gang. Herfra vokser det fortere av seg selv, fordi renta regnes av et større beløp enn før.`,
                 });
             }
         }

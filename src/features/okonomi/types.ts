@@ -244,6 +244,8 @@ export type MilepaelType =
     | 'sparemaal'
     | 'gjeldfri'
     | 'bsu-fullt'
+    // Skattepengene BSU og IPS gir tilbake, utbetalt ved nyttår.
+    | 'skatteoppgjor'
     // Penger står ubrukt på brukskonto til nesten ingen rente. Motoren flytter
     // dem aldri selv - eleven skal ta valget - men appen har plikt til å si
     // fra, ellers ser rentes rente svakere ut enn den er.
@@ -260,6 +262,13 @@ export interface Milepael {
     tittel: string;
     /** Én eller to setninger som sier hva som skjedde og hvorfor det betyr noe. */
     tekst: string;
+    /**
+     * Tallet milepælen ble utløst av, der det finnes. Brukes til å dempe
+     * gjentakelser: «penger står stille» kommer ikke tilbake før beløpet den
+     * gjaldt har doblet seg, slik at en elev som bevisst lar pengene ligge
+     * ikke får den samme meldingen hvert eneste år.
+     */
+    grunnlag?: number;
 }
 
 /**
@@ -269,15 +278,19 @@ export interface Milepael {
 export interface Maalepunkt {
     maaned: number;
     alder: number;
-    /** Sum på alle kontoer. */
+    /** Sum på alle kontoer. Pengene eleven kan bruke i dag. */
+    kontanter: number;
+    /** Boligens verdi. Null for den som leier. */
+    eiendeler: number;
+    /** kontanter + eiendeler. Alt eleven eier. */
     formue: number;
     /** Sum restgjeld. */
     gjeld: number;
     /** formue - gjeld. */
     netto: number;
-    /** Netto lønn denne måneden. */
+    /** Alt som kom inn: nettolønn, pluss det barna gir og koster. */
     inntekt: number;
-    /** Sum utgifter denne måneden. */
+    /** Alt som gikk ut: budsjettet etter samboerandel, pluss terminbeløp. */
     utgifter: number;
     /** inntekt - utgifter. Det som kan spares. */
     overskudd: number;

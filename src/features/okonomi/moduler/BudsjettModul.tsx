@@ -8,7 +8,7 @@ import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { PiggyBank, TrendingDown, TrendingUp } from 'lucide-react';
 import { usePengelivStore } from '../store/pengelivStore';
-import { beregnLonnsslipp } from '../engine/skatt';
+import { nokkeltall } from '../engine/nokkeltall';
 import { framskriv } from '../engine/projeksjon';
 import { FramskrivningsGraf } from '../components/FramskrivningsGraf';
 import { Forklaring, Kort, Kroner } from '../components/primitives';
@@ -46,10 +46,12 @@ export function BudsjettModul() {
 
     const profil = tilstand?.profil ?? null;
 
-    const slipp = useMemo(() => {
-        if (!profil || !satser) return null;
-        return beregnLonnsslipp(profil, satser);
-    }, [profil, satser]);
+    // Samme kilde som motoren og som Oversikt. Regnet vi utgiftene her, ville
+    // vi fått samboerandelen og terminbeløpene feil - som vi gjorde.
+    const tall = useMemo(() => {
+        if (!tilstand || !satser) return null;
+        return nokkeltall(tilstand, satser);
+    }, [tilstand, satser]);
 
     const maalAlder = profil ? (profil.alder < 40 ? 40 : profil.alder + 25) : 40;
     const antallAar = profil ? Math.max(1, maalAlder - profil.alder) : 1;
@@ -66,16 +68,21 @@ export function BudsjettModul() {
     const [startverdi] = useState(() => sluttverdi);
     const endring = startverdi > 0 ? sluttverdi - startverdi : 0;
 
-    if (!profil || !satser || !slipp) {
+    if (!profil || !satser || !tall) {
         return <Laster />;
     }
 
-    const sumUtgifter = profil.budsjett.reduce((sum, post) => sum + post.belop, 0);
+    const { inntekt, utgifter, overskudd } = tall;
+    const sumUtgifter = utgifter.sum;
     const sumFaste = profil.budsjett
         .filter((p) => p.fast)
         .reduce((sum, post) => sum + post.belop, 0);
-    const overskudd = slipp.nettoManedlig - sumUtgifter;
-    const fasteAndel = sumUtgifter > 0 ? Math.round((sumFaste / sumUtgifter) * 100) : 0;
+    // Terminbeløp på lån er alltid faste: de kan ikke kuttes, bare betales ned.
+    const fastTotalt = sumFaste + utgifter.gjeld;
+    const fasteAndel = sumUtgifter > 0 ? Math.round((fastTotalt / sumUtgifter) * 100) : 0;
+    const deler = profil.husholdning.harSamboer;
+    // Hva postene ville kostet uten samboer, så vi kan vise hva delingen sparer.
+    const sumBudsjettFullt = profil.budsjett.reduce((sum, post) => sum + post.belop, 0);
 
     const faste = profil.budsjett.filter((p) => p.fast);
     const variable = profil.budsjett.filter((p) => !p.fast);
@@ -102,13 +109,17 @@ export function BudsjettModul() {
             >
                 <Nokkeltall
                     etikett="Inn hver måned"
-                    verdi={slipp.nettoManedlig}
+                    verdi={inntekt}
                     hjelp="Lønna di etter skatt."
                 />
                 <Nokkeltall
                     etikett="Ut hver måned"
                     verdi={sumUtgifter}
-                    hjelp="Alt du bruker på de ni postene under."
+                    hjelp={
+                        utgifter.gjeld > 0
+                            ? 'Postene under, pluss regningene på lånene dine.'
+                            : 'Alt du bruker på de ni postene under.'
+                    }
                 />
                 <div className="rounded-xl bg-gradient-to-br from-emerald-50 to-white px-3 py-2 ring-1 ring-emerald-200">
                     <div className="flex items-center gap-1 text-xs font-medium text-emerald-800">
@@ -170,6 +181,45 @@ export function BudsjettModul() {
                             ))}
                         </div>
                     </div>
+
+                    {/* De to postene som ikke har en skyveknapp, men som likevel
+                        forlater kontoen din hver måned. De sto ikke her før, og
+                        da bommet «til overs» med over 40 000 kr i året på en elev
+                        med forbrukslån. */}
+                    {(utgifter.gjeld > 0 || deler) && (
+                        <div className="mt-3 space-y-1.5 border-t border-slate-100 pt-3">
+                            {utgifter.gjeld > 0 && (
+                                <div className="flex items-baseline justify-between gap-2 text-sm">
+                                    <span className="flex items-center gap-1 text-slate-700">
+                                        Regninger på lån
+                                        <Forklaring begrep="Regninger på lån">
+                                            Renter, avdrag og gebyrer på alt du skylder. Denne
+                                            posten har ingen skyveknapp: den bestemmes av lånene
+                                            dine, ikke av deg. Vil du ha den ned, må du betale ned
+                                            gjeld i Lån og gjeld.
+                                        </Forklaring>
+                                    </span>
+                                    <Kroner verdi={utgifter.gjeld} className="text-rose-700" />
+                                </div>
+                            )}
+                            {deler && (
+                                <div className="flex items-baseline justify-between gap-2 text-sm">
+                                    <span className="flex items-center gap-1 text-slate-700">
+                                        Samboeren din betaler
+                                        <Forklaring begrep="Utgiftsdeling">
+                                            Husleie, strøm, mat, forsikring og abonnementer deler
+                                            dere på. Mobil, transport, klær og moro er dine egne, og
+                                            de blir ikke billigere av at noen flytter inn.
+                                        </Forklaring>
+                                    </span>
+                                    <Kroner
+                                        verdi={-(sumBudsjettFullt - utgifter.budsjett)}
+                                        className="text-emerald-700"
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    )}
                 </Kort>
 
                 <div className="flex flex-col gap-3">
