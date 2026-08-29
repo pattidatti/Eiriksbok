@@ -11,12 +11,13 @@ import { Suspense, lazy, useEffect } from 'react';
 import type { ComponentType } from 'react';
 import { motion } from 'framer-motion';
 import { usePengelivKlokke, usePengelivStore } from './store/pengelivStore';
+import { nokkeltall } from './engine/nokkeltall';
 import { MODULER } from './data/moduler';
 import { PERSONAER } from './data/personaer';
 import { Sidemeny } from './components/Sidemeny';
 import { Toppbar } from './components/Toppbar';
 import { PersonaVelger } from './components/PersonaVelger';
-import { Kort } from './components/primitives';
+
 import type { ModulId } from './types';
 import { Utfordringer } from './components/Utfordringer';
 const HendelseDialog = lazy(() =>
@@ -24,8 +25,9 @@ const HendelseDialog = lazy(() =>
 );
 
 // Modulene lastes først når eleven åpner dem, slik at skallet er raskt oppe
-// selv på en Chromebook. Moduler som ikke står her, er ikke bygget ennå.
-const MODUL_KOMPONENTER: Partial<Record<ModulId, ComponentType>> = {
+// selv på en Chromebook. Alle elleve er bygget, og typen krever nå at de er
+// det: legges det en ny id i `ModulId` uten en komponent her, sier `tsc` fra.
+const MODUL_KOMPONENTER: Record<ModulId, ComponentType> = {
     oversikt: lazy(() =>
         import('./moduler/OversiktModul').then((m) => ({ default: m.OversiktModul }))
     ),
@@ -55,22 +57,6 @@ const MODUL_KOMPONENTER: Partial<Record<ModulId, ComponentType>> = {
     ),
 };
 
-/** Flate for modulene som står i menyen, men ikke er ferdig bygget. */
-function KommerSnart({ navn }: { navn: string }) {
-    return (
-        <Kort tittel={navn}>
-            <p className="text-sm leading-relaxed text-slate-600">
-                Denne modulen bygges. Den står allerede i menyen fordi den hører hjemme her, men
-                innholdet er ikke klart ennå.
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                I mellomtiden kan du bruke Oversikt, Lønn og skatt, Budsjett og Sparing. De henger
-                sammen: endrer du lønna, endrer budsjettet seg av seg selv.
-            </p>
-        </Kort>
-    );
-}
-
 /** Enkel plassholder mens en modul lastes ned. */
 function ModulSkjelett() {
     return (
@@ -90,7 +76,10 @@ export function PengelivPage() {
     const startFraPersona = usePengelivStore((s) => s.startFraPersona);
     const velgModul = usePengelivStore((s) => s.velgModul);
     const settFart = usePengelivStore((s) => s.settFart);
+    const spolTil = usePengelivStore((s) => s.spolTil);
+    const settHendelserPa = usePengelivStore((s) => s.settHendelserPa);
     const nullstill = usePengelivStore((s) => s.nullstill);
+    const feil = usePengelivStore((s) => s.feil);
 
     // Avspillingsløkka. Den vet selv at den ikke skal gjøre noe før eleven
     // har startet og satt fart.
@@ -113,20 +102,22 @@ export function PengelivPage() {
         );
     }
 
-    if (!tilstand) {
-        return <PersonaVelger personaer={PERSONAER} onVelg={startFraPersona} />;
+    if (!tilstand || !satser) {
+        return (
+            <PersonaVelger
+                personaer={PERSONAER}
+                onVelg={startFraPersona}
+                feil={feil}
+                klar={satser !== null}
+            />
+        );
     }
 
-    // Nøkkeltallene toppbaren viser. Målepunktet for forrige måned er fasit
-    // når det finnes; før første tikk regner vi rett fra kontoene.
-    const siste = tilstand.historikk[tilstand.historikk.length - 1];
-    const formue = siste
-        ? siste.formue
-        : tilstand.profil.kontoer.reduce((sum, konto) => sum + konto.saldo, 0);
-    const gjeld = siste ? siste.gjeld : 0;
-    const alder = siste ? siste.alder : tilstand.profil.alder;
-    const sisteMilepael =
-        tilstand.milepaeler.length > 0 ? tilstand.milepaeler[tilstand.milepaeler.length - 1] : null;
+    // Nøkkeltallene toppbaren viser, regnet ferskt fra samme kilde som
+    // Oversikt. Leste de to skjermene fra hver sin kilde, kunne de vise
+    // forskjellige tall samtidig - og det gjorde de.
+    const tall = nokkeltall(tilstand, satser);
+    const alder = tilstand.profil.alder;
 
     const modul = MODULER.find((m) => m.id === aktivModul) ?? MODULER[0];
     const Modul = MODUL_KOMPONENTER[modul.id];
@@ -134,15 +125,18 @@ export function PengelivPage() {
     return (
         <div className="mx-auto w-full max-w-[1400px] px-3 py-4">
             <Toppbar
-                netto={formue - gjeld}
-                formue={formue}
-                gjeld={gjeld}
+                netto={tall.netto}
+                kontanter={tall.kontanter}
+                gjeld={tall.gjeld}
                 maaned={tilstand.maaned}
                 startAar={tilstand.startAar}
                 alder={alder}
                 fart={tilstand.fart}
                 onFart={settFart}
-                sisteMilepael={sisteMilepael}
+                milepaeler={tilstand.milepaeler}
+                onSpolTilAlder={(mal) => spolTil(tilstand.maaned + (mal - alder) * 12)}
+                hendelserPa={tilstand.hendelserPa}
+                onHendelser={settHendelserPa}
                 onNullstill={nullstill}
             />
 
@@ -169,7 +163,7 @@ export function PengelivPage() {
                         transition={{ duration: 0.2 }}
                     >
                         <Suspense fallback={<ModulSkjelett />}>
-                            {Modul ? <Modul /> : <KommerSnart navn={modul.navn} />}
+                            <Modul />
                         </Suspense>
                     </motion.div>
                 </div>

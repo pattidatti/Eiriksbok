@@ -11,11 +11,18 @@
 import { useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Coins, PiggyBank, Scale } from 'lucide-react';
+import {
+    ArrowDownRight,
+    ArrowRight,
+    ArrowUpRight,
+    Coins,
+    PiggyBank,
+    Play,
+    Scale,
+} from 'lucide-react';
 import { usePengelivStore } from '../store/pengelivStore';
-import { beregnLonnsslipp } from '../engine/skatt';
+import { nokkeltall } from '../engine/nokkeltall';
 import { framskriv } from '../engine/projeksjon';
-import { sumFormue } from '../engine/sparing';
 import { FramskrivningsGraf } from '../components/FramskrivningsGraf';
 import { Forklaring, Knapp, Kort, Kroner } from '../components/primitives';
 
@@ -35,36 +42,39 @@ export function OversiktModul() {
     const satser = usePengelivStore((s) => s.satser);
     const [horisont, setHorisont] = useState<number>(25);
     const velgModul = usePengelivStore((s) => s.velgModul);
+    const settFart = usePengelivStore((s) => s.settFart);
 
     const profil = tilstand?.profil ?? null;
 
-    const slipp = useMemo(() => {
-        if (!profil || !satser) return null;
-        return beregnLonnsslipp(profil, satser);
-    }, [profil, satser]);
+    // Ett kall, én kilde. Formue, gjeld og utgifter regnes i nokkeltall.ts og
+    // ingen andre steder, slik at denne skjermen aldri kan bli uenig med
+    // toppbaren eller med motoren om hva tallene er.
+    const tall = useMemo(() => {
+        if (!tilstand || !satser) return null;
+        return nokkeltall(tilstand, satser);
+    }, [tilstand, satser]);
 
     const punkter = useMemo(() => {
         if (!tilstand || !satser) return [];
         return framskriv(tilstand, satser, horisont);
     }, [tilstand, satser, horisont]);
 
-    if (!tilstand || !profil || !satser || !slipp) {
+    if (!tilstand || !profil || !satser || !tall) {
         return <Laster />;
     }
 
-    const siste =
-        tilstand.historikk.length > 0 ? tilstand.historikk[tilstand.historikk.length - 1] : null;
-
-    const formue = sumFormue(profil.kontoer);
-    const gjeld = siste ? siste.gjeld : 0;
-    const netto = formue - gjeld;
-    const sumUtgifter = profil.budsjett.reduce((sum, post) => sum + post.belop, 0);
-    const overskudd = slipp.nettoManedlig - sumUtgifter;
+    const { kontanter, eiendeler, gjeld, netto, overskudd } = tall;
     const ubrukt = overskudd - profil.manedligSparing;
     const visUbrukt = ubrukt >= UBRUKT_TERSKEL;
 
     const aarNaa = tilstand.startAar + Math.floor(tilstand.maaned / 12);
     const sluttpunkt = punkter.length > 0 ? punkter[punkter.length - 1] : null;
+
+    // Klokka står stille som utgangspunkt, og det eneste som starter den er en
+    // 28 piksler bred «1x»-pille øverst til høyre. En livssimulator der livet
+    // ikke begynner før eleven har funnet en umerket knapp, mister folk i det
+    // første minuttet. Kortet står bare til klokka har gått sin første måned.
+    const ikkeStartet = tilstand.maaned === 0 && tilstand.fart === 0;
 
     return (
         <div className="flex flex-col gap-2">
@@ -90,9 +100,9 @@ export function OversiktModul() {
 
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
                 <Rute
-                    etikett="Formue"
-                    verdi={formue}
-                    hjelp="Alt du har på kontoene til sammen."
+                    etikett="På konto"
+                    verdi={kontanter}
+                    hjelp="Pengene du kan bruke i dag."
                     ikon={<Coins className="h-4 w-4" aria-hidden="true" />}
                 />
                 <Rute
@@ -101,21 +111,51 @@ export function OversiktModul() {
                     hjelp="Alt du skylder andre."
                     ikon={<ArrowDownRight className="h-4 w-4" aria-hidden="true" />}
                 />
+                {/* Boligen teller med i netto, men står ikke på noen konto. Uten
+                    linja under ville tallet sett uforklarlig stort ut for den som
+                    nettopp har kjøpt - og uforklarlig lite hvis vi lot være å
+                    telle huset med i det hele tatt. */}
                 <Rute
                     etikett="Netto"
                     verdi={netto}
                     hjelp="Det du eier når alt er gjort opp."
+                    undertekst={
+                        eiendeler > 0 ? (
+                            <>
+                                Boligen din er verdt <Kroner verdi={eiendeler} /> og er regnet med
+                                her.
+                            </>
+                        ) : null
+                    }
                     ikon={<Scale className="h-4 w-4" aria-hidden="true" />}
                     fremhevet
                 />
                 <Rute
                     etikett="Til overs i måneden"
                     verdi={overskudd}
-                    hjelp="Lønn etter skatt minus alle utgifter."
+                    hjelp="Lønn etter skatt, minus utgifter og regninger på lån."
                     ikon={<ArrowUpRight className="h-4 w-4" aria-hidden="true" />}
                     tone={overskudd < 0 ? 'negativ' : 'positiv'}
                 />
             </div>
+
+            {ikkeStartet && (
+                <motion.div
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-indigo-300 bg-gradient-to-br from-indigo-50 to-white px-4 py-2.5"
+                >
+                    <p className="text-sm leading-snug text-slate-700">
+                        <span className="font-semibold text-slate-900">Klokka står stille.</span>{' '}
+                        Start den, så begynner månedene å gå: lønna kommer inn, regningene går ut,
+                        og renta legger seg på. Du kan stoppe når som helst.
+                    </p>
+                    <Knapp onClick={() => settFart(1)}>
+                        <Play className="mr-1.5 inline h-3.5 w-3.5" aria-hidden="true" />
+                        Start livet ditt
+                    </Knapp>
+                </motion.div>
+            )}
 
             {visUbrukt && (
                 <motion.div
@@ -185,6 +225,7 @@ function Rute({
     ikon,
     fremhevet = false,
     tone = 'noytral',
+    undertekst = null,
 }: {
     etikett: string;
     verdi: number;
@@ -192,6 +233,8 @@ function Rute({
     ikon: ReactNode;
     fremhevet?: boolean;
     tone?: 'noytral' | 'positiv' | 'negativ';
+    /** Én ekstra linje under hjelpeteksten, når tallet trenger en forklaring. */
+    undertekst?: ReactNode;
 }) {
     const tall =
         tone === 'negativ'
@@ -222,6 +265,9 @@ function Rute({
                 <Kroner verdi={verdi} />
             </motion.div>
             <p className="mt-0.5 text-[11px] leading-snug text-slate-500">{hjelp}</p>
+            {undertekst && (
+                <p className="mt-0.5 text-[11px] leading-snug text-indigo-700">{undertekst}</p>
+            )}
         </motion.div>
     );
 }

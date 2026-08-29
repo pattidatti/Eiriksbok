@@ -21,7 +21,7 @@ import type {
     Satser,
     Tilstand,
 } from '../types';
-import { maalepunktFor, tikk } from '../engine/klokke';
+import { finnMilepaeler, maalepunktFor, tikk } from '../engine/klokke';
 import { personaMedId, profilFraPersona } from '../data/personaer';
 import { tomTilstandUtvidelse } from '../engine/starttilstand';
 import { kjopFond, selgFond } from '../engine/fond';
@@ -34,23 +34,67 @@ import { kjopBolig, selgBolig } from '../engine/bolig';
 import { beOmLonnsokning, soekJobb, startUtdanning } from '../engine/karriere';
 
 /**
- * Kjører en motorfunksjon på tilstanden hvis den finnes. Alle fase 4-10-
- * handlingene går gjennom denne, så butikken slipper å gjenta null-sjekken
- * åtte ganger.
+ * Kjører en motorfunksjon på tilstanden hvis den finnes, og sørger for at
+ * målepunktet er ferskt etterpå. Alle handlinger som flytter penger går
+ * gjennom denne.
+ *
+ * Det siste er ikke en detalj. Historikken skrives normalt bare av klokka, én
+ * gang i måneden, men eleven kan kjøpe fond, ta opp lån og kjøpe bolig mens
+ * klokka står stille - og den står stille som utgangspunkt. Uten oppdateringen
+ * her leste Oversikt formuen ferskt fra kontoene og gjelda fra et målepunkt
+ * som var skrevet før lånet fantes: et forbrukslån på 150 000 kr sendte
+ * nettoformuen fra 20 000 til 170 000 kr. Appen lærte bort at det å låne
+ * penger gjør deg rikere, og toppbaren og hovedskjermen viste samtidig to
+ * forskjellige tall.
+ *
+ * Målepunktet for inneværende måned byttes ut, det legges ikke til et nytt.
+ * Historikken skal ha nøyaktig ett punkt per måned - framskrivningen og
+ * grafene regner med det.
  */
 function medMotor(
-    s: { tilstand: Tilstand | null },
+    s: { tilstand: Tilstand | null; satser: Satser | null },
     gjor: (t: Tilstand) => Tilstand
 ): { tilstand: Tilstand } | Record<string, never> {
     if (!s.tilstand) return {};
-    return { tilstand: gjor(s.tilstand) };
+
+    const foer = s.tilstand;
+    const etter = gjor(foer);
+    if (etter === foer || !s.satser) return { tilstand: etter };
+
+    return { tilstand: medFerskMaaling(foer, etter, s.satser) };
+}
+
+/**
+ * Skriver målepunktet for inneværende måned på nytt, og feirer det handlingen
+ * eventuelt utløste.
+ *
+ * At milepælene sjekkes her og ikke bare i klokka, er med vilje: betaler
+ * eleven inn den siste kronen av gjelda si mens klokka står stille, skal
+ * «Du er gjeldfri» komme med en gang - ikke vente til neste måned tikker.
+ * Milepæler klokka allerede har funnet for denne måneden, filtreres bort på
+ * id, så ingenting feires to ganger.
+ */
+function medFerskMaaling(foer: Tilstand, etter: Tilstand, satser: Satser): Tilstand {
+    const punkt = maalepunktFor(etter, satser);
+    const historikk =
+        etter.historikk.length > 0 && etter.historikk[etter.historikk.length - 1].maaned === punkt.maaned
+            ? [...etter.historikk.slice(0, -1), punkt]
+            : [...etter.historikk, punkt];
+
+    const maalt: Tilstand = { ...etter, historikk };
+
+    const kjente = new Set(maalt.milepaeler.map((m) => m.id));
+    const nye = finnMilepaeler(foer, maalt, satser).filter((m) => !kjente.has(m.id));
+    if (nye.length === 0) return maalt;
+
+    return { ...maalt, milepaeler: [...maalt.milepaeler, ...nye] };
 }
 
 const STORAGE_KEY = 'pengeliv-tilstand-v1';
 const SATSER_URL = '/data/okonomi/satser-2026.json';
 
 /** Skjemaversjonen `Tilstand.versjon` skrives med. Økes når formatet endres. */
-const SKJEMA_VERSJON = 1;
+const SKJEMA_VERSJON = 2;
 
 const PERSIST_DEBOUNCE_MS = 600;
 
@@ -129,18 +173,41 @@ interface PengelivData {
 /**
  * Migreringspunktet.
  *
- * Det finnes bare én versjon nå, men en lagret økonomi er timer med elevarbeid
- * og skal løftes til neste skjema, ikke kastes. Når `SKJEMA_VERSJON` økes,
- * legges det en ny blokk her som fyller inn de nye feltene med fornuftige
- * verdier. Er versjonen ukjent (en nyere fane har skrevet fila), begynner vi
- * på nytt heller enn å tolke tall vi ikke forstår.
+ * En lagret økonomi er timer med elevarbeid og skal løftes til neste skjema,
+ * ikke kastes. Hver gang `SKJEMA_VERSJON` økes, legges det en ny blokk her som
+ * fyller inn de nye feltene med fornuftige verdier, og blokkene kjøres etter
+ * hverandre slik at en gammel lagring løftes hele veien opp. Er versjonen
+ * ukjent (en nyere fane har skrevet fila), begynner vi på nytt heller enn å
+ * tolke tall vi ikke forstår.
  */
 function migrerTilstand(lagret: unknown): Tilstand | null {
     if (!lagret || typeof lagret !== 'object') return null;
-    const tilstand = lagret as Tilstand;
-    if (typeof tilstand.versjon !== 'number' || !tilstand.profil) return null;
+    const raa = lagret as Tilstand;
+    if (typeof raa.versjon !== 'number' || !raa.profil) return null;
 
-    // if (tilstand.versjon === 1) { ...løft til 2...; }
+    let tilstand = raa;
+
+    // 1 -> 2: `Maalepunkt` fikk `kontanter` og `eiendeler`, og `formue` gikk
+    // fra å være summen av kontoene til å være alt eleven eier, boligen med.
+    //
+    // De gamle målepunktene kan ikke regnes om - de forteller hva som skjedde
+    // med de tallene som gjaldt da, og boligverdien for hver enkelt måned
+    // finnes ikke lagret noe sted. De får derfor `kontanter = formue` og
+    // `eiendeler = 0`, som er nøyaktig det de betydde den gangen de ble
+    // skrevet. Historikken blir stående som den var; alt fra neste tikk og
+    // framover er riktig. Å kaste en lagret økonomi ville vært verre: det er
+    // timer med elevarbeid.
+    if (tilstand.versjon === 1) {
+        tilstand = {
+            ...tilstand,
+            versjon: 2,
+            historikk: (tilstand.historikk ?? []).map((punkt) => ({
+                ...punkt,
+                kontanter: punkt.kontanter ?? punkt.formue,
+                eiendeler: punkt.eiendeler ?? 0,
+            })),
+        };
+    }
 
     return tilstand.versjon === SKJEMA_VERSJON ? tilstand : null;
 }
@@ -278,10 +345,17 @@ export const usePengelivStore = create<PengelivState>()(
                 let ny = tilstand;
                 for (let i = 0; i < steg; i++) {
                     ny = tikk(ny, satser);
-                    // Samme regel som over: første milepæl avbryter spolingen.
-                    if (ny.milepaeler.length > tilstand.milepaeler.length) break;
-                    // En hendelse venter på et svar, og valget er hele poenget.
-                    // Uten dette kunne eleven spole rett forbi den.
+                    // Bare hendelser avbryter en spoling. De venter på et svar,
+                    // og valget er hele poenget - uten dette kunne eleven spole
+                    // rett forbi det.
+                    //
+                    // Milepæler stopper derimot ikke lenger spolingen. De
+                    // gjorde det før, og da flyttet «fram til jeg er 25» bare
+                    // ett år: bursdagen kom etter tolv måneder og avbrøt.
+                    // Toppbaren køer milepælene nå, og loggen tar vare på alle,
+                    // så ingenting går tapt av å samle dem opp underveis. Én
+                    // stopp per milepæl hører til når klokka går av seg selv;
+                    // en spoling er eleven som ber om å komme videre.
                     if (ny.aktivHendelse) break;
                 }
                 set({ tilstand: { ...ny, fart: 0 } });
@@ -289,55 +363,41 @@ export const usePengelivStore = create<PengelivState>()(
 
             settLonn: (brutto) =>
                 set((s) =>
-                    s.tilstand
-                        ? {
-                              tilstand: medProfil(s.tilstand, (p) => ({
-                                  ...p,
-                                  bruttoArslonn: Math.max(0, brutto),
-                              })),
-                          }
-                        : {}
+                    medMotor(s, (t) =>
+                        medProfil(t, (p) => ({ ...p, bruttoArslonn: Math.max(0, brutto) }))
+                    )
                 ),
 
             settBudsjettPost: (id, belop) =>
                 set((s) =>
-                    s.tilstand
-                        ? {
-                              tilstand: medProfil(s.tilstand, (p) => ({
-                                  ...p,
-                                  budsjett: p.budsjett.map((post) =>
-                                      post.id === id ? { ...post, belop: Math.max(0, belop) } : post
-                                  ),
-                              })),
-                          }
-                        : {}
+                    medMotor(s, (t) =>
+                        medProfil(t, (p) => ({
+                            ...p,
+                            budsjett: p.budsjett.map((post) =>
+                                post.id === id ? { ...post, belop: Math.max(0, belop) } : post
+                            ),
+                        }))
+                    )
                 ),
 
             settManedligSparing: (belop) =>
                 set((s) =>
-                    s.tilstand
-                        ? {
-                              tilstand: medProfil(s.tilstand, (p) => ({
-                                  ...p,
-                                  manedligSparing: Math.max(0, belop),
-                              })),
-                          }
-                        : {}
+                    medMotor(s, (t) =>
+                        medProfil(t, (p) => ({ ...p, manedligSparing: Math.max(0, belop) }))
+                    )
                 ),
 
             settSparingTilKonto: (kontoId) =>
                 set((s) =>
-                    s.tilstand
-                        ? {
-                              tilstand: medProfil(s.tilstand, (p) =>
-                                  // Ukjent konto-id ville stoppet all sparing i
-                                  // stillhet, så den ignoreres framfor å lagres.
-                                  p.kontoer.some((k) => k.id === kontoId)
-                                      ? { ...p, sparingTilKontoId: kontoId }
-                                      : p
-                              ),
-                          }
-                        : {}
+                    medMotor(s, (t) =>
+                        medProfil(t, (p) =>
+                            // Ukjent konto-id ville stoppet all sparing i
+                            // stillhet, så den ignoreres framfor å lagres.
+                            p.kontoer.some((k) => k.id === kontoId)
+                                ? { ...p, sparingTilKontoId: kontoId }
+                                : p
+                        )
+                    )
                 ),
 
             // Alle fase 4-10-handlingene har samme form: finn tilstanden, la
@@ -378,14 +438,9 @@ export const usePengelivStore = create<PengelivState>()(
 
             settFradrag: (delvis) =>
                 set((s) =>
-                    s.tilstand
-                        ? {
-                              tilstand: medProfil(s.tilstand, (p) => ({
-                                  ...p,
-                                  fradrag: { ...p.fradrag, ...delvis },
-                              })),
-                          }
-                        : {}
+                    medMotor(s, (t) =>
+                        medProfil(t, (p) => ({ ...p, fradrag: { ...p.fradrag, ...delvis } }))
+                    )
                 ),
 
             // Satsene beholdes: de er data om skatteåret, ikke elevens tall.

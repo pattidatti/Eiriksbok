@@ -1,8 +1,11 @@
 // Sidemenyen i Pengeliv: elleve moduler i tre grupper.
 //
-// Alt er åpent fra start - `kommer: true` er byggestatus, ikke en sperre for
-// eleven. Rekkefølgen her er rekkefølgen i menyen, og gruppene kommer i den
-// rekkefølgen de dukker opp i lista.
+// Alt er åpent fra start. Rekkefølgen her er rekkefølgen i menyen, og gruppene
+// kommer i den rekkefølgen de dukker opp i lista.
+//
+// Alle elleve er bygget. Legges det en tolvte id i `ModulId`, krever
+// `MODUL_KOMPONENTER` i PengelivPage.tsx en komponent for den, og `tsc` sier
+// fra - bedre enn et «snart»-merke eleven ikke kan gjøre noe med.
 //
 // Blueprint: docs/Design documents/pengeliv-blueprint.md (seksjon 6)
 

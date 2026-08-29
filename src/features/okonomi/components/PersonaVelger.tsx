@@ -5,16 +5,26 @@
 // eksplisitt fra: fra nå av er dette dine tall, og du kan endre alt.
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Briefcase, Wallet } from 'lucide-react';
+import { AlertTriangle, ArrowRight, Briefcase, Wallet } from 'lucide-react';
 import type { Persona } from '../types';
 import { formaterKroner } from './primitives';
 
 interface PersonaVelgerProps {
     personaer: Persona[];
     onVelg: (personaId: string) => void;
+    /**
+     * Feilmeldingen fra butikken, når det er en.
+     *
+     * Den ble satt tre steder og lest null steder. Slo hentingen av satsfila
+     * feil, fikk eleven denne skjermen som vanlig - og et klikk gjorde
+     * bokstavelig talt ingenting, uten et eneste tegn på hvorfor.
+     */
+    feil?: string | null;
+    /** Satsene er lastet, så et valg faktisk starter noe. */
+    klar?: boolean;
 }
 
-export function PersonaVelger({ personaer, onVelg }: PersonaVelgerProps) {
+export function PersonaVelger({ personaer, onVelg, feil = null, klar = true }: PersonaVelgerProps) {
     return (
         <div className="mx-auto max-w-5xl px-3 py-6">
             <header className="mb-5 text-center">
@@ -30,6 +40,21 @@ export function PersonaVelger({ personaer, onVelg }: PersonaVelgerProps) {
                 </p>
             </header>
 
+            {feil && (
+                <div
+                    role="alert"
+                    className="mx-auto mb-4 flex max-w-2xl items-start gap-3 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3"
+                >
+                    <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-rose-600" />
+                    <div className="min-w-0">
+                        <p className="text-sm font-semibold text-rose-900">
+                            Pengeliv fikk ikke tak i skattesatsene
+                        </p>
+                        <p className="mt-0.5 text-sm leading-snug text-rose-800">{feil}</p>
+                    </div>
+                </div>
+            )}
+
             <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {personaer.map((persona, i) => (
                     <motion.li
@@ -41,10 +66,11 @@ export function PersonaVelger({ personaer, onVelg }: PersonaVelgerProps) {
                         <motion.button
                             type="button"
                             onClick={() => onVelg(persona.id)}
-                            whileHover={{ y: -4 }}
-                            whileTap={{ scale: 0.98 }}
+                            disabled={!klar}
+                            whileHover={klar ? { y: -4 } : undefined}
+                            whileTap={klar ? { scale: 0.98 } : undefined}
                             transition={{ type: 'spring', stiffness: 400, damping: 28 }}
-                            className="group flex h-full w-full flex-col rounded-2xl border border-slate-200 bg-white/70 p-4 text-left shadow-sm backdrop-blur transition-colors hover:border-indigo-300 hover:bg-white"
+                            className="group flex h-full w-full flex-col rounded-2xl border border-slate-200 bg-white/70 p-4 text-left shadow-sm backdrop-blur transition-colors hover:border-indigo-300 hover:bg-white disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-slate-200 disabled:hover:bg-white/70"
                         >
                             <div className="flex items-baseline gap-2">
                                 <h2 className="text-lg font-bold text-slate-900">{persona.navn}</h2>

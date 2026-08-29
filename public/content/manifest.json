@@ -1106,6 +1106,13 @@
               "description": "Spill gud i en levende økonomi. Vri på rente, penger og regulering og se hvordan ulike valg påvirker arbeid, priser og kriser.",
               "link": "/samfunnskunnskap/okonomi/verden",
               "icon": "globe"
+            },
+            {
+              "id": "pengeliv",
+              "title": "Pengeliv",
+              "description": "Styr din egen økonomi gjennom et helt liv. Se hvor mye som forsvinner i skatt, hva budsjettet ditt egentlig koster, og hvor store pengene blir hvis du begynner å spare tidlig.",
+              "link": "/oving/pengeliv",
+              "icon": "wallet"
             }
           ],
           "lessons": [
