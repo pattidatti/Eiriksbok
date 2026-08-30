@@ -425,6 +425,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "stillehavets-sjofarere",
+      "title": "Stillehavets sjøfarere: de siste øyene mennesket fant",
+      "description": "Hvordan sjøfolk uten kart og kompass fant og bosatte de siste ubebodde øyene på jorda, og hvorfor de lette mot vinden.",
+      "startDate": -1500,
+      "endDate": 1350,
+      "displayDate": "1500 fvt-1350 evt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "menneskets-tidlige-historie",
+      "link": "/historie/menneskets-tidlige-historie/stillehavets-sjofarere",
+      "tags": [
+        "migrasjon",
+        "oseania",
+        "polynesia",
+        "stillehavet",
+        "navigasjon",
+        "sjofart"
+      ],
+      "lat": -22,
+      "lng": 140,
+      "placeLabel": "Oseania",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "bronsealderens-kollaps",
       "title": "Bronsealderens kollaps",
       "description": "En sammenkoblet verden av riker rundt Middelhavet forsvant på femti år. Se hvordan handel gjorde dem både rike og skjøre.",

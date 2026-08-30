@@ -1138,6 +1138,10 @@
       "count": 10
     },
     {
+      "tag": "migrasjon",
+      "count": 9
+    },
+    {
       "tag": "keiser",
       "count": 9
     },
@@ -1236,10 +1240,6 @@
     {
       "tag": "jodedom",
       "count": 8
-    },
-    {
-      "tag": "migrasjon",
-      "count": 7
     },
     {
       "tag": "ytringsfrihet",
@@ -1527,6 +1527,10 @@
     },
     {
       "tag": "krle",
+      "count": 4
+    },
+    {
+      "tag": "sjofart",
       "count": 4
     },
     {
@@ -2019,6 +2023,18 @@
     },
     {
       "tag": "zoroastrismen",
+      "count": 2
+    },
+    {
+      "tag": "polynesia",
+      "count": 2
+    },
+    {
+      "tag": "stillehavet",
+      "count": 2
+    },
+    {
+      "tag": "navigasjon",
       "count": 2
     },
     {
@@ -2919,10 +2935,6 @@
     },
     {
       "tag": "nortraship",
-      "count": 2
-    },
-    {
-      "tag": "sjofart",
       "count": 2
     },
     {

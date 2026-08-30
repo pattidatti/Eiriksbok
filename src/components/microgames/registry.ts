@@ -203,6 +203,7 @@ const MyraUnderByen3D = lazy(() => import('./MyraUnderByen3D'));
 const Helligdagsplikten3D = lazy(() => import('./Helligdagsplikten3D'));
 const PotemkinFerden3D = lazy(() => import('./PotemkinFerden3D'));
 const MitreumInnvielsen3D = lazy(() => import('./MitreumInnvielsen3D'));
+const Stjernestien3D = lazy(() => import('./Stjernestien3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -1986,6 +1987,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./MitreumInnvielsen3D'),
         Component: MitreumInnvielsen3D as never,
+    },
+    'stjernestien-3d': {
+        id: 'stjernestien-3d',
+        title: 'Stjernestien',
+        description:
+            'Du står ved styreåra på en dobbeltskrogs seilkano midt i Stillehavet, en natt for tusen år siden. Havstrømmen dytter baugen sakte ut av kurs, og du må dra åra sidelengs for å holde kanoen mot stjernen som lyser. Men ingen stjerne står stille: når den synker mot horisonten, stiger en ny opp i det samme punktet, og du må legge kursen på nytt. Lyspæra: du styrer ikke etter én stjerne, men etter en hel kjede av dem - en stjernesti du må kunne utenat før du legger fra land.',
+        estimatedSeconds: 140,
+        loader: () => import('./Stjernestien3D'),
+        Component: Stjernestien3D as never,
     },
 };
 
