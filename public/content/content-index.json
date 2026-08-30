@@ -1,5 +1,5 @@
 {
-  "buildId": 198678743540954,
+  "buildId": 215047432007681,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2539,6 +2539,9 @@
     ],
     "menneskets-tidlige-historie": [
       "content/historie/menneskets-tidlige-historie/menneskets-tidlige-historie.json"
+    ],
+    "stillehavets-sjofarere": [
+      "content/historie/menneskets-tidlige-historie/stillehavets-sjofarere.json"
     ],
     "al-andalus": [
       "content/historie/middelalderen/al-andalus.json"
@@ -5588,6 +5591,7 @@
     "historie/menneskets-tidlige-historie/den-kognitive-revolusjonen": "content/historie/menneskets-tidlige-historie/den-kognitive-revolusjonen.json",
     "historie/menneskets-tidlige-historie/gobekli-tepe": "content/historie/menneskets-tidlige-historie/gobekli-tepe.json",
     "historie/menneskets-tidlige-historie/menneskets-tidlige-historie": "content/historie/menneskets-tidlige-historie/menneskets-tidlige-historie.json",
+    "historie/menneskets-tidlige-historie/stillehavets-sjofarere": "content/historie/menneskets-tidlige-historie/stillehavets-sjofarere.json",
     "historie/middelalderen/al-andalus": "content/historie/middelalderen/al-andalus.json",
     "historie/middelalderen/boktrykkerkunsten": "content/historie/middelalderen/boktrykkerkunsten.json",
     "historie/middelalderen/bysantinske-riket": "content/historie/middelalderen/bysantinske-riket.json",
