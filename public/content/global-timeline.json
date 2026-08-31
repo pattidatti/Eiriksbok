@@ -7440,6 +7440,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "folkemordet-pa-armenerne",
+      "title": "Folkemordet på armenerne",
+      "description": "I 1915 ble armenerne drevet bort og drept i Det osmanske riket. En norsk sykepleier fotograferte det hun så - og bildene ble liggende ulest i Riksarkivet i over 80 år.",
+      "startDate": 1915,
+      "endDate": 1916,
+      "displayDate": "1915-1916",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "osmanske-riket",
+      "link": "/historie/osmanske-riket/folkemordet-pa-armenerne",
+      "tags": [
+        "osmanske-riket",
+        "folkemord",
+        "armenia",
+        "første verdenskrig",
+        "kildekritikk",
+        "menneskerettigheter"
+      ],
+      "lat": 39,
+      "lng": 35,
+      "placeLabel": "Det osmanske riket",
+      "placeCountryId": 792,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "slaget-ved-somme",
       "title": "Slaget ved Somme",
       "description": "Den blodigste dagen i britisk militærhistorie.",

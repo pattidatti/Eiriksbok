@@ -86,6 +86,7 @@ const GutenbergPresse3D = lazy(() => import('./GutenbergPresse3D'));
 const DemokratiLysene3D = lazy(() => import('./DemokratiLysene3D'));
 const Testudo3D = lazy(() => import('./Testudo3D'));
 const Chinampabyen3D = lazy(() => import('./Chinampabyen3D'));
+const Arkivesken3D = lazy(() => import('./Arkivesken3D'));
 const Kanalbyggeren3D = lazy(() => import('./Kanalbyggeren3D'));
 const SamiskGjenreising3D = lazy(() => import('./SamiskGjenreising3D'));
 const ForeneUnionen3D = lazy(() => import('./ForeneUnionen3D'));
@@ -1402,6 +1403,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Testudo3D'),
         Component: Testudo3D as never,
+    },
+    'arkivesken-3d': {
+        id: 'arkivesken-3d',
+        title: 'Arkivesken',
+        description:
+            'Du er arkivar i et magasin, og en eske fra et gammelt misjonsarkiv skal registreres. Dra hver mappe til riktig hylle: det som handler om det som skjedde i 1915 hører under emneordet «Armenia 1915», resten under «Misjonsarbeid». Samtidig stiger en glemsel-måler, og rekker den toppen, blir esken stående umerket. Lyspæren: et bevis ingen har merket riktig, er like usynlig som et bevis som ikke finnes.',
+        estimatedSeconds: 140,
+        loader: () => import('./Arkivesken3D'),
+        Component: Arkivesken3D as never,
     },
     'chinampabyen-3d': {
         id: 'chinampabyen-3d',
