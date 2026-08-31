@@ -6910,6 +6910,23 @@
               "lastUpdated": "2026-07-31T08:57:21+02:00"
             },
             {
+              "id": "folkemordet-pa-armenerne",
+              "title": "Folkemordet på armenerne",
+              "description": "I 1915 ble armenerne drevet bort og drept i Det osmanske riket. En norsk sykepleier fotograferte det hun så - og bildene ble liggende ulest i Riksarkivet i over 80 år.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "osmanske-riket",
+                "folkemord",
+                "armenia",
+                "første verdenskrig",
+                "kildekritikk",
+                "menneskerettigheter"
+              ],
+              "year": "1915-1916",
+              "createdDate": "2026-08-31T00:00:00Z"
+            },
+            {
               "id": "sammenbruddet",
               "title": "Sammenbruddet og det nye Tyrkia",
               "description": "Rikets endelikt i første verdenskrig: Gallipoli, folkemordet på armenerne, Atatürks republikk og Sykes-Picot-avtalen som tegnet dagens Midtøsten.",

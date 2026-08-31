@@ -1,5 +1,5 @@
 {
-  "buildId": 215047432007681,
+  "buildId": 162894027316482,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2706,6 +2706,9 @@
     "sverre-sigurdsson": [
       "content/historie/norsk-middelalder/sverre-sigurdsson.json",
       "content/people/sverre-sigurdsson.json"
+    ],
+    "folkemordet-pa-armenerne": [
+      "content/historie/osmanske-riket/folkemordet-pa-armenerne.json"
     ],
     "forfallet": [
       "content/historie/osmanske-riket/forfallet.json"
@@ -5645,6 +5648,7 @@
     "historie/norsk-middelalder/borgerkrigstiden": "content/historie/norsk-middelalder/borgerkrigstiden.json",
     "historie/norsk-middelalder/hansadrapet-1455": "content/historie/norsk-middelalder/hansadrapet-1455.json",
     "historie/norsk-middelalder/sverre-sigurdsson": "content/historie/norsk-middelalder/sverre-sigurdsson.json",
+    "historie/osmanske-riket/folkemordet-pa-armenerne": "content/historie/osmanske-riket/folkemordet-pa-armenerne.json",
     "historie/osmanske-riket/forfallet": "content/historie/osmanske-riket/forfallet.json",
     "historie/osmanske-riket/handel-og-kultur": "content/historie/osmanske-riket/handel-og-kultur.json",
     "historie/osmanske-riket/janitsjarene": "content/historie/osmanske-riket/janitsjarene.json",

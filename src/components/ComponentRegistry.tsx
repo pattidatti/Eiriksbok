@@ -30,6 +30,7 @@ const TerraNulliusDommen = lazy(() => import('./content/interactive/TerraNullius
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
 const DhammaEllerSverd = lazy(() => import('./content/interactive/DhammaEllerSverd').then(m => ({ default: m.DhammaEllerSverd })));
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
+const SamstemteKilder = lazy(() => import('./content/interactive/SamstemteKilder').then(m => ({ default: m.SamstemteKilder })));
 const MalstangaTest = lazy(() => import('./content/interactive/MalstangaTest').then(m => ({ default: m.MalstangaTest })));
 const HaraldsRike = lazy(() => import('./content/interactive/HaraldsRike').then(m => ({ default: m.HaraldsRike })));
 const LegendensVekst = lazy(() => import('./content/interactive/LegendensVekst').then(m => ({ default: m.LegendensVekst })));
@@ -541,6 +542,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Kildeliste,
     DhammaEllerSverd,
     Kildekjeden,
+    SamstemteKilder,
     HaraldsRike,
     LegendensVekst,
     Skyldvekten,

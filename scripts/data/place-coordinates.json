@@ -830,12 +830,12 @@
       "count": 59
     },
     {
-      "tag": "handel",
-      "count": 43
+      "tag": "kildekritikk",
+      "count": 44
     },
     {
-      "tag": "kildekritikk",
-      "count": 42
+      "tag": "handel",
+      "count": 43
     },
     {
       "tag": "antikken",
@@ -958,6 +958,10 @@
       "count": 19
     },
     {
+      "tag": "folkemord",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
@@ -966,15 +970,15 @@
       "count": 18
     },
     {
+      "tag": "menneskerettigheter",
+      "count": 18
+    },
+    {
       "tag": "holocaust",
       "count": 18
     },
     {
       "tag": "kolonialisering",
-      "count": 17
-    },
-    {
-      "tag": "folkemord",
       "count": 17
     },
     {
@@ -987,10 +991,6 @@
     },
     {
       "tag": "konflikt",
-      "count": 16
-    },
-    {
-      "tag": "menneskerettigheter",
       "count": 16
     },
     {
@@ -2851,6 +2851,14 @@
     },
     {
       "tag": "sentralbank",
+      "count": 2
+    },
+    {
+      "tag": "armenia",
+      "count": 2
+    },
+    {
+      "tag": "første verdenskrig",
       "count": 2
     },
     {
