@@ -205,6 +205,7 @@ const Helligdagsplikten3D = lazy(() => import('./Helligdagsplikten3D'));
 const PotemkinFerden3D = lazy(() => import('./PotemkinFerden3D'));
 const MitreumInnvielsen3D = lazy(() => import('./MitreumInnvielsen3D'));
 const Stjernestien3D = lazy(() => import('./Stjernestien3D'));
+const Pakkeruta3D = lazy(() => import('./Pakkeruta3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -2006,6 +2007,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./Stjernestien3D'),
         Component: Stjernestien3D as never,
+    },
+    'pakkeruta-3d': {
+        id: 'pakkeruta-3d',
+        title: 'Pakkeruta',
+        description:
+            'Meldingen din er delt opp i tolv nummererte pakker som strømmer i sanntid gjennom et nett av rutere. Uten varsel ryker en kabel, og alt som ligger på den går tapt. Hver ruter vet bare én ting: hvilken kabel den sender videre på. Klikk ruterne for å legge om ruta mens pakkene er i lufta. Lyspæra: internett har ingen sjef i midten - derfor kommer meldingen fram selv når deler av nettet faller ut, og pakkene kan komme i feil rekkefølge og likevel settes riktig sammen.',
+        estimatedSeconds: 150,
+        loader: () => import('./Pakkeruta3D'),
+        Component: Pakkeruta3D as never,
     },
 };
 

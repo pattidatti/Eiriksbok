@@ -1,0 +1,275 @@
+{
+  "id": "datamaskinen-og-internettet",
+  "title": "Datamaskinen og internettet",
+  "layout": "rich",
+  "year": "1946-1993",
+  "category": "Teknologi og hverdagsliv",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "factChecked": "2026-09-01",
+  "details": [
+    "Den første store elektroniske regnemaskinen fylte 167 kvadratmeter og hadde 75 byte lagringsplass.",
+    "Alt en datamaskin gjør, bygger på brytere som står av eller på: nuller og enere.",
+    "Norge var det første landet utenfor USA som ble koblet til det som seinere ble internett."
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Telefonen i lomma di kan spille av film, finne veien til en adresse du aldri har vært, og snakke med noen på andre siden av jorda. Den første store elektroniske regnemaskinen kunne ingen av delene. ENIAC sto ferdig i 1946. Den dekket 167 kvadratmeter gulv, slukte 150 000 watt strøm og klarte 357 regnestykker i sekundet. Lagringsplassen var på 75 byte (Hannemyr & Tanem, 2024). Det er mindre plass enn det som trengs for å lagre denne setningen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Enorm regnemaskin med radiorør fyller en hel sal i 1946",
+      "caption": "ENIAC fylte en hel sal. I dag har telefonen din mange millioner ganger mer lagringsplass."
+    },
+    {
+      "type": "text",
+      "content": "Denne artikkelen handler om to oppfinnelser som henger sammen. Først en maskin som gjorde alt om til tall. Så et nett som lot tallene finne veien til hvem som helst, uten at noen styrer trafikken fra midten."
+    },
+    { "type": "header", "text": "Maskinen som fylte et rom" },
+    {
+      "type": "text",
+      "content": "Drømmen om en regnemaskin er mye eldre enn strøm. Blaise Pascal bygde en mekanisk regnemaskin allerede i 1642, og Charles Babbage beskrev en langt mer avansert maskin i 1822 (Hannemyr & Tanem, 2024). Begge var laget av tannhjul og håndsveiv. De kunne regne, men de var trege, og de kunne bare gjøre den ene tingen de var bygd for."
+    },
+    {
+      "type": "text",
+      "content": "Alan Turing la fram sitt banebrytende arbeid i 1936, og i 1945 beskrev John von Neumann hvordan en maskin kunne lagre selve oppskriften inne i seg (Hannemyr & Tanem, 2024). Det siste er viktigere enn det høres ut. En maskin som har oppskriften lagret internt, kan bytte oppskrift. Den samme maskinen kan regne på skatt om morgenen og styre en rakett om kvelden. ENIAC året etter var et av de første forsøkene i praksis: enorm, dyr og likevel starten på alt sammen."
+    },
+    { "type": "header", "text": "Alt blir til nuller og enere" },
+    {
+      "type": "text",
+      "content": "Men hvordan kan én maskin både regne, skrive tekst, vise bilder og spille av lyd? Svaret er at maskinen egentlig bare gjør én ting."
+    },
+    {
+      "type": "text",
+      "content": "Inne i en datamaskin finnes det ingen bokstaver og ingen bilder. Det finnes bare brytere som står av eller på. En slik bryter kalles en bit, og en bit er enten 0 eller 1 (Johannesen & Nätt, 2024). Åtte bits utgjør en byte, og en byte kan derfor ha 256 ulike verdier (Nätt & Rossen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Der ligger hele trikset. Blir vi enige om at tallet 65 skal bety bokstaven A, kan maskinen lagre tekst. Blir vi enige om at tallet skal bety hvor lyst et punkt i et bilde er, kan den lagre bilder. Blir vi enige om at det skal bety hvor høyt en høyttaler skal dytte lufta akkurat nå, kan den lagre lyd. Maskinen merker ikke forskjellen. Den teller. Resten er avtaler vi mennesker har laget om hvordan tallene skal leses."
+    },
+    {
+      "type": "component",
+      "name": "BitBryteren",
+      "props": { "title": "Bitbryteren: åtte brytere, tre svar" }
+    },
+    { "type": "header", "text": "Fra rom til lomme" },
+    {
+      "type": "text",
+      "content": "ENIAC kostet rundt seks millioner dollar regnet om til 2019-verdi (Hannemyr & Tanem, 2024). Ingen familie skulle ha en slik maskin hjemme. Men maskinene krympet. I 1968 kom HP 9100A, som var liten nok til å stå på et skrivebord, og i 1972 kom HP 9830A, som kostet omtrent 90 000 kroner i 1973 (Hannemyr & Tanem, 2024). Fortsatt altfor dyrt for de fleste."
+    },
+    {
+      "type": "text",
+      "content": "Så, i 1977, kom Apple II (Hannemyr & Tanem, 2024). Nå begynte datamaskinen å flytte inn i vanlige hjem, på skoler og i små bedrifter. Den var ikke lenger et instrument for forskere i hvite frakker. Den var noe du kunne slå på selv."
+    },
+    { "type": "header", "text": "Maskinene måtte lære å snakke sammen" },
+    {
+      "type": "text",
+      "content": "En datamaskin alene er et verktøy. Mange datamaskiner koblet sammen er noe helt annet."
+    },
+    {
+      "type": "text",
+      "content": "Høsten 1969 ble maskiner ved fire universiteter og forskningssteder på vestkysten av USA koblet sammen med en datalinje som klarte 56 kilobit i sekundet (Bothner-By mfl., 2024). Nettet fikk navnet ARPANET, og det er den viktigste forløperen til internettet vi bruker i dag. Farten var beskjeden: 56 kilobit betyr 56 000 av/på-signaler hvert sekund, og et vanlig mobilbilde på fire megabyte ville brukt nesten ti minutter på å komme fram."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Forskere ved store datamaskinskap koblet sammen med kabler i 1969",
+      "caption": "Fire maskiner. Det var hele nettet i 1969."
+    },
+    { "type": "header", "text": "Norge var først ut i verden" },
+    {
+      "type": "text",
+      "content": "Det neste steget skjedde i Norge. I 1973 ble forskningsanlegget NORSAR på Kjeller koblet til ARPANET. Det var den første internasjonale forbindelsen inn i nettet, og Norge ble dermed det første landet utenfor USA som var koblet til det som seinere ble internett (Bothner-By mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Det er verdt å stoppe litt ved det. Da nettet tok sitt aller første steg ut av USA, gikk tråden til Kjeller utenfor Oslo. Alt tre år tidligere, i mai 1970, hadde ARPANET-sjefen Lawrence Roberts vært på besøk i Oslo (Bothner-By mfl., 2024)."
+    },
+    { "type": "header", "text": "Beskjeden som deler seg opp" },
+    {
+      "type": "text",
+      "content": "Det smarteste ved nettet er måten det sender ting på. Sender du et bilde til en venn, blir det ikke sendt av gårde som ett stort stykke. Det blir delt opp i mange små deler som kalles datapakker (Øverby, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Hver pakke har to deler. Den ene er selve innholdet, for eksempel en liten flik av bildet. Den andre er opplysninger om pakken: hvilken adresse den skal til, og et kontrolltall som avslører om noe har blitt ødelagt underveis. Pakkene får også hvert sitt nummer, slik at mottakeren kan legge dem i riktig rekkefølge igjen. Regner mottakeren ut kontrolltallet og får et annet svar enn det som står i pakken, har noe gått galt, og pakken blir bedt om på nytt. En vanlig pakke på internett er mellom 64 og 1500 byte (Øverby, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Poenget er at ingen bestemmer hele reisen. Hver maskin underveis vet bare én ting: hvilken kabel den skal sende pakken videre på. Derfor kan pakkene fra det samme bildet ta helt ulike veier gjennom nettet, og derfor kommer bildet fram selv om en kabel ryker et sted på ruta. Det finnes ingen sjef i midten som kan slutte å fungere."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": { "gameId": "pakkeruta-3d" }
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Reglene som fortsatt gjelder",
+        "content": "Reglene som får pakkene til å finne fram, heter TCP/IP. De ble utviklet for ARPANET og tatt i bruk i 1983. ARPANET selv ble lagt ned i 1990, men reglene forsvant ikke med det. De er fortsatt grunnlaget for alt du gjør på nettet i dag, fra en melding til en videosamtale (Bothner-By mfl., 2024)."
+      }
+    },
+    { "type": "header", "text": "Internett og nettsidene er ikke det samme" },
+    {
+      "type": "text",
+      "content": "Mange bruker ordet internett om det de ser i nettleseren. Men dette er to forskjellige ting. Internett er selve veinettet: kablene, maskinene og reglene for hvordan pakkene finner fram. World Wide Web er én type trafikk på dette veinettet, nemlig den delen som består av nettsteder (Øverby, 2026b)."
+    },
+    {
+      "type": "text",
+      "content": "Tim Berners-Lee fant opp World Wide Web ved forskningssenteret CERN i årene 1989 til 1994. Han laget det først som et verktøy for fysikere som trengte å dele dokumenter med hverandre. I 1993 ble det gjort fritt tilgjengelig for alle, og samme år kom Mosaic, den første nettleseren som viste sider med bilder og ikke bare tekst (Øverby, 2026b). Da åpnet nettet seg for folk flest."
+    },
+    {
+      "type": "component",
+      "name": "TimelineComponent",
+      "props": {
+        "compact": true,
+        "events": [
+          {
+            "year": 1946,
+            "description": "ENIAC står ferdig. Maskinen fyller 167 kvadratmeter og har 75 byte lagringsplass."
+          },
+          {
+            "year": 1969,
+            "description": "Fire maskiner på vestkysten av USA kobles sammen til ARPANET over en linje på 56 kilobit i sekundet."
+          },
+          {
+            "year": 1973,
+            "description": "NORSAR på Kjeller kobles til. Norge blir det første landet utenfor USA i nettet."
+          },
+          {
+            "year": 1977,
+            "description": "Apple II lanseres, og datamaskinen begynner å flytte inn i vanlige hjem."
+          },
+          {
+            "year": 1983,
+            "description": "TCP/IP tas i bruk. Reglene som styrer pakkene, er de samme i dag."
+          },
+          {
+            "year": 1993,
+            "description": "World Wide Web blir fritt tilgjengelig, og nettleseren Mosaic viser sider med bilder."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom med mobiltelefon i hånda på en skolegang i dag",
+      "caption": "Fra fire maskiner i 1969 til nesten alle, hver dag."
+    },
+    { "type": "header", "text": "Fra fire maskiner til hele dagen" },
+    {
+      "type": "text",
+      "content": "I 1969 var fire maskiner koblet sammen. I 2025 brukte 96 prosent av befolkningen i Norge internett på en gjennomsnittsdag (Statistisk sentralbyrå, 2026). På under seksti år gikk nettet fra å være et forsøk mellom noen få forskere til å være noe nesten alle er inne på hver eneste dag."
+    },
+    {
+      "type": "text",
+      "content": "Veien dit ligner på den [boktrykkerkunsten](/historie/teknologi-og-hverdagsliv/boktrykkerkunsten) og [telegrafen og telefonen](/historie/teknologi-og-hverdagsliv/telefonen) gikk før den. Først er noe dyrt og sjeldent. Så blir det billig. Til slutt slutter vi å legge merke til at det er der i det hele tatt. Men det er der: kablene som bærer pakkene dine, ligger fortsatt ute i verden, og de fleste av dem ligger på [havbunnen](/samfunnskunnskap/handel-og-infrastruktur/internett-kabler). Og hele nettet står og faller på at [strømmen](/historie/teknologi-og-hverdagsliv/elektrisiteten) er på."
+    },
+    {
+      "type": "text",
+      "content": "To ting er verdt å ta med seg videre. Datamaskinen ble kraftig fordi den gjorde alt om til det samme: tall. Internettet ble robust fordi ingen styrer det fra midten. Ta bort en kabel, og pakkene finner en annen vei."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvor stor var ENIAC, og hvor mye lagringsplass hadde den?",
+          "Hva er en bit, og hvor mange bits går det i en byte?",
+          "Hvor mange maskiner var koblet til ARPANET høsten 1969, og hvor sto de?",
+          "Hvilket år ble NORSAR på Kjeller koblet til ARPANET, og hvorfor er det året spesielt for Norge?"
+        ],
+        "reflekter": [
+          "Teksten sier at datamaskinen ble kraftig fordi den gjorde alt om til tall. Forklar med egne ord hvorfor det er en fordel at tekst, bilder og lyd lagres på nøyaktig samme måte.",
+          "En melding blir delt opp i nummererte pakker som kan ta ulike veier. Forklar hvorfor nummeret på hver pakke er nødvendig, og hva som skjer hvis en pakke blir borte underveis.",
+          "Hva menes med at internett ikke har noen sjef i midten? Forklar hvorfor det gjør nettet vanskeligere å slå ut enn hvis alt hadde gått gjennom én stor maskin.",
+          "Internett og World Wide Web er ikke det samme. Forklar forskjellen slik at en som er yngre enn deg, skjønner den."
+        ],
+        "gaaVidere": [
+          "Regn ut hvor mange bokstaver du får plass til i 75 byte, når hver bokstav tar én byte. Sammenlign med hvor mange bokstaver det er i denne artikkelen, og skriv noen setninger om hva forskjellen betyr.",
+          "Diskuter i klassen: hva ville stoppet opp i løpet av ett døgn hvis internett forsvant i Norge? Lag en liste over de fem tingene dere mener ville merkes først, og begrunn rekkefølgen.",
+          "Nettet ble bygd slik at det tåler at deler av det faller ut. Finn ut hva som skjer når en sjøkabel til Norge blir skadet, og skriv en kort tekst om hvorfor vi likevel merker lite til det."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvor mye lagringsplass hadde ENIAC, som sto ferdig i 1946?",
+            "options": ["75 byte", "75 megabyte", "75 gigabyte", "750 kilobyte"],
+            "answer": 0,
+            "explanation": "ENIAC hadde 75 byte lagringsplass. Maskinen dekket 167 kvadratmeter gulv og brukte 150 000 watt, men kunne altså huske mindre enn en kort setning om gangen."
+          },
+          {
+            "question": "Hva er en bit?",
+            "options": [
+              "En liten datamaskin",
+              "En bryter som er enten 0 eller 1",
+              "Et bilde som er delt opp i deler",
+              "En kabel på havbunnen"
+            ],
+            "answer": 1,
+            "explanation": "En bit er et siffer i totallsystemet, altså enten 0 eller 1. Åtte bits utgjør en byte, som kan ha 256 ulike verdier."
+          },
+          {
+            "question": "Hva var spesielt med at NORSAR på Kjeller ble koblet til ARPANET i 1973?",
+            "options": [
+              "Det var den første datamaskinen i Norge",
+              "Det var den raskeste linja i verden",
+              "Norge ble det første landet utenfor USA som var koblet til nettet",
+              "Det var her World Wide Web ble oppfunnet"
+            ],
+            "answer": 2,
+            "explanation": "Forbindelsen til NORSAR var den første internasjonale koblingen inn i ARPANET. Norge ble dermed det første landet utenfor USA i det som seinere ble internett."
+          },
+          {
+            "question": "Hvorfor kommer en melding fram selv om en kabel ryker underveis?",
+            "options": [
+              "Fordi meldingen sendes to ganger for sikkerhets skyld",
+              "Fordi en hovedmaskin i midten styrer all trafikk utenom bruddet",
+              "Fordi meldingen er delt opp i pakker, og hver maskin underveis velger selv hvilken kabel den sender videre på",
+              "Fordi kabler aldri ryker på internett"
+            ],
+            "answer": 2,
+            "explanation": "Meldingen deles opp i nummererte datapakker. Hver maskin underveis bestemmer bare neste steg, så pakkene kan ta ulike veier. Ingen sentral maskin må fungere for at meldingen skal komme fram."
+          },
+          {
+            "question": "Hva er forskjellen på internett og World Wide Web?",
+            "options": [
+              "Det er to ord for nøyaktig det samme",
+              "Internett er veinettet av kabler, maskiner og regler, mens World Wide Web er nettstedene som er én type trafikk på det",
+              "World Wide Web er kablene, mens internett er nettsidene",
+              "Internett brukes bare i USA, World Wide Web i resten av verden"
+            ],
+            "answer": 1,
+            "explanation": "Internett er selve infrastrukturen: kablene, maskinene og reglene for hvordan datapakker finner fram. World Wide Web, som Tim Berners-Lee laget ved CERN, er den delen som består av nettsteder."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bothner-By, H., Dvergsdal, H. & Nordal, O. (2024). *ARPANET*. Store norske leksikon. Hentet 01.09.2026 fra [snl.no/ARPANET](https://snl.no/ARPANET)",
+          "Hannemyr, G. & Tanem, T. (2024). *Datamaskin*. Store norske leksikon. Hentet 01.09.2026 fra [snl.no/datamaskin](https://snl.no/datamaskin)",
+          "Johannesen, R. T. & Nätt, T. H. (2024). *Bit*. Store norske leksikon. Hentet 01.09.2026 fra [snl.no/bit](https://snl.no/bit)",
+          "Nätt, T. H. & Rossen, E. (2024). *Byte*. Store norske leksikon. Hentet 01.09.2026 fra [snl.no/byte](https://snl.no/byte)",
+          "Statistisk sentralbyrå. (2026). *Norsk mediebarometer*. Hentet 01.09.2026 fra [ssb.no](https://www.ssb.no/kultur-og-fritid/tids-og-mediebruk/statistikk/norsk-mediebarometer)",
+          "Øverby, H. (2026a). *Datapakke*. Store norske leksikon. Hentet 01.09.2026 fra [snl.no/datapakke](https://snl.no/datapakke)",
+          "Øverby, H. (2026b). *World Wide Web*. Store norske leksikon. Hentet 01.09.2026 fra [snl.no/World_Wide_Web](https://snl.no/World_Wide_Web)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

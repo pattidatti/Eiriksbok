@@ -815,7 +815,7 @@
     },
     {
       "tag": "teknologi",
-      "count": 69
+      "count": 71
     },
     {
       "tag": "krig",
@@ -1446,6 +1446,10 @@
       "count": 5
     },
     {
+      "tag": "kommunikasjon",
+      "count": 5
+    },
+    {
       "tag": "media",
       "count": 5
     },
@@ -1714,6 +1718,10 @@
       "count": 4
     },
     {
+      "tag": "internett",
+      "count": 4
+    },
+    {
       "tag": "allianser",
       "count": 4
     },
@@ -1847,10 +1855,6 @@
     },
     {
       "tag": "medisin",
-      "count": 3
-    },
-    {
-      "tag": "kommunikasjon",
       "count": 3
     },
     {
@@ -2978,6 +2982,10 @@
       "count": 2
     },
     {
+      "tag": "datamaskin",
+      "count": 2
+    },
+    {
       "tag": "kaldkrig",
       "count": 2
     },
@@ -3127,10 +3135,6 @@
     },
     {
       "tag": "rørledninger",
-      "count": 2
-    },
-    {
-      "tag": "internett",
       "count": 2
     },
     {

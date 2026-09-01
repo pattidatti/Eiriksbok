@@ -9107,6 +9107,30 @@
       ]
     },
     {
+      "id": "datamaskinen-og-internettet",
+      "title": "Datamaskinen og internettet",
+      "description": "Fra en regnemaskin som fylte en hel sal til et nett uten sjef i midten, der meldingen din deles opp i nummererte pakker som finner veien selv.",
+      "startDate": 1946,
+      "endDate": 1993,
+      "displayDate": "1946-1993",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "teknologi-og-hverdagsliv",
+      "link": "/historie/teknologi-og-hverdagsliv/datamaskinen-og-internettet",
+      "tags": [
+        "teknologi",
+        "datamaskin",
+        "internett",
+        "norge",
+        "kommunikasjon"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "frigjoringskrigene",
       "title": "Algerie & Vietnam: Krigens vei",
       "description": "Når kolonimakten nekter å dra.",
