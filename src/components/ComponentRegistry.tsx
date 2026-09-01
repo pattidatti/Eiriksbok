@@ -264,6 +264,7 @@ const LightThroughTheAgesExplorer = lazy(() => import('./content/interactive/Lig
 const FoodPreservationExplorer = lazy(() => import('./content/interactive/FoodPreservationExplorer').then(m => ({ default: m.FoodPreservationExplorer })));
 const HerdImmunityExplorer = lazy(() => import('./content/interactive/HerdImmunityExplorer').then(m => ({ default: m.HerdImmunityExplorer })));
 const MessageSpeedExplorer = lazy(() => import('./content/interactive/MessageSpeedExplorer').then(m => ({ default: m.MessageSpeedExplorer })));
+const BitBryteren = lazy(() => import('./content/interactive/BitBryteren').then(m => ({ default: m.BitBryteren })));
 const StitchSpeedRace = lazy(() => import('./content/interactive/StitchSpeedRace').then(m => ({ default: m.StitchSpeedRace })));
 // Det osmanske riket
 const OttomanEraSlider = lazy(() => import('./content/interactive/OttomanEraSlider').then(m => ({ default: m.OttomanEraSlider })));
@@ -743,6 +744,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     FoodPreservationExplorer,
     HerdImmunityExplorer,
     MessageSpeedExplorer,
+    BitBryteren,
     StitchSpeedRace,
     OttomanEraSlider,
     OsmanDreamTree,

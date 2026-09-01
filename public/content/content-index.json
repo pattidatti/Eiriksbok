@@ -1,5 +1,5 @@
 {
-  "buildId": 162894027316482,
+  "buildId": 175228657020638,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2862,6 +2862,9 @@
     "sveriges-historie-sveriges-historie": [
       "content/historie/sveriges-historie/sveriges-historie/artikkel.json"
     ],
+    "datamaskinen-og-internettet": [
+      "content/historie/teknologi-og-hverdagsliv/datamaskinen-og-internettet.json"
+    ],
     "elektrisiteten": [
       "content/historie/teknologi-og-hverdagsliv/elektrisiteten.json"
     ],
@@ -5700,6 +5703,7 @@
     "historie/sveriges-historie/stormaktstiden": "content/historie/sveriges-historie/stormaktstiden.json",
     "historie/sveriges-historie/sveriges-historie/sveriges-historie": "content/historie/sveriges-historie/sveriges-historie/artikkel.json",
     "historie/teknologi-og-hverdagsliv/boktrykkerkunsten": "content/historie/teknologi-og-hverdagsliv/boktrykkerkunsten.json",
+    "historie/teknologi-og-hverdagsliv/datamaskinen-og-internettet": "content/historie/teknologi-og-hverdagsliv/datamaskinen-og-internettet.json",
     "historie/teknologi-og-hverdagsliv/elektrisiteten": "content/historie/teknologi-og-hverdagsliv/elektrisiteten.json",
     "historie/teknologi-og-hverdagsliv/jordbrukets-historie": "content/historie/teknologi-og-hverdagsliv/jordbrukets-historie.json",
     "historie/teknologi-og-hverdagsliv/kjoleskapet": "content/historie/teknologi-og-hverdagsliv/kjoleskapet.json",

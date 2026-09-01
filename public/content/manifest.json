@@ -5041,6 +5041,20 @@
               ],
               "createdDate": "2026-05-31T13:45:51+02:00",
               "lastUpdated": "2026-08-02T15:58:09+02:00"
+            },
+            {
+              "id": "datamaskinen-og-internettet",
+              "title": "Datamaskinen og internettet",
+              "description": "Fra en regnemaskin som fylte en hel sal til et nett uten sjef i midten, der meldingen din deles opp i nummererte pakker som finner veien selv.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "teknologi",
+                "datamaskin",
+                "internett",
+                "norge",
+                "kommunikasjon"
+              ],
+              "createdDate": "2026-09-01T00:00:00Z"
             }
           ]
         },
