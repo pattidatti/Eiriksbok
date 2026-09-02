@@ -1,0 +1,312 @@
+{
+    "id": "trommen-som-kom-hjem",
+    "title": "Trommen som kom hjem",
+    "layout": "rich",
+    "year": "1723-2023",
+    "category": "Samisk religion",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Misjonæren Thomas von Westen tok trommen Freavnantjahke gievrie fra eierne i Namdalen i 1723",
+        "I 2012 ble Norsk Folkemuseum, Kulturhistorisk museum og Sametinget enige om å føre over 1600 samiske gjenstander tilbake til samiske museer",
+        "3. november 2023 var trommen tilbake i Saepmie, 300 år etter at den ble tatt"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "I mange år lå det en tromme i en glassmonter i en tysk småby. Skiltet ved siden av fortalte hva den var laget av og hvor gammel den var. Men det sto ingenting om at noen en gang hadde eid den. Ingenting om at den hadde blitt tatt fra dem. Og ingenting om at det fortsatt fantes mennesker som ville ha den tilbake."
+        },
+        {
+            "type": "text",
+            "content": "Trommen heter Freavnantjahke gievrie. Den kom hjem til Norge høsten 2023, 300 år etter at den forsvant (Flom, 2023). Historien om den er egentlig to historier: én om hvordan en hellig gjenstand blir til et museumsobjekt, og én om hvordan den kan bli hellig igjen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Samisk runebomme i glassmonter i et museum",
+            "caption": "Bevart, katalogisert og langt hjemmefra. Slik lå mange samiske trommer i over to hundre år."
+        },
+        {
+            "type": "header",
+            "text": "Ikke et instrument, men et redskap"
+        },
+        {
+            "type": "text",
+            "content": "En gievrie, eller runebomme på norsk, er en ramme eller en skål av tre med skinn spent over, som regel reinskinn (Kraft mfl., 2025). På skinnet er det malt figurer: rein med sele, ski, hvaler, mennesker, og noen ganger en liten båt med årer (Kraft mfl., 2025). Det ser ut som pynt. Det er det ikke."
+        },
+        {
+            "type": "text",
+            "content": "Trommen ble brukt til to ting. Den ene var å spå. Da la noaiden, den åndelige lederen, en ring av metall eller en liten beinfigur på skinnet og slo på trommen med en hammer av reinhorn. Så leste han av hvor ringen beveget seg (Kraft mfl., 2025). Den andre bruken var reisen: noaiden slo seg inn i transe, en slags dyp drøm, og lot sjelen sin dra til de andre verdenene for å hente svar. Du kan lese mer om dette i artikkelen om [samisk religion](/krle/religion/samisk/intro)."
+        },
+        {
+            "type": "text",
+            "content": "Poenget er at trommen ikke var en gjenstand du eide slik du eier en stol. Den var et verktøy for å komme i kontakt med noe større. Den hørte til én person og ett fellesskap, og den var ubrukelig uten dem."
+        },
+        {
+            "type": "header",
+            "text": "Da trommene ble samlet inn"
+        },
+        {
+            "type": "text",
+            "content": "På 1600- og 1700-tallet sendte den dansk-norske kongen og kirken misjonærer til de samiske områdene. De skulle gjøre samene til kristne. For å få det til, måtte den gamle troen bort. Og skulle den gamle troen bort, måtte trommene bort."
+        },
+        {
+            "type": "text",
+            "content": "Flere hundre trommer ble samlet inn eller ødelagt i denne perioden (Kraft mfl., 2025). Rundt hundre av dem brant opp i en bybrann i København i 1728 (Kraft mfl., 2025). I dag finnes det bare omtrent hundre trommer igjen i hele verden, og de fleste av dem ligger i museer utenfor Sápmi. Noaidene selv ble jaktet på. Anders Poulsen fikk trommen sin beslaglagt i 1691 og ble stilt for retten, på samme måte som andre ble dømt i [hekseprosessene](/historie/lov-og-rett/hekseprosessene) i denne tiden."
+        },
+        {
+            "type": "text",
+            "content": "Freavnantjahke gievrie ble tatt av misjonæren Thomas von Westen i Namdalen i 1723 (Sametinget, 2023). Etter en lang omvei havnet den i 1837 på Meininger museum i Tyskland (Flom, 2023). Der lå den i nesten to hundre år."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "berg-trommen-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Misjonærer med lykter gjennomsøker en samisk vinterboplass",
+            "caption": "Søket etter trommer var systematisk. De færreste ble berget."
+        },
+        {
+            "type": "header",
+            "text": "Trommen som ble et nummer"
+        },
+        {
+            "type": "text",
+            "content": "Da trommene først lå i en samling, skjedde det noe med dem. De fikk et nummer. De fikk mål i centimeter. De ble beskrevet av folk som aldri hadde sett dem i bruk."
+        },
+        {
+            "type": "text",
+            "content": "Og det stoppet ikke med trommene. På 1800-tallet reiste norske og europeiske forskere rundt i samiske områder og samlet inn alt de kom over: klær, verktøy, kjøreredskaper, ting fra hverdagen (Norsk Folkemuseum, u.å.). Norsk Folkemuseum alene endte opp med rundt 4300 samiske gjenstander (Norsk Folkemuseum, u.å.). Dette skjedde samtidig med [fornorskingen av samene](/historie/norgeshistorie/fornorskingen-av-samene), altså den norske politikken som skulle bytte ut samisk språk og kultur med norsk. Mens kulturen ble motarbeidet ute i samfunnet, ble den samlet inn og satt bak glass."
+        },
+        {
+            "type": "component",
+            "name": "TrommensReise",
+            "props": {
+                "title": "Trommens reise",
+                "lead": "Klikk deg gjennom stoppene. Se hva den samme trommen var, to steder samtidig.",
+                "stops": [
+                    {
+                        "year": "Før 1723",
+                        "place": "Namdalen",
+                        "headline": "Hos dem som eide den",
+                        "samling": "Ikke registrert noe sted. Ingen har målt den, tegnet den eller gitt den et nummer.",
+                        "eiere": "Redskapet noaiden bruker for å komme i kontakt med de andre verdenene. Den hører til én person og ett fellesskap."
+                    },
+                    {
+                        "year": "1723",
+                        "place": "Tatt av misjonen",
+                        "headline": "Thomas von Westen tar trommen",
+                        "samling": "Bevis på at samene fortsatt holdt fast ved den gamle troen. Noe som måtte fjernes.",
+                        "eiere": "Et tap som ikke lar seg erstatte. Uten trommen kan ikke noaiden gjøre jobben sin."
+                    },
+                    {
+                        "year": "1837",
+                        "place": "Meiningen i Tyskland",
+                        "headline": "Trommen blir museumsobjekt",
+                        "samling": "En godt bevart gjenstand fra et fjernt folk. Interessant for forskere, trygg bak glass.",
+                        "eiere": "Borte. De fleste vet ikke engang hvor den er, eller at den fortsatt finnes."
+                    },
+                    {
+                        "year": "2021",
+                        "place": "Snåsa spør",
+                        "headline": "Saemien Sijte ber om trommen tilbake",
+                        "samling": "En forespørsel som må vurderes. Hvem har egentlig rett til gjenstanden nå?",
+                        "eiere": "Et krav om noe som aldri ble gitt bort. Trommen er sørsamisk kulturarv."
+                    },
+                    {
+                        "year": "2023",
+                        "place": "Saepmie",
+                        "headline": "Trommen er hjemme",
+                        "samling": "Overført til et annet museum. Fortsatt bevart, fortsatt registrert.",
+                        "eiere": "Tilbake der den hører hjemme, forvaltet av samer selv. Den betyr noe for identitet og verdighet.",
+                        "home": true
+                    }
+                ],
+                "conclusion": "Samme tromme. To helt ulike svar på hva den er. Derfor handler en tilbakeføring om mer enn et objekt som bytter hylle."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Bååstede: da gjenstandene kom hjem"
+        },
+        {
+            "type": "text",
+            "content": "Ordet for det som skjer når en gjenstand føres tilbake, er repatriering. Det betyr at et museum gir fra seg noe til dem det egentlig tilhører, særlig når gjenstanden har havnet i samlingen på en urimelig måte, og når den betyr mye kulturelt eller religiøst (Museene i Sør-Trøndelag, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "19. juni 2012 skrev Norsk Folkemuseum, Kulturhistorisk museum og Sametinget under på en avtale: samiske gjenstander skulle føres tilbake til museer som Sametinget har ansvar for (Norsk Folkemuseum, u.å.). Prosjektet fikk navnet Bååstede, som betyr hjemkomst på sørsamisk (Norsk Folkemuseum, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Det tok tid. Først i 2019, sju år senere, var forhandlingene ferdige og over 1600 gjenstander fordelt (Norsk Folkemuseum, u.å.). De gikk til seks samiske museer, fra Tana og Varanger i øst til Saemien Sijte i Snåsa i sør (Museene i Sør-Trøndelag, u.å.). Dette er en av de største tilbakeføringene som er gjort i Norge."
+        },
+        {
+            "type": "header",
+            "text": "Trommen fra Meiningen"
+        },
+        {
+            "type": "text",
+            "content": "Freavnantjahke gievrie lå fortsatt i Tyskland. I 2021 sendte Saemien Sijte, det sørsamiske museet i Snåsa, en henvendelse til Meininger museum og ba om å få trommen tilbake (Sametinget, 2023). I juni 2023 bestemte styret ved det tyske museet seg for å si ja (Flom, 2023)."
+        },
+        {
+            "type": "text",
+            "content": "3. november 2023 var trommen tilbake i Saepmie (Flom, 2023). Det var den første samiske trommen som er ført tilbake fra et tysk museum, og flere ligger fortsatt i tyske samlinger (Flom, 2023)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Det er helt fantastisk at tromma nå har kommet tilbake. Det har stor betydning for kultur, identitet og verdighet.",
+                "author": "Birgitta Fossum, direktør ved Saemien Sijte (Flom, 2023)"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Sametingspresident Silje Karine Muotka sa det slik da avgjørelsen ble kjent: samisk kulturarv bør eies og formidles av et samisk museum på vegne av det samiske folk (Sametinget, 2023). Kultur- og likestillingsminister Lubna Jaffery håpet at hjemkomsten kunne bidra til å hele noen av sårene som er påført samene (Flom, 2023)."
+        },
+        {
+            "type": "header",
+            "text": "Hvem eier en hellig gjenstand?"
+        },
+        {
+            "type": "text",
+            "content": "Dette er ikke et lett spørsmål, og det er ikke løst. Museene har gode grunner til å ville beholde ting. De har utstyr og fagfolk som kan ta vare på skjøre gjenstander. De gjør dem tilgjengelige for forskere og for publikum fra hele verden. Og de kan vise fram kulturer som mange ellers aldri ville lært noe om."
+        },
+        {
+            "type": "text",
+            "content": "Men den andre siden veier tungt. Gjenstandene ble som regel ikke solgt eller gitt bort. De ble tatt, ofte i en situasjon der den ene parten hadde all makt. Og for et folk som har opplevd at språket og troen ble motarbeidet, er det å få tilbake tingene sine også å få tilbake retten til å fortelle sin egen historie."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Regler som gjelder",
+                "content": "Norge sa i 2007 ja til en FN-avtale fra 1970 som skal hindre at kulturgjenstander fraktes ulovlig mellom land. Avtalen forbyr blant annet å importere kulturgjenstander uten lovlig eksporttillatelse fra landet de kommer fra. Men de fleste samiske gjenstandene ble hentet lenge før dette. Derfor bygger tilbakeføringer som Bååstede på avtaler og forhandlinger, ikke på tvang."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Samisk tromme utstilt i et samisk museum i Norge",
+            "caption": "Freavnantjahke gievrie forvaltes i dag av Saemien Sijte i Snåsa."
+        },
+        {
+            "type": "header",
+            "text": "Hva betyr det at den kom hjem?"
+        },
+        {
+            "type": "text",
+            "content": "Trommen står fortsatt bak glass. Den brukes ikke av noen noaide, og den kommer neppe til å bli det igjen. Sånn sett kan det se ut som ingenting har endret seg."
+        },
+        {
+            "type": "text",
+            "content": "Men noe har endret seg. Nå er det samer som bestemmer hvordan trommen skal vises, hva som skal stå på skiltet, og hvilken historie den skal fortelle. Den er ikke lenger et eksempel på en fremmed kultur, sett utenfra. Den er et minne som et folk forvalter selv."
+        },
+        {
+            "type": "text",
+            "content": "Det gjelder mer enn trommer. Samisk kultur har levd videre på mange måter gjennom hardere tider enn de fleste kjenner til, både gjennom [joiken](/musikk/musikkhistorie/joik) og gjennom en egen kristen tradisjon som [læstadianismen](/krle/religion/samisk/laestadianismen). Freavnantjahke gievrie er ett av mange spor som har vært borte og som nå er funnet igjen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en gievrie laget av, og hva ble den brukt til? Finn de to bruksområdene i teksten.",
+                    "Hvem tok Freavnantjahke gievrie, hvilket år skjedde det, og hvor havnet trommen til slutt?",
+                    "Hva betyr ordet Bååstede, og hvor mange gjenstander ble fordelt gjennom prosjektet?",
+                    "Hvor mange samiske trommer finnes igjen i verden i dag, ifølge artikkelen?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at trommen var et redskap, ikke pynt. Forklar med egne ord hvorfor det gjør en forskjell for spørsmålet om hvem som bør eie den.",
+                    "Hvorfor tok misjonærene nettopp trommene, og ikke bare forbød folk å tro på det de trodde på?",
+                    "Sammenlign de to blikkene i den interaktive modellen. Hvilket av dem synes du veier tyngst, og hvorfor?",
+                    "Trommen står fortsatt bak glass etter at den kom hjem. Har det da egentlig skjedd noe viktig? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Diskuter i klassen: et museum i Europa har en hellig gjenstand som ble tatt for 250 år siden. Museet tar godt vare på den og viser den til tusenvis av besøkende hvert år. Folket den ble tatt fra vil ha den tilbake. Sett opp de sterkeste argumentene for begge sider, og bli enige om hva dere mener.",
+                    "Skriv skiltteksten som skal stå ved siden av Freavnantjahke gievrie i museet i Snåsa. Du har maks 60 ord. Hva må være med, og hva velger du bort?",
+                    "Finn ut hvilket museum som ligger nærmest der du bor. Undersøk om det har gjenstander fra andre kulturer, og hvordan museet forteller om hvor de kommer fra."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "title": "Test deg selv",
+                "questions": [
+                    {
+                        "question": "Hva ble en gievrie, eller runebomme, brukt til?",
+                        "options": [
+                            "Til å spå og til å komme i transe",
+                            "Bare til musikk og dans ved fester",
+                            "Til å sende signaler mellom boplasser",
+                            "Til å måle tiden gjennom året"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Trommen ble brukt til å spå, ved at en ring eller figur ble lagt på skinnet, og til at noaiden kom i transe og lot sjelen reise til de andre verdenene."
+                    },
+                    {
+                        "question": "Hvem tok Freavnantjahke gievrie, og når?",
+                        "options": [
+                            "Kong Christian IV i 1610",
+                            "Misjonæren Thomas von Westen i 1723",
+                            "Presten Lars Levi Læstadius i 1845",
+                            "Forskere fra Norsk Folkemuseum i 1890"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Thomas von Westen tok trommen fra eierne i Namdalen i 1723, under en av misjonsreisene sine."
+                    },
+                    {
+                        "question": "Hva betyr Bååstede, og hva var prosjektet?",
+                        "options": [
+                            "Hjemkomst - tilbakeføring av samiske gjenstander til samiske museer",
+                            "Vandring - en utstilling som reiste rundt i Norge",
+                            "Minne - et arkiv over samiske stedsnavn",
+                            "Vern - et program for å frede samiske kulturminner"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Bååstede betyr hjemkomst på sørsamisk. Etter avtalen fra 2012 ble over 1600 gjenstander fordelt til seks samiske museer."
+                    },
+                    {
+                        "question": "Omtrent hvor mange samiske trommer finnes igjen i verden i dag?",
+                        "options": ["Rundt hundre", "Rundt tusen", "Rundt ti", "Over fem tusen"],
+                        "correctAnswer": 0,
+                        "explanation": "Flere hundre trommer ble samlet inn eller ødelagt under misjonen, blant annet i bybrannen i København i 1728. I dag finnes det bare rundt hundre igjen."
+                    },
+                    {
+                        "question": "Hva er den viktigste endringen når en gjenstand føres tilbake til et samisk museum?",
+                        "options": [
+                            "Samer bestemmer selv hvordan den vises og hvilken historie den forteller",
+                            "Gjenstanden blir tatt i bruk igjen på samme måte som før",
+                            "Gjenstanden blir billigere å ta vare på",
+                            "Færre mennesker får se den"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Trommen står fortsatt bak glass, men nå er det samer som forvalter den og forteller historien om den. Det handler om kultur, identitet og verdighet."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Kraft, S. E., Fonneland, T., Knudsen, R. & Berg-Nordlie, M. (2025). *Samiske trommer*. Store norske leksikon. Hentet 02.09.2026 fra [snl.no/runebomme](https://snl.no/runebomme)",
+                    "Sametinget. (2023). *Gleder seg over at Freavnantjahke gievrie er på vei tilbake til Saepmie*. Hentet 02.09.2026 fra [sametinget.no](https://sametinget.no/aktuelt/gleder-seg-over-at-freavnantjahke-gievrie-er-pa-vei-tilbake-til-saepmie.26553.aspx)",
+                    "Flom, T. (2023). *Samisk tromme tilbakeført fra Tyskland*. Kunstavisen. Hentet 02.09.2026 fra [kunstavisen.no](https://kunstavisen.no/nyheter/samisk-tromme-tilbakefort-fra-tyskland)",
+                    "Norsk Folkemuseum. (u.å.). *Bååstede*. Hentet 02.09.2026 fra [norskfolkemuseum.no/baastede](https://norskfolkemuseum.no/baastede)",
+                    "Museene i Sør-Trøndelag. (u.å.). *Repatriering*. Samlingsnett. Hentet 02.09.2026 fra [samlingsnett.no/repatriering](https://samlingsnett.no/repatriering)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

@@ -109,6 +109,7 @@ const GreskGudeMatch = lazy(() => import('./content/interactive/GreskGudeMatch')
 const TestPaastanden = lazy(() => import('./content/interactive/TestPaastanden').then(m => ({ default: m.TestPaastanden })));
 const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansionMap').then(m => ({ default: m.RomanExpansionMap })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
+const TrommensReise = lazy(() => import('./content/interactive/TrommensReise').then(m => ({ default: m.TrommensReise })));
 const TroOgVitenMatrisen = lazy(() => import('./content/interactive/TroOgVitenMatrisen').then(m => ({ default: m.TroOgVitenMatrisen })));
 const LivetsFireStunder = lazy(() => import('./content/interactive/LivetsFireStunder').then(m => ({ default: m.LivetsFireStunder })));
 const TraktatFellen = lazy(() => import('./content/interactive/TraktatFellen').then(m => ({ default: m.TraktatFellen })));
@@ -601,6 +602,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KaizenVerksted,
     SuverenitetsSkala,
     TrolleyProblem,
+    TrommensReise,
     TroOgVitenMatrisen,
     LivetsFireStunder,
     TraktatFellen,

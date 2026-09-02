@@ -206,6 +206,7 @@ const PotemkinFerden3D = lazy(() => import('./PotemkinFerden3D'));
 const MitreumInnvielsen3D = lazy(() => import('./MitreumInnvielsen3D'));
 const Stjernestien3D = lazy(() => import('./Stjernestien3D'));
 const Pakkeruta3D = lazy(() => import('./Pakkeruta3D'));
+const BergTrommen3D = lazy(() => import('./BergTrommen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -2016,6 +2017,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Pakkeruta3D'),
         Component: Pakkeruta3D as never,
+    },
+    'berg-trommen-3d': {
+        id: 'berg-trommen-3d',
+        title: 'Berg trommen',
+        description:
+            'Namdalen, en vinterkveld i 1723. Misjonen gjennomsøker boplassen etter trommer, og du holder din under kofta. Ute på vidda står sieidien, den hellige steinen, der trommen kan ligge trygt. Hold inne for å gå, slipp for å stå bom stille når en lykt kommer nær - leterne ser det som beveger seg. Lyspæra: å berge en tromme var ikke å gjemme den i en kiste, men å bære den forbi folk som lette systematisk, og de fleste ble ikke berget.',
+        estimatedSeconds: 150,
+        loader: () => import('./BergTrommen3D'),
+        Component: BergTrommen3D as never,
     },
 };
 

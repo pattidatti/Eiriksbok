@@ -9099,6 +9099,21 @@
                   ],
                   "createdDate": "2026-08-04T05:03:38+02:00",
                   "lastUpdated": "2026-08-12T16:30:39+02:00"
+                },
+                {
+                  "id": "trommen-som-kom-hjem",
+                  "title": "Trommen som kom hjem",
+                  "description": "Freavnantjahke gievrie ble tatt i 1723 og kom tilbake til Saepmie i 2023. Om hellige gjenstander, museer og tilbakeføring.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "samisk",
+                    "urfolk",
+                    "runebomme",
+                    "museum",
+                    "tilbakeforing",
+                    "kulturarv"
+                  ],
+                  "createdDate": "2026-09-02T00:00:00Z"
                 }
               ]
             }
