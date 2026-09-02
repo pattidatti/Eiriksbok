@@ -1,5 +1,5 @@
 {
-  "buildId": 175228657020638,
+  "buildId": 38356783298214,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3423,6 +3423,9 @@
     "laestadianismen": [
       "content/krle/religion/samisk/laestadianismen.json"
     ],
+    "trommen-som-kom-hjem": [
+      "content/krle/religion/samisk/trommen-som-kom-hjem.json"
+    ],
     "sikhisme-bonn": [
       "content/krle/religion/sikhisme/bonn/artikkel.json"
     ],
@@ -5892,6 +5895,7 @@
     "krle/religion/mormonisme/skapelse": "content/krle/religion/mormonisme/skapelse/artikkel.json",
     "krle/religion/samisk/intro": "content/krle/religion/samisk/intro.json",
     "krle/religion/samisk/laestadianismen": "content/krle/religion/samisk/laestadianismen.json",
+    "krle/religion/samisk/trommen-som-kom-hjem": "content/krle/religion/samisk/trommen-som-kom-hjem.json",
     "krle/religion/sikhisme/bonn": "content/krle/religion/sikhisme/bonn/artikkel.json",
     "krle/religion/sikhisme/frelse": "content/krle/religion/sikhisme/frelse/artikkel.json",
     "krle/religion/sikhisme/grunnleggere": "content/krle/religion/sikhisme/grunnleggere/artikkel.json",

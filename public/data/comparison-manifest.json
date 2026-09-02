@@ -1864,6 +1864,13 @@
       "tags": []
     },
     {
+      "religion": "samisk",
+      "title": "Trommen som kom hjem",
+      "link": "/krle/religion/samisk/trommen-som-kom-hjem",
+      "dimension": null,
+      "tags": []
+    },
+    {
       "religion": "sikhisme",
       "title": "Bønn i sikhismen: å huske et navn",
       "link": "/krle/religion/sikhisme/bonn",
@@ -2085,7 +2092,8 @@
       "/krle/religion/historiske-religioner/monoteismens-fodsel",
       "/krle/religion/historiske-religioner/mysteriekultene",
       "/krle/religion/samisk/intro",
-      "/krle/religion/samisk/laestadianismen"
+      "/krle/religion/samisk/laestadianismen",
+      "/krle/religion/samisk/trommen-som-kom-hjem"
     ],
     "mergedTopics": [
       "dagligliv -> bonn",
