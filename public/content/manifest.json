@@ -5046,7 +5046,7 @@
               "id": "datamaskinen-og-internettet",
               "title": "Datamaskinen og internettet",
               "description": "Fra en regnemaskin som fylte en hel sal til et nett uten sjef i midten, der meldingen din deles opp i nummererte pakker som finner veien selv.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/teknologi-og-hverdagsliv/datamaskinen-og-internettet-hero.webp",
               "tags": [
                 "teknologi",
                 "datamaskin",
@@ -6927,7 +6927,7 @@
               "id": "folkemordet-pa-armenerne",
               "title": "Folkemordet på armenerne",
               "description": "I 1915 ble armenerne drevet bort og drept i Det osmanske riket. En norsk sykepleier fotograferte det hun så - og bildene ble liggende ulest i Riksarkivet i over 80 år.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/osmanske-riket/folkemordet-pa-armenerne-hero.webp",
               "layout": "rich",
               "tags": [
                 "osmanske-riket",
@@ -7788,7 +7788,7 @@
                   "id": "intro",
                   "title": "Verdens største religion",
                   "description": "Verdens største religion begynte med en henrettelse i Jerusalem. Se hva historikere faktisk kan slå fast, hva kristne tror, og hvordan de tre hovedgrenene skiller lag.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/intro-hero.webp",
                   "tags": [
                     "kristendom",
                     "intro"
@@ -7800,7 +7800,7 @@
                   "id": "sentrale-trekk",
                   "title": "Det alle kristne er enige om",
                   "description": "Kristendommen er delt i over 340 kirkesamfunn, men alle deler troen på at Gud ble menneske i Jesus. Bli kjent med den felles kjernen fra kirkemøtene i Nikea, Konstantinopel og Kalkedon, og med alt kirkene er uenige om.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/sentrale-trekk-hero.webp",
                   "tags": [
                     "kristendom",
                     "sentrale_trekk"
@@ -7838,7 +7838,7 @@
                   "id": "hellige-tekster",
                   "title": "Boka som ble satt sammen",
                   "description": "Bibelen ble aldri skrevet som én bok, den ble satt sammen. Se hvorfor katolske og protestantiske bibler har ulikt antall bøker, hva som skulle til for at et skrift kom med, og hvem som får tolke teksten.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/hellige-tekster-hero.webp",
                   "tags": [
                     "kristendom",
                     "hellige_tekster",
@@ -7877,7 +7877,7 @@
                   "id": "overgangsriter",
                   "title": "Uenigheten om vannet",
                   "description": "Dåp, konfirmasjon, vielse og gravferd. Kristne har kranglet i 500 år om når dåpen skal skje - og striden kostet liv.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/overgangsriter-hero.webp",
                   "tags": [
                     "kristendom",
                     "overgangsriter",
@@ -7890,7 +7890,7 @@
                   "id": "skapelse",
                   "title": "To fortellinger om begynnelsen",
                   "description": "1. Mosebok åpner med to skapelsesfortellinger som setter hendelsene i ulik rekkefølge. Finn mønsteret i de seks dagene, og se hvorfor kristne leser den samme teksten så ulikt.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/skapelse-hero.webp",
                   "tags": [
                     "kristendom",
                     "skapelse",
@@ -7903,7 +7903,7 @@
                   "id": "paulus-og-misjonen",
                   "title": "Avgjørelsen som åpnet døren",
                   "description": "Paulus forfulgte de første Jesus-troende, men ble den viktigste misjonæren av dem alle. På møtet i Jerusalem i år 48 måtte jøder og ikke-jøder finne ut hvordan de kunne dele den samme menigheten uten at den ene gruppen måtte bli den andre.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/paulus-og-misjonen-hero.webp",
                   "tags": [
                     "kristendom",
                     "misjon",
@@ -7917,7 +7917,7 @@
                   "id": "kirkesamfunn",
                   "title": "Kirkesamfunn: Splittelse og enhet",
                   "description": "To brudd forklarer nesten hele kirkekartet: 1054 mellom øst og vest, og reformasjonen fra 1517. Tegn treet steg for steg og se hvor få splittelser som skiller katolikker, ortodokse og protestanter - og hvordan greinene har begynt å snakke sammen igjen.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/kirkesamfunn-hero.webp",
                   "tags": [
                     "kristendom",
                     "kirkesamfunn",
@@ -7932,7 +7932,7 @@
                   "id": "sakramentene",
                   "title": "Sakramentene: Dåp og nattverd",
                   "description": "Hva er egentlig et sakrament? Følg vannet i dåpen og brødet i nattverden, og se hvorfor katolske, lutherske, reformerte og baptistiske kirker svarer så ulikt på hva som skjer.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/sakramentene-hero.webp",
                   "tags": [
                     "kristendom",
                     "sakrament",
@@ -7962,7 +7962,7 @@
                   "id": "pinse",
                   "title": "Pinse: Den dagen kirken ble til",
                   "description": "Femti dager etter påske skjer det noe i Jerusalem som mange kristne kaller kirkens fødselsdag. Møt pinsefortellingen, den jødiske høytiden bak den, og de ulike måtene kirkesamfunnene forstår Den hellige ånd på.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/kristendom/pinse-hero.webp",
                   "tags": [
                     "kristendom",
                     "høytider",
@@ -8715,7 +8715,7 @@
                   "id": "bonn",
                   "title": "Bønnen som stiller et spørsmål",
                   "description": "I Jesu Kristi Kirke av Siste Dagers Hellige er bønn ikke bare noe du sier - det er også måten du kan finne ut om noe er sant.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/bonn-hero.webp",
                   "tags": [
                     "mormonisme",
                     "bønn",
@@ -8793,7 +8793,7 @@
                   "id": "frelse",
                   "title": "Tre slags himmel",
                   "description": "Ikke himmel eller helvete, men tre slags himmel, og nesten hvert eneste menneske havner i en av dem.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/frelse-hero.webp",
                   "tags": [
                     "mormonisme",
                     "frelse",
