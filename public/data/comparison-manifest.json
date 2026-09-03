@@ -1846,6 +1846,13 @@
     },
     {
       "religion": "samisk",
+      "title": "Bjørnegraven: dyret som skulle bli født på nytt",
+      "link": "/krle/religion/samisk/bjornegraven",
+      "dimension": null,
+      "tags": []
+    },
+    {
+      "religion": "samisk",
       "title": "Samisk religion: trommen, naturen og forfedrene",
       "link": "/krle/religion/samisk/intro",
       "dimension": "ritual",
@@ -2091,6 +2098,7 @@
       "/krle/religion/historiske-religioner/mesopotamisk-religion",
       "/krle/religion/historiske-religioner/monoteismens-fodsel",
       "/krle/religion/historiske-religioner/mysteriekultene",
+      "/krle/religion/samisk/bjornegraven",
       "/krle/religion/samisk/intro",
       "/krle/religion/samisk/laestadianismen",
       "/krle/religion/samisk/trommen-som-kom-hjem"

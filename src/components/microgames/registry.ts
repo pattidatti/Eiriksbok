@@ -207,6 +207,7 @@ const MitreumInnvielsen3D = lazy(() => import('./MitreumInnvielsen3D'));
 const Stjernestien3D = lazy(() => import('./Stjernestien3D'));
 const Pakkeruta3D = lazy(() => import('./Pakkeruta3D'));
 const BergTrommen3D = lazy(() => import('./BergTrommen3D'));
+const Bjornegrava3D = lazy(() => import('./Bjornegrava3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -2026,6 +2027,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./BergTrommen3D'),
         Component: BergTrommen3D as never,
+    },
+    'bjornegrava-3d': {
+        id: 'bjornegrava-3d',
+        title: 'Bjørnegrava',
+        description:
+            'Bjørnen er felt, og kjøttet er spist. Nå står det viktigste igjen. Kle bunnen av grava med bjørkeris, dra beina ned i ura i riktig orden fra hodeskallen til bakbeina, dekk dem med never og legg steinene tilbake. Legger du et bein i feil rom, spretter det tilbake, og tre bomturer ødelegger seremonien. Lyspæra: for samene var ikke jakten ferdig når bjørnen var død - beina måtte legges tilbake i orden, slik at bjørnen kunne bli hel og bli født på nytt.',
+        estimatedSeconds: 150,
+        loader: () => import('./Bjornegrava3D'),
+        Component: Bjornegrava3D as never,
     },
 };
 

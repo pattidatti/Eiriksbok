@@ -9114,6 +9114,21 @@
                     "kulturarv"
                   ],
                   "createdDate": "2026-09-02T00:00:00Z"
+                },
+                {
+                  "id": "bjornegraven",
+                  "title": "Bjørnegraven: dyret som skulle bli født på nytt",
+                  "description": "Bjørnen var hellig, og beina måtte legges tilbake i ura i riktig orden så den kunne bli født på nytt.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "samisk",
+                    "urfolk",
+                    "bjørnekult",
+                    "ritualer",
+                    "arkeologi",
+                    "nord-norge"
+                  ],
+                  "createdDate": "2026-09-03T00:00:00Z"
                 }
               ]
             }
