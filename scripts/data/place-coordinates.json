@@ -1023,7 +1023,7 @@
     },
     {
       "tag": "arkeologi",
-      "count": 12
+      "count": 13
     },
     {
       "tag": "kollaps",
@@ -1258,6 +1258,14 @@
       "count": 7
     },
     {
+      "tag": "urfolk",
+      "count": 7
+    },
+    {
+      "tag": "samisk",
+      "count": 7
+    },
+    {
       "tag": "segregering",
       "count": 7
     },
@@ -1342,19 +1350,11 @@
       "count": 6
     },
     {
-      "tag": "urfolk",
-      "count": 6
-    },
-    {
       "tag": "språk og identitet",
       "count": 6
     },
     {
       "tag": "bolivar",
-      "count": 6
-    },
-    {
-      "tag": "samisk",
       "count": 6
     },
     {
@@ -1822,6 +1822,10 @@
       "count": 3
     },
     {
+      "tag": "ritualer",
+      "count": 3
+    },
+    {
       "tag": "vasa",
       "count": 3
     },
@@ -2207,10 +2211,6 @@
     },
     {
       "tag": "hypotese",
-      "count": 2
-    },
-    {
-      "tag": "ritualer",
       "count": 2
     },
     {
@@ -3398,6 +3398,10 @@
       "count": 2
     },
     {
+      "tag": "nord-norge",
+      "count": 2
+    },
+    {
       "tag": "social",
       "count": 2
     },
@@ -4018,10 +4022,6 @@
       "count": 1
     },
     {
-      "tag": "nord-norge",
-      "count": 1
-    },
-    {
       "tag": "runebomme",
       "count": 1
     },
@@ -4035,6 +4035,10 @@
     },
     {
       "tag": "kulturarv",
+      "count": 1
+    },
+    {
+      "tag": "bjørnekult",
       "count": 1
     },
     {

@@ -1,5 +1,5 @@
 {
-  "buildId": 38356783298214,
+  "buildId": 77486446539570,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3417,6 +3417,9 @@
     "mormonisme-skapelse": [
       "content/krle/religion/mormonisme/skapelse/artikkel.json"
     ],
+    "bjornegraven": [
+      "content/krle/religion/samisk/bjornegraven.json"
+    ],
     "samisk-intro": [
       "content/krle/religion/samisk/intro.json"
     ],
@@ -5893,6 +5896,7 @@
     "krle/religion/mormonisme/overgangsriter": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
     "krle/religion/mormonisme/sentrale-trekk": "content/krle/religion/mormonisme/sentrale-trekk/artikkel.json",
     "krle/religion/mormonisme/skapelse": "content/krle/religion/mormonisme/skapelse/artikkel.json",
+    "krle/religion/samisk/bjornegraven": "content/krle/religion/samisk/bjornegraven.json",
     "krle/religion/samisk/intro": "content/krle/religion/samisk/intro.json",
     "krle/religion/samisk/laestadianismen": "content/krle/religion/samisk/laestadianismen.json",
     "krle/religion/samisk/trommen-som-kom-hjem": "content/krle/religion/samisk/trommen-som-kom-hjem.json",
