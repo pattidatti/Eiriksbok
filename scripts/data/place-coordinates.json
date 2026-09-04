@@ -807,7 +807,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 333
+      "count": 335
     },
     {
       "tag": "dekolonisering",
@@ -1118,6 +1118,10 @@
       "count": 10
     },
     {
+      "tag": "helse",
+      "count": 10
+    },
+    {
       "tag": "auschwitz",
       "count": 10
     },
@@ -1215,10 +1219,6 @@
     },
     {
       "tag": "slaveri",
-      "count": 8
-    },
-    {
-      "tag": "helse",
       "count": 8
     },
     {
@@ -1498,6 +1498,10 @@
       "count": 5
     },
     {
+      "tag": "samtidshistorie",
+      "count": 5
+    },
+    {
       "tag": "allende",
       "count": 5
     },
@@ -1702,6 +1706,10 @@
       "count": 4
     },
     {
+      "tag": "pandemi",
+      "count": 4
+    },
+    {
       "tag": "suverenitet",
       "count": 4
     },
@@ -1903,10 +1911,6 @@
     },
     {
       "tag": "rettferdighet",
-      "count": 3
-    },
-    {
-      "tag": "samtidshistorie",
       "count": 3
     },
     {
@@ -2878,10 +2882,6 @@
       "count": 2
     },
     {
-      "tag": "pandemi",
-      "count": 2
-    },
-    {
       "tag": "modernisme",
       "count": 2
     },
@@ -3123,6 +3123,10 @@
     },
     {
       "tag": "influensere",
+      "count": 2
+    },
+    {
+      "tag": "beredskap",
       "count": 2
     },
     {

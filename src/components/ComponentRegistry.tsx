@@ -108,6 +108,7 @@ const AsherahUtgraving = lazy(() => import('./content/interactive/AsherahUtgravi
 const GreskGudeMatch = lazy(() => import('./content/interactive/GreskGudeMatch').then(m => ({ default: m.GreskGudeMatch })));
 const TestPaastanden = lazy(() => import('./content/interactive/TestPaastanden').then(m => ({ default: m.TestPaastanden })));
 const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansionMap').then(m => ({ default: m.RomanExpansionMap })));
+const Tiltakspakken = lazy(() => import('./content/interactive/Tiltakspakken').then(m => ({ default: m.Tiltakspakken })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
 const TrommensReise = lazy(() => import('./content/interactive/TrommensReise').then(m => ({ default: m.TrommensReise })));
 const TroOgVitenMatrisen = lazy(() => import('./content/interactive/TroOgVitenMatrisen').then(m => ({ default: m.TroOgVitenMatrisen })));
@@ -602,6 +603,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Sjokkbolgen1905,
     KaizenVerksted,
     SuverenitetsSkala,
+    Tiltakspakken,
     TrolleyProblem,
     TrommensReise,
     TroOgVitenMatrisen,
