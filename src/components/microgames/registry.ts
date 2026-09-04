@@ -194,6 +194,7 @@ const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 const Vinteren1847 = lazy(() => import('./Vinteren1847'));
+const Vaksinekoen3D = lazy(() => import('./Vaksinekoen3D'));
 const Innlosningen3D = lazy(() => import('./Innlosningen3D'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
@@ -2036,6 +2037,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Bjornegrava3D'),
         Component: Bjornegrava3D as never,
+    },
+    'vaksinekoen-3d': {
+        id: 'vaksinekoen-3d',
+        title: 'Vaksinekøen',
+        description:
+            'Tre uker med koronavaksinering, og hver uke kommer det færre doser enn det er folk. Menneskene går forbi i sanntid, og over hvert hode lyser en prikk: rød for høy risiko, blå for helsearbeider, grønn for ung og frisk. Klikk den du vil gi en dose før hen går ut igjen. Går for mange i risikogruppene uvaksinert forbi, blir intensivavdelingen overfylt og du taper. Lyspæra: når det ikke er nok vaksiner til alle, redder du flest liv ved å gi dem til dem som blir sykest - ikke til dem som tilfeldigvis står først i køen.',
+        estimatedSeconds: 170,
+        loader: () => import('./Vaksinekoen3D'),
+        Component: Vaksinekoen3D as never,
     },
 };
 

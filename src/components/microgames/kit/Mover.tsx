@@ -76,7 +76,11 @@ export function Mover({
     const [fx, fy, fz] = from;
     const [tx, ty, tz] = to;
     const dir = useRef(new THREE.Vector3());
-    const totalLen = useRef(0);
+    // -1 = ruta er ikke beregnet enda. Effekten under kjører etter commit, og en
+    // frame kan rekke å kjøre før den. Med startverdi 0 var «d >= totalLen» sann
+    // med én gang, og enheten meldte seg framme i samme øyeblikk den ble født -
+    // et spill som spawner enheter én og én mistet dem alle på ~150 ms.
+    const totalLen = useRef(-1);
     useEffect(() => {
         dir.current.set(tx - fx, ty - fy, tz - fz);
         totalLen.current = dir.current.length();
@@ -95,6 +99,9 @@ export function Mover({
         const t = rootState.clock.getElapsedTime();
 
         if (state === 'moving') {
+            // Ruta er ikke målt opp enda - vent på effekten, ellers «ankommer»
+            // enheten før den har begynt å gå.
+            if (totalLen.current < 0) return;
             distRef.current = Math.min(totalLen.current, distRef.current + dt * speed);
             const d = distRef.current;
             g.position.set(

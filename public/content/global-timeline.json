@@ -12652,6 +12652,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "koronapandemien",
+      "title": "Koronapandemien: Da Norge stengte",
+      "description": "Da Norge stengte 12. mars 2020, virket tiltakene. Men hvert tiltak sendte regningen videre til noen, og de unge betalte mest.",
+      "startDate": 2020,
+      "endDate": 2022,
+      "displayDate": "2020-2022",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/koronapandemien",
+      "tags": [
+        "historie",
+        "norge",
+        "samtidshistorie",
+        "pandemi",
+        "helse",
+        "beredskap"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "en-ny-verdensorden-sub-3",
       "title": "Pandemien",
       "description": "Covid-19 stenger verden og viser hvor sårbare globale forsyningskjeder er.",
