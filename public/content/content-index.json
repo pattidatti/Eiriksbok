@@ -1,5 +1,5 @@
 {
-  "buildId": 1985880319910,
+  "buildId": 186298009387503,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2025,6 +2025,9 @@
     ],
     "stor-zimbabwe": [
       "content/historie/afrikanske-riker/stor-zimbabwe.json"
+    ],
+    "swahili-kysten": [
+      "content/historie/afrikanske-riker/swahili-kysten.json"
     ],
     "andre-verdenskrig-bakgrunn": [
       "content/historie/andre-verdenskrig/bakgrunn.json"
@@ -5435,6 +5438,7 @@
     "historie/afrikanske-riker/mansa-musa-og-mali": "content/historie/afrikanske-riker/mansa-musa-og-mali.json",
     "historie/afrikanske-riker/songhai-riket": "content/historie/afrikanske-riker/songhai-riket.json",
     "historie/afrikanske-riker/stor-zimbabwe": "content/historie/afrikanske-riker/stor-zimbabwe.json",
+    "historie/afrikanske-riker/swahili-kysten": "content/historie/afrikanske-riker/swahili-kysten.json",
     "historie/andre-verdenskrig/bakgrunn": "content/historie/andre-verdenskrig/bakgrunn.json",
     "historie/andre-verdenskrig/konsekvenser": "content/historie/andre-verdenskrig/konsekvenser.json",
     "historie/andre-verdenskrig/konsentrasjonsleirene": "content/historie/andre-verdenskrig/konsentrasjonsleirene.json",

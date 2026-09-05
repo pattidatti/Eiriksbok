@@ -195,6 +195,7 @@ const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 const Vinteren1847 = lazy(() => import('./Vinteren1847'));
 const Vaksinekoen3D = lazy(() => import('./Vaksinekoen3D'));
+const MonsunSeilasen3D = lazy(() => import('./MonsunSeilasen3D'));
 const Innlosningen3D = lazy(() => import('./Innlosningen3D'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
@@ -2046,6 +2047,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 170,
         loader: () => import('./Vaksinekoen3D'),
         Component: Vaksinekoen3D as never,
+    },
+    'monsun-seilasen-3d': {
+        id: 'monsun-seilasen-3d',
+        title: 'Monsunseilasen',
+        description:
+            'Du står om bord i en dhow full av gull og elfenbein, på vei fra Kilwa til India. Hold inne museknappen for å sette seil, og styr med pekeren. Skipet får bare fart når vinden kommer bakfra, og monsunen dreier fire ganger underveis. Beste kurs ligger midt mellom vinden og målet - seiler du rett mot India, kommer du for sent, og da snur monsunen og du taper. Lyspæra: på Indiahavet var det vinden som bestemte hvor fort og hvor langt et skip kom.',
+        estimatedSeconds: 150,
+        loader: () => import('./MonsunSeilasen3D'),
+        Component: MonsunSeilasen3D as never,
     },
 };
 
