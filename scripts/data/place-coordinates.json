@@ -830,12 +830,12 @@
       "count": 59
     },
     {
-      "tag": "kildekritikk",
-      "count": 44
+      "tag": "handel",
+      "count": 45
     },
     {
-      "tag": "handel",
-      "count": 43
+      "tag": "kildekritikk",
+      "count": 44
     },
     {
       "tag": "antikken",
@@ -874,6 +874,10 @@
       "count": 29
     },
     {
+      "tag": "middelalderen",
+      "count": 29
+    },
+    {
       "tag": "narrative",
       "count": 29
     },
@@ -888,10 +892,6 @@
     {
       "tag": "revolusjon",
       "count": 28
-    },
-    {
-      "tag": "middelalderen",
-      "count": 27
     },
     {
       "tag": "verdensorden",
@@ -922,6 +922,10 @@
       "count": 24
     },
     {
+      "tag": "islam",
+      "count": 23
+    },
+    {
       "tag": "kristendom",
       "count": 22
     },
@@ -932,10 +936,6 @@
     {
       "tag": "doctrinal",
       "count": 22
-    },
-    {
-      "tag": "islam",
-      "count": 21
     },
     {
       "tag": "mysterier",
@@ -2215,6 +2215,22 @@
     },
     {
       "tag": "hypotese",
+      "count": 2
+    },
+    {
+      "tag": "ost-afrika",
+      "count": 2
+    },
+    {
+      "tag": "kilwa",
+      "count": 2
+    },
+    {
+      "tag": "indiahavet",
+      "count": 2
+    },
+    {
+      "tag": "swahili",
       "count": 2
     },
     {

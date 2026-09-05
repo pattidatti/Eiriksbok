@@ -2256,6 +2256,32 @@
       ]
     },
     {
+      "id": "swahili-kysten",
+      "title": "Swahilikysten: Byene som levde av vinden",
+      "description": "Monsunen snudde to ganger i året og gjorde de afrikanske havnebyene til knutepunkt i verdenshandelen.",
+      "startDate": 800,
+      "endDate": 1500,
+      "displayDate": "800-1500",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "afrikanske-riker",
+      "link": "/historie/afrikanske-riker/swahili-kysten",
+      "tags": [
+        "afrika",
+        "ost-afrika",
+        "kilwa",
+        "handel",
+        "indiahavet",
+        "swahili",
+        "islam",
+        "middelalderen"
+      ],
+      "lat": 2,
+      "lng": 20,
+      "placeLabel": "Afrika",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "myklebust-skipet",
       "title": "Myklebust-skipet brennes",
       "description": "En spektakulær begravelse der Norges største vikingskip brennes i en haug på Nordfjordeid.",

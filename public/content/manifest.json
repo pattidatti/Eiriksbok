@@ -7740,6 +7740,23 @@
               ],
               "createdDate": "2026-08-06T10:07:54+02:00",
               "lastUpdated": "2026-08-07T00:31:55+02:00"
+            },
+            {
+              "id": "swahili-kysten",
+              "title": "Swahilikysten: Byene som levde av vinden",
+              "description": "Monsunen snudde to ganger i året og gjorde de afrikanske havnebyene til knutepunkt i verdenshandelen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "afrika",
+                "ost-afrika",
+                "kilwa",
+                "handel",
+                "indiahavet",
+                "swahili",
+                "islam",
+                "middelalderen"
+              ],
+              "createdDate": "2026-09-05T00:00:00Z"
             }
           ]
         }

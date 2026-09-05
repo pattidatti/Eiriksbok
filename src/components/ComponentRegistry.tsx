@@ -71,6 +71,7 @@ const TondibiSlaget = lazy(() => import('./content/interactive/TondibiSlaget').t
 const DenTauseHandelen = lazy(() => import('./content/interactive/DenTauseHandelen').then(m => ({ default: m.DenTauseHandelen })));
 const FlatUtKurven = lazy(() => import('./content/interactive/FlatUtKurven').then(m => ({ default: m.FlatUtKurven })));
 const BevisVurderer = lazy(() => import('./content/interactive/BevisVurderer').then(m => ({ default: m.BevisVurderer })));
+const MonsunReisen = lazy(() => import('./content/interactive/MonsunReisen').then(m => ({ default: m.MonsunReisen })));
 const AllmennviljeVerksted = lazy(() => import('./content/interactive/AllmennviljeVerksted').then(m => ({ default: m.AllmennviljeVerksted })));
 const ArvenFra1789 = lazy(() => import('./content/interactive/ArvenFra1789').then(m => ({ default: m.ArvenFra1789 })));
 const PietismensSpor = lazy(() => import('./content/interactive/PietismensSpor').then(m => ({ default: m.PietismensSpor })));
@@ -518,6 +519,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     FlatUtKurven,
     DenTauseHandelen,
     BevisVurderer,
+    MonsunReisen,
     MatGjesteBord,
     ArvenFra1789,
     PietismensSpor,
