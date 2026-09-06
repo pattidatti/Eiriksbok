@@ -196,6 +196,7 @@ const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 const Vinteren1847 = lazy(() => import('./Vinteren1847'));
 const Vaksinekoen3D = lazy(() => import('./Vaksinekoen3D'));
 const MonsunSeilasen3D = lazy(() => import('./MonsunSeilasen3D'));
+const Kroningsvilkarene3D = lazy(() => import('./Kroningsvilkarene3D'));
 const Innlosningen3D = lazy(() => import('./Innlosningen3D'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
@@ -2056,6 +2057,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./MonsunSeilasen3D'),
         Component: MonsunSeilasen3D as never,
+    },
+    'kroningsvilkarene-3d': {
+        id: 'kroningsvilkarene-3d',
+        title: 'Kroningsvilkårene',
+        description:
+            'Whitehall i februar 1689. Parlamentet har avsatt Jakob 2. og tilbyr kronen til Vilhelm og Maria, men den følger med vilkår. Seks krav ligger som steintavler på gulvet i salen. Dra de fire som faktisk sto i Bill of Rights ned i rammene foran tronen, og se tronen synke et trinn for hvert krav som kommer på plass. Legger du en tavle som ikke hørte hjemme der, spretter den tilbake, og tre bomturer ryker forhandlingen. Lyspæra: kronen ble ikke gitt bort gratis. Den kom med skrevne vilkår som senket kongen ned til samme nivå som parlamentet.',
+        estimatedSeconds: 150,
+        loader: () => import('./Kroningsvilkarene3D'),
+        Component: Kroningsvilkarene3D as never,
     },
 };
 
