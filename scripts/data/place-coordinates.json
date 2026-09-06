@@ -1038,6 +1038,10 @@
       "count": 12
     },
     {
+      "tag": "rettsstat",
+      "count": 12
+    },
+    {
       "tag": "rettigheter",
       "count": 12
     },
@@ -1099,10 +1103,6 @@
     },
     {
       "tag": "borgerkrig",
-      "count": 10
-    },
-    {
-      "tag": "rettsstat",
       "count": 10
     },
     {
@@ -1199,6 +1199,14 @@
     },
     {
       "tag": "historiens-store-gater",
+      "count": 8
+    },
+    {
+      "tag": "rettsutvikling",
+      "count": 8
+    },
+    {
+      "tag": "kongemakt",
       "count": 8
     },
     {
@@ -1318,10 +1326,6 @@
       "count": 6
     },
     {
-      "tag": "rettsutvikling",
-      "count": 6
-    },
-    {
       "tag": "folkevandring",
       "count": 6
     },
@@ -1331,10 +1335,6 @@
     },
     {
       "tag": "vikingtid",
-      "count": 6
-    },
-    {
-      "tag": "kongemakt",
       "count": 6
     },
     {
@@ -2559,6 +2559,14 @@
     },
     {
       "tag": "kull",
+      "count": 2
+    },
+    {
+      "tag": "bill-of-rights",
+      "count": 2
+    },
+    {
+      "tag": "parlament",
       "count": 2
     },
     {

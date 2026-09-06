@@ -4829,6 +4829,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "bill-of-rights-1689",
+      "title": "Bill of Rights 1689 - kronen med vilkår",
+      "description": "I 1689 ga parlamentet kronen videre til Vilhelm og Maria, men bare mot skrevne vilkår. Etter det kunne ingen engelsk konge lage lover, kreve skatt eller holde hær alene.",
+      "startDate": 1688,
+      "endDate": 1689,
+      "displayDate": "1688-1689",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "lov-og-rett",
+      "link": "/historie/lov-og-rett/bill-of-rights-1689",
+      "tags": [
+        "bill-of-rights",
+        "england",
+        "rettsstat",
+        "rettsutvikling",
+        "kongemakt",
+        "parlament"
+      ],
+      "lat": 52.5,
+      "lng": -1.5,
+      "placeLabel": "England",
+      "placeCountryId": 826,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "locke-treatises",
       "title": "John Locke: Two Treatises",
       "description": "John Locke utgir sitt viktigste politiske verk om naturlige rettigheter og samfunnskontrakten.",

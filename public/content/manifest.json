@@ -6269,6 +6269,21 @@
               "lastUpdated": "2026-07-28T20:00:43+02:00"
             },
             {
+              "id": "bill-of-rights-1689",
+              "title": "Bill of Rights 1689 - kronen med vilkår",
+              "description": "I 1689 ga parlamentet kronen videre til Vilhelm og Maria, men bare mot skrevne vilkår. Etter det kunne ingen engelsk konge lage lover, kreve skatt eller holde hær alene.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "bill-of-rights",
+                "england",
+                "rettsstat",
+                "rettsutvikling",
+                "kongemakt",
+                "parlament"
+              ],
+              "createdDate": "2026-09-06T00:00:00Z"
+            },
+            {
               "id": "magnus-landslov",
               "title": "Magnus Lagabøtes landslov - én lov for hele Norge",
               "description": "I 1274 fikk Norge sin første felles lov. Magnus Lagabøte gjorde slutt på blodhevn og ga kongen makt til å straffe. Det var begynnelsen på rettsstaten.",

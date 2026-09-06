@@ -1,0 +1,252 @@
+{
+    "id": "bill-of-rights-1689",
+    "title": "Bill of Rights 1689 - kronen med vilkår",
+    "layout": "rich",
+    "year": "1688-1689",
+    "category": "England",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-09-06",
+    "details": [
+        "I november 1688 gikk Vilhelm av Oranien i land i England med en hær. Kong Jakob 2. flyktet uten at det ble noe stort slag.",
+        "Parlamentet ga kronen videre til Vilhelm og Maria, men bare mot at de godtok en liste med krav.",
+        "Bill of Rights fra 1689 forbød kongen å sette lover til side, kreve inn skatt eller holde hær i fredstid uten parlamentets ja."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Den 5. november 1688 seilte en flåte inn i Torbay på sørvestkysten av England. Om bord var Vilhelm av Oranien, en nederlandsk fyrste, og rundt fjorten tusen soldater (Lunga, 2026a). De gikk i land ved Brixham. Alle ventet på det store slaget som måtte komme. Det kom aldri."
+        },
+        {
+            "type": "text",
+            "content": "Kongen som satt på tronen, Jakob 2., hadde en hær. Men han hadde nesten ingen som ville slåss for ham. Ifølge Store norske leksikon nektet han å tro at hans egen svigersønn kom for å ta kronen, og han ble som lammet da Vilhelm faktisk sto i landet (Lunga, 2026a). I desember flyktet Jakob til Frankrike. På få uker hadde England byttet konge, nesten uten at et sverd ble trukket."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nederlandske skip lander soldater på en engelsk strand i november",
+            "caption": "Vilhelm av Oranien gikk i land ved Brixham 5. november 1688. Hæren hans var stor, men den fikk knapt bruk for våpnene."
+        },
+        {
+            "type": "header",
+            "text": "Kongen som mistet folket sitt"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne hvorfor så få ville forsvare Jakob 2., må vi tilbake til religionen. Siden reformasjonen hadde England vært et protestantisk land, og mange var redde for at katolikkene skulle ta makten tilbake. Da Jakob ble konge i 1685, var han selv katolikk (Lunga, 2026a). Han satte til side lover som holdt katolikker ute av viktige stillinger, og han gjorde det på egen hånd, uten å spørre parlamentet."
+        },
+        {
+            "type": "text",
+            "content": "Det var likevel én ting som fikk begeret til å renne over. I juni 1688 fødte dronningen en sønn. Fram til da hadde folk tenkt at problemet ville løse seg av seg selv: Jakob var gammel, og etter ham ville den protestantiske datteren Maria overta. Nå fikk England plutselig en katolsk arving, og utsikt til katolske konger i all framtid (Britannica, 2026). Da skrev sju ledende menn et brev til Vilhelm av Oranien, som var gift med nettopp Maria, og ba ham komme."
+        },
+        {
+            "type": "header",
+            "text": "En revolusjon nesten uten kamp"
+        },
+        {
+            "type": "text",
+            "content": "Det som skjedde denne vinteren, kalles på norsk den ærerike revolusjonen, og på engelsk the Glorious Revolution. Ordet ærerik ble brukt nettopp fordi omveltningen kostet så lite blod i England. Parlamentet bestemte seg for å si at Jakob hadde forlatt tronen selv, og at plassen dermed sto tom (Lunga, 2026a)."
+        },
+        {
+            "type": "text",
+            "content": "Men hvem skulle fylle den? Her er det som gjør 1688 og 1689 til noe helt annet enn et vanlig kongebytte. Parlamentet mente at det var de som skulle avgjøre det, ikke arveretten alene. Et hastig innkalt parlament møttes 22. januar 1689, og i april ble Vilhelm og Maria kronet som konger sammen (Britannica, 2026). De to fikk kronen fra parlamentets hånd. Og de fikk den ikke gratis."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Kong Jakob 2. forlater et slott i mørket med få følgesvenner",
+            "caption": "I desember 1688 flyktet Jakob 2. til Frankrike. Parlamentet valgte å si at han hadde forlatt tronen frivillig."
+        },
+        {
+            "type": "header",
+            "text": "Kronen kom med vilkår"
+        },
+        {
+            "type": "text",
+            "content": "Før Vilhelm og Maria kunne ta imot kronen, måtte de godta en rettighetserklæring, på engelsk kalt Declaration of Rights. Samme år ble den vedtatt som lov under navnet Bill of Rights (Lunga, 2026b). Navnet betyr omtrent rettighetsloven, og det er dette dokumentet som gjør 1689 til et vendepunkt."
+        },
+        {
+            "type": "text",
+            "content": "Det snedige med Bill of Rights er at den nesten aldri sier at kongen ikke får lov til noe i det hele tatt. Den sier at han ikke får lov til å gjøre det alene. Nøkkelordet går igjen setning etter setning: uten parlamentets samtykke. Samtykke betyr at noen sier ja. Prøv deg som dommer i saken under, så merker du hvor mye det ene ordet gjør."
+        },
+        {
+            "type": "component",
+            "name": "ParlamentetsJa",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Fire ting kongen ikke lenger kunne gjøre alene"
+        },
+        {
+            "type": "text",
+            "content": "Store norske leksikon oppsummerer kjernen i loven slik: kongen kan ikke oppheve eller sette til side lovene, ikke skrive ut skatter og ikke holde stående hær uten parlamentets samtykke (Lunga, 2026b). Loven slår i tillegg fast at parlamentet står over kongen, at valgene til parlamentet skal være frie, og at parlamentsmedlemmene har ytringsfrihet i salen. Den engelske originalteksten sier det rett ut: det som blir sagt i debatter i parlamentet, skal ingen domstol utenfor parlamentet kunne straffe (English Bill of Rights, 1689)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Lovene: kongen kan ikke sette en lov til side på egen hånd.",
+                "Skatten: han kan ikke kreve inn penger til kronen uten at parlamentet har gitt lov til det.",
+                "Hæren: han kan ikke holde en stående hær i landet i fredstid uten parlamentets ja.",
+                "Valgene: han kan ikke styre hvem som blir valgt inn, for valgene skal være frie."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Til sammen betyr dette at en konge ikke lenger kunne styre England alene. Han kunne ikke lage regler, ikke skaffe penger og ikke holde soldater uten at parlamentet var med. Store norske leksikon sier det kort: dermed ble eneveldet umuliggjort i England (Lunga, 2026b). Enevelde er navnet på en styreform der én person har all makt, slik den danske kongen hadde i [Danmark-Norge på samme tid](/historie/dansketiden/eneveldet)."
+        },
+        {
+            "type": "text",
+            "content": "I mikrospillet under står du i salen i Whitehall i februar 1689. Kronen svever over tronen, og den kommer ikke ned før kravene ligger på plass. Legg merke til hva som skjer med tronen for hvert krav du legger i gulvet."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "kroningsvilkarene-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hva revolusjonen ikke var"
+        },
+        {
+            "type": "text",
+            "content": "Det er lett å lese 1689 som året da England ble et demokrati. Det ble det ikke. Kongemakten gikk fortsatt i arv, og loven bestemte til og med hvem som sto for tur: hvis Maria døde uten barn, skulle søsteren Anna overta (Britannica, 2026). Ingen valgte kongen."
+        },
+        {
+            "type": "text",
+            "content": "Valgene skulle heller ikke bli åpne for alle. Bill of Rights krever at valgene til parlamentet er frie, men sier ingenting om hvem som får stemme (English Bill of Rights, 1689). I praksis var det en liten gruppe menn med eiendom som hadde stemmerett. Loven hadde også en side som er vond å lese i dag: den stengte katolikker ute fra tronen. Den delen sto i britisk lov helt til 2015 (Lunga, 2026b)."
+        },
+        {
+            "type": "text",
+            "content": "Det som faktisk skjedde i 1689, var altså mindre enn et demokrati, men mer enn et kongebytte. Makten flyttet seg fra én person til en forsamling. Vilhelm 3. styrte i mange år etter dette, og det var i hans tid at det parlamentariske styret i England ble grunnlagt (Lunga, 2026c). Veien fra dette til allmenn stemmerett skulle ta over to hundre år til."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Vilhelm og Maria mottar et pergamentdokument foran samlet parlament",
+            "caption": "Vilhelm og Maria måtte godta rettighetserklæringen før de kunne ta imot kronen i 1689."
+        },
+        {
+            "type": "header",
+            "text": "Sporene fram til i dag"
+        },
+        {
+            "type": "text",
+            "content": "Bill of Rights står fortsatt som gjeldende lov i Storbritannia, og regnes sammen med [Magna Carta](/historie/lov-og-rett/magna-carta) fra 1215 som et av de viktigste rettsdokumentene i britisk historie (Lunga, 2026b). De to hører sammen som to trinn i samme trapp. Magna Carta sa at kongen måtte følge loven. Bill of Rights sa hvem som skulle lage den."
+        },
+        {
+            "type": "text",
+            "content": "Ideen spredte seg raskt. Den franske tenkeren [Montesquieu](/krle/filosofi/montesquieu) studerte det engelske systemet og bygde videre på det da han skrev om at makten i en stat bør deles på flere. Amerikanerne hentet både navnet og innholdet da de laget sin egen rettighetserklæring i 1791, og [den amerikanske grunnloven](/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven) bygger på den samme grunntanken (Lunga, 2026b). At folkevalgte, og ikke kongen, bestemmer over skattene, er noe vi i dag tar for gitt. Historikere peker også på at et forutsigbart styre med trygge eiendomsrettigheter var en av grunnene til at [den industrielle revolusjonen begynte nettopp i Storbritannia](/historie/industriell-revolusjon/storbritannia)."
+        },
+        {
+            "type": "text",
+            "content": "Det er verdt å merke seg at kampen ikke var over med én lov. Tilhengerne av Jakob 2. ga seg ikke. De forsøkte i flere tiår å få ham og etterkommerne hans tilbake på tronen, og først ved slaget ved Culloden i 1746 ble opprørene endelig knust (Lunga, 2026a). Men selve prinsippet fra 1689 sto. Det gikk ikke an å ta det tilbake."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken dato gikk Vilhelm av Oranien i land i England, og omtrent hvor mange soldater hadde han med seg?",
+                    "Hvorfor ble mange engelskmenn urolige da Jakob 2. fikk en sønn i juni 1688?",
+                    "Nevn tre ting Bill of Rights forbød kongen å gjøre uten parlamentets samtykke.",
+                    "Hva bestemte loven skulle skje hvis Maria døde uten barn?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Bill of Rights nesten aldri forbyr kongen noe helt, men bare forbyr ham å gjøre det alene. Forklar med egne ord hvorfor akkurat det er så viktig.",
+                    "Hvorfor tror du parlamentet mente at kravet om penger og hær var enda viktigere enn kravet om lover? Tenk på hva en konge trenger for å kunne styre uten hjelp.",
+                    "Revolusjonen kalles ærerik fordi den kostet lite blod i England. Vurder om dette er et godt navn, når du vet at tilhengerne av Jakob 2. kjempet videre i flere tiår.",
+                    "Sammenlign det som skjedde i England i 1689 med [eneveldet i Danmark-Norge](/historie/dansketiden/eneveldet). De to landene gikk i hver sin retning på omtrent samme tid. Hva var forskjellen?"
+                ],
+                "gaaVidere": [
+                    "I Norge i dag er det Stortinget som vedtar skattene, ikke kongen eller regjeringen alene. Finn ut hvordan statsbudsjettet blir vedtatt, og skriv noen setninger om hva 1689 og Norge i dag har til felles.",
+                    "Skriv en kort tekst på fem til seks setninger der du er Vilhelm av Oranien i februar 1689. Du får tilbud om kronen, men bare mot vilkår. Forklar hvorfor du sier ja.",
+                    "Diskuter i par: Bill of Rights ga frie valg, men ikke stemmerett til alle. Kan et land ha frie valg uten å være et demokrati? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "Quiz"
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva skjedde i England i november og desember 1688?",
+                        "options": [
+                            "Vilhelm av Oranien gikk i land med en hær, og Jakob 2. flyktet til Frankrike",
+                            "Parlamentet ble oppløst og erstattet av en katolsk forsamling",
+                            "England og Nederland gikk til krig mot hverandre",
+                            "Kong Jakob 2. vant et stort slag mot opprørerne"
+                        ],
+                        "correct": 0,
+                        "explanation": "Vilhelm gikk i land ved Brixham 5. november 1688. Jakob 2. fikk nesten ingen til å slåss for seg og flyktet til Frankrike i desember."
+                    },
+                    {
+                        "question": "Hvorfor ble Bill of Rights vedtatt i 1689?",
+                        "options": [
+                            "Fordi kongen ønsket å gi bort makten sin frivillig",
+                            "Fordi Vilhelm og Maria måtte godta krav fra parlamentet for å få kronen",
+                            "Fordi domstolene krevde flere dommere",
+                            "Fordi England hadde tapt en krig mot Frankrike"
+                        ],
+                        "correct": 1,
+                        "explanation": "Parlamentet ga kronen videre, men bare mot at de nye regentene godtok en rettighetserklæring som ble vedtatt som lov samme år."
+                    },
+                    {
+                        "question": "Hvilket ord går igjen i Bill of Rights og gjør hele forskjellen?",
+                        "options": [
+                            "Uten parlamentets samtykke",
+                            "Etter kongens ønske",
+                            "Med kirkens velsignelse",
+                            "Så lenge folket er enig"
+                        ],
+                        "correct": 0,
+                        "explanation": "Loven forbyr sjelden noe helt. Den forbyr kongen å gjøre det alene. Med parlamentets ja er de samme handlingene lovlige."
+                    },
+                    {
+                        "question": "Hva ble IKKE innført i England i 1689?",
+                        "options": [
+                            "Frie valg til parlamentet",
+                            "Forbud mot skatt uten parlamentets ja",
+                            "Stemmerett for alle voksne",
+                            "Ytringsfrihet for parlamentsmedlemmer i salen"
+                        ],
+                        "correct": 2,
+                        "explanation": "Bill of Rights krevde at valgene skulle være frie, men sa ingenting om hvem som fikk stemme. Stemmerett for alle kom langt senere."
+                    },
+                    {
+                        "question": "Hvorfor sier man at eneveldet ble umulig i England etter 1689?",
+                        "options": [
+                            "Fordi kongen ble avskaffet",
+                            "Fordi kongen ikke lenger kunne lage lover, skaffe penger eller holde hær uten parlamentet",
+                            "Fordi England fikk en president",
+                            "Fordi parlamentet overtok hæren helt"
+                        ],
+                        "correct": 1,
+                        "explanation": "En hersker som verken kan lage regler, kreve inn penger eller holde soldater alene, kan ikke styre alene. Kongen ble værende, men makten var delt."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Lunga, P. S. (2026a). *Den engelske revolusjon*. Store norske leksikon. Hentet 06.09.2026 fra [snl.no/Den_engelske_revolusjon](https://snl.no/Den_engelske_revolusjon)",
+                    "Lunga, P. S. (2026b). *Bill of Rights*. Store norske leksikon. Hentet 06.09.2026 fra [snl.no/Bill_of_Rights](https://snl.no/Bill_of_Rights)",
+                    "Lunga, P. S. (2026c). *Vilhelm 3. av Oranien*. Store norske leksikon. Hentet 06.09.2026 fra [snl.no/Vilhelm_3._av_Oranien](https://snl.no/Vilhelm_3._av_Oranien)",
+                    "Britannica. (2026). *Glorious Revolution*. Encyclopaedia Britannica. Hentet 06.09.2026 fra [britannica.com](https://www.britannica.com/event/Glorious-Revolution)",
+                    "English Bill of Rights. (1689). *An Act Declaring the Rights and Liberties of the Subject and Settling the Succession of the Crown*. The Avalon Project, Lillian Goldman Law Library, Yale Law School. Hentet 06.09.2026 fra [avalon.law.yale.edu](https://avalon.law.yale.edu/17th_century/england.asp)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

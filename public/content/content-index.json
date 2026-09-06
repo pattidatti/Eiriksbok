@@ -1,5 +1,5 @@
 {
-  "buildId": 186298009387503,
+  "buildId": 6018800880101,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2476,6 +2476,9 @@
     ],
     "voc": [
       "content/historie/kolonialisering/voc.json"
+    ],
+    "bill-of-rights-1689": [
+      "content/historie/lov-og-rett/bill-of-rights-1689.json"
     ],
     "hekseprosessene": [
       "content/historie/lov-og-rett/hekseprosessene.json"
@@ -5588,6 +5591,7 @@
     "historie/kolonialisering/trekanthandelen": "content/historie/kolonialisering/trekanthandelen.json",
     "historie/kolonialisering/verdenshandel-for-oppdagelsesreisene": "content/historie/kolonialisering/verdenshandel-for-oppdagelsesreisene.json",
     "historie/kolonialisering/voc": "content/historie/kolonialisering/voc.json",
+    "historie/lov-og-rett/bill-of-rights-1689": "content/historie/lov-og-rett/bill-of-rights-1689.json",
     "historie/lov-og-rett/hekseprosessene": "content/historie/lov-og-rett/hekseprosessene.json",
     "historie/lov-og-rett/magna-carta": "content/historie/lov-og-rett/magna-carta.json",
     "historie/lov-og-rett/magnus-landslov": "content/historie/lov-og-rett/magnus-landslov.json",
