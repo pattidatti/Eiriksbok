@@ -199,6 +199,7 @@ const MonsunSeilasen3D = lazy(() => import('./MonsunSeilasen3D'));
 const Kroningsvilkarene3D = lazy(() => import('./Kroningsvilkarene3D'));
 const Innlosningen3D = lazy(() => import('./Innlosningen3D'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
+const BisonSletta3D = lazy(() => import('./BisonSletta3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
 const ForbudtMote3D = lazy(() => import('./ForbudtMote3D'));
@@ -1895,6 +1896,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./LandetMedIld3D'),
         Component: LandetMedIld3D as never,
+    },
+    'bison-sletta-3d': {
+        id: 'bison-sletta-3d',
+        title: 'Sletta som ble tom',
+        description:
+            'Prærien i 1868. Du rir over sletta i førsteperson og styrer med pekeren mot bøffelflokkene som kommer imot deg. Hver flokk du når fyller forrådet, men sulten vokser hele tiden, og holder du inne for å jage, tærer du enda mer på kreftene. For hver vinter kommer jernbanen og skinnjegerne nærmere, og flokkene blir færre og ligger lenger fra hverandre. Lyspæra: bøffelen var mat, klær og teltduk på én gang, så da flokkene ble borte, forsvant også muligheten til å si nei til reservatet.',
+        estimatedSeconds: 170,
+        loader: () => import('./BisonSletta3D'),
+        Component: BisonSletta3D as never,
     },
     'lalibela-kirke-3d': {
         id: 'lalibela-kirke-3d',

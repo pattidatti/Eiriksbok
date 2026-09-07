@@ -1,5 +1,5 @@
 {
-  "buildId": 6018800880101,
+  "buildId": 192188306671887,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2461,6 +2461,9 @@
     ],
     "kapplopet-om-afrika": [
       "content/historie/kolonialisering/kapplopet-om-afrika.json"
+    ],
+    "nordamerikas-urfolk": [
+      "content/historie/kolonialisering/nordamerikas-urfolk.json"
     ],
     "portugisisk-kolonialisering": [
       "content/historie/kolonialisering/portugisisk-kolonialisering.json"
@@ -5586,6 +5589,7 @@
     "historie/kolonialisering/fransk-kolonirike": "content/historie/kolonialisering/fransk-kolonirike.json",
     "historie/kolonialisering/irske-hungersnoden": "content/historie/kolonialisering/irske-hungersnoden.json",
     "historie/kolonialisering/kapplopet-om-afrika": "content/historie/kolonialisering/kapplopet-om-afrika.json",
+    "historie/kolonialisering/nordamerikas-urfolk": "content/historie/kolonialisering/nordamerikas-urfolk.json",
     "historie/kolonialisering/portugisisk-kolonialisering": "content/historie/kolonialisering/portugisisk-kolonialisering.json",
     "historie/kolonialisering/spansk-kolonialisering": "content/historie/kolonialisering/spansk-kolonialisering.json",
     "historie/kolonialisering/trekanthandelen": "content/historie/kolonialisering/trekanthandelen.json",

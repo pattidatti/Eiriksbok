@@ -6274,6 +6274,30 @@
       ]
     },
     {
+      "id": "nordamerikas-urfolk",
+      "title": "Nord-Amerikas urfolk: løftene som ble brutt",
+      "description": "Landet ble ikke bare tatt med våpen, men med traktater og lover som ble brutt etterpå.",
+      "startDate": 1830,
+      "endDate": 1934,
+      "displayDate": "1830-1934",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "kolonialisering",
+      "link": "/historie/kolonialisering/nordamerikas-urfolk",
+      "tags": [
+        "historie",
+        "kolonialisering",
+        "urfolk",
+        "usa",
+        "nord-amerika"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "opiumskrigene",
       "title": "Ydmykelsen: Opiumskrigene og europeisk imperialisme",
       "description": "Britene selger narkotika til kinesere for å betale for te - og krigen som fulgte.",
