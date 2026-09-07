@@ -27,6 +27,7 @@ const KrigsseilernesRegnskap = lazy(() => import('./content/interactive/Krigssei
 const SvalbardTraktatTest = lazy(() => import('./content/interactive/SvalbardTraktatTest').then(m => ({ default: m.SvalbardTraktatTest })));
 const Sikkerhetsnettet = lazy(() => import('./content/interactive/Sikkerhetsnettet').then(m => ({ default: m.Sikkerhetsnettet })));
 const TerraNulliusDommen = lazy(() => import('./content/interactive/TerraNulliusDommen').then(m => ({ default: m.TerraNulliusDommen })));
+const LandetSomKrympet = lazy(() => import('./content/interactive/LandetSomKrympet').then(m => ({ default: m.LandetSomKrympet })));
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
 const DhammaEllerSverd = lazy(() => import('./content/interactive/DhammaEllerSverd').then(m => ({ default: m.DhammaEllerSverd })));
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
@@ -493,6 +494,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     SvalbardTraktatTest,
     Sikkerhetsnettet,
     TerraNulliusDommen,
+    LandetSomKrympet,
     Gaatekart,
     TrojaMyteEllerFunn,
     SporTavlen,

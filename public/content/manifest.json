@@ -5638,6 +5638,20 @@
               "lastUpdated": "2026-08-06T07:33:38+02:00"
             },
             {
+              "id": "nordamerikas-urfolk",
+              "title": "Nord-Amerikas urfolk: løftene som ble brutt",
+              "description": "Landet ble ikke bare tatt med våpen, men med traktater og lover som ble brutt etterpå.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "kolonialisering",
+                "urfolk",
+                "usa",
+                "nord-amerika"
+              ],
+              "createdDate": "2026-09-07T00:00:00Z"
+            },
+            {
               "id": "britisk-imperium",
               "title": "Det britiske imperiet",
               "description": "Solen som aldri gikk ned: Handel, bosetting og dominans.",

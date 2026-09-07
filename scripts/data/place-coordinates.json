@@ -807,7 +807,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 335
+      "count": 337
     },
     {
       "tag": "dekolonisering",
@@ -954,6 +954,10 @@
       "count": 20
     },
     {
+      "tag": "kolonialisering",
+      "count": 19
+    },
+    {
       "tag": "olje",
       "count": 19
     },
@@ -976,10 +980,6 @@
     {
       "tag": "holocaust",
       "count": 18
-    },
-    {
-      "tag": "kolonialisering",
-      "count": 17
     },
     {
       "tag": "sammenligning",
@@ -1162,6 +1162,10 @@
       "count": 9
     },
     {
+      "tag": "urfolk",
+      "count": 9
+    },
+    {
       "tag": "analyse",
       "count": 9
     },
@@ -1263,10 +1267,6 @@
     },
     {
       "tag": "opplysningstiden",
-      "count": 7
-    },
-    {
-      "tag": "urfolk",
       "count": 7
     },
     {
