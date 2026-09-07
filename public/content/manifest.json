@@ -3572,7 +3572,7 @@
               "id": "koronapandemien",
               "title": "Koronapandemien: Da Norge stengte",
               "description": "Da Norge stengte 12. mars 2020, virket tiltakene. Men hvert tiltak sendte regningen videre til noen, og de unge betalte mest.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/norge-i-moderne-tid/koronapandemien-hero.webp",
               "year": "2020-2022",
               "layout": "rich",
               "tags": [
@@ -3583,7 +3583,8 @@
                 "helse",
                 "beredskap"
               ],
-              "createdDate": "2026-09-04T00:00:00Z"
+              "createdDate": "2026-09-04T04:17:16+02:00",
+              "lastUpdated": "2026-09-04T04:17:16+02:00"
             }
           ]
         },
@@ -3673,7 +3674,7 @@
                 "statskupp"
               ],
               "createdDate": "2026-08-27T03:49:10+02:00",
-              "lastUpdated": "2026-08-27T03:49:10+02:00"
+              "lastUpdated": "2026-08-28T08:17:55+02:00"
             }
           ]
         },
@@ -3760,7 +3761,7 @@
                 "krimkrigen"
               ],
               "createdDate": "2026-08-28T01:29:51.514Z",
-              "lastUpdated": "2026-08-28T03:58:22+02:00"
+              "lastUpdated": "2026-08-28T08:17:55+02:00"
             }
           ]
         },
@@ -5071,7 +5072,8 @@
                 "norge",
                 "kommunikasjon"
               ],
-              "createdDate": "2026-09-01T00:00:00Z"
+              "createdDate": "2026-09-01T04:10:24+02:00",
+              "lastUpdated": "2026-09-02T07:43:35+02:00"
             }
           ]
         },
@@ -5641,7 +5643,7 @@
               "id": "nordamerikas-urfolk",
               "title": "Nord-Amerikas urfolk: løftene som ble brutt",
               "description": "Landet ble ikke bare tatt med våpen, men med traktater og lover som ble brutt etterpå.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/kolonialisering/nordamerikas-urfolk-hero.webp",
               "tags": [
                 "historie",
                 "kolonialisering",
@@ -5649,7 +5651,8 @@
                 "usa",
                 "nord-amerika"
               ],
-              "createdDate": "2026-09-07T00:00:00Z"
+              "createdDate": "2026-09-07T04:04:50+02:00",
+              "lastUpdated": "2026-09-07T04:04:50+02:00"
             },
             {
               "id": "britisk-imperium",
@@ -6286,7 +6289,7 @@
               "id": "bill-of-rights-1689",
               "title": "Bill of Rights 1689 - kronen med vilkår",
               "description": "I 1689 ga parlamentet kronen videre til Vilhelm og Maria, men bare mot skrevne vilkår. Etter det kunne ingen engelsk konge lage lover, kreve skatt eller holde hær alene.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/lov-og-rett/bill-of-rights-1689-hero.webp",
               "tags": [
                 "bill-of-rights",
                 "england",
@@ -6295,7 +6298,8 @@
                 "kongemakt",
                 "parlament"
               ],
-              "createdDate": "2026-09-06T00:00:00Z"
+              "createdDate": "2026-09-06T03:43:51+02:00",
+              "lastUpdated": "2026-09-06T03:43:51+02:00"
             },
             {
               "id": "magnus-landslov",
@@ -6984,7 +6988,8 @@
                 "menneskerettigheter"
               ],
               "year": "1915-1916",
-              "createdDate": "2026-08-31T00:00:00Z"
+              "createdDate": "2026-08-31T03:54:48+02:00",
+              "lastUpdated": "2026-09-02T07:43:35+02:00"
             },
             {
               "id": "sammenbruddet",
@@ -7367,7 +7372,8 @@
                 "navigasjon",
                 "sjofart"
               ],
-              "createdDate": "2026-08-30T00:00:00Z"
+              "createdDate": "2026-08-30T03:53:12+02:00",
+              "lastUpdated": "2026-08-30T07:39:26+02:00"
             }
           ]
         },
@@ -7774,7 +7780,7 @@
               "id": "swahili-kysten",
               "title": "Swahilikysten: Byene som levde av vinden",
               "description": "Monsunen snudde to ganger i året og gjorde de afrikanske havnebyene til knutepunkt i verdenshandelen.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/afrikanske-riker/swahili-kysten-hero.webp",
               "tags": [
                 "afrika",
                 "ost-afrika",
@@ -7785,7 +7791,8 @@
                 "islam",
                 "middelalderen"
               ],
-              "createdDate": "2026-09-05T00:00:00Z"
+              "createdDate": "2026-09-05T03:54:24+02:00",
+              "lastUpdated": "2026-09-05T03:54:24+02:00"
             }
           ]
         }
@@ -7857,7 +7864,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "sentrale-trekk",
@@ -7869,7 +7876,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -7882,7 +7889,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -7895,7 +7902,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -7908,7 +7915,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "frelse",
@@ -7921,7 +7928,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "bonn",
@@ -7934,7 +7941,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "overgangsriter",
@@ -7947,7 +7954,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -7960,7 +7967,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-02T22:54:02+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "paulus-og-misjonen",
@@ -7974,7 +7981,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-05-09T01:23:05+00:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "kirkesamfunn",
@@ -7989,7 +7996,7 @@
                     "okumenikk"
                   ],
                   "createdDate": "2026-05-09T18:26:01+00:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "sakramentene",
@@ -8004,7 +8011,7 @@
                     "ritual"
                   ],
                   "createdDate": "2026-05-11T01:14:17+00:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "baptistene",
@@ -8019,7 +8026,7 @@
                     "voksendap"
                   ],
                   "createdDate": "2026-05-26T19:54:53+02:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "pinse",
@@ -8033,7 +8040,7 @@
                     "pinse"
                   ],
                   "createdDate": "2026-05-26T20:28:26+02:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 }
               ]
             },
@@ -8054,7 +8061,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8067,7 +8074,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "overgangsriter",
@@ -8080,7 +8087,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8093,7 +8100,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -8106,7 +8113,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -8119,7 +8126,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -8132,7 +8139,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-02T22:54:02+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8145,7 +8152,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "intro",
@@ -8315,7 +8322,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8328,7 +8335,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "overgangsriter",
@@ -8341,7 +8348,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8354,7 +8361,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -8367,7 +8374,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -8380,7 +8387,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -8393,7 +8400,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-30T07:39:26+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8406,7 +8413,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "intro",
@@ -8517,7 +8524,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-08-28T08:17:55+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8627,7 +8634,8 @@
                     "isis",
                     "eleusis"
                   ],
-                  "createdDate": "2026-08-29T00:00:00Z"
+                  "createdDate": "2026-08-29T04:11:48+02:00",
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 }
               ]
             },
@@ -8766,7 +8774,7 @@
                   "id": "sentrale-trekk",
                   "title": "Påstanden alt annet henger på",
                   "description": "Alt i Jesu Kristi Kirke av Siste Dagers Hellige henger på én påstand: at kirken Jesus grunnla gikk tapt og ble gjenopprettet gjennom Joseph Smith. Følg kjeden fra påstanden til nye skrifter, levende profeter, prestedømme og templer.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/sentrale-trekk-hero.webp",
                   "tags": [
                     "mormonisme",
                     "sentrale_trekk"
@@ -8785,13 +8793,13 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "overgangsriter",
                   "title": "Ikke til døden skiller dere",
                   "description": "I et tempel i Stockholm sier et norsk brudepar noe annet enn «til døden skiller dere». Bli med gjennom overgangene som skal binde generasjoner sammen.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/overgangsriter-hero.webp",
                   "tags": [
                     "mormonisme",
                     "overgangsriter",
@@ -8804,7 +8812,7 @@
                   "id": "grunnleggere",
                   "title": "Profeten som elleve menn gikk god for",
                   "description": "Elleve menn skrev under på at de hadde sett gullplatene, og navnene deres står fortsatt trykt foran i Mormons bok. Møt Joseph Smith som profet, ikke guddom, og se hvordan rollen hans levde videre etter drapet i Carthage i 1844.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/grunnleggere-hero.webp",
                   "tags": [
                     "mormonisme",
                     "grunnleggere",
@@ -8817,7 +8825,7 @@
                   "id": "hellige-tekster",
                   "title": "Fire bøker, og plass til mer",
                   "description": "Standardverkene er fire bøker, men samlingen er ikke lukket: se hva som skal til for at ny tekst kan bli hellig skrift, og hvordan tradisjonens fortelling om Mormons bok skiller seg fra det forskningen kan si.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/hellige-tekster-hero.webp",
                   "tags": [
                     "mormonisme",
                     "hellige-tekster",
@@ -8830,7 +8838,7 @@
                   "id": "gudsbilde",
                   "title": "Guden med en kropp",
                   "description": "De fleste kristne sier at Gud er ett vesen i tre personer. Siste dagers hellige teller helt annerledes, og mener Faderen og Sønnen har kropp av kjøtt og bein.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/gudsbilde-hero.webp",
                   "tags": [
                     "mormonisme",
                     "gudsbilde",
@@ -8843,7 +8851,7 @@
                   "id": "skapelse",
                   "title": "Skapelsen i mormonismen",
                   "description": "De fleste kristne mener Gud skapte verden av ingenting. Siste dagers hellige mener han hadde materialer - og det endrer hva et menneske er.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/mormonisme/skapelse-hero.webp",
                   "tags": [
                     "mormonisme",
                     "skapelse",
@@ -8863,7 +8871,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-02T07:43:35+02:00"
                 },
                 {
                   "id": "intro",
@@ -8896,7 +8904,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8909,7 +8917,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "overgangsriter",
@@ -8922,7 +8930,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8935,7 +8943,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -8948,7 +8956,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -8961,7 +8969,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -8974,7 +8982,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8987,7 +8995,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-08-29T07:40:34+02:00"
                 },
                 {
                   "id": "intro",
@@ -9014,7 +9022,7 @@
                   "id": "sentrale-trekk",
                   "title": "Tre regler du kan leve, fem ting du kan se",
                   "description": "Sikhismens kjerne er tre regler for en helt vanlig dag: husk Gud, arbeid ærlig, del med andre. Bli med inn i felleskjøkkenet langar, møt de fem K-ene, og se hvorfor sikher ikke er like.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/sikhisme/sentrale-trekk-hero.webp",
                   "tags": [
                     "sikhisme",
                     "sentrale_trekk"
@@ -9026,7 +9034,7 @@
                   "id": "grunnleggere",
                   "title": "Da guruen ble en bok",
                   "description": "Guru Nanak og de ni som fulgte etter ham. Hvorfor sikhene sluttet med menneskelige guruer i 1708 og lot en bok overta rollen.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/sikhisme/grunnleggere-hero.webp",
                   "tags": [
                     "sikhisme",
                     "grunnleggere"
@@ -9038,7 +9046,7 @@
                   "id": "hellige-tekster",
                   "title": "Guruen som er en bok",
                   "description": "Hvorfor bæres en bok til sengs hver kveld? Bli kjent med Guru Granth Sahib, som sikher ærer som sin levende guru.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/sikhisme/hellige-tekster-hero.webp",
                   "tags": [
                     "sikhisme",
                     "hellige-tekster"
@@ -9075,7 +9083,7 @@
                   "id": "skapelse",
                   "title": "Mørket før verden: skapelsen i sikhismen",
                   "description": "I utallige tidsaldre fantes bare mørke og Guds vilje. Så ville Gud det, og alt ble til på ett øyeblikk - men ingen vet når.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/sikhisme/skapelse-hero.webp",
                   "tags": [
                     "sikhisme",
                     "skapelse",
@@ -9088,7 +9096,7 @@
                   "id": "gudsbilde",
                   "title": "Gud du ikke kan tegne",
                   "description": "Åtte beskrivelser av Gud, og ikke ett eneste ord om hvordan Gud ser ut.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/sikhisme/gudsbilde-hero.webp",
                   "tags": [
                     "sikhisme",
                     "gudsbilde",
@@ -9101,7 +9109,7 @@
                   "id": "frelse",
                   "title": "Dråpen som ikke ble borte",
                   "description": "Hva skjer med en vanndråpe som faller i havet, og hvorfor er nettopp det sikhenes bilde på det største et menneske kan oppnå?",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/sikhisme/frelse-hero.webp",
                   "tags": [
                     "sikhisme",
                     "frelse",
@@ -9114,7 +9122,7 @@
                   "id": "bonn",
                   "title": "Bønn i sikhismen: å huske et navn",
                   "description": "Bønn som ikke ber om noe, men husker et navn - fra mørket klokka fire til fatet i langar.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/sikhisme/bonn-hero.webp",
                   "tags": [
                     "sikhisme",
                     "bønn",
@@ -9167,7 +9175,7 @@
                   "id": "trommen-som-kom-hjem",
                   "title": "Trommen som kom hjem",
                   "description": "Freavnantjahke gievrie ble tatt i 1723 og kom tilbake til Saepmie i 2023. Om hellige gjenstander, museer og tilbakeføring.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/samisk/trommen-som-kom-hjem-hero.webp",
                   "tags": [
                     "samisk",
                     "urfolk",
@@ -9176,13 +9184,14 @@
                     "tilbakeforing",
                     "kulturarv"
                   ],
-                  "createdDate": "2026-09-02T00:00:00Z"
+                  "createdDate": "2026-09-02T03:47:20+02:00",
+                  "lastUpdated": "2026-09-02T03:47:20+02:00"
                 },
                 {
                   "id": "bjornegraven",
                   "title": "Bjørnegraven: dyret som skulle bli født på nytt",
                   "description": "Bjørnen var hellig, og beina måtte legges tilbake i ura i riktig orden så den kunne bli født på nytt.",
-                  "image": "/images/placeholder.webp",
+                  "image": "/images/samisk/bjornegraven-hero.webp",
                   "tags": [
                     "samisk",
                     "urfolk",
@@ -9191,7 +9200,8 @@
                     "arkeologi",
                     "nord-norge"
                   ],
-                  "createdDate": "2026-09-03T00:00:00Z"
+                  "createdDate": "2026-09-03T03:53:58+02:00",
+                  "lastUpdated": "2026-09-03T03:53:58+02:00"
                 }
               ]
             }
@@ -9243,7 +9253,7 @@
               "id": "skapelse",
               "title": "Skapelse: Hvor kommer alt fra?",
               "description": "Bibelen bruker seks dager. Hinduismen bruker ikke dager i det hele tatt. Se hvordan ni tradisjoner svarer på det samme spørsmålet.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/skapelse-hero.webp",
               "tags": [
                 "sammenligning",
                 "skapelse",
@@ -9256,7 +9266,7 @@
               "id": "gudsbilde",
               "title": "Gudsbilde: Én, mange eller ingen gud?",
               "description": "Buddhismen har ingen skapergud. Hinduismen har guder i tusentall som mange sier er én. Se hvorfor det trengs to akser for å sammenligne gudsbilder.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/gudsbilde-hero.webp",
               "tags": [
                 "sammenligning",
                 "gudsbilde",
@@ -9269,7 +9279,7 @@
               "id": "bonn",
               "title": "Bønn: Å snakke med det hellige",
               "description": "Fem ganger i døgnet snur muslimer seg mot Mekka. En buddhist som mediterer, snur seg ikke mot noe. Sammenlign bønn i ni tradisjoner langs fire akser: retning, tid, kropp og ord.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/bonn-hero.webp",
               "tags": [
                 "sammenligning",
                 "bonn",
@@ -9282,7 +9292,7 @@
               "id": "overgangsriter",
               "title": "Overgangsriter: Fra vugge til grav",
               "description": "Fødsel, veien ut av barndommen, ekteskap og død. Alle ni tradisjonene kjenner de samme fire overgangene, men de vekter dem helt ulikt - og noen har ingen rite i det hele tatt.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/overgangsriter-hero.webp",
               "tags": [
                 "sammenligning",
                 "overgangsriter",
@@ -9295,7 +9305,7 @@
               "id": "doden",
               "title": "Døden: Hva skjer når vi dør?",
               "description": "Dør du én gang, eller mange? Ni tradisjoner svarer på hva som skjer etter døden, og du ser hvordan formen på tiden avgjør hvem som holder regnskapet.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/doden-hero.webp",
               "tags": [
                 "sammenligning",
                 "doden",
@@ -9308,7 +9318,7 @@
               "id": "frelse",
               "title": "Frelse: Målet med det hele",
               "description": "Ni tradisjoner svarer på hva målet med livet er - og på hvem som gjør jobben for å komme dit. Fra nåde som ren gave til frigjøring ingen andre kan gi deg.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/frelse-hero.webp",
               "tags": [
                 "sammenligning",
                 "frelse",
@@ -9321,7 +9331,7 @@
               "id": "hellige-tekster",
               "title": "Hellige tekster: Bøkene som styrer liv",
               "description": "Koranen ble diktert, Bibelen ble satt sammen, Vedaene ble husket i tusen år, og Guru Granth Sahib legges i seng hver kveld. Følg fire stopp fra munn til bok, og se hvorfor en tekst blir hellig av det folk gjør med den.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/hellige-tekster-hero.webp",
               "tags": [
                 "sammenligning",
                 "hellige-tekster",
@@ -9334,7 +9344,7 @@
               "id": "grunnleggere",
               "title": "Grunnleggere: Menneskene bak",
               "description": "Ni tradisjoner gir ni ulike svar på hvem som startet det hele: sammenlign hvilken rolle grunnleggeren fikk, fra Gud til profet til ingen stifter i det hele tatt, og se hva som overtok da han døde.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/grunnleggere-hero.webp",
               "tags": [
                 "sammenligning",
                 "grunnleggere",
@@ -9347,7 +9357,7 @@
               "id": "etikk-og-leveregler",
               "title": "Etikk og leveregler: Hva er et godt liv?",
               "description": "Den gylne regel dukker opp i ni tradisjoner som aldri hadde kontakt. Noen sier «ikke gjør», andre sier «gjør» - og sikhismen sier «del». Vi sammenligner form og begrunnelse, med samisk religion som gjestestemme.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/etikk-og-leveregler-hero.webp",
               "tags": [
                 "sammenligning",
                 "etikk-og-leveregler",
@@ -9360,7 +9370,7 @@
               "id": "hoytider",
               "title": "Høytider: Den hellige kalenderen",
               "description": "Ni religioner teller det samme året på hver sin klokke. Dra i årshjulet og se hvorfor ramadan vandrer gjennom årstidene mens julen står bom fast på 25. desember.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/hoytider-hero.webp",
               "tags": [
                 "sammenligning",
                 "hoytider",
@@ -9373,7 +9383,7 @@
               "id": "hellige-rom",
               "title": "Hellige rom: Moské, kirke og tempel",
               "description": "Moskeen har ingen bilder, den ortodokse kirken er dekket av dem. Les fem plantegninger som setninger, og se hva et rom forteller om hva en tradisjon mener er viktigst.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/hellige-rom-hero.webp",
               "tags": [
                 "sammenligning",
                 "hellige-rom",
@@ -9386,7 +9396,7 @@
               "id": "symboler-og-klaer",
               "title": "Symboler og klær: Tro du kan se",
               "description": "Korset var et henrettelsesredskap, halvmånen er eldre enn islam, og davidsstjernen ble regnet som jødisk først på 1800-tallet. Ni tegn og plagg fra ni tradisjoner: hva mange tror, hva kildene sier, og hvor figuren faktisk kommer fra.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/symboler-og-klaer-hero.webp",
               "tags": [
                 "sammenligning",
                 "symboler-og-klaer",
@@ -9399,7 +9409,7 @@
               "id": "mat-og-renhet",
               "title": "Mat og renhet: Hva får du spise?",
               "description": "Kosher, halal, ahimsa og Visdomsordet: ni tradisjoner svarer på det samme hverdagslige spørsmålet. Sammenlign hva som er tillatt, forbudt og omdiskutert ved matbordet - og hvorfor grensene går så ulike steder.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/mat-og-renhet-hero.webp",
               "tags": [
                 "sammenligning",
                 "mat-og-renhet",
@@ -9412,7 +9422,7 @@
               "id": "lidelse",
               "title": "Lidelse: Hvorfor finnes det vondt?",
               "description": "Ni tradisjoner møter det samme jordskjelvet. Noen må forsvare Gud, andre stiller ikke spørsmålet i det hele tatt, og ingen av dem har et ferdig svar.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/lidelse-hero.webp",
               "tags": [
                 "sammenligning",
                 "lidelse",
@@ -9425,7 +9435,7 @@
               "id": "kjonn-og-roller",
               "title": "Kjønn og roller: Prinsipp mot praksis",
               "description": "Alle religioner må svare på hvem som kan lede, lese høyt og arve. Skill mellom prinsippet, altså hva læren sier, og praksis, altså hva som faktisk skjer, og se hvorfor gapet mellom dem er selve historien.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/kjonn-og-roller-hero.webp",
               "tags": [
                 "sammenligning",
                 "kjonn-og-roller",
@@ -9438,7 +9448,7 @@
               "id": "ledelse-og-fellesskap",
               "title": "Ledelse: Hvem bestemmer?",
               "description": "Katolikkene har én pave. Sunniislam har ingen. Hvem avgjør da hva som er riktig? Ni tradisjoner løser spørsmålet ulikt, fra pyramide til nettverk uten topp.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/ledelse-og-fellesskap-hero.webp",
               "tags": [
                 "sammenligning",
                 "ledelse-og-fellesskap",
@@ -9451,7 +9461,7 @@
               "id": "pilegrim",
               "title": "Pilegrim: Reisen til det hellige",
               "description": "Hva gjør et sted hellig, og hva gjør reisen med den som går? To millioner går rundt den samme steinen samtidig, andre går alene til Nidaros i tre uker.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sammenligning/pilegrim-hero.webp",
               "tags": [
                 "sammenligning",
                 "pilegrim",

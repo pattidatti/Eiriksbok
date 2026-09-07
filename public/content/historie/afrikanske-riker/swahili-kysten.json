@@ -5,7 +5,7 @@
   "year": "800-1500",
   "category": "Øst-Afrika",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/afrikanske-riker/swahili-kysten-hero.webp",
   "details": [
     "Langs kysten av Øst-Afrika lå dusinvis av rike handelsbyer som styrte seg selv.",
     "Monsunvinden snudde to ganger i året og bandt Afrika sammen med Arabia, India og Kina.",
@@ -18,7 +18,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/afrikanske-riker/swahili-kysten-01.webp",
       "alt": "Havn med seilskip og hus av korallstein i Kilwa",
       "caption": "Kilwa hadde havn, moské og steinhus lenge før europeerne kom til Øst-Afrika."
     },
@@ -99,7 +99,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/afrikanske-riker/swahili-kysten-02.webp",
       "alt": "Portugisiske skip med kanoner utenfor en afrikansk havneby",
       "caption": "Portugisiske skip med kanoner endret spillereglene i Indiahavet etter 1498."
     },

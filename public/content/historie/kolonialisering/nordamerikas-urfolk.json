@@ -5,7 +5,7 @@
     "year": "1830-1934",
     "category": "Kolonialisering",
     "readTime": "11 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/kolonialisering/nordamerikas-urfolk-hero.webp",
     "factChecked": "2026-09-07",
     "externalUrl": "https://snl.no/nordamerikanske_urfolk",
     "details": [
@@ -20,7 +20,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/nordamerikas-urfolk-01.webp",
             "alt": "Familier med kjerrer og bylter går gjennom snø på en åpen slette",
             "caption": "Tvangsflyttingen skjedde om vinteren. Folk gikk til fots, med det de klarte å bære."
         },
@@ -89,7 +89,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/nordamerikas-urfolk-02.webp",
             "alt": "Snødekt slette med spredte telt og en tom hestekjerre i gråvær",
             "caption": "Wounded Knee, desember 1890. Massakren regnes som punktumet for indianerkrigene."
         },
@@ -216,7 +216,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/nordamerikas-urfolk-03.webp",
             "alt": "Dansere i fargerike fjærdrakter i en ring foran publikum utendørs",
             "caption": "Powwow. Kulturen ble aldri borte, selv da landet forsvant."
         },
