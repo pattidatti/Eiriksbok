@@ -1,0 +1,345 @@
+{
+    "id": "norgesveldet",
+    "title": "Norgesveldet: da Norge var Europas største rike",
+    "layout": "rich",
+    "year": "1217-1266",
+    "category": "Norge",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "På 1200-tallet strakte den norske kongens rike seg fra Kattegat til Labradorstredet ved Canada.",
+        "Riket ble ikke erobret med hær. Island, Grønland og de andre skattlandene kom inn gjennom avtaler der begge sider ga noe.",
+        "Da kongen ikke lenger klarte å holde sin del av avtalene, forsvant riket bit for bit uten en eneste krig."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Sommeren 1262 satt høvdingene på Island samlet på tinget sitt. De skulle svare på et spørsmål de hadde skjøvet foran seg i mange år: skulle de legge øya under en konge som bodde på den andre siden av havet? De sa ja. Ingen hær hadde gått i land på Island. Ingen borg var bygget. Islendingene ga seg inn under kongen ved å inngå en avtale med ham."
+        },
+        {
+            "type": "text",
+            "content": "Med det ble Island en del av det historikerne kaller Norgesveldet, altså alt den norske kongen rådde over i middelalderen. På det største strakte riket seg fra Kattegat i sør til Labradorstredet ved Canada i vest (Grohse, 2026a). Målt i areal var Norge da det største riket i Europa (Orning, 2018)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Islandske høvdinger samlet på tinget under åpen himmel",
+            "caption": "Alltinget på Island var en folkeforsamling under åpen himmel. Det var her islendingene sa ja til den norske kongen i 1262."
+        },
+        {
+            "type": "header",
+            "text": "Kongen som endelig fikk fred hjemme"
+        },
+        {
+            "type": "text",
+            "content": "Mannen på tronen het Håkon Håkonsson. Han ble valgt til konge i 1217, bare 13 år gammel. I over hundre år hadde nordmenn kjempet mot nordmenn om hvem som hadde rett til kronen. Håkon satte punktum for de kampene i 1240, da han slo motstanderen Skule Bårdsson (Helle & Norseng, 2025). Hvorfor stridene varte så lenge, kan du lese om i artikkelen om [borgerkrigstiden](/historie/norsk-middelalder/borgerkrigstiden)."
+        },
+        {
+            "type": "text",
+            "content": "I 1247 ble Håkon kronet i Bergen av en utsending fra paven. Da var han ikke lenger en av flere menn som kalte seg konge. Han var den ene, godkjent av kirken. Og når det først var fred hjemme, kunne han se utover havet."
+        },
+        {
+            "type": "header",
+            "text": "Et rike som lå spredt utover havet"
+        },
+        {
+            "type": "text",
+            "content": "Norgesveldet var ikke et sammenhengende landområde med en strek rundt seg. Det var øyer og kyster spredt over Nord-Atlanteren, bundet sammen av skipsleia. Disse områdene hørte til:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Orknøyene og Shetland, nord for Skottland",
+                "Færøyene, midt i havet mellom Norge og Island",
+                "Island, som kom inn i 1262",
+                "Grønland, som kom inn i 1261",
+                "Hebridene og øya Man, vest og sør for Skottland",
+                "Jemtland i øst og Finnmark i nord"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Grønland godtok kongen i 1261, og Island i årene 1262 til 1264 (Norseng & Opsahl, 2026). Det var Grønland som til slutt gjorde riket så enormt på kartet (Orning, 2018). Nordboerne hadde da bodd der i nesten 300 år, helt siden [oppdagelsesreisene](/historie/vikingtiden/oppdagelsesreiser) vestover i vikingtiden."
+        },
+        {
+            "type": "header",
+            "text": "Hva er et skattland?"
+        },
+        {
+            "type": "text",
+            "content": "Et skattland var et område som betalte skatt til en konge i et annet land (Grohse, 2026b). Ordet sier egentlig alt: det var skatten som var båndet. Skattlandene beholdt sine egne ting, sine egne lover og sine egne ledere. Kongen hadde verken soldater eller borger der. Det han hadde, var en avtale."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Et rike uten grenselinje",
+                "content": "Et rike i middelalderen var ikke det samme som et land på et moderne kart. Det fantes ingen oppmålt grense og ingen hovedstad som styrte alt. Et rike var alle de menneskene som hadde sverget troskap til den samme kongen. Derfor kunne Norgesveldet være enormt stort og likevel ha en konge som knapt visste hva som skjedde ute i kanten av det."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Store norske leksikon kaller derfor Norgesveldet et frivillig samvelde. Et samvelde er et fellesskap der hver del styrer seg selv, men der alle har den samme øverste lederen. Ordet frivillig er viktig her: skattlandene ble ikke tvunget inn med hær, de sa ja (Grohse, 2026a)."
+        },
+        {
+            "type": "header",
+            "text": "Avtalen fra 1262"
+        },
+        {
+            "type": "text",
+            "content": "Avtalen mellom islendingene og kong Håkon kalles Gamli sáttmáli, som betyr den gamle avtalen på islandsk. Islendingene lovte å betale skatt hvert år og å være tro mot kongen. Kongen lovte to ting tilbake: at Island skulle få beholde sine egne lover, og at han skulle sende seks skip med forsyninger til øya hvert eneste år (Salvesen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "De seks skipene var ingen gave. De var livsnødvendige. På Island vokser det verken korn eller skog. Uten skip fra Norge fikk øya hverken mel til brød eller tømmer til hus og båter. Avtalen var altså en byttehandel: skatt og troskap den ene veien, korn og egne lover den andre."
+        },
+        {
+            "type": "component",
+            "name": "SamveldetsAvtale",
+            "props": {
+                "title": "Avtalen fra 1262",
+                "prompt": "Klikk de fem leddene som faktisk sto i avtalen mellom islendingene og kong Håkon.",
+                "leftLabel": "Islendingene lover",
+                "rightLabel": "Kongen lover"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor kongen ikke kunne styre selv"
+        },
+        {
+            "type": "text",
+            "content": "Å eie et rike på kartet er én ting. Å styre det er noe helt annet. Fra Bergen til Shetland tok det noen dager med god vind. Til Island tok det uker. Til Grønland kunne et skip bruke hele sommeren, og så måtte mannskapet vente på neste år for å komme hjem igjen."
+        },
+        {
+            "type": "text",
+            "content": "Det betydde at kongen aldri kunne blande seg i det som skjedde fra dag til dag. Kranglet to bønder på Færøyene om et beite, var saken for lengst avgjort på det lokale tinget før et brev fra Bergen kunne rekke fram. Derfor styrte skattlandene seg selv i det daglige, og kongen sparte skipene sine til det som virkelig truet makten hans."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "beskjeden-for-sent-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "1263: kongen som dro vestover og ikke kom hjem"
+        },
+        {
+            "type": "text",
+            "content": "Lengst vest lå Hebridene og øya Man, tett på kysten av Skottland. Den skotske kongen mente de var hans. I 1263 seilte Håkon Håkonsson vestover med en stor flåte for å slå fast at øyene hørte til Norge, og for å sikre kongens overhøyhet over Orknøyene og Shetland. Toktet endte uten seier. Håkon ble syk på Orknøyene og døde i Kirkwall 16. desember 1263 (Helle & Norseng, 2025)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Boka om den norske kongen ble skrevet på Island",
+                "content": "Det meste vi vet om Håkon Håkonsson står i Håkon Håkonssons saga, som ble skrevet av islendingen Sturla Tordsson kort tid etter kongens død. Det sier noe om hvordan riket hang sammen: den grundigste boka om en norsk konge ble skrevet av en mann fra et skattland langt ute i havet."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Norsk langskip i grov sjø utenfor bratt skotsk kyst",
+            "caption": "Høsten 1263 førte Håkon Håkonsson flåten sin mot Skottland. Toktet ga ingen seier, og kongen døde på Orknøyene på vei hjem."
+        },
+        {
+            "type": "header",
+            "text": "1266: sønnen som solgte øyene"
+        },
+        {
+            "type": "text",
+            "content": "Sønnen Magnus overtok tronen. Han valgte fred framfor krig. I 1266 møttes utsendinger i den skotske byen Perth, og Magnus ga fra seg Hebridene og Man til den skotske kongen. Til gjengjeld fikk han 4000 mark sterling, som var engelsk sølv, utbetalt over fire år, og 100 mark hvert år etterpå. Samtidig godtok skottene at Orknøyene og Shetland var norske (Helle & Salvesen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Magnus fikk kallenavnet Lagabøte, som betyr han som gjorde lovene bedre. I 1274 ga han hele Norge én felles lov, [Magnus Lagabøtes landslov](/historie/lov-og-rett/magnus-landslov). Det var tidlig i europeisk sammenheng. Bare Sicilia og Castilla hadde da laget noe liknende for et helt rike (Helle & Salvesen, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "TimelineComponent",
+            "props": {
+                "title": "Norgesveldet fra topp til bunn",
+                "compact": true,
+                "events": [
+                    {
+                        "date": "1217",
+                        "title": "Håkon Håkonsson blir konge",
+                        "description": "Han er 13 år gammel og arver et land som har vært i strid i over hundre år."
+                    },
+                    {
+                        "date": "1240",
+                        "title": "Borgerkrigene tar slutt",
+                        "description": "Skule Bårdsson blir slått, og Håkon står alene igjen som konge."
+                    },
+                    {
+                        "date": "1261",
+                        "title": "Grønland anerkjenner kongen",
+                        "description": "Riket blir det største i Europa målt i areal."
+                    },
+                    {
+                        "date": "1262",
+                        "title": "Island går inn i riket",
+                        "description": "Avtalen Gamli sáttmáli gir kongen skatt og troskap, og islendingene egne lover og seks skip i året."
+                    },
+                    {
+                        "date": "1263",
+                        "title": "Håkon dør på Orknøyene",
+                        "description": "Toktet mot Skottland gir ingen seier, og kongen dør i Kirkwall 16. desember."
+                    },
+                    {
+                        "date": "1266",
+                        "title": "Hebridene og Man går til Skottland",
+                        "description": "Magnus Lagabøte selger øyene i fredsavtalen i Perth."
+                    },
+                    {
+                        "date": "1274",
+                        "title": "Landsloven",
+                        "description": "Hele Norge får én felles lov, som et av de første rikene i Europa."
+                    },
+                    {
+                        "date": "1397",
+                        "title": "Kalmarunionen",
+                        "description": "Norge deler konge med Danmark og Sverige, og Norgesveldet begynner for alvor å gå i oppløsning."
+                    },
+                    {
+                        "date": "1468-1469",
+                        "title": "Orknøyene og Shetland pantsettes",
+                        "description": "Kong Christian 1. gir øyene til Skottland som sikkerhet for penger. Norge kjøpte dem aldri tilbake."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "Slik ble riket borte, bit for bit"
+        },
+        {
+            "type": "text",
+            "content": "Norgesveldet forsvant ikke i én krig. Det ble mindre litt etter litt, over mer enn to hundre år, og handelen var det første som glapp."
+        },
+        {
+            "type": "text",
+            "content": "Tyske kjøpmenn fra [hanseatene](/historie/middelalderen/hanseatene) tok over stadig mer av varene som gikk gjennom Bergen. Da kongens folk på slutten av 1200-tallet prøvde å begrense rettighetene deres, svarte hanseatene med å stanse all handel med Norge (Norseng & Opsahl, 2026). Kongen tapte den kampen. Dermed mistet han også grepet om skipene og varene som bandt riket sammen."
+        },
+        {
+            "type": "text",
+            "content": "Fra 1397 delte Norge konge med Danmark og Sverige i [Kalmarunionen](/historie/norgeshistorie/kalmarunionen), og nedgangen skjøt fart (Grohse, 2026a). I 1468 og 1469 pantsatte kong Christian 1. Orknøyene og Shetland til Skottland (Grohse, 2026b). Å pantsette noe betyr å gi det fra seg som sikkerhet for penger, med rett til å kjøpe det tilbake senere. Norge kjøpte aldri øyene tilbake, og de er skotske den dag i dag."
+        },
+        {
+            "type": "text",
+            "content": "På papiret hørte Island og Færøyene til den norsk-danske kongen helt til 1814. I virkeligheten hadde styringen fra Norge lenge vært borte (Grohse, 2026a)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Steinhus og tomme naust ved en grå fjord i sen middelalder",
+            "caption": "Riket ble ikke tatt fra nordmennene i en krig. Det ble solgt, pantsatt og glemt bort, bit for bit."
+        },
+        {
+            "type": "header",
+            "text": "Hva forteller dette om makt?"
+        },
+        {
+            "type": "text",
+            "content": "Norgesveldet er lett å misforstå. På kartet ser det ut som et imperium. Men det virket ikke som et imperium. Kongen hadde ingen hær ute i skattlandene. Det han hadde, var avtaler, skip og lover som folk godtok. Så lenge han holdt sin del, holdt riket."
+        },
+        {
+            "type": "text",
+            "content": "Da skipene ble færre, tyskerne overtok handelen og kongen etter hvert satt i København, hadde skattlandene stadig mindre grunn til å høre til. Det er den viktigste lærdommen av Norgesveldet: makt som bygger på en avtale, varer bare så lenge begge sider får noe igjen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er et skattland, og hva var det som bandt et skattland til kongen?",
+                    "Hvilke to ting lovte kong Håkon islendingene i avtalen fra 1262?",
+                    "Hvorfor var det Grønland som gjorde Norgesveldet til Europas største rike i areal?",
+                    "Hva skjedde i Perth i 1266, og hva fikk Magnus Lagabøte igjen for det?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor seks skip i året betydde så mye for Island.",
+                    "Kongen kunne bruke en hel sommer på å få en beskjed til Grønland. Hvordan tror du det påvirket måten skattlandene ble styrt på?",
+                    "Store norske leksikon kaller Norgesveldet et frivillig samvelde. Hvilke opplysninger i artikkelen støtter den beskrivelsen, og hva kunne tale imot den?",
+                    "Hanseatene stanset all handel med Norge da kongen prøvde å stramme inn på rettighetene deres. Hva sier den hendelsen om hvem som egentlig hadde makt i Bergen?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvordan Island og Færøyene ble selvstendige, og lag en tidslinje fra 1262 fram til i dag.",
+                    "Diskuter i klassen: Norge sluttet å betale for Orknøyene og Shetland, og mistet dem. Finnes det avtaler mellom land i dag som fungerer på samme måte, der den ene siden slutter å holde sin del?",
+                    "Skriv et kort brev fra en islandsk bonde i 1310 til kongen i Bergen. Kornskipene har uteblitt i tre år. Hva krever bonden, og hva minner han kongen om?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er et skattland?",
+                        "options": [
+                            "Et område som betalte skatt til en konge i et annet land",
+                            "Et område som var erobret av en hær og styrt av soldater",
+                            "En by der kongen hadde sin egen skattekiste",
+                            "Et land som fikk penger av den norske kongen"
+                        ],
+                        "answer": "Et område som betalte skatt til en konge i et annet land"
+                    },
+                    {
+                        "question": "Hva lovte kong Håkon islendingene i avtalen fra 1262?",
+                        "options": [
+                            "At de fikk beholde sine egne lover, og seks skip med forsyninger hvert år",
+                            "At han skulle sende en hær som beskyttet øya",
+                            "At de slapp å betale skatt de første ti årene",
+                            "At de fikk bygge en borg for kongens regning"
+                        ],
+                        "answer": "At de fikk beholde sine egne lover, og seks skip med forsyninger hvert år"
+                    },
+                    {
+                        "question": "Hvilket område kom inn i Norgesveldet i 1261 og gjorde riket størst i areal?",
+                        "options": ["Grønland", "Island", "Færøyene", "Jemtland"],
+                        "answer": "Grønland"
+                    },
+                    {
+                        "question": "Hva skjedde med Hebridene og Man i 1266?",
+                        "options": [
+                            "Magnus Lagabøte ga dem til den skotske kongen mot betaling",
+                            "De ble erobret av en norsk flåte",
+                            "De ble delt mellom Norge og Danmark",
+                            "De erklærte seg selvstendige"
+                        ],
+                        "answer": "Magnus Lagabøte ga dem til den skotske kongen mot betaling"
+                    },
+                    {
+                        "question": "Hvorfor falt Norgesveldet fra hverandre?",
+                        "options": [
+                            "Kongen klarte ikke lenger å holde sin del av avtalene, og båndene ble tynnere over tid",
+                            "Skattlandene gikk sammen om et stort opprør",
+                            "En fremmed hær erobret alle øyene på én gang",
+                            "Nordmennene flyttet frivillig hjem fra alle øyene"
+                        ],
+                        "answer": "Kongen klarte ikke lenger å holde sin del av avtalene, og båndene ble tynnere over tid"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Grohse, I. P. (2026a). *Norgesveldet*. Store norske leksikon. Hentet 08.09.2026 fra [snl.no/Norgesveldet](https://snl.no/Norgesveldet)",
+                    "Grohse, I. P. (2026b). *Skattland*. Store norske leksikon. Hentet 08.09.2026 fra [snl.no/skattland](https://snl.no/skattland)",
+                    "Salvesen, H. (2026). *Gamli sáttmáli*. Store norske leksikon. Hentet 08.09.2026 fra [snl.no/Gamli_sáttmáli](https://snl.no/Gamli_s%C3%A1ttm%C3%A1li)",
+                    "Helle, K. & Norseng, P. G. (2025). *Håkon 4. Håkonsson*. Store norske leksikon. Hentet 08.09.2026 fra [snl.no/Håkon_4._Håkonsson](https://snl.no/H%C3%A5kon_4._H%C3%A5konsson)",
+                    "Helle, K. & Salvesen, H. (2026). *Magnus Lagabøte*. Store norske leksikon. Hentet 08.09.2026 fra [snl.no/Magnus_Lagabøte](https://snl.no/Magnus_Lagab%C3%B8te)",
+                    "Norseng, P. G. & Opsahl, E. (2026). *Norge i høymiddelalderen*. Store norske leksikon. Hentet 08.09.2026 fra [snl.no/Norge_i_høymiddelalderen](https://snl.no/Norge_i_h%C3%B8ymiddelalderen)",
+                    "Orning, H. J. (2018). *Da Norge var Europas største rike*. Norgeshistorie, Universitetet i Oslo. Hentet 08.09.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/hoymiddelalder/0938_da-norge-var-europas-storste-rike.html)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
