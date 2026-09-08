@@ -807,7 +807,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 337
+      "count": 339
     },
     {
       "tag": "dekolonisering",
@@ -854,12 +854,12 @@
       "count": 38
     },
     {
-      "tag": "nykolonialisme",
+      "tag": "middelalder",
       "count": 36
     },
     {
-      "tag": "middelalder",
-      "count": 34
+      "tag": "nykolonialisme",
+      "count": 36
     },
     {
       "tag": "demokrati",
@@ -1102,6 +1102,10 @@
       "count": 10
     },
     {
+      "tag": "kongemakt",
+      "count": 10
+    },
+    {
       "tag": "borgerkrig",
       "count": 10
     },
@@ -1207,10 +1211,6 @@
     },
     {
       "tag": "rettsutvikling",
-      "count": 8
-    },
-    {
-      "tag": "kongemakt",
       "count": 8
     },
     {
@@ -1599,6 +1599,10 @@
     },
     {
       "tag": "imperier",
+      "count": 4
+    },
+    {
+      "tag": "gronland",
       "count": 4
     },
     {
@@ -2238,10 +2242,6 @@
       "count": 2
     },
     {
-      "tag": "gronland",
-      "count": 2
-    },
-    {
       "tag": "norron",
       "count": 2
     },
@@ -2291,6 +2291,14 @@
     },
     {
       "tag": "magna-carta",
+      "count": 2
+    },
+    {
+      "tag": "skattland",
+      "count": 2
+    },
+    {
+      "tag": "island",
       "count": 2
     },
     {

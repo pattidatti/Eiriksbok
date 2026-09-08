@@ -212,6 +212,7 @@ const Stjernestien3D = lazy(() => import('./Stjernestien3D'));
 const Pakkeruta3D = lazy(() => import('./Pakkeruta3D'));
 const BergTrommen3D = lazy(() => import('./BergTrommen3D'));
 const Bjornegrava3D = lazy(() => import('./Bjornegrava3D'));
+const BeskjedenForSent3D = lazy(() => import('./BeskjedenForSent3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -2076,6 +2077,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Kroningsvilkarene3D'),
         Component: Kroningsvilkarene3D as never,
+    },
+    'beskjeden-for-sent-3d': {
+        id: 'beskjeden-for-sent-3d',
+        title: 'Beskjeden som kom for sent',
+        description:
+            'Du er kongen i Bergen med tre skip og fem skattland spredt utover Nord-Atlanteren. Ved hvert land står seilingstiden: Shetland tre sekunder, Grønland tjue. Saker dukker opp ute i riket mens året går. Røde saker truer kongens makt, gule saker klarer bygdene selv - men et skip du sender av gård, er borte når du trenger det. Lyspæra: kongen kunne ikke være overalt. Derfor styrte skattlandene seg selv i det daglige, og skipene ble spart til det som truet kronen.',
+        estimatedSeconds: 150,
+        loader: () => import('./BeskjedenForSent3D'),
+        Component: BeskjedenForSent3D as never,
     },
 };
 

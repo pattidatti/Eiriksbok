@@ -3214,6 +3214,22 @@
               ],
               "createdDate": "2026-08-21T03:59:40+02:00",
               "lastUpdated": "2026-08-26T07:39:10+02:00"
+            },
+            {
+              "id": "norgesveldet",
+              "title": "Norgesveldet: da Norge var Europas største rike",
+              "description": "På 1200-tallet strakte den norske kongens rike seg fra Kattegat til Grønland - holdt sammen av avtaler og skip, ikke av hærer.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "norge",
+                "middelalder",
+                "skattland",
+                "island",
+                "gronland",
+                "kongemakt"
+              ],
+              "createdDate": "2026-09-08T00:00:00Z"
             }
           ]
         },
