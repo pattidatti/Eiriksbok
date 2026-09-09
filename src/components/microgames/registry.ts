@@ -213,6 +213,7 @@ const Pakkeruta3D = lazy(() => import('./Pakkeruta3D'));
 const BergTrommen3D = lazy(() => import('./BergTrommen3D'));
 const Bjornegrava3D = lazy(() => import('./Bjornegrava3D'));
 const BeskjedenForSent3D = lazy(() => import('./BeskjedenForSent3D'));
+const Scriptoriet3D = lazy(() => import('./Scriptoriet3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -2086,6 +2087,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./BeskjedenForSent3D'),
         Component: BeskjedenForSent3D as never,
+    },
+    'scriptoriet-3d': {
+        id: 'scriptoriet-3d',
+        title: 'Skriveverkstedet',
+        description:
+            'Du er munk i klosterets skriveverksted, med et pergamentark på skråpulten og dagslys fra vinduet som eneste lys. Hold inne og dra fjærpennen mot høyre, om og om igjen, til linja er full - seks linjer skal kopieres før sola går ned, og pennen skriver saktere jo mørkere det blir. Fire ganger ringer bjella til bønn, og da må alt legges fra seg med én gang. Skriver du videre, stiger ulydigheten til abbeden sender deg ut. Lyspæra: en bok ble laget for hånd, én linje av gangen, i korte økter mellom åtte bønnetider i døgnet.',
+        estimatedSeconds: 170,
+        loader: () => import('./Scriptoriet3D'),
+        Component: Scriptoriet3D as never,
     },
 };
 

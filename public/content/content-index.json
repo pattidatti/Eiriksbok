@@ -1,5 +1,5 @@
 {
-  "buildId": 133803451456884,
+  "buildId": 73291704167575,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2570,6 +2570,9 @@
     ],
     "hundreaarskrigen": [
       "content/historie/middelalderen/hundreaarskrigen.json"
+    ],
+    "klostrene": [
+      "content/historie/middelalderen/klostrene.json"
     ],
     "korstogene": [
       "content/historie/middelalderen/korstogene.json"
@@ -5628,6 +5631,7 @@
     "historie/middelalderen/det-hellige-romerske-rike": "content/historie/middelalderen/det-hellige-romerske-rike.json",
     "historie/middelalderen/hanseatene": "content/historie/middelalderen/hanseatene.json",
     "historie/middelalderen/hundreaarskrigen": "content/historie/middelalderen/hundreaarskrigen.json",
+    "historie/middelalderen/klostrene": "content/historie/middelalderen/klostrene.json",
     "historie/middelalderen/korstogene": "content/historie/middelalderen/korstogene.json",
     "historie/middelalderen/middelalderen": "content/historie/middelalderen/middelalderen.json",
     "historie/middelalderen/mongolske-riket": "content/historie/middelalderen/mongolske-riket.json",

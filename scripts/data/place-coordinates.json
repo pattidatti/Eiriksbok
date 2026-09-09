@@ -866,15 +866,15 @@
       "count": 32
     },
     {
+      "tag": "middelalderen",
+      "count": 31
+    },
+    {
       "tag": "1800-tallet",
       "count": 30
     },
     {
       "tag": "oppfinnelser",
-      "count": 29
-    },
-    {
-      "tag": "middelalderen",
       "count": 29
     },
     {
@@ -1594,6 +1594,14 @@
       "count": 4
     },
     {
+      "tag": "kirken",
+      "count": 4
+    },
+    {
+      "tag": "kunnskap",
+      "count": 4
+    },
+    {
       "tag": "ressurser",
       "count": 4
     },
@@ -2186,6 +2194,10 @@
       "count": 2
     },
     {
+      "tag": "kloster",
+      "count": 2
+    },
+    {
       "tag": "merovingertid",
       "count": 2
     },
@@ -2350,10 +2362,6 @@
       "count": 2
     },
     {
-      "tag": "kunnskap",
-      "count": 2
-    },
-    {
       "tag": "leonardo-da-vinci",
       "count": 2
     },
@@ -2491,10 +2499,6 @@
     },
     {
       "tag": "kvinnehistorie",
-      "count": 2
-    },
-    {
-      "tag": "kirken",
       "count": 2
     },
     {

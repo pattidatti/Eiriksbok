@@ -319,6 +319,7 @@ const DenStoreAkselerasjonen = lazy(() => import('./content/interactive/DenStore
 const RevolusjonsOppskriften = lazy(() => import('./content/interactive/RevolusjonsOppskriften').then(m => ({ default: m.RevolusjonsOppskriften })));
 const MaktfordelingMatch = lazy(() => import('./content/interactive/MaktfordelingMatch').then(m => ({ default: m.MaktfordelingMatch })));
 const PersonalunionSorter = lazy(() => import('./content/interactive/PersonalunionSorter').then(m => ({ default: m.PersonalunionSorter })));
+const KlosterDognet = lazy(() => import('./content/interactive/KlosterDognet').then(m => ({ default: m.KlosterDognet })));
 const Makttredelingen = lazy(() => import('./content/interactive/Makttredelingen').then(m => ({ default: m.Makttredelingen })));
 const NapoleonsArv = lazy(() => import('./content/interactive/NapoleonsArv').then(m => ({ default: m.NapoleonsArv })));
 const JernbaneReisesammenligning = lazy(() => import('./content/interactive/JernbaneReisesammenligning').then(m => ({ default: m.JernbaneReisesammenligning })));
@@ -801,6 +802,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RevolusjonsOppskriften,
     MaktfordelingMatch,
     PersonalunionSorter,
+    KlosterDognet,
     Makttredelingen,
     NapoleonsArv,
     JernbaneReisesammenligning,
