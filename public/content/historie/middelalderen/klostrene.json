@@ -5,7 +5,7 @@
   "year": "530-1537",
   "category": "Middelalder",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/middelalderen/klostrene-hero.webp",
   "details": [
     "Et kloster var et lukket samfunn der munker eller nonner levde etter en streng dagsplan med bønn, arbeid og lesing.",
     "Benedikts regel fra rundt år 525 delte døgnet i åtte bønnetider, sju timer søvn og lange arbeidsøkter. Den ble malen for nesten alle klostre i Vest-Europa.",
@@ -20,7 +20,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/middelalderen/klostrene-01.webp",
       "alt": "Munker i kutter går gjennom en mørk steinkorridor med lykt",
       "caption": "Nattbønnen begynte klokka to. Munkene gikk fra sovesalen til kirken uten å si et ord."
     },
@@ -96,7 +96,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/middelalderen/klostrene-02.webp",
       "alt": "Munk kopierer bok ved skråpult i lyset fra et høyt vindu",
       "caption": "I skriveverkstedet ble bøker laget én bokstav om gangen, i dagslys fra vinduet."
     },
@@ -150,7 +150,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/middelalderen/klostrene-03.webp",
       "alt": "Ruiner av et norsk steinkloster med gresskledd klostergård",
       "caption": "I dag står flere av de norske klostrene igjen som ruiner. Hovedøya i Oslo er en av dem."
     },
