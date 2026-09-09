@@ -6593,6 +6593,20 @@
               ],
               "createdDate": "2026-07-10T03:36:48+02:00",
               "lastUpdated": "2026-07-29T20:01:31+02:00"
+            },
+            {
+              "id": "klostrene",
+              "title": "Klostrene: middelalderens kunnskapsmaskiner",
+              "description": "Bak klostermurene ble bøker kopiert for hånd, syke stelt og jord dyrket - i en døgnrytme styrt av åtte bjelleslag.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "middelalderen",
+                "kirken",
+                "kloster",
+                "kunnskap",
+                "norge"
+              ],
+              "createdDate": "2026-09-09T00:00:00Z"
             }
           ]
         },

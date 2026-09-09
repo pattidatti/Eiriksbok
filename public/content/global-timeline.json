@@ -1751,6 +1751,30 @@
       ]
     },
     {
+      "id": "klostrene",
+      "title": "Klostrene: middelalderens kunnskapsmaskiner",
+      "description": "Bak klostermurene ble bøker kopiert for hånd, syke stelt og jord dyrket - i en døgnrytme styrt av åtte bjelleslag.",
+      "startDate": 530,
+      "endDate": 1537,
+      "displayDate": "530-1537",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "middelalderen",
+      "link": "/historie/middelalderen/klostrene",
+      "tags": [
+        "middelalderen",
+        "kirken",
+        "kloster",
+        "kunnskap",
+        "norge"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "norge-for-vikingene-sub-8",
       "title": "Fimbulvinteren",
       "description": "Klimasjokket som rammet Norden.",
