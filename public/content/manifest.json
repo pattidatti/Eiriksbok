@@ -7324,6 +7324,21 @@
               ],
               "createdDate": "2026-05-14T23:02:55+02:00",
               "lastUpdated": "2026-07-27T12:01:32+02:00"
+            },
+            {
+              "id": "fonikerne",
+              "title": "Fønikerne: Havets kjøpmenn",
+              "description": "Folket som levde av sjøen, farget stoff med snegler og ga verden et alfabet på 22 tegn.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "fønikerne",
+                "middelhavet",
+                "handel",
+                "alfabet",
+                "skrift",
+                "tidlige-sivilisasjoner"
+              ],
+              "createdDate": "2026-09-10T00:00:00Z"
             }
           ]
         },

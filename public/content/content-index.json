@@ -1,5 +1,5 @@
 {
-  "buildId": 73291704167575,
+  "buildId": 51834674675477,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2398,6 +2398,9 @@
     ],
     "egypt": [
       "content/historie/jordbruk-og-sivilisasjoner/egypt.json"
+    ],
+    "fonikerne": [
+      "content/historie/jordbruk-og-sivilisasjoner/fonikerne.json"
     ],
     "indusdalen": [
       "content/historie/jordbruk-og-sivilisasjoner/indusdalen.json"
@@ -5574,6 +5577,7 @@
     "historie/japans-historie/meiji-restaurasjonen": "content/historie/japans-historie/meiji-restaurasjonen.json",
     "historie/jordbruk-og-sivilisasjoner/amerikas-sivilisasjoner": "content/historie/jordbruk-og-sivilisasjoner/amerikas-sivilisasjoner.json",
     "historie/jordbruk-og-sivilisasjoner/egypt": "content/historie/jordbruk-og-sivilisasjoner/egypt.json",
+    "historie/jordbruk-og-sivilisasjoner/fonikerne": "content/historie/jordbruk-og-sivilisasjoner/fonikerne.json",
     "historie/jordbruk-og-sivilisasjoner/indusdalen": "content/historie/jordbruk-og-sivilisasjoner/indusdalen.json",
     "historie/jordbruk-og-sivilisasjoner/jordbruk-og-sivilisasjoner": "content/historie/jordbruk-og-sivilisasjoner/jordbruk-og-sivilisasjoner.json",
     "historie/jordbruk-og-sivilisasjoner/kina": "content/historie/jordbruk-og-sivilisasjoner/kina.json",
