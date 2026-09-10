@@ -32,6 +32,7 @@ const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m =>
 const DhammaEllerSverd = lazy(() => import('./content/interactive/DhammaEllerSverd').then(m => ({ default: m.DhammaEllerSverd })));
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
 const SamstemteKilder = lazy(() => import('./content/interactive/SamstemteKilder').then(m => ({ default: m.SamstemteKilder })));
+const KonsonantKoden = lazy(() => import('./content/interactive/KonsonantKoden').then(m => ({ default: m.KonsonantKoden })));
 const MalstangaTest = lazy(() => import('./content/interactive/MalstangaTest').then(m => ({ default: m.MalstangaTest })));
 const HaraldsRike = lazy(() => import('./content/interactive/HaraldsRike').then(m => ({ default: m.HaraldsRike })));
 const LegendensVekst = lazy(() => import('./content/interactive/LegendensVekst').then(m => ({ default: m.LegendensVekst })));
@@ -554,6 +555,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     DhammaEllerSverd,
     Kildekjeden,
     SamstemteKilder,
+    KonsonantKoden,
     HaraldsRike,
     LegendensVekst,
     Skyldvekten,

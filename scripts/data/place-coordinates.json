@@ -831,7 +831,7 @@
     },
     {
       "tag": "handel",
-      "count": 45
+      "count": 47
     },
     {
       "tag": "kildekritikk",
@@ -1542,6 +1542,10 @@
       "count": 4
     },
     {
+      "tag": "middelhavet",
+      "count": 4
+    },
+    {
       "tag": "mytologi",
       "count": 4
     },
@@ -2062,11 +2066,23 @@
       "count": 2
     },
     {
-      "tag": "oldtid",
+      "tag": "fønikerne",
       "count": 2
     },
     {
-      "tag": "middelhavet",
+      "tag": "alfabet",
+      "count": 2
+    },
+    {
+      "tag": "skrift",
+      "count": 2
+    },
+    {
+      "tag": "tidlige-sivilisasjoner",
+      "count": 2
+    },
+    {
+      "tag": "oldtid",
       "count": 2
     },
     {

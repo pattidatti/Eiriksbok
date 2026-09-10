@@ -196,6 +196,7 @@ const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 const Vinteren1847 = lazy(() => import('./Vinteren1847'));
 const Vaksinekoen3D = lazy(() => import('./Vaksinekoen3D'));
 const MonsunSeilasen3D = lazy(() => import('./MonsunSeilasen3D'));
+const AlfabetetsReise3D = lazy(() => import('./AlfabetetsReise3D'));
 const Kroningsvilkarene3D = lazy(() => import('./Kroningsvilkarene3D'));
 const Innlosningen3D = lazy(() => import('./Innlosningen3D'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
@@ -2060,6 +2061,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 170,
         loader: () => import('./Vaksinekoen3D'),
         Component: Vaksinekoen3D as never,
+    },
+    'alfabetets-reise-3d': {
+        id: 'alfabetets-reise-3d',
+        title: 'Alfabetets reise',
+        description:
+            'Du er kjøpmann i Tyros rundt 1000 fvt. Fire laster står på brygga - sedertre, purpurstoff, glass og en skrivetavle - men skipet har bare to plasser. Dra to av dem om bord og seil vestover til Kypros, Kartago og Gadir. Varene blir brukt opp underveis, men tegnene blir kopiert i hver havn du er innom. Lyspæra: alfabetet var den lasten som ikke ble mindre av å deles.',
+        estimatedSeconds: 150,
+        loader: () => import('./AlfabetetsReise3D'),
+        Component: AlfabetetsReise3D as never,
     },
     'monsun-seilasen-3d': {
         id: 'monsun-seilasen-3d',
