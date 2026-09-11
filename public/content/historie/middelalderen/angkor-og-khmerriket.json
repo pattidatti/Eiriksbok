@@ -162,8 +162,8 @@
       "type": "component",
       "name": "QuoteBlock",
       "props": {
-        "text": "Klimaet var en medvirkende årsak til Angkors fall.",
-        "author": "Brendan M. Buckley og medforfattere, klimaforskere (2010)"
+        "text": "Klimaet var en medvirkende årsak til at Angkor gikk under.",
+        "author": "Tittelen på studien til klimaforskeren Brendan M. Buckley og medforfatterne hans (2010), oversatt til norsk"
       }
     },
     {
