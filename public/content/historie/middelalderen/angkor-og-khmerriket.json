@@ -1,0 +1,273 @@
+{
+  "id": "angkor-og-khmerriket",
+  "title": "Angkor: byen som var bygget av vann",
+  "layout": "rich",
+  "year": "802-1431",
+  "category": "Middelalder",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Angkor var hovedstaden i khmerriket fra 802 til 1431 og lå der byen Siem Reap i Kambodsja ligger i dag.",
+    "Radarkart fra 2007 viste at Angkor dekket 2 848 kvadratkilometer. Det gjør byen til det største bysamfunnet i verden før industrien.",
+    "Angkor Wat er verdens største religiøse byggverk, omkring 160 hektar stort, reist under kong Suryavarman 2 på 1100-tallet.",
+    "Hele byen hvilte på et vannsystem av kunstige innsjøer, kanaler og dammer som dekket over 1 000 kvadratkilometer.",
+    "På 1300- og 1400-tallet kom lange tørkeperioder avbrutt av voldsomme flommer. Anlegget brøt sammen, og i 1431 erobret thaihærer byen."
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "I januar 1860 gikk den franske naturforskeren Henri Mouhot gjennom skogen i det som i dag er Kambodsja. Mellom trærne dukket det opp fem steintårn formet som lukkede lotusblomster. Under dem lå et tempel så stort at han ikke kunne se enden på det. Lokale munker bodde der og passet bygningen, akkurat som munker hadde gjort i flere hundre år. Bøkene Mouhot etterlot seg ble utgitt i 1863 og 1864, og med dem hørte Europa for første gang om Angkor (Høidahl, 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Steintårn formet som lotusblomster rager over tett jungel i morgenlys",
+      "caption": "Slik møtte Angkor Wat de første europeiske besøkende: fem tårn over en skog som hadde vokst rundt dem i fire hundre år."
+    },
+    {
+      "type": "text",
+      "content": "Men Mouhot tok feil om én viktig ting, og feilen holdt seg i halvannet hundre år. Han trodde han hadde funnet et tempel i jungelen. Det han hadde funnet, var restene av en by."
+    },
+    {
+      "type": "header",
+      "text": "Riket som vokste fram ved den store sjøen"
+    },
+    {
+      "type": "text",
+      "content": "Khmerne er folket som bor i Kambodsja. Lenge før Angkor fantes det riker i området. Funan lå i Mekongdeltaet fra rundt år 50 til 500 og hadde kanaler som var over hundre kilometer lange. De gjorde sumpland om til åkrer. Etter Funan kom riket Chenla, som varte til rundt år 800 (Filseth, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "I år 802 samlet kong Jayavarman 2 området og gjorde seg selv til konge over det hele. Han innførte en idé som ble bærende i khmerriket: kongen var ikke bare en hersker, men et slags gudebilde på jorden. Denne tanken kalles devaraja, som betyr gudekonge. Den forklarer hvorfor de neste kongene brukte så mye av rikets krefter på å bygge templer. Et tempel var et politisk byggverk like mye som et religiøst (Høidahl, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Hovedstaden ble lagt like nord for Tonlé Sap, den store innsjøen midt i Kambodsja. Valget var ikke tilfeldig. Sjøen er full av fisk, og elvene fra fjellene i nord kommer ned akkurat der. Vann og mat på samme sted."
+    },
+    {
+      "type": "header",
+      "text": "Monsunen: alt regnet på én gang"
+    },
+    {
+      "type": "text",
+      "content": "For å skjønne Angkor må du skjønne monsunen. I Kambodsja kommer nesten alt regnet i noen få måneder om sommeren. Resten av året er det nesten tørt. Det er som om all nedbøren i Bergen skulle falle i juni, juli og august, og så ikke en dråpe før neste sommer."
+    },
+    {
+      "type": "text",
+      "content": "Ris trenger vann hele veksttiden. Får bøndene bare én avling i året, kan de fø én landsby. Klarer de å vanne markene også utenom regntiden, kan de få to eller tre avlinger, og da kan de fø en by. Hele khmerrikets makt hang på dette regnestykket."
+    },
+    {
+      "type": "text",
+      "content": "Løsningen deres var barayen. En baray er et enormt vannmagasin med jordvoller rundt seg. Den vestre barayen ved Angkor er omtrent åtte kilometer lang. Regnet fra monsunen ble samlet opp der, og så ledet ut gjennom kanaler til rismarkene i månedene det ikke regnet. I tillegg lå det tusenvis av småbassenger spredt utover hele sletta."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Hva er en baray?",
+        "content": "Et rektangulært vannmagasin bygget opp med jordvoller, ikke gravd ned. Vannet ligger derfor høyere enn markene rundt, og kan slippes ut med tyngdekraften alene. Ingen pumper, ingen maskiner. Bare graving, jord og et godt øye for hvor bakken heller."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Angkor Wat og gullalderen"
+    },
+    {
+      "type": "text",
+      "content": "Kong Suryavarman 2 styrte fra 1113 til rundt 1150, og under ham var khmerriket på sitt største. Det strakte seg inn i deler av dagens Thailand, Laos, Vietnam og Myanmar (Høidahl, 2026). Det var han som lot Angkor Wat bygge. Arbeidet tok omkring tretti år (The Editors of Encyclopaedia Britannica, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Angkor Wat dekker rundt 160 hektar og rommer over tusen bygninger. Det er verdens største religiøse byggverk. Hovedtempelet er 65 meter høyt, og langs veggene løper 700 meter med relieffer, altså bilder hugget inn i steinen (Høidahl, 2026). De fem tårnene skal forestille toppene på Meru, fjellet som etter hinduistisk tro er verdens midtpunkt, og vollgraven rundt står for verdenshavene. Tempelet var viet til hinduguden Vishnu (The Editors of Encyclopaedia Britannica, 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Steinrelieff med rader av soldater og elefanter på vei til krig",
+      "caption": "Sju hundre meter med relieffer forteller om guder, konger og kriger. Veggene er khmerrikets historiebok."
+    },
+    {
+      "type": "text",
+      "content": "I 1177 kom nabofolket champaene og plyndret Angkor. Kong Jayavarman 7 tok makten etterpå, og under ham skiftet riket religion. Han var buddhist og gjorde mange hindutempler om til buddhistiske helligdommer (The Editors of Encyclopaedia Britannica, 2026). Han bygde også Angkor Thom, den innerste bymuren, som omsluttet nesten 1 000 hektar. Midt i den reiste han Bayon, et tempel der 37 tårn fortsatt står, hvert med fire ansikter hugget i stein som ser ut i hver sin himmelretning. Klosteret Ta Prohm fra rundt 1180 hadde over 12 000 mennesker knyttet til seg (Høidahl, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Hvor stor var Angkor egentlig?"
+    },
+    {
+      "type": "text",
+      "content": "I 2007 la en forskergruppe fram et kart som endret hele bildet. De hadde brukt radar fra fly og deretter gått i terrenget for å sjekke det de så. Kartet dekket 2 848 kvadratkilometer, og innenfor det fant de 94 templer ingen hadde registrert før, 79 nye kanaler og veier, og tusenvis av dammer (Evans mfl., 2007)."
+    },
+    {
+      "type": "text",
+      "content": "Konklusjonen deres var tydelig: Angkor var det største bysamfunnet i verden før industrien. Men det var en by uten tett bebyggelse slik vi tenker oss en by. Mellom templene lå det rismarker, hager og landsbyer med hus av tre. Treverket råtnet bort for lenge siden, og derfor så det tomt ut fra bakken. Det som bandt hele dette landskapet sammen, var vannet: et nett av kanaler og magasiner som dekket over 1 000 kvadratkilometer, bygget for å stanse, lagre og spre vannet."
+    },
+    {
+      "type": "component",
+      "name": "AngkorLagForLag",
+      "props": {
+        "title": "Angkor lag for lag"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Det er denne innsikten som gjør Angkor interessant også for oss. Byen var ikke stor på grunn av gull eller gruver. Den var stor fordi khmerne hadde bygget en maskin av jord og vann som gjorde at flere mennesker kunne bo på samme sted enn noe annet sted på jorden på den tiden."
+    },
+    {
+      "type": "header",
+      "text": "Da vannet sviktet"
+    },
+    {
+      "type": "text",
+      "content": "En maskin kan gå i stykker. I 2010 fant en annen forskergruppe ut nøyaktig når det skjedde, og de fant det ut på en overraskende måte: ved å telle årringer i trær."
+    },
+    {
+      "type": "text",
+      "content": "I fjellene i Vietnam vokser et sjeldent sypresstre som blir svært gammelt. Tykke årringer betyr et vått år, tynne ringer et tørt år. Ut fra disse trærne bygde forskerne en oversikt over klimaet i Sørøst-Asia helt tilbake til 1200-tallet. Oversikten viste to lange tørkeperioder: én på midten og slutten av 1300-tallet, og en kortere, men enda hardere på begynnelsen av 1400-tallet. Det tørreste året i hele rekken var 1403 (Buckley mfl., 2010)."
+    },
+    {
+      "type": "text",
+      "content": "Men det var ikke tørken alene som knakk Angkor. Mellom tørkeårene kom det år med ekstremt kraftig monsun. Da tålte ikke kanalene presset. En kanal øst for Angkor Thom ble fylt med sand og grus, trolig av én eneste stor flom, og den kanalen var hovedforbindelsen mellom hovedstaden og Tonlé Sap (Buckley mfl., 2010). Sporene i bakken viser det samme mønsteret over hele anlegget: brudd, hastige reparasjoner og endringer som ikke virket. Elva Siem Reap har gravd seg fem til åtte meter ned i sletta, altså mange meter dypere enn den gikk før (Evans mfl., 2007)."
+    },
+    {
+      "type": "text",
+      "content": "Tenk deg rekkefølgen. Først flommene, som ødelegger kanalene. Så tørken, når du er helt avhengig av at de samme kanalene virker. Anlegget hadde vokst seg så stort og innfløkt over flere hundre år at ingen lenger hadde full oversikt over det (Evans mfl., 2007). Det som hadde vært rikets største styrke, var blitt dets svakeste punkt."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "angkor-vannaaret-3d"
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Uttørket kanalbunn med sprukket jord ved en forlatt steinsluse",
+      "caption": "Når kanalen først var fylt av sand, hjalp det ikke hvor mye vann som lå i barayen."
+    },
+    {
+      "type": "header",
+      "text": "Slutten og det som ble igjen"
+    },
+    {
+      "type": "text",
+      "content": "Fra rundt 1220 mistet riket mye av byggekraften sin. Det ble reist færre store templer, og makten svekket seg. Fra midten av 1300-tallet ble angrepene fra thaihærene i vest hyppigere, og i 1430 og 1431 erobret og plyndret de Angkor (Høidahl, 2026). Kongen flyttet hovedstaden sørover til Lovek, nærmere Mekong og handelen på elva (Filseth, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Angkor ble ikke tømt over natten. Buddhistiske munker ble værende ved Angkor Wat og holdt tempelet i bruk i alle årene som fulgte (The Editors of Encyclopaedia Britannica, 2026). Men byen rundt, den med rismarkene og kanalene og de tusen landsbyene, den kom aldri tilbake."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Klimaet var en medvirkende årsak til at Angkor gikk under.",
+        "author": "Tittelen på studien til klimaforskeren Brendan M. Buckley og medforfatterne hans (2010), oversatt til norsk"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til ordet medvirkende. Forskerne sier ikke at klimaet alene felte Angkor. Krig, handelsveier som flyttet seg, religionsskifte og et vannanlegg som var blitt for tungt å vedlikeholde virket sammen. Det samme mønsteret finner du igjen i [Romerrikets fall](/historie/historiens-store-gater/romerrikets-fall) og i [Mayaenes kollaps](/samfunnskunnskap/imperienes-fall/mayaenes-kollaps): sjelden én årsak, nesten alltid flere som forsterker hverandre. Kambodsja fikk aldri tilbake den makten riket hadde hatt, og på 1800-tallet endte landet som fransk koloni, slik mange andre land gjorde i [kappløpet mellom europeiske stormakter](/historie/kolonialisering/europa-erobrer-verden)."
+    },
+    {
+      "type": "text",
+      "content": "I dag er Angkor verdensarv hos UNESCO, vernet siden 1992, og millioner av mennesker besøker stedet (Høidahl, 2026). Tårnene på Angkor Wat står midt i det kambodsjanske flagget. Et rike som forsvant for seks hundre år siden, er fortsatt det sterkeste bildet landet har på seg selv."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "I hvilke år var Angkor hovedstad i khmerriket, og hvor lå byen?",
+          "Hva er en baray, og hva ble den brukt til?",
+          "Hvor stort område dekket radarkartet fra 2007, og hva fant forskerne der?",
+          "Hvilket år var det tørreste i hele årringrekken fra Vietnam?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor monsunen gjorde det nødvendig for khmerne å lagre vann.",
+          "Henri Mouhot trodde han hadde funnet et tempel. Hvorfor var det så vanskelig å se at det egentlig lå en hel by der?",
+          "Forskerne sier at flommene kom før tørken. Hvorfor gjorde den rekkefølgen situasjonen verre enn om tørken hadde kommet først?",
+          "Vannanlegget var både khmerrikets styrke og dets svakhet. Forklar hvordan begge deler kan være sant samtidig."
+        ],
+        "gaaVidere": [
+          "Finn ut hvor Norge henter drikkevannet sitt fra, og hva som skjer hvis det systemet svikter. Hvem har ansvaret for å vedlikeholde det?",
+          "Diskuter i klassen: Angkor er et av de tydeligste eksemplene på at et samfunn kan bli for avhengig av ett system. Hvilke systemer er vi mest avhengige av i dag?",
+          "Skriv en kort tekst fra en bonde ved Angkor i 1403. Det har ikke regnet på lenge, og kanalen forbi marka di er full av sand. Hva gjør du?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvilken konge grunnla Angkor som hovedstad i år 802?",
+            "options": [
+              "Jayavarman 2",
+              "Suryavarman 2",
+              "Jayavarman 7",
+              "Henri Mouhot"
+            ],
+            "answer": "Jayavarman 2"
+          },
+          {
+            "question": "Hva er en baray?",
+            "options": [
+              "Et stort kunstig vannmagasin med jordvoller rundt",
+              "Et tårn med fire ansikter hugget i stein",
+              "En tittel som betyr gudekonge",
+              "En type ris som tåler tørke"
+            ],
+            "answer": "Et stort kunstig vannmagasin med jordvoller rundt"
+          },
+          {
+            "question": "Hvor stort område dekket radarkartet over Angkor fra 2007?",
+            "options": [
+              "2 848 kvadratkilometer",
+              "160 kvadratkilometer",
+              "45 kvadratkilometer",
+              "12 000 kvadratkilometer"
+            ],
+            "answer": "2 848 kvadratkilometer"
+          },
+          {
+            "question": "Hvordan fant forskerne ut hvordan klimaet i Sørøst-Asia var på 1300- og 1400-tallet?",
+            "options": [
+              "De telte årringer i gamle trær i Vietnam",
+              "De leste dagbøker fra khmerkongene",
+              "De målte vannstanden i Tonlé Sap i dag",
+              "De fant værmeldinger hugget inn i Angkor Wat"
+            ],
+            "answer": "De telte årringer i gamle trær i Vietnam"
+          },
+          {
+            "question": "Hva skjedde med Angkor i 1431?",
+            "options": [
+              "Thaihærer erobret og plyndret byen",
+              "Et jordskjelv ødela Angkor Wat",
+              "Franskmennene overtok byen",
+              "Byen ble lagt under vann av Tonlé Sap"
+            ],
+            "answer": "Thaihærer erobret og plyndret byen"
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Buckley, B. M., Anchukaitis, K. J., Penny, D., Fletcher, R., Cook, E. R., Sano, M., Nam, L. C., Wichienkeeo, A., Minh, T. T. & Hong, T. M. (2010). Climate as a contributing factor in the demise of Angkor, Cambodia. *Proceedings of the National Academy of Sciences, 107*(15), 6748-6752.",
+          "Evans, D., Pottier, C., Fletcher, R., Hensley, S., Tapley, I., Milne, A. & Barbetti, M. (2007). A comprehensive archaeological map of the world's largest preindustrial settlement complex at Angkor, Cambodia. *Proceedings of the National Academy of Sciences, 104*(36), 14277-14282.",
+          "Filseth, G. (2024). *Kambodsjas historie*. Store norske leksikon. Hentet 11.09.2026 fra https://snl.no/Kambodsjas_historie",
+          "Høidahl, G. (2026). *Angkor*. Store norske leksikon. Hentet 11.09.2026 fra https://snl.no/Angkor",
+          "The Editors of Encyclopaedia Britannica. (2026). *Angkor Wat*. Encyclopaedia Britannica. Hentet 11.09.2026 fra https://www.britannica.com/topic/Angkor-Wat"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

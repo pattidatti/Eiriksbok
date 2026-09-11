@@ -143,6 +143,10 @@ const GAZETTEER = {
     korea: { lat: 36.5, lng: 127.8, label: 'Korea', kind: 'land', countryId: 410 },
     vietnam: { lat: 16.0, lng: 108.0, label: 'Vietnam', kind: 'land', countryId: 704 },
     indonesia: { lat: -2.5, lng: 118.0, label: 'Indonesia', kind: 'land', countryId: 360 },
+    kambodsja: { lat: 12.6, lng: 104.9, label: 'Kambodsja', kind: 'land', countryId: 116 },
+    angkor: { lat: 13.41, lng: 103.87, label: 'Angkor', kind: 'by', countryId: 116 },
+    khmerriket: { lat: 13.41, lng: 103.87, label: 'Khmerriket', kind: 'imperium', countryId: 116 },
+    'sorost-asia': { lat: 10.0, lng: 106.0, label: 'Sørøst-Asia', kind: 'region' },
     mongolene: { lat: 46.9, lng: 103.8, label: 'Mongolriket', kind: 'imperium', countryId: 496 },
 
     // --- Oseania ---
