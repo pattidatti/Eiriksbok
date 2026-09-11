@@ -2326,6 +2326,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "angkor-og-khmerriket",
+      "title": "Angkor: byen som var bygget av vann",
+      "description": "Khmerriket bygde verdens største by før industrien på et vannsystem av kunstige innsjøer og kanaler, og falt da systemet brøt sammen.",
+      "startDate": 802,
+      "endDate": 1431,
+      "displayDate": "802-1431",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "middelalderen",
+      "link": "/historie/middelalderen/angkor-og-khmerriket",
+      "tags": [
+        "historie",
+        "middelalderen",
+        "angkor",
+        "khmerriket",
+        "kambodsja",
+        "sorost-asia",
+        "klima"
+      ],
+      "lat": 13.41,
+      "lng": 103.87,
+      "placeLabel": "Angkor",
+      "placeCountryId": 116,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "myklebust-skipet",
       "title": "Myklebust-skipet brennes",
       "description": "En spektakulær begravelse der Norges største vikingskip brennes i en haug på Nordfjordeid.",

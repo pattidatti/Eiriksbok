@@ -51,6 +51,14 @@
       "kind": "region",
       "source": "seed"
     },
+    "angkor": {
+      "lat": 13.41,
+      "lng": 103.87,
+      "label": "Angkor",
+      "kind": "by",
+      "countryId": 116,
+      "source": "seed"
+    },
     "angola": {
       "lat": -11.2,
       "lng": 17.9,
@@ -384,12 +392,28 @@
       "countryId": 752,
       "source": "seed"
     },
+    "kambodsja": {
+      "lat": 12.6,
+      "lng": 104.9,
+      "label": "Kambodsja",
+      "kind": "land",
+      "countryId": 116,
+      "source": "seed"
+    },
     "kenya": {
       "lat": 0,
       "lng": 37.9,
       "label": "Kenya",
       "kind": "land",
       "countryId": 404,
+      "source": "seed"
+    },
+    "khmerriket": {
+      "lat": 13.41,
+      "lng": 103.87,
+      "label": "Khmerriket",
+      "kind": "imperium",
+      "countryId": 116,
       "source": "seed"
     },
     "kina": {
@@ -675,6 +699,13 @@
       "countryId": 643,
       "source": "seed"
     },
+    "sorost-asia": {
+      "lat": 10,
+      "lng": 106,
+      "label": "Sørøst-Asia",
+      "kind": "region",
+      "source": "seed"
+    },
     "sovjet": {
       "lat": 61.5,
       "lng": 90,
@@ -807,7 +838,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 339
+      "count": 341
     },
     {
       "tag": "dekolonisering",
@@ -862,12 +893,12 @@
       "count": 36
     },
     {
-      "tag": "demokrati",
-      "count": 32
+      "tag": "middelalderen",
+      "count": 33
     },
     {
-      "tag": "middelalderen",
-      "count": 31
+      "tag": "demokrati",
+      "count": 32
     },
     {
       "tag": "1800-tallet",
@@ -1038,6 +1069,10 @@
       "count": 12
     },
     {
+      "tag": "klima",
+      "count": 12
+    },
+    {
       "tag": "rettsstat",
       "count": 12
     },
@@ -1095,10 +1130,6 @@
     },
     {
       "tag": "forhistorie",
-      "count": 10
-    },
-    {
-      "tag": "klima",
       "count": 10
     },
     {

@@ -22,6 +22,7 @@ import { MapCarousel } from './MapCarousel';
 // Lazy-loaded components for better performance
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
+const AngkorLagForLag = lazy(() => import('./content/interactive/AngkorLagForLag').then(m => ({ default: m.AngkorLagForLag })));
 const HvorforKomDe = lazy(() => import('./content/interactive/HvorforKomDe').then(m => ({ default: m.HvorforKomDe })));
 const KrigsseilernesRegnskap = lazy(() => import('./content/interactive/KrigsseilernesRegnskap').then(m => ({ default: m.KrigsseilernesRegnskap })));
 const SvalbardTraktatTest = lazy(() => import('./content/interactive/SvalbardTraktatTest').then(m => ({ default: m.SvalbardTraktatTest })));
@@ -538,6 +539,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ParallelleSivilisasjoner,
     Quiz,
     Oppgaver,
+    AngkorLagForLag,
     KrigsseilernesRegnskap,
     AmerikaBevisSortering,
     GrenseTegner,

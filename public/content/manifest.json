@@ -6607,6 +6607,22 @@
                 "norge"
               ],
               "createdDate": "2026-09-09T00:00:00Z"
+            },
+            {
+              "id": "angkor-og-khmerriket",
+              "title": "Angkor: byen som var bygget av vann",
+              "description": "Khmerriket bygde verdens største by før industrien på et vannsystem av kunstige innsjøer og kanaler, og falt da systemet brøt sammen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "middelalderen",
+                "angkor",
+                "khmerriket",
+                "kambodsja",
+                "sorost-asia",
+                "klima"
+              ],
+              "createdDate": "2026-09-11T00:00:00Z"
             }
           ]
         },

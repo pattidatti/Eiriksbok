@@ -10,6 +10,7 @@ const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
+const AngkorVannaaret3D = lazy(() => import('./AngkorVannaaret3D'));
 const Skattekaravanen3D = lazy(() => import('./Skattekaravanen3D'));
 const Gjenreisningen3D = lazy(() => import('./Gjenreisningen3D'));
 const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
@@ -276,7 +277,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Finn Howland',
         description:
             'Amelia Earhart skulle finne Howland - en øy bare 2,4 km lang - etter 4000 km over åpent hav. Juster kursen med spaken og se hvor mange kilometer du bommer for hver lille grad du er feil. Lyspæren: en feil på bare én grad bommer med rundt 70 km, og øya er en prikk i havet. Uten radiopeiling var oppgaven nesten umulig, og derfor er forsvinningen fortsatt en gåte.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./EarhartStillehavet3D'),
         Component: EarhartStillehavet3D as never,
     },
@@ -285,7 +286,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Målmerke-kartet',
         description:
             'Norge ligger som et kart foran deg, delt i fire landsdeler. For hvert målmerke skal du klikke landsdelen der trekket er mest kjent: tjukk l i øst, apokope i Trøndelag, palatalisering i nord og pronomenet «eg» i vest. Lyspæren: målmerkene tegner et kart. Når du kjenner de vanligste trekkene, kan du høre hvilken del av landet en dialekt kommer fra.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./MaalmerkeKartet3D'),
         Component: MaalmerkeKartet3D as never,
     },
@@ -303,7 +304,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Den lange vinteren',
         description:
             'Dra i årstallet fra 985 til 1450 og se den norrøne gården på Grønland sakte tømmes: beitet blir hvitt, sauene blir færre, det siste skipet fra Norge blir borte, og til slutt ligger gården tom. Lyspæren: slutten for nordboerne kom ikke som ett brått slag, men som en lang vinter der kaldere klima, tapt handel og isolasjon virket sammen over hundre år.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./DenLangeVinteren3D'),
         Component: DenLangeVinteren3D as never,
     },
@@ -330,7 +331,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Kappløpet om Afrika',
         description:
             'Du er en europeisk diplomat under kappløpet om Afrika. Klikk område etter område på kartet og plant flagg for stormaktene, til hele kontinentet er et lappeteppe av europeiske farger. Når alt er tatt, faller de rette grensestrekene på plass - rett gjennom landsbyene. Lyspæren: Europa tok hele Afrika bit for bit og tegnet grensene uten å spørre dem som bodde der.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./KapplopetOmAfrika3D'),
         Component: KapplopetOmAfrika3D as never,
     },
@@ -384,7 +385,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Slaget ved Fimreite',
         description:
             'Sognefjorden, 15. juni 1184. Kong Magnus Erlingsson har lenket skipene sine sammen på rekke for å stå stødig i kamp. Dra birkebeiner-skipet ditt ut til flåten, og klikk kongsskipet Mariasuden for å gå til angrep. Se hvordan lenken som skulle gjøre flåten sterk, drar naboskipene ned i dypet sammen med den. Lyspæren: det som skal gjøre deg trygg, kan bli fellen som senker deg.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Fimreite3D'),
         Component: Fimreite3D as never,
     },
@@ -762,7 +763,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Teselskapet i Boston',
         description:
             'Boston havn, natt til 16. desember 1773. Tre skip ligger fulle av te som britene har lagt skatt på. Dra tekiste etter tekiste over rekka og se dem plaske ned i havet. Lyspæren: kolonistene nektet å betale en skatt de ikke fikk stemme om, og valgte heller å ødelegge teen enn å gi etter. Britene svarte med å stenge havna, og protesten førte et langt skritt nærmere åpen krig.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Teselskapet3D'),
         Component: Teselskapet3D as never,
     },
@@ -901,6 +902,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         loader: () => import('./Gjenreisningen3D'),
         Component: Gjenreisningen3D as never,
     },
+    'angkor-vannaaret-3d': {
+        id: 'angkor-vannaaret-3d',
+        title: 'Angkors vannår',
+        description:
+            'Styr sluseportene i barayen gjennom regntid, storflom og tørkeåret 1403, og hold rismarkene i live.',
+        estimatedSeconds: 105,
+        loader: () => import('./AngkorVannaaret3D'),
+        Component: AngkorVannaaret3D as never,
+    },
     'hamskiftet-3d': {
         id: 'hamskiftet-3d',
         title: 'Det store hamskiftet',
@@ -1005,7 +1015,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Vesterled: sjøveien til Amerika',
         description:
             'Seil den norrøne ruten vestover i 3D. Hopp fra land til land - Norge, Island, Grønland, Vinland - og se hvordan nordboerne nådde Amerika uten å krysse hele Atlanteren i ett sprang.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Vesterled3D'),
         Component: Vesterled3D as never,
     },
@@ -1068,7 +1078,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Frihetsvakten',
         description:
             'Du er taleman i den svenske riksdagen under frihetstiden. Tronen bak deg er tom: etter 1720 var det de fire stendene som bestemte, ikke kongen. Men når makten ligger hos mange, blir hver enkelt stemme verdt å kjøpe. Fremmede makter legger pengepunger på benkene, og du har fire sekunder på deg til å klikke delegaten og skyve pengene tilbake. Rekker du det ikke, er stemmen kjøpt ut samlingen. Blir for mange kjøpt, klarer ikke riksdagen å bestemme noe. Lyspæren: da makten flyttet seg fra én konge til en hel forsamling, ble den ikke tryggere - den ble bare billigere å kjøpe, og det tomrommet red Gustav 3 inn i 19. august 1772.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Frihetsvakten3D'),
         Component: Frihetsvakten3D as never,
     },
@@ -1266,7 +1276,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Streikefronten',
         description:
             'Rekrutter alle fem arbeidergruppene til streiken i en 1890-talls fabrikk i Kristiania. Klikk på gruppene og se dem marsjere til streikefronten. Når alle er med, stanser fabrikken. Lyspæren: alene kan du klage - men organisert kan du endre.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Streikefronten3D'),
         Component: Streikefronten3D as never,
     },
@@ -1293,7 +1303,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Ansiktene i mengden',
         description:
             'En gruppe er gjort om til grå, ansiktsløse skikkelser med et propaganda-symbol over seg - "dem". Klikk hver skikkelse og se enkeltmennesket bak: egen farge, ansikt og detalj. Etter hvert som ansiktene kommer fram, smuldrer propagandaen og muren mellom "oss" og "dem" synker. Lyspæren: det er vanskelig å hate dem du ser som mennesker.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./AnsikteneIMengden3D'),
         Component: AnsikteneIMengden3D as never,
     },
@@ -1302,7 +1312,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Hold grensa di',
         description:
             'Du står i sentrum på din egen grenselinje. Fem relasjoner lener seg inn med et press som krysser en grense - og jo nærmere de står, desto hardere presser de. Klikk hver og hold grensa. De som respekterer den, blir stående hos deg. Gjengen som bare ga deg et ultimatum, forsvinner når du står for noe. Lyspæren: det er vanskeligst å si nei til dem du står nærmest.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Grenselinja3D'),
         Component: Grenselinja3D as never,
     },
@@ -1329,7 +1339,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Bygg argumentbroen',
         description:
             'Et bredt gap skiller Belegg-tårnet fra Påstand-tårnet. Tre planker svever i lufta - klikk den som virkelig forklarer hvorfor belegget støtter påstanden. Riktig planke glir på plass og broen holder. Feil planke faller i kløften. Lyspæren: uten forklaringen henger påstand og belegg på hver sin side av tomrommet.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Argumentbroen3D'),
         Component: Argumentbroen3D as never,
     },
@@ -1365,7 +1375,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Spleiselaget',
         description:
             'Velferdsstaten som spleiselag i 3D: koble innbyggerne på felleskassa og se pengene flyte inn etter evne (den med høyest inntekt betaler mest) og ut etter behov (gratis skole, helsehjelp, pensjon). Lyspæren: velferd bærer bare når nesten alle er med - universelt, solidarisk og obligatorisk.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Spleiselaget3D'),
         Component: Spleiselaget3D as never,
     },
@@ -1545,7 +1555,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Samsaras kretsløp',
         description:
             'Kjenn buddhismens kjerneinnsikt på kroppen: tre orbiterende gifter - Grådighet, Hat og Uvitenhet - holder sjelen fanget i Samsaras kretsløp. Klikk bort én gift om gangen og se sjelen lysne. Når alle tre er sluknet, oppnår sjelen Nirvana. Lyspæren: "Nirvana" betyr bokstavelig "utblåsing" - som å blåse ut en flamme.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./SamsaraSyklusen3D'),
         Component: SamsaraSyklusen3D as never,
     },
@@ -1572,7 +1582,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Atman søker Brahman',
         description:
             'Kjenn hinduismens kjerneidé på kroppen: Atman (sjelen) kretser rundt Brahman (det universelle) fanget i Samsara. Aktiver de tre yoga-veiene - Karma Yoga, Jnana Yoga og Bhakti Yoga - og se sjelen spirale innover og smelte inn i Brahman. Lyspæren: Atman og Brahman er identiske - gjenforeningen ER Moksha.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./MokshaVeien3D'),
         Component: MokshaVeien3D as never,
     },
@@ -1581,7 +1591,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Vekten i Wien',
         description:
             'Etter Napoleon var Frankrike blitt en kjempe. Dra de fire stormaktene Storbritannia, Russland, Preussen og Østerrike opp på den tomme siden av vippevekten, og se at den først blir vannrett når alle fire er på plass. Lyspæren: det krevde flere stormakter sammen å balansere én sterk stat, og denne maktbalansen holdt Europa stabilt i nesten hundre år.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./VektenIWien3D'),
         Component: VektenIWien3D as never,
     },
@@ -1752,7 +1762,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Vend mot Mekka',
         description:
             'Dra bønneteppet ditt rundt til pilen peker mot Kaba, det svarte huset i Mekka. To andre bedende står allerede vendt mot samme punkt fra hver sin kant, så du ser at alle retningene møtes i Mekka. Lyspæren: uansett hvor i verden en muslim er, vender hen seg mot det samme punktet når hen ber. Retningen kalles qibla, og den binder over en milliard mennesker sammen.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./VendMotMekka3D'),
         Component: VendMotMekka3D as never,
     },
@@ -1842,7 +1852,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Utnapisjtims ark',
         description:
             'Flommen er på vei mot byen Shuruppak ved Eufrat, og guden Ea har advart deg i drømme. Du har under ett minutt på deg: dra familien, dyra, kornet og oljekrukka ut til arken mens regnet tetner, og la gullkista og kongetronen stå igjen - feil last stjeler tid du ikke har. Rekker du å tette døra, stiger arken med vannet, og du tenner offerbålet på taket. Lyspæren: oljen måtte med fordi gudene i Mesopotamia var avhengige av menneskene sine. Uten mennesker var det ingen igjen til å ofre til dem.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./UtnapisjtimsArk3D'),
         Component: UtnapisjtimsArk3D as never,
     },
@@ -1932,7 +1942,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Innløsningen',
         description:
             'Et russisk bondetun rett etter 1861. Du er fri, men jorda må kjøpes tilbake. Dra kornvogna mellom åkeren, skattefutens bord og huset, og velg hvem som skal få kornet når det ikke rekker til begge. Rekker du ikke terminen, tar skattefuten en teig, og da vokser det mindre neste år. Lyspæra: friheten kom med en regning som skulle betales med det samme kornet familien levde av.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Innlosningen3D'),
         Component: Innlosningen3D as never,
     },
@@ -1950,7 +1960,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Livsveien',
         description:
             'En person går fra fødsel til livets slutt langs en vei, og hen stopper ikke opp for å vente på deg. Fire milepæler står ubemerket langs veien. Dra riktig seremoni ut til hver av dem før vandreren rekker fram, ellers passerer øyeblikket i stillhet. Lyspæra: livssynshumanismen markerer nøyaktig de samme fire punktene i livet som religionene gjør, men det er mennesker som gir øyeblikket vekt.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Livsveien3D'),
         Component: Livsveien3D as never,
     },
@@ -1986,7 +1996,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         title: 'Seremonien i forfedrehallen',
         description:
             'Du står som yngste embetsmann bakerst i en konfusiansk forfedrehall i Kina rundt år 500 fvt. Den eldste slår gongen ved alteret, og et bukk ruller nedover rekkene mot deg. Hold inne for å bøye deg, og treff øyeblikket da bukket når fram til din plass. Uroen i hallen vokser både når du glemmer bukket og når du blir stående bøyd hele tiden, og blir den for stor, bryter seremonien sammen. Lyspæra: li - de faste formene - var ikke pynt for Konfucius. Å gjøre riktig ting til riktig tid var selve treningen i å høre til et fellesskap.',
-        estimatedSeconds: 110,
+        estimatedSeconds: 105,
         loader: () => import('./Forfedrehallen3D'),
         Component: Forfedrehallen3D as never,
     },

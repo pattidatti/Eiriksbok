@@ -1,5 +1,5 @@
 {
-  "buildId": 51834674675477,
+  "buildId": 166016828970397,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2557,6 +2557,9 @@
     ],
     "al-andalus": [
       "content/historie/middelalderen/al-andalus.json"
+    ],
+    "angkor-og-khmerriket": [
+      "content/historie/middelalderen/angkor-og-khmerriket.json"
     ],
     "boktrykkerkunsten": [
       "content/historie/middelalderen/boktrykkerkunsten.json",
@@ -5630,6 +5633,7 @@
     "historie/menneskets-tidlige-historie/menneskets-tidlige-historie": "content/historie/menneskets-tidlige-historie/menneskets-tidlige-historie.json",
     "historie/menneskets-tidlige-historie/stillehavets-sjofarere": "content/historie/menneskets-tidlige-historie/stillehavets-sjofarere.json",
     "historie/middelalderen/al-andalus": "content/historie/middelalderen/al-andalus.json",
+    "historie/middelalderen/angkor-og-khmerriket": "content/historie/middelalderen/angkor-og-khmerriket.json",
     "historie/middelalderen/boktrykkerkunsten": "content/historie/middelalderen/boktrykkerkunsten.json",
     "historie/middelalderen/bysantinske-riket": "content/historie/middelalderen/bysantinske-riket.json",
     "historie/middelalderen/det-hellige-romerske-rike": "content/historie/middelalderen/det-hellige-romerske-rike.json",
