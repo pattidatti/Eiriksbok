@@ -4689,6 +4689,20 @@
               ],
               "createdDate": "2026-08-05T09:33:48+02:00",
               "lastUpdated": "2026-08-06T00:35:48+02:00"
+            },
+            {
+              "id": "rode-khmer-kambodsja",
+              "title": "Røde Khmer: året null i Kambodsja",
+              "description": "Regimet som tømte en hovedstad på én dag og ville bygge samfunnet på nytt fra år null.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "folkemord",
+                "kambodsja",
+                "kald-krig",
+                "asia",
+                "ideologi"
+              ],
+              "createdDate": "2026-09-12T00:00:00Z"
             }
           ]
         },

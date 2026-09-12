@@ -877,12 +877,12 @@
       "count": 40
     },
     {
-      "tag": "religion",
-      "count": 39
+      "tag": "kald-krig",
+      "count": 40
     },
     {
-      "tag": "kald-krig",
-      "count": 38
+      "tag": "religion",
+      "count": 39
     },
     {
       "tag": "middelalder",
@@ -973,6 +973,10 @@
       "count": 21
     },
     {
+      "tag": "folkemord",
+      "count": 21
+    },
+    {
       "tag": "steinalder",
       "count": 20
     },
@@ -990,10 +994,6 @@
     },
     {
       "tag": "olje",
-      "count": 19
-    },
-    {
-      "tag": "folkemord",
       "count": 19
     },
     {
@@ -1389,6 +1389,10 @@
       "count": 6
     },
     {
+      "tag": "ideologi",
+      "count": 6
+    },
+    {
       "tag": "borgerrettigheter",
       "count": 6
     },
@@ -1722,10 +1726,6 @@
     },
     {
       "tag": "sosiolekt",
-      "count": 4
-    },
-    {
-      "tag": "ideologi",
       "count": 4
     },
     {
