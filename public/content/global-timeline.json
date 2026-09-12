@@ -11550,6 +11550,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "rode-khmer-kambodsja",
+      "title": "Røde Khmer: året null i Kambodsja",
+      "description": "Regimet som tømte en hovedstad på én dag og ville bygge samfunnet på nytt fra år null.",
+      "startDate": 1975,
+      "endDate": 1979,
+      "displayDate": "1975-1979",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "den-kalde-krigen",
+      "link": "/historie/den-kalde-krigen/rode-khmer-kambodsja",
+      "tags": [
+        "folkemord",
+        "kambodsja",
+        "kald-krig",
+        "asia",
+        "ideologi"
+      ],
+      "lat": 12.6,
+      "lng": 104.9,
+      "placeLabel": "Kambodsja",
+      "placeCountryId": 116,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "arbeidsrett",
       "title": "Spillereglene i arbeidslivet",
       "description": "Spillereglene bak drømmejobben. Lær om arbeidsmiljøloven, rettigheter og plikter.",

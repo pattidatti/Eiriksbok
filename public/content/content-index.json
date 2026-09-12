@@ -1,5 +1,5 @@
 {
-  "buildId": 166016828970397,
+  "buildId": 51865025318671,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2223,6 +2223,9 @@
     ],
     "peace-lines-belfast": [
       "content/historie/den-kalde-krigen/peace-lines-belfast.json"
+    ],
+    "rode-khmer-kambodsja": [
+      "content/historie/den-kalde-krigen/rode-khmer-kambodsja.json"
     ],
     "romkapplopet": [
       "content/historie/den-kalde-krigen/romkapplopet.json"
@@ -5522,6 +5525,7 @@
     "historie/den-kalde-krigen/operasjon-ajax": "content/historie/den-kalde-krigen/operasjon-ajax.json",
     "historie/den-kalde-krigen/oversikt": "content/historie/den-kalde-krigen/oversikt.json",
     "historie/den-kalde-krigen/peace-lines-belfast": "content/historie/den-kalde-krigen/peace-lines-belfast.json",
+    "historie/den-kalde-krigen/rode-khmer-kambodsja": "content/historie/den-kalde-krigen/rode-khmer-kambodsja.json",
     "historie/den-kalde-krigen/romkapplopet": "content/historie/den-kalde-krigen/romkapplopet.json",
     "historie/den-kalde-krigen/suez-krisen": "content/historie/den-kalde-krigen/suez-krisen.json",
     "historie/den-kalde-krigen/tsjernobyl": "content/historie/den-kalde-krigen/tsjernobyl.json",

@@ -854,6 +854,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     NullOppdagelsen: lazy(() => import('./content/interactive/NullOppdagelsen').then(m => ({ default: m.NullOppdagelsen }))),
     Oljepengevalget: lazy(() => import('./content/interactive/Oljepengevalget').then(m => ({ default: m.Oljepengevalget }))),
     KategoriMaskinen: lazy(() => import('./content/interactive/KategoriMaskinen').then(m => ({ default: m.KategoriMaskinen }))),
+    MistankeMaleren: lazy(() => import('./content/interactive/MistankeMaleren').then(m => ({ default: m.MistankeMaleren }))),
 
     // Demography
     DTMSimulator,

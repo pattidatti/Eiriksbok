@@ -10,6 +10,7 @@ const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
+const UtAvByen3D = lazy(() => import('./UtAvByen3D'));
 const AngkorVannaaret3D = lazy(() => import('./AngkorVannaaret3D'));
 const Skattekaravanen3D = lazy(() => import('./Skattekaravanen3D'));
 const Gjenreisningen3D = lazy(() => import('./Gjenreisningen3D'));
@@ -919,6 +920,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Hamskiftet3D'),
         Component: Hamskiftet3D as never,
+    },
+    'ut-av-byen-3d': {
+        id: 'ut-av-byen-3d',
+        title: 'Ut av byen',
+        description:
+            'Førstepersons marsj ut av Phnom Penh 17. april 1975: hold inne for å gå, slipp for å hvile, og klikk bylter av kjerra når lasten blir for tung. Utmattelse og mørke presser fram valget om hva du klarer å ta med deg videre.',
+        estimatedSeconds: 150,
+        loader: () => import('./UtAvByen3D'),
+        Component: UtAvByen3D as never,
     },
     'skattekaravanen-3d': {
         id: 'skattekaravanen-3d',
