@@ -5,7 +5,7 @@
   "year": "10000 fvt - 5800 fvt",
   "category": "Verdenshistorie",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/menneskets-tidlige-historie/doggerland-hero.webp",
   "details": [
     "Nordsjøen var en gang tørt land på størrelse med Storbritannia",
     "Havet steg bare noen millimeter i året, men det holdt til å slette et helt land",
@@ -19,7 +19,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/menneskets-tidlige-historie/doggerland-01.webp",
       "alt": "Fisketråler drar opp mammuttann fra Nordsjøen",
       "caption": "Fiskere i Nordsjøen har i over hundre år fått opp mammutknokler og steinalderredskaper i garna."
     },
@@ -102,7 +102,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/menneskets-tidlige-historie/doggerland-02.webp",
       "alt": "Steinalderfamilie flytter leiren fra oversvømt slette",
       "caption": "Hver generasjon flyttet leiren litt lenger unna vannet. Ingen av dem opplevde det som en flom."
     },
@@ -148,7 +148,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/menneskets-tidlige-historie/doggerland-03.webp",
       "alt": "Dykker undersøker steinalderboplass på havbunnen",
       "caption": "Boplassene ble ikke ødelagt da vannet kom. De ligger fortsatt der, bevart under havbunnen."
     },

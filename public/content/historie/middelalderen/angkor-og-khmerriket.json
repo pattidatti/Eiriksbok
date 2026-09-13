@@ -5,7 +5,7 @@
   "year": "802-1431",
   "category": "Middelalder",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/middelalderen/angkor-og-khmerriket-hero.webp",
   "details": [
     "Angkor var hovedstaden i khmerriket fra 802 til 1431 og lå der byen Siem Reap i Kambodsja ligger i dag.",
     "Radarkart fra 2007 viste at Angkor dekket 2 848 kvadratkilometer. Det gjør byen til det største bysamfunnet i verden før industrien.",
@@ -20,7 +20,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/middelalderen/angkor-og-khmerriket-01.webp",
       "alt": "Steintårn formet som lotusblomster rager over tett jungel i morgenlys",
       "caption": "Slik møtte Angkor Wat de første europeiske besøkende: fem tårn over en skog som hadde vokst rundt dem i fire hundre år."
     },
@@ -82,7 +82,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/middelalderen/angkor-og-khmerriket-02.webp",
       "alt": "Steinrelieff med rader av soldater og elefanter på vei til krig",
       "caption": "Sju hundre meter med relieffer forteller om guder, konger og kriger. Veggene er khmerrikets historiebok."
     },
@@ -142,7 +142,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/middelalderen/angkor-og-khmerriket-03.webp",
       "alt": "Uttørket kanalbunn med sprukket jord ved en forlatt steinsluse",
       "caption": "Når kanalen først var fylt av sand, hjalp det ikke hvor mye vann som lå i barayen."
     },
