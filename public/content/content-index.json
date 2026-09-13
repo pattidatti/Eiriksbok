@@ -1,5 +1,5 @@
 {
-  "buildId": 51865025318671,
+  "buildId": 82379731250412,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2548,6 +2548,9 @@
     ],
     "den-kognitive-revolusjonen": [
       "content/historie/menneskets-tidlige-historie/den-kognitive-revolusjonen.json"
+    ],
+    "doggerland": [
+      "content/historie/menneskets-tidlige-historie/doggerland.json"
     ],
     "gobekli-tepe": [
       "content/historie/menneskets-tidlige-historie/gobekli-tepe.json"
@@ -5633,6 +5636,7 @@
     "historie/mellomkrigstiden/usa": "content/historie/mellomkrigstiden/usa.json",
     "historie/menneskets-tidlige-historie/den-jordbruksrevolusjonen": "content/historie/menneskets-tidlige-historie/den-jordbruksrevolusjonen.json",
     "historie/menneskets-tidlige-historie/den-kognitive-revolusjonen": "content/historie/menneskets-tidlige-historie/den-kognitive-revolusjonen.json",
+    "historie/menneskets-tidlige-historie/doggerland": "content/historie/menneskets-tidlige-historie/doggerland.json",
     "historie/menneskets-tidlige-historie/gobekli-tepe": "content/historie/menneskets-tidlige-historie/gobekli-tepe.json",
     "historie/menneskets-tidlige-historie/menneskets-tidlige-historie": "content/historie/menneskets-tidlige-historie/menneskets-tidlige-historie.json",
     "historie/menneskets-tidlige-historie/stillehavets-sjofarere": "content/historie/menneskets-tidlige-historie/stillehavets-sjofarere.json",

@@ -21,6 +21,7 @@ const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const BankensBalansegang3D = lazy(() => import('./BankensBalansegang3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
+const Doggerland3D = lazy(() => import('./Doggerland3D'));
 const Livsveien3D = lazy(() => import('./Livsveien3D'));
 const Kornskuta3D = lazy(() => import('./Kornskuta3D'));
 const Vikinghjelmen3D = lazy(() => import('./Vikinghjelmen3D'));
@@ -2117,6 +2118,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./BeskjedenForSent3D'),
         Component: BeskjedenForSent3D as never,
+    },
+    'doggerland-synker': {
+        id: 'doggerland-synker',
+        title: 'Doggerland synker',
+        description:
+            'Nordsjøen var land, og du bor på det. Dra leiren fra holme til holme mens havet stiger uten å stoppe - hver holme østover ligger litt høyere, og til slutt er Doggerbanken alt som stikker opp. Blir du stående for lenge, går vannet over leiren. De forlatte ildstedene blir liggende og havner under vann, akkurat slik steinalderboplasser i dag finnes på havbunnen. Lyspæra: Doggerland gikk ikke under i én katastrofe, men så sakte at ingen generasjon merket det.',
+        estimatedSeconds: 150,
+        loader: () => import('./Doggerland3D'),
+        Component: Doggerland3D as never,
     },
     'scriptoriet-3d': {
         id: 'scriptoriet-3d',

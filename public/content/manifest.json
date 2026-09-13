@@ -7449,6 +7449,21 @@
               ],
               "createdDate": "2026-08-30T03:53:12+02:00",
               "lastUpdated": "2026-08-30T07:39:26+02:00"
+            },
+            {
+              "id": "doggerland",
+              "title": "Doggerland: landet under Nordsjøen",
+              "description": "Nordsjøen var en gang tørt land der folk jaktet og fisket. Havet steg noen millimeter i året, og det holdt til å slette hele landet.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "steinalder",
+                "nordsjoen",
+                "klima",
+                "havniva",
+                "norge",
+                "arkeologi"
+              ],
+              "createdDate": "2026-09-13T00:00:00Z"
             }
           ]
         },
