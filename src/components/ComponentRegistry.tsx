@@ -983,6 +983,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ShipmentTracker: lazy(() => import('./content/interactive/infrastruktur/ShipmentTracker').then(m => ({ default: m.ShipmentTracker }))),
     CascadeFailureSim: lazy(() => import('./content/interactive/infrastruktur/CascadeFailureSim').then(m => ({ default: m.CascadeFailureSim }))),
     RettighetsLas: lazy(() => import('./content/interactive/RettighetsLas').then(m => ({ default: m.RettighetsLas }))),
+    DenLangsommeFlommen: lazy(() => import('./content/interactive/DenLangsommeFlommen').then(m => ({ default: m.DenLangsommeFlommen }))),
     KongensMaktBinding,
     ParlamentetsJa,
     KongensSegl,

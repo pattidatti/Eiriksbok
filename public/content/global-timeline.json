@@ -78,6 +78,31 @@
       ]
     },
     {
+      "id": "doggerland",
+      "title": "Doggerland: landet under Nordsjøen",
+      "description": "Nordsjøen var en gang tørt land der folk jaktet og fisket. Havet steg noen millimeter i året, og det holdt til å slette hele landet.",
+      "startDate": -10000,
+      "endDate": -5800,
+      "displayDate": "10000 fvt - 5800 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "menneskets-tidlige-historie",
+      "link": "/historie/menneskets-tidlige-historie/doggerland",
+      "tags": [
+        "steinalder",
+        "nordsjoen",
+        "klima",
+        "havniva",
+        "norge",
+        "arkeologi"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "gobekli-tepe",
       "title": "Göbekli Tepe — tempelet eldre enn jordbruket",
       "description": "Et 11 500 år gammelt tempelanlegg i Tyrkia som snur teorien om sivilisasjon på hodet: religion kan ha drevet jordbruket fram, ikke omvendt.",

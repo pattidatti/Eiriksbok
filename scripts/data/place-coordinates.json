@@ -957,6 +957,10 @@
       "count": 23
     },
     {
+      "tag": "steinalder",
+      "count": 22
+    },
+    {
       "tag": "kristendom",
       "count": 22
     },
@@ -975,10 +979,6 @@
     {
       "tag": "folkemord",
       "count": 21
-    },
-    {
-      "tag": "steinalder",
-      "count": 20
     },
     {
       "tag": "samfunn",
@@ -1029,8 +1029,16 @@
       "count": 16
     },
     {
+      "tag": "arkeologi",
+      "count": 15
+    },
+    {
       "tag": "fn",
       "count": 15
+    },
+    {
+      "tag": "klima",
+      "count": 14
     },
     {
       "tag": "jernalder",
@@ -1053,10 +1061,6 @@
       "count": 14
     },
     {
-      "tag": "arkeologi",
-      "count": 13
-    },
-    {
       "tag": "kollaps",
       "count": 12
     },
@@ -1066,10 +1070,6 @@
     },
     {
       "tag": "globalisering",
-      "count": 12
-    },
-    {
-      "tag": "klima",
       "count": 12
     },
     {
@@ -2026,6 +2026,14 @@
     },
     {
       "tag": "homo-sapiens",
+      "count": 2
+    },
+    {
+      "tag": "nordsjoen",
+      "count": 2
+    },
+    {
+      "tag": "havniva",
       "count": 2
     },
     {
