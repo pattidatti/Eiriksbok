@@ -80,6 +80,7 @@ const GAZETTEER = {
     firenze: { lat: 43.77, lng: 11.26, label: 'Firenze', kind: 'by', countryId: 380 },
     frankrike: { lat: 46.6, lng: 2.5, label: 'Frankrike', kind: 'land', countryId: 250 },
     frankerriket: { lat: 49.0, lng: 6.0, label: 'Frankerriket', kind: 'imperium', countryId: 250 },
+    gallia: { lat: 47.0, lng: 3.0, label: 'Gallia', kind: 'imperium', countryId: 250 },
     bastillen: { lat: 48.85, lng: 2.37, label: 'Paris', kind: 'by', countryId: 250 },
     tyskland: { lat: 51.2, lng: 10.4, label: 'Tyskland', kind: 'land', countryId: 276 },
     hansa: { lat: 53.87, lng: 10.68, label: 'Hansaforbundet', kind: 'imperium', countryId: 276 },

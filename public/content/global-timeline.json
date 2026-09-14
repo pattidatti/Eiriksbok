@@ -568,6 +568,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "kelterne",
+      "title": "Kelterne: Folket som lot andre skrive historien",
+      "description": "Jernalderens største folkegruppe i Europa skrev aldri sin egen historie, så fienden og spaden forteller den for dem.",
+      "startDate": -1100,
+      "endDate": -50,
+      "displayDate": "1100 fvt - 50 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "jordbruk-og-sivilisasjoner",
+      "link": "/historie/jordbruk-og-sivilisasjoner/kelterne",
+      "tags": [
+        "kelterne",
+        "jernalder",
+        "gallia",
+        "druider",
+        "kildekritikk",
+        "tidlige-sivilisasjoner"
+      ],
+      "lat": 47,
+      "lng": 3,
+      "placeLabel": "Gallia",
+      "placeCountryId": 250,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "frashokereti",
       "title": "Frashokereti: Zoroastrismens dommedag",
       "description": "Den eldste systematiske forestillingen om en lineær verdensende der det gode seirer over det onde.",
