@@ -1,5 +1,5 @@
 {
-  "buildId": 82379731250412,
+  "buildId": 203304427096584,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2410,6 +2410,9 @@
     ],
     "jordbruk-og-sivilisasjoner": [
       "content/historie/jordbruk-og-sivilisasjoner/jordbruk-og-sivilisasjoner.json"
+    ],
+    "kelterne": [
+      "content/historie/jordbruk-og-sivilisasjoner/kelterne.json"
     ],
     "kina": [
       "content/historie/jordbruk-og-sivilisasjoner/kina.json"
@@ -5590,6 +5593,7 @@
     "historie/jordbruk-og-sivilisasjoner/fonikerne": "content/historie/jordbruk-og-sivilisasjoner/fonikerne.json",
     "historie/jordbruk-og-sivilisasjoner/indusdalen": "content/historie/jordbruk-og-sivilisasjoner/indusdalen.json",
     "historie/jordbruk-og-sivilisasjoner/jordbruk-og-sivilisasjoner": "content/historie/jordbruk-og-sivilisasjoner/jordbruk-og-sivilisasjoner.json",
+    "historie/jordbruk-og-sivilisasjoner/kelterne": "content/historie/jordbruk-og-sivilisasjoner/kelterne.json",
     "historie/jordbruk-og-sivilisasjoner/kina": "content/historie/jordbruk-og-sivilisasjoner/kina.json",
     "historie/jordbruk-og-sivilisasjoner/mesopotamia": "content/historie/jordbruk-og-sivilisasjoner/mesopotamia.json",
     "historie/kinas-historie/borgerkrigen": "content/historie/kinas-historie/borgerkrigen.json",

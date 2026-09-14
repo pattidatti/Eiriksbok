@@ -100,6 +100,7 @@ const Pompeii3D = lazy(() => import('./Pompeii3D'));
 const PakkAmerikakofferten3D = lazy(() => import('./PakkAmerikakofferten3D'));
 const Pyramidebyggeren3D = lazy(() => import('./Pyramidebyggeren3D'));
 const Bronseruta3D = lazy(() => import('./Bronseruta3D'));
+const MurusGallicus3D = lazy(() => import('./MurusGallicus3D'));
 const KalmarKronene3D = lazy(() => import('./KalmarKronene3D'));
 const Pestrute3D = lazy(() => import('./Pestrute3D'));
 const KristendomSpredning3D = lazy(() => import('./KristendomSpredning3D'));
@@ -1524,6 +1525,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./Bronseruta3D'),
         Component: Bronseruta3D as never,
+    },
+    'murus-gallicus-3d': {
+        id: 'murus-gallicus-3d',
+        title: 'Bygg den galliske muren',
+        description:
+            'Bygg muren rundt en gallisk by før den romerske hæren kommer. Dra tømmerbunter og steinblokker bort til muren og legg dem vekselvis, lag for lag. To like lag oppå hverandre raser ned igjen og koster deg dyrebar tid. Står de seks lagene ferdig, kommer prøven: først ild mot muren, så rambukken. Lyspæren: Caesar beskrev selv denne muren. Steinen vernet den mot ild, og treverket vernet den mot rambukken. Fienden som kalte kelterne ville, måtte omtale byggekunsten deres med respekt.',
+        estimatedSeconds: 170,
+        loader: () => import('./MurusGallicus3D'),
+        Component: MurusGallicus3D as never,
     },
     'kalmar-kronene-3d': {
         id: 'kalmar-kronene-3d',

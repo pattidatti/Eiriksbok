@@ -7369,6 +7369,21 @@
                 "tidlige-sivilisasjoner"
               ],
               "createdDate": "2026-09-10T00:00:00Z"
+            },
+            {
+              "id": "kelterne",
+              "title": "Kelterne: Folket som lot andre skrive historien",
+              "description": "Jernalderens største folkegruppe i Europa skrev aldri sin egen historie, så fienden og spaden forteller den for dem.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "kelterne",
+                "jernalder",
+                "gallia",
+                "druider",
+                "kildekritikk",
+                "tidlige-sivilisasjoner"
+              ],
+              "createdDate": "2026-09-14T00:00:00Z"
             }
           ]
         },
