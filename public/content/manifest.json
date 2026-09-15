@@ -10165,6 +10165,21 @@
               ],
               "createdDate": "2026-07-21T16:26:22+02:00",
               "lastUpdated": "2026-07-21T16:26:22+02:00"
+            },
+            {
+              "id": "miljoetikk",
+              "title": "Miljøetikk: Er naturen verdt noe uten oss?",
+              "description": "Har naturen verdi bare fordi vi trenger den, eller også i seg selv? Om egenverdi, framtidige generasjoner og hvorfor Fosen-saken er så vanskelig.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "etikk",
+                "miljø",
+                "natur",
+                "bærekraft",
+                "egenverdi",
+                "klima"
+              ],
+              "createdDate": "2026-09-15T00:00:00Z"
             }
           ]
         }

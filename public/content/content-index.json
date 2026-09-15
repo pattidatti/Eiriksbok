@@ -1,5 +1,5 @@
 {
-  "buildId": 203304427096584,
+  "buildId": 46154891780258,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3048,6 +3048,9 @@
     "kunstig-intelligens-og-etikk": [
       "content/krle/etikk/kunstig-intelligens-og-etikk.json"
     ],
+    "miljoetikk": [
+      "content/krle/etikk/miljoetikk.json"
+    ],
     "naturrett": [
       "content/krle/etikk/naturrett.json"
     ],
@@ -5806,6 +5809,7 @@
     "krle/etikk/dyreetikk": "content/krle/etikk/dyreetikk.json",
     "krle/etikk/intro": "content/krle/etikk/intro.json",
     "krle/etikk/kunstig-intelligens-og-etikk": "content/krle/etikk/kunstig-intelligens-og-etikk.json",
+    "krle/etikk/miljoetikk": "content/krle/etikk/miljoetikk.json",
     "krle/etikk/naturrett": "content/krle/etikk/naturrett.json",
     "krle/etikk/nihilisme": "content/krle/etikk/nihilisme.json",
     "krle/etikk/non-aggression": "content/krle/etikk/non-aggression.json",
