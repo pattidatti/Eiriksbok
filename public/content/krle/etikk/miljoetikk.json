@@ -1,0 +1,348 @@
+{
+    "id": "miljoetikk",
+    "title": "Miljøetikk: Er naturen verdt noe uten oss?",
+    "layout": "rich",
+    "year": "1970",
+    "category": "Anvendt etikk",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-09-15",
+    "details": [
+        "Miljøetikk spør hva som er rett når naturen står på spill.",
+        "Naturen kan være verdifull fordi vi trenger den, eller verdifull i seg selv.",
+        "Hva du mener om det, avgjør hva du svarer i konkrete miljøkonflikter."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Sommeren 1970 satte en gruppe mennesker seg ned i anleggsveien i Eikesdalen i Møre og Romsdal. Bak dem sto maskinene som skulle flytte vannet i Mardøla over til et kraftverk. Den 25. juli klarte demonstrantene å stanse arbeidet helt, og de ble liggende i veien til 6. august (Tvedt, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "De tapte. Kraftverket sto ferdig i 1975. Men Mardøla-aksjonen var første gang noen i Norge brøt loven med vilje for å redde et stykke natur, og den utløste en debatt om vannkraft som fortsatt pågår. Tre år etter kom den første verneplanen for norske vassdrag (Tvedt, 2024)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Demonstranter sitter i anleggsveien foran maskiner ved fossen",
+            "caption": "Mardøla-aksjonen sommeren 1970. Demonstrantene stanset anleggsarbeidet i tolv dager før de ble båret bort."
+        },
+        {
+            "type": "text",
+            "content": "Blant dem som deltok i aksjonene mot Mardøla-utbyggingen, var filosofiprofessoren Arne Næss. Samme år ga han fra seg professorstillingen sin, 58 år gammel, for å bruke tiden på natur og filosofi (Bostad & Tranøy, 2025). Spørsmålet han stilte, er det samme du skal jobbe med her: har en foss verdi bare fordi vi kan lage strøm av den, eller har den verdi helt av seg selv?"
+        },
+        { "type": "header", "text": "Hva miljøetikk spør om" },
+        {
+            "type": "text",
+            "content": "Etikk handler om hva som er rett og galt å gjøre. Miljøetikk er den delen av etikken som spør hva som er rett når naturen står på spill (Tønnessen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Tre ting gjør slike valg vanskeligere enn de fleste andre valgene du tar."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Avstand i rom: den som blir rammet, bor ofte et helt annet sted enn den som bestemmer.",
+                "Avstand i tid: virkningen kommer kanskje om femti år, lenge etter at valget er tatt.",
+                "Avstand i art: den som taper, er ikke alltid et menneske. Det kan være en fugleart, en elv eller en skog."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Når den som betaler prisen verken er her, er født ennå eller kan si fra, blir det lett å la være å tenke på hen i det hele tatt. Derfor trenger vi å tenke gjennom det på forhånd."
+        },
+        { "type": "header", "text": "To måter noe kan være verdifullt på" },
+        {
+            "type": "text",
+            "content": "Tenk på en bussbillett. Den er verdifull fordi den får deg dit du skal. Sluttet bussen å gå, ville billetten ikke være verdt noe. Tenk så på en venn. Vennen din er ikke verdifull fordi hen er nyttig for deg. Hen er verdifull i seg selv."
+        },
+        {
+            "type": "text",
+            "content": "Den forskjellen er nøkkelen i miljøetikken. Noe har nytteverdi når det er verdifullt som et middel til noe annet. Noe har egenverdi når det er verdifullt i seg selv, uansett om det også er nyttig for noen (Brennan & Lo, 2021)."
+        },
+        {
+            "type": "text",
+            "content": "Nesten alle er enige om at naturen har nytteverdi. Vi trenger rent vann, ren luft, mat, medisiner og materialer. Uenigheten begynner ved det neste spørsmålet: har naturen også egenverdi?"
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Nytteverdi og egenverdi",
+                "content": "Nytteverdi betyr at noe er verdifullt fordi det er til nytte for noen andre. En skog har nytteverdi som tømmer, turområde og karbonlager. Egenverdi betyr at noe er verdifullt i seg selv, og at det derfor ville vært et tap om det forsvant, selv om ingen fikk bruk for det. De to utelukker ikke hverandre: den samme skogen kan ha begge deler. Spørsmålet er om den har den siste."
+            }
+        },
+        { "type": "header", "text": "Tre svar på hvem som teller" },
+        {
+            "type": "text",
+            "content": "Miljøetikere svarer ulikt på hvem og hva som har egenverdi, og de tre vanligste svarene har egne navn."
+        },
+        {
+            "type": "text",
+            "content": "Et antroposentrisk syn setter mennesket i sentrum. Ordet kommer av det greske ordet for menneske. Da har bare mennesker egenverdi, og bare menneskelige interesser teller når vi skal bestemme (Tønnessen, 2026). Naturen skal likevel tas godt vare på, men fordi vi trenger den, ikke for dens egen skyld."
+        },
+        {
+            "type": "text",
+            "content": "Et biosentrisk syn utvider kretsen. Bios er gresk for liv. Da har både mennesker og andre levende vesener egenverdi, altså hvert enkelt dyr, hvert enkelt tre (Tønnessen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Et økosentrisk syn går enda et skritt. Da har også de store helhetene egenverdi: hele arter, hele skoger, hele elvesystemer (Tønnessen, 2026). Her er det ikke den enkelte fisken som teller mest, men at laksestammen i elva finnes."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at de som gir disse tre svarene, ikke trenger å være uenige om fakta. De kan være helt enige om hvor mye strøm et kraftverk gir, og hvor mange arter som forsvinner. De er uenige om hvem som skal telles med når regnestykket settes opp."
+        },
+        {
+            "type": "component",
+            "name": "NaturensVerdi",
+            "props": {
+                "title": "Hva er naturen verdt?",
+                "intro": "Dra i spaken. Se hvordan svarene under endrer seg, og prøv begge ytterpunktene.",
+                "leftLabel": "Verdifull fordi vi trenger den",
+                "rightLabel": "Verdifull i seg selv",
+                "dilemmas": [
+                    {
+                        "id": "elva",
+                        "question": "Ei elv kan bygges ut til vannkraft.",
+                        "answers": [
+                            "Bygg ut. Strøm til folk veier tyngst.",
+                            "Bygg ut, men la nok vann stå igjen til at elva lever.",
+                            "Bare hvis fisken og dyrelivet i elva klarer seg.",
+                            "Nei. Elva er et helt system, ikke en maskin som venter på å bli slått på."
+                        ]
+                    },
+                    {
+                        "id": "vindpark",
+                        "question": "En vindpark kutter klimagasser, men tar urørt fjell.",
+                        "answers": [
+                            "Bygg. Klimaendringer rammer mennesker, fjellet kjenner ingenting.",
+                            "Bygg, men legg parken der færrest folk og dyr blir berørt.",
+                            "Vanskelig. Både dyra i fjellet og folk i framtida taper noe her.",
+                            "Nei. Du kan ikke redde naturen ved å bygge ned naturen."
+                        ]
+                    },
+                    {
+                        "id": "furuskogen",
+                        "question": "En 300 år gammel furuskog som ingen mennesker besøker, kan hogges.",
+                        "answers": [
+                            "Hogg. Er skogen ikke til nytte for noen, taper ingen noe.",
+                            "Hogg, men plant ny skog etterpå.",
+                            "Nei. Trærne og dyra der lever, enten vi ser dem eller ikke.",
+                            "Nei. Det tok 300 år å bygge dette samspillet. Vi kan ikke lage det på nytt."
+                        ]
+                    }
+                ]
+            }
+        },
+        { "type": "header", "text": "Tenk deg det siste mennesket" },
+        {
+            "type": "text",
+            "content": "I 1973 laget filosofen Richard Routley et tankeeksperiment som fortsatt brukes i alle lærebøker om emnet. Se for deg at du er det aller siste mennesket på jorda. Alle andre er døde, og du kommer til å dø selv om noen timer. Før du dør, ødelegger du med vilje alt liv som er igjen: hver skog, hvert dyr, hver plante."
+        },
+        {
+            "type": "text",
+            "content": "Har du gjort noe galt? Ikke ett menneske blir skadet, for det finnes ingen igjen som kan skades. Likevel svarer de aller fleste med én gang at ja, dette er galt. Routley mente at nettopp den reaksjonen avslører noe: vi tror i praksis at naturen har en verdi som ikke kommer fra oss (Brennan & Lo, 2021)."
+        },
+        { "type": "header", "text": "De som ikke er født ennå" },
+        {
+            "type": "text",
+            "content": "Du trenger likevel ikke mene at en stein har egenverdi for å bry deg om miljøet. Mye av miljøetikken handler om noe helt annet: konflikten mellom oss som lever nå, og de som kommer etter oss (Tønnessen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det spesielle med framtidige generasjoner er at de ikke kan si fra. De kan ikke stemme ved valget, klage til kommunen eller gå i tog. De arver likevel alt vi bestemmer. Et lite barn som blir født i 2075, får en verden der noen valg allerede er tatt for hen, og der noen dører er lukket for godt."
+        },
+        {
+            "type": "text",
+            "content": "Det er nettopp derfor forskjellen mellom valg som lar seg gjøre om, og valg som ikke gjør det, betyr så mye i miljøetikken. Et hyttefelt kan rives. En vindturbin kan tas ned. En art som er utryddet, kommer aldri tilbake, uansett hvor mye penger vi bruker."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": { "gameId": "dalen-du-laner" }
+        },
+        { "type": "header", "text": "Hva sier norsk lov?" },
+        {
+            "type": "text",
+            "content": "Norge har skrevet miljøet inn i Grunnloven. Paragraf 112 kom inn i 1992 og kalles ofte miljøparagrafen."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Alle har rett til eit helsesamt miljø og ein natur der produksjonsevna og mangfaldet blir haldne ved lag.",
+                "author": "Grunnlova § 112, første ledd"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Les formuleringen en gang til. Paragrafen gir en rettighet til alle, altså til mennesker. Grunnloven verner naturen, men den gjør det først og fremst for vår skyld. Utgangspunktet i norsk rett er med andre ord ganske antroposentrisk. Paragrafen sier også at borgerne har rett til å vite hvordan naturmiljøet har det, og hvilke virkninger planlagte inngrep vil få (Grunnloven, 1814, § 112)."
+        },
+        {
+            "type": "text",
+            "content": "Naturmangfoldloven fra 2009 går et stykke lenger. Formålet er at naturen med sitt mangfold og sine økologiske prosesser skal tas vare på ved bærekraftig bruk og vern, både nå og i framtiden, og også som grunnlag for samisk kultur (naturmangfoldloven, 2009, § 1)."
+        },
+        {
+            "type": "text",
+            "content": "Den samme loven har en regel som kalles føre-var-prinsippet. Den sier at når det er risiko for alvorlig eller uopprettelig skade på naturmangfoldet, kan ikke mangel på kunnskap brukes som grunn til å la være å gjøre noe (naturmangfoldloven, 2009, § 9). Sagt enkelt: du kan ikke vente og se når det du risikerer, ikke lar seg reparere."
+        },
+        { "type": "header", "text": "Når to gode ting kolliderer" },
+        {
+            "type": "text",
+            "content": "De vanskeligste miljøsakene er sjelden natur mot penger. De er ofte godt mot godt. Fosen-saken er det tydeligste norske eksempelet."
+        },
+        {
+            "type": "text",
+            "content": "I 2010 ga norske myndigheter tillatelse til to store vindkraftverk på Fosen i Trøndelag. Roan kom i drift i 2019 med 71 turbiner, og Storheia året etter med 80 (Skogvang, 2025). Vindkraft gir strøm uten klimagasser, og klimaendringene rammer både mennesker og natur. Men fjellene som ble bygd ned, var vinterbeite for reinen til sørsamiske reindriftsfamilier."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Vindturbiner på et snødekt norsk fjell med reinsdyr i forgrunnen",
+            "caption": "Vindturbinene på Storheia. Den samme utbyggingen som kutter klimagasser, tar vinterbeitet til reinen."
+        },
+        {
+            "type": "text",
+            "content": "I oktober 2021 slo Høyesterett enstemmig fast at tillatelsene var ugyldige. Utbyggingen ville få stor negativ virkning på reindriftssamenes mulighet til å utøve sin egen kultur, og det bryter med artikkel 27 i FNs konvensjon om sivile og politiske rettigheter (Skogvang, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Turbinene ble likevel stående etter dommen. Det førte til store protester, og demonstranter sperret inngangene til flere departementer. Først mot slutten av 2023 og i mars 2024 kom det avtaler om erstatning og nye beiteområder (Skogvang, 2025). Hvordan norske myndigheter har behandlet samisk kultur før dette, kan du lese om i artikkelen om [fornorskingen av samene](/historie/norge-i-moderne-tid/fornorskingen-av-samene)."
+        },
+        {
+            "type": "text",
+            "content": "Fosen viser hvorfor miljøetikk sjelden har ett fasitsvar. Her sto ikke de gode mot de onde. Her sto hensynet til klimaet mot en levemåte som har hentet livet sitt ut av det samme landskapet i hundrevis av år."
+        },
+        { "type": "header", "text": "Arne Næss og dypøkologien" },
+        {
+            "type": "text",
+            "content": "Arne Næss levde fra 1912 til 2009 og er den norske filosofen som har betydd mest for miljøetikken ute i verden. Han regnes som grunnleggeren av dypøkologien (Bostad & Tranøy, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "I 1973 skilte Næss mellom to slags miljøvern. Det grunne er opptatt av forurensning og ressurser fordi det går ut over helsa og velstanden vår. Det dype mener at alt levende har verdi i seg selv (Brennan & Lo, 2021). Sin egen tenkning kalte han økosofi, et ord han satte sammen av økologi og det greske ordet for visdom, og han bygde den ut i boka Økologi, samfunn og livsstil fra 1974 (Bostad & Tranøy, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Næss mente at tanken om at alle levende vesener er del av den samme helheten, verken er en regel du kan bevise eller en beskrivelse av verden. Det er en intuitiv reaksjon, altså en følelse som melder seg av seg selv når du står i naturen (Bostad & Tranøy, 2025). Hvordan synet på naturen har endret seg gjennom historien, kan du følge videre i [Naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammel furuskog med lav morgentåke mellom trestammene",
+            "caption": "En gammel furuskog. Er den verdt noe hvis ingen mennesker noen gang setter foten der?"
+        },
+        { "type": "header", "text": "Hvor står du?" },
+        {
+            "type": "text",
+            "content": "Hvis spørsmålene her minnet deg om [dyreetikk](/krle/etikk/dyreetikk), er ikke det tilfeldig. Begge handler om hvem som teller. Forskjellen er at dyreetikken spør om enkeltdyr som kan lide, mens miljøetikken også spør om elver, skoger og arter, som ikke føler noe i det hele tatt."
+        },
+        {
+            "type": "text",
+            "content": "En [nytteetiker](/krle/etikk/utilitarisme) vil veie alle godene mot alle skadene og velge det som gir mest velferd til sammen. En som mener naturen har egenverdi, vil si at noen ting ikke skal legges på vekta i det hele tatt. Begge kan være uenige om Fosen uten at noen av dem har misforstått fakta."
+        },
+        {
+            "type": "text",
+            "content": "Det er nyttig å vite når du hører en miljødebatt. Neste gang to voksne krangler om vindkraft, ulv eller motorvei, kan du prøve å høre etter hva de egentlig er uenige om. Ofte er det ikke tallene. Det er hvem de teller med."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på nytteverdi og egenverdi? Gi et eksempel på hver.",
+                    "Hva betyr det at et syn er antroposentrisk, biosentrisk eller økosentrisk?",
+                    "Hva skjedde under Mardøla-aksjonen i 1970, og hvorfor regnes den som spesiell?",
+                    "Hva sier føre-var-prinsippet i naturmangfoldloven § 9?"
+                ],
+                "reflekter": [
+                    "Forklar Routleys tankeeksperiment om det siste mennesket med dine egne ord, og fortell hva du selv svarer på det.",
+                    "Grunnloven § 112 gir alle rett til et sunt miljø. Forklar hvorfor teksten kan kalles antroposentrisk, selv om den verner naturen.",
+                    "I Fosen-saken sto klimahensyn mot samisk reindrift. Forklar hvorfor denne saken er vanskeligere enn en sak der noen vil bygge et kjøpesenter i en skog.",
+                    "Artikkelen sier at forskjellen mellom valg som lar seg gjøre om, og valg som ikke gjør det, betyr mye i miljøetikken. Forklar hvorfor, og bruk et eksempel."
+                ],
+                "gaaVidere": [
+                    "Diskuter i klassen: bør en elv kunne ha rettigheter, slik et menneske eller et selskap har det? Bruk begrepene egenverdi og økosentrisme i svaret.",
+                    "Skriv en kort tekst til noen som blir født i 2075. Fortell hvilket valg dere tar i dag som du tror hen vil være mest takknemlig eller mest sint for.",
+                    "Finn en pågående norsk naturkonflikt i nyhetene. Kartlegg hvilke argumenter som bygger på nytteverdi, og hvilke som bygger på egenverdi."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr det at naturen har egenverdi?",
+                        "options": [
+                            "At naturen er verdifull i seg selv, ikke bare fordi noen har nytte av den",
+                            "At naturen koster penger å ta vare på",
+                            "At bare vernede områder er verdifulle",
+                            "At naturen er verdifull fordi den gir oss mat og materialer"
+                        ],
+                        "answer": "At naturen er verdifull i seg selv, ikke bare fordi noen har nytte av den"
+                    },
+                    {
+                        "question": "Hva kjennetegner et antroposentrisk syn på naturen?",
+                        "options": [
+                            "At alle levende vesener har egenverdi",
+                            "At hele økosystemer har egenverdi",
+                            "At bare mennesker har egenverdi, og at naturen er verdifull fordi vi trenger den",
+                            "At naturen ikke har noen verdi i det hele tatt"
+                        ],
+                        "answer": "At bare mennesker har egenverdi, og at naturen er verdifull fordi vi trenger den"
+                    },
+                    {
+                        "question": "Hva var poenget med Richard Routleys tankeeksperiment om det siste mennesket?",
+                        "options": [
+                            "Å vise at mennesker alltid ødelegger naturen til slutt",
+                            "Å vise at vi i praksis tror naturen har verdi selv når ingen mennesker har nytte av den",
+                            "Å vise at det er umulig å vite hva som er rett",
+                            "Å vise at naturen klarer seg best uten mennesker"
+                        ],
+                        "answer": "Å vise at vi i praksis tror naturen har verdi selv når ingen mennesker har nytte av den"
+                    },
+                    {
+                        "question": "Hva slo Høyesterett fast i Fosen-saken i 2021?",
+                        "options": [
+                            "At vindkraft er forbudt i Norge",
+                            "At turbinene måtte rives innen ett år",
+                            "At tillatelsene var ugyldige fordi utbyggingen gikk ut over reindriftssamenes rett til å leve ut sin egen kultur",
+                            "At reindriften måtte flytte til et annet fylke"
+                        ],
+                        "answer": "At tillatelsene var ugyldige fordi utbyggingen gikk ut over reindriftssamenes rett til å leve ut sin egen kultur"
+                    },
+                    {
+                        "question": "Hva sier føre-var-prinsippet i naturmangfoldloven?",
+                        "options": [
+                            "At all utbygging i naturen er forbudt",
+                            "At man alltid skal velge det billigste alternativet",
+                            "At man må ha full kunnskap før man kan verne noe",
+                            "At manglende kunnskap ikke kan brukes som grunn til å la være å handle når alvorlig eller uopprettelig skade truer"
+                        ],
+                        "answer": "At manglende kunnskap ikke kan brukes som grunn til å la være å handle når alvorlig eller uopprettelig skade truer"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bostad, I. & Tranøy, K. E. (2025). *Arne Næss*. Store norske leksikon. Hentet 15.09.2026 fra [snl.no/Arne_Næss](https://snl.no/Arne_N%C3%A6ss)",
+                    "Brennan, A. & Lo, N. Y. S. (2021). *Environmental Ethics*. Stanford Encyclopedia of Philosophy. Hentet 15.09.2026 fra [plato.stanford.edu/entries/ethics-environmental](https://plato.stanford.edu/entries/ethics-environmental/)",
+                    "Grunnloven. (1814). *Kongeriket Noregs grunnlov* § 112. Lovdata. Hentet 15.09.2026 fra [lovdata.no/dokument/NL/lov/1814-05-17-nn](https://lovdata.no/dokument/NL/lov/1814-05-17-nn)",
+                    "Naturmangfoldloven. (2009). *Lov om forvaltning av naturens mangfold*. LOV-2009-06-19-100. Lovdata. Hentet 15.09.2026 fra [lovdata.no/dokument/NL/lov/2009-06-19-100](https://lovdata.no/dokument/NL/lov/2009-06-19-100)",
+                    "Skogvang, S. F. (2025). *Fosen-saken*. Store norske leksikon. Hentet 15.09.2026 fra [snl.no/Fosen-saken](https://snl.no/Fosen-saken)",
+                    "Tvedt, K. A. (2024). *Mardøla-aksjonen*. Store norske leksikon. Hentet 15.09.2026 fra [snl.no/Mardøla-aksjonen](https://snl.no/Mard%C3%B8la-aksjonen)",
+                    "Tønnessen, M. (2026). *Miljøetikk*. Store norske leksikon. Hentet 15.09.2026 fra [snl.no/miljøetikk](https://snl.no/milj%C3%B8etikk)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

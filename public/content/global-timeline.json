@@ -11181,6 +11181,26 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "miljoetikk",
+      "title": "Miljøetikk: Er naturen verdt noe uten oss?",
+      "description": "Har naturen verdi bare fordi vi trenger den, eller også i seg selv? Om egenverdi, framtidige generasjoner og hvorfor Fosen-saken er så vanskelig.",
+      "startDate": 1970,
+      "endDate": null,
+      "displayDate": "1970",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "etikk",
+      "link": "/krle/etikk/miljoetikk",
+      "tags": [
+        "etikk",
+        "miljø",
+        "natur",
+        "bærekraft",
+        "egenverdi",
+        "klima"
+      ]
+    },
+    {
       "id": "nixon-sjokket-1971",
       "title": "Nixon-sjokket: Gullstandarden avvikles",
       "description": "President Nixon avslutter dollarens gullkonvertibilitet. Verdens pengesystem blir rent fiat-basert.",

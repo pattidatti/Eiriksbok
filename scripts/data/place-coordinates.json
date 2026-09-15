@@ -909,6 +909,10 @@
       "count": 32
     },
     {
+      "tag": "etikk",
+      "count": 30
+    },
+    {
       "tag": "1800-tallet",
       "count": 30
     },
@@ -922,10 +926,6 @@
     },
     {
       "tag": "imperium",
-      "count": 28
-    },
-    {
-      "tag": "etikk",
       "count": 28
     },
     {
@@ -1029,6 +1029,10 @@
       "count": 16
     },
     {
+      "tag": "klima",
+      "count": 16
+    },
+    {
       "tag": "jernalder",
       "count": 16
     },
@@ -1047,10 +1051,6 @@
     {
       "tag": "fn",
       "count": 15
-    },
-    {
-      "tag": "klima",
-      "count": 14
     },
     {
       "tag": "reformasjonen",
@@ -1305,6 +1305,10 @@
       "count": 7
     },
     {
+      "tag": "natur",
+      "count": 7
+    },
+    {
       "tag": "opplysningstiden",
       "count": 7
     },
@@ -1474,10 +1478,6 @@
     },
     {
       "tag": "enevelde",
-      "count": 5
-    },
-    {
-      "tag": "natur",
       "count": 5
     },
     {
@@ -1810,6 +1810,10 @@
     },
     {
       "tag": "symbol",
+      "count": 4
+    },
+    {
+      "tag": "miljø",
       "count": 4
     },
     {
@@ -3145,15 +3149,19 @@
       "count": 2
     },
     {
+      "tag": "bærekraft",
+      "count": 2
+    },
+    {
+      "tag": "egenverdi",
+      "count": 2
+    },
+    {
       "tag": "rawls",
       "count": 2
     },
     {
       "tag": "fordeling",
-      "count": 2
-    },
-    {
-      "tag": "miljø",
       "count": 2
     },
     {

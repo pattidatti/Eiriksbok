@@ -124,6 +124,7 @@ const TroensRotter = lazy(() => import('./content/interactive/TroensRotter').the
 const VeilOfIgnorance = lazy(() => import('./content/interactive/VeilOfIgnorance').then(m => ({ default: m.VeilOfIgnorance })));
 const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBrillene').then(m => ({ default: m.DyreetikkBrillene })));
 const KiAnsvarskjeden = lazy(() => import('./content/interactive/KiAnsvarskjeden').then(m => ({ default: m.KiAnsvarskjeden })));
+const NaturensVerdi = lazy(() => import('./content/interactive/NaturensVerdi').then(m => ({ default: m.NaturensVerdi })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
 const Maktpendelen = lazy(() => import('./content/interactive/Maktpendelen').then(m => ({ default: m.Maktpendelen })));
 const Maktvekten = lazy(() => import('./content/interactive/Maktvekten').then(m => ({ default: m.Maktvekten })));
@@ -626,6 +627,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     VeilOfIgnorance,
     DyreetikkBrillene,
     KiAnsvarskjeden,
+    NaturensVerdi,
     MaktensFristelse,
     GoldenMeanSlider,
     Maktpendelen,

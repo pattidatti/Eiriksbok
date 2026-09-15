@@ -219,6 +219,7 @@ const BergTrommen3D = lazy(() => import('./BergTrommen3D'));
 const Bjornegrava3D = lazy(() => import('./Bjornegrava3D'));
 const BeskjedenForSent3D = lazy(() => import('./BeskjedenForSent3D'));
 const Scriptoriet3D = lazy(() => import('./Scriptoriet3D'));
+const DalenDuLaner3D = lazy(() => import('./DalenDuLaner3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -2146,6 +2147,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 170,
         loader: () => import('./Scriptoriet3D'),
         Component: Scriptoriet3D as never,
+    },
+    'dalen-du-laner': {
+        id: 'dalen-du-laner',
+        title: 'Dalen du låner',
+        description:
+            'Den samme norske dalen skal gi kraft til tre generasjoner. Velg verktøy og klikk i dalen: vindturbinen gir lite og koster lite natur, og du kan rive den igjen når behovet synker. Demningen gir mye med én gang, men tar hele elva, og fossen nedenfor tørker inn for godt. Klarer du kravet i 1955, 1985 og 2025 uten å bruke opp dalen? Lyspæra: en turbin kan tas ned, ei oppdemt elv kan ikke. Derfor bryr miljøetikken seg mest om valgene som ikke lar seg gjøre om, og om dem som arver dalen uten å ha vært med på å bestemme.',
+        estimatedSeconds: 170,
+        loader: () => import('./DalenDuLaner3D'),
+        Component: DalenDuLaner3D as never,
     },
 };
 
