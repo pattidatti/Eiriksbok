@@ -1,5 +1,5 @@
 {
-  "buildId": 46154891780258,
+  "buildId": 18051988541569,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2675,6 +2675,9 @@
     ],
     "oljealderen": [
       "content/historie/norge-i-moderne-tid/oljealderen.json"
+    ],
+    "samiske-rettigheter": [
+      "content/historie/norge-i-moderne-tid/samiske-rettigheter.json"
     ],
     "svalbard": [
       "content/historie/norge-i-moderne-tid/svalbard.json"
@@ -5684,6 +5687,7 @@
     "historie/norge-i-moderne-tid/koronapandemien": "content/historie/norge-i-moderne-tid/koronapandemien.json",
     "historie/norge-i-moderne-tid/nasjonale-minoriteter": "content/historie/norge-i-moderne-tid/nasjonale-minoriteter.json",
     "historie/norge-i-moderne-tid/oljealderen": "content/historie/norge-i-moderne-tid/oljealderen.json",
+    "historie/norge-i-moderne-tid/samiske-rettigheter": "content/historie/norge-i-moderne-tid/samiske-rettigheter.json",
     "historie/norge-i-moderne-tid/svalbard": "content/historie/norge-i-moderne-tid/svalbard.json",
     "historie/norge-i-moderne-tid/velferdsstaten": "content/historie/norge-i-moderne-tid/velferdsstaten.json",
     "historie/norgeshistorie/22-juli-2011": "content/historie/norgeshistorie/22-juli-2011.json",

@@ -1,0 +1,253 @@
+{
+    "id": "samiske-rettigheter",
+    "title": "Samiske rettigheter etter Alta: Aksjonen som endret loven",
+    "layout": "rich",
+    "year": "1979-2021",
+    "category": "Norge",
+    "readTime": "11 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-09-16",
+    "details": [
+        "Alta-aksjonen tapte kampen om elva, men tvang staten til å svare på om samene har egne rettigheter.",
+        "Svaret ble sameloven, en egen paragraf i Grunnloven og Sametinget.",
+        "Lovene fra 1980-tallet avgjør fortsatt saker i norske domstoler i dag."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "I oktober 1979 satte samiske aktivister opp et telt rett foran Stortinget i Oslo. Så sluttet de å spise. Kravet var at staten måtte stanse utbyggingen av Alta-Kautokeino-vassdraget i Finnmark (Berg-Nordlie & Tvedt, 2025). Sultestreiken virket ikke slik de håpet. Dammen ble bygd, og elva ble demmet opp. Men det som skjedde i årene etter, forandret Norge mye mer enn kraftverket noen gang gjorde."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Samisk telt av stenger og duk på plenen foran Stortinget i høstmørket",
+            "caption": "Oktober 1979. Teltet foran Stortinget var et bilde ingen i Norge hadde sett før, og avisene over hele verden trykte det."
+        },
+        {
+            "type": "header",
+            "text": "Kampen om elva"
+        },
+        {
+            "type": "text",
+            "content": "Planene om å bygge kraftverk i Alta-Kautokeino-vassdraget kom allerede rundt 1968. I 1978 samlet Folkeaksjonen mot utbyggingen omtrent 15 000 underskrifter, og både Alta og Kautokeino kommune sa nei (Berg-Nordlie & Tvedt, 2025). Motstandernes viktigste argument var at anleggsveien og oppdemmingen ville ramme reindrifta, som var og er en bærebjelke i samisk kultur i området."
+        },
+        {
+            "type": "text",
+            "content": "Sommeren 1979 stanset demonstrantene anleggsarbeidet ved å sette seg i veien for maskinene. Det kalles sivil ulydighet: du bryter en lov med vilje og åpent, og tar straffen, for å vise at loven eller vedtaket er urettferdig. Om vinteren 1981 kom nye aksjoner, og flere sultestreiket fra 24. januar til 25. februar. Likevel gikk det som staten ville. Herredsretten sa i desember 1980 at utbyggingen var lovlig, og i 1982 slo Høyesterett fast det samme. Folkeaksjonen ble lagt ned, og i 1987 åpnet Alta-dammen (Berg-Nordlie & Tvedt, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Spørsmålet ingen hadde stilt"
+        },
+        {
+            "type": "text",
+            "content": "Mens politiet bar demonstranter bort fra anleggsveien, satt regjeringen med et problem den ikke kunne løse med politi. Bildene av sultestreikende samer gikk verden rundt, og Norge fikk spørsmål utenfra om hvordan landet behandlet urfolket sitt. Da måtte staten svare på noe den hadde unngått i over hundre år: har samene egne rettigheter i Norge, eller er de bare vanlige norske borgere som tilfeldigvis snakker et annet språk?"
+        },
+        {
+            "type": "text",
+            "content": "10. oktober 1980, midt i konflikten, oppnevnte regjeringen Samerettsutvalget. Oppgaven var å finne ut hva slags rettslig stilling samene skulle ha (Berg & Strøm Bull, 2026). I 1984 kom svaret i utredningen Samenes rettsstilling. Den ble grunnlaget for alt som skjedde etterpå. Den svarte ja: samene er et eget folk med egne rettigheter, og staten har plikter overfor dem."
+        },
+        {
+            "type": "component",
+            "name": "ProtestensToRegnskap",
+            "props": {
+                "title": "Protestens to regnskap",
+                "instruction": "Klikk deg gjennom hendelsene. Følg med på begge målerne samtidig.",
+                "venstreLabel": "Sjansen for å redde elva",
+                "hoyreLabel": "Samiske rettigheter i loven"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Tre ting som ble annerledes"
+        },
+        {
+            "type": "text",
+            "content": "Utvalgets arbeid ble til tre store endringer på bare to år. De henger sammen, og til sammen snudde de opp ned på forholdet mellom staten og samene."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Sameloven, vedtatt 12. juni 1987. Den slo fast at samene skal ha et eget folkevalgt organ, og at staten skal legge til rette for samisk språk, kultur og samfunnsliv.",
+                "Sameparagrafen i Grunnloven, vedtatt av Stortinget 21. april 1988. Den ble først nummerert § 110a og heter i dag § 108.",
+                "Sametinget, som ble åpnet av kong Olav i Karasjok 9. oktober 1989."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Sametinget er et folkevalgt organ, altså en forsamling folk stemmer inn slik de stemmer ved stortingsvalg. Det har 39 representanter som velges fra sju valgkretser hvert fjerde år. Bare de som står i Sametingets valgmanntall kan stemme, og det er frivillig å melde seg inn. Oppslutningen har vokst kraftig: i 1989 sto det 5 505 personer i manntallet, i 2025 var tallet 25 676 (Berg-Nordlie, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva Sametinget kan, og hva det ikke kan",
+                "content": "Sametinget bestemmer selv over egne midler til samisk språk, kultur, opplæring og næring, og staten må rådføre seg med tinget i saker som betyr mye for samene. Men Sametinget har ikke vetorett. Det kan altså ikke stoppe et vedtak Stortinget eller regjeringen vil ha gjennom. Reindrifta, som mange samer lever av, styres fortsatt fra Landbruksdepartementet, og Sametinget velger bare tre av sju medlemmer i reindriftsstyret."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Sametingsbygningen i Karasjok med rund trekonstruksjon og snødekt landskap",
+            "caption": "Sametinget i Karasjok. Den nye bygningen sto ferdig høsten 2000, elleve år etter at tinget åpnet."
+        },
+        {
+            "type": "header",
+            "text": "Hvem eier grunnen i nord?"
+        },
+        {
+            "type": "text",
+            "content": "Et spørsmål sto fortsatt ubesvart: hvem eier egentlig fjellet, viddene og elvene i Finnmark? I hundre år hadde staten regnet det meste som sitt. Samerettsutvalget mente det ikke var så enkelt, for folk hadde brukt de samme områdene til reindrift, fiske og jakt i uminnelige tider."
+        },
+        {
+            "type": "text",
+            "content": "Svaret kom med finnmarksloven i 2005. Den flyttet eierskapet til det aller meste av grunnen i Finnmark over til Finnmarkseiendommen, ofte forkortet FeFo (Falkanger & Strøm Bull, 2026). Styret har seks medlemmer som alle må bo i Finnmark, og halvparten velges av fylkestinget og halvparten av Sametinget. Loven satte også ned Finnmarkskommisjonen, som skal undersøke hvem som har fått rettigheter gjennom lang tids bruk. Er partene uenige, kan saken gå videre til en egen domstol for utmarka, og derfra til Høyesterett."
+        },
+        {
+            "type": "header",
+            "text": "Loven på prøve: Fosen"
+        },
+        {
+            "type": "text",
+            "content": "Lover er bare ord til noen bruker dem. Den store prøven kom på Fosen i Trøndelag. Der ble vindkraftverkene Storheia og Roan bygd i et område som to reinbeitedistrikter, Nord-Fosen siida og Sør-Fosen sijte, bruker som vinterbeite (Skogvang, 2025). Reineierne mente at turbinene tok fra dem beitet de trengte, og gikk til sak."
+        },
+        {
+            "type": "text",
+            "content": "11. oktober 2021 ga Høyesterett dem medhold. Elleve dommere i storkammer, altså den mest tungtveiende formen en sak kan behandles i, kjente konsesjonene ugyldige. Begrunnelsen var artikkel 27 i FNs konvensjon om sivile og politiske rettigheter, som sier at minoriteter ikke skal nektes å dyrke sin egen kultur. Retten slo fast at reindrift er nettopp slik kulturutøvelse, og at grensen går der inngrepet gir vesentlige negative følger for muligheten til å drive den videre (Norges Høyesterett, 2021). Dommen forbød altså ikke vindkraft. Den sa at denne utbyggingen tok for mye."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "vinterbeitet-3d"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Så skjedde det som gjorde saken kjent for en helt ny generasjon: ingenting. Turbinene fortsatte å gå, måned etter måned, selv om Høyesterett hadde sagt at tillatelsen var ugyldig. Rundt 500 dager etter dommen okkuperte samisk ungdom inngangen til Olje- og energidepartementet, og demonstrantene blokkerte etter hvert dørene til flere departementer i Oslo (Skogvang, 2025). Sammenlikningen med teltet foran Stortinget i 1979 var det ingen som trengte å forklare. Staten beklaget at det hadde tatt så lang tid, og i løpet av vinteren 2023 og 2024 ble det inngått avtaler med begge reinbeitedistriktene om erstatning, nytt beiteareal og rett til å si nei når konsesjonen en gang skal fornyes."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Reinsdyr som beiter i snø foran høye vindturbiner på et fjell",
+            "caption": "Vinterbeitet på Fosen. Den samme utbyggingen som kutter klimagasser, tar beitet reinen trenger om vinteren."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor dette angår alle"
+        },
+        {
+            "type": "text",
+            "content": "Historien om samiske rettigheter etter Alta er egentlig historien om hvordan et land retter opp noe det har gjort galt. I nesten hundre år drev staten en bevisst politikk for å gjøre samene norske, og du kan lese mer om den i artikkelen om [fornorskingen av samene](/historie/norge-i-moderne-tid/fornorskingen-av-samene). De [nasjonale minoritetene](/historie/norge-i-moderne-tid/nasjonale-minoriteter) ble utsatt for mye av det samme. Alta-saken ble punktet der den gamle politikken ikke lenger lot seg forsvare."
+        },
+        {
+            "type": "text",
+            "content": "Saken er heller ikke ferdig. Norge skal bygge ut mer fornybar energi, og mye av vinden og vannet ligger i områder samisk reindrift bruker. Da støter to gode mål mot hverandre, og det finnes ikke noe svar som gjør alle fornøyde. Det er den samme typen konflikt du møter i artikkelen om [miljøetikk](/krle/etikk/miljoetikk), og den handler like mye om lov som om moral. For det Alta-aksjonen faktisk vant, var ikke elva. Det var at slike spørsmål nå må avgjøres etter regler, i en domstol, og ikke bare av den som har mest makt. Grunnloven, som du kan lese om i artikkelen om [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven), fikk en paragraf som binder staten selv. I mai 2023 ble den til og med skjerpet: teksten ble endret fra den samiske folkegruppe til det samiske folk, som urfolk, slik at det nå står svart på hvitt i Grunnloven at samene er et eget folk og urfolket i Norge (Skogvang, 2023)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Det påligger statens myndigheter å legge forholdene til rette for at det samiske folk, som urfolk, kan sikre og utvikle sitt språk, sin kultur og sitt samfunnsliv.",
+                "author": "Grunnloven § 108, slik den lyder etter endringen i 2023"
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Folkeaksjonen mot utbygging av Alta-Kautokeino-vassdraget, og hvor mange skrev under mot utbyggingen?",
+                    "Hva betyr sivil ulydighet? Gi et eksempel fra Alta-saken.",
+                    "Nevn de tre store endringene som kom i årene 1987 til 1989, og hva hver av dem gjorde.",
+                    "Hva bestemte Høyesterett 11. oktober 2021, og hvilken regel bygde avgjørelsen på?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at aksjonistene tapte kampen om elva, men vant noe annet. Forklar med egne ord hva de vant, og hvorfor det kunne skje selv om de tapte i retten.",
+                    "Sametinget må rådføres, men har ikke vetorett. Forklar hva forskjellen betyr i praksis, og vurder om du mener ordningen er rettferdig.",
+                    "Fosen-dommen sa at utbyggingen var ulovlig, men turbinene fortsatte å gå i over 500 dager. Hva sier det om forholdet mellom en dom og det som faktisk skjer?",
+                    "Finnmarksloven ga FeFo et styre der fylkestinget og Sametinget velger tre medlemmer hver. Forklar hvorfor akkurat den fordelingen ble valgt."
+                ],
+                "gaaVidere": [
+                    "Norge skal bygge ut mer vindkraft for å kutte klimagasser, og mye av vinden ligger i reinbeiteland. Skriv et kort debattinnlegg der du tar stilling til hva som skal veie tyngst når de to hensynene kolliderer.",
+                    "Finn en nyhetssak fra det siste året som handler om samiske rettigheter. Forklar hvilken av lovene i denne artikkelen saken bygger på.",
+                    "Diskuter i klassen: Er sivil ulydighet et akseptabelt virkemiddel i et demokrati? Bruk både Alta-aksjonen og Fosen-aksjonen som eksempler."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var hovedgrunnen til at regjeringen satte ned Samerettsutvalget i 1980?",
+                        "options": [
+                            "Alta-konflikten tvang fram spørsmålet om samene har egne rettigheter",
+                            "Sametinget ba om det",
+                            "FN påla Norge å gjøre det",
+                            "Utbyggingen av Alta-vassdraget ble stanset"
+                        ],
+                        "answer": "Alta-konflikten tvang fram spørsmålet om samene har egne rettigheter"
+                    },
+                    {
+                        "question": "Hva skjedde med Alta-utbyggingen til slutt?",
+                        "options": [
+                            "Den ble stanset etter dommen i Høyesterett",
+                            "Den ble bygd, og dammen åpnet i 1987",
+                            "Den ble flyttet til et annet vassdrag",
+                            "Den ble utsatt til etter at Sametinget åpnet"
+                        ],
+                        "answer": "Den ble bygd, og dammen åpnet i 1987"
+                    },
+                    {
+                        "question": "Hva er Sametinget?",
+                        "options": [
+                            "En domstol som avgjør saker om samiske rettigheter",
+                            "En avdeling i Landbruksdepartementet",
+                            "Et folkevalgt organ med 39 representanter, åpnet i 1989",
+                            "En organisasjon alle samer er medlem av fra fødselen"
+                        ],
+                        "answer": "Et folkevalgt organ med 39 representanter, åpnet i 1989"
+                    },
+                    {
+                        "question": "Hva gjorde finnmarksloven fra 2005?",
+                        "options": [
+                            "Den ga Sametinget vetorett i saker om utbygging",
+                            "Den forbød vindkraft i reinbeiteområder",
+                            "Den flyttet det meste av grunnen i Finnmark over til Finnmarkseiendommen",
+                            "Den ga alle samer rett til å eie land i Finnmark"
+                        ],
+                        "answer": "Den flyttet det meste av grunnen i Finnmark over til Finnmarkseiendommen"
+                    },
+                    {
+                        "question": "Hva var det avgjørende i Fosen-dommen fra 2021?",
+                        "options": [
+                            "At vindturbiner alltid er ulovlige i reinbeiteland",
+                            "At utbyggingen ga vesentlige negative følger for reindriftssamenes kulturutøvelse",
+                            "At Sametinget ikke var blitt spurt på forhånd",
+                            "At turbinene sto på grunn eid av Finnmarkseiendommen"
+                        ],
+                        "answer": "At utbyggingen ga vesentlige negative følger for reindriftssamenes kulturutøvelse"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, J. K., & Strøm Bull, K. (2026). *Samerettsutvalget*. Store norske leksikon. Hentet 16.09.2026 fra [snl.no/Samerettsutvalget](https://snl.no/Samerettsutvalget)",
+                    "Berg-Nordlie, M. (2026). *Sametinget*. Store norske leksikon. Hentet 16.09.2026 fra [snl.no/Sametinget](https://snl.no/Sametinget)",
+                    "Berg-Nordlie, M., & Tvedt, K. A. (2025). *Alta-saken*. Store norske leksikon. Hentet 16.09.2026 fra [snl.no/Alta-saken](https://snl.no/Alta-saken)",
+                    "Falkanger, T., & Strøm Bull, K. (2026). *Finnmarksloven*. Store norske leksikon. Hentet 16.09.2026 fra [snl.no/Finnmarksloven](https://snl.no/Finnmarksloven)",
+                    "Norges Høyesterett. (2021). *Vedtak om konsesjon til vindkraftutbygging på Fosen kjent ugyldig fordi utbyggingen krenker reindriftssamenes rett til kulturutøvelse* (HR-2021-1975-S). Hentet 16.09.2026 fra [domstol.no](https://www.domstol.no/no/hoyesterett/avgjorelser/2021/hoyesterett-sivil/hr-2021-1975-s/)",
+                    "Skogvang, S. F. (2023). *Sameparagrafen*. Store norske leksikon. Hentet 16.09.2026 fra [snl.no/Sameparagrafen](https://snl.no/Sameparagrafen)",
+                    "Skogvang, S. F. (2025). *Fosen-saken*. Store norske leksikon. Hentet 16.09.2026 fra [snl.no/Fosen-saken](https://snl.no/Fosen-saken)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

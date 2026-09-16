@@ -49,6 +49,7 @@ const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
 const DampmaskinHjerte3D = lazy(() => import('./DampmaskinHjerte3D'));
 const Fossekraftverket3D = lazy(() => import('./Fossekraftverket3D'));
 const Fabrikktomta3D = lazy(() => import('./Fabrikktomta3D'));
+const Vinterbeitet3D = lazy(() => import('./Vinterbeitet3D'));
 const Falanksen3D = lazy(() => import('./Falanksen3D'));
 const LangeMurene3D = lazy(() => import('./LangeMurene3D'));
 const OlympiaDiskos3D = lazy(() => import('./OlympiaDiskos3D'));
@@ -1166,6 +1167,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./Fabrikktomta3D'),
         Component: Fabrikktomta3D as never,
+    },
+    'vinterbeitet-3d': {
+        id: 'vinterbeitet-3d',
+        title: 'Vinterbeitet',
+        description:
+            'Du er utbyggeren på Fosen og skal sette tre vindturbiner på et vinterbeite. Dra dem ut på fjellet og se to tall svare med en gang: hvor mye beite som står igjen, og om trekkleia reinen går i fortsatt er åpen. Sprer du turbinene utover, forsvinner beite tre steder i stedet for ett, og en turbin nær trekkleia stopper hele flokken. Lyspæra: loven forbyr ikke vindkraft, den forbyr utbygging som tar så mye at reindrifta ikke kan fortsette.',
+        estimatedSeconds: 150,
+        loader: () => import('./Vinterbeitet3D'),
+        Component: Vinterbeitet3D as never,
     },
     'falanksen-3d': {
         id: 'falanksen-3d',

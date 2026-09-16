@@ -848,6 +848,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ArgumentScaffold,
     OppgaveTolker,
     TriangularTradeMap: lazy(() => import('./content/interactive/TriangularTradeMap').then(m => ({ default: m.TriangularTradeMap }))),
+    ProtestensToRegnskap: lazy(() => import('./content/interactive/ProtestensToRegnskap').then(m => ({ default: m.ProtestensToRegnskap }))),
     CensorTask: lazy(() => import('./historie/CensorTask').then(m => ({ default: m.CensorTask }))),
     PropagandaDecoder: lazy(() => import('./historie/PropagandaDecoder').then(m => ({ default: m.PropagandaDecoder }))),
     TrumansDilemma: lazy(() => import('./historie/TrumansDilemma').then(m => ({ default: m.TrumansDilemma }))),
