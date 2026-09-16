@@ -1057,6 +1057,10 @@
       "count": 14
     },
     {
+      "tag": "rettigheter",
+      "count": 14
+    },
+    {
       "tag": "industri",
       "count": 14
     },
@@ -1085,10 +1089,6 @@
       "count": 12
     },
     {
-      "tag": "rettigheter",
-      "count": 12
-    },
-    {
       "tag": "arbeidsliv",
       "count": 12
     },
@@ -1114,6 +1114,10 @@
     },
     {
       "tag": "hinduisme",
+      "count": 11
+    },
+    {
+      "tag": "urfolk",
       "count": 11
     },
     {
@@ -1202,10 +1206,6 @@
     },
     {
       "tag": "identitet",
-      "count": 9
-    },
-    {
-      "tag": "urfolk",
       "count": 9
     },
     {
@@ -1577,6 +1577,10 @@
       "count": 4
     },
     {
+      "tag": "alta",
+      "count": 4
+    },
+    {
       "tag": "krle",
       "count": 4
     },
@@ -1742,6 +1746,10 @@
     },
     {
       "tag": "utvandring",
+      "count": 4
+    },
+    {
+      "tag": "samer",
       "count": 4
     },
     {
@@ -2050,10 +2058,6 @@
     },
     {
       "tag": "havniva",
-      "count": 2
-    },
-    {
-      "tag": "alta",
       "count": 2
     },
     {
@@ -2869,10 +2873,6 @@
       "count": 2
     },
     {
-      "tag": "samer",
-      "count": 2
-    },
-    {
       "tag": "vann",
       "count": 2
     },
@@ -3166,6 +3166,10 @@
     },
     {
       "tag": "deng",
+      "count": 2
+    },
+    {
+      "tag": "sametinget",
       "count": 2
     },
     {

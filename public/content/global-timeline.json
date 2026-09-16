@@ -11710,6 +11710,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "samiske-rettigheter",
+      "title": "Samiske rettigheter etter Alta: Aksjonen som endret loven",
+      "description": "Alta-aksjonen tapte kampen om elva, men tvang fram sameloven, Sametinget og en egen paragraf i Grunnloven.",
+      "startDate": 1979,
+      "endDate": 2021,
+      "displayDate": "1979-2021",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/samiske-rettigheter",
+      "tags": [
+        "norge",
+        "samer",
+        "urfolk",
+        "rettigheter",
+        "alta",
+        "sametinget"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "operasjon-ajax-sub-2",
       "title": "Revolusjonen",
       "description": "Sjahen styrtes. Iran blir USAs fiende.",
