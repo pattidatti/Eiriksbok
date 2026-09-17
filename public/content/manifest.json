@@ -3229,7 +3229,8 @@
                 "gronland",
                 "kongemakt"
               ],
-              "createdDate": "2026-09-08T00:00:00Z"
+              "createdDate": "2026-09-08T04:55:08+02:00",
+              "lastUpdated": "2026-09-08T07:33:45+02:00"
             }
           ]
         },
@@ -3517,7 +3518,7 @@
               "id": "samiske-rettigheter",
               "title": "Samiske rettigheter etter Alta: Aksjonen som endret loven",
               "description": "Alta-aksjonen tapte kampen om elva, men tvang fram sameloven, Sametinget og en egen paragraf i Grunnloven.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/norge-i-moderne-tid/samiske-rettigheter-hero.webp",
               "tags": [
                 "norge",
                 "samer",
@@ -3526,7 +3527,8 @@
                 "alta",
                 "sametinget"
               ],
-              "createdDate": "2026-09-16T00:00:00Z"
+              "createdDate": "2026-09-16T03:49:53+02:00",
+              "lastUpdated": "2026-09-16T03:49:53+02:00"
             },
             {
               "id": "nasjonale-minoriteter",
@@ -3615,7 +3617,7 @@
                 "beredskap"
               ],
               "createdDate": "2026-09-04T04:17:16+02:00",
-              "lastUpdated": "2026-09-04T04:17:16+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             }
           ]
         },
@@ -4717,7 +4719,8 @@
                 "asia",
                 "ideologi"
               ],
-              "createdDate": "2026-09-12T00:00:00Z"
+              "createdDate": "2026-09-12T04:15:14+02:00",
+              "lastUpdated": "2026-09-13T07:38:34+02:00"
             }
           ]
         },
@@ -5697,7 +5700,7 @@
                 "nord-amerika"
               ],
               "createdDate": "2026-09-07T04:04:50+02:00",
-              "lastUpdated": "2026-09-07T04:04:50+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "britisk-imperium",
@@ -6344,7 +6347,7 @@
                 "parlament"
               ],
               "createdDate": "2026-09-06T03:43:51+02:00",
-              "lastUpdated": "2026-09-06T03:43:51+02:00"
+              "lastUpdated": "2026-09-08T07:33:45+02:00"
             },
             {
               "id": "magnus-landslov",
@@ -6635,7 +6638,8 @@
                 "kunnskap",
                 "norge"
               ],
-              "createdDate": "2026-09-09T00:00:00Z"
+              "createdDate": "2026-09-09T03:59:50+02:00",
+              "lastUpdated": "2026-09-09T07:35:43+02:00"
             },
             {
               "id": "angkor-og-khmerriket",
@@ -6651,7 +6655,8 @@
                 "sorost-asia",
                 "klima"
               ],
-              "createdDate": "2026-09-11T00:00:00Z"
+              "createdDate": "2026-09-11T04:10:38+02:00",
+              "lastUpdated": "2026-09-13T07:38:34+02:00"
             }
           ]
         },
@@ -7383,7 +7388,8 @@
                 "skrift",
                 "tidlige-sivilisasjoner"
               ],
-              "createdDate": "2026-09-10T00:00:00Z"
+              "createdDate": "2026-09-10T04:06:05+02:00",
+              "lastUpdated": "2026-09-10T07:33:30+02:00"
             },
             {
               "id": "kelterne",
@@ -7398,7 +7404,8 @@
                 "kildekritikk",
                 "tidlige-sivilisasjoner"
               ],
-              "createdDate": "2026-09-14T00:00:00Z"
+              "createdDate": "2026-09-14T04:07:25+02:00",
+              "lastUpdated": "2026-09-14T07:33:18+02:00"
             }
           ]
         },
@@ -7478,7 +7485,7 @@
                 "sjofart"
               ],
               "createdDate": "2026-08-30T03:53:12+02:00",
-              "lastUpdated": "2026-08-30T07:39:26+02:00"
+              "lastUpdated": "2026-09-09T07:35:43+02:00"
             },
             {
               "id": "doggerland",
@@ -7493,7 +7500,8 @@
                 "norge",
                 "arkeologi"
               ],
-              "createdDate": "2026-09-13T00:00:00Z"
+              "createdDate": "2026-09-13T04:10:30+02:00",
+              "lastUpdated": "2026-09-13T07:38:34+02:00"
             }
           ]
         },
@@ -7912,7 +7920,7 @@
                 "middelalderen"
               ],
               "createdDate": "2026-09-05T03:54:24+02:00",
-              "lastUpdated": "2026-09-05T03:54:24+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             }
           ]
         }
@@ -8900,7 +8908,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "bonn",
@@ -8926,7 +8934,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8939,7 +8947,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -8952,7 +8960,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -8965,7 +8973,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -8978,7 +8986,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "frelse",
@@ -9148,7 +9156,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -9160,7 +9168,7 @@
                     "grunnleggere"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -9172,7 +9180,7 @@
                     "hellige-tekster"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "intro",
@@ -9210,7 +9218,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -9223,7 +9231,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "frelse",
@@ -9236,7 +9244,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2026-08-11T12:00:00Z",
-                  "lastUpdated": "2026-08-12T16:00:08+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "bonn",
@@ -9250,7 +9258,7 @@
                     "dagligliv"
                   ],
                   "createdDate": "2026-08-11T01:31:27.641Z",
-                  "lastUpdated": "2026-08-12T16:30:39+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 }
               ]
             },
@@ -9305,7 +9313,7 @@
                     "kulturarv"
                   ],
                   "createdDate": "2026-09-02T03:47:20+02:00",
-                  "lastUpdated": "2026-09-02T03:47:20+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 },
                 {
                   "id": "bjornegraven",
@@ -9321,7 +9329,7 @@
                     "nord-norge"
                   ],
                   "createdDate": "2026-09-03T03:53:58+02:00",
-                  "lastUpdated": "2026-09-03T03:53:58+02:00"
+                  "lastUpdated": "2026-09-07T07:40:19+02:00"
                 }
               ]
             }
@@ -9380,7 +9388,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "gudsbilde",
@@ -9393,7 +9401,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T04:17:49+02:00",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "bonn",
@@ -9406,7 +9414,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "overgangsriter",
@@ -9419,7 +9427,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "doden",
@@ -9432,7 +9440,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "frelse",
@@ -9445,7 +9453,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "hellige-tekster",
@@ -9458,7 +9466,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "grunnleggere",
@@ -9471,7 +9479,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "etikk-og-leveregler",
@@ -9484,7 +9492,7 @@
                 "ethical"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "hoytider",
@@ -9497,7 +9505,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "hellige-rom",
@@ -9510,7 +9518,7 @@
                 "material"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "symboler-og-klaer",
@@ -9523,7 +9531,7 @@
                 "material"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "mat-og-renhet",
@@ -9536,7 +9544,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T14:15:16+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "lidelse",
@@ -9549,7 +9557,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-08-12T19:59:52+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "kjonn-og-roller",
@@ -9562,7 +9570,7 @@
                 "social"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-08-13T08:37:49+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "ledelse-og-fellesskap",
@@ -9575,7 +9583,7 @@
                 "social"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-08-13T08:37:49+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             },
             {
               "id": "pilegrim",
@@ -9588,7 +9596,7 @@
                 "material"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-08-13T08:37:49+02:00"
+              "lastUpdated": "2026-09-07T07:40:19+02:00"
             }
           ]
         },
@@ -9738,7 +9746,8 @@
                 "filosofi",
                 "religion"
               ],
-              "createdDate": "2026-09-17T00:00:00Z"
+              "createdDate": "2026-09-17T04:29:30+02:00",
+              "lastUpdated": "2026-09-17T04:29:30+02:00"
             }
           ]
         },
@@ -10200,7 +10209,7 @@
               "id": "miljoetikk",
               "title": "Miljøetikk: Er naturen verdt noe uten oss?",
               "description": "Har naturen verdi bare fordi vi trenger den, eller også i seg selv? Om egenverdi, framtidige generasjoner og hvorfor Fosen-saken er så vanskelig.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/etikk/miljoetikk-hero.webp",
               "tags": [
                 "etikk",
                 "miljø",
@@ -10209,7 +10218,8 @@
                 "egenverdi",
                 "klima"
               ],
-              "createdDate": "2026-09-15T00:00:00Z"
+              "createdDate": "2026-09-15T04:02:39+02:00",
+              "lastUpdated": "2026-09-15T04:02:39+02:00"
             }
           ]
         }
