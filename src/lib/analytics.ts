@@ -195,6 +195,10 @@ export const sporAktivitet = (kind: string, fag: string | undefined, xp: number)
  * med heltall.
  */
 export const sporQuiz = (quizId: string, score: number): void => {
+    // Quiz Battle sender inn «quiz-battle/{pin}». Pin-en er ny for hver runde,
+    // så det ville lagt igjen en node per spilte runde i all framtid - og ingen
+    // av dem kan knyttes til en artikkel, som er hele poenget med tabellen.
+    if (quizId.startsWith('quiz-battle/')) return;
     const noekkel = safeKey(quizId);
     if (!noekkel) return;
     const oppdatering: Record<string, Verdi> = {

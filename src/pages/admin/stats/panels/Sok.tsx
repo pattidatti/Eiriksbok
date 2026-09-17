@@ -23,9 +23,11 @@ export const Sok: React.FC<Props> = ({ raa }) => {
         for (const l of logger) {
             const n = l.query.toLowerCase().trim();
             if (!n) continue;
-            const rad = (teller[n] ??= { antall: 0, treff: 0 });
+            // logger er sortert nyeste først, og treffantallet settes derfor
+            // bare den første gangen ordet dukker opp. Bimerket viser da hva
+            // søket gir nå - ikke hva det ga aller første gang noen søkte.
+            const rad = (teller[n] ??= { antall: 0, treff: l.resultsCount ?? 0 });
             rad.antall += 1;
-            rad.treff = l.resultsCount ?? 0;
         }
         return Object.entries(teller)
             .map(([navn, v]) => ({
@@ -54,9 +56,9 @@ export const Sok: React.FC<Props> = ({ raa }) => {
         <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 <Nokkeltall
-                    etikett="Søk totalt"
+                    etikett="Søk i loggen"
                     verdi={formatTall(logger.length)}
-                    under="loggførte søk"
+                    under="de nyeste loggførte søkene"
                     ikon={<Search className="h-4 w-4" />}
                 />
                 <Nokkeltall
@@ -64,8 +66,8 @@ export const Sok: React.FC<Props> = ({ raa }) => {
                     verdi={formatTall(tomme)}
                     under={
                         logger.length > 0
-                            ? `${Math.round((tomme / logger.length) * 100)} % av alle søk`
-                            : '–'
+                            ? `${Math.round((tomme / logger.length) * 100)} % av søkene i loggen`
+                            : '-'
                     }
                     ikon={<SearchX className="h-4 w-4" />}
                 />
@@ -82,7 +84,7 @@ export const Sok: React.FC<Props> = ({ raa }) => {
             </div>
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                <Kort tittel="Mest søkt" hjelp="Hva elevene leter etter">
+                <Kort tittel="Mest søkt" hjelp="Hva elevene leter etter, i den nyeste delen av loggen">
                     <Stolpeliste rader={topp} tomTekst="Ingen søk loggført ennå" />
                 </Kort>
 
@@ -117,7 +119,7 @@ export const Sok: React.FC<Props> = ({ raa }) => {
                                           hour: '2-digit',
                                           minute: '2-digit',
                                       })
-                                    : '–'}
+                                    : '-'}
                             </span>
                         </li>
                     ))}

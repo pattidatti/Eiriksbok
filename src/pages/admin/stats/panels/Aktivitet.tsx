@@ -87,7 +87,7 @@ export const Aktivitet: React.FC<Props> = ({ raa, serie, dager, siderader, vindu
                 />
                 <Nokkeltall
                     etikett="Quiz-snitt"
-                    verdi={quizSnittTotalt !== null ? `${Math.round(quizSnittTotalt * 100)} %` : '–'}
+                    verdi={quizSnittTotalt !== null ? `${Math.round(quizSnittTotalt * 100)} %` : '-'}
                     under={`${quizrader.reduce((s, r) => s + r.quizForsok, 0)} fullførte quizer`}
                 />
                 <Nokkeltall

@@ -63,7 +63,7 @@ export const StatsPage: React.FC = () => {
                         </Link>
                         <h1 className="font-display text-3xl font-bold text-slate-900">Bruksstatistikk</h1>
                         <p className="text-slate-500">
-                            Hvordan Eiriksbok faktisk brukes – i sanntid, med historikk.
+                            Hvordan Eiriksbok faktisk brukes - i sanntid, med historikk.
                         </p>
                     </div>
 

@@ -5,7 +5,7 @@
 // ferdig normaliserte tall som props.
 
 import { useEffect, useMemo, useState } from 'react';
-import { ref, onValue, query, orderByKey, startAt } from 'firebase/database';
+import { ref, onValue, query, orderByKey, startAt, limitToLast } from 'firebase/database';
 import { db } from '../../../lib/firebase';
 import { useManifest } from '../../../hooks/useManifest';
 import {
@@ -23,6 +23,13 @@ import {
 // Hvor langt tilbake dagsbøttene hentes. 120 dager dekker et skoleår-halvår
 // uten å dra ned hele historikken på hver visning.
 const DAGER_TILBAKE = 120;
+
+// Søkeloggen er en push-liste som bare vokser. Panelene bruker den til «siste
+// søk» og «mest søkt», og begge svarer på hva elevene leter etter nå - ikke i
+// fjor. Hele listen ville vært en nedlasting som ble tyngre for hver uke.
+// Den fulle oversikten over hva som mangler ligger uansett i `zero_hits`,
+// som er tellere og ikke en logg.
+const SOK_TILBAKE = 500;
 
 export interface StatsData {
     raa: RaaStats;
@@ -70,7 +77,10 @@ export const useStatsData = (): StatsData => {
             onValue(ref(db, 'analytics/zero_hits'), sett('zeroHits')),
             onValue(ref(db, 'analytics/unique_users'), sett('uniqueUsers')),
             onValue(ref(db, 'analytics/active_users'), sett('activeUsers')),
-            onValue(ref(db, 'analytics/searches'), sett('searches')),
+            onValue(
+                query(ref(db, 'analytics/searches'), limitToLast(SOK_TILBAKE)),
+                sett('searches')
+            ),
             onValue(ref(db, 'analytics/games/hangman'), sett('hangman')),
         ];
 

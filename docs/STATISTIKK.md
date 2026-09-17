@@ -39,7 +39,7 @@ tegning.
 | `analytics/clock/{ukedag 0-6}/{time 0-23}` | teller | `sporVisning` |
 | `analytics/devices/{klasse}` · `browsers/{navn}` | tellere | `sporDagensBesok` |
 | `analytics/activity/{type}` | teller totalt | `sporAktivitet` |
-| `analytics/quiz/{side}` | `{forsok, poengSum, perfekte}` | `sporQuiz` |
+| `analytics/quiz/{side}` | `{forsok, poengSum, perfekte}` | `sporQuiz` (hopper over Quiz Battle - pin-en er ny hver runde) |
 | `analytics/zero_hits/{ord}` | `{query, antall, sist}` | `sporSok` |
 | `analytics/searches/{push}` | `{query, type, timestamp, resultsCount}` | `sporSok` |
 | `analytics/unique_users/{anonId}` | `{firstSeen, lastSeen, device}` | `usePresence` |
@@ -60,6 +60,11 @@ til at dashbordet kan tegne en trend, sammenligne to perioder og si «+77 %».
 Nøkkelen er `YYYY-MM-DD`, som sorterer kronologisk. Derfor kan dashbordet hente
 bare de siste 120 dagene med `orderByKey().startAt(...)` i stedet for å laste
 ned hele historikken for å tegne 30 dager.
+
+Av samme grunn henter dashbordet bare de 500 nyeste postene i `analytics/searches`
+(`limitToLast`). Søkeloggen er en push-liste som bare vokser, og Søk-fanen svarer
+på hva elevene leter etter nå. Den fulle oversikten over hva som mangler ligger i
+`analytics/zero_hits`, som er tellere og ikke en logg.
 
 ### Hvorfor `update()` med flere stier
 

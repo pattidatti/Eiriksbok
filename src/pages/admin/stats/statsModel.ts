@@ -5,6 +5,7 @@
 
 import type { Manifest } from '../../../types';
 import { getSubjectLabel } from '../../../utils/subjectColors';
+import { fagFraSti } from '../../../lib/analytics';
 
 // --- Rå former fra RTDB ---------------------------------------------------
 
@@ -112,7 +113,7 @@ export const UKEDAGER = ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'];
 // --- Formatering ----------------------------------------------------------
 
 export const formatTid = (ms: number): string => {
-    if (!ms || ms < 1000) return '–';
+    if (!ms || ms < 1000) return '-';
     const sek = Math.round(ms / 1000);
     if (sek < 60) return `${sek}s`;
     const min = Math.floor(sek / 60);
@@ -209,7 +210,7 @@ export const byggSideregister = (manifest: Manifest | undefined): Record<string,
                 tittel: verktoy.title,
                 fagId: fag.id,
                 fagTittel,
-                emne: '–',
+                emne: '-',
                 sti: verktoy.link,
                 type: 'verktøy',
             };
@@ -225,12 +226,16 @@ export const slaOppSide = (noekkel: string, reg: Record<string, SideInfo>): Side
     if (treff) return treff;
 
     const deler = noekkel.split('_').filter(Boolean);
-    const fagId = deler[0] ?? 'ukjent';
+    // Rutene som ikke er fag (/oving, /tidslinje, /atlas, /sok ...) samles under
+    // 'verktoy', slik `fagFraSti` allerede gjør i målingen. Uten dette fikk hver
+    // slik rot-rute sin egen fag-id, og Fag-fanen viste åtte rader som alle het
+    // «Annet» - ett fag per rute, uten noen måte å se hvilken.
+    const fagId = fagFraSti(`/${deler.join('/')}`);
     return {
         tittel: deler.map((d) => d.replace(/-/g, ' ')).join(' / ') || noekkel,
         fagId,
-        fagTittel: getSubjectLabel(fagId),
-        emne: '–',
+        fagTittel: fagId === 'verktoy' ? 'Verktøy og øving' : getSubjectLabel(fagId),
+        emne: '-',
         sti: `/${deler.join('/')}`,
         type: 'verktøy',
     };

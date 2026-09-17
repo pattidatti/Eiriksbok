@@ -270,6 +270,9 @@ export const Varmekart: React.FC<{
     ukedager: string[];
 }> = ({ celler, ukedager }) => {
     const maks = Math.max(1, ...celler.map((c) => c.antall));
+    // Oppslag framfor find() inni den doble lokka: 168 celler ganger 168 rader
+    // ble 28 000 sammenligninger for et rutenett som tegnes ved hver render.
+    const oppslag = new Map(celler.map((c) => [c.ukedag * 24 + c.time, c.antall]));
 
     return (
         <div className="overflow-x-auto">
@@ -286,12 +289,11 @@ export const Varmekart: React.FC<{
                         <div className="w-9 shrink-0 text-[10px] font-medium text-slate-500">{navn}</div>
                         <div className="flex flex-1 gap-0.5">
                             {Array.from({ length: 24 }, (_, t) => {
-                                const c = celler.find((x) => x.ukedag === d && x.time === t);
-                                const antall = c?.antall ?? 0;
+                                const antall = oppslag.get(d * 24 + t) ?? 0;
                                 return (
                                     <div
                                         key={t}
-                                        title={`${navn} kl. ${t}:00 – ${antall} visninger`}
+                                        title={`${navn} kl. ${t}:00 - ${antall} visninger`}
                                         className="h-5 flex-1 rounded-[3px] transition-transform hover:scale-125"
                                         style={{ background: rampeSteg(antall / maks) }}
                                     />

@@ -194,7 +194,7 @@ export const Innhold: React.FC<Props> = ({ siderader }) => {
                                             {Math.round(r.quizSnitt * 100)} %
                                         </span>
                                     ) : (
-                                        <span className="text-xs text-slate-300">–</span>
+                                        <span className="text-xs text-slate-300">-</span>
                                     )}
                                 </td>
                             </tr>

@@ -82,16 +82,9 @@ export const Fag: React.FC<Props> = ({ raa, siderader, dagerNaa, vindu }) => {
 
     // Artikler ingen har åpnet. Den mest konkrete arbeidslisten i hele
     // dashbordet: innhold som finnes, men som ingen finner fram til.
-    const ulest = useMemo(
-        () =>
-            siderader
-                .filter((r) => r.type === 'leksjon' && r.visninger === 0)
-                .sort((a, b) => a.fagTittel.localeCompare(b.fagTittel, 'nb')),
-        [siderader]
-    );
-
-    // siderader dekker bare sider som har vært målt. Artikler som aldri er
-    // åpnet finnes ikke der - de må hentes fra manifestet.
+    // Listen bygges fra manifestet, ikke fra siderader: en artikkel som aldri
+    // er åpnet har ingen målinger, og finnes derfor ikke i siderader i det
+    // hele tatt.
     const aldriApnet = useMemo(() => {
         const reg = byggSideregister(manifest);
         const malt = new Set(siderader.filter((r) => r.visninger > 0).map((r) => r.noekkel));
@@ -139,10 +132,10 @@ export const Fag: React.FC<Props> = ({ raa, siderader, dagerNaa, vindu }) => {
                                         {formatTid(f.lesetid)}
                                     </td>
                                     <td className="px-4 py-3 text-right font-mono text-sm text-slate-600">
-                                        {f.aktiviteter || '–'}
+                                        {f.aktiviteter || '-'}
                                     </td>
                                     <td className="px-4 py-3 text-right font-mono text-sm text-slate-500">
-                                        {f.antallSider > 0 ? `${f.lesteSider} / ${f.antallSider}` : '–'}
+                                        {f.antallSider > 0 ? `${f.lesteSider} / ${f.antallSider}` : '-'}
                                     </td>
                                     <td className="py-3 pl-4">
                                         {f.antallSider > 0 ? (
@@ -161,7 +154,7 @@ export const Fag: React.FC<Props> = ({ raa, siderader, dagerNaa, vindu }) => {
                                                 </span>
                                             </div>
                                         ) : (
-                                            <span className="text-xs text-slate-300">–</span>
+                                            <span className="text-xs text-slate-300">-</span>
                                         )}
                                     </td>
                                 </tr>
@@ -217,11 +210,6 @@ export const Fag: React.FC<Props> = ({ raa, siderader, dagerNaa, vindu }) => {
                             </li>
                         )}
                     </ul>
-                    {ulest.length > 0 && (
-                        <p className="mt-3 border-t border-slate-100 pt-3 text-xs text-slate-400">
-                            {ulest.length} målte sider står også på null.
-                        </p>
-                    )}
                 </Kort>
             </div>
         </div>
