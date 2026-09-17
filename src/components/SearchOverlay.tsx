@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useManifest } from '../hooks/useManifest';
 import { useScrollLock } from '../hooks/useScrollLock';
@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { textLibraryData } from '../data/textLibraryData';
 import { learningPathsData } from '../data/learningPathsHelper';
 import Fuse from 'fuse.js';
+import { sporSok } from '../lib/analytics';
 
 interface SearchOverlayProps {
     isOpen: boolean;
@@ -143,7 +144,6 @@ function getFuse(manifest: Manifest, people: PeopleData | undefined): Fuse<Searc
 
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
     const [query, setQuery] = useState('');
-    const [results, setResults] = useState<SearchResult[]>([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const inputRef = useRef<HTMLInputElement>(null);
     const listRef = useRef<HTMLDivElement>(null);
@@ -154,15 +154,26 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
 
     useScrollLock(isOpen);
 
+    // Treffene er en ren funksjon av manifest, persondata og søkeordet, så de
+    // regnes ut under render i stedet for å speiles i egen tilstand. Som effect
+    // måtte hvert tastetrykk gjennom en ekstra render bare for å sette state
+    // React allerede kunne utledet.
+    const results = useMemo<SearchResult[]>(() => {
+        if (!manifest || !query.trim()) return [];
+        return getFuse(manifest, peopleData)
+            .search(query)
+            .map(result => result.item)
+            .slice(0, 50);
+    }, [query, manifest, peopleData]);
+
+    // Markøren kan peke forbi en kortere trefliste; den klemmes her framfor å
+    // nullstilles i en effect.
+    const valgt = results.length > 0 ? Math.min(selectedIndex, results.length - 1) : 0;
+
     useEffect(() => {
-        if (isOpen) {
-            // Focus input on open
-            if (inputRef.current) {
-                inputRef.current.focus();
-            }
-            // Reset selection
-            setSelectedIndex(0);
-        }
+        // Fokus er en ekte bieffekt mot DOM-en. Nullstilling av markøren hører
+        // hjemme der eleven skriver (se onChange under), ikke her.
+        if (isOpen) inputRef.current?.focus();
     }, [isOpen]);
 
     // Handle Keyboard Navigation
@@ -175,14 +186,16 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                 onClose();
             } else if (e.key === 'ArrowDown') {
                 e.preventDefault();
-                setSelectedIndex(prev => (prev + 1) % results.length);
+                // Går ut fra den klemte markøren, ikke den rå: uten tomme-
+                // treffvakten blir modulo på null til NaN.
+                if (results.length > 0) setSelectedIndex((valgt + 1) % results.length);
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
-                setSelectedIndex(prev => (prev - 1 + results.length) % results.length);
+                if (results.length > 0) setSelectedIndex((valgt - 1 + results.length) % results.length);
             } else if (e.key === 'Enter') {
                 e.preventDefault();
-                if (results[selectedIndex]) {
-                    navigate(results[selectedIndex].path);
+                if (results[valgt]) {
+                    navigate(results[valgt].path);
                     onClose();
                 }
             }
@@ -190,50 +203,27 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [isOpen, onClose, results, selectedIndex, navigate]);
+    }, [isOpen, onClose, results, valgt, navigate]);
 
     // Auto-scroll to selected item
     useEffect(() => {
         if (listRef.current) {
-            const selectedElement = listRef.current.children[selectedIndex] as HTMLElement;
+            const selectedElement = listRef.current.children[valgt] as HTMLElement;
             if (selectedElement) {
                 selectedElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
             }
         }
-    }, [selectedIndex]);
+    }, [valgt]);
 
+    // Loggingen er det eneste som faktisk er en bieffekt. sporSok teller
+    // treffløse søk for seg - den mest direkte listen over innhold som mangler.
     useEffect(() => {
-        if (!manifest || !query.trim()) {
-            setResults([]);
-            return;
-        }
-
-        const searchResults = getFuse(manifest, peopleData).search(query);
-        setResults(searchResults.map(result => result.item).slice(0, 50)); // Limit to 50 results
-        setSelectedIndex(0); // Reset selection on new results
-
-        // Log search to Firebase (Debounced)
+        if (!query.trim()) return;
         const logTimer = setTimeout(() => {
-            if (query.length > 2) { // Only log if length > 2
-                import('../lib/firebase').then(({ db }) => {
-                    import('firebase/database').then(({ ref, push, serverTimestamp }) => {
-                        const searchRef = ref(db, 'analytics/searches');
-                        // Analytikk er best-effort: manglende skrivetilgang
-                        // (f.eks. localhost) skal aldri gi feil i konsollen
-                        push(searchRef, {
-                            query: query,
-                            type: 'text',
-                            timestamp: serverTimestamp(),
-                            resultsCount: searchResults.length
-                        }).catch(() => {});
-                    }).catch(() => {});
-                }).catch(() => {});
-            }
+            sporSok(query, results.length, 'text');
         }, 2000); // 2 second debounce
-
         return () => clearTimeout(logTimer);
-
-    }, [query, manifest, peopleData]);
+    }, [query, results.length]);
 
     return (
         <AnimatePresence>
@@ -260,10 +250,13 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                                 role="combobox"
                                 aria-expanded="true"
                                 aria-controls="search-results"
-                                aria-activedescendant={results.length > 0 ? `result-${selectedIndex}` : undefined}
+                                aria-activedescendant={results.length > 0 ? `result-${valgt}` : undefined}
                                 placeholder="Søk etter begreper, leksjoner, tekster..."
                                 value={query}
-                                onChange={e => setQuery(e.target.value)}
+                                onChange={e => {
+                                    setQuery(e.target.value);
+                                    setSelectedIndex(0);
+                                }}
                                 className="w-full pl-14 pr-4 py-4 text-xl bg-white/10 border border-white/20 rounded-2xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent font-display"
                             />
                             <button
@@ -291,13 +284,13 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                                     <motion.div
                                         id={`result-${index}`}
                                         role="option"
-                                        aria-selected={index === selectedIndex}
+                                        aria-selected={index === valgt}
                                         initial={{ opacity: 0, y: 8 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         whileTap={{ scale: 0.98 }}
                                         transition={{ delay: Math.min(index * 0.03, 0.3), duration: 0.2, ease: 'easeOut' }}
                                         onMouseEnter={() => setSelectedIndex(index)}
-                                        className={`border rounded-xl p-4 flex justify-between items-center transition-all group cursor-pointer ${index === selectedIndex
+                                        className={`border rounded-xl p-4 flex justify-between items-center transition-all group cursor-pointer ${index === valgt
                                             ? 'bg-slate-800/90 border-indigo-500 shadow-lg shadow-indigo-500/20'
                                             : 'bg-slate-900/60 border-white/5 hover:bg-slate-800/80 hover:border-white/20'
                                             }`}

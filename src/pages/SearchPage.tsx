@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { motionPresets } from '../styles/motion-presets';
 import { textLibraryData } from '../data/textLibraryData';
 import { learningPathsData } from '../data/learningPathsHelper';
-import { db } from '../lib/firebase';
+import { sporSok } from '../lib/analytics';
 
 interface SearchResult {
     lesson: ManifestLesson;
@@ -159,15 +159,7 @@ export const SearchPage: React.FC = () => {
 
         // Debounce logging slightly to avoid duplicates on quick nav
         const timer = setTimeout(() => {
-            import('firebase/database').then(({ ref, push, serverTimestamp }) => {
-                const searchRef = ref(db, 'analytics/searches');
-                push(searchRef, {
-                    query: tag,
-                    type: 'tag',
-                    timestamp: serverTimestamp(),
-                    resultsCount: results.length
-                });
-            });
+            sporSok(tag, results.length, 'tag');
         }, 1000);
 
         return () => clearTimeout(timer);

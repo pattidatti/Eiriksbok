@@ -1,15 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { getFirebase } from '../lib/firebaseLazy';
 import { useLocation } from 'react-router-dom';
+import { getAnonId, sporDagensBesok } from '../lib/analytics';
 
 const ANON_ID_KEY = 'gravity_anon_id';
-
-const generateUUID = () => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-};
 
 export const usePresence = () => {
     const location = useLocation();
@@ -17,19 +11,26 @@ export const usePresence = () => {
     const lastSeenTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     useEffect(() => {
-        // Get or create persistent Anonymous ID
-        let anonId = localStorage.getItem(ANON_ID_KEY);
-        const isNewUser = !anonId;
-        if (!anonId) {
-            anonId = generateUUID();
-            localStorage.setItem(ANON_ID_KEY, anonId);
-        }
+        // Samme anonyme id som resten av målingen bruker.
+        const hadde = (() => {
+            try {
+                return !!localStorage.getItem(ANON_ID_KEY);
+            } catch {
+                return true;
+            }
+        })();
+        const anonId = getAnonId();
+        const isNewUser = !hadde;
 
         const path = location.pathname;
 
         // Skip write if path hasn't changed (StrictMode double-fire guard)
         if (lastPathRef.current === path) return;
         lastPathRef.current = path;
+
+        // Dagens unike besøkende + enhetsfordeling. Skriver maks én gang i
+        // døgnet per enhet, så dette koster ingenting i navigasjon.
+        sporDagensBesok();
 
         // Firebase lastes her, etter første tegning, i stedet for å ligge i
         // den eager pakken. Alle skrivingene under er ren analytikk.
@@ -56,12 +57,9 @@ export const usePresence = () => {
         // Debounce lastSeen update: max one write per 30 seconds
         if (lastSeenTimerRef.current) clearTimeout(lastSeenTimerRef.current);
         lastSeenTimerRef.current = setTimeout(() => {
-            const id = localStorage.getItem(ANON_ID_KEY);
-            if (id) {
-                void getFirebase().then(({ db, ref, set, serverTimestamp }) =>
-                    set(ref(db, `analytics/unique_users/${id}/lastSeen`), serverTimestamp())
-                ).catch(() => {});
-            }
+            void getFirebase().then(({ db, ref, set, serverTimestamp }) =>
+                set(ref(db, `analytics/unique_users/${anonId}/lastSeen`), serverTimestamp())
+            ).catch(() => {});
         }, 30_000);
 
         return () => {

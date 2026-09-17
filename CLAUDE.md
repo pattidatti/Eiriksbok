@@ -608,6 +608,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 
 - Config in `src/lib/firebase.ts`
 - Used for: Quiz Battle (Realtime DB), user feedback (`FeedbackWidget`), presence tracking,
+  bruksstatistikk under `analytics/` (se `docs/STATISTIKK.md`),
   and the shared hall in Minnevokteren (`rpg-hub`)
 - Database rules live in `database.rules.json` — the one file `firebase.json` deploys.
   Deploy them with `firebase deploy --only database` after editing.
@@ -665,6 +666,8 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 | `src/App.tsx` | Router setup, context providers |
 | `src/routes.ts` | Lazy-load route factories |
 | `src/lib/firebase.ts` | Firebase configuration |
+| `src/lib/analytics.ts` | Eneste lovlige skrivevei for bruksmåling (visninger, lesetid, søk, fullføringer). Nye stier må også åpnes i `database.rules.json`. Se `docs/STATISTIKK.md` |
+| `src/pages/admin/stats/` | Dashbordet på `/admin/stats`: ett abonnement (`useStatsData`), rene utregninger (`statsModel`), paneler som bare tegner |
 | `src/games/engine/` | Mini-spillmotor (typer, GameEngine, systems/, builders/). Se `BUILD_GAME_GUIDE.md` for API-er. |
 | `src/features/progress/` | Progresjonssystemet bak «Min læring» (`/min-laering`): `useProgressStore.recordActivity()` kalles fra alle fullføringspunkter og eier XP/nivå, streak, badges, dagens mål, fag-mestring og Firebase-synk via tre-ords-kode. Nye moduler som gir eleven fullføringer skal kalle `recordActivity()`. |
 | `src/pages/MiniGamesPage.tsx` | Galleriside — legg til nye spill i HISTORICAL_GAMES her |
@@ -707,6 +710,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 - `docs/TERMINOLOGI_OG_STRUKTUR.md` — Terminologi og struktur-referanse
 - `docs/NAVIGATION_PROPOSALS.md` — Forslag/historikk for navigasjon
 - `docs/image-style-guide.md` — Image generation and WebP optimization
+- `docs/STATISTIKK.md` — Bruksmåling og admin-dashbordet (`/admin/stats`)
 - `docs/DETEKTIV_GUIDE.md` — Detective case system
 - `docs/SCENARIO_DESIGN_GUIDE.md` — Tidsreise-scenario design
 - `docs/KRLE_PEDAGOGICAL_GUIDE.md` — KRLE content guidelines
