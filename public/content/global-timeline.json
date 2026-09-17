@@ -898,6 +898,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "daoisme",
+      "title": "Daoisme: veien som ikke lar seg tvinge",
+      "description": "Kinas andre store svar på kaoset: slutt å presse, og la ting finne formen sin selv.",
+      "startDate": -500,
+      "endDate": null,
+      "displayDate": "500 fvt",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "livssyn",
+      "link": "/krle/livssyn/daoisme",
+      "tags": [
+        "kina",
+        "livssyn",
+        "daoisme",
+        "wu-wei",
+        "filosofi",
+        "religion"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "perserkrigene",
       "title": "Perserkrigene",
       "description": "Hvordan en flokk greske bystater slo verdens største rike — i tre avgjørende slag.",

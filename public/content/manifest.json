@@ -9724,6 +9724,21 @@
               ],
               "createdDate": "2026-08-18T04:27:25+02:00",
               "lastUpdated": "2026-08-19T00:39:07+02:00"
+            },
+            {
+              "id": "daoisme",
+              "title": "Daoisme: veien som ikke lar seg tvinge",
+              "description": "Kinas andre store svar på kaoset: slutt å presse, og la ting finne formen sin selv.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "kina",
+                "livssyn",
+                "daoisme",
+                "wu-wei",
+                "filosofi",
+                "religion"
+              ],
+              "createdDate": "2026-09-17T00:00:00Z"
             }
           ]
         },

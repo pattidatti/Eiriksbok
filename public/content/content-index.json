@@ -1,5 +1,5 @@
 {
-  "buildId": 18051988541569,
+  "buildId": 20525532554489,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3201,6 +3201,9 @@
     "ateisme-og-agnostisme": [
       "content/krle/livssyn/ateisme-og-agnostisme.json"
     ],
+    "daoisme": [
+      "content/krle/livssyn/daoisme.json"
+    ],
     "konfusianisme": [
       "content/krle/livssyn/konfusianisme.json"
     ],
@@ -5863,6 +5866,7 @@
     "krle/filosofi/rousseau": "content/krle/filosofi/rousseau.json",
     "krle/filosofi/sokrates": "content/krle/filosofi/sokrates.json",
     "krle/livssyn/ateisme-og-agnostisme": "content/krle/livssyn/ateisme-og-agnostisme.json",
+    "krle/livssyn/daoisme": "content/krle/livssyn/daoisme.json",
     "krle/livssyn/konfusianisme": "content/krle/livssyn/konfusianisme.json",
     "krle/livssyn/livssynshumanisme": "content/krle/livssyn/livssynshumanisme.json",
     "krle/livssyn/sekularisering": "content/krle/livssyn/sekularisering.json",
