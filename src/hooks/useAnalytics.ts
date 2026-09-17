@@ -1,38 +1,34 @@
 import { useEffect, useRef } from 'react';
-import { getFirebase } from '../lib/firebaseLazy';
+import { useLocation } from 'react-router-dom';
+import { sporVisning } from '../lib/analytics';
 
 const VIEW_SESSION_KEY = 'gravity_analytics_session';
 
+/**
+ * Teller én sidevisning per økt per side. Selve skrivingen (totalteller,
+ * dagsbøtte, fagbøtte og klokkeslett) ligger i src/lib/analytics.ts.
+ */
 export const useAnalytics = (id: string | undefined) => {
     const countedRef = useRef(false);
+    const location = useLocation();
 
     useEffect(() => {
         if (!id || countedRef.current) return;
 
-        // Sanitize ID for Firebase path (replace / with _)
-        const safeId = id.replace(/[^a-zA-Z0-9-_]/g, '_');
-        const sessionKey = `${VIEW_SESSION_KEY}_${safeId}`;
+        const sessionKey = `${VIEW_SESSION_KEY}_${id.replace(/[^a-zA-Z0-9-_]/g, '_')}`;
 
-        // Check sessionStorage to prevent counted views in same session (refresh)
-        if (sessionStorage.getItem(sessionKey)) {
-            countedRef.current = true;
-            return;
+        // sessionStorage hindrer at en refresh teller på nytt.
+        try {
+            if (sessionStorage.getItem(sessionKey)) {
+                countedRef.current = true;
+                return;
+            }
+            sessionStorage.setItem(sessionKey, 'true');
+        } catch {
+            /* privat modus: da teller vi heller litt for mye */
         }
 
-        // Increment view count in Firebase
-        getFirebase()
-            .then(({ db, ref, runTransaction }) =>
-                runTransaction(ref(db, `analytics/views/${safeId}`), (currentViews) => {
-                    return (currentViews || 0) + 1;
-                })
-            )
-            .then(() => {
-                sessionStorage.setItem(sessionKey, 'true');
-                countedRef.current = true;
-            })
-            .catch((err) => {
-                console.error('[Analytics] Failed to track view:', err);
-            });
-
-    }, [id]);
+        countedRef.current = true;
+        sporVisning(id, location.pathname);
+    }, [id, location.pathname]);
 };

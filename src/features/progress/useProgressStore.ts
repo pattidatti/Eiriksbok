@@ -24,6 +24,7 @@ import type {
     RecordResult,
     SyncState,
 } from './types';
+import { sporAktivitet, sporQuiz } from '../../lib/analytics';
 
 const STORAGE_KEY = 'progress-store-v1';
 const MAX_EVENTS = 200;
@@ -331,6 +332,14 @@ export const useProgressStore = create<ProgressState>()(
                     events: [...state.events, event].slice(-MAX_EVENTS),
                     updatedAt: now,
                 });
+
+                // Anonym bruksmåling til /admin/stats. Storen eier elevens
+                // egne tall (de bor i localStorage); dette er bare en teller
+                // slik at admin ser hvor mye som faktisk fullføres på siden.
+                sporAktivitet(input.kind, event.subjectId, xp);
+                if (input.kind === 'quiz-completed' && input.score !== undefined) {
+                    sporQuiz(input.activityId, input.score);
+                }
 
                 const result: RecordResult = {
                     xpAwarded: xp,

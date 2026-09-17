@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BarChart, FileText, Link as LinkIcon, Shield, Gamepad2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { PulsStripe } from './stats/PulsStripe';
 
 const AdminCard: React.FC<{
     title: string;
@@ -49,10 +50,13 @@ export const AdminDashboard: React.FC = () => {
                     <p className="text-slate-500 text-lg">Verktøy for administrasjon og kvalitetssikring.</p>
                 </div>
 
+                {/* Pulsen på siden, før verktøykortene: er det liv her nå? */}
+                <PulsStripe />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <AdminCard
-                        title="Lesestatistikk"
-                        description="Se hva som blir lest. Topplister for artikler og emner i sanntid."
+                        title="Bruksstatistikk"
+                        description="Hele bildet: trender, innhold, fag, publikum, søk og fullførte oppgaver."
                         icon={<BarChart className="w-6 h-6 text-indigo-600" />}
                         to="/admin/stats"
                         color="bg-indigo-50"
