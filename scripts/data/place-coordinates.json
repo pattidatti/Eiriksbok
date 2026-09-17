@@ -866,7 +866,7 @@
     },
     {
       "tag": "filosofi",
-      "count": 59
+      "count": 61
     },
     {
       "tag": "handel",
@@ -881,16 +881,16 @@
       "count": 42
     },
     {
+      "tag": "religion",
+      "count": 41
+    },
+    {
       "tag": "politikk",
       "count": 40
     },
     {
       "tag": "kald-krig",
       "count": 40
-    },
-    {
-      "tag": "religion",
-      "count": 39
     },
     {
       "tag": "middelalder",
@@ -1145,6 +1145,10 @@
       "count": 10
     },
     {
+      "tag": "livssyn",
+      "count": 10
+    },
+    {
       "tag": "kongemakt",
       "count": 10
     },
@@ -1239,10 +1243,6 @@
     {
       "tag": "jehovas-vitner",
       "count": 9
-    },
-    {
-      "tag": "livssyn",
-      "count": 8
     },
     {
       "tag": "historiens-store-gater",
@@ -2186,6 +2186,14 @@
     },
     {
       "tag": "komedie",
+      "count": 2
+    },
+    {
+      "tag": "daoisme",
+      "count": 2
+    },
+    {
+      "tag": "wu-wei",
       "count": 2
     },
     {

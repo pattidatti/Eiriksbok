@@ -221,6 +221,7 @@ const Bjornegrava3D = lazy(() => import('./Bjornegrava3D'));
 const BeskjedenForSent3D = lazy(() => import('./BeskjedenForSent3D'));
 const Scriptoriet3D = lazy(() => import('./Scriptoriet3D'));
 const DalenDuLaner3D = lazy(() => import('./DalenDuLaner3D'));
+const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'hvor-er-jobbene-3d': {
@@ -2166,6 +2167,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 170,
         loader: () => import('./DalenDuLaner3D'),
         Component: DalenDuLaner3D as never,
+    },
+    'vannets-vei-3d': {
+        id: 'vannets-vei-3d',
+        title: 'Vannets vei',
+        description:
+            'Du er et blad på ei elv, i øyehøyde med vannflata. Den lyse stripa foran deg er strømdraget, veien elva allerede har laget - og den svinger, mens den rette linja ned er full av stein og stillevann. Styr med pekeren og hold inne for å padle. Padler du hele veien, blir du utslitt før havet. Driver du helt uten å ta i, blir du liggende i stillevannet til elva synker. Lyspæra: wu wei er ikke å gjøre ingenting. Det er å slutte å presse, og bruke få og godt timede tak til å legge seg i kraften som alt finnes.',
+        estimatedSeconds: 160,
+        loader: () => import('./VannetsVei3D'),
+        Component: VannetsVei3D as never,
     },
 };
 
