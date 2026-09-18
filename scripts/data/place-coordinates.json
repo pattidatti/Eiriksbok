@@ -985,6 +985,10 @@
       "count": 21
     },
     {
+      "tag": "kolonialisering",
+      "count": 21
+    },
+    {
       "tag": "folkemord",
       "count": 21
     },
@@ -997,8 +1001,8 @@
       "count": 20
     },
     {
-      "tag": "kolonialisering",
-      "count": 19
+      "tag": "menneskerettigheter",
+      "count": 20
     },
     {
       "tag": "olje",
@@ -1010,10 +1014,6 @@
     },
     {
       "tag": "imperialisme",
-      "count": 18
-    },
-    {
-      "tag": "menneskerettigheter",
       "count": 18
     },
     {
@@ -1169,6 +1169,10 @@
       "count": 10
     },
     {
+      "tag": "slaveri",
+      "count": 10
+    },
+    {
       "tag": "helse",
       "count": 10
     },
@@ -1266,10 +1270,6 @@
     },
     {
       "tag": "okonomi",
-      "count": 8
-    },
-    {
-      "tag": "slaveri",
       "count": 8
     },
     {

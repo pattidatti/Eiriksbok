@@ -230,6 +230,7 @@ const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').the
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
 const CategoricalImperativeTester = lazy(() => import('./content/interactive/CategoricalImperativeTester').then(m => ({ default: m.CategoricalImperativeTester })));
 const FilterBubbleSim = lazy(() => import('./content/interactive/FilterBubbleSim').then(m => ({ default: m.FilterBubbleSim })));
+const ForbudOgVirkelighet = lazy(() => import('./content/interactive/ForbudOgVirkelighet').then(m => ({ default: m.ForbudOgVirkelighet })));
 const FrihetensRegning = lazy(() => import('./content/interactive/FrihetensRegning').then(m => ({ default: m.FrihetensRegning })));
 const StatistikkVri = lazy(() => import('./content/interactive/StatistikkVri').then(m => ({ default: m.StatistikkVri })));
 const Valgmaskinen = lazy(() => import('./content/interactive/Valgmaskinen').then(m => ({ default: m.Valgmaskinen })));
@@ -735,6 +736,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ToFlomfortellinger,
     CategoricalImperativeTester,
     FilterBubbleSim,
+    ForbudOgVirkelighet,
     FrihetensRegning,
     AlgoritmeSorteraren,
     AutomationRisk,

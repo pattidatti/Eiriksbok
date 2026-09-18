@@ -5610,6 +5610,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "slaveriets-avskaffelse",
+      "title": "Slaveriets avskaffelse: forbudet som tok hundre år",
+      "description": "Hvordan slaveriet ble avskaffet land for land, og hvorfor et forbud på papiret ikke var det samme som frihet i virkeligheten.",
+      "startDate": 1787,
+      "endDate": 1888,
+      "displayDate": "1787-1888",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "kolonialisering",
+      "link": "/historie/kolonialisering/slaveriets-avskaffelse",
+      "tags": [
+        "slaveri",
+        "menneskerettigheter",
+        "kolonialisering",
+        "storbritannia",
+        "danmark-norge"
+      ],
+      "lat": 54,
+      "lng": -2.5,
+      "placeLabel": "Storbritannia",
+      "placeCountryId": 826,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "australia-og-aboriginerne",
       "title": "Australia: landet som ble kalt tomt",
       "description": "Britene erklærte Australia for ingenmannsland i 1788, selv om folk hadde bodd der i minst 50 000 år.",
