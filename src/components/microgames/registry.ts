@@ -20,6 +20,7 @@ const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const BankensBalansegang3D = lazy(() => import('./BankensBalansegang3D'));
+const ParlamentetsVekt3D = lazy(() => import('./ParlamentetsVekt3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
 const Doggerland3D = lazy(() => import('./Doggerland3D'));
 const Livsveien3D = lazy(() => import('./Livsveien3D'));
@@ -997,6 +998,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./Kornskuta3D'),
         Component: Kornskuta3D as never,
+    },
+    'parlamentets-vekt': {
+        id: 'parlamentets-vekt',
+        title: 'Vektskåla i parlamentet',
+        description:
+            'Dra bevis opp på forbudssiden av vektskåla mens handelen legger nye penger på den andre siden av seg selv. Påstander uten bevis veier ingenting og blir brukt mot deg. Eleven kjenner selv hvorfor forslaget om å forby slavehandelen falt gang på gang før det gikk gjennom.',
+        estimatedSeconds: 165,
+        loader: () => import('./ParlamentetsVekt3D'),
+        Component: ParlamentetsVekt3D as never,
     },
     'bankens-balansegang': {
         id: 'bankens-balansegang',

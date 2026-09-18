@@ -1,0 +1,296 @@
+{
+  "id": "slaveriets-avskaffelse",
+  "title": "Slaveriets avskaffelse: forbudet som tok hundre år",
+  "layout": "rich",
+  "year": "1787-1888",
+  "category": "Menneskerettigheter",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "factChecked": "2026-09-18",
+  "details": [
+    "Danmark-Norge forbød slavehandel fra 1803, men handelen økte kraftig i de ti årene før forbudet",
+    "Opprør fra slavebundne mennesker presset fram lovene, særlig på Haiti og Jamaica",
+    "På 1800-tallet, århundret med forbudene, ble likevel fire millioner mennesker fraktet over Atlanteren"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "1. januar 1803 ble Danmark-Norge det første landet i Europa som forbød å frakte slavebundne mennesker over Atlanteren. Slavebundne betyr mennesker som ble eid av andre og ikke fikk bestemme over sitt eget liv. Det høres ut som en god dag. Men i de ti årene før forbudet begynte å gjelde, ble det fraktet flere mennesker enn noen gang før: over 30 000, omtrent en tredjedel av alt Danmark-Norge fraktet på 150 år (Eriksen, 2024a). Kjøpmennene visste hva som kom, og de skyndte seg."
+    },
+    {
+      "type": "text",
+      "content": "Det er dette artikkelen handler om. Et forbud på papiret er ikke det samme som frihet i virkeligheten. Slaveriet ble avskaffet, men det tok nesten hundre år, det skjedde land for land, og hver gang loven tok et steg, tok virkeligheten et kortere ett."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Lasteskip ved kai i en europeisk havn tidlig på 1800-tallet",
+      "caption": "Kjøpmennene visste at forbudet kom. De siste årene før 1803 gikk skipene tettere enn noen gang."
+    },
+    {
+      "type": "header",
+      "text": "Hva var det som skulle avskaffes?"
+    },
+    {
+      "type": "text",
+      "content": "Mellom 1450 og 1850 ble minst 12,5 millioner mennesker fraktet fra Vest-Afrika og over Atlanteren (Eriksen, 2024b). Rundt to millioner av dem døde underveis. Overfarten kunne ta to til tre måneder, og mange nektet å spise eller tok sitt eget liv."
+    },
+    {
+      "type": "text",
+      "content": "Dette var ikke en liten del av økonomien. På 1700-tallet sto Storbritannia alene for rundt 40 prosent av all frakt av slavebundne mennesker over Atlanteren (Eriksen, 2024b). Portugal startet handelen på 1400-tallet, og Spania, Frankrike, Nederland, Danmark-Norge og Sverige var alle med. Hvordan selve systemet var satt sammen, kan du lese om i artikkelen om [trekanthandelen](/historie/kolonialisering/trekanthandelen)."
+    },
+    {
+      "type": "header",
+      "text": "Ingen ga friheten bort"
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å tro at slaveriet tok slutt fordi noen i Europa ombestemte seg. Men det første og hardeste presset kom fra dem som selv var slavebundne. På Haiti gjorde de opprør i 1791 og kjempet seg fram til sin egen stat. Den historien kan du lese i artikkelen om [Haiti](/historie/dekolonisering/haiti)."
+    },
+    {
+      "type": "text",
+      "content": "Førti år senere skjedde det igjen. Første juledag 1831 la de slavebundne på Jamaica ned arbeidet og krevde bedre forhold. Streiken ble ledet av baptistpredikanten Samuel Sharpe, og den vokste til at titusener av slavebundne mennesker angrep og brente plantasjer (Encyclopaedia Britannica, 2026b). Britiske soldater slo ned opprøret og henrettet lederne. Men nyheten nådde London, og den gjorde inntrykk. Britannica peker på at opprøret var med på å presse fram loven som avskaffet slaveriet i 1833."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Brennende sukkerplantasje på Jamaica i nattemørket",
+      "caption": "Julen 1831 gjorde titusener av slavebundne mennesker opprør på Jamaica. Nyheten nådde London og endret debatten der."
+    },
+    {
+      "type": "header",
+      "text": "De som samlet bevis"
+    },
+    {
+      "type": "text",
+      "content": "I 1787 gikk en liten gruppe briter sammen i en forening med ett mål: å stanse slavehandelen (Encyclopaedia Britannica, 2026a). Blant dem var Thomas Clarkson, Granville Sharp og William Wilberforce."
+    },
+    {
+      "type": "text",
+      "content": "Det viktigste de gjorde, var kanskje også det kjedeligste. De samlet bevis. De reiste til havnebyene, snakket med sjøfolk og skrev ned hva som faktisk skjedde om bord (Encyclopaedia Britannica, 2026a). Samtidig drev de store folkekampanjer og sendte underskriftslister til parlamentet. Mange av dem som skrev under, hadde ikke stemmerett selv. De hadde ingen annen måte å bli hørt på."
+    },
+    {
+      "type": "text",
+      "content": "William Wilberforce (1759-1833) var den som la saken fram i parlamentet igjen og igjen. Han tapte gang på gang. I 1791 falt forslaget hans med 163 mot 88 stemmer (Encyclopaedia Britannica, 2026c). Det gikk rundt tjue år fra han begynte til han vant. Da seieren endelig kom i 1807, var den ikke knapp: forbudet mot slavehandel ble vedtatt med 283 mot 16 stemmer."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "parlamentets-vekt"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Norge var med"
+    },
+    {
+      "type": "text",
+      "content": "Norge var ingen tilskuer. Til sammen ble rundt 100 000 mennesker fraktet på dansk-norske skip (Eriksen, 2024a). Ni av dem som styrte slavefortene langs kysten av Vest-Afrika, var nordmenn. Fortene var befestede handelsstasjoner der mennesker ble holdt innelåst mens de ventet på skipene. Norske havner solgte saltet sild og tørrfisk som ble brukt til mat for de slavebundne, og i Bergen, Trondheim og Halden sto sukkerraffinerier som foredlet det plantasjene produserte. Norske navn står også på mannskapslistene til slaveskipet Fredensborg."
+    },
+    {
+      "type": "header",
+      "text": "Forbudet som gjorde det verre først"
+    },
+    {
+      "type": "text",
+      "content": "I 1792 vedtok Danmark-Norge at slavehandelen skulle ta slutt. Men vedtaket ga ti års frist (Eriksen, 2024a). Tanken var at plantasjene skulle få tid til å stille om. Det som skjedde, var det motsatte. Eierne kjøpte så mange mennesker de kunne mens det fortsatt var lov. I tiåret fram til 1803 ble over 30 000 mennesker fraktet til koloniene, dobbelt så mange som i tiåret før."
+    },
+    {
+      "type": "text",
+      "content": "Og forbudet gjaldt bare handelen, ikke eierskapet. Selve slaveriet i Dansk Vestindia ble ikke avskaffet før i 1848 (Eriksen, 2024a). Et menneske som var eid 31. desember 1802, var fortsatt eid dagen etter."
+    },
+    {
+      "type": "component",
+      "name": "ForbudOgVirkelighet",
+      "props": {
+        "title": "Forbudet og virkeligheten",
+        "hint": "Dra årstallet bortover. Se hva loven sa - og hva som faktisk skjedde.",
+        "payoff": "Hver gang loven tok et steg, tok virkeligheten et kortere ett. Et forbud er en begynnelse, ikke en slutt.",
+        "milestones": [
+          {
+            "year": "1792",
+            "title": "Vedtaket i København",
+            "law": "Danmark-Norge vedtar at slavehandelen skal ta slutt, men gir ti års frist.",
+            "reality": "I de ti årene fram til forbudet ble over 30 000 mennesker fraktet til koloniene. Det er en tredjedel av alt på 150 år."
+          },
+          {
+            "year": "1803",
+            "title": "Forbudet begynner å gjelde",
+            "law": "Fra 1. januar er det forbudt for dansk-norske skip å frakte slavebundne over Atlanteren.",
+            "reality": "Slaveriet på plantasjene fortsatte som før. Forbudet gjaldt handelen, ikke eierskapet."
+          },
+          {
+            "year": "1807",
+            "title": "Storbritannia forbyr handelen",
+            "law": "Parlamentet vedtar forbudet med 283 mot 16 stemmer.",
+            "reality": "Loven stanset transporten. Menneskene som alt var eid på plantasjene, ble ikke fri av den."
+          },
+          {
+            "year": "1833",
+            "title": "Slaveriet forbys i britiske kolonier",
+            "law": "Loven avskaffer selve slaveriet i koloniene, ikke bare handelen.",
+            "reality": "De frigjorte måtte arbeide videre for de gamle eierne i fire til seks år til."
+          },
+          {
+            "year": "1848",
+            "title": "Dansk Vestindia og Frankrike",
+            "law": "Danmark avskaffer slaveriet i koloniene i Karibia, samme år som Frankrike.",
+            "reality": "På 1800-tallet ble likevel fire millioner mennesker fraktet over Atlanteren. Flere enn i noe tidligere århundre."
+          },
+          {
+            "year": "1888",
+            "title": "Brasil, sist av de store",
+            "law": "Brasil avskaffer slaveriet. Da er det gått 96 år siden det første vedtaket i København.",
+            "reality": "Spania holdt fast på slaveriet i koloniene sine helt til 1898, ti år etter Brasil."
+          },
+          {
+            "year": "2021",
+            "title": "I dag",
+            "law": "Slaveri er forbudt i alle land i verden.",
+            "reality": "FN og ILO anslår at rundt 50 millioner mennesker lever i moderne slaveri."
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Lov etter lov, land etter land"
+    },
+    {
+      "type": "text",
+      "content": "Storbritannia forbød slavehandelen i 1807 og selve slaveriet i koloniene i 1833. Men loven ga en overgangstid på fire til seks år der de frigjorte måtte arbeide videre for de gamle eierne (Eriksen, 2024c). Wilberforce rakk så vidt å oppleve det. Loven gikk gjennom Underhuset 26. juli 1833, og han døde tre dager senere (Encyclopaedia Britannica, 2026c)."
+    },
+    {
+      "type": "text",
+      "content": "Danmark og Frankrike avskaffet slaveriet i koloniene sine i 1848, Nederland i 1863. I USA tok det en borgerkrig som kostet rundt 600 000 liv før slaveriet ble forbudt i hele landet i 1865 (Eriksen, 2024c). Den krigen kan du lese om i artikkelen om [den amerikanske borgerkrigen](/historie/dekolonisering/amerikanske-borgerkrigen). Brasil var sist av de store og avskaffet slaveriet i 1888. Spania holdt fast på sitt til 1898."
+    },
+    {
+      "type": "header",
+      "text": "Loven var ikke friheten"
+    },
+    {
+      "type": "text",
+      "content": "Her kommer det som overrasker de fleste. 1800-tallet er århundret med alle forbudene. Det er også århundret da flest mennesker noen gang ble fraktet over Atlanteren i rene tall: rundt fire millioner (Eriksen, 2024c). Forbudene gjaldt noen land, ikke alle, og der etterspørselen var stor nok, fortsatte skipene å gå. Cuba ble verdens ledende sukkerprodusent med rundt 370 000 slavebundne mennesker midt på århundret. I Øst-Afrika vokste slavehandelen kraftig etter 1838, og rundt 1,5 millioner mennesker ble solgt der i løpet av århundret."
+    },
+    {
+      "type": "text",
+      "content": "Friheten som kom, var ofte lite verdt i praksis. Mange gikk fra å være eid til å arbeide for de samme folkene, på jord de ikke eide, for lønn de ikke kunne forhandle om. I USA fikk de frigjorte rettigheter på papiret, men fra slutten av 1870-tallet ble de skjøvet ut igjen av egne lover. Om dem kan du lese i artikkelen om [Jim Crow-lovene](/historie/dekolonisering/jim-crow-lovene)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Arbeidere på en sukkerplantasje sent på 1800-tallet",
+      "caption": "Mange som ble frigjort, måtte fortsette å arbeide for de samme eierne. Loven var endret. Hverdagen var det ikke."
+    },
+    {
+      "type": "header",
+      "text": "Slaveri i dag"
+    },
+    {
+      "type": "text",
+      "content": "FN-sambandet viser til tall fra Den internasjonale arbeidsorganisasjonen ILO. Rundt 50 millioner mennesker levde i moderne slaveri i 2021 (FN-sambandet, 2022). 28 millioner av dem var i tvangsarbeid, og 22 millioner kvinner og jenter i tvangsekteskap. Tallet hadde økt med ti millioner siden 2016."
+    },
+    {
+      "type": "text",
+      "content": "Moderne slaveri betyr at noen utnytter et menneske som ikke kan si nei eller gå sin vei, fordi de blir truet, lurt eller presset. Slaveri er forbudt i alle land i verden. Det er fortsatt ikke det samme som at ingen er slave. Avstanden mellom det loven sier og det som faktisk skjer, er der ennå. Den er den samme avstanden som de som kjempet på 1800-tallet oppdaget."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva skjedde med den dansk-norske slavehandelen i årene mellom vedtaket i 1792 og forbudet i 1803?",
+          "Hva er forskjellen på å forby slavehandel og å forby slaveri? Bruk årstallene 1807 og 1833 i svaret.",
+          "Hvilke tre ting gjorde foreningen fra 1787 for å få slutt på slavehandelen?",
+          "Hvor mange mennesker ble fraktet over Atlanteren på 1800-tallet, altså etter at de første forbudene kom?"
+        ],
+        "reflekter": [
+          "Forklar med dine egne ord hvorfor et forbud kan gjøre et problem større en kort stund før det blir mindre.",
+          "Artikkelen sier at det første presset kom fra de slavebundne selv. Forklar hvordan opprøret på Jamaica i 1831 virket inn på politikken i London.",
+          "Mange av dem som skrev under på listene til parlamentet, hadde ikke stemmerett. Forklar hvorfor underskriftene likevel betydde noe.",
+          "Wilberforce tapte i parlamentet i nesten tjue år før han vant. Vurder hva det sier om hvordan store endringer skjer."
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Norge var med i slavehandelen som leverandør av tørrfisk og som eier av sukkerraffinerier. Har vi et ansvar for det i dag? Begrunn svaret.",
+          "Finn en nyhetssak om moderne slaveri eller tvangsarbeid. Undersøk hvilke lover som gjelder, og hvorfor de ikke alltid virker.",
+          "Skriv et kort innlegg til parlamentet i 1791 der du skal overbevise dem som er i tvil. Du får bare bruke opplysninger du kan vise til en kilde for."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva skjedde med den dansk-norske slavehandelen i tiåret mellom vedtaket i 1792 og forbudet i 1803?",
+            "options": [
+              "Den stanset nesten helt med en gang",
+              "Den økte kraftig, og over 30 000 mennesker ble fraktet",
+              "Den var uendret",
+              "Den ble flyttet til Øst-Afrika"
+            ],
+            "answer": "Den økte kraftig, og over 30 000 mennesker ble fraktet"
+          },
+          {
+            "question": "Hva gjorde den britiske loven fra 1807?",
+            "options": [
+              "Den avskaffet slaveriet i hele verden",
+              "Den ga alle slavebundne mennesker i koloniene friheten",
+              "Den forbød å frakte slavebundne mennesker, men ikke å eie dem",
+              "Den forbød sukkerproduksjon"
+            ],
+            "answer": "Den forbød å frakte slavebundne mennesker, men ikke å eie dem"
+          },
+          {
+            "question": "Hvem ledet opprøret på Jamaica første juledag 1831?",
+            "options": [
+              "William Wilberforce",
+              "Thomas Clarkson",
+              "Samuel Sharpe",
+              "Granville Sharp"
+            ],
+            "answer": "Samuel Sharpe"
+          },
+          {
+            "question": "Hvor mange mennesker ble fraktet over Atlanteren på 1800-tallet, altså etter at de første forbudene kom?",
+            "options": [
+              "Rundt 40 000",
+              "Rundt 300 000",
+              "Rundt fire millioner",
+              "Ingen"
+            ],
+            "answer": "Rundt fire millioner"
+          },
+          {
+            "question": "Hva sier FN-sambandet og ILO om moderne slaveri i 2021?",
+            "options": [
+              "At det er utryddet",
+              "At rundt 50 millioner mennesker levde i moderne slaveri",
+              "At rundt 500 000 mennesker levde i moderne slaveri",
+              "At det bare finnes i land uten lover mot det"
+            ],
+            "answer": "At rundt 50 millioner mennesker levde i moderne slaveri"
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Encyclopaedia Britannica. (2026a). *Anti-Slavery Society*. Hentet 18.09.2026 fra [britannica.com/topic/Anti-Slavery-Society-British-organization-1787](https://www.britannica.com/topic/Anti-Slavery-Society-British-organization-1787)",
+          "Encyclopaedia Britannica. (2026b). *Baptist War*. Hentet 18.09.2026 fra [britannica.com/event/Baptist-War](https://www.britannica.com/event/Baptist-War)",
+          "Encyclopaedia Britannica. (2026c). *William Wilberforce*. Hentet 18.09.2026 fra [britannica.com/biography/William-Wilberforce](https://www.britannica.com/biography/William-Wilberforce)",
+          "Eriksen, T. L. (2024a). *dansk-norsk slavehandel*. Store norske leksikon. Hentet 18.09.2026 fra [snl.no/dansk-norsk_slavehandel](https://snl.no/dansk-norsk_slavehandel)",
+          "Eriksen, T. L. (2024b). *slavehandelen over Atlanterhavet*. Store norske leksikon. Hentet 18.09.2026 fra [snl.no/slavehandelen_over_Atlanterhavet](https://snl.no/slavehandelen_over_Atlanterhavet)",
+          "Eriksen, T. L. (2024c). *slaveri på 1800-tallet*. Store norske leksikon. Hentet 18.09.2026 fra [snl.no/slaveri_på_1800-tallet](https://snl.no/slaveri_p%C3%A5_1800-tallet)",
+          "FN-sambandet. (2022). *ILO: 50 millioner kvinner, menn og barn i moderne slaveri*. Hentet 18.09.2026 fra [fn.no/nyheter/ilo-50-millioner-kvinner-menn-og-barn-i-moderne-slaveri](https://fn.no/nyheter/ilo-50-millioner-kvinner-menn-og-barn-i-moderne-slaveri)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
