@@ -5,7 +5,7 @@
     "year": "1899-1901",
     "category": "Kinas historie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/kinas-historie/bokseropproret-hero.webp",
     "details": [
         "Sommeren 1900 stengte opprørerne de utenlandske utsendingene inne i Beijing.",
         "En internasjonal hærstyrke tok byen 14. august 1900 og plyndret den.",
@@ -23,7 +23,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kinas-historie/bokseropproret-01.webp",
             "alt": "Barrikade av sandsekker og kjerrer i en gate i Beijing 1900",
             "caption": "Utsendingene barrikaderte seg med det de hadde for hånden: sandsekker, kjerrer, dører og møbler."
         },
@@ -77,7 +77,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kinas-historie/bokseropproret-02.webp",
             "alt": "Unge kinesiske opprørere med sverd og faner utenfor en bymur",
             "caption": "Bokserne var mange og modige, men dårlig bevæpnet mot moderne geværer."
         },
@@ -137,7 +137,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kinas-historie/bokseropproret-03.webp",
             "alt": "Utenlandske soldater marsjerer gjennom en plyndret gate i Beijing",
             "caption": "14. august 1900: den internasjonale styrken tok Beijing og plyndret byen."
         },
