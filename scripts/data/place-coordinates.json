@@ -965,6 +965,10 @@
       "count": 23
     },
     {
+      "tag": "kolonialisering",
+      "count": 23
+    },
+    {
       "tag": "steinalder",
       "count": 22
     },
@@ -985,10 +989,6 @@
       "count": 21
     },
     {
-      "tag": "kolonialisering",
-      "count": 21
-    },
-    {
       "tag": "folkemord",
       "count": 21
     },
@@ -1001,6 +1001,10 @@
       "count": 20
     },
     {
+      "tag": "imperialisme",
+      "count": 20
+    },
+    {
       "tag": "menneskerettigheter",
       "count": 20
     },
@@ -1010,10 +1014,6 @@
     },
     {
       "tag": "kultur",
-      "count": 18
-    },
-    {
-      "tag": "imperialisme",
       "count": 18
     },
     {
@@ -1750,6 +1750,10 @@
     },
     {
       "tag": "samer",
+      "count": 4
+    },
+    {
+      "tag": "opprør",
       "count": 4
     },
     {
@@ -2885,10 +2889,6 @@
       "count": 2
     },
     {
-      "tag": "opprør",
-      "count": 2
-    },
-    {
       "tag": "britisk-imperium",
       "count": 2
     },
@@ -2974,6 +2974,10 @@
     },
     {
       "tag": "russisk-japanske-krig",
+      "count": 2
+    },
+    {
+      "tag": "qing",
       "count": 2
     },
     {

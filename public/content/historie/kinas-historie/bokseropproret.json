@@ -1,0 +1,245 @@
+{
+    "id": "bokseropproret",
+    "title": "Bokseropprøret: Da Kina reiste seg mot de fremmede",
+    "layout": "rich",
+    "year": "1899-1901",
+    "category": "Kinas historie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Sommeren 1900 stengte opprørerne de utenlandske utsendingene inne i Beijing.",
+        "En internasjonal hærstyrke tok byen 14. august 1900 og plyndret den.",
+        "Kina måtte betale 450 millioner tael sølv i erstatning, med nedbetaling helt til 1940."
+    ],
+    "externalUrl": "https://snl.no/bokseroppstanden",
+    "content": [
+        {
+            "type": "text",
+            "content": "En sommernatt i 1900 lå Beijing i mørke. Bak en mur av sandsekker, veltede kjerrer og dører som var revet av hengslene, satt utsendingene fra Storbritannia, Tyskland, Russland, Japan og en rekke andre land. De var stengt inne i sitt eget nabolag. Utenfor sto tusenvis av unge kinesiske menn som kalte seg bokserne, og de ville ha de fremmede ut av landet sitt."
+        },
+        {
+            "type": "text",
+            "content": "Opprøret deres varte i under to år. Men da det var over, hadde utlendingene mer makt over Kina enn de hadde hatt før. Det er den historien denne artikkelen handler om: hvordan et opprør mot fremmed makt endte med å gjøre den fremmede makten sterkere."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Barrikade av sandsekker og kjerrer i en gate i Beijing 1900",
+            "caption": "Utsendingene barrikaderte seg med det de hadde for hånden: sandsekker, kjerrer, dører og møbler."
+        },
+        { "type": "header", "text": "Et rike som raknet" },
+        {
+            "type": "text",
+            "content": "Kina var på slutten av 1800-tallet styrt av Qing-dynastiet. Keiserfamilien kom opprinnelig fra Mandsjuria nord for Kina, og styret bygde på at kineserne sto under mandsjuene (Spira & Torheim-Sandvik, 2024). Men styret var svakt, og landet hadde tapt slag på slag mot utenlandske hærer. De to [opiumskrigene](/historie/kinas-historie/opiumskrigene) mot Storbritannia hadde tvunget Kina til å åpne havnene sine for utenlandsk handel. I 1895 tapte Kina i tillegg en krig mot nabolandet Japan (Filseth & Høisæter, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Etter det nederlaget kom stormaktene for alvor. De krevde egne havnebyer, egne jernbanestrekninger og egne områder der kinesiske lover ikke gjaldt. Mange kinesere fryktet at landet skulle bli delt opp mellom de utenlandske maktene, slik Afrika ble delt i de samme årene (Filseth & Høisæter, 2024). Det du kanskje kjenner igjen fra [kappløpet om Afrika](/historie/kolonialisering/kapplopet-om-afrika), var altså i ferd med å skje også i Øst-Asia."
+        },
+        {
+            "type": "text",
+            "content": "I 1898 forsøkte en gruppe kinesiske reformvenner å gjøre noe med det. De ville modernisere skolene, hæren og styret, omtrent slik Japan hadde gjort. Men keiserinnen Ci Xi, som i praksis styrte landet, slo ned forsøket og satte keiseren i fengsel (Filseth & Høisæter, 2024). Da var den fredelige veien stengt. Det som kom neste år, kom nedenfra."
+        },
+        { "type": "header", "text": "Hvem var bokserne?" },
+        {
+            "type": "text",
+            "content": "Bevegelsen het yihequan på kinesisk. Det betyr omtrent «rettferdighetens og harmoniens never» (Spira, 2024). Medlemmene trente kampsport, og treningen skulle gjøre både kroppen og sinnet klar til kamp. Det var denne treningen som fikk utlendingene til å kalle dem «boxers», altså boksere, og det norske navnet bokserne kommer derfra."
+        },
+        {
+            "type": "text",
+            "content": "Bokserne var unge, fattige og sinte. Nord i Kina hadde det vært hungersnød, og mange hadde mistet alt (Filseth & Høisæter, 2024). Sinnet deres samlet seg om noen få mål:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "All utenlandsk innflytelse i Kina skulle bort.",
+                "Misjonærene skulle ut. Misjonærer er utsendinger som reiser til et annet land for å spre sin egen religion.",
+                "Kinesere som hadde blitt kristne, ble sett på som svikere.",
+                "De utenlandske kravene om havner, jernbaner og penger skulle stanses."
+            ]
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvorfor gikk det ut over misjonærene?",
+                "content": "Misjonærene var de utlendingene folk flest faktisk møtte. De bodde ute i landsbyene, ikke i havnebyene, og de hadde ofte særskilt beskyttelse fra hjemlandet sitt. For en fattig bonde i Shandong ble misjonæren derfor selve ansiktet på den fremmede makten."
+            }
+        },
+        { "type": "header", "text": "Fra Shandong til Beijing" },
+        {
+            "type": "text",
+            "content": "Uroen begynte i provinsen Shandong. I 1899 ble en britisk misjonær drept der, og volden spredte seg (Filseth & Høisæter, 2024). Våren 1900 vokste bevegelsen raskt, og den rettet seg mot alt som var fremmed: utenlandsk innflytelse, utenlandske pengekrav og misjonærene (Spira, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "I juni 1900 sendte stormaktene en styrke fra havnebyen Tianjin for å redde utsendingene sine i Beijing. Den kom seg ikke fram og måtte snu (Filseth & Høisæter, 2024). Kort etter ble den tyske utsendingen drept i Beijing, og bokserne omringet hele gesandtskapskvartalet, altså det området i byen der de utenlandske utsendingene bodde og arbeidet. Der ble utlendingene og de kinesiske kristne som hadde flyktet inn til dem, stengt inne i nesten to måneder."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Unge kinesiske opprørere med sverd og faner utenfor en bymur",
+            "caption": "Bokserne var mange og modige, men dårlig bevæpnet mot moderne geværer."
+        },
+        {
+            "type": "text",
+            "content": "Opprøret spredte seg til store deler av Kina, men de verste massakrene skjedde i nordøst (Filseth & Høisæter, 2024). Prøv selv hvordan det var å holde en barrikade tett mens angriperne nærmet seg:"
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": { "gameId": "beleiringen-beijing-3d" }
+        },
+        { "type": "header", "text": "14. august 1900" },
+        {
+            "type": "text",
+            "content": "Stormaktene satte sammen en ny og mye større internasjonal hær og sendte den mot hovedstaden. 14. august 1900 brøt styrken seg inn i Beijing, satte utlendingene fri og plyndret byen (Filseth & Høisæter, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Bokserne hadde tapt. Men det var byen og befolkningen som betalte for tapet."
+        },
+        { "type": "header", "text": "En nordmann midt i det" },
+        {
+            "type": "text",
+            "content": "En av dem som var med, var norsk. Johan Munthe ble født i Bergen i 1864 og bodde det meste av livet sitt i Kina. Da opprøret brøt ut i 1900, dro han til Tianjin og meldte seg frivillig til den internasjonale styrken. Munthe og den russiske generalen Vasiljevskij var blant de første som brøt gjennom portene i Beijing og fikk de innestengte utsendingene ut (Huitfeldt, 2005)."
+        },
+        {
+            "type": "text",
+            "content": "Han fikk flere medaljer for det, og han ble senere rådgiver for Kinas første president. Munthe døde i Beijing i 1935 (Huitfeldt, 2005). Historien hans er en påminnelse om at dette ikke var en fjern hendelse uten tråder til Norge."
+        },
+        { "type": "header", "text": "Regningen" },
+        {
+            "type": "text",
+            "content": "7. september 1901 ble fredsavtalen undertegnet i Beijing. Bokserorganisasjonen ble forbudt, og Kina måtte godta en lang rekke krav (Filseth & Høisæter, 2024). Det tyngste sto i artikkel 6: Kina skulle betale 450 millioner tael sølv i erstatning, med fire prosent rente i året, og nedbetalingen skulle løpe helt fram til slutten av 1940 (UCLA Asia Pacific Center, 2004). Et tael var en kinesisk vektenhet for sølv, så dette var en enorm mengde."
+        },
+        {
+            "type": "text",
+            "content": "For å være sikre på å få pengene, tok stormaktene kontroll over inntektene fra den kinesiske tollen (Filseth & Høisæter, 2024). Med andre ord: landet som hadde gjort opprør mot utenlandsk styring, fikk utlendinger til å bestyre en del av statskassa si. Flere av landene ettergav riktignok resten av gjelden på 1920-tallet (Filseth & Høisæter, 2024), men da hadde skaden alt skjedd."
+        },
+        {
+            "type": "component",
+            "name": "MotsattVirkning",
+            "props": {}
+        },
+        { "type": "header", "text": "Hvorfor dette betyr noe i dag" },
+        {
+            "type": "text",
+            "content": "Bokseropprøret ble det siste store forsøket på å redde keiserriket ved å kaste ut de fremmede. Det mislyktes, og elleve år senere falt Qing-dynastiet. Da begynte den lange [borgerkrigen](/historie/kinas-historie/borgerkrigen) som til slutt gjorde Kina til en kommunistisk stat."
+        },
+        {
+            "type": "text",
+            "content": "I Kina kalles årene fra opiumskrigene til 1949 for «ydmykelsens århundre». Bokseropprøret er et av de sterkeste bildene i den fortellingen: byen som ble plyndret, regningen som varte i nesten førti år, og tollen som ble styrt av andre. Når kinesiske ledere i dag sier at landet aldri mer skal la seg presse av andre, er det denne tiden de viser til. Den som vil forstå [Kina som supermakt](/historie/kinas-historie/kina-supermakt), må kjenne sommeren 1900."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig er det verdt å legge merke til hvem som led mest. De som døde i tusentall, var ikke stormaktenes utsendinger, men kinesiske kristne, misjonærer i landsbyene og vanlige folk i Beijing. Det er en påminnelse om at et opprør mot urett kan ramme de svakeste hardest, og at det ikke alltid er de som startet uretten, som betaler for den."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Utenlandske soldater marsjerer gjennom en plyndret gate i Beijing",
+            "caption": "14. august 1900: den internasjonale styrken tok Beijing og plyndret byen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det kinesiske navnet på bokserbevegelsen, og hvorfor kalte utlendingene dem boksere?",
+                    "Hvilke fire mål hadde bokserne? Finn dem i teksten.",
+                    "Hva skjedde 14. august 1900?",
+                    "Hvor mye måtte Kina betale i erstatning, og hvor lenge skulle nedbetalingen vare?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor misjonærene ble et mål for bokserne, selv om de ikke var soldater.",
+                    "Hvorfor tror du reformforsøket i 1898 ble slått ned, og hva betydde det for opprøret året etter?",
+                    "Opprøret skulle gi Kina mer selvstyre, men ga stormaktene mer makt. Forklar med to eksempler fra teksten hvordan det skjedde.",
+                    "Vurder hvem som led mest under opprøret. Stemmer det med hvem opprøret var rettet mot?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign med kappløpet om Afrika. Hva er likt, og hva er ulikt, i måten stormaktene skaffet seg makt på?",
+                    "Skriv et kort brev fra Johan Munthe hjem til Bergen i august 1900. Hva ser han, og hva tenker han om det han er med på?",
+                    "Diskuter i klassen: Kinesiske ledere viser ofte til «ydmykelsens århundre». Hvordan kan hendelser for over hundre år siden påvirke politikk i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr det kinesiske navnet yihequan?",
+                        "options": [
+                            "Rettferdighetens og harmoniens never",
+                            "Himmelens hær",
+                            "De fremmedes fiender",
+                            "Den gule elvas voktere"
+                        ],
+                        "answer": 0,
+                        "explanation": "Yihequan betyr omtrent «rettferdighetens og harmoniens never». Medlemmene trente kampsport, og derfor kalte utlendingene dem boksere."
+                    },
+                    {
+                        "question": "Hvilken hendelse i 1895 svekket Kina rett før opprøret?",
+                        "options": [
+                            "Kina tapte en krig mot Japan",
+                            "Keiseren døde uten arving",
+                            "Den store muren falt sammen",
+                            "Kina mistet Hongkong til Frankrike"
+                        ],
+                        "answer": 0,
+                        "explanation": "Nederlaget mot Japan i 1895 gjorde at stormaktene for alvor begynte å kreve havner, jernbaner og egne områder i Kina."
+                    },
+                    {
+                        "question": "Hva skjedde med de utenlandske utsendingene i Beijing sommeren 1900?",
+                        "options": [
+                            "De ble stengt inne i kvartalet sitt i nesten to måneder",
+                            "De reiste hjem før opprøret nådde byen",
+                            "De sluttet seg til bokserne",
+                            "De overtok styret i Kina med en gang"
+                        ],
+                        "answer": 0,
+                        "explanation": "Bokserne omringet gesandtskapskvartalet. Utsendingene ble først satt fri da en internasjonal styrke tok byen 14. august 1900."
+                    },
+                    {
+                        "question": "Hva bestemte fredsavtalen fra 7. september 1901?",
+                        "options": [
+                            "Bokserorganisasjonen ble forbudt, og Kina måtte betale en stor erstatning",
+                            "Stormaktene forlot Kina for godt",
+                            "Kina fikk erstatning fra stormaktene",
+                            "Qing-dynastiet ble avsatt umiddelbart"
+                        ],
+                        "answer": 0,
+                        "explanation": "Avtalen forbød bokserorganisasjonen og påla Kina å betale 450 millioner tael sølv med fire prosent rente, fram til 1940."
+                    },
+                    {
+                        "question": "Hvorfor sier vi at opprøret fikk motsatt virkning av det bokserne ville?",
+                        "options": [
+                            "Utlendingene fikk mer makt og flere rettigheter i Kina enn før",
+                            "Bokserne ble til slutt Kinas nye ledere",
+                            "Kina ble rikere av erstatningen",
+                            "Misjonærene forlot Kina for godt"
+                        ],
+                        "answer": 0,
+                        "explanation": "Opprøret skulle jage utlendingene ut. Resultatet ble at stormaktene tok Beijing, styrte deler av den kinesiske tollen og krevde en erstatning som varte i nesten førti år."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Filseth, G. & Høisæter, T. L. (2024). *Bokseroppstanden*. Store norske leksikon. Hentet 19.09.2026 fra [snl.no/bokseroppstanden](https://snl.no/bokseroppstanden)",
+                    "Huitfeldt, J. (2005). *Johan Munthe*. Norsk biografisk leksikon. Hentet 19.09.2026 fra [nbl.snl.no/Johan_Munthe](https://nbl.snl.no/Johan_Munthe)",
+                    "Spira, I. (2024). *Bokserne*. Store norske leksikon. Hentet 19.09.2026 fra [snl.no/Bokserne](https://snl.no/Bokserne)",
+                    "Spira, I. & Torheim-Sandvik, O. (2024). *Kinas historie*. Store norske leksikon. Hentet 19.09.2026 fra [snl.no/Kinas_historie](https://snl.no/Kinas_historie)",
+                    "UCLA Asia Pacific Center. (2004). *Boxer Protocol (1901)*. University of California, Los Angeles. Hentet 19.09.2026 fra [international.ucla.edu](https://www.international.ucla.edu/asia/article/18133)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

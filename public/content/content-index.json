@@ -1,5 +1,5 @@
 {
-  "buildId": 182909768931463,
+  "buildId": 108258013075982,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2419,6 +2419,9 @@
     ],
     "mesopotamia": [
       "content/historie/jordbruk-og-sivilisasjoner/mesopotamia.json"
+    ],
+    "bokseropproret": [
+      "content/historie/kinas-historie/bokseropproret.json"
     ],
     "borgerkrigen": [
       "content/historie/kinas-historie/borgerkrigen.json"
@@ -5608,6 +5611,7 @@
     "historie/jordbruk-og-sivilisasjoner/kelterne": "content/historie/jordbruk-og-sivilisasjoner/kelterne.json",
     "historie/jordbruk-og-sivilisasjoner/kina": "content/historie/jordbruk-og-sivilisasjoner/kina.json",
     "historie/jordbruk-og-sivilisasjoner/mesopotamia": "content/historie/jordbruk-og-sivilisasjoner/mesopotamia.json",
+    "historie/kinas-historie/bokseropproret": "content/historie/kinas-historie/bokseropproret.json",
     "historie/kinas-historie/borgerkrigen": "content/historie/kinas-historie/borgerkrigen.json",
     "historie/kinas-historie/deng-og-reformene": "content/historie/kinas-historie/deng-og-reformene.json",
     "historie/kinas-historie/dynastiene": "content/historie/kinas-historie/dynastiene.json",

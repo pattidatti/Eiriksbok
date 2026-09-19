@@ -10,6 +10,7 @@ const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
+const BeleiringenBeijing3D = lazy(() => import('./BeleiringenBeijing3D'));
 const UtAvByen3D = lazy(() => import('./UtAvByen3D'));
 const AngkorVannaaret3D = lazy(() => import('./AngkorVannaaret3D'));
 const Skattekaravanen3D = lazy(() => import('./Skattekaravanen3D'));
@@ -2186,6 +2187,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./VannetsVei3D'),
         Component: VannetsVei3D as never,
+    },
+    'beleiringen-beijing-3d': {
+        id: 'beleiringen-beijing-3d',
+        title: 'Beleiringen i Beijing',
+        description:
+            'Sommeren 1900 er utsendingene stengt inne i gesandtskapskvartalet, og muren har fire åpninger. Dra sandsekker, kjerrer, dører og møbler ut i åpningene mens bokserne rykker fram mot hver sin port - den som er nærmest, må tettes først. Klarer du alle fire, kommer et nytt angrep mot midten. Lyspæra: kvartalet holdt i nesten to måneder, og nettopp det ga stormaktene grunnen de trengte til å ta Beijing og sende Kina regningen etterpå.',
+        estimatedSeconds: 150,
+        loader: () => import('./BeleiringenBeijing3D'),
+        Component: BeleiringenBeijing3D as never,
     },
 };
 

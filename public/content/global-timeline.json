@@ -7464,6 +7464,30 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "bokseropproret",
+      "title": "Bokseropprøret: Da Kina reiste seg mot de fremmede",
+      "description": "Sommeren 1900 gjorde bokserne opprør mot alt som var fremmed i Kina - og endte med å gi stormaktene enda mer makt over landet.",
+      "startDate": 1899,
+      "endDate": 1901,
+      "displayDate": "1899-1901",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "kinas-historie",
+      "link": "/historie/kinas-historie/bokseropproret",
+      "tags": [
+        "kina",
+        "imperialisme",
+        "kolonialisering",
+        "opprør",
+        "qing"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "opptakt",
       "title": "Opptakten",
       "description": "Skuddene i Sarajevo og veien mot krig.",
