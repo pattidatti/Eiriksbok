@@ -370,6 +370,7 @@ const OppgaveTolker = lazy(() => import('./content/interactive/OppgaveTolker').t
 // Demography
 const DTMSimulator = lazy(() => import('./content/interactive/demography/DTMSimulator').then(m => ({ default: m.DTMSimulator })));
 const MalthusBoserupModel = lazy(() => import('./content/interactive/demography/MalthusBoserupModel').then(m => ({ default: m.MalthusBoserupModel })));
+const MotsattVirkning = lazy(() => import('./content/interactive/MotsattVirkning').then(m => ({ default: m.MotsattVirkning })));
 const MigrationJourney = lazy(() => import('./content/interactive/demography/MigrationJourney').then(m => ({ default: m.MigrationJourney })));
 const LifeExpectancyModel = lazy(() => import('./content/interactive/demography/LifeExpectancyModel').then(m => ({ default: m.LifeExpectancyModel })));
 const UrbanizationTimeline = lazy(() => import('./content/interactive/demography/UrbanizationTimeline').then(m => ({ default: m.UrbanizationTimeline })));
@@ -868,6 +869,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     // Demography
     DTMSimulator,
     MalthusBoserupModel,
+    MotsattVirkning,
     MigrationJourney,
     LifeExpectancyModel,
     UrbanizationTimeline,
