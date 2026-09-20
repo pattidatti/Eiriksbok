@@ -5,7 +5,7 @@
     "year": "-2500-350",
     "category": "Nord-Afrika",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/afrikanske-riker/kusj-og-nubia-hero.webp",
     "details": [
         "Kusj lå sør for Egypt, i det som i dag er Sudan, og var det eldste store riket i Afrika sør for Egypt.",
         "I nesten hundre år satt kusjittiske konger på Egypts trone som faraoer.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/afrikanske-riker/kusj-og-nubia-01.webp",
             "alt": "Nubisk hær med båter på Nilen på vei nordover mot Egypt",
             "caption": "Nilen gikk begge veier. Denne gangen seilte hæren nordover, ikke sørover."
         },
@@ -141,7 +141,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/afrikanske-riker/kusj-og-nubia-02.webp",
             "alt": "Assyriske soldater med jernvåpen angriper en egyptisk by",
             "caption": "Assyrerne hadde jernvåpen. Det var et av flere steg som drev kusjittene ut av Egypt."
         },
@@ -192,7 +192,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/afrikanske-riker/kusj-og-nubia-03.webp",
             "alt": "Bratte nubiske pyramider i ørkensanden ved Meroë i Sudan",
             "caption": "Pyramidene ved Meroë. Sudan har flere pyramider enn Egypt, men de er mindre og brattere."
         },
