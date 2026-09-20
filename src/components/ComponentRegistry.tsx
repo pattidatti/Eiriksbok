@@ -977,6 +977,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HanseaticLedger: lazy(() => import('./content/interactive/hanseatene/HanseaticLedger').then(m => ({ default: m.HanseaticLedger }))),
     HanseaticTradeMap: lazy(() => import('./content/interactive/hanseatene/HanseaticTradeMap').then(m => ({ default: m.HanseaticTradeMap }))),
     SpiceRoutePrice: lazy(() => import('./content/interactive/SpiceRoutePrice').then(m => ({ default: m.SpiceRoutePrice }))),
+    MaktenLangsNilen: lazy(() => import('./content/interactive/MaktenLangsNilen').then(m => ({ default: m.MaktenLangsNilen }))),
     WergildCalculator: lazy(() => import('./content/interactive/WergildCalculator').then(m => ({ default: m.WergildCalculator }))),
     LandskapslovSammenligner: lazy(() => import('./content/interactive/LandskapslovSammenligner').then(m => ({ default: m.LandskapslovSammenligner }))),
     HekseprosessLogikk,

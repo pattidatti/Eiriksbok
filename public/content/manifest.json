@@ -7949,6 +7949,21 @@
               ],
               "createdDate": "2026-09-05T03:54:24+02:00",
               "lastUpdated": "2026-09-07T07:40:19+02:00"
+            },
+            {
+              "id": "kusj-og-nubia",
+              "title": "Kusj: Da Nubia styrte Egypt",
+              "description": "Riket sør for Egypt som endte med å erobre Egypt, og som etterlot seg flere pyramider enn nabolandet.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "afrika",
+                "nubia",
+                "sudan",
+                "egypt",
+                "oldtiden",
+                "jern"
+              ],
+              "createdDate": "2026-09-20T00:00:00Z"
             }
           ]
         }
