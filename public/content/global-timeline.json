@@ -355,6 +355,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "kusj-og-nubia",
+      "title": "Kusj: Da Nubia styrte Egypt",
+      "description": "Riket sør for Egypt som endte med å erobre Egypt, og som etterlot seg flere pyramider enn nabolandet.",
+      "startDate": -2500,
+      "endDate": 350,
+      "displayDate": "-2500-350",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "afrikanske-riker",
+      "link": "/historie/afrikanske-riker/kusj-og-nubia",
+      "tags": [
+        "afrika",
+        "nubia",
+        "sudan",
+        "egypt",
+        "oldtiden",
+        "jern"
+      ],
+      "lat": 15.6,
+      "lng": 30.2,
+      "placeLabel": "Sudan",
+      "placeCountryId": 729,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "norge-for-vikingene-sub-3",
       "title": "Bondesamfunnet",
       "description": "Jordbruket blir hovednæring i Sør-Norge.",
@@ -1446,9 +1471,10 @@
         "kolonialisering",
         "kristendom"
       ],
-      "lat": 2,
-      "lng": 20,
-      "placeLabel": "Afrika",
+      "lat": 9.1,
+      "lng": 40.5,
+      "placeLabel": "Etiopia",
+      "placeCountryId": 231,
       "geoConfidence": "tag"
     },
     {

@@ -11,6 +11,7 @@ const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
 const BeleiringenBeijing3D = lazy(() => import('./BeleiringenBeijing3D'));
+const JernovnenIMeroe = lazy(() => import('./JernovnenIMeroe'));
 const UtAvByen3D = lazy(() => import('./UtAvByen3D'));
 const AngkorVannaaret3D = lazy(() => import('./AngkorVannaaret3D'));
 const Skattekaravanen3D = lazy(() => import('./Skattekaravanen3D'));
@@ -2196,6 +2197,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./BeleiringenBeijing3D'),
         Component: BeleiringenBeijing3D as never,
+    },
+    'jernovnen-i-meroe': {
+        id: 'jernovnen-i-meroe',
+        title: 'Jernovnen i Meroë',
+        description:
+            'Du står ved en leirovn i Meroë med en belg i hver hånd. Hold inne museknappen og dra pekeren opp og ned for å pumpe luft inn i ovnen. Varmen må holdes i et smalt vindu: blir ovnen for kald, klumper jernet seg aldri, og blir den for varm, smelter alt til slagg. Tre jernklumper skal ut før trekullet tar slutt. Lyspæra: Meroë ble rikt på jern fordi byen hadde både malm og skog til trekull - og fordi noen sto ved belgen og doserte varmen time etter time.',
+        estimatedSeconds: 160,
+        loader: () => import('./JernovnenIMeroe'),
+        Component: JernovnenIMeroe as never,
     },
 };
 

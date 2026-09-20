@@ -13,7 +13,9 @@
     "Reagan": "usa",
     "osmanriket": "osmanske-riket",
     "osman": "osmanske-riket",
-    "forste-verdenskrig": "første-verdenskrig"
+    "forste-verdenskrig": "første-verdenskrig",
+    "meroë": "meroe",
+    "napata": "nubia"
   },
   "subjectFallback": {
     "norsk": "norge",
@@ -199,6 +201,14 @@
       "label": "England",
       "kind": "land",
       "countryId": 826,
+      "source": "seed"
+    },
+    "etiopia": {
+      "lat": 9.1,
+      "lng": 40.5,
+      "label": "Etiopia",
+      "kind": "land",
+      "countryId": 231,
       "source": "seed"
     },
     "europa": {
@@ -456,6 +466,14 @@
       "countryId": 410,
       "source": "seed"
     },
+    "kusj": {
+      "lat": 16.93,
+      "lng": 33.75,
+      "label": "Kusj (Meroë)",
+      "kind": "by",
+      "countryId": 729,
+      "source": "seed"
+    },
     "kypros": {
       "lat": 35.1,
       "lng": 33.4,
@@ -501,6 +519,14 @@
       "label": "Mayariket",
       "kind": "imperium",
       "countryId": 320,
+      "source": "seed"
+    },
+    "meroe": {
+      "lat": 16.93,
+      "lng": 33.75,
+      "label": "Meroë",
+      "kind": "by",
+      "countryId": 729,
       "source": "seed"
     },
     "mesopotamia": {
@@ -610,6 +636,14 @@
       "label": "Norge",
       "kind": "land",
       "countryId": 578,
+      "source": "seed"
+    },
+    "nubia": {
+      "lat": 19.5,
+      "lng": 31.5,
+      "label": "Nubia",
+      "kind": "region",
+      "countryId": 729,
       "source": "seed"
     },
     "olympia": {
@@ -752,6 +786,14 @@
       "label": "Storbritannia",
       "kind": "land",
       "countryId": 826,
+      "source": "seed"
+    },
+    "sudan": {
+      "lat": 15.6,
+      "lng": 30.2,
+      "label": "Sudan",
+      "kind": "land",
+      "countryId": 729,
       "source": "seed"
     },
     "sumer": {
@@ -1353,6 +1395,10 @@
       "count": 6
     },
     {
+      "tag": "oldtiden",
+      "count": 6
+    },
+    {
       "tag": "språkhistorie",
       "count": 6
     },
@@ -1626,10 +1672,6 @@
     },
     {
       "tag": "utopi",
-      "count": 4
-    },
-    {
-      "tag": "oldtiden",
       "count": 4
     },
     {
@@ -2109,6 +2151,10 @@
       "count": 2
     },
     {
+      "tag": "jern",
+      "count": 2
+    },
+    {
       "tag": "mais",
       "count": 2
     },
@@ -2242,10 +2288,6 @@
     },
     {
       "tag": "mølle",
-      "count": 2
-    },
-    {
-      "tag": "etiopia",
       "count": 2
     },
     {

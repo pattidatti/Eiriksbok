@@ -43,6 +43,8 @@ const ALIASES = {
     osmanriket: 'osmanske-riket',
     osman: 'osmanske-riket',
     'forste-verdenskrig': 'første-verdenskrig',
+    'meroë': 'meroe',
+    napata: 'nubia',
 };
 
 // Fag uten geografisk tag faller tilbake til dette stedet ("beste gjetning fra fag").
@@ -130,6 +132,11 @@ const GAZETTEER = {
     'sør-afrika': { lat: -29.0, lng: 24.0, label: 'Sør-Afrika', kind: 'land', countryId: 710 },
     kenya: { lat: 0.0, lng: 37.9, label: 'Kenya', kind: 'land', countryId: 404 },
     angola: { lat: -11.2, lng: 17.9, label: 'Angola', kind: 'land', countryId: 24 },
+    sudan: { lat: 15.6, lng: 30.2, label: 'Sudan', kind: 'land', countryId: 729 },
+    nubia: { lat: 19.5, lng: 31.5, label: 'Nubia', kind: 'region', countryId: 729 },
+    kusj: { lat: 16.93, lng: 33.75, label: 'Kusj (Meroë)', kind: 'by', countryId: 729 },
+    meroe: { lat: 16.93, lng: 33.75, label: 'Meroë', kind: 'by', countryId: 729 },
+    etiopia: { lat: 9.1, lng: 40.5, label: 'Etiopia', kind: 'land', countryId: 231 },
 
     // --- Asia ---
     asia: { lat: 45.0, lng: 90.0, label: 'Asia', kind: 'region' },
