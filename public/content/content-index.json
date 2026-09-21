@@ -1,5 +1,5 @@
 {
-  "buildId": 266159308923841,
+  "buildId": 58231992648937,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2013,6 +2013,9 @@
     ],
     "aksum-og-etiopia": [
       "content/historie/afrikanske-riker/aksum-og-etiopia.json"
+    ],
+    "benin-riket": [
+      "content/historie/afrikanske-riker/benin-riket.json"
     ],
     "ghana-riket": [
       "content/historie/afrikanske-riker/ghana-riket.json"
@@ -5479,6 +5482,7 @@
     "global-timeline.json/undefined/global-timeline": "content/global-timeline.json",
     "global-timeline.manual.json/undefined/global-timeline.manual": "content/global-timeline.manual.json",
     "historie/afrikanske-riker/aksum-og-etiopia": "content/historie/afrikanske-riker/aksum-og-etiopia.json",
+    "historie/afrikanske-riker/benin-riket": "content/historie/afrikanske-riker/benin-riket.json",
     "historie/afrikanske-riker/ghana-riket": "content/historie/afrikanske-riker/ghana-riket.json",
     "historie/afrikanske-riker/kusj-og-nubia": "content/historie/afrikanske-riker/kusj-og-nubia.json",
     "historie/afrikanske-riker/mansa-musa-og-mali": "content/historie/afrikanske-riker/mansa-musa-og-mali.json",
