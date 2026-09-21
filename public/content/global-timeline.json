@@ -3392,6 +3392,30 @@
       ]
     },
     {
+      "id": "benin-riket",
+      "title": "Benin-riket: Platene som var et arkiv",
+      "description": "Kongeriket Benin i dagens Nigeria støpte historien sin i messing. I 1897 brente britiske styrker byen og tok platene med seg.",
+      "startDate": 1300,
+      "endDate": 1897,
+      "displayDate": "1300-1897",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "afrikanske-riker",
+      "link": "/historie/afrikanske-riker/benin-riket",
+      "tags": [
+        "afrika",
+        "nigeria",
+        "kolonialisering",
+        "kunst",
+        "kulturarv"
+      ],
+      "lat": 9.1,
+      "lng": 8.7,
+      "placeLabel": "Nigeria",
+      "placeCountryId": 566,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "mansa-musa-og-mali",
       "title": "Mansa Musa og Mali-riket",
       "description": "Hvordan et rike i Vest-Afrika ble et av verdens rikeste på handel med gull og salt over Sahara.",

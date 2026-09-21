@@ -12,6 +12,7 @@ const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
 const BeleiringenBeijing3D = lazy(() => import('./BeleiringenBeijing3D'));
 const JernovnenIMeroe = lazy(() => import('./JernovnenIMeroe'));
+const Messingplata3D = lazy(() => import('./Messingplata3D'));
 const UtAvByen3D = lazy(() => import('./UtAvByen3D'));
 const AngkorVannaaret3D = lazy(() => import('./AngkorVannaaret3D'));
 const Skattekaravanen3D = lazy(() => import('./Skattekaravanen3D'));
@@ -2206,6 +2207,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./JernovnenIMeroe'),
         Component: JernovnenIMeroe as never,
+    },
+    'messingplata-benin': {
+        id: 'messingplata-benin',
+        title: 'Messingplata',
+        description:
+            'Du står ved arbeidsbenken i et messingstøperi i Benin City. Voksmodellen er smeltet ut, og leirformen venter med tre innløpshull. Hold inne pekeren og styr diglen sidelengs langs skinna, så strålen av flytende messing treffer hull etter hull. Bommer du, renner metallet utover og leira sprekker. Bruker du for lang tid, stivner messingen. Lyspæra: formen må knuses for å få platen ut, så hver eneste plate fra Benin er en original som aldri kan lages på nytt.',
+        estimatedSeconds: 150,
+        loader: () => import('./Messingplata3D'),
+        Component: Messingplata3D as never,
     },
 };
 

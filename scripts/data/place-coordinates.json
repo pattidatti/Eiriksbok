@@ -979,6 +979,10 @@
       "count": 26
     },
     {
+      "tag": "kolonialisering",
+      "count": 25
+    },
+    {
       "tag": "vikingtiden",
       "count": 25
     },
@@ -1004,10 +1008,6 @@
     },
     {
       "tag": "islam",
-      "count": 23
-    },
-    {
-      "tag": "kolonialisering",
       "count": 23
     },
     {
@@ -1307,6 +1307,10 @@
       "count": 8
     },
     {
+      "tag": "kunst",
+      "count": 8
+    },
+    {
       "tag": "dansketiden",
       "count": 8
     },
@@ -1424,10 +1428,6 @@
     },
     {
       "tag": "vikingtid",
-      "count": 6
-    },
-    {
-      "tag": "kunst",
       "count": 6
     },
     {
@@ -1956,6 +1956,10 @@
     },
     {
       "tag": "tid",
+      "count": 3
+    },
+    {
+      "tag": "kulturarv",
       "count": 3
     },
     {
@@ -4208,10 +4212,6 @@
     },
     {
       "tag": "tilbakeforing",
-      "count": 1
-    },
-    {
-      "tag": "kulturarv",
       "count": 1
     },
     {
