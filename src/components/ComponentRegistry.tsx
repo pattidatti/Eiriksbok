@@ -62,6 +62,7 @@ const EratosthenesJorda = lazy(() => import('./content/interactive/EratosthenesJ
 const RoadToRevolution = lazy(() => import('./content/interactive/RoadToRevolution').then(m => ({ default: m.RoadToRevolution })));
 const MaktensFristelse = lazy(() => import('./content/interactive/MaktensFristelse').then(m => ({ default: m.MaktensFristelse })));
 const MaktfordelingSjekk = lazy(() => import('./content/interactive/MaktfordelingSjekk').then(m => ({ default: m.MaktfordelingSjekk })));
+const KatedralKreftene = lazy(() => import('./content/interactive/KatedralKreftene').then(m => ({ default: m.KatedralKreftene })));
 const Legitimitetsvekten = lazy(() => import('./content/interactive/Legitimitetsvekten').then(m => ({ default: m.Legitimitetsvekten })));
 const Tronfolgevelgeren = lazy(() => import('./content/interactive/Tronfolgevelgeren').then(m => ({ default: m.Tronfolgevelgeren })));
 const MaktensKilde = lazy(() => import('./content/interactive/MaktensKilde').then(m => ({ default: m.MaktensKilde })));
@@ -519,6 +520,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RidderMotLangbue,
     RoadToRevolution,
     MaktfordelingSjekk,
+    KatedralKreftene,
     Legitimitetsvekten,
     Tronfolgevelgeren,
     MaktensKilde,

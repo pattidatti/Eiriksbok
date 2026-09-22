@@ -1,5 +1,5 @@
 {
-  "buildId": 58231992648937,
+  "buildId": 121790652453576,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2591,6 +2591,9 @@
     ],
     "det-hellige-romerske-rike": [
       "content/historie/middelalderen/det-hellige-romerske-rike.json"
+    ],
+    "gotiske-katedraler": [
+      "content/historie/middelalderen/gotiske-katedraler.json"
     ],
     "hanseatene": [
       "content/historie/middelalderen/hanseatene.json"
@@ -5674,6 +5677,7 @@
     "historie/middelalderen/boktrykkerkunsten": "content/historie/middelalderen/boktrykkerkunsten.json",
     "historie/middelalderen/bysantinske-riket": "content/historie/middelalderen/bysantinske-riket.json",
     "historie/middelalderen/det-hellige-romerske-rike": "content/historie/middelalderen/det-hellige-romerske-rike.json",
+    "historie/middelalderen/gotiske-katedraler": "content/historie/middelalderen/gotiske-katedraler.json",
     "historie/middelalderen/hanseatene": "content/historie/middelalderen/hanseatene.json",
     "historie/middelalderen/hundreaarskrigen": "content/historie/middelalderen/hundreaarskrigen.json",
     "historie/middelalderen/klostrene": "content/historie/middelalderen/klostrene.json",

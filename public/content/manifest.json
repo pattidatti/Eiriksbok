@@ -6671,6 +6671,23 @@
               ],
               "createdDate": "2026-09-11T04:10:38+02:00",
               "lastUpdated": "2026-09-13T07:38:34+02:00"
+            },
+            {
+              "id": "gotiske-katedraler",
+              "title": "Gotiske katedraler",
+              "description": "Spissbue, ribbehvelv og strebebuer lot middelalderens byggmestere reise katedraler som strakte seg mot himmelen og fyltes med lys.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "middelalderen",
+                "gotikk",
+                "katedral",
+                "arkitektur",
+                "nidarosdomen",
+                "kirke",
+                "teknologi"
+              ],
+              "createdDate": "2026-09-22T00:00:00Z"
             }
           ]
         },

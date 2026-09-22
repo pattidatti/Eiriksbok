@@ -2837,6 +2837,28 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "gotiske-katedraler",
+      "title": "Gotiske katedraler",
+      "description": "Spissbue, ribbehvelv og strebebuer lot middelalderens byggmestere reise katedraler som strakte seg mot himmelen og fyltes med lys.",
+      "startDate": 1140,
+      "endDate": 1500,
+      "displayDate": "1140-1500",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "middelalderen",
+      "link": "/historie/middelalderen/gotiske-katedraler",
+      "tags": [
+        "historie",
+        "middelalderen",
+        "gotikk",
+        "katedral",
+        "arkitektur",
+        "nidarosdomen",
+        "kirke",
+        "teknologi"
+      ]
+    },
+    {
       "id": "sverre-sigurdsson",
       "title": "Sverre Sigurdsson: presten som ble konge",
       "description": "En prest fra Færøyene hevdet han var en konges hemmelige sønn, samlet birkebeinerne og ble Norges enekonge etter slaget ved Fimreite i 1184.",
