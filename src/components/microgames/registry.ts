@@ -40,6 +40,7 @@ const SvanvikenKontrakten3D = lazy(() => import('./SvanvikenKontrakten3D'));
 const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
+const Katedralhvelvet3D = lazy(() => import('./Katedralhvelvet3D'));
 const Taakegrensa3D = lazy(() => import('./Taakegrensa3D'));
 const RiketDeltITo = lazy(() => import('./RiketDeltITo'));
 const Frihetsvakten3D = lazy(() => import('./Frihetsvakten3D'));
@@ -228,6 +229,15 @@ const DalenDuLaner3D = lazy(() => import('./DalenDuLaner3D'));
 const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'katedralhvelvet-3d': {
+        id: 'katedralhvelvet-3d',
+        title: 'Reis katedralhvelvet',
+        description:
+            'Reis murene med spissbuer og legg det tunge ribbehvelvet - og kjenn med en gang at hvelvet presser murene utover. Sett strebebuene som fanger opp presset, og se muren staa trygt, tynn og hoy. Til slutt setter du inn glassrosen, og lyset strommer inn. Lyspaera: det hoye, lyse kirkerommet var bare mulig fordi strebebuene bar presset fra hvelvet.',
+        estimatedSeconds: 150,
+        loader: () => import('./Katedralhvelvet3D'),
+        Component: Katedralhvelvet3D as never,
+    },
     'hvor-er-jobbene-3d': {
         id: 'hvor-er-jobbene-3d',
         title: 'Hvor er jobbene?',
