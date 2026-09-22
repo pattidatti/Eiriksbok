@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
 import { finnNpc } from '../data/steder';
 import { EPOKER } from '../data/epoker';
-import { KAPITLER, KAPITTEL_BY_NR, kapittelNr, synligeSteg } from '../data/kapitler';
+import { KAPITLER, KAPITTEL_BY_NR, harKapitler, kapittelNr, synligeSteg } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { prisFor, trinnFor } from '../engine/aere';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
@@ -175,6 +175,7 @@ function Stat({ navn, verdi }: { navn: string; verdi: number }) {
 export function QuestLog({ quester, onLukk }: { quester: QuestDef[]; onLukk: () => void }) {
     const status = useRpgStore((s) => s.quester);
     const kapittelnummer = useRpgStore((s) => s.kapittel);
+    const epokeId = useRpgStore((s) => s.epokeId);
     const gjort = useRpgStore((s) => s.steg);
     const aktive = quester.filter((q) => status[q.id] === 'aktiv');
     const ferdige = quester.filter((q) => status[q.id] === 'ferdig');
@@ -186,38 +187,53 @@ export function QuestLog({ quester, onLukk }: { quester: QuestDef[]; onLukk: () 
     //
     // Merk at listen ikke er en oppskrift. `synligeSteg` skjuler alt med
     // uoppfylte krav, så hun ser hva hun kan gjøre nå - ikke hele kapittelet.
+    //
+    // Utenfor kampanjen står det ingen kapitler. Prøvebanen har sine egne
+    // oppdrag, men ikke noe kapittel 1 i 793 - og en logg som påsto det, ville
+    // vært like feil der som HUD-kortet var. Se `KAPITTEL_EPOKE`.
+    const iKampanjen = harKapitler(epokeId);
     const kapittel = kapittelNr(kapittelnummer);
-    const steg = synligeSteg(kapittel, gjort);
+    const steg = iKampanjen ? synligeSteg(kapittel, gjort) : [];
     const naa = steg.filter((s) => !s.ferdig);
     const tatt = steg.filter((s) => s.ferdig);
 
     return (
         <Ramme onLukk={onLukk}>
             <h2 className="mb-1 font-display text-2xl font-bold text-amber-200">Oppdrag</h2>
-            <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
-                Kapittel {kapittel.nr} · {kapittel.tittel} · {kapittel.aar}
-            </p>
-
-            <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                Nå ({naa.length})
-            </h3>
-            {naa.length === 0 ? (
-                <p className="mb-5 text-sm text-slate-500">
-                    Ingenting står igjen i dette kapittelet.
+            {iKampanjen && (
+                <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
+                    Kapittel {kapittel.nr} · {kapittel.tittel} · {kapittel.aar}
                 </p>
-            ) : (
-                <ul className="mb-5 space-y-2">
-                    {naa.map((s) => (
-                        <li
-                            key={s.id}
-                            data-prove="kapittelsteg"
-                            className="rounded-xl border border-amber-300/40 bg-amber-300/10 p-3"
-                        >
-                            <p className="font-display font-semibold text-amber-100">{s.tittel}</p>
-                            <p className="mt-1 text-sm leading-relaxed text-slate-200">{s.mal}</p>
-                        </li>
-                    ))}
-                </ul>
+            )}
+
+            {iKampanjen && (
+                <>
+                    <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
+                        Nå ({naa.length})
+                    </h3>
+                    {naa.length === 0 ? (
+                        <p className="mb-5 text-sm text-slate-500">
+                            Ingenting står igjen i dette kapittelet.
+                        </p>
+                    ) : (
+                        <ul className="mb-5 space-y-2">
+                            {naa.map((s) => (
+                                <li
+                                    key={s.id}
+                                    data-prove="kapittelsteg"
+                                    className="rounded-xl border border-amber-300/40 bg-amber-300/10 p-3"
+                                >
+                                    <p className="font-display font-semibold text-amber-100">
+                                        {s.tittel}
+                                    </p>
+                                    <p className="mt-1 text-sm leading-relaxed text-slate-200">
+                                        {s.mal}
+                                    </p>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </>
             )}
 
             {tatt.length > 0 && (

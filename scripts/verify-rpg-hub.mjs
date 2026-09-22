@@ -80,8 +80,13 @@ const hall = await les();
 sjekk('hallen er stedet eleven står på', hall.sted === 'hub', hall.sted);
 sjekk('epoken byttes ikke av å gå i hallen', hall.epokeId === 'vikingtiden', hall.epokeId);
 
-const paaVeien = hall.portaler.filter((p) => p.y < 400);
-const lunden = hall.portaler.filter((p) => p.y >= 400);
+// Prøvebanen står ved veien, men den er ikke en tid. Den holdes utenfor hver
+// eneste påstand om tidslinjen her nede - ellers ville sandkassen telt som en
+// epoke, og gapet mellom Gryet og antikken vært fem ruter i stedet for
+// tjueni. Se `TESTBANE_X` i `data/hub.ts`.
+const epokene = hall.portaler.filter((p) => p.tittel !== 'TEST MEG');
+const paaVeien = epokene.filter((p) => p.y < 400);
+const lunden = epokene.filter((p) => p.y >= 400);
 sjekk('sju epoker står på tidslinjeveien', paaVeien.length === 7, paaVeien.length);
 sjekk('fire epoker står i lunden', lunden.length === 4, lunden.length);
 sjekk(
@@ -91,8 +96,23 @@ sjekk(
 );
 sjekk(
     'bare den ferdige epoken er åpen',
-    hall.portaler.filter((p) => p.apen).length === 1 &&
-        hall.portaler.find((p) => p.apen)?.tittel === 'Vikingtiden'
+    epokene.filter((p) => p.apen).length === 1 &&
+        epokene.find((p) => p.apen)?.tittel === 'Vikingtiden'
+);
+
+// ── 1b. Prøvebanen ──────────────────────────────────────────────────────────
+//
+// Sandkassen skal stå ved siden av den eldste portalen og være åpen. Blir den
+// borte, mister vi stedet basissystemene prøves på - og det merkes ikke før
+// noen leter etter den.
+const sandkassen = hall.portaler.find((p) => p.tittel === 'TEST MEG');
+const gryet = paaVeien[0];
+sjekk('«Test meg» står i hallen', Boolean(sandkassen), sandkassen?.tittel);
+sjekk('sandkassen er åpen', sandkassen?.apen === true);
+sjekk(
+    'den står ved siden av den eldste portalen, ikke oppå den',
+    sandkassen && gryet && sandkassen.x - gryet.x > 40 && sandkassen.x - gryet.x < 160,
+    sandkassen && gryet ? `${Math.round(sandkassen.x - gryet.x)} px fra ${gryet.tittel}` : ''
 );
 
 // Avstanden mellom de eldste portalene skal være større enn mellom de yngste.

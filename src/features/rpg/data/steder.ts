@@ -74,6 +74,17 @@ import {
     NORDVIK_PORTAL,
     NORDVIK_SPAWN,
 } from './nordvik';
+import { byggTestbane } from '../engine/testbanegen';
+import {
+    TESTBANE_AUTHORED,
+    TESTBANE_BOSS_SPORSMAL,
+    TESTBANE_FARKOSTER,
+    TESTBANE_LANDMARKS,
+    TESTBANE_NPCS,
+    TESTBANE_PORTAL,
+    TESTBANE_SPAWN,
+    TESTBANE_TEMA,
+} from './testbanen';
 import { EPOKE_BY_ID } from './epoker';
 
 /**
@@ -575,6 +586,62 @@ const NORDVIK_1100: Sted = {
     authored: [],
 };
 
+/**
+ * Prøvebanen: sandkassen bak «Test meg»-portalen i hallen.
+ *
+ * Et verktøy, ikke innhold. Hvert system i motoren har en stasjon her, og
+ * kartet er bygget slik at de kan prøves én om gangen - se `testbanegen.ts`
+ * for hvorfor tunet ligger utenfor fiendenes rekkevidde.
+ *
+ * `epokeId` er `testbanen`, en epoke som med vilje ikke står i `EPOKER`.
+ * Storen legger hver epoke i sitt eget navnerom, så nivå, sølv, sekk og
+ * oppdrag herfra havner i sin egen bunke og rører ikke vikingtidskampanjen.
+ * Prisen er at `regelsettFor` faller tilbake på vikingtidens regelsett, og den
+ * prisen er riktig å betale: det er nettopp det settet vi tester.
+ *
+ * `kapittel: 1` må stå her. Uten det finner ikke `stedIEpoke` stedet når
+ * epoken settes opp første gang, og eleven havner i hallen i stedet.
+ */
+const TESTBANEN: Sted = {
+    id: 'testbanen',
+    tittel: 'Prøvebanen',
+    undertittel: 'Sandkasse · utenfor tiden',
+    epokeId: 'testbanen',
+    kapittel: 1,
+    // Rollenavn `null`: her er hun seg selv. Det finnes ingen rolle å spille i
+    // en sandkasse, og et kapittelnavn i HUD-en ville løyet om hva stedet er.
+    rollenavn: null,
+    tema: TESTBANE_TEMA,
+    byggKart: byggTestbane,
+    spawn: TESTBANE_SPAWN,
+    npcer: TESTBANE_NPCS,
+    landemerker: TESTBANE_LANDMARKS,
+    farkoster: TESTBANE_FARKOSTER,
+    portaler: [
+        {
+            tile: TESTBANE_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'hub',
+                navn: 'HALLEN',
+                undertekst: 'VEIEN HJEM',
+            },
+        },
+    ],
+    boss: {
+        enemyId: 'den-store-glemselen',
+        sporsmal: TESTBANE_BOSS_SPORSMAL,
+    },
+    // Tynn tåke. Vi skal kunne se hva motoren tegner, ikke hva den skjuler.
+    taake: 0.2,
+    // De fire som dekker arketypene: rekkevidde, skjold, skudd og duell.
+    // Rekkefølgen betyr noe - fiendelaget tar bare de første `2 + nivå/2` av
+    // dem, så en fersk figur møter spydmann og øksekar, ikke huskarl.
+    spawner: ['spydmann', 'oksekar', 'bueskytter', 'huskarl'],
+    musikkRot: 165,
+    authored: TESTBANE_AUTHORED,
+};
+
 export const STEDER: Sted[] = [
     HUB,
     NORDVIK,
@@ -586,6 +653,7 @@ export const STEDER: Sted[] = [
     RICCALL,
     STANFORD_BRU,
     NORDVIK_1100,
+    TESTBANEN,
 ];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));

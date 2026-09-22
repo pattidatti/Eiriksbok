@@ -73,11 +73,35 @@ function veiRute(aar: number): [number, number] {
     return [x, Math.round(veiY(x)) - 2];
 }
 
+/**
+ * Prøvebanen står ved siden av den eldste portalen, fem ruter øst for Gryet.
+ *
+ * Den ligger *ved* veien og ikke *på* den: sandkassen er ikke en tid, og
+ * avstanden mellom to portaler på tidslinjen skal bety noe. Derfor er den
+ * heller ikke en epoke i `epoker.ts` - hadde den vært det, ville `veiRute`
+ * regnet ut en plass til den mellom to århundrer, eller lunden fått en femte
+ * portal som ikke er verken språk, tro, samfunn eller musikk.
+ *
+ * Fem ruter er nok til at de to ikke deler samhandlingssone (portalene svarer
+ * på 40 piksler, altså to og en halv rute), og nært nok til at den leses som
+ * et tillegg og ikke som nok et århundre.
+ */
+const TESTBANE_X = VEI_START + 5;
+
 export const HUB_PORTALER: PortalDef[] = [
     ...EPOKER_I_TID.map((e): PortalDef => ({
         tile: veiRute(e.aar ?? NAA),
         maal: { art: 'epoke', epokeId: e.id },
     })),
+    {
+        tile: [TESTBANE_X, Math.round(veiY(TESTBANE_X)) - 2],
+        maal: {
+            art: 'sted',
+            stedId: 'testbanen',
+            navn: 'TEST MEG',
+            undertekst: 'SANDKASSE',
+        },
+    },
     ...EPOKER_UTEN_TID.map((e, i): PortalDef => {
         // To og to i lunden, med god luft mellom. Fire portaler på rekke ville
         // sett ut som fire til på veien.

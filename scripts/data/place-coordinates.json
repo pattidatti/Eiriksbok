@@ -888,15 +888,15 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 341
+      "count": 343
+    },
+    {
+      "tag": "teknologi",
+      "count": 73
     },
     {
       "tag": "dekolonisering",
       "count": 73
-    },
-    {
-      "tag": "teknologi",
-      "count": 71
     },
     {
       "tag": "krig",
@@ -944,7 +944,7 @@
     },
     {
       "tag": "middelalderen",
-      "count": 33
+      "count": 35
     },
     {
       "tag": "demokrati",
@@ -1431,6 +1431,10 @@
       "count": 6
     },
     {
+      "tag": "kirke",
+      "count": 6
+    },
+    {
       "tag": "psykologi",
       "count": 6
     },
@@ -1728,10 +1732,6 @@
     },
     {
       "tag": "union",
-      "count": 4
-    },
-    {
-      "tag": "kirke",
       "count": 4
     },
     {
@@ -2416,6 +2416,22 @@
     },
     {
       "tag": "baglere",
+      "count": 2
+    },
+    {
+      "tag": "gotikk",
+      "count": 2
+    },
+    {
+      "tag": "katedral",
+      "count": 2
+    },
+    {
+      "tag": "arkitektur",
+      "count": 2
+    },
+    {
+      "tag": "nidarosdomen",
       "count": 2
     },
     {

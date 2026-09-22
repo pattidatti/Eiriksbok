@@ -1,7 +1,7 @@
 import { maksVerdier, nivaFremgang, useRpgStore } from '../store/useRpgStore';
 import { trinnFor } from '../engine/aere';
 import { AARSTID, AARSTIDER, DAGER_PER_AARSTID, aarstidFor, dagIAarstid } from '../engine/klokke';
-import { KAPITTEL_BY_NR, kapittelNr, synligeSteg } from '../data/kapitler';
+import { KAPITTEL_BY_NR, harKapitler, kapittelNr, synligeSteg } from '../data/kapitler';
 import type { KampSnapshot } from '../engine/kamp';
 import type { Klokke } from '../types';
 
@@ -41,7 +41,9 @@ export function Hud({
     const aktive = Object.values(store.quester).filter((s) => s === 'aktiv').length;
     // Hva kapittelet faktisk spiller på. Ære og årshjul finnes i hele
     // kampanjen som samfunn, men bare noen kapitler lar eleven flytte dem.
-    const systemer = KAPITTEL_BY_NR[store.kapittel]?.systemer;
+    const systemer = harKapitler(store.epokeId)
+        ? KAPITTEL_BY_NR[store.kapittel]?.systemer
+        : undefined;
 
     // Kortet nede til venstre eies av set-piecene: er hun midt i en økt med
     // Ravn eller i skjoldborgen, er det den økta som skal stå der, med teller.
@@ -51,7 +53,14 @@ export function Hud({
     //
     // Derfor: set-piecet vinner alltid, og faller det bort, trer kapittelets
     // neste steg inn. Aldri tomt, aldri to ting om gangen.
-    const nesteSteg = synligeSteg(kapittelNr(store.kapittel), store.steg).find((s) => !s.ferdig);
+    //
+    // Bare der det finnes et kapittel. Kapitlene er vikingtidens (se
+    // `KAPITTEL_EPOKE`), og i en epoke uten dem ba kortet eleven om å gjøre
+    // ting som ikke finnes på kartet hun står på - «snakk med Ravn ved tunet»
+    // i Prøvebanen. Et sett-piece kan fortsatt eie kortet hvor som helst.
+    const nesteSteg = harKapitler(store.epokeId)
+        ? synligeSteg(kapittelNr(store.kapittel), store.steg).find((s) => !s.ferdig)
+        : undefined;
     const kort =
         oppgave ?? (nesteSteg ? { tittel: nesteSteg.tittel, mal: nesteSteg.mal } : null);
 

@@ -253,6 +253,41 @@ sier ingenting om hvor ofte *du* har vært her. Formen tåler begge deler - et
 tall per portal og en haug ved varden - så det som eventuelt endrer seg er hvor
 tallet kommer fra.
 
+## Prøvebanen: sandkassen bak «Test meg»
+
+Ved siden av den eldste portalen i hallen står en portal som ikke er en tid:
+**Test meg**. Bak den ligger `testbanen`, et kart som finnes for at vi skal
+kunne prøve basissystemene mens vi bygger dem.
+
+Tre soner, vest mot øst, og rekkefølgen er hele designet:
+
+| Sone     | Ruter      | Hva som står der                                                        |
+| -------- | ---------- | ----------------------------------------------------------------------- |
+| Tunet    | x 4-22     | Porten hjem, skiltet, bålet, runesteinen, kista, oppdragsgiver, bod      |
+| Midten   | x 22-46    | Åpen mark, med tjernet og robåten sør for veien                          |
+| Feltet   | x 46-68    | Der fiender kommer av seg selv, og bossen lengst øst                     |
+
+Avstanden mellom tunet og feltet er regnet ut, ikke valgt. Fiendelaget setter
+bare ut noen 200-420 piksler fra eleven, og med spawnfeltet der det står,
+ligger hele tunet utenfor det vinduet. Derfor kan en dialog eller en handel
+prøves i ro, og motstanden begynner i det man går østover - uten et flagg som
+må slås av og på.
+
+**Epoken er sin egen.** `epokeId` er `testbanen`, og den står med vilje *ikke*
+i `EPOKER`: var den en epoke der, ville `hub.ts` regnet ut en plass til den
+mellom to århundrer, eller lunden fått en femte portal som verken er språk,
+tro, samfunn eller musikk. Følgen av det egne navnerommet er den vi vil ha:
+nivå, sølv, sekk og oppdrag herfra havner i sin egen bunke, og
+vikingtidskampanjen ligger urørt til eleven går inn i Vikingtiden igjen.
+
+Hallen bytter som vanlig ingenting - den ligger utenfor alle epoker - så går
+man ut porten fra sandkassen, står sandkassens tall i HUD-en helt til man går
+inn i en epoke. Det er den samme regelen som gjelder på vei hjem fra Nordvik.
+
+Filene: `data/testbanen.ts` (ruter, folk, landemerker, tema),
+`engine/testbanegen.ts` (kartet), og stedet `TESTBANEN` i `data/steder.ts`.
+Portalen ligger i `HUB_PORTALER` i `data/hub.ts`.
+
 ## Hallen er delt
 
 Regelen som styrer hele nettlaget står i én linje:
@@ -968,6 +1003,7 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-brua.mjs`        | Stanford bru: dagen som snur, rekka, og at hun dør uansett |
 | `verify-rpg-mellomspill5.mjs` | Hele slutten: tidsrekka, skrinet, det tomme feltet som er henne, epilogen og kartet |
 | `verify-rpg-gjennomspilling.mjs` | Veien eleven går: Ravns fire økter spilt til ende, og en reise etterfulgt av et slag |
+| `verify-rpg-testbanen.mjs`   | Prøvebanen: portalen, det egne navnerommet, stasjonene, og at tunet er trygt |
 | `rpg-maaltavle.mjs`          | At kapittelmålet står på skjermen i alle fem kapitlene   |
 | `rpg-hudfarge.mjs`           | At hudskyggen ikke er rød - leser pikslene ut av helt-teksturen |
 

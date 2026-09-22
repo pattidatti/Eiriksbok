@@ -447,6 +447,24 @@ export const KAPITTEL_BY_NR: Record<number, KapittelDef> = Object.fromEntries(
 );
 
 /**
+ * Epoken kapitlene hører til.
+ *
+ * Fila heter «kapitlene i vikingtiden» i første linje, og den er nettopp det:
+ * fem kapitler på én gård. Står eleven et annet sted - Prøvebanen, eller en
+ * epoke som blir bygget senere - finnes det ingen kapittel, og da skal
+ * grensesnittet tie i stedet for å vise vikingtidens neste steg.
+ *
+ * Det sto ikke her før, og følgen var at HUD-kortet i sandkassen ba eleven
+ * «snakke med Ravn ved tunet» på et kart der Ravn ikke finnes.
+ */
+export const KAPITTEL_EPOKE = 'vikingtiden';
+
+/** Har epoken kapitler i det hele tatt? */
+export function harKapitler(epokeId: string | null): boolean {
+    return epokeId === KAPITTEL_EPOKE;
+}
+
+/**
  * Kapittelet eleven står i, med kapittel 1 som fall.
  *
  * Fallet er ikke slurv: et lagret spill kan peke på et kapittel nummer som er
