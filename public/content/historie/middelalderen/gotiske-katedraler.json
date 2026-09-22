@@ -5,7 +5,7 @@
     "year": "1140-1500",
     "category": "Middelalder",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/middelalderen/gotiske-katedraler-hero.webp",
     "details": [
         "Den gotiske stilen vokste fram i Frankrike rundt 1140 og spredte seg over Europa fram til rundt 1500.",
         "Tre grep gjorde katedralene mulige: spissbuen, ribbehvelvet og strebesystemet med strebebuer.",
@@ -20,7 +20,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/middelalderen/gotiske-katedraler-01.webp",
             "alt": "Innsiden av en gotisk katedral med høye søyler og farget lys fra glassvinduer",
             "caption": "Inne i en gotisk katedral strømmer lyset inn gjennom store glassvinduer og farger rommet."
         },
@@ -89,7 +89,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/middelalderen/gotiske-katedraler-02.webp",
             "alt": "Strebebuer på utsiden av en gotisk katedral sett fra siden",
             "caption": "Strebebuene på utsiden fanger opp presset fra hvelvet og fører det ned i pilarene."
         },
@@ -118,7 +118,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/middelalderen/gotiske-katedraler-03.webp",
             "alt": "Vestfronten av Nidarosdomen med rikt utsmykkede steinfigurer",
             "caption": "Nidarosdomen i Trondheim er Norges største middelalderbygning."
         },
