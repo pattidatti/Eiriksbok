@@ -1000,6 +1000,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     CascadeFailureSim: lazy(() => import('./content/interactive/infrastruktur/CascadeFailureSim').then(m => ({ default: m.CascadeFailureSim }))),
     RettighetsLas: lazy(() => import('./content/interactive/RettighetsLas').then(m => ({ default: m.RettighetsLas }))),
     DenLangsommeFlommen: lazy(() => import('./content/interactive/DenLangsommeFlommen').then(m => ({ default: m.DenLangsommeFlommen }))),
+    StavkirkeTesten: lazy(() => import('./content/interactive/StavkirkeTesten').then(m => ({ default: m.StavkirkeTesten }))),
     KongensMaktBinding,
     ParlamentetsJa,
     KongensSegl,

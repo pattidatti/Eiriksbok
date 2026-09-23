@@ -1,0 +1,292 @@
+{
+    "id": "stavkirkene",
+    "title": "Stavkirkene: kirkene som ikke råtnet",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1130-1350",
+    "category": "Norsk middelalder",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Det stod trolig minst 750 stavkirker i Norge i middelalderen. I dag står 28 igjen.",
+        "Hemmeligheten er ikke utskjæringene, men fundamentet: byggmesterne la treverket på en ramme av sviller som hvilte på stein, i stedet for å grave stolpene ned i jorda.",
+        "Borgund stavkirke ble reist av tømmer som ble felt vinteren 1180-1181. Den står fortsatt."
+    ],
+    "factChecked": "2026-09-23",
+    "content": [
+        {
+            "type": "text",
+            "content": "Det regner i Lærdal. Det har regnet her i over åtte hundre år, og nede i dalbunnen står en kirke av tre og tar imot. Sponen på taket er svart av tjære. Ingen har malt den, ingen har støpt den fast, ingen har byttet ut veggene. Tømmeret i Borgund stavkirke ble felt vinteren 1180-1181, og kirken ble reist like etter (Anker, 2026). Den har stått gjennom svartedauden, gjennom reformasjonen, gjennom to verdenskriger. Den står ennå."
+        },
+        {
+            "type": "text",
+            "content": "Det burde den ikke gjøre. Tre råtner. Legg en planke på bakken i hagen din, kom tilbake om ti år, og den er borte. Alt som var av tre i middelalderen er for lengst blitt til jord: husene, brygger, redskaper, gjerder. Likevel står disse kirkene. Spørsmålet denne artikkelen handler om, er derfor enkelt: hvorfor?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Borgund stavkirke i regnvær med mørke spontak og grønne fjell bak",
+            "caption": "Borgund stavkirke i Lærdal er den best bevarte av alle stavkirkene. Tømmeret ble felt vinteren 1180-1181."
+        },
+        {
+            "type": "header",
+            "text": "Kirkene som forsvant"
+        },
+        {
+            "type": "text",
+            "content": "Da Norge ble kristnet, trengte hver bygd et sted å samles. Se [kristningen av Norge](/historie/vikingtiden/kristningen-av-norge) for hvordan den overgangen gikk for seg. Ute i Europa bygde folk i stein, men Norge hadde noe stein aldri kunne konkurrere med: skog, overalt, gratis. Så nordmenn bygde kirkene sine i tre."
+        },
+        {
+            "type": "text",
+            "content": "Hvor mange det ble, vet ingen sikkert. Store norske leksikon anslår at det stod minst 750 stavkirker i landet, kanskje langt flere (Tschudi-Madsen, 2025). Riksantikvaren (2020) regner med at det ble bygd et sted mellom 1000 og 2000 av dem gjennom middelalderen. At de to tallene ikke er like, er ikke en feil. Ingen førte liste. Forskerne må gjette ut fra hvor mange sogn det fantes og hvor mange kirker som er nevnt i gamle brev, og da får de ulike svar."
+        },
+        {
+            "type": "text",
+            "content": "I dag står 28 igjen (Tschudi-Madsen, 2025). Det er under fire prosent av det laveste anslaget. Resten er borte."
+        },
+        {
+            "type": "header",
+            "text": "Hva er egentlig en stavkirke?"
+        },
+        {
+            "type": "text",
+            "content": "Navnet kommer fra stavene: de tykke, loddrette stolpene som bærer hele bygget. En stavkirke er bygd i stavverk, og det virker slik: nederst ligger svillene, kraftige liggende bjelker som danner en ramme. Opp fra svillene reiser stavene seg, og på toppen binder en ny liggende bjelke dem sammen. Mellom stavene skyves tynnere planker ned i spor, som bokser i en bokhylle (Gunnarsjaa, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Det er altså ikke en tømmerhytte. I et laftet hus ligger stokkene vannrett oppå hverandre og bærer vekten selv. I en stavkirke står plankene på høykant, og de bærer nesten ingenting. Alt tynget hviler på stavene. Det er derfor stavkirkene kunne bli så høye og luftige mens et laftehus måtte holde seg lavt."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Svill: den liggende grunnbjelken som resten av bygget står på",
+                "Stav: den loddrette bærestolpen, den kirken har navnet sitt fra",
+                "Veggplank: de stående plankene som fyller rommet mellom stavene",
+                "Spon: tynne trefliser, lagt lag på lag utenpå tak og vegger som en regnfrakk"
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Problemet ingen hadde løst"
+        },
+        {
+            "type": "text",
+            "content": "De aller eldste trekirkene i Norge var ikke stavkirker. De var stolpekirker, og forskjellen er én eneste ting: stolpene stod gravd rett ned i bakken. Det er en rask og sterk måte å bygge på. Den har bare én feil. Jorda er våt."
+        },
+        {
+            "type": "text",
+            "content": "En stolpe som står nede i fuktig jord, råtner akkurat der fukten er. Bygget synker, heller og faller til slutt. Arkeologene finner disse kirkene i dag som mørke flekker i bakken, hullene der stolpene stod. Ikke én av dem er igjen over jorda."
+        },
+        {
+            "type": "text",
+            "content": "Så kom løsningen, og den var nesten for enkel. I stedet for å grave stolpene ned, la byggmesterne en ramme av sviller oppå et fundament av stein, og satte stavene på den rammen. Nå rørte ingen del av treverket bakken. Nettopp det å bytte nedgravde stolper med sviller er det som fikk slutt på råteproblemet, og det er derfor kirkene kunne bygges både høye og varige (Gunnarsjaa, 2024)."
+        },
+        {
+            "type": "component",
+            "name": "StavkirkeTesten",
+            "props": {
+                "title": "Byggmesterens tre valg"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Treverk som var tørt før det ble felt"
+        },
+        {
+            "type": "text",
+            "content": "Fundamentet var én del av svaret. Selve treet var en annen. Byggmesterne brukte malmfuru, altså furu som er tung av harpiks, og de skaffet den på en måte som krevde tålmodighet. De ringet barken av stammen eller kappet toppen, og lot treet stå og tørke på rot i flere år før de felte det (Tschudi-Madsen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Mens treet stod slik og sakte døde, fylte det seg med harpiks. Harpiks er klissete og vanntett, og virker som et tetningsmiddel bygd inn i selve veden. Den som planla en stavkirke, måtte altså begynne arbeidet mange år før den første stokken ble felt. Det er tålmodighet vi nesten ikke kan forestille oss i dag."
+        },
+        {
+            "type": "text",
+            "content": "Utenpå kom det tredje laget: spon, tusenvis av små trefliser lagt over hverandre som skjell på en fisk, og bredd med tjære. Regnet traff aldri veggen. Det rant av sponen. Under, inni og utenpå, tre ganger ble vannet holdt unna treverket. Prøv det selv i spillet under."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "stavkirken-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Urnes: den eldste av dem alle"
+        },
+        {
+            "type": "text",
+            "content": "Ved Lustrafjorden i Sogn står Urnes stavkirke, den eldste vi har. Årringene i tømmeret viser at trærne ble felt vintrene fra 1129 til 1132, så kirken ble reist tidlig på 1130-tallet (Anker & Tschudi-Madsen, 2025). Den er skrevet inn på UNESCOs verdensarvliste, altså lista over de stedene i verden som regnes som så verdifulle at hele menneskeheten har ansvar for dem."
+        },
+        {
+            "type": "text",
+            "content": "Det merkeligste ved Urnes er nordportalen. Den er eldre enn kirken selv. Utskjæringene stammer fra en enda tidligere kirke på samme sted, fra rundt 1070 til 1080, og ble gjenbrukt da den nye ble reist (Anker & Tschudi-Madsen, 2025). I portalen slynger langstrakte dyr seg i kamp, kroppene flettet inn i hverandre i dypt relieff. Mønsteret er så særpreget at hele kunststilen er oppkalt etter stedet: Urnesstilen."
+        },
+        {
+            "type": "text",
+            "content": "Dette er dyrene fra vikingtidens kunst, skåret inn i en kristen kirkedør. Håndverkerne som laget den, hadde lært faget av folk som skar drager på skipsstevner. Se [skipsteknologi](/historie/vikingtiden/skipsteknologi) for hvor det håndverket kom fra. Den gamle troen var ute, men hendene som gjorde arbeidet, var de samme."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nærbilde av utskåret portal med sammenflettede dyr i tre",
+            "caption": "Nordportalen på Urnes er eldre enn kirken den sitter i. Dyrene som slynger seg i hverandre, har gitt navn til Urnesstilen."
+        },
+        {
+            "type": "header",
+            "text": "Den største og den best bevarte"
+        },
+        {
+            "type": "text",
+            "content": "Heddal stavkirke i Telemark er den største av dem alle. Kirkerommet er omtrent åtte meter bredt og tjue meter langt, og tårnet strekker seg nesten tjuefem meter opp fra bakken (Anker, 2025). Inne i det hevede midtrommet står tjue staver og bærer taket. Å stå der nede og se opp er omtrent som å stå i en skog der trærne er blitt til en bygning."
+        },
+        {
+            "type": "text",
+            "content": "Borgund er derimot den best bevarte. Den har tak over tak i sju nivåer, dragehoder som stikker ut fra mønet slik de gjorde på skipsstevnene, og et ytre av spon som ligner et skall. Nettopp fordi den er så lite forandret, ble Borgund brukt som modell da andre stavkirker skulle settes i stand igjen (Anker, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Kirkene ble reist i en periode da Norge var et rike med makt langt utover egne kyster. Les mer om den tida i artikkelen om [Norgesveldet](/historie/norsk-middelalder/norgesveldet). Byggingen tok slutt på 1300-tallet, og en viktig grunn er [svartedauden](/historie/middelalderen/svartedauden): da rundt halve befolkningen døde, var det verken folk eller penger igjen til å reise nye kirker."
+        },
+        {
+            "type": "header",
+            "text": "Dødsdommen kom i 1851"
+        },
+        {
+            "type": "text",
+            "content": "Kirkene overlevde altså pest, reformasjon og seks hundre år med vestlandsregn. Det som nesten tok knekken på dem, var en lov."
+        },
+        {
+            "type": "text",
+            "content": "I 1851 vedtok Stortinget en kirkelov som slo fast at alle nye kirker skulle være så store at de rommet 30 prosent av innbyggerne i sognet (Rasmussen, 2025). Folketallet i Norge vokste raskt på 1800-tallet, og en middelaldersk stavkirke var liten. Den hadde aldri vært ment for mer enn en håndfull familier. Over 600 nye kirker ble reist i årene fra 1851 til 1900, og mange av dem ble bygd etter at den gamle kirken først var revet (Rasmussen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Slik forsvant flertallet av dem som fortsatt stod. Ikke i brann, ikke i storm, men fordi en bygd trengte flere benkerader og løste det på den måten som var billigst."
+        },
+        {
+            "type": "text",
+            "content": "At vi har 28 igjen, skyldes en forening. Fortidsminneforeningen ble stiftet i 1844 av kunstnere som ville redde gamle bygninger, blant dem maleren Johan Christian Dahl. Da kirkene begynte å falle, gjorde foreningen det eneste den kunne: den kjøpte dem. Urnes har foreningen eid siden 1881, og i dag eier den åtte av de 28 stavkirkene (Anker & Tschudi-Madsen, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor de fortsatt står"
+        },
+        {
+            "type": "text",
+            "content": "Mellom 2001 og 2015 gikk Riksantikvaren gjennom samtlige 28 stavkirker i det som ble kalt stavkirkeprogrammet. Tak, vegger, kirkekunst og utsmykning ble satt i stand, slik at bygningene skal kunne stå videre for dem som kommer etter oss (Riksantikvaren, 2020)."
+        },
+        {
+            "type": "text",
+            "content": "Men grunnen til at det i det hele tatt var noe å reparere, ble lagt for over 800 år siden. Norge har ingen pyramider og ingen [gotiske katedraler](/historie/middelalderen/gotiske-katedraler) av stein i europeisk målestokk. Det vi har, er noen tusen kubikkmeter furu som er satt sammen så klokt at vannet aldri slapp til."
+        },
+        {
+            "type": "text",
+            "content": "Det er lett å tro at det er utskjæringene som gjør stavkirkene verdt å ta vare på. Dragehodene og portalene er vakre, men de er pynt. Det som faktisk avgjorde, var svillen: en kjedelig bjelke som ligger nederst, som ingen turist tar bilde av, og som er grunnen til at du kan gå inn i et rom bygd av mennesker som levde før Snorre skrev sagaene sine."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Innsiden av en stavkirke med høye trestaver som bærer taket",
+            "caption": "Inne i det hevede midtrommet bærer stavene hele taket. Veggplankene mellom dem bærer nesten ingenting."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet stav i stavkirke, og hvilken oppgave har stavene i bygget?",
+                    "Hvor mange stavkirker står igjen i Norge i dag, og omtrent hvor mange tror forskerne det fantes i middelalderen?",
+                    "Hva er forskjellen på en stolpekirke og en stavkirke?",
+                    "Hva krevde kirkeloven av 1851, og hva førte den til for de gamle kirkene?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor en svill på stein gjør at kirken varer lenger enn en stolpe gravd ned i jorda.",
+                    "Byggmesterne måtte begynne å forberede tømmeret flere år før de felte det. Hva sier det om hvordan de tenkte om tid og arbeid?",
+                    "Portalen på Urnes har dyr fra vikingtidens kunst på en kristen kirke. Hvorfor kan det ha blitt slik, tror du?",
+                    "Loven fra 1851 var ikke ment å ødelegge noe. Likevel forsvant mange stavkirker på grunn av den. Hvordan kan en fornuftig regel få følger ingen ville ha?"
+                ],
+                "gaaVidere": [
+                    "Fortidsminneforeningen reddet stavkirker ved å kjøpe dem. Diskuter i klassen: hvem bør betale for å ta vare på gamle bygninger i dag, staten eller de som bor der?",
+                    "Finn ut om det står en middelalderkirke eller en annen gammel bygning i nærheten av der du bor. Hvor gammel er den, og hvem passer på den nå?",
+                    "Skriv en kort tekst der du forklarer for en ti-åring hvorfor tre vanligvis råtner, men ikke i en stavkirke."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er hovedgrunnen til at stavkirkene ikke råtnet bort slik andre trebygg gjorde?",
+                        "options": [
+                            "Treverket hvilte på sviller og stein i stedet for å stå nede i jorda",
+                            "De ble malt med et spesielt maling hvert tiende år",
+                            "De ble bygd av eik i stedet for furu",
+                            "De stod så høyt i fjellet at det aldri regnet på dem"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "De eldste trekirkene hadde stolper gravd ned i jorda, og der jorda er våt, råtner treet. Da byggmesterne la treverket på en svillramme som hvilte på stein, rørte ingen del av bygget bakken lenger."
+                    },
+                    {
+                        "question": "Omtrent hvor mange stavkirker står igjen i Norge i dag?",
+                        "options": ["28", "120", "750", "3"],
+                        "correctAnswer": 0,
+                        "explanation": "28 stavkirker står igjen. Store norske leksikon anslår at det fantes minst 750 i middelalderen, så det store flertallet er borte."
+                    },
+                    {
+                        "question": "Hva er malmfuru, og hvorfor brukte byggmesterne det?",
+                        "options": [
+                            "Furu full av harpiks, tørket på rot i flere år før felling",
+                            "Furu som er dyrket i gruver",
+                            "Furu som er blandet med jernspon",
+                            "Ung furu som er rask å felle"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Byggmesterne ringet barken av eller kappet toppen og lot treet tørke på rot i årevis. Da fylte veden seg med harpiks, som er klissete og vanntett og virker som et tetningsmiddel inne i selve treet."
+                    },
+                    {
+                        "question": "Hvorfor forsvant så mange stavkirker på 1800-tallet?",
+                        "options": [
+                            "Kirkeloven av 1851 krevde større kirker, og mange gamle ble revet",
+                            "En storm i 1870 tok de fleste av dem",
+                            "Folk sluttet å gå i kirken",
+                            "Kongen forbød trekirker"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Loven slo fast at nye kirker skulle romme 30 prosent av innbyggerne i sognet. Stavkirkene var for små, og over 600 nye kirker ble reist mellom 1851 og 1900, mange etter at den gamle var revet."
+                    },
+                    {
+                        "question": "Hva er spesielt med nordportalen på Urnes stavkirke?",
+                        "options": [
+                            "Den er eldre enn kirken og er gjenbrukt fra en tidligere kirke på stedet",
+                            "Den er laget av stein",
+                            "Den er den eneste portalen uten utskjæringer",
+                            "Den ble laget på 1800-tallet"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Utskjæringene stammer fra en kirke som stod der rundt 1070-1080, altså om lag 60 år før dagens kirke ble reist. Mønsteret med sammenflettede dyr i kamp har gitt navn til Urnesstilen."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Tschudi-Madsen, S. (2025). *Stavkirke*. Store norske leksikon. Hentet 23.09.2026 fra [snl.no/stavkirke](https://snl.no/stavkirke)",
+                    "Gunnarsjaa, A. (2024). *Stavverk*. Store norske leksikon. Hentet 23.09.2026 fra [snl.no/stavverk](https://snl.no/stavverk)",
+                    "Anker, L. (2026). *Borgund stavkirke*. Store norske leksikon. Hentet 23.09.2026 fra [snl.no/Borgund_stavkirke](https://snl.no/Borgund_stavkirke)",
+                    "Anker, L., & Tschudi-Madsen, S. (2025). *Urnes stavkirke*. Store norske leksikon. Hentet 23.09.2026 fra [snl.no/Urnes_stavkirke](https://snl.no/Urnes_stavkirke)",
+                    "Anker, L. (2025). *Heddal stavkirke*. Store norske leksikon. Hentet 23.09.2026 fra [snl.no/Heddal_stavkirke](https://snl.no/Heddal_stavkirke)",
+                    "Rasmussen, T. (2025). *Kirke*. Store norske leksikon. Hentet 23.09.2026 fra [snl.no/kirke](https://snl.no/kirke)",
+                    "Riksantikvaren. (2020). *Stavkirker*. Hentet 23.09.2026 fra [riksantikvaren.no/arbeidsomrader/stavkirker](https://riksantikvaren.no/arbeidsomrader/stavkirker/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

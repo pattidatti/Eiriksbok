@@ -38,6 +38,7 @@ const IngenmanslandMG = lazy(() => import('./IngenmanslandMG'));
 const Konvoien3D = lazy(() => import('./Konvoien3D'));
 const SvanvikenKontrakten3D = lazy(() => import('./SvanvikenKontrakten3D'));
 const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
+const Stavkirken3D = lazy(() => import('./Stavkirken3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
 const Katedralhvelvet3D = lazy(() => import('./Katedralhvelvet3D'));
@@ -229,6 +230,15 @@ const DalenDuLaner3D = lazy(() => import('./DalenDuLaner3D'));
 const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'stavkirken-3d': {
+        id: 'stavkirken-3d',
+        title: 'Stavkirken som ble stående',
+        description:
+            'Dra rammen av sviller opp på steinfundamentet, reis stavene i hjørnene og legg taket. Dra så tidsspaken fra 1180 til i dag: kirken står. Bytt til den eldre byggemåten, stolper gravd rett ned i jorda, og spill den samme tida av en gang til. Stolpene råtner, kirken synker og velter. Lyspæren: stavkirkene står ennå fordi treverket aldri rører bakken.',
+        estimatedSeconds: 170,
+        loader: () => import('./Stavkirken3D'),
+        Component: Stavkirken3D as never,
+    },
     'katedralhvelvet-3d': {
         id: 'katedralhvelvet-3d',
         title: 'Reis katedralhvelvet',

@@ -2837,6 +2837,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "stavkirkene",
+      "title": "Stavkirkene: kirkene som ikke råtnet",
+      "description": "Det stod minst 750 stavkirker i Norge. I dag står 28 igjen, og grunnen er en kjedelig bjelke nederst i bygget.",
+      "startDate": 1130,
+      "endDate": 1350,
+      "displayDate": "1130-1350",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norsk-middelalder",
+      "link": "/historie/norsk-middelalder/stavkirkene",
+      "tags": [
+        "norge",
+        "middelalder",
+        "kirke",
+        "håndverk",
+        "kulturarv"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "gotiske-katedraler",
       "title": "Gotiske katedraler",
       "description": "Spissbue, ribbehvelv og strebebuer lot middelalderens byggmestere reise katedraler som strakte seg mot himmelen og fyltes med lys.",

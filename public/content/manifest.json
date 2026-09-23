@@ -3231,6 +3231,20 @@
               ],
               "createdDate": "2026-09-08T04:55:08+02:00",
               "lastUpdated": "2026-09-08T07:33:45+02:00"
+            },
+            {
+              "id": "stavkirkene",
+              "title": "Stavkirkene: kirkene som ikke råtnet",
+              "description": "Det stod minst 750 stavkirker i Norge. I dag står 28 igjen, og grunnen er en kjedelig bjelke nederst i bygget.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "middelalder",
+                "kirke",
+                "håndverk",
+                "kulturarv"
+              ],
+              "createdDate": "2026-09-23T00:00:00Z"
             }
           ]
         },

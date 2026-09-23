@@ -936,7 +936,7 @@
     },
     {
       "tag": "middelalder",
-      "count": 36
+      "count": 38
     },
     {
       "tag": "nykolonialisme",
@@ -1299,6 +1299,10 @@
       "count": 8
     },
     {
+      "tag": "kirke",
+      "count": 8
+    },
+    {
       "tag": "verdenshistorie",
       "count": 8
     },
@@ -1431,10 +1435,6 @@
       "count": 6
     },
     {
-      "tag": "kirke",
-      "count": 6
-    },
-    {
       "tag": "psykologi",
       "count": 6
     },
@@ -1512,6 +1512,10 @@
     },
     {
       "tag": "oppdagelse",
+      "count": 5
+    },
+    {
+      "tag": "kulturarv",
       "count": 5
     },
     {
@@ -1956,10 +1960,6 @@
     },
     {
       "tag": "tid",
-      "count": 3
-    },
-    {
-      "tag": "kulturarv",
       "count": 3
     },
     {
@@ -2416,6 +2416,10 @@
     },
     {
       "tag": "baglere",
+      "count": 2
+    },
+    {
+      "tag": "håndverk",
       "count": 2
     },
     {
