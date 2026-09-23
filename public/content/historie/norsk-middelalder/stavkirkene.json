@@ -6,7 +6,7 @@
     "year": "1130-1350",
     "category": "Norsk middelalder",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norsk-middelalder/stavkirkene-hero.webp",
     "details": [
         "Det stod trolig minst 750 stavkirker i Norge i middelalderen. I dag står 28 igjen.",
         "Hemmeligheten er ikke utskjæringene, men fundamentet: byggmesterne la treverket på en ramme av sviller som hvilte på stein, i stedet for å grave stolpene ned i jorda.",
@@ -24,7 +24,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norsk-middelalder/stavkirkene-01.webp",
             "alt": "Borgund stavkirke i regnvær med mørke spontak og grønne fjell bak",
             "caption": "Borgund stavkirke i Lærdal er den best bevarte av alle stavkirkene. Tømmeret ble felt vinteren 1180-1181."
         },
@@ -129,7 +129,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norsk-middelalder/stavkirkene-02.webp",
             "alt": "Nærbilde av utskåret portal med sammenflettede dyr i tre",
             "caption": "Nordportalen på Urnes er eldre enn kirken den sitter i. Dyrene som slynger seg i hverandre, har gitt navn til Urnesstilen."
         },
@@ -187,7 +187,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norsk-middelalder/stavkirkene-03.webp",
             "alt": "Innsiden av en stavkirke med høye trestaver som bærer taket",
             "caption": "Inne i det hevede midtrommet bærer stavene hele taket. Veggplankene mellom dem bærer nesten ingenting."
         },
