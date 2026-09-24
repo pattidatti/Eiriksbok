@@ -228,6 +228,7 @@ const BeskjedenForSent3D = lazy(() => import('./BeskjedenForSent3D'));
 const Scriptoriet3D = lazy(() => import('./Scriptoriet3D'));
 const DalenDuLaner3D = lazy(() => import('./DalenDuLaner3D'));
 const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
+const OverVolga3D = lazy(() => import('./OverVolga3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'stavkirken-3d': {
@@ -2236,6 +2237,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Messingplata3D'),
         Component: Messingplata3D as never,
+    },
+    'over-volga-3d': {
+        id: 'over-volga-3d',
+        title: 'Over Volga',
+        description:
+            'Stalingrad, høsten 1942. Send ferjer med forsterkninger over Volga for å holde byen, mens tyske fly angriper elva. Når en rød ring dukker opp foran en ferje, stopper du den til bomben har falt. Hold byen til 19. november. Imens vokser to røde armer fram nord og sør for byen. Lyspæra: byen måtte bare holdes lenge nok. Slaget ble avgjort bak den, da knipetangen lukket seg rundt tyskerne.',
+        estimatedSeconds: 130,
+        loader: () => import('./OverVolga3D'),
+        Component: OverVolga3D as never,
     },
 };
 
