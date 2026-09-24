@@ -39,6 +39,8 @@ export interface ArcadeTheme {
     tilt: number;
     hudText: string;
     hudStroke: string;
+    /** Hvor banneret står (CSS top). Hold det unna der handlingen skjer. */
+    bannerTop: string;
 }
 
 export const DEFAULT_THEME: ArcadeTheme = {
@@ -60,4 +62,5 @@ export const DEFAULT_THEME: ArcadeTheme = {
     tilt: -2,
     hudText: '#ffffff',
     hudStroke: '#22201c',
+    bannerTop: '40%',
 };

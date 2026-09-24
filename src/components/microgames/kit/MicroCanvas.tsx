@@ -74,6 +74,9 @@ export interface MicroCanvasProps {
     ambientIntensity?: number;
     // Slå av OrbitControls helt (f.eks. hvis spillet styrer kamera selv).
     controls?: boolean;
+    // Sett false når spillet har egen lyssetting (døgn, årstider, storm) - da
+    // tegnes ikke kitets ambient/hemisfære/sol, og lyset blir ikke dobbelt.
+    builtInLights?: boolean;
     // Myk kontaktskygge under scenen - billig dybde/forankring. Sett false for å slå av.
     contactShadows?: boolean;
     // Y-nivå for kontaktskyggen (vanligvis bakkenivå 0).
@@ -226,6 +229,7 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
     sunIntensity,
     ambientIntensity,
     controls = true,
+    builtInLights = true,
     contactShadows = true,
     shadowY = 0,
 }) => {
@@ -290,19 +294,23 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
                 <color attach="background" args={[background]} />
                 {fog && <fog attach="fog" args={[fogColor, fog.near, fog.far]} />}
 
-                <ambientLight intensity={ambInt} />
-                <hemisphereLight args={[mood.hemiSky, mood.hemiGround, mood.hemiIntensity]} />
-                <directionalLight
-                    position={sunPos}
-                    intensity={sunInt}
-                    color={mood.sunColor}
-                    castShadow
-                    shadow-mapSize={[1024, 1024]}
-                    shadow-camera-left={-20}
-                    shadow-camera-right={20}
-                    shadow-camera-top={20}
-                    shadow-camera-bottom={-20}
-                />
+                {builtInLights && (
+                    <>
+                        <ambientLight intensity={ambInt} />
+                        <hemisphereLight args={[mood.hemiSky, mood.hemiGround, mood.hemiIntensity]} />
+                        <directionalLight
+                            position={sunPos}
+                            intensity={sunInt}
+                            color={mood.sunColor}
+                            castShadow
+                            shadow-mapSize={[1024, 1024]}
+                            shadow-camera-left={-20}
+                            shadow-camera-right={20}
+                            shadow-camera-top={20}
+                            shadow-camera-bottom={-20}
+                        />
+                    </>
+                )}
 
                 {children}
 

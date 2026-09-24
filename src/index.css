@@ -680,3 +680,18 @@ body.dyslexia-mode header > div > :last-child span {
     animation: none;
   }
 }
+
+/* Mikrospill i fullskjerm (knappen i MicroGameFrame): rammen fyller skjermen, og
+   spillvinduet ([data-mg-stage]) tar all høyden som er igjen etter tittellinja
+   og kontrollene under. */
+.mg-frame:fullscreen {
+  background: #f8fafc;
+  border-radius: 0;
+  overflow-y: auto;
+}
+.mg-frame:fullscreen [data-mg-stage] {
+  height: calc(100vh - 9rem) !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+}

@@ -243,10 +243,10 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
     },
     'stavkirken-3d': {
         id: 'stavkirken-3d',
-        title: 'Stavkirken som ble stående',
+        title: 'Regnet i Lærdal',
         description:
-            'Dra rammen av sviller opp på steinfundamentet, reis stavene i hjørnene og legg taket. Dra så tidsspaken fra 1180 til i dag: kirken står. Bytt til den eldre byggemåten, stolper gravd rett ned i jorda, og spill den samme tida av en gang til. Stolpene råtner, kirken synker og velter. Lyspæren: stavkirkene står ennå fordi treverket aldri rører bakken.',
-        estimatedSeconds: 170,
+            'Hold Borgund stavkirke stående fra 1180 til i dag. Regnet sliter på sponen, mest fra vest. Gå rundt kirka og tjærebre flatene før de lekker, hent tjære ved mila, og kom deg gjennom svartedauden, lynnedslag og kirkeloven av 1851. Velg først fundament og tømmer - det ene valget avgjør om kirka i det hele tatt kan overleve.',
+        estimatedSeconds: 200,
         loader: () => import('./Stavkirken3D'),
         Component: Stavkirken3D as never,
     },

@@ -29,7 +29,7 @@ const CSS = `
 .arc-round{position:absolute;border-radius:50%;border:var(--arc-line) solid var(--arc-ink);box-shadow:0 var(--arc-drop) 0 var(--arc-ink);display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:none;transition:transform .08s,opacity .25s}
 .arc-round:active,.arc-round.press{transform:translateY(4px);box-shadow:0 1px 0 var(--arc-ink)}
 .arc-round.dim{filter:grayscale(1);opacity:.55}
-.arc-banner{position:absolute;left:50%;top:40%;width:min(92%,520px);text-align:center;pointer-events:none;transform:translate(-50%,-50%)}
+.arc-banner{position:absolute;left:50%;top:var(--arc-banner-top);width:min(92%,520px);text-align:center;pointer-events:none;transform:translate(-50%,-50%)}
 .arc-banner.show{animation:arcIn .35s cubic-bezier(.2,1.4,.4,1) both,arcOut .4s ease-in var(--arc-out,3s) forwards}
 @keyframes arcIn{from{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(calc(var(--arc-tilt) * -3))}to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(var(--arc-tilt))}}
 @keyframes arcOut{from{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(var(--arc-tilt))}to{opacity:0;transform:translate(-50%,-62%) scale(.92) rotate(var(--arc-tilt))}}
@@ -38,6 +38,9 @@ const CSS = `
 .arc-toast{position:absolute;left:50%;top:58px;transform:translate(-50%,-24px);opacity:0;background:var(--arc-paper);border:calc(var(--arc-line) - .5px) solid var(--arc-ink);border-radius:calc(var(--arc-radius) - 4px);padding:6px 12px;font-family:var(--arc-body-font);font-weight:800;font-size:14px;line-height:1.35;box-shadow:0 calc(var(--arc-drop) * .66) 0 var(--arc-ink);pointer-events:none;color:var(--arc-ink);max-width:92%;text-align:center}
 .arc-toast.on{animation:arcToast .35s cubic-bezier(.2,1.4,.4,1) forwards}
 @keyframes arcToast{to{opacity:1;transform:translate(-50%,0)}}
+.arc-feed{min-height:44px;display:flex;align-items:center;justify-content:center;padding:6px 12px;margin-top:6px;background:var(--arc-paper);border:var(--arc-line) solid var(--arc-ink);border-radius:var(--arc-radius);color:var(--arc-ink);font-family:var(--arc-body-font);font-weight:700;font-size:14px;line-height:1.35;text-align:center}
+.arc-feed-msg{animation:arcFeed .3s ease-out}
+@keyframes arcFeed{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .arc-bar{height:15px;border:calc(var(--arc-line) - .5px) solid var(--arc-hud-stroke);border-radius:9px;background:rgba(0,0,0,.28);overflow:hidden}
 .arc-bar>div{height:100%;border-radius:6px 0 0 6px;transition:background .3s}
 .arc-bar.low{animation:arcPulse .5s infinite alternate}
@@ -70,6 +73,7 @@ function themeVars(t: ArcadeTheme): React.CSSProperties {
         ['--arc-tilt' as string]: `${t.tilt}deg`,
         ['--arc-hud-text' as string]: t.hudText,
         ['--arc-hud-stroke' as string]: t.hudStroke,
+        ['--arc-banner-top' as string]: t.bannerTop,
     };
 }
 
@@ -98,28 +102,36 @@ export const ArcadeStage = React.forwardRef<
         maxHeight?: number;
         background?: string;
         children: React.ReactNode;
+        /** Innhold under spillvinduet (f.eks. meldingslinja fra useArcadeAnnouncer({ feed: true })). */
+        below?: React.ReactNode;
         label: string;
     }
 >(function ArcadeStage(
-    { aspect, theme, minHeight = 420, maxHeight = 640, background, children, label },
+    { aspect, theme, minHeight = 420, maxHeight = 640, background, children, below, label },
     ref
 ) {
     useArcadeCss();
     return (
-        <div
-            ref={ref}
-            className="arc-stage"
-            style={{
-                ...themeVars({ ...DEFAULT_THEME, ...theme }),
-                // Som 3D-kitet: høyden følger skjermen, ikke spaltebredden.
-                ...(aspect ? { aspectRatio: String(aspect), minHeight, maxHeight } : { height: `clamp(${minHeight}px, 70vh, ${maxHeight}px)` }),
-                background,
-            }}
-            role="application"
-            aria-label={label}
-            onContextMenu={(e) => e.preventDefault()}
-        >
-            {children}
+        // Temaet ligger på ytterboksen, så både scenen og linja under får det.
+        <div style={themeVars({ ...DEFAULT_THEME, ...theme })}>
+            <div
+                ref={ref}
+                data-mg-stage
+                className="arc-stage"
+                style={{
+                    // Som 3D-kitet: høyden følger skjermen, ikke spaltebredden.
+                    ...(aspect
+                        ? { aspectRatio: String(aspect), minHeight, maxHeight }
+                        : { height: `clamp(${minHeight}px, 70vh, ${maxHeight}px)` }),
+                    background,
+                }}
+                role="application"
+                aria-label={label}
+                onContextMenu={(e) => e.preventDefault()}
+            >
+                {children}
+            </div>
+            {below}
         </div>
     );
 });

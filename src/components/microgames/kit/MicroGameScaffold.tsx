@@ -64,6 +64,7 @@ export const MicroGameScaffold: React.FC<MicroGameScaffoldProps> = ({
                     // ga 4:3 et lavt vindu med lite plass til scenen. Et spill som
                     // setter eget aspectRatio, beholder det.
                     style={aspectRatio ? { aspectRatio, minHeight } : { height: 'clamp(420px, 70vh, 640px)' }}
+                    data-mg-stage
                 >
                     <MicroCanvas {...canvas}>{scene}</MicroCanvas>
                     {/* Myk vignette - gir scenen et fokusert, filmatisk preg */}

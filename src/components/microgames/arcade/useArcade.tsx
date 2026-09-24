@@ -142,8 +142,14 @@ interface ToastMsg {
  * Banner og toast styres imperativt fra spill-løkka (som ikke lever i React).
  * Meldingene køes - en ny melding skyver aldri en gammel bort før den er lest -
  * og hver melding står så lenge teksten tar å lese.
+ *
+ * `feed: true` (anbefalt for 3D-spill der eleven klikker i scenen): bare en kort
+ * tittel vises over scenen. All lesetekst - toasts og bannerundertekster - går i
+ * en fast linje UNDER spillvinduet (`feed`-elementet), så tekst aldri dekker
+ * noe eleven skal treffe.
  */
-export function useArcadeAnnouncer() {
+export function useArcadeAnnouncer(opts: { feed?: boolean } = {}) {
+    const feedMode = !!opts.feed;
     const [banner, setBanner] = useState<BannerMsg | null>(null);
     const [toast, setToast] = useState<ToastMsg | null>(null);
 
@@ -182,6 +188,19 @@ export function useArcadeAnnouncer() {
         return {
             banner: (t: string, s = '', color = '#b8322a') => {
                 n += 1;
+                if (feedMode) {
+                    // Kort tittel over scenen; lesestoffet går i linja under.
+                    bq.push({ t, s: '', color, n, dur: 2.2 });
+                    if (s) {
+                        n += 1;
+                        tq.unshift({ t: s, n, dur: readingSeconds(s, 4, 9) });
+                        window.clearTimeout(tTimer);
+                        nextToast();
+                    }
+                    while (bq.length > 2) bq.shift();
+                    if (!bBusy) nextBanner();
+                    return;
+                }
                 bq.push({ t, s, color, n, dur: readingSeconds(t + s, 3.2, 9) });
                 // Et spill i full fart skal ikke bygge opp en lang kø av gammelt nytt.
                 while (bq.length > 2) bq.shift();
@@ -232,11 +251,23 @@ export function useArcadeAnnouncer() {
                     )}
                 </div>
             )}
-            <div key={toast?.n ?? 0} className={`arc-toast ${toast ? 'on' : ''}`} aria-live="polite">
-                {toast?.t}
-            </div>
+            {!feedMode && (
+                <div key={toast?.n ?? 0} className={`arc-toast ${toast ? 'on' : ''}`} aria-live="polite">
+                    {toast?.t}
+                </div>
+            )}
         </>
     );
 
-    return [api, elements] as const;
+    const feed = (
+        <div className="arc-feed" aria-live="polite">
+            {toast && (
+                <span key={toast.n} className="arc-feed-msg">
+                    {toast.t}
+                </span>
+            )}
+        </div>
+    );
+
+    return [api, elements, feed] as const;
 }
