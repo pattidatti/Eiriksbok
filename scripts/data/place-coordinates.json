@@ -888,7 +888,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 343
+      "count": 345
     },
     {
       "tag": "teknologi",
@@ -1259,6 +1259,10 @@
       "count": 9
     },
     {
+      "tag": "andre-verdenskrig",
+      "count": 9
+    },
+    {
       "tag": "analyse",
       "count": 9
     },
@@ -1376,10 +1380,6 @@
     },
     {
       "tag": "the-troubles",
-      "count": 7
-    },
-    {
-      "tag": "andre-verdenskrig",
       "count": 7
     },
     {
@@ -1747,6 +1747,10 @@
       "count": 4
     },
     {
+      "tag": "vendepunkt",
+      "count": 4
+    },
+    {
       "tag": "gullalder",
       "count": 4
     },
@@ -1836,6 +1840,10 @@
     },
     {
       "tag": "okkupasjon",
+      "count": 4
+    },
+    {
+      "tag": "sovjetunionen",
       "count": 4
     },
     {
@@ -2583,10 +2591,6 @@
       "count": 2
     },
     {
-      "tag": "vendepunkt",
-      "count": 2
-    },
-    {
       "tag": "süleyman",
       "count": 2
     },
@@ -3139,6 +3143,10 @@
       "count": 2
     },
     {
+      "tag": "ostfronten",
+      "count": 2
+    },
+    {
       "tag": "konspirasjonsteorier",
       "count": 2
     },
@@ -3248,10 +3256,6 @@
     },
     {
       "tag": "sametinget",
-      "count": 2
-    },
-    {
-      "tag": "sovjetunionen",
       "count": 2
     },
     {

@@ -8981,6 +8981,31 @@
       ]
     },
     {
+      "id": "slaget-om-stalingrad",
+      "title": "Slaget om Stalingrad: Fellen utenfor byen",
+      "description": "Hitler ville ha byen som bar Stalins navn. Men slaget ble avgjort på slettene utenfor, da knipetangen lukket seg rundt 6. armé.",
+      "startDate": 1942,
+      "endDate": 1943,
+      "displayDate": "1942-1943",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "andre-verdenskrig",
+      "link": "/historie/andre-verdenskrig/slaget-om-stalingrad",
+      "tags": [
+        "historie",
+        "andre-verdenskrig",
+        "sovjetunionen",
+        "tyskland",
+        "ostfronten",
+        "vendepunkt"
+      ],
+      "lat": 51.2,
+      "lng": 10.4,
+      "placeLabel": "Tyskland",
+      "placeCountryId": 276,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "india-sub-2",
       "title": "Quit India Movement",
       "description": "Massiv sivil ulydighet under 2. verdenskrig.",

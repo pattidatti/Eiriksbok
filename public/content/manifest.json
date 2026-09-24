@@ -4057,6 +4057,21 @@
               ],
               "createdDate": "2026-08-07T04:03:38+02:00",
               "lastUpdated": "2026-08-07T07:31:33+02:00"
+            },
+            {
+              "id": "slaget-om-stalingrad",
+              "title": "Slaget om Stalingrad: Fellen utenfor byen",
+              "description": "Hitler ville ha byen som bar Stalins navn. Men slaget ble avgjort på slettene utenfor, da knipetangen lukket seg rundt 6. armé.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "andre-verdenskrig",
+                "sovjetunionen",
+                "tyskland",
+                "ostfronten",
+                "vendepunkt"
+              ],
+              "createdDate": "2026-09-24T00:00:00Z"
             }
           ]
         },
