@@ -6,7 +6,7 @@
   "year": "1942-1943",
   "category": "Andre verdenskrig",
   "readTime": "11 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/andre-verdenskrig/slaget-om-stalingrad-hero.webp",
   "details": [
     "Slaget om Stalingrad varte fra sommeren 1942 til 2. februar 1943, og regnes som et av vendepunktene i andre verdenskrig.",
     "Byen var viktig for Hitler og Stalin fordi den bar Stalins navn, men slaget ble avgjort på flankene utenfor byen.",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/slaget-om-stalingrad-01.webp",
       "alt": "Soldater i en liten båt over en bred elv mot en brennende by",
       "caption": "Forsterkningene kom over Volga fra østbredden, ofte om natten og under angrep fra luften."
     },
@@ -94,7 +94,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/slaget-om-stalingrad-02.webp",
       "alt": "To kolonner stridsvogner møtes på en snødekt slette",
       "caption": "Den 23. november 1942 møttes de to sovjetiske angrepene ved Kalatsj. Ringen rundt den tyske 6. armé var lukket."
     },
@@ -157,7 +157,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/slaget-om-stalingrad-03.webp",
       "alt": "Ødelagte fabrikkhaller i snø langs en frossen elv",
       "caption": "Da kampene var over i februar 1943, lå store deler av Stalingrad i ruiner. Byen heter i dag Volgograd."
     },
