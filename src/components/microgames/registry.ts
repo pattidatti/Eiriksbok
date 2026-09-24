@@ -6,6 +6,7 @@ import type { MicroGameEntry } from './types';
 // Three.js-avhengige spill (3D) blir kun lastet når eleven åpner dem.
 
 const GladiusDuel = lazy(() => import('./GladiusDuel'));
+const HavetKommer = lazy(() => import('./HavetKommer'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
@@ -231,6 +232,15 @@ const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
 const OverVolga3D = lazy(() => import('./OverVolga3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'havet-kommer': {
+        id: 'havet-kommer',
+        title: 'Havet kommer',
+        description:
+            'Arkadespill fra Doggerland. Maten er rikest i fjæra, men fjæra kryper østover mens havet stiger. Hold følget mett, pass deg for tidevann, villsvin og Storegga-bølgen, og nå kysten før Doggerbanken går under. Leirene dere forlater, havner på bunnen av Nordsjøen.',
+        estimatedSeconds: 180,
+        loader: () => import('./HavetKommer'),
+        Component: HavetKommer as never,
+    },
     'stavkirken-3d': {
         id: 'stavkirken-3d',
         title: 'Stavkirken som ble stående',

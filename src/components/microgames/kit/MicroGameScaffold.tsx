@@ -44,8 +44,8 @@ export const MicroGameScaffold: React.FC<MicroGameScaffoldProps> = ({
     canvas,
     overlays,
     children,
-    aspectRatio = '16/12',
-    minHeight = 408,
+    aspectRatio,
+    minHeight = 420,
     containerClassName = 'bg-gradient-to-b from-[#bfe0f2] via-[#dceaf0] to-[#e9ddc4]',
 }) => {
     return (
@@ -60,7 +60,10 @@ export const MicroGameScaffold: React.FC<MicroGameScaffoldProps> = ({
                 {/* 3D-vinduet i full bredde */}
                 <div
                     className={`relative w-full overflow-hidden ${containerClassName}`}
-                    style={{ aspectRatio, minHeight }}
+                    // Høyden følger skjermen, ikke spaltebredden: i en smal artikkelspalte
+                    // ga 4:3 et lavt vindu med lite plass til scenen. Et spill som
+                    // setter eget aspectRatio, beholder det.
+                    style={aspectRatio ? { aspectRatio, minHeight } : { height: 'clamp(420px, 70vh, 640px)' }}
                 >
                     <MicroCanvas {...canvas}>{scene}</MicroCanvas>
                     {/* Myk vignette - gir scenen et fokusert, filmatisk preg */}

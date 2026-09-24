@@ -90,6 +90,31 @@ function StaticCameraAim({ target }: { target: [number, number, number] }) {
     return null;
 }
 
+// Høyere vindu, samme bredde-utsnitt. Spillvinduet følger skjermhøyden, så i en
+// smal artikkelspalte blir det høyere enn 4:3. Med fast vertikal FOV ville det
+// krympet det horisontale utsnittet og klippet modeller i sidene. Vi øker i
+// stedet den vertikale FOV-en så bredden alltid ser minst det den gjorde ved 4:3:
+// samme innramming i bredden, mer himmel og bakke i høyden.
+const REF_ASPECT = 4 / 3;
+function FovGuard({ baseFov }: { baseFov: number }) {
+    const get = useThree((s) => s.get);
+    const width = useThree((s) => s.size.width);
+    const height = useThree((s) => s.size.height);
+    useEffect(() => {
+        const camera = get().camera;
+        if (!(camera instanceof THREE.PerspectiveCamera) || height === 0) return;
+        const aspect = width / height;
+        const base = THREE.MathUtils.degToRad(baseFov);
+        const fov =
+            aspect < REF_ASPECT
+                ? 2 * Math.atan((Math.tan(base / 2) * REF_ASPECT) / aspect)
+                : base;
+        camera.fov = THREE.MathUtils.radToDeg(fov);
+        camera.updateProjectionMatrix();
+    }, [get, width, height, baseFov]);
+    return null;
+}
+
 // Mekanisk selvrevisjon: eksponerer window.__microSceneAudit() som harnessen
 // (scripts/audit-microgames.mjs) og CI-porten kaller. Fanger de to vanligste
 // feilklassene fra storrevisjonen 2026-07-24 maskinelt: modell utenfor
@@ -255,6 +280,7 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
                 frameloop={active ? 'always' : 'never'}
                 shadows
             >
+                <FovGuard baseFov={camera.fov ?? 38} />
                 <PerformanceMonitor
                     onDecline={() => setDpr(1)}
                     onIncline={() => setDpr([1, 1.5])}
