@@ -93,7 +93,7 @@
       "type": "component",
       "name": "MicroGame",
       "props": {
-        "gameId": "doggerland-synker"
+        "gameId": "havet-kommer"
       }
     },
     {
