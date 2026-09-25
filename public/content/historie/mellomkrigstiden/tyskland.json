@@ -63,6 +63,13 @@
             ]
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "lop-med-lonna-3d"
+            }
+        },
+        {
             "type": "paragraph",
             "text": "Hyperinflasjonen traumatiserte en generasjon. Den som hadde spart hele livet, var plutselig fattig, og de som levde av faste inntekter som pensjon, ble hardest rammet. Store deler av middelklassen ble dratt ned i arbeiderklassen, og tilliten til republikken ble knust (Bisno, 2023). Den 8. november 1923 forsøkte en agitator i München et væpnet kupp: ølhallkuppet. Det mislyktes, og Adolf Hitler ble dømt til fem års fengsel. Han satt bare ni måneder, og brukte tiden til å skrive «Mein Kampf» (Dypvik, 2026)."
         },

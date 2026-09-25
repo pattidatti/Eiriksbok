@@ -231,6 +231,7 @@ const DalenDuLaner3D = lazy(() => import('./DalenDuLaner3D'));
 const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
 const OverVolga3D = lazy(() => import('./OverVolga3D'));
 const Midway3D = lazy(() => import('./Midway3D'));
+const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2270,6 +2271,17 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 120,
         loader: () => import('./Midway3D'),
         Component: Midway3D as never,
+    },
+    'lop-med-lonna-3d': {
+        id: 'lop-med-lonna-3d',
+        title: 'Løp med lønna',
+        description:
+            'Berlin, høsten 1923. Du er 14 år og henter mors lønn i fabrikkporten med en handkjerre. Staten trykker penger, og prisene følger den ekte dollarkursen: sedlene i kjerra blir verdt mindre for hvert sekund. Kjør rett til bakeren, potetvogna og kullhandelen, gjør pengene om til varer og kjør dem hjem. Hold familien mett og varm til rentenmarken kommer 15. november. Lyspæra: under hyperinflasjonen var det farlig å spare penger - bare det du hadde kjøpt, holdt verdien.',
+        estimatedSeconds: 180,
+        sjanger: 'kjøring-tycoon',
+        tone: 'alvorlig',
+        loader: () => import('./LopMedLonna3D'),
+        Component: LopMedLonna3D as never,
     },
 };
 
