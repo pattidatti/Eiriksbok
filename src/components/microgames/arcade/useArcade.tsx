@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { playtestSpeed } from '../playtest';
 
 // Hookene i arkadeskallet. Ligger i egen fil fordi Fast Refresh krever at
 // komponentfiler bare eksporterer komponenter.
@@ -85,6 +86,7 @@ export function useArcadeLoop(handlers: LoopHandlers) {
         document.addEventListener('visibilitychange', onVis);
 
         let raf = 0;
+        const speed = playtestSpeed();
         let last = performance.now();
         let reported = false;
         const tick = (now: number) => {
@@ -95,7 +97,8 @@ export function useArcadeLoop(handlers: LoopHandlers) {
             last = now;
             if (!visible || document.hidden) return;
             try {
-                h.current.frame(dt, view);
+                // Selvspill kan be om flere steg per bilde (?mgfart, kun i utvikling).
+                for (let k = 0; k < speed; k++) h.current.frame(dt, view);
             } catch (err) {
                 if (!reported) {
                     reported = true;

@@ -31,6 +31,7 @@ const THEME: Partial<ArcadeTheme> = {
 };
 import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
+import { usePlaytest } from './playtest';
 
 // HAVET KOMMER - Doggerland, 11 000 til 7 800 år før nåtid.
 //
@@ -1996,7 +1997,9 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
     const [sfxApi] = useState(() => makeSfx(synth));
     const [muted, setMutedState] = useState(() => synth.isMuted());
     const [pauseMsg, setPauseMsg] = useState(PAUSE_MSG[0]);
-    const [announce, announcer] = useArcadeAnnouncer();
+    // Lesetekst (undertitler og meldinger) går UNDER spillvinduet, så den aldri
+    // dekker dyr, mat eller bølgen. Bare korte titler blinker opp i bildet.
+    const [announce, announcer, feed] = useArcadeAnnouncer({ feed: true });
     const gameRef = useRef<Game | null>(null);
     const hud = {
         score: useRef<HTMLDivElement>(null),
@@ -2010,6 +2013,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
     };
     const lastHud = useRef({ s: -1, c: -1, h: -1, y: -1 });
     const completedOnce = useRef(false);
+    const outcome = useRef<{ won: boolean; score: number } | null>(null);
 
     useEffect(() => {
         saveRef.current = save;
@@ -2059,14 +2063,13 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             next: nextRank(RANKS, best),
             best,
         });
+        outcome.current = { won, score };
         setModeBoth('over');
         const reachedStoregga = g.year <= 8150;
         if ((won || reachedStoregga) && !completedOnce.current) {
             completedOnce.current = true;
             onComplete({ score: clamp(score / 15000, 0.3, 1), completed: true });
         }
-        // Debug for selvspill-bot (kun i utvikling)
-        if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__havetKommerLast = { score, won, cause: g.cause, year: Math.round(g.year), x: Math.round(g.p.x), sea: g.sea.toFixed(1), land: nearestLand(g) };
     };
 
     const io: IO = {
@@ -2154,21 +2157,6 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             }
             render(g, view, m);
             if (m === 'play') updateHud(g);
-            if (import.meta.env.DEV)
-                (window as unknown as Record<string, unknown>).__havetKommerDebug = {
-                    mode: m,
-                    x: g.p.x,
-                    hunger: g.hunger,
-                    year: g.year,
-                    depth: g.p.depth,
-                    water: nearestWaterDist(g),
-                    items: g.items.filter((i) => Math.abs(i.x - g.p.x) < 30).map((i) => ({ k: i.kind, x: i.x, wet: water(g, i.x) > ground(g, i.x) + 0.5 })),
-                    animals: g.animals.filter((a) => a.state !== 'dead').map((a) => ({ k: a.kind, x: a.x, s: a.state })),
-                    storegga: g.storegga.phase,
-                    warnEast: g.islandWarned && g.p.x < g.saddle.x + 5 && g.p.x > BANK_X - 120,
-                    holme: onHolme(g),
-                    score: g.score,
-                };
         },
         onHidden: () => {
             if (modeRef.current === 'play') pause();
@@ -2184,6 +2172,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             if (aar > Y1 && aar < Y0) jumpTo(g, aar);
         }
         gameRef.current = g;
+        outcome.current = null;
         lastHud.current = { s: -1, c: -1, h: -1, y: -1 };
         setResult(null);
         setShowFinds(false);
@@ -2228,6 +2217,66 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
         } else if (e.type === 'pointermove' && g.input.ptrSX !== null) g.input.ptrSX = e.clientX - r.left;
         else if (e.type === 'pointerup' || e.type === 'pointercancel') g.input.ptrSX = null;
     };
+    // Selvspill (kun i utvikling, se playtest.ts). Robotene styrer med de samme
+    // grepene som eleven: gå venstre/høyre og kaste spyd.
+    usePlaytest('havet-kommer', () => {
+        const spyd = { t: 0 };
+        const styr = (fn: (g: Game) => number) => () => {
+            const g = gameRef.current;
+            if (!g || modeRef.current !== 'play') return;
+            const target = fn(g);
+            const diff = target - g.p.x;
+            g.input.key = Math.abs(diff) < 0.6 ? 0 : Math.sign(diff);
+        };
+        const seende = (g: Game) => {
+            const x = g.p.x;
+            const ph = g.storegga.phase;
+            if (ph === 'drawdown' || ph === 'wave') return x + 30;
+            const mat = g.items
+                .filter((i) => water(g, i.x) <= ground(g, i.x) + 0.5 && i.x > x - 10)
+                .sort((a, b) => Math.abs(a.x - x) - Math.abs(b.x - x));
+            let target = mat.length ? mat[0].x : nearestWaterDist(g) > 12 ? x - 6 : x + 4;
+            const warnEast = g.islandWarned && x < g.saddle.x + 5 && x > BANK_X - 120;
+            if (g.p.depth > 0.2 || onHolme(g) || warnEast) target = x + 12;
+            // Dyr innen rekkevidde: snu mot det og kast.
+            const dyr = g.animals.find((a) => a.state !== 'dead' && Math.abs(a.x - x) < 26);
+            if (dyr && performance.now() - spyd.t > 900) {
+                const dir = Math.sign(dyr.x - x) || 1;
+                if (g.p.face !== dir) return x + dir;
+                spyd.t = performance.now();
+                throwSpear(g, { ...ioRef.current, mode: 'play' });
+            }
+            return target;
+        };
+        return {
+            maksSekunder: 420,
+            snapshot: () => {
+                const g = gameRef.current;
+                const m = modeRef.current;
+                const o = outcome.current;
+                return {
+                    fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
+                    poeng: m === 'over' && o ? o.score : Math.floor(g?.score ?? 0),
+                    framdrift: g ? (Y0 - g.year) / (Y0 - Y1) : 0,
+                    tid: g ? (Y0 - g.year) / YEARS_PER_SEC : 0,
+                };
+            },
+            start: () => start(),
+            bots: {
+                seende: {
+                    forventer: 'vinner',
+                    beskrivelse: 'Plukker mat i fjæra, kaster spyd, går østover når landet blir en holme og flykter fra Storegga.',
+                    tick: styr(seende),
+                },
+                'bare-ost': {
+                    forventer: 'taper',
+                    beskrivelse: 'Går rett østover hele tiden og bryr seg ikke om mat.',
+                    tick: styr((g) => g.p.x + 20),
+                },
+            },
+        };
+    });
+
     useEffect(() => {
         const keys = new Set<string>();
         const apply = () => {
@@ -2281,7 +2330,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
     return (
         <MicroGameFrame title="Havet kommer" bleed>
             <div className="p-2">
-            <ArcadeStage ref={bindStage} theme={THEME} label="Havet kommer - Doggerland-spill">
+            <ArcadeStage ref={bindStage} theme={THEME} label="Havet kommer - Doggerland-spill" below={feed}>
                 <canvas
                     ref={bindCanvas}
                     onPointerDown={onPointer}

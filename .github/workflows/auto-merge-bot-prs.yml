@@ -1,7 +1,8 @@
 name: Auto-merge bot content PRs
 
-# Sikkerhetsnett for de to nattrutinene (eiriksbok-daily-content kl. 01:00 og
-# eiriksbok-daily-microgame kl. 02:30). Rutinene bruker `gh pr merge --auto`,
+# Sikkerhetsnett for nattrutinene (eiriksbok-daily-content kl. 01:00 UTC og
+# eiriksbok-daily-microgame kl. 07:15 UTC - etter at både artikkelen og bildene
+# for den er på main, så mikrospill-PR-en aldri konkurrerer med dem om samme fil). Rutinene bruker `gh pr merge --auto`,
 # men repoet har `allow_auto_merge: false`, så den kommandoen feiler stille og
 # PR-en blir liggende åpen (og kan da kollidere med neste rutines PR).
 #
@@ -19,9 +20,16 @@ name: Auto-merge bot content PRs
 on:
   pull_request:
     types: [opened, reopened, synchronize, ready_for_review]
+  # Mikrospill-PR-er venter på Mikrospill-audit (audit + selvspill, 15-40 min).
+  # Når den er ferdig, prøver vi igjen med en gang i stedet for å vente på neste
+  # schedule - ellers ble en PR som var grønn etter ventevinduet stående til natta.
+  workflow_run:
+    workflows: ['Mikrospill-audit']
+    types: [completed]
   schedule:
     - cron: '20 1 * * *'   # rett etter daily-content (01:00 UTC)
-    - cron: '50 2 * * *'   # rett etter daily-microgame (02:30 UTC)
+    - cron: '50 2 * * *'   # fallback for sene innholds-PR-er
+    - cron: '30 9,11,13 * * *'   # fallback for daily-microgame (07:15 UTC)
   workflow_dispatch: {}
 
 permissions:

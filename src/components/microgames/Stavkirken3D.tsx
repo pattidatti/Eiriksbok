@@ -18,6 +18,7 @@ import { useArcadeAnnouncer } from './arcade/useArcade';
 import type { ArcadeTheme } from './arcade/tokens';
 import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
+import { usePlaytest, playtestSpeed, type PlaytestBot } from './playtest';
 import { PANELS, MILE_POS, type Side } from './stavkirken/model';
 import {
     newGame,
@@ -28,6 +29,7 @@ import {
     endStroke,
     Y_START,
     Y_END,
+    RUN_SECONDS,
     TAR_MAX,
     BARREL,
     type G,
@@ -192,12 +194,9 @@ function makeSfx(a: ArcadeSynth): Sfx {
 // Løkka i 3D-scenen: regler, partikler, innflyging, HUD
 // ---------------------------------------------------------------------------
 
-// Kun i utvikling: ?fart=4 kjører fire simuleringssteg per bilde, så en
-// selvspill-bot rekker hele runden på en treg headless-GPU.
-const DEV_SPEED =
-    import.meta.env.DEV && typeof window !== 'undefined'
-        ? Math.max(1, Math.min(8, Number(new URLSearchParams(window.location.search).get('fart')) || 1))
-        : 1;
+// Kun i utvikling: ?mgfart=4 kjører fire simuleringssteg per bilde, så
+// selvspill-roboten rekker hele runden på en treg headless-GPU (se playtest.ts).
+const DEV_SPEED = playtestSpeed();
 
 const CAM_HOME = new THREE.Vector3(17, 9.5, 14);
 const CAM_INTRO = new THREE.Vector3(-48, 22, 16);
@@ -333,6 +332,7 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
     const projRef = useRef<((p: THREE.Vector3) => { x: number; y: number; behind: boolean }) | null>(null);
     const angleRef = useRef(0);
     const completedOnce = useRef(false);
+    const outcome = useRef<{ won: boolean; score: number } | null>(null);
     const textId = useRef(0);
     const lastHit = useRef<BrushHit | null>(null);
     const scoreAcc = useRef({ pts: 0, t: 0 });
@@ -406,13 +406,12 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
             best,
         });
         announce.clear();
+        outcome.current = { won, score };
         setModeBoth('over');
         if ((won || g.year >= 1851) && !completedOnce.current) {
             completedOnce.current = true;
             onComplete({ score: clamp(score / 16000, 0.3, 1), completed: true });
         }
-        if (import.meta.env.DEV)
-            (window as unknown as Record<string, unknown>).__stavLast = { score, won, cause, year, cond: Math.round(g.cond) };
     };
 
     const io: IO = {
@@ -533,16 +532,6 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                 el.style.animation = b > 0.75 || fire[s] ? 'arcPulse .4s infinite alternate' : 'none';
             }
             if (hud.compass.current) hud.compass.current.style.transform = `rotate(${(angleRef.current * 180) / Math.PI}deg)`;
-            if (import.meta.env.DEV)
-                (window as unknown as Record<string, unknown>).__stavDebug = {
-                    mode: modeRef.current,
-                    year: g.year,
-                    cond: g.cond,
-                    tar: g.tar,
-                    mileReady: g.mileReady,
-                    riving: g.riving,
-                    grids: g.grids.map((gr, i) => ({ i, tarCover: gr.tarCover, rotCover: gr.rotCover, burning: gr.burning, side: gr.def.side })),
-                };
         };
     });
 
@@ -558,25 +547,71 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
         floatText(`+${Math.round(g.tar - before)} l tjære`, MILE_POS.clone().setY(2.6), '#ffd43b');
     };
 
-    // Utviklingshjelp for selvspill-bot: samme grep som eleven har, uten piksel-sikting.
-    useEffect(() => {
-        if (!import.meta.env.DEV) return;
-        (window as unknown as Record<string, unknown>).__stavAct = {
-            sweep: (i: number) => {
-                if (modeRef.current !== 'play') return;
-                const p = PANELS[i];
-                for (let v = 0.08; v < 0.95; v += 0.11)
-                    for (let u = 0.04; u < 0.98; u += 0.06) brush(gRef.current, { panel: i, u, v, point: p.center }, ioRef.current);
-                endStroke(gRef.current);
+    // Selvspill (kun i utvikling, se playtest.ts). Robotene bruker samme grep som
+    // eleven: male en hel flate og hente tjære ved mila - bare uten piksel-sikting.
+    const sweep = (i: number) => {
+        if (modeRef.current !== 'play') return;
+        const p = PANELS[i];
+        for (let v = 0.08; v < 0.95; v += 0.11)
+            for (let u = 0.04; u < 0.98; u += 0.06) brush(gRef.current, { panel: i, u, v, point: p.center }, ioRef.current);
+        endStroke(gRef.current);
+    };
+    /** Maler den verste flaten når den er tydelig slitt: brann først, så råte, så bar ved. */
+    const vedlikehold = (hentTjaere: boolean) => () => {
+        const g = gRef.current;
+        if (modeRef.current !== 'play') return;
+        if (hentTjaere && g.mileReady) collect();
+        let worst = -1;
+        let ws = 0;
+        g.grids.forEach((gr, i) => {
+            const s = gr.burning * 20 + gr.rotCover * 3 + (1 - gr.tarCover);
+            if (s > ws) {
+                ws = s;
+                worst = i;
+            }
+        });
+        if (worst >= 0 && ws > 0.35 && (g.tar > 3 || g.grids[worst].burning > 0)) sweep(worst);
+    };
+    usePlaytest(GAME_ID, () => {
+        const bot = (forventer: PlaytestBot['forventer'], beskrivelse: string, variant: string, hent = true): PlaytestBot => ({
+            forventer,
+            beskrivelse,
+            variant,
+            tick: vedlikehold(hent),
+        });
+        return {
+            maksSekunder: RUN_SECONDS + 20,
+            snapshot: () => {
+                const g = gRef.current;
+                const m = modeRef.current;
+                const o = outcome.current;
+                return {
+                    fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
+                    poeng: m === 'over' && o ? o.score : Math.floor(g.score),
+                    framdrift: (g.year - Y_START) / (Y_END - Y_START),
+                    tid: g.t,
+                };
             },
-            collect: () => collect(),
+            start: (variant) => {
+                const [f, t] = (variant ?? 'sviller/malmfuru').split('/') as [Foundation, Timber];
+                begin(f, t);
+            },
+            bots: {
+                seende: bot('vinner', 'Sviller og malmfuru. Henter tjære, slokker brann, maler den verste flaten.', 'sviller/malmfuru'),
+                'fersk-furu': bot('taper', 'Samme vedlikehold, men fersk furu uten kjerneved.', 'sviller/fersk'),
+                stolper: bot('taper', 'Samme vedlikehold, men stolpene står rett i jorda.', 'stolper/malmfuru'),
+                'uten-tjaere': bot('taper', 'Maler, men henter aldri ny tjære fra mila.', 'sviller/malmfuru', false),
+            },
         };
     });
 
     const start = () => {
-        if (!foundation || !timber) return;
+        if (foundation && timber) begin(foundation, timber);
+    };
+    const begin = (foundation: Foundation, timber: Timber) => {
         synth.unlock();
         gRef.current = newGame(grids, foundation, timber);
+        outcome.current = null;
         setRunFoundation(foundation);
         setResult(null);
         setShowBook(false);

@@ -239,6 +239,8 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         description:
             'Arkadespill fra Doggerland. Maten er rikest i fjæra, men fjæra kryper østover mens havet stiger. Hold følget mett, pass deg for tidevann, villsvin og Storegga-bølgen, og nå kysten før Doggerbanken går under. Leirene dere forlater, havner på bunnen av Nordsjøen.',
         estimatedSeconds: 180,
+        sjanger: 'plattform-overlevelse',
+        tone: 'lett',
         loader: () => import('./HavetKommer'),
         Component: HavetKommer as never,
     },
@@ -248,6 +250,8 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         description:
             'Hold Borgund stavkirke stående fra 1180 til i dag. Regnet sliter på sponen, mest fra vest. Gå rundt kirka og tjærebre flatene før de lekker, hent tjære ved mila, og kom deg gjennom svartedauden, lynnedslag og kirkeloven av 1851. Velg først fundament og tømmer - det ene valget avgjør om kirka i det hele tatt kan overleve.',
         estimatedSeconds: 200,
+        sjanger: 'vedlikehold-mot-klokka',
+        tone: 'lett',
         loader: () => import('./Stavkirken3D'),
         Component: Stavkirken3D as never,
     },

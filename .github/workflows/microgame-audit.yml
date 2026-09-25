@@ -14,6 +14,8 @@ on:
   pull_request:
     paths:
       - 'src/components/microgames/**'
+      - 'scripts/playtest-microgame.mjs'
+      - 'scripts/playtest-ids.mjs'
 
 permissions:
   contents: read
@@ -22,7 +24,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
         with:
@@ -44,6 +46,8 @@ jobs:
         run: |
           BASE=$(git merge-base "origin/${{ github.base_ref }}" HEAD)
           node scripts/changed-microgame-ids.mjs "$BASE" >> "$GITHUB_OUTPUT"
+          # Selvspill-porten: nye spill + spill med `sjanger` (ny standard). Egen output.
+          node scripts/playtest-ids.mjs "$BASE" | sed 's/^ids=/playtest=/' >> "$GITHUB_OUTPUT"
 
       # Feiler IKKE jobben her - vi vil poste funnene før porten settes rød.
       # Exit-koden bæres videre til «Sett portstatus» nederst.
@@ -58,11 +62,25 @@ jobs:
           echo "code=$?" >> "$GITHUB_OUTPUT"
           exit 0
 
+      # Selvspill: robotene spiller spillet headless (vinner/taper/passiv, tekst over
+      # spillet, liv, konsollfeil). Se scripts/playtest-microgame.mjs og
+      # src/components/microgames/playtest.ts. Samme exit-koder som auditen.
+      - name: Kjør selvspill
+        id: playtest
+        if: steps.ids.outputs.playtest != ''
+        env:
+          IDS: ${{ steps.ids.outputs.playtest }}
+        run: |
+          set +e
+          node scripts/playtest-microgame.mjs --ids "$IDS" --fart 4
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+
       # MERK: ingen visuell AI-vurdering her, med vilje. Den ville kostet
       # API-kreditt per natt, og natt-rutinen som bygger spillet er selv en
       # Claude Code-agent på abonnement - den har allerede skjermbildene og kan se
       # på dem gratis. Den visuelle vurderingen er derfor rutinens ansvar FØR
-      # PR-en åpnes (se «Visuell egenrevisjon» i .agent/workflows/build_microgame.md).
+      # PR-en åpnes (se «Port 3 - Uavhengig vurdering» i .agent/workflows/build_microgame.md).
       # Denne porten holder seg til det maskinelle, som er gratis og deterministisk.
       #
       # Trenger du en visuell gjennomgang av MANGE spill på én gang (der et
@@ -70,7 +88,7 @@ jobs:
       # som et manuelt verktøy. Det er bevisst ikke koblet til CI.
 
       - name: Kommenter funnene på PR-en
-        if: steps.ids.outputs.ids != ''
+        if: steps.ids.outputs.ids != '' || steps.ids.outputs.playtest != ''
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -86,6 +104,9 @@ jobs:
           fi
           if [ -s .screenshots/microgames/_review.md ]; then
             BODY="$BODY"$'\n\n'"$(cat .screenshots/microgames/_review.md)"
+          fi
+          if [ -s .screenshots/playtest/_playtest.md ]; then
+            BODY="$BODY"$'\n\n'"$(cat .screenshots/playtest/_playtest.md)"
           fi
           BODY="$BODY"$'\n\n'"[Kjøringen med skjermbilder]($RUN_URL)"
 
@@ -105,22 +126,32 @@ jobs:
           fi
 
       - name: Last opp skjermbilder
-        if: steps.ids.outputs.ids != ''
+        if: steps.ids.outputs.ids != '' || steps.ids.outputs.playtest != ''
         uses: actions/upload-artifact@v7
         with:
           name: microgame-audit-skjermbilder
-          path: .screenshots/microgames
+          path: |
+            .screenshots/microgames
+            .screenshots/playtest
           retention-days: 7
 
       # Exit 1 = funn i spillet. Exit 2 = auditen kunne ikke kjøre (infrastruktur).
       # Begge holder porten rød: et urevidert spill skal ikke nå elevene.
       - name: Sett portstatus
-        if: steps.ids.outputs.ids != ''
+        if: steps.ids.outputs.ids != '' || steps.ids.outputs.playtest != ''
         env:
           CODE: ${{ steps.audit.outputs.code }}
+          PCODE: ${{ steps.playtest.outputs.code }}
         run: |
-          case "$CODE" in
+          FAIL=0
+          case "${CODE:-0}" in
             0) echo "Audit grønn." ;;
-            2) echo "::error::Auditen kunne ikke kjøre (infrastruktur, ikke spillet). Kjør sjekken på nytt."; exit 1 ;;
-            *) echo "::error::Mikrospill-audit fant funn i spillet - se PR-kommentaren."; exit 1 ;;
+            2) echo "::error::Auditen kunne ikke kjøre (infrastruktur, ikke spillet). Kjør sjekken på nytt."; FAIL=1 ;;
+            *) echo "::error::Mikrospill-audit fant funn i spillet - se PR-kommentaren."; FAIL=1 ;;
           esac
+          case "${PCODE:-0}" in
+            0) echo "Selvspill grønn." ;;
+            2) echo "::error::Selvspillet kunne ikke kjøre (infrastruktur, ikke spillet). Kjør sjekken på nytt."; FAIL=1 ;;
+            *) echo "::error::Selvspill fant funn i spillet - se PR-kommentaren."; FAIL=1 ;;
+          esac
+          exit $FAIL

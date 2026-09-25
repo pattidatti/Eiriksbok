@@ -20,5 +20,9 @@ export interface MicroGameEntry {
     title: string;
     description: string;
     estimatedSeconds?: number;
+    /** Sjanger i klartekst ('plattform', 'strategi', 'kjøring', 'puslespill' ...). Nattsporet bruker den til å variere. */
+    sjanger?: string;
+    /** 'lett' tåler humor; 'alvorlig' spilles uten vitser. Se build_microgame.md. */
+    tone?: 'lett' | 'alvorlig';
     loader: () => Promise<{ default: React.ComponentType<MicroGameProps> }>;
 }

@@ -1,120 +1,321 @@
 ---
-description: Lag et rikt, direkte-interaktivt 3D-mikrospill som kjører inline i en artikkel eller læringssti. Bruk dette når spillet skal bo MIDT i innholdet (ikke fullskjerm), bygd på interaksjons-toolkitet i src/components/microgames/kit/.
+description: Lag et skamgøy, pent og lærerikt mikrospill (3D foretrukket, 2D når det gir det beste spillet) som bor inline i en artikkel. Designbrief først, så bygg på arkadeskallet, så selvspill-portene. Brukes av nattsporet eiriksbok-daily-microgame og manuelt.
 ---
 
 # Skill: Build Micro-Game
 
-Bruk denne skillet når du skal lage et **mikrospill** - et lett, selvstendig 3D-spill som kjører
-**inline** i en artikkel eller et læringsstisteg. Et mikrospill er en kort, romlig "aha"-opplevelse
-på 1-3 minutter der eleven **interagerer direkte med en 3D-verden**: klikker objekter, drar dem på
-plass, justerer en spak - eller løper, sikter, forsvarer og flykter i sanntid. Målet er at eleven
-blir SUGD INN i 3D-opplevelsen, ikke at de betrakter en modell.
+Et mikrospill er et **ekte, lite dataspill** som bor midt i en artikkel. Eleven skal ville spille
+én runde til, ha lyst til å vise det til sidemannen, og forstå fagstoffet bedre etterpå. Tre krav,
+like viktige:
 
----
+1. **Skamgøy.** Etter 30 sekunder skal det kjennes som et spill, ikke som en oppgave.
+2. **Ser bra ut.** Et eget visuelt uttrykk som tåler å stå ved siden av et indiespill.
+3. **Lærerikt.** Spillets regler ER fagstoffet. Den som vinner, har forstått mekanismen.
 
-## Mikrospill vs. den tunge 3D-motoren - velg riktig spor
+**Målestokken er MÅKA** (et arkadespill om en måke på Bryggen, laget på en tre-setnings prompt).
+Den er en KVALITETSmålestokk, ikke en formmal: det betyr ikke sidescroller, måke eller humor. Det
+betyr: spillbart på fem sekunder, ett grep som føles deilig, eskalerende press, rekord og ranger
+som lokker til en runde til, og en verden med personlighet.
 
-| | Mikrospill (dette sporet) | Full 3D-motor (`src/games/engine/`) |
+**Referansespillene** (les dem før du bygger):
+
+| Spill | Fil | Hva det viser |
 |---|---|---|
-| **Bor** | Inline i artikkel/sti | Egen rute `/oving/spill/:id` |
-| **Stack** | React + R3F (`@react-three/fiber` + `drei`) + toolkit | Rå Three.js + Rapier3D WASM |
-| **Vekt** | Lett, lazy-lastet, Chromebook-vennlig | Tung (~1 MB WASM), fullskjerm, pointer-lock |
-| **Lengde** | 1-3 min | 10-20 min |
-| **Guide** | Denne fila | `.agent/workflows/BUILD_GAME_GUIDE.md` |
+| Havet kommer (Doggerland) | `HavetKommer.tsx` | 2D-canvas: arkadeskall, eskalering, død med tips, funn som samles på tvers av runder, seier som følger plottet |
+| Regnet i Lærdal (stavkirker) | `Stavkirken3D.tsx` + `stavkirken/` | 3D: kjerneverb i selve 3D-verdenen (male tjære på flatene), tidsforløp (årstider, døgn, bygda vokser), bloom og egen belysning, valg i startmenyen som ER fagstoffet (sviller vs. stolper) |
 
-Skal spillet ligge midt i en artikkel? → mikrospill. Skal det være en egen verden å gå rundt i? →
-full motor. **Embed aldri den tunge motoren i en artikkel.**
+Begge har selvspill-roboter (`usePlaytest`) - se dem når du skriver dine egne.
+
+**3D eller 2D?** 3D foretrekkes. 2D er tillatt når det gir det gøyeste, mest interaktive eller mest
+passende spillet (en sidescroller om havstigning er bedre i 2D). Skriv begrunnelsen i briefen.
+
+**Mikrospill eller full motor?** Dette sporet er lett (React + R3F eller canvas, lazy-lastet,
+Chromebook-trygt, 2-4 minutter per runde). Den tunge motoren i `src/games/engine/` (Rapier, pointer
+lock, 10-20 min) har egen guide (`BUILD_GAME_GUIDE.md`) og embeddes aldri i en artikkel.
 
 ---
 
-## Kjernefilosofi: rik, direkte interaksjon - ikke bare knapper
+## Steg 1 - Tone: tåler emnet et spill?
 
-Et mikrospill er en **levende 3D-verden eleven manipulerer**, ikke et bilde med tre knapper ved
-siden av. De tidligste mikrospillene var alle samme tynne form ("trykk tre knapper etter
-hverandre"). Det er ÉN gyldig byggekloss, men ikke målet. Sikt høyere:
+Avgjør tonen FØR du tenker mekanikk. Skriv den i registry-oppføringen (`tone`).
 
-- **La eleven ta i verdenen.** Klikk objekter direkte, dra ting på plass, juster en spak og se
-  konsekvensen i sanntid. Toolkitet (`src/components/microgames/kit/`) gjør dette trivielt og
-  Chromebook-trygt - bruk det.
-- **Bygg en verden, ikke en modell.** Lag-på-lag prosedyrale mesher: terreng, hus, figurer,
-  kjøretøy, vann, røyk. Lavpoly og billig - men en scene, ikke ett objekt. `kit/scene-parts`
-  har ferdige deler (`Building`, `Figure`, `Tree`, `WaterPlane`, `Smoke`, `GroundPlane`).
-- **La eleven endre tilstanden, og animer konsekvensen.** Den sterkeste mekanikken: et grep → en
-  synlig forvandling → en aha. Driv scenen av enkel tilstand (`useStage` eller en slider-verdi) og
-  la hvert delobjekt dempe (`damp`) mykt mot mål utledet av tilstanden.
-- **Sikt mot lyspæra i selve interaksjonen.** Mekanikken ER pedagogikken. I flaggskipet
-  `VikingShip3D` bygger eleven skipet selv - klinker bordganger, reiser masten, og morfer skroget
-  mellom langskip og knarr - og kjenner dermed på kroppen hvorfor klinkbygging + kjøl gjorde det
-  samme håndverket til både krigsskip og handelsskip.
-- **Lag et SPILL, ikke en utstilling.** Et diorama eleven klikker riktige ting i er en quiz med
-  3D-pynt. Et spill har minst ett av disse: sanntid (verden beveger seg uansett hva eleven gjør),
-  press (tid, fare, ressurs som må doseres), og KONSEKVENS av å feile (en ekte fail-state med
-  "prøv igjen", ikke bare manglende poeng). De to referansespillene `IngenmanslandMG` (forsvar
-  stillingen mot bølger av soldater) og `FluktenOverMuren3D` (kryss dødsstripa i førsteperson,
-  frys når lyskasterne jakter) har alle tre - og det er derfor de suger eleven inn.
+| Tone | Når | Hva det betyr |
+|---|---|---|
+| `lett` | Hverdagsliv, håndverk, teknikk, natur, handel, oppdagelser, de fleste tidlige perioder | Humor, overdrivelse og slapstick er lov (MÅKA-stemning) |
+| `alvorlig` | Krig, sykdom, undertrykkelse, katastrofer der mennesker døde, men der det å spille en rolle gir innsikt (en konvoi, en evakuering, et oppgjør) | Ingen vitser, ingen morsomme dødsmeldinger, ingen poengregn over lik. Spenning og ansvar i stedet. Tap formuleres saklig og historisk |
+| **ingen spill** | Folkemord og massedrap rettet mot en gruppe (Holocaust, Rwanda, Srebrenica), terror mot sivile (22. juli), overgrep mot barn, slaveri som «ressursspill» | Lag IKKE et spill. Stopp og rapporter «tema uegnet for spill». Et arkadespill om dette er respektløst uansett hvor pent det er |
 
-### Velg opplevelses-arketype FØR mekanikk
+Tvil? Velg strengere. `alvorlig` er aldri feil for et tema som tåler `lett`; det motsatte kan være
+en skandale.
 
-Bestem først hva slags OPPLEVELSE emnet fortjener, deretter hvilke primitiver som bygger den.
-Minst annenhver artikkel bør få en sanntids-form - ikke fordi action alltid er riktig, men fordi
-rolig manipulasjon er default-fella generatoren faller i:
+---
 
-| Opplevelse | Eleven er... | Kjerne-primitiver | Eksempel |
+## Steg 2 - Designbriefen (skriv den FØR du koder)
+
+Briefen er et kort dokument (lim den inn i PR-body-en). Den tvinger fram de valgene som skiller et
+spill fra en quiz med 3D-pynt. Svar på alt:
+
+1. **Fantasien.** Hvem er eleven i spillet, og hva vil de? («Du er leder for et jegerfølge. Du vil
+   holde folket mett mens landet forsvinner.»)
+2. **Kjerneverbet.** Det ene grepet eleven gjør hundre ganger per runde. Det skal føles godt i seg
+   selv (male, kaste, styre, bygge, sikte, dirigere). «Klikke på riktig svar» er ikke et verb.
+3. **Fagkjernen.** Hvilken mekanisme fra artikkelen er spillets REGEL? Skriv den som «hvis du ... så
+   ...». (Stavkirken: «står stolpene i jorda, råtner de uansett hvor mye du maler».) Hvis regelen
+   kunne byttes ut med en annen uten at spillet endret seg, er den pynt.
+4. **Presset.** Hva eskalerer? (Havet stiger, været blir verre, fiendene blir flere, tiden går.)
+5. **Tap.** Minst to måter å tape på, og hver dødsårsak gir et konkret tips som også er fagstoff.
+6. **Seier.** Seieren følger plottet i artikkelen. Når eleven har gjort det historien sier var
+   mulig, SKAL de vinne - uansett hvor mange poeng de har (Havet kommer: kommer du øst for
+   Doggerbanken, vinner du, også vassende).
+7. **En runde til.** Rekord, ranger med titler, funn/samleobjekter som bygger seg opp over runder,
+   poengmultiplikator for dyktig spill.
+8. **Sjanger** (fra katalogen under) og **2D/3D** med begrunnelse.
+9. **Look.** Palett (4-6 farger), stemning, lys, font og hvordan HUD-en ser ut. Skal IKKE ligne
+   de to siste spillene i biblioteket.
+10. **Første fem sekunder.** Hva ser eleven, og hva gjør de uten å lese noe?
+
+### Sjangerkatalogen
+
+Ingen sjanger er forbudt. Velg den som gjør FAGKJERNEN til en regel. Blandinger er ofte best.
+
+| Sjanger | Kjerneverb | Passer når emnet handler om ... | Eksempelidé |
 |---|---|---|---|
-| **Forsvar posisjonen** | inne i scenen, under angrep | `PovCamera` + `AimPlane` + `Mover` + `useWaveFlow` | `IngenmanslandMG` |
-| **Kryss/flukt under press** | på vei gjennom fiendtlig terreng | `PovCamera` + `useMeter` + `useGameClock` + `LoseScreen` | `FluktenOverMuren3D` |
-| **Overlev/hold ut** | presset av et miljø som eskalerer | `useGameClock` + `useMeter` + `useRandomPulse` | (åpen) |
-| **Reager i tide** | vaktpost/operatør som må time riktig | `useGameClock` + `Mover` + `ScreenFlash` | (åpen) |
-| **Bygg/monter** | håndverker | `Draggable` + `Hotspot` + `Rotatable` | `VikingShip3D` |
-| **Styr/naviger** | fører av noe (skip, vogn, maskin) | `Rotatable`/`SceneSlider` + `Mover` + `DataReadout` | (åpen) |
-| **Utforsk/avdekk** | oppdager | `Hotspot` + `Interactive` + `CameraRig` | `TrojaUtgravning3D` |
-| **Morf-og-se** | tenker som sammenligner modeller | `CompareToggle` + `SceneSlider` | `TidensFormer3D` |
+| Plattform / sidescroller | løpe, hoppe, samle | en reise, en flukt, et landskap som endrer seg | Doggerland (Havet kommer) |
+| Vedlikehold mot klokka | reparere, male, fylle på | noe som slites og må holdes i live | Stavkirker (Regnet i Lærdal) |
+| Sanntidsstrategi (RTS) | velge enheter, sende dem, bygge | ressurser, logistikk, militær taktikk, byvekst | Hanseatene: send kogger og hold lagrene fulle |
+| Tower defense | plassere forsvar, oppgradere | forsvar, festningsverk, epidemier | Konstantinopel: bygg murene lag på lag |
+| Kjøring / styring | styre, gasse, bremse | transport, handel, oppdagelsesreiser | Jernbanen over fjellet i snøstorm |
+| Seiling / navigasjon | krysse mot vinden, lese strømmer | havferder, vikinger, handel | Vesterled: kryss Nordsjøen med knarr |
+| Skytespill / sikting | sikte, time, dosere ammunisjon | slag, jakt, forsvar (tonen avgjør) | Skjoldborg: stopp pilregnet |
+| Stealth / flukt | gjemme seg, time bevegelse | flukt, motstand, smugling | Over Berlinmuren i lyskasterne |
+| Puslespill / fysikk | legge, stable, balansere | ingeniørkunst, arkitektur, kjemi | Gotisk hvelv: få trykket ned i pilarene |
+| Tycoon / økonomi | kjøpe, selge, investere | handel, industri, bank | Ford-fabrikken: samlebåndets tempo |
+| Rytme / timing | trykke i takt | musikk, arbeidssanger, maskiner | Roerne i langskipet |
+| Overlevelse / roguelite | prioritere knappe ressurser | nød, ekspedisjoner, kriser | Polarekspedisjonen |
+| Gudespill / simulering | forme verden, se konsekvenser | klima, befolkning, religion, økosystem | Nilen flommer: grav kanaler før tørken |
+| Detektiv / utforsk | finne, koble spor | kildekritikk, arkeologi | Grav fram et vikinggravfelt lag for lag |
 
-Regel: **klikk-på-N-riktige-ting i et stillestående diorama er IKKE en gyldig arketype lenger.**
-Hvis utkastet ditt koker ned til det, velg en arketype fra tabellen og bygg om.
-
-### Knapper og 3D-klikk utelukker ikke hverandre
-
-Direkte 3D-interaksjon er nå førsteklasses og **oppmuntres**. Men kombiner gjerne: en
-`SceneSlider`/`ChoiceRow` under vinduet sammen med klikkbare objekter og drag i scenen. Bruk det som
-passer læringsmålet. Den gamle regelen "unngå 3D-klikk, bruk bare knapper" gjelder ikke lenger -
-toolkitet løser trackpad-problemet (se under).
-
-### Velg en iscenesettelse som matcher emnet - ikke standard-dioramaet
-
-Toolkitets default-deler (`GroundPlane` + `Building`/`Tree`/`Figure`) gjør det lett å lage en bygd
-på en grønn åker. Det er riktig for et konkret sted (en vikinghavn, en fabrikk), men for abstrakte
-eller kosmiske emner (tid, tro, ideer, verdensrommet) ser «noen greier ute på en åker» billig og
-malplassert ut. **Bestem iscenesettelsen før du fyller den med deler:** hva er den naturlige scenen
-for dette emnet? En klode som svever i kosmos? Et objekt i et tomt rom? En lysstråle i mørket? Velg
-staging som bærer emnet, så blir resten immersivt nesten gratis. Se `TidensFormer3D` - eskatologi som
-en levende klode i et lysende kosmos, ikke en haug på en plen.
-
-### Velg kameraperspektiv bevisst
-
-Kameraet avgjør om eleven er TILSKUER eller DELTAKER. Tre gyldige valg - velg med hensikt:
-
-1. **Førsteperson (`PovCamera`, controls av):** eleven ER i scenen. Bruk når emnet handler om å
-   oppleve noe på kroppen: sitte bak maskingeværet, krysse dødsstripa, stå i folkemengden. Dette er
-   det sterkeste innlevelses-verktøyet i kassa - og var lenge nesten ubrukt. En CSS-silhuett i
-   bunnkanten (et gevær, hender, en åre) forsterker kroppsfølelsen (se `IngenmanslandMG`).
-2. **Cinematisk/styrt (`CameraRig`, controls av):** innflyvning, fokus-pull, klatre-over-finale.
-   Bruk til åpning og payoff.
-3. **Orbit-diorama (default):** riktig når eleven skal manipulere og betrakte et objekt/landskap.
-   Men vit at dette er tilskuer-modus - ikke velg det av vane.
-
-**Scene-stemning følger emnet, ikke UI-et.** Rammen (scaffold) er alltid lys - men selve 3D-scenen
-kan være natt, tåke eller uvær når emnet krever det (flukt om natten, skyttergraver, storm). Både
-`IngenmanslandMG` og `FluktenOverMuren3D` har mørke scener i lys ramme - det er riktig. Det
-"Lys stil alltid"-regelen forbyr, er mørk UI/ramme og grunnløs grimdark, ikke natt i historien.
+**Variasjonsregel:** Sjangeren skal være ulik de tre siste nattspillene (`sjanger` i
+`registry.ts`, se `git log -p --since=5.days -- src/components/microgames/registry.ts`), og looken
+skal være ulik alle tre. Bruker du en sjanger som allerede finnes i biblioteket, skal vrien være ny.
 
 ---
 
-## Interaksjons-toolkitet (`src/components/microgames/kit/`)
+## Steg 3 - Bygg på arkadeskallet
+
+Alle nye spill bygges på arkadeskallet i `src/components/microgames/arcade/`. Skallet gir
+spill-følelsen gratis, og HVERT spill kler det i sitt eget tema.
+
+| Del | Fil | Hva den gir |
+|---|---|---|
+| `ArcadeStage` | `arcade/ArcadeShell.tsx` | Spillvinduet (høyde `clamp(420px, 70vh, 640px)`, fullskjerm-klar via `data-mg-stage`), tema-variabler, `below` for lesetekst under vinduet |
+| `ArcadeScreen`, `ArcadeLogo`, `ArcadeTag`, `ArcadeBigButton`, `ArcadeSmallButton`, `ArcadeStats` | samme | Startskjerm, pause og slutt-skjerm med stor CTA |
+| `useArcadeLoop` | `arcade/useArcade.tsx` | 2D-canvasløkke med callback-refs, pause utenfor skjermen, feilsikker frame |
+| `useArcadeAnnouncer({ feed: true })` | samme | Meldingskø med lesetid. Med `feed` står lesetekst UNDER spillet, og bare korte titler blinker i bildet |
+| `ArcadeTheme` | `arcade/tokens.ts` | Farger, font, vekt, radius, strek, skygge, tilt, HUD-stil, bannerposisjon |
+| `createArcadeSynth`, `buzz` | `arcade/synth.ts` | Web Audio-lyd uten Tone/three, felles lydav |
+| `useArcadeSave`, `rankFor`, `nextRank` | `arcade/save.ts` | Rekord, antall runder, funn, ranger |
+| `usePlaytest`, `playtestSpeed` | `playtest.ts` | Selvspill-kontrakten (steg 4) |
+
+**3D-spill** legger `MicroCanvas` (fra `./kit`) inne i `ArcadeStage` og bygger DOM-HUD-en oppå med
+skallets komponenter:
+
+- `MicroCanvas builtInLights={false}` og eget lysoppsett (sol, hemisfære, `Environment` med
+  `Lightformer` - lokalt, aldri CDN-ressurser som drei `Cloud`).
+- `KitEffects` (`./kit/KitEffects`, importeres direkte, ikke fra `./kit`) gir bloom og vignett som
+  skrur seg av på svake maskiner. Bloom krever at det som skal gløde har `emissive`/`toneMapped={false}`.
+- Kjerneverbet skjer I 3D-verdenen (pek, dra, mal på objektene), ikke i knapper under.
+- Store spill deles i moduler i en egen mappe (`stavkirken/model.ts`, `game.ts`, `church.tsx`,
+  `world.tsx`). Spillreglene bor i rene `.ts`-moduler uten React.
+
+**2D-spill** tegner på canvas med `useArcadeLoop` (se `HavetKommer.tsx`). Ikke importer fra `./kit`
+i et 2D-spill - det drar med seg three og Tone.
+
+### Absolutte regler for spillvinduet
+
+- **Eget tema.** Definer `const THEME: ArcadeTheme` i spillfila og send det til `ArcadeStage`. Aldri
+  `DEFAULT_THEME`. «Alle spill med samme look blir lame» (eier, 2026-09-24).
+- **Tekst dekker aldri spillet.** Bruk `useArcadeAnnouncer({ feed: true })` og `below={feed}`.
+  Toasts over flammene gjorde at eleven ikke fikk slukket brannen. Selvspill-porten måler dette.
+- **Lesetid.** Meldinger står etter `readingSeconds` og køes - aldri faste 1,5 sekunder.
+- **Fullskjerm** kommer fra `MicroGameFrame` (knappen og `[data-mg-stage]`). Pakk alltid spillet i
+  `<MicroGameFrame title=... bleed>`.
+- **Mål i HUD-en.** Eleven ser hele tiden hva som er seier (år igjen, avstand, en målbar).
+- **Pause** på Esc/P og når vinduet scroller ut av syne.
+
+---
+
+## Steg 4 - Selvspill-kontrakten (`usePlaytest`)
+
+Hvert nytt spill registrerer et test-API, så en robot kan spille det headless. Det er slik nattsporet
+beviser at spillet kan vinnes, kan tapes og belønner ferdighet - uten et menneske.
+
+```tsx
+import { usePlaytest, playtestSpeed, type PlaytestBot } from './playtest';
+
+const SPEED = playtestSpeed(); // ?mgfart=4 i selvspill, alltid 1 for elevene
+// i løkka: for (let k = 0; k < SPEED; k++) update(g, dt, io);   (useArcadeLoop gjør dette selv)
+
+usePlaytest(GAME_ID, () => ({
+    maksSekunder: RUN_SECONDS + 20,
+    snapshot: () => ({
+        fase: mode === 'menu' ? 'meny' : mode === 'over' ? (won ? 'vunnet' : 'tapt') : 'spiller',
+        poeng, framdrift: /* 0-1 mot målet */, tid: /* spilte sekunder */,
+    }),
+    start: (variant) => begin(variant),        // hopp rett inn i en runde fra hvilken som helst fase
+    bots: {
+        seende:      { forventer: 'vinner', beskrivelse: '...', tick: () => { /* ett grep */ } },
+        'ignorerer-x': { forventer: 'taper',  beskrivelse: '...', tick: () => { ... } },
+    },
+}));
+```
+
+Regler for robotene:
+
+- **Samme grep som eleven.** Roboten flytter, kaster, maler og henter gjennom de samme funksjonene
+  som input-håndteringen bruker - bare uten piksel-sikting. En robot som setter poeng direkte,
+  beviser ingenting.
+- **Minst én `vinner` og én `taper`.** Taperen skal ignorere FAGKJERNEN (Stavkirken: stolper i jorda;
+  fersk furu; aldri hente tjære. Havet kommer: bare gå østover uten å spise). Da beviser porten at
+  fagstoffet avgjør utfallet.
+- **Passiv spiller testes alltid** (ingen input). Den skal tape.
+- `snapshot` og `tick` leser refs, ikke state (de kalles utenfor React).
+- Alt er `import.meta.env.DEV`-gatet i `usePlaytest`; elevene får aldri robotene.
+
+---
+
+## Steg 5 - Portene (kjør lokalt til alt er grønt)
+
+Det er tre porter. De to første er maskinelle og kjører også i CI. Den tredje er en uavhengig
+vurdering som nattsporet gjør før PR-en åpnes.
+
+### Port 1 - Selvspill (`scripts/playtest-microgame.mjs`)
+
+```bash
+node scripts/playtest-microgame.mjs --ids <id>          # starter egen Vite
+node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173
+```
+
+| Sjekk | Grønt når |
+|---|---|
+| Spillbart | hver `vinner`-robot vinner minst 1 av 2 runder |
+| Utfordring | passiv spiller og alle `taper`-roboter vinner aldri |
+| Ferdighet | beste vinnerrunde har flere poeng enn alle taperrunder |
+| Raskt i gang | synlig knapp i spillvinduet på startskjermen, og `start()` gir fase «spiller» på under 6 s |
+| Liv | bildet endrer seg merkbart mellom 2 og 12 s uten input |
+| Lesbart | tekst dekker ikke midten av spillet i mer enn 4 s i strekk (normalisert for spilltempo) |
+| Stabilt | ingen konsollfeil, ingen unntak i robotene |
+| Merket | `sjanger` og `tone` i registry, `usePlaytest` i fila, eget `theme` |
+
+Rapport i `.screenshots/playtest/_playtest.md`, bilder per spill (meny, passiv 2/7/12 s, slutt-skjerm
+per robot, filmstripe av vinnerroboten).
+
+### Port 2 - Scene-audit (`scripts/audit-microgames.mjs --ids <id> --strict --frames 4`)
+
+Konsollfeil, båt-vakthund, begravd geometri, modell utenfor utsnittet. Se vedlegg E for hvordan du
+leser en rød port.
+
+### Port 3 - Uavhengig vurdering (ikke deg selv)
+
+Den som bygde spillet, er den dårligste til å vurdere det. Gi vurderingen til en **fersk
+underagent** (Agent-verktøyet, ny kontekst) som IKKE får se briefen, koden eller begrunnelsene dine.
+Den får bare:
+
+- artikkelens tittel og tre setninger om hva den handler om,
+- skjermbildene fra port 1 og 2 (meny, filmstripe, slutt-skjermer, audit-rammene),
+- selvspill-rapporten,
+- referansebildene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal),
+- rubrikken under, og beskjed om å være streng og konkret.
+
+Den svarer med poeng per akse og de tre viktigste forbedringene.
+
+| Akse (1-5) | 1 | 3 | 5 |
+|---|---|---|---|
+| **Gøy** | Jeg ville lukket det etter 20 s | Greit å prøve én gang | «Én runde til» - eskalering, deilig verb, rekord å slå |
+| **Utseende** | Primitive klosser på en grønn plen | Pent, men generisk | Eget uttrykk; lys, atmosfære og bevegelse som i et indiespill |
+| **Lærerikt** | Fakta i tekstbokser, temaet er kulisse | Temaet preger spillet | Reglene ER fagstoffet - den som vinner, har forstått mekanismen |
+| **Lesbart** | Vet ikke hva jeg skal gjøre | Skjønner det etter litt | Forstått på 5 s, mål i HUD, tap gir tips, tekst dekker aldri spillet |
+| **Unikt** | Samme sjanger og look som et spill i biblioteket | Kjent form med egen vri | Sjanger + look som ikke finnes i biblioteket |
+
+Referansespillene er kalibreringen: begge ligger rundt 4 på Gøy, Utseende og Lesbart og 5 på
+Lærerikt. MÅKA er en 5 på Gøy og Utseende.
+
+**Terskel:** ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19 av 25. Under terskel:
+gjør de tre forbedringene og få en NY vurdering (ny underagent). Etter tre runder under terskel
+leveres ikke spillet - en artikkel uten spill er bedre enn en med et svakt spill.
+
+---
+
+## Steg 6 - Registrer og embed (atomisk)
+
+1. `src/components/microgames/<Navn>.tsx` (+ eventuell modulmappe). Default-eksport som tar
+   `MicroGameProps`. Kall `onComplete({ score: 0-1, completed: true })` når runden er vunnet eller
+   eleven har kommet langt nok til å ha sett poenget.
+2. `registry.ts`: `const <Navn> = lazy(() => import('./<Navn>'));` og en oppføring med kebab-case
+   `id`, `title`, `description`, `estimatedSeconds`, **`sjanger`**, **`tone`**, `loader` og `Component`.
+3. Embed i artikkelen: `{ "type": "component", "name": "MicroGame", "props": { "gameId": "<id>" } }`
+   på et naturlig sted i teksten (etter avsnittet som forklarer fagkjernen), aldri etter Quiz.
+4. **Commit spillfilene, registry og artikkel-JSON i SAMME commit.** Embed aldri i artikkel-JSON før
+   spillet er committet: bildejobben (07:30) committer `public/content/` og har dratt med seg en
+   halvferdig embed til main før - artikkelen viste «Mikro-spillet ble ikke funnet» i produksjon.
+5. Rør ikke genererte filer (`content-index.json`, `manifest.json`-datoer, `global-timeline.json`,
+   `stats.html`). Et mikrospill-diff skal bare inneholde spillet, registry og én artikkel-blokk -
+   da kan det ikke kollidere med andre nattjobber.
+
+---
+
+## Sjekkliste før PR
+
+- [ ] Tone valgt; ikke et tema fra «ingen spill»-lista
+- [ ] Designbrief skrevet (alle ti punktene) og limt inn i PR-body
+- [ ] Sjanger og look ulik de tre siste nattspillene
+- [ ] Arkadeskall med eget `THEME`, feed-tekst under spillet, mål i HUD, pause, lyd med lydav
+- [ ] Kjerneverbet skjer i spillverdenen (3D: på objektene)
+- [ ] Minst to tapsårsaker med tips; seier følger plottet
+- [ ] Rekord/ranger/funn som gir «én runde til»
+- [ ] `usePlaytest` med minst én vinner- og én taper-robot som ignorerer fagkjernen
+- [ ] Port 1 (selvspill) grønn, port 2 (audit `--strict`) grønn
+- [ ] Port 3: uavhengig vurdering over terskel - poeng og observasjoner i PR-body
+- [ ] Norsk for en 14-åring, riktige tegn (æ, ø, å), ingen tankestrek
+- [ ] `npx tsc -p tsconfig.app.json --noEmit` og `npx eslint <filene dine>` rent
+- [ ] Spill, registry og embed i én commit; ingen genererte filer i diffen
+
+---
+
+# Vedlegg
+
+Teknisk oppslagsverk. Les det du trenger - hovedteksten over er det som avgjør kvaliteten.
+
+## Vedlegg 0 - Lærdommer fra referansespillene
+
+- **`useRef(newGame(...))` evaluerer argumentet ved HVER render.** Med delte rutenett nullstilte det
+  kirka hver gang React rendret, og været virket aldri. Bruk `useState(() => newGame(...))`.
+- **Mutér aldri spilltilstand fra en prop inne i komponent-closures** (`react-hooks/immutability`).
+  Legg mutasjonen i en modulfunksjon (`runFrame(g, ...)`) og kall den fra `useFrame`.
+- **Komponentfiler eksporterer bare komponenter** (`react-refresh/only-export-components`). Konstanter
+  og hjelpere som deles, bor i `.ts`-filer.
+- **Les aldri refs under render** (`react-hooks/refs`). Lat-initialiser med `useState(() => ...)`.
+- **Lukk og åpne rammen** monterer canvas på nytt mens komponenten lever. Løkker må bruke
+  callback-refs (slik `useArcadeLoop` gjør), ellers blir spillet tomt ved andre åpning.
+- **Terreng som skal krysses, må stige monotont** med få bevisste rygger. Støy lager søkk som
+  flommer foran spilleren og gjør «vann foran deg = fare» uleselig.
+- **Varsle før det er for sent** (holmen før sadelen går under). Et varsel som kommer når det er
+  umulig å redde seg, er bare en straff.
+- **`@react-three/postprocessing` er låst til 3.0.4** - 3.0.5+ krever three 0.182. `EffectComposer`
+  tåler ikke betingede barn; skru av effekter med styrke 0.
+- **drei `Cloud` henter teksturer fra CDN** - bruk den ikke. `Environment` med `Lightformer` er lokal.
+- **Headless-GPU (swiftshader) gir 5-10 bilder/s.** Uten `playtestSpeed()` tar én runde en halvtime.
+
+## Vedlegg A - Kit-toolkitet for 3D (`src/components/microgames/kit/`)
+
+> Eldre spill bruker `MicroGameScaffold` + `SceneBanner` med kontroller under vinduet. Nye spill
+> bruker arkadeskallet (steg 3) og henter bare 3D-delene herfra: `MicroCanvas`, `Interactive`,
+> `Draggable`, `Mover`, `PovCamera`, scene-parts, materialer, partikler og juice. Overlay-reglene
+> for `SceneBanner`/`DataReadout` gjelder bare scaffold-spill.
 
 Importer alt fra `./kit`. Dette er den autoritative verktøykassa - bygg nye spill på den.
 
-### Oppsett & layout
+#### Oppsett & layout
 - **`MicroGameScaffold`** - standardoppsettet: lys ramme + 3D-vindu i FULL bredde + kontroller UNDER
   vinduet (aldri oppå scenen). Gir den polerte layouten gratis.
   ```tsx
@@ -130,7 +331,7 @@ Importer alt fra `./kit`. Dette er den autoritative verktøykassa - bygg nye spi
 - **`MicroCanvas`** - standardisert R3F-Canvas (lys, skygger, fog, OrbitControls-preset). Håndhever
   delt visuell look (ingen LUT). Bruk via scaffold, eller direkte hvis du trenger egen layout.
 
-### Direkte 3D-interaksjon (kjernen i "rik interaksjon")
+#### Direkte 3D-interaksjon (kjernen i "rik interaksjon")
 - **`Interactive`** - gjør ethvert 3D-objekt klikkbart med innebygd juice (pekefinger, scale-spring,
   valgfri forstørret klikkflate `hitArea` for trygg trackpad-treffing). Render-prop gir deg
   tilstanden så du kan farge mesh-ene:
@@ -154,7 +355,7 @@ Importer alt fra `./kit`. Dette er den autoritative verktøykassa - bygg nye spi
   </Draggable>
   ```
 
-### Variasjons-primitiver (bryt klikk-hotspot-ruten)
+#### Variasjons-primitiver (bryt klikk-hotspot-ruten)
 Tre kit-primitiver gir hele klasser av ikke-klikk-mekanikk. Bruk dem framfor enda en hotspot-rad.
 - **`Rotatable`** - vri et objekt til en vinkel ved å dra (1-DOF kontinuerlig): hjul, spak, ratt,
   solur, klokke, "still inn". `target` + `tolerance` gir et "på plass"-treff (`onAlign`); `snap` for hakk.
@@ -174,7 +375,7 @@ Tre kit-primitiver gir hele klasser av ikke-klikk-mekanikk. Bruk dem framfor end
       onHit={score} onMiss={shake}><CatapultMesh /></AimLauncher>
   ```
 
-### Sanntidslaget - action, press og konsekvens
+#### Sanntidslaget - action, press og konsekvens
 
 Destillert fra `IngenmanslandMG` og `FluktenOverMuren3D`. Dette er primitivene som gir et
 mikrospill PULS. De er like Chromebook-trygge som resten av kitet (analog input = hold + dra,
@@ -231,13 +432,13 @@ ingen tastatur nødvendig, ingen fysikkmotor).
 5. Balans-krav: en som ignorerer mekanikken skal TAPE, en som bruker den skal VINNE. Verifiser
    begge med selvspill (se sjekklista).
 
-### Input-widgets under vinduet
+#### Input-widgets under vinduet
 - **`ChoiceRow`** - vannrett rad med valgkort (done/active/locked). **`StepTracker`** - "Steg X av N".
 - **`SceneSlider`** - kontinuerlig spak som styrer scene-tilstand i sanntid (vannstand, år, bredde).
   Helt annen interaksjon enn diskrete knapper - bruk den for "morf og se".
 - **`ToolPalette`** - velg verktøy, klikk så i 3D for å bruke det (plassere, rive).
 
-### Output-overlegg (oppå scenen, `overlays`-slot)
+#### Output-overlegg (oppå scenen, `overlays`-slot)
 - **`SceneBanner`** (transient toppmelding), **`SceneBadge`** (hjørne-etikett), **`DragHint`**
   (idle-hint), **`SceneFact`** (faktakort under), **`WinScreen`** (trofé + reset/gå-videre).
 
@@ -257,14 +458,14 @@ ingen tastatur nødvendig, ingen fysikkmotor).
 > Kort: topp = `wide` banner, bunn-venstre = teller, bunn-høyre = etikett, bunn-senter = drahint
 > (kun når teller finnes). `GudenesVerden3D.tsx` og `GobekliTepe3D.tsx` er referanse.
 
-### Hjelpere
+#### Hjelpere
 - **`damp(cur, target, dt, speed)`** / **`dampV3`** - myk demping mot mål i `useFrame`. Fundamentet
   for animasjon uten fysikk.
 - **`useStage(total)`** - liten fler-stegs tilstandsmaskin (`stage`, `advance`, `reset`, `atEnd`).
 
 ---
 
-## Orientering, vann og plassering (korrekt geometri)
+## Vedlegg B - Orientering, vann og plassering (korrekt geometri)
 
 De vanligste feilene i auto-genererte spill er ikke bugs - de er **geometri som vender eller ligger
 feil**: master/seil som peker feil vei, båter på land (eller land i sjøen), ting som flyter eller
@@ -306,7 +507,7 @@ import { Seascape, Boat, faceAlong } from './kit';
 - **Ingenting flyter eller synker.** Alt som skal stå på bakken har bunnen ved bakkenivå; alt som
   flyter ligger ved `waterY`. Sjekk i preview at det ikke er luft under eller topp under vann.
 
-### Feilklassene fra storrevisjonen 2026-07-24 (36 av 41 spill hadde minst én)
+#### Feilklassene fra storrevisjonen 2026-07-24 (36 av 41 spill hadde minst én)
 
 Sjekk hver av disse eksplisitt i din egen kode FØR du rendrer:
 
@@ -333,22 +534,6 @@ Sjekk hver av disse eksplisitt i din egen kode FØR du rendrer:
 9. **Norsk:** å/ø/æ overalt (aldri aa/oe/ae), aldri tankestrek - bruk bindestrek. Gjelder også
    registry-beskrivelsen.
 
-### Obligatorisk selv-verifisering: FIKS-TIL-GRØNN-LØKKE (før PR åpnes)
-
-Målet er ikke å "bestå en sjekk" - det er at spillet er RIKTIG første gang det når en elev.
-Verifiseringen er derfor en løkke, ikke et punkt:
-
-1. Kjør `node scripts/audit-microgames.mjs --ids <din-id> --strict`. Den rendrer spillet på
-   `/mikrospill/<id>` (og ekspanderer rammen), tar skjermbilder til `.screenshots/microgames/<id>/`,
-   fanger konsollvarsler OG kjører den mekaniske scene-revisjonen (innramming, begravd geometri).
-2. SE på skjermbildene med egne øyne mot feilklassene over - fra flere frames, ikke ett.
-3. Spill gjennom til målskjermen (klikk/dra i Playwright eller manuelt) - inkludert minst ett
-   FEIL svar/slipp der spillet har det.
-4. **Fant du noe (exit 1, vakthund-varsel, eller noe som ser galt ut på bildene): fiks det og gå
-   til punkt 1 igjen. Gjenta til alt er grønt OG ser riktig ut.** Åpne aldri PR med kjente funn -
-   CI-porten `.github/workflows/microgame-audit.yml` kjører samme audit og er kun et sikkerhetsnett
-   som aldri skal trenge å slå ut.
-
 > **Bakgrunnsdekor og innrammings-sjekken.** Scene-revisjonen måler «modellen»: den unionerer
 > bounding-boksene til alle synlige mesh, men holder bakke-/vannplan (bredere enn 26 enheter) og
 > parkerte pool-objekter utenfor. Dekor som ligger spredt utover scenen - himmelkuppel, skybanker,
@@ -359,12 +544,12 @@ Verifiseringen er derfor en løkke, ikke et punkt:
 
 ---
 
-## Avanserte lag - gjør spillet unikt, immersivt og vanedannende
+## Vedlegg C - Flere kit-lag: look, juice, lyd, kamera
 
 Toolkitet har fem lag til som løfter et mikrospill fra «funker» til «wow». Bruk det
 som tjener læringsmålet - ikke alt på en gang.
 
-### Signaturlook (visuelt imponerende)
+#### Signaturlook (visuelt imponerende)
 - **`THEMES`** - era-paletter: `viking`, `roman`, `industrial`, `egypt`, `greek`, `medieval`,
   `enlightenment`, `modern`, `cosmic`, `arctic`, `asian`, `mesoamerican`. Mat `sky`/`fog` til
   `MicroCanvas` og bruk fargene i scene-parts, så hvert emne får distinkt identitet. Velg det som
@@ -393,7 +578,7 @@ som tjener læringsmålet - ikke alt på en gang.
 - **Liv i ro.** `useIdleMotion` (svev) pluss en langsom egenrotasjon på hovedobjektet gjør at verdenen
   lever selv før eleven gjør noe.
 
-### Game-feel / juice (gøy + vanedannende)
+#### Game-feel / juice (gøy + vanedannende)
 - **Lyd er default-on.** `Interactive`/`Hotspot` spiller en `'select'`-tone ved klikk, og `Draggable`
   spiller `'pick'` ved grep + `'drop'` ved slipp - helt gratis, ingen wiring. Overstyr med
   `sound`-propen (`sound={null}`/`sound="correct"` på Interactive/Hotspot, `sound={false}` på
@@ -407,20 +592,20 @@ som tjener læringsmålet - ikke alt på en gang.
 - **Magnetisk snap** på `Draggable`: `snapPoints={[[x,z],...]}` + `onSnap` gir tilfredsstillende plassering.
 - **`ease`** - easing-funksjoner (outCubic, outBack, outElastic...) for håndlagde tweens.
 
-### Lyd & kamera (immersjon)
+#### Lyd & kamera (immersjon)
 - **`useAmbience(preset)`** - ambient lydbed (`waves`/`wind`/`forge`/`crowd`/`forest`). Kall `start()` fra en
   brukerhandling (nettlesere blokkerer autostart). Hold volumet lavt - lyd skal bekrefte, ikke dominere.
 - **`CameraRig`** - cinematisk kamera. Innflyvnings-mønster (unngår å sloss med OrbitControls): start kameraet
   langt unna (`canvas.camera.position`), hold `canvas.controls={false}` til `<CameraRig active={!introDone} onArrive={() => setIntroDone(true)} />` er framme, slå så på controls. (VikingShip3D gjør dette.)
 - **`useIdleMotion()`** - rolig vugging/svai så verdenen lever selv når eleven ikke gjør noe.
 
-### Pedagogisk kraft (lærerik)
+#### Pedagogisk kraft (lærerik)
 - **`DataReadout`** - live tall som endrer seg mens eleven drar/justerer; gjør årsak-virkning synlig.
 - **`SceneQuiz`** - ett-spørsmåls aha-sjekk som kan kobles til scoring (`onResult`).
 - **`CompareToggle`** - veksle mellom to tilstander (for/etter, A/B) og se forskjellen direkte.
 - **`useHintEscalation({ active, resetKey })`** - eskalerer hint hvis eleven står fast; bruk nivået til å fremheve neste hotspot. `resetKey` (f.eks. `stage`) nullstiller ved framgang.
 
-### Rikdom & unikhet
+#### Rikdom & unikhet
 - **`InstancedField`** - spre hundrevis av kopier (skog, folkemengde, åker, steinur) billig: `<InstancedField count={120} geometry={<coneGeometry .../>} material={<meshStandardMaterial .../>} />`.
 - **`Particles`** - kontinuerlig atmosfære/vær (instansert, billig). Presets: `rain`, `snow`, `dust`,
   `embers`, `leaves`, `motes`. `<Particles preset="snow" />` over scenen, eller lokalt med
@@ -439,12 +624,12 @@ som tjener læringsmålet - ikke alt på en gang.
 - **Bryt "alle hus like":** `Building` og `Tree` tar nå et valgfritt `seed` som varierer
   høyde/bredde litt. Gi hver instans i en rad/skog ulik `seed` så scenen ikke ser stemplet ut.
 
-### Robusthet & forfatterstøtte
+#### Robusthet & forfatterstøtte
 - **Preview-rute:** test et mikrospill isolert på `/mikrospill` (galleri) og `/mikrospill/<id>` - uten å embedde i en artikkel. Bruk dette når du bygger.
 - **Perf-guard:** `MicroCanvas` senker oppløsningen automatisk på svake Chromebooks, og hever den igjen.
 - **`prefers-reduced-motion`** respekteres (ingen auto-rotasjon). Kontrollene under vinduet er tastatur-tilgjengelige; gi alltid en knapp/slider-vei i tillegg til rene 3D-klikk der det er mulig.
 
-### Mekanikk-arketyper - bryt ut av «klikk tre ting»
+#### Mekanikk-arketyper - bryt ut av «klikk tre ting»
 Velg en form som matcher emnet, ikke alltid den samme. (Se også opplevelses-arketypene øverst -
 de fire sanntidsformene der er likestilte med disse, og skal velges MINST like ofte.)
 - **Forsvar posisjonen** (IngenmanslandMG): fiender kommer i bølger, eleven sikter/holder/doserer. (`PovCamera` + `AimPlane` + `Mover` + `useWaveFlow`)
@@ -466,7 +651,7 @@ de fire sanntidsformene der er likestilte med disse, og skal velges MINST like o
 
 ---
 
-## Fallgruver (React + R3F i kit-spill)
+## Vedlegg D - Fallgruver i React + R3F
 
 - **Les aldri `ref.current` under render for å utlede props til mesh-er.** Tidsmarkør, fase og
   lignende som endrer seg i `useFrame` lever i refs - leser du dem i render-kroppen, re-rendrer ikke
@@ -481,182 +666,23 @@ de fire sanntidsformene der er likestilte med disse, og skal velges MINST like o
 
 ---
 
-## Design Law (arves fra interaktive komponenter)
+## Vedlegg E - CI-portene og auto-merge
 
-- **Lys stil alltid.** `MicroGameScaffold`/`MicroGameFrame` gir amber/lys ramme. Ingen mørk base.
-- **Én pedagogisk kjerne.** Definer lyspære-øyeblikket før du koder. Én ting eleven skal forstå.
-- **Fem-sekunders-regelen.** Eleven vet hva de skal gjøre innen 5 sek. Ingen velkomstmodal. Bruk
-  `DragHint` og en `SceneBanner` til å lose dem i gang.
-- **Juicy feedback.** Umiddelbar respons på hvert grep (`Interactive`/`Hotspot` gir det gratis),
-  myke `damp`-overganger, spring-finale (`WinScreen`), reset alltid tilgjengelig (`onRetry`).
-- **Rik, men lesbar interaksjon.** Sikt mot flere måter å ta i verdenen på (klikk + dra + spak +
-  fler-stegs), men hold hver enkelt åpenbar. Mekanikken skal være læringsmålet, ikke pynt.
-- **Norsk for en 14-åring.** Korte setninger. Riktige tegn (å, ø, æ). Ingen em-dash/tankestrek.
-- **Unik mekanikk.** Ikke kopier et eksisterende spills mekanikk; bygg en ny, tilpasset læringsmålet.
-- **Primærinteraksjonen skjer i 3D-vinduet.** DOM-knapper/slidere under vinduet er STØTTE, aldri
-  hovedspillet. Hvis 3D-scenen bare illustrerer valg som tas i knapper, er det ikke et mikrospill.
-- **Noe må stå på spill.** Sanntidsformer krever ekte fail-state (`LoseScreen` + prøv igjen).
-  Rolige manipulasjonsformer krever som minimum synlig konsekvens av feil valg (noe velter,
-  kollapser, går tapt) - ikke bare fravær av suksess.
-- **Kamera med hensikt.** Velg tilskuer (orbit) eller deltaker (`PovCamera`) bevisst - se
-  kamera-seksjonen. Førsteperson skal ikke lenger være unntaket.
-- **Chromebook-først (~1366×768).** Toolkitet løser trackpad-utfordringen: `Hotspot` gir store mål,
-  `Interactive`/`Draggable` har generøse klikk-/gripeflater og hover-cursor. Du kan derfor trygt
-  bruke direkte 3D-interaksjon - men gi alltid store nok mål, og vurder en knapp/slider under vinduet
-  som alternativ vei der det passer.
+Rører PR-en `src/components/microgames/**`, kjører `.github/workflows/microgame-audit.yml`:
 
----
+1. **Scene-audit** (`audit-microgames.mjs --strict`) for berørte spill + røyk-utvalg.
+2. **Selvspill** (`playtest-microgame.mjs`) for berørte spill som har `sjanger` i registry (nye
+   standard-spill). Et spill som er NYTT i PR-en, MÅ ha `sjanger`, `tone` og `usePlaytest` - ellers
+   er porten rød.
 
-## Slik bygger du ett
-
-1. **Opprett spillet:** `src/components/microgames/<Navn>.tsx`.
-   - Default-eksporter en komponent som tar `MicroGameProps` (`{ onComplete, onRetry?, ... }` fra
-     `./types`).
-   - Bygg scenen på toolkitet: `MicroGameScaffold` + `scene`-tre med `Interactive`/`Hotspot`/
-     `Draggable` og `kit/scene-parts`, kontroller under vinduet.
-   - Kall `onComplete({ score, completed: true, artifact? })` når spillet er vunnet.
-   - Lyd via `useStepSounds()` (`play('correct' | 'advance' | 'complete' | 'drop' | 'pick' | ...)`).
-
-2. **Registrer i registeret** (EKSAKT - dette er det som hindrer "fant ikke spillet"-feil):
-   I `src/components/microgames/registry.ts`:
-   - Legg til `const <Navn> = lazy(() => import('./<Navn>'));` øverst.
-   - Legg en entry i `MICRO_GAMES` med en **kebab-case `id`** (f.eks. `'vikingskip-3d'`), `title`,
-     `description`, `estimatedSeconds`, `loader: () => import('./<Navn>')`, og
-     `Component: <Navn> as never`. `id`-en er det `gameId` du bruker i innholdet.
-
-3. **Bruk i innhold** - to veier, samme registry, samme `id`:
-   - **I en artikkel** (via `ComponentRegistry` → `MicroGameBlock`):
-     ```json
-     { "type": "component", "name": "MicroGame", "props": { "gameId": "<id>" } }
-     ```
-   - **I et læringssti-steg** (via `MicroGameStep`):
-     ```json
-     { "type": "microgame", "microGameId": "<id>", "microGameProps": { } }
-     ```
-
-Ingen endring i `ComponentRegistry.tsx` trengs per spill - broen `MicroGame` slår opp `gameId` i
-registeret. Du registrerer kun i `registry.ts`.
-
----
-
-## Sug-rubrikken - selvevaluering FØR PR
-
-Gi spillet 0-2 poeng per akse. **Under 7 av 10 totalt: bygg om før du åpner PR.** En artikkel uten
-mikrospill er bedre enn en med et 5-poengs-spill.
-
-| Akse | 0 | 1 | 2 |
-|---|---|---|---|
-| **Innlevelse** | Statisk diorama, tilskuer | Levende scene, atmosfære, lyd | Eleven er I scenen (`PovCamera`/styrt kamera) eller scenen reagerer kroppslig på eleven |
-| **Puls** | Verden venter på klikk | Noe beveger seg uavhengig av eleven | Sanntid + press (tid/fare/ressurs) som tvinger valg |
-| **Konsekvens** | Kan ikke feile | Feil gir synlig negativ respons | Ekte fail-state med gjenstart, og suksess føles fortjent |
-| **Ferdighet** | Ren gjenkjenning (velg riktig) | Presisjon/timing i enkeltgrep | Rytme/dosering/sikte som kan MESTRES og forbedres |
-| **Unikhet** | Ligner et eksisterende spill i biblioteket | Egen vri på kjent form | Egen mekanikk skreddersydd til emnet |
-
-## Sjekkliste før du er ferdig
-
-- [ ] Opplevelses-arketype valgt bevisst (tabellen øverst) - ikke defaultet til klikk-diorama
-- [ ] Sug-rubrikken kjørt ærlig: minst 7 av 10
-- [ ] Iscenesettelsen matcher emnet (ikke standard grønn-åker-diorama uten grunn)
-- [ ] Bygd på `kit/` (`MicroGameScaffold` + minst én direkte 3D-interaksjon: `Interactive`/`Hotspot`/`Draggable`/`AimPlane`/`Mover`)
-- [ ] Lys ramme, 3D-vindu i full bredde, kontroller under vinduet (ikke oppå scenen)
-- [ ] Lyspære-øyeblikket er tydelig og oppnådd; mekanikken ER pedagogikken
-- [ ] Rik interaksjon - ikke bare en knapperad. Eleven tar i verdenen.
-- [ ] Sanntidsspill: fail-state finnes (`LoseScreen`), og balansen er SELVSPILT med Playwright:
-      en bot som ignorerer mekanikken taper, en som bruker den vinner. Legg et midlertidig
-      selvspill-skript i `.screenshots/` (se `FluktenOverMuren3D`-mønsteret: DEV-gated
-      `window.__<id>Debug` med samme info som eleven ser, bot leser den og spiller). Slett etterpå.
-- [ ] Chromebook-trygt: store nok klikk-/gripeflater (`hitArea`, romslig usynlig gripeboks på draggables)
-- [ ] **Geometri korrekt orientert:** master loddrett, seil vender mot seilretningen, rå ⟂ kjøl. Båter via kit-`Boat` (ikke hånd-bygd skrog)
-- [ ] **Land/sjø riktig:** båter på vann (`Seascape`), land-props på land; ingenting flyter eller synker
-- [ ] **Visuelt revidert:** `node scripts/audit-microgames.mjs --ids <id>` kjørt, skjermbildene sett over, DEV-vakthund uten båt-varsler
-- [ ] Juicy: umiddelbar respons, myke `damp`-overganger, spring-finale (`WinScreen`), reset (`onRetry`)
-- [ ] `onComplete` kalles ved seier
-- [ ] Lazy-registrert i `MICRO_GAMES` med kebab-case `id` = `gameId` i innholdet
-- [ ] Norsk for 14-åring, riktige tegn, ingen em-dash
-- [ ] Testet inline i en ekte artikkel på ~1366×768 (hele flyten gjennomspilt)
-- [ ] `npx tsc -b` + `npm run lint` rent
-
----
-
-## CI-porten - slik leser du en rød Mikrospill-audit
-
-Rører PR-en `src/components/microgames/**`, kjører `.github/workflows/microgame-audit.yml`.
-Den rendrer de berørte spillene (endret spill + et røyk-utvalg hvis `kit/` eller `registry.ts`
-er rørt) og **poster en kommentar på PR-en som siterer funnene sine**. Les kommentaren - ikke gjett.
-
-Porten skiller to ting, og forskjellen bestemmer hva du skal gjøre:
+Begge poster funnene sine som én PR-kommentar. Auto-merge (`auto-merge-bot-prs.yml`) venter til
+sjekken er grønn og merger da selv.
 
 | Melding | Betyr | Hva du gjør |
 |---|---|---|
-| «fant funn i spillet» (exit 1) | Ekte funn: konsollfeil, båt-vakthund, begravd geometri, modell utenfor utsnittet | Fiks spillet og push til branchen. Auto-merge går når sjekken er grønn. |
-| «kunne ikke kjøre» (exit 2) | Harness-/infrastruktur-feil: kald Vite-transform, avbrutt bootstrap-fetch, død dev-server | **Ikke rør spillet.** Kjør sjekken på nytt. Går den igjen, er det harnessen som må fikses. |
+| «fant funn i spillet» (exit 1) | Ekte funn: taper-robot vant, vinner-robot tapte, tekst over spillet, konsollfeil, begravd geometri | Fiks spillet og push til branchen |
+| «kunne ikke kjøre» (exit 2) | Harness/infrastruktur: kald Vite, død dev-server, timeout i `page.goto` | Ikke rør spillet. Kjør sjekken på nytt |
 
-Begge holder porten rød, for et urevidert spill skal ikke nå elevene. Men de har ulik årsak.
-
-**Bakgrunn (PR #246, 25.07.2026):** første PR som noensinne trigget porten ble flagget to ganger
-på rad, og begge gangene var det harnessen på en kald runner - ikke spillet. Først røk
-`page.goto` på 30s-timeouten fordi Vite måtte transformere hele modultreet ved første sidelast;
-så ble avbrutte manifest-/registry-fetch bokført som «Failed to fetch» på spillet. Lærdommene er
-bygget inn nå: harnessen varmer opp dev-serveren og venter på `networkidle`, det endrede spillet
-legges **sist** i lista (så det ikke betaler oppstartsregningen), infrastruktur-funn retryes én
-gang, og porten klassifiserer i stedet for å påstå. Kjører du auditen lokalt: en varm
-`node_modules/.vite` skjuler nettopp denne feilklassen, så verifiser kaldt hvis du endrer harnessen.
-
-Porten sjekker BARE det maskinelle. Den vurderer ikke om spillet er godt - det er ditt ansvar
-før PR-en åpnes, se neste seksjon.
-
----
-
-## Visuell egenrevisjon - obligatorisk før PR
-
-Den mekaniske porten fanger krasj, begravd geometri og båt-på-land. Den kan ikke se om scenen er
-stygg, om iscenesettelsen bommer på emnet, eller om spillet er kjedelig. **Det må du gjøre, og du
-skal gjøre det med egne øyne - ikke anta.**
-
-Rekkefølgen som faktisk avdekker noe:
-
-1. `node scripts/audit-microgames.mjs --ids <din-id> --frames 4`
-2. **Åpne alle fire rammene og se på dem.** Ikke bare den første. Nesten alle spill auto-roterer,
-   så én ramme kan tilfeldigvis skjule at modellen står halvveis utenfor utsnittet.
-3. Spill gjennom spillet med Playwright: fra start til `WinScreen`, og for sanntidsspill også til
-   `LoseScreen`. Ta skjermbilde i hver fase, og se på dem.
-4. Score mot sug-rubrikken over, ærlig. Under 7 av 10: bygg om.
-5. **Skriv scorene i PR-body-en** sammen med hva du faktisk observerte i rammene.
-
-Punkt 5 er poenget. En PR som bare sier «verifisert med Playwright» er ikke etterprøvbar - PR #246
-sa nettopp det, og det var sant, men ingen kunne se hva som var sett. Skriv hva du så.
-
-Dette gjøres av rutinen/agenten som bygger spillet, ikke i CI. Grunnen er kostnad: en AI-vurdering
-i GitHub Actions ville krevd API-kreditt per natt, mens agenten som bygger spillet allerede har
-skjermbildene og kan se på dem uten ekstra kostnad. Trenger du å gå gjennom MANGE spill på én gang
-(der ingen kan se på 145 x 4 bilder), finnes `scripts/review-microgame-shots.mjs` som et manuelt
-verktøy - bevisst ikke koblet til CI.
-
----
-
-**Referanse-standard:**
-- `src/components/microgames/FluktenOverMuren3D.tsx` - **sanntids-referansen**. Førstepersons
-  flukt over dødsstripa: `PovCamera` (positionRef + løpe-bob), `AimPlane` (hold = løp, peker =
-  styring, followCamera), jaktende lyskastere som bare ser BEVEGELSE (lesbar, rettferdig fare),
-  `Mover`-patruljevakt med `onMove`-nærhet, `useMeter`-alarm med `onOverload`-fail,
-  `useGameClock`-daggry, `DangerVignette`/`TimerPill`/`MeterBar`/`LoseScreen`, kamera-finale over
-  muren, og selvspill-verifisert balanse (blind bot tas på ~5 s, seende bot vinner). Bruk denne
-  som mal for alle sanntids-/action-former.
-- `src/components/microgames/IngenmanslandMG.tsx` - **forsvar posisjonen-referansen**: førsteperson
-  bak maskingeværet, bølger av `Mover`-lignende soldater, rate-basert skyting, løpsvarme-dosering,
-  artilleri via tilfeldige pulser, gradert `useShake` + munningsglimt. (Bygget før action-kitet -
-  nye spill bruker kit-primitivene i stedet for å hånd-rulle.)
-- `src/components/microgames/VikingShip3D.tsx` - **flaggskipet**. Viser hele bredden av toolkitet:
-  `Draggable` (dra kjølen på plass), `Hotspot` (klink bordgangene, reis masten), `SceneSlider` (morf
-  langskip ↔ knarr), fler-stegs forvandling, `CameraRig` (cinematisk innflyvning), `useAmbience`
-  (bølgelyd), `Burst` (feiringspartikler ved sjøsetting), pluss kontaktskygge/vignette automatisk.
-  Bruk denne som mal for et rikt, direkte-interaktivt byggespill med alle de avanserte lagene.
-- `src/components/microgames/Hamskiftet3D.tsx` - **stage-drevet scenespill**: en levende bygd som
-  forvandles gjennom tre reformer (knapp-input via `ChoiceRow`-mønsteret, 3D som skuespill). God mal
-  når kjernen er "valg → forvandling".
-- `src/components/microgames/TidensFormer3D.tsx` - **abstrakt idé, immersiv iscenesettelse**:
-  eskatologiens sirkulær-vs-lineær-tid som en levende klode i et lysende kosmos. Mal for å representere
-  et abstrakt konsept romlig (`CompareToggle` + tidsdrevet forvandling), med egen himmel-gradient,
-  atmosfære-glød og «drama fra emnet, ikke fra mørk UI».
-- `TheodosianWalls3D.tsx` / `Colosseum3D.tsx` - enklere "inspiser objektet"-form, fortsatt gyldig for
-  små romlige aha-er (eldre kode, ikke bygd på `kit/` enda).
+**Bakgrunn (PR #246, 25.07.2026):** første PR som trigget scene-auditen ble flagget to ganger av
+harnessen på en kald runner, ikke av spillet. Derfor varmer harnessene opp Vite, legger det endrede
+spillet sist, retryer infrastruktur-funn og klassifiserer i stedet for å påstå.
