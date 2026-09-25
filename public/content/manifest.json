@@ -4072,6 +4072,22 @@
                 "vendepunkt"
               ],
               "createdDate": "2026-09-24T00:00:00Z"
+            },
+            {
+              "id": "krigen-i-stillehavet",
+              "title": "Krigen i Stillehavet: Fra Pearl Harbor til Hiroshima",
+              "description": "Fra angrepet på Pearl Harbor til atombombene: hvordan hangarskip, øyhopping og flyplasser avgjorde krigen mot Japan.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "andre-verdenskrig",
+                "japan",
+                "usa",
+                "stillehavet",
+                "atomvapen",
+                "vendepunkt"
+              ],
+              "createdDate": "2026-09-25T00:00:00Z"
             }
           ]
         },

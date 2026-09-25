@@ -8931,6 +8931,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "krigen-i-stillehavet",
+      "title": "Krigen i Stillehavet: Fra Pearl Harbor til Hiroshima",
+      "description": "Fra angrepet på Pearl Harbor til atombombene: hvordan hangarskip, øyhopping og flyplasser avgjorde krigen mot Japan.",
+      "startDate": 1941,
+      "endDate": 1945,
+      "displayDate": "1941-1945",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "andre-verdenskrig",
+      "link": "/historie/andre-verdenskrig/krigen-i-stillehavet",
+      "tags": [
+        "historie",
+        "andre-verdenskrig",
+        "japan",
+        "usa",
+        "stillehavet",
+        "atomvapen",
+        "vendepunkt"
+      ],
+      "lat": 36.2,
+      "lng": 138.3,
+      "placeLabel": "Japan",
+      "placeCountryId": 392,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "stalingrad",
       "title": "Slaget om Stalingrad",
       "description": "Krigen snur på æ˜stfronten.",

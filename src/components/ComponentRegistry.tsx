@@ -1002,6 +1002,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     DenLangsommeFlommen: lazy(() => import('./content/interactive/DenLangsommeFlommen').then(m => ({ default: m.DenLangsommeFlommen }))),
     StavkirkeTesten: lazy(() => import('./content/interactive/StavkirkeTesten').then(m => ({ default: m.StavkirkeTesten }))),
     Knipetangen: lazy(() => import('./content/interactive/Knipetangen').then(m => ({ default: m.Knipetangen }))),
+    Oyhopping: lazy(() => import('./content/interactive/Oyhopping').then(m => ({ default: m.Oyhopping }))),
     KongensMaktBinding,
     ParlamentetsJa,
     KongensSegl,

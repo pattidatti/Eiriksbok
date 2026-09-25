@@ -1,0 +1,279 @@
+{
+  "id": "krigen-i-stillehavet",
+  "title": "Krigen i Stillehavet: Fra Pearl Harbor til Hiroshima",
+  "layout": "rich",
+  "subject": "historie",
+  "year": "1941-1945",
+  "category": "Andre verdenskrig",
+  "readTime": "12 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Japan angrep den amerikanske marinebasen Pearl Harbor 7. desember 1941, og dermed ble USA med i andre verdenskrig.",
+    "Ved Midway i juni 1942 senket amerikanske fly fire japanske hangarskip. Etter det var det USA som angrep.",
+    "Med øyhopping hoppet USA over sterke festninger og flyttet flyplassene steg for steg nærmere Japan.",
+    "Krigen endte etter atombombene over Hiroshima og Nagasaki og Sovjetunionens krigserklæring i august 1945."
+  ],
+  "factChecked": "2026-09-25",
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er tidlig søndag morgen på Hawaii, midt ute i Stillehavet. I marinebasen Pearl Harbor ligger de store amerikanske slagskipene side om side i havna. Så dukker det opp fly på himmelen. Først noen få, så flere og flere. Det er japanske fly, og de går rett mot skipene."
+    },
+    {
+      "type": "text",
+      "content": "Angrepet begynte tidlig om morgenen 7. desember 1941. Japan hadde sendt seks hangarskip over havet, og 359 japanske fly deltok i angrepet (Hatlehol, 2025b). Et hangarskip er et krigsskip med en lang, flat flystripe på dekket. Det er en flytende flyplass. Under angrepet ble 18 amerikanske skip senket eller skadet, og alle de åtte slagskipene i havna ble truffet. 188 amerikanske fly ble ødelagt, de fleste før de rakk å lette. 2335 amerikanske soldater og sjøfolk ble drept, og 68 sivile døde. Japan mistet 64 mann (Hatlehol, 2025b)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Røyk stiger fra brennende slagskip i en havn",
+      "caption": "Pearl Harbor 7. desember 1941. Angrepet trakk USA inn i andre verdenskrig."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor angrep Japan USA?"
+    },
+    {
+      "type": "text",
+      "content": "Japan hadde lite olje og andre råvarer, altså stoffer som fabrikker og krigsskip trenger. I flere tiår hadde landet bygget et imperium i Asia, et stort rike av erobrede områder. Du kan lese om begynnelsen i artikkelen om [japansk imperialisme](/historie/japans-historie/japansk-imperialisme), og om hvordan militæret tok over makten i [Japan i mellomkrigstiden](/historie/mellomkrigstiden/japan)."
+    },
+    {
+      "type": "text",
+      "content": "USA likte ikke at Japan ble stadig sterkere i Asia. Derfor sluttet USA å selge olje til Japan. Et slikt forbud mot handel kalles en embargo. Uten olje kunne ikke japanske skip, fly og fabrikker gå. Japan trengte råvarene i Sørøst-Asia, men fryktet at den amerikanske flåten i Stillehavet ville stoppe dem (Hatlehol, 2025b). Planen i Tokyo var derfor å slå ut den amerikanske flåten med ett slag, før USA rakk å slå tilbake."
+    },
+    {
+      "type": "text",
+      "content": "Planen hadde et hull. De tre amerikanske hangarskipene var ute på havet den morgenen og ble ikke truffet. Av de 18 skipene som ble senket eller skadet, ble 15 reparert og satt i tjeneste igjen (Hatlehol, 2025b). Dagen etter erklærte USA krig mot Japan, og 11. desember erklærte Tyskland krig mot USA. Nå var krigen i Europa og krigen i Asia blitt én verdenskrig. Du kan se hvordan dette passer inn i helheten i artikkelen om [krigens løp](/historie/andre-verdenskrig/krigens-lop)."
+    },
+    {
+      "type": "header",
+      "text": "Et halvt år med japanske seire"
+    },
+    {
+      "type": "text",
+      "content": "I månedene etter Pearl Harbor gikk det fort for Japan. I løpet av et halvt år erobret japanerne Filippinene, Hongkong og Malayahalvøya (Hatlehol, 2025a). De tok også mange øyer i Stillehavet og kom så nær Australia at landet følte seg truet. Japan hadde fått et rike som strakte seg over en enorm del av kloden. Men et så stort rike var også vanskelig å forsvare. Hver øy måtte ha soldater, mat og ammunisjon, og alt måtte fraktes med skip over havet."
+    },
+    {
+      "type": "header",
+      "text": "Midway: Slaget der flåtene aldri så hverandre"
+    },
+    {
+      "type": "text",
+      "content": "Krigen i Stillehavet var en ny slags krig på havet. Før hadde de store slagskipene med sine kanoner vært de viktigste krigsskipene. Nå var det flyene som gjorde jobben. Et fly fra et hangarskip kunne angripe et skip langt bortenfor horisonten. Derfor ble hangarskipene de viktigste skipene i flåten."
+    },
+    {
+      "type": "text",
+      "content": "I juni 1942 prøvde Japan å ta den lille amerikanske øya Midway, midt i Stillehavet. Det gikk helt galt. Amerikanske fly fra hangarskip senket fire japanske hangarskip. Det var den første store amerikanske seieren mot Japan (The National WWII Museum, 2017a). Etter Midway var det USA og de allierte som angrep, og Japan som forsvarte seg (Hatlehol, 2025a)."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv hvordan et slik slag kunne foregå. Du styrer et amerikansk hangarskip og må finne fienden før fienden finner deg."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "midway-3d"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Øyhopping: En krig om avstand"
+    },
+    {
+      "type": "text",
+      "content": "Stillehavet er verdens største hav, og det er enorme avstander mellom øyene. Fly kunne bare fly et stykke før de måtte lande og fylle drivstoff. For å angripe Japan trengte amerikanerne derfor flyplasser som lå nær nok. Og flyplasser trengte land, altså øyer."
+    },
+    {
+      "type": "text",
+      "content": "Men mange av øyene var sterkt forsvart. Å ta hver eneste en ville kostet år og mange tusen liv. Løsningen ble det som kalles øyhopping. Amerikanerne hoppet over øyer som var sterkt forsvart, og tok i stedet øyer med svakere forsvar, som de kunne bruke til neste steg framover (The National WWII Museum, 2017a). Den japanske festningen Rabaul, med en stor base og mange soldater, ble ikke angrepet direkte. Den ble i stedet avskåret, mens amerikanerne rykket videre forbi den (The National WWII Museum, 2017a)."
+    },
+    {
+      "type": "text",
+      "content": "Den første store landkampen var på øya Guadalcanal fra august 1942. Kampene varte i et halvt år og stoppet Japans forsøk på å kutte forbindelsen til Australia og New Zealand (The National WWII Museum, 2017a). Derfra gikk veien videre gjennom øygruppene Salomonøyene, Gilbertøyene, Marshalløyene og Marianene (Hatlehol, 2025a). Prøv selv: Hvor fort kommer du fram?"
+    },
+    {
+      "type": "component",
+      "name": "Oyhopping",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Sommeren 1944 tok amerikanerne Marianene. Det var et viktig steg. Øyene lå nær nok til at de nye, store B-29-bombeflyene kunne nå fram til Japan (The National WWII Museum, 2017a). Nå kunne japanske byer bombes fra lufta."
+    },
+    {
+      "type": "header",
+      "text": "Iwo Jima og Okinawa: Kampene ved Japans dørstokk"
+    },
+    {
+      "type": "text",
+      "content": "Jo nærmere Japan amerikanerne kom, jo hardere ble kampene. Iwo Jima er en liten vulkanøy mellom Marianene og Japan, med en viktig flyplass (The National WWII Museum, 2017b). Amerikanske soldater gikk i land 19. februar 1945. Japan hadde rundt 20 000 soldater på øya. Kampene varte i mer enn fem uker, og 6821 amerikanere ble drept (The National WWII Museum, 2017b)."
+    },
+    {
+      "type": "text",
+      "content": "Den 1. april 1945 gikk amerikanerne i land på Okinawa, en stor øy sør for Japans hovedøyer. Slaget varte til juni. Rundt 12 000 amerikanere og rundt 90 000 japanske soldater ble drept. Verst gikk det ut over folket som bodde på øya: Kanskje så mange som 150 000 sivile fra Okinawa døde (The National WWII Museum, 2017b)."
+    },
+    {
+      "type": "text",
+      "content": "Rundt Okinawa brukte Japan et nytt og grusomt våpen: kamikaze. En kamikaze-flyger styrte flyet sitt rett inn i et fiendtlig skip med vilje. Han visste at han selv skulle dø. Japan sendte nesten 2000 slike selvmordsangrep mot flåten ved Okinawa. 26 skip ble senket og 164 skadet (The National WWII Museum, 2017b). Kamikaze viste hvor desperat Japan var blitt. Det viste også amerikanerne hva de kunne vente seg hvis de gikk i land på selve Japan."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Landgangsbåter på vei mot en strand med røyk over land",
+      "caption": "Landgang på Okinawa i 1945. Jo nærmere Japan amerikanerne kom, jo dyrere ble hver kilometer."
+    },
+    {
+      "type": "header",
+      "text": "Atombombene over Hiroshima og Nagasaki"
+    },
+    {
+      "type": "text",
+      "content": "Klokka 8.15 om morgenen 6. august 1945 slapp et amerikansk fly en atombombe over byen Hiroshima. En atombombe får kraften sin fra å splitte atomer, og én bombe kunne ødelegge en hel by. Rundt 70 000 mennesker døde med én gang. Ved slutten av året hadde rundt 140 000 dødd av bomben. 80 til 90 prosent av byen ble ødelagt (Gundersen, 2026). Kildene gir litt ulike tall. Store norske leksikon skriver i en annen artikkel at rundt 80 000 døde med én gang (Hatlehol, 2025a). Slik er det ofte med tall fra krig: De er anslag, ikke nøyaktige tellinger."
+    },
+    {
+      "type": "text",
+      "content": "Tre dager senere, 9. august, falt en ny atombombe over Nagasaki. Samme dag gikk Sovjetunionen til krig mot Japan (Hatlehol, 2025a). Den 14. august bestemte Japan seg for å kapitulere, altså å gi opp krigen (Hatlehol, 2025a). Dagen etter, 15. august, ble det kunngjort. Den formelle overgivelsen ble undertegnet 2. september 1945 om bord på det amerikanske slagskipet USS Missouri (National Archives, 2020; Hatlehol, 2025a). Da var andre verdenskrig endelig over."
+    },
+    {
+      "type": "text",
+      "content": "Atombombene over Hiroshima og Nagasaki er de første gangene atombomber er brukt mot mennesker (National Archives, 2020). I Hiroshima står ruinen av én bygning igjen fra sentrum. Den kalles Atombombekuppelen, og i 1996 kom den på UNESCOs verdensarvliste (Gundersen, 2026). Bombene åpnet også en ny tid, der stormaktene kappet om å lage stadig kraftigere våpen. Det kan du lese om i artikkelen om [atomvåpenkappløpet](/historie/den-kalde-krigen/atomvapenkapplopet)."
+    },
+    {
+      "type": "header",
+      "text": "Var atombombene nødvendige?"
+    },
+    {
+      "type": "text",
+      "content": "Historikere har kranglet om dette spørsmålet siden krigen sluttet (Atomic Heritage Foundation, 2014). Én gruppe mener at bombene var nødvendige. De sier at en landgang på Japan ville ha kostet enda flere liv enn bombene gjorde, både amerikanske og japanske. Se bare på Okinawa, sier de. Ifølge dette synet valgte president Harry Truman bombene for å få slutt på krigen fort."
+    },
+    {
+      "type": "text",
+      "content": "En annen gruppe mener at bombene ikke var nødvendige. De peker på at Japan var svekket og nær ved å gi opp. Kanskje kunne krigen ha sluttet hvis USA hadde lovet at keiseren i Japan fikk bli sittende. Noen mener også at det var Sovjetunionens angrep i august 1945, og ikke atombombene, som fikk Japan til å gi opp (Atomic Heritage Foundation, 2014)."
+    },
+    {
+      "type": "text",
+      "content": "Det finnes ikke et enkelt svar her. Begge sider bruker ekte fakta, men de legger vekt på ulike ting. Slik er det ofte i historie. Det viktigste er å kunne forklare hvorfor folk er uenige, og hva de bygger argumentene sine på."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "En ødelagt kuppelbygning står alene i en ruinby",
+      "caption": "Atombombekuppelen i Hiroshima ble stående da nesten alt rundt ble jevnet med jorden. I dag er den et minnesmerke over bombens ofre."
+    },
+    {
+      "type": "header",
+      "text": "En krig om avstand, fly og menneskeliv"
+    },
+    {
+      "type": "text",
+      "content": "Krigen i Stillehavet varte fra desember 1941 til september 1945. Den ble avgjort på et hav så stort at flåtene nesten aldri så hverandre. Flyene fra hangarskipene og flyplassene på øyene var nøkkelen. Den som hadde fly nær nok, kunne slå til. Derfor handlet øyhoppingen om å flytte flyplassene steg for steg mot Japan."
+    },
+    {
+      "type": "text",
+      "content": "Men bak strategien ligger enorme lidelser, for soldater på begge sider og aller mest for sivile. Minst 70 millioner mennesker mistet livet i andre verdenskrig til sammen (Hatlehol, 2025a). Etter krigen måtte Japan bygge seg opp igjen. Hvordan landet reiste seg fra ruinene, kan du lese om i artikkelen om [Japans økonomiske mirakel](/historie/japans-historie/japans-okonomiske-mirakel)."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvorfor angrep Japan Pearl Harbor 7. desember 1941? Nevn minst to grunner fra teksten.",
+          "Hva er et hangarskip, og hvorfor ble hangarskipene så viktige i Stillehavet?",
+          "Hva skjedde ved Midway i juni 1942, og hvorfor regnes slaget som et vendepunkt?",
+          "Hva skjedde 6. august, 9. august og 2. september 1945?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hva øyhopping er. Hvorfor lønte det seg å hoppe over de sterkeste øyene?",
+          "Hvorfor var det så viktig for USA å ta Marianene sommeren 1944?",
+          "Kildene gir ulike tall for hvor mange som døde i Hiroshima. Hvorfor kan det være slik, og hvordan bør du bruke slike tall når du skriver?",
+          "Hva viser kamikaze-angrepene om situasjonen Japan var i mot slutten av krigen?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Var atombombene nødvendige for å avslutte krigen? Bruk argumenter fra begge sider i artikkelen.",
+          "Les artikkelen om [atomvåpenkappløpet](/historie/den-kalde-krigen/atomvapenkapplopet). Hvordan forandret Hiroshima og Nagasaki verden etter 1945?",
+          "Skriv et kort dagboknotat fra en sjømann på et amerikansk hangarskip ved Midway i juni 1942. Bruk minst tre fakta fra artikkelen."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvorfor ble ikke den amerikanske flåten slått helt ut ved Pearl Harbor?",
+            "options": [
+              "De tre amerikanske hangarskipene var ute på havet",
+              "Japan angrep bare flyplassene",
+              "Angrepet ble avblåst etter ti minutter",
+              "USA var advart og hadde flyttet alle skipene"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Hangarskipene var ute på havet og ble ikke truffet. I tillegg ble 15 av de 18 skipene som ble truffet, reparert senere."
+          },
+          {
+            "question": "Hva skjedde ved Midway i juni 1942?",
+            "options": [
+              "Amerikanske fly senket fire japanske hangarskip",
+              "Japan erobret Hawaii",
+              "USA slapp den første atombomben",
+              "Japan overga seg"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Ved Midway senket amerikanske fly fire japanske hangarskip. Det var USAs første store seier mot Japan, og etter dette var det USA som angrep."
+          },
+          {
+            "question": "Hva gikk øyhopping ut på?",
+            "options": [
+              "Å hoppe over sterkt forsvarte øyer og ta svakere øyer som kunne brukes til neste steg",
+              "Å erobre alle øyene i Stillehavet én etter én",
+              "Å bygge kunstige øyer til flyplasser",
+              "Å flytte sivile fra øy til øy"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Amerikanerne hoppet over festninger som Rabaul og tok heller svakere forsvarte øyer. Slik flyttet de flyplassene stadig nærmere Japan."
+          },
+          {
+            "question": "Hvorfor var Marianene så viktige for USA?",
+            "options": [
+              "Derfra kunne B-29-bombeflyene nå Japan",
+              "Der lå Japans største oljefelt",
+              "Der ble Japans keiser tatt til fange",
+              "Der startet krigen i 1941"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Marianene lå nær nok Japan til at de nye B-29-bombeflyene kunne nå fram dit."
+          },
+          {
+            "question": "Hva mener historikere som sier at atombombene ikke var nødvendige?",
+            "options": [
+              "At Japan var nær ved å gi opp, og at Sovjetunionens angrep kan ha vært avgjørende",
+              "At bombene ikke gjorde noen skade",
+              "At Japan allerede hadde vunnet krigen",
+              "At USA aldri planla å slippe dem"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Disse historikerne peker på at Japan var svekket, at keiserspørsmålet kunne vært løst, og at Sovjetunionens krigserklæring i august 1945 kan ha fått Japan til å gi opp."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Atomic Heritage Foundation. (2014). *Debate over the bomb*. Nuclear Museum. Hentet 25.09.2026 fra [ahf.nuclearmuseum.org/ahf/history/debate-over-bomb](https://ahf.nuclearmuseum.org/ahf/history/debate-over-bomb/)",
+          "Gundersen, D. (2026). *Hiroshima*. Store norske leksikon. Hentet 25.09.2026 fra [snl.no/Hiroshima](https://snl.no/Hiroshima)",
+          "Hatlehol, G. D. (2025a). *Andre verdenskrig*. Store norske leksikon. Hentet 25.09.2026 fra [snl.no/andre_verdenskrig](https://snl.no/andre_verdenskrig)",
+          "Hatlehol, G. D. (2025b). *Pearl Harbor*. Store norske leksikon. Hentet 25.09.2026 fra [snl.no/Pearl_Harbor](https://snl.no/Pearl_Harbor)",
+          "National Archives. (2020). *The atomic bombing of Hiroshima and Nagasaki, August 1945*. Hentet 25.09.2026 fra [archives.gov/news/topics/hiroshima-nagasaki-75](https://www.archives.gov/news/topics/hiroshima-nagasaki-75)",
+          "The National WWII Museum. (2017a). *The Pacific strategy, 1941-1944*. Hentet 25.09.2026 fra [nationalww2museum.org/war/articles/pacific-strategy-1941-1944](https://www.nationalww2museum.org/war/articles/pacific-strategy-1941-1944)",
+          "The National WWII Museum. (2017b). *Iwo Jima and Okinawa: Death at Japan's doorstep*. Hentet 25.09.2026 fra [nationalww2museum.org/war/articles/iwo-jima-and-okinawa-death-japans-doorstep](https://www.nationalww2museum.org/war/articles/iwo-jima-and-okinawa-death-japans-doorstep)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
