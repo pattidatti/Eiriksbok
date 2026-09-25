@@ -190,7 +190,7 @@ async function auditGame(id) {
     } finally {
         // Filtrer bort kjent, spill-uavhengig støy (Firebase-presence o.l.).
         const noise =
-            /firebase|permission_denied|websocket|Download the React DevTools|GL Driver Message|ReadPixels|GPU stall/i;
+            /firebase|permission_denied|websocket|Download the React DevTools|GL Driver Message|ReadPixels|GPU stall|net::ERR_CERT_|net::ERR_NAME_NOT_RESOLVED|net::ERR_INTERNET_DISCONNECTED/i;
         entry.warnings = warnings.filter((w) => !noise.test(w));
         entry.errors = errors.filter((w) => !noise.test(w));
         page.off('console', onConsole);

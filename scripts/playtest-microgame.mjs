@@ -283,8 +283,10 @@ async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPla
 
 // ---------------------------------------------------------------------------
 // Ett spill
+// Nettverksfeil mot eksterne tjenester (Firebase o.l.) i sandkasser med egen proxy er
+// ikke spillets skyld - sky-miljøet til nattrutinen gir ERR_CERT_AUTHORITY_INVALID.
 // ---------------------------------------------------------------------------
-const NOISE = /firebase|permission_denied|websocket|Download the React DevTools|GL Driver Message|ReadPixels|GPU stall|AudioContext/i;
+const NOISE = /firebase|permission_denied|websocket|Download the React DevTools|GL Driver Message|ReadPixels|GPU stall|AudioContext|net::ERR_CERT_|net::ERR_NAME_NOT_RESOLVED|net::ERR_INTERNET_DISCONNECTED/i;
 const INFRA = /page\.goto: (Timeout|net::ERR_)|net::ERR_CONNECTION|ECONNREFUSED|Target (page|closed)|browser has been closed/i;
 
 async function playtestGame(browser, id) {
