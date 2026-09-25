@@ -126,9 +126,18 @@ NB: rediger ikke filer MENS selvspillet kjører - Vite laster siden på nytt og 
 
 ### 4c. Port 3 - uavhengig vurdering
 
+Lag først biblioteklista som vurdereren skal lese (ikke lim den inn i prompten - forrige gang ble en tom plassholder sendt):
+
+```bash
+grep -nE "title:|description:|sjanger:" src/components/microgames/registry.ts | grep -v "<din-id>" > /tmp/bibliotek.txt
+wc -l /tmp/bibliotek.txt   # skal være flere hundre linjer
+```
+
+Sjekk prompten før du sender den: ingen `<...>`- eller `$(...)`-plassholdere skal stå igjen.
+
 Når port 1 og 2 er grønne: start en FERSK underagent med Agent/Task-verktøyet (general-purpose). Den skal IKKE få briefen, koden eller dine begrunnelser. Send denne prompten, med feltene fylt ut:
 
-> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_playtest.md` (robotresultatene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal; de er kalibrert til ca. 4 på Gøy, Utseende og Lesbart og 5 på Lærerikt). Andre spill i biblioteket (for Unikt): <lim inn `grep -nE "title:|sjanger:" src/components/microgames/registry.ts | tail -40`>.
+> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_playtest.md` (robotresultatene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal; de er kalibrert til ca. 4 på Gøy, Utseende og Lesbart og 5 på Lærerikt). Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den.
 > Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). Begrunn hvert tall med noe du SÅ på et bilde. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
 
 Terskel: ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Maks tre vurderingsrunder. Er spillet fortsatt under terskel etter tredje runde: IKKE åpne PR. Rapporter i Jobb 6 med scorene og hva som manglet.

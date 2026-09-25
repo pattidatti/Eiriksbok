@@ -135,6 +135,11 @@ i et 2D-spill - det drar med seg three og Tone.
 
 - **Eget tema.** Definer `const THEME: ArcadeTheme` i spillfila og send det til `ArcadeStage`. Aldri
   `DEFAULT_THEME`. «Alle spill med samme look blir lame» (eier, 2026-09-24).
+- **Egen HUD, ikke bare egne farger.** Å bytte farger på Stavkirkens HUD (poeng oppe til venstre,
+  tilstandsbar i midten, år og pause oppe til høyre) er ikke et eget uttrykk - vurdereren trakk for
+  nettopp det på det første nattspillet. Bygg HUD-en ut fra fantasien: en lønnslipp, et kompass, et
+  instrumentpanel, en krittavle, et kart i hjørnet. Plassering, form og typografi skal skille seg fra
+  referansespillene.
 - **Tekst dekker aldri spillet.** Bruk `useArcadeAnnouncer({ feed: true })` og `below={feed}`.
   Toasts over flammene gjorde at eleven ikke fikk slukket brannen. Selvspill-porten måler dette.
 - **Lesetid.** Meldinger står etter `readingSeconds` og køes - aldri faste 1,5 sekunder.
