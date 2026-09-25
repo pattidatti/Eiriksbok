@@ -209,8 +209,12 @@ async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPla
     );
     const t0 = Date.now();
     let startMs = null;
-    // Sanntidstak: rikelig for en treg headless-GPU, men endelig.
-    const capMs = (maksSekunder * 1.6 * (4 / fart) + 40) * 1000;
+    // Tidstak: headless-GPU-er er svært ulike (3-17 bilder/s), så et fast tak ga
+    // «tidsavbrudd» for runder som var godt i gang. Runden får gå så lenge
+    // framdriften øker; den avbrytes når den står stille i 90 s, og uansett etter
+    // et romslig absolutt tak.
+    const capMs = Math.max(20 * 60, maksSekunder * 8) * 1000;
+    let lastProgress = { v: -1, at: Date.now() };
     const cover = { midRun: 0, allRun: 0, midWorst: 0, allWorst: 0, samples: 0, midWorstText: '' };
     let lastSample = Date.now();
     const shots = [];
@@ -226,6 +230,9 @@ async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPla
         if (startMs === null && snap.fase === 'spiller') startMs = Date.now() - t0;
         if (!first && snap.fase === 'spiller' && typeof snap.tid === 'number') first = { real: Date.now(), tid: snap.tid };
         if (snap.fase === 'vunnet' || snap.fase === 'tapt') break;
+        if (snap.framdrift > lastProgress.v + 1e-4 || (typeof snap.tid === 'number' && snap.tid > (lastProgress.tid ?? -1) + 0.5))
+            lastProgress = { v: snap.framdrift, tid: snap.tid, at: Date.now() };
+        else if (snap.fase === 'spiller' && Date.now() - lastProgress.at > 90000) break;
         if (snap.fase === 'spiller') {
             const now = Date.now();
             // Maks 1,2 s per måling: et skjermbilde eller en treg frame mellom to
