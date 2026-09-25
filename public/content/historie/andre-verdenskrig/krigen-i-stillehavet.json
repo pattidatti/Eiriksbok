@@ -6,7 +6,7 @@
   "year": "1941-1945",
   "category": "Andre verdenskrig",
   "readTime": "12 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/andre-verdenskrig/krigen-i-stillehavet-hero.webp",
   "details": [
     "Japan angrep den amerikanske marinebasen Pearl Harbor 7. desember 1941, og dermed ble USA med i andre verdenskrig.",
     "Ved Midway i juni 1942 senket amerikanske fly fire japanske hangarskip. Etter det var det USA som angrep.",
@@ -25,7 +25,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/krigen-i-stillehavet-01.webp",
       "alt": "Røyk stiger fra brennende slagskip i en havn",
       "caption": "Pearl Harbor 7. desember 1941. Angrepet trakk USA inn i andre verdenskrig."
     },
@@ -119,7 +119,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/krigen-i-stillehavet-02.webp",
       "alt": "Landgangsbåter på vei mot en strand med røyk over land",
       "caption": "Landgang på Okinawa i 1945. Jo nærmere Japan amerikanerne kom, jo dyrere ble hver kilometer."
     },
@@ -157,7 +157,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/krigen-i-stillehavet-03.webp",
       "alt": "En ødelagt kuppelbygning står alene i en ruinby",
       "caption": "Atombombekuppelen i Hiroshima ble stående da nesten alt rundt ble jevnet med jorden. I dag er den et minnesmerke over bombens ofre."
     },
