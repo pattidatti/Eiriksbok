@@ -26,6 +26,14 @@ npm ci 2>&1 | tail -3
 npx playwright install --with-deps chromium 2>&1 | tail -2 || npx playwright install chromium 2>&1 | tail -2
 ```
 
+Sky-miljøet har ferdige nettlesere i `/opt/pw-browsers`, men ofte en annen versjon enn Playwright-pakken krever. Test og bruk dem slik (begge harnessene leser variabelen):
+
+```bash
+node -e "require('playwright').chromium.launch().then(b=>{console.log('pw ok');b.close()}).catch(e=>console.log('pw fail'))"
+# Ved «pw fail»:
+export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/opt/pw-browsers/chromium
+```
+
 Playwright MÅ virke - uten det kan du ikke kjøre portene. Feiler installasjonen to ganger: rapporter «kunne ikke installere Playwright» i Jobb 6 og avslutt uten PR.
 
 ---
