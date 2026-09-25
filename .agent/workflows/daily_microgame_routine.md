@@ -30,9 +30,13 @@ Sky-miljøet har ferdige nettlesere i `/opt/pw-browsers`, men ofte en annen vers
 
 ```bash
 node -e "require('playwright').chromium.launch().then(b=>{console.log('pw ok');b.close()}).catch(e=>console.log('pw fail'))"
-# Ved «pw fail»:
-export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/opt/pw-browsers/chromium
+# Ved «pw fail»: bruk den ferdige nettleseren, og la den godta sandkassens proxy-sertifikat
+# (ellers feiler Firebase-kallene med ERR_CERT_AUTHORITY_INVALID og fyller konsollen).
+printf '#!/bin/sh\nexec /opt/pw-browsers/chromium --ignore-certificate-errors "$@"\n' > /tmp/chromium-wrap && chmod +x /tmp/chromium-wrap
+export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/chromium-wrap
 ```
+
+Sky-miljøets GPU er treg (rundt 3 bilder/s). Kjør derfor selvspillet med `--fart 8`, og la det gå i bakgrunnen - én runde kan ta flere minutter.
 
 Playwright MÅ virke - uten det kan du ikke kjøre portene. Feiler installasjonen to ganger: rapporter «kunne ikke installere Playwright» i Jobb 6 og avslutt uten PR.
 
@@ -113,7 +117,7 @@ Alt skal være tomt/rent.
 
 ### 4b. Port 1 og 2 (maskinelle)
 ```bash
-node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 4
+node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 8
 node scripts/audit-microgames.mjs --ids <id> --url http://localhost:5173 --strict --frames 4
 ```
 Les `.screenshots/playtest/_playtest.md` og se på ALLE bildene i `.screenshots/playtest/<id>/` og `.screenshots/microgames/<id>/` med Read. Rødt funn eller noe som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene dummere eller smartere enn en elev.
