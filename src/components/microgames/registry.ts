@@ -230,6 +230,7 @@ const Scriptoriet3D = lazy(() => import('./Scriptoriet3D'));
 const DalenDuLaner3D = lazy(() => import('./DalenDuLaner3D'));
 const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
 const OverVolga3D = lazy(() => import('./OverVolga3D'));
+const Midway3D = lazy(() => import('./Midway3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2256,6 +2257,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./OverVolga3D'),
         Component: OverVolga3D as never,
+    },
+    'midway-3d': {
+        id: 'midway-3d',
+        title: 'Midway 1942: Finn dem først',
+        description:
+            'Stillehavet, juni 1942. Du styrer et amerikansk hangarskip. Et sted i nordøst ligger fire japanske hangarskip, men ingen kan se dem. Send speiderfly ut over havet, flytt skipet nærmere og angrip før fiendens fly finner deg. Lyspæra: flåtene så nesten aldri hverandre - flyene fra hangarskipene avgjorde slaget, og den som fant motstanderen først, fikk slå først.',
+        estimatedSeconds: 120,
+        loader: () => import('./Midway3D'),
+        Component: Midway3D as never,
     },
 };
 

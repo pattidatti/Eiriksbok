@@ -1,5 +1,5 @@
 {
-  "buildId": 268822831394319,
+  "buildId": 36371171626394,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2043,6 +2043,9 @@
     ],
     "konsentrasjonsleirene": [
       "content/historie/andre-verdenskrig/konsentrasjonsleirene.json"
+    ],
+    "krigen-i-stillehavet": [
+      "content/historie/andre-verdenskrig/krigen-i-stillehavet.json"
     ],
     "andre-verdenskrig-krigens-lop": [
       "content/historie/andre-verdenskrig/krigens-lop.json"
@@ -5501,6 +5504,7 @@
     "historie/andre-verdenskrig/bakgrunn": "content/historie/andre-verdenskrig/bakgrunn.json",
     "historie/andre-verdenskrig/konsekvenser": "content/historie/andre-verdenskrig/konsekvenser.json",
     "historie/andre-verdenskrig/konsentrasjonsleirene": "content/historie/andre-verdenskrig/konsentrasjonsleirene.json",
+    "historie/andre-verdenskrig/krigen-i-stillehavet": "content/historie/andre-verdenskrig/krigen-i-stillehavet.json",
     "historie/andre-verdenskrig/krigens-lop": "content/historie/andre-verdenskrig/krigens-lop.json",
     "historie/andre-verdenskrig/krigsseilerne": "content/historie/andre-verdenskrig/krigsseilerne.json",
     "historie/andre-verdenskrig/norge-under-okkupasjonen": "content/historie/andre-verdenskrig/norge-under-okkupasjonen.json",

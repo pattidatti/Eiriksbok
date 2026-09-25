@@ -31,6 +31,10 @@
     "subjectId": "historie",
     "topicId": "afrikanske-riker"
   },
+  "midway-3d": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig"
+  },
   "lynkrigen-3d": {
     "subjectId": "historie",
     "topicId": "andre-verdenskrig"
@@ -371,7 +375,7 @@
     "subjectId": "historie",
     "topicId": "mellomkrigstiden"
   },
-  "doggerland-synker": {
+  "havet-kommer": {
     "subjectId": "historie",
     "topicId": "menneskets-tidlige-historie"
   },
