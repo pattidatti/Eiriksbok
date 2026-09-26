@@ -24,5 +24,9 @@ export interface MicroGameEntry {
     sjanger?: string;
     /** 'lett' tåler humor; 'alvorlig' spilles uten vitser. Se build_microgame.md. */
     tone?: 'lett' | 'alvorlig';
+    /** Én setning i du-form som selger spillet på startkortet («Du er kontrolløren. Radaren ser dem komme - rekker du det?»). */
+    hook?: string;
+    /** Skjermbilde fra spillet til startkortet (/images/microgames/<id>.webp). Lages av selvspillet med --cover. */
+    cover?: string;
     loader: () => Promise<{ default: React.ComponentType<MicroGameProps> }>;
 }

@@ -44,11 +44,7 @@ export function PovCamera({
         const swayX = moving ? Math.sin(t * 4.5) * sway * 1.6 : Math.sin(t * 0.9) * sway * 0.6;
         camera.position.set(base[0] + swayX, base[1] + bobY, base[2]);
         if (lookAhead) {
-            tmp.current.set(
-                base[0] + lookAhead[0],
-                base[1] + lookAhead[1],
-                base[2] + lookAhead[2]
-            );
+            tmp.current.set(base[0] + lookAhead[0], base[1] + lookAhead[1], base[2] + lookAhead[2]);
             camera.lookAt(tmp.current);
         } else {
             camera.lookAt(lookAt[0], lookAt[1], lookAt[2]);

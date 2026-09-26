@@ -27,9 +27,42 @@ interface PresetCfg {
 }
 
 const PRESETS: Record<ImpactPreset, PresetCfg> = {
-    splash: { count: 16, color: '#bfe3f5', emissive: 0.2, additive: false, size: 0.1, spread: 2.4, up: 1.6, gravity: 9, life: 0.7, geom: 'drop' },
-    dustPuff: { count: 14, color: '#c9b48a', emissive: 0, additive: false, size: 0.16, spread: 1.4, up: 0.4, gravity: 2.2, life: 0.9, geom: 'puff' },
-    sparks: { count: 18, color: '#ffd24a', emissive: 1.8, additive: true, size: 0.06, spread: 3.2, up: 0.8, gravity: 7, life: 0.5, geom: 'spark' },
+    splash: {
+        count: 16,
+        color: '#bfe3f5',
+        emissive: 0.2,
+        additive: false,
+        size: 0.1,
+        spread: 2.4,
+        up: 1.6,
+        gravity: 9,
+        life: 0.7,
+        geom: 'drop',
+    },
+    dustPuff: {
+        count: 14,
+        color: '#c9b48a',
+        emissive: 0,
+        additive: false,
+        size: 0.16,
+        spread: 1.4,
+        up: 0.4,
+        gravity: 2.2,
+        life: 0.9,
+        geom: 'puff',
+    },
+    sparks: {
+        count: 18,
+        color: '#ffd24a',
+        emissive: 1.8,
+        additive: true,
+        size: 0.06,
+        spread: 3.2,
+        up: 0.8,
+        gravity: 7,
+        life: 0.5,
+        geom: 'spark',
+    },
 };
 
 interface ImpactProps {

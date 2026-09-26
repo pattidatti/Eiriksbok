@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { BASES, STATIONS, LONDON, TABLE_W, TABLE_D, HALF_W, HALF_D, type XZ } from './geo';
 import { findRaid, raidActive, airborne, type G, type Mode, type Fx } from './game';
 import { mapTexture, sectorTexture, labelTexture, floorTexture } from './textures';
+import { mergeParts } from '../kit/mergeParts';
 
 // 3D-scenen for Plottebordet: kontrollrommet, kartbordet, brikkene og de små
 // flyformasjonene som svever over plottene. All spilltilstand leses fra gRef i
@@ -75,10 +76,22 @@ export function Room() {
             />
             {/* Varme lamper over bordet */}
             {[-6.5, 0, 6.5].map((x) => (
-                <pointLight key={x} position={[x, 6.5, -1]} intensity={22} distance={22} decay={2} color="#ffd29a" />
+                <pointLight
+                    key={x}
+                    position={[x, 6.5, -1]}
+                    intensity={22}
+                    distance={22}
+                    decay={2}
+                    color="#ffd29a"
+                />
             ))}
             {/* Gulvet */}
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, FLOOR_Y, 0]} receiveShadow userData={{ sceneAuditIgnore: true }}>
+            <mesh
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, FLOOR_Y, 0]}
+                receiveShadow
+                userData={{ sceneAuditIgnore: true }}
+            >
                 <planeGeometry args={[70, 50]} />
                 <meshStandardMaterial map={floor} roughness={0.85} />
             </mesh>
@@ -136,7 +149,12 @@ export function Plotters({ gRef }: { gRef: GRef }) {
     return (
         <group>
             {spots.map((s) => (
-                <group key={s.i} position={[s.p[0], FLOOR_Y, s.p[1]]} rotation={[0, s.rot, 0]} userData={{ sceneAuditIgnore: true }}>
+                <group
+                    key={s.i}
+                    position={[s.p[0], FLOOR_Y, s.p[1]]}
+                    rotation={[0, s.rot, 0]}
+                    userData={{ sceneAuditIgnore: true }}
+                >
                     {/* skjørt og jakke i WAAF-blått */}
                     <mesh position={[0, 0.9, 0]} castShadow>
                         <cylinderGeometry args={[0.36, 0.44, 1.8, 10]} />
@@ -247,7 +265,12 @@ export function Stations({ gRef }: { gRef: GRef }) {
             const down = g.stationDown[i] > 0;
             gr.rotation.z = THREE.MathUtils.lerp(gr.rotation.z, down ? 0.35 : 0, 0.1);
             const l = lamps.current[i];
-            if (l) l.color.setRGB(down ? 0.4 : 3.2, down ? 0.1 : 0.5 + Math.max(0, Math.sin(g.t * 4 + i)) * 0.6, down ? 0.1 : 0.4);
+            if (l)
+                l.color.setRGB(
+                    down ? 0.4 : 3.2,
+                    down ? 0.1 : 0.5 + Math.max(0, Math.sin(g.t * 4 + i)) * 0.6,
+                    down ? 0.1 : 0.4
+                );
         });
     });
     return (
@@ -314,7 +337,10 @@ export function Bases({ gRef }: { gRef: GRef }) {
             const s = scorch.current[i];
             if (s) {
                 s.visible = g.crater[i] > 0;
-                (s.material as THREE.MeshStandardMaterial).opacity = Math.min(0.85, g.crater[i] / 3);
+                (s.material as THREE.MeshStandardMaterial).opacity = Math.min(
+                    0.85,
+                    g.crater[i] / 3
+                );
             }
         });
     });
@@ -334,7 +360,13 @@ export function Bases({ gRef }: { gRef: GRef }) {
                         }}
                     >
                         <ringGeometry args={[0.5, 0.6, 40]} />
-                        <meshBasicMaterial color="#8cf0a4" transparent opacity={0.9} toneMapped={false} depthWrite={false} />
+                        <meshBasicMaterial
+                            color="#8cf0a4"
+                            transparent
+                            opacity={0.9}
+                            toneMapped={false}
+                            depthWrite={false}
+                        />
                     </mesh>
                     {/* tankemåler under flyplassen */}
                     <mesh
@@ -356,7 +388,12 @@ export function Bases({ gRef }: { gRef: GRef }) {
                         visible={false}
                     >
                         <circleGeometry args={[0.46, 18]} />
-                        <meshStandardMaterial color="#2a2019" transparent opacity={0.8} depthWrite={false} />
+                        <meshStandardMaterial
+                            color="#2a2019"
+                            transparent
+                            opacity={0.8}
+                            depthWrite={false}
+                        />
                     </mesh>
                 </group>
             ))}
@@ -380,7 +417,10 @@ export function London({ gRef }: { gRef: GRef }) {
             Array.from({ length: 14 }, (_, i) => {
                 const a = i * 1.9;
                 const d = 0.15 + ((i * 7) % 5) * 0.12;
-                return { p: [LONDON[0] + Math.cos(a) * d, LONDON[1] + Math.sin(a) * d * 0.7] as XZ, h: 0.1 + ((i * 3) % 4) * 0.05 };
+                return {
+                    p: [LONDON[0] + Math.cos(a) * d, LONDON[1] + Math.sin(a) * d * 0.7] as XZ,
+                    h: 0.1 + ((i * 3) % 4) * 0.05,
+                };
             }),
         []
     );
@@ -437,48 +477,29 @@ const FIGHTER_SLOTS: XZ[] = [
     [0.4, -0.32],
 ];
 
+// Flyene er slått sammen til én geometri hver (kit/mergeParts): et bombefly av fem
+// bokser var fem draw calls, og et fullt raid 35 - for mye for en Chromebook-GPU.
+const B = (w: number, h: number, d: number) => new THREE.BoxGeometry(w, h, d);
+const BOMBER_GEO = mergeParts([
+    { geometry: B(0.055, 0.055, 0.32), color: '#2f3236' },
+    { geometry: B(0.42, 0.014, 0.08), position: [0, 0, 0.02], color: '#3a3e43' },
+    { geometry: B(0.14, 0.012, 0.05), position: [0, 0.01, -0.14], color: '#3a3e43' },
+    { geometry: B(0.035, 0.035, 0.1), position: [-0.1, -0.01, 0.06], color: '#26282b' },
+    { geometry: B(0.035, 0.035, 0.1), position: [0.1, -0.01, 0.06], color: '#26282b' },
+]);
+const FIGHTER_GEO = mergeParts([
+    { geometry: B(0.04, 0.04, 0.22), color: '#5d6647' },
+    { geometry: B(0.28, 0.012, 0.07), position: [0, 0, 0.015], color: '#6b7352' },
+    { geometry: B(0.1, 0.01, 0.035), position: [0, 0.012, -0.095], color: '#6b7352' },
+]);
+const PLANE_MAT = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.6 });
+
 function Bomber() {
-    return (
-        <group>
-            <mesh castShadow>
-                <boxGeometry args={[0.055, 0.055, 0.32]} />
-                <meshStandardMaterial color="#2f3236" roughness={0.6} />
-            </mesh>
-            <mesh position={[0, 0, 0.02]} castShadow>
-                <boxGeometry args={[0.42, 0.014, 0.08]} />
-                <meshStandardMaterial color="#3a3e43" roughness={0.6} />
-            </mesh>
-            <mesh position={[0, 0.01, -0.14]}>
-                <boxGeometry args={[0.14, 0.012, 0.05]} />
-                <meshStandardMaterial color="#3a3e43" />
-            </mesh>
-            {[-0.1, 0.1].map((x) => (
-                <mesh key={x} position={[x, -0.01, 0.06]}>
-                    <boxGeometry args={[0.035, 0.035, 0.1]} />
-                    <meshStandardMaterial color="#26282b" />
-                </mesh>
-            ))}
-        </group>
-    );
+    return <mesh geometry={BOMBER_GEO} material={PLANE_MAT} castShadow />;
 }
 
 function Fighter() {
-    return (
-        <group>
-            <mesh castShadow>
-                <boxGeometry args={[0.04, 0.04, 0.22]} />
-                <meshStandardMaterial color="#5d6647" roughness={0.6} />
-            </mesh>
-            <mesh position={[0, 0, 0.015]} castShadow>
-                <boxGeometry args={[0.28, 0.012, 0.07]} />
-                <meshStandardMaterial color="#6b7352" roughness={0.6} />
-            </mesh>
-            <mesh position={[0, 0.012, -0.095]}>
-                <boxGeometry args={[0.1, 0.01, 0.035]} />
-                <meshStandardMaterial color="#6b7352" />
-            </mesh>
-        </group>
-    );
+    return <mesh geometry={FIGHTER_GEO} material={PLANE_MAT} castShadow />;
 }
 
 // ---------------------------------------------------------------------------
@@ -487,7 +508,13 @@ function Fighter() {
 
 const RAID_POOL = 16;
 
-export function Raids({ gRef, dragRef }: { gRef: GRef; dragRef: React.MutableRefObject<DragState> }) {
+export function Raids({
+    gRef,
+    dragRef,
+}: {
+    gRef: GRef;
+    dragRef: React.MutableRefObject<DragState>;
+}) {
     const groups = useRef<(THREE.Group | null)[]>([]);
     const forms = useRef<(THREE.Group | null)[]>([]);
     const planes = useRef<(THREE.Group | null)[][]>(Array.from({ length: RAID_POOL }, () => []));
@@ -601,7 +628,13 @@ export function Raids({ gRef, dragRef }: { gRef: GRef; dragRef: React.MutableRef
                         visible={false}
                     >
                         <ringGeometry args={[0.55, 0.72, 32]} />
-                        <meshBasicMaterial color={[2.5, 2.2, 0.8]} toneMapped={false} transparent opacity={0.9} depthWrite={false} />
+                        <meshBasicMaterial
+                            color={[2.5, 2.2, 0.8]}
+                            toneMapped={false}
+                            transparent
+                            opacity={0.9}
+                            depthWrite={false}
+                        />
                     </mesh>
                     <group
                         ref={(el) => {
@@ -650,8 +683,17 @@ export function Squadrons({
     const stands = useRef<(THREE.Mesh | null)[]>([]);
     const [lineObjs] = useState(() =>
         BASES.map(() => {
-            const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3(1, 0, 0)]);
-            const mat = new THREE.LineDashedMaterial({ color: '#2f6fd6', dashSize: 0.22, gapSize: 0.14, transparent: true, opacity: 0.95 });
+            const geo = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(),
+                new THREE.Vector3(1, 0, 0),
+            ]);
+            const mat = new THREE.LineDashedMaterial({
+                color: '#2f6fd6',
+                dashSize: 0.22,
+                gapSize: 0.14,
+                transparent: true,
+                opacity: 0.95,
+            });
             const l = new THREE.Line(geo, mat);
             l.computeLineDistances();
             return l;
@@ -675,7 +717,10 @@ export function Squadrons({
                 planes.current[i].forEach((p, j) => {
                     if (!p) return;
                     p.visible = j < n;
-                    const bank = q.state === 'kamp' ? Math.sin(g.t * 6 + j * 2) * 0.7 : Math.sin(g.t * 2 + j) * 0.1;
+                    const bank =
+                        q.state === 'kamp'
+                            ? Math.sin(g.t * 6 + j * 2) * 0.7
+                            : Math.sin(g.t * 2 + j) * 0.1;
                     p.rotation.z = bank;
                     p.rotation.x = q.alt < 0.95 && up ? -0.35 : 0; // nesen opp mens de klatrer
                     p.position.y = q.state === 'kamp' ? Math.sin(g.t * 5 + j * 1.9) * 0.12 : 0;
@@ -696,7 +741,13 @@ export function Squadrons({
                 if (raidActive(r)) to = r.pos;
             } else if (q.state === 'lufta' && q.order?.kind === 'punkt') to = q.order.p;
             else if (q.state === 'hjem') to = BASES[i].pos;
-            aimLine(line, modeRef.current !== 'menu' ? q.pos : null, to, 0.03, q.state === 'hjem' ? '#6a7a8c' : '#2f6fd6');
+            aimLine(
+                line,
+                modeRef.current !== 'menu' ? q.pos : null,
+                to,
+                0.03,
+                q.state === 'hjem' ? '#6a7a8c' : '#2f6fd6'
+            );
         });
     });
     return (
@@ -723,7 +774,11 @@ export function Squadrons({
                                 [0.065, '#c0392b'],
                             ] as const
                         ).map(([r, c], j) => (
-                            <mesh key={j} position={[0, 0.222 + j * 0.002, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                            <mesh
+                                key={j}
+                                position={[0, 0.222 + j * 0.002, 0]}
+                                rotation={[-Math.PI / 2, 0, 0]}
+                            >
                                 <circleGeometry args={[r, 24]} />
                                 <meshStandardMaterial color={c} roughness={0.5} />
                             </mesh>
@@ -783,11 +838,25 @@ export function Squadrons({
 // Draget, veiledningen og effektene
 // ---------------------------------------------------------------------------
 
-export function DragView({ gRef, dragRef, hintRef }: { gRef: GRef; dragRef: React.MutableRefObject<DragState>; hintRef: React.MutableRefObject<{ sq: number; raid: number } | null> }) {
+export function DragView({
+    gRef,
+    dragRef,
+    hintRef,
+}: {
+    gRef: GRef;
+    dragRef: React.MutableRefObject<DragState>;
+    hintRef: React.MutableRefObject<{ sq: number; raid: number } | null>;
+}) {
     const ghost = useRef<THREE.Group>(null);
     const [line] = useState(() => {
-        const geo = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3(1, 0, 0)]);
-        const l = new THREE.Line(geo, new THREE.LineDashedMaterial({ color: '#f2c14e', dashSize: 0.18, gapSize: 0.12 }));
+        const geo = new THREE.BufferGeometry().setFromPoints([
+            new THREE.Vector3(),
+            new THREE.Vector3(1, 0, 0),
+        ]);
+        const l = new THREE.Line(
+            geo,
+            new THREE.LineDashedMaterial({ color: '#f2c14e', dashSize: 0.18, gapSize: 0.12 })
+        );
         l.computeLineDistances();
         return l;
     });
@@ -817,7 +886,11 @@ export function DragView({ gRef, dragRef, hintRef }: { gRef: GRef; dragRef: Reac
         if (gh) gh.visible = !!to;
         if (from && to) {
             if (gh) {
-                gh.position.set(to[0], 0.05 + (d.active ? 0.25 : 0.15 + Math.sin(k * Math.PI) * 0.3), to[1]);
+                gh.position.set(
+                    to[0],
+                    0.05 + (d.active ? 0.25 : 0.15 + Math.sin(k * Math.PI) * 0.3),
+                    to[1]
+                );
                 const m = (gh.children[0] as THREE.Mesh).material as THREE.MeshBasicMaterial;
                 m.opacity = d.active ? 0.75 : 0.55 * (1 - Math.max(0, k - 0.85) * 6);
             }
@@ -829,7 +902,12 @@ export function DragView({ gRef, dragRef, hintRef }: { gRef: GRef; dragRef: Reac
             <group ref={ghost} visible={false}>
                 <mesh>
                     <boxGeometry args={[0.5, 0.22, 0.5]} />
-                    <meshBasicMaterial color="#4f86d9" transparent opacity={0.6} depthWrite={false} />
+                    <meshBasicMaterial
+                        color="#4f86d9"
+                        transparent
+                        opacity={0.6}
+                        depthWrite={false}
+                    />
                 </mesh>
             </group>
         </group>
@@ -896,7 +974,13 @@ export function FxView({ gRef }: { gRef: GRef }) {
             </instancedMesh>
             <instancedMesh ref={smoke} args={[undefined, undefined, FX_MAX]} frustumCulled={false}>
                 <sphereGeometry args={[1, 8, 6]} />
-                <meshStandardMaterial color="#5a524b" transparent opacity={0.55} roughness={1} depthWrite={false} />
+                <meshStandardMaterial
+                    color="#5a524b"
+                    transparent
+                    opacity={0.55}
+                    roughness={1}
+                    depthWrite={false}
+                />
             </instancedMesh>
             {Array.from({ length: 6 }, (_, i) => (
                 <mesh
@@ -908,7 +992,12 @@ export function FxView({ gRef }: { gRef: GRef }) {
                     }}
                 >
                     <ringGeometry args={[0.4, 0.5, 40]} />
-                    <meshBasicMaterial color={[2.6, 2.1, 0.7]} toneMapped={false} transparent depthWrite={false} />
+                    <meshBasicMaterial
+                        color={[2.6, 2.1, 0.7]}
+                        toneMapped={false}
+                        transparent
+                        depthWrite={false}
+                    />
                 </mesh>
             ))}
         </group>
@@ -916,13 +1005,7 @@ export function FxView({ gRef }: { gRef: GRef }) {
 }
 
 /** Usynlig flate over bordet som fanger dra og slipp. */
-export function TableCatcher({
-    onMove,
-    onUp,
-}: {
-    onMove: (p: XZ) => void;
-    onUp: (p: XZ) => void;
-}) {
+export function TableCatcher({ onMove, onUp }: { onMove: (p: XZ) => void; onUp: (p: XZ) => void }) {
     return (
         <mesh
             rotation={[-Math.PI / 2, 0, 0]}

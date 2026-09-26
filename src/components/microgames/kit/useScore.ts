@@ -11,17 +11,14 @@ export function useScore(maxStars = 3) {
     const [combo, setCombo] = useState(0);
     const [best, setBest] = useState(0);
 
-    const hit = useCallback(
-        (base = 1) => {
-            setCombo((c) => {
-                const next = c + 1;
-                setBest((b) => Math.max(b, next));
-                setPoints((p) => p + Math.round(base * (1 + (next - 1) * 0.25)));
-                return next;
-            });
-        },
-        []
-    );
+    const hit = useCallback((base = 1) => {
+        setCombo((c) => {
+            const next = c + 1;
+            setBest((b) => Math.max(b, next));
+            setPoints((p) => p + Math.round(base * (1 + (next - 1) * 0.25)));
+            return next;
+        });
+    }, []);
 
     const miss = useCallback(() => setCombo(0), []);
 

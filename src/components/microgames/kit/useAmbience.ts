@@ -68,7 +68,11 @@ export function useAmbience(preset: AmbiencePreset, volumeDb = -26) {
         const filter = new Tone.Filter(spec.base, 'lowpass');
         filter.Q.value = spec.q;
         const noise = new Tone.Noise(spec.noise);
-        const lfo = new Tone.LFO(spec.lfoRate, spec.base - spec.lfoDepth, spec.base + spec.lfoDepth);
+        const lfo = new Tone.LFO(
+            spec.lfoRate,
+            spec.base - spec.lfoDepth,
+            spec.base + spec.lfoDepth
+        );
         noise.connect(filter);
         filter.connect(vol);
         lfo.connect(filter.frequency);

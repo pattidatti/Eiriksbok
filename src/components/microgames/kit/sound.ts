@@ -13,14 +13,7 @@ import * as Tone from 'tone';
 // default-wirede primitiv-lyden deler samme kjede, samme mute og samme debounce.
 
 export type StepSoundEvent =
-    | 'select'
-    | 'correct'
-    | 'incorrect'
-    | 'advance'
-    | 'complete'
-    | 'pick'
-    | 'drop'
-    | 'sceneChange';
+    'select' | 'correct' | 'incorrect' | 'advance' | 'complete' | 'pick' | 'drop' | 'sceneChange';
 
 // Samme nøkkel som læringsstiene har brukt, så eksisterende mute-UI fortsatt virker.
 const MUTE_KEY = 'learning_path_sound_muted';

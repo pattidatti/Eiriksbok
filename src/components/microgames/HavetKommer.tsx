@@ -2537,7 +2537,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             const g = gameRef.current;
             if (!g) return;
             g.outro = 0;
-            text.banner('DOGGERLAND ER BORTE', '#1f4f5f', 3);
+            text.banner('DOGGERLAND ER BORTE', '#1f4f5f', 2.6);
             text.lesson(
                 'borte',
                 'For 7 800 år siden var Doggerland borte. Folket levde videre på kysten rundt Nordsjøen.',

@@ -157,6 +157,17 @@ vinduet. Lukker eleven fullskjermen, blir spillet stående i artikkelen. Det gir
 flate som spalten (1366×768 på en Chromebook mot rundt 720×540).
 
 - Design HUD, brikker og tekst for fullskjerm 1366×768 - det er slik eleven møter spillet.
+- **Startkortet er spillets plakat.** I artikkelen er spillet et kort med et ekte skjermbilde
+  (`cover`), tittel og én setning i du-form (`hook`) som sier hvem eleven er og hva som står på
+  spill («Du er kontrolløren. Radaren ser dem komme - rekker du det?»). Et navn som «Plottebordet»
+  sier ingenting før man har spilt - bildet og kroken er det som får eleven til å trykke.
+  Selvspillet lager coverbildet: `node scripts/playtest-microgame.mjs --ids <id> --cover`
+  (bilde fra vinnerrunden etter 20 s, uten HUD og tekst; `--cover-at N` for et annet sekund).
+  Commit `public/images/microgames/<id>.webp` sammen med spillet.
+- **Innflygingen:** når eleven trykker «Spill», vokser plakaten fra kortet til hele skjermen med
+  tittel og krok, og toner over i spillets meny når spillet er klart (`MicroGameIntro`). Det
+  skjer av seg selv - men det betyr at menyen i spillet ikke trenger å selge spillet på nytt.
+  Hold menyen kort: tittel, valg som er fagstoff, stor startknapp.
 - Spillet må fortsatt virke i spalten (læringsstier viser det der), men det er reserven.
 - Selvspill-porten spiller i fullskjerm, så bildene vurdereren ser er det eleven ser.
 
@@ -195,6 +206,29 @@ ganger så mange piksler som de logiske målene og slår på mipmaps. En vanlig 
 uskarp på skjermer med høy pikseltetthet (eier om Løp med lønna: «vanskelig å lese»). Tekst eleven
 MÅ lese, hører uansett hjemme i en lapp (`point`), ikke i en tekstur.
 
+### Chromebook først - skaler opp, aldri ned
+
+Nesten alle elevene har en billig Chromebook (Celeron/Intel UHD, 4 GB, 1366×768). Spillet skal
+være godt der - og se enda bedre ut på en bedre maskin (eier, 2026-09-26: «alt skal alltid kunne
+kjøres på en crappy Chromebook, men vi vil ha den beste grafikken vi kan»).
+
+- **Kvalitetsnivå** (`kit/quality.ts`): `MicroCanvas` gjetter `lav`, `middels` eller `hoy` fra
+  maskinvaren og justerer etter målt bildeflyt. Kitet skalerer selv: pikselbudsjett, skyggekart
+  (512/1024/2048), kontaktskygge (av/én gang/levende), bloom (av på lav) og partikler.
+- **Egne effekter:** les `useQuality()` i spillet og skaler pynt med `detail` og
+  `particleScale` (flere trær, folk, røyk på `hoy` - aldri mer enn spillet tåler på `lav`).
+  Spillmekanikken skal være lik på alle nivåer.
+- **Budsjett på lav (Chromebook):** maks ~350 draw calls og ~700k trekanter per bilde, og
+  spillogikken skal være lett (JS per bilde under 22 ms med prosessoren strupet 4x).
+  Gjentatte ting (trær, gjerder, kors, folk) er instanser (drei `<Instances>`/`<Instance>`, se
+  dalen i `stavkirken/world.tsx`), og en figur av mange småbiter slås sammen til én geometri med
+  `mergeParts` fra kitet (se flyene i `plottebordet/world.tsx`). Hundre løse mesher er hundre
+  draw calls.
+- **Kitet gjør mye selv:** skyggekartet tegnes bare hvert 3. bilde på lav og hvert 2. på middels,
+  og fjell eller annen fjern kulisse skal ikke kaste skygge.
+- **Test det:** `?kvalitet=lav` i adressen tvinger nivået. Selvspillet kjører en egen
+  Chromebook-runde (CPU strupet 4x) og stopper spill som sprenger budsjettet.
+
 ### Ytelse - hakk er en spillfeil
 
 - **Aldri `setState` i spillkomponenten for hver melding eller poengtekst.** Da tegner React hele
@@ -204,6 +238,10 @@ MÅ lese, hører uansett hjemme i en lapp (`point`), ikke i en tekstur.
   Da kompilerer three.js shaderen på nytt - et synlig hakk hver gang. Bytt mellom teksturer og
   bruk `visible`.
 - Ingen `new THREE.Vector3/Color` inne i `useFrame` - hold en på modulnivå.
+- **Pikselbudsjett, ikke fast dpr.** `MicroCanvas` velger oppløsning ut fra vinduets størrelse
+  (`kit/pixelBudget.ts`), så fullskjerm på en tett skjerm (XPS, Mac) ikke koster fem ganger så mye
+  som spalten. Sett aldri `dpr` selv. Bruker spillet `KitEffects`, send `postprocessing` til
+  `MicroCanvas` (slår av bortkastet kantutjevning). Bloom går i halv oppløsning.
 
 ---
 
@@ -268,7 +306,7 @@ node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173
 | Lesbart | tekst dekker ikke midten av spillet i mer enn 4 s i strekk (normalisert for spilltempo) |
 | Tekst der blikket er | lapper maks 7 ord, banner maks 5 ord, maks 3 lærings-øyeblikk per runde, «Dette skjedde» på slutt-skjermen, ingen `below=` |
 | Stabilt | ingen konsollfeil, ingen unntak i robotene |
-| Merket | `sjanger` og `tone` i registry, `usePlaytest` i fila, eget `theme` |
+| Merket | `sjanger`, `tone`, `hook` og `cover` (bildet finnes) i registry, `usePlaytest` i fila, eget `theme` |
 
 Rapport i `.screenshots/playtest/_playtest.md`, bilder per spill (meny, passiv 2/7/12 s, slutt-skjerm
 per robot, filmstripe av vinnerroboten).
@@ -315,14 +353,15 @@ leveres ikke spillet - en artikkel uten spill er bedre enn en med et svakt spill
    `MicroGameProps`. Kall `onComplete({ score: 0-1, completed: true })` når runden er vunnet eller
    eleven har kommet langt nok til å ha sett poenget.
 2. `registry.ts`: `const <Navn> = lazy(() => import('./<Navn>'));` og en oppføring med kebab-case
-   `id`, `title`, `description`, `estimatedSeconds`, **`sjanger`**, **`tone`**, `loader` og `Component`.
+   `id`, `title`, `description`, `estimatedSeconds`, **`sjanger`**, **`tone`**, **`hook`**, **`cover`**
+   (`'/images/microgames/<id>.webp'`), `loader` og `Component`.
 3. Embed i artikkelen: `{ "type": "component", "name": "MicroGame", "props": { "gameId": "<id>" } }`
    på et naturlig sted i teksten (etter avsnittet som forklarer fagkjernen), aldri etter Quiz.
 4. **Commit spillfilene, registry og artikkel-JSON i SAMME commit.** Embed aldri i artikkel-JSON før
    spillet er committet: bildejobben (07:30) committer `public/content/` og har dratt med seg en
    halvferdig embed til main før - artikkelen viste «Mikro-spillet ble ikke funnet» i produksjon.
 5. Rør ikke genererte filer (`content-index.json`, `manifest.json`-datoer, `global-timeline.json`,
-   `stats.html`). Et mikrospill-diff skal bare inneholde spillet, registry og én artikkel-blokk -
+   `stats.html`). Et mikrospill-diff skal bare inneholde spillet, registry, plakaten og én artikkel-blokk -
    da kan det ikke kollidere med andre nattjobber.
 
 ---
@@ -335,6 +374,8 @@ leveres ikke spillet - en artikkel uten spill er bedre enn en med et svakt spill
 - [ ] Arkadeskall med eget `THEME`, mål i HUD, pause, lyd med lydav, designet for fullskjerm 1366×768
 - [ ] Tekst via `useArcadeText`: fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet
 - [ ] Skilt og etiketter i 3D med `crispCanvas`; ingen `setState` per melding; ingen `map = null`
+- [ ] `hook` (én setning i du-form) og `cover` (laget med `--cover`, committet) i registry
+- [ ] `MicroCanvas postprocessing` hvis spillet bruker `KitEffects`; ingen egen `dpr`
 - [ ] Kjerneverbet skjer i spillverdenen (3D: på objektene)
 - [ ] Minst to tapsårsaker med tips; seier følger plottet
 - [ ] Rekord/ranger/funn som gir «én runde til»

@@ -151,7 +151,7 @@ async function auditGame(id) {
         // MicroGameFrame starter kollapset - uten dette klikket avbildes bare det
         // lukkede kortet, og hele den visuelle revisjonen er blind.
         try {
-            await page.getByText('Spill', { exact: true }).first().click({ timeout: 4000 });
+            await page.locator('.mg-launcher').first().click({ timeout: 4000 });
         } catch {
             /* allerede ekspandert / annen ramme */
         }
@@ -166,6 +166,8 @@ async function auditGame(id) {
             hasCanvas = false;
         }
         entry.twoD = !hasCanvas;
+        // Innflygingen fra startkortet (MicroGameIntro) ligger over spillet til det er klart.
+        await page.waitForSelector('[data-mg-intro]', { state: 'detached', timeout: 20000 }).catch(() => {});
         await page.waitForTimeout(settleMs);
 
         // Nesten alle mikrospill auto-roterer (OrbitControls autoRotate). Ett bilde

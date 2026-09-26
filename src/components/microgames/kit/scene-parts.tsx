@@ -83,8 +83,7 @@ export function WaterPlane({
     const mat = useRef<THREE.MeshStandardMaterial>(null);
     useFrame(({ clock }) => {
         if (mat.current) {
-            mat.current.emissiveIntensity =
-                0.12 + Math.sin(clock.getElapsedTime() * 1.2) * 0.05;
+            mat.current.emissiveIntensity = 0.12 + Math.sin(clock.getElapsedTime() * 1.2) * 0.05;
         }
     });
     return (
@@ -342,11 +341,19 @@ export function Fire({
             <group ref={flame} scale={scale}>
                 <mesh position={[0, 0.5, 0]}>
                     <coneGeometry args={[0.3, 1, 8]} />
-                    <meshStandardMaterial color="#ff7a18" emissive="#ff5a00" emissiveIntensity={1.2} />
+                    <meshStandardMaterial
+                        color="#ff7a18"
+                        emissive="#ff5a00"
+                        emissiveIntensity={1.2}
+                    />
                 </mesh>
                 <mesh position={[0, 0.36, 0]}>
                     <coneGeometry args={[0.17, 0.7, 8]} />
-                    <meshStandardMaterial color="#ffd23a" emissive="#ffb000" emissiveIntensity={1.5} />
+                    <meshStandardMaterial
+                        color="#ffd23a"
+                        emissive="#ffb000"
+                        emissiveIntensity={1.5}
+                    />
                 </mesh>
             </group>
         </group>

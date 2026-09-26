@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+import { useQuality } from './quality';
 
 // Kontinuerlige atmosfære-/vær-partikler for mikrospill. Instansert (én draw
 // call), Chromebook-billig. Animasjonen lever i refs (samme mønster som Burst),
@@ -12,13 +13,7 @@ import * as THREE from 'three';
 // Vær (rain/snow) faller; embers/motes stiger/svever. Velg det som matcher emnet
 // - dette er atmosfære, ikke hovedmekanikk.
 
-export type AmbientParticlePreset =
-    | 'rain'
-    | 'snow'
-    | 'dust'
-    | 'embers'
-    | 'leaves'
-    | 'motes';
+export type AmbientParticlePreset = 'rain' | 'snow' | 'dust' | 'embers' | 'leaves' | 'motes';
 
 interface PresetCfg {
     count: number;
@@ -45,12 +40,78 @@ function rng(seed: number) {
 }
 
 const PRESETS: Record<AmbientParticlePreset, PresetCfg> = {
-    rain: { count: 140, color: '#9ec7e8', size: 1, geom: 'streak', fall: -9, drift: 0.1, swaySpeed: 0, additive: false, emissive: 0, fadeWithHeight: false },
-    snow: { count: 90, color: '#ffffff', size: 0.09, geom: 'flake', fall: -1.1, drift: 0.5, swaySpeed: 1.1, additive: false, emissive: 0, fadeWithHeight: false },
-    dust: { count: 40, color: '#cdb98c', size: 0.06, geom: 'speck', fall: -0.18, drift: 0.35, swaySpeed: 0.6, additive: false, emissive: 0, fadeWithHeight: false },
-    embers: { count: 34, color: '#ff8a3c', size: 0.07, geom: 'speck', fall: 1.4, drift: 0.4, swaySpeed: 1.4, additive: true, emissive: 1.6, fadeWithHeight: true },
-    leaves: { count: 44, color: '#c87f3a', size: 0.12, geom: 'flake', fall: -0.9, drift: 0.7, swaySpeed: 1.0, additive: false, emissive: 0, fadeWithHeight: false },
-    motes: { count: 56, color: '#fff2c4', size: 0.05, geom: 'speck', fall: 0.25, drift: 0.3, swaySpeed: 0.5, additive: true, emissive: 1.2, fadeWithHeight: true },
+    rain: {
+        count: 140,
+        color: '#9ec7e8',
+        size: 1,
+        geom: 'streak',
+        fall: -9,
+        drift: 0.1,
+        swaySpeed: 0,
+        additive: false,
+        emissive: 0,
+        fadeWithHeight: false,
+    },
+    snow: {
+        count: 90,
+        color: '#ffffff',
+        size: 0.09,
+        geom: 'flake',
+        fall: -1.1,
+        drift: 0.5,
+        swaySpeed: 1.1,
+        additive: false,
+        emissive: 0,
+        fadeWithHeight: false,
+    },
+    dust: {
+        count: 40,
+        color: '#cdb98c',
+        size: 0.06,
+        geom: 'speck',
+        fall: -0.18,
+        drift: 0.35,
+        swaySpeed: 0.6,
+        additive: false,
+        emissive: 0,
+        fadeWithHeight: false,
+    },
+    embers: {
+        count: 34,
+        color: '#ff8a3c',
+        size: 0.07,
+        geom: 'speck',
+        fall: 1.4,
+        drift: 0.4,
+        swaySpeed: 1.4,
+        additive: true,
+        emissive: 1.6,
+        fadeWithHeight: true,
+    },
+    leaves: {
+        count: 44,
+        color: '#c87f3a',
+        size: 0.12,
+        geom: 'flake',
+        fall: -0.9,
+        drift: 0.7,
+        swaySpeed: 1.0,
+        additive: false,
+        emissive: 0,
+        fadeWithHeight: false,
+    },
+    motes: {
+        count: 56,
+        color: '#fff2c4',
+        size: 0.05,
+        geom: 'speck',
+        fall: 0.25,
+        drift: 0.3,
+        swaySpeed: 0.5,
+        additive: true,
+        emissive: 1.2,
+        fadeWithHeight: true,
+    },
 };
 
 interface ParticlesProps {
@@ -87,7 +148,9 @@ export function Particles({
     seed = 1,
 }: ParticlesProps) {
     const cfg = PRESETS[preset];
-    const n = count ?? cfg.count;
+    // Færre partikler på svake maskiner (kit/quality.ts) - regnet ser like mye ut som regn.
+    const q = useQuality();
+    const n = Math.max(4, Math.round((count ?? cfg.count) * q.particleScale));
 
     const mesh = useRef<THREE.InstancedMesh>(null);
     const dummyRef = useRef<THREE.Object3D | null>(null);

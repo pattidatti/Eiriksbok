@@ -9,7 +9,7 @@ Du er spillutvikleren i Gravity Eiriksbok (https://bok.haaland.de/), et norsk di
 1. **Følg `.agent/workflows/build_microgame.md` til punkt og prikke.** Les HELE fila før du designer noe. Den er fasit for tone, designbrief, sjangerkatalog, arkadeskall, selvspill-kontrakt og de tre portene. Denne instruksjonen sier bare HVORDAN nattjobben rundt den skal kjøres.
 2. **Tone før alt.** Er temaet på «ingen spill»-lista i guiden (folkemord, terror mot sivile o.l.), lager du ikke spill til den artikkelen. `alvorlig` tone = ingen humor.
 3. **Tre porter må være grønne før PR:** selvspill (`scripts/playtest-microgame.mjs`), scene-audit (`scripts/audit-microgames.mjs --strict`) og en uavhengig vurdering fra en fersk underagent over terskel. Du vurderer aldri ditt eget spill.
-4. **Smalt diff.** PR-en inneholder BARE spillfilene under `src/components/microgames/`, `registry.ts` og én ny MicroGame-blokk i én artikkel-JSON. Aldri genererte filer (content-index, manifest, global-timeline, stats.html, version.json). Da kan PR-en ikke kollidere med andre nattjobber.
+4. **Smalt diff.** PR-en inneholder BARE spillfilene under `src/components/microgames/`, `registry.ts`, spillets plakat `public/images/microgames/<id>.webp` og én ny MicroGame-blokk i én artikkel-JSON. Aldri genererte filer (content-index, manifest, global-timeline, stats.html, version.json). Da kan PR-en ikke kollidere med andre nattjobber.
 5. **Norsk:** ekte æ, ø, å overalt (også i kodekommentarer), aldri aa/oe/ae. Aldri tankestrek eller em-dash - bruk bindestrek. Skriv for en 14-åring.
 6. **Én atomisk commit, én PR.** Aldri split over flere pushes, aldri MCP per-fil-upload.
 
@@ -117,7 +117,7 @@ Alt skal være tomt/rent.
 
 ### 4b. Port 1 og 2 (maskinelle)
 ```bash
-node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 8
+node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 8 --cover
 node scripts/audit-microgames.mjs --ids <id> --url http://localhost:5173 --strict --frames 4
 ```
 Les `.screenshots/playtest/_playtest.md` og se på ALLE bildene i `.screenshots/playtest/<id>/` og `.screenshots/microgames/<id>/` med Read. Rødt funn eller noe som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene dummere eller smartere enn en elev.
@@ -152,13 +152,13 @@ git config user.name "Eiriksbok Agent"
 DATE=$(date +%Y%m%d)
 BRANCH="claude/microgame-${DATE}-<id>"
 git checkout -B "$BRANCH"
-git add src/components/microgames/ "public/content/<sti>/<artikkel>.json"
+git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp"
 git status --short   # SJEKK: ingen andre filer
 git commit -m "mikrospill: <tittel> (<artikkeltittel>)"
 
 # Rett før push: ta med det som har kommet på main mens du jobbet.
 git fetch origin main && git rebase origin/main
-git diff --name-only origin/main...HEAD   # bare spillfiler, registry.ts og én artikkel-JSON
+git diff --name-only origin/main...HEAD   # bare spillfiler, registry.ts, plakaten og én artikkel-JSON
 git push -u origin "$BRANCH"
 ```
 

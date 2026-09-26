@@ -10,6 +10,8 @@
 //   LESBART    tekst dekker ikke midten av spillet i mer enn 4 s i strekk
 //   STABILT    ingen konsollfeil, ingen unntak i robotene
 //   MERKET     registry-oppføringen har sjanger og tone; arkadeskallet får eget tema
+//   CHROMEBOOK en runde med prosessoren strupet 4x (som en billig Chromebook): JS-tid per
+//              bilde, draw calls og trekanter må holde seg innenfor budsjettet
 //
 // Bruk:
 //   node scripts/playtest-microgame.mjs --ids stavkirken-3d,havet-kommer
@@ -36,6 +38,14 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = path.join(root, '.screenshots', 'playtest');
 const fart = Math.max(1, Math.min(8, Number(opt('fart', 4))));
 const onlyBots = opt('bots') ? opt('bots').split(',') : null;
+// --cover: lagre et skjermbilde fra vinnerrunden som startkortets plakat
+// (public/images/microgames/<id>.webp). --cover-at N velger sekundet (standard 20).
+const makeCover = args.includes('--cover');
+// Chromebook-porten: struping og grenser. En billig Chromebook (Celeron/Intel UHD) er
+// rundt 4-6x tregere enn en utviklermaskin på JavaScript, og GPU-en tåler få draw calls.
+const CB_THROTTLE = Number(opt('cpu-throttle', 4));
+const CB_LIMITS = { jsP95: 22, calls: 350, triangles: 700e3 };
+const coverAt = Number(opt('cover-at', 20));
 const port = Number(opt('port', 5174));
 const ids = (opt('ids') || '').split(',').map((s) => s.trim()).filter(Boolean);
 if (!ids.length) {
@@ -70,6 +80,10 @@ function staticChecks(id) {
     if (!e) return [`finnes ikke i registry.ts`];
     if (!e.sjanger) f.push(`registry-oppføringen mangler \`sjanger\``);
     if (!e.tone) f.push(`registry-oppføringen mangler \`tone\` ('lett' | 'alvorlig')`);
+    if (!/hook:\s*'/.test(e.block)) f.push('registry-oppføringen mangler `hook` - én setning i du-form til startkortet');
+    const cover = e.block.match(/cover:\s*'([^']+)'/)?.[1];
+    if (!cover) f.push('registry-oppføringen mangler `cover` - kjør selvspillet med --cover');
+    else if (!existsSync(path.join(root, 'public', cover)) && !makeCover) f.push(`coverbildet ${cover} finnes ikke - kjør selvspillet med --cover`);
     if (e.file && existsSync(e.file)) {
         const src = readFileSync(e.file, 'utf8');
         if (!src.includes('usePlaytest(')) f.push('spillet registrerer ikke selvspill (usePlaytest)');
@@ -306,6 +320,20 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
                 }
                 cover.allWorst = Math.max(cover.allWorst, cover.allRun);
             }
+            // Plakaten til startkortet: et bilde midt i god spilling, uten tekstlaget
+            // og uten HUD (lapper, poeng og knapper hører til spillet, ikke til plakaten).
+            if (shotPlan?.cover && !shotPlan.coverDone && startMs !== null && (Date.now() - t0 - startMs) / 1000 >= coverAt) {
+                shotPlan.coverDone = true;
+                const style = await page.addStyleTag({ content: '[data-mg-stage] *:not(canvas):not(:has(canvas)){visibility:hidden!important}' });
+                await page.waitForTimeout(120);
+                const stage = await page.$('[data-mg-stage]');
+                const buf = await stage.screenshot();
+                await style.evaluate((el) => el.remove());
+                const dir = path.join(root, 'public/images/microgames');
+                mkdirSync(dir, { recursive: true });
+                await sharp(buf).resize({ width: 1280, withoutEnlargement: true }).webp({ quality: 74 }).toFile(path.join(dir, `${id}.webp`));
+                console.log(`   ▣ plakat lagret: public/images/microgames/${id}.webp`);
+            }
             // Bilder underveis: passiv runde ved 2/7/12 s (liv-sjekken), vinnerroboten
             // som filmstripe (det den uavhengige vurderingen ser).
             if (shotsDir && shotPlan && startMs !== null) {
@@ -363,6 +391,27 @@ async function playtestGame(browser, id) {
     mkdirSync(dir, { recursive: true });
 
     const page = await browser.newPage({ viewport: { width: 1366, height: 768 } });
+    // Mål JS-arbeidet per bilde: summen av alle requestAnimationFrame-kall i samme bilde
+    // (spillogikk, three.js-oppsett av draw calls, React-arbeid som skjer i løkka).
+    await page.addInitScript(() => {
+        const raf = window.requestAnimationFrame.bind(window);
+        window.__rafWork = [];
+        window.requestAnimationFrame = (cb) =>
+            raf((t) => {
+                const s0 = performance.now();
+                try {
+                    cb(t);
+                } finally {
+                    if (window.__rafRec) {
+                        const d = performance.now() - s0;
+                        if (t !== window.__rafLastT) {
+                            window.__rafWork.push(d);
+                            window.__rafLastT = t;
+                        } else window.__rafWork[window.__rafWork.length - 1] += d;
+                    }
+                }
+            });
+    });
     const errors = [];
     page.on('console', (m) => m.type() === 'error' && !NOISE.test(m.text()) && errors.push(m.text()));
     page.on('pageerror', (e) => !NOISE.test(String(e)) && errors.push(String(e)));
@@ -370,7 +419,7 @@ async function playtestGame(browser, id) {
         const t0 = Date.now();
         await page.goto(`${baseUrl}/mikrospill/${id}?mgfart=${fart}`, { waitUntil: 'domcontentloaded', timeout: 180000 });
         try {
-            await page.getByText('Spill', { exact: true }).first().click({ timeout: 4000 });
+            await page.locator('.mg-launcher').first().click({ timeout: 4000 });
         } catch {
             /* allerede åpen */
         }
@@ -381,6 +430,8 @@ async function playtestGame(browser, id) {
             return rep;
         }
         rep.notes.push(`lastet på ${((Date.now() - t0) / 1000).toFixed(1)} s (dev-server, kald)`);
+        // Innflygingen fra startkortet (MicroGameIntro) ligger over spillet til det er klart.
+        await page.waitForSelector('[data-mg-intro]', { state: 'detached', timeout: 20000 }).catch(() => {});
         // Fullskjerm-først: eleven møter spillet i fullskjerm, så robotene og
         // skjermbildene skal også gjøre det.
         // Startkortet («Spill») ber selv om fullskjerm; ellers trykker vi knappen i rammen.
@@ -451,7 +502,7 @@ async function playtestGame(browser, id) {
             let won = false;
             const film = b.forventer === 'vinner' && !rep.rounds.some((r) => r.forventer === 'vinner');
             for (let t = 0; t < tries && !won; t++) {
-                const plan = film && t === 0 ? { prefix: 'film', times: [3, 10, 20, 35, 55, 80, 110, 150] } : null;
+                const plan = film && t === 0 ? { prefix: 'film', times: [3, 10, 20, 35, 55, 80, 110, 150], cover: makeCover } : null;
                 const r = await playRound(page, id, b.navn, b.variant, info.maks, t === 0 ? dir : null, plan);
                 r.forventer = b.forventer;
                 rep.rounds.push(r);
@@ -461,6 +512,69 @@ async function playtestGame(browser, id) {
             }
             if (b.forventer === 'vinner' && !won) rep.findings.push(`«${b.navn}» skal vinne, men vant ingen av ${tries} runder`);
             if (b.forventer === 'taper' && won) rep.findings.push(`«${b.navn}» skal tape, men VANT`);
+        }
+
+        // CHROMEBOOK: én vinnerrunde med strupet prosessor. Nivået (kit/quality.ts) gjettes
+        // av spillet selv - headless-GPU-en er programvare, så det blir «lav», akkurat som
+        // på en svak Chromebook.
+        const vinner = info.bots.find((b) => b.forventer === 'vinner');
+        if (vinner) {
+            const cdp = await page.context().newCDPSession(page);
+            await cdp.send('Emulation.setCPUThrottlingRate', { rate: CB_THROTTLE });
+            await page.evaluate(
+                ({ id, bot, variant }) => {
+                    const api = window.__mgPlaytest[id];
+                    clearInterval(window.__mgBotTimer);
+                    api.start(variant ?? undefined);
+                    window.__mgBotTimer = setInterval(() => {
+                        try {
+                            if (api.snapshot().fase === 'spiller') api.bots[bot].tick();
+                        } catch {
+                            /* målt i vanlige runder */
+                        }
+                    }, 200);
+                },
+                { id, bot: vinner.navn, variant: vinner.variant }
+            );
+            await page.waitForTimeout(3000); // forbi innflyging og første shader-kompilering
+            await page.evaluate(() => {
+                window.__rafWork = [];
+                window.__rafRec = true;
+            });
+            const draw = { calls: 0, triangles: 0 };
+            const tEnd = Date.now() + 10000;
+            while (Date.now() < tEnd) {
+                const ri = await page.evaluate(() => (window.__mgRenderInfo ? window.__mgRenderInfo() : null)).catch(() => null);
+                if (ri) {
+                    draw.calls = Math.max(draw.calls, ri.calls);
+                    draw.triangles = Math.max(draw.triangles, ri.triangles);
+                }
+                await page.waitForTimeout(500);
+            }
+            const cb = await page.evaluate(() => {
+                window.__rafRec = false;
+                clearInterval(window.__mgBotTimer);
+                const w = window.__rafWork.slice().sort((a, b) => a - b);
+                const q = (x) => w[Math.min(w.length - 1, Math.floor(w.length * x))] ?? 0;
+                return { frames: w.length, p50: q(0.5), p95: q(0.95), tier: window.__mgQuality?.tier ?? null };
+            });
+            await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
+            await cdp.detach().catch(() => {});
+            rep.chromebook = { ...cb, ...draw };
+            rep.notes.push(
+                `Chromebook (CPU ×${CB_THROTTLE}${cb.tier ? `, nivå ${cb.tier}` : ''}): JS per bilde p50 ${cb.p50.toFixed(1)} ms / p95 ${cb.p95.toFixed(1)} ms` +
+                    (draw.calls ? `, ${draw.calls} draw calls, ${Math.round(draw.triangles / 1000)}k trekanter` : '')
+            );
+            if (cb.frames > 10 && cb.p95 > CB_LIMITS.jsP95)
+                rep.findings.push(
+                    `for tungt for Chromebook: ${cb.p95.toFixed(1)} ms JS per bilde (p95, CPU ×${CB_THROTTLE}) - maks ${CB_LIMITS.jsP95}. Se «Chromebook først» i guiden`
+                );
+            if (draw.calls > CB_LIMITS.calls)
+                rep.findings.push(`${draw.calls} draw calls - maks ${CB_LIMITS.calls} for en Chromebook-GPU (slå sammen mesher, bruk InstancedMesh)`);
+            if (draw.triangles > CB_LIMITS.triangles)
+                rep.findings.push(`${Math.round(draw.triangles / 1000)}k trekanter - maks ${CB_LIMITS.triangles / 1000}k for en Chromebook-GPU`);
+            // Tilbake til en ren runde-tilstand for resten av sjekkene.
+            await page.evaluate((id) => window.__mgPlaytest[id].start(), id);
         }
 
         // FERDIGHET: beste vinnerrunde over alle taperrunder
@@ -490,7 +604,7 @@ async function playtestGame(browser, id) {
         rep.notes.push(`lengste tekstdekning av midten: ${midWorst.toFixed(1)} s, av over 35 %: ${allWorst.toFixed(1)} s`);
         if (midWorst > 4)
             rep.findings.push(
-                `tekst dekker midten av spillet i ${midWorst.toFixed(1)} s i strekk (maks 4, runde «${worstRound.bot}», tekst: «${worstRound.cover.midWorstText}») - flytt lesetekst under spillet (feed)`
+                `tekst dekker midten av spillet i ${midWorst.toFixed(1)} s i strekk (maks 4, runde «${worstRound.bot}», tekst: «${worstRound.cover.midWorstText}») - kort ned banneret, eller fest teksten til tingen med en lapp (text.point)`
             );
         if (allWorst > 4) rep.findings.push(`tekst dekker over 35 % av spillvinduet i ${allWorst.toFixed(1)} s i strekk (maks 4)`);
     } catch (e) {

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { playtestSpeed } from '../playtest';
+import { budgetDpr } from '../kit/pixelBudget';
 import {
     BannerStore,
     CoachStore,
@@ -69,9 +70,11 @@ export function useArcadeLoop(handlers: LoopHandlers) {
         const view: ArcadeView = { ctx, w: 1, h: 1, dpr: 1 };
         const resize = () => {
             const r = stage.getBoundingClientRect();
-            view.dpr = Math.min(window.devicePixelRatio || 1, 2);
             view.w = Math.max(1, r.width);
             view.h = Math.max(1, r.height);
+            // Pikselbudsjett: fullskjerm på en tett skjerm skal ikke koste mange
+            // ganger spalten (2D-canvas tåler mer enn 3D, derfor høyere budsjett).
+            view.dpr = budgetDpr(view.w, view.h, 2.6e6);
             canvas.width = Math.round(view.w * view.dpr);
             canvas.height = Math.round(view.h * view.dpr);
         };

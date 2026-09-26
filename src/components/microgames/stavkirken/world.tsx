@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Environment, Lightformer } from '@react-three/drei';
+import { Environment, Instance, Instances, Lightformer } from '@react-three/drei';
 import * as THREE from 'three';
 import { Particles } from '../kit';
 import { seasonOf, type G } from './game';
@@ -29,7 +29,14 @@ const smooth = (a: number, b: number, x: number) => {
 // ---------------------------------------------------------------------------
 
 const C = (h: string) => new THREE.Color(h);
-const SKY = { day: C('#8e9faa'), storm: C('#56626d'), dry: C('#c4b28a'), winter: C('#c3ccd2'), night: C('#1c2735'), dusk: C('#b98a74') };
+const SKY = {
+    day: C('#8e9faa'),
+    storm: C('#56626d'),
+    dry: C('#c4b28a'),
+    winter: C('#c3ccd2'),
+    night: C('#1c2735'),
+    dusk: C('#b98a74'),
+};
 const GROUND = { summer: C('#4f6e39'), autumn: C('#7a6b36'), winter: C('#dde4e6') };
 
 export function Atmosphere({ gRef }: { gRef: GRef }) {
@@ -44,7 +51,8 @@ export function Atmosphere({ gRef }: { gRef: GRef }) {
         // Døgnet: en rolig bølge, aldri helt mørkt.
         const day = (g.t / 24) % 1;
         const night = smooth(0.55, 0.8, 0.5 - 0.5 * Math.cos(day * Math.PI * 2)) * 0.62;
-        const dusk = Math.max(0, 1 - Math.abs(0.5 - 0.5 * Math.cos(day * Math.PI * 2) - 0.5) * 4) * 0.35;
+        const dusk =
+            Math.max(0, 1 - Math.abs(0.5 - 0.5 * Math.cos(day * Math.PI * 2) - 0.5) * 4) * 0.35;
         const e = g.event?.id;
         col.copy(winter ? SKY.winter : SKY.day);
         if (e === 'storm') col.lerp(SKY.storm, 0.7);
@@ -53,7 +61,8 @@ export function Atmosphere({ gRef }: { gRef: GRef }) {
         if (scene.background instanceof THREE.Color) scene.background.copy(col);
         if (scene.fog) (scene.fog as THREE.Fog).color.copy(col);
         if (sun.current) {
-            sun.current.intensity = (e === 'storm' ? 0.35 : e === 'tort' ? 1.5 : 0.85) * (1 - night * 1.1);
+            sun.current.intensity =
+                (e === 'storm' ? 0.35 : e === 'tort' ? 1.5 : 0.85) * (1 - night * 1.1);
             sun.current.color.set(dusk > 0.1 ? '#ffc58a' : '#fff4e4');
         }
         if (hemi.current) hemi.current.intensity = 0.55 * (1 - night * 0.6);
@@ -61,16 +70,43 @@ export function Atmosphere({ gRef }: { gRef: GRef }) {
     });
     return (
         <>
-            <directionalLight ref={sun} position={[-14, 16, 8]} intensity={0.85} castShadow shadow-mapSize={[1024, 1024]}>
+            <directionalLight
+                ref={sun}
+                position={[-14, 16, 8]}
+                intensity={0.85}
+                castShadow
+                shadow-mapSize={[1024, 1024]}
+            >
                 <orthographicCamera attach="shadow-camera" args={[-16, 16, 16, -16, 1, 60]} />
             </directionalLight>
             <hemisphereLight ref={hemi} args={['#dfe8ee', '#3d4a33', 0.55]} />
             <ambientLight ref={flash} color="#e8f0ff" intensity={0} />
             {/* Refleksjoner til blank tjære og våt bakke - lokalt, ingen nedlasting. */}
             <Environment resolution={64} frames={1}>
-                <Lightformer form="rect" intensity={1.4} color="#e4ecf2" position={[0, 8, 0]} rotation-x={Math.PI / 2} scale={[20, 20, 1]} />
-                <Lightformer form="rect" intensity={0.8} color="#ffd9a8" position={[-8, 2, 4]} rotation-y={Math.PI / 2} scale={[10, 3, 1]} />
-                <Lightformer form="rect" intensity={0.5} color="#9fb4c4" position={[8, 2, -4]} rotation-y={-Math.PI / 2} scale={[10, 3, 1]} />
+                <Lightformer
+                    form="rect"
+                    intensity={1.4}
+                    color="#e4ecf2"
+                    position={[0, 8, 0]}
+                    rotation-x={Math.PI / 2}
+                    scale={[20, 20, 1]}
+                />
+                <Lightformer
+                    form="rect"
+                    intensity={0.8}
+                    color="#ffd9a8"
+                    position={[-8, 2, 4]}
+                    rotation-y={Math.PI / 2}
+                    scale={[10, 3, 1]}
+                />
+                <Lightformer
+                    form="rect"
+                    intensity={0.5}
+                    color="#9fb4c4"
+                    position={[8, 2, -4]}
+                    rotation-y={-Math.PI / 2}
+                    scale={[10, 3, 1]}
+                />
             </Environment>
         </>
     );
@@ -86,7 +122,12 @@ const WORLD = (() => {
     for (let i = 0; i < 16; i++) {
         const a = (i / 16) * Math.PI * 2 + r() * 0.25;
         const d = 36 + r() * 10 + Math.abs(Math.sin(a)) * 6;
-        mountains.push({ x: Math.cos(a) * d * 1.2, z: Math.sin(a) * d * 0.85, h: 18 + r() * 18, r: 10 + r() * 7 });
+        mountains.push({
+            x: Math.cos(a) * d * 1.2,
+            z: Math.sin(a) * d * 0.85,
+            h: 18 + r() * 18,
+            r: 10 + r() * 7,
+        });
     }
     const pines: { x: number; z: number; s: number }[] = [];
     const birches: { x: number; z: number; s: number }[] = [];
@@ -106,15 +147,21 @@ const WORLD = (() => {
         crosses.push({ x: Math.cos(a) * d, z: Math.sin(a) * d, r: (r() - 0.5) * 0.3 });
     }
     const puddles: { x: number; z: number; s: number }[] = [];
-    for (let i = 0; i < 9; i++) puddles.push({ x: -6 + r() * 14, z: -6 + r() * 12, s: 0.5 + r() * 0.9 });
+    for (let i = 0; i < 9; i++)
+        puddles.push({ x: -6 + r() * 14, z: -6 + r() * 12, s: 0.5 + r() * 0.9 });
     return { mountains, pines, birches, crosses, puddles };
 })();
 
+const CROWN = new THREE.Vector3(1, 1, 1);
+
+// Dekoren (fjell, trær, gjerde, kors) er mange like ting. De tegnes som instanser -
+// én tegneoperasjon per slag i stedet for én per tre - ellers sprenger dalen
+// Chromebook-budsjettet på draw calls (se «Chromebook først» i build_microgame.md).
 export function Valley({ gRef }: { gRef: GRef }) {
     const ground = useRef<THREE.MeshStandardMaterial>(null);
     const leaf = useRef<THREE.MeshStandardMaterial>(null);
     const pine = useRef<THREE.MeshStandardMaterial>(null);
-    const caps = useRef<(THREE.Mesh | null)[]>([]);
+    const caps = useRef<(THREE.Object3D | null)[]>([]);
     const puddle = useRef<THREE.MeshStandardMaterial>(null);
     const birchCrowns = useRef<THREE.Group>(null);
     const col = useMemo(() => new THREE.Color(), []);
@@ -135,25 +182,44 @@ export function Valley({ gRef }: { gRef: GRef }) {
         }
         if (birchCrowns.current) {
             const k = winter ? 0.35 : 1;
-            birchCrowns.current.children.forEach((c) => c.scale.lerp(new THREE.Vector3(k, k, k), 0.05));
+            CROWN.set(k, k, k);
+            birchCrowns.current.children.forEach((c) => c.scale.lerp(CROWN, 0.05));
         }
         if (pine.current) pine.current.color.lerp(col.set(winter ? '#c9d4d4' : '#2d4f36'), 0.05);
         const snow = winter ? 0.55 : 0.3;
-        for (const c of caps.current) if (c) c.scale.y = THREE.MathUtils.lerp(c.scale.y, snow / 0.3, 0.05);
-        if (puddle.current) puddle.current.color.lerp(col.set(winter ? '#e9f1f4' : '#3b5560'), 0.06);
+        for (const c of caps.current)
+            if (c) c.scale.y = THREE.MathUtils.lerp(c.scale.y, snow / 0.3, 0.05);
+        if (puddle.current)
+            puddle.current.color.lerp(col.set(winter ? '#e9f1f4' : '#3b5560'), 0.06);
     });
     return (
         <group userData={{ sceneAuditIgnore: true }}>
             <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow position={[0, -0.02, 0]}>
                 <circleGeometry args={[90, 56]} />
-                <meshStandardMaterial ref={ground} color="#4f6e39" roughness={0.5} envMapIntensity={0.6} />
+                <meshStandardMaterial
+                    ref={ground}
+                    color="#4f6e39"
+                    roughness={0.5}
+                    envMapIntensity={0.6}
+                />
             </mesh>
-            {WORLD.puddles.map((p, i) => (
-                <mesh key={i} rotation={[-Math.PI / 2, 0, 0]} position={[p.x, 0.005, p.z]}>
-                    <circleGeometry args={[p.s, 20]} />
-                    <meshStandardMaterial ref={i === 0 ? puddle : undefined} color="#3b5560" roughness={0.04} metalness={0.3} />
-                </mesh>
-            ))}
+            <Instances limit={WORLD.puddles.length}>
+                <circleGeometry args={[1, 20]} />
+                <meshStandardMaterial
+                    ref={puddle}
+                    color="#3b5560"
+                    roughness={0.04}
+                    metalness={0.3}
+                />
+                {WORLD.puddles.map((p, i) => (
+                    <Instance
+                        key={i}
+                        rotation={[-Math.PI / 2, 0, 0]}
+                        position={[p.x, 0.005, p.z]}
+                        scale={p.s}
+                    />
+                ))}
+            </Instances>
             {/* grusstien fra porten til døra i vest */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-12, 0.01, 0]}>
                 <planeGeometry args={[16, 1.4]} />
@@ -164,65 +230,87 @@ export function Valley({ gRef }: { gRef: GRef }) {
                 <planeGeometry args={[130, 3.6]} />
                 <meshStandardMaterial color="#5f8595" roughness={0.08} metalness={0.2} />
             </mesh>
-            {WORLD.mountains.map((m, i) => (
-                <group key={i} position={[m.x, 0, m.z]}>
-                    <mesh position={[0, m.h / 2, 0]} castShadow>
-                        <coneGeometry args={[m.r, m.h, 7]} />
-                        <meshStandardMaterial color="#3b4a42" roughness={1} flatShading />
-                    </mesh>
-                    <mesh
-                        ref={(el) => {
-                            caps.current[i] = el;
-                        }}
-                        position={[0, m.h, 0]}
-                    >
-                        {/* snøhette: spissen av fjellet, strekkes nedover om vinteren */}
-                        <coneGeometry args={[m.r * 0.3, m.h * 0.3, 7, 1, false]} />
-                        <meshStandardMaterial color="#eef3f4" roughness={1} flatShading />
-                    </mesh>
-                </group>
-            ))}
-            {WORLD.pines.map((t, i) => (
-                <group key={i} position={[t.x, 0, t.z]} scale={t.s}>
-                    <mesh position={[0, 0.5, 0]}>
-                        <cylinderGeometry args={[0.12, 0.16, 1, 5]} />
-                        <meshStandardMaterial color="#4a3526" />
-                    </mesh>
-                    {[0, 1, 2].map((k) => (
-                        <mesh key={k} position={[0, 1.3 + k * 0.8, 0]} castShadow>
-                            <coneGeometry args={[1.1 - k * 0.28, 1.4, 7]} />
-                            <meshStandardMaterial ref={i === 0 && k === 0 ? pine : undefined} color="#2d4f36" roughness={1} flatShading />
-                        </mesh>
-                    ))}
-                </group>
-            ))}
-            <group ref={birchCrowns}>
-                {WORLD.birches.map((t, i) => (
-                    <group key={i} position={[t.x, 1.9 * t.s, t.z]}>
-                        <mesh castShadow>
-                            <icosahedronGeometry args={[0.95 * t.s, 0]} />
-                            <meshStandardMaterial ref={i === 0 ? leaf : undefined} color="#6c9a45" roughness={1} flatShading />
-                        </mesh>
+            {/* Fjellene ligger langt utenfor skyggekameraet - de kaster ikke skygge. */}
+            <Instances limit={WORLD.mountains.length}>
+                <coneGeometry args={[1, 1, 7]} />
+                <meshStandardMaterial color="#3b4a42" roughness={1} flatShading />
+                {WORLD.mountains.map((m, i) => (
+                    <Instance key={i} position={[m.x, m.h / 2, m.z]} scale={[m.r, m.h, m.r]} />
+                ))}
+            </Instances>
+            {/* snøhettene: spissen av fjellet, strekkes nedover om vinteren */}
+            <Instances limit={WORLD.mountains.length}>
+                <coneGeometry args={[0.3, 0.3, 7, 1, false]} />
+                <meshStandardMaterial color="#eef3f4" roughness={1} flatShading />
+                {WORLD.mountains.map((m, i) => (
+                    <group key={i} position={[m.x, m.h, m.z]} scale={[m.r, m.h, m.r]}>
+                        <Instance
+                            ref={(el) => {
+                                caps.current[i] = el as THREE.Object3D | null;
+                            }}
+                        />
                     </group>
                 ))}
-            </group>
-            {WORLD.birches.map((t, i) => (
-                <mesh key={i} position={[t.x, 0.9 * t.s, t.z]}>
-                    <cylinderGeometry args={[0.08, 0.11, 1.8 * t.s, 5]} />
-                    <meshStandardMaterial color="#e8e4da" />
-                </mesh>
+            </Instances>
+            {/* furu: stamme + tre lag */}
+            <Instances limit={WORLD.pines.length}>
+                <cylinderGeometry args={[0.12, 0.16, 1, 5]} />
+                <meshStandardMaterial color="#4a3526" />
+                {WORLD.pines.map((t, i) => (
+                    <Instance key={i} position={[t.x, 0.5 * t.s, t.z]} scale={t.s} />
+                ))}
+            </Instances>
+            {[0, 1, 2].map((k) => (
+                <Instances key={k} limit={WORLD.pines.length} castShadow>
+                    <coneGeometry args={[1.1 - k * 0.28, 1.4, 7]} />
+                    <meshStandardMaterial
+                        ref={k === 0 ? pine : undefined}
+                        color="#2d4f36"
+                        roughness={1}
+                        flatShading
+                    />
+                    {WORLD.pines.map((t, i) => (
+                        <Instance
+                            key={i}
+                            position={[t.x, (1.3 + k * 0.8) * t.s, t.z]}
+                            scale={t.s}
+                        />
+                    ))}
+                </Instances>
             ))}
+            {/* bjørk: kroner (krymper om vinteren) + stammer */}
+            <Instances limit={WORLD.birches.length} castShadow>
+                <icosahedronGeometry args={[0.95, 0]} />
+                <meshStandardMaterial ref={leaf} color="#6c9a45" roughness={1} flatShading />
+                <group ref={birchCrowns}>
+                    {WORLD.birches.map((t, i) => (
+                        <Instance key={i} position={[t.x, 1.9 * t.s, t.z]} scale={t.s} />
+                    ))}
+                </group>
+            </Instances>
+            <Instances limit={WORLD.birches.length}>
+                <cylinderGeometry args={[0.08, 0.11, 1.8, 5]} />
+                <meshStandardMaterial color="#e8e4da" />
+                {WORLD.birches.map((t, i) => (
+                    <Instance key={i} position={[t.x, 0.9 * t.s, t.z]} scale={[1, t.s, 1]} />
+                ))}
+            </Instances>
             {/* kirkegården: steingjerde, port og kors */}
-            {Array.from({ length: 48 }, (_, i) => {
-                const a = (i / 48) * Math.PI * 2;
-                if (Math.cos(a) < -0.985) return null; // åpning til porten i vest
-                return (
-                    <mesh key={i} position={[Math.cos(a) * 7.5, 0.28, Math.sin(a) * 7.5]} rotation={[0, -a, 0]} castShadow>
-                        <boxGeometry args={[0.6, 0.56, 1.05]} />
-                        <meshStandardMaterial color="#7d7c74" roughness={1} flatShading />
-                    </mesh>
-                );
-            })}
+            <Instances limit={48} castShadow>
+                <boxGeometry args={[0.6, 0.56, 1.05]} />
+                <meshStandardMaterial color="#7d7c74" roughness={1} flatShading />
+                {Array.from({ length: 48 }, (_, i) => {
+                    const a = (i / 48) * Math.PI * 2;
+                    if (Math.cos(a) < -0.985) return null; // åpning til porten i vest
+                    return (
+                        <Instance
+                            key={i}
+                            position={[Math.cos(a) * 7.5, 0.28, Math.sin(a) * 7.5]}
+                            rotation={[0, -a, 0]}
+                        />
+                    );
+                })}
+            </Instances>
             <group position={[-7.5, 0, 0]}>
                 {[-0.8, 0.8].map((z) => (
                     <mesh key={z} position={[0, 1, z]}>
@@ -235,17 +323,21 @@ export function Valley({ gRef }: { gRef: GRef }) {
                     <meshStandardMaterial color="#1c1510" />
                 </mesh>
             </group>
-            {WORLD.crosses.map((c, i) => (
-                <group key={i} position={[c.x, 0, c.z]} rotation={[0, c.r, 0]}>
-                    <mesh position={[0, 0.45, 0]}>
-                        <boxGeometry args={[0.1, 0.9, 0.1]} />
-                        <meshStandardMaterial color="#3a2f26" />
-                    </mesh>
-                    <mesh position={[0, 0.65, 0]}>
-                        <boxGeometry args={[0.45, 0.09, 0.09]} />
-                        <meshStandardMaterial color="#3a2f26" />
-                    </mesh>
-                </group>
+            {(
+                [
+                    [0.45, [0.1, 0.9, 0.1]],
+                    [0.65, [0.45, 0.09, 0.09]],
+                ] as const
+            ).map(([y, size], k) => (
+                <Instances key={k} limit={WORLD.crosses.length}>
+                    <boxGeometry args={size as unknown as [number, number, number]} />
+                    <meshStandardMaterial color="#3a2f26" />
+                    {WORLD.crosses.map((c, i) => (
+                        <group key={i} position={[c.x, 0, c.z]} rotation={[0, c.r, 0]}>
+                            <Instance position={[0, y, 0]} />
+                        </group>
+                    ))}
+                </Instances>
             ))}
         </group>
     );
@@ -292,15 +384,40 @@ function House({ site, gRef }: { site: Site; gRef: GRef }) {
         const y = g.year;
         const grp = group.current;
         if (!grp) return;
-        const standing = y >= site.built && !(site.lost && y >= site.lost + 60 && !(site.rebuilt && y >= site.rebuilt));
+        const standing =
+            y >= site.built &&
+            !(site.lost && y >= site.lost + 60 && !(site.rebuilt && y >= site.rebuilt));
         const abandoned = !!site.lost && y >= site.lost && !(site.rebuilt && y >= site.rebuilt);
         const target = standing ? 1 : 0;
         grp.scale.y = THREE.MathUtils.lerp(grp.scale.y, target, 0.06);
         grp.visible = grp.scale.y > 0.02;
         // Et forlatt tun gråner og taket siger sammen.
-        if (roof.current) roof.current.rotation.z = THREE.MathUtils.lerp(roof.current.rotation.z, abandoned ? 0.25 : 0, 0.03);
-        if (wall.current) wall.current.color.lerp(new THREE.Color(abandoned ? '#77746c' : site.style === 'rodt' ? '#8e2b21' : site.style === 'hvitt' ? '#ece8df' : '#5a3f2a'), 0.05);
-        if (roofMat.current) roofMat.current.color.lerp(new THREE.Color(abandoned ? '#6b6a55' : site.style === 'hvitt' ? '#3a3f45' : '#56733a'), 0.05);
+        if (roof.current)
+            roof.current.rotation.z = THREE.MathUtils.lerp(
+                roof.current.rotation.z,
+                abandoned ? 0.25 : 0,
+                0.03
+            );
+        if (wall.current)
+            wall.current.color.lerp(
+                new THREE.Color(
+                    abandoned
+                        ? '#77746c'
+                        : site.style === 'rodt'
+                          ? '#8e2b21'
+                          : site.style === 'hvitt'
+                            ? '#ece8df'
+                            : '#5a3f2a'
+                ),
+                0.05
+            );
+        if (roofMat.current)
+            roofMat.current.color.lerp(
+                new THREE.Color(
+                    abandoned ? '#6b6a55' : site.style === 'hvitt' ? '#3a3f45' : '#56733a'
+                ),
+                0.05
+            );
         if (smoke.current) {
             const { winter } = seasonOf(g);
             smoke.current.visible = standing && !abandoned && winter;
@@ -321,23 +438,42 @@ function House({ site, gRef }: { site: Site; gRef: GRef }) {
                 </mesh>
                 <group ref={roof} position={[0, 2.2, 0]}>
                     {[-1, 1].map((s) => (
-                        <mesh key={s} position={[0, 0.45, s * 0.72]} rotation={[s * 0.62, 0, 0]} castShadow>
+                        <mesh
+                            key={s}
+                            position={[0, 0.45, s * 0.72]}
+                            rotation={[s * 0.62, 0, 0]}
+                            castShadow
+                        >
                             <boxGeometry args={[big ? 4.5 : 3.7, 0.22, big ? 1.95 : 1.75]} />
-                            <meshStandardMaterial ref={s === 1 ? roofMat : undefined} color="#56733a" roughness={1} />
+                            <meshStandardMaterial
+                                ref={s === 1 ? roofMat : undefined}
+                                color="#56733a"
+                                roughness={1}
+                            />
                         </mesh>
                     ))}
                 </group>
                 {/* vinduet lyser om kvelden */}
-                <mesh position={[0, 1.2, (big ? 1.41 : 1.21)]}>
+                <mesh position={[0, 1.2, big ? 1.41 : 1.21]}>
                     <planeGeometry args={[0.55, 0.5]} />
-                    <meshStandardMaterial color="#ffcf7a" emissive="#ffb347" emissiveIntensity={1.6} toneMapped={false} />
+                    <meshStandardMaterial
+                        color="#ffcf7a"
+                        emissive="#ffb347"
+                        emissiveIntensity={1.6}
+                        toneMapped={false}
+                    />
                 </mesh>
             </group>
             <group ref={smoke}>
                 {[0, 1, 2].map((i) => (
                     <mesh key={i}>
                         <sphereGeometry args={[1, 8, 6]} />
-                        <meshStandardMaterial color="#b9bcbc" transparent opacity={0.55} depthWrite={false} />
+                        <meshStandardMaterial
+                            color="#b9bcbc"
+                            transparent
+                            opacity={0.55}
+                            depthWrite={false}
+                        />
                     </mesh>
                 ))}
             </group>
@@ -353,7 +489,11 @@ function NewChurch({ gRef }: { gRef: GRef }) {
         const y = gRef.current.year;
         const k = THREE.MathUtils.clamp((y - 1862) / 6, 0, 1);
         if (body.current) {
-            body.current.scale.y = THREE.MathUtils.lerp(body.current.scale.y, Math.max(0.001, k), 0.1);
+            body.current.scale.y = THREE.MathUtils.lerp(
+                body.current.scale.y,
+                Math.max(0.001, k),
+                0.1
+            );
             body.current.visible = k > 0;
         }
         if (scaffold.current) scaffold.current.visible = y > 1860 && y < 1869;
@@ -366,7 +506,12 @@ function NewChurch({ gRef }: { gRef: GRef }) {
                     <meshStandardMaterial color="#f1eee6" roughness={0.8} />
                 </mesh>
                 {[-1, 1].map((s) => (
-                    <mesh key={s} position={[0, 5.05, s * 1.25]} rotation={[s * 0.7, 0, 0]} castShadow>
+                    <mesh
+                        key={s}
+                        position={[0, 5.05, s * 1.25]}
+                        rotation={[s * 0.7, 0, 0]}
+                        castShadow
+                    >
                         <boxGeometry args={[8.3, 0.2, 3.3]} />
                         <meshStandardMaterial color="#3d4248" roughness={0.8} />
                     </mesh>
@@ -382,7 +527,12 @@ function NewChurch({ gRef }: { gRef: GRef }) {
                 {[-2, 0, 2].map((x) => (
                     <mesh key={x} position={[x, 2.6, 2.31]}>
                         <planeGeometry args={[0.8, 1.6]} />
-                        <meshStandardMaterial color="#ffd89a" emissive="#ffb347" emissiveIntensity={0.9} toneMapped={false} />
+                        <meshStandardMaterial
+                            color="#ffd89a"
+                            emissive="#ffb347"
+                            emissiveIntensity={0.9}
+                            toneMapped={false}
+                        />
                     </mesh>
                 ))}
             </group>
@@ -422,7 +572,12 @@ function Modern({ gRef }: { gRef: GRef }) {
     const coats = ['#f2c233', '#d8412f', '#2f7fd8', '#48a860', '#f28c2a', '#9b59b6'];
     return (
         <group userData={{ sceneAuditIgnore: true }}>
-            <mesh ref={road} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.015, 13]} visible={false}>
+            <mesh
+                ref={road}
+                rotation={[-Math.PI / 2, 0, 0]}
+                position={[0, 0.015, 13]}
+                visible={false}
+            >
                 <planeGeometry args={[140, 2.6]} />
                 <meshStandardMaterial color="#4b4d50" roughness={0.6} />
             </mesh>
@@ -450,7 +605,10 @@ function Modern({ gRef }: { gRef: GRef }) {
                         {/* paraply - det regner jo */}
                         <mesh position={[0, 1.55, 0]}>
                             <coneGeometry args={[0.55, 0.3, 8]} />
-                            <meshStandardMaterial color={coats[(i + 2) % coats.length]} side={THREE.DoubleSide} />
+                            <meshStandardMaterial
+                                color={coats[(i + 2) % coats.length]}
+                                side={THREE.DoubleSide}
+                            />
                         </mesh>
                     </group>
                 ))}
@@ -496,21 +654,31 @@ export function Weather({ gRef }: { gRef: GRef }) {
         const { winter } = seasonOf(g);
         const storm = g.event?.id === 'storm';
         const dry = g.event?.id === 'tort';
-        if (winter !== state.winter || storm !== state.storm || dry !== state.dry) setState({ winter, storm, dry });
+        if (winter !== state.winter || storm !== state.storm || dry !== state.dry)
+            setState({ winter, storm, dry });
         if (bolt.current) bolt.current.visible = g.flashT > 0.35;
     });
     return (
         <group userData={{ sceneAuditIgnore: true }}>
-            {!state.dry && !state.winter && <Particles preset="rain" area={[40, 40]} center={[0, 0, 0]} height={18} seed={2} />}
-            {state.storm && <Particles preset="rain" area={[34, 34]} center={[-4, 0, 0]} height={18} seed={9} />}
-            {state.winter && <Particles preset="snow" area={[36, 36]} center={[0, 0, 0]} height={16} seed={4} />}
+            {!state.dry && !state.winter && (
+                <Particles preset="rain" area={[40, 40]} center={[0, 0, 0]} height={18} seed={2} />
+            )}
+            {state.storm && (
+                <Particles preset="rain" area={[34, 34]} center={[-4, 0, 0]} height={18} seed={9} />
+            )}
+            {state.winter && (
+                <Particles preset="snow" area={[36, 36]} center={[0, 0, 0]} height={16} seed={4} />
+            )}
             <group ref={bolt} visible={false}>
                 {boltPts.slice(0, -1).map((p, i) => {
                     const q = boltPts[i + 1];
                     const mid = p.clone().add(q).multiplyScalar(0.5);
                     const len = p.distanceTo(q);
                     const dir = q.clone().sub(p).normalize();
-                    const quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+                    const quat = new THREE.Quaternion().setFromUnitVectors(
+                        new THREE.Vector3(0, 1, 0),
+                        dir
+                    );
                     return (
                         <mesh key={i} position={mid} quaternion={quat}>
                             <cylinderGeometry args={[0.07, 0.07, len, 4]} />

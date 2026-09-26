@@ -69,7 +69,12 @@ function Link({
     return (
         <mesh position={position} quaternion={quaternion} castShadow>
             <cylinderGeometry args={[radius, radius, length, 10]} />
-            <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.25} roughness={0.5} />
+            <meshStandardMaterial
+                color={color}
+                emissive={color}
+                emissiveIntensity={0.25}
+                roughness={0.5}
+            />
         </mesh>
     );
 }
@@ -138,7 +143,13 @@ export const Connector: React.FC<ConnectorProps> = ({
                 if (!a || !b) return null;
                 const color = correct ? (c.valid ? '#10b981' : '#f43f5e') : '#0ea5e9';
                 return (
-                    <Link key={i} from={a.position} to={b.position} color={color} radius={linkRadius} />
+                    <Link
+                        key={i}
+                        from={a.position}
+                        to={b.position}
+                        color={color}
+                        radius={linkRadius}
+                    />
                 );
             })}
 

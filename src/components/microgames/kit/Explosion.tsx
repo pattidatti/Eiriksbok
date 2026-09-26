@@ -12,9 +12,30 @@ import { Burst } from './Burst';
 //   {hits.map((h) => <Explosion key={h.id} x={h.x} z={h.z} />)}
 
 const PALETTES = {
-    fire: { glow: '#ff6020', glowEmissive: '#ff3000', ring: '#cc4400', ringEmissive: '#882200', smoke: '#3e3e3e', burst: '#cc4400' },
-    dust: { glow: '#c9b48a', glowEmissive: '#a08050', ring: '#a89467', ringEmissive: '#6a5a38', smoke: '#8a7d64', burst: '#b0a080' },
-    spark: { glow: '#9fd8ff', glowEmissive: '#40a0ff', ring: '#70b8ee', ringEmissive: '#2060aa', smoke: '#5a6a7a', burst: '#8fccff' },
+    fire: {
+        glow: '#ff6020',
+        glowEmissive: '#ff3000',
+        ring: '#cc4400',
+        ringEmissive: '#882200',
+        smoke: '#3e3e3e',
+        burst: '#cc4400',
+    },
+    dust: {
+        glow: '#c9b48a',
+        glowEmissive: '#a08050',
+        ring: '#a89467',
+        ringEmissive: '#6a5a38',
+        smoke: '#8a7d64',
+        burst: '#b0a080',
+    },
+    spark: {
+        glow: '#9fd8ff',
+        glowEmissive: '#40a0ff',
+        ring: '#70b8ee',
+        ringEmissive: '#2060aa',
+        smoke: '#5a6a7a',
+        burst: '#8fccff',
+    },
 } as const;
 
 export function Explosion({

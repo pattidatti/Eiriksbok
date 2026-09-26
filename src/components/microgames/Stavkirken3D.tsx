@@ -828,6 +828,7 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                     label="Regnet i Lærdal - hold stavkirka tett"
                 >
                     <MicroCanvas
+                        postprocessing
                         camera={{
                             position: CAM_HOME.toArray() as [number, number, number],
                             fov: 44,

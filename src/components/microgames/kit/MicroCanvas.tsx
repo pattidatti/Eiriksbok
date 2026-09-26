@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, PerformanceMonitor, ContactShadows } from '@react-three/drei';
 import { useReducedMotion } from 'framer-motion';
 import * as THREE from 'three';
+import { budgetDpr } from './pixelBudget';
+import { QUALITY, QualityContext, guessTier, stepTier, type QualityTier } from './quality';
 
 // Standardisert R3F-Canvas for mikrospill. Kapsler lyssetting, skygger, fog,
 // bakgrunn og en trygg OrbitControls-preset slik at ALLE mikrospill får samme
@@ -38,12 +40,60 @@ interface LightMoodCfg {
 }
 
 const LIGHT_MOODS: Record<LightMood, LightMoodCfg> = {
-    day: { sun: [10, 16, 8], sunColor: '#ffffff', sunIntensity: 1.15, ambient: 0.62, hemiSky: '#fff3d6', hemiGround: '#5a7045', hemiIntensity: 0.4 },
-    overcast: { sun: [6, 18, 6], sunColor: '#eef2f4', sunIntensity: 0.6, ambient: 0.9, hemiSky: '#dfe6ea', hemiGround: '#6a6a5a', hemiIntensity: 0.55 },
-    golden: { sun: [16, 8, 10], sunColor: '#ffc98a', sunIntensity: 1.3, ambient: 0.55, hemiSky: '#ffe6c0', hemiGround: '#6a5a40', hemiIntensity: 0.45 },
-    noon: { sun: [2, 22, 3], sunColor: '#fffaf0', sunIntensity: 1.5, ambient: 0.5, hemiSky: '#fff6e0', hemiGround: '#5a6a45', hemiIntensity: 0.35 },
-    twilight: { sun: [14, 6, 9], sunColor: '#ffb27a', sunIntensity: 0.85, ambient: 0.7, hemiSky: '#f3d2c0', hemiGround: '#5a5570', hemiIntensity: 0.5 },
-    arctic: { sun: [10, 15, 8], sunColor: '#eaf2ff', sunIntensity: 1.15, ambient: 0.85, hemiSky: '#eaf4ff', hemiGround: '#8a98a4', hemiIntensity: 0.5 },
+    day: {
+        sun: [10, 16, 8],
+        sunColor: '#ffffff',
+        sunIntensity: 1.15,
+        ambient: 0.62,
+        hemiSky: '#fff3d6',
+        hemiGround: '#5a7045',
+        hemiIntensity: 0.4,
+    },
+    overcast: {
+        sun: [6, 18, 6],
+        sunColor: '#eef2f4',
+        sunIntensity: 0.6,
+        ambient: 0.9,
+        hemiSky: '#dfe6ea',
+        hemiGround: '#6a6a5a',
+        hemiIntensity: 0.55,
+    },
+    golden: {
+        sun: [16, 8, 10],
+        sunColor: '#ffc98a',
+        sunIntensity: 1.3,
+        ambient: 0.55,
+        hemiSky: '#ffe6c0',
+        hemiGround: '#6a5a40',
+        hemiIntensity: 0.45,
+    },
+    noon: {
+        sun: [2, 22, 3],
+        sunColor: '#fffaf0',
+        sunIntensity: 1.5,
+        ambient: 0.5,
+        hemiSky: '#fff6e0',
+        hemiGround: '#5a6a45',
+        hemiIntensity: 0.35,
+    },
+    twilight: {
+        sun: [14, 6, 9],
+        sunColor: '#ffb27a',
+        sunIntensity: 0.85,
+        ambient: 0.7,
+        hemiSky: '#f3d2c0',
+        hemiGround: '#5a5570',
+        hemiIntensity: 0.5,
+    },
+    arctic: {
+        sun: [10, 15, 8],
+        sunColor: '#eaf2ff',
+        sunIntensity: 1.15,
+        ambient: 0.85,
+        hemiSky: '#eaf4ff',
+        hemiGround: '#8a98a4',
+        hemiIntensity: 0.5,
+    },
 };
 
 export interface MicroCanvasProps {
@@ -77,6 +127,9 @@ export interface MicroCanvasProps {
     // Sett false når spillet har egen lyssetting (døgn, årstider, storm) - da
     // tegnes ikke kitets ambient/hemisfære/sol, og lyset blir ikke dobbelt.
     builtInLights?: boolean;
+    // Sett true når spillet bruker KitEffects (bloom/vignett): da slås lerretets
+    // kantutjevning av, fordi scenen uansett tegnes i composerens eget mål.
+    postprocessing?: boolean;
     // Myk kontaktskygge under scenen - billig dybde/forankring. Sett false for å slå av.
     contactShadows?: boolean;
     // Y-nivå for kontaktskyggen (vanligvis bakkenivå 0).
@@ -99,6 +152,79 @@ function StaticCameraAim({ target }: { target: [number, number, number] }) {
 // stedet den vertikale FOV-en så bredden alltid ser minst det den gjorde ved 4:3:
 // samme innramming i bredden, mer himmel og bakke i høyden.
 const REF_ASPECT = 4 / 3;
+
+/**
+ * Setter skyggekartets størrelse på alle lys som kaster skygge, etter kvalitetsnivået.
+ * Spillene setter gjerne shadow-mapSize selv; her overstyres det, så en Chromebook
+ * aldri tegner et 2048-kart. Kjører når nivået endres og like etter første bilde.
+ */
+function ShadowGovernor({ size, every }: { size: number; every: number }) {
+    const get = useThree((s) => s.get);
+    // Skyggepasset tegner alle skyggekastere en gang til. På svake maskiner tegnes
+    // det bare hvert N-te bilde - skygger flytter seg sakte, forskjellen ses ikke.
+    const n = useRef(0);
+    useEffect(() => {
+        const sm = get().gl.shadowMap;
+        sm.autoUpdate = every <= 1;
+        sm.needsUpdate = true;
+        return () => {
+            sm.autoUpdate = true;
+        };
+    }, [get, every]);
+    useFrame((state) => {
+        if (every <= 1) return;
+        n.current = (n.current + 1) % every;
+        if (n.current === 0) state.gl.shadowMap.needsUpdate = true;
+    });
+    useEffect(() => {
+        const apply = () => {
+            get().scene.traverse((o) => {
+                const l = o as THREE.DirectionalLight;
+                if (!l.isLight || !l.castShadow || !l.shadow) return;
+                if (l.shadow.mapSize.x === size) return;
+                l.shadow.mapSize.set(size, size);
+                l.shadow.map?.dispose();
+                l.shadow.map = null;
+            });
+        };
+        apply();
+        const t = window.setTimeout(apply, 500);
+        return () => window.clearTimeout(t);
+    }, [get, size]);
+    return null;
+}
+
+/** DEV: draw calls og trekanter per bilde, for Chromebook-porten i selvspillet. */
+function RenderInfoProbe() {
+    const get = useThree((s) => s.get);
+    useEffect(() => {
+        const info = get().gl.info;
+        info.autoReset = false;
+        return () => {
+            info.autoReset = true;
+        };
+    }, [get]);
+    useFrame((state) => {
+        const info = state.gl.info;
+        const last = { calls: info.render.calls, triangles: info.render.triangles };
+        const w = window as unknown as Record<string, unknown>;
+        w.__mgRenderInfo = () => last;
+        w.__mgScene = state.scene;
+        info.reset();
+    }, -1000);
+    return null;
+}
+
+/** Setter dpr ut fra vinduets størrelse og pikselbudsjettet (se pixelBudget.ts). */
+function DprGovernor({ budget }: { budget: number }) {
+    const setDpr = useThree((s) => s.setDpr);
+    const width = useThree((s) => s.size.width);
+    const height = useThree((s) => s.size.height);
+    useEffect(() => {
+        setDpr(budgetDpr(width, height, budget));
+    }, [setDpr, width, height, budget]);
+    return null;
+}
 function FovGuard({ baseFov }: { baseFov: number }) {
     const get = useThree((s) => s.get);
     const width = useThree((s) => s.size.width);
@@ -109,9 +235,7 @@ function FovGuard({ baseFov }: { baseFov: number }) {
         const aspect = width / height;
         const base = THREE.MathUtils.degToRad(baseFov);
         const fov =
-            aspect < REF_ASPECT
-                ? 2 * Math.atan((Math.tan(base / 2) * REF_ASPECT) / aspect)
-                : base;
+            aspect < REF_ASPECT ? 2 * Math.atan((Math.tan(base / 2) * REF_ASPECT) / aspect) : base;
         camera.fov = THREE.MathUtils.radToDeg(fov);
         camera.updateProjectionMatrix();
     }, [get, width, height, baseFov]);
@@ -184,8 +308,7 @@ function SceneAuditProbe() {
                                 model.min.y + ((model.max.y - model.min.y) * iy) / 2,
                                 model.min.z + ((model.max.z - model.min.z) * iz) / 2
                             ).project(camera);
-                            if (p.z < 1 && Math.abs(p.x) <= 1.1 && Math.abs(p.y) <= 1.1)
-                                inside++;
+                            if (p.z < 1 && Math.abs(p.x) <= 1.1 && Math.abs(p.y) <= 1.1) inside++;
                         }
                 const visibleFrac = inside / 27;
                 (window as unknown as { __microSceneAuditDebug?: unknown }).__microSceneAuditDebug =
@@ -230,6 +353,7 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
     ambientIntensity,
     controls = true,
     builtInLights = true,
+    postprocessing = false,
     contactShadows = true,
     shadowY = 0,
 }) => {
@@ -239,11 +363,22 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
     const sunPos = sunPosition ?? mood.sun;
     const sunInt = sunIntensity ?? mood.sunIntensity;
     const ambInt = ambientIntensity ?? mood.ambient;
-    // Reduserer oppløsning automatisk hvis bildeflyten faller (svake Chromebooks),
-    // og hever den igjen når det er rom. Starter på 1 - den billigste - og lar
-    // PerformanceMonitor klatre til maks 1.5 først når maskinen viser at den
-    // tåler det. (Tidligere [1, 2] ga en startspike som veltet billige maskiner.)
-    const [dpr, setDpr] = useState<number | [number, number]>(1);
+    // Oppløsningen følger et pikselbudsjett (se pixelBudget.ts), ikke en fast dpr:
+    // fullskjerm på en tett skjerm skal ikke koste fem ganger så mye som spalten.
+    // PerformanceMonitor flytter budsjettet ned når bildeflyten faller og opp når
+    // maskinen har margin. (Tidligere fast dpr 1-1,5: greit i spalten, men i
+    // fullskjerm på en XPS 14 ble det rundt 3 millioner piksler per bilde.)
+    // Kvalitetsnivået (kit/quality.ts) styrer budsjettet, skyggekart, kontaktskygge,
+    // bloom og partikler. Gjettes fra maskinvaren, justeres etter målt bildeflyt -
+    // men aldri mer enn ett hakk over gjetningen.
+    const [guess] = useState(() => guessTier());
+    const [tier, setTier] = useState<QualityTier>(guess.tier);
+    const ceiling = stepTier(guess.tier, 1, 'hoy');
+    const q = QUALITY[tier];
+    useEffect(() => {
+        if (import.meta.env.DEV)
+            (window as unknown as Record<string, unknown>).__mgQuality = { tier, gpu: guess.gpu };
+    }, [tier, guess.gpu]);
     // Respekter prefers-reduced-motion: ingen auto-rotasjon for de som ber om ro.
     const reduce = useReducedMotion();
 
@@ -251,7 +386,9 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
     // stedet for å ignorere proppen stille.
     useEffect(() => {
         if (import.meta.env.DEV && !controls && idle) {
-            console.warn('[kit/MicroCanvas] idle (auto-rotasjon) krever controls: true - ignoreres.');
+            console.warn(
+                '[kit/MicroCanvas] idle (auto-rotasjon) krever controls: true - ignoreres.'
+            );
         }
     }, [controls, idle]);
 
@@ -277,19 +414,24 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
         <div ref={wrapRef} style={{ width: '100%', height: '100%' }}>
             <Canvas
                 camera={{ position: camera.position ?? [13, 9.5, 13], fov: camera.fov ?? 38 }}
-                gl={{ antialias: true }}
-                dpr={dpr}
+                // Med etterbehandling (KitEffects) tegnes scenen i composerens eget
+                // mål uten multisampling - kantutjevning på lerretet er da bortkastet.
+                gl={{ antialias: !postprocessing, powerPreference: 'high-performance' }}
+                dpr={1}
                 // 'always' mens synlig, 'never' fryser loopen uten å rive ned
                 // konteksten - tilstand og siste frame beholdes.
                 frameloop={active ? 'always' : 'never'}
                 shadows
             >
                 <FovGuard baseFov={camera.fov ?? 38} />
+                <DprGovernor budget={q.pixelBudget} />
+                <ShadowGovernor size={q.shadowMapSize} every={q.shadowEvery} />
+                {import.meta.env.DEV && <RenderInfoProbe />}
                 <PerformanceMonitor
-                    onDecline={() => setDpr(1)}
-                    onIncline={() => setDpr([1, 1.5])}
+                    onDecline={() => setTier((t) => stepTier(t, -1, ceiling))}
+                    onIncline={() => setTier((t) => stepTier(t, 1, ceiling))}
                     flipflops={3}
-                    onFallback={() => setDpr(1)}
+                    onFallback={() => setTier('lav')}
                 />
                 <color attach="background" args={[background]} />
                 {fog && <fog attach="fog" args={[fogColor, fog.near, fog.far]} />}
@@ -297,7 +439,9 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
                 {builtInLights && (
                     <>
                         <ambientLight intensity={ambInt} />
-                        <hemisphereLight args={[mood.hemiSky, mood.hemiGround, mood.hemiIntensity]} />
+                        <hemisphereLight
+                            args={[mood.hemiSky, mood.hemiGround, mood.hemiIntensity]}
+                        />
                         <directionalLight
                             position={sunPos}
                             intensity={sunInt}
@@ -312,10 +456,13 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
                     </>
                 )}
 
-                {children}
+                <QualityContext.Provider value={q}>{children}</QualityContext.Provider>
 
-                {contactShadows && (
+                {/* Kontaktskyggen tegner hele scenen en ekstra gang - av på lav, tegnet én gang på middels. */}
+                {contactShadows && q.contactShadows !== 'av' && (
                     <ContactShadows
+                        key={q.contactShadows}
+                        frames={q.contactShadows === 'statisk' ? 1 : Infinity}
                         position={[0, shadowY + 0.01, 0]}
                         opacity={0.38}
                         scale={42}

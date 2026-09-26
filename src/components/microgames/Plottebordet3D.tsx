@@ -821,6 +821,7 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                     label="Plottebordet - send skvadronene mot raidene radaren ser"
                 >
                     <MicroCanvas
+                        postprocessing
                         camera={{
                             position: CAM_HOME.toArray() as [number, number, number],
                             fov: 42,

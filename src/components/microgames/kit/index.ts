@@ -75,14 +75,7 @@ export { PovCamera, AimPlane } from './PovCamera';
 export { Mover, type MoverState } from './Mover';
 export { useWaveFlow } from './useWaveFlow';
 export { useCrosshair } from './useCrosshair';
-export {
-    Crosshair,
-    ScreenFlash,
-    DangerVignette,
-    TimerPill,
-    MeterBar,
-    LoseScreen,
-} from './action';
+export { Crosshair, ScreenFlash, DangerVignette, TimerPill, MeterBar, LoseScreen } from './action';
 
 // Lyd & kamera (immersjon)
 export { microSfx, type StepSoundEvent } from './sound';
@@ -117,3 +110,5 @@ export {
     type Tool,
 } from './controls';
 export { crispCanvas, crispScale, type CrispCanvas } from './crispText';
+export { useQuality, QUALITY, type QualityTier, type QualitySettings } from './quality';
+export { mergeParts, type Part } from './mergeParts';

@@ -739,6 +739,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
             <div className="p-2">
                 <ArcadeStage theme={THEME} background={SKY} label="Løp med lønna - Berlin 1923">
                     <MicroCanvas
+                        postprocessing
                         camera={{
                             position: CAM_HOME.toArray() as [number, number, number],
                             fov: 52,

@@ -72,10 +72,7 @@ export const Draggable: React.FC<DraggableProps> = ({
     const [dragging, setDragging] = useState(false);
     // Bumpes ved hvert slipp for å avfyre treff-partikkelen (Impact) på stedet.
     const [fxTrigger, setFxTrigger] = useState(0);
-    const plane = useMemo(
-        () => new THREE.Plane(new THREE.Vector3(0, 1, 0), -planeY),
-        [planeY]
-    );
+    const plane = useMemo(() => new THREE.Plane(new THREE.Vector3(0, 1, 0), -planeY), [planeY]);
     const hit = useMemo(() => new THREE.Vector3(), []);
     const start = useMemo(
         () => new THREE.Vector3(position[0], position[1], position[2]),

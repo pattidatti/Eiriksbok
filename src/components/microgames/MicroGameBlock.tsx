@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { getMicroGame } from './registry';
 import { MicroGameEmbedProvider } from './MicroGameFrame';
 import { MicroGameLauncher } from './MicroGameLauncher';
+import { MicroGameIntro } from './MicroGameIntro';
 import type { MicroGameEntry, MicroGameProps, MicroGameResult } from './types';
 import { useProgressStore } from '../../features/progress/useProgressStore';
 
@@ -36,11 +37,22 @@ function prefetchGame(entry: MicroGameEntry): Promise<unknown> {
 // eleven faktisk blir stående ved spillet, og aldri med «spar data» eller 2G.
 const DWELL_MS = 2500;
 function connectionAllowsPrefetch(): boolean {
-    const c = (navigator as Navigator & {
-        connection?: { saveData?: boolean; effectiveType?: string };
-    }).connection;
+    const c = (
+        navigator as Navigator & {
+            connection?: { saveData?: boolean; effectiveType?: string };
+        }
+    ).connection;
     if (!c) return true;
     return !c.saveData && !/(^|-)2g$/.test(c.effectiveType ?? '');
+}
+
+/** Sier fra når spillmodulen er lastet og spillet er montert (etter Suspense). */
+function MountSignal({ onMount }: { onMount: () => void }) {
+    const cb = React.useRef(onMount);
+    React.useEffect(() => {
+        cb.current();
+    }, []);
+    return null;
 }
 
 interface MicroGameBlockProps {
@@ -70,7 +82,8 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
     const [nativeFs, setNativeFs] = React.useState(false);
     const [pseudoFs, setPseudoFs] = React.useState(false);
     React.useEffect(() => {
-        const onChange = () => setNativeFs(!!rootRef.current && document.fullscreenElement === rootRef.current);
+        const onChange = () =>
+            setNativeFs(!!rootRef.current && document.fullscreenElement === rootRef.current);
         document.addEventListener('fullscreenchange', onChange);
         return () => document.removeEventListener('fullscreenchange', onChange);
     }, []);
@@ -98,12 +111,26 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
             el.requestFullscreen({ navigationUI: 'hide' })
                 .then(() => {
                     // Mobil: prøv å legge skjermen ned. Går det ikke, går det ikke.
-                    const o = screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> };
+                    const o = screen.orientation as ScreenOrientation & {
+                        lock?: (o: string) => Promise<void>;
+                    };
                     o?.lock?.('landscape').catch(() => {});
                 })
                 .catch(() => setPseudoFs(true));
         } else setPseudoFs(true);
     }, []);
+    // Innflygingen: plakaten vokser fra kortet til hele skjermen mens spillet
+    // gjøres klart bak den (se MicroGameIntro). (Må stå før early return.)
+    const [intro, setIntro] = React.useState<{ from: DOMRect | null } | null>(null);
+    const [gameReady, setGameReady] = React.useState(false);
+    const launch = React.useCallback(
+        (from?: DOMRect) => {
+            setIntro({ from: from ?? null });
+            setGameReady(false);
+            enterFullscreen();
+        },
+        [enterFullscreen]
+    );
     const exitFullscreen = React.useCallback(() => {
         setPseudoFs(false);
         if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
@@ -171,9 +198,9 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
 
     // Vent på modulen før vi bytter, så kortet står med «Laster» på plass i
     // stedet for å blinke over til en tynn loader. Oftest er den hentet allerede.
-    const start = () => {
+    const start = (from?: DOMRect) => {
         if (starting) return;
-        enterFullscreen();
+        launch(from);
         setStarting(true);
         void prefetchGame(entry).finally(() => setStarted(true));
     };
@@ -192,6 +219,8 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
         <MicroGameLauncher
             title={entry.title}
             estimatedSeconds={entry.estimatedSeconds}
+            hook={entry.hook}
+            cover={entry.cover}
             loading={loading}
             inView={inView}
             onStart={start}
@@ -200,7 +229,11 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
         />
     );
     return (
-        <div className={`my-6${pseudoFs ? ' mg-pseudo-fs' : ''}`} data-microgame={gameId} ref={rootRef}>
+        <div
+            className={`my-6${pseudoFs ? ' mg-pseudo-fs' : ''}`}
+            data-microgame={gameId}
+            ref={rootRef}
+        >
             {!started ? (
                 launcher(starting)
             ) : (
@@ -209,6 +242,14 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
                         collapsible: true,
                         defaultOpen: true,
                         estimatedSeconds: entry.estimatedSeconds,
+                        hook: entry.hook,
+                        cover: entry.cover,
+                        // Åpnet igjen fra kortet i rammen: samme innflyging. Spillet
+                        // monteres på nytt med én gang, så det er klart straks.
+                        launch: (from?: DOMRect) => {
+                            launch(from);
+                            window.setTimeout(() => setGameReady(true), 60);
+                        },
                         fullscreen: {
                             active: nativeFs || pseudoFs,
                             enter: enterFullscreen,
@@ -223,8 +264,19 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
                             {...(rest as Partial<MicroGameProps>)}
                             onComplete={handleComplete}
                         />
+                        <MountSignal onMount={() => setGameReady(true)} />
                     </Suspense>
                 </MicroGameEmbedProvider>
+            )}
+            {intro && (
+                <MicroGameIntro
+                    from={intro.from}
+                    title={entry.title}
+                    hook={entry.hook}
+                    cover={entry.cover}
+                    ready={gameReady}
+                    onDone={() => setIntro(null)}
+                />
             )}
         </div>
     );

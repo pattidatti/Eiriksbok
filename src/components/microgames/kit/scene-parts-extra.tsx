@@ -46,14 +46,27 @@ function Hat({ kind, color, skin }: { kind: HeadGear; color: string; skin: strin
                 <group position={[0, 0.95, 0]}>
                     <mesh castShadow>
                         <cylinderGeometry args={[0.15, 0.15, 0.07, 8, 1, true]} />
-                        <meshStandardMaterial color="#e3b23c" metalness={0.6} roughness={0.3} side={THREE.DoubleSide} />
+                        <meshStandardMaterial
+                            color="#e3b23c"
+                            metalness={0.6}
+                            roughness={0.3}
+                            side={THREE.DoubleSide}
+                        />
                     </mesh>
                     {[0, 1, 2, 3].map((i) => {
                         const a = (i / 4) * Math.PI * 2;
                         return (
-                            <mesh key={i} position={[Math.cos(a) * 0.14, 0.06, Math.sin(a) * 0.14]} castShadow>
+                            <mesh
+                                key={i}
+                                position={[Math.cos(a) * 0.14, 0.06, Math.sin(a) * 0.14]}
+                                castShadow
+                            >
                                 <coneGeometry args={[0.03, 0.08, 5]} />
-                                <meshStandardMaterial color="#e3b23c" metalness={0.6} roughness={0.3} />
+                                <meshStandardMaterial
+                                    color="#e3b23c"
+                                    metalness={0.6}
+                                    roughness={0.3}
+                                />
                             </mesh>
                         );
                     })}
@@ -105,11 +118,19 @@ export function Person({
         <group position={position} rotation={rotation} scale={scale}>
             <group position={[0, yLift, 0]}>
                 {/* Bein */}
-                <mesh position={[-0.08, 0.16, 0]} rotation={[sit ? -1.3 : legSwing, 0, 0]} castShadow>
+                <mesh
+                    position={[-0.08, 0.16, 0]}
+                    rotation={[sit ? -1.3 : legSwing, 0, 0]}
+                    castShadow
+                >
                     <boxGeometry args={[0.1, 0.34, 0.1]} />
                     <meshStandardMaterial color={legs} roughness={0.9} />
                 </mesh>
-                <mesh position={[0.08, 0.16, 0]} rotation={[sit ? -1.3 : -legSwing, 0, 0]} castShadow>
+                <mesh
+                    position={[0.08, 0.16, 0]}
+                    rotation={[sit ? -1.3 : -legSwing, 0, 0]}
+                    castShadow
+                >
                     <boxGeometry args={[0.1, 0.34, 0.1]} />
                     <meshStandardMaterial color={legs} roughness={0.9} />
                 </mesh>
@@ -119,11 +140,19 @@ export function Person({
                     <meshStandardMaterial color={body} roughness={0.88} />
                 </mesh>
                 {/* Armer */}
-                <mesh position={[-0.19, 0.56, 0]} rotation={[raise ? -2.6 : armSwing, 0, -0.12]} castShadow>
+                <mesh
+                    position={[-0.19, 0.56, 0]}
+                    rotation={[raise ? -2.6 : armSwing, 0, -0.12]}
+                    castShadow
+                >
                     <boxGeometry args={[0.08, 0.34, 0.08]} />
                     <meshStandardMaterial color={body} roughness={0.88} />
                 </mesh>
-                <mesh position={[0.19, 0.56, 0]} rotation={[raise ? 0.2 : -armSwing, 0, 0.12]} castShadow>
+                <mesh
+                    position={[0.19, 0.56, 0]}
+                    rotation={[raise ? 0.2 : -armSwing, 0, 0.12]}
+                    castShadow
+                >
                     <boxGeometry args={[0.08, 0.34, 0.08]} />
                     <meshStandardMaterial color={body} roughness={0.88} />
                 </mesh>
@@ -252,7 +281,12 @@ export function Arch({
     return (
         <group position={position} rotation={rotation}>
             {[-1, 1].map((s) => (
-                <mesh key={s} position={[(s * (width - pillar)) / 2, height / 2, 0]} castShadow receiveShadow>
+                <mesh
+                    key={s}
+                    position={[(s * (width - pillar)) / 2, height / 2, 0]}
+                    castShadow
+                    receiveShadow
+                >
                     <boxGeometry args={[pillar, height, pillar]} />
                     <meshStandardMaterial color={color} roughness={0.9} />
                 </mesh>
@@ -324,7 +358,12 @@ export function Cart({
                 </mesh>
             ))}
             {[-0.5, 0.5].map((x) => (
-                <mesh key={`b${x}`} position={[x, 0.26, -0.45]} rotation={[Math.PI / 2, 0, 0]} castShadow>
+                <mesh
+                    key={`b${x}`}
+                    position={[x, 0.26, -0.45]}
+                    rotation={[Math.PI / 2, 0, 0]}
+                    castShadow
+                >
                     <cylinderGeometry args={[0.26, 0.26, 0.1, 12]} />
                     <meshStandardMaterial color={wheel} roughness={0.85} />
                 </mesh>
@@ -383,7 +422,11 @@ export function Boat({
     });
     const rot = rotation ?? (heading !== undefined ? [0, heading, 0] : undefined);
     return (
-        <group ref={group} position={position} rotation={rot as [number, number, number] | undefined}>
+        <group
+            ref={group}
+            position={position}
+            rotation={rot as [number, number, number] | undefined}
+        >
             {/* Skroget ligger langs Z (baug mot +Z, radius 0.5 - akterenden er smalere).
                 Lukket sylinder, ikke åpen halvskål: et åpent skrog stikker under det
                 ugjennomsiktige vannplanet og ser "vannfylt" ut ovenfra. Senter ved
@@ -405,7 +448,11 @@ export function Boat({
                     </mesh>
                     <mesh position={[0, 1, 0]} castShadow>
                         <planeGeometry args={[1, 1.1]} />
-                        <meshStandardMaterial color={sail} roughness={0.85} side={THREE.DoubleSide} />
+                        <meshStandardMaterial
+                            color={sail}
+                            roughness={0.85}
+                            side={THREE.DoubleSide}
+                        />
                     </mesh>
                 </group>
             )}
@@ -437,13 +484,22 @@ export function Animal({
                 <meshStandardMaterial color={col} roughness={0.92} flatShading />
             </mesh>
             {/* Hode + hals */}
-            <mesh position={[bodyLen / 2 + 0.05, legH + 0.45, 0]} rotation={[0, 0, -0.5]} castShadow>
+            <mesh
+                position={[bodyLen / 2 + 0.05, legH + 0.45, 0]}
+                rotation={[0, 0, -0.5]}
+                castShadow
+            >
                 <boxGeometry args={[0.34, 0.26, 0.26]} />
                 <meshStandardMaterial color={col} roughness={0.92} flatShading />
             </mesh>
             {kind === 'ox' &&
                 [-1, 1].map((s) => (
-                    <mesh key={s} position={[bodyLen / 2 + 0.2, legH + 0.6, s * 0.1]} rotation={[0, 0, 0.6]} castShadow>
+                    <mesh
+                        key={s}
+                        position={[bodyLen / 2 + 0.2, legH + 0.6, s * 0.1]}
+                        rotation={[0, 0, 0.6]}
+                        castShadow
+                    >
                         <coneGeometry args={[0.03, 0.18, 5]} />
                         <meshStandardMaterial color="#d8cbb0" roughness={0.7} />
                     </mesh>
@@ -506,9 +562,18 @@ export function Torch({
                 <>
                     <mesh position={[0, height + 0.12, 0]}>
                         <sphereGeometry args={[0.13, 8, 8]} />
-                        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={2.2} />
+                        <meshStandardMaterial
+                            color={color}
+                            emissive={color}
+                            emissiveIntensity={2.2}
+                        />
                     </mesh>
-                    <pointLight color={color} intensity={1.6} distance={5} position={[0, height + 0.12, 0]} />
+                    <pointLight
+                        color={color}
+                        intensity={1.6}
+                        distance={5}
+                        position={[0, height + 0.12, 0]}
+                    />
                 </>
             )}
         </group>
@@ -578,7 +643,12 @@ export function Hill({
 }) {
     const rough = rng(seed)() * 0.3 + 0.85;
     return (
-        <mesh position={position} scale={[1, (height / radius) * rough, 1]} castShadow receiveShadow>
+        <mesh
+            position={position}
+            scale={[1, (height / radius) * rough, 1]}
+            castShadow
+            receiveShadow
+        >
             <icosahedronGeometry args={[radius, 1]} />
             <meshStandardMaterial color={color} roughness={1} flatShading />
         </mesh>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PerformanceMonitor } from '@react-three/drei';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
+import { useQuality } from './quality';
 
 // Etterbehandling for 3D-mikrospill: ekte glød (bloom) på ild, lykter, lyn og
 // alt annet som er lysere enn resten av bildet, pluss en myk vignett.
@@ -29,6 +30,9 @@ export function KitEffects({
     vignette = true,
 }: KitEffectsProps) {
     const [on, setOn] = useState(true);
+    // Etterbehandlingen er det første som ryker på en svak maskin (kit/quality.ts).
+    const q = useQuality();
+    if (!q.bloom) return null;
     return (
         <>
             <PerformanceMonitor onDecline={() => setOn(false)} flipflops={1} />
@@ -37,6 +41,9 @@ export function KitEffects({
                     {/* EffectComposer tåler ikke betingede barn - vi skrur av med styrke 0 i stedet. */}
                     <Bloom
                         mipmapBlur
+                        // Gløden er myk uansett - halv oppløsning er usynlig og sparer
+                        // mye i fullskjerm (se pixelBudget.ts).
+                        resolutionScale={0.5}
                         intensity={bloom ? bloomIntensity : 0}
                         luminanceThreshold={bloomThreshold}
                         luminanceSmoothing={0.2}
