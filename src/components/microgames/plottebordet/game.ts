@@ -322,7 +322,7 @@ function raidSize(day: number) {
 function spawnInterval(day: number) {
     if (day < 5) return rnd(5.4, 6.6);
     if (day < 11) return rnd(4.4, 5.4);
-    if (day < 25) return rnd(3.5, 4.3);
+    if (day < 25) return rnd(3.8, 4.6);
     if (day < 33) return rnd(4.4, 5.4);
     return rnd(5.5, 7);
 }
@@ -414,7 +414,7 @@ function bomb(g: G, r: Raid, io: IO) {
     if (g.squadrons.some((q) => q.order?.kind === 'raid' && q.order.id === r.id)) g.lateHits += 1;
     if (r.target.kind === 'base') {
         const i = r.target.idx;
-        g.meter += 13 * k;
+        g.meter += 11.5 * k;
         g.crater[i] = CRATER_S;
         const q = g.squadrons[i];
         if (q.state === 'klar' || q.state === 'tanker') {
