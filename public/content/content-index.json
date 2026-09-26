@@ -1,5 +1,5 @@
 {
-  "buildId": 36371171626394,
+  "buildId": 260292140947859,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2061,6 +2061,9 @@
     ],
     "slaget-om-stalingrad": [
       "content/historie/andre-verdenskrig/slaget-om-stalingrad.json"
+    ],
+    "slaget-om-storbritannia": [
+      "content/historie/andre-verdenskrig/slaget-om-storbritannia.json"
     ],
     "andre-verdenskrig-teknologi": [
       "content/historie/andre-verdenskrig/teknologi.json"
@@ -5510,6 +5513,7 @@
     "historie/andre-verdenskrig/norge-under-okkupasjonen": "content/historie/andre-verdenskrig/norge-under-okkupasjonen.json",
     "historie/andre-verdenskrig/oversikt": "content/historie/andre-verdenskrig/oversikt.json",
     "historie/andre-verdenskrig/slaget-om-stalingrad": "content/historie/andre-verdenskrig/slaget-om-stalingrad.json",
+    "historie/andre-verdenskrig/slaget-om-storbritannia": "content/historie/andre-verdenskrig/slaget-om-storbritannia.json",
     "historie/andre-verdenskrig/teknologi": "content/historie/andre-verdenskrig/teknologi.json",
     "historie/antikkens-hellas/athen-og-sparta": "content/historie/antikkens-hellas/athen-og-sparta.json",
     "historie/antikkens-hellas/gresk-teater": "content/historie/antikkens-hellas/gresk-teater.json",

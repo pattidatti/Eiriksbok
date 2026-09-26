@@ -4088,6 +4088,22 @@
                 "vendepunkt"
               ],
               "createdDate": "2026-09-25T00:00:00Z"
+            },
+            {
+              "id": "slaget-om-storbritannia",
+              "title": "Slaget om Storbritannia: De få mot de mange",
+              "description": "Sommeren 1940 sto Storbritannia alene. Radar, filterrom og observatører sendte de få jagerflyene til rett sted og stoppet Hitlers invasjonsplaner.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "andre-verdenskrig",
+                "storbritannia",
+                "tyskland",
+                "luftkrig",
+                "radar",
+                "vendepunkt"
+              ],
+              "createdDate": "2026-09-26T00:00:00Z"
             }
           ]
         },
