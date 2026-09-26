@@ -94,6 +94,13 @@
       "content": "Tyskerne forsto ikke hvor viktig kjeden var. Radarmastene var lette å se, men vanskelige å ødelegge med bomber, og de ble som regel reparert raskt. Til slutt skal Göring ha sagt at det var tvilsomt om det var noen vits i å angripe radarstasjonene mer, fordi ingen av dem var satt ut av spill (RAF Museum, u.å.). Mer om radar og annen teknologi i krigen kan du lese i [Teknologi](/historie/andre-verdenskrig/teknologi)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "plottebordet-3d"
+      }
+    },
+    {
       "type": "header",
       "text": "Ørneangrepet og de verste ukene"
     },
