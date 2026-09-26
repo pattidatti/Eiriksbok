@@ -232,6 +232,7 @@ const VannetsVei3D = lazy(() => import('./VannetsVei3D'));
 const OverVolga3D = lazy(() => import('./OverVolga3D'));
 const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
+const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2282,6 +2283,17 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         tone: 'alvorlig',
         loader: () => import('./LopMedLonna3D'),
         Component: LopMedLonna3D as never,
+    },
+    'plottebordet-3d': {
+        id: 'plottebordet-3d',
+        title: 'Plottebordet',
+        description:
+            'Slaget om Storbritannia, 1940. Du er kontrolløren over kartbordet i Fighter Command. Radaren ser de tyske raidene over havet - dra en skvadron til et rødt plott, og den letter, klatrer og møter bombeflyene. Send den tidlig: venter du til flyene er over kysten, er det for sent, og skvadroner som flyr rundt og leter, står og tanker når angrepet kommer. Hold RAF i lufta til 17. september. Lyspæra: britene vant fordi de visste hvor fienden kom, og brukte de få flyene der de trengtes mest.',
+        estimatedSeconds: 190,
+        sjanger: 'sanntidsstrategi',
+        tone: 'alvorlig',
+        loader: () => import('./Plottebordet3D'),
+        Component: Plottebordet3D as never,
     },
 };
 
