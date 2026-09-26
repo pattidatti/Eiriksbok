@@ -14,7 +14,8 @@ import {
     ArcadeSmallButton,
     ArcadeStats,
 } from './arcade/ArcadeShell';
-import { useArcadeAnnouncer } from './arcade/useArcade';
+import { useArcadeText } from './arcade/useArcade';
+import { ArcadeLessons } from './arcade/ArcadeLayers';
 import type { ArcadeTheme } from './arcade/tokens';
 import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
@@ -41,6 +42,7 @@ import {
     CART_CAP,
     type G,
     type IO,
+    type At,
     type Sfx,
     type Cause,
     type Mode,
@@ -197,6 +199,7 @@ const DEV_SPEED = playtestSpeed();
 const CAM_HOME = new THREE.Vector3(0, 16.5, 14.5);
 const CAM_INTRO = new THREE.Vector3(0, 30, 28);
 const TARGET = new THREE.Vector3(0, 0, -1.3);
+const TMP = new THREE.Vector3();
 
 interface LoopProps {
     gRef: React.MutableRefObject<G>;
@@ -220,7 +223,8 @@ function runFrame(g: G, rawDt: number, io: IO, modeRef: React.MutableRefObject<M
     const steps = DEV_SPEED * Math.max(1, Math.ceil(frameDt / 0.05 - 1e-6));
     const dt = (frameDt * DEV_SPEED) / steps;
     if (modeRef.current === 'play')
-        for (let k = 0; k < steps && modeRef.current === 'play'; k++) update(g, dt, io);
+        for (let k = 0; k < steps && modeRef.current === 'play'; k++)
+            update(g, dt * io.timeScale(), io);
     stepParticles(g, Math.min(0.05, rawDt));
 }
 
@@ -304,20 +308,13 @@ interface RunResult {
     rank: string;
     msg: string;
     tip: string;
+    lessons: string[];
     days: number;
     bought: number;
     eaten: number;
     newSedler: Seddel[];
     next: [number, string] | null;
     best: number;
-}
-
-interface FloatText {
-    id: number;
-    t: string;
-    x: number;
-    y: number;
-    color: string;
 }
 
 const BOT_STYLES: Record<string, BotStyle> = {
@@ -337,8 +334,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
     const [synth] = useState(createArcadeSynth);
     const [sfx] = useState(() => makeSfx(synth));
     const [muted, setMuted] = useState(() => synth.isMuted());
-    const [announce, announcer, feed] = useArcadeAnnouncer({ feed: true });
-    const [texts, setTexts] = useState<FloatText[]>([]);
+    const [text, textLayer] = useArcadeText(GAME_ID);
     const [firstGame] = useState(newGame);
     const gRef = useRef<G>(firstGame);
     const projRef = useRef<
@@ -347,7 +343,6 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
     const introRef = useRef(1);
     const completedOnce = useRef(false);
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
-    const textId = useRef(0);
     const botMem = useRef<BotMemory>(newBotMemory());
     const dragging = useRef(false);
     const hud = {
@@ -377,12 +372,16 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
     };
 
     const floatText = (t: string, x: number, y: number, z: number, color = '#f4efe4') => {
-        const proj = projRef.current?.(new THREE.Vector3(x, y, z));
+        const proj = projRef.current?.(TMP.set(x, y, z));
         if (!proj || proj.behind) return;
-        textId.current += 1;
-        const id = textId.current;
-        setTexts((xs) => [...xs.slice(-5), { id, t, x: proj.x, y: proj.y, color }]);
-        window.setTimeout(() => setTexts((xs) => xs.filter((f) => f.id !== id)), 1100);
+        text.float(t, proj.x, proj.y, color, t.startsWith('+') && t.includes('×'));
+    };
+    /** Et punkt på plassen -> et punkt i spillvinduet, for lapper og lærings-øyeblikk. */
+    const toScreen = (at: At) => () => {
+        const p = at();
+        if (!p) return null;
+        const r = projRef.current?.(TMP.set(p[0], 2.2, p[1]));
+        return r && !r.behind ? { x: r.x, y: r.y } : null;
     };
 
     const endRun = (won: boolean, cause: Cause) => {
@@ -414,6 +413,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
                       '{dato}',
                       `${d.day}. ${d.month}`.replace(/^./, (c) => c.toUpperCase())
                   ),
+            lessons: text.lessons(3),
             tip: won
                 ? ''
                 : g.bought === 0
@@ -428,7 +428,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
             next: nextRank(RANKS, best),
             best,
         });
-        announce.clear();
+        text.clear();
         outcome.current = { won, score };
         setModeBoth('over');
         if ((won || g.t > RUN_SECONDS * 0.5) && !completedOnce.current) {
@@ -439,25 +439,30 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
 
     const io: IO = {
         sfx,
-        banner: announce.banner,
-        toast: announce.toast,
+        banner: (t, color) => text.banner(t, color),
+        pin: (key, t, at, o) => text.point(key, t, toScreen(at), o),
+        beat: (key, title, t, at, until) =>
+            text.beatOnce(key, title, t, { at: at ? toScreen(at) : undefined, until }),
+        lesson: (key, t, w) => text.lesson(key, t, w),
+        timeScale: () => text.timeScale(),
         float: floatText,
         lose: (cause) => {
             if (modeRef.current !== 'play') return;
             gRef.current.cause = cause;
             sfx.lose();
             buzz(220);
-            announce.banner(cause === 'sult' ? 'TOMT FOR MAT' : 'OVNEN ER KALD', '', INK);
+            text.banner(cause === 'sult' ? 'TOMT FOR MAT' : 'OVNEN ER KALD', INK, 2.4);
             setModeBoth('ending');
             window.setTimeout(() => endRun(false, cause), 2400);
         },
         win: () => {
             if (modeRef.current !== 'play') return;
             sfx.win();
-            announce.banner(
-                '15. NOVEMBER 1923',
-                'Rentenmarken kommer. Prisene står stille - familien klarte seg.',
-                '#2f6b3a'
+            text.banner('RENTENMARKEN KOMMER', '#2f6b3a', 2.8);
+            text.lesson(
+                'renten',
+                '15. november 1923 kom rentenmarken, en ny valuta. Prisene sluttet å stige.',
+                1.5
             );
             gRef.current.target = null;
             setModeBoth('ending');
@@ -634,13 +639,20 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
         introRef.current = 0;
         setResult(null);
         setShowBook(false);
-        announce.clear();
-        setTexts([]);
+        text.clear();
+        text.resetRun();
         setModeBoth('play');
-        announce.banner(
-            'BERLIN, 1. AUGUST 1923',
-            'Hent lønna i fabrikkporten og gjør den om til mat og kull før den blir verdiløs. Pek der kjerra skal kjøre, eller bruk piltastene.',
-            INK
+        text.banner('BERLIN, AUGUST 1923', INK);
+        const g0 = gRef.current;
+        text.point(
+            'styr',
+            'Pek dit kjerra skal - eller bruk piltastene',
+            toScreen(() => [g0.cart.x, g0.cart.z]),
+            {
+                once: true,
+                seconds: 10,
+                until: () => Math.hypot(g0.cart.vx, g0.cart.vz) > 0.8,
+            }
         );
     };
     const pause = () => {
@@ -651,7 +663,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
     };
     const resume = () => setModeBoth('play');
     const toMenu = () => {
-        announce.clear();
+        text.clear();
         gRef.current = newGame();
         setModeBoth('menu');
     };
@@ -725,12 +737,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
     return (
         <MicroGameFrame title="Løp med lønna" bleed>
             <div className="p-2">
-                <ArcadeStage
-                    theme={THEME}
-                    background={SKY}
-                    label="Løp med lønna - Berlin 1923"
-                    below={feed}
-                >
+                <ArcadeStage theme={THEME} background={SKY} label="Løp med lønna - Berlin 1923">
                     <MicroCanvas
                         camera={{
                             position: CAM_HOME.toArray() as [number, number, number],
@@ -779,31 +786,6 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
                         />
                         <KitEffects bloomIntensity={0.9} bloomThreshold={0.88} />
                     </MicroCanvas>
-
-                    {texts.map((t) => (
-                        <div
-                            key={t.id}
-                            className="arc-display arc-outline"
-                            style={{
-                                position: 'absolute',
-                                left: t.x,
-                                top: t.y,
-                                transform: 'translate(-50%,-50%)',
-                                color: t.color,
-                                fontSize: 15,
-                                pointerEvents: 'none',
-                                animation: 'lonnaFloat 1.1s ease-out forwards',
-                                whiteSpace: 'nowrap',
-                            }}
-                        >
-                            {t.t}
-                        </div>
-                    ))}
-                    <style>
-                        {
-                            '@keyframes lonnaFloat{from{opacity:1;margin-top:0}to{opacity:0;margin-top:-40px}}'
-                        }
-                    </style>
 
                     {/* HUD øverst: poeng, familiens lager, dato og mål */}
                     <div
@@ -963,7 +945,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
                         </div>
                     </div>
 
-                    {announcer}
+                    {textLayer}
 
                     {mode === 'menu' && !showBook && (
                         <ArcadeScreen>
@@ -1135,6 +1117,7 @@ export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
                                     {result.tip}
                                 </p>
                             )}
+                            <ArcadeLessons items={result.lessons} />
                             <ArcadeStats
                                 items={[
                                     { value: result.days, label: 'dager klart' },

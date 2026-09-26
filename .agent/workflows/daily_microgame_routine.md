@@ -79,7 +79,7 @@ Les HELE den valgte artikkelen før du går videre.
 ## Jobb 2: Studer og design
 
 1. Les `.agent/workflows/build_microgame.md` i sin helhet.
-2. Les referansespillene: `src/components/microgames/HavetKommer.tsx` (2D) og `src/components/microgames/Stavkirken3D.tsx` + `src/components/microgames/stavkirken/game.ts` (3D). Se særlig hvordan de bruker arkadeskallet, eget `THEME`, `useArcadeAnnouncer({ feed: true })`, `usePlaytest` og robotene.
+2. Les referansespillene: `src/components/microgames/HavetKommer.tsx` (2D) og `src/components/microgames/Stavkirken3D.tsx` + `src/components/microgames/stavkirken/game.ts` (3D). Se særlig hvordan de bruker arkadeskallet, eget `THEME`, `useArcadeText` (lapper, lærings-øyeblikk, «Dette skjedde»), `usePlaytest` og robotene. Les også `Plottebordet3D.tsx` + `plottebordet/game.ts`: der er fagkjernen et lærings-øyeblikk ved det første plottet.
 3. Finn sjangrene til de siste nattspillene, så du kan variere:
    ```bash
    grep -nE "sjanger:|tone:" src/components/microgames/registry.ts
@@ -91,7 +91,7 @@ Les HELE den valgte artikkelen før du går videre.
 
 ## Jobb 3: Bygg
 
-Bygg etter guidens steg 3, 4 og 6: arkadeskall med eget tema, feed-tekst under spillvinduet, mål i HUD, pause, lyd, rekord og ranger, minst to tapsårsaker med tips, seier som følger plottet, `usePlaytest` med minst én vinner- og én taper-robot (taperen ignorerer fagkjernen), `sjanger` og `tone` i registry.
+Bygg etter guidens steg 3, 4 og 6: arkadeskall med eget tema, designet for fullskjerm 1366×768, all tekst via `useArcadeText` (fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet), skarpe 3D-skilt med `crispCanvas`, mål i HUD, pause, lyd, rekord og ranger, minst to tapsårsaker med tips, seier som følger plottet, `usePlaytest` med minst én vinner- og én taper-robot (taperen ignorerer fagkjernen), `sjanger` og `tone` i registry.
 
 Store spill deles i en modulmappe (`src/components/microgames/<navn>/`) slik Stavkirken gjør. Spillreglene bor i rene `.ts`-filer.
 

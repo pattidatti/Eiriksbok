@@ -14,7 +14,8 @@ import {
     ArcadeSmallButton,
     ArcadeStats,
 } from './arcade/ArcadeShell';
-import { useArcadeAnnouncer } from './arcade/useArcade';
+import { useArcadeText } from './arcade/useArcade';
+import { ArcadeLessons } from './arcade/ArcadeLayers';
 import type { ArcadeTheme } from './arcade/tokens';
 import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
@@ -34,6 +35,7 @@ import {
     PLANES,
     type G,
     type IO,
+    type At,
     type Sfx,
     type Cause,
     type Mode,
@@ -107,16 +109,56 @@ interface Entry {
 
 // Operasjonsloggen - kortene går igjen mellom runder. Alt står i artikkelen.
 const LOGG: Entry[] = [
-    { id: 'chainhome', title: 'Chain Home', text: 'En rekke radarstasjoner langs sør- og østkysten. De så fly opptil rundt 320 km unna - lenge før de nådde kysten. Mange ved skjermene var unge kvinner.' },
-    { id: 'filter', title: 'Filterrommet', text: 'I Bentley Priory ble meldinger fra mange radarstasjoner satt sammen til ett bilde av hvor flyene var og hvor de skulle.' },
-    { id: 'sektor', title: 'Sektorstasjonene', text: 'De fikk beskjed om hvor angrepet kom, og sendte skvadronene sine av gårde. Jagerflyene tok bare av når tyske fly faktisk var på vei.' },
-    { id: 'observer', title: 'Observer Corps', text: 'Radaren så ut over havet. Over land meldte frivillige observatører med kikkert og telefon fra om hvert fly de så.' },
-    { id: 'sola', title: 'Sola, 15. august', text: '63 bombefly og 21 jagerfly tok av fra Sola mot Nord-England. Radaren så dem. Av 154 fly fra Norge og Danmark den dagen gikk 20 tapt.' },
-    { id: 'goring', title: 'Radarmastene', text: 'Mastene var lette å se, men vanskelige å ødelegge, og ble reparert raskt. Göring tvilte på at det var noen vits i å angripe dem mer.' },
-    { id: 'verste', title: 'De verste ukene', text: 'Slutten av august og begynnelsen av september. Nesten hver dag kom tyske bombefly mot flyplassene.' },
-    { id: 'blitz', title: 'Blitzen', text: '7. september bombet Tyskland London. 43 381 sivile ble drept før mai 1941. For RAF betydde skiftet en pause til å reparere basene.' },
-    { id: 'femtende', title: '15. september', text: 'Avisene påsto at 180 tyske fly var skutt ned. Det riktige tallet var 60. Britene mistet 26. Begge sider overdrev.' },
-    { id: 'seelowe', title: 'Sjøløve utsatt', text: '17. september utsatte Hitler invasjonen på ubestemt tid. Luftwaffe hadde ikke klart å vinne kontroll over himmelen.' },
+    {
+        id: 'chainhome',
+        title: 'Chain Home',
+        text: 'En rekke radarstasjoner langs sør- og østkysten. De så fly opptil rundt 320 km unna - lenge før de nådde kysten. Mange ved skjermene var unge kvinner.',
+    },
+    {
+        id: 'filter',
+        title: 'Filterrommet',
+        text: 'I Bentley Priory ble meldinger fra mange radarstasjoner satt sammen til ett bilde av hvor flyene var og hvor de skulle.',
+    },
+    {
+        id: 'sektor',
+        title: 'Sektorstasjonene',
+        text: 'De fikk beskjed om hvor angrepet kom, og sendte skvadronene sine av gårde. Jagerflyene tok bare av når tyske fly faktisk var på vei.',
+    },
+    {
+        id: 'observer',
+        title: 'Observer Corps',
+        text: 'Radaren så ut over havet. Over land meldte frivillige observatører med kikkert og telefon fra om hvert fly de så.',
+    },
+    {
+        id: 'sola',
+        title: 'Sola, 15. august',
+        text: '63 bombefly og 21 jagerfly tok av fra Sola mot Nord-England. Radaren så dem. Av 154 fly fra Norge og Danmark den dagen gikk 20 tapt.',
+    },
+    {
+        id: 'goring',
+        title: 'Radarmastene',
+        text: 'Mastene var lette å se, men vanskelige å ødelegge, og ble reparert raskt. Göring tvilte på at det var noen vits i å angripe dem mer.',
+    },
+    {
+        id: 'verste',
+        title: 'De verste ukene',
+        text: 'Slutten av august og begynnelsen av september. Nesten hver dag kom tyske bombefly mot flyplassene.',
+    },
+    {
+        id: 'blitz',
+        title: 'Blitzen',
+        text: '7. september bombet Tyskland London. 43 381 sivile ble drept før mai 1941. For RAF betydde skiftet en pause til å reparere basene.',
+    },
+    {
+        id: 'femtende',
+        title: '15. september',
+        text: 'Avisene påsto at 180 tyske fly var skutt ned. Det riktige tallet var 60. Britene mistet 26. Begge sider overdrev.',
+    },
+    {
+        id: 'seelowe',
+        title: 'Sjøløve utsatt',
+        text: '17. september utsatte Hitler invasjonen på ubestemt tid. Luftwaffe hadde ikke klart å vinne kontroll over himmelen.',
+    },
 ];
 
 const RANKS: [number, string][] = [
@@ -136,11 +178,16 @@ const DEATH: Record<Cause, string> = {
 const TIPS = {
     start: 'Tips: Dra en blå brikke fra flyplassen og slipp den på et rødt plott. Da letter skvadronen og flyr mot raidet.',
     sent: 'Tips: Send skvadronen i det plottet dukker opp over havet. Den trenger over fem sekunder på å klatre opp til bombeflyene - venter du til de er over kysten, er det for sent.',
-    patrulje: 'Tips: Ikke la skvadronene fly rundt og lete. Drivstoffet går tomt, og de står og tanker når angrepet kommer. Vent på radarplottet, og send dem da.',
+    patrulje:
+        'Tips: Ikke la skvadronene fly rundt og lete. Drivstoffet går tomt, og de står og tanker når angrepet kommer. Vent på radarplottet, og send dem da.',
     fly: 'Tips: Skvadroner som står på bakken når flyplassen bombes, mister flyene. Send dem opp når radaren ser raidet - da er de i lufta når bombene faller.',
 };
 
-const PAUSE_MSG = ['Plotterne venter ved bordet.', 'Telefonene er stille. Foreløpig.', 'Pause. Radaren følger med.'];
+const PAUSE_MSG = [
+    'Plotterne venter ved bordet.',
+    'Telefonene er stille. Foreløpig.',
+    'Pause. Radaren følger med.',
+];
 
 const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
@@ -205,6 +252,7 @@ const DEV_SPEED = playtestSpeed();
 const CAM_HOME = new THREE.Vector3(0, 17.2, 12.2);
 const CAM_INTRO = new THREE.Vector3(0, 26, 22);
 const TARGET = new THREE.Vector3(0, -0.4, 0.55);
+const TMP = new THREE.Vector3();
 
 type Proj = (p: THREE.Vector3) => { x: number; y: number; behind: boolean };
 
@@ -217,7 +265,8 @@ function runFrame(g: G, rawDt: number, io: IO, modeRef: React.MutableRefObject<M
     const steps = DEV_SPEED * Math.max(1, Math.ceil(frameDt / 0.05 - 1e-6));
     const dt = (frameDt * DEV_SPEED) / steps;
     if (modeRef.current === 'play')
-        for (let k = 0; k < steps && modeRef.current === 'play'; k++) update(g, dt, io);
+        for (let k = 0; k < steps && modeRef.current === 'play'; k++)
+            update(g, dt * io.timeScale(), io);
     stepFx(g, Math.min(0.05, rawDt));
 }
 
@@ -246,7 +295,8 @@ function Loop({
         introRef.current = Math.min(1, introRef.current + dt / 1.5);
         const e = 1 - Math.pow(1 - introRef.current, 3);
         cam.position.lerpVectors(CAM_INTRO, CAM_HOME, e);
-        if (modeRef.current === 'menu') cam.position.x += Math.sin(state.clock.elapsedTime * 0.25) * 0.8;
+        if (modeRef.current === 'menu')
+            cam.position.x += Math.sin(state.clock.elapsedTime * 0.25) * 0.8;
         if (g.shake > 0) {
             cam.position.x += (Math.random() - 0.5) * g.shake * 0.35;
             cam.position.y += (Math.random() - 0.5) * g.shake * 0.35;
@@ -255,7 +305,11 @@ function Loop({
         const vec = v.current;
         projRef.current = (p: THREE.Vector3) => {
             vec.copy(p).project(cam);
-            return { x: (vec.x * 0.5 + 0.5) * state.size.width, y: (-vec.y * 0.5 + 0.5) * state.size.height, behind: vec.z > 1 };
+            return {
+                x: (vec.x * 0.5 + 0.5) * state.size.width,
+                y: (-vec.y * 0.5 + 0.5) * state.size.height,
+                behind: vec.z > 1,
+            };
         };
         acc.current += dt;
         if (acc.current > 0.1) {
@@ -285,6 +339,7 @@ interface RunResult {
     rank: string;
     msg: string;
     tip: string;
+    lessons: string[];
     days: number;
     turned: number;
     overSea: number;
@@ -292,14 +347,6 @@ interface RunResult {
     newEntries: Entry[];
     next: [number, string] | null;
     best: number;
-}
-
-interface FloatText {
-    id: number;
-    t: string;
-    x: number;
-    y: number;
-    color: string;
 }
 
 const STATUS: Record<string, { t: string; c: string }> = {
@@ -340,7 +387,11 @@ const CSS = `
 .pb-danger .pb-tube{animation:arcPulse .45s infinite alternate}
 `;
 
-const BOT_STYLES: Record<string, BotStyle> = { seende: 'radar', kysten: 'kysten', patrulje: 'patrulje' };
+const BOT_STYLES: Record<string, BotStyle> = {
+    seende: 'radar',
+    kysten: 'kysten',
+    patrulje: 'patrulje',
+};
 
 export default function Plottebordet3D({ onComplete }: MicroGameProps) {
     const [mode, setMode] = useState<Mode>('menu');
@@ -353,17 +404,23 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
     const [synth] = useState(createArcadeSynth);
     const [sfx] = useState(() => makeSfx(synth));
     const [muted, setMuted] = useState(() => synth.isMuted());
-    const [announce, announcer, feed] = useArcadeAnnouncer({ feed: true });
-    const [texts, setTexts] = useState<FloatText[]>([]);
+    const [text, textLayer] = useArcadeText(GAME_ID);
     const [firstGame] = useState(newGame);
     const gRef = useRef<G>(firstGame);
     const projRef = useRef<Proj | null>(null);
     const introRef = useRef(1);
     const completedOnce = useRef(false);
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
-    const textId = useRef(0);
     const hintRef = useRef<{ sq: number; raid: number } | null>(null);
-    const dragRef = useRef<DragState>({ active: false, sq: 0, p: [0, 0], start: [0, 0], moved: false, sticky: false, hoverRaid: -1 });
+    const dragRef = useRef<DragState>({
+        active: false,
+        sq: 0,
+        p: [0, 0],
+        start: [0, 0],
+        moved: false,
+        sticky: false,
+        hoverRaid: -1,
+    });
     const hud = {
         score: useRef<HTMLDivElement>(null),
         chain: useRef<HTMLDivElement>(null),
@@ -388,12 +445,16 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
     };
 
     const floatText = (t: string, x: number, z: number, color = '#f4efe4') => {
-        const proj = projRef.current?.(new THREE.Vector3(x, 1.9, z));
+        const proj = projRef.current?.(TMP.set(x, 1.9, z));
         if (!proj || proj.behind) return;
-        textId.current += 1;
-        const id = textId.current;
-        setTexts((xs) => [...xs.slice(-5), { id, t, x: proj.x, y: proj.y, color }]);
-        window.setTimeout(() => setTexts((xs) => xs.filter((f) => f.id !== id)), 1400);
+        text.float(t, proj.x, proj.y, color, t.includes('SNUDD'));
+    };
+    /** Et punkt på bordet -> et punkt i spillvinduet, for lapper og lærings-øyeblikk. */
+    const toScreen = (at: At) => () => {
+        const p = at();
+        if (!p) return null;
+        const r = projRef.current?.(TMP.set(p[0], 1.1, p[1]));
+        return r && !r.behind ? { x: r.x, y: r.y } : null;
     };
 
     const endRun = (won: boolean, cause: Cause) => {
@@ -429,6 +490,7 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                 ? `17. september: Hitler utsetter Operasjon Sjøløve på ubestemt tid. RAF er fortsatt i lufta. Du snudde ${g.turned} raid - ${g.turnedOverSea} av dem over havet.`
                 : DEATH[cause].replace('{dato}', `${d.d}. ${d.m}`),
             tip,
+            lessons: text.lessons(3),
             days: Math.min(DAYS, g.day),
             turned: g.turned,
             overSea: g.turnedOverSea,
@@ -437,7 +499,7 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
             next: nextRank(RANKS, best),
             best,
         });
-        announce.clear();
+        text.clear();
         outcome.current = { won, score };
         setModeBoth('over');
         if ((won || g.day >= 25) && !completedOnce.current) {
@@ -448,8 +510,12 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
 
     const io: IO = {
         sfx,
-        banner: announce.banner,
-        toast: announce.toast,
+        banner: (t, color) => text.banner(t, color),
+        pin: (key, t, at, o) => text.point(key, t, toScreen(at), o),
+        beat: (key, title, t, at, until) =>
+            text.beatOnce(key, title, t, { at: at ? toScreen(at) : undefined, until }),
+        lesson: (key, t, w) => text.lesson(key, t, w),
+        timeScale: () => text.timeScale(),
         float: floatText,
         lose: (cause) => {
             if (modeRef.current !== 'play') return;
@@ -458,14 +524,18 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
             buzz(220);
             dragRef.current.active = false;
             setModeBoth('dying');
-            announce.banner(cause === 'luft' ? 'LUFTWAFFE EIER HIMMELEN' : 'INGEN FLY IGJEN', '', '#8a2a22');
+            text.banner(
+                cause === 'luft' ? 'LUFTWAFFE EIER HIMMELEN' : 'INGEN FLY IGJEN',
+                '#8a2a22',
+                2.4
+            );
             window.setTimeout(() => endRun(false, cause), 2600);
         },
         win: () => {
             if (modeRef.current !== 'play') return;
             sfx.win();
             dragRef.current.active = false;
-            announce.banner('SJØLØVE UTSATT', 'RAF holdt ut. Invasjonen blir ikke noe av.', '#1f3a8a');
+            text.banner('SJØLØVE UTSATT', '#1f3a8a', 2.8);
             setModeBoth('dying');
             window.setTimeout(() => endRun(true, 'luft'), 3000);
         },
@@ -478,7 +548,8 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
     const hudRef = useRef<(g: G) => void>(() => {});
     useEffect(() => {
         hudRef.current = (g: G) => {
-            if (hud.score.current) hud.score.current.textContent = Math.floor(g.score).toLocaleString('nb-NO');
+            if (hud.score.current)
+                hud.score.current.textContent = Math.floor(g.score).toLocaleString('nb-NO');
             if (hud.chain.current) {
                 const m = chainMult(g.chain);
                 hud.chain.current.textContent = `KJEDE ×${m}`;
@@ -487,9 +558,11 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
             const d = dateOf(g.t);
             if (hud.day.current) hud.day.current.textContent = String(d.d);
             if (hud.month.current) hud.month.current.textContent = `${d.m.toUpperCase()} 1940`;
-            if (hud.left.current) hud.left.current.textContent = `${Math.max(0, DAYS - g.day)} dager igjen`;
+            if (hud.left.current)
+                hud.left.current.textContent = `${Math.max(0, DAYS - g.day)} dager igjen`;
             if (hud.meter.current) hud.meter.current.style.height = `${Math.round(g.meter)}%`;
-            if (hud.meterBox.current) hud.meterBox.current.classList.toggle('pb-danger', g.meter > 70);
+            if (hud.meterBox.current)
+                hud.meterBox.current.classList.toggle('pb-danger', g.meter > 70);
             g.squadrons.forEach((q, i) => {
                 const lamp = hud.lamps.current[i];
                 const key =
@@ -508,7 +581,11 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                 }
                 const f = hud.fuel.current[i];
                 if (f) {
-                    const k = airborne(q) ? q.fuel / FUEL : q.state === 'tanker' ? 1 - q.refuel / 7 : 1;
+                    const k = airborne(q)
+                        ? q.fuel / FUEL
+                        : q.state === 'tanker'
+                          ? 1 - q.refuel / 7
+                          : 1;
                     f.style.width = `${Math.round(clamp(k, 0, 1) * 100)}%`;
                     f.style.background = airborne(q) && k < 0.3 ? '#ff6a55' : '#8fb7ff';
                 }
@@ -605,7 +682,13 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
         const res = order(g, d.sq, { p: d.p }, ioRef.current);
         if (res === 'ok' && !g.done.has('patruljeinfo')) {
             g.done.add('patruljeinfo');
-            announce.toast('Skvadronen patruljerer der du slapp den. Den ser bare fly som kommer helt nær - og bruker drivstoff hele tiden.');
+            const sq = d.sq;
+            text.point(
+                'patrulje',
+                'Patruljerer - bruker drivstoff',
+                toScreen(() => gRef.current.squadrons[sq].pos),
+                { seconds: 4 }
+            );
         }
         if (res === 'hjem') floatText('LANDER', q.pos[0], q.pos[1], '#9fb3c8');
     };
@@ -630,7 +713,11 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
     // Selvspill (kun i utvikling, se playtest.ts). Robotene gir ordre med order() -
     // samme grep som når eleven drar en brikke til et plott eller et punkt.
     usePlaytest(GAME_ID, () => {
-        const bot = (forventer: PlaytestBot['forventer'], beskrivelse: string, style: BotStyle): PlaytestBot => ({
+        const bot = (
+            forventer: PlaytestBot['forventer'],
+            beskrivelse: string,
+            style: BotStyle
+        ): PlaytestBot => ({
             forventer,
             beskrivelse,
             tick: () => {
@@ -644,7 +731,14 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                 const m = modeRef.current;
                 const o = outcome.current;
                 return {
-                    fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
+                    fase:
+                        m === 'menu'
+                            ? 'meny'
+                            : m === 'over'
+                              ? o?.won
+                                  ? 'vunnet'
+                                  : 'tapt'
+                              : 'spiller',
                     poeng: m === 'over' && o ? o.score : Math.floor(g.score),
                     framdrift: g.t / RUN_SECONDS,
                     tid: g.t,
@@ -652,9 +746,21 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
             },
             start: () => begin(),
             bots: {
-                seende: bot('vinner', 'Sender nærmeste ledige skvadron i det radaren ser raidet over havet, to mot store raid.', BOT_STYLES.seende),
-                kysten: bot('taper', 'Samme fordeling, men venter til raidet er over kysten (som uten radar, bare observatører).', BOT_STYLES.kysten),
-                patrulje: bot('taper', 'Bruker ikke radaren: holder alle skvadronene på patrulje langs kysten og sender dem ut igjen så fort de har tanket.', BOT_STYLES.patrulje),
+                seende: bot(
+                    'vinner',
+                    'Sender nærmeste ledige skvadron i det radaren ser raidet over havet, to mot store raid.',
+                    BOT_STYLES.seende
+                ),
+                kysten: bot(
+                    'taper',
+                    'Samme fordeling, men venter til raidet er over kysten (som uten radar, bare observatører).',
+                    BOT_STYLES.kysten
+                ),
+                patrulje: bot(
+                    'taper',
+                    'Bruker ikke radaren: holder alle skvadronene på patrulje langs kysten og sender dem ut igjen så fort de har tanket.',
+                    BOT_STYLES.patrulje
+                ),
             },
         };
     });
@@ -667,11 +773,11 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
         dragRef.current.active = false;
         setResult(null);
         setShowLog(false);
-        announce.clear();
-        setTexts([]);
+        text.clear();
+        text.resetRun();
         setModeBoth('play');
         sfx.alarm();
-        announce.banner('13. AUGUST 1940', 'Ørneangrepet begynner. Dra en blå skvadron til et rødt plott. Hold ut til 17. september.', '#1f3a8a');
+        text.banner('13. AUGUST 1940', '#1f3a8a');
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;
@@ -681,7 +787,7 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
     };
     const resume = () => setModeBoth('play');
     const toMenu = () => {
-        announce.clear();
+        text.clear();
         gRef.current = newGame();
         setModeBoth('menu');
     };
@@ -709,9 +815,16 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
         <MicroGameFrame title="Plottebordet" bleed>
             <div className="p-2">
                 <style>{CSS}</style>
-                <ArcadeStage theme={THEME} background={ROOM} label="Plottebordet - send skvadronene mot raidene radaren ser" below={feed}>
+                <ArcadeStage
+                    theme={THEME}
+                    background={ROOM}
+                    label="Plottebordet - send skvadronene mot raidene radaren ser"
+                >
                     <MicroCanvas
-                        camera={{ position: CAM_HOME.toArray() as [number, number, number], fov: 42 }}
+                        camera={{
+                            position: CAM_HOME.toArray() as [number, number, number],
+                            fov: 42,
+                        }}
                         background={ROOM}
                         fog={{ color: ROOM, near: 30, far: 58 }}
                         builtInLights={false}
@@ -730,18 +843,23 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                         <DragView gRef={gRef} dragRef={dragRef} hintRef={hintRef} />
                         <FxView gRef={gRef} />
                         <TableCatcher onMove={onMove} onUp={onUpTable} />
-                        <Loop gRef={gRef} modeRef={modeRef} ioRef={ioRef} hudRef={hudRef} projRef={projRef} introRef={introRef} />
+                        <Loop
+                            gRef={gRef}
+                            modeRef={modeRef}
+                            ioRef={ioRef}
+                            hudRef={hudRef}
+                            projRef={projRef}
+                            introRef={introRef}
+                        />
                         <KitEffects bloomIntensity={0.9} bloomThreshold={0.86} />
                     </MicroCanvas>
 
-                    {texts.map((t) => (
-                        <div key={t.id} className={t.t.includes('SNUDD') ? 'pb-float big' : 'pb-float'} style={{ left: t.x, top: t.y, color: t.color }}>
-                            {t.t}
-                        </div>
-                    ))}
-
                     {/* Statustavla: én kolonne per skvadron, som tavla på veggen i kontrollrommet */}
-                    <div className="pb-tote" style={{ opacity: hudOn ? 1 : 0, transition: 'opacity .3s' }} aria-hidden={!hudOn}>
+                    <div
+                        className="pb-tote"
+                        style={{ opacity: hudOn ? 1 : 0, transition: 'opacity .3s' }}
+                        aria-hidden={!hudOn}
+                    >
                         {BASES.map((b, i) => (
                             <div key={b.id} className="pb-col">
                                 <div className="pb-sq">{b.squadron}</div>
@@ -783,7 +901,10 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                         <div ref={hud.month} className="pb-cal-m">
                             AUGUST 1940
                         </div>
-                        <div className="pb-cal-goal" style={{ borderTop: 'none', paddingBottom: 0, fontWeight: 900 }}>
+                        <div
+                            className="pb-cal-goal"
+                            style={{ borderTop: 'none', paddingBottom: 0, fontWeight: 900 }}
+                        >
                             MÅL 17. SEPTEMBER
                         </div>
                         <div ref={hud.left} className="pb-cal-goal">
@@ -791,7 +912,15 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                         </div>
                     </div>
                     <div
-                        style={{ position: 'absolute', right: 10, top: 142, display: 'flex', gap: 5, opacity: hudOn ? 1 : 0, pointerEvents: hudOn ? 'auto' : 'none' }}
+                        style={{
+                            position: 'absolute',
+                            right: 10,
+                            top: 142,
+                            display: 'flex',
+                            gap: 5,
+                            opacity: hudOn ? 1 : 0,
+                            pointerEvents: hudOn ? 'auto' : 'none',
+                        }}
                     >
                         <ArcadeSmallButton onClick={pause} ariaLabel="Pause">
                             ❚❚
@@ -826,41 +955,68 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                         <div
                             ref={hud.chain}
                             className="arc-display arc-pill"
-                            style={{ fontSize: 11, opacity: 0, marginBottom: 4, display: 'inline-block' }}
+                            style={{
+                                fontSize: 11,
+                                opacity: 0,
+                                marginBottom: 4,
+                                display: 'inline-block',
+                            }}
                         >
                             KJEDE ×2
                         </div>
-                        <div ref={hud.score} className="arc-display arc-outline" style={{ fontSize: 26, lineHeight: 1 }}>
+                        <div
+                            ref={hud.score}
+                            className="arc-display arc-outline"
+                            style={{ fontSize: 26, lineHeight: 1 }}
+                        >
                             0
                         </div>
-                        <div className="arc-display arc-outline" style={{ fontSize: 9, marginTop: 2 }}>
+                        <div
+                            className="arc-display arc-outline"
+                            style={{ fontSize: 9, marginTop: 2 }}
+                        >
                             poeng for raid som snur
                         </div>
                     </div>
 
-                    {announcer}
+                    {textLayer}
 
                     {mode === 'menu' && !showLog && (
                         <ArcadeScreen>
                             <ArcadeLogo>
-                                <span style={{ fontSize: 'clamp(26px, 5vw, 42px)' }}>PLOTTEBORDET</span>
+                                <span style={{ fontSize: 'clamp(26px, 5vw, 42px)' }}>
+                                    PLOTTEBORDET
+                                </span>
                             </ArcadeLogo>
                             <ArcadeTag>Slaget om Storbritannia, 1940</ArcadeTag>
-                            <p style={{ fontSize: 12.5, fontWeight: 600, margin: '10px 0 2px', lineHeight: 1.4 }}>
-                                Du er kontrolløren over kartbordet. Radaren ser de tyske raidene over havet. Dra en blå skvadron til et
-                                rødt plott - og send den tidlig, for flyene trenger tid til å klatre.
+                            <p
+                                style={{
+                                    fontSize: 12.5,
+                                    fontWeight: 600,
+                                    margin: '10px 0 2px',
+                                    lineHeight: 1.4,
+                                }}
+                            >
+                                Du er kontrolløren over kartbordet. Radaren ser de tyske raidene
+                                over havet. Dra en blå skvadron til et rødt plott - og send den
+                                tidlig, for flyene trenger tid til å klatre.
                             </p>
-                            <p style={{ fontSize: 12, fontWeight: 800, margin: '6px 0 0' }}>Hold RAF i lufta til 17. september.</p>
+                            <p style={{ fontSize: 12, fontWeight: 800, margin: '6px 0 0' }}>
+                                Hold RAF i lufta til 17. september.
+                            </p>
                             <ArcadeBigButton onClick={begin}>Til bordet</ArcadeBigButton>
                             <div style={{ fontSize: 12, fontWeight: 600, marginBottom: 8 }}>
-                                Rekord <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
+                                Rekord{' '}
+                                <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
                                 &nbsp;/&nbsp; Loggen{' '}
                                 <b className="arc-display">
                                     {save.logg.length}/{LOGG.length}
                                 </b>
                             </div>
                             <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-                                <ArcadeSmallButton onClick={() => setShowLog(true)}>📋 Operasjonsloggen</ArcadeSmallButton>
+                                <ArcadeSmallButton onClick={() => setShowLog(true)}>
+                                    📋 Operasjonsloggen
+                                </ArcadeSmallButton>
                                 <ArcadeSmallButton onClick={toggleMute} ariaLabel="Lyd av eller på">
                                     {muted ? '🔇' : '🔊'}
                                 </ArcadeSmallButton>
@@ -876,20 +1032,43 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                             <p style={{ fontSize: 12, margin: '2px 0 8px', fontWeight: 500 }}>
                                 Nye kort låses opp når du opplever dem ved bordet.
                             </p>
-                            <div style={{ textAlign: 'left', maxHeight: 280, overflowY: 'auto', marginBottom: 10 }}>
+                            <div
+                                style={{
+                                    textAlign: 'left',
+                                    maxHeight: 280,
+                                    overflowY: 'auto',
+                                    marginBottom: 10,
+                                }}
+                            >
                                 {LOGG.map((e) => {
                                     const has = save.logg.includes(e.id);
                                     return (
-                                        <div key={e.id} style={{ padding: '6px 2px', borderBottom: '1px dashed rgba(26,28,31,.25)', opacity: has ? 1 : 0.45 }}>
-                                            <b className="arc-display" style={{ fontSize: 12.5, display: 'block' }}>
+                                        <div
+                                            key={e.id}
+                                            style={{
+                                                padding: '6px 2px',
+                                                borderBottom: '1px dashed rgba(26,28,31,.25)',
+                                                opacity: has ? 1 : 0.45,
+                                            }}
+                                        >
+                                            <b
+                                                className="arc-display"
+                                                style={{ fontSize: 12.5, display: 'block' }}
+                                            >
                                                 {has ? e.title : '🔒 Ukjent kort'}
                                             </b>
-                                            <span style={{ fontSize: 12 }}>{has ? e.text : 'Hold ut lenge nok ved bordet til å oppleve det.'}</span>
+                                            <span style={{ fontSize: 12 }}>
+                                                {has
+                                                    ? e.text
+                                                    : 'Hold ut lenge nok ved bordet til å oppleve det.'}
+                                            </span>
                                         </div>
                                     );
                                 })}
                             </div>
-                            <ArcadeSmallButton onClick={() => setShowLog(false)}>Lukk</ArcadeSmallButton>
+                            <ArcadeSmallButton onClick={() => setShowLog(false)}>
+                                Lukk
+                            </ArcadeSmallButton>
                         </ArcadeScreen>
                     )}
 
@@ -906,22 +1085,65 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
 
                     {mode === 'over' && result && (
                         <ArcadeScreen>
-                            <div style={{ fontSize: 11, fontWeight: 700, opacity: 0.7 }}>{result.won ? 'RAF holdt ut! Din tittel' : 'Din tittel'}</div>
-                            <div className="arc-display" style={{ fontSize: 'clamp(17px, 3.4vw, 22px)', color: 'var(--arc-cta)', margin: '0 0 2px' }}>
+                            <div style={{ fontSize: 11, fontWeight: 700, opacity: 0.7 }}>
+                                {result.won ? 'RAF holdt ut! Din tittel' : 'Din tittel'}
+                            </div>
+                            <div
+                                className="arc-display"
+                                style={{
+                                    fontSize: 'clamp(17px, 3.4vw, 22px)',
+                                    color: 'var(--arc-cta)',
+                                    margin: '0 0 2px',
+                                }}
+                            >
                                 {result.rank}
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-                                <span className="arc-display" style={{ fontSize: 30, lineHeight: 1 }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: 10,
+                                }}
+                            >
+                                <span
+                                    className="arc-display"
+                                    style={{ fontSize: 30, lineHeight: 1 }}
+                                >
                                     {result.score.toLocaleString('nb-NO')}
                                 </span>
                                 {result.newBest && (
-                                    <span className="arc-display arc-pill arc-wig" style={{ fontSize: 11 }}>
+                                    <span
+                                        className="arc-display arc-pill arc-wig"
+                                        style={{ fontSize: 11 }}
+                                    >
                                         Ny rekord!
                                     </span>
                                 )}
                             </div>
-                            <p style={{ margin: '6px 0 4px', fontWeight: 500, fontSize: 12.5, lineHeight: 1.35 }}>{result.msg}</p>
-                            {result.tip && <p style={{ margin: '0 0 6px', fontWeight: 700, fontSize: 12.5, lineHeight: 1.35 }}>{result.tip}</p>}
+                            <p
+                                style={{
+                                    margin: '6px 0 4px',
+                                    fontWeight: 500,
+                                    fontSize: 12.5,
+                                    lineHeight: 1.35,
+                                }}
+                            >
+                                {result.msg}
+                            </p>
+                            {result.tip && (
+                                <p
+                                    style={{
+                                        margin: '0 0 6px',
+                                        fontWeight: 700,
+                                        fontSize: 12.5,
+                                        lineHeight: 1.35,
+                                    }}
+                                >
+                                    {result.tip}
+                                </p>
+                            )}
+                            <ArcadeLessons items={result.lessons} />
                             <ArcadeStats
                                 items={[
                                     { value: `${result.days}/${DAYS}`, label: 'dager' },
@@ -931,12 +1153,32 @@ export default function Plottebordet3D({ onComplete }: MicroGameProps) {
                                 ]}
                             />
                             {result.newEntries.length > 0 ? (
-                                <div style={{ marginTop: 6, background: 'var(--arc-chip)', border: `2px dashed ${INK}`, padding: 5, fontWeight: 800, fontSize: 12 }}>
-                                    Nytt i loggen: {result.newEntries.map((e) => e.title).join(', ')}
+                                <div
+                                    style={{
+                                        marginTop: 6,
+                                        background: 'var(--arc-chip)',
+                                        border: `2px dashed ${INK}`,
+                                        padding: 5,
+                                        fontWeight: 800,
+                                        fontSize: 12,
+                                    }}
+                                >
+                                    Nytt i loggen:{' '}
+                                    {result.newEntries.map((e) => e.title).join(', ')}
                                 </div>
                             ) : result.next ? (
-                                <div style={{ marginTop: 6, background: 'var(--arc-chip)', border: `2px dashed ${INK}`, padding: 5, fontWeight: 800, fontSize: 12 }}>
-                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng til neste tittel: {result.next[1]}
+                                <div
+                                    style={{
+                                        marginTop: 6,
+                                        background: 'var(--arc-chip)',
+                                        border: `2px dashed ${INK}`,
+                                        padding: 5,
+                                        fontWeight: 800,
+                                        fontSize: 12,
+                                    }}
+                                >
+                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng
+                                    til neste tittel: {result.next[1]}
                                 </div>
                             ) : null}
                             <ArcadeBigButton onClick={begin}>Igjen!</ArcadeBigButton>

@@ -10,7 +10,8 @@ import {
     ArcadeSmallButton,
     ArcadeStats,
 } from './arcade/ArcadeShell';
-import { useArcadeLoop, useArcadeAnnouncer, type ArcadeView } from './arcade/useArcade';
+import { useArcadeLoop, useArcadeText, type ArcadeView } from './arcade/useArcade';
+import { ArcadeLessons } from './arcade/ArcadeLayers';
 import type { ArcadeTheme } from './arcade/tokens';
 
 // Spillets eget uttrykk: tykk blekkstrek på papir, som en tegneserie i et
@@ -82,24 +83,70 @@ interface GameEvent {
     id: EventId;
     t: string;
     s: string;
+    /** Kort lapp ved følget (maks sju ord). Tom = ingen lapp. */
+    p?: string;
+    /** Det eleven skal sitte igjen med - vises på slutt-skjermen. */
+    lesson?: string;
     d: number;
     color?: string;
 }
 
 const RANDOM_EVENTS: GameEvent[] = [
-    { id: 'notter', t: 'HASSELNØTT-HØST', s: 'Buskene er fulle. Spis mens du kan.', d: 11, color: '#8a5a2b' },
-    { id: 'hjort', t: 'HJORTEFLOKK', s: 'Hjorten er raskere enn deg. Spydet er raskere enn hjorten.', d: 12, color: '#7a4a1c' },
-    { id: 'sel', t: 'SEL PÅ STRANDA', s: 'Tungt, fett og lett å ta. Hele følget blir mett.', d: 10, color: '#1f4f5f' },
-    { id: 'storm', t: 'STORM', s: 'Bølgene slår langt inn. Hold deg unna fjæra.', d: 10, color: '#3d4a5c' },
-    { id: 'stille', t: 'STILLE ÅR', s: '', d: 7, color: '#6b7b6b' },
-    { id: 'villsvin', t: 'VILLSVIN I SKOGEN', s: 'De er ikke enige i at dette er jaktmarka di.', d: 12, color: '#6b3a1f' },
-    { id: 'fisk', t: 'FISKESTIM I VIKA', s: 'Fisken hopper nesten i hendene dine.', d: 10, color: '#1f6f8b' },
+    {
+        id: 'notter',
+        t: 'HASSELNØTT-HØST',
+        s: 'Buskene er fulle. Spis mens du kan.',
+        p: 'Nøtter! Spis mens du kan',
+        d: 11,
+        color: '#8a5a2b',
+    },
+    {
+        id: 'hjort',
+        t: 'HJORTEFLOKK',
+        s: 'Hjorten er raskere enn deg. Spydet er raskere enn hjorten.',
+        p: 'Spydet er raskere enn hjorten',
+        d: 12,
+        color: '#7a4a1c',
+    },
+    {
+        id: 'sel',
+        t: 'SEL PÅ STRANDA',
+        s: 'Tungt, fett og lett å ta. Hele følget blir mett.',
+        p: 'Sel! Hele følget blir mett',
+        d: 10,
+        color: '#1f4f5f',
+    },
+    {
+        id: 'storm',
+        t: 'STORM',
+        s: 'Bølgene slår langt inn. Hold deg unna fjæra.',
+        p: 'Hold deg unna fjæra',
+        d: 10,
+        color: '#3d4a5c',
+    },
+    { id: 'stille', t: 'STILLE ÅR', s: '', p: '', d: 7, color: '#6b7b6b' },
+    {
+        id: 'villsvin',
+        t: 'VILLSVIN I SKOGEN',
+        s: 'De er ikke enige i at dette er jaktmarka di.',
+        p: 'De vil ha jaktmarka tilbake',
+        d: 12,
+        color: '#6b3a1f',
+    },
+    {
+        id: 'fisk',
+        t: 'FISKESTIM I VIKA',
+        s: 'Fisken hopper nesten i hendene dine.',
+        p: 'Fisken hopper i vika',
+        d: 10,
+        color: '#1f6f8b',
+    },
 ];
 
 const STILLE = [
     'Ingen merket noe. Havet steg 4 millimeter.',
-    'Bestefar forteller om fiskeplassen sin. Den ligger ute i sjøen nå.',
-    'Barna leker i fjæra. Det er et fint år.',
+    'Bestefars fiskeplass ligger ute i sjøen nå.',
+    'Barna leker i fjæra. Et fint år.',
     'Det skjer ingenting. Det er også historie.',
 ];
 
@@ -114,14 +161,55 @@ interface Find {
 // Havbunnsarkivet - samlingen går igjen mellom runder. Hvert funn er et faktum
 // fra artikkelen. Dette er MÅKA-trofeene, bare at de lærer bort noe.
 const FINDS: Find[] = [
-    { id: 'oks', icon: '🪓', name: 'Pyntet øks av hvalbein', fact: 'Trålet opp fra Nordsjøen. Datert til 9 500 år før nåtid.' },
-    { id: 'krok', icon: '🪝', name: 'Krok av bein, 293 mm', fact: 'Funnet utenfor Vest-Agder. Laget mellom 7725 og 7535 fvt.' },
-    { id: 'tann', icon: '🦷', name: 'Mammuttann', fact: 'Fiskere har dratt opp mammutknokler i over hundre år.' },
-    { id: 'knokkel', icon: '🦴', name: 'Knokkel med innrisset mønster', fact: 'Kunst fra havbunnen. Noen satt og risset mønster i et storfebein.' },
-    { id: 'flint', icon: '🔪', name: 'Flintkniv', fact: 'Flint og bein er det som oftest kommer opp i garna.' },
-    { id: 'harpun', icon: '🔱', name: 'Harpun av bein', fact: 'Sel, fisk og skjell var trolig den viktigste maten.' },
-    { id: 'torv', icon: '🟤', name: 'Torvklump', fact: 'Torv dannes bare på land. Torv på havbunnen viser at det var tørt der.' },
-    { id: 'mose', icon: '🌿', name: 'Mosestengel fra Storegga-laget', fact: 'Bølgen begravde den. Datert til 8 140 år før nåtid, pluss minus 30 år.', afterStoregga: true },
+    {
+        id: 'oks',
+        icon: '🪓',
+        name: 'Pyntet øks av hvalbein',
+        fact: 'Trålet opp fra Nordsjøen. Datert til 9 500 år før nåtid.',
+    },
+    {
+        id: 'krok',
+        icon: '🪝',
+        name: 'Krok av bein, 293 mm',
+        fact: 'Funnet utenfor Vest-Agder. Laget mellom 7725 og 7535 fvt.',
+    },
+    {
+        id: 'tann',
+        icon: '🦷',
+        name: 'Mammuttann',
+        fact: 'Fiskere har dratt opp mammutknokler i over hundre år.',
+    },
+    {
+        id: 'knokkel',
+        icon: '🦴',
+        name: 'Knokkel med innrisset mønster',
+        fact: 'Kunst fra havbunnen. Noen satt og risset mønster i et storfebein.',
+    },
+    {
+        id: 'flint',
+        icon: '🔪',
+        name: 'Flintkniv',
+        fact: 'Flint og bein er det som oftest kommer opp i garna.',
+    },
+    {
+        id: 'harpun',
+        icon: '🔱',
+        name: 'Harpun av bein',
+        fact: 'Sel, fisk og skjell var trolig den viktigste maten.',
+    },
+    {
+        id: 'torv',
+        icon: '🟤',
+        name: 'Torvklump',
+        fact: 'Torv dannes bare på land. Torv på havbunnen viser at det var tørt der.',
+    },
+    {
+        id: 'mose',
+        icon: '🌿',
+        name: 'Mosestengel fra Storegga-laget',
+        fact: 'Bølgen begravde den. Datert til 8 140 år før nåtid, pluss minus 30 år.',
+        afterStoregga: true,
+    },
 ];
 
 const RANKS: [number, string][] = [
@@ -136,10 +224,7 @@ const RANKS: [number, string][] = [
 type Cause = 'hunger' | 'inland' | 'swim' | 'storegga' | 'boar' | 'bank';
 
 const DEATH: Record<Cause, string[]> = {
-    hunger: [
-        'Maten tok slutt før havet gjorde det.',
-        'Følget ble for sultent til å gå videre.',
-    ],
+    hunger: ['Maten tok slutt før havet gjorde det.', 'Følget ble for sultent til å gå videre.'],
     inland: [
         'Innlandsskogen var trygg. Men det fantes nesten ikke mat der.',
         'Skjellene lå i fjæra hele tiden. Dere var for langt inne i skogen.',
@@ -212,7 +297,10 @@ function makeTerrain(seed: number): Float32Array {
     const h = new Float32Array(WORLD + 1);
     for (let x = 0; x <= WORLD; x++) {
         const base = -0.4 + 0.0172 * x;
-        const n = 0.22 * Math.sin(x * 0.07 + p1) + 0.1 * Math.sin(x * 0.19 + p2) + 0.06 * Math.sin(x * 0.61);
+        const n =
+            0.22 * Math.sin(x * 0.07 + p1) +
+            0.1 * Math.sin(x * 0.19 + p2) +
+            0.06 * Math.sin(x * 0.61);
         let bumps = 0;
         for (const [rx, rh, rw] of ridges) bumps += rh * gauss(x, rx, rw);
         const mainland = x > MAINLAND_X ? (x - MAINLAND_X) * 0.12 : 0;
@@ -358,7 +446,12 @@ interface Game {
     eventT: number;
     lastEv: EventId | null;
     done: Set<EventId>;
-    storegga: { phase: 'none' | 'drawdown' | 'wave' | 'after'; t: number; front: number; hit: boolean };
+    storegga: {
+        phase: 'none' | 'drawdown' | 'wave' | 'after';
+        t: number;
+        front: number;
+        hit: boolean;
+    };
     shellT: number;
     fishT: number;
     animalT: number;
@@ -514,11 +607,25 @@ function water(g: Game, x: number) {
 
 type Mode = 'menu' | 'play' | 'paused' | 'dying' | 'outro' | 'over';
 
+/** Et punkt i verden (x, meter over havet) som en lapp peker på. null = ikke synlig. */
+type At = () => [number, number] | null;
+interface PinOpts {
+    tone?: 'info' | 'fare' | 'bra';
+    seconds?: number;
+    once?: boolean;
+    until?: () => boolean;
+}
+
+// Tekst går aldri i en linje under spillet (den leses ikke). Se arcade/useArcade.tsx:
+// banner = to-fire ord, pin = lapp festet til noe i bildet, beat = lærings-øyeblikk
+// i sakte film, lesson = det som står på slutt-skjermen under «Dette skjedde».
 interface IO {
     mode: Mode;
     sfx: ReturnType<typeof makeSfx>;
-    banner: (t: string, s?: string, color?: string) => void;
-    toast: (t: string) => void;
+    banner: (t: string, color?: string) => void;
+    pin: (key: string, text: string, at: At, o?: PinOpts) => void;
+    beat: (key: string, title: string, text: string, at?: At, until?: () => boolean) => void;
+    lesson: (key: string, text: string, weight?: number) => void;
     die: () => void;
     win: () => void;
 }
@@ -609,7 +716,16 @@ function addCombo(g: Game) {
     g.maxCombo = Math.max(g.maxCombo, g.combo);
 }
 
-function feed(g: Game, io: IO, food: number, points: number, x: number, m: number, label: string, color: string) {
+function feed(
+    g: Game,
+    io: IO,
+    food: number,
+    points: number,
+    x: number,
+    m: number,
+    label: string,
+    color: string
+) {
     addCombo(g);
     const before = g.stats.food;
     g.stats.food += 1;
@@ -632,7 +748,10 @@ function feed(g: Game, io: IO, food: number, points: number, x: number, m: numbe
             col: TUNICS[i % TUNICS.length],
             scale: 0.55,
         });
-        io.toast(`Et barn er født! Følget er nå ${g.followers.length + 1}.`);
+        io.pin('barn', `Et barn er født! Dere er ${g.followers.length + 1}.`, heroAt(g), {
+            tone: 'bra',
+            seconds: 3,
+        });
         io.sfx.birth();
     }
 }
@@ -652,11 +771,19 @@ function hurt(g: Game, io: IO, n: number, cause: Cause) {
     return true;
 }
 
+/** Litt over hodet på lederen av følget. */
+const heroAt =
+    (g: Game): At =>
+    () => [g.p.x, g.p.m + 2.4];
+
 function startEvent(g: Game, io: IO, e: GameEvent) {
     g.event = e;
     g.eventLeft = e.d;
     g.lastEv = e.id;
-    io.banner(e.t, e.id === 'stille' ? pick(STILLE) : e.s, e.color);
+    io.banner(e.t, e.color);
+    const note = e.id === 'stille' ? pick(STILLE) : e.p;
+    if (note) io.pin('hendelse', note, heroAt(g), { seconds: 4.5 });
+    if (e.lesson) io.lesson(e.id, e.lesson, 1);
     io.sfx.event();
     buzz(20);
     if (e.id === 'notter') for (const b of g.bushes) b.nuts = 3;
@@ -678,7 +805,16 @@ function startEvent(g: Game, io: IO, e: GameEvent) {
 function spawnAnimal(g: Game, kind: Animal['kind'], ahead: number) {
     const x = g.p.x + ahead;
     if (water(g, x) > ground(g, x) - 0.2) return;
-    g.animals.push({ kind, x, vx: 0, face: -1, state: 'graze', t: rand(0, 3), m: ground(g, x), vm: 0 });
+    g.animals.push({
+        kind,
+        x,
+        vx: 0,
+        face: -1,
+        state: 'graze',
+        t: rand(0, 3),
+        m: ground(g, x),
+        vm: 0,
+    });
 }
 
 /** Punkter der vann møter land innenfor [a, b]. `land` = retningen til land (+1 øst, -1 vest). */
@@ -719,6 +855,8 @@ function update(g: Game, dt: number, io: IO) {
                 id: 'puls1',
                 t: 'HAVET STIGER FORTERE',
                 s: 'Nesten 9 millimeter i året. Omtrent like fort som en negl vokser.',
+                p: '9 mm i året - som en negl',
+                lesson: 'For 10 400 år siden steg havet nesten 9 mm i året - omtrent like fort som en negl vokser.',
                 d: 9,
                 color: '#1f6f8b',
             })
@@ -728,6 +866,8 @@ function update(g: Game, dt: number, io: IO) {
                 id: 'puls2',
                 t: 'HAVET STIGER FORTERE IGJEN',
                 s: '8 millimeter i året. I et lavland flytter kysten seg langt.',
+                p: 'Kysten flytter seg langt',
+                lesson: 'I et flatt lavland flytter kysten seg langt, selv om havet bare stiger noen millimeter i året.',
                 d: 9,
                 color: '#1f6f8b',
             })
@@ -735,7 +875,19 @@ function update(g: Game, dt: number, io: IO) {
         at('storegga', 8190, () => {
             g.event = null;
             g.storegga = { phase: 'drawdown', t: 0, front: g.p.x - 40, hit: false };
-            io.banner('STOREGGA-RASET', 'Et enormt fjellskred har løsnet utenfor Sunnmøre.', '#b8322a');
+            io.banner('STOREGGA-RASET', '#b8322a');
+            io.beat(
+                'storegga',
+                'STOREGGA-RASET',
+                'Et enormt skred utenfor Sunnmøre har laget en flodbølge. Havet trekker seg ut - løp opp på høyden!',
+                heroAt(g),
+                () => g.storegga.phase !== 'drawdown'
+            );
+            io.lesson(
+                'storegga',
+                'For 8 200 år siden laget Storegga-raset en flodbølge som skyllet over det som var igjen av Doggerland.',
+                1.5
+            );
             io.sfx.rumble();
             g.shake = 1.6;
             buzz([80, 60, 80, 60, 200]);
@@ -744,7 +896,16 @@ function update(g: Game, dt: number, io: IO) {
             for (const l of lines)
                 for (let i = 0; i < 5; i++) {
                     const x = l.x - l.land * rand(1, 9);
-                    g.items.push({ kind: 'skjell', x, m: ground(g, x), vx: 0, vm: 0, g: 0, rot: rand(-0.4, 0.4), life: 9 });
+                    g.items.push({
+                        kind: 'skjell',
+                        x,
+                        m: ground(g, x),
+                        vx: 0,
+                        vm: 0,
+                        g: 0,
+                        rot: rand(-0.4, 0.4),
+                        life: 9,
+                    });
                 }
         });
         // Doggerbanken: varsle FØR sadelen mot land i øst går under, mens det
@@ -752,13 +913,25 @@ function update(g: Game, dt: number, io: IO) {
         const onBank = p.x < g.saddle.x && p.x > BANK_X - 120;
         if (!g.islandWarned && g.sea + tideAmp(g) > g.saddle.m - 0.6 && onBank) {
             g.islandWarned = true;
-            io.banner('DOGGERBANKEN BLIR EN ØY', 'Blir du her, blir du fanget. Gå østover nå!', '#1f4f5f');
+            io.banner('BANKEN BLIR EN ØY', '#1f4f5f');
+            io.beat(
+                'banken',
+                'DOGGERBANKEN BLIR EN ØY',
+                'Havet stiger rundt dere. Blir dere her, blir dere fanget. Gå østover nå!',
+                heroAt(g),
+                () => g.p.x > g.saddle.x
+            );
+            io.lesson(
+                'banken',
+                'Doggerbanken var det høyeste i Doggerland. Den ble en øy før den også gikk under.',
+                1
+            );
             io.sfx.event();
             g.holmeT = 8;
         }
         if (g.islandWarned && onBank && g.holmeT <= 0) {
             g.holmeT = 8;
-            io.toast('Du er fortsatt på Doggerbanken. Landet ligger i øst.');
+            io.pin('bank', 'Landet ligger i øst →', heroAt(g), { tone: 'fare', seconds: 4 });
             io.sfx.warn();
         }
         // Holme-varsel: vann øst for deg betyr at du står på noe som blir en øy.
@@ -767,14 +940,17 @@ function update(g: Game, dt: number, io: IO) {
         else g.inlandT = 0;
         if (g.inlandT > 3) {
             g.inlandT = -9;
-            io.toast('Lite mat inne i skogen. Skjell og fisk finner du i fjæra, mot vest.');
+            io.pin('skog', '← Maten er i fjæra', heroAt(g), { seconds: 4 });
             io.sfx.warn();
         }
         g.holmeT -= dt;
         const onBankNow = p.x < g.saddle.x && p.x > BANK_X - 120;
         if (g.holmeT <= 0 && p.depth === 0 && !onBankNow && onHolme(g)) {
             g.holmeT = 14;
-            io.toast('Du står på en holme. Den blir mindre. Gå østover!');
+            io.pin('holme', 'Holmen krymper - gå østover!', heroAt(g), {
+                tone: 'fare',
+                seconds: 4,
+            });
             io.sfx.warn();
         }
         if (g.year <= Y1) {
@@ -797,7 +973,7 @@ function update(g: Game, dt: number, io: IO) {
             s.t = 0;
             s.front = g.p.x - 34;
             io.sfx.wave();
-            io.toast('Bølgen kommer! Kom deg opp!');
+            io.pin('bolge', 'Bølgen kommer! Opp!', heroAt(g), { tone: 'fare', seconds: 3 });
         } else if (s.phase === 'wave') {
             s.front += 17 * dt;
             if (live && !s.hit && water(g, p.x) > ground(g, p.x) + 0.6 && s.front > p.x - 4) {
@@ -815,7 +991,12 @@ function update(g: Game, dt: number, io: IO) {
         } else if (s.phase === 'after' && s.t > 4) {
             s.phase = 'none';
             if (live) {
-                io.banner('LANDET KOM SEG', 'Bølgen tok ikke Doggerland. Havet som fortsatte å stige, gjorde det.', '#3f7d3a');
+                io.banner('LANDET KOM SEG', '#3f7d3a');
+                io.lesson(
+                    'etter',
+                    'Bølgen tok ikke Doggerland. Havet som fortsatte å stige, gjorde det.',
+                    1
+                );
                 io.sfx.event();
                 if (!s.hit) {
                     g.score += 300;
@@ -877,7 +1058,13 @@ function update(g: Game, dt: number, io: IO) {
             g.hunger -= drain * dt;
         }
         if (g.hunger <= 0) {
-            g.cause = swimming ? 'swim' : g.cause === 'storegga' || g.cause === 'boar' ? g.cause : nearestWaterDist(g) > 30 ? 'inland' : 'hunger';
+            g.cause = swimming
+                ? 'swim'
+                : g.cause === 'storegga' || g.cause === 'boar'
+                  ? g.cause
+                  : nearestWaterDist(g) > 30
+                    ? 'inland'
+                    : 'hunger';
             io.die();
         }
         if (g.combo > 0) {
@@ -899,9 +1086,32 @@ function update(g: Game, dt: number, io: IO) {
     p.walk += Math.abs(p.vx) * dt * 0.9;
     p.squash = Math.max(0, p.squash - dt * 1.5);
     if (Math.abs(p.vx) > 3 && !swimming && Math.random() < dt * 6) {
-        g.parts.push({ type: 'dust', x: p.x - p.face * 0.6, m: p.m + 0.1, vx: -p.face * 2, vm: 1, g: 0, life: 0.4, max: 0.4, size: rand(0.3, 0.6), color: wading ? '#dff3fb' : '#c9b48a' });
+        g.parts.push({
+            type: 'dust',
+            x: p.x - p.face * 0.6,
+            m: p.m + 0.1,
+            vx: -p.face * 2,
+            vm: 1,
+            g: 0,
+            life: 0.4,
+            max: 0.4,
+            size: rand(0.3, 0.6),
+            color: wading ? '#dff3fb' : '#c9b48a',
+        });
     }
-    if (swimming && Math.random() < dt * 3) g.parts.push({ type: 'bubble', x: p.x + rand(-0.8, 0.8), m: w, vx: 0, vm: 0.6, g: 0, life: 0.6, max: 0.6, size: 0.3, color: '#fff' });
+    if (swimming && Math.random() < dt * 3)
+        g.parts.push({
+            type: 'bubble',
+            x: p.x + rand(-0.8, 0.8),
+            m: w,
+            vx: 0,
+            vm: 0.6,
+            g: 0,
+            life: 0.6,
+            max: 0.6,
+            size: 0.3,
+            color: '#fff',
+        });
 
     // følget: hver følger går etter den foran seg
     let lead = { x: p.x, face: p.face };
@@ -932,9 +1142,15 @@ function update(g: Game, dt: number, io: IO) {
             g.genT = 11;
             g.gen += 1;
             const prev = g.camps[g.camps.length - 1];
-            if (!prev || Math.abs(prev.x - p.x) > 6) g.camps.push({ x: p.x - p.face * 3, m: ground(g, p.x - p.face * 3), gen: g.gen });
+            if (!prev || Math.abs(prev.x - p.x) > 6)
+                g.camps.push({ x: p.x - p.face * 3, m: ground(g, p.x - p.face * 3), gen: g.gen });
             const cm = Math.round((realRate(g.year) * LIFETIME_YEARS) / 10);
-            io.toast(`Ny generasjon. I bestefars levetid steg havet ${cm} cm. Ingen merket det.`);
+            io.pin('generasjon', `Ny generasjon: havet +${cm} cm`, heroAt(g), { seconds: 3.5 });
+            io.lesson(
+                'generasjon',
+                `I en menneskealder steg havet bare rundt ${cm} cm. Ingen merket det - men etter 3 000 år var landet borte.`,
+                2
+            );
         }
     }
 
@@ -942,7 +1158,9 @@ function update(g: Game, dt: number, io: IO) {
     if (live) {
         // skjell i fjæra, rikest i tidevannssonen
         g.shellT -= dt;
-        const nearShells = g.items.filter((i) => i.kind === 'skjell' && Math.abs(i.x - p.x) < 45).length;
+        const nearShells = g.items.filter(
+            (i) => i.kind === 'skjell' && Math.abs(i.x - p.x) < 45
+        ).length;
         if (g.shellT <= 0 && nearShells < 14) {
             g.shellT = g.event?.id === 'stille' ? 0.2 : 0.32;
             const lines = waterlines(g, g.camX - 30, g.camX + 36);
@@ -950,7 +1168,17 @@ function update(g: Game, dt: number, io: IO) {
                 const l = pick(lines);
                 const x = l.x + l.land * rand(-2, 6);
                 const gx = ground(g, x);
-                if (gx > g.sea + g.tide - 0.9) g.items.push({ kind: 'skjell', x, m: gx, vx: 0, vm: 0, g: 0, rot: rand(-0.4, 0.4), life: rand(10, 16) });
+                if (gx > g.sea + g.tide - 0.9)
+                    g.items.push({
+                        kind: 'skjell',
+                        x,
+                        m: gx,
+                        vx: 0,
+                        vm: 0,
+                        g: 0,
+                        rot: rand(-0.4, 0.4),
+                        life: rand(10, 16),
+                    });
             }
         }
         // fisk hopper ut av vannet nær land
@@ -963,7 +1191,16 @@ function update(g: Game, dt: number, io: IO) {
                 const x = l.x - l.land * rand(2, 6);
                 const wx = water(g, x);
                 if (wx > ground(g, x) + 0.3)
-                    g.items.push({ kind: 'fisk', x, m: wx, vx: l.land * rand(2.5, 4.5), vm: rand(8, 11), g: 16, rot: 0, life: 2.5 });
+                    g.items.push({
+                        kind: 'fisk',
+                        x,
+                        m: wx,
+                        vx: l.land * rand(2.5, 4.5),
+                        vm: rand(8, 11),
+                        g: 16,
+                        rot: 0,
+                        life: 2.5,
+                    });
             }
         }
         // dyr i skogen
@@ -979,8 +1216,18 @@ function update(g: Game, dt: number, io: IO) {
                 for (let tries = 0; tries < 12; tries++) {
                     const x = p.x + rand(14, 30);
                     if (water(g, x) < ground(g, x) - 0.2) {
-                        g.items.push({ kind: 'funn', x, m: ground(g, x), vx: 0, vm: 0, g: 0, rot: 0, life: 30, find: f.find });
-                        io.toast('Noe glimter på bakken foran deg.');
+                        g.items.push({
+                            kind: 'funn',
+                            x,
+                            m: ground(g, x),
+                            vx: 0,
+                            vm: 0,
+                            g: 0,
+                            rot: 0,
+                            life: 30,
+                            find: f.find,
+                        });
+                        io.pin('glimt', 'Noe glimter!', () => [x, ground(g, x)], { seconds: 4 });
                         break;
                     }
                 }
@@ -1002,7 +1249,8 @@ function update(g: Game, dt: number, io: IO) {
             const n = b.nuts;
             b.nuts = 0;
             b.t = 0;
-            for (let i = 0; i < n; i++) feed(g, io, 2.5, 3, b.x, ground(g, b.x) + 1.5, i === 0 ? 'NØTTER ' : '', '#ffcf7a');
+            for (let i = 0; i < n; i++)
+                feed(g, io, 2.5, 3, b.x, ground(g, b.x) + 1.5, i === 0 ? 'NØTTER ' : '', '#ffcf7a');
             io.sfx.eat();
             crumbs(g, b.x, ground(g, b.x) + 1.4, 6, '#a0522d');
         }
@@ -1052,11 +1300,24 @@ function update(g: Game, dt: number, io: IO) {
                 g.score += 150;
                 g.stats.finds.push(f.id);
                 text(g, it.x, it.m + 2.6, `FUNN! +150`, '#ffd43b', 2.2);
-                io.banner(`${f.icon} ${f.name.toUpperCase()}`, f.fact, '#b07d1a');
+                io.banner(`${f.icon} FUNN!`, '#b07d1a');
+                io.pin('funn', f.name, heroAt(g), { tone: 'bra', seconds: 3.5 });
+                io.lesson(`funn-${f.id}`, `${f.name}: ${f.fact}`, 0.8);
                 io.sfx.find();
                 buzz([20, 30, 20, 30, 60]);
                 for (let i = 0; i < 16; i++)
-                    g.parts.push({ type: 'spark', x: it.x, m: it.m + 0.6, vx: rand(-8, 8), vm: rand(2, 10), g: 10, life: rand(0.5, 1), max: 1, size: rand(0.2, 0.4), color: '#ffe27a' });
+                    g.parts.push({
+                        type: 'spark',
+                        x: it.x,
+                        m: it.m + 0.6,
+                        vx: rand(-8, 8),
+                        vm: rand(2, 10),
+                        g: 10,
+                        life: rand(0.5, 1),
+                        max: 1,
+                        size: rand(0.2, 0.4),
+                        color: '#ffe27a',
+                    });
             }
             buzz(8);
         }
@@ -1127,7 +1388,9 @@ function update(g: Game, dt: number, io: IO) {
         if (Math.abs(a.vx) > 0.3) a.face = Math.sign(a.vx);
         a.m = ground(g, a.x);
     }
-    g.animals = g.animals.filter((a) => Math.abs(a.x - p.x) < 90 && !(a.state === 'dead' && a.t > 4));
+    g.animals = g.animals.filter(
+        (a) => Math.abs(a.x - p.x) < 90 && !(a.state === 'dead' && a.t > 4)
+    );
 
     // --- spyd ---
     for (const sp of g.spears) {
@@ -1149,7 +1412,16 @@ function update(g: Game, dt: number, io: IO) {
                 sp.stuck = 0.01;
                 g.stats.kills++;
                 const big = a.kind === 'hjort';
-                feed(g, io, big ? 32 : 26, big ? 50 : 40, a.x, a.m + 1, big ? 'HJORT! ' : 'VILLSVIN! ', '#ffd43b');
+                feed(
+                    g,
+                    io,
+                    big ? 32 : 26,
+                    big ? 50 : 40,
+                    a.x,
+                    a.m + 1,
+                    big ? 'HJORT! ' : 'VILLSVIN! ',
+                    '#ffd43b'
+                );
                 io.sfx.kill();
                 io.sfx.thud();
                 g.shake = Math.max(g.shake, 0.25);
@@ -1170,7 +1442,18 @@ function update(g: Game, dt: number, io: IO) {
     // --- partikler og tekst ---
     const e = g.event?.id;
     if ((e === 'storm' || s.phase === 'wave') && Math.random() < dt * 40)
-        g.parts.push({ type: 'rain', x: g.camX + rand(-30, 34), m: g.camM + 12, vx: -8, vm: -38, g: 0, life: 1.2, max: 1.2, size: 1, color: '#dfe8f0' });
+        g.parts.push({
+            type: 'rain',
+            x: g.camX + rand(-30, 34),
+            m: g.camM + 12,
+            vx: -8,
+            vm: -38,
+            g: 0,
+            life: 1.2,
+            max: 1.2,
+            size: 1,
+            color: '#dfe8f0',
+        });
     for (const pt of g.parts) {
         pt.life -= dt;
         pt.vm -= pt.g * dt;
@@ -1199,7 +1482,8 @@ function nearestWaterDist(g: Game) {
 /** Står spilleren på en holme? Vann øst for deg (før land) betyr ja. */
 function onHolme(g: Game) {
     if (g.p.depth > 0.1) return false;
-    for (let x = g.p.x + 1; x < g.p.x + 70; x += 1) if (water(g, x) > ground(g, x) + 0.15) return true;
+    for (let x = g.p.x + 1; x < g.p.x + 70; x += 1)
+        if (water(g, x) > ground(g, x) + 0.15) return true;
     return false;
 }
 
@@ -1268,13 +1552,34 @@ let viewU = 20;
 let viewW = 800;
 
 const MOODS: Record<string, [number[], number[]]> = {
-    base: [[126, 176, 214], [236, 222, 190]],
-    storm: [[70, 82, 98], [150, 160, 170]],
-    stille: [[176, 198, 214], [242, 236, 222]],
-    storegga: [[92, 88, 110], [214, 170, 140]],
-    notter: [[150, 180, 200], [246, 214, 160]],
-    sel: [[110, 160, 200], [214, 232, 238]],
-    outro: [[150, 170, 190], [220, 225, 228]],
+    base: [
+        [126, 176, 214],
+        [236, 222, 190],
+    ],
+    storm: [
+        [70, 82, 98],
+        [150, 160, 170],
+    ],
+    stille: [
+        [176, 198, 214],
+        [242, 236, 222],
+    ],
+    storegga: [
+        [92, 88, 110],
+        [214, 170, 140],
+    ],
+    notter: [
+        [150, 180, 200],
+        [246, 214, 160],
+    ],
+    sel: [
+        [110, 160, 200],
+        [214, 232, 238],
+    ],
+    outro: [
+        [150, 170, 190],
+        [220, 225, 228],
+    ],
 };
 const mood = { top: [126, 176, 214], bot: [236, 222, 190] };
 
@@ -1303,7 +1608,12 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
     const U = H / 24; // skjermpiksler per enhet
     viewU = U;
     viewW = W;
-    const e = mode === 'outro' ? 'outro' : g.storegga.phase !== 'none' ? 'storegga' : g.event?.id ?? 'base';
+    const e =
+        mode === 'outro'
+            ? 'outro'
+            : g.storegga.phase !== 'none'
+              ? 'storegga'
+              : (g.event?.id ?? 'base');
     const m = MOODS[e] ?? MOODS.base;
     for (let i = 0; i < 3; i++) {
         mood.top[i] = lerp(mood.top[i], m[0][i], 0.03);
@@ -1334,7 +1644,15 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
     ctx.arc(W * 0.8, H * 0.2, U * 2.2, 0, 7);
     ctx.fill();
     ridge(ctx, W, H, g.camX * U * 0.08, H * 0.5, [H * 0.07, H * 0.035], 'rgba(96,128,150,.35)');
-    ridge(ctx, W, H, g.camX * U * 0.18 + 300, H * 0.56, [H * 0.05, H * 0.03], 'rgba(70,104,96,.45)');
+    ridge(
+        ctx,
+        W,
+        H,
+        g.camX * U * 0.18 + 300,
+        H * 0.56,
+        [H * 0.05, H * 0.03],
+        'rgba(70,104,96,.45)'
+    );
 
     // terreng
     const x0 = g.camX - (W * 0.42) / U - 2;
@@ -1401,7 +1719,8 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
         const blink = it.life < 2 && Math.floor(it.life * 8) % 2 === 0;
         if (blink) continue;
         if (it.kind === 'skjell') drawShell(ctx, X, Y, U, it.rot);
-        else if (it.kind === 'fisk') drawEmoji(ctx, '🐟', X, Y - U * 0.3, U * 1.5, it.rot, it.vx > 0);
+        else if (it.kind === 'fisk')
+            drawEmoji(ctx, '🐟', X, Y - U * 0.3, U * 1.5, it.rot, it.vx > 0);
         else if (it.kind === 'sel') drawEmoji(ctx, '🦭', X, Y - U * 0.6, U * 2.2, 0, false);
         else if (it.kind === 'funn' && it.find) {
             const bob = Math.sin(g.t * 4) * U * 0.2;
@@ -1417,22 +1736,58 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
     for (const a of g.animals) {
         const X = SX(a.x);
         const Y = SY(a.m);
-        const bob = a.state === 'dead' ? 0 : Math.abs(Math.sin(a.t * (Math.abs(a.vx) > 3 ? 14 : 3))) * U * 0.15;
-        const rot = a.state === 'dead' ? Math.PI / 2 * -a.face : 0;
+        const bob =
+            a.state === 'dead'
+                ? 0
+                : Math.abs(Math.sin(a.t * (Math.abs(a.vx) > 3 ? 14 : 3))) * U * 0.15;
+        const rot = a.state === 'dead' ? (Math.PI / 2) * -a.face : 0;
         // emojiene ser mot venstre - speil når dyret går østover
-        drawEmoji(ctx, a.kind === 'hjort' ? '🦌' : '🐗', X, Y - U * (a.kind === 'hjort' ? 1.3 : 0.8) - bob, U * (a.kind === 'hjort' ? 2.8 : 2.1), rot, a.face > 0);
+        drawEmoji(
+            ctx,
+            a.kind === 'hjort' ? '🦌' : '🐗',
+            X,
+            Y - U * (a.kind === 'hjort' ? 1.3 : 0.8) - bob,
+            U * (a.kind === 'hjort' ? 2.8 : 2.1),
+            rot,
+            a.face > 0
+        );
     }
 
     // følget og spilleren
     for (let i = g.followers.length - 1; i >= 0; i--) {
         const f = g.followers[i];
         const swim = water(g, f.x) - ground(g, f.x) > 0.6;
-        drawPerson(ctx, SX(f.x), SY(f.m), U * f.scale, f.face, f.walk, f.col, swim, false, 0, false);
+        drawPerson(
+            ctx,
+            SX(f.x),
+            SY(f.m),
+            U * f.scale,
+            f.face,
+            f.walk,
+            f.col,
+            swim,
+            false,
+            0,
+            false
+        );
     }
     const p = g.p;
     const swim = p.depth > 0.75;
     const inv = p.inv > 0 && Math.floor(p.inv * 14) % 2 === 0;
-    if (!inv) drawPerson(ctx, SX(p.x), SY(p.m), U, p.face, p.walk, '#9b3a2a', swim, true, p.squash, mode === 'dying');
+    if (!inv)
+        drawPerson(
+            ctx,
+            SX(p.x),
+            SY(p.m),
+            U,
+            p.face,
+            p.walk,
+            '#9b3a2a',
+            swim,
+            true,
+            p.squash,
+            mode === 'dying'
+        );
 
     // spyd
     for (const sp of g.spears) {
@@ -1493,7 +1848,13 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
         ctx.fillStyle = 'rgba(255,255,255,.85)';
         for (let i = 0; i < 6; i++) {
             ctx.beginPath();
-            ctx.arc(fx - i * U * 0.9, fy + Math.sin(g.t * 20 + i) * U * 0.2, U * (0.9 - i * 0.1), 0, 7);
+            ctx.arc(
+                fx - i * U * 0.9,
+                fy + Math.sin(g.t * 20 + i) * U * 0.2,
+                U * (0.9 - i * 0.1),
+                0,
+                7
+            );
             ctx.fill();
         }
     }
@@ -1562,7 +1923,14 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
                 ctx.fill();
                 ctx.stroke();
                 ctx.restore();
-                outlined(ctx, `LAND ${Math.round(Math.abs(d) * 10)} m`, ax - sgn * 10, ay + 34, 16, '#fff');
+                outlined(
+                    ctx,
+                    `LAND ${Math.round(Math.abs(d) * 10)} m`,
+                    ax - sgn * 10,
+                    ay + 34,
+                    16,
+                    '#fff'
+                );
             }
         }
     }
@@ -1589,7 +1957,14 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
     }
     if (mode === 'play' && g.hunger < 25) {
         const a = (0.25 - g.hunger / 100) * 1.5 * (0.6 + 0.4 * Math.sin(g.t * 8));
-        const rg = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * 0.3, W / 2, H / 2, Math.max(W, H) * 0.75);
+        const rg = ctx.createRadialGradient(
+            W / 2,
+            H / 2,
+            Math.min(W, H) * 0.3,
+            W / 2,
+            H / 2,
+            Math.max(W, H) * 0.75
+        );
         rg.addColorStop(0, 'rgba(180,0,0,0)');
         rg.addColorStop(1, `rgba(180,0,0,${Math.max(0, a)})`);
         ctx.fillStyle = rg;
@@ -1597,20 +1972,39 @@ function render(g: Game, view: ArcadeView, mode: Mode) {
     }
 }
 
-function ridge(ctx: CanvasRenderingContext2D, W: number, H: number, o: number, base: number, amp: number[], color: string) {
+function ridge(
+    ctx: CanvasRenderingContext2D,
+    W: number,
+    H: number,
+    o: number,
+    base: number,
+    amp: number[],
+    color: string
+) {
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(0, H);
     for (let x = 0; x <= W + 8; x += 8) {
         const X = x + o;
-        ctx.lineTo(x, base - amp[0] * (1 + Math.sin(X * 0.004)) - amp[1] * Math.sin(X * 0.013 + 1.3));
+        ctx.lineTo(
+            x,
+            base - amp[0] * (1 + Math.sin(X * 0.004)) - amp[1] * Math.sin(X * 0.013 + 1.3)
+        );
     }
     ctx.lineTo(W + 8, H);
     ctx.closePath();
     ctx.fill();
 }
 
-function outlined(ctx: CanvasRenderingContext2D, t: string, x: number, y: number, size: number, fill: string, rot = 0) {
+function outlined(
+    ctx: CanvasRenderingContext2D,
+    t: string,
+    x: number,
+    y: number,
+    size: number,
+    fill: string,
+    rot = 0
+) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot);
@@ -1626,7 +2020,15 @@ function outlined(ctx: CanvasRenderingContext2D, t: string, x: number, y: number
     ctx.restore();
 }
 
-function drawEmoji(ctx: CanvasRenderingContext2D, e: string, x: number, y: number, size: number, rot: number, flip: boolean) {
+function drawEmoji(
+    ctx: CanvasRenderingContext2D,
+    e: string,
+    x: number,
+    y: number,
+    size: number,
+    rot: number,
+    flip: boolean
+) {
     const c = emoji(e, size * 1.5);
     const s = size * 1.35;
     ctx.save();
@@ -1637,7 +2039,15 @@ function drawEmoji(ctx: CanvasRenderingContext2D, e: string, x: number, y: numbe
     ctx.restore();
 }
 
-function drawTree(ctx: CanvasRenderingContext2D, x: number, y: number, U: number, kind: 0 | 1 | 2, s: number, wet: boolean) {
+function drawTree(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    U: number,
+    kind: 0 | 1 | 2,
+    s: number,
+    wet: boolean
+) {
     ctx.lineWidth = Math.max(1.2, U * 0.1);
     ctx.strokeStyle = INK;
     if (wet) {
@@ -1676,7 +2086,14 @@ function drawTree(ctx: CanvasRenderingContext2D, x: number, y: number, U: number
     }
 }
 
-function drawBush(ctx: CanvasRenderingContext2D, x: number, y: number, U: number, nuts: number, wet: boolean) {
+function drawBush(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    U: number,
+    nuts: number,
+    wet: boolean
+) {
     if (wet) return;
     ctx.fillStyle = '#4f8a3c';
     ctx.strokeStyle = INK;
@@ -1719,7 +2136,15 @@ function drawShell(ctx: CanvasRenderingContext2D, x: number, y: number, U: numbe
     ctx.restore();
 }
 
-function drawCamp(ctx: CanvasRenderingContext2D, x: number, y: number, U: number, wet: boolean, t: number, gen: number) {
+function drawCamp(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    U: number,
+    wet: boolean,
+    t: number,
+    gen: number
+) {
     ctx.strokeStyle = INK;
     ctx.lineWidth = Math.max(1.2, U * 0.1);
     if (wet) {
@@ -1873,7 +2298,10 @@ function drawPerson(
     ctx.lineWidth = U * 0.28;
     ctx.beginPath();
     ctx.moveTo(U * 0.3, -U * 2.6);
-    ctx.lineTo(U * (swim ? 1.1 : 0.55 - sw * 0.5), swim ? -U * 2.9 + Math.sin(walk * 3) * U * 0.4 : -U * 1.7);
+    ctx.lineTo(
+        U * (swim ? 1.1 : 0.55 - sw * 0.5),
+        swim ? -U * 2.9 + Math.sin(walk * 3) * U * 0.4 : -U * 1.7
+    );
     ctx.stroke();
     ctx.restore();
 }
@@ -1977,6 +2405,7 @@ interface RunResult {
     newBest: boolean;
     rank: string;
     msg: string;
+    lessons: string[];
     years: number;
     people: number;
     food: number;
@@ -1997,9 +2426,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
     const [sfxApi] = useState(() => makeSfx(synth));
     const [muted, setMutedState] = useState(() => synth.isMuted());
     const [pauseMsg, setPauseMsg] = useState(PAUSE_MSG[0]);
-    // Lesetekst (undertitler og meldinger) går UNDER spillvinduet, så den aldri
-    // dekker dyr, mat eller bølgen. Bare korte titler blinker opp i bildet.
-    const [announce, announcer, feed] = useArcadeAnnouncer({ feed: true });
+    const [text, textLayer] = useArcadeText(GAME_ID);
     const gameRef = useRef<Game | null>(null);
     const hud = {
         score: useRef<HTMLDivElement>(null),
@@ -2055,6 +2482,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             newBest,
             rank: rankFor(RANKS, score),
             msg,
+            lessons: text.lessons(3),
             years: Math.round(Y0 - g.year),
             people: g.followers.length + 1,
             food: g.stats.food,
@@ -2072,11 +2500,28 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
         }
     };
 
+    /** Et punkt i verden -> et punkt i spillvinduet, samme regnestykke som tegningen. */
+    const toScreen = (at: At) => () => {
+        const p = at();
+        const g = gameRef.current;
+        const st = stageRef.current;
+        if (!p || !g || !st) return null;
+        const W = st.clientWidth;
+        const H = st.clientHeight;
+        const U = H / 24;
+        const x = (p[0] - g.camX) * U + W * 0.42;
+        const y = H * 0.64 - (p[1] - g.camM) * VS * U;
+        return x < -20 || x > W + 20 ? null : { x, y };
+    };
+
     const io: IO = {
         mode,
         sfx: sfxApi,
-        banner: announce.banner,
-        toast: announce.toast,
+        banner: (t, color) => text.banner(t, color),
+        pin: (key, t, at, o) => text.point(key, t, toScreen(at), o),
+        beat: (key, title, t, at, until) =>
+            text.beatOnce(key, title, t, { at: at ? toScreen(at) : undefined, until }),
+        lesson: (key, t, w) => text.lesson(key, t, w),
         die: () => {
             if (modeRef.current !== 'play') return;
             const g = gameRef.current;
@@ -2092,7 +2537,12 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             const g = gameRef.current;
             if (!g) return;
             g.outro = 0;
-            announce.banner('DOGGERLAND ER BORTE', 'Folket ditt levde videre på kysten rundt Nordsjøen.', '#1f4f5f');
+            text.banner('DOGGERLAND ER BORTE', '#1f4f5f', 3);
+            text.lesson(
+                'borte',
+                'For 7 800 år siden var Doggerland borte. Folket levde videre på kysten rundt Nordsjøen.',
+                1.2
+            );
             sfxApi.win();
             setModeBoth('outro');
         },
@@ -2129,10 +2579,12 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
         if (y !== L.y && hud.year.current && hud.sea.current) {
             hud.year.current.textContent = `${y.toLocaleString('nb-NO')} år siden`;
             hud.sea.current.textContent = `Havet: +${g.sea.toFixed(1).replace('.', ',')} m`;
-            if (hud.goal.current) hud.goal.current.style.width = `${((Y0 - g.year) / (Y0 - Y1)) * 100}%`;
+            if (hud.goal.current)
+                hud.goal.current.style.width = `${((Y0 - g.year) / (Y0 - Y1)) * 100}%`;
             L.y = y;
         }
-        if (hud.spear.current) hud.spear.current.classList.toggle('dim', g.p.spearCd > 0 || g.p.depth > 0.75);
+        if (hud.spear.current)
+            hud.spear.current.classList.toggle('dim', g.p.spearCd > 0 || g.p.depth > 0.75);
     };
 
     const { stageRef, bindStage, bindCanvas } = useArcadeLoop({
@@ -2141,7 +2593,8 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             if (!g) return;
             const m = modeRef.current;
             const cur = { ...ioRef.current, mode: m };
-            if (m === 'play' || m === 'menu' || m === 'dying' || m === 'outro') update(g, dt, cur);
+            if (m === 'play' || m === 'menu' || m === 'dying' || m === 'outro')
+                update(g, dt * text.timeScale(), cur);
             if (m === 'dying') {
                 g.dying += dt;
                 if (g.dying > 1.6) endRun(false);
@@ -2176,11 +2629,15 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
         lastHud.current = { s: -1, c: -1, h: -1, y: -1 };
         setResult(null);
         setShowFinds(false);
-        announce.clear();
+        text.resetRun();
         setModeBoth('play');
         window.setTimeout(() => {
-            if (modeRef.current === 'play')
-                announce.banner('11 000 ÅR SIDEN', 'Hold følget i live til Doggerland er borte, 7 800 år siden. Det tar 3 200 år.', '#3f7d3a');
+            if (modeRef.current !== 'play') return;
+            text.banner('11 000 ÅR SIDEN', '#3f7d3a');
+            text.point('mal', 'Hold følget mett til landet er borte', toScreen(heroAt(g)), {
+                once: true,
+                seconds: 7,
+            });
         }, 300);
         synth.tone(260, 520, 0.14, 'triangle', 0.1);
     };
@@ -2194,7 +2651,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
     const resume = () => setModeBoth('play');
     const toMenu = () => {
         gameRef.current = newGame(Math.floor(Math.random() * 1e9), saveRef.current.found);
-        announce.clear();
+        text.clear();
         setModeBoth('menu');
     };
     const toggleMute = () => {
@@ -2214,7 +2671,8 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             synth.unlock();
             (e.target as Element).setPointerCapture?.(e.pointerId);
             g.input.ptrSX = e.clientX - r.left;
-        } else if (e.type === 'pointermove' && g.input.ptrSX !== null) g.input.ptrSX = e.clientX - r.left;
+        } else if (e.type === 'pointermove' && g.input.ptrSX !== null)
+            g.input.ptrSX = e.clientX - r.left;
         else if (e.type === 'pointerup' || e.type === 'pointercancel') g.input.ptrSX = null;
     };
     // Selvspill (kun i utvikling, se playtest.ts). Robotene styrer med de samme
@@ -2255,7 +2713,14 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
                 const m = modeRef.current;
                 const o = outcome.current;
                 return {
-                    fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
+                    fase:
+                        m === 'menu'
+                            ? 'meny'
+                            : m === 'over'
+                              ? o?.won
+                                  ? 'vunnet'
+                                  : 'tapt'
+                              : 'spiller',
                     poeng: m === 'over' && o ? o.score : Math.floor(g?.score ?? 0),
                     framdrift: g ? (Y0 - g.year) / (Y0 - Y1) : 0,
                     tid: g ? (Y0 - g.year) / YEARS_PER_SEC : 0,
@@ -2265,7 +2730,8 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             bots: {
                 seende: {
                     forventer: 'vinner',
-                    beskrivelse: 'Plukker mat i fjæra, kaster spyd, går østover når landet blir en holme og flykter fra Storegga.',
+                    beskrivelse:
+                        'Plukker mat i fjæra, kaster spyd, går østover når landet blir en holme og flykter fra Storegga.',
                     tick: styr(seende),
                 },
                 'bare-ost': {
@@ -2285,7 +2751,11 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
             g.input.key = (keys.has('r') ? 1 : 0) - (keys.has('l') ? 1 : 0);
         };
         const map = (code: string) =>
-            code === 'ArrowLeft' || code === 'KeyA' ? 'l' : code === 'ArrowRight' || code === 'KeyD' ? 'r' : null;
+            code === 'ArrowLeft' || code === 'KeyA'
+                ? 'l'
+                : code === 'ArrowRight' || code === 'KeyD'
+                  ? 'r'
+                  : null;
         const down = (e: KeyboardEvent) => {
             const m = modeRef.current;
             const stage = stageRef.current;
@@ -2302,7 +2772,8 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
                 }
                 if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') {
                     e.preventDefault();
-                    if (!e.repeat && gameRef.current) throwSpear(gameRef.current, { ...ioRef.current, mode: 'play' });
+                    if (!e.repeat && gameRef.current)
+                        throwSpear(gameRef.current, { ...ioRef.current, mode: 'play' });
                 }
                 if (e.code === 'Escape' || e.code === 'KeyP') pause();
             } else if (m === 'paused' && (e.code === 'Escape' || e.code === 'KeyP')) resume();
@@ -2330,238 +2801,368 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
     return (
         <MicroGameFrame title="Havet kommer" bleed>
             <div className="p-2">
-            <ArcadeStage ref={bindStage} theme={THEME} label="Havet kommer - Doggerland-spill" below={feed}>
-                <canvas
-                    ref={bindCanvas}
-                    onPointerDown={onPointer}
-                    onPointerMove={onPointer}
-                    onPointerUp={onPointer}
-                    onPointerCancel={onPointer}
-                />
+                <ArcadeStage ref={bindStage} theme={THEME} label="Havet kommer - Doggerland-spill">
+                    <canvas
+                        ref={bindCanvas}
+                        onPointerDown={onPointer}
+                        onPointerMove={onPointer}
+                        onPointerUp={onPointer}
+                        onPointerCancel={onPointer}
+                    />
 
-                {/* HUD */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        left: 0,
-                        right: 0,
-                        top: 0,
-                        padding: '8px 10px 0',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: 10,
-                        pointerEvents: 'none',
-                        opacity: hudOn ? 1 : 0,
-                        transition: 'opacity .3s',
-                    }}
-                >
-                    <div style={{ minWidth: 86 }}>
-                        <div ref={hud.score} className="arc-display arc-outline" style={{ fontSize: 28, lineHeight: 1 }}>
-                            0
-                        </div>
-                        <div
-                            ref={hud.combo}
-                            className="arc-display arc-pill"
-                            style={{ marginTop: 5, fontSize: 14, opacity: 0, color: INK }}
-                        >
-                            ×2
-                        </div>
-                    </div>
-                    <div style={{ flex: 1, maxWidth: 230, margin: '4px auto 0' }}>
-                        <div className="arc-display arc-outline" style={{ fontSize: 12, marginBottom: 3 }}>
-                            Følgets metthet
-                        </div>
-                        <div ref={hud.bar} className="arc-bar">
-                            <div ref={hud.fill} style={{ width: '100%', background: '#7ccf5b' }} />
-                        </div>
-                    </div>
-                    <div style={{ textAlign: 'right', minWidth: 110 }}>
-                        <div ref={hud.year} className="arc-display arc-outline" style={{ fontSize: 16, lineHeight: 1.1 }}>
-                            11 000 år siden
-                        </div>
-                        <div ref={hud.sea} className="arc-display arc-outline" style={{ fontSize: 13, color: '#bfe8ff' }}>
-                            Havet: +0,0 m
-                        </div>
-                        <div
-                            title="Mål: 7 800 år siden"
-                            style={{ display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'flex-end', marginTop: 3 }}
-                        >
-                            <div
-                                style={{ width: 70, height: 7, border: `2px solid ${INK}`, borderRadius: 5, background: 'rgba(0,0,0,.25)', overflow: 'hidden' }}
-                            >
-                                <div ref={hud.goal} style={{ width: '0%', height: '100%', background: '#ffd43b' }} />
-                            </div>
-                            <span className="arc-display arc-outline" style={{ fontSize: 11 }}>
-                                mål
-                            </span>
-                        </div>
-                    </div>
-                    <button
-                        type="button"
-                        className="arc-small"
-                        style={{ pointerEvents: 'auto', padding: '4px 9px', fontSize: 13 }}
-                        onClick={pause}
-                        aria-label="Pause"
+                    {/* HUD */}
+                    <div
+                        style={{
+                            position: 'absolute',
+                            left: 0,
+                            right: 0,
+                            top: 0,
+                            padding: '8px 10px 0',
+                            display: 'flex',
+                            alignItems: 'flex-start',
+                            gap: 10,
+                            pointerEvents: 'none',
+                            opacity: hudOn ? 1 : 0,
+                            transition: 'opacity .3s',
+                        }}
                     >
-                        ❚❚
-                    </button>
-                </div>
-
-                {/* spydknapp */}
-                <button
-                    ref={hud.spear}
-                    type="button"
-                    className="arc-round"
-                    aria-label="Kast spyd"
-                    style={{
-                        right: 14,
-                        bottom: 16,
-                        width: 72,
-                        height: 72,
-                        background: '#e8a93a',
-                        fontSize: 30,
-                        opacity: playing ? 1 : 0,
-                        pointerEvents: playing ? 'auto' : 'none',
-                    }}
-                    onPointerDown={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        synth.unlock();
-                        const g = gameRef.current;
-                        if (g) throwSpear(g, { ...ioRef.current, mode: 'play' });
-                    }}
-                >
-                    🔱
-                </button>
-
-                {announcer}
-
-                {mode === 'menu' && !showFinds && (
-                    <ArcadeScreen>
-                        <ArcadeLogo accent="!">HAVET KOMMER</ArcadeLogo>
-                        <ArcadeTag>Doggerland, 11 000 år siden</ArcadeTag>
-                        <ArcadeBigButton onClick={start}>Spill</ArcadeBigButton>
-                        <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
-                            Rekord <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
-                            &nbsp;/&nbsp; Funn{' '}
-                            <b className="arc-display">
-                                {save.found.length}/{FINDS.length}
-                            </b>
+                        <div style={{ minWidth: 86 }}>
+                            <div
+                                ref={hud.score}
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 28, lineHeight: 1 }}
+                            >
+                                0
+                            </div>
+                            <div
+                                ref={hud.combo}
+                                className="arc-display arc-pill"
+                                style={{ marginTop: 5, fontSize: 14, opacity: 0, color: INK }}
+                            >
+                                ×2
+                            </div>
                         </div>
-                        <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-                            <ArcadeSmallButton onClick={() => setShowFinds(true)}>🏺 Havbunnsarkivet</ArcadeSmallButton>
-                            <ArcadeSmallButton onClick={toggleMute} ariaLabel="Lyd av eller på">
-                                {muted ? '🔇' : '🔊'}
-                            </ArcadeSmallButton>
+                        <div style={{ flex: 1, maxWidth: 230, margin: '4px auto 0' }}>
+                            <div
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 12, marginBottom: 3 }}
+                            >
+                                Følgets metthet
+                            </div>
+                            <div ref={hud.bar} className="arc-bar">
+                                <div
+                                    ref={hud.fill}
+                                    style={{ width: '100%', background: '#7ccf5b' }}
+                                />
+                            </div>
                         </div>
-                        <p style={{ marginTop: 8, marginBottom: 0, fontSize: 12, lineHeight: 1.4, fontWeight: 500, opacity: 0.85 }}>
-                            Mål: hold følget i live til Doggerland er borte. Hold pekeren der du vil gå - maten
-                            er rikest i fjæra, men fjæra flytter seg.
-                            <br />
-                            Mellomrom eller 🔱: kast spyd. Piltastene går også.
-                        </p>
-                    </ArcadeScreen>
-                )}
-
-                {showFinds && (
-                    <ArcadeScreen>
-                        <div className="arc-display" style={{ fontSize: 26 }}>
-                            Havbunnsarkivet
-                        </div>
-                        <p style={{ fontSize: 12.5, margin: '2px 0 8px', fontWeight: 500 }}>
-                            Ting fiskere og forskere har fått opp fra bunnen av Nordsjøen.
-                        </p>
-                        <div style={{ textAlign: 'left', maxHeight: 230, overflowY: 'auto', marginBottom: 10 }}>
-                            {FINDS.map((f) => {
-                                const has = save.found.includes(f.id);
-                                return (
+                        <div style={{ textAlign: 'right', minWidth: 110 }}>
+                            <div
+                                ref={hud.year}
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 16, lineHeight: 1.1 }}
+                            >
+                                11 000 år siden
+                            </div>
+                            <div
+                                ref={hud.sea}
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 13, color: '#bfe8ff' }}
+                            >
+                                Havet: +0,0 m
+                            </div>
+                            <div
+                                title="Mål: 7 800 år siden"
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 4,
+                                    justifyContent: 'flex-end',
+                                    marginTop: 3,
+                                }}
+                            >
+                                <div
+                                    style={{
+                                        width: 70,
+                                        height: 7,
+                                        border: `2px solid ${INK}`,
+                                        borderRadius: 5,
+                                        background: 'rgba(0,0,0,.25)',
+                                        overflow: 'hidden',
+                                    }}
+                                >
                                     <div
-                                        key={f.id}
+                                        ref={hud.goal}
                                         style={{
-                                            display: 'flex',
-                                            gap: 10,
-                                            alignItems: 'center',
-                                            padding: '6px 2px',
-                                            borderBottom: '2px dashed rgba(34,32,28,.18)',
-                                            opacity: has ? 1 : 0.45,
+                                            width: '0%',
+                                            height: '100%',
+                                            background: '#ffd43b',
                                         }}
-                                    >
-                                        <div style={{ fontSize: 22, width: 30, textAlign: 'center' }}>{has ? f.icon : '🔒'}</div>
-                                        <div>
-                                            <b className="arc-display" style={{ fontSize: 15, display: 'block' }}>
-                                                {has ? f.name : 'Ikke funnet ennå'}
-                                            </b>
-                                            <span style={{ fontSize: 12 }}>{has ? f.fact : 'Let etter noe som glimter.'}</span>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                        <ArcadeSmallButton onClick={() => setShowFinds(false)}>Lukk</ArcadeSmallButton>
-                    </ArcadeScreen>
-                )}
-
-                {mode === 'paused' && (
-                    <ArcadeScreen>
-                        <div className="arc-display" style={{ fontSize: 30 }}>
-                            Pause
-                        </div>
-                        <p style={{ fontWeight: 500, margin: '8px 0 0' }}>{pauseMsg}</p>
-                        <ArcadeBigButton onClick={resume}>Fortsett</ArcadeBigButton>
-                        <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-                            <ArcadeSmallButton onClick={start}>Start på nytt</ArcadeSmallButton>
-                            <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
-                        </div>
-                    </ArcadeScreen>
-                )}
-
-                {mode === 'over' && result && (
-                    <ArcadeScreen>
-                        <div style={{ fontSize: 12, fontWeight: 700, opacity: 0.7 }}>
-                            {result.won ? 'Du klarte det! Din rang' : 'Din rang'}
-                        </div>
-                        <div
-                            className="arc-display"
-                            style={{ fontSize: 'clamp(20px, 4vw, 28px)', lineHeight: 1.05, color: '#b8322a', transform: 'rotate(-2deg)', margin: '0 0 2px' }}
-                        >
-                            {result.rank}
-                        </div>
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-                            <span className="arc-display" style={{ fontSize: 34, lineHeight: 1 }}>
-                                {result.score.toLocaleString('nb-NO')}
-                            </span>
-                            {result.newBest && (
-                                <span className="arc-display arc-pill arc-wig" style={{ fontSize: 14 }}>
-                                    Ny rekord!
+                                    />
+                                </div>
+                                <span className="arc-display arc-outline" style={{ fontSize: 11 }}>
+                                    mål
                                 </span>
-                            )}
-                        </div>
-                        <p style={{ margin: '6px 0 6px', fontWeight: 500, fontSize: 13, lineHeight: 1.35 }}>{result.msg}</p>
-                        <ArcadeStats
-                            items={[
-                                { value: result.years.toLocaleString('nb-NO'), label: 'år' },
-                                { value: result.people, label: 'i følget' },
-                                { value: result.food, label: 'matbiter' },
-                                { value: result.camps, label: 'leirer' },
-                            ]}
-                        />
-                        {result.newFinds.length > 0 ? (
-                            <div style={{ marginTop: 6, background: '#fff', border: `2.5px dashed ${INK}`, borderRadius: 10, padding: 5, fontWeight: 800, fontSize: 12.5 }}>
-                                Nytt i arkivet: {result.newFinds.map((f) => `${f.icon} ${f.name}`).join(', ')}
                             </div>
-                        ) : result.next ? (
-                            <div style={{ marginTop: 6, background: '#fff', border: `2.5px dashed ${INK}`, borderRadius: 10, padding: 5, fontWeight: 800, fontSize: 12.5 }}>
-                                {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng til neste rang: {result.next[1]}
-                            </div>
-                        ) : null}
-                        <ArcadeBigButton onClick={start}>Igjen!</ArcadeBigButton>
-                        <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-                            <ArcadeSmallButton onClick={() => { setShowFinds(true); toMenu(); }}>🏺 Arkivet</ArcadeSmallButton>
-                            <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
                         </div>
-                    </ArcadeScreen>
-                )}
-            </ArcadeStage>
+                        <button
+                            type="button"
+                            className="arc-small"
+                            style={{ pointerEvents: 'auto', padding: '4px 9px', fontSize: 13 }}
+                            onClick={pause}
+                            aria-label="Pause"
+                        >
+                            ❚❚
+                        </button>
+                    </div>
+
+                    {/* spydknapp */}
+                    <button
+                        ref={hud.spear}
+                        type="button"
+                        className="arc-round"
+                        aria-label="Kast spyd"
+                        style={{
+                            right: 14,
+                            bottom: 16,
+                            width: 72,
+                            height: 72,
+                            background: '#e8a93a',
+                            fontSize: 30,
+                            opacity: playing ? 1 : 0,
+                            pointerEvents: playing ? 'auto' : 'none',
+                        }}
+                        onPointerDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            synth.unlock();
+                            const g = gameRef.current;
+                            if (g) throwSpear(g, { ...ioRef.current, mode: 'play' });
+                        }}
+                    >
+                        🔱
+                    </button>
+
+                    {textLayer}
+
+                    {mode === 'menu' && !showFinds && (
+                        <ArcadeScreen>
+                            <ArcadeLogo accent="!">HAVET KOMMER</ArcadeLogo>
+                            <ArcadeTag>Doggerland, 11 000 år siden</ArcadeTag>
+                            <ArcadeBigButton onClick={start}>Spill</ArcadeBigButton>
+                            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
+                                Rekord{' '}
+                                <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
+                                &nbsp;/&nbsp; Funn{' '}
+                                <b className="arc-display">
+                                    {save.found.length}/{FINDS.length}
+                                </b>
+                            </div>
+                            <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
+                                <ArcadeSmallButton onClick={() => setShowFinds(true)}>
+                                    🏺 Havbunnsarkivet
+                                </ArcadeSmallButton>
+                                <ArcadeSmallButton onClick={toggleMute} ariaLabel="Lyd av eller på">
+                                    {muted ? '🔇' : '🔊'}
+                                </ArcadeSmallButton>
+                            </div>
+                            <p
+                                style={{
+                                    marginTop: 8,
+                                    marginBottom: 0,
+                                    fontSize: 12,
+                                    lineHeight: 1.4,
+                                    fontWeight: 500,
+                                    opacity: 0.85,
+                                }}
+                            >
+                                Mål: hold følget i live til Doggerland er borte. Hold pekeren der du
+                                vil gå - maten er rikest i fjæra, men fjæra flytter seg.
+                                <br />
+                                Mellomrom eller 🔱: kast spyd. Piltastene går også.
+                            </p>
+                        </ArcadeScreen>
+                    )}
+
+                    {showFinds && (
+                        <ArcadeScreen>
+                            <div className="arc-display" style={{ fontSize: 26 }}>
+                                Havbunnsarkivet
+                            </div>
+                            <p style={{ fontSize: 12.5, margin: '2px 0 8px', fontWeight: 500 }}>
+                                Ting fiskere og forskere har fått opp fra bunnen av Nordsjøen.
+                            </p>
+                            <div
+                                style={{
+                                    textAlign: 'left',
+                                    maxHeight: 230,
+                                    overflowY: 'auto',
+                                    marginBottom: 10,
+                                }}
+                            >
+                                {FINDS.map((f) => {
+                                    const has = save.found.includes(f.id);
+                                    return (
+                                        <div
+                                            key={f.id}
+                                            style={{
+                                                display: 'flex',
+                                                gap: 10,
+                                                alignItems: 'center',
+                                                padding: '6px 2px',
+                                                borderBottom: '2px dashed rgba(34,32,28,.18)',
+                                                opacity: has ? 1 : 0.45,
+                                            }}
+                                        >
+                                            <div
+                                                style={{
+                                                    fontSize: 22,
+                                                    width: 30,
+                                                    textAlign: 'center',
+                                                }}
+                                            >
+                                                {has ? f.icon : '🔒'}
+                                            </div>
+                                            <div>
+                                                <b
+                                                    className="arc-display"
+                                                    style={{ fontSize: 15, display: 'block' }}
+                                                >
+                                                    {has ? f.name : 'Ikke funnet ennå'}
+                                                </b>
+                                                <span style={{ fontSize: 12 }}>
+                                                    {has ? f.fact : 'Let etter noe som glimter.'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                            <ArcadeSmallButton onClick={() => setShowFinds(false)}>
+                                Lukk
+                            </ArcadeSmallButton>
+                        </ArcadeScreen>
+                    )}
+
+                    {mode === 'paused' && (
+                        <ArcadeScreen>
+                            <div className="arc-display" style={{ fontSize: 30 }}>
+                                Pause
+                            </div>
+                            <p style={{ fontWeight: 500, margin: '8px 0 0' }}>{pauseMsg}</p>
+                            <ArcadeBigButton onClick={resume}>Fortsett</ArcadeBigButton>
+                            <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
+                                <ArcadeSmallButton onClick={start}>Start på nytt</ArcadeSmallButton>
+                                <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
+                            </div>
+                        </ArcadeScreen>
+                    )}
+
+                    {mode === 'over' && result && (
+                        <ArcadeScreen>
+                            <div style={{ fontSize: 12, fontWeight: 700, opacity: 0.7 }}>
+                                {result.won ? 'Du klarte det! Din rang' : 'Din rang'}
+                            </div>
+                            <div
+                                className="arc-display"
+                                style={{
+                                    fontSize: 'clamp(20px, 4vw, 28px)',
+                                    lineHeight: 1.05,
+                                    color: '#b8322a',
+                                    transform: 'rotate(-2deg)',
+                                    margin: '0 0 2px',
+                                }}
+                            >
+                                {result.rank}
+                            </div>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: 10,
+                                }}
+                            >
+                                <span
+                                    className="arc-display"
+                                    style={{ fontSize: 34, lineHeight: 1 }}
+                                >
+                                    {result.score.toLocaleString('nb-NO')}
+                                </span>
+                                {result.newBest && (
+                                    <span
+                                        className="arc-display arc-pill arc-wig"
+                                        style={{ fontSize: 14 }}
+                                    >
+                                        Ny rekord!
+                                    </span>
+                                )}
+                            </div>
+                            <p
+                                style={{
+                                    margin: '6px 0 6px',
+                                    fontWeight: 500,
+                                    fontSize: 13,
+                                    lineHeight: 1.35,
+                                }}
+                            >
+                                {result.msg}
+                            </p>
+                            <ArcadeLessons items={result.lessons} />
+                            <ArcadeStats
+                                items={[
+                                    { value: result.years.toLocaleString('nb-NO'), label: 'år' },
+                                    { value: result.people, label: 'i følget' },
+                                    { value: result.food, label: 'matbiter' },
+                                    { value: result.camps, label: 'leirer' },
+                                ]}
+                            />
+                            {result.newFinds.length > 0 ? (
+                                <div
+                                    style={{
+                                        marginTop: 6,
+                                        background: '#fff',
+                                        border: `2.5px dashed ${INK}`,
+                                        borderRadius: 10,
+                                        padding: 5,
+                                        fontWeight: 800,
+                                        fontSize: 12.5,
+                                    }}
+                                >
+                                    Nytt i arkivet:{' '}
+                                    {result.newFinds.map((f) => `${f.icon} ${f.name}`).join(', ')}
+                                </div>
+                            ) : result.next ? (
+                                <div
+                                    style={{
+                                        marginTop: 6,
+                                        background: '#fff',
+                                        border: `2.5px dashed ${INK}`,
+                                        borderRadius: 10,
+                                        padding: 5,
+                                        fontWeight: 800,
+                                        fontSize: 12.5,
+                                    }}
+                                >
+                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng
+                                    til neste rang: {result.next[1]}
+                                </div>
+                            ) : null}
+                            <ArcadeBigButton onClick={start}>Igjen!</ArcadeBigButton>
+                            <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
+                                <ArcadeSmallButton
+                                    onClick={() => {
+                                        setShowFinds(true);
+                                        toMenu();
+                                    }}
+                                >
+                                    🏺 Arkivet
+                                </ArcadeSmallButton>
+                                <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
+                            </div>
+                        </ArcadeScreen>
+                    )}
+                </ArcadeStage>
             </div>
         </MicroGameFrame>
     );

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { crispCanvas } from '../kit/crispText';
 
 // Prosedyrale teksturer for Løp med lønna: brostein, skilt, plakatsøylen og
 // sedlene. Alt tegnes på canvas lokalt - ingen bilder lastes ned.
@@ -111,16 +112,15 @@ export function makeBoard(
     h: number,
     style: { bg: string; fg: string; accent?: string; border?: string; sizes?: number[] }
 ): Board {
-    const c = document.createElement('canvas');
-    c.width = w;
-    c.height = h;
-    const x = c.getContext('2d')!;
-    const tex = new THREE.CanvasTexture(c);
-    tex.colorSpace = THREE.SRGBColorSpace;
-    tex.anisotropy = 4;
+    // Skarp tekst: tegnes i logiske mål, lagres med 2-3x piksler (se kit/crispText).
+    const cc = crispCanvas(w, h);
+    const { tex } = cc;
     let last: string[] = [];
     const draw = (lines: string[]) => {
         last = lines;
+        cc.draw((x) => paintBoard(x, lines));
+    };
+    const paintBoard = (x: CanvasRenderingContext2D, lines: string[]) => {
         x.fillStyle = style.bg;
         x.fillRect(0, 0, w, h);
         if (style.border) {
@@ -146,7 +146,6 @@ export function makeBoard(
             x.fillText(line, w / 2, y + (size - s) / 2);
             y += size * 1.12;
         });
-        tex.needsUpdate = true;
     };
     if (typeof document !== 'undefined' && document.fonts?.ready)
         void document.fonts.ready.then(() => {
@@ -286,25 +285,20 @@ export function makeTag(): {
 } {
     const W = 256;
     const H = 72;
-    const c = document.createElement('canvas');
-    c.width = W;
-    c.height = H;
-    const x = c.getContext('2d')!;
-    const tex = new THREE.CanvasTexture(c);
-    tex.colorSpace = THREE.SRGBColorSpace;
-    const draw = (text: string, color: string) => {
-        x.clearRect(0, 0, W, H);
-        x.font = `900 40px ${FONT}`;
-        const tw = Math.min(W - 8, x.measureText(text).width + 30);
-        x.fillStyle = '#1d1c22';
-        x.fillRect((W - tw) / 2, 6, tw, H - 12);
-        x.fillStyle = color;
-        x.fillRect((W - tw) / 2, H - 12, tw, 6);
-        x.fillStyle = '#f4efe4';
-        x.textAlign = 'center';
-        x.textBaseline = 'middle';
-        x.fillText(text, W / 2, H / 2 - 2);
-        tex.needsUpdate = true;
-    };
+    const cc = crispCanvas(W, H);
+    const { tex } = cc;
+    const draw = (text: string, color: string) =>
+        cc.draw((x) => {
+            x.font = `900 40px ${FONT}`;
+            const tw = Math.min(W - 8, x.measureText(text).width + 30);
+            x.fillStyle = '#1d1c22';
+            x.fillRect((W - tw) / 2, 6, tw, H - 12);
+            x.fillStyle = color;
+            x.fillRect((W - tw) / 2, H - 12, tw, 6);
+            x.fillStyle = '#f4efe4';
+            x.textAlign = 'center';
+            x.textBaseline = 'middle';
+            x.fillText(text, W / 2, H / 2 - 2);
+        });
     return { tex, draw };
 }

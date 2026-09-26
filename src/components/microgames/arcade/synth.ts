@@ -19,7 +19,14 @@ function readMuted(): boolean {
 export interface ArcadeSynth {
     /** Må kalles fra en brukerhandling (klikk/tast) før lyd kan spilles. */
     unlock: () => void;
-    tone: (f1: number, f2: number, dur: number, type?: OscillatorType, vol?: number, delay?: number) => void;
+    tone: (
+        f1: number,
+        f2: number,
+        dur: number,
+        type?: OscillatorType,
+        vol?: number,
+        delay?: number
+    ) => void;
     noise: (dur: number, vol?: number, freq?: number, delay?: number) => void;
     /** Stigende arpeggio i halvtoner over `base`. */
     arp: (base: number, steps: number[], gap?: number, vol?: number) => void;

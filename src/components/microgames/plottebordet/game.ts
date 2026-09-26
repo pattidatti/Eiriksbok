@@ -138,14 +138,47 @@ export interface Sfx {
     lose: () => void;
 }
 
+/** Et punkt på bordet som en lapp eller et lærings-øyeblikk peker på. null = ikke synlig nå. */
+export type At = () => XZ | null;
+export interface PinOpts {
+    tone?: 'info' | 'fare' | 'bra';
+    seconds?: number;
+    once?: boolean;
+    until?: () => boolean;
+}
+
+// Tekst går aldri i en linje under spillet (den leses ikke). Se arcade/useArcade.tsx:
+// banner = to-fire ord, pin = lapp festet til noe på bordet, beat = lærings-øyeblikk
+// i sakte film, lesson = det som står på slutt-skjermen under «Dette skjedde».
 export interface IO {
     sfx: Sfx;
-    banner: (t: string, s?: string, color?: string) => void;
-    toast: (t: string) => void;
+    banner: (t: string, color?: string) => void;
+    pin: (key: string, text: string, at: At, o?: PinOpts) => void;
+    beat: (key: string, title: string, text: string, at?: At, until?: () => boolean) => void;
+    lesson: (key: string, text: string, weight?: number) => void;
+    /** 1 normalt, lavere under et lærings-øyeblikk (sakte film). */
+    timeScale: () => number;
     float: (t: string, x: number, z: number, color?: string) => void;
     lose: (c: Cause) => void;
     win: () => void;
 }
+
+const fixed =
+    (p: XZ): At =>
+    () =>
+        p;
+const raidAt =
+    (g: G, id: number): At =>
+    () => {
+        const r = g.raids.find((x) => x.id === id);
+        return r && r.visible && r.state === 'inn' ? r.pos : null;
+    };
+const sqAt =
+    (g: G, i: number): At =>
+    () =>
+        g.squadrons[i].pos;
+const sentTo = (g: G, id: number) =>
+    g.squadrons.filter((q) => q.order?.kind === 'raid' && q.order.id === id).length;
 
 const MONTHS = ['august', 'september'];
 export function dateOf(t: number): { d: number; m: string; label: string } {
@@ -209,7 +242,8 @@ export function newGame(): G {
 }
 
 export const totalPlanes = (g: G) => g.squadrons.reduce((s, q) => s + q.planes, 0);
-export const airborne = (q: Squadron) => q.state === 'lufta' || q.state === 'kamp' || q.state === 'hjem';
+export const airborne = (q: Squadron) =>
+    q.state === 'lufta' || q.state === 'kamp' || q.state === 'hjem';
 export const findRaid = (g: G, id: number) => g.raids.find((r) => r.id === id);
 export const raidActive = (r: Raid | undefined): r is Raid => !!r && r.state === 'inn';
 
@@ -254,7 +288,10 @@ export function order(g: G, i: number, target: { raid: number } | { p: XZ }, io:
         io.sfx.refuse();
         return 'tom';
     } else if (q.state === 'hjem') q.state = 'lufta';
-    q.order = 'raid' in target ? { kind: 'raid', id: target.raid } : { kind: 'punkt', p: [target.p[0], target.p[1]] };
+    q.order =
+        'raid' in target
+            ? { kind: 'raid', id: target.raid }
+            : { kind: 'punkt', p: [target.p[0], target.p[1]] };
     if (q.state === 'kamp' && 'raid' in target && target.raid !== q.engaged) {
         q.state = 'lufta';
         q.engaged = -1;
@@ -274,7 +311,12 @@ export function order(g: G, i: number, target: { raid: number } | { p: XZ }, io:
 
 function pickTarget(g: G): Raid['target'] {
     const day = g.day;
-    if (g.blitz) return { kind: 'london', idx: 0, p: [LONDON[0] + rnd(-0.4, 0.4), LONDON[1] + rnd(-0.3, 0.3)] };
+    if (g.blitz)
+        return {
+            kind: 'london',
+            idx: 0,
+            p: [LONDON[0] + rnd(-0.4, 0.4), LONDON[1] + rnd(-0.3, 0.3)],
+        };
     // Ørneangrepet: de første dagene går mange raid mot radarstasjonene.
     if (day < 5 && Math.random() < 0.35) {
         const idx = Math.floor(Math.random() * 3); // Ventnor, Pevensey, Dover
@@ -352,18 +394,39 @@ function events(g: G, io: IO) {
             spawnRaid(g, { kind: 'north', idx: 0, p: [...NORTH] as XZ }, 16, SOLA);
             g.unlocked.add('sola');
             io.sfx.alarm();
-            io.banner('15. AUGUST', 'Radaren ser 63 bombefly fra Sola i Norge på vei mot Nord-England. Send en skvadron nordover!', '#8a2a22');
+            io.banner('15. AUGUST', '#8a2a22');
+            const sola = g.raids[g.raids.length - 1];
+            if (sola)
+                io.pin('sola', 'Fra Sola i Norge - mot Nord-England', raidAt(g, sola.id), {
+                    tone: 'fare',
+                    seconds: 9,
+                });
+            io.lesson(
+                'sola',
+                '15. august kom bombefly helt fra Sola i Norge. Radaren så dem lenge før de nådde kysten.',
+                0.5
+            );
         });
     if (day >= 5)
         once('goring', () => {
             g.unlocked.add('goring');
-            io.banner('18. AUGUST', 'Radarmastene står fortsatt. Göring tviler på at det er noen vits i å angripe dem mer.', '#3d4a5c');
+            io.banner('18. AUGUST', '#3d4a5c');
+            io.pin('goring', 'Radarmastene står fortsatt', fixed(STATIONS[1].pos), { seconds: 6 });
+            io.lesson(
+                'goring',
+                'Göring trodde radarmastene var uviktige og sluttet å bombe dem. Det reddet RAF.',
+                1
+            );
         });
     if (day >= 11)
         once('verste', () => {
             g.unlocked.add('verste');
             io.sfx.alarm();
-            io.banner('24. AUGUST', 'De verste ukene. Nå bombes flyplassene nesten hver dag - også dem inne i landet.', '#8a2a22');
+            io.banner('DE VERSTE UKENE', '#8a2a22');
+            io.pin('verste', 'Nå bombes også flyplassene inne i landet', fixed(BASES[1].pos), {
+                tone: 'fare',
+                seconds: 6,
+            });
         });
     if (day >= 25)
         once('blitz', () => {
@@ -371,13 +434,23 @@ function events(g: G, io: IO) {
             g.unlocked.add('blitz');
             g.crater = g.crater.map(() => 0);
             g.meter = Math.max(0, g.meter - 20);
-            io.banner('7. SEPTEMBER', 'Hitler bytter mål: bombene faller på London. For folk i byen er det forferdelig - men RAF får reparere flyplassene.', '#3d4a5c');
+            io.banner('LONDON BOMBES', '#3d4a5c');
+            io.pin('blitz', 'Flyplassene får pusterom', fixed(LONDON), { seconds: 6 });
+            io.lesson(
+                'blitz',
+                '7. september byttet Hitler mål til London. Byen led, men RAF fikk reparere flyplassene - og det snudde slaget.',
+                2
+            );
         });
     if (day >= 33)
         once('femtende', () => {
             g.unlocked.add('femtende');
             io.sfx.alarm();
-            io.banner('15. SEPTEMBER', 'To store bølger på vei mot London. Bruk alle skvadronene du har.', '#8a2a22');
+            io.banner('15. SEPTEMBER', '#8a2a22');
+            io.pin('femtende', 'To bølger - bruk alle skvadronene', fixed(LONDON), {
+                tone: 'fare',
+                seconds: 7,
+            });
             g.waveQueue = [0, 0.4, 0.8, 7, 7.4, 7.8].map((d) => g.t + d);
         });
 }
@@ -424,8 +497,16 @@ function bomb(g: G, r: Raid, io: IO) {
             io.float(`${Math.round(lost)} FLY TAPT PÅ BAKKEN`, x, z, '#ffb4a0');
             if (!g.done.has('bakken')) {
                 g.done.add('bakken');
-                io.toast(`${BASES[i].name} ble bombet mens skvadronen stod på bakken. Fly som tanker, kan ikke forsvare seg.`);
+                io.pin('bakken', 'Tatt på bakken mens de tanket', fixed(BASES[i].pos), {
+                    tone: 'fare',
+                    seconds: 5,
+                });
             }
+            io.lesson(
+                'bakken',
+                'Fly som tanker på bakken, kan ikke forsvare seg. Luftwaffe prøvde å ta RAF på bakken.',
+                2
+            );
         } else io.float(`${BASES[i].name.toUpperCase()} BOMBET`, x, z, '#ffb4a0');
     } else if (r.target.kind === 'station') {
         g.meter += 5 * k;
@@ -433,8 +514,18 @@ function bomb(g: G, r: Raid, io: IO) {
         io.float(`${STATIONS[r.target.idx].name.toUpperCase()} UTE`, x, z, '#ffb4a0');
         if (!g.done.has('hull')) {
             g.done.add('hull');
-            io.toast(`Radaren i ${STATIONS[r.target.idx].name} er slått ut. Raid i den sektoren ser du først når de krysser kysten - til den er reparert.`);
+            io.beat(
+                'hull',
+                'RADAREN ER UTE',
+                `${STATIONS[r.target.idx].name} er bombet. Raid her ser du først over kysten. Hold en skvadron klar i nærheten.`,
+                fixed(STATIONS[r.target.idx].pos)
+            );
         }
+        io.lesson(
+            'radar',
+            'Uten radar kom raidene overraskende. Derfor var radarkjeden verdt mer enn mange fly.',
+            2
+        );
     } else if (r.target.kind === 'london') {
         g.meter += 3.2 * k;
         g.londonHits += 1;
@@ -456,9 +547,25 @@ function turnBack(g: G, r: Raid, io: IO) {
     const pts = Math.round(r.size0 * 10 * (sea ? 2 : 1) * mult);
     g.score += pts;
     io.sfx.turn(mult);
-    io.float(sea ? `+${pts} SNUDD OVER HAVET` : `+${pts} SNUDD`, r.pos[0], r.pos[1], sea ? '#ffd76a' : '#e8f0ff');
+    io.float(
+        sea ? `+${pts} SNUDD OVER HAVET` : `+${pts} SNUDD`,
+        r.pos[0],
+        r.pos[1],
+        sea ? '#ffd76a' : '#e8f0ff'
+    );
     addFx(g, 'ring', r.pos[0], 1.6, r.pos[1], 1, 0);
-    if (g.turned === 1) io.toast('Raidet snudde! Jo tidligere du sender skvadronen, jo lenger ute over havet møter den bombeflyene.');
+    if (sea)
+        io.lesson(
+            'hav',
+            'Raid du møtte over havet, snudde før de nådde målet. Radaren ga flyene tid til å klatre.',
+            1
+        );
+    else
+        io.lesson(
+            'sent',
+            'Raid du møtte over land, var nesten framme. Send skvadronen idet plottet dukker opp over havet.',
+            1
+        );
     if (sea && !g.unlocked.has('filter')) g.unlocked.add('filter');
     if (g.turned >= 12) g.unlocked.add('sektor');
 }
@@ -495,7 +602,13 @@ export function update(g: G, dt: number, io: IO) {
     for (let i = 0; i < g.stationDown.length; i++)
         if (g.stationDown[i] > 0) {
             g.stationDown[i] = Math.max(0, g.stationDown[i] - dt);
-            if (g.stationDown[i] === 0) io.float(`${STATIONS[i].name.toUpperCase()} I DRIFT`, STATIONS[i].pos[0], STATIONS[i].pos[1], '#bfe7c0');
+            if (g.stationDown[i] === 0)
+                io.float(
+                    `${STATIONS[i].name.toUpperCase()} I DRIFT`,
+                    STATIONS[i].pos[0],
+                    STATIONS[i].pos[1],
+                    '#bfe7c0'
+                );
         }
     for (let i = 0; i < g.crater.length; i++) g.crater[i] = Math.max(0, g.crater[i] - dt);
 
@@ -508,14 +621,48 @@ export function update(g: G, dt: number, io: IO) {
             r.seenOnce = true;
             r.seenBy = seen;
             io.sfx.phone();
+            // Første plott: fagkjernen, i sakte film ved plottet.
+            if (!g.done.has('forste')) {
+                g.done.add('forste');
+                const id = r.id;
+                io.beat(
+                    'forste',
+                    'RADAREN SER DEM',
+                    'Et rødt plott over havet. Dra en blå skvadron dit nå - flyene trenger tid til å klatre.',
+                    raidAt(g, id),
+                    () => sentTo(g, id) > 0
+                );
+            }
             if (r.size0 >= 15 && !g.done.has('stor')) {
                 g.done.add('stor');
-                io.toast(`Et stort raid (${r.size0}+) er på vei. Én skvadron rekker ikke å snu det alene - send to.`);
+                const id = r.id;
+                io.beat(
+                    'stor',
+                    'STORT RAID',
+                    `${r.size0} bombefly. Én skvadron snur dem ikke alene - send to.`,
+                    raidAt(g, id),
+                    () => sentTo(g, id) > 1
+                );
+                io.lesson(
+                    'stor',
+                    'Store raid snudde først når flere skvadroner angrep samtidig.',
+                    1
+                );
             }
-            if (seen === 'observer' && !g.done.has('observer')) {
-                g.done.add('observer');
-                g.unlocked.add('observer');
-                io.toast('Observatørene melder fly over kysten - radaren så dem ikke. Nå er det dårlig tid.');
+            if (seen === 'observer') {
+                if (!g.done.has('observer')) {
+                    g.done.add('observer');
+                    g.unlocked.add('observer');
+                }
+                io.pin(`obs${r.id}`, 'Radaren så dem ikke!', raidAt(g, r.id), {
+                    tone: 'fare',
+                    seconds: 4,
+                });
+                io.lesson(
+                    'observer',
+                    'Fly som fløy lavt, så ikke radaren. Da måtte observatørene på bakken melde dem - og det ga dårlig tid.',
+                    1
+                );
             }
         }
         r.fade = clamp(r.fade + (r.visible ? dt * 2 : -dt * 2), 0, 1);
@@ -575,10 +722,16 @@ export function update(g: G, dt: number, io: IO) {
             q.state = 'hjem';
             q.order = null;
             q.engaged = -1;
-            if (!g.done.has('drivstoff')) {
-                g.done.add('drivstoff');
-                io.toast(`Skvadron ${BASES[q.i].squadron} har lite drivstoff og må lande. Flyene kan bare være i lufta i kort tid.`);
-            }
+            io.pin(`fuel${q.i}`, 'Lite drivstoff - lander', sqAt(g, q.i), {
+                tone: 'fare',
+                seconds: 3,
+            });
+            if (g.patrolSeconds > 20)
+                io.lesson(
+                    'drivstoff',
+                    'En Spitfire kunne bare være i lufta kort tid. Patruljer brukte opp drivstoffet før raidene kom.',
+                    1
+                );
         }
         if (q.order?.kind === 'punkt' && q.state === 'lufta') g.patrolSeconds += dt;
 
@@ -593,11 +746,23 @@ export function update(g: G, dt: number, io: IO) {
             } else {
                 r.engagedBy += 1;
                 q.orbit += dt * 2.4;
-                goal = [r.pos[0] + Math.cos(q.orbit + q.i) * 0.35, r.pos[1] + Math.sin(q.orbit + q.i) * 0.35];
+                goal = [
+                    r.pos[0] + Math.cos(q.orbit + q.i) * 0.35,
+                    r.pos[1] + Math.sin(q.orbit + q.i) * 0.35,
+                ];
                 // Kampen: raidet mister fly, skvadronen også.
                 r.size -= dt * DPS * (q.planes / PLANES);
                 q.planes = Math.max(0, q.planes - dt * LOSS * (r.size / PLANES));
-                if (Math.random() < dt * 6) addFx(g, 'spark', r.pos[0] + rnd(-0.3, 0.3), 1.6, r.pos[1] + rnd(-0.3, 0.3), 2, 0.8);
+                if (Math.random() < dt * 6)
+                    addFx(
+                        g,
+                        'spark',
+                        r.pos[0] + rnd(-0.3, 0.3),
+                        1.6,
+                        r.pos[1] + rnd(-0.3, 0.3),
+                        2,
+                        0.8
+                    );
                 if (r.size <= r.size0 * TURN_FRAC) turnBack(g, r, io);
                 if (q.planes < 1) {
                     q.state = 'hjem';
@@ -611,8 +776,12 @@ export function update(g: G, dt: number, io: IO) {
                 const r = findRaid(g, q.order.id);
                 if (raidActive(r)) {
                     // Sikt litt foran raidet, som kontrollørene gjorde.
-                    const lead = Math.min(2.5, dist(q.pos, r.pos) / Math.max(0.5, speed)) * RAID_SPEED;
-                    goal = [r.pos[0] + Math.sin(r.heading) * lead, r.pos[1] + Math.cos(r.heading) * lead];
+                    const lead =
+                        Math.min(2.5, dist(q.pos, r.pos) / Math.max(0.5, speed)) * RAID_SPEED;
+                    goal = [
+                        r.pos[0] + Math.sin(r.heading) * lead,
+                        r.pos[1] + Math.cos(r.heading) * lead,
+                    ];
                 } else q.order = null;
             }
             if (q.order?.kind === 'punkt') {
@@ -635,7 +804,11 @@ export function update(g: G, dt: number, io: IO) {
                     if (r.state !== 'inn') continue;
                     const d = dist(q.pos, r.pos);
                     const ordered = q.order?.kind === 'raid' && q.order.id === r.id;
-                    const reach = ordered ? ENGAGE_R : q.order?.kind === 'punkt' || !q.order ? SIGHT_R : ENGAGE_R * 0.8;
+                    const reach = ordered
+                        ? ENGAGE_R
+                        : q.order?.kind === 'punkt' || !q.order
+                          ? SIGHT_R
+                          : ENGAGE_R * 0.8;
                     if (d < reach && d < bd) {
                         bd = d;
                         best = r;
@@ -647,7 +820,10 @@ export function update(g: G, dt: number, io: IO) {
                     io.sfx.engage();
                     if (!g.done.has('tallyho')) {
                         g.done.add('tallyho');
-                        io.toast('Skvadronen er oppe i høyden og går løs på bombeflyene!');
+                        io.pin('tallyho', 'Oppe i høyden - angriper!', sqAt(g, q.i), {
+                            tone: 'bra',
+                            seconds: 3,
+                        });
                     }
                 }
             }

@@ -282,10 +282,26 @@ export interface Sfx {
     win: () => void;
 }
 
+/** Et punkt på plassen (x, z) som en lapp eller et lærings-øyeblikk peker på. null = ikke synlig. */
+export type At = () => [number, number] | null;
+export interface PinOpts {
+    tone?: 'info' | 'fare' | 'bra';
+    seconds?: number;
+    once?: boolean;
+    until?: () => boolean;
+}
+
+// Tekst går aldri i en linje under spillet (den leses ikke). Se arcade/useArcade.tsx:
+// banner = to-fire ord, pin = lapp festet til noe på plassen, beat = lærings-øyeblikk
+// i sakte film, lesson = det som står på slutt-skjermen under «Dette skjedde».
 export interface IO {
     sfx: Sfx;
-    banner: (t: string, s?: string, color?: string) => void;
-    toast: (t: string) => void;
+    banner: (t: string, color?: string) => void;
+    pin: (key: string, text: string, at: At, o?: PinOpts) => void;
+    beat: (key: string, title: string, text: string, at?: At, until?: () => boolean) => void;
+    lesson: (key: string, text: string, weight?: number) => void;
+    /** 1 normalt, lavere under et lærings-øyeblikk (sakte film). */
+    timeScale: () => number;
     float: (t: string, x: number, y: number, z: number, color?: string) => void;
     lose: (cause: Cause) => void;
     win: () => void;
@@ -505,6 +521,13 @@ export function setKeys(g: G, x: number, z: number) {
 // Én frame
 // ---------------------------------------------------------------------------
 
+const cartAt =
+    (g: G): At =>
+    () => [g.cart.x, g.cart.z];
+const doorAt =
+    (id: StationId): At =>
+    () => [STATIONS[id].door[0], STATIONS[id].door[1]];
+
 function once(g: G, key: string) {
     if (g.flags.has(key)) return false;
     g.flags.add(key);
@@ -652,7 +675,7 @@ function movePeds(g: G, dt: number, io: IO) {
                 io.sfx.bump();
                 if (lost > 0) io.float('SEDLER I VINDEN', c.x, 1.6, c.z, '#ff8a7a');
                 if (once(g, 'bump'))
-                    io.toast('Krasjer du i folk, blåser sedler av kjerra. Kjør rundt dem.');
+                    io.pin('bump', 'Kjør rundt folk!', cartAt(g), { tone: 'fare', seconds: 3 });
             }
             // Folk går til side.
             p.x = c.x + (ox / d) * 0.85;
@@ -678,8 +701,12 @@ function collectPay(g: G, io: IO) {
     io.sfx.cash();
     io.float(`LØNN ≈ ${Math.floor(bread)} BRØD`, g.cart.x, 1.8, g.cart.z, '#ffe27a');
     if (once(g, 'pay1'))
-        io.toast(
-            'Lønna er i kjerra. Den er verdt mindre for hvert sekund - kjør til bakeren eller kullhandelen nå!'
+        io.beat(
+            'lonn',
+            'PENGENE TAPER SEG',
+            'Sedlene i kjerra er verdt mindre for hvert sekund. Kjør rett til bakeren eller kullhandelen!',
+            cartAt(g),
+            () => g.cash <= 0 || (g.at !== null && g.at !== 'fabrikk')
         );
 }
 
@@ -690,10 +717,19 @@ function buyTick(g: G, id: StationId, dt: number, io: IO) {
         if (g.at !== id) {
             io.sfx.closed();
             io.float('STENGT', st.door[0], 2, st.door[1], '#ff8a7a');
-            io.toast(
-                id === 'kullhandel'
-                    ? 'Kullhandleren tar ikke imot mark i dag. Prøv igjen litt senere.'
-                    : 'Bøndene vil ikke selge mat for mark lenger. Prøv den andre matbutikken.'
+            io.pin(
+                `stengt-${id}`,
+                id === 'kullhandel' ? 'Vil ikke ha mark i dag' : 'Prøv den andre matbutikken',
+                doorAt(id),
+                {
+                    tone: 'fare',
+                    seconds: 4,
+                }
+            );
+            io.lesson(
+                'stengt',
+                'Høsten 1923 ville mange bønder og butikker ikke ta imot papirmark lenger.',
+                1
             );
         }
         return;
@@ -708,7 +744,12 @@ function buyTick(g: G, id: StationId, dt: number, io: IO) {
             io.sfx.empty();
             io.float('FOR LITE PENGER', g.cart.x, 1.8, g.cart.z, '#ff8a7a');
             if (once(g, 'empty'))
-                io.toast('Sedlene var verdt for lite da du kom fram. Prisene steg mens du kjørte.');
+                io.pin('empty', 'For sent - prisene steg', cartAt(g), { tone: 'fare', seconds: 4 });
+            io.lesson(
+                'empty',
+                'Sedlene var verdt for lite da du kom fram. Prisene steg mens du kjørte.',
+                2
+            );
         }
         return;
     }
@@ -750,9 +791,7 @@ function buyTick(g: G, id: StationId, dt: number, io: IO) {
             io.sfx.seddel();
         }
         if (g.streak === 2)
-            io.toast(
-                'Rekke! Bruker du hele lønna med en gang flere ganger på rad, gir hver vare mer poeng.'
-            );
+            io.pin('rekke', 'Rekke! Hele lønna brukt', cartAt(g), { tone: 'bra', seconds: 3 });
     }
 }
 
@@ -775,7 +814,11 @@ function unload(g: G, io: IO) {
         io.sfx.unload();
         io.float(`+${30 * n} LEVERT`, x - 0.6, 2.2, z, '#b9f2a0');
         if (once(g, 'unload1'))
-            io.toast('Levert! Mat og varme holder seg - det er bare pengene som råtner.');
+            io.pin('levert', 'Mat og kull holder verdien', doorAt('hjem'), {
+                tone: 'bra',
+                seconds: 4,
+            });
+        io.lesson('ting', 'Mat og kull holdt verdien. Det var bare pengene som råtnet.', 0.5);
     } else if (g.items.length && g.at !== 'hjem')
         io.float('LAGERET ER FULLT', x - 0.6, 2.2, z, '#ffe27a');
 }
@@ -793,8 +836,14 @@ function thiefStep(g: G, dt: number, io: IO) {
         th.z = BOUNDS.z1;
         io.float('LOMMETYV!', th.x * 0.9, 2.2, th.z - 0.5, '#ff8a7a');
         if (once(g, 'thief1'))
-            io.toast(
-                'En lommetyv er ute etter sedlene dine! Kjør unna - eller bruk pengene før han når deg.'
+            io.pin(
+                'tyv',
+                'Lommetyv! Bruk pengene før han når deg',
+                () => (g.thief.on ? [g.thief.x, g.thief.z] : null),
+                {
+                    tone: 'fare',
+                    seconds: 5,
+                }
             );
         return;
     }
@@ -857,7 +906,8 @@ export function update(g: G, dt: number, io: IO) {
 
     for (const [d, t, s] of MONTH_BANNERS)
         if (day >= d && once(g, 'm' + d)) {
-            io.banner(t, s, '#1d1c22');
+            io.banner(t, '#1d1c22');
+            io.lesson(`maned-${d}`, s, 0.3);
             io.sfx.tick();
         }
 
@@ -868,9 +918,13 @@ export function update(g: G, dt: number, io: IO) {
         g.payReady += wageBread(g.t) * priceAt('brod', g.t);
         g.earnedBread += wageBread(g.t);
         io.sfx.whistle();
-        if (g.payCount === 1)
-            io.banner('LØNNA ER KLAR', 'Kjør kjerra til fabrikkporten og hent sedlene.', '#c8322b');
-        else
+        if (g.payCount === 1) {
+            io.banner('LØNNA ER KLAR', '#c8322b');
+            io.pin('hent', 'Hent lønna her', doorAt('fabrikk'), {
+                seconds: 12,
+                until: () => g.payReady <= 0,
+            });
+        } else
             io.float(
                 'LØNN!',
                 STATIONS.fabrikk.door[0],
@@ -898,7 +952,15 @@ export function update(g: G, dt: number, io: IO) {
         burstNotes(g, g.cart.x, 1.1, g.cart.z, 8, 3);
         io.float('VERDILØST', g.cart.x, 1.8, g.cart.z, '#ff8a7a');
         if (once(g, 'rot1'))
-            io.toast('Sedlene du ventet med, ble verdiløse. Folk kastet dem på gata.');
+            io.pin('rot', 'Verdiløst - folk kastet sedlene', cartAt(g), {
+                tone: 'fare',
+                seconds: 4,
+            });
+        io.lesson(
+            'rot',
+            'Sedler du ventet med, ble verdiløse. I 1923 kastet folk pengene på gata.',
+            2
+        );
     }
 
     // Familien spiser og fyrer. Vinteren kommer.
@@ -909,12 +971,15 @@ export function update(g: G, dt: number, io: IO) {
     if (low < 25 && g.warnT <= 0) {
         g.warnT = 1.1;
         io.sfx.warn();
-        if (once(g, g.food < g.heat ? 'lowfood' : 'lowheat'))
-            io.toast(
-                g.food < g.heat
-                    ? 'Matlageret hjemme er nesten tomt!'
-                    : 'Ovnen hjemme er nesten tom for kull!'
-            );
+        io.pin(
+            'lav',
+            g.food < g.heat ? 'Matlageret er nesten tomt!' : 'Ovnen er nesten tom for kull!',
+            doorAt('hjem'),
+            {
+                tone: 'fare',
+                seconds: 3,
+            }
+        );
     }
     if (g.food <= 0) {
         g.food = 0;
@@ -945,9 +1010,15 @@ export function update(g: G, dt: number, io: IO) {
             g.closed[id] = g.t + 6;
             io.float('STENGT', STATIONS[id].door[0], 2.4, STATIONS[id].door[1], '#ff8a7a');
             if (once(g, 'close1'))
-                io.toast(
-                    `${STATIONS[id].label} har stengt en stund: bøndene og kjøpmennene vil ikke ha papirpenger.`
-                );
+                io.pin(`stengt2-${id}`, 'Stengt - vil ikke ha papirpenger', doorAt(id), {
+                    tone: 'fare',
+                    seconds: 4,
+                });
+            io.lesson(
+                'stengt',
+                'Høsten 1923 ville mange bønder og butikker ikke ta imot papirmark lenger.',
+                1
+            );
         }
     }
 
@@ -967,7 +1038,7 @@ export function update(g: G, dt: number, io: IO) {
         g.score += 250;
         io.sfx.seddel();
         io.float('+250 SEDDEL FUNNET', g.seddel.x, 1.6, g.seddel.z, '#e0b3ff');
-        io.toast(`${s.title}: ${s.text}`);
+        io.lesson(`seddel-${s.id}`, `${s.title}: ${s.text}`, 0.8);
         g.seddel = null;
     }
 }

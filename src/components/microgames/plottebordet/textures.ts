@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { crispCanvas } from '../kit/crispText';
 import {
     ENGLAND,
     CONTINENT,
@@ -290,22 +291,19 @@ export function sectorTexture(idx: number): THREE.CanvasTexture {
     return t;
 }
 
-/** Liten etikett (tall på en brikke). */
+/** Liten etikett (tall på en brikke). Skarp også tett på - se kit/crispText. */
 export function labelTexture(text: string, bg: string, fg: string): THREE.CanvasTexture {
-    const cv = document.createElement('canvas');
-    cv.width = 128;
-    cv.height = 64;
-    const c = cv.getContext('2d')!;
-    c.fillStyle = bg;
-    c.fillRect(0, 0, 128, 64);
-    c.fillStyle = fg;
-    c.font = `900 40px ${FONT}`;
-    c.textAlign = 'center';
-    c.textBaseline = 'middle';
-    c.fillText(text, 64, 35);
-    const t = new THREE.CanvasTexture(cv);
-    t.colorSpace = THREE.SRGBColorSpace;
-    return t;
+    const cc = crispCanvas(128, 64);
+    cc.draw((c, w, h) => {
+        c.fillStyle = bg;
+        c.fillRect(0, 0, w, h);
+        c.fillStyle = fg;
+        c.font = `900 40px ${FONT}`;
+        c.textAlign = 'center';
+        c.textBaseline = 'middle';
+        c.fillText(text, w / 2, 35);
+    });
+    return cc.tex;
 }
 
 /** Tregulv i kontrollrommet. */

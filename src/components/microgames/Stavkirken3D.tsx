@@ -14,7 +14,8 @@ import {
     ArcadeSmallButton,
     ArcadeStats,
 } from './arcade/ArcadeShell';
-import { useArcadeAnnouncer } from './arcade/useArcade';
+import { useArcadeText } from './arcade/useArcade';
+import { ArcadeLessons } from './arcade/ArcadeLayers';
 import type { ArcadeTheme } from './arcade/tokens';
 import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
@@ -34,6 +35,7 @@ import {
     BARREL,
     type G,
     type IO,
+    type At,
     type Sfx,
     type Cause,
     type Mode,
@@ -41,7 +43,14 @@ import {
     type Timber,
     type BrushHit,
 } from './stavkirken/game';
-import { Church, BrushCursor, Flames, ParticleView, Mile, type BrushCursorState } from './stavkirken/church';
+import {
+    Church,
+    BrushCursor,
+    Flames,
+    ParticleView,
+    Mile,
+    type BrushCursorState,
+} from './stavkirken/church';
 import { Atmosphere, Valley, Village, Weather } from './stavkirken/world';
 
 // REGNET I LÆRDAL - hold Borgund stavkirke tett fra 1180 til i dag.
@@ -94,15 +103,51 @@ interface Entry {
 
 // Kirkeboka - samlingen som går igjen mellom runder. Alt står i artikkelen.
 const KIRKEBOK: Entry[] = [
-    { id: 'svill', title: 'Svillene', text: 'Stavene står på en ramme av sviller oppå stein. Treverket rører aldri jorda, og derfor råtner det ikke nedenfra.' },
-    { id: 'malmfuru', title: 'Malmfuru', text: 'Byggmesterne lot furua stå og tørke på rot i flere år. Den fylte seg med harpiks, som tetter veden innenfra.' },
-    { id: 'spon', title: 'Spon og tjære', text: 'Tusenvis av trefliser lagt som skjell på en fisk, og bredd med tjære. Regnet traff aldri veggen.' },
-    { id: 'stolpe', title: 'Stolpekirkene', text: 'De eldste trekirkene hadde stolper gravd ned i jorda. Ikke én av dem står igjen over bakken i dag.' },
-    { id: 'svartedauden', title: 'Svartedauden', text: 'Rundt halve befolkningen døde. Det var verken folk eller penger igjen til å reise nye kirker.' },
-    { id: 'reformasjonen', title: 'Reformasjonen', text: 'I 1537 ble Norge luthersk. Stavkirkene fortsatte å være bygdas kirke.' },
-    { id: 'kirkeloven', title: 'Kirkeloven av 1851', text: 'Nye kirker skulle romme 30 prosent av sognet. Over 600 kirker ble bygd fram til 1900, mange etter at den gamle var revet.' },
-    { id: 'foreningen', title: 'Fortidsminneforeningen', text: 'Stiftet i 1844 for å redde gamle bygninger. Den kjøpte stavkirker for å berge dem, og eier i dag åtte av de 28.' },
-    { id: 'programmet', title: 'Stavkirkeprogrammet', text: 'Fra 2001 til 2015 satte Riksantikvaren alle de 28 stavkirkene i stand.' },
+    {
+        id: 'svill',
+        title: 'Svillene',
+        text: 'Stavene står på en ramme av sviller oppå stein. Treverket rører aldri jorda, og derfor råtner det ikke nedenfra.',
+    },
+    {
+        id: 'malmfuru',
+        title: 'Malmfuru',
+        text: 'Byggmesterne lot furua stå og tørke på rot i flere år. Den fylte seg med harpiks, som tetter veden innenfra.',
+    },
+    {
+        id: 'spon',
+        title: 'Spon og tjære',
+        text: 'Tusenvis av trefliser lagt som skjell på en fisk, og bredd med tjære. Regnet traff aldri veggen.',
+    },
+    {
+        id: 'stolpe',
+        title: 'Stolpekirkene',
+        text: 'De eldste trekirkene hadde stolper gravd ned i jorda. Ikke én av dem står igjen over bakken i dag.',
+    },
+    {
+        id: 'svartedauden',
+        title: 'Svartedauden',
+        text: 'Rundt halve befolkningen døde. Det var verken folk eller penger igjen til å reise nye kirker.',
+    },
+    {
+        id: 'reformasjonen',
+        title: 'Reformasjonen',
+        text: 'I 1537 ble Norge luthersk. Stavkirkene fortsatte å være bygdas kirke.',
+    },
+    {
+        id: 'kirkeloven',
+        title: 'Kirkeloven av 1851',
+        text: 'Nye kirker skulle romme 30 prosent av sognet. Over 600 kirker ble bygd fram til 1900, mange etter at den gamle var revet.',
+    },
+    {
+        id: 'foreningen',
+        title: 'Fortidsminneforeningen',
+        text: 'Stiftet i 1844 for å redde gamle bygninger. Den kjøpte stavkirker for å berge dem, og eier i dag åtte av de 28.',
+    },
+    {
+        id: 'programmet',
+        title: 'Stavkirkeprogrammet',
+        text: 'Fra 2001 til 2015 satte Riksantikvaren alle de 28 stavkirkene i stand.',
+    },
 ];
 
 const RANKS: [number, string][] = [
@@ -119,18 +164,27 @@ const DEATH: Record<Cause, string[]> = {
         'Vannet kom inn gjennom taket, og råten tok resten. Kirka falt i {år}.',
         'For mye råte på en gang. Kirka falt i {år}, og tømmeret ble til jord.',
     ],
-    stolper: ['Stolpene råtnet der de stod nede i jorda. Kirka sank og falt i {år}. Ingen tjære i verden hjelper under bakken.'],
-    riving: ['Kirka var for liten og i for dårlig stand. Bygda rev den i {år} og bygde en ny med plass til flere.'],
+    stolper: [
+        'Stolpene råtnet der de stod nede i jorda. Kirka sank og falt i {år}. Ingen tjære i verden hjelper under bakken.',
+    ],
+    riving: [
+        'Kirka var for liten og i for dårlig stand. Bygda rev den i {år} og bygde en ny med plass til flere.',
+    ],
 };
 
 const TIPS: Record<Cause | 'fersk', string> = {
-    forfall: 'Tips: vestsiden tar mest vær. Mal lange strøk over de lyse flekkene før de blir grønne - råte må skrapes bort før tjæra fester seg.',
+    forfall:
+        'Tips: vestsiden tar mest vær. Mal lange strøk over de lyse flekkene før de blir grønne - råte må skrapes bort før tjæra fester seg.',
     stolper: 'Tips: velg sviller på stein. Da rører treverket aldri bakken.',
     riving: 'Tips: hold tilstanden over 60 prosent fra 1851 til foreningen kommer i 1881.',
     fersk: 'Tips: fersk furu slites nesten dobbelt så fort. Malmfuru tåler mye mer.',
 };
 
-const PAUSE_MSG = ['Regnet venter. Det har god tid.', 'Klokkeren tar en kaffe.', 'Kirka står. Foreløpig.'];
+const PAUSE_MSG = [
+    'Regnet venter. Det har god tid.',
+    'Klokkeren tar en kaffe.',
+    'Kirka står. Foreløpig.',
+];
 const SIDES: Side[] = ['N', 'Ø', 'S', 'V'];
 
 const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
@@ -208,14 +262,18 @@ interface LoopProps {
     modeRef: React.MutableRefObject<Mode>;
     ioRef: React.MutableRefObject<IO>;
     hudRef: React.MutableRefObject<(g: G) => void>;
-    projRef: React.MutableRefObject<((p: THREE.Vector3) => { x: number; y: number; behind: boolean }) | null>;
+    projRef: React.MutableRefObject<
+        ((p: THREE.Vector3) => { x: number; y: number; behind: boolean }) | null
+    >;
     angleRef: React.MutableRefObject<number>;
     onIntroDone: () => void;
 }
 
 /** Spillreglene per frame. Ligger utenfor komponenten så tilstanden kan muteres fritt. */
 function runFrame(g: G, m: Mode, dt: number, io: IO, modeRef: React.MutableRefObject<Mode>) {
-    if (m === 'play') for (let k = 0; k < DEV_SPEED && modeRef.current === 'play'; k++) update(g, dt, io);
+    if (m === 'play')
+        for (let k = 0; k < DEV_SPEED && modeRef.current === 'play'; k++)
+            update(g, dt * io.timeScale(), io);
     if (m === 'dying' && g.collapse >= 0) g.collapse = Math.min(1, g.collapse + dt / 2.4);
     stepParticles(g, dt);
 }
@@ -240,7 +298,10 @@ function Loop({ gRef, modeRef, ioRef, hudRef, projRef, angleRef, onIntroDone }: 
             cam.lookAt(TARGET);
             if (k >= 1) {
                 intro.current = 0;
-                const c = get().controls as unknown as { enabled: boolean; update?: () => void } | null;
+                const c = get().controls as unknown as {
+                    enabled: boolean;
+                    update?: () => void;
+                } | null;
                 if (c) {
                     c.enabled = true;
                     c.update?.();
@@ -252,7 +313,11 @@ function Loop({ gRef, modeRef, ioRef, hudRef, projRef, angleRef, onIntroDone }: 
         const vec = v.current;
         projRef.current = (p: THREE.Vector3) => {
             vec.copy(p).project(cam);
-            return { x: (vec.x * 0.5 + 0.5) * state.size.width, y: (-vec.y * 0.5 + 0.5) * state.size.height, behind: vec.z > 1 };
+            return {
+                x: (vec.x * 0.5 + 0.5) * state.size.width,
+                y: (-vec.y * 0.5 + 0.5) * state.size.height,
+                behind: vec.z > 1,
+            };
         };
         acc.current += dt;
         if (acc.current > 0.1) {
@@ -292,20 +357,13 @@ interface RunResult {
     rank: string;
     msg: string;
     tip: string;
+    lessons: string[];
     years: number;
     cond: number;
     bestStroke: number;
     newEntries: Entry[];
     next: [number, string] | null;
     best: number;
-}
-
-interface FloatText {
-    id: number;
-    t: string;
-    x: number;
-    y: number;
-    color: string;
 }
 
 export default function Stavkirken3D({ onComplete }: MicroGameProps) {
@@ -322,21 +380,26 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
     const [synth] = useState(createArcadeSynth);
     const [sfx] = useState(() => makeSfx(synth));
     const [muted, setMuted] = useState(() => synth.isMuted());
-    const [announce, announcer, feed] = useArcadeAnnouncer({ feed: true });
-    const [texts, setTexts] = useState<FloatText[]>([]);
+    const [text, textLayer] = useArcadeText(GAME_ID);
     const [grids] = useState(() => sharedGrids());
     // Lat init: newGame nullstiller de delte rutenettene, så den må ikke kjøres
     // ved hver render (useRef(newGame(...)) evaluerer argumentet hver gang).
     const [firstGame] = useState(() => newGame(grids, 'sviller', 'malmfuru'));
     const gRef = useRef<G>(firstGame);
-    const projRef = useRef<((p: THREE.Vector3) => { x: number; y: number; behind: boolean }) | null>(null);
+    const projRef = useRef<
+        ((p: THREE.Vector3) => { x: number; y: number; behind: boolean }) | null
+    >(null);
     const angleRef = useRef(0);
     const completedOnce = useRef(false);
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
-    const textId = useRef(0);
     const lastHit = useRef<BrushHit | null>(null);
     const scoreAcc = useRef({ pts: 0, t: 0 });
-    const cursor = useRef<BrushCursorState>({ visible: false, point: new THREE.Vector3(), normal: new THREE.Vector3(0, 1, 0), fire: false });
+    const cursor = useRef<BrushCursorState>({
+        visible: false,
+        point: new THREE.Vector3(),
+        normal: new THREE.Vector3(0, 1, 0),
+        fire: false,
+    });
     const hud = {
         score: useRef<HTMLDivElement>(null),
         mult: useRef<HTMLDivElement>(null),
@@ -368,10 +431,14 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
     const floatText = (t: string, p: THREE.Vector3, color = '#f7f1e3') => {
         const proj = projRef.current?.(p);
         if (!proj || proj.behind) return;
-        textId.current += 1;
-        const id = textId.current;
-        setTexts((xs) => [...xs.slice(-6), { id, t, x: proj.x, y: proj.y, color }]);
-        window.setTimeout(() => setTexts((xs) => xs.filter((x) => x.id !== id)), 1100);
+        text.float(t, proj.x, proj.y, color, t.endsWith('!'));
+    };
+    /** Et punkt i scenen -> et punkt i spillvinduet, for lapper og lærings-øyeblikk. */
+    const toScreen = (at: At) => () => {
+        const p = at();
+        if (!p) return null;
+        const r = projRef.current?.(p);
+        return r && !r.behind ? { x: r.x, y: r.y } : null;
     };
 
     const endRun = (won: boolean, cause: Cause) => {
@@ -398,6 +465,7 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                 ? `Borgund står ennå. Du holdt vannet ute i ${Y_END - Y_START} år, og kirka er i ${Math.round(g.cond)} % stand.`
                 : pick(DEATH[cause]).replace('{år}', String(year)),
             tip: won ? '' : cause === 'forfall' && g.timber === 'fersk' ? TIPS.fersk : TIPS[cause],
+            lessons: text.lessons(3),
             years: year - Y_START,
             cond: Math.round(g.cond),
             bestStroke: Math.round(g.maxStroke),
@@ -405,7 +473,7 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
             next: nextRank(RANKS, best),
             best,
         });
-        announce.clear();
+        text.clear();
         outcome.current = { won, score };
         setModeBoth('over');
         if ((won || g.year >= 1851) && !completedOnce.current) {
@@ -416,8 +484,12 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
 
     const io: IO = {
         sfx,
-        banner: announce.banner,
-        toast: announce.toast,
+        banner: (t, color) => text.banner(t, color),
+        pin: (key, t, at, o) => text.point(key, t, toScreen(at), o),
+        beat: (key, title, t, at, until) =>
+            text.beatOnce(key, title, t, { at: at ? toScreen(at) : undefined, until }),
+        lesson: (key, t, w) => text.lesson(key, t, w),
+        timeScale: () => text.timeScale(),
         lose: (cause) => {
             if (modeRef.current !== 'play') return;
             gRef.current.cause = cause;
@@ -430,7 +502,7 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
             if (modeRef.current !== 'play') return;
             sfx.bell();
             sfx.win();
-            announce.banner('KIRKA STÅR', 'Borgund stavkirke, 846 år senere. Fortsatt tett.', '#2f6b3a');
+            text.banner('KIRKA STÅR', '#2f6b3a', 2.8);
             gRef.current.collapse = -1; // kirka står - ingen kollaps
             setModeBoth('dying');
             window.setTimeout(() => endRun(true, 'forfall'), 3400);
@@ -450,7 +522,11 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
         acc.pts += g.score - before;
         const now = performance.now();
         if (acc.pts >= 8 && now - acc.t > 380) {
-            floatText(`+${Math.round(acc.pts)}`, hit.point, g.strokeMult >= 3 ? '#ffd43b' : '#f7f1e3');
+            floatText(
+                `+${Math.round(acc.pts)}`,
+                hit.point,
+                g.strokeMult >= 3 ? '#ffd43b' : '#f7f1e3'
+            );
             acc.pts = 0;
             acc.t = now;
         }
@@ -471,7 +547,12 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                 const steps = Math.min(12, Math.ceil(dist / 0.18));
                 for (let k = 1; k <= steps; k++) {
                     const f = k / steps;
-                    stamp({ panel: hit.panel, u: prev.u + (hit.u - prev.u) * f, v: prev.v + (hit.v - prev.v) * f, point: hit.point });
+                    stamp({
+                        panel: hit.panel,
+                        u: prev.u + (hit.u - prev.u) * f,
+                        v: prev.v + (hit.v - prev.v) * f,
+                        point: hit.point,
+                    });
                 }
             } else stamp(hit);
             lastHit.current = hit;
@@ -479,7 +560,8 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
         end: () => {
             const s = endStroke(gRef.current);
             lastHit.current = null;
-            if (s > 30 && cursor.current.visible) floatText(s > 60 ? 'MESTERSTRØK!' : 'FINT STRØK!', cursor.current.point, '#ffd43b');
+            if (s > 30 && cursor.current.visible)
+                floatText(s > 60 ? 'MESTERSTRØK!' : 'FINT STRØK!', cursor.current.point, '#ffd43b');
         },
         hover: (hit: BrushHit | null) => {
             const c = cursor.current;
@@ -491,7 +573,10 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
             c.point.copy(hit.point);
             c.normal.copy(PANELS[hit.panel].normal);
             const gr = gRef.current.grids[hit.panel];
-            const ci = Math.min(gr.fire.length - 1, Math.floor(hit.v * gr.h) * gr.w + Math.floor(hit.u * gr.w));
+            const ci = Math.min(
+                gr.fire.length - 1,
+                Math.floor(hit.v * gr.h) * gr.w + Math.floor(hit.u * gr.w)
+            );
             c.fire = gr.fire[ci] > 0;
         },
     };
@@ -499,7 +584,8 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
     const hudRef = useRef<(g: G) => void>(() => {});
     useEffect(() => {
         hudRef.current = (g: G) => {
-            if (hud.score.current) hud.score.current.textContent = Math.floor(g.score).toLocaleString('nb-NO');
+            if (hud.score.current)
+                hud.score.current.textContent = Math.floor(g.score).toLocaleString('nb-NO');
             if (hud.mult.current) {
                 hud.mult.current.textContent = `STRØK ×${g.strokeMult}`;
                 hud.mult.current.style.opacity = g.strokeMult >= 2 ? '1' : '0';
@@ -507,15 +593,20 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
             const cond = Math.round(g.cond);
             if (hud.condBar.current) {
                 hud.condBar.current.style.width = `${cond}%`;
-                hud.condBar.current.style.background = cond > 60 ? '#7ccf5b' : cond > 30 ? '#f2c233' : '#e5483a';
+                hud.condBar.current.style.background =
+                    cond > 60 ? '#7ccf5b' : cond > 30 ? '#f2c233' : '#e5483a';
             }
             if (hud.cond.current) hud.cond.current.classList.toggle('low', cond < 30);
             if (hud.year.current) hud.year.current.textContent = String(Math.floor(g.year));
             if (hud.tar.current) hud.tar.current.style.height = `${(g.tar / TAR_MAX) * 100}%`;
             if (hud.tarText.current) hud.tarText.current.textContent = `${Math.round(g.tar)} l`;
-            if (hud.riving.current) hud.riving.current.style.display = g.rivingOn ? 'block' : 'none';
-            if (hud.rivingFill.current) hud.rivingFill.current.style.width = `${Math.round(g.riving * 100)}%`;
-            if (hud.mile.current) hud.mile.current.style.display = g.mileReady && modeRef.current === 'play' ? 'flex' : 'none';
+            if (hud.riving.current)
+                hud.riving.current.style.display = g.rivingOn ? 'block' : 'none';
+            if (hud.rivingFill.current)
+                hud.rivingFill.current.style.width = `${Math.round(g.riving * 100)}%`;
+            if (hud.mile.current)
+                hud.mile.current.style.display =
+                    g.mileReady && modeRef.current === 'play' ? 'flex' : 'none';
             // Kompasset: den verste flaten på hver side (lyse flekker, råte, brann).
             const bad: Record<string, number> = { N: 0, Ø: 0, S: 0, V: 0 };
             const fire: Record<string, boolean> = {};
@@ -528,10 +619,18 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                 const el = hud[s].current;
                 if (!el) continue;
                 const b = bad[s];
-                el.style.background = fire[s] ? '#ff7a2a' : b > 0.75 ? '#e5483a' : b > 0.4 ? '#f2c233' : '#7ccf5b';
-                el.style.animation = b > 0.75 || fire[s] ? 'arcPulse .4s infinite alternate' : 'none';
+                el.style.background = fire[s]
+                    ? '#ff7a2a'
+                    : b > 0.75
+                      ? '#e5483a'
+                      : b > 0.4
+                        ? '#f2c233'
+                        : '#7ccf5b';
+                el.style.animation =
+                    b > 0.75 || fire[s] ? 'arcPulse .4s infinite alternate' : 'none';
             }
-            if (hud.compass.current) hud.compass.current.style.transform = `rotate(${(angleRef.current * 180) / Math.PI}deg)`;
+            if (hud.compass.current)
+                hud.compass.current.style.transform = `rotate(${(angleRef.current * 180) / Math.PI}deg)`;
         };
     });
 
@@ -553,7 +652,8 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
         if (modeRef.current !== 'play') return;
         const p = PANELS[i];
         for (let v = 0.08; v < 0.95; v += 0.11)
-            for (let u = 0.04; u < 0.98; u += 0.06) brush(gRef.current, { panel: i, u, v, point: p.center }, ioRef.current);
+            for (let u = 0.04; u < 0.98; u += 0.06)
+                brush(gRef.current, { panel: i, u, v, point: p.center }, ioRef.current);
         endStroke(gRef.current);
     };
     /** Maler den verste flaten når den er tydelig slitt: brann først, så råte, så bar ved. */
@@ -573,7 +673,12 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
         if (worst >= 0 && ws > 0.35 && (g.tar > 3 || g.grids[worst].burning > 0)) sweep(worst);
     };
     usePlaytest(GAME_ID, () => {
-        const bot = (forventer: PlaytestBot['forventer'], beskrivelse: string, variant: string, hent = true): PlaytestBot => ({
+        const bot = (
+            forventer: PlaytestBot['forventer'],
+            beskrivelse: string,
+            variant: string,
+            hent = true
+        ): PlaytestBot => ({
             forventer,
             beskrivelse,
             variant,
@@ -586,7 +691,14 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                 const m = modeRef.current;
                 const o = outcome.current;
                 return {
-                    fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
+                    fase:
+                        m === 'menu'
+                            ? 'meny'
+                            : m === 'over'
+                              ? o?.won
+                                  ? 'vunnet'
+                                  : 'tapt'
+                              : 'spiller',
                     poeng: m === 'over' && o ? o.score : Math.floor(g.score),
                     framdrift: (g.year - Y_START) / (Y_END - Y_START),
                     tid: g.t,
@@ -597,10 +709,27 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                 begin(f, t);
             },
             bots: {
-                seende: bot('vinner', 'Sviller og malmfuru. Henter tjære, slokker brann, maler den verste flaten.', 'sviller/malmfuru'),
-                'fersk-furu': bot('taper', 'Samme vedlikehold, men fersk furu uten kjerneved.', 'sviller/fersk'),
-                stolper: bot('taper', 'Samme vedlikehold, men stolpene står rett i jorda.', 'stolper/malmfuru'),
-                'uten-tjaere': bot('taper', 'Maler, men henter aldri ny tjære fra mila.', 'sviller/malmfuru', false),
+                seende: bot(
+                    'vinner',
+                    'Sviller og malmfuru. Henter tjære, slokker brann, maler den verste flaten.',
+                    'sviller/malmfuru'
+                ),
+                'fersk-furu': bot(
+                    'taper',
+                    'Samme vedlikehold, men fersk furu uten kjerneved.',
+                    'sviller/fersk'
+                ),
+                stolper: bot(
+                    'taper',
+                    'Samme vedlikehold, men stolpene står rett i jorda.',
+                    'stolper/malmfuru'
+                ),
+                'uten-tjaere': bot(
+                    'taper',
+                    'Maler, men henter aldri ny tjære fra mila.',
+                    'sviller/malmfuru',
+                    false
+                ),
             },
         };
     });
@@ -615,11 +744,22 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
         setRunFoundation(foundation);
         setResult(null);
         setShowBook(false);
-        announce.clear();
-        setTexts([]);
+        text.clear();
+        text.resetRun();
         setModeBoth('intro');
         sfx.bell();
-        announce.banner('BORGUND, 1180', 'Hold kirka tett til i dag. Hold og dra over kirka for å male tjære. Dra i lufta for å gå rundt.', '#7a2e1f');
+        text.banner('BORGUND, 1180', '#7a2e1f');
+        const g0 = gRef.current;
+        text.point(
+            'mal',
+            'Dra over kirka for å male tjære',
+            toScreen(() => PANELS[4].center),
+            {
+                once: true,
+                seconds: 12,
+                until: () => g0.score > 20,
+            }
+        );
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;
@@ -628,7 +768,7 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
     };
     const resume = () => setModeBoth('play');
     const toMenu = () => {
-        announce.clear();
+        text.clear();
         gRef.current = newGame(grids, foundation ?? 'sviller', timber ?? 'malmfuru');
         setModeBoth('menu');
     };
@@ -652,7 +792,11 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
 
     const hudOn = mode === 'play' || mode === 'paused';
 
-    const choice = <T extends string>(value: T | null, set: (v: T) => void, opts: { v: T; label: string; sub: string }[]) => (
+    const choice = <T extends string>(
+        value: T | null,
+        set: (v: T) => void,
+        opts: { v: T; label: string; sub: string }[]
+    ) => (
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 6 }}>
             {opts.map((o) => (
                 <button
@@ -660,7 +804,12 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                     type="button"
                     className="arc-small"
                     onClick={() => set(o.v)}
-                    style={{ textAlign: 'left', padding: '6px 8px', background: value === o.v ? 'var(--arc-accent)' : 'var(--arc-chip)', lineHeight: 1.25 }}
+                    style={{
+                        textAlign: 'left',
+                        padding: '6px 8px',
+                        background: value === o.v ? 'var(--arc-accent)' : 'var(--arc-chip)',
+                        lineHeight: 1.25,
+                    }}
                     aria-pressed={value === o.v}
                 >
                     <b style={{ display: 'block', fontSize: 13 }}>{o.label}</b>
@@ -673,9 +822,16 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
     return (
         <MicroGameFrame title="Regnet i Lærdal" bleed>
             <div className="p-2">
-                <ArcadeStage theme={THEME} background={SKY} label="Regnet i Lærdal - hold stavkirka tett" below={feed}>
+                <ArcadeStage
+                    theme={THEME}
+                    background={SKY}
+                    label="Regnet i Lærdal - hold stavkirka tett"
+                >
                     <MicroCanvas
-                        camera={{ position: CAM_HOME.toArray() as [number, number, number], fov: 44 }}
+                        camera={{
+                            position: CAM_HOME.toArray() as [number, number, number],
+                            fov: 44,
+                        }}
                         background={SKY}
                         fog={{ color: SKY, near: 34, far: 95 }}
                         builtInLights={false}
@@ -713,28 +869,6 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                         <KitEffects bloomIntensity={1.1} bloomThreshold={0.85} />
                     </MicroCanvas>
 
-                    {/* flytende tekst over kirka */}
-                    {texts.map((t) => (
-                        <div
-                            key={t.id}
-                            className="arc-display arc-outline"
-                            style={{
-                                position: 'absolute',
-                                left: t.x,
-                                top: t.y,
-                                transform: 'translate(-50%,-50%)',
-                                color: t.color,
-                                fontSize: 17,
-                                pointerEvents: 'none',
-                                animation: 'stavFloat 1.1s ease-out forwards',
-                                whiteSpace: 'nowrap',
-                            }}
-                        >
-                            {t.t}
-                        </div>
-                    ))}
-                    <style>{'@keyframes stavFloat{from{opacity:1;margin-top:0}to{opacity:0;margin-top:-44px}}'}</style>
-
                     {/* HUD øverst */}
                     <div
                         style={{
@@ -749,34 +883,61 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                         }}
                     >
                         <div style={{ minWidth: 90 }}>
-                            <div ref={hud.score} className="arc-display arc-outline" style={{ fontSize: 24, lineHeight: 1 }}>
+                            <div
+                                ref={hud.score}
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 24, lineHeight: 1 }}
+                            >
                                 0
                             </div>
-                            <div ref={hud.mult} className="arc-display arc-pill" style={{ marginTop: 5, fontSize: 12, opacity: 0 }}>
+                            <div
+                                ref={hud.mult}
+                                className="arc-display arc-pill"
+                                style={{ marginTop: 5, fontSize: 12, opacity: 0 }}
+                            >
                                 STRØK ×2
                             </div>
                         </div>
                         <div style={{ flex: 1, maxWidth: 240, margin: '2px auto 0' }}>
-                            <div className="arc-display arc-outline" style={{ fontSize: 11, marginBottom: 3 }}>
+                            <div
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 11, marginBottom: 3 }}
+                            >
                                 Kirkas tilstand
                             </div>
                             <div ref={hud.cond} className="arc-bar">
-                                <div ref={hud.condBar} style={{ width: '100%', background: '#7ccf5b' }} />
+                                <div
+                                    ref={hud.condBar}
+                                    style={{ width: '100%', background: '#7ccf5b' }}
+                                />
                             </div>
                             <div ref={hud.riving} style={{ display: 'none', marginTop: 6 }}>
-                                <div className="arc-display arc-outline" style={{ fontSize: 11, marginBottom: 3, color: '#ffb4a0' }}>
+                                <div
+                                    className="arc-display arc-outline"
+                                    style={{ fontSize: 11, marginBottom: 3, color: '#ffb4a0' }}
+                                >
                                     Rivingsvedtak
                                 </div>
                                 <div className="arc-bar" style={{ height: 10 }}>
-                                    <div ref={hud.rivingFill} style={{ width: '0%', background: '#e5483a' }} />
+                                    <div
+                                        ref={hud.rivingFill}
+                                        style={{ width: '0%', background: '#e5483a' }}
+                                    />
                                 </div>
                             </div>
                         </div>
                         <div style={{ textAlign: 'right' }}>
-                            <div ref={hud.year} className="arc-display arc-outline" style={{ fontSize: 26, lineHeight: 1 }}>
+                            <div
+                                ref={hud.year}
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 26, lineHeight: 1 }}
+                            >
                                 1180
                             </div>
-                            <div className="arc-display arc-outline" style={{ fontSize: 10, marginTop: 2 }}>
+                            <div
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 10, marginTop: 2 }}
+                            >
                                 mål: {Y_END}
                             </div>
                         </div>
@@ -817,14 +978,25 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                         >
                             <div
                                 ref={hud.tar}
-                                style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: '50%', background: 'linear-gradient(#3a2a1e,#0d0a08)' }}
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    height: '50%',
+                                    background: 'linear-gradient(#3a2a1e,#0d0a08)',
+                                }}
                             />
                         </div>
                         <div>
                             <div className="arc-display arc-outline" style={{ fontSize: 11 }}>
                                 Tjære
                             </div>
-                            <span ref={hud.tarText} className="arc-display arc-outline" style={{ fontSize: 16 }}>
+                            <span
+                                ref={hud.tarText}
+                                className="arc-display arc-outline"
+                                style={{ fontSize: 16 }}
+                            >
                                 0 l
                             </span>
                         </div>
@@ -850,58 +1022,146 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
 
                     {/* kompasset: hvilken side som trenger tjære */}
                     <div
-                        style={{ position: 'absolute', right: 12, bottom: 12, width: 86, height: 86, opacity: hudOn ? 1 : 0, pointerEvents: 'none' }}
+                        style={{
+                            position: 'absolute',
+                            right: 12,
+                            bottom: 12,
+                            width: 86,
+                            height: 86,
+                            opacity: hudOn ? 1 : 0,
+                            pointerEvents: 'none',
+                        }}
                         aria-hidden
                     >
                         <div
                             className="arc-display arc-outline"
-                            style={{ position: 'absolute', top: -16, right: 0, width: 120, textAlign: 'right', fontSize: 10 }}
+                            style={{
+                                position: 'absolute',
+                                top: -16,
+                                right: 0,
+                                width: 120,
+                                textAlign: 'right',
+                                fontSize: 10,
+                            }}
                         >
                             vind fra vest ←
                         </div>
                         <div
                             ref={hud.compass}
-                            style={{ position: 'absolute', inset: 0, borderRadius: '50%', background: 'rgba(239,230,210,.9)', border: `2px solid ${INK}` }}
+                            style={{
+                                position: 'absolute',
+                                inset: 0,
+                                borderRadius: '50%',
+                                background: 'rgba(239,230,210,.9)',
+                                border: `2px solid ${INK}`,
+                            }}
                         >
-                            <div style={{ position: 'absolute', left: 25, top: 32, width: 36, height: 22, background: '#2e2118', border: `2px solid ${INK}` }} />
-                            <div ref={hud.N} style={{ position: 'absolute', left: 25, top: 22, width: 36, height: 7, border: `2px solid ${INK}` }} />
-                            <div ref={hud.S} style={{ position: 'absolute', left: 25, top: 57, width: 36, height: 7, border: `2px solid ${INK}` }} />
-                            <div ref={hud.V} style={{ position: 'absolute', left: 14, top: 32, width: 8, height: 22, border: `2px solid ${INK}` }} />
-                            <div ref={hud.Ø} style={{ position: 'absolute', left: 64, top: 32, width: 8, height: 22, border: `2px solid ${INK}` }} />
-                            <span className="arc-display" style={{ position: 'absolute', left: 3, top: 34, fontSize: 10 }}>
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    left: 25,
+                                    top: 32,
+                                    width: 36,
+                                    height: 22,
+                                    background: '#2e2118',
+                                    border: `2px solid ${INK}`,
+                                }}
+                            />
+                            <div
+                                ref={hud.N}
+                                style={{
+                                    position: 'absolute',
+                                    left: 25,
+                                    top: 22,
+                                    width: 36,
+                                    height: 7,
+                                    border: `2px solid ${INK}`,
+                                }}
+                            />
+                            <div
+                                ref={hud.S}
+                                style={{
+                                    position: 'absolute',
+                                    left: 25,
+                                    top: 57,
+                                    width: 36,
+                                    height: 7,
+                                    border: `2px solid ${INK}`,
+                                }}
+                            />
+                            <div
+                                ref={hud.V}
+                                style={{
+                                    position: 'absolute',
+                                    left: 14,
+                                    top: 32,
+                                    width: 8,
+                                    height: 22,
+                                    border: `2px solid ${INK}`,
+                                }}
+                            />
+                            <div
+                                ref={hud.Ø}
+                                style={{
+                                    position: 'absolute',
+                                    left: 64,
+                                    top: 32,
+                                    width: 8,
+                                    height: 22,
+                                    border: `2px solid ${INK}`,
+                                }}
+                            />
+                            <span
+                                className="arc-display"
+                                style={{ position: 'absolute', left: 3, top: 34, fontSize: 10 }}
+                            >
                                 V
                             </span>
-                            <span className="arc-display" style={{ position: 'absolute', right: 3, top: 34, fontSize: 10 }}>
+                            <span
+                                className="arc-display"
+                                style={{ position: 'absolute', right: 3, top: 34, fontSize: 10 }}
+                            >
                                 Ø
                             </span>
                         </div>
                     </div>
 
-                    {announcer}
+                    {textLayer}
 
                     {mode === 'menu' && !showBook && (
                         <ArcadeScreen>
                             <ArcadeLogo>REGNET I LÆRDAL</ArcadeLogo>
                             <ArcadeTag>Hold stavkirka tett fra 1180 til i dag</ArcadeTag>
-                            <p style={{ fontSize: 12, fontWeight: 600, margin: '10px 0 4px' }}>Hvordan bygger du kirka?</p>
+                            <p style={{ fontSize: 12, fontWeight: 600, margin: '10px 0 4px' }}>
+                                Hvordan bygger du kirka?
+                            </p>
                             {choice(foundation, setFoundation, [
-                                { v: 'stolper', label: 'Stolper i jorda', sub: 'Raskt: +25 liter tjære' },
+                                {
+                                    v: 'stolper',
+                                    label: 'Stolper i jorda',
+                                    sub: 'Raskt: +25 liter tjære',
+                                },
                                 { v: 'sviller', label: 'Sviller på stein', sub: 'Tar lengre tid' },
                             ])}
                             {choice(timber, setTimber, [
                                 { v: 'fersk', label: 'Fersk furu', sub: 'Raskt: +25 liter tjære' },
                                 { v: 'malmfuru', label: 'Malmfuru', sub: 'Tørket på rot i årevis' },
                             ])}
-                            <ArcadeBigButton onClick={start}>{foundation && timber ? 'Bygg og start' : 'Velg to ganger'}</ArcadeBigButton>
+                            <ArcadeBigButton onClick={start}>
+                                {foundation && timber ? 'Bygg og start' : 'Velg to ganger'}
+                            </ArcadeBigButton>
                             <div style={{ fontSize: 12, fontWeight: 600, marginBottom: 8 }}>
-                                Rekord <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
+                                Rekord{' '}
+                                <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
                                 &nbsp;/&nbsp; Kirkeboka{' '}
                                 <b className="arc-display">
                                     {save.book.length}/{KIRKEBOK.length}
                                 </b>
                             </div>
                             <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-                                <ArcadeSmallButton onClick={() => setShowBook(true)}>📜 Kirkeboka</ArcadeSmallButton>
+                                <ArcadeSmallButton onClick={() => setShowBook(true)}>
+                                    📜 Kirkeboka
+                                </ArcadeSmallButton>
                                 <ArcadeSmallButton onClick={toggleMute} ariaLabel="Lyd av eller på">
                                     {muted ? '🔇' : '🔊'}
                                 </ArcadeSmallButton>
@@ -915,22 +1175,46 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                                 Kirkeboka
                             </div>
                             <p style={{ fontSize: 12, margin: '2px 0 8px', fontWeight: 500 }}>
-                                Det kirka har vært gjennom. Nye sider låses opp når du overlever dem.
+                                Det kirka har vært gjennom. Nye sider låses opp når du overlever
+                                dem.
                             </p>
-                            <div style={{ textAlign: 'left', maxHeight: 280, overflowY: 'auto', marginBottom: 10 }}>
+                            <div
+                                style={{
+                                    textAlign: 'left',
+                                    maxHeight: 280,
+                                    overflowY: 'auto',
+                                    marginBottom: 10,
+                                }}
+                            >
                                 {KIRKEBOK.map((e) => {
                                     const has = save.book.includes(e.id);
                                     return (
-                                        <div key={e.id} style={{ padding: '6px 2px', borderBottom: '1px dashed rgba(29,26,23,.25)', opacity: has ? 1 : 0.45 }}>
-                                            <b className="arc-display" style={{ fontSize: 13, display: 'block' }}>
+                                        <div
+                                            key={e.id}
+                                            style={{
+                                                padding: '6px 2px',
+                                                borderBottom: '1px dashed rgba(29,26,23,.25)',
+                                                opacity: has ? 1 : 0.45,
+                                            }}
+                                        >
+                                            <b
+                                                className="arc-display"
+                                                style={{ fontSize: 13, display: 'block' }}
+                                            >
                                                 {has ? e.title : '🔒 Ukjent side'}
                                             </b>
-                                            <span style={{ fontSize: 12 }}>{has ? e.text : 'Hold kirka stående lenge nok til å oppleve det.'}</span>
+                                            <span style={{ fontSize: 12 }}>
+                                                {has
+                                                    ? e.text
+                                                    : 'Hold kirka stående lenge nok til å oppleve det.'}
+                                            </span>
                                         </div>
                                     );
                                 })}
                             </div>
-                            <ArcadeSmallButton onClick={() => setShowBook(false)}>Lukk</ArcadeSmallButton>
+                            <ArcadeSmallButton onClick={() => setShowBook(false)}>
+                                Lukk
+                            </ArcadeSmallButton>
                         </ArcadeScreen>
                     )}
 
@@ -947,22 +1231,65 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
 
                     {mode === 'over' && result && (
                         <ArcadeScreen>
-                            <div style={{ fontSize: 11, fontWeight: 700, opacity: 0.7 }}>{result.won ? 'Kirka står! Din tittel' : 'Din tittel'}</div>
-                            <div className="arc-display" style={{ fontSize: 'clamp(18px, 3.6vw, 24px)', color: 'var(--arc-cta)', margin: '0 0 2px' }}>
+                            <div style={{ fontSize: 11, fontWeight: 700, opacity: 0.7 }}>
+                                {result.won ? 'Kirka står! Din tittel' : 'Din tittel'}
+                            </div>
+                            <div
+                                className="arc-display"
+                                style={{
+                                    fontSize: 'clamp(18px, 3.6vw, 24px)',
+                                    color: 'var(--arc-cta)',
+                                    margin: '0 0 2px',
+                                }}
+                            >
                                 {result.rank}
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-                                <span className="arc-display" style={{ fontSize: 32, lineHeight: 1 }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: 10,
+                                }}
+                            >
+                                <span
+                                    className="arc-display"
+                                    style={{ fontSize: 32, lineHeight: 1 }}
+                                >
                                     {result.score.toLocaleString('nb-NO')}
                                 </span>
                                 {result.newBest && (
-                                    <span className="arc-display arc-pill arc-wig" style={{ fontSize: 12 }}>
+                                    <span
+                                        className="arc-display arc-pill arc-wig"
+                                        style={{ fontSize: 12 }}
+                                    >
                                         Ny rekord!
                                     </span>
                                 )}
                             </div>
-                            <p style={{ margin: '6px 0 4px', fontWeight: 500, fontSize: 12.5, lineHeight: 1.35 }}>{result.msg}</p>
-                            {result.tip && <p style={{ margin: '0 0 6px', fontWeight: 700, fontSize: 12.5, lineHeight: 1.35 }}>{result.tip}</p>}
+                            <p
+                                style={{
+                                    margin: '6px 0 4px',
+                                    fontWeight: 500,
+                                    fontSize: 12.5,
+                                    lineHeight: 1.35,
+                                }}
+                            >
+                                {result.msg}
+                            </p>
+                            {result.tip && (
+                                <p
+                                    style={{
+                                        margin: '0 0 6px',
+                                        fontWeight: 700,
+                                        fontSize: 12.5,
+                                        lineHeight: 1.35,
+                                    }}
+                                >
+                                    {result.tip}
+                                </p>
+                            )}
+                            <ArcadeLessons items={result.lessons} />
                             <ArcadeStats
                                 items={[
                                     { value: result.years, label: 'år stående' },
@@ -971,12 +1298,32 @@ export default function Stavkirken3D({ onComplete }: MicroGameProps) {
                                 ]}
                             />
                             {result.newEntries.length > 0 ? (
-                                <div style={{ marginTop: 6, background: 'var(--arc-chip)', border: `2px dashed ${INK}`, padding: 5, fontWeight: 800, fontSize: 12 }}>
-                                    Ny side i kirkeboka: {result.newEntries.map((e) => e.title).join(', ')}
+                                <div
+                                    style={{
+                                        marginTop: 6,
+                                        background: 'var(--arc-chip)',
+                                        border: `2px dashed ${INK}`,
+                                        padding: 5,
+                                        fontWeight: 800,
+                                        fontSize: 12,
+                                    }}
+                                >
+                                    Ny side i kirkeboka:{' '}
+                                    {result.newEntries.map((e) => e.title).join(', ')}
                                 </div>
                             ) : result.next ? (
-                                <div style={{ marginTop: 6, background: 'var(--arc-chip)', border: `2px dashed ${INK}`, padding: 5, fontWeight: 800, fontSize: 12 }}>
-                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng til neste tittel: {result.next[1]}
+                                <div
+                                    style={{
+                                        marginTop: 6,
+                                        background: 'var(--arc-chip)',
+                                        border: `2px dashed ${INK}`,
+                                        padding: 5,
+                                        fontWeight: 800,
+                                        fontSize: 12,
+                                    }}
+                                >
+                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng
+                                    til neste tittel: {result.next[1]}
                                 </div>
                             ) : null}
                             <ArcadeBigButton onClick={toMenu}>Igjen!</ArcadeBigButton>

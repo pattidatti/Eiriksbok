@@ -34,13 +34,23 @@ const CSS = `
 @keyframes arcIn{from{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(calc(var(--arc-tilt) * -3))}to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(var(--arc-tilt))}}
 @keyframes arcOut{from{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(var(--arc-tilt))}to{opacity:0;transform:translate(-50%,-62%) scale(.92) rotate(var(--arc-tilt))}}
 .arc-banner h4{margin:0;display:inline-block;font-size:clamp(20px,4vw,32px);line-height:1.05;color:var(--arc-cta-text);padding:5px 14px 7px;border:var(--arc-line) solid var(--arc-ink);border-radius:calc(var(--arc-radius) - 4px);box-shadow:0 var(--arc-drop) 0 var(--arc-ink)}
-.arc-banner p{margin:9px auto 0;display:inline-block;font-family:var(--arc-body-font);font-weight:700;font-size:14px;line-height:1.35;background:var(--arc-paper);padding:5px 11px;border:calc(var(--arc-line) - .5px) solid var(--arc-ink);border-radius:calc(var(--arc-radius) - 6px);transform:rotate(calc(var(--arc-tilt) * -.7));color:var(--arc-ink);max-width:94%}
-.arc-toast{position:absolute;left:50%;top:58px;transform:translate(-50%,-24px);opacity:0;background:var(--arc-paper);border:calc(var(--arc-line) - .5px) solid var(--arc-ink);border-radius:calc(var(--arc-radius) - 4px);padding:6px 12px;font-family:var(--arc-body-font);font-weight:800;font-size:14px;line-height:1.35;box-shadow:0 calc(var(--arc-drop) * .66) 0 var(--arc-ink);pointer-events:none;color:var(--arc-ink);max-width:92%;text-align:center}
-.arc-toast.on{animation:arcToast .35s cubic-bezier(.2,1.4,.4,1) forwards}
-@keyframes arcToast{to{opacity:1;transform:translate(-50%,0)}}
-.arc-feed{min-height:44px;display:flex;align-items:center;justify-content:center;padding:6px 12px;margin-top:6px;background:var(--arc-paper);border:var(--arc-line) solid var(--arc-ink);border-radius:var(--arc-radius);color:var(--arc-ink);font-family:var(--arc-body-font);font-weight:700;font-size:14px;line-height:1.35;text-align:center}
-.arc-feed-msg{animation:arcFeed .3s ease-out}
-@keyframes arcFeed{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.arc-coach{position:absolute;inset:0;pointer-events:none;z-index:20}
+.arc-pin{position:absolute;left:0;top:0;max-width:260px;padding:5px 11px 6px;border:calc(var(--arc-line) - .5px) solid var(--arc-ink);border-radius:calc(var(--arc-radius) - 4px);box-shadow:0 calc(var(--arc-drop) * .66) 0 var(--arc-ink);color:var(--arc-ink);font-weight:800;font-size:15px;line-height:1.25;text-align:center;transition:opacity .2s;will-change:transform}
+.arc-pin::after{content:'';position:absolute;left:var(--arrow-x,50%);bottom:-9px;width:12px;height:12px;margin-left:-6px;background:inherit;border-right:calc(var(--arc-line) - .5px) solid var(--arc-ink);border-bottom:calc(var(--arc-line) - .5px) solid var(--arc-ink);transform:rotate(45deg)}
+.arc-pin[data-below="1"]::after{bottom:auto;top:-9px;transform:rotate(225deg)}
+.arc-ring{position:absolute;left:0;top:0;width:68px;height:68px;border-radius:50%;border:4px solid var(--arc-accent);box-shadow:0 0 0 3px var(--arc-ink);animation:arcRing 1s ease-in-out infinite alternate}
+@keyframes arcRing{from{scale:.8;opacity:.6}to{scale:1.1;opacity:1}}
+.arc-beat{position:absolute;left:0;top:0;width:min(340px,84%);pointer-events:auto;background:var(--arc-paper);border:var(--arc-line) solid var(--arc-ink);border-radius:calc(var(--arc-radius) + 2px);box-shadow:0 var(--arc-drop) 0 var(--arc-ink);padding:10px 14px 10px;color:var(--arc-ink);font-family:var(--arc-body-font);text-align:left;animation:arcBeat .3s cubic-bezier(.2,1.4,.4,1) both;will-change:transform}
+@keyframes arcBeat{from{opacity:0;scale:.7}to{opacity:1;scale:1}}
+.arc-beat-title{font-size:19px;line-height:1.1}
+.arc-beat p{margin:6px 0 9px;font-weight:700;font-size:15.5px;line-height:1.35}
+.arc-float{position:absolute;transform:translate(-50%,-50%);font-size:19px;white-space:nowrap;pointer-events:none;z-index:15;text-shadow:0 2px 0 var(--arc-ink),2px 0 0 var(--arc-ink),-2px 0 0 var(--arc-ink),0 -2px 0 var(--arc-ink);animation:arcFloat 1.2s ease-out forwards}
+.arc-float.big{font-size:27px}
+@keyframes arcFloat{0%{opacity:0;margin-top:6px;scale:.6}12%{opacity:1;margin-top:0;scale:1.1}25%{scale:1}100%{opacity:0;margin-top:-46px}}
+.arc-lessons{text-align:left;margin:8px 0 4px;padding:8px 12px 6px;background:var(--arc-chip);border:calc(var(--arc-line) - .5px) dashed var(--arc-ink);border-radius:calc(var(--arc-radius) - 2px)}
+.arc-lessons-title{font-size:14px;margin-bottom:3px}
+.arc-lessons ul{margin:0;padding-left:18px}
+.arc-lessons li{font-weight:700;font-size:14px;line-height:1.35;margin:3px 0}
 .arc-bar{height:15px;border:calc(var(--arc-line) - .5px) solid var(--arc-hud-stroke);border-radius:9px;background:rgba(0,0,0,.28);overflow:hidden}
 .arc-bar>div{height:100%;border-radius:6px 0 0 6px;transition:background .3s}
 .arc-bar.low{animation:arcPulse .5s infinite alternate}
@@ -50,7 +60,7 @@ const CSS = `
 @keyframes arcBump{50%{transform:rotate(calc(var(--arc-tilt) * 2)) scale(1.35)}}
 .arc-wig{animation:arcWig .6s infinite alternate}
 @keyframes arcWig{from{transform:rotate(-4deg)}to{transform:rotate(4deg) scale(1.08)}}
-@media (prefers-reduced-motion: reduce){.arc-banner.show{animation:none}.arc-toast.on{animation:none;opacity:1;transform:translate(-50%,0)}.arc-wig,.arc-bar.low{animation:none}}
+@media (prefers-reduced-motion: reduce){.arc-banner.show{animation:none}.arc-ring,.arc-beat{animation:none}.arc-wig,.arc-bar.low{animation:none}}
 `;
 
 function themeVars(t: ArcadeTheme): React.CSSProperties {
@@ -165,7 +175,13 @@ export function ArcadeLogo({ children, accent }: { children: React.ReactNode; ac
     );
 }
 
-export function ArcadeTag({ children, color = 'var(--arc-cta)' }: { children: React.ReactNode; color?: string }) {
+export function ArcadeTag({
+    children,
+    color = 'var(--arc-cta)',
+}: {
+    children: React.ReactNode;
+    color?: string;
+}) {
     return (
         <div
             style={{
@@ -195,7 +211,12 @@ export function ArcadeBigButton({
     color?: string;
 }) {
     return (
-        <button type="button" className="arc-big arc-display" style={{ background: color }} onClick={onClick}>
+        <button
+            type="button"
+            className="arc-big arc-display"
+            style={{ background: color }}
+            onClick={onClick}
+        >
             {children}
         </button>
     );
@@ -231,9 +252,17 @@ export function ArcadeStats({ items }: { items: { value: React.ReactNode; label:
             {items.map((it) => (
                 <div
                     key={it.label}
-                    style={{ background: 'var(--arc-chip)', border: '2px solid var(--arc-ink)', borderRadius: 10, padding: '3px 2px' }}
+                    style={{
+                        background: 'var(--arc-chip)',
+                        border: '2px solid var(--arc-ink)',
+                        borderRadius: 10,
+                        padding: '3px 2px',
+                    }}
                 >
-                    <b className="arc-display" style={{ display: 'block', fontSize: 18, lineHeight: 1.2 }}>
+                    <b
+                        className="arc-display"
+                        style={{ display: 'block', fontSize: 18, lineHeight: 1.2 }}
+                    >
                         {it.value}
                     </b>
                     <span style={{ fontSize: 10, fontWeight: 700 }}>{it.label}</span>
@@ -242,4 +271,3 @@ export function ArcadeStats({ items }: { items: { value: React.ReactNode; label:
         </div>
     );
 }
-

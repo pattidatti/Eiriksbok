@@ -695,3 +695,77 @@ body.dyslexia-mode header > div > :last-child span {
   max-height: none !important;
   aspect-ratio: auto !important;
 }
+
+/* Lukket mikrospill i artikkel (MicroGameLauncher): en lysstripe sveiper over
+   kortet én gang når det kommer inn i bildet, og igjen ved hover - et lite
+   «jeg kan spilles»-blink uten å mase mens eleven leser. */
+.mg-launcher-sheen {
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.85) 45%,
+    rgba(199, 210, 254, 0.6) 55%,
+    transparent 100%
+  );
+  transform: translateX(0) skewX(-18deg);
+  opacity: 0;
+}
+.mg-launcher-sheen--intro {
+  animation: mg-sheen-intro 1.1s ease-out 0.3s 1;
+}
+.mg-launcher:hover .mg-launcher-sheen,
+.mg-launcher:focus-visible .mg-launcher-sheen {
+  animation: mg-sheen 0.9s ease-out 1;
+}
+/* To like keyframes med ulikt navn: nettleseren starter en animasjon på nytt
+   bare når navnet endres, så hover må ha sitt eget for å spille etter intro-en. */
+@keyframes mg-sheen {
+  0% { transform: translateX(0) skewX(-18deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateX(450%) skewX(-18deg); opacity: 0; }
+}
+@keyframes mg-sheen-intro {
+  0% { transform: translateX(0) skewX(-18deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateX(450%) skewX(-18deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mg-launcher-sheen--intro,
+  .mg-launcher:hover .mg-launcher-sheen,
+  .mg-launcher:focus-visible .mg-launcher-sheen {
+    animation: none;
+  }
+}
+
+/* Fullskjerm-først: artikkelens omslag rundt et mikrospill (MicroGameBlock) går i
+   fullskjerm i samme klikk som «Spill». Reserve der Fullscreen API mangler: omslaget
+   fyller vinduet (.mg-pseudo-fs). Arkadespill (.arc-stage) har ingen kontroller under
+   spillvinduet og får hele høyden minus tittellinja. */
+[data-microgame]:fullscreen,
+[data-microgame].mg-pseudo-fs {
+  margin: 0 !important;
+  padding: 6px;
+  background: #e2e8f0;
+  overflow-y: auto;
+}
+[data-microgame].mg-pseudo-fs {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+body.mg-pseudo-open header.sticky,
+body.mg-pseudo-open .fixed:not([data-microgame] .fixed) {
+  visibility: hidden;
+}
+[data-microgame]:fullscreen [data-mg-stage],
+[data-microgame].mg-pseudo-fs [data-mg-stage] {
+  height: calc(100dvh - 9rem) !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+}
+[data-microgame]:fullscreen .arc-stage,
+[data-microgame].mg-pseudo-fs .arc-stage,
+.mg-frame:fullscreen .arc-stage {
+  height: calc(100dvh - 76px) !important;
+}

@@ -1,5 +1,8 @@
 import * as THREE from 'three';
-import { PANELS } from './model';
+import { PANELS, MILE_POS } from './model';
+
+const BASE_POS = new THREE.Vector3(0, 0.8, 2.2);
+const MILE_TOP = MILE_POS.clone().setY(2.4);
 import { makeGrids, resetGrids, stepGrid, ignite, paint, type Grid } from './paint';
 
 // Spillogikken for Regnet i Lærdal - ren TypeScript, ingen React. 3D-scenen
@@ -128,10 +131,26 @@ export interface Sfx {
     stroke: (mult: number) => void;
 }
 
+/** Et punkt på kirka eller i dalen som en lapp peker på. null = ikke synlig. */
+export type At = () => THREE.Vector3 | null;
+export interface PinOpts {
+    tone?: 'info' | 'fare' | 'bra';
+    seconds?: number;
+    once?: boolean;
+    until?: () => boolean;
+}
+
+// Tekst går aldri i en linje under spillet (den leses ikke). Se arcade/useArcade.tsx:
+// banner = to-fire ord, pin = lapp festet til noe i scenen, beat = lærings-øyeblikk
+// i sakte film, lesson = det som står på slutt-skjermen under «Dette skjedde».
 export interface IO {
     sfx: Sfx;
-    banner: (t: string, s?: string, color?: string) => void;
-    toast: (t: string) => void;
+    banner: (t: string, color?: string) => void;
+    pin: (key: string, text: string, at: At, o?: PinOpts) => void;
+    beat: (key: string, title: string, text: string, at?: At, until?: () => boolean) => void;
+    lesson: (key: string, text: string, weight?: number) => void;
+    /** 1 normalt, lavere under et lærings-øyeblikk (sakte film). */
+    timeScale: () => number;
     lose: (cause: Cause) => void;
     win: () => void;
 }
@@ -149,13 +168,24 @@ function wearRate(g: G, grid: Grid) {
     return f;
 }
 
-function burst(g: G, kind: Particle['kind'], at: THREE.Vector3, n: number, speed: number, up: number) {
+function burst(
+    g: G,
+    kind: Particle['kind'],
+    at: THREE.Vector3,
+    n: number,
+    speed: number,
+    up: number
+) {
     for (let k = 0; k < n; k++) {
         const max = kind === 'steam' ? 1.2 : 0.9;
         g.particles.push({
             kind,
             p: at.clone(),
-            v: new THREE.Vector3((Math.random() - 0.5) * speed, Math.random() * up, (Math.random() - 0.5) * speed),
+            v: new THREE.Vector3(
+                (Math.random() - 0.5) * speed,
+                Math.random() * up,
+                (Math.random() - 0.5) * speed
+            ),
             life: max * (0.6 + Math.random() * 0.4),
             max,
         });
@@ -174,7 +204,18 @@ function lightning(g: G, io: IO) {
     ignite(gr, u, v);
     g.flashT = 0.6;
     io.sfx.thunder();
-    io.banner('LYNNEDSLAG!', `Det brenner på ${gr.def.label}. Mal over flammene for å slokke.`, '#a33b1f');
+    io.banner('LYNNEDSLAG!', '#a33b1f');
+    const at = () => gr.def.center;
+    const out = () => gr.burning === 0;
+    io.beat(
+        'brann',
+        'DET BRENNER',
+        'Lynet har tent på kirka. Mal over flammene - tjære og pensel slokker dem.',
+        at,
+        out
+    );
+    io.pin('brann', 'Det brenner - mal over!', at, { tone: 'fare', seconds: 8, until: out });
+    io.lesson('lyn', 'Stavkirkene sto høyt og ble ofte truffet av lyn. Mange brant ned.', 0.7);
 }
 
 function gust(g: G, io: IO) {
@@ -185,12 +226,13 @@ function gust(g: G, io: IO) {
         const cy = Math.floor(Math.random() * gr.h);
         for (let y = cy - 2; y <= cy + 2; y++)
             for (let x = cx - 2; x <= cx + 2; x++)
-                if (x >= 0 && x < gr.w && y >= 0 && y < gr.h && Math.hypot(x - cx, y - cy) < 2.6) gr.tar[y * gr.w + x] = 0;
+                if (x >= 0 && x < gr.w && y >= 0 && y < gr.h && Math.hypot(x - cx, y - cy) < 2.6)
+                    gr.tar[y * gr.w + x] = 0;
         gr.dirty = true;
         burst(g, 'shingle', gr.def.center.clone().addScaledVector(gr.def.normal, 0.3), 10, 6, 5);
     }
     io.sfx.gust();
-    io.banner('VINDKAST', 'Et kast rev løs spon tre steder. Se etter de lyse flekkene.', '#3d4a5c');
+    io.banner('VINDKAST', '#3d4a5c');
 }
 
 export function unlock(g: G, id: string) {
@@ -216,37 +258,69 @@ export function update(g: G, dt: number, io: IO) {
         g.event = null;
         g.mileMul = 1.8;
         g.mileMulUntil = 1420;
-        io.banner('SVARTEDAUDEN', 'Rundt halve befolkningen døde. Det er færre hender til å brenne tjære.', '#3a3a3a');
+        io.banner('SVARTEDAUDEN', '#3a3a3a');
+        io.pin('svartedauden', 'Færre hender - mindre tjære', () => MILE_TOP, { seconds: 6 });
+        io.lesson(
+            'svartedauden',
+            'Svartedauden (1349) drepte rundt halve befolkningen. Færre folk betydde mindre tjære til kirkene.',
+            0.6
+        );
         io.sfx.bell();
         unlock(g, 'svartedauden');
     });
     at('reformasjonen', 1537, () => {
-        io.banner('REFORMASJONEN', 'Norge blir luthersk. Kirka er fortsatt bygdas kirke - og bygdas ansvar.', '#5a3a6a');
+        io.banner('REFORMASJONEN', '#5a3a6a');
+        io.lesson(
+            'reformasjonen',
+            'Etter reformasjonen (1537) var kirka fortsatt bygdas ansvar å holde ved like.',
+            0.3
+        );
         io.sfx.bell();
         unlock(g, 'reformasjonen');
     });
     at('vintre', 1640, () => {
         g.winterUntil = 1720;
-        io.banner('HARDE VINTRE', 'Frost og tung snø sliter ekstra på taket.', '#46627a');
+        io.banner('HARDE VINTRE', '#46627a');
+        io.pin('vintre', 'Snøen sliter på taket', () => PANELS[10].center, { seconds: 5 });
     });
     at('kirkeloven', 1851, () => {
         g.event = null;
         g.rivingOn = true;
-        io.banner('KIRKELOVEN 1851', 'Nye kirker skal romme 30 % av bygda. Er kirka i dårlig stand, river bygda den.', '#7a2e1f');
+        io.banner('KIRKELOVEN 1851', '#7a2e1f');
+        io.beat(
+            'kirkeloven',
+            'KIRKELOVEN 1851',
+            'Nye kirker skal være store. Er kirka i dårlig stand, river bygda den. Hold den tett!'
+        );
+        io.lesson(
+            'kirkeloven',
+            'Kirkeloven av 1851 krevde større kirker. Mange stavkirker ble revet - bare 28 står igjen.',
+            1.5
+        );
         io.sfx.bell();
         unlock(g, 'kirkeloven');
     });
     at('foreningen', 1881, () => {
         g.rivingOn = false;
         g.riving = 0;
-        io.banner('FORTIDSMINNEFORENINGEN', 'Foreningen kjøper kirka for å redde den. Rivingen er avlyst!', '#2f6b3a');
+        io.banner('KIRKA ER REDDET', '#2f6b3a');
+        io.lesson(
+            'foreningen',
+            'Fortidsminneforeningen kjøpte Borgund stavkirke i 1877 for å redde den fra riving.',
+            1
+        );
         io.sfx.bell();
         unlock(g, 'foreningen');
     });
     at('programmet', 2001, () => {
         g.mileMul = 0.5;
         g.mileMulUntil = Y_END + 1;
-        io.banner('STAVKIRKEPROGRAMMET', 'Riksantikvaren setter alle 28 stavkirker i stand. Mer tjære, mindre slitasje.', '#2f6b3a');
+        io.banner('STAVKIRKEPROGRAMMET', '#2f6b3a');
+        io.lesson(
+            'programmet',
+            'Fra 2001 satte Riksantikvaren alle de 28 stavkirkene i stand.',
+            0.5
+        );
         unlock(g, 'programmet');
     });
     if (y >= Y_END) {
@@ -271,17 +345,27 @@ export function update(g: G, dt: number, io: IO) {
             const r = Math.random();
             if (r < 0.28) {
                 g.event = { id: 'storm', left: 10 };
-                io.banner('STORM FRA VEST', 'Regnet kommer sidelengs. Vestsiden får gjennomgå.', '#3d4a5c');
+                io.banner('STORM FRA VEST', '#3d4a5c');
+                io.lesson(
+                    'vest',
+                    'Regnet på Vestlandet kommer mest fra vest. Den siden måtte tjærebres oftest.',
+                    0.8
+                );
             } else if (r < 0.46) {
                 g.event = { id: 'lyn', left: 8 };
                 lightning(g, io);
             } else if (r < 0.62) {
                 g.event = { id: 'tort', left: 9 };
-                io.banner('TØRT TIÅR', 'Sjelden gave på Vestlandet. Sponen får hvile.', '#a27a2a');
+                io.banner('TØRT TIÅR', '#a27a2a');
             } else if (r < 0.78) {
                 g.event = { id: 'host', left: 6 };
                 g.mileReady = true;
-                io.banner('GOD TJÆREHØST', 'Mila ga mer enn vanlig. Hent fatet!', '#6b4a1f');
+                io.banner('GOD TJÆREHØST', '#6b4a1f');
+                io.pin('host', 'Hent fatet!', () => MILE_TOP, {
+                    tone: 'bra',
+                    seconds: 5,
+                    until: () => !g.mileReady,
+                });
                 io.sfx.barrel();
             } else {
                 g.event = { id: 'kast', left: 6 };
@@ -329,7 +413,21 @@ export function update(g: G, dt: number, io: IO) {
     if (leaking.length && g.leakWarnT <= 0) {
         g.leakWarnT = 9;
         io.sfx.leak();
-        io.toast(`Det lekker gjennom ${leaking[0].def.label}. Skrap bort råten og tjærebre.`);
+        const gr = leaking[0];
+        const at = () => gr.def.center;
+        io.beat(
+            'lekk',
+            'DET LEKKER',
+            'Der tjæra er borte, trekker vannet inn og veden råtner. Mal over den grønne flekken.',
+            at,
+            () => gr.rotCover < 0.15
+        );
+        io.pin(`lekk-${gr.def.label}`, 'Lekker! Mal over råten', at, {
+            tone: 'fare',
+            seconds: 6,
+            until: () => gr.rotCover < 0.15,
+        });
+        io.lesson('lekk', 'Tjære holdt vannet ute. Der den slet bort, kom råten.', 1);
     }
 
     // Stolpekirka råtner nedenfra - det kan ingen tjære stoppe.
@@ -337,13 +435,18 @@ export function update(g: G, dt: number, io: IO) {
         g.bunn += dt / 32;
         if (g.bunn > 0.35 && g.bunnWarned < 1) {
             g.bunnWarned = 1;
-            io.toast('Stolpene er mørke og myke nede ved jorda. Tjæra når ikke dit.');
+            io.pin('bunn', 'Stolpene råtner i jorda', () => BASE_POS, { tone: 'fare', seconds: 7 });
         }
         if (g.bunn > 0.7 && g.bunnWarned < 2) {
             g.bunnWarned = 2;
-            io.toast('Kirka heller! Stolpene gir etter i den våte jorda.');
+            io.pin('bunn2', 'Kirka heller!', () => BASE_POS, { tone: 'fare', seconds: 7 });
         }
         if (g.bunn >= 1) {
+            io.lesson(
+                'stolpe',
+                'Stolper satt rett i jorda råtnet, uansett hvor mye tjære de fikk. Sviller på stein reddet stavkirkene.',
+                3
+            );
             unlock(g, 'stolpe');
             io.lose('stolper');
             return;
@@ -371,6 +474,11 @@ export function update(g: G, dt: number, io: IO) {
             g.mileT = 0;
             g.mileReady = true;
             io.sfx.barrel();
+            io.pin('mila', 'Tjæra er klar - klikk fatet', () => MILE_TOP, {
+                once: true,
+                seconds: 8,
+                until: () => !g.mileReady,
+            });
         }
     }
 
@@ -420,7 +528,13 @@ export function brush(g: G, hit: BrushHit, io: IO) {
         g.score += res.restored * m;
         if (Math.random() < 0.35) {
             const d = PANELS[hit.panel].normal;
-            g.particles.push({ kind: 'drip', p: hit.point.clone().addScaledVector(d, 0.06), v: new THREE.Vector3(0, -0.5, 0), life: 0.9, max: 0.9 });
+            g.particles.push({
+                kind: 'drip',
+                p: hit.point.clone().addScaledVector(d, 0.06),
+                v: new THREE.Vector3(0, -0.5, 0),
+                life: 0.9,
+                max: 0.9,
+            });
         }
         io.sfx.brush(m);
     }

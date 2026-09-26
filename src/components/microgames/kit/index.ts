@@ -116,3 +116,4 @@ export {
     type ChoiceStatus,
     type Tool,
 } from './controls';
+export { crispCanvas, crispScale, type CrispCanvas } from './crispText';

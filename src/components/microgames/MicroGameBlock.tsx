@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
-import { Loader2 } from 'lucide-react';
 import { getMicroGame } from './registry';
-import { MicroGameEmbedProvider, MicroGameShell, MicroGameTitleButton } from './MicroGameFrame';
-import type { MicroGameProps, MicroGameResult } from './types';
+import { MicroGameEmbedProvider } from './MicroGameFrame';
+import { MicroGameLauncher } from './MicroGameLauncher';
+import type { MicroGameEntry, MicroGameProps, MicroGameResult } from './types';
 import { useProgressStore } from '../../features/progress/useProgressStore';
 
 // Bro mellom artikkel-JSON og mikrospill-registeret. Lar et hvilket som helst
@@ -12,6 +12,36 @@ import { useProgressStore } from '../../features/progress/useProgressStore';
 //
 // Spillene eier sin egen MicroGameFrame internt, så her trengs bare oppslag,
 // lazy-lasting og en trygg onComplete i artikkel-kontekst (ingen "neste steg").
+
+// Forhåndslasting. entry.loader() importerer samme modul som registerets
+// React.lazy, så når eleven trykker «Spill» ligger spillet allerede i
+// modulcachen og starter uten ventetid. Ett løfte per spill, så hover +
+// synlighet + klikk aldri henter to ganger.
+const prefetched = new Map<string, Promise<unknown>>();
+function prefetchGame(entry: MicroGameEntry): Promise<unknown> {
+    let p = prefetched.get(entry.id);
+    if (!p) {
+        // Feil svelges her - React.lazy prøver på nytt ved start og viser
+        // feilen der den hører hjemme.
+        p = entry.loader().catch(() => {
+            prefetched.delete(entry.id);
+        });
+        prefetched.set(entry.id, p);
+    }
+    return p;
+}
+
+// Hente et 3D-spill (~1 MB three.js) bare fordi det scrollet forbi er sløsing
+// på et tregt klasseromsnett. Synlighet alene utløser derfor bare henting når
+// eleven faktisk blir stående ved spillet, og aldri med «spar data» eller 2G.
+const DWELL_MS = 2500;
+function connectionAllowsPrefetch(): boolean {
+    const c = (navigator as Navigator & {
+        connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    if (!c) return true;
+    return !c.saveData && !/(^|-)2g$/.test(c.effectiveType ?? '');
+}
 
 interface MicroGameBlockProps {
     gameId: string;
@@ -27,6 +57,84 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
     // Har eleven åpnet spillet? Styrer om spillmodulen i det hele tatt hentes.
     // (Må stå før early return.)
     const [started, setStarted] = React.useState(false);
+    const [starting, setStarting] = React.useState(false);
+    const [inView, setInView] = React.useState(false);
+    const rootRef = React.useRef<HTMLDivElement>(null);
+
+    // Fullskjerm-først (eier, 2026-09-26): fra artikkelen åpnes spillet alltid i
+    // fullskjerm - 2-3 ganger så stor flate som spalten. Omslaget her (ikke
+    // spillrammen) går i fullskjerm, fordi forespørselen må skje i selve klikket,
+    // før spillmodulen er lastet og rammen finnes. Der nettleseren ikke har
+    // Fullscreen API (iPhone) eller sier nei, fyller omslaget vinduet («pseudo»).
+    // (Må stå før early return.)
+    const [nativeFs, setNativeFs] = React.useState(false);
+    const [pseudoFs, setPseudoFs] = React.useState(false);
+    React.useEffect(() => {
+        const onChange = () => setNativeFs(!!rootRef.current && document.fullscreenElement === rootRef.current);
+        document.addEventListener('fullscreenchange', onChange);
+        return () => document.removeEventListener('fullscreenchange', onChange);
+    }, []);
+    React.useEffect(() => {
+        if (!pseudoFs) return;
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        // Artikkelen ligger i en egen stablingskontekst, så sidens klebrige meny
+        // ville ligget over spillet uansett z-index. Den skjules så lenge.
+        document.body.classList.add('mg-pseudo-open');
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setPseudoFs(false);
+        };
+        window.addEventListener('keydown', onKey);
+        return () => {
+            document.body.style.overflow = prev;
+            document.body.classList.remove('mg-pseudo-open');
+            window.removeEventListener('keydown', onKey);
+        };
+    }, [pseudoFs]);
+    const enterFullscreen = React.useCallback(() => {
+        const el = rootRef.current;
+        if (!el) return;
+        if (document.fullscreenEnabled && typeof el.requestFullscreen === 'function') {
+            el.requestFullscreen({ navigationUI: 'hide' })
+                .then(() => {
+                    // Mobil: prøv å legge skjermen ned. Går det ikke, går det ikke.
+                    const o = screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> };
+                    o?.lock?.('landscape').catch(() => {});
+                })
+                .catch(() => setPseudoFs(true));
+        } else setPseudoFs(true);
+    }, []);
+    const exitFullscreen = React.useCallback(() => {
+        setPseudoFs(false);
+        if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+    }, []);
+
+    // Synlighet: tenn lysstripen første gang kortet ses, og hent spillet i
+    // forkant hvis eleven blir værende i nærheten. (Må stå før early return.)
+    React.useEffect(() => {
+        const el = rootRef.current;
+        if (!entry || started || !el || typeof IntersectionObserver === 'undefined') return;
+        let dwell: number | undefined;
+        const io = new IntersectionObserver(
+            ([e]) => {
+                if (e.isIntersecting) {
+                    setInView(true);
+                    if (dwell === undefined && connectionAllowsPrefetch()) {
+                        dwell = window.setTimeout(() => void prefetchGame(entry), DWELL_MS);
+                    }
+                } else if (dwell !== undefined) {
+                    window.clearTimeout(dwell);
+                    dwell = undefined;
+                }
+            },
+            { threshold: 0.6 }
+        );
+        io.observe(el);
+        return () => {
+            io.disconnect();
+            if (dwell !== undefined) window.clearTimeout(dwell);
+        };
+    }, [entry, started]);
 
     if (!entry) {
         return (
@@ -61,39 +169,56 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
         }
     };
 
-    // I artikkel starter spillet sammenslått (kun tittellinjen) - eleven åpner
+    // Vent på modulen før vi bytter, så kortet står med «Laster» på plass i
+    // stedet for å blinke over til en tynn loader. Oftest er den hentet allerede.
+    const start = () => {
+        if (starting) return;
+        enterFullscreen();
+        setStarting(true);
+        void prefetchGame(entry).finally(() => setStarted(true));
+    };
+
+    // I artikkel starter spillet sammenslått (kun et startkort) - eleven åpner
     // det bevisst. Da mountes ikke 3D-scenen, og en lang artikkel spinner ikke
     // opp WebGL for hvert spill før det faktisk er i bruk.
     //
-    // Tittellinjen tegnes her, ikke av spillet selv. Rammen ligger inne i
-    // spillmodulen, så bare det å vise en sammenslått linje ville tvunget fram
+    // Startkortet tegnes her, ikke av spillet selv. Rammen ligger inne i
+    // spillmodulen, så bare det å vise et lukket spill ville tvunget fram
     // nedlasting av modulen - og for et 3D-spill følger rundt en megabyte
-    // three.js med. Nå ligger tittel og beskrivelse i registeret, som allerede
-    // er lastet, og selve spillet hentes først når eleven trykker «Spill».
+    // three.js med. Nå ligger tittel og spilletid i registeret, som allerede
+    // er lastet, og selve spillet hentes først ved hover, fokus, klikk eller
+    // når eleven blir stående ved det (se prefetchGame).
+    const launcher = (loading: boolean) => (
+        <MicroGameLauncher
+            title={entry.title}
+            estimatedSeconds={entry.estimatedSeconds}
+            loading={loading}
+            inView={inView}
+            onStart={start}
+            onIntent={() => void prefetchGame(entry)}
+            fullscreen
+        />
+    );
     return (
-        <div className="my-6" data-microgame={gameId}>
+        <div className={`my-6${pseudoFs ? ' mg-pseudo-fs' : ''}`} data-microgame={gameId} ref={rootRef}>
             {!started ? (
-                <MicroGameShell withBorder={false}>
-                    <MicroGameTitleButton
-                        title={entry.title}
-                        subtitle={entry.description}
-                        open={false}
-                        onToggle={() => setStarted(true)}
-                    />
-                </MicroGameShell>
+                launcher(starting)
             ) : (
-                <MicroGameEmbedProvider value={{ collapsible: true, defaultOpen: true }}>
-                    <Suspense
-                        fallback={
-                            // Plassholderen matcher tittellinjens høyde - ikke hele
-                            // spillet - for å unngå et hopp fra høy loader til tynn
-                            // header ved første maling.
-                            <div className="flex items-center gap-2 px-3.5 py-3 text-sm bg-white/70 border border-slate-200 text-slate-500 rounded-2xl">
-                                <Loader2 className="w-4 h-4 animate-spin" />
-                                Laster {entry.title}...
-                            </div>
-                        }
-                    >
+                <MicroGameEmbedProvider
+                    value={{
+                        collapsible: true,
+                        defaultOpen: true,
+                        estimatedSeconds: entry.estimatedSeconds,
+                        fullscreen: {
+                            active: nativeFs || pseudoFs,
+                            enter: enterFullscreen,
+                            exit: exitFullscreen,
+                        },
+                    }}
+                >
+                    {/* Samme kort med «Laster» om modulen mot formodning ikke
+                        er klar - ingen hopp i høyde. */}
+                    <Suspense fallback={launcher(true)}>
                         <GameComponent
                             {...(rest as Partial<MicroGameProps>)}
                             onComplete={handleComplete}

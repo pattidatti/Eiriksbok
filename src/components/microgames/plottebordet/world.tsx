@@ -534,9 +534,11 @@ export function Raids({ gRef, dragRef }: { gRef: GRef; dragRef: React.MutableRef
             const lm = labels.current[k];
             if (lm && shown.current[k] !== txt) {
                 shown.current[k] = txt;
-                lm.map = txt ? cachedLabel(txt, '#f4ecd8', '#7a1d16') : null;
+                // Bytt bare mellom teksturer - aldri til null. map -> null endrer shaderen,
+                // og da kompilerer three.js den på nytt midt i spillet (et synlig hakk
+                // hver gang et raid dukket opp eller forsvant).
+                if (txt) lm.map = cachedLabel(txt, '#f4ecd8', '#7a1d16');
                 lm.visible = !!txt;
-                lm.needsUpdate = true;
             }
             if (lm) lm.opacity = r.fade;
             const hv = hovers.current[k];
@@ -575,6 +577,8 @@ export function Raids({ gRef, dragRef }: { gRef: GRef; dragRef: React.MutableRef
                             ref={(m) => {
                                 labels.current[k] = m;
                             }}
+                            map={cachedLabel('1+', '#f4ecd8', '#7a1d16')}
+                            visible={false}
                             transparent
                         />
                     </mesh>
@@ -833,6 +837,8 @@ export function DragView({ gRef, dragRef, hintRef }: { gRef: GRef; dragRef: Reac
 }
 
 const FX_MAX = 240;
+const FX_COLOR = new THREE.Color();
+
 export function FxView({ gRef }: { gRef: GRef }) {
     const hot = useRef<THREE.InstancedMesh>(null);
     const smoke = useRef<THREE.InstancedMesh>(null);
@@ -845,7 +851,7 @@ export function FxView({ gRef }: { gRef: GRef }) {
         let nh = 0;
         let ns = 0;
         let nr = 0;
-        const col = new THREE.Color();
+        const col = FX_COLOR;
         for (const f of g.fx as Fx[]) {
             const k = f.life / f.max;
             if (f.kind === 'smoke') {

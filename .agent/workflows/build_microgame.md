@@ -111,7 +111,8 @@ spill-følelsen gratis, og HVERT spill kler det i sitt eget tema.
 | `ArcadeStage` | `arcade/ArcadeShell.tsx` | Spillvinduet (høyde `clamp(420px, 70vh, 640px)`, fullskjerm-klar via `data-mg-stage`), tema-variabler, `below` for lesetekst under vinduet |
 | `ArcadeScreen`, `ArcadeLogo`, `ArcadeTag`, `ArcadeBigButton`, `ArcadeSmallButton`, `ArcadeStats` | samme | Startskjerm, pause og slutt-skjerm med stor CTA |
 | `useArcadeLoop` | `arcade/useArcade.tsx` | 2D-canvasløkke med callback-refs, pause utenfor skjermen, feilsikker frame |
-| `useArcadeAnnouncer({ feed: true })` | samme | Meldingskø med lesetid. Med `feed` står lesetekst UNDER spillet, og bare korte titler blinker i bildet |
+| `useArcadeText(GAME_ID)` | samme | All tekst i spillet: banner, lapper festet til ting, lærings-øyeblikk i sakte film, «Dette skjedde» og poengtekst. Se «Tekst i spillet» under |
+| `ArcadeLessons` | `arcade/ArcadeLayers.tsx` | «Dette skjedde» på slutt-skjermen |
 | `ArcadeTheme` | `arcade/tokens.ts` | Farger, font, vekt, radius, strek, skygge, tilt, HUD-stil, bannerposisjon |
 | `createArcadeSynth`, `buzz` | `arcade/synth.ts` | Web Audio-lyd uten Tone/three, felles lydav |
 | `useArcadeSave`, `rankFor`, `nextRank` | `arcade/save.ts` | Rekord, antall runder, funn, ranger |
@@ -140,13 +141,69 @@ i et 2D-spill - det drar med seg three og Tone.
   nettopp det på det første nattspillet. Bygg HUD-en ut fra fantasien: en lønnslipp, et kompass, et
   instrumentpanel, en krittavle, et kart i hjørnet. Plassering, form og typografi skal skille seg fra
   referansespillene.
-- **Tekst dekker aldri spillet.** Bruk `useArcadeAnnouncer({ feed: true })` og `below={feed}`.
-  Toasts over flammene gjorde at eleven ikke fikk slukket brannen. Selvspill-porten måler dette.
-- **Lesetid.** Meldinger står etter `readingSeconds` og køes - aldri faste 1,5 sekunder.
+- **Tekst står der blikket er** - se neste seksjon. Ingen toast, ingen tekstlinje under spillet.
 - **Fullskjerm** kommer fra `MicroGameFrame` (knappen og `[data-mg-stage]`). Pakk alltid spillet i
   `<MicroGameFrame title=... bleed>`.
 - **Mål i HUD-en.** Eleven ser hele tiden hva som er seier (år igjen, avstand, en målbar).
 - **Pause** på Esc/P og når vinduet scroller ut av syne.
+- **Designet for fullskjerm, 1366×768.** Fra artikkelen åpnes spillet alltid i fullskjerm (se
+  «Fullskjerm-først»). Lag HUD, brikker og tekst for den flaten - ikke for en smal spalte.
+
+### Fullskjerm-først
+
+Fra artikkelen åpnes spillet alltid i fullskjerm (eier, 2026-09-26): «Spill»-kortet i artikkelen ber
+om fullskjerm i samme klikk, og der nettleseren ikke tillater det (iPhone), fyller spillet hele
+vinduet. Lukker eleven fullskjermen, blir spillet stående i artikkelen. Det gir 2-3 ganger så stor
+flate som spalten (1366×768 på en Chromebook mot rundt 720×540).
+
+- Design HUD, brikker og tekst for fullskjerm 1366×768 - det er slik eleven møter spillet.
+- Spillet må fortsatt virke i spalten (læringsstier viser det der), men det er reserven.
+- Selvspill-porten spiller i fullskjerm, så bildene vurdereren ser er det eleven ser.
+
+### Tekst i spillet - der blikket er
+
+Eleven ser på spillet, ikke under det. Tekst under spillvinduet blir ikke lest (eier, 2026-09-26),
+og en toast over midten dekker det eleven skal treffe. Fagstoffet i de første nattspillene sto
+nettopp der - i en linje ingen leste. Derfor har skallet bare fire måter å si noe på, alle i
+`useArcadeText`:
+
+| Verktøy | Når | Regel |
+|---|---|---|
+| `banner(tittel)` | En ny fase, dato eller hendelse | 2-4 ord («15. AUGUST», «STORM FRA VEST»). Aldri en setning |
+| `point(nøkkel, tekst, anker)` | Noe eleven må se eller gjøre akkurat nå | Maks 7 ord, festet med pil til tingen det gjelder. `until:` fjerner den når eleven har gjort det |
+| `beatOnce(nøkkel, tittel, setning, { at, until })` | Fagkjernen: det øyeblikket eleven MÅ forstå for å spille riktig | Spillet går i sakte film, kortet står ved hendelsen til eleven gjør handlingen eller trykker «Skjønner». Bare første gang, maks tre per runde. Én setning, maks ~20 ord |
+| `lesson(nøkkel, tekst)` | Alt som er fagstoff å sitte igjen med | Samles gjennom runden, de tre viktigste vises på slutt-skjermen under «Dette skjedde». Samme nøkkel igjen = viktigere |
+
+- **Vis før du forteller.** Det beste er at verden viser regelen: sedlene som krymper, plottet som
+  dukker opp over havet. Tekst er for det verden ikke kan vise.
+- **Lærings-øyeblikket er undervisningen.** Første gang fagkjernen spiller inn, fryser spillet
+  nesten, og ett kort forklarer hva som skjer og hva eleven skal gjøre. Det er da eleven lærer.
+- **«Dette skjedde» er refleksjonen.** Knytt læringspunktene til det eleven faktisk gjorde (et raid
+  snudd over havet, en flyplass tatt på bakken), ikke til en generell fasit.
+- **Ankere:** `point`/`beatOnce` tar en funksjon som gir et punkt i spillvinduet (piksler). I 3D:
+  projiser verdenspunktet med kameraet (se `toScreen` i `Plottebordet3D.tsx`). I 2D: samme
+  regnestykke som tegningen (se `toScreen` i `HavetKommer.tsx`).
+- **Sakte film:** gang spillets dt med `text.timeScale()`, ellers står ikke spillet stille mens
+  kortet står.
+- Selvspill-porten sjekker ordgrensene, antall lærings-øyeblikk og at slutt-skjermen har «Dette
+  skjedde».
+
+### Skarp tekst i 3D
+
+Skilt, prislapper og etiketter i 3D-scenen tegnes med `crispCanvas(w, h)` fra kitet: den lagrer 2-3
+ganger så mange piksler som de logiske målene og slår på mipmaps. En vanlig 256×72-canvas blir
+uskarp på skjermer med høy pikseltetthet (eier om Løp med lønna: «vanskelig å lese»). Tekst eleven
+MÅ lese, hører uansett hjemme i en lapp (`point`), ikke i en tekstur.
+
+### Ytelse - hakk er en spillfeil
+
+- **Aldri `setState` i spillkomponenten for hver melding eller poengtekst.** Da tegner React hele
+  3D-treet på nytt, og spillet hakker midt i kampen. `useArcadeText` har egne lag som ikke rører
+  spillet - bruk `text.float(...)` for poeng som spretter opp.
+- **Bytt aldri `material.map` til `null`** (eller slå av/på andre shader-egenskaper) under spillet.
+  Da kompilerer three.js shaderen på nytt - et synlig hakk hver gang. Bytt mellom teksturer og
+  bruk `visible`.
+- Ingen `new THREE.Vector3/Color` inne i `useFrame` - hold en på modulnivå.
 
 ---
 
@@ -209,6 +266,7 @@ node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173
 | Raskt i gang | synlig knapp i spillvinduet på startskjermen, og `start()` gir fase «spiller» på under 6 s |
 | Liv | bildet endrer seg merkbart mellom 2 og 12 s uten input |
 | Lesbart | tekst dekker ikke midten av spillet i mer enn 4 s i strekk (normalisert for spilltempo) |
+| Tekst der blikket er | lapper maks 7 ord, banner maks 5 ord, maks 3 lærings-øyeblikk per runde, «Dette skjedde» på slutt-skjermen, ingen `below=` |
 | Stabilt | ingen konsollfeil, ingen unntak i robotene |
 | Merket | `sjanger` og `tone` i registry, `usePlaytest` i fila, eget `theme` |
 
@@ -239,7 +297,7 @@ Den svarer med poeng per akse og de tre viktigste forbedringene.
 | **Gøy** | Jeg ville lukket det etter 20 s | Greit å prøve én gang | «Én runde til» - eskalering, deilig verb, rekord å slå |
 | **Utseende** | Primitive klosser på en grønn plen | Pent, men generisk | Eget uttrykk; lys, atmosfære og bevegelse som i et indiespill |
 | **Lærerikt** | Fakta i tekstbokser, temaet er kulisse | Temaet preger spillet | Reglene ER fagstoffet - den som vinner, har forstått mekanismen |
-| **Lesbart** | Vet ikke hva jeg skal gjøre | Skjønner det etter litt | Forstått på 5 s, mål i HUD, tap gir tips, tekst dekker aldri spillet |
+| **Lesbart** | Vet ikke hva jeg skal gjøre | Skjønner det etter litt | Forstått på 5 s, mål i HUD, tekst står der blikket er, skarp tekst, «Dette skjedde» forklarer tapet |
 | **Unikt** | Samme sjanger og look som et spill i biblioteket | Kjent form med egen vri | Sjanger + look som ikke finnes i biblioteket |
 
 Referansespillene er kalibreringen: begge ligger rundt 4 på Gøy, Utseende og Lesbart og 5 på
@@ -274,7 +332,9 @@ leveres ikke spillet - en artikkel uten spill er bedre enn en med et svakt spill
 - [ ] Tone valgt; ikke et tema fra «ingen spill»-lista
 - [ ] Designbrief skrevet (alle ti punktene) og limt inn i PR-body
 - [ ] Sjanger og look ulik de tre siste nattspillene
-- [ ] Arkadeskall med eget `THEME`, feed-tekst under spillet, mål i HUD, pause, lyd med lydav
+- [ ] Arkadeskall med eget `THEME`, mål i HUD, pause, lyd med lydav, designet for fullskjerm 1366×768
+- [ ] Tekst via `useArcadeText`: fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet
+- [ ] Skilt og etiketter i 3D med `crispCanvas`; ingen `setState` per melding; ingen `map = null`
 - [ ] Kjerneverbet skjer i spillverdenen (3D: på objektene)
 - [ ] Minst to tapsårsaker med tips; seier følger plottet
 - [ ] Rekord/ranger/funn som gir «én runde til»
@@ -309,7 +369,10 @@ Teknisk oppslagsverk. Les det du trenger - hovedteksten over er det som avgjør 
 - **`@react-three/postprocessing` er låst til 3.0.4** - 3.0.5+ krever three 0.182. `EffectComposer`
   tåler ikke betingede barn; skru av effekter med styrke 0.
 - **drei `Cloud` henter teksturer fra CDN** - bruk den ikke. `Environment` med `Lightformer` er lokal.
-- **Headless-GPU (swiftshader) gir 5-10 bilder/s.** Uten `playtestSpeed()` tar én runde en halvtime.
+- **Headless-GPU (swiftshader) gir 3-17 bilder/s.** Uten `playtestSpeed()` tar én runde en halvtime.
+- **Hakk i Plottebordet (2026-09-26)** hadde to årsaker: hver «+340 SNUDD» var `setState` i
+  spillkomponenten (hele 3D-treet tegnet på nytt), og raid-etikettene byttet `map` til `null`
+  (shaderen kompilert på nytt). Begge er nå umulige i skallet / beskrevet under «Ytelse».
 
 ## Vedlegg A - Kit-toolkitet for 3D (`src/components/microgames/kit/`)
 

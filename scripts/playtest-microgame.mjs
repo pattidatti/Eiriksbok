@@ -76,6 +76,9 @@ function staticChecks(id) {
         if (/<ArcadeStage\b/.test(src) && !/<ArcadeStage[^>]*\btheme=/.test(src))
             f.push('ArcadeStage uten eget `theme` - hvert spill skal ha sin egen look');
         if (/DEFAULT_THEME/.test(src)) f.push('bruker DEFAULT_THEME - lag et eget tema');
+        if (/<ArcadeStage\b/.test(src) && !src.includes('useArcadeText('))
+            f.push('arkadespill uten useArcadeText - tekst skal stå der blikket er (lapper, lærings-øyeblikk, «Dette skjedde»)');
+        if (/<ArcadeStage[^>]*\bbelow=/.test(src)) f.push('tekst under spillvinduet (below=) blir ikke lest - bruk lapper eller «Dette skjedde»');
     }
     return f;
 }
@@ -146,6 +149,11 @@ function measureTextCover() {
     };
     for (const el of stage.querySelectorAll('*')) {
         if (el.tagName === 'CANVAS' || el.tagName === 'svg' || el.closest('svg')) continue;
+        // Lærings-øyeblikk: spillet går i sakte film mens kortet står - det skal dekke.
+        if (el.closest('[data-coach-beat]')) continue;
+        // Lapper er små per konstruksjon (maks 7 ord) og står ved tingen de gjelder -
+        // ordgrensen deres sjekkes for seg.
+        if (el.closest('[data-coach-pin]')) continue;
         const hasText = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 1);
         if (!hasText) continue;
         const r = el.getBoundingClientRect();
@@ -174,6 +182,20 @@ function measureTextCover() {
     return { all: all / (GX * GY), mid: mid / midN, midText: midTexts.join(' / ').slice(0, 120) };
 }
 
+/** Tekstlaget akkurat nå: lapper, banner og et eventuelt lærings-øyeblikk. */
+function readCoach() {
+    const stage = document.querySelector('[data-mg-stage]');
+    if (!stage) return null;
+    const pins = [...stage.querySelectorAll('[data-coach-pin]')]
+        .filter((e) => getComputedStyle(e).opacity !== '0')
+        .map((e) => e.textContent.trim());
+    const banner = stage.querySelector('.arc-banner h4')?.textContent.trim() ?? null;
+    const beat = stage.querySelector('[data-coach-beat]')?.getAttribute('data-coach-beat') ?? null;
+    return { pins, banner, beat };
+}
+// Ord = tegngrupper med bokstaver eller tall («-», «→» og emoji teller ikke).
+const wordCount = (t) => t.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
+
 /** Grå 64x36-miniatyr av et PNG-bilde, for å måle om bildet endrer seg. */
 async function thumb(buf) {
     return sharp(buf).greyscale().resize(64, 36, { fit: 'fill' }).raw().toBuffer();
@@ -187,7 +209,17 @@ function meanDiff(a, b) {
 // ---------------------------------------------------------------------------
 // Én runde
 // ---------------------------------------------------------------------------
-async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPlan = null) {
+async function playRound(...a) {
+    for (let i = 0; i < 3; i++) {
+        const r = await playRoundOnce(...a);
+        if (!r.avbrutt) return r;
+        console.log(`   ↻ siden ble lastet på nytt midt i runden (${r.bot}) - kjører den på nytt`);
+        await a[0].waitForFunction((id) => window.__mgPlaytest && window.__mgPlaytest[id], a[1], { timeout: 150000 });
+    }
+    throw new Error('siden ble lastet på nytt tre ganger - noe endrer filer i repoet under selvspillet');
+}
+
+async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, shotPlan = null) {
     // Hold spillet i syne - løkkene pauser når spillvinduet er utenfor skjermen.
     await page.evaluate(() => document.querySelector('[data-mg-stage]')?.scrollIntoView({ block: 'center' }));
     await page.evaluate(
@@ -216,6 +248,7 @@ async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPla
     const capMs = Math.max(20 * 60, maksSekunder * 8) * 1000;
     let lastProgress = { v: -1, at: Date.now() };
     const cover = { midRun: 0, allRun: 0, midWorst: 0, allWorst: 0, samples: 0, midWorstText: '' };
+    const coach = { beats: new Set(), beatSince: 0, longPins: new Set(), longBanners: new Set(), pins: new Set() };
     let lastSample = Date.now();
     const shots = [];
     let snap = null;
@@ -226,6 +259,12 @@ async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPla
         if (!snap) {
             await page.waitForTimeout(500);
             continue;
+        }
+        // Siden ble lastet på nytt midt i runden (Vite laster om ved ENHVER filendring
+        // i repoet): runden er ødelagt. Meld fra, så kalleren kjører den på nytt.
+        if (startMs !== null && snap.fase === 'meny') {
+            await page.evaluate(() => clearInterval(window.__mgBotTimer));
+            return { avbrutt: true, lessons: 0, coach: { beats: [], pins: [], longPins: [], longBanners: [] }, bot: bot ?? 'passiv', variant, fase: 'avbrutt', poeng: 0, framdrift: 0, secs: 0, startMs, cover, shots };
         }
         if (startMs === null && snap.fase === 'spiller') startMs = Date.now() - t0;
         if (!first && snap.fase === 'spiller' && typeof snap.tid === 'number') first = { real: Date.now(), tid: snap.tid };
@@ -240,6 +279,23 @@ async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPla
             const dt = Math.min(1.2, (now - lastSample) / 1000);
             lastSample = now;
             const c = await page.evaluate(measureTextCover);
+            const co = await page.evaluate(readCoach);
+            if (co) {
+                for (const t of co.pins) {
+                    coach.pins.add(t);
+                    if (wordCount(t) > 7) coach.longPins.add(t);
+                }
+                if (co.banner && wordCount(co.banner) > 5) coach.longBanners.add(co.banner);
+                if (co.beat) {
+                    if (!coach.beats.has(co.beat)) {
+                        coach.beats.add(co.beat);
+                        coach.beatSince = Date.now();
+                    }
+                    // En elev leser kortet og trykker «Skjønner». Roboten venter litt og gjør det samme.
+                    if (Date.now() - coach.beatSince > 1500)
+                        await page.click('[data-coach-continue]', { timeout: 2000 }).catch(() => {});
+                }
+            }
             if (c) {
                 cover.samples++;
                 cover.midRun = c.mid > 0.1 ? cover.midRun + dt : 0;
@@ -280,12 +336,16 @@ async function playRound(page, id, bot, variant, maksSekunder, shotsDir, shotPla
     }
     const done = snap && (snap.fase === 'vunnet' || snap.fase === 'tapt');
     // La slutt-skjermen rendre før neste runde, og ta et bilde av den.
-    if (done && shotsDir) {
+    let lessons = 0;
+    if (done) {
         await page.waitForTimeout(1200);
+        lessons = await page.evaluate(() => document.querySelectorAll('[data-coach-lessons] li').length);
+    }
+    if (done && shotsDir) {
         const stage = await page.$('[data-mg-stage]');
         if (stage) writeFileSync(path.join(shotsDir, `${bot ?? 'passiv'}-slutt.png`), await stage.screenshot());
     }
-    return { tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
+    return { lessons, coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
 }
 
 // ---------------------------------------------------------------------------
@@ -321,6 +381,15 @@ async function playtestGame(browser, id) {
             return rep;
         }
         rep.notes.push(`lastet på ${((Date.now() - t0) / 1000).toFixed(1)} s (dev-server, kald)`);
+        // Fullskjerm-først: eleven møter spillet i fullskjerm, så robotene og
+        // skjermbildene skal også gjøre det.
+        // Startkortet («Spill») ber selv om fullskjerm; ellers trykker vi knappen i rammen.
+        const isFull = () => page.evaluate(() => !!document.fullscreenElement || !!document.querySelector('.mg-pseudo-fs'));
+        if (!(await isFull())) {
+            await page.click('button[aria-label="Spill i fullskjerm"]', { timeout: 3000 }).catch(() => {});
+            await page.waitForTimeout(800);
+        }
+        rep.notes.push((await isFull()) ? 'spilt i fullskjerm' : 'IKKE i fullskjerm - nettleseren avviste det, spilt i spalten');
         await page.evaluate(() => document.querySelector('[data-mg-stage]')?.scrollIntoView({ block: 'center' }));
         await page.waitForTimeout(1500);
         writeFileSync(path.join(dir, 'meny.png'), await (await page.$('[data-mg-stage]')).screenshot());
@@ -399,6 +468,17 @@ async function playtestGame(browser, id) {
         const tap = rep.rounds.filter((r) => r.forventer === 'taper' || r.bot === 'passiv').map((r) => r.poeng);
         if (vinn.length && tap.length && Math.max(...vinn) <= Math.max(...tap))
             rep.findings.push(`dyktig spill gir ikke flere poeng (vinner ${Math.max(...vinn)} <= taper ${Math.max(...tap)})`);
+
+        // TEKST DER BLIKKET ER (eier 2026-09-26: tekst under spillet blir ikke lest)
+        const all = (k) => [...new Set(rep.rounds.flatMap((r) => r.coach?.[k] ?? []))];
+        for (const t of all('longPins')) rep.findings.push(`lappen «${t}» har ${wordCount(t)} ord - maks 7, det er et skilt`);
+        for (const t of all('longBanners')) rep.findings.push(`banneret «${t}» har ${wordCount(t)} ord - maks 5`);
+        const maxBeats = Math.max(0, ...rep.rounds.map((r) => r.coach?.beats.length ?? 0));
+        if (maxBeats > 3) rep.findings.push(`${maxBeats} lærings-øyeblikk i én runde - maks 3`);
+        rep.notes.push(`tekstlag: ${all('beats').length} lærings-øyeblikk (${all('beats').join(', ') || 'ingen'}), ${all('pins').length} ulike lapper`);
+        const ended = rep.rounds.filter((r) => r.fase === 'vunnet' || r.fase === 'tapt');
+        if (ended.length && !ended.some((r) => r.lessons > 0))
+            rep.findings.push('slutt-skjermen har ingen «Dette skjedde» (text.lesson + ArcadeLessons) - der skal fagstoffet stå');
 
         // LESBART
         const worstRound = rep.rounds.reduce((a, r) => (r.cover.midWorst > a.cover.midWorst ? r : a));

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, Gamepad2, Maximize2, Minimize2, RotateCcw } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ChevronUp, Gamepad2, Maximize2, Minimize2, RotateCcw } from 'lucide-react';
+import { MicroGameLauncher } from './MicroGameLauncher';
 
 // Kontekst som lar en embed-kontekst (f.eks. en artikkel) be om at spillet
 // starter sammenslått. Uten provider (standalone /mikrospill-side, preview,
@@ -8,75 +9,39 @@ import { ChevronDown, Gamepad2, Maximize2, Minimize2, RotateCcw } from 'lucide-r
 interface MicroGameEmbedCfg {
     collapsible: boolean;
     defaultOpen: boolean;
+    // Registerets spilletid, så det lukkede kortet viser det samme som før start.
+    estimatedSeconds?: number;
+    // Omslaget i artikkelen eier fullskjermen (fullskjerm-først, se MicroGameBlock).
+    fullscreen?: { active: boolean; enter: () => void; exit: () => void };
 }
 const MicroGameEmbedContext = createContext<MicroGameEmbedCfg | null>(null);
 export const MicroGameEmbedProvider = MicroGameEmbedContext.Provider;
 
-// Tittellinjen er skilt ut fordi den må kunne tegnes uten at spillmodulen er
-// lastet. Et 3D-mikrospill drar med seg rundt en megabyte three.js, og den skal
-// ikke over nettet før eleven faktisk åpner spillet. MicroGameBlock tegner
-// derfor denne linjen selv i sammenslått tilstand - se der.
+// Tittellinjen i et åpent, sammenleggbart spill: tittel + «Lukk». Lukket
+// tilstand tegnes av MicroGameLauncher.
 interface MicroGameTitleButtonProps {
     title: string;
-    subtitle?: string;
-    open: boolean;
-    onToggle: () => void;
+    onCollapse: () => void;
 }
 
-export const MicroGameTitleButton: React.FC<MicroGameTitleButtonProps> = ({
-    title,
-    subtitle,
-    open,
-    onToggle,
-}) => (
+const MicroGameTitleButton: React.FC<MicroGameTitleButtonProps> = ({ title, onCollapse }) => (
     <button
         type="button"
-        onClick={onToggle}
-        aria-expanded={open}
+        onClick={onCollapse}
+        aria-expanded
         className="group flex items-center gap-2 min-w-0 flex-1 text-left rounded-md -mx-1 px-1 py-0.5 hover:bg-slate-100/70 transition"
     >
-        <span className="w-6 h-6 rounded-md bg-slate-700 text-white flex items-center justify-center shadow-sm flex-shrink-0">
+        <span className="w-6 h-6 rounded-md bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center shadow-sm flex-shrink-0">
             <Gamepad2 className="w-3.5 h-3.5" />
         </span>
-        {/* Når spillet er lukket får undertittelen plass som en liten teaser
-            under tittelen; ved åpning forsvinner den så scenen får all
-            oppmerksomheten. */}
-        <span className="min-w-0">
-            <h3 className="text-sm font-bold leading-snug text-slate-900 [text-wrap:balance] line-clamp-2">
-                {title}
-            </h3>
-            {/* Ikke sett `block` her: den overstyrer display:-webkit-box som
-                line-clamp trenger, og da klippes teksten aldri. Uskyldig så
-                lenge spillene sendte korte undertitler, men MicroGameBlock
-                sender registerets beskrivelse - et helt avsnitt. */}
-            {!open && subtitle && (
-                <span className="text-xs text-slate-500 leading-snug line-clamp-2">
-                    {subtitle}
-                </span>
-            )}
-        </span>
+        <h3 className="min-w-0 text-sm font-bold leading-snug text-slate-900 [text-wrap:balance] line-clamp-2">
+            {title}
+        </h3>
         <span className="ml-auto pl-2 flex items-center gap-1 flex-shrink-0 text-slate-400 group-hover:text-slate-600">
-            {!open && <span className="hidden sm:inline text-xs font-semibold">Spill</span>}
-            <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+            <span className="hidden sm:inline text-xs font-semibold">Lukk</span>
+            <ChevronUp className="w-4 h-4" />
         </span>
     </button>
-);
-
-// Ytterskallet og header-raden, delt med MicroGameBlock så den sammenslåtte
-// plassholderen står nøyaktig der spillet selv vil stå. Ingen hopp ved bytte.
-export const MicroGameShell: React.FC<{ withBorder: boolean; children: React.ReactNode }> = ({
-    withBorder,
-    children,
-}) => (
-    <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-        <header
-            className={`flex items-center justify-between gap-3 px-3.5 py-2 bg-white/60 ${
-                withBorder ? 'border-b border-slate-200' : ''
-            }`}
-        >
-            {children}
-        </header>
-    </div>
 );
 
 interface MicroGameFrameProps {
@@ -95,7 +60,7 @@ interface MicroGameFrameProps {
 // læringsstien — ingen brå dark-mode-skifte mellom steg.
 export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
     title,
-    subtitle,
+    estimatedSeconds,
     onRetry,
     children,
     bleed = false,
@@ -104,7 +69,7 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
     const collapsible = embed?.collapsible ?? false;
     const [open, setOpen] = useState(embed?.defaultOpen ?? true);
 
-    // Sammenslått: bare tittellinjen vises, og 3D-scenen (children) mountes
+    // Sammenslått: bare startkortet vises, og 3D-scenen (children) mountes
     // aldri - ingen WebGL-kontekst før eleven faktisk åpner spillet.
     const showBody = !collapsible || open;
 
@@ -117,11 +82,32 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
         document.addEventListener('fullscreenchange', onChange);
         return () => document.removeEventListener('fullscreenchange', onChange);
     }, []);
-    const canFullscreen = typeof document !== 'undefined' && !!document.fullscreenEnabled;
+    const embedFs = embed?.fullscreen;
+    // I en artikkel kan omslaget alltid gi fullskjerm (ekte eller hele vinduet).
+    const canFullscreen = !!embedFs || (typeof document !== 'undefined' && !!document.fullscreenEnabled);
+    const isFull = embedFs ? embedFs.active : fullscreen;
     const toggleFullscreen = () => {
-        if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+        if (embedFs) {
+            if (embedFs.active) embedFs.exit();
+            else embedFs.enter();
+        } else if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
         else void rootRef.current?.requestFullscreen().catch(() => {});
     };
+
+    // Lukket igjen etter å ha vært åpnet: samme startkort som før første start.
+    if (!showBody) {
+        return (
+            <MicroGameLauncher
+                title={title}
+                estimatedSeconds={embed?.estimatedSeconds ?? estimatedSeconds}
+                onStart={() => {
+                    embedFs?.enter();
+                    setOpen(true);
+                }}
+                fullscreen={!!embedFs}
+            />
+        );
+    }
 
     return (
         <motion.div
@@ -131,16 +117,16 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
             className="mg-frame bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden shadow-sm"
         >
             <header
-                className={`flex items-center justify-between gap-3 px-3.5 py-2 bg-white/60 ${
-                    showBody ? 'border-b border-slate-200' : ''
-                }`}
+                className="flex items-center justify-between gap-3 px-3.5 py-2 bg-white/60 border-b border-slate-200"
             >
                 {collapsible ? (
                     <MicroGameTitleButton
                         title={title}
-                        subtitle={subtitle}
-                        open={open}
-                        onToggle={() => setOpen((o) => !o)}
+                        onCollapse={() => {
+                            // Lukk = tilbake til artikkelen: ut av fullskjerm og ned til kortet.
+                            embedFs?.exit();
+                            setOpen(false);
+                        }}
                     />
                 ) : (
                     <div className="flex items-start gap-2 min-w-0">
@@ -156,17 +142,17 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
                         </div>
                     </div>
                 )}
-                {showBody && canFullscreen && (
+                {canFullscreen && (
                     <button
                         onClick={toggleFullscreen}
                         className="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition flex-shrink-0"
-                        aria-label={fullscreen ? 'Avslutt fullskjerm' : 'Spill i fullskjerm'}
+                        aria-label={isFull ? 'Avslutt fullskjerm' : 'Spill i fullskjerm'}
                     >
-                        {fullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
-                        <span className="hidden md:inline">{fullscreen ? 'Lukk fullskjerm' : 'Fullskjerm'}</span>
+                        {isFull ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+                        <span className="hidden md:inline">{isFull ? 'Lukk fullskjerm' : 'Fullskjerm'}</span>
                     </button>
                 )}
-                {showBody && onRetry && (
+                {onRetry && (
                     <button
                         onClick={onRetry}
                         className="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition flex-shrink-0"
@@ -178,20 +164,14 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
                 )}
             </header>
 
-            <AnimatePresence initial={false}>
-                {showBody && (
-                    <motion.div
-                        key="body"
-                        initial={collapsible ? { opacity: 0 } : false}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className={bleed ? '' : 'p-4 md:p-6'}
-                    >
-                        {children}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <motion.div
+                initial={collapsible ? { opacity: 0 } : false}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+                className={bleed ? '' : 'p-4 md:p-6'}
+            >
+                {children}
+            </motion.div>
         </motion.div>
     );
 };
