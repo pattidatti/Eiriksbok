@@ -6,7 +6,7 @@
   "year": "1940",
   "category": "Andre verdenskrig",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/andre-verdenskrig/slaget-om-storbritannia-hero.webp",
   "details": [
     "Slaget om Storbritannia var luftkampene mellom Tyskland og Storbritannia fra 10. juli til 31. oktober 1940.",
     "Tyskland måtte vinne kontroll over lufta for å kunne invadere Storbritannia, men klarte det ikke.",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/slaget-om-storbritannia-01.webp",
       "alt": "Ung pilot venter i gresset ved et Spitfire-fly",
       "caption": "Pilotene ventet ofte ved flyene sine, klare til å ta av så snart telefonen ringte."
     },
@@ -111,7 +111,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/slaget-om-storbritannia-02.webp",
       "alt": "Spitfire og tysk bombefly i luftkamp over engelske jorder",
       "caption": "Luftkampene foregikk ofte høyt over Sør-England, der folk på bakken kunne se de hvite stripene etter flyene."
     },
@@ -153,7 +153,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/slaget-om-storbritannia-03.webp",
       "alt": "Folk i London ser opp mot himmelen fra en gate med ruiner",
       "caption": "Slaget stoppet invasjonen, men bombingen av byene fortsatte til mai 1941."
     },
