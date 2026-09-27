@@ -233,6 +233,7 @@ const OverVolga3D = lazy(() => import('./OverVolga3D'));
 const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
+const Thranittene3D = lazy(() => import('./Thranittene3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2302,6 +2303,19 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         cover: '/images/microgames/plottebordet-3d.webp',
         loader: () => import('./Plottebordet3D'),
         Component: Plottebordet3D as never,
+    },
+    'thranittene-3d': {
+        id: 'thranittene-3d',
+        title: 'Thranittene',
+        description:
+            'Thranebevegelsen, 1848-1851. Du er Marcus Thrane i trykkeriet i Christiania. Klikk en bygd på kartet, og en bunt av Arbeider-Foreningernes Blad flyr dit og holder et møte. Et møte alene slukner - men treffer du samme bygd tre ganger raskt, starter folket egen forening med egen leder. Den verver videre uten deg, sender brev til avisa og tenner nabobygdene. Få 13 000 navn på petisjonen i mai 1850, svar på myndighetenes annonser, og nå 30 000 medlemmer før politiet kommer. Lyspæra: bevegelsen vokste fordi vanlige folk organiserte seg selv, bygd for bygd.',
+        estimatedSeconds: 170,
+        sjanger: 'sikting-simulering',
+        tone: 'alvorlig',
+        hook: 'Du er Marcus Thrane. Få husmennene til å organisere seg før politiet kommer.',
+        cover: '/images/microgames/thranittene-3d.webp',
+        loader: () => import('./Thranittene3D'),
+        Component: Thranittene3D as never,
     },
 };
 

@@ -77,6 +77,13 @@
     },
     {
       "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "thranittene-3d"
+      }
+    },
+    {
+      "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Hva er en petisjon?",
