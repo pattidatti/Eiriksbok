@@ -272,7 +272,16 @@ export class FloatStore extends Emitter {
     push(t: string, x: number, y: number, color = '#f7f1e3', big = false) {
         this.n++;
         const id = this.n;
-        this.items = [...this.items.slice(-5), { id, t, x, y, color, big }];
+        // Maks to samtidig, og aldri oppå hverandre: en ny tekst nær en som allerede
+        // svever, skyves opp over den. (Thranittene 2026-09-27: flytetekstene la seg
+        // oppå hverandre og oppå stedsnavnene - vurdereren trakk for det tre ganger.)
+        let yy = y;
+        for (let k = 0; k < 4; k++) {
+            const hit = this.items.find((f) => Math.abs(f.x - x) < 150 && Math.abs(f.y - yy) < 30);
+            if (!hit) break;
+            yy = hit.y - 32;
+        }
+        this.items = [...this.items.slice(-1), { id, t, x, y: yy, color, big }];
         this.emit();
         window.setTimeout(() => {
             this.items = this.items.filter((f) => f.id !== id);

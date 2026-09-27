@@ -38,6 +38,8 @@ const CSS = `
 .arc-pin{position:absolute;left:0;top:0;max-width:260px;padding:5px 11px 6px;border:calc(var(--arc-line) - .5px) solid var(--arc-ink);border-radius:calc(var(--arc-radius) - 4px);box-shadow:0 calc(var(--arc-drop) * .66) 0 var(--arc-ink);color:var(--arc-ink);font-weight:800;font-size:15px;line-height:1.25;text-align:center;transition:opacity .2s;will-change:transform}
 .arc-pin::after{content:'';position:absolute;left:var(--arrow-x,50%);bottom:-9px;width:12px;height:12px;margin-left:-6px;background:inherit;border-right:calc(var(--arc-line) - .5px) solid var(--arc-ink);border-bottom:calc(var(--arc-line) - .5px) solid var(--arc-ink);transform:rotate(45deg)}
 .arc-pin[data-below="1"]::after{bottom:auto;top:-9px;transform:rotate(225deg)}
+.arc-pin[data-edge]:not([data-edge=""])::after{display:none}
+.arc-pin[data-edge]:not([data-edge=""])::before{content:attr(data-edge);margin-right:6px;font-size:18px;line-height:1}
 .arc-ring{position:absolute;left:0;top:0;width:68px;height:68px;border-radius:50%;border:4px solid var(--arc-accent);box-shadow:0 0 0 3px var(--arc-ink);animation:arcRing 1s ease-in-out infinite alternate}
 @keyframes arcRing{from{scale:.8;opacity:.6}to{scale:1.1;opacity:1}}
 .arc-beat{position:absolute;left:0;top:0;width:min(340px,84%);pointer-events:auto;background:var(--arc-paper);border:var(--arc-line) solid var(--arc-ink);border-radius:calc(var(--arc-radius) + 2px);box-shadow:0 var(--arc-drop) 0 var(--arc-ink);padding:10px 14px 10px;color:var(--arc-ink);font-family:var(--arc-body-font);text-align:left;animation:arcBeat .3s cubic-bezier(.2,1.4,.4,1) both;will-change:transform}

@@ -2511,7 +2511,7 @@ export default function HavetKommer({ onComplete }: MicroGameProps) {
         const U = H / 24;
         const x = (p[0] - g.camX) * U + W * 0.42;
         const y = H * 0.64 - (p[1] - g.camM) * VS * U;
-        return x < -20 || x > W + 20 ? null : { x, y };
+        return { x, y };
     };
 
     const io: IO = {

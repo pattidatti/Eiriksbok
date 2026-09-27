@@ -44,6 +44,24 @@ Playwright MÅ virke - uten det kan du ikke kjøre portene. Feiler installasjone
 
 ## Jobb 1: Velg artikkel
 
+### 1-0. Uferdig arbeid først
+
+Et spill som ikke nådde terskelen, er lagret på en `claude/microgame-wip-*`-gren. Det fortsettes
+før noe nytt startes - rutinen skal fikse seg selv, ikke gi opp:
+
+```bash
+git ls-remote --heads origin 'claude/microgame-wip-*'
+gh issue view 12 --comments --json comments -q '.comments[].body' | grep -A40 "UNDER TERSKEL" | tail -60
+```
+
+Finnes en WIP-gren: sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`),
+les forrige rapport på issue #12 («Hva som manglet») og gå rett til Jobb 3 med de manglene som
+oppgave - følg regelen «Når vurderingen står stille» i guiden. Resten av jobbene er som vanlig; en
+godkjent WIP får vanlig gren/PR i Jobb 5, og WIP-grenen slettes (`git push origin --delete <gren>`).
+Har samme WIP-gren vært forsøkt tre netter (tell rapportene), forkast den og ta en ny artikkel.
+
+Er dagens nye artikkel fortsatt uten spill når WIP-en er ferdig, tar neste natt den.
+
 ### 1a. Dagens nye artikkel (førstevalg)
 
 Innholdsrutinen publiserer en ny artikkel hver natt, og den har ikke spill. Finn den:
@@ -140,7 +158,9 @@ Når port 1 og 2 er grønne: start en FERSK underagent med Agent/Task-verktøyet
 > Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_playtest.md` (robotresultatene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal; de er kalibrert til ca. 4 på Gøy, Utseende og Lesbart og 5 på Lærerikt). Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den.
 > Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). Begrunn hvert tall med noe du SÅ på et bilde. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
 
-Terskel: ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Maks tre vurderingsrunder. Er spillet fortsatt under terskel etter tredje runde: IKKE åpne PR. Rapporter i Jobb 6 med scorene og hva som manglet.
+Terskel: ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil fem vurderingsrunder. Står en akse på samme poeng to runder på rad, skal kjerneløkka endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.
+
+Er spillet fortsatt under terskel etter femte runde: IKKE åpne PR. Commit alt (smalt diff) og push til `claude/microgame-wip-<dato>-<id>`, og rapporter i Jobb 6 med scorene og hva som manglet - neste natt fortsetter derfra (Jobb 1-0).
 
 ---
 
@@ -217,4 +237,4 @@ gh issue comment 12 --repo pattidatti/eiriksbok --body "**Mikrospill $(date +%Y-
 **Hva som ble bedre etter vurderingen:** <kort>"
 ```
 
-Varianter: «ingen kandidat», «under terskel etter tre runder» (med scorene og forbedringene som ikke lot seg løse), «Playwright/push feilet». Rapporten skal alltid postes.
+Varianter: «ingen kandidat», «under terskel etter fem runder - fortsetter neste natt fra <gren>» (med scorene og forbedringene som ikke lot seg løse), «Playwright/push feilet». Rapporten skal alltid postes.

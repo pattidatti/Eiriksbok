@@ -7,6 +7,9 @@ import type { BannerStore, CoachStore, FloatStore, PinTone } from './stores';
 // Lapper og lærings-øyeblikk flytter seg med tingen de peker på. Posisjonen
 // skrives rett i style.transform fra en egen animasjonsløkke, ikke via React.
 
+// Retningspil for lapper som peker på noe utenfor bildet (vinkel fra midten, 8 retninger).
+const ARROWS = ['←', '↖', '↑', '↗', '→', '↘', '↓', '↙'];
+
 const TONE: Record<PinTone, string> = { info: 'var(--arc-paper)', fare: '#ffd9cf', bra: '#dff3cf' };
 
 export function BannerLayer({ store }: { store: BannerStore }) {
@@ -75,11 +78,25 @@ export function CoachLayer({ store }: { store: CoachStore }) {
                 }
                 const w = node.offsetWidth;
                 const h = node.offsetHeight;
+                node.style.opacity = '1';
+                // Utenfor bildet: lappen legger seg i kanten med en pil mot tingen.
+                const out = a.x < 8 || a.x > W - 8 || a.y < 8 || a.y > H - 8;
+                if (out) {
+                    const cx = W / 2;
+                    const cy = H / 2;
+                    const ang = Math.atan2(a.y - cy, a.x - cx);
+                    const x = Math.min(W - w - 8, Math.max(8, a.x - w / 2));
+                    const y = Math.min(H - h - 8, Math.max(8, a.y - h / 2));
+                    node.style.transform = `translate(${x}px, ${y}px)`;
+                    node.dataset.edge = ARROWS[Math.round(((ang + Math.PI) / (Math.PI * 2)) * 8) % 8];
+                    node.dataset.below = '';
+                    continue;
+                }
+                node.dataset.edge = '';
                 // Lappen står over punktet med pila ned mot det - under hvis det ikke er plass.
                 const below = a.y - h - 14 < 4;
                 const x = Math.min(W - w - 6, Math.max(6, a.x - w / 2));
                 const y = below ? a.y + 14 : a.y - h - 14;
-                node.style.opacity = '1';
                 node.style.transform = `translate(${x}px, ${y}px)`;
                 node.dataset.below = below ? '1' : '';
                 node.style.setProperty('--arrow-x', `${Math.min(w - 12, Math.max(12, a.x - x))}px`);

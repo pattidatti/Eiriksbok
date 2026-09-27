@@ -342,8 +342,23 @@ Referansespillene er kalibreringen: begge ligger rundt 4 på Gøy, Utseende og L
 Lærerikt. MÅKA er en 5 på Gøy og Utseende.
 
 **Terskel:** ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19 av 25. Under terskel:
-gjør de tre forbedringene og få en NY vurdering (ny underagent). Etter tre runder under terskel
-leveres ikke spillet - en artikkel uten spill er bedre enn en med et svakt spill.
+gjør forbedringene og få en NY vurdering (ny underagent), inntil fem runder.
+
+**Når vurderingen står stille, er det spillet som må endres - ikke pynten.** Står en akse på
+samme poeng to runder på rad, hjelper ikke flere farger, kameravinkler eller finere ringer. Gå
+tilbake til designbriefen og endre kjerneløkka for den aksen:
+- **Gøy under 4:** flere synlige valg per minutt, en trussel som vokser midtveis, et nytt
+  element som dukker opp halvveis (ny motstander, nytt verktøy, nytt område), eller en
+  risiko/belønning-avveiing eleven må ta hele tiden. «Ensformig klikking» betyr at eleven gjør
+  det samme på samme måte - gi grepet et nytt formål eller en ny motstand.
+- **Lesbart under 4:** færre ting samtidig, større mål, pil mot det som skjer utenfor bildet
+  (lapper gjør det av seg selv), og hendelser som skjer ett sted om gangen.
+- **Lærerikt under 4:** gjør fagregelen til en regel som faktisk avgjør utfallet, og la de
+  historiske vendepunktene endre spillet (ikke bare vise et banner).
+- **Unikt under 4:** bytt sjanger eller perspektiv - ikke farge.
+
+Et svakt spill leveres aldri - men det gis heller ikke opp: er det fortsatt under terskel, lagres
+det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der den slapp.
 
 ---
 
