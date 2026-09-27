@@ -1,0 +1,278 @@
+{
+  "id": "thranebevegelsen",
+  "title": "Thranebevegelsen: Da husmennene krevde stemmerett",
+  "layout": "rich",
+  "year": "1848-1851",
+  "category": "Norge",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "factChecked": "2026-09-27",
+  "details": [
+    "Marcus Thrane startet den første arbeiderforeningen i Drammen i desember 1848.",
+    "På to og et halvt år fikk foreningene rundt 30 000 medlemmer, nesten like mange som alle velgerne i Norge.",
+    "Kongen sa nei til alle kravene, og i 1851 ble lederne arrestert og senere dømt."
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "I mai 1850 fikk kong Oscar 1 et brev som var annerledes enn alle andre. Det var en bønn om forandring, og under teksten sto navnene til nesten 13 000 menn (Pryser & Ringvej, 2025). De fleste var husmenn, jordarbeidere og arbeidere i byene. Og nesten ingen av dem hadde lov til å stemme ved valg."
+    },
+    {
+      "type": "text",
+      "content": "Bak brevet sto en ung mann fra Christiania, som Oslo het da. Han het Marcus Thrane, og på bare to og et halvt år bygde han opp den første store folkebevegelsen i Norges historie. Den ble kalt Thranebevegelsen, og medlemmene ble kalt thranitter. Denne artikkelen handler om hvordan det gikk til, hvorfor makthaverne ble redde, og hvorfor bevegelsen endte i fengsel."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Arbeidere og husmenn samlet på et møte i en låve",
+      "caption": "Thranebevegelsens møter samlet folk som aldri før hadde fått si sin mening om politikk."
+    },
+    {
+      "type": "header",
+      "text": "Et land der de fleste ikke fikk stemme"
+    },
+    {
+      "type": "text",
+      "content": "Grunnloven fra 1814 ga Norge et Storting som folket valgte. Men ikke alle fikk være med å velge. Stemmerett hadde bare menn over 25 år som var embetsmenn, altså statens egne tjenestemenn, som prester og dommere. I tillegg fikk bønder som eide egen gård, bønder som leide en hel gård som sto i skattelistene, og handelsmenn i byene stemme (Berg et al., 2026). Kvinner fikk ikke stemme i det hele tatt. Det skjedde først i 1913."
+    },
+    {
+      "type": "text",
+      "content": "Den gruppen som slet mest, sto altså helt utenfor. Det gjaldt særlig husmennene. En husmann leide et lite hus, kanskje med litt jord, av en bonde. Som betaling måtte han jobbe på bondens gård. Husmannen hadde ingen skriftlig kontrakt og kunne bli kastet ut når bonden ville det. Ble han syk eller gammel og svak, kunne hele familien miste hjemmet sitt (Ringvej, 2023). Samtidig var livet i byene også hardt, slik du kan lese om i artikkelen om [hamskiftet](/historie/norge-i-moderne-tid/hamskiftet)."
+    },
+    {
+      "type": "component",
+      "name": "HvemFikkStemme",
+      "props": {
+        "title": "Hvem fikk stemme i 1850?",
+        "instruction": "Klikk på hver person: fikk hen stemme ved valget, eller ikke? Klikk igjen for å bytte svar."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Gnisten fra Paris"
+    },
+    {
+      "type": "text",
+      "content": "Våren 1848 skjedde det noe som satte fart i hele Europa. I februar gjorde folket i Paris opprør. Det ble starten på opprør i flere land, der folk krevde stemmerett og bedre kår. Du kan lese mer om dette i artikkelen om [revolusjonene i 1848](/historie/nasjonalstatenes-tid/revolusjonene-1848)."
+    },
+    {
+      "type": "text",
+      "content": "Marcus Thrane var da redaktør for avisen Drammens Adresse. Han lot seg rive med av det som skjedde i Frankrike, og skrev om stemmerett for alle og om bedre forhold for vanlige folk (Pryser & Ringvej, 2025). I desember 1848 startet han den første arbeiderforeningen i Drammen. I mars 1849 kom en forening i Christiania (Ringvej, 2023)."
+    },
+    {
+      "type": "header",
+      "text": "30 000 medlemmer på to og et halvt år"
+    },
+    {
+      "type": "text",
+      "content": "Så gikk det fort. Thrane reiste rundt på Østlandet og holdt møter. Han oppfordret folk til å starte egne foreninger og velge sine egne ledere. Snart fantes det foreninger på hele Østlandet, på Vestlandet og i store deler av Trøndelag. Etter to og et halvt år hadde de rundt 30 000 medlemmer. Det var litt færre enn alle som stemte ved stortingsvalget høsten 1850 (Ringvej, 2023). Tenk deg det: en nesten like stor gruppe som hele velgerskaren, men de fleste av dem hadde ingen stemme selv."
+    },
+    {
+      "type": "text",
+      "content": "Foreningene var mer enn politiske møter. Medlemmene leste høyt fra aviser og diskuterte det de hørte. De startet bibliotek, sparebanker, teatergrupper og søndagsskole for voksne. Våren 1850 fikk alle medlemmene et eksemplar av Grunnloven, slik at de selv kunne lese hvilke rettigheter de hadde (Ringvej, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Det viktigste verktøyet var avisen Arbeider-Foreningernes Blad. Den kom ut hver uke fra mai 1849. Da den var på sitt største, hadde den 6000 abonnenter og ble trykt i 21 000 eksemplarer (Pryser & Ringvej, 2025). Mye av plassen i avisen gikk til brev fra arbeiderne selv. For første gang kunne en husmann få skrive i avisen hva han mente om politikken."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Hva er en petisjon?",
+        "content": "En petisjon er et skriftlig krav eller en bønn til makthaverne, med underskrifter fra mange mennesker. Jo flere som skriver under, jo vanskeligere er det å overse den. I dag skriver folk under på nettet, men prinsippet er det samme som i 1850."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Ti krav til kongen"
+    },
+    {
+      "type": "text",
+      "content": "Thranittenes viktigste aksjon var petisjonen til kongen. Den hadde ti krav (Ringvej, 2023). Her er noen av dem:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Allmenn stemmerett for menn, altså at alle voksne menn skulle få stemme.",
+        "At regjeringen skulle se grundig på hvordan husmennene hadde det, og gjøre livet lettere for dem.",
+        "Bedre skoler for barna til vanlige folk.",
+        "Like regler i rettssakene, slik at fattige og rike ble behandlet likt.",
+        "Fjerne tollen på korn, slik at maten ble billigere.",
+        "At alle, ikke bare de fattigste, skulle måtte gjøre militærtjeneste."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Kravene var forsiktige. Thrane ville ikke at bevegelsen skulle ligne på kommunistene i Europa, som ville ta eiendom fra de rike. Han sa at han ville fjerne fattigdommen, ikke rikdommen (Ringvej, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Likevel sa kongen nei til alle de ti kravene høsten 1850. Stortinget sa også nei. Komiteen som behandlet saken, skrev om «det Tomme og Uholdbare i de umodne Friheds- og Lighedsbegreber» (Stortinget, 2021). Med vanlige ord: politikerne mente at tankene om frihet og likhet var barnslige og ikke til å stole på."
+    },
+    {
+      "type": "header",
+      "text": "Lilletinget og arrestasjonene"
+    },
+    {
+      "type": "text",
+      "content": "Foreningene ga ikke opp. I 1851 samlet de 79 utsendinger til et eget møte i Christiania, bare noen kvartaler fra Stortinget. Folk kalte det Lilletinget, fordi det lignet et lite storting (Mardal, 2024). Derfra prøvde de å påvirke stortingsrepresentantene. Men Stortinget ville ikke engang ta imot utsendingene deres."
+    },
+    {
+      "type": "text",
+      "content": "Frustrasjonen vokste. Noen av utsendingene sa at forholdene hjemme var så ille at det nesten var revolusjon, altså et opprør for å velte makthaverne. Det var nok for myndighetene. 7. juli 1851 ble Marcus Thrane arrestert (Pryser & Ringvej, 2025). Mange andre ledere ble også tatt."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Marcus Thrane sitter alene i en mørk fengselscelle",
+      "caption": "Marcus Thrane satt i fengsel i flere år mens saken mot ham pågikk."
+    },
+    {
+      "type": "text",
+      "content": "Politiet avhørte flere hundre mennesker. De ville finne ut om foreningene hadde vedtatt å gjøre revolusjon. Våren 1854 falt dommen: 149 medlemmer ble dømt (Ringvej, 2023). I 1855 kom saken til Høyesterett, som dømte Thrane til fire år på tukthus, et fengsel med hardt arbeid. Da hadde han allerede sittet fire år i varetekt, altså fengslet mens han ventet på dommen."
+    },
+    {
+      "type": "text",
+      "content": "Historikere har senere funnet ut at dommen bygde på noe som aldri skjedde. Høyesterett mente at Lilletinget hadde vedtatt en revolusjon, men et slikt vedtak fantes ikke. Historikeren Mona Ringvej kaller det «en oppdiktet forbrytelse» (Ringvej, 2015)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Det fantes imidlertid ikke noe revolusjonsvedtak.",
+        "author": "Mona Ringvej, historiker, om dommen mot Marcus Thrane (Norgeshistorie.no)"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hvordan bevegelsen ble knust"
+    },
+    {
+      "type": "text",
+      "content": "Myndighetene nøyde seg ikke med å fengsle lederne. De satte inn annonser i avisene: den som raskt meldte seg ut av foreningene, skulle ikke bli registrert av politiet. Samtidig hjalp de til med å starte nye arbeiderforeninger som ble ledet av prester og andre embetsmenn. Der fikk arbeiderne låne bøker og spare penger, men de fikk ikke snakke politikk (Ringvej, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Da Thrane slapp ut, var bevegelsen hans nesten borte. Kona hans, Josephine, døde i 1862. Året etter reiste han til USA, slik mange tusen andre nordmenn gjorde på den tiden. Du kan lese mer om dette i artikkelen om [utvandringen til Amerika](/historie/norge-i-moderne-tid/utvandringen-til-amerika). Han fortsatte å skrive politiske aviser der borte, og døde i Eau Claire i Wisconsin i 1890 (Pryser & Ringvej, 2025)."
+    },
+    {
+      "type": "header",
+      "text": "Tapte de egentlig?"
+    },
+    {
+      "type": "text",
+      "content": "På kort sikt tapte thranittene alt. Ingen av de ti kravene ble oppfylt, og lederne havnet i fengsel. Allmenn stemmerett for menn kom først i 1898, nesten 50 år senere (Ringvej, 2015)."
+    },
+    {
+      "type": "text",
+      "content": "Men Thranebevegelsen viste noe som aldri hadde skjedd i Norge før. Vanlige arbeidsfolk kunne organisere seg, velge egne ledere, gi ut sin egen avis og stille krav til makta. Den var den første organiserte politiske massebevegelsen i landet (Pryser & Ringvej, 2025). Senere arbeiderbevegelser og [fagforeninger](/samfunnskunnskap/arbeidsliv/fagforeninger) bygde videre på den samme tanken: sammen står vi sterkere enn hver for oss."
+    },
+    {
+      "type": "text",
+      "content": "Historien viser også hvor skjør en rettighet kan være. I dag har alle norske borgere over 18 år stemmerett, både kvinner og menn, rike og fattige. Den retten falt ikke ned fra himmelen. Folk som Marcus Thrane og de 30 000 thranittene betalte en høy pris for å kreve den. Vil du vite mer om rettighetene Grunnloven gir oss, kan du lese om [Grunnloven fra 1814](/samfunnskunnskap/styringsformer/grunnloven)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Folk står i kø foran et valglokale i dag",
+      "caption": "I dag kan alle voksne borgere stemme. I 1850 var det bare et lite mindretall som fikk det."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvem hadde stemmerett i Norge etter Grunnloven fra 1814, og hvem hadde det ikke?",
+          "Hva var en husmann, og hvorfor var livet hans så usikkert?",
+          "Nevn tre av de ti kravene i petisjonen til kongen i 1850.",
+          "Hva var Lilletinget, og hva skjedde etter møtet i 1851?"
+        ],
+        "reflekter": [
+          "Thranebevegelsen hadde nesten like mange medlemmer som det var velgere i Norge. Hvorfor tror du dette skremte makthaverne?",
+          "Thrane sa at han ville fjerne fattigdommen, ikke rikdommen. Hva tror du han mente, og hvorfor var det lurt å si det slik?",
+          "Historikere mener Thrane ble dømt for noe som aldri skjedde. Hva forteller det om hvordan rettssystemet fungerte i 1850-årene?",
+          "Myndighetene startet egne arbeiderforeninger der det var forbudt å snakke politikk. Hvorfor var dette en smart måte å svekke thranittene på?"
+        ],
+        "gaaVidere": [
+          "Skriv et kort leserinnlegg til Arbeider-Foreningernes Blad fra en husmann i 1850. Hva ville du klage over, og hva ville du kreve?",
+          "Finnes det grupper som ikke har stemmerett i Norge i dag? Diskuter om stemmerettsalderen burde senkes til 16 år.",
+          "Sammenlign Thranebevegelsen med en protestbevegelse i dag. Hva er likt, og hva er annerledes?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvem startet den første arbeiderforeningen i Drammen i 1848?",
+            "options": [
+              "Marcus Thrane",
+              "Henrik Wergeland",
+              "Kong Oscar 1",
+              "Christian Magnus Falsen"
+            ],
+            "answer": "Marcus Thrane"
+          },
+          {
+            "question": "Hvilken hendelse inspirerte Thrane til å starte bevegelsen?",
+            "options": [
+              "Februarrevolusjonen i Frankrike i 1848",
+              "Unionsoppløsningen i 1905",
+              "Den amerikanske revolusjonen",
+              "Reformasjonen"
+            ],
+            "answer": "Februarrevolusjonen i Frankrike i 1848"
+          },
+          {
+            "question": "Omtrent hvor mange medlemmer hadde arbeiderforeningene på det meste?",
+            "options": [
+              "Rundt 30 000",
+              "Rundt 3000",
+              "Rundt 300 000",
+              "Rundt 1 million"
+            ],
+            "answer": "Rundt 30 000"
+          },
+          {
+            "question": "Hva svarte kongen på petisjonen med de ti kravene?",
+            "options": [
+              "Han sa nei til alle kravene",
+              "Han sa ja til stemmerett for alle menn",
+              "Han sa ja til halvparten",
+              "Han svarte aldri"
+            ],
+            "answer": "Han sa nei til alle kravene"
+          },
+          {
+            "question": "Når fikk alle voksne menn i Norge stemmerett?",
+            "options": [
+              "1898",
+              "1814",
+              "1851",
+              "1913"
+            ],
+            "answer": "1898"
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Berg, O. T., Thorsen, D. E., & Evjen, K. (2026). *Stemmerett*. Store norske leksikon. Hentet 27.09.2026 fra [snl.no/stemmerett](https://snl.no/stemmerett)",
+          "Mardal, M. A. (2024). *Lilletinget*. Store norske leksikon. Hentet 27.09.2026 fra [snl.no/Lilletinget](https://snl.no/Lilletinget)",
+          "Pryser, T., & Ringvej, M. (2025). *Marcus Thrane*. Store norske leksikon. Hentet 27.09.2026 fra [snl.no/Marcus_Thrane](https://snl.no/Marcus_Thrane)",
+          "Ringvej, M. (2015). *Marcus Thrane dømt i høyesterett*. Norgeshistorie.no. Universitetet i Oslo. Hentet 27.09.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/bygging-av-stat-og-nasjon/1415-Marcus%20Thrane%20d%C3%B8mt%20i%20h%C3%B8yesterett.html)",
+          "Ringvej, M. (2023). *Arbeiderforeningene – Thranebevegelsen*. Store norske leksikon. Hentet 27.09.2026 fra [snl.no/Arbeiderforeningene_-_Thranebevegelsen](https://snl.no/Arbeiderforeningene_-_Thranebevegelsen)",
+          "Stortinget. (2021). *Marcus Thrane, arbeiderforeningene og kravet om alminnelig stemmerett*. Hentet 27.09.2026 fra [stortinget.no](https://www.stortinget.no/no/Stortinget-og-demokratiet/stemmerettsjubileet-2019/fattigdom-stemmerett/marcus-thrane/)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

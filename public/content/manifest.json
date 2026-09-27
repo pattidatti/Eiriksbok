@@ -3375,6 +3375,23 @@
               "lastUpdated": "2026-07-08T00:30:53+02:00"
             },
             {
+              "id": "thranebevegelsen",
+              "title": "Thranebevegelsen: Da husmennene krevde stemmerett",
+              "description": "Marcus Thrane samlet 30 000 arbeidere og husmenn i Norges første folkebevegelse, og havnet i fengsel for det.",
+              "image": "/images/placeholder.webp",
+              "year": "1848-1851",
+              "layout": "rich",
+              "tags": [
+                "historie",
+                "norge",
+                "norgeshistorie",
+                "arbeiderbevegelse",
+                "stemmerett",
+                "1800-tallet"
+              ],
+              "createdDate": "2026-09-27T00:00:00Z"
+            },
+            {
               "id": "unionen-med-sverige",
               "title": "Unionen med Sverige: To land, én konge",
               "description": "Hvordan Norge i 1814 ble en personalunion med Sverige, og hva de 91 årene betydde.",
