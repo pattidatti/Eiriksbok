@@ -5,7 +5,7 @@
   "year": "1848-1851",
   "category": "Norge",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/norge-i-moderne-tid/thranebevegelsen-hero.webp",
   "factChecked": "2026-09-27",
   "details": [
     "Marcus Thrane startet den første arbeiderforeningen i Drammen i desember 1848.",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/thranebevegelsen-01.webp",
       "alt": "Arbeidere og husmenn samlet på et møte i en låve",
       "caption": "Thranebevegelsens møter samlet folk som aldri før hadde fått si sin mening om politikk."
     },
@@ -124,7 +124,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/thranebevegelsen-02.webp",
       "alt": "Marcus Thrane sitter alene i en mørk fengselscelle",
       "caption": "Marcus Thrane satt i fengsel i flere år mens saken mot ham pågikk."
     },
@@ -174,7 +174,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/thranebevegelsen-03.webp",
       "alt": "Folk står i kø foran et valglokale i dag",
       "caption": "I dag kan alle voksne borgere stemme. I 1850 var det bare et lite mindretall som fikk det."
     },
