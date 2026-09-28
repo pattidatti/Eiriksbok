@@ -1,5 +1,5 @@
 {
-  "buildId": 224126777205307,
+  "buildId": 67045865766402,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2037,6 +2037,9 @@
     ],
     "andre-verdenskrig-bakgrunn": [
       "content/historie/andre-verdenskrig/bakgrunn.json"
+    ],
+    "d-dagen": [
+      "content/historie/andre-verdenskrig/d-dagen.json"
     ],
     "andre-verdenskrig-konsekvenser": [
       "content/historie/andre-verdenskrig/konsekvenser.json"
@@ -5508,6 +5511,7 @@
     "historie/afrikanske-riker/stor-zimbabwe": "content/historie/afrikanske-riker/stor-zimbabwe.json",
     "historie/afrikanske-riker/swahili-kysten": "content/historie/afrikanske-riker/swahili-kysten.json",
     "historie/andre-verdenskrig/bakgrunn": "content/historie/andre-verdenskrig/bakgrunn.json",
+    "historie/andre-verdenskrig/d-dagen": "content/historie/andre-verdenskrig/d-dagen.json",
     "historie/andre-verdenskrig/konsekvenser": "content/historie/andre-verdenskrig/konsekvenser.json",
     "historie/andre-verdenskrig/konsentrasjonsleirene": "content/historie/andre-verdenskrig/konsentrasjonsleirene.json",
     "historie/andre-verdenskrig/krigen-i-stillehavet": "content/historie/andre-verdenskrig/krigen-i-stillehavet.json",

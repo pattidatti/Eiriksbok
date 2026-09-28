@@ -1,0 +1,272 @@
+{
+  "id": "d-dagen",
+  "title": "D-dagen: Invasjonen i Normandie",
+  "layout": "rich",
+  "subject": "historie",
+  "year": "1944",
+  "category": "Andre verdenskrig",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "D-dagen, 6. juni 1944, gikk 156 000 allierte soldater i land på fem strender i Normandie.",
+    "Invasjonen måtte skje ved fullmåne, lavvann og rolig vær - og ble utsatt ett døgn på grunn av storm.",
+    "En stor bløff, Operasjon Fortitude, fikk tyskerne til å vente angrepet ved Calais og i Norge."
+  ],
+  "factChecked": "2026-09-28",
+  "content": [
+    {
+      "type": "text",
+      "content": "Natt til 4. juni 1944 sitter meteorologen James Stagg bøyd over værkartene sine i England. Ute blåser det kraftig. Om noen timer skal han fortelle general Dwight D. Eisenhower hva været blir. Svaret hans avgjør om over 150 000 soldater skal sette seg i båtene, eller vente. Et feil svar kan koste tusenvis av liv."
+    },
+    {
+      "type": "text",
+      "content": "Dette er historien om D-dagen, den 6. juni 1944. Den dagen gikk soldater fra USA, Storbritannia, Canada og flere andre land i land på strendene i Normandie i Nord-Frankrike (Hatlehol, 2025a). Målet var å åpne en ny front mot Nazi-Tyskland i vest. En front er stedet der to hærer møtes og kjemper."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Meteorolog studerer værkart ved lampelys i 1944",
+      "caption": "Værmeldingen var like viktig som våpnene. Et feil varsel kunne ødelegge hele invasjonen."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor måtte invasjonen skje?"
+    },
+    {
+      "type": "text",
+      "content": "Sommeren 1944 hadde Tyskland fortsatt kontroll over Frankrike og store deler av Vest-Europa. I øst kjempet Sovjetunionen mot Tyskland, og etter nederlaget ved [Stalingrad](/historie/andre-verdenskrig/slaget-om-stalingrad) var tyskerne på vei tilbake der. Et angrep fra vest ville tvinge Tyskland til å kjempe på to fronter samtidig."
+    },
+    {
+      "type": "text",
+      "content": "Planen fikk kodenavnet Operasjon Overlord. Selve overfarten over Den engelske kanal, der skipene fraktet soldatene, fikk navnet Operasjon Neptun. Øverste sjef var den amerikanske generalen Dwight D. Eisenhower (Hatlehol, 2025a). Du kan lese mer om hvordan hele krigen utviklet seg i [Krigens løp](/historie/andre-verdenskrig/krigens-lop)."
+    },
+    {
+      "type": "header",
+      "text": "Muren langs kysten"
+    },
+    {
+      "type": "text",
+      "content": "Tyskerne visste at et angrep ville komme. De visste bare ikke hvor. Langs kysten hadde de bygget Atlanterhavsvollen. Det var en lang rekke av bunkere, kanoner og hindringer. Bunkere er tykke betongbygg der soldater kan skyte fra i dekning."
+    },
+    {
+      "type": "text",
+      "content": "Den tyske generalen Erwin Rommel hadde ansvar for en stor del av forsvaret. Han mente at tyskerne måtte stoppe angriperne allerede på stranden, før de fikk fotfeste. Derfor lot han soldatene legge ut seks millioner miner og 500 000 store kors av tre og metall på strendene (Hatlehol, 2025a). Korsene skulle rive opp bunnen på båtene som kom inn."
+    },
+    {
+      "type": "header",
+      "text": "Tre ting som måtte klaffe"
+    },
+    {
+      "type": "text",
+      "content": "Eisenhower kunne ikke velge en hvilken som helst dag. Tre ting måtte passe samtidig. For det første trengte han fullmåne, slik at flyene og fallskjermsoldatene så noe om natta. For det andre trengte han lavvann like etter soloppgang (Hatlehol, 2025a). Ved lavvann lå de tyske hindringene tørt på stranden, så soldatene kunne se dem og komme seg rundt dem (Curatola, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "For det tredje måtte været være rolig. Sterk vind kunne velte landgangsbåtene, og lave skyer gjorde at flyene ikke så målene sine. Det var bare noen få dager, 5. til 7. juni, der både månen og tidevannet passet (Curatola, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Invasjonen var planlagt til 5. juni. Men været ble verre og verre. James Stagg ledet en gruppe britiske og amerikanske meteorologer. I uka før invasjonen fulgte åtte værskip med på været ute i Atlanterhavet (The National Archives, u.å.). Den 4. juni utsatte Eisenhower invasjonen ett døgn. Samme natt kom Stagg med nye nyheter: Det så ut til å bli et kort opphold i uværet 6. juni. Eisenhower bestemte seg for å gå."
+    },
+    {
+      "type": "text",
+      "content": "En av dem som hjalp til med værmeldingen, var nordmannen Sverre Petterssen. Han brukte metoder fra Bergensskolen, en norsk måte å forutsi været på som ser på hva som skjer høyt oppe i lufta (Curatola, 2026). Valget var riktig. Den 19. juni kom en kraftig storm over Kanalen, som varte i flere dager. Eisenhower skrev senere til Stagg at han takket krigens guder for at de gikk da de gjorde (Curatola, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Du er Eisenhower, og du må ta de tre store valgene."
+    },
+    {
+      "type": "component",
+      "name": "EisenhowersValg",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Den store bløffen"
+    },
+    {
+      "type": "text",
+      "content": "Den korteste veien fra England til Frankrike går over til Pas-de-Calais. Derfor ventet tyskerne at angrepet ville komme der. De allierte gjorde alt de kunne for at tyskerne skulle fortsette å tro det. Planen fikk kodenavnet Operasjon Fortitude (Munez, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "I Sørøst-England bygde de allierte opp en hær som ikke fantes. Den besto av tusenvis av falske stridsvogner og fly, mange av dem oppblåsbare, og falske bygninger. Den kjente amerikanske generalen George S. Patton ble satt som sjef for denne spøkelseshæren, fordi tyskerne hadde stor respekt for ham. Falske radiomeldinger gjorde at det hørtes ut som ekte soldater snakket sammen (Munez, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "En del av bløffen handlet om Norge. Den fikk navnet Fortitude Nord og skulle få tyskerne til å tro at de allierte også ville angripe her (Munez, 2024). Da ville tyskerne holde soldatene sine i [det okkuperte Norge](/historie/andre-verdenskrig/norge-under-okkupasjonen) i stedet for å sende dem til Frankrike. De allierte brukte også dobbeltagenter. En dobbeltagent later som han spionerer for fienden, men sender egentlig falske opplysninger. Den spanske dobbeltagenten Juan Pujol García lurte tyskerne så godt at de ga ham en tysk medalje, Jernkorset (Munez, 2024)."
+    },
+    {
+      "type": "header",
+      "text": "Natten før"
+    },
+    {
+      "type": "text",
+      "content": "Rundt midnatt natt til 6. juni hoppet 13 000 amerikanske fallskjermsoldater ut over Normandie. Samtidig landet 6000 britiske soldater med fallskjerm og glidefly nær den østligste stranden (Hatlehol, 2025a). De skulle sikre sidene av landingsområdet, slik at tyskerne ikke kunne angripe strendene fra siden. Rundt 120 000 franske motstandsfolk hjalp til ved å sabotere veier, jernbaner og andre forbindelser (Hatlehol, 2025a). Å sabotere betyr å ødelegge noe med vilje."
+    },
+    {
+      "type": "text",
+      "content": "Hos tyskerne var det kaos. Flere av de tyske sjefene, blant dem Rommel, var ikke i hovedkvarteret sitt den natta. Hitler sov, og ingen turte å vekke ham. Da han våknet, ventet han fire og en halv time før han ga lov til å sende de viktigste reservene. Reserver er soldater og stridsvogner som holdes klare bak fronten. Mange tyske ledere trodde nemlig at Normandie bare var et skinnangrep, altså et angrep for å lure dem, og at det virkelige angrepet ville komme ved Calais (Hatlehol, 2025a). Bløffen virket."
+    },
+    {
+      "type": "header",
+      "text": "Fem strender"
+    },
+    {
+      "type": "text",
+      "content": "Om morgenen 6. juni krysset rundt 7000 skip Kanalen. 11 000 fly støttet angrepet fra lufta. Til sammen gikk 156 000 soldater i land på fem strender med kodenavnene Utah, Omaha, Gold, Juno og Sword (Hatlehol, 2025a). Amerikanerne tok Utah og Omaha, britene Gold og Sword, og kanadierne Juno. Klokka 06.30 gikk de første amerikanerne i land. På de britiske og kanadiske strendene startet det mellom 07.25 og 07.45 (Hatlehol, 2025a)."
+    },
+    {
+      "type": "text",
+      "content": "På Utah gikk det bra. Av 23 000 soldater ble 197 drept eller såret. Omaha ble det verste stedet. Bombene som skulle knuse det tyske forsvaret, bommet. Bak stranden reiste det seg bratte klipper, og tyskerne hadde nettopp fått inn erfarne soldater der. Av 24 000 soldater på Omaha ble rundt 3000 drept eller såret (Hatlehol, 2025a)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Soldater vasser i land fra landgangsbåt mot strand med hindringer",
+      "caption": "Mange soldater måtte vasse de siste meterne i land, mens tyskerne skjøt fra bunkerne over stranden."
+    },
+    {
+      "type": "text",
+      "content": "Ved solnedgang var 132 500 soldater og 2000 stridsvogner kommet i land. Seks dager senere var 300 000 soldater på plass, og de allierte kontrollerte en 95 kilometer lang kyststripe (Hatlehol, 2025a). Brohodet, altså et lite område på fiendens side som de kunne bygge videre fra, holdt."
+    },
+    {
+      "type": "header",
+      "text": "Nordmenn på D-dagen"
+    },
+    {
+      "type": "text",
+      "content": "Norge var med. To norske jagerskvadroner fløy Spitfire-fly over strendene. Ti norske marinefartøy og 43 norske handelsskip var også med (Hatlehol, 2025a). Handelsskipene fraktet soldater og forsyninger, slik [krigsseilerne](/historie/andre-verdenskrig/krigsseilerne) gjorde under hele krigen."
+    },
+    {
+      "type": "text",
+      "content": "En av de norske jagerne var Svenner. En jager er et raskt krigsskip. Tidlig om morgenen, utenfor Normandie, ble Svenner angrepet av tyske torpedobåter. Skipet ble truffet og sank. Av 230 mann om bord omkom 32 (Krigsseilerregisteret, u.å.)."
+    },
+    {
+      "type": "header",
+      "text": "Etter D-dagen"
+    },
+    {
+      "type": "text",
+      "content": "D-dagen var bare starten. Nå fulgte Slaget om Normandie, som varte fram til 19. august 1944. De allierte bygde to kunstige havner, Mulberry A og B, slik at skipene kunne losse utstyr. Stormen 19. juni skadet dem hardt (Hatlehol, 2025b). Byen Cherbourg ble tatt 27. juni, og Caen 9. juli. I august ble store tyske styrker fanget i en lomme ved Falaise. Den 25. august 1944 ble Paris frigjort (Hatlehol, 2025b)."
+    },
+    {
+      "type": "text",
+      "content": "Prisen var høy. Titusenvis av soldater døde på begge sider. Rundt 19 890 franske sivile ble drept i kampene, og 15 000 hadde allerede dødd i bombingen før invasjonen (Hatlehol, 2025b). Sivile er vanlige mennesker som ikke er soldater."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Soldater og franske sivile jubler i gate med flagg",
+      "caption": "Da Paris ble frigjort 25. august 1944, var det fest i gatene. Men veien dit hadde kostet mange liv."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor lyktes det?"
+    },
+    {
+      "type": "text",
+      "content": "D-dagen lyktes ikke bare fordi de allierte hadde flest soldater og skip. Den lyktes fordi mange ting klaffet samtidig: riktig dag, riktig sted og en bløff som fikk tyskerne til å vente på feil sted. Hadde Eisenhower gått 5. juni, eller ventet til stormen kom, kunne alt endt annerledes. Mindre enn et år senere, i mai 1945, ga Tyskland opp krigen."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva var Operasjon Overlord, og hvem var øverste sjef?",
+          "Hvilke tre ting måtte passe samtidig for at invasjonen kunne starte?",
+          "Hva het de fem strendene, og hvilken strand ble den verste for soldatene?",
+          "Hvordan var Norge med på D-dagen?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor Eisenhower utsatte invasjonen fra 5. til 6. juni. Hva kunne skjedd om han ventet enda lenger?",
+          "Hvorfor tror du Operasjon Fortitude virket så godt? Tenk på hva tyskerne allerede trodde fra før.",
+          "Hvorfor tror du det gikk så mye verre på Omaha enn på Utah?"
+        ],
+        "gaaVidere": [
+          "Skriv et kort brev (5-6 setninger) hjem fra en ung soldat natt til 6. juni, mens han venter i en båt ute på Kanalen.",
+          "Mange land markerer D-dagen hvert år. Diskuter: Hvorfor er det viktig å huske en dag som skjedde for over 80 år siden?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvorfor måtte invasjonen skje ved fullmåne og lavvann?",
+            "options": [
+              "Fordi tyskerne sov lengre da",
+              "Fordi flyene trengte lys om natta, og hindringene på stranden skulle ligge tørt",
+              "Fordi skipene gikk fortere",
+              "Fordi Eisenhower ønsket det av personlige grunner"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Månelyset hjalp fly og fallskjermsoldater. Ved lavvann kunne soldatene se og unngå de tyske hindringene."
+          },
+          {
+            "question": "Hvorfor ble invasjonen utsatt fra 5. til 6. juni?",
+            "options": [
+              "Skipene var ikke ferdige",
+              "Tyskerne hadde oppdaget planen",
+              "Været var for dårlig 5. juni",
+              "Soldatene var syke"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Meteorologene varslet storm 5. juni, men et kort opphold 6. juni."
+          },
+          {
+            "question": "Hva var Operasjon Fortitude?",
+            "options": [
+              "En bløff som skulle lure tyskerne til å tro at angrepet kom ved Calais og i Norge",
+              "Navnet på overfarten over Kanalen",
+              "En tysk plan for å forsvare kysten",
+              "En fransk motstandsgruppe"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Med en falsk hær, falske radiomeldinger og dobbeltagenter fikk de allierte tyskerne til å vente på feil sted."
+          },
+          {
+            "question": "Hvilken strand ble den blodigste for de allierte?",
+            "options": [
+              "Utah",
+              "Gold",
+              "Sword",
+              "Omaha"
+            ],
+            "correctAnswer": 3,
+            "explanation": "På Omaha ble rundt 3000 av 24 000 soldater drept eller såret."
+          },
+          {
+            "question": "Hva skjedde med den norske jageren Svenner?",
+            "options": [
+              "Den reddet hundrevis av soldater",
+              "Den ble senket av tyske torpedobåter",
+              "Den kom aldri fram til Normandie",
+              "Den fraktet Eisenhower over Kanalen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Svenner sank tidlig om morgenen 6. juni, og 32 mann omkom."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Curatola, J. (2026). *Pressure: The D-Day Weather Forecast Story*. The National WWII Museum. Hentet 28.09.2026 fra [nationalww2museum.org](https://www.nationalww2museum.org/war/articles/pressure-d-day-weather-forecast-story)",
+          "Hatlehol, G. D. (2025a). *D-dagen*. Store norske leksikon. Hentet 28.09.2026 fra [snl.no/D-dagen](https://snl.no/D-dagen)",
+          "Hatlehol, G. D. (2025b). *Slaget om Normandie*. Store norske leksikon. Hentet 28.09.2026 fra [snl.no/Slaget_om_Normandie](https://snl.no/Slaget_om_Normandie)",
+          "Krigsseilerregisteret. (u.å.). *Jager HNoMS Svenner*. Norsk senter for krigsseilerhistorie. Hentet 28.09.2026 fra [krigsseilerregisteret.no](https://www.krigsseilerregisteret.no/no/skip/28369)",
+          "Munez, E. (2024). *Operation Fortitude*. Encyclopædia Britannica. Hentet 28.09.2026 fra [britannica.com](https://www.britannica.com/event/Operation-Fortitude)",
+          "The National Archives. (u.å.). *James Stagg: The weatherman who turned the tide of D-Day*. Hentet 28.09.2026 fra [nationalarchives.gov.uk](https://www.nationalarchives.gov.uk/explore-the-collection/stories/james-stagg-the-weatherman-who-turned-the-tide-of-d-day/)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

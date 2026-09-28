@@ -119,6 +119,7 @@ const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansio
 const Tiltakspakken = lazy(() => import('./content/interactive/Tiltakspakken').then(m => ({ default: m.Tiltakspakken })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
 const Varslingskjeden = lazy(() => import('./content/interactive/Varslingskjeden').then(m => ({ default: m.Varslingskjeden })));
+const EisenhowersValg = lazy(() => import('./content/interactive/EisenhowersValg').then(m => ({ default: m.EisenhowersValg })));
 const TrommensReise = lazy(() => import('./content/interactive/TrommensReise').then(m => ({ default: m.TrommensReise })));
 const TroOgVitenMatrisen = lazy(() => import('./content/interactive/TroOgVitenMatrisen').then(m => ({ default: m.TroOgVitenMatrisen })));
 const LivetsFireStunder = lazy(() => import('./content/interactive/LivetsFireStunder').then(m => ({ default: m.LivetsFireStunder })));
@@ -629,6 +630,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Tiltakspakken,
     TrolleyProblem,
     Varslingskjeden,
+    EisenhowersValg,
     TrommensReise,
     TroOgVitenMatrisen,
     LivetsFireStunder,
