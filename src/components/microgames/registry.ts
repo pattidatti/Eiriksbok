@@ -233,6 +233,7 @@ const OverVolga3D = lazy(() => import('./OverVolga3D'));
 const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
+const SpokelsesHaeren = lazy(() => import('./SpokelsesHaeren'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2302,6 +2303,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         cover: '/images/microgames/plottebordet-3d.webp',
         loader: () => import('./Plottebordet3D'),
         Component: Plottebordet3D as never,
+    },
+    'spokelseshaeren': {
+        id: 'spokelseshaeren',
+        title: 'Spøkelseshæren',
+        description:
+            'Våren 1944. Du jobber med den store bløffen før D-dagen, Operasjon Fortitude. Tyske fotofly krysser Sør-England: blås opp gummitanker ved Dover der kameraet tar bilde, og dra kamuflasjenett over den ekte flåten i Portsmouth. Et ekte skip, en slapp gummitank eller et tomt jorde på bildet får pila på Rommels kart til å svinge mot Normandie. Etter 6. juni må bløffen holde til 25. juli. Lyspæra: tyskerne trodde det flybildene viste - og holdt reservene ved Calais mens invasjonen skjedde et annet sted.',
+        estimatedSeconds: 170,
+        sjanger: 'bløff-forsvar',
+        tone: 'alvorlig',
+        hook: 'Du bygger en hær av gummi. Tyskerne må ikke se at den er falsk.',
+        cover: '/images/microgames/spokelseshaeren.webp',
+        kunst: 'Tyske rekognoseringsfoto 1944: svart-hvitt sølvkorn, filmkant og fotoanalytikerens røde og gule fettstift',
+        loader: () => import('./SpokelsesHaeren'),
+        Component: SpokelsesHaeren as never,
     },
 };
 

@@ -98,6 +98,13 @@
       "content": "En del av bløffen handlet om Norge. Den fikk navnet Fortitude Nord og skulle få tyskerne til å tro at de allierte også ville angripe her (Munez, 2024). Da ville tyskerne holde soldatene sine i [det okkuperte Norge](/historie/andre-verdenskrig/norge-under-okkupasjonen) i stedet for å sende dem til Frankrike. De allierte brukte også dobbeltagenter. En dobbeltagent later som han spionerer for fienden, men sender egentlig falske opplysninger. Den spanske dobbeltagenten Juan Pujol García lurte tyskerne så godt at de ga ham en tysk medalje, Jernkorset (Munez, 2024)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "spokelseshaeren"
+      }
+    },
+    {
       "type": "header",
       "text": "Natten før"
     },
