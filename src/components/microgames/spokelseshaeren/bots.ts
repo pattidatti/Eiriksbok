@@ -128,8 +128,10 @@ export function makeBot(opts: BotOpts, rng: Rng) {
             const open = g.ships.filter((s) => s.leaving === 0 && !shipCovered(g, s));
             if (open.length && rng() < 0.5) {
                 const s = open[0];
-                const inUse = g.nets.map((nn) =>
-                    g.ships.filter((o) => (nn.x - o.x) ** 2 + (nn.y - o.y) ** 2 < NET_R * NET_R).length
+                const inUse = g.nets.map(
+                    (nn) =>
+                        g.ships.filter((o) => (nn.x - o.x) ** 2 + (nn.y - o.y) ** 2 < NET_R * NET_R)
+                            .length
                 );
                 const idle = inUse.indexOf(0);
                 if (idle >= 0) {
@@ -145,7 +147,10 @@ export function makeBot(opts: BotOpts, rng: Rng) {
             const nextDover = up.find((u) => u.f.x > DOVER.x0 - 60 && u.f.y < DOVER.y1 + 40);
             if (nextDover) {
                 const ok = g.tanks.filter(
-                    (t) => t.burst === 0 && t.fill >= OK_MIN + 0.03 && inRect(t.x, t.y, nextDover.f.x, nextDover.f.y)
+                    (t) =>
+                        t.burst === 0 &&
+                        t.fill >= OK_MIN + 0.03 &&
+                        inRect(t.x, t.y, nextDover.f.x, nextDover.f.y)
                 ).length;
                 const bad = g.tanks.filter(
                     (t) =>
@@ -207,7 +212,9 @@ export function makeBot(opts: BotOpts, rng: Rng) {
                 for (let j = 0; j < 3; j++) {
                     const fx = DOVER.x0 + ((i + 0.5) * (DOVER.x1 - DOVER.x0)) / 4;
                     const fy = DOVER.y0 + ((j + 0.5) * (DOVER.y1 - DOVER.y0 - 60)) / 3;
-                    const nn = g.tanks.filter((t) => t.burst === 0 && inRect(t.x, t.y, fx, fy)).length + rng() * 0.5;
+                    const nn =
+                        g.tanks.filter((t) => t.burst === 0 && inRect(t.x, t.y, fx, fy)).length +
+                        rng() * 0.5;
                     if (nn < bestN && inDover(fx, fy)) {
                         bestN = nn;
                         best = [fx, fy];

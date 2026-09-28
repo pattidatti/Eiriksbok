@@ -208,7 +208,10 @@ const LESSONS = {
     bløff: 'Tyskerne trodde det de så på flybildene: en stor hær ved Dover betydde et angrep ved Calais.',
     skjul: 'Den ekte flåten i Portsmouth måtte skjules. Så tyskerne den, pekte alt mot Normandie.',
     slapp: 'Bløffen virket bare hvis den så ekte ut. Én slapp gummitank kunne avsløre hele hæren.',
-    reserver: 'Så lenge Hitler trodde på Calais, holdt han reservene der - langt fra strendene i Normandie.',
+    reserver:
+        'Så lenge Hitler trodde på Calais, holdt han reservene der - langt fra strendene i Normandie.',
+    forsterkning:
+        'Etter D-dagen gikk nye tropper fra havnene i Sør-England hver dag. Så tyskerne dem, forsto de at Normandie var hovedangrepet.',
     garbo: 'Dobbeltagenten Garbo sa at Normandie bare var et skinnangrep. Tyskerne trodde ham fordi flybildene viste det samme.',
     seier: 'I sju uker etter D-dagen ventet Hitler på et angrep ved Calais som aldri kom. Da var brohodet i Normandie for sterkt.',
 };
@@ -245,7 +248,9 @@ function makeSfx(a: ArcadeSynth) {
         plane: () => a.tone(90, 70, 1.4, 'triangle', 0.05),
         ship: () => a.tone(110, 108, 0.6, 'sawtooth', 0.04),
         morse: () => {
-            [0, 0.12, 0.24, 0.5].forEach((d, i) => a.tone(820, 820, i === 3 ? 0.22 : 0.07, 'sine', 0.06, d));
+            [0, 0.12, 0.24, 0.5].forEach((d, i) =>
+                a.tone(820, 820, i === 3 ? 0.22 : 0.07, 'sine', 0.06, d)
+            );
         },
         net: () => a.noise(0.18, 0.1, 700),
         win: () => a.arp(392, [0, 4, 7, 12], 0.12, 0.07),
@@ -271,7 +276,12 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
     const tfRef = useRef<Transform>(fit(W, H));
     const hover = useRef<{ x: number | null; y: number | null }>({ x: null, y: null });
     const fx = useRef({ shake: 0, pumpTick: 0, end: 0, outsideHint: 0 });
-    const run = useRef({ firstPlane: false, firstShip: false, dday: false, finds: new Set<string>() });
+    const run = useRef({
+        firstPlane: false,
+        firstShip: false,
+        dday: false,
+        finds: new Set<string>(),
+    });
     const completedOnce = useRef(false);
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
 
@@ -355,10 +365,15 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                                 until: () => g.tanks.some((t) => t.pumping || t.fill >= OK_MIN),
                             }
                         );
-                        text.point('pump', 'Hold inne i ruta - blås opp', toScreen(() => at), {
-                            until: () => g.tanks.some((t) => t.fill >= OK_MIN),
-                            seconds: 12,
-                        });
+                        text.point(
+                            'pump',
+                            'Hold inne i ruta - blås opp',
+                            toScreen(() => at),
+                            {
+                                until: () => g.tanks.some((t) => t.fill >= OK_MIN),
+                                seconds: 12,
+                            }
+                        );
                     }
                     break;
                 }
@@ -374,10 +389,15 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                             'Invasjonen skal gå fra Portsmouth. Ser tyskerne skipene, skjønner de at målet er Normandie. Dra et nett over.',
                             { at: toScreen(at), until: () => !!s && shipCovered(g, s) }
                         );
-                        text.point('nett', 'Dra nettet over skipet', toScreen(() => [g.nets[1].x, g.nets[1].y]), {
-                            until: () => !!s && shipCovered(g, s),
-                            seconds: 12,
-                        });
+                        text.point(
+                            'nett',
+                            'Dra nettet over skipet',
+                            toScreen(() => [g.nets[1].x, g.nets[1].y]),
+                            {
+                                until: () => !!s && shipCovered(g, s),
+                                seconds: 12,
+                            }
+                        );
                     }
                     break;
                 }
@@ -395,7 +415,12 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                     fx.current.shake = 0.6;
                     buzz(120);
                     const tf = tfRef.current;
-                    const word = e.cause === 'skip' ? 'SKIP SETT!' : e.cause === 'gummi' ? 'GUMMI!' : 'TOMT!';
+                    const word =
+                        e.cause === 'skip'
+                            ? 'SKIP SETT!'
+                            : e.cause === 'gummi'
+                              ? 'GUMMI!'
+                              : 'TOMT!';
                     text.float(word, tf.ox + e.x * tf.s, tf.oy + e.y * tf.s - 40, RED, true);
                     if (e.cause === 'skip') text.lesson('skjul', LESSONS.skjul, 1.3);
                     if (e.cause === 'gummi') text.lesson('slapp', LESSONS.slapp, 1.2);
@@ -429,16 +454,35 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                     text.point(
                         'rommel',
                         'Invasjonen trekker pila mot Normandie',
-                        () => ({ x: tf.w - 140 * Math.max(0.72, Math.min(1.25, Math.min(tf.w / 1366, tf.h / 768) * 1.1)), y: tf.h - 170 }),
+                        () => ({
+                            x:
+                                tf.w -
+                                140 *
+                                    Math.max(
+                                        0.72,
+                                        Math.min(1.25, Math.min(tf.w / 1366, tf.h / 768) * 1.1)
+                                    ),
+                            y: tf.h - 170,
+                        }),
                         { tone: 'fare', seconds: 5 }
                     );
                     break;
                 }
+                case 'convoys': {
+                    text.banner('FORSTERKNINGER', '#b3302a', 2.4);
+                    text.lesson('forsterkning', LESSONS.forsterkning, 1.1);
+                    break;
+                }
                 case 'storm':
                     text.banner('STORM I KANALEN', '#4a4a48', 2.4);
-                    text.point('storm', 'Vinden - tankene lekker fortere', toScreen(() => [1270, 330]), {
-                        seconds: 4,
-                    });
+                    text.point(
+                        'storm',
+                        'Vinden - tankene lekker fortere',
+                        toScreen(() => [1270, 330]),
+                        {
+                            seconds: 4,
+                        }
+                    );
                     break;
                 case 'telegram': {
                     sfx.morse();
@@ -460,8 +504,21 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                         text.lesson('garbo', LESSONS.garbo, 0.9);
                     } else if (e.ok) {
                         R.finds.add('garbo');
-                        text.float('GARBO TROS', tf.ox + 1270 * tf.s, tf.oy + 140 * tf.s, YELLOW, true);
-                    } else text.float('GARBO TVILES', tf.ox + 1270 * tf.s, tf.oy + 140 * tf.s, RED, true);
+                        text.float(
+                            'GARBO TROS',
+                            tf.ox + 1270 * tf.s,
+                            tf.oy + 140 * tf.s,
+                            YELLOW,
+                            true
+                        );
+                    } else
+                        text.float(
+                            'GARBO TVILES',
+                            tf.ox + 1270 * tf.s,
+                            tf.oy + 140 * tf.s,
+                            RED,
+                            true
+                        );
                     break;
                 }
                 case 'won':
@@ -494,17 +551,31 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                         fx.current.pumpTick = 0.11;
                         sfx.pump(t.fill);
                     }
-                    if (t && t.fill > 0.25) text.point('slipp', 'Slipp når ringen er gul', toScreen(() => [t.x, t.y - 36]), {
-                        until: () => !t.pumping,
-                        once: true,
-                        seconds: 5,
-                    });
+                    if (t && t.fill > 0.25)
+                        text.point(
+                            'slipp',
+                            'Slipp når ringen er gul',
+                            toScreen(() => [t.x, t.y - 36]),
+                            {
+                                until: () => !t.pumping,
+                                once: true,
+                                seconds: 5,
+                            }
+                        );
                 }
                 handleEvents(g);
                 if (g.mode === 'lost') {
                     sfx.lose();
                     const c = g.cause ?? 'tomt';
-                    text.lesson(c === 'skip' ? 'skjul' : c === 'gummi' ? 'slapp' : 'bløff', c === 'skip' ? LESSONS.skjul : c === 'gummi' ? LESSONS.slapp : LESSONS.bløff, 1.6);
+                    text.lesson(
+                        c === 'skip' ? 'skjul' : c === 'gummi' ? 'slapp' : 'bløff',
+                        c === 'skip'
+                            ? LESSONS.skjul
+                            : c === 'gummi'
+                              ? LESSONS.slapp
+                              : LESSONS.bløff,
+                        1.6
+                    );
                     text.banner('RESERVENE RULLER', '#b3302a', 1.8);
                     fx.current.end = 0;
                     setModeBoth('dying');
@@ -628,12 +699,27 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                 const m = modeRef.current;
                 const o = outcome.current;
                 return {
-                    fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
+                    fase:
+                        m === 'menu'
+                            ? 'meny'
+                            : m === 'over'
+                              ? o?.won
+                                  ? 'vunnet'
+                                  : 'tapt'
+                              : 'spiller',
                     poeng: m === 'over' && o ? o.score : Math.floor(g.score),
                     framdrift: g.day / END_DAY,
                     tid: g.t,
                     valg: g.valg,
                     press: pressure(g),
+                    årsak:
+                        g.mode === 'lost'
+                            ? g.cause === 'skip'
+                                ? 'et fly fotograferte den ekte flåten'
+                                : g.cause === 'gummi'
+                                  ? 'slappe eller sprukne gummitanker på bildet'
+                                  : 'tomme jorder ved Dover på bildet'
+                            : undefined,
                 };
             },
             start: () => start(),
@@ -652,7 +738,8 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                 },
                 'glemmer-skipene': {
                     forventer: 'taper',
-                    beskrivelse: 'Bygger en god hær ved Dover, men skjuler aldri den ekte flåten i Portsmouth.',
+                    beskrivelse:
+                        'Bygger en god hær ved Dover, men skjuler aldri den ekte flåten i Portsmouth.',
                     tick: tick('glemmer-skipene'),
                 },
                 'glemmer-dover': {
@@ -691,7 +778,12 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
     return (
         <MicroGameFrame title="Spøkelseshæren" bleed>
             <div className="p-2">
-                <ArcadeStage ref={bindStage} theme={THEME} background="#1a1916" label="Spøkelseshæren - bløffen før D-dagen">
+                <ArcadeStage
+                    ref={bindStage}
+                    theme={THEME}
+                    background="#1a1916"
+                    label="Spøkelseshæren - bløffen før D-dagen"
+                >
                     <canvas
                         ref={bindCanvas}
                         onPointerDown={onPointer}
@@ -741,20 +833,30 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                         <ArcadeScreen>
                             <ArcadeLogo>SPØKELSES&shy;HÆREN</ArcadeLogo>
                             <ArcadeTag>Operasjon Fortitude, våren 1944</ArcadeTag>
-                            <p style={{ margin: '10px 0 0', fontWeight: 600, fontSize: 14, lineHeight: 1.4 }}>
+                            <p
+                                style={{
+                                    margin: '10px 0 0',
+                                    fontWeight: 600,
+                                    fontSize: 14,
+                                    lineHeight: 1.4,
+                                }}
+                            >
                                 Hold inne ved Dover: blås opp gummitanker der kameraet tar bilde.
                                 Dra nett over de ekte skipene i Portsmouth.
                             </p>
                             <ArcadeBigButton onClick={start}>Spill</ArcadeBigButton>
                             <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
-                                Rekord <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
+                                Rekord{' '}
+                                <b className="arc-display">{save.best.toLocaleString('nb-NO')}</b>
                                 &nbsp;/&nbsp; Kista{' '}
                                 <b className="arc-display">
                                     {save.found.length}/{FINDS.length}
                                 </b>
                             </div>
                             <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-                                <ArcadeSmallButton onClick={() => setShowFinds(true)}>🗃️ Bløffens kiste</ArcadeSmallButton>
+                                <ArcadeSmallButton onClick={() => setShowFinds(true)}>
+                                    🗃️ Bløffens kiste
+                                </ArcadeSmallButton>
                                 <ArcadeSmallButton onClick={toggleMute} ariaLabel="Lyd av eller på">
                                     {muted ? '🔇' : '🔊'}
                                 </ArcadeSmallButton>
@@ -770,7 +872,14 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                             <p style={{ fontSize: 12.5, margin: '2px 0 8px', fontWeight: 500 }}>
                                 Ekte rekvisitter og folk fra Operasjon Fortitude.
                             </p>
-                            <div style={{ textAlign: 'left', maxHeight: 260, overflowY: 'auto', marginBottom: 10 }}>
+                            <div
+                                style={{
+                                    textAlign: 'left',
+                                    maxHeight: 260,
+                                    overflowY: 'auto',
+                                    marginBottom: 10,
+                                }}
+                            >
                                 {FINDS.map((f) => {
                                     const has = save.found.includes(f.id);
                                     return (
@@ -785,20 +894,33 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                                                 opacity: has ? 1 : 0.5,
                                             }}
                                         >
-                                            <div style={{ fontSize: 22, width: 30, textAlign: 'center' }}>
+                                            <div
+                                                style={{
+                                                    fontSize: 22,
+                                                    width: 30,
+                                                    textAlign: 'center',
+                                                }}
+                                            >
                                                 {has ? f.icon : '🔒'}
                                             </div>
                                             <div>
-                                                <b className="arc-display" style={{ fontSize: 14, display: 'block' }}>
+                                                <b
+                                                    className="arc-display"
+                                                    style={{ fontSize: 14, display: 'block' }}
+                                                >
                                                     {has ? f.name : 'Låst'}
                                                 </b>
-                                                <span style={{ fontSize: 12 }}>{has ? f.fact : f.hint}</span>
+                                                <span style={{ fontSize: 12 }}>
+                                                    {has ? f.fact : f.hint}
+                                                </span>
                                             </div>
                                         </div>
                                     );
                                 })}
                             </div>
-                            <ArcadeSmallButton onClick={() => setShowFinds(false)}>Lukk</ArcadeSmallButton>
+                            <ArcadeSmallButton onClick={() => setShowFinds(false)}>
+                                Lukk
+                            </ArcadeSmallButton>
                         </ArcadeScreen>
                     )}
 
@@ -819,7 +941,9 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                     {mode === 'over' && result && (
                         <ArcadeScreen>
                             <div style={{ fontSize: 12, fontWeight: 700, opacity: 0.7 }}>
-                                {result.won ? 'Bløffen holdt! Din rang' : 'Bløffen ble avslørt. Din rang'}
+                                {result.won
+                                    ? 'Bløffen holdt! Din rang'
+                                    : 'Bløffen ble avslørt. Din rang'}
                             </div>
                             <div
                                 className="arc-display"
@@ -833,8 +957,18 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                             >
                                 {result.rank}
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-                                <span className="arc-display" style={{ fontSize: 32, lineHeight: 1 }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: 10,
+                                }}
+                            >
+                                <span
+                                    className="arc-display"
+                                    style={{ fontSize: 32, lineHeight: 1 }}
+                                >
                                     {result.score.toLocaleString('nb-NO')}
                                 </span>
                                 {result.newBest && (
@@ -843,11 +977,26 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                                     </span>
                                 )}
                             </div>
-                            <p style={{ margin: '6px 0 2px', fontWeight: 600, fontSize: 13, lineHeight: 1.35 }}>
+                            <p
+                                style={{
+                                    margin: '6px 0 2px',
+                                    fontWeight: 600,
+                                    fontSize: 13,
+                                    lineHeight: 1.35,
+                                }}
+                            >
                                 {result.msg}
                             </p>
                             {result.tip && (
-                                <p style={{ margin: '2px 0 4px', fontWeight: 800, fontSize: 13, lineHeight: 1.35, color: '#b3302a' }}>
+                                <p
+                                    style={{
+                                        margin: '2px 0 4px',
+                                        fontWeight: 800,
+                                        fontSize: 13,
+                                        lineHeight: 1.35,
+                                        color: '#b3302a',
+                                    }}
+                                >
                                     {result.tip}
                                 </p>
                             )}
@@ -871,7 +1020,8 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                                         fontSize: 12.5,
                                     }}
                                 >
-                                    Nytt i kista: {result.newFinds.map((f) => `${f.icon} ${f.name}`).join(', ')}
+                                    Nytt i kista:{' '}
+                                    {result.newFinds.map((f) => `${f.icon} ${f.name}`).join(', ')}
                                 </div>
                             ) : result.next ? (
                                 <div
@@ -884,8 +1034,8 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
                                         fontSize: 12.5,
                                     }}
                                 >
-                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng til neste rang:{' '}
-                                    {result.next[1]}
+                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng
+                                    til neste rang: {result.next[1]}
                                 </div>
                             ) : null}
                             <ArcadeBigButton onClick={start}>Igjen</ArcadeBigButton>
@@ -907,4 +1057,3 @@ export default function SpokelsesHaeren({ onComplete }: MicroGameProps) {
         </MicroGameFrame>
     );
 }
-

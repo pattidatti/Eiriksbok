@@ -12,20 +12,29 @@ export const H = 900;
 /** Dager fra 15. mai 1944. D-dagen er dag 22, seier 25. juli er dag 71. */
 export const DDAY = 22;
 export const STORM_DAY = 35;
+/**
+ * Forsterkningene: fra tre dager etter D-dagen seilte nye tropper og forsyninger fra
+ * havnene i Sør-England til Normandie hver dag. Så tyskerne mange skip i Portsmouth,
+ * var det et bevis på hvor hovedangrepet gikk - så de måtte skjules like godt som flåten.
+ */
+export const REINFORCE_DAY = DDAY + 3;
 export const END_DAY = 71;
 /** Sekunder per dag før og etter D-dagen. Første del er kortere per dag. */
 const SEC_PER_DAY_A = 2.5;
-const SEC_PER_DAY_B = 2.25;
+const SEC_PER_DAY_B = 1.7;
 export const RUN_SECONDS = DDAY * SEC_PER_DAY_A + (END_DAY - DDAY) * SEC_PER_DAY_B;
 
 // Pumping
 export const PUMP_RATE = 0.62; // fylling per sekund
-export const OK_MIN = 0.8;
+export const OK_MIN = 0.66;
 export const BURST = 1.14;
 const AIR_PER_FILL = 0.72;
-const AIR_REGEN = 0.15;
-export const LEAK = 0.009;
-export const TANK_R = 30;
+const AIR_REGEN = 0.35;
+// Tankene lekker fort nok til at en full tank bare holder seg stiv i rundt 9 sekunder.
+// Da lønner det seg ikke å fylle hele Dover med tanker og vente: eleven må lese
+// flyrutene og fylle akkurat de tankene kameraet skal fotografere, rett før det kommer.
+export const LEAK = 0.016;
+export const TANK_R = 36;
 
 // Nett og skip
 export const NET_R = 92;
@@ -61,6 +70,8 @@ export interface Ship {
     rot: number;
     arrive: number; // 0-1 innseiling
     leaving: number; // > 0: seiler ut 6. juni
+    /** Forsterkninger: sekunder til skipet seiler til Normandie. Infinity før D-dagen. */
+    stay: number;
     len: number;
 }
 
@@ -148,6 +159,10 @@ export interface Game {
     seed: number;
     ids: number;
     fleetSailed: boolean;
+    /** Forsterkningene går fra havna (fra REINFORCE_DAY). */
+    convoys: boolean;
+    /** Siste flybilde flyttet Rommels pil så mye (for rykket på kartet), og hvor lenge siden. */
+    kick: { d: number; t: number };
     stormOn: boolean;
     flip: boolean;
     stats: Stats;
@@ -159,7 +174,13 @@ export interface Game {
 }
 
 export type GameEvent =
-    | { e: 'photo'; verdict: Frame['verdict']; x: number; y: number; zone: 'dover' | 'ports' | 'midt' }
+    | {
+          e: 'photo';
+          verdict: Frame['verdict'];
+          x: number;
+          y: number;
+          zone: 'dover' | 'ports' | 'midt';
+      }
     | { e: 'caught'; cause: Cause; x: number; y: number }
     | { e: 'burst'; x: number; y: number }
     | { e: 'ok'; x: number; y: number }
@@ -167,6 +188,7 @@ export type GameEvent =
     | { e: 'ship'; x: number; y: number }
     | { e: 'plane'; x: number; y: number }
     | { e: 'dday' }
+    | { e: 'convoys' }
     | { e: 'storm' }
     | { e: 'telegram'; x: number; y: number }
     | { e: 'garbo'; ok: boolean | null }
@@ -266,6 +288,8 @@ export function newGame(seed: number): Game {
         seed: seed >>> 0 || 1,
         ids: 1,
         fleetSailed: false,
+        convoys: false,
+        kick: { d: 0, t: 9 },
         stormOn: false,
         flip: false,
         stats: {
@@ -297,7 +321,11 @@ export function pressure(g: Game) {
     const rate = 1 / planeGap(g);
     const drift = driftRate(g);
     const leak = g.stormOn ? 1 : 0.35;
-    return clamp(0.08 + 0.42 * clamp(rate / 0.36, 0, 1) + 0.35 * clamp(drift / 0.015, 0, 1) + 0.15 * leak, 0, 1);
+    return clamp(
+        0.08 + 0.42 * clamp(rate / 0.36, 0, 1) + 0.35 * clamp(drift / 0.015, 0, 1) + 0.15 * leak,
+        0,
+        1
+    );
 }
 
 export const mult = (g: Game) => 1 + Math.min(4, Math.floor(g.combo / 3));
@@ -319,10 +347,11 @@ function planeSpeed(g: Game) {
 function driftRate(g: Game) {
     if (g.day < DDAY) return 0.002 + (g.day / DDAY) * 0.004; // tvilen vokser mot juni
     // Etter D-dagen er selve invasjonen et bevis som trekker mot Normandie.
-    return 0.0085 + ((g.day - DDAY) / (END_DAY - DDAY)) * 0.0055;
+    return 0.014 + ((g.day - DDAY) / (END_DAY - DDAY)) * 0.0085;
 }
 
 function shipGap(g: Game) {
+    if (g.convoys) return 3.4;
     return 5.2 - (g.day / DDAY) * 2.4;
 }
 
@@ -491,7 +520,7 @@ function takePhoto(g: Game, f: Frame, p: Plane) {
         }
         const dz = f.x > DOVER.x0 - 20 && f.x < DOVER.x1 + 20 && f.y > DOVER.y0 - 20;
         if (slapp > 0) {
-            d = 0.075 * slapp;
+            d = 0.05 * slapp;
             blame(g, 'gummi', d);
             f.verdict = 'mistanke';
         } else if (stiff >= 2) {
@@ -570,6 +599,7 @@ function takePhoto(g: Game, f: Frame, p: Plane) {
         g.events.push({ e: 'points', n, x: f.x, y: f.y - FRAME_H / 2 });
     }
     g.tro = clamp(g.tro + d, 0, 1);
+    if (d !== 0) g.kick = { d, t: 0 };
     g.events.push({ e: 'photo', verdict: f.verdict, x: f.x, y: f.y, zone });
     g.fx.push({ kind: 'flash', x: f.x, y: f.y, t: 0, life: 0.35 });
     void p;
@@ -585,7 +615,8 @@ function spawnPlane(g: Game) {
     // Før D-dagen veksler flyene mellom Dover og Portsmouth: tyskerne lette etter
     // begge hærene. Etter D-dagen ser de mest etter hæren ved Dover.
     const docked = g.ships.filter((s) => s.leaving === 0);
-    if (g.t < 4) target = 'dover'; // første fly: rett over Dover, så eleven lærer pumpingen først
+    if (g.t < 4)
+        target = 'dover'; // første fly: rett over Dover, så eleven lærer pumpingen først
     else if (!g.fleetSailed) {
         g.flip = !g.flip;
         target = g.flip && docked.length ? 'ports' : r < 0.12 ? 'midt' : 'dover';
@@ -655,7 +686,18 @@ function spawnShip(g: Game) {
     if (!free.length) return;
     const slot = free[Math.floor(rand(g) * free.length)];
     const [x, y, rot] = SLOTS[slot];
-    const s: Ship = { id: g.ids++, slot, x, y, rot, arrive: 0, leaving: 0, len: 44 + rand(g) * 12 };
+    const stay = g.convoys ? 13 + rand(g) * 7 : Infinity;
+    const s: Ship = {
+        id: g.ids++,
+        slot,
+        x,
+        y,
+        rot,
+        arrive: 0,
+        leaving: 0,
+        len: 44 + rand(g) * 12,
+        stay,
+    };
     g.ships.push(s);
     g.valg++;
     g.events.push({ e: 'ship', x, y });
@@ -687,6 +729,12 @@ export function update(g: Game, dt: number) {
         g.tro = clamp(g.tro + 0.06, 0, 1);
         g.nextTelegram = 5;
         g.events.push({ e: 'dday' });
+    }
+    if (prevDay < REINFORCE_DAY && g.day >= REINFORCE_DAY) {
+        g.fleetSailed = false;
+        g.convoys = true;
+        g.nextShip = 1.5;
+        g.events.push({ e: 'convoys' });
     }
     if (prevDay < STORM_DAY && g.day >= STORM_DAY) {
         g.stormOn = true;
@@ -722,14 +770,20 @@ export function update(g: Game, dt: number) {
             g.air = clamp(g.air - use, 0, 1);
             t.fill += PUMP_RATE * dt;
             t.wobble = 1;
-            if (g.hold.kind === 'tank' && g.hold.id === t.id && g.hold.autoRelease !== null && t.fill >= g.hold.autoRelease)
+            if (
+                g.hold.kind === 'tank' &&
+                g.hold.id === t.id &&
+                g.hold.autoRelease !== null &&
+                t.fill >= g.hold.autoRelease
+            )
                 release(g);
             else if (t.fill >= BURST) {
                 t.pumping = false;
                 t.burst = 3.5;
                 t.fill = 0;
                 g.stats.bursts++;
-                if (g.hold.kind === 'tank' && g.hold.id === t.id) g.hold = { kind: 'none', id: 0, autoRelease: null };
+                if (g.hold.kind === 'tank' && g.hold.id === t.id)
+                    g.hold = { kind: 'none', id: 0, autoRelease: null };
                 g.events.push({ e: 'burst', x: t.x, y: t.y });
             }
         } else if (t.fill > 0) {
@@ -755,6 +809,10 @@ export function update(g: Game, dt: number) {
     for (const s of g.ships) {
         s.arrive = Math.min(1, s.arrive + dt * 0.6);
         if (s.leaving > 0) s.leaving += dt;
+        else if (g.convoys && s.arrive >= 1) {
+            s.stay -= dt;
+            if (s.stay <= 0) s.leaving = 0.001; // konvoien går til Normandie
+        }
     }
     g.ships = g.ships.filter((s) => s.leaving < 6);
 
@@ -783,7 +841,7 @@ export function update(g: Game, dt: number) {
     g.planes = g.planes.filter((p) => p.s < p.len || p.frames.some((f) => f.shownFor > 0));
 
     // Garbos telegram (etter D-dagen)
-    if (g.fleetSailed) {
+    if (g.day >= DDAY) {
         if (g.telegram) {
             g.telegram.life -= dt;
             if (g.telegram.life <= 0) g.telegram = null;
@@ -799,13 +857,16 @@ export function update(g: Game, dt: number) {
     }
 
     g.troShown += (g.tro - g.troShown) * Math.min(1, dt * 4);
+    g.kick.t += dt;
     tickFx(g, dt);
 
     // Utfall
     if (g.tro >= 1) {
         g.mode = 'lost';
         const b = g.stats.blame;
-        g.cause = g.lastBlame ?? (b.skip >= b.gummi && b.skip >= b.tomt ? 'skip' : b.gummi >= b.tomt ? 'gummi' : 'tomt');
+        // Årsaken er det som veide tyngst gjennom runden, ikke bare det siste bildet.
+        g.cause =
+            b.skip >= b.gummi && b.skip >= b.tomt ? 'skip' : b.gummi >= b.tomt ? 'gummi' : 'tomt';
         release(g);
         g.events.push({ e: 'lost', cause: g.cause });
     } else if (g.day >= END_DAY) {

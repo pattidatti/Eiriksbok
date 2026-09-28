@@ -23,8 +23,12 @@ import {
     dateLabel,
     END_DAY,
     DDAY,
+    type Frame,
+    zoneOf,
     type Game,
 } from './game';
+
+const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 
 export const INK = '#16140f';
 export const PAPER = '#e6dfcd';
@@ -111,7 +115,10 @@ export function makePhoto(): HTMLCanvasElement {
     for (let j = 0; j < rows; j++) {
         pts[j] = [];
         for (let i = 0; i < cols; i++)
-            pts[j][i] = [(i - 1) * cw + (r() - 0.5) * cw * 0.55, (j - 1) * ch + (r() - 0.5) * ch * 0.55];
+            pts[j][i] = [
+                (i - 1) * cw + (r() - 0.5) * cw * 0.55,
+                (j - 1) * ch + (r() - 0.5) * ch * 0.55,
+            ];
     }
     for (let j = 0; j < rows - 1; j++)
         for (let i = 0; i < cols - 1; i++) {
@@ -131,8 +138,14 @@ export function makePhoto(): HTMLCanvasElement {
                 ctx.lineWidth = 1;
                 for (let k = -12; k < 12; k++) {
                     ctx.beginPath();
-                    ctx.moveTo(cx + Math.cos(a) * -120 + Math.sin(a) * k * 5, cy + Math.sin(a) * -120 - Math.cos(a) * k * 5);
-                    ctx.lineTo(cx + Math.cos(a) * 120 + Math.sin(a) * k * 5, cy + Math.sin(a) * 120 - Math.cos(a) * k * 5);
+                    ctx.moveTo(
+                        cx + Math.cos(a) * -120 + Math.sin(a) * k * 5,
+                        cy + Math.sin(a) * -120 - Math.cos(a) * k * 5
+                    );
+                    ctx.lineTo(
+                        cx + Math.cos(a) * 120 + Math.sin(a) * k * 5,
+                        cy + Math.sin(a) * 120 - Math.cos(a) * k * 5
+                    );
                     ctx.stroke();
                 }
                 ctx.restore();
@@ -142,7 +155,10 @@ export function makePhoto(): HTMLCanvasElement {
     for (let j = 0; j < rows; j++)
         for (let i = 0; i < cols; i++) {
             const [x, y] = pts[j][i];
-            for (const [nx, ny] of [pts[j]?.[i + 1], pts[j + 1]?.[i]].filter(Boolean) as [number, number][]) {
+            for (const [nx, ny] of [pts[j]?.[i + 1], pts[j + 1]?.[i]].filter(Boolean) as [
+                number,
+                number,
+            ][]) {
                 if (r() < 0.2) continue;
                 ctx.strokeStyle = 'rgba(38,36,32,.75)';
                 ctx.lineWidth = 2.2;
@@ -206,11 +222,38 @@ export function makePhoto(): HTMLCanvasElement {
             ctx.stroke();
         }
     };
-    road([[340, 480], [420, 380], [560, 300], [700, 230], [LONDON.x, LONDON.y]]);
-    road([[LONDON.x, LONDON.y], [960, 250], [1120, 330], [1300, 400], [1480, 520]]);
-    road([[LONDON.x, LONDON.y], [880, 120], [1060, 60], [1300, 40], [1600, 30]]);
-    road([[0, 300], [140, 360], [260, 420], [340, 480]]);
-    road([[1120, 330], [1160, 460], [1200, 560]]);
+    road([
+        [340, 480],
+        [420, 380],
+        [560, 300],
+        [700, 230],
+        [LONDON.x, LONDON.y],
+    ]);
+    road([
+        [LONDON.x, LONDON.y],
+        [960, 250],
+        [1120, 330],
+        [1300, 400],
+        [1480, 520],
+    ]);
+    road([
+        [LONDON.x, LONDON.y],
+        [880, 120],
+        [1060, 60],
+        [1300, 40],
+        [1600, 30],
+    ]);
+    road([
+        [0, 300],
+        [140, 360],
+        [260, 420],
+        [340, 480],
+    ]);
+    road([
+        [1120, 330],
+        [1160, 460],
+        [1200, 560],
+    ]);
     // Byer
     const town = (cx: number, cy: number, n: number, spread: number) => {
         for (let i = 0; i < n; i++) {
@@ -253,7 +296,17 @@ export function makePhoto(): HTMLCanvasElement {
     }
 
     // Fettstift som aldri endrer seg: Dover-sonen og navnene.
-    crayonRect(ctx, (DOVER.x0 + DOVER.x1) / 2, (DOVER.y0 + DOVER.y1 - 30) / 2, DOVER.x1 - DOVER.x0, DOVER.y1 - DOVER.y0 - 30, 'rgba(241,194,50,.55)', 3, 11, [14, 10]);
+    crayonRect(
+        ctx,
+        (DOVER.x0 + DOVER.x1) / 2,
+        (DOVER.y0 + DOVER.y1 - 30) / 2,
+        DOVER.x1 - DOVER.x0,
+        DOVER.y1 - DOVER.y0 - 30,
+        'rgba(241,194,50,.55)',
+        3,
+        11,
+        [14, 10]
+    );
     label(ctx, 'DOVER - HER STÅR «HÆREN»', DOVER.x0 + 12, DOVER.y0 + 20, YELLOW, 20, 'left');
     label(ctx, 'LONDON', LONDON.x, LONDON.y - 70, PAPER, 16);
 
@@ -310,7 +363,14 @@ export function makeGrain(): HTMLCanvasElement {
 // Fettstift
 // ---------------------------------------------------------------------------
 
-function crayonLine(ctx: CanvasRenderingContext2D, pts: [number, number][], color: string, width: number, seed: number, dash?: number[]) {
+function crayonLine(
+    ctx: CanvasRenderingContext2D,
+    pts: [number, number][],
+    color: string,
+    width: number,
+    seed: number,
+    dash?: number[]
+) {
     const r = prng(seed);
     ctx.save();
     ctx.strokeStyle = color;
@@ -332,7 +392,15 @@ function crayonLine(ctx: CanvasRenderingContext2D, pts: [number, number][], colo
     ctx.restore();
 }
 
-function crayonCircle(ctx: CanvasRenderingContext2D, x: number, y: number, rad: number, color: string, width: number, seed: number) {
+function crayonCircle(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    rad: number,
+    color: string,
+    width: number,
+    seed: number
+) {
     const pts: [number, number][] = [];
     const r = prng(seed);
     const start = r() * Math.PI * 2;
@@ -343,7 +411,17 @@ function crayonCircle(ctx: CanvasRenderingContext2D, x: number, y: number, rad: 
     crayonLine(ctx, pts, color, width, seed + 7);
 }
 
-function crayonRect(ctx: CanvasRenderingContext2D, cx: number, cy: number, w: number, h: number, color: string, width: number, seed: number, dash?: number[]) {
+function crayonRect(
+    ctx: CanvasRenderingContext2D,
+    cx: number,
+    cy: number,
+    w: number,
+    h: number,
+    color: string,
+    width: number,
+    seed: number,
+    dash?: number[]
+) {
     const x0 = cx - w / 2;
     const y0 = cy - h / 2;
     crayonLine(
@@ -362,7 +440,16 @@ function crayonRect(ctx: CanvasRenderingContext2D, cx: number, cy: number, w: nu
     );
 }
 
-function label(ctx: CanvasRenderingContext2D, t: string, x: number, y: number, color: string, size: number, align: CanvasTextAlign = 'center', rot = -0.04) {
+function label(
+    ctx: CanvasRenderingContext2D,
+    t: string,
+    x: number,
+    y: number,
+    color: string,
+    size: number,
+    align: CanvasTextAlign = 'center',
+    rot = -0.04
+) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot);
@@ -381,10 +468,58 @@ function label(ctx: CanvasRenderingContext2D, t: string, x: number, y: number, c
 // Ting i verden
 // ---------------------------------------------------------------------------
 
-function drawTank(ctx: CanvasRenderingContext2D, x: number, y: number, fill: number, pumping: boolean, wobble: number, t: number, id: number) {
+/**
+ * Analytikerens stempel på bildet i det øyeblikket kameraet har tatt det. Dette er
+ * fagkjernen i ett blikk: tyskerne trodde det bildet viste. Stempelet slår ned
+ * (stort -> normalt) de første 0,25 sekundene.
+ */
+function stamp(ctx: CanvasRenderingContext2D, f: Frame, age: number) {
+    if (f.verdict === 'noytral' || !f.verdict) return;
+    const labels = f.marks.map((m) => m.label);
+    const [text, col] =
+        f.verdict === 'bra' && zoneOf(f.x, f.y) === 'ports'
+            ? ['FLÅTE SKJULT', YELLOW]
+            : f.verdict === 'bra'
+              ? ['HÆR BEKREFTET', YELLOW]
+              : f.verdict === 'ok'
+                ? ['HÆR?', YELLOW]
+                : labels.includes('SKIP!')
+                  ? ['FLÅTE SETT!', RED]
+                  : labels.includes('GUMMI?')
+                    ? ['FALSK?', RED]
+                    : ['TOMT!', RED];
+    const pop = age < 0.25 ? 1.7 - (age / 0.25) * 0.7 : 1;
+    ctx.save();
+    ctx.translate(f.x, f.y + FRAME_H / 2 - 30);
+    ctx.rotate(-0.1);
+    ctx.scale(pop, pop);
+    ctx.font = `900 ${text.length > 8 ? 26 : 32}px ${MONO}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const w = ctx.measureText(text).width + 22;
+    ctx.fillStyle = 'rgba(20,18,15,.78)';
+    ctx.fillRect(-w / 2, -21, w, 42);
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 4;
+    ctx.strokeRect(-w / 2 + 4, -17, w - 8, 34);
+    ctx.fillStyle = col;
+    ctx.fillText(text, 0, 1);
+    ctx.restore();
+}
+
+function drawTank(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    fill: number,
+    pumping: boolean,
+    wobble: number,
+    t: number,
+    id: number
+) {
     const f = Math.min(fill, 1.15);
     const ok = fill >= OK_MIN;
-    const sc = (0.45 + 0.55 * Math.min(1, f)) * 1.5;
+    const sc = (0.45 + 0.55 * Math.min(1, f)) * 1.85;
     const wob = pumping ? Math.sin(t * 22 + id) * 0.06 * wobble : 0;
     const ang = -0.35 + ((id * 0.37) % 0.5);
     ctx.save();
@@ -468,13 +603,29 @@ function drawBurst(ctx: CanvasRenderingContext2D, x: number, y: number, id: numb
         const a = r() * Math.PI * 2;
         const d = 6 + r() * 14;
         ctx.beginPath();
-        ctx.ellipse(Math.cos(a) * d, Math.sin(a) * d * 0.7, 4 + r() * 6, 2 + r() * 3, a, 0, Math.PI * 2);
+        ctx.ellipse(
+            Math.cos(a) * d,
+            Math.sin(a) * d * 0.7,
+            4 + r() * 6,
+            2 + r() * 3,
+            a,
+            0,
+            Math.PI * 2
+        );
         ctx.fill();
     }
     ctx.restore();
 }
 
-function drawShip(ctx: CanvasRenderingContext2D, x: number, y: number, rot: number, len: number, t: number, wake: number) {
+function drawShip(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    rot: number,
+    len: number,
+    t: number,
+    wake: number
+) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(rot);
@@ -510,7 +661,15 @@ function drawShip(ctx: CanvasRenderingContext2D, x: number, y: number, rot: numb
     void t;
 }
 
-function drawNet(ctx: CanvasRenderingContext2D, x: number, y: number, dragging: boolean, rolled: boolean, id: number, t: number) {
+function drawNet(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    dragging: boolean,
+    rolled: boolean,
+    id: number,
+    t: number
+) {
     const rad = rolled ? 26 : NET_R;
     ctx.save();
     ctx.translate(x, y);
@@ -538,7 +697,15 @@ function drawNet(ctx: CanvasRenderingContext2D, x: number, y: number, dragging: 
     for (let k = 0; k < (rolled ? 8 : 26); k++) {
         ctx.fillStyle = gray(70 + r() * 90, 0.7);
         ctx.beginPath();
-        ctx.ellipse((r() - 0.5) * rad * 1.8, (r() - 0.5) * rad * 1.5, 6 + r() * 14, 4 + r() * 8, r() * 3, 0, Math.PI * 2);
+        ctx.ellipse(
+            (r() - 0.5) * rad * 1.8,
+            (r() - 0.5) * rad * 1.5,
+            6 + r() * 14,
+            4 + r() * 8,
+            r() * 3,
+            0,
+            Math.PI * 2
+        );
         ctx.fill();
     }
     ctx.strokeStyle = 'rgba(20,20,18,.35)';
@@ -606,9 +773,25 @@ export interface DrawAssets {
 
 // Veiene kolonnene kjører på (samme punkter som veiene i fotoet).
 const CONVOYS: [number, number][][] = [
-    [[340, 480], [420, 380], [560, 300], [700, 230], [LONDON.x, LONDON.y]],
-    [[LONDON.x, LONDON.y], [960, 250], [1120, 330], [1300, 400], [1480, 520]],
-    [[1120, 330], [1160, 460], [1200, 560]],
+    [
+        [340, 480],
+        [420, 380],
+        [560, 300],
+        [700, 230],
+        [LONDON.x, LONDON.y],
+    ],
+    [
+        [LONDON.x, LONDON.y],
+        [960, 250],
+        [1120, 330],
+        [1300, 400],
+        [1480, 520],
+    ],
+    [
+        [1120, 330],
+        [1160, 460],
+        [1200, 560],
+    ],
 ];
 
 function along(p: [number, number][], u: number): [number, number, number] {
@@ -628,9 +811,15 @@ export interface DrawState {
     hoverY: number | null;
 }
 
-export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform, a: DrawAssets, st: DrawState) {
+export function drawWorld(
+    ctx: CanvasRenderingContext2D,
+    g: Game,
+    tf: Transform,
+    a: DrawAssets,
+    st: DrawState
+) {
     const { s, ox, oy, w, h } = tf;
-    const T = g.t + performance.now() / 1000 * (st.menu ? 1 : 0);
+    const T = g.t + (performance.now() / 1000) * (st.menu ? 1 : 0);
     // Lysbordet rundt fotoet
     ctx.fillStyle = '#1a1916';
     ctx.fillRect(0, 0, w, h);
@@ -656,12 +845,22 @@ export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform,
     }
 
     // Dover-sonen i gul fettstift
-    if (!g.fleetSailed) label(ctx, 'PORTSMOUTH - DEN EKTE FLÅTEN', 40, 395, PAPER, 18, 'left', 0.02);
+    if (!g.fleetSailed)
+        label(
+            ctx,
+            g.convoys ? 'PORTSMOUTH - FORSTERKNINGENE' : 'PORTSMOUTH - DEN EKTE FLÅTEN',
+            40,
+            395,
+            PAPER,
+            18,
+            'left',
+            0.02
+        );
 
     // Kolonner av lastebiler på veiene: England er fullt av soldater på vei mot kysten.
     for (let k = 0; k < 9; k++) {
         const road = CONVOYS[k % CONVOYS.length];
-        const u = ((T * 0.018 + k * 0.137) % 1 + 1) % 1;
+        const u = (((T * 0.018 + k * 0.137) % 1) + 1) % 1;
         const [x, y, a] = along(road, u);
         ctx.save();
         ctx.translate(x, y);
@@ -688,7 +887,9 @@ export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform,
     // Nett
     if (!g.fleetSailed)
         g.nets.forEach((n, i) => {
-            const covering = g.ships.some((sh) => (n.x - sh.x) ** 2 + (n.y - sh.y) ** 2 < NET_R * NET_R);
+            const covering = g.ships.some(
+                (sh) => (n.x - sh.x) ** 2 + (n.y - sh.y) ** 2 < NET_R * NET_R
+            );
             drawNet(ctx, n.x, n.y, n.dragging, !covering && !n.dragging && isLand(n.x, n.y), i, T);
         });
     // Udekkede skip får en diskret gul markering, så eleven ser hva som ligger åpent.
@@ -722,7 +923,13 @@ export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform,
         // Den gule sonen
         ctx.strokeStyle = 'rgba(241,194,50,.35)';
         ctx.beginPath();
-        ctx.arc(t.x, t.y, R, -Math.PI / 2 + (OK_MIN / BURST) * Math.PI * 2, -Math.PI / 2 + (1.06 / BURST) * Math.PI * 2);
+        ctx.arc(
+            t.x,
+            t.y,
+            R,
+            -Math.PI / 2 + (OK_MIN / BURST) * Math.PI * 2,
+            -Math.PI / 2 + (1.06 / BURST) * Math.PI * 2
+        );
         ctx.stroke();
         ctx.strokeStyle = t.fill < OK_MIN ? PAPER : t.fill < 1.06 ? YELLOW : RED;
         ctx.lineWidth = 5;
@@ -765,12 +972,32 @@ export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform,
         const ex = p.x0 + p.dx * p.len;
         const ey = p.y0 + p.dy * p.len;
         if (p.s < p.len) {
-            crayonLine(ctx, [[pos.x, pos.y], [ex, ey]], `rgba(215,55,43,${p.warn > 0 ? 0.5 + 0.4 * Math.sin(T * 10) : 0.75})`, 4, p.id, [18, 12]);
+            crayonLine(
+                ctx,
+                [
+                    [pos.x, pos.y],
+                    [ex, ey],
+                ],
+                `rgba(215,55,43,${p.warn > 0 ? 0.5 + 0.4 * Math.sin(T * 10) : 0.75})`,
+                4,
+                p.id,
+                [18, 12]
+            );
             // Pilspiss der flyet kommer inn i bildet
             const ay = Math.min(H - 30, Math.max(pos.y, 40));
             const ax = pos.x + (ay - pos.y) * (p.dx / p.dy);
             if (pos.y > H - 20) {
-                crayonLine(ctx, [[ax - 16, ay + 14], [ax, ay - 6], [ax + 16, ay + 14]], RED, 5, p.id + 3);
+                crayonLine(
+                    ctx,
+                    [
+                        [ax - 16, ay + 14],
+                        [ax, ay - 6],
+                        [ax + 16, ay + 14],
+                    ],
+                    RED,
+                    5,
+                    p.id + 3
+                );
             }
         }
         for (const f of p.frames) {
@@ -779,22 +1006,49 @@ export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform,
             const al = Math.min(1, f.shownFor / 0.8);
             ctx.globalAlpha = al;
             const col = f.verdict === 'mistanke' ? RED : f.verdict === 'noytral' ? PAPER : YELLOW;
-            crayonRect(ctx, f.x, f.y, FRAME_W, FRAME_H, col, f.verdict === 'mistanke' ? 5 : 3.5, p.id * 7 + Math.floor(f.x));
+            crayonRect(
+                ctx,
+                f.x,
+                f.y,
+                FRAME_W,
+                FRAME_H,
+                col,
+                f.verdict === 'mistanke' ? 5 : 3.5,
+                p.id * 7 + Math.floor(f.x)
+            );
             for (const m of f.marks) {
                 crayonCircle(ctx, m.x, m.y, m.r, RED, 5, Math.floor(m.x * 3 + m.y));
-                label(ctx, m.label, m.x + m.r + 6, m.y - m.r, RED, 22, 'left', -0.08);
+                // «TOMT» står allerede i stempelet; de andre merkene peker ut hvilken tank eller hvilket skip.
+                if (m.label !== 'TOMT')
+                    label(ctx, m.label, m.x + m.r + 6, m.y - m.r, RED, 22, 'left', -0.08);
             }
-            if (f.verdict === 'bra') label(ctx, 'HÆR', f.x + FRAME_W / 2 - 34, f.y - FRAME_H / 2 + 18, YELLOW, 20);
+            stamp(ctx, f, 2.6 - f.shownFor);
             ctx.globalAlpha = 1;
         }
-        if (p.warn <= 0 && p.s < p.len) drawPlane(ctx, pos.x, pos.y, Math.atan2(p.dy, p.dx) + Math.PI / 2);
+        if (p.warn <= 0 && p.s < p.len)
+            drawPlane(ctx, pos.x, pos.y, Math.atan2(p.dy, p.dx) + Math.PI / 2);
     }
-    // Kommende kameraruter: gule stiplede rammer med nedtelling.
+    // Kommende kameraruter: gule stiplede rammer med nedtelling. Bare flyet som kommer
+    // først, vises for fullt - de andre er svake, så eleven ser hva som haster.
+    const firstPlane = up.length ? up.reduce((a, b) => (b.eta < a.eta ? b : a)).p.id : -1;
     for (const u of up) {
         const { f, eta } = u;
+        ctx.globalAlpha = u.p.id === firstPlane ? 1 : 0.35;
         const soon = eta < 1.6;
-        const col = soon ? `rgba(241,194,50,${0.7 + 0.3 * Math.sin(T * 14)})` : 'rgba(241,194,50,.8)';
-        crayonRect(ctx, f.x, f.y, FRAME_W, FRAME_H, col, soon ? 4 : 3, Math.floor(f.x * 5 + f.y), [16, 9]);
+        const col = soon
+            ? `rgba(241,194,50,${0.7 + 0.3 * Math.sin(T * 14)})`
+            : 'rgba(241,194,50,.8)';
+        crayonRect(
+            ctx,
+            f.x,
+            f.y,
+            FRAME_W,
+            FRAME_H,
+            col,
+            soon ? 4 : 3,
+            Math.floor(f.x * 5 + f.y),
+            [16, 9]
+        );
         // Hjørnemerker som i en kamerasøker
         ctx.save();
         ctx.fillStyle = 'rgba(15,14,12,.72)';
@@ -806,6 +1060,7 @@ export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform,
         ctx.fillText(`${Math.ceil(eta)}s`, f.x - FRAME_W / 2 + 29, f.y - FRAME_H / 2 + 20);
         ctx.restore();
     }
+    ctx.globalAlpha = 1;
     // Blits når kameraet tar bildet
     for (const fx of g.fx)
         if (fx.kind === 'flash') {
@@ -863,14 +1118,18 @@ export function drawWorld(ctx: CanvasRenderingContext2D, g: Game, tf: Transform,
     ctx.fillText('RB 50/30 · 3000 M · SÜDENGLAND · GEHEIM', 0, 0);
     ctx.restore();
     ctx.restore();
-
 }
 
 // ---------------------------------------------------------------------------
 // HUD: filmkanten, Rommels kart, manometeret og telleren
 // ---------------------------------------------------------------------------
 
-export function drawHud(ctx: CanvasRenderingContext2D, g: Game, tf: Transform, st: { mult: number }) {
+export function drawHud(
+    ctx: CanvasRenderingContext2D,
+    g: Game,
+    tf: Transform,
+    st: { mult: number }
+) {
     const { w, h } = tf;
     const u = Math.max(0.72, Math.min(1.25, Math.min(w / 1366, h / 768) * 1.1));
 
@@ -890,7 +1149,10 @@ export function drawHud(ctx: CanvasRenderingContext2D, g: Game, tf: Transform, s
     ctx.font = `bold ${15 * u}px ${MONO}`;
     ctx.fillStyle = g.day >= DDAY ? YELLOW : '#a9a291';
     const left = Math.max(0, Math.ceil(END_DAY - g.day));
-    const goal = g.day < DDAY ? `D-DAGEN OM ${Math.ceil(DDAY - g.day)} DAGER` : `HOLD UT: ${left} DAGER TIL 25. JULI`;
+    const goal =
+        g.day < DDAY
+            ? `D-DAGEN OM ${Math.ceil(DDAY - g.day)} DAGER`
+            : `HOLD UT: ${left} DAGER TIL 25. JULI`;
     ctx.fillText(goal, 30 * u + dw, bh * 0.62);
     // Framdrift som en filmrull
     const px0 = 30 * u + dw + ctx.measureText(goal).width + 18 * u;
@@ -928,6 +1190,16 @@ export function drawHud(ctx: CanvasRenderingContext2D, g: Game, tf: Transform, s
     ctx.font = `bold ${13 * u}px ${MONO}`;
     ctx.textAlign = 'left';
     ctx.fillText('ROMMELS KART', 10 * u, 16 * u);
+    const kickT = g.kick.t;
+    if (kickT < 1.4 && g.kick.d !== 0) {
+        ctx.globalAlpha = Math.min(1, (1.4 - kickT) * 2);
+        ctx.fillStyle = g.kick.d < 0 ? '#2f6b2f' : RED;
+        ctx.font = `bold ${14 * u}px ${MONO}`;
+        ctx.textAlign = 'right';
+        ctx.fillText(g.kick.d < 0 ? 'TROR PÅ CALAIS' : 'TVILER ...', cw - 10 * u, ch - 10 * u);
+        ctx.textAlign = 'left';
+        ctx.globalAlpha = 1;
+    }
     // Kysten av Frankrike
     ctx.strokeStyle = '#6d675a';
     ctx.lineWidth = 2;
@@ -950,7 +1222,9 @@ export function drawHud(ctx: CanvasRenderingContext2D, g: Game, tf: Transform, s
     // Reservene: en boks med stridsvogner som pila går ut fra.
     const rX = 150 * u;
     const rY = 118 * u;
-    const tro = g.troShown;
+    // Hvert flybilde rykker i pila: tyskerne leste bildene, og troen flyttet seg.
+    const kick = kickT < 0.9 ? g.kick.d * 3 * Math.cos(kickT * 14) * (1 - kickT / 0.9) : 0;
+    const tro = clamp01(g.troShown + kick);
     const tipX = kX + (nX - kX) * tro;
     const tipY = kY + (nY - kY) * tro;
     ctx.fillStyle = INK;
