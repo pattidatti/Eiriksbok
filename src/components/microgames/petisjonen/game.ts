@@ -23,6 +23,10 @@ import {
 } from './geo';
 
 export const RUN_SECONDS = 170;
+/** Sluttfasen etter kongens nei: politiet tar lederne. */
+export const KNUS_SECONDS = 24;
+/** Kongen og bannerne får tid før politiet rir ut. */
+const KNUS_INTRO = 3.2;
 export const GOAL = 13000;
 export const MONTH_SECONDS = 10;
 /** Sekunder rullen må stå på tunet før møtet er holdt. */
@@ -38,7 +42,7 @@ export const MAX_STUCK = 34;
 /** Foreningene kan bli større enn tallene i geo.ts (samlet rundt 30 000 medlemmer). */
 const CAP_SCALE = 1.7;
 /** Andel av stabelen som flyter til rullen per sekund når den er langt unna. */
-const FAR_RATE = 0.035;
+const FAR_RATE = 0.012;
 
 export type Mode = 'menu' | 'play' | 'paused' | 'dying' | 'over';
 export type Cause = 'kort' | 'revet';
@@ -72,6 +76,9 @@ export interface IO {
     timeScale: () => number;
     float: (text: string, x: number, z: number, color?: string, big?: boolean) => void;
     lose: (cause: Cause) => void;
+    /** Petisjonen er levert - sluttfasen (1851) begynner. */
+    delivered: () => void;
+    /** Sluttfasen er over: runden er vunnet. */
     win: () => void;
 }
 
@@ -156,6 +163,11 @@ export interface Stuck {
     kind: number;
 }
 
+export interface Leader {
+    place: number;
+    state: 'venter' | 'skjult' | 'arrestert';
+}
+
 export interface Roll {
     p: XZ;
     v: XZ;
@@ -203,6 +215,14 @@ export interface G {
     done: Set<string>;
     /** Stedene du har startet forening i denne runden (til protokollen). */
     protokoll: string[];
+    /** 'samle' til petisjonen er levert, så 'knusing' (1851): politiet tar lederne. */
+    phase: 'samle' | 'knusing';
+    knusT: number;
+    leaders: Leader[];
+    saved: number;
+    arrested: number;
+    /** Navn i lasset som flyr fra hver forening akkurat nå (for «+1 240 NAVN»). */
+    burst: number[];
     /** Sluttscenen etter kongens nei. */
     crushing: boolean;
     crushClock: number;
@@ -252,7 +272,7 @@ export function hunterSpeed(t: number) {
 
 /** Hvor langt navnene når fra en forening: større forening, lengre elv. */
 export function reach(f: Forening, r: number) {
-    return 3.2 + r + Math.min(9, f.members / 170);
+    return 2.2 + r + Math.min(5, f.members / 300);
 }
 
 /** Rangene går på antall navn. De ekte thranittene fikk 13 000 navn og 30 000 medlemmer. */
@@ -360,6 +380,12 @@ export function newGame(rand: () => number = Math.random): G {
         meetingPlace: -1,
         done: new Set(),
         protokoll: [],
+        phase: 'samle',
+        knusT: 0,
+        leaders: [],
+        saved: 0,
+        arrested: 0,
+        burst: PLACES.map(() => 0),
         crushing: false,
         crushClock: 0,
         rand,
@@ -437,20 +463,10 @@ function found(g: G, i: number, byYou: boolean, io: IO) {
             'Folk startet egne foreninger og valgte sine egne ledere. Da vokste bevegelsen uten at Thrane måtte være der.',
             1
         );
-        if (once(g, 'beat-forening')) {
-            const t0 = Date.now();
-            io.beat(
-                'forening',
-                'Egen forening',
-                'Bygda har egen leder nå. Foreningen verver flere og samler navn til deg - også når du er borte.',
-                () => pl.tun,
-                // Kortet går av seg selv: sakte film skal være et øyeblikk, ikke et minutt.
-                () => Date.now() - t0 > 4500
-            );
-        }
-        else
-            io.pin(`forening-${i}`, 'Egen forening - samler navn', () => pl.tun, {
-                seconds: 3,
+        // Et lite lærings-kort første gang, festet til bygda - uten sakte film.
+        if (once(g, 'pin-forening'))
+            io.pin('forening', 'Egen leder - samler navn til deg', () => pl.tun, {
+                seconds: 4,
                 tone: 'bra',
             });
     } else {
@@ -503,6 +519,138 @@ function tear(g: G, h: Hunter, io: IO) {
     io.float(`-${take} NAVN`, R.p[0], R.p[1], '#ff9d8a', true);
     // Figurer ryker også av.
     g.stuck.splice(0, Math.min(g.stuck.length, 3));
+}
+
+// ---------------------------------------------------------------------------
+// Sluttfasen, 1851: kongen sa nei, og politiet tar lederne
+// ---------------------------------------------------------------------------
+
+function startKnusing(g: G, io: IO) {
+    g.delivered = true;
+    g.phase = 'knusing';
+    g.knusT = 0;
+    g.open = false;
+    g.slips.length = 0;
+    g.leaders = g.places.flatMap((p, i) => (p.forening ? [{ place: i, state: 'venter' as const }] : []));
+    // Bøndene går hjem; embetsmennene blir politi og samles i Christiania.
+    g.hunters.forEach((h, k) => {
+        if (h.kind === 'bonde') {
+            h.active = false;
+            return;
+        }
+        h.active = true;
+        h.born = 0;
+        h.stun = 0;
+        h.p = [HUNTER_HOME[0] + (k % 3) - 1, HUNTER_HOME[1] + Math.floor(k / 3) * 0.8];
+        h.v = [0, 0];
+        h.goal = [...HUNTER_HOME];
+        h.chasing = false;
+        h.place = -1;
+    });
+    io.delivered();
+}
+
+/** Tar politimannen tak i en leder før rullen rekker fram? (brukt av robotene også) */
+export function policeEta(g: G, place: number) {
+    let best = Infinity;
+    const sp = knusSpeed(g);
+    for (const h of g.hunters) {
+        if (h.kind !== 'embetsmann' || !h.active) continue;
+        best = Math.min(best, dist(h.p, PLACES[place].tun) / sp);
+    }
+    return best;
+}
+
+export function knusSpeed(g: G) {
+    return 5.4 + g.knusT * 0.05;
+}
+
+function knusing(g: G, dt: number, io: IO) {
+    const R = g.roll;
+    g.knusT += dt;
+    const live = g.leaders.filter((l) => l.state === 'venter');
+    // Rullen når en forening: lederen gjemmer seg i rullen.
+    for (const l of live) {
+        const tun = PLACES[l.place].tun;
+        if (dist(R.p, tun) < R.r + 1.7) {
+            l.state = 'skjult';
+            g.saved++;
+            g.score += 500;
+            R.bump = 1;
+            io.sfx.found();
+            io.float('LEDER I SKJUL +500', tun[0], tun[1], '#b3261e', true);
+            if (g.stuck.length < MAX_STUCK)
+                g.stuck.push({ ang: -R.spin, along: 0, wob: g.rand() * 6, kind: 0 });
+        }
+    }
+    if (g.knusT > KNUS_INTRO) {
+        const sp = knusSpeed(g);
+        for (const h of g.hunters) {
+            if (h.kind !== 'embetsmann' || !h.active) continue;
+            h.born = Math.min(1, h.born + dt);
+            // Mål: nærmeste leder som venter og som ingen annen politimann går mot.
+            if (h.place < 0 || g.leaders.find((l) => l.place === h.place)?.state !== 'venter') {
+                let best = -1;
+                let bd = Infinity;
+                for (const l of g.leaders) {
+                    if (l.state !== 'venter') continue;
+                    const taken = g.hunters.some((o) => o !== h && o.place === l.place);
+                    const d = dist(h.p, PLACES[l.place].tun) + (taken ? 30 : 0);
+                    if (d < bd) {
+                        bd = d;
+                        best = l.place;
+                    }
+                }
+                if (best !== h.place && best >= 0) g.valg++;
+                h.place = best;
+            }
+            if (h.place < 0) {
+                h.v = [0, 0];
+                h.chasing = false;
+                continue;
+            }
+            const tun = PLACES[h.place].tun;
+            const dx = tun[0] - h.p[0];
+            const dz = tun[1] - h.p[1];
+            const d = Math.hypot(dx, dz) || 1;
+            h.chasing = true;
+            h.v = [(dx / d) * sp, (dz / d) * sp];
+            h.p[0] += h.v[0] * dt;
+            h.p[1] += h.v[1] * dt;
+            if (d < 1.3) {
+                const l = g.leaders.find((x) => x.place === h.place);
+                if (l && l.state === 'venter') {
+                    l.state = 'arrestert';
+                    g.arrested++;
+                    arrest(g, h.place);
+                    io.sfx.tear();
+                    io.float('ARRESTERT', tun[0], tun[1], '#1c1915', true);
+                    io.lesson(
+                        'knust',
+                        'I 1851 arresterte politiet Thrane og de andre lederne. Den som meldte seg ut raskt, slapp. Bevegelsen ble knust.',
+                        100
+                    );
+                }
+                h.place = -1;
+            }
+        }
+    }
+    g.press = Math.min(1, 0.65 + 0.35 * (g.knusT / KNUS_SECONDS));
+    if (g.knusT >= KNUS_SECONDS || !g.leaders.some((l) => l.state === 'venter')) {
+        for (const l of g.leaders)
+            if (l.state === 'venter') {
+                l.state = 'arrestert';
+                g.arrested++;
+            }
+        io.win();
+    }
+}
+
+/** Foreningen slukner: lederen er tatt, og medlemmene melder seg ut. */
+function arrest(g: G, place: number) {
+    g.places[place].forening = null;
+    g.places[place].flash = 1;
+    for (const p of g.people) if (p.place === place && p.state === 'medlem') p.state = 'står';
 }
 
 // ---------------------------------------------------------------------------
@@ -597,6 +745,11 @@ export function update(g: G, dt: number, io: IO) {
     R.invuln = Math.max(0, R.invuln - dt);
     R.bump = Math.max(0, R.bump - dt * 3);
     g.shake = Math.max(0, g.shake - dt * 2);
+
+    if (g.phase === 'knusing') {
+        knusing(g, dt, io);
+        return;
+    }
 
     // --- husmenn: rull inn i dem ---
     for (const p of g.people) {
@@ -736,10 +889,16 @@ export function update(g: G, dt: number, io: IO) {
             const every = 0.07;
             while (f.slipClock >= every && f.pile >= 1) {
                 f.slipClock -= every;
-                const take = Math.min(f.pile, Math.max(2, Math.round(f.pile * 0.07)));
+                // Lasset: hele stabelen flyr til rullen på et drøyt sekund.
+                const take = Math.min(f.pile, Math.max(3, Math.round(f.pile * 0.16)));
                 f.pile -= take;
                 f.signed += take;
+                g.burst[i] += take;
                 f.fullNoted = f.pile > 280 && f.fullNoted;
+                if (f.pile < 1 && g.burst[i] >= 40) {
+                    io.float(`+${Math.round(g.burst[i])} NAVN`, PLACES[i].tun[0], PLACES[i].tun[1], '#b3261e', true);
+                    g.burst[i] = 0;
+                }
                 const from = PLACES[i].tun;
                 if (g.slips.length < MAX_SLIPS)
                     g.slips.push({
@@ -754,6 +913,7 @@ export function update(g: G, dt: number, io: IO) {
             }
         } else {
             f.slipClock = 0;
+            g.burst[i] = 0;
             // Langt unna: en tynn elv av navnelapper over kartet, hele tiden. Nær
             // foreningen blir elva en flom.
             f.farClock += dt;
@@ -920,17 +1080,14 @@ export function update(g: G, dt: number, io: IO) {
         io.float('PORTEN LUKKES', SLOTTET[0], SLOTTET[1], '#ff9d8a', true);
     }
     if (g.open && dist(R.p, SLOTTET) < SLOTTET_R + r) {
-        g.delivered = true;
-        io.win();
+        startKnusing(g, io);
         return;
     }
 
     // --- mai 1850 ---
     if (g.t >= RUN_SECONDS) {
-        if (R.names >= GOAL) {
-            g.delivered = true;
-            io.win();
-        } else io.lose('kort');
+        if (R.names >= GOAL) startKnusing(g, io);
+        else io.lose('kort');
         return;
     }
 

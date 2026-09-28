@@ -109,6 +109,7 @@ const GEO = {
         { geometry: ball(0.15), position: [0, 1.12, 0], color: '#e6d3b2' },
         { geometry: cyl(0.25, 0.25, 0.035, 10), position: [0, 1.25, 0], color: '#141210' },
         { geometry: cyl(0.15, 0.16, 0.4, 10), position: [0, 1.46, 0], color: '#141210' },
+        { geometry: cyl(0.165, 0.165, 0.08, 10), position: [0, 1.32, 0], color: RED },
     ]),
     bonde: mergeParts([
         { geometry: box(0.3, 0.4, 0.2), position: [0, 0.2, 0], color: '#2c261f' },
@@ -117,6 +118,7 @@ const GEO = {
         { geometry: ball(0.15), position: [0, 1.04, 0], color: '#e6d3b2' },
         { geometry: cyl(0.26, 0.26, 0.035, 10), position: [0, 1.17, 0], color: '#141210' },
         { geometry: cyl(0.15, 0.16, 0.32, 10), position: [0, 1.34, 0], color: '#141210' },
+        { geometry: cyl(0.165, 0.165, 0.08, 10), position: [0, 1.23, 0], color: RED },
     ]),
     slottet: mergeParts([
         { geometry: box(8, 2.6, 3.2), position: [0, 1.3, 0], color: '#dccfb2' },
@@ -426,7 +428,7 @@ export function PlaceMarks({ gRef }: { gRef: GRef }) {
             } else hide(fl, i);
             // Stabelen med navn som venter i låven.
             if (f && f.pile >= 1) {
-                const h = 0.06 + Math.min(1.8, f.pile / 260);
+                const h = 0.08 + Math.min(3.4, f.pile / 200);
                 put(pi, i, x - 1.7, h / 2, z + 0.4, 0.3, 1, 0, 0, h);
             } else hide(pi, i);
             // Prikker: hvor mange fra bygda som er med på rullen.
@@ -441,8 +443,10 @@ export function PlaceMarks({ gRef }: { gRef: GRef }) {
                 if (show && !on) put(ho, idx, ox, y, z - 2.4, 0, 0.55);
                 else hide(ho, idx);
             }
-            // Klar for møte: lysende ring og lykt, og en skive som fylles under møtet.
-            if (ps.klar && !f) {
+            // Klar for møte (eller i 1851: lederen venter): lysende ring og lykt.
+            const waiting =
+                g.phase === 'knusing' && g.leaders.some((l) => l.place === i && l.state === 'venter');
+            if ((ps.klar && !f) || waiting) {
                 const pulse = 2.5 + Math.sin(t * 5) * 0.12;
                 put(ri, i, x, 0.08, z, 0, pulse, 0, 0, 1);
                 put(la, i, px, 3.2, pz, 0, 1 + Math.sin(t * 7) * 0.12);

@@ -2,7 +2,7 @@
 // som når eleven peker med musa - bare uten piksel-sikting.
 
 import { PLACES, SLOTTET, HALF_W, HALF_D, dist, type XZ } from './geo';
-import { setTarget, reach, type G } from './game';
+import { setTarget, reach, rollSpeed, policeEta, type G } from './game';
 
 export type BotStyle = 'seende' | 'halvgod' | 'alene' | 'tilfeldig';
 
@@ -191,6 +191,25 @@ export function botTick(g: G, style: BotStyle) {
         if (!m.last || g.rand() < 0.3)
             m.last = [(g.rand() - 0.5) * HALF_W * 2, (g.rand() - 0.5) * HALF_D * 2];
         setTarget(g, m.last);
+        return;
+    }
+
+    if (g.phase === 'knusing') {
+        // 1851: nærmeste leder som politiet ikke rekker først (den halvgode tar bare nærmeste).
+        let best: XZ | null = null;
+        let bv = Infinity;
+        const mySpeed = rollSpeed(R.r);
+        for (const l of g.leaders) {
+            if (l.state !== 'venter') continue;
+            const tun = PLACES[l.place].tun;
+            const mine = dist(R.p, tun) / mySpeed;
+            const v = style === 'seende' && policeEta(g, l.place) < mine ? mine + 50 : mine;
+            if (v < bv) {
+                bv = v;
+                best = tun;
+            }
+        }
+        setTarget(g, best ?? R.p);
         return;
     }
 

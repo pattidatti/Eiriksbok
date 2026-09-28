@@ -337,11 +337,14 @@ const CSS = `
 .pt-names span{font-size:12px;letter-spacing:.1em}
 .pt-bar{position:relative;height:6px;margin:5px 0 5px;border:1.5px solid ${INK};background:#e3d5b5}
 .pt-bar>div{position:absolute;left:0;top:0;bottom:0;background:${INK};transition:width .25s}
+.pt-bar>.pt-ghost{background:repeating-linear-gradient(135deg,${RED} 0 2px,transparent 2px 5px);opacity:.75}
+.pt-piles{display:block;font-size:11px;color:${RED};font-style:italic;letter-spacing:.04em;height:12px;margin-top:1px}
 .pt-bar>i{position:absolute;top:-4px;bottom:-4px;width:2px;background:${RED}}
 .pt-sub{position:absolute;left:12px;top:78px;font-family:${SERIF};color:${INK};font-size:12.5px;background:rgba(239,228,204,.92);border:1.5px solid ${INK};padding:4px 9px 5px;pointer-events:none;line-height:1.35}
 .pt-sub b{font-size:15px}
-.pt-proto{position:absolute;left:12px;bottom:12px;display:flex;flex-wrap:wrap;gap:4px;max-width:46%;pointer-events:none}
-.pt-proto-label{width:100%;font-family:${SERIF};font-size:11px;font-style:italic;color:${INK};background:rgba(239,228,204,.85);padding:0 4px;align-self:flex-start;width:auto;flex-basis:100%}
+.pt-proto{position:absolute;left:12px;top:128px;display:flex;flex-wrap:wrap;gap:3px;max-width:250px;pointer-events:none}
+.pt-proto .pt-stamp{width:27px;height:27px;font-size:8.5px;border-width:2px}
+.pt-proto-label{flex-basis:100%;font-family:${SERIF};font-size:11px;font-style:italic;color:${INK};text-shadow:0 0 3px ${PAPER},0 0 3px ${PAPER}}
 .pt-stamp{width:34px;height:34px;border-radius:50%;border:2.5px solid ${RED};color:${RED};font-family:${SERIF};font-weight:700;font-size:10px;display:flex;align-items:center;justify-content:center;background:rgba(239,228,204,.85);transform:rotate(-8deg);letter-spacing:.04em;animation:ptStamp .35s cubic-bezier(.2,1.6,.4,1) both}
 .pt-stamp.verv{border-style:dashed;opacity:.8}
 @keyframes ptStamp{from{transform:rotate(-30deg) scale(2.2);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
@@ -388,6 +391,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
     const hud = {
         names: useRef<HTMLElement>(null),
         bar: useRef<HTMLDivElement>(null),
+        ghost: useRef<HTMLDivElement>(null),
+        piles: useRef<HTMLElement>(null),
         date: useRef<HTMLElement>(null),
         left: useRef<HTMLElement>(null),
         fore: useRef<HTMLElement>(null),
@@ -440,7 +445,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             wins: s.wins + (won ? 1 : 0),
             protokoll: proto,
         }));
-        const d = dateOf(g.t);
+        const d = dateOf(Math.min(g.t, RUN_SECONDS));
         const own = g.foundedByYou + g.recruited;
         const tip = won
             ? ''
@@ -455,7 +460,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             newBest: score > prev.best,
             rank: rankFor(RANKS, won ? Math.max(names, GOAL) : names),
             msg: won
-                ? `Du leverte ${nb(names)} navn (${d.m} ${d.y}). De ekte thranittene leverte nesten 13 000 navn i mai 1850. Kongen sa nei til alle de ti kravene, og Stortinget sa også nei.`
+                ? `Du leverte ${nb(names)} navn, og kongen sa nei - slik han gjorde i mai 1850. I 1851 fikk du ${g.saved} av ${g.saved + g.arrested} ledere i skjul. I virkeligheten ble Thrane og 148 andre dømt.`
                 : DEATH[cause].replace('{n}', nb(names)).replace('{dato}', `${d.m[0].toUpperCase()}${d.m.slice(1)} ${d.y}`),
             tip,
             lessons: text.lessons(3),
@@ -494,19 +499,17 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             text.banner(cause === 'revet' ? 'PETISJONEN REVET' : 'FOR FÅ NAVN', INK, 2.4);
             window.setTimeout(() => endRun(false, cause), 2600);
         },
-        win: () => {
-            if (modeRef.current !== 'play') return;
+        delivered: () => {
             const g = gRef.current;
             winStats.current = { f: foreningCount(g), m: members(g) };
             sfx.win();
-            setModeBoth('dying');
-            text.banner('PETISJONEN LEVERT', RED, 1.8);
+            text.banner('PETISJONEN LEVERT', RED, 1.6);
             text.lesson(
                 'kongen',
-                'Kongen og Stortinget sa nei til alle ti kravene. I juli 1851 ble Thrane arrestert, og allmenn stemmerett for menn kom først i 1898.',
+                'Kongen og Stortinget sa nei til alle ti kravene. Allmenn stemmerett for menn kom først i 1898.',
                 100
             );
-            // Så sier kongen nei. Porten smeller, og rullen rives i filler.
+            // Kongen sier nei: porten smeller, og rullen blir revet i filler.
             window.setTimeout(() => {
                 sfx.nei();
                 buzz([60, 40, 120]);
@@ -519,15 +522,46 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                         life: 2 + Math.random(),
                         spin: Math.random() * 10,
                     });
-                text.banner('KONGEN SIER NEI', INK, 2.2);
-            }, 1900);
-            // Så knuses bevegelsen: embetsmennene rir ut, og foreningene slukner.
+                text.banner('KONGEN SIER NEI', INK, 1.6);
+            }, 1500);
+            // 1851: politiet rir ut for å ta lederne. Eleven kan redde noen - ikke bevegelsen.
+            window.setTimeout(() => {
+                if (modeRef.current !== 'play') return;
+                sfx.hunter();
+                text.banner('1851: POLITIET KOMMER', INK, 2);
+                const t0 = Date.now();
+                const near = () => {
+                    const gg = gRef.current;
+                    let best: [number, number] | null = null;
+                    let bd = Infinity;
+                    for (const l of gg.leaders) {
+                        if (l.state !== 'venter') continue;
+                        const tun = PLACES[l.place].tun;
+                        const d = Math.hypot(tun[0] - gg.roll.p[0], tun[1] - gg.roll.p[1]);
+                        if (d < bd) {
+                            bd = d;
+                            best = tun;
+                        }
+                    }
+                    return best;
+                };
+                text.beatOnce(
+                    'politi',
+                    'Politiet tar lederne',
+                    'Kongen sa nei, og nå arresterer politiet lederne. Rull til foreningene og få lederne i skjul før politiet kommer.',
+                    { at: toScreen(near), until: () => Date.now() - t0 > 4500 }
+                );
+            }, 2900);
+        },
+        win: () => {
+            if (modeRef.current !== 'play') return;
+            const g = gRef.current;
+            setModeBoth('dying');
+            text.banner('BEVEGELSEN ER KNUST', INK, 2.2);
             window.setTimeout(() => {
                 g.crushing = true;
-                sfx.hunter();
-                text.banner('JULI 1851: THRANE ARRESTERT', INK, 2.6);
-            }, 4300);
-            window.setTimeout(() => endRun(true, 'kort'), 7600);
+            }, 600);
+            window.setTimeout(() => endRun(true, 'kort'), 3000);
         },
     };
     const ioRef = useRef(io);
@@ -541,12 +575,28 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             const n = g.roll.names;
             if (hud.names.current) hud.names.current.textContent = nb(n);
             if (hud.bar.current) hud.bar.current.style.width = `${Math.min(100, (n / GOAL) * 100)}%`;
+            // Navnene som ligger klare i stablene ved låvene: lovet, men ikke hentet.
+            let piles = 0;
+            for (const p of g.places) if (p.forening) piles += p.forening.pile;
+            if (hud.ghost.current)
+                hud.ghost.current.style.width = `${Math.min(100, ((n + piles) / GOAL) * 100)}%`;
+            if (hud.piles.current)
+                hud.piles.current.textContent =
+                    piles >= 20 && g.phase === 'samle' ? `+ ${nb(piles)} i stablene` : '';
             const d = dateOf(g.t);
-            if (hud.date.current) hud.date.current.textContent = `${d.m} ${d.y}`;
+            if (hud.date.current)
+                hud.date.current.textContent = g.phase === 'knusing' ? 'juli 1851' : `${d.m} ${d.y}`;
             if (hud.left.current) {
                 const months = Math.max(0, 17 - d.i);
+                const waiting = g.leaders.filter((l) => l.state === 'venter').length;
                 hud.left.current.textContent =
-                    g.open ? 'Lever på Slottet!' : months > 0 ? `${months} måneder til mai 1850` : 'Mai 1850!';
+                    g.phase === 'knusing'
+                        ? `${g.saved} ledere i skjul · ${waiting} venter`
+                        : g.open
+                          ? 'Lever på Slottet!'
+                          : months > 0
+                            ? `${months} måneder til mai 1850`
+                            : 'Mai 1850!';
             }
             if (hud.fore.current) hud.fore.current.textContent = String(foreningCount(g));
             if (hud.memb.current) hud.memb.current.textContent = nb(members(g));
@@ -628,7 +678,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             },
         });
         return {
-            maksSekunder: RUN_SECONDS + 20,
+            maksSekunder: RUN_SECONDS + 55,
             snapshot: () => {
                 const g = gRef.current;
                 const m = modeRef.current;
@@ -636,7 +686,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                 return {
                     fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
                     poeng: m === 'over' && o ? o.score : liveScore(g),
-                    framdrift: Math.min(1, g.roll.names / GOAL),
+                    framdrift:
+                        g.phase === 'knusing' ? 1 : Math.min(1, g.roll.names / GOAL),
                     tid: g.t,
                     valg: g.valg,
                     press: g.press,
@@ -780,9 +831,11 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                             </div>
                             <div className="pt-names">
                                 <b ref={hud.names}>0</b> <span>/ 13 000 NAVN</span>
+                                <em ref={hud.piles} className="pt-piles" />
                             </div>
                         </div>
                         <div className="pt-bar">
+                            <div ref={hud.ghost} className="pt-ghost" style={{ width: '0%' }} />
                             <div ref={hud.bar} style={{ width: '0%' }} />
                             <i style={{ right: 0 }} />
                         </div>
@@ -952,6 +1005,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
                                 <span className="arc-display" style={{ fontSize: 28, lineHeight: 1 }}>
                                     {nb(result.score)}
+                                    <small style={{ fontSize: 11, marginLeft: 5, letterSpacing: '.1em' }}>poeng</small>
                                 </span>
                                 {result.newBest && (
                                     <span className="arc-display arc-pill arc-wig" style={{ fontSize: 11 }}>
