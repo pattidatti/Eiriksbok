@@ -265,6 +265,27 @@ function feelStats(samples) {
     return { valgPerMin, pressFirst, pressMid: pressMid ?? pressFirst, pressLast: pressLast ?? pressFirst };
 }
 
+/**
+ * Skjermbilde av spillvinduet via CDP. Playwrights elementHandle.screenshot() venter på at
+ * fonter er lastet og at elementet står stille; med et canvas som tegner hvert bilde og
+ * fonter som ikke finnes på CI-maskinen, kan den ventingen aldri bli ferdig (28.09: tidsavbrudd
+ * i CI for inn-mot-stranda, mens spillet selv var i orden).
+ */
+async function stageShot(page) {
+    const el = await page.$('[data-mg-stage]');
+    const box = el && (await el.boundingBox());
+    const cdp = await page.context().newCDPSession(page);
+    try {
+        const r = await cdp.send('Page.captureScreenshot', {
+            format: 'png',
+            ...(box ? { clip: { x: box.x, y: box.y, width: box.width, height: box.height, scale: 1 } } : {}),
+        });
+        return Buffer.from(r.data, 'base64');
+    } finally {
+        await cdp.detach().catch(() => {});
+    }
+}
+
 async function playRound(...a) {
     for (let i = 0; i < 3; i++) {
         let r;
@@ -401,8 +422,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
                 shotPlan.coverDone = true;
                 const style = await page.addStyleTag({ content: '[data-mg-stage] *:not(canvas):not(:has(canvas)){visibility:hidden!important}' });
                 await page.waitForTimeout(120);
-                const stage = await page.$('[data-mg-stage]');
-                const buf = await stage.screenshot();
+                const buf = await stageShot(page);
                 await style.evaluate((el) => el.remove());
                 const dir = path.join(root, 'public/images/microgames');
                 mkdirSync(dir, { recursive: true });
@@ -415,8 +435,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
                 const t = (Date.now() - t0 - startMs) / 1000;
                 const due = shotPlan.times[shots.length];
                 if (due !== undefined && t >= due) {
-                    const stage = await page.$('[data-mg-stage]');
-                    const buf = await stage.screenshot();
+                    const buf = await stageShot(page);
                     writeFileSync(path.join(shotsDir, `${shotPlan.prefix}-${String(shots.length + 1).padStart(2, '0')}-${due}s.png`), buf);
                     shots.push(buf);
                 }
@@ -449,7 +468,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
     }
     if (done && shotsDir) {
         const stage = await page.$('[data-mg-stage]');
-        if (stage) writeFileSync(path.join(shotsDir, `${bot ?? 'passiv'}-slutt.png`), await stage.screenshot());
+        if (stage) writeFileSync(path.join(shotsDir, `${bot ?? 'passiv'}-slutt.png`), await stageShot(page));
     }
     return { lessons, takt, arsak: snap?.årsak ?? null, feel: feelStats(feel), coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
 }
@@ -521,7 +540,7 @@ async function playtestGame(browser, id) {
         rep.notes.push((await isFull()) ? 'spilt i fullskjerm' : 'IKKE i fullskjerm - nettleseren avviste det, spilt i spalten');
         await page.evaluate(() => document.querySelector('[data-mg-stage]')?.scrollIntoView({ block: 'center' }));
         await page.waitForTimeout(1500);
-        writeFileSync(path.join(dir, 'meny.png'), await (await page.$('[data-mg-stage]')).screenshot());
+        writeFileSync(path.join(dir, 'meny.png'), await stageShot(page));
 
         // RASKT I GANG: en synlig knapp i spillvinduet på startskjermen.
         const knapper = await page.$$eval('[data-mg-stage] button', (bs) =>
