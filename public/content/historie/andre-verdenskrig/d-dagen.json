@@ -110,6 +110,13 @@
       "content": "Hos tyskerne var det kaos. Flere av de tyske sjefene, blant dem Rommel, var ikke i hovedkvarteret sitt den natta. Hitler sov, og ingen turte å vekke ham. Da han våknet, ventet han fire og en halv time før han ga lov til å sende de viktigste reservene. Reserver er soldater og stridsvogner som holdes klare bak fronten. Mange tyske ledere trodde nemlig at Normandie bare var et skinnangrep, altså et angrep for å lure dem, og at det virkelige angrepet ville komme ved Calais (Hatlehol, 2025a). Bløffen virket."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "fortitude"
+      }
+    },
+    {
       "type": "header",
       "text": "Fem strender"
     },

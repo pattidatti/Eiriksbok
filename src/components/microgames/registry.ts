@@ -233,6 +233,7 @@ const OverVolga3D = lazy(() => import('./OverVolga3D'));
 const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
+const Fortitude = lazy(() => import('./Fortitude'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2302,6 +2303,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         cover: '/images/microgames/plottebordet-3d.webp',
         loader: () => import('./Plottebordet3D'),
         Component: Plottebordet3D as never,
+    },
+    'fortitude': {
+        id: 'fortitude',
+        title: 'Spøkelseshæren',
+        description:
+            'England, mai 1944. Du styrer bløffen før D-dagen. Tyske spionfly fotograferer kysten, og tyskerne tror på det kameraet ser. Hold inne på gummistridsvognene ved Dover så de står stramme når kamerastripa kommer, kast kamuflasjenett over de ekte troppene ved Portsmouth, og send falske radiomeldinger når tyskerne lytter. Ser de en slapp gummitank eller ekte soldater, ruller panserreservene fra Calais mot Normandie. Lyspæra: D-dagen lyktes blant annet fordi tyskerne ventet angrepet på feil sted.',
+        estimatedSeconds: 170,
+        sjanger: 'vedlikehold-stealth',
+        tone: 'alvorlig',
+        hook: 'Du er bløffmakeren. Få tyskerne til å vente ved Calais!',
+        cover: '/images/microgames/fortitude.webp',
+        kunst: 'Tyske flyfoto fra 1944: sølvkorn i gråtoner, datastripe på filmkanten, rød og hvit fettstift',
+        loader: () => import('./Fortitude'),
+        Component: Fortitude as never,
     },
 };
 
