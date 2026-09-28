@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeLocalStorage } from '../utils/safeStorage';
 import type { ReviewItem, ReviewSessionRecord, ReviewStreak } from '../types/review';
 import { addDays, gradeLeitner } from '../utils/reviewScheduler';
 import { useProgressStore } from '../features/progress/useProgressStore';
@@ -183,7 +184,7 @@ export const useReviewStore = create<ReviewState>()(
         }),
         {
             name: STORAGE_KEY,
-            storage: createJSONStorage(() => localStorage),
+            storage: createJSONStorage(() => safeLocalStorage),
             version: 1,
         }
     )

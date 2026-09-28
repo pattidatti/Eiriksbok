@@ -1,5 +1,5 @@
 // Fire-and-forget-innsamling til «Dagens økt»-køen. Kalles fra Quiz,
-// FlashcardPage og LearningPathV2 med én linje hver. Alle funksjoner er
+// FlashcardPage og LearningPathV3 med én linje hver. Alle funksjoner er
 // pakket i try/catch - innsamling skal aldri kunne krasje en vertsfunksjon.
 
 import { useReviewStore } from '../stores/useReviewStore';

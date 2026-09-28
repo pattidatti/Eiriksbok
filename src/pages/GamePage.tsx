@@ -1,4 +1,4 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, Link, useSearchParams } from 'react-router-dom';
 import { Suspense } from 'react';
 import { GameCanvas } from '../games/engine/components/GameCanvas';
 import { skjoldborgConfig } from '../games/skjoldborg/SkjoldborgConfig';
@@ -39,29 +39,50 @@ function GameLoader({ gameId }: { gameId: string }) {
     return <GameCanvas config={config} />;
 }
 
+// Startet fra en læringssti (?fra=/historie/...&stasjon=...): vis en vei tilbake til
+// stasjonen eleven kom fra. Bare interne stier godtas.
+function BackToPath() {
+    const [params] = useSearchParams();
+    const fra = params.get('fra');
+    if (!fra || !fra.startsWith('/') || fra.startsWith('//')) return null;
+    const stasjon = params.get('stasjon');
+    const to = stasjon ? `${fra}?stasjon=${encodeURIComponent(stasjon)}` : fra;
+    return (
+        <Link
+            to={to}
+            className="fixed left-1/2 -translate-x-1/2 top-[4.75rem] z-[60] inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-bold text-slate-800 shadow-lg ring-1 ring-slate-200 backdrop-blur hover:bg-white"
+        >
+            ← Tilbake til læringsstien
+        </Link>
+    );
+}
+
 export function GamePage() {
     const { gameId } = useParams<{ gameId: string }>();
     if (!gameId) return <Navigate to="/oving/spill" replace />;
 
     return (
-        <Suspense
-            fallback={
-                <div
-                    className="flex items-center justify-center"
-                    style={{
-                        height: 'calc(100dvh - 4rem)',
-                        background: '#0a0604',
-                        color: '#d4a574',
-                        fontFamily: "Georgia, serif",
-                        fontSize: 18,
-                        letterSpacing: 2,
-                    }}
-                >
-                    Laster spill...
-                </div>
-            }
-        >
-            <GameLoader gameId={gameId} />
-        </Suspense>
+        <>
+            <BackToPath />
+            <Suspense
+                fallback={
+                    <div
+                        className="flex items-center justify-center"
+                        style={{
+                            height: 'calc(100dvh - 4rem)',
+                            background: '#0a0604',
+                            color: '#d4a574',
+                            fontFamily: 'Georgia, serif',
+                            fontSize: 18,
+                            letterSpacing: 2,
+                        }}
+                    >
+                        Laster spill...
+                    </div>
+                }
+            >
+                <GameLoader gameId={gameId} />
+            </Suspense>
+        </>
     );
 }

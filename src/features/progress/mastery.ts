@@ -42,7 +42,7 @@ export const qualityLevelFor = (quality: number): QualityLevel =>
 
 // Læringssti-verktøy og tidsreiser regnes ikke som «artikler»
 const isArticleLayout = (layout?: string): boolean =>
-    layout !== 'learning-path' && layout !== 'learning-path-v2' && layout !== 'tool';
+    layout !== 'learning-path' && layout !== 'learning-path-v3' && layout !== 'tool';
 
 const lessonPathsForTopic = (subjectId: string, topic: ManifestTopic): string[] => {
     const paths: string[] = [];

@@ -9,7 +9,7 @@ export interface LearningPathMetadata {
     readTime?: string;
     path: string;
     fileRelativePath: string;
-    version?: 1 | 2;
+    version?: 1 | 3;
 }
 
 export interface LearningPathRegistry {

@@ -13,7 +13,7 @@ import type { ActivityEvent } from '../types';
 
 // Layout-typer som ikke er «ekte» artikler (stier/verktøy). Holdes i synk med
 // samme filter i mastery.ts og history.ts.
-const NON_ARTICLE_LAYOUTS = new Set(['tool', 'learning-path', 'learning-path-v2']);
+const NON_ARTICLE_LAYOUTS = new Set(['tool', 'learning-path', 'learning-path-v3']);
 const isArticleLayout = (layout?: string): boolean =>
     !layout || !NON_ARTICLE_LAYOUTS.has(layout);
 

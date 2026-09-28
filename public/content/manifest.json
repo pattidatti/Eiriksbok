@@ -6797,19 +6797,10 @@
             {
               "id": "romerriket-sti",
               "title": "Læringssti: Romerriket",
-              "description": "Bli med legionæren Markus, keiser Augustus og gladiatoren Spartacus på en reise gjennom Romerriket.",
+              "description": "Tolv steg med spill, 3D-oppdrag og spørsmål du kan svare på rett i stien. Fra Romas første landsbyer til den siste keiseren.",
               "link": "/historie/romerriket/romerriket-sti",
               "icon": "map",
               "createdDate": "2025-12-22T21:35:57+01:00",
-              "lastUpdated": "2026-08-01T15:55:34+02:00"
-            },
-            {
-              "id": "romerriket-sti-v2",
-              "title": "Læringssti: Romerriket (V2 – pilot)",
-              "description": "Ny sti-motor med ekte læringsbevis: lesning med forståelsessjekk, tidsreise, refleksjon og en avsluttende tidslinje du bygger selv.",
-              "link": "/historie/romerriket/romerriket-sti-v2",
-              "icon": "map",
-              "createdDate": "2026-05-27T00:00:00+02:00",
               "lastUpdated": "2026-08-01T15:55:34+02:00"
             }
           ],

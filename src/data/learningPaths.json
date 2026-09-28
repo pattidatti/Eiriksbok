@@ -1,33 +1,7 @@
 {
-  "updatedAt": "2026-08-13T07:54:53.376Z",
-  "count": 22,
+  "updatedAt": "2026-09-28T09:17:29.992Z",
+  "count": 21,
   "paths": [
-    {
-      "id": "romerriket-sti",
-      "title": "Læringssti: Romerriket",
-      "description": "Bli med på en tidsreise fra en liten landsby på sju høyder til et verdensrike som formet historien. Du vil leve som legionær, keiser og gladiator.",
-      "subjectId": "historie",
-      "subjectName": "Historie",
-      "topicId": "romerriket",
-      "year": "753 f.Kr - 476 e.Kr",
-      "readTime": "3-4 timer",
-      "path": "/historie/romerriket/romerriket-sti",
-      "fileRelativePath": "historie/romerriket/romerriket-sti.json",
-      "version": 1
-    },
-    {
-      "id": "romerriket-sti-v2",
-      "title": "Læringssti: Romerriket (V2)",
-      "description": "Pilot for den nye sti-motoren. Du leser, øver, reflekterer og bygger en tidslinje - hver oppgave verifiserer at du har lært før du går videre.",
-      "subjectId": "historie",
-      "subjectName": "Historie",
-      "topicId": "romerriket",
-      "year": "753 f.Kr - 476 e.Kr",
-      "readTime": "1,5-2 timer",
-      "path": "/historie/romerriket/romerriket-sti-v2",
-      "fileRelativePath": "historie/romerriket/romerriket-sti-v2.json",
-      "version": 2
-    },
     {
       "id": "vikingtiden-sti",
       "title": "Læringssti: Vikingtiden",
@@ -40,6 +14,19 @@
       "path": "/historie/vikingtiden/vikingtiden-sti",
       "fileRelativePath": "historie/vikingtiden/vikingtiden-sti.json",
       "version": 1
+    },
+    {
+      "id": "romerriket-sti",
+      "title": "Læringssti: Romerriket",
+      "description": "Reis gjennom 1200 år med romersk historie. Du bygger Roma, marsjerer med legionen, er til stede når Cæsar blir drept, og ser riket falle.",
+      "subjectId": "historie",
+      "subjectName": "Historie",
+      "topicId": "romerriket",
+      "year": "753 fvt. - 476 evt.",
+      "readTime": "ca. 2,5 timer",
+      "path": "/historie/romerriket/romerriket-sti",
+      "fileRelativePath": "historie/romerriket/romerriket-sti.json",
+      "version": 3
     },
     {
       "id": "svartedauden-sti",

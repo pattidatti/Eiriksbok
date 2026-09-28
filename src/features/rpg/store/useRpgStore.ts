@@ -11,7 +11,8 @@
 // progresjonssystemet.
 
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeLocalStorage } from '../../../utils/safeStorage';
 import { useProgressStore } from '../../progress/useProgressStore';
 import { BEGREP_BY_ID } from '../data/begreper';
 import {
@@ -908,6 +909,7 @@ export const useRpgStore = create<RpgState>()(
         }),
         {
             name: 'rpg-minnevokteren-v1',
+            storage: createJSONStorage(() => safeLocalStorage),
             version: LAGRING_VERSJON,
             // Bare data lagres, og i den formen `SaveState` beskriver. Før ble
             // hele staten - inkludert alle handlingene - sendt gjennom

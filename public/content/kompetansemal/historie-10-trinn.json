@@ -45,7 +45,8 @@
                     { "tittel": "Operasjon Ajax: Da oljen ble verdt et kupp", "link": "/historie/den-kalde-krigen/operasjon-ajax", "begrunnelse": "Dekker Kilder og kildekritikk" }
                 ],
                 "stier": [
-                    { "tittel": "Læringssti: Kildeføring (APA 7)", "link": "/laeringsstier", "begrunnelse": "Lære korrekt kildebruk og referansehåndtering." }
+                    { "tittel": "Læringssti: Kildeføring (APA 7)", "link": "/laeringsstier", "begrunnelse": "Lære korrekt kildebruk og referansehåndtering." },
+                    { "tittel": "Læringssti: Romerriket", "link": "/historie/romerriket/romerriket-sti", "begrunnelse": "Dypdykkene lar eleven vurdere kilder: Cæsars egen krigsbok, veggskrift fra Pompeii og det fiendtlige bildet av Caligula." }
                 ],
                 "detektiv": [
                     { "tittel": "Sabotasjen på Vemork", "link": "/oving/detektiv/tungtvann", "begrunnelse": "Vurder samtidskilder mot etterkrigstidens beretninger." },
@@ -82,7 +83,8 @@
                 ],
                 "stier": [
                     { "tittel": "Læringssti: Vikingtiden", "link": "/historie/vikingtiden/vikingtiden-sti" },
-                    { "tittel": "Læringssti: Den Kalde Krigen", "link": "/historie/den-kalde-krigen/kald-krig-sti" }
+                    { "tittel": "Læringssti: Den Kalde Krigen", "link": "/historie/den-kalde-krigen/kald-krig-sti" },
+                    { "tittel": "Læringssti: Romerriket", "link": "/historie/romerriket/romerriket-sti", "begrunnelse": "Eleven skiller myten om Romulus fra arkeologien og drøfter propagandaen til Augustus og Roma i film og spill." }
                 ],
                 "tidsreise": [
                     { "tittel": "Romersk Legionær", "link": "/oving/tidsreise/roman-soldier", "begrunnelse": "Lev fortiden fra et perspektiv som ofte glemmes." },
@@ -133,7 +135,8 @@
                     { "tittel": "Olje og makt: Ressursen som endret alt", "link": "/historie/midtoesten/olje-og-makt", "begrunnelse": "Dekker Teknologi som endringsfaktor" }
                 ],
                 "stier": [
-                    { "tittel": "Læringssti: Verdens årer", "link": "/laeringsstier", "begrunnelse": "Infrastruktur, handel og teknologi som binder verden sammen." }
+                    { "tittel": "Læringssti: Verdens årer", "link": "/laeringsstier", "begrunnelse": "Infrastruktur, handel og teknologi som binder verden sammen." },
+                    { "tittel": "Læringssti: Romerriket", "link": "/historie/romerriket/romerriket-sti", "begrunnelse": "Steget «Roma lever» og fordypningen viser betong, buen og veiene som teknologi vi bruker i dag." }
                 ],
                 "spill": [
                     { "tittel": "Watt Lab", "link": "/oving/spill/watt-lab", "begrunnelse": "James Watt og dampmaskinens fødsel." },
@@ -180,7 +183,8 @@
                     { "tittel": "Den arabiske våren", "link": "/historie/midtoesten/arabisk-var", "begrunnelse": "Dekker Kamp for endring" }
                 ],
                 "stier": [
-                    { "tittel": "Læringssti: Frihetens Maraton", "link": "/historie/dekolonisering/dekolonisering-sti", "begrunnelse": "Følger frihetskampen gjennom 200 år og 3 kontinenter." }
+                    { "tittel": "Læringssti: Frihetens Maraton", "link": "/historie/dekolonisering/dekolonisering-sti", "begrunnelse": "Følger frihetskampen gjennom 200 år og 3 kontinenter." },
+                    { "tittel": "Læringssti: Romerriket", "link": "/historie/romerriket/romerriket-sti", "begrunnelse": "Eleven sammenligner plebeiernes streik, Gracchus-brødrene og maktkampen mellom keiser og kirke." }
                 ]
             }
         },
@@ -251,7 +255,8 @@
                 ],
                 "stier": [
                     { "tittel": "Læringssti: Imperienes sykluser", "link": "/laeringsstier", "begrunnelse": "Hvorfor stormakter stiger og faller." },
-                    { "tittel": "Læringssti: Verdens årer", "link": "/laeringsstier" }
+                    { "tittel": "Læringssti: Verdens årer", "link": "/laeringsstier" },
+                    { "tittel": "Læringssti: Romerriket", "link": "/historie/romerriket/romerriket-sti", "begrunnelse": "Leiegården, «brød og sirkus» og dypdykket om rik og fattig viser levekår i riket." }
                 ]
             }
         },
@@ -316,7 +321,8 @@
                 "stier": [
                     { "tittel": "Læringssti: Første verdenskrig", "link": "/historie/forste-verdenskrig/ww1-sti" },
                     { "tittel": "Læringssti: Mellomkrigstiden", "link": "/historie/mellomkrigstiden/mellomkrigstiden-sti" },
-                    { "tittel": "Læringssti: Den Kalde Krigen", "link": "/historie/den-kalde-krigen/kald-krig-sti" }
+                    { "tittel": "Læringssti: Den Kalde Krigen", "link": "/historie/den-kalde-krigen/kald-krig-sti" },
+                    { "tittel": "Læringssti: Romerriket", "link": "/historie/romerriket/romerriket-sti", "begrunnelse": "Punerkrigene, borgerkrigene og fallet gjennomgås med årsak-virkning-oppgaver." }
                 ],
                 "tidsreise": [
                     { "tittel": "Skyttergravenes Ekko", "link": "/oving/tidsreise/ww1-vestfront" },

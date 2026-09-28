@@ -11,7 +11,7 @@ import { findTopicImage } from './images';
 
 // Layout-typer som aldri fullfører via 'article-read' - uten dette filteret
 // ville sti-/verktøysider bli værende i "påbegynte artikler" for alltid.
-const NON_ARTICLE_LAYOUTS = new Set(['tool', 'learning-path', 'learning-path-v2']);
+const NON_ARTICLE_LAYOUTS = new Set(['tool', 'learning-path', 'learning-path-v3']);
 
 // ActivityEvent har ikke egne felt for lessonId/subTopicId - kun den fulle
 // stien i activityId. Trekker ut halen etter at subjectId/topicId-prefikset

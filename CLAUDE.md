@@ -464,6 +464,13 @@ en artikkel.
 
 Learning paths are JSON files stored alongside articles: `public/content/[subject]/[topic]/[topic]-sti.json`.
 
+**Ny motor (v3, «Stien»):** `"layout": "learning-path-v3"` + `learningPathV3Data`. Faser med
+steg der hvert steg har fire trinn: Les (fortelling med alle svarene) → Spill (mikrospill, stort
+3D-spill, sortering, rekkefølge) → Svar (sjekk-spørsmål rett i stien) → Skriv (oppgaver til
+skriveboka), og tre stjerner. Dypdykk med artikler etter hver del.
+Romerriket-stien er referansen. Nye stier og migreringer skal bygges i v3 - se
+`docs/LEARNING_PATH_V3.md`. v2 er fjernet; resten under beskriver v1-stiene som ennå ikke er migrert.
+
 They use a **3-act narrative structure**:
 - **Akt 1: Opptakten** (Setup)
 - **Akt 2: Konfrontasjonen** (Conflict / deep content)
@@ -720,6 +727,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 - `docs/Design documents/` — Per-topic blueprints
 - `docs/laereplaner/` — Læreplaner og kompetansemål per fag
 - `.agent/workflows/LEARNING_PATH_GUIDE.md` — Learning path JSON schema and guide
+- `docs/LEARNING_PATH_V3.md` — Læringssti v3 («Stien»): skjema, aktivitetstyper og prinsipper
 - `.agent/workflows/BUILD_GAME_GUIDE.md` — Guide for å lage nye historiske 3D-mini-spill
 - `.agent/workflows/plan_minigame.md` — Designfase for nytt mini-spill
 - `.agent/workflows/build_interactive.md` — Bygge ny interaktiv komponent

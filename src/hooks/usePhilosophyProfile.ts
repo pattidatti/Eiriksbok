@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeLocalStorage } from '../utils/safeStorage';
 import type { PhilosophyProfile, PhilosophyAxis, Achievement, QuestProgress } from '../data/philosophy/types';
 import { QUEST_REGISTRY } from '../data/philosophy/questRegistry';
 
@@ -182,6 +183,7 @@ const useProfileStore = create<ProfileStore>()(
         }),
         {
             name: 'odyssey_philosophy_profile',
+            storage: createJSONStorage(() => safeLocalStorage),
             // Migrate old localStorage key if present
             onRehydrateStorage: () => (state) => {
                 if (!state) return;

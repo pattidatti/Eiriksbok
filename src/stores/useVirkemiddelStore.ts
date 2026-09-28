@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeLocalStorage } from '../utils/safeStorage';
 import type { DeviceProgress, Level } from '../data/virkemiddelverkstedet/types';
 import { useProgressStore } from '../features/progress/useProgressStore';
 
@@ -201,7 +202,7 @@ export const useVirkemiddelStore = create<VirkemiddelState>()(
         }),
         {
             name: 'virkemiddelverkstedet',
-            storage: createJSONStorage(() => localStorage),
+            storage: createJSONStorage(() => safeLocalStorage),
         }
     )
 );

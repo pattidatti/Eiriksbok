@@ -75,7 +75,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
         !!lesson &&
         lesson.layout !== 'tool' &&
         lesson.layout !== 'learning-path' &&
-        lesson.layout !== 'learning-path-v2' &&
+        lesson.layout !== 'learning-path-v3' &&
         !lesson.engine &&
         !lesson.learningPathData;
     useArticleReadTracker({
@@ -247,7 +247,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
             topicId: topicId,
             learningPaths: relevantLearningPaths,
             learningPathData: lesson.learningPathData,
-            learningPathV2Data: lesson.learningPathV2Data,
+            learningPathV3Data: lesson.learningPathV3Data,
             lessonPlan: lesson.lessonPlan
         };
     }, [lesson, lessonImage, subjectId, topicId, relevantLearningPaths, manifestEntry]);
@@ -261,7 +261,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
     // 3. We have a lesson layout that REQUIRES learningPathData, but it's missing while fetching
     const isIncompletePathData =
         (lesson?.layout === 'learning-path' && (!lesson?.learningPathData || !lesson.learningPathData.steps)) ||
-        (lesson?.layout === 'learning-path-v2' && (!lesson?.learningPathV2Data || !lesson.learningPathV2Data.steps));
+        (lesson?.layout === 'learning-path-v3' && (!lesson?.learningPathV3Data || !lesson.learningPathV3Data.phases));
     const loading = lessonLoading || (!lesson && isFetching) || (isIncompletePathData && isFetching);
 
     if (loading) return <LessonSkeleton />;
@@ -277,7 +277,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
     if (lesson && lesson.layout === 'learning-path' && !lesson.learningPathData && !isFetching) {
         return <LearningPathErrorState type="data" onRetry={() => refetch()} />;
     }
-    if (lesson && lesson.layout === 'learning-path-v2' && !lesson.learningPathV2Data && !isFetching) {
+    if (lesson && lesson.layout === 'learning-path-v3' && !lesson.learningPathV3Data && !isFetching) {
         return <LearningPathErrorState type="data" onRetry={() => refetch()} />;
     }
 

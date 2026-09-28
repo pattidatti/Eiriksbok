@@ -107,7 +107,7 @@ export interface Lesson {
     details?: string[];
     keyPoints?: string[];
     externalUrl?: string;
-    layout?: 'standard' | 'rich' | 'tool' | 'learning-path' | 'learning-path-v2';
+    layout?: 'standard' | 'rich' | 'tool' | 'learning-path' | 'learning-path-v3';
     year?: string;
     category?: string;
     // Dato for siste endring av artikkelen. Settes normalt automatisk i manifest.json
@@ -129,7 +129,7 @@ export interface Lesson {
     quote?: Quote;
     flashcards?: { front: string; back: string }[];
     learningPathData?: LearningPathData;
-    learningPathV2Data?: LearningPathV2Data;
+    learningPathV3Data?: LearningPathV3Data;
     learningPaths?: { id: string; title: string; url: string }[];
     presentation?: PresentationData;
     lessonPlan?: LessonPlan;
@@ -157,7 +157,7 @@ export interface ManifestLesson {
     id: string;
     title: string;
     year?: string;
-    layout?: 'standard' | 'rich' | 'tool' | 'learning-path' | 'learning-path-v2';
+    layout?: 'standard' | 'rich' | 'tool' | 'learning-path' | 'learning-path-v3';
     date?: string;
     createdDate?: string;
     updatedDate?: string;
@@ -374,9 +374,12 @@ export interface TextAnalysisGameData {
 
 export interface LearningPathTask {
     id: string;
+    // v3: 'finn' (svaret står ordrett i teksten), 'tenk' (forstå/reflektere), 'drøft' (dypdykk/fordypning)
     type: string;
     text: string;
     bloom?: string;
+    km?: string[]; // kompetansemål-id-er, f.eks. "saf-10-7" (public/content/kompetansemal/)
+    kjennetegn?: string; // kjennetegn på måloppnåelse, f.eks. "Årsak-virkning"
 }
 
 export interface LearningPathStep {
@@ -407,63 +410,11 @@ export interface LearningPathData {
     presentation?: PresentationData;
 }
 
-// --- Learning Path V2: orchestrating engine ---
-// Side om side med klassisk LearningPath. Triggers når lesson.layout === 'learning-path-v2'
-// og lesson.learningPathV2Data finnes. Se docs/LEARNING_PATH_V2.md når den eksisterer.
-
-export type StepKindV2 =
-    | 'read-article'    // les artikkel + komprehensjons-sjekk
-    | 'inline-article'  // artikkel rendres i steget med ankrede sjekk-spørsmål
-    | 'interactive'     // krever fullføring av en ComponentRegistry-komponent
-    | 'scenario'        // spawner et tidsreise-scenario
-    | 'detective'       // spawner en detektivsak
-    | 'reflection'      // fritekstsvar som lagres
-    | 'concept-drill'   // flashcard-runde over konsepter
-    | 'mini-quiz'       // 3-7 spm med valgfri branching
-    | 'micro-game'      // lett innebygd mikro-spill (canvas/svg)
-    | 'dialog-tree'     // Twine-aktig dialog med branching valg
-    | 'map-quest'       // klikkbare hotspots på stilisert kart
-    | 'multiplayer'     // (Fase 3) Quiz Battle
-    | 'synthesis';      // avsluttende artefakt
-
-export interface DialogChoice {
-    id: string;
-    text: string;
-    nextNodeId?: string;       // hopp hit; mangler -> dialog slutt
-    score?: number;            // 0-1, kun siste valg teller for completion
-    feedback?: string;         // valgfri ettertanke når valget tas
-}
-
-export interface DialogNode {
-    id: string;
-    speaker?: string;          // f.eks. "Cicero"
-    portrait?: string;         // emoji eller bildesti
-    text: string;
-    choices?: DialogChoice[];
-    isEnding?: boolean;        // hvis true: vis ferdig-knapp, ingen choices
-    endingTone?: 'good' | 'neutral' | 'bad';
-}
-
-export interface DialogTree {
-    startNodeId: string;
-    nodes: Record<string, DialogNode>;
-}
-
-export interface MapQuestHotspot {
-    id: string;
-    label: string;
-    x: number;                 // 0-100 prosent av viewBox
-    y: number;                 // 0-100 prosent av viewBox
-    order: number;             // riktig kronologisk plassering (1-indeksert)
-    detail?: string;           // vises etter klikk
-}
-
-export interface MapQuestData {
-    mapImage?: string;         // valgfri bakgrunnsbilde (SVG eller raster)
-    viewBox?: string;          // default "0 0 1000 600"
-    hotspots: MapQuestHotspot[];
-    completionMessage?: string;
-}
+// --- Læringssti v3: «Stien» ---
+// Triggers når lesson.layout === 'learning-path-v3' og lesson.learningPathV3Data finnes.
+// Én vertikal sti med faser og stasjoner. Hver stasjon har samme rytme:
+// Opplev (fortelling) -> Gjør (spill/aktivitet) -> Vis hva du kan (sjekk-spørsmål).
+// Fortellingen skal inneholde alt eleven trenger for å svare. Se docs/LEARNING_PATH_V3.md.
 
 export interface ComprehensionQuestion {
     question: string;
@@ -472,120 +423,86 @@ export interface ComprehensionQuestion {
     explanation?: string;
 }
 
-export interface CompletionCriteriaV2 {
-    // mini-quiz / read-article comprehension / concept-drill
-    minScore?: number; // 0-1, default 0.7
-    // reflection
-    minLength?: number; // minimum tegn
-    // read-article
-    comprehensionQuestions?: ComprehensionQuestion[];
-    // interactive — komponenten må kalle onComplete
-    requireComponentComplete?: boolean;
-    // scenario/detective — fullføring spores via flagg
-    externalCompletionFlag?: string;
+export interface SortActivityItem {
+    text: string;
+    bucket: number; // indeks i buckets
+    explanation?: string;
 }
 
-export interface StepV2 {
+export interface OrderActivityItem {
+    text: string;
+    label?: string; // f.eks. årstall, vises etter at brikken er plassert
+}
+
+export type StationActivityV3 =
+    | { type: 'microgame'; gameId: string; props?: Record<string, unknown> }
+    | {
+          type: 'fullgame';
+          gameId: string; // id i GAME_REGISTRY (src/pages/GamePage.tsx)
+          title: string;
+          subtitle?: string;
+          image?: string;
+          pitch: string;
+      }
+    | {
+          type: 'sort';
+          prompt: string;
+          buckets: string[];
+          items: SortActivityItem[];
+      }
+    | {
+          type: 'order';
+          prompt: string;
+          // Oppgis i RIKTIG rekkefølge; motoren stokker dem.
+          items: OrderActivityItem[];
+      }
+    | { type: 'component'; name: string; props?: Record<string, unknown>; label?: string };
+
+export interface StationV3 {
     id: string;
     title: string;
-    kind: StepKindV2;
-    phase?: string; // "Akt 1: Opptakten"
-    intro: string;  // narrativ guidetekst
-
-    // read-article
-    articleUrl?: string;
-    articleTitle?: string;
-
-    // interactive
-    component?: { name: string; props?: Record<string, unknown> };
-
-    // scenario
-    scenarioId?: string;
-
-    // detective
-    detectiveCaseId?: string;
-
-    // mini-quiz
-    questions?: ComprehensionQuestion[];
-
-    // concept-drill
-    conceptIds?: string[];
-    conceptDrills?: Array<{ term: string; definition: string }>;
-
-    // reflection
-    reflectionPrompt?: string;
-    reflectionPlaceholder?: string;
-
-    // synthesis
-    synthesisType?: 'timeline-builder' | 'concept-map' | 'free-text';
-    synthesisPrompt?: string;
-    synthesisItems?: Array<{ id: string; label: string; year?: number }>; // for timeline-builder
-
-    // micro-game
-    microGameId?: string;             // ID i microGameRegistry
-    microGameProps?: Record<string, unknown>;
-
-    // inline-article
-    articleAnchors?: ArticleAnchor[]; // sjekkspørsmål mellom seksjoner
-
-    // dialog-tree
-    dialogTree?: DialogTree;
-
-    // map-quest
-    mapQuest?: MapQuestData;
-
-    completion: CompletionCriteriaV2;
-
-    branches?: {
-        onMastery?: string;  // hopp hit ved god score
-        onStruggle?: string; // forsterkningsteg
-    };
-
-    conceptsIntroduced?: string[]; // concept-IDer registrert på profil
-    competencyGoals?: string[];    // kompetansemål-IDer
-
-    // åpne diskusjons-/skriveoppgaver per steg (ikke validert, ment for lærer/elev)
-    openTasks?: (string | LearningPathTask)[];
-
-    // pekere til artikler / eksterne kilder elev kan bruke for å svare på openTasks
-    resources?: StepResource[];
+    teaser: string; // én linje på det lukkede kortet
+    emoji?: string;
+    image?: string;
+    story: string[]; // avsnitt, støtter inline markdown og begrepsmarkering
+    activity?: StationActivityV3;
+    check: ComprehensionQuestion[];
+    tasks?: (string | LearningPathTask)[]; // skriveoppgaver (lærerstyrt, ikke validert)
+    readMore?: { title: string; url: string }[];
+    conceptsIntroduced?: string[];
 }
 
-export interface ArticleAnchor {
-    afterBlockIndex: number;          // sjekkspørsmål vises etter block N i artikkelens content[]
-    question: ComprehensionQuestion;
+// Dypdykk etter en del: oppgaver som krever at eleven leser bestemte artikler.
+// Første oppgave skal være en enkel finn-oppgave, så også de svakeste kommer i gang.
+export interface DeepDiveV3 {
+    intro: string;
+    articles: { title: string; url: string }[];
+    tasks: LearningPathTask[];
 }
 
-export interface StepResource {
-    title: string;
-    url: string;                      // intern: "/historie/..." eller ekstern URL
-    description?: string;             // 1-linje hint om hva ressursen dekker
-    kind?: 'article' | 'external' | 'video';
-}
-
-export interface EpochTheme {
-    id: string;                       // f.eks. "roman", "viking"
-    primary: string;                  // CSS color (hex/rgb/oklch) — signaturfarge
-    accent: string;                   // sekundær aksent for buttons/progress
-    paper: string;                    // bakgrunns-tint for kort/scener
-    ink: string;                      // dyp tekstfarge
-    bannerLabel?: string;             // valgfri kort epoke-label
-}
-
-export interface LearningPathV2Data {
+export interface PathPhaseV3 {
     id: string;
-    version: 2;
+    title: string;
+    subtitle?: string;
+    stations: StationV3[];
+    deepDive?: DeepDiveV3;
+}
+
+export interface LearningPathV3Data {
+    id: string;
+    version: 3;
     title: string;
     description: string;
+    heroImage?: string;
     estimatedMinutes?: number;
     targetSubjectId?: string;
     targetTopicId?: string;
-    epochTheme?: EpochTheme;
-    steps: StepV2[];
-    synthesis?: {
-        title: string;
-        intro: string;
-    };
+    phases: PathPhaseV3[];
+    finale?: { title: string; text: string };
+    // Fordypning til slutt: eleven velger én av oppgavene (mappe/vurdering).
+    project?: { intro: string; choices: LearningPathTask[] };
+    // Valgfrie lærer-lysbilder (samme format som v1). Finnes av presentasjonsruten via dypsøk.
+    presentation?: PresentationData;
 }
 
 // --- Presentation & Slide System ---

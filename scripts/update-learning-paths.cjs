@@ -67,10 +67,10 @@ function scanLearningPaths() {
                 }
 
                 // Use explicit values if present, otherwise inferred
-                const pathData = data.learningPathV2Data || data.learningPathData;
+                const pathData = data.learningPathV3Data || data.learningPathData;
                 const subjectId = data.targetSubjectId || pathData?.targetSubjectId || inferredSubject;
                 const topicId = data.targetTopicId || pathData?.targetTopicId || inferredTopic;
-                const isV2 = !!data.learningPathV2Data || data.layout === 'learning-path-v2';
+                const isV3 = !!data.learningPathV3Data || data.layout === 'learning-path-v3';
 
                 // Construct the link URL
                 // Route: /:subjectId/:topicId/:lessonId
@@ -88,7 +88,7 @@ function scanLearningPaths() {
                     readTime: data.readTime,
                     path: linkUrl, // Use the correct application route
                     fileRelativePath: relativePath,
-                    version: isV2 ? 2 : 1
+                    version: isV3 ? 3 : 1
                 };
 
                 learningPaths.push(metadata);

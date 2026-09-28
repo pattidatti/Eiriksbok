@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeLocalStorage } from '../utils/safeStorage';
 
 interface DeskState {
     tools: {
@@ -42,7 +43,7 @@ export const useDeskStore = create<DeskState>()(
         }),
         {
             name: 'virkemidler-desk-storage',
-            storage: createJSONStorage(() => localStorage),
+            storage: createJSONStorage(() => safeLocalStorage),
         }
     )
 );

@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { safeLocalStorage } from '../utils/safeStorage';
 import { useProgressStore } from '../features/progress/useProgressStore';
 
-// Profilen lagrer fremdrift for hver V2-sti eleven har påbegynt.
+// Profilen lagrer fremdrift for hver sti (v3) eleven har påbegynt.
 // localStorage-only i Fase 1; profil-interfacet er bevisst tynt slik at vi
 // kan bytte til Firebase i Fase 3 uten å røre rendererne.
 
@@ -51,6 +52,13 @@ interface LearningPathProfileState {
         stepId: string,
         response: Omit<StepResponse, 'completedAt'>,
         conceptsIntroduced?: string[]
+    ) => void;
+    // Delvis fremdrift i et steg (f.eks. spillet er spilt, men spørsmålene gjenstår).
+    // Merges inn i svaret uten å markere steget som fullført eller gi XP.
+    saveResponse: (
+        pathId: string,
+        stepId: string,
+        partial: Omit<StepResponse, 'completedAt'>
     ) => void;
     finishPath: (pathId: string) => void;
     resetPath: (pathId: string) => void;
@@ -171,6 +179,30 @@ export const useLearningPathProfile = create<LearningPathProfileState>()(
                 });
             },
 
+            saveResponse: (pathId, stepId, partial) =>
+                set((state) => {
+                    const path = state.paths[pathId];
+                    if (!path) return state;
+                    const prev = path.responses[stepId];
+                    return {
+                        paths: {
+                            ...state.paths,
+                            [pathId]: {
+                                ...path,
+                                responses: {
+                                    ...path.responses,
+                                    [stepId]: {
+                                        ...prev,
+                                        ...partial,
+                                        completedAt: prev?.completedAt ?? 0,
+                                    },
+                                },
+                                lastVisitedAt: Date.now(),
+                            },
+                        },
+                    };
+                }),
+
             finishPath: (pathId) => {
                 const existing = get().paths[pathId];
                 if (existing && existing.finishedAt === null) {
@@ -207,7 +239,7 @@ export const useLearningPathProfile = create<LearningPathProfileState>()(
         }),
         {
             name: STORAGE_KEY,
-            storage: createJSONStorage(() => localStorage),
+            storage: createJSONStorage(() => safeLocalStorage),
             version: 1,
         }
     )

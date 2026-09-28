@@ -15,30 +15,30 @@ const borderColors: Record<string, string> = {
 export const PathRow = ({ path }: { path: LearningPathMetadata }) => {
     const borderColor = borderColors[path.subjectId] || borderColors.annet;
     const title = path.title.replace('Laeringssti: ', '').replace('Læringssti: ', '').replace(' (V2)', '');
-    const isV2 = path.version === 2;
+    const isV3 = path.version === 3;
 
     return (
         <Link to={path.path} className="block group">
             <div
                 className={`
                     border-l-[3px] ${borderColor}
-                    ${isV2 ? 'bg-gradient-to-r from-indigo-50/80 to-white ring-1 ring-indigo-200' : 'bg-white/60'}
+                    ${isV3 ? 'bg-gradient-to-r from-indigo-50/80 to-white ring-1 ring-indigo-200' : 'bg-white/60'}
                     backdrop-blur-sm
                     hover:bg-white/80 hover:shadow-sm
                     rounded-r-lg px-4 py-3
                     transition-all duration-200
                 `}
             >
-                {/* Line 1: Title + V2-badge + arrow */}
+                {/* Line 1: Title + v3-badge + arrow */}
                 <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2 min-w-0">
                         <span className="font-display font-semibold text-slate-800 truncate group-hover:text-indigo-700 transition-colors">
                             {title}
                         </span>
-                        {isV2 && (
+                        {isV3 && (
                             <span className="flex-shrink-0 inline-flex items-center gap-1 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full shadow-sm">
                                 <Sparkles size={10} />
-                                Ny motor
+                                Spillsti
                             </span>
                         )}
                     </div>

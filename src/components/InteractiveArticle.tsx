@@ -14,8 +14,8 @@ import { ArticleContent } from './ArticleContent';
 import { RichSidebar } from './RichSidebar';
 import { getArticleHeadings } from '../utils/articleHeadings';
 import { LearningPath } from './content/LearningPath';
-import { LearningPathV2 } from './content/LearningPathV2';
-import type { ContentBlock, LearningPathData, LearningPathV2Data, MapData, Concept, GlobalTimelineEvent } from '../types';
+import { LearningPathV3 } from './content/learning-path-v3/LearningPathV3';
+import type { ContentBlock, LearningPathData, LearningPathV3Data, MapData, Concept, GlobalTimelineEvent } from '../types';
 import { useTTS } from '../hooks/useTTS';
 import { cleanForTTS } from '../utils/speechUtils';
 import { useGlobalTimeline } from '../hooks/useGlobalTimeline';
@@ -34,7 +34,7 @@ export type ArticleData = {
     year: string;
     title: string;
     description: string;
-    layout?: 'standard' | 'rich' | 'tool' | 'learning-path' | 'learning-path-v2';
+    layout?: 'standard' | 'rich' | 'tool' | 'learning-path' | 'learning-path-v3';
     content: ContentBlock[];
     details: string[];
     icon?: React.ReactNode;
@@ -52,7 +52,7 @@ export type ArticleData = {
     topicId?: string;
     subjectId?: string;
     learningPathData?: LearningPathData;
-    learningPathV2Data?: LearningPathV2Data;
+    learningPathV3Data?: LearningPathV3Data;
     learningPaths?: { id: string; title: string; url: string }[];
     lessonPlan?: import('../types').LessonPlan;
 };
@@ -294,7 +294,7 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
                 overlapper tittelen. Først fra xl er skjermen bred nok til at det er
                 margin utenfor innholdsspalten (max-w-5xl) å flyte i - under det la
                 den seg oppå overskriften, f.eks. på Galaxy Fold utbrettet (~950px). */}
-            <div className="relative top-0 xl:fixed xl:top-32 left-0 w-full p-4 flex justify-between items-center z-40 pointer-events-none">
+            <div className={`relative top-0 left-0 w-full p-4 flex justify-between items-center z-40 pointer-events-none ${event.layout === 'learning-path-v3' ? '' : 'xl:fixed xl:top-32'}`}>
                 <div className="pointer-events-auto flex gap-2">
 
                     <button
@@ -307,6 +307,9 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
                 </div>
             </div>
 
+            {/* Læringssti v3 har sitt eget toppkort med tittel og bilde. */}
+            {event.layout !== 'learning-path-v3' && (
+            <>
             {/* Header Section */}
             <div className="pt-4 pb-4 md:pt-8 md:pb-6 px-0 sm:px-4 md:px-6 max-w-5xl mx-auto text-center">
                 <div>
@@ -367,11 +370,14 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
                 </div>
             )}
 
+            </>
+            )}
+
             {/* Main Content Container */}
-            <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v2') ? 'w-full' : 'max-w-6xl mx-auto px-0 sm:px-4 md:px-6'}`}>
-                <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v2') ? 'w-full' : 'bg-white rounded-3xl p-3 sm:p-5 md:p-10'}`}>
-                    {event.layout === 'learning-path-v2' && event.learningPathV2Data ? (
-                        <LearningPathV2 data={event.learningPathV2Data} />
+            <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v3') ? 'w-full' : 'max-w-6xl mx-auto px-0 sm:px-4 md:px-6'}`}>
+                <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v3') ? 'w-full' : 'bg-white rounded-3xl p-3 sm:p-5 md:p-10'}`}>
+                    {event.layout === 'learning-path-v3' && event.learningPathV3Data ? (
+                        <LearningPathV3 data={event.learningPathV3Data} />
                     ) : event.layout === 'learning-path' && event.learningPathData ? (
                         <LearningPath data={event.learningPathData} />
                     ) : (

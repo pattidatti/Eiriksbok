@@ -1,462 +1,1405 @@
 {
     "id": "romerriket-sti",
     "title": "Læringssti: Romerriket",
-    "description": "Bli med på en tidsreise fra en liten landsby på sju høyder til et verdensrike som formet historien. Du vil leve som legionær, keiser og gladiator.",
-    "layout": "learning-path",
+    "description": "Reis gjennom 1200 år med romersk historie. Du bygger Roma, marsjerer med legionen, er til stede når Cæsar blir drept, og ser riket falle.",
+    "layout": "learning-path-v3",
     "category": "Læringssti",
-    "year": "753 f.Kr - 476 e.Kr",
-    "readTime": "3-4 timer",
-    "learningPathData": {
+    "year": "753 fvt. - 476 evt.",
+    "readTime": "ca. 2,5 timer",
+    "learningPathV3Data": {
         "id": "romerriket-sti",
-        "title": "Romerriket: Din reise gjennom århundrene",
-        "description": "Denne stien er ikke bare en historietime – det er en reise. Du starter ved Romas vugge og følger riket til dets dramatiske fall. Underveis må du ta valg, løse oppgaver og forstå menneskene som levde da.",
-        "targetTopicId": "romerriket",
+        "version": 3,
+        "title": "Romerriket: fra landsby til verdensrike",
+        "description": "Tolv steg fra gjeterhyttene ved Tiberen til den siste keiseren. Alt du trenger for å svare, står i stien.",
+        "heroImage": "/images/romerriket/hero-overview.webp",
+        "estimatedMinutes": 150,
         "targetSubjectId": "historie",
-        "steps": [
+        "targetTopicId": "romerriket",
+        "phases": [
             {
-                "id": "rome-start",
-                "phase": "Fase 1: En supermakt blir til (753 f.Kr - 27 f.Kr)",
-                "title": "Fra landsby til verdensrike",
-                "type": "fakta",
-                "content": "Du står på Palatin-høyden. Under deg ser du en liten samling gjeterhytter ved elven Tiberen. Ingen kan vite at dette skal bli verdens hovedstad. Du ser byen vokse, kaste sin siste konge, og bli en republikk. Men hvem skal bestemme? Senatet med de rike, eller folket på gata? Spenningen ligger i luften.",
-                "tasks": [
-                    "Hva betyr forkortelsen SPQR, og hvorfor var den så viktig?",
-                    "Hvem var Romas legendariske grunnleggere?",
-                    "Hva var forskjellen på patrisiere og plebeiere?",
-                    "Hvordan fungerte maktfordelingen mellom de to konsulene og senatet?",
-                    "Hvorfor var romerne så skeptiske til å ha en konge?",
-                    "Hva var 'De tolv tavlene', og hvorfor var det viktig at lovene ble skrevet ned?",
-                    "Nevn en viktig årsak til at Roma havnet i krig med Kartago (Punerkrigene)."
-                ],
-                "links": [
+                "id": "republikken",
+                "deepDive": {
+                    "intro": "Nå har du sett hvordan Roma gikk fra landsby til verdensmakt. Artiklene under forteller mer om hvorfor republikken gikk i oppløsning. Les dem, og svar i skriveboka.",
+                    "articles": [
+                        {
+                            "title": "Romas grunnleggelse og republikken",
+                            "url": "/historie/romerriket/romersk-start"
+                        },
+                        {
+                            "title": "Julius Cæsar",
+                            "url": "/historie/romerriket/caesar"
+                        }
+                    ],
+                    "tasks": [
+                        {
+                            "id": "d1-f1",
+                            "type": "finn",
+                            "text": "Les «Romas grunnleggelse og republikken». Hva prøvde brødrene Tiberius og Gaius Gracchus å gi de fattige?"
+                        },
+                        {
+                            "id": "d1-d1",
+                            "type": "drøft",
+                            "text": "Seieren over Kartago gjorde Roma rikt, men republikken gikk under hundre år senere. Forklar sammenhengen i minst tre ledd.",
+                            "km": [
+                                "saf-10-7"
+                            ],
+                            "kjennetegn": "Årsak-virkning"
+                        },
+                        {
+                            "id": "d1-d2",
+                            "type": "drøft",
+                            "text": "Plebeierne vant med streik. Gracchus-brødrene tapte og ble drept. Hvorfor tror du det gikk så ulikt?",
+                            "km": [
+                                "saf-10-5"
+                            ],
+                            "kjennetegn": "Handlingsalternativer"
+                        },
+                        {
+                            "id": "d1-d3",
+                            "type": "drøft",
+                            "text": "Les «Julius Cæsar». Mye av det vi vet om krigen i Gallia, skrev Cæsar selv. Hvor mye kan vi stole på det? Hva kunne gallerne ha skrevet i stedet?",
+                            "km": [
+                                "saf-10-2"
+                            ],
+                            "kjennetegn": "Kildebruk"
+                        }
+                    ]
+                },
+                "title": "Fra landsby til verdensmakt",
+                "subtitle": "753 - 44 fvt.",
+                "stations": [
                     {
-                        "title": "Romersk start: Republikken",
-                        "url": "/historie/romerriket/romersk-start"
-                    }
-                ]
-            },
-            {
-                "id": "rome-legion",
-                "title": "Den romerske legionen",
-                "type": "fakta",
-                "content": "Året er 107 f.Kr. Konsul Marius har åpnet hæren for alle, også de fattige. Du har vervet deg for å unnslippe fattigdommen i Romas bakgater. I stedet får du hard disiplin, daglige marsjer på 3 mil med full oppakning, og løftet om jord som pensjon. Det er denne profesjonelle krigsmaskinen som nålegger verden for sine føtter – ikke for en konge, men for Senatet og Folket i Roma (SPQR).",
-                "tasks": [
-                    "Hvilke nye utstyrskrav innførte Marius for soldatene?",
-                    "Hvorfor ble soldatene kalt 'Marius' muldyr'?",
-                    "Hva var formålet med en 'gladius' i nærkamp?",
-                    "Beskriv hvordan 'testudo' (skilpaddeformasjonen) beskyttet mot piler.",
-                    "Hva skjedde hvis en avdeling viste feighet i kamp (desimering)?",
-                    "Hvorfor var det attraktivt for fattige romere å verve seg i 25 år?",
-                    "Hvordan var en romersk leir (castra) organisert?"
-                ],
-                "links": [
+                        "id": "sju-hoyder",
+                        "title": "Byen på de sju høydene",
+                        "teaser": "En ulv, to tvillinger og et drap. Men hva sier arkeologene?",
+                        "emoji": "🐺",
+                        "image": "/images/romerriket/romulus-wolf.webp",
+                        "story": [
+                            "Romerne fortalte selv en spennende historie om hvordan byen deres begynte. Tvillingene Romulus og Remus ble kastet i elven Tiberen som nyfødte. En hunnulv fant dem og ga dem melk. Da de ble voksne, kranglet brødrene om hvem som skulle styre byen de ville bygge. Romulus drepte Remus og ga byen navnet sitt: Roma. Ifølge sagnet skjedde dette rundt år 753 før vår tidsregning. Det skriver vi kort som fvt.",
+                            "Men dette er en myte, en fortelling folk fant på for å forklare noe. Arkeologene, forskerne som graver etter spor fra fortiden, har funnet ut noe annet. Folk bodde på stedet allerede rundt år 1000 fvt. Roma begynte som flere små landsbyer på sju høyder ved elven Tiberen.",
+                            "Stedet var godt valgt. På høydene kunne bøndene og gjeterne forsvare seg mot fiender. Elven like ved gjorde det lett å handle, blant annet med salt fra kysten. Sakte vokste landsbyene sammen til én by. Roma ble altså ikke bygget på én dag av én mann."
+                        ],
+                        "activity": {
+                            "type": "microgame",
+                            "gameId": "de-sju-hoydene-3d"
+                        },
+                        "check": [
+                            {
+                                "question": "Hvem var tvillingene i myten om hvordan Roma ble grunnlagt?",
+                                "options": [
+                                    "Cæsar og Brutus",
+                                    "Augustus og Agrippa",
+                                    "Marius og Sulla",
+                                    "Romulus og Remus"
+                                ],
+                                "correct": 3,
+                                "explanation": "Ifølge myten drepte Romulus broren Remus og ga byen navnet sitt."
+                            },
+                            {
+                                "question": "Hva har arkeologene funnet ut om hvordan Roma begynte?",
+                                "options": [
+                                    "Roma begynte som små landsbyer på sju høyder",
+                                    "Hele byen ble bygget på ett år",
+                                    "Roma ble grunnlagt av grekere",
+                                    "Roma lå først nede ved havet"
+                                ],
+                                "correct": 0,
+                                "explanation": "Landsbyene på de sju høydene vokste sakte sammen til én by."
+                            },
+                            {
+                                "question": "Hvorfor var stedet ved Tiberen et godt sted å bo?",
+                                "options": [
+                                    "Det var aldri vinter der",
+                                    "Høydene ga forsvar, og elven ga handel",
+                                    "Det var gull i elven",
+                                    "Det bodde ingen andre folk i Italia"
+                                ],
+                                "correct": 1,
+                                "explanation": "På høydene kunne de forsvare seg, og elven gjorde det lett å handle med salt og andre varer."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "sju-hoyder-f1",
+                                "type": "finn",
+                                "text": "Hva het tvillingene i myten om Roma?"
+                            },
+                            {
+                                "id": "sju-hoyder-f2",
+                                "type": "finn",
+                                "text": "Ved hvilken elv ligger Roma?"
+                            },
+                            {
+                                "id": "sju-hoyder-t1",
+                                "type": "tenk",
+                                "text": "Hva er forskjellen på en myte og det arkeologene har funnet ut? Bruk Roma som eksempel.",
+                                "km": [
+                                    "saf-10-3"
+                                ],
+                                "kjennetegn": "Kildebruk"
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Romas grunnleggelse og republikken",
+                                "url": "/historie/romerriket/romersk-start"
+                            }
+                        ]
+                    },
                     {
-                        "title": "Den romerske legionen",
-                        "url": "/historie/romerriket/den-romerske-legionen"
-                    }
-                ],
-                "component": {
-                    "name": "PackTheBag",
-                    "props": {
-                        "capacity": 40,
-                        "targetValue": 80,
-                        "title": "Legionær-sekken: Klar for marsj?",
-                        "descriptionOverride": "Du skal på marsj mot nord. Centurionen sjekker at sekken er pakket korrekt. Du bærer alt du eier på ryggen. Har du husket det viktigste for å overleve i felt?",
-                        "overweightLabel": "Sekken er for tung for en lang marsj!",
-                        "successLabel": "Legionæren er klar for tjeneste!",
-                        "items": [
+                        "id": "folket-jaget-kongen",
+                        "title": "Folket som jaget kongen",
+                        "teaser": "Romerne kastet ut kongen og lovet: aldri mer én mann med all makt.",
+                        "emoji": "🏛️",
+                        "image": "/images/romerriket/roman-senate.webp",
+                        "story": [
+                            "I starten ble Roma styrt av konger. De siste kongene kom fra etruskerne, et mektig folk nord for Roma. Romerne lærte mye av dem, for eksempel å bygge buer og kloakk. Men de likte ikke å bli styrt av én mann. Rundt år 509 fvt. jaget de den siste kongen ut av byen.",
+                            "Romerne lovet hverandre at de aldri mer skulle ha en konge. I stedet laget de en republikk. Ordet kommer fra latin, res publica, og betyr «folkets sak». Hvert år valgte de to ledere, som ble kalt konsuler. De to måtte være enige. Ble den ene for maktsyk, kunne den andre stoppe ham. Senatet, et råd av rike og mektige menn, ga dem råd. Republikken kalte seg SPQR. Det er en forkortelse for latinske ord som betyr «Senatet og det romerske folk».",
+                            "Men republikken var ikke rettferdig for alle. Folket var delt i to grupper. Patrisierne kom fra noen få gamle, rike slekter. I starten var det bare de som kunne bli prester og få de viktigste jobbene i staten. Plebeierne var alle de andre: bønder, håndverkere og soldater.",
+                            "I år 494 fvt. fikk plebeierne nok. De gikk til streik. De nektet å jobbe og å kjempe i hæren, og gikk ut av byen. Uten dem var Roma forsvarsløst, så patrisierne måtte gi etter. Plebeierne fikk egne ledere, folketribuner. En folketribun kunne rope «Veto!», som betyr «jeg forbyr!», og stoppe en lov som var dårlig for folket."
+                        ],
+                        "activity": {
+                            "type": "sort",
+                            "prompt": "Hvem passer beskrivelsen: patrisier eller plebeier?",
+                            "buckets": [
+                                "Patrisier",
+                                "Plebeier"
+                            ],
+                            "items": [
+                                {
+                                    "text": "Kom fra en gammel, rik slekt",
+                                    "bucket": 0,
+                                    "explanation": "Patrisierne var noen få gamle, rike familier."
+                                },
+                                {
+                                    "text": "Bonde eller håndverker",
+                                    "bucket": 1,
+                                    "explanation": "Plebeierne var alle de andre: bønder, håndverkere og soldater."
+                                },
+                                {
+                                    "text": "Kunne i starten bli prest",
+                                    "bucket": 0,
+                                    "explanation": "I starten var det bare patrisierne som kunne bli prester."
+                                },
+                                {
+                                    "text": "Gikk til streik i 494 fvt.",
+                                    "bucket": 1,
+                                    "explanation": "Plebeierne streiket og gikk ut av byen for å få mer makt."
+                                },
+                                {
+                                    "text": "Kunne bli folketribun",
+                                    "bucket": 1,
+                                    "explanation": "Folketribunene var plebeiernes egne ledere."
+                                },
+                                {
+                                    "text": "Fikk de viktigste jobbene i staten fra starten",
+                                    "bucket": 0,
+                                    "explanation": "Patrisierne satt med de viktigste jobbene helt til plebeierne kjempet seg fram."
+                                }
+                            ]
+                        },
+                        "check": [
                             {
-                                "id": "gladius",
-                                "name": "Gladius (Sverd)",
-                                "weight": 2,
-                                "value": 30,
-                                "icon": "🗡️"
+                                "question": "Hva betyr SPQR?",
+                                "options": [
+                                    "Kongen av Roma",
+                                    "Soldatene til Roma",
+                                    "Senatet og det romerske folk",
+                                    "Romas sju høyder"
+                                ],
+                                "correct": 2,
+                                "explanation": "SPQR var republikkens offisielle navn. Du ser det fortsatt på kumlokk i Roma."
                             },
                             {
-                                "id": "scutum",
-                                "name": "Scutum (Skjold)",
-                                "weight": 10,
-                                "value": 40,
-                                "icon": "🛡️"
+                                "question": "Hvorfor hadde Roma to konsuler i stedet for én konge?",
+                                "options": [
+                                    "Én styrte hæren og én styrte templene",
+                                    "Fordi byen var delt i to",
+                                    "Fordi den siste kongen hadde to sønner",
+                                    "Så ingen enkelt mann skulle få all makten"
+                                ],
+                                "correct": 3,
+                                "explanation": "De to konsulene måtte være enige, og kunne stoppe hverandre."
                             },
                             {
-                                "id": "pilum",
-                                "name": "Pilum (Spyd)",
-                                "weight": 4,
-                                "value": 20,
-                                "icon": "🔱"
+                                "question": "Hva gjorde plebeierne i 494 fvt. for å få mer makt?",
+                                "options": [
+                                    "De gikk til streik og forlot byen",
+                                    "De valgte en ny konge",
+                                    "De flyttet til Kartago",
+                                    "De brente ned senatet"
+                                ],
+                                "correct": 0,
+                                "explanation": "Uten plebeierne var Roma forsvarsløst, så patrisierne måtte gi etter."
                             },
                             {
-                                "id": "rations",
-                                "name": "Rasjoner (Kjøtt/Korn)",
-                                "weight": 5,
-                                "value": 25,
-                                "icon": "🥩"
+                                "question": "Hva kunne en folketribun gjøre?",
+                                "options": [
+                                    "Bestemme hvem som skulle bli prest",
+                                    "Stoppe en lov ved å rope «Veto!»",
+                                    "Velge en ny konge",
+                                    "Lede hæren i krig"
+                                ],
+                                "correct": 1,
+                                "explanation": "Veto betyr «jeg forbyr». Slik kunne tribunen beskytte folket mot dårlige lover."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "folket-jaget-kongen-f1",
+                                "type": "finn",
+                                "text": "Rundt hvilket år jaget romerne den siste kongen?"
                             },
                             {
-                                "id": "wine",
-                                "name": "Vinblandet vann",
-                                "weight": 3,
-                                "value": 10,
-                                "icon": "🍷"
+                                "id": "folket-jaget-kongen-f2",
+                                "type": "finn",
+                                "text": "Hva kalte romerne de to lederne de valgte hvert år?"
                             },
                             {
-                                "id": "armor",
-                                "name": "Lorica Hamata (Ringbrynje)",
-                                "weight": 9,
-                                "value": 35,
-                                "icon": "👕"
+                                "id": "folket-jaget-kongen-t1",
+                                "type": "tenk",
+                                "text": "Var den romerske republikken rettferdig for alle? Begrunn svaret.",
+                                "km": [
+                                    "saf-10-5"
+                                ],
+                                "kjennetegn": "Perspektiver"
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Romas grunnleggelse og republikken",
+                                "url": "/historie/romerriket/romersk-start"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "hannibal",
+                        "title": "Hannibal over Alpene",
+                        "teaser": "Elefanter i snøen og Romas verste nederlag. Hvordan kunne Roma likevel vinne?",
+                        "emoji": "🐘",
+                        "image": "/images/romerriket/hannibal-alps.webp",
+                        "story": [
+                            "Da Roma hadde erobret naboene sine i Italia, møtte byen en farlig rival: Kartago. Kartago lå i Nord-Afrika, der Tunisia ligger i dag. Byen hadde en stor flåte og styrte handelen i Middelhavet. Krigene mellom Roma og Kartago kalles punerkrigene. De varte fra 264 til 146 fvt., altså i mer enn hundre år.",
+                            "Den mest kjente generalen fra Kartago het Hannibal. I 218 fvt. gjorde han noe ingen trodde var mulig. I stedet for å angripe fra havet, marsjerte han fra Spania med en stor hær og krigselefanter. Han gikk over de snødekte Alpene og kom inn i Italia fra nord. Mange soldater og de fleste elefantene døde på veien over fjellene.",
+                            "Likevel vant Hannibal slag etter slag. Ved Cannae i 216 fvt. lot han romerne presse seg inn i midten av hæren hans. Så lukket sidene seg rundt dem, og mange tusen romere ble drept. Men Roma ga ikke opp. Byen stilte bare med nye hærer, år etter år. Til slutt måtte Hannibal reise hjem for å forsvare Kartago. Der tapte han mot den romerske generalen Scipio ved Zama i 202 fvt.",
+                            "Seieren gjorde Roma til herre over Middelhavet. Men den skapte også nye problemer. Bøndene som hadde kjempet i krigen, kom hjem til gårder som hadde grodd igjen. Rike menn kjøpte jorda og lot slaver gjøre arbeidet. Mange bønder endte som fattige i Roma. Snart begynte generaler å bruke hærene sine mot hverandre."
+                        ],
+                        "activity": {
+                            "type": "order",
+                            "prompt": "Legg punerkrigene i riktig rekkefølge. Det som skjedde først, skal øverst.",
+                            "items": [
+                                {
+                                    "text": "Roma og Kartago går til krig for første gang",
+                                    "label": "264 fvt."
+                                },
+                                {
+                                    "text": "Hannibal marsjerer over Alpene med elefanter",
+                                    "label": "218 fvt."
+                                },
+                                {
+                                    "text": "Hannibal knuser romerne ved Cannae",
+                                    "label": "216 fvt."
+                                },
+                                {
+                                    "text": "Scipio slår Hannibal ved Zama",
+                                    "label": "202 fvt."
+                                },
+                                {
+                                    "text": "Punerkrigene er over, og Kartago er slått",
+                                    "label": "146 fvt."
+                                }
+                            ]
+                        },
+                        "check": [
+                            {
+                                "question": "Hvor lå Kartago?",
+                                "options": [
+                                    "I Nord-Italia",
+                                    "I Spania",
+                                    "I Nord-Afrika",
+                                    "I Hellas"
+                                ],
+                                "correct": 2,
+                                "explanation": "Kartago lå der Tunisia er i dag, og var en stor sjømakt."
                             },
                             {
-                                "id": "caligae",
-                                "name": "Caligae (Sandaler)",
-                                "weight": 1,
-                                "value": 5,
-                                "icon": "👡"
+                                "question": "Hva var så overraskende med Hannibals angrep?",
+                                "options": [
+                                    "Han angrep med tusen skip samtidig",
+                                    "Han gravde en tunnel inn i Roma",
+                                    "Han fikk grekerne til å kjempe for seg",
+                                    "Han kom over Alpene med elefanter, fra nord"
+                                ],
+                                "correct": 3,
+                                "explanation": "Ingen trodde en hær kunne ta seg over de snødekte fjellene."
                             },
                             {
-                                "id": "tent",
-                                "name": "Telt (Delt)",
-                                "weight": 15,
-                                "value": 10,
-                                "icon": "⛺"
+                                "question": "Hvorfor klarte Roma å vinne til slutt, selv etter nederlaget ved Cannae?",
+                                "options": [
+                                    "Roma ga ikke opp og stilte med nye hærer år etter år",
+                                    "Hannibal ble syk og døde",
+                                    "Kartago ga Roma elefantene sine",
+                                    "Grekerne kom Roma til hjelp"
+                                ],
+                                "correct": 0,
+                                "explanation": "Romas styrke var at byen nektet å gi seg. Til slutt måtte Hannibal reise hjem."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "hannibal-f1",
+                                "type": "finn",
+                                "text": "Hva het generalen fra Kartago som gikk over Alpene?"
+                            },
+                            {
+                                "id": "hannibal-f2",
+                                "type": "finn",
+                                "text": "Hvilke dyr tok han med seg over fjellene?"
+                            },
+                            {
+                                "id": "hannibal-t1",
+                                "type": "tenk",
+                                "text": "Seieren over Kartago gjorde Roma rikt, men bøndene fikk det verre. Forklar hvordan det henger sammen.",
+                                "km": [
+                                    "saf-10-7"
+                                ],
+                                "kjennetegn": "Årsak-virkning"
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Romas grunnleggelse og republikken",
+                                "url": "/historie/romerriket/romersk-start"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "legionaeren",
+                        "title": "Legionæren",
+                        "teaser": "25 år i hæren, åtte mann i ett telt og skjoldene som et skilpaddeskall.",
+                        "emoji": "🛡️",
+                        "image": "/images/romerriket/hero-legion.webp",
+                        "story": [
+                            "Hvordan kunne én by erobre så mye? Mye av svaret er den romerske hæren. Den var delt i store avdelinger som het legioner. En legion hadde rundt 5000 soldater. Å bli soldat, eller legionær, var ingen sommerjobb. Du vervet deg for 25 år og fikk fast lønn.",
+                            "Du sov i et telt sammen med sju andre, åtte soldater til sammen. Dere delte også mat og matlaging. Ti slike telt, rundt 80 soldater, var en centurie. Den ble ledet av en centurion, en erfaren soldat som ofte hadde startet helt nederst.",
+                            "Legionæren hadde to viktige våpen. Pilum var et tungt kastespyd. Spissen var av bløtt jern som bøyde seg når den traff. Da kunne ikke fienden kaste spydet tilbake. Gladius var et kort sverd. Soldatene sto tett bak de store skjoldene og stakk med sverdet, mens fiender med lange sverd trengte plass til å hugge.",
+                            "Når fienden skjøt piler, kunne soldatene lage en testudo, som betyr skilpadde. De ytterste holdt skjoldene som en vegg, og de i midten holdt skjoldene over hodet som et tak. Disiplinen var hard. Hvis en avdeling rømte fra kampen, kunne hver tiende mann bli drept som straff. Det ble kalt desimering. Men de som overlevde 25 år, fikk penger og et stykke jord."
+                        ],
+                        "activity": {
+                            "type": "microgame",
+                            "gameId": "testudo-3d"
+                        },
+                        "check": [
+                            {
+                                "question": "Hvor lenge vervet en romersk soldat seg vanligvis?",
+                                "options": [
+                                    "Resten av livet",
+                                    "25 år",
+                                    "2 år",
+                                    "10 år"
+                                ],
+                                "correct": 1,
+                                "explanation": "En legionær vervet seg for 25 år og fikk fast lønn."
+                            },
+                            {
+                                "question": "Hvorfor bøyde spissen på pilum seg når spydet traff?",
+                                "options": [
+                                    "For at spydet skulle bli lettere å bære",
+                                    "For at det skulle se skummelt ut",
+                                    "Så fienden ikke kunne kaste spydet tilbake",
+                                    "Fordi smedene var dårlige"
+                                ],
+                                "correct": 2,
+                                "explanation": "Et bøyd spyd var ubrukelig for fienden."
+                            },
+                            {
+                                "question": "Hva var en testudo?",
+                                "options": [
+                                    "Et kort romersk sverd",
+                                    "En leir med voller rundt",
+                                    "En straff for feige soldater",
+                                    "En formasjon der skjoldene ble vegger og tak"
+                                ],
+                                "correct": 3,
+                                "explanation": "Testudo betyr skilpadde. Skjoldene dekket soldatene som et skall."
+                            },
+                            {
+                                "question": "Hva fikk en soldat som overlevde 25 år i hæren?",
+                                "options": [
+                                    "Penger og et stykke jord",
+                                    "Et hus i Roma",
+                                    "Plass i senatet",
+                                    "Ingenting"
+                                ],
+                                "correct": 0,
+                                "explanation": "Jorda var den store premien for de fattige som vervet seg."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "legionaeren-f1",
+                                "type": "finn",
+                                "text": "Hvor mange år vervet en legionær seg for?"
+                            },
+                            {
+                                "id": "legionaeren-f2",
+                                "type": "finn",
+                                "text": "Hvor mange soldater sov i samme telt?"
+                            },
+                            {
+                                "id": "legionaeren-t1",
+                                "type": "tenk",
+                                "text": "Ville du vervet deg som legionær? Skriv hva som frister og hva som skremmer."
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Den romerske legionen",
+                                "url": "/historie/romerriket/den-romerske-legionen"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "caesar",
+                        "title": "Mordet på Cæsar",
+                        "teaser": "Han krysset elven ingen general fikk krysse. Nå venter senatet med dolker.",
+                        "emoji": "🗡️",
+                        "image": "/images/romerriket/caesar-hero.webp",
+                        "story": [
+                            "Julius Cæsar var en smart og sjarmerende politiker med enorm gjeld. Løsningen hans var krig. Fra 58 til 50 fvt. erobret han Gallia, der Frankrike og Belgia ligger i dag. Svært mange gallere ble drept eller solgt som slaver. Cæsar ble rik og elsket av soldatene sine. Senatet ble redd ham.",
+                            "I 49 fvt. krevde senatet at Cæsar skulle sende hæren hjem og komme til Roma alene. Det var forbudt for en general å krysse grenseelven Rubicon med hæren sin. Cæsar gjorde det likevel og sa: «Terningen er kastet.» Det betydde at det ikke fantes noen vei tilbake. Etter fire år med borgerkrig, altså krig mellom folk i samme land, sto han alene på toppen. I 44 fvt. ble han diktator på livstid. Han var konge i alt unntatt navnet.",
+                            "Den 15. mars 44 fvt. gikk Cæsar til et møte i senatet. Der ventet rundt 60 senatorer med dolker skjult under klærne. De ble ledet av Brutus og Cassius. Cæsar ble stukket rundt 23 ganger og døde. Morderne trodde de reddet republikken. I stedet fikk Roma en ny borgerkrig.",
+                            "Cæsar laget også kalenderen vi nesten bruker i dag, med skuddår hvert fjerde år. Måneden juli er oppkalt etter ham."
+                        ],
+                        "activity": {
+                            "type": "fullgame",
+                            "gameId": "caesar-ides",
+                            "title": "Mordet på Cæsar",
+                            "subtitle": "Roma, 15. mars 44 fvt.",
+                            "image": "/images/romerriket/caesar-ides-thumb.webp",
+                            "pitch": "Du er en ung senator på vei til møtet. Alle er anspente. Finn ut hva som skjer før dørene lukkes bak deg."
+                        },
+                        "check": [
+                            {
+                                "question": "Hva betyr det å «krysse Rubicon»?",
+                                "options": [
+                                    "Å bli valgt til konsul",
+                                    "Å ta et valg det ikke finnes vei tilbake fra",
+                                    "Å bade i en kald elv",
+                                    "Å vinne et slag"
+                                ],
+                                "correct": 1,
+                                "explanation": "Da Cæsar krysset elven med hæren, var han en forræder. Det fantes ingen vei tilbake."
+                            },
+                            {
+                                "question": "Hvorfor var senatet redd Cæsar?",
+                                "options": [
+                                    "Han ville gjøre Roma kristent",
+                                    "Han ville gi Gallia tilbake",
+                                    "Han hadde mye penger, mange soldater og var populær",
+                                    "Han ville flytte hovedstaden til Egypt"
+                                ],
+                                "correct": 2,
+                                "explanation": "En general med så mye makt var akkurat det republikken skulle beskytte seg mot."
+                            },
+                            {
+                                "question": "Hva skjedde 15. mars 44 fvt.?",
+                                "options": [
+                                    "Cæsar krysset Rubicon",
+                                    "Roma brant",
+                                    "Cæsar ble Romas første keiser",
+                                    "Cæsar ble drept av senatorer"
+                                ],
+                                "correct": 3,
+                                "explanation": "Rundt 60 senatorer, ledet av Brutus og Cassius, sto bak mordet."
+                            },
+                            {
+                                "question": "Hvilken måned er oppkalt etter Cæsar?",
+                                "options": [
+                                    "Juli",
+                                    "Mars",
+                                    "August",
+                                    "Januar"
+                                ],
+                                "correct": 0,
+                                "explanation": "Juli heter Julius etter Cæsar. August er oppkalt etter Augustus."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "caesar-f1",
+                                "type": "finn",
+                                "text": "Hva het elven Cæsar krysset med hæren sin?"
+                            },
+                            {
+                                "id": "caesar-f2",
+                                "type": "finn",
+                                "text": "Hvilken dato ble Cæsar drept?"
+                            },
+                            {
+                                "id": "caesar-t1",
+                                "type": "tenk",
+                                "text": "Var Cæsar en helt eller en skurk? Finn ett argument for hver side.",
+                                "km": [
+                                    "saf-10-3"
+                                ],
+                                "kjennetegn": "Perspektiver"
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Julius Cæsar",
+                                "url": "/historie/romerriket/caesar"
                             }
                         ]
                     }
-                }
-            },
-            {
-                "id": "rome-augustus",
-                "phase": "Fase 2: Keisere og Pax Romana (27 f.Kr - 180 e.Kr)",
-                "title": "Augustus: Arkitekten bak freden",
-                "type": "fakta",
-                "content": "Borgerkrigene har revet Roma i stykker i årevis. Broder har drept broder. Men nå stiger en ung mann frem fra asken. Augustus. He lover fred, men prisen er friheten. Du ser ham forvandle Roma fra en by av murstein til en by av marmor. Er det verdt det?",
-                "tasks": [
-                    "Hvem var Augustus' berømte onkel?",
-                    "Hva betyr tittelen 'Augustus'?",
-                    "Hvordan klarte Augustus å samle all makt uten å bli drept som Cæsar?",
-                    "Hva var 'Pax Romana', og hvor lenge varte denne perioden?",
-                    "Hvorfor ble Augustus anerkjent som 'princeps' (senatets førstemann) i stedet for å ta tittelen konge?",
-                    "Hvordan brukte Augustus kunst og litteratur (som Aeneiden) som propaganda?",
-                    "Drøft påstanden: 'Augustus ofret frihet for å skape fred'."
-                ],
-                "links": [
-                    {
-                        "title": "Augustus og Keiserdømmet",
-                        "url": "/historie/romerriket/augustus-og-keiserdomme"
-                    }
                 ]
             },
             {
-                "id": "rome-emperors",
-                "title": "Keisergalleriet: Galskap og genialitet",
-                "type": "utfordring",
-                "content": "Du vandrer gjennom keiserpalasset på Palatin. Veggene hvisker historier. Noen keisere var guder på jord, som Trajan og Marcus Aurelius, som styrte med visdom. Andre, som Nero og Caligula, var mareritt som fikk Roma til å blø. Klarer du å skille heltene fra skurkene i denne blodige slektshistorien?",
-                "tasks": [
-                    "Nevn to 'gode' og to 'gale' keisere.",
-                    "Hva gjorde Nero beryktet?",
-                    "Hvordan utvidet Trajan riket til sitt aller største?"
-                ],
-                "links": [
+                "id": "keiserne",
+                "deepDive": {
+                    "intro": "Du har møtt keiseren, leiegården og Pompeii. Artiklene under viser hvordan livet var for ulike folk i riket, og hvordan vi vet det.",
+                    "articles": [
+                        {
+                            "title": "Fra republikk til keiserdømme: Augustus",
+                            "url": "/historie/romerriket/augustus-og-keiserdomme"
+                        },
+                        {
+                            "title": "Hverdagslivet i Roma",
+                            "url": "/historie/romerriket/hverdagsliv-i-roma"
+                        },
+                        {
+                            "title": "Handel og Silkeveien",
+                            "url": "/historie/romerriket/handel-og-silkeveien"
+                        },
+                        {
+                            "title": "Pompeii: Byen som ble frosset i tid",
+                            "url": "/historie/romerriket/pompeii"
+                        }
+                    ],
+                    "tasks": [
+                        {
+                            "id": "d2-f1",
+                            "type": "finn",
+                            "text": "Les «Handel og Silkeveien». Hva het havnebyen der kornet til Roma kom i land?"
+                        },
+                        {
+                            "id": "d2-d1",
+                            "type": "drøft",
+                            "text": "Var Roma et godt sted å leve? Sammenlign livet til en rik og en fattig romer. Bruk «Hverdagslivet i Roma».",
+                            "km": [
+                                "saf-10-6"
+                            ],
+                            "kjennetegn": "Perspektiver"
+                        },
+                        {
+                            "id": "d2-d2",
+                            "type": "drøft",
+                            "text": "Augustus var en mester i propaganda. Hvordan fikk han romerne til å godta en keiser, når de hatet konger? Tror du det han sa om seg selv, var hele sannheten?",
+                            "km": [
+                                "saf-10-3"
+                            ],
+                            "kjennetegn": "Kildebruk"
+                        },
+                        {
+                            "id": "d2-d3",
+                            "type": "drøft",
+                            "text": "I Pompeii har arkeologene funnet veggskrift og et gatekjøkken. Hva kan slike funn fortelle som bøker skrevet av rike menn ikke forteller?",
+                            "km": [
+                                "saf-10-2"
+                            ],
+                            "kjennetegn": "Kildebruk"
+                        }
+                    ]
+                },
+                "title": "Keiserne og den romerske freden",
+                "subtitle": "31 fvt. - 180 evt.",
+                "stations": [
                     {
-                        "title": "Romerske Keisere",
-                        "url": "/historie/romerriket/romerske-keisere"
-                    }
-                ],
-                "component": {
-                    "name": "DragDropTimeline",
-                    "props": {
-                        "title": "Romerske Keisere - Kronologi",
-                        "events": [
+                        "id": "augustus",
+                        "title": "Keiseren som ikke ville kalles konge",
+                        "teaser": "Et sjøslag, en dronning som flyktet og 200 år med fred.",
+                        "emoji": "👑",
+                        "image": "/images/romerriket/hero-augustus.webp",
+                        "story": [
+                            "Etter mordet på Cæsar sloss de som var igjen om makten. Cæsars adopterte sønn Oktavian sto mot generalen Marcus Antonius. Antonius hadde slått seg sammen med Kleopatra, dronningen av Egypt. I 31 fvt. møttes flåtene deres i et stort sjøslag ved Actium i Hellas. Midt i slaget flyktet Kleopatra, og Antonius fulgte etter. Oktavian vant.",
+                            "Nå var Oktavian den mektigste mannen i verden. Men han visste at romerne hatet ordet konge. Derfor kalte han seg princeps, som betyr «den første borgeren». Han lot senatet fortsette å møtes, så det så ut som om republikken levde. I 27 fvt. ga senatet ham navnet Augustus, «den opphøyde». Han ble Romas første keiser.",
+                            "Augustus styrte i over 40 år. Han bygde veier, templer og vannledninger. Det ble sagt at han fant en by av teglstein og etterlot en by av marmor. Viktigst var freden. Etter hundre år med borgerkrig fikk riket rundt 200 år med ro. Denne tiden kalles Pax Romana, «den romerske freden». Men prisen var friheten. Romerne var ikke lenger borgere som styrte seg selv. Nå hadde de en keiser. Måneden august er oppkalt etter ham."
+                        ],
+                        "activity": {
+                            "type": "sort",
+                            "prompt": "Hører dette til republikken eller keiserdømmet?",
+                            "buckets": [
+                                "Republikken",
+                                "Keiserdømmet"
+                            ],
+                            "items": [
+                                {
+                                    "text": "To konsuler velges hvert år",
+                                    "bucket": 0,
+                                    "explanation": "I republikken delte to konsuler på makten."
+                                },
+                                {
+                                    "text": "Én mann har den øverste makten",
+                                    "bucket": 1,
+                                    "explanation": "Med Augustus fikk Roma en keiser."
+                                },
+                                {
+                                    "text": "Plebeierne streiker for å få mer makt",
+                                    "bucket": 0,
+                                    "explanation": "Streiken i 494 fvt. skjedde tidlig i republikken."
+                                },
+                                {
+                                    "text": "Lederen kaller seg «den første borgeren»",
+                                    "bucket": 1,
+                                    "explanation": "Augustus kalte seg princeps for å slippe ordet konge."
+                                },
+                                {
+                                    "text": "Pax Romana: rundt 200 år med fred",
+                                    "bucket": 1,
+                                    "explanation": "Freden begynte med Augustus."
+                                },
+                                {
+                                    "text": "Kongen jages ut av byen",
+                                    "bucket": 0,
+                                    "explanation": "Republikken begynte da romerne jaget den siste kongen rundt 509 fvt."
+                                }
+                            ]
+                        },
+                        "check": [
                             {
-                                "id": "augustus",
-                                "year": -27,
-                                "label": "Augustus (Første keiser)"
+                                "question": "Hvem vant slaget ved Actium i 31 fvt.?",
+                                "options": [
+                                    "Hannibal",
+                                    "Oktavian",
+                                    "Kleopatra",
+                                    "Marcus Antonius"
+                                ],
+                                "correct": 1,
+                                "explanation": "Kleopatra og Antonius flyktet midt i slaget, og Oktavian sto igjen som vinner."
                             },
                             {
-                                "id": "nero",
-                                "year": 54,
-                                "label": "Nero (Brannen i Roma)"
+                                "question": "Hvorfor kalte Augustus seg princeps og ikke konge?",
+                                "options": [
+                                    "Princeps betyr keiser på gresk",
+                                    "Han var ikke romersk borger",
+                                    "Romerne hatet ordet konge",
+                                    "Han var for ung til å bli konge"
+                                ],
+                                "correct": 2,
+                                "explanation": "Princeps betyr «den første borgeren». Det hørtes mye tryggere ut enn konge."
                             },
                             {
-                                "id": "trajan",
-                                "year": 98,
-                                "label": "Trajan (Riket på sitt største)"
+                                "question": "Hva var Pax Romana?",
+                                "options": [
+                                    "Et romersk sverd",
+                                    "En lov mot slaveri",
+                                    "Navnet på senatet",
+                                    "Rundt 200 år med fred i riket"
+                                ],
+                                "correct": 3,
+                                "explanation": "Pax Romana betyr «den romerske freden»."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "augustus-f1",
+                                "type": "finn",
+                                "text": "Hva betyr Pax Romana?"
                             },
                             {
-                                "id": "marcus",
-                                "year": 161,
-                                "label": "Marcus Aurelius (Filosofkeiseren)"
+                                "id": "augustus-f2",
+                                "type": "finn",
+                                "text": "Hvilken måned er oppkalt etter Augustus?"
                             },
                             {
-                                "id": "konstantin",
-                                "year": 306,
-                                "label": "Konstantin (Kristendommen)"
+                                "id": "augustus-t1",
+                                "type": "tenk",
+                                "text": "Hva betyr det at prisen for freden var friheten? Forklar med egne ord.",
+                                "km": [
+                                    "saf-10-5"
+                                ]
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Fra republikk til keiserdømme: Augustus",
+                                "url": "/historie/romerriket/augustus-og-keiserdomme"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "leiegarden",
+                        "title": "Livet i leiegården",
+                        "teaser": "I Roma bodde de fattigste øverst. Hvorfor var det så farlig?",
+                        "emoji": "🏠",
+                        "image": "/images/romerriket/hero-hverdag.webp",
+                        "story": [
+                            "Rundt år 150 evt. bodde det kanskje en million mennesker i Roma. Evt. betyr etter vår tidsregning. De rike bodde i en domus, et stort hus for én familie med en åpen gårdsplass inni. Men de aller fleste bodde i en insula, en leiegård på fem etasjer eller mer.",
+                            "I en leiegård var alt snudd på hodet fra i dag. Nederst, ved gata, lå butikker og de beste leilighetene. Jo høyere opp du bodde, jo fattigere var du. Det fantes ingen heis og ikke vann inne. Folk hentet vann fra fontener og gikk på offentlige toaletter. Leiegårdene var dårlig bygd og tok ofte fyr. Da var det de øverst som satt fast.",
+                            "De fattige spiste mest brød og grøt av korn. Kjøtt var luksus. Nesten alle brukte garum, en sterk saus av gjæret fisk. Keiseren passet på at byen fikk korn, og de fattigste fikk korn fra staten. Keiserne holdt også store forestillinger med gladiatorer og hesteløp. En dikter kalte dette «brød og sirkus»: gi folket mat og moro, så holder de seg rolige."
+                        ],
+                        "activity": {
+                            "type": "microgame",
+                            "gameId": "leiegaarden-3d"
+                        },
+                        "check": [
+                            {
+                                "question": "Hvem bodde øverst i en romersk leiegård?",
+                                "options": [
+                                    "De fattigste",
+                                    "De rikeste",
+                                    "Soldatene",
+                                    "Keiseren"
+                                ],
+                                "correct": 0,
+                                "explanation": "Øverst var det verken vann eller trygg vei ut. Derfor var det billigst der."
+                            },
+                            {
+                                "question": "Hvorfor var det farlig å bo øverst?",
+                                "options": [
+                                    "Det var ulovlig å bo der",
+                                    "Husene tok ofte fyr, og det var vanskelig å komme seg ut",
+                                    "Det var for kaldt om vinteren",
+                                    "Taket var laget av glass"
+                                ],
+                                "correct": 1,
+                                "explanation": "Leiegårdene var dårlig bygd, og de som bodde øverst, satt fast når det brant."
+                            },
+                            {
+                                "question": "Hva betyr «brød og sirkus»?",
+                                "options": [
+                                    "Et sirkus med ville dyr",
+                                    "En skatt på brød",
+                                    "Gi folket mat og moro, så holder de seg rolige",
+                                    "Navnet på et bakeri i Roma"
+                                ],
+                                "correct": 2,
+                                "explanation": "Keiserne visste at sultne og kjedelige folkemasser kunne bli farlige."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "leiegarden-f1",
+                                "type": "finn",
+                                "text": "Hva het en romersk leiegård?"
+                            },
+                            {
+                                "id": "leiegarden-f2",
+                                "type": "finn",
+                                "text": "Hva var garum?"
+                            },
+                            {
+                                "id": "leiegarden-t1",
+                                "type": "tenk",
+                                "text": "Sammenlign en romersk leiegård med en boligblokk i dag. Hva er snudd på hodet?",
+                                "km": [
+                                    "saf-10-6"
+                                ]
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Hverdagslivet i Roma",
+                                "url": "/historie/romerriket/hverdagsliv-i-roma"
+                            },
+                            {
+                                "title": "Handel og Silkeveien",
+                                "url": "/historie/romerriket/handel-og-silkeveien"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "pompeii",
+                        "title": "Pompeii: byen som ble frosset",
+                        "teaser": "Et fjell de trodde var trygt. Et døgn senere var byen borte.",
+                        "emoji": "🌋",
+                        "image": "/images/romerriket/hero-pompeii.webp",
+                        "story": [
+                            "Pompeii var en rik by sør i Italia. Folk dyrket vin i skråningene på fjellet Vesuv. De ante ikke at fjellet var en vulkan. I år 79 evt. eksploderte toppen av fjellet.",
+                            "I nesten et døgn regnet det varm pimpstein over byen. Pimpstein er lett stein full av små hull. Takene raste sammen under vekten. Men det som drepte de fleste, var noe enda verre: glødende skyer av gass og aske som raste nedover fjellet i over 100 kilometer i timen. Slike skyer kalles pyroklastiske strømmer. De kvalte alle de traff.",
+                            "Vi vet mye om dagen takket være en tenåring. Plinius den yngre var rundt 17 år og så utbruddet fra andre siden av bukta. Han skrev at skyen så ut som et pinjetre med en lang stamme. Onkelen hans, Plinius den eldre, seilte inn for å redde folk og døde av gassene.",
+                            "Asken la seg som et teppe på 6 til 7 meter over byen. Kroppene til de døde råtnet bort og etterlot hulrom i asken. I 1858 helte forskerne gips ned i hullene. Slik fikk vi figurer av mennesker akkurat slik de var da de døde. Asken som ødela byen, bevarte den også: brød i ovnene, malerier på veggene og over 11 000 beskjeder som folk hadde skrevet på husveggene."
+                        ],
+                        "activity": {
+                            "type": "microgame",
+                            "gameId": "pompeii-3d"
+                        },
+                        "check": [
+                            {
+                                "question": "Hva drepte de fleste i Pompeii?",
+                                "options": [
+                                    "Lava som rant sakte gjennom gatene",
+                                    "Et jordskjelv",
+                                    "En flodbølge",
+                                    "Glødende skyer av gass og aske"
+                                ],
+                                "correct": 3,
+                                "explanation": "De pyroklastiske strømmene kom så fort at ingen rakk å løpe fra dem."
+                            },
+                            {
+                                "question": "Hvem skrev om utbruddet fra andre siden av bukta?",
+                                "options": [
+                                    "Plinius den yngre",
+                                    "Julius Cæsar",
+                                    "Keiser Nero",
+                                    "Augustus"
+                                ],
+                                "correct": 0,
+                                "explanation": "Beskrivelsen hans er den første egentlige beskrivelsen av et vulkanutbrudd."
+                            },
+                            {
+                                "question": "Hvorfor kalles Pompeii en tidskapsel?",
+                                "options": [
+                                    "Romerne skrev ned alt om byen",
+                                    "Asken bevarte byen slik den var i år 79",
+                                    "Folk gravde ned en kiste med ting",
+                                    "Byen ble bygd opp igjen akkurat som før"
+                                ],
+                                "correct": 1,
+                                "explanation": "Det som ødela Pompeii, reddet den også for ettertiden."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "pompeii-f1",
+                                "type": "finn",
+                                "text": "Hva het vulkanen som begravde Pompeii?"
+                            },
+                            {
+                                "id": "pompeii-f2",
+                                "type": "finn",
+                                "text": "Hvilket år hadde vulkanen utbrudd?"
+                            },
+                            {
+                                "id": "pompeii-t1",
+                                "type": "tenk",
+                                "text": "Plinius den yngre så utbruddet med egne øyne. Hvorfor er det verdifullt for historikerne?",
+                                "km": [
+                                    "saf-10-2"
+                                ],
+                                "kjennetegn": "Kildebruk"
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Pompeii: Byen som ble frosset i tid",
+                                "url": "/historie/romerriket/pompeii"
                             }
                         ]
                     }
-                }
-            },
-            {
-                "id": "rome-pompeii",
-                "title": "Pompeii: Livet frosset i tid",
-                "type": "fakta",
-                "content": "Året er 79 e.Kr. Du nyter en varm sommerdag i Pompeii. Plutselig mørkner himmelen. Vesuv våkner. I løpet av noen timer blir byen og dens innbyggere begravet i aske, frosset i øyeblikket for evigheten. Når arkeologene graver dem frem nesten 2000 år senere, kan vi se nøyaktig hvordan de levde – og døde.",
-                "tasks": [
-                    "Hva skjedde med Pompeii i år 79 e.Kr?",
-                    "Hva er et 'atrium' i et romersk hus?",
-                    "Hvordan skan vi vite så mye om hva folk spiste og jobbet med i Pompeii?",
-                    "Hva forteller veggmaleriene og graffitien om livet i byen?",
-                    "Hva var funksjonen til Forum i en romersk by?",
-                    "Sammenlign boligene til de rike og de fattige i Pompeii.",
-                    "Hvorfor er Pompeii en viktigere kilde enn mange skrevne tekster fra samme tid?"
-                ],
-                "links": [
-                    {
-                        "title": "Pompeii: Tidskapselen",
-                        "url": "/historie/romerriket/pompeii"
-                    }
                 ]
             },
             {
-                "id": "rome-entertainment",
-                "phase": "Fase 3: Livet i Romerriket",
-                "title": "Brød og Sirkus",
-                "type": "refleksjon",
-                "content": "Panem et circenses. Brød og sirkus. Du sitter på tribunen i Colosseum sammen med 50 000 andre. Solen steker, og lukten av blod og svette fyller arenaen. Keiseren vet at så lenge folket er mette og underholdt, vil de ikke gjøre opprør. Men nede i sanden kjemper mennesker for livet.",
-                "tasks": [
-                    "Hvorfor var det så viktig for keiseren å gi 'brød og sirkus' til folket?",
-                    "Hvem var gladiatorene, og kunne de bli frie?",
-                    "Reflekter: Har vi noe tilsvarende 'brød og sirkus' i dag?"
-                ],
-                "links": [
+                "id": "fallet",
+                "deepDive": {
+                    "intro": "Riket gikk fra gode keisere til krise og fall. Artiklene under går dypere inn i hvorfor, og i hvem som skrev historien.",
+                    "articles": [
+                        {
+                            "title": "De romerske keiserne",
+                            "url": "/historie/romerriket/romerske-keisere"
+                        },
+                        {
+                            "title": "Fra princeps til Guds utvalgte",
+                            "url": "/historie/romerriket/legitimitet-og-kristendom"
+                        },
+                        {
+                            "title": "Vestromerrikets fall",
+                            "url": "/historie/romerriket/vestromerrikets-fall"
+                        }
+                    ],
+                    "tasks": [
+                        {
+                            "id": "d3-f1",
+                            "type": "finn",
+                            "text": "Les «Vestromerrikets fall». Hvem møtte hunerkongen Attila i Nord-Italia, ifølge tradisjonen?"
+                        },
+                        {
+                            "id": "d3-d1",
+                            "type": "drøft",
+                            "text": "Ettertiden har husket keiser Caligula som gal. Hvorfor mener historikere i dag at bildet kan være feil? Hva sier det om hvem som skriver historien?",
+                            "km": [
+                                "saf-10-2",
+                                "saf-10-3"
+                            ],
+                            "kjennetegn": "Kildebruk"
+                        },
+                        {
+                            "id": "d3-d2",
+                            "type": "drøft",
+                            "text": "Del årsakene til at Vestromerriket falt i to grupper: problemer innenfra og angrep utenfra. Hvilken gruppe tror du betydde mest?",
+                            "km": [
+                                "saf-10-7"
+                            ],
+                            "kjennetegn": "Årsak-virkning"
+                        },
+                        {
+                            "id": "d3-d3",
+                            "type": "drøft",
+                            "text": "Keiser Theodosius måtte be en biskop om tilgivelse. Hvorfor var det et vendepunkt i kampen om hvem som skulle ha makten?",
+                            "km": [
+                                "saf-10-5"
+                            ],
+                            "kjennetegn": "Sammenhenger"
+                        }
+                    ]
+                },
+                "title": "Krise og fall",
+                "subtitle": "180 - 476 evt.",
+                "stations": [
                     {
-                        "title": "Hverdagsliv i Roma",
-                        "url": "/historie/romerriket/hverdagsliv-i-roma"
-                    }
-                ],
-                "component": {
-                    "name": "ScenarioRoleplay",
-                    "props": {
-                        "title": "En dag i Colosseum",
-                        "intro": "Du er en 'Thraex' gladiator. Publikum brøler navnet ditt. Porten åpnes, og lyset blender deg. Foran deg står en tungt rustet motstander. Keiseren ser på. Overlever du?",
-                        "startId": "start",
-                        "scenarios": [
+                        "id": "keiserne",
+                        "title": "Gode og gale keisere",
+                        "teaser": "En by i flammer, en mur tvers over Britannia og 20 keisere på 50 år.",
+                        "emoji": "📜",
+                        "image": "/images/romerriket/hero-emperors.webp",
+                        "story": [
+                            "I 500 år hadde Roma keisere. Noen var kloke, andre var grusomme. Nero var keiser da en stor brann la store deler av Roma i aske i år 64. Det gikk rykter om at han hadde startet brannen selv. Han ga de kristne skylden og straffet dem brutalt.",
+                            "Etter Nero kom en av de beste tidene i riket. Fem keisere på rad, blant dem Trajan, Hadrian og Marcus Aurelius, kalles «de fem gode keiserne». Hemmeligheten var at ingen av dem ga makten til en sønn. De adopterte i stedet den dyktigste mannen de fant. Under Trajan var riket større enn noen gang. Hadrian bygde en 118 kilometer lang mur tvers over Nord-England for å holde fiender ute. Marcus Aurelius var opptatt av filosofi, altså å tenke over de store spørsmålene i livet.",
+                            "Men Marcus Aurelius lot sønnen Commodus overta, og han ble en dårlig keiser. Etter ham fikk hæren mer og mer makt. Mellom år 235 og 284 hadde Roma over 20 keisere. Mange ble drept av sine egne soldater. Fiender angrep fra alle kanter, og pengene ble mindre verdt. Denne tiden kalles krisen i det tredje århundret."
+                        ],
+                        "activity": {
+                            "type": "order",
+                            "prompt": "Sett keisertiden i riktig rekkefølge. Det som skjedde først, skal øverst.",
+                            "items": [
+                                {
+                                    "text": "Augustus blir Romas første keiser",
+                                    "label": "27 fvt."
+                                },
+                                {
+                                    "text": "Roma brenner mens Nero er keiser",
+                                    "label": "64 evt."
+                                },
+                                {
+                                    "text": "Under Trajan er riket større enn noen gang",
+                                    "label": "117 evt."
+                                },
+                                {
+                                    "text": "Hadrian bygger muren tvers over Britannia",
+                                    "label": "122 evt."
+                                },
+                                {
+                                    "text": "Over 20 keisere på 50 år",
+                                    "label": "235-284 evt."
+                                }
+                            ]
+                        },
+                        "check": [
                             {
-                                "id": "start",
-                                "text": "Din motstander is en 'Murmillo' med stort skjold. Han brøler og går til angrep. Hva gjør du?",
+                                "question": "Hva var hemmeligheten bak de fem gode keiserne?",
                                 "options": [
-                                    {
-                                        "label": "Gå defensivt og vent på en åpning.",
-                                        "nextId": "defend"
-                                    },
-                                    {
-                                        "label": "Angrip først! (Risikabelt)",
-                                        "nextId": "attack_fail"
-                                    }
-                                ]
+                                    "De ble valgt av folket",
+                                    "De levde svært lenge",
+                                    "De adopterte den dyktigste mannen i stedet for å gi makten til en sønn",
+                                    "De var brødre"
+                                ],
+                                "correct": 2,
+                                "explanation": "Slik fikk riket dyktige ledere i nesten hundre år."
                             },
                             {
-                                "id": "defend",
-                                "text": "Du smetter unna det tunge slaget hans. Han mister balansen et øyeblikk.",
+                                "question": "Hvorfor bygde Hadrian en mur i Nord-England?",
                                 "options": [
-                                    {
-                                        "label": "Hugg ham i beinet (klassisk Thraex-trekk).",
-                                        "nextId": "victory"
-                                    },
-                                    {
-                                        "label": "Prøv å dytte ham overende.",
-                                        "nextId": "risk_push"
-                                    }
-                                ]
+                                    "For å lage en vei",
+                                    "For å sperre inne slaver",
+                                    "For å vise fram kunst",
+                                    "For å holde fiender ute"
+                                ],
+                                "correct": 3,
+                                "explanation": "Hadrian satset på å forsvare grensene i stedet for å erobre mer."
                             },
                             {
-                                "id": "attack_fail",
-                                "text": "He blokkerer lett med det store skjoldet sitt og slår deg bevisstløs med skjoldkanten.",
+                                "question": "Hva skjedde under krisen i det tredje århundret?",
                                 "options": [
-                                    {
-                                        "label": "Håp på keiserens nåde.",
-                                        "nextId": "thumbs_down"
-                                    }
-                                ]
+                                    "Roma hadde over 20 keisere, og mange ble drept",
+                                    "Roma fikk 200 år med fred",
+                                    "Vesuv hadde utbrudd",
+                                    "Roma erobret Kina"
+                                ],
+                                "correct": 0,
+                                "explanation": "Hæren bestemte hvem som ble keiser, og keiserne ble drept like fort som de kom."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "keiserne-f1",
+                                "type": "finn",
+                                "text": "Hvilket år brant Roma?"
                             },
                             {
-                                "id": "victory",
-                                "text": "He faller! Du setter sverdet mot halsen hans. Publikum roper. Keiseren reiser seg. Tommelen avgjør alt.",
+                                "id": "keiserne-f2",
+                                "type": "finn",
+                                "text": "Hvem bygde en mur tvers over Nord-England?"
+                            },
+                            {
+                                "id": "keiserne-t1",
+                                "type": "tenk",
+                                "text": "Hva gjør en hersker god eller dårlig? Bruk to keisere som eksempel."
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "De romerske keiserne",
+                                "url": "/historie/romerriket/romerske-keisere"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "konstantin",
+                        "title": "Keiseren som valgte korset",
+                        "teaser": "Fra mange guder til én. Et tegn på himmelen forandret riket.",
+                        "emoji": "✝️",
+                        "image": "/images/romerriket/constantine-vision.webp",
+                        "story": [
+                            "Romerne hadde mange guder, med himmelguden Jupiter som den øverste. Religion handlet om å gjøre ting riktig: be, ofre og holde gudene fornøyde. Etter hvert ble også keiserne dyrket som guder, for det meste etter at de var døde. De kristne trodde bare på én Gud. Derfor nektet de å ofre til keiseren, og mange ble forfulgt.",
+                            "I år 312 kjempet Konstantin om makten i et slag ved en bro utenfor Roma. Ifølge fortellingene så han et kristent tegn, på himmelen eller i en drøm, sammen med ordene «i dette tegn skal du seire». Han lot soldatene male tegnet på skjoldene, og han vant. Konstantin gjorde seg til kirkens beskytter. Det var smart: Hvis keiseren var valgt av Gud, var opprør mot keiseren det samme som opprør mot Gud.",
+                            "De kristne var ikke enige om alt. I 325 samlet Konstantin biskoper fra hele riket i byen Nikea for å bli enige om hva de kristne skulle tro. Det var første gang en keiser brukte statens makt til å bestemme hva som var riktig tro. Under keiser Theodosius ble kristendommen statens religion. I 391 stengte han templene og forbød dyrking av de gamle gudene."
+                        ],
+                        "activity": {
+                            "type": "sort",
+                            "prompt": "Hører dette til den gamle romerske religionen eller kristendommen?",
+                            "buckets": [
+                                "Gamle romerske guder",
+                                "Kristendommen"
+                            ],
+                            "items": [
+                                {
+                                    "text": "Mange guder, med Jupiter øverst",
+                                    "bucket": 0,
+                                    "explanation": "Romerne dyrket mange guder samtidig."
+                                },
+                                {
+                                    "text": "Én Gud som krever full lojalitet",
+                                    "bucket": 1,
+                                    "explanation": "De kristne trodde bare på én Gud."
+                                },
+                                {
+                                    "text": "Keiseren gjøres til gud når han dør",
+                                    "bucket": 0,
+                                    "explanation": "Keiserdyrkelse var en del av den gamle statsreligionen."
+                                },
+                                {
+                                    "text": "Nekter å ofre til keiseren",
+                                    "bucket": 1,
+                                    "explanation": "Derfor ble mange kristne forfulgt."
+                                },
+                                {
+                                    "text": "Ofringer for å holde gudene fornøyde",
+                                    "bucket": 0,
+                                    "explanation": "Romerne ga gudene offer og ventet beskyttelse tilbake."
+                                },
+                                {
+                                    "text": "Blir statens religion under Theodosius",
+                                    "bucket": 1,
+                                    "explanation": "Mot slutten av 300-tallet ble kristendommen statens religion."
+                                }
+                            ]
+                        },
+                        "check": [
+                            {
+                                "question": "Hvorfor ble mange kristne forfulgt i Romerriket?",
                                 "options": [
-                                    {
-                                        "label": "Seieren er din!",
-                                        "nextId": "win"
-                                    }
-                                ]
+                                    "De nektet å betale skatt",
+                                    "De nektet å ofre til keiseren",
+                                    "De ville ha en konge",
+                                    "De streiket"
+                                ],
+                                "correct": 1,
+                                "explanation": "De kristne ville bare tilbe sin egen Gud, ikke keiseren."
                             },
                             {
-                                "id": "thumbs_down",
-                                "text": "Keiseren peker tommelen mot halsen. Det er slutt. Du kjempet tappert.",
-                                "options": []
+                                "question": "Hvorfor var det smart av Konstantin å bli kirkens beskytter?",
+                                "options": [
+                                    "Han fikk mer korn fra Egypt",
+                                    "Han slapp å møte senatet",
+                                    "Opprør mot keiseren ble som opprør mot Gud",
+                                    "Kirken hadde flest soldater"
+                                ],
+                                "correct": 2,
+                                "explanation": "Når keiseren var Guds utvalgte, fikk han en ny og sterk grunn til å bli adlydt."
                             },
                             {
-                                "id": "win",
-                                "text": "Keiseren sparer ham! Du blir hyllet som seierherre. Én dag nærmere friheten og tresverdet (rudis).",
-                                "options": []
+                                "question": "Hva gjorde keiser Theodosius i 391?",
+                                "options": [
+                                    "Han stengte alle kirkene",
+                                    "Han flyttet hovedstaden til Nikea",
+                                    "Han gjorde Jupiter til den eneste guden",
+                                    "Han forbød dyrking av de gamle gudene"
+                                ],
+                                "correct": 3,
+                                "explanation": "Da var kristendommen blitt statens religion."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "konstantin-f1",
+                                "type": "finn",
+                                "text": "Hva het den øverste guden til romerne?"
+                            },
+                            {
+                                "id": "konstantin-f2",
+                                "type": "finn",
+                                "text": "Hvilket år samlet Konstantin biskopene i Nikea?"
+                            },
+                            {
+                                "id": "konstantin-t1",
+                                "type": "tenk",
+                                "text": "Hvordan kan religion gi en hersker makt? Bruk Konstantin som eksempel."
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "De romerske gudene",
+                                "url": "/historie/romerriket/romerske-guder"
+                            },
+                            {
+                                "title": "Fra princeps til Guds utvalgte",
+                                "url": "/historie/romerriket/legitimitet-og-kristendom"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "grensen",
+                        "title": "Grensen som lekket",
+                        "teaser": "Hunerne kommer, Roma blir plyndret, og en gutt blir den siste keiseren.",
+                        "emoji": "⚔️",
+                        "image": "/images/romerriket/hero-fall.webp",
+                        "story": [
+                            "Rundt år 370 kom hunerne, et fryktet rytterfolk, fra steppene i øst. De satte i gang en kjedereaksjon. Germanske folk flyktet vestover og sørover, inn mot Romerriket. Grensen var lang, og hæren kostet mer enn staten hadde råd til. Keiserne klarte ikke lenger å holde alle ute.",
+                            "I år 410 skjedde det ingen trodde var mulig. Vestgoterne under kong Alarik tok Roma og plyndret byen i tre dager. «Byen som hadde tatt hele verden, ble selv tatt», skrev den kristne forfatteren Hieronymus. Senere tok vandalene Nord-Afrika, der mye av kornet og skattepengene kom fra. I 455 plyndret de Roma igjen. Ordet vandalisme, å ødelegge ting med vilje, kommer fra dem.",
+                            "Slutten kom stille. I 476 avsatte germaneren Odovakar den siste keiseren i vest, en gutt som het Romulus Augustulus. Odovakar kalte seg konge og valgte ingen ny keiser. Vestromerriket var borte. Men i øst levde Østromerriket videre i nesten 1000 år, helt til byen Konstantinopel falt i 1453."
+                        ],
+                        "activity": {
+                            "type": "microgame",
+                            "gameId": "grensen-lekker-3d"
+                        },
+                        "check": [
+                            {
+                                "question": "Hvorfor kom germanske folk inn i Romerriket?",
+                                "options": [
+                                    "De flyktet fra hunerne",
+                                    "Keiseren inviterte dem til fest",
+                                    "De ville bli kristne",
+                                    "De skulle handle med India"
+                                ],
+                                "correct": 0,
+                                "explanation": "Hunerne satte i gang en kjedereaksjon som presset folk mot grensen."
+                            },
+                            {
+                                "question": "Hva skjedde i år 410?",
+                                "options": [
+                                    "Konstantin vant ved broen",
+                                    "Vestgoterne plyndret Roma",
+                                    "Cæsar ble drept",
+                                    "Vesuv hadde utbrudd"
+                                ],
+                                "correct": 1,
+                                "explanation": "Det var første gang på 800 år at en fiende hadde tatt byen."
+                            },
+                            {
+                                "question": "Hva skjedde med Østromerriket etter 476?",
+                                "options": [
+                                    "Det ble styrt av hunerne",
+                                    "Det flyttet til Nord-Afrika",
+                                    "Det levde videre i nesten 1000 år",
+                                    "Det falt samme dag"
+                                ],
+                                "correct": 2,
+                                "explanation": "Østromerriket varte til Konstantinopel falt i 1453."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "grensen-f1",
+                                "type": "finn",
+                                "text": "Hva het rytterfolket fra øst som satte i gang kjedereaksjonen?"
+                            },
+                            {
+                                "id": "grensen-f2",
+                                "type": "finn",
+                                "text": "Hvilket år ble den siste keiseren i vest avsatt?"
+                            },
+                            {
+                                "id": "grensen-t1",
+                                "type": "tenk",
+                                "text": "Nevn to grunner til at Vestromerriket falt. Hvilken tror du var viktigst?",
+                                "km": [
+                                    "saf-10-7"
+                                ],
+                                "kjennetegn": "Årsak-virkning"
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Vestromerrikets fall",
+                                "url": "/historie/romerriket/vestromerrikets-fall"
                             }
                         ]
                     }
-                }
-            },
-            {
-                "id": "rome-trade",
-                "title": "Alle veier fører til Rom",
-                "type": "fakta",
-                "content": "Du står ved havnen i Ostia. Skip fra hele den kjente verden legger til kai. Korn fra Egypt, silke fra Kina, ville dyr fra Afrika og tinn fra Britannia. Romerriket er en globalisert maskin, bundet sammen av rette, solide veier og en felles valuta. Du kan reise fra Skottland til Syria uten pass.",
-                "tasks": [
-                    "Hva menes med uttrykket 'Alle veier fører til Rom'?",
-                    "Hvorfor var Middelhavet ('Mare Nostrum') så viktig for handelen?",
-                    "Hvilke varer ble importert til Roma, og hvor kom de fra?",
-                    "Hva var Silkeveien?",
-                    "Hvordan bidro det romerske veinettet til rikets sikkerhet og økonomi?",
-                    "Hvordan fungerte den romerske myntenheten som en felles standard?",
-                    "Forklar sammenhengen mellom romersk fred (Pax Romana) og økt handel."
-                ],
-                "links": [
-                    {
-                        "title": "Handel og Silkeveien",
-                        "url": "/historie/romerriket/handel-og-silkeveien"
-                    }
                 ]
             },
             {
-                "id": "rome-religion",
-                "title": "Gudene og Pantheon",
-                "type": "fakta",
-                "content": "Røyken stiger fra altrene. Du skal ofre til Jupiter for å sikre familiens lykke. Romerne er praktiske – de inngår kontrakter med gudene: 'Jeg gir, for at du skal gi'. Og når de erobrer nye land, tar de gjerne med seg de fremmede gudene hjem. Så lenge du ofrer til keiseren, kan du tro på hva du vil. Nesten.",
-                "tasks": [
-                    "Hvem var Jupiter, Juno og Minerva?",
-                    "Hva var 'Pax Deorum', og hvorfor var romerne redde for å bryte den?",
-                    "Hva var funksjonen til en 'Pater Familias' i familiens religiøse liv?",
-                    "Hvem var Vestalinnene, og hva var deres oppgave?",
-                    "Hva menes med keiserdyrkelse, og hvorfor var det en politisk handling?",
-                    "Hva var Lares og Penates?",
-                    "Hvorfor aksepterte romerne ofte guder fra erobrede områder (synkretisme)?"
-                ],
-                "links": [
+                "id": "arven",
+                "title": "Epilog: Roma lever",
+                "subtitle": "Arven vi bruker hver dag",
+                "stations": [
                     {
-                        "title": "Romerske Guder",
-                        "url": "/historie/romerriket/romerske-guder"
-                    }
-                ]
-            },
-            {
-                "id": "rome-christianity",
-                "phase": "Fase 4: Kriser og Kristendom (180 - 476 e.Kr)",
-                "title": "Kristendommen: Fra sekt til statsmakt",
-                "type": "refleksjon",
-                "content": "I katakombene under byen hviskes det om en ny gud. En som ikke krever blodoffer, men kjærlighet. De kristne nekter å bøye kne for keiseren. De kalles ateister og opprørere. Du ser dem bli kastet for løvene, men troen deres dør ikke. Snart skal til og med keiseren knele for korset.",
-                "tasks": [
-                    "Hvorfor ble de kristne forfulgt?",
-                    "Hva gjorde keiser Konstantin i 313 (Milano-ediktet)?",
-                    "Hvordan endret Romerriket seg da kristendommen ble statsreligion?"
-                ],
-                "links": [
-                    {
-                        "title": "Legitimitet og Kristendom",
-                        "url": "/historie/romerriket/legitimitet-og-kristendom"
-                    }
-                ],
-                "component": {
-                    "name": "DebateSimulator",
-                    "props": {
-                        "topic": "Skal de kristne straffes?",
-                        "opponentName": "Senator Cato",
-                        "context": "År 250 e.Kr. En gruppe kristne er arrestert. Senator Cato krever dødsstraff for forræderi mot statens guder. Du må forsvare dem - eller dømme dem.",
-                        "winningScore": 15,
-                        "arguments": [
+                        "id": "arven",
+                        "title": "Roma lever",
+                        "teaser": "Bokstavene du leser, månedene du bruker og betongen i byen din.",
+                        "emoji": "🏗️",
+                        "image": "/images/romerriket/hero-arv.webp",
+                        "story": [
+                            "Romerriket forsvant, men mye av det lever videre rundt deg. Romerne snakket latin. Latin utviklet seg til fransk, spansk, italiensk, portugisisk og rumensk. Over 900 millioner mennesker har et slikt språk som morsmål i dag. Også norsk er fullt av latinske ord, som data, video, prosent og null. Og du leser denne teksten med det latinske alfabetet.",
+                            "Romerne var opptatt av lover. Mange av tankene deres lever i rettssystemet vårt, for eksempel at du er uskyldig til det motsatte er bevist. De var også dyktige byggere. Romersk betong var laget av kalk, vulkansk aske og knust teglstein. Derfor står bygg som Pantheon fortsatt etter nesten 2000 år. Med buen kunne de bygge store haller og broer som tålte enorm vekt.",
+                            "Mange gamle byer i Europa har rette gater i et rutenett fordi de startet som romerske militærleirer. Romerne bygde veier fra Skottland til Persiabukta. Og hver gang du skriver juli eller august, bruker du navnene til Cæsar og Augustus."
+                        ],
+                        "activity": {
+                            "type": "sort",
+                            "prompt": "Kommer dette fra Romerriket?",
+                            "buckets": [
+                                "Arv fra Roma",
+                                "Ikke fra Roma"
+                            ],
+                            "items": [
+                                {
+                                    "text": "Bokstavene A, B og C",
+                                    "bucket": 0,
+                                    "explanation": "Vi skriver med det latinske alfabetet."
+                                },
+                                {
+                                    "text": "Måneden juli",
+                                    "bucket": 0,
+                                    "explanation": "Juli er oppkalt etter Julius Cæsar."
+                                },
+                                {
+                                    "text": "Poteter til middag",
+                                    "bucket": 1,
+                                    "explanation": "Poteten kom fra Amerika, som romerne aldri kjente til."
+                                },
+                                {
+                                    "text": "Ordet «data»",
+                                    "bucket": 0,
+                                    "explanation": "Data er et latinsk ord."
+                                },
+                                {
+                                    "text": "Internett",
+                                    "bucket": 1,
+                                    "explanation": "Internett ble laget nesten 1500 år etter at Vestromerriket falt."
+                                },
+                                {
+                                    "text": "Uskyldig til det motsatte er bevist",
+                                    "bucket": 0,
+                                    "explanation": "Tanken har røtter i romerretten."
+                                },
+                                {
+                                    "text": "Rette gater i gamle europeiske byer",
+                                    "bucket": 0,
+                                    "explanation": "Mange byer startet som romerske militærleirer med gater i rutenett."
+                                }
+                            ]
+                        },
+                        "check": [
                             {
-                                "id": "a1",
-                                "text": "De betaler skatt og er fredelige borgere.",
-                                "strength": 5,
-                                "type": "mercy",
-                                "response": "Men de nekter å ære statens beskytter! Det bringer ulykke."
+                                "question": "Hvilke språk utviklet seg fra latin?",
+                                "options": [
+                                    "Norsk, svensk og dansk",
+                                    "Engelsk og tysk",
+                                    "Arabisk og tyrkisk",
+                                    "Fransk, spansk og italiensk"
+                                ],
+                                "correct": 3,
+                                "explanation": "Disse kalles romanske språk. Norsk har likevel lånt mange latinske ord."
                             },
                             {
-                                "id": "a2",
-                                "text": "Martyrene gjør dem bare sterkere. La oss ignorere dem.",
-                                "strength": 8,
-                                "type": "honor",
-                                "response": "Svakhet oppmuntrer til opprør. Loven må følges."
+                                "question": "Hvorfor står romerske bygg som Pantheon fortsatt?",
+                                "options": [
+                                    "De ble bygd med sterk romersk betong",
+                                    "De er laget av gull",
+                                    "De blir bygd opp igjen hvert år",
+                                    "Ingen har brukt dem"
+                                ],
+                                "correct": 0,
+                                "explanation": "Blandingen av kalk, vulkansk aske og teglstein ble svært sterk."
                             },
                             {
-                                "id": "a3",
-                                "text": "Alle bør ha rett til å tro på sin egen gud.",
-                                "strength": 2,
-                                "type": "mercy",
-                                "response": "Religionsfrihet? Latterlig. Romerske guder bygget dette riket."
+                                "question": "Hvilken regel i rettssystemet vårt har røtter i romerretten?",
+                                "options": [
+                                    "Bare menn kan dømmes",
+                                    "Du er uskyldig til det motsatte er bevist",
+                                    "Kongen har alltid rett",
+                                    "Den rikeste vinner saken"
+                                ],
+                                "correct": 1,
+                                "explanation": "Det er den som anklager, som må bevise at du er skyldig."
+                            }
+                        ],
+                        "tasks": [
+                            {
+                                "id": "arven-f1",
+                                "type": "finn",
+                                "text": "Nevn tre språk som utviklet seg fra latin."
                             },
                             {
-                                "id": "b1",
-                                "text": "Disse ofringene er bare en formalitet, ikke tro.",
-                                "strength": 6,
-                                "type": "laws",
-                                "response": "Nettopp! Og de nekter selv det minste tegn på lojalitet."
+                                "id": "arven-f2",
+                                "type": "finn",
+                                "text": "Hva var romersk betong laget av?"
                             },
                             {
-                                "id": "b2",
-                                "text": "Vi trenger enhet i riket, ikke splittelse.",
-                                "strength": 4,
-                                "type": "honor",
-                                "response": "Enhet får vi ved at alle bøyer kne for keiseren."
+                                "id": "arven-t1",
+                                "type": "tenk",
+                                "text": "Finn tre ting i hverdagen din som har røtter i Romerriket.",
+                                "km": [
+                                    "saf-10-4"
+                                ],
+                                "kjennetegn": "Sammenhenger"
+                            }
+                        ],
+                        "readMore": [
+                            {
+                                "title": "Arven etter Romerriket",
+                                "url": "/historie/romerriket/arven-etter-romerriket"
                             }
                         ]
                     }
-                }
-            },
-            {
-                "id": "rome-fall",
-                "title": "Vestromerrikets fall",
-                "type": "utfordring",
-                "content": "Riket knaker i sammenføyningene. Grensene lekker. Økonomien kollapser. Du står på muren og ser røyken fra brennende byer i horisonten. Barbarene hamret på portene, og denne gangen er det ingen som kan stoppe dem. I 476 sender den siste keiseren kronen til Konstantinopel. Lyset slukkes i vest.",
-                "tasks": [
-                    "Nevn tre årsaker til at Vestromerriket falt.",
-                    "Hvem var hunnerne og goterne?",
-                    "Hva skjedde med Østromerriket (Bysants)?"
-                ],
-                "links": [
-                    {
-                        "title": "Vestromerrikets fall",
-                        "url": "/historie/romerriket/vestromerrikets-fall"
-                    }
-                ]
-            },
-            {
-                "id": "rome-legacy",
-                "phase": "Fase 5: Arven",
-                "title": "Hva har romerne gjort for oss?",
-                "type": "refleksjon",
-                "content": "Du er tilbake i nåtiden. Men ser du deg rundt, er Roma overalt. I bokstavene du leser. I lovene som styrer oss. I betongen i huset ditt. Romerriket falt aldri helt – det ble bare en del av oss. Arven lever videre.",
-                "tasks": [
-                    "Finn fem ord i norsk språk som kommer fra latin.",
-                    "Hvordan er vårt rettssystem påvirket av romersk rett?",
-                    "Se på en bygning i din by (f.eks tinghuset/rådhuset). Ser du romerske søyler?"
-                ],
-                "links": [
-                    {
-                        "title": "Arven etter Romerriket",
-                        "url": "/historie/romerriket/arven-etter-romerriket"
-                    }
-                ]
-            },
-            {
-                "id": "rome-project",
-                "title": "Fordypningsoppgave",
-                "type": "oppgave",
-                "content": "Din tidsreise er over, men arbeidet ditt har nettopp begynt. Nå skal du bruke alt du har sett og lært. Velg deg en keiser som fascinerte deg, et slag som endret historien, eller et aspekt ved dagliglivet, og fortell historien videre.",
-                "tasks": [
-                    "Problemstilling: Var Romerriket et godt sted å leve? (Husk: For hvem?)",
-                    "Sammenlign Romerriket med et imperium fra en annen verdensdel (f.eks Kina under Han-dynastiet).",
-                    "Lag en modell av Colosseum eller en akvedukt."
                 ]
             }
         ],
+        "finale": {
+            "title": "Du har reist gjennom hele Romerriket!",
+            "text": "Fra gjeterhyttene ved Tiberen til den siste keiseren i 476. Og arven etter Roma omgir deg hver dag: i bokstavene, i kalenderen og i lovene."
+        },
+        "project": {
+            "intro": "Velg én oppgave å jobbe videre med, hjemme eller i neste time. Læreren sier hvordan du skal levere.",
+            "choices": [
+                {
+                    "id": "p1",
+                    "type": "drøft",
+                    "text": "Var Romerriket et godt sted å leve? Lag en presentasjon om livet til tre personer: en senator, en slave og en fattig familie i en leiegård.",
+                    "km": [
+                        "saf-10-6"
+                    ],
+                    "kjennetegn": "Perspektiver"
+                },
+                {
+                    "id": "p2",
+                    "type": "drøft",
+                    "text": "Romersk teknologi i dag: Velg betong, buen eller veiene. Vis hvordan den virket, og hvor vi bruker den i dag.",
+                    "km": [
+                        "saf-10-4"
+                    ],
+                    "kjennetegn": "Sammenhenger"
+                },
+                {
+                    "id": "p3",
+                    "type": "drøft",
+                    "text": "Roma på film og i spill: Finn en film, en serie eller et spill om Romerriket. Hva stemmer med det du har lært, og hva er pynt?",
+                    "km": [
+                        "saf-10-3"
+                    ],
+                    "kjennetegn": "Kildebruk"
+                }
+            ]
+        },
         "presentation": {
             "id": "rom-pres-1",
             "title": "Romerriket: En reise gjennom tid",
@@ -467,13 +1410,41 @@
                     "start": -753,
                     "end": 476,
                     "milestones": [
-                        { "year": -753, "label": "Roma grunnlegges", "kind": "major" },
-                        { "year": -509, "label": "Republikken", "kind": "major" },
-                        { "year": -27, "label": "Augustus", "kind": "major" },
-                        { "year": 79, "label": "Pompeii", "kind": "minor" },
-                        { "year": 117, "label": "Største utstrekning", "kind": "minor" },
-                        { "year": 313, "label": "Milano-ediktet", "kind": "major" },
-                        { "year": 476, "label": "Vestrikets fall", "kind": "major" }
+                        {
+                            "year": -753,
+                            "label": "Roma grunnlegges",
+                            "kind": "major"
+                        },
+                        {
+                            "year": -509,
+                            "label": "Republikken",
+                            "kind": "major"
+                        },
+                        {
+                            "year": -27,
+                            "label": "Augustus",
+                            "kind": "major"
+                        },
+                        {
+                            "year": 79,
+                            "label": "Pompeii",
+                            "kind": "minor"
+                        },
+                        {
+                            "year": 117,
+                            "label": "Største utstrekning",
+                            "kind": "minor"
+                        },
+                        {
+                            "year": 313,
+                            "label": "Milano-ediktet",
+                            "kind": "major"
+                        },
+                        {
+                            "year": 476,
+                            "label": "Vestrikets fall",
+                            "kind": "major"
+                        }
                     ]
                 }
             },
@@ -484,7 +1455,10 @@
                     "layout": "title",
                     "summary": "Fra landsby til verdensrike",
                     "phase": "opptakt",
-                    "yearRange": [-753, 476],
+                    "yearRange": [
+                        -753,
+                        476
+                    ],
                     "image": "/images/romerriket/hero-overview.webp",
                     "teacherNotes": "Velkommen til en reise gjennom 1200 år med historie. I dag skal vi ikke bare lese om årstall, vi skal leve oss inn i Romas storhetstid og fall.\n\nStart med å spørre klassen: Hva tenker dere på når jeg sier 'Roma'? (Gladiatorer, søyler, Cæsar, pizza?)."
                 },
@@ -494,12 +1468,24 @@
                     "layout": "content",
                     "summary": "SPQR: Senatet og det romerske folk",
                     "phase": "opptakt",
-                    "linksToStepId": "rome-start",
+                    "linksToStepId": "folket-jaget-kongen",
                     "year": -509,
                     "points": [
-                        { "id": "p1", "text": "Roma kaster kongene i 509 f.Kr.", "type": "bullet" },
-                        { "id": "p2", "text": "Maktfordeling: konsuler og senatet", "type": "bullet" },
-                        { "id": "p3", "text": "Striden mellom patrisiere (rike) og plebeiere (folket)", "type": "bullet" }
+                        {
+                            "id": "p1",
+                            "text": "Roma kaster kongene i 509 f.Kr.",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "p2",
+                            "text": "Maktfordeling: konsuler og senatet",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "p3",
+                            "text": "Striden mellom patrisiere (rike) og plebeiere (folket)",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/roman-senate.webp",
                     "teacherNotes": "Roma startet som et kongedømme, men romerne lærte å hate konger etter Tarquinius Superbus.\n\nForklar SPQR (Senatus Populusque Romanus). Dette var ikke et demokrati slik vi kjenner det, men et system bygget på maktbalanse.",
@@ -513,14 +1499,22 @@
                     "title": "Les og svar: Romersk start",
                     "layout": "task-pause",
                     "phase": "opptakt",
-                    "linksToStepId": "rome-start",
+                    "linksToStepId": "folket-jaget-kongen",
                     "year": -509,
                     "pauseForTask": true,
                     "suggestedMinutes": 15,
-                    "taskPrompt": "Les artikkelen 'Romersk start: Republikken' og svar på oppgavene i steg 1.",
+                    "taskPrompt": "Åpne steg 2, «Folket som jaget kongen», i læringsstien. Les fortellingen, sorter og svar på spørsmålene.",
                     "points": [
-                        { "id": "tp1", "text": "Hva betyr SPQR, og hvorfor var det så viktig?", "type": "bullet" },
-                        { "id": "tp2", "text": "Hva var forskjellen på patrisiere og plebeiere?", "type": "bullet" }
+                        {
+                            "id": "tp1",
+                            "text": "Hva betyr SPQR, og hvorfor var det så viktig?",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "tp2",
+                            "text": "Hva var forskjellen på patrisiere og plebeiere?",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/hero-founding.webp",
                     "teacherNotes": "Gi elevene 15 minutter til å lese artikkelen og svare. Du kan kopiere oppgavelisten fra læringsstien og dele den i klasserommet.\n\nGå rundt og hjelp de som strever. Når tiden er ute, gå videre til legionen."
@@ -531,12 +1525,24 @@
                     "layout": "content",
                     "summary": "Legionæren: ryggraden i Roma",
                     "phase": "opptakt",
-                    "linksToStepId": "rome-legion",
+                    "linksToStepId": "legionaeren",
                     "year": -107,
                     "points": [
-                        { "id": "l1", "text": "Marius' reformer: profesjonelle soldater", "type": "bullet" },
-                        { "id": "l2", "text": "Hard disiplin og 3 mil marsj hver dag", "type": "bullet" },
-                        { "id": "l3", "text": "Effektivitet fremfor heltemot", "type": "bullet" }
+                        {
+                            "id": "l1",
+                            "text": "Marius' reformer: profesjonelle soldater",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "l2",
+                            "text": "Hard disiplin og 3 mil marsj hver dag",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "l3",
+                            "text": "Effektivitet fremfor heltemot",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/legionary-portrait.webp",
                     "teacherNotes": "Legionen var mer enn soldater - de var ingeniører. De bygget veier, broer og leirer uansett hvor de dro.\n\nNevn 'Marius' muldyr': soldatene bar alt selv. Det gjorde hæren rask og uavhengig av forsyningslinjer.",
@@ -550,7 +1556,7 @@
                     "title": "Oppdrag: Pakk sekken",
                     "layout": "interactive",
                     "phase": "opptakt",
-                    "linksToStepId": "rome-legion",
+                    "linksToStepId": "legionaeren",
                     "year": -107,
                     "component": {
                         "name": "PackTheBag",
@@ -562,10 +1568,34 @@
                             "overweightLabel": "Sekken er for tung for en lang marsj!",
                             "successLabel": "Legionæren er klar for tjeneste!",
                             "items": [
-                                { "id": "gladius", "name": "Gladius (Sverd)", "weight": 2, "value": 30, "icon": "🗡️" },
-                                { "id": "scutum", "name": "Scutum (Skjold)", "weight": 10, "value": 40, "icon": "🛡️" },
-                                { "id": "pilum", "name": "Pilum (Spyd)", "weight": 4, "value": 20, "icon": "🔱" },
-                                { "id": "rations", "name": "Rasjoner (Kjøtt/Korn)", "weight": 5, "value": 25, "icon": "🥩" }
+                                {
+                                    "id": "gladius",
+                                    "name": "Gladius (Sverd)",
+                                    "weight": 2,
+                                    "value": 30,
+                                    "icon": "🗡️"
+                                },
+                                {
+                                    "id": "scutum",
+                                    "name": "Scutum (Skjold)",
+                                    "weight": 10,
+                                    "value": 40,
+                                    "icon": "🛡️"
+                                },
+                                {
+                                    "id": "pilum",
+                                    "name": "Pilum (Spyd)",
+                                    "weight": 4,
+                                    "value": 20,
+                                    "icon": "🔱"
+                                },
+                                {
+                                    "id": "rations",
+                                    "name": "Rasjoner (Kjøtt/Korn)",
+                                    "weight": 5,
+                                    "value": 25,
+                                    "icon": "🥩"
+                                }
                             ]
                         }
                     },
@@ -577,12 +1607,24 @@
                     "layout": "content",
                     "summary": "Fra murstein til marmor",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-augustus",
+                    "linksToStepId": "augustus",
                     "year": -27,
                     "points": [
-                        { "id": "a1", "text": "Bringer fred etter 100 år med borgerkrig", "type": "bullet" },
-                        { "id": "a2", "text": "Pax Romana: 200 år med stabilitet", "type": "bullet" },
-                        { "id": "a3", "text": "Keiseren som 'gud på jord'", "type": "bullet" }
+                        {
+                            "id": "a1",
+                            "text": "Bringer fred etter 100 år med borgerkrig",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "a2",
+                            "text": "Pax Romana: 200 år med stabilitet",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "a3",
+                            "text": "Keiseren som 'gud på jord'",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/hero-augustus.webp",
                     "teacherNotes": "Augustus var en mester i propaganda. Han kalte seg 'Princeps' (den første) for å ikke virke som en konge, men i praksis hadde han all makt.\n\nDiskuter sitatet: 'Jeg fant Roma i murstein og etterlot den i marmor'.",
@@ -597,12 +1639,27 @@
                     "layout": "content",
                     "summary": "Mare Nostrum - vårt eget hav",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-trade",
-                    "yearRange": [-27, 180],
+                    "linksToStepId": "leiegarden",
+                    "yearRange": [
+                        -27,
+                        180
+                    ],
                     "points": [
-                        { "id": "t1", "text": "Trygge veier og hav binder riket sammen", "type": "bullet" },
-                        { "id": "t2", "text": "Korn fra Egypt, silke fra Kina, tinn fra Britannia", "type": "bullet" },
-                        { "id": "t3", "text": "Felles mynt og språk gjør handel mulig", "type": "bullet" }
+                        {
+                            "id": "t1",
+                            "text": "Trygge veier og hav binder riket sammen",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "t2",
+                            "text": "Korn fra Egypt, silke fra Kina, tinn fra Britannia",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "t3",
+                            "text": "Felles mynt og språk gjør handel mulig",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/ostia-warehouse.webp",
                     "teacherNotes": "Pax Romana (27 f.Kr - 180 e.Kr) er den lengste fredsperioden i Europas historie. Forklar hvorfor:\n\nKeiseren har all makt, så ingen borgerkriger. Hæren beskytter grensene. Vei- og havnett er ferdig utbygd. Penger virker overalt. En kjøpmann kan reise fra Skottland til Syria uten å bytte valuta.",
@@ -616,18 +1673,41 @@
                     "title": "Keisergalleriet: Galskap og genialitet",
                     "layout": "interactive",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-emperors",
-                    "yearRange": [-27, 306],
+                    "linksToStepId": "keiserne",
+                    "yearRange": [
+                        -27,
+                        306
+                    ],
                     "component": {
                         "name": "DragDropTimeline",
                         "props": {
                             "title": "Romerske keisere - sett dem i riktig rekkefølge",
                             "events": [
-                                { "id": "augustus", "year": -27, "label": "Augustus (Første keiser)" },
-                                { "id": "nero", "year": 54, "label": "Nero (Brannen i Roma)" },
-                                { "id": "trajan", "year": 98, "label": "Trajan (Riket på sitt største)" },
-                                { "id": "marcus", "year": 161, "label": "Marcus Aurelius (Filosofkeiseren)" },
-                                { "id": "konstantin", "year": 306, "label": "Konstantin (Kristendommen)" }
+                                {
+                                    "id": "augustus",
+                                    "year": -27,
+                                    "label": "Augustus (Første keiser)"
+                                },
+                                {
+                                    "id": "nero",
+                                    "year": 54,
+                                    "label": "Nero (Brannen i Roma)"
+                                },
+                                {
+                                    "id": "trajan",
+                                    "year": 98,
+                                    "label": "Trajan (Riket på sitt største)"
+                                },
+                                {
+                                    "id": "marcus",
+                                    "year": 161,
+                                    "label": "Marcus Aurelius (Filosofkeiseren)"
+                                },
+                                {
+                                    "id": "konstantin",
+                                    "year": 306,
+                                    "label": "Konstantin (Kristendommen)"
+                                }
                             ]
                         }
                     },
@@ -638,8 +1718,11 @@
                     "title": "Fra Italia til verdensrike",
                     "layout": "interactive",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-emperors",
-                    "yearRange": [-200, 117],
+                    "linksToStepId": "keiserne",
+                    "yearRange": [
+                        -200,
+                        117
+                    ],
                     "component": {
                         "name": "RomanExpansionMap",
                         "props": {
@@ -658,12 +1741,24 @@
                     "layout": "content",
                     "summary": "Vesuvs vrede i år 79 e.Kr.",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-pompeii",
+                    "linksToStepId": "pompeii",
                     "year": 79,
                     "points": [
-                        { "id": "p1", "text": "En hel by begravd i aske på få timer", "type": "bullet" },
-                        { "id": "p2", "text": "Tidskapsel for romersk dagligliv", "type": "bullet" },
-                        { "id": "p3", "text": "Graffiti og matrester forteller oss hvordan folk levde", "type": "bullet" }
+                        {
+                            "id": "p1",
+                            "text": "En hel by begravd i aske på få timer",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "p2",
+                            "text": "Tidskapsel for romersk dagligliv",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "p3",
+                            "text": "Graffiti og matrester forteller oss hvordan folk levde",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/vesuvius-eruption.webp",
                     "teacherNotes": "Pompeii er arkeologiens hellige gral. Fordi byen ble dekket av aske, ikke lava, ble alt bevart.\n\nFortell om de tomme hulrommene i asken der mennesker døde, som arkeologene fylte med gips for å gjenskape dem.",
@@ -678,12 +1773,27 @@
                     "layout": "discussion",
                     "summary": "Panem et circenses",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-entertainment",
-                    "yearRange": [70, 200],
+                    "linksToStepId": "leiegarden",
+                    "yearRange": [
+                        70,
+                        200
+                    ],
                     "points": [
-                        { "id": "c1", "text": "Colosseum: verdens mest brutale teater", "type": "bullet" },
-                        { "id": "c2", "text": "Gratis mat og underholdning som maktmiddel", "type": "bullet" },
-                        { "id": "c3", "text": "Gladiatoren: fra slave til superstjerne", "type": "bullet" }
+                        {
+                            "id": "c1",
+                            "text": "Colosseum: verdens mest brutale teater",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "c2",
+                            "text": "Gratis mat og underholdning som maktmiddel",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "c3",
+                            "text": "Gladiatoren: fra slave til superstjerne",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/hero-hverdag.webp",
                     "teacherNotes": "Hvorfor brukte keiserne enorme summer på gratis underholdning? For å unngå opprør. En sulten befolkning er en farlig befolkning.\n\nLitt morsom fakta: Colosseum kunne fylles med vann for sjøslag!",
@@ -697,8 +1807,11 @@
                     "title": "Gudene som styrte hverdagen",
                     "layout": "interactive",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-religion",
-                    "yearRange": [-753, 313],
+                    "linksToStepId": "konstantin",
+                    "yearRange": [
+                        -753,
+                        313
+                    ],
                     "component": {
                         "name": "RomanPantheonExplorer",
                         "props": {}
@@ -714,14 +1827,25 @@
                     "title": "Spill: En dag i Colosseum",
                     "layout": "task-pause",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-entertainment",
-                    "yearRange": [70, 200],
+                    "linksToStepId": "leiegarden",
+                    "yearRange": [
+                        70,
+                        200
+                    ],
                     "pauseForTask": true,
                     "suggestedMinutes": 20,
-                    "taskPrompt": "Gå til steg 6 i læringsstien og spill gjennom 'En dag i Colosseum'. Diskuter etterpå.",
+                    "taskPrompt": "Åpne steg 7, «Livet i leiegården», i læringsstien. Spill leiegården og svar på spørsmålene. Diskuter etterpå.",
                     "points": [
-                        { "id": "tp1", "text": "Spill alene eller to og to", "type": "bullet" },
-                        { "id": "tp2", "text": "Reflekter: Har vi noe lignende 'brød og sirkus' i dag?", "type": "bullet" }
+                        {
+                            "id": "tp1",
+                            "text": "Spill alene eller to og to",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "tp2",
+                            "text": "Reflekter: Har vi noe lignende 'brød og sirkus' i dag?",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/roman-banquet.webp",
                     "teacherNotes": "Gi elevene 15-20 minutter. Når flere har spilt gjennom rollespillet, samle klassen og still refleksjonsspørsmålet.\n\nMange elever vil instinktivt prøve å angripe først. Bruk det til å snakke om hva krigerne faktisk hadde lært."
@@ -732,12 +1856,24 @@
                     "layout": "content",
                     "summary": "Fra forfølgelse til statsreligion",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-christianity",
+                    "linksToStepId": "konstantin",
                     "year": 313,
                     "points": [
-                        { "id": "k1", "text": "De første kristne: 'ateister og opprørere'", "type": "bullet" },
-                        { "id": "k2", "text": "Konstantin og seieren ved Milviske bro", "type": "bullet" },
-                        { "id": "k3", "text": "Romerriket blir fundamentet for kirken", "type": "bullet" }
+                        {
+                            "id": "k1",
+                            "text": "De første kristne: 'ateister og opprørere'",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "k2",
+                            "text": "Konstantin og seieren ved Milviske bro",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "k3",
+                            "text": "Romerriket blir fundamentet for kirken",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/constantine-vision.webp",
                     "teacherNotes": "Dette er et av historiens største paradokser: riket som korsfestet Jesus, endte opp med å spre læren hans til hele verden.\n\nForklar hvorfor kristendommen var attraktiv for de fattige og slavene (alle er like for Gud).",
@@ -752,12 +1888,24 @@
                     "layout": "content",
                     "summary": "Hvorfor falt giganten?",
                     "phase": "konfrontasjon",
-                    "linksToStepId": "rome-fall",
+                    "linksToStepId": "grensen",
                     "year": 476,
                     "points": [
-                        { "id": "f1", "text": "Indre kriser: økonomi, korrupsjon og borgerkrig", "type": "bullet" },
-                        { "id": "f2", "text": "Ytre press: folkevandringstiden og barbarene", "type": "bullet" },
-                        { "id": "f3", "text": "Roma plyndres i 410 og 455 e.Kr.", "type": "bullet" }
+                        {
+                            "id": "f1",
+                            "text": "Indre kriser: økonomi, korrupsjon og borgerkrig",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "f2",
+                            "text": "Ytre press: folkevandringstiden og barbarene",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "f3",
+                            "text": "Roma plyndres i 410 og 455 e.Kr.",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/sack-rome-vandals.webp",
                     "teacherNotes": "Ingenting varer evig. Roma falt ikke på én dag, men gjennom en langsom prosess over 200 år.\n\nNevn at Østromerriket (Bysants) overlevde i 1000 år til!",
@@ -772,12 +1920,27 @@
                     "layout": "summary",
                     "summary": "Arven etter Roma",
                     "phase": "resolusjon",
-                    "linksToStepId": "rome-legacy",
-                    "yearRange": [476, 2026],
+                    "linksToStepId": "arven",
+                    "yearRange": [
+                        476,
+                        2026
+                    ],
                     "points": [
-                        { "id": "a1", "text": "Rettsstaten og lovverket", "type": "summary" },
-                        { "id": "a2", "text": "Språket: latin er overalt", "type": "summary" },
-                        { "id": "a3", "text": "Infrastruktur: betong, veier og akvedukter", "type": "summary" }
+                        {
+                            "id": "a1",
+                            "text": "Rettsstaten og lovverket",
+                            "type": "summary"
+                        },
+                        {
+                            "id": "a2",
+                            "text": "Språket: latin er overalt",
+                            "type": "summary"
+                        },
+                        {
+                            "id": "a3",
+                            "text": "Infrastruktur: betong, veier og akvedukter",
+                            "type": "summary"
+                        }
                     ],
                     "image": "/images/romerriket/pont-du-gard.webp",
                     "teacherNotes": "Avslutt med å se oss rundt. Juss, medisin, arkitektur - alt har røtter i Roma.\n\nTakk for følget på denne tidsreisen!",
@@ -791,15 +1954,30 @@
                     "title": "Velg din fordypning",
                     "layout": "task-pause",
                     "phase": "resolusjon",
-                    "linksToStepId": "rome-project",
-                    "yearRange": [476, 2026],
+                    "linksToStepId": "arven",
+                    "yearRange": [
+                        476,
+                        2026
+                    ],
                     "pauseForTask": true,
                     "suggestedMinutes": 10,
-                    "taskPrompt": "Velg en av fordypningsoppgavene i siste steg. Du jobber videre med denne hjemme eller neste time.",
+                    "taskPrompt": "Velg en av fordypningsoppgavene under. Du jobber videre med den hjemme eller neste time.",
                     "points": [
-                        { "id": "p1", "text": "Var Romerriket et godt sted å leve? For hvem?", "type": "bullet" },
-                        { "id": "p2", "text": "Sammenlign med Han-Kina", "type": "bullet" },
-                        { "id": "p3", "text": "Lag en modell av Colosseum eller en akvedukt", "type": "bullet" }
+                        {
+                            "id": "p1",
+                            "text": "Var Romerriket et godt sted å leve? For hvem?",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "p2",
+                            "text": "Sammenlign med Han-Kina",
+                            "type": "bullet"
+                        },
+                        {
+                            "id": "p3",
+                            "text": "Lag en modell av Colosseum eller en akvedukt",
+                            "type": "bullet"
+                        }
                     ],
                     "image": "/images/romerriket/hero-arv.webp",
                     "teacherNotes": "Bruk de siste 10 minuttene til at hver elev velger en fordypning og noterer den i loggen sin.\n\nPåminn om at dette skal leveres / presenteres til avtalt tid."
