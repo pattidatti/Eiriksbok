@@ -233,6 +233,7 @@ const OverVolga3D = lazy(() => import('./OverVolga3D'));
 const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
+const InnMotStranda = lazy(() => import('./InnMotStranda'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2302,6 +2303,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         cover: '/images/microgames/plottebordet-3d.webp',
         loader: () => import('./Plottebordet3D'),
         Component: Plottebordet3D as never,
+    },
+    'inn-mot-stranda': {
+        id: 'inn-mot-stranda',
+        title: 'Inn mot stranda',
+        description:
+            'Omaha, 6. juni 1944. Du styrer en landgangsbåt inn mot stranda mens kystbatteriene på skrenten skyter - den røde ringen viser hvor granaten lander. Klikk på en bunker, så skyter slagskipene i Kanalen den ut, men de må lade om, og en bunker som får skyte i fred, treffer bedre og bedre. Ved lavvann står strandhindrene synlige, og ingeniørene sprenger spor gjennom dem. Når tidevannet stiger, forsvinner hindrene under vann - da er de gule sporene den eneste trygge veien inn. Få fem av åtte båter i land.',
+        estimatedSeconds: 130,
+        sjanger: 'styring-skyting',
+        tone: 'alvorlig',
+        hook: 'Du styrer båten inn mot Omaha. Kystbatteriene sikter på deg.',
+        cover: '/images/microgames/inn-mot-stranda.webp',
+        kunst: 'Allierte rekognoseringsfoto av Omaha 1944: svart-hvitt sølvkorn, filmkant og rød og gul fettstift',
+        loader: () => import('./InnMotStranda'),
+        Component: InnMotStranda as never,
     },
 };
 
