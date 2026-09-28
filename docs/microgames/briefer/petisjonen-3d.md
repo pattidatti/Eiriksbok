@@ -97,3 +97,21 @@ Nettverket belønner noe som ikke skjedde (bevegelsen ble jo knust).
    instanser. Ingen bloom nødvendig; looken er ferdig på `lav`. På `hoy` kommer flere trær og papirfnugg.
 8. **Ikke slik.** Ikke grønn plen og blå himmel (Havet kommer, Regnet i Lærdal), ikke kremkart med blått hav
    (Plottebordet), ikke fargerikt bytorg (Løp med lønna). Ingen fargegradienter, ingen realistisk PBR.
+
+## Vurderinger (uavhengig, fersk underagent per runde)
+
+| Runde | Gøy | Utseende | Lærerikt | Lesbart | Unikt | Sum | Hva som ble endret etterpå |
+|---|---|---|---|---|---|---|---|
+| 1 | 3 | 4 | 4 | 4 | 5 | 20 | Lærings-kortet sto i sakte film i over ett minutt (feil). Navneelver fra alle foreninger hele tiden, lesbarhet, sluttscene |
+| 2 | 3 | 4 | 4 | 4 | 5 | 20 | Kjerneløkka: hent lasset ved låven selv, «venter hos foreningene» i HUD-en, spillbar 1851-fase (få lederne i skjul før politiet) |
+| 3 | 3 | 4 | 5 | 4 | 5 | 21 | Kjerneløkka: lever navnene trygt i Arbeider-Foreningernes Blad (risiko mot omvei), dyrere treff på utrygge navn |
+| 4 | 3 | 4 | 4 | 4 | 5 | 20 | Motstanderen skremmer folk til å trekke navnet (ikke «river papir»), bannere under avishodet, røde underskrivere på rullen, poeng for tidlig levering |
+| 5 | 3 | 4 | 5 | 4 | 5 | 21 | - |
+
+Status: under terskel (Gøy 3, krever 4). Maskinporter grønne (selvspill, scene-audit, likhetsvakt 0,24).
+
+Det vurderingene peker på for Gøy, som ennå ikke er prøvd:
+- Hold eleven aktiv i siste halvdel: foreningene samler for mye av seg selv, og den halvgode vinner også.
+  Forslag: de ti kravene som kort som hentes på møter og må velges (hvert krav gir navn fra ulike grupper).
+- Rullen forsvinner bak hustak (gjennomsiktige tak nær rullen), og folkene drukner i skravuren.
+- Tap som stort rødt minustall ved telleren; fulle bynavn på foreningsstemplene.
