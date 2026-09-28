@@ -1,7 +1,7 @@
 // Selvspill-robotene for Spøkelseshæren. De bruker de samme grepene som eleven
 // (pumpe, kaste nett, sende på radioen) - bare uten å sikte med musa.
 
-import { netUnit, pumpStart, pumpStop, radioTap, TAUT, willSee, type Game } from './game';
+import { netUnit, pumpStart, pumpStop, radioTap, sendTelegram, TAUT, willSee, type Game } from './game';
 
 /** Første gang et fly vil se punktet (sekunder), eller null. */
 function soonest(g: Game, x: number, y: number): number | null {
@@ -47,13 +47,19 @@ export function seende(g: Game) {
         return;
     }
     if (cur && cur.air < 0.97) return;
-    // 2. Tyskerne lytter: send.
+    // 2. Garbo: send rapporten bare når hele gummihæren står stram.
+    if (g.garbo.offer > 0 && g.dummies.every((d) => !d.active || (d.popped === 0 && d.air >= 0.75))) {
+        pumpStop(g);
+        sendTelegram(g);
+        return;
+    }
+    // 3. Tyskerne lytter: send.
     if (g.radio.on && g.radio.taps < 5) {
         pumpStop(g);
         radioTap(g);
         return;
     }
-    // 3. Rydd: nett over nyankomne, pump den slappeste tanken.
+    // 4. Rydd: nett over nyankomne, pump den slappeste tanken.
     const bare = g.units.find((u) => u.active && !u.covered && u.leaving === 0);
     if (bare) {
         netUnit(g, bare.id);
@@ -93,6 +99,10 @@ export function makeHalvgod() {
             radioTap(g);
             return;
         }
+        if (g.garbo.offer > 0) {
+            sendTelegram(g);
+            return;
+        }
         const bare = g.units.find((u) => u.active && !u.covered && u.leaving === 0);
         if (bare && n % 3 === 0) {
             netUnit(g, bare.id);
@@ -114,6 +124,7 @@ export function barePumpe(g: Game) {
         radioTap(g);
         return;
     }
+    if (sendTelegram(g)) return;
     const slack = g.dummies
         .filter((d) => d.active && d.popped === 0 && d.air < 0.92)
         .map((d) => ({ d, t: soonest(g, d.x, d.y) ?? 99 }))
@@ -141,7 +152,8 @@ export function makeTilfeldig(rng: () => number = Math.random) {
             netUnit(g, us[Math.floor(rng() * us.length)].id);
         } else {
             pumpStop(g);
-            radioTap(g);
+            if (rng() < 0.5) radioTap(g);
+            else sendTelegram(g);
         }
     };
 }

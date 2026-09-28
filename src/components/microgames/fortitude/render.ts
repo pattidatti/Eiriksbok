@@ -18,6 +18,7 @@ import {
 } from './geo';
 import {
     HALF_W,
+    TELEGRAM,
     POP_AFTER,
     TAUT,
     clamp,
@@ -380,7 +381,7 @@ function drawTank(ctx: CanvasRenderingContext2D, d: Dummy, t: number, pumping: b
             planeShape(ctx, 1);
             ctx.restore();
         }
-        ctx.fillStyle = taut ? gray(0.78) : gray(0.68);
+        ctx.fillStyle = taut ? gray(0.9) : gray(0.66);
         planeShape(ctx, sq * 0.4 + 0.6);
     } else {
         // Gummistridsvogn: skrog, belter, tårn og kanon.
@@ -391,16 +392,16 @@ function drawTank(ctx: CanvasRenderingContext2D, d: Dummy, t: number, pumping: b
             ctx.arc(-9 * h, -9 * h, 8, 0, Math.PI * 2);
             ctx.fill();
         }
-        ctx.fillStyle = gray(taut ? 0.35 : 0.5);
+        ctx.fillStyle = gray(taut ? 0.16 : 0.55);
         ctx.fillRect(-19 * spread, -12 * sq * spread, 38 * spread, 5 * sq);
         ctx.fillRect(-19 * spread, 12 * sq * spread - 5 * sq, 38 * spread, 5 * sq);
-        ctx.fillStyle = taut ? gray(0.66) : gray(0.62);
+        ctx.fillStyle = taut ? gray(0.3) : gray(0.66);
         ctx.fillRect(-16 * spread, -8 * sq, 32 * spread, 16 * sq);
-        ctx.fillStyle = taut ? gray(0.74) : gray(0.66);
+        ctx.fillStyle = taut ? gray(0.5) : gray(0.72);
         ctx.beginPath();
         ctx.ellipse(-1, 0, 8 * spread, 7 * sq, 0, 0, Math.PI * 2);
         ctx.fill();
-        ctx.strokeStyle = gray(taut ? 0.3 : 0.5);
+        ctx.strokeStyle = gray(taut ? 0.14 : 0.55);
         ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.moveTo(6, 0);
@@ -616,6 +617,8 @@ export interface RenderState {
     flash: number;
     frame: number;
     radioRings: number[];
+    /** Fremkalte flyfoto: små fotokort med tyskernes tolkning. */
+    prints: { x: number; y: number; delta: number; good: number; bad: number; life: number }[];
     /** 0-1 i sluttsekvensen etter seier: pilene mot Normandie. */
     landing: number;
 }
@@ -845,6 +848,36 @@ export function render(ctx: CanvasRenderingContext2D, W: number, H: number, dpr:
         ctx.globalAlpha = 1;
     }
 
+    // Garbos telegram: et gult skjema som vibrerer til det blir sendt.
+    const gb = g.garbo;
+    if (gb.offer > 0 || gb.pending) {
+        const [tx, ty] = TELEGRAM;
+        const wob = gb.offer > 0 ? Math.sin(t * 18) * 2 : 0;
+        ctx.save();
+        ctx.translate(tx + wob, ty);
+        ctx.rotate(-0.06);
+        ctx.fillStyle = 'rgba(16,17,15,.5)';
+        ctx.fillRect(-72, -38, 150, 84);
+        ctx.fillStyle = gb.pending ? '#cfc7ae' : '#efe6c4';
+        ctx.fillRect(-78, -46, 150, 84);
+        ctx.strokeStyle = C.black;
+        ctx.lineWidth = 2;
+        ctx.strokeRect(-78, -46, 150, 84);
+        ctx.fillStyle = C.black;
+        ctx.font = '700 15px "Courier New", ui-monospace, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('TELEGRAM', -3, -26);
+        ctx.font = '700 12px "Courier New", ui-monospace, monospace';
+        ctx.fillText(gb.pending ? 'SENDT. VENTER PÅ' : 'GARBO: «PATTON', -3, -6);
+        ctx.fillText(gb.pending ? 'NESTE FLYFOTO' : 'STÅR VED DOVER»', -3, 10);
+        if (gb.offer > 0) {
+            // Tiden til telegrammet går ut.
+            ctx.fillStyle = C.blue;
+            ctx.fillRect(-70, 24, 134 * (gb.offer / 7), 6);
+        }
+        ctx.restore();
+    }
+
     // Seier: de ekte troppene krysser mot Normandie.
     if (R.landing > 0) {
         ctx.strokeStyle = C.blue;
@@ -877,6 +910,44 @@ export function render(ctx: CanvasRenderingContext2D, W: number, H: number, dpr:
         ctx.fillStyle = `rgba(242,236,217,${R.flash * 0.22})`;
         ctx.fillRect(0, 0, W, H);
     }
+
+    // De fremkalte bildene legger seg i nedre venstre hjørne, over Normandie.
+    R.prints.forEach((pr, i) => {
+        const n = R.prints.length - 1 - i;
+        const a = clamp(pr.life, 0, 1) * clamp((4.5 - pr.life) * 4, 0, 1);
+        const pw = Math.min(170, W * 0.14);
+        const ph = pw * 0.72;
+        const px = 18 + n * 16;
+        const py = H - ph - 22 - n * 10;
+        ctx.save();
+        ctx.globalAlpha = a;
+        ctx.translate(px + pw / 2, py + ph / 2);
+        ctx.rotate(-0.05 + n * 0.04);
+        ctx.fillStyle = '#ece6d2';
+        ctx.fillRect(-pw / 2 - 6, -ph / 2 - 6, pw + 12, ph + 30);
+        // Utsnitt av landskapet der flyet tok bildet.
+        const sw = 360;
+        const sh = sw * (ph / pw);
+        ctx.drawImage(R.bg, clamp(pr.x - sw / 2, 0, WORLD_W - sw), clamp(pr.y - sh / 2, 0, WORLD_H - sh), sw, sh, -pw / 2, -ph / 2, pw, ph);
+        ctx.fillStyle = 'rgba(40,40,36,.25)';
+        ctx.fillRect(-pw / 2, -ph / 2, pw, ph);
+        const txt = pr.bad > 0 ? 'NORMANDIE?' : pr.good > 0 ? 'ARMEE BEI DOVER' : 'NICHTS';
+        ctx.font = '700 13px "Courier New", ui-monospace, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = pr.bad > 0 ? C.red : C.black;
+        ctx.fillText(txt, 0, ph / 2 + 12);
+        const d = Math.round(pr.delta);
+        ctx.save();
+        ctx.rotate(-0.25);
+        ctx.strokeStyle = d >= 0 ? C.blue : C.red;
+        ctx.fillStyle = d >= 0 ? C.blue : C.red;
+        ctx.lineWidth = 3;
+        ctx.strokeRect(-46, -16, 92, 32);
+        ctx.font = '700 18px "Courier New", ui-monospace, monospace';
+        ctx.fillText(d >= 0 ? `CALAIS +${d}` : `CALAIS ${d}`, 0, 6);
+        ctx.restore();
+        ctx.restore();
+    });
 
     // Sølvkorn: en av fire fliser, forskjøvet hvert bilde.
     const tile = R.grain[R.frame % 4];
@@ -915,5 +986,7 @@ export function stepEffects(R: RenderState, dt: number) {
     R.shake = Math.max(0, R.shake - dt * 2.5);
     R.flash = Math.max(0, R.flash - dt * 4);
     R.radioRings = R.radioRings.map((k) => k + dt * 1.4).filter((k) => k < 1);
+    for (const p of R.prints) p.life -= dt;
+    R.prints = R.prints.filter((p) => p.life > 0).slice(-3);
 }
 

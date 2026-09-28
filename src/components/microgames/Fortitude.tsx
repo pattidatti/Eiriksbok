@@ -32,6 +32,8 @@ import {
     pumpStart,
     pumpStop,
     radioTap,
+    sendTelegram,
+    TELEGRAM,
     update,
     willSee,
     type Cause,
@@ -88,11 +90,11 @@ const THEME: Partial<ArcadeTheme> = {
 
 const RANKS: [number, string][] = [
     [0, 'Rekrutt i spøkelseshæren'],
-    [4000, 'Gummipumper'],
-    [12000, 'Kamuflasjemaler'],
-    [22000, 'Radiobløffer'],
-    [34000, 'Dobbeltagent'],
-    [46000, 'Pattons høyre hånd'],
+    [5000, 'Gummipumper'],
+    [15000, 'Kamuflasjemaler'],
+    [30000, 'Radiobløffer'],
+    [48000, 'Dobbeltagent'],
+    [65000, 'Pattons høyre hånd'],
 ];
 
 const LOSS: Record<Cause, { msg: string; tip: string }> = {
@@ -107,6 +109,10 @@ const LOSS: Record<Cause, { msg: string; tip: string }> = {
     radio: {
         msg: 'Det var stille i eteren fra Kent. En hær som ikke snakker, finnes ikke.',
         tip: 'Tips: når senderen lyser rødt, klikk på den (eller trykk mellomrom) flere ganger.',
+    },
+    garbo: {
+        msg: 'Garbo meldte om en stor hær ved Dover, men flyfotoet viste slappe gummitanker. Tyskerne sluttet å tro på ham.',
+        tip: 'Tips: send Garbos telegram bare når alle gummitankene står stramme - tyskerne sjekker rapporten mot neste bilde.',
     },
 };
 
@@ -185,6 +191,7 @@ interface Seen {
     firstBadDummy: boolean;
     firstExposed: boolean;
     firstTap: boolean;
+    garbo: boolean;
     embark: boolean;
     radio: boolean;
     weeks: number;
@@ -207,7 +214,7 @@ function handleFx(
                 sfx.shutter();
                 const s = at(e.x, e.y)();
                 if (e.good) {
-                    R.marks.push({ x: e.x, y: e.y, good: true, word: e.what === 'skjult' ? 'nichts' : 'Panzer!', life: 2.2 });
+                    R.marks.push({ x: e.x, y: e.y, good: true, word: e.what === 'skjult' ? 'Tomt' : 'Panser!', life: 2.2 });
                     if (s) text.float(`+${e.pts}`, s.x, s.y - 30, C.white);
                     if (e.what === 'stram') {
                         sfx.good();
@@ -221,7 +228,7 @@ function handleFx(
                         }
                     }
                 } else {
-                    R.marks.push({ x: e.x, y: e.y, good: false, word: e.what === 'gummi' ? 'Attrappe!' : 'Truppen!', life: 2.6 });
+                    R.marks.push({ x: e.x, y: e.y, good: false, word: e.what === 'gummi' ? 'Gummi!' : 'Tropper!', life: 2.6 });
                     R.shake = 0.8;
                     sfx.bad();
                     buzz(90);
@@ -249,6 +256,8 @@ function handleFx(
                 sfx.plane();
                 break;
             case 'pass':
+                // Tyskerne fremkaller bildet: et lite fotokort med tolkningen.
+                R.prints.push({ x: e.x, y: e.y, delta: e.delta, good: e.good, bad: e.bad, life: 4.5 });
                 if (e.clean && e.combo >= 2) {
                     sfx.combo(e.combo);
                     const s = at(MAST[0], MAST[1] + 90)();
@@ -311,6 +320,40 @@ function handleFx(
             case 'net':
                 sfx.net();
                 break;
+            case 'telegram':
+                sfx.listen();
+                if (!seen.garbo) {
+                    seen.garbo = true;
+                    text.banner('DOBBELTAGENTEN GARBO', C.blue, 2.4);
+                }
+                text.point('telegram', 'Garbo: send rapport om Calais?', at(TELEGRAM[0], TELEGRAM[1] - 30), {
+                    seconds: 4,
+                    until: () => g.garbo.offer <= 0,
+                });
+                break;
+            case 'garboSent': {
+                sfx.tap();
+                const s = at(TELEGRAM[0], TELEGRAM[1])();
+                if (s) text.float('RAPPORT SENDT', s.x, s.y, C.blue, true);
+                text.lesson(
+                    'garbo',
+                    'Dobbeltagenten Garbo lurte tyskerne med falske rapporter. De stolte så mye på ham at han fikk Jernkorset.',
+                    1.1
+                );
+                break;
+            }
+            case 'garbo': {
+                const s = at(TELEGRAM[0], TELEGRAM[1])();
+                if (e.ok) {
+                    sfx.combo(3);
+                    if (s) text.float('GARBO BEKREFTET', s.x, s.y, C.white, true);
+                } else {
+                    sfx.bad();
+                    R.shake = 0.7;
+                    if (s) text.float('GARBO TVILT PÅ', s.x, s.y, C.red, true);
+                }
+                break;
+            }
         }
     }
 }
@@ -332,7 +375,7 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
     const outroRef = useRef(0);
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
     const completedOnce = useRef(false);
-    const seenRef = useRef<Seen>({ firstGood: false, firstBadDummy: false, firstExposed: false, firstTap: false, embark: false, radio: false, weeks: 0 });
+    const seenRef = useRef<Seen>({ firstGood: false, firstBadDummy: false, firstExposed: false, firstTap: false, garbo: false, embark: false, radio: false, weeks: 0 });
     const pumpSound = useRef(0);
     const hud = {
         frame: useRef<HTMLSpanElement>(null),
@@ -390,7 +433,7 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
             good: g.stats.goodShots,
             exposed: g.stats.exposed + g.stats.slack,
             clean: g.stats.clean,
-            next: nextRank(RANKS, best),
+            next: nextRank(RANKS, score),
             best,
         });
         outcome.current = { won, score };
@@ -498,6 +541,7 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
                     flash: 0,
                     frame: 0,
                     radioRings: [],
+                    prints: [],
                     landing: 0,
                 };
             const R = rsRef.current;
@@ -565,6 +609,8 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
                             seen: new Set(),
                             bad: 0,
                             good: 0,
+                            delta: 0,
+                            fakes: 0,
                         },
                     ];
                 }
@@ -588,10 +634,11 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
             if (dag > 0 && dag < 36) g.t = (dag / DAYS) * RUN_SECONDS;
         }
         outcome.current = null;
-        seenRef.current = { firstGood: false, firstBadDummy: false, firstExposed: false, firstTap: false, embark: false, radio: false, weeks: 0 };
+        seenRef.current = { firstGood: false, firstBadDummy: false, firstExposed: false, firstTap: false, garbo: false, embark: false, radio: false, weeks: 0 };
         lastHud.current = { s: -1, c: -1, d: -1, b: -1, f: -1 };
         if (rsRef.current) {
             rsRef.current.marks = [];
+            rsRef.current.prints = [];
             rsRef.current.landing = 0;
         }
         setResult(null);
@@ -602,9 +649,13 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
             text.banner('1. MAI 1944', C.black);
             const d0 = gameRef.current.dummies[0];
             text.point('mal', 'Hold inne for å pumpe opp', at(d0.x, d0.y), {
-                once: true,
                 seconds: 7,
                 until: () => d0.air >= TAUT,
+            });
+            const u0 = gameRef.current.units[0];
+            text.point('nett0', 'Ekte tropper: klikk for nett', at(u0.x, u0.y), {
+                seconds: 9,
+                until: () => u0.covered,
             });
         }, 300);
         synth.tone(260, 520, 0.14, 'triangle', 0.1);
@@ -643,6 +694,7 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
                 (e.target as Element).setPointerCapture?.(e.pointerId);
                 pumpStart(g, hit.id);
             } else if (hit.k === 'unit') netUnit(g, hit.id);
+            else if (hit.k === 'telegram') sendTelegram(g);
             else radioTap(g);
         } else if (e.type === 'pointerup' || e.type === 'pointercancel') pumpStop(g);
     };
@@ -941,7 +993,7 @@ export default function Fortitude({ onComplete }: MicroGameProps) {
                                         fontSize: 12.5,
                                     }}
                                 >
-                                    {(result.next[0] - result.best).toLocaleString('nb-NO')} poeng til neste rang:{' '}
+                                    {(result.next[0] - result.score).toLocaleString('nb-NO')} poeng til neste rang:{' '}
                                     {result.next[1]}
                                 </div>
                             )}

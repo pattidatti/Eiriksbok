@@ -46,11 +46,16 @@ selve Operasjon Fortitude: tyskerne trakk slutninger av det de så.
    Dover og hører radioprat derfra, blir reservene stående ved Calais. Regelen avgjør alt: den
    eneste måten å vinne på er å styre hva kameraet ser.
 4. **Presset og valgene.** Luften lekker fortere utover i mai, flyene kommer oftere og fra flere
-   kanter, flere ekte tropper strømmer inn mot havnene i sørvest, og fra midten av mai lytter
-   tyskerne på radioen. Nye valg hvert par sekunder: hvert fly som varsles (hvor går stripa?), hver
+   kanter (til slutt to og to), flere ekte tropper strømmer inn mot havnene i sørvest, og runden
+   har tre faser som endrer hva eleven gjør: gummitanker og nett (tidlig mai), radioen (fra midten
+   av mai lytter tyskerne), og dobbeltagenten Garbo (fra ca. 22. mai). Garbo-telegrammet er en
+   risiko/belønning-avveiing: tyskerne tror mer på Calais med en gang, men de sjekker rapporten mot
+   neste flyfoto av gummihæren - er en tank slapp da, faller troen kraftig. Etter hver overflyging
+   fremkaller tyskerne bildet: et fotokort viser tolkningen og hvor mye Calais-måleren flyttet seg. Nye valg hvert par sekunder: hvert fly som varsles (hvor går stripa?), hver
    ny tropp som kommer uten nett, hver tank som begynner å henge, hvert lyttevindu.
 5. **Tap.** Panserreservene ruller fra Calais til Normandie når tyskernes tro på Calais faller under
-   grensen. Tre årsaker med hvert sitt tips: (a) «Kameraet så en slapp gummitank» - pump før flyet
+   grensen. Fire årsaker med hvert sitt tips (den fjerde: Garbo meldte om en hær som flyfotoet ikke
+   viste): (a) «Kameraet så en slapp gummitank» - pump før flyet
    kommer, (b) «Kameraet så ekte tropper ved Portsmouth» - dekk dem med nett, (c) «Stille i eteren» -
    en hær som ikke snakker, finnes ikke.
 6. **Seier.** Følger plottet: holder du reservene ved Calais til 6. juni kl. 06.30, vinner du - uansett
@@ -69,6 +74,10 @@ selve Operasjon Fortitude: tyskerne trakk slutninger av det de så.
     tegnes over bildet, flydur høres, og en slapp gummistridsvogn ved Dover blinker. Eleven holder
     på den, den reiser seg, kamerastripa feier over - «KLIKK» - og panserikonene ved Calais nede i
     hjørnet blir stående.
+
+**Etter vurdering 1 (sum 19, Gøy 3):** kjerneløkka ble endret - Garbo-fasen som risikovalg, to fly
+samtidig mot slutten, fremkalte fotokort med tolkning, nett-grepet lært bort i starten, norske
+fettstift-ord («Panser!», «Tomt», «Gummi!», «Tropper!») og sterkere kontrast på stramme tanker.
 
 ## Kunstbrief
 

@@ -14,6 +14,10 @@ export const DAYS = 36.27;
 /** 5. juni: de ekte troppene går om bord og seiler. */
 export const EMBARK_DAY = 35;
 export const RADIO_FROM = 52;
+/** Fra ca. 22. mai sender dobbeltagenten Garbo rapporter til tyskerne. */
+export const GARBO_FROM = 90;
+/** Der telegrammet fra Garbo dukker opp (London-kontoret hans). */
+export const TELEGRAM: [number, number] = [860, 280];
 export const BELIEF_START = 62;
 /** Faller troen på Calais hit, ruller panserreservene mot Normandie. */
 export const BELIEF_LOSE = 20;
@@ -25,7 +29,7 @@ export const PUMP_RATE = 0.95;
 export const HALF_W = 96;
 export const WARN = 2.2;
 
-export type Cause = 'gummi' | 'ekte' | 'radio';
+export type Cause = 'gummi' | 'ekte' | 'radio' | 'garbo';
 
 export interface Dummy {
     id: number;
@@ -72,12 +76,19 @@ export interface Plane {
     seen: Set<string>;
     bad: number;
     good: number;
+    /** Hvor mye tyskernes tro flyttet seg av dette flyets bilder. */
+    delta: number;
+    /** Antall gummitanker flyet fotograferte. */
+    fakes: number;
 }
 
 export type Fx =
     | { k: 'photo'; x: number; y: number; good: boolean; what: 'gummi' | 'ekte' | 'skjult' | 'stram'; pts: number }
     | { k: 'plane'; x: number; y: number }
-    | { k: 'pass'; clean: boolean; combo: number }
+    | { k: 'pass'; clean: boolean; combo: number; delta: number; x: number; y: number; good: number; bad: number }
+    | { k: 'telegram' }
+    | { k: 'garboSent' }
+    | { k: 'garbo'; ok: boolean }
     | { k: 'pop'; x: number; y: number }
     | { k: 'arrive'; x: number; y: number }
     | { k: 'newDummy'; x: number; y: number }
@@ -101,6 +112,8 @@ export interface Game {
     nextId: number;
     pump: number | null;
     radio: { on: boolean; warn: number; left: number; next: number; taps: number; last: number; windows: number };
+    /** Garbo: `offer` = sekunder igjen av telegrammet, `pending` = rapport sendt, venter på bekreftelse. */
+    garbo: { offer: number; next: number; pending: boolean; sent: number; ok: number };
     valg: number;
     over: null | 'won' | 'lost';
     loss: Record<Cause, number>;
@@ -173,9 +186,10 @@ export function newGame(seed: number): Game {
         nextId: 1,
         pump: null,
         radio: { on: false, warn: 0, left: 0, next: RADIO_FROM, taps: 0, last: -9, windows: 0 },
+        garbo: { offer: 0, next: GARBO_FROM, pending: false, sent: 0, ok: 0 },
         valg: 0,
         over: null,
-        loss: { gummi: 0, ekte: 0, radio: 0 },
+        loss: { gummi: 0, ekte: 0, radio: 0, garbo: 0 },
         cause: 'gummi',
         stats: { goodShots: 0, hidden: 0, exposed: 0, slack: 0, pops: 0, passes: 0, clean: 0, taps: 0 },
         fx: [],
@@ -235,6 +249,8 @@ function spawnPlane(g: Game) {
         seen: new Set(),
         bad: 0,
         good: 0,
+        delta: 0,
+        fakes: 0,
     });
     g.valg++;
     g.fx.push({ k: 'plane', x: tx, y: ty });
@@ -270,6 +286,7 @@ function hurt(g: Game, n: number, cause: Cause) {
     n *= lerp(0.55, 1, progress(g) * 2);
     g.belief = clamp(g.belief - n, 0, 100);
     g.loss[cause] += n;
+    return n;
 }
 
 function photograph(g: Game, pl: Plane) {
@@ -285,12 +302,15 @@ function photograph(g: Game, pl: Plane) {
         if (d.popped > 0 || d.air < TAUT) {
             d.shotGood = false;
             pl.bad++;
-            hurt(g, 14, 'gummi');
+            pl.fakes++;
+            pl.delta -= hurt(g, 14, 'gummi');
             g.stats.slack++;
             g.fx.push({ k: 'photo', x: d.x, y: d.y, good: false, what: 'gummi', pts: 0 });
         } else {
             d.shotGood = true;
             pl.good++;
+            pl.fakes++;
+            pl.delta += 4;
             g.belief = clamp(g.belief + 4, 0, 100);
             const pts = 100 * m;
             g.score += pts;
@@ -315,7 +335,7 @@ function photograph(g: Game, pl: Plane) {
         } else {
             u.shotGood = false;
             pl.bad++;
-            hurt(g, 10, 'ekte');
+            pl.delta -= hurt(g, 10, 'ekte');
             g.stats.exposed++;
             g.fx.push({ k: 'photo', x: u.x, y: u.y, good: false, what: 'ekte', pts: 0 });
         }
@@ -413,7 +433,9 @@ export function update(g: Game, dt: number) {
     g.nextPlane -= dt;
     if (g.nextPlane <= 0) {
         spawnPlane(g);
-        g.nextPlane = lerp(6.6, 2.9, p) * (0.8 + g.rng() * 0.45);
+        // Mot slutten kommer de to og to, fra hver sin kant.
+        if (p > 0.55 && g.rng() < 0.35) spawnPlane(g);
+        g.nextPlane = lerp(6.6, 3.1, p) * (0.8 + g.rng() * 0.45);
     }
     for (const pl of g.planes) {
         const before = pl.t;
@@ -428,11 +450,33 @@ export function update(g: Game, dt: number) {
                     g.combo++;
                     g.stats.clean++;
                 } else if (pl.bad > 0) g.combo = 0;
-                g.fx.push({ k: 'pass', clean, combo: g.combo });
+                const c = planePos({ ...pl, t: 0.5 });
+                g.fx.push({ k: 'pass', clean, combo: g.combo, delta: pl.delta, x: c.x, y: c.y, good: pl.good, bad: pl.bad });
+            }
+            // Garbo-rapporten blir sjekket mot det neste flyet som fotograferer gummihæren.
+            if (g.garbo.pending && pl.fakes > 0) {
+                g.garbo.pending = false;
+                const ok = pl.bad === 0;
+                if (ok) {
+                    g.garbo.ok++;
+                    g.belief = clamp(g.belief + 7, 0, 100);
+                    g.score += 600 * mult(g);
+                } else hurt(g, 13, 'garbo');
+                g.fx.push({ k: 'garbo', ok });
             }
         }
     }
     g.planes = g.planes.filter((pl) => pl.t <= 1.3);
+
+    // Garbo: dobbeltagenten kan sende en rapport som bekrefter Calais.
+    const gb = g.garbo;
+    if (gb.offer > 0) gb.offer = Math.max(0, gb.offer - dt);
+    if (!g.embarked && g.t >= gb.next && gb.offer === 0 && !gb.pending) {
+        gb.offer = 7;
+        gb.next = g.t + lerp(15, 11, p);
+        g.valg++;
+        g.fx.push({ k: 'telegram' });
+    }
 
     // Radio: fra midten av mai lytter tyskerne på eteren.
     const r = g.radio;
@@ -499,6 +543,22 @@ export function netUnit(g: Game, id: number) {
     return true;
 }
 
+/**
+ * Send Garbos rapport: tyskerne tror mer på Calais med en gang - men de sjekker den
+ * mot neste flyfoto av gummihæren. Er en tank slapp da, faller Garbo i unåde.
+ */
+export function sendTelegram(g: Game) {
+    const gb = g.garbo;
+    if (gb.offer <= 0 || gb.pending) return false;
+    gb.offer = 0;
+    gb.pending = true;
+    gb.sent++;
+    g.belief = clamp(g.belief + 6, 0, 100);
+    g.score += 300 * mult(g);
+    g.fx.push({ k: 'garboSent' });
+    return true;
+}
+
 export function radioTap(g: Game) {
     const r = g.radio;
     if (!r.on || r.taps >= 5 || g.t - r.last < 0.22) return;
@@ -511,8 +571,9 @@ export function radioTap(g: Game) {
 }
 
 /** Hva ligger under pekeren? Store treffflater - trackpad på Chromebook. */
-export function hitTest(g: Game, x: number, y: number): { k: 'dummy' | 'unit' | 'mast'; id: number } | null {
-    let best: { k: 'dummy' | 'unit' | 'mast'; id: number } | null = null;
+export function hitTest(g: Game, x: number, y: number): { k: 'dummy' | 'unit' | 'mast' | 'telegram'; id: number } | null {
+    if (g.garbo.offer > 0 && Math.abs(x - TELEGRAM[0]) < 90 && Math.abs(y - TELEGRAM[1]) < 60) return { k: 'telegram', id: 0 };
+    let best: { k: 'dummy' | 'unit' | 'mast' | 'telegram'; id: number } | null = null;
     let bd = 72;
     for (const d of g.dummies) {
         if (!d.active) continue;
