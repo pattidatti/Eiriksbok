@@ -14,28 +14,77 @@ const SERIF = 'Georgia, "Times New Roman", serif';
 
 /** Lukket form for vann, i kartkoordinater. */
 const MJOSA: XZ[] = [
-    [14.5, -44], [17.5, -40], [17, -33], [18, -27], [16.5, -20], [14.5, -16.5], [13.5, -19],
-    [14.2, -26], [13.4, -33], [13, -40],
+    [14.5, -44],
+    [17.5, -40],
+    [17, -33],
+    [18, -27],
+    [16.5, -20],
+    [14.5, -16.5],
+    [13.5, -19],
+    [14.2, -26],
+    [13.4, -33],
+    [13, -40],
 ];
 const TYRI: XZ[] = [
-    [-28, -6], [-25.5, -6.5], [-24.5, -3.5], [-25.5, 0], [-27.5, 0.5], [-28.5, -2.5],
+    [-28, -6],
+    [-25.5, -6.5],
+    [-24.5, -3.5],
+    [-25.5, 0],
+    [-27.5, 0.5],
+    [-28.5, -2.5],
 ];
 const OSLOFJORD: XZ[] = [
-    [-3, 28], [2, 26.6], [7, 27.4], [11, 30], [12, 36], [14, 46], [-2, 46], [-1, 38], [-4, 33],
+    [-3, 28],
+    [2, 26.6],
+    [7, 27.4],
+    [11, 30],
+    [12, 36],
+    [14, 46],
+    [-2, 46],
+    [-1, 38],
+    [-4, 33],
 ];
 const DRAMMENSFJORD: XZ[] = [
-    [-23, 19], [-20.8, 20], [-20.4, 24], [-19.6, 30], [-18, 46], [-23, 46], [-23.8, 32],
+    [-23, 19],
+    [-20.8, 20],
+    [-20.4, 24],
+    [-19.6, 30],
+    [-18, 46],
+    [-23, 46],
+    [-23.8, 32],
     [-24.2, 24],
 ];
 export const WATERS = [MJOSA, TYRI, OSLOFJORD, DRAMMENSFJORD];
 
 const RIVERS: XZ[][] = [
     // Drammenselva fra Tyrifjorden til Drammen
-    [[-26.5, 0], [-28, 4], [-27, 8], [-25, 13], [-23, 19]],
+    [
+        [-26.5, 0],
+        [-28, 4],
+        [-27, 8],
+        [-25, 13],
+        [-23, 19],
+    ],
     // Glomma
-    [[40, -34], [37, -20], [39, -12], [33, -2], [34, 8], [27, 16], [26, 30], [24, 46]],
+    [
+        [40, -34],
+        [37, -20],
+        [39, -12],
+        [33, -2],
+        [34, 8],
+        [27, 16],
+        [26, 30],
+        [24, 46],
+    ],
     // Vorma fra Mjøsa
-    [[14.5, -16.5], [16, -12], [19, -5], [23, 0], [30, 2], [33, -2]],
+    [
+        [14.5, -16.5],
+        [16, -12],
+        [19, -5],
+        [23, 0],
+        [30, 2],
+        [33, -2],
+    ],
 ];
 
 export function pointInPoly(p: XZ, poly: XZ[]) {
@@ -43,7 +92,8 @@ export function pointInPoly(p: XZ, poly: XZ[]) {
     for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
         const [xi, zi] = poly[i];
         const [xj, zj] = poly[j];
-        if (zi > p[1] !== zj > p[1] && p[0] < ((xj - xi) * (p[1] - zi)) / (zj - zi) + xi) inside = !inside;
+        if (zi > p[1] !== zj > p[1] && p[0] < ((xj - xi) * (p[1] - zi)) / (zj - zi) + xi)
+            inside = !inside;
     }
     return inside;
 }
@@ -196,7 +246,7 @@ export function mapTexture(): THREE.CanvasTexture {
         const nx = -(b[1] - a[1]);
         const nz = b[0] - a[0];
         const nl = Math.hypot(nx, nz) || 1;
-        const off = (Math.sin(seed * 12.9) * 0.12) * Math.hypot(b[0] - a[0], b[1] - a[1]);
+        const off = Math.sin(seed * 12.9) * 0.12 * Math.hypot(b[0] - a[0], b[1] - a[1]);
         x.beginPath();
         x.moveTo(X(a[0]), Z(a[1]));
         x.quadraticCurveTo(X(mx + (nx / nl) * off), Z(mz + (nz / nl) * off), X(b[0]), Z(b[1]));
@@ -416,6 +466,26 @@ export function slottLabel() {
         x.strokeStyle = PAPER;
         x.strokeText('SLOTTET', w / 2, h / 2);
         x.fillText('SLOTTET', w / 2, h / 2);
+    });
+    return cc.tex;
+}
+
+/** Navnet på trykkeriet, lagt på bakken foran det. */
+export function bladetLabel() {
+    const cc = crispCanvas(440, 90);
+    cc.draw((x, w, h) => {
+        x.textAlign = 'center';
+        x.textBaseline = 'middle';
+        x.fillStyle = INK;
+        x.lineWidth = 7;
+        x.strokeStyle = PAPER;
+        x.font = `italic 700 30px ${SERIF}`;
+        x.strokeText('Arbeider-Foreningernes Blad', w / 2, h * 0.36);
+        x.fillText('Arbeider-Foreningernes Blad', w / 2, h * 0.36);
+        x.font = `600 22px ${SERIF}`;
+        x.fillStyle = RED;
+        x.strokeText('lever navnene her - da er de trygge', w / 2, h * 0.76);
+        x.fillText('lever navnene her - da er de trygge', w / 2, h * 0.76);
     });
     return cc.tex;
 }

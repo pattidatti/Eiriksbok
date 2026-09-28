@@ -1,7 +1,7 @@
 // Selvspill-robotene i Petisjonen. De styrer rullen med setTarget() - samme grep
 // som når eleven peker med musa - bare uten piksel-sikting.
 
-import { PLACES, SLOTTET, HALF_W, HALF_D, dist, type XZ } from './geo';
+import { PLACES, SLOTTET, BLADET, HALF_W, HALF_D, dist, type XZ } from './geo';
 import { setTarget, reach, rollSpeed, policeEta, type G } from './game';
 
 export type BotStyle = 'seende' | 'halvgod' | 'alene' | 'tilfeldig';
@@ -119,6 +119,11 @@ function plan(g: G, style: 'seende' | 'halvgod'): XZ | null {
     const R = g.roll;
     const careful = style === 'seende' ? 4 : 0;
     if (g.open) return SLOTTET;
+    // Lever til Bladet når mye står på spill (den halvgode venter for lenge).
+    const unsafe = R.names - g.safe;
+    const bankAt =
+        style === 'seende' ? Math.max(500, R.names * 0.3) : Math.max(3000, R.names * 0.6);
+    if (unsafe > bankAt && dist(R.p, BLADET) < (style === 'seende' ? 40 : 25)) return BLADET;
     // Et møte er i gang: bli stående.
     if (g.meetingPlace >= 0) return PLACES[g.meetingPlace].tun;
     // Møteklar bygd i nærheten.
@@ -148,7 +153,10 @@ function plan(g: G, style: 'seende' | 'halvgod'): XZ | null {
             const edge = style === 'seende' ? Math.max(0, reach(f, R.r) - 1.5) : 0;
             harvest =
                 d > edge && edge > 0
-                    ? [tun[0] + ((R.p[0] - tun[0]) / d) * edge, tun[1] + ((R.p[1] - tun[1]) / d) * edge]
+                    ? [
+                          tun[0] + ((R.p[0] - tun[0]) / d) * edge,
+                          tun[1] + ((R.p[1] - tun[1]) / d) * edge,
+                      ]
                     : tun;
         }
     });

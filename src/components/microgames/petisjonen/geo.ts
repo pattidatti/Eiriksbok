@@ -84,6 +84,13 @@ const RAW: Raw[] = [
 /** Slottet i Christiania - der petisjonen skal leveres til kongen. */
 export const SLOTTET: XZ = [-5.5, 24.5];
 export const SLOTTET_R = 3.2;
+/**
+ * Arbeider-Foreningernes Blad, trykkeriet i Christiania. Navn som leveres hit, er
+ * trygge - de kan ikke rives av rullen lenger.
+ */
+export const BLADET: XZ = [6.5, 7];
+export const BLADET_R = 2.1;
+export const BLADET_HUS: XZ = [6.5, 4.6];
 /** Hvor embetsmennene og lensmennene rir ut fra. */
 export const HUNTER_HOME: XZ = [6, 19];
 
@@ -138,6 +145,7 @@ export const START_PLACE = 0; // Drammen, desember 1848
 export const SOLIDS: { p: XZ; r: number }[] = [
     ...PLACES.flatMap((p) => p.houses.map((h) => ({ p: h.p, r: h.r }))),
     { p: SLOTTET, r: 2.6 },
+    { p: BLADET_HUS, r: 1.3 },
 ];
 
 // Trær: utenfor bygdene og veiene. Bare pynt - rullen kjører gjennom og bøyer dem.
@@ -151,7 +159,9 @@ function buildTrees(): XZ[] {
         if (dist(p, SLOTTET) < 7) continue;
         if (ROADS.some(([a, b]) => segDist(p, PLACES[a].tun, PLACES[b].tun) < 2)) continue;
         // Skogen klumper seg: behold bare punkter nær en skogkjerne.
-        const f = Math.sin(p[0] * 0.13 + 1.3) * Math.cos(p[1] * 0.17 - 0.4) + Math.sin(p[0] * 0.05 - p[1] * 0.07);
+        const f =
+            Math.sin(p[0] * 0.13 + 1.3) * Math.cos(p[1] * 0.17 - 0.4) +
+            Math.sin(p[0] * 0.05 - p[1] * 0.07);
         if (f < 0.15) continue;
         out.push(p);
     }

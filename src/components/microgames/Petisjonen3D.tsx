@@ -48,6 +48,7 @@ import {
     Labels,
     Houses,
     Slottet,
+    Bladet,
     Trees,
     PlaceMarks,
     People,
@@ -145,6 +146,12 @@ function makeSfx(a: ArcadeSynth): Sfx & { win: () => void; nei: () => void; lose
             a.tone(f, f * 1.5, 0.08, 'triangle', 0.06);
         },
         ready: () => a.arp(523, [0, 7], 0.12, 0.06),
+        // Trykkpressa slår: et dunk og en lys klang.
+        bank: () => {
+            a.noise(0.12, 0.3, 300);
+            a.tone(90, 60, 0.18, 'sine', 0.16);
+            a.arp(440, [0, 4, 7], 0.07, 0.05);
+        },
         meeting: (k) => {
             if (gate('meet', 120)) a.tone(330 + k * 330, 330 + k * 330, 0.07, 'sine', 0.05);
         },
@@ -249,8 +256,12 @@ function Loop({
         const pt = pointerRef.current;
         if (!botRef.current && modeRef.current === 'play') {
             const k = pt.keys;
-            const kx = (k.has('ArrowRight') || k.has('KeyD') ? 1 : 0) - (k.has('ArrowLeft') || k.has('KeyA') ? 1 : 0);
-            const kz = (k.has('ArrowDown') || k.has('KeyS') ? 1 : 0) - (k.has('ArrowUp') || k.has('KeyW') ? 1 : 0);
+            const kx =
+                (k.has('ArrowRight') || k.has('KeyD') ? 1 : 0) -
+                (k.has('ArrowLeft') || k.has('KeyA') ? 1 : 0);
+            const kz =
+                (k.has('ArrowDown') || k.has('KeyS') ? 1 : 0) -
+                (k.has('ArrowUp') || k.has('KeyW') ? 1 : 0);
             setKeys(g, kx, kz);
             if (pt.on) {
                 NDC.set(pt.x, pt.y);
@@ -338,6 +349,7 @@ const CSS = `
 .pt-bar{position:relative;height:6px;margin:5px 0 5px;border:1.5px solid ${INK};background:#e3d5b5}
 .pt-bar>div{position:absolute;left:0;top:0;bottom:0;background:${INK};transition:width .25s}
 .pt-bar>.pt-ghost{background:repeating-linear-gradient(135deg,${RED} 0 2px,transparent 2px 5px);opacity:.75}
+.pt-bar>.pt-safe{top:auto;height:2px;bottom:-5px;background:${RED}}
 .pt-piles{display:block;font-size:11px;color:${RED};font-style:italic;letter-spacing:.04em;height:12px;margin-top:1px}
 .pt-bar>i{position:absolute;top:-4px;bottom:-4px;width:2px;background:${RED}}
 .pt-sub{position:absolute;left:12px;top:78px;font-family:${SERIF};color:${INK};font-size:12.5px;background:rgba(239,228,204,.92);border:1.5px solid ${INK};padding:4px 9px 5px;pointer-events:none;line-height:1.35}
@@ -392,6 +404,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
         names: useRef<HTMLElement>(null),
         bar: useRef<HTMLDivElement>(null),
         ghost: useRef<HTMLDivElement>(null),
+        safe: useRef<HTMLDivElement>(null),
         piles: useRef<HTMLElement>(null),
         date: useRef<HTMLElement>(null),
         left: useRef<HTMLElement>(null),
@@ -416,12 +429,14 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
         text.float(t, proj.x, proj.y, color, big);
     };
     /** Et punkt på kartet -> et punkt i spillvinduet, for lapper og lærings-øyeblikk. */
-    const toScreen = (at: At, y = 1.2) => () => {
-        const p = at();
-        if (!p) return null;
-        const r = projRef.current?.(TMP.set(p[0], y, p[1]));
-        return r && !r.behind ? { x: r.x, y: r.y } : null;
-    };
+    const toScreen =
+        (at: At, y = 1.2) =>
+        () => {
+            const p = at();
+            if (!p) return null;
+            const r = projRef.current?.(TMP.set(p[0], y, p[1]));
+            return r && !r.behind ? { x: r.x, y: r.y } : null;
+        };
 
     const endRun = (won: boolean, cause: Cause) => {
         const g = gRef.current;
@@ -461,7 +476,9 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             rank: rankFor(RANKS, won ? Math.max(names, GOAL) : names),
             msg: won
                 ? `Du leverte ${nb(names)} navn, og kongen sa nei - slik han gjorde i mai 1850. I 1851 fikk du ${g.saved} av ${g.saved + g.arrested} ledere i skjul. I virkeligheten ble Thrane og 148 andre dømt.`
-                : DEATH[cause].replace('{n}', nb(names)).replace('{dato}', `${d.m[0].toUpperCase()}${d.m.slice(1)} ${d.y}`),
+                : DEATH[cause]
+                      .replace('{n}', nb(names))
+                      .replace('{dato}', `${d.m[0].toUpperCase()}${d.m.slice(1)} ${d.y}`),
             tip,
             lessons: text.lessons(3),
             names,
@@ -518,7 +535,11 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                 for (let k = 0; k < 40; k++)
                     g.scraps.push({
                         p: [R.p[0], R.r, R.p[1]],
-                        v: [(Math.random() - 0.5) * 9, 4 + Math.random() * 7, (Math.random() - 0.5) * 9],
+                        v: [
+                            (Math.random() - 0.5) * 9,
+                            4 + Math.random() * 7,
+                            (Math.random() - 0.5) * 9,
+                        ],
                         life: 2 + Math.random(),
                         spin: Math.random() * 10,
                     });
@@ -574,7 +595,10 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
         hudRef.current = (g: G) => {
             const n = g.roll.names;
             if (hud.names.current) hud.names.current.textContent = nb(n);
-            if (hud.bar.current) hud.bar.current.style.width = `${Math.min(100, (n / GOAL) * 100)}%`;
+            if (hud.bar.current)
+                hud.bar.current.style.width = `${Math.min(100, (n / GOAL) * 100)}%`;
+            if (hud.safe.current)
+                hud.safe.current.style.width = `${Math.min(100, (g.safe / GOAL) * 100)}%`;
             // Navnene som ligger klare i stablene ved låvene: lovet, men ikke hentet.
             let piles = 0;
             for (const p of g.places) if (p.forening) piles += p.forening.pile;
@@ -582,10 +606,13 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                 hud.ghost.current.style.width = `${Math.min(100, ((n + piles) / GOAL) * 100)}%`;
             if (hud.piles.current)
                 hud.piles.current.textContent =
-                    piles >= 20 && g.phase === 'samle' ? `+ ${nb(piles)} i stablene` : '';
+                    g.phase !== 'samle'
+                        ? ''
+                        : `${nb(g.safe)} trygt i Bladet${piles >= 20 ? ` · ${nb(piles)} venter hos foreningene` : ''}`;
             const d = dateOf(g.t);
             if (hud.date.current)
-                hud.date.current.textContent = g.phase === 'knusing' ? 'juli 1851' : `${d.m} ${d.y}`;
+                hud.date.current.textContent =
+                    g.phase === 'knusing' ? 'juli 1851' : `${d.m} ${d.y}`;
             if (hud.left.current) {
                 const months = Math.max(0, 17 - d.i);
                 const waiting = g.leaders.filter((l) => l.state === 'venter').length;
@@ -601,7 +628,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             if (hud.fore.current) hud.fore.current.textContent = String(foreningCount(g));
             if (hud.memb.current) hud.memb.current.textContent = nb(members(g));
             if (hud.combo.current) {
-                hud.combo.current.style.opacity = g.combo >= 2 && modeRef.current === 'play' ? '1' : '0';
+                hud.combo.current.style.opacity =
+                    g.combo >= 2 && modeRef.current === 'play' ? '1' : '0';
                 hud.combo.current.textContent = `NAVN FRA ${g.combo} FORENINGER ×${g.combo}`;
             }
             // Stemplene i protokollen: bare når listen endrer seg (sjelden).
@@ -637,11 +665,20 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
         // De første fem sekundene: pek på husmannen, så på rullen.
         const first = g.people
             .filter((p) => p.place === 0)
-            .sort((a, b) => Math.hypot(a.p[0] - g.roll.p[0], a.p[1] - g.roll.p[1]) - Math.hypot(b.p[0] - g.roll.p[0], b.p[1] - g.roll.p[1]))[0];
-        text.point('forste', 'Rull inn i husmannen', toScreen(() => first.p, 1.4), {
-            seconds: 12,
-            until: () => gRef.current.singles > 0,
-        });
+            .sort(
+                (a, b) =>
+                    Math.hypot(a.p[0] - g.roll.p[0], a.p[1] - g.roll.p[1]) -
+                    Math.hypot(b.p[0] - g.roll.p[0], b.p[1] - g.roll.p[1])
+            )[0];
+        text.point(
+            'forste',
+            'Rull inn i husmannen',
+            toScreen(() => first.p, 1.4),
+            {
+                seconds: 12,
+                until: () => gRef.current.singles > 0,
+            }
+        );
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;
@@ -684,10 +721,16 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                 const m = modeRef.current;
                 const o = outcome.current;
                 return {
-                    fase: m === 'menu' ? 'meny' : m === 'over' ? (o?.won ? 'vunnet' : 'tapt') : 'spiller',
+                    fase:
+                        m === 'menu'
+                            ? 'meny'
+                            : m === 'over'
+                              ? o?.won
+                                  ? 'vunnet'
+                                  : 'tapt'
+                              : 'spiller',
                     poeng: m === 'over' && o ? o.score : liveScore(g),
-                    framdrift:
-                        g.phase === 'knusing' ? 1 : Math.min(1, g.roll.names / GOAL),
+                    framdrift: g.phase === 'knusing' ? 1 : Math.min(1, g.roll.names / GOAL),
                     tid: g.t,
                     valg: g.valg,
                     press: g.press,
@@ -716,7 +759,12 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                     'Ignorerer foreningene: plukker husmenn én og én over hele kartet og holder aldri møte. Unngår jegerne.',
                     BOT_STYLES.alene
                 ),
-                tilfeldig: bot('taper', 'Ruller mot tilfeldige punkter på kartet.', BOT_STYLES.tilfeldig, true),
+                tilfeldig: bot(
+                    'taper',
+                    'Ruller mot tilfeldige punkter på kartet.',
+                    BOT_STYLES.tilfeldig,
+                    true
+                ),
             },
         };
     });
@@ -724,7 +772,16 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
     // Tastatur: piler/WASD styrer, Esc/P pause. Pilene skal ikke rulle siden.
     useEffect(() => {
         const keys = pointerRef.current.keys;
-        const move = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'KeyW', 'KeyA', 'KeyS', 'KeyD'];
+        const move = [
+            'ArrowUp',
+            'ArrowDown',
+            'ArrowLeft',
+            'ArrowRight',
+            'KeyW',
+            'KeyA',
+            'KeyS',
+            'KeyD',
+        ];
         const down = (e: KeyboardEvent) => {
             if (e.code === 'Escape' || e.code === 'KeyP') {
                 if (modeRef.current === 'play') pause();
@@ -800,6 +857,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                 <Labels />
                                 <Houses />
                                 <Slottet gRef={gRef} />
+                                <Bladet gRef={gRef} />
                                 <Trees gRef={gRef} />
                                 <PlaceMarks gRef={gRef} />
                                 <People gRef={gRef} />
@@ -819,7 +877,10 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                     </div>
 
                     {/* Avishodet: tittel, dato og antall navn - som forsiden i 1849 */}
-                    <div className="pt-mast" style={{ opacity: hudOn ? 1 : 0, transition: 'opacity .3s' }}>
+                    <div
+                        className="pt-mast"
+                        style={{ opacity: hudOn ? 1 : 0, transition: 'opacity .3s' }}
+                    >
                         <div className="pt-row">
                             <div className="pt-title">
                                 PETISJONEN
@@ -837,13 +898,15 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                         <div className="pt-bar">
                             <div ref={hud.ghost} className="pt-ghost" style={{ width: '0%' }} />
                             <div ref={hud.bar} style={{ width: '0%' }} />
+                            <div ref={hud.safe} className="pt-safe" style={{ width: '0%' }} />
                             <i style={{ right: 0 }} />
                         </div>
                     </div>
 
                     <div className="pt-sub" style={{ opacity: hudOn ? 1 : 0 }}>
                         <div>
-                            Foreninger <b ref={hud.fore}>0</b> &nbsp;·&nbsp; Medlemmer <b ref={hud.memb}>0</b>
+                            Foreninger <b ref={hud.fore}>0</b> &nbsp;·&nbsp; Medlemmer{' '}
+                            <b ref={hud.memb}>0</b>
                         </div>
                         <div style={{ fontStyle: 'italic', fontSize: 11.5 }}>
                             <span ref={hud.left}>17 måneder til mai 1850</span>
@@ -891,7 +954,9 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                     {mode === 'menu' && !showProto && (
                         <ArcadeScreen>
                             <ArcadeLogo>
-                                <span style={{ fontSize: 'clamp(28px, 5vw, 44px)' }}>PETISJONEN</span>
+                                <span style={{ fontSize: 'clamp(28px, 5vw, 44px)' }}>
+                                    PETISJONEN
+                                </span>
                             </ArcadeLogo>
                             <ArcadeTag>Thranebevegelsen, 1848-1850</ArcadeTag>
                             <p style={{ fontSize: 13, margin: '9px 0 2px', lineHeight: 1.4 }}>
@@ -908,7 +973,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                     <i style={{ background: '#f2c14e' }} />
                                 </span>
                                 <span>
-                                    <b>Lykt ved låven:</b> hold møte, så starter bygda egen forening.
+                                    <b>Lykt ved låven:</b> hold møte, så starter bygda egen
+                                    forening.
                                 </span>
                                 <span>
                                     <i style={{ background: RED }} />
@@ -921,6 +987,12 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                 </span>
                                 <span>
                                     <b>Høy svart hatt:</b> har stemmerett og river av navn.
+                                </span>
+                                <span>
+                                    <i style={{ background: PAPER, borderStyle: 'dashed' }} />
+                                </span>
+                                <span>
+                                    <b>Bladet i Christiania:</b> lever navnene der, så er de trygge.
                                 </span>
                             </div>
                             <p style={{ fontSize: 13, fontWeight: 700, margin: '6px 0 0' }}>
@@ -950,8 +1022,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                 Foreningsprotokollen
                             </div>
                             <p style={{ fontSize: 12, margin: '3px 0 9px' }}>
-                                Et stempel for hver bygd der du har holdt møte og startet forening. Foreningene
-                                fantes på hele Østlandet, på Vestlandet og i Trøndelag.
+                                Et stempel for hver bygd der du har holdt møte og startet forening.
+                                Foreningene fantes på hele Østlandet, på Vestlandet og i Trøndelag.
                             </p>
                             <div
                                 style={{
@@ -964,19 +1036,26 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                 {PLACES.map((p) => {
                                     const has = save.protokoll.includes(p.id);
                                     return (
-                                        <div key={p.id} style={{ textAlign: 'center', opacity: has ? 1 : 0.35 }}>
+                                        <div
+                                            key={p.id}
+                                            style={{ textAlign: 'center', opacity: has ? 1 : 0.35 }}
+                                        >
                                             <div
                                                 className="pt-stamp"
                                                 style={{ margin: '0 auto', animation: 'none' }}
                                             >
                                                 {has ? initials(p.id) : '?'}
                                             </div>
-                                            <div style={{ fontSize: 10.5, marginTop: 3 }}>{p.name}</div>
+                                            <div style={{ fontSize: 10.5, marginTop: 3 }}>
+                                                {p.name}
+                                            </div>
                                         </div>
                                     );
                                 })}
                             </div>
-                            <ArcadeSmallButton onClick={() => setShowProto(false)}>Lukk</ArcadeSmallButton>
+                            <ArcadeSmallButton onClick={() => setShowProto(false)}>
+                                Lukk
+                            </ArcadeSmallButton>
                         </ArcadeScreen>
                     )}
 
@@ -998,24 +1077,58 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                             </div>
                             <div
                                 className="arc-display"
-                                style={{ fontSize: 'clamp(18px, 3.4vw, 23px)', color: RED, margin: '0 0 2px' }}
+                                style={{
+                                    fontSize: 'clamp(18px, 3.4vw, 23px)',
+                                    color: RED,
+                                    margin: '0 0 2px',
+                                }}
                             >
                                 {result.rank}
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-                                <span className="arc-display" style={{ fontSize: 28, lineHeight: 1 }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: 10,
+                                }}
+                            >
+                                <span
+                                    className="arc-display"
+                                    style={{ fontSize: 28, lineHeight: 1 }}
+                                >
                                     {nb(result.score)}
-                                    <small style={{ fontSize: 11, marginLeft: 5, letterSpacing: '.1em' }}>poeng</small>
+                                    <small
+                                        style={{
+                                            fontSize: 11,
+                                            marginLeft: 5,
+                                            letterSpacing: '.1em',
+                                        }}
+                                    >
+                                        poeng
+                                    </small>
                                 </span>
                                 {result.newBest && (
-                                    <span className="arc-display arc-pill arc-wig" style={{ fontSize: 11 }}>
+                                    <span
+                                        className="arc-display arc-pill arc-wig"
+                                        style={{ fontSize: 11 }}
+                                    >
                                         Ny rekord!
                                     </span>
                                 )}
                             </div>
-                            <p style={{ margin: '6px 0 4px', fontSize: 12.5, lineHeight: 1.35 }}>{result.msg}</p>
+                            <p style={{ margin: '6px 0 4px', fontSize: 12.5, lineHeight: 1.35 }}>
+                                {result.msg}
+                            </p>
                             {result.tip && (
-                                <p style={{ margin: '0 0 6px', fontWeight: 700, fontSize: 12.5, lineHeight: 1.35 }}>
+                                <p
+                                    style={{
+                                        margin: '0 0 6px',
+                                        fontWeight: 700,
+                                        fontSize: 12.5,
+                                        lineHeight: 1.35,
+                                    }}
+                                >
                                     {result.tip}
                                 </p>
                             )}
@@ -1039,7 +1152,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                         color: RED,
                                     }}
                                 >
-                                    Nytt i protokollen: {result.newEntries.map((e) => e.title).join(', ')}
+                                    Nytt i protokollen:{' '}
+                                    {result.newEntries.map((e) => e.title).join(', ')}
                                 </div>
                             ) : result.next ? (
                                 <div
@@ -1051,7 +1165,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                         fontSize: 12,
                                     }}
                                 >
-                                    {nb(result.next[0] - result.names)} navn til neste tittel: {result.next[1]}
+                                    {nb(result.next[0] - result.names)} navn til neste tittel:{' '}
+                                    {result.next[1]}
                                 </div>
                             ) : null}
                             <ArcadeBigButton onClick={begin}>Rull igjen!</ArcadeBigButton>

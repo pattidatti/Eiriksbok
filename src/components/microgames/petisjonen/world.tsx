@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { mergeParts } from '../kit/mergeParts';
 import { useQuality } from '../kit/quality';
-import { PLACES, TREES, SLOTTET } from './geo';
+import { PLACES, TREES, SLOTTET, BLADET, BLADET_R, BLADET_HUS } from './geo';
 import { MAX_STUCK, reach, MEET_TIME, type G } from './game';
 import { hatchMat, OUTLINE, INK, RED, LAMP } from './hatch';
 import {
@@ -14,6 +14,7 @@ import {
     slipTexture,
     placeLabel,
     slottLabel,
+    bladetLabel,
     inWater,
     GROUND_W,
     GROUND_D,
@@ -73,20 +74,38 @@ const roof = (len: number, rad: number) => {
 const GEO = {
     lave: mergeParts([
         { geometry: box(3.4, 1.9, 2.3), position: [0, 0.95, 0], color: '#9c8b6c' },
-        { geometry: roof(3.6, 1.45), position: [0, 2.35, 0], rotation: [0, 0, Math.PI / 2], scale: [1, 1, 0.95], color: '#7a6d58' },
+        {
+            geometry: roof(3.6, 1.45),
+            position: [0, 2.35, 0],
+            rotation: [0, 0, Math.PI / 2],
+            scale: [1, 1, 0.95],
+            color: '#7a6d58',
+        },
         { geometry: box(1.1, 1.3, 0.1), position: [0, 0.65, 1.17], color: '#6b5a44' },
         { geometry: box(0.08, 1.3, 0.12), position: [0, 0.65, 1.2], color: INK },
     ]),
     stue: mergeParts([
         { geometry: box(2.3, 1.35, 1.6), position: [0, 0.68, 0], color: '#cbb892' },
-        { geometry: roof(2.5, 1.08), position: [0, 1.72, 0], rotation: [0, 0, Math.PI / 2], scale: [1, 1, 0.8], color: '#8f8470' },
+        {
+            geometry: roof(2.5, 1.08),
+            position: [0, 1.72, 0],
+            rotation: [0, 0, Math.PI / 2],
+            scale: [1, 1, 0.8],
+            color: '#8f8470',
+        },
         { geometry: box(0.3, 0.7, 0.3), position: [0.6, 2.2, 0], color: '#8a7e6a' },
         { geometry: box(0.35, 0.35, 0.05), position: [-0.55, 0.8, 0.81], color: LAMP },
         { geometry: box(0.35, 0.35, 0.05), position: [0.45, 0.8, 0.81], color: LAMP },
     ]),
     husmann: mergeParts([
         { geometry: box(1.45, 0.95, 1.1), position: [0, 0.48, 0], color: '#a8977a' },
-        { geometry: roof(1.6, 0.78), position: [0, 1.2, 0], rotation: [0, 0, Math.PI / 2], scale: [1, 1, 0.75], color: '#7b7560' },
+        {
+            geometry: roof(1.6, 0.78),
+            position: [0, 1.2, 0],
+            rotation: [0, 0, Math.PI / 2],
+            scale: [1, 1, 0.75],
+            color: '#7b7560',
+        },
         { geometry: box(0.28, 0.28, 0.05), position: [0.3, 0.55, 0.56], color: LAMP },
     ]),
     tree: mergeParts([
@@ -100,7 +119,12 @@ const GEO = {
         { geometry: cyl(0.19, 0.26, 0.52, 7), position: [0, 0.66, 0], color: '#74685a' },
         { geometry: box(0.62, 0.12, 0.14), position: [0, 0.82, 0], color: '#74685a' },
         { geometry: ball(0.15), position: [0, 1.04, 0], color: '#e6d3b2' },
-        { geometry: new THREE.ConeGeometry(0.155, 0.28, 6), position: [0.02, 1.2, -0.02], rotation: [-0.25, 0, 0.2], color: '#8e8574' },
+        {
+            geometry: new THREE.ConeGeometry(0.155, 0.28, 6),
+            position: [0.02, 1.2, -0.02],
+            rotation: [-0.25, 0, 0.2],
+            color: '#8e8574',
+        },
     ]),
     embetsmann: mergeParts([
         { geometry: box(0.3, 0.4, 0.2), position: [0, 0.2, 0], color: INK },
@@ -124,7 +148,13 @@ const GEO = {
         { geometry: box(8, 2.6, 3.2), position: [0, 1.3, 0], color: '#dccfb2' },
         { geometry: box(8.2, 0.3, 3.4), position: [0, 2.72, 0], color: '#6e6452' },
         { geometry: box(2.8, 3.3, 3.6), position: [0, 1.65, 0.15], color: '#e3d7bb' },
-        { geometry: roof(3.0, 1.0), position: [0, 3.5, 0.15], rotation: [0, Math.PI / 2, Math.PI / 2], scale: [1, 1, 1.8], color: '#7a6d58' },
+        {
+            geometry: roof(3.0, 1.0),
+            position: [0, 3.5, 0.15],
+            rotation: [0, Math.PI / 2, Math.PI / 2],
+            scale: [1, 1, 1.8],
+            color: '#7a6d58',
+        },
         ...[-1.1, -0.37, 0.37, 1.1].map((x) => ({
             geometry: cyl(0.14, 0.16, 2.4, 8),
             position: [x, 1.2, 2.05] as [number, number, number],
@@ -181,7 +211,16 @@ const LINE = {
 };
 
 // Flate normaler: hver flate får sin egen skravur, som i et tresnitt.
-for (const g of [GEO.lave, GEO.stue, GEO.husmann, GEO.tree, GEO.person, GEO.embetsmann, GEO.bonde, GEO.slottet])
+for (const g of [
+    GEO.lave,
+    GEO.stue,
+    GEO.husmann,
+    GEO.tree,
+    GEO.person,
+    GEO.embetsmann,
+    GEO.bonde,
+    GEO.slottet,
+])
     g.computeVertexNormals();
 
 const VC = () => hatchMat('#ffffff', { vertexColors: true });
@@ -221,7 +260,12 @@ export function Labels() {
                     renderOrder={1}
                 >
                     <planeGeometry args={[p.by ? 6.4 : 5.6, p.by ? 1.44 : 1.26]} />
-                    <meshBasicMaterial map={tex} transparent depthWrite={false} toneMapped={false} />
+                    <meshBasicMaterial
+                        map={tex}
+                        transparent
+                        depthWrite={false}
+                        toneMapped={false}
+                    />
                 </mesh>
             ))}
             <mesh rotation-x={-Math.PI / 2} position={[SLOTTET[0], 0.03, SLOTTET[1] + 3.7]}>
@@ -309,6 +353,50 @@ export function Slottet({ gRef }: { gRef: GRef }) {
     );
 }
 
+/** Arbeider-Foreningernes Blad: trykkeriet der navnene blir trygge. */
+export function Bladet({ gRef }: { gRef: GRef }) {
+    const ring = useRef<THREE.Mesh>(null);
+    const [label] = useState(bladetLabel);
+    useEffect(() => () => label.dispose(), [label]);
+    useFrame((st) => {
+        const g = gRef.current;
+        if (!ring.current) return;
+        const unsafe = g.roll.names - g.safe;
+        const k = unsafe >= 60 ? 1 + Math.sin(st.clock.elapsedTime * 5) * 0.07 : 1;
+        ring.current.scale.setScalar(BLADET_R * k);
+        BLADET_MAT.opacity = unsafe >= 60 ? 0.85 : 0.35;
+    });
+    return (
+        <group>
+            <group position={[BLADET_HUS[0], 0, BLADET_HUS[1]]}>
+                <mesh geometry={GEO.stue} material={VC()} scale={[1.25, 1.35, 1.25]} />
+                <mesh geometry={LINE.stue} material={OUTLINE} scale={[1.25, 1.35, 1.25]} />
+                {/* Skiltet over døra: avisa. */}
+                <mesh position={[0, 1.55, 1.08]} material={hatchMat(RED)}>
+                    <boxGeometry args={[2.3, 0.42, 0.06]} />
+                </mesh>
+            </group>
+            <mesh
+                ref={ring}
+                geometry={GEO.dangerRing}
+                material={BLADET_MAT}
+                position={[BLADET[0], 0.06, BLADET[1]]}
+            />
+            <mesh rotation-x={-Math.PI / 2} position={[BLADET[0], 0.04, BLADET[1] + 3.1]}>
+                <planeGeometry args={[6.4, 1.3]} />
+                <meshBasicMaterial map={label} transparent depthWrite={false} toneMapped={false} />
+            </mesh>
+        </group>
+    );
+}
+
+const BLADET_MAT = new THREE.MeshBasicMaterial({
+    color: INK,
+    transparent: true,
+    opacity: 0.4,
+    depthWrite: false,
+});
+
 export function Trees({ gRef }: { gRef: GRef }) {
     const q = useQuality();
     const list = useMemo(() => {
@@ -361,12 +449,17 @@ export function Trees({ gRef }: { gRef: GRef }) {
             if (next > 0) b.set(i, next);
         }
         if (dirty)
-            for (const m of [tree.current, line.current]) if (m) m.instanceMatrix.needsUpdate = true;
+            for (const m of [tree.current, line.current])
+                if (m) m.instanceMatrix.needsUpdate = true;
     });
     return (
         <group>
             <instancedMesh ref={tree} args={[GEO.tree, VC(), list.length]} frustumCulled={false} />
-            <instancedMesh ref={line} args={[LINE.tree, OUTLINE, list.length]} frustumCulled={false} />
+            <instancedMesh
+                ref={line}
+                args={[LINE.tree, OUTLINE, list.length]}
+                frustumCulled={false}
+            />
         </group>
     );
 }
@@ -381,8 +474,18 @@ const DOTS = 11;
 
 const MARK_MATS = {
     ring: new THREE.MeshBasicMaterial({ color: LAMP, toneMapped: false }),
-    disk: new THREE.MeshBasicMaterial({ color: LAMP, transparent: true, opacity: 0.55, depthWrite: false }),
-    reach: new THREE.MeshBasicMaterial({ color: RED, transparent: true, opacity: 0.45, depthWrite: false }),
+    disk: new THREE.MeshBasicMaterial({
+        color: LAMP,
+        transparent: true,
+        opacity: 0.55,
+        depthWrite: false,
+    }),
+    reach: new THREE.MeshBasicMaterial({
+        color: RED,
+        transparent: true,
+        opacity: 0.45,
+        depthWrite: false,
+    }),
     lantern: new THREE.MeshBasicMaterial({ color: '#ffd873', toneMapped: false }),
     hole: new THREE.MeshBasicMaterial({ color: INK }),
 };
@@ -445,7 +548,8 @@ export function PlaceMarks({ gRef }: { gRef: GRef }) {
             }
             // Klar for møte (eller i 1851: lederen venter): lysende ring og lykt.
             const waiting =
-                g.phase === 'knusing' && g.leaders.some((l) => l.place === i && l.state === 'venter');
+                g.phase === 'knusing' &&
+                g.leaders.some((l) => l.place === i && l.state === 'venter');
             if ((ps.klar && !f) || waiting) {
                 const pulse = 2.5 + Math.sin(t * 5) * 0.12;
                 put(ri, i, x, 0.08, z, 0, pulse, 0, 0, 1);
@@ -490,16 +594,40 @@ export function PlaceMarks({ gRef }: { gRef: GRef }) {
     });
     return (
         <group>
-            <instancedMesh ref={poles} args={[GEO.pole, hatchMat('#6b5a44'), N]} frustumCulled={false} />
+            <instancedMesh
+                ref={poles}
+                args={[GEO.pole, hatchMat('#6b5a44'), N]}
+                frustumCulled={false}
+            />
             <instancedMesh ref={flags} args={[GEO.flag, hatchMat(RED), N]} frustumCulled={false} />
-            <instancedMesh ref={piles} args={[GEO.pile, hatchMat('#f5ecd6'), N]} frustumCulled={false} />
-            <instancedMesh ref={pips} args={[GEO.pip, hatchMat(RED), N * PIPS]} frustumCulled={false} />
-            <instancedMesh ref={holes} args={[GEO.pip, mats.hole, N * PIPS]} frustumCulled={false} />
+            <instancedMesh
+                ref={piles}
+                args={[GEO.pile, hatchMat('#f5ecd6'), N]}
+                frustumCulled={false}
+            />
+            <instancedMesh
+                ref={pips}
+                args={[GEO.pip, hatchMat(RED), N * PIPS]}
+                frustumCulled={false}
+            />
+            <instancedMesh
+                ref={holes}
+                args={[GEO.pip, mats.hole, N * PIPS]}
+                frustumCulled={false}
+            />
             <instancedMesh ref={rings} args={[GEO.torus, mats.ring, N]} frustumCulled={false} />
             <instancedMesh ref={disks} args={[GEO.shadow, mats.disk, N]} frustumCulled={false} />
             <instancedMesh ref={reachs} args={[GEO.ring, mats.reach, N]} frustumCulled={false} />
-            <instancedMesh ref={dots} args={[GEO.dot, hatchMat(RED), N * DOTS]} frustumCulled={false} />
-            <instancedMesh ref={lanterns} args={[GEO.lantern, mats.lantern, N]} frustumCulled={false} />
+            <instancedMesh
+                ref={dots}
+                args={[GEO.dot, hatchMat(RED), N * DOTS]}
+                frustumCulled={false}
+            />
+            <instancedMesh
+                ref={lanterns}
+                args={[GEO.lantern, mats.lantern, N]}
+                frustumCulled={false}
+            />
         </group>
     );
 }
@@ -542,7 +670,19 @@ export function People({ gRef }: { gRef: GRef }) {
         const g = gRef.current;
         const t = st.clock.elapsedTime;
         const R = g.roll;
-        const refs = [people, peopleL, sash, bonde, bondeL, emb, embL, papers, shadows, alarm, danger];
+        const refs = [
+            people,
+            peopleL,
+            sash,
+            bonde,
+            bondeL,
+            emb,
+            embL,
+            papers,
+            shadows,
+            alarm,
+            danger,
+        ];
         if (refs.some((r) => !r.current)) return;
         const [pe, pl, sa, bo, bl, em, el, pa, sh, al, dg] = refs.map((r) => r.current!);
         let si = 0;
@@ -556,9 +696,13 @@ export function People({ gRef }: { gRef: GRef }) {
             const near = Math.hypot(R.p[0] - p.p[0], R.p[1] - p.p[1]);
             // Husmenn ser på rullen når den kommer; medlemmene jubler.
             const face =
-                near < 9 ? Math.atan2(R.p[0] - p.p[0], R.p[1] - p.p[1]) : p.face + Math.sin(t * 0.3 + i) * 0.4;
+                near < 9
+                    ? Math.atan2(R.p[0] - p.p[0], R.p[1] - p.p[1])
+                    : p.face + Math.sin(t * 0.3 + i) * 0.4;
             const member = p.state === 'medlem';
-            const hop = member ? Math.abs(Math.sin(t * 5 + i * 1.3)) * (near < 12 ? 0.35 : 0.08) : 0;
+            const hop = member
+                ? Math.abs(Math.sin(t * 5 + i * 1.3)) * (near < 12 ? 0.35 : 0.08)
+                : 0;
             const s = 0.2 + 0.8 * easeBack(p.pop);
             put(pe, i, p.p[0], hop, p.p[1], face, s);
             put(pl, i, p.p[0], hop, p.p[1], face, s);
@@ -582,8 +726,12 @@ export function People({ gRef }: { gRef: GRef }) {
                 return;
             }
             const sp = Math.hypot(h.v[0], h.v[1]);
-            const face = sp > 0.2 ? Math.atan2(h.v[0], h.v[1]) : Math.atan2(R.p[0] - h.p[0], R.p[1] - h.p[1]);
-            const bob = Math.abs(Math.sin(t * (h.chasing ? 14 : 7) + hi)) * Math.min(0.15, sp * 0.03);
+            const face =
+                sp > 0.2
+                    ? Math.atan2(h.v[0], h.v[1])
+                    : Math.atan2(R.p[0] - h.p[0], R.p[1] - h.p[1]);
+            const bob =
+                Math.abs(Math.sin(t * (h.chasing ? 14 : 7) + hi)) * Math.min(0.15, sp * 0.03);
             const lean = h.chasing ? 0.22 : 0;
             const s = 0.3 + 0.7 * easeBack(h.born) + (isB ? 0 : 0.08);
             put(m, idx, h.p[0], bob, h.p[1], face, s, lean);
@@ -600,7 +748,16 @@ export function People({ gRef }: { gRef: GRef }) {
             }
             // Står og river i papiret etter et treff.
             if (h.stun > 0)
-                put(pa, hi, h.p[0] + Math.sin(face) * 0.35, 0.9, h.p[1] + Math.cos(face) * 0.35, face + Math.sin(t * 20) * 0.3, 1.1, 0.5);
+                put(
+                    pa,
+                    hi,
+                    h.p[0] + Math.sin(face) * 0.35,
+                    0.9,
+                    h.p[1] + Math.cos(face) * 0.35,
+                    face + Math.sin(t * 20) * 0.3,
+                    1.1,
+                    0.5
+                );
             else hide(pa, hi);
         });
         // Skyggen under rullen.
@@ -613,7 +770,11 @@ export function People({ gRef }: { gRef: GRef }) {
         <group>
             <instancedMesh ref={people} args={[GEO.person, VC(), nP]} frustumCulled={false} />
             <instancedMesh ref={peopleL} args={[LINE.person, OUTLINE, nP]} frustumCulled={false} />
-            <instancedMesh ref={sash} args={[box(0.66, 0.13, 0.3), hatchMat(RED), nP]} frustumCulled={false} />
+            <instancedMesh
+                ref={sash}
+                args={[box(0.66, 0.13, 0.3), hatchMat(RED), nP]}
+                frustumCulled={false}
+            />
             <instancedMesh ref={bonde} args={[GEO.bonde, VC(), nB]} frustumCulled={false} />
             <instancedMesh ref={bondeL} args={[LINE.bonde, OUTLINE, nB]} frustumCulled={false} />
             <instancedMesh ref={emb} args={[GEO.embetsmann, VC(), nE]} frustumCulled={false} />
@@ -625,10 +786,18 @@ export function People({ gRef }: { gRef: GRef }) {
                 frustumCulled={false}
                 renderOrder={1}
             />
-            <instancedMesh ref={danger} args={[GEO.dangerRing, DANGER_MAT, nB + nE]} frustumCulled={false} />
+            <instancedMesh
+                ref={danger}
+                args={[GEO.dangerRing, DANGER_MAT, nB + nE]}
+                frustumCulled={false}
+            />
             <instancedMesh
                 ref={alarm}
-                args={[new THREE.ConeGeometry(0.13, 0.42, 5).rotateX(Math.PI), hatchMat(RED), nB + nE]}
+                args={[
+                    new THREE.ConeGeometry(0.13, 0.42, 5).rotateX(Math.PI),
+                    hatchMat(RED),
+                    nB + nE,
+                ]}
                 frustumCulled={false}
             />
         </group>
@@ -653,15 +822,25 @@ function useSlipMat() {
                 side: THREE.DoubleSide,
             })
     );
-    useEffect(() => () => {
-        m.map?.dispose();
-        m.dispose();
-    }, [m]);
+    useEffect(
+        () => () => {
+            m.map?.dispose();
+            m.dispose();
+        },
+        [m]
+    );
     return m;
 }
 
 // Rød kontur rundt rullen: spilleren skal aldri drukne i skravuren.
 const ROLL_LINE = new THREE.MeshBasicMaterial({ color: RED, side: THREE.BackSide });
+
+const ROLL_MARK = new THREE.MeshBasicMaterial({
+    color: RED,
+    transparent: true,
+    opacity: 0.7,
+    depthWrite: false,
+});
 
 const rollLen = (r: number) => 0.7 + r * 1.25;
 
@@ -671,6 +850,7 @@ export function Roll({ gRef }: { gRef: GRef }) {
     const body = useRef<THREE.Mesh>(null);
     const line = useRef<THREE.Mesh>(null);
     const stuck = useRef<THREE.InstancedMesh>(null);
+    const marker = useRef<THREE.Mesh>(null);
     const [mats] = useState(() => {
         const side = new THREE.MeshLambertMaterial({ map: rollTexture() });
         const cap = new THREE.MeshLambertMaterial({ map: spiralTexture() });
@@ -697,13 +877,19 @@ export function Roll({ gRef }: { gRef: GRef }) {
         const g = gRef.current;
         const R = g.roll;
         const t = st.clock.elapsedTime;
-        if (!yaw.current || !spin.current || !body.current || !line.current || !stuck.current) return;
+        if (!yaw.current || !spin.current || !body.current || !line.current || !stuck.current)
+            return;
         const bump = 1 + R.bump * 0.06;
         const r = R.r * bump;
         const L = rollLen(R.r);
         // Blinker litt etter et treff.
         const blink = R.invuln > 0 && Math.floor(t * 14) % 2 === 0;
         yaw.current.visible = !blink;
+        // Rød ring på bakken rundt rullen, så den er lett å finne fra første sekund.
+        if (marker.current) {
+            marker.current.position.set(R.p[0], 0.05, R.p[1]);
+            marker.current.scale.setScalar(r * 1.35 + 0.35 + Math.sin(t * 4) * 0.05);
+        }
         yaw.current.position.set(R.p[0], r, R.p[1]);
         yaw.current.rotation.y = R.heading;
         spin.current.rotation.x = R.spin;
@@ -734,13 +920,25 @@ export function Roll({ gRef }: { gRef: GRef }) {
         m.instanceMatrix.needsUpdate = true;
     });
     return (
-        <group ref={yaw}>
-            <group ref={spin}>
-                <mesh ref={body} geometry={geo} material={mats} rotation-z={Math.PI / 2} />
-                <mesh ref={line} geometry={lineGeo} material={ROLL_LINE} rotation-z={Math.PI / 2} />
-                <instancedMesh ref={stuck} args={[GEO.person, VC(), MAX_STUCK]} frustumCulled={false} />
+        <>
+            <mesh ref={marker} geometry={GEO.dangerRing} material={ROLL_MARK} />
+            <group ref={yaw}>
+                <group ref={spin}>
+                    <mesh ref={body} geometry={geo} material={mats} rotation-z={Math.PI / 2} />
+                    <mesh
+                        ref={line}
+                        geometry={lineGeo}
+                        material={ROLL_LINE}
+                        rotation-z={Math.PI / 2}
+                    />
+                    <instancedMesh
+                        ref={stuck}
+                        args={[GEO.person, VC(), MAX_STUCK]}
+                        frustumCulled={false}
+                    />
+                </group>
             </group>
-        </group>
+        </>
     );
 }
 

@@ -15,6 +15,8 @@ import {
     SLOTTET,
     SLOTTET_R,
     HUNTER_HOME,
+    BLADET,
+    BLADET_R,
     HALF_W,
     HALF_D,
     START_PLACE,
@@ -50,6 +52,7 @@ export type At = () => XZ | null;
 
 export interface Sfx {
     pick: (size: number) => void;
+    bank: () => void;
     ready: () => void;
     meeting: (k: number) => void;
     found: () => void;
@@ -215,12 +218,16 @@ export interface G {
     done: Set<string>;
     /** Stedene du har startet forening i denne runden (til protokollen). */
     protokoll: string[];
+    /** Navn levert til Bladet: trygge, kan ikke rives av. */
+    safe: number;
+    banked: number;
     /** 'samle' til petisjonen er levert, så 'knusing' (1851): politiet tar lederne. */
     phase: 'samle' | 'knusing';
     knusT: number;
     leaders: Leader[];
     saved: number;
     arrested: number;
+    hunted: Set<number>;
     /** Navn i lasset som flyr fra hver forening akkurat nå (for «+1 240 NAVN»). */
     burst: number[];
     /** Sluttscenen etter kongens nei. */
@@ -380,11 +387,14 @@ export function newGame(rand: () => number = Math.random): G {
         meetingPlace: -1,
         done: new Set(),
         protokoll: [],
+        safe: 0,
+        banked: 0,
         phase: 'samle',
         knusT: 0,
         leaders: [],
         saved: 0,
         arrested: 0,
+        hunted: new Set(),
         burst: PLACES.map(() => 0),
         crushing: false,
         crushClock: 0,
@@ -457,18 +467,13 @@ function found(g: G, i: number, byYou: boolean, io: IO) {
         g.score += 250;
         if (!g.protokoll.includes(pl.id)) g.protokoll.push(pl.id);
         io.sfx.found();
-        io.banner(`${pl.name.toUpperCase()} ARBEIDERFORENING`, '#b3261e');
+        io.banner('EGEN FORENING', '#b3261e');
+        io.float(pl.name.toUpperCase(), pl.tun[0], pl.tun[1], '#b3261e', true);
         io.lesson(
             'forening',
             'Folk startet egne foreninger og valgte sine egne ledere. Da vokste bevegelsen uten at Thrane måtte være der.',
             1
         );
-        // Et lite lærings-kort første gang, festet til bygda - uten sakte film.
-        if (once(g, 'pin-forening'))
-            io.pin('forening', 'Egen leder - samler navn til deg', () => pl.tun, {
-                seconds: 4,
-                tone: 'bra',
-            });
     } else {
         g.recruited++;
         g.score += 120;
@@ -485,7 +490,8 @@ function found(g: G, i: number, byYou: boolean, io: IO) {
 function tear(g: G, h: Hunter, io: IO) {
     const R = g.roll;
     // Et treff koster 15 %, men aldri mer enn 1000 navn - ellers blir en stor rull straffet dobbelt.
-    const lost = Math.max(12, Math.min(1000, Math.round(R.names * 0.15)));
+    const unsafe = Math.max(0, R.names - g.safe);
+    const lost = Math.min(unsafe, Math.max(12, Math.min(1500, Math.round(unsafe * 0.22))));
     g.hits++;
     h.stun = 4;
     h.v = [0, 0];
@@ -513,10 +519,14 @@ function tear(g: G, h: Hunter, io: IO) {
         io.lose('revet');
         return;
     }
+    if (lost < 1) {
+        io.float('NAVNENE ER TRYGGE', R.p[0], R.p[1], '#1c1915', true);
+        return;
+    }
     const take = Math.min(R.names, lost);
     R.names -= take;
     g.torn += take;
-    io.float(`-${take} NAVN`, R.p[0], R.p[1], '#ff9d8a', true);
+    io.float(`-${take} NAVN`, R.p[0], R.p[1], '#e0342a', true);
     // Figurer ryker også av.
     g.stuck.splice(0, Math.min(g.stuck.length, 3));
 }
@@ -531,7 +541,9 @@ function startKnusing(g: G, io: IO) {
     g.knusT = 0;
     g.open = false;
     g.slips.length = 0;
-    g.leaders = g.places.flatMap((p, i) => (p.forening ? [{ place: i, state: 'venter' as const }] : []));
+    g.leaders = g.places.flatMap((p, i) =>
+        p.forening ? [{ place: i, state: 'venter' as const }] : []
+    );
     // Bøndene går hjem; embetsmennene blir politi og samles i Christiania.
     g.hunters.forEach((h, k) => {
         if (h.kind === 'bonde') {
@@ -601,7 +613,11 @@ function knusing(g: G, dt: number, io: IO) {
                         best = l.place;
                     }
                 }
-                if (best !== h.place && best >= 0) g.valg++;
+                // Et nytt valg bare når politiet går mot en leder ingen gikk mot før.
+                if (best >= 0 && !g.hunted.has(best)) {
+                    g.hunted.add(best);
+                    g.valg++;
+                }
                 h.place = best;
             }
             if (h.place < 0) {
@@ -807,8 +823,7 @@ export function update(g: G, dt: number, io: IO) {
                         () => pl.tun,
                         () => g.places[p.place].meeting > 0.2 || Date.now() - t0 > 6000
                     );
-                }
-                else
+                } else
                     io.pin(`klar-${p.place}`, 'Klar for møte', () => pl.tun, {
                         seconds: 5,
                         until: () => !g.places[p.place].klar,
@@ -896,7 +911,13 @@ export function update(g: G, dt: number, io: IO) {
                 g.burst[i] += take;
                 f.fullNoted = f.pile > 280 && f.fullNoted;
                 if (f.pile < 1 && g.burst[i] >= 40) {
-                    io.float(`+${Math.round(g.burst[i])} NAVN`, PLACES[i].tun[0], PLACES[i].tun[1], '#b3261e', true);
+                    io.float(
+                        `+${Math.round(g.burst[i])} NAVN`,
+                        PLACES[i].tun[0],
+                        PLACES[i].tun[1],
+                        '#b3261e',
+                        true
+                    );
                     g.burst[i] = 0;
                 }
                 const from = PLACES[i].tun;
@@ -961,7 +982,8 @@ export function update(g: G, dt: number, io: IO) {
 
     // --- rullen vokser ---
     R.r = rollRadius(R.names);
-    const lvl = R.names >= 8000 ? 4 : R.names >= 3000 ? 3 : R.names >= 800 ? 2 : R.names >= 150 ? 1 : 0;
+    const lvl =
+        R.names >= 8000 ? 4 : R.names >= 3000 ? 3 : R.names >= 800 ? 2 : R.names >= 150 ? 1 : 0;
     if (lvl > g.level) {
         g.level = lvl;
         io.sfx.grow(lvl);
@@ -988,8 +1010,7 @@ export function update(g: G, dt: number, io: IO) {
                 () => h.p,
                 () => Date.now() - t0 > 4500
             );
-        }
-        else
+        } else
             io.pin(`jeger-${g.nextHunter}`, 'Embetsmann rir ut', () => h.p, {
                 seconds: 3,
                 tone: 'fare',
@@ -1061,6 +1082,39 @@ export function update(g: G, dt: number, io: IO) {
     }
 
     // (Papirbitene flyttes i stepFx, som går hvert bilde - også etter runden.)
+
+    // --- Bladet: lever navnene, så er de trygge ---
+    const unsafeNow = R.names - g.safe;
+    if (dist(R.p, BLADET) < BLADET_R + r * 0.6) {
+        if (unsafeNow >= 1) {
+            g.safe = R.names;
+            // Bare en ekte levering (en omvei med mye på spill) er et valg.
+            if (unsafeNow >= 60) {
+                g.banked++;
+                g.valg++;
+            }
+            if (unsafeNow >= 20) {
+                io.sfx.bank();
+                io.float(
+                    `+${Math.round(unsafeNow)} TRYGT I BLADET`,
+                    BLADET[0],
+                    BLADET[1],
+                    '#1c1915',
+                    true
+                );
+            }
+            io.lesson(
+                'bladet',
+                'Arbeider-Foreningernes Blad kom ut hver uke og bandt foreningene sammen. Der kunne husmenn og arbeidere skrive hva de mente.',
+                0.8
+            );
+        }
+    } else if (unsafeNow >= 400 && once(g, 'pin-bladet'))
+        io.pin('bladet', 'Lever navnene her - da er de trygge', () => BLADET, {
+            seconds: 7,
+            tone: 'bra',
+            until: () => g.banked > 0,
+        });
 
     // --- Slottet åpner ---
     if (!g.open && R.names >= GOAL) {
