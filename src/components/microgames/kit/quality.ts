@@ -10,9 +10,9 @@ import { createContext, useContext } from 'react';
 // skog, mer røyk på høy - aldri mer på lav).
 //
 // Nivået gjettes fra maskinvaren ved start (GPU-navn, kjerner, minne) og
-// justeres så etter målt bildeflyt (PerformanceMonitor i MicroCanvas): faller
-// bildeflyten, går nivået ned; har maskinen god margin, går det opp - men aldri
-// mer enn ett hakk over gjetningen, så en Chromebook aldri klatrer til «høy».
+// kan så bare gå NED etter målt bildeflyt (PerformanceMonitor i MicroCanvas).
+// Aldri opp: et nivå som klatrer og faller igjen, kompilerer shadere og bytter
+// oppløsning hver gang - akkurat de hakkene systemet skal fjerne.
 // Eier 2026-09-26: «alt skal alltid kunne kjøres på en crappy Chromebook. Men vi
 // vil jo ha den beste grafikken vi kan, til tross for det enkle hardware.»
 

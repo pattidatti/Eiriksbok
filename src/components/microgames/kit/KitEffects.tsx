@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { PerformanceMonitor } from '@react-three/drei';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import { useQuality } from './quality';
 
@@ -9,8 +7,9 @@ import { useQuality } from './quality';
 // Bruk: legg <KitEffects /> som barn i MicroCanvas. Ligger i egen fil med vilje,
 // så postprocessing-pakken bare lastes med spillene som faktisk bruker den.
 //
-// Chromebook: effektene skrur seg av av seg selv hvis bildeflyten faller, og
-// slår seg ikke på igjen i samme økt (av-på-flimmer er verre enn ingen glød).
+// Chromebook: kvalitetsnivået (kit/quality.ts) bestemmer om effektene er på. På
+// «lav» er de av fra start; faller bildeflyten, senker MicroCanvas nivået, og de
+// forsvinner - én gang, aldri av-på-flimmer.
 // For at noe skal gløde, må det være LYSERE enn 1: bruk toneMapped={false} og
 // en emissiv farge med intensitet over 1, eller meshBasicMaterial med sterk farge.
 
@@ -29,28 +28,22 @@ export function KitEffects({
     bloomThreshold = 0.82,
     vignette = true,
 }: KitEffectsProps) {
-    const [on, setOn] = useState(true);
     // Etterbehandlingen er det første som ryker på en svak maskin (kit/quality.ts).
     const q = useQuality();
     if (!q.bloom) return null;
     return (
-        <>
-            <PerformanceMonitor onDecline={() => setOn(false)} flipflops={1} />
-            {on && (
-                <EffectComposer multisampling={0}>
-                    {/* EffectComposer tåler ikke betingede barn - vi skrur av med styrke 0 i stedet. */}
-                    <Bloom
-                        mipmapBlur
-                        // Gløden er myk uansett - halv oppløsning er usynlig og sparer
-                        // mye i fullskjerm (se pixelBudget.ts).
-                        resolutionScale={0.5}
-                        intensity={bloom ? bloomIntensity : 0}
-                        luminanceThreshold={bloomThreshold}
-                        luminanceSmoothing={0.2}
-                    />
-                    <Vignette offset={0.3} darkness={vignette ? 0.55 : 0} eskil={false} />
-                </EffectComposer>
-            )}
-        </>
+        <EffectComposer multisampling={0}>
+            {/* EffectComposer tåler ikke betingede barn - vi skrur av med styrke 0 i stedet. */}
+            <Bloom
+                mipmapBlur
+                // Gløden er myk uansett - halv oppløsning er usynlig og sparer
+                // mye i fullskjerm (se pixelBudget.ts).
+                resolutionScale={0.5}
+                intensity={bloom ? bloomIntensity : 0}
+                luminanceThreshold={bloomThreshold}
+                luminanceSmoothing={0.2}
+            />
+            <Vignette offset={0.3} darkness={vignette ? 0.55 : 0} eskil={false} />
+        </EffectComposer>
     );
 }

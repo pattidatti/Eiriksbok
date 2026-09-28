@@ -369,11 +369,18 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
     // maskinen har margin. (Tidligere fast dpr 1-1,5: greit i spalten, men i
     // fullskjerm på en XPS 14 ble det rundt 3 millioner piksler per bilde.)
     // Kvalitetsnivået (kit/quality.ts) styrer budsjettet, skyggekart, kontaktskygge,
-    // bloom og partikler. Gjettes fra maskinvaren, justeres etter målt bildeflyt -
-    // men aldri mer enn ett hakk over gjetningen.
+    // bloom og partikler. Gjettes fra maskinvaren og kan bare gå NED under spillet:
+    // hvert nivåbytte kompilerer shadere og endrer oppløsning (et hakk), og et nivå
+    // som klatret opp og falt ned igjen ga nettopp de hakkene vi ville unngå
+    // (Thranittene 2026-09-27: setSize og shader-kompilering dominerte profilen).
+    // De første sekundene ignoreres - da kompilerer alle spill, uansett maskin.
     const [guess] = useState(() => guessTier());
     const [tier, setTier] = useState<QualityTier>(guess.tier);
-    const ceiling = stepTier(guess.tier, 1, 'hoy');
+    const [bornAt] = useState(() => performance.now());
+    const lower = () => {
+        if (performance.now() - bornAt < 5000) return;
+        setTier((t) => stepTier(t, -1, 'hoy'));
+    };
     const q = QUALITY[tier];
     useEffect(() => {
         if (import.meta.env.DEV)
@@ -428,10 +435,8 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
                 <ShadowGovernor size={q.shadowMapSize} every={q.shadowEvery} />
                 {import.meta.env.DEV && <RenderInfoProbe />}
                 <PerformanceMonitor
-                    onDecline={() => setTier((t) => stepTier(t, -1, ceiling))}
-                    onIncline={() => setTier((t) => stepTier(t, 1, ceiling))}
-                    flipflops={3}
-                    onFallback={() => setTier('lav')}
+                    onDecline={lower}
+                    flipflops={Infinity}
                 />
                 <color attach="background" args={[background]} />
                 {fog && <fog attach="fog" args={[fogColor, fog.near, fog.far]} />}

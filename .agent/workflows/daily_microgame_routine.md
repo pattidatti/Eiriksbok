@@ -160,6 +160,17 @@ Når port 1 og 2 er grønne: start en FERSK underagent med Agent/Task-verktøyet
 
 Terskel: ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil fem vurderingsrunder. Står en akse på samme poeng to runder på rad, skal kjerneløkka endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.
 
+**Lagre etter hver vurderingsrunde (checkpoint).** Kjøringen kan bli avbrutt når som helst - bruksgrensen på abonnementet stoppet omkjøringen 27.09 midt i runde 4, og alt arbeidet i den runden gikk tapt. Commit og push derfor etter HVER vurdering, uansett resultat:
+
+```bash
+git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp"
+git commit -m "wip: <id> etter vurdering <n> (sum <x>)" && git push -f origin HEAD:claude/microgame-wip-<dato>-<id>
+```
+
+Da fortsetter neste kjøring (Jobb 1-0) fra siste runde i stedet for fra start.
+
+**Vær sparsom - kvoten er delt.** Hele kjøringen deler én bruksgrense med alle andre økter. Balanser i den raske TypeScript-simuleringen (`npx tsx` på spillreglene), ikke med gjentatte hele selvspill. Kjør hele selvspillet og scene-auditen én gang per runde, rett før vurderingen. Les bare de bildene du trenger.
+
 Er spillet fortsatt under terskel etter femte runde: IKKE åpne PR. Commit alt (smalt diff) og push til `claude/microgame-wip-<dato>-<id>`, og rapporter i Jobb 6 med scorene og hva som manglet - neste natt fortsetter derfra (Jobb 1-0).
 
 ---
