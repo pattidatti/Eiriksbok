@@ -28,5 +28,11 @@ export interface MicroGameEntry {
     hook?: string;
     /** Skjermbilde fra spillet til startkortet (/images/microgames/<id>.webp). Lages av selvspillet med --cover. */
     cover?: string;
+    /**
+     * Kunstretningen looken er hentet fra - epokens egen bildekultur, ikke et stilbibliotek
+     * («Bayeux-teppet: brodert lin, okergul, indigo og rust»). Påkrevd for nye spill; se
+     * «Kunstbriefen» i build_microgame.md. Briefen ligger i docs/microgames/briefer/<id>.md.
+     */
+    kunst?: string;
     loader: () => Promise<{ default: React.ComponentType<MicroGameProps> }>;
 }

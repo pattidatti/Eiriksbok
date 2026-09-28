@@ -1,5 +1,5 @@
 ---
-description: Lag et skamgøy, pent og lærerikt mikrospill (3D foretrukket, 2D når det gir det beste spillet) som bor inline i en artikkel. Designbrief først, så bygg på arkadeskallet, så selvspill-portene. Brukes av nattsporet eiriksbok-daily-microgame og manuelt.
+description: Lag et skamgøy, pent og lærerikt mikrospill (3D foretrukket, 2D når det gir det beste spillet) som bor inline i en artikkel. Konseptturnering, designbrief og kunstbrief først, så gråboks, så bygg på arkadeskallet, så portene. Brukes av nattsporet eiriksbok-daily-microgame og manuelt.
 ---
 
 # Skill: Build Micro-Game
@@ -33,6 +33,28 @@ passende spillet (en sidescroller om havstigning er bedre i 2D). Skriv begrunnel
 Chromebook-trygt, 2-4 minutter per runde). Den tunge motoren i `src/games/engine/` (Rapier, pointer
 lock, 10-20 min) har egen guide (`BUILD_GAME_GUIDE.md`) og embeddes aldri i en artikkel.
 
+### Generatoren: rekkefølgen er kvaliteten
+
+Kvaliteten avgjøres før første linje kode. Nattspillene som sto fast på Gøy 3, var svake allerede
+som idé - ingen polering reddet dem. Derfor fem faser, og du går aldri videre før fasen er bestått:
+
+1. **Konseptturnering** (steg 2a) - fem vidt forskjellige konsepter, en fersk dommer velger. Ingen
+   konsept holder = bytt artikkel.
+2. **Designbrief** (steg 2b) - vinneren skrevet ut i ti punkter.
+3. **Kunstbrief** (steg 2c) - looken hentes fra emnets egen bildekultur.
+4. **Gråboks** (steg 3a) - kjerneløkka med primitive former. Spillfølelsen må være grønn før du
+   lager kunst.
+5. **Bygg og porter** (steg 3b-5) - kunst, juice, tekst, så portene.
+
+Fase 1-3 lagres i `docs/microgames/briefer/<id>.md` med seksjonene `## Konseptturnering`,
+`## Designbrief` og `## Kunstbrief`. Selvspillet krever fila. Den er også hukommelsen: neste natt
+leser de siste briefene for ikke å gjenta seg.
+
+**Delt og unikt.** Det eleven ikke ser, deles: arkadeskallet, tekstlagene, lagring, lyd,
+kvalitetsnivåer og selvspill. Det eleven ser, lages alltid nytt: verden, kamera, perspektiv, look,
+HUD og sjangerløkke. Det finnes med vilje ingen sjangermaler og ikke noe stilbibliotek - eieren vil
+ikke at spillene skal ligne hverandre (2026-09-28).
+
 ---
 
 ## Steg 1 - Tone: tåler emnet et spill?
@@ -50,10 +72,44 @@ en skandale.
 
 ---
 
-## Steg 2 - Designbriefen (skriv den FØR du koder)
+## Steg 2a - Konseptturnering (før alt annet)
 
-Briefen er et kort dokument (lim den inn i PR-body-en). Den tvinger fram de valgene som skiller et
-spill fra en quiz med 3D-pynt. Svar på alt:
+Skriv FEM konsepter til artikkelen. De skal være vidt forskjellige, ikke fem varianter av samme idé.
+Mellom hvert par skal minst to av disse være ulike: sjanger, perspektiv (ovenfra, fra siden,
+isometrisk, førsteperson, bordplate, kart), kjerneverb og hvem eleven er (en person, en gruppe, en
+institusjon, eller en ting - et brev, en mynt, et skip, et rykte).
+
+Hvert konsept er fem linjer:
+- **Tittel og krok** (én setning i du-form)
+- **Kjerneverbet**, og hvorfor det er deilig i seg selv
+- **Fagregelen** som «hvis du ... så ...»
+- **Første fem sekunder** - hva eleven ser og gjør uten å lese
+- **Hvorfor en 14-åring vil spille runde to**
+
+Slik finner du gode konsepter:
+- Let etter det i artikkelen som **beveger seg, vokser, sprer seg, går i stykker eller konkurrerer**.
+  Der er det et spill. Et vedtak, en ideologi eller en tale er ikke et spill i seg selv, men følgene
+  kan være det: hvem som får vite det, hvor fort det sprer seg, hva det koster.
+- **Bytt ståsted.** Spill budbringeren, varen, sykdommen, ryktet, været. Det uventede perspektivet
+  gir ofte det gøyeste og mest unike spillet.
+- **Stjel verbet, ikke temaet,** fra spill elevene kjenner: Flappy Bird, Tetris, Snake, Plants vs.
+  Zombies, Mario Kart, Overcooked, Fruit Ninja, Crossy Road, Mini Metro, Papers, Please, Reigns.
+- **Les de siste fem briefene** i `docs/microgames/briefer/` og gjør noe annet.
+
+**Dommeren.** Gi de fem konseptene til en fersk underagent som ikke har sett tankene dine. Den gir
+hvert konsept 1-5 på «Gøy på papiret» (ville en 14-åring spilt dette i friminuttet?) og «Fagregelen
+avgjør» (vinner den som har forstått mekanismen?), velger én vinner og sier hva som skal til for at
+den blir en 5 på Gøy («løftet»). Prompten står i nattrutinen.
+
+**Stoppregel:** Får ingen konsepter minst 4 på begge, er artikkelen ikke et godt spill. Bytt
+artikkel - ikke lag et middels spill. Skriv alle fem konseptene, dommerens poeng og løftet i
+briefen under `## Konseptturnering`.
+
+## Steg 2b - Designbriefen
+
+Designbriefen står i `docs/microgames/briefer/<id>.md` under `## Designbrief`, for vinnerkonseptet
+med dommerens løft innarbeidet. Den tvinger fram de valgene som skiller et spill fra en quiz med
+3D-pynt. Svar på alt:
 
 1. **Fantasien.** Hvem er eleven i spillet, og hva vil de? («Du er leder for et jegerfølge. Du vil
    holde folket mett mens landet forsvinner.»)
@@ -62,16 +118,16 @@ spill fra en quiz med 3D-pynt. Svar på alt:
 3. **Fagkjernen.** Hvilken mekanisme fra artikkelen er spillets REGEL? Skriv den som «hvis du ... så
    ...». (Stavkirken: «står stolpene i jorda, råtner de uansett hvor mye du maler».) Hvis regelen
    kunne byttes ut med en annen uten at spillet endret seg, er den pynt.
-4. **Presset.** Hva eskalerer? (Havet stiger, været blir verre, fiendene blir flere, tiden går.)
+4. **Presset og valgene.** Hva eskalerer? (Havet stiger, været blir verre, fiendene blir flere, tiden
+   går.) Hvilket nytt valg får eleven minst hvert 10. sekund? Selvspillet måler begge (`press`, `valg`).
 5. **Tap.** Minst to måter å tape på, og hver dødsårsak gir et konkret tips som også er fagstoff.
 6. **Seier.** Seieren følger plottet i artikkelen. Når eleven har gjort det historien sier var
    mulig, SKAL de vinne - uansett hvor mange poeng de har (Havet kommer: kommer du øst for
    Doggerbanken, vinner du, også vassende).
 7. **En runde til.** Rekord, ranger med titler, funn/samleobjekter som bygger seg opp over runder,
    poengmultiplikator for dyktig spill.
-8. **Sjanger** (fra katalogen under) og **2D/3D** med begrunnelse.
-9. **Look.** Palett (4-6 farger), stemning, lys, font og hvordan HUD-en ser ut. Skal IKKE ligne
-   de to siste spillene i biblioteket.
+8. **Sjanger** (fra katalogen under), **perspektiv** og **2D/3D** med begrunnelse.
+9. **Look.** Én setning - detaljene står i kunstbriefen (steg 2c).
 10. **Første fem sekunder.** Hva ser eleven, og hva gjør de uten å lese noe?
 
 ### Sjangerkatalogen
@@ -95,13 +151,80 @@ Ingen sjanger er forbudt. Velg den som gjør FAGKJERNEN til en regel. Blandinger
 | Gudespill / simulering | forme verden, se konsekvenser | klima, befolkning, religion, økosystem | Nilen flommer: grav kanaler før tørken |
 | Detektiv / utforsk | finne, koble spor | kildekritikk, arkeologi | Grav fram et vikinggravfelt lag for lag |
 
-**Variasjonsregel:** Sjangeren skal være ulik de tre siste nattspillene (`sjanger` i
-`registry.ts`, se `git log -p --since=5.days -- src/components/microgames/registry.ts`), og looken
-skal være ulik alle tre. Bruker du en sjanger som allerede finnes i biblioteket, skal vrien være ny.
+**Variasjonsregel:** Sjanger, perspektiv og kunstretning skal være ulik de tre siste nattspillene
+(`sjanger` og `kunst` i `registry.ts`, og de siste briefene i `docs/microgames/briefer/`). Bruker du
+en sjanger som allerede finnes i biblioteket, skal vrien være ny.
+
+## Steg 2c - Kunstbriefen: looken kommer fra epoken
+
+Spill blir ikke unike av en ny palett. De blir unike når looken kommer fra et sted, og det beste
+stedet er emnets egen bildekultur. Hver epoke og hvert sted har sitt eget visuelle språk. Da blir
+spillene forskjellige av seg selv, og looken lærer også bort noe.
+
+| Emne | Hent looken fra (eksempler) |
+|---|---|
+| Oldtiden | Greske vasemalerier (svart figur på oker), egyptiske veggmalerier i profil, romerske mosaikker |
+| Vikingtid | Urnes-ornamentikk, treskjæringen på Osebergskipet, Bayeux-teppets broderte lin |
+| Middelalder | Kalkmalerier i kirker, illuminerte håndskrifter med bladgull, kart med sjøormer |
+| Renessanse | Leonardos skisser i blekk og sepia, perspektivtegning, kobberstikk |
+| Industrialisering | Tekniske tegninger, sot og messing, tidlige fotografier i sepia |
+| Mellomkrigstid | Ekspresjonistiske plakater, Bauhaus, avistrykk med raster |
+| Andre verdenskrig | Operasjonskart, propagandaplakater, radarskjermer, sensurerte brev |
+| Kald krig | Sovjetisk konstruktivisme, sivilforsvarsplakater, grønn CRT-skjerm |
+| KRLE | Religionens egen kunst: ikoner, mandalaer, kalligrafi, glassmalerier |
+| Samfunn i dag | Infografikk, t-banekart, mobilskjermer, gatekunst |
+
+Tabellen er eksempler, ikke en meny. Finn den mest særegne kilden for akkurat ditt emne.
+
+Kunstbriefen (`## Kunstbrief` i briefen) svarer på:
+1. **Kilden.** Hvilken bildekultur, og de 2-3 kjennetegnene som gjør den gjenkjennelig.
+2. **Palett.** 4-6 hex-farger hentet fra kilden, med rolle (bakgrunn, spiller, fare, gevinst, tekst).
+3. **Form og overflate.** Flate farger eller tekstur? Konturer? Hvordan ser en figur ut?
+4. **Lys.** Tid på døgnet, retning og stemning - eller flatt lys, hvis kilden er flat.
+5. **Perspektiv og kamera.** Ulikt de tre siste spillene.
+6. **Typografi og HUD.** Hva i kilden kan HUD-en være (et stempel, en marg, en kartlegende)?
+7. **Slik lages det på en Chromebook.** Konkrete teknikker, se under.
+8. **Ikke slik.** Hva det IKKE skal ligne (de tre siste spillene, grønn plen-diorama).
+
+Skriv kilden kort i registry-feltet `kunst` («Greske vasemalerier: svart figur på oker, rød kant»).
+
+**Teknikker som gir særpreg uten å koste på `lav`:**
+- Cel-skygge (`MeshToonMaterial` med `toonGradient` fra kitet) eller helt flate farger i stedet for
+  realistisk PBR.
+- Konturer med omvendt skall: en litt større kopi med `side: BackSide` i mørk farge. Ett ekstra draw
+  call per sammenslått figur.
+- Prosedyrale teksturer tegnet i canvas ved oppstart (papirfiber, lerret, raster, tresnitt-streker,
+  sprekker), lagt på som `map` og gjenbrukt.
+- Vertex-farger i stedet for mange materialer.
+- Tåke og farget bakgrunn i stedet for mye geometri i horisonten.
+- En enkel fullskjerm-shader (papirkorn, raster, vignett) er billig. Bloom er det ikke og skal aldri
+  bære looken - den er av på `lav`.
+
+Looken må se ferdig ut på `?kvalitet=lav`. Høyere nivåer legger til, de redder ikke.
+Likhetsvakten (port 2b) sammenligner plakaten med alle andre spill og stopper spill som er for like.
 
 ---
 
-## Steg 3 - Bygg på arkadeskallet
+## Steg 3a - Gråboksen: er løkka gøy med klosser?
+
+Bygg først bare spillreglene og kjerneløkka med primitive former (bokser, kuler, flate farger) -
+ingen kunst, ingen juice. Målet er å finne ut om spillet er gøy før du bruker tid på å gjøre det
+pent. Det første nattspillet som ble avvist, brukte tre runder på utseende; problemet var løkka.
+
+1. Spillreglene i en ren `.ts`-modul (`<navn>/game.ts`): tilstand, `update(g, dt, input)`, og
+   tellerne `valg` og `press` (steg 4).
+2. En enkel visning (canvas, eller R3F med bokser) og input.
+3. `usePlaytest` med alle robotene: vinner, `middels`, taper som ignorerer fagkjernen, og
+   `tilfeldig`.
+4. Balanser i den raske simuleringen: kjør robotene mot `game.ts` direkte med `npx tsx`, hundrevis
+   av runder, uten nettleser. Vinneren vinner, middels havner mellom, taper og tilfeldig taper,
+   minst 6 valg per minutt, og presset stiger.
+5. Kjør selvspillet én gang. Radene for spillfølelse skal være grønne.
+
+Er de ikke grønne etter to forsøk: gå tilbake til konseptturneringen og ta nest beste konsept. Ikke
+pynt en løkke som ikke virker.
+
+## Steg 3b - Bygg på arkadeskallet
 
 Alle nye spill bygges på arkadeskallet i `src/components/microgames/arcade/`. Skallet gir
 spill-følelsen gratis, og HVERT spill kler det i sitt eget tema.
@@ -261,11 +384,15 @@ usePlaytest(GAME_ID, () => ({
     snapshot: () => ({
         fase: mode === 'menu' ? 'meny' : mode === 'over' ? (won ? 'vunnet' : 'tapt') : 'spiller',
         poeng, framdrift: /* 0-1 mot målet */, tid: /* spilte sekunder */,
+        valg: /* beslutningspunkter så langt: +1 for hver ny trussel, tilbud, kurs å velge */,
+        press: /* 0-1: hvor hardt spillet presser nå */,
     }),
     start: (variant) => begin(variant),        // hopp rett inn i en runde fra hvilken som helst fase
     bots: {
         seende:      { forventer: 'vinner', beskrivelse: '...', tick: () => { /* ett grep */ } },
+        halvgod:     { forventer: 'middels', beskrivelse: '...', tick: () => { /* som seende, men treg */ } },
         'ignorerer-x': { forventer: 'taper',  beskrivelse: '...', tick: () => { ... } },
+        tilfeldig:   { forventer: 'taper', tilfeldig: true, beskrivelse: 'tilfeldige lovlige grep', tick: () => { ... } },
     },
 }));
 ```
@@ -278,6 +405,15 @@ Regler for robotene:
 - **Minst én `vinner` og én `taper`.** Taperen skal ignorere FAGKJERNEN (Stavkirken: stolper i jorda;
   fersk furu; aldri hente tjære. Havet kommer: bare gå østover uten å spise). Da beviser porten at
   fagstoffet avgjør utfallet.
+- **Én `middels`** - en halvgod elev som følger fagregelen, men er treg eller unøyaktig (handler bare
+  hvert tredje tick, eller velger nest beste). Den skal få flere poeng enn alle taperne og merkbart
+  færre enn vinneren. Det beviser at det lønner seg å bli bedre - kjernen i «én runde til».
+- **Én `tilfeldig: true`** - knappemoseren. Tilfeldige lovlige grep uten plan. Den skal tape. Vinner
+  den, lønner det seg ikke å tenke.
+- **`valg` og `press` i snapshot.** `valg` telles opp hver gang spillet gir eleven en ny beslutning
+  (ny trussel, nytt tilbud, ny kurs). `press` er 0-1 og skal stige gjennom runden. Selvspillet krever
+  minst 6 valg per spilt minutt, og at presset i siste tredjedel ligger minst 0,15 over første.
+  Tall som er pyntet for å bestå porten (valg som ikke er valg), er juks - vurdereren ser det.
 - **Passiv spiller testes alltid** (ingen input). Den skal tape.
 - `snapshot` og `tick` leser refs, ikke state (de kalles utenfor React).
 - Alt er `import.meta.env.DEV`-gatet i `usePlaytest`; elevene får aldri robotene.
@@ -307,14 +443,26 @@ node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173
 | Tekst der blikket er | lapper maks 7 ord, banner maks 5 ord, maks 3 lærings-øyeblikk per runde, «Dette skjedde» på slutt-skjermen, ingen `below=` |
 | Stabilt | ingen konsollfeil, ingen unntak i robotene |
 | Merket | `sjanger`, `tone`, `hook` og `cover` (bildet finnes) i registry, `usePlaytest` i fila, eget `theme` |
+| Brief | `kunst` i registry og `docs/microgames/briefer/<id>.md` med seksjonene Konseptturnering, Designbrief og Kunstbrief |
+| Spillfølelse | minst 6 valg per minutt, presset stiger minst 0,15 fra første til siste tredjedel, taper < `middels` < vinner, `tilfeldig` taper |
 
 Rapport i `.screenshots/playtest/_playtest.md`, bilder per spill (meny, passiv 2/7/12 s, slutt-skjerm
-per robot, filmstripe av vinnerroboten).
+per robot, filmstripe av vinnerroboten). Spill bygget før generatoren (de fire første arkadespillene)
+får tallene for brief og spillfølelse bare som notat.
 
 ### Port 2 - Scene-audit (`scripts/audit-microgames.mjs --ids <id> --strict --frames 4`)
 
 Konsollfeil, båt-vakthund, begravd geometri, modell utenfor utsnittet. Se vedlegg E for hvordan du
 leser en rød port.
+
+### Port 2b - Likhetsvakt (`scripts/likhet-microgame.mjs --ids <id>`)
+
+Sammenligner plakaten (`public/images/microgames/<id>.webp`) med plakaten til hvert annet spill:
+fargehistogram (palett og stemning) og dHash (komposisjon og kameravinkel). Likhet 0,5 eller mer mot
+et annet spill er rødt. Til sammenligning ligger de fire første arkadespillene 0,09-0,29 fra
+hverandre, mens samme plakat med ny fargetone gir over 0,7. Rødt betyr: gå tilbake til
+kunstbriefen og endre palett, kamera eller perspektiv - ikke flytt kameraet bare for å lure tallet.
+Rapport i `.screenshots/likhet/_likhet.md`. Kjører også i CI.
 
 ### Port 3 - Uavhengig vurdering (ikke deg selv)
 
@@ -324,7 +472,8 @@ Den får bare:
 
 - artikkelens tittel og tre setninger om hva den handler om,
 - skjermbildene fra port 1 og 2 (meny, filmstripe, slutt-skjermer, audit-rammene),
-- selvspill-rapporten,
+- selvspill-rapporten (med tallene for spillfølelse) og likhetsrapporten,
+- eierens tommel opp/ned på tidligere spill ved siden av poengene de fikk (nattrutinen henter dem),
 - referansebildene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal),
 - rubrikken under, og beskjed om å være streng og konkret.
 
@@ -338,11 +487,13 @@ Den svarer med poeng per akse og de tre viktigste forbedringene.
 | **Lesbart** | Vet ikke hva jeg skal gjøre | Skjønner det etter litt | Forstått på 5 s, mål i HUD, tekst står der blikket er, skarp tekst, «Dette skjedde» forklarer tapet |
 | **Unikt** | Samme sjanger og look som et spill i biblioteket | Kjent form med egen vri | Sjanger + look som ikke finnes i biblioteket |
 
-Referansespillene er kalibreringen: begge ligger rundt 4 på Gøy, Utseende og Lesbart og 5 på
-Lærerikt. MÅKA er en 5 på Gøy og Utseende.
+Referansespillene er kalibreringen, rekalibrert 2026-09-28: eieren syntes Regnet i Lærdal var
+«interessant, men ikke sinnsykt gøy». Begge er derfor 3 på Gøy, 4 på Lesbart og 5 på Lærerikt, og 3
+(Havet kommer) og 4 (Regnet i Lærdal) på Utseende. En 4 på Gøy betyr klart gøyere enn referansene.
+MÅKA er en 5 på Gøy og Utseende.
 
-**Terskel:** ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19 av 25. Under terskel:
-gjør forbedringene og få en NY vurdering (ny underagent), inntil fem runder.
+**Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20 av 25. Under
+terskel: gjør forbedringene og få en NY vurdering (ny underagent), inntil fem runder.
 
 **Når vurderingen står stille, er det spillet som må endres - ikke pynten.** Står en akse på
 samme poeng to runder på rad, hjelper ikke flere farger, kameravinkler eller finere ringer. Gå
@@ -369,14 +520,14 @@ det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der d
    eleven har kommet langt nok til å ha sett poenget.
 2. `registry.ts`: `const <Navn> = lazy(() => import('./<Navn>'));` og en oppføring med kebab-case
    `id`, `title`, `description`, `estimatedSeconds`, **`sjanger`**, **`tone`**, **`hook`**, **`cover`**
-   (`'/images/microgames/<id>.webp'`), `loader` og `Component`.
+   (`'/images/microgames/<id>.webp'`), **`kunst`** (kilden fra kunstbriefen), `loader` og `Component`.
 3. Embed i artikkelen: `{ "type": "component", "name": "MicroGame", "props": { "gameId": "<id>" } }`
    på et naturlig sted i teksten (etter avsnittet som forklarer fagkjernen), aldri etter Quiz.
-4. **Commit spillfilene, registry og artikkel-JSON i SAMME commit.** Embed aldri i artikkel-JSON før
+4. **Commit spillfilene, registry, briefen og artikkel-JSON i SAMME commit.** Embed aldri i artikkel-JSON før
    spillet er committet: bildejobben (07:30) committer `public/content/` og har dratt med seg en
    halvferdig embed til main før - artikkelen viste «Mikro-spillet ble ikke funnet» i produksjon.
 5. Rør ikke genererte filer (`content-index.json`, `manifest.json`-datoer, `global-timeline.json`,
-   `stats.html`). Et mikrospill-diff skal bare inneholde spillet, registry, plakaten og én artikkel-blokk -
+   `stats.html`). Et mikrospill-diff skal bare inneholde spillet, registry, plakaten, briefen og én artikkel-blokk -
    da kan det ikke kollidere med andre nattjobber.
 
 ---
@@ -384,8 +535,10 @@ det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der d
 ## Sjekkliste før PR
 
 - [ ] Tone valgt; ikke et tema fra «ingen spill»-lista
-- [ ] Designbrief skrevet (alle ti punktene) og limt inn i PR-body
-- [ ] Sjanger og look ulik de tre siste nattspillene
+- [ ] Konseptturnering: fem ulike konsepter, fersk dommer, vinneren har minst 4 på Gøy og Fag
+- [ ] `docs/microgames/briefer/<id>.md` med Konseptturnering, Designbrief (ti punkter) og Kunstbrief (åtte punkter)
+- [ ] Sjanger, perspektiv og kunstretning ulik de tre siste nattspillene; `kunst` i registry
+- [ ] Gråboksen besto spillfølelsen før kunsten ble laget
 - [ ] Arkadeskall med eget `THEME`, mål i HUD, pause, lyd med lydav, designet for fullskjerm 1366×768
 - [ ] Tekst via `useArcadeText`: fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet
 - [ ] Skilt og etiketter i 3D med `crispCanvas`; ingen `setState` per melding; ingen `map = null`
@@ -394,8 +547,9 @@ det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der d
 - [ ] Kjerneverbet skjer i spillverdenen (3D: på objektene)
 - [ ] Minst to tapsårsaker med tips; seier følger plottet
 - [ ] Rekord/ranger/funn som gir «én runde til»
-- [ ] `usePlaytest` med minst én vinner- og én taper-robot som ignorerer fagkjernen
-- [ ] Port 1 (selvspill) grønn, port 2 (audit `--strict`) grønn
+- [ ] `usePlaytest` med vinner, `middels`, taper som ignorerer fagkjernen og `tilfeldig`; `valg` og `press` i snapshot
+- [ ] Looken ser ferdig ut på `?kvalitet=lav`
+- [ ] Port 1 (selvspill med spillfølelse), port 2 (audit `--strict`) og port 2b (likhetsvakt) grønne
 - [ ] Port 3: uavhengig vurdering over terskel - poeng og observasjoner i PR-body
 - [ ] Norsk for en 14-åring, riktige tegn (æ, ø, å), ingen tankestrek
 - [ ] `npx tsc -p tsconfig.app.json --noEmit` og `npx eslint <filene dine>` rent

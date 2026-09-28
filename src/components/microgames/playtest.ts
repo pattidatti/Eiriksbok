@@ -27,11 +27,34 @@ export interface PlaytestSnapshot {
     framdrift: number;
     /** Spilte sekunder i spillets egen tid. Lar harnessen skille spillets tempo fra headless-tempoet. */
     tid?: number;
+    /**
+     * Spillfølelse: antall beslutningspunkter spillet har gitt så langt i runden. Tell opp
+     * hver gang noe nytt krever et valg av eleven (en ny trussel dukker opp, et tilbud kommer,
+     * en kurs må velges, en ressurs må fordeles). Teller bare opp. Harnessen regner ut valg
+     * per spilt minutt - et spill der man gjør det samme uten nye valg, er ensformig.
+     */
+    valg?: number;
+    /**
+     * Spillfølelse: 0-1, hvor hardt spillet presser akkurat nå (antall fiender i forhold til
+     * maks, farten på havet, hvor nær katastrofen er). Harnessen sjekker at presset er høyere
+     * i siste tredjedel av runden enn i første - at spillet eskalerer.
+     */
+    press?: number;
 }
 
 export interface PlaytestBot {
-    /** 'vinner' = skal vinne minst én av to runder. 'taper' = skal aldri vinne. */
-    forventer: 'vinner' | 'taper';
+    /**
+     * 'vinner' = skal vinne minst én av to runder. 'taper' = skal aldri vinne.
+     * 'middels' = en halvgod elev (følger fagregelen, men treg eller unøyaktig): skal få
+     * flere poeng enn alle taperne og færre enn beste vinner. Beviser at spillet har et
+     * ferdighetstak - at det lønner seg å bli bedre.
+     */
+    forventer: 'vinner' | 'taper' | 'middels';
+    /**
+     * true = roboten trykker på tilfeldige lovlige grep uten plan (knappemoseren). Skal tape.
+     * Vinner den, er spillet et knappemoser-spill der det ikke lønner seg å tenke.
+     */
+    tilfeldig?: boolean;
     /** Én setning: hva roboten gjør. Havner i rapporten. */
     beskrivelse: string;
     /** Valg fra startmenyen roboten spiller med (f.eks. 'stolper'). Sendes til start(). */

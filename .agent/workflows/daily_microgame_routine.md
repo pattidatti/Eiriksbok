@@ -4,12 +4,14 @@ description: Instruksen til nattrutinen eiriksbok-daily-microgame (07:15 UTC). T
 
 Du er spillutvikleren i Gravity Eiriksbok (https://bok.haaland.de/), et norsk digitalt læreverk for 14-åringer. Git-repoet er sjekket ut i arbeidsmappen din. Hver morgen lager du ETT mikrospill til en artikkel: et ekte, lite dataspill som eleven vil spille én runde til av, som ser bra ut, og som lærer bort kjernen i artikkelen. Du har god tid - kvalitet slår alt. Det er bedre å levere ingenting enn å levere et middelmådig spill.
 
+**Kvaliteten avgjøres før første linje kode.** Spillene som har stått fast på Gøy 3, var svake allerede som idé, og ingen polering reddet dem. Derfor jobber du i denne rekkefølgen, og går aldri videre før fasen er bestått: konseptturnering -> designbrief -> kunstbrief -> gråboks -> bygg -> porter.
+
 ## KRITISKE KRAV (gjelder hele oppdraget)
 
-1. **Følg `.agent/workflows/build_microgame.md` til punkt og prikke.** Les HELE fila før du designer noe. Den er fasit for tone, designbrief, sjangerkatalog, arkadeskall, selvspill-kontrakt og de tre portene. Denne instruksjonen sier bare HVORDAN nattjobben rundt den skal kjøres.
+1. **Følg `.agent/workflows/build_microgame.md` til punkt og prikke.** Les HELE fila før du designer noe. Den er fasit for tone, konseptturnering, designbrief, kunstbrief, gråboks, arkadeskall, selvspill-kontrakt og portene. Denne instruksjonen sier bare HVORDAN nattjobben rundt den skal kjøres.
 2. **Tone før alt.** Er temaet på «ingen spill»-lista i guiden (folkemord, terror mot sivile o.l.), lager du ikke spill til den artikkelen. `alvorlig` tone = ingen humor.
-3. **Tre porter må være grønne før PR:** selvspill (`scripts/playtest-microgame.mjs`), scene-audit (`scripts/audit-microgames.mjs --strict`) og en uavhengig vurdering fra en fersk underagent over terskel. Du vurderer aldri ditt eget spill.
-4. **Smalt diff.** PR-en inneholder BARE spillfilene under `src/components/microgames/`, `registry.ts`, spillets plakat `public/images/microgames/<id>.webp` og én ny MicroGame-blokk i én artikkel-JSON. Aldri genererte filer (content-index, manifest, global-timeline, stats.html, version.json). Da kan PR-en ikke kollidere med andre nattjobber.
+3. **Portene må være grønne før PR:** selvspill med spillfølelse (`scripts/playtest-microgame.mjs`), scene-audit (`scripts/audit-microgames.mjs --strict`), likhetsvakt (`scripts/likhet-microgame.mjs`) og en uavhengig vurdering fra en fersk underagent over terskel. Du vurderer aldri ditt eget spill eller dine egne konsepter.
+4. **Smalt diff.** PR-en inneholder BARE spillfilene under `src/components/microgames/`, `registry.ts`, spillets plakat `public/images/microgames/<id>.webp`, briefen `docs/microgames/briefer/<id>.md` og én ny MicroGame-blokk i én artikkel-JSON. Aldri genererte filer (content-index, manifest, global-timeline, stats.html, version.json). Da kan PR-en ikke kollidere med andre nattjobber.
 5. **Norsk:** ekte æ, ø, å overalt (også i kodekommentarer), aldri aa/oe/ae. Aldri tankestrek eller em-dash - bruk bindestrek. Skriv for en 14-åring.
 6. **Én atomisk commit, én PR.** Aldri split over flere pushes, aldri MCP per-fil-upload.
 
@@ -42,7 +44,7 @@ Playwright MÅ virke - uten det kan du ikke kjøre portene. Feiler installasjone
 
 ---
 
-## Jobb 1: Velg artikkel
+## Jobb 1: Velg kandidater
 
 ### 1-0. Uferdig arbeid først
 
@@ -54,15 +56,22 @@ git ls-remote --heads origin 'claude/microgame-wip-*'
 gh issue view 12 --comments --json comments -q '.comments[].body' | grep -A40 "UNDER TERSKEL" | tail -60
 ```
 
-Finnes en WIP-gren: sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`),
-les forrige rapport på issue #12 («Hva som manglet») og gå rett til Jobb 3 med de manglene som
+Finnes en WIP-gren, sjekk om den har en brief (`git show origin/<gren> --name-only --pretty=format: | grep docs/microgames/briefer/`). Grener **uten brief** er laget før generatoren (før 2026-09-28) og hoppet over konseptturneringen - slett dem (`git push origin --delete <gren>`), nevn det i rapporten, og gå videre til 1a.
+
+Har WIP-grenen en brief: sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`),
+les briefen og forrige rapport på issue #12 («Hva som manglet»), og gå rett til Jobb 3 med de manglene som
 oppgave - følg regelen «Når vurderingen står stille» i guiden. Resten av jobbene er som vanlig; en
 godkjent WIP får vanlig gren/PR i Jobb 5, og WIP-grenen slettes (`git push origin --delete <gren>`).
 Har samme WIP-gren vært forsøkt tre netter (tell rapportene), forkast den og ta en ny artikkel.
 
-Er dagens nye artikkel fortsatt uten spill når WIP-en er ferdig, tar neste natt den.
+### 1a. Eierens idékø
 
-### 1a. Dagens nye artikkel (førstevalg)
+Eieren kan styre generatoren med `docs/microgames/ideer.md`. Står det en idé under «Kø» som ikke er
+merket ferdig, er DEN kandidat 1 (artikkelen, og eventuelt en idé til konseptturneringen - den får
+være ett av de fem konseptene, men dommeren kan velge et annet). Merk linja `(ferdig: <id>)` i samme
+commit som spillet.
+
+### 1b. Dagens nye artikkel
 
 Innholdsrutinen publiserer en ny artikkel hver natt, og den har ikke spill. Finn den:
 
@@ -76,9 +85,11 @@ Ta den nyeste som IKKE allerede har `"MicroGame"`:
 grep -c '"MicroGame"' <fil>
 ```
 
-### 1b. Etterslep (hvis 1a ikke gir en egnet artikkel)
+### 1c. Etterslep
 
-Ingen ny artikkel, den har allerede spill, eller tonen sier «ingen spill»: velg en eksisterende artikkel uten MicroGame. Prioriter historie, deretter samfunnskunnskap og KRLE; emner med en tydelig mekanisme (noe som slites, vokser, sprer seg, kolliderer, må styres eller forsvares).
+Velg to-tre eksisterende artikler uten MicroGame som reserver. Se etter emner med en tydelig
+mekanisme: noe som beveger seg, vokser, sprer seg, slites, kolliderer, må styres eller forsvares.
+Prioriter historie, deretter samfunnskunnskap og KRLE.
 
 ```bash
 grep -rL '"MicroGame"' public/content --include=*.json | grep -vE -- "-sti\.json$|/concepts/|/kompetansemal/|/config/|/interactive/|/scenarios/|/people/|manifest\.json|global-timeline|content-index" | shuf -n 40
@@ -86,30 +97,65 @@ grep -rL '"MicroGame"' public/content --include=*.json | grep -vE -- "-sti\.json
 
 Unngå artikler som har fått spill-PR de siste 21 dagene (`gh pr list --state all --search "mikrospill in:title" --limit 30`).
 
-### 1c. Avbrudd
+Du har nå en kandidatliste i rekkefølge: idékø -> dagens artikkel -> reservene. Dagens artikkel er
+IKKE obligatorisk. Den får spill bare hvis konseptturneringen gir et konsept som holder (Jobb 2a).
+Maks tre artikler prøves i konseptturneringen per natt.
 
-Finner du ingen artikkel der et spill kan gjøre fagkjernen til en regel: post på issue #12 (se Jobb 6, variant «ingen kandidat») og avslutt.
+### 1d. Avbrudd
 
-Les HELE den valgte artikkelen før du går videre.
+Består ingen av de tre artiklene konseptturneringen: post på issue #12 (se Jobb 6, variant «ingen kandidat», med de beste konseptene og poengene) og avslutt.
 
 ---
 
-## Jobb 2: Studer og design
+## Jobb 2: Konsept, design og kunst
 
 1. Les `.agent/workflows/build_microgame.md` i sin helhet.
 2. Les referansespillene: `src/components/microgames/HavetKommer.tsx` (2D) og `src/components/microgames/Stavkirken3D.tsx` + `src/components/microgames/stavkirken/game.ts` (3D). Se særlig hvordan de bruker arkadeskallet, eget `THEME`, `useArcadeText` (lapper, lærings-øyeblikk, «Dette skjedde»), `usePlaytest` og robotene. Les også `Plottebordet3D.tsx` + `plottebordet/game.ts`: der er fagkjernen et lærings-øyeblikk ved det første plottet.
-3. Finn sjangrene til de siste nattspillene, så du kan variere:
+3. Finn hva de siste spillene gjorde, så du kan variere:
    ```bash
-   grep -nE "sjanger:|tone:" src/components/microgames/registry.ts
-   git log origin/main --since="14 days ago" -p -- src/components/microgames/registry.ts | grep -E "^\+.*(sjanger|title):" | head -20
+   grep -nE "sjanger:|kunst:" src/components/microgames/registry.ts | tail -12
+   ls -t docs/microgames/briefer/ | head -5     # les dem
    ```
-4. Skriv designbriefen (alle ti punktene i guidens steg 2) til `/tmp/brief.md`. Vær konkret. Test den mot guidens krav før du koder: Er kjerneverbet deilig i seg selv? Er fagkjernen en REGEL som avgjør om man vinner? Er sjanger og look ulik de tre siste?
+4. Les HELE den første kandidatartikkelen.
+
+### 2a. Konseptturnering
+
+Skriv fem vidt forskjellige konsepter etter guidens steg 2a til `/tmp/konsepter.md`. Start en FERSK
+underagent (Agent/Task-verktøyet, general-purpose) med denne prompten, feltene fylt ut:
+
+> Du er en erfaren spilldesigner og har en 14-åring hjemme. Under er fem ideer til et lite nettleserspill (2-4 minutter per runde) som skal ligge i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Les ideene i `/tmp/konsepter.md`. Gi hver idé 1-5 på to akser: **Gøy på papiret** (1 = en oppgave i forkledning, 3 = greit én gang, 5 = en 14-åring ville spilt det i friminuttet og vist det til sidemannen) og **Fagregelen avgjør** (1 = temaet er kulisse, 5 = den som vinner, har forstått mekanismen). Vær streng: de fleste ideer er 3-ere. Trekk for ideer der eleven venter mer enn velger, der verbet er «klikk på riktig ting», eller der de første fem sekundene krever lesing. Velg én vinner og si hva som må til for at den blir en 5 på Gøy. Svar til slutt med én linje JSON: {"poeng":[[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag]],"vinner":n,"løft":"..."}
+
+Holder vinneren minst 4 på begge aksene: gå videre med den. Ellers: neste artikkel på kandidatlista
+(nye fem konsepter, ny underagent). Maks tre artikler.
+
+### 2b og 2c. Designbrief og kunstbrief
+
+Velg en kort kebab-case `id` for spillet. Skriv `docs/microgames/briefer/<id>.md` med tre seksjoner:
+
+- `## Konseptturnering` - alle fem konseptene (kort), dommerens poeng og begrunnelse, og «løftet».
+- `## Designbrief` - alle ti punktene i guidens steg 2b, for vinnerkonseptet med dommerens løft innarbeidet.
+- `## Kunstbrief` - alle åtte punktene i guidens steg 2c. Looken hentes fra emnets egen bildekultur.
+  Perspektiv, palett og kilde skal være ulik de tre siste spillene.
+
+Test briefen mot guiden før du koder: Er kjerneverbet deilig i seg selv? Er fagkjernen en REGEL som avgjør om man vinner? Gir spillet et nytt valg minst hvert 10. sekund? Stiger presset?
 
 ---
 
 ## Jobb 3: Bygg
 
-Bygg etter guidens steg 3, 4 og 6: arkadeskall med eget tema, designet for fullskjerm 1366×768, all tekst via `useArcadeText` (fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet), skarpe 3D-skilt med `crispCanvas`, mål i HUD, pause, lyd, rekord og ranger, minst to tapsårsaker med tips, seier som følger plottet, `usePlaytest` med minst én vinner- og én taper-robot (taperen ignorerer fagkjernen), `sjanger` og `tone` i registry.
+### 3a. Gråboks (guidens steg 3a)
+
+Bygg først spillreglene i en ren `.ts`-modul og en visning med primitive former - ingen kunst, ingen
+juice. `usePlaytest` med alle robotene (vinner, middels, taper som ignorerer fagkjernen, tilfeldig
+knappemoser), og `valg`/`press` i snapshot. Balanser i den raske simuleringen (`npx tsx`), så kjør
+selvspillet én gang (se Jobb 4b for kommandoen). Radene for spillfølelse skal være grønne.
+
+Er de ikke grønne etter to forsøk: gå tilbake til konseptturneringen, ta nest beste konsept (eller neste
+artikkel), og oppdater briefen. Ikke pynt en løkke som ikke virker.
+
+### 3b. Kunst, juice og tekst
+
+Bygg resten etter guidens steg 3b, 4 og 6: kunsten fra kunstbriefen (ferdig på `?kvalitet=lav`), arkadeskall med eget tema og egen HUD, designet for fullskjerm 1366×768, all tekst via `useArcadeText` (fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet), skarpe 3D-skilt med `crispCanvas`, mål i HUD, pause, lyd, rekord og ranger, minst to tapsårsaker med tips, seier som følger plottet, `sjanger`, `tone`, `hook`, `cover` og `kunst` i registry.
 
 Store spill deles i en modulmappe (`src/components/microgames/<navn>/`) slik Stavkirken gjør. Spillreglene bor i rene `.ts`-filer.
 
@@ -129,16 +175,17 @@ Start en dev-server én gang og la den gå: `npx vite --port 5173 --strictPort >
 npx tsc -p tsconfig.app.json --noEmit 2>&1 | tail -20
 npx eslint src/components/microgames/<Navn>.tsx src/components/microgames/<navn>/ src/components/microgames/registry.ts 2>&1 | tail -20
 git diff --name-only | xargs -r grep -nEi "\b(paa|naar|gaar|staar|faar|maa|blaa|graa|smaa|gjoer|hoey|roed|groen|soek|noed|vaere|laere|foer|loep|stoer|sjoe)\b" | grep -v "#[0-9a-f]\{6\}" | head
-grep -rn "—\|–" src/components/microgames/<Navn>.tsx src/components/microgames/<navn>/ 2>/dev/null | head
+grep -rn "—\|–" src/components/microgames/<Navn>.tsx src/components/microgames/<navn>/ docs/microgames/briefer/<id>.md 2>/dev/null | head
 ```
 Alt skal være tomt/rent.
 
-### 4b. Port 1 og 2 (maskinelle)
+### 4b. Port 1, 2 og 2b (maskinelle)
 ```bash
 node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 8 --cover
 node scripts/audit-microgames.mjs --ids <id> --url http://localhost:5173 --strict --frames 4
+node scripts/likhet-microgame.mjs --ids <id>
 ```
-Les `.screenshots/playtest/_playtest.md` og se på ALLE bildene i `.screenshots/playtest/<id>/` og `.screenshots/microgames/<id>/` med Read. Rødt funn eller noe som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene dummere eller smartere enn en elev.
+Les `.screenshots/playtest/_playtest.md` og `.screenshots/likhet/_likhet.md`, og se på ALLE bildene i `.screenshots/playtest/<id>/` og `.screenshots/microgames/<id>/` med Read. Rødt funn eller noe som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene dummere eller smartere enn en elev. Er likhetsvakten rød: endre looken etter kunstbriefen (palett, kamera, perspektiv) - ikke flytt kameraet bare for å lure tallet.
 
 NB: rediger ikke filer MENS selvspillet kjører - Vite laster siden på nytt og runden avbrytes.
 
@@ -147,23 +194,33 @@ NB: rediger ikke filer MENS selvspillet kjører - Vite laster siden på nytt og 
 Lag først biblioteklista som vurdereren skal lese (ikke lim den inn i prompten - forrige gang ble en tom plassholder sendt):
 
 ```bash
-grep -nE "title:|description:|sjanger:" src/components/microgames/registry.ts | grep -v "<din-id>" > /tmp/bibliotek.txt
+grep -nE "title:|description:|sjanger:|kunst:" src/components/microgames/registry.ts | grep -v "<din-id>" > /tmp/bibliotek.txt
 wc -l /tmp/bibliotek.txt   # skal være flere hundre linjer
+```
+
+Hent så eierens tommel på tidligere nattspill - det er slik vurdereren kalibreres mot eierens smak:
+
+```bash
+gh api --paginate "repos/pattidatti/eiriksbok/issues/12/comments?per_page=100" \
+  -q '.[] | select(.body | startswith("**Mikrospill")) | select(.reactions["+1"] > 0 or .reactions["-1"] > 0)
+      | "\(.reactions["+1"])x👍 \(.reactions["-1"])x👎  " + (.body | split("\n")[0]) + "  " + ((.body | capture("Uavhengig vurdering:\\*\\* (?<v>[^\\n]+)").v) // "")' \
+  | tail -12 > /tmp/eier-kalibrering.txt
+cat /tmp/eier-kalibrering.txt   # tom fil er greit - da har eieren ikke stemt ennå
 ```
 
 Sjekk prompten før du sender den: ingen `<...>`- eller `$(...)`-plassholdere skal stå igjen.
 
-Når port 1 og 2 er grønne: start en FERSK underagent med Agent/Task-verktøyet (general-purpose). Den skal IKKE få briefen, koden eller dine begrunnelser. Send denne prompten, med feltene fylt ut:
+Når port 1, 2 og 2b er grønne: start en FERSK underagent med Agent/Task-verktøyet (general-purpose). Den skal IKKE få briefen, koden eller dine begrunnelser. Send denne prompten, med feltene fylt ut:
 
-> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_playtest.md` (robotresultatene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal; de er kalibrert til ca. 4 på Gøy, Utseende og Lesbart og 5 på Lærerikt). Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den.
-> Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). Begrunn hvert tall med noe du SÅ på et bilde. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
+> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_playtest.md` (robotresultatene og spillfølelsen: valg per minutt, presskurve og ferdighetstrapp fra taper via middels til vinner) og `.screenshots/likhet/_likhet.md` (hvor lik plakaten er de andre spillene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal). De er kalibrert til 3 på Gøy (eieren: «interessant, men ikke sinnsykt gøy»), 3-4 på Utseende, 4 på Lesbart og 5 på Lærerikt. Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den. Eierens tommel opp/ned på tidligere spill, ved siden av poengene de fikk av vurderere før deg, står i `/tmp/eier-kalibrering.txt`: har eieren gitt tommel ned på spill med høy sum, har vurderingene vært for snille - juster deg etter eieren, ikke etter dem.
+> Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). En 4 på Gøy betyr klart gøyere enn referansene. Begrunn hvert tall med noe du SÅ på et bilde eller i tallene. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
 
-Terskel: ingen akse under 3, Gøy og Lærerikt minst 4, sum minst 19. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil fem vurderingsrunder. Står en akse på samme poeng to runder på rad, skal kjerneløkka endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.
+Terskel: ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil fem vurderingsrunder. Står en akse på samme poeng to runder på rad, skal kjerneløkka endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.
 
 **Lagre etter hver vurderingsrunde (checkpoint).** Kjøringen kan bli avbrutt når som helst - bruksgrensen på abonnementet stoppet omkjøringen 27.09 midt i runde 4, og alt arbeidet i den runden gikk tapt. Commit og push derfor etter HVER vurdering, uansett resultat:
 
 ```bash
-git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp"
+git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp" "docs/microgames/briefer/<id>.md"
 git commit -m "wip: <id> etter vurdering <n> (sum <x>)" && git push -f origin HEAD:claude/microgame-wip-<dato>-<id>
 ```
 
@@ -183,13 +240,14 @@ git config user.name "Eiriksbok Agent"
 DATE=$(date +%Y%m%d)
 BRANCH="claude/microgame-${DATE}-<id>"
 git checkout -B "$BRANCH"
-git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp"
+git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp" "docs/microgames/briefer/<id>.md"
+git add docs/microgames/ideer.md 2>/dev/null   # bare hvis idéen kom fra køen
 git status --short   # SJEKK: ingen andre filer
 git commit -m "mikrospill: <tittel> (<artikkeltittel>)"
 
 # Rett før push: ta med det som har kommet på main mens du jobbet.
 git fetch origin main && git rebase origin/main
-git diff --name-only origin/main...HEAD   # bare spillfiler, registry.ts, plakaten og én artikkel-JSON
+git diff --name-only origin/main...HEAD   # bare spillfiler, registry.ts, plakaten, briefen og én artikkel-JSON
 git push -u origin "$BRANCH"
 ```
 
@@ -203,9 +261,9 @@ Automatisk mikrospill fra \`eiriksbok-daily-microgame\`.
 
 **Spill:** \`<id>\` - <sjanger>, tone <tone>, <2D/3D>
 **Artikkel:** /<fag>/<emne>/<leksjon>
+**Kunstretning:** <kunst>
 
-## Designbrief
-$(cat /tmp/brief.md)
+$(cat docs/microgames/briefer/<id>.md)
 
 ## Uavhengig vurdering (runde <n>)
 | Gøy | Utseende | Lærerikt | Lesbart | Unikt | Sum |
@@ -216,12 +274,14 @@ $(cat /tmp/brief.md)
 
 ## Selvspill
 $(cat .screenshots/playtest/_playtest.md)
+
+$(cat .screenshots/likhet/_likhet.md)
 EOF
 )")
 echo "$PR_URL"
 ```
 
-Auto-merge skjer av repo-workflowen når CI-sjekken «Mikrospill-audit» (scene-audit + selvspill) er grønn. Vent på den (sjekk hvert 2. minutt i maks 50 minutter):
+Auto-merge skjer av repo-workflowen når CI-sjekken «Mikrospill-audit» (scene-audit + selvspill + likhetsvakt) er grønn. Vent på den (sjekk hvert 2. minutt i maks 50 minutter):
 
 ```bash
 PR=$(echo "$PR_URL" | grep -oE '[0-9]+$')
@@ -239,13 +299,18 @@ Blir sjekken rød: les audit-kommentaren på PR-en. Funn i spillet: fiks, commit
 gh issue comment 12 --repo pattidatti/eiriksbok --body "**Mikrospill $(date +%Y-%m-%d): <tittel>**
 
 **Artikkel:** <artikkeltittel> (/<sti>)
-**Sjanger / tone / 2D-3D:** <...>
+**Sjanger / tone / 2D-3D / kunstretning:** <...>
 **PR:** <url> - <MERGET | ÅPEN: grunn>
+**Konseptturnering:** vinner «<tittel>» (Gøy x, Fag x) av fem; <artikler som ble forkastet, og hvorfor>
 **Uavhengig vurdering:** Gøy x, Utseende x, Lærerikt x, Lesbart x, Unikt x (sum xx, runde n)
-**Selvspill:** <vinner-robot vant på x s, taper-roboter tapte, passiv tapte>
+**Spillfølelse:** x valg/min, press x -> x, ferdighetstrapp taper x < middels x < vinner x
+**Likhet:** nærmest <id> (x,xx)
+**Selvspill:** <vinner-robot vant på x s, taper-roboter og knappemoser tapte, passiv tapte>
 
 **Fagkjernen som regel:** <én setning>
-**Hva som ble bedre etter vurderingen:** <kort>"
+**Hva som ble bedre etter vurderingen:** <kort>
+
+👍 / 👎 fra eieren på denne kommentaren brukes til å kalibrere vurdereren."
 ```
 
-Varianter: «ingen kandidat», «under terskel etter fem runder - fortsetter neste natt fra <gren>» (med scorene og forbedringene som ikke lot seg løse), «Playwright/push feilet». Rapporten skal alltid postes.
+Varianter: «ingen kandidat» (med de beste konseptene og poengene fra turneringen), «under terskel etter fem runder - fortsetter neste natt fra <gren>» (med scorene og forbedringene som ikke lot seg løse), «Playwright/push feilet». Rapporten skal alltid postes.

@@ -16,6 +16,8 @@ on:
       - 'src/components/microgames/**'
       - 'scripts/playtest-microgame.mjs'
       - 'scripts/playtest-ids.mjs'
+      - 'scripts/likhet-microgame.mjs'
+      - 'public/images/microgames/**'
 
 permissions:
   contents: read
@@ -76,6 +78,19 @@ jobs:
           echo "code=$?" >> "$GITHUB_OUTPUT"
           exit 0
 
+      # Likhetsvakt: plakaten til spillet mot alle andre plakater (farge + komposisjon).
+      # Stopper spill som ser ut som et spill vi allerede har. Ingen nettleser - tar sekunder.
+      - name: Kjør likhetsvakt
+        id: likhet
+        if: steps.ids.outputs.playtest != ''
+        env:
+          IDS: ${{ steps.ids.outputs.playtest }}
+        run: |
+          set +e
+          node scripts/likhet-microgame.mjs --ids "$IDS"
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+
       # MERK: ingen visuell AI-vurdering her, med vilje. Den ville kostet
       # API-kreditt per natt, og natt-rutinen som bygger spillet er selv en
       # Claude Code-agent på abonnement - den har allerede skjermbildene og kan se
@@ -107,6 +122,9 @@ jobs:
           fi
           if [ -s .screenshots/playtest/_playtest.md ]; then
             BODY="$BODY"$'\n\n'"$(cat .screenshots/playtest/_playtest.md)"
+          fi
+          if [ -s .screenshots/likhet/_likhet.md ]; then
+            BODY="$BODY"$'\n\n'"$(cat .screenshots/likhet/_likhet.md)"
           fi
           BODY="$BODY"$'\n\n'"[Kjøringen med skjermbilder]($RUN_URL)"
 
@@ -142,6 +160,7 @@ jobs:
         env:
           CODE: ${{ steps.audit.outputs.code }}
           PCODE: ${{ steps.playtest.outputs.code }}
+          LCODE: ${{ steps.likhet.outputs.code }}
         run: |
           FAIL=0
           case "${CODE:-0}" in
@@ -153,5 +172,10 @@ jobs:
             0) echo "Selvspill grønn." ;;
             2) echo "::error::Selvspillet kunne ikke kjøre (infrastruktur, ikke spillet). Kjør sjekken på nytt."; FAIL=1 ;;
             *) echo "::error::Selvspill fant funn i spillet - se PR-kommentaren."; FAIL=1 ;;
+          esac
+          case "${LCODE:-0}" in
+            0) echo "Likhetsvakt grønn." ;;
+            2) echo "::error::Likhetsvakten kunne ikke kjøre. Kjør sjekken på nytt."; FAIL=1 ;;
+            *) echo "::error::Spillet ser for likt ut som et annet spill - se PR-kommentaren."; FAIL=1 ;;
           esac
           exit $FAIL

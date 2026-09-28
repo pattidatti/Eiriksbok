@@ -12,6 +12,10 @@
 //   MERKET     registry-oppføringen har sjanger og tone; arkadeskallet får eget tema
 //   CHROMEBOOK en runde med prosessoren strupet 4x (som en billig Chromebook): JS-tid per
 //              bilde, draw calls og trekanter må holde seg innenfor budsjettet
+//   SPILLFØLELSE (nye spill) nok valg per minutt, presset stiger gjennom runden, en
+//              «middels» robot havner mellom taperne og vinneren (ferdighetstak), og en
+//              «tilfeldig» knappemoser taper. Tallene gis også til den uavhengige vurderingen.
+//   BRIEF      (nye spill) `kunst` i registry og docs/microgames/briefer/<id>.md finnes
 //
 // Bruk:
 //   node scripts/playtest-microgame.mjs --ids stavkirken-3d,havet-kommer
@@ -45,6 +49,12 @@ const makeCover = args.includes('--cover');
 // rundt 4-6x tregere enn en utviklermaskin på JavaScript, og GPU-en tåler få draw calls.
 const CB_THROTTLE = Number(opt('cpu-throttle', 4));
 const CB_LIMITS = { jsP95: 22, calls: 350, triangles: 700e3 };
+// Spillfølelse: minst ett nytt valg hvert 10. sekund, og presset i siste tredjedel av runden
+// skal ligge klart over første tredjedel.
+const FEEL = { valgPerMin: 6, pressLift: 0.15 };
+// Spill bygget før generatoren (2026-09-28). De har ikke brief, `kunst` eller tall for
+// spillfølelse; for dem rapporteres tallene bare. Alle nye spill må ha dem.
+const LEGACY = new Set(['havet-kommer', 'stavkirken-3d', 'lop-med-lonna-3d', 'plottebordet-3d']);
 const coverAt = Number(opt('cover-at', 20));
 const port = Number(opt('port', 5174));
 const ids = (opt('ids') || '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -84,6 +94,16 @@ function staticChecks(id) {
     const cover = e.block.match(/cover:\s*'([^']+)'/)?.[1];
     if (!cover) f.push('registry-oppføringen mangler `cover` - kjør selvspillet med --cover');
     else if (!existsSync(path.join(root, 'public', cover)) && !makeCover) f.push(`coverbildet ${cover} finnes ikke - kjør selvspillet med --cover`);
+    if (!LEGACY.has(id)) {
+        if (!/kunst:\s*'/.test(e.block)) f.push('registry-oppføringen mangler `kunst` - kunstretningen fra epoken (se «Kunstbriefen» i guiden)');
+        const brief = path.join(root, 'docs/microgames/briefer', `${id}.md`);
+        if (!existsSync(brief)) f.push(`mangler briefen docs/microgames/briefer/${id}.md (konseptturnering + designbrief + kunstbrief)`);
+        else {
+            const b = readFileSync(brief, 'utf8');
+            for (const h of ['Konseptturnering', 'Designbrief', 'Kunstbrief'])
+                if (!new RegExp(`^##\\s+${h}`, 'mi').test(b)) f.push(`briefen mangler seksjonen «## ${h}»`);
+        }
+    }
     if (e.file && existsSync(e.file)) {
         const src = readFileSync(e.file, 'utf8');
         if (!src.includes('usePlaytest(')) f.push('spillet registrerer ikke selvspill (usePlaytest)');
@@ -223,9 +243,35 @@ function meanDiff(a, b) {
 // ---------------------------------------------------------------------------
 // Én runde
 // ---------------------------------------------------------------------------
+/** Valg per spilt minutt og presskurven (snitt per tredjedel av spilletiden) fra én runde. */
+function feelStats(samples) {
+    if (samples.length < 4) return null;
+    const t0 = samples[0].tid;
+    const t1 = samples[samples.length - 1].tid;
+    const span = t1 - t0;
+    if (span < 10) return null;
+    const vs = samples.filter((x) => typeof x.valg === 'number');
+    const valgPerMin = vs.length >= 2 ? ((vs[vs.length - 1].valg - vs[0].valg) / (vs[vs.length - 1].tid - vs[0].tid || 1)) * 60 : null;
+    const ps = samples.filter((x) => typeof x.press === 'number');
+    const third = (k) => {
+        const xs = ps.filter((x) => x.tid >= t0 + (span * k) / 3 && x.tid <= t0 + (span * (k + 1)) / 3).map((x) => x.press);
+        return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
+    };
+    const [pressFirst, pressMid, pressLast] = ps.length >= 3 ? [third(0), third(1), third(2)] : [null, null, null];
+    return { valgPerMin, pressFirst, pressMid: pressMid ?? pressFirst, pressLast: pressLast ?? pressFirst };
+}
+
 async function playRound(...a) {
     for (let i = 0; i < 3; i++) {
-        const r = await playRoundOnce(...a);
+        let r;
+        try {
+            r = await playRoundOnce(...a);
+        } catch (e) {
+            // Vite lastet siden på nytt midt i et evaluate-kall (filendring, eller ny
+            // dependency-optimalisering ved kaldstart): samme som en avbrutt runde.
+            if (!/Execution context was destroyed|navigation/i.test(String(e?.message || e))) throw e;
+            r = { avbrutt: true, bot: a[2] ?? 'passiv' };
+        }
         if (!r.avbrutt) return r;
         console.log(`   ↻ siden ble lastet på nytt midt i runden (${r.bot}) - kjører den på nytt`);
         await a[0].waitForFunction((id) => window.__mgPlaytest && window.__mgPlaytest[id], a[1], { timeout: 150000 });
@@ -267,6 +313,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
     const shots = [];
     let snap = null;
     let first = null; // { real, tid } ved første «spiller»-snapshot, for spilltempo
+    const feel = []; // { tid, valg, press } per måling, for spillfølelsen
     while (Date.now() - t0 < capMs) {
         // Vent på API-et hvis siden ble lastet på nytt (HMR) midt i runden.
         snap = await page.evaluate((id) => window.__mgPlaytest?.[id]?.snapshot() ?? null, id);
@@ -287,6 +334,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
             lastProgress = { v: snap.framdrift, tid: snap.tid, at: Date.now() };
         else if (snap.fase === 'spiller' && Date.now() - lastProgress.at > 90000) break;
         if (snap.fase === 'spiller') {
+            if (typeof snap.tid === 'number') feel.push({ tid: snap.tid, valg: snap.valg ?? null, press: snap.press ?? null });
             const now = Date.now();
             // Maks 1,2 s per måling: et skjermbilde eller en treg frame mellom to
             // målinger skal ikke få to korte bannere til å se ut som én lang dekning.
@@ -373,7 +421,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
         const stage = await page.$('[data-mg-stage]');
         if (stage) writeFileSync(path.join(shotsDir, `${bot ?? 'passiv'}-slutt.png`), await stage.screenshot());
     }
-    return { lessons, coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
+    return { lessons, feel: feelStats(feel), coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
 }
 
 // ---------------------------------------------------------------------------
@@ -460,11 +508,17 @@ async function playtestGame(browser, id) {
             const api = window.__mgPlaytest[id];
             return {
                 maks: api.maksSekunder,
-                bots: Object.entries(api.bots).map(([k, b]) => ({ navn: k, forventer: b.forventer, beskrivelse: b.beskrivelse, variant: b.variant ?? null })),
+                bots: Object.entries(api.bots).map(([k, b]) => ({ navn: k, forventer: b.forventer, tilfeldig: !!b.tilfeldig, beskrivelse: b.beskrivelse, variant: b.variant ?? null })),
             };
         }, id);
         if (!info.bots.some((b) => b.forventer === 'vinner')) rep.findings.push('ingen robot med forventer: vinner');
         if (!info.bots.some((b) => b.forventer === 'taper')) rep.findings.push('ingen robot med forventer: taper');
+        const strict = !LEGACY.has(id);
+        const feelFind = (msg) => (strict ? rep.findings : rep.notes).push(strict ? msg : `(spillfølelse, rapporteres bare for eldre spill) ${msg}`);
+        if (!info.bots.some((b) => b.forventer === 'middels')) feelFind('ingen robot med forventer: middels - den viser at det lønner seg å bli bedre');
+        if (!info.bots.some((b) => b.tilfeldig)) feelFind('ingen robot med tilfeldig: true - knappemoseren som skal tape');
+        const badTilfeldig = info.bots.filter((b) => b.tilfeldig && b.forventer !== 'taper');
+        for (const b of badTilfeldig) rep.findings.push(`«${b.navn}» er tilfeldig, men forventer ikke å tape`);
 
         // FPS (bare rapport - headless-GPU er treg og sier lite om Chromebooken)
         const fps = await page.evaluate(
@@ -499,19 +553,26 @@ async function playtestGame(browser, id) {
         for (const b of info.bots) {
             if (onlyBots && !onlyBots.includes(b.navn)) continue;
             const tries = b.forventer === 'vinner' ? 2 : 1;
+            // 'middels' vurderes på poeng (ferdighetstak) under, ikke på vunnet/tapt.
             let won = false;
             const film = b.forventer === 'vinner' && !rep.rounds.some((r) => r.forventer === 'vinner');
             for (let t = 0; t < tries && !won; t++) {
                 const plan = film && t === 0 ? { prefix: 'film', times: [3, 10, 20, 35, 55, 80, 110, 150], cover: makeCover } : null;
                 const r = await playRound(page, id, b.navn, b.variant, info.maks, t === 0 ? dir : null, plan);
                 r.forventer = b.forventer;
+                r.tilfeldig = b.tilfeldig;
                 rep.rounds.push(r);
                 if (r.botErr) rep.findings.push(`roboten «${b.navn}» kastet unntak: ${r.botErr.split('\n')[0]}`);
                 if (r.fase === 'vunnet') won = true;
                 if (r.fase === 'tidsavbrudd') rep.notes.push(`«${b.navn}» nådde ikke slutten innen tidstaket (${r.secs} s)`);
             }
             if (b.forventer === 'vinner' && !won) rep.findings.push(`«${b.navn}» skal vinne, men vant ingen av ${tries} runder`);
-            if (b.forventer === 'taper' && won) rep.findings.push(`«${b.navn}» skal tape, men VANT`);
+            if (b.forventer === 'taper' && won)
+                rep.findings.push(
+                    b.tilfeldig
+                        ? `knappemoseren «${b.navn}» (tilfeldige grep) VANT - det lønner seg ikke å tenke. Gjør fagregelen avgjørende`
+                        : `«${b.navn}» skal tape, men VANT`
+                );
         }
 
         // CHROMEBOOK: én vinnerrunde med strupet prosessor. Nivået (kit/quality.ts) gjettes
@@ -582,6 +643,32 @@ async function playtestGame(browser, id) {
         const tap = rep.rounds.filter((r) => r.forventer === 'taper' || r.bot === 'passiv').map((r) => r.poeng);
         if (vinn.length && tap.length && Math.max(...vinn) <= Math.max(...tap))
             rep.findings.push(`dyktig spill gir ikke flere poeng (vinner ${Math.max(...vinn)} <= taper ${Math.max(...tap)})`);
+
+        // SPILLFØLELSE: valg per minutt og eskalering (fra beste vinnerrunde), ferdighetstak.
+        const vRound = rep.rounds.find((r) => r.forventer === 'vinner' && r.fase === 'vunnet') ?? rep.rounds.find((r) => r.forventer === 'vinner');
+        const f = vRound?.feel;
+        rep.feel = f ?? null;
+        if (!f || f.valgPerMin === null) feelFind('snapshot() har ikke `valg` (beslutningspunkter) - valg per minutt kan ikke måles');
+        else {
+            rep.notes.push(`spillfølelse: ${f.valgPerMin.toFixed(1)} valg per minutt (runde «${vRound.bot}»)`);
+            if (f.valgPerMin < FEEL.valgPerMin)
+                feelFind(`bare ${f.valgPerMin.toFixed(1)} valg per minutt (min ${FEEL.valgPerMin}) - eleven venter mer enn de velger. Gi flere synlige valg: nye trusler, tilbud, avveiinger`);
+        }
+        if (!f || f.pressFirst === null) feelFind('snapshot() har ikke `press` (0-1) - eskaleringen kan ikke måles');
+        else {
+            rep.notes.push(`presskurve: ${f.pressFirst.toFixed(2)} i første tredjedel -> ${f.pressMid.toFixed(2)} -> ${f.pressLast.toFixed(2)} i siste`);
+            if (f.pressLast < f.pressFirst + FEEL.pressLift)
+                feelFind(`presset stiger ikke (${f.pressFirst.toFixed(2)} -> ${f.pressLast.toFixed(2)}, krever +${FEEL.pressLift}) - spillet må eskalere mot slutten`);
+        }
+        const mid = rep.rounds.filter((r) => r.forventer === 'middels').map((r) => r.poeng);
+        if (mid.length) {
+            const bestV = Math.max(0, ...rep.rounds.filter((r) => r.forventer === 'vinner').map((r) => r.poeng));
+            const bestT = Math.max(0, ...rep.rounds.filter((r) => r.forventer === 'taper' || r.bot === 'passiv').map((r) => r.poeng));
+            const m = Math.max(...mid);
+            rep.notes.push(`ferdighetstrapp: taper ${bestT} < middels ${m} < vinner ${bestV}`);
+            if (!(m > bestT && m < bestV * 0.95))
+                feelFind(`ferdighetstrappen holder ikke (taper ${bestT}, middels ${m}, vinner ${bestV}) - den halvgode skal havne mellom, og god spilling skal gi merkbart mer`);
+        }
 
         // TEKST DER BLIKKET ER (eier 2026-09-26: tekst under spillet blir ikke lest)
         const all = (k) => [...new Set(rep.rounds.flatMap((r) => r.coach?.[k] ?? []))];
@@ -655,7 +742,7 @@ for (const r of reports) {
     md.push(`### ${ok ? '✅' : r.infra ? '⚠️' : '❌'} \`${r.id}\``, '');
     md.push('| Robot | Forventer | Resultat | Poeng | Framdrift | Tid |', '|---|---|---|---:|---:|---:|');
     for (const x of r.rounds)
-        md.push(`| ${x.bot}${x.variant ? ` (${x.variant})` : ''} | ${x.forventer ?? 'taper'} | ${x.fase} | ${x.poeng} | ${(x.framdrift * 100).toFixed(0)} % | ${x.secs} s |`);
+        md.push(`| ${x.bot}${x.variant ? ` (${x.variant})` : ''}${x.tilfeldig ? ' 🎲' : ''} | ${x.forventer ?? 'taper'} | ${x.fase} | ${x.poeng} | ${(x.framdrift * 100).toFixed(0)} % | ${x.secs} s |`);
     md.push('');
     for (const f of r.findings) md.push(`- ❌ ${f}`);
     if (r.infra) md.push(`- ⚠️ Harnessen kunne ikke kjøre: ${r.infra}`);
