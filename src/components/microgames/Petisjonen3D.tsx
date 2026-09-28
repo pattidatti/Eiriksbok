@@ -63,7 +63,8 @@ import {
 // og vikler opp navn (Katamari). Fagkjernen er regelen fra artikkelen: alene
 // får du ett navn om gangen. Samler du folk fra én bygd og holder møte i låven,
 // starter de sin egen forening med egen leder - og den samler navn til deg og
-// verver nabobygdene. De med stemmerett (høy svart hatt) river av navn.
+// verver nabobygdene. De med stemmerett (høy svart hatt) skremmer folk til å
+// trekke navnet sitt.
 //
 // Tone: alvorlig. Seieren følger plottet: 13 000 navn, levert på Slottet. Så
 // sier kongen nei - slik det skjedde.
@@ -95,18 +96,19 @@ const THEME: Partial<ArcadeTheme> = {
     tilt: 0,
     hudText: INK,
     hudStroke: PAPER,
-    bannerTop: '31%',
+    // Bannerne står rett under avishodet, aldri midt på rullen.
+    bannerTop: '19%',
 };
 
 const DEATH: Record<Cause, string> = {
     kort: 'Mai 1850: Petisjonen har bare {n} navn. Den er for kort til å sendes til kongen.',
-    revet: '{dato}: De med stemmerett har revet petisjonen i stykker. Det er ingen navn igjen.',
+    revet: '{dato}: De med makt har skremt alle til å trekke navnet sitt. Det er ingen navn igjen.',
 };
 
 const TIPS = {
     organiser:
         'Tips: Alene får du ett navn om gangen. Rull inn i folk fra samme bygd, og hold møte i låven når lykta lyser. Da samler foreningen navnene for deg.',
-    hatt: 'Tips: Høy svart hatt betyr stemmerett. De river av navn - sving rundt dem, og ikke stå stille når de kommer.',
+    hatt: 'Tips: Høy svart hatt betyr stemmerett og makt. De skremmer folk til å trekke navnet - sving rundt dem, og lever navnene i Bladet.',
     naer: 'Tips: Navnene flyr bare til deg når du er innenfor den røde ringen rundt foreningen. Rull ofte innom de store foreningene.',
 };
 
@@ -276,8 +278,9 @@ function Loop({
         zoom.current += (R.r - zoom.current) * Math.min(1, dt * 1.5);
         const zr = zoom.current;
         const menu = modeRef.current === 'menu';
-        const h = menu ? 19 : 15.5 + zr * 5.2;
-        const back = menu ? 13 : 10.5 + zr * 3.8;
+        const kick = Math.sin(g.kick * Math.PI) * 3;
+        const h = menu ? 19 : 15.5 + zr * 5.2 + kick;
+        const back = menu ? 13 : 10.5 + zr * 3.8 + kick * 0.6;
         const lx = R.p[0] + R.v[0] * 0.25;
         const lz = R.p[1] + R.v[1] * 0.25 - 1;
         CAM.set(lx + (menu ? Math.sin(state.clock.elapsedTime * 0.2) * 3 : 0), h, lz + back);
@@ -513,7 +516,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             sfx.lose();
             buzz(220);
             setModeBoth('dying');
-            text.banner(cause === 'revet' ? 'PETISJONEN REVET' : 'FOR FÅ NAVN', INK, 2.4);
+            text.banner(cause === 'revet' ? 'ALLE NAVN TRUKKET' : 'FOR FÅ NAVN', INK, 2.4);
             window.setTimeout(() => endRun(false, cause), 2600);
         },
         delivered: () => {
@@ -566,12 +569,12 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                     }
                     return best;
                 };
-                text.beatOnce(
-                    'politi',
-                    'Politiet tar lederne',
-                    'Kongen sa nei, og nå arresterer politiet lederne. Rull til foreningene og få lederne i skjul før politiet kommer.',
-                    { at: toScreen(near), until: () => Date.now() - t0 > 4500 }
-                );
+                // En lapp ved nærmeste leder - spillet går videre i full fart.
+                text.point('politi', 'Få lederen i skjul før politiet!', toScreen(near), {
+                    seconds: 4.5,
+                    tone: 'fare',
+                    until: () => Date.now() - t0 > 4500,
+                });
             }, 2900);
         },
         win: () => {
@@ -606,9 +609,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                 hud.ghost.current.style.width = `${Math.min(100, ((n + piles) / GOAL) * 100)}%`;
             if (hud.piles.current)
                 hud.piles.current.textContent =
-                    g.phase !== 'samle'
-                        ? ''
-                        : `${nb(g.safe)} trygt i Bladet${piles >= 20 ? ` · ${nb(piles)} venter hos foreningene` : ''}`;
+                    g.phase !== 'samle' ? '' : `${nb(g.safe)} trygt i Bladet`;
             const d = dateOf(g.t);
             if (hud.date.current)
                 hud.date.current.textContent =
@@ -736,7 +737,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                     press: g.press,
                     årsak:
                         g.cause === 'revet'
-                            ? `petisjonen revet i stykker (${g.hits} treff, ${Math.round(g.torn)} navn revet av)`
+                            ? `alle navn trukket (${g.hits} treff, ${Math.round(g.torn)} navn trukket)`
                             : g.cause === 'kort'
                               ? `bare ${Math.round(g.roll.names)} navn i mai 1850 (${g.foundedByYou} foreninger startet, ${g.recruited} vervet, ${g.hits} treff)`
                               : undefined,
@@ -986,7 +987,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                     <i style={{ background: INK }} />
                                 </span>
                                 <span>
-                                    <b>Høy svart hatt:</b> har stemmerett og river av navn.
+                                    <b>Høy svart hatt:</b> har stemmerett og skremmer folk til å
+                                    trekke navnet.
                                 </span>
                                 <span>
                                     <i style={{ background: PAPER, borderStyle: 'dashed' }} />
@@ -1138,7 +1140,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                     { value: nb(result.names), label: 'navn' },
                                     { value: result.foreninger, label: 'foreninger' },
                                     { value: nb(result.medlemmer), label: 'medlemmer' },
-                                    { value: nb(result.torn), label: 'navn revet av' },
+                                    { value: nb(result.torn), label: 'navn trukket' },
                                 ]}
                             />
                             {result.newEntries.length > 0 ? (

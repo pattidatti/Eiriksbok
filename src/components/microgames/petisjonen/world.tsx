@@ -114,6 +114,13 @@ const GEO = {
         { geometry: new THREE.ConeGeometry(0.55, 1.0, 7), position: [0, 1.6, 0], color: '#7d7a5c' },
         { geometry: new THREE.ConeGeometry(0.34, 0.7, 7), position: [0, 2.1, 0], color: '#7d7a5c' },
     ]),
+    // Folk som har skrevet under og henger på rullen: røde, så rullen ser full av folk ut.
+    signer: mergeParts([
+        { geometry: box(0.3, 0.42, 0.2), position: [0, 0.21, 0], color: '#3f382f' },
+        { geometry: cyl(0.19, 0.26, 0.52, 7), position: [0, 0.66, 0], color: RED },
+        { geometry: box(0.62, 0.12, 0.14), position: [0, 0.82, 0], color: RED },
+        { geometry: ball(0.15), position: [0, 1.04, 0], color: '#e6d3b2' },
+    ]),
     person: mergeParts([
         { geometry: box(0.3, 0.42, 0.2), position: [0, 0.21, 0], color: '#3f382f' },
         { geometry: cyl(0.19, 0.26, 0.52, 7), position: [0, 0.66, 0], color: '#74685a' },
@@ -212,6 +219,7 @@ const LINE = {
 
 // Flate normaler: hver flate får sin egen skravur, som i et tresnitt.
 for (const g of [
+    GEO.signer,
     GEO.lave,
     GEO.stue,
     GEO.husmann,
@@ -744,9 +752,11 @@ export function People({ gRef }: { gRef: GRef }) {
                 put(dg, hi, h.p[0], 0.04, h.p[1], 0, 1.1 + Math.sin(t * 8) * 0.12, 0, 0, 1);
             } else {
                 hide(al, hi);
-                hide(dg, hi);
+                // Embetsmenn får en svak ring også når de ikke jager: lette å skille fra grå luer.
+                if (!isB && h.stun <= 0) put(dg, hi, h.p[0], 0.04, h.p[1], 0, 0.75, 0, 0, 1);
+                else hide(dg, hi);
             }
-            // Står og river i papiret etter et treff.
+            // Står og viser fram et papir etter et treff (navnene som ble trukket).
             if (h.stun > 0)
                 put(
                     pa,
@@ -933,7 +943,7 @@ export function Roll({ gRef }: { gRef: GRef }) {
                     />
                     <instancedMesh
                         ref={stuck}
-                        args={[GEO.person, VC(), MAX_STUCK]}
+                        args={[GEO.signer, VC(), MAX_STUCK]}
                         frustumCulled={false}
                     />
                 </group>

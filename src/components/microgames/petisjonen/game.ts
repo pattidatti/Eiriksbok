@@ -7,7 +7,7 @@
 // starter de sin egen forening med egen leder. Foreningen verver videre av seg
 // selv og samler navn til deg - og fra mai 1849, da avisa kom, verver store
 // foreninger også nabobygda. De med stemmerett (gårdeiere og embetsmenn) vil
-// ikke ha forandring: de jager rullen og river av navn.
+// ikke ha forandring: de jager rullen og skremmer folk til å trekke navnet sitt.
 
 import {
     PLACES,
@@ -204,6 +204,8 @@ export interface G {
     delivered: boolean;
     cause: Cause | null;
     shake: number;
+    /** Kameraet puffer bakover når rullen vokser et trinn. */
+    kick: number;
     torn: number;
     hits: number;
     singles: number;
@@ -224,6 +226,8 @@ export interface G {
     /** 'samle' til petisjonen er levert, så 'knusing' (1851): politiet tar lederne. */
     phase: 'samle' | 'knusing';
     knusT: number;
+    /** Når petisjonen ble levert (for tidsbonusen). */
+    deliveredT: number;
     leaders: Leader[];
     saved: number;
     arrested: number;
@@ -374,6 +378,7 @@ export function newGame(rand: () => number = Math.random): G {
         delivered: false,
         cause: null,
         shake: 0,
+        kick: 0,
         torn: 0,
         hits: 0,
         singles: 0,
@@ -391,6 +396,7 @@ export function newGame(rand: () => number = Math.random): G {
         banked: 0,
         phase: 'samle',
         knusT: 0,
+        deliveredT: 0,
         leaders: [],
         saved: 0,
         arrested: 0,
@@ -511,7 +517,7 @@ function tear(g: G, h: Hunter, io: IO) {
         });
     io.lesson(
         'stemmerett',
-        'Embetsmenn og gårdeiere hadde stemmerett. De ville ikke dele makta med husmenn og arbeidere.',
+        'Embetsmenn og gårdeiere hadde stemmerett og makt. De ville ikke dele den, og husmenn som kunne bli kastet ut, var redde.',
         1
     );
     // Er det ingenting igjen å rive av, er petisjonen revet i stykker.
@@ -526,7 +532,7 @@ function tear(g: G, h: Hunter, io: IO) {
     const take = Math.min(R.names, lost);
     R.names -= take;
     g.torn += take;
-    io.float(`-${take} NAVN`, R.p[0], R.p[1], '#e0342a', true);
+    io.float(`SKREMT: -${take} NAVN`, R.p[0], R.p[1], '#e0342a', true);
     // Figurer ryker også av.
     g.stuck.splice(0, Math.min(g.stuck.length, 3));
 }
@@ -535,8 +541,11 @@ function tear(g: G, h: Hunter, io: IO) {
 // Sluttfasen, 1851: kongen sa nei, og politiet tar lederne
 // ---------------------------------------------------------------------------
 
+const LEADER_BONUS = 900;
+
 function startKnusing(g: G, io: IO) {
     g.delivered = true;
+    g.deliveredT = g.t;
     g.phase = 'knusing';
     g.knusT = 0;
     g.open = false;
@@ -587,10 +596,10 @@ function knusing(g: G, dt: number, io: IO) {
         if (dist(R.p, tun) < R.r + 1.7) {
             l.state = 'skjult';
             g.saved++;
-            g.score += 500;
+            g.score += LEADER_BONUS;
             R.bump = 1;
             io.sfx.found();
-            io.float('LEDER I SKJUL +500', tun[0], tun[1], '#b3261e', true);
+            io.float(`LEDER I SKJUL +${LEADER_BONUS}`, tun[0], tun[1], '#b3261e', true);
             if (g.stuck.length < MAX_STUCK)
                 g.stuck.push({ ang: -R.spin, along: 0, wob: g.rand() * 6, kind: 0 });
         }
@@ -986,6 +995,7 @@ export function update(g: G, dt: number, io: IO) {
         R.names >= 8000 ? 4 : R.names >= 3000 ? 3 : R.names >= 800 ? 2 : R.names >= 150 ? 1 : 0;
     if (lvl > g.level) {
         g.level = lvl;
+        g.kick = 1;
         io.sfx.grow(lvl);
         io.float(`${GROW_NAMES[lvl]}!`, R.p[0], R.p[1], '#b3261e', true);
     }
@@ -1006,7 +1016,7 @@ export function update(g: G, dt: number, io: IO) {
             io.beat(
                 'hatt',
                 'Høy svart hatt = stemmerett',
-                'Embetsmenn og gårdeiere kunne stemme. De ville ikke ha forandring, og river navn av petisjonen. Sving unna!',
+                'De hadde stemmerett og ville ikke ha forandring. Når de kommer, blir folk redde og trekker navnet sitt. Sving unna!',
                 () => h.p,
                 () => Date.now() - t0 > 4500
             );
@@ -1172,6 +1182,7 @@ function addNames(g: G, n: number) {
 /** Enkle effekter som går også utenfor spill (meny, slutt-skjerm). */
 export function stepFx(g: G, dt: number) {
     g.shake = Math.max(0, g.shake - dt * 2);
+    g.kick = Math.max(0, g.kick - dt * 1.2);
     for (let k = g.scraps.length - 1; k >= 0; k--) {
         const s = g.scraps[k];
         s.life -= dt;
@@ -1218,8 +1229,9 @@ export function liveScore(g: G) {
 }
 
 export function finalScore(g: G, won: boolean) {
-    const left = Math.max(0, RUN_SECONDS - g.t);
-    return Math.floor(liveScore(g) + (won ? 2000 + left * 60 : 0));
+    // Tidsbonus for hver måned (hvert sekund) du leverte før mai 1850.
+    const left = Math.max(0, RUN_SECONDS - (g.deliveredT || g.t));
+    return Math.floor(liveScore(g) + (won ? 2000 + left * 120 : 0));
 }
 
 export { dist, SLOTTET, PLACES };
