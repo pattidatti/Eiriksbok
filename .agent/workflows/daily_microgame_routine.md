@@ -69,6 +69,8 @@ git ls-tree -r --name-only origin/<gren> -- docs/microgames/briefer/   # har den
 - **Uten brief:** laget før generatoren (før 2026-09-28), hoppet over konseptturneringen. Hopp over
   den (første gang: nevn det i rapporten) og gå videre.
 - **Flere grener for samme spill-id:** bruk bare den nyeste (datoen i navnet), hopp over de eldre.
+- **Artikkelen har allerede spill på main** (WIP-grenens artikkel-JSON har `"MicroGame"` på
+  `origin/main`): et annet spill vant kappløpet, hopp over.
 - **Spillet er allerede på main** (id-en finnes i `src/components/microgames/registry.ts` på
   `origin/main`): ferdig, hopp over.
 - **Ellers:** sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`), les
