@@ -153,7 +153,7 @@ function plan(g: G, style: 'seende' | 'halvgod'): XZ | null {
         }
     });
     // Den dyktige bygger foreninger først (de vokser av seg selv) og høster senere.
-    const harvestNow = style === 'seende' ? (g.t < 100 ? 45 : 18) : 22;
+    const harvestNow = style === 'seende' ? 20 : 22;
     if (harvest && hv > harvestNow) return harvest;
     // Tenn en ny bygd: nærmeste uten forening som har folk igjen.
     let spark = -1;

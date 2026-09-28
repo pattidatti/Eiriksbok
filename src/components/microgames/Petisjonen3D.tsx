@@ -341,6 +341,7 @@ const CSS = `
 .pt-sub{position:absolute;left:12px;top:78px;font-family:${SERIF};color:${INK};font-size:12.5px;background:rgba(239,228,204,.92);border:1.5px solid ${INK};padding:4px 9px 5px;pointer-events:none;line-height:1.35}
 .pt-sub b{font-size:15px}
 .pt-proto{position:absolute;left:12px;bottom:12px;display:flex;flex-wrap:wrap;gap:4px;max-width:46%;pointer-events:none}
+.pt-proto-label{width:100%;font-family:${SERIF};font-size:11px;font-style:italic;color:${INK};background:rgba(239,228,204,.85);padding:0 4px;align-self:flex-start;width:auto;flex-basis:100%}
 .pt-stamp{width:34px;height:34px;border-radius:50%;border:2.5px solid ${RED};color:${RED};font-family:${SERIF};font-weight:700;font-size:10px;display:flex;align-items:center;justify-content:center;background:rgba(239,228,204,.85);transform:rotate(-8deg);letter-spacing:.04em;animation:ptStamp .35s cubic-bezier(.2,1.6,.4,1) both}
 .pt-stamp.verv{border-style:dashed;opacity:.8}
 @keyframes ptStamp{from{transform:rotate(-30deg) scale(2.2);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
@@ -380,6 +381,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
     const pointerRef = useRef<PointerState>({ on: false, x: 0, y: 0, keys: new Set() });
     const botRef = useRef(false);
+    /** Foreninger og medlemmer i leveringsøyeblikket (før sluttscenen slukker dem). */
+    const winStats = useRef<{ f: number; m: number } | null>(null);
     const [stamps, setStamps] = useState<{ id: string; you: boolean }[]>([]);
     const stampKey = useRef('');
     const hud = {
@@ -452,13 +455,13 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
             newBest: score > prev.best,
             rank: rankFor(RANKS, won ? Math.max(names, GOAL) : names),
             msg: won
-                ? `${d.m[0].toUpperCase()}${d.m.slice(1)} ${d.y}: Kongen fikk petisjonen med ${nb(names)} navn. Han sa nei til alle de ti kravene, og Stortinget sa også nei.`
+                ? `Du leverte ${nb(names)} navn (${d.m} ${d.y}). De ekte thranittene leverte nesten 13 000 navn i mai 1850. Kongen sa nei til alle de ti kravene, og Stortinget sa også nei.`
                 : DEATH[cause].replace('{n}', nb(names)).replace('{dato}', `${d.m[0].toUpperCase()}${d.m.slice(1)} ${d.y}`),
             tip,
             lessons: text.lessons(3),
             names,
-            foreninger: foreningCount(g),
-            medlemmer: members(g),
+            foreninger: won && winStats.current ? winStats.current.f : foreningCount(g),
+            medlemmer: won && winStats.current ? winStats.current.m : members(g),
             torn: Math.round(g.torn),
             newEntries,
             next: nextRank(RANKS, won ? Math.max(names, GOAL) : names),
@@ -494,6 +497,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
         win: () => {
             if (modeRef.current !== 'play') return;
             const g = gRef.current;
+            winStats.current = { f: foreningCount(g), m: members(g) };
             sfx.win();
             setModeBoth('dying');
             text.banner('PETISJONEN LEVERT', RED, 1.8);
@@ -517,7 +521,13 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                     });
                 text.banner('KONGEN SIER NEI', INK, 2.2);
             }, 1900);
-            window.setTimeout(() => endRun(true, 'kort'), 4300);
+            // Så knuses bevegelsen: embetsmennene rir ut, og foreningene slukner.
+            window.setTimeout(() => {
+                g.crushing = true;
+                sfx.hunter();
+                text.banner('JULI 1851: THRANE ARRESTERT', INK, 2.6);
+            }, 4300);
+            window.setTimeout(() => endRun(true, 'kort'), 7600);
         },
     };
     const ioRef = useRef(io);
@@ -807,7 +817,8 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                     </div>
 
                     {/* Foreningsprotokollen: et rødt stempel for hver forening */}
-                    <div className="pt-proto" style={{ opacity: hudOn ? 1 : 0 }}>
+                    <div className="pt-proto" style={{ opacity: hudOn && stamps.length ? 1 : 0 }}>
+                        <div className="pt-proto-label">Foreninger:</div>
                         {stamps.map((s) => (
                             <div
                                 key={s.id}
@@ -960,7 +971,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                     { value: nb(result.names), label: 'navn' },
                                     { value: result.foreninger, label: 'foreninger' },
                                     { value: nb(result.medlemmer), label: 'medlemmer' },
-                                    { value: nb(result.torn), label: 'revet av' },
+                                    { value: nb(result.torn), label: 'navn revet av' },
                                 ]}
                             />
                             {result.newEntries.length > 0 ? (

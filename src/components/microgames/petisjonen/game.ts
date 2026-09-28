@@ -32,11 +32,13 @@ export const AVISA_AT = 5 * MONTH_SECONDS;
 /** Når embetsmenn og lensmenn rir ut fra Christiania. */
 export const HUNTER_TIMES = [24, 48, 72, 94, 112, 128, 144];
 /** Hvor mange navnelapper som kan være i lufta samtidig (resten legges rett på). */
-const MAX_SLIPS = 90;
+const MAX_SLIPS = 140;
 /** Figurer som vises festet på rullen. */
 export const MAX_STUCK = 34;
 /** Foreningene kan bli større enn tallene i geo.ts (samlet rundt 30 000 medlemmer). */
 const CAP_SCALE = 1.7;
+/** Andel av stabelen som flyter til rullen per sekund når den er langt unna. */
+const FAR_RATE = 0.035;
 
 export type Mode = 'menu' | 'play' | 'paused' | 'dying' | 'over';
 export type Cause = 'kort' | 'revet';
@@ -115,6 +117,8 @@ export interface Forening {
     recruitProg: number;
     /** Sekunder siden forrige navnelapp ble sendt. */
     slipClock: number;
+    /** Klokka for den tynne elva som alltid går, uansett avstand. */
+    farClock: number;
     harvesting: boolean;
     fullNoted: boolean;
 }
@@ -199,6 +203,9 @@ export interface G {
     done: Set<string>;
     /** Stedene du har startet forening i denne runden (til protokollen). */
     protokoll: string[];
+    /** Sluttscenen etter kongens nei. */
+    crushing: boolean;
+    crushClock: number;
     rand: () => number;
 }
 
@@ -249,6 +256,9 @@ export function reach(f: Forening, r: number) {
 }
 
 /** Rangene går på antall navn. De ekte thranittene fikk 13 000 navn og 30 000 medlemmer. */
+/** Det rullen kalles når den vokser et trinn (150, 800, 3000 og 8000 navn). */
+const GROW_NAMES = ['', 'EN LISTE', 'EN LANG LISTE', 'EN RULL', 'EN FOLKEBEVEGELSE'];
+
 export const RANKS: [number, string][] = [
     [0, 'Lapp'],
     [3000, 'Liste'],
@@ -350,6 +360,8 @@ export function newGame(rand: () => number = Math.random): G {
         meetingPlace: -1,
         done: new Set(),
         protokoll: [],
+        crushing: false,
+        crushClock: 0,
         rand,
     };
 }
@@ -400,6 +412,7 @@ function found(g: G, i: number, byYou: boolean, io: IO) {
         recruit: -1,
         recruitProg: 0,
         slipClock: 0,
+        farClock: 0,
         harvesting: false,
         fullNoted: false,
     };
@@ -424,14 +437,17 @@ function found(g: G, i: number, byYou: boolean, io: IO) {
             'Folk startet egne foreninger og valgte sine egne ledere. Da vokste bevegelsen uten at Thrane måtte være der.',
             1
         );
-        if (once(g, 'beat-forening'))
+        if (once(g, 'beat-forening')) {
+            const t0 = Date.now();
             io.beat(
                 'forening',
                 'Egen forening',
                 'Bygda har egen leder nå. Foreningen verver flere og samler navn til deg - også når du er borte.',
                 () => pl.tun,
-                () => g.places[i].forening!.harvesting && g.t - g.places[i].forening!.founded > 1.5
+                // Kortet går av seg selv: sakte film skal være et øyeblikk, ikke et minutt.
+                () => Date.now() - t0 > 4500
             );
+        }
         else
             io.pin(`forening-${i}`, 'Egen forening - samler navn', () => pl.tun, {
                 seconds: 3,
@@ -452,7 +468,8 @@ function found(g: G, i: number, byYou: boolean, io: IO) {
 
 function tear(g: G, h: Hunter, io: IO) {
     const R = g.roll;
-    const lost = Math.max(12, Math.round(R.names * 0.15));
+    // Et treff koster 15 %, men aldri mer enn 1000 navn - ellers blir en stor rull straffet dobbelt.
+    const lost = Math.max(12, Math.min(1000, Math.round(R.names * 0.15)));
     g.hits++;
     h.stun = 4;
     h.v = [0, 0];
@@ -628,14 +645,16 @@ export function update(g: G, dt: number, io: IO) {
                 g.valg++;
                 io.sfx.ready();
                 const pl = PLACES[p.place];
-                if (once(g, 'beat-mote'))
+                if (once(g, 'beat-mote')) {
+                    const t0 = Date.now();
                     io.beat(
                         'mote',
                         'Hold møte i låven',
                         `${pl.need} fra ${pl.name} er med på rullen. Rull inn på tunet og hold møte - da starter de sin egen forening.`,
                         () => pl.tun,
-                        () => g.places[p.place].meeting > 0.2
+                        () => g.places[p.place].meeting > 0.2 || Date.now() - t0 > 6000
                     );
+                }
                 else
                     io.pin(`klar-${p.place}`, 'Klar for møte', () => pl.tun, {
                         seconds: 5,
@@ -733,7 +752,31 @@ export function update(g: G, dt: number, io: IO) {
                     });
                 else addNames(g, take);
             }
-        } else f.slipClock = 0;
+        } else {
+            f.slipClock = 0;
+            // Langt unna: en tynn elv av navnelapper over kartet, hele tiden. Nær
+            // foreningen blir elva en flom.
+            f.farClock += dt;
+            const every = 0.45;
+            if (f.farClock >= every && f.pile >= 1) {
+                f.farClock -= every;
+                const take = Math.min(f.pile, Math.max(1, Math.round(f.pile * FAR_RATE * every)));
+                f.pile -= take;
+                f.signed += take;
+                const from = PLACES[i].tun;
+                const d = dist(from, R.p);
+                if (g.slips.length < MAX_SLIPS)
+                    g.slips.push({
+                        from: [from[0], from[1]],
+                        t: 0,
+                        dur: Math.min(2.6, Math.max(0.8, d / 14)),
+                        names: take,
+                        arc: 2 + Math.min(6, d * 0.12),
+                        place: i,
+                    });
+                else addNames(g, take);
+            }
+        }
     });
     g.combo = Math.max(1, harvestingNow);
     g.comboBest = Math.max(g.comboBest, g.combo);
@@ -762,6 +805,7 @@ export function update(g: G, dt: number, io: IO) {
     if (lvl > g.level) {
         g.level = lvl;
         io.sfx.grow(lvl);
+        io.float(`${GROW_NAMES[lvl]}!`, R.p[0], R.p[1], '#b3261e', true);
     }
 
     // --- de med stemmerett ---
@@ -775,13 +819,16 @@ export function update(g: G, dt: number, io: IO) {
         h.goal = [...PLACES[Math.floor(g.rand() * PLACES.length)].tun];
         g.valg++;
         io.sfx.hunter();
-        if (once(g, 'beat-hatt'))
+        if (once(g, 'beat-hatt')) {
+            const t0 = Date.now();
             io.beat(
                 'hatt',
                 'Høy svart hatt = stemmerett',
                 'Embetsmenn og gårdeiere kunne stemme. De ville ikke ha forandring, og river navn av petisjonen. Sving unna!',
-                () => h.p
+                () => h.p,
+                () => Date.now() - t0 > 4500
             );
+        }
         else
             io.pin(`jeger-${g.nextHunter}`, 'Embetsmann rir ut', () => h.p, {
                 seconds: 3,
@@ -853,20 +900,7 @@ export function update(g: G, dt: number, io: IO) {
         }
     }
 
-    // --- papirbiter som fyker ---
-    for (let k = g.scraps.length - 1; k >= 0; k--) {
-        const s = g.scraps[k];
-        s.life -= dt;
-        s.v[1] -= 9 * dt;
-        s.p[0] += s.v[0] * dt;
-        s.p[1] = Math.max(0.02, s.p[1] + s.v[1] * dt);
-        s.p[2] += s.v[2] * dt;
-        if (s.p[1] <= 0.02) {
-            s.v[0] *= 0.8;
-            s.v[2] *= 0.8;
-        }
-        if (s.life <= 0) g.scraps.splice(k, 1);
-    }
+    // (Papirbitene flyttes i stepFx, som går hvert bilde - også etter runden.)
 
     // --- Slottet åpner ---
     if (!g.open && R.names >= GOAL) {
@@ -927,6 +961,44 @@ function addNames(g: G, n: number) {
 /** Enkle effekter som går også utenfor spill (meny, slutt-skjerm). */
 export function stepFx(g: G, dt: number) {
     g.shake = Math.max(0, g.shake - dt * 2);
+    for (let k = g.scraps.length - 1; k >= 0; k--) {
+        const s = g.scraps[k];
+        s.life -= dt;
+        s.v[1] -= 9 * dt;
+        s.p[0] += s.v[0] * dt;
+        s.p[1] = Math.max(0.02, s.p[1] + s.v[1] * dt);
+        s.p[2] += s.v[2] * dt;
+        if (s.life <= 0) g.scraps.splice(k, 1);
+    }
+    if (!g.crushing) return;
+    // Etter kongens nei: embetsmennene rir ut, og foreningene slukner én etter én.
+    g.crushClock += dt;
+    for (const h of g.hunters) {
+        if (h.kind !== 'embetsmann') continue;
+        if (!h.active) {
+            h.active = true;
+            h.born = 0;
+            h.p = [...HUNTER_HOME];
+        }
+        h.born = Math.min(1, h.born + dt);
+        const target = g.places.findIndex((p) => p.forening);
+        const goal = target >= 0 ? PLACES[target].tun : HUNTER_HOME;
+        const dx = goal[0] - h.p[0];
+        const dz = goal[1] - h.p[1];
+        const d = Math.hypot(dx, dz) || 1;
+        h.v = [(dx / d) * 9, (dz / d) * 9];
+        h.p[0] += h.v[0] * dt;
+        h.p[1] += h.v[1] * dt;
+        h.chasing = true;
+    }
+    if (g.crushClock > 0.22) {
+        g.crushClock = 0;
+        const i = g.places.findIndex((p) => p.forening);
+        if (i >= 0) {
+            g.places[i].forening = null;
+            for (const p of g.people) if (p.place === i && p.state === 'medlem') p.state = 'står';
+        }
+    }
 }
 
 /** Poeng: navnene på rullen, pluss foreninger, elver fra flere foreninger og seier. */
@@ -936,7 +1008,7 @@ export function liveScore(g: G) {
 
 export function finalScore(g: G, won: boolean) {
     const left = Math.max(0, RUN_SECONDS - g.t);
-    return Math.floor(liveScore(g) + (won ? 2000 + left * 25 : 0));
+    return Math.floor(liveScore(g) + (won ? 2000 + left * 60 : 0));
 }
 
 export { dist, SLOTTET, PLACES };

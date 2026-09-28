@@ -137,6 +137,7 @@ const GEO = {
     ]),
     shadow: new THREE.CircleGeometry(1, 16).rotateX(-Math.PI / 2),
     ring: new THREE.RingGeometry(0.965, 1, 48).rotateX(-Math.PI / 2),
+    dangerRing: new THREE.RingGeometry(0.72, 1, 32).rotateX(-Math.PI / 2),
     torus: new THREE.TorusGeometry(1, 0.08, 6, 36).rotateX(Math.PI / 2),
     pole: cyl(0.05, 0.06, 3, 5),
     flag: box(1.0, 0.62, 0.04),
@@ -510,6 +511,13 @@ const SHADOW_MAT = new THREE.MeshBasicMaterial({
     depthWrite: false,
 });
 
+const DANGER_MAT = new THREE.MeshBasicMaterial({
+    color: RED,
+    transparent: true,
+    opacity: 0.85,
+    depthWrite: false,
+});
+
 export function People({ gRef }: { gRef: GRef }) {
     const g0 = gRef.current;
     const nP = g0.people.length;
@@ -525,13 +533,14 @@ export function People({ gRef }: { gRef: GRef }) {
     const papers = useRef<THREE.InstancedMesh>(null);
     const shadows = useRef<THREE.InstancedMesh>(null);
     const alarm = useRef<THREE.InstancedMesh>(null);
+    const danger = useRef<THREE.InstancedMesh>(null);
     useFrame((st) => {
         const g = gRef.current;
         const t = st.clock.elapsedTime;
         const R = g.roll;
-        const refs = [people, peopleL, sash, bonde, bondeL, emb, embL, papers, shadows, alarm];
+        const refs = [people, peopleL, sash, bonde, bondeL, emb, embL, papers, shadows, alarm, danger];
         if (refs.some((r) => !r.current)) return;
-        const [pe, pl, sa, bo, bl, em, el, pa, sh, al] = refs.map((r) => r.current!);
+        const [pe, pl, sa, bo, bl, em, el, pa, sh, al, dg] = refs.map((r) => r.current!);
         let si = 0;
         g.people.forEach((p, i) => {
             if (p.state === 'borte') {
@@ -565,6 +574,7 @@ export function People({ gRef }: { gRef: GRef }) {
                 hide(ml, idx);
                 hide(al, hi);
                 hide(pa, hi);
+                hide(dg, hi);
                 return;
             }
             const sp = Math.hypot(h.v[0], h.v[1]);
@@ -576,8 +586,14 @@ export function People({ gRef }: { gRef: GRef }) {
             put(ml, idx, h.p[0], bob, h.p[1], face, s, lean);
             put(sh, si++, h.p[0], 0.02, h.p[1], 0, 0.42 * s);
             // Et rødt utropstegn over den som jager deg.
-            if (h.chasing && h.stun <= 0) put(al, hi, h.p[0], 2.05 * s + Math.sin(t * 10) * 0.06, h.p[1], 0, 1);
-            else hide(al, hi);
+            if (h.chasing && h.stun <= 0) {
+                put(al, hi, h.p[0], 2.05 * s + Math.sin(t * 10) * 0.06, h.p[1], 0, 1);
+                // Rød faresirkel på bakken rundt den som jager deg.
+                put(dg, hi, h.p[0], 0.04, h.p[1], 0, 1.1 + Math.sin(t * 8) * 0.12, 0, 0, 1);
+            } else {
+                hide(al, hi);
+                hide(dg, hi);
+            }
             // Står og river i papiret etter et treff.
             if (h.stun > 0)
                 put(pa, hi, h.p[0] + Math.sin(face) * 0.35, 0.9, h.p[1] + Math.cos(face) * 0.35, face + Math.sin(t * 20) * 0.3, 1.1, 0.5);
@@ -605,6 +621,7 @@ export function People({ gRef }: { gRef: GRef }) {
                 frustumCulled={false}
                 renderOrder={1}
             />
+            <instancedMesh ref={danger} args={[GEO.dangerRing, DANGER_MAT, nB + nE]} frustumCulled={false} />
             <instancedMesh
                 ref={alarm}
                 args={[new THREE.ConeGeometry(0.13, 0.42, 5).rotateX(Math.PI), hatchMat(RED), nB + nE]}
@@ -639,6 +656,9 @@ function useSlipMat() {
     return m;
 }
 
+// Rød kontur rundt rullen: spilleren skal aldri drukne i skravuren.
+const ROLL_LINE = new THREE.MeshBasicMaterial({ color: RED, side: THREE.BackSide });
+
 const rollLen = (r: number) => 0.7 + r * 1.25;
 
 export function Roll({ gRef }: { gRef: GRef }) {
@@ -668,7 +688,7 @@ export function Roll({ gRef }: { gRef: GRef }) {
         [mats]
     );
     const geo = useMemo(() => new THREE.CylinderGeometry(1, 1, 1, 28, 1), []);
-    const lineGeo = useMemo(() => new THREE.CylinderGeometry(1.06, 1.06, 1.02, 20, 1), []);
+    const lineGeo = useMemo(() => new THREE.CylinderGeometry(1.1, 1.1, 1.04, 20, 1), []);
     useFrame((st) => {
         const g = gRef.current;
         const R = g.roll;
@@ -713,7 +733,7 @@ export function Roll({ gRef }: { gRef: GRef }) {
         <group ref={yaw}>
             <group ref={spin}>
                 <mesh ref={body} geometry={geo} material={mats} rotation-z={Math.PI / 2} />
-                <mesh ref={line} geometry={lineGeo} material={OUTLINE} rotation-z={Math.PI / 2} />
+                <mesh ref={line} geometry={lineGeo} material={ROLL_LINE} rotation-z={Math.PI / 2} />
                 <instancedMesh ref={stuck} args={[GEO.person, VC(), MAX_STUCK]} frustumCulled={false} />
             </group>
         </group>

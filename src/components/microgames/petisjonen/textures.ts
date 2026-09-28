@@ -153,11 +153,12 @@ export function mapTexture(): THREE.CanvasTexture {
             x.rotate(R() * Math.PI);
             x.beginPath();
             x.rect(-w / 2, -h / 2, w, h);
-            x.strokeStyle = 'rgba(28,25,21,.7)';
-            x.lineWidth = 1.2;
+            // Åkrene er bakgrunn: svake streker, så folk og rullen står fram.
+            x.strokeStyle = 'rgba(28,25,21,.4)';
+            x.lineWidth = 1.1;
             x.stroke();
             x.clip();
-            x.strokeStyle = 'rgba(28,25,21,.28)';
+            x.strokeStyle = 'rgba(28,25,21,.15)';
             x.lineWidth = 1;
             const step = 4 + R() * 3;
             for (let t = -w; t < w; t += step) {
