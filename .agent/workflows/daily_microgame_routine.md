@@ -39,7 +39,9 @@ printf '#!/bin/sh\nexec /opt/pw-browsers/chromium --ignore-certificate-errors "$
 export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/chromium-wrap
 ```
 
-Sky-miljøets GPU er treg (rundt 3 bilder/s). Kjør derfor selvspillet med `--fart 8`, og la det gå i bakgrunnen - én runde kan ta flere minutter.
+Sky-miljøets GPU er treg (rundt 3 bilder/s). Kjør selvspillet med `--fart 4` (høyere blir kuttet til 4: robotene må få like mange grep per spillsekund som i simuleringen), og la det gå i bakgrunnen - én runde kan ta 15-20 minutter. Kjør det derfor bare når simuleringen (`npx tsx`) sier at spillet er klart - aldri for å «se om det virker».
+
+**En rød port skal gi en forbedring, ellers er den bortkastet.** Les rapporten før du endrer noe: «Årsak» sier hvorfor en runde ble tapt, og «Grep/spill-s» sier om målingen var gyldig (rundt 5). Står det «kunne ikke kjøre» eller ugyldig måling, er feilen i målingen - senk farten eller rett oppsettet, men rør ikke spillreglene. Er nettleser og simulering uenige, finn forskjellen i koden før du justerer balansen.
 
 Playwright MÅ virke - uten det kan du ikke kjøre portene. Feiler installasjonen to ganger: rapporter «kunne ikke installere Playwright» i Jobb 6 og avslutt uten PR.
 
@@ -193,7 +195,7 @@ Alt skal være tomt/rent.
 
 ### 4b. Port 1, 2 og 2b (maskinelle)
 ```bash
-node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 8 --cover
+node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 4 --cover
 node scripts/audit-microgames.mjs --ids <id> --url http://localhost:5173 --strict --frames 4
 node scripts/likhet-microgame.mjs --ids <id>
 ```

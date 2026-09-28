@@ -40,7 +40,11 @@ const opt = (name, def = null) => {
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = path.join(root, '.screenshots', 'playtest');
-const fart = Math.max(1, Math.min(8, Number(opt('fart', 4))));
+// Maks 4: løkka klemmer hvert steg til 0,05 s, så ×4 gir 0,2 spillsekunder per bilde -
+// nøyaktig ett robotgrep per bilde. Høyere fart gir robotene færre grep per spillsekund
+// enn i simuleringen, og målingen blir feil (28.09: vinneren tapte bare i nettleseren).
+const fart = Math.max(1, Math.min(4, Number(opt('fart', 4))));
+if (Number(opt('fart', 4)) > 4) console.log('--fart er begrenset til 4 (robotene må få like mange grep per spillsekund som i simuleringen)');
 const onlyBots = opt('bots') ? opt('bots').split(',') : null;
 // --cover: lagre et skjermbilde fra vinnerrunden som startkortets plakat
 // (public/images/microgames/<id>.webp). --cover-at N velger sekundet (standard 20).
@@ -288,14 +292,37 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
             window.__mgBotErr = null;
             clearInterval(window.__mgBotTimer);
             api.start(variant ?? undefined);
+            // Robotene tar ett grep per 0,2 s SPILLTID (BOT_EVERY i playtest.ts) - samme takt
+            // som i simuleringen med npx tsx. Tidligere tikket de hvert 200. ms i ekte tid, og
+            // med treg headless-GPU og ?mgfart fikk de da halvparten så mange grep per
+            // spillsekund som i simuleringen: balanse som stemte der, feilet her (28.09).
+            // Spill uten `tid` i snapshot faller tilbake til ekte tid.
+            const st = (window.__mgBotStats = { ticks: 0, t0: null, t1: null });
+            let next = null;
+            let n = 0;
             if (bot)
                 window.__mgBotTimer = setInterval(() => {
                     try {
-                        if (api.snapshot().fase === 'spiller') api.bots[bot].tick();
+                        const snap = api.snapshot();
+                        if (snap.fase !== 'spiller') return;
+                        let go;
+                        if (typeof snap.tid === 'number') {
+                            if (st.t0 === null) st.t0 = snap.tid;
+                            st.t1 = snap.tid;
+                            // Neste grep er planlagt på 0,2 s-rutenettet, så et bilde som flytter
+                            // spillet litt under 0,2 s ikke koster et helt ekstra bilde (snitt 5/s).
+                            if (next === null) next = snap.tid;
+                            go = snap.tid >= next - 1e-6;
+                            if (go) next = Math.max(next + 0.2, snap.tid - 0.1);
+                        } else go = ++n % 8 === 0;
+                        if (go) {
+                            st.ticks++;
+                            api.bots[bot].tick();
+                        }
                     } catch (e) {
                         window.__mgBotErr = String(e && e.stack ? e.stack : e);
                     }
-                }, 200);
+                }, 25);
         },
         { id, bot, variant }
     );
@@ -397,10 +424,13 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
         } else lastSample = Date.now();
         await page.waitForTimeout(400);
     }
-    const botErr = await page.evaluate(() => {
+    const { botErr, botStats } = await page.evaluate(() => {
         clearInterval(window.__mgBotTimer);
-        return window.__mgBotErr;
+        return { botErr: window.__mgBotErr, botStats: window.__mgBotStats };
     });
+    // Grep per spillsekund. Målet er 5 (ett per 0,2 s). Blir det færre, går spillet fortere
+    // per bilde enn robotene rekker å svare - da er runden ikke en gyldig måling.
+    const takt = bot && botStats?.t0 !== null && botStats.t1 - botStats.t0 > 5 ? botStats.ticks / (botStats.t1 - botStats.t0) : null;
     const secs = Math.round((Date.now() - t0) / 1000);
     // Spilltempo: spill-sekunder per ekte sekund. Med ?mgfart går spillet fortere enn
     // lesetiden (som alltid er ekte tid), så hendelser - og meldinger - kommer tettere
@@ -421,7 +451,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
         const stage = await page.$('[data-mg-stage]');
         if (stage) writeFileSync(path.join(shotsDir, `${bot ?? 'passiv'}-slutt.png`), await stage.screenshot());
     }
-    return { lessons, feel: feelStats(feel), coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
+    return { lessons, takt, arsak: snap?.årsak ?? null, feel: feelStats(feel), coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
 }
 
 // ---------------------------------------------------------------------------
@@ -566,7 +596,17 @@ async function playtestGame(browser, id) {
                 if (r.fase === 'vunnet') won = true;
                 if (r.fase === 'tidsavbrudd') rep.notes.push(`«${b.navn}» nådde ikke slutten innen tidstaket (${r.secs} s)`);
             }
-            if (b.forventer === 'vinner' && !won) rep.findings.push(`«${b.navn}» skal vinne, men vant ingen av ${tries} runder`);
+            const mine = rep.rounds.filter((r) => r.bot === b.navn);
+            const lav = mine.find((r) => r.takt !== null && r.takt < 4);
+            if (lav)
+                rep.notes.push(`«${b.navn}» fikk bare ${lav.takt.toFixed(1)} grep per spillsekund (mål 5) - spillet går fortere per bilde enn roboten rekker å svare`);
+            if (b.forventer === 'vinner' && !won) {
+                const why = mine.map((r) => r.arsak).filter(Boolean);
+                const msg = `«${b.navn}» skal vinne, men vant ingen av ${tries} runder${why.length ? ` (tapte på: ${[...new Set(why)].join('; ')})` : ''}`;
+                // Ugyldig måling er ikke en spillfeil: ikke send agenten på jakt etter den.
+                if (lav) rep.infra = `${msg} - men målingen er ugyldig (${lav.takt.toFixed(1)} grep per spillsekund). Kjør med lavere --fart, ikke endre spillet`;
+                else rep.findings.push(msg + ' - sammenlign med simuleringen (samme dt og BOT_EVERY som i playtest.ts)');
+            }
             if (b.forventer === 'taper' && won)
                 rep.findings.push(
                     b.tilfeldig
@@ -725,7 +765,7 @@ for (const id of ids) {
     console.log(`▶ ${id}`);
     const r = await playtestGame(browser, id);
     for (const x of r.rounds)
-        console.log(`   ${x.bot.padEnd(14)} ${x.fase.padEnd(11)} ${String(x.poeng).padStart(7)} p  framdrift ${(x.framdrift * 100).toFixed(0)} %  ${x.secs} s`);
+        console.log(`   ${x.bot.padEnd(14)} ${x.fase.padEnd(11)} ${String(x.poeng).padStart(7)} p  framdrift ${(x.framdrift * 100).toFixed(0)} %  ${x.secs} s${x.takt ? `  ${x.takt.toFixed(1)} grep/spill-s` : ''}${x.arsak ? `  (${x.arsak})` : ''}`);
     for (const n of r.notes) console.log(`   · ${n}`);
     for (const f of r.findings) console.log(`   ✗ ${f}`);
     if (r.infra) console.log(`   ⚠ infrastruktur: ${r.infra}`);
@@ -740,9 +780,9 @@ const md = ['## Selvspill-port', ''];
 for (const r of reports) {
     const ok = !r.findings.length && !r.infra;
     md.push(`### ${ok ? '✅' : r.infra ? '⚠️' : '❌'} \`${r.id}\``, '');
-    md.push('| Robot | Forventer | Resultat | Poeng | Framdrift | Tid |', '|---|---|---|---:|---:|---:|');
+    md.push('| Robot | Forventer | Resultat | Poeng | Framdrift | Tid | Grep/spill-s | Årsak |', '|---|---|---|---:|---:|---:|---:|---|');
     for (const x of r.rounds)
-        md.push(`| ${x.bot}${x.variant ? ` (${x.variant})` : ''}${x.tilfeldig ? ' 🎲' : ''} | ${x.forventer ?? 'taper'} | ${x.fase} | ${x.poeng} | ${(x.framdrift * 100).toFixed(0)} % | ${x.secs} s |`);
+        md.push(`| ${x.bot}${x.variant ? ` (${x.variant})` : ''}${x.tilfeldig ? ' 🎲' : ''} | ${x.forventer ?? 'taper'} | ${x.fase} | ${x.poeng} | ${(x.framdrift * 100).toFixed(0)} % | ${x.secs} s | ${x.takt ? x.takt.toFixed(1) : '-'} | ${x.arsak ?? ''} |`);
     md.push('');
     for (const f of r.findings) md.push(`- ❌ ${f}`);
     if (r.infra) md.push(`- ⚠️ Harnessen kunne ikke kjøre: ${r.infra}`);

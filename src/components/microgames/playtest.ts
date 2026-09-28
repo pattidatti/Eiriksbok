@@ -40,6 +40,12 @@ export interface PlaytestSnapshot {
      * i siste tredjedel av runden enn i første - at spillet eskalerer.
      */
     press?: number;
+    /**
+     * Når runden er tapt: kort årsak i klartekst («gummitanken avslørt dag 12», «flommen tok
+     * følget»). Havner i rapporten, så et tap sier HVA som gikk galt - ikke bare at det gikk
+     * galt. Uten den må agenten gjette, og gjetting koster runder.
+     */
+    årsak?: string;
 }
 
 export interface PlaytestBot {
@@ -72,6 +78,15 @@ export interface PlaytestApi {
     /** Minst én 'vinner' og én 'taper'. «Passiv» (ingen input) testes alltid i tillegg. */
     bots: Record<string, PlaytestBot>;
 }
+
+/**
+ * Tidssteget i nettleseren: useArcadeLoop klemmer hvert steg til 0,05 s, og ?mgfart kjører
+ * flere slike steg per bilde. Simuleringen med npx tsx SKAL bruke samme steg, ellers måler
+ * den et annet spill enn det eleven får.
+ */
+export const PLAYTEST_DT = 0.05;
+/** Robotene tar ett grep per BOT_EVERY sekunder spilltid - i nettleseren og i simuleringen. */
+export const BOT_EVERY = 0.2;
 
 type PlaytestWindow = Window & { __mgPlaytest?: Record<string, PlaytestApi> };
 

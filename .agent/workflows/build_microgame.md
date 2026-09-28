@@ -218,8 +218,25 @@ pent. Det første nattspillet som ble avvist, brukte tre runder på utseende; pr
    `tilfeldig`.
 4. Balanser i den raske simuleringen: kjør robotene mot `game.ts` direkte med `npx tsx`, hundrevis
    av runder, uten nettleser. Vinneren vinner, middels havner mellom, taper og tilfeldig taper,
-   minst 6 valg per minutt, og presset stiger.
-5. Kjør selvspillet én gang. Radene for spillfølelse skal være grønne.
+   minst 6 valg per minutt, og presset stiger. **Simuleringen skal kjøre spillet nøyaktig som
+   nettleseren gjør**, ellers balanserer du et annet spill enn det eleven får:
+   ```ts
+   import { PLAYTEST_DT, BOT_EVERY } from '../src/components/microgames/playtest';
+   // ett steg = PLAYTEST_DT (0,05 s, som løkka i nettleseren); ett robotgrep per BOT_EVERY (0,2 s)
+   for (let t = 0, next = 0; g.mode === 'play'; t += PLAYTEST_DT) {
+       if (t >= next) { bot(g); next += BOT_EVERY; }
+       update(g, PLAYTEST_DT, input);
+   }
+   ```
+5. Kjør selvspillet én gang. Radene for spillfølelse skal være grønne, og robotene skal gi samme
+   utfall som i simuleringen.
+
+**Når nettleseren og simuleringen er uenige, er det målingen som er feil - ikke balansen.** Se
+kolonnen «Grep/spill-s» i rapporten (skal være rundt 5). Er den lav, blir runden meldt som ugyldig
+(«kunne ikke kjøre»), og du skal senke `--fart`, ikke endre spillet. Er den riktig, men utfallet
+likevel ulikt: finn forskjellen i koden (tidssteg, input-vei, tilfeldighet), ikke skru på
+spillreglene til tallene passer. 28.09 ble en hel runde brukt på å endre en spillregel for å
+rette en målefeil.
 
 Er de ikke grønne etter to forsøk: gå tilbake til konseptturneringen og ta nest beste konsept. Ikke
 pynt en løkke som ikke virker.
@@ -386,6 +403,7 @@ usePlaytest(GAME_ID, () => ({
         poeng, framdrift: /* 0-1 mot målet */, tid: /* spilte sekunder */,
         valg: /* beslutningspunkter så langt: +1 for hver ny trussel, tilbud, kurs å velge */,
         press: /* 0-1: hvor hardt spillet presser nå */,
+        årsak: /* ved tap: hva som gikk galt, i klartekst («tanken avslørt dag 12») */,
     }),
     start: (variant) => begin(variant),        // hopp rett inn i en runde fra hvilken som helst fase
     bots: {
@@ -414,6 +432,10 @@ Regler for robotene:
   (ny trussel, nytt tilbud, ny kurs). `press` er 0-1 og skal stige gjennom runden. Selvspillet krever
   minst 6 valg per spilt minutt, og at presset i siste tredjedel ligger minst 0,15 over første.
   Tall som er pyntet for å bestå porten (valg som ikke er valg), er juks - vurdereren ser det.
+- **`årsak` ved tap.** Rapporten viser hvorfor hver runde ble tapt. Et rødt «vinneren tapte» uten
+  årsak sender deg på gjetting; med årsak ser du feilen med en gang.
+- **Robotene tikker i spilltid.** Selvspillet gir ett grep per 0,2 spillsekunder (`BOT_EVERY`), slik
+  som simuleringen. Det krever `tid` i snapshot, og `--fart` er begrenset til 4.
 - **Passiv spiller testes alltid** (ingen input). Den skal tape.
 - `snapshot` og `tick` leser refs, ikke state (de kalles utenfor React).
 - Alt er `import.meta.env.DEV`-gatet i `usePlaytest`; elevene får aldri robotene.
