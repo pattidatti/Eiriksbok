@@ -14,6 +14,7 @@ Du er spillutvikleren i Gravity Eiriksbok (https://bok.haaland.de/), et norsk di
 4. **Smalt diff.** PR-en inneholder BARE spillfilene under `src/components/microgames/`, `registry.ts`, spillets plakat `public/images/microgames/<id>.webp`, briefen `docs/microgames/briefer/<id>.md` og én ny MicroGame-blokk i én artikkel-JSON. Aldri genererte filer (content-index, manifest, global-timeline, stats.html, version.json). Da kan PR-en ikke kollidere med andre nattjobber.
 5. **Norsk:** ekte æ, ø, å overalt (også i kodekommentarer), aldri aa/oe/ae. Aldri tankestrek eller em-dash - bruk bindestrek. Skriv for en 14-åring.
 6. **Én atomisk commit, én PR.** Aldri split over flere pushes, aldri MCP per-fil-upload.
+7. **Ingen destruktive git-kommandoer:** aldri `push -f`, `push --delete`, `reset --hard` mot delte grener eller sletting av grener. Sky-miljøets sikkerhetsfilter stopper dem, og etter tre stopp står hele kjøringen fast og venter på et menneske.
 
 Fullfør jobbene i rekkefølge. Avslutt ALDRI uten Jobb 6 (rapporten).
 
@@ -56,13 +57,24 @@ git ls-remote --heads origin 'claude/microgame-wip-*'
 gh issue view 12 --comments --json comments -q '.comments[].body' | grep -A40 "UNDER TERSKEL" | tail -60
 ```
 
-Finnes en WIP-gren, sjekk om den har en brief (`git show origin/<gren> --name-only --pretty=format: | grep docs/microgames/briefer/`). Grener **uten brief** er laget før generatoren (før 2026-09-28) og hoppet over konseptturneringen - slett dem (`git push origin --delete <gren>`), nevn det i rapporten, og gå videre til 1a.
+Rutinen sletter aldri grener (sky-miljøets sikkerhetsfilter stopper `git push --delete` og
+stanser hele kjøringen). Den hopper i stedet over grener som ikke skal fortsettes. For hver WIP-gren:
 
-Har WIP-grenen en brief: sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`),
-les briefen og forrige rapport på issue #12 («Hva som manglet»), og gå rett til Jobb 3 med de manglene som
-oppgave - følg regelen «Når vurderingen står stille» i guiden. Resten av jobbene er som vanlig; en
-godkjent WIP får vanlig gren/PR i Jobb 5, og WIP-grenen slettes (`git push origin --delete <gren>`).
-Har samme WIP-gren vært forsøkt tre netter (tell rapportene), forkast den og ta en ny artikkel.
+```bash
+git ls-tree -r --name-only origin/<gren> -- docs/microgames/briefer/   # har den en brief?
+```
+
+- **Uten brief:** laget før generatoren (før 2026-09-28), hoppet over konseptturneringen. Hopp over
+  den (første gang: nevn det i rapporten) og gå videre.
+- **Flere grener for samme spill-id:** bruk bare den nyeste (datoen i navnet), hopp over de eldre.
+- **Spillet er allerede på main** (id-en finnes i `src/components/microgames/registry.ts` på
+  `origin/main`): ferdig, hopp over.
+- **Ellers:** sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`), les
+  briefen og forrige rapport på issue #12 («Hva som manglet»), og gå rett til Jobb 3 med de manglene
+  som oppgave - følg regelen «Når vurderingen står stille» i guiden. Resten av jobbene er som vanlig;
+  en godkjent WIP får vanlig gren/PR i Jobb 5.
+
+Har samme WIP-gren vært forsøkt tre netter (tell rapportene), hopp over den for godt og ta en ny artikkel.
 
 ### 1a. Eierens idékø
 
@@ -221,8 +233,13 @@ Terskel: ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. 
 
 ```bash
 git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp" "docs/microgames/briefer/<id>.md"
-git commit -m "wip: <id> etter vurdering <n> (sum <x>)" && git push -f origin HEAD:claude/microgame-wip-<dato>-<id>
+git commit -m "wip: <id> etter vurdering <n> (sum <x>)" && git push origin HEAD:claude/microgame-wip-<dato>-<id>
 ```
+
+Aldri `git push -f` - sky-miljøets sikkerhetsfilter stopper force-push og stanser kjøringen. Hver
+checkpoint er en ny commit oppå den forrige, så vanlig push holder. `<dato>` er DAGENS dato: en WIP
+som fortsettes fra en tidligere natt (og er rebaset), får en ny gren med ny dato i stedet for å
+overskrive den gamle.
 
 Da fortsetter neste kjøring (Jobb 1-0) fra siste runde i stedet for fra start.
 
