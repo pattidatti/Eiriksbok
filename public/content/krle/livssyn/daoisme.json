@@ -97,7 +97,7 @@
         { "type": "component", "name": "MicroGame", "props": { "gameId": "vannets-vei-3d" } },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/livssyn/daoisme-02.webp",
             "alt": "Gammel kinesisk tusjtegning av en elv som svinger mellom bratte fjell",
             "caption": "Kinesiske malere brukte ofte det samme bildet som Daodejing: vannet som finner veien mellom fjellene."
         },
@@ -142,7 +142,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/livssyn/daoisme-03.webp",
             "alt": "Et rødt daoistisk tempel med svungent tak høyt oppe i et kinesisk fjellandskap",
             "caption": "Daoismen ble også en religion med templer, prester og egne ritualer, ofte plassert langt oppe i fjellet."
         },

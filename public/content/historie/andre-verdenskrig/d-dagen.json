@@ -6,7 +6,7 @@
   "year": "1944",
   "category": "Andre verdenskrig",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/andre-verdenskrig/d-dagen-hero.webp",
   "details": [
     "D-dagen, 6. juni 1944, gikk 156 000 allierte soldater i land på fem strender i Normandie.",
     "Invasjonen måtte skje ved fullmåne, lavvann og rolig vær - og ble utsatt ett døgn på grunn av storm.",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/d-dagen-01.webp",
       "alt": "Meteorolog studerer værkart ved lampelys i 1944",
       "caption": "Værmeldingen var like viktig som våpnene. Et feil varsel kunne ødelegge hele invasjonen."
     },
@@ -123,7 +123,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/d-dagen-02.webp",
       "alt": "Soldater vasser i land fra landgangsbåt mot strand med hindringer",
       "caption": "Mange soldater måtte vasse de siste meterne i land, mens tyskerne skjøt fra bunkerne over stranden."
     },
@@ -157,7 +157,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/d-dagen-03.webp",
       "alt": "Soldater og franske sivile jubler i gate med flagg",
       "caption": "Da Paris ble frigjort 25. august 1944, var det fest i gatene. Men veien dit hadde kostet mange liv."
     },
