@@ -612,7 +612,7 @@ export function update(g: Game, dt: number) {
             // Granatene den ikke rakk å skyte, forsvinner med den.
             g.shells = g.shells.filter((s) => s.from !== bk.id || s.t < 0.4);
             // Tatt tidlig, før skytterne har skutt seg inn, er verdt mest.
-            const pts = 20 + Math.round(40 * (1 - bk.zero));
+            const pts = 10 + Math.round(20 * (1 - bk.zero));
             g.score += pts;
             g.events.push({ e: 'bunker', x: bk.x, y: bk.y, dead: true });
             g.events.push({ e: 'points', n: pts, x: bk.x, y: bk.y - 40 });

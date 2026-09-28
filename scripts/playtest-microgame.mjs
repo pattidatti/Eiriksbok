@@ -719,14 +719,34 @@ async function playtestGame(browser, id) {
             if (f.pressLast < f.pressFirst + FEEL.pressLift)
                 feelFind(`presset stiger ikke (${f.pressFirst.toFixed(2)} -> ${f.pressLast.toFixed(2)}, krever +${FEEL.pressLift}) - spillet må eskalere mot slutten`);
         }
-        const mid = rep.rounds.filter((r) => r.forventer === 'middels').map((r) => r.poeng);
-        if (mid.length) {
+        // Trappen sammenligner enkeltrunder, og i et spill med mye tilfeldighet er én runde et
+        // myntkast (28.09: ~20 % falske røde for inn-mot-stranda i simuleringen). Er den på
+        // kanten, spilles én runde til for middels og vinner, og snittet for middels teller.
+        // En trapp som virkelig er ødelagt, feiler begge gangene.
+        const ladder = () => {
+            const mid = rep.rounds.filter((r) => r.forventer === 'middels').map((r) => r.poeng);
+            if (!mid.length) return null;
             const bestV = Math.max(0, ...rep.rounds.filter((r) => r.forventer === 'vinner').map((r) => r.poeng));
             const bestT = Math.max(0, ...rep.rounds.filter((r) => r.forventer === 'taper' || r.bot === 'passiv').map((r) => r.poeng));
-            const m = Math.max(...mid);
-            rep.notes.push(`ferdighetstrapp: taper ${bestT} < middels ${m} < vinner ${bestV}`);
-            if (!(m > bestT && m < bestV * 0.95))
-                feelFind(`ferdighetstrappen holder ikke (taper ${bestT}, middels ${m}, vinner ${bestV}) - den halvgode skal havne mellom, og god spilling skal gi merkbart mer`);
+            const m = Math.round(mid.reduce((a, b) => a + b, 0) / mid.length);
+            return { bestV, bestT, m, n: mid.length, ok: m > bestT && m < bestV * 0.95 };
+        };
+        let L = ladder();
+        if (L && !L.ok) {
+            rep.notes.push(`ferdighetstrappen var på kanten (taper ${L.bestT}, middels ${L.m}, vinner ${L.bestV}) - én runde til for middels og vinner`);
+            for (const want of ['middels', 'vinner']) {
+                const b = info.bots.find((x) => x.forventer === want);
+                if (!b) continue;
+                const r = await playRound(page, id, b.navn, b.variant, info.maks, null, null);
+                r.forventer = b.forventer;
+                rep.rounds.push(r);
+            }
+            L = ladder();
+        }
+        if (L) {
+            rep.notes.push(`ferdighetstrapp: taper ${L.bestT} < middels ${L.m}${L.n > 1 ? ` (snitt av ${L.n})` : ''} < vinner ${L.bestV}`);
+            if (!L.ok)
+                feelFind(`ferdighetstrappen holder ikke (taper ${L.bestT}, middels ${L.m}, vinner ${L.bestV}) - den halvgode skal havne mellom, og god spilling skal gi merkbart mer`);
         }
 
         // TEKST DER BLIKKET ER (eier 2026-09-26: tekst under spillet blir ikke lest)

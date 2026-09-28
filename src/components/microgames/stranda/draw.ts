@@ -37,12 +37,66 @@ export interface Transform {
     h: number;
 }
 
+const LANE_TOP = OBST_Y0 - 40;
+const LANE_H = OBST_Y1 - OBST_Y0 + 100;
+
+function drawLaneLayer(a: DrawAssets, g: Game) {
+    if (!a.laneLayer) {
+        a.laneLayer = document.createElement('canvas');
+        a.laneLayer.width = W;
+        a.laneLayer.height = LANE_H;
+    }
+    const ctx = a.laneLayer.getContext('2d')!;
+    ctx.clearRect(0, 0, W, LANE_H);
+    ctx.save();
+    ctx.translate(0, -LANE_TOP);
+    g.lanes.forEach((l, i) => {
+        if (!g.lanes.slice(0, i).some((o) => Math.abs(o - l) < 130))
+            label(ctx, 'SPOR', l, OBST_Y1 + 38, YELLOW, 18);
+        for (const s of [-1, 1]) {
+            const x = l + s * (LANE_W / 2 + 6);
+            crayonLine(
+                ctx,
+                [
+                    [x, OBST_Y1 + 18],
+                    [x, OBST_Y0 - 16],
+                ],
+                'rgba(241,194,50,.95)',
+                3.5,
+                i * 13 + (s > 0 ? 5 : 0),
+                [10, 8]
+            );
+            for (const fy of [OBST_Y0 - 14, OBST_Y1 + 14]) {
+                ctx.fillStyle = YELLOW;
+                ctx.beginPath();
+                ctx.moveTo(x, fy);
+                ctx.lineTo(x + 12 * s, fy - 4);
+                ctx.lineTo(x, fy - 9);
+                ctx.fill();
+                ctx.fillStyle = gray(20);
+                ctx.fillRect(x - 1, fy - 10, 2, 14);
+            }
+        }
+    });
+    ctx.restore();
+    a.laneCount = g.lanes.length;
+}
+
 export interface DrawAssets {
     land: HTMLCanvasElement;
     sea: HTMLCanvasElement;
     /** Vignett og filmkorn, tegnet én gang og lagt oppå hvert bilde med drawImage. */
     film: HTMLCanvasElement;
     smoke: HTMLCanvasElement;
+    laneLayer?: HTMLCanvasElement;
+    world?: HTMLCanvasElement;
+    worldKey?: string;
+    worldTop?: number;
+    worldGone?: number;
+    /** Ferdigtegnet båt (skrog, lasterom, soldater), én for din og én for de andre. */
+    boatMine?: HTMLCanvasElement;
+    boatOther?: HTMLCanvasElement;
+    laneCount?: number;
 }
 
 /**
@@ -61,6 +115,7 @@ export function makeAssets(): DrawAssets {
             ctx.fillStyle = pat;
             ctx.fillRect(0, 0, W, H);
         }
+        ctx.globalCompositeOperation = 'source-over';
     }
     const film = document.createElement('canvas');
     film.width = W / 2;
@@ -79,7 +134,15 @@ export function makeAssets(): DrawAssets {
     sm.addColorStop(1, 'rgba(40,38,34,0)');
     sctx.fillStyle = sm;
     sctx.fillRect(0, 0, 128, 128);
-    return { land, sea, film, smoke };
+    for (const c of [land, sea]) c.getContext('2d')!.drawImage(film, 0, 0, W, H);
+    return {
+        land,
+        sea,
+        film,
+        smoke,
+        boatMine: makeBoatSprite(true),
+        boatOther: makeBoatSprite(false),
+    };
 }
 
 export interface DrawState {
@@ -326,39 +389,18 @@ function label(
 // Ting i verden
 // ---------------------------------------------------------------------------
 
-function drawBoat(ctx: CanvasRenderingContext2D, b: Boat, T: number) {
-    ctx.save();
-    ctx.translate(b.x, b.y);
-    ctx.scale(1.25, 1.25);
-    const sinking = b.sunk > 0;
-    if (sinking) {
-        ctx.rotate(0.35 * Math.min(1, b.sunk));
-        ctx.globalAlpha = Math.max(0, 1 - b.sunk / 3);
-    }
-    // Kjølvann: en hvit V bak båten
-    if (!sinking && b.landed === 0) {
-        // Skumstripe bak båten: brede, bleknende flekker
-        for (let k = 0; k < 7; k++) {
-            const y = BOAT_L * 0.5 + k * 11;
-            const w = BOAT_W * (0.5 + k * 0.16);
-            ctx.fillStyle = `rgba(236,233,222,${0.5 - k * 0.065})`;
-            ctx.beginPath();
-            ctx.ellipse(Math.sin(T * 5 + k + b.id) * 2, y, w / 2, 5, 0, 0, Math.PI * 2);
-            ctx.fill();
-        }
-        // Baugbølge
-        ctx.strokeStyle = 'rgba(236,233,222,.7)';
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.moveTo(-BOAT_W / 2 - 4, -BOAT_L / 2 + 10);
-        ctx.quadraticCurveTo(0, -BOAT_L / 2 - 10, BOAT_W / 2 + 4, -BOAT_L / 2 + 10);
-        ctx.stroke();
-    }
+function makeBoatSprite(mine: boolean): HTMLCanvasElement {
+    const c = document.createElement('canvas');
+    c.width = BOAT_W + 16;
+    c.height = BOAT_L + 16;
+    const ctx = c.getContext('2d')!;
+    ctx.translate(BOAT_W / 2 + 4, BOAT_L / 2 + 4);
+    const b = { mine };
     // Skygge
     ctx.fillStyle = 'rgba(8,7,5,.45)';
     ctx.fillRect(-BOAT_W / 2 + 5, -BOAT_L / 2 + 6, BOAT_W, BOAT_L);
     // Skrog
-    ctx.fillStyle = gray(sinking ? 30 : 48);
+    ctx.fillStyle = gray(48);
     ctx.beginPath();
     ctx.roundRect(-BOAT_W / 2, -BOAT_L / 2, BOAT_W, BOAT_L, [4, 4, 9, 9]);
     ctx.fill();
@@ -375,6 +417,44 @@ function drawBoat(ctx: CanvasRenderingContext2D, b: Boat, T: number) {
             ctx.arc(-7 + col * 7, -BOAT_L / 2 + 13 + row * 7, 2.2, 0, Math.PI * 2);
             ctx.fill();
         }
+    return c;
+}
+
+function drawBoat(ctx: CanvasRenderingContext2D, b: Boat, T: number, a: DrawAssets) {
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.scale(1.25, 1.25);
+    const sinking = b.sunk > 0;
+    if (sinking) {
+        ctx.rotate(0.35 * Math.min(1, b.sunk));
+        ctx.globalAlpha = Math.max(0, 1 - b.sunk / 3);
+    }
+    // Kjølvann: en hvit V bak båten
+    if (!sinking && b.landed === 0) {
+        // Skumstripe bak båten: brede, bleknende flekker
+        for (let k = 0; k < 4; k++) {
+            const y = BOAT_L * 0.5 + k * 18;
+            const w = BOAT_W * (0.5 + k * 0.28);
+            ctx.fillStyle = `rgba(236,233,222,${0.5 - k * 0.11})`;
+            ctx.beginPath();
+            ctx.ellipse(Math.sin(T * 5 + k + b.id) * 2, y, w / 2, 5, 0, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        // Baugbølge
+        ctx.strokeStyle = 'rgba(236,233,222,.7)';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(-BOAT_W / 2 - 4, -BOAT_L / 2 + 10);
+        ctx.quadraticCurveTo(0, -BOAT_L / 2 - 10, BOAT_W / 2 + 4, -BOAT_L / 2 + 10);
+        ctx.stroke();
+    }
+    // Skrog, lasterom og soldater er ferdigtegnet (drawBoatSprite) - ett drawImage per båt.
+    const spr = b.mine ? a.boatMine : a.boatOther;
+    if (spr) {
+        if (sinking) ctx.filter = 'brightness(0.6)';
+        ctx.drawImage(spr, -BOAT_W / 2 - 4, -BOAT_L / 2 - 4);
+        ctx.filter = 'none';
+    }
     // Rampa foran: nede når båten har gått på grunn
     ctx.fillStyle = gray(150);
     if (b.landed > 0) ctx.fillRect(-BOAT_W / 2 + 2, -BOAT_L / 2 - 16, BOAT_W - 4, 18);
@@ -463,16 +543,35 @@ export function drawWorld(
     ctx.translate(tf.ox + (Math.random() - 0.5) * sh, tf.oy + (Math.random() - 0.5) * sh);
     ctx.scale(tf.s, tf.s);
 
-    ctx.drawImage(a.land, 0, 0);
     const wl = waterline(g);
-
-    // Hindre på tørr sand (tegnes før vannet, så vannkanten legger seg over)
-    for (const o of g.obstacles)
-        if (!o.gone && o.y < wl - 2) drawObstacle(ctx, o.x, o.y, o.kind, 1);
-
-    // Havet opp til vannkanten
+    // Land, hindrene på tørr sand og havet opp til vannkanten ligger i ett ferdig lag.
+    // Vannkanten flytter seg omtrent én piksel i sekundet, så laget tegnes bare om når
+    // den har flyttet seg eller et hinder er sprengt - ikke hvert bilde.
     const top = Math.floor(wl);
-    ctx.drawImage(a.sea, 0, top, W, H - top, 0, top, W, H - top);
+    const gone = g.obstacles.reduce((n, o) => n + (o.gone ? 1 : 0), 0);
+    if (a.world && a.worldGone === gone && a.worldTop !== undefined && top < a.worldTop) {
+        // Vannet har steget: tegn bare den nye havstripa.
+        const h = a.worldTop - top;
+        a.world.getContext('2d')!.drawImage(a.sea, 0, top, W, h, 0, top, W, h);
+        a.worldTop = top;
+    }
+    const key = `${gone}`;
+    if (a.worldKey !== key || !a.world || a.worldTop === undefined || top > a.worldTop) {
+        if (!a.world) {
+            a.world = document.createElement('canvas');
+            a.world.width = W;
+            a.world.height = H;
+        }
+        const w = a.world.getContext('2d')!;
+        w.drawImage(a.land, 0, 0);
+        for (const o of g.obstacles)
+            if (!o.gone && o.y < wl - 2) drawObstacle(w, o.x, o.y, o.kind, 1);
+        w.drawImage(a.sea, 0, top, W, H - top, 0, top, W, H - top);
+        a.worldKey = key;
+        a.worldTop = top;
+        a.worldGone = gone;
+    }
+    ctx.drawImage(a.world, 0, 0);
     // Hindre like under vannflaten: bare en krusning (den som ser godt etter, ser dem)
     for (const o of g.obstacles) {
         if (o.gone || o.y < wl - 2) continue;
@@ -497,34 +596,10 @@ export function drawWorld(
     ctx.stroke();
 
     // Sprengte spor: gule fettstiftlinjer og flagg gjennom hinderbeltet
-    g.lanes.forEach((l, i) => {
-        if (!g.lanes.slice(0, i).some((o) => Math.abs(o - l) < 130))
-            label(ctx, 'SPOR', l, OBST_Y1 + 38, YELLOW, 18);
-        for (const s of [-1, 1]) {
-            const x = l + s * (LANE_W / 2 + 6);
-            crayonLine(
-                ctx,
-                [
-                    [x, OBST_Y1 + 18],
-                    [x, OBST_Y0 - 16],
-                ],
-                'rgba(241,194,50,.95)',
-                3.5,
-                i * 13 + (s > 0 ? 5 : 0),
-                [10, 8]
-            );
-            for (const fy of [OBST_Y0 - 14, OBST_Y1 + 14]) {
-                ctx.fillStyle = YELLOW;
-                ctx.beginPath();
-                ctx.moveTo(x, fy);
-                ctx.lineTo(x + 12 * s, fy - 4);
-                ctx.lineTo(x, fy - 9);
-                ctx.fill();
-                ctx.fillStyle = gray(20);
-                ctx.fillRect(x - 1, fy - 10, 2, 14);
-            }
-        }
-    });
+    // Sporene tegnes til et eget lag bare når et nytt spor kommer til (fettstift med
+    // skjelving er for dyrt å regne ut hvert bilde på en Chromebook).
+    if (a.laneCount !== g.lanes.length || !a.laneLayer) drawLaneLayer(a, g);
+    ctx.drawImage(a.laneLayer!, 0, LANE_TOP);
 
     // Bunkerne på skrenten
     for (const b of g.bunkers) {
@@ -574,7 +649,11 @@ export function drawWorld(
             ctx.scale(1 / 1.35, 1 / 1.35);
             if (b.active) {
                 const pulse = 36 + Math.sin(T * 5 + b.id) * 3;
-                crayonCircle(ctx, 0, 0, pulse, 'rgba(215,55,43,.9)', 3.5, b.id * 31);
+                ctx.strokeStyle = 'rgba(215,55,43,.9)';
+                ctx.lineWidth = 3.5;
+                ctx.beginPath();
+                ctx.arc(0, 0, pulse, 0, Math.PI * 2);
+                ctx.stroke();
             }
             if (b.flash > 0) {
                 ctx.fillStyle = `rgba(255,250,230,${b.flash * 4})`;
@@ -602,7 +681,7 @@ export function drawWorld(
     }
 
     // Båtene
-    for (const b of g.boats) drawBoat(ctx, b, T);
+    for (const b of g.boats) drawBoat(ctx, b, T, a);
     // Din båt: gul ring
     if (g.me) crayonCircle(ctx, g.me.x, g.me.y, BOAT_L * 0.72, YELLOW, 4, 77);
 
@@ -721,8 +800,8 @@ export function drawWorld(
         } else if (f.kind === 'wreck') {
             // Brennende vrak: en røyksøyle som driver mot land
             const fade = Math.min(1, (f.life - f.t) / 3);
-            for (let k = 0; k < 5; k++) {
-                const q = (f.t * 0.5 + k * 0.2) % 1;
+            for (let k = 0; k < 3; k++) {
+                const q = (f.t * 0.5 + k * 0.33) % 1;
                 ctx.globalAlpha = 0.55 * (1 - q) * fade;
                 ctx.drawImage(
                     a.smoke,
@@ -832,7 +911,7 @@ export function drawWorld(
     }
 
     // Røyk som driver langs stranda fra brennende vrak og nedslag
-    for (let k = 0; k < 7; k++) {
+    for (let k = 0; k < 4; k++) {
         const x = ((k * 263 + T * (14 + k * 3)) % (W + 400)) - 200;
         const y = BEACH_TOP + 20 + ((k * 71) % 170);
         const rad = 70 + ((k * 37) % 60);
@@ -840,7 +919,7 @@ export function drawWorld(
     }
 
     // Vignett (kornet ligger allerede i land og hav)
-    ctx.drawImage(a.film, 0, 0, W, H);
+    // (Vignetten er bakt inn i land og hav.)
     ctx.restore();
 }
 
@@ -859,7 +938,7 @@ export function drawHud(
     ctx.fillStyle = '#0d0c0a';
     ctx.fillRect(0, 0, tf.w, 34 * u);
     ctx.fillStyle = 'rgba(231,224,205,.25)';
-    for (let x = 8; x < tf.w; x += 22 * u) ctx.fillRect(x, 3 * u, 10 * u, 5 * u);
+    for (let x = 8; x < tf.w; x += 44 * u) ctx.fillRect(x, 3 * u, 20 * u, 5 * u);
     ctx.font = `900 ${17 * u}px ${MONO}`;
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'left';

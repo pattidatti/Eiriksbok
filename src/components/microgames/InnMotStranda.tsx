@@ -433,7 +433,7 @@ export default function InnMotStranda({ onComplete }: MicroGameProps) {
                 handleEvents(g);
                 if (g.mode === 'lost') {
                     sfx.lose();
-                    text.banner('BROHODET FALT', '#9e2a20', 1.8);
+                    text.banner('BROHODET FALT', '#9e2a20', 1.2);
                     fx.current.end = 0;
                     setModeBoth('dying');
                 } else if (g.mode === 'won') {
@@ -474,11 +474,10 @@ export default function InnMotStranda({ onComplete }: MicroGameProps) {
         setModeBoth('play');
         window.setTimeout(() => {
             if (modeRef.current !== 'play') return;
-            text.banner('06:30 - LAVVANN', INK);
+            text.banner('06:30 - BOMBENE BOMMET', INK);
         }, 250);
         window.setTimeout(() => {
             if (modeRef.current !== 'play') return;
-            text.banner('BOMBENE BOMMET', '#9e2a20', 1.6);
             text.lesson('bomber', LESSONS.bomber, 1.2);
         }, 2300);
     };
