@@ -4121,6 +4121,23 @@
                 "vendepunkt"
               ],
               "createdDate": "2026-09-26T00:00:00Z"
+            },
+            {
+              "id": "d-dagen",
+              "title": "D-dagen: Invasjonen i Normandie",
+              "description": "Hvordan vær, tidevann og en stor bløff avgjorde invasjonen i Normandie 6. juni 1944.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "andre-verdenskrig",
+                "frankrike",
+                "normandie",
+                "usa",
+                "storbritannia",
+                "tyskland",
+                "vendepunkt"
+              ],
+              "createdDate": "2026-09-28T00:00:00Z"
             }
           ]
         },
