@@ -21,6 +21,13 @@
             "content": "I 911 var den frankiske kongen Karl den enfoldige (et kallenavn han kanskje fortjente) desperat. Vikinger herjet opp og ned elven Seinen og truet Paris stadig vekk. Høvdingen deres het Rollo, på norrønt Gange-Rolv. Sagaene forklarer kallenavnet med at han var så stor at han ikke kunne sitte på en hest, så han måtte gå (Krag, 2025).\n\nSamme år kom kongen og Rollo til enighet: Rollo og mennene hans fikk slå seg ned i området rundt utløpet av Seinen, mot at de forsvarte landet mot andre vikinger (Krag, 2025). Rollo ble også lovet en av kongens døtre, og han gikk med på å la seg døpe og bli kongens vasall (Encyclopaedia Britannica, 2026; Mark, 2018).\n\nEn kjent historie forteller at Rollo nektet å kysse kongens fot da han skulle sverge troskap. I stedet lot han en av mennene sine gjøre det, og mannen løftet foten så høyt at kongen veltet bakover. Historien er bare kjent fra den normanniske skriveren Dudo av Saint-Quentin, som skrev nesten hundre år senere på oppdrag fra Rollos etterkommere. Vi vet altså ikke om den virkelig skjedde (Mark, 2018)."
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "seinen-snur"
+            }
+        },
+        {
             "type": "text",
             "title": "Verdens raskeste integrering",
             "content": "Landet Rollo fikk ble hetende Normandie, oppkalt etter normannerne - nordmennene (Lima & Chabert, 2026). Det som skjedde videre er nesten utrolig. Etter noen generasjoner var det norrøne språket borte. Det smeltet gradvis inn i den lokale franske dialekten, og i dag er det først og fremst stedsnavn langs kysten som røper hvem som kom (Lima & Chabert, 2026). Vikingene ble kristne, og kirken sto sterkt i Normandie, med flere nye klostre (Lima & Chabert, 2026).\n\nMen de beholdt vikingenes krigerånd og eventyrlyst. De kombinerte vikingenes dristighet med frankernes hestekrigføring (kavaleri), og tok ivrig til seg ridderkulturen som hadde vokst fram i frankerriket. Resultatet ble en krigertype hele Europa kom til å frykte: den normanniske ridderen til hest (Encyclopaedia Britannica, u.å.)."
