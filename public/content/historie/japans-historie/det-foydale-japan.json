@@ -107,6 +107,13 @@
             "content": "Men de var redde for å miste kontrollen. Derfor stengte de landet for omverdenen. Nesten ingen fikk reise inn, og japanere fikk ikke reise ut. Denne politikken kalles sakoku, som betyr det lukkede landet. I over 200 år levde Japan nesten helt for seg selv. Landet var sjelden truet utenfra. To ganger på 1200-tallet prøvde [det mongolske riket](/historie/middelalderen/mongolske-riket) å invadere, men begge gangene blåste kraftige stormer vekk flåten deres. Japanerne kalte stormene kamikaze, som betyr guddommelig vind (Filseth & Henne, 2024)."
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "guddommelig-vind"
+            }
+        },
+        {
             "type": "header",
             "text": "Da de svarte skipene kom"
         },

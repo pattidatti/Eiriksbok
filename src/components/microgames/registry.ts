@@ -7,6 +7,7 @@ import type { MicroGameEntry } from './types';
 
 const GladiusDuel = lazy(() => import('./GladiusDuel'));
 const HavetKommer = lazy(() => import('./HavetKommer'));
+const GuddommeligVind3D = lazy(() => import('./GuddommeligVind3D'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
@@ -2362,6 +2363,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Nordatlantisk sjømaleri i vikingtidens farger: tjærebrunt klinkskrog, vadmålsseil i rødt og kremhvitt, messing og treskiver i HUD-en',
         loader: () => import('./KursForGronland3D'),
         Component: KursForGronland3D as never,
+    },
+    'guddommelig-vind': {
+        id: 'guddommelig-vind',
+        title: 'Guddommelig vind',
+        description:
+            'Hakata-bukta, sommeren 1281. Du er en ung samurai på steinmuren japanerne bygde etter det første mongolangrepet. Hele mongolflåten ligger i bukta, og mongolene reiser stiger mot muren. Sveip med musa over en stige, så vipper den bakover og sender alle som klatrer i sjøen. Sveip over en mongol som har nådd toppen, så hugger du ham - men mannen bak ham hopper over og i land. Hold inne for skjold når buene spennes. Når tyfonen kommer, vet bare vinden. Lyspæra: muren holdt flåten på sjøen, og derfor kunne stormen - kamikaze, den guddommelige vinden - knuse den.',
+        estimatedSeconds: 170,
+        sjanger: 'førsteperson-nærkamp-forsvar',
+        tone: 'alvorlig',
+        hook: 'Du står på muren i Hakata. Hold mongolene på sjøen til stormen kommer.',
+        cover: '/images/microgames/guddommelig-vind.webp',
+        kunst: 'Mongolinvasjonsrullen (Mōko Shūrai Ekotoba, 1293): tusjkontur og flate mineralfarger på papir, gullskyer rundt scenen',
+        loader: () => import('./GuddommeligVind3D'),
+        Component: GuddommeligVind3D as never,
     },
 };
 
