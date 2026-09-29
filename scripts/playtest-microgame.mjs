@@ -110,7 +110,7 @@ function staticChecks(id) {
     const e = registryEntry(id);
     if (!e) return [`finnes ikke i registry.ts`];
     if (!e.sjanger) f.push(`registry-oppføringen mangler \`sjanger\``);
-    if (!e.tone) f.push(`registry-oppføringen mangler \`tone\` ('lett' | 'alvorlig')`);
+    if (!e.tone) f.push(`registry-oppføringen mangler \`tone\` ('lett' | 'alvorlig' | 'grusom')`);
     if (!/hook:\s*'/.test(e.block)) f.push('registry-oppføringen mangler `hook` - én setning i du-form til startkortet');
     const cover = e.block.match(/cover:\s*'([^']+)'/)?.[1];
     if (!cover) f.push('registry-oppføringen mangler `cover` - kjør selvspillet med --cover');

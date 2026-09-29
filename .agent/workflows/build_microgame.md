@@ -100,6 +100,7 @@ Avgjør tonen FØR du tenker mekanikk. Skriv den i registry-oppføringen (`tone`
 |---|---|---|
 | `lett` | Hverdagsliv, håndverk, teknikk, natur, handel, oppdagelser, de fleste tidlige perioder | Humor, overdrivelse og slapstick er lov (MÅKA-stemning) |
 | `alvorlig` | Krig, sykdom, undertrykkelse, katastrofer der mennesker døde, men der det å spille en rolle gir innsikt (en konvoi, en evakuering, et oppgjør) | Ingen vitser, ingen morsomme dødsmeldinger, ingen poengregn over lik. Spenning og ansvar i stedet. Tap formuleres saklig og historisk |
+| `grusom` | **Bare når eieren bestiller det.** Slag og nærkamp langt tilbake i tid: antikken, vikingtid, middelalder, samuraitid. Aldri 1900-tallet eller senere | Blod, død og humor er lov, i ånden til *Grusomme griske grekere* (Horrible Histories) og Totally Accurate Battle Simulator. Humoren retter seg mot det absurde: kropper som flyr, krigere med storhetsvanvidd, elendig utstyr. Aldri mot ofrene. Blodet er stilisert (sprut, flekker, farge), ikke realistisk: ingen lemlestelse i nærbilde, ingen lidelse, ingen sivile. Nattrutinen velger aldri denne tonen selv |
 | **ingen spill** | Folkemord og massedrap rettet mot en gruppe (Holocaust, Rwanda, Srebrenica), terror mot sivile (22. juli), overgrep mot barn, slaveri som «ressursspill» | Lag IKKE et spill. Stopp og rapporter «tema uegnet for spill». Et arkadespill om dette er respektløst uansett hvor pent det er |
 
 Tvil? Velg strengere. `alvorlig` er aldri feil for et tema som tåler `lett`; det motsatte kan være
