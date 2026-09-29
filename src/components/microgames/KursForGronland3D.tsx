@@ -31,7 +31,6 @@ import {
     dayPhase,
     weatherOf,
     sunVisible,
-    shadowRatio,
     progress,
     pressure,
     ROUTE,
@@ -512,32 +511,43 @@ function SceneFog({ envRef }: { envRef: React.MutableRefObject<Env> }) {
 const CSS = `
 .kg-hud{position:absolute;pointer-events:none;font-family:${THEME.font};color:${WOOL};transition:opacity .3s}
 .kg-plate{background:linear-gradient(180deg,#3a2c20,#241a13);border:2px solid #0e0a07;box-shadow:inset 0 1px 0 rgba(255,230,190,.18),0 3px 0 rgba(0,0,0,.45);border-radius:8px}
-.kg-lbl{font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
-.kg-route{left:50%;top:8px;transform:translateX(-50%);width:min(66%,600px);padding:5px 12px 6px}
-.kg-track{position:relative;height:26px;margin:0 6px}
+.kg-lbl{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.kg-route{left:50%;top:8px;transform:translateX(-50%);width:min(56%,640px);padding:5px 14px 8px}
+.kg-track{position:relative;height:32px;margin:0 10px}
 .kg-line{position:absolute;left:0;right:0;top:12px;height:2px;background:repeating-linear-gradient(90deg,#c99a3b 0 6px,transparent 6px 10px)}
-.kg-stop{position:absolute;top:4px;transform:translateX(-50%);text-align:center;font-size:9px;font-weight:800;letter-spacing:.06em;white-space:nowrap}
-.kg-dot{width:14px;height:14px;margin:0 auto 1px;border-radius:50%;border:2px solid #c99a3b;background:#241a13;display:flex;align-items:center;justify-content:center;font-size:9px;line-height:1;font-family:Inter,system-ui,sans-serif}
+.kg-stop{position:absolute;top:4px;transform:translateX(-50%);text-align:center;font-size:11.5px;font-weight:800;letter-spacing:.06em;white-space:nowrap}
+.kg-dot{width:16px;height:16px;margin:0 auto 1px;border-radius:50%;border:2px solid #c99a3b;background:#241a13;display:flex;align-items:center;justify-content:center;font-size:11px;line-height:1;font-family:Inter,system-ui,sans-serif}
 .kg-dot.ok{background:#3f7a4a;border-color:#9fe0a4}
 .kg-dot.bad{background:#8a2a1c;border-color:#ffb09a}
-.kg-boat{position:absolute;top:2px;transform:translateX(-50%);font-size:16px;transition:left .1s linear;filter:drop-shadow(0 1px 0 #000)}
-.kg-disc{left:10px;top:8px;width:118px;padding:6px;text-align:center}
-.kg-board{left:136px;top:8px;width:176px;padding:6px 8px}
-.kg-bucket{right:10px;top:52px;width:92px;padding:6px;text-align:center}
-.kg-sail{right:10px;top:188px;width:92px;padding:6px 6px 7px;text-align:center}
-.kg-pip{height:17px;margin-top:3px;border-radius:4px;border:1.5px solid #0e0a07;font-size:9px;font-weight:800;letter-spacing:.1em;line-height:14px;background:#2d231a;color:#9b8d78}
+.kg-stop.first{transform:none;text-align:left}.kg-stop.first .kg-dot{margin-left:-8px}
+.kg-stop.last{transform:translateX(-100%);text-align:right}.kg-stop.last .kg-dot{margin-right:-8px}
+.kg-boat{position:absolute;top:1px;transform:translateX(-50%);font-size:19px;transition:left .1s linear;filter:drop-shadow(0 1px 0 #000)}
+.kg-disc{left:10px;top:8px;width:130px;padding:6px;text-align:center}
+.kg-board{left:10px;top:172px;width:250px;padding:6px 8px}
+.kg-bucket{right:10px;top:56px;width:112px;padding:6px;text-align:center}
+.kg-sail{right:10px;top:196px;width:112px;padding:6px 6px 7px;text-align:center}
+.kg-pip{height:21px;margin-top:3px;border-radius:4px;border:1.5px solid #0e0a07;font-size:11.5px;font-weight:800;letter-spacing:.1em;line-height:18px;background:#2d231a;color:#9b8d78}
 .kg-pip.on{background:#9c2f1e;color:#fbf4e4;box-shadow:0 0 8px rgba(214,90,60,.6)}
 .kg-pip.broken{background:repeating-linear-gradient(45deg,#2d231a 0 4px,#4a2a1e 4px 8px);color:#6b5a48}
-.kg-days{right:162px;top:8px;padding:4px 9px;text-align:center}
+.kg-days{right:132px;top:56px;padding:5px 10px;text-align:center}
 .kg-score{left:10px;bottom:10px}
 .kg-warn{animation:kgPulse .4s infinite alternate}
 @keyframes kgPulse{from{box-shadow:0 0 0 0 rgba(255,90,60,.0),0 3px 0 rgba(0,0,0,.45)}to{box-shadow:0 0 0 4px rgba(255,90,60,.55),0 3px 0 rgba(0,0,0,.45)}}
 .kg-pad{position:absolute;bottom:10px;display:flex;gap:6px;pointer-events:auto;transition:opacity .3s}
-.kg-btn{min-width:46px;height:42px;padding:0 10px;border-radius:10px;border:2px solid #0e0a07;background:linear-gradient(180deg,#f6eedb,#e0d3b6);color:${TAR};font:800 13px ${THEME.font};letter-spacing:.06em;box-shadow:0 3px 0 #0e0a07;cursor:pointer;touch-action:none;user-select:none}
+.kg-btn{min-width:52px;height:46px;padding:0 10px;border-radius:10px;border:2px solid #0e0a07;background:linear-gradient(180deg,#f6eedb,#e0d3b6);color:${TAR};font:800 15px ${THEME.font};letter-spacing:.06em;box-shadow:0 3px 0 #0e0a07;cursor:pointer;touch-action:none;user-select:none}
 .kg-btn:active,.kg-btn.held{transform:translateY(2px);box-shadow:0 1px 0 #0e0a07;background:#d9c9a4}
-.kg-btn small{display:block;font:600 9px Inter,system-ui,sans-serif;letter-spacing:0;opacity:.65;margin-top:-2px}
+.kg-btn small{display:block;font:600 11px Inter,system-ui,sans-serif;letter-spacing:0;opacity:.65;margin-top:-2px}
 .kg-flash{animation:kgFlash 1.2s ease-out}
 @keyframes kgFlash{0%{box-shadow:0 0 0 0 rgba(255,214,120,.95),0 3px 0 rgba(0,0,0,.45)}100%{box-shadow:0 0 0 14px rgba(255,214,120,0),0 3px 0 rgba(0,0,0,.45)}}
+`;
+
+const KEYS_CSS = `
+.kg-keys{display:grid;gap:6px;margin:12px auto 4px;width:max-content;max-width:100%;text-align:left}
+.kg-keyrow{display:flex;align-items:center;gap:10px}
+.kg-caps{display:flex;gap:4px;min-width:112px;justify-content:flex-end}
+.kg-keys kbd{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;padding:0 7px;border:2px solid ${TAR};border-bottom-width:4px;border-radius:6px;background:#fffaf0;color:${TAR};font:800 16px Inter,system-ui,sans-serif;line-height:1}
+.kg-keys kbd.wide{font-size:13px;padding:0 10px}
+.kg-what{font:700 14px Inter,system-ui,sans-serif}
 `;
 
 const STOPS = [
@@ -558,7 +568,7 @@ function SunDisc({
 }) {
     const ticks = Array.from({ length: 32 }, (_, i) => i);
     return (
-        <svg viewBox="-50 -50 100 100" width="104" height="104" aria-hidden>
+        <svg viewBox="-50 -50 100 100" width="116" height="116" aria-hidden>
             <defs>
                 <radialGradient id="kgWood" cx="40%" cy="35%">
                     <stop offset="0" stopColor="#b98a5a" />
@@ -613,94 +623,133 @@ function SunDisc({
     );
 }
 
-/** Solbrettet: skyggen fra middagssola mot hakket som ble skåret ut hjemme. */
+/**
+ * Solbrettet: skyggen fra middagssola mot hakket som ble skåret ut hjemme.
+ * Den ekte forskjellen er bare noen få prosent av skyggelengden, så brettet viser
+ * avviket forstørret: hakket står midt på, og hver km nord eller sør flytter
+ * skyggespissen like langt. Den grønne sonen er det samme vinduet som dommen under.
+ */
+const BOARD = { x0: 12, notch: 110, perKm: 0.8, ok: 22, min: 24, max: 204 };
+const boardX = (y: number) => clamp(BOARD.notch + y * BOARD.perKm, BOARD.min, BOARD.max);
+
 function SunBoard({
     shadow,
     verdict,
     day,
 }: {
-    shadow: React.RefObject<SVGLineElement | null>;
+    shadow: React.RefObject<SVGRectElement | null>;
     verdict: React.RefObject<HTMLDivElement | null>;
     day: React.RefObject<HTMLDivElement | null>;
 }) {
+    const okW = BOARD.ok * BOARD.perKm;
     return (
         <>
             <div
                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}
             >
                 <span className="kg-lbl">Solbrettet</span>
-                <span ref={day} className="kg-lbl" style={{ opacity: 0.6 }}>
-                    ikke målt
+                <span ref={day} className="kg-lbl" style={{ opacity: 0.75 }}>
+                    middag om -
                 </span>
             </div>
-            <svg viewBox="0 0 160 46" width="100%" height="46" aria-hidden>
+            <svg viewBox="0 0 216 56" width="100%" height="56" aria-hidden>
                 <rect
                     x="2"
-                    y="12"
-                    width="156"
-                    height="24"
+                    y="14"
+                    width="212"
+                    height="28"
                     rx="3"
                     fill="#a77a4c"
                     stroke="#0e0a07"
                     strokeWidth="1.5"
                 />
-                <rect x="2" y="12" width="156" height="6" fill="rgba(255,235,200,.18)" />
+                <rect x="2" y="14" width="212" height="6" fill="rgba(255,235,200,.18)" />
                 {/* Soner */}
-                <rect x="76" y="14" width="38" height="20" fill="rgba(90,170,100,.35)" />
+                <rect
+                    x={BOARD.notch - okW}
+                    y="16"
+                    width={okW * 2}
+                    height="24"
+                    fill="rgba(90,170,100,.45)"
+                />
                 <text
-                    x="44"
-                    y="31"
+                    x="58"
+                    y="37"
                     textAnchor="middle"
-                    fontSize="7"
-                    fontWeight="800"
+                    fontSize="9"
+                    fontWeight="900"
                     fill="#3a2210"
                 >
-                    FOR LANGT SØR
+                    ← SØR
                 </text>
                 <text
-                    x="138"
-                    y="31"
+                    x="170"
+                    y="37"
                     textAnchor="middle"
-                    fontSize="7"
-                    fontWeight="800"
+                    fontSize="9"
+                    fontWeight="900"
                     fill="#3a2210"
                 >
-                    FOR NORD
+                    NORD →
                 </text>
+                {/* Skyggen - bredden glir fram når en ny middag er målt */}
+                <rect
+                    ref={shadow}
+                    x={BOARD.x0}
+                    y="24"
+                    width="0"
+                    height="6"
+                    rx="3"
+                    fill="#1a120c"
+                    opacity="0.85"
+                    style={{ transition: 'width 1.4s cubic-bezier(.2,.8,.2,1)' }}
+                />
                 {/* Pinnen */}
                 <rect
-                    x="8"
+                    x={BOARD.x0 - 5}
                     y="2"
-                    width="5"
-                    height="22"
+                    width="6"
+                    height="26"
                     fill="#3a2718"
                     stroke="#0e0a07"
                     strokeWidth="1"
                 />
                 {/* Hakket fra Hernar */}
-                <line x1="95" y1="10" x2="95" y2="38" stroke="#1c1712" strokeWidth="2.5" />
-                <text x="95" y="8" textAnchor="middle" fontSize="7" fontWeight="900" fill="#fbf4e4">
-                    HERNAR
-                </text>
-                {/* Skyggen */}
                 <line
-                    ref={shadow}
-                    x1="12"
-                    y1="24"
-                    x2="12"
-                    y2="24"
-                    stroke="#1a120c"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                    opacity="0.85"
+                    x1={BOARD.notch}
+                    y1="11"
+                    x2={BOARD.notch}
+                    y2="45"
+                    stroke="#1c1712"
+                    strokeWidth="3"
                 />
+                <text
+                    x={BOARD.notch}
+                    y="9"
+                    textAnchor="middle"
+                    fontSize="9"
+                    fontWeight="900"
+                    fill="#fbf4e4"
+                >
+                    HAKKET
+                </text>
+                <text
+                    x={BOARD.notch}
+                    y="54"
+                    textAnchor="middle"
+                    fontSize="8"
+                    fontWeight="800"
+                    fill="#e8d9bb"
+                >
+                    Hernar-linja
+                </text>
             </svg>
             <div
                 ref={verdict}
                 style={{
-                    fontSize: 11,
+                    fontSize: 13,
                     fontWeight: 800,
-                    letterSpacing: '.06em',
+                    letterSpacing: '.04em',
                     textAlign: 'center',
                     marginTop: 1,
                 }}
@@ -739,6 +788,13 @@ interface RunResult {
     next: [number, string] | null;
     best: number;
 }
+
+const KEYS: { caps: string[]; what: string }[] = [
+    { caps: ['←', '→'], what: 'styr babord / styrbord' },
+    { caps: ['↑', '↓'], what: 'heis / rev seilet' },
+    { caps: ['Mellomrom'], what: 'hold for å øse' },
+    { caps: ['C'], what: 'bytt kamera' },
+];
 
 const WIND_WORD = (w: number) =>
     w > 0.75 ? 'storm' : w > 0.5 ? 'frisk bris' : w > 0.3 ? 'laber bris' : 'svak vind';
@@ -799,7 +855,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
     const hud = {
         needle: useRef<SVGGElement>(null),
         fog: useRef<SVGGElement>(null),
-        shadow: useRef<SVGLineElement>(null),
+        shadow: useRef<SVGRectElement>(null),
         verdict: useRef<HTMLDivElement>(null),
         noonDay: useRef<HTMLDivElement>(null),
         board: useRef<HTMLDivElement>(null),
@@ -1177,20 +1233,24 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
             if (hud.fog.current) hud.fog.current.style.opacity = sun ? '0' : '1';
             const n = g.lastNoon;
             if (n && hud.shadow.current) {
-                const len = clamp(83 * shadowRatio(n.y), 8, 150);
-                hud.shadow.current.setAttribute('x2', String(12 + len));
+                hud.shadow.current.setAttribute('width', String(boardX(n.y) - BOARD.x0));
                 const off = n.y;
                 const v = hud.verdict.current;
                 if (v) {
                     v.textContent =
-                        off > 22
-                            ? 'Lang skygge: for langt NORD'
-                            : off < -22
-                              ? 'Kort skygge: for langt SØR'
-                              : 'Riktig bredde - hold kursen';
-                    v.style.color = Math.abs(off) > 22 ? '#ffb09a' : '#a8e6ad';
+                        off > BOARD.ok
+                            ? `Døgn ${n.day + 1}: for langt NORD`
+                            : off < -BOARD.ok
+                              ? `Døgn ${n.day + 1}: for langt SØR`
+                              : `Døgn ${n.day + 1}: riktig - hold kursen`;
+                    v.style.color = Math.abs(off) > BOARD.ok ? '#ffb09a' : '#a8e6ad';
                 }
-                if (hud.noonDay.current) hud.noonDay.current.textContent = `målt døgn ${n.day + 1}`;
+            }
+            if (hud.noonDay.current) {
+                const ph = dayPhase(g);
+                const hrs = Math.ceil(((0.5 - ph + 1) % 1) * 24);
+                hud.noonDay.current.textContent =
+                    g.noonFlash > 0 ? 'målt nå!' : `middag om ${hrs} t`;
             }
             const pr = progress(g);
             if (hud.boat.current) hud.boat.current.style.left = `${pr * 100}%`;
@@ -1448,7 +1508,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
     return (
         <MicroGameFrame title="Kurs for Grønland" bleed>
             <div className="p-2">
-                <style>{CSS}</style>
+                <style>{CSS + KEYS_CSS}</style>
                 <ArcadeStage
                     ref={stageRef}
                     theme={THEME}
@@ -1480,7 +1540,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                         <SceneFog envRef={envRef} />
                         <Lights envRef={envRef} poseRef={poseRef} />
                         <Sky envRef={envRef} />
-                        <Ocean envRef={envRef} wake={wake} />
+                        <Ocean envRef={envRef} poseRef={poseRef} wake={wake} />
                         <Ship
                             gRef={gRef}
                             envRef={envRef}
@@ -1515,7 +1575,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                             {STOPS.map((s, i) => (
                                 <div
                                     key={s.id}
-                                    className="kg-stop"
+                                    className={`kg-stop${i === 0 ? ' first' : i === STOPS.length - 1 ? ' last' : ''}`}
                                     style={{ left: `${(s.x / ROUTE) * 100}%` }}
                                 >
                                     <div
@@ -1524,7 +1584,8 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                                             hud.dots.current[i] = el;
                                         }}
                                     />
-                                    {s.name}
+                                    {/* Hernar står for tett på Hjaltland; båten markerer starten. */}
+                                    {i === 0 ? '' : s.name}
                                 </div>
                             ))}
                             <div ref={hud.boat} className="kg-boat" style={{ left: '0%' }}>
@@ -1550,14 +1611,14 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                     <div className="kg-hud kg-plate kg-days" style={vis}>
                         <div
                             ref={hud.day}
-                            style={{ fontSize: 15, fontWeight: 900, letterSpacing: '.1em' }}
+                            style={{ fontSize: 17, fontWeight: 900, letterSpacing: '.1em' }}
                         >
                             DØGN 1
                         </div>
-                        <div ref={hud.barrels} style={{ fontSize: 10, fontWeight: 700 }}>
+                        <div ref={hud.barrels} style={{ fontSize: 12.5, fontWeight: 700 }}>
                             vann: {WATER_DAYS} døgn
                         </div>
-                        <div ref={hud.weather} className="kg-lbl" style={{ fontSize: 8.5 }}>
+                        <div ref={hud.weather} className="kg-lbl" style={{ fontSize: 11 }}>
                             klart
                         </div>
                     </div>
@@ -1565,7 +1626,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                     {/* Øsekaret: sjø i båten */}
                     <div ref={hud.bucket} className="kg-hud kg-plate kg-bucket" style={vis}>
                         <div className="kg-lbl">Sjø i båten</div>
-                        <svg viewBox="0 0 80 46" width="78" height="46" aria-hidden>
+                        <svg viewBox="0 0 80 46" width="96" height="55" aria-hidden>
                             <defs>
                                 <clipPath id="kgHull">
                                     <path d="M4,6 L76,6 Q72,38 40,42 Q8,38 4,6 Z" />
@@ -1600,7 +1661,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                         </svg>
                         <div
                             style={{
-                                fontSize: 9.5,
+                                fontSize: 12,
                                 fontWeight: 700,
                                 fontFamily: 'Inter, system-ui, sans-serif',
                             }}
@@ -1626,7 +1687,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                         <div
                             ref={hud.wind}
                             style={{
-                                fontSize: 9.5,
+                                fontSize: 12,
                                 fontWeight: 700,
                                 marginTop: 4,
                                 fontFamily: 'Inter, system-ui, sans-serif',
@@ -1641,13 +1702,13 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                         <div
                             ref={hud.score}
                             className="arc-display arc-outline"
-                            style={{ fontSize: 24, lineHeight: 1 }}
+                            style={{ fontSize: 28, lineHeight: 1 }}
                         >
                             0
                         </div>
                         <div
                             className="arc-display arc-outline"
-                            style={{ fontSize: 9, marginTop: 2 }}
+                            style={{ fontSize: 12, marginTop: 3 }}
                         >
                             poeng · mål: Hvarf
                         </div>
@@ -1717,7 +1778,7 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                             <ArcadeTag>Fra Hernar til Hvarf, rundt år 1000</ArcadeTag>
                             <p
                                 style={{
-                                    fontSize: 12.5,
+                                    fontSize: 14,
                                     fontWeight: 600,
                                     margin: '10px 0 2px',
                                     lineHeight: 1.4,
@@ -1727,17 +1788,20 @@ export default function KursForGronland3D({ onComplete }: MicroGameProps) {
                                 Havstrømmen skyver deg bort fra kursen uten at du merker det. Mål
                                 middagssola, rev seilet i storm og øs når sjøen slår inn.
                             </p>
-                            <p
-                                style={{
-                                    fontSize: 11.5,
-                                    fontWeight: 700,
-                                    margin: '6px 0 0',
-                                    lineHeight: 1.5,
-                                }}
-                            >
-                                ← → styr &nbsp;·&nbsp; ↑ ↓ seilet &nbsp;·&nbsp; mellomrom øs
-                                &nbsp;·&nbsp; C kamera
-                            </p>
+                            <div className="kg-keys">
+                                {KEYS.map((k) => (
+                                    <div key={k.what} className="kg-keyrow">
+                                        <span className="kg-caps">
+                                            {k.caps.map((c) => (
+                                                <kbd key={c} className={c.length > 2 ? 'wide' : ''}>
+                                                    {c}
+                                                </kbd>
+                                            ))}
+                                        </span>
+                                        <span className="kg-what">{k.what}</span>
+                                    </div>
+                                ))}
+                            </div>
                             <ArcadeBigButton onClick={begin}>Legg ut</ArcadeBigButton>
                             <div style={{ fontSize: 12, fontWeight: 600, marginBottom: 8 }}>
                                 Rekord{' '}

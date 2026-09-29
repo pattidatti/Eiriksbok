@@ -6,6 +6,7 @@ import {
     cowGeometry,
     dropTexture,
     fittingsGeometry,
+    holdWaterGeometry,
     hullGeometry,
     rudderGeometry,
     sailTexture,
@@ -26,6 +27,11 @@ const SAIL_Z = -0.8;
 const SAIL_H = [1.2, 3.9, 7.0];
 const SX = 12;
 const SY = 10;
+/** Sjøen i rommet: fra gulvet (tomt) til like under ripa (fullt). */
+const HOLD_Y0 = -0.3;
+const HOLD_Y1 = 0.72;
+const HOLD_STEPS = 14;
+const holdY = (w: number) => HOLD_Y0 + Math.min(1, w) * (HOLD_Y1 - HOLD_Y0);
 
 export interface ShipFx {
     /** Settes av spillet: sprut ved vindkast, bølge over ripa, isflak. */
@@ -47,6 +53,7 @@ interface ShipCtx {
     menu: boolean;
     fx: ShipFx;
     sailGeo: THREE.PlaneGeometry;
+    holdGeos: THREE.BufferGeometry[];
     rigGeo: THREE.BufferGeometry;
     spray: Spray;
     nSpray: number;
@@ -73,7 +80,8 @@ const V2 = new THREE.Vector3();
 /** Ett bilde for skipet (utenfor komponenten, så React-reglene lar oss mutere 3D-objektene). */
 function shipFrame(c: ShipCtx, t: number, rawDt: number) {
     const dt = Math.min(0.05, rawDt);
-    const { g, env, p, menu, fx, sailGeo, rigGeo, spray, nSpray, particleScale, refs } = c;
+    const { g, env, p, menu, fx, sailGeo, holdGeos, rigGeo, spray, nSpray, particleScale, refs } =
+        c;
     const { root, rudder, vane, oser, cow, hold, sailH, flap, sailMat, helm } = refs;
     if (helm.current) helm.current.visible = !c.atHelm;
     // Motlys: når sola står foran skipet, skinner den gjennom ullseilet.
@@ -151,13 +159,19 @@ function shipFrame(c: ShipCtx, t: number, rawDt: number) {
         oser.current.position.y = bailing ? -0.45 : -0.35;
     }
     if (cow.current) cow.current.rotation.y = Math.PI / 2 + Math.sin(t * 0.4) * 0.15;
-    // Sjøen i rommet.
+    // Sjøen i rommet. Omrisset følger skroget i den høyden vannet står, så flaten
+    // aldri stikker ut gjennom bordgangene. Tom båt = ingen flate.
     if (hold.current) {
-        const w = menu ? 0.05 : g.water;
-        hold.current.visible = w > 0.09;
-        hold.current.position.y = -0.34 + w * 1.05;
-        hold.current.rotation.z = -p.roll * 0.6;
-        hold.current.rotation.x = -p.pitch * 0.6;
+        const w = menu ? 0 : g.water;
+        const m = hold.current;
+        m.visible = w > 0.06;
+        const y = holdY(w);
+        const step = Math.round(Math.min(1, w) * (HOLD_STEPS - 1));
+        if (m.geometry !== holdGeos[step]) m.geometry = holdGeos[step];
+        m.position.y = y;
+        // Litt skvulp mot krengingen, men ikke mer enn at kanten holder seg inne.
+        m.rotation.z = -p.roll * 0.25;
+        m.rotation.x = -p.pitch * 0.15;
     }
 
     // Sprut fra baugen når den stuper, fra ripa ved øsing og ved vindkast.
@@ -243,6 +257,14 @@ export function Ship({
         []
     );
     const sailGeo = useMemo(() => new THREE.PlaneGeometry(SAIL_W, 1, SX, SY), []);
+    // Omrisset krymper ved lavere vannstand; bygges én gang for hver høyde.
+    const holdGeos = useMemo(
+        () =>
+            Array.from({ length: HOLD_STEPS }, (_, i) =>
+                holdWaterGeometry(holdY(i / (HOLD_STEPS - 1)))
+            ),
+        []
+    );
     const sailTex = useMemo(() => sailTexture(), []);
     const dropTex = useMemo(() => dropTexture(), []);
     const rigGeo = useMemo(() => {
@@ -254,11 +276,12 @@ export function Ship({
         () => () => {
             Object.values(geo).forEach((g) => g.dispose());
             sailGeo.dispose();
+            holdGeos.forEach((h) => h.dispose());
             sailTex.dispose();
             dropTex.dispose();
             rigGeo.dispose();
         },
-        [geo, sailGeo, sailTex, dropTex, rigGeo]
+        [geo, sailGeo, holdGeos, sailTex, dropTex, rigGeo]
     );
 
     const root = useRef<THREE.Group>(null);
@@ -293,6 +316,7 @@ export function Ship({
                 menu: menuRef.current,
                 fx,
                 sailGeo,
+                holdGeos,
                 rigGeo,
                 spray,
                 nSpray,
@@ -385,14 +409,14 @@ export function Ship({
                 >
                     <meshStandardMaterial vertexColors roughness={1} />
                 </mesh>
-                <mesh ref={hold} position={[0, -0.3, 0.4]} rotation={[0, 0, 0]}>
-                    <boxGeometry args={[3.7, 0.04, 6.4]} />
+                <mesh ref={hold} geometry={holdGeos[0]} visible={false}>
                     <meshStandardMaterial
                         color="#1c4a52"
                         roughness={0.15}
                         metalness={0.1}
                         transparent
                         opacity={0.82}
+                        side={THREE.DoubleSide}
                     />
                 </mesh>
             </group>

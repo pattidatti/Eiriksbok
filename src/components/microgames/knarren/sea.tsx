@@ -2,6 +2,8 @@ import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { WAVES, type Env } from './env';
+import { HALF_L } from './model';
+import type { Pose } from './pose';
 import { useQuality } from '../kit';
 
 // Havet og himmelen. Begge er egne shadere, fordi det er de som gjør spillet:
@@ -88,6 +90,7 @@ uniform float uScale;
 uniform float uDay;
 uniform float uFlash;
 uniform vec3 uWake[24];
+uniform mat4 uShipInv;
 varying vec3 vWorld;
 varying vec3 vNormal;
 varying float vHeight;
@@ -95,6 +98,24 @@ varying float vFade;
 ${noise}
 
 void main() {
+    // Knarren er åpen midtskips og gulvet i rommet ligger under vannlinja. Havet
+    // skal ikke tegnes inne i skroget - sjøen i rommet er en egen flate i ship.tsx.
+    // Skrogets tverrsnitt er section() i model.ts: finn hvor bred knarren er i akkurat
+    // den høyden havet står, og kutt havet innenfor.
+    vec3 sl = (uShipInv * vec4(vWorld, 1.0)).xyz;
+    float su = abs(sl.z) / ${HALF_L.toFixed(3)};
+    if (su < 0.96) {
+        float hb = 2.3 * pow(max(0.0, 1.0 - pow(su, 2.2)), 0.55);
+        float ky = -1.05 + 0.55 * pow(su, 4.0);
+        float sy = 0.95 + 1.0 * pow(su, 4.0);
+        float t = clamp((sl.y - ky) / (sy - ky), 0.0, 1.0);
+        // y = ky + (sy - ky) * (1 - cos(phi))^0.85  =>  phi fra t
+        float phi = acos(clamp(1.0 - pow(t, 1.0 / 0.85), -1.0, 1.0));
+        // +0,02: bordgangene ligger klinket 4,5 cm utenpå tverrsnittet, så kanten er dekket.
+        float beam = hb * pow(sin(phi), 0.75) + 0.02;
+        if (sl.y > sy) beam = hb;
+        if (abs(sl.x) < beam) discard;
+    }
     vec3 V = normalize(cameraPosition - vWorld);
     float d = length(cameraPosition - vWorld);
     // Langt borte blir normalen flatere - ellers glitrer horisonten urolig.
@@ -200,8 +221,9 @@ function waveUniforms() {
     };
 }
 
-function oceanFrame(mat: THREE.ShaderMaterial, e: Env, cam: THREE.Camera) {
+function oceanFrame(mat: THREE.ShaderMaterial, e: Env, cam: THREE.Camera, pose: Pose) {
     const u = mat.uniforms;
+    u.uShipInv.value.copy(pose.matrix).invert();
     u.uTime.value = e.time;
     u.uScale.value = e.waveScale;
     // Rutenettet følger kameraet i hele «celler», så hjørnene ikke svømmer.
@@ -240,7 +262,15 @@ export interface WakeTrail {
     pts: THREE.Vector3[];
 }
 
-export function Ocean({ envRef, wake }: { envRef: React.MutableRefObject<Env>; wake: WakeTrail }) {
+export function Ocean({
+    envRef,
+    poseRef,
+    wake,
+}: {
+    envRef: React.MutableRefObject<Env>;
+    poseRef: React.MutableRefObject<Pose>;
+    wake: WakeTrail;
+}) {
     const q = useQuality();
     const geo = useMemo(
         () =>
@@ -273,12 +303,13 @@ export function Ocean({ envRef, wake }: { envRef: React.MutableRefObject<Env>; w
                     uDay: { value: 1 },
                     uFlash: { value: 0 },
                     uWake: { value: wake.pts },
+                    uShipInv: { value: new THREE.Matrix4() },
                 },
             }),
         [wake]
     );
     const ref = useRef<THREE.Mesh>(null);
-    useFrame((state) => oceanFrame(mat, envRef.current, state.camera));
+    useFrame((state) => oceanFrame(mat, envRef.current, state.camera, poseRef.current));
     return <mesh ref={ref} geometry={geo} material={mat} frustumCulled={false} renderOrder={-1} />;
 }
 

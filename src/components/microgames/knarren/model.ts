@@ -28,6 +28,40 @@ export function beamAt(z: number) {
     return halfBeam(z / HALF_L);
 }
 
+/**
+ * Hvor bred skipet er (halvparten) i høyde y, ved lengdeposisjon u (-1 baug, 1 hekk).
+ * Samme tverrsnitt som section(), snudd: brukes av havet (som ikke skal tegnes inne i
+ * skroget) og av sjøen i rommet (som ikke skal stikke ut gjennom bordgangene).
+ */
+export function beamAtHeight(u: number, y: number) {
+    const a = Math.abs(u);
+    if (a >= 1) return 0;
+    const ky = keelY(a);
+    const sy = sheerY(a);
+    if (y >= sy) return halfBeam(a);
+    const t = Math.max(0, (y - ky) / (sy - ky));
+    const phi = Math.acos(Math.max(-1, Math.min(1, 1 - Math.pow(t, 1 / 0.85))));
+    return halfBeam(a) * Math.pow(Math.sin(phi), 0.75);
+}
+
+/** Omrisset av skroget sett ovenfra, i høyde y - flaten for sjøen i rommet. */
+export function holdWaterGeometry(y: number, margin = 0.06): THREE.BufferGeometry {
+    const shape = new THREE.Shape();
+    const n = 40;
+    const pts: [number, number][] = [];
+    for (let i = 0; i <= n; i++) {
+        const u = -0.97 + (1.94 * i) / n;
+        pts.push([Math.max(0, beamAtHeight(u, y) - margin), u * HALF_L]);
+    }
+    shape.moveTo(pts[0][0], pts[0][1]);
+    for (const [x, z] of pts) shape.lineTo(x, z);
+    for (let i = pts.length - 1; i >= 0; i--) shape.lineTo(-pts[i][0], pts[i][1]);
+    const g = new THREE.ShapeGeometry(shape);
+    // Formen tegnes i xy-planet; legg den ned i xz (vannrett) med z = lengderetningen.
+    g.rotateX(Math.PI / 2);
+    return g;
+}
+
 /** Skroget: bordgang for bordgang, begge sider, med vertex-farger. */
 export function hullGeometry(): THREE.BufferGeometry {
     const pos: number[] = [];
@@ -113,7 +147,7 @@ export function fittingsGeometry(): THREE.BufferGeometry {
         },
         { geometry: new THREE.BoxGeometry(3.2, 0.08, 3.0), position: [0, 0.62, 5.1], color: plank },
         {
-            geometry: new THREE.BoxGeometry(4.1, 0.06, 4.8),
+            geometry: new THREE.BoxGeometry(3.4, 0.06, 4.8),
             position: [0, -0.35, 0.6],
             color: '#4a3726',
         },
