@@ -6800,6 +6800,31 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "thranebevegelsen",
+      "title": "Thranebevegelsen: Da husmennene krevde stemmerett",
+      "description": "Marcus Thrane samlet 30 000 arbeidere og husmenn i Norges første folkebevegelse, og havnet i fengsel for det.",
+      "startDate": 1848,
+      "endDate": 1851,
+      "displayDate": "1848-1851",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/thranebevegelsen",
+      "tags": [
+        "historie",
+        "norge",
+        "norgeshistorie",
+        "arbeiderbevegelse",
+        "stemmerett",
+        "1800-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "revolusjonene-1848",
       "title": "Folkenes vår: Revolusjonene i 1848",
       "description": "I 1848 feide en bølge av revolusjoner over Europa. Folk krevde frihet og egne nasjoner, men opprørene ble slått ned. Likevel vant ideene til slutt.",
@@ -8908,6 +8933,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "slaget-om-storbritannia",
+      "title": "Slaget om Storbritannia: De få mot de mange",
+      "description": "Sommeren 1940 sto Storbritannia alene. Radar, filterrom og observatører sendte de få jagerflyene til rett sted og stoppet Hitlers invasjonsplaner.",
+      "startDate": 1940,
+      "endDate": null,
+      "displayDate": "1940",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "andre-verdenskrig",
+      "link": "/historie/andre-verdenskrig/slaget-om-storbritannia",
+      "tags": [
+        "historie",
+        "andre-verdenskrig",
+        "storbritannia",
+        "tyskland",
+        "luftkrig",
+        "radar",
+        "vendepunkt"
+      ],
+      "lat": 54,
+      "lng": -2.5,
+      "placeLabel": "Storbritannia",
+      "placeCountryId": 826,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "sorost-asia",
       "title": "Sørøst-Asia: Vakuumet etter Japan",
       "description": "Hvordan myten om hvit overlegenhet ble knust.",
@@ -9112,8 +9163,21 @@
       "link": "/historie/andre-verdenskrig/krigens-lop",
       "tags": [
         "krig",
-        "slag"
-      ]
+        "slag",
+        "historie",
+        "andre-verdenskrig",
+        "frankrike",
+        "normandie",
+        "usa",
+        "storbritannia",
+        "tyskland",
+        "vendepunkt"
+      ],
+      "lat": 46.6,
+      "lng": 2.5,
+      "placeLabel": "Frankrike",
+      "placeCountryId": 250,
+      "geoConfidence": "tag"
     },
     {
       "id": "imf-og-verdensbanken",

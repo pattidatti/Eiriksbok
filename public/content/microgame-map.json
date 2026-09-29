@@ -47,6 +47,10 @@
     "subjectId": "historie",
     "topicId": "andre-verdenskrig"
   },
+  "plottebordet-3d": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig"
+  },
   "radarvakten-3d": {
     "subjectId": "historie",
     "topicId": "andre-verdenskrig"
@@ -375,6 +379,10 @@
     "subjectId": "historie",
     "topicId": "mellomkrigstiden"
   },
+  "lop-med-lonna-3d": {
+    "subjectId": "historie",
+    "topicId": "mellomkrigstiden"
+  },
   "havet-kommer": {
     "subjectId": "historie",
     "topicId": "menneskets-tidlige-historie"
@@ -575,15 +583,11 @@
     "subjectId": "historie",
     "topicId": "romerriket"
   },
-  "colosseum-3d": {
-    "subjectId": "historie",
-    "topicId": "romerriket"
-  },
-  "gladius-duell": {
-    "subjectId": "historie",
-    "topicId": "romerriket"
-  },
   "de-sju-hoydene-3d": {
+    "subjectId": "historie",
+    "topicId": "romerriket"
+  },
+  "caesar-ides": {
     "subjectId": "historie",
     "topicId": "romerriket"
   },

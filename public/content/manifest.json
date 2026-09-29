@@ -3230,7 +3230,7 @@
                 "kongemakt"
               ],
               "createdDate": "2026-09-08T04:55:08+02:00",
-              "lastUpdated": "2026-09-08T07:33:45+02:00"
+              "lastUpdated": "2026-09-23T07:44:10+02:00"
             },
             {
               "id": "stavkirkene",
@@ -3244,7 +3244,8 @@
                 "håndverk",
                 "kulturarv"
               ],
-              "createdDate": "2026-09-23T00:00:00Z"
+              "createdDate": "2026-09-23T04:05:56+02:00",
+              "lastUpdated": "2026-09-23T07:44:10+02:00"
             }
           ]
         },
@@ -3389,7 +3390,8 @@
                 "stemmerett",
                 "1800-tallet"
               ],
-              "createdDate": "2026-09-27T00:00:00Z"
+              "createdDate": "2026-09-27T03:29:37+02:00",
+              "lastUpdated": "2026-09-27T07:40:26+02:00"
             },
             {
               "id": "unionen-med-sverige",
@@ -3559,7 +3561,7 @@
                 "sametinget"
               ],
               "createdDate": "2026-09-16T03:49:53+02:00",
-              "lastUpdated": "2026-09-17T19:03:54+02:00"
+              "lastUpdated": "2026-09-23T07:44:10+02:00"
             },
             {
               "id": "nasjonale-minoriteter",
@@ -3738,7 +3740,7 @@
                 "statskupp"
               ],
               "createdDate": "2026-08-27T03:49:10+02:00",
-              "lastUpdated": "2026-08-28T08:17:55+02:00"
+              "lastUpdated": "2026-09-27T07:40:26+02:00"
             }
           ]
         },
@@ -3794,7 +3796,7 @@
                 "sankt-petersburg"
               ],
               "createdDate": "2026-08-22T04:03:40+02:00",
-              "lastUpdated": "2026-08-27T07:38:29+02:00"
+              "lastUpdated": "2026-09-26T07:41:11+02:00"
             },
             {
               "id": "katarina-den-store",
@@ -3825,7 +3827,7 @@
                 "krimkrigen"
               ],
               "createdDate": "2026-08-28T01:29:51.514Z",
-              "lastUpdated": "2026-08-28T08:17:55+02:00"
+              "lastUpdated": "2026-09-26T07:41:11+02:00"
             }
           ]
         },
@@ -4088,7 +4090,8 @@
                 "ostfronten",
                 "vendepunkt"
               ],
-              "createdDate": "2026-09-24T00:00:00Z"
+              "createdDate": "2026-09-24T04:22:03+02:00",
+              "lastUpdated": "2026-09-24T07:38:49+02:00"
             },
             {
               "id": "krigen-i-stillehavet",
@@ -4104,7 +4107,8 @@
                 "atomvapen",
                 "vendepunkt"
               ],
-              "createdDate": "2026-09-25T00:00:00Z"
+              "createdDate": "2026-09-25T03:47:49+02:00",
+              "lastUpdated": "2026-09-25T07:34:59+02:00"
             },
             {
               "id": "slaget-om-storbritannia",
@@ -4120,7 +4124,8 @@
                 "radar",
                 "vendepunkt"
               ],
-              "createdDate": "2026-09-26T00:00:00Z"
+              "createdDate": "2026-09-26T03:24:14+02:00",
+              "lastUpdated": "2026-09-26T10:24:39+02:00"
             },
             {
               "id": "d-dagen",
@@ -4137,7 +4142,8 @@
                 "tyskland",
                 "vendepunkt"
               ],
-              "createdDate": "2026-09-28T00:00:00Z"
+              "createdDate": "2026-09-28T03:33:27+02:00",
+              "lastUpdated": "2026-09-28T07:38:16+02:00"
             }
           ]
         },
@@ -4479,7 +4485,7 @@
                 "politikk"
               ],
               "createdDate": "2026-01-18T22:34:44+01:00",
-              "lastUpdated": "2026-07-30T01:09:19+02:00"
+              "lastUpdated": "2026-09-25T14:49:07+02:00"
             },
             {
               "id": "spania",
@@ -5216,7 +5222,7 @@
                 "kommunikasjon"
               ],
               "createdDate": "2026-09-01T04:10:24+02:00",
-              "lastUpdated": "2026-09-02T07:43:35+02:00"
+              "lastUpdated": "2026-09-27T07:40:26+02:00"
             }
           ]
         },
@@ -7203,7 +7209,7 @@
               ],
               "year": "1915-1916",
               "createdDate": "2026-08-31T03:54:48+02:00",
-              "lastUpdated": "2026-09-02T07:43:35+02:00"
+              "lastUpdated": "2026-09-23T07:44:10+02:00"
             },
             {
               "id": "sammenbruddet",
@@ -7635,7 +7641,7 @@
                 "arkeologi"
               ],
               "createdDate": "2026-09-13T04:10:30+02:00",
-              "lastUpdated": "2026-09-13T07:38:34+02:00"
+              "lastUpdated": "2026-09-24T07:39:13+02:00"
             }
           ]
         },
@@ -8754,7 +8760,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-20T00:39:51+02:00"
+                  "lastUpdated": "2026-09-28T07:38:16+02:00"
                 },
                 {
                   "id": "bonn",
@@ -9927,7 +9933,7 @@
                 "religion"
               ],
               "createdDate": "2026-09-17T04:29:30+02:00",
-              "lastUpdated": "2026-09-18T07:37:40+02:00"
+              "lastUpdated": "2026-09-28T07:38:16+02:00"
             }
           ]
         },
@@ -10399,7 +10405,7 @@
                 "klima"
               ],
               "createdDate": "2026-09-15T04:02:39+02:00",
-              "lastUpdated": "2026-09-17T19:03:54+02:00"
+              "lastUpdated": "2026-09-27T07:40:26+02:00"
             }
           ]
         }
