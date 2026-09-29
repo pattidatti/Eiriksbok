@@ -284,11 +284,11 @@ interface ShipLook {
     emblem?: boolean;
 }
 
-const LOOK_PLAYER: ShipLook = { hull: [OCHRE, TERRA, OCHRE], sail: [TERRA, LINEN, OCHRE, LINEN], len: 70, dragon: true, shields: true };
+const LOOK_PLAYER: ShipLook = { hull: [OCHRE, TERRA, OCHRE], sail: [TERRA, LINEN, OCHRE, LINEN], len: 56, dragon: true, shields: true };
 const LOOK_VASSAL: ShipLook = { ...LOOK_PLAYER, emblem: true };
-const LOOK_VIKING: ShipLook = { hull: [TERRA, INK, TERRA], sail: [TERRA, '#8e3c24', TERRA], len: 56, dragon: true, shields: true };
-const LOOK_BARGE: ShipLook = { hull: ['#6b4a2b', SAGE, '#6b4a2b'], sail: [SAGE], len: 60, dragon: false, shields: false, cargo: true, cross: true };
-const LOOK_KING: ShipLook = { hull: [KING, LINEN, KING], sail: [KING], len: 64, dragon: false, shields: false, cargo: true, cross: true };
+const LOOK_VIKING: ShipLook = { hull: [TERRA, INK, TERRA], sail: [TERRA, '#8e3c24', TERRA], len: 45, dragon: true, shields: true };
+const LOOK_BARGE: ShipLook = { hull: ['#6b4a2b', SAGE, '#6b4a2b'], sail: [SAGE], len: 48, dragon: false, shields: false, cargo: true, cross: true };
+const LOOK_KING: ShipLook = { hull: [KING, LINEN, KING], sail: [KING], len: 51, dragon: false, shields: false, cargo: true, cross: true };
 
 /** Et skip i profil, som på teppet. dir = 1: baugen peker mot høyre. */
 function ship(ctx: CanvasRenderingContext2D, x: number, y: number, dir: number, look: ShipLook, t: number, tilt = 0) {
@@ -758,7 +758,7 @@ export function drawWorld(
             ctx.quadraticCurveTo(b.x + 20, b.y + 6 + back * 22, b.x + 26, b.y + back * 40);
             stitch(ctx, 'rgba(233,220,191,.55)', 2, [4, 4]);
         }
-        ship(ctx, b.x, b.y + 12, dir, look, t, tilt);
+        ship(ctx, b.x, b.y + 10, dir, look, t, tilt);
         ctx.globalAlpha = 1;
     }
 
@@ -784,19 +784,19 @@ export function drawWorld(
     if (ram) {
         // Rammefart: en gyllen stingring rundt skipet.
         ctx.beginPath();
-        ctx.arc(s.x, s.y, 42, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, 36, 0, Math.PI * 2);
         ctx.lineDashOffset = -t * 40;
         stitch(ctx, OCHRE, 4, [10, 6]);
         ctx.lineDashOffset = 0;
     }
     if (g.boardWarn) {
         ctx.beginPath();
-        ctx.arc(s.x, s.y, 46 + Math.sin(t * 16) * 3, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, 40 + Math.sin(t * 16) * 3, 0, Math.PI * 2);
         stitch(ctx, TERRA, 5, [5, 4]);
     }
     const tiltP = Math.max(-0.35, Math.min(0.35, (s.vy / 330) * 0.35 * -nd));
     if (s.hit > 0 && Math.floor(t * 14) % 2 === 0) ctx.globalAlpha = 0.45;
-    ship(ctx, s.x, s.y + 14, nd, after ? LOOK_VASSAL : LOOK_PLAYER, t, tiltP);
+    ship(ctx, s.x, s.y + 11, nd, after ? LOOK_VASSAL : LOOK_PLAYER, t, tiltP);
     ctx.globalAlpha = 1;
 
     // Gnister og spon.

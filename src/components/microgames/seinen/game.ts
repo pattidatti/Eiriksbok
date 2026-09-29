@@ -29,8 +29,8 @@ export const HP = 3;
 export const ROUEN_Y = 292;
 export const PARIS_Y = 64;
 
-const SHIP_R = 24;
-const BOAT_R = 22;
+const SHIP_R = 20;
+const BOAT_R = 18;
 /** Farten som skal til for å ramme (px/s). Saktere enn dette er bare en dult. */
 export const RAM_V = 150;
 const MAXV = 330;
@@ -42,8 +42,8 @@ export const KING_U = -0.74;
 /** Så mange kongsbåter rammet før kongen tar tilbake en landsby. */
 export const ANGER_MAX = 2;
 /** Farten til vikingskipene (px/s) i 911, og hvor mye den øker til 933. */
-const VIKING_V0 = 60;
-const VIKING_DV = 88;
+const VIKING_V0 = 48;
+const VIKING_DV = 70;
 /** Står skipet saktere enn dette når et vikingskip kommer borti, entrer de det. */
 export const BOARD_V = 90;
 
@@ -53,7 +53,7 @@ export type Mode = 'play' | 'won' | 'lost';
 
 /** Elva: midtlinja og halve bredden som funksjon av y (havet nederst, Paris øverst). */
 export const riverX = (y: number) => 640 + 190 * Math.sin(y / 132 + 0.6) + 60 * Math.sin(y / 61);
-export const riverHalf = (y: number) => 62 + 150 * Math.pow(Math.max(0, y) / H, 2.2);
+export const riverHalf = (y: number) => 78 + 165 * Math.pow(Math.max(0, y) / H, 2.2);
 
 export interface Ship {
     x: number;
@@ -317,7 +317,7 @@ function spawnBarge(g: Game) {
         x: riverX(y) + u * riverHalf(y),
         y,
         u,
-        v: 48 + g.rng() * 16,
+        v: 40 + g.rng() * 12,
         fleeing: 0,
         silver: 100,
         sx: 0,
@@ -341,15 +341,15 @@ function spawnViking(g: Game, n: number, form: Formation) {
     // Plassene i formasjonen, i piksler: [til siden, bakover]. Tett nok til kjedekrasj.
     const slots: [number, number][] = [];
     for (let i = 0; i < n; i++) {
-        if (form === 'rekke' || form === 'en') slots.push([0, i * 50]);
+        if (form === 'rekke' || form === 'en') slots.push([0, i * 42]);
         // To rekker langs hver sin bredd samtidig: du rekker bare én av dem i full fart.
-        else if (form === 'splitt') slots.push([i % 2 ? 130 : -130, Math.floor(i / 2) * 50]);
-        else if (form === 'linje') slots.push([((i % 3) - 1) * 48, Math.floor(i / 3) * 50]);
+        else if (form === 'splitt') slots.push([i % 2 ? 150 : -150, Math.floor(i / 2) * 42]);
+        else if (form === 'linje') slots.push([((i % 3) - 1) * 40, Math.floor(i / 3) * 42]);
         else {
             // Kile: høvdingskipet først, så par bak på hver side.
             const row = Math.ceil(i / 2);
             const side = i === 0 ? 0 : i % 2 ? -1 : 1;
-            slots.push(row <= 2 ? [side * row * 46, row * 42] : [side * 46, row * 42]);
+            slots.push(row <= 2 ? [side * row * 38, row * 35] : [side * 38, row * 35]);
         }
     }
     const minX = Math.min(...slots.map((q) => q[0]));
