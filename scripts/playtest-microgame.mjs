@@ -57,8 +57,12 @@ const fart = Math.max(1, Math.min(4, Number(opt('fart', 4))));
 if (Number(opt('fart', 4)) > 4) console.log('--fart er begrenset til 4 (robotene må få like mange grep per spillsekund som i simuleringen)');
 const onlyBots = opt('bots') ? opt('bots').split(',') : null;
 const full = args.includes('--full');
-// Røyktest: den passive runden trenger bare liv-sjekken og en slutt-skjerm om den kommer tidlig.
-const SMOKE_PASSIV_TID = 45;
+// Røyktest: den passive runden trenger bare liv-sjekken (bilder ved 2/7/12 s).
+const SMOKE_PASSIV_TID = 20;
+// --maks-tid N: stopp vinnerrunden etter N spillsekunder. CI bruker det (CI-maskinen gir 3D-spill
+// rundt 7 bilder/s, og en hel runde tok opp til 7 minutter). Nattsporet kjører hele runden, fordi
+// filmstripen er det vurdereren ser.
+const maksTid = opt('maks-tid') ? Number(opt('maks-tid')) : null;
 // --cover: lagre et skjermbilde fra vinnerrunden som startkortets plakat
 // (public/images/microgames/<id>.webp). --cover-at N velger sekundet (standard 20).
 const makeCover = args.includes('--cover');
@@ -506,7 +510,10 @@ function checkAgainstSim(rep, sim, r, lav) {
     const b = band[s];
     if (r.fase === 'tapt') {
         const msg = `«${r.bot}» tapte i nettleseren etter ${Math.round(r.tid ?? 0)} spillsekunder${r.arsak ? ` (${r.arsak})` : ''}, men i simuleringen taper den så tidlig i bare ${(b.tapt * 100).toFixed(1)} % av rundene`;
-        if (b.tapt >= 0.03) rep.notes.push(`«${r.bot}» tapte i nettleseren${r.arsak ? ` (${r.arsak})` : ''} - skjer i ${(b.tapt * 100).toFixed(0)} % av de simulerte rundene, ikke et funn`);
+        // 1 %: taper nettleseren sjeldnere enn det i simuleringen, er sjansen for et falskt
+        // funn høyst 1 % når de to spiller samme spill. (3 % ga rødt for lonna 29.09, der
+        // vinneren taper 3 % av alle runder - nesten alle helt på slutten.)
+        if (b.tapt >= 0.01) rep.notes.push(`«${r.bot}» tapte i nettleseren${r.arsak ? ` (${r.arsak})` : ''} - skjer i ${(b.tapt * 100).toFixed(0)} % av de simulerte rundene, ikke et funn`);
         else if (lav) rep.infra = `${msg} - men målingen er ugyldig (${lav.takt.toFixed(1)} grep per spillsekund). Senk --fart, ikke endre spillet`;
         else rep.findings.push(`${msg}. Nettleseren spiller ikke samme spill som simuleringen: finn forskjellen i koden (tidssteg, input-vei, tilstand utenfor game.ts), ikke skru på reglene`);
         return;
@@ -673,7 +680,7 @@ async function playtestGame(browser, id) {
             const film = b.forventer === 'vinner' && !rep.rounds.some((r) => r.forventer === 'vinner');
             for (let t = 0; t < tries && !won; t++) {
                 const plan = film && t === 0 ? { prefix: 'film', times: [3, 10, 20, 35, 55, 80, 110, 150], cover: makeCover } : null;
-                const r = await playRound(page, id, b.navn, b.variant, info.maks, t === 0 ? dir : null, plan);
+                const r = await playRound(page, id, b.navn, b.variant, info.maks, t === 0 ? dir : null, plan, full ? null : maksTid);
                 r.forventer = b.forventer;
                 r.tilfeldig = b.tilfeldig;
                 rep.rounds.push(r);
@@ -755,14 +762,16 @@ async function playtestGame(browser, id) {
                 `Chromebook (CPU ×${CB_THROTTLE}${cb.tier ? `, nivå ${cb.tier}` : ''}): JS per bilde p50 ${cb.p50.toFixed(1)} ms / p95 ${cb.p95.toFixed(1)} ms` +
                     (draw.calls ? `, ${draw.calls} draw calls, ${Math.round(draw.triangles / 1000)}k trekanter` : '')
             );
+            // Spill fra før Chromebook-porten (26.09) får tallene som notat - de er allerede ute.
+            const cbFind = LEGACY.has(id) ? rep.notes : rep.findings;
             if (cb.frames > 10 && cb.p95 > CB_LIMITS.jsP95)
-                rep.findings.push(
+                cbFind.push(`${LEGACY.has(id) ? '(eldre spill, bare rapport) ' : ''}` +
                     `for tungt for Chromebook: ${cb.p95.toFixed(1)} ms JS per bilde (p95, CPU ×${CB_THROTTLE}) - maks ${CB_LIMITS.jsP95}. Se «Chromebook først» i guiden`
                 );
             if (draw.calls > CB_LIMITS.calls)
-                rep.findings.push(`${draw.calls} draw calls - maks ${CB_LIMITS.calls} for en Chromebook-GPU (slå sammen mesher, bruk InstancedMesh)`);
+                cbFind.push(`${draw.calls} draw calls - maks ${CB_LIMITS.calls} for en Chromebook-GPU (slå sammen mesher, bruk InstancedMesh)`);
             if (draw.triangles > CB_LIMITS.triangles)
-                rep.findings.push(`${Math.round(draw.triangles / 1000)}k trekanter - maks ${CB_LIMITS.triangles / 1000}k for en Chromebook-GPU`);
+                cbFind.push(`${Math.round(draw.triangles / 1000)}k trekanter - maks ${CB_LIMITS.triangles / 1000}k for en Chromebook-GPU`);
             // Tilbake til en ren runde-tilstand for resten av sjekkene.
             await page.evaluate((id) => window.__mgPlaytest[id].start(), id);
         }

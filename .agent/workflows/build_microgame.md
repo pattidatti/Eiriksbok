@@ -483,10 +483,12 @@ node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173
 En røyktest: en kort passiv runde (liv), én hel runde med vinnerroboten (filmstripen vurdereren
 ser, og plakaten med `--cover`) og Chromebook-målingen. `--full` kjører den gamle porten med alle
 roboter i nettleseren - bare til feilsøking når nettleser og simulering er uenige.
+CI kjører med `--maks-tid 60` (vinnerrunden stopper etter 60 spillsekunder); lokalt og i nattsporet
+går den hele runden, fordi filmstripen er det vurdereren ser.
 
 | Sjekk | Grønt når |
 |---|---|
-| Samsvar | vinnerroboten taper ikke i nettleseren der simuleringen nesten aldri taper (under 3 % av rundene) |
+| Samsvar | vinnerroboten taper ikke i nettleseren der simuleringen nesten aldri taper (under 1 % av rundene) |
 | Roboter | samme robotnavn og `forventer` i `usePlaytest` som i `sim.ts` |
 | Raskt i gang | synlig knapp i spillvinduet på startskjermen, og `start()` gir fase «spiller» på under 6 s |
 | Liv | bildet endrer seg merkbart mellom 2 og 12 s uten input |

@@ -27,7 +27,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
         with:
@@ -90,7 +90,7 @@ jobs:
           IDS: ${{ steps.ids.outputs.playtest }}
         run: |
           set +e
-          node scripts/playtest-microgame.mjs --ids "$IDS" --fart 4
+          node scripts/playtest-microgame.mjs --ids "$IDS" --fart 4 --maks-tid 60
           echo "code=$?" >> "$GITHUB_OUTPUT"
           exit 0
 
