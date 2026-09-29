@@ -652,7 +652,8 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 | `scripts/generate-glossary-articles.js` | Bygger `public/data/glossary-articles.json` (reversindeks begrep → artikler, brukt av Kryssord sin «det du har lest»-modus) |
 | `scripts/scan-image-queue.js` | Prioritert kø over manglende artikkelbilder (hero før inline). Inngangen til bildegenereringen i `.agent/workflows/generate_article_images.md` |
 | `scripts/scan-concepts.js` | Scans articles for potential new concept terms |
-| `scripts/playtest-microgame.mjs` | Selvspill-port for mikrospill: roboter spiller spillet headless (vinner/taper/passiv, tekst over spillet, liv, konsollfeil). Kontrakten er `src/components/microgames/playtest.ts`. Kjøres i CI og av nattsporet `eiriksbok-daily-microgame` |
+| `scripts/sim-microgame.mts` | Simuleringsport for mikrospill (`npx tsx`): 200 seedede runder per robot mot `game.ts` uten nettleser - avgjør balansen (vinner/taper, ferdighetstrapp, spillfølelse) på sekunder. Kontrakten er `src/components/microgames/sim.ts` (+ `<mappe>/sim.ts` per spill) |
+| `scripts/playtest-microgame.mjs` | Selvspill-røyktest for mikrospill i nettleseren: liv, tekst over spillet, Chromebook, konsollfeil og én vinnerrunde som sammenlignes med simuleringen (`--full` for alle roboter). Kontrakten er `src/components/microgames/playtest.ts`. Kjøres i CI og av nattsporet `eiriksbok-daily-microgame` |
 | `scripts/optimize-images.js` | Optimaliserer WebP-bilder under `public/`. Kvitterer for hver fil i `scripts/image-ledger.json`, så et bilde komprimeres én gang - ikke én gang per build |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |
 | `scripts/fetch_feedback.cjs` | Exports Firebase feedback data |

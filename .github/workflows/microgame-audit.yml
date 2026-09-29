@@ -15,6 +15,7 @@ on:
     paths:
       - 'src/components/microgames/**'
       - 'scripts/playtest-microgame.mjs'
+      - 'scripts/sim-microgame.mts'
       - 'scripts/playtest-ids.mjs'
       - 'scripts/likhet-microgame.mjs'
       - 'public/images/microgames/**'
@@ -26,7 +27,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
         with:
@@ -64,9 +65,24 @@ jobs:
           echo "code=$?" >> "$GITHUB_OUTPUT"
           exit 0
 
-      # Selvspill: robotene spiller spillet headless (vinner/taper/passiv, tekst over
-      # spillet, liv, konsollfeil). Se scripts/playtest-microgame.mjs og
-      # src/components/microgames/playtest.ts. Samme exit-koder som auditen.
+      # Simulering: balansen (vinner/taper, ferdighetstrapp, spillfølelse) over 200 seedede
+      # runder per robot, uten nettleser. Tar sekunder. Se scripts/sim-microgame.mts og
+      # src/components/microgames/sim.ts. Skriver sim.json som selvspillet under bruker.
+      - name: Kjør simulering
+        id: sim
+        if: steps.ids.outputs.playtest != ''
+        env:
+          IDS: ${{ steps.ids.outputs.playtest }}
+        run: |
+          set +e
+          npx tsx scripts/sim-microgame.mts --ids "$IDS"
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      # Selvspill i nettleseren (røyktest): lasting, liv, tekst over spillet, Chromebook,
+      # konsollfeil og én hel vinnerrunde som sammenlignes med simuleringen. Balansen
+      # avgjøres i simuleringen over - før tok denne 35 minutter og ga falske røde.
+      # Se scripts/playtest-microgame.mjs. Samme exit-koder som auditen.
       - name: Kjør selvspill
         id: playtest
         if: steps.ids.outputs.playtest != ''
@@ -114,6 +130,9 @@ jobs:
           set -euo pipefail
           MARKER='<!-- mikrospill-audit -->'
           BODY="$MARKER"$'\n'
+          if [ -s .screenshots/playtest/_sim.md ]; then
+            BODY="$BODY"$'\n'"$(cat .screenshots/playtest/_sim.md)"$'\n\n'
+          fi
           if [ -s .screenshots/microgames/_findings.md ]; then
             BODY="$BODY"$'\n'"$(cat .screenshots/microgames/_findings.md)"
           fi
@@ -160,6 +179,7 @@ jobs:
         env:
           CODE: ${{ steps.audit.outputs.code }}
           PCODE: ${{ steps.playtest.outputs.code }}
+          SCODE: ${{ steps.sim.outputs.code }}
           LCODE: ${{ steps.likhet.outputs.code }}
         run: |
           FAIL=0
@@ -167,6 +187,11 @@ jobs:
             0) echo "Audit grønn." ;;
             2) echo "::error::Auditen kunne ikke kjøre (infrastruktur, ikke spillet). Kjør sjekken på nytt."; FAIL=1 ;;
             *) echo "::error::Mikrospill-audit fant funn i spillet - se PR-kommentaren."; FAIL=1 ;;
+          esac
+          case "${SCODE:-0}" in
+            0) echo "Simulering grønn." ;;
+            2) echo "::error::Simuleringen kunne ikke kjøre. Se loggen."; FAIL=1 ;;
+            *) echo "::error::Simuleringen fant funn i balansen - se PR-kommentaren."; FAIL=1 ;;
           esac
           case "${PCODE:-0}" in
             0) echo "Selvspill grønn." ;;

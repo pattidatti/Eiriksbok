@@ -39,9 +39,9 @@ printf '#!/bin/sh\nexec /opt/pw-browsers/chromium --ignore-certificate-errors "$
 export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/chromium-wrap
 ```
 
-Sky-miljøets GPU er treg (rundt 3 bilder/s). Kjør selvspillet med `--fart 4` (høyere blir kuttet til 4: robotene må få like mange grep per spillsekund som i simuleringen), og la det gå i bakgrunnen - én runde kan ta 15-20 minutter. Kjør det derfor bare når simuleringen (`npx tsx`) sier at spillet er klart - aldri for å «se om det virker».
+Balansen avgjøres i simuleringen (`npx tsx scripts/sim-microgame.mts --ids <id>`): 200 runder per robot på sekunder, samme svar hver gang. Bruk den så ofte du vil. Nettleser-selvspillet er en røyktest (én passiv kortrunde, én vinnerrunde, Chromebook). Sky-miljøets GPU er treg (rundt 3 bilder/s), så kjør det med `--fart 4` i bakgrunnen, og bare når simuleringen er grønn - aldri for å «se om det virker».
 
-**En rød port skal gi en forbedring, ellers er den bortkastet.** Les rapporten før du endrer noe: «Årsak» sier hvorfor en runde ble tapt, og «Grep/spill-s» sier om målingen var gyldig (rundt 5). Står det «kunne ikke kjøre» eller ugyldig måling, er feilen i målingen - senk farten eller rett oppsettet, men rør ikke spillreglene. Er nettleser og simulering uenige, finn forskjellen i koden før du justerer balansen.
+**En rød port skal gi en forbedring, ellers er den bortkastet.** Les rapporten før du endrer noe: «Vanligste tap» i simuleringen sier hvorfor robotene taper. I røyktesten sier «Grep/spill-s» om målingen var gyldig (rundt 5). Står det «kunne ikke kjøre» eller ugyldig måling, er feilen i målingen - senk farten eller rett oppsettet, men rør ikke spillreglene. Er nettleser og simulering uenige (funnet «Samsvar»), finn forskjellen i koden før du justerer balansen.
 
 Playwright MÅ virke - uten det kan du ikke kjøre portene. Feiler installasjonen to ganger: rapporter «kunne ikke installere Playwright» i Jobb 6 og avslutt uten PR.
 
@@ -78,7 +78,7 @@ git ls-tree -r --name-only origin/<gren> -- docs/microgames/briefer/   # har den
   som oppgave - følg regelen «Når vurderingen står stille» i guiden. Resten av jobbene er som vanlig;
   en godkjent WIP får vanlig gren/PR i Jobb 5.
 
-Har samme WIP-gren vært forsøkt tre netter (tell rapportene), hopp over den for godt og ta en ny artikkel.
+Har samme WIP-gren vært forsøkt to netter (tell rapportene), hopp over den for godt og ta en ny artikkel. En natt til på samme løkke har aldri løftet Gøy.
 
 ### 1a. Eierens idékø
 
@@ -162,12 +162,17 @@ Test briefen mot guiden før du koder: Er kjerneverbet deilig i seg selv? Er fag
 ### 3a. Gråboks (guidens steg 3a)
 
 Bygg først spillreglene i en ren `.ts`-modul og en visning med primitive former - ingen kunst, ingen
-juice. `usePlaytest` med alle robotene (vinner, middels, taper som ignorerer fagkjernen, tilfeldig
-knappemoser), og `valg`/`press` i snapshot. Balanser i den raske simuleringen (`npx tsx`), så kjør
-selvspillet én gang (se Jobb 4b for kommandoen). Radene for spillfølelse skal være grønne.
+juice. Robotene i `bots.ts` (vinner, middels, taper som ignorerer fagkjernen, tilfeldig
+knappemoser), `valg`/`press` i snapshot, `usePlaytest` og `<navn>/sim.ts`. Balanser med
+`npx tsx scripts/sim-microgame.mts --ids <id>` til den er grønn.
 
-Er de ikke grønne etter to forsøk: gå tilbake til konseptturneringen, ta nest beste konsept (eller neste
+Er den ikke grønn etter to forsøk: gå tilbake til konseptturneringen, ta nest beste konsept (eller neste
 artikkel), og oppdater briefen. Ikke pynt en løkke som ikke virker.
+
+**Gråboks-vurdering før kunsten** (guidens «Gråboks-vurderingen»): tre skjermbilder av gråboksen,
+`_sim.md` og kjerneløkka i tre setninger til en fersk underagent, som gir Gøy 1-5. Under 4: endre
+kjerneløkka én gang og spør en ny underagent. Fortsatt under 4: nest beste konsept. Dette er den
+billigste runden i hele kjøringen - bruk den, i stedet for å oppdage Gøy 3 etter at kunsten er laget.
 
 ### 3b. Kunst, juice og tekst
 
@@ -195,13 +200,14 @@ grep -rn "—\|–" src/components/microgames/<Navn>.tsx src/components/microgam
 ```
 Alt skal være tomt/rent.
 
-### 4b. Port 1, 2 og 2b (maskinelle)
+### 4b. Port 0, 1, 2 og 2b (maskinelle)
 ```bash
+npx tsx scripts/sim-microgame.mts --ids <id>
 node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 4 --cover
 node scripts/audit-microgames.mjs --ids <id> --url http://localhost:5173 --strict --frames 4
 node scripts/likhet-microgame.mjs --ids <id>
 ```
-Les `.screenshots/playtest/_playtest.md` og `.screenshots/likhet/_likhet.md`, og se på ALLE bildene i `.screenshots/playtest/<id>/` og `.screenshots/microgames/<id>/` med Read. Rødt funn eller noe som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene dummere eller smartere enn en elev. Er likhetsvakten rød: endre looken etter kunstbriefen (palett, kamera, perspektiv) - ikke flytt kameraet bare for å lure tallet.
+Les `.screenshots/playtest/_sim.md`, `.screenshots/playtest/_playtest.md` og `.screenshots/likhet/_likhet.md`, og se på ALLE bildene i `.screenshots/playtest/<id>/` og `.screenshots/microgames/<id>/` med Read. Rødt funn eller noe som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene dummere eller smartere enn en elev. Er likhetsvakten rød: endre looken etter kunstbriefen (palett, kamera, perspektiv) - ikke flytt kameraet bare for å lure tallet.
 
 NB: rediger ikke filer MENS selvspillet kjører - Vite laster siden på nytt og runden avbrytes.
 
@@ -228,10 +234,10 @@ Sjekk prompten før du sender den: ingen `<...>`- eller `$(...)`-plassholdere sk
 
 Når port 1, 2 og 2b er grønne: start en FERSK underagent med Agent/Task-verktøyet (general-purpose). Den skal IKKE få briefen, koden eller dine begrunnelser. Send denne prompten, med feltene fylt ut:
 
-> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_playtest.md` (robotresultatene og spillfølelsen: valg per minutt, presskurve og ferdighetstrapp fra taper via middels til vinner) og `.screenshots/likhet/_likhet.md` (hvor lik plakaten er de andre spillene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal). De er kalibrert til 3 på Gøy (eieren: «interessant, men ikke sinnsykt gøy»), 3-4 på Utseende, 4 på Lesbart og 5 på Lærerikt. Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den. Eierens tommel opp/ned på tidligere spill, ved siden av poengene de fikk av vurderere før deg, står i `/tmp/eier-kalibrering.txt`: har eieren gitt tommel ned på spill med høy sum, har vurderingene vært for snille - juster deg etter eieren, ikke etter dem.
+> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_sim.md` (robotresultatene over 200 runder og spillfølelsen: valg per minutt, presskurve og ferdighetstrapp fra taper via middels til vinner) og `.screenshots/playtest/_playtest.md` (nettleserrunden) og `.screenshots/likhet/_likhet.md` (hvor lik plakaten er de andre spillene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal). De er kalibrert til 3 på Gøy (eieren: «interessant, men ikke sinnsykt gøy»), 3-4 på Utseende, 4 på Lesbart og 5 på Lærerikt. Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den. Eierens tommel opp/ned på tidligere spill, ved siden av poengene de fikk av vurderere før deg, står i `/tmp/eier-kalibrering.txt`: har eieren gitt tommel ned på spill med høy sum, har vurderingene vært for snille - juster deg etter eieren, ikke etter dem.
 > Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). En 4 på Gøy betyr klart gøyere enn referansene. Begrunn hvert tall med noe du SÅ på et bilde eller i tallene. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
 
-Terskel: ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil fem vurderingsrunder. Står en akse på samme poeng to runder på rad, skal kjerneløkka endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.
+Terskel: ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil tre vurderingsrunder. Står Gøy på samme poeng to runder på rad, er spillet parkert: skriv rapporten og stopp - ikke bruk flere runder på samme løkke. Står en annen akse stille to runder på rad, skal kjerneløkka endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.
 
 **Lagre etter hver vurderingsrunde (checkpoint).** Kjøringen kan bli avbrutt når som helst - bruksgrensen på abonnementet stoppet omkjøringen 27.09 midt i runde 4, og alt arbeidet i den runden gikk tapt. Commit og push derfor etter HVER vurdering, uansett resultat:
 
@@ -247,9 +253,9 @@ overskrive den gamle.
 
 Da fortsetter neste kjøring (Jobb 1-0) fra siste runde i stedet for fra start.
 
-**Vær sparsom - kvoten er delt.** Hele kjøringen deler én bruksgrense med alle andre økter. Balanser i den raske TypeScript-simuleringen (`npx tsx` på spillreglene), ikke med gjentatte hele selvspill. Kjør hele selvspillet og scene-auditen én gang per runde, rett før vurderingen. Les bare de bildene du trenger.
+**Vær sparsom - kvoten er delt.** Hele kjøringen deler én bruksgrense med alle andre økter. Balanser i simuleringen, ikke i nettleseren. Kjør selvspill-røyktesten og scene-auditen én gang per runde, rett før vurderingen. Les bare de bildene du trenger.
 
-Er spillet fortsatt under terskel etter femte runde: IKKE åpne PR. Commit alt (smalt diff) og push til `claude/microgame-wip-<dato>-<id>`, og rapporter i Jobb 6 med scorene og hva som manglet - neste natt fortsetter derfra (Jobb 1-0).
+Er spillet fortsatt under terskel etter tredje runde (eller parkert fordi Gøy sto stille): IKKE åpne PR. Commit alt (smalt diff) og push til `claude/microgame-wip-<dato>-<id>`, og rapporter i Jobb 6 med scorene og hva som manglet - neste natt fortsetter derfra (Jobb 1-0).
 
 ---
 
