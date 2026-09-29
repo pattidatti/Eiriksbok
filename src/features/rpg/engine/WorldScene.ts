@@ -1049,7 +1049,8 @@ export class WorldScene extends Phaser.Scene {
 
     /** Tegner helten på nytt når utstyret endrer seg. Kalles fra React. */
     oppdaterUtseende() {
-        this.helt.oppdaterUtseende();
+        // React kan spørre før scenen har laget helten.
+        this.helt?.oppdaterUtseende();
     }
 
     /** Oppdaterer utropstegnene over NPC-ene. Kalles fra React etter questbytte. */
@@ -1225,8 +1226,7 @@ export class WorldScene extends Phaser.Scene {
                 // og Skofte rekker henne det eneste som duger. Vil hun slåss
                 // med øksa si likevel, står den i sekken, og da får hun kjenne
                 // hvorfor han sa det han sa.
-                store.leggISekk('tingspyd');
-                store.utrust('tingspyd');
+                store.giOgTaPa('tingspyd');
                 store.varsle('Skofte ga deg et spyd.', 'bra');
                 return;
             }

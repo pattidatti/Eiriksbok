@@ -28,14 +28,8 @@
 // Rutene står her og ikke i generatoren fordi generatoren må rydde plass til
 // dem. Samme grep som `hub.ts`.
 
-import type {
-    AuthoredQuest,
-    BankQuestion,
-    FarkostDef,
-    LandmarkDef,
-    NpcDef,
-    Tema,
-} from '../types';
+import { ITEMS } from './items';
+import type { AuthoredQuest, BankQuestion, FarkostDef, LandmarkDef, NpcDef, Tema } from '../types';
 
 export const TESTBANE_SIZE = { bredde: 72, hoyde: 36 };
 
@@ -133,25 +127,11 @@ export const TESTBANE_NPCS: NpcDef[] = [
         // våpen eller en ny rustning faktisk kan kjøpes, utrustes og tegnes -
         // og da må alle sammen være å få tak i ett sted.
         handler: {
-            velkomst: 'Alt jeg har, står framme. Kjøp det du skal prøve.',
-            varer: [
-                'ovingssverd',
-                'rustet-oks',
-                'bjorkestav',
-                'jaktbue',
-                'sagasverd',
-                'tingspyd',
-                'runestav',
-                'minnehammer',
-                'vadmelskjortel',
-                'lerbrynje',
-                'ringbrynje',
-                'glemselskappen',
-                'kvernstein',
-                'skaldering',
-                'bjornetann',
-                'minnestein',
-            ],
+            velkomst:
+                'Alt jeg har, står framme. Kjøp det du skal prøve, selg det du ikke trenger, og kom hit når noe er slitt.',
+            // Lista lages av tabellen i `items.ts`, så en ny gjenstand står
+            // her i det øyeblikket den får en pris.
+            varer: ITEMS.filter((i) => i.pris).map((i) => i.id),
         },
     },
 ];
@@ -195,14 +175,14 @@ export const TESTBANE_LANDMARKS: LandmarkDef[] = [
         tile: [20, 22],
         title: 'Prøvekista',
         text:
-            'En kiste med litt sølv i. Ta det, så har du noe å handle for hos Bergljot.\n\n' +
+            'En kiste med sølv i. Ta det, så har du nok til å prøve utstyret hos Bergljot.\n\n' +
             'Kista er her for valgsystemet: knappen setter et flagg, teksten byttes ut, og sølvet legges til. Skjer bare én av de tre tingene, vet vi hvilken.',
         valg: {
             id: 'test-kiste-tom',
             knapp: 'Ta sølvet',
             flagg: 'test:kiste-tomt',
             etterpa: 'Kista står åpen. Flagget er satt.',
-            solv: 200,
+            solv: 1000,
         },
     },
 ];
@@ -234,7 +214,8 @@ const TEST_SPORSMAL: BankQuestion = {
         'En gravplass for høvdinger',
     ],
     correct: 0,
-    explanation: 'På tinget møttes frie menn. Der ble tvister avgjort og lover vedtatt - høyt, foran alle.',
+    explanation:
+        'På tinget møttes frie menn. Der ble tvister avgjort og lover vedtatt - høyt, foran alle.',
     subjectId: 'historie',
     topicId: 'vikingtiden',
     lessonId: 'samfunn-og-rett',

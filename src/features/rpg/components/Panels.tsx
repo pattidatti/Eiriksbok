@@ -1,175 +1,10 @@
 import { useState } from 'react';
-import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
-import { finnNpc } from '../data/steder';
 import { EPOKER } from '../data/epoker';
-import { KAPITLER, KAPITTEL_BY_NR, harKapitler, kapittelNr, synligeSteg } from '../data/kapitler';
+import { KAPITLER, harKapitler, kapittelNr, synligeSteg } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
-import { prisFor, trinnFor } from '../engine/aere';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
-import type { ItemSlot, MellomspillDef, QuestDef } from '../types';
+import type { MellomspillDef, QuestDef } from '../types';
 import { Ramme } from './DialogOverlay';
-
-/** Sekken: alt eleven eier, og det hun har på seg. */
-export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEndret: () => void }) {
-    const store = useRpgStore();
-    const maks = maksVerdier(store);
-
-    const utrust = (id: string) => {
-        store.utrust(id);
-        onEndret();
-    };
-    const taAv = (slot: ItemSlot) => {
-        store.taAv(slot);
-        onEndret();
-    };
-
-    return (
-        <Ramme onLukk={onLukk}>
-            <h2 className="mb-4 font-display text-2xl font-bold text-amber-200">Sekken</h2>
-
-            <section className="mb-5">
-                <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                    På kroppen
-                </h3>
-                <div className="grid gap-2 sm:grid-cols-3">
-                    {(['vapen', 'rustning', 'amulett'] as ItemSlot[]).map((slot) => {
-                        const id = store.utstyr[slot];
-                        const item = id ? ITEM_BY_ID[id] : null;
-                        return (
-                            <div
-                                key={slot}
-                                className="rounded-xl border border-white/12 bg-white/5 p-3"
-                                style={
-                                    item
-                                        ? { borderColor: `${RARITY_COLOR[item.rarity]}55` }
-                                        : undefined
-                                }
-                            >
-                                <p className="text-[10px] uppercase tracking-widest text-slate-500">
-                                    {SLOT_LABEL[slot]}
-                                </p>
-                                {item ? (
-                                    <>
-                                        <p
-                                            className="font-semibold"
-                                            style={{ color: RARITY_COLOR[item.rarity] }}
-                                        >
-                                            {item.name}
-                                        </p>
-                                        <button
-                                            type="button"
-                                            onClick={() => taAv(slot)}
-                                            className="mt-2 rounded-md border border-white/15 px-2 py-1 text-[11px] text-slate-300 transition hover:bg-white/10"
-                                        >
-                                            Ta av
-                                        </button>
-                                    </>
-                                ) : (
-                                    <p className="text-sm text-slate-500">Tomt</p>
-                                )}
-                            </div>
-                        );
-                    })}
-                </div>
-            </section>
-
-            <section className="mb-5 grid grid-cols-2 gap-x-6 gap-y-1 rounded-xl bg-white/5 p-3 text-sm sm:grid-cols-3">
-                <Stat navn="Liv" verdi={maks.hp} />
-                <Stat navn="Styrke" verdi={maks.styrke} />
-                <Stat navn="Vern" verdi={maks.vern} />
-                <Stat navn="Sølv" verdi={store.solv} />
-                {/*
-                    Æren står her bare i kapitler som lar henne flytte den. Et
-                    tall hun ikke kan gjøre noe med, er et tall hun lærer å se
-                    forbi - og da ser hun forbi det den dagen det gjelder.
-                */}
-                {KAPITTEL_BY_NR[store.kapittel]?.systemer?.aere && (
-                    <Stat navn="Ære" verdi={store.aere} />
-                )}
-            </section>
-            {KAPITTEL_BY_NR[store.kapittel]?.systemer?.aere && (
-                <p className="mb-5 -mt-3 text-xs text-slate-400">
-                    {trinnFor(store.aere).navn}. {trinnFor(store.aere).folk}
-                </p>
-            )}
-
-            <section className="mb-5">
-                <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                    I sekken ({store.sekk.length})
-                </h3>
-                {store.sekk.length === 0 ? (
-                    <p className="text-sm text-slate-500">
-                        Tom. Fell noen tåkeskapninger, så fyller den seg.
-                    </p>
-                ) : (
-                    <ul className="space-y-2">
-                        {store.sekk.map((id, i) => {
-                            const item = ITEM_BY_ID[id];
-                            if (!item) return null;
-                            return (
-                                <li
-                                    key={`${id}-${i}`}
-                                    className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-3"
-                                >
-                                    <div className="min-w-0">
-                                        <p
-                                            className="font-semibold"
-                                            style={{ color: RARITY_COLOR[item.rarity] }}
-                                        >
-                                            {item.name}{' '}
-                                            <span className="text-[10px] uppercase tracking-wider text-slate-500">
-                                                {RARITY_LABEL[item.rarity]}
-                                            </span>
-                                        </p>
-                                        <p className="truncate text-xs text-slate-400">
-                                            {item.flavor}
-                                        </p>
-                                        <p className="mt-0.5 text-[11px] text-slate-300">
-                                            {item.weapon
-                                                ? `${item.weapon.skade} skade · ${item.weapon.rekkevidde} rekkevidde`
-                                                : Object.entries(item.stats)
-                                                      .map(([k, v]) => `+${v} ${k}`)
-                                                      .join(' · ')}
-                                        </p>
-                                    </div>
-                                    <button
-                                        type="button"
-                                        onClick={() => utrust(id)}
-                                        className="shrink-0 rounded-lg bg-amber-400 px-3 py-1.5 text-xs font-semibold text-slate-900 transition hover:bg-amber-300"
-                                    >
-                                        Ta på
-                                    </button>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                )}
-            </section>
-
-            {/*
-                Her sto besvergelsene. De er pensjonert (blueprint §15): Nordvik
-                har ingen trolldom, og det eleven kan i stedet er skjoldet,
-                paraden og våpenets manøver - ferdigheter, ikke et inventar.
-
-                Det hun *kan*, ligger i minnetreet, og det har sin egen skjerm.
-                Å legge en kopi av det her ville gjort kunnskapen til en ting i
-                sekken, og det er nettopp det den ikke er.
-            */}
-            <p className="text-xs text-slate-500">
-                Det du kan, ligger ikke i sekken. Trykk M for minnetreet.
-            </p>
-        </Ramme>
-    );
-}
-
-function Stat({ navn, verdi }: { navn: string; verdi: number }) {
-    return (
-        <div className="flex justify-between">
-            <span className="text-slate-400">{navn}</span>
-            <span className="font-semibold text-slate-100">{verdi}</span>
-        </div>
-    );
-}
 
 /** Oppdragsloggen. Viser hintet, ikke svaret. */
 export function QuestLog({ quester, onLukk }: { quester: QuestDef[]; onLukk: () => void }) {
@@ -316,7 +151,10 @@ export function PauseMeny({
     // ganger, og et bord hun bare får se én gang, er et bord hun klikker seg
     // gjennom.
     const bord = KAPITLER.filter((k) => steg.includes(`kapittel:${k.nr}`))
-        .map((k) => ({ kapittel: k.nr, def: k.mellomspillEtter && MELLOMSPILL_BY_ID[k.mellomspillEtter] }))
+        .map((k) => ({
+            kapittel: k.nr,
+            def: k.mellomspillEtter && MELLOMSPILL_BY_ID[k.mellomspillEtter],
+        }))
         .filter((b): b is { kapittel: number; def: MellomspillDef } => Boolean(b.def));
 
     return (
@@ -459,80 +297,5 @@ function VerdensKart({ niva }: { niva: number }) {
                 </ul>
             )}
         </>
-    );
-}
-
-/** Bera Kremmers bod. Grunnen til at sølvet i sekken betyr noe. */
-export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => void }) {
-    const npc = finnNpc(npcId);
-    const solv = useRpgStore((s) => s.solv);
-    const sekk = useRpgStore((s) => s.sekk);
-    const utstyr = useRpgStore((s) => s.utstyr);
-    const kjop = useRpgStore((s) => s.kjop);
-    const aere = useRpgStore((s) => s.aere);
-    if (!npc?.handler) return null;
-
-    const eier = (id: string) => sekk.includes(id) || Object.values(utstyr).includes(id);
-
-    return (
-        <Ramme onLukk={onLukk}>
-            <header className="mb-3 flex items-baseline justify-between gap-3">
-                <div>
-                    <h2 className="font-display text-2xl font-bold text-amber-200">{npc.name}</h2>
-                    <p className="text-xs uppercase tracking-widest text-slate-400">{npc.role}</p>
-                </div>
-                <span className="shrink-0 rounded-full bg-amber-300/15 px-3 py-1 text-sm font-semibold text-amber-200">
-                    {solv} sølv
-                </span>
-            </header>
-
-            <p className="mb-4 text-[15px] leading-relaxed text-slate-100">
-                «{npc.handler.velkomst}»
-            </p>
-
-            <ul className="space-y-2">
-                {npc.handler.varer.map((id) => {
-                    const item = ITEM_BY_ID[id];
-                    if (!item?.pris) return null;
-                    // Prisen kommer fra samme funksjon som `kjop` bruker. To
-                    // steder som regner den hver for seg, blir uenige den dagen
-                    // noen justerer kurven.
-                    const pris = prisFor(item.pris, aere);
-                    const harRaad = solv >= pris;
-                    const alt = eier(id);
-                    return (
-                        <li
-                            key={id}
-                            className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-3"
-                        >
-                            <div className="min-w-0">
-                                <p
-                                    className="font-semibold"
-                                    style={{ color: RARITY_COLOR[item.rarity] }}
-                                >
-                                    {item.name}
-                                </p>
-                                <p className="truncate text-xs text-slate-400">{item.flavor}</p>
-                                <p className="mt-0.5 text-[11px] text-slate-300">
-                                    {item.weapon
-                                        ? `${item.weapon.skade} skade · ${item.weapon.rekkevidde} rekkevidde`
-                                        : Object.entries(item.stats)
-                                              .map(([k, v]) => `+${v} ${k}`)
-                                              .join(' · ')}
-                                </p>
-                            </div>
-                            <button
-                                type="button"
-                                disabled={!harRaad || alt}
-                                onClick={() => kjop(id)}
-                                className="shrink-0 rounded-lg bg-amber-400 px-3 py-2 text-xs font-bold text-slate-900 transition enabled:hover:bg-amber-300 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-slate-400"
-                            >
-                                {alt ? 'Har den' : `${pris} sølv`}
-                            </button>
-                        </li>
-                    );
-                })}
-            </ul>
-        </Ramme>
     );
 }

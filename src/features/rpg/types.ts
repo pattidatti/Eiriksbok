@@ -89,6 +89,11 @@ export interface FigurLook {
     trim: string;
     /** 0 = ingen rustning, 1-3 = stadig tyngre. Styrer plater og hjelm. */
     armorTier: number;
+    /**
+     * Delene hun har på seg, plass for plass. Mangler feltet, tegnes figuren
+     * bare ut fra `armorTier` - slik gjestene fra nettet fortsatt tegnes.
+     */
+    deler?: Partial<Record<ItemSlot, DelUtseende>>;
 }
 
 /**
@@ -100,13 +105,62 @@ export type Retning = 'ned' | 'venstre' | 'hoyre' | 'opp';
 
 // ─── Utstyr og gjenstander ──────────────────────────────────────────────────
 
-export type ItemSlot = 'vapen' | 'rustning' | 'amulett';
+/**
+ * Plassene på figuren. Ti, som i WoW uten ringer og «trinkets»: alle ti synes
+ * på figuren, og det er poenget med påkledningsdukken.
+ *
+ * `rustning` er brystet og `amulett` er halsen. Id-ene er de gamle med vilje:
+ * de står i hvert lagrede spill, og å gi dem nye navn er en migrering for et
+ * ord.
+ */
+export type ItemSlot =
+    | 'hode'
+    | 'amulett'
+    | 'kappe'
+    | 'rustning'
+    | 'hender'
+    | 'belte'
+    | 'bein'
+    | 'fotter'
+    | 'vapen'
+    | 'skjold';
+
+/** Én gjenstand i sekken eller på kroppen. */
+export interface Gjenstand {
+    id: string;
+    /** Hvor mange som ligger i stabelen. Bare forbruksvarer stables. */
+    antall?: number;
+    /**
+     * Holdbarheten som er igjen, i poeng. Mangler den, er gjenstanden hel.
+     * På null er den ødelagt: den gir ingenting før den er reparert.
+     */
+    holdbarhet?: number;
+}
+
+/** Hva en forbruksvare gjør når den brukes. */
+export interface ForbrukDef {
+    /** Liv den gir tilbake. */
+    hp?: number;
+    /** Ordet på knappen og i verktøytipset: «Spis», «Drikk», «Bruk». */
+    verb: string;
+}
+
+/**
+ * Hvordan en del ser ut på figuren. Smia tegner formen i fargen; nye
+ * gjenstander koster derfor bare en rad i `items.ts`, ingen grafikk.
+ */
+export interface DelUtseende {
+    farge: string;
+    /** Formen, der plassen har flere. Hjelmer og kapper, for eksempel. */
+    form?: string;
+}
 export type Rarity = 'vanlig' | 'god' | 'sjelden' | 'episk';
 
 export interface ItemDef {
     id: string;
     name: string;
-    slot: ItemSlot;
+    /** Mangler for forbruksvarer: de tas ikke på, de brukes. */
+    slot?: ItemSlot;
     rarity: Rarity;
     /** Kort, muntlig forklaring - vises i sekken. */
     flavor: string;
@@ -115,6 +169,12 @@ export interface ItemDef {
     pris?: number;
     /** Bare for våpen: form og rekkevidde på slaget. */
     weapon?: VaapenDef;
+    /** Bare for skjold: hvilket vern i kampen (`SKJOLD` i data/vaapen.ts). */
+    skjold?: string;
+    /** Hvordan den synes på figuren. Våpen og skjold har egne sprites. */
+    utseende?: DelUtseende;
+    /** Forbruksvare? Da brukes den opp, og den stables i sekken. */
+    forbruk?: ForbrukDef;
 }
 
 /**
@@ -478,13 +538,7 @@ export interface BegrepDef {
 // avsnitt i en artikkel, fordi hun var der.
 
 export type KildeArt =
-    | 'brev'
-    | 'annal'
-    | 'reiseberetning'
-    | 'dikt'
-    | 'innskrift'
-    | 'saga'
-    | 'arkeologi';
+    'brev' | 'annal' | 'reiseberetning' | 'dikt' | 'innskrift' | 'saga' | 'arkeologi';
 
 /**
  * Hvor nær kilden står det den forteller om.
@@ -711,13 +765,7 @@ export interface KlippDef {
  * den gamle Minnevokteren-rammen, og de pensjoneres med den (blueprint §15).
  */
 export type EnemyKind =
-    | 'menneske'
-    | 'glemsel'
-    | 'paastand'
-    | 'anakronisme'
-    | 'rykte'
-    | 'vrangbilde'
-    | 'boss';
+    'menneske' | 'glemsel' | 'paastand' | 'anakronisme' | 'rykte' | 'vrangbilde' | 'boss';
 
 export interface EnemyDef {
     id: string;
@@ -1373,9 +1421,14 @@ export interface EpokeKapittel {
     hp: number;
     xp: number;
     solv: number;
-    /** Item-id-er i sekken. */
-    sekk: string[];
-    utstyr: Record<ItemSlot, string | null>;
+    /**
+     * Sekken, rute for rute. Lengden er fast (`SEKK_PLASSER`), og `null` er en
+     * tom rute - eleven ordner sekken selv, og ordenen skal overleve en lagring.
+     */
+    sekk: (Gjenstand | null)[];
+    utstyr: Record<ItemSlot, Gjenstand | null>;
+    /** Hurtigbaren, tast 1-4. Peker på en forbruksvare, ikke på en rute. */
+    hurtigbar: (string | null)[];
     /**
      * Personens egen ære, 0-100.
      *

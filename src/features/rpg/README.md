@@ -55,7 +55,7 @@ RpgPage.tsx              Ruta: Phaser-lerret + React-grensesnitt + broen mellom 
 types.ts                 Alle domenetyper
 data/
   eleven.ts              Kjortelfarger, utseendevalg, nivåkurve, kjernetall
-  items.ts               Våpen, rustning, amuletter, priser
+  items.ts               Alle gjenstander (ti plasser + mat), holdbarhet, priser, lagringsvask
   enemies.ts             Fiendearketyper + bossen
   epoker.ts              De 11 epokene, én ferdig. Årstall, palett, regelsett, bank-sone.
   kapitler.ts            De fem kapitlene i vikingtiden. Steg, roller, flagg.
@@ -124,8 +124,8 @@ net/
   useHubRom.ts           Det eneste som kjenner både broen og nettet
   navnevakt.ts           Hvilke navn et klasserom skal slippe å lese
 store/useRpgStore.ts     All spillertilstand, lagringsformatet + kobling til «Min læring»
-components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordring,
-                         sekk, logg, butikk, skjermkontroll, atmosfære-overlegg,
+components/              Karakterskaper, HUD, hall-HUD, samtaleboks, kunnskapsutfordring,
+                         utstyr (figur + sekk + bod), ikoner, logg, skjermkontroll, atmosfære-overlegg,
                          klippscene (bjelker og replikk), skroget, navigasjonen,
                          mellomspillet (bordet med kildene), minnetreet,
                          opptakten, bua (Forradet), tinget (Tingsak),
@@ -170,7 +170,8 @@ components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordr
 | **Retning under gard**         | Vend garden, skjoldgang i 45 % fart         |
 | **Shift + mellomrom**          | Våpenets manøver (hak / stikk / skjoldstøt) |
 | E                              | Snakk / les / åpne / gå om bord / sett deg  |
-| I / L / M / Esc                | Sekk / oppdrag / minnetre / meny            |
+| I (eller C) / L / M / Esc      | Utstyr / oppdrag / minnetre / meny          |
+| 1-4                            | Hurtigbaren: spis eller bruk                |
 
 Shift betyr to ting, og det er ikke tvetydig: rullen har alltid krevd bevegelse
 (`utslag > 0.001` i `oppdaterSpiller`), så «Shift i ro» kan bare være garden.
@@ -287,6 +288,37 @@ inn i en epoke. Det er den samme regelen som gjelder på vei hjem fra Nordvik.
 Filene: `data/testbanen.ts` (ruter, folk, landemerker, tema),
 `engine/testbanegen.ts` (kartet), og stedet `TESTBANEN` i `data/steder.ts`.
 Portalen ligger i `HUB_PORTALER` i `data/hub.ts`.
+
+## Utstyret
+
+Som i WoW: figuren med ti plasser rundt seg, sekken med tjue ruter, en
+hurtigbar på fire, og en bod som bytter plass med figuren når eleven står hos
+en kremmer. Alt kan dras, høyreklikk gjør det vanlige (ta på, spise, selge i
+boden), og et vanlig klikk låser verktøytipset og gir knapper - for nettbrett,
+og for den som ikke vet om høyreklikket.
+
+-   **Plassene:** hode, hals, kappe, bryst, hender, belte, bein, føtter, våpen og
+    skjold. `rustning` er brystet og `amulett` er halsen: id-ene er de gamle,
+    fordi de står i hvert lagrede spill.
+-   **Alle ti synes på figuren.** Smia tegner `utseende` (farge + form) plass for
+    plass i `drawHumanoid`. Gjestene i hallen har ingen `deler` og tegnes som før
+    ut fra `armorTier` - nettet sender fortsatt bare ett trinn.
+-   **Skjoldplassen styrer kampen.** Gjenstanden peker på et `SKJOLD` i
+    `data/vaapen.ts`, og spilleren kaller `kamp.byttVern()` når utstyret endrer
+    seg. Tom plass er treningsskjoldet: kampen bygger på garden.
+-   **Holdbarhet.** Våpenet mister et poeng per slag som treffer (eller skudd),
+    en tilfeldig del av rustningen et poeng per slag hun tar, og døden koster en
+    tidel av alt. På null gir delen ingenting (et våpen slår med halv skade) til
+    en kremmer har reparert den. Smykker og skjold slites ikke her.
+-   **Forbruksvarer** stables til 20, legger seg selv på hurtigbaren første gang,
+    og kan ikke brukes tettere enn 1,2 sekund.
+-   **Lagringen** ble ikke en ny versjon. Sekken var en liste med id-er og
+    utstyret én id per plass; `normaliserSekk` og `normaliserUtstyr` i
+    `items.ts` tar imot begge former og kalles fra `heleEpoken`, der alle andre
+    hull fylles. Epoker eleven ikke har vært i siden, vaskes i det hun går inn.
+
+`scripts/verify-rpg-utstyr.mjs` er prøven: kjøp, ta på, dra, spis, slit,
+reparer, selg, og et gammelt lagret spill.
 
 ## Hallen er delt
 

@@ -144,6 +144,8 @@ function addCanvas(scene: Phaser.Scene, key: string, painter: { canvas: HTMLCanv
 
 // ─── Menneskefigur ──────────────────────────────────────────────────────────
 
+const GULL_NAAL = '#e2b84a';
+
 function drawHumanoid(
     p: Painter,
     dir: Dir,
@@ -154,8 +156,12 @@ function drawHumanoid(
 ): void {
     const tunic = look.tunic;
     const trim = look.trim;
-    const bukse = '#4a3b2c';
-    const sko = '#2e2419';
+    // Påkledningsdukken. Har figuren `deler`, tegnes hver plass for seg og
+    // `armorTier` hviler; har den ikke det (gjestene fra nettet), tegnes hun
+    // som før, ut fra ett trinn.
+    const d = look.deler;
+    const bukse = d?.bein?.farge ?? '#4a3b2c';
+    const sko = d?.fotter?.farge ?? '#2e2419';
 
     const bakFra = dir === 'opp';
     const side = dir === 'venstre' || dir === 'hoyre';
@@ -163,6 +169,29 @@ function drawHumanoid(
     const lutX = side ? -st.lut : 0;
     const lutY = side ? 0 : st.lut * 0.5;
     const ty = st.torso + lutY;
+    const kroppY = 9 + ty + st.krup;
+    const kroppH = Math.max(4, 8 - st.krup);
+
+    // ── Kappe, den delen som henger bak ─────────────────────────────────────
+    // Tegnes før beina forfra og fra siden: da stikker den fram rundt kroppen
+    // og ned mellom leggene, men ligger bak alt annet. Bakfra tegnes den til
+    // slutt, over ryggen - se lenger ned.
+    const kappe = d?.kappe;
+    if (kappe && !bakFra) {
+        const k = kappe.farge;
+        if (side) {
+            p.rect(11 + lutX, kroppY, 3, kroppH + 3, k);
+            p.vline(13 + lutX, kroppY + 1, kroppH + 2, ramp(k, -1));
+        } else {
+            // Forfra synes en kappe bare i kantene: en stripe utenfor hver
+            // arm, fra skulderen til kneet. Mer enn det, og figuren blir en
+            // boks i kappefargen der beina og rustningen forsvinner.
+            p.vline(2 + lutX, kroppY + 1, kroppH + 2, ramp(k, 1));
+            p.vline(13 + lutX, kroppY + 1, kroppH + 2, k);
+            p.px(3 + lutX, kroppY + kroppH + 1, k);
+            p.px(12 + lutX, kroppY + kroppH + 1, ramp(k, -1));
+        }
+    }
 
     // ── Bein ────────────────────────────────────────────────────────────────
     // Fremre ben står fullt ut, bakre ben er kortere og litt høyere. Det er
@@ -173,14 +202,24 @@ function drawHumanoid(
         const h = Math.max(1, 4 - st.krup - (bak ? 1 : 0));
         const dx = side ? fase : 0;
         p.rect(x + dx, y, 3, h, farge);
-        p.rect(x + dx, y + h - 1, 3, 1, sko);
+        // Vikler: lyse bånd på skrå rundt leggen. Skinner: en jernplate foran.
+        if (d?.bein?.form === 'vikler' && h >= 3) {
+            p.hline(x + dx, y + 1, 3, ramp(farge, 2));
+            p.px(x + dx + 1, y + 2, ramp(farge, 2));
+        }
+        if (d?.bein?.form === 'skinner' && h >= 3) {
+            p.rect(x + dx, y + 1, 3, h - 2, farge);
+            p.vline(x + dx, y + 1, h - 2, ramp(farge, 1));
+        }
+        // Støvler er høyere enn sko. Det er den ene forskjellen som synes på
+        // 22 piksler, og den synes godt.
+        const skoH = d?.fotter ? Math.min(2, h) : 1;
+        p.rect(x + dx, y + h - skoH, 3, skoH, sko);
     };
     ben(5, st.benV, bukse);
     ben(8, st.benH, ramp(bukse, -1));
 
     // ── Kjortel ─────────────────────────────────────────────────────────────
-    const kroppY = 9 + ty + st.krup;
-    const kroppH = Math.max(4, 8 - st.krup);
     p.rect(4 + lutX, kroppY, 8, kroppH, tunic);
     // Lyskilden står til venstre: lys kant, kjerne, skyggeside.
     p.vline(4 + lutX, kroppY, kroppH, ramp(tunic, 1));
@@ -188,10 +227,50 @@ function drawHumanoid(
     p.rect(11 + lutX, kroppY, 1, kroppH, ramp(tunic, -2));
     p.hline(4 + lutX, kroppY + kroppH - 1, 8, ramp(tunic, -2));
 
-    // Belte
+    // ── Bryst ───────────────────────────────────────────────────────────────
+    // Over kjortelen, ned til beltet. Formen sier hva slags: kokt lær er
+    // flatt, en ringbrynje prikkete, plater har skulderstykker og kanter.
     const belteY = kroppY + kroppH - 3;
-    p.rect(4 + lutX, belteY, 8, 1, ramp(trim, -2));
-    p.px(7 + lutX, belteY, trim);
+    const bryst = d?.rustning;
+    if (bryst) {
+        const b = bryst.farge;
+        const h = Math.max(2, belteY - kroppY + (bryst.form === 'plater' ? 1 : 0));
+        p.rect(4 + lutX, kroppY, 8, h, b);
+        p.vline(4 + lutX, kroppY, h, ramp(b, 1));
+        p.rect(10 + lutX, kroppY, 2, h, ramp(b, -1));
+        if (bryst.form === 'ringer') {
+            for (let yy = 0; yy < h; yy++) {
+                for (let xx = (yy % 2) + 1; xx < 7; xx += 2) {
+                    p.px(4 + lutX + xx, kroppY + yy, ramp(b, -1));
+                }
+            }
+        }
+        if (bryst.form === 'plater') {
+            p.hline(4 + lutX, kroppY + 2, 8, ramp(b, -2));
+            p.rect(3 + lutX, kroppY, 2, 2, ramp(b, 1));
+            p.rect(11 + lutX, kroppY, 2, 2, ramp(b, -1));
+        }
+        // Brystet går ned i skjørtet under beltet, så kjortelen ikke titter
+        // fram i en stripe mellom dem.
+        p.rect(4 + lutX, belteY + 1, 8, Math.max(0, kroppY + kroppH - belteY - 2), ramp(b, -1));
+    }
+
+    // Belte
+    const belte = d?.belte;
+    const belteFarge = belte ? belte.farge : ramp(trim, -2);
+    const spenne = belte
+        ? belte.form === 'solv'
+            ? '#e4e8ee'
+            : belte.form === 'bronse'
+              ? '#c89a4a'
+              : ramp(belte.farge, 2)
+        : trim;
+    p.rect(4 + lutX, belteY, 8, 1, belteFarge);
+    p.px(7 + lutX, belteY, spenne);
+    if (belte?.form === 'solv') {
+        p.px(5 + lutX, belteY, spenne);
+        p.px(10 + lutX, belteY, spenne);
+    }
 
     // ── Armer ───────────────────────────────────────────────────────────────
     const arm = (x: number, fase: number, farge: string, hud: string, leder: boolean) => {
@@ -205,11 +284,49 @@ function drawHumanoid(
         p.rect(x + dx, y + h, 2, 2, hud);
         p.px(x + dx + 1, y + h + 1, ramp(hud, -1));
     };
-    arm(3, st.armV, tunic, skin, dir === 'venstre');
-    arm(11, st.armH, ramp(tunic, -1), ramp(skin, -1), dir === 'hoyre' || dir === 'ned');
+    // Hanskene er hendene, i en annen farge. Mer får ikke plass på to piksler.
+    const hand = d?.hender?.farge;
+    const armFarge = bryst?.form === 'plater' || bryst?.form === 'ringer' ? bryst.farge : tunic;
+    arm(3, st.armV, armFarge, hand ?? skin, dir === 'venstre');
+    arm(
+        11,
+        st.armH,
+        ramp(armFarge, -1),
+        hand ? ramp(hand, -1) : ramp(skin, -1),
+        dir === 'hoyre' || dir === 'ned'
+    );
 
-    // ── Rustning oppå kjortelen ─────────────────────────────────────────────
-    if (look.armorTier >= 1) {
+    // ── Kappa bakfra, over ryggen og armene ─────────────────────────────────
+    if (kappe && bakFra) {
+        const k = kappe.farge;
+        p.rect(3 + lutX, kroppY, 10, kroppH + 3, k);
+        p.vline(3 + lutX, kroppY, kroppH + 3, ramp(k, 1));
+        p.rect(11 + lutX, kroppY, 2, kroppH + 3, ramp(k, -1));
+        p.hline(3 + lutX, kroppY + kroppH + 2, 10, ramp(k, -2));
+    }
+    // Pelsen har en krage. Den synes fra alle kanter, og den er det som gjør
+    // en bjørnepels til noe annet enn en brun kappe.
+    // Raden under nakkeskyggen, ellers tegner hodet over den.
+    if (kappe && !bakFra) {
+        const krage = kappe.form === 'pels' ? ramp(kappe.farge, 2) : kappe.farge;
+        if (kappe.form === 'pels') {
+            p.rect(3 + lutX, kroppY + 1, side ? 8 : 10, 1, krage);
+        } else if (!side) {
+            // Ringnåla på skulderen: det som holder kappa, og det man ser.
+            p.px(4 + lutX, kroppY + 1, GULL_NAAL);
+            p.px(11 + lutX, kroppY + 1, krage);
+        }
+    }
+
+    // ── Hals: smykket henger midt på brystet ────────────────────────────────
+    if (d?.amulett && !bakFra) {
+        const ax = side ? 9 : 7;
+        p.px(ax + lutX, kroppY + 1, ramp(d.amulett.farge, -2));
+        p.px(ax + lutX, kroppY + 2, d.amulett.farge);
+    }
+
+    // ── Rustning oppå kjortelen (gjestene, som bare har et trinn) ──────────
+    if (!d && look.armorTier >= 1) {
         const plate =
             look.armorTier >= 3 ? '#c8cdd6' : look.armorTier === 2 ? '#9aa3ae' : '#7a6a52';
         p.rect(4 + lutX, kroppY, 8, Math.min(4, kroppH), plate);
@@ -270,8 +387,53 @@ function drawHumanoid(
     // ── Hår ─────────────────────────────────────────────────────────────────
     drawHair(p, HAIR_STYLES[look.appearance.hair % HAIR_STYLES.length], hair, dir, hodeY, hx);
 
-    // ── Hjelm ───────────────────────────────────────────────────────────────
-    if (look.armorTier >= 3) {
+    // ── Hodeplagget ─────────────────────────────────────────────────────────
+    const hode = d?.hode;
+    if (hode) {
+        const c = hode.farge;
+        switch (hode.form) {
+            case 'hette':
+                // Hetta går rundt hele hodet og ned på skuldrene.
+                p.rect(4 + hx, hodeY - 1, 8, 2, c);
+                p.hline(5 + hx, hodeY - 1, 6, ramp(c, 1));
+                p.rect(4 + hx, hodeY + 1, 1, 6, c);
+                p.rect(11 + hx, hodeY + 1, 1, 6, ramp(c, -1));
+                if (bakFra) p.rect(5 + hx, hodeY + 1, 6, 5, ramp(c, -1));
+                break;
+            case 'lue':
+                p.rect(5 + hx, hodeY - 2, 6, 3, c);
+                p.hline(5 + hx, hodeY - 2, 5, ramp(c, 1));
+                p.hline(4 + hx, hodeY + 1, 8, ramp(c, -1));
+                break;
+            default: {
+                // Hjelm og brillehjelm: en kuppel med nesevern. Brillehjelmen
+                // får i tillegg ringen rundt øynene - det er den som gjør
+                // Gjermundbu-hjelmen gjenkjennelig.
+                p.rect(4 + hx, hodeY - 1, 8, 3, c);
+                p.hline(5 + hx, hodeY - 2, 6, c);
+                p.hline(5 + hx, hodeY - 2, 5, ramp(c, 1));
+                p.rect(10 + hx, hodeY - 1, 2, 3, ramp(c, -1));
+                if (!bakFra && !side) {
+                    p.vline(8 + hx, hodeY + 1, 3, ramp(c, -2));
+                    if (hode.form === 'brillehjelm') {
+                        p.hline(5 + hx, hodeY + 2, 6, ramp(c, -1));
+                        p.px(5 + hx, hodeY + 3, ramp(c, -1));
+                        p.px(10 + hx, hodeY + 3, ramp(c, -1));
+                        p.hline(5 + hx, hodeY + 4, 2, ramp(c, -1));
+                        p.hline(9 + hx, hodeY + 4, 2, ramp(c, -1));
+                    }
+                }
+                if (side && hode.form === 'brillehjelm') {
+                    p.rect(9 + hx, hodeY + 2, 2, 1, ramp(c, -1));
+                    p.px(10 + hx, hodeY + 4, ramp(c, -1));
+                }
+                break;
+            }
+        }
+    }
+
+    // ── Hjelm (gjestene) ────────────────────────────────────────────────────
+    if (!d && look.armorTier >= 3) {
         const helm = '#c8cdd6';
         p.rect(4 + hx, hodeY - 1, 8, 3, helm);
         p.hline(4 + hx, hodeY - 1, 8, ramp(helm, 1));
@@ -367,13 +529,17 @@ export function forgeHumanoid(scene: Phaser.Scene, key: string, look: HeroLook):
     addSheet(scene, key, ark.canvas, CELL_W, CELL_H, KOLONNER, rader);
 }
 
-/** Ett stillbilde av figuren, til bruk i karakterskaperen. */
-export function renderHeroPortrait(look: HeroLook, scale = 6): string {
+/**
+ * Ett stillbilde av figuren. Karakterskaperen bruker det forfra; figuren i
+ * sekken kan snus, som modellen i WoW.
+ */
+export function renderHeroPortrait(look: HeroLook, scale = 6, dir: Dir = 'ned'): string {
     const skin = SKIN_TONES[look.appearance.skin % SKIN_TONES.length];
     const hair = HAIR_COLORS[look.appearance.hairColor % HAIR_COLORS.length];
     const p = createPainter(CELL_W, CELL_H, 1, 1);
-    drawHumanoid(p, 'ned', RO, look, hair, skin);
+    drawHumanoid(p, dir === 'hoyre' ? 'venstre' : dir, RO, look, hair, skin);
     p.outline();
+    if (dir === 'hoyre') p.mirror();
     p.behind(() => p.ellipse(8, 20, 5, 2, 'rgba(0,0,0,0.3)'));
 
     const out = document.createElement('canvas');
@@ -781,9 +947,12 @@ export function forgeSkjold(scene: Phaser.Scene, maling = '#8b2f4a'): void {
                 const d = Math.hypot(dx, dy);
                 if (d > R) continue;
                 let farge: string;
-                if (d > R - 1.1) farge = jern; // jernkanten
-                else if (d < 2.1) farge = d < 1.2 ? jernLys : jern; // skjoldbulen
-                else if (dy < -0.5 && dx > -0.5) farge = maling; // malt felt
+                if (d > R - 1.1)
+                    farge = jern; // jernkanten
+                else if (d < 2.1)
+                    farge = d < 1.2 ? jernLys : jern; // skjoldbulen
+                else if (dy < -0.5 && dx > -0.5)
+                    farge = maling; // malt felt
                 else farge = x % 3 === 0 ? treMork : tre; // bordene
                 c.px(x, y, farge);
             }

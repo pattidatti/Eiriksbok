@@ -11,7 +11,7 @@
 
 import Phaser from 'phaser';
 import { figurLook, rustningTier } from '../../data/eleven';
-import { ITEM_BY_ID } from '../../data/items';
+import { ITEM_BY_ID, maksHoldbarhet, utseendeFra } from '../../data/items';
 import { KAMP, MANOVER_NAVN, vaapenKamp } from '../../data/vaapen';
 import { maksVerdier, useRpgStore, utrustetVaapen } from '../../store/useRpgStore';
 import { sfx, startMusikk, stopMusikk } from '../audio';
@@ -166,6 +166,7 @@ export class Spiller {
         this.startRute = startRute;
         this.regler = regler;
         this.kamp = new Kamp(regler);
+        this.synkVern();
         this.kroker = kroker;
     }
 
@@ -395,7 +396,7 @@ export class Spiller {
         this.sprite.setCollideWorldBounds(true);
 
         // Våpenet er sin egen sprite som svinges i en bue.
-        const vapenId = store.utstyr.vapen ?? 'ovingssverd';
+        const vapenId = store.utstyr.vapen?.id ?? 'ovingssverd';
         const vapen = ITEM_BY_ID[vapenId];
         forgeWeapon(this.scene, vapen?.weapon?.art ?? 'sverd', '#cfd6e0');
         this.vapenSprite = this.scene.add
@@ -422,8 +423,35 @@ export class Spiller {
         return figurLook(
             store.character?.kjortel,
             store.character?.appearance,
-            rustningTier(store.utstyr.rustning)
+            rustningTier(store.utstyr.rustning),
+            utseendeFra(store.utstyr)
         );
+    }
+
+    /**
+     * Skjoldet i kampen er det som sitter på skjoldplassen. Tom plass er
+     * treningsskjoldet: kampsystemet bygger på vernet, og en elev som har tatt
+     * av seg skjoldet skal ikke plutselig stå uten gard.
+     */
+    private synkVern() {
+        const g = useRpgStore.getState().utstyr.skjold;
+        this.kamp.byttVern((g && ITEM_BY_ID[g.id]?.skjold) || 'treningsskjold');
+    }
+
+    /**
+     * En av delene hun har på seg tar slaget og slites. Tilfeldig del, som i
+     * WoW: da slites alt jevnt over tid, og ingen enkelt del blir reparasjonen.
+     */
+    private slitRustning() {
+        const store = useRpgStore.getState();
+        const slitbare = (
+            ['hode', 'kappe', 'rustning', 'hender', 'belte', 'bein', 'fotter'] as const
+        ).filter((slot) => {
+            const g = store.utstyr[slot];
+            return g && maksHoldbarhet(ITEM_BY_ID[g.id]) !== null;
+        });
+        if (slitbare.length === 0) return;
+        store.slit(slitbare[Math.floor(Math.random() * slitbare.length)]);
     }
 
     /**
@@ -431,6 +459,7 @@ export class Spiller {
      * gir et lite hakk, så vi hopper over det når ingenting faktisk er endret.
      */
     oppdaterUtseende() {
+        this.synkVern();
         const look = this.heltLook();
         const art = utrustetVaapen().art;
         const signatur = `${JSON.stringify(look)}|${art}`;
@@ -640,8 +669,8 @@ export class Spiller {
                             ? 'venstre'
                             : 'hoyre'
                         : dy < 0
-                        ? 'opp'
-                        : 'ned';
+                          ? 'opp'
+                          : 'ned';
             }
         }
         this.gardPress = Math.max(0, this.gardPress - delta);
@@ -655,7 +684,13 @@ export class Spiller {
             Phaser.Input.Keyboard.JustDown(this.taster.rull) ||
             this.padKant(pad, 'B') ||
             touch.has('rull');
-        if (beveg.rull && !this.iRekke && rullTrykk && this.rullNedkjoling === 0 && utslag > 0.001) {
+        if (
+            beveg.rull &&
+            !this.iRekke &&
+            rullTrykk &&
+            this.rullNedkjoling === 0 &&
+            utslag > 0.001
+        ) {
             // Uten pust blir rullen en stavring: kortere, og uten usårbarhet.
             const { stavring } = this.kamp.rull();
             const fart = stavring ? beveg.rullFart * KAMP.stavringFaktor : beveg.rullFart;
@@ -682,7 +717,6 @@ export class Spiller {
             if (gard) this.manover();
             else this.slaa();
         }
-
 
         // Blink når eleven er usårbar
         this.sprite.setAlpha(
@@ -732,6 +766,8 @@ export class Spiller {
         const skade = Math.round(
             (vapen.skade + stats.styrke * 0.8) * (sliten ? KAMP.slitenSkade : 1)
         );
+
+        useRpgStore.getState().slit('vapen');
 
         this.scene.time.delayedCall(form.ladeMs, () => {
             // Scenen kan være revet mens strengen sto spent (et stedskifte),
@@ -877,6 +913,9 @@ export class Spiller {
         this.kamp.etterSlag(sving.trinn, traff);
 
         if (traff) {
+            // Ett poeng per slag som treffer, ikke per fiende: et sveip gjennom
+            // tre tåkeskapninger er fortsatt ett slag på bladet.
+            store.slit('vapen');
             // Hitstop etter vekt. Ett tall for alt gjør at ingenting føles tungt.
             const tungt = vk.tungt || sving.trinn === 3;
             this.kroker.hitstop(tungt ? KAMP.hitstopTungt : KAMP.hitstopLett);
@@ -963,10 +1002,10 @@ export class Spiller {
             this.retning === 'ned'
                 ? [-5, 1]
                 : this.retning === 'opp'
-                ? [5, -2]
-                : this.retning === 'venstre'
-                ? [-6, 0]
-                : [6, 0];
+                  ? [5, -2]
+                  : this.retning === 'venstre'
+                    ? [-6, 0]
+                    : [6, 0];
         // Presset skyver skjoldet ett piksel ut i det noe treffer det.
         const press = this.gardPress > 0 ? Math.sign(ox) : 0;
         this.vernSprite
@@ -1146,6 +1185,7 @@ export class Spiller {
             return;
         }
         store.endreHp(-faktisk);
+        this.slitRustning();
         this.usarbarIgjen = this.regler.bevegelse.usarbarMs;
         sfx.skade();
         // Dyttet går bort fra treffet - eleven skal kjenne at hun ble slått bakover.
@@ -1160,6 +1200,9 @@ export class Spiller {
 
     private dor() {
         this.kroker.laas(true);
+        // Døden koster en tidel av holdbarheten på alt hun har på seg. Det er
+        // WoWs regel, og den gjør døden til en regning i stedet for en skjerm.
+        useRpgStore.getState().dodsslitasje();
         stopMusikk();
         this.scene.cameras.main.fade(700, 0, 0, 0, false);
         this.scene.time.delayedCall(750, () => fraSpill.emit('dod', {}));

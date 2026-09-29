@@ -5,6 +5,7 @@ import { sfx } from '../engine/audio';
 import { tilSpill } from '../engine/bridge';
 import { useRpgStore } from '../store/useRpgStore';
 import type { QuestDef } from '../types';
+import { Samtaleboks, Skrift, Valg } from './Samtaleboks';
 
 interface DialogProps {
     npcId: string;
@@ -17,8 +18,9 @@ interface DialogProps {
 }
 
 /**
- * Samtalen med en NPC. Den har tre deler, og alle er synlige samtidig:
- * det NPC-en sier, det hun *vet* (svarene eleven leter etter), og oppdraget.
+ * Samtalen med en NPC, i samtaleboksen nederst i bildet. Den har tre deler:
+ * det NPC-en sier, det hun *vet* (svarene eleven leter etter, bak «Spør ut»),
+ * og det hun ber om - som valg eleven kan ta med tall eller mus.
  */
 export function DialogOverlay({
     npcId,
@@ -63,119 +65,106 @@ export function DialogOverlay({
 
     if (!npc) return null;
 
+    const fornavn = npc.name.split(' ')[0];
+    const kanSporres = Boolean(npc.kunnskap && npc.kunnskap.length > 0);
+
+    /**
+     * Det han sier. Tilbudet vinner over småpratet: har han en handling eller
+     * et oppdrag, er det det samtalen handler om, og småpratet ville bare
+     * skjøvet det ned i en boks som skal være lav.
+     */
+    const tale = handlinger.length
+        ? handlinger[0].ledetekst
+        : aktiv
+          ? aktiv.hint
+          : ny
+            ? ny.intro
+            : gjortHandling
+              ? gjortHandling.etterpa
+              : replikk;
+    const oppdrag = handlinger.length ? null : (aktiv ?? ny);
+
+    const sporUt = () => {
+        const apner = !visKunnskap;
+        setVisKunnskap(apner);
+        // Ordene hun nettopp fikk høre, settes i tåkekanten av minnetreet.
+        // Aldri høyere: å høre et ord er ikke å kunne det (blueprint §7.4).
+        if (!apner) return;
+        for (const k of npc.kunnskap ?? []) {
+            if (k.begrep) larBegrep(k.begrep, 'hort');
+        }
+    };
+
+    /*
+        Valgene. Alle handlingene som står åpne, ikke bare den første:
+        Kongsmannen ber om korn, og eleven skal kunne si nei til ham i samme
+        samtale - et nei som bare finnes i å gå sin vei, er ikke et valg hun
+        ser at hun tar.
+
+        «Spør ut» er et valg blant de andre, ikke en seksjon over dem. Før
+        sto fasiten oppslått rett over «Jeg vet svaret», så letingen falt
+        bort selv der svaret faktisk fantes. Nå må hun be om den.
+    */
+    const knapper: { id: string; tekst: string; hoved?: boolean; gjor: () => void }[] = [];
+    handlinger.forEach((h, i) =>
+        knapper.push({ id: h.id, tekst: h.knapp, hoved: i === 0, gjor: () => onHandling(h.id) })
+    );
+    if (!handlinger.length && aktiv) {
+        knapper.push({
+            id: 'svar',
+            tekst: 'Jeg vet svaret',
+            hoved: true,
+            gjor: () => onSvarPa(aktiv),
+        });
+    } else if (!handlinger.length && ny) {
+        knapper.push({ id: 'ta', tekst: 'Ta oppdraget', hoved: true, gjor: () => onTaOppdrag(ny) });
+    }
+    if (kanSporres) {
+        knapper.push({
+            id: 'spor',
+            tekst: visKunnskap ? 'Tilbake' : `Spør ${fornavn} ut`,
+            gjor: sporUt,
+        });
+    }
+
     return (
-        <Ramme onLukk={onLukk}>
-            <header className="mb-3">
-                <h2 className="font-display text-2xl font-bold text-amber-200">{npc.name}</h2>
-                <p className="text-xs uppercase tracking-widest text-slate-400">{npc.role}</p>
-            </header>
-
-            <p className="mb-4 text-[15px] leading-relaxed text-slate-100">«{replikk}»</p>
-
-            {/*
-                Kunnskapen ligger bak et klikk, ikke oppslått ved siden av
-                svarknappen. Før sto fasiten i klartekst rett over «Jeg vet
-                svaret», så letingen falt bort selv der svaret faktisk fantes.
-            */}
-            {npc.kunnskap && npc.kunnskap.length > 0 && (
-                <section className="mb-4 rounded-xl border border-sky-400/25 bg-sky-400/5 p-3">
-                    <button
-                        type="button"
-                        onClick={() => {
-                            const apner = !visKunnskap;
-                            setVisKunnskap(apner);
-                            // Ordene hun nettopp fikk høre, settes i tåkekanten
-                            // av minnetreet. Aldri høyere: å høre et ord er
-                            // ikke å kunne det (blueprint §7.4).
-                            if (!apner) return;
-                            for (const k of npc.kunnskap ?? []) {
-                                if (k.begrep) larBegrep(k.begrep, 'hort');
-                            }
-                        }}
-                        className="flex w-full items-center justify-between text-xs font-semibold uppercase tracking-widest text-sky-300"
-                    >
-                        <span>Spør {npc.name.split(' ')[0]} ut</span>
-                        <span aria-hidden>{visKunnskap ? '−' : '+'}</span>
-                    </button>
-                    {visKunnskap && (
-                        <ul className="mt-2 space-y-2 text-sm leading-relaxed text-slate-200">
-                            {npc.kunnskap.map((k) => (
-                                <li key={k.tekst} className="border-l-2 border-sky-400/40 pl-3">
-                                    {k.tekst}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </section>
-            )}
-
-            {/*
-                Alle handlingene som står åpne, ikke bare den første.
-                Kongsmannen ber om korn, og eleven skal kunne si nei til ham i
-                samme samtale - et nei som bare finnes i å gå sin vei, er ikke
-                et valg hun ser at hun tar.
-
-                Ledeteksten står én gang, over knappene: de to alternativene er
-                svar på det samme spørsmålet, ikke to spørsmål.
-            */}
-            {handlinger.length > 0 ? (
-                <section className="rounded-xl border border-emerald-300/30 bg-emerald-300/5 p-3">
-                    <p className="mb-3 whitespace-pre-line text-[15px] leading-relaxed text-slate-100">
-                        «{handlinger[0].ledetekst}»
+        <Samtaleboks
+            navn={npc.name}
+            undertittel={npc.role}
+            onLukk={onLukk}
+            merke={
+                oppdrag && !visKunnskap ? (
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-300/90">
+                        {aktiv ? 'Oppdrag' : 'Nytt oppdrag'} · {oppdrag.title}
                     </p>
-                    <div className="grid gap-2">
-                        {handlinger.map((h, i) => (
-                            <button
-                                key={h.id}
-                                type="button"
-                                onClick={() => onHandling(h.id)}
-                                className={`w-full rounded-lg px-4 py-2.5 font-display font-bold transition ${
-                                    i === 0
-                                        ? 'bg-emerald-500 text-white hover:bg-emerald-400'
-                                        : 'border border-white/20 text-slate-200 hover:bg-white/5'
-                                }`}
-                            >
-                                {h.knapp}
-                            </button>
-                        ))}
-                    </div>
-                </section>
-            ) : aktiv ? (
-                <section className="rounded-xl border border-amber-300/30 bg-amber-300/5 p-3">
-                    <h3 className="mb-1 font-display font-semibold text-amber-200">
-                        {aktiv.title}
-                    </h3>
-                    <p className="mb-3 text-sm text-slate-300">{aktiv.hint}</p>
-                    <button
-                        type="button"
-                        onClick={() => onSvarPa(aktiv)}
-                        className="w-full rounded-lg bg-amber-400 px-4 py-2.5 font-semibold text-slate-900 transition hover:bg-amber-300"
-                    >
-                        Jeg vet svaret
-                    </button>
-                </section>
-            ) : ny ? (
-                <section className="rounded-xl border border-white/15 bg-white/5 p-3">
-                    <h3 className="mb-1 font-display font-semibold text-slate-100">{ny.title}</h3>
-                    <p className="mb-3 text-sm leading-relaxed text-slate-300">«{ny.intro}»</p>
-                    <button
-                        type="button"
-                        onClick={() => onTaOppdrag(ny)}
-                        className="w-full rounded-lg bg-emerald-500 px-4 py-2.5 font-semibold text-white transition hover:bg-emerald-400"
-                    >
-                        Ta oppdraget
-                    </button>
-                </section>
-            ) : gjortHandling ? (
-                <p className="rounded-xl border border-white/10 bg-white/5 p-3 text-[15px] leading-relaxed text-slate-300">
-                    «{gjortHandling.etterpa}»
-                </p>
+                ) : undefined
+            }
+            valg={knapper.map((k, i) => (
+                <Valg key={k.id} nr={i + 1} hoved={k.hoved} onClick={k.gjor}>
+                    {k.tekst}
+                </Valg>
+            ))}
+        >
+            {visKunnskap ? (
+                <ul className="space-y-2 text-[15px] leading-relaxed text-slate-200">
+                    {npc.kunnskap!.map((k) => (
+                        <li key={k.tekst} className="border-l-2 border-sky-400/50 pl-3">
+                            {k.tekst}
+                        </li>
+                    ))}
+                </ul>
             ) : (
-                <p className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-400">
-                    {npc.name.split(' ')[0]} har ikke mer å be deg om nå.
+                <Skrift
+                    tekst={`«${tale}»`}
+                    className="whitespace-pre-line text-[16px] leading-relaxed text-slate-100"
+                />
+            )}
+            {!visKunnskap && !knapper.some((k) => k.hoved) && !gjortHandling && (
+                <p className="mt-1.5 text-xs text-slate-500">
+                    {fornavn} har ikke mer å be deg om nå.
                 </p>
             )}
-        </Ramme>
+        </Samtaleboks>
     );
 }
 
@@ -218,24 +207,75 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
 
     if (!lm) return null;
 
+    const apenHandling =
+        lm.handling && (lm.handling.krever ?? []).every((k) => gjortSteg.includes(k))
+            ? lm.handling
+            : null;
+    let nr = 0;
+
     return (
-        <Ramme onLukk={onLukk}>
-            <p className="text-xs uppercase tracking-widest text-slate-400">
-                {lm.kind === 'runestein'
+        <Samtaleboks
+            navn={lm.title}
+            undertittel={
+                lm.kind === 'runestein'
                     ? 'Runestein'
                     : lm.kind === 'skilt'
-                    ? 'Innskrift'
-                    : lm.kind === 'baal'
-                    ? 'Bål'
-                    : 'Kiste'}
-            </p>
-            <h2 className="mb-3 font-display text-2xl font-bold text-amber-200">{lm.title}</h2>
+                      ? 'Innskrift'
+                      : lm.kind === 'baal'
+                        ? 'Bål'
+                        : 'Kiste'
+            }
+            onLukk={onLukk}
+            valg={
+                <>
+                    {/*
+                        Døra inn til noe scenen eier - bua med forrådet. Skilt
+                        fra `valg` under, som setter et flagg og er over med det.
+                    */}
+                    {apenHandling && (
+                        <Valg
+                            nr={++nr}
+                            hoved
+                            onClick={() => {
+                                onLukk();
+                                tilSpill.emit('landemerkeHandling', {
+                                    landmarkId: lm.id,
+                                    handlingId: apenHandling.id,
+                                });
+                            }}
+                        >
+                            {apenHandling.knapp}
+                        </Valg>
+                    )}
+                    {/*
+                        Valget. Ingen vurdering står her - ingen «er du sikker?»,
+                        ingen farge som sier at dette er stygt, og ingen ros når
+                        det er gjort. Derfor er det aldri `hoved`. Spillet sier
+                        ingenting (blueprint §3). Følgen kommer i mellomspillet
+                        og i graven hennes i kapittel 5.
+                    */}
+                    {valg && !tatt && (
+                        <Valg
+                            nr={++nr}
+                            onClick={() => {
+                                settFlagg(valg.flagg);
+                                if (valg.solv) giSolv(valg.solv);
+                                onLukk();
+                            }}
+                        >
+                            {valg.knapp}
+                        </Valg>
+                    )}
+                </>
+            }
+        >
             {/* Avsnitt beholdes. Runesteinene i Nordvik er én blokk hver, men
                 skiltene i hallen forklarer to ting hver, og de skal ikke gro
                 sammen til én vegg av tekst. */}
-            <p className="whitespace-pre-line text-[15px] leading-relaxed text-slate-100">
-                {lm.text}
-            </p>
+            <Skrift
+                tekst={lm.text}
+                className="whitespace-pre-line text-[16px] leading-relaxed text-slate-100"
+            />
             {/*
                 Det gården husker. Linjene står bare for den som gjorde det de
                 handler om, og ingen av dem dømmer - de sier hva som ligger der.
@@ -251,56 +291,17 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
                         {t.tekst}
                     </p>
                 ))}
-            {/*
-                Valget. Ingen vurdering står her - ingen «er du sikker?», ingen
-                farge som sier at dette er stygt, og ingen ros når det er gjort.
-                Spillet sier ingenting (blueprint §3). Følgen kommer i
-                mellomspillet og i graven hennes i kapittel 5.
-            */}
-            {/*
-                Døra inn til noe scenen eier - bua med forrådet. Skilt fra
-                `valg` under, som setter et flagg og er over med det.
-            */}
-            {lm.handling && (lm.handling.krever ?? []).every((k) => gjortSteg.includes(k)) && (
-                <button
-                    type="button"
-                    onClick={() => {
-                        onLukk();
-                        tilSpill.emit('landemerkeHandling', {
-                            landmarkId: lm.id,
-                            handlingId: lm.handling!.id,
-                        });
-                    }}
-                    className="mt-4 w-full rounded-lg bg-amber-400 px-4 py-3 font-display font-bold text-slate-900 transition hover:bg-amber-300"
-                >
-                    {lm.handling.knapp}
-                </button>
-            )}
-            {valg && !tatt && (
-                <button
-                    type="button"
-                    onClick={() => {
-                        settFlagg(valg.flagg);
-                        if (valg.solv) giSolv(valg.solv);
-                        onLukk();
-                    }}
-                    className="mt-4 w-full rounded-lg border border-white/25 bg-white/10 px-4 py-3 font-display font-semibold text-slate-100 transition hover:bg-white/20"
-                >
-                    {valg.knapp}
-                </button>
-            )}
             {valg && tatt && (
-                <p className="mt-4 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-[15px] text-slate-300">
+                <p className="mt-3 border-l-2 border-white/20 pl-3 text-[15px] text-slate-300">
                     {valg.etterpa}
                 </p>
             )}
-
             {forste && !valg && (
-                <p className="mt-4 rounded-lg bg-emerald-500/15 px-3 py-2 text-sm text-emerald-200">
+                <p className="mt-2 text-sm font-semibold text-emerald-300">
                     Du husker dette nå. +5 erfaring.
                 </p>
             )}
-        </Ramme>
+        </Samtaleboks>
     );
 }
 

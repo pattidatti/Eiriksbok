@@ -127,4 +127,10 @@ export interface LootBit {
     itemId: string | null;
     solv: number;
     levetid: number;
+    /**
+     * Sekken var full sist hun gikk over den. Da blir den liggende, og den
+     * trekkes ikke mot henne igjen før hun har gått fra den og kommet tilbake -
+     * ellers ville «Sekken er full» stått og blinket så lenge hun sto der.
+     */
+    avvist?: boolean;
 }
