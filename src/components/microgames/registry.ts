@@ -2323,8 +2323,8 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'seinen-snur',
         title: 'Seinen snur',
         description:
-            'Seinen, 885. Du er vikinghøvdingen Rollo. Langskipet følger pekeren - styr i full fart inn i frankiske båter og ta sølvet, men hold deg unna borgene og broene, der frankerne skyter. I 911 gir kongen deg landet ved elvemunningen, mot at du forsvarer det mot andre vikinger. Nå må vikingskipene fra havet rammes før de når Rouen - og rammer du en frankisk båt, tar kongen tilbake en landsby. Samme grep, motsatt regel. Hold landet til 933. Lyspæra: plyndreren ble kongens vasall, og vikingene ble normannere.',
-        estimatedSeconds: 150,
+            'Seinen, 885. Du er vikinghøvdingen Rollo. Langskipet følger pekeren - ram frankiske båter i full fart og ta sølvet, men hold deg unna pilene fra borgene. Jo mer sølv, jo mer land får du i 911, da kongen gir deg landet ved elvemunningen mot at du forsvarer det. Nå kommer vikingflåtene fra havet: ram dem før Rouen, og la et rammet skip skli inn i det neste. Kongens blå båter er fredet - ram dem, og kongen blir sint og tar tilbake landsbyer. Samme grep, motsatt regel. Hold landet til 933.',
+        estimatedSeconds: 130,
         sjanger: 'styring-ramming',
         tone: 'lett',
         hook: 'Du er Rollo. Ram frankerne for sølv - til kongen gir deg landet.',

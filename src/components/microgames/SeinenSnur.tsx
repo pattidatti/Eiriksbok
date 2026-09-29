@@ -17,7 +17,10 @@ import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
 import { usePlaytest } from './playtest';
 import {
-    LAND,
+    ANGER_MAX,
+    H,
+    SILVER_PER_LAND,
+    W,
     P1,
     P2,
     ROUEN_Y,
@@ -37,6 +40,7 @@ import {
     OCHRE,
     SERIF,
     TERRA,
+    burst,
     drawHud,
     drawWorld,
     fit,
@@ -85,11 +89,11 @@ type Mode = 'menu' | 'play' | 'paused' | 'dying' | 'outro' | 'over';
 
 const RANKS: [number, string][] = [
     [0, 'Roer'],
-    [5000, 'Styrmann'],
-    [12000, 'Høvding'],
-    [20000, 'Rollos mann'],
-    [28000, 'Jarl av Rouen'],
-    [36000, 'Hertug av Normandie'],
+    [20000, 'Styrmann'],
+    [50000, 'Høvding'],
+    [90000, 'Rollos mann'],
+    [140000, 'Jarl av Rouen'],
+    [220000, 'Hertug av Normandie'],
 ];
 
 interface SaveData {
@@ -112,6 +116,7 @@ interface RunResult {
     silver: number;
     stopped: number;
     land: number;
+    total: number;
     bestCombo: number;
     next: [number, string] | null;
     best: number;
@@ -126,7 +131,7 @@ const LOSS: Record<Cause, { title: string; msg: string; tip: string }> = {
     bordet: {
         title: 'Skipet ble entret',
         msg: 'Vikingskipene kom borti deg i sakte fart, og mennene deres tok seg om bord. Rollos folk måtte gi opp skipet.',
-        tip: 'Tips: Ram vikingskipene i full fart. Kommer de borti deg mens du står stille, entrer de skipet.',
+        tip: 'Tips: Hold farten oppe - den gule ringen betyr rammefart. Ser du en rød ring, gi gass bort fra skipet.',
     },
     vikinger: {
         title: 'Vikingene tok landet',
@@ -136,11 +141,14 @@ const LOSS: Record<Cause, { title: string; msg: string; tip: string }> = {
     kongen: {
         title: 'Kongen tok landet tilbake',
         msg: 'Etter 911 var frankerne kongens folk - og du var kongens vasall. Da du fortsatte å plyndre, tok han landet tilbake.',
-        tip: 'Tips: Etter 911 er frankerne dine venner. Styr rundt båtene deres og ram bare vikingskip.',
+        tip: 'Tips: Hver kongsbåt du rammer gjør kongen sintere. To krontegn, og han tar en landsby. Hold vikingene ute, så roer han seg.',
     },
 };
 
+const KING_BLUE = '#3b4f8f';
+
 const LESSONS = {
+    kjede: 'Vikingene seilte ofte i flåter på mange skip. En flåte som ble stoppet i elvemunningen, kom aldri opp til Paris.',
     plyndring:
         'Vikingene under Rollo herjet langs Seinen og truet Paris. Frankerne forsvarte seg med borger og befestede broer.',
     avtale: 'I 911 fikk Rollo landet ved elvemunningen mot at han forsvarte det mot andre vikinger. Plyndreren ble kongens vasall.',
@@ -222,6 +230,9 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
         const tf = tfRef.current;
         return { x: tf.ox + p[0] * tf.s, y: tf.oy + p[1] * tf.s };
     };
+    const fxAt = (k: Parameters<typeof burst>[1], x: number, y: number) => {
+        if (assets.current) burst(assets.current, k, x, y);
+    };
     const float = (t: string, x: number, y: number, color: string, big = false) => {
         const tf = tfRef.current;
         text.float(t, tf.ox + x * tf.s, tf.oy + y * tf.s, color, big);
@@ -254,6 +265,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
             silver: g.stats.silver,
             stopped: g.stats.stopped,
             land: landLeft(g),
+            total: g.land,
             bestCombo: g.stats.bestCombo,
             next: nextRank(RANKS, best),
             best,
@@ -263,7 +275,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
         setModeBoth('over');
         if (!completedOnce.current && (won || g.phase === 'avtale')) {
             completedOnce.current = true;
-            onComplete({ score: clamp(score / 30000, 0.3, 1), completed: true });
+            onComplete({ score: clamp(score / 150000, 0.3, 1), completed: true });
         }
     };
 
@@ -275,25 +287,26 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                 case 'ram':
                     sfx.ram();
                     buzz(60);
+                    fxAt('ram', e.x, e.y);
                     if (e.kind === 'frank' && !e.betrayal) {
                         sfx.silver();
+                        fxAt('silver', e.x, e.y);
                         float('SØLV!', e.x, e.y - 40, OCHRE, true);
                         text.lesson('plyndring', LESSONS.plyndring, 1);
+                        if (g.stats.silver === 1)
+                            text.point('lovet', `${SILVER_PER_LAND} sølvbåter gir en landsby til`, toScreen(() => [W / 2, H - 42]), {
+                                seconds: 3.5,
+                            });
                     } else if (e.kind === 'viking') {
                         sfx.stop();
                         float(e.chain > 0 ? `KJEDE x${e.chain + 1}!` : 'SNUDD!', e.x, e.y - 40, OCHRE, true);
                         text.lesson('avtale', LESSONS.avtale, 1);
+                        if (e.chain > 0) text.lesson('kjede', LESSONS.kjede, 0.6);
                     } else {
                         sfx.king();
-                        float('KONGENS BÅT!', e.x, e.y - 40, TERRA, true);
+                        fxAt('silver', e.x, e.y);
+                        float('KONGENS SØLV', e.x, e.y - 40, TERRA, true);
                         text.lesson('kongen', LESSONS.kongen, 1.6);
-                        if (!R.firstBetray) {
-                            R.firstBetray = true;
-                            text.point('konge', 'Kongen tar tilbake en landsby', toScreen(() => [e.x, e.y]), {
-                                tone: 'fare',
-                                seconds: 3.5,
-                            });
-                        }
                     }
                     break;
                 case 'bump':
@@ -302,28 +315,44 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                 case 'boarded':
                     sfx.boarded();
                     buzz(160);
-                    float('ENTRET!', e.x, e.y - 40, TERRA, true);
+                    fxAt('splash', e.x, e.y);
+                    float(e.lostLife ? 'ENTRET!' : 'REKKA RØK', e.x, e.y - 40, TERRA, true);
                     if (!R.firstBoard) {
                         R.firstBoard = true;
-                        text.point('entret', 'Ram i full fart - ikke stå stille', toScreen(() => [g.ship.x, g.ship.y]), {
+                        text.point('entret', 'Hold farten oppe!', toScreen(() => [g.ship.x, g.ship.y]), {
                             tone: 'fare',
                             seconds: 3.5,
                         });
                     }
                     break;
-                case 'raid': {
-                    sfx.horn();
-                    const v = g.villages[e.village];
-                    text.point(`raid${e.village}`, 'Plyndrere i land!', toScreen(() => [v.x, v.y]), {
-                        tone: 'fare',
-                        until: () => !v.alive || !g.boats.some((b) => b.raid === e.village && !b.fleeing),
-                        seconds: 4,
-                    });
+                case 'wreck':
+                    sfx.ram();
+                    fxAt('wreck', e.x, e.y);
+                    float('KNUST MOT BREDDEN!', e.x, e.y - 30, OCHRE, true);
                     break;
-                }
-                case 'raided':
-                    sfx.passed();
-                    float('PLYNDRET', e.x, e.y - 30, TERRA, true);
+                case 'cleanWave':
+                    sfx.stop();
+                    float('HELE FLÅTEN SNUDD +2', W / 2, 150, OCHRE, true);
+                    break;
+                case 'calm':
+                    float('KONGEN ROER SEG', W - 150, H - 80, KING_BLUE, true);
+                    break;
+                case 'repaired':
+                    sfx.silver();
+                    float('+1 SKJOLD', e.x, e.y - 40, OCHRE, true);
+                    break;
+                case 'grant':
+                    if (e.extra > 0)
+                        text.point('grant', `Sølvet ga deg ${e.extra} landsby${e.extra > 1 ? 'er' : ''} ekstra`, toScreen(() => [W / 2, H - 42]), {
+                            seconds: 3.5,
+                        });
+                    break;
+                case 'anger':
+                    if (e.anger < ANGER_MAX)
+                        text.point('vrede', 'Sint konge: én til koster land', toScreen(() => [e.x, e.y]), {
+                            tone: 'fare',
+                            seconds: 3.5,
+                        });
                     break;
                 case 'volley':
                     sfx.volley();
@@ -340,27 +369,38 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                     break;
                 case 'arrows':
                     sfx.arrows(e.hit);
+                    fxAt('splash', e.x, e.y);
                     if (e.hit) {
                         buzz(140);
                         float('TRUFFET', g.ship.x, g.ship.y - 40, TERRA, true);
                     }
                     break;
-                case 'passed':
+                case 'passed': {
                     sfx.passed();
                     float('FORBI ROUEN!', e.x, e.y + 30, TERRA, true);
+                    const v = e.village >= 0 ? g.villages[e.village] : null;
+                    if (v) fxAt('smoke', v.x, v.y - 20);
                     break;
-                case 'kingTakes':
+                }
+                case 'kingTakes': {
+                    const v = g.villages[e.village];
+                    fxAt('smoke', v.x, v.y - 20);
+                    text.point('konge', 'Kongen tok tilbake en landsby', toScreen(() => [v.x, v.y]), {
+                        tone: 'fare',
+                        seconds: 3.5,
+                    });
                     break;
+                }
                 case 'treaty': {
                     sfx.bell();
-                    text.banner('ANNO 911', INK, 2.2);
+                    text.banner('ANNO 911 - AVTALEN', INK, 2.2);
                     text.lesson('avtale', LESSONS.avtale, 1.5);
                     window.setTimeout(() => {
                         if (modeRef.current !== 'play') return;
                         text.beatOnce(
                             'avtale',
                             'Avtalen i 911',
-                            'Kongen gir deg landet ved havet. Ram vikingskipene før Rouen - og la kongens båter være.',
+                            'Kongen gir deg landet ved havet. Stopp vikingene før Rouen. Kongens blå båter er fredet nå.',
                             {
                                 at: toScreen(() => [riverX(ROUEN_Y), ROUEN_Y]),
                                 until: () => g.stats.stopped > 0 || g.stats.betrayed > 0,
@@ -373,7 +413,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                     sfx.horn();
                     break;
                 case 'pairs':
-                    text.banner('FLERE SKIP', TERRA, 1.4);
+                    text.banner('STØRRE FLÅTER', TERRA, 1.4);
                     break;
                 case 'flock':
                     text.banner('EN HEL FLÅTE', TERRA, 1.6);
@@ -666,9 +706,9 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                                     lineHeight: 1.4,
                                 }}
                             >
-                                Langskipet følger pekeren. Styr i full fart inn i en båt for å
-                                ramme den. Frankiske båter har sølv - men i 911 gir kongen deg
-                                landet ved havet, og da er det vikingene du må stoppe.
+                                Langskipet følger pekeren. Ram i full fart. Før 911 tar du
+                                sølvet til frankerne - etter 911 er landet ditt, og det er
+                                vikingene du må stoppe.
                             </p>
                             <ArcadeBigButton onClick={start}>Spill</ArcadeBigButton>
                             <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 10 }}>
@@ -767,7 +807,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                                 items={[
                                     { value: result.silver, label: 'sølvbåter' },
                                     { value: result.stopped, label: 'vikingskip snudd' },
-                                    { value: `${result.land}/${LAND}`, label: 'landsbyer igjen' },
+                                    { value: `${result.land}/${result.total}`, label: 'landsbyer igjen' },
                                     { value: result.bestCombo, label: 'lengste rekke' },
                                 ]}
                             />

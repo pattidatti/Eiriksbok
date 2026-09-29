@@ -116,3 +116,24 @@ Alt løftet er innarbeidet under.
      trussel.
 
 Rutinen går videre etter to gråboks-runder under 4, så spillet ble parkert her uten kunst.
+
+## Gråboks-diagnosene 29.09 (fortsatt samme dag)
+
+Rutinen gir ikke lenger opp et spill på Gøy 3, så gråboksen ble tatt opp igjen og kjerneløkka endret
+etter de tre grepene over, og så etter to nye diagnoser:
+
+- Diagnose 1 (Gøy 3): formasjonene synes ikke, kongens båter er aldri verdt å ramme, og delen før
+  911 er lang og uten følger. Endret: vikingene kommer i rekker, linjer og kiler som blir større
+  (kjedekrasj bærer rekka: skip nummer to i kjeden gir +2, nummer tre +3), kongens båter i egen fil
+  langs venstre bredd med en vredemåler (to treff = kongen tar en landsby, en ren bølge roer ham),
+  kongens sølv gir kister (tre kister = ett skjold tilbake), delen før 911 er kortet til 26 s med
+  pilene nær borgene, og hver fjerde sølvbåt gir en landsby ekstra i 911 - men ett vikingskip
+  ekstra i hver bølge. Plyndring og «forbi Rouen» er slått sammen til én trussel.
+- Diagnose 2 (Gøy 3): dødtid mellom bølgene, kongens sølv er for lite til å friste, og entring
+  føles som en felle. Endret: neste bølge kommer 1,5 s etter at forrige er ryddet (+2 på rekka hvis
+  ingen slapp forbi), kongens sølv vokser med rekka, og entring koster rekka før den koster et
+  skjold - med en rød ring som varsler når du ligger for sakte ved et vikingskip.
+
+Så ble kunsten laget etter kunstbriefen: lin med vev, marker med skrå sting, elva med bølgesting
+og strøm, trær, borger og hus i profil, skip med stripete seil og dragehoder, og teppets borde som
+HUD (ANNO med romertall og en tidslinje til 933, skjold, landsbyer, vrede og kister).

@@ -4,7 +4,6 @@
 
 import {
     H,
-    RAID_T,
     ROUEN_Y,
     VOLLEY_R,
     riverHalf,
@@ -95,13 +94,8 @@ export function makeBot(opts: BotOpts, rng: Rng) {
         const boats = g.boats.filter((b) => !b.fleeing && b.y < H + 10);
         let target: Boat | undefined;
         if (opts.treaty) {
-            // Mest presserende først: plyndrere ved en landsby, så skipet nærmest målet sitt.
-            const urgency = (b: Boat) => {
-                const v = b.raid >= 0 ? g.villages[b.raid] : null;
-                if (v && v.alive && b.raidT > 0) return RAID_T - b.raidT;
-                const goal = v && v.alive ? v.y : ROUEN_Y;
-                return (b.y - goal) / Math.max(20, Math.abs(b.v)) + (v ? RAID_T : 0);
-            };
+            // Mest presserende først: skipet som er nærmest Rouen i tid.
+            const urgency = (b: Boat) => (b.y - ROUEN_Y) / Math.max(20, Math.abs(b.v));
             target = boats
                 .filter((b) => b.kind === 'viking')
                 .sort((a, b) => urgency(a) - urgency(b))[0];

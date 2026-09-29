@@ -11,13 +11,18 @@ export const W = 1280;
 export const H = 720;
 
 /** Før avtalen: 885 (beleiringen av Paris) til 911. */
-export const P1 = 44;
+export const P1 = 26;
 /** Etter avtalen: 911 til 933, da Normandie fikk mer land i vest. */
 export const P2 = 100;
 export const YEAR_A = 885;
 export const YEAR_T = 911;
 export const YEAR_B = 933;
 export const LAND = 6;
+/** Plyndrer du nok sølv før 911, gir kongen deg mer land - men da kommer det flere vikinger. */
+export const MAX_LAND = 8;
+export const SILVER_PER_LAND = 4;
+/** Så mange kongelige sølvkister gir ett liv tilbake. */
+export const CHESTS_PER_LIFE = 3;
 export const HP = 3;
 
 /** Rouen: kommer et vikingskip forbi her, er det inne i landet ditt. */
@@ -30,10 +35,12 @@ const BOAT_R = 22;
 export const RAM_V = 150;
 const MAXV = 330;
 const ACCEL = 3.2;
-const VOLLEY_T = 1.05;
+export const VOLLEY_T = 1.05;
 export const VOLLEY_R = 40;
-/** Sekunder en plyndrer trenger ved landsbyen. */
-export const RAID_T = 3.4;
+/** Kongens båter seiler i egen fil langs venstre bredd etter 911. */
+export const KING_U = -0.74;
+/** Så mange kongsbåter rammet før kongen tar tilbake en landsby. */
+export const ANGER_MAX = 2;
 /** Står skipet saktere enn dette når et vikingskip kommer borti, entrer de det. */
 export const BOARD_V = 90;
 
@@ -60,17 +67,16 @@ export interface Boat {
     kind: 'frank' | 'viking';
     x: number;
     y: number;
-    u: number; // sideveis plass i elva (-1..1)
+    u: number; // sideveis plass i elva: andel av bredden (frankere, -1..1) eller piksler fra midten (vikinger)
     v: number; // fart langs elva (px/s, + = nedover mot havet)
     fleeing: number; // > 0: rammet, på vei bort
     silver: number;
     /** Farten et rammet skip sklir med - treffer det en annen båt, rammer det den også. */
     sx: number;
     sy: number;
-    /** Plyndrere: landsbyen de skal i land ved (-1 = seiler mot Rouen), og hvor langt plyndringen er kommet. */
-    raid: number;
-    raidT: number;
     chain: number;
+    /** Har det rammede skipet alt knust mot bredden? */
+    wrecked: boolean;
 }
 
 export interface Fort {
@@ -102,9 +108,13 @@ export type GameEvent =
     | { e: 'barge'; x: number; y: number }
     | { e: 'viking'; x: number; y: number; n: number }
     | { e: 'ram'; kind: 'frank' | 'viking'; x: number; y: number; points: number; betrayal: boolean; chain: number }
-    | { e: 'boarded'; x: number; y: number; hp: number }
-    | { e: 'raid'; village: number; x: number; y: number }
-    | { e: 'raided'; village: number; x: number; y: number }
+    | { e: 'boarded'; x: number; y: number; hp: number; lostLife: boolean }
+    | { e: 'cleanWave'; x: number; y: number }
+    | { e: 'wreck'; x: number; y: number; points: number }
+    | { e: 'anger'; x: number; y: number; anger: number }
+    | { e: 'calm'; anger: number }
+    | { e: 'repaired'; x: number; y: number }
+    | { e: 'grant'; land: number; extra: number }
     | { e: 'bump'; x: number; y: number }
     | { e: 'volley'; x: number; y: number; fx: number; fy: number }
     | { e: 'arrows'; x: number; y: number; hit: boolean }
@@ -132,6 +142,22 @@ export interface Game {
     volleys: Volley[];
     villages: Village[];
     combo: number;
+    /** Kongens vrede: hvor mange av båtene hans du har rammet siden sist han tok en landsby. */
+    anger: number;
+    /** Kongelige sølvkister: CHESTS_PER_LIFE gir ett liv tilbake. */
+    chests: number;
+    /** Landsbyene kongen ga deg i 911 (LAND + det sølvet kjøpte). */
+    land: number;
+    /** Ekstra vikingskip per bølge fordi du plyndret mye. */
+    extra: number;
+    /** Holdt du forrige bølge unna Rouen uten å røre kongens båter? Da roer kongen seg. */
+    waveClean: boolean;
+    /** Sekunder etter et rammestøt der ingen kan entre skipet. */
+    ramGrace: number;
+    /** Et vikingskip er nær, og skipet ligger for sakte (rød ring). */
+    boardWarn: boolean;
+    /** Skipene i bølgen som er ute nå. */
+    wave: number[];
     year: number;
     bargeCd: number;
     vikingCd: number;
@@ -147,6 +173,7 @@ export interface Game {
         passed: number;
         bestCombo: number;
         bestChain: number;
+        wrecked: number;
     };
 }
 
@@ -172,12 +199,12 @@ export function newGame(seed: number): Game {
     });
     const villages: Village[] = [];
     // Landsbyene ved elvemunningen: på begge bredder mellom Rouen og havet.
-    for (let i = 0; i < LAND; i++) {
-        const y = 360 + i * 56;
+    for (let i = 0; i < MAX_LAND; i++) {
+        const y = 346 + i * 44;
         const side = i % 2 === 0 ? -1 : 1;
-        villages.push({ x: riverX(y) + side * (riverHalf(y) + 58), y, alive: true, lost: null });
+        villages.push({ x: riverX(y) + side * (riverHalf(y) + 58), y, alive: i < LAND, lost: null });
     }
-    const y0 = 690;
+    const y0 = 640;
     return {
         seed,
         t: 0,
@@ -190,13 +217,21 @@ export function newGame(seed: number): Game {
         target: null,
         boats: [],
         forts: [
-            fortAt(PARIS_Y, 0, 250, 'Paris'),
-            fortAt(190, -1, 185, 'Pîtres'),
-            fortAt(430, 1, 150, 'Rouen'),
+            fortAt(PARIS_Y + 34, 0, 200, 'Paris'),
+            fortAt(200, -1, 130, 'Pîtres'),
+            fortAt(ROUEN_Y + 4, -1, 110, 'Rouen'),
         ],
         volleys: [],
         villages,
         combo: 0,
+        anger: 0,
+        chests: 0,
+        land: LAND,
+        extra: 0,
+        waveClean: false,
+        ramGrace: 0,
+        boardWarn: false,
+        wave: [],
         year: YEAR_A,
         bargeCd: 0.8,
         vikingCd: 2,
@@ -205,7 +240,7 @@ export function newGame(seed: number): Game {
         events: [],
         shake: 0,
         repair: 0,
-        stats: { silver: 0, stopped: 0, betrayed: 0, passed: 0, bestCombo: 0, bestChain: 0 },
+        stats: { silver: 0, stopped: 0, betrayed: 0, passed: 0, bestCombo: 0, bestChain: 0, wrecked: 0 },
     };
 }
 
@@ -230,11 +265,8 @@ function addPoints(g: Game, n: number, x: number, y: number) {
 }
 
 function spawnBarge(g: Game) {
-    // Etter 911 holder kongens båter seg langs breddene - midten er din.
-    const u =
-        g.phase === 'avtale'
-            ? (g.rng() < 0.5 ? -1 : 1) * (0.2 + g.rng() * 0.35)
-            : (g.rng() - 0.5) * 1.3;
+    // Etter 911 seiler kongens båter i egen fil langs venstre bredd - resten av elva er din.
+    const u = g.phase === 'avtale' ? KING_U + (g.rng() - 0.5) * 0.12 : (g.rng() - 0.5) * 1.3;
     const y = -20;
     g.boats.push({
         id: g.ids++,
@@ -247,40 +279,70 @@ function spawnBarge(g: Game) {
         silver: 100,
         sx: 0,
         sy: 0,
-        raid: -1,
-        raidT: 0,
         chain: 0,
+        wrecked: false,
     });
     g.valg++;
     g.events.push({ e: 'barge', x: riverX(40), y: 40 });
 }
 
-function spawnViking(g: Game, n: number) {
+export type Formation = 'en' | 'rekke' | 'linje' | 'kile';
+
+/**
+ * Vikingskipene kommer i formasjoner: på rekke (etter hverandre), på linje (side om side)
+ * eller i kile. Et skip du rammer, sklir inn i naboen - tette flåter gir kjedekrasj.
+ */
+function spawnViking(g: Game, n: number, form: Formation) {
     const f = Math.min(1, (g.t - P1) / P2);
+    const v = -(56 + 70 * f) * (0.92 + g.rng() * 0.16);
+    // Plassene i formasjonen, i piksler: [til siden, bakover]. Tett nok til kjedekrasj.
+    const slots: [number, number][] = [];
     for (let i = 0; i < n; i++) {
-        const u = (g.rng() - 0.5) * 1.4;
-        const y = H + 30 + i * 60;
-        // Fra 915 går noen i land og plyndrer en landsby i stedet for å seile mot Rouen.
-        const alive = g.villages.map((v, k) => (v.alive ? k : -1)).filter((k) => k >= 0);
-        const raid = g.year >= 915 && alive.length && g.rng() < 0.4 ? alive[Math.floor(g.rng() * alive.length)] : -1;
-        g.boats.push({
+        if (form === 'rekke' || form === 'en') slots.push([0, i * 50]);
+        else if (form === 'linje') slots.push([((i % 3) - 1) * 48, Math.floor(i / 3) * 50]);
+        else {
+            // Kile: høvdingskipet først, så par bak på hver side.
+            const row = Math.ceil(i / 2);
+            const side = i === 0 ? 0 : i % 2 ? -1 : 1;
+            slots.push(row <= 2 ? [side * row * 46, row * 42] : [side * 46, row * 42]);
+        }
+    }
+    const minX = Math.min(...slots.map((q) => q[0]));
+    const maxX = Math.max(...slots.map((q) => q[0]));
+    const room = Math.max(0, riverHalf(H) * 0.8 - (maxX - minX) / 2 - 20);
+    const ox0 = (g.rng() - 0.5) * 2 * room - (minX + maxX) / 2;
+    for (const [dx, dy] of slots) {
+        const y = H + 30 + dy;
+        const b: Boat = {
             id: g.ids++,
             kind: 'viking',
-            x: riverX(y) + u * riverHalf(y),
+            x: 0,
             y,
-            u,
-            v: -(56 + 75 * f) * (0.9 + g.rng() * 0.2),
+            u: ox0 + dx,
+            v,
             fleeing: 0,
             silver: 0,
             sx: 0,
             sy: 0,
-            raid,
-            raidT: 0,
             chain: 0,
-        });
+            wrecked: false,
+        };
+        placeBoat(b);
+        g.boats.push(b);
+        g.wave.push(b.id);
     }
     g.valg++;
     g.events.push({ e: 'viking', x: riverX(H - 20), y: H - 20, n });
+}
+
+/** Frankiske båter ligger på en andel av elvebredden (u), vikingskip på en fast avstand i piksler. */
+function placeBoat(b: Boat) {
+    const half = riverHalf(b.y);
+    if (b.kind === 'frank') b.x = riverX(b.y) + b.u * half * 0.8;
+    else {
+        const lim = Math.max(0, half * 0.85 - 12);
+        b.x = riverX(b.y) + Math.max(-lim, Math.min(lim, b.u));
+    }
 }
 
 /** En båt blir rammet (av deg, eller av et skip som sklir - chain > 0). */
@@ -299,17 +361,34 @@ function hit(g: Game, b: Boat, vx: number, vy: number, chain: number) {
             g.events.push({ e: 'ram', kind: 'frank', x: b.x, y: b.y, points: 0, betrayal: false, chain });
             addPoints(g, 100 * bonus, b.x, b.y);
         } else {
-            // Etter 911: sølvet frister, men kongen tar tilbake en landsby.
+            // Etter 911: sølvet frister, men rekka ryker og kongen blir sint. Rammer du
+            // ANGER_MAX av båtene hans, tar han tilbake en landsby.
             g.stats.betrayed++;
             g.events.push({ e: 'ram', kind: 'frank', x: b.x, y: b.y, points: 0, betrayal: true, chain });
-            addPoints(g, 250, b.x, b.y);
-            g.combo = 0;
-            const v = loseVillage(g, 'kongen');
-            if (v >= 0) g.events.push({ e: 'kingTakes', village: v });
+            // Kongens sølv vokser med rekka: fristelsen er størst når du har mest å tape.
+            const silver = 25 * Math.max(4, g.combo);
+            g.score += silver;
+            g.events.push({ e: 'points', n: silver, x: b.x, y: b.y });
+            g.waveClean = false;
+            g.chests++;
+            if (g.chests >= CHESTS_PER_LIFE && g.ship.hp < HP) {
+                g.chests = 0;
+                g.ship.hp++;
+                g.events.push({ e: 'repaired', x: g.ship.x, y: g.ship.y });
+            }
+            g.chests = Math.min(g.chests, CHESTS_PER_LIFE);
+            g.anger++;
+            g.events.push({ e: 'anger', x: b.x, y: b.y, anger: g.anger });
+            if (g.anger >= ANGER_MAX) {
+                g.anger = 0;
+                const v = loseVillage(g, 'kongen');
+                if (v >= 0) g.events.push({ e: 'kingTakes', village: v });
+            }
         }
     } else {
         g.stats.stopped++;
-        g.combo++;
+        // Kjedekrasj bærer rekka: skip nummer to i kjeden gir +2, nummer tre +3 ...
+        g.combo += 1 + chain;
         g.stats.bestCombo = Math.max(g.stats.bestCombo, g.combo);
         g.events.push({ e: 'ram', kind: 'viking', x: b.x, y: b.y, points: 0, betrayal: false, chain });
         addPoints(g, 150 * bonus, b.x, b.y);
@@ -339,7 +418,7 @@ export function pressure(g: Game): number {
     for (const b of g.boats)
         if (b.kind === 'viking' && !b.fleeing && b.y < H) threat += Math.max(0, 1 - (b.y - ROUEN_Y) / 420);
     const f = Math.min(1, (g.t - P1) / P2);
-    return Math.min(1, 0.3 + 0.3 * f + Math.min(0.3, threat * 0.12) + 0.1 * (1 - landLeft(g) / LAND));
+    return Math.min(1, 0.3 + 0.3 * f + Math.min(0.3, threat * 0.12) + 0.1 * (1 - landLeft(g) / g.land));
 }
 
 export function update(g: Game, dt: number) {
@@ -348,6 +427,7 @@ export function update(g: Game, dt: number) {
     g.shake = Math.max(0, g.shake - dt * 3);
     const s = g.ship;
     s.hit = Math.max(0, s.hit - dt);
+    g.ramGrace = Math.max(0, g.ramGrace - dt);
     if (g.mode !== 'play') {
         for (const b of g.boats) if (b.fleeing) b.fleeing += dt;
         return;
@@ -366,7 +446,12 @@ export function update(g: Game, dt: number) {
         s.hp = HP;
         g.combo = 0;
         g.vikingCd = 2.2;
+        const extra = Math.min(MAX_LAND - LAND, Math.floor(g.stats.silver / SILVER_PER_LAND));
+        g.extra = extra;
+        g.land = LAND + extra;
+        for (let i = 0; i < g.land; i++) g.villages[i].alive = true;
         g.events.push({ e: 'treaty' });
+        g.events.push({ e: 'grant', land: g.land, extra });
     }
 
     // Skipet: følger målet med treghet, holdes i elva.
@@ -387,7 +472,8 @@ export function update(g: Game, dt: number) {
     s.vy += (dvy - s.vy) * k;
     s.x += s.vx * dt;
     s.y += s.vy * dt;
-    s.y = Math.max(16, Math.min(H - 12, s.y));
+    // Teppets borde øverst og nederst er HUD - skipet holder seg mellom dem.
+    s.y = Math.max(44, Math.min(H - 56, s.y));
     const cx = riverX(s.y);
     const hw = riverHalf(s.y) - SHIP_R * 0.7;
     if (s.x < cx - hw) {
@@ -409,33 +495,26 @@ export function update(g: Game, dt: number) {
             b.sx *= damp;
             b.sy *= damp;
             b.y += (b.kind === 'viking' ? 50 : -20) * dt * Math.min(1, b.fleeing);
+            // Sklir skipet i full fart inn i bredden, knuses det: bonus.
+            const off = b.x - riverX(b.y);
+            const half = riverHalf(b.y) * 0.95;
+            if (Math.abs(off) > half) {
+                const sp = Math.hypot(b.sx, b.sy);
+                b.x = riverX(b.y) + Math.sign(off) * half;
+                if (!b.wrecked && b.kind === 'viking' && sp > 110 && b.fleeing < 1.2) {
+                    b.wrecked = true;
+                    g.stats.wrecked++;
+                    const pts = Math.round(100 * mult(g));
+                    g.events.push({ e: 'wreck', x: b.x, y: b.y, points: pts });
+                    addPoints(g, 100, b.x, b.y);
+                }
+                b.sx *= -0.2;
+                b.sy *= 0.5;
+            }
             continue;
         }
-        const village = b.raid >= 0 ? g.villages[b.raid] : null;
-        if (village && !village.alive) b.raid = -1;
-        if (village && village.alive && b.y <= village.y + 8) {
-            // Plyndreren legger til ved landsbyen.
-            const side = village.x < riverX(village.y) ? -1 : 1;
-            b.u += (side * 0.95 - b.u) * Math.min(1, 2 * dt);
-            if (Math.abs(b.u - side * 0.95) < 0.08) {
-                if (b.raidT === 0) {
-                    g.valg++;
-                    g.events.push({ e: 'raid', village: b.raid, x: village.x, y: village.y });
-                }
-                b.raidT += dt;
-                if (b.raidT >= RAID_T) {
-                    village.alive = false;
-                    village.lost = 'vikinger';
-                    g.stats.passed++;
-                    g.combo = 0;
-                    g.events.push({ e: 'raided', village: b.raid, x: village.x, y: village.y });
-                    b.fleeing = 0.001;
-                    b.sy = 90;
-                    b.sx = 0;
-                }
-            }
-        } else b.y += b.v * dt;
-        b.x = riverX(b.y) + b.u * riverHalf(b.y) * 0.8;
+        b.y += b.v * dt;
+        placeBoat(b);
     }
 
     // Ramming.
@@ -454,22 +533,26 @@ export function update(g: Game, dt: number) {
             const ny = (s.y - b.y) / (d || 1);
             s.x = b.x + nx * (SHIP_R + BOAT_R);
             s.y = b.y + ny * (SHIP_R + BOAT_R);
-            if (b.kind === 'viking' && g.phase === 'avtale' && s.hit <= 0 && sp < BOARD_V) {
-                // Et vikingskip som kommer borti deg i sakte fart, entrer skipet.
-                s.hp--;
+            if (b.kind === 'viking' && g.phase === 'avtale' && s.hit <= 0 && g.ramGrace <= 0 && sp < BOARD_V) {
+                // Et vikingskip som kommer borti deg i sakte fart, prøver å entre. Har du en
+                // rekke, koster det rekka; står rekka på null, mister du et liv.
+                const lostLife = g.combo === 0;
+                if (lostLife) s.hp--;
                 s.hit = 1;
                 g.shake = 0.5;
                 g.combo = 0;
-                s.vx = nx * 160;
-                s.vy = ny * 160;
-                g.events.push({ e: 'boarded', x: s.x, y: s.y, hp: s.hp });
+                s.vx = nx * 200;
+                s.vy = ny * 200;
+                g.events.push({ e: 'boarded', x: s.x, y: s.y, hp: s.hp, lostLife });
             } else g.events.push({ e: 'bump', x: b.x, y: b.y });
             continue;
         }
         g.shake = 0.6;
         hit(g, b, s.vx * 0.9, s.vy * 0.9, 0);
-        s.vx *= 0.45;
-        s.vy *= 0.45;
+        // Skipet beholder farten gjennom støtet, og mannskapet er klart til neste i et halvt sekund.
+        s.vx *= 0.7;
+        s.vy *= 0.7;
+        g.ramGrace = 0.6;
     }
     // Kjedekrasj: et skip som sklir, rammer det det treffer.
     for (const a of g.boats) {
@@ -488,12 +571,22 @@ export function update(g: Game, dt: number) {
         }
     }
 
+    // Varsel: et vikingskip er nær, og du ligger for sakte - gi gass!
+    g.boardWarn =
+        g.phase === 'avtale' &&
+        sp < BOARD_V &&
+        g.ramGrace <= 0 &&
+        g.boats.some(
+            (b) => b.kind === 'viking' && !b.fleeing && Math.hypot(b.x - s.x, b.y - s.y) < SHIP_R + BOAT_R + 34
+        );
+
     // Vikingskip som kommer forbi Rouen, tar en landsby.
     for (const b of g.boats) {
         if (b.kind !== 'viking' || b.fleeing || b.y > ROUEN_Y) continue;
         b.fleeing = -1; // fjernes
         g.stats.passed++;
         g.combo = 0;
+        g.waveClean = false;
         const v = loseVillage(g, 'vikinger');
         g.events.push({ e: 'passed', x: b.x, y: b.y, village: v });
     }
@@ -545,12 +638,42 @@ export function update(g: Game, dt: number) {
             spawnBarge(g);
             g.bargeCd = 4.4 + g.rng() * 2;
         }
+        // Er bølgen ryddet, kommer neste straks. Ingen slapp forbi: +2 på rekka.
+        if (g.wave.length && !g.boats.some((b) => g.wave.includes(b.id) && !b.fleeing)) {
+            g.wave = [];
+            if (g.waveClean) {
+                g.combo += 2;
+                g.stats.bestCombo = Math.max(g.stats.bestCombo, g.combo);
+                g.events.push({ e: 'cleanWave', x: s.x, y: s.y });
+            }
+            g.vikingCd = Math.min(g.vikingCd, 1.5);
+        }
         // Vikingskipene kommer fra havet.
         g.vikingCd -= dt;
         if (g.vikingCd <= 0) {
-            const n = g.year >= 926 && g.rng() < 0.45 ? 3 : g.year >= 920 && g.rng() < 0.5 ? 2 : 1;
-            spawnViking(g, n);
-            g.vikingCd = (3.2 - 1.7 * f) * (0.8 + g.rng() * 0.4) + (n - 1) * 1.2;
+            // Flåtene blir større og tettere: rekker og linjer først, fra 920 kiler.
+            // Plyndret du mye før 911, har ryktet spredt seg: ett skip ekstra per ekstra landsby.
+            if (g.waveClean && g.anger > 0) {
+                g.anger--;
+                g.events.push({ e: 'calm', anger: g.anger });
+            }
+            g.waveClean = true;
+            const r = g.rng();
+            let n = 2;
+            let form: Formation = 'rekke';
+            if (g.year >= 926) {
+                n = 5 + Math.floor(g.rng() * 2);
+                form = r < 0.4 ? 'kile' : r < 0.7 ? 'rekke' : 'linje';
+            } else if (g.year >= 920) {
+                n = 4 + Math.floor(g.rng() * 2);
+                form = r < 0.35 ? 'rekke' : r < 0.7 ? 'linje' : 'kile';
+            } else if (g.year >= 915) {
+                n = 4;
+                form = r < 0.5 ? 'rekke' : 'linje';
+            } else n = 3;
+            n += g.extra;
+            spawnViking(g, n, form);
+            g.vikingCd = 6 - 1.2 * f;
         }
         // Mannskapet reparerer skipet: ett liv tilbake hvert 20. sekund.
         if (s.hp < HP) {
