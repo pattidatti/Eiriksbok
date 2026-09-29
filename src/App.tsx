@@ -75,6 +75,7 @@ const GamePage = React.lazy(routeFactories.GamePage);
 const RpgPage = React.lazy(routeFactories.RpgPage);
 const CompetencyGoalsPage = React.lazy(routeFactories.CompetencyGoalsPage);
 const MicroGamePreviewPage = React.lazy(routeFactories.MicroGamePreviewPage);
+const ArkadePage = React.lazy(routeFactories.ArkadePage);
 const Pengeliv = React.lazy(routeFactories.Pengeliv);
 
 
@@ -146,6 +147,7 @@ const router = createBrowserRouter([
       { path: "oving/tidsreise", element: <TimeTravelPage /> },
       { path: "oving/tidsreise/:scenarioId", element: <TimeTravelGamePage /> },
       { path: "oving/virkemidler", element: <VirkemiddelverkstedetPage /> },
+      { path: "oving/arkade", element: <ArkadePage /> },
       { path: "oving/spill", element: <MiniGamesPage /> },
       { path: "oving/spill/:gameId", element: <GamePage /> },
       { path: "oving/rpg", element: <RpgPage /> },

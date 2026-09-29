@@ -35,7 +35,7 @@
             "type": "component",
             "name": "MicroGame",
             "props": {
-                "gameId": "vesterleden-3d"
+                "gameId": "kurs-for-gronland"
             }
         },
         {

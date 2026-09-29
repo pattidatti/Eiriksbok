@@ -21,6 +21,7 @@ export const Breadcrumbs: React.FC = () => {
     const getTitle = (id: string, index: number): string => {
         // Manual overrides - Check these first!
         if (id === 'oving') return 'Øving';
+        if (id === 'arkade') return 'Arkaden';
         if (id === 'flashcards') return 'Fagbegreper';
         // KRLE-religionsrommet er ruter uten emne i manifestet
         if (id === 'religionsrommet') return 'Religionsrommet';

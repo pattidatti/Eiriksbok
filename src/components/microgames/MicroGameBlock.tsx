@@ -57,11 +57,18 @@ function MountSignal({ onMount }: { onMount: () => void }) {
 
 interface MicroGameBlockProps {
     gameId: string;
+    /** Marg rundt blokken. Standard `my-6` (i artikkelflyten); Arkaden setter sin egen. */
+    blockClassName?: string;
     // Frie spillspesifikke props fra JSON sendes videre til spillet.
     [key: string]: unknown;
 }
 
-export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockProps) {
+export function MicroGameBlock({
+    gameId,
+    onComplete,
+    blockClassName = 'my-6',
+    ...rest
+}: MicroGameBlockProps) {
     const entry = gameId ? getMicroGame(gameId) : undefined;
     // Flere spill kaller onComplete både ved seier og i WinScreen "Gå videre" -
     // dedupliser så én seier aldri gir dobbel XP. (Må stå før early return.)
@@ -230,7 +237,7 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
     );
     return (
         <div
-            className={`my-6${pseudoFs ? ' mg-pseudo-fs' : ''}`}
+            className={`${blockClassName}${pseudoFs ? ' mg-pseudo-fs' : ''}`}
             data-microgame={gameId}
             ref={rootRef}
         >

@@ -6,6 +6,14 @@ import { DailyReviewCard } from '../components/review/DailyReviewCard';
 export const PracticePage: React.FC = () => {
     const modules = [
         {
+            id: 'arkaden',
+            title: 'Arkaden',
+            description: 'Ekte små dataspill fra timene: styr en knarr til Grønland, hold stavkirka tett i 846 år eller led RAF fra kartbordet. Reglene er fagstoffet.',
+            icon: Gamepad2,
+            color: 'bg-gradient-to-br from-indigo-500 to-violet-600',
+            link: '/oving/arkade'
+        },
+        {
             id: 'minnevokteren',
             title: 'Minnevokteren',
             description: 'Rollespill i sanntid. Lag din egen figur, slåss mot tåka som spiser det folk husker, og løs oppdrag der svaret ligger gjemt i verden.',

@@ -3,6 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 export interface MicroGameMapEntry {
     subjectId: string;
     topicId: string;
+    /** Adressen til artikkelen (eller stien) spillet bor i. */
+    link?: string;
+    /** Tittelen på artikkelen. */
+    title?: string;
 }
 
 export type MicroGameMap = Record<string, MicroGameMapEntry>;

@@ -235,6 +235,7 @@ const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
 const InnMotStranda = lazy(() => import('./InnMotStranda'));
 const SeinenSnur = lazy(() => import('./SeinenSnur'));
+const KursForGronland3D = lazy(() => import('./KursForGronland3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2332,6 +2333,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Bayeux-teppet: brodert ullgarn på lin, skip i profil, terrakotta, oker og blågrønn',
         loader: () => import('./SeinenSnur'),
         Component: SeinenSnur as never,
+    },
+    'kurs-for-gronland': {
+        id: 'kurs-for-gronland',
+        title: 'Kurs for Grønland',
+        description:
+            'Nord-Atlanteren, rundt år 1000. Du er styrmann på en knarr fra Hernar i Norge til Hvarf på Grønland - uten kompass. Havstrømmen skyver skipet nord eller sør uten at du merker det. Hver middag viser solbrettet om sola står for lavt (for langt nord) eller for høyt (for langt sør). Følg det gamle leidsagnet: nord for Hjaltland, sør for Færøyene, og så langt sør for Island at du bare ser fugl og hval. Rev seilet i storm og øs når sjøen slår inn. Lyspæra: uten kompass fant vikingene fram over havet ved å holde samme breddegrad - og sola var målestokken.',
+        estimatedSeconds: 180,
+        sjanger: 'seiling-overlevelse',
+        tone: 'lett',
+        hook: 'Du styrer knarren over havet til Grønland - uten kompass. Bare sola viser vei.',
+        cover: '/images/microgames/kurs-for-gronland.webp',
+        kunst: 'Nordatlantisk sjømaleri i vikingtidens farger: tjærebrunt klinkskrog, vadmålsseil i rødt og kremhvitt, messing og treskiver i HUD-en',
+        loader: () => import('./KursForGronland3D'),
+        Component: KursForGronland3D as never,
     },
 };
 
