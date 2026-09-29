@@ -39,11 +39,11 @@ Kvaliteten avgjøres før første linje kode. Nattspillene som sto fast på Gøy
 som idé - ingen polering reddet dem. Derfor fem faser, og du går aldri videre før fasen er bestått:
 
 1. **Konseptturnering** (steg 2a) - fem vidt forskjellige konsepter, en fersk dommer velger. Ingen
-   konsept holder = bytt artikkel.
+   konsept holder = fem nye konsepter til samme artikkel, med dommerens innvendinger som krav.
 2. **Designbrief** (steg 2b) - vinneren skrevet ut i ti punkter.
 3. **Kunstbrief** (steg 2c) - looken hentes fra emnets egen bildekultur.
-4. **Gråboks** (steg 3a) - kjerneløkka med primitive former. Spillfølelsen må være grønn før du
-   lager kunst.
+4. **Gråboks** (steg 3a) - kjerneløkka med primitive former. Simuleringen må være grønn før du
+   lager kunst, og en gråboks-diagnose gir de første grepene for Gøy.
 5. **Bygg og porter** (steg 3b-5) - kunst, juice, tekst, så portene.
 
 Fase 1-3 lagres i `docs/microgames/briefer/<id>.md` med seksjonene `## Konseptturnering`,
@@ -232,18 +232,21 @@ pent. Det første nattspillet som ble avvist, brukte tre runder på utseende; pr
 avgjorde ferdighetstrappen med én eller to runder - omtrent hver tiende grønne balanse ble meldt
 rød. Nå er nettleseren en røyktest (steg 5), og den sammenligner vinnerrunden sin med simuleringen.
 
-Er simuleringen ikke grønn etter to forsøk på kjerneløkka: gå tilbake til konseptturneringen og ta
-nest beste konsept. Ikke pynt en løkke som ikke virker.
+Er simuleringen ikke grønn: endre spillreglene ut fra «Vanligste tap». Først etter tre ulike
+forsøk på kjerneløkka som alle er røde, byttes det til nest beste konsept.
 
-### Gråboks-vurderingen: Gøy før kunst
+### Gråboks-diagnosen: grep for Gøy før kunst
 
 Når simuleringen er grønn, og FØR kunsten lages: ta tre skjermbilder av gråboksen midt i en runde
-og la en fersk underagent gi ett tall - Gøy (1-5) - ut fra bildene, simuleringsrapporten
-(`.screenshots/playtest/_sim.md`) og kjerneløkka beskrevet i tre setninger. Samme rubrikk og
-kalibrering som port 3. Under 4: endre kjerneløkka (se «Når vurderingen står stille») og prøv én
-gang til. Fortsatt under 4: ta nest beste konsept. Thranittene (27.09) brukte tre fulle
-vurderingsrunder og en ny natt på et spill som sto på Gøy 3 hele veien - det problemet var synlig
-i gråboksen, og hver runde betalte for kunst, selvspill og audit som ikke kunne redde det.
+og la en fersk underagent gi Gøy (1-5) og de tre endringene i kjerneløkka som ville løftet den mest,
+ut fra bildene, simuleringsrapporten (`.screenshots/playtest/_sim.md`) og kjerneløkka beskrevet i
+tre setninger. Gjør endringene. Under 4: én diagnose til etter endringene. Så lages kunsten uansett.
+
+Diagnosen er en oppskrift, ikke en port. 29.09 brukte den som port: tre konsepter fikk Gøy 3 i
+gråboksen, alle ble forkastet, og natten leverte ingenting - selv om vurdereren sa at Seinen snur
+ble «et klart 4-tall» med to konkrete grep. Kjerneløkka skal være riktig før kunsten (Thranittene
+27.09 pyntet på en løkke som aldri ble endret), men juice, lyd og kunst er en stor del av Gøy, og en
+gråboks kan ikke vise dem.
 
 ## Steg 3b - Bygg på arkadeskallet
 
@@ -546,8 +549,10 @@ Referansespillene er kalibreringen, rekalibrert 2026-09-28: eieren syntes Regnet
 MÅKA er en 5 på Gøy og Utseende.
 
 **Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20 av 25. Under
-terskel: gjør forbedringene og få en NY vurdering (ny underagent), inntil tre runder. Står Gøy
-stille to runder på rad, parkeres spillet - flere runder på samme løkke har aldri løftet Gøy.
+terskel: gjør forbedringene og få en NY vurdering (ny underagent) som også får forrige rundes
+forbedringer og sier om de er løst. Et spill parkeres aldri; står en akse stille, endres
+kjerneløkka for den aksen (under). Nattrutinen har et leveringsgulv for andre natt på samme spill
+(se `daily_microgame_routine.md`, Jobb 4c).
 
 **Når vurderingen står stille, er det spillet som må endres - ikke pynten.** Står en akse på
 samme poeng to runder på rad, hjelper ikke flere farger, kameravinkler eller finere ringer. Gå
@@ -592,7 +597,7 @@ det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der d
 - [ ] Konseptturnering: fem ulike konsepter, fersk dommer, vinneren har minst 4 på Gøy og Fag
 - [ ] `docs/microgames/briefer/<id>.md` med Konseptturnering, Designbrief (ti punkter) og Kunstbrief (åtte punkter)
 - [ ] Sjanger, perspektiv og kunstretning ulik de tre siste nattspillene; `kunst` i registry
-- [ ] `<navn>/sim.ts`; gråboksen besto simuleringen og gråboks-vurderingen (Gøy minst 4) før kunsten ble laget
+- [ ] `<navn>/sim.ts`; gråboksen besto simuleringen, og grepene fra gråboks-diagnosen er gjort før kunsten ble laget
 - [ ] Arkadeskall med eget `THEME`, mål i HUD, pause, lyd med lydav, designet for fullskjerm 1366×768
 - [ ] Tekst via `useArcadeText`: fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet
 - [ ] Skilt og etiketter i 3D med `crispCanvas`; ingen `setState` per melding; ingen `map = null`

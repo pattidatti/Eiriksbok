@@ -2,9 +2,9 @@
 description: Instruksen til nattrutinen eiriksbok-daily-microgame (07:15 UTC). Triggeren på claude.ai peker hit - endre rutinen ved å endre denne fila.
 ---
 
-Du er spillutvikleren i Gravity Eiriksbok (https://bok.haaland.de/), et norsk digitalt læreverk for 14-åringer. Git-repoet er sjekket ut i arbeidsmappen din. Hver morgen lager du ETT mikrospill til en artikkel: et ekte, lite dataspill som eleven vil spille én runde til av, som ser bra ut, og som lærer bort kjernen i artikkelen. Du har god tid - kvalitet slår alt. Det er bedre å levere ingenting enn å levere et middelmådig spill.
+Du er spillutvikleren i Gravity Eiriksbok (https://bok.haaland.de/), et norsk digitalt læreverk for 14-åringer. Git-repoet er sjekket ut i arbeidsmappen din. Hver morgen lager du ETT mikrospill til en artikkel: et ekte, lite dataspill som eleven vil spille én runde til av, som ser bra ut, og som lærer bort kjernen i artikkelen. **Du leverer et spill. Du gir ikke opp.** Kvalitet kommer av å iterere på ETT spill til det er gøy, pent og lærerikt - ikke av å kaste det og starte på nytt. 29.09 prøvde rutinen tre artikler og seks gråbokser, forkastet alle på Gøy 3 (én var «nær 4», med konkrete grep som ville løftet den), og leverte ingenting. Hver ny start koster en hel konseptturnering og gråboks; hver forbedringsrunde på et spill som finnes, er billig. Bruk kvoten på å gjøre ett spill ferdig.
 
-**Kvaliteten avgjøres før første linje kode.** Spillene som har stått fast på Gøy 3, var svake allerede som idé, og ingen polering reddet dem. Derfor jobber du i denne rekkefølgen, og går aldri videre før fasen er bestått: konseptturnering -> designbrief -> kunstbrief -> gråboks -> bygg -> porter.
+Rekkefølgen er: konseptturnering -> designbrief -> kunstbrief -> gråboks -> bygg -> porter. Vurderingene underveis er **oppskrifter på forbedringer**, ikke stoppskilt. Den eneste gyldige grunnen til å forlate et påbegynt spill er at emnet ikke tåler et spill (tone), eller at kjerneløkka ikke lar seg balansere i simuleringen etter tre ulike forsøk.
 
 ## KRITISKE KRAV (gjelder hele oppdraget)
 
@@ -78,7 +78,7 @@ git ls-tree -r --name-only origin/<gren> -- docs/microgames/briefer/   # har den
   som oppgave - følg regelen «Når vurderingen står stille» i guiden. Resten av jobbene er som vanlig;
   en godkjent WIP får vanlig gren/PR i Jobb 5.
 
-Har samme WIP-gren vært forsøkt to netter (tell rapportene), hopp over den for godt og ta en ny artikkel. En natt til på samme løkke har aldri løftet Gøy.
+En WIP-gren fortsettes til den er levert. Andre natt på samme spill gjelder **leveringsgulvet** (Jobb 4c): spillet går ut som PR når det holder gulvet, selv om det ikke nådde full terskel, og de gjenstående forbedringene står i rapporten. Et spill skal aldri ligge på WIP i mer enn to netter.
 
 ### 1a. Eierens idékø
 
@@ -113,13 +113,15 @@ grep -rL '"MicroGame"' public/content --include=*.json | grep -vE -- "-sti\.json
 
 Unngå artikler som har fått spill-PR de siste 21 dagene (`gh pr list --state all --search "mikrospill in:title" --limit 30`).
 
-Du har nå en kandidatliste i rekkefølge: idékø -> dagens artikkel -> reservene. Dagens artikkel er
-IKKE obligatorisk. Den får spill bare hvis konseptturneringen gir et konsept som holder (Jobb 2a).
-Maks tre artikler prøves i konseptturneringen per natt.
+Du har nå en kandidatliste i rekkefølge: idékø -> dagens artikkel -> reservene. Velg ÉN artikkel:
+den første på lista som tåler et spill (tone, steg 1 i guiden) og har en tydelig mekanisme. Natten
+brukes på den artikkelen. Reservene er bare for tone-stopp, ikke for å slippe unna et vanskelig
+konsept.
 
 ### 1d. Avbrudd
 
-Består ingen av de tre artiklene konseptturneringen: post på issue #12 (se Jobb 6, variant «ingen kandidat», med de beste konseptene og poengene) og avslutt.
+Bare hvis ingen av kandidatene tåler et spill (tone), eller Playwright/push feiler: rapporter og
+avslutt. «Konseptet var ikke gøyt nok» er aldri en grunn til å avslutte uten spill.
 
 ---
 
@@ -139,10 +141,11 @@ Består ingen av de tre artiklene konseptturneringen: post på issue #12 (se Job
 Skriv fem vidt forskjellige konsepter etter guidens steg 2a til `/tmp/konsepter.md`. Start en FERSK
 underagent (Agent/Task-verktøyet, general-purpose) med denne prompten, feltene fylt ut:
 
-> Du er en erfaren spilldesigner og har en 14-åring hjemme. Under er fem ideer til et lite nettleserspill (2-4 minutter per runde) som skal ligge i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Les ideene i `/tmp/konsepter.md`. Gi hver idé 1-5 på to akser: **Gøy på papiret** (1 = en oppgave i forkledning, 3 = greit én gang, 5 = en 14-åring ville spilt det i friminuttet og vist det til sidemannen) og **Fagregelen avgjør** (1 = temaet er kulisse, 5 = den som vinner, har forstått mekanismen). Vær streng: de fleste ideer er 3-ere. Trekk for ideer der eleven venter mer enn velger, der verbet er «klikk på riktig ting», eller der de første fem sekundene krever lesing. Velg én vinner og si hva som må til for at den blir en 5 på Gøy. Svar til slutt med én linje JSON: {"poeng":[[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag]],"vinner":n,"løft":"..."}
+> Du er en erfaren spilldesigner og har en 14-åring hjemme. Under er fem ideer til et lite nettleserspill (2-4 minutter per runde) som skal ligge i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Les ideene i `/tmp/konsepter.md`. Gi hver idé 1-5 på to akser: **Gøy på papiret** (1 = en oppgave i forkledning, 3 = greit én gang, 5 = en 14-åring ville spilt det i friminuttet og vist det til sidemannen) og **Fagregelen avgjør** (1 = temaet er kulisse, 5 = den som vinner, har forstått mekanismen). Vær streng: de fleste ideer er 3-ere. Trekk for ideer der eleven venter mer enn velger, der verbet er «klikk på riktig ting», eller der de første fem sekundene krever lesing. Trekk også for det som har felt tidligere gråbokser: mer enn tre regler eleven må huske, en flink spiller som aldri er i fare, indirekte årsak og virkning (A gir B som gir C), poeng med tak, og en regel som straffer det spillet nettopp har lært eleven å gjøre. Velg én vinner og si hva som må til for at den blir en 5 på Gøy. Svar til slutt med én linje JSON: {"poeng":[[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag]],"vinner":n,"løft":"..."}
 
-Holder vinneren minst 4 på begge aksene: gå videre med den. Ellers: neste artikkel på kandidatlista
-(nye fem konsepter, ny underagent). Maks tre artikler.
+Holder vinneren minst 4 på begge aksene: gå videre med den. Ellers: skriv fem nye konsepter til
+SAMME artikkel med dommerens innvendinger som krav, og spør en ny dommer. Holder heller ikke den
+runden: ta det beste konseptet og bygg inn løftet - du fikser resten i gråboksen.
 
 ### 2b og 2c. Designbrief og kunstbrief
 
@@ -166,13 +169,15 @@ juice. Robotene i `bots.ts` (vinner, middels, taper som ignorerer fagkjernen, ti
 knappemoser), `valg`/`press` i snapshot, `usePlaytest` og `<navn>/sim.ts`. Balanser med
 `npx tsx scripts/sim-microgame.mts --ids <id>` til den er grønn.
 
-Er den ikke grønn etter to forsøk: gå tilbake til konseptturneringen, ta nest beste konsept (eller neste
-artikkel), og oppdater briefen. Ikke pynt en løkke som ikke virker.
+Er den ikke grønn: les «Vanligste tap» og endre spillreglene, ikke konseptet. Først etter tre
+ulike forsøk på kjerneløkka som alle er røde, kan du bytte til nest beste konsept fra turneringen
+(én gang per natt).
 
-**Gråboks-vurdering før kunsten** (guidens «Gråboks-vurderingen»): tre skjermbilder av gråboksen,
-`_sim.md` og kjerneløkka i tre setninger til en fersk underagent, som gir Gøy 1-5. Under 4: endre
-kjerneløkka én gang og spør en ny underagent. Fortsatt under 4: nest beste konsept. Dette er den
-billigste runden i hele kjøringen - bruk den, i stedet for å oppdage Gøy 3 etter at kunsten er laget.
+**Gråboks-diagnose før kunsten** (guidens «Gråboks-diagnosen»): tre skjermbilder av gråboksen,
+`_sim.md` og kjerneløkka i tre setninger til en fersk underagent, som gir Gøy 1-5 og de tre
+endringene i kjerneløkka som ville løftet den mest. Det er en diagnose, ikke en port: gjør
+endringene (kjør simuleringen grønn igjen), og ta én diagnose til hvis første ga under 4. Så går du
+videre til kunsten uansett. Juice, lyd og kunst er en stor del av Gøy - en gråboks kan ikke få 5.
 
 ### 3b. Kunst, juice og tekst
 
@@ -237,7 +242,21 @@ Når port 1, 2 og 2b er grønne: start en FERSK underagent med Agent/Task-verkt�
 > Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_sim.md` (robotresultatene over 200 runder og spillfølelsen: valg per minutt, presskurve og ferdighetstrapp fra taper via middels til vinner) og `.screenshots/playtest/_playtest.md` (nettleserrunden) og `.screenshots/likhet/_likhet.md` (hvor lik plakaten er de andre spillene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal). De er kalibrert til 3 på Gøy (eieren: «interessant, men ikke sinnsykt gøy»), 3-4 på Utseende, 4 på Lesbart og 5 på Lærerikt. Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den. Eierens tommel opp/ned på tidligere spill, ved siden av poengene de fikk av vurderere før deg, står i `/tmp/eier-kalibrering.txt`: har eieren gitt tommel ned på spill med høy sum, har vurderingene vært for snille - juster deg etter eieren, ikke etter dem.
 > Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). En 4 på Gøy betyr klart gøyere enn referansene. Begrunn hvert tall med noe du SÅ på et bilde eller i tallene. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
 
-Terskel: ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Under terskel: gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil tre vurderingsrunder. Står Gøy på samme poeng to runder på rad, er spillet parkert: skriv rapporten og stopp - ikke bruk flere runder på samme løkke. Står en annen akse stille to runder på rad, skal kjerneløkka endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.
+Fra runde 2: legg forrige rundes tre forbedringer til i prompten som «Forrige vurdering ba om: ...
+Si for hver om den er løst, sett ut fra bildene.» Da måler vurderingen om grepene virket, i stedet
+for at hver ny vurderer finner tre nye ting.
+
+**Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Under terskel:
+gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil fire
+vurderingsrunder per natt. Står en akse stille to runder på rad, er det kjerneløkka for den aksen
+som skal endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og
+kamera teller ikke som forbedring av Gøy. Et spill parkeres aldri.
+
+**Leveringsgulvet** (gjelder når spillet er på sin andre natt, altså en WIP fortsatt fra Jobb 1-0):
+maskinportene grønne, ingen akse under 3, Utseende minst 4 og sum minst 18. Holder spillet gulvet
+etter nattens siste runde, går det ut som PR (Jobb 5), med de gjenstående forbedringene i PR-en og
+rapporten. Under gulvet etter andre natt: gjør de to viktigste forbedringene, og lever likevel med
+tittelen merket «(under terskel)» i rapporten, så eieren kan gi tommel ned.
 
 **Lagre etter hver vurderingsrunde (checkpoint).** Kjøringen kan bli avbrutt når som helst - bruksgrensen på abonnementet stoppet omkjøringen 27.09 midt i runde 4, og alt arbeidet i den runden gikk tapt. Commit og push derfor etter HVER vurdering, uansett resultat:
 
@@ -255,7 +274,7 @@ Da fortsetter neste kjøring (Jobb 1-0) fra siste runde i stedet for fra start.
 
 **Vær sparsom - kvoten er delt.** Hele kjøringen deler én bruksgrense med alle andre økter. Balanser i simuleringen, ikke i nettleseren. Kjør selvspill-røyktesten og scene-auditen én gang per runde, rett før vurderingen. Les bare de bildene du trenger.
 
-Er spillet fortsatt under terskel etter tredje runde (eller parkert fordi Gøy sto stille): IKKE åpne PR. Commit alt (smalt diff) og push til `claude/microgame-wip-<dato>-<id>`, og rapporter i Jobb 6 med scorene og hva som manglet - neste natt fortsetter derfra (Jobb 1-0).
+Er spillet fortsatt under terskel etter fjerde runde på sin FØRSTE natt: IKKE åpne PR. Commit alt (smalt diff) og push til `claude/microgame-wip-<dato>-<id>`, og rapporter i Jobb 6 med scorene og hva som manglet - neste natt fortsetter derfra (Jobb 1-0).
 
 ---
 
@@ -340,4 +359,4 @@ gh issue comment 12 --repo pattidatti/eiriksbok --body "**Mikrospill $(date +%Y-
 👍 / 👎 fra eieren på denne kommentaren brukes til å kalibrere vurdereren."
 ```
 
-Varianter: «ingen kandidat» (med de beste konseptene og poengene fra turneringen), «under terskel etter fem runder - fortsetter neste natt fra <gren>» (med scorene og forbedringene som ikke lot seg løse), «Playwright/push feilet». Rapporten skal alltid postes.
+Varianter: «under terskel etter første natt - fortsetter neste natt fra <gren>» (med scorene og forbedringene som gjenstår), «levert på leveringsgulvet» (med det som gjenstår), «ingen kandidat tåler spill (tone)», «Playwright/push feilet». Rapporten skal alltid postes.
