@@ -137,3 +137,18 @@ etter de tre grepene over, og så etter to nye diagnoser:
 Så ble kunsten laget etter kunstbriefen: lin med vev, marker med skrå sting, elva med bølgesting
 og strøm, trær, borger og hus i profil, skip med stripete seil og dragehoder, og teppets borde som
 HUD (ANNO med romertall og en tidslinje til 933, skjold, landsbyer, vrede og kister).
+
+## Vurderingsrundene
+
+- Runde 1 (sum 17: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 3, Unikt 3). Endret: 911 er et eget
+  teppefelt der spillet står stille («HIC ROLLO BAPTIZATVR»), seilet ditt får kors etter dåpen,
+  kongens båter er større med blått seil og hvitt kors, vikingene har rødt seil, HUD-en sier
+  «KONGENS VREDE» og «SØLVKISTER», landsbyene du holder vokser år for år, en ny formasjon (to
+  rekker langs hver sin bredd), og strammere balanse (halvgod vinner rundt 60-70 %).
+- Runde 2 (sum 18: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 3, Unikt 4). Gøy sto stille, så
+  kjerneløkka fikk et nytt verb etter 911: kjettingen over Seinen ved Rouen. Klikk vinsjen (eller
+  mellomrom) for å heise den. Oppe stopper den vikingflåtene - de hoper seg opp foran den og blir
+  lette mål for kjedekrasj - men den slites og ryker, og den stopper også kongens handelsbåter på
+  vei til havet. Venter kongens båt for lenge, blir kongen sint. Fagregelen blir tydeligere:
+  Normandie var en sperre mot vikingene, ikke mot kongens handel. Sølvbåtene før 911 fikk grønt
+  seil med kors, så de ikke ligner skipet ditt, og kartnavn som kolliderte med tekst er fjernet.

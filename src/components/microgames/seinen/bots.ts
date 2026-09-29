@@ -9,6 +9,7 @@ import {
     riverHalf,
     riverX,
     steerTo,
+    toggleChain,
     type Boat,
     type Game,
 } from './game';
@@ -28,12 +29,15 @@ interface BotOpts {
     treaty: boolean;
     /** Sikteunøyaktighet (px). */
     aim: number;
+    /** Kjettingen: 'vakt' heiser den mot vikinger og senker den for kongens båter,
+     *  'stenger' heiser den mot vikinger og bryr seg ikke om kongen. */
+    chain: 'vakt' | 'stenger';
 }
 
 export const BOTS: Record<string, BotOpts> = {
-    seende: { every: 1, dodge: 1, fortSense: true, careful: 1, treaty: true, aim: 6 },
-    halvgod: { every: 3, dodge: 0.6, fortSense: true, careful: 0.85, treaty: true, aim: 20 },
-    plyndrer: { every: 1, dodge: 1, fortSense: true, careful: 0, treaty: false, aim: 6 },
+    seende: { every: 1, dodge: 1, fortSense: true, careful: 1, treaty: true, aim: 6, chain: 'vakt' },
+    halvgod: { every: 3, dodge: 0.6, fortSense: true, careful: 0.85, treaty: true, aim: 20, chain: 'vakt' },
+    plyndrer: { every: 1, dodge: 1, fortSense: true, careful: 0, treaty: false, aim: 6, chain: 'stenger' },
 };
 
 const inRiver = (x: number, y: number): [number, number] => {
@@ -92,6 +96,18 @@ export function makeBot(opts: BotOpts, rng: Rng) {
 
         // Etter 911.
         const boats = g.boats.filter((b) => !b.fleeing && b.y < H + 10);
+        // Kjettingen ved Rouen.
+        const vik = boats.filter((b) => b.kind === 'viking' && b.y > ROUEN_Y);
+        const vikClose = vik.some((b) => b.y < ROUEN_Y + 70);
+        const vikNear = vik.some((b) => b.y < ROUEN_Y + 170);
+        const kingNear = boats.some((b) => b.kind === 'frank' && b.y > ROUEN_Y - 110 && b.y < ROUEN_Y);
+        let want = vikClose || vikNear;
+        if (opts.chain === 'vakt') {
+            want = vikClose || (vikNear && !kingNear);
+            if (g.chain.wait > 1.6) want = false;
+            if (g.chain.hp < 0.2 && !vikClose) want = false;
+        }
+        if (g.chain.broken <= 0 && g.chain.up !== want) toggleChain(g);
         let target: Boat | undefined;
         if (opts.treaty) {
             // Mest presserende først: skipet som er nærmest Rouen i tid.
@@ -144,6 +160,7 @@ export function makeRandomBot(rng: Rng) {
         if (g.mode !== 'play') return;
         n++;
         if (n % 3 !== 0) return;
+        if (rng() < 0.08) toggleChain(g);
         const y = 30 + rng() * (H - 60);
         steerTo(g, ...inRiver(riverX(y) + (rng() - 0.5) * 2 * riverHalf(y), y));
     };

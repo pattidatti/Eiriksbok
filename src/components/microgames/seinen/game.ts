@@ -42,8 +42,8 @@ export const KING_U = -0.74;
 /** Så mange kongsbåter rammet før kongen tar tilbake en landsby. */
 export const ANGER_MAX = 2;
 /** Farten til vikingskipene (px/s) i 911, og hvor mye den øker til 933. */
-const VIKING_V0 = 56;
-const VIKING_DV = 72;
+const VIKING_V0 = 60;
+const VIKING_DV = 80;
 /** Står skipet saktere enn dette når et vikingskip kommer borti, entrer de det. */
 export const BOARD_V = 90;
 
@@ -118,6 +118,10 @@ export type GameEvent =
     | { e: 'calm'; anger: number }
     | { e: 'repaired'; x: number; y: number }
     | { e: 'grant'; land: number; extra: number }
+    | { e: 'chain'; up: boolean }
+    | { e: 'chainBreak' }
+    | { e: 'chainHolds'; x: number; y: number }
+    | { e: 'kingWaits'; x: number; y: number }
     | { e: 'bump'; x: number; y: number }
     | { e: 'volley'; x: number; y: number; fx: number; fy: number }
     | { e: 'arrows'; x: number; y: number; hit: boolean }
@@ -161,6 +165,7 @@ export interface Game {
     boardWarn: boolean;
     /** Skipene i bølgen som er ute nå. */
     wave: number[];
+    chain: Chain;
     year: number;
     bargeCd: number;
     vikingCd: number;
@@ -235,6 +240,7 @@ export function newGame(seed: number): Game {
         ramGrace: 0,
         boardWarn: false,
         wave: [],
+        chain: { up: false, hp: 1, broken: 0, wait: 0 },
         year: YEAR_A,
         bargeCd: 0.8,
         vikingCd: 2,
@@ -257,6 +263,38 @@ export const speedOf = (s: Ship) => Math.hypot(s.vx, s.vy);
 export const landLeft = (g: Game) => g.villages.filter((v) => v.alive).length;
 
 /** Styr mot et punkt (pekeren, eller robotens mål). null = slipp årene. */
+/** Kjettingen over Seinen ved Rouen (etter 911). */
+export interface Chain {
+    up: boolean;
+    /** 0-1: hvor mye kjettingen tåler før den ryker. */
+    hp: number;
+    /** Sekunder til en røket kjetting er reparert. */
+    broken: number;
+    /** Hvor lenge kongens båter har ventet bak den (sekunder siden forrige vrede). */
+    wait: number;
+}
+/** Vinsjen som heiser kjettingen, på høyre bredd ved Rouen. */
+export const winchAt = (): [number, number] => [riverX(ROUEN_Y) + riverHalf(ROUEN_Y) + 40, ROUEN_Y + 30];
+/** Skipene stopper så langt foran kjettingen. */
+const CHAIN_GAP = 20;
+const CHAIN_WEAR = 0.14; // per skip som presser mot den, per sekund
+const CHAIN_FIX = 0.1; // per sekund når den er senket
+const CHAIN_BROKEN_S = 8;
+/** Så lenge kan kongens båter vente før kongen blir sint. */
+export const KING_PATIENCE = 2.5;
+
+/**
+ * Heis eller senk kjettingen. Oppe stopper den vikingskipene før Rouen - men også kongens
+ * handelsbåter på vei ned til havet. Vasallen skulle holde vikingene ute, ikke stenge
+ * kongens elv.
+ */
+export function toggleChain(g: Game) {
+    if (g.phase !== 'avtale' || g.mode !== 'play' || g.chain.broken > 0) return;
+    g.chain.up = !g.chain.up;
+    g.valg++;
+    g.events.push({ e: 'chain', up: g.chain.up });
+}
+
 export function steerTo(g: Game, x: number | null, y?: number) {
     g.target = x === null || y === undefined ? null : [x, y];
 }
@@ -382,15 +420,7 @@ function hit(g: Game, b: Boat, vx: number, vy: number, chain: number) {
                 g.events.push({ e: 'repaired', x: g.ship.x, y: g.ship.y });
             }
             g.chests = Math.min(g.chests, CHESTS_PER_LIFE);
-            g.anger++;
-            g.events.push({ e: 'anger', x: b.x, y: b.y, anger: g.anger });
-            if (g.anger >= ANGER_MAX) {
-                g.anger = 0;
-                // Kongen tar en landsby - og rekka ryker.
-                g.combo = 0;
-                const v = loseVillage(g, 'kongen');
-                if (v >= 0) g.events.push({ e: 'kingTakes', village: v });
-            }
+            angerUp(g, b.x, b.y);
         }
     } else {
         g.stats.stopped++;
@@ -399,6 +429,19 @@ function hit(g: Game, b: Boat, vx: number, vy: number, chain: number) {
         g.stats.bestCombo = Math.max(g.stats.bestCombo, g.combo);
         g.events.push({ e: 'ram', kind: 'viking', x: b.x, y: b.y, points: 0, betrayal: false, chain });
         addPoints(g, 150 * bonus, b.x, b.y);
+    }
+}
+
+/** Kongen blir sintere. Er vreden full, tar han en landsby - og rekka ryker. */
+function angerUp(g: Game, x: number, y: number) {
+    g.anger++;
+    g.waveClean = false;
+    g.events.push({ e: 'anger', x, y, anger: g.anger });
+    if (g.anger >= ANGER_MAX) {
+        g.anger = 0;
+        g.combo = 0;
+        const v = loseVillage(g, 'kongen');
+        if (v >= 0) g.events.push({ e: 'kingTakes', village: v });
     }
 }
 
@@ -493,6 +536,8 @@ export function update(g: Game, dt: number) {
     if (speedOf(s) > 20) s.heading = Math.atan2(s.vy, s.vx);
 
     // Båtene flyter langs elva. Rammede båter sklir i støtretningen og kan ta med seg andre.
+    let held = 0;
+    let kingHeld: Boat | null = null;
     for (const b of g.boats) {
         if (b.fleeing) {
             b.fleeing += dt;
@@ -520,9 +565,43 @@ export function update(g: Game, dt: number) {
             }
             continue;
         }
-        b.y += b.v * dt;
+        let ny = b.y + b.v * dt;
+        // Kjettingen: vikingskip nedenfra og kongens båter ovenfra stopper foran den.
+        if (g.chain.up) {
+            if (b.kind === 'viking' && b.y >= ROUEN_Y + CHAIN_GAP && ny < ROUEN_Y + CHAIN_GAP) {
+                ny = ROUEN_Y + CHAIN_GAP;
+                held++;
+            } else if (b.kind === 'frank' && g.phase === 'avtale' && b.y <= ROUEN_Y - CHAIN_GAP && ny > ROUEN_Y - CHAIN_GAP) {
+                ny = ROUEN_Y - CHAIN_GAP;
+                kingHeld = b;
+            }
+        }
+        b.y = ny;
         placeBoat(b);
     }
+
+    // Kjettingen slites av skipene som presser mot den, og ryker til slutt.
+    const c = g.chain;
+    if (c.broken > 0) c.broken = Math.max(0, c.broken - dt);
+    if (c.up) {
+        c.hp -= CHAIN_WEAR * held * dt;
+        if (c.hp <= 0) {
+            c.hp = 0;
+            c.up = false;
+            c.broken = CHAIN_BROKEN_S;
+            g.events.push({ e: 'chainBreak' });
+        }
+    } else if (c.broken <= 0) c.hp = Math.min(1, c.hp + CHAIN_FIX * dt);
+    if (held > 0 && c.up) g.events.push({ e: 'chainHolds', x: riverX(ROUEN_Y), y: ROUEN_Y + CHAIN_GAP });
+    // Kongens båter som venter bak kjettingen, gjør kongen sint.
+    if (kingHeld && c.up) {
+        c.wait += dt;
+        if (c.wait >= KING_PATIENCE) {
+            c.wait = 0;
+            angerUp(g, kingHeld.x, kingHeld.y);
+            g.events.push({ e: 'kingWaits', x: kingHeld.x, y: kingHeld.y });
+        }
+    } else c.wait = Math.max(0, c.wait - dt);
 
     // Ramming.
     const sp = speedOf(s);

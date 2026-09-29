@@ -28,7 +28,9 @@ import {
     newGame,
     riverX,
     steerTo,
+    toggleChain,
     update,
+    winchAt,
     type Cause,
     type Game,
 } from './seinen/game';
@@ -141,8 +143,8 @@ const LOSS: Record<Cause, { title: string; msg: string; tip: string }> = {
     },
     kongen: {
         title: 'Kongen tok landet tilbake',
-        msg: 'Etter 911 var frankerne kongens folk - og du var kongens vasall. Da du fortsatte å plyndre, tok han landet tilbake.',
-        tip: 'Tips: Hver kongsbåt du rammer gjør kongen sintere. To krontegn, og han tar en landsby. Hold vikingene ute, så roer han seg.',
+        msg: 'Etter 911 var frankerne kongens folk - og du var kongens vasall. Da du plyndret eller stengte elva for dem, tok han landet tilbake.',
+        tip: 'Tips: Ikke ram kongens blå båter, og senk kjettingen når de skal forbi. To krontegn, og kongen tar en landsby.',
     },
 };
 
@@ -151,6 +153,7 @@ const KING_BLUE = '#3b4f8f';
 const TREATY_S = 2.6;
 
 const LESSONS = {
+    elva: 'Normandie var en sperre ved elvemunningen: vikingene skulle stoppes, men kongens handel på Seinen skulle gå fritt.',
     kjede: 'Vikingene seilte ofte i flåter på mange skip. En flåte som ble stoppet i elvemunningen, kom aldri opp til Paris.',
     plyndring:
         'Vikingene under Rollo herjet langs Seinen og truet Paris. Frankerne forsvarte seg med borger og befestede broer.',
@@ -186,6 +189,14 @@ function makeSfx(a: ArcadeSynth) {
             a.tone(392, 262, 0.4, 'square', 0.06, 0.25);
         },
         horn: () => a.tone(110, 116, 1.1, 'sawtooth', 0.08),
+        chain: (up: boolean) => {
+            a.noise(0.18, 0.18, up ? 2200 : 1200);
+            a.tone(up ? 180 : 240, up ? 260 : 160, 0.25, 'square', 0.05);
+        },
+        snap: () => {
+            a.noise(0.4, 0.35, 1800);
+            a.tone(400, 90, 0.5, 'sawtooth', 0.08);
+        },
         bell: () => {
             a.tone(523, 520, 1.1, 'sine', 0.08);
             a.tone(784, 780, 0.8, 'sine', 0.03);
@@ -212,7 +223,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
     const keys = useRef({ left: false, right: false, up: false, down: false });
     const pointerSteer = useRef(false);
     const fx = useRef({ end: 0, treaty: 0 });
-    const run = useRef({ firstVolley: false, firstBetray: false, firstBoard: false });
+    const run = useRef({ firstVolley: false, firstBetray: false, firstBoard: false, firstChain: false, firstWait: false });
     const completedOnce = useRef(false);
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
 
@@ -416,6 +427,28 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                 case 'viking':
                     sfx.horn();
                     break;
+                case 'chain':
+                    sfx.chain(e.up);
+                    break;
+                case 'chainBreak':
+                    sfx.snap();
+                    buzz(120);
+                    float('KJETTINGEN RØK!', riverX(ROUEN_Y), ROUEN_Y - 30, TERRA, true);
+                    break;
+                case 'chainHolds':
+                    break;
+                case 'kingWaits':
+                    sfx.king();
+                    float('KONGENS BÅT VENTER', e.x, e.y - 40, KING_BLUE, true);
+                    text.lesson('elva', LESSONS.elva, 1.2);
+                    if (!R.firstWait) {
+                        R.firstWait = true;
+                        text.point('venter', 'Senk kjettingen for kongens båt', toScreen(() => winchAt()), {
+                            tone: 'fare',
+                            seconds: 3.5,
+                        });
+                    }
+                    break;
                 case 'pairs':
                     text.banner('STØRRE FLÅTER', TERRA, 1.4);
                     break;
@@ -452,6 +485,20 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                 if (fx.current.treaty > 0) fx.current.treaty = Math.max(0, fx.current.treaty - dt);
                 else update(g, dt * text.timeScale());
                 handleEvents(g);
+                // Første gang et vikingskip nærmer seg Rouen: vis kjettingen.
+                if (
+                    !run.current.firstChain &&
+                    g.phase === 'avtale' &&
+                    g.boats.some((b) => b.kind === 'viking' && !b.fleeing && b.y < ROUEN_Y + 190)
+                ) {
+                    run.current.firstChain = true;
+                    text.beatOnce(
+                        'kjetting',
+                        'Kjettingen ved Rouen',
+                        'Klikk vinsjen eller trykk mellomrom. Kjettingen stopper vikingene - men også kongens båter.',
+                        { at: toScreen(() => winchAt()), until: () => g.chain.up }
+                    );
+                }
                 if (g.mode === 'lost') {
                     sfx.lose();
                     text.banner(g.cause === 'skutt' ? 'SKIPET SYNKER' : 'LANDET ER TAPT', TERRA, 1.4);
@@ -489,7 +536,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
     const start = () => {
         synth.unlock();
         game.g = newGame(Math.floor(Math.random() * 1e9));
-        run.current = { firstVolley: false, firstBetray: false, firstBoard: false };
+        run.current = { firstVolley: false, firstBetray: false, firstBoard: false, firstChain: false, firstWait: false };
         fx.current.treaty = 0;
         outcome.current = null;
         setResult(null);
@@ -546,7 +593,15 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
         if (modeRef.current !== 'play') return;
         const p = toWorld(e);
         if (!p) return;
-        if (e.type === 'pointerdown') synth.unlock();
+        if (e.type === 'pointerdown') {
+            synth.unlock();
+            // Klikk på vinsjen heiser eller senker kjettingen - skipet styrer ikke dit.
+            const [wx, wy] = winchAt();
+            if (Math.hypot(p[0] - wx, p[1] - wy) < 60) {
+                toggleChain(game.g);
+                return;
+            }
+        }
         botDriving.current = false;
         pointerSteer.current = true;
         steerTo(game.g, p[0], p[1]);
@@ -635,7 +690,10 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
             if (!stage) return;
             const r = stage.getBoundingClientRect();
             if (r.bottom < 0 || r.top > window.innerHeight) return;
-            if (m === 'play' && (e.code === 'Escape' || e.code === 'KeyP')) pause();
+            if (m === 'play' && (e.code === 'Space' || e.code === 'KeyE')) {
+                toggleChain(game.g);
+                e.preventDefault();
+            } else if (m === 'play' && (e.code === 'Escape' || e.code === 'KeyP')) pause();
             else if (m === 'paused' && (e.code === 'Escape' || e.code === 'KeyP')) resume();
             else if (m === 'play' && set(e, true)) {
                 botDriving.current = false;

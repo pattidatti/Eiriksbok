@@ -6,6 +6,7 @@
 // skjermen. Hvert bilde tegner bare skip, landsbyer, piler og gnister oppå.
 
 import {
+    winchAt,
     ANGER_MAX,
     CHESTS_PER_LIFE,
     H,
@@ -252,8 +253,7 @@ function makeBackground(): HTMLCanvasElement {
     ctx.textAlign = 'left';
     ctx.fillText('PARIS', riverX(PARIS_Y) + riverHalf(PARIS_Y) + 90, PARIS_Y + 36);
     ctx.font = `700 15px ${SERIF}`;
-    ctx.fillText('SEQVANA · SEINEN', 120, 250);
-    ctx.fillText('MARE · HAVET', riverX(H) - riverHalf(H) - 150, H - 48);
+
     return c;
 }
 
@@ -282,7 +282,7 @@ interface ShipLook {
 const LOOK_PLAYER: ShipLook = { hull: [OCHRE, TERRA, OCHRE], sail: [TERRA, LINEN, OCHRE, LINEN], len: 70, dragon: true, shields: true };
 const LOOK_VASSAL: ShipLook = { ...LOOK_PLAYER, sail: [OCHRE, LINEN, OCHRE, LINEN], cross: true };
 const LOOK_VIKING: ShipLook = { hull: [TERRA, INK, TERRA], sail: [TERRA, '#8e3c24', TERRA], len: 56, dragon: true, shields: true };
-const LOOK_BARGE: ShipLook = { hull: [SAGE, OCHRE, SAGE], sail: [LINEN, OCHRE, LINEN], len: 52, dragon: false, shields: false, cargo: true };
+const LOOK_BARGE: ShipLook = { hull: ['#6b4a2b', SAGE, '#6b4a2b'], sail: [SAGE], len: 60, dragon: false, shields: false, cargo: true, cross: true };
 const LOOK_KING: ShipLook = { hull: [KING, LINEN, KING], sail: [KING], len: 64, dragon: false, shields: false, cargo: true, cross: true };
 
 /** Et skip i profil, som på teppet. dir = 1: baugen peker mot høyre. */
@@ -595,19 +595,65 @@ export function drawWorld(
             ctx.lineTo(x + 7, y + 4);
             ctx.fill();
         }
-        // Rouen-streken: en kjede av sting over elva. Kommer et skip forbi, er det inne i landet ditt.
-        const hw = riverHalf(ROUEN_Y) + 26;
+        // Kjettingen over Seinen ved Rouen. Oppe: stram, gyllen og stopper skipene.
+        // Nede: slakk under vannet. Røket: to løse ender.
+        const c = g.chain;
+        const hw = riverHalf(ROUEN_Y) + 8;
         const rx = riverX(ROUEN_Y);
-        ctx.beginPath();
-        ctx.moveTo(rx - hw, ROUEN_Y);
-        ctx.lineTo(rx + hw, ROUEN_Y);
-        stitch(ctx, TERRA, 4, [10, 5]);
-        for (let x = rx - hw; x <= rx + hw; x += 15) {
+        const x0 = rx - hw;
+        const x1 = rx + hw;
+        const links = 18;
+        for (let i = 0; i <= links; i++) {
+            const q = i / links;
+            if (c.broken > 0 && q > 0.35 && q < 0.65) continue;
+            const sag = c.up ? 0 : Math.sin(q * Math.PI) * 16;
+            const lx = x0 + (x1 - x0) * q;
             ctx.beginPath();
-            ctx.arc(x, ROUEN_Y, 3, 0, Math.PI * 2);
-            ctx.fillStyle = OCHRE;
-            ctx.fill();
+            ctx.ellipse(lx, ROUEN_Y + sag, 6, 3.5, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = c.up ? OCHRE : c.broken > 0 ? 'rgba(166,74,46,.7)' : 'rgba(201,149,49,.45)';
+            ctx.lineWidth = c.up ? 3.4 : 2;
+            ctx.stroke();
         }
+        if (c.up) {
+            ctx.beginPath();
+            ctx.moveTo(x0, ROUEN_Y);
+            ctx.lineTo(x1, ROUEN_Y);
+            stitch(ctx, INK, 1.4, [3, 5]);
+        }
+        // Vinsjen på høyre bredd, med slitasjen på kjettingen.
+        const [wx, wy] = winchAt();
+        ctx.beginPath();
+        ctx.arc(wx, wy, 17, 0, Math.PI * 2);
+        ctx.fillStyle = c.broken > 0 ? '#b9ad93' : '#8a6a3c';
+        ctx.fill();
+        ctx.strokeStyle = INK;
+        ctx.lineWidth = 2.4;
+        ctx.stroke();
+        ctx.save();
+        ctx.translate(wx, wy);
+        ctx.rotate(c.up ? t * 0.3 : 0.4);
+        for (let k = 0; k < 4; k++) {
+            ctx.rotate(Math.PI / 4);
+            ctx.beginPath();
+            ctx.moveTo(-24, 0);
+            ctx.lineTo(24, 0);
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        }
+        ctx.restore();
+        ctx.fillStyle = 'rgba(45,53,83,.2)';
+        ctx.fillRect(wx - 24, wy + 24, 48, 7);
+        ctx.fillStyle = c.broken > 0 ? TERRA : c.hp < 0.3 ? TERRA : OCHRE;
+        ctx.fillRect(wx - 24, wy + 24, 48 * (c.broken > 0 ? 1 - c.broken / 8 : c.hp), 7);
+        ctx.strokeStyle = INK;
+        ctx.lineWidth = 1.4;
+        ctx.strokeRect(wx - 24, wy + 24, 48, 7);
+        ctx.fillStyle = INK;
+        ctx.font = `700 12px ${SERIF}`;
+        ctx.textAlign = 'left';
+        ctx.fillText(c.broken > 0 ? 'RØKET' : c.up ? 'KJETTING OPPE' : 'KJETTING NEDE', wx + 26, wy - 4);
+        ctx.font = `700 10px ${SERIF}`;
+        ctx.fillText('KLIKK / MELLOMROM', wx + 26, wy + 10);
     }
 
     // Borgene. Før 911 viser en stiplet ring hvor langt bueskytterne når.
@@ -619,17 +665,13 @@ export function drawWorld(
             ctx.fillStyle = `rgba(166,74,46,${(0.06 + 0.34 * Math.min(1, g.t / P1)).toFixed(3)})`;
             ctx.fill();
             stitch(ctx, 'rgba(166,74,46,.7)', 2.4, [6, 7]);
-            ctx.fillStyle = TERRA;
-            ctx.font = `700 13px ${SERIF}`;
-            ctx.textAlign = 'center';
-            ctx.fillText('PILREGN', f.x, f.y + f.range - 8);
         }
         fort(ctx, f.x, f.y + 16, i === 0);
     });
     ctx.fillStyle = INK;
     ctx.font = `700 22px ${SERIF}`;
     ctx.textAlign = 'left';
-    ctx.fillText('ROUEN', riverX(ROUEN_Y) + riverHalf(ROUEN_Y) + 34, ROUEN_Y + 8);
+    ctx.fillText('ROUEN', riverX(ROUEN_Y) + riverHalf(ROUEN_Y) + 84, ROUEN_Y - 14);
 
     // Landsbyene ved elvemunningen.
     g.villages.forEach((v, i) => {
@@ -985,15 +1027,15 @@ export function drawHud(ctx: CanvasRenderingContext2D, g: Game, tf: Transform, b
         ctx.restore();
     }
 
-    const rx = W - 340;
-    plate(ctx, rx, H - BORDER + 5, 326, 30);
+    const rx = W - 356;
+    plate(ctx, rx, H - BORDER + 5, 342, 30);
     ctx.fillStyle = INK;
     if (after) {
         ctx.fillText('KONGENS VREDE', rx + 8, by + 1);
         for (let i = 0; i < ANGER_MAX; i++) crown(ctx, rx + 132 + i * 24, by, i < g.anger);
         ctx.fillStyle = INK;
         ctx.fillText('SØLVKISTER', rx + 190, by + 1);
-        for (let i = 0; i < CHESTS_PER_LIFE; i++) chest(ctx, rx + 272 + i * 19, by, i < g.chests);
+        for (let i = 0; i < CHESTS_PER_LIFE; i++) chest(ctx, rx + 288 + i * 19, by, i < g.chests);
     } else {
         const n = g.stats.silver % SILVER_PER_LAND;
         const full = earned >= MAX_LAND;
