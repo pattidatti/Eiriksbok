@@ -26,6 +26,16 @@ som lokker til en runde til, og en verden med personlighet.
 
 Begge har selvspill-roboter (`usePlaytest`) - se dem når du skriver dine egne.
 
+**Verktøy som sparer lesing:**
+- `node scripts/microgame-api.mjs --out /tmp/api.md` - signaturene til kit, arkadeskall og
+  sim-kontrakten, generert fra koden. Les det i stedet for å lete i referansespillene etter API-et;
+  les referansen for struktur og stil, i utdrag.
+- `node scripts/guide-microgame.mjs --rolle designer|bygg|forbedrer|dirigent` - bare de delene av
+  denne guiden en fase trenger (nattrutinen deler arbeidet i faser med ferske arbeidere).
+- `node scripts/kontaktark-microgame.mjs --ids <id>` - alle skjermbildene fra selvspill og
+  scene-audit som noen få ark med filnavn på hver rute. Til egen kontroll; den uavhengige
+  vurdereren ser bildene i full størrelse.
+
 **3D eller 2D?** 3D foretrekkes. 2D er tillatt når det gir det gøyeste, mest interaktive eller mest
 passende spillet (en sidescroller om havstigning er bedre i 2D). Skriv begrunnelsen i briefen.
 

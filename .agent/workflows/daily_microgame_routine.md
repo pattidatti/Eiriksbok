@@ -8,7 +8,7 @@ Rekkefølgen er: konseptturnering -> designbrief -> kunstbrief -> gråboks -> by
 
 ## KRITISKE KRAV (gjelder hele oppdraget)
 
-1. **Følg `.agent/workflows/build_microgame.md` til punkt og prikke.** Les HELE fila før du designer noe. Den er fasit for tone, konseptturnering, designbrief, kunstbrief, gråboks, arkadeskall, selvspill-kontrakt og portene. Denne instruksjonen sier bare HVORDAN nattjobben rundt den skal kjøres.
+1. **Følg `.agent/workflows/build_microgame.md` til punkt og prikke.** Den er fasit for tone, konseptturnering, designbrief, kunstbrief, gråboks, arkadeskall, selvspill-kontrakt og portene. Hver rolle leser sin del med `node scripts/guide-microgame.mjs --rolle <rolle>` (designer, bygg, forbedrer, dirigent); du som dirigent leser `--rolle dirigent`. Denne instruksjonen sier HVORDAN nattjobben rundt guiden kjøres: du dirigerer, ferske arbeidere bygger (se «Arbeidsdeling»).
 2. **Tone før alt.** Er temaet på «ingen spill»-lista i guiden (folkemord, terror mot sivile o.l.), lager du ikke spill til den artikkelen. `alvorlig` tone = ingen humor.
 3. **Portene må være grønne før PR:** selvspill med spillfølelse (`scripts/playtest-microgame.mjs`), scene-audit (`scripts/audit-microgames.mjs --strict`), likhetsvakt (`scripts/likhet-microgame.mjs`) og en uavhengig vurdering fra en fersk underagent over terskel. Du vurderer aldri ditt eget spill eller dine egne konsepter.
 4. **Smalt diff.** PR-en inneholder BARE spillfilene under `src/components/microgames/`, `registry.ts`, spillets plakat `public/images/microgames/<id>.webp`, briefen `docs/microgames/briefer/<id>.md` og én ny MicroGame-blokk i én artikkel-JSON. Aldri genererte filer (content-index, manifest, global-timeline, stats.html, version.json). Da kan PR-en ikke kollidere med andre nattjobber.
@@ -16,7 +16,7 @@ Rekkefølgen er: konseptturnering -> designbrief -> kunstbrief -> gråboks -> by
 6. **Én atomisk commit, én PR.** Aldri split over flere pushes, aldri MCP per-fil-upload.
 7. **Ingen destruktive git-kommandoer:** aldri `push -f`, `push --delete`, `reset --hard` mot delte grener eller sletting av grener. Sky-miljøets sikkerhetsfilter stopper dem, og etter tre stopp står hele kjøringen fast og venter på et menneske.
 
-Fullfør jobbene i rekkefølge. Avslutt ALDRI uten Jobb 6 (rapporten).
+Fullfør jobbene i rekkefølge. Avslutt ALDRI uten Jobb 6 (rapporten). Jobb 5 og 6 gjør du selv - arbeiderne leverer bare til checkpoint.
 
 ---
 
@@ -29,14 +29,24 @@ npm ci 2>&1 | tail -3
 npx playwright install --with-deps chromium 2>&1 | tail -2 || npx playwright install chromium 2>&1 | tail -2
 ```
 
-Sky-miljøet har ferdige nettlesere i `/opt/pw-browsers`, men ofte en annen versjon enn Playwright-pakken krever. Test og bruk dem slik (begge harnessene leser variabelen):
+Sky-miljøet har ferdige nettlesere i `/opt/pw-browsers`, men ofte en annen versjon enn Playwright-pakken krever. Test og bruk dem slik (harnessene leser variabelen). Miljøvariabler overlever ikke fra ett Bash-kall til det neste, og ikke til arbeiderne - derfor ligger valget i `/tmp/pw.env`, som hver Playwright-kommando starter med å `source`:
 
 ```bash
+: > /tmp/pw.env
 node -e "require('playwright').chromium.launch().then(b=>{console.log('pw ok');b.close()}).catch(e=>console.log('pw fail'))"
 # Ved «pw fail»: bruk den ferdige nettleseren, og la den godta sandkassens proxy-sertifikat
 # (ellers feiler Firebase-kallene med ERR_CERT_AUTHORITY_INVALID og fyller konsollen).
 printf '#!/bin/sh\nexec /opt/pw-browsers/chromium --ignore-certificate-errors "$@"\n' > /tmp/chromium-wrap && chmod +x /tmp/chromium-wrap
-export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/chromium-wrap
+echo 'export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/chromium-wrap' > /tmp/pw.env
+source /tmp/pw.env && node -e "require('playwright').chromium.launch().then(b=>{console.log('pw ok');b.close()})"
+```
+
+Start dev-serveren én gang og la den gå hele natta (arbeiderne bruker den):
+
+```bash
+npx vite --port 5173 --strictPort > /tmp/vite.log 2>&1 &
+until curl -s localhost:5173 > /dev/null; do sleep 2; done
+node scripts/guide-microgame.mjs --rolle dirigent   # din del av guiden
 ```
 
 Balansen avgjøres i simuleringen (`npx tsx scripts/sim-microgame.mts --ids <id>`): 200 runder per robot på sekunder, samme svar hver gang. Bruk den så ofte du vil. Nettleser-selvspillet er en røyktest (én passiv kortrunde, én vinnerrunde, Chromebook). Sky-miljøets GPU er treg (rundt 3 bilder/s), så kjør det med `--fart 4` i bakgrunnen, og bare når simuleringen er grønn - aldri for å «se om det virker».
@@ -73,10 +83,12 @@ git ls-tree -r --name-only origin/<gren> -- docs/microgames/briefer/   # har den
   `origin/main`): et annet spill vant kappløpet, hopp over.
 - **Spillet er allerede på main** (id-en finnes i `src/components/microgames/registry.ts` på
   `origin/main`): ferdig, hopp over.
-- **Ellers:** sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`), les
-  briefen og forrige rapport på issue #12 («Hva som manglet»), og gå rett til Jobb 3 med de manglene
-  som oppgave - følg regelen «Når vurderingen står stille» i guiden. Resten av jobbene er som vanlig;
-  en godkjent WIP får vanlig gren/PR i Jobb 5.
+- **Ellers:** sjekk den ut (`git checkout -B work origin/<gren> && git rebase origin/main`). Lagre
+  forrige rapport på issue #12 («Hva som manglet» og scorene) i `/tmp/vurdering-0.md`, og skriv
+  `/tmp/artikkel.md` (tittel, sti, tre setninger, fagkjernen) ut fra briefens `## Designbrief` -
+  les bare den seksjonen. Lag API-kortet (Jobb 3, første avsnitt) og gå rett til Jobb 4d med
+  manglene som oppgave. Står samme akse lavt som natta før, gjelder «Når vurderingen står stille».
+  En godkjent WIP får vanlig gren/PR i Jobb 5.
 
 En WIP-gren fortsettes til den er levert. Andre natt på samme spill gjelder **leveringsgulvet** (Jobb 4c): spillet går ut som PR når det holder gulvet, selv om det ikke nådde full terskel, og de gjenstående forbedringene står i rapporten. Et spill skal aldri ligge på WIP i mer enn to netter.
 
@@ -125,119 +137,166 @@ avslutt. «Konseptet var ikke gøyt nok» er aldri en grunn til å avslutte uten
 
 ---
 
+## Arbeidsdeling: du er dirigenten
+
+Du bygger ikke spillet selv. Du velger artikkel, starter arbeidere, starter dommere og vurderere,
+sjekker portene, lagrer og leverer. Hver arbeider er en FERSK underagent (Agent/Task-verktøyet,
+general-purpose) som får én fase. Den leser bare det fasen trenger og leverer tilbake filer på disk,
+en checkpoint på git og én linje JSON.
+
+**Hvorfor:** Kurs for Grønland (29.09) ble bygget i én kontekst som vokste til 430k tokens. 85 av
+119 kall var små fikser etter at koden var skrevet, og hvert av dem leste hele koden på nytt - 31 av
+36 millioner tokens. Med ferske arbeidere starter hver fase på rundt 50k. Det gir også bedre
+spill: briefen blir kontrakten som faktisk leses, og hver forbedringsrunde ser spillet med nye øyne
+i stedet for gjennom sine egne tidligere begrunnelser.
+
+**Reglene for deg som dirigent:**
+
+- Les aldri spillkode, skjermbilder eller hele artikler selv. Du leser arbeidernes JSON-linjer,
+  dommernes og vurderernes svar, og korte utdrag av rapportene (`head -30 .screenshots/playtest/_sim.md`).
+- Tro portene, ikke arbeiderne: sier en arbeider «grønn», sjekk det med `head` på rapporten før du
+  går videre.
+- Underagenter kan ikke starte egne underagenter. Derfor starter DU alle dommere og vurderere.
+- Én arbeider om gangen. Arbeidere deler dev-serveren og `.screenshots/`.
+- Svarer en arbeider uten JSON, eller er den avbrutt: se `git log -1` og `## Byggelogg` i briefen,
+  og start en ny arbeider for samme fase med beskjed om hva som står igjen.
+
+**Felles innledning** - lim den inn først i HVER arbeiderprompt, med feltene fylt ut:
+
+> Du er <rolle> i nattrutinen for mikrospill i Gravity Eiriksbok, et norsk digitalt læreverk for 14-åringer. Repoet er sjekket ut i arbeidsmappen på grenen `work`. Dev-serveren kjører allerede på http://localhost:5173 - ikke start en ny. Før hver kommando som bruker Playwright: `source /tmp/pw.env`. Regler: ekte æ, ø, å overalt (også i kodekommentarer), aldri aa/oe/ae; aldri tankestrek eller em-dash, bruk bindestrek; skriv for en 14-åring; rør bare spillets filer, `registry.ts`, briefen og artikkelens MicroGame-blokk; aldri `push -f`, `reset --hard` eller sletting av grener; rediger ikke filer mens selvspillet kjører. Du kan ikke starte underagenter - trenger du en vurdering, skriv det i svaret. Les bare det oppgaven ber om, og les store filer i utdrag: alt du leser, bærer du med deg i hvert kall resten av fasen. Oppdater `## Byggelogg` nederst i `docs/microgames/briefer/<id>.md` før du avslutter (fase, hva du gjorde, tallene fra simuleringen, hva du prøvde som IKKE virket, kjente svakheter). Avslutt svaret med nøyaktig én linje JSON som beskrevet under.
+
+**Checkpoint** etter hver byggefase og hver vurdering. Arbeideren committer; du pusher (og committer selv etter en vurdering):
+
+```bash
+git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp" "docs/microgames/briefer/<id>.md"
+git commit -m "wip: <id> <fase>" && git push origin HEAD:claude/microgame-wip-<dato>-<id>
+```
+
+Aldri `git push -f`. `<dato>` er DAGENS dato.
+
+**Vær sparsom - kvoten er delt.** Hele kjøringen deler én bruksgrense med alle andre økter.
+Balansen avgjøres i simuleringen, ikke i nettleseren.
+
+---
+
 ## Jobb 2: Konsept, design og kunst
 
-1. Les `.agent/workflows/build_microgame.md` i sin helhet.
-2. Les referansespillene: `src/components/microgames/HavetKommer.tsx` (2D) og `src/components/microgames/Stavkirken3D.tsx` + `src/components/microgames/stavkirken/game.ts` (3D). Se særlig hvordan de bruker arkadeskallet, eget `THEME`, `useArcadeText` (lapper, lærings-øyeblikk, «Dette skjedde»), `usePlaytest` og robotene. Les også `Plottebordet3D.tsx` + `plottebordet/game.ts`: der er fagkjernen et lærings-øyeblikk ved det første plottet.
-3. Finn hva de siste spillene gjorde, så du kan variere:
-   ```bash
-   grep -nE "sjanger:|kunst:" src/components/microgames/registry.ts | tail -12
-   ls -t docs/microgames/briefer/ | head -5     # les dem
-   ```
-4. Les HELE den første kandidatartikkelen.
+Hopp over denne jobben når du fortsetter en WIP-gren (Jobb 1-0).
 
-### 2a. Konseptturnering
+### 2a. Designer 1 - fem konsepter
 
-Skriv fem vidt forskjellige konsepter etter guidens steg 2a til `/tmp/konsepter.md`. Start en FERSK
-underagent (Agent/Task-verktøyet, general-purpose) med denne prompten, feltene fylt ut:
+Start arbeideren med felles innledning (rolle: «designeren») og:
+
+> Oppgave: fem konsepter til et mikrospill for artikkelen `<fil>`. Les i denne rekkefølgen: `node scripts/guide-microgame.mjs --rolle designer` (guidens tone, konseptturnering, design- og kunstbrief), hele artikkelen, og hva de siste spillene gjorde: `grep -nE "sjanger:|kunst:" src/components/microgames/registry.ts | tail -12` og `## Designbrief`-seksjonen i de tre nyeste fila under `ls -t docs/microgames/briefer/`. Sjekk tonen først (guidens steg 1). Skriv så fem vidt forskjellige konsepter etter steg 2a til `/tmp/konsepter.md`<hvis runde 2: «, med disse innvendingene fra forrige dommer som krav: <løft og innvendinger>»>. Skriv også `/tmp/artikkel.md`: tittel, URL-sti, tre setninger om hva artikkelen handler om, fagkjernen i én setning, og hvilket avsnitt spillet bør stå etter (siterer de første ordene). JSON: {"tone":"lett|alvorlig|stopp","grunn":"...","konsepter":5}
+
+`"tone":"stopp"`: ta neste kandidat fra Jobb 1.
+
+### 2b. Konseptdommer
+
+Start en FERSK underagent med denne prompten, feltene fylt ut fra `/tmp/artikkel.md`:
 
 > Du er en erfaren spilldesigner og har en 14-åring hjemme. Under er fem ideer til et lite nettleserspill (2-4 minutter per runde) som skal ligge i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Les ideene i `/tmp/konsepter.md`. Gi hver idé 1-5 på to akser: **Gøy på papiret** (1 = en oppgave i forkledning, 3 = greit én gang, 5 = en 14-åring ville spilt det i friminuttet og vist det til sidemannen) og **Fagregelen avgjør** (1 = temaet er kulisse, 5 = den som vinner, har forstått mekanismen). Vær streng: de fleste ideer er 3-ere. Trekk for ideer der eleven venter mer enn velger, der verbet er «klikk på riktig ting», eller der de første fem sekundene krever lesing. Trekk også for det som har felt tidligere gråbokser: mer enn tre regler eleven må huske, en flink spiller som aldri er i fare, indirekte årsak og virkning (A gir B som gir C), poeng med tak, og en regel som straffer det spillet nettopp har lært eleven å gjøre. Velg én vinner og si hva som må til for at den blir en 5 på Gøy. Svar til slutt med én linje JSON: {"poeng":[[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag]],"vinner":n,"løft":"..."}
 
-Holder vinneren minst 4 på begge aksene: gå videre med den. Ellers: skriv fem nye konsepter til
-SAMME artikkel med dommerens innvendinger som krav, og spør en ny dommer. Holder heller ikke den
-runden: ta det beste konseptet og bygg inn løftet - du fikser resten i gråboksen.
+Lagre hele svaret i `/tmp/dommer-<n>.md`. Holder vinneren minst 4 på begge aksene: gå videre.
+Ellers: en ny Designer 1 (runde 2, samme artikkel, dommerens innvendinger som krav) og en ny
+dommer. Holder heller ikke den runden: ta det beste konseptet og la briefen bygge inn løftet.
 
-### 2b og 2c. Designbrief og kunstbrief
+### 2c. Designer 2 - briefen
 
-Velg en kort kebab-case `id` for spillet. Skriv `docs/microgames/briefer/<id>.md` med tre seksjoner:
+Start en NY arbeider (felles innledning, rolle: «designeren»):
 
-- `## Konseptturnering` - alle fem konseptene (kort), dommerens poeng og begrunnelse, og «løftet».
-- `## Designbrief` - alle ti punktene i guidens steg 2b, for vinnerkonseptet med dommerens løft innarbeidet.
-- `## Kunstbrief` - alle åtte punktene i guidens steg 2c. Looken hentes fra emnets egen bildekultur.
-  Perspektiv, palett og kilde skal være ulik de tre siste spillene.
-
-Test briefen mot guiden før du koder: Er kjerneverbet deilig i seg selv? Er fagkjernen en REGEL som avgjør om man vinner? Gir spillet et nytt valg minst hvert 10. sekund? Stiger presset?
+> Oppgave: skriv briefen for vinnerkonseptet. Les `node scripts/guide-microgame.mjs --rolle designer`, `/tmp/artikkel.md`, artikkelen `<fil>`, `/tmp/konsepter.md` og dommernes svar i `/tmp/dommer-*.md`. Les også `## Kunstbrief` i de tre nyeste briefene under `docs/microgames/briefer/` - perspektiv, palett og kilde skal være ulik dem. Velg en kort kebab-case `id`. Skriv `docs/microgames/briefer/<id>.md` med fire seksjoner: `## Konseptturnering` (alle fem konseptene kort, dommerens poeng og begrunnelse, løftet), `## Designbrief` (alle ti punktene i guidens steg 2b, med løftet innarbeidet), `## Kunstbrief` (alle åtte punktene i steg 2c; looken fra emnets egen bildekultur) og `## Byggelogg` (tom). Test briefen mot guiden før du leverer: er kjerneverbet deilig i seg selv, er fagkjernen en REGEL som avgjør om man vinner, gir spillet et nytt valg minst hvert 10. sekund, stiger presset? Commit briefen. JSON: {"id":"...","tittel":"...","sjanger":"...","dimensjon":"2D|3D","kjerneverb":"...","fagregel":"..."}
 
 ---
 
 ## Jobb 3: Bygg
 
-### 3a. Gråboks (guidens steg 3a)
+Lag API-kortet én gang: `node scripts/microgame-api.mjs --out /tmp/api.md`. Det er signaturene
+til kit, arkadeskall og sim-kontrakten, generert fra koden - arbeiderne leser det i stedet for å
+lete i referansespillene.
 
-Bygg først spillreglene i en ren `.ts`-modul og en visning med primitive former - ingen kunst, ingen
-juice. Robotene i `bots.ts` (vinner, middels, taper som ignorerer fagkjernen, tilfeldig
-knappemoser), `valg`/`press` i snapshot, `usePlaytest` og `<navn>/sim.ts`. Balanser med
-`npx tsx scripts/sim-microgame.mts --ids <id>` til den er grønn.
+Referansen arbeideren skal lese, etter `dimensjon` fra briefen:
+- **3D:** `src/components/microgames/Stavkirken3D.tsx` og `src/components/microgames/stavkirken/` (`game.ts`, `bots.ts`, `sim.ts`)
+- **2D:** `src/components/microgames/HavetKommer.tsx`
 
-Er den ikke grønn: les «Vanligste tap» og endre spillreglene, ikke konseptet. Først etter tre
-ulike forsøk på kjerneløkka som alle er røde, kan du bytte til nest beste konsept fra turneringen
-(én gang per natt).
+### 3a. Byggmester 1 - gråboksen
 
-**Gråboks-diagnose før kunsten** (guidens «Gråboks-diagnosen»): tre skjermbilder av gråboksen,
-`_sim.md` og kjerneløkka i tre setninger til en fersk underagent, som gir Gøy 1-5 og de tre
-endringene i kjerneløkka som ville løftet den mest. Det er en diagnose, ikke en port: gjør
-endringene (kjør simuleringen grønn igjen), og ta én diagnose til hvis første ga under 4. Så går du
-videre til kunsten uansett. Juice, lyd og kunst er en stor del av Gøy - en gråboks kan ikke få 5.
+Felles innledning (rolle: «byggmesteren») og:
 
-### 3b. Kunst, juice og tekst
+> Oppgave: gråboksen for `<id>`. Les `docs/microgames/briefer/<id>.md`, `node scripts/guide-microgame.mjs --rolle bygg`, `/tmp/api.md` og referansen `<referanse>` (for struktur: modulmappe, rene regler i `.ts`, roboter, `usePlaytest`, `sim.ts`). Bygg etter guidens steg 3a: spillreglene i en ren `.ts`-modul, visning med primitive former (ingen kunst, ingen juice), robotene i `bots.ts` (vinner, middels, taper som ignorerer fagkjernen, tilfeldig knappemoser), `valg`/`press` i snapshot, `usePlaytest`, `<navn>/sim.ts` og registrering i `registry.ts` (med `kunst` fra kunstbriefen, ellers stopper selvspillet). Balanser med `npx tsx scripts/sim-microgame.mts --ids <id>` til den er grønn; les «Vanligste tap» og endre spillreglene, ikke konseptet. Etter tre ulike røde forsøk på kjerneløkka: stopp og si det. Ta så tre skjermbilder av gråboksen med `source /tmp/pw.env; node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 4` (portfunn om kunst og juice er ventet nå - det er bildene du trenger), og commit. JSON: {"sim":"grønn|rød","forsøk":n,"tall":"vinner x %, middels x %, taper x %, knappemoser x %","skjermbilder":["..."],"kjerneløkke":"tre setninger"}
 
-Bygg resten etter guidens steg 3b, 4 og 6: kunsten fra kunstbriefen (ferdig på `?kvalitet=lav`), arkadeskall med eget tema og egen HUD, designet for fullskjerm 1366×768, all tekst via `useArcadeText` (fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet), skarpe 3D-skilt med `crispCanvas`, mål i HUD, pause, lyd, rekord og ranger, minst to tapsårsaker med tips, seier som følger plottet, `sjanger`, `tone`, `hook`, `cover` og `kunst` i registry.
+Rød etter tre forsøk: start Byggmester 1 på nytt med nest beste konsept fra turneringen (én gang
+per natt; en Designer 2 skriver briefen om først).
 
-Store spill deles i en modulmappe (`src/components/microgames/<navn>/`) slik Stavkirken gjør. Spillreglene bor i rene `.ts`-filer.
+### 3b. Gråboks-diagnose
 
-Embed spillet i artikkelen med én blokk etter avsnittet som forklarer fagkjernen (aldri etter Quiz):
-`{ "type": "component", "name": "MicroGame", "props": { "gameId": "<id>" } }`. Endre ingenting annet i artikkelen.
+Start en FERSK underagent (ikke en arbeider): tre skjermbilder av gråboksen,
+`.screenshots/playtest/_sim.md` og kjerneløkka i tre setninger fra byggmesterens JSON. Den gir
+Gøy 1-5 og de tre endringene i kjerneløkka som ville løftet den mest (guidens «Gråboks-diagnosen»).
+Lagre svaret i `/tmp/diagnose-<n>.md`. Det er en diagnose, ikke en port.
 
-Bruk tid på det som gjør spillet GØY og PENT: juice på kjerneverbet (lyd, partikler, rist, poeng som spretter), eskalering, lys og atmosfære, animasjon. Det er dette som skiller et 3-er-spill fra et 5-er-spill.
+Ga den under 4: start en byggmester som bare gjør de tre endringene, kjører simuleringen grønn,
+tar nye skjermbilder og committer - og ta én diagnose til. Så går du videre uansett.
+
+### 3c. Byggmester 2 - kunst, juice og tekst
+
+Felles innledning (rolle: «byggmesteren») og:
+
+> Oppgave: gjør gråboksen `<id>` til et ferdig spill. Les briefen (også `## Byggelogg`), `/tmp/diagnose-*.md`, `node scripts/guide-microgame.mjs --rolle bygg`, `/tmp/api.md`, og spillets egne filer. Referansen `<referanse>` leser du bare i utdrag når du trenger et mønster. Gjør først diagnosens endringer som ikke allerede er gjort, og kjør simuleringen grønn. Bygg så etter guidens steg 3b, 4 og 6: kunsten fra kunstbriefen (ferdig på `?kvalitet=lav`), arkadeskall med eget tema og egen HUD for fullskjerm 1366×768, all tekst via `useArcadeText` (fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet), skarpe 3D-skilt med `crispCanvas`, mål i HUD, pause, lyd, rekord og ranger, minst to tapsårsaker med tips, seier som følger plottet, og `sjanger`, `tone`, `hook`, `cover` og `kunst` i registry. Bruk tiden på det som gjør spillet GØY og PENT: juice på kjerneverbet, eskalering, lys, atmosfære, animasjon. Embed spillet med én blokk `{ "type": "component", "name": "MicroGame", "props": { "gameId": "<id>" } }` etter avsnittet i `/tmp/artikkel.md` (aldri etter Quiz), og endre ingenting annet i artikkelen. Kjør til slutt Jobb 4a og 4b fra `.agent/workflows/daily_microgame_routine.md` til alt er grønt. Se på skjermbildene som kontaktark (`node scripts/kontaktark-microgame.mjs --ids <id>`, så Read på `.screenshots/kontaktark/<id>-*.png`); åpne enkeltbilder bare for å sjekke en detalj. Commit. JSON: {"porter":"grønne|røde","rødt":"...","sim":"...","valg_per_min":n,"likhet":"nærmest <id> (x)"}
 
 ---
 
-## Jobb 4: Portene (fiks-til-grønn-løkke)
+## Jobb 4: Portene og vurderingsrundene
 
-Start en dev-server én gang og la den gå: `npx vite --port 5173 --strictPort > /tmp/vite.log 2>&1 &` (vent til `curl -s localhost:5173` svarer).
+Portene under kjøres av arbeiderne før de leverer. Du sjekker bare at de er grønne:
+`head -30 .screenshots/playtest/_sim.md .screenshots/playtest/_playtest.md .screenshots/likhet/_likhet.md`.
 
 ### 4a. Bygg og stil
 ```bash
 npx tsc -p tsconfig.app.json --noEmit 2>&1 | tail -20
 npx eslint src/components/microgames/<Navn>.tsx src/components/microgames/<navn>/ src/components/microgames/registry.ts 2>&1 | tail -20
-git diff --name-only | xargs -r grep -nEi "\b(paa|naar|gaar|staar|faar|maa|blaa|graa|smaa|gjoer|hoey|roed|groen|soek|noed|vaere|laere|foer|loep|stoer|sjoe)\b" | grep -v "#[0-9a-f]\{6\}" | head
+git diff origin/main --name-only | xargs -r grep -nEi "\b(paa|naar|gaar|staar|faar|maa|blaa|graa|smaa|gjoer|hoey|roed|groen|soek|noed|vaere|laere|foer|loep|stoer|sjoe)\b" | grep -v "#[0-9a-f]\{6\}" | head
 grep -rn "—\|–" src/components/microgames/<Navn>.tsx src/components/microgames/<navn>/ docs/microgames/briefer/<id>.md 2>/dev/null | head
 ```
 Alt skal være tomt/rent.
 
 ### 4b. Port 0, 1, 2 og 2b (maskinelle)
 ```bash
+source /tmp/pw.env
 npx tsx scripts/sim-microgame.mts --ids <id>
 node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173 --fart 4 --cover
 node scripts/audit-microgames.mjs --ids <id> --url http://localhost:5173 --strict --frames 4
 node scripts/likhet-microgame.mjs --ids <id>
 ```
-Les `.screenshots/playtest/_sim.md`, `.screenshots/playtest/_playtest.md` og `.screenshots/likhet/_likhet.md`, og se på ALLE bildene i `.screenshots/playtest/<id>/` og `.screenshots/microgames/<id>/` med Read. Rødt funn eller noe som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene dummere eller smartere enn en elev. Er likhetsvakten rød: endre looken etter kunstbriefen (palett, kamera, perspektiv) - ikke flytt kameraet bare for å lure tallet.
+Les `_sim.md`, `_playtest.md` og `_likhet.md`, og se på bildene som kontaktark. Rødt funn eller noe
+som ser galt ut: fiks og kjør på nytt. Balansen justeres i spillreglene, aldri ved å gjøre robotene
+dummere eller smartere enn en elev. Er likhetsvakten rød: endre looken etter kunstbriefen (palett,
+kamera, perspektiv) - ikke flytt kameraet bare for å lure tallet. Kjør selvspill og scene-audit én
+gang per runde, rett før leveringen.
 
-NB: rediger ikke filer MENS selvspillet kjører - Vite laster siden på nytt og runden avbrytes.
+**En rød port skal gi en forbedring, ellers er den bortkastet.** «Vanligste tap» i simuleringen
+sier hvorfor robotene taper. I røyktesten sier «Grep/spill-s» om målingen var gyldig (rundt 5).
+Står det «kunne ikke kjøre» eller ugyldig måling, er feilen i målingen - senk farten eller rett
+oppsettet, men rør ikke spillreglene. Er nettleser og simulering uenige («Samsvar»), finn
+forskjellen i koden før du justerer balansen.
 
 ### 4c. Port 3 - uavhengig vurdering
 
-Lag først biblioteklista som vurdereren skal lese (ikke lim den inn i prompten - forrige gang ble en tom plassholder sendt):
+Første gang: lag biblioteklista og eierens kalibrering (ikke lim dem inn i prompten):
 
 ```bash
 grep -nE "title:|description:|sjanger:|kunst:" src/components/microgames/registry.ts | grep -v "<din-id>" > /tmp/bibliotek.txt
 wc -l /tmp/bibliotek.txt   # skal være flere hundre linjer
-```
-
-Hent så eierens tommel på tidligere nattspill - det er slik vurdereren kalibreres mot eierens smak:
-
-```bash
 gh api --paginate "repos/pattidatti/eiriksbok/issues/12/comments?per_page=100" \
   -q '.[] | select(.body | startswith("**Mikrospill")) | select(.reactions["+1"] > 0 or .reactions["-1"] > 0)
       | "\(.reactions["+1"])x👍 \(.reactions["-1"])x👎  " + (.body | split("\n")[0]) + "  " + ((.body | capture("Uavhengig vurdering:\\*\\* (?<v>[^\\n]+)").v) // "")' \
   | tail -12 > /tmp/eier-kalibrering.txt
-cat /tmp/eier-kalibrering.txt   # tom fil er greit - da har eieren ikke stemt ennå
 ```
 
 Sjekk prompten før du sender den: ingen `<...>`- eller `$(...)`-plassholdere skal stå igjen.
 
-Når port 1, 2 og 2b er grønne: start en FERSK underagent med Agent/Task-verktøyet (general-purpose). Den skal IKKE få briefen, koden eller dine begrunnelser. Send denne prompten, med feltene fylt ut:
+Når portene er grønne: start en FERSK underagent. Den skal IKKE få briefen, koden eller
+begrunnelser. Den ser alle bildene i full størrelse - ikke kontaktark. Send denne prompten:
 
 > Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_sim.md` (robotresultatene over 200 runder og spillfølelsen: valg per minutt, presskurve og ferdighetstrapp fra taper via middels til vinner) og `.screenshots/playtest/_playtest.md` (nettleserrunden) og `.screenshots/likhet/_likhet.md` (hvor lik plakaten er de andre spillene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal). De er kalibrert til 3 på Gøy (eieren: «interessant, men ikke sinnsykt gøy»), 3-4 på Utseende, 4 på Lesbart og 5 på Lærerikt. Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den. Eierens tommel opp/ned på tidligere spill, ved siden av poengene de fikk av vurderere før deg, står i `/tmp/eier-kalibrering.txt`: har eieren gitt tommel ned på spill med høy sum, har vurderingene vært for snille - juster deg etter eieren, ikke etter dem.
 > Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). En 4 på Gøy betyr klart gøyere enn referansene. Begrunn hvert tall med noe du SÅ på et bilde eller i tallene. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
@@ -246,35 +305,27 @@ Fra runde 2: legg forrige rundes tre forbedringer til i prompten som «Forrige v
 Si for hver om den er løst, sett ut fra bildene.» Da måler vurderingen om grepene virket, i stedet
 for at hver ny vurderer finner tre nye ting.
 
-**Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Under terskel:
-gjør forbedringene, kjør 4a og 4b på nytt, og få en NY vurdering fra en NY underagent. Inntil fire
-vurderingsrunder per natt. Står en akse stille to runder på rad, er det kjerneløkka for den aksen
-som skal endres før neste runde - se «Når vurderingen står stille» i guiden. Polering av farger og
-kamera teller ikke som forbedring av Gøy. Et spill parkeres aldri.
+Lagre hele svaret i `/tmp/vurdering-<n>.md`, og ta checkpoint (`wip: <id> etter vurdering <n> (sum <x>)`).
+
+**Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Nådd: Jobb 5.
+
+### 4d. Forbedrer - én ny per runde
+
+Under terskel: start en NY arbeider (felles innledning, rolle: «forbedreren»):
+
+> Oppgave: løft `<id>` etter den uavhengige vurderingen. Les `/tmp/vurdering-<n>.md` (og tidligere `/tmp/vurdering-*.md`), briefen med `## Byggelogg`, og `node scripts/guide-microgame.mjs --rolle forbedrer`. <Hvis en akse har stått stille to runder: «Aksen <akse> har stått stille i to runder. Da er det kjerneløkka for den aksen som skal endres - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.»> Se på spillet som det er nå: `node scripts/kontaktark-microgame.mjs --ids <id>` og Read på arkene. Les så bare filene grepene gjelder (bruk `grep -n` for å finne stedet før du leser), og `/tmp/api.md` ved behov. Gjør de tre forbedringene. Kjør simuleringen grønn, så Jobb 4a og 4b fra `.agent/workflows/daily_microgame_routine.md` til alt er grønt. Commit. JSON: {"porter":"grønne|røde","gjort":["...","...","..."],"ikke_gjort":"...","sim":"..."}
+
+Så 4c igjen med en ny vurderer. Inntil fire vurderingsrunder per natt. Et spill parkeres aldri.
 
 **Leveringsgulvet** (gjelder når spillet er på sin andre natt, altså en WIP fortsatt fra Jobb 1-0):
 maskinportene grønne, ingen akse under 3, Utseende minst 4 og sum minst 18. Holder spillet gulvet
 etter nattens siste runde, går det ut som PR (Jobb 5), med de gjenstående forbedringene i PR-en og
-rapporten. Under gulvet etter andre natt: gjør de to viktigste forbedringene, og lever likevel med
-tittelen merket «(under terskel)» i rapporten, så eieren kan gi tommel ned.
+rapporten. Under gulvet etter andre natt: en forbedrer gjør de to viktigste forbedringene, og du
+leverer likevel med tittelen merket «(under terskel)» i rapporten, så eieren kan gi tommel ned.
 
-**Lagre etter hver vurderingsrunde (checkpoint).** Kjøringen kan bli avbrutt når som helst - bruksgrensen på abonnementet stoppet omkjøringen 27.09 midt i runde 4, og alt arbeidet i den runden gikk tapt. Commit og push derfor etter HVER vurdering, uansett resultat:
-
-```bash
-git add src/components/microgames/ "public/content/<sti>/<artikkel>.json" "public/images/microgames/<id>.webp" "docs/microgames/briefer/<id>.md"
-git commit -m "wip: <id> etter vurdering <n> (sum <x>)" && git push origin HEAD:claude/microgame-wip-<dato>-<id>
-```
-
-Aldri `git push -f` - sky-miljøets sikkerhetsfilter stopper force-push og stanser kjøringen. Hver
-checkpoint er en ny commit oppå den forrige, så vanlig push holder. `<dato>` er DAGENS dato: en WIP
-som fortsettes fra en tidligere natt (og er rebaset), får en ny gren med ny dato i stedet for å
-overskrive den gamle.
-
-Da fortsetter neste kjøring (Jobb 1-0) fra siste runde i stedet for fra start.
-
-**Vær sparsom - kvoten er delt.** Hele kjøringen deler én bruksgrense med alle andre økter. Balanser i simuleringen, ikke i nettleseren. Kjør selvspill-røyktesten og scene-auditen én gang per runde, rett før vurderingen. Les bare de bildene du trenger.
-
-Er spillet fortsatt under terskel etter fjerde runde på sin FØRSTE natt: IKKE åpne PR. Commit alt (smalt diff) og push til `claude/microgame-wip-<dato>-<id>`, og rapporter i Jobb 6 med scorene og hva som manglet - neste natt fortsetter derfra (Jobb 1-0).
+Er spillet fortsatt under terskel etter fjerde runde på sin FØRSTE natt: IKKE åpne PR. Siste
+checkpoint ligger på `claude/microgame-wip-<dato>-<id>`. Rapporter i Jobb 6 med scorene og hva som
+manglet - neste natt fortsetter derfra (Jobb 1-0).
 
 ---
 
@@ -353,6 +404,7 @@ gh issue comment 12 --repo pattidatti/eiriksbok --body "**Mikrospill $(date +%Y-
 **Likhet:** nærmest <id> (x,xx)
 **Selvspill:** <vinner-robot vant på x s, taper-roboter og knappemoser tapte, passiv tapte>
 
+**Arbeidsflyt:** <n> arbeidere, <n> vurderingsrunder, <n> gråboks-diagnoser
 **Fagkjernen som regel:** <én setning>
 **Hva som ble bedre etter vurderingen:** <kort>
 
