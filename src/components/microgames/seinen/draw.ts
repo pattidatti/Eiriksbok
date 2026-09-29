@@ -252,7 +252,7 @@ function makeBackground(): HTMLCanvasElement {
     ctx.textAlign = 'left';
     ctx.fillText('PARIS', riverX(PARIS_Y) + riverHalf(PARIS_Y) + 90, PARIS_Y + 36);
     ctx.font = `700 15px ${SERIF}`;
-    ctx.fillText('SEQVANA · SEINEN', riverX(560) + riverHalf(560) + 14, 612);
+    ctx.fillText('SEQVANA · SEINEN', 120, 250);
     ctx.fillText('MARE · HAVET', riverX(H) - riverHalf(H) - 150, H - 48);
     return c;
 }
@@ -275,12 +275,15 @@ interface ShipLook {
     shields: boolean;
     cargo?: boolean;
     crown?: boolean;
+    /** Et kors på seilet: kongens kristne folk - og Rollo etter dåpen. */
+    cross?: boolean;
 }
 
 const LOOK_PLAYER: ShipLook = { hull: [OCHRE, TERRA, OCHRE], sail: [TERRA, LINEN, OCHRE, LINEN], len: 70, dragon: true, shields: true };
-const LOOK_VIKING: ShipLook = { hull: [TERRA, INK, TERRA], sail: [TERRA, '#5c3b2e', TERRA, '#5c3b2e'], len: 56, dragon: true, shields: true };
+const LOOK_VASSAL: ShipLook = { ...LOOK_PLAYER, sail: [OCHRE, LINEN, OCHRE, LINEN], cross: true };
+const LOOK_VIKING: ShipLook = { hull: [TERRA, INK, TERRA], sail: [TERRA, '#8e3c24', TERRA], len: 56, dragon: true, shields: true };
 const LOOK_BARGE: ShipLook = { hull: [SAGE, OCHRE, SAGE], sail: [LINEN, OCHRE, LINEN], len: 52, dragon: false, shields: false, cargo: true };
-const LOOK_KING: ShipLook = { hull: [KING, LINEN, KING], sail: [KING, LINEN, KING, LINEN], len: 54, dragon: false, shields: false, cargo: true, crown: true };
+const LOOK_KING: ShipLook = { hull: [KING, LINEN, KING], sail: [KING], len: 64, dragon: false, shields: false, cargo: true, cross: true };
 
 /** Et skip i profil, som på teppet. dir = 1: baugen peker mot høyre. */
 function ship(ctx: CanvasRenderingContext2D, x: number, y: number, dir: number, look: ShipLook, t: number, tilt = 0) {
@@ -326,6 +329,12 @@ function ship(ctx: CanvasRenderingContext2D, x: number, y: number, dir: number, 
     ctx.strokeStyle = INK;
     ctx.lineWidth = 1.8;
     ctx.strokeRect(-sw / 2, -L * 0.74, sw, sh);
+    if (look.cross) {
+        const cy = -L * 0.74 + sh / 2;
+        ctx.fillStyle = look.sail[0] === KING ? LINEN : KING;
+        ctx.fillRect(-2.5, cy - sh * 0.38, 5, sh * 0.76);
+        ctx.fillRect(-sw * 0.36, cy - sh * 0.12, sw * 0.72, 5);
+    }
     if (look.crown) {
         // Kongens merke: en krone midt på seilet.
         ctx.fillStyle = OCHRE;
@@ -610,6 +619,10 @@ export function drawWorld(
             ctx.fillStyle = `rgba(166,74,46,${(0.06 + 0.34 * Math.min(1, g.t / P1)).toFixed(3)})`;
             ctx.fill();
             stitch(ctx, 'rgba(166,74,46,.7)', 2.4, [6, 7]);
+            ctx.fillStyle = TERRA;
+            ctx.font = `700 13px ${SERIF}`;
+            ctx.textAlign = 'center';
+            ctx.fillText('PILREGN', f.x, f.y + f.range - 8);
         }
         fort(ctx, f.x, f.y + 16, i === 0);
     });
@@ -628,6 +641,18 @@ export function drawWorld(
         } else if (i >= g.land) return;
         else if (!v.alive) st = v.lost === 'kongen' ? 'lost-k' : 'lost-v';
         house(ctx, v.x, v.y, st, t);
+        // Normandie vokser: landsbyene du holder, får flere hus år for år.
+        if (after && st === 'mine') {
+            const n = Math.min(3, Math.floor((g.year - 911) / 6));
+            const side = v.x < riverX(v.y) ? -1 : 1;
+            for (let k = 0; k < n; k++) {
+                ctx.save();
+                ctx.translate(v.x + side * (30 + k * 22), v.y + (k % 2 ? 10 : -8));
+                ctx.scale(0.62, 0.62);
+                house(ctx, 0, 0, 'mine', t);
+                ctx.restore();
+            }
+        }
     });
 
     // Pilsalvene: pilene flyr fra borgen mot ringen der de lander.
@@ -707,7 +732,7 @@ export function drawWorld(
     }
     const tiltP = Math.max(-0.35, Math.min(0.35, (s.vy / 330) * 0.35 * -nd));
     if (s.hit > 0 && Math.floor(t * 14) % 2 === 0) ctx.globalAlpha = 0.45;
-    ship(ctx, s.x, s.y + 14, nd, LOOK_PLAYER, t, tiltP);
+    ship(ctx, s.x, s.y + 14, nd, after ? LOOK_VASSAL : LOOK_PLAYER, t, tiltP);
     ctx.globalAlpha = 1;
 
     // Gnister og spon.
@@ -960,20 +985,116 @@ export function drawHud(ctx: CanvasRenderingContext2D, g: Game, tf: Transform, b
         ctx.restore();
     }
 
-    const rx = W - 250;
-    plate(ctx, rx, H - BORDER + 5, 236, 30);
+    const rx = W - 340;
+    plate(ctx, rx, H - BORDER + 5, 326, 30);
     ctx.fillStyle = INK;
     if (after) {
-        ctx.fillText('VREDE', rx + 8, by + 1);
-        for (let i = 0; i < ANGER_MAX; i++) crown(ctx, rx + 70 + i * 24, by, i < g.anger);
+        ctx.fillText('KONGENS VREDE', rx + 8, by + 1);
+        for (let i = 0; i < ANGER_MAX; i++) crown(ctx, rx + 132 + i * 24, by, i < g.anger);
         ctx.fillStyle = INK;
-        ctx.fillText('KISTER', rx + 124, by + 1);
-        for (let i = 0; i < CHESTS_PER_LIFE; i++) chest(ctx, rx + 180 + i * 20, by, i < g.chests);
+        ctx.fillText('SØLVKISTER', rx + 190, by + 1);
+        for (let i = 0; i < CHESTS_PER_LIFE; i++) chest(ctx, rx + 272 + i * 19, by, i < g.chests);
     } else {
         const n = g.stats.silver % SILVER_PER_LAND;
         const full = earned >= MAX_LAND;
         ctx.fillText(full ? 'SØLV - LANDET ER FULLT' : 'SØLV TIL NESTE LANDSBY', rx + 8, by + 1);
-        if (!full) for (let i = 0; i < SILVER_PER_LAND; i++) chest(ctx, rx + 176 + i * 17, by, i < n);
+        if (!full) for (let i = 0; i < SILVER_PER_LAND; i++) chest(ctx, rx + 248 + i * 19, by, i < n);
     }
+    ctx.restore();
+}
+
+// ---------------------------------------------------------------- 911
+
+/** Vendepunktet i 911 som et teppefelt midt på kartet: kongen, Rollo på kne og dåpen. p går 0-1. */
+export function drawTreaty(ctx: CanvasRenderingContext2D, tf: Transform, p: number) {
+    const a = Math.min(1, p * 5, (1 - p) * 5);
+    ctx.save();
+    ctx.translate(tf.ox, tf.oy);
+    ctx.scale(tf.s, tf.s);
+    ctx.globalAlpha = a * 0.45;
+    ctx.fillStyle = INK;
+    ctx.fillRect(-tf.ox / tf.s, 0, tf.w / tf.s, H);
+    ctx.globalAlpha = a;
+    const w = 600;
+    const h = 260;
+    const x = W / 2 - w / 2;
+    const y = H / 2 - h / 2 - 10;
+    ctx.fillStyle = LINEN;
+    ctx.fillRect(x, y, w, h);
+    band(ctx, x, x + w, y, 34, 0);
+    band(ctx, x, x + w, y + h - 34, 34, 0);
+    ctx.strokeStyle = INK;
+    ctx.lineWidth = 3;
+    ctx.strokeRect(x, y, w, h);
+    ctx.fillStyle = INK;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = `700 19px ${SERIF}`;
+    ctx.fillText('HIC ROLLO BAPTIZATVR · ANNO 911', W / 2, y + 18);
+    ctx.font = `700 15px ${SERIF}`;
+    ctx.fillText('Rollo blir døpt og kongens vasall. Nå skal han forsvare landet.', W / 2, y + h - 17);
+    const gy = y + h - 44;
+    // Kongen med krone og blå kappe.
+    const kx = W / 2 - 150;
+    ctx.fillStyle = KING;
+    ctx.beginPath();
+    ctx.moveTo(kx - 26, gy);
+    ctx.lineTo(kx - 14, gy - 104);
+    ctx.lineTo(kx + 14, gy - 104);
+    ctx.lineTo(kx + 26, gy);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = INK;
+    ctx.lineWidth = 2.4;
+    ctx.stroke();
+    ctx.fillStyle = LINEN;
+    ctx.beginPath();
+    ctx.arc(kx, gy - 118, 14, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    crown(ctx, kx, gy - 138, true);
+    ctx.strokeStyle = INK;
+    ctx.beginPath();
+    ctx.moveTo(kx + 16, gy - 84);
+    ctx.lineTo(kx + 58, gy - 70);
+    ctx.stroke();
+    // Døpefonten.
+    const fx = W / 2 + 10;
+    ctx.fillStyle = OCHRE;
+    ctx.beginPath();
+    ctx.moveTo(fx - 36, gy - 58);
+    ctx.lineTo(fx + 36, gy - 58);
+    ctx.lineTo(fx + 22, gy - 30);
+    ctx.lineTo(fx - 22, gy - 30);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillRect(fx - 8, gy - 30, 16, 30);
+    ctx.strokeRect(fx - 8, gy - 30, 16, 30);
+    ctx.fillStyle = TEAL;
+    ctx.fillRect(fx - 32, gy - 62, 64, 6);
+    // Rollo på kne, med skjold på ryggen.
+    const rx = W / 2 + 120;
+    ctx.fillStyle = TERRA;
+    ctx.beginPath();
+    ctx.moveTo(rx - 22, gy);
+    ctx.lineTo(rx - 18, gy - 34);
+    ctx.lineTo(rx - 30, gy - 78);
+    ctx.lineTo(rx + 2, gy - 84);
+    ctx.lineTo(rx + 16, gy - 34);
+    ctx.lineTo(rx + 34, gy);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = LINEN;
+    ctx.beginPath();
+    ctx.arc(rx - 18, gy - 94, 13, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = OCHRE;
+    ctx.beginPath();
+    ctx.arc(rx + 14, gy - 60, 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
     ctx.restore();
 }

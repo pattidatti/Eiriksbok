@@ -42,6 +42,7 @@ import {
     TERRA,
     burst,
     drawHud,
+    drawTreaty,
     drawWorld,
     fit,
     makeAssets,
@@ -146,6 +147,8 @@ const LOSS: Record<Cause, { title: string; msg: string; tip: string }> = {
 };
 
 const KING_BLUE = '#3b4f8f';
+/** Sekunder teppefeltet med dåpen i 911 står på skjermen. */
+const TREATY_S = 2.6;
 
 const LESSONS = {
     kjede: 'Vikingene seilte ofte i flåter på mange skip. En flåte som ble stoppet i elvemunningen, kom aldri opp til Paris.',
@@ -208,7 +211,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
     const tfRef = useRef<Transform>(fit(1280, 720));
     const keys = useRef({ left: false, right: false, up: false, down: false });
     const pointerSteer = useRef(false);
-    const fx = useRef({ end: 0 });
+    const fx = useRef({ end: 0, treaty: 0 });
     const run = useRef({ firstVolley: false, firstBetray: false, firstBoard: false });
     const completedOnce = useRef(false);
     const outcome = useRef<{ won: boolean; score: number } | null>(null);
@@ -393,7 +396,8 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                 }
                 case 'treaty': {
                     sfx.bell();
-                    text.banner('ANNO 911 - AVTALEN', INK, 2.2);
+                    // Vendepunktet: spillet står stille mens teppefeltet med dåpen vises.
+                    fx.current.treaty = TREATY_S;
                     text.lesson('avtale', LESSONS.avtale, 1.5);
                     window.setTimeout(() => {
                         if (modeRef.current !== 'play') return;
@@ -406,7 +410,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                                 until: () => g.stats.stopped > 0 || g.stats.betrayed > 0,
                             }
                         );
-                    }, 2000);
+                    }, TREATY_S * 1000 + 300);
                     break;
                 }
                 case 'viking':
@@ -445,7 +449,8 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                     if (dx || dy) steerTo(g, g.ship.x + dx * 240, g.ship.y + dy * 240);
                     else if (!pointerSteer.current) steerTo(g, null);
                 }
-                update(g, dt * text.timeScale());
+                if (fx.current.treaty > 0) fx.current.treaty = Math.max(0, fx.current.treaty - dt);
+                else update(g, dt * text.timeScale());
                 handleEvents(g);
                 if (g.mode === 'lost') {
                     sfx.lose();
@@ -474,6 +479,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
                 best: saveRef.current.best,
             });
             if (m !== 'menu' && m !== 'over') drawHud(ctx, g, tf, saveRef.current.best);
+            if (fx.current.treaty > 0 && m !== 'menu') drawTreaty(ctx, tf, 1 - fx.current.treaty / TREATY_S);
         },
         onHidden: () => {
             if (modeRef.current === 'play') pause();
@@ -484,6 +490,7 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
         synth.unlock();
         game.g = newGame(Math.floor(Math.random() * 1e9));
         run.current = { firstVolley: false, firstBetray: false, firstBoard: false };
+        fx.current.treaty = 0;
         outcome.current = null;
         setResult(null);
         text.resetRun();
@@ -492,6 +499,14 @@ export default function SeinenSnur({ onComplete }: MicroGameProps) {
             if (modeRef.current !== 'play') return;
             text.banner('ANNO 885', INK, 1.6);
         }, 200);
+        window.setTimeout(() => {
+            if (modeRef.current !== 'play') return;
+            const g = game.g;
+            text.point('mus', 'Skipet følger musa', toScreen(() => [g.ship.x, g.ship.y - 50]), {
+                until: () => pointerSteer.current || botDriving.current,
+                seconds: 3,
+            });
+        }, 400);
         window.setTimeout(() => {
             if (modeRef.current !== 'play') return;
             const g = game.g;

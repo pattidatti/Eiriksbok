@@ -41,6 +41,9 @@ export const VOLLEY_R = 40;
 export const KING_U = -0.74;
 /** Så mange kongsbåter rammet før kongen tar tilbake en landsby. */
 export const ANGER_MAX = 2;
+/** Farten til vikingskipene (px/s) i 911, og hvor mye den øker til 933. */
+const VIKING_V0 = 56;
+const VIKING_DV = 72;
 /** Står skipet saktere enn dette når et vikingskip kommer borti, entrer de det. */
 export const BOARD_V = 90;
 
@@ -286,7 +289,7 @@ function spawnBarge(g: Game) {
     g.events.push({ e: 'barge', x: riverX(40), y: 40 });
 }
 
-export type Formation = 'en' | 'rekke' | 'linje' | 'kile';
+export type Formation = 'en' | 'rekke' | 'linje' | 'kile' | 'splitt';
 
 /**
  * Vikingskipene kommer i formasjoner: på rekke (etter hverandre), på linje (side om side)
@@ -294,11 +297,13 @@ export type Formation = 'en' | 'rekke' | 'linje' | 'kile';
  */
 function spawnViking(g: Game, n: number, form: Formation) {
     const f = Math.min(1, (g.t - P1) / P2);
-    const v = -(56 + 70 * f) * (0.92 + g.rng() * 0.16);
+    const v = -(VIKING_V0 + VIKING_DV * f) * (0.92 + g.rng() * 0.16);
     // Plassene i formasjonen, i piksler: [til siden, bakover]. Tett nok til kjedekrasj.
     const slots: [number, number][] = [];
     for (let i = 0; i < n; i++) {
         if (form === 'rekke' || form === 'en') slots.push([0, i * 50]);
+        // To rekker langs hver sin bredd samtidig: du rekker bare én av dem i full fart.
+        else if (form === 'splitt') slots.push([i % 2 ? 130 : -130, Math.floor(i / 2) * 50]);
         else if (form === 'linje') slots.push([((i % 3) - 1) * 48, Math.floor(i / 3) * 50]);
         else {
             // Kile: høvdingskipet først, så par bak på hver side.
@@ -366,7 +371,7 @@ function hit(g: Game, b: Boat, vx: number, vy: number, chain: number) {
             g.stats.betrayed++;
             g.events.push({ e: 'ram', kind: 'frank', x: b.x, y: b.y, points: 0, betrayal: true, chain });
             // Kongens sølv vokser med rekka: fristelsen er størst når du har mest å tape.
-            const silver = 25 * Math.max(4, g.combo);
+            const silver = 15 * Math.max(6, g.combo);
             g.score += silver;
             g.events.push({ e: 'points', n: silver, x: b.x, y: b.y });
             g.waveClean = false;
@@ -381,6 +386,8 @@ function hit(g: Game, b: Boat, vx: number, vy: number, chain: number) {
             g.events.push({ e: 'anger', x: b.x, y: b.y, anger: g.anger });
             if (g.anger >= ANGER_MAX) {
                 g.anger = 0;
+                // Kongen tar en landsby - og rekka ryker.
+                g.combo = 0;
                 const v = loseVillage(g, 'kongen');
                 if (v >= 0) g.events.push({ e: 'kingTakes', village: v });
             }
@@ -663,7 +670,7 @@ export function update(g: Game, dt: number) {
             let form: Formation = 'rekke';
             if (g.year >= 926) {
                 n = 5 + Math.floor(g.rng() * 2);
-                form = r < 0.4 ? 'kile' : r < 0.7 ? 'rekke' : 'linje';
+                form = r < 0.3 ? 'kile' : r < 0.55 ? 'rekke' : r < 0.75 ? 'splitt' : 'linje';
             } else if (g.year >= 920) {
                 n = 4 + Math.floor(g.rng() * 2);
                 form = r < 0.35 ? 'rekke' : r < 0.7 ? 'linje' : 'kile';
