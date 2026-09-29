@@ -60,6 +60,31 @@ Fase 1-3 lagres i `docs/microgames/briefer/<id>.md` med seksjonene `## Konsepttu
 `## Designbrief` og `## Kunstbrief`. Selvspillet krever fila. Den er også hukommelsen: neste natt
 leser de siste briefene for ikke å gjenta seg.
 
+### Bestillingen er lov, ikke forslag
+
+Har eieren sagt noe om spillet (i chatten, eller etter `KRAV:` i idékøen `docs/microgames/ideer.md`),
+er det et krav som alle fem konseptene må oppfylle, og som dommeren sjekker. Les ordene
+bokstavelig og i vanlig spillspråk: «førsteperson med combat» betyr WASD, fri bevegelse i en verden
+og nærkamp mot fiender som beveger seg - ikke et fast kamera eller et rail-kamera
+(Guddommelig vind, 2026-09-29: bygd som forsvar av en mur med faste kameraplasser, forkastet av
+eieren etter at hele spillet var laget). Er du i tvil om hva bestillingen betyr, spør før du
+skriver konsepter.
+
+### Interaktiv økt: eieren godkjenner to ganger
+
+Sitter eieren i chatten, stopper du og viser fram før de dyre fasene. Et feil spill oppdaget
+etter bygget koster hele økta (Guddommelig vind brukte 44 M tokens på et spill eieren ikke ville
+ha); oppdaget ved konseptet koster det noen tusen.
+
+1. **Etter konseptturneringen, før briefen:** vinneren og nummer to, fem linjer hver, pluss én
+   setning om hvordan det oppfyller bestillingen. Vent på svar.
+2. **Etter gråboksen, før kunsten:** to-tre skjermbilder, simuleringstallene, og lenken til
+   `http://localhost:5173/mikrospill/<id>` så eieren kan prøve selv. Vent på svar.
+
+Etter godkjent gråboks bygges kunst, juice og tekst av en fersk underagent (Byggmester 2 i
+nattrutinens «Arbeidsdeling»), med briefen som kontrakt. Da holder chatten seg liten, og eierens
+rettelser etterpå blir billige.
+
 **Delt og unikt.** Det eleven ikke ser, deles: arkadeskallet, tekstlagene, lagring, lyd,
 kvalitetsnivåer og selvspill. Det eleven ser, lages alltid nytt: verden, kamera, perspektiv, look,
 HUD og sjangerløkke. Det finnes med vilje ingen sjangermaler og ikke noe stilbibliotek - eieren vil
@@ -106,7 +131,9 @@ Slik finner du gode konsepter:
   Zombies, Mario Kart, Overcooked, Fruit Ninja, Crossy Road, Mini Metro, Papers, Please, Reigns.
 - **Les de siste fem briefene** i `docs/microgames/briefer/` og gjør noe annet.
 
-**Dommeren.** Gi de fem konseptene til en fersk underagent som ikke har sett tankene dine. Den gir
+**Dommeren.** Gi de fem konseptene til en fersk underagent som ikke har sett tankene dine, sammen
+med eierens bestilling hvis det finnes en (se «Bestillingen er lov»). Et konsept som ikke oppfyller
+bestillingen bokstavelig, får 1 på begge aksene. Den gir
 hvert konsept 1-5 på «Gøy på papiret» (ville en 14-åring spilt dette i friminuttet?) og «Fagregelen
 avgjør» (vinner den som har forstått mekanismen?), velger én vinner og sier hva som skal til for at
 den blir en 5 på Gøy («løftet»). Prompten står i nattrutinen.
