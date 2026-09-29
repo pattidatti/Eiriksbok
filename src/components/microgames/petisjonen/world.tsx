@@ -5,7 +5,16 @@ import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { mergeParts } from '../kit/mergeParts';
 import { useQuality } from '../kit/quality';
 import { PLACES, TREES, SLOTTET, BLADET, BLADET_R, BLADET_HUS } from './geo';
-import { MAX_STUCK, reach, MEET_TIME, type G } from './game';
+import {
+    MAX_STUCK,
+    MAX_PICKUPS,
+    POWER_NAMES,
+    POWER_HINTS,
+    reach,
+    MEET_TIME,
+    type G,
+    type PowerKind,
+} from './game';
 import { hatchMat, OUTLINE, INK, RED, LAMP } from './hatch';
 import {
     mapTexture,
@@ -15,6 +24,7 @@ import {
     placeLabel,
     slottLabel,
     bladetLabel,
+    powerLabel,
     inWater,
     GROUND_W,
     GROUND_D,
@@ -854,6 +864,8 @@ const ROLL_MARK = new THREE.MeshBasicMaterial({
 
 const rollLen = (r: number) => 0.7 + r * 1.25;
 
+const HALO_MAT = new THREE.MeshBasicMaterial({ color: RED });
+
 export function Roll({ gRef }: { gRef: GRef }) {
     const yaw = useRef<THREE.Group>(null);
     const spin = useRef<THREE.Group>(null);
@@ -861,6 +873,7 @@ export function Roll({ gRef }: { gRef: GRef }) {
     const line = useRef<THREE.Mesh>(null);
     const stuck = useRef<THREE.InstancedMesh>(null);
     const marker = useRef<THREE.Mesh>(null);
+    const halo = useRef<THREE.Mesh>(null);
     const [mats] = useState(() => {
         const side = new THREE.MeshLambertMaterial({ map: rollTexture() });
         const cap = new THREE.MeshLambertMaterial({ map: spiralTexture() });
@@ -900,6 +913,17 @@ export function Roll({ gRef }: { gRef: GRef }) {
             marker.current.position.set(R.p[0], 0.05, R.p[1]);
             marker.current.scale.setScalar(r * 1.35 + 0.35 + Math.sin(t * 4) * 0.05);
         }
+        // Samhold: en rød ring av folk rundt rullen. Skyss: en gul ring som suser rundt.
+        if (halo.current) {
+            const sam = g.powers.samhold;
+            const sky = g.powers.skyss;
+            const left = Math.max(sam, sky);
+            halo.current.visible = left > 0 && (left > 2 || Math.floor(t * 8) % 2 === 0);
+            HALO_MAT.color.set(sam > 0 ? RED : LAMP);
+            halo.current.position.set(R.p[0], r * 0.9, R.p[1]);
+            halo.current.rotation.set(Math.sin(t * 3) * 0.12, t * (sky > 0 ? 9 : 2), 0);
+            halo.current.scale.setScalar(r * 1.55 + 0.5 + Math.sin(t * 7) * 0.06);
+        }
         yaw.current.position.set(R.p[0], r, R.p[1]);
         yaw.current.rotation.y = R.heading;
         spin.current.rotation.x = R.spin;
@@ -932,6 +956,7 @@ export function Roll({ gRef }: { gRef: GRef }) {
     return (
         <>
             <mesh ref={marker} geometry={GEO.dangerRing} material={ROLL_MARK} />
+            <mesh ref={halo} geometry={GEO.torus} material={HALO_MAT} visible={false} />
             <group ref={yaw}>
                 <group ref={spin}>
                     <mesh ref={body} geometry={geo} material={mats} rotation-z={Math.PI / 2} />
@@ -980,6 +1005,187 @@ export function Flying({ gRef }: { gRef: GRef }) {
         m.instanceMatrix.needsUpdate = true;
     });
     return <instancedMesh ref={slips} args={[GEO.slip, mat, MAX_FLY]} frustumCulled={false} />;
+}
+
+// ---------------------------------------------------------------------------
+// Ting på veien: avisbunt, skyss (hestesko), folkemøte (klokke) og samhold (fane)
+// ---------------------------------------------------------------------------
+
+const PICK_GEO: Record<PowerKind, THREE.BufferGeometry> = {
+    avis: mergeParts([
+        { geometry: box(1.1, 0.42, 0.78), position: [0, 0, 0], color: '#f4ecd8' },
+        {
+            geometry: box(1.0, 0.12, 0.7),
+            position: [0.05, 0.27, 0.02],
+            color: '#e8dcc0',
+            rotation: [0, 0.25, 0],
+        },
+        { geometry: box(0.16, 0.46, 0.82), position: [0, 0, 0], color: RED },
+        { geometry: box(1.14, 0.46, 0.14), position: [0, 0, 0], color: RED },
+    ]),
+    skyss: mergeParts([
+        {
+            geometry: new THREE.TorusGeometry(0.46, 0.13, 6, 18, Math.PI * 1.45),
+            position: [0, 0, 0],
+            rotation: [0, 0, -Math.PI * 0.225 - Math.PI / 2],
+            color: '#3a342c',
+        },
+        { geometry: box(0.3, 0.16, 0.2), position: [-0.33, -0.36, 0], color: '#3a342c' },
+        { geometry: box(0.3, 0.16, 0.2), position: [0.33, -0.36, 0], color: '#3a342c' },
+    ]),
+    mote: mergeParts([
+        { geometry: cyl(0.22, 0.55, 0.75, 12), position: [0, 0, 0], color: LAMP },
+        { geometry: cyl(0.58, 0.58, 0.08, 12), position: [0, -0.38, 0], color: LAMP },
+        { geometry: ball(0.13), position: [0, 0.44, 0], color: '#6b5a44' },
+        { geometry: ball(0.12), position: [0, -0.48, 0], color: INK },
+    ]),
+    samhold: mergeParts([
+        { geometry: cyl(0.045, 0.05, 1.9, 5), position: [0, 0, 0], color: '#5a4a38' },
+        {
+            geometry: cyl(0.035, 0.035, 1.05, 5),
+            position: [0, 0.82, 0],
+            rotation: [0, 0, Math.PI / 2],
+            color: '#5a4a38',
+        },
+        { geometry: box(0.95, 1.0, 0.05), position: [0, 0.3, 0], color: RED },
+        { geometry: box(0.5, 0.08, 0.06), position: [0, 0.45, 0], color: '#f4ecd8' },
+        { geometry: box(0.08, 0.5, 0.06), position: [0, 0.3, 0], color: '#f4ecd8' },
+    ]),
+};
+for (const g of Object.values(PICK_GEO)) g.computeVertexNormals();
+const PICK_LINE: Record<PowerKind, THREE.BufferGeometry> = {
+    avis: inflate(PICK_GEO.avis, 0.05),
+    skyss: inflate(PICK_GEO.skyss, 0.05),
+    mote: inflate(PICK_GEO.mote, 0.05),
+    samhold: inflate(PICK_GEO.samhold, 0.04),
+};
+const KINDS: PowerKind[] = ['avis', 'skyss', 'mote', 'samhold'];
+
+export function Pickups({ gRef }: { gRef: GRef }) {
+    const slots = useRef<(THREE.Group | null)[]>([]);
+    const items = useRef<(THREE.Group | null)[][]>([]);
+    const rings = useRef<(THREE.Mesh | null)[]>([]);
+    const labels = useRef<(THREE.Mesh | null)[][]>([]);
+    const [mat] = useState(VC);
+    const [ringMats] = useState(() =>
+        Array.from(
+            { length: MAX_PICKUPS },
+            () =>
+                new THREE.MeshBasicMaterial({
+                    color: LAMP,
+                    transparent: true,
+                    opacity: 0.8,
+                    depthWrite: false,
+                })
+        )
+    );
+    const [tex] = useState(
+        () =>
+            Object.fromEntries(
+                KINDS.map((k) => [k, powerLabel(POWER_NAMES[k], POWER_HINTS[k].toLowerCase())])
+            ) as Record<PowerKind, THREE.CanvasTexture>
+    );
+    useEffect(
+        () => () => {
+            ringMats.forEach((m) => m.dispose());
+            Object.values(tex).forEach((t) => t.dispose());
+        },
+        [ringMats, tex]
+    );
+    useFrame((st) => {
+        const g = gRef.current;
+        const t = st.clock.elapsedTime;
+        for (let i = 0; i < MAX_PICKUPS; i++) {
+            const slot = slots.current[i];
+            if (!slot) continue;
+            const q = g.phase === 'samle' ? g.pickups[i] : undefined;
+            if (!q) {
+                slot.visible = false;
+                continue;
+            }
+            const left = q.life - q.age;
+            // Blinker de siste fire sekundene før den forsvinner.
+            slot.visible = left > 4 || Math.floor(t * 6) % 2 === 0;
+            slot.position.set(q.p[0], 0, q.p[1]);
+            const pop = q.age < 0.5 ? easeBack(q.age / 0.5) : 1;
+            KINDS.forEach((k, n) => {
+                const it = items.current[i]?.[n];
+                if (it) {
+                    it.visible = k === q.kind;
+                    it.position.y = 1.7 + Math.sin(t * 3 + i) * 0.25;
+                    it.rotation.y = t * 1.6 + i;
+                    // Klokka svinger, som når den ringer inn til møte.
+                    it.rotation.z = k === 'mote' ? Math.sin(t * 6) * 0.35 : 0;
+                    it.scale.setScalar(pop * 1.6);
+                }
+                const lb = labels.current[i]?.[n];
+                if (lb) lb.visible = k === q.kind;
+            });
+            const ring = rings.current[i];
+            if (ring) {
+                ring.scale.setScalar((1.7 + Math.sin(t * 4 + i) * 0.14) * pop);
+                ringMats[i].opacity = 0.55 + Math.sin(t * 4 + i) * 0.25;
+            }
+        }
+    });
+    return (
+        <>
+            {Array.from({ length: MAX_PICKUPS }, (_, i) => (
+                <group
+                    key={i}
+                    ref={(el) => {
+                        slots.current[i] = el;
+                    }}
+                    visible={false}
+                >
+                    <mesh
+                        ref={(el) => {
+                            rings.current[i] = el;
+                        }}
+                        geometry={GEO.dangerRing}
+                        material={ringMats[i]}
+                        position={[0, 0.07, 0]}
+                    />
+                    <mesh
+                        geometry={GEO.shadow}
+                        material={SHADOW_MAT}
+                        position={[0, 0.05, 0]}
+                        scale={0.7}
+                    />
+                    {KINDS.map((k, n) => (
+                        <group
+                            key={k}
+                            ref={(el) => {
+                                (items.current[i] ??= [])[n] = el;
+                            }}
+                        >
+                            <mesh geometry={PICK_GEO[k]} material={mat} />
+                            <mesh geometry={PICK_LINE[k]} material={OUTLINE} />
+                        </group>
+                    ))}
+                    {KINDS.map((k, n) => (
+                        <mesh
+                            key={k}
+                            ref={(el) => {
+                                (labels.current[i] ??= [])[n] = el;
+                            }}
+                            rotation-x={-Math.PI / 2}
+                            position={[0, 0.06, 2.1]}
+                            renderOrder={2}
+                        >
+                            <planeGeometry args={[4.2, 1.12]} />
+                            <meshBasicMaterial
+                                map={tex[k]}
+                                transparent
+                                depthWrite={false}
+                                toneMapped={false}
+                            />
+                        </mesh>
+                    ))}
+                </group>
+            ))}
+        </>
+    );
 }
 
 /** Lys: lav vintersol fra sørvest, som gir lange skygger - og mye skravur. */

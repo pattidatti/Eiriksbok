@@ -20,6 +20,7 @@ import {
     HALF_W,
     HALF_D,
     START_PLACE,
+    ROADS,
     dist,
     type XZ,
 } from './geo';
@@ -46,6 +47,41 @@ const CAP_SCALE = 1.7;
 /** Andel av stabelen som flyter til rullen per sekund når den er langt unna. */
 const FAR_RATE = 0.012;
 
+/**
+ * Ting på veien (powerups). Hver av dem er noe thranittene faktisk brukte:
+ * avisa, skyssen Thrane reiste med, de store møtene ute og samholdet i foreningene.
+ */
+export type PowerKind = 'avis' | 'skyss' | 'mote' | 'samhold';
+/** Powerups som varer en stund (folkemøtet skjer med én gang). */
+export type TimedPower = 'avis' | 'skyss' | 'samhold';
+export const POWER_SECONDS: Record<TimedPower, number> = { avis: 7, skyss: 7, samhold: 9 };
+export const POWER_NAMES: Record<PowerKind, string> = {
+    avis: 'AVISBUNT',
+    skyss: 'SKYSS',
+    mote: 'FOLKEMØTE',
+    samhold: 'SAMHOLD',
+};
+/** Hva powerupen gjør, kort (vises når du tar den). */
+export const POWER_HINTS: Record<PowerKind, string> = {
+    avis: 'Alle foreningene sender navn',
+    skyss: 'Fort fram',
+    mote: 'Alle i nærheten skriver under',
+    samhold: 'Ingen blir skremt',
+};
+export const MAX_PICKUPS = 3;
+const PICKUP_LIFE = 28;
+const FIRST_PICKUP = 9;
+/** Hvor langt folkemøtet når. */
+export const MOTE_R = 12;
+const SKYSS_SPEED = 1.65;
+
+export interface Pickup {
+    kind: PowerKind;
+    p: XZ;
+    age: number;
+    life: number;
+}
+
 export type Mode = 'menu' | 'play' | 'paused' | 'dying' | 'over';
 export type Cause = 'kort' | 'revet';
 export type At = () => XZ | null;
@@ -63,6 +99,9 @@ export interface Sfx {
     recruit: () => void;
     open: () => void;
     month: () => void;
+    power: (kind: PowerKind) => void;
+    powerEnd: () => void;
+    repel: () => void;
 }
 
 export interface IO {
@@ -234,6 +273,12 @@ export interface G {
     hunted: Set<number>;
     /** Navn i lasset som flyr fra hver forening akkurat nå (for «+1 240 NAVN»). */
     burst: number[];
+    pickups: Pickup[];
+    nextPickup: number;
+    /** Sekunder igjen av hver powerup som varer. */
+    powers: Record<TimedPower, number>;
+    powerTaken: number;
+    repelled: number;
     /** Sluttscenen etter kongens nei. */
     crushing: boolean;
     crushClock: number;
@@ -402,6 +447,11 @@ export function newGame(rand: () => number = Math.random): G {
         arrested: 0,
         hunted: new Set(),
         burst: PLACES.map(() => 0),
+        pickups: [],
+        nextPickup: FIRST_PICKUP,
+        powers: { avis: 0, skyss: 0, samhold: 0 },
+        powerTaken: 0,
+        repelled: 0,
         crushing: false,
         crushClock: 0,
         rand,
@@ -537,6 +587,182 @@ function tear(g: G, h: Hunter, io: IO) {
     g.stuck.splice(0, Math.min(g.stuck.length, 3));
 }
 
+function pickPerson(g: G, p: Person, io: IO, fromMeeting: boolean) {
+    const R = g.roll;
+    const r = R.r;
+    p.state = 'borte';
+    p.back = 16 + g.rand() * 6;
+    g.singles++;
+    const ps = g.places[p.place];
+    ps.spark++;
+    ps.flash = 0.5;
+    if (fromMeeting) {
+        // Folkemøtet: navnet flyr til rullen som en lapp.
+        const d = dist(p.p, R.p);
+        if (g.slips.length < MAX_SLIPS)
+            g.slips.push({
+                from: [p.p[0], p.p[1]],
+                t: 0,
+                dur: 0.45 + d / 16 + g.rand() * 0.25,
+                names: 1,
+                arc: 1.5 + d * 0.15,
+                place: p.place,
+            });
+        else addNames(g, 1);
+    } else {
+        R.names += 1;
+        R.bump = 1;
+        io.sfx.pick(r);
+        io.float('+1 NAVN', p.p[0], p.p[1], '#1c1915');
+    }
+    if (g.stuck.length < MAX_STUCK)
+        g.stuck.push({
+            ang: -R.spin + (g.rand() - 0.5) * 0.6,
+            along: (g.rand() - 0.5) * 1.6,
+            wob: g.rand() * 6,
+            kind: Math.floor(g.rand() * 3),
+        });
+    if (once(g, 'husmann'))
+        io.lesson(
+            'husmann',
+            'Husmennene hadde ingen stemme og ingen skriftlig kontrakt. Bonden kunne kaste dem ut når han ville.',
+            0.6
+        );
+    if (g.singles > 25)
+        io.lesson(
+            'alene',
+            'Alene fikk du bare ett navn om gangen. Det var foreningene som samlet de tusenvis av navnene.',
+            0.3
+        );
+    if (ps.spark >= PLACES[p.place].need && !ps.klar && !ps.forening) {
+        ps.klar = true;
+        g.valg++;
+        io.sfx.ready();
+        const pl = PLACES[p.place];
+        if (once(g, 'beat-mote')) {
+            const t0 = Date.now();
+            io.beat(
+                'mote',
+                'Hold møte i låven',
+                `${pl.need} fra ${pl.name} er med på rullen. Rull inn på tunet og hold møte - da starter de sin egen forening.`,
+                () => pl.tun,
+                () => g.places[p.place].meeting > 0.2 || Date.now() - t0 > 6000
+            );
+        } else
+            io.pin(`klar-${p.place}`, 'Klar for møte', () => pl.tun, {
+                seconds: 5,
+                until: () => !g.places[p.place].klar,
+            });
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Ting på veien
+// ---------------------------------------------------------------------------
+
+function spawnPickup(g: G, io: IO) {
+    const R = g.roll;
+    const hasForening = g.places.some((p) => p.forening);
+    const hasEmbets = g.hunters.some((h) => h.active && h.kind === 'embetsmann');
+    const kinds: PowerKind[] = ['skyss', 'mote'];
+    if (hasForening) kinds.push('avis', 'avis');
+    if (hasEmbets) kinds.push('samhold');
+    const taken = new Set(g.pickups.map((q) => q.kind));
+    const pool = kinds.filter((k) => !taken.has(k));
+    const kind = (pool.length ? pool : kinds)[Math.floor(g.rand() * (pool.length || kinds.length))];
+    // Et sted langs en vei, et stykke unna rullen: en omvei du må velge.
+    let best: XZ | null = null;
+    for (let tries = 0; tries < 24 && !best; tries++) {
+        const [a, b] = ROADS[Math.floor(g.rand() * ROADS.length)];
+        const A = PLACES[a].tun;
+        const B = PLACES[b].tun;
+        const u = 0.3 + g.rand() * 0.4;
+        const p: XZ = [A[0] + (B[0] - A[0]) * u, A[1] + (B[1] - A[1]) * u];
+        const d = dist(p, R.p);
+        if (d < 9 || d > (tries < 16 ? 26 : 40)) continue;
+        if (SOLIDS.some((o) => dist(o.p, p) < o.r + 1.5)) continue;
+        if (g.pickups.some((q) => dist(q.p, p) < 8)) continue;
+        if (Math.abs(p[0]) > HALF_W - 3 || Math.abs(p[1]) > HALF_D - 3) continue;
+        best = p;
+    }
+    if (!best) return;
+    g.pickups.push({ kind, p: best, age: 0, life: PICKUP_LIFE });
+    g.valg++;
+    const at = best;
+    if (once(g, 'pin-pickup'))
+        io.pin('pickup', `${POWER_NAMES[kind]}: ${POWER_HINTS[kind].toLowerCase()}`, () => at, {
+            seconds: 5,
+            tone: 'bra',
+        });
+}
+
+function takePickup(g: G, q: Pickup, io: IO) {
+    const R = g.roll;
+    g.powerTaken++;
+    g.score += 60;
+    R.bump = 1;
+    io.sfx.power(q.kind);
+    io.banner(POWER_NAMES[q.kind], q.kind === 'skyss' ? '#1c1915' : '#b3261e');
+    io.float(POWER_HINTS[q.kind].toUpperCase(), R.p[0], R.p[1], '#b3261e', true);
+    if (q.kind === 'mote') {
+        // Folkemøtet: alle husmenn i nærheten skriver under, og foreningene rundt vokser.
+        for (const p of g.people)
+            if (p.state === 'står' && dist(p.p, R.p) < MOTE_R) pickPerson(g, p, io, true);
+        g.places.forEach((ps, i) => {
+            const f = ps.forening;
+            if (!f || dist(PLACES[i].tun, R.p) > MOTE_R + 6) return;
+            const cap = PLACES[i].cap * CAP_SCALE;
+            f.members = Math.min(cap, f.members * 1.25 + 20);
+            ps.flash = 1;
+        });
+        g.shake = Math.max(g.shake, 0.35);
+        io.lesson(
+            'folkemote',
+            'Thrane holdt store møter ute under åpen himmel. Hundrevis av husmenn og arbeidere kom for å høre ham, og mange skrev under.',
+            1
+        );
+        return;
+    }
+    g.powers[q.kind] = POWER_SECONDS[q.kind];
+    if (q.kind === 'avis')
+        io.lesson(
+            'avisbunt',
+            'Avisa ble sendt til foreningene over hele landet. Slik visste folk på Hamar hva foreningen i Drammen gjorde.',
+            1
+        );
+    else if (q.kind === 'skyss')
+        io.lesson(
+            'skyss',
+            'Marcus Thrane reiste fra bygd til bygd med hest og holdt møter. Der han hadde vært, startet folk ofte sin egen forening.',
+            1
+        );
+    else
+        io.lesson(
+            'samhold',
+            'Alene var en husmann lett å true. Når mange sto sammen i en forening, var det mye vanskeligere å skremme dem.',
+            1
+        );
+}
+
+/** Samhold: jegeren som treffer rullen, snur i stedet for å skremme noen. */
+function repel(g: G, h: Hunter, io: IO) {
+    const R = g.roll;
+    const dx = h.p[0] - R.p[0];
+    const dz = h.p[1] - R.p[1];
+    const d = Math.hypot(dx, dz) || 1;
+    h.stun = 3.5;
+    h.p[0] += (dx / d) * 2.2;
+    h.p[1] += (dz / d) * 2.2;
+    h.v = [0, 0];
+    h.chasing = false;
+    R.invuln = 0.5;
+    g.repelled++;
+    g.score += 80;
+    g.shake = Math.max(g.shake, 0.3);
+    io.sfx.repel();
+    io.float('HAN SNUR', h.p[0], h.p[1], '#b3261e', true);
+}
+
 // ---------------------------------------------------------------------------
 // Sluttfasen, 1851: kongen sa nei, og politiet tar lederne
 // ---------------------------------------------------------------------------
@@ -550,6 +776,9 @@ function startKnusing(g: G, io: IO) {
     g.knusT = 0;
     g.open = false;
     g.slips.length = 0;
+    g.pickups.length = 0;
+    g.powers.avis = 0;
+    g.powers.samhold = 0;
     g.leaders = g.places.flatMap((p, i) =>
         p.forening ? [{ place: i, state: 'venter' as const }] : []
     );
@@ -707,7 +936,7 @@ export function update(g: G, dt: number, io: IO) {
 
     // --- styring ---
     const r = R.r;
-    const vmax = rollSpeed(r);
+    const vmax = rollSpeed(r) * (g.powers.skyss > 0 ? SKYSS_SPEED : 1);
     let dx = 0;
     let dz = 0;
     if (g.keys[0] || g.keys[1]) {
@@ -769,6 +998,14 @@ export function update(g: G, dt: number, io: IO) {
     R.p[1] = Math.max(-HALF_D + r, Math.min(HALF_D - r, R.p[1]));
     R.invuln = Math.max(0, R.invuln - dt);
     R.bump = Math.max(0, R.bump - dt * 3);
+    for (const k of Object.keys(g.powers) as TimedPower[])
+        if (g.powers[k] > 0) {
+            g.powers[k] -= dt;
+            if (g.powers[k] <= 0) {
+                g.powers[k] = 0;
+                io.sfx.powerEnd();
+            }
+        }
     g.shake = Math.max(0, g.shake - dt * 2);
 
     if (g.phase === 'knusing') {
@@ -788,56 +1025,25 @@ export function update(g: G, dt: number, io: IO) {
         }
         p.pop = Math.min(1, p.pop + dt * 3);
         if (p.state !== 'står') continue;
-        if (dist(p.p, R.p) < r + 0.45) {
-            p.state = 'borte';
-            p.back = 16 + g.rand() * 6;
-            R.names += 1;
-            R.bump = 1;
-            g.singles++;
-            const ps = g.places[p.place];
-            ps.spark++;
-            ps.flash = 0.5;
-            io.sfx.pick(r);
-            io.float('+1 NAVN', p.p[0], p.p[1], '#1c1915');
-            if (g.stuck.length < MAX_STUCK)
-                g.stuck.push({
-                    ang: -R.spin + (g.rand() - 0.5) * 0.6,
-                    along: (g.rand() - 0.5) * 1.6,
-                    wob: g.rand() * 6,
-                    kind: Math.floor(g.rand() * 3),
-                });
-            if (once(g, 'husmann'))
-                io.lesson(
-                    'husmann',
-                    'Husmennene hadde ingen stemme og ingen skriftlig kontrakt. Bonden kunne kaste dem ut når han ville.',
-                    0.6
-                );
-            if (g.singles > 25)
-                io.lesson(
-                    'alene',
-                    'Alene fikk du bare ett navn om gangen. Det var foreningene som samlet de tusenvis av navnene.',
-                    0.3
-                );
-            if (ps.spark >= PLACES[p.place].need && !ps.klar && !ps.forening) {
-                ps.klar = true;
-                g.valg++;
-                io.sfx.ready();
-                const pl = PLACES[p.place];
-                if (once(g, 'beat-mote')) {
-                    const t0 = Date.now();
-                    io.beat(
-                        'mote',
-                        'Hold møte i låven',
-                        `${pl.need} fra ${pl.name} er med på rullen. Rull inn på tunet og hold møte - da starter de sin egen forening.`,
-                        () => pl.tun,
-                        () => g.places[p.place].meeting > 0.2 || Date.now() - t0 > 6000
-                    );
-                } else
-                    io.pin(`klar-${p.place}`, 'Klar for møte', () => pl.tun, {
-                        seconds: 5,
-                        until: () => !g.places[p.place].klar,
-                    });
-            }
+        // Med skyss når rullen litt lenger ut til siden.
+        if (dist(p.p, R.p) < r + (g.powers.skyss > 0 ? 1.1 : 0.45)) pickPerson(g, p, io, false);
+    }
+
+    // --- ting på veien ---
+    if (g.t >= g.nextPickup) {
+        g.nextPickup = g.t + 11 + g.rand() * 5;
+        if (g.pickups.length < 2) spawnPickup(g, io);
+    }
+    for (let k = g.pickups.length - 1; k >= 0; k--) {
+        const q = g.pickups[k];
+        q.age += dt;
+        if (q.age >= q.life) {
+            g.pickups.splice(k, 1);
+            continue;
+        }
+        if (dist(q.p, R.p) < r + 1.0) {
+            g.pickups.splice(k, 1);
+            takePickup(g, q, io);
         }
     }
 
@@ -906,7 +1112,8 @@ export function update(g: G, dt: number, io: IO) {
         }
         // Navnelapper flyr til rullen når den er nær nok.
         f.harvesting = false;
-        if (f.pile >= 1 && dist(R.p, PLACES[i].tun) < reach(f, r)) {
+        const dTun = dist(R.p, PLACES[i].tun);
+        if (f.pile >= 1 && (dTun < reach(f, r) || g.powers.avis > 0)) {
             f.harvesting = true;
             harvestingNow++;
             f.slipClock += dt;
@@ -934,9 +1141,10 @@ export function update(g: G, dt: number, io: IO) {
                     g.slips.push({
                         from: [from[0] + (g.rand() - 0.5) * 1.5, from[1] + (g.rand() - 0.5) * 1.5],
                         t: 0,
-                        dur: 0.5 + g.rand() * 0.35,
+                        // Med avisbunten kommer navnene fra hele kartet: lengre flytur.
+                        dur: 0.5 + g.rand() * 0.35 + Math.min(1.6, dTun / 22),
                         names: take,
-                        arc: 1.5 + g.rand() * 2.5,
+                        arc: 1.5 + g.rand() * 2.5 + Math.min(5, dTun * 0.1),
                         place: i,
                     });
                 else addNames(g, take);
@@ -1040,7 +1248,7 @@ export function update(g: G, dt: number, io: IO) {
         if (h.kind === 'bonde') {
             const fromHome = dist(h.p, h.home);
             // Når bygda har fått forening, står folket sammen - bonden holder seg hjemme.
-            const calm = !!g.places[h.place].forening;
+            const calm = !!g.places[h.place].forening || g.powers.samhold > 0;
             h.chasing = !calm && toR < 4.2 + r && fromHome < 6;
             if (h.chasing) {
                 goal = R.p;
@@ -1086,6 +1294,10 @@ export function update(g: G, dt: number, io: IO) {
         h.p[0] = Math.max(-HALF_W, Math.min(HALF_W, h.p[0]));
         h.p[1] = Math.max(-HALF_D, Math.min(HALF_D, h.p[1]));
         if (R.invuln <= 0 && dist(h.p, R.p) < r * 0.85 + 0.45) {
+            if (g.powers.samhold > 0) {
+                repel(g, h, io);
+                continue;
+            }
             tear(g, h, io);
             if (g.cause) return;
         }

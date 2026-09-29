@@ -489,3 +489,26 @@ export function bladetLabel() {
     });
     return cc.tex;
 }
+
+/** Navnet på en ting på veien, med en rød linje under: «AVISBUNT / alle foreningene sender navn». */
+export function powerLabel(name: string, hint: string) {
+    const cc = crispCanvas(360, 96);
+    cc.draw((x, w, h) => {
+        x.textAlign = 'center';
+        x.textBaseline = 'middle';
+        x.lineWidth = 8;
+        x.strokeStyle = PAPER;
+        x.fillStyle = RED;
+        x.font = `700 40px ${SERIF}`;
+        if ('letterSpacing' in x) (x as { letterSpacing: string }).letterSpacing = '4px';
+        x.strokeText(name, w / 2, h * 0.34);
+        x.fillText(name, w / 2, h * 0.34);
+        if ('letterSpacing' in x) (x as { letterSpacing: string }).letterSpacing = '0px';
+        x.fillStyle = INK;
+        x.font = `italic 600 24px ${SERIF}`;
+        x.lineWidth = 6;
+        x.strokeText(hint, w / 2, h * 0.78);
+        x.fillText(hint, w / 2, h * 0.78);
+    });
+    return cc.tex;
+}

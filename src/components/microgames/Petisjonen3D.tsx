@@ -34,6 +34,9 @@ import {
     RANKS,
     RUN_SECONDS,
     GOAL,
+    POWER_NAMES,
+    POWER_SECONDS,
+    type TimedPower,
     type G,
     type IO,
     type At,
@@ -54,6 +57,7 @@ import {
     People,
     Roll,
     Flying,
+    Pickups,
     Lights,
 } from './petisjonen/world';
 
@@ -124,6 +128,7 @@ interface Entry {
     text: string;
 }
 
+const LAMP_BG = '#f2c14e';
 const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 const nb = (n: number) => Math.round(n).toLocaleString('nb-NO');
@@ -180,6 +185,27 @@ function makeSfx(a: ArcadeSynth): Sfx & { win: () => void; nei: () => void; lose
         open: () => a.arp(262, [0, 4, 7, 12, 7, 12, 16], 0.11, 0.07),
         month: () => {
             if (gate('month', 800)) a.noise(0.18, 0.05, 1800);
+        },
+        // Ting på veien: hver sin lyd, så øret lærer dem.
+        power: (kind) => {
+            buzz(40);
+            if (kind === 'avis') {
+                a.noise(0.2, 0.2, 2400);
+                a.arp(523, [0, 4, 7, 12], 0.06, 0.06);
+            } else if (kind === 'skyss') {
+                a.tone(300, 900, 0.25, 'triangle', 0.08);
+                a.noise(0.3, 0.08, 1200, 0.05);
+            } else if (kind === 'mote') {
+                // Kirkeklokka ringer inn til møte.
+                a.tone(392, 392, 0.9, 'sine', 0.12);
+                a.tone(784, 784, 0.6, 'sine', 0.05, 0.02);
+                a.tone(392, 392, 0.9, 'sine', 0.1, 0.45);
+            } else a.arp(196, [0, 7, 12, 16], 0.09, 0.08);
+        },
+        powerEnd: () => a.tone(660, 330, 0.18, 'sine', 0.04),
+        repel: () => {
+            a.tone(220, 330, 0.12, 'square', 0.04);
+            a.noise(0.15, 0.1, 600);
         },
         win: () => a.arp(262, [0, 4, 7, 12, 16, 19, 24], 0.12, 0.07),
         // Porten smeller igjen.
@@ -364,6 +390,11 @@ const CSS = `
 .pt-stamp.verv{border-style:dashed;opacity:.8}
 @keyframes ptStamp{from{transform:rotate(-30deg) scale(2.2);opacity:0}to{transform:rotate(-8deg) scale(1);opacity:1}}
 .pt-combo{position:absolute;right:12px;bottom:14px;font-family:${SERIF};font-weight:700;letter-spacing:.1em;color:#fbf5e6;background:${RED};border:2px solid ${INK};padding:4px 10px;pointer-events:none;transition:opacity .2s, transform .2s}
+.pt-powers{position:absolute;left:12px;bottom:14px;display:flex;flex-direction:column;gap:4px;pointer-events:none}
+.pt-power{font-family:${SERIF};font-weight:700;letter-spacing:.1em;font-size:13px;color:${INK};background:${PAPER};border:2px solid ${INK};padding:3px 9px 4px;min-width:118px;display:none}
+.pt-power.on{display:block;animation:ptStamp .35s cubic-bezier(.2,1.6,.4,1) both}
+.pt-power u{display:block;height:4px;margin-top:3px;background:${RED};text-decoration:none;transition:width .1s linear}
+.pt-power.skyss u{background:${INK}}
 .pt-legend{display:grid;grid-template-columns:auto 1fr;gap:5px 9px;text-align:left;margin:8px 0 4px;font-size:12.5px;line-height:1.3}
 .pt-legend i{display:inline-block;width:22px;height:22px;border:2px solid ${INK};border-radius:50%;vertical-align:middle}
 `;
@@ -374,6 +405,8 @@ const BOT_STYLES: Record<string, BotStyle> = {
     alene: 'alene',
     tilfeldig: 'tilfeldig',
 };
+
+const POWER_KEYS: TimedPower[] = ['avis', 'skyss', 'samhold'];
 
 const initials = (id: string) => {
     const p = PLACES.find((x) => x.id === id);
@@ -414,6 +447,11 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
         fore: useRef<HTMLElement>(null),
         memb: useRef<HTMLElement>(null),
         combo: useRef<HTMLDivElement>(null),
+        power: {
+            avis: useRef<HTMLDivElement>(null),
+            skyss: useRef<HTMLDivElement>(null),
+            samhold: useRef<HTMLDivElement>(null),
+        } as Record<TimedPower, React.RefObject<HTMLDivElement | null>>,
     };
 
     useEffect(() => {
@@ -632,6 +670,17 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                 hud.combo.current.style.opacity =
                     g.combo >= 2 && modeRef.current === 'play' ? '1' : '0';
                 hud.combo.current.textContent = `NAVN FRA ${g.combo} FORENINGER ×${g.combo}`;
+            }
+            for (const k of POWER_KEYS) {
+                const el = hud.power[k].current;
+                if (!el) continue;
+                const left = g.powers[k];
+                const on = left > 0 && modeRef.current !== 'over';
+                if (el.classList.contains('on') !== on) el.classList.toggle('on', on);
+                if (on) {
+                    const bar = el.lastElementChild as HTMLElement | null;
+                    if (bar) bar.style.width = `${(left / POWER_SECONDS[k]) * 100}%`;
+                }
             }
             // Stemplene i protokollen: bare når listen endrer seg (sjelden).
             const list = g.places
@@ -862,6 +911,7 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                 <Trees gRef={gRef} />
                                 <PlaceMarks gRef={gRef} />
                                 <People gRef={gRef} />
+                                <Pickups gRef={gRef} />
                             </group>
                             <Roll gRef={gRef} />
                             <Flying gRef={gRef} />
@@ -946,6 +996,15 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                             </div>
                         ))}
                     </div>
+                    {/* Ting på veien som virker akkurat nå, med en strek som krymper */}
+                    <div className="pt-powers" style={{ opacity: hudOn ? 1 : 0 }}>
+                        {POWER_KEYS.map((k) => (
+                            <div key={k} ref={hud.power[k]} className={`pt-power ${k}`}>
+                                {POWER_NAMES[k]}
+                                <u />
+                            </div>
+                        ))}
+                    </div>
                     <div ref={hud.combo} className="pt-combo" style={{ opacity: 0 }}>
                         ×2
                     </div>
@@ -995,6 +1054,13 @@ export default function Petisjonen3D({ onComplete }: MicroGameProps) {
                                 </span>
                                 <span>
                                     <b>Bladet i Christiania:</b> lever navnene der, så er de trygge.
+                                </span>
+                                <span>
+                                    <i style={{ background: LAMP_BG, borderStyle: 'dotted' }} />
+                                </span>
+                                <span>
+                                    <b>Ting på veien:</b> avisbunt, skyss, folkemøte og samhold.
+                                    Rull over dem for en kort fordel.
                                 </span>
                             </div>
                             <p style={{ fontSize: 13, fontWeight: 700, margin: '6px 0 0' }}>

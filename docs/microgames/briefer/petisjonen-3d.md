@@ -115,3 +115,13 @@ Det vurderingene peker på for Gøy, som ennå ikke er prøvd:
   Forslag: de ti kravene som kort som hentes på møter og må velges (hvert krav gir navn fra ulike grupper).
 - Rullen forsvinner bak hustak (gjennomsiktige tak nær rullen), og folkene drukner i skravuren.
 - Tap som stort rødt minustall ved telleren; fulle bynavn på foreningsstemplene.
+
+## Eierens dom (29.09.2026)
+
+«Sykt tidi og supergøy» - scoret høyt på gøy/kult hos eieren, selv om de uavhengige vurderingene sto
+på Gøy 3. Ønsket: powerups eller noe mer å gjøre. Lagt inn fire ting på veien, hver forankret i
+historien: **avisbunt** (alle foreningene sender navn i 7 s), **skyss** (Thrane reiste med hest: fart i
+7 s), **folkemøte** (alle husmenn innen 12 skriver under, foreningene rundt vokser) og **samhold**
+(9 s: embetsmennene snur i stedet for å skremme). Maks to på kartet, dukker opp langs veiene 9-26
+enheter unna rullen (en omvei du må velge). Simulering (60 runder): seende 100 % seier, alene 0 % -
+fagkjernen holder.

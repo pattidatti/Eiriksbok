@@ -126,6 +126,18 @@ function plan(g: G, style: 'seende' | 'halvgod'): XZ | null {
     if (unsafe > bankAt && dist(R.p, BLADET) < (style === 'seende' ? 40 : 25)) return BLADET;
     // Et møte er i gang: bli stående.
     if (g.meetingPlace >= 0) return PLACES[g.meetingPlace].tun;
+    // Ting på veien: den dyktige tar en omvei, den halvgode bare når den ligger rett foran.
+    const grab = style === 'seende' ? 13 : 6;
+    let pick: XZ | null = null;
+    let pd = grab;
+    for (const q of g.pickups) {
+        const d = dist(q.p, R.p);
+        if (d < pd && !(careful && guarded(g, q.p, careful))) {
+            pd = d;
+            pick = q.p;
+        }
+    }
+    if (pick) return pick;
     // Møteklar bygd i nærheten.
     let best: XZ | null = null;
     let bv = 0;
