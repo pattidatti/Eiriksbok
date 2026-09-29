@@ -233,6 +233,7 @@ const OverVolga3D = lazy(() => import('./OverVolga3D'));
 const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
+const Petisjonen3D = lazy(() => import('./Petisjonen3D'));
 const InnMotStranda = lazy(() => import('./InnMotStranda'));
 const SeinenSnur = lazy(() => import('./SeinenSnur'));
 const KursForGronland3D = lazy(() => import('./KursForGronland3D'));
@@ -2305,6 +2306,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         cover: '/images/microgames/plottebordet-3d.webp',
         loader: () => import('./Plottebordet3D'),
         Component: Plottebordet3D as never,
+    },
+    'petisjonen-3d': {
+        id: 'petisjonen-3d',
+        title: 'Petisjonen',
+        description:
+            'Thranebevegelsen, desember 1848 til mai 1850. Du er petisjonen til kongen - en papirrull som ruller gjennom Østlandet og vikler opp navn. Alene får du ett navn om gangen. Samler du folk fra én bygd og holder møte i låven, starter de sin egen forening med egen leder, og da samler foreningen navn til deg og verver nabobygdene. De med stemmerett, embetsmenn og gårdeiere i høy svart hatt, jager rullen og skremmer folk til å trekke navnet sitt - lever navnene i Arbeider-Foreningernes Blad, så er de trygge. Nå 13 000 navn før mai 1850, lever petisjonen på Slottet, og få lederne i skjul når politiet kommer i 1851. Lyspæra: bevegelsen vokste fordi vanlige folk organiserte seg selv - men kongen sa nei likevel.',
+        estimatedSeconds: 170,
+        sjanger: 'rull-og-voks-action',
+        tone: 'alvorlig',
+        hook: 'Du er petisjonen til kongen. Rull, voks - og få 13 000 navn.',
+        cover: '/images/microgames/petisjonen-3d.webp',
+        kunst: 'Xylografi i Skilling-Magazin og avisene i 1849: svart skravur på gulnet papir, rødt bare for foreningene',
+        loader: () => import('./Petisjonen3D'),
+        Component: Petisjonen3D as never,
     },
     'inn-mot-stranda': {
         id: 'inn-mot-stranda',

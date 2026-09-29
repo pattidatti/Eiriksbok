@@ -84,6 +84,13 @@
       }
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "petisjonen-3d"
+      }
+    },
+    {
       "type": "header",
       "text": "Ti krav til kongen"
     },
