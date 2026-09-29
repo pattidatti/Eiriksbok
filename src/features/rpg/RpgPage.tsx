@@ -29,7 +29,8 @@ import { rustningTier } from './data/eleven';
 import { useHubRom } from './net/useHubRom';
 import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
 import { harBeroring } from './engine/enhet';
-import { ButikkPanel, InventoryPanel, PauseMeny, QuestLog } from './components/Panels';
+import { PauseMeny, QuestLog } from './components/Panels';
+import { Utstyrsvindu } from './components/Utstyr';
 import { Meldingsskjerm, QuizChallenge } from './components/QuizChallenge';
 import { finnNpc, stedEllerStart } from './data/steder';
 import { resumeAudio } from './engine/audio';
@@ -138,7 +139,7 @@ export default function RpgPage() {
     // Betingelsen er `sted.flerspiller` og ingenting annet. Reiser eleven inn i
     // en epoke, blir den falsk, hooken kobler fra, og epoken er alene - hele
     // blueprintens §4.1 håndheves i denne ene linja.
-    const rustning = useRpgStore((s) => s.utstyr.rustning);
+    const rustning = useRpgStore((s) => s.utstyr.rustning?.id);
     const identitet =
         character && klar
             ? {
@@ -155,6 +156,15 @@ export default function RpgPage() {
         if (!game) return null;
         return (game.scene.getScene(VERDEN_SCENE) as WorldScene | null) ?? null;
     }, []);
+
+    // Figuren kles om hver gang utstyret endrer seg - fra sekken, fra boden,
+    // eller fordi noen i verden rakk henne noe. Før gjorde bare sekkpanelet
+    // dette, og et spyd fra Skofte ble ikke tegnet før neste stedskifte.
+    // Spilleren sammenligner signaturen selv, så slitasje koster ingenting.
+    const utstyr = useRpgStore((s) => s.utstyr);
+    useEffect(() => {
+        scene()?.oppdaterUtseende();
+    }, [utstyr, scene]);
 
     // Spillet skal fylle skjermen - toppmenyen kommer i veien.
     useEffect(() => {
@@ -409,7 +419,14 @@ export default function RpgPage() {
                 return;
             }
             if (apent) return;
-            if (e.key === 'i' || e.key === 'I') apnePanel({ type: 'sekk' });
+            if (e.key === 'i' || e.key === 'I' || e.key === 'c' || e.key === 'C')
+                apnePanel({ type: 'sekk' });
+            // Hurtigbaren. Bare når ingenting er åpent - i en samtale er 1-9 valgene.
+            if (/^[1-4]$/.test(e.key) && !e.repeat) {
+                const s = useRpgStore.getState();
+                const id = s.hurtigbar[Number(e.key) - 1];
+                if (id) s.brukVare(id);
+            }
             if (e.key === 'l' || e.key === 'L') apnePanel({ type: 'logg' });
             if (e.key === 'm' || e.key === 'M') apnePanel({ type: 'minnetre' });
         };
@@ -564,7 +581,9 @@ export default function RpgPage() {
                 />
             )}
 
-            {overlegg.type === 'butikk' && <ButikkPanel npcId={overlegg.npcId} onLukk={lukk} />}
+            {overlegg.type === 'butikk' && (
+                <Utstyrsvindu kremmerId={overlegg.npcId} onLukk={lukk} />
+            )}
 
             {overlegg.type === 'landemerke' && (
                 <LandmarkOverlay landmarkId={overlegg.landmarkId} onLukk={lukk} />
@@ -688,9 +707,7 @@ export default function RpgPage() {
                 />
             )}
 
-            {overlegg.type === 'sekk' && (
-                <InventoryPanel onLukk={lukk} onEndret={() => scene()?.oppdaterUtseende()} />
-            )}
+            {overlegg.type === 'sekk' && <Utstyrsvindu onLukk={lukk} />}
 
             {overlegg.type === 'logg' && <QuestLog quester={quester} onLukk={lukk} />}
 

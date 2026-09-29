@@ -234,6 +234,9 @@ const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
 const Petisjonen3D = lazy(() => import('./Petisjonen3D'));
+const InnMotStranda = lazy(() => import('./InnMotStranda'));
+const SeinenSnur = lazy(() => import('./SeinenSnur'));
+const KursForGronland3D = lazy(() => import('./KursForGronland3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2308,7 +2311,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'petisjonen-3d',
         title: 'Petisjonen',
         description:
-            'Thranebevegelsen, desember 1848 til mai 1850. Du er petisjonen til kongen - en papirrull som ruller gjennom Østlandet og vikler opp navn. Alene får du ett navn om gangen. Samler du folk fra én bygd og holder møte i låven, starter de sin egen forening med egen leder, og da samler foreningen navn til deg og verver nabobygdene. De med stemmerett, embetsmenn og gårdeiere i høy svart hatt, jager rullen og river av navn. Nå 13 000 navn før mai 1850 og lever petisjonen på Slottet. Lyspæra: bevegelsen vokste fordi vanlige folk organiserte seg selv - men kongen sa nei likevel.',
+            'Thranebevegelsen, desember 1848 til mai 1850. Du er petisjonen til kongen - en papirrull som ruller gjennom Østlandet og vikler opp navn. Alene får du ett navn om gangen. Samler du folk fra én bygd og holder møte i låven, starter de sin egen forening med egen leder, og da samler foreningen navn til deg og verver nabobygdene. De med stemmerett, embetsmenn og gårdeiere i høy svart hatt, jager rullen og skremmer folk til å trekke navnet sitt - lever navnene i Arbeider-Foreningernes Blad, så er de trygge. Nå 13 000 navn før mai 1850, lever petisjonen på Slottet, og få lederne i skjul når politiet kommer i 1851. Lyspæra: bevegelsen vokste fordi vanlige folk organiserte seg selv - men kongen sa nei likevel.',
         estimatedSeconds: 170,
         sjanger: 'rull-og-voks-action',
         tone: 'alvorlig',
@@ -2317,6 +2320,48 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Xylografi i Skilling-Magazin og avisene i 1849: svart skravur på gulnet papir, rødt bare for foreningene',
         loader: () => import('./Petisjonen3D'),
         Component: Petisjonen3D as never,
+    },
+    'inn-mot-stranda': {
+        id: 'inn-mot-stranda',
+        title: 'Inn mot stranda',
+        description:
+            'Omaha, 6. juni 1944. Du styrer en landgangsbåt inn mot stranda mens kystbatteriene på skrenten skyter - den røde ringen viser hvor granaten lander. Klikk på en bunker, så skyter slagskipene i Kanalen den ut, men de må lade om, og en bunker som får skyte i fred, treffer bedre og bedre. Ved lavvann står strandhindrene synlige, og ingeniørene sprenger spor gjennom dem. Når tidevannet stiger, forsvinner hindrene under vann - da er de gule sporene den eneste trygge veien inn. Få fem av åtte båter i land.',
+        estimatedSeconds: 130,
+        sjanger: 'styring-skyting',
+        tone: 'alvorlig',
+        hook: 'Du styrer båten inn mot Omaha. Kystbatteriene sikter på deg.',
+        cover: '/images/microgames/inn-mot-stranda.webp',
+        kunst: 'Allierte rekognoseringsfoto av Omaha 1944: svart-hvitt sølvkorn, filmkant og rød og gul fettstift',
+        loader: () => import('./InnMotStranda'),
+        Component: InnMotStranda as never,
+    },
+    'seinen-snur': {
+        id: 'seinen-snur',
+        title: 'Seinen snur',
+        description:
+            'Seinen, 885. Du er vikinghøvdingen Rollo. Langskipet følger pekeren - ram frankiske båter i full fart og ta sølvet, men hold deg unna pilene fra borgene. Jo mer sølv, jo mer land får du i 911, da kongen gir deg landet ved elvemunningen mot at du forsvarer det. Nå kommer vikingflåtene fra havet: ram dem før Rouen, og la et rammet skip skli inn i det neste. Kjettingen over elva ved Rouen stopper flåtene - men også kongens blå handelsbåter, og de er fredet nå. Stenger du elva for dem eller rammer dem, blir kongen sint og tar tilbake landsbyer. Samme grep, motsatt regel. Hold landet til 933.',
+        estimatedSeconds: 130,
+        sjanger: 'styring-ramming',
+        tone: 'lett',
+        hook: 'Du er Rollo. Ram frankerne for sølv - til kongen gir deg landet.',
+        cover: '/images/microgames/seinen-snur.webp',
+        kunst: 'Bayeux-teppet: brodert ullgarn på lin, skip i profil, terrakotta, oker og blågrønn',
+        loader: () => import('./SeinenSnur'),
+        Component: SeinenSnur as never,
+    },
+    'kurs-for-gronland': {
+        id: 'kurs-for-gronland',
+        title: 'Kurs for Grønland',
+        description:
+            'Nord-Atlanteren, rundt år 1000. Du er styrmann på en knarr fra Hernar i Norge til Hvarf på Grønland - uten kompass. Havstrømmen skyver skipet nord eller sør uten at du merker det. Hver middag viser solbrettet om sola står for lavt (for langt nord) eller for høyt (for langt sør). Følg det gamle leidsagnet: nord for Hjaltland, sør for Færøyene, og så langt sør for Island at du bare ser fugl og hval. Rev seilet i storm og øs når sjøen slår inn. Lyspæra: uten kompass fant vikingene fram over havet ved å holde samme breddegrad - og sola var målestokken.',
+        estimatedSeconds: 180,
+        sjanger: 'seiling-overlevelse',
+        tone: 'lett',
+        hook: 'Du styrer knarren over havet til Grønland - uten kompass. Bare sola viser vei.',
+        cover: '/images/microgames/kurs-for-gronland.webp',
+        kunst: 'Nordatlantisk sjømaleri i vikingtidens farger: tjærebrunt klinkskrog, vadmålsseil i rødt og kremhvitt, messing og treskiver i HUD-en',
+        loader: () => import('./KursForGronland3D'),
+        Component: KursForGronland3D as never,
     },
 };
 

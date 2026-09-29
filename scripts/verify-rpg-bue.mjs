@@ -30,10 +30,9 @@ await page.waitForTimeout(4000);
 // ── Utrust bua ──────────────────────────────────────────────────────────────
 const utrustet = await page.evaluate(() => {
     const store = window.__rpgStore;
-    store.getState().leggISekk('jaktbue');
-    store.getState().utrust('jaktbue');
+    store.getState().giOgTaPa('jaktbue');
     window.__rpg.scene.getScene('verden').oppdaterUtseende();
-    return store.getState().utstyr.vapen;
+    return store.getState().utstyr.vapen?.id;
 });
 sjekk(utrustet === 'jaktbue', `bua er i hånda (${utrustet})`);
 

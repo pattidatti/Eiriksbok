@@ -1,898 +1,1364 @@
 {
   "lalibela-kirke-3d": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/aksum-og-etiopia",
+    "title": "Aksum og Etiopia: riket som slo tilbake"
   },
   "messingplata-benin": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/benin-riket",
+    "title": "Benin-riket: Platene som var et arkiv"
   },
   "tvillingbyen-koumbi-saleh-3d": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/ghana-riket",
+    "title": "Ghana-riket"
   },
   "jernovnen-i-meroe": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/kusj-og-nubia",
+    "title": "Kusj: Da Nubia styrte Egypt"
   },
   "karavanen-over-sahara-3d": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/mansa-musa-og-mali",
+    "title": "Mansa Musa og Mali-riket"
   },
   "riket-langs-niger-3d": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/songhai-riket",
+    "title": "Songhai-riket"
   },
   "stor-zimbabwe-mur-3d": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/stor-zimbabwe",
+    "title": "Stor-Zimbabwe"
   },
   "monsun-seilasen-3d": {
     "subjectId": "historie",
-    "topicId": "afrikanske-riker"
+    "topicId": "afrikanske-riker",
+    "link": "/historie/afrikanske-riker/swahili-kysten",
+    "title": "Swahilikysten: Byene som levde av vinden"
+  },
+  "inn-mot-stranda": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/d-dagen",
+    "title": "D-dagen: Invasjonen i Normandie"
   },
   "midway-3d": {
     "subjectId": "historie",
-    "topicId": "andre-verdenskrig"
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/krigen-i-stillehavet",
+    "title": "Krigen i Stillehavet: Fra Pearl Harbor til Hiroshima"
   },
   "lynkrigen-3d": {
     "subjectId": "historie",
-    "topicId": "andre-verdenskrig"
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/krigens-lop",
+    "title": "Krigens løp: Fra lynkrig til ragnarok"
   },
   "konvoien-3d": {
     "subjectId": "historie",
-    "topicId": "andre-verdenskrig"
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/krigsseilerne",
+    "title": "Krigsseilerne"
   },
   "over-volga-3d": {
     "subjectId": "historie",
-    "topicId": "andre-verdenskrig"
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/slaget-om-stalingrad",
+    "title": "Slaget om Stalingrad: Fellen utenfor byen"
+  },
+  "plottebordet-3d": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/slaget-om-storbritannia",
+    "title": "Slaget om Storbritannia: De få mot de mange"
   },
   "radarvakten-3d": {
     "subjectId": "historie",
-    "topicId": "andre-verdenskrig"
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/teknologi",
+    "title": "Teknologi: Våpenkappløp og innovasjon"
   },
   "falanksen-3d": {
     "subjectId": "historie",
-    "topicId": "antikkens-hellas"
+    "topicId": "antikkens-hellas",
+    "link": "/historie/antikkens-hellas/athen-og-sparta",
+    "title": "Athen og Sparta: to byer, to verdener"
   },
   "gresk-teater-3d": {
     "subjectId": "historie",
-    "topicId": "antikkens-hellas"
+    "topicId": "antikkens-hellas",
+    "link": "/historie/antikkens-hellas/gresk-teater",
+    "title": "Gresk teater: tragedie og komedie"
   },
   "arkimedes-kronen-3d": {
     "subjectId": "historie",
-    "topicId": "antikkens-hellas"
+    "topicId": "antikkens-hellas",
+    "link": "/historie/antikkens-hellas/gresk-vitenskap",
+    "title": "Gresk vitenskap: Da fornuften forklarte verden"
   },
   "gudenes-verden-3d": {
     "subjectId": "historie",
-    "topicId": "antikkens-hellas"
+    "topicId": "antikkens-hellas",
+    "link": "/historie/antikkens-hellas/greske-guder",
+    "title": "Gudene på Olympen: greske myter"
   },
   "olympia-diskos-3d": {
     "subjectId": "historie",
-    "topicId": "antikkens-hellas"
+    "topicId": "antikkens-hellas",
+    "link": "/historie/antikkens-hellas/olympiske-leker",
+    "title": "De olympiske lekene i antikken"
   },
   "lange-murene-3d": {
     "subjectId": "historie",
-    "topicId": "antikkens-hellas"
+    "topicId": "antikkens-hellas",
+    "link": "/historie/antikkens-hellas/peloponneskrigen",
+    "title": "Peloponneskrigen: Da Hellas ødela seg selv"
   },
   "bygg-kongsberg-3d": {
     "subjectId": "historie",
-    "topicId": "dansketiden"
+    "topicId": "dansketiden",
+    "link": "/historie/dansketiden/christian-iv",
+    "title": "Christian IV - kongen som bygde nye byer"
   },
   "kongens-armer-3d": {
     "subjectId": "historie",
-    "topicId": "dansketiden"
+    "topicId": "dansketiden",
+    "link": "/historie/dansketiden/eneveldet",
+    "title": "Eneveldet: Da kongen fikk all makt"
   },
   "kornskuta-3d": {
     "subjectId": "historie",
-    "topicId": "dansketiden"
+    "topicId": "dansketiden",
+    "link": "/historie/dansketiden/nodsarene",
+    "title": "Nødsårene: da sjøveien ble stengt"
   },
   "helligdagsplikten-1740": {
     "subjectId": "historie",
-    "topicId": "dansketiden"
+    "topicId": "dansketiden",
+    "link": "/historie/dansketiden/pietismen",
+    "title": "Pietismen: sporet vi fortsatt går i"
   },
   "trelastruta-3d": {
     "subjectId": "historie",
-    "topicId": "dansketiden"
+    "topicId": "dansketiden",
+    "link": "/historie/dansketiden/trelasthandelen",
+    "title": "Trelasthandelen: da Norge ble Europas sagbruk"
   },
   "forene-unionen-3d": {
     "subjectId": "historie",
-    "topicId": "dekolonisering"
+    "topicId": "dekolonisering",
+    "link": "/historie/dekolonisering/amerikanske-borgerkrigen",
+    "title": "Den amerikanske borgerkrigen: Krigen som avskaffet slaveriet"
   },
   "kollina-1933": {
     "subjectId": "historie",
-    "topicId": "dekolonisering"
+    "topicId": "dekolonisering",
+    "link": "/historie/dekolonisering/rwanda-1994",
+    "title": "Folkemordet i Rwanda: Forskjellen som ble skrevet ned"
   },
   "republikkens-soyler-3d": {
     "subjectId": "historie",
-    "topicId": "den-amerikanske-revolusjonen"
+    "topicId": "den-amerikanske-revolusjonen",
+    "link": "/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven",
+    "title": "Den amerikanske grunnloven"
   },
   "delaware-1776-3d": {
     "subjectId": "historie",
-    "topicId": "den-amerikanske-revolusjonen"
+    "topicId": "den-amerikanske-revolusjonen",
+    "link": "/historie/den-amerikanske-revolusjonen/george-washington",
+    "title": "George Washington"
   },
   "kongestatuen-faller-3d": {
     "subjectId": "historie",
-    "topicId": "den-amerikanske-revolusjonen"
+    "topicId": "den-amerikanske-revolusjonen",
+    "link": "/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen",
+    "title": "Uavhengighetserklæringen"
   },
   "teselskapet-3d": {
     "subjectId": "historie",
-    "topicId": "den-amerikanske-revolusjonen"
+    "topicId": "den-amerikanske-revolusjonen",
+    "link": "/historie/den-amerikanske-revolusjonen/uavhengighetskrigen",
+    "title": "Den amerikanske revolusjonen"
   },
   "stenderpyramiden-3d": {
     "subjectId": "historie",
-    "topicId": "den-franske-revolusjon"
+    "topicId": "den-franske-revolusjon",
+    "link": "/historie/den-franske-revolusjon/menneskerettighetserklaeringen",
+    "title": "Menneskerettighetserklæringen av 1789"
   },
   "stormingen-av-bastillen-3d": {
     "subjectId": "historie",
-    "topicId": "den-franske-revolusjon"
+    "topicId": "den-franske-revolusjon",
+    "link": "/historie/den-franske-revolusjon/stormingen-av-bastillen",
+    "title": "Stormingen av Bastillen"
   },
   "vekten-i-wien-3d": {
     "subjectId": "historie",
-    "topicId": "den-franske-revolusjon"
+    "topicId": "den-franske-revolusjon",
+    "link": "/historie/den-franske-revolusjon/wienerkongressen",
+    "title": "Wienerkongressen: Da Europas kart ble tegnet på nytt"
   },
   "berlinmuren-3d": {
     "subjectId": "historie",
-    "topicId": "den-kalde-krigen"
+    "topicId": "den-kalde-krigen",
+    "link": "/historie/den-kalde-krigen/berlinmuren",
+    "title": "Berlinmuren: Symbolet på en delt verden"
   },
   "flukten-over-muren": {
     "subjectId": "historie",
-    "topicId": "den-kalde-krigen"
+    "topicId": "den-kalde-krigen",
+    "link": "/historie/den-kalde-krigen/berlinmuren",
+    "title": "Berlinmuren: Symbolet på en delt verden"
   },
   "karantenelinja-3d": {
     "subjectId": "historie",
-    "topicId": "den-kalde-krigen"
+    "topicId": "den-kalde-krigen",
+    "link": "/historie/den-kalde-krigen/cuba-krisen",
+    "title": "Cuba-krisen 1962: Verden på kanten av utslettelse"
   },
   "ut-av-byen-3d": {
     "subjectId": "historie",
-    "topicId": "den-kalde-krigen"
+    "topicId": "den-kalde-krigen",
+    "link": "/historie/den-kalde-krigen/rode-khmer-kambodsja",
+    "title": "Røde Khmer: året null i Kambodsja"
   },
   "saturn-v-mane-3d": {
     "subjectId": "historie",
-    "topicId": "den-kalde-krigen"
+    "topicId": "den-kalde-krigen",
+    "link": "/historie/den-kalde-krigen/romkapplopet",
+    "title": "Romkappløpet: Veien mot stjernene og månen"
   },
   "tsjernobyl-nedfall": {
     "subjectId": "historie",
-    "topicId": "den-kalde-krigen"
+    "topicId": "den-kalde-krigen",
+    "link": "/historie/den-kalde-krigen/tsjernobyl",
+    "title": "Tsjernobyl 1986: Skyen som ikke stanset ved grensen"
   },
   "gjeldshavna-3d": {
     "subjectId": "historie",
-    "topicId": "etterkrigstiden"
+    "topicId": "etterkrigstiden",
+    "link": "/historie/etterkrigstiden/en-ny-verdensorden",
+    "title": "En ny verdensorden?"
   },
   "sarajevo-tunnelen-3d": {
     "subjectId": "historie",
-    "topicId": "etterkrigstiden"
+    "topicId": "etterkrigstiden",
+    "link": "/historie/etterkrigstiden/jugoslavias-opplosning",
+    "title": "Jugoslavias oppløsning: Da naboer ble fiender"
   },
   "gasskranen-3d": {
     "subjectId": "historie",
-    "topicId": "etterkrigstiden"
+    "topicId": "etterkrigstiden",
+    "link": "/historie/etterkrigstiden/russland-etter-sovjet",
+    "title": "Russland etter Sovjet: Fra sammenbrudd til krig"
   },
   "marshallhjelpen-3d": {
     "subjectId": "historie",
-    "topicId": "etterkrigstiden"
+    "topicId": "etterkrigstiden",
+    "link": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
+    "title": "1945: Verden bygges på nytt"
   },
   "ingenmannsland-mg": {
     "subjectId": "historie",
-    "topicId": "forste-verdenskrig"
+    "topicId": "forste-verdenskrig",
+    "link": "/historie/forste-verdenskrig/skyttergravskrig",
+    "title": "Skyttergravskrig: Livet i gjørma"
   },
   "smitten-i-byen-3d": {
     "subjectId": "historie",
-    "topicId": "forste-verdenskrig"
+    "topicId": "forste-verdenskrig",
+    "link": "/historie/forste-verdenskrig/spanskesyken",
+    "title": "Spanskesyken: pandemien som drepte flere enn krigen"
   },
   "stalmonsteret-3d": {
     "subjectId": "historie",
-    "topicId": "forste-verdenskrig"
+    "topicId": "forste-verdenskrig",
+    "link": "/historie/forste-verdenskrig/teknologi",
+    "title": "Teknologi: Industrialisert død"
   },
   "kongedagboken-323": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/alexanders-dod",
+    "title": "Hvordan døde Aleksander den store?"
   },
   "earhart-stillehavet-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/amelia-earhart",
+    "title": "Hvor forsvant Amelia Earhart?"
   },
   "grava-i-skogen": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/anastasia",
+    "title": "Anastasia - gåten DNA løste"
   },
   "antikythera-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/antikythera-mekanismen",
+    "title": "Antikythera-mekanismen - verdens første datamaskin?"
   },
   "atlantis-ringbyen": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/atlantis",
+    "title": "Atlantis - fantes øya som sank?"
   },
   "flytt-malstanga": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/benektelse-eller-uenighet",
+    "title": "Ekte uenighet eller benektelse?"
   },
   "troja-utgravning-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/den-trojanske-krig",
+    "title": "Den trojanske krig - skjedde den egentlig?"
   },
   "den-lange-vinteren-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/gronlands-gate",
+    "title": "Hvorfor forsvant de norrøne på Grønland?"
   },
   "hold-nordvegen-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/harald-harfagre-gaten",
+    "title": "Samlet Harald Hårfagre virkelig Norge?"
   },
   "havfolkene-kommer": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/havfolkene",
+    "title": "Hvem var havfolkene?"
   },
   "vikinghjelmen-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/hvem-eier-vikingene",
+    "title": "Hvem eier vikingene?"
   },
   "vesterled-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/hvem-nadde-amerika-forst",
+    "title": "Hvem nådde Amerika først?"
   },
   "legendens-vei": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/kong-arthur",
+    "title": "Kong Arthur - hvem var mannen bak legenden?"
   },
   "bevisvekten": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/oversikt",
+    "title": "Historiens store gåter"
   },
   "pyramidebyggeren-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/pyramidene",
+    "title": "Hvordan ble pyramidene bygd?"
   },
   "roanoke-sporet-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/roanoke",
+    "title": "Hva skjedde med kolonien Roanoke?"
   },
   "grensen-lekker-3d": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/romerrikets-fall",
+    "title": "Falt Romerriket - og hvorfor?"
   },
   "alliansefella-1914": {
     "subjectId": "historie",
-    "topicId": "historiens-store-gater"
+    "topicId": "historiens-store-gater",
+    "link": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig",
+    "title": "Hvem hadde skylda for første verdenskrig?"
   },
   "edikt-soylene": {
     "subjectId": "historie",
-    "topicId": "indias-historie"
+    "topicId": "indias-historie",
+    "link": "/historie/indias-historie/ashoka-og-mauryariket",
+    "title": "Ashoka: keiseren som angret"
   },
   "aryabhatas-natt-3d": {
     "subjectId": "historie",
-    "topicId": "indias-historie"
+    "topicId": "indias-historie",
+    "link": "/historie/indias-historie/guptariket",
+    "title": "Guptariket: da verden fikk tallene sine"
   },
   "taj-mahal-symmetri": {
     "subjectId": "historie",
-    "topicId": "indias-historie"
+    "topicId": "indias-historie",
+    "link": "/historie/indias-historie/mogulriket",
+    "title": "Mogulriket: verdens rikeste rike"
   },
   "telegraflinja-1857": {
     "subjectId": "historie",
-    "topicId": "indias-historie"
+    "topicId": "indias-historie",
+    "link": "/historie/indias-historie/opproret-1857",
+    "title": "Opprøret i 1857: året India reiste seg"
   },
   "dampmaskin-hjerte-3d": {
     "subjectId": "historie",
-    "topicId": "industriell-revolusjon"
+    "topicId": "industriell-revolusjon",
+    "link": "/historie/industriell-revolusjon/dampmaskinen",
+    "title": "Dampmaskinen: oppfinnelsen som forandret alt"
   },
   "fossekraftverket-3d": {
     "subjectId": "historie",
-    "topicId": "industriell-revolusjon"
+    "topicId": "industriell-revolusjon",
+    "link": "/historie/industriell-revolusjon/fossekraften",
+    "title": "Fossekraften: da Norge fikk sin egen industri"
   },
   "standardklokka-3d": {
     "subjectId": "historie",
-    "topicId": "industriell-revolusjon"
+    "topicId": "industriell-revolusjon",
+    "link": "/historie/industriell-revolusjon/jernbanen",
+    "title": "Jernbanen: maskinen som krympet verden"
   },
   "fabrikktomta-3d": {
     "subjectId": "historie",
-    "topicId": "industriell-revolusjon"
+    "topicId": "industriell-revolusjon",
+    "link": "/historie/industriell-revolusjon/storbritannia",
+    "title": "Hvorfor begynte det i Storbritannia?"
   },
   "rismark-og-makt-3d": {
     "subjectId": "historie",
-    "topicId": "japans-historie"
+    "topicId": "japans-historie",
+    "link": "/historie/japans-historie/det-foydale-japan",
+    "title": "Det føydale Japan: samuraienes tid"
   },
   "japan-mirakel-by-3d": {
     "subjectId": "historie",
-    "topicId": "japans-historie"
+    "topicId": "japans-historie",
+    "link": "/historie/japans-historie/japans-okonomiske-mirakel",
+    "title": "Japans økonomiske mirakel"
   },
   "japansk-imperium-3d": {
     "subjectId": "historie",
-    "topicId": "japans-historie"
+    "topicId": "japans-historie",
+    "link": "/historie/japans-historie/japansk-imperialisme",
+    "title": "Japansk imperialisme: Da Japan slo en stormakt"
   },
   "meiji-byen-3d": {
     "subjectId": "historie",
-    "topicId": "japans-historie"
+    "topicId": "japans-historie",
+    "link": "/historie/japans-historie/meiji-restaurasjonen",
+    "title": "Meiji-restaurasjonen: Japan blir en stormakt"
   },
   "chinampabyen-3d": {
     "subjectId": "historie",
-    "topicId": "jordbruk-og-sivilisasjoner"
+    "topicId": "jordbruk-og-sivilisasjoner",
+    "link": "/historie/jordbruk-og-sivilisasjoner/amerikas-sivilisasjoner",
+    "title": "Amerikas tidlige sivilisasjoner: maya, aztekere og inka"
   },
   "alfabetets-reise-3d": {
     "subjectId": "historie",
-    "topicId": "jordbruk-og-sivilisasjoner"
+    "topicId": "jordbruk-og-sivilisasjoner",
+    "link": "/historie/jordbruk-og-sivilisasjoner/fonikerne",
+    "title": "Fønikerne: Havets kjøpmenn"
   },
   "rutebyen-mohenjo-daro": {
     "subjectId": "historie",
-    "topicId": "jordbruk-og-sivilisasjoner"
+    "topicId": "jordbruk-og-sivilisasjoner",
+    "link": "/historie/jordbruk-og-sivilisasjoner/indusdalen",
+    "title": "Indusdalen: Sivilisasjonen som forsvant"
   },
   "murus-gallicus-3d": {
     "subjectId": "historie",
-    "topicId": "jordbruk-og-sivilisasjoner"
+    "topicId": "jordbruk-og-sivilisasjoner",
+    "link": "/historie/jordbruk-og-sivilisasjoner/kelterne",
+    "title": "Kelterne: Folket som lot andre skrive historien"
   },
   "kanalbyggeren-3d": {
     "subjectId": "historie",
-    "topicId": "jordbruk-og-sivilisasjoner"
+    "topicId": "jordbruk-og-sivilisasjoner",
+    "link": "/historie/jordbruk-og-sivilisasjoner/mesopotamia",
+    "title": "Mesopotamia: Sivilisasjonens vugge"
   },
   "beleiringen-beijing-3d": {
     "subjectId": "historie",
-    "topicId": "kinas-historie"
+    "topicId": "kinas-historie",
+    "link": "/historie/kinas-historie/bokseropproret",
+    "title": "Bokseropprøret: Da Kina reiste seg mot de fremmede"
   },
   "himmelens-mandat-3d": {
     "subjectId": "historie",
-    "topicId": "kinas-historie"
+    "topicId": "kinas-historie",
+    "link": "/historie/kinas-historie/dynastiene",
+    "title": "De store dynastiene: Keisere og sivilisasjon"
   },
   "landet-med-ild-3d": {
     "subjectId": "historie",
-    "topicId": "kolonialisering"
+    "topicId": "kolonialisering",
+    "link": "/historie/kolonialisering/australia-og-aboriginerne",
+    "title": "Australia: landet som ble kalt tomt"
   },
   "vinteren-1847-3d": {
     "subjectId": "historie",
-    "topicId": "kolonialisering"
+    "topicId": "kolonialisering",
+    "link": "/historie/kolonialisering/irske-hungersnoden",
+    "title": "Den irske hungersnøden: da poteten sviktet"
   },
   "kapplopet-om-afrika-3d": {
     "subjectId": "historie",
-    "topicId": "kolonialisering"
+    "topicId": "kolonialisering",
+    "link": "/historie/kolonialisering/kapplopet-om-afrika",
+    "title": "Kappløpet om Afrika: Da Europa delte et kontinent"
   },
   "bison-sletta-3d": {
     "subjectId": "historie",
-    "topicId": "kolonialisering"
+    "topicId": "kolonialisering",
+    "link": "/historie/kolonialisering/nordamerikas-urfolk",
+    "title": "Nord-Amerikas urfolk: løftene som ble brutt"
   },
   "sjoimperiet-3d": {
     "subjectId": "historie",
-    "topicId": "kolonialisering"
+    "topicId": "kolonialisering",
+    "link": "/historie/kolonialisering/portugisisk-kolonialisering",
+    "title": "Det portugisiske sjøimperiet: Handelens herskere"
   },
   "parlamentets-vekt": {
     "subjectId": "historie",
-    "topicId": "kolonialisering"
+    "topicId": "kolonialisering",
+    "link": "/historie/kolonialisering/slaveriets-avskaffelse",
+    "title": "Slaveriets avskaffelse: forbudet som tok hundre år"
   },
   "trekanthandelen-3d": {
     "subjectId": "historie",
-    "topicId": "kolonialisering"
+    "topicId": "kolonialisering",
+    "link": "/historie/kolonialisering/trekanthandelen",
+    "title": "Trekant-handelen: Det Søte Livets Pris"
   },
   "kroningsvilkarene-3d": {
     "subjectId": "historie",
-    "topicId": "lov-og-rett"
+    "topicId": "lov-og-rett",
+    "link": "/historie/lov-og-rett/bill-of-rights-1689",
+    "title": "Bill of Rights 1689 - kronen med vilkår"
   },
   "forseglingen-runnymede-3d": {
     "subjectId": "historie",
-    "topicId": "lov-og-rett"
+    "topicId": "lov-og-rett",
+    "link": "/historie/lov-og-rett/magna-carta",
+    "title": "Magna Carta - da kongen måtte bøye seg for loven"
   },
   "marsj-mot-roma-3d": {
     "subjectId": "historie",
-    "topicId": "mellomkrigstiden"
+    "topicId": "mellomkrigstiden",
+    "link": "/historie/mellomkrigstiden/italia",
+    "title": "Italia: Fascismens fødsel"
   },
   "demokrati-lysene-3d": {
     "subjectId": "historie",
-    "topicId": "mellomkrigstiden"
+    "topicId": "mellomkrigstiden",
+    "link": "/historie/mellomkrigstiden/oversikt",
+    "title": "Mellomkrigstiden: En verden i endring"
+  },
+  "lop-med-lonna-3d": {
+    "subjectId": "historie",
+    "topicId": "mellomkrigstiden",
+    "link": "/historie/mellomkrigstiden/tyskland",
+    "title": "Tyskland: Veien mot nazismen"
   },
   "havet-kommer": {
     "subjectId": "historie",
-    "topicId": "menneskets-tidlige-historie"
+    "topicId": "menneskets-tidlige-historie",
+    "link": "/historie/menneskets-tidlige-historie/doggerland",
+    "title": "Doggerland: landet under Nordsjøen"
   },
   "gobekli-tepe-3d": {
     "subjectId": "historie",
-    "topicId": "menneskets-tidlige-historie"
+    "topicId": "menneskets-tidlige-historie",
+    "link": "/historie/menneskets-tidlige-historie/gobekli-tepe",
+    "title": "Göbekli Tepe — tempelet eldre enn jordbruket"
   },
   "ut-av-afrika-3d": {
     "subjectId": "historie",
-    "topicId": "menneskets-tidlige-historie"
+    "topicId": "menneskets-tidlige-historie",
+    "link": "/historie/menneskets-tidlige-historie/menneskets-tidlige-historie",
+    "title": "Menneskets tidlige historie"
   },
   "stjernestien-3d": {
     "subjectId": "historie",
-    "topicId": "menneskets-tidlige-historie"
+    "topicId": "menneskets-tidlige-historie",
+    "link": "/historie/menneskets-tidlige-historie/stillehavets-sjofarere",
+    "title": "Stillehavets sjøfarere: de siste øyene mennesket fant"
   },
   "reconquista-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/al-andalus",
+    "title": "Al-Andalus: da Spania var muslimsk"
   },
   "angkor-vannaaret-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/angkor-og-khmerriket",
+    "title": "Angkor: byen som var bygget av vann"
   },
   "gutenberg-presse-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/boktrykkerkunsten",
+    "title": "Boktrykkerkunsten"
   },
   "hagia-sofia-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/bysantinske-riket",
+    "title": "Det bysantinske riket: Roma som overlevde"
   },
   "katedralhvelvet-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/gotiske-katedraler",
+    "title": "Gotiske katedraler"
   },
   "hundreaarskrigen-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/hundreaarskrigen",
+    "title": "Hundreårskrigen"
   },
   "scriptoriet-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/klostrene",
+    "title": "Klostrene: middelalderens kunnskapsmaskiner"
   },
   "fingerte-flukten-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/mongolske-riket",
+    "title": "Det Mongolske Riket"
   },
   "pestrute-3d": {
     "subjectId": "historie",
-    "topicId": "middelalderen"
+    "topicId": "middelalderen",
+    "link": "/historie/middelalderen/svartedauden",
+    "title": "Svartedauden"
   },
   "hormuz-flaskehalsen-3d": {
     "subjectId": "historie",
-    "topicId": "midtoesten"
+    "topicId": "midtoesten",
+    "link": "/historie/midtoesten/iran-usa-krigen",
+    "title": "Krigen mellom USA og Iran"
   },
   "gresk-oppror-3d": {
     "subjectId": "historie",
-    "topicId": "nasjonalstatenes-tid"
+    "topicId": "nasjonalstatenes-tid",
+    "link": "/historie/nasjonalstatenes-tid/gresk-frigjoringskrig",
+    "title": "Den greske frigjøringskrigen"
   },
   "folket-samles-3d": {
     "subjectId": "historie",
-    "topicId": "nasjonalstatenes-tid"
+    "topicId": "nasjonalstatenes-tid",
+    "link": "/historie/nasjonalstatenes-tid/hva-er-nasjonalisme",
+    "title": "Hva er nasjonalisme?"
   },
   "broen-til-fortiden-3d": {
     "subjectId": "historie",
-    "topicId": "nasjonalstatenes-tid"
+    "topicId": "nasjonalstatenes-tid",
+    "link": "/historie/nasjonalstatenes-tid/nasjonenes-gullaldre",
+    "title": "Nasjonenes gullaldre: Fortiden landene bygger på"
   },
   "barrikaden-1848": {
     "subjectId": "historie",
-    "topicId": "nasjonalstatenes-tid"
+    "topicId": "nasjonalstatenes-tid",
+    "link": "/historie/nasjonalstatenes-tid/revolusjonene-1848",
+    "title": "Folkenes vår: Revolusjonene i 1848"
   },
   "smi-det-tyske-riket-3d": {
     "subjectId": "historie",
-    "topicId": "nasjonalstatenes-tid"
+    "topicId": "nasjonalstatenes-tid",
+    "link": "/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland",
+    "title": "Da nasjonene ble til: Samlingen av Italia og Tyskland"
   },
   "hvor-er-jobbene-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/innvandringen-til-norge",
+    "title": "Innvandringen til Norge"
   },
   "sydpolsferden-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen",
+    "title": "Kappløpet mot Sydpolen"
   },
   "vaksinekoen-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/koronapandemien",
+    "title": "Koronapandemien: Da Norge stengte"
   },
   "svanviken-kontrakten-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/nasjonale-minoriteter",
+    "title": "De nasjonale minoritetene: fem folk staten ville gjøre like"
   },
   "leteboringen-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/oljealderen",
+    "title": "Oljealderen: da Norge fant gullet under havet"
   },
   "vinterbeitet-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/samiske-rettigheter",
+    "title": "Samiske rettigheter etter Alta: Aksjonen som endret loven"
   },
   "kullkapplopet-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/svalbard",
+    "title": "Svalbard: øyene ingen eide"
   },
   "gjenreisningen-3d": {
     "subjectId": "historie",
-    "topicId": "norge-i-moderne-tid"
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/velferdsstaten",
+    "title": "Velferdsstaten"
   },
   "samisk-gjenreising-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/fornorskingen-av-samene",
+    "title": "Fornorskingen av samene"
   },
   "hamskiftet-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/hamskiftet",
+    "title": "Hamskiftet"
   },
   "bergkunsten-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/helleristninger",
+    "title": "Helleristninger: Beskjeder hugget i stein"
   },
   "kalmar-kronene-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/kalmarunionen",
+    "title": "Kalmarunionen"
   },
   "fimbulvinteren-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/klimakrisen-536",
+    "title": "536 - Året da solen forsvant"
   },
   "dorer-som-apnet-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/kvinnekampen",
+    "title": "Kvinnekampen"
   },
   "veien-til-vikingtid-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/merovingertiden",
+    "title": "Merovingertiden: De stille århundrene"
   },
   "personalunion-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/unionen-med-sverige",
+    "title": "Unionen med Sverige: To land, én konge"
   },
   "pakk-amerikakofferten-3d": {
     "subjectId": "historie",
-    "topicId": "norgeshistorie"
+    "topicId": "norgeshistorie",
+    "link": "/historie/norgeshistorie/utvandringen-til-amerika",
+    "title": "Utvandringen til Amerika"
   },
   "kongsemnene-1130": {
     "subjectId": "historie",
-    "topicId": "norsk-middelalder"
+    "topicId": "norsk-middelalder",
+    "link": "/historie/norsk-middelalder/borgerkrigstiden",
+    "title": "Borgerkrigstiden: da Norge manglet en arveregel"
   },
   "hansakoggen-3d": {
     "subjectId": "historie",
-    "topicId": "norsk-middelalder"
+    "topicId": "norsk-middelalder",
+    "link": "/historie/norsk-middelalder/hansadrapet-1455",
+    "title": "Hansadrapet i Bergen 1455: Da kjøpmennene var sterkere enn kongen"
   },
   "beskjeden-for-sent-3d": {
     "subjectId": "historie",
-    "topicId": "norsk-middelalder"
+    "topicId": "norsk-middelalder",
+    "link": "/historie/norsk-middelalder/norgesveldet",
+    "title": "Norgesveldet: da Norge var Europas største rike"
   },
   "stavkirken-3d": {
     "subjectId": "historie",
-    "topicId": "norsk-middelalder"
+    "topicId": "norsk-middelalder",
+    "link": "/historie/norsk-middelalder/stavkirkene",
+    "title": "Stavkirkene: kirkene som ikke råtnet"
   },
   "fimreite-1184": {
     "subjectId": "historie",
-    "topicId": "norsk-middelalder"
+    "topicId": "norsk-middelalder",
+    "link": "/historie/norsk-middelalder/sverre-sigurdsson",
+    "title": "Sverre Sigurdsson: presten som ble konge"
   },
   "arkivesken-3d": {
     "subjectId": "historie",
-    "topicId": "osmanske-riket"
+    "topicId": "osmanske-riket",
+    "link": "/historie/osmanske-riket/folkemordet-pa-armenerne",
+    "title": "Folkemordet på armenerne"
   },
   "teodosianmuren": {
     "subjectId": "historie",
-    "topicId": "osmanske-riket"
+    "topicId": "osmanske-riket",
+    "link": "/historie/osmanske-riket/konstantinopels-fall",
+    "title": "1453: Da Konstantinopel falt"
   },
   "persepolis-gaver-3d": {
     "subjectId": "historie",
-    "topicId": "perserriket"
+    "topicId": "perserriket",
+    "link": "/historie/perserriket/artikkel",
+    "title": "Perserriket: Det første verdensriket"
   },
   "himmelmodellen-3d": {
     "subjectId": "historie",
-    "topicId": "renessansen"
+    "topicId": "renessansen",
+    "link": "/historie/renessansen/den-vitenskapelige-revolusjonen",
+    "title": "Den vitenskapelige revolusjonen"
   },
   "falltaarnet-3d": {
     "subjectId": "historie",
-    "topicId": "renessansen"
+    "topicId": "renessansen",
+    "link": "/historie/renessansen/galileo-galilei",
+    "title": "Galileo Galilei: Mannen som så himmelen først"
   },
   "leonardo-flygemaskin-3d": {
     "subjectId": "historie",
-    "topicId": "renessansen"
+    "topicId": "renessansen",
+    "link": "/historie/renessansen/leonardo-da-vinci",
+    "title": "Leonardo da Vinci — mannen som ville vite alt"
   },
   "testudo-3d": {
     "subjectId": "historie",
-    "topicId": "romerriket"
+    "topicId": "romerriket",
+    "link": "/historie/romerriket/den-romerske-legionen",
+    "title": "Den romerske legionen"
   },
   "leiegaarden-3d": {
     "subjectId": "historie",
-    "topicId": "romerriket"
+    "topicId": "romerriket",
+    "link": "/historie/romerriket/hverdagsliv-i-roma",
+    "title": "Hverdagslivet i Roma"
   },
   "pompeii-3d": {
     "subjectId": "historie",
-    "topicId": "romerriket"
-  },
-  "colosseum-3d": {
-    "subjectId": "historie",
-    "topicId": "romerriket"
-  },
-  "gladius-duell": {
-    "subjectId": "historie",
-    "topicId": "romerriket"
+    "topicId": "romerriket",
+    "link": "/historie/romerriket/pompeii",
+    "title": "Pompeii: Byen som ble frosset i tid"
   },
   "de-sju-hoydene-3d": {
     "subjectId": "historie",
-    "topicId": "romerriket"
+    "topicId": "romerriket",
+    "link": "/historie/romerriket/romerriket-sti",
+    "title": "Læringssti: Romerriket"
+  },
+  "caesar-ides": {
+    "subjectId": "historie",
+    "topicId": "romerriket",
+    "link": "/historie/romerriket/romerriket-sti",
+    "title": "Læringssti: Romerriket"
   },
   "riket-delt-i-to": {
     "subjectId": "historie",
-    "topicId": "russlands-historie"
+    "topicId": "russlands-historie",
+    "link": "/historie/russlands-historie/ivan-den-grusomme",
+    "title": "Ivan den grusomme: tsaren som fjernet alle som kunne si nei"
   },
   "potemkin-ferden-3d": {
     "subjectId": "historie",
-    "topicId": "russlands-historie"
+    "topicId": "russlands-historie",
+    "link": "/historie/russlands-historie/katarina-den-store",
+    "title": "Katarina den store: keiserinnen mellom idealer og makt"
   },
   "innlosningen-1861-3d": {
     "subjectId": "historie",
-    "topicId": "russlands-historie"
+    "topicId": "russlands-historie",
+    "link": "/historie/russlands-historie/livegenskapet-i-russland",
+    "title": "Livegenskapet i Russland: friheten som kom med en regning"
   },
   "skattekaravanen-3d": {
     "subjectId": "historie",
-    "topicId": "russlands-historie"
+    "topicId": "russlands-historie",
+    "link": "/historie/russlands-historie/mongolaket-og-moskvas-oppgang",
+    "title": "Mongolåket: byen som ble stor på å kreve inn andres skatt"
   },
   "myra-under-byen": {
     "subjectId": "historie",
-    "topicId": "russlands-historie"
+    "topicId": "russlands-historie",
+    "link": "/historie/russlands-historie/peter-den-store",
+    "title": "Peter den store: tsaren som snudde Russland vestover"
   },
   "frihetsvakten-3d": {
     "subjectId": "historie",
-    "topicId": "sveriges-historie"
+    "topicId": "sveriges-historie",
+    "link": "/historie/sveriges-historie/frihetstiden",
+    "title": "Frihetstiden - da riksdagen tok makten fra kongen"
   },
   "pakkeruta-3d": {
     "subjectId": "historie",
-    "topicId": "teknologi-og-hverdagsliv"
+    "topicId": "teknologi-og-hverdagsliv",
+    "link": "/historie/teknologi-og-hverdagsliv/datamaskinen-og-internettet",
+    "title": "Datamaskinen og internettet"
   },
   "stromveien-3d": {
     "subjectId": "historie",
-    "topicId": "teknologi-og-hverdagsliv"
+    "topicId": "teknologi-og-hverdagsliv",
+    "link": "/historie/teknologi-og-hverdagsliv/elektrisiteten",
+    "title": "Da lyset kom inn i huset: elektrisiteten"
   },
   "kjoleskapet-3d": {
     "subjectId": "historie",
-    "topicId": "teknologi-og-hverdagsliv"
+    "topicId": "teknologi-og-hverdagsliv",
+    "link": "/historie/teknologi-og-hverdagsliv/kjoleskapet",
+    "title": "Kjøleskapet og maten som holdt seg"
   },
   "gangen-3d": {
     "subjectId": "historie",
-    "topicId": "teknologi-og-hverdagsliv"
+    "topicId": "teknologi-og-hverdagsliv",
+    "link": "/historie/teknologi-og-hverdagsliv/klokka",
+    "title": "Klokka som styrte livet"
   },
   "laasesting-3d": {
     "subjectId": "historie",
-    "topicId": "teknologi-og-hverdagsliv"
+    "topicId": "teknologi-og-hverdagsliv",
+    "link": "/historie/teknologi-og-hverdagsliv/symaskinen",
+    "title": "Symaskinen: klær til alle"
   },
   "rent-vann-rorene-3d": {
     "subjectId": "historie",
-    "topicId": "teknologi-og-hverdagsliv"
+    "topicId": "teknologi-og-hverdagsliv",
+    "link": "/historie/teknologi-og-hverdagsliv/vann-og-kloakk",
+    "title": "Den usynlige revolusjonen: rent vann og kloakk"
   },
   "vannmolla-3d": {
     "subjectId": "historie",
-    "topicId": "teknologi-og-hverdagsliv"
+    "topicId": "teknologi-og-hverdagsliv",
+    "link": "/historie/teknologi-og-hverdagsliv/vann-og-vindmolla",
+    "title": "Vannet som jobbet: vann- og vindmølla"
   },
-  "vesterleden-3d": {
+  "seinen-snur": {
     "subjectId": "historie",
-    "topicId": "vikingtiden"
+    "topicId": "vikingtiden",
+    "link": "/historie/vikingtiden/normandie",
+    "title": "Normandie: Fra Vikinger til Riddere"
+  },
+  "kurs-for-gronland": {
+    "subjectId": "historie",
+    "topicId": "vikingtiden",
+    "link": "/historie/vikingtiden/oppdagelsesreiser",
+    "title": "Oppdagelsesreiser i Vesterled"
   },
   "rikssamlingen-3d": {
     "subjectId": "historie",
-    "topicId": "vikingtiden"
+    "topicId": "vikingtiden",
+    "link": "/historie/vikingtiden/rikssamlingen",
+    "title": "Rikssamlingen: Da Norge ble ett"
   },
   "vikingskip-3d": {
     "subjectId": "historie",
-    "topicId": "vikingtiden"
+    "topicId": "vikingtiden",
+    "link": "/historie/vikingtiden/skipsteknologi",
+    "title": "Skipet: Vikingtidens viktigste teknologi"
   },
   "moralske-sirkelen-3d": {
     "subjectId": "krle",
-    "topicId": "etikk"
+    "topicId": "etikk",
+    "link": "/krle/etikk/dyreetikk",
+    "title": "Dyreetikk: Har dyr rettigheter?"
   },
   "skjevhetsspeilet-3d": {
     "subjectId": "krle",
-    "topicId": "etikk"
+    "topicId": "etikk",
+    "link": "/krle/etikk/kunstig-intelligens-og-etikk",
+    "title": "Kunstig intelligens: Kan en maskin gjøre det rette?"
   },
   "dalen-du-laner": {
     "subjectId": "krle",
-    "topicId": "etikk"
+    "topicId": "etikk",
+    "link": "/krle/etikk/miljoetikk",
+    "title": "Miljøetikk: Er naturen verdt noe uten oss?"
   },
   "moralsk-tomrom-3d": {
     "subjectId": "krle",
-    "topicId": "etikk"
+    "topicId": "etikk",
+    "link": "/krle/etikk/nihilisme",
+    "title": "Nihilisme i etikk"
   },
   "bak-sloret-3d": {
     "subjectId": "krle",
-    "topicId": "etikk"
+    "topicId": "etikk",
+    "link": "/krle/etikk/rettferdighetsetikk",
+    "title": "Rettferdighet: uvitenhetens slør"
   },
   "allmennviljen-3d": {
     "subjectId": "krle",
-    "topicId": "filosofi"
+    "topicId": "filosofi",
+    "link": "/krle/filosofi/rousseau",
+    "title": "Jean-Jacques Rousseau"
   },
   "taakegrensa-3d": {
     "subjectId": "krle",
-    "topicId": "livssyn"
+    "topicId": "livssyn",
+    "link": "/krle/livssyn/ateisme-og-agnostisme",
+    "title": "Ateisme og agnostisme: å ikke tro, og å ikke vite"
   },
   "vannets-vei-3d": {
     "subjectId": "krle",
-    "topicId": "livssyn"
+    "topicId": "livssyn",
+    "link": "/krle/livssyn/daoisme",
+    "title": "Daoisme: veien som ikke lar seg tvinge"
   },
   "forfedrehallen-3d": {
     "subjectId": "krle",
-    "topicId": "livssyn"
+    "topicId": "livssyn",
+    "link": "/krle/livssyn/konfusianisme",
+    "title": "Konfusianisme: plikten som går begge veier"
   },
   "livsveien-3d": {
     "subjectId": "krle",
-    "topicId": "livssyn"
+    "topicId": "livssyn",
+    "link": "/krle/livssyn/livssynshumanisme",
+    "title": "Livssynshumanisme: mennesket som målestokk"
   },
   "forbudt-mote-1820": {
     "subjectId": "krle",
-    "topicId": "livssyn"
+    "topicId": "livssyn",
+    "link": "/krle/livssyn/sekularisering",
+    "title": "Sekularisering: da staten sluttet å bestemme hva du skulle tro"
   },
   "attedelt-vei-hjulet": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/buddhisme/den-attedelte-vei/artikkel",
+    "title": "Den åttedelte veien"
   },
   "samsara-syklusen": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/buddhisme/sentrale-trekk/artikkel",
+    "title": "En diagnose og en behandling"
   },
   "moksha-veien-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/hinduisme/sentrale-trekk/artikkel",
+    "title": "En religion uten sentrum"
   },
   "hjertets-vekt-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/historiske-religioner/egyptisk-religion",
+    "title": "Egyptisk religion: hjertet på vekten"
   },
   "utnapisjtims-ark-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/historiske-religioner/mesopotamisk-religion",
+    "title": "Mesopotamisk religion: flommen som gikk igjen"
   },
   "tempelets-renselse-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/historiske-religioner/monoteismens-fodsel",
+    "title": "Hadde Gud en kone?"
   },
   "mitreum-innvielsen-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/historiske-religioner/mysteriekultene",
+    "title": "Mysteriekultene: religionen bak lukkede dører"
   },
   "vend-mot-mekka": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/islam/intro/artikkel",
+    "title": "Introduksjon til Islam"
   },
   "tikkun-olam-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/jodedom/sentrale-trekk/artikkel",
+    "title": "Mange måter å være jøde på"
   },
   "bjornegrava-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/samisk/bjornegraven",
+    "title": "Bjørnegraven: dyret som skulle bli født på nytt"
   },
   "bedehuset-motet": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/samisk/laestadianismen",
+    "title": "Læstadianismen: da kristendommen ble samisk"
   },
   "berg-trommen-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/samisk/trommen-som-kom-hjem",
+    "title": "Trommen som kom hjem"
   },
   "langar-kjokkenet-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/sikhisme/bonn/artikkel",
+    "title": "Bønn i sikhismen: å huske et navn"
   },
   "anand-karaj-3d": {
     "subjectId": "krle",
-    "topicId": "religion"
+    "topicId": "religion",
+    "link": "/krle/religion/sikhisme/overgangsriter/artikkel",
+    "title": "Overgangsriter i sikhismen"
   },
   "festens-lys-3d": {
     "subjectId": "krle",
-    "topicId": "religion-og-kultur"
+    "topicId": "religion-og-kultur",
+    "link": "/krle/religion-og-kultur/hoytider-og-kultur",
+    "title": "Høytider: Hvor kommer fridagene fra?"
   },
   "matreglerbordet-3d": {
     "subjectId": "krle",
-    "topicId": "religion-og-kultur"
+    "topicId": "religion-og-kultur",
+    "link": "/krle/religion-og-kultur/mat-og-religion",
+    "title": "Mat og religion: Hva får du spise?"
   },
   "skjulte-symboler-3d": {
     "subjectId": "krle",
-    "topicId": "religion-og-kultur"
+    "topicId": "religion-og-kultur",
+    "link": "/krle/religion-og-kultur/religion-i-medier",
+    "title": "Religion i medier og populærkultur"
   },
   "symboler-paa-taket-3d": {
     "subjectId": "krle",
-    "topicId": "religion-og-kultur"
+    "topicId": "religion-og-kultur",
+    "link": "/krle/religion-og-kultur/symboler-og-klaer",
+    "title": "Religiøse symboler og klær: Tro du kan se"
   },
   "tidens-former-3d": {
     "subjectId": "krle",
-    "topicId": "sammenligning"
+    "topicId": "sammenligning",
+    "link": "/krle/sammenligning/doden",
+    "title": "Døden: Hva skjer når vi dør?"
   },
   "gudsformer-3d": {
     "subjectId": "krle",
-    "topicId": "sammenligning"
+    "topicId": "sammenligning",
+    "link": "/krle/sammenligning/gudsbilde",
+    "title": "Gudsbilde: Én, mange eller ingen gud?"
   },
   "multietnolekt-gata-3d": {
     "subjectId": "norsk",
-    "topicId": "dialekter"
+    "topicId": "dialekter",
+    "link": "/norsk/dialekter/etnolekt",
+    "title": "Etnolekt og multietnolekt: Språket som viser hvem du henger med"
   },
   "dialektgrensa-3d": {
     "subjectId": "norsk",
-    "topicId": "dialekter"
+    "topicId": "dialekter",
+    "link": "/norsk/dialekter/geolekt",
+    "title": "Geolekt: Hvor går grensen mellom to dialekter?"
   },
   "stemmesporet-3d": {
     "subjectId": "norsk",
-    "topicId": "dialekter"
+    "topicId": "dialekter",
+    "link": "/norsk/dialekter/idiolekt",
+    "title": "Idiolekt: Ingen snakker helt som deg"
   },
   "malmerke-kartet-3d": {
     "subjectId": "norsk",
-    "topicId": "dialekter"
+    "topicId": "dialekter",
+    "link": "/norsk/dialekter/malmerker",
+    "title": "Målmerker: Sporene som avslører dialekten"
   },
   "oslo-sosiolekt-3d": {
     "subjectId": "norsk",
-    "topicId": "dialekter"
+    "topicId": "dialekter",
+    "link": "/norsk/dialekter/sosiolekt",
+    "title": "Sosiolekt: Snakker vi ulikt fordi vi er ulike?"
   },
   "dialekt-spredning": {
     "subjectId": "norsk",
-    "topicId": "dialekter"
+    "topicId": "dialekter",
+    "link": "/norsk/dialekter/spredning-av-dialekttrekk",
+    "title": "Bølgemodellen og sprangmodellen: Hvordan sprer dialekttrekk seg?"
   },
   "levekaarsgapet-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "demografi"
+    "topicId": "demografi",
+    "link": "/samfunnskunnskap/demografi/km-6-levekaar-verden",
+    "title": "Levekår rundt om i verden"
   },
   "konklusjonsbroen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "eksamen"
+    "topicId": "eksamen",
+    "link": "/samfunnskunnskap/eksamen/km-1-metode",
+    "title": "Slik undersøker vi samfunnet"
   },
   "argumentbroen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "eksamen"
+    "topicId": "eksamen",
+    "link": "/samfunnskunnskap/eksamen/km-16-dagsaktuelle-tema",
+    "title": "Dagsaktuelle tema - slik jobber du"
   },
   "monument-torget-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "ideer-og-verdenssyn"
+    "topicId": "ideer-og-verdenssyn",
+    "link": "/samfunnskunnskap/ideer-og-verdenssyn/km-3-historieframstilling",
+    "title": "Hvem skriver historien?"
   },
   "bronseruta-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "imperienes-fall"
+    "topicId": "imperienes-fall",
+    "link": "/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps",
+    "title": "Bronsealderens kollaps"
   },
   "imperium-soyler": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "imperienes-fall"
+    "topicId": "imperienes-fall",
+    "link": "/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller",
+    "title": "Hvorfor imperier faller"
   },
   "maya-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "imperienes-fall"
+    "topicId": "imperienes-fall",
+    "link": "/samfunnskunnskap/imperienes-fall/mayaenes-kollaps",
+    "title": "Mayaenes kollaps"
   },
   "paskeoya-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "imperienes-fall"
+    "topicId": "imperienes-fall",
+    "link": "/samfunnskunnskap/imperienes-fall/paskeoyas-kollaps",
+    "title": "Påskeøyas kollaps"
   },
   "datasporet-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "mennesket-kultur-samfunn"
+    "topicId": "mennesket-kultur-samfunn",
+    "link": "/samfunnskunnskap/mennesket-kultur-samfunn/km-10-digitale-spor",
+    "title": "Dine digitale spor"
   },
   "grenselinja-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "mennesket-kultur-samfunn"
+    "topicId": "mennesket-kultur-samfunn",
+    "link": "/samfunnskunnskap/mennesket-kultur-samfunn/km-11-sjolvbilete-grenser",
+    "title": "Hvem er du? - identitet og egne grenser"
   },
   "taushetsspiralen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "mennesket-kultur-samfunn"
+    "topicId": "mennesket-kultur-samfunn",
+    "link": "/samfunnskunnskap/mennesket-kultur-samfunn/km-13-digital-debatt",
+    "title": "Den digitale offentligheten"
   },
   "nyheitsbobla-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "mennesket-kultur-samfunn"
+    "topicId": "mennesket-kultur-samfunn",
+    "link": "/samfunnskunnskap/mennesket-kultur-samfunn/km-2-kjelder-algoritmar",
+    "title": "Kilder, algoritmer og blindsoner"
   },
   "teknologibolgen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "mennesket-kultur-samfunn"
+    "topicId": "mennesket-kultur-samfunn",
+    "link": "/samfunnskunnskap/mennesket-kultur-samfunn/km-4-teknologi-endring",
+    "title": "Teknologien som endrer alt"
   },
   "perspektivkjernen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "mennesket-kultur-samfunn"
+    "topicId": "mennesket-kultur-samfunn",
+    "link": "/samfunnskunnskap/mennesket-kultur-samfunn/km-9-identitet-mangfald",
+    "title": "Identitet og mangfold"
   },
   "bankens-balansegang": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "okonomi"
+    "topicId": "okonomi",
+    "link": "/samfunnskunnskap/okonomi/hvordan-penger-blir-til",
+    "title": "Hvordan penger blir til"
   },
   "produksjonsoppskriften-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "okonomi"
+    "topicId": "okonomi",
+    "link": "/samfunnskunnskap/okonomi/komparativt-fortrinn",
+    "title": "Komparativt og absolutt fortrinn"
   },
   "europa-broen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/eu-og-eos",
+    "title": "EU og EØS: Norge mellom selvstyre og samarbeid"
   },
   "maktbalansen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/km-12-maktaktørar",
+    "title": "Hvem har makta?"
   },
   "spillereglene-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/km-14-lover-normer",
+    "title": "Lover, normer og konsekvenser"
   },
   "spleiselaget-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/km-15-norsk-demokrati",
+    "title": "Det norske demokratiet i dag"
   },
   "maktskiftet-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/km-17-medborgar",
+    "title": "Å være medborger"
   },
   "streikefronten-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/km-5-kamp-for-endring",
+    "title": "Å kjempe for endring"
   },
   "konsekvensbolgen-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/km-7-konfliktar",
+    "title": "Konflikter - årsaker og konsekvenser"
   },
   "ansiktene-i-mengden-3d": {
     "subjectId": "samfunnskunnskap",
-    "topicId": "styringsformer"
+    "topicId": "styringsformer",
+    "link": "/samfunnskunnskap/styringsformer/km-8-terror-folkemord",
+    "title": "Fra hat til folkemord"
   }
 }

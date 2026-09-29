@@ -95,6 +95,10 @@ export class Loot {
             }
 
             const d = Phaser.Math.Distance.Between(l.sprite.x, l.sprite.y, spiller.x, spiller.y);
+            if (l.avvist) {
+                if (d > TREKK_AVSTAND) l.avvist = false;
+                continue;
+            }
             // Trekkes mot spilleren når hun er nær - alltid tilfredsstillende.
             if (d < TREKK_AVSTAND) {
                 const v = Math.atan2(spiller.y - l.sprite.y, spiller.x - l.sprite.x);
@@ -105,7 +109,12 @@ export class Loot {
             if (d < PLUKK_AVSTAND) {
                 const store = useRpgStore.getState();
                 if (l.itemId) {
-                    store.leggISekk(l.itemId);
+                    // Full sekk: den blir liggende, og hun kan komme tilbake
+                    // etter den når hun har solgt noe.
+                    if (!store.leggISekk(l.itemId)) {
+                        l.avvist = true;
+                        continue;
+                    }
                     sfx.plukk();
                 } else {
                     store.giSolv(l.solv);

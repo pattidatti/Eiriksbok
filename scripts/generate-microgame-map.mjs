@@ -1,8 +1,9 @@
 // Bygger en mapping fra mikrospill-id til fag/tema ved å skanne alle
 // innholds-JSON-filer for "gameId" (MicroGame-komponent) og "microGameId"
 // (læringssti-steg). Output: public/content/microgame-map.json, en flat
-// { [gameId]: { subjectId, topicId } } map. Brukes av «Dagens økt» til å
-// velge et dagens-spill som matcher temaene eleven repeterer.
+// { [gameId]: { subjectId, topicId, link, title } } map. Brukes av «Dagens økt»
+// til å velge et dagens-spill som matcher temaene eleven repeterer, og av
+// Arkaden (/oving/arkade) til å lenke hvert spill til artikkelen det bor i.
 
 import fs from 'fs';
 import path from 'path';
@@ -65,7 +66,18 @@ export function generate() {
                 stats.duplicates += 1;
                 continue; // første treff vinner
             }
-            result[gameId] = { subjectId: parts[0], topicId: parts[1] };
+            let title;
+            try {
+                title = JSON.parse(text).title;
+            } catch {
+                title = undefined;
+            }
+            result[gameId] = {
+                subjectId: parts[0],
+                topicId: parts[1],
+                link: '/' + parts.join('/').replace(/\.json$/, ''),
+                ...(typeof title === 'string' ? { title } : {}),
+            };
             stats.mapped += 1;
         }
     }

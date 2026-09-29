@@ -168,7 +168,7 @@ await page.click('button:has-text("Ta sølvet")');
 await page.waitForTimeout(500);
 await lukkPanel();
 const etterKiste = await les();
-sjekk('kista ga sølvet', etterKiste.solv === 200, `${etterKiste.solv} sølv`);
+sjekk('kista ga sølvet', etterKiste.solv === 1000, `${etterKiste.solv} sølv`);
 
 // ── 4. Tunet er trygt, feltet er det ikke ───────────────────────────────────
 //

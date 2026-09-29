@@ -4,6 +4,8 @@ import { AARSTID, AARSTIDER, DAGER_PER_AARSTID, aarstidFor, dagIAarstid } from '
 import { KAPITTEL_BY_NR, harKapitler, kapittelNr, synligeSteg } from '../data/kapitler';
 import type { KampSnapshot } from '../engine/kamp';
 import type { Klokke } from '../types';
+import { ITEM_BY_ID, RARITY_COLOR } from '../data/items';
+import { GjenstandIkon } from './GjenstandIkon';
 
 interface Props {
     hint: string | null;
@@ -61,8 +63,7 @@ export function Hud({
     const nesteSteg = harKapitler(store.epokeId)
         ? synligeSteg(kapittelNr(store.kapittel), store.steg).find((s) => !s.ferdig)
         : undefined;
-    const kort =
-        oppgave ?? (nesteSteg ? { tittel: nesteSteg.tittel, mal: nesteSteg.mal } : null);
+    const kort = oppgave ?? (nesteSteg ? { tittel: nesteSteg.tittel, mal: nesteSteg.mal } : null);
 
     return (
         <div className="pointer-events-none absolute inset-0 z-20 select-none">
@@ -248,6 +249,8 @@ export function Hud({
                 </div>
             )}
 
+            <Hurtigbar />
+
             {/* Hint om hva E gjør */}
             {hint && (
                 <div className="absolute bottom-20 left-1/2 -translate-x-1/2 rounded-full bg-slate-900/85 px-4 py-1.5 text-sm font-medium text-amber-200 ring-1 ring-white/15">
@@ -264,10 +267,10 @@ export function Hud({
                             v.art === 'bra'
                                 ? 'bg-emerald-500/90 text-emerald-50 ring-emerald-300/40'
                                 : v.art === 'darlig'
-                                ? 'bg-rose-600/90 text-rose-50 ring-rose-300/40'
-                                : v.art === 'niva'
-                                ? 'bg-amber-400/95 text-slate-900 ring-amber-200/50'
-                                : 'bg-slate-900/90 text-slate-100 ring-white/15'
+                                  ? 'bg-rose-600/90 text-rose-50 ring-rose-300/40'
+                                  : v.art === 'niva'
+                                    ? 'bg-amber-400/95 text-slate-900 ring-amber-200/50'
+                                    : 'bg-slate-900/90 text-slate-100 ring-white/15'
                         }`}
                     >
                         {v.tekst}
@@ -529,5 +532,65 @@ function Knapp({
                 </span>
             ) : null}
         </button>
+    );
+}
+
+/**
+ * Hurtigbaren nederst i bildet, tast 1-4. Står bare når noe ligger på den:
+ * en tom rad med ruter er et grensesnitt som ber om oppmerksomhet for ingenting.
+ */
+function Hurtigbar() {
+    const hurtigbar = useRpgStore((s) => s.hurtigbar);
+    const sekk = useRpgStore((s) => s.sekk);
+    const brukVare = useRpgStore((s) => s.brukVare);
+    if (!hurtigbar.some(Boolean)) return null;
+
+    return (
+        <div
+            data-prove="hurtigbar"
+            className="pointer-events-auto absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-xl bg-slate-950/70 p-1.5 ring-1 ring-white/10"
+        >
+            {hurtigbar.map((id, i) => {
+                const item = id ? ITEM_BY_ID[id] : undefined;
+                const antall = id
+                    ? sekk.reduce((n, g) => n + (g?.id === id ? (g.antall ?? 1) : 0), 0)
+                    : 0;
+                return (
+                    <button
+                        key={i}
+                        type="button"
+                        disabled={!item || antall === 0}
+                        onClick={() => id && brukVare(id)}
+                        aria-label={
+                            item
+                                ? `${item.forbruk?.verb} ${item.name} (tast ${i + 1})`
+                                : `Tom plass ${i + 1}`
+                        }
+                        className="relative h-10 w-10 rounded-lg border-2 bg-slate-900/90 p-1 transition active:scale-90 enabled:hover:border-amber-300/70"
+                        style={{
+                            borderColor: item
+                                ? `${RARITY_COLOR[item.rarity]}88`
+                                : 'rgba(255,255,255,0.08)',
+                        }}
+                    >
+                        {item && (
+                            <span
+                                className={`block h-full w-full ${antall === 0 ? 'opacity-35 grayscale' : ''}`}
+                            >
+                                <GjenstandIkon item={item} />
+                            </span>
+                        )}
+                        <span className="absolute left-0.5 top-0 font-mono text-[9px] font-bold text-amber-200/90 [text-shadow:0_1px_2px_#000]">
+                            {i + 1}
+                        </span>
+                        {item && (
+                            <span className="absolute bottom-0 right-0.5 font-mono text-[10px] font-bold text-white [text-shadow:0_1px_2px_#000,0_0_2px_#000]">
+                                {antall}
+                            </span>
+                        )}
+                    </button>
+                );
+            })}
+        </div>
     );
 }

@@ -122,3 +122,10 @@ export function botTick(g: G, mem: BotMemory, style: BotStyle = {}) {
     if (g.items.length > 0) return driveToStation(g, 'hjem');
     return driveToStation(g, 'fabrikk');
 }
+
+/** Robotene i selvspillet: navn -> stil. Brukes av både spillet (usePlaytest) og sim.ts. */
+export const BOT_STYLES: Record<string, BotStyle> = {
+    seende: {},
+    'tar-pengene-hjem': { hjemFoerst: true },
+    'bare-mat': { bareMat: true },
+};

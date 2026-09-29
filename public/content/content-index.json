@@ -1,5 +1,5 @@
 {
-  "buildId": 67045865766402,
+  "buildId": 74878776767384,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2850,6 +2850,9 @@
     "leonardo-da-vinci": [
       "content/historie/renessansen/leonardo-da-vinci.json"
     ],
+    "medici-familien": [
+      "content/historie/renessansen/medici-familien.json"
+    ],
     "michelangelo": [
       "content/historie/renessansen/michelangelo.json"
     ],
@@ -2882,9 +2885,6 @@
     ],
     "pompeii": [
       "content/historie/romerriket/pompeii.json"
-    ],
-    "romerriket-sti-v2": [
-      "content/historie/romerriket/romerriket-sti-v2.json"
     ],
     "romerriket-sti": [
       "content/historie/romerriket/romerriket-sti.json"
@@ -5779,6 +5779,7 @@
     "historie/renessansen/den-vitenskapelige-revolusjonen": "content/historie/renessansen/den-vitenskapelige-revolusjonen.json",
     "historie/renessansen/galileo-galilei": "content/historie/renessansen/galileo-galilei.json",
     "historie/renessansen/leonardo-da-vinci": "content/historie/renessansen/leonardo-da-vinci.json",
+    "historie/renessansen/medici-familien": "content/historie/renessansen/medici-familien.json",
     "historie/renessansen/michelangelo": "content/historie/renessansen/michelangelo.json",
     "historie/renessansen/oversikt": "content/historie/renessansen/oversikt.json",
     "historie/romerriket/arven-etter-romerriket": "content/historie/romerriket/arven-etter-romerriket.json",
@@ -5790,7 +5791,6 @@
     "historie/romerriket/hverdagsliv-i-roma": "content/historie/romerriket/hverdagsliv-i-roma.json",
     "historie/romerriket/legitimitet-og-kristendom": "content/historie/romerriket/legitimitet-og-kristendom.json",
     "historie/romerriket/pompeii": "content/historie/romerriket/pompeii.json",
-    "historie/romerriket/romerriket-sti-v2": "content/historie/romerriket/romerriket-sti-v2.json",
     "historie/romerriket/romerriket-sti": "content/historie/romerriket/romerriket-sti.json",
     "historie/romerriket/romersk-start": "content/historie/romerriket/romersk-start.json",
     "historie/romerriket/romerske-guder": "content/historie/romerriket/romerske-guder.json",

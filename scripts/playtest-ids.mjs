@@ -7,8 +7,8 @@
 //   de dekkes av scene-auditen.
 // - Nye spill tas ALLTID med: mangler de sjanger/tone/usePlaytest, er det nettopp det
 //   porten skal stoppe.
-// - Endres selve kontrakten (playtest.ts) eller arkadeskallet, kjøres referansespillene
-//   som røyktest.
+// - Endres selve kontrakten (playtest.ts, sim.ts) eller arkadeskallet, kjøres
+//   referansespillene som røyktest. inn-mot-stranda er referansen for simuleringen.
 
 import { execSync } from 'child_process';
 import { readFileSync, existsSync } from 'fs';
@@ -22,7 +22,7 @@ if (!base) {
 }
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const mg = 'src/components/microgames/';
-const REFERANSER = ['havet-kommer', 'stavkirken-3d'];
+const REFERANSER = ['havet-kommer', 'stavkirken-3d', 'inn-mot-stranda'];
 
 const regNow = readFileSync(path.join(root, mg, 'registry.ts'), 'utf8');
 let regBase = '';
@@ -55,7 +55,7 @@ const srcOf = (file) => {
 };
 for (const f of diff) {
     const rel = f.slice(mg.length);
-    if (rel === 'playtest.ts' || rel.startsWith('arcade/')) {
+    if (rel === 'playtest.ts' || rel === 'sim.ts' || rel.startsWith('arcade/')) {
         REFERANSER.forEach((id) => picked.add(id));
         continue;
     }

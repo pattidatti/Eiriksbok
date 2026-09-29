@@ -143,7 +143,8 @@ export function statsAt(level: number) {
  * Ukjent id gir tyngste trinn med vilje. Får eleven en rustning vi ikke har
  * tegnet, skal hun se rustet ut - ikke naken.
  */
-export function rustningTier(rustningId: string | null | undefined): number {
+export function rustningTier(rustning: string | { id: string } | null | undefined): number {
+    const rustningId = typeof rustning === 'string' ? rustning : rustning?.id;
     if (!rustningId) return 0;
     if (rustningId === 'vadmelskjortel') return 1;
     if (rustningId === 'lerbrynje') return 2;
@@ -160,7 +161,8 @@ export function rustningTier(rustningId: string | null | undefined): number {
 export function figurLook(
     kjortel: number | null | undefined,
     appearance: AppearanceChoice | null | undefined,
-    armorTier: number
+    armorTier: number,
+    deler?: FigurLook['deler']
 ): FigurLook {
     const valgt = kjortelFor(kjortel);
     return {
@@ -168,5 +170,6 @@ export function figurLook(
         tunic: valgt.tunic,
         trim: valgt.trim,
         armorTier,
+        ...(deler ? { deler } : {}),
     };
 }

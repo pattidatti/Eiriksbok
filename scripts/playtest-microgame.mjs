@@ -1,10 +1,17 @@
 // Selvspill-port for mikrospill: spiller hvert spill headless med robotene spillet
-// selv har registrert (src/components/microgames/playtest.ts), og sjekker det et
-// menneske ellers må prøve seg fram til:
+// selv har registrert (src/components/microgames/playtest.ts), og sjekker det som
+// trenger en ekte nettleser.
 //
-//   SPILLBART  en robot som spiller fornuftig vinner (minst 1 av 2 runder)
-//   UTFORDRING passiv (ingen input) og alle «taper»-roboter vinner aldri
-//   FERDIGHET  beste vinnerrunde gir flere poeng enn alle taperrunder
+// Balansen (vinner/taper, ferdighetstrapp, spillfølelse) avgjøres IKKE her lenger, men i
+// simuleringen: scripts/sim-microgame.mts spiller hundrevis av seedede runder på sekunder.
+// Før (til 29.09) spilte denne porten 8-10 hele runder i swiftshader - 35 minutter i CI,
+// 15-20 minutter per runde i sky-miljøet - og avgjorde trappen med ett eller to myntkast
+// (~8-20 % falske røde). Standard er nå en røyktest: en kort passiv runde, én hel runde
+// med vinnerroboten (filmen vurdereren ser) og Chromebook-målingen.
+//
+//   SAMSVAR    vinnerrunden i nettleseren oppfører seg som i simuleringen (sim.json):
+//              taper den der simuleringen nesten aldri taper, er nettleserveien feil
+//   ROBOTER    samme robotnavn og forventninger som i sim.ts
 //   RASKT I GANG en synlig knapp i spillvinduet, og start -> spill på under 6 s
 //   LIV        bildet endrer seg av seg selv de første sekundene
 //   LESBART    tekst dekker ikke midten av spillet i mer enn 4 s i strekk
@@ -16,6 +23,9 @@
 //              «middels» robot havner mellom taperne og vinneren (ferdighetstak), og en
 //              «tilfeldig» knappemoser taper. Tallene gis også til den uavhengige vurderingen.
 //   BRIEF      (nye spill) `kunst` i registry og docs/microgames/briefer/<id>.md finnes
+//
+// --full kjører den gamle porten (alle roboter, hele runder, trapp og spillfølelse i
+// nettleseren). Bare til feilsøking når nettleser og simulering er uenige.
 //
 // Bruk:
 //   node scripts/playtest-microgame.mjs --ids stavkirken-3d,havet-kommer
@@ -46,6 +56,13 @@ const outDir = path.join(root, '.screenshots', 'playtest');
 const fart = Math.max(1, Math.min(4, Number(opt('fart', 4))));
 if (Number(opt('fart', 4)) > 4) console.log('--fart er begrenset til 4 (robotene må få like mange grep per spillsekund som i simuleringen)');
 const onlyBots = opt('bots') ? opt('bots').split(',') : null;
+const full = args.includes('--full');
+// Røyktest: den passive runden trenger bare liv-sjekken (bilder ved 2/7/12 s).
+const SMOKE_PASSIV_TID = 20;
+// --maks-tid N: stopp vinnerrunden etter N spillsekunder. CI bruker det (CI-maskinen gir 3D-spill
+// rundt 7 bilder/s, og en hel runde tok opp til 7 minutter). Nattsporet kjører hele runden, fordi
+// filmstripen er det vurdereren ser.
+const maksTid = opt('maks-tid') ? Number(opt('maks-tid')) : null;
 // --cover: lagre et skjermbilde fra vinnerrunden som startkortets plakat
 // (public/images/microgames/<id>.webp). --cover-at N velger sekundet (standard 20).
 const makeCover = args.includes('--cover');
@@ -265,6 +282,27 @@ function feelStats(samples) {
     return { valgPerMin, pressFirst, pressMid: pressMid ?? pressFirst, pressLast: pressLast ?? pressFirst };
 }
 
+/**
+ * Skjermbilde av spillvinduet via CDP. Playwrights elementHandle.screenshot() venter på at
+ * fonter er lastet og at elementet står stille; med et canvas som tegner hvert bilde og
+ * fonter som ikke finnes på CI-maskinen, kan den ventingen aldri bli ferdig (28.09: tidsavbrudd
+ * i CI for inn-mot-stranda, mens spillet selv var i orden).
+ */
+async function stageShot(page) {
+    const el = await page.$('[data-mg-stage]');
+    const box = el && (await el.boundingBox());
+    const cdp = await page.context().newCDPSession(page);
+    try {
+        const r = await cdp.send('Page.captureScreenshot', {
+            format: 'png',
+            ...(box ? { clip: { x: box.x, y: box.y, width: box.width, height: box.height, scale: 1 } } : {}),
+        });
+        return Buffer.from(r.data, 'base64');
+    } finally {
+        await cdp.detach().catch(() => {});
+    }
+}
+
 async function playRound(...a) {
     for (let i = 0; i < 3; i++) {
         let r;
@@ -283,7 +321,7 @@ async function playRound(...a) {
     throw new Error('siden ble lastet på nytt tre ganger - noe endrer filer i repoet under selvspillet');
 }
 
-async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, shotPlan = null) {
+async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, shotPlan = null, maxTid = null) {
     // Hold spillet i syne - løkkene pauser når spillvinduet er utenfor skjermen.
     await page.evaluate(() => document.querySelector('[data-mg-stage]')?.scrollIntoView({ block: 'center' }));
     await page.evaluate(
@@ -357,6 +395,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
         if (startMs === null && snap.fase === 'spiller') startMs = Date.now() - t0;
         if (!first && snap.fase === 'spiller' && typeof snap.tid === 'number') first = { real: Date.now(), tid: snap.tid };
         if (snap.fase === 'vunnet' || snap.fase === 'tapt') break;
+        if (maxTid !== null && first && snap.tid - first.tid >= maxTid) break;
         if (snap.framdrift > lastProgress.v + 1e-4 || (typeof snap.tid === 'number' && snap.tid > (lastProgress.tid ?? -1) + 0.5))
             lastProgress = { v: snap.framdrift, tid: snap.tid, at: Date.now() };
         else if (snap.fase === 'spiller' && Date.now() - lastProgress.at > 90000) break;
@@ -397,12 +436,14 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
             }
             // Plakaten til startkortet: et bilde midt i god spilling, uten tekstlaget
             // og uten HUD (lapper, poeng og knapper hører til spillet, ikke til plakaten).
-            if (shotPlan?.cover && !shotPlan.coverDone && startMs !== null && (Date.now() - t0 - startMs) / 1000 >= coverAt) {
+            // Bilder tas på spilltid når spillet har `tid`: med ?mgfart går en runde fortere enn
+            // ekte tid, og filmstripen skal dekke hele runden - ikke bare de første sekundene.
+            const tNow = first && typeof snap.tid === 'number' ? snap.tid - first.tid : (Date.now() - t0 - (startMs ?? 0)) / 1000;
+            if (shotPlan?.cover && !shotPlan.coverDone && startMs !== null && tNow >= coverAt) {
                 shotPlan.coverDone = true;
                 const style = await page.addStyleTag({ content: '[data-mg-stage] *:not(canvas):not(:has(canvas)){visibility:hidden!important}' });
                 await page.waitForTimeout(120);
-                const stage = await page.$('[data-mg-stage]');
-                const buf = await stage.screenshot();
+                const buf = await stageShot(page);
                 await style.evaluate((el) => el.remove());
                 const dir = path.join(root, 'public/images/microgames');
                 mkdirSync(dir, { recursive: true });
@@ -412,11 +453,9 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
             // Bilder underveis: passiv runde ved 2/7/12 s (liv-sjekken), vinnerroboten
             // som filmstripe (det den uavhengige vurderingen ser).
             if (shotsDir && shotPlan && startMs !== null) {
-                const t = (Date.now() - t0 - startMs) / 1000;
                 const due = shotPlan.times[shots.length];
-                if (due !== undefined && t >= due) {
-                    const stage = await page.$('[data-mg-stage]');
-                    const buf = await stage.screenshot();
+                if (due !== undefined && tNow >= due) {
+                    const buf = await stageShot(page);
                     writeFileSync(path.join(shotsDir, `${shotPlan.prefix}-${String(shots.length + 1).padStart(2, '0')}-${due}s.png`), buf);
                     shots.push(buf);
                 }
@@ -449,9 +488,46 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
     }
     if (done && shotsDir) {
         const stage = await page.$('[data-mg-stage]');
-        if (stage) writeFileSync(path.join(shotsDir, `${bot ?? 'passiv'}-slutt.png`), await stage.screenshot());
+        if (stage) writeFileSync(path.join(shotsDir, `${bot ?? 'passiv'}-slutt.png`), await stageShot(page));
     }
-    return { lessons, takt, arsak: snap?.årsak ?? null, feel: feelStats(feel), coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
+    const stoppet = !done && maxTid !== null && first && snap?.tid - first.tid >= maxTid;
+    return { lessons, takt, arsak: snap?.årsak ?? null, feel: feelStats(feel), coach: { beats: [...coach.beats], pins: [...coach.pins], longPins: [...coach.longPins], longBanners: [...coach.longBanners] }, tempo, tid: snap?.tid ?? null, bot: bot ?? 'passiv', variant, fase: done ? snap.fase : stoppet ? 'stoppet' : 'tidsavbrudd', poeng: snap?.poeng ?? 0, framdrift: snap?.framdrift ?? 0, secs, startMs, cover, botErr, shots };
+}
+
+/**
+ * SAMSVAR: vinnerrunden i nettleseren mot simuleringens bånd (sim.json). Bare et tap der
+ * simuleringen nesten aldri taper, er et funn - resten er tilfeldighet og rapporteres.
+ */
+function checkAgainstSim(rep, sim, r, lav) {
+    if (!r) return;
+    if (r.botErr) return; // meldt som funn allerede
+    const band = sim?.vinner?.bånd;
+    if (!band || sim.vinner.navn !== r.bot) {
+        if (r.fase === 'tapt') rep.notes.push(`«${r.bot}» tapte i nettleseren${r.arsak ? ` (${r.arsak})` : ''} - uten sim.json kan det ikke sammenlignes`);
+        return;
+    }
+    const s = Math.max(0, Math.min(band.length - 1, Math.floor(r.tid ?? 0)));
+    const b = band[s];
+    if (r.fase === 'tapt') {
+        const msg = `«${r.bot}» tapte i nettleseren etter ${Math.round(r.tid ?? 0)} spillsekunder${r.arsak ? ` (${r.arsak})` : ''}, men i simuleringen taper den så tidlig i bare ${(b.tapt * 100).toFixed(1)} % av rundene`;
+        // 1 %: taper nettleseren sjeldnere enn det i simuleringen, er sjansen for et falskt
+        // funn høyst 1 % når de to spiller samme spill. (3 % ga rødt for lonna 29.09, der
+        // vinneren taper 3 % av alle runder - nesten alle helt på slutten.)
+        if (b.tapt >= 0.01) rep.notes.push(`«${r.bot}» tapte i nettleseren${r.arsak ? ` (${r.arsak})` : ''} - skjer i ${(b.tapt * 100).toFixed(0)} % av de simulerte rundene, ikke et funn`);
+        else if (lav) rep.infra = `${msg} - men målingen er ugyldig (${lav.takt.toFixed(1)} grep per spillsekund). Senk --fart, ikke endre spillet`;
+        else rep.findings.push(`${msg}. Nettleseren spiller ikke samme spill som simuleringen: finn forskjellen i koden (tidssteg, input-vei, tilstand utenfor game.ts), ikke skru på reglene`);
+        return;
+    }
+    const st = sim.bots.find((x) => x.navn === r.bot);
+    if (r.fase === 'vunnet' && st) {
+        rep.notes.push(`samsvar: «${r.bot}» vant med ${r.poeng} poeng - simuleringen vinner ${Math.round(st.vinn * 100)} % med median ${st.median} (p10-p90 ${st.p10}-${st.p90})`);
+        return;
+    }
+    if (b.poeng) {
+        const [lo, hi] = b.poeng;
+        const inne = r.poeng >= lo * 0.8 && r.poeng <= hi * 1.2;
+        rep.notes.push(`samsvar: «${r.bot}» ${r.fase} med ${r.poeng} poeng ved ${Math.round(r.tid ?? 0)} s - simuleringen ${lo}-${hi} (p2-p98)${inne ? '' : ' ⚠️ utenfor båndet'}`);
+    } else rep.notes.push(`samsvar: «${r.bot}» ${r.fase} med ${r.poeng} poeng`);
 }
 
 // ---------------------------------------------------------------------------
@@ -521,7 +597,7 @@ async function playtestGame(browser, id) {
         rep.notes.push((await isFull()) ? 'spilt i fullskjerm' : 'IKKE i fullskjerm - nettleseren avviste det, spilt i spalten');
         await page.evaluate(() => document.querySelector('[data-mg-stage]')?.scrollIntoView({ block: 'center' }));
         await page.waitForTimeout(1500);
-        writeFileSync(path.join(dir, 'meny.png'), await (await page.$('[data-mg-stage]')).screenshot());
+        writeFileSync(path.join(dir, 'meny.png'), await stageShot(page));
 
         // RASKT I GANG: en synlig knapp i spillvinduet på startskjermen.
         const knapper = await page.$$eval('[data-mg-stage] button', (bs) =>
@@ -550,6 +626,20 @@ async function playtestGame(browser, id) {
         const badTilfeldig = info.bots.filter((b) => b.tilfeldig && b.forventer !== 'taper');
         for (const b of badTilfeldig) rep.findings.push(`«${b.navn}» er tilfeldig, men forventer ikke å tape`);
 
+        // ROBOTER: simuleringen og nettleseren skal ha samme roboter, ellers måler de to ulike ting.
+        const simFile = path.join(outDir, id, 'sim.json');
+        const sim = existsSync(simFile) ? JSON.parse(readFileSync(simFile, 'utf8')) : null;
+        if (!sim && !full) rep.notes.push('ingen sim.json - kjør `npx tsx scripts/sim-microgame.mts --ids ' + id + '` først, ellers sjekkes ikke samsvaret');
+        if (sim) {
+            const simBots = new Map(sim.bots.filter((b) => b.navn !== 'passiv').map((b) => [b.navn, b.forventer]));
+            for (const b of info.bots)
+                if (!simBots.has(b.navn)) rep.findings.push(`roboten «${b.navn}» finnes i spillet, men ikke i sim.ts`);
+                else if (simBots.get(b.navn) !== b.forventer)
+                    rep.findings.push(`«${b.navn}» forventer ${b.forventer} i spillet, men ${simBots.get(b.navn)} i sim.ts`);
+            for (const n of simBots.keys())
+                if (!info.bots.some((b) => b.navn === n)) rep.findings.push(`roboten «${n}» finnes i sim.ts, men ikke i spillet (usePlaytest)`);
+        }
+
         // FPS (bare rapport - headless-GPU er treg og sier lite om Chromebooken)
         const fps = await page.evaluate(
             () =>
@@ -567,7 +657,7 @@ async function playtestGame(browser, id) {
         rep.notes.push(`${fps} bilder/s headless (fart ×${fart})`);
 
         // 1) Passiv runde
-        const passiv = await playRound(page, id, null, null, info.maks, dir, { prefix: 'passiv', times: [2, 7, 12] });
+        const passiv = await playRound(page, id, null, null, info.maks, dir, { prefix: 'passiv', times: [2, 7, 12] }, full ? null : SMOKE_PASSIV_TID);
         rep.rounds.push(passiv);
         if (passiv.fase === 'vunnet') rep.findings.push('passiv spiller (ingen input) VANT - valgene betyr ingenting');
         if (passiv.startMs === null || passiv.startMs > 6000)
@@ -580,15 +670,17 @@ async function playtestGame(browser, id) {
         } else if (passiv.fase !== 'tidsavbrudd') rep.notes.push('passiv runde endte før liv-sjekken rakk to bilder');
 
         // 2) Robotene
+        const smokeBot = info.bots.find((b) => b.forventer === 'vinner');
         for (const b of info.bots) {
             if (onlyBots && !onlyBots.includes(b.navn)) continue;
-            const tries = b.forventer === 'vinner' ? 2 : 1;
+            if (!full && b !== smokeBot) continue;
+            const tries = b.forventer === 'vinner' && full ? 2 : 1;
             // 'middels' vurderes på poeng (ferdighetstak) under, ikke på vunnet/tapt.
             let won = false;
             const film = b.forventer === 'vinner' && !rep.rounds.some((r) => r.forventer === 'vinner');
             for (let t = 0; t < tries && !won; t++) {
                 const plan = film && t === 0 ? { prefix: 'film', times: [3, 10, 20, 35, 55, 80, 110, 150], cover: makeCover } : null;
-                const r = await playRound(page, id, b.navn, b.variant, info.maks, t === 0 ? dir : null, plan);
+                const r = await playRound(page, id, b.navn, b.variant, info.maks, t === 0 ? dir : null, plan, full ? null : maksTid);
                 r.forventer = b.forventer;
                 r.tilfeldig = b.tilfeldig;
                 rep.rounds.push(r);
@@ -600,6 +692,10 @@ async function playtestGame(browser, id) {
             const lav = mine.find((r) => r.takt !== null && r.takt < 4);
             if (lav)
                 rep.notes.push(`«${b.navn}» fikk bare ${lav.takt.toFixed(1)} grep per spillsekund (mål 5) - spillet går fortere per bilde enn roboten rekker å svare`);
+            if (!full && b.forventer === 'vinner') {
+                checkAgainstSim(rep, sim, mine[0], lav);
+                continue;
+            }
             if (b.forventer === 'vinner' && !won) {
                 const why = mine.map((r) => r.arsak).filter(Boolean);
                 const msg = `«${b.navn}» skal vinne, men vant ingen av ${tries} runder${why.length ? ` (tapte på: ${[...new Set(why)].join('; ')})` : ''}`;
@@ -666,18 +762,22 @@ async function playtestGame(browser, id) {
                 `Chromebook (CPU ×${CB_THROTTLE}${cb.tier ? `, nivå ${cb.tier}` : ''}): JS per bilde p50 ${cb.p50.toFixed(1)} ms / p95 ${cb.p95.toFixed(1)} ms` +
                     (draw.calls ? `, ${draw.calls} draw calls, ${Math.round(draw.triangles / 1000)}k trekanter` : '')
             );
+            // Spill fra før Chromebook-porten (26.09) får tallene som notat - de er allerede ute.
+            const cbFind = LEGACY.has(id) ? rep.notes : rep.findings;
             if (cb.frames > 10 && cb.p95 > CB_LIMITS.jsP95)
-                rep.findings.push(
+                cbFind.push(`${LEGACY.has(id) ? '(eldre spill, bare rapport) ' : ''}` +
                     `for tungt for Chromebook: ${cb.p95.toFixed(1)} ms JS per bilde (p95, CPU ×${CB_THROTTLE}) - maks ${CB_LIMITS.jsP95}. Se «Chromebook først» i guiden`
                 );
             if (draw.calls > CB_LIMITS.calls)
-                rep.findings.push(`${draw.calls} draw calls - maks ${CB_LIMITS.calls} for en Chromebook-GPU (slå sammen mesher, bruk InstancedMesh)`);
+                cbFind.push(`${draw.calls} draw calls - maks ${CB_LIMITS.calls} for en Chromebook-GPU (slå sammen mesher, bruk InstancedMesh)`);
             if (draw.triangles > CB_LIMITS.triangles)
-                rep.findings.push(`${Math.round(draw.triangles / 1000)}k trekanter - maks ${CB_LIMITS.triangles / 1000}k for en Chromebook-GPU`);
+                cbFind.push(`${Math.round(draw.triangles / 1000)}k trekanter - maks ${CB_LIMITS.triangles / 1000}k for en Chromebook-GPU`);
             // Tilbake til en ren runde-tilstand for resten av sjekkene.
             await page.evaluate((id) => window.__mgPlaytest[id].start(), id);
         }
 
+        // FERDIGHET, SPILLFØLELSE og trappen: i røyktesten er det simuleringens jobb.
+        if (full) {
         // FERDIGHET: beste vinnerrunde over alle taperrunder
         const vinn = rep.rounds.filter((r) => r.forventer === 'vinner' && r.fase === 'vunnet').map((r) => r.poeng);
         const tap = rep.rounds.filter((r) => r.forventer === 'taper' || r.bot === 'passiv').map((r) => r.poeng);
@@ -700,14 +800,39 @@ async function playtestGame(browser, id) {
             if (f.pressLast < f.pressFirst + FEEL.pressLift)
                 feelFind(`presset stiger ikke (${f.pressFirst.toFixed(2)} -> ${f.pressLast.toFixed(2)}, krever +${FEEL.pressLift}) - spillet må eskalere mot slutten`);
         }
-        const mid = rep.rounds.filter((r) => r.forventer === 'middels').map((r) => r.poeng);
-        if (mid.length) {
+        // Trappen sammenligner enkeltrunder, og i et spill med mye tilfeldighet er én runde et
+        // myntkast (28.09: ~20 % falske røde for inn-mot-stranda i simuleringen). Er den på
+        // kanten, spilles én runde til for middels og vinner, og snittet for middels teller.
+        // En trapp som virkelig er ødelagt, feiler begge gangene.
+        const ladder = () => {
+            const mid = rep.rounds.filter((r) => r.forventer === 'middels').map((r) => r.poeng);
+            if (!mid.length) return null;
             const bestV = Math.max(0, ...rep.rounds.filter((r) => r.forventer === 'vinner').map((r) => r.poeng));
             const bestT = Math.max(0, ...rep.rounds.filter((r) => r.forventer === 'taper' || r.bot === 'passiv').map((r) => r.poeng));
-            const m = Math.max(...mid);
-            rep.notes.push(`ferdighetstrapp: taper ${bestT} < middels ${m} < vinner ${bestV}`);
-            if (!(m > bestT && m < bestV * 0.95))
-                feelFind(`ferdighetstrappen holder ikke (taper ${bestT}, middels ${m}, vinner ${bestV}) - den halvgode skal havne mellom, og god spilling skal gi merkbart mer`);
+            const m = Math.round(mid.reduce((a, b) => a + b, 0) / mid.length);
+            return { bestV, bestT, m, n: mid.length, ok: m > bestT && m < bestV * 0.95 };
+        };
+        let L = ladder();
+        if (L && !L.ok) {
+            rep.notes.push(`ferdighetstrappen var på kanten (taper ${L.bestT}, middels ${L.m}, vinner ${L.bestV}) - én runde til for middels og vinner`);
+            for (const want of ['middels', 'vinner']) {
+                const b = info.bots.find((x) => x.forventer === want);
+                if (!b) continue;
+                const r = await playRound(page, id, b.navn, b.variant, info.maks, null, null);
+                r.forventer = b.forventer;
+                rep.rounds.push(r);
+            }
+            L = ladder();
+        }
+        if (L) {
+            rep.notes.push(`ferdighetstrapp: taper ${L.bestT} < middels ${L.m}${L.n > 1 ? ` (snitt av ${L.n})` : ''} < vinner ${L.bestV}`);
+            if (!L.ok)
+                feelFind(`ferdighetstrappen holder ikke (taper ${L.bestT}, middels ${L.m}, vinner ${L.bestV}) - den halvgode skal havne mellom, og god spilling skal gi merkbart mer`);
+        }
+        } else {
+            const f = rep.rounds.find((r) => r.forventer === 'vinner')?.feel;
+            rep.feel = f ?? null;
+            if (f?.valgPerMin != null) rep.notes.push(`spillfølelse i nettleseren: ${f.valgPerMin.toFixed(1)} valg per minutt (tallene som teller, står i simuleringen)`);
         }
 
         // TEKST DER BLIKKET ER (eier 2026-09-26: tekst under spillet blir ikke lest)
@@ -720,6 +845,7 @@ async function playtestGame(browser, id) {
         const ended = rep.rounds.filter((r) => r.fase === 'vunnet' || r.fase === 'tapt');
         if (ended.length && !ended.some((r) => r.lessons > 0))
             rep.findings.push('slutt-skjermen har ingen «Dette skjedde» (text.lesson + ArcadeLessons) - der skal fagstoffet stå');
+        if (!ended.length) rep.notes.push('ingen runde ble ferdig - slutt-skjermen ble ikke sjekket');
 
         // LESBART
         const worstRound = rep.rounds.reduce((a, r) => (r.cover.midWorst > a.cover.midWorst ? r : a));
@@ -776,7 +902,7 @@ await browser.close();
 stopServer();
 
 // Rapport
-const md = ['## Selvspill-port', ''];
+const md = [full ? '## Selvspill-port (full)' : '## Selvspill-port (røyktest i nettleser - balansen står under «Simulering»)', ''];
 for (const r of reports) {
     const ok = !r.findings.length && !r.infra;
     md.push(`### ${ok ? '✅' : r.infra ? '⚠️' : '❌'} \`${r.id}\``, '');

@@ -122,6 +122,13 @@
       "content": "På Utah gikk det bra. Av 23 000 soldater ble 197 drept eller såret. Omaha ble det verste stedet. Bombene som skulle knuse det tyske forsvaret, bommet. Bak stranden reiste det seg bratte klipper, og tyskerne hadde nettopp fått inn erfarne soldater der. Av 24 000 soldater på Omaha ble rundt 3000 drept eller såret (Hatlehol, 2025a)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "inn-mot-stranda"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/andre-verdenskrig/d-dagen-02.webp",
       "alt": "Soldater vasser i land fra landgangsbåt mot strand med hindringer",

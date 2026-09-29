@@ -23,7 +23,21 @@ import {
     statsAt,
     xpForLevel,
 } from '../data/eleven';
-import { ITEM_BY_ID, equipmentBonus } from '../data/items';
+import {
+    ITEM_BY_ID,
+    STABEL_MAKS,
+    TOM_UTSTYR,
+    equipmentBonus,
+    erOdelagt,
+    holdbarhetIgjen,
+    kanTasPa,
+    maksHoldbarhet,
+    normaliserHurtigbar,
+    normaliserSekk,
+    normaliserUtstyr,
+    reparasjonspris,
+    salgspris,
+} from '../data/items';
 import { START_EPOKE } from '../data/epoker';
 import { stedIEpoke, START_STED } from '../data/steder';
 import { sfx } from '../engine/audio';
@@ -36,6 +50,7 @@ import type {
     EpokeKapittel,
     EpokeSave,
     Forstaaelse,
+    Gjenstand,
     HubSpor,
     ItemSlot,
     Klokke,
@@ -82,8 +97,11 @@ export interface RpgState {
     xp: number;
     hp: number;
     solv: number;
-    sekk: string[];
-    utstyr: Record<ItemSlot, string | null>;
+    /** Sekken, rute for rute. `null` er en tom rute. */
+    sekk: (Gjenstand | null)[];
+    utstyr: Record<ItemSlot, Gjenstand | null>;
+    /** Hurtigbaren, tast 1-4: id-en til en forbruksvare, eller tom. */
+    hurtigbar: (string | null)[];
     quester: Record<string, 'aktiv' | 'ferdig'>;
     /** Hvor mange ganger eleven har bommet på hvert oppdrag. */
     questForsok: Record<string, number>;
@@ -128,12 +146,41 @@ export interface RpgState {
     settHp: (value: number) => void;
     giXp: (amount: number) => void;
     giSolv: (amount: number) => void;
-    leggISekk: (itemId: string) => void;
-    utrust: (itemId: string) => void;
-    taAv: (slot: ItemSlot) => void;
+    /**
+     * Legger noe i sekken. Forbruksvarer fyller opp stabler først. Er sekken
+     * full, blir det liggende - og da svarer den `false`, så den som kalte
+     * kan la det ligge på bakken.
+     */
+    leggISekk: (itemId: string, antall?: number, stille?: boolean) => boolean;
+    /** Tar på det som ligger i en rute. Det som satt på plassen, havner i ruta. */
+    utrust: (rute: number) => void;
+    /**
+     * Gir henne en gjenstand rett på kroppen. Det som satt der, går i sekken -
+     * eller på bakken, er sekken full. Brukes når noen i verden rekker henne noe.
+     */
+    giOgTaPa: (itemId: string) => void;
+    /** Tar av en del. Til en bestemt rute, eller til første ledige. */
+    taAv: (slot: ItemSlot, tilRute?: number) => void;
+    /** Flytter mellom to ruter. Bytter plass, eller slår sammen like stabler. */
+    flyttISekk: (fra: number, til: number) => void;
+    /** Høyreklikk i WoW: bruk en forbruksvare, eller ta på en del. */
+    brukRute: (rute: number) => void;
+    /** Bruker én av en forbruksvare, uansett hvilken rute den ligger i. */
+    brukVare: (itemId: string) => boolean;
+    /** Kaster det som ligger i en rute. Borte for godt. */
+    kast: (rute: number) => void;
+    /** Selger alt i en rute til kremmeren. */
+    selg: (rute: number) => void;
+    /** Kjøper tilbake? Nei - reparerer alt hun har på seg og i sekken. */
+    reparerAlt: () => boolean;
+    /** Sliter på en del hun har på seg. Et poeng om gangen. */
+    slit: (slot: ItemSlot, poeng?: number) => void;
+    /** Døden koster: alt hun har på seg mister en tidel. */
+    dodsslitasje: () => void;
+    settHurtig: (plass: number, itemId: string | null) => void;
     startQuest: (questId: string) => void;
     fullforQuest: (quest: QuestDef, riktig: boolean) => void;
-    kjop: (itemId: string) => boolean;
+    kjop: (itemId: string, antall?: number) => boolean;
     markerLest: (landmarkId: string) => void;
     felleBoss: (bossId: string) => void;
     /** Et kapittelsteg er gjort. Trygg å kalle to ganger. */
@@ -191,8 +238,6 @@ export interface RpgState {
     fjernVarsel: (id: number) => void;
     hvil: () => void;
 }
-
-const TOM_UTSTYR: Record<ItemSlot, string | null> = { vapen: null, rustning: null, amulett: null };
 
 /** Våpenet en elev uten utrustet våpen slår med - hendene hennes, i praksis. */
 const START_VAAPEN = 'ovingssverd';
@@ -294,8 +339,11 @@ const tomtKapittel = (character: CharacterDraft | null): EpokeKapittel => {
         hp: statsAt(1).hp,
         xp: 0,
         solv: 0,
-        sekk: character ? [STARTVAAPEN] : [],
-        utstyr: character ? { ...TOM_UTSTYR, vapen: STARTVAAPEN } : { ...TOM_UTSTYR },
+        sekk: normaliserSekk([]),
+        utstyr: character
+            ? { ...TOM_UTSTYR, vapen: { id: STARTVAAPEN }, skjold: { id: 'treningsskjold' } }
+            : { ...TOM_UTSTYR },
+        hurtigbar: normaliserHurtigbar([]),
         // Femti er «en av oss»: hun er verken utstøtt eller kjent. Den som
         // arver noe, får det gjennom `startAere` ved kapittelskiftet.
         aere: 50,
@@ -329,8 +377,30 @@ const heleEpoken = (
     kapittel: lagret?.kapittel ?? 1,
     sisteSted: lagret?.sisteSted ?? stedIEpoke(epokeId, lagret?.kapittel ?? 1) ?? START_STED,
     kampanje: { ...tomKampanje(), ...lagret?.kampanje },
-    kapittelState: { ...tomtKapittel(character), ...lagret?.kapittelState },
+    kapittelState: kapittelMedSekk(character, lagret?.kapittelState),
 });
+
+/**
+ * Kapitteltilstanden med sekken og utstyret i dagens form.
+ *
+ * Sekken var en liste med id-er før utstyrssystemet, og slik står den på
+ * disken hos alle som har spilt. Den gjøres om her, i samme funksjon som fyller
+ * alle andre hull, så ingen annen kode trenger å vite at den gamle formen fantes.
+ */
+const kapittelMedSekk = (
+    character: CharacterDraft | null,
+    lagret: Partial<EpokeKapittel> | undefined
+): EpokeKapittel => {
+    const tomt = tomtKapittel(character);
+    if (!lagret) return tomt;
+    return {
+        ...tomt,
+        ...lagret,
+        sekk: normaliserSekk(lagret.sekk),
+        utstyr: lagret.utstyr ? normaliserUtstyr(lagret.utstyr) : tomt.utstyr,
+        hurtigbar: normaliserHurtigbar(lagret.hurtigbar),
+    };
+};
 
 /** Den aktive epoken, plukket ut av den flate kjøretidstilstanden. */
 const aktivEpoke = (s: RpgState): EpokeSave => ({
@@ -360,6 +430,7 @@ const aktivEpoke = (s: RpgState): EpokeSave => ({
         solv: s.solv,
         sekk: s.sekk,
         utstyr: s.utstyr,
+        hurtigbar: s.hurtigbar,
         aere: s.aere,
         forrad: s.forrad,
     },
@@ -430,8 +501,24 @@ export function maksVerdier(state: Pick<RpgState, 'character' | 'xp' | 'utstyr'>
 export function utrustetVaapen(
     state: Pick<RpgState, 'utstyr'> = useRpgStore.getState()
 ): VaapenDef {
-    const vapen = ITEM_BY_ID[state.utstyr.vapen ?? START_VAAPEN]?.weapon;
-    return vapen ?? (ITEM_BY_ID[START_VAAPEN].weapon as VaapenDef);
+    const g = state.utstyr.vapen;
+    const vapen = ITEM_BY_ID[g?.id ?? START_VAAPEN]?.weapon;
+    const ut = vapen ?? (ITEM_BY_ID[START_VAAPEN].weapon as VaapenDef);
+    // Et ødelagt våpen slår fortsatt, men halvparten så hardt. Å miste våpenet
+    // helt midt i feltet ville vært en straff eleven ikke kan komme seg ut av.
+    return erOdelagt(g) ? { ...ut, skade: Math.max(1, Math.round(ut.skade / 2)) } : ut;
+}
+
+/** Forbruksvarer kan ikke brukes tettere enn dette. Ellers er maten en rustning. */
+const BRUK_PAUSE_MS = 1200;
+let brukIgjen = 0;
+
+/** Hva det koster å reparere alt hun har på seg og i sekken. */
+export function reparasjonsprisAlt(state: Pick<RpgState, 'utstyr' | 'sekk'>): number {
+    let sum = 0;
+    for (const g of Object.values(state.utstyr)) if (g) sum += reparasjonspris(g);
+    for (const g of state.sekk) if (g) sum += reparasjonspris(g);
+    return sum;
 }
 
 export const useRpgStore = create<RpgState>()(
@@ -538,34 +625,240 @@ export const useRpgStore = create<RpgState>()(
 
             giSolv: (amount) => set({ solv: get().solv + amount }),
 
-            leggISekk: (itemId) => {
-                if (!ITEM_BY_ID[itemId]) return;
-                const state = get();
-                set({ sekk: [...state.sekk, itemId] });
-                get().varsle(`Du fant ${ITEM_BY_ID[itemId].name}.`, 'bra');
+            leggISekk: (itemId, antall = 1, stille = false) => {
+                const item = ITEM_BY_ID[itemId];
+                if (!item) return false;
+                const sekk = get().sekk.slice();
+                let igjen = antall;
+                // Forbruksvarer fyller stablene som finnes før de tar en ny rute.
+                if (item.forbruk) {
+                    for (let i = 0; i < sekk.length && igjen > 0; i++) {
+                        const g = sekk[i];
+                        if (g?.id !== itemId) continue;
+                        const plass = STABEL_MAKS - (g.antall ?? 1);
+                        const n = Math.min(plass, igjen);
+                        if (n <= 0) continue;
+                        sekk[i] = { ...g, antall: (g.antall ?? 1) + n };
+                        igjen -= n;
+                    }
+                }
+                while (igjen > 0) {
+                    const ledig = sekk.indexOf(null);
+                    if (ledig < 0) break;
+                    const n = item.forbruk ? Math.min(STABEL_MAKS, igjen) : 1;
+                    sekk[ledig] = n > 1 ? { id: itemId, antall: n } : { id: itemId };
+                    igjen -= n;
+                }
+                if (igjen === antall) {
+                    get().varsle('Sekken er full.', 'darlig');
+                    return false;
+                }
+                const hurtigbar = get().hurtigbar.slice();
+                // En ny slags mat legger seg selv på hurtigbaren, som i WoW når
+                // man plukker opp noe for første gang. Ellers finner eleven
+                // aldri ut at tastene 1-4 finnes.
+                if (item.forbruk && !hurtigbar.includes(itemId)) {
+                    const tom = hurtigbar.indexOf(null);
+                    if (tom >= 0) hurtigbar[tom] = itemId;
+                }
+                set({ sekk, hurtigbar });
+                if (stille) return true;
+                get().varsle(
+                    antall > 1 ? `Du fikk ${antall} ${item.name}.` : `Du fant ${item.name}.`,
+                    'bra'
+                );
+                return true;
             },
 
-            utrust: (itemId) => {
-                const item = ITEM_BY_ID[itemId];
-                if (!item) return;
+            utrust: (rute) => {
                 const state = get();
-                if (!state.sekk.includes(itemId)) return;
-                const forrige = state.utstyr[item.slot];
-                const sekk = state.sekk.filter((id) => id !== itemId);
-                if (forrige) sekk.push(forrige);
-                set({ sekk, utstyr: { ...state.utstyr, [item.slot]: itemId } });
+                const g = state.sekk[rute];
+                const item = g ? ITEM_BY_ID[g.id] : undefined;
+                if (!g || !kanTasPa(item)) return;
+                const sekk = state.sekk.slice();
+                // Det som satt på, havner der det nye lå. Da står sammenligningen
+                // igjen i samme rute, og et angret bytte er ett klikk til.
+                sekk[rute] = state.utstyr[item.slot];
+                set({ sekk, utstyr: { ...state.utstyr, [item.slot]: g } });
+                sfx.plukk();
                 // Utstyr kan øke maks-liv; fyll ikke opp, men klipp aldri under 1.
                 const maks = maksVerdier(get());
                 set({ hp: Math.max(1, Math.min(get().hp, maks.hp)) });
             },
 
-            taAv: (slot) => {
+            giOgTaPa: (itemId) => {
+                const item = ITEM_BY_ID[itemId];
+                if (!kanTasPa(item)) return;
                 const state = get();
-                const id = state.utstyr[slot];
-                if (!id) return;
-                set({ sekk: [...state.sekk, id], utstyr: { ...state.utstyr, [slot]: null } });
+                const forrige = state.utstyr[item.slot];
+                set({ utstyr: { ...state.utstyr, [item.slot]: { id: itemId } } });
+                if (forrige) {
+                    const sekk = get().sekk.slice();
+                    const ledig = sekk.indexOf(null);
+                    if (ledig >= 0) {
+                        sekk[ledig] = forrige;
+                        set({ sekk });
+                    }
+                }
                 const maks = maksVerdier(get());
                 set({ hp: Math.max(1, Math.min(get().hp, maks.hp)) });
+            },
+
+            taAv: (slot, tilRute) => {
+                const state = get();
+                const g = state.utstyr[slot];
+                if (!g) return;
+                const sekk = state.sekk.slice();
+                const rute =
+                    tilRute !== undefined && sekk[tilRute] === null ? tilRute : sekk.indexOf(null);
+                if (rute < 0) {
+                    get().varsle('Sekken er full.', 'darlig');
+                    return;
+                }
+                sekk[rute] = g;
+                set({ sekk, utstyr: { ...state.utstyr, [slot]: null } });
+                const maks = maksVerdier(get());
+                set({ hp: Math.max(1, Math.min(get().hp, maks.hp)) });
+            },
+
+            flyttISekk: (fra, til) => {
+                if (fra === til) return;
+                const sekk = get().sekk.slice();
+                const a = sekk[fra];
+                const b = sekk[til];
+                if (!a || til < 0 || til >= sekk.length) return;
+                // Like forbruksvarer slås sammen så langt stabelen rekker.
+                if (b && b.id === a.id && ITEM_BY_ID[a.id]?.forbruk) {
+                    const sum = (a.antall ?? 1) + (b.antall ?? 1);
+                    const inn = Math.min(STABEL_MAKS, sum);
+                    sekk[til] = { ...b, antall: inn };
+                    const rest = sum - inn;
+                    sekk[fra] = rest > 0 ? { ...a, antall: rest } : null;
+                } else {
+                    sekk[til] = a;
+                    sekk[fra] = b;
+                }
+                set({ sekk });
+            },
+
+            brukRute: (rute) => {
+                const g = get().sekk[rute];
+                const item = g ? ITEM_BY_ID[g.id] : undefined;
+                if (!g || !item) return;
+                if (item.forbruk) get().brukVare(item.id);
+                else if (kanTasPa(item)) get().utrust(rute);
+            },
+
+            brukVare: (itemId) => {
+                const item = ITEM_BY_ID[itemId];
+                const state = get();
+                if (!item?.forbruk) return false;
+                const rute = state.sekk.findIndex((g) => g?.id === itemId);
+                if (rute < 0) {
+                    get().varsle(`Du har ikke mer ${item.name}.`, 'darlig');
+                    return false;
+                }
+                const na = Date.now();
+                if (na < brukIgjen) return false;
+                const maks = maksVerdier(state).hp;
+                if (item.forbruk.hp && state.hp >= maks) {
+                    get().varsle('Du er allerede frisk.', 'info');
+                    return false;
+                }
+                brukIgjen = na + BRUK_PAUSE_MS;
+                const sekk = state.sekk.slice();
+                const g = sekk[rute]!;
+                sekk[rute] = (g.antall ?? 1) > 1 ? { ...g, antall: (g.antall ?? 1) - 1 } : null;
+                set({ sekk, hp: Math.min(maks, state.hp + (item.forbruk.hp ?? 0)) });
+                sfx.plukk();
+                return true;
+            },
+
+            kast: (rute) => {
+                const sekk = get().sekk.slice();
+                if (!sekk[rute]) return;
+                sekk[rute] = null;
+                set({ sekk });
+            },
+
+            selg: (rute) => {
+                const state = get();
+                const g = state.sekk[rute];
+                const item = g ? ITEM_BY_ID[g.id] : undefined;
+                if (!g || !item) return;
+                const sum = salgspris(item) * (g.antall ?? 1);
+                const sekk = state.sekk.slice();
+                sekk[rute] = null;
+                set({ sekk, solv: state.solv + sum });
+                sfx.solv();
+            },
+
+            reparerAlt: () => {
+                const state = get();
+                const pris = reparasjonsprisAlt(state);
+                if (pris === 0 || state.solv < pris) return false;
+                const hel = (g: Gjenstand | null): Gjenstand | null => {
+                    if (!g || g.holdbarhet === undefined) return g;
+                    const kopi = { ...g };
+                    delete kopi.holdbarhet;
+                    return kopi;
+                };
+                const utstyr = { ...state.utstyr };
+                for (const slot of Object.keys(utstyr) as ItemSlot[])
+                    utstyr[slot] = hel(utstyr[slot]);
+                set({ solv: state.solv - pris, utstyr, sekk: state.sekk.map(hel) });
+                sfx.solv();
+                get().varsle(`Alt er reparert. Det kostet ${pris} sølv.`, 'bra');
+                return true;
+            },
+
+            slit: (slot, poeng = 1) => {
+                const state = get();
+                const g = state.utstyr[slot];
+                if (!g) return;
+                const igjen = holdbarhetIgjen(g);
+                if (igjen === null || igjen === 0) return;
+                const ny = Math.max(0, igjen - poeng);
+                set({ utstyr: { ...state.utstyr, [slot]: { ...g, holdbarhet: ny } } });
+                const item = ITEM_BY_ID[g.id];
+                const maks = maksHoldbarhet(item) ?? 1;
+                // To varsler og ikke flere: når delen er nesten borte, og når
+                // den er det. Et varsel per poeng er støy.
+                if (ny === 0) {
+                    get().varsle(
+                        `${item.name} er ødelagt. Få den reparert hos en kremmer.`,
+                        'darlig'
+                    );
+                    const maksHp = maksVerdier(get()).hp;
+                    if (get().hp > maksHp) set({ hp: maksHp });
+                } else if (igjen > maks * 0.2 && ny <= maks * 0.2) {
+                    get().varsle(`${item.name} er nesten utslitt.`, 'info');
+                }
+            },
+
+            dodsslitasje: () => {
+                const state = get();
+                const utstyr = { ...state.utstyr };
+                for (const slot of Object.keys(utstyr) as ItemSlot[]) {
+                    const g = utstyr[slot];
+                    if (!g) continue;
+                    const maks = maksHoldbarhet(ITEM_BY_ID[g.id]);
+                    const igjen = holdbarhetIgjen(g);
+                    if (maks === null || igjen === null) continue;
+                    utstyr[slot] = { ...g, holdbarhet: Math.max(0, igjen - Math.ceil(maks / 10)) };
+                }
+                set({ utstyr });
+            },
+
+            settHurtig: (plass, itemId) => {
+                const hurtigbar = get().hurtigbar.slice();
+                if (plass < 0 || plass >= hurtigbar.length) return;
+                if (itemId && !ITEM_BY_ID[itemId]?.forbruk) return;
+                // Samme vare på to taster er én tast for mye.
+                for (let i = 0; i < hurtigbar.length; i++)
+                    if (hurtigbar[i] === itemId) hurtigbar[i] = null;
+                hurtigbar[plass] = itemId;
+                set({ hurtigbar });
             },
 
             startQuest: (questId) => {
@@ -637,14 +930,16 @@ export const useRpgStore = create<RpgState>()(
              * billigste måten å gjøre æren merkbar på lenge før noen slår seg:
              * eleven ser tallet endre seg i boden uten at spillet forklarer det.
              */
-            kjop: (itemId) => {
+            kjop: (itemId, antall = 1) => {
                 const item = ITEM_BY_ID[itemId];
                 const state = get();
                 if (!item?.pris) return false;
-                const pris = prisFor(item.pris, state.aere);
+                const pris = prisFor(item.pris, state.aere) * antall;
                 if (state.solv < pris) return false;
-                set({ solv: state.solv - pris, sekk: [...state.sekk, itemId] });
-                get().varsle(`Kjøpt: ${item.name}.`, 'bra');
+                // Sekken først: sølvet trekkes bare hvis varen fikk plass.
+                if (!get().leggISekk(itemId, antall, true)) return false;
+                set({ solv: get().solv - pris });
+                sfx.solv();
                 return true;
             },
 
@@ -1025,8 +1320,9 @@ export const useRpgStore = create<RpgState>()(
                                 // en linje som sier hvorfor. Et tap som leser
                                 // som en utbetaling.
                                 solv: (s.solv ?? 0) + stavsolv,
-                                sekk: s.sekk ?? [],
-                                utstyr: { ...TOM_UTSTYR, ...s.utstyr },
+                                sekk: normaliserSekk(s.sekk),
+                                utstyr: normaliserUtstyr(s.utstyr),
+                                hurtigbar: normaliserHurtigbar([]),
                                 // Ingen elev har spilt et kapittel med ære
                                 // ennå. Alle kommer inn som «en av oss».
                                 aere: tomt.aere,
