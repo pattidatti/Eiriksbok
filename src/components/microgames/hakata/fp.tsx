@@ -102,13 +102,6 @@ export function FirstPerson({ gRef }: { gRef: GRef }) {
     const lastSwing = useRef(-9);
     const swingClock = useRef(9);
     const shieldK = useRef(0);
-    const flagGeo = useMemo(() => {
-        const g = new THREE.PlaneGeometry(0.34, 0.5, 6, 4);
-        g.translate(0.17, -0.25, 0);
-        return g;
-    }, []);
-    const flagTex = useMemo(() => flagTexture(), []);
-    const flagBase = useMemo(() => Float32Array.from(flagGeo.attributes.position.array), [flagGeo]);
     useFrame((state, rawDt) => {
         const dt = Math.min(0.05, rawDt);
         const g = gRef.current;
@@ -118,8 +111,6 @@ export function FirstPerson({ gRef }: { gRef: GRef }) {
         r.position.copy(cam.position);
         r.quaternion.copy(cam.quaternion);
         const t = state.clock.elapsedTime;
-        const w = Math.min(1.2, wind(g) + (g.storm >= 0 ? 0.4 : 0));
-        flapFlag(flagGeo, flagBase, t, w);
 
         if (g.swingAt !== lastSwing.current) {
             lastSwing.current = g.swingAt;
@@ -177,15 +168,41 @@ export function FirstPerson({ gRef }: { gRef: GRef }) {
                 <mesh geometry={TATE} material={toonVC()} />
                 <mesh geometry={TATE_INK} material={inkMaterial(0.015)} />
             </group>
-            {/* Ryggfanen oppe til venstre: vinden */}
-            <group position={[-0.82, 0.55, -1.1]} rotation={[0.05, 0.25, 0.02]} scale={0.5}>
-                <mesh geometry={POLE} position={[0, -0.55, 0]}>
-                    <meshBasicMaterial color={PAL.ink} />
-                </mesh>
-                <mesh geometry={flagGeo} position={[0.02, 0.22, 0]}>
-                    <meshBasicMaterial map={flagTex} side={THREE.DoubleSide} />
-                </mesh>
-            </group>
         </group>
+    );
+}
+
+const BANNER_X = [-10.5, -7, -3.5, 0, 3.5, 7, 10.5];
+
+/**
+ * Fanene (nobori) som samuraiene har plantet på stranda under muren. De er vindvarselet:
+ * slakke i stille vær, står rett ut og blafrer fort når tyfonen nærmer seg.
+ */
+export function Banners({ gRef }: { gRef: GRef }) {
+    const flagGeo = useMemo(() => {
+        const g = new THREE.PlaneGeometry(0.34, 0.5, 6, 4);
+        g.translate(0.17, -0.25, 0);
+        return g;
+    }, []);
+    const flagTex = useMemo(() => flagTexture(), []);
+    const flagBase = useMemo(() => Float32Array.from(flagGeo.attributes.position.array), [flagGeo]);
+    useFrame((state) => {
+        const g = gRef.current;
+        const w = Math.min(1.2, wind(g) + (g.storm >= 0 ? 0.4 : 0));
+        flapFlag(flagGeo, flagBase, state.clock.elapsedTime, w);
+    });
+    return (
+        <>
+            {BANNER_X.map((x) => (
+                <group key={x} position={[x + 0.6, -1.35, -2.3]} scale={2.4}>
+                    <mesh geometry={POLE} position={[0, 0.8, 0]}>
+                        <meshBasicMaterial color={PAL.ink} />
+                    </mesh>
+                    <mesh geometry={flagGeo} position={[0.02, 1.55, 0]}>
+                        <meshBasicMaterial map={flagTex} side={THREE.DoubleSide} />
+                    </mesh>
+                </group>
+            ))}
+        </>
     );
 }

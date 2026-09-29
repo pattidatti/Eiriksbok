@@ -422,10 +422,11 @@ export function Men({ gRef }: { gRef: GRef }) {
                     put(V.x, V.y, V.z + lunge, -0.15 - lunge * 0.9, 0, Math.sin(t * 6) * 0.05);
                     return;
                 }
-                ladderPoint(l, p * LADDER_LEN * 0.92, 0.3, t, V);
+                // Føttene på trinnet, kroppen langs stigen på oversiden (der man klatrer).
+                ladderPoint(l, p * LADDER_LEN * 0.9, 0.24, t, V);
                 // Rødt omriss: han er så nær at han hopper over hvis mannen foran ham hugges.
                 const danger = k >= 1 && l.top < 0 && p >= BEHIND_JUMP - 0.04 && l.state !== 'faller';
-                put(V.x + Math.sin(t * 9 + k) * 0.03, V.y - 0.9, V.z, a * 0.8, 0, 0, 1, danger);
+                put(V.x + Math.sin(t * 9 + k) * 0.03, V.y, V.z, a - 0.1, 0, 0, 1, danger);
             });
         }
         // De som svømmer tilbake til båtene: bare hjelm og hode over vannet.
@@ -444,7 +445,7 @@ export function Men({ gRef }: { gRef: GRef }) {
         // Flokken bak kjempen under tvekampen.
         const d = g.duel;
         if (d && d.phase === 'kamp') {
-            const x0 = SEC_X[d.sec];
+            const x0 = d.x;
             const k = Math.min(1, (2.4 - d.flockT) / 2.4 + d.t * 0.2);
             for (let i = 0; i < 9; i++) {
                 const ang = (i / 8 - 0.5) * 2.4;
@@ -504,7 +505,7 @@ export function Champion({ gRef }: { gRef: GRef }) {
         if (!d) return;
         const t = state.clock.elapsedTime;
         const fight = d.phase === 'kamp';
-        b.position.set(SEC_X[d.sec], BEACH_Y, fight ? CHAMP_Z : CHAMP_Z - 0.4);
+        b.position.set(d.x, BEACH_Y, fight ? CHAMP_Z : CHAMP_Z - 0.4);
         b.rotation.y = Math.sin(t * 1.3) * 0.06;
         b.scale.setScalar(fight ? 1.15 : 1.05);
         if (arm.current) {
@@ -604,7 +605,7 @@ export function Arrows({ gRef }: { gRef: GRef }) {
                 const ox = ((i * 37) % 13) / 13 - 0.5;
                 const oz = ((i * 17) % 7) / 7 - 0.5;
                 const drift = v.drift ? f * f * 9 : 0;
-                const x = SEC_X[v.sec] + ox * 5 + drift;
+                const x = v.x + ox * 5 + drift;
                 const z = -30 + 32 * f + oz * 2;
                 const y = 1 + Math.sin(f * Math.PI) * 9 + f * 2.8;
                 tmpObj.position.set(x, y, z);
@@ -634,7 +635,7 @@ export function Archers({ gRef }: { gRef: GRef }) {
         if (!o) return;
         o.visible = !!v && 1 - v.t / v.max < 0.55;
         if (!v) return;
-        o.position.set(SEC_X[v.sec], WATER_Y + 2.2, -13);
+        o.position.set(v.x, WATER_Y + 2.2, -13);
         const k = 1 - v.t / v.max;
         o.scale.setScalar(1.4 - k);
         if (mat.current) mat.current.opacity = 0.6 + Math.sin(state.clock.elapsedTime * 18) * 0.4;

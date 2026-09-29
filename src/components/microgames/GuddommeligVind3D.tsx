@@ -26,7 +26,8 @@ import {
     update,
     stepFx,
     swipe,
-    move,
+    setWalk,
+    inReach,
     setShield,
     challenge,
     retreat,
@@ -37,8 +38,9 @@ import {
     finalScore,
     slotX,
     comboMult,
-    SEC_X,
     SECTIONS,
+    WALK_MIN,
+    WALK_MAX,
     LAND_MAX,
     HP_MAX,
     RUN_SECONDS,
@@ -79,7 +81,7 @@ import {
     Rain,
     FxView,
 } from './hakata/world';
-import { FirstPerson } from './hakata/fp';
+import { FirstPerson, Banners } from './hakata/fp';
 import { paperGrainUrl } from './hakata/look';
 
 // GUDDOMMELIG VIND - Hakata-bukta, sommeren 1281.
@@ -304,7 +306,8 @@ function Loop({
 }) {
     const acc = useRef(0);
     const v = useRef(new THREE.Vector3());
-    const camX = useRef(SEC_X[1]);
+    const camX = useRef(0);
+    const bobT = useRef(0);
     const duelK = useRef(0);
     const stormK = useRef(0);
     useFrame((state, rawDt) => {
@@ -315,14 +318,17 @@ function Loop({
         const t = state.clock.elapsedTime;
 
         // Kameraet glir mellom murdelene; i tvekampen hopper det ned på stranda.
-        const targetX = SEC_X[g.moveT > 0 ? g.moveTo : g.sec];
-        camX.current += (targetX - camX.current) * (1 - Math.exp(-dt * 11));
+        const prevX = camX.current;
+        camX.current += (g.px - camX.current) * (1 - Math.exp(-dt * 18));
+        // Gangen gir et lite duv i kameraet.
+        const walking = Math.min(1, Math.abs(camX.current - prevX) / Math.max(0.001, dt) / 4);
+        bobT.current += dt * walking * 11;
         const duelOn = inDuel(g) && g.duel!.phase === 'kamp' ? 1 : 0;
         duelK.current += (duelOn - duelK.current) * (1 - Math.exp(-dt * 7));
         stormK.current += ((g.storm >= 0 ? 1 : 0) - stormK.current) * (1 - Math.exp(-dt * 1.2));
         camPos(camX.current, CAM);
         camLook(camX.current, LOOK);
-        const dx = g.duel ? SEC_X[g.duel.sec] : camX.current;
+        const dx = g.duel ? g.duel.x : camX.current;
         DUEL_POS.set(dx + DUEL_EYE[0], DUEL_EYE[1], DUEL_EYE[2]);
         CAM.lerp(DUEL_POS, duelK.current);
         LOOK.lerp(duelLook(dx, TMP), duelK.current);
@@ -332,7 +338,7 @@ function Loop({
         LOOK.y += stormK.current * 1.5;
         // Pust og svai i øyehøyde; mer når vinden tar i.
         const w = wind(g);
-        CAM.y += Math.sin(t * 1.6) * 0.03;
+        CAM.y += Math.sin(t * 1.6) * 0.03 + Math.abs(Math.sin(bobT.current)) * 0.06;
         CAM.x += Math.sin(t * 0.7) * 0.02 + Math.sin(t * 5.3) * w * 0.02;
         const sh = g.shake + (g.storm >= 0 ? 0.25 : 0);
         if (sh > 0) {
@@ -443,8 +449,8 @@ const CSS = `
 .gv-hp-lab{font-size:10px;font-weight:900;letter-spacing:.18em;color:#fbf5e6;text-shadow:0 1px 0 ${INK},0 0 3px ${INK};margin-bottom:3px}
 .gv-map{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);display:flex;gap:6px;pointer-events:none}
 .gv-sec{width:54px;height:20px;border:3px solid ${INK};background:#b3a894;position:relative;transition:background .15s}
-.gv-sec.me{background:#f3ead3}
-.gv-sec.me::after{content:'';position:absolute;left:50%;top:-12px;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:${INK}}
+.gv-me{position:absolute;top:-13px;width:0;height:0;transform:translateX(-50%);border:7px solid transparent;border-bottom-color:${INK};transition:left .1s linear;z-index:2}
+.gv-sec{background:#f3ead3 !important}
 .gv-sec .gv-dan{position:absolute;inset:3px;background:${PAL.red};opacity:0;transition:opacity .15s}
 .gv-edge{position:absolute;top:60%;transform:translateY(-50%);width:54px;height:110px;border:3px solid ${INK};background:rgba(243,234,211,.82);font-size:30px;font-weight:900;color:${INK};display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;touch-action:none}
 .gv-edge.hot{background:${PAL.red};color:#fbf5e6;animation:gvPulse .45s infinite alternate}
@@ -489,7 +495,7 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
         wind: useRef<HTMLDivElement>(null),
         pips: useRef<(HTMLDivElement | null)[]>([]),
         hp: useRef<HTMLDivElement>(null),
-        secs: useRef<(HTMLDivElement | null)[]>([]),
+        me: useRef<HTMLDivElement>(null),
         dan: useRef<(HTMLDivElement | null)[]>([]),
         left: useRef<HTMLDivElement>(null),
         right: useRef<HTMLDivElement>(null),
@@ -627,17 +633,25 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
                 dan[l.sec] = Math.max(dan[l.sec], l.top >= 0 ? 1 : l.men[0]);
             }
             for (let s = 0; s < SECTIONS; s++) {
-                hud.secs.current[s]?.classList.toggle('me', s === g.moveTo);
                 const d = hud.dan.current[s];
                 if (d) d.style.opacity = String(dan[s] > 0.45 ? 0.35 + dan[s] * 0.65 : 0);
             }
-            const hotL = dan.slice(0, g.moveTo).some((x) => x > 0.6);
-            const hotR = dan.slice(g.moveTo + 1).some((x) => x > 0.6);
+            if (hud.me.current)
+                hud.me.current.style.left = `${((g.px - WALK_MIN) / (WALK_MAX - WALK_MIN)) * 100}%`;
+            // Kantpilene lyser når det brenner på en stige utenfor rekkevidde på den siden.
+            let hotL = false;
+            let hotR = false;
+            for (const l of g.ladders) {
+                if (l.state === 'faller' || !l.men.length || (l.top < 0 && l.men[0] < 0.6)) continue;
+                const x = slotX(l.sec, l.slot);
+                if (inReach(g, x)) continue;
+                if (x < g.px) hotL = true;
+                else hotR = true;
+            }
             hud.left.current?.classList.toggle('hot', hotL);
             hud.right.current?.classList.toggle('hot', hotR);
-            if (hud.left.current) hud.left.current.style.visibility = g.moveTo > 0 && !inDuel(g) ? 'visible' : 'hidden';
-            if (hud.right.current)
-                hud.right.current.style.visibility = g.moveTo < SECTIONS - 1 && !inDuel(g) ? 'visible' : 'hidden';
+            if (hud.left.current) hud.left.current.style.visibility = !inDuel(g) ? 'visible' : 'hidden';
+            if (hud.right.current) hud.right.current.style.visibility = !inDuel(g) ? 'visible' : 'hidden';
             if (hud.flash.current) hud.flash.current.style.opacity = String(Math.min(1, g.flash * 2.5));
             hud.shieldBtn.current?.classList.toggle('on', g.shield);
         };
@@ -663,16 +677,16 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
         };
         const out: Target[] = [];
         if (g.duel) {
-            TMP_A.set(SEC_X[g.duel.sec], BEACH_Y + 1.4, CHAMP_Z);
+            TMP_A.set(g.duel.x, BEACH_Y + 1.4, CHAMP_Z);
             if (near(TMP_A)) out.push({ kind: 'kjempe' });
             if (inDuel(g)) return out;
         }
         for (const bmb of g.bombs) {
-            if (bmb.sec !== g.sec || bmb.state === 'slått') continue;
+            if (!inReach(g, slotX(bmb.sec, bmb.slot)) || bmb.state === 'slått') continue;
             if (near(TMP_A.set(slotX(bmb.sec, bmb.slot), PARAPET_Y + 0.25, -0.15))) out.push({ kind: 'bombe', id: bmb.id });
         }
         for (const l of g.ladders) {
-            if (l.sec !== g.sec || l.state === 'faller') continue;
+            if (!inReach(g, slotX(l.sec, l.slot)) || l.state === 'faller') continue;
             let hit = false;
             if (l.top >= 0) hit = near(wallManPos(l, TMP_A).setY(wallManPos(l, TMP_A).y + 1.0));
             else
@@ -743,6 +757,10 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
 
     useEffect(() => {
         const up = () => {
+            if (keys.current.btn) {
+                keys.current.btn = 0;
+                setWalk(gRef.current, 0);
+            }
             shieldSrc.current.mouse = false;
             shieldSrc.current.touch = false;
             shieldSync();
@@ -812,7 +830,7 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
             'sveip',
             'Sveip over stigen!',
             () => {
-                const l = g.ladders.find((x) => x.sec === g.sec && x.state !== 'faller');
+                const l = g.ladders.find((x) => inReach(g, slotX(x.sec, x.slot)) && x.state !== 'faller');
                 if (!l) return null;
                 const r = projRef.current?.(ladderPoint(l, LADDER_LEN * 0.8, 0.1, 0, TMP));
                 return r && !r.behind ? { x: r.x, y: r.y } : null;
@@ -836,9 +854,15 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
         synth.setMuted(!synth.isMuted());
         setMuted(synth.isMuted());
     };
-    const step = (dir: -1 | 1) => {
-        if (modeRef.current !== 'play') return;
-        move(gRef.current, dir, ioRef.current);
+    const keys = useRef({ l: false, r: false, btn: 0 });
+    const walkSync = () => {
+        const k = keys.current;
+        setWalk(gRef.current, k.btn || (k.l && !k.r ? -1 : k.r && !k.l ? 1 : 0));
+    };
+    /** Kantknappene: hold inne for å gå. */
+    const step = (dir: -1 | 0 | 1) => {
+        keys.current.btn = modeRef.current === 'play' ? dir : 0;
+        walkSync();
     };
 
     useEffect(() => {
@@ -850,9 +874,13 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
             }
             if (modeRef.current !== 'play') return;
             const g = gRef.current;
-            if (e.code === 'KeyA' || e.code === 'ArrowLeft') step(-1);
-            else if (e.code === 'KeyD' || e.code === 'ArrowRight') step(1);
-            else if (e.code === 'KeyW' || e.code === 'ArrowUp') retreat(g);
+            if (e.code === 'KeyA' || e.code === 'ArrowLeft') {
+                keys.current.l = true;
+                walkSync();
+            } else if (e.code === 'KeyD' || e.code === 'ArrowRight') {
+                keys.current.r = true;
+                walkSync();
+            } else if (e.code === 'KeyW' || e.code === 'ArrowUp') retreat(g);
             else if (e.code === 'Space' || e.code === 'KeyS' || e.code === 'ArrowDown') {
                 shieldSrc.current.key = true;
                 shieldSync();
@@ -860,6 +888,9 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
             e.preventDefault();
         };
         const upKey = (e: KeyboardEvent) => {
+            if (e.code === 'KeyA' || e.code === 'ArrowLeft') keys.current.l = false;
+            if (e.code === 'KeyD' || e.code === 'ArrowRight') keys.current.r = false;
+            walkSync();
             if (e.code === 'Space' || e.code === 'KeyS' || e.code === 'ArrowDown') {
                 shieldSrc.current.key = false;
                 shieldSync();
@@ -940,6 +971,7 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
                                 trailRef={trailRef}
                                 inkRef={inkRef}
                             />
+                            <Banners gRef={gRef} />
                             <FirstPerson gRef={gRef} />
                             <KitEffects bloomIntensity={0.7} bloomThreshold={0.9} />
                         </MicroCanvas>
@@ -997,14 +1029,9 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
 
                     {/* Muren sett ovenfra: hvor du står, og hvor det brenner */}
                     <div className="gv-map" style={{ opacity: hudOn ? 1 : 0 }}>
+                        <div ref={hud.me} className="gv-me" />
                         {Array.from({ length: SECTIONS }, (_, s) => (
-                            <div
-                                key={s}
-                                className="gv-sec"
-                                ref={(el) => {
-                                    hud.secs.current[s] = el;
-                                }}
-                            >
+                            <div key={s} className="gv-sec">
                                 <div
                                     className="gv-dan"
                                     ref={(el) => {

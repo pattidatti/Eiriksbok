@@ -36,7 +36,11 @@ export const BOMB_PTS = 40;
 export const DUEL_PTS = 400;
 
 const SWING_CD = 0.2;
-const MOVE_S = 0.32;
+/** Gangfart langs muren (m/s), og hvor langt sverdet rekker til siden. */
+export const WALK_SPEED = 9;
+export const REACH = 1.7;
+export const WALK_MIN = -7.4;
+export const WALK_MAX = 7.4;
 /** Hvor lenge en mann står på muren og holder stigen før han selv går over (ingen der). */
 const HOLD_S = 0.55;
 /** Når en mann når toppen, hopper mannen bak ham over hvis han er så nær. */
@@ -50,7 +54,7 @@ const MAN_DMG = 12;
 const MAN_HIT_EVERY = 1.1;
 
 // Geometri deles med 3D-scenen: murdelene langs x, stigene i hver murdel.
-export const SEC_X = [-7.5, 0, 7.5];
+export const SEC_X = [-5, 0, 5];
 export const SLOT_DX = [-1.25, 0, 1.25];
 export const slotX = (sec: number, slot: number) => SEC_X[sec] + SLOT_DX[slot];
 
@@ -77,6 +81,8 @@ export interface Ladder {
 export interface Volley {
     id: number;
     sec: number;
+    /** Der pilene er siktet (der eleven sto da buene ble spent). */
+    x: number;
     t: number;
     max: number;
     /** Vinden tar pilene: bommer helt. */
@@ -96,6 +102,8 @@ export interface Bomb {
 export interface Duel {
     phase: 'tilbud' | 'kamp' | 'tilbake';
     sec: number;
+    /** Der kjempen står på stranda. */
+    x: number;
     t: number;
     champHp: number;
     /** Kjempens syklus: 'løfter' (hugg kommer), 'åpen' (kan treffes), 'vakt'. */
@@ -129,8 +137,12 @@ export interface G {
     storm: number; // sekunder inn i stormen, -1 = ikke kommet
     hp: number;
     sec: number;
-    moveTo: number;
-    moveT: number;
+    /** Eleven går fritt langs muren. `sec` er murdelen nærmest. */
+    px: number;
+    /** -1, 0 eller 1: tastene som holdes inne. */
+    walk: number;
+    /** Et mål å gå til (robotene og kantknappene), eller null. */
+    goalX: number | null;
     shield: boolean;
     swingCd: number;
     /** Siste sverdslag (spilltid), hva slags, og retning på skjermen (1 = mot høyre). */
@@ -229,8 +241,9 @@ export function newGame(seed = Math.floor(Math.random() * 1e9)): G {
         storm: -1,
         hp: HP_MAX,
         sec: 1,
-        moveTo: 1,
-        moveT: 0,
+        px: 0,
+        walk: 0,
+        goalX: null,
         shield: false,
         swingCd: 0,
         swingAt: -9,
@@ -274,7 +287,14 @@ export function newGame(seed = Math.floor(Math.random() * 1e9)): G {
 export const wind = (g: G) => clamp(g.t / g.stormAt, 0, 1);
 export const comboMult = (c: number) => 1 + Math.floor(c / 3);
 /** Står eleven på muren (ikke underveis, ikke i tvekamp)? */
-export const onWall = (g: G) => g.moveT <= 0 && (!g.duel || g.duel.phase === 'tilbud');
+export const onWall = (g: G) => !g.duel || g.duel.phase === 'tilbud';
+/** Rekker sverdet dit (x langs muren)? */
+export const inReach = (g: G, x: number) => onWall(g) && Math.abs(x - g.px) < REACH;
+const nearestSec = (x: number) => {
+    let best = 0;
+    for (let s = 1; s < SECTIONS; s++) if (Math.abs(SEC_X[s] - x) < Math.abs(SEC_X[best] - x)) best = s;
+    return best;
+};
 export const inDuel = (g: G) => !!g.duel && g.duel.phase !== 'tilbud';
 
 /** Toppen av stigen / mannen på toppen, i verden. */
@@ -348,17 +368,16 @@ function manOver(g: G, l: Ladder, io: IO) {
 // Grepene (samme for eleven og robotene)
 // ---------------------------------------------------------------------------
 
-export function move(g: G, dir: -1 | 1, io: IO) {
-    goTo(g, g.moveTo + dir, io);
+/** Hold inne A/D: -1, 0 eller 1. */
+export function setWalk(g: G, dir: number) {
+    g.walk = dir;
+    if (dir) g.goalX = null;
 }
 
-export function goTo(g: G, sec: number, io: IO) {
+/** Gå til et punkt langs muren (robotene, og trykk på kantknappene). */
+export function goToX(g: G, x: number) {
     if (g.ended || g.storm >= 0 || inDuel(g)) return;
-    const s = clamp(sec, 0, SECTIONS - 1);
-    if (s === g.moveTo) return;
-    g.moveTo = s;
-    g.moveT = MOVE_S;
-    io.sfx.step();
+    g.goalX = clamp(x, WALK_MIN, WALK_MAX);
 }
 
 export function setShield(g: G, on: boolean) {
@@ -368,7 +387,6 @@ export function setShield(g: G, on: boolean) {
 /** Ett sveip. `targets` er det sveipet krysset (komponenten regner det ut på skjermen). */
 export function swipe(g: G, targets: Target[], io: IO, gesture: Gesture = 'begge'): number {
     if (g.ended || g.swingCd > 0 || g.shield) return 0;
-    if (g.moveT > 0) return 0;
     g.swingCd = SWING_CD;
     g.swingAt = g.t;
     g.swingKind = gesture;
@@ -382,7 +400,7 @@ export function swipe(g: G, targets: Target[], io: IO, gesture: Gesture = 'begge
         if (inDuel(g)) continue;
         if (tg.kind === 'bombe') {
             const b = g.bombs.find((x) => x.id === tg.id);
-            if (!b || b.state === 'slått' || b.sec !== g.sec) continue;
+            if (!b || b.state === 'slått' || !inReach(g, slotX(b.sec, b.slot))) continue;
             b.state = 'slått';
             b.t = 0.6;
             g.deflects += 1;
@@ -394,7 +412,7 @@ export function swipe(g: G, targets: Target[], io: IO, gesture: Gesture = 'begge
             continue;
         }
         const l = g.ladders.find((x) => x.id === tg.id);
-        if (!l || l.sec !== g.sec || l.state === 'faller') continue;
+        if (!l || !inReach(g, slotX(l.sec, l.slot)) || l.state === 'faller') continue;
         const gs = tg.gesture ?? gesture;
         if (l.top >= 0) {
             if (gs === 'skyv') continue;
@@ -447,7 +465,7 @@ export function swipe(g: G, targets: Target[], io: IO, gesture: Gesture = 'begge
 /** Ta imot utfordringen: hopp ned fra muren og møt kjempen én mot én. */
 export function challenge(g: G, io: IO) {
     const d = g.duel;
-    if (!d || d.phase !== 'tilbud' || g.ended || g.moveT > 0 || d.sec !== g.sec) return false;
+    if (!d || d.phase !== 'tilbud' || g.ended || Math.abs(d.x - g.px) > 3) return false;
     d.phase = 'kamp';
     d.t = 0;
     d.champ = 'vakt';
@@ -473,7 +491,7 @@ function hitChamp(g: G, io: IO) {
     d.champT = 0.7;
     g.freeze = 0.09;
     g.shake = Math.max(g.shake, 0.3);
-    addFx(g, 'gnist', [SEC_X[d.sec], 1.2, -2.2], 0.5);
+    addFx(g, 'gnist', [d.x, 1.2, -2.2], 0.5);
     io.sfx.kill(g.combo + 1);
     if (d.champHp <= 0) {
         const pts = DUEL_PTS * comboMult(g.combo);
@@ -482,7 +500,7 @@ function hitChamp(g: G, io: IO) {
         d.won = true;
         d.phase = 'tilbake';
         d.t = 1.1;
-        io.float(`+${pts} ÆRE`, [SEC_X[d.sec], 1.8, -2.2], '#c9a24a', true);
+        io.float(`+${pts} ÆRE`, [d.x, 1.8, -2.2], '#ffd76a', true);
     }
     return true;
 }
@@ -529,13 +547,17 @@ export function update(g: G, dt: number, io: IO) {
     g.t += dt;
     const w = wind(g);
     g.swingCd = Math.max(0, g.swingCd - dt);
-    if (g.moveT > 0) {
-        g.moveT -= dt;
-        if (g.moveT <= 0) {
-            g.moveT = 0;
-            g.sec = g.moveTo;
+    // Gange langs muren.
+    if (onWall(g) && g.storm < 0) {
+        let dir = g.walk;
+        if (!dir && g.goalX !== null) {
+            const d = g.goalX - g.px;
+            if (Math.abs(d) < 0.08) g.goalX = null;
+            else dir = Math.sign(d) * Math.min(1, Math.abs(d) / 0.4);
         }
+        g.px = clamp(g.px + dir * WALK_SPEED * dt, WALK_MIN, WALK_MAX);
     }
+    g.sec = nearestSec(g.px);
     if (g.hp < HP_MAX) g.hp = Math.min(HP_MAX, g.hp + 1.6 * dt);
     if (g.storm < 0 && g.swim.length) {
         for (let i = 0; i < g.swim.length; i++) g.swim[i] -= dt;
@@ -594,8 +616,8 @@ export function update(g: G, dt: number, io: IO) {
     if (g.ladderT <= 0) {
         spawnLadder(g, io);
         // Sent i runden kommer de i bølger: to stiger på en gang.
-        if (g.rng() < w * 0.7) spawnLadder(g, io);
-        g.ladderT = lerp(2.6, 0.75, Math.pow(w, 0.9)) * (0.8 + g.rng() * 0.4);
+        if (g.rng() < w * 0.45) spawnLadder(g, io);
+        g.ladderT = lerp(2.8, 0.95, Math.pow(w, 0.9)) * (0.8 + g.rng() * 0.4);
     }
 
     stepLadders(g, dt, io, w);
@@ -603,15 +625,16 @@ export function update(g: G, dt: number, io: IO) {
     // --- Pilregn mot murdelen der eleven står ---
     g.volleyT -= dt;
     if (g.volleyT <= 0) {
-        const sec = inDuel(g) ? g.duel!.sec : g.moveTo;
+        const sec = inDuel(g) ? g.duel!.sec : g.sec;
+        const vx = inDuel(g) ? g.duel!.x : g.px;
         const max = 2.3;
-        g.volleys.push({ id: g.nextId++, sec, t: max, max, drift: g.rng() < w * 0.35 });
+        g.volleys.push({ id: g.nextId++, sec, x: vx, t: max, max, drift: g.rng() < w * 0.35 });
         g.volleyT = lerp(10, 4.6, w) * (0.8 + g.rng() * 0.4);
         g.valg += 1;
         io.sfx.bows();
         if (!g.done.has('piler')) {
             g.done.add('piler');
-            io.pin('piler', 'Buene spennes - hold inne for skjold', () => [SEC_X[sec], 5, -14], {
+            io.pin('piler', 'Buene spennes - hold mellomrom', () => [vx, 5, -14], {
                 tone: 'fare',
                 seconds: 3,
                 until: () => g.shield,
@@ -621,10 +644,10 @@ export function update(g: G, dt: number, io: IO) {
     for (const v of g.volleys) {
         v.t -= dt;
         if (v.t <= 0) {
-            const here = inDuel(g) ? g.duel!.sec === v.sec : g.sec === v.sec && g.moveT <= 0;
-            addFx(g, 'pil', [SEC_X[v.sec], 3, 0], 0.6);
+            const here = Math.abs((inDuel(g) ? g.duel!.x : g.px) - v.x) < 2.8;
+            addFx(g, 'pil', [v.x, 3, 0], 0.6);
             if (v.drift) {
-                io.float('Vinden tok pilene', [SEC_X[v.sec], 4.2, -2], '#eadfc4');
+                io.float('Vinden tok pilene', [v.x, 4.2, -2], '#ffffff');
                 g.unlocked.add('vinden');
             } else if (here) {
                 io.sfx.arrows(g.shield);
@@ -639,8 +662,20 @@ export function update(g: G, dt: number, io: IO) {
     if (g.t > 24) {
         g.bombT -= dt;
         if (g.bombT <= 0) {
-            const sec = g.rng() < 0.7 ? g.moveTo : Math.floor(g.rng() * SECTIONS);
-            const slot = Math.floor(g.rng() * SLOTS);
+            // Kastet mot der eleven står (oftest), ellers et tilfeldig sted på muren.
+            let sec = Math.floor(g.rng() * SECTIONS);
+            let slot = Math.floor(g.rng() * SLOTS);
+            if (g.rng() < 0.7) {
+                sec = g.sec;
+                let bd = 99;
+                for (let k = 0; k < SLOTS; k++) {
+                    const d = Math.abs(slotX(sec, k) - g.px) + g.rng() * 0.8;
+                    if (d < bd) {
+                        bd = d;
+                        slot = k;
+                    }
+                }
+            }
             g.bombs.push({ id: g.nextId++, sec, slot, t: 2.3, max: 2.3, state: 'lufta' });
             g.bombT = lerp(13, 5.5, w) * (0.8 + g.rng() * 0.4);
             g.valg += 1;
@@ -660,7 +695,7 @@ export function update(g: G, dt: number, io: IO) {
         if (b.t <= 0 && b.state !== 'slått') {
             addFx(g, 'smell', [slotX(b.sec, b.slot), 3.2, -0.3], 0.7);
             io.sfx.boom();
-            const here = !inDuel(g) && g.sec === b.sec && g.moveT <= 0;
+            const here = !inDuel(g) && Math.abs(slotX(b.sec, b.slot) - g.px) < 2.2;
             if (here) hurt(g, g.shield ? 6 : BOMB_DMG, io);
             // Smellet river stigen i samme plass over ende - og mannen på toppen tar sjansen.
         } else if (b.t <= 0 && b.state === 'slått') {
@@ -700,7 +735,7 @@ function stepLadders(g: G, dt: number, io: IO, w: number) {
                 l.queueT = 0.55;
             }
         }
-        const guarded = !inDuel(g) && g.sec === l.sec && g.moveT <= 0;
+        const guarded = inReach(g, slotX(l.sec, l.slot));
         // Klatring: ingen passerer mannen over seg.
         for (let i = 0; i < l.men.length; i++) {
             const cap = i === 0 ? 1 : l.men[i - 1] - 0.14;
@@ -763,7 +798,8 @@ function stepDuel(g: G, dt: number, io: IO) {
         g.duelOffers.shift();
         g.duel = {
             phase: 'tilbud',
-            sec: g.moveTo,
+            sec: g.sec,
+            x: g.px,
             t: 7,
             champHp: 3,
             champ: 'vakt',
@@ -773,12 +809,12 @@ function stepDuel(g: G, dt: number, io: IO) {
         };
         g.valg += 1;
         io.sfx.drum();
-        const sec = g.moveTo;
+        const cx = g.px;
         io.beat(
             'tvekamp',
             'Tvekamp?',
             'En mongolsk kjempe utfordrer deg. I 1274 kjempet samuraiene én mot én. Mongolene svarte i flokk.',
-            () => [SEC_X[sec], 0.6, -3.2],
+            () => [cx, 0.6, -3.2],
             () => !g.duel || g.duel.phase !== 'tilbud'
         );
     }
@@ -786,7 +822,7 @@ function stepDuel(g: G, dt: number, io: IO) {
     if (!d) return;
     if (d.phase === 'tilbud') {
         d.t -= dt;
-        if (d.t <= 0 || g.sec !== d.sec || g.moveT > 0) g.duel = null;
+        if (d.t <= 0 || Math.abs(g.px - d.x) > 4) g.duel = null;
         return;
     }
     if (d.phase === 'tilbake') {
@@ -824,7 +860,7 @@ function stepDuel(g: G, dt: number, io: IO) {
     if (d.flockT <= 0) {
         d.flockT = 0.9;
         io.sfx.boom();
-        addFx(g, 'smell', [SEC_X[d.sec] + (g.rng() - 0.5) * 4, 0.4, -1.6], 0.7);
+        addFx(g, 'smell', [d.x + (g.rng() - 0.5) * 4, 0.4, -1.6], 0.7);
         if (!g.shield) hurt(g, 9, io);
         if (!g.done.has('flokken')) {
             g.done.add('flokken');
