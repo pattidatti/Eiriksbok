@@ -234,6 +234,7 @@ const Midway3D = lazy(() => import('./Midway3D'));
 const LopMedLonna3D = lazy(() => import('./LopMedLonna3D'));
 const Plottebordet3D = lazy(() => import('./Plottebordet3D'));
 const InnMotStranda = lazy(() => import('./InnMotStranda'));
+const SeinenSnur = lazy(() => import('./SeinenSnur'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2317,6 +2318,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Allierte rekognoseringsfoto av Omaha 1944: svart-hvitt sølvkorn, filmkant og rød og gul fettstift',
         loader: () => import('./InnMotStranda'),
         Component: InnMotStranda as never,
+    },
+    'seinen-snur': {
+        id: 'seinen-snur',
+        title: 'Seinen snur',
+        description:
+            'Seinen, 885. Du er vikinghøvdingen Rollo. Langskipet følger pekeren - styr i full fart inn i frankiske båter og ta sølvet, men hold deg unna borgene og broene, der frankerne skyter. I 911 gir kongen deg landet ved elvemunningen, mot at du forsvarer det mot andre vikinger. Nå må vikingskipene fra havet rammes før de når Rouen - og rammer du en frankisk båt, tar kongen tilbake en landsby. Samme grep, motsatt regel. Hold landet til 933. Lyspæra: plyndreren ble kongens vasall, og vikingene ble normannere.',
+        estimatedSeconds: 150,
+        sjanger: 'styring-ramming',
+        tone: 'lett',
+        hook: 'Du er Rollo. Ram frankerne for sølv - til kongen gir deg landet.',
+        cover: '/images/microgames/seinen-snur.webp',
+        kunst: 'Bayeux-teppet: brodert ullgarn på lin, skip i profil, terrakotta, oker og blågrønn',
+        loader: () => import('./SeinenSnur'),
+        Component: SeinenSnur as never,
     },
 };
 
