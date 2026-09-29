@@ -186,15 +186,28 @@ export function Banners({ gRef }: { gRef: GRef }) {
     }, []);
     const flagTex = useMemo(() => flagTexture(), []);
     const flagBase = useMemo(() => Float32Array.from(flagGeo.attributes.position.array), [flagGeo]);
+    const poles = useRef<(THREE.Group | null)[]>([]);
     useFrame((state) => {
         const g = gRef.current;
         const w = Math.min(1.2, wind(g) + (g.storm >= 0 ? 0.4 : 0));
         flapFlag(flagGeo, flagBase, state.clock.elapsedTime, w);
+        // I tvekampen står kameraet på stranda: fanene rett ved ville stått foran ansiktet.
+        const dx = g.duel && g.duel.phase === 'kamp' ? g.duel.x : null;
+        poles.current.forEach((o, i) => {
+            if (o) o.visible = dx === null || Math.abs(BANNER_X[i] + 0.6 - dx) > 3;
+        });
     });
     return (
         <>
-            {BANNER_X.map((x) => (
-                <group key={x} position={[x + 0.6, -1.35, -2.3]} scale={2.4}>
+            {BANNER_X.map((x, i) => (
+                <group
+                    key={x}
+                    ref={(el) => {
+                        poles.current[i] = el;
+                    }}
+                    position={[x + 0.6, -1.35, -2.3]}
+                    scale={2.4}
+                >
                     <mesh geometry={POLE} position={[0, 0.8, 0]}>
                         <meshBasicMaterial color={PAL.ink} />
                     </mesh>

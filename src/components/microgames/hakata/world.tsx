@@ -320,10 +320,13 @@ export function Ladders({ gRef }: { gRef: GRef }) {
         const t = state.clock.elapsedTime;
         const w = wind(g);
         const seen = new Array(SECTIONS * SLOTS).fill(false);
+        const duelX = g.duel && g.duel.phase === 'kamp' ? g.duel.x : null;
         for (const l of g.ladders) {
             const i = l.sec * SLOTS + l.slot;
             const m = refs.current[i];
             const b = boats.current[i];
+            // I tvekampen står kameraet nede på stranda: stigene rett ved ville fylt bildet.
+            if (duelX !== null && Math.abs(slotX(l.sec, l.slot) - duelX) < 2.6) continue;
             seen[i] = true;
             if (m) {
                 m.visible = true;
@@ -411,8 +414,10 @@ export function Men({ gRef }: { gRef: GRef }) {
             n++;
             if (danger && red.current && nr < MAX_DANGER) red.current.setMatrixAt(nr++, tmpObj.matrix);
         };
+        const duelX = g.duel && g.duel.phase === 'kamp' ? g.duel.x : null;
         for (const l of g.ladders) {
             if (l.state === 'faller' && l.fallT > 0.5) continue;
+            if (duelX !== null && Math.abs(slotX(l.sec, l.slot) - duelX) < 2.6) continue;
             const a = ladderAngle(l, t);
             l.men.forEach((p, k) => {
                 if (k === 0 && l.top >= 0) {
@@ -492,7 +497,20 @@ BLADE_GEO.translate(0, 0.65, 0);
 const BLADE_COL = new THREE.Color('#e9e6dc');
 const BLADE_HOT = new THREE.Color('#ff5a3c');
 
+const BLINK_HIT = new THREE.Color('#fffaf0');
+const BLINK_BLOCK = new THREE.Color('#ffd76a');
+
+function blinkChamp(mat: THREE.MeshBasicMaterial, k: number, col: THREE.Color) {
+    mat.opacity = k * 0.85;
+    mat.color.copy(col);
+    mat.visible = k > 0.01;
+}
+
 export function Champion({ gRef }: { gRef: GRef }) {
+    const flashMat = useMemo(
+        () => new THREE.MeshBasicMaterial({ color: '#fffaf0', transparent: true, opacity: 0, depthWrite: false, visible: false }),
+        []
+    );
     const body = useRef<THREE.Group>(null);
     const arm = useRef<THREE.Group>(null);
     const bladeMat = useRef<THREE.MeshBasicMaterial>(null);
@@ -505,9 +523,13 @@ export function Champion({ gRef }: { gRef: GRef }) {
         if (!d) return;
         const t = state.clock.elapsedTime;
         const fight = d.phase === 'kamp';
-        b.position.set(d.x, BEACH_Y, fight ? CHAMP_Z : CHAMP_Z - 0.4);
-        b.rotation.y = Math.sin(t * 1.3) * 0.06;
-        b.scale.setScalar(fight ? 1.15 : 1.05);
+        // Treffet: han kastes bakover og vakler. Blokkert/parert: et lite rykk.
+        const hitK = d.evt === 'truffet' ? Math.max(0, 1 - d.evtT / 0.35) : 0;
+        const jolt = d.evt === 'blokkert' || d.evt === 'parert' ? Math.max(0, 1 - d.evtT / 0.2) : 0;
+        b.position.set(d.x + Math.sin(t * 40) * jolt * 0.06, BEACH_Y, (fight ? CHAMP_Z : CHAMP_Z - 0.4) - hitK * 0.7);
+        b.rotation.set(-hitK * 0.35, Math.sin(t * 1.3) * 0.06, Math.sin(t * 30) * hitK * 0.12);
+        b.scale.setScalar((fight ? 1.15 : 1.05) * (1 + hitK * 0.08));
+        blinkChamp(flashMat, hitK > 0 ? hitK : jolt * 0.5, hitK > 0 ? BLINK_HIT : BLINK_BLOCK);
         if (arm.current) {
             const target = !fight ? -0.6 + Math.sin(t * 2) * 0.3 : d.champ === 'løfter' ? -2.6 : d.champ === 'åpen' ? 0.9 : -0.4;
             arm.current.rotation.x += (target - arm.current.rotation.x) * 0.25;
@@ -517,6 +539,7 @@ export function Champion({ gRef }: { gRef: GRef }) {
     return (
         <group ref={body} visible={false}>
             <mesh geometry={CHAMP_GEO} material={toonVC()} />
+            <mesh geometry={CHAMP_GEO} material={flashMat} scale={1.02} />
             <mesh geometry={CHAMP_INK} material={inkMaterial(0.035)} />
             <group ref={arm} position={[0.42, 1.55, 0.05]}>
                 <mesh geometry={BLADE_GEO} position={[0, 0, 0.1]}>
@@ -688,7 +711,7 @@ export function Rain({ gRef }: { gRef: GRef }) {
     );
 }
 
-const FX_MAX = 40;
+const FX_MAX = 90;
 const FX_COL: Record<string, string> = {
     gnist: '#ffd27a',
     smell: '#ff8a3c',
@@ -732,8 +755,37 @@ export function FxView({ gRef }: { gRef: GRef }) {
                 }
                 continue;
             }
+            if (f.kind === 'smell') {
+                // Kruttbomben: en liten ildkule og svart røyk og splinter som kastes ut.
+                for (let d = 0; d < 9 && n < FX_MAX; d++) {
+                    const a = d * 0.7 + f.z;
+                    const r = k * (0.5 + (d % 3) * 0.35);
+                    tmpObj.position.set(f.x + Math.cos(a) * r, f.y + Math.abs(Math.sin(a * 1.3)) * r + k * 0.4, f.z + Math.sin(a) * r * 0.5);
+                    tmpObj.rotation.set(a, a, 0);
+                    tmpObj.scale.setScalar((d < 3 ? 0.28 : 0.1) * (1 - k * 0.7));
+                    tmpObj.updateMatrix();
+                    m.setMatrixAt(n, tmpObj.matrix);
+                    m.setColorAt(n, C.set(d < 3 ? (k < 0.4 ? '#ffd27a' : '#3a3024') : '#ff8a3c'));
+                    n++;
+                }
+                continue;
+            }
+            if (f.kind === 'gnist') {
+                for (let d = 0; d < 7 && n < FX_MAX; d++) {
+                    const a = d * 0.9 + f.x;
+                    const r = k * (0.6 + (d % 3) * 0.25);
+                    tmpObj.position.set(f.x + Math.cos(a) * r, f.y + Math.sin(a * 1.7) * r * 0.8 - k * k * 0.6, f.z + Math.sin(a) * r * 0.4);
+                    tmpObj.rotation.set(a, a * 2, 0);
+                    tmpObj.scale.setScalar(0.05 * (1 - k));
+                    tmpObj.updateMatrix();
+                    m.setMatrixAt(n, tmpObj.matrix);
+                    m.setColorAt(n, C.set(d % 2 ? '#fff4c8' : '#ffb347'));
+                    n++;
+                }
+                continue;
+            }
             if (n >= FX_MAX || !(f.kind in FX_COL)) continue;
-            const s = f.kind === 'smell' ? 0.3 + k * 2.2 : f.kind === 'over' ? 0.35 * (1 - k) : 0.25 + k * 0.6;
+            const s = f.kind === 'over' ? 0.35 * (1 - k) : 0.25 + k * 0.6;
             tmpObj.position.set(f.x, f.y + (f.kind === 'over' ? k * 1.2 : 0), f.z);
             tmpObj.scale.setScalar(s);
             tmpObj.rotation.set(k, k * 2, 0);

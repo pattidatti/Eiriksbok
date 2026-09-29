@@ -46,6 +46,8 @@ const HOLD_S = 0.55;
 /** Når en mann når toppen, hopper mannen bak ham over hvis han er så nær. */
 export const BEHIND_JUMP = 0.72;
 const ARROW_DMG = 22;
+/** Omtrent der kjempen står (for gnister i tvekampen). */
+const CHAMP_FX_Z = -3.2;
 /** Så lenge en mann som er skjøvet i sjøen, trenger for å svømme tilbake til båtene. */
 const SWIM_MIN = 10;
 const SWIM_VAR = 4;
@@ -109,6 +111,9 @@ export interface Duel {
     /** Kjempens syklus: 'løfter' (hugg kommer), 'åpen' (kan treffes), 'vakt'. */
     champ: 'vakt' | 'løfter' | 'åpen';
     champT: number;
+    /** Siste hendelse i kampen, for tilbakemeldingen over kjempen. */
+    evt: '' | 'parert' | 'truffet' | 'blokkert' | 'såret';
+    evtT: number;
     flockT: number;
     won: boolean;
 }
@@ -470,11 +475,10 @@ export function challenge(g: G, io: IO) {
     d.t = 0;
     d.champ = 'vakt';
     d.champT = 0.9;
-    d.flockT = 2.4;
+    d.flockT = 4.5;
     g.duelsTaken += 1;
     g.shield = false;
     io.sfx.drum();
-    io.banner('TVEKAMP', '#c0392b');
     g.unlocked.add('tvekampen');
     return true;
 }
@@ -483,14 +487,20 @@ function hitChamp(g: G, io: IO) {
     const d = g.duel;
     if (!d || d.phase !== 'kamp') return false;
     if (d.champ !== 'åpen') {
+        // Han har vakten oppe: hugget ditt blir parert.
         io.sfx.deflect();
+        d.evt = 'parert';
+        d.evtT = 0;
+        addFx(g, 'gnist', [d.x + 0.3, 0.3, CHAMP_FX_Z], 0.3);
         return false;
     }
     d.champHp -= 1;
     d.champ = 'vakt';
-    d.champT = 0.7;
-    g.freeze = 0.09;
-    g.shake = Math.max(g.shake, 0.3);
+    d.champT = 0.8;
+    d.evt = 'truffet';
+    d.evtT = 0;
+    g.freeze = 0.14;
+    g.shake = Math.max(g.shake, 0.55);
     addFx(g, 'gnist', [d.x, 1.2, -2.2], 0.5);
     io.sfx.kill(g.combo + 1);
     if (d.champHp <= 0) {
@@ -804,6 +814,8 @@ function stepDuel(g: G, dt: number, io: IO) {
             champHp: 3,
             champ: 'vakt',
             champT: 0,
+            evt: '',
+            evtT: 9,
             flockT: 0,
             won: false,
         };
@@ -840,16 +852,26 @@ function stepDuel(g: G, dt: number, io: IO) {
     }
     // Kamp: kjempen løfter sverdet (varslet), hugger, og står åpen en liten stund.
     d.t += dt;
+    d.evtT += dt;
     d.champT -= dt;
     if (d.champT <= 0) {
         if (d.champ === 'vakt') {
             d.champ = 'løfter';
-            d.champT = 0.75;
+            d.champT = 0.9;
         } else if (d.champ === 'løfter') {
-            if (!g.shield) hurt(g, 14, io);
-            else io.sfx.deflect();
+            if (!g.shield) {
+                hurt(g, 14, io);
+                d.evt = 'såret';
+            } else {
+                io.sfx.deflect();
+                d.evt = 'blokkert';
+                g.shake = Math.max(g.shake, 0.3);
+                addFx(g, 'gnist', [d.x, 0.6, CHAMP_FX_Z + 1], 0.4);
+            }
+            d.evtT = 0;
+            // Etter hugget står han åpen - lenge nok til å rekke å senke skjoldet og sveipe.
             d.champ = 'åpen';
-            d.champT = 0.8;
+            d.champT = 1.05;
         } else {
             d.champ = 'vakt';
             d.champT = 0.5;
@@ -858,10 +880,10 @@ function stepDuel(g: G, dt: number, io: IO) {
     // Flokken kommer: trommer, piler og kruttbomber mot den som står alene på stranda.
     d.flockT -= dt;
     if (d.flockT <= 0) {
-        d.flockT = 0.9;
+        d.flockT = 1.3;
         io.sfx.boom();
-        addFx(g, 'smell', [d.x + (g.rng() - 0.5) * 4, 0.4, -1.6], 0.7);
-        if (!g.shield) hurt(g, 9, io);
+        addFx(g, 'smell', [d.x + (g.rng() - 0.5) * 5, -0.6, -2.4], 0.7);
+        if (!g.shield) hurt(g, 6, io);
         if (!g.done.has('flokken')) {
             g.done.add('flokken');
             io.lesson(
@@ -872,7 +894,7 @@ function stepDuel(g: G, dt: number, io: IO) {
         }
     }
     // Går ikke kampen, trekker eleven seg etter en stund uansett.
-    if (d.t > 9) {
+    if (d.t > 12) {
         d.phase = 'tilbake';
         d.t = 1.1;
     }

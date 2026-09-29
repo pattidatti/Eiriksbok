@@ -218,7 +218,9 @@ function makeSfx(a: ArcadeSynth): Sfx {
             a.noise(0.2, 0.08, 400);
         },
         kill: (c) => {
-            a.noise(0.07, 0.22, 900);
+            a.noise(0.07, 0.3, 900);
+            a.noise(0.18, 0.25, 180);
+            a.tone(90, 40, 0.18, 'sine', 0.25);
             a.tone(260 * 2 ** (MIYAKO[Math.min(5, c % 6)] / 12), 130, 0.14, 'square', 0.05);
         },
         splash: () => {
@@ -287,6 +289,62 @@ interface Trail {
     pts: { x: number; y: number; t: number }[];
 }
 
+/** Et hugg som traff: tegnes som et lysende kutt tvers over skjermen. */
+interface Cut {
+    ax: number;
+    ay: number;
+    bx: number;
+    by: number;
+    t: number;
+}
+
+const CUT_MS = 260;
+const CUE_P = new THREE.Vector3();
+
+/** Plasserer instruksen over kjempen og oppdaterer tekst og liv (muterer DOM-elementet). */
+function placeDuelCue(de: HTMLDivElement, g: G, proj: Proj | null, menu: boolean) {
+    const cue = duelCue(g);
+    const dd = g.duel;
+    if (!cue || !dd || menu || g.ended) {
+        de.style.opacity = '0';
+        return;
+    }
+    const pr = proj?.(CUE_P.set(dd.x, BEACH_Y + (dd.phase === 'kamp' ? 3.4 : 3.0), CHAMP_Z));
+    if (!pr || pr.behind) {
+        de.style.opacity = '0';
+        return;
+    }
+    de.style.opacity = '1';
+    // I kampen står kjempen så nær at hodet er utenfor bildet: fast plass øverst, over ham.
+    const y = dd.phase === 'kamp' ? 118 : Math.max(118, pr.y);
+    de.style.transform = `translate(${Math.round(pr.x)}px, ${Math.round(y)}px) translate(-50%, 0)`;
+    const txt = de.firstElementChild as HTMLElement | null;
+    if (txt && txt.textContent !== cue.text) txt.textContent = cue.text;
+    de.dataset.tone = cue.tone;
+    const pips = de.lastElementChild as HTMLElement | null;
+    if (pips) {
+        pips.style.display = dd.phase === 'kamp' ? 'flex' : 'none';
+        Array.from(pips.children).forEach((el, i) => el.classList.toggle('on', i < dd.champHp));
+    }
+}
+
+/** Teksten over kjempen i tvekampen: hva du skal gjøre akkurat nå. */
+function duelCue(g: G): { text: string; tone: 'vent' | 'fare' | 'bra' } | null {
+    const d = g.duel;
+    if (!d || g.storm >= 0) return null;
+    if (d.phase === 'tilbud') return { text: 'Sveip over ham: tvekamp', tone: 'vent' };
+    if (d.phase === 'tilbake') return { text: d.won ? 'Seier! Opp på muren' : 'Tilbake på muren', tone: 'bra' };
+    if (d.evtT < 0.55) {
+        if (d.evt === 'truffet') return { text: 'TRAFF!', tone: 'bra' };
+        if (d.evt === 'blokkert') return { text: 'BLOKKERT! Hugg nå', tone: 'bra' };
+        if (d.evt === 'parert') return { text: 'Parert - vent på åpningen', tone: 'fare' };
+        if (d.evt === 'såret') return { text: 'Au! Skjold når han løfter', tone: 'fare' };
+    }
+    if (d.champ === 'løfter') return { text: 'SKJOLD! Hold mellomrom', tone: 'fare' };
+    if (d.champ === 'åpen') return { text: 'HUGG NÅ! Sveip over ham', tone: 'bra' };
+    return { text: 'Vent på hugget hans', tone: 'vent' };
+}
+
 function Loop({
     gRef,
     modeRef,
@@ -295,6 +353,8 @@ function Loop({
     projRef,
     trailRef,
     inkRef,
+    cutRef,
+    duelEl,
 }: {
     gRef: React.MutableRefObject<G>;
     modeRef: React.MutableRefObject<Mode>;
@@ -303,6 +363,8 @@ function Loop({
     projRef: React.MutableRefObject<Proj | null>;
     trailRef: React.MutableRefObject<Trail>;
     inkRef: React.MutableRefObject<HTMLCanvasElement | null>;
+    cutRef: React.MutableRefObject<Cut | null>;
+    duelEl: React.MutableRefObject<HTMLDivElement | null>;
 }) {
     const acc = useRef(0);
     const v = useRef(new THREE.Vector3());
@@ -390,8 +452,41 @@ function Loop({
                     ctx.lineTo(b.x, b.y);
                     ctx.stroke();
                 }
+                // Treff: et lysende kutt, forlenget forbi streken, som blekner fort.
+                const c = cutRef.current;
+                if (c) {
+                    const age = (now - c.t) / CUT_MS;
+                    if (age >= 1) cutRef.current = null;
+                    else {
+                        const dx = c.bx - c.ax;
+                        const dy = c.by - c.ay;
+                        const L = Math.hypot(dx, dy) || 1;
+                        const ext = 0.6 + age * 0.5;
+                        const x0 = c.ax - (dx / L) * L * ext * 0.5;
+                        const y0 = c.ay - (dy / L) * L * ext * 0.5;
+                        const x1 = c.bx + (dx / L) * L * ext * 0.5;
+                        const y1 = c.by + (dy / L) * L * ext * 0.5;
+                        const k = 1 - age;
+                        ctx.lineCap = 'round';
+                        ctx.strokeStyle = `rgba(192,57,43,${0.55 * k})`;
+                        ctx.lineWidth = 26 * k;
+                        ctx.beginPath();
+                        ctx.moveTo(x0, y0);
+                        ctx.lineTo(x1, y1);
+                        ctx.stroke();
+                        ctx.strokeStyle = `rgba(255,252,240,${k})`;
+                        ctx.lineWidth = 9 * k;
+                        ctx.beginPath();
+                        ctx.moveTo(x0, y0);
+                        ctx.lineTo(x1, y1);
+                        ctx.stroke();
+                    }
+                }
             }
         }
+
+        // Instruksen over kjempen følger ham i bildet.
+        if (duelEl.current) placeDuelCue(duelEl.current, g, projRef.current, modeRef.current === 'menu');
 
         acc.current += dt;
         if (acc.current > 0.1) {
@@ -461,6 +556,16 @@ const CSS = `
 .gv-hot{animation:gvPulse2 .5s infinite alternate}
 @keyframes gvPulse2{from{opacity:1}to{opacity:.45}}
 .arc-float{text-shadow:0 0 3px #221c17,0 2px 0 #221c17,0 0 8px rgba(34,28,23,.7);font-size:18px}
+.gv-hit{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,rgba(255,250,235,.0) 40%,rgba(255,250,235,.55));opacity:0}
+.gv-hit.go{animation:gvHit .18s ease-out}
+@keyframes gvHit{from{opacity:1}to{opacity:0}}
+.gv-duel{position:absolute;left:0;top:0;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:6px;transition:opacity .15s;z-index:5}
+.gv-duel-t{font-family:Outfit,Inter,system-ui,sans-serif;font-weight:900;font-size:22px;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border:3px solid ${INK};background:#f3ead3;color:${INK};white-space:nowrap;box-shadow:0 3px 0 ${INK}}
+.gv-duel[data-tone=fare] .gv-duel-t{background:${PAL.red};color:#fbf5e6;animation:gvPulse .3s infinite alternate}
+.gv-duel[data-tone=bra] .gv-duel-t{background:${PAL.green};color:#fbf5e6}
+.gv-duel-hp{display:flex;gap:6px}
+.gv-duel-hp i{width:18px;height:18px;border:3px solid ${INK};background:#f3ead3;transform:rotate(45deg)}
+.gv-duel-hp i.on{background:${PAL.red}}
 .gv-grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.9}
 .gv-shield.on{background:${PAL.red};color:#fbf5e6}
 `;
@@ -481,6 +586,8 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
     const gRef = useRef<G>(firstGame);
     const projRef = useRef<Proj | null>(null);
     const trailRef = useRef<Trail>({ pts: [] });
+    const cutRef = useRef<Cut | null>(null);
+    const duelEl = useRef<HTMLDivElement | null>(null);
     const inkRef = useRef<HTMLCanvasElement | null>(null);
     const stageRef = useRef<HTMLDivElement | null>(null);
     const completedOnce = useRef(false);
@@ -500,6 +607,7 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
         left: useRef<HTMLDivElement>(null),
         right: useRef<HTMLDivElement>(null),
         flash: useRef<HTMLDivElement>(null),
+        hit: useRef<HTMLDivElement>(null),
         shieldBtn: useRef<HTMLButtonElement>(null),
     };
 
@@ -745,7 +853,15 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
         // Tom stige = skyv, mann på toppen = hugg. Retningen styrer bare sverdet.
         g.swingDir = p.x >= a.x ? 1 : -1;
         const hits = swipe(g, tg, ioRef.current);
-        if (hits > 0) buzz(18);
+        if (hits > 0) {
+            buzz(24);
+            cutRef.current = { ax: a.x, ay: a.y, bx: p.x, by: p.y, t: performance.now() };
+            if (hud.flash.current && g.swingKind === 'hugg') {
+                hud.hit.current?.classList.remove('go');
+                void hud.hit.current?.offsetWidth;
+                hud.hit.current?.classList.add('go');
+            }
+        }
         whooshRef.current = true;
         strokeRef.current = [p];
     };
@@ -970,6 +1086,8 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
                                 projRef={projRef}
                                 trailRef={trailRef}
                                 inkRef={inkRef}
+                                cutRef={cutRef}
+                                duelEl={duelEl}
                             />
                             <Banners gRef={gRef} />
                             <FirstPerson gRef={gRef} />
@@ -978,6 +1096,15 @@ export default function GuddommeligVind3D({ onComplete }: MicroGameProps) {
                         <div className="gv-grain" style={{ backgroundImage: `url(${paperGrainUrl()})` }} />
                         <canvas ref={inkRef} className="gv-ink" />
                         <div ref={hud.flash} className="gv-flash" />
+                        <div ref={hud.hit} className="gv-hit" />
+                        <div ref={duelEl} className="gv-duel" style={{ opacity: 0 }}>
+                            <div className="gv-duel-t">Vent på hugget hans</div>
+                            <div className="gv-duel-hp">
+                                <i />
+                                <i />
+                                <i />
+                            </div>
+                        </div>
                     </div>
 
                     {/* Gullskya øverst: hvor mange som er i land, og hvor mange du holdt på sjøen */}
