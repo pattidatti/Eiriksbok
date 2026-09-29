@@ -214,32 +214,36 @@ pent. Det første nattspillet som ble avvist, brukte tre runder på utseende; pr
 1. Spillreglene i en ren `.ts`-modul (`<navn>/game.ts`): tilstand, `update(g, dt, input)`, og
    tellerne `valg` og `press` (steg 4).
 2. En enkel visning (canvas, eller R3F med bokser) og input.
-3. `usePlaytest` med alle robotene: vinner, `middels`, taper som ignorerer fagkjernen, og
-   `tilfeldig`.
-4. Balanser i den raske simuleringen: kjør robotene mot `game.ts` direkte med `npx tsx`, hundrevis
-   av runder, uten nettleser. Vinneren vinner, middels havner mellom, taper og tilfeldig taper,
-   minst 6 valg per minutt, og presset stiger. **Simuleringen skal kjøre spillet nøyaktig som
-   nettleseren gjør**, ellers balanserer du et annet spill enn det eleven får:
-   ```ts
-   import { PLAYTEST_DT, BOT_EVERY } from '../src/components/microgames/playtest';
-   // ett steg = PLAYTEST_DT (0,05 s, som løkka i nettleseren); ett robotgrep per BOT_EVERY (0,2 s)
-   for (let t = 0, next = 0; g.mode === 'play'; t += PLAYTEST_DT) {
-       if (t >= next) { bot(g); next += BOT_EVERY; }
-       update(g, PLAYTEST_DT, input);
-   }
+3. Robotene i en ren `<navn>/bots.ts`: vinner, `middels`, taper som ignorerer fagkjernen, og
+   `tilfeldig`. Tilfeldighet i robotene kommer fra en `rng`-parameter, ikke `Math.random`.
+4. `<navn>/sim.ts` - simuleringskontrakten (`SimSpec` i `sim.ts`): `create(seed)`, `step(w, dt)`,
+   `snapshot(w)` og robotene med samme navn og `forventer` som i `usePlaytest`. Adapteren er tynn:
+   lag spillet, ta ett steg, les av tilstanden. Referanse: `stranda/sim.ts` (seed i spillet) og
+   `plottebordet/sim.ts` (seier og tap via `io.win()`/`io.lose()`).
+5. Balanser med simuleringsporten - 200 seedede runder per robot på sekunder, uten nettleser:
+   ```bash
+   npx tsx scripts/sim-microgame.mts --ids <id>
    ```
-5. Kjør selvspillet én gang. Radene for spillfølelse skal være grønne, og robotene skal gi samme
-   utfall som i simuleringen.
+   Den kjører samme tidssteg (`PLAYTEST_DT`) og robottakt (`BOT_EVERY`) som nettleseren, og måler
+   andeler og medianer, ikke myntkast. Kjør den så ofte du vil - det er gratis.
 
-**Når nettleseren og simuleringen er uenige, er det målingen som er feil - ikke balansen.** Se
-kolonnen «Grep/spill-s» i rapporten (skal være rundt 5). Er den lav, blir runden meldt som ugyldig
-(«kunne ikke kjøre»), og du skal senke `--fart`, ikke endre spillet. Er den riktig, men utfallet
-likevel ulikt: finn forskjellen i koden (tidssteg, input-vei, tilfeldighet), ikke skru på
-spillreglene til tallene passer. 28.09 ble en hel runde brukt på å endre en spillregel for å
-rette en målefeil.
+**Balansen avgjøres i simuleringen, ikke i nettleseren.** Til 29.09 spilte nettleser-selvspillet
+8-10 hele runder i swiftshader (35 minutter i CI, 15-20 minutter per runde i sky-miljøet) og
+avgjorde ferdighetstrappen med én eller to runder - omtrent hver tiende grønne balanse ble meldt
+rød. Nå er nettleseren en røyktest (steg 5), og den sammenligner vinnerrunden sin med simuleringen.
 
-Er de ikke grønne etter to forsøk: gå tilbake til konseptturneringen og ta nest beste konsept. Ikke
-pynt en løkke som ikke virker.
+Er simuleringen ikke grønn etter to forsøk på kjerneløkka: gå tilbake til konseptturneringen og ta
+nest beste konsept. Ikke pynt en løkke som ikke virker.
+
+### Gråboks-vurderingen: Gøy før kunst
+
+Når simuleringen er grønn, og FØR kunsten lages: ta tre skjermbilder av gråboksen midt i en runde
+og la en fersk underagent gi ett tall - Gøy (1-5) - ut fra bildene, simuleringsrapporten
+(`.screenshots/playtest/_sim.md`) og kjerneløkka beskrevet i tre setninger. Samme rubrikk og
+kalibrering som port 3. Under 4: endre kjerneløkka (se «Når vurderingen står stille») og prøv én
+gang til. Fortsatt under 4: ta nest beste konsept. Thranittene (27.09) brukte tre fulle
+vurderingsrunder og en ny natt på et spill som sto på Gøy 3 hele veien - det problemet var synlig
+i gråboksen, og hver runde betalte for kunst, selvspill og audit som ikke kunne redde det.
 
 ## Steg 3b - Bygg på arkadeskallet
 
@@ -257,6 +261,7 @@ spill-følelsen gratis, og HVERT spill kler det i sitt eget tema.
 | `createArcadeSynth`, `buzz` | `arcade/synth.ts` | Web Audio-lyd uten Tone/three, felles lydav |
 | `useArcadeSave`, `rankFor`, `nextRank` | `arcade/save.ts` | Rekord, antall runder, funn, ranger |
 | `usePlaytest`, `playtestSpeed` | `playtest.ts` | Selvspill-kontrakten (steg 4) |
+| `SimSpec`, `simRound`, `silent` | `sim.ts` | Simuleringskontrakten (steg 3a) |
 
 **3D-spill** legger `MicroCanvas` (fra `./kit`) inne i `ArcadeStage` og bygger DOM-HUD-en oppå med
 skallets komponenter:
@@ -436,6 +441,8 @@ Regler for robotene:
   årsak sender deg på gjetting; med årsak ser du feilen med en gang.
 - **Robotene tikker i spilltid.** Selvspillet gir ett grep per 0,2 spillsekunder (`BOT_EVERY`), slik
   som simuleringen. Det krever `tid` i snapshot, og `--fart` er begrenset til 4.
+- **Én kilde for robotene.** `usePlaytest` og `sim.ts` bruker samme `bots.ts` og samme robotnavn.
+  Røyktesten melder det som funn hvis navn eller `forventer` er ulike.
 - **Passiv spiller testes alltid** (ingen input). Den skal tape.
 - `snapshot` og `tick` leser refs, ikke state (de kalles utenfor React).
 - Alt er `import.meta.env.DEV`-gatet i `usePlaytest`; elevene får aldri robotene.
@@ -447,18 +454,42 @@ Regler for robotene:
 Det er tre porter. De to første er maskinelle og kjører også i CI. Den tredje er en uavhengig
 vurdering som nattsporet gjør før PR-en åpnes.
 
-### Port 1 - Selvspill (`scripts/playtest-microgame.mjs`)
+### Port 0 - Simulering (`scripts/sim-microgame.mts`)
+
+```bash
+npx tsx scripts/sim-microgame.mts --ids <id>            # sekunder, ingen nettleser
+```
+
+| Sjekk | Grønt når (200 seedede runder per robot) |
+|---|---|
+| Spillbart | hver `vinner`-robot vinner minst 80 % |
+| Utfordring | passiv og `tilfeldig` vinner høyst 5 %, andre `taper`-roboter høyst 10 % |
+| Ferdighet | vinnerens median slår 90-persentilen til hver taper |
+| Trapp | `middels` (median) over alle taperne og under 95 % av vinneren |
+| Spillfølelse | median minst 6 valg per minutt, og presset stiger minst 0,15 fra første til siste tredjedel |
+| Stabilt | ingen unntak, ingen runde som går forbi `maksSekunder` |
+
+Rapport i `.screenshots/playtest/_sim.md`, med vanligste tapsårsak per robot. `sim.json` i
+`.screenshots/playtest/<id>/` er fasiten røyktesten sammenligner seg med - kjør derfor port 0 før
+port 1. Samme seed gir samme runde, så et rødt tall er ikke uflaks: det er spillet.
+
+### Port 1 - Selvspill i nettleseren (`scripts/playtest-microgame.mjs`)
 
 ```bash
 node scripts/playtest-microgame.mjs --ids <id>          # starter egen Vite
 node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173
 ```
 
+En røyktest: en kort passiv runde (liv), én hel runde med vinnerroboten (filmstripen vurdereren
+ser, og plakaten med `--cover`) og Chromebook-målingen. `--full` kjører den gamle porten med alle
+roboter i nettleseren - bare til feilsøking når nettleser og simulering er uenige.
+CI kjører med `--maks-tid 60` (vinnerrunden stopper etter 60 spillsekunder); lokalt og i nattsporet
+går den hele runden, fordi filmstripen er det vurdereren ser.
+
 | Sjekk | Grønt når |
 |---|---|
-| Spillbart | hver `vinner`-robot vinner minst 1 av 2 runder |
-| Utfordring | passiv spiller og alle `taper`-roboter vinner aldri |
-| Ferdighet | beste vinnerrunde har flere poeng enn alle taperrunder |
+| Samsvar | vinnerroboten taper ikke i nettleseren der simuleringen nesten aldri taper (under 1 % av rundene) |
+| Roboter | samme robotnavn og `forventer` i `usePlaytest` som i `sim.ts` |
 | Raskt i gang | synlig knapp i spillvinduet på startskjermen, og `start()` gir fase «spiller» på under 6 s |
 | Liv | bildet endrer seg merkbart mellom 2 og 12 s uten input |
 | Lesbart | tekst dekker ikke midten av spillet i mer enn 4 s i strekk (normalisert for spilltempo) |
@@ -466,10 +497,9 @@ node scripts/playtest-microgame.mjs --ids <id> --url http://localhost:5173
 | Stabilt | ingen konsollfeil, ingen unntak i robotene |
 | Merket | `sjanger`, `tone`, `hook` og `cover` (bildet finnes) i registry, `usePlaytest` i fila, eget `theme` |
 | Brief | `kunst` i registry og `docs/microgames/briefer/<id>.md` med seksjonene Konseptturnering, Designbrief og Kunstbrief |
-| Spillfølelse | minst 6 valg per minutt, presset stiger minst 0,15 fra første til siste tredjedel, taper < `middels` < vinner, `tilfeldig` taper |
 
-Rapport i `.screenshots/playtest/_playtest.md`, bilder per spill (meny, passiv 2/7/12 s, slutt-skjerm
-per robot, filmstripe av vinnerroboten). Spill bygget før generatoren (de fire første arkadespillene)
+Rapport i `.screenshots/playtest/_playtest.md`, bilder per spill (meny, passiv 2/7/12 s, slutt-skjerm,
+filmstripe av vinnerroboten). Spill bygget før generatoren (de fire første arkadespillene)
 får tallene for brief og spillfølelse bare som notat.
 
 ### Port 2 - Scene-audit (`scripts/audit-microgames.mjs --ids <id> --strict --frames 4`)
@@ -494,7 +524,8 @@ Den får bare:
 
 - artikkelens tittel og tre setninger om hva den handler om,
 - skjermbildene fra port 1 og 2 (meny, filmstripe, slutt-skjermer, audit-rammene),
-- selvspill-rapporten (med tallene for spillfølelse) og likhetsrapporten,
+- simuleringsrapporten (robotene, ferdighetstrappen og spillfølelsen), selvspill-rapporten og
+  likhetsrapporten,
 - eierens tommel opp/ned på tidligere spill ved siden av poengene de fikk (nattrutinen henter dem),
 - referansebildene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal),
 - rubrikken under, og beskjed om å være streng og konkret.
@@ -515,7 +546,8 @@ Referansespillene er kalibreringen, rekalibrert 2026-09-28: eieren syntes Regnet
 MÅKA er en 5 på Gøy og Utseende.
 
 **Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20 av 25. Under
-terskel: gjør forbedringene og få en NY vurdering (ny underagent), inntil fem runder.
+terskel: gjør forbedringene og få en NY vurdering (ny underagent), inntil tre runder. Står Gøy
+stille to runder på rad, parkeres spillet - flere runder på samme løkke har aldri løftet Gøy.
 
 **Når vurderingen står stille, er det spillet som må endres - ikke pynten.** Står en akse på
 samme poeng to runder på rad, hjelper ikke flere farger, kameravinkler eller finere ringer. Gå
@@ -560,7 +592,7 @@ det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der d
 - [ ] Konseptturnering: fem ulike konsepter, fersk dommer, vinneren har minst 4 på Gøy og Fag
 - [ ] `docs/microgames/briefer/<id>.md` med Konseptturnering, Designbrief (ti punkter) og Kunstbrief (åtte punkter)
 - [ ] Sjanger, perspektiv og kunstretning ulik de tre siste nattspillene; `kunst` i registry
-- [ ] Gråboksen besto spillfølelsen før kunsten ble laget
+- [ ] `<navn>/sim.ts`; gråboksen besto simuleringen og gråboks-vurderingen (Gøy minst 4) før kunsten ble laget
 - [ ] Arkadeskall med eget `THEME`, mål i HUD, pause, lyd med lydav, designet for fullskjerm 1366×768
 - [ ] Tekst via `useArcadeText`: fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet
 - [ ] Skilt og etiketter i 3D med `crispCanvas`; ingen `setState` per melding; ingen `map = null`
@@ -571,7 +603,7 @@ det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der d
 - [ ] Rekord/ranger/funn som gir «én runde til»
 - [ ] `usePlaytest` med vinner, `middels`, taper som ignorerer fagkjernen og `tilfeldig`; `valg` og `press` i snapshot
 - [ ] Looken ser ferdig ut på `?kvalitet=lav`
-- [ ] Port 1 (selvspill med spillfølelse), port 2 (audit `--strict`) og port 2b (likhetsvakt) grønne
+- [ ] Port 0 (simulering), port 1 (selvspill-røyktest), port 2 (audit `--strict`) og port 2b (likhetsvakt) grønne
 - [ ] Port 3: uavhengig vurdering over terskel - poeng og observasjoner i PR-body
 - [ ] Norsk for en 14-åring, riktige tegn (æ, ø, å), ingen tankestrek
 - [ ] `npx tsc -p tsconfig.app.json --noEmit` og `npx eslint <filene dine>` rent
@@ -971,16 +1003,16 @@ de fire sanntidsformene der er likestilte med disse, og skal velges MINST like o
 Rører PR-en `src/components/microgames/**`, kjører `.github/workflows/microgame-audit.yml`:
 
 1. **Scene-audit** (`audit-microgames.mjs --strict`) for berørte spill + røyk-utvalg.
-2. **Selvspill** (`playtest-microgame.mjs`) for berørte spill som har `sjanger` i registry (nye
-   standard-spill). Et spill som er NYTT i PR-en, MÅ ha `sjanger`, `tone` og `usePlaytest` - ellers
-   er porten rød.
+2. **Simulering** (`sim-microgame.mts`) og **selvspill-røyktest** (`playtest-microgame.mjs`) for
+   berørte spill som har `sjanger` i registry (nye standard-spill). Et spill som er NYTT i PR-en,
+   MÅ ha `sjanger`, `tone`, `usePlaytest` og `sim.ts` - ellers er porten rød.
 
 Begge poster funnene sine som én PR-kommentar. Auto-merge (`auto-merge-bot-prs.yml`) venter til
 sjekken er grønn og merger da selv.
 
 | Melding | Betyr | Hva du gjør |
 |---|---|---|
-| «fant funn i spillet» (exit 1) | Ekte funn: taper-robot vant, vinner-robot tapte, tekst over spillet, konsollfeil, begravd geometri | Fiks spillet og push til branchen |
+| «fant funn i spillet» (exit 1) | Ekte funn: balansen i simuleringen, nettleser uenig med simuleringen, tekst over spillet, konsollfeil, begravd geometri | Fiks spillet og push til branchen |
 | «kunne ikke kjøre» (exit 2) | Harness/infrastruktur: kald Vite, død dev-server, timeout i `page.goto` | Ikke rør spillet. Kjør sjekken på nytt |
 
 **Bakgrunn (PR #246, 25.07.2026):** første PR som trigget scene-auditen ble flagget to ganger av

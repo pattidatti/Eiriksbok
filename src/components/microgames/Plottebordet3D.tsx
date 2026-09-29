@@ -40,7 +40,7 @@ import {
     type Cause,
     type Mode,
 } from './plottebordet/game';
-import { botTick, type BotStyle } from './plottebordet/bots';
+import { botTick, BOT_STYLES, type BotStyle } from './plottebordet/bots';
 import {
     Room,
     Plotters,
@@ -386,12 +386,6 @@ const CSS = `
 @keyframes pbFloat{from{opacity:1;margin-top:0}to{opacity:0;margin-top:-40px}}
 .pb-danger .pb-tube{animation:arcPulse .45s infinite alternate}
 `;
-
-const BOT_STYLES: Record<string, BotStyle> = {
-    seende: 'radar',
-    kysten: 'kysten',
-    patrulje: 'patrulje',
-};
 
 export default function Plottebordet3D({ onComplete }: MicroGameProps) {
     const [mode, setMode] = useState<Mode>('menu');

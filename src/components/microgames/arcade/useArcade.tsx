@@ -99,6 +99,12 @@ export function useArcadeLoop(handlers: LoopHandlers) {
 
         let raf = 0;
         const speed = playtestSpeed();
+        // Selvspill med ?mgfart: bare det siste steget per bilde tegnes på skjermen. De
+        // andre tegner på et 1x1-lerret - samme spillregler og samme view-mål, men uten å
+        // rastrere hele fullskjermen fire ganger på en programvare-GPU (det var det som
+        // holdt 2D-spillene på 0,2-0,4x ekte tid i CI).
+        const scratch = speed > 1 ? document.createElement('canvas').getContext('2d') : null;
+        const stepView: ArcadeView = { ...view };
         let last = performance.now();
         let reported = false;
         const tick = (now: number) => {
@@ -110,7 +116,12 @@ export function useArcadeLoop(handlers: LoopHandlers) {
             if (!visible || document.hidden) return;
             try {
                 // Selvspill kan be om flere steg per bilde (?mgfart, kun i utvikling).
-                for (let k = 0; k < speed; k++) h.current.frame(dt, view);
+                for (let k = 0; k < speed; k++) {
+                    if (scratch && k < speed - 1) {
+                        Object.assign(stepView, view, { ctx: scratch });
+                        h.current.frame(dt, stepView);
+                    } else h.current.frame(dt, view);
+                }
             } catch (err) {
                 if (!reported) {
                     reported = true;

@@ -48,7 +48,7 @@ import {
     type Mode,
     type Seddel,
 } from './lonna/game';
-import { botTick, newBotMemory, type BotMemory, type BotStyle } from './lonna/bots';
+import { botTick, newBotMemory, BOT_STYLES, type BotMemory, type BotStyle } from './lonna/bots';
 import {
     Atmosphere,
     Plaza,
@@ -316,12 +316,6 @@ interface RunResult {
     next: [number, string] | null;
     best: number;
 }
-
-const BOT_STYLES: Record<string, BotStyle> = {
-    seende: {},
-    'tar-pengene-hjem': { hjemFoerst: true },
-    'bare-mat': { bareMat: true },
-};
 
 export default function LopMedLonna3D({ onComplete }: MicroGameProps) {
     const [mode, setMode] = useState<Mode>('menu');

@@ -65,3 +65,10 @@ export function botTick(g: G, style: BotStyle, io: IO) {
             return;
         }
 }
+
+/** Robotene i selvspillet: navn -> stil. Brukes av både spillet (usePlaytest) og sim.ts. */
+export const BOT_STYLES: Record<string, BotStyle> = {
+    seende: 'radar',
+    kysten: 'kysten',
+    patrulje: 'patrulje',
+};
