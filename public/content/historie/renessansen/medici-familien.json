@@ -1,0 +1,254 @@
+{
+    "id": "medici-familien",
+    "title": "Medici-familien: Bankfolkene som kjøpte renessansen",
+    "layout": "rich",
+    "year": "1434-1737",
+    "category": "Europa",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-09-29",
+    "details": [
+        "Medici-familien ble rik som bankfolk, og banken passet blant annet på pengene til paven.",
+        "Cosimo de' Medici styrte Firenze fra 1434 uten noen offisiell tittel.",
+        "Familien betalte kunstnere som Donatello, Botticelli og Michelangelo, og fikk ære og makt tilbake.",
+        "Kunstsamlingen deres ble til Uffizi-museet i 1737."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Under påskemessen i 1478 sto brødrene Lorenzo og Giuliano de' Medici i domkirken i Firenze. Kirken var full av folk. Plutselig trakk flere menn fram kniver. Giuliano ble drept foran alteret. Lorenzo ble såret, men klarte å komme seg unna. Bak planen sto en rivaliserende familie, Pazzi, og paven i Roma støttet dem (Britannica-redaksjonen, u.å.-b)."
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor ville noen drepe to unge menn midt i en kirke? Svaret er at Medici-familien var de egentlige herrene i Firenze. De var ikke konger, og ingen av dem hadde en krone. De var bankfolk. Men pengene deres ga dem mer makt enn noen andre i byen. Og de brukte pengene på en måte som forandret Europa: de betalte for mye av kunsten vi i dag forbinder med [renessansen](/historie/renessansen/oversikt)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Firenze med domkirken sett fra en høyde på 1400-tallet",
+            "caption": "Firenze på 1400-tallet. Byen var liten, men rik, og det var her renessansen startet."
+        },
+        {
+            "type": "header",
+            "text": "En by full av penger"
+        },
+        {
+            "type": "text",
+            "content": "Renessansen er navnet på en tid i europeisk historie da folk fikk ny interesse for kunst og kunnskap fra antikken, altså oldtidens Hellas og Roma. Ordet betyr gjenfødelse. Den startet i Italia tidlig på 1400-tallet, og det meste skjedde i Firenze (Styve & Bjerkestrand, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Firenze var ikke et kongerike. Byen var en republikk, en stat der innbyggerne selv valgte hvem som skulle styre. I praksis var det de rike handelsfamiliene som hadde mest å si. Mange av de rikeste tjente penger på å lage og selge tøy og silke, eller på å låne ut penger og veksle mynter. Medici-familien gjorde begge deler (Britannica-redaksjonen, u.å.-c)."
+        },
+        {
+            "type": "text",
+            "content": "En av dem var Giovanni di Bicci de' Medici (1360–1429). Han drev en stor bank. Der lånte folk penger, og de kunne bytte mynter fra én by eller ett land til mynter fra et annet. Han fikk mye støtte blant vanlige borgere i byen, og han vant stor innflytelse i Firenze (Store norske leksikon, 2024b). Da han døde, arvet sønnen Cosimo både banken og makten."
+        },
+        {
+            "type": "header",
+            "text": "Cosimo: bankmannen som styrte uten tittel"
+        },
+        {
+            "type": "text",
+            "content": "Cosimo de' Medici (1389–1464) gjorde banken enda større. En av de viktigste kundene var selve kirken. Medici-banken passet på pengene til paven, og det ga store inntekter. Cosimo ble regnet som den rikeste mannen i sin tid (Britannica-redaksjonen, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Så mye penger skapte fiender. Andre rike familier i Firenze syntes Cosimo var blitt for mektig. De fikk ham arrestert, anklaget for å ville heve seg over alle andre. Cosimo satt fanget i rådhuset og kunne ha blitt henrettet. Men han betalte bestikkelser, altså hemmelige penger til folk med makt, og slapp unna med å bli kastet ut av byen. I løpet av et år sørget tilhengerne hans for å vinne makten tilbake gjennom valget, og han kunne vende hjem (Britannica-redaksjonen, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Fra 1434 var Cosimo den virkelige herren i Firenze. Likevel beholdt byen sine gamle regler for valg og styre. Cosimo levde hele livet som en privatperson uten noen offisiell tittel (Store norske leksikon, 2024a). Hvordan gikk det an? I Firenze trakk man lodd om hvem som skulle få de viktigste vervene. Cosimo og vennene hans passet på at bare navn de kunne stole på, lå i posen (Britannica-redaksjonen, u.å.-a). Utad så alt ut som før. Men det var Medici som bestemte."
+        },
+        {
+            "type": "component",
+            "name": "MediciValg",
+            "props": {
+                "title": "Styr Firenze uten krone"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Penger som ble til kunst"
+        },
+        {
+            "type": "text",
+            "content": "Cosimo brukte en stor del av formuen sin på kunst, bygninger og bøker. Han betalte kjente kunstnere som arkitekten Filippo Brunelleschi og billedhuggeren Donatello. Han samlet håndskrevne bøker, og samlingen hans ble starten på et berømt bibliotek i Firenze. På landstedet sitt lot han filosofen Marsilio Ficino lede en skole der de studerte den greske filosofen Platon (Britannica-redaksjonen, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor gjorde han det? Mye tyder på at Cosimo virkelig elsket kunst og lærdom. Men gavene var også smart politikk. En rik bankmann som bare samler penger, blir misunnet. En som gir byen vakre kirker og kunst, blir beundret. Når folk gikk forbi et nytt kunstverk, visste de hvem som hadde betalt. Pengene ble til ære, og æren ble til makt. Da Cosimo døde, ga Firenze ham tittelen Pater Patriae, som betyr «fedrelandets far» (Britannica-redaksjonen, u.å.-a)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva er en mesen?",
+                "content": "En mesen er en rik person som gir penger til kunstnere, forskere eller forfattere slik at de kan arbeide. Ordet kommer fra romeren Maecenas, som støttet diktere i antikken. Medici-familien er kanskje de mest kjente mesenene i historien. I dag gjør bedrifter og stiftelser noe av det samme når de sponser kunst og idrett."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Lorenzo den prektige"
+        },
+        {
+            "type": "text",
+            "content": "Cosimos sønnesønn Lorenzo (1449–1492) ble leder for familien i 1469 (Store norske leksikon, 2024c). Det var han som overlevde angrepet i domkirken i 1478. Etter mordet på broren gikk en rasende folkemengde løs på dem som sto bak, og de fleste ble drept. Men paven var nå en fiende av Firenze, og byen var i en farlig krise. Da gjorde Lorenzo noe dristig. Han reiste helt alene til kong Ferdinand av Napoli, og besøket løste krisen (Britannica-redaksjonen, u.å.-b). Etter dette var det ingen i byen som kunne utfordre makten til Medici-familien (Store norske leksikon, 2024c)."
+        },
+        {
+            "type": "text",
+            "content": "Lorenzo fikk tilnavnet il Magnifico, som betyr «den prektige». Han skrev dikt selv og var gavmild mot kunstnere og lærde. Blant dem han hjalp, var maleren Sandro Botticelli og en ung [Leonardo da Vinci](/historie/renessansen/leonardo-da-vinci). Han tok også en tenåring ved navn [Michelangelo](/historie/renessansen/michelangelo) inn i sitt eget hus (Britannica-redaksjonen, u.å.-b)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lorenzo de' Medici viser fram kunst for unge kunstnere i hagen",
+            "caption": "Lorenzo den prektige samlet kunstnere og lærde rundt seg. En av dem var den unge Michelangelo."
+        },
+        {
+            "type": "text",
+            "content": "Men det hadde en pris. Mens Lorenzo brukte penger på kunst, fester og gaver til politiske venner, gikk banken dårligere og dårligere. Formuen hans forsvant i luksus og gaver (Store norske leksikon, 2024c). Lorenzo døde i 1492. To år senere, i 1494, ble familien kastet ut av Firenze (Britannica-redaksjonen, u.å.-c)."
+        },
+        {
+            "type": "header",
+            "text": "Fra bankfolk til paver og hertuger"
+        },
+        {
+            "type": "text",
+            "content": "Historien om Medici sluttet likevel ikke der. Lorenzo hadde sørget for at sønnen Giovanni ble kardinal, en av kirkens høyeste ledere, da han bare var 14 år gammel. I 1513 ble Giovanni pave med navnet Leo 10. (Halvorsen, 2025). Familien kom tilbake til makten i Firenze, og alt i alt fikk kirken fire paver fra Medici-familien (Britannica-redaksjonen, u.å.-c)."
+        },
+        {
+            "type": "text",
+            "content": "Pave Leo 10. var som sin far glad i kunst. Han støttet malere som Rafael og Michelangelo. For å skaffe penger til den nye Peterskirken i Roma solgte kirken avlat, altså brev som skulle forkorte straffen for synder etter døden. Nettopp dette fikk munken [Martin Luther](/historie/reformasjonen/martin-luther) til å protestere i 1517 (Halvorsen, 2025). Slik ble en Medici-pave en av gnistene som startet reformasjonen."
+        },
+        {
+            "type": "text",
+            "content": "På 1500-tallet ble familien storhertuger av Toscana, altså fyrster over et helt område i Italia. De styrte Firenze fra 1434 til 1737, bare avbrutt av to korte perioder da de var kastet ut av byen (Britannica-redaksjonen, u.å.-c)."
+        },
+        {
+            "type": "header",
+            "text": "Arven som fortsatt henger på veggen"
+        },
+        {
+            "type": "text",
+            "content": "I 1737 ga den siste av Medici-familien hele familiens kunstsamling til staten i Toscana (Store norske leksikon, 2024d). Samlingen ble grunnlaget for Uffizi, i dag et av verdens største og viktigste kunstmuseer. Bygningen ble egentlig reist som kontorer for storhertug Cosimo 1. de' Medici. Navnet kommer av det italienske ordet for kontor. Her henger blant annet Botticellis berømte malerier «Venus' fødsel» og «Våren» (Store norske leksikon, 2024d)."
+        },
+        {
+            "type": "text",
+            "content": "Hvert år går mange turister gjennom Firenze og ser kunst som Medici-familien betalte for. Det er lett å tenke at de bare var snille kunstelskere. Men historien er mer sammensatt. Medici brukte pengene sine til å kjøpe noe mer enn skjønnhet. De kjøpte venner, respekt og makt, uten noen gang å sette på seg en krone."
+        },
+        {
+            "type": "text",
+            "content": "Spørsmålet de reiser, er fortsatt aktuelt. I dag gir rike personer og store selskaper penger til idrettslag, museer og konserter. Det kan være gavmildhet, men det kan også gi dem et bedre rykte og mer innflytelse. Når du ser en logo på en fotballdrakt eller et navn på en konsertsal, kan du spørre deg selv det samme som folk i Firenze kanskje gjorde: Hva kjøper egentlig pengene?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Besøkende ser på malerier i en lang gang i Uffizi-galleriet",
+            "caption": "Uffizi i Firenze. Kunstsamlingen til Medici-familien ble et museum som alle kan besøke."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvordan tjente Medici-familien pengene sine, og hvem var en av bankens viktigste kunder?",
+                    "Hva skjedde i domkirken i Firenze i 1478, og hvordan løste Lorenzo krisen etterpå?",
+                    "Hvordan klarte Cosimo å styre Firenze uten å ha noen offisiell tittel?",
+                    "Hva skjedde med Medici-familiens kunstsamling i 1737?"
+                ],
+                "reflekter": [
+                    "Hvorfor tror du Cosimo valgte å beholde republikkens regler i stedet for å gjøre seg selv til konge?",
+                    "Forklar hvordan penger kunne bli til ære, og ære bli til makt, for Medici-familien. Bruk minst ett eksempel fra teksten.",
+                    "Lorenzo brukte mye penger på kunst og gaver, mens banken gikk dårligere. Var det et godt eller dårlig valg for familien? Begrunn svaret.",
+                    "En Medici-pave var med på å starte reformasjonen. Forklar sammenhengen."
+                ],
+                "gaaVidere": [
+                    "Finn et eksempel fra i dag der en rik person eller et selskap gir penger til kunst, idrett eller forskning. Hva tror du de får igjen for det?",
+                    "Diskuter i klassen: Er det et problem for et demokrati hvis noen få rike personer har mye makt uten å være valgt? Hvorfor eller hvorfor ikke?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvordan ble Medici-familien rik?",
+                        "options": [
+                            "Som bankfolk",
+                            "Som bønder",
+                            "Som soldater",
+                            "Som sjøfolk"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "Giovanni de' Medici drev en stor bank og vekslerforretning, og sønnen Cosimo gjorde banken enda større."
+                    },
+                    {
+                        "question": "Hvilken tittel hadde Cosimo de' Medici da han styrte Firenze?",
+                        "options": [
+                            "Konge",
+                            "Hertug",
+                            "Ingen offisiell tittel",
+                            "Pave"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Cosimo levde som en privatperson. Byen beholdt sine regler, men Medici passet på at vennene deres fikk de viktige vervene."
+                    },
+                    {
+                        "question": "Hva skjedde under påskemessen i domkirken i 1478?",
+                        "options": [
+                            "Lorenzo ble kronet til konge",
+                            "Pazzi-familien prøvde å drepe Medici-brødrene",
+                            "Michelangelo avduket en statue",
+                            "Paven besøkte Firenze"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Giuliano ble drept, men Lorenzo kom seg unna. Paven støttet planen."
+                    },
+                    {
+                        "question": "Hvilken Medici-pave solgte avlat som fikk Martin Luther til å protestere?",
+                        "options": [
+                            "Leo 10.",
+                            "Klemens 7.",
+                            "Pius 4.",
+                            "Leo 11."
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "Leo 10. var sønn av Lorenzo. Salget av avlat til Peterskirken fikk Luther til å protestere i 1517."
+                    },
+                    {
+                        "question": "Hvilket museum bygger på kunstsamlingen til Medici-familien?",
+                        "options": [
+                            "Louvre",
+                            "Uffizi",
+                            "British Museum",
+                            "Nasjonalmuseet"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "I 1737 ga den siste av familien samlingen til staten i Toscana. Den ble grunnlaget for Uffizi i Firenze."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Britannica-redaksjonen. (u.å.-a). *Cosimo de' Medici*. Encyclopaedia Britannica. Hentet 29.09.2026 fra [britannica.com](https://www.britannica.com/biography/Cosimo-de-Medici)",
+                    "Britannica-redaksjonen. (u.å.-b). *Lorenzo de' Medici*. Encyclopaedia Britannica. Hentet 29.09.2026 fra [britannica.com](https://www.britannica.com/biography/Lorenzo-de-Medici)",
+                    "Britannica-redaksjonen. (u.å.-c). *Medici family*. Encyclopaedia Britannica. Hentet 29.09.2026 fra [britannica.com](https://www.britannica.com/topic/Medici-family)",
+                    "Halvorsen, P. B. (2025). *Leo 10.* Store norske leksikon. Hentet 29.09.2026 fra [snl.no/Leo_10.](https://snl.no/Leo_10.)",
+                    "Store norske leksikon. (2024a). *Cosimo de' Medici*. Hentet 29.09.2026 fra [snl.no/Cosimo_de'_Medici](https://snl.no/Cosimo_de%27_Medici)",
+                    "Store norske leksikon. (2024b). *Giovanni de' Medici – handelsmann*. Hentet 29.09.2026 fra [snl.no/Giovanni_de'_Medici_-_handelsmann](https://snl.no/Giovanni_de%27_Medici_-_handelsmann)",
+                    "Store norske leksikon. (2024c). *Lorenzo de' Medici*. Hentet 29.09.2026 fra [snl.no/Lorenzo_de'_Medici](https://snl.no/Lorenzo_de%27_Medici)",
+                    "Store norske leksikon. (2024d). *Uffizi*. Hentet 29.09.2026 fra [snl.no/Uffizi](https://snl.no/Uffizi)",
+                    "Styve, P. S. T., & Bjerkestrand, N. E. (2025). *Renessansen*. Store norske leksikon. Hentet 29.09.2026 fra [snl.no/renessansen](https://snl.no/renessansen)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

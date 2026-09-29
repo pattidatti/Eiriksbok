@@ -5574,6 +5574,21 @@
               ],
               "createdDate": "2026-06-18T03:26:48+02:00",
               "lastUpdated": "2026-08-01T08:56:45+02:00"
+            },
+            {
+              "id": "medici-familien",
+              "title": "Medici-familien: Bankfolkene som kjøpte renessansen",
+              "description": "Medici-familien ble rik på bank, styrte Firenze uten krone og betalte for kunsten vi i dag forbinder med renessansen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "renessansen",
+                "medici",
+                "firenze",
+                "italia",
+                "kunst",
+                "makt"
+              ],
+              "createdDate": "2026-09-29T00:00:00Z"
             }
           ]
         },
