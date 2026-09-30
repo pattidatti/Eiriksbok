@@ -1428,6 +1428,15 @@ export function buy(g: G, i: number, io: IO | null, to?: Loc): boolean {
     const kind = card.kind!;
     let dest: Loc | null = null;
     if (to && !unitAt(g, to) && canPlace(g, to, kind, true)) dest = to;
+    // Slippes kortet på en rute der det står noen, tar det nye kortet plassen og den
+    // gamle går til benken (hærføreren flyttes ikke).
+    const occ = to && to.at === 'board' ? unitAt(g, to) : null;
+    const benchFree = firstFree(g);
+    if (!dest && occ && !UNITS[occ.kind].hero && benchFree && !colClosed(g, (to as { col: number }).col) && g.gold >= card.cost) {
+        setAt(g, benchFree, occ);
+        setAt(g, to!, null);
+        dest = to!;
+    }
     if (!dest) dest = firstFree(g);
     const u: Unit = { uid: g.uid++, kind, star: 1 };
     if (!dest) {

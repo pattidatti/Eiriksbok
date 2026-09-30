@@ -408,6 +408,11 @@ function Loop({
         cam.position.copy(CAM);
         cam.lookAt(LOOK);
 
+        // Overleggene (rutene, navnelappene) må projiseres med samme kamera som tegnes nå -
+        // ikke med matriser fra forrige tegning. Ellers hopper rutene mens man drar.
+        cam.aspect = state.size.width / Math.max(1, state.size.height);
+        cam.updateProjectionMatrix();
+        cam.updateMatrixWorld();
         const vec = v.current;
         const proj: Proj = (x, y, z) => {
             vec.set(x, y, z).project(cam);
@@ -842,11 +847,21 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                 const card = g.shop[d.src.i];
                 if (!card) return;
                 if (to === 'sell') return;
-                if (to) buy(g, d.src.i, io, to);
+                const full = boardCount(g) >= boardCap(g);
+                let bought = false;
+                if (to) bought = buy(g, d.src.i, io, to);
                 else if (!d.moved) {
                     // Klikk: kjøp og still opp der klassen hører hjemme.
                     const spot = card.kind ? autoSlot(g, card.kind) : null;
-                    buy(g, d.src.i, io, spot ?? undefined);
+                    bought = buy(g, d.src.i, io, spot ?? undefined);
+                }
+                // Havnet enheten på benken fordi slagmarken er full? Si det der blikket er.
+                const toBoard = to && to.at === 'board';
+                if (bought && card.kind && full && (!toBoard || !unitAt(g, to as Loc) || unitAt(g, to as Loc)!.kind !== card.kind)) {
+                    const bench = stageRef.current?.querySelector('.ha-bench')?.getBoundingClientRect();
+                    const st = stageRef.current?.getBoundingClientRect();
+                    if (bench && st)
+                        text.float(`Full slagmark (${boardCap(g)} plasser): på benken`, bench.left - st.left + 200, bench.top - st.top - 14, PAL.gul, true);
                 }
             } else {
                 if (to === 'sell') sell(g, d.src.loc, io);
@@ -860,7 +875,7 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
             window.removeEventListener('pointermove', onMove);
             window.removeEventListener('pointerup', onUp);
         };
-    }, []);
+    }, [text]);
 
     const doReroll = () => {
         reroll(gRef.current, ioRef.current);
@@ -989,11 +1004,12 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                             // Mens eleven drar: hvem møter enheten her, og slår den dem?
                             const foe = g.enemy[0]?.[c] ?? g.enemy[1]?.[c] ?? null;
                             const hint = dragKind && foe ? matchupHint(dragKind, foe.kind) : null;
+                            const locked = !u && boardCount(g) >= boardCap(g) && !(dragKind && UNITS[dragKind].hero);
                             return (
                                 <div
                                     key={key}
                                     data-drop={key}
-                                    className={`ha-slot${drag ? ' drop' : ''}${overDrop === key ? ' over' : ''}${u ? ' has' : ''}`}
+                                    className={`ha-slot${drag ? ' drop' : ''}${overDrop === key ? ' over' : ''}${u ? ' has' : ''}${locked ? ' locked' : ''}`}
                                     style={{ display: 'none' }}
                                     ref={(el) => {
                                         slotEls.current[i] = el;
@@ -1002,7 +1018,11 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                                         if (u) startDrag(e, { type: 'loc', loc: { at: 'board', row: r, col: c } }, unitLabel(u));
                                     }}
                                 >
-                                    {hint && drag?.moved && (
+                                    {locked && <span className="ha-lock">🔒 Full</span>}
+                                    {locked && drag?.moved && overDrop === key && (
+                                        <span className="ha-hint bad">Slagmarken er full ({boardCount(g)}/{boardCap(g)})</span>
+                                    )}
+                                    {!locked && hint && drag?.moved && (
                                         <span className={`ha-hint ${hint.score > 0 ? 'good' : hint.score < 0 ? 'bad' : 'even'}`}>
                                             {hint.score > 0 ? '▲ ' : hint.score < 0 ? '▼ ' : ''}
                                             {hint.text}

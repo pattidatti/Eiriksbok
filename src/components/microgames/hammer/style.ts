@@ -209,4 +209,6 @@ export const CSS = `
 .ha-card .sc.ny{background:${PAL.rod};color:${PAL.kalk}}
 .ha-syn div.ha-lesson{background:${PAL.kalk};color:${PAL.sot};border:2px solid ${PAL.sot};border-left:6px solid ${PAL.rod};padding:6px 10px 8px;font-size:15px;line-height:1.35;font-weight:600;box-shadow:0 3px 0 ${PAL.sot};margin-bottom:4px}
 .ha-lesson .t{display:block;font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:.05em;color:${PAL.rod};margin-bottom:2px}
+.ha-slot.locked{background:rgba(28,23,20,.45);border:2px dashed rgba(164,64,42,.7)}
+.ha-lock{align-self:center;font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:13px;color:${PAL.kalk};text-transform:uppercase;letter-spacing:.06em;text-shadow:0 1px 0 #000;pointer-events:none}
 `;
