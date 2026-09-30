@@ -3352,6 +3352,22 @@
               ],
               "createdDate": "2026-08-20T10:06:58.069Z",
               "lastUpdated": "2026-08-26T07:39:10+02:00"
+            },
+            {
+              "id": "store-nordiske-krig",
+              "title": "Den store nordiske krig: Da Karl XII ville ta Norge",
+              "description": "Karl XII tok Kristiania i 1716, men tapte Norge da Tordenskiold tok kanonene hans i Dynekilen og vinteren tok hæren i Trøndelag.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "dansketiden",
+                "norge",
+                "sverige",
+                "krig",
+                "tordenskiold",
+                "karl-xii",
+                "1700-tallet"
+              ],
+              "createdDate": "2026-09-30T00:00:00Z"
             }
           ]
         },
