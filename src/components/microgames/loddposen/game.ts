@@ -7,9 +7,10 @@ import { seeded, type Rng } from '../sim';
 //
 // De tre reglene eleven skal sitte igjen med:
 //   1. Hånda inn når alle ser bort, ut når noen kremter (sett med hånda i posen = tatt).
-//   2. Florin betaler alt: hver lapp koster, en tapt trekning koster, og bare en vunnet
-//      trekning gir renter (halvparten fra 1469). Tom kiste = tapt.
-//   3. 3 av 5 vinner: trekker Signoria minst tre venner av fem lapper, styrer Medici.
+//   2. 3 av 5 vinner: trekker Signoria minst tre venner av fem lapper, styrer Medici.
+//      En vunnet trekning betaler renter for hver venn i posen utover to, så det lønner
+//      seg å tørre én lapp til. En tapt trekning koster mer for hvert år. Tom kiste = tapt.
+//   3. Pazzi kremter ikke fra 1478: blikket hans sveiper sakte mot posen, og så ser han.
 //
 // En runde er åtte trekninger. Hver trekning: SMUGLE_S sekunder smugling (gavekortet står
 // de første KORT_S sekundene), så TREKK_S sekunder trekning.
@@ -29,7 +30,7 @@ export const ÅR = [1434, 1444, 1454, 1464, 1469, 1478, 1485, 1492];
 /** Antall rådsherrer rundt bordet i hver trekning (gonfalonieren kommer i tillegg). */
 const RÅD = [3, 3, 3, 4, 4, 4, 4, 4];
 /** Fiendelapper rivalene legger i posen ved starten av hver trekning. */
-const FIENDER = [5, 5, 5, 5, 5, 5, 5, 6];
+const FIENDER = [4, 5, 5, 5, 5, 5, 5, 6];
 /** Så mange lapper trekkes, og så mange venner må til for å vinne. */
 export const TREKKES = 5;
 export const MÅ_HA = 3;
@@ -42,7 +43,7 @@ const LORENZO_FRA = 4;
 /** 1478: Pazzi-rystelsen, alle er mistenksomme. Pazzi kremter ikke lenger. */
 export const RYSTELSE = 5;
 /** Fra 1478 ser Pazzi tilbake uten varsel så mange sekunder etter at han så bort. */
-export const PAZZI_STILLE_S = 2.5;
+export const PAZZI_STILLE_S = 3;
 
 /** Grådig hånd: første lapp faller etter FØRSTE_S, så én hvert NESTE_S så lenge hånda er inne. */
 export const FØRSTE_S = 0.5;
@@ -50,19 +51,21 @@ export const NESTE_S = 0.3;
 /** Fiske: hold hånda over en fiendelapp så lenge, så er den ute. */
 export const FISK_S = 0.6;
 /** Kremtet: så lang tid har du på å dra hånda ut før blikket treffer. */
-export const VARSEL_S = 0.7;
+export const VARSEL_S = 0.4;
 /** Sakte film når et blikk begynner å snu seg mens hånda er i posen. */
 const FRYS_S = 0.25;
 
 export const KISTE_START = 150;
 /** Kista rommer ikke mer: gull over dette er bortkastet, så det lønner seg å bruke det. */
-export const KISTE_MAKS = 300;
+export const KISTE_MAKS = 500;
 /** Florin per sekund fra handelen, uansett hvem som styrer. */
-const INNTEKT = 6;
+const INNTEKT = 2;
 export const LAPP_PRIS = 15;
-/** Tapt trekning koster, vunnet trekning gir renter (halvparten fra 1469). */
-export const TAP_PRIS = 110;
-const RENTER = 150;
+/** Tapt trekning koster mer for hvert år som går. */
+const TAP_GRUNN = 70;
+const TAP_ØKER = 20;
+/** Vunnet trekning: renter per venn i posen utover to (halvparten fra 1469). Multiplikatoren gjelder bare poeng. */
+export const RENTE_PER_VENN = 40;
 /** Multiplikatoren: +0,25 per lapp etter den andre i samme dukk. */
 const MULT_PER_LAPP = 0.25;
 const MULT_MAKS = 5;
@@ -77,20 +80,20 @@ export interface Kunst {
 /** Kunstverkene i studiolo-skapet, i den rekkefølgen de kan tilbys. */
 export const KUNST: Kunst[] = [
     { navn: 'Bøker til biblioteket', pris: 70, trekninger: 1 },
-    { navn: 'Brunelleschis kirke', pris: 200, trekninger: 4 },
+    { navn: 'Brunelleschis kirke', pris: 200, trekninger: 2 },
     { navn: 'Donatellos statue', pris: 130, trekninger: 2 },
     { navn: 'Ficinos Platon-skole', pris: 110, trekninger: 2 },
     { navn: 'Botticellis maleri', pris: 150, trekninger: 2 },
-    { navn: 'Unge Michelangelo i huset', pris: 190, trekninger: 4 },
+    { navn: 'Unge Michelangelo i huset', pris: 190, trekninger: 2 },
 ];
 
 export const RANGER: [number, string][] = [
     [0, 'Skriver'],
-    [120, 'Notar'],
-    [280, 'Prior'],
-    [480, 'Gonfaloniere'],
-    [720, 'Il Magnifico'],
-    [1000, 'Pater Patriae'],
+    [150, 'Notar'],
+    [350, 'Prior'],
+    [600, 'Gonfaloniere'],
+    [900, 'Il Magnifico'],
+    [1300, 'Pater Patriae'],
 ];
 
 // ---------- Tilstand ----------
@@ -182,6 +185,8 @@ export interface G {
     trukket: boolean[];
     gonfNeste: boolean;
     mult: number;
+    /** Hva forrige trekning ga (renter) eller kostet (tap) i florin. */
+    sisteRente: number;
     poeng: number;
     vunnet: number;
     rene: number;
@@ -204,14 +209,21 @@ export const år = (g: G) => ÅR[g.trekning];
 export const aktiv = (r: Rådsherre) => r.beundrer <= 0;
 export const bankenSvikter = (g: G) => g.trekning >= LORENZO_FRA;
 export const inntekt = () => INNTEKT;
-export const renter = (g: G) => (bankenSvikter(g) ? RENTER / 2 : RENTER);
+/** Tapet i denne trekningen: 70 florin i 1434, 20 mer for hvert år som går. */
+export const tapPris = (g: G) => TAP_GRUNN + TAP_ØKER * g.trekning;
+/** Rentene en seier gir med `venner` Medici-lapper i posen. */
+export function renter(g: G, venner = g.venner) {
+    const per = bankenSvikter(g) ? RENTE_PER_VENN / 2 : RENTE_PER_VENN;
+    return Math.round(per * Math.max(0, venner - (MÅ_HA - 1)));
+}
 /** Fra 1478 kremter ikke Pazzi, og kunst virker ikke på ham. */
 export const stillePazzi = (g: G, r: Rådsherre) => r.slag === 'pazzi' && g.trekning >= RYSTELSE;
 export const lapper = (g: G) => g.venner + g.fiender;
 
 /** Hvor fort blikkene går i denne trekningen (1 = rolig). */
 export function fart(g: G) {
-    let f = 1 + 0.04 * g.trekning;
+    // Rundt 10 % kortere bortblikk for hver trekning, og ekstra mistenksomt i 1478.
+    let f = 1 + 0.07 * g.trekning;
     if (g.trekning === RYSTELSE) f *= 1.15;
     return f;
 }
@@ -333,6 +345,7 @@ export function newGame(seed: number): G {
         trukket: [],
         gonfNeste: false,
         mult: 1,
+        sisteRente: 0,
         poeng: 0,
         vunnet: 0,
         rene: 0,
@@ -473,7 +486,14 @@ function oppdaterBlikk(g: G, dt: number) {
                 r.t = r.slag === 'gonf' ? (0.8 + g.rng() * 0.4) / f : (0.5 + g.rng() * 0.5) / f;
             } else nyBort(g, r);
         }
-        const mål = r.blikk === 'ser' ? mot : r.blikk === 'varsel' ? lerp(r.bortVinkel, mot, 0.35) : r.bortVinkel;
+        // Den stille Pazzi sveiper sakte og synlig mot posen gjennom hele bortblikket.
+        const sveip = stillePazzi(g, r) && r.blikk === 'bort' ? clamp(r.siden / PAZZI_STILLE_S, 0, 1) : 0;
+        const mål =
+            r.blikk === 'ser'
+                ? mot
+                : r.blikk === 'varsel'
+                  ? lerp(r.bortVinkel, mot, 0.35)
+                  : lerp(r.bortVinkel, mot, sveip * 0.85);
         r.vinkel += (mål - r.vinkel) * Math.min(1, dt * (r.blikk === 'ser' ? 14 : 6));
     }
 }
@@ -508,14 +528,17 @@ function avgjør(g: G) {
         g.poeng += k * 10 * g.mult * (ren ? 2 : 1);
         const r = renter(g);
         g.kiste = Math.min(KISTE_MAKS, g.kiste + r);
+        g.sisteRente = r;
         g.events.push({ k: ren ? 'ren' : 'vant', tekst: `+${r} florin i renter` });
     } else {
         // Tapt trekning: Albizzi styrer, ingen renter, og det koster.
         g.mult = 1;
         g.poeng += k * 5;
         g.gonfNeste = true;
-        g.kiste -= TAP_PRIS;
-        g.events.push({ k: 'tapte', tekst: `-${TAP_PRIS} florin` });
+        const pris = tapPris(g);
+        g.kiste -= pris;
+        g.sisteRente = -pris;
+        g.events.push({ k: 'tapte', tekst: `-${pris} florin` });
     }
     if (g.kiste < 0) {
         g.kiste = 0;
@@ -610,12 +633,12 @@ export function progress(g: G) {
     return clamp((g.trekning + del) / TREKNINGER, 0, 1);
 }
 
-/** 0-1: flere rådsherrer, raskere blikk og kortere varsel. */
+/** 0-1: flere rådsherrer, raskere blikk og en Pazzi som ikke kremter. */
 export function pressure(g: G) {
-    const n = g.rådsherrer.length;
-    const vakter = clamp((n - 3) / 4, 0, 1);
-    const blikk = clamp((fart(g) - 1) / 0.9, 0, 1);
-    return clamp(0.15 + 0.45 * vakter + 0.3 * blikk + (g.trekning >= RYSTELSE ? 0.1 : 0), 0, 1);
+    const n = g.rådsherrer.filter(aktiv).length;
+    const vakter = clamp((n - 3) / 2, 0, 1);
+    const blikk = clamp((fart(g) - 1) / 0.6, 0, 1);
+    return clamp(0.12 + 0.3 * vakter + 0.45 * blikk + (g.trekning >= RYSTELSE ? 0.1 : 0), 0, 1);
 }
 
 export const finalScore = (g: G) => Math.floor(g.poeng);
@@ -629,11 +652,11 @@ export const TIPS: Record<Cause, { tittel: string; tekst: string }> = {
     tatt: {
         tittel: 'Tatt med hånda i posen!',
         tekst:
-            'Rådsherrene arresterer Cosimo, som i 1433. Han slapp unna med eksil fordi han betalte bestikkelser. Tips: dra hånda ut med en gang noen kremter. Og fra 1478 kremter ikke Pazzi - han snur seg etter halvannet sekund.',
+            'Rådsherrene arresterer Cosimo, som i 1433. Han slapp unna med eksil fordi han betalte bestikkelser. Tips: dra hånda ut med en gang noen kremter. Fra 1478 kremter ikke Pazzi - følg med på blikket hans som sveiper mot posen.',
     },
     tom: {
         tittel: 'Kista er tom',
         tekst:
-            'Uten penger forsvant vennene. Slik gikk det med Lorenzo: han brukte formuen på kunst, fester og gaver mens banken gikk dårligere, og i 1494 ble familien kastet ut. Tips: en tapt trekning koster 110 florin og gir ingen renter. Kjøp nok venner til å vinne, men hold alltid nok i kista til ett tap.',
+            'Uten penger forsvant vennene. Slik gikk det med Lorenzo: han brukte formuen på kunst, fester og gaver mens banken gikk dårligere, og i 1494 ble familien kastet ut. Tips: en tapt trekning koster mer for hvert år, og bare en vunnet trekning gir renter. Tør du flere venner i posen, betaler banken mer.',
     },
 };

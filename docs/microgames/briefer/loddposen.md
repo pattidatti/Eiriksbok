@@ -150,6 +150,11 @@ bli tom.
    synes samtidig (dommerens løft 4). **3D**, fordi posen, hendene og hattene får volum og fernissen
    på tre glinser i stearinlyset, og fordi trekningen kan filmes: kameraet vipper ned til bordkanten
    og følger hånda ned i posen i sakte film. Resten av tiden er kameraet stille og oversiktlig.
+   **Endret i bygg: 2D-canvas, ikke 3D.** Bordet ses rett ovenfra, og intarsia er flate, innlagte
+   biter - det er nettopp det 2D-canvas er best på. Treårene tegnes prosedyralt ved oppstart, bordet
+   tegnes én gang per skjermstørrelse, og bare blikk, hender, pose og lapper tegnes hvert bilde. Det
+   gir full kunst på en billig Chromebook uten three.js. «Kameraet» er en zoom mot posen under
+   trekningen (x1,3) og ved nesten tatt, i stedet for et 3D-kamera som vipper.
 
 9. **Look.** Et florentinsk intarsia-bord fra rådhuset sett ovenfra: alt er innlagt tre i fire
    treslag, blikkene er lyse lønnestriper som glir over valnøtta, og bare Medici-kulene og florinene
@@ -295,3 +300,40 @@ bli tom.
     vinnende roboten teller Pazzis 2,5 s nøyaktig; en elev trenger et synlig hint (hatten som
     rykker, en sandklokke) i kunsten. «Hold for å fiske»-feltet ligger under trekningskortene og
     tapslinja på kista må leses tydeligere. Grådighet gir bare poeng, ikke overlevelse.
+- **Fase: bygg, ferdig spill (2026-09-30).** Gjorde først diagnose 2 i `game.ts`: (1) grådighet =
+  overlevelse: seier betaler 40 florin per venn i posen utover to (20 fra 1469), og multiplikatoren
+  gjelder bare poeng; (2) tapet vokser med årene: 70 + 20 per trekning (70 i 1434, 210 i 1492),
+  handel bare 2 florin/s, start 150, kista rommer 500; (3) kremt-vinduet 0,7 -> 0,4 s, blikkfart
+  1 + 0,07 per trekning (x1,15 i 1478), beundrere varer høyst 2 trekninger, og den stille Pazzi
+  sveiper blikket sakte mot posen gjennom sine 3 s (stripa blir varmere, hånda skjelver mer).
+  1434 har 4 fiendelapper (mykere start). Robotene: vinneren fisker ned til 2 fiender og slipper så
+  grådig ned til reserven (ett tap), den middels gode ser annethvert øyeblikk, drar ut etter to
+  lapper og fisker aldri. Så kunsten og skallet: `loddposen/art.ts` tegner seks treslag (valnøtt,
+  honning, lønn, ebenholt, grønnbeiset, blåbeiset) som fliser ved oppstart; hver bit får dreide årer,
+  sandsvidd kant og ebenholtlist. Bordet (certosina-kant, åtte kiler, rosett under posen), skap med
+  bøker og lutt i sidene, kista som halvåpent skap med florin-stabler og tapslinje, gavekort som
+  cartellino med innlagte kunstbilder, rådsherrer med cappuccio og nese som peker dit blikket går,
+  blikk som innlagte lønnestriper klippet til bordet, skinnposen som eneste myke form, rødt erme
+  med gullkant. Juice: lapper som flyr ned i posen, posen buler, kulene spretter, hånda skjelver
+  mer for hver lapp og når noen snur seg, kremt-buer og hatterykk, sakte film (x0,45) og gullkant
+  ved nesten tatt, trekningen med zoom, mørke, fem lapper som snus med trommeslag, mynter som
+  flyr til kista eller ut av den, tatt: bordet blir ebenholt og blikket lyser mot hånda.
+  HUD: cartellino oppe til venstre (år, trekning, åtte kuler mot målet 1492) og et innlagt
+  poengskilt oppe til høyre. Tekst: tre lærings-øyeblikk (kremtet, trekningen, Pazzi i 1478),
+  lapper ved tingen, bannere for årene, «Dette skjedde». Rekord, ranger (terskler 150-1300),
+  studiolo med de seks kunstverkene. Bordet lever bak menyen.
+  Simulering (200 runder, grønn): seende 84 % (median 980), halvgod 43 % (median 485), ødeland 1 %
+  (median 80, dør av tom kiste i 1434-1444), tilfeldig 0 % (tatt i 1434), passiv 0 % (tom kiste i
+  1454, etter 56 s). 23,1 valg per minutt, press 0,17 -> 0,33 -> 0,64. Nettleseren: seende vant med
+  767 poeng, JS p95 17,7 ms på Chromebook-struping, audit 0 funn, likhet nærmest inn-mot-stranda
+  (0,39).
+  - *Prøvd som ikke virket:* (1) multiplikatoren også på florin: kista sprakk taket, og ødelanden
+    vant 50 %. (2) Blikkfart +0,10 per trekning og tak på 300 florin: vinneren fikk nesten ingen
+    lapper fra 1478 og gikk tom (0-30 %). (3) Pazzi stille i 2,5 s med kremt-vindu 0,4 s: for trange
+    vinduer i 1478. (4) Vinneren uten fisking: den tapte trekningene tidlig og døde i 1454.
+    (5) Studiolo som canvas i menyen: skallet legger alle canvas over hele vinduet, nå et bilde.
+    (6) Sandsviing på alle små biter: JS p95 21,9 ms, nå bare på biter med bred kant (17,7 ms).
+  - *Kjente svakheter:* den halvgode dør ofte i 1434-1444 (ett uheldig tap med lite i kista).
+    Vinneren på 84 % er rett over kravet. Pazzis lureblikk før 1478 er fortsatt lite farlig.
+    Gavekortet står bare 4 s og er lett å overse i hjørnet. Kremt-vinduet på 0,4 s er stramt for
+    et menneske; sakte film (x0,45) og 0,25 s frys gjør det til om lag 1 s ekte tid.
