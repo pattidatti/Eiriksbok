@@ -108,36 +108,54 @@ Fem konsepter, alle innenfor bestillingen. Fersk dommer med bestillingen, Gøy /
 
 ## Kunstbrief
 
-1. **Kilden.** Allierte propagandaplakater 1940-45 i silketrykk og litografi (britiske Ministry of
-   Information, amerikanske Office of War Information, norske plakater fra London-regjeringen).
-   Kjennetegn: tre-fem flate trykkfarger uten overganger, grov rasterprikk i skygger, store
-   diagonale lyskasterstråler og fly i silhuett mot himmelen, og tykk, rett blokkskrift.
-2. **Palett.**
-   - `#efe4c9` plakatpapir: bakken, kort, tekst på mørkt
-   - `#5b6b3a` olivengrønn: dine enheter
-   - `#1d2b4f` marineblå: himmel, skygge, HUD
-   - `#6f716c` feltgrå med `#1a1a1a` sot: fiendens enheter
-   - `#b3261e` signalrød: fare, fiendens ild, tap
-   - `#d9a21b` sennepsgul: radiolinjer, forsyninger, gevinst
-3. **Form og overflate.** Lavpoly-figurer med helt flate farger (ingen PBR), tykk sotkontur
-   (omvendt skall) og rasterprikker tegnet i canvas som skygge-tekstur. Silhuettene er tydelige
-   ovenfra: vogna har lang kanon, panservernet et skjold, artilleriet et langt løp, flyene store
-   vinger med rundeller. Røyk er flate, trykte skyformer, ikke partikkeltåke.
-4. **Lys.** Flatt plakatlys fra øvre venstre, én skygge per enhet trykt som mørkere farge. Om
-   natta (Bastogne) lyskasterstråler. Munningsflammer og eksplosjoner er gule og røde former
-   som blinker, ikke glød.
-5. **Perspektiv og kamera.** Ren isometrisk ortografisk vinkel over et kartutsnitt, fast. Kameraet
-   rister ved store nedslag. Ulikt Løpegravene (skrått bak festningen i perspektiv) og Hammer og
-   ambolt (fra siden, venstre mot høyre).
-6. **Typografi og HUD.** HUD-en er selve plakaten: stedet og datoen som stor blokkskrift i et
-   bånd øverst («DUNKERQUE · MAI 1940»), radiokanalene som tre lamper på kommandovognas
-   panel, butikken som en rad trykte kort nederst.
-7. **Slik lages det på en Chromebook.** `MeshBasicMaterial`/`MeshToonMaterial` med flate farger,
-   instanser for infanteri og tre, rastertekstur tegnet én gang i canvas, konturer med omvendt
-   skall på sammenslåtte figurer, ingen bloom på `lav`.
-8. **Ikke slik.** Ikke svart-hvitt fotokorn (Omaha), ikke kartbord med plottebrikker
-   (Plottebordet), ikke oljemaleri om natta (Løpegravene), ikke okerslette fra siden (Hammer og
-   ambolt), ikke grønn plen-diorama.
+Versjon 2 (2026-09-30). Eieren om plakatlooken: «Fungerer, bra ser hva som er hva. Liker ikke
+stilen, vil heller ha noe som ser mye mer ekte ut.» Valgt retning: **realistisk strategispill
+sett ovenfra** (Company of Heroes / Blitzkrieg). Lesbarheten fra plakatversjonen (hvem er hvem,
+hvilken enhet) skal beholdes. Den forkastede plakatbriefen står nederst.
+
+1. **Kilden.** Sanntidsstrategispill om andre verdenskrig sett skrått ovenfra, og ekte
+   fargefoto fra 1940-44 (Normandie-hekkene, ørkenen ved El Alamein, steppen ved Kursk) til
+   farger og underlag. Kjennetegn: sollys med harde skygger, slitt jord og gress, hjulspor,
+   kratre, røyksøyler og detaljerte kjøretøy i riktig kamuflasje.
+2. **Palett.** Naturlige farger per slag, ikke trykkfarger:
+   - Dunkerque: grønne hekker og beitemark, grå brostein og teglrøde tak, grått hav og strand.
+   - El Alamein: sand, oker og stein i hard middagssol, lange skygger.
+   - Kursk: gyllent korn, mørk jord, bjørkeholt, sommerdis.
+   - Dine enheter: britisk/amerikansk olivengrønn (El Alamein: ørkengul med grønne flekker),
+     fiendens: feltgrå (El Alamein: sandgul). Lesbarheten kommer fra en tydelig **ring på
+     bakken** under hver enhet (grønn = din, rød = fiende), ikke fra fargen på vogna.
+   - Radiolinjer: gule, lysende (bloom på middels/høy), de eneste «spillfargene» på kartet.
+3. **Form og overflate.** Enheter med flere detaljer enn nå: belter med hjul, luker, eksos,
+   kasser på baksida, soldater med sekk og gevær, kanoner med hjul og lavett, fly med propell som
+   spinner, cockpit og riktige vinger. `MeshStandardMaterial` med ruhet, kamuflasje-tekstur
+   tegnet i canvas, litt slitasje. Figurer slått sammen med `mergeParts` (ett draw call per del).
+   Bakken: canvas-tekstur med gress/jord/sand, støy, hjulspor og kratre; hekker og trær i 3D som
+   instanser. Ingen kontur.
+4. **Lys.** Ekte sol med skygger (`castShadow` på enheter, skyggekart fra kitets
+   kvalitetsnivå), hemisfærelys for himmel/bakke, `Environment` med `Lightformer` lokalt. Kursk
+   med varm ettermiddag, El Alamein med hard hvit sol, Dunkerque overskyet og kjølig. Bloom på
+   munningsflammer, ild og radiolinjer (`KitEffects`, av på lav).
+5. **Perspektiv og kamera.** Samme faste skrå vinkel og tilpasning som nå (fungerer og er
+   godkjent). Kameraet rister ved store nedslag.
+6. **Effekter.** Partikkelrøyk (myke, gjennomsiktige sprites) i stedet for kantete skyer, ild
+   som gløder, støvskyer bak vogner, jord som kastes opp av granater, sporlys, fly med
+   røykstripe når de styrter, vrak som ryker lenge, svarte brannflekker på bakken der noe
+   eksploderte. Fallskjermer (slag 4-6) som ekte kupler som folder seg ut.
+7. **HUD.** Behold oppsettet (bånd øverst, butikk nederst), men gjør det militært og nøkternt:
+   mørk oliven/marine med stensil-skrift i stedet for plakatpapir. Menyen: et ekte kart eller
+   et bilde fra spillet i bakgrunnen, ikke plakatlyskastere.
+8. **Chromebook.** Skygger, bloom og partikkelmengde skaleres med `useQuality()`; på `lav` er
+   spillet fortsatt pent (bakketekstur, detaljerte figurer, bakte skygger under enhetene).
+   Budsjett som før: maks ~350 draw calls. Test med `?kvalitet=lav`.
+9. **Ikke slik.** Ikke plakat/silketrykk (forkastet), ikke svart-hvitt fotokorn (Omaha), ikke
+   kartbord med brikker (Plottebordet), ikke leketøy/tegneserie.
+
+### Forkastet: kunstbrief versjon 1 (plakat)
+
+Allierte propagandaplakater i silketrykk: flate trykkfarger, sotkontur, rasterprikker,
+eksplosjoner som stjerner. Bygd 2026-09-30 (commit 7d5aef5e); eieren: lesbart, men for lite ekte.
+Fra den lever videre: lesbarheten, kameraet, radiolinjer som bånd fra antennen, og hele
+effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
 
 ## Byggelogg
 
@@ -179,3 +197,8 @@ Fem konsepter, alle innenfor bestillingen. Fersk dommer med bestillingen, Gøy /
   (fallskjermsoldater, ordrekort).
 - Ikke i gråboksen ennå: fallskjermsoldater (Normandie 1944), slag 4-6, ordrekort mellom
   slagene, flytting og salg av enheter.
+- 2026-09-30, eieren om plakatlooken: «Fungerer, bra ser hva som er hva. Liker ikke stilen, vil
+  heller ha noe som ser mye mer ekte ut.» Valgte «realistisk strategispill sett ovenfra».
+  Kunstbriefen er skrevet om (versjon 2). Neste fase (fersk økt): bygg kunsten på nytt etter
+  versjon 2. Strukturen står (`models.ts`, `terrain.tsx`, `fxPool.ts`/`effects.tsx`,
+  `world.tsx`); bytt utseendet, ikke reglene.
