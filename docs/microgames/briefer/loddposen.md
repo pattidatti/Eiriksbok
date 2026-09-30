@@ -337,3 +337,52 @@ bli tom.
     Vinneren på 84 % er rett over kravet. Pazzis lureblikk før 1478 er fortsatt lite farlig.
     Gavekortet står bare 4 s og er lett å overse i hjørnet. Kremt-vinduet på 0,4 s er stramt for
     et menneske; sakte film (x0,45) og 0,25 s frys gjør det til om lag 1 s ekte tid.
+- **Fase: forbedrer, runde 1 (2026-09-30).** Vurdering 1: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 3,
+  Unikt 5 (sum 19). Tre grep:
+  (1) *Lesbart:* kremtet er stort og synlig uten lyd: en «EHEM!»-boble med rød kant over
+  rådsherren, hodet snur seg 60 % mot posen (var 35 %) og rister, og lyskjeglen tennes rødt-gull
+  og blir bredere. Lapper (via `point`) første gang: «Røde lapper = Medici-venner», «Svarte lapper
+  = fiendene dine», «3 av 5 røde = du vinner» og «Banken betaler dette om du vinner» ved
+  sjanseskiltet. Kista viser «TAPT TREKNING -70» i stedet for «TAP -70». Venter eleven mer enn
+  3,2 s mens alle ser bort, lyser posen opp med en gullring og lappen «Alle ser bort - hold på
+  posen!» kommer (igjen hvert 7. sekund). Den tomme mørke boksen nede til høyre er nå
+  Medici-banken: en regnskapsbok med filialene Roma (pavens konto), Venezia, Brugge og London.
+  (2) *Gøy:* trekningen er kortet ned fra 15 + 3,5 s til 10 s smugling + 2,6 s trekning (lappene
+  snus raskere), og mellom trekningene kommer en gavefase på opptil 3 s: gavekortet ligger stort
+  midt på bordet (to kunstverk med bilde, pris og «ser bort i N trekninger», eller «spar
+  gullet»), alle rådsherrene ser på kortet, og fasen slutter når du har valgt. Vinnerrunden er
+  115 s (ca. 14,4 s per trekning, mot ca. 19 s før). Gjestene har personlighet: Albizzi (svart
+  hatt med ringer) kremter falskt 40 % av gangene fra 1444 - hodet snur seg ikke og kjeglen
+  tennes ikke, så den som ser på hodet kan bli inne. Pazzi fra 1478 snur hodet i tre rykk med
+  tre prikker over hatten (gull, gull, rød); på det tredje ser han. Nesten tatt (ut under et ekte
+  kremt eller på Pazzis siste rykk) gir nå +0,25 på multiplikatoren, stor «NESTEN TATT!»-tekst,
+  gullramme, rist og spon. 1434 er øvingsrunde: 3 fiendelapper, ingen falske kremt, ingen gave.
+  Rangene er hevet: Notar 200, Prior 450, Gonfaloniere 800, Il Magnifico 1300 (var 900), Pater
+  Patriae 1700 (var 1300). Vinnerroboten når Il Magnifico i under halvparten av rundene.
+  (3) *Lærerikt:* pengene kommer synlig fra banken: i gavefasen flyr mynter fra hver filial i
+  regnskapsboka til kista (Roma 16, de andre 8 hver, til sammen 40). Fra 1469 taper London penger
+  (rød strek, «TAPER», 32 inn), fra 1478 også Brugge (24 inn), og lappen «Banken svikter: færre
+  florin inn» peker på banken. Florin per sekund er borte - alt kommer fra banken og rentene.
+  Rentene har fått et tak: høyst fire venner utover to (seks venner i posen gir mest).
+  Tre regler står: hånd ut ved ekte kremt, florin betaler alt, 3 av 5 vinner.
+  Simulering (200 runder, grønn): seende 90 % (median 1210, p10-p90 862-1557, 115 s), halvgod 22 %
+  (median 412), ødeland 0 % (median 130, tom kiste i 1444), tilfeldig 0 % (tatt i 1434), passiv
+  0 % (tom kiste i 1454). 22,4 valg per minutt, press 0,16 -> 0,39 -> 0,68. Nettleseren: seende
+  vant med 1592 poeng, JS p95 15,8 ms (p50 8,6) på Chromebook-struping, audit 0 funn, likhet
+  nærmest inn-mot-stranda (0,44).
+  - *Prøvd som ikke virket:* (1) 9 s smugling og bortblikk 4-8 s: vinneren fikk nesten ingen
+    lapper i 1478-1485 og gikk tom (0-18 %); nå 10 s og 5-10 s. (2) Renter uten tak med
+    bankinntekt som klump: ødelanden fylte posen med 20 venner, fikk +720 i renter og vant 13 %
+    med median 1335 - taket på seks venner stoppet det. (3) Vinnerroboten som holdt av et tap
+    selv når kista ikke rakk til et tap: den ventet på penger som aldri kom; nå satser den alt når
+    et tap uansett tømmer kista (det samme en elev må lære). (4) Vinneren som dro hånda ut for å
+    fiske midt i et slipp: mistet oppstartstiden hver gang (24 %). (5) Regnskapsboka bufret bare
+    når Outfit var lastet: i den hodeløse nettleseren ble den tegnet på nytt hvert bilde (p95 40 ms);
+    gavekortet med treverk og to kunstbilder hvert bilde og en mørk gradient bak det ga p95 28 ms.
+    Nå er både boka og kortet bufret, og gradienten er borte.
+  - *Kjente svakheter:* den halvgode vinner bare 22 % (dør oftest i 1485 av tom kiste); en vanlig
+    elev kan synes slutten er hard. Vinnerroboten vinner 90 %, så toppen er hevet med rangene, ikke
+    med vanskelighet. Gavekortet og «EHEM!»-boblen syns sjelden i filmstripen fordi robotene
+    velger etter 1,2 s og kremtet varer under ett sekund - vurdereren kan overse dem. Albizzi
+    sitter ved bordet hele runden selv om han ble kastet ut i 1434 (en forenkling: han står for
+    Albizzi-slekta og vennene deres). Lappen om falske kremt vises bare første gang.

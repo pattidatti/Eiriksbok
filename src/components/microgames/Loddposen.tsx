@@ -19,7 +19,10 @@ import { usePlaytest, type PlaytestBot } from './playtest';
 import { seeded } from './sim';
 import {
     aktiv,
+    bank,
     begynn,
+    ekteFare,
+    filialOk,
     gi,
     lapper,
     newGame,
@@ -33,12 +36,15 @@ import {
     velgKunst,
     BAG,
     H,
+    ALBIZZI_FRA,
+    FILIALER,
+    GAVE_S,
     KISTE_MAKS,
-    KORT_S,
     KUNST,
     LAPP_PRIS,
     MIN_LAPPER,
     MÅ_HA,
+    PAZZI_RYKK,
     PAZZI_STILLE_S,
     RANGER,
     RUN_SECONDS,
@@ -50,6 +56,7 @@ import {
     W,
     ÅR,
     type G,
+    type Kort,
     type Rådsherre,
 } from './loddposen/game';
 import { botTick, BOTS } from './loddposen/bots';
@@ -96,7 +103,10 @@ type Mode = 'menu' | 'play' | 'paused' | 'slutt' | 'over';
 // ---------- Plassene på bordet (verdenskoordinater, 1000 x 700) ----------
 const TABLE = { x: 500, y: 348, rx: 352, ry: 220 };
 const CHEST = { x: 20, y: 448, w: 176, h: 232 };
-const CARD = { x: 804, y: 448, w: 178, h: 232 };
+/** Medici-banken: skapet nede til høyre, der filialene sender florin fra. */
+const BANK = { x: 804, y: 448, w: 178, h: 232 };
+/** Gavekortet ligger midt på bordet i gavefasen, over posen. */
+const CARD = { x: 330, y: 214, w: 340, h: 236 };
 /** Fiendelappene i posen: hold her for å fiske. */
 const FIENDE = { x: 612, y: 290, w: 140, h: 88 };
 /** Vennelappene i posen (bare til å se på). */
@@ -153,12 +163,17 @@ interface Fx {
     tattY: number;
     endT: number;
     kremt: Map<number, number>;
+    /** Er Pazzi stille (fra 1478) i denne trekningen? */
+    stillePazzi: boolean;
     gaver: Map<number, string>;
     reveal: number;
     stamp: boolean;
     kunstFly: { navn: string; x: number; y: number; tx: number; ty: number; t: number } | null;
     tapFlash: number;
     vinnFlash: number;
+    bankPuls: number;
+    /** Sekunder uten at hånda har vært i posen (hint til den som venter). */
+    stille: number;
     time: number;
     cam: { s: number; ox: number; oy: number; z: number; ax: number; ay: number; shx: number; shy: number };
 }
@@ -179,12 +194,15 @@ const newFx = (): Fx => ({
     tattY: 0,
     endT: 0,
     kremt: new Map(),
+    stillePazzi: false,
     gaver: new Map(),
     reveal: 0,
     stamp: false,
     kunstFly: null,
     tapFlash: 0,
     vinnFlash: 0,
+    bankPuls: 0,
+    stille: 0,
     time: 0,
     cam: { s: 1, ox: 0, oy: 0, z: 1, ax: 0, ay: 0, shx: 0, shy: 0 },
 });
@@ -193,20 +211,29 @@ const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
 const ease = (k: number) => 1 - Math.pow(1 - clamp(k, 0, 1), 3);
 const TAU = Math.PI * 2;
+/** Trekningen: første lapp flyr opp etter REV0 s, så én hvert REVD s, og snus REVF s etter. */
+const REV0 = 0.3;
+const REVD = 0.34;
+const REVF = 0.3;
 
-/** Kortets tre knapper i verdenskoordinater. */
+/** Kortets tre knapper i verdenskoordinater: to kunstverk side om side, «spar gullet» under. */
 function cardButtons() {
-    return [0, 1, 2].map((i) => ({
-        i,
-        x: CARD.x + 10,
-        y: CARD.y + 44 + i * 60,
-        w: CARD.w - 20,
-        h: i === 2 ? 40 : 54,
-    }));
+    const bw = (CARD.w - 36) / 2;
+    return [0, 1, 2].map((i) =>
+        i < 2
+            ? { i, x: CARD.x + 12 + i * (bw + 12), y: CARD.y + 44, w: bw, h: 126 }
+            : { i, x: CARD.x + 60, y: CARD.y + 180, w: CARD.w - 120, h: 38 }
+    );
 }
+/** Raden til filial `i` i bankskapet. */
+const filialY = (i: number) => BANK.y + 58 + i * 40;
 
 const hatTre = (r: Rådsherre): Tre =>
-    r.slag === 'pazzi' ? 'blå' : r.slag === 'gonf' ? 'ebenholt' : (['valnøtt', 'ebenholt', 'honning'] as Tre[])[r.id % 3];
+    r.slag === 'pazzi'
+        ? 'blå'
+        : r.slag === 'gonf' || r.slag === 'albizzi'
+          ? 'ebenholt'
+          : (['valnøtt', 'honning'] as Tre[])[r.id % 2];
 
 // =====================================================================================
 // Bordet og rommet: tegnes én gang per skjermstørrelse.
@@ -365,9 +392,22 @@ function tegnRom(w: number, h: number, dpr: number, s: number, ox: number, oy: n
     ctx.arc(k.x - 6, k.y + k.h * 0.58, 3, 0, TAU);
     ctx.fill();
 
-    // Gavekortets plass: en innlagt ramme.
-    bit(ctx, P, rekt(CARD.x - 6, CARD.y - 6, CARD.w + 12, CARD.h + 12, 5), 'ebenholt', 0, 3, 1.5);
-    bit(ctx, P, rekt(CARD.x, CARD.y, CARD.w, CARD.h, 3), 'valnøtt', 0, 14, 1.2);
+    // Medici-banken: et innlagt skap med en regnskapsbok for filialene.
+    const b = BANK;
+    bit(ctx, P, rekt(b.x - 6, b.y - 6, b.w + 12, b.h + 12, 5), 'ebenholt', 0, 3, 1.5);
+    bit(ctx, P, rekt(b.x, b.y, b.w, b.h, 3), 'valnøtt', 0, 14, 1.2);
+    bit(ctx, P, rekt(b.x + 10, b.y + 36, b.w - 20, b.h - 46, 2), 'lønn', 0, 12, 1.2, 0.8);
+    // Seks røde kuler: Medici-våpenet over regnskapsboka.
+    for (let i = 0; i < 6; i++) {
+        ctx.fillStyle = FARGE.rød;
+        ctx.beginPath();
+        ctx.arc(b.x + b.w / 2 - 25 + i * 10, b.y + 30, 3, 0, TAU);
+        ctx.fill();
+    }
+    for (let i = 0; i < FILIALER.length; i++) {
+        ctx.fillStyle = 'rgba(40,20,8,.3)';
+        ctx.fillRect(b.x + 16, filialY(i) + 17, b.w - 32, 1.5);
+    }
 
     // Lysestakene.
     for (const l of CANDLES) {
@@ -440,24 +480,27 @@ function tegnBlikkIndre(ctx: CanvasRenderingContext2D, P: P6, g: G, fx: Fx, r: R
     const tilPose = Math.hypot(BAG.x - hx, BAG.y - hy);
     const len = tilPose + 140;
     const a = r.vinkel;
-    const bredde = r.blikk === 'ser' ? 0.15 : r.blikk === 'varsel' ? 0.14 : 0.12;
+    // Et falskt kremt tenner ikke blikket: det ser ut som et vanlig bortblikk.
+    const blikk = r.blikk === 'varsel' && r.falsk ? 'bort' : r.blikk;
+    const bredde = blikk === 'ser' ? 0.15 : blikk === 'varsel' ? 0.2 : 0.12;
     const p = new Path2D();
     p.moveTo(hx + Math.cos(a) * 18, hy + Math.sin(a) * 18);
     p.lineTo(hx + Math.cos(a - bredde) * len, hy + Math.sin(a - bredde) * len);
     p.arc(hx, hy, len, a - bredde, a + bredde);
     p.closePath();
     // Stille Pazzi: stripa blir varmere jo nærmere han er å se.
-    const pazziVarme = stillePazzi(g, r) && r.blikk === 'bort' ? clamp(r.siden / PAZZI_STILLE_S, 0, 1) : 0;
+    const pazziVarme = stillePazzi(g, r) && r.blikk === 'bort' ? (r.rykk + 1) / PAZZI_RYKK : 0;
     const grad = ctx.createRadialGradient(hx, hy, 20, hx, hy, len);
-    if (r.blikk === 'ser') {
+    if (blikk === 'ser') {
         grad.addColorStop(0, 'rgba(255,246,222,.92)');
         grad.addColorStop(0.8, 'rgba(250,236,200,.7)');
         grad.addColorStop(1, 'rgba(250,236,200,0)');
-    } else if (r.blikk === 'varsel') {
-        const puls = 0.75 + 0.25 * Math.sin(fx.time * 40);
-        grad.addColorStop(0, `rgba(255,226,150,${0.85 * puls})`);
-        grad.addColorStop(0.85, `rgba(240,200,110,${0.5 * puls})`);
-        grad.addColorStop(1, 'rgba(240,200,110,0)');
+    } else if (blikk === 'varsel') {
+        // Kremtet: lyskjeglen tennes og blinker varmt rødt-gull.
+        const puls = 0.7 + 0.3 * Math.sin(fx.time * 40);
+        grad.addColorStop(0, `rgba(255,214,120,${0.95 * puls})`);
+        grad.addColorStop(0.6, `rgba(236,120,70,${0.6 * puls})`);
+        grad.addColorStop(1, 'rgba(220,90,50,0)');
     } else {
         const al = 0.44 + pazziVarme * 0.3;
         grad.addColorStop(0, `rgba(236,214,164,${al + 0.12})`);
@@ -469,17 +512,17 @@ function tegnBlikkIndre(ctx: CanvasRenderingContext2D, P: P6, g: G, fx: Fx, r: R
     // Årene i lønnestripa.
     ctx.save();
     ctx.clip(p);
-    ctx.globalAlpha = r.blikk === 'bort' ? 0.16 : 0.24;
+    ctx.globalAlpha = blikk === 'bort' ? 0.16 : 0.24;
     ctx.fillStyle = tre(P, 'lønn', (a * 180) / Math.PI, 0.6);
     ctx.fill(p);
     ctx.restore();
     // Listene langs kanten.
-    ctx.lineWidth = r.blikk === 'ser' ? 3 : 1.6;
+    ctx.lineWidth = blikk === 'ser' ? 3 : blikk === 'varsel' ? 3 : 1.6;
     ctx.strokeStyle =
-        r.blikk === 'ser'
+        blikk === 'ser'
             ? FARGE.rød
-            : r.blikk === 'varsel'
-              ? FARGE.gull
+            : blikk === 'varsel'
+              ? FARGE.rød
               : pazziVarme > 0
                 ? `rgba(224,178,58,${0.25 + pazziVarme * 0.7})`
                 : 'rgba(28,20,16,.45)';
@@ -494,7 +537,8 @@ function tegnBlikkIndre(ctx: CanvasRenderingContext2D, P: P6, g: G, fx: Fx, r: R
 function tegnRådsherre(ctx: CanvasRenderingContext2D, P: P6, fx: Fx, r: Rådsherre, valgbar: boolean) {
     const mot = Math.atan2(BAG.y - r.y, BAG.x - r.x);
     const k = fx.kremt.get(r.id) ?? 0;
-    const rykk = r.blikk === 'varsel' ? Math.sin(fx.time * 70) * 2.2 : 0;
+    const ekte = r.blikk === 'varsel' && !r.falsk;
+    const rykk = ekte ? Math.sin(fx.time * 70) * 3 : 0;
     ctx.save();
     ctx.translate(r.x, r.y);
     ctx.scale(1.22, 1.22);
@@ -505,7 +549,7 @@ function tegnRådsherre(ctx: CanvasRenderingContext2D, P: P6, fx: Fx, r: Rådshe
     ctx.beginPath();
     ctx.ellipse(4, 2, 58, 34, 0, 0, TAU);
     ctx.fill();
-    const kappe: Tre = r.slag === 'gonf' ? 'ebenholt' : r.slag === 'pazzi' ? 'blå' : 'valnøtt';
+    const kappe: Tre = r.slag === 'gonf' || r.slag === 'albizzi' ? 'ebenholt' : r.slag === 'pazzi' ? 'blå' : 'valnøtt';
     bit(ctx, P, ellipse(0, -6, 54, 30), kappe, 0, 10, 1.6, 0.8);
     // Armene fram på bordet, hendene i lys lønn.
     for (const side of [-1, 1]) {
@@ -564,10 +608,51 @@ function tegnRådsherre(ctx: CanvasRenderingContext2D, P: P6, fx: Fx, r: Rådshe
         ctx.lineTo(4, 3);
         ctx.stroke();
     }
+    if (r.slag === 'albizzi') {
+        // Albizzi-ringene innlagt i hatten.
+        ctx.strokeStyle = FARGE.lønn;
+        ctx.lineWidth = 2;
+        for (const [cx, cy] of [
+            [-6, -5],
+            [6, -5],
+            [0, 6],
+        ]) {
+            ctx.beginPath();
+            ctx.arc(cx, cy, 4, 0, TAU);
+            ctx.stroke();
+        }
+    }
     ctx.restore();
 
-    // Kremtet: tre lønnebuer som spretter ut foran munnen.
+    // Kremtet: tre lønnebuer foran munnen og en «Ehem!»-boble over hodet (synlig uten lyd).
     if (k > 0) {
+        const falsk = r.falsk && r.blikk === 'varsel';
+        const q2 = ease((1 - k) / 0.25);
+        const bx = r.x + (r.x < BAG.x - 60 ? 40 : r.x > BAG.x + 60 ? -40 : 44);
+        const by = r.y - 58;
+        ctx.save();
+        ctx.globalAlpha = Math.min(1, k * 2);
+        ctx.translate(bx, by);
+        ctx.scale(0.6 + 0.4 * q2, 0.6 + 0.4 * q2);
+        const bw2 = falsk ? 70 : 84;
+        ctx.fillStyle = falsk ? '#d9c79c' : '#fff4d8';
+        ctx.strokeStyle = falsk ? 'rgba(28,20,16,.6)' : FARGE.rød;
+        ctx.lineWidth = falsk ? 2 : 3.5;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, bw2 / 2, 20, 0, 0, TAU);
+        ctx.fill();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(-6, 17);
+        ctx.lineTo((r.x - bx) * 0.35, 34);
+        ctx.lineTo(8, 16);
+        ctx.fill();
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = falsk ? 'rgba(28,20,16,.7)' : FARGE.rød;
+        ctx.font = falsk ? 'italic 700 15px Outfit, sans-serif' : '800 20px Outfit, sans-serif';
+        ctx.fillText(falsk ? 'ehem...' : 'EHEM!', 0, 1);
+        ctx.restore();
         const q = 1 - k;
         ctx.save();
         ctx.translate(r.x + Math.cos(a) * 30, r.y + Math.sin(a) * 30);
@@ -580,6 +665,21 @@ function tegnRådsherre(ctx: CanvasRenderingContext2D, P: P6, fx: Fx, r: Rådshe
             ctx.stroke();
         }
         ctx.restore();
+    }
+    if (r.slag === 'pazzi' && r.beundrer <= 0 && fx.stillePazzi && r.blikk === 'bort') {
+        // Tre prikker ved Pazzi: ett rykk for hver. Den tredje er blikket.
+        for (let i = 0; i < PAZZI_RYKK; i++) {
+            const px = r.x - 20 + i * 20;
+            const py = r.y - 62;
+            ctx.fillStyle = 'rgba(12,8,5,.7)';
+            ctx.beginPath();
+            ctx.arc(px, py, 8, 0, TAU);
+            ctx.fill();
+            ctx.fillStyle = i <= r.rykk ? (i === PAZZI_RYKK - 1 ? FARGE.rød : FARGE.gull) : 'rgba(236,214,164,.25)';
+            ctx.beginPath();
+            ctx.arc(px, py, 6, 0, TAU);
+            ctx.fill();
+        }
     }
     if (valgbar) {
         const puls = 0.5 + 0.5 * Math.sin(fx.time * 8);
@@ -872,7 +972,8 @@ function tegnKiste(ctx: CanvasRenderingContext2D, g: G, fx: Fx) {
     ctx.textAlign = 'right';
     ctx.textBaseline = 'bottom';
     ctx.fillStyle = fare ? FARGE.rød : FARGE.ebenholt;
-    ctx.fillText(`TAP -${tap}`, k.x + k.w - 10, ly - 3);
+    ctx.font = '800 9px Outfit, sans-serif';
+    ctx.fillText(`TAPT TREKNING -${tap}`, k.x + k.w - 10, ly - 3);
     // Tallet på toppen av skapet.
     const puls = fare ? 0.5 + 0.5 * Math.sin(fx.time * 8) : 0;
     ctx.textAlign = 'center';
@@ -885,67 +986,174 @@ function tegnKiste(ctx: CanvasRenderingContext2D, g: G, fx: Fx) {
     florin(ctx, k.x + k.w - 30, k.y + 22, 11, 0.8);
 }
 
-function tegnKort(ctx: CanvasRenderingContext2D, P: P6, g: G, fx: Fx) {
-    const kort = g.kort;
-    if (!kort) return;
-    const inn = ease((KORT_S - kort.t) / 0.3);
-    ctx.save();
-    ctx.translate(0, (1 - inn) * 60);
-    ctx.globalAlpha = inn;
-    bit(ctx, P, rekt(CARD.x + 4, CARD.y + 4, CARD.w - 8, CARD.h - 8, 2), 'lønn', 3, 12, 1.4, 0.8);
+/** Regnskapsboka bufres og tegnes på nytt bare når en filial begynner å tape penger. */
+let BANKBOK: { key: string; c: HTMLCanvasElement; font: boolean; t: number } | null = null;
+const BANK_OPPL = 2;
+
+function tegnBank(ctx: CanvasRenderingContext2D, g: G, fx: Fx) {
+    const b = BANK;
+    // Blinket når pengene sendes, under teksten.
+    if (fx.bankPuls > 0)
+        FILIALER.forEach((f, i) => {
+            if (!filialOk(g, f)) return;
+            ctx.fillStyle = `rgba(224,178,58,${0.45 * fx.bankPuls})`;
+            ctx.fillRect(b.x + 14, filialY(i) - 16, b.w - 28, 32);
+        });
+    const key = FILIALER.map((f) => (filialOk(g, f) ? 1 : 0)).join('');
+    // Tegn på nytt når en filial taper, eller (høyst hvert sekund) til fonten er lastet.
+    const prøvFont = BANKBOK && !BANKBOK.font && fx.time - BANKBOK.t > 1;
+    if (!BANKBOK || BANKBOK.key !== key || prøvFont) {
+        const font = !document.fonts || document.fonts.check('800 13px Outfit');
+        if (!BANKBOK || BANKBOK.key !== key || font) {
+            const c = BANKBOK?.c ?? document.createElement('canvas');
+            c.width = b.w * BANK_OPPL;
+            c.height = b.h * BANK_OPPL;
+            const bc = c.getContext('2d');
+            if (!bc) return;
+            bc.setTransform(BANK_OPPL, 0, 0, BANK_OPPL, -b.x * BANK_OPPL, -b.y * BANK_OPPL);
+            tegnBankbok(bc, g);
+            BANKBOK = { key, c, font, t: fx.time };
+        } else BANKBOK.t = fx.time;
+    }
+    ctx.drawImage(BANKBOK.c, b.x, b.y, b.w, b.h);
+}
+
+function tegnBankbok(ctx: CanvasRenderingContext2D, g: G) {
+    // Regnskapsboka i bankskapet: hver filial sender florin til kista i gavefasen.
+    const b = BANK;
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'center';
+    ctx.font = '800 13px Outfit, sans-serif';
+    ctx.fillStyle = FARGE.ebenholt;
+    ctx.fillText('MEDICI-BANKEN', b.x + b.w / 2 + 1, b.y + 16 + 1);
+    ctx.fillStyle = FARGE.lønn;
+    ctx.fillText('MEDICI-BANKEN', b.x + b.w / 2, b.y + 16);
+    FILIALER.forEach((f, i) => {
+        const y = filialY(i);
+        const ok = filialOk(g, f);
+        ctx.textAlign = 'left';
+        ctx.fillStyle = ok ? FARGE.ebenholt : 'rgba(28,20,16,.45)';
+        ctx.font = '800 14px Outfit, sans-serif';
+        ctx.fillText(f.navn.toUpperCase(), b.x + 18, y + (i === 0 ? -4 : 1));
+        if (i === 0) {
+            ctx.font = '700 9px Inter, sans-serif';
+            ctx.fillText('pavens konto', b.x + 18, y + 9);
+        }
+        ctx.textAlign = 'right';
+        if (ok) {
+            ctx.font = '800 15px Outfit, sans-serif';
+            ctx.fillStyle = '#7a5a12';
+            ctx.fillText(`+${f.florin}`, b.x + b.w - 34, y + 1);
+            florin(ctx, b.x + b.w - 24, y, 7, 0.7);
+        } else {
+            // Filialen taper penger: rød strek over raden.
+            ctx.font = '800 11px Outfit, sans-serif';
+            ctx.fillStyle = FARGE.rød;
+            ctx.fillText('TAPER', b.x + b.w - 18, y + 1);
+            ctx.fillRect(b.x + 16, y - 1, b.w - 80, 2.5);
+        }
+    });
+    ctx.textAlign = 'center';
+    ctx.font = '800 10px Outfit, sans-serif';
+    ctx.fillStyle = FARGE.ebenholt;
+    ctx.fillText(`+${bank(g)} FLORIN PER TREKNING`, b.x + b.w / 2, b.y + b.h - 18);
+}
+
+/** Gavekortet bufres: det tegnes én gang per kort (og når kista ikke lenger har råd). */
+let KORTBILDE: { kort: Kort; key: string; c: HTMLCanvasElement } | null = null;
+const KORT_OPPL = 2;
+const KORT_KANT = 12;
+
+function tegnKortbilde(ctx: CanvasRenderingContext2D, P: P6, g: G, kort: Kort) {
+    ctx.fillStyle = 'rgba(12,8,5,.5)';
+    ctx.fillRect(CARD.x + 8, CARD.y + 10, CARD.w, CARD.h);
+    bit(ctx, P, rekt(CARD.x, CARD.y, CARD.w, CARD.h, 3), 'lønn', 3, 12, 1.6, 0.8);
     // Voksseglet.
     ctx.fillStyle = FARGE.rød;
     ctx.beginPath();
-    ctx.arc(CARD.x + CARD.w / 2, CARD.y + 8, 9, 0, TAU);
+    ctx.arc(CARD.x + CARD.w / 2, CARD.y + 4, 11, 0, TAU);
     ctx.fill();
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = FARGE.ebenholt;
-    ctx.font = '800 12px Outfit, sans-serif';
-    ctx.fillText('GAVE TIL BYEN', CARD.x + CARD.w / 2, CARD.y + 30);
+    ctx.font = '800 17px Outfit, sans-serif';
+    ctx.fillText('GAVE TIL BYEN?', CARD.x + CARD.w / 2, CARD.y + 26);
     for (const b of cardButtons()) {
-        const valgt = b.i < 2 && kort.valgt === kort.valg[b.i];
         if (b.i === 2) {
+            ctx.fillStyle = 'rgba(168,116,63,.2)';
+            ctx.fillRect(b.x, b.y, b.w, b.h);
             ctx.strokeStyle = FARGE.ebenholt;
-            ctx.lineWidth = 1.4;
+            ctx.lineWidth = 1.6;
             ctx.strokeRect(b.x, b.y, b.w, b.h);
             ctx.fillStyle = FARGE.ebenholt;
-            ctx.font = '800 12px Outfit, sans-serif';
+            ctx.font = '800 14px Outfit, sans-serif';
             ctx.fillText('SPAR GULLET', b.x + b.w / 2, b.y + b.h / 2);
             continue;
         }
         const ku = kort.valg[b.i];
-        const råd = g.kiste >= ku.pris;
-        ctx.globalAlpha = inn * (råd ? 1 : 0.4);
-        ctx.fillStyle = valgt ? 'rgba(224,178,58,.45)' : 'rgba(168,116,63,.18)';
+        ctx.globalAlpha = g.kiste >= ku.pris ? 1 : 0.4;
+        ctx.fillStyle = 'rgba(168,116,63,.18)';
         ctx.fillRect(b.x, b.y, b.w, b.h);
-        ctx.strokeStyle = valgt ? FARGE.gull : 'rgba(28,20,16,.5)';
-        ctx.lineWidth = valgt ? 3 : 1.2;
+        ctx.strokeStyle = 'rgba(28,20,16,.55)';
+        ctx.lineWidth = 1.4;
         ctx.strokeRect(b.x, b.y, b.w, b.h);
-        kunstbilde(ctx, P, ku.navn, b.x + 26, b.y + b.h / 2, 38);
-        ctx.textAlign = 'left';
+        kunstbilde(ctx, P, ku.navn, b.x + b.w / 2, b.y + 38, 50);
         ctx.fillStyle = FARGE.ebenholt;
-        ctx.font = '700 11px Inter, sans-serif';
-        const ord = ku.navn.split(' ');
-        const l1 = ord.slice(0, Math.ceil(ord.length / 2)).join(' ');
-        const l2 = ord.slice(Math.ceil(ord.length / 2)).join(' ');
-        ctx.fillText(l1, b.x + 50, b.y + 14);
-        ctx.fillText(l2, b.x + 50, b.y + 27);
+        ctx.font = '700 12px Inter, sans-serif';
+        ctx.fillText(ku.navn, b.x + b.w / 2, b.y + 78);
         ctx.fillStyle = '#7a5a12';
-        ctx.font = '800 13px Outfit, sans-serif';
-        ctx.fillText(`${ku.pris} FLORIN`, b.x + 50, b.y + 43);
-        ctx.textAlign = 'center';
-        ctx.globalAlpha = inn;
+        ctx.font = '800 15px Outfit, sans-serif';
+        ctx.fillText(`${ku.pris} FLORIN`, b.x + b.w / 2, b.y + 97);
+        ctx.fillStyle = FARGE.grønn;
+        ctx.font = '700 10px Inter, sans-serif';
+        ctx.fillText(ku.trekninger > 1 ? `ser bort i ${ku.trekninger} trekninger` : 'ser bort i 1 trekning', b.x + b.w / 2, b.y + 114);
+        ctx.globalAlpha = 1;
     }
-    // Brennende kant: tiden kortet står.
-    const igjen = clamp(kort.t / KORT_S, 0, 1);
+}
+
+function tegnKort(ctx: CanvasRenderingContext2D, g: G, fx: Fx) {
+    // Gavekortet ligger midt på bordet mellom trekningene: kunst til byen eller spar gullet.
+    const kort = g.kort;
+    if (!kort || g.fase !== 'gave') return;
+    const key = kort.valg.map((k) => (g.kiste >= k.pris ? 1 : 0)).join('');
+    if (!KORTBILDE || KORTBILDE.kort !== kort || KORTBILDE.key !== key) {
+        const c = KORTBILDE?.c ?? document.createElement('canvas');
+        c.width = (CARD.w + KORT_KANT * 2) * KORT_OPPL;
+        c.height = (CARD.h + KORT_KANT * 2) * KORT_OPPL;
+        const kc = c.getContext('2d');
+        if (!kc) return;
+        kc.setTransform(1, 0, 0, 1, 0, 0);
+        kc.clearRect(0, 0, c.width, c.height);
+        kc.setTransform(KORT_OPPL, 0, 0, KORT_OPPL, (KORT_KANT - CARD.x) * KORT_OPPL, (KORT_KANT - CARD.y) * KORT_OPPL);
+        tegnKortbilde(kc, mønstre(kc), g, kort);
+        KORTBILDE = { kort, key, c };
+    }
+    const inn = ease((GAVE_S - g.faseT) / 0.3);
+    ctx.save();
+    ctx.translate(0, (1 - inn) * 50);
+    ctx.globalAlpha = inn;
+    ctx.drawImage(KORTBILDE.c, CARD.x - KORT_KANT, CARD.y - KORT_KANT, CARD.w + KORT_KANT * 2, CARD.h + KORT_KANT * 2);
+    // Valgt kunstverk: pulserende gullkant.
+    if (kort.valgt) {
+        const b = cardButtons()[kort.valg.indexOf(kort.valgt)];
+        const puls = 0.5 + 0.5 * Math.sin(fx.time * 8);
+        ctx.fillStyle = `rgba(224,178,58,${0.2 + 0.15 * puls})`;
+        ctx.fillRect(b.x, b.y, b.w, b.h);
+        ctx.strokeStyle = FARGE.gull;
+        ctx.lineWidth = 4;
+        ctx.strokeRect(b.x, b.y, b.w, b.h);
+    }
+    // Brennende kant: tiden kortet ligger.
+    const igjen = clamp(g.faseT / GAVE_S, 0, 1);
+    const bx = CARD.x + 14;
+    const bw = CARD.w - 28;
     ctx.fillStyle = FARGE.ebenholt;
-    ctx.fillRect(CARD.x + 12, CARD.y + CARD.h - 12, CARD.w - 24, 4);
+    ctx.fillRect(bx, CARD.y + CARD.h - 10, bw, 4);
     ctx.fillStyle = FARGE.gull;
-    ctx.fillRect(CARD.x + 12, CARD.y + CARD.h - 12, (CARD.w - 24) * igjen, 4);
+    ctx.fillRect(bx, CARD.y + CARD.h - 10, bw * igjen, 4);
     ctx.fillStyle = `rgba(255,200,90,${0.6 + 0.4 * Math.sin(fx.time * 30)})`;
     ctx.beginPath();
-    ctx.arc(CARD.x + 12 + (CARD.w - 24) * igjen, CARD.y + CARD.h - 10, 4, 0, TAU);
+    ctx.arc(bx + bw * igjen, CARD.y + CARD.h - 8, 5, 0, TAU);
     ctx.fill();
     ctx.restore();
 }
@@ -983,14 +1191,14 @@ function tegnLys(ctx: CanvasRenderingContext2D, fx: Fx, styrke: number) {
 function tegnTrekning(ctx: CanvasRenderingContext2D, P: P6, g: G) {
     const tt = TREKK_S - g.faseT;
     for (let i = 0; i < g.trukket.length; i++) {
-        const q = (tt - (0.55 + 0.5 * i)) / 0.5;
+        const q = (tt - (REV0 + REVD * i)) / 0.5;
         if (q <= 0) continue;
         const sx = BAG.x + (i - 2) * 76;
         const sy = BAG.y - 138;
-        const fly = ease(q / 0.45);
+        const fly = ease(q / 0.4);
         const x = lerp(BAG.x, sx, fly);
         const y = lerp(BAG.y - 6, sy, fly) - Math.sin(fly * Math.PI) * 40;
-        const snu = clamp((q - 0.45) / 0.4, 0, 1);
+        const snu = clamp((q - 0.4) / 0.3, 0, 1);
         const sc = Math.cos(snu * Math.PI);
         const venn = g.trukket[i];
         lapp(ctx, P, x, y, 62, (1 - fly) * 0.8, sc > 0 ? null : venn, Math.max(0.08, Math.abs(sc)));
@@ -1005,7 +1213,7 @@ function tegnTrekning(ctx: CanvasRenderingContext2D, P: P6, g: G) {
         }
     }
     // Telleren: hvor mange venner så langt.
-    const vist = g.trukket.filter((v, i) => v && tt > 0.55 + 0.5 * i + 0.45).length;
+    const vist = g.trukket.filter((v, i) => v && tt > REV0 + REVD * i + REVF).length;
     for (let i = 0; i < MÅ_HA; i++) {
         const x = BAG.x + (i - 1) * 26;
         const y = BAG.y - 196;
@@ -1078,15 +1286,26 @@ function draw(g: G, fx: Fx, view: ArcadeView, m: Mode, fiskeHover: boolean) {
 
     tegnLys(ctx, fx, 1);
     tegnKiste(ctx, g, fx);
+    tegnBank(ctx, g, fx);
     tegnKuler(ctx, P, g, fx, fiskeHover && m === 'play');
     tegnSjanse(ctx, P, g);
-    for (const r of g.rådsherrer) tegnBlikk(ctx, P, g, fx, r);
+    // I gavefasen ser alle på kortet: ingen blikk over bordet.
+    if (g.fase !== 'gave') for (const r of g.rådsherrer) tegnBlikk(ctx, P, g, fx, r);
     const velger = !!g.kort?.valgt;
     for (const r of g.rådsherrer)
         tegnRådsherre(ctx, P, fx, r, velger && r.slag !== 'gonf' && !stillePazzi(g, r) && aktiv(r));
     tegnPose(ctx, P, g, fx);
     tegnArm(ctx, P, g, fx);
     tegnÅpning(ctx, fx, !!g.hånd.act);
+    if (m === 'play' && g.fase === 'smugle' && g.fri && fx.stille > 1.8 && !g.hånd.act) {
+        // Alle ser bort og du venter: posen lyser opp som en invitasjon.
+        const puls = 0.5 + 0.5 * Math.sin(fx.time * 7);
+        ctx.strokeStyle = `rgba(224,178,58,${0.45 + 0.45 * puls})`;
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.arc(BAG.x, BAG.y, BAG.r + 18 + puls * 8, 0, TAU);
+        ctx.stroke();
+    }
     if (g.hånd.act) {
         // Ermet forsvinner ned i posen: tegn en mørk fold over håndleddet.
         ctx.fillStyle = 'rgba(20,12,7,.85)';
@@ -1094,7 +1313,7 @@ function draw(g: G, fx: Fx, view: ArcadeView, m: Mode, fiskeHover: boolean) {
         ctx.ellipse(BAG.x, BAG.y - 2, 16, 12, 0, 0, TAU);
         ctx.fill();
     }
-    tegnKort(ctx, P, g, fx);
+    tegnKort(ctx, g, fx);
     if (fx.kunstFly) {
         const f = fx.kunstFly;
         const q = ease(f.t / 0.6);
@@ -1291,6 +1510,11 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                     const inne = !!g.hånd.act;
                     synth.noise(0.14, inne ? 0.14 : 0.05, 320);
                     synth.tone(150, 105, 0.12, 'sawtooth', inne ? 0.06 : 0.02);
+                    if (r?.falsk) {
+                        // Albizzi kremter falskt: hodet blir der det er.
+                        text.point('falsk', 'Falskt kremt! Hodet snur seg ikke', rådAnker(r.id), { once: true, seconds: 3.5 });
+                        break;
+                    }
                     if (inne) {
                         synth.tone(62, 44, 0.12, 'sine', 0.35);
                         synth.tone(58, 40, 0.12, 'sine', 0.3, 0.18);
@@ -1307,10 +1531,35 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                     break;
                 }
                 case 'nesten':
-                    text.float('NESTEN TATT!', ...xy(toScreen(BAG.x, BAG.y - 90)), FARGE.gull, true);
-                    synth.arp(660, [0, 5, 9], 0.05, 0.05);
+                    // Ute i siste liten: stor tekst, gullramme, rist og høyere multiplikator.
+                    text.float('NESTEN TATT!', ...xy(toScreen(BAG.x, BAG.y - 100)), FARGE.gull, true);
+                    text.float(`×${g.mult.toFixed(2).replace('.', ',')}`, ...xy(toScreen(BAG.x + 90, BAG.y - 60)), FARGE.gull);
+                    synth.arp(660, [0, 5, 9, 12], 0.05, 0.06);
+                    buzz(20);
                     text.lesson('kremt', 'Du dro hånda ut ved kremtet. Cosimo ble tatt i 1433 og kastet ut av byen.', 0.8);
-                    fx.nesten = Math.max(fx.nesten, 0.6);
+                    fx.nesten = 1;
+                    fx.shake = Math.max(fx.shake, 0.3);
+                    fx.handY += 40;
+                    for (let i = 0; i < 10; i++)
+                        spawn({ k: 'flis', x: BAG.x, y: BAG.y - 10, vx: (Math.random() - 0.5) * 320, vy: -120 - Math.random() * 160, rot: Math.random() * 6, vr: 10, life: 0.6 });
+                    break;
+                case 'bank': {
+                    // Pengene fra filialene flyr fra bankskapet til kista.
+                    fx.bankPuls = 1;
+                    FILIALER.forEach((f, i) => {
+                        if (!filialOk(g, f)) return;
+                        for (let j = 0; j < Math.ceil(f.florin / 4); j++)
+                            spawn({ k: 'mynt', x: BANK.x + BANK.w - 24, y: filialY(i), vx: 0, vy: 0, rot: Math.random() * 6, vr: 9, life: 0.9 + j * 0.08 + i * 0.1, tx: CHEST.x + 50 + Math.random() * 80, ty: CHEST.y + 110 + Math.random() * 70 });
+                    });
+                    for (let i = 0; i < 4; i++) synth.tone(1500 + i * 120, 1900, 0.05, 'square', 0.015, 0.3 + i * 0.09);
+                    text.float(`${e.tekst ?? ''} fra banken`, ...xy(toScreen(BANK.x + BANK.w / 2, BANK.y - 10)), FARGE.gull);
+                    if (g.trekning === 1) text.point('bank', 'Banken sender florin til kista', toScreen(BANK.x + BANK.w / 2, BANK.y), { once: true, seconds: 3 });
+                    text.lesson('bank', 'Pengene til vennene kom fra Medici-banken og pavens konto i Roma.', 0.6);
+                    break;
+                }
+                case 'rykk':
+                    synth.tone(520, 380, 0.06, 'square', 0.03);
+                    fx.shake = Math.max(fx.shake, 0.05);
                     break;
                 case 'tatt':
                     fx.tatt = 0.01;
@@ -1357,7 +1606,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                     const r = g.rådsherrer.find((q) => q.x === e.x && q.y === e.y);
                     if (r && e.tekst) {
                         fx.gaver.set(r.id, e.tekst);
-                        fx.kunstFly = { navn: e.tekst, x: CARD.x + CARD.w / 2, y: CARD.y + 60, tx: r.x + Math.cos(Math.atan2(BAG.y - r.y, BAG.x - r.x)) * 92, ty: r.y + Math.sin(Math.atan2(BAG.y - r.y, BAG.x - r.x)) * 92, t: 0 };
+                        fx.kunstFly = { navn: e.tekst, x: CARD.x + CARD.w / 2, y: CARD.y + 100, tx: r.x + Math.cos(Math.atan2(BAG.y - r.y, BAG.x - r.x)) * 92, ty: r.y + Math.sin(Math.atan2(BAG.y - r.y, BAG.x - r.x)) * 92, t: 0 };
                         text.float('BEUNDRER', ...xy(toScreen(r.x, r.y - 50)), '#9fc28a');
                     }
                     synth.arp(392, [0, 4, 7, 11, 14], 0.08, 0.06);
@@ -1367,18 +1616,25 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                 case 'kort':
                     synth.noise(0.12, 0.04, 3000);
                     text.banner(BANNER[g.trekning] ?? `${ÅR[g.trekning]}`, g.trekning === RYSTELSE || g.trekning === 4 ? FARGE.rød : FARGE.valnøtt);
-                    if (g.trekning === 0)
-                        text.point('kort', 'Kunst gjør en rådsherre til beundrer', toScreen(CARD.x + CARD.w / 2, CARD.y), { once: true, seconds: 4 });
+                    if (g.trekning === 1 && g.kort)
+                        text.point('kort', 'Kunst: han ser bort fra posen', toScreen(CARD.x + CARD.w / 2, CARD.y), { once: true, seconds: 3, until: () => !gRef.current.kort });
+                    if (g.trekning === ALBIZZI_FRA) {
+                        const a = g.rådsherrer.find((r) => r.slag === 'albizzi');
+                        if (a) text.point('albizzi', 'Albizzi kremter falskt - se på hodet', rådAnker(a.id), { once: true, seconds: 5 });
+                    }
                     if (g.trekning === 3) {
                         const p = g.rådsherrer.find((r) => r.slag === 'pazzi');
                         if (p) text.point('pazzi-lur', 'Pazzi later som han ser bort', rådAnker(p.id), { once: true, seconds: 5 });
                     }
-                    if (g.trekning === 4) text.lesson('banken', 'Fra 1469 tjente banken mindre, mens Lorenzo brukte mer.', 0.9);
+                    if (g.trekning === 4) {
+                        text.lesson('banken', 'Fra 1469 tjente banken mindre: London tapte penger, og Lorenzo brukte mer.', 0.9);
+                        text.point('svikter', 'Banken svikter: færre florin inn', toScreen(BANK.x + BANK.w / 2, BANK.y + 150), { seconds: 4, tone: 'fare' });
+                    }
                     if (g.trekning === RYSTELSE) {
                         const p = g.rådsherrer.find((r) => r.slag === 'pazzi');
                         text.lesson('pazzi', 'I 1478 prøvde Pazzi-familien å ta makten. Etterpå stolte ingen på noen.', 0.9);
                         if (p)
-                            text.beatOnce('pazzi', 'Pazzi kremter ikke', 'Etter 1478 snur Pazzi seg uten å kremte. Følg blikket hans - det sveiper sakte mot posen.', {
+                            text.beatOnce('pazzi', 'Pazzi kremter ikke', 'Etter 1478 snur Pazzi seg uten å kremte. Hodet rykker tre ganger mot posen, og på det tredje ser han.', {
                                 at: rådAnker(p.id),
                             });
                     }
@@ -1402,6 +1658,25 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
         g.events.length = 0;
     };
 
+    /** Lapper som forklarer bordet første gang, og et hint til den som bare venter. */
+    const hints = (g: G, dt: number) => {
+        const fx = fxRef.current;
+        if (g.fase !== 'smugle' || g.ended) return;
+        if (g.trekning === 0) {
+            if (g.venner >= 1) text.point('røde', 'Røde lapper = Medici-venner', toScreen(VENN.x + VENN.w / 2, VENN.y), { once: true, seconds: 3.5 });
+            if (g.t > 4.5 && !g.hånd.act) text.point('svarte', 'Svarte lapper = fiendene dine', toScreen(FIENDE.x + FIENDE.w / 2, FIENDE.y), { once: true, seconds: 3.5 });
+            if (g.t > 6.5) text.point('tre-av-fem', '3 av 5 røde = du vinner', toScreen(354, 432), { once: true, seconds: 3.5 });
+        }
+        if (renter(g) > 0) text.point('renter', 'Banken betaler dette om du vinner', toScreen(436, 432), { once: true, seconds: 3.5 });
+        // Den som venter, får et hint når alle ser bort.
+        if (g.hånd.act) fx.stille = 0;
+        else fx.stille += dt;
+        if (fx.stille > 3.2 && g.fri && g.kiste >= LAPP_PRIS) {
+            fx.stille = -4;
+            text.point('vent', 'Alle ser bort - hold på posen!', toScreen(REST.x + 40, REST.y - 30), { seconds: 2.5, until: () => !!gRef.current.hånd.act });
+        }
+    };
+
     const stepFx = (g: G, dt: number, m: Mode) => {
         const fx = fxRef.current;
         fx.time += dt;
@@ -1411,7 +1686,9 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
         fx.nesten = Math.max(0, fx.nesten - dt * (g.frys > 0 ? 0.5 : 2.2));
         fx.tapFlash = Math.max(0, fx.tapFlash - dt * 1.4);
         fx.vinnFlash = Math.max(0, fx.vinnFlash - dt * 2);
-        for (const [id, k] of fx.kremt) fx.kremt.set(id, Math.max(0, k - dt * 2.2));
+        for (const [id, k] of fx.kremt) fx.kremt.set(id, Math.max(0, k - dt * 1.3));
+    fx.bankPuls = Math.max(0, fx.bankPuls - dt * 1.2);
+    fx.stillePazzi = g.trekning >= RYSTELSE;
         if (fx.tatt > 0) fx.tatt = Math.min(1, fx.tatt + dt * 2.5);
         if (fx.kunstFly) {
             fx.kunstFly.t += dt;
@@ -1419,7 +1696,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
         }
         // Hånda: hviler ved plassen din, stuper ned i posen, skjelver når noen snur seg.
         const inne = !!g.hånd.act;
-        const truet = g.rådsherrer.some((r) => aktiv(r) && r.blikk !== 'bort');
+        const truet = g.rådsherrer.some((r) => ekteFare(g, r));
         const pazziVarme = Math.max(0, ...g.rådsherrer.filter((r) => stillePazzi(g, r) && r.blikk === 'bort').map((r) => r.siden / PAZZI_STILLE_S));
         const skjelv = inne ? 0.8 + g.hånd.dukk * 0.35 + (truet ? 4 : 0) + pazziVarme * 2.5 : 0;
         const mx = inne ? BAG.x : REST.x;
@@ -1436,7 +1713,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
         // Trommeslag når en lapp snus.
         if (trekk) {
             const tt = TREKK_S - g.faseT;
-            const n = g.trukket.filter((_, i) => tt > 0.55 + 0.5 * i + 0.45).length;
+            const n = g.trukket.filter((_, i) => tt > REV0 + REVD * i + REVF).length;
             while (fx.reveal < n) {
                 const venn = g.trukket[fx.reveal];
                 synth.tone(venn ? 110 : 80, 45, 0.22, 'sine', 0.35);
@@ -1445,7 +1722,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                 fx.reveal += 1;
                 fx.shake = Math.max(fx.shake, 0.08);
             }
-            if (!fx.stamp && tt > 0.55 + 0.5 * 4 + 0.6) {
+            if (!fx.stamp && tt > REV0 + REVD * 4 + REVF + 0.12) {
                 fx.stamp = true;
                 const k2 = g.trukket.filter(Boolean).length;
                 text.banner(k2 === TREKKES ? 'REN SIGNORIA!' : k2 >= MÅ_HA ? 'VENNENE STYRER' : 'ALBIZZI STYRER', k2 >= MÅ_HA ? FARGE.gull : FARGE.ebenholt, 1.2);
@@ -1522,6 +1799,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
             if (m === 'play') {
                 update(g, gdt);
                 handleEvents(g);
+                hints(g, gdt);
                 if (g.ended) {
                     fx.endT = 0;
                     setModeBoth('slutt');
@@ -1565,7 +1843,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
             if (modeRef.current !== 'play') return;
             text.point('hold', 'Hold på posen når ingen ser', toScreen(BAG.x, BAG.y - 40), {
                 once: true,
-                seconds: 8,
+                seconds: 4,
                 until: () => !!gRef.current.hånd.act,
             });
         }, 900);
