@@ -401,6 +401,14 @@ export function inRange(g: G, u: Unit) {
     return Math.hypot(u.x - hx, u.z - hz) <= RADIO.rekkevidde;
 }
 
+/** Hvorfor enheten ikke kan kobles nå (null = den kan). */
+export function linkBlock(g: G, u: Unit): 'ingenRadio' | 'rekkevidde' | 'fullt' | null {
+    if (!unitsCanLink(g)) return 'ingenRadio';
+    if (!inRange(g, u)) return 'rekkevidde';
+    if (usedChannels(g) >= channels(g)) return 'fullt';
+    return null;
+}
+
 /** Kjerneverbet: koble en enhet til radionettet, eller koble den fra. */
 export function toggleLink(g: G, id: number, io?: IO): boolean {
     const u = g.units.find((v) => v.id === id);
@@ -411,7 +419,7 @@ export function toggleLink(g: G, id: number, io?: IO): boolean {
         io?.sfx('frakoble');
         return true;
     }
-    if (!unitsCanLink(g) || !inRange(g, u) || usedChannels(g) >= channels(g)) return false;
+    if (linkBlock(g, u)) return false;
     u.linking = RADIO.koble;
     io?.sfx('koble');
     return true;

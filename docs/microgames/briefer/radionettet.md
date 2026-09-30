@@ -154,5 +154,10 @@ Fem konsepter, alle innenfor bestillingen. Fersk dommer med bestillingen, Gøy /
   gir styrke 1,7 (tre = veteran 2,6); bare radio, artilleri og bombefly er lærings-øyeblikk,
   resten er lapper ved kortet (maks tre øyeblikk per runde). Hver bølge har en klokke på 45 s
   i planleggingen (vises de siste 15 s), ellers taper ikke passiv spiller.
+- 2026-09-30, eierens første test: «Klikk for å koble finner jeg ikke». Årsak: lappen «Klikk en
+  gul rute» pekte utenfor radioens rekkevidde, og et avvist klikk sa ingenting. Rettet: lappen
+  peker innenfor ringen, ruter utenfor rekkevidden er grå når man plasserer, avviste klikk får en
+  lapp med grunnen (ingen radio ennå / utenfor ringen / alle kanaler brukt), klikk på
+  kommandovogna forklarer, og hele ruta er klikkflate for enheten.
 - Ikke i gråboksen ennå: fallskjermsoldater (Normandie 1944), slag 4-6, ordrekort mellom
   slagene, flytting og salg av enheter.

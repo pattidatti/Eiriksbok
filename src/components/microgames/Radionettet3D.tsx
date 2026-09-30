@@ -11,7 +11,7 @@ import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
 import { usePlaytest, playtestSpeed } from './playtest';
 import {
-    newGame, update, pick, place, reroll, toggleLink, startWave, sperre, nextSlag, unitAt, isAir,
+    newGame, update, pick, place, reroll, toggleLink, linkBlock, startWave, sperre, nextSlag, unitAt, isAir,
     usedChannels, waveDef, slagDef, CAUSE_TEXT, finalScore, type G, type IO,
 } from './radionettet/game';
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
@@ -26,6 +26,12 @@ import { C } from './radionettet/models';
 // Kartet: radionettet/KART.md. Brief: docs/microgames/briefer/radionettet.md.
 
 const GAME_ID = 'radionettet';
+
+const LINK_NO = {
+    ingenRadio: 'Radioen kommer i neste bølge',
+    rekkevidde: 'Utenfor ringen: radioen når ikke hit',
+    fullt: 'Alle kanaler brukt. Klikk en koblet enhet',
+};
 const DEV_SPEED = playtestSpeed();
 
 const THEME: Partial<ArcadeTheme> = {
@@ -111,7 +117,7 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
         const start = def.vei[0];
         text.point('fiende', 'Fienden kommer inn her', at(start[0] - 1.2, start[1]), { tone: 'fare', until: () => g.phase !== 'plan', seconds: 60 });
         if (g.units.length === 0 && g.holding < 0) text.point('kort', 'Klikk et kort', domAnchor(stage, 'kort0'), { until: () => g.holding >= 0 || g.units.length > 0, seconds: 60 });
-        if (g.holding >= 0) text.point('rute', 'Klikk en gul rute ved veien', at(9.5, 4.5), { until: () => g.holding < 0, seconds: 60 });
+        if (g.holding >= 0) text.point('rute', 'Klikk en gul rute ved veien', at(7.5, 4.5), { until: () => g.holding < 0, seconds: 60 });
         if (g.units.length >= 2 && g.holding < 0) text.point('bolge', 'Klar? Start bølgen', domAnchor(stage, 'bolge'), { until: () => g.phase !== 'plan', seconds: 60 });
     }
     if (g.phase === 'plan' && waveDef(g).kanaler > 0 && usedChannels(g) === 0 && g.units.length) {
@@ -274,7 +280,9 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             return;
         }
         const u = unitAt(g, Math.floor(x) + 0.5, Math.floor(z) + 0.5);
-        if (u) onUnit(u.id);
+        if (u) return onUnit(u.id);
+        const [hx, hz] = slagDef(g).hq;
+        if (Math.hypot(x - hx, z - hz) < 1) text.point('hq', 'Klikk enhetene du vil koble', at(hx, hz, 1.4), { seconds: 3 });
     };
     const onUnit = (id: number) => {
         const g = gRef.current;
@@ -286,7 +294,14 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             return;
         }
         synth.unlock();
-        toggleLink(g, id, io);
+        if (toggleLink(g, id, io)) return;
+        // Si fra hvorfor klikket ikke koblet - ellers ser det ut som ingenting skjer.
+        const u = g.units.find((v) => v.id === id);
+        const why = u && linkBlock(g, u);
+        if (!u || !why) return;
+        sfx('frakoble');
+        const [x, z] = isAir(u.kind) ? [u.ax, u.az] : [u.x, u.z];
+        text.point(`nei-${why}`, LINK_NO[why], at(x, z), { tone: 'fare', seconds: 3 });
     };
     const act = {
         pick: (i: number) => {

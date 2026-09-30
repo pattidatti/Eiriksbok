@@ -91,7 +91,7 @@ export const SLAG: SlagDef[] = [
                 nytt: {
                     key: 'radio',
                     tittel: 'Radioen',
-                    tekst: 'Fiendens panservern gjemmer seg. Bare infanteriet ser det. Klikk vogna og infanteriet, så deler de øyne over radio.',
+                    tekst: 'Fiendens panservern gjemmer seg. Bare infanteriet ser det. Klikk vogna og infanteriet innenfor ringen, så deler de øyne.',
                 },
             },
             {

@@ -150,23 +150,28 @@ function Hq({ def }: { def: SlagDef }) {
 
 /** Gyldige ruter mens eleven holder et kort. Tegnes én gang per kort, ikke per musebevegelse. */
 export function PlaceHints({ gRef }: { gRef: React.MutableRefObject<G> }) {
-    const [cells, setCells] = useState<[number, number][]>([]);
+    const [cells, setCells] = useState<[number, number, boolean][]>([]);
     const key = useRef('');
     useFrame(() => {
         const g = gRef.current;
         const k = g.holding >= 0 && g.phase === 'plan' ? `${g.holding}:${g.shop[g.holding]}:${g.units.length}:${g.slag}` : '';
         if (k === key.current) return;
         key.current = k;
-        const out: [number, number][] = [];
-        if (k) for (let x = 0; x < MAP_W; x++) for (let z = 0; z < MAP_D; z++) if (canPlace(g, x + 0.5, z + 0.5)) out.push([x + 0.5, z + 0.5]);
+        // Gult innenfor radioens rekkevidde, grått utenfor (lov, men kan ikke kobles).
+        const [hx, hz] = slagDef(g).hq;
+        const out: [number, number, boolean][] = [];
+        if (k)
+            for (let x = 0; x < MAP_W; x++)
+                for (let z = 0; z < MAP_D; z++)
+                    if (canPlace(g, x + 0.5, z + 0.5)) out.push([x + 0.5, z + 0.5, Math.hypot(x + 0.5 - hx, z + 0.5 - hz) <= RADIO.rekkevidde]);
         setCells(out);
     });
     return (
         <group>
-            {cells.map(([x, z]) => (
+            {cells.map(([x, z, inR]) => (
                 <mesh key={`${x},${z}`} rotation-x={-Math.PI / 2} position={[x, 0.005, z]}>
                     <planeGeometry args={[0.8, 0.8]} />
-                    <meshBasicMaterial color={C.radio} transparent opacity={0.28} />
+                    <meshBasicMaterial color={inR ? C.radio : C.fiende} transparent opacity={inR ? 0.45 : 0.15} />
                 </mesh>
             ))}
         </group>
@@ -213,6 +218,11 @@ function UnitView({ u, gRef, onClick }: { u: Unit; gRef: React.MutableRefObject<
     });
     return (
         <group ref={grp} onClick={(e) => { e.stopPropagation(); onClick(u.id); }}>
+            {/* Usynlig klikkflate: hele ruta, ikke bare de små figurene. */}
+            <mesh position={[0, 0.4, 0]}>
+                <boxGeometry args={[0.95, 0.8, 0.95]} />
+                <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+            </mesh>
             <group ref={body}>
                 <Shape parts={UNIT_SHAPE[u.kind]} color={C.egen} />
                 {u.copies > 1 &&
