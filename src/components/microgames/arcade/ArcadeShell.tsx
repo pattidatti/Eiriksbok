@@ -269,7 +269,7 @@ export function ArcadeStats({ items }: { items: { value: React.ReactNode; label:
                     >
                         {it.value}
                     </b>
-                    <span style={{ fontSize: 10, fontWeight: 700 }}>{it.label}</span>
+                    <span style={{ display: 'block', fontSize: 13, fontWeight: 700, lineHeight: 1.15 }}>{it.label}</span>
                 </div>
             ))}
         </div>

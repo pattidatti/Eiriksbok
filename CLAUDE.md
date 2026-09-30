@@ -656,6 +656,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 | `scripts/playtest-microgame.mjs` | Selvspill-røyktest for mikrospill i nettleseren: liv, tekst over spillet, Chromebook, konsollfeil og én vinnerrunde som sammenlignes med simuleringen (`--full` for alle roboter). Kontrakten er `src/components/microgames/playtest.ts`. Kjøres i CI og av nattsporet `eiriksbok-daily-microgame` |
 | `scripts/microgame-api.mjs` | API-kort for mikrospill: signaturene til `kit/`, `arcade/` og sim-kontrakten, generert fra koden med TypeScript-API-et (også returtyper som bare er utledet). Erstatter å lese hele referansespill for å finne API-et |
 | `scripts/guide-microgame.mjs` | Skriver ut delene av `build_microgame.md` én rolle i nattrutinen trenger (`--rolle designer\|bygg\|forbedrer\|dirigent`), valgt på overskrift |
+| `scripts/kvittering-microgame.mjs` | Hva et mikrospill kostet å lage: tokens, steg, leseandel og rettelses-commits, fra de lokale Claude Code-loggene. `--alle --skriv` oppdaterer `docs/microgames/kvitteringer.md` (sammenligningsgrunnlaget) |
 | `scripts/kontaktark-microgame.mjs` | Setter skjermbildene fra selvspill og scene-audit sammen til ark på 6 ruter med filnavn (`.screenshots/kontaktark/`) - ett bilde å lese i stedet for seks |
 | `scripts/optimize-images.js` | Optimaliserer WebP-bilder under `public/`. Kvitterer for hver fil i `scripts/image-ledger.json`, så et bilde komprimeres én gang - ikke én gang per build |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |

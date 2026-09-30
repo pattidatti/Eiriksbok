@@ -15,6 +15,7 @@
 //   RASKT I GANG en synlig knapp i spillvinduet, og start -> spill på under 6 s
 //   LIV        bildet endrer seg av seg selv de første sekundene
 //   LESBART    tekst dekker ikke midten av spillet i mer enn 4 s i strekk
+//   SKRIFT     ingen synlig tekst i spillvinduet under 13 px (1366×768)
 //   STABILT    ingen konsollfeil, ingen unntak i robotene
 //   MERKET     registry-oppføringen har sjanger og tone; arkadeskallet får eget tema
 //   CHROMEBOOK en runde med prosessoren strupet 4x (som en billig Chromebook): JS-tid per
@@ -37,7 +38,7 @@
 
 import { chromium } from 'playwright';
 import sharp from 'sharp';
-import { readFileSync, mkdirSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, mkdirSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -75,7 +76,17 @@ const CB_LIMITS = { jsP95: 22, calls: 350, triangles: 700e3 };
 const FEEL = { valgPerMin: 6, pressLift: 0.15 };
 // Spill bygget før generatoren (2026-09-28). De har ikke brief, `kunst` eller tall for
 // spillfølelse; for dem rapporteres tallene bare. Alle nye spill må ha dem.
+// Minste skrift i spillvinduet (eier 2026-09-30). Gjelder all DOM-tekst i spillvinduet.
+const MIN_FONT_PX = 13;
+
 const LEGACY = new Set(['havet-kommer', 'stavkirken-3d', 'lop-med-lonna-3d', 'plottebordet-3d']);
+// Spill bygget før kodeformen (2026-09-30). Nye spill skal ha KART.md og tuning.ts i mappa og
+// ingen fil over KODEFORM_MAKS_LINJER, så en fersk agent finner fram uten å lese hele spillet.
+const KODEFORM_FOR = new Set([
+    'guddommelig-vind', 'inn-mot-stranda', 'petisjonen-3d', 'seinen-snur', 'kurs-for-gronland',
+    'thermopylae', 'frisk-puss', 'lopegravene-1718', 'hammer-og-ambolt',
+]);
+const KODEFORM_MAKS_LINJER = 800;
 const coverAt = Number(opt('cover-at', 20));
 const port = Number(opt('port', 5174));
 const ids = (opt('ids') || '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -105,6 +116,25 @@ function registryEntry(id) {
     };
 }
 
+/** Kodeformen (guiden, steg 3a): kart, tall i tuning.ts, små filer. */
+function kodeform(file) {
+    const f = [];
+    const src = readFileSync(file, 'utf8');
+    const counts = {};
+    for (const m of src.matchAll(/from '\.\/([\w-]+)\//g)) counts[m[1]] = (counts[m[1]] ?? 0) + 1;
+    const mappe = Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0];
+    if (!mappe) return ['fant ikke spillmappa (ingen import fra ./<mappe>/) - spillreglene skal bo i en egen mappe'];
+    const dir = path.join(mgDir, mappe);
+    for (const need of ['KART.md', 'tuning.ts'])
+        if (!existsSync(path.join(dir, need))) f.push(`${mappe}/${need} mangler (se «Kodeformen» i guiden)`);
+    const files = [file, ...readdirSync(dir).filter((n) => /\.tsx?$/.test(n)).map((n) => path.join(dir, n))];
+    for (const p of files) {
+        const n = readFileSync(p, 'utf8').split('\n').length;
+        if (n > KODEFORM_MAKS_LINJER) f.push(`${path.relative(mgDir, p)} har ${n} linjer - maks ${KODEFORM_MAKS_LINJER}, del den etter ansvar`);
+    }
+    return f;
+}
+
 function staticChecks(id) {
     const f = [];
     const e = registryEntry(id);
@@ -125,6 +155,7 @@ function staticChecks(id) {
                 if (!new RegExp(`^##\\s+${h}`, 'mi').test(b)) f.push(`briefen mangler seksjonen «## ${h}»`);
         }
     }
+    if (!LEGACY.has(id) && !KODEFORM_FOR.has(id) && e.file && existsSync(e.file)) f.push(...kodeform(e.file));
     if (e.file && existsSync(e.file)) {
         const src = readFileSync(e.file, 'utf8');
         if (!src.includes('usePlaytest(')) f.push('spillet registrerer ikke selvspill (usePlaytest)');
@@ -184,7 +215,7 @@ const stopServer = () => {
 // ---------------------------------------------------------------------------
 
 /** Andel av spillvinduet (og av midten) som dekkes av synlig tekst akkurat nå. */
-function measureTextCover() {
+function measureTextCover(minPx) {
     const stage = document.querySelector('[data-mg-stage]');
     if (!stage) return null;
     const R = stage.getBoundingClientRect();
@@ -193,6 +224,7 @@ function measureTextCover() {
     const GY = 27;
     const cells = new Uint8Array(GX * GY);
     const midTexts = [];
+    const small = [];
     const opacityOf = (el) => {
         let o = 1;
         for (let n = el; n && n !== stage.parentElement; n = n.parentElement) {
@@ -214,6 +246,9 @@ function measureTextCover() {
         const r = el.getBoundingClientRect();
         if (r.width < 2 || r.height < 2) continue;
         if (opacityOf(el) < 0.3) continue;
+        // Skriftstørrelsen eleven faktisk ser: CSS-størrelsen ganget med en eventuell transform-skala.
+        const px = parseFloat(getComputedStyle(el).fontSize) * (el.offsetHeight > 0 ? r.height / el.offsetHeight : 1);
+        if (px < minPx - 0.25) small.push(`${px.toFixed(1)} px «${el.textContent.trim().slice(0, 40)}»`);
         const x0 = Math.max(0, Math.floor(((r.left - R.left) / R.width) * GX));
         const x1 = Math.min(GX - 1, Math.floor(((r.right - R.left) / R.width) * GX));
         const y0 = Math.max(0, Math.floor(((r.top - R.top) / R.height) * GY));
@@ -234,7 +269,7 @@ function measureTextCover() {
                 midN++;
             }
         }
-    return { all: all / (GX * GY), mid: mid / midN, midText: midTexts.join(' / ').slice(0, 120) };
+    return { all: all / (GX * GY), mid: mid / midN, midText: midTexts.join(' / ').slice(0, 120), small };
 }
 
 /** Tekstlaget akkurat nå: lapper, banner og et eventuelt lærings-øyeblikk. */
@@ -372,7 +407,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
     // et romslig absolutt tak.
     const capMs = Math.max(20 * 60, maksSekunder * 8) * 1000;
     let lastProgress = { v: -1, at: Date.now() };
-    const cover = { midRun: 0, allRun: 0, midWorst: 0, allWorst: 0, samples: 0, midWorstText: '' };
+    const cover = { midRun: 0, allRun: 0, midWorst: 0, allWorst: 0, samples: 0, midWorstText: '', small: [] };
     const coach = { beats: new Set(), beatSince: 0, longPins: new Set(), longBanners: new Set(), pins: new Set() };
     let lastSample = Date.now();
     const shots = [];
@@ -406,7 +441,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
             // målinger skal ikke få to korte bannere til å se ut som én lang dekning.
             const dt = Math.min(1.2, (now - lastSample) / 1000);
             lastSample = now;
-            const c = await page.evaluate(measureTextCover);
+            const c = await page.evaluate(measureTextCover, MIN_FONT_PX);
             const co = await page.evaluate(readCoach);
             if (co) {
                 for (const t of co.pins) {
@@ -433,6 +468,7 @@ async function playRoundOnce(page, id, bot, variant, maksSekunder, shotsDir, sho
                     cover.midWorstText = c.midText;
                 }
                 cover.allWorst = Math.max(cover.allWorst, cover.allRun);
+                for (const t of c.small ?? []) if (!cover.small.includes(t) && cover.small.length < 40) cover.small.push(t);
             }
             // Plakaten til startkortet: et bilde midt i god spilling, uten tekstlaget
             // og uten HUD (lapper, poeng og knapper hører til spillet, ikke til plakaten).
@@ -860,6 +896,10 @@ async function playtestGame(browser, id) {
                 `tekst dekker midten av spillet i ${midWorst.toFixed(1)} s i strekk (maks 4, runde «${worstRound.bot}», tekst: «${worstRound.cover.midWorstText}») - kort ned banneret, eller fest teksten til tingen med en lapp (text.point)`
             );
         if (allWorst > 4) rep.findings.push(`tekst dekker over 35 % av spillvinduet i ${allWorst.toFixed(1)} s i strekk (maks 4)`);
+        // STOR NOK SKRIFT (eier 2026-09-30 om Hammer og ambolt: «generelt for liten skrift»)
+        const small = [...new Set(rep.rounds.flatMap((r) => r.cover.small ?? []))];
+        if (small.length)
+            rep.findings.push(`${small.length} tekster under ${MIN_FONT_PX} px i spillvinduet ved 1366×768, f.eks. ${small.slice(0, 4).join(', ')} - minste skrift er ${MIN_FONT_PX} px`);
     } catch (e) {
         const msg = String(e?.message || e);
         if (INFRA.test(msg)) rep.infra = msg;

@@ -24,7 +24,7 @@ const ROLLER = {
         'Vedlegg C',
         'Vedlegg D',
     ],
-    forbedrer: ['INNLEDNING', 'Steg 3b', 'Steg 4', 'Steg 5', 'Vedlegg B', 'Vedlegg C', 'Vedlegg D'],
+    forbedrer: ['INNLEDNING', 'Steg 3a', 'Steg 3b', 'Steg 4', 'Steg 5', 'Vedlegg B', 'Vedlegg C', 'Vedlegg D'],
     dirigent: ['Steg 1', 'Steg 5', 'Steg 6', 'Sjekkliste', 'Vedlegg E'],
 };
 

@@ -35,6 +35,10 @@ Begge har selvspill-roboter (`usePlaytest`) - se dem når du skriver dine egne.
 - `node scripts/kontaktark-microgame.mjs --ids <id>` - alle skjermbildene fra selvspill og
   scene-audit som noen få ark med filnavn på hver rute. Til egen kontroll; den uavhengige
   vurdereren ser bildene i full størrelse.
+- `<mappe>/KART.md` i hvert spill (se «Kodeformen» i steg 3a) - les kartet før koden.
+- `node scripts/kvittering-microgame.mjs --ids <id>` - hva spillet kostet: tokens, steg, andel
+  lesesteg, bilder og rettelses-commits etter levering. `--alle --skriv` oppdaterer
+  `docs/microgames/kvitteringer.md`, som er sammenligningsgrunnlaget.
 
 **3D eller 2D?** 3D foretrekkes. 2D er tillatt når det gir det gøyeste, mest interaktive eller mest
 passende spillet (en sidescroller om havstigning er bedre i 2D). Skriv begrunnelsen i briefen.
@@ -78,12 +82,54 @@ ha); oppdaget ved konseptet koster det noen tusen.
 
 1. **Etter konseptturneringen, før briefen:** vinneren og nummer to, fem linjer hver, pluss én
    setning om hvordan det oppfyller bestillingen. Vent på svar.
-2. **Etter gråboksen, før kunsten:** to-tre skjermbilder, simuleringstallene, og lenken til
-   `http://localhost:5173/mikrospill/<id>` så eieren kan prøve selv. Vent på svar.
+2. **Etter gråboksen, før kunsten: eieren SPILLER det første minuttet.** Gråboksen er ikke et
+   utsnitt midt i en runde. Den er de tre første brettene (eller de første 60 sekundene) slik en
+   ny elev møter dem, med opptrappingen fra designbriefen (punkt 11) og ekte tekst i lappene.
+   Send lenken `http://localhost:5173/mikrospill/<id>`, simuleringstallene og disse spørsmålene:
+   - Skjønte du hva du skulle gjøre uten å lese mye?
+   - Var det for mye på en gang, eller for fort?
+   - Var skrift, taster og hint lette å se?
+   - Er perspektivet og kameraet riktig?
+
+   Vent på svar. En skjermbildeserie erstatter ikke at eieren spiller: spillfølelse kan ikke
+   godkjennes fra tekst eller bilder. Alle de fem spillene 29.-30.09 ble bygd om etter levering,
+   og nesten alt gjaldt det første minuttet (Hammer og ambolt: ingen opptrapping, for liten skrift,
+   svingende peker; Frisk puss: for kaotisk; Kurs for Grønland: uklare taster). Omleggingen av
+   Hammer til tutorial kom etter at all kunsten var laget - den dyreste rekkefølgen.
 
 Etter godkjent gråboks bygges kunst, juice og tekst av en fersk underagent (Byggmester 2 i
-nattrutinens «Arbeidsdeling»), med briefen som kontrakt. Da holder chatten seg liten, og eierens
-rettelser etterpå blir billige.
+nattrutinens «Arbeidsdeling»), med briefen og `KART.md` som kontrakt. Da holder chatten seg liten,
+og eierens rettelser etterpå blir billige.
+
+### Tokenøkonomi i chat-økter
+
+Det som koster, er ikke koden som skrives, men at hele samtalen leses inn igjen ved hvert steg.
+Hammer og ambolt brukte ~400 M tokens: 1000 steg, kontekst opp mot 680k, halvparten av kallene
+bare lesing. Se `docs/microgames/kvitteringer.md` for alle spillene.
+
+- **Én fase per økt.** Konsept → gråboks → kunst → rettelser. Mellom fasene står alt som skal
+  videre, i briefen og `KART.md`, og eieren kan kjøre `/clear`. Rettelser etter tilbakemelding
+  tas alltid i en fersk økt: samme rettelse ved 600k kontekst koster ti ganger så mye.
+- **Hver fase slutter med neste prompt.** Siste melding i en fase er alltid en ferdig prompt i en
+  kodeblokk som eieren limer inn etter `/clear` (eier, 2026-09-30). Den har ekte `id` og mappe
+  utfylt, sier hvilken fase som er neste, og har en tydelig plass til eierens tilbakemelding:
+  ```
+  Fortsett mikrospillet <id> (fase: <neste fase>). Les docs/microgames/briefer/<id>.md
+  (særlig Byggelogg) og src/components/microgames/<mappe>/KART.md, og følg
+  .agent/workflows/build_microgame.md for denne fasen.
+  Min tilbakemelding: <skriv her>
+  ```
+  Er spillet ferdig, er prompten en retteøkt med samme form. Den nye økta skal ikke trenge noe
+  fra den gamle samtalen.
+- **Én byggmester som bygger hele veien**, pluss en uavhengig vurderer. Ikke fem byggmestere etter
+  hverandre som hver starter fra null (Frisk puss: 12 underagenter, 1500 steg, over 60 % lesing).
+- **Samle endringene.** Alle rettelser i en fil i ett kall, så én runde med `tsc` + simulering +
+  selvspill. Ikke tretten små erstatninger med kjøring mellom hver.
+- **Ingen engangsskript.** Trenger du å spore en runde eller teste et scenario, legg det som en
+  robot eller et scenario i `<mappe>/sim.ts`, så neste agent har det også. Skjermbilder ses som
+  ett kontaktark (`kontaktark-microgame.mjs`), ikke seks enkeltbilder som blir liggende i konteksten.
+- **Tuning er data.** Justering av tempo, pris og styrke skal være en endring i `tuning.ts` og
+  en ny simulering - ikke lesing av regelkoden.
 
 **Delt og unikt.** Det eleven ikke ser, deles: arkadeskallet, tekstlagene, lagring, lyd,
 kvalitetsnivåer og selvspill. Det eleven ser, lages alltid nytt: verden, kamera, perspektiv, look,
@@ -167,6 +213,12 @@ med dommerens løft innarbeidet. Den tvinger fram de valgene som skiller et spil
 8. **Sjanger** (fra katalogen under), **perspektiv** og **2D/3D** med begrunnelse.
 9. **Look.** Én setning - detaljene står i kunstbriefen (steg 2c).
 10. **Første fem sekunder.** Hva ser eleven, og hva gjør de uten å lese noe?
+11. **Første minutt - opptrappingen.** Skriv de tre første brettene (eller bølgene) konkret: hva
+    eleven har å velge mellom, og hva som er nytt. Brett 1 har én mekanikk og få valg (to-tre kort,
+    én fiendetype), og hver ny enhet eller regel kommer alene, i et brett der den er svaret. Tempoet
+    starter lavt. Spillet lærer bort seg selv brett for brett - eleven skal aldri kastes inn i et
+    fullt spill med alle valgene (eier om Hammer og ambolt, 30.09). Dette er det eieren spiller i
+    gråboksen.
 
 ### Sjangerkatalogen
 
@@ -272,6 +324,24 @@ rød. Nå er nettleseren en røyktest (steg 5), og den sammenligner vinnerrunden
 
 Er simuleringen ikke grønn: endre spillreglene ut fra «Vanligste tap». Først etter tre ulike
 forsøk på kjerneløkka som alle er røde, byttes det til nest beste konsept.
+
+### Kodeformen: små filer, tall som data, et kart
+
+En fersk agent skal kunne rette spillet uten å lese hele. Byggmesterne i 29.-30.09 brukte 50-60 %
+av kallene sine på å lese, fordi `game.ts` var 1450-2500 linjer. Hvert nytt spill har denne formen
+i mappa si (selvspillet sjekker det):
+
+| Fil | Innhold |
+|---|---|
+| `KART.md` | Maks ~60 linjer: hva hver fil gjør, hvor kjerneløkka og de viktigste funksjonene står, hvilke knapper i `tuning.ts` som styrer hva, og kjente fallgruver. Oppdateres i samme commit som strukturen endres |
+| `tuning.ts` | Alle tallene: fart, priser, styrke, tider, bølger. Ett eksportert objekt med en kort kommentar per gruppe. Ingen tall for spillbalanse inne i reglene |
+| `levels.ts` (eller `waves.ts`) | Brettene og opptrappingen som data, når spillet har brett |
+| `game.ts` + flere regelfiler | Spillreglene, delt etter ansvar (kamp, økonomi, bevegelse) |
+| `bots.ts`, `sim.ts` | Robotene og simuleringskontrakten |
+| `world.tsx`, `models.ts` o.l. | Visningen |
+
+Ingen fil (heller ikke komponenten `<Navn>.tsx`) over 800 linjer. Blir en fil lang, del den
+etter ansvar - ikke i «del 1» og «del 2».
 
 ### Gråboks-diagnosen: grep for Gøy før kunst
 
@@ -384,6 +454,26 @@ nettopp der - i en linje ingen leste. Derfor har skallet bare fire måter å si 
   kortet står.
 - Selvspill-porten sjekker ordgrensene, antall lærings-øyeblikk og at slutt-skjermen har «Dette
   skjedde».
+
+### Eierens faste klager - sjekk dem før du viser fram
+
+Dette har eieren sagt om ferdige spill. Hvert punkt kostet en ombygging. Se etter dem selv før
+eieren gjør det:
+
+- **For liten skrift.** Ingen tekst i spillvinduet under 13 px ved 1366×768 (selvspillet måler
+  det). Etiketter i HUD, kort og slutt-skjerm også.
+- **Pekere som svinger eller følger en 3D-ting.** Hint står fast (en lapp ved tingen, eller en fast
+  plass i HUD) - aldri en pil som sveiver fram og tilbake for å tiltrekke seg oppmerksomhet.
+- **Kastet inn i alt på en gang.** Opptrappingen fra designbriefen (punkt 11) må finnes i spillet,
+  ikke bare i briefen.
+- **For kaotisk og for fort.** Tempoet starter lavt; eleven skal rekke å se hva som skjedde.
+- **Uklare taster.** Tastene vises i spillvinduet, som tastetegn, der og når de trengs - ikke bare
+  på introkortet.
+- **UI som stenger for spillet.** Kart, paneler og kort skal aldri ligge over det eleven skal
+  klikke på eller plassere på.
+- **Flimmer når man drar eller holder over.** Markering av gyldige ruter mens eleven drar noe
+  skal stå stille: ingen ny tilstand per musebevegelse som tegner rutene på nytt.
+- **Bestillingen tolket fritt.** Se «Bestillingen er lov».
 
 ### Skarp tekst i 3D
 
@@ -534,6 +624,8 @@ går den hele runden, fordi filmstripen er det vurdereren ser.
 | Raskt i gang | synlig knapp i spillvinduet på startskjermen, og `start()` gir fase «spiller» på under 6 s |
 | Liv | bildet endrer seg merkbart mellom 2 og 12 s uten input |
 | Lesbart | tekst dekker ikke midten av spillet i mer enn 4 s i strekk (normalisert for spilltempo) |
+| Skrift | ingen synlig tekst i spillvinduet under 13 px ved 1366×768 |
+| Kodeform | nye spill: `KART.md` og `tuning.ts` i mappa, ingen fil over 800 linjer |
 | Tekst der blikket er | lapper maks 7 ord, banner maks 5 ord, maks 3 lærings-øyeblikk per runde, «Dette skjedde» på slutt-skjermen, ingen `below=` |
 | Stabilt | ingen konsollfeil, ingen unntak i robotene |
 | Merket | `sjanger`, `tone`, `hook` og `cover` (bildet finnes) i registry, `usePlaytest` i fila, eget `theme` |
@@ -649,6 +741,10 @@ det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der d
 - [ ] Konseptturnering: fem ulike konsepter, fersk dommer, vinneren har minst 4 på Gøy og Fag
 - [ ] `docs/microgames/briefer/<id>.md` med Konseptturnering, Designbrief (ti punkter) og Kunstbrief (åtte punkter)
 - [ ] Sjanger, perspektiv og kunstretning ulik de tre siste nattspillene; `kunst` i registry
+- [ ] Designbriefen har opptrappingen for det første minuttet (punkt 11), og den finnes i spillet
+- [ ] Eieren har spilt det første minuttet i gråboksen (interaktiv økt)
+- [ ] Kodeformen: `KART.md`, `tuning.ts`, ingen fil over 800 linjer
+- [ ] «Eierens faste klager» gått gjennom: skrift minst 13 px, faste hint, synlige taster, rolig start, ingen flimmer
 - [ ] `<navn>/sim.ts`; gråboksen besto simuleringen, og grepene fra gråboks-diagnosen er gjort før kunsten ble laget
 - [ ] Arkadeskall med eget `THEME`, mål i HUD, pause, lyd med lydav, designet for fullskjerm 1366×768
 - [ ] Tekst via `useArcadeText`: fagkjernen som lærings-øyeblikk, korte lapper ved tingen, «Dette skjedde» på slutt-skjermen - aldri tekst under spillet
