@@ -13,6 +13,7 @@ const Lopegravene3D = lazy(() => import('./Lopegravene3D'));
 const Thermopylae3D = lazy(() => import('./Thermopylae3D'));
 const HammerOgAmbolt3D = lazy(() => import('./HammerOgAmbolt3D'));
 const Loddposen = lazy(() => import('./Loddposen'));
+const Radionettet3D = lazy(() => import('./Radionettet3D'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
@@ -2452,6 +2453,19 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Florentinsk perspektiv-intarsia fra Palazzo Vecchio og domkirken: innlagt valnøtt, lønn og ebenholt, sandsvidde kanter, Medici-rødt og florin-gull i stearinlys',
         loader: () => import('./Loddposen'),
         Component: Loddposen as never,
+    },
+    radionettet: {
+        id: 'radionettet',
+        title: 'Radionettet',
+        description:
+            'Andre verdenskrig, 1940-1945. Tower defense møter auto-battler i en kampanje fra Dunkerque via El Alamein til Kursk: kjøp infanteri, stridsvogner, panservern, artilleri, luftvern og fly, still dem opp ved veien, og koble dem sammen med radio. Enheter i radionettet ser det de andre ser - stridsvogna ser det skjulte panservernet infanteriet har funnet, artilleriet skyter på det infanteriet ser, og jagerne følger bombeflyene. Ingen våpenart vinner alene. Radioen i hver tyske stridsvogn var grunnen til at lynkrigen virket i 1940.',
+        estimatedSeconds: 240,
+        sjanger: 'tower-defense-auto-battler',
+        tone: 'alvorlig',
+        hook: 'Du leder de allierte fra Dunkerque til Kursk. Koble hæren sammen med radio - alene ser ingen alt.',
+        kunst: 'Allierte propagandaplakater 1940-45 i silketrykk: plakatpapir, olivengrønt, marineblått og signalrødt, grov raster og lyskastere',
+        loader: () => import('./Radionettet3D'),
+        Component: Radionettet3D as never,
     },
 };
 
