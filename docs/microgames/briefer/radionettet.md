@@ -164,5 +164,18 @@ Fem konsepter, alle innenfor bestillingen. Fersk dommer med bestillingen, Gøy /
   stuper, rekyl, røyk og ild, fallskjermer), `cover` med `--cover`, så gråboks-diagnose av
   resten av slagene og slag 4-6 med fallskjermsoldater og ordrekort. Ikke embed i artikkelen
   før spillet er ferdig (steg 6).
+- 2026-09-30, fase 4 (kunst): plakatlooken er på plass. Figurer av sammenslåtte biter med tre
+  trykktoner og sotkontur (vogner med tårn som dreier mot målet, panservern med skjold, artilleri
+  med langt løp, luftvern med to løp, fly med RAF-rundeller og fiendens fly med kors, stupbomber
+  med knekkvinger). Bakken er ett trykt kart per slag (Dunkerque: hav med skip, hekker og røde tak;
+  El Alamein: sanddyner, palmer, sandsekker; Kursk: kornåkre, kratre) med rasterprikker og en
+  skiferblå marg, så spillbrettet står fram. Juice: rekyl, munningsflammer, eksplosjoner som
+  gule/røde stjerner, kantete røyk og ild, vrak som brenner, fly som krenger og styrter i røyk,
+  stupbombere som stuper med hyl, støv bak vognene, radiolinjer som stiplede bånd som sender ut fra
+  antennen og lyser opp når enheten skyter. Plakatmeny med lyskastere og raster. `cover` laget
+  (`--cover-at 80`). Porter: selvspill grønt (46 draw calls, JS p95 2,8 ms på lav), scene-audit
+  grønn, likhetsvakt 0,46 (nærmest petisjonen-3d), simulering uendret. Venter på at eieren ser
+  looken. Neste: eierens rettelser, så gråboks-diagnose av El Alamein og Kursk og slag 4-6
+  (fallskjermsoldater, ordrekort).
 - Ikke i gråboksen ennå: fallskjermsoldater (Normandie 1944), slag 4-6, ordrekort mellom
   slagene, flytting og salg av enheter.

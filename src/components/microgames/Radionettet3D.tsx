@@ -17,7 +17,10 @@ import {
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
 import { SLAG, TOTAL_WAVES } from './radionettet/levels';
-import { Camera, Board, PlaceHints, Units, Enemies, Lines, Booms, Ghost, type Proj } from './radionettet/world';
+import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, AirShadows, type Proj } from './radionettet/world';
+import { Board } from './radionettet/terrain';
+import { Effects } from './radionettet/effects';
+import { createFx } from './radionettet/fxPool';
 import { Hud } from './radionettet/hud';
 import { HUD_CSS } from './radionettet/hudData';
 import { C } from './radionettet/models';
@@ -94,6 +97,7 @@ function makeSfx(a: ArcadeSynth) {
         else if (name === 'smell' && gate('smell', 90)) a.noise(0.25, 0.05, 500);
         else if (name === 'salve' && gate('salve', 200)) a.noise(0.35, 0.05, 220);
         else if (name === 'kutt' && gate('kutt', 300)) a.tone(1200, 400, 0.25, 'square', 0.04);
+        else if (name === 'stup' && gate('stup', 400)) a.tone(520, 1250, 1.1, 'sawtooth', 0.025);
     };
 }
 
@@ -132,11 +136,13 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
 }
 
 // ---------------------------------------------------------------------------
-function Loop({ gRef, modeRef, ioRef, onTick }: { gRef: React.MutableRefObject<G>; modeRef: React.MutableRefObject<Mode>; ioRef: React.MutableRefObject<IO & { timeScale: () => number }>; onTick: (dt: number) => void }) {
+function Loop({ gRef, modeRef, ioRef, speedRef, onTick }: { gRef: React.MutableRefObject<G>; modeRef: React.MutableRefObject<Mode>; ioRef: React.MutableRefObject<IO & { timeScale: () => number }>; speedRef: React.MutableRefObject<number>; onTick: (dt: number) => void }) {
     useFrame((_, rawDt) => {
         const frameDt = DEV_SPEED > 1 ? Math.min(0.12, rawDt) : Math.min(0.05, rawDt);
         const steps = DEV_SPEED * Math.max(1, Math.ceil(frameDt / 0.05 - 1e-6));
         const dt = (frameDt * DEV_SPEED) / steps;
+        // Effektene (røyk, fly som styrter) går i samme tempo som spillet, og står i pause.
+        speedRef.current = modeRef.current === 'play' ? DEV_SPEED * ioRef.current.timeScale() : 0;
         if (modeRef.current === 'play')
             for (let k = 0; k < steps && modeRef.current === 'play'; k++) update(gRef.current, dt * ioRef.current.timeScale(), ioRef.current);
         onTick(rawDt);
@@ -161,6 +167,9 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     const projRef = useRef<Proj | null>(null);
     const stageRef = useRef<HTMLDivElement>(null);
     const pointer = useRef<[number, number]>([-5, -5]);
+    const speedRef = useRef(0);
+    const [fxPool] = useState(createFx);
+    const fxRef = useRef(fxPool);
     const coachT = useRef(0);
     const planSeen = useRef(-1);
     const completed = useRef(false);
@@ -383,16 +392,18 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                         <Board gRef={gRef} onPoint={onPoint} onMove={(x, z) => (pointer.current = [x, z])} />
                         <PlaceHints gRef={gRef} />
                         <Ghost gRef={gRef} pointer={pointer} />
-                        <Units gRef={gRef} onClick={onUnit} />
-                        <Enemies gRef={gRef} />
+                        <AirShadows gRef={gRef} />
+                        <Units gRef={gRef} onClick={onUnit} fxRef={fxRef} speedRef={speedRef} />
+                        <Enemies gRef={gRef} fxRef={fxRef} speedRef={speedRef} onDive={() => sfx('stup')} />
                         <Lines gRef={gRef} />
-                        <Booms gRef={gRef} />
-                        <Loop gRef={gRef} modeRef={modeRef} ioRef={ioRef} onTick={onTick} />
+                        <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} />
+                        <Loop gRef={gRef} modeRef={modeRef} ioRef={ioRef} speedRef={speedRef} onTick={onTick} />
                     </MicroCanvas>
 
                     {(mode === 'play' || mode === 'paused') && <Hud gRef={gRef} act={act} />}
                     {textLayer}
 
+                    {mode === 'menu' && <div className="rn-poster" aria-hidden />}
                     {mode === 'menu' && (
                         <ArcadeScreen>
                             <ArcadeLogo>

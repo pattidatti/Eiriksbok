@@ -1,7 +1,7 @@
 # Radionettet - kart
 
 Andre verdenskrig som tower defense + auto-battler. Brief: `docs/microgames/briefer/radionettet.md`.
-Fase: **gråboks** (klosser, ingen kunst). Komponenten: `../Radionettet3D.tsx`.
+Fase: **kunst** (plakatlook etter kunstbriefen; gråboksen godkjent 2026-09-30). Komponenten: `../Radionettet3D.tsx`.
 
 ## Filene
 
@@ -13,8 +13,10 @@ Fase: **gråboks** (klosser, ingen kunst). Komponenten: `../Radionettet3D.tsx`.
 | `combat.ts` | Én bølge per tidssteg (`stepWave`): fiender kommer, radionettets øyne, dine enheter skyter, fly, fiendens enheter, artilleri som kutter linjer |
 | `bots.ts` | Robotene (samvirke, halvgod, uten-radio, bare-vogner, tilfeldig) - samme grep som eleven |
 | `sim.ts` | Simuleringskontrakten + `trace(bot, seed, verbose)` til feilsøking |
-| `world.tsx` | 3D-visningen: ortografisk kamera som tilpasser seg vinduet, kart, enheter, fiender, radiolinjer/skudd (én `lineSegments`), smell |
-| `models.ts` | Farger (`C`) og gråboks-figurene (bokser) |
+| `world.tsx` | Kamera (ortografisk, tilpasser seg vinduet), enheter og fiender (tårn dreier mot mål, rekyl, vrak som brenner, fly som krenger, stuper og styrter), flyskygger, radiolinjer (stiplede bånd, instanser) og sporlys |
+| `terrain.tsx` | Bakken som ett trykt kart per slag (canvas: åkre/hav/dyner/kratre, vei, raster, blå marg), pynt utenfor kartet (instanser), kommandovogna og radioringen |
+| `models.ts` | Palett (`C`) og figurene: biter slått sammen (`build`) med tre trykktoner + sotkontur (omvendt skall) |
+| `fxPool.ts`, `effects.tsx` | Røyk, ild, støv og eksplosjonsstjerner: lageret og grepene (`boom`, `blast`, `flash`, `burn`) og tegningen (to instanserte mesher). `consume` gjør spillets `g.fx` om til effekter |
 | `hud.tsx`, `hudData.ts` | Plakatbåndet øverst og butikken nederst; roller, forhåndsvisning av bølgen og CSS |
 
 ## Fagregelen (én regel)
@@ -41,6 +43,13 @@ uten-radio taper på El Alamein bølge 1 - artilleriet uten nett ser ingenting).
 `npx tsx -e "import('./src/components/microgames/radionettet/sim.ts').then(m => m.trace('samvirke', 3, true))"`
 
 ## Fallgruver
+
+- React-kompilatoren (lint): en prop som endres i `useFrame`, må hete `...Ref` (`fxRef`, `speedRef`).
+  Partiklene flyttes i `fxPool.step`, ikke i komponenten.
+- `build()` med bare `bare`-biter gir tom kontur (tom geometri) - `mergeParts([])` kaster.
+- Materialene har `toneMapped={false}`, ellers vasker ACES ut trykkfargene.
+- Likhetsvakten måler mest farge: den blå margen rundt kartet holder coveret unna de beige spillene
+  (0,46 mot petisjonen-3d 2026-09-30).
 
 - En bølge slutter bare når alle fiender er døde eller forbi. Alt som kan bli stående
   (nedgravd pak, jagerfly uten mål) må ha en vei ut - se `pakBlir`, `bølgeMaks` og jagernes `timer`.

@@ -28,6 +28,12 @@ export function wavePreview(g: G) {
 }
 
 export const HUD_CSS = `
+.rn-poster{position:absolute;inset:0;pointer-events:none;background:
+radial-gradient(circle,rgba(26,26,26,.28) 1.4px,transparent 1.6px) 0 0/7px 7px,
+linear-gradient(118deg,transparent 30%,rgba(239,228,201,.22) 30%,rgba(239,228,201,.22) 36%,transparent 36%),
+linear-gradient(62deg,transparent 58%,rgba(239,228,201,.18) 58%,rgba(239,228,201,.18) 63%,transparent 63%),
+linear-gradient(95deg,transparent 12%,rgba(217,162,27,.16) 12%,rgba(217,162,27,.16) 16%,transparent 16%),
+linear-gradient(#1d2b4f,#1d2b4f 62%,#5b6b3a 62%,#5b6b3a)}
 .rn-band{position:absolute;left:0;right:0;top:0;display:flex;align-items:stretch;gap:10px;padding:8px 12px;background:#1d2b4f;color:#efe4c9;font-family:Oswald,'Arial Narrow',Inter,sans-serif;pointer-events:none;border-bottom:3px solid #1a1a1a}
 .rn-band>div:first-child{flex-shrink:0;white-space:nowrap}
 .rn-stat{white-space:nowrap}

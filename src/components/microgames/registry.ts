@@ -2464,6 +2464,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         tone: 'alvorlig',
         hook: 'Du leder de allierte fra Dunkerque til Kursk. Koble hæren sammen med radio - alene ser ingen alt.',
         kunst: 'Allierte propagandaplakater 1940-45 i silketrykk: plakatpapir, olivengrønt, marineblått og signalrødt, grov raster og lyskastere',
+        cover: '/images/microgames/radionettet.webp',
         loader: () => import('./Radionettet3D'),
         Component: Radionettet3D as never,
     },
