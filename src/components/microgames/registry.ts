@@ -2463,7 +2463,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         sjanger: 'tower-defense-auto-battler',
         tone: 'alvorlig',
         hook: 'Du leder de allierte fra Dunkerque til Kursk. Koble hæren sammen med radio - alene ser ingen alt.',
-        kunst: 'Allierte propagandaplakater 1940-45 i silketrykk: plakatpapir, olivengrønt, marineblått og signalrødt, grov raster og lyskastere',
+        kunst: 'Realistisk strategispill sett ovenfra og fargefoto fra 1940-44: sol og harde skygger, hekker, ørkensand og kornåkre, kjøretøy i ekte kamuflasje, grønne og røde ringer på bakken',
         cover: '/images/microgames/radionettet.webp',
         loader: () => import('./Radionettet3D'),
         Component: Radionettet3D as never,

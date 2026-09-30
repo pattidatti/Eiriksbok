@@ -3,6 +3,9 @@ import { useFrame } from '@react-three/fiber';
 import type { MicroGameProps } from './types';
 import { MicroGameFrame } from './MicroGameFrame';
 import { MicroCanvas } from './kit';
+import { KitEffects } from './kit/KitEffects';
+import '@fontsource/stardos-stencil/400.css';
+import '@fontsource/stardos-stencil/700.css';
 import { ArcadeStage, ArcadeScreen, ArcadeLogo, ArcadeTag, ArcadeBigButton, ArcadeSmallButton, ArcadeStats } from './arcade/ArcadeShell';
 import { useArcadeText, type ArcadeText } from './arcade/useArcade';
 import { ArcadeLessons } from './arcade/ArcadeLayers';
@@ -17,7 +20,8 @@ import {
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
 import { SLAG, TOTAL_WAVES } from './radionettet/levels';
-import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, AirShadows, type Proj } from './radionettet/world';
+import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, type Proj } from './radionettet/world';
+import { Markers } from './radionettet/markers';
 import { Board } from './radionettet/terrain';
 import { Effects } from './radionettet/effects';
 import { createFx } from './radionettet/fxPool';
@@ -37,24 +41,25 @@ const LINK_NO = {
 };
 const DEV_SPEED = playtestSpeed();
 
+// Nøktern militær stil: kakifarget ordreark med sjablongskrift over slagmarken.
 const THEME: Partial<ArcadeTheme> = {
-    ink: C.sot,
-    paper: '#efe4c9',
-    accent: C.radio,
-    cta: C.fare,
-    ctaText: '#efe4c9',
-    chip: '#e6d9b8',
-    scrim: 'rgba(29,43,79,.55)',
-    font: "Oswald, 'Arial Narrow', Inter, sans-serif",
+    ink: '#1f2318',
+    paper: '#e4dcc3',
+    accent: '#c99a1e',
+    cta: '#4a5a2a',
+    ctaText: '#f1ead2',
+    chip: '#d6cdb0',
+    scrim: 'rgba(16,19,12,.5)',
+    font: "'Stardos Stencil', 'Arial Narrow', Inter, sans-serif",
     fontWeight: 700,
-    tracking: '0.06em',
+    tracking: '0.05em',
     textCase: 'uppercase',
-    radius: 0,
-    line: 3,
-    drop: 4,
+    radius: 3,
+    line: 2,
+    drop: 3,
     tilt: 0,
-    hudText: '#efe4c9',
-    hudStroke: C.sot,
+    hudText: '#f1ead2',
+    hudStroke: '#16150f',
     bannerTop: '18%',
 };
 
@@ -387,23 +392,24 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             <div className="p-2">
                 <style>{HUD_CSS}</style>
                 <ArcadeStage ref={stageRef} theme={THEME} background={C.papir} label="Radionettet - still opp hæren og koble den sammen med radio">
-                    <MicroCanvas builtInLights={false} controls={false} contactShadows={false} background={C.papir} fog={null}>
+                    <MicroCanvas builtInLights={false} controls={false} contactShadows={false} background={C.papir} fog={null} postprocessing>
                         <Camera gRef={gRef} projRef={projRef} />
                         <Board gRef={gRef} onPoint={onPoint} onMove={(x, z) => (pointer.current = [x, z])} />
                         <PlaceHints gRef={gRef} />
                         <Ghost gRef={gRef} pointer={pointer} />
-                        <AirShadows gRef={gRef} />
+                        <Markers gRef={gRef} />
                         <Units gRef={gRef} onClick={onUnit} fxRef={fxRef} speedRef={speedRef} />
                         <Enemies gRef={gRef} fxRef={fxRef} speedRef={speedRef} onDive={() => sfx('stup')} />
                         <Lines gRef={gRef} />
                         <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} />
+                        <KitEffects bloomIntensity={0.8} bloomThreshold={0.9} />
                         <Loop gRef={gRef} modeRef={modeRef} ioRef={ioRef} speedRef={speedRef} onTick={onTick} />
                     </MicroCanvas>
 
                     {(mode === 'play' || mode === 'paused') && <Hud gRef={gRef} act={act} />}
                     {textLayer}
 
-                    {mode === 'menu' && <div className="rn-poster" aria-hidden />}
+                    {mode === 'menu' && <div className="rn-scrim" aria-hidden />}
                     {mode === 'menu' && (
                         <ArcadeScreen>
                             <ArcadeLogo>
@@ -441,7 +447,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                             <ArcadeLogo>SLAGET ER VUNNET</ArcadeLogo>
                             <ArcadeTag>{SLAG[result.slag].bånd}</ArcadeTag>
                             <p style={{ fontSize: 15, margin: '10px 0' }}>{SLAG[result.slag].seier}</p>
-                            <div style={{ fontSize: 30, color: C.radio }}>{'★'.repeat(result.stjerner)}{'☆'.repeat(3 - result.stjerner)}</div>
+                            <div style={{ fontSize: 30, color: '#a67c00' }}>{'★'.repeat(result.stjerner)}{'☆'.repeat(3 - result.stjerner)}</div>
                             <ArcadeLessons items={result.lessons} />
                             <ArcadeBigButton onClick={() => nextSlag(gRef.current)}>Neste slag: {SLAG[result.slag + 1]?.sted.split(',')[0]}</ArcadeBigButton>
                         </ArcadeScreen>

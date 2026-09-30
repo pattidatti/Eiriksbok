@@ -5,25 +5,32 @@ import { useQuality, mergeParts } from '../kit';
 import { RADIO } from './tuning';
 import { MAP_D, MAP_W, FLYPLASS, SLAG, type SlagDef } from './levels';
 import { usedChannels, type G } from './game';
-import { C, HQ_MODEL, TREE, POPLAR, HOUSE, PALM, SANDBAGS, TENT, SHIP, type Model } from './models';
+import { C, DECO, LOOK, figureMaterial, hqModel, type Look, type Model } from './models';
+import { Lighting } from './light';
 
-// Slagmarken som et trykt kart: bakke, åkre, veien og rasterprikker tegnes én gang i
-// canvas per slag (ett draw call), og pynten utenfor kartet er instanser.
+// Slagmarken som et ekte landskap sett ovenfra: bakken males én gang i canvas per slag
+// (gress, jord, sand, hjulspor, kratre, veien), og pynten utenfor kartet er instanser
+// med ekte skygger. Kartet mørkner litt utenfor spillbrettet, så brettet står fram.
 
 /** Bakken dekker kartet pluss en kant rundt. */
 const X0 = -7;
 const Z0 = -5;
 const GW = MAP_W + 14;
 const GD = MAP_D + 10;
-const PX = 72;
 
-type Look = 'kyst' | 'ørken' | 'steppe';
-const LOOK: Record<string, Look> = { dunkerque: 'kyst', alamein: 'ørken', kursk: 'steppe' };
+interface Ground {
+    base: string;
+    fields: string[];
+    tuft: [string, string];
+    road: string;
+    rut: string;
+    dust: string;
+}
 
-const GROUND: Record<Look, { base: string; fields: string[]; line: string }> = {
-    kyst: { base: '#e3d7b1', fields: ['#d5cfa0', '#cfc896', '#ddd3a8', '#c7c38f'], line: '#4a5a30' },
-    ørken: { base: '#ead3a0', fields: ['#e2c78e', '#efdcad', '#dcc088'], line: '#a8844e' },
-    steppe: { base: '#e2d4a6', fields: ['#e5c86a', '#d9bf6a', '#cdbf8e', '#e9d38a'], line: '#7a6a3a' },
+const GROUND: Record<Look, Ground> = {
+    kyst: { base: '#66733f', fields: ['#74823f', '#5d6a37', '#808a4c', '#6e5d40', '#7a8748'], tuft: ['#4c5a2c', '#8c9657'], road: '#86827a', rut: '#5b574f', dust: '#6e6450' },
+    ørken: { base: '#b89968', fields: ['#c4a878', '#ae8f5f', '#bfa272', '#a98a5c'], tuft: ['#a88c5e', '#dcc49a'], road: '#94795a', rut: '#6e5a3e', dust: '#8a7152' },
+    steppe: { base: '#6f6a3a', fields: ['#c7a654', '#b89846', '#d3b664', '#5e4c32', '#7b7a42'], tuft: ['#565a2c', '#a39650'], road: '#8a7654', rut: '#5f4e36', dust: '#6d5a3e' },
 };
 
 /** Fast tilfeldighet per slag, så kartet ser likt ut hver gang. */
@@ -35,7 +42,21 @@ function seeded(seed: number) {
     };
 }
 
-function drawGround(def: SlagDef) {
+function noiseTile(rnd: () => number) {
+    const t = document.createElement('canvas');
+    t.width = t.height = 128;
+    const c = t.getContext('2d')!;
+    const img = c.createImageData(128, 128);
+    for (let i = 0; i < img.data.length; i += 4) {
+        const v = 128 + (rnd() - 0.5) * 120;
+        img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
+        img.data[i + 3] = 255;
+    }
+    c.putImageData(img, 0, 0);
+    return t;
+}
+
+function drawGround(def: SlagDef, PX: number) {
     const look = LOOK[def.id] ?? 'kyst';
     const pal = GROUND[look];
     const cv = document.createElement('canvas');
@@ -45,140 +66,247 @@ function drawGround(def: SlagDef) {
     const px = (x: number) => (x - X0) * PX;
     const pz = (z: number) => (z - Z0) * PX;
     const rnd = seeded(def.id.length * 977 + 13);
+    const W = cv.width;
+    const H = cv.height;
     c.fillStyle = pal.base;
-    c.fillRect(0, 0, cv.width, cv.height);
+    c.fillRect(0, 0, W, H);
 
-    // Åkre og flater: skjeve firkanter i få toner.
+    // Myke flekker i grunnfargen: bakken er aldri helt jevn.
+    const soft = (x: number, y: number, r: number, col: string, a: number) => {
+        const g = c.createRadialGradient(x, y, 0, x, y, r);
+        g.addColorStop(0, col);
+        g.addColorStop(1, 'rgba(0,0,0,0)');
+        c.globalAlpha = a;
+        c.fillStyle = g;
+        c.fillRect(x - r, y - r, r * 2, r * 2);
+        c.globalAlpha = 1;
+    };
+    for (let i = 0; i < 90; i++) soft(rnd() * W, rnd() * H, (0.6 + rnd() * 2) * PX, pal.fields[i % pal.fields.length], 0.35);
+
+    // Åkre og beiter: skjeve firkanter med furer eller korn, hekker langs kanten ved kysten.
+    const fieldEdges: [number, number][][] = [];
     if (look !== 'ørken') {
-        c.globalAlpha = 0.6;
-        for (let i = 0; i < 44; i++) {
+        for (let i = 0; i < 34; i++) {
             const x = X0 + rnd() * GW;
             const z = Z0 + rnd() * GD;
-            const w = 1.5 + rnd() * 3;
-            const d = 1.2 + rnd() * 2.4;
-            const sk = (rnd() - 0.5) * 0.8;
-            c.fillStyle = pal.fields[i % pal.fields.length];
+            const w = 2 + rnd() * 3.5;
+            const d = 1.6 + rnd() * 2.6;
+            const sk = (rnd() - 0.5) * 0.6;
+            const pts: [number, number][] = [[x, z], [x + w, z + sk], [x + w + sk, z + d], [x + sk, z + d - sk]];
             c.beginPath();
-            c.moveTo(px(x), pz(z));
-            c.lineTo(px(x + w), pz(z + sk));
-            c.lineTo(px(x + w + sk), pz(z + d));
-            c.lineTo(px(x + sk), pz(z + d - sk));
+            pts.forEach(([a, b], k) => (k ? c.lineTo(px(a), pz(b)) : c.moveTo(px(a), pz(b))));
             c.closePath();
+            c.globalAlpha = 0.75;
+            c.fillStyle = pal.fields[i % pal.fields.length];
             c.fill();
-            if (look === 'steppe' && i % 2 === 0) {
-                // Kornåker: striper.
-                c.save();
-                c.clip();
-                c.strokeStyle = 'rgba(122,106,58,.22)';
-                c.lineWidth = 3;
-                for (let k = -40; k < 40; k++) {
-                    c.beginPath();
-                    c.moveTo(px(x) + k * 14, pz(z));
-                    c.lineTo(px(x) + k * 14 + 60, pz(z + d));
-                    c.stroke();
-                }
-                c.restore();
-            }
-            if (look === 'kyst') {
-                // Hekker langs kanten av åkeren.
-                c.strokeStyle = pal.line;
-                c.lineWidth = 4;
+            c.globalAlpha = 1;
+            c.save();
+            c.clip();
+            // Furer i jorda eller rader i kornet.
+            const ang = rnd() * Math.PI;
+            c.translate(px(x + w / 2), pz(z + d / 2));
+            c.rotate(ang);
+            c.strokeStyle = i % 3 === 0 ? 'rgba(40,30,15,.18)' : 'rgba(255,240,200,.08)';
+            c.lineWidth = PX * 0.05;
+            for (let k = -40; k < 40; k++) {
+                c.beginPath();
+                c.moveTo(k * PX * 0.14, -PX * 5);
+                c.lineTo(k * PX * 0.14, PX * 5);
                 c.stroke();
             }
+            c.restore();
+            fieldEdges.push(pts);
+        }
+    } else {
+        // Sanddyner: lange rygger med lys side mot sola og skygge bak.
+        for (let i = 0; i < 40; i++) {
+            const x = px(X0 + rnd() * GW);
+            const y = pz(Z0 + rnd() * GD);
+            const w = (1.4 + rnd() * 3) * PX;
+            c.save();
+            c.translate(x, y);
+            c.rotate(-0.35 + (rnd() - 0.5) * 0.3);
+            c.globalAlpha = 0.35;
+            c.fillStyle = '#e6d1a6';
+            c.beginPath();
+            c.ellipse(0, -w * 0.05, w * 0.5, w * 0.12, 0, 0, Math.PI * 2);
+            c.fill();
+            c.fillStyle = '#9c7f55';
+            c.beginPath();
+            c.ellipse(w * 0.02, w * 0.08, w * 0.48, w * 0.07, 0, 0, Math.PI * 2);
+            c.fill();
+            c.restore();
         }
         c.globalAlpha = 1;
-    } else {
-        // Sanddyner: bølgete rygger med raster på skyggesiden.
-        for (let i = 0; i < 26; i++) {
-            const x = X0 + rnd() * GW;
-            const z = Z0 + rnd() * GD;
-            const w = 2 + rnd() * 3;
-            c.fillStyle = pal.fields[i % pal.fields.length];
+        // Småstein.
+        for (let i = 0; i < 700; i++) {
+            const x = rnd() * W;
+            const y = rnd() * H;
+            const r = 1 + rnd() * 3;
+            c.fillStyle = 'rgba(70,55,35,.45)';
             c.beginPath();
-            c.ellipse(px(x), pz(z), w * PX * 0.5, w * PX * 0.18, -0.25, 0, Math.PI * 2);
+            c.arc(x + 1, y + 1, r, 0, Math.PI * 2);
             c.fill();
-            c.strokeStyle = pal.line;
-            c.lineWidth = 3;
+            c.fillStyle = 'rgba(225,205,165,.7)';
             c.beginPath();
-            c.ellipse(px(x), pz(z), w * PX * 0.5, w * PX * 0.18, -0.25, Math.PI * 0.05, Math.PI * 0.95);
-            c.stroke();
+            c.arc(x, y, r * 0.8, 0, Math.PI * 2);
+            c.fill();
         }
     }
 
-    // Havet ved Dunkerque: marineblått med trykte bølger og en strand.
+    // Gresstuster / kratt: tusenvis av korte strøk.
+    for (let i = 0; i < (look === 'ørken' ? 1800 : 7000); i++) {
+        const x = rnd() * W;
+        const y = rnd() * H;
+        c.strokeStyle = pal.tuft[i % 2];
+        c.globalAlpha = 0.35 + rnd() * 0.3;
+        c.lineWidth = 1 + rnd() * 1.5;
+        c.beginPath();
+        c.moveTo(x, y);
+        c.lineTo(x + (rnd() - 0.5) * 5, y - 3 - rnd() * 4);
+        c.stroke();
+    }
+    c.globalAlpha = 1;
+
+    // Havet ved Dunkerque: grått hav, skum langs stranda og våt sand.
     if (look === 'kyst') {
-        c.fillStyle = '#e9dcb4';
-        c.fillRect(0, 0, px(-0.3), pz(6.4));
-        c.fillStyle = C.himmel;
-        c.beginPath();
-        c.moveTo(0, 0);
-        c.lineTo(px(-1.1), 0);
-        c.lineTo(px(-1.3), pz(3));
-        c.lineTo(px(-1.2), pz(6));
-        c.lineTo(0, pz(6.2));
-        c.closePath();
-        c.fill();
-        c.strokeStyle = 'rgba(239,228,201,.5)';
-        c.lineWidth = 3;
-        for (let i = 0; i < 40; i++) {
-            const x = px(X0 + rnd() * 5.5);
-            const z = pz(Z0 + rnd() * 10.5);
+        const shore = (k: number) => {
             c.beginPath();
-            c.moveTo(x, z);
-            c.quadraticCurveTo(x + 14, z - 8, x + 28, z);
+            c.moveTo(0, 0);
+            c.lineTo(px(-1.1 + k), 0);
+            c.bezierCurveTo(px(-1.5 + k), pz(2), px(-0.9 + k), pz(4), px(-1.2 + k), pz(6 + k * 0.5));
+            c.lineTo(0, pz(6.3 + k * 0.5));
+            c.closePath();
+        };
+        shore(0.9);
+        c.fillStyle = '#c9bb8e';
+        c.fill();
+        shore(0.35);
+        c.fillStyle = '#9e9272';
+        c.fill();
+        shore(0);
+        const sea = c.createLinearGradient(0, 0, px(-1), 0);
+        sea.addColorStop(0, '#3f4f55');
+        sea.addColorStop(1, '#5d6d70');
+        c.fillStyle = sea;
+        c.fill();
+        c.save();
+        c.clip();
+        c.strokeStyle = 'rgba(235,240,238,.35)';
+        c.lineWidth = 2;
+        for (let i = 0; i < 90; i++) {
+            const x = rnd() * px(-1);
+            const y = rnd() * pz(6.4);
+            c.beginPath();
+            c.moveTo(x, y);
+            c.quadraticCurveTo(x + 8, y - 4, x + 18, y);
             c.stroke();
         }
-    }
-
-    // Kratre fra tidligere kamper.
-    const craters = look === 'kyst' ? 8 : 18;
-    for (let i = 0; i < craters; i++) {
-        const x = rnd() * MAP_W;
-        const z = rnd() * MAP_D;
-        const r = (0.12 + rnd() * 0.18) * PX;
-        c.fillStyle = 'rgba(74,58,44,.35)';
-        c.beginPath();
-        c.arc(px(x), pz(z), r, 0, Math.PI * 2);
-        c.fill();
-        c.strokeStyle = 'rgba(26,26,26,.45)';
-        c.lineWidth = 2;
-        c.beginPath();
-        c.arc(px(x), pz(z), r, Math.PI * 0.9, Math.PI * 1.9);
+        c.restore();
+        shore(0);
+        c.strokeStyle = 'rgba(240,244,240,.7)';
+        c.lineWidth = 5;
         c.stroke();
     }
 
-    // Flyplassen: stripe med stiplet midtlinje.
-    const [fx, fz] = FLYPLASS;
-    c.fillStyle = '#a89468';
-    c.fillRect(px(fx - 0.65), pz(fz - 2.2), 2.4 * PX, 3 * PX);
-    c.strokeStyle = C.papir;
-    c.lineWidth = 5;
-    c.setLineDash([18, 14]);
-    c.beginPath();
-    c.moveTo(px(fx + 0.55), pz(fz - 2.1));
-    c.lineTo(px(fx + 0.55), pz(fz + 0.7));
-    c.stroke();
-    c.setLineDash([]);
+    // Hekker: mørke, klumpete kanter med skygge mot nedre høyre.
+    if (look === 'kyst') {
+        for (const pts of fieldEdges.slice(0, 20))
+            for (let k = 0; k < 4; k++) {
+                if (rnd() < 0.35) continue;
+                const [a, b] = pts[k];
+                const [e, f] = pts[(k + 1) % 4];
+                const n = Math.hypot(e - a, f - b) * 7;
+                for (let j = 0; j < n; j++) {
+                    const t = j / n;
+                    const x = px(a + (e - a) * t);
+                    const y = pz(b + (f - b) * t);
+                    const r = PX * (0.09 + rnd() * 0.06);
+                    c.fillStyle = 'rgba(20,24,10,.35)';
+                    c.beginPath();
+                    c.arc(x + r * 0.6, y + r * 0.6, r, 0, Math.PI * 2);
+                    c.fill();
+                    c.fillStyle = rnd() < 0.5 ? '#34431f' : '#3f5026';
+                    c.beginPath();
+                    c.arc(x, y, r, 0, Math.PI * 2);
+                    c.fill();
+                }
+            }
+    }
 
-    // Veien: bred stripe med sotkant og hjulspor.
+    // Hjulspor som krysser landskapet.
+    c.strokeStyle = look === 'ørken' ? 'rgba(120,95,60,.35)' : 'rgba(60,45,25,.28)';
+    c.lineWidth = PX * 0.05;
+    for (let i = 0; i < 9; i++) {
+        const x = rnd() * W;
+        const y = rnd() * H;
+        const x2 = x + (rnd() - 0.5) * PX * 12;
+        const y2 = y + (rnd() - 0.5) * PX * 8;
+        const cx = (x + x2) / 2 + (rnd() - 0.5) * PX * 4;
+        const cy = (y + y2) / 2 + (rnd() - 0.5) * PX * 4;
+        for (const o of [-0.17, 0.17]) {
+            c.beginPath();
+            c.moveTo(x + o * PX, y + o * PX);
+            c.quadraticCurveTo(cx + o * PX, cy + o * PX, x2 + o * PX, y2 + o * PX);
+            c.stroke();
+        }
+    }
+
+    // Flyplassen: slått gress eller hardpakket sand, med hjulspor.
+    const [fx, fz] = FLYPLASS;
+    c.fillStyle = look === 'ørken' ? 'rgba(220,200,160,.7)' : 'rgba(150,160,100,.6)';
+    c.fillRect(px(fx - 0.2), pz(fz - 2.3), 1.5 * PX, 3.2 * PX);
+    c.strokeStyle = 'rgba(60,50,30,.3)';
+    c.lineWidth = PX * 0.04;
+    for (const o of [0.25, 0.85]) {
+        c.beginPath();
+        c.moveTo(px(fx + o), pz(fz - 2.2));
+        c.lineTo(px(fx + o), pz(fz + 0.8));
+        c.stroke();
+    }
+
+    // Veien: myk kant, kjørebane, hjulspor (brostein ved kysten).
     const road = def.vei;
     const path = () => {
         c.beginPath();
         road.forEach(([x, z], i) => (i ? c.lineTo(px(x), pz(z)) : c.moveTo(px(x), pz(z))));
     };
     c.lineJoin = 'round';
-    c.lineCap = 'butt';
+    c.lineCap = 'round';
     path();
-    c.strokeStyle = C.sot;
-    c.lineWidth = 1.08 * PX;
+    c.strokeStyle = pal.dust;
+    c.globalAlpha = 0.45;
+    c.lineWidth = 1.25 * PX;
     c.stroke();
+    c.globalAlpha = 1;
     path();
-    c.strokeStyle = C.vei;
-    c.lineWidth = 0.96 * PX;
+    c.strokeStyle = pal.road;
+    c.lineWidth = 0.86 * PX;
     c.stroke();
-    c.strokeStyle = 'rgba(74,58,44,.45)';
-    c.lineWidth = 4;
-    c.setLineDash([22, 12]);
+    c.save();
+    path();
+    c.lineWidth = 0.86 * PX;
+    // Klipp til veien: stein eller grus inni.
+    const clip = new Path2D();
+    for (let i = 1; i < road.length; i++) {
+        const [a, b] = road[i - 1];
+        const [e, f] = road[i];
+        const minx = Math.min(a, e) - 0.43;
+        const minz = Math.min(b, f) - 0.43;
+        clip.rect(px(minx), pz(minz), (Math.abs(e - a) + 0.86) * PX, (Math.abs(f - b) + 0.86) * PX);
+    }
+    c.clip(clip);
+    for (let i = 0; i < 2600; i++) {
+        const x = rnd() * W;
+        const y = rnd() * H;
+        const r = look === 'kyst' ? 2 + rnd() * 3 : 1 + rnd() * 1.5;
+        c.fillStyle = rnd() < 0.5 ? 'rgba(40,35,28,.25)' : 'rgba(230,225,210,.18)';
+        c.fillRect(x, y, r * 1.4, r);
+    }
+    c.restore();
+    c.strokeStyle = pal.rut;
+    c.globalAlpha = 0.55;
+    c.lineWidth = PX * 0.07;
     for (const off of [-0.2, 0.2]) {
         c.save();
         c.translate(off * PX * 0.7, off * PX * 0.7);
@@ -186,87 +314,119 @@ function drawGround(def: SlagDef) {
         c.stroke();
         c.restore();
     }
-    c.setLineDash([]);
+    c.globalAlpha = 1;
 
-    // Utenfor kartet: mørkere, som margen på et trykt kart. Spillbrettet står fram.
-    c.fillStyle = 'rgba(42,63,120,.7)';
+    // Kratre og svidde flekker fra tidligere kamper.
+    const craters = look === 'kyst' ? 10 : 22;
+    for (let i = 0; i < craters; i++) {
+        const x = px(rnd() * MAP_W);
+        const y = pz(rnd() * MAP_D);
+        const r = (0.14 + rnd() * 0.2) * PX;
+        soft(x, y, r * 2.4, look === 'ørken' ? '#7d6848' : '#3a3024', 0.4);
+        c.fillStyle = 'rgba(45,35,25,.75)';
+        c.beginPath();
+        c.arc(x, y, r, 0, Math.PI * 2);
+        c.fill();
+        c.strokeStyle = look === 'ørken' ? 'rgba(235,215,175,.55)' : 'rgba(160,140,100,.5)';
+        c.lineWidth = r * 0.35;
+        c.beginPath();
+        c.arc(x, y, r * 1.05, Math.PI * 1.0, Math.PI * 1.9);
+        c.stroke();
+    }
+
+    // Korn over alt.
+    const pat = c.createPattern(noiseTile(rnd), 'repeat');
+    if (pat) {
+        c.globalCompositeOperation = 'overlay';
+        c.globalAlpha = 0.14;
+        c.fillStyle = pat;
+        c.fillRect(0, 0, W, H);
+        c.globalCompositeOperation = 'source-over';
+        c.globalAlpha = 1;
+    }
+
+    // Utenfor kartet: litt mørkere, så spillbrettet står fram.
+    c.fillStyle = 'rgba(18,20,12,.34)';
     c.beginPath();
-    c.rect(0, 0, cv.width, cv.height);
+    c.rect(0, 0, W, H);
     c.rect(px(0), pz(0), MAP_W * PX, MAP_D * PX);
     c.fill('evenodd');
 
-    // Rasterprikkene: tettere nede mot høyre, som skyggen på en plakat.
-    c.fillStyle = 'rgba(26,26,26,.2)';
-    const step = 10;
-    for (let y = 0; y < cv.height; y += step)
-        for (let x = (y / step) % 2 ? step / 2 : 0; x < cv.width; x += step) {
-            const inMap = x > px(0) && x < px(MAP_W) && y > pz(0) && y < pz(MAP_D);
-            const k = (x / cv.width) * 0.55 + (y / cv.height) * 0.45;
-            const r = Math.max(0, (k - (inMap ? 0.45 : 0.1)) * 4.2);
-            if (r < 0.5) continue;
-            c.beginPath();
-            c.arc(x, y, Math.min(r, 3.4), 0, Math.PI * 2);
-            c.fill();
-        }
-
-    // Kartets kant og rutenettet, så eleven ser hvor en enhet kan stå.
-    c.fillStyle = 'rgba(26,26,26,.4)';
+    // Kartets kant og små kryss i rutenettet, så eleven ser hvor en enhet kan stå.
+    c.fillStyle = 'rgba(255,250,230,.09)';
+    const t = PX * 0.07;
     for (let x = 0; x <= MAP_W; x++)
         for (let z = 0; z <= MAP_D; z++) {
-            c.fillRect(px(x) - 7, pz(z) - 1.5, 14, 3);
-            c.fillRect(px(x) - 1.5, pz(z) - 7, 3, 14);
+            c.fillRect(px(x) - t, pz(z) - 1, t * 2, 2);
+            c.fillRect(px(x) - 1, pz(z) - t, 2, t * 2);
         }
-    c.strokeStyle = C.sot;
-    c.lineWidth = 6;
+    c.strokeStyle = 'rgba(255,248,220,.45)';
+    c.lineWidth = 3;
     c.strokeRect(px(0), pz(0), MAP_W * PX, MAP_D * PX);
 
     const tex = new THREE.CanvasTexture(cv);
     tex.colorSpace = THREE.SRGBColorSpace;
-    tex.anisotropy = 4;
+    tex.anisotropy = 8;
     return tex;
 }
 
 // ---- Pynt utenfor kartet ---------------------------------------------------------------
+type Spot = [number, number, number, number];
 interface Deco {
     model: Model;
-    at: [number, number, number, number][];
+    at: Spot[];
 }
+
+const MODELS: Partial<Record<keyof typeof DECO, Model>> = {};
+const deco = (k: keyof typeof DECO) => (MODELS[k] ??= DECO[k]());
 
 function decoFor(def: SlagDef, detail: number): Deco[] {
     const look = LOOK[def.id] ?? 'kyst';
     const rnd = seeded(def.id.length * 131 + 7);
-    const ring = (n: number) => {
-        const out: [number, number, number, number][] = [];
+    const ring = (n: number, s0 = 0.8, s1 = 1.3): Spot[] => {
+        const out: Spot[] = [];
         let guard = 0;
-        while (out.length < Math.round(n * detail) && guard++ < 500) {
+        while (out.length < Math.round(n * detail) && guard++ < 800) {
             const x = X0 + 1 + rnd() * (GW - 2);
             const z = Z0 + 1 + rnd() * (GD - 2);
-            const inside = x > -0.4 && x < MAP_W + 0.4 && z > -0.4 && z < MAP_D + 0.4;
+            const inside = x > -0.5 && x < MAP_W + 0.5 && z > -0.5 && z < MAP_D + 0.5;
             const air = x > FLYPLASS[0] - 1.6 && x < FLYPLASS[0] + 2.4 && z > FLYPLASS[1] - 3 && z < FLYPLASS[1] + 1.4;
-            const sea = look === 'kyst' && x < -0.2 && z < 6.6;
-            if (!inside && !air && !sea) out.push([x, z, rnd() * Math.PI * 2, 0.8 + rnd() * 0.5]);
+            const sea = look === 'kyst' && x < 0.3 && z < 7;
+            if (!inside && !air && !sea) out.push([x, z, rnd() * Math.PI * 2, s0 + rnd() * (s1 - s0)]);
         }
         return out;
     };
-    const tent: [number, number, number, number][] = [[FLYPLASS[0] - 0.1, FLYPLASS[1] + 1.1, 0, 1]];
+    const tent: Spot[] = [[FLYPLASS[0] - 0.1, FLYPLASS[1] + 1.1, 0, 1]];
+    const d = (k: keyof typeof DECO, at: Spot[]): Deco => ({ model: deco(k), at });
     if (look === 'kyst')
         return [
-            { model: TREE, at: ring(22) },
-            { model: POPLAR, at: ring(10) },
-            { model: HOUSE, at: ring(7) },
-            { model: TENT, at: tent },
-            { model: SHIP, at: [[-4.2, -1.5, 0.3, 1], [-5.5, 2, -0.2, 1.1], [-3.2, 4.4, 0.5, 0.8]] },
+            d('tree', ring(18)),
+            d('poplar', ring(8)),
+            d('hedge', ring(16, 1, 1.4)),
+            d('house', ring(6, 1, 1.2)),
+            d('ruin', ring(2, 1, 1.2)),
+            d('truck', ring(3, 1.2, 1.4)),
+            d('pole', ring(5)),
+            d('tent', tent),
+            d('ship', [[-4.4, -1.8, 0.3, 1.1], [-5.6, 2.2, -0.2, 1.2], [-3.4, 4.8, 0.5, 0.9], [-6, 5.6, 0.1, 1]]),
         ];
     if (look === 'ørken')
         return [
-            { model: PALM, at: ring(8) },
-            { model: SANDBAGS, at: ring(10) },
-            { model: TENT, at: [...tent, ...ring(3)] },
+            d('palm', ring(5)),
+            d('rock', ring(14, 0.8, 1.6)),
+            d('scrub', ring(18, 0.8, 1.4)),
+            d('sandbags', ring(8)),
+            d('tent', [...tent, ...ring(3, 1, 1.2)]),
+            d('truck', ring(4, 1.2, 1.4)),
         ];
     return [
-        { model: POPLAR, at: ring(16) },
-        { model: HOUSE, at: ring(9) },
-        { model: TENT, at: tent },
+        d('birch', ring(18, 0.9, 1.4)),
+        d('house', ring(5, 1, 1.2)),
+        d('ruin', ring(3, 1, 1.2)),
+        d('sheaf', ring(14)),
+        d('truck', ring(3, 1.2, 1.4)),
+        d('pole', ring(6)),
+        d('tent', tent),
     ];
 }
 
@@ -278,26 +438,18 @@ const S = new THREE.Vector3();
 
 function Instances({ d }: { d: Deco }) {
     const a = useRef<THREE.InstancedMesh>(null);
-    const b = useRef<THREE.InstancedMesh>(null);
     useLayoutEffect(() => {
+        const m = a.current;
+        if (!m) return;
         d.at.forEach(([x, z, r, s], i) => {
             M.compose(P.set(x, 0, z), Q.setFromEuler(E.set(0, r, 0)), S.setScalar(s * 1.3));
-            a.current?.setMatrixAt(i, M);
-            b.current?.setMatrixAt(i, M);
+            m.setMatrixAt(i, M);
         });
-        for (const m of [a.current, b.current]) if (m) m.instanceMatrix.needsUpdate = true;
+        m.instanceMatrix.needsUpdate = true;
+        m.computeBoundingSphere();
     }, [d]);
     if (!d.at.length) return null;
-    return (
-        <>
-            <instancedMesh ref={a} args={[d.model.body, undefined, d.at.length]}>
-                <meshBasicMaterial vertexColors toneMapped={false} />
-            </instancedMesh>
-            <instancedMesh ref={b} args={[d.model.hull, undefined, d.at.length]}>
-                <meshBasicMaterial color={C.sot} side={THREE.BackSide} toneMapped={false} />
-            </instancedMesh>
-        </>
-    );
+    return <instancedMesh ref={a} args={[d.model, figureMaterial(), d.at.length]} castShadow receiveShadow />;
 }
 
 export function Board({
@@ -314,14 +466,18 @@ export function Board({
         if (gRef.current.slag !== slag) setSlag(gRef.current.slag);
     });
     const def = SLAG[slag];
+    const look = LOOK[def.id] ?? 'kyst';
     const q = useQuality();
-    const tex = useMemo(() => drawGround(def), [def]);
-    const deco = useMemo(() => decoFor(def, q.detail), [def, q.detail]);
+    const px = q.tier === 'lav' ? 48 : 72;
+    const tex = useMemo(() => drawGround(def, px), [def, px]);
+    const decos = useMemo(() => decoFor(def, q.detail), [def, q.detail]);
     return (
         <group>
+            <Lighting look={look} />
             <mesh
                 rotation-x={-Math.PI / 2}
                 position={[X0 + GW / 2, -0.02, Z0 + GD / 2]}
+                receiveShadow
                 onPointerMove={(e: ThreeEvent<PointerEvent>) => onMove(e.point.x, e.point.z)}
                 onClick={(e: ThreeEvent<MouseEvent>) => {
                     e.stopPropagation();
@@ -329,36 +485,22 @@ export function Board({
                 }}
             >
                 <planeGeometry args={[GW, GD]} />
-                <meshBasicMaterial map={tex} toneMapped={false} />
+                <meshStandardMaterial map={tex} roughness={1} metalness={0} />
             </mesh>
-            {deco.map((d, i) => (
+            {decos.map((d, i) => (
                 <Instances key={`${def.id}${i}`} d={d} />
             ))}
-            <Hq def={def} gRef={gRef} />
+            <Hq def={def} look={look} gRef={gRef} />
         </group>
     );
 }
 
-function Figure({ m }: { m: Model }) {
-    return (
-        <>
-            <mesh geometry={m.body}>
-                <meshBasicMaterial vertexColors toneMapped={false} />
-            </mesh>
-            <mesh geometry={m.hull}>
-                <meshBasicMaterial color={C.sot} side={THREE.BackSide} toneMapped={false} />
-            </mesh>
-        </>
-    );
-}
-
-/** Kommandovogna med antenne som blinker når nettet er oppe, og radioringen stiplet rundt. */
 /** Radioringen: stiplet, én geometri. */
 const RING = mergeParts(
-    Array.from({ length: 48 }, (_, i) => {
-        const a = (i / 48) * Math.PI * 2;
+    Array.from({ length: 56 }, (_, i) => {
+        const a = (i / 56) * Math.PI * 2;
         return {
-            geometry: new THREE.PlaneGeometry(0.1, 0.42),
+            geometry: new THREE.PlaneGeometry(0.07, 0.36),
             position: [Math.cos(a) * RADIO.rekkevidde, 0.02, Math.sin(a) * RADIO.rekkevidde] as [number, number, number],
             rotation: [-Math.PI / 2, 0, -a] as [number, number, number],
             color: C.radio,
@@ -366,10 +508,12 @@ const RING = mergeParts(
     })
 );
 
-function Hq({ def, gRef }: { def: SlagDef; gRef: React.MutableRefObject<G> }) {
+/** Kommandovogna med antennelampe som blinker når nettet er oppe, og radioringen rundt. */
+function Hq({ def, look, gRef }: { def: SlagDef; look: Look; gRef: React.MutableRefObject<G> }) {
     const [x, z] = def.hq;
     const tip = useRef<THREE.Mesh>(null);
     const ring = useRef<THREE.Group>(null);
+    const model = useMemo(() => hqModel(look), [look]);
     useFrame((st) => {
         const on = usedChannels(gRef.current) > 0;
         if (tip.current) tip.current.visible = on && Math.sin(st.clock.elapsedTime * 7) > -0.2;
@@ -378,15 +522,15 @@ function Hq({ def, gRef }: { def: SlagDef; gRef: React.MutableRefObject<G> }) {
     return (
         <group position={[x, 0, z]}>
             <group scale={1.4}>
-                <Figure m={HQ_MODEL} />
+                <mesh geometry={model} material={figureMaterial()} castShadow receiveShadow />
                 <mesh ref={tip} position={[-0.3, 2.08, 0.1]}>
-                    <octahedronGeometry args={[0.1]} />
+                    <sphereGeometry args={[0.07, 8, 6]} />
                     <meshBasicMaterial color={C.radio} toneMapped={false} />
                 </mesh>
             </group>
             <group ref={ring}>
                 <mesh geometry={RING}>
-                    <meshBasicMaterial vertexColors toneMapped={false} />
+                    <meshBasicMaterial vertexColors transparent opacity={0.75} depthWrite={false} toneMapped={false} />
                 </mesh>
             </group>
         </group>

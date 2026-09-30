@@ -4,7 +4,7 @@ import { SLAG } from './levels';
 import { channels, usedChannels, type G } from './game';
 import { ROLE, wavePreview } from './hudData';
 
-// HUD-en over kartet: plakatbåndet øverst, butikken og ordrene nederst.
+// HUD-en over kartet: kommandobåndet øverst, butikken og ordrene nederst.
 // Den tar et øyeblikksbilde av spillet fem ganger i sekundet og tegner bare seg selv på nytt.
 
 export interface HudActions {
@@ -99,8 +99,8 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                 </div>
                 <div className="rn-stat">
                     KOMMANDOVOGN
-                    <div style={{ width: 110, height: 14, border: '2px solid #1a1a1a', background: '#3a3f4f', marginTop: 3 }}>
-                        <div style={{ width: `${Math.max(0, (g.hqHp / COMBAT.hqHp) * 100)}%`, height: '100%', background: g.hqHp < COMBAT.hqHp * 0.35 ? '#b3261e' : '#efe4c9' }} />
+                    <div className="rn-hq">
+                        <div className={g.hqHp < COMBAT.hqHp * 0.35 ? 'lav' : ''} style={{ width: `${Math.max(0, (g.hqHp / COMBAT.hqHp) * 100)}%` }} />
                     </div>
                 </div>
                 <div className="rn-btns">
@@ -140,7 +140,7 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                         <div className="rn-side" style={{ alignItems: 'flex-end' }}>
                             <div className="rn-info">
                                 <b>Neste bølge:</b> {g.preview}
-                                {g.planT > PLAN_MAX - 15 && <div style={{ color: '#b3261e', fontWeight: 800 }}>Fienden kommer om {left} s</div>}
+                                {g.planT > PLAN_MAX - 15 && <div style={{ color: '#a3281a', fontWeight: 800 }}>Fienden kommer om {left} s</div>}
                             </div>
                             <button className="rn-btn big" data-mg-anchor="bolge" onClick={act.wave}>
                                 <span className="rn-key">Mellomrom</span>BØLGE
@@ -160,7 +160,7 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                         </div>
                         <div className="rn-grow" />
                         {(g.sperreild > 0 || g.pending) && (
-                            <button className="rn-btn big" data-on={g.sperreArmed ? 1 : 0} style={g.sperreArmed ? { background: '#d9a21b', color: '#1a1a1a' } : undefined} onClick={act.sperre}>
+                            <button className="rn-btn big" data-on={g.sperreArmed ? 1 : 0} style={g.sperreArmed ? { background: '#d9a92c', color: '#1f2318' } : undefined} onClick={act.sperre}>
                                 <span className="rn-key">S</span>
                                 {g.sperreArmed ? 'Klikk på veien' : g.pending ? 'Granatene faller ...' : 'SPERREILD'}
                             </button>

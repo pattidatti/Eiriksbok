@@ -202,3 +202,16 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   Kunstbriefen er skrevet om (versjon 2). Neste fase (fersk økt): bygg kunsten på nytt etter
   versjon 2. Strukturen står (`models.ts`, `terrain.tsx`, `fxPool.ts`/`effects.tsx`,
   `world.tsx`); bytt utseendet, ikke reglene.
+- 2026-09-30, fase 4b (kunst etter versjon 2): realistisk look på plass. Figurene har belter med
+  hjul, luker, eksos, kasser, tårn med munningsbrems og antenne; soldater med hjelm (britisk flat,
+  tysk stålhjelm), sekk og gevær; kanoner med hjul, lavett og mannskap; fly med propeller som
+  snurrer, glasskupé, rundeller og kors. Kamuflasje og slitasje fra én felles tekstur, farger per
+  slag (khaki mot panser-grå, ørkengul mot sandgul, oliven mot mørk gul). Bakken malt per slag med
+  hekker og hav, sanddyner og stein, kornåkre og jord; hjulspor og kratre. Ekte sol og skygger per
+  slag, bakt skygge under alle enheter (også på lav), grønne/gule/røde ringer for hvem er hvem.
+  Myk røyk, ild og glimt som gløder (bloom på middels/høy), jord som kastes opp, brannflekker.
+  HUD i mørk oliven med sjablongskrift (`@fontsource/stardos-stencil`), kakifarget menykort over
+  slagmarken. Porter: simulering uendret (samvirke 81 %), selvspill grønt (51 draw calls, JS p95
+  6 ms på lav), scene-audit grønn, likhetsvakt 0,28 med plakat fra Kursk (fra Dunkerque: 0,50
+  mot inn-mot-stranda). Venter på at eieren ser looken. Neste: eierens rettelser, så
+  gråboks-diagnose av El Alamein og Kursk og slag 4-6 (fallskjermsoldater, ordrekort).
