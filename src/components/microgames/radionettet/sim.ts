@@ -1,6 +1,6 @@
 import { newGame, update, progress, pressure, finalScore, slagDef, CAUSE_TEXT, type G, type IO } from './game';
-import { botTick, BOTS } from './bots';
-import { TOTAL_WAVES } from './levels';
+import { botTick, BOTS, KORT_ORDEN } from './bots';
+import { SLAG, TOTAL_WAVES } from './levels';
 import { seeded, type SimSpec } from '../sim';
 import { PLAYTEST_DT, BOT_EVERY } from '../playtest';
 
@@ -61,8 +61,8 @@ export default spec;
  * Spor én runde bølge for bølge (til feilsøking av balansen):
  *   npx tsx -e "import('./src/components/microgames/radionettet/sim.ts').then(m => m.trace('samvirke', 3, true))"
  */
-export function trace(bot: keyof typeof BOTS, seed = 1, verbose = false) {
-    const g = newGame(seed);
+export function trace(bot: keyof typeof BOTS, seed = 1, verbose = false, slag = 0) {
+    const g = newGame(seed, slag);
     const io = silentIO();
     if (verbose) io.event = (n, x, z) => console.log(`       ${g.waveT.toFixed(1)}s ${n} (${x.toFixed(1)}, ${z.toFixed(1)})`);
     const rng = seeded(seed);
@@ -83,4 +83,42 @@ export function trace(bot: keyof typeof BOTS, seed = 1, verbose = false) {
         update(g, PLAYTEST_DT, io);
     }
     console.log(`slutt: ${g.phase} ${årsak(g) ?? ''} poeng ${finalScore(g)}`);
+}
+
+/**
+ * Hvert slag for seg: n runder som starter på slaget, og hvor robotene taper.
+ * Til å tune ett slag uten å spille gjennom de før (ordrekortene mangler da):
+ *   npx tsx -e "import('./src/components/microgames/radionettet/sim.ts').then(m => m.perSlag(['samvirke', 'halvgod'], 60))"
+ */
+export function perSlag(bots: (keyof typeof BOTS)[], n = 60) {
+    for (let s = 0; s < SLAG.length; s++) {
+        const row: string[] = [];
+        for (const bot of bots) {
+            let won = 0;
+            const tap: Record<string, number> = {};
+            for (let seed = 1; seed <= n; seed++) {
+                const g = newGame(seed * 7919, s);
+                // Ordrekortene roboten ville hatt etter slagene før.
+                g.kort = bot === 'tilfeldig' ? [] : KORT_ORDEN.slice(0, s);
+                const io = silentIO();
+                const rng = seeded(seed);
+                let acc = 0;
+                while (g.slag === s && g.phase !== 'tapt' && g.phase !== 'vunnet' && g.phase !== 'slagVunnet' && g.t < 400) {
+                    acc += PLAYTEST_DT;
+                    if (acc >= BOT_EVERY) {
+                        acc = 0;
+                        botTick(g, bot, io, rng);
+                    }
+                    update(g, PLAYTEST_DT, io);
+                }
+                if (g.phase === 'slagVunnet' || g.phase === 'vunnet') won++;
+                else {
+                    const k = `b${g.wave + 1} ${g.cause ?? 'tid'}`;
+                    tap[k] = (tap[k] ?? 0) + 1;
+                }
+            }
+            row.push(`${bot} ${Math.round((won / n) * 100)} % [${Object.entries(tap).map(([k, v]) => `${k}:${v}`).join(' ')}]`);
+        }
+        console.log(`${SLAG[s].id.padEnd(10)} ${row.join('  |  ')}`);
+    }
 }

@@ -101,8 +101,19 @@ Fem konsepter, alle innenfor bestillingen. Fersk dommer med bestillingen, Gøy /
       i nettet ser de fly langt unna). Kommandovogna får 4 kanaler. *Bølge 3:* nytt:
       Bombefly mot den tyske kilen, men fiendens jagere venter; bombefly uten jagere i nettet
       blir skutt ned.
-    - Senere (etter gråboksen): Normandie juni 1944 (fallskjermsoldater bak linjene, omringes
-      uten forsterkning), Bastogne desember 1944, Rhinen mars 1945.
+    - **Slag 4 - Normandie, juni 1944.** *Bølge 1:* nytt: Fallskjermsoldater (hopper ut hvor som
+      helst, også utenfor radioen). *Bølge 2:* to veier og et skjult batteri. *Bølge 3:* alt samtidig.
+    - **Slag 5 - Bastogne, desember 1944.** Tre veier inn mot byen. *Bølge 1:* tåke (egne øyne
+      0,6), bare nettet ser langt. *Bølge 2:* tåke og et skjult batteri. *Bølge 3:* skyene letter,
+      fly kan hjelpe igjen.
+    - **Slag 6 - Rhinen, mars 1945.** Hold brua ved Remagen (elv bak deg). *Bølge 1:* brua.
+      *Bølge 2:* fallskjermhopp over Rhinen mot batteriet. *Bølge 3:* alt samtidig.
+    - Etter gråboks-diagnose 1 (Gøy 2): **stafett-radio** (en bakkeenhet i nettet sender radioen 3
+      ruter videre, og bakkeenheter kan bare stå der radioen når), **to veier** fra El Alamein,
+      **skjult batteri** i stedet for tilfeldige kutt (munningsflammen avslører det; infanteri i
+      nettet finner det, artilleri eller sperreild slår det ut), og **sprut** fra batteri og
+      stupbombere som straffer klumpen. **Ordrekort** etter hvert slag: velg 1 av 3 (ny kanal, mer ammunisjon, forsyninger, speidere,
+      flystøtte).
     - Tempo: bølge 1 i hvert slag er rolig (få fiender, lav fart). Planleggingen har ingen
       klokke - eleven trykker «Bølge» når hen er klar.
 
@@ -215,3 +226,27 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   6 ms på lav), scene-audit grønn, likhetsvakt 0,28 med plakat fra Kursk (fra Dunkerque: 0,50
   mot inn-mot-stranda). Venter på at eieren ser looken. Neste: eierens rettelser, så
   gråboks-diagnose av El Alamein og Kursk og slag 4-6 (fallskjermsoldater, ordrekort).
+- 2026-09-30, eierens rettelser etter kunst v2 («Ser nice ut, skulle gjerne hatt litt mer dybde i
+  mappene og bedre animasjoner på npcer. Når man merker tårnet bør det highlight tårnet»):
+  Dybde: bakken utenfor brettet bølger i åser og sanddyner, havet er ekte vann som bølger,
+  skyskygger driver over kartet, dis i det fjerne, kratrene har voller i 3D, småstein og tuster
+  kaster skygge. Soldatene er egne animerte figurer (instanser): de går med beina, kneler og
+  sikter, rykker i rekylen hver for seg, faller og blir liggende når troppen tar skade, og
+  mannskapet ved kanonene lader. Markering: hvite hjørner rundt enheten musa står over, figuren
+  lyser opp, og hjørnene smekker inn i gult med et lite hopp når du klikker eller plasserer.
+- 2026-09-30, gråboks-diagnose 1 av El Alamein og Kursk: Gøy 2 («stable alt på 1-3 ruter og se på;
+  radioen kobles én gang»). Gjort: stafett-radio, to veier, skjult batteri, sprut (se punkt 11).
+  Så slag 4-6 (Normandie, Bastogne i snø og tåke, Rhinen med elv og bru) og ordrekort. Nye
+  figurer: fallskjermsoldater som daler ned under kupler som folder seg ut og legger seg, batteri
+  som bare synes når det skyter. Simulering: samvirke 85 %, halvgod 4 % (taper oftest på El
+  Alamein bølge 3), uten radio 0 %, bare vogner 0 %, trappen 1115 < 1135 < 5835 (tynn), 14 valg/min.
+  Veteranbonusen senket til 2,3 (en ren vognhær vant uten samvirke). Porter: selvspill grønt
+  (53 draw calls, JS p95 12 ms på lav), scene-audit grønn.
+- 2026-09-30, gråboks-diagnose 2: Gøy 3 (fra 2). «Løkka har fått press og mål: batteriet kan
+  jaktes, en ny vei dukker opp, og klumpen straffes.» Gjort av det den ba om: Bastogne uten
+  «omringet» (tåka bærer slaget), Rhinen med ett batteri, ordrekortet «lang antenne» tatt ut (det
+  gjorde stafetten overflødig), El Alamein bølge 3 med to vogner på vei 2. Simulering: samvirke
+  93 %, halvgod median 1835 (taper oftest på El Alamein bølge 3), uten radio 0 %, bare vogner 0 %,
+  trappen 1095 < 1835 < 5835, 14,7 valg/min. Ikke gjort ennå (forslag fra diagnosen): færre
+  kanaler enn enheter så kanalene må flyttes oftere, forsyninger for enheter langt fram i nettet,
+  batteriet hvert 10. sekund. Venter på at eieren spiller slag 2-6.

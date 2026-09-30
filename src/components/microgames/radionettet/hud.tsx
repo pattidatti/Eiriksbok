@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { UNITS, ECONOMY, SCORE, COMBAT, PLAN_MAX, type Kind } from './tuning';
+import { UNITS, ECONOMY, SCORE, COMBAT, PLAN_MAX, KORT, type Kind, type KortId } from './tuning';
 import { SLAG } from './levels';
 import { channels, usedChannels, type G } from './game';
 import { ROLE, wavePreview } from './hudData';
@@ -33,6 +33,7 @@ interface View {
     sperreild: number;
     sperreArmed: boolean;
     pending: boolean;
+    kort: KortId[];
 }
 
 function view(g: G): View {
@@ -52,6 +53,7 @@ function view(g: G): View {
         sperreild: g.sperreild,
         sperreArmed: g.sperreArmed,
         pending: !!g.pendingSperre,
+        kort: [...g.kort],
     };
 }
 
@@ -140,6 +142,11 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                         <div className="rn-side" style={{ alignItems: 'flex-end' }}>
                             <div className="rn-info">
                                 <b>Neste bølge:</b> {g.preview}
+                                {g.kort.length > 0 && (
+                                    <div>
+                                        <b>Ordrer:</b> {g.kort.map((k) => KORT[k].tittel).join(', ')}
+                                    </div>
+                                )}
                                 {g.planT > PLAN_MAX - 15 && <div style={{ color: '#a3281a', fontWeight: 800 }}>Fienden kommer om {left} s</div>}
                             </div>
                             <button className="rn-btn big" data-mg-anchor="bolge" onClick={act.wave}>
@@ -162,7 +169,7 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                         {(g.sperreild > 0 || g.pending) && (
                             <button className="rn-btn big" data-on={g.sperreArmed ? 1 : 0} style={g.sperreArmed ? { background: '#d9a92c', color: '#1f2318' } : undefined} onClick={act.sperre}>
                                 <span className="rn-key">S</span>
-                                {g.sperreArmed ? 'Klikk på veien' : g.pending ? 'Granatene faller ...' : 'SPERREILD'}
+                                {g.sperreArmed ? 'Klikk på kartet' : g.pending ? 'Granatene faller ...' : 'SPERREILD'}
                             </button>
                         )}
                     </>

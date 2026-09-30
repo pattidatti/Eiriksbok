@@ -1,62 +1,51 @@
 # Radionettet - kart
 
-Andre verdenskrig som tower defense + auto-battler. Brief: `docs/microgames/briefer/radionettet.md`.
-Fase: **kunst v2** (realistisk strategispill-look etter kunstbrief versjon 2; plakatlooken forkastet 2026-09-30). Komponenten: `../Radionettet3D.tsx`.
+Andre verdenskrig som tower defense + auto-battler, seks slag. Brief: `docs/microgames/briefer/radionettet.md`.
+Fase: **gråboks-diagnose 2 + slag 4-6** (kunst v2 står). Komponenten: `../Radionettet3D.tsx`.
 
 ## Filene
 
 | Fil | Hva |
 |---|---|
-| `tuning.ts` | Alle tall: enheter (`UNITS`), fiender (`ENEMIES`), radio, kamp, sperreild, økonomi, poeng, `PLAN_MAX` |
-| `levels.ts` | Slagene (`SLAG`): vei, kommandovogn, start-forsyninger, bølger (`groups`), butikkens utvalg, faste opplæringskort, kanaler, `kutt`, det nye i bølgen (`nytt`) |
-| `game.ts` | Tilstanden `G` og grepene: `pick`, `place` (+sammenslåing), `toggleLink`, `startWave`, `sperre`, `nextSlag`, `update`. Faser: `plan` → `wave` → (`slagVunnet` / `vunnet` / `tapt`) |
-| `combat.ts` | Én bølge per tidssteg (`stepWave`): fiender kommer, radionettets øyne, dine enheter skyter, fly, fiendens enheter, artilleri som kutter linjer |
-| `bots.ts` | Robotene (samvirke, halvgod, uten-radio, bare-vogner, tilfeldig) - samme grep som eleven |
-| `sim.ts` | Simuleringskontrakten + `trace(bot, seed, verbose)` til feilsøking |
-| `world.tsx` | Kamera (ortografisk, tilpasser seg vinduet), enheter og fiender (tårn dreier mot mål, rekyl, vrak som brenner, fly med propeller som krenger, stuper og styrter), radiolinjer (lysende stiplede bånd, instanser) og sporlys |
-| `markers.tsx` | Det som ligger på bakken under enhetene: myk skygge (også under fly, krymper med høyden) og ringen som sier hvem som er hvem (grønn din, gul i nettet, rød fiende - lys når nettet ser den) |
-| `light.tsx` | Sol med skygger, himmellys og `Environment` per slag (Dunkerque overskyet, El Alamein middagssol, Kursk ettermiddag) |
-| `terrain.tsx` | Bakken malt i canvas per slag (gress/åkre/hekker, sand/stein, korn/jord, hav, vei, hjulspor, kratre, korn), mørkere utenfor brettet; pynt utenfor kartet (instanser med skygge), kommandovogna og radioringen |
-| `models.ts` | Farger (`C`, `PAL` per slag) og figurene: mange biter slått sammen (`build`) med farge i hjørnene og UV-er, ett felles `figureMaterial()` med kamuflasje/slitasje-tekstur (`camo()`). `modelsFor(look)` gir enhetene i slagets farger; `plain` = uten mønster |
-| `fxPool.ts`, `effects.tsx` | Myk røyk, ild som gløder, støv, jordklumper som faller og brannflekker: lageret og grepene (`boom`, `blast`, `flash`, `burn`, `scorch`) og tegningen (røyk + glød som egne shader-instanser med farge og tetthet per partikkel, flekkene flatt på bakken). `consume` gjør spillets `g.fx` om til effekter |
-| `hud.tsx`, `hudData.ts` | Kommandobåndet øverst (mørk oliven, sjablongskrift `Stardos Stencil`) og butikken nederst (kakifargede kort); roller, forhåndsvisning av bølgen og CSS |
+| `tuning.ts` | Alle tall: enheter (`UNITS`), fiender (`ENEMIES`), radio (`rekkevidde`, `stafett`), kamp (batteri, sprut), sperreild, økonomi, poeng, ordrekort (`KORT`, `KORT_TALL`) |
+| `levels.ts` | Slagene (`SLAG`): veier (`veier`, gruppene velger `vei`), kommandovogn, `ring`, `elv`, start, bølger, butikk, kanaler, `sikt` (tåke), `inntekt`, batterier (`pos`), det nye i bølgen (`nytt`) |
+| `game.ts` | Tilstanden `G` og grepene: `pick`, `place` (+sammenslåing), `toggleLink`, `startWave`, `sperre`, `nextSlag(g, kort)`, `update`. Radioen: `reachable`, `relink` (stafetten, `u.via`), `canPlace` |
+| `combat.ts` | Én bølge per tidssteg (`stepWave`): fiender på sin vei (`e.r`), radionettets øyne (`netVision`, `eyes` med tåke/speidere), dine enheter, fly, batteriet (`actBatt`), nedslag med sprut (`impact`) |
+| `bots.ts`, `sim.ts` | Robotene og simuleringen. `perSlag(bots, n)` tuner ett slag om gangen; `trace(bot, seed, verbose, slag)` |
+| `world.tsx` | Kamera, figurer (tårn dreier, rekyl, vrak, fly), radiolinjer (fra `u.via`), sporlys, gyldige ruter |
+| `soldiers.tsx` | Soldatene som instanser: gange, kne og sikte, rekyl hver for seg, faller når troppen tar skade, fallskjermhopp med kuppel |
+| `hl.ts`, `markers.tsx` | Markering (hover/klikk: hjørner + lysere figur), skygger, ringene (din/nett/fiende) og stafett-ringene |
+| `ground.ts`, `terrain.tsx`, `relief.tsx` | Høyden (`heightAt`: åser, sanddyner, hav, elv), skyskygger; bakken malt per slag, pynt, skjørt; vann, bru, kratervoller, stein, dis/tåke |
+| `light.tsx`, `models.ts`, `fxPool.ts`/`effects.tsx`, `hud.tsx`/`hudData.ts` | Lys per look, figurene (`PAL`, `SQUAD`, `soldierParts`), effekter, HUD |
 
 ## Fagregelen (én regel)
 
-`combat.ts` → `canTarget()`: en enhet skyter på det den ser selv, eller - hvis den er i radionettet
-(`u.linked`) - på alt `g.netSeen` inneholder. `netVision()` fyller `netSeen` fra alle koblede enheter
-hvert steg. Nedgravd panservern (`e.dug`) ses bare innenfor `camo` (infanteriet har lang `camo`,
-vogna nesten ingen). Artilleriet har `sight` 1,6 men `range` 10. Jagere i nettet ser fly på
-`COMBAT.flyØyne` og følger bombefly i nettet. Bombefly i nettet bomber der nettet ser flest fiender;
-alene bomber de et tilfeldig sted på veien.
+`combat.ts` → `canTarget()`: en enhet skyter på det den ser selv, eller - i nettet (`u.linked`) - på alt
+`g.netSeen` inneholder. Nedgravd panservern og batterier (`e.dug`) ses bare innenfor `camo`. Radioen når
+kommandovognas `ring` pluss `stafett` fra hver bakkeenhet i nettet; bakkeenheter kan bare stå der (`canPlace`),
+fallskjermsoldater (`hopp`) hvor som helst.
 
 ## Knapper i tuning.ts
 
-- Vanskelighet per slag: `levels.ts` (`start`, `groups`), inntekt `ECONOMY.perBølge`.
-- Radio: `RADIO.rekkevidde` (fra kommandovogna), kanaler per bølge i `levels.ts`.
-- Panservernet graver seg ned: `COMBAT.pakGraverVed` (må være ≤ pak-rekkevidden), `pakBlir`, `bølgeMaks`.
-- Sammenslåing: `COMBAT.kopier` (1, 2, 3 like på samme rute).
+- Vanskelighet per slag: `levels.ts` (`start`, `groups`, `inntekt`), inntekt `ECONOMY.perBølge`.
+- Radio: `RADIO.stafett`, ring per slag i `levels.ts`, kanaler per bølge.
+- Batteri: `COMBAT.battStart`, `battSalve`, `kuttSkade`; klumpstraff `sprut`, `sprutAndel`.
+- Veteraner: `COMBAT.kopier` (for høyt = ren vognhær vinner uten samvirke).
 
 ## Balanse
 
-`npx tsx scripts/sim-microgame.mts --ids radionettet` (grønn 2026-09-30: samvirke vinner ~80 %,
-uten-radio taper på El Alamein bølge 1 - artilleriet uten nett ser ingenting).
-Én runde bølge for bølge:
-`npx tsx -e "import('./src/components/microgames/radionettet/sim.ts').then(m => m.trace('samvirke', 3, true))"`
+`npx tsx scripts/sim-microgame.mts --ids radionettet` (grønn 2026-09-30: samvirke 93 %, halvgod taper oftest på
+El Alamein bølge 3, trappen 1095 < 1835 < 5835). Ett slag om gangen:
+`npx tsx -e "import('./src/components/microgames/radionettet/sim.ts').then(m => m.perSlag(['samvirke','halvgod'], 60))"`
 
 ## Fallgruver
 
-- React-kompilatoren (lint): en prop som endres i `useFrame`, må hete `...Ref` (`fxRef`, `speedRef`).
-  Partiklene flyttes i `fxPool.step`, ikke i komponenten.
-- `build()` er egen (ikke kitets `mergeParts`), fordi kitet sletter UV-ene og kamuflasjeteksturen trenger dem.
-- Fly kaster ikke ekte skygge (`shadow={false}`): skyggen rett under i `markers.tsx` viser hvor de er.
-  Den ekte skyggen ville falt skrått og sett ut som et annet fly.
-- Nedgravd panservern som nettet ikke ser, får ingen ring - ellers avslører ringen det.
-- Likhetsvakten måler mest farge: plakaten er fra Kursk (`--cover-at 290`). Fra Dunkerque (grønt og mørkt)
-  ble den 0,50 mot inn-mot-stranda; Kursk gir 0,28 (2026-09-30).
-
-- En bølge slutter bare når alle fiender er døde eller forbi. Alt som kan bli stående
-  (nedgravd pak, jagerfly uten mål) må ha en vei ut - se `pakBlir`, `bølgeMaks` og jagernes `timer`.
-- Lint (`react-hooks/refs`): les aldri `gRef.current` i render. HUD-en tar et øyeblikksbilde
-  (`view()`), 3D-listene oppdaterer lokal state fra `useFrame`.
-- Maks tre lærings-øyeblikk per runde: bare `nytt` uten `lapp` blir et øyeblikk.
+- React-kompilatoren: en prop som endres i `useFrame`, må hete `...Ref`. Hjelpere i egne `.ts`-filer (`hl.ts`, `ground.ts`), ellers klager fast refresh.
+- `build()` er egen (ikke kitets `mergeParts`), fordi kamuflasjeteksturen trenger UV-ene.
+- Fly kaster ikke ekte skygge; skyggen rett under (`markers.tsx`) viser hvor de er.
+- Skjørtet (`SKIRT_Y`) må ligge under elveleiet og havbunnen, ellers skjuler det vannet.
+- Store vannflater har `userData.sceneAuditIgnore`, ellers feiler scene-auditen på innramming.
+- En bølge slutter når alle fiender er døde eller forbi; batterier teller ikke (de trekker seg tilbake).
+- Nedgravd panservern og batterier som nettet ikke ser, får ingen ring; batteriet synes bare når det skyter.
+- Lint (`react-hooks/refs`): les aldri `gRef.current` i render. Maks tre lærings-øyeblikk per runde.
+- Eierens dev-server på 5173 kan servere gamle filer: test mot egen Vite på 5190 (`.screenshots/vite.test.config.mjs`).

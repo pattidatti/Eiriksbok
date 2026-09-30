@@ -24,8 +24,8 @@ export const C = {
 };
 
 /** Én palett per slag: uniform, kjøretøy og detaljer. */
-export type Look = 'kyst' | 'ørken' | 'steppe';
-export const LOOK: Record<string, Look> = { dunkerque: 'kyst', alamein: 'ørken', kursk: 'steppe' };
+export type Look = 'kyst' | 'ørken' | 'steppe' | 'vinter';
+export const LOOK: Record<string, Look> = { dunkerque: 'kyst', alamein: 'ørken', kursk: 'steppe', normandie: 'kyst', bastogne: 'vinter', rhinen: 'kyst' };
 
 interface Pal {
     vogn: string;
@@ -45,6 +45,8 @@ const PAL: Record<Look, Pal> = {
     ørken: { vogn: '#b7a06a', vognLys: '#8c8a58', uniform: '#b49b6b', hjelm: '#8f8558', fVogn: '#a8905e', fVognLys: '#8d7a52', fUniform: '#9d9270', fHjelm: '#7d7456' },
     // Olivengrønn mot tysk mørk gul med brune flekker (1943).
     steppe: { vogn: '#4f5530', vognLys: '#656a3c', uniform: '#5e5f3a', hjelm: '#444a2a', fVogn: '#8f7f4c', fVognLys: '#6e5c3a', fUniform: '#5c6252', fHjelm: '#4d5147' },
+    // Amerikansk olivengrønn mot tyske vogner kalket hvite for snøen.
+    vinter: { vogn: '#4d5230', vognLys: '#62663e', uniform: '#57553a', hjelm: '#44472c', fVogn: '#b4b8b2', fVognLys: '#8b8f8a', fUniform: '#6b6f68', fHjelm: '#c9ccc6' },
 };
 
 const METALL = '#2b2a27';
@@ -103,6 +105,17 @@ export function camo() {
     camoTex.wrapS = camoTex.wrapT = THREE.RepeatWrapping;
     camoTex.anisotropy = 4;
     return camoTex;
+}
+
+let figHi: THREE.MeshStandardMaterial | null = null;
+/** Samme materiale, lysere: enheten eleven peker på eller klikket. */
+export function figureMaterialHi() {
+    if (!figHi) {
+        figHi = figureMaterial().clone();
+        figHi.emissive.set('#ffd98a');
+        figHi.emissiveIntensity = 0.22;
+    }
+    return figHi;
 }
 
 let figMat: THREE.MeshStandardMaterial | null = null;
@@ -342,8 +355,6 @@ export const PROPS: Partial<Record<Kind | EKind, [number, number][]>> = {
 
 function crewGun(p: Pal, fiende: boolean): Bit[] {
     const col = fiende ? p.fVogn : p.vogn;
-    const uni = fiende ? p.fUniform : p.uniform;
-    const hj = fiende ? p.fHjelm : p.hjelm;
     return [
         { s: 'box', d: [0.04, 0.24, 0.2], p: [0.1, 0.18, 0.1], r: [0, 0.3, -0.12], c: col },
         { s: 'box', d: [0.04, 0.24, 0.2], p: [0.1, 0.18, -0.1], r: [0, -0.3, -0.12], c: col },
@@ -352,15 +363,13 @@ function crewGun(p: Pal, fiende: boolean): Bit[] {
         ...wheel(0.02, 0.1, -0.2, 0.2, 0.04),
         { s: 'box', d: [0.5, 0.04, 0.05], p: [-0.26, 0.05, 0.1], r: [0, 0.32, 0], c: col },
         { s: 'box', d: [0.5, 0.04, 0.05], p: [-0.26, 0.05, -0.1], r: [0, -0.32, 0], c: col },
-        ...soldier(-0.2, 0.28, uni, hj, { rifle: false, kne: true, tysk: fiende }),
-        ...soldier(-0.3, -0.2, uni, hj, { rifle: false, tysk: fiende }),
     ];
 }
 
 function unitBits(p: Pal): Record<Kind, Bit[]> {
-    const s = (x: number, z: number, kne = false) => soldier(x, z, p.uniform, p.hjelm, { kne });
     return {
-        inf: [...s(0.14, 0.2), ...s(0.2, -0.14, true), ...s(-0.12, 0.02), ...s(-0.18, 0.28, true), { s: 'box', d: [0.12, 0.06, 0.08], p: [-0.28, 0.03, -0.2], c: TRE }],
+        // Soldatene selv er instanser som beveger seg (soldiers.tsx); her står bare kassa.
+        inf: [{ s: 'box', d: [0.12, 0.06, 0.08], p: [-0.28, 0.03, -0.2], c: TRE }, { s: 'box', d: [0.1, 0.05, 0.07], p: [-0.3, 0.085, -0.2], c: SEKK }],
         vogn: tankHull(p.vogn, p.vognLys),
         pv: [...crewGun(p, false), { s: 'box', d: [0.14, 0.05, 0.08], p: [-0.4, 0.03, 0.3], c: TRE }],
         art: [
@@ -369,8 +378,6 @@ function unitBits(p: Pal): Record<Kind, Bit[]> {
             { s: 'box', d: [0.22, 0.1, 0.34], p: [-0.02, 0.15, 0], c: p.vogn },
             { s: 'box', d: [0.7, 0.07, 0.1], p: [-0.42, 0.07, 0], r: [0, 0, 0.12], c: p.vogn },
             { s: 'cyl', d: [0.14, 0.05, 0.14], p: [-0.76, 0.03, 0], c: METALL },
-            ...s(-0.3, 0.32, true),
-            ...s(0.12, -0.36),
             { s: 'box', d: [0.14, 0.06, 0.1], p: [-0.5, 0.03, -0.3], c: TRE },
             { s: 'box', d: [0.14, 0.06, 0.1], p: [-0.52, 0.09, -0.3], c: TRE },
         ],
@@ -378,12 +385,16 @@ function unitBits(p: Pal): Record<Kind, Bit[]> {
             { s: 'box', d: [0.7, 0.04, 0.08], p: [0, 0.03, 0], r: [0, 0.78, 0], c: p.vogn },
             { s: 'box', d: [0.7, 0.04, 0.08], p: [0, 0.03, 0], r: [0, -0.78, 0], c: p.vogn },
             { s: 'cyl', d: [0.22, 0.14, 0.22], p: [0, 0.12, 0], c: p.vogn },
-            ...s(-0.3, -0.24),
-            ...s(-0.28, 0.26, true),
             { s: 'box', d: [0.12, 0.08, 0.08], p: [-0.1, 0.04, 0.34], c: TRE },
         ],
         jag: plane(0.95, 0.56, p.vogn, '#8e98a0', 'rund'),
         bomb: plane(1.6, 0.9, p.vogn, '#2a2a2a', 'rund', { motorer: 2 }),
+        // Soldatene er instanser; her ligger fallskjermene de kom ned i, sammenrullet.
+        fsk: [
+            { s: 'ball', d: [0.2, 0.06, 0.16], p: [-0.3, 0.03, -0.22], c: '#d8d4c4' },
+            { s: 'ball', d: [0.16, 0.05, 0.14], p: [-0.34, 0.025, 0.3], c: '#cfcab8' },
+            { s: 'box', d: [0.12, 0.06, 0.08], p: [-0.2, 0.03, -0.34], c: TRE },
+        ],
     };
 }
 
@@ -406,10 +417,8 @@ function unitTop(p: Pal): Partial<Record<Kind, Bit[]>> {
     };
 }
 
-function enemyBits(p: Pal): Record<EKind, Bit[]> {
-    const s = (x: number, z: number, kne = false) => soldier(x, z, p.fUniform, p.fHjelm, { tysk: true, kne });
+function enemyBits(p: Pal): Partial<Record<EKind, Bit[]>> {
     return {
-        einf: [...s(0.12, 0.14), ...s(-0.1, -0.12), ...s(-0.02, 0.3, true)],
         evogn: [...tankHull(p.fVogn, p.fVognLys), { s: 'box', d: [0.03, 0.2, 0.46], p: [-0.12, 0.3, 0], c: p.fVognLys }],
         epak: [...crewGun(p, true), { s: 'tube', d: [0.035, 0.58, 0.035], p: [0.34, 0.2, 0], r: [0, 0, Math.PI / 2], c: p.fVogn }],
         estuka: [
@@ -419,6 +428,18 @@ function enemyBits(p: Pal): Record<EKind, Bit[]> {
             { s: 'cyl', d: [0.06, 0.26, 0.06], p: [0.03, -0.1, 0], r: [0, 0, Math.PI / 2], c: METALL },
         ],
         ejag: plane(0.82, 0.6, p.fVogn, '#9aa4ab', 'kors'),
+        // Haubitsen i stilling: sandsekker rundt, løpet høyt.
+        ebatt: [
+            ...wheel(-0.02, 0.14, 0.22, 0.28, 0.06),
+            ...wheel(-0.02, 0.14, -0.22, 0.28, 0.06),
+            { s: 'box', d: [0.24, 0.12, 0.36], p: [-0.02, 0.16, 0], c: p.fVogn },
+            { s: 'box', d: [0.7, 0.07, 0.1], p: [-0.42, 0.07, 0.08], r: [0, 0.2, 0.12], c: p.fVogn },
+            { s: 'box', d: [0.7, 0.07, 0.1], p: [-0.42, 0.07, -0.08], r: [0, -0.2, 0.12], c: p.fVogn },
+            { s: 'tube', d: [0.08, 0.5, 0.08], p: [0.2, 0.34, 0], r: [0, 0, -Math.PI / 2 + 0.7], c: p.fVognLys },
+            { s: 'tube', d: [0.05, 0.45, 0.05], p: [0.44, 0.55, 0], r: [0, 0, -Math.PI / 2 + 0.7], c: p.fVogn },
+            ...[-0.5, -0.25, 0, 0.25, 0.5].map((z): Bit => ({ s: 'ball', d: [0.2, 0.1, 0.22], p: [0.42, 0.05, z], c: '#8a7a58' })),
+            ...[-0.38, -0.12, 0.14, 0.4].map((z): Bit => ({ s: 'ball', d: [0.2, 0.1, 0.22], p: [0.44, 0.14, z], c: '#7d6e4f' })),
+        ],
     };
 }
 
@@ -431,7 +452,8 @@ function buildMap<K extends string>(bits: Partial<Record<K, Bit[]>>) {
 export interface ModelSet {
     unit: Record<Kind, Model>;
     unitTop: Partial<Record<Kind, Model>>;
-    enemy: Record<EKind, Model>;
+    /** Fiendens infanteri har ingen fast figur: bare soldater (soldiers.tsx). */
+    enemy: Partial<Record<EKind, Model>>;
     enemyTop: Partial<Record<EKind, Model>>;
 }
 
@@ -444,6 +466,46 @@ export function modelsFor(look: Look): ModelSet {
         unitTop: buildMap(unitTop(p)),
         enemy: buildMap(enemyBits(p)),
         enemyTop: buildMap(ENEMY_TOP_BITS(p)),
+    });
+}
+
+// ---- Soldatene som instanser (soldiers.tsx) ----------------------------------------------
+/** Hvor soldatene står i figuren (x = framover), og om de kneler når de skyter. */
+export type Post = [number, number, boolean];
+export const SQUAD: Record<string, Post[]> = {
+    // De fire første er troppen; sammenslåtte tropper får to til per kopi.
+    inf: [[0.14, 0.2, false], [0.2, -0.14, true], [-0.12, 0.02, false], [-0.18, 0.28, true], [0.04, -0.34, true], [-0.3, -0.1, false], [0.32, 0.04, true], [-0.02, 0.42, false]],
+    einf: [[0.12, 0.14, false], [-0.1, -0.12, false], [-0.02, 0.3, true], [-0.24, 0.1, false]],
+    pv: [[-0.2, 0.28, true], [-0.3, -0.2, false]],
+    epak: [[-0.2, 0.28, true], [-0.3, -0.2, false]],
+    art: [[-0.3, 0.32, true], [0.12, -0.36, false], [-0.5, -0.1, false]],
+    lv: [[-0.3, -0.24, false], [-0.28, 0.26, true]],
+    fsk: [[0.14, 0.2, false], [0.2, -0.14, true], [-0.12, 0.02, false], [-0.18, 0.28, true], [0.04, -0.34, true], [-0.3, -0.1, false], [0.32, 0.04, true], [-0.02, 0.42, false]],
+    ebatt: [[-0.36, 0.34, true], [0.02, -0.4, false], [-0.55, -0.12, false]],
+};
+/** Hofta over bakken når soldaten står. */
+export const HIP = 0.16;
+
+export interface SoldierParts {
+    rifle: Model;
+    crew: Model;
+    leg: Model;
+}
+const PARTS: Record<string, SoldierParts> = {};
+/** Overkroppen (med og uten gevær) med hofta i origo, og ett bein som henger fra hofta. */
+export function soldierParts(look: Look, fiende: boolean): SoldierParts {
+    const p = PAL[look];
+    const cloth = fiende ? p.fUniform : p.uniform;
+    const helmet = fiende ? p.fHjelm : p.hjelm;
+    const upper = (rifle: boolean) =>
+        build(soldier(0, 0, cloth, helmet, { rifle, tysk: fiende }).slice(2).map((b) => ({ ...b, p: [b.p[0], b.p[1] - HIP, b.p[2]] as [number, number, number] })));
+    return (PARTS[look + fiende] ??= {
+        rifle: upper(true),
+        crew: upper(false),
+        leg: build([
+            { s: 'box', d: [0.05, 0.15, 0.05], p: [0, -0.075, 0], c: cloth },
+            { s: 'box', d: [0.075, 0.03, 0.055], p: [0.012, -0.15, 0], c: '#2a241c', plain: true },
+        ]),
     });
 }
 
@@ -502,6 +564,15 @@ export const DECO = {
             { s: 'ball', d: [0.36, 1.2, 0.36], p: [0, 0.8, 0], c: '#43552b' },
         ]),
     birch: () => build([...tree('#6c7d3a', '#7f8e45', '#dcd8cc')]),
+    pine: () =>
+        build([
+            { s: 'cyl', d: [0.07, 0.3, 0.07], p: [0, 0.15, 0], c: '#4a3726' },
+            { s: 'cone', d: [0.56, 0.5, 0.56], p: [0, 0.48, 0], c: '#2f3f2c' },
+            { s: 'cone', d: [0.44, 0.44, 0.44], p: [0, 0.78, 0], c: '#34462f' },
+            { s: 'cone', d: [0.3, 0.36, 0.3], p: [0, 1.04, 0], c: '#3a4d33' },
+            { s: 'cone', d: [0.36, 0.14, 0.36], p: [0, 0.66, 0], c: '#e8ecee', plain: true },
+            { s: 'cone', d: [0.24, 0.12, 0.24], p: [0, 0.94, 0], c: '#eef1f2', plain: true },
+        ]),
     hedge: () =>
         build([
             { s: 'rock', d: [0.5, 0.36, 0.4], p: [-0.35, 0.18, 0], c: '#34431f' },

@@ -1,13 +1,13 @@
-import { COMBAT, ENEMIES, ORDERS, SCORE, UNITS, type Armor, type Kind } from './tuning';
+import { COMBAT, ENEMIES, KORT_TALL, ORDERS, SCORE, UNITS, type Armor, type EKind, type Kind } from './tuning';
 import { MAP_D, MAP_W } from './levels';
-import { roadAt, waveDef, slagDef, isAir, power, type G, type IO, type Unit, type Enemy } from './game';
+import { roadAt, waveDef, slagDef, isAir, power, har, type G, type IO, type Unit, type Enemy } from './game';
 
 // Kampen i en bølge, ett tidssteg om gangen. Fagregelen står i canTarget():
 // en enhet i radionettet kan skyte på alt nettet ser, ikke bare det den ser selv.
 
 /** Sekunder mellom skudd per enhetstype (skaden er dps * periode). */
-const PERIOD: Record<Kind, number> = { inf: 0.7, vogn: 1.5, pv: 1.6, art: COMBAT.artSalve, lv: 0.45, jag: 0.5, bomb: 1 };
-const E_PERIOD = { einf: 0.8, evogn: 1.6, epak: 1.8, estuka: 1, ejag: 0.5 };
+const PERIOD: Record<Kind, number> = { inf: 0.7, vogn: 1.5, pv: 1.6, art: COMBAT.artSalve, lv: 0.45, jag: 0.5, bomb: 1, fsk: 0.7 };
+const E_PERIOD: Record<EKind, number> = { einf: 0.8, evogn: 1.6, epak: 1.8, estuka: 1, ejag: 0.5, ebatt: 1 };
 const AIR_ALT = 3.2;
 const JAG_SPEED = 3.9;
 const BOMB_SPEED = 3;
@@ -18,8 +18,15 @@ const uz = (u: Unit) => (isAir(u.kind) ? u.az : u.z);
 const flying = (u: Unit) => isAir(u.kind) && u.mode !== 'bakke';
 const alive = (e: Enemy) => !e.dead && !e.passed;
 
-/** Ser enheten fienden med egne øyne? Kamuflert panservern ses bare på kloss hold. */
-function sees(u: Unit, e: Enemy): boolean {
+/** Egne øyne: tåka krymper dem, speiderne gjør infanteriet skarpere. */
+function eyes(g: G, u: Unit, camo: boolean) {
+    const st = UNITS[u.kind];
+    const scout = (u.kind === 'inf' || u.kind === 'fsk') && har(g, 'speidere') ? KORT_TALL.speidere : 0;
+    return ((camo ? st.camo : st.sight) + scout) * (waveDef(g).sikt ?? 1);
+}
+
+/** Ser enheten fienden med egne øyne? Kamuflert panservern og batterier ses bare på kloss hold. */
+function sees(g: G, u: Unit, e: Enemy): boolean {
     const st = UNITS[u.kind];
     const d = d2(ux(u), uz(u), e.x, e.z);
     if (ENEMIES[e.kind].fly) {
@@ -28,7 +35,7 @@ function sees(u: Unit, e: Enemy): boolean {
         return false;
     }
     if (isAir(u.kind)) return false;
-    return d <= (e.dug ? st.camo : st.sight);
+    return d <= eyes(g, u, e.dug);
 }
 
 function netVision(g: G) {
@@ -40,7 +47,7 @@ function netVision(g: G) {
     }
     for (const u of g.units) {
         if (u.dead || !u.linked) continue;
-        for (const e of g.enemies) if (alive(e) && !g.netSeen.has(e.id) && sees(u, e)) g.netSeen.add(e.id);
+        for (const e of g.enemies) if (alive(e) && !g.netSeen.has(e.id) && sees(g, u, e)) g.netSeen.add(e.id);
     }
 }
 
@@ -49,7 +56,7 @@ function canTarget(g: G, u: Unit, e: Enemy) {
     const a = ENEMIES[e.kind].armor;
     if (!alive(e) || st.dps[a] <= 0) return false;
     if (d2(ux(u), uz(u), e.x, e.z) > st.range) return false;
-    if (sees(u, e)) return true;
+    if (sees(g, u, e)) return true;
     return u.linked && g.netSeen.has(e.id);
 }
 
@@ -89,25 +96,30 @@ function spawn(g: G, io: IO) {
         g.spawned[i] += 1;
         if (n === 0) g.valg += 1;
         const st = ENEMIES[gr.kind];
-        const [x, z] = st.fly ? [MAP_W + 1, -0.5 + g.rng() * 3] : g.road.pts[0];
+        const r = Math.min(g.roads.length - 1, gr.vei ?? 0);
+        const [x, z] = gr.pos ?? (st.fly ? [MAP_W + 1, -0.5 + g.rng() * 3] : g.roads[r].pts[0]);
+        const batt = gr.kind === 'ebatt';
         g.enemies.push({
             id: g.nextId++,
             kind: gr.kind,
+            r,
             s: 0,
             x,
             z,
             alt: st.fly ? AIR_ALT + 0.6 : 0,
             hp: st.hp,
             maxHp: st.hp,
-            dug: false,
+            // Batteriet står nedgravd og skjult hele tiden.
+            dug: batt,
             cd: g.rng() * 0.5,
             targetId: -1,
-            timer: 0,
+            timer: batt ? COMBAT.battStart + g.rng() * 2 : 0,
             phase: 'inn',
             heading: Math.PI,
             dead: false,
             passed: false,
             kick: 0,
+            revealed: false,
         });
         if (n === 0) io.event('ny:' + gr.kind, x, z);
     });
@@ -134,7 +146,7 @@ function actGround(g: G, u: Unit, dt: number, io: IO) {
     const p = PERIOD[u.kind];
     u.cd = p;
     u.kick = 1;
-    const own = sees(u, best);
+    const own = sees(g, u, best);
     if (!own) g.netShots += 1;
     if (u.kind === 'art') {
         splash(g, best.x, best.z, st.splash ?? 1, { soft: st.dps.soft * p * mult, armor: st.dps.armor * p * mult, gun: st.dps.gun * p * mult, air: 0 }, io);
@@ -166,7 +178,7 @@ function actJag(g: G, u: Unit, dt: number, t: number, io: IO) {
     let bd = Infinity;
     for (const e of g.enemies) {
         if (!alive(e) || !ENEMIES[e.kind].fly) continue;
-        if (!(sees(u, e) || (u.linked && g.netSeen.has(e.id)))) continue;
+        if (!(sees(g, u, e) || (u.linked && g.netSeen.has(e.id)))) continue;
         const d = d2(u.ax, u.az, e.x, e.z);
         const pri = e.kind === 'ejag' && escort ? d - 3 : d;
         if (pri < bd) {
@@ -180,7 +192,7 @@ function actJag(g: G, u: Unit, dt: number, t: number, io: IO) {
         u.cd -= dt;
         if (u.cd <= 0 && d2(u.ax, u.az, target.x, target.z) <= UNITS.jag.range) {
             u.cd = PERIOD.jag;
-            hit(g, target, UNITS.jag.dps.air * PERIOD.jag * power(u), io);
+            hit(g, target, UNITS.jag.dps.air * PERIOD.jag * power(u) * (har(g, 'fly') ? KORT_TALL.fly : 1), io);
             shot(g, u.ax, u.az, target.x, target.z, target.alt, false);
         }
         return;
@@ -214,7 +226,8 @@ function actBomb(g: G, u: Unit, dt: number, io: IO) {
         if (u.toktCd > 0) return;
         // I nettet vet bombeflyene hvor fienden står tettest. Alene gjetter de et sted på veien.
         let tgt = u.linked ? densest(g) : null;
-        if (!tgt && !u.linked) tgt = roadAt(g.road, g.road.len * (0.1 + g.rng() * 0.5));
+        const road = g.roads[Math.floor(g.rng() * g.roads.length)];
+        if (!tgt && !u.linked) tgt = roadAt(road, road.len * (0.1 + g.rng() * 0.5));
         if (!tgt) {
             u.toktCd = 1;
             return;
@@ -228,7 +241,7 @@ function actBomb(g: G, u: Unit, dt: number, io: IO) {
     u.alt = Math.min(AIR_ALT + 0.5, u.alt + dt * 2);
     if (u.mode === 'tokt') {
         if (steer(u, u.tx, u.tz, BOMB_SPEED, dt) <= 0.05) {
-            splash(g, u.tx, u.tz, COMBAT.bombSprut, scaled(COMBAT.bombSkade, power(u)), io);
+            splash(g, u.tx, u.tz, COMBAT.bombSprut, scaled(COMBAT.bombSkade, power(u) * (har(g, 'fly') ? KORT_TALL.fly : 1)), io);
             g.shake = Math.max(g.shake, 0.5);
             io.event('bomber', u.tx, u.tz);
             u.mode = 'hjem';
@@ -257,6 +270,44 @@ function hurtUnit(g: G, u: Unit, dmg: number, io: IO) {
         g.fx.push(fx('smell', ux(u), uz(u), u.alt, true, 0.9));
         io.event((isAir(u.kind) ? 'egetFlyNed:' : 'tapt:') + u.kind, ux(u), uz(u));
     }
+}
+
+/** Et nedslag på en av dine: full skade på den, en del på naboene (straffer klumper). */
+function impact(g: G, tgt: Unit, dmg: number, io: IO) {
+    hurtUnit(g, tgt, dmg, io);
+    for (const u of g.units)
+        if (u !== tgt && !u.dead && !isAir(u.kind) && d2(u.x, u.z, tgt.x, tgt.z) <= COMBAT.sprut) hurtUnit(g, u, dmg * COMBAT.sprutAndel, io);
+}
+
+/** Linja til enheten ryker. */
+function cut(g: G, u: Unit, io: IO) {
+    if (!(u.linked || u.linking > 0)) return;
+    u.linked = false;
+    u.linking = 0;
+    g.valg += 1;
+    g.fx.push(fx('kutt', u.x, u.z, 0, true, 1.4));
+    io.event('kutt', u.x, u.z);
+}
+
+/** Batteriet: skjult utenfor veien, skyter på dem i nettet og kutter linjene deres. */
+function actBatt(g: G, e: Enemy, dt: number, io: IO) {
+    e.timer -= dt;
+    if (e.timer > 0) return;
+    e.timer = COMBAT.battSalve;
+    const ground = g.units.filter((u) => !u.dead && !isAir(u.kind));
+    if (!ground.length) return;
+    const linked = ground.filter((u) => u.linked);
+    const pool = linked.length ? linked : ground;
+    const u = pool[Math.floor(g.rng() * pool.length)];
+    e.kick = 1;
+    if (!e.revealed) {
+        e.revealed = true;
+        if (!g.kjentBatt.some(([x, z]) => x === e.x && z === e.z)) g.kjentBatt.push([e.x, e.z]);
+    }
+    io.event('batteri', e.x, e.z);
+    impact(g, u, COMBAT.kuttSkade, io);
+    g.fx.push(fx('granat', u.x, u.z, 0, true, 0.6));
+    cut(g, u, io);
 }
 
 function actEnemyGround(g: G, e: Enemy, dt: number, io: IO) {
@@ -289,9 +340,10 @@ function actEnemyGround(g: G, e: Enemy, dt: number, io: IO) {
     // Infanteriet stopper for å skyte, vogner kjører sakte videre, panservernet stopper bare nedgravd.
     if (target || hqInRange) speed = e.kind === 'evogn' ? st.speed * COMBAT.vognKjørerMensDenSkyter : e.kind === 'einf' ? 0 : speed;
     if (e.dug) speed = 0;
+    const road = g.roads[e.r];
     e.s += speed * dt;
-    [e.x, e.z] = roadAt(g.road, e.s);
-    if (e.s >= g.road.len) {
+    [e.x, e.z] = roadAt(road, e.s);
+    if (e.s >= road.len) {
         e.passed = true;
         g.linje -= st.brudd;
         io.event('brudd', e.x, e.z);
@@ -341,26 +393,21 @@ function actStuka(g: G, e: Enemy, dt: number, io: IO) {
             e.phase = 'ut';
             return;
         }
-        // Stupbomberne går etter det som holder nettet sammen.
+        // Stupbomberne går etter det som holder nettet sammen, helst der flest står tett.
         const linked = ground.filter((u) => u.linked);
         const pool = linked.length && g.rng() < 0.75 ? linked : ground;
-        tgt = pool[Math.floor(g.rng() * pool.length)];
+        const crowd = (u: Unit) => ground.filter((v) => d2(u.x, u.z, v.x, v.z) <= COMBAT.sprut).length + g.rng() * 0.5;
+        tgt = pool.reduce((a, b) => (crowd(b) > crowd(a) ? b : a));
         e.targetId = tgt.id;
     }
     const left = moveAir(e, tgt.x, tgt.z, dt);
     if (left < 1.6) e.phase = 'stup';
     if (e.phase === 'stup') e.alt = Math.max(0.8, e.alt - dt * 4.5);
     if (left <= 0.05) {
-        hurtUnit(g, tgt, COMBAT.stukaSkade, io);
+        impact(g, tgt, COMBAT.stukaSkade, io);
         g.fx.push(fx('smell', tgt.x, tgt.z, 0, true, 0.8));
         g.shake = Math.max(g.shake, 0.4);
-        if (tgt.linked || tgt.linking > 0) {
-            tgt.linked = false;
-            tgt.linking = 0;
-            g.valg += 1;
-            g.fx.push(fx('kutt', tgt.x, tgt.z, 0, true, 1.4));
-            io.event('kutt', tgt.x, tgt.z);
-        }
+        cut(g, tgt, io);
         e.phase = 'ut';
     }
 }
@@ -415,20 +462,6 @@ export function stepWave(g: G, dt: number, io: IO) {
             g.pendingSperre = null;
         }
     }
-    // Fiendens artilleri kutter radiolinjer. Eleven må koble opp igjen.
-    const kutt = waveDef(g).kutt;
-    if (kutt && Math.floor(g.waveT / kutt) > Math.floor((g.waveT - dt) / kutt)) {
-        const linked = g.units.filter((u) => !u.dead && u.linked && !flying(u));
-        const u = linked[Math.floor(g.rng() * linked.length)];
-        if (u) {
-            u.linked = false;
-            hurtUnit(g, u, COMBAT.kuttSkade, io);
-            g.valg += 1;
-            g.fx.push(fx('granat', u.x, u.z, 0, true, 0.6));
-            g.fx.push(fx('kutt', u.x, u.z, 0, true, 1.4));
-            io.event('kutt', u.x, u.z);
-        }
-    }
     netVision(g);
     for (const u of g.units) {
         if (u.dead) continue;
@@ -441,6 +474,7 @@ export function stepWave(g: G, dt: number, io: IO) {
         if (!alive(e)) continue;
         e.kick = Math.max(0, e.kick - dt * 4);
         if (e.kind === 'estuka') actStuka(g, e, dt, io);
+        else if (e.kind === 'ebatt') actBatt(g, e, dt, io);
         else if (e.kind === 'ejag') actEJag(g, e, dt, io);
         else actEnemyGround(g, e, dt, io);
     }

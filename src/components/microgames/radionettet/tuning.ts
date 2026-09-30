@@ -1,8 +1,8 @@
 // Alle tallene i Radionettet. Balanse endres her, så kjøres simuleringen:
 //   npx tsx scripts/sim-microgame.mts --ids radionettet
 
-export type Kind = 'inf' | 'vogn' | 'pv' | 'art' | 'lv' | 'jag' | 'bomb';
-export type EKind = 'einf' | 'evogn' | 'epak' | 'estuka' | 'ejag';
+export type Kind = 'inf' | 'vogn' | 'pv' | 'art' | 'lv' | 'jag' | 'bomb' | 'fsk';
+export type EKind = 'einf' | 'evogn' | 'epak' | 'estuka' | 'ejag' | 'ebatt';
 /** Hva et skudd treffer: bløtt (folk), panser, kanon (mannskap bak skjold), fly. */
 export type Armor = 'soft' | 'armor' | 'gun' | 'air';
 
@@ -21,6 +21,8 @@ export interface UnitStat {
     splash?: number;
     armor: Armor;
     fly?: boolean;
+    /** Fallskjermsoldater: kan hoppe ut hvor som helst på kartet, også utenfor radioringen. */
+    hopp?: boolean;
 }
 
 // ---- Dine enheter --------------------------------------------------------
@@ -32,6 +34,7 @@ export const UNITS: Record<Kind, UnitStat> = {
     lv: { navn: 'Luftvern', pris: 3, hp: 55, range: 4.4, sight: 4.4, camo: 0, dps: { soft: 0, armor: 0, gun: 0, air: 26 }, armor: 'gun' },
     jag: { navn: 'Jagerfly', pris: 5, hp: 90, range: 1.6, sight: 3, camo: 0, dps: { soft: 0, armor: 0, gun: 0, air: 30 }, armor: 'air', fly: true },
     bomb: { navn: 'Bombefly', pris: 6, hp: 80, range: 0, sight: 0, camo: 0, dps: { soft: 0, armor: 0, gun: 0, air: 0 }, armor: 'air', fly: true },
+    fsk: { navn: 'Fallskjerm', pris: 4, hp: 90, range: 2.6, sight: 5.6, camo: 5.6, dps: { soft: 13, armor: 3, gun: 16, air: 0 }, armor: 'soft', hopp: true },
 };
 
 // ---- Fienden -------------------------------------------------------------
@@ -53,12 +56,17 @@ export const ENEMIES: Record<EKind, EnemyStat> = {
     epak: { navn: 'panservern', hp: 50, speed: 0.65, range: 4.2, dps: { soft: 2, armor: 36, gun: 3, air: 0 }, armor: 'gun', brudd: 1 },
     estuka: { navn: 'stupbomber', hp: 45, speed: 3.2, range: 0, dps: { soft: 0, armor: 0, gun: 0, air: 0 }, armor: 'air', brudd: 0, fly: true },
     ejag: { navn: 'jagerfly', hp: 55, speed: 3.6, range: 1.6, dps: { soft: 0, armor: 0, gun: 0, air: 22 }, armor: 'air', brudd: 0, fly: true },
+    // Står skjult utenfor veien og kutter radiolinjer til noen i nettet ser det og slår det ut.
+    ebatt: { navn: 'artilleribatteri', hp: 90, speed: 0, range: 0, dps: { soft: 0, armor: 0, gun: 0, air: 0 }, armor: 'gun', brudd: 0 },
 };
 
 // ---- Radio ---------------------------------------------------------------
 export const RADIO = {
-    /** Hvor langt fra kommandovogna en bakkeenhet kan kobles (ruter). Fly og flyplass: alltid. */
+    /** Hvor langt fra kommandovogna en bakkeenhet kan kobles (ruter). Fly og flyplass: alltid.
+     *  Slagene kan ha sin egen ring (`ring` i levels.ts). */
     rekkevidde: 6.5,
+    /** Stafett: en bakkeenhet i nettet sender radioen videre så langt (ruter). */
+    stafett: 3,
     /** Sekunder fra klikk til linja er oppe. */
     koble: 0.6,
     /** Stupbombe-treff kutter linja til enheten det traff. */
@@ -76,19 +84,25 @@ export const COMBAT = {
     /** Sekunder panservernet blir liggende nedgravd etter at vogna er borte. */
     pakBlir: 4,
     /** Styrke (hp og skade) med 1, 2 og 3 like på samme rute. Tre = veteran. */
-    kopier: [1, 1.7, 2.6],
+    kopier: [1, 1.6, 2.3],
     /** Tid mellom artilleriets salver (s). */
     artSalve: 2.4,
     /** Kommandovogna. */
-    hqHp: 400,
+    hqHp: 520,
     /** Bombefly: sekunder mellom tokt, sprut og skade per bombe. */
     bombTokt: 11,
     bombSprut: 1.8,
     bombSkade: { soft: 90, armor: 110, gun: 100, air: 0 } as Record<Armor, number>,
-    /** Fiendens artillerinedslag som kutter en linje: skade på enheten. */
-    kuttSkade: 25,
+    /** Fiendens artilleribatteri: første salve etter så mange sekunder, så hver `battSalve`. */
+    battStart: 9,
+    battSalve: 14,
+    /** Nedslaget som kutter en linje: skade på enheten. */
+    kuttSkade: 12,
+    /** Nedslag fra batteri og stupbombere treffer også naboene (radius, andel av skaden). */
+    sprut: 1.3,
+    sprutAndel: 0.4,
     /** Stupbomber: skade på enheten den stuper mot. */
-    stukaSkade: 70,
+    stukaSkade: 60,
     /** Jagerfly patruljerer i en ring med denne radien. */
     patrulje: 2.4,
     /** I nettet ser jagerne fiendtlige fly så langt unna (ruter). */
@@ -105,7 +119,7 @@ export const ORDERS = {
 // ---- Økonomi ----------------------------------------------------------------
 export const ECONOMY = {
     /** Etter hver bølge. */
-    perBølge: 10,
+    perBølge: 12,
     /** Bytte butikken. */
     bytt: 1,
     /** Selg: andel av prisen tilbake. */
@@ -118,12 +132,23 @@ export const ECONOMY = {
 export const SCORE = {
     linje: 10,
     /** Poeng per fiende slått ut, etter type. */
-    drap: { einf: 10, evogn: 40, epak: 25, estuka: 20, ejag: 20 } as Record<EKind, number>,
+    drap: { einf: 10, evogn: 40, epak: 25, estuka: 20, ejag: 20, ebatt: 50 } as Record<EKind, number>,
     /** Bonus per linjepunkt igjen etter et slag. */
     linjeBonus: 30,
     /** Stjerner: linja igjen minst så mye. */
     stjerner: [1, 6, 9],
 };
+
+// ---- Ordrekort: ett av tre etter hvert slag, gjelder resten av kampanjen ------------------
+export type KortId = 'kanal' | 'sperre' | 'forsyning' | 'speidere' | 'fly';
+export const KORT: Record<KortId, { tittel: string; tekst: string }> = {
+    kanal: { tittel: 'Ny radiokanal', tekst: 'Kommandovogna får én kanal til.' },
+    sperre: { tittel: 'Mer ammunisjon', tekst: 'Én sperreild ekstra i hver bølge.' },
+    forsyning: { tittel: 'Forsyninger', tekst: '+4 forsyninger etter hver bølge.' },
+    speidere: { tittel: 'Speidere', tekst: 'Infanteriet ser 1,5 ruter lenger, også skjulte kanoner.' },
+    fly: { tittel: 'Flystøtte', tekst: 'Jager- og bombefly slår 30 % hardere.' },
+};
+export const KORT_TALL = { forsyning: 4, speidere: 1.5, fly: 1.3 };
 
 /** Planleggingen: så lenge venter fienden (s). Klokka vises først de siste 15 sekundene. */
 export const PLAN_MAX = 45;

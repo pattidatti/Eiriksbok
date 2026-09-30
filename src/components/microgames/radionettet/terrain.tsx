@@ -4,19 +4,16 @@ import * as THREE from 'three';
 import { useQuality, mergeParts } from '../kit';
 import { RADIO } from './tuning';
 import { MAP_D, MAP_W, FLYPLASS, SLAG, type SlagDef } from './levels';
-import { usedChannels, type G } from './game';
+import { usedChannels, waveDef, ringOf, type G } from './game';
 import { C, DECO, LOOK, figureMaterial, hqModel, type Look, type Model } from './models';
 import { Lighting } from './light';
+import { BoardDetail, Bridges, Haze, Water } from './relief';
+import { GD, GW, X0, Z0, SKIRT_Y, WATER_Y, craterSpots, groundGeometry, heightAt, isSea, withClouds } from './ground';
 
 // Slagmarken som et ekte landskap sett ovenfra: bakken males én gang i canvas per slag
 // (gress, jord, sand, hjulspor, kratre, veien), og pynten utenfor kartet er instanser
 // med ekte skygger. Kartet mørkner litt utenfor spillbrettet, så brettet står fram.
 
-/** Bakken dekker kartet pluss en kant rundt. */
-const X0 = -7;
-const Z0 = -5;
-const GW = MAP_W + 14;
-const GD = MAP_D + 10;
 
 interface Ground {
     base: string;
@@ -31,6 +28,7 @@ const GROUND: Record<Look, Ground> = {
     kyst: { base: '#66733f', fields: ['#74823f', '#5d6a37', '#808a4c', '#6e5d40', '#7a8748'], tuft: ['#4c5a2c', '#8c9657'], road: '#86827a', rut: '#5b574f', dust: '#6e6450' },
     ørken: { base: '#b89968', fields: ['#c4a878', '#ae8f5f', '#bfa272', '#a98a5c'], tuft: ['#a88c5e', '#dcc49a'], road: '#94795a', rut: '#6e5a3e', dust: '#8a7152' },
     steppe: { base: '#6f6a3a', fields: ['#c7a654', '#b89846', '#d3b664', '#5e4c32', '#7b7a42'], tuft: ['#565a2c', '#a39650'], road: '#8a7654', rut: '#5f4e36', dust: '#6d5a3e' },
+    vinter: { base: '#d4d9dc', fields: ['#e2e6e8', '#cbd1d4', '#dde1e3', '#bfc6c9'], tuft: ['#8f9892', '#f4f6f7'], road: '#8f8b84', rut: '#5a564f', dust: '#a8a49c' },
 };
 
 /** Fast tilfeldighet per slag, så kartet ser likt ut hver gang. */
@@ -169,7 +167,7 @@ function drawGround(def: SlagDef, PX: number) {
     c.globalAlpha = 1;
 
     // Havet ved Dunkerque: grått hav, skum langs stranda og våt sand.
-    if (look === 'kyst') {
+    if (look === 'kyst' && !def.elv) {
         const shore = (k: number) => {
             c.beginPath();
             c.moveTo(0, 0);
@@ -265,8 +263,17 @@ function drawGround(def: SlagDef, PX: number) {
         c.stroke();
     }
 
-    // Veien: myk kant, kjørebane, hjulspor (brostein ved kysten).
-    const road = def.vei;
+    // Elva (Rhinen): mørkt vann med lyse strømvirvler og gjørmete bredder.
+    if (def.elv) {
+        const [a, b] = def.elv;
+        c.fillStyle = '#6b5f45';
+        c.fillRect(px(a - 0.25), 0, (b - a + 0.5) * PX, H);
+        c.fillStyle = '#3d4c4f';
+        c.fillRect(px(a), 0, (b - a) * PX, H);
+    }
+    // Veiene: myk kant, kjørebane, hjulspor (brostein ved kysten).
+    for (const road of def.veier) paintRoad(road);
+    function paintRoad(road: [number, number][]) {
     const path = () => {
         c.beginPath();
         road.forEach(([x, z], i) => (i ? c.lineTo(px(x), pz(z)) : c.moveTo(px(x), pz(z))));
@@ -315,13 +322,13 @@ function drawGround(def: SlagDef, PX: number) {
         c.restore();
     }
     c.globalAlpha = 1;
+    }
 
     // Kratre og svidde flekker fra tidligere kamper.
-    const craters = look === 'kyst' ? 10 : 22;
-    for (let i = 0; i < craters; i++) {
-        const x = px(rnd() * MAP_W);
-        const y = pz(rnd() * MAP_D);
-        const r = (0.14 + rnd() * 0.2) * PX;
+    for (const [cx, cz, cr] of craterSpots(def, look)) {
+        const x = px(cx);
+        const y = pz(cz);
+        const r = cr * PX;
         soft(x, y, r * 2.4, look === 'ørken' ? '#7d6848' : '#3a3024', 0.4);
         c.fillStyle = 'rgba(45,35,25,.75)';
         c.beginPath();
@@ -375,6 +382,8 @@ type Spot = [number, number, number, number];
 interface Deco {
     model: Model;
     at: Spot[];
+    look: Look;
+    elv?: [number, number];
 }
 
 const MODELS: Partial<Record<keyof typeof DECO, Model>> = {};
@@ -391,13 +400,14 @@ function decoFor(def: SlagDef, detail: number): Deco[] {
             const z = Z0 + 1 + rnd() * (GD - 2);
             const inside = x > -0.5 && x < MAP_W + 0.5 && z > -0.5 && z < MAP_D + 0.5;
             const air = x > FLYPLASS[0] - 1.6 && x < FLYPLASS[0] + 2.4 && z > FLYPLASS[1] - 3 && z < FLYPLASS[1] + 1.4;
-            const sea = look === 'kyst' && x < 0.3 && z < 7;
-            if (!inside && !air && !sea) out.push([x, z, rnd() * Math.PI * 2, s0 + rnd() * (s1 - s0)]);
+            const sea = look === 'kyst' && !def.elv && x < 0.3 && z < 7;
+            const elv = def.elv && x > def.elv[0] - 0.6 && x < def.elv[1] + 0.6;
+            if (!inside && !air && !sea && !elv) out.push([x, z, rnd() * Math.PI * 2, s0 + rnd() * (s1 - s0)]);
         }
         return out;
     };
     const tent: Spot[] = [[FLYPLASS[0] - 0.1, FLYPLASS[1] + 1.1, 0, 1]];
-    const d = (k: keyof typeof DECO, at: Spot[]): Deco => ({ model: deco(k), at });
+    const d = (k: keyof typeof DECO, at: Spot[]): Deco => ({ model: deco(k), at, look, elv: def.elv });
     if (look === 'kyst')
         return [
             d('tree', ring(18)),
@@ -408,7 +418,7 @@ function decoFor(def: SlagDef, detail: number): Deco[] {
             d('truck', ring(3, 1.2, 1.4)),
             d('pole', ring(5)),
             d('tent', tent),
-            d('ship', [[-4.4, -1.8, 0.3, 1.1], [-5.6, 2.2, -0.2, 1.2], [-3.4, 4.8, 0.5, 0.9], [-6, 5.6, 0.1, 1]]),
+            d('ship', def.elv ? [] : [[-4.4, -1.8, 0.3, 1.1], [-5.6, 2.2, -0.2, 1.2], [-3.4, 4.8, 0.5, 0.9], [-6, 5.6, 0.1, 1]]),
         ];
     if (look === 'ørken')
         return [
@@ -418,6 +428,15 @@ function decoFor(def: SlagDef, detail: number): Deco[] {
             d('sandbags', ring(8)),
             d('tent', [...tent, ...ring(3, 1, 1.2)]),
             d('truck', ring(4, 1.2, 1.4)),
+        ];
+    if (look === 'vinter')
+        return [
+            d('pine', ring(30, 0.9, 1.5)),
+            d('house', ring(7, 1, 1.2)),
+            d('ruin', ring(3, 1, 1.2)),
+            d('truck', ring(3, 1.2, 1.4)),
+            d('pole', ring(6)),
+            d('tent', tent),
         ];
     return [
         d('birch', ring(18, 0.9, 1.4)),
@@ -442,7 +461,9 @@ function Instances({ d }: { d: Deco }) {
         const m = a.current;
         if (!m) return;
         d.at.forEach(([x, z, r, s], i) => {
-            M.compose(P.set(x, 0, z), Q.setFromEuler(E.set(0, r, 0)), S.setScalar(s * 1.3));
+            // Står på bakken der den er (åser og sanddyner); skipene ligger i vannet.
+            const y = isSea(d.look, x, z, d.elv) ? WATER_Y - 0.03 : heightAt(d.look, x, z, d.elv) - 0.02;
+            M.compose(P.set(x, y, z), Q.setFromEuler(E.set(0, r, 0)), S.setScalar(s * 1.3));
             m.setMatrixAt(i, M);
         });
         m.instanceMatrix.needsUpdate = true;
@@ -462,8 +483,12 @@ export function Board({
     onMove: (x: number, z: number) => void;
 }) {
     const [slag, setSlag] = useState(0);
+    const [tåke, setTåke] = useState(false);
     useFrame(() => {
-        if (gRef.current.slag !== slag) setSlag(gRef.current.slag);
+        const g = gRef.current;
+        if (g.slag !== slag) setSlag(g.slag);
+        const t = (waveDef(g).sikt ?? 1) < 1;
+        if (t !== tåke) setTåke(t);
     });
     const def = SLAG[slag];
     const look = LOOK[def.id] ?? 'kyst';
@@ -471,11 +496,16 @@ export function Board({
     const px = q.tier === 'lav' ? 48 : 72;
     const tex = useMemo(() => drawGround(def, px), [def, px]);
     const decos = useMemo(() => decoFor(def, q.detail), [def, q.detail]);
+    const geo = useMemo(() => groundGeometry(look, X0, Z0, GW, GD, q.tier === 'lav' ? 3 : 4, def.elv), [look, q.tier, def]);
+    const skirt = useMemo(() => new THREE.Color(GROUND[look].base).lerp(new THREE.Color('#12140c'), 0.34), [look]);
+    const mat = useMemo(() => withClouds(new THREE.MeshStandardMaterial({ map: tex, roughness: 1, metalness: 0 }), look), [tex, look]);
     return (
         <group>
             <Lighting look={look} />
+            <Haze look={look} tåke={tåke} />
             <mesh
-                rotation-x={-Math.PI / 2}
+                geometry={geo}
+                material={mat}
                 position={[X0 + GW / 2, -0.02, Z0 + GD / 2]}
                 receiveShadow
                 onPointerMove={(e: ThreeEvent<PointerEvent>) => onMove(e.point.x, e.point.z)}
@@ -483,10 +513,15 @@ export function Board({
                     e.stopPropagation();
                     onPoint(e.point.x, e.point.z);
                 }}
-            >
-                <planeGeometry args={[GW, GD]} />
-                <meshStandardMaterial map={tex} roughness={1} metalness={0} />
+            />
+            {/* Skjørtet: flat bakke i utkantfargen helt ut til kanten av bildet. */}
+            <mesh rotation-x={-Math.PI / 2} position={[MAP_W / 2, SKIRT_Y - 0.02, MAP_D / 2]}>
+                <planeGeometry args={[160, 160]} />
+                <meshStandardMaterial color={skirt} roughness={1} />
             </mesh>
+            <Water look={look} elv={def.elv} />
+            {def.elv && <Bridges def={def} />}
+            <BoardDetail def={def} look={look} detail={q.detail} />
             {decos.map((d, i) => (
                 <Instances key={`${def.id}${i}`} d={d} />
             ))}
@@ -517,7 +552,10 @@ function Hq({ def, look, gRef }: { def: SlagDef; look: Look; gRef: React.Mutable
     useFrame((st) => {
         const on = usedChannels(gRef.current) > 0;
         if (tip.current) tip.current.visible = on && Math.sin(st.clock.elapsedTime * 7) > -0.2;
-        if (ring.current) ring.current.rotation.y = st.clock.elapsedTime * 0.05;
+        if (ring.current) {
+            ring.current.rotation.y = st.clock.elapsedTime * 0.05;
+            ring.current.scale.setScalar(ringOf(gRef.current) / RADIO.rekkevidde);
+        }
     });
     return (
         <group position={[x, 0, z]}>

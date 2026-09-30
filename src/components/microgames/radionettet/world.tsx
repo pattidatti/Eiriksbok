@@ -4,9 +4,10 @@ import { OrthographicCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { RADIO, UNITS } from './tuning';
 import { MAP_D, MAP_W, FLYPLASS } from './levels';
-import { canPlace, isAir, slagDef, type G, type Unit, type Enemy } from './game';
-import { C, LOOK, modelsFor, wreck, propeller, figureMaterial, PROPS, type Look, type Model } from './models';
+import { canPlace, isAir, reachable, slagDef, usedChannels, type G, type Unit, type Enemy } from './game';
+import { C, LOOK, modelsFor, wreck, propeller, figureMaterial, figureMaterialHi, PROPS, type Look, type Model } from './models';
 import type { FxPool } from './fxPool';
+import { hlOn, unitYaw, enemyYaw, type Hl } from './hl';
 
 // Visningen av enhetene: detaljerte figurer i ekte lys på et ortografisk kart.
 // Alt leser spilltilstanden fra gRef i useFrame; React tegner bare på nytt når
@@ -14,6 +15,7 @@ import type { FxPool } from './fxPool';
 // ringene og skyggene på bakken: markers.tsx.
 
 export type Proj = (x: number, y: number, z: number) => { x: number; y: number };
+
 /** Hvor fort visningen går (0 i pause, sakte film under lærings-øyeblikk). */
 export type Speed = React.MutableRefObject<number>;
 
@@ -103,11 +105,11 @@ export function PlaceHints({ gRef }: { gRef: React.MutableRefObject<G> }) {
         const g = gRef.current;
         const m = ref.current;
         if (!m) return;
-        const k = g.holding >= 0 && g.phase === 'plan' ? `${g.holding}:${g.shop[g.holding]}:${g.units.length}:${g.slag}` : '';
+        // Nøkkelen endres når kortet, hæren eller nettet endres (stafetten flytter grensen).
+        const k = g.holding >= 0 && g.phase === 'plan' ? `${g.holding}:${g.shop[g.holding]}:${g.units.length}:${g.slag}:${usedChannels(g)}:${g.units.filter((u) => u.linked).length}` : '';
         if (k === key.current) return;
         key.current = k;
-        // Gult innenfor radioens rekkevidde, grått utenfor (lov, men kan ikke kobles).
-        const [hx, hz] = slagDef(g).hq;
+        // Gult der radioen når (ringen og stafetten). Grått: bare fallskjermsoldater kan hoppe dit.
         let n = 0;
         if (k)
             for (let x = 0; x < MAP_W; x++)
@@ -115,7 +117,7 @@ export function PlaceHints({ gRef }: { gRef: React.MutableRefObject<G> }) {
                     if (canPlace(g, x + 0.5, z + 0.5)) {
                         M.compose(P.set(x + 0.5, 0.01, z + 0.5), FLAT, S.set(0.78, 0.78, 1));
                         m.setMatrixAt(n, M);
-                        m.setColorAt(n, Math.hypot(x + 0.5 - hx, z + 0.5 - hz) <= RADIO.rekkevidde ? inRange : out);
+                        m.setColorAt(n, reachable(g, x + 0.5, z + 0.5) ? inRange : out);
                         n++;
                     }
         m.count = n;
@@ -177,14 +179,22 @@ function turn(cur: number, target: number, k: number) {
     return cur + d * Math.min(1, k);
 }
 
-function UnitView({ u, look, gRef, onClick, fxRef, speedRef }: { u: Unit; look: Look; gRef: React.MutableRefObject<G>; onClick: (id: number) => void; fxRef: React.MutableRefObject<FxPool>; speedRef: Speed }) {
+/** Bytter materialet på figurens deler (lysere når den er markert). */
+function paint(g: THREE.Object3D, hi: boolean) {
+    const m = hi ? figureMaterialHi() : figureMaterial();
+    g.traverse((o) => {
+        if ((o as THREE.Mesh).isMesh && (o as THREE.Mesh).material !== m && ((o as THREE.Mesh).material === figureMaterial() || (o as THREE.Mesh).material === figureMaterialHi())) (o as THREE.Mesh).material = m;
+    });
+}
+
+function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit; look: Look; gRef: React.MutableRefObject<G>; onClick: (id: number) => void; fxRef: React.MutableRefObject<FxPool>; speedRef: Speed; hlRef: React.MutableRefObject<Hl> }) {
     const grp = useRef<THREE.Group>(null);
     const body = useRef<THREE.Group>(null);
     const top = useRef<THREE.Group>(null);
     const wreckRef = useRef<THREE.Group>(null);
     const bar = useRef<THREE.Mesh>(null);
     const props = useRef<THREE.Group>(null);
-    const st = useRef({ yaw: 0, aim: 0, lastKick: 0, deadT: -1, roll: 0, pitch: 0, lastH: 0, lastAlt: 0, fx: 0, fz: 0, fy: 0, vy: 0 });
+    const st = useRef({ yaw: 0, aim: 0, lastKick: 0, deadT: -1, roll: 0, pitch: 0, lastH: 0, lastAlt: 0, fx: 0, fz: 0, fy: 0, vy: 0, hi: false });
     const air = isAir(u.kind);
     const set = modelsFor(look);
     const topModel = set.unitTop[u.kind];
@@ -246,6 +256,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef }: { u: Unit; look: 
             body.current.rotation.set(flying ? s.roll : 0, u.heading - Math.PI / 2, flying ? s.pitch : 0, 'YZX');
             spin(props.current, dt, flying);
         } else {
+            unitYaw.set(u.id, s.yaw);
             // Tårnet og løpet dreier mot fienden; skuddet rister hele figuren.
             const tgt = aimAt(g, u.x, u.z, UNITS[u.kind].range + 0.5, u.kind === 'lv');
             if (tgt) s.aim = Math.atan2(-(tgt.z - u.z), tgt.x - u.x);
@@ -265,7 +276,16 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef }: { u: Unit; look: 
             }
         }
         s.lastKick = u.kick;
-        const f = air ? AIR_FIG : FIG;
+        // Markert: lysere figur, og et lite hopp når den nettopp ble klikket.
+        const hl = hlRef.current;
+        const hi = hlOn(hl, u.id);
+        if (hi !== s.hi) {
+            s.hi = hi;
+            paint(body.current, hi);
+        }
+        const since = performance.now() / 1000 - hl.pickT;
+        const hop = hl.pick === u.id && since < 0.35 ? Math.sin((since / 0.35) * Math.PI) : 0;
+        const f = (air ? AIR_FIG : FIG) * (1 + hop * 0.14);
         const sc = f * (1 + u.kick * 0.06);
         body.current.scale.set(sc, f * (1 - u.kick * 0.05), sc);
         if (bar.current) {
@@ -274,7 +294,12 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef }: { u: Unit; look: 
         }
     });
     return (
-        <group ref={grp} onClick={(e) => { e.stopPropagation(); onClick(u.id); }}>
+        <group
+            ref={grp}
+            onClick={(e) => { e.stopPropagation(); onClick(u.id); }}
+            onPointerOver={(e) => { e.stopPropagation(); hlRef.current.hover = u.id; document.body.style.cursor = 'pointer'; }}
+            onPointerOut={() => { if (hlRef.current.hover === u.id) hlRef.current.hover = -1; document.body.style.cursor = ''; }}
+        >
             {/* Usynlig klikkflate: hele ruta, ikke bare de små figurene. */}
             <mesh position={[0, 0.4, 0]}>
                 <boxGeometry args={[0.95, 0.8, 0.95]} />
@@ -307,7 +332,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef }: { u: Unit; look: 
     );
 }
 
-export function Units({ gRef, onClick, fxRef, speedRef }: { gRef: React.MutableRefObject<G>; onClick: (id: number) => void; fxRef: React.MutableRefObject<FxPool>; speedRef: Speed }) {
+export function Units({ gRef, onClick, fxRef, speedRef, hlRef }: { gRef: React.MutableRefObject<G>; onClick: (id: number) => void; fxRef: React.MutableRefObject<FxPool>; speedRef: Speed; hlRef: React.MutableRefObject<Hl> }) {
     const [list, setList] = useState<{ units: Unit[]; look: Look }>({ units: [], look: 'kyst' });
     const sig = useRef('');
     useFrame(() => {
@@ -322,7 +347,7 @@ export function Units({ gRef, onClick, fxRef, speedRef }: { gRef: React.MutableR
     return (
         <>
             {list.units.map((u) => (
-                <UnitView key={`${u.id}.${u.copies}`} u={u} look={list.look} gRef={gRef} onClick={onClick} fxRef={fxRef} speedRef={speedRef} />
+                <UnitView key={`${u.id}.${u.copies}`} u={u} look={list.look} gRef={gRef} onClick={onClick} fxRef={fxRef} speedRef={speedRef} hlRef={hlRef} />
             ))}
         </>
     );
@@ -336,10 +361,11 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
     const bar = useRef<THREE.Mesh>(null);
     const props = useRef<THREE.Group>(null);
     const fly = e.kind === 'estuka' || e.kind === 'ejag';
-    const heavy = e.kind === 'evogn' || e.kind === 'epak';
+    const heavy = e.kind === 'evogn' || e.kind === 'epak' || e.kind === 'ebatt';
     const st = useRef({ yaw: Math.PI, px: e.x, pz: e.z, deadT: -1, fx: 0, fy: 0, fz: 0, vy: 0, roll: 0, lastH: e.heading, bank: 0, phase: e.phase, dust: 0, t: e.id * 1.7 });
     const set = modelsFor(look);
     const topModel = set.enemyTop[e.kind];
+    const model = set.enemy[e.kind];
     useFrame((clock, raw) => {
         if (!grp.current || !body.current) return;
         const dt = Math.min(0.05, raw) * speedRef.current;
@@ -407,6 +433,7 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
             const moving = dx * dx + dz * dz > 1e-7;
             s.px = e.x;
             s.pz = e.z;
+            enemyYaw.set(e.id, s.yaw);
             let aim = s.yaw;
             if (topModel && top.current) {
                 const tgt = g.units.find((u) => !u.dead && !isAir(u.kind) && (u.x - e.x) ** 2 + (u.z - e.z) ** 2 < 12);
@@ -426,8 +453,8 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
         const sc = f * (1 + e.kick * 0.05);
         body.current.scale.set(sc, f, sc);
         const netSees = g.netSeen.has(e.id);
-        // Nedgravd panservern som ingen i nettet ser: bare et blaff.
-        if (e.dug && !netSees) body.current.visible = Math.sin(clock.clock.elapsedTime * 3) > 0.6;
+        // Nedgravd panservern som ingen i nettet ser: bare et blaff. Batteriet synes bare når det skyter.
+        if (e.dug && !netSees) body.current.visible = e.kind === 'ebatt' ? e.kick > 0.25 : Math.sin(clock.clock.elapsedTime * 3) > 0.6;
         if (bar.current) {
             bar.current.visible = e.hp < e.maxHp;
             bar.current.scale.x = Math.max(0.01, e.hp / e.maxHp);
@@ -436,7 +463,7 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
     return (
         <group ref={grp}>
             <group ref={body}>
-                <Figure m={set.enemy[e.kind]} shadow={!fly} />
+                {model && <Figure m={model} shadow={!fly} />}
                 {fly && <Props kind={e.kind} pRef={props} />}
                 {topModel && (
                     <group ref={top}>
@@ -515,7 +542,12 @@ export function Lines({ gRef }: { gRef: React.MutableRefObject<G> }) {
             const tx = air ? u.ax : u.x;
             const tz = air ? u.az : u.z;
             const ty = air && u.mode !== 'bakke' ? u.alt + 0.3 : 0.9;
-            DIR.set(tx - ax, ty - ay, tz - az);
+            // Stafett: linja går fra enheten som sender radioen videre, ikke fra kommandovogna.
+            const via = u.via ? g.units.find((v) => v.id === u.via && !v.dead) : undefined;
+            const sx = via ? via.x : ax;
+            const sy = via ? 0.9 : ay;
+            const sz = via ? via.z : az;
+            DIR.set(tx - sx, ty - sy, tz - sz);
             const len = DIR.length();
             DIR.divideScalar(len);
             Q.setFromUnitVectors(UP, DIR);
@@ -530,7 +562,7 @@ export function Lines({ gRef }: { gRef: React.MutableRefObject<G> }) {
                 const b = Math.min(reach, d + dash * 0.62);
                 if (b <= a) continue;
                 const mid = (a + b) / 2;
-                M.compose(P.set(ax + DIR.x * mid, ay + DIR.y * mid, az + DIR.z * mid), Q, S.set(w, b - a, w));
+                M.compose(P.set(sx + DIR.x * mid, sy + DIR.y * mid, sz + DIR.z * mid), Q, S.set(w, b - a, w));
                 dm.setMatrixAt(n, M);
                 dm.setColorAt(n, COL);
                 n++;

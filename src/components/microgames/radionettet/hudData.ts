@@ -11,6 +11,7 @@ export const ROLE: Record<Kind, string> = {
     lv: 'Skyter ned fly',
     jag: 'Jakter fiendens fly',
     bomb: 'Bomber det nettet ser',
+    fsk: 'Soldater som hopper ut',
 };
 
 const ENAME: Record<EKind, [string, string]> = {
@@ -19,6 +20,7 @@ const ENAME: Record<EKind, [string, string]> = {
     epak: ['panservernkanon', 'panservernkanoner'],
     estuka: ['stupbomber', 'stupbombere'],
     ejag: ['jagerfly', 'jagerfly'],
+    ebatt: ['skjult batteri', 'skjulte batterier'],
 };
 
 export function wavePreview(g: G) {
@@ -53,7 +55,7 @@ linear-gradient(rgba(16,19,12,.25),rgba(16,19,12,.45))}
 .rn-card[data-on="1"]{background:linear-gradient(#f3cf5c,#d9a92c);transform:translateY(-6px)}
 .rn-card[disabled]{opacity:.5;cursor:not-allowed}
 .rn-card .n{font-weight:700;font-size:17px;font-family:'Stardos Stencil',Inter,sans-serif;letter-spacing:.03em}
-.rn-card .r{font-size:13px;margin-top:2px}
+.rn-card .r{font-size:13.5px;margin-top:2px;line-height:1.25}
 .rn-card .p{position:absolute;right:7px;top:5px;font-weight:800;font-size:15px}
 .rn-key{display:inline-block;min-width:20px;padding:0 5px;border:1px solid #2a2f1e;border-bottom-width:3px;border-radius:4px;background:#f6f1e1;font-weight:800;font-size:14px;text-align:center;color:#1f2318;margin-right:5px;font-family:Inter,sans-serif;letter-spacing:0}
 .rn-empty{width:150px;min-height:78px;border:2px dashed rgba(241,234,210,.3);border-radius:3px}

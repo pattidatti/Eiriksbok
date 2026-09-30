@@ -1,4 +1,4 @@
-import { ECONOMY, RADIO, SCORE, UNITS, COMBAT, ORDERS, PLAN_MAX, type EKind, type Kind } from './tuning';
+import { ECONOMY, RADIO, SCORE, UNITS, COMBAT, ORDERS, PLAN_MAX, KORT, KORT_TALL, type EKind, type Kind, type KortId } from './tuning';
 import { SLAG, MAP_W, MAP_D, TOTAL_WAVES, FLYPLASS, type SlagDef, type WaveDef } from './levels';
 import { stepWave } from './combat';
 
@@ -19,6 +19,8 @@ export interface Unit {
     vet: boolean;
     /** I radionettet (linja er oppe). */
     linked: boolean;
+    /** Hvem radioen går gjennom: 0 = kommandovogna, ellers id-en til stafetten. */
+    via: number;
     /** >0 mens linja kobles opp. */
     linking: number;
     cd: number;
@@ -39,6 +41,8 @@ export interface Unit {
 export interface Enemy {
     id: number;
     kind: EKind;
+    /** Veien den følger (indeks i g.roads), og hvor langt den har kommet. */
+    r: number;
     s: number;
     x: number;
     z: number;
@@ -56,6 +60,8 @@ export interface Enemy {
     dead: boolean;
     passed: boolean;
     kick: number;
+    /** Batteriet har skutt: eleven har sett munningsflammen (plassen er kjent). */
+    revealed: boolean;
 }
 
 export interface Fx {
@@ -109,7 +115,12 @@ export interface G {
     netSeen: Set<number>;
     /** Samvirke-teller for «Dette skjedde»: skudd på mål nettet så. */
     netShots: number;
-    road: Road;
+    roads: Road[];
+    /** Ordrekortene eleven har valgt, og de tre som tilbys etter et vunnet slag. */
+    kort: KortId[];
+    kortTilbud: KortId[];
+    /** Batterier eleven har sett skyte i dette slaget (de står samme sted neste bølge). */
+    kjentBatt: [number, number][];
 }
 
 export interface IO {
@@ -149,6 +160,13 @@ export function roadAt(r: Road, s: number): [number, number] {
         rest -= r.seg[i];
     }
     return r.pts[r.pts.length - 1];
+}
+
+/** Korteste avstand til nærmeste vei. */
+export function roadDistAll(g: G, x: number, z: number) {
+    let best = Infinity;
+    for (const r of g.roads) best = Math.min(best, roadDist(r, x, z));
+    return best;
 }
 
 /** Korteste avstand fra et punkt til veien. */
@@ -215,7 +233,10 @@ export function newGame(seed = 1, startSlag = 0): G {
         shake: 0,
         netSeen: new Set(),
         netShots: 0,
-        road: makeRoad(SLAG[startSlag].vei),
+        roads: SLAG[startSlag].veier.map(makeRoad),
+        kort: [],
+        kortTilbud: [],
+        kjentBatt: [],
     };
     startSlag_(g);
     return g;
@@ -223,7 +244,9 @@ export function newGame(seed = 1, startSlag = 0): G {
 
 function startSlag_(g: G) {
     const def = slagDef(g);
-    g.road = makeRoad(def.vei);
+    g.roads = def.veier.map(makeRoad);
+    g.kortTilbud = [];
+    g.kjentBatt = [];
     g.wave = 0;
     g.units = [];
     g.enemies = [];
@@ -239,8 +262,8 @@ function startPlan(g: G, first: boolean) {
     const w = waveDef(g);
     g.phase = 'plan';
     g.planT = 0;
-    if (!first) g.forsyninger += ECONOMY.perBølge;
-    g.sperreild = w.sperreild ? ORDERS.perSlag : 0;
+    if (!first) g.forsyninger += (w.inntekt ?? ECONOMY.perBølge) + (har(g, 'forsyning') ? KORT_TALL.forsyning : 0);
+    g.sperreild = (w.sperreild ? ORDERS.perSlag : 0) + (har(g, 'sperre') ? 1 : 0);
     g.sperreArmed = false;
     g.holding = -1;
     g.shop = w.fast ? [...w.fast] : drawShop(g);
@@ -285,18 +308,31 @@ export function isAir(k: Kind) {
     return !!UNITS[k].fly;
 }
 
-/** Kan kortet eleven holder, legges på ruta (x, z)? Fly legges alltid på flyplassen. */
+export function har(g: G, k: KortId) {
+    return g.kort.includes(k);
+}
+
+/** Ruter der ingenting kan stå: vei, elv og kommandovogna. */
+export function blocked(g: G, cx: number, cz: number) {
+    if (cx < 0 || cz < 0 || cx >= MAP_W || cz >= MAP_D) return true;
+    if (roadDistAll(g, cx, cz) < 0.75) return true;
+    const elv = slagDef(g).elv;
+    if (elv && cx > elv[0] && cx < elv[1]) return true;
+    const [hx, hz] = slagDef(g).hq;
+    return Math.abs(cx - hx) < 0.6 && Math.abs(cz - hz) < 0.6;
+}
+
+/** Kan kortet eleven holder, legges på ruta (x, z)? Bakkeenheter bare der radioen når
+ *  (ringen og stafetten); fallskjermsoldater hvor som helst. Fly alltid på flyplassen. */
 export function canPlace(g: G, x: number, z: number): boolean {
     const k = g.holding >= 0 ? g.shop[g.holding] : null;
     if (!k || isAir(k)) return false;
-    if (x < 0 || z < 0 || x >= MAP_W || z >= MAP_D) return false;
     const cx = Math.floor(x) + 0.5;
     const cz = Math.floor(z) + 0.5;
-    if (roadDist(g.road, cx, cz) < 0.75) return false;
-    const [hx, hz] = slagDef(g).hq;
-    if (Math.abs(cx - hx) < 0.6 && Math.abs(cz - hz) < 0.6) return false;
+    if (blocked(g, cx, cz)) return false;
     const on = unitAt(g, cx, cz);
-    return !on || (on.kind === k && !on.vet);
+    if (on) return on.kind === k && !on.vet;
+    return !!UNITS[k].hopp || reachable(g, cx, cz);
 }
 
 export function unitAt(g: G, x: number, z: number) {
@@ -337,6 +373,7 @@ export function place(g: G, x: number, z: number, io?: IO): boolean {
         copies: 1,
         vet: false,
         linked: false,
+        via: 0,
         linking: 0,
         cd: 0,
         ax: cx,
@@ -375,16 +412,74 @@ export function move(g: G, id: number, x: number, z: number) {
     if (!u || u.dead || isAir(u.kind) || g.phase !== 'plan') return false;
     const cx = Math.floor(x) + 0.5;
     const cz = Math.floor(z) + 0.5;
-    if (x < 0 || z < 0 || x >= MAP_W || z >= MAP_D || roadDist(g.road, cx, cz) < 0.75) return false;
-    if (unitAt(g, cx, cz)) return false;
+    if (blocked(g, cx, cz) || unitAt(g, cx, cz)) return false;
     u.x = u.ax = cx;
     u.z = u.az = cz;
-    if (u.linked && !inRange(g, u)) u.linked = false;
     return true;
 }
 
 export function channels(g: G) {
-    return waveDef(g).kanaler;
+    const k = waveDef(g).kanaler;
+    return k > 0 && har(g, 'kanal') ? k + 1 : k;
+}
+
+/** Radioringen rundt kommandovogna og hvor langt en stafett når (ruter). */
+export function ringOf(g: G) {
+    return slagDef(g).ring ?? RADIO.rekkevidde;
+}
+export function stafettOf(_g: G) {
+    return RADIO.stafett;
+}
+
+const isRelay = (u: Unit, not = -1) => u.linked && !u.dead && !isAir(u.kind) && u.id !== not;
+
+/** Når radioen hit? Innenfor ringen, eller innenfor stafetten fra en bakkeenhet i nettet. */
+export function reachable(g: G, x: number, z: number, not = -1) {
+    const [hx, hz] = slagDef(g).hq;
+    if (Math.hypot(x - hx, z - hz) <= ringOf(g)) return true;
+    const r = stafettOf(g);
+    return g.units.some((u) => isRelay(u, not) && Math.hypot(u.x - x, u.z - z) <= r);
+}
+
+/** Radioen går fra kommandovogna og videre fra enhet til enhet. Ryker et ledd, faller
+ *  de som hang etter det, ut av nettet. Setter også `via` (hvem linja går fra). */
+export function relink(g: G, io?: IO) {
+    const [hx, hz] = slagDef(g).hq;
+    const ring = ringOf(g);
+    const r = stafettOf(g);
+    const on = new Set<number>();
+    const ground = g.units.filter((u) => isRelay(u));
+    for (const u of ground)
+        if (Math.hypot(u.x - hx, u.z - hz) <= ring) {
+            on.add(u.id);
+            u.via = 0;
+        }
+    for (let grew = true; grew; ) {
+        grew = false;
+        for (const u of ground) {
+            if (on.has(u.id)) continue;
+            const p = ground.find((v) => on.has(v.id) && Math.hypot(v.x - u.x, v.z - u.z) <= r);
+            if (p) {
+                on.add(u.id);
+                u.via = p.id;
+                grew = true;
+            }
+        }
+    }
+    for (const u of ground)
+        if (!on.has(u.id)) {
+            u.linked = false;
+            g.valg += 1;
+            io?.event('brutt', u.x, u.z);
+        }
+    for (const u of g.units) {
+        if (isAir(u.kind)) u.via = 0;
+        else if (u.linking > 0) {
+            // Linja som kobles opp, går fra nærmeste stafett når enheten står utenfor ringen.
+            const p = Math.hypot(u.x - hx, u.z - hz) <= ring ? undefined : ground.find((v) => on.has(v.id) && Math.hypot(v.x - u.x, v.z - u.z) <= r);
+            u.via = p ? p.id : 0;
+        }
+    }
 }
 
 export function unitsCanLink(g: G) {
@@ -396,9 +491,7 @@ export function usedChannels(g: G) {
 }
 
 export function inRange(g: G, u: Unit) {
-    if (isAir(u.kind)) return true;
-    const [hx, hz] = slagDef(g).hq;
-    return Math.hypot(u.x - hx, u.z - hz) <= RADIO.rekkevidde;
+    return isAir(u.kind) || reachable(g, u.x, u.z, u.id);
 }
 
 /** Hvorfor enheten ikke kan kobles nå (null = den kan). */
@@ -454,9 +547,10 @@ export function sperre(g: G, x: number, z: number, io?: IO) {
     return true;
 }
 
-/** Neste slag etter en seier. */
-export function nextSlag(g: G) {
+/** Neste slag etter en seier, med ordrekortet eleven valgte. */
+export function nextSlag(g: G, kort?: KortId) {
     if (g.phase !== 'slagVunnet') return false;
+    if (kort && g.kortTilbud.includes(kort) && !har(g, kort)) g.kort.push(kort);
     g.slag += 1;
     startSlag_(g);
     return true;
@@ -471,9 +565,10 @@ export function update(g: G, dt: number, io: IO) {
             u.linking -= dt;
             if (u.linking <= 0) {
                 u.linking = 0;
-                u.linked = !u.dead;
+                u.linked = !u.dead && inRange(g, u);
             }
         }
+    relink(g, io);
     if (g.phase === 'plan') {
         g.planT += dt;
         if (g.planT >= PLAN_MAX) startWave(g, io);
@@ -486,7 +581,8 @@ export function update(g: G, dt: number, io: IO) {
     if (g.hqHp <= 0) return lose(g, 'hq', io);
     const w = waveDef(g);
     const allSpawned = w.groups.every((gr, i) => g.spawned[i] >= gr.n);
-    if (allSpawned && g.enemies.every((e) => e.dead || e.passed)) waveWon(g, io);
+    // Batteriene står til resten er slått: da trekker de seg tilbake.
+    if (allSpawned && g.enemies.every((e) => e.dead || e.passed || e.kind === 'ebatt')) waveWon(g, io);
 }
 
 function waveWon(g: G, io: IO) {
@@ -506,6 +602,13 @@ function waveWon(g: G, io: IO) {
     io.lesson(def.id, def.lærdom);
     io.sfx('seier');
     g.phase = g.slag + 1 < SLAG.length ? 'slagVunnet' : 'vunnet';
+    // Tre ordrekort å velge mellom før neste slag (de eleven ikke har).
+    const rest = (Object.keys(KORT) as KortId[]).filter((k) => !har(g, k));
+    for (let i = rest.length - 1; i > 0; i--) {
+        const j = Math.floor(g.rng() * (i + 1));
+        [rest[i], rest[j]] = [rest[j], rest[i]];
+    }
+    g.kortTilbud = rest.slice(0, 3);
 }
 
 function lose(g: G, cause: Cause, io: IO) {

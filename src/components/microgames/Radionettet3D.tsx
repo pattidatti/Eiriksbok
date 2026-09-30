@@ -17,11 +17,14 @@ import {
     newGame, update, pick, place, reroll, toggleLink, linkBlock, startWave, sperre, nextSlag, unitAt, isAir,
     usedChannels, waveDef, slagDef, CAUSE_TEXT, finalScore, type G, type IO,
 } from './radionettet/game';
+import { KORT, type KortId } from './radionettet/tuning';
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
 import { SLAG, TOTAL_WAVES } from './radionettet/levels';
 import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, type Proj } from './radionettet/world';
-import { Markers } from './radionettet/markers';
+import type { Hl } from './radionettet/hl';
+import { Soldiers } from './radionettet/soldiers';
+import { Markers, Highlight } from './radionettet/markers';
 import { Board } from './radionettet/terrain';
 import { Effects } from './radionettet/effects';
 import { createFx } from './radionettet/fxPool';
@@ -36,7 +39,7 @@ const GAME_ID = 'radionettet';
 
 const LINK_NO = {
     ingenRadio: 'Radioen kommer i neste bølge',
-    rekkevidde: 'Utenfor ringen: radioen når ikke hit',
+    rekkevidde: 'Radioen når ikke hit. Koble en enhet nærmere',
     fullt: 'Alle kanaler brukt. Klikk en koblet enhet',
 };
 const DEV_SPEED = playtestSpeed();
@@ -67,9 +70,11 @@ const RANKS: [number, string][] = [
     [0, 'Menig'],
     [2, 'Korporal'],
     [4, 'Sersjant'],
-    [6, 'Løytnant'],
-    [8, 'Kaptein'],
-    [9, 'Major'],
+    [7, 'Løytnant'],
+    [10, 'Kaptein'],
+    [13, 'Major'],
+    [16, 'Oberst'],
+    [18, 'General'],
 ];
 
 type Mode = 'menu' | 'play' | 'paused' | 'slag' | 'over';
@@ -123,7 +128,7 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
     const at = (x: number, z: number, y = 0.6) => () => proj.current?.(x, y, z) ?? null;
     const def = slagDef(g);
     if (g.phase === 'plan' && g.slag === 0 && g.wave === 0) {
-        const start = def.vei[0];
+        const start = def.veier[0][0];
         text.point('fiende', 'Fienden kommer inn her', at(start[0] - 1.2, start[1]), { tone: 'fare', until: () => g.phase !== 'plan', seconds: 60 });
         if (g.units.length === 0 && g.holding < 0) text.point('kort', 'Klikk et kort', domAnchor(stage, 'kort0'), { until: () => g.holding >= 0 || g.units.length > 0, seconds: 60 });
         if (g.holding >= 0) text.point('rute', 'Klikk en gul rute ved veien', at(7.5, 4.5), { until: () => g.holding < 0, seconds: 60 });
@@ -132,6 +137,18 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
     if (g.phase === 'plan' && waveDef(g).kanaler > 0 && usedChannels(g) === 0 && g.units.length) {
         const u = g.units.find((v) => !v.dead && !isAir(v.kind));
         if (u) text.point('koble', 'Klikk for å koble radio', at(u.x, u.z, 0.9), { until: () => usedChannels(g) > 0, seconds: 60 });
+    }
+    // En vei som tas i bruk for første gang i slaget: vis hvor fienden kommer inn.
+    if (g.phase === 'plan')
+        for (const r of new Set(waveDef(g).groups.map((gr) => gr.vei ?? 0))) {
+            if (r === 0 || def.waves.slice(0, g.wave).some((w) => w.groups.some((gr) => (gr.vei ?? 0) === r))) continue;
+            const [x, z] = def.veier[r][0];
+            text.point(`vei${g.slag}.${r}`, 'Fienden kommer også her', at(Math.min(15.2, Math.max(0.8, x)), Math.min(9.2, Math.max(0.6, z))), { tone: 'fare', once: true, until: () => g.phase !== 'plan', seconds: 30 });
+        }
+    // Stafetten: første gang eleven holder et kort og har en bakkeenhet i nettet (fra El Alamein).
+    if (g.phase === 'plan' && g.slag >= 1 && g.holding >= 0) {
+        const u = g.units.find((v) => v.linked && !v.dead && !isAir(v.kind));
+        if (u) text.point('stafett', 'Enheter i nettet sender radioen videre', at(u.x, u.z, 0.9), { once: true, until: () => g.holding < 0, seconds: 12 });
     }
     if (g.phase === 'wave') {
         for (const e of g.enemies)
@@ -172,6 +189,20 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     const projRef = useRef<Proj | null>(null);
     const stageRef = useRef<HTMLDivElement>(null);
     const pointer = useRef<[number, number]>([-5, -5]);
+    const hlRef = useRef<Hl>({ hover: -1, pick: -1, pickT: 0 });
+    const flashUnit = (id: number) => {
+        hlRef.current.pick = id;
+        hlRef.current.pickT = performance.now() / 1000;
+    };
+    /** Den nyeste enheten (den som nettopp ble plassert eller slått sammen) får markeringen. */
+    const placeAndMark = (g: G, x: number, z: number) => {
+        const before = g.units.map((u) => `${u.id}.${u.copies}`).join();
+        place(g, x, z, io);
+        if (g.units.map((u) => `${u.id}.${u.copies}`).join() === before) return;
+        const last = g.units[g.units.length - 1];
+        const u = last && isAir(last.kind) ? last : unitAt(g, Math.floor(x) + 0.5, Math.floor(z) + 0.5);
+        if (u) flashUnit(u.id);
+    };
     const speedRef = useRef(0);
     const [fxPool] = useState(createFx);
     const fxRef = useRef(fxPool);
@@ -187,6 +218,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         kills: number;
         tap: number;
         cause: G['cause'];
+        kort: KortId[];
     } | null>(null);
 
     const at = (x: number, z: number, y = 0.8) => () => projRef.current?.(x, y, z) ?? null;
@@ -197,7 +229,14 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         event: (name, x, z) => {
             if (name.startsWith('drept:') || name.startsWith('flyNed:') || name === 'bomber') sfx('smell');
             else if (name === 'salve') sfx('salve');
-            else if (name === 'kutt') {
+            else if (name === 'batteri') {
+                // Munningsflammen avslører batteriet et øyeblikk.
+                fxPool.flash(x + 0.4, 0.6, z, 0.5);
+                for (let i = 0; i < 3; i++) fxPool.puff('røyk', x, 0.4, z, { r: 0.22, grow: 2.6, life: 1.8, up: 0.4, spread: 0.8 });
+                sfx('salve');
+                const g = gRef.current;
+                text.point('batt', g.sperreild > 0 ? 'Skjult batteri! Sperreild her (S)' : 'Skjult batteri! Finn det med infanteri', at(x, z), { tone: 'fare', once: true, seconds: 7 });
+            } else if (name === 'kutt' || name === 'brutt') {
                 sfx('kutt');
                 buzz(40);
                 const u = gRef.current.units.find((v) => Math.abs(v.x - x) < 0.1 && Math.abs(v.z - z) < 0.1);
@@ -243,7 +282,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             completed.current = true;
             onComplete({ score: Math.min(1, finalScore(g) / 3000), completed: true });
         }
-        setResult({ won, score: finalScore(g), lessons: text.lessons(3), slag: g.slag, stjerner: g.stjerner[g.slag] ?? 0, kills: g.kills, tap: g.tap, cause: g.cause });
+        setResult({ won, score: finalScore(g), lessons: text.lessons(3), slag: g.slag, stjerner: g.stjerner[g.slag] ?? 0, kills: g.kills, tap: g.tap, cause: g.cause, kort: [...g.kortTilbud] });
     };
 
     // Fem ganger i sekundet: faseskifter, lærings-øyeblikk og lapper.
@@ -290,7 +329,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             return;
         }
         if (g.holding >= 0) {
-            place(g, x, z, io);
+            placeAndMark(g, x, z);
             return;
         }
         const u = unitAt(g, Math.floor(x) + 0.5, Math.floor(z) + 0.5);
@@ -303,11 +342,12 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         if (modeRef.current !== 'play') return;
         if (g.holding >= 0) {
             const u = g.units.find((v) => v.id === id);
-            if (u && !isAir(u.kind)) place(g, u.x, u.z, io);
-            else place(g, 0, 0, io);
+            if (u && !isAir(u.kind)) placeAndMark(g, u.x, u.z);
+            else placeAndMark(g, 0, 0);
             return;
         }
         synth.unlock();
+        flashUnit(id);
         if (toggleLink(g, id, io)) return;
         // Si fra hvorfor klikket ikke koblet - ellers ser det ut som ingenting skjer.
         const u = g.units.find((v) => v.id === id);
@@ -324,7 +364,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             if (!pick(g, i)) return;
             const k = g.shop[i];
             // Fly går rett til flyplassen.
-            if (k && isAir(k) && g.holding === i) place(g, 0, 0, io);
+            if (k && isAir(k) && g.holding === i) placeAndMark(g, 0, 0);
         },
         reroll: () => reroll(gRef.current),
         wave: () => startWave(gRef.current, io),
@@ -369,7 +409,8 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     usePlaytest(GAME_ID, () => ({
         maksSekunder: TOTAL_WAVES * 110,
         snapshot: () => (modeRef.current === 'menu' ? { ...snapshotOf(gRef.current), fase: 'meny' } : snapshotOf(gRef.current)),
-        start: () => begin(0),
+        // Variant = slagnummeret, så selvspill og skjermbilder kan starte på El Alamein eller Kursk.
+        start: (v) => begin(Math.min(SLAG.length - 1, Number(v) || 0)),
         bots: Object.fromEntries(
             Object.entries(BOTS).map(([name, b]) => [
                 name,
@@ -398,7 +439,9 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                         <PlaceHints gRef={gRef} />
                         <Ghost gRef={gRef} pointer={pointer} />
                         <Markers gRef={gRef} />
-                        <Units gRef={gRef} onClick={onUnit} fxRef={fxRef} speedRef={speedRef} />
+                        <Highlight gRef={gRef} hlRef={hlRef} />
+                        <Units gRef={gRef} onClick={onUnit} fxRef={fxRef} speedRef={speedRef} hlRef={hlRef} />
+                        <Soldiers gRef={gRef} speedRef={speedRef} hlRef={hlRef} />
                         <Enemies gRef={gRef} fxRef={fxRef} speedRef={speedRef} onDive={() => sfx('stup')} />
                         <Lines gRef={gRef} />
                         <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} />
@@ -449,7 +492,21 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                             <p style={{ fontSize: 15, margin: '10px 0' }}>{SLAG[result.slag].seier}</p>
                             <div style={{ fontSize: 30, color: '#a67c00' }}>{'★'.repeat(result.stjerner)}{'☆'.repeat(3 - result.stjerner)}</div>
                             <ArcadeLessons items={result.lessons} />
-                            <ArcadeBigButton onClick={() => nextSlag(gRef.current)}>Neste slag: {SLAG[result.slag + 1]?.sted.split(',')[0]}</ArcadeBigButton>
+                            {result.kort.length > 0 ? (
+                                <>
+                                    <div style={{ fontSize: 15, fontWeight: 800, margin: '8px 0 4px' }}>Velg en ordre før {SLAG[result.slag + 1]?.sted.split(',')[0]}:</div>
+                                    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${result.kort.length}, 1fr)`, gap: 8 }}>
+                                        {result.kort.map((k) => (
+                                            <button key={k} className="rn-card" style={{ width: 'auto' }} onClick={() => nextSlag(gRef.current, k)}>
+                                                <div className="n">{KORT[k].tittel}</div>
+                                                <div className="r">{KORT[k].tekst}</div>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : (
+                                <ArcadeBigButton onClick={() => nextSlag(gRef.current)}>Neste slag: {SLAG[result.slag + 1]?.sted.split(',')[0]}</ArcadeBigButton>
+                            )}
                         </ArcadeScreen>
                     )}
 

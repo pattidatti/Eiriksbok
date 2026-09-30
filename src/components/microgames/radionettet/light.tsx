@@ -5,8 +5,9 @@ import { MAP_D, MAP_W } from './levels';
 import type { Look } from './models';
 
 // Lyset per slag (kunstbriefen punkt 4): Dunkerque overskyet og kjølig, El Alamein hard
-// hvit middagssol, Kursk varm ettermiddag med lange skygger. Sola kaster ekte skygger over
-// hele kartet; kitet bestemmer skyggekartets størrelse etter kvalitetsnivået.
+// hvit middagssol, Kursk varm ettermiddag med lange skygger, Bastogne blek vintersol.
+// Sola kaster ekte skygger over hele kartet; kitet bestemmer skyggekartets størrelse
+// etter kvalitetsnivået.
 
 interface Mood {
     sun: [number, number, number];
@@ -23,6 +24,8 @@ const MOOD: Record<Look, Mood> = {
     kyst: { sun: [-7, 14, -9], sunColor: '#e4e9ee', sunI: 1.9, sky: '#c4ccd2', ground: '#4c5336', hemiI: 1.3, env: '#dde3e8', envI: 0.5 },
     ørken: { sun: [-5, 16, -7], sunColor: '#fff3dc', sunI: 2.5, sky: '#dfe7ee', ground: '#9c8460', hemiI: 0.75, env: '#fff6e8', envI: 0.6 },
     steppe: { sun: [-11, 10, -6], sunColor: '#ffd49c', sunI: 3, sky: '#e9dcc0', ground: '#5d5236', hemiI: 0.9, env: '#ffe6c4', envI: 0.55 },
+    // Ardennene i desember: lav, blek sol gjennom skyer, blått lys fra snøen.
+    vinter: { sun: [-9, 11, -8], sunColor: '#e8eef6', sunI: 1.5, sky: '#cdd7e0', ground: '#9aa3aa', hemiI: 1.25, env: '#e6edf3', envI: 0.5 },
 };
 
 const CX = MAP_W / 2;
