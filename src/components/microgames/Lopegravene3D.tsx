@@ -49,6 +49,8 @@ import {
     CHALLENGES,
     DOCTRINES,
     TOWER_NAME,
+    MASTER_TEXT,
+    MAX_LEVEL,
     ENEMY_NAME,
     WALL_MAX,
     FORT_ROW,
@@ -74,7 +76,6 @@ import {
     Gabions,
     Fort,
     Backdrop,
-    DigPreview,
     Towers,
     Enemies,
     Shots,
@@ -247,106 +248,52 @@ const BEAT_MS = 4200;
 const CAM = new THREE.Vector3();
 const LOOK = new THREE.Vector3();
 const TMP = new THREE.Vector3();
-const HOME_CAM = new THREE.Vector3(0, 9.6, -6.4);
-const HOME_LOOK = new THREE.Vector3(0, 0, 7.4);
+const HOME_CAM = new THREE.Vector3(0, 12.8, -4.6);
+const HOME_LOOK = new THREE.Vector3(0, 0, 5.7);
 
 type Proj = (p: THREE.Vector3) => { x: number; y: number; behind: boolean };
 
 interface CamState {
-    /** 0-1: hvor langt kameraet har dykket mot `focus`. */
+    /** 0-1: hvor langt kameraet har dykket mot `focus` (bare når kongen faller). */
     dive: number;
     diveT: number;
     diveMax: number;
     focus: THREE.Vector3;
-    /** Trekker seg ut etter en slått bølge. */
-    pull: number;
-    /** Sekunder kameraet følger kongen. */
-    follow: number;
     /** Sakte film (kongen kommer, kongen faller). */
     slowT: number;
-    lastDive: number;
     time: number;
-    /** 0-1: hvor nær kameraet har gått inn mot kampen (bare om natta). */
-    zoom: number;
-    /** Der kampen står nå (glattet): de som har kommet lengst, teller mest. */
-    act: THREE.Vector3;
 }
 
-const ACT = new THREE.Vector3();
 const KARL_P = new THREE.Vector3();
-/** Hvor langt inn kameraet går om natta: figurene blir store nok til å se frakkene. */
-const ZOOM_NIGHT = 0.33;
 
-function stepCamera(c: CamState, g: G, vis: Vis, d: number, aspect: number, cam: THREE.PerspectiveCamera) {
+/**
+ * Kameraet står fast over hele slagmarka, som i et vanlig tårnforsvar: eleven skal alltid
+ * nå vollen og marka for å bygge. Det rister når det smeller, og dykker bare ned til kongen
+ * når han faller og runden er over.
+ */
+function stepCamera(c: CamState, g: G, d: number, aspect: number, cam: THREE.PerspectiveCamera) {
     c.time += d;
     if (c.diveT > 0) c.diveT -= d;
     if (c.slowT > 0) c.slowT -= d;
-    if (c.follow > 0) {
-        c.follow -= d;
-        const k = g.enemies.find((e) => e.kind === 'karl' && !e.dead);
-        if (k) {
-            const [wx, wz] = toWorld(k.x, k.z);
-            c.focus.set(wx, 0.3, wz);
-            c.diveT = Math.max(c.diveT, 0.1);
-            c.diveMax = 0.62;
-        }
-    }
     const want = c.diveT > 0 ? c.diveMax : 0;
     c.dive += (want - c.dive) * (1 - Math.exp(-d * (want > c.dive ? 4 : 1.6)));
-    c.pull = Math.max(0, c.pull - d * 0.45);
-    // Om natta følger kameraet kampen: det går nærmere og ser dit svenskene er kommet
-    // lengst. I byggepausen trekker det seg ut, så hele marka synes.
-    let sx = 0;
-    let sz = 0;
-    let sw = 0;
-    for (const e of g.enemies) {
-        if (e.dead || e.leaked) continue;
-        const r = g.routes[e.route];
-        const k = r ? e.d / r.len : 0;
-        const w = 0.2 + k * k * 3;
-        sx += e.x * w;
-        sz += e.z * w;
-        sw += w;
-    }
-    const night = g.phase === 'bolge' && sw > 0 && !g.ended;
-    if (sw > 0) {
-        const [wx, wz] = toWorld(sx / sw, sz / sw);
-        ACT.set(Math.max(-4.5, Math.min(4.5, wx * 0.7)), 0, Math.max(3.2, Math.min(8.5, wz)));
-        c.act.lerp(ACT, 1 - Math.exp(-d * 0.9));
-    }
-    const zw = night ? ZOOM_NIGHT : 0;
-    c.zoom += (zw - c.zoom) * (1 - Math.exp(-d * (zw > c.zoom ? 0.9 : 1.4)));
     // Smalere vindu (spalten i artikkelen): kameraet trekker seg bakover så hele marka synes.
     const far = aspect < 1.55 ? Math.min(1.35, 1.55 / aspect) : 1;
-    const zk = Math.min(1, c.zoom / ZOOM_NIGHT);
     LOOK.copy(HOME_LOOK);
-    LOOK.x += (c.act.x - LOOK.x) * zk;
-    LOOK.z += (c.act.z - LOOK.z) * zk;
-    // Lavere og nærmere: vektoren fra blikkpunktet til kameraet krymper, og vippes litt ned.
-    CAM.copy(HOME_CAM).sub(HOME_LOOK).multiplyScalar(far * (1 - c.zoom));
-    CAM.y *= 1 - c.zoom * 0.35;
-    CAM.add(LOOK);
-    // Liv i ro: kameraet puster litt.
-    CAM.x += Math.sin(c.time * 0.13) * 0.35;
-    CAM.y += Math.sin(c.time * 0.21) * 0.12;
-    const pk = Math.sin(Math.min(1, c.pull) * Math.PI);
-    CAM.y += pk * 2.4;
-    CAM.z -= pk * 2;
-    LOOK.z += pk * 1.2;
+    CAM.copy(HOME_CAM).sub(HOME_LOOK).multiplyScalar(far).add(LOOK);
     TMP.set(c.focus.x * 0.85, c.focus.y + 3.2, c.focus.z - 4.2);
     CAM.lerp(TMP, c.dive);
     LOOK.lerp(c.focus, c.dive * 0.9);
     const tr = g.shake * g.shake;
     let roll = 0;
     if (tr > 0) {
-        CAM.x += (Math.random() - 0.5) * tr * 0.7;
-        CAM.y += (Math.random() - 0.5) * tr * 0.5;
-        roll = (Math.random() - 0.5) * tr * 0.05;
+        CAM.x += (Math.random() - 0.5) * tr * 0.5;
+        CAM.y += (Math.random() - 0.5) * tr * 0.35;
+        roll = (Math.random() - 0.5) * tr * 0.04;
     }
     cam.position.copy(CAM);
     cam.lookAt(LOOK);
     if (roll) cam.rotateZ(roll);
-    void vis;
 }
 
 function Loop({
@@ -384,7 +331,7 @@ function Loop({
         stepFx(g, d);
         vis.step(g, d * (DEV_SPEED > 1 ? 2 : 1));
         const cam = state.camera as THREE.PerspectiveCamera;
-        stepCamera(c, g, vis, d, state.size.width / Math.max(1, state.size.height), cam);
+        stepCamera(c, g, d, state.size.width / Math.max(1, state.size.height), cam);
         const vec = v.current;
         projRef.current = (p: THREE.Vector3) => {
             vec.copy(p).project(cam);
@@ -537,8 +484,8 @@ function whyNot(g: G, k: TowerKind, x: number, z: number) {
     if (c && CELL_NAME[c]) return CELL_NAME[c];
     if (towerAt(g, x, z)) return 'Det står et tårn her.';
     if (!allowed(g, k)) return 'Ikke lov i denne utfordringen.';
-    if (k === 'mine') return 'Miner legges bare i grøfta.';
-    return 'Ikke i grøfta - legg en mine der.';
+    if (k === 'mine') return 'Miner legges bare på veien.';
+    return 'Ikke på veien - legg en mine der.';
 }
 
 export default function Lopegravene3D({ onComplete }: MicroGameProps) {
@@ -567,13 +514,8 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
         diveT: 0,
         diveMax: 0.6,
         focus: new THREE.Vector3(0, 0, 3),
-        pull: 0,
-        follow: 0,
         slowT: 0,
-        lastDive: -9,
         time: 0,
-        zoom: 0,
-        act: new THREE.Vector3(0, 0, 7),
     });
     const hoverRef = useRef({ x: 0, z: 0, on: false, ok: false });
     const [, setBoardV] = useState(0);
@@ -775,30 +717,16 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
     const onEvent = (e: GameEvent) => {
         const c = camRef.current;
         const g = gRef.current;
+        // Kameraet står stille gjennom hele runden (eleven skal alltid nå å bygge).
         if (e.type === 'mur-faller') {
-            const [wx, wz] = toWorld(e.x, e.z);
+            const [wx] = toWorld(e.x, e.z);
             vis.wallHit(g, wx);
-            // Kameraet dykker når muren faller - men ikke for hver mann som slipper gjennom.
-            if (c.time - c.lastDive > 3.5 || g.wall < 8) {
-                c.lastDive = c.time;
-                c.focus.set(wx, 0.6, Math.max(0.6, wz));
-                c.diveT = 0.7;
-                // Kameraet står allerede nærmere om natta: et kort, lite dykk holder.
-                c.diveMax = 0.3;
-                buzz(60);
-            }
+            buzz(60);
         } else if (e.type === 'tarn-knust') {
-            const [wx, wz] = toWorld(e.x, e.z);
-            c.focus.set(wx, 0.3, wz);
-            c.diveT = 0.9;
-            c.diveMax = 0.3;
-            c.lastDive = c.time;
             buzz(80);
         } else if (e.type === 'bolge-slått') {
-            c.pull = 1;
             synth.arp(523, [0, 4, 7], 0.08, 0.06);
         } else if (e.type === 'karl-inn') {
-            c.follow = 4.5;
             c.slowT = 2.4;
             synth.tone(98, 98, 1.6, 'sawtooth', 0.05);
             synth.tone(147, 147, 1.6, 'sawtooth', 0.04, 0.4);
@@ -806,7 +734,6 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
         } else if (e.type === 'karl-faller') {
             const [wx, wz] = toWorld(e.x, e.z);
             c.focus.set(wx, 0.2, wz);
-            c.follow = 0;
             c.diveT = 3;
             c.diveMax = 0.72;
             c.slowT = 2.2;
@@ -916,12 +843,9 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
         const q = quipState.current;
         const now = performance.now() / 1000;
         if (now - q.last < 7) return;
-        const dig = g.dig;
-        if (dig && !dig.done && Math.random() < 0.02) {
-            say(pickQuip(QUIPS.graver), () => {
-                const h = g.dig?.cells[g.dig.cells.length - 1];
-                return h ? [h[0], 1.2, h[1]] : null;
-            });
+        const graver = g.enemies.find((o) => o.kind === 'graver' && !o.dead && !o.leaked);
+        if (graver && Math.random() < 0.02) {
+            say(pickQuip(QUIPS.graver), enemyAt(graver));
             return;
         }
         if (g.phase !== 'bolge') return;
@@ -1048,7 +972,7 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
             const kl = hud.karl.current;
             if (kl) {
                 const kp = modeRef.current === 'play' ? karlSpot(g, vis, KARL_P) : null;
-                const r = kp ? projRef.current?.(KARL_P.setY(kp.y + 1.75)) : null;
+                const r = kp ? projRef.current?.(KARL_P.setY(kp.y + 1.2)) : null;
                 const cls = r && !r.behind ? 'lg-karl on' : 'lg-karl';
                 if (kl.className !== cls) kl.className = cls;
                 if (r && !r.behind) {
@@ -1105,11 +1029,7 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
         const c = camRef.current;
         c.dive = 0;
         c.diveT = 0;
-        c.follow = 0;
         c.slowT = 0;
-        c.pull = 0;
-        c.zoom = 0;
-        c.act.set(0, 0, 7);
         hudState.current = { gold: -1, wall: WALL_MAX, phase: '', score: -1, wave: -1, timer: '' };
         if (hud.wall.current) for (const k of Array.from(hud.wall.current.children)) k.className = '';
         if (hud.wallNum.current) hud.wallNum.current.textContent = `${WALL_MAX}/${WALL_MAX}`;
@@ -1330,7 +1250,7 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
                         onContextMenu={(e) => e.preventDefault()}
                     >
                         <MicroCanvas
-                            camera={{ position: [0, 9.6, -6.4], fov: 48 }}
+                            camera={{ position: [0, 12.8, -4.6], fov: 48 }}
                             background={PAL.fog}
                             fog={{ color: PAL.fog, near: 16, far: 38 }}
                             builtInLights={false}
@@ -1353,7 +1273,6 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
                             <Gabions gRef={gRef} vis={vis} />
                             <Fort gRef={gRef} vis={vis} />
                             <Backdrop vis={vis} />
-                            <DigPreview gRef={gRef} vis={vis} />
                             <Towers gRef={gRef} vis={vis} />
                             <Enemies gRef={gRef} vis={vis} />
                             <Shots gRef={gRef} vis={vis} />
@@ -1544,20 +1463,22 @@ export default function Lopegravene3D({ onComplete }: MicroGameProps) {
                                     </div>
                                     <button
                                         className="lg-opt"
-                                        disabled={selTower.level >= 2 || g.gold < upgradeCost(selTower)}
+                                        disabled={selTower.level >= MAX_LEVEL || g.gold < upgradeCost(selTower)}
                                         onClick={doUpgrade}
                                     >
                                         <span style={{ flex: 1 }}>
                                             <b>U. Oppgrader</b>
                                             <small>
-                                                {selTower.level >= 2
-                                                    ? 'Fullt utbygd.'
-                                                    : `Blir: ${TOWER_LEVELS[selTower.kind][selTower.level + 1]}`}
+                                                {selTower.level >= MAX_LEVEL
+                                                    ? `Mesterverk. ${MASTER_TEXT[selTower.kind]}`
+                                                    : selTower.level + 1 === MAX_LEVEL
+                                                      ? `Mesterverk: ${MASTER_TEXT[selTower.kind]}`
+                                                      : `Blir: ${TOWER_LEVELS[selTower.kind][selTower.level + 1]}`}
                                             </small>
                                         </span>
                                         <span className="lg-cost">
-                                            {selTower.level >= 2 ? 'maks' : upgradeCost(selTower)}
-                                            {selTower.level < 2 && <span className="lg-coin" />}
+                                            {selTower.level >= MAX_LEVEL ? 'maks' : upgradeCost(selTower)}
+                                            {selTower.level < MAX_LEVEL && <span className="lg-coin" />}
                                         </span>
                                     </button>
                                     <button className="lg-opt" onClick={doSell}>

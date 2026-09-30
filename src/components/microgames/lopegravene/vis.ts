@@ -523,7 +523,7 @@ export class Vis {
             ground: !blast && style !== 2,
             roll: e.kind === 'rytter' || e.kind === 'beleiring' ? (Math.random() < 0.5 ? -1 : 1) : 0,
         };
-        if (this.corpses.length >= 150) {
+        if (this.corpses.length >= 260) {
             let j = 0;
             for (let k = 1; k < this.corpses.length; k++) if (this.corpses[k].age > this.corpses[j].age) j = k;
             this.corpses[j] = c;
@@ -743,10 +743,10 @@ export class Vis {
                 this.onDeath(e);
             }
         }
-        if (this.enemies.size > 400)
+        if (this.enemies.size > 700)
             for (const id of this.enemies.keys()) {
                 if (!g.enemies.some((e) => e.id === id)) this.enemies.delete(id);
-                if (this.enemies.size < 250) break;
+                if (this.enemies.size < 450) break;
             }
 
         // Tårnene: rekyl, ferdig bygd, knust.

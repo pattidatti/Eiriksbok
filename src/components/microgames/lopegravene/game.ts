@@ -2,9 +2,11 @@
 //
 // Spillreglene (ren TS, ingen React - samme kode i nettleseren og i simuleringen).
 //
-// Karl XIIs hær graver sikksakk-løpegraver mot festningen. Soldatene går i grøftene
-// og stormer til slutt over den åpne skråningen (glacis) mot muren. Du bygger forsvar
-// på vollene og i terrenget: musketerer, kanoner, mortere og kontraminer.
+// Karl XIIs hær har gravd en lang sikksakk-løpegrav mot festningen. Hele veien ligger
+// der fra første natt, som i et vanlig tårnforsvar: soldatene går i grøfta, krysser en
+// åpen slette et sted på veien, og stormer til slutt over den åpne skråningen (glacis)
+// mot muren. Du bygger forsvar langs veien: musketerer, kanoner, mortere og kontraminer,
+// og bygger dem ut i fire nivåer til mesterverk.
 //
 // Fagkjernen er tre regler:
 //   1. Grøfta gir dekning. Flat ild (musketter, kanoner) treffer dårlig ned i en
@@ -16,8 +18,8 @@
 //      gravere i skanskurv er nesten usårlige for flat ild, og stormkolonner
 //      trenger bomber med sprut.
 //
-// Koordinater: rutenett COLS x ROWS. z = 0 er inne i festningen (toppen av skjermen),
-// z = ROWS - 1 er den svenske leiren. Rad 1 er vollene, rad 2-3 er glacis.
+// Koordinater: rutenett COLS x ROWS. z = 0 er muren (nærmest kameraet), z = ROWS - 1
+// er den svenske leiren. Rad 1 er vollene, rad 2-4 er glacis.
 
 export const COLS = 18;
 export const ROWS = 14;
@@ -28,10 +30,8 @@ export const TRENCH_TOP = 5;
 
 export const WALL_MAX = 25;
 export const START_GOLD = 230;
-/** Gravehastighet for nye løpegraver (ruter per sekund). */
-export const DIG_RATE = 0.75;
 /** Drap som trengs for å lade «Til murene!». */
-export const RALLY_KILLS = 28;
+export const RALLY_KILLS = 70;
 export const RALLY_SECONDS = 6;
 export const BUILD_SECONDS = 6;
 export const FIRST_BUILD = 10;
@@ -41,7 +41,8 @@ export const RUN_SECONDS = 250;
 export const WAVE_TAIL = 8;
 export const SELL_BACK = 0.7;
 
-export type Cell = 'mark' | 'grav' | 'glacis' | 'voll' | 'mur' | 'fjell';
+/** grav = løpegrav (dekning), vei = åpen slette på veien (ingen dekning). */
+export type Cell = 'mark' | 'grav' | 'vei' | 'glacis' | 'voll' | 'mur' | 'fjell';
 export type TowerKind = 'musketer' | 'kanon' | 'morter' | 'mine';
 export type EnemyKind =
     | 'karoliner'
@@ -82,46 +83,51 @@ export type CardId =
     | 'kruttmester'
     | 'bombarder';
 
+export type Level = 0 | 1 | 2 | 3;
+/** Høyeste nivå: mesterverket. */
+export const MAX_LEVEL = 3;
+type Four = [number, number, number, number];
+
 export interface TowerStats {
-    cost: [number, number, number]; // bygg, nivå 2, nivå 3
-    range: [number, number, number];
-    reload: [number, number, number];
-    dmg: [number, number, number];
-    splash: [number, number, number];
+    cost: Four; // bygg, nivå 2, nivå 3, mesterverk
+    range: Four;
+    reload: Four;
+    dmg: Four;
+    splash: Four;
     hp: number;
 }
 
 export const TOWERS: Record<TowerKind, TowerStats> = {
     musketer: {
-        cost: [40, 40, 70],
-        range: [2.6, 2.8, 3.1],
-        reload: [0.9, 0.8, 0.7],
-        dmg: [10, 14, 19],
-        splash: [0, 0, 0],
+        cost: [40, 40, 70, 170],
+        range: [2.6, 2.8, 3.1, 3.4],
+        reload: [0.9, 0.8, 0.7, 0.55],
+        dmg: [10, 14, 19, 24],
+        splash: [0, 0, 0, 0],
         hp: 60,
     },
     kanon: {
-        cost: [100, 80, 130],
-        range: [4.2, 4.5, 4.9],
-        reload: [2.4, 2.1, 1.8],
-        dmg: [55, 85, 130],
-        splash: [0.7, 0.8, 0.9],
+        cost: [100, 80, 130, 260],
+        range: [4.2, 4.5, 4.9, 5.3],
+        reload: [2.4, 2.1, 1.8, 1.5],
+        dmg: [55, 85, 130, 170],
+        splash: [0.7, 0.8, 0.9, 1.0],
         hp: 110,
     },
     morter: {
-        cost: [130, 100, 150],
-        range: [5.5, 6.0, 6.5],
-        reload: [3.6, 3.2, 2.8],
-        dmg: [40, 62, 95],
-        splash: [1.0, 1.15, 1.3],
+        cost: [130, 100, 150, 300],
+        range: [5.5, 6.0, 6.5, 7.0],
+        reload: [3.6, 3.2, 2.8, 2.6],
+        dmg: [40, 62, 95, 120],
+        splash: [1.0, 1.15, 1.3, 1.45],
         hp: 90,
     },
     mine: {
-        cost: [35, 35, 60],
-        range: [0.45, 0.45, 0.45], // utløses når en fiende er så nær
-        reload: [6, 5, 4], // lades på nytt
-        dmg: [70, 110, 170],
-        splash: [0.9, 1.0, 1.1],
+        cost: [35, 35, 60, 130],
+        range: [0.45, 0.45, 0.45, 0.45], // utløses når en fiende er så nær
+        reload: [6, 5, 4, 2.5], // lades på nytt
+        dmg: [70, 110, 170, 240],
+        splash: [0.9, 1.0, 1.1, 1.45],
         hp: 1e9,
     },
 };
@@ -131,6 +137,14 @@ export const TOWER_NAME: Record<TowerKind, string> = {
     kanon: 'Kanon',
     morter: 'Morter',
     mine: 'Kontramine',
+};
+
+/** Hva mesterverket (nivå 4) gjør i tillegg til å bli sterkere. */
+export const MASTER_TEXT: Record<TowerKind, string> = {
+    musketer: 'Salve: skyter tre mann på en gang.',
+    kanon: 'Kula spretter videre gjennom rekkene.',
+    morter: 'Tre bomber i hver salve.',
+    mine: 'Lades raskt og bremser dem som overlever.',
 };
 
 interface EnemyStats {
@@ -146,13 +160,13 @@ interface EnemyStats {
 }
 
 export const ENEMIES: Record<EnemyKind, EnemyStats> = {
-    karoliner: { hp: 30, speed: 1.1, gold: 4, leak: 1 },
-    graver: { hp: 24, speed: 0.8, gold: 5, leak: 1, basket: true },
-    rytter: { hp: 28, speed: 2.3, gold: 6, leak: 2, open: true },
-    grenader: { hp: 48, speed: 1.2, gold: 7, leak: 2 },
-    beleiring: { hp: 260, speed: 0.6, gold: 35, leak: 8, armor: true, open: true },
-    livgarde: { hp: 55, speed: 1.0, gold: 10, leak: 2 },
-    karl: { hp: 850, speed: 0.55, gold: 0, leak: 30 },
+    karoliner: { hp: 24, speed: 1.1, gold: 2, leak: 1 },
+    graver: { hp: 20, speed: 0.8, gold: 3, leak: 1, basket: true },
+    rytter: { hp: 24, speed: 2.3, gold: 3, leak: 1, open: true },
+    grenader: { hp: 40, speed: 1.2, gold: 4, leak: 1 },
+    beleiring: { hp: 360, speed: 0.6, gold: 35, leak: 6, armor: true, open: true },
+    livgarde: { hp: 50, speed: 1.0, gold: 5, leak: 1 },
+    karl: { hp: 1100, speed: 0.55, gold: 0, leak: 30 },
 };
 
 export const ENEMY_NAME: Record<EnemyKind, string> = {
@@ -215,17 +229,6 @@ export interface Route {
     dug: number;
 }
 
-export interface Dig {
-    /** Punktet på muren graverne sikter mot (kolonne). */
-    xt: number;
-    /** Gravd så langt, fra leiren. Siste celle er graverhodet. */
-    cells: [number, number][];
-    /** Veien graverne planlegger videre (fra hodet). Tårn i veien får dem til å bøye av. */
-    plan: [number, number][];
-    t: number;
-    done: boolean;
-}
-
 export interface Enemy {
     id: number;
     kind: EnemyKind;
@@ -258,7 +261,7 @@ export interface Tower {
     kind: TowerKind;
     cx: number;
     cz: number;
-    level: 0 | 1 | 2;
+    level: Level;
     hp: number;
     maxHp: number;
     cd: number;
@@ -288,6 +291,8 @@ export interface Shot {
     /** Tårnet som blir truffet (beleiring/granat). */
     target: number;
     arc: number;
+    /** Mesterverk-kanon: kula spretter videre gjennom rekkene. */
+    bounce?: boolean;
 }
 
 export interface Fire {
@@ -362,8 +367,6 @@ export interface G {
     endless: boolean;
     cells: Cell[][];
     routes: Route[];
-    /** Ruter som ennå ikke er gravd (kandidater). */
-    candidates: Route[];
     towers: Tower[];
     enemies: Enemy[];
     shots: Shot[];
@@ -397,8 +400,6 @@ export interface G {
     shake: number;
     hitstop: number;
     nextId: number;
-    /** Løpegraven graverne holder på med (null = ingen). */
-    dig: Dig | null;
     /** Øker hver gang en rute i kartet endrer seg (visningen tegner brettet på nytt). */
     boardV: number;
     /** 0-1: «Til murene!» lades av drap. */
@@ -440,50 +441,15 @@ export function dailySeed(d = new Date()) {
     return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
 }
 
-const TARGETS = [3, 6, 9, 12, 15];
+/** Radene der veien går på tvers av marka, fra leiren mot muren. Den siste er paralellen. */
+const RUNS = [11, 8, TRENCH_TOP];
 
-function digRoute(rng: () => number, id: number, xs: number, xt: number): Route {
-    const cells: [number, number][] = [];
-    let x = xs;
-    let z = ROWS - 1;
-    cells.push([x, z]);
-    let dir = rng() < 0.5 ? -1 : 1;
-    const push = (nx: number, nz: number) => {
-        const last = cells[cells.length - 1];
-        if (last[0] !== nx || last[1] !== nz) cells.push([nx, nz]);
-    };
-    while (z > TRENCH_TOP) {
-        // Opp et stykke (sappen går rett mot festningen) ...
-        const up = Math.min(z - TRENCH_TOP, 1 + Math.floor(rng() * 2));
-        for (let k = 0; k < up; k++) push(x, --z);
-        if (z <= TRENCH_TOP) break;
-        // ... så på skrå (sikksakk: grøfta skal aldri peke rett mot kanonene).
-        const need = xt - x;
-        const rowsLeft = z - TRENCH_TOP;
-        if (Math.abs(need) > rowsLeft * 2) dir = Math.sign(need);
-        const len = 2 + Math.floor(rng() * 3);
-        for (let k = 0; k < len; k++) {
-            const nx = x + dir;
-            if (nx < 1 || nx > COLS - 2) break;
-            x = nx;
-            push(x, z);
-        }
-        dir = -dir;
-    }
-    // Paralellen: siste grøft på tvers fram til stormpunktet.
-    while (x !== xt) {
-        x += Math.sign(xt - x);
-        push(x, z);
-    }
-    // Stormen over glacis.
-    for (let zz = GLACIS_BOT; zz >= GLACIS_TOP; zz--) push(x, zz);
-    const cum = [0];
-    for (let i = 1; i < cells.length; i++)
-        cum.push(cum[i - 1] + Math.hypot(cells[i][0] - cells[i - 1][0], cells[i][1] - cells[i - 1][1]));
-    const len = cum[cum.length - 1];
-    return { id, cells, cum, len, battery: len * (0.42 + rng() * 0.12), open: false, dug: 0 };
-}
-
+/**
+ * Kartet: én lang sikksakk-vei fra leiren til muren, synlig fra første sekund. Tre løp på
+ * tvers av marka, bundet sammen av korte grøfter. Ett av de to første løpene er en åpen
+ * slette (ingen dekning), resten er løpegrav. Til slutt stormen over glacis.
+ * Seeden bestemmer svingene, hvor veien treffer muren og hvilken side den starter på.
+ */
 function buildMap(g: G) {
     const rng = g.rng;
     const cells: Cell[][] = [];
@@ -495,30 +461,50 @@ function buildMap(g: G) {
         cells.push(row);
     }
     g.cells = cells;
-    // Fem mulige ruter mot fem punkter på muren. Seeden bestemmer hvor de starter og
-    // hvordan de sikksakker.
-    const targets = [...TARGETS].sort(() => rng() - 0.5);
-    const cands: Route[] = [];
-    for (let i = 0; i < targets.length; i++) {
-        const xt = targets[i];
-        const xs = Math.max(1, Math.min(COLS - 2, xt + Math.round((rng() - 0.5) * 8)));
-        cands.push(digRoute(rng, i, xs, xt));
+    const flip = rng() < 0.5;
+    const X = (x: number) => (flip ? COLS - 1 - x : x);
+    const xs = 15 + Math.floor(rng() * 2);
+    const xl = 1 + Math.floor(rng() * 2);
+    const xr = 14 + Math.floor(rng() * 3);
+    const xt = 6 + Math.floor(rng() * 5);
+    const openRun = Math.floor(rng() * 2);
+    const way: [number, number][] = [
+        [xs, ROWS - 1],
+        [xs, RUNS[0]],
+        [xl, RUNS[0]],
+        [xl, RUNS[1]],
+        [xr, RUNS[1]],
+        [xr, RUNS[2]],
+        [xt, RUNS[2]],
+        [xt, GLACIS_TOP],
+    ];
+    const path: [number, number][] = [[X(way[0][0]), way[0][1]]];
+    for (let i = 1; i < way.length; i++) {
+        let [x, z] = way[i - 1];
+        const [x1, z1] = way[i];
+        while (x !== x1 || z !== z1) {
+            if (x !== x1) x += Math.sign(x1 - x);
+            else z += Math.sign(z1 - z);
+            path.push([X(x), z]);
+        }
     }
-    g.candidates = cands;
-    // Den første ruta er alltid en av de tre midterste - den går mot porten.
-    const first = cands.findIndex((r) => {
-        const t = r.cells[r.cells.length - 1][0];
-        return t >= 6 && t <= 12;
-    });
-    openRoute(g, first >= 0 ? first : 0);
-    // Fjell: noen blokkerte ruter i marka, aldri på en kandidatrute.
-    const onAny = (x: number, z: number) =>
-        cands.some((r) => r.cells.some(([cx, cz]) => cx === x && cz === z));
-    const nRock = 6 + Math.floor(rng() * 6);
-    for (let k = 0; k < nRock * 3 && nRock > 0; k++) {
+    for (const [x, z] of path) {
+        if (cells[z][x] !== 'mark') continue;
+        cells[z][x] = z === RUNS[openRun] ? 'vei' : 'grav';
+    }
+    const r = routeFrom(0, path, rng);
+    r.open = true;
+    g.routes = [r];
+    // Noen steiner i marka, aldri på veien og aldri tett inntil den.
+    const nearPath = (x: number, z: number) => path.some(([cx, cz]) => Math.abs(cx - x) <= 1 && Math.abs(cz - z) <= 1);
+    const nRock = 3 + Math.floor(rng() * 3);
+    for (let k = 0, n = 0; k < 60 && n < nRock; k++) {
         const x = Math.floor(rng() * COLS);
         const z = TRENCH_TOP + 1 + Math.floor(rng() * (ROWS - TRENCH_TOP - 1));
-        if (!onAny(x, z) && cells[z][x] === 'mark') cells[z][x] = 'fjell';
+        if (cells[z][x] === 'mark' && !nearPath(x, z)) {
+            cells[z][x] = 'fjell';
+            n++;
+        }
     }
 }
 
@@ -528,156 +514,6 @@ function routeFrom(id: number, cells: [number, number][], rng: () => number): Ro
         cum.push(cum[i - 1] + Math.hypot(cells[i][0] - cells[i - 1][0], cells[i][1] - cells[i - 1][1]));
     const len = cum[cum.length - 1];
     return { id, cells, cum, len, battery: len * (0.42 + rng() * 0.12), open: false, dug: 1 };
-}
-
-// ---------------------------------------------------------------------------
-// Graverne: nye løpegraver graves synlig, og tårnene dine står i veien
-// ---------------------------------------------------------------------------
-
-/** Kan graverne grave gjennom denne ruta? Fjell og tårn stopper dem. */
-function diggable(g: G, x: number, z: number, ignoreTowers: boolean) {
-    if (x < 0 || x >= COLS || z < TRENCH_TOP || z >= ROWS) return false;
-    const c = g.cells[z][x];
-    if (c === 'fjell') return false;
-    if (!ignoreTowers && g.towers.some((t) => t.cx === x && t.cz === z && !t.fallen && t.kind !== 'mine')) return false;
-    return true;
-}
-
-/**
- * Korteste gravevei fra (x, z) til stormpunktet. Tre skritt rett mot festningen koster
- * ekstra: en grøft som peker rett mot kanonene kan skytes langs hele lengden. Derfor
- * sikksakker løpegravene.
- */
-function planDig(g: G, x0: number, z0: number, xt: number, own: Set<number>, ignoreTowers: boolean) {
-    const W = COLS;
-    const key = (x: number, z: number, run: number) => (z * W + x) * 3 + run;
-    const N = ROWS * W * 3;
-    const dist = new Float64Array(N).fill(Infinity);
-    const prev = new Int32Array(N).fill(-1);
-    const done = new Uint8Array(N);
-    const start = key(x0, z0, 0);
-    dist[start] = 0;
-    let goal = -1;
-    for (;;) {
-        let u = -1;
-        let best = Infinity;
-        for (let i = 0; i < N; i++)
-            if (!done[i] && dist[i] < best) {
-                best = dist[i];
-                u = i;
-            }
-        if (u < 0) break;
-        done[u] = 1;
-        const run = u % 3;
-        const cell = (u - run) / 3;
-        const x = cell % W;
-        const z = (cell - x) / W;
-        if (x === xt && z === TRENCH_TOP) {
-            goal = u;
-            break;
-        }
-        const moves: [number, number, number, number][] = [
-            [0, -1, run >= 2 ? 5 : 1, Math.min(2, run + 1)],
-            [1, 0, 1, 0],
-            [-1, 0, 1, 0],
-            [0, 1, 4, 0],
-        ];
-        for (const [dx, dz, cost, nrun] of moves) {
-            const nx = x + dx;
-            const nz = z + dz;
-            if (!diggable(g, nx, nz, ignoreTowers) || own.has(nz * W + nx)) continue;
-            const v = key(nx, nz, nrun);
-            const d = dist[u] + cost;
-            if (d < dist[v]) {
-                dist[v] = d;
-                prev[v] = u;
-            }
-        }
-    }
-    if (goal < 0) return null;
-    const path: [number, number][] = [];
-    for (let v = goal; v >= 0; v = prev[v]) {
-        const c = (v - (v % 3)) / 3;
-        path.push([c % W, (c - (c % W)) / W]);
-    }
-    return path.reverse();
-}
-
-function replanDig(g: G) {
-    const d = g.dig;
-    if (!d || d.done) return;
-    const [hx, hz] = d.cells[d.cells.length - 1];
-    const own = new Set(d.cells.slice(0, -1).map(([x, z]) => z * COLS + x));
-    d.plan = planDig(g, hx, hz, d.xt, own, false) ?? planDig(g, hx, hz, d.xt, own, true) ?? [[hx, hz]];
-}
-
-function startDig(g: G) {
-    const used = new Set(g.routes.map((r) => r.cells[r.cells.length - 1][0]));
-    const free = TARGETS.filter((t) => !used.has(t));
-    const xt = free.length ? free[Math.floor(g.rng() * free.length)] : TARGETS[Math.floor(g.rng() * TARGETS.length)];
-    let xs = xt;
-    for (let k = 0; k < 20; k++) {
-        xs = Math.max(1, Math.min(COLS - 2, xt + Math.round((g.rng() - 0.5) * 10)));
-        if (diggable(g, xs, ROWS - 1, false)) break;
-    }
-    g.dig = { xt, cells: [[xs, ROWS - 1]], plan: [], t: 0, done: false };
-    if (g.cells[ROWS - 1][xs] === 'mark') g.cells[ROWS - 1][xs] = 'grav';
-    g.boardV++;
-    replanDig(g);
-}
-
-function stepDig(g: G) {
-    const d = g.dig;
-    if (!d || d.done) return;
-    replanDig(g);
-    const next = d.plan[1];
-    if (!next) {
-        d.done = true;
-        return;
-    }
-    d.cells.push([next[0], next[1]]);
-    if (g.cells[next[1]][next[0]] === 'mark') g.cells[next[1]][next[0]] = 'grav';
-    g.boardV++;
-    if (next[0] === d.xt && next[1] === TRENCH_TOP) {
-        d.done = true;
-        d.plan = [];
-    }
-}
-
-/** Grøfta åpnes: graverne er ferdige (eller blir det nå), og svenskene tar den i bruk. */
-function openDig(g: G, io: IO) {
-    const d = g.dig;
-    if (!d) return;
-    for (let k = 0; k < 200 && !d.done; k++) stepDig(g);
-    const cells = [...d.cells];
-    const [x] = cells[cells.length - 1];
-    for (let zz = GLACIS_BOT; zz >= GLACIS_TOP; zz--) cells.push([x, zz]);
-    const r = routeFrom(g.routes.length, cells, g.rng);
-    r.open = true;
-    g.routes.push(r);
-    g.dig = null;
-    g.boardV++;
-    io.event({ type: 'ny-rute', route: r.id });
-}
-
-/** Ruta graverne holder på med, som en rute (til robotene og visningen). */
-export function digRoutePreview(g: G): Route | null {
-    const d = g.dig;
-    if (!d) return null;
-    const cells = [...d.cells, ...d.plan.slice(1)];
-    const [x] = cells[cells.length - 1];
-    for (let zz = GLACIS_BOT; zz >= GLACIS_TOP; zz--) cells.push([x, zz]);
-    return routeFrom(-1, cells, () => 0.5);
-}
-
-function openRoute(g: G, idx: number) {
-    const r = g.candidates[idx];
-    if (!r || r.open) return;
-    r.open = true;
-    r.dug = 1;
-    r.id = g.routes.length;
-    g.routes.push(r);
-    for (const [x, z] of r.cells) if (g.cells[z][x] === 'mark') g.cells[z][x] = 'grav';
 }
 
 // ---------------------------------------------------------------------------
@@ -693,7 +529,6 @@ export function newGame(seed = 1, challenge: ChallengeId = 'ingen'): G {
         endless: false,
         cells: [],
         routes: [],
-        candidates: [],
         towers: [],
         enemies: [],
         shots: [],
@@ -724,7 +559,6 @@ export function newGame(seed = 1, challenge: ChallengeId = 'ingen'): G {
         shake: 0,
         hitstop: 0,
         nextId: 1,
-        dig: null,
         boardV: 0,
         rally: 0,
         rallyT: 0,
@@ -767,12 +601,15 @@ export function towerAt(g: G, x: number, z: number) {
     return g.towers.find((t) => t.cx === x && t.cz === z && !t.fallen) ?? null;
 }
 
-/** Kan denne tårntypen stå her? Miner bare i grøfta, resten på voll og mark. */
+/** Er dette en rute på veien svenskene går (grøft eller åpen slette)? */
+export const onPath = (c: Cell | null) => c === 'grav' || c === 'vei';
+
+/** Kan denne tårntypen stå her? Miner bare på veien, resten på voll og mark. */
 export function canBuild(g: G, k: TowerKind, x: number, z: number) {
     const c = cellAt(g, x, z);
     if (!c || towerAt(g, x, z)) return false;
     if (!allowed(g, k)) return false;
-    if (k === 'mine') return c === 'grav';
+    if (k === 'mine') return onPath(c);
     return c === 'voll' || c === 'mark';
 }
 
@@ -782,7 +619,7 @@ export function buildCost(g: G, k: TowerKind) {
 }
 
 export function upgradeCost(t: Tower) {
-    return t.level >= 2 ? Infinity : TOWERS[t.kind].cost[t.level + 1];
+    return t.level >= MAX_LEVEL ? Infinity : TOWERS[t.kind].cost[t.level + 1];
 }
 
 export function rangeOf(g: G, t: Tower) {
@@ -847,19 +684,18 @@ export function build(g: G, k: TowerKind, x: number, z: number, io?: IO): Tower 
         fallen: 0,
     };
     g.towers.push(t);
-    replanDig(g);
     io?.sfx.build();
     return t;
 }
 
 export function upgrade(g: G, id: number, io?: IO) {
     const t = g.towers.find((x) => x.id === id && !x.fallen);
-    if (!t || t.level >= 2 || g.ended) return false;
+    if (!t || t.level >= MAX_LEVEL || g.ended) return false;
     const c = upgradeCost(t);
     if (g.gold < c) return false;
     g.gold -= c;
     t.spent += c;
-    t.level = (t.level + 1) as 1 | 2;
+    t.level = (t.level + 1) as Level;
     const hp = TOWERS[t.kind].hp * (1 + 0.5 * t.level) * (has(g, 'jordvoller') ? 1.2 : 1);
     t.maxHp = hp;
     t.hp = hp;
@@ -875,7 +711,6 @@ export function sell(g: G, id: number, io?: IO) {
     const back = Math.floor(t.spent * SELL_BACK);
     g.gold += back;
     g.towers.splice(i, 1);
-    replanDig(g);
     io?.sfx.coin();
     io?.float(`+${back}`, [t.cx, 0.6, t.cz], '#f2c14e');
     return true;
@@ -917,21 +752,22 @@ export function callWave(g: G, io?: IO) {
 
 type Group = [EnemyKind, number];
 
+// Mange og svake: tårnforsvar er gøyest når det faller folk i rekker.
 const WAVE_PLAN: Group[][] = [
-    [['karoliner', 8]],
-    [['karoliner', 10], ['graver', 4]],
-    [['karoliner', 8], ['rytter', 6]],
-    [['karoliner', 12], ['graver', 4], ['beleiring', 1]],
-    [['karoliner', 10], ['grenader', 6], ['rytter', 6]],
-    [['karoliner', 16], ['grenader', 4], ['beleiring', 1]],
-    [['karoliner', 14], ['rytter', 10], ['grenader', 6], ['beleiring', 2]],
-    [['karoliner', 24], ['graver', 6], ['grenader', 6], ['beleiring', 2]],
-    [['karoliner', 10], ['beleiring', 1], ['karl', 1], ['livgarde', 10]],
+    [['karoliner', 22]],
+    [['karoliner', 26], ['graver', 10]],
+    [['karoliner', 24], ['rytter', 14]],
+    [['karoliner', 34], ['graver', 10], ['beleiring', 1]],
+    [['karoliner', 30], ['grenader', 14], ['rytter', 14]],
+    [['karoliner', 44], ['grenader', 10], ['beleiring', 1]],
+    [['karoliner', 40], ['rytter', 22], ['grenader', 14], ['beleiring', 2]],
+    [['karoliner', 64], ['graver', 14], ['grenader', 14], ['beleiring', 2]],
+    [['karoliner', 30], ['beleiring', 1], ['karl', 1], ['livgarde', 24]],
 ];
 
 function hpScale(g: G) {
     const w = g.wave - 1;
-    return 1 + 0.19 * w + (g.endless ? 0.25 * Math.max(0, g.wave - WAVES) : 0);
+    return 1 + 0.5 * w + (g.endless ? 0.25 * Math.max(0, g.wave - WAVES) : 0);
 }
 
 /** Hvor farlig en fiende er utover livet: fart, skanskurv, pansring, granater. */
@@ -953,13 +789,13 @@ function applyDoctrines(g: G, base: Group[], w = g.wave): Group[] {
     const add = (k: EnemyKind, n: number) => m.set(k, Math.max(0, (m.get(k) ?? 0) + n));
     for (const d of g.doctrines) {
         if (d === 'dragonraid') {
-            if (w >= 2) add('rytter', m.has('rytter') ? Math.ceil(m.get('rytter')! * 0.4) : 3);
+            if (w >= 2) add('rytter', m.has('rytter') ? Math.ceil(m.get('rytter')! * 0.4) : 8);
         } else if (d === 'sappørkrig') {
-            add('graver', w === 1 ? 3 : m.has('graver') ? m.get('graver')! : 3);
+            add('graver', w === 1 ? 8 : m.has('graver') ? m.get('graver')! : 8);
         } else if (d === 'artilleri') {
             if (w >= 3 && w < WAVES) add('beleiring', 1);
         } else if (d === 'grenaderstorm') {
-            if (w >= 3) add('grenader', m.has('grenader') ? m.get('grenader')! : 4);
+            if (w >= 3) add('grenader', m.has('grenader') ? m.get('grenader')! : 10);
         }
     }
     const plan: Group[] = [...m.entries()].filter(([, n]) => n > 0).map(([k, n]) => [k, n] as Group);
@@ -998,19 +834,22 @@ function planWave(g: G) {
     for (const [kind, n0] of plan) {
         // Litt variasjon i antall, ikke i vanskelighet.
         const n = kind === 'karl' || kind === 'beleiring' ? n0 : Math.max(1, Math.round(n0 * (0.9 + rng() * 0.2)));
-        const groupSize = kind === 'rytter' ? 3 : kind === 'karoliner' ? (n >= 16 ? 8 : 4) : kind === 'livgarde' ? 6 : 2;
+        const groupSize =
+            kind === 'rytter' ? 6 : kind === 'karoliner' ? (n >= 30 ? 12 : 9) : kind === 'livgarde' ? 12 : kind === 'beleiring' || kind === 'karl' ? 1 : 6;
+        // Kolonnen: tre i bredden (ryttere to), tett bak hverandre.
+        const wide = kind === 'rytter' ? 2 : 3;
         let left = n;
         while (left > 0) {
             const size = Math.min(groupSize, left);
             const route = kind === 'karl' || kind === 'livgarde' ? open[open.length - 1].id : open[ri % open.length].id;
             ri++;
             for (let i = 0; i < size; i++) {
-                // Formasjon: to i bredden, tett bak hverandre.
-                const off = size > 1 ? ((i % 2) - 0.5) * 0.28 : 0;
-                spawns.push({ at: at + Math.floor(i / 2) * 0.45, kind, route, off });
+                const col = i % wide;
+                const off = size > 1 ? (col - (wide - 1) / 2) * (wide === 3 ? 0.24 : 0.28) : 0;
+                spawns.push({ at: at + Math.floor(i / wide) * 0.42, kind, route, off });
             }
             left -= size;
-            at += kind === 'rytter' ? 1.0 : 1.3 + size * 0.12;
+            at += (kind === 'rytter' ? 0.8 : 1.2) + Math.ceil(size / wide) * 0.42;
         }
         at += 0.6;
     }
@@ -1025,44 +864,12 @@ function startWave(g: G, io: IO) {
     g.phase = 'bolge';
     g.waveT = 0;
     g.valg += 1;
-    // Den nye ruta graverne har gravd, åpnes nå.
-    if (g.dig) openDig(g, io);
     planWave(g);
-    // Graverne begynner på en ny løpegrav natt 2 og 5; den åpnes natta etter.
-    if (g.wave === 2 || g.wave === 5 || (g.endless && g.wave % 4 === 0)) {
-        startDig(g);
-        const d = g.dig!;
-        io.pin(
-            'graving',
-            'Graverne graver - bygg i veien!',
-            () => {
-                const h = g.dig?.cells[g.dig.cells.length - 1];
-                return h ? [h[0], 0.4, h[1]] : null;
-            },
-            { seconds: 6 }
-        );
-        void d;
-    }
     if (g.wave === WAVES && !g.endless) {
         io.banner('11. DESEMBER 1718', '#c8322b');
         io.event({ type: 'sjef-inn' });
         io.sfx.drum();
     } else io.banner(g.wave > WAVES ? `BØLGE ${g.wave}` : `NATT ${g.wave}`);
-}
-
-/** Hvor godt dekker forsvaret en rute? Brukes til å velge hvor graverne graver. */
-export function coverage(g: G, r: Route) {
-    let s = 0;
-    for (const [x, z] of r.cells)
-        for (const t of g.towers) {
-            if (t.fallen) continue;
-            if (t.kind === 'mine') {
-                if (t.cx === x && t.cz === z) s += 2;
-                continue;
-            }
-            if (Math.hypot(t.cx - x, t.cz - z) <= rangeOf(g, t)) s += 1 + t.level * 0.5;
-        }
-    return s;
 }
 
 function makeOffer(g: G) {
@@ -1230,13 +1037,6 @@ export function update(g: G, dt: number, io: IO) {
         while (g.spawns.length && g.spawns[0].at <= g.waveT) spawn(g, g.spawns.shift()!, io);
     }
 
-    if (g.dig && !g.dig.done) {
-        g.dig.t += dt;
-        while (g.dig && !g.dig.done && g.dig.t >= 1 / DIG_RATE) {
-            g.dig.t -= 1 / DIG_RATE;
-            stepDig(g);
-        }
-    }
     if (g.rallyT > 0) g.rallyT -= dt;
 
     stepEnemies(g, dt, io);
@@ -1452,8 +1252,8 @@ function blowMine(g: G, t: Tower, io: IO, chain = 1) {
     let dmg = TOWERS.mine.dmg[t.level];
     if (has(g, 'dobbel-ladning')) dmg *= 1.8;
     splashAt(g, t.cx, t.cz, TOWERS.mine.splash[t.level], dmg, 'mine', io);
-    if (has(g, 'stormpeler'))
-        for (const e of g.enemies) if (Math.hypot(e.x - t.cx, e.z - t.cz) < 1.2) e.slow = 2;
+    if (has(g, 'stormpeler') || t.level === MAX_LEVEL)
+        for (const e of g.enemies) if (Math.hypot(e.x - t.cx, e.z - t.cz) < 1.6) e.slow = 2;
     t.armT = TOWERS.mine.reload[t.level];
     g.hitstop = Math.max(g.hitstop, 0.05); // et lite frys når jorda løfter seg
     g.fx.push({ kind: 'mine', x: t.cx, z: t.cz, t: 0, n: 10 });
@@ -1510,18 +1310,23 @@ function stepTowers(g: G, dt: number, io: IO) {
         }
         t.cd -= dt * (g.rallyT > 0 ? 2.5 : 1);
         if (t.cd > 0) continue;
-        const target = pickTarget(g, t);
+        const master = t.level === MAX_LEVEL;
+        const targets = pickTargets(g, t, t.kind === 'musketer' && master ? 3 : 1);
+        const target = targets[0];
         if (!target) continue;
         t.aim = Math.atan2(target.x - t.cx, target.z - t.cz);
         t.cd = reloadOf(g, t);
         t.shots += 1;
         const dmg = TOWERS[t.kind].dmg[t.level];
         if (t.kind === 'musketer') {
-            let d = dmg;
-            if (has(g, 'pelotong') && inFormation(g, t)) d *= 1.6;
-            if (has(g, 'skarpskytter') && (target.kind === 'karl' || target.kind === 'livgarde')) d *= 2;
-            hurt(g, target, d, 'musket', io);
-            g.flashes.push({ x: t.cx, z: t.cz, tx: target.x, tz: target.z, t: 0 });
+            // Mesterverket skyter salve: tre mann faller på en gang.
+            for (const e of targets) {
+                let d = dmg;
+                if (has(g, 'pelotong') && inFormation(g, t)) d *= 1.6;
+                if (has(g, 'skarpskytter') && (e.kind === 'karl' || e.kind === 'livgarde')) d *= 2;
+                g.flashes.push({ x: t.cx, z: t.cz, tx: e.x, tz: e.z, t: 0 });
+                hurt(g, e, d, 'musket', io);
+            }
             io.sfx.musket();
         } else if (t.kind === 'kanon') {
             const kart = has(g, 'kartesk');
@@ -1538,6 +1343,7 @@ function stepTowers(g: G, dt: number, io: IO) {
                 tower: t.id,
                 target: target.id,
                 arc: kart ? 0 : 0.25,
+                bounce: master && !kart,
             });
             io.sfx.cannon();
         } else {
@@ -1558,44 +1364,46 @@ function stepTowers(g: G, dt: number, io: IO) {
                 target: target.id,
                 arc: 3.2,
             });
-            if (has(g, 'bombarder'))
+            // Bombardér gir en bombe til, mesterverket to til.
+            const extra = (has(g, 'bombarder') ? 1 : 0) + (master ? 2 : 0);
+            for (let k = 0; k < extra; k++)
                 g.shots.push({
                     kind: 'bombe',
                     x0: t.cx,
                     z0: t.cz,
-                    x1: target.x + (g.rng() - 0.5) * 0.8,
-                    z1: target.z + (g.rng() - 0.5) * 0.8,
-                    t: -0.35,
+                    x1: target.x + (g.rng() - 0.5) * (master ? 1.4 : 0.8),
+                    z1: target.z + (g.rng() - 0.5) * (master ? 1.4 : 0.8),
+                    t: -0.2 - k * 0.18,
                     dur: 1.5,
                     dmg,
                     splash,
                     tower: t.id,
                     target: target.id,
-                    arc: 3.4,
+                    arc: 3.4 + k * 0.2,
                 });
             io.sfx.mortar();
         }
     }
 }
 
-/** Tårnet velger fienden som har kommet lengst, innenfor rekkevidde. */
-function pickTarget(g: G, t: Tower): Enemy | null {
+/** Tårnet velger de `n` fiendene som har kommet lengst, innenfor rekkevidde. */
+function pickTargets(g: G, t: Tower, n: number): Enemy[] {
     const r = rangeOf(g, t);
     const minR = t.kind === 'morter' ? 1.2 : 0;
-    let best: Enemy | null = null;
-    let bestD = -1;
+    const best: { e: Enemy; p: number }[] = [];
     for (const e of g.enemies) {
         if (e.dead || e.leaked) continue;
         const d = Math.hypot(e.x - t.cx, e.z - t.cz);
         if (d > r || d < minR) continue;
-        let prio = e.d;
-        if (t.kind === 'musketer' && has(g, 'skarpskytter') && (e.kind === 'karl' || e.kind === 'livgarde')) prio += 100;
-        if (prio > bestD) {
-            bestD = prio;
-            best = e;
+        let p = e.d;
+        if (t.kind === 'musketer' && has(g, 'skarpskytter') && (e.kind === 'karl' || e.kind === 'livgarde')) p += 100;
+        if (best.length < n || p > best[best.length - 1].p) {
+            best.push({ e, p });
+            best.sort((a, b) => b.p - a.p);
+            if (best.length > n) best.pop();
         }
     }
-    return best;
+    return best.map((b) => b.e);
 }
 
 function stepShots(g: G, dt: number, io: IO) {
@@ -1605,6 +1413,21 @@ function stepShots(g: G, dt: number, io: IO) {
         if (s.kind === 'kanon') {
             const kart = has(g, 'kartesk');
             splashAt(g, s.x1, s.z1, s.splash, s.dmg, kart ? 'kartesk' : 'kanon', io);
+            if (s.bounce) {
+                // Kula spretter videre i samme retning og river med seg flere.
+                const dx = s.x1 - s.x0;
+                const dz = s.z1 - s.z0;
+                const L = Math.hypot(dx, dz) || 1;
+                for (const [k, f] of [
+                    [0.9, 0.7],
+                    [1.8, 0.45],
+                ]) {
+                    const bx = s.x1 + (dx / L) * k;
+                    const bz = s.z1 + (dz / L) * k;
+                    splashAt(g, bx, bz, s.splash * 0.8, s.dmg * f, 'kanon', io);
+                    g.fx.push({ kind: 'smell', x: bx, z: bz, t: 0, n: 4 });
+                }
+            }
             if (has(g, 'glodende') && !kart) g.fires.push({ x: s.x1, z: s.z1, r: 0.9, t: 3, dps: 14 });
             g.fx.push({ kind: 'smell', x: s.x1, z: s.z1, t: 0, n: 5 });
             io.event({ type: 'treff', x: s.x1, z: s.z1, big: false });
@@ -1713,6 +1536,5 @@ export function continueEndless(g: G) {
     g.spawns = [];
     g.phase = 'bygg';
     g.phaseT = BUILD_SECONDS + 4;
-    g.dig = null;
     g.offer = null;
 }

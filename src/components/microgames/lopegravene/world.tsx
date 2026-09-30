@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { useQuality } from '../kit/quality';
 import { crispCanvas } from '../kit/crispText';
 import { PAL, toWorld, fromWorld } from './geo';
-import { WAVES, COLS, ROWS, posOn, rangeOf, type G, type EnemyKind, type TowerKind } from './game';
+import { WAVES, ROWS, rangeOf, type G, type EnemyKind, type TowerKind } from './game';
 import {
     figures,
     figureMaterial,
@@ -17,7 +17,7 @@ import {
     tentGeo,
     pineGeo,
     gabionGeo,
-    stakeGeo,
+    postGeo,
     debrisGeo,
     litToon,
     snowTexture,
@@ -193,7 +193,9 @@ export function Terrain({
 export function Gabions({ gRef, vis }: { gRef: GRef; vis: Vis }) {
     const ref = useRef<THREE.InstancedMesh>(null);
     const rocks = useRef<THREE.InstancedMesh>(null);
+    const posts = useRef<THREE.InstancedMesh>(null);
     const MAX = 720;
+    const PMAX = 240;
     const v = useRef(-1);
     const mat = useMemo(() => toonMat(), []);
     const rockGeo = useMemo(() => rockGeometry(), []);
@@ -219,6 +221,32 @@ export function Gabions({ gRef, vis }: { gRef: GRef; vis: Vis }) {
             rk.count = n;
             rk.instanceMatrix.needsUpdate = true;
         }
+        // Stikker langs veien over den åpne sletta og glacis, så eleven ser hvor den går.
+        const pm = posts.current;
+        if (pm) {
+            const g = gRef.current;
+            let n = 0;
+            for (const rt of g.routes)
+                for (let i = 1; i < rt.cells.length && n < PMAX - 2; i++) {
+                    const [x, z] = rt.cells[i];
+                    const c = g.cells[z][x];
+                    if (c !== 'vei' && c !== 'glacis') continue;
+                    const [px, pz] = rt.cells[i - 1];
+                    const [ax, az] = toWorld(px, pz);
+                    const [bx, bz] = toWorld(x, z);
+                    const L = Math.hypot(bx - ax, bz - az) || 1;
+                    const nx = -(bz - az) / L;
+                    const nz = (bx - ax) / L;
+                    for (const side of [-1, 1]) {
+                        const wx = (ax + bx) / 2 + nx * 0.56 * side;
+                        const wz = (az + bz) / 2 + nz * 0.56 * side;
+                        const tilt = (seeded(x * 7 + z * 13 + side) - 0.5) * 0.3;
+                        place(pm, n++, wx, vis.hm.at(wx, wz) - 0.02, wz, tilt, seeded(x + z * 3 + side) * 6, 0, 1.3);
+                    }
+                }
+            pm.count = n;
+            pm.instanceMatrix.needsUpdate = true;
+        }
         const spots = gabionSpots(gRef.current, vis.hm, MAX);
         for (let i = 0; i < spots.length; i++) {
             const [x, y, z, r] = spots[i];
@@ -231,6 +259,7 @@ export function Gabions({ gRef, vis }: { gRef: GRef; vis: Vis }) {
         <>
             <instancedMesh ref={ref} args={[gabionGeo(), mat, MAX]} castShadow frustumCulled={false} />
             <instancedMesh ref={rocks} args={[rockGeo, mat, 80]} castShadow receiveShadow frustumCulled={false} />
+            <instancedMesh ref={posts} args={[postGeo(), mat, PMAX]} castShadow frustumCulled={false} />
         </>
     );
 }
@@ -437,7 +466,7 @@ export function Towers({ gRef, vis }: { gRef: GRef; vis: Vis }) {
     const keys = useMemo(() => {
         const out: { key: string; kind: TowerKind; level: number; part: 'base' | 'top'; geo: THREE.BufferGeometry }[] = [];
         for (const k of KINDS)
-            for (let l = 0; l < 3; l++) {
+            for (let l = 0; l < TW[k].length; l++) {
                 out.push({ key: `${k}-${l}-base`, kind: k, level: l, part: 'base', geo: TW[k][l].base });
                 const top = TW[k][l].top;
                 if (top) out.push({ key: `${k}-${l}-top`, kind: k, level: l, part: 'top', geo: top });
@@ -573,7 +602,7 @@ function animAttr(k: EnemyKind, d: FigureDef) {
     return a;
 }
 
-const HAT_MAX = 260;
+const HAT_MAX = 520;
 
 export function Enemies({ gRef, vis }: { gRef: GRef; vis: Vis }) {
     const F = figures();
@@ -628,8 +657,7 @@ export function Enemies({ gRef, vis }: { gRef: GRef; vis: Vis }) {
             const ev = vis.enemies.get(e.id);
             // Bare visning: de store figurene står litt lenger fra hverandre i bredden.
             const r = g.routes[e.route];
-            const [fx, fz] = r && !e.leaked && e.off ? posOn(r, e.d, e.off * 1.35) : [e.x, e.z];
-            const [wx, wz0] = toWorld(fx, fz);
+            const [wx, wz0] = toWorld(e.x, e.z);
             let wz = wz0;
             let yaw = ev ? ev.yaw : Math.PI;
             if (r && !e.leaked) {
@@ -668,7 +696,7 @@ export function Enemies({ gRef, vis }: { gRef: GRef; vis: Vis }) {
                 const hy = y + cheer + d.hatY * d.scale;
                 const bob = Math.abs(Math.cos(ph)) * 0.018 * amp;
                 if (d.hat === 'tricorn' && tm && nt < HAT_MAX) place(tm, nt++, wx, hy + bob, wz, 0, yaw, 0, d.scale);
-                if (d.hat === 'mitre' && mm && nm < 80) place(mm, nm++, wx, hy + bob, wz, 0, yaw, 0, d.scale);
+                if (d.hat === 'mitre' && mm && nm < 160) place(mm, nm++, wx, hy + bob, wz, 0, yaw, 0, d.scale);
             }
             if (e.kind === 'beleiring' && wm && nw < 40) {
                 // Hjulene ruller med distansen.
@@ -679,14 +707,6 @@ export function Enemies({ gRef, vis }: { gRef: GRef; vis: Vis }) {
                     place(wm, nw++, wx + ox, y + 0.15 * d.scale, wz + oz, roll, yaw, 0, d.scale);
                 }
             }
-        }
-        // Graveren i hodet på den nye løpegraven.
-        const dig = g.dig;
-        if (dig && !dig.done) {
-            const h = dig.cells[dig.cells.length - 1];
-            const [wx, wz] = toWorld(h[0], h[1]);
-            const t = st.clock.elapsedTime;
-            put('graver', wx, vis.hm.at(wx, wz), wz, 0.3 + Math.sin(t * 8) * 0.2, Math.PI, 0, 0, 0, false);
         }
         // De falne: velter, kastes, blir liggende.
         for (const cp of vis.corpses) {
@@ -712,7 +732,7 @@ export function Enemies({ gRef, vis }: { gRef: GRef; vis: Vis }) {
         // Løse hatter: flyr, snurrer, blir liggende i snøen.
         for (const h of vis.hats) {
             if (h.mitre) {
-                if (mm && nm < 80) place(mm, nm++, h.x, h.y, h.z, h.rx, h.ry, h.rz, h.s);
+                if (mm && nm < 160) place(mm, nm++, h.x, h.y, h.z, h.rx, h.ry, h.rz, h.s);
             } else if (tm && nt < HAT_MAX) place(tm, nt++, h.x, h.y, h.z, h.rx, h.ry, h.rz, h.s);
         }
         for (const k of EKINDS) {
@@ -770,56 +790,14 @@ export function Enemies({ gRef, vis }: { gRef: GRef; vis: Vis }) {
                 </group>
             ))}
             <instancedMesh ref={tri} args={[H.tricorn, hatMat, HAT_MAX]} castShadow frustumCulled={false} />
-            <instancedMesh ref={mit} args={[H.mitre, hatMat, 80]} frustumCulled={false} />
+            <instancedMesh ref={mit} args={[H.mitre, hatMat, 160]} frustumCulled={false} />
             <instancedMesh ref={wheels} args={[H.wheel, hatMat, 40]} castShadow frustumCulled={false} />
             <mesh ref={halo} rotation={[-Math.PI / 2, 0, 0]} visible={false}>
-                <ringGeometry args={[0.35, 0.62, 32]} />
+                <ringGeometry args={[0.26, 0.44, 32]} />
                 <meshBasicMaterial color={PAL.gold} transparent opacity={0.55} depthWrite={false} toneMapped={false} />
             </mesh>
         </>
     );
-}
-
-// ---------------------------------------------------------------------------
-// Graverne: stikker i snøen der den neste løpegraven skal gå
-// ---------------------------------------------------------------------------
-
-export function DigPreview({ gRef, vis }: { gRef: GRef; vis: Vis }) {
-    const ref = useRef<THREE.InstancedMesh>(null);
-    const MAX = 60;
-    const mat = useMemo(() => toonMat(), []);
-    const acc = useRef(0);
-    useFrame((st, dt) => {
-        const m = ref.current;
-        if (!m) return;
-        const d = gRef.current.dig;
-        let i = 0;
-        if (d && !d.done) {
-            const t = st.clock.elapsedTime;
-            for (let k = 1; k < d.plan.length && i < MAX; k++) {
-                const [wx, wz] = toWorld(d.plan[k][0], d.plan[k][1]);
-                const pop = Math.min(1, Math.max(0, Math.sin(t * 2 - k * 0.4) * 0.5 + 0.7));
-                place(m, i++, wx, vis.hm.at(wx, wz), wz, 0, k * 0.7, 0, pop);
-            }
-            // Jord som slenges opp fra spaden.
-            acc.current += dt;
-            if (acc.current > 0.25) {
-                acc.current = 0;
-                const h = d.cells[d.cells.length - 1];
-                const [wx, wz] = toWorld(h[0], h[1]);
-                digSpurt(vis, wx, wz);
-            }
-        }
-        m.count = i;
-        m.instanceMatrix.needsUpdate = true;
-    });
-    return <instancedMesh ref={ref} args={[stakeGeo(), mat, MAX]} frustumCulled={false} />;
-}
-
-function digSpurt(vis: Vis, wx: number, wz: number) {
-    const y = vis.hm.at(wx, wz);
-    for (let k = 0; k < 3; k++)
-        vis.smoke.spawn(wx, y + 0.3, wz, (Math.random() - 0.5) * 1.2, 1.5 + Math.random(), 0.6 + Math.random() * 0.5, 0.6, 0.08, k ? '#3a2c22' : '#dfe6ee', 1, 0, 0.2, 6);
 }
 
 // ---------------------------------------------------------------------------
@@ -1499,15 +1477,14 @@ function setColor(m: THREE.MeshBasicMaterial, c: THREE.Color) {
     m.color.copy(c);
 }
 
-/** Hvor tårnet skyter først: nærmeste grøfterute innenfor rekkevidden (eller rett fram). */
+/** Hvor tårnet skyter først: nærmeste rute på veien innenfor rekkevidden (eller rett fram). */
 function aimTarget(g: G, a: Aim): { tx: number; tz: number; trench: boolean } {
-    if (a.kind === 'mine') return { tx: a.x, tz: a.z, trench: true };
+    if (a.kind === 'mine') return { tx: a.x, tz: a.z, trench: g.cells[a.z]?.[a.x] === 'grav' };
     const r = rangeOf(g, { kind: a.kind, level: 0, cx: a.x, cz: a.z } as Parameters<typeof rangeOf>[1]);
     let best: [number, number] | null = null;
     let bd = 1e9;
-    for (let z = 0; z < ROWS; z++)
-        for (let x = 0; x < COLS; x++) {
-            if (g.cells[z][x] !== 'grav') continue;
+    for (const rt of g.routes)
+        for (const [x, z] of rt.cells) {
             const d = Math.hypot(x - a.x, z - a.z);
             if (d > r || d < (a.kind === 'morter' ? 1.2 : 0.5)) continue;
             if (d < bd) {
@@ -1515,7 +1492,7 @@ function aimTarget(g: G, a: Aim): { tx: number; tz: number; trench: boolean } {
                 best = [x, z];
             }
         }
-    if (best) return { tx: best[0], tz: best[1], trench: true };
+    if (best) return { tx: best[0], tz: best[1], trench: g.cells[best[1]][best[0]] === 'grav' };
     return { tx: a.x, tz: Math.min(ROWS - 1, a.z + Math.floor(r)), trench: false };
 }
 

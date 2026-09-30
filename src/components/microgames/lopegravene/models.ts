@@ -172,17 +172,17 @@ export interface FigureDef {
 }
 
 /**
- * Hvor store figurene er. Store nok til at man ser blå frakker med gule oppslag som
- * faller - hodene og skuldrene stikker opp over grøftekanten.
+ * Hvor store figurene er. Små nok til at tre i bredden får plass i grøfta uten å gli inn
+ * i hverandre, men hodene og skuldrene stikker fortsatt opp over grøftekanten.
  */
 export const FIG_SCALE: Record<EnemyKind, number> = {
-    karoliner: 1.85,
-    graver: 1.85,
-    rytter: 1.7,
-    grenader: 1.88,
-    beleiring: 1.75,
-    livgarde: 1.92,
-    karl: 2.45,
+    karoliner: 1.1,
+    graver: 1.1,
+    rytter: 1.05,
+    grenader: 1.12,
+    beleiring: 1.25,
+    livgarde: 1.15,
+    karl: 1.6,
 };
 
 let _figs: Record<EnemyKind, FigureDef> | null = null;
@@ -242,12 +242,12 @@ export function figures(): Record<EnemyKind, FigureDef> {
         soldier({ coat: '#3a60aa', facing: '#e3c07a', legs: '#c9a46a', boots: '#111', sword: true, belts: '#c9a46a' })
     );
     _figs = {
-        karoliner: { geo: karoliner, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0.545, hat: 'tricorn', scale: FIG_SCALE.karoliner, max: 190 },
-        graver: { geo: graver, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0, hat: null, scale: FIG_SCALE.graver, max: 60 },
-        rytter: { geo: rytter, mode: 1, hip: 0.26, shoulder: 0, hatY: 0.72, hat: 'tricorn', scale: FIG_SCALE.rytter, max: 60 },
-        grenader: { geo: grenader, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0.54, hat: 'mitre', scale: FIG_SCALE.grenader, max: 60 },
+        karoliner: { geo: karoliner, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0.545, hat: 'tricorn', scale: FIG_SCALE.karoliner, max: 420 },
+        graver: { geo: graver, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0, hat: null, scale: FIG_SCALE.graver, max: 120 },
+        rytter: { geo: rytter, mode: 1, hip: 0.26, shoulder: 0, hatY: 0.72, hat: 'tricorn', scale: FIG_SCALE.rytter, max: 120 },
+        grenader: { geo: grenader, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0.54, hat: 'mitre', scale: FIG_SCALE.grenader, max: 120 },
         beleiring: { geo: beleiring, mode: 2, hip: 0.2, shoulder: 0.42, hatY: 0, hat: null, scale: FIG_SCALE.beleiring, max: 10 },
-        livgarde: { geo: livgarde, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0.545, hat: 'tricorn', scale: FIG_SCALE.livgarde, max: 40 },
+        livgarde: { geo: livgarde, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0.545, hat: 'tricorn', scale: FIG_SCALE.livgarde, max: 80 },
         karl: { geo: karl, mode: 0, hip: 0.2, shoulder: 0.42, hatY: 0.545, hat: 'tricorn', scale: FIG_SCALE.karl, max: 2 },
     };
     return _figs;
@@ -355,6 +355,23 @@ function stoneRing(r: number, h: number, seg = 8): Part[] {
     ];
 }
 
+/** Mesterverkets bastion: en tykk steinring med skyteskår og gull langs kanten. */
+function bastion(r: number, h: number, seg: number): Part[] {
+    const out = stoneRing(r, h, seg);
+    out.push(cyl(r * 1.1, r * 1.16, 0.08, [0, 0.04, 0], COL.stoneDark, undefined, seg));
+    out.push(cyl(r * 1.04, r * 1.04, 0.025, [0, h + 0.035, 0], COL.gold, undefined, seg));
+    for (let i = 0; i < seg; i++) {
+        const a = (i / seg) * Math.PI * 2;
+        out.push(box(0.1, 0.1, 0.08, [Math.sin(a) * r * 0.97, h + 0.07, Math.cos(a) * r * 0.97], COL.stone, [0, a, 0]));
+    }
+    return out;
+}
+
+/** Den store fanen over mesterverket. */
+function bigFlag(x: number, y: number, z: number): Part[] {
+    return [...flag(x, y, z, 1.35), ball(0.035, [x, y + 1.37, z], COL.gold)];
+}
+
 let _towers: Record<TowerKind, TowerModel[]> | null = null;
 export function towerModels(): Record<TowerKind, TowerModel[]> {
     if (_towers) return _towers;
@@ -416,6 +433,21 @@ export function towerModels(): Record<TowerKind, TowerModel[]> {
             muzzle: [0, 0.4, 0.4],
             size: 1.05,
         },
+        {
+            base: M([...bastion(0.52, 0.46, 8), ...bigFlag(-0.4, 0.46, -0.32)]),
+            top: M([
+                ...defender(-0.26, 0.2, 0, 0, true),
+                ...defender(0, 0.26, 0, 0, true),
+                ...defender(0.26, 0.2, 0, 0, true),
+                ...defender(-0.18, -0.06, 0),
+                ...defender(0.08, -0.02, 0),
+                ...defender(0.3, -0.1, 0),
+                ...soldier({ coat: COL.blueDark, facing: COL.gold, legs: COL.buff, x: -0.05, z: -0.3, sword: true, hat: 'tricorn' }),
+            ]),
+            topY: 0.5,
+            muzzle: [0, 0.4, 0.45],
+            size: 1.2,
+        },
     ];
     const kanon: TowerModel[] = [
         {
@@ -461,6 +493,19 @@ export function towerModels(): Record<TowerKind, TowerModel[]> {
             muzzle: [0, 0.2, 0.6],
             size: 1.1,
         },
+        {
+            base: M([...bastion(0.56, 0.4, 10), ...bigFlag(-0.44, 0.4, -0.36), ...bombPile(0.36, -0.34, 0.4)]),
+            top: M([
+                ...cannon(0.95, 0.085, 0.02, 0.02, -0.27),
+                ...cannon(1.0, 0.09, 0.02, 0.06, 0),
+                ...cannon(0.95, 0.085, 0.02, 0.02, 0.27),
+                ...soldier({ coat: COL.red, facing: COL.white, legs: COL.grey, x: -0.14, z: -0.38, hat: 'tricorn' }),
+                ...soldier({ coat: COL.red, facing: COL.white, legs: COL.grey, x: 0.16, z: -0.38, hat: 'tricorn' }),
+            ]),
+            topY: 0.42,
+            muzzle: [0, 0.2, 0.7],
+            size: 1.2,
+        },
     ];
     const morter: TowerModel[] = [
         {
@@ -498,6 +543,22 @@ export function towerModels(): Record<TowerKind, TowerModel[]> {
             muzzle: [0, 0.55, 0.2],
             size: 1.1,
         },
+        {
+            base: M([
+                ...bastion(0.56, 0.32, 12),
+                ...bigFlag(-0.44, 0.32, -0.34),
+                ...bombPile(0.34, -0.3, 0.34),
+                ...bombPile(-0.3, 0.3, 0.34),
+            ]),
+            top: M([
+                ...mortar(0.34, 1.3, -0.24, 0.1),
+                ...mortar(0.34, 1.3, 0.24, 0.1),
+                ...mortar(0.34, 1.45, 0, -0.18),
+            ]),
+            topY: 0,
+            muzzle: [0, 0.65, 0.2],
+            size: 1.2,
+        },
     ];
     const mine: TowerModel[] = [
         {
@@ -534,6 +595,23 @@ export function towerModels(): Record<TowerKind, TowerModel[]> {
             topY: 0,
             muzzle: [0, 0.34, -0.14],
             size: 0.7,
+        },
+        {
+            base: M([
+                cyl(0.32, 0.4, 0.14, [0, 0.07, 0], '#5b4632', undefined, 9),
+                box(0.06, 0.36, 0.06, [-0.24, 0.18, -0.2], COL.timber),
+                box(0.06, 0.36, 0.06, [0.24, 0.18, -0.2], COL.timber),
+                box(0.56, 0.06, 0.08, [0, 0.37, -0.2], COL.timber),
+                box(0.56, 0.04, 0.04, [0, 0.3, -0.2], COL.woodDark),
+                cyl(0.09, 0.09, 0.16, [0.12, 0.2, 0.08], COL.wood, undefined, 8),
+                cyl(0.09, 0.09, 0.16, [-0.12, 0.2, 0.1], COL.wood, undefined, 8),
+                cyl(0.09, 0.09, 0.16, [0, 0.2, -0.04], COL.wood, undefined, 8),
+                cyl(0.095, 0.095, 0.02, [0, 0.29, -0.04], COL.gold, undefined, 8),
+            ]),
+            top: null,
+            topY: 0,
+            muzzle: [0, 0.42, -0.2],
+            size: 0.8,
         },
     ];
     _towers = { musketer, kanon, morter, mine };
@@ -688,15 +766,15 @@ export function gabionGeo() {
     return _gab;
 }
 
-let _stake: THREE.BufferGeometry | null = null;
-/** Stikkene graverne setter ut der den neste løpegraven skal gå. */
-export function stakeGeo() {
-    if (_stake) return _stake;
-    _stake = mergeParts([
-        cyl(0.012, 0.012, 0.3, [0, 0.15, 0], COL.wood, undefined, 4),
-        box(0.1, 0.05, 0.01, [0.05, 0.27, 0], '#c8322b'),
+let _post: THREE.BufferGeometry | null = null;
+/** Stikkene som merker veien over den åpne sletta: en stake med en rød fille. */
+export function postGeo() {
+    if (_post) return _post;
+    _post = mergeParts([
+        cyl(0.016, 0.02, 0.34, [0, 0.17, 0], COL.wood, undefined, 5),
+        box(0.1, 0.055, 0.012, [0.05, 0.3, 0], '#c8322b'),
     ]);
-    return _stake;
+    return _post;
 }
 
 let _debris: THREE.BufferGeometry | null = null;

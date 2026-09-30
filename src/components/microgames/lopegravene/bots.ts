@@ -3,6 +3,7 @@ import {
     COLS,
     ROWS,
     FORT_ROW,
+    MAX_LEVEL,
     TOWERS,
     build,
     buildCost,
@@ -15,7 +16,6 @@ import {
     sell,
     allowed,
     rally,
-    digRoutePreview,
     type CardId,
     type G,
     type IO,
@@ -83,12 +83,9 @@ const PREF: Record<BotStyle, CardId[]> = {
     tilfeldig: [],
 };
 
-/** Rutene eleven kan se: de åpne og den graverne holder på med. */
+/** Veien svenskene går (den eleven ser). */
 function visibleRoutes(g: G): Route[] {
-    const rs = g.routes.filter((r) => r.open);
-    const d = digRoutePreview(g);
-    if (d) rs.push(d);
-    return rs;
+    return g.routes.filter((r) => r.open);
 }
 
 function rangeAt(g: G, k: TowerKind, z: number) {
@@ -109,7 +106,7 @@ function tileScore(g: G, k: TowerKind, x: number, z: number, wTrench: number, wO
             const d = Math.hypot(cx - x, cz - z);
             if (d > r || d < minR) continue;
             const c = cellAt(g, cx, cz);
-            s += c === 'grav' || c === 'mark' ? wTrench : wOpen;
+            s += c === 'grav' ? wTrench : wOpen;
         }
     return s;
 }
@@ -152,8 +149,8 @@ function covers(g: G, k: TowerKind, rt: Route, trenchOnly: boolean) {
         const r = rangeAt(g, k, t.cz) + t.level * 0.3;
         return rt.cells.some(([x, z]) => {
             const c = cellAt(g, x, z);
-            if (trenchOnly && c !== 'grav' && c !== 'mark') return false;
-            if (!trenchOnly && c !== 'glacis') return false;
+            if (trenchOnly && c !== 'grav') return false;
+            if (!trenchOnly && c !== 'glacis' && c !== 'vei') return false;
             const d = Math.hypot(t.cx - x, t.cz - z);
             return d <= r && d >= (k === 'morter' ? 1.2 : 0);
         });
@@ -204,7 +201,7 @@ function tungeTick(g: G, io: IO, rank: number) {
     // Oppgrader det svakeste tårnet (den halvgode stopper på nivå 2).
     const kFirst = fast ? (t: { kind: TowerKind }) => (t.kind === k2 ? 0 : 1) : () => 0;
     const up = g.towers
-        .filter((t) => !t.fallen && t.kind !== 'mine' && t.level < (rank > 0 ? 1 : 2))
+        .filter((t) => !t.fallen && t.kind !== 'mine' && t.level < (rank > 0 ? 1 : MAX_LEVEL))
         .sort((a, b) => kFirst(a) - kFirst(b) || a.level - b.level || upgradeCost(a) - upgradeCost(b))[0];
     if (up) {
         if (g.gold >= upgradeCost(up)) upgrade(g, up.id, io);
@@ -287,7 +284,7 @@ function fellerTick(g: G, io: IO) {
         }
     }
     // Ingen plass til flere: oppgrader minene.
-    const up = mines.filter((t) => t.level < 2).sort((a, b) => a.level - b.level)[0];
+    const up = mines.filter((t) => t.level < MAX_LEVEL).sort((a, b) => a.level - b.level)[0];
     if (up && g.gold >= upgradeCost(up)) upgrade(g, up.id, io);
 }
 

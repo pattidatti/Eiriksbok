@@ -36,13 +36,13 @@ export const TOWER_HINT: Record<TowerKind, string> = {
     musketer: 'Billig. Flat ild - best på åpen mark.',
     kanon: 'Tung, flat ild. Knuser beleiringskanoner.',
     morter: 'Høy bue rett ned i grøfta. Treg bombe.',
-    mine: 'Legges i grøfta. Sprenger nedenfra.',
+    mine: 'Legges på veien. Sprenger nedenfra.',
 };
-export const TOWER_LEVELS: Record<TowerKind, [string, string, string]> = {
-    musketer: ['Skanse av kurver', 'Plattform med palisade', 'Blokkhus'],
-    kanon: ['Feltkanon', 'Kanonplattform', 'Steinbatteri med to kanoner'],
-    morter: ['Morter i kurver', 'Morterstilling', 'Rundt batteri med to mortere'],
-    mine: ['Kruttkagge', 'To kagger', 'Minegang med tømmer'],
+export const TOWER_LEVELS: Record<TowerKind, [string, string, string, string]> = {
+    musketer: ['Skanse av kurver', 'Plattform med palisade', 'Blokkhus', 'Bastion med livkompani'],
+    kanon: ['Feltkanon', 'Kanonplattform', 'Steinbatteri med to kanoner', 'Stort batteri med tre kanoner'],
+    morter: ['Morter i kurver', 'Morterstilling', 'Rundt batteri med to mortere', 'Bombebatteri med tre mortere'],
+    mine: ['Kruttkagge', 'To kagger', 'Minegang med tømmer', 'Minegalleri under veien'],
 };
 
 export const ENEMY_ORDER: EnemyKind[] = ['karoliner', 'graver', 'rytter', 'grenader', 'beleiring', 'livgarde', 'karl'];

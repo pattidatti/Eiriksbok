@@ -16,6 +16,7 @@ const HALF = 0.28; // halv bredde på bunnen
 const LIP = 0.4; // der jordvollen på kanten er høyest
 const BANK = 0.62; // der vollen har flatet ut
 const CREST = 0.16;
+const ROAD = 0.46; // halv bredde på stien over sletta
 
 export const WALL_TOP = 0.8;
 export const VOLL_TOP = 0.42;
@@ -30,6 +31,8 @@ export interface TerrainData {
     segs: Seg[];
     /** Segmentene sortert i bøtter per rute, for rask avstand. */
     bucket: Map<number, Seg[]>;
+    /** Den åpne sletta på veien: nedtrampet snø, ingen grøft. */
+    road: Map<number, Seg[]>;
 }
 
 const key = (ix: number, iz: number) => iz * 64 + ix;
@@ -59,26 +62,38 @@ const smooth = (a: number, b: number, x: number) => {
 /** Løpegravene som linjestykker (fra rutenettet). Leirenden forlenges ut i mørket. */
 export function trenchData(g: G): TerrainData {
     const segs: Seg[] = [];
-    const isG = (x: number, z: number) =>
-        x >= 0 && z >= 0 && x < COLS && z < ROWS && g.cells[z][x] === 'grav';
-    // Grøftene følger rutene (og graverne) celle for celle. To grøfter som går side om
-    // side blir to grøfter, ikke ett stort hull.
-    const chains: [number, number][][] = g.routes.map((r) => r.cells);
-    if (g.dig) chains.push(g.dig.cells);
-    for (const cells of chains) {
+    const road: Seg[] = [];
+    const at = (x: number, z: number) => (x >= 0 && z >= 0 && x < COLS && z < ROWS ? g.cells[z][x] : null);
+    const isG = (x: number, z: number) => at(x, z) === 'grav';
+    // Sletta og stormen over glacis er åpen vei: tråkket snø, ingen grøft.
+    const isV = (x: number, z: number) => at(x, z) === 'vei' || at(x, z) === 'glacis';
+    // Grøftene følger veien celle for celle. Der veien krysser den åpne sletta, blir det
+    // en nedtrampet sti i stedet (den går helt inn til grøfteendene).
+    for (const r of g.routes) {
+        const cells = r.cells;
         for (let i = 0; i < cells.length; i++) {
             const [x, z] = cells[i];
-            if (!isG(x, z)) continue;
             const [ax, az] = toWorld(x, z);
+            const n = cells[i + 1];
+            if (isV(x, z)) {
+                road.push([ax, az, ax, az]);
+                if (n && (isV(n[0], n[1]) || isG(n[0], n[1]))) road.push([ax, az, ...toWorld(n[0], n[1])]);
+                const p = cells[i - 1];
+                if (p && isG(p[0], p[1])) road.push([...toWorld(p[0], p[1]), ax, az]);
+            }
+            if (!isG(x, z)) continue;
             segs.push([ax, az, ax, az]);
             if (z === ROWS - 1 && i === 0) segs.push([ax, az, ax, az + 3.2]);
-            const n = cells[i + 1];
             if (n && isG(n[0], n[1])) {
                 const [bx, bz] = toWorld(n[0], n[1]);
                 segs.push([ax, az, bx, bz]);
             }
         }
     }
+    return { segs, bucket: bucketize(segs), road: bucketize(road) };
+}
+
+function bucketize(segs: Seg[]) {
     const bucket = new Map<number, Seg[]>();
     for (const s of segs) {
         const x0 = Math.floor(Math.min(s[0], s[2]) - BANK) + 20;
@@ -93,12 +108,16 @@ export function trenchData(g: G): TerrainData {
                 else bucket.set(k, [s]);
             }
     }
-    return { segs, bucket };
+    return bucket;
 }
 
 /** Avstand til nærmeste grøft (stor verdi = ingen grøft i nærheten). */
 export function trenchDist(td: TerrainData, x: number, z: number) {
-    const l = td.bucket.get(key(Math.floor(x) + 20, Math.floor(z) + 4));
+    return segDist(td.bucket, x, z);
+}
+
+function segDist(bucket: Map<number, Seg[]>, x: number, z: number) {
+    const l = bucket.get(key(Math.floor(x) + 20, Math.floor(z) + 4));
     if (!l) return 9;
     let best = 9;
     for (const [ax, az, bx, bz] of l) {
@@ -133,8 +152,11 @@ function baseHeight(x: number, z: number) {
 
 /** Høyden i verden, med løpegravene skåret ut. */
 export function heightFn(td: TerrainData, x: number, z: number) {
-    const h = baseHeight(x, z);
+    let h = baseHeight(x, z);
     if (z < 4.55) return h;
+    // Sletta: stien er tråkket et lite hakk ned i snøen.
+    const rd = segDist(td.road, x, z);
+    if (rd < ROAD) h -= 0.05 * (1 - smooth(ROAD - 0.14, ROAD, rd));
     const d = trenchDist(td, x, z);
     if (d >= BANK) return h;
     if (d <= HALF) return FLOOR;
@@ -154,7 +176,7 @@ const HD = 17 * HRES + 1;
 
 export class HeightMap {
     data = new Float32Array(HW * HD);
-    td: TerrainData = { segs: [], bucket: new Map() };
+    td: TerrainData = { segs: [], bucket: new Map(), road: new Map() };
     /** Bygg høydekartet på nytt - helt, eller bare innenfor `r` (verden: x0, x1, z0, z1). */
     rebuild(g: G, r: Region | null = null) {
         this.td = trenchData(g);
@@ -214,6 +236,7 @@ const MUD = new THREE.Color('#4a3a2a');
 const CLAY = new THREE.Color('#7a5a3c');
 const HILL = new THREE.Color('#34436e');
 const C = new THREE.Color();
+const C2 = new THREE.Color();
 
 export function makeTerrainGeometry() {
     const geo = new THREE.BufferGeometry();
@@ -275,6 +298,12 @@ export function fillTerrain(geo: THREE.BufferGeometry, td: TerrainData, r: Regio
                     } else if (d < BANK + 0.15) C.copy(TRAMPLED).lerp(EARTH, 0.45 + n * 0.25);
                     else if (d < 1.1) C.lerp(TRAMPLED, 0.35 * (1 - (d - BANK) / 0.5));
                 }
+                // Den åpne veien (sletta og glacis): en bred sti av nedtrampet snø.
+                const rd = segDist(td.road, x, z);
+                if (z > 1.5 && (z < 4.55 || trenchDist(td, x, z) >= LIP + 0.02) && rd < ROAD + 0.12) {
+                    const k = 1 - smooth(ROAD - 0.1, ROAD + 0.12, rd);
+                    C.lerp(C2.copy(EARTH_DARK).lerp(n > 0.5 ? MUD : TRAMPLED, 0.35 + n * 0.4), 0.95 * k);
+                }
             }
             col.setXYZ(v, C.r, C.g, C.b);
             if (r) {
@@ -313,7 +342,9 @@ export function gabionSpots(g: G, hm: HeightMap, max: number) {
             if (!isG(x, z)) continue;
             for (const [dx, dz] of sides) {
                 if (isG(x + dx, z + dz)) continue;
-                if (dz === -1 && g.cells[z - 1]?.[x] === 'glacis') continue; // utgangen mot glacis
+                const nb = g.cells[z + dz]?.[x + dx];
+                if (dz === -1 && nb === 'glacis') continue; // utgangen mot glacis
+                if (nb === 'vei') continue; // grøfta åpner seg ut mot sletta
                 if (dz === 1 && z === ROWS - 1) continue;
                 const [wx, wz] = toWorld(x, z);
                 // Kolonne +1 er -x i verden.
