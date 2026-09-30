@@ -10,6 +10,7 @@ const HavetKommer = lazy(() => import('./HavetKommer'));
 const GuddommeligVind3D = lazy(() => import('./GuddommeligVind3D'));
 const Lopegravene3D = lazy(() => import('./Lopegravene3D'));
 const Thermopylae3D = lazy(() => import('./Thermopylae3D'));
+const Loddposen = lazy(() => import('./Loddposen'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
@@ -2407,6 +2408,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Karolinske slagmalerier (Lemke, Cederström): nattblått og snø, krutrøyk og lyskuler over grøftene, blå frakker med gule oppslag',
         loader: () => import('./Lopegravene3D'),
         Component: Lopegravene3D as never,
+    },
+    loddposen: {
+        id: 'loddposen',
+        title: 'Loddposen',
+        description:
+            'Firenze, 1434-1492. Byen trekker lodd om de viktigste vervene, og du er Medici-familiens hemmelige hånd i rådhuset. Smugle Medici-lapper ned i loddposen når rådsherrene ser bort, og fisk opp fiendelapper når du tør. Kremter en rådsherre, snur han seg snart - blir du sett med hånda i posen, blir Cosimo arrestert. Hver lapp og hver venn koster florin fra banken, men for mye gull gjør rådsherrene misunnelige. Gi byen kunst, så ser de på kunsten i stedet for på posen. Lyspæra: Medici styrte Firenze uten en eneste tittel, fordi banken betalte vennene i posen.',
+        estimatedSeconds: 170,
+        sjanger: 'stealth-timing-bordplate',
+        tone: 'lett',
+        hook: 'Du er Medici-familiens hemmelige hånd. Få vennene ned i posen uten å bli sett.',
+        cover: '/images/microgames/loddposen.webp',
+        kunst: 'Florentinsk perspektiv-intarsia fra Palazzo Vecchio og domkirken: innlagt valnøtt, lønn og ebenholt, sandsvidde kanter, Medici-rødt og florin-gull i stearinlys',
+        loader: () => import('./Loddposen'),
+        Component: Loddposen as never,
     },
 };
 

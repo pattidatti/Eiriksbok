@@ -222,3 +222,29 @@ bli tom.
   beundrere), så eleven husker tre regler. Ingen simulering ennå. Kjent risiko: gull-regelen kan
   bli for mye å følge med på midt i smuglingen; hold kista stor og lesbar i hjørnet, og test i
   gråboksen om eleven merker misunnelseslinja. Blikkstripene må leses tydelig mot valnøtta på `lav`.
+- **Fase: bygg, gråboks (2026-09-30).** Bygde steg 3a: spillreglene i `loddposen/game.ts`,
+  roboter i `loddposen/bots.ts` (seende, halvgod, ødeland, tilfeldig), `loddposen/sim.ts`,
+  en canvas-gråboks i `Loddposen.tsx` (sirkler, kiler og bokser, ingen kunst eller juice) med
+  `usePlaytest`, og registrering i `registry.ts` med `kunst`. Kjerneløkka: 8 trekninger à
+  15 s smugling + 3,5 s trekning (148 s, vinneren bruker ca. 153 s). Slipp 0,3 s, fisk 0,7 s,
+  kremt 0,8 s til 0,4 s, 0,25 s frys når et kremt kommer mens hånda er i posen. Banken:
+  15 florin/s (halvparten fra 1469), lapp 10 florin, lønn 30 + 20 per venn med verv etter hver
+  trekning, misunnelseslinje ved 420. Kunst: 70-200 florin, beundrer i 1-4 trekninger.
+  Simulering (600 runder, grønn): seende vinner 83 % (median 570), halvgod 70 % (median 443),
+  ødeland 3 % (median 135, dør av tom kiste), tilfeldig 0 %, passiv 0 %. 23,8 valg per minutt,
+  press 0,20 -> 0,44 -> 0,71. Nettleseren: seende vant med 685 poeng, JS p95 4,7 ms på
+  Chromebook-struping. Portfunn som er ventet nå: cover mangler, ingen `useArcadeText`.
+  - *Prøvd som ikke virket:* (1) like korte bortblikk som i briefen (1,5-3,9 s): med 4-6
+    rådsherrer åpnet det seg nesten aldri et vindu der alle så bort, og alle ble stemt ut i
+    1454. Bortblikkene er nå 3-7 s delt på farten, så det er antallet rådsherrer som strammer
+    vinduene, ikke hvor lenge hver ser. (2) Fart x1,6 i 1478: null lapper for alle, nå x1,3.
+    (3) Å dra hånda ut ved hvert kremt: vinneren tapte mot den halvgode. Et slipp (0,3 s) er
+    raskere enn kremtet og kan fullføres, et fiske kan ikke - det er en god ekstra lærdom.
+    (4) Inntekt 18 florin/s: da ble banken likegyldig og ødelanden vant 33 %. (5) Gonfalonieren
+    ble satt midt i rekka og stjal plassen til en beundrer; nå sitter han sist.
+  - *Kjente svakheter:* den halvgode vinner 70 %, så ferdighetstaket er grunt og flaks i
+    trekningen betyr mye (tre tap på rad sent i runden er den vanligste dødsårsaken for alle).
+    Sluttspillet (6-7 rådsherrer) er trangt og avhenger av kunst; spar-og-kjøp-rytmen rundt
+    1469 er det eleven må lære, og den er ikke forklart i spillet ennå. Pazzis lureblikk er
+    nesten ufarlig for en som reagerer på kremtet. Blikkstripene i gråboksen går ut over
+    bordkanten, og i varsel peker stripa bare litt mot posen - må leses tydeligere i kunsten.
