@@ -8,6 +8,7 @@ import type { MicroGameEntry } from './types';
 const GladiusDuel = lazy(() => import('./GladiusDuel'));
 const HavetKommer = lazy(() => import('./HavetKommer'));
 const GuddommeligVind3D = lazy(() => import('./GuddommeligVind3D'));
+const Lopegravene3D = lazy(() => import('./Lopegravene3D'));
 const Thermopylae3D = lazy(() => import('./Thermopylae3D'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
@@ -2392,6 +2393,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Gresk polykromi mot persisk glasert murstein: malt marmor og bronse i lav sol, turkist hav, blått og gult glasur',
         loader: () => import('./Thermopylae3D'),
         Component: Thermopylae3D as never,
+    },
+    'lopegravene-1718': {
+        id: 'lopegravene-1718',
+        title: 'Løpegravene',
+        description:
+            'Fredriksten festning, desember 1718. Karl XII graver sikksakkgrøfter mot muren natt etter natt. Bygg musketerer, kanoner, mortere og kontraminer, og velg én av tre ordrer etter hver natt. Grøfta gir dekning mot flat ild: morteren skyter i bue rett ned i den, minen sprenger nedenfra, og på den åpne glacisen treffer alt. Beleiringskanonene knuser tårnene dine, og hver ny fiende krever et nytt svar. Hold ut til kongen selv står i den fremste løpegraven.',
+        estimatedSeconds: 240,
+        sjanger: 'tower-defense-roguelite',
+        tone: 'grusom',
+        hook: 'Du er kommandant på Fredriksten. Karl XII graver seg mot muren - hold ut til kongen faller.',
+        cover: '/images/microgames/lopegravene-1718.webp',
+        kunst: 'Karolinske slagmalerier (Lemke, Cederström): nattblått og snø, krutrøyk og lyskuler over grøftene, blå frakker med gule oppslag',
+        loader: () => import('./Lopegravene3D'),
+        Component: Lopegravene3D as never,
     },
 };
 

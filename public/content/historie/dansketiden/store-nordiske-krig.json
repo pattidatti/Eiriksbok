@@ -109,6 +109,13 @@
       "content": "Hvem som skjøt, har folk kranglet om i over 300 år. Kom kula fra festningen, eller var det en av hans egne menn som skjøt? Mange har ment at han ble myrdet. Men nyere forskning, som har sett på terrenget og på hvordan kula må ha gått, avviser ideen om mord (Mardal, 2026). Vil du teste bevisene selv, kan du prøve [detektivsaken om Karl XIIs død](/oving/detektiv/karl-xii)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "lopegravene-1718"
+      }
+    },
+    {
       "type": "header",
       "text": "Dødsmarsjen over fjellet"
     },
