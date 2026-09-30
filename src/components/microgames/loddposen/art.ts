@@ -7,7 +7,8 @@ import { seeded } from '../sim';
 // flisene, dreid i hver sin retning, slik intarsiamestrene la årene på tvers av hverandre.
 // Hver bit får sandsvidd kant (mørk ytterst, lys midt i) og en tynn ebenholtlist rundt.
 
-export type Tre = 'valnøtt' | 'honning' | 'lønn' | 'ebenholt' | 'grønn' | 'blå';
+/** Treslagene i intarsiaen. «rød» er rødbeiset pære, «hvit» er kristtorn (det lyseste treet). */
+export type Tre = 'valnøtt' | 'honning' | 'lønn' | 'ebenholt' | 'grønn' | 'blå' | 'rød' | 'hvit';
 
 export const FARGE = {
     valnøtt: '#4a2c1a',
@@ -28,6 +29,8 @@ const TRESLAG: Record<Tre, { base: RGB; mørk: RGB; lys: RGB; årer: number; see
     ebenholt: { base: [30, 21, 16], mørk: [14, 10, 8], lys: [58, 42, 32], årer: 16, seed: 41 },
     grønn: { base: [93, 122, 78], mørk: [58, 80, 48], lys: [128, 156, 106], årer: 10, seed: 53 },
     blå: { base: [62, 80, 104], mørk: [38, 50, 68], lys: [92, 112, 138], årer: 10, seed: 67 },
+    rød: { base: [158, 40, 30], mørk: [104, 22, 16], lys: [196, 74, 54], årer: 9, seed: 71 },
+    hvit: { base: [242, 236, 222], mørk: [214, 206, 188], lys: [253, 251, 245], årer: 13, seed: 83 },
 };
 
 const S = 256;

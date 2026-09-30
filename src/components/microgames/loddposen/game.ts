@@ -14,8 +14,12 @@ import { seeded, type Rng } from '../sim';
 //      (Albizzi kremter av og til falskt fra 1444: da snur ikke hodet seg, og blikket tennes ikke.)
 //
 // En runde er åtte trekninger. Hver trekning: SMUGLE_S sekunder smugling, så TREKK_S sekunder
-// trekning. Mellom trekningene (fra 1444) kommer gavefasen: banken sender florin fra
-// filialene, og gavekortet ligger midt på bordet i opptil GAVE_S sekunder.
+// trekning. Mellom trekningene (fra 1444) kommer valget: banken sender florin fra filialene,
+// og to store kort ligger på bordet - «Bestikk» (+2 røde lodd i posen) eller «Bestill maleri»
+// (en navngitt fiende blir beundrer og ser bort i to trekninger). Kortene blir dyrere når
+// banken faller. Noen trekninger er hendelser: pavens utsending sitter ved bordet i 1454 og
+// 1485 (smugler du mens han følger med, betaler paven), og i 1478 ser Pazzi og Salviati
+// samtidig.
 
 // ---------- Tall ----------
 export const W = 1000;
@@ -25,8 +29,8 @@ export const BAG = { x: 500, y: 330, r: 58 };
 export const TREKNINGER = 8;
 export const SMUGLE_S = 10;
 export const TREKK_S = 2.6;
-/** Gavefasen mellom trekningene: gavekortet på bordet, pengene fra banken kommer inn. */
-export const GAVE_S = 3;
+/** Valget mellom trekningene: to kort på bordet, pengene fra banken kommer inn. */
+export const GAVE_S = 4;
 export const RUN_SECONDS = TREKNINGER * (SMUGLE_S + TREKK_S) + (TREKNINGER - 1) * GAVE_S;
 
 export const ÅR = [1434, 1444, 1454, 1464, 1469, 1478, 1485, 1492];
@@ -47,6 +51,15 @@ const LORENZO_FRA = 4;
 export const RYSTELSE = 5;
 /** Fra 1478 ser Pazzi tilbake uten varsel så mange sekunder etter at han så bort. */
 export const PAZZI_STILLE_S = 3;
+/** Pavens utsending sitter ved bordet i disse trekningene (1454 og 1485). */
+export const UTSENDING_I = [2, 6];
+/** Florin fra pavens konto for hver lapp du slipper mens utsendingen følger med. */
+export const PAVE_BONUS = 10;
+/** Kortene: grunnpris når banken tjener fullt (40 florin), dyrere når den faller. */
+export const BESTIKK_PRIS = 60;
+export const BESTIKK_LAPPER = 2;
+export const MALERI_PRIS = 100;
+export const MALERI_TREKNINGER = 2;
 
 /** Grådig hånd: første lapp faller etter FØRSTE_S, så én hvert NESTE_S så lenge hånda er inne. */
 export const FØRSTE_S = 0.5;
@@ -99,19 +112,16 @@ const MULT_MAKS = 5;
 
 export interface Kunst {
     navn: string;
-    pris: number;
-    /** Hvor mange trekninger rådsherren er beundrer. */
-    trekninger: number;
 }
 
-/** Kunstverkene i studiolo-skapet, i den rekkefølgen de kan tilbys. */
+/** Kunstverkene i studiolo-skapet, i den rekkefølgen maleri-kortet bestiller dem. */
 export const KUNST: Kunst[] = [
-    { navn: 'Bøker til biblioteket', pris: 70, trekninger: 1 },
-    { navn: 'Brunelleschis kirke', pris: 200, trekninger: 2 },
-    { navn: 'Donatellos statue', pris: 130, trekninger: 2 },
-    { navn: 'Ficinos Platon-skole', pris: 110, trekninger: 2 },
-    { navn: 'Botticellis maleri', pris: 150, trekninger: 2 },
-    { navn: 'Unge Michelangelo i huset', pris: 190, trekninger: 2 },
+    { navn: 'Bøker til biblioteket' },
+    { navn: 'Brunelleschis kirke' },
+    { navn: 'Donatellos statue' },
+    { navn: 'Ficinos Platon-skole' },
+    { navn: 'Botticellis maleri' },
+    { navn: 'Unge Michelangelo i huset' },
 ];
 
 export const RANGER: [number, string][] = [
@@ -125,7 +135,7 @@ export const RANGER: [number, string][] = [
 
 // ---------- Tilstand ----------
 export type Blikk = 'bort' | 'varsel' | 'ser';
-export type Slag = 'råd' | 'pazzi' | 'gonf' | 'albizzi';
+export type Slag = 'råd' | 'pazzi' | 'gonf' | 'albizzi' | 'utsending' | 'salviati';
 
 export interface Rådsherre {
     id: number;
@@ -175,7 +185,9 @@ export interface Hendelse {
         | 'tom'
         | 'banken'
         | 'bank'
-        | 'rykk';
+        | 'rykk'
+        | 'bestikk'
+        | 'pave';
     tekst?: string;
     x?: number;
     y?: number;
@@ -193,10 +205,18 @@ export interface Hånd {
 }
 const tomHånd = (): Hånd => ({ act: null, t: 0, neste: 0, dukk: 0, varslet: false });
 
+export type KortValg = 'bestikk' | 'maleri';
+
+/** Valget mellom trekningene: to store kort med pris og virkning skrevet på. */
 export interface Kort {
-    valg: [Kunst, Kunst];
-    /** Valgt kunstverk som venter på at eleven peker på en rådsherre. */
-    valgt: Kunst | null;
+    /** Pris for «Bestikk: +2 røde lodd». */
+    bestikk: number;
+    /** Pris for «Bestill maleri». */
+    maleri: number;
+    /** Kunstverket maleri-kortet bestiller. */
+    kunst: Kunst;
+    /** Rådsherren som blir beundrer (null: ingen kan tas med kunst nå). */
+    mål: number | null;
 }
 
 export interface G {
@@ -228,6 +248,11 @@ export interface G {
     fri: boolean;
     ended: null | 'vunnet' | 'tapt';
     cause: Cause | null;
+    /** Hvem som så hånda i posen (til tipset på tapsskjermen). */
+    tattAv: Slag | null;
+    /** Florin fra pavens konto denne runden. */
+    pave: number;
+    bestikkelser: number;
     events: Hendelse[];
     nextId: number;
 }
@@ -250,8 +275,13 @@ export function renter(g: G, venner = g.venner) {
     const per = bankenSvikter(g) ? RENTE_PER_VENN / 2 : RENTE_PER_VENN;
     return Math.round(per * clamp(venner - (MÅ_HA - 1), 0, RENTE_TAK));
 }
-/** Fra 1478 kremter ikke Pazzi, og kunst virker ikke på ham. */
-export const stillePazzi = (g: G, r: Rådsherre) => r.slag === 'pazzi' && g.trekning >= RYSTELSE;
+/** Fra 1478 kremter ikke Pazzi (eller Salviati ved siden av ham), og kunst virker ikke på dem. */
+export const stillePazzi = (g: G, r: Rådsherre) =>
+    r.slag === 'salviati' || (r.slag === 'pazzi' && g.trekning >= RYSTELSE);
+/** Sitter pavens utsending ved bordet i denne trekningen? */
+export const utsendingHer = (g: G) => UTSENDING_I.includes(g.trekning);
+/** Kortene blir dyrere når banken tjener mindre: grunnpris x 40 / bankinntekt, rundet til 5. */
+export const kortPris = (g: G, grunn: number) => Math.round((grunn * 40) / Math.max(1, bank(g)) / 5) * 5;
 export const lapper = (g: G) => g.venner + g.fiender;
 /** Den stille Pazzi snur hodet i tre rykk: 0, 1, 2 (og så ser han). */
 export const PAZZI_RYKK = 3;
@@ -312,6 +342,8 @@ function nyBort(g: G, r: Rådsherre) {
     } else {
         r.lur = false;
         r.t = (BORT_MIN + g.rng() * BORT_MIN) / f;
+        // Pavens utsending er rolig: han ser sjelden på posen.
+        if (r.slag === 'utsending') r.t *= 1.3;
         // Albizzi kremter av og til falskt for å skremme deg - hodet hans snur seg ikke.
         if (r.slag === 'albizzi' && g.trekning >= ALBIZZI_FRA && g.rng() < ALBIZZI_FALSK) {
             r.falsk = true;
@@ -322,21 +354,22 @@ function nyBort(g: G, r: Rådsherre) {
 }
 
 function lagRådsherrer(g: G) {
-    const n = RÅD[g.trekning] + (g.gonfNeste ? 1 : 0);
+    // Gjestene: faste plasser først, så hendelsesgjestene (utsending, Salviati) og til sist
+    // Albizzis gonfaloniere etter et tap.
+    const ekstra: Slag[] = [];
+    if (utsendingHer(g)) ekstra.push('utsending');
+    if (g.trekning === RYSTELSE) ekstra.push('salviati');
+    if (g.gonfNeste) ekstra.push('gonf');
+    const fast = RÅD[g.trekning];
+    const n = fast + ekstra.length;
     const gamle = g.rådsherrer;
     const liste: Rådsherre[] = [];
     for (let i = 0; i < n; i++) {
         const p = seat(i, n);
         const slag: Slag =
-            g.gonfNeste && i === n - 1
-                ? 'gonf'
-                : g.trekning >= PAZZI_FRA && i === 0
-                  ? 'pazzi'
-                  : i === 1
-                    ? 'albizzi'
-                    : 'råd';
+            i >= fast ? ekstra[i - fast] : g.trekning >= PAZZI_FRA && i === 0 ? 'pazzi' : i === 1 ? 'albizzi' : 'råd';
         // Beundrere beholder sin plass i rekka (samme id) fra forrige trekning.
-        const gammel = gamle[i] && gamle[i].slag !== 'gonf' && slag !== 'gonf' ? gamle[i] : null;
+        const gammel = gamle[i] && gamle[i].slag === slag && slag !== 'gonf' ? gamle[i] : null;
         const r: Rådsherre = {
             id: gammel ? gammel.id : g.nextId++,
             slag,
@@ -365,12 +398,26 @@ function lagRådsherrer(g: G) {
     g.gonfNeste = false;
 }
 
+/**
+ * Hvem maleriet gjør til beundrer: den farligste fienden som kunst virker på. Pazzi (før 1478)
+ * ser i rykk, Albizzi kremter falskt, og så de andre rådsherrene. Albizzis gonfaloniere og den
+ * stille Pazzi fra 1478 lar seg ikke kjøpe.
+ */
+export function maleriMål(g: G): Rådsherre | null {
+    const rang = (r: Rådsherre) => (r.slag === 'pazzi' ? 3 : r.slag === 'albizzi' ? 2 : r.slag === 'utsending' ? 0 : 1);
+    const kand = g.rådsherrer.filter((r) => aktiv(r) && r.slag !== 'gonf' && !stillePazzi(g, r));
+    if (!kand.length) return null;
+    return kand.reduce((a, b) => (rang(b) > rang(a) ? b : a));
+}
+
 function lagKort(g: G): Kort {
-    const i = (g.trekning * 2) % KUNST.length;
-    const a = KUNST[i];
-    const b = KUNST[(i + 1 + (g.trekning % 3)) % KUNST.length];
-    const [billig, dyr] = a.pris <= b.pris ? [a, b] : [b, a];
-    return { valg: [billig, dyr === billig ? KUNST[(i + 2) % KUNST.length] : dyr], valgt: null };
+    const mål = maleriMål(g);
+    return {
+        bestikk: kortPris(g, BESTIKK_PRIS),
+        maleri: kortPris(g, MALERI_PRIS),
+        kunst: KUNST[(g.trekning - 1) % KUNST.length],
+        mål: mål ? mål.id : null,
+    };
 }
 
 function startTrekning(g: G) {
@@ -425,6 +472,9 @@ export function newGame(seed: number): G {
         fri: false,
         ended: null,
         cause: null,
+        tattAv: null,
+        pave: 0,
+        bestikkelser: 0,
         events: [],
         nextId: 1,
     };
@@ -463,49 +513,45 @@ export function trekkUt(g: G) {
     return true;
 }
 
-/** Velg et kunstverk på gavekortet (0 eller 1). Rådsherren velges med `gi`. */
-export function velgKunst(g: G, i: 0 | 1) {
+/** Har kista råd til kortet (og virker det nå)? */
+export function kanVelge(g: G, v: KortValg) {
     const k = g.kort;
     if (!k || g.ended) return false;
-    const kunst = k.valg[i];
-    if (g.kiste < kunst.pris) return false;
-    k.valgt = kunst;
+    if (v === 'maleri' && k.mål === null) return false;
+    return g.kiste >= k[v];
+}
+
+/**
+ * Legg et kort på bordet. Bestikk: to Medici-lapper rett i posen. Bestill maleri: fienden på
+ * kortet blir beundrer og ser på kunsten i stedet for posen i to trekninger.
+ */
+export function velgKort(g: G, v: KortValg) {
+    const k = g.kort;
+    if (!k || !kanVelge(g, v)) return false;
+    g.kiste -= k[v];
+    if (v === 'bestikk') {
+        g.venner += BESTIKK_LAPPER;
+        g.bestikkelser += 1;
+        g.events.push({ k: 'bestikk', tekst: `-${k.bestikk}`, x: BAG.x, y: BAG.y });
+    } else {
+        const r = g.rådsherrer.find((q) => q.id === k.mål);
+        if (r) {
+            r.beundrer = Math.max(r.beundrer, MALERI_TREKNINGER);
+            r.blikk = 'bort';
+            r.falsk = false;
+            if (!g.kunstKjøpt.includes(k.kunst.navn)) g.kunstKjøpt.push(k.kunst.navn);
+            g.events.push({ k: 'kunst', tekst: k.kunst.navn, x: r.x, y: r.y });
+        }
+    }
+    g.kort = null;
     return true;
 }
 
-/** Spar gullet: lukk gavekortet uten å kjøpe. */
+/** Spar gullet: ingen av kortene. */
 export function spar(g: G) {
     if (!g.kort) return false;
     g.kort = null;
     return true;
-}
-
-/** Gi det valgte kunstverket til en rådsherre: han blir beundrer og ser på kunsten. */
-export function gi(g: G, id: number) {
-    const k = g.kort;
-    if (!k || !k.valgt) return false;
-    const r = g.rådsherrer.find((q) => q.id === id);
-    if (!r || r.slag === 'gonf' || stillePazzi(g, r)) return false;
-    if (g.kiste < k.valgt.pris) return false;
-    g.kiste -= k.valgt.pris;
-    r.beundrer = Math.max(r.beundrer, k.valgt.trekninger);
-    r.blikk = 'bort';
-    r.falsk = false;
-    if (!g.kunstKjøpt.includes(k.valgt.navn)) g.kunstKjøpt.push(k.valgt.navn);
-    g.events.push({ k: 'kunst', tekst: k.valgt.navn, x: r.x, y: r.y });
-    g.kort = null;
-    return true;
-}
-
-/** Den farligste rådsherren å gjøre til beundrer: den som har sett mest på posen. */
-export function farligst(g: G): Rådsherre | null {
-    const kand = g.rådsherrer.filter((r) => aktiv(r) && r.slag !== 'gonf' && !stillePazzi(g, r));
-    if (!kand.length) return null;
-    return kand.reduce((a, b) => {
-        const va = a.sett + (a.slag === 'pazzi' ? 3 : 0);
-        const vb = b.sett + (b.slag === 'pazzi' ? 3 : 0);
-        return vb > va ? b : a;
-    });
 }
 
 // ---------- Oppdatering ----------
@@ -514,6 +560,7 @@ function sjekkTatt(g: G) {
     if (!g.hånd.act || g.ended) return;
     const seer = g.rådsherrer.find((r) => aktiv(r) && r.blikk === 'ser');
     if (seer) {
+        g.tattAv = seer.slag;
         g.events.push({ k: 'tatt', x: seer.x, y: seer.y });
         slutt(g, 'tatt');
     }
@@ -527,8 +574,20 @@ function slutt(g: G, cause: Cause | null) {
 
 function oppdaterBlikk(g: G, dt: number) {
     const f = fart(g);
+    const pazzi = g.rådsherrer.find((q) => q.slag === 'pazzi');
     for (const r of g.rådsherrer) {
         const mot = Math.atan2(BAG.y - r.y, BAG.x - r.x);
+        if (r.slag === 'salviati' && pazzi) {
+            // 1478: Salviati er Pazzis mann. De ser bort og tilbake i nøyaktig samme øyeblikk.
+            r.blikk = pazzi.blikk;
+            r.t = pazzi.t;
+            r.siden = pazzi.siden;
+            r.rykk = pazzi.rykk;
+            if (r.blikk === 'ser') r.sett += dt;
+            const m = r.blikk === 'ser' ? mot : lerp(r.bortVinkel, mot, r.blikk === 'bort' ? r.rykk / PAZZI_RYKK : 0.6);
+            r.vinkel += (m - r.vinkel) * Math.min(1, dt * (r.blikk === 'ser' ? 14 : 22));
+            continue;
+        }
         if (!aktiv(r)) {
             // Beundreren ser på kunsten (mot eleven sin side av bordet), aldri på posen.
             r.blikk = 'bort';
@@ -692,6 +751,12 @@ export function update(g: G, dt: number) {
                     g.kiste -= LAPP_PRIS;
                     g.venner += 1;
                     h.dukk += 1;
+                    // Pavens utsending følger med: tør du smugle mens han sitter der, betaler paven.
+                    if (g.rådsherrer.some((r) => r.slag === 'utsending' && aktiv(r))) {
+                        g.kiste = Math.min(KISTE_MAKS, g.kiste + PAVE_BONUS);
+                        g.pave += PAVE_BONUS;
+                        g.events.push({ k: 'pave', tekst: `+${PAVE_BONUS}`, x: BAG.x, y: BAG.y });
+                    }
                     // Grådighet lønner seg: fra tredje lapp i samme dukk stiger multiplikatoren.
                     if (h.dukk > 2) g.mult = Math.min(MULT_MAKS, g.mult + MULT_PER_LAPP);
                     g.events.push({ k: 'slapp', x: BAG.x, y: BAG.y });
@@ -727,7 +792,8 @@ export function progress(g: G) {
 
 /** 0-1: flere rådsherrer, raskere blikk og en Pazzi som ikke kremter. */
 export function pressure(g: G) {
-    const n = g.rådsherrer.filter(aktiv).length;
+    // Salviati følger Pazzi og teller ikke som et eget blikk.
+    const n = g.rådsherrer.filter((r) => aktiv(r) && r.slag !== 'salviati').length;
     const vakter = clamp((n - 3) / 2, 0, 1);
     const blikk = clamp((fart(g) - 1) / 0.6, 0, 1);
     return clamp(0.12 + 0.3 * vakter + 0.45 * blikk + (g.trekning >= RYSTELSE ? 0.1 : 0), 0, 1);
@@ -740,15 +806,38 @@ export const ÅRSAK: Record<Cause, string> = {
     tom: 'kista gikk tom - ingen florin til vennene',
 };
 
-export const TIPS: Record<Cause, { tittel: string; tekst: string }> = {
-    tatt: {
-        tittel: 'Tatt med hånda i posen!',
-        tekst:
-            'Rådsherrene arresterer Cosimo, som i 1433. Han slapp unna med eksil fordi han betalte bestikkelser. Tips: dra hånda ut med en gang noen kremter. Fra 1478 kremter ikke Pazzi - følg med på blikket hans som sveiper mot posen.',
-    },
-    tom: {
+/** Tapsskjermen: tittel, hva som skjedde historisk, og et konkret tips knyttet til året og årsaken. */
+export function tipsFor(g: G): { tittel: string; tekst: string; tips: string } {
+    const år = ÅR[g.trekning];
+    if (g.cause === 'tatt') {
+        const hvem = g.tattAv;
+        const tips =
+            hvem === 'pazzi' || hvem === 'salviati'
+                ? år >= ÅR[RYSTELSE]
+                    ? `Pazzi så deg i ${år}. Han kremter ikke: dra hånda ut på det andre rykket over hatten hans.`
+                    : `Pazzi så deg i ${år}. Han ser i rykk: vent et øyeblikk etter at han snur seg bort.`
+                : hvem === 'gonf'
+                  ? `Albizzis mann så deg i ${år}. Han kommer etter et tap og ser mest på posen - kjøp et maleri eller vent.`
+                  : hvem === 'utsending'
+                    ? `Pavens utsending så deg i ${år}. Han ser sjelden, men når han kremter, må hånda ut.`
+                    : hvem === 'albizzi'
+                      ? `Albizzi så deg i ${år}. Kremtet var ekte: hodet snudde seg. Da må hånda ut.`
+                      : `Du ble sett i ${år}. Dra hånda ut med en gang noen kremter og hodet snur seg.`;
+        return {
+            tittel: 'Tatt med hånda i posen!',
+            tekst: 'Rådsherrene arresterer Cosimo, som i 1433. Han slapp unna med eksil fordi han betalte bestikkelser.',
+            tips,
+        };
+    }
+    const tips =
+        g.trekning >= RYSTELSE
+            ? `Kista gikk tom i ${år}: banken i Brugge og London taper nå. Kjøp færre lodd og kort før banken faller, og spar til et tap.`
+            : g.trekning >= LORENZO_FRA
+              ? `Kista gikk tom i ${år}: London-banken tapte penger, og kortene ble dyrere. Spar mer før banken i Brugge faller.`
+              : `Kista gikk tom i ${år}: et tap koster ${tapPris(g)} florin. Ha alltid så mye igjen i kista før trekningen.`;
+    return {
         tittel: 'Kista er tom',
-        tekst:
-            'Uten penger forsvant vennene. Slik gikk det med Lorenzo: han brukte formuen på kunst, fester og gaver mens banken gikk dårligere, og i 1494 ble familien kastet ut. Tips: en tapt trekning koster mer for hvert år, og bare en vunnet trekning gir renter. Tør du flere venner i posen, betaler banken mer.',
-    },
-};
+        tekst: 'Uten penger forsvant vennene. Slik gikk det med Lorenzo: han brukte mer enn banken tjente, og i 1494 ble familien kastet ut.',
+        tips,
+    };
+}

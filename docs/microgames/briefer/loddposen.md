@@ -386,3 +386,40 @@ bli tom.
     velger etter 1,2 s og kremtet varer under ett sekund - vurdereren kan overse dem. Albizzi
     sitter ved bordet hele runden selv om han ble kastet ut i 1434 (en forenkling: han står for
     Albizzi-slekta og vennene deres). Lappen om falske kremt vises bare første gang.
+- **Fase: forbedrer, runde 2 (2026-09-30).** Vurdering 2: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 4,
+  Unikt 4 (sum 19). Gøy har stått på 3 i to runder, så kjerneløkka er endret:
+  (1) *Gøy + Lærerikt, kjerneløkka:* gavekortet med kunst og pek-på-rådsherre er borte. Mellom
+  trekningene ligger to store kort på bordet: «Bestikk: +2 røde lodd» (60 florin, lappene flyr rett
+  i posen) og «Bestill maleri» (100 florin, en navngitt fiende blir beundrer i 2 trekninger - kortet
+  sier hvem, og ringen lyser rundt ham). Prisen er grunnpris x 40 / bankinntekt, så kortene blir
+  dyrere når banken faller (75/125 i 1469, 100/165 fra 1478), og kortet sier «Banken taper: dyrere
+  kort». Valget varer 4 s (var 3). Hendelsestrekninger: pavens utsending (hvit, rolig, bortblikk
+  x1,3) sitter som ekstra gjest i 1454 og 1485, og hver lapp du slipper mens han følger med, gir
+  +10 florin fra pavens konto. I 1478 (Pazzi-trekningen) sitter Salviati ved siden av Pazzi og ser
+  bort og tilbake i nøyaktig samme øyeblikk, uten kremt. Hver trekning har nå sitt eget innhold:
+  øving, falske kremt, utsendingen, Pazzi, banken svikter, Pazzi og Salviati, utsendingen, seks fiender.
+  (2) *Utseende + Lesbart:* hver gjest har egen farge og hatt (Albizzi rød lue, Pazzi og Salviati blå,
+  pavens mann hvit med gullkors, gonfalonieren ebenholt), ansikt med øyne under bremmen, en lys ring
+  rundt hodet mot det brune bordet og et navneskilt (Soderini, Rucellai, Strozzi for de vanlige).
+  To nye treslag i `art.ts`: rødbeiset pære og hvit kristtorn. «EHEM!»-boblen er nesten dobbelt så
+  stor (32 px) og står ca. 1,4 s. Fast forklaring «RØD = VENN» og «SVART = FIENDE» over loddfeltene.
+  (3) *Lesbart:* prosent og «+florin ved seier» er borte fra sjanseskiltet (nå «3 av 5 røde vinner»
+  eller «Sikret: vennene vinner»), multiplikator-floatene ved posen er borte (multiplikatoren står
+  ved poengene). Kista har ett stort tall på mørk plate, «FLORIN I KISTA», og blir rød og blinker
+  med «NESTEN TOM!» når et tap vil tømme den. Tapsskjermen har en egen tipsboks knyttet til året og
+  årsaken (`tipsFor`): hvem som så deg (Pazzi, Albizzi, gonfalonieren, utsendingen), eller «Kista gikk
+  tom i 1478: banken i Brugge og London taper nå ...».
+  Robotene bruker `velgKort`/`spar` som klikk og tast 1/2/3. Vinneren kjøper maleri når minst fire
+  blikk er ved bordet, ellers bestikkelse, alltid med reserve til ett tap, og tør mer når paven betaler.
+  Simulering (200 runder, grønn): seende 92 % (median 1215, p10-p90 867-1597), halvgod 15 % (median
+  587), ødeland 0 % (median 532, tom kiste i 1444), tilfeldig 0 % (tatt i 1434), passiv 0 % (tom kiste
+  i 1454). 23,0 valg per minutt, press 0,17 -> 0,33 -> 0,74. Nettleseren: seende vant med 1090 poeng,
+  JS p95 17,8 ms (p50 9,9) på Chromebook-struping, audit 0 funn, likhet nærmest lop-med-lonna-3d (0,44).
+  - *Prøvd som ikke virket:* (1) Maleri til 80 florin: ødelanden (kjøper alltid dyreste kort) overlevde
+    til 1478 og fikk median 735, over den halvgode (487) - nå 100. (2) Å gi den halvgode strengere
+    bestikk-regel eller større reserve endret ingenting; det som holdt den nede, var at den slapp posen
+    ved 80 % sjanse, så den bygde aldri multiplikator. Nå slipper den ved 90 % eller etter tre lapper.
+  - *Kjente svakheter:* trappen er tynn (middels 587 mot ødeland 532). Den halvgode vinner bare 15 %.
+    Kortvalget syns sjelden i filmstripa fordi robotene velger etter 1,2 s. Maleriet velger målet selv
+    (den farligste), så eleven peker ikke lenger. Salviati gjør 1478 mer dramatisk å se på, men ikke
+    vanskeligere (samme tidtaker som Pazzi). Arm og hånd dekker av og til sjanseskiltet.
