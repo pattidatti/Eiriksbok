@@ -241,3 +241,17 @@ Kjente svakheter: høyderyggen i De persiske porter er lite synlig fra planleggi
 ekte skygger og bloom (middels/høy) er bare sjekket i menyen, fordi programvare-GPU-en faller
 til lav etter fem sekunder; rakede spor ved Gaugamela kan se ut som streker gjennom hæren fra
 lavt kamera. Steppehæren (Oxyartes) er fortsatt bare middels (33 %), som i gråboksen.
+
+**2026-09-30 - steppehæren løftet (fem hærtyper vinner).** Oxyartes-hæren vant 31-45 %. Tre
+funn, i den rekkefølgen de hjalp:
+- Hesteskytterne valgte mål som ryttere (skyttere langt bak) og kom aldri på skuddhold. Nå
+  skyter de på det nærmeste, helst tregt fotfolk (Issos: 78 -> 29 tap av 150).
+- Steppens hesteskyttere biter på vogner og elefanter på avstand (skyter kusker og førere), og
+  Steppefolk-samspillet gir +20 % liv.
+- «Skinnflukt!» er det parthiske skuddet: rytterne later som de flykter, snur, og
+  hesteskytterne skyter 2,5 ganger så fort i fire sekunder (69 % -> 87 %).
+Roboten holder hesteskytterne bak og kjøper fotfolk foran i smale pass, men bare fotfolk som
+tåler det fienden kommer med.
+
+Simulering (400 runder per robot): makedonsk 84 %, persisk 89 %, steppe 87 %, indisk 91 %,
+blandet 90 %; kjøper-dyrt 3 %, bare-ryttere 0 %, knappemoser 0 %, passiv 0 %.

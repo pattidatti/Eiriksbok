@@ -68,10 +68,10 @@ export const BOTS: Record<BotStyle, BotDef> = {
         beskrivelse: 'Persisk pilsverm: udødelige og hoplitter foran, bueskyttere og slyngekastere bak, Pilregn når linjene møtes.',
     },
     steppe: {
-        forventer: 'middels',
+        forventer: 'vinner',
         style: 'steppe',
         leader: 'oxyartes',
-        beskrivelse: 'Steppehær: baktriske ryttere og hesteskyttere som holder avstand, Skinnflukt for nytt støt.',
+        beskrivelse: 'Steppehær: hesteskyttere som holder avstand og skyter på tregt fotfolk, lett infanteri foran i smale pass, Skinnflukt og det parthiske skuddet.',
     },
     elefant: {
         forventer: 'vinner',
@@ -202,6 +202,19 @@ function wantScore(g: G, style: BotStyle, k: Kind, reads: boolean) {
     if (front < 2 && (kl === 'tung' || kl === 'elefant')) s += 1.5;
     const shooters = owned(g).filter((u) => UNITS[u.kind].klasse === 'skytter').length;
     if (kl === 'skytter' && shooters >= 4) s -= 2;
+    // Steppehæren: hesteskytterne hører hjemme bak. Er bakre rekke full (smalt pass),
+    // trengs fotfolk foran - ellers står de skjøre rytterne i første linje.
+    if (style === 'steppe') {
+        const openCols = [0, 1, 2, 3, 4].filter((c) => !colClosed(g, c));
+        const backFree = openCols.filter((c) => !g.board[1][c]).length;
+        const wall = openCols.filter((c) => {
+            const u = g.board[0][c];
+            return u && ['tung', 'lett', 'elefant'].includes(UNITS[u.kind].klasse);
+        }).length;
+        if (UNITS[k].kite && backFree === 0) s -= 3;
+        // Fotfolk foran - men bare det som tåler det fienden kommer med.
+        if ((kl === 'tung' || kl === 'lett') && wall < Math.min(3, openCols.length) && counterScore(g, k) >= 0) s += 2.5;
+    }
     return s;
 }
 
@@ -537,7 +550,7 @@ function battleTick(g: G, style: BotStyle, io: IO | null, rng: Rng) {
             go = foeEngaged >= 1 || t > 8;
             break;
         case 'oxyartes':
-            go = own.some((s) => UNITS[s.kind].klasse === 'kav' && s.engaged >= 0 && s.charged) || t > 10;
+            go = own.some((s) => UNITS[s.kind].klasse === 'kav' && s.engaged >= 0 && s.charged) || foeEngaged >= 2 || t > 10;
             break;
         case 'poros':
             go = own.some((s) => UNITS[s.kind].klasse === 'elefant' && (s.engaged >= 0 || s.hp < s.max * 0.5)) || t > 10;

@@ -479,7 +479,7 @@ export const LEADERS: Record<LeaderId, LeaderDef> = {
         name: 'Oxyartes',
         folk: ['steppefolk', 'persere'],
         evne: 'Skinnflukt!',
-        text: 'Rytterne trekker seg unna og støter på nytt.',
+        text: 'Rytterne later som de flykter - så snur de, og hesteskytterne skyter over skulderen.',
         unlock: 'Vinn ved Jaxartes',
     },
     poros: {
@@ -894,7 +894,7 @@ export const SYN_DEF: { id: string; name: string; need: number[]; text: string[]
     { id: 'makedonere', name: 'Makedonere', need: [2, 4], text: ['+15 % liv', '+30 % liv, +15 % skade'] },
     { id: 'grekere', name: 'Grekere', need: [2, 4], text: ['+1 gull per runde', '+2 gull, +25 % skade'] },
     { id: 'persere', name: 'Persere', need: [2, 4], text: ['Skyttere +35 %, persere +10 % liv', 'Skyttere +70 %, persere +25 % liv'] },
-    { id: 'steppefolk', name: 'Steppefolk', need: [2, 3], text: ['Ryttere +20 % fart og støt', '+35 % skade'] },
+    { id: 'steppefolk', name: 'Steppefolk', need: [2, 3], text: ['+20 % liv, fart og støt', '+35 % skade'] },
     { id: 'indere', name: 'Indere', need: [2, 3], text: ['Elefanter +25 % liv', 'Elefanter tråkker ikke egne, +20 % skade'] },
     { id: 'thrakere', name: 'Thrakere', need: [2], text: ['Kastespyd +50 %'] },
     { id: 'sarissaskog', name: 'Sarissaskog', need: [2], text: ['To piker side om side i fremre rekke: +30 % skade, +20 % liv'] },
@@ -1455,6 +1455,7 @@ function mkSquad(g: G, u: Unit, side: 0 | 1, row: number, col: number, syn: Syne
     }
     const st = lvl(syn, 'steppefolk');
     if (d.folk === 'steppefolk' && st) {
+        hpM *= 1.2;
         spM *= 1.2;
         chM *= 1.3;
         if (st >= 2) dmM *= 1.35;
@@ -1618,7 +1619,9 @@ function counterMult(a: Squad, d: Squad): { m: number; cause: Cause } {
     if (A.klasse === 'elefant' && D.klasse === 'tung') m = 1.3;
     if (A.klasse === 'tung' && D.klasse === 'lett') m = 1.2;
     // Elefanten er et levende tårn: bare lett infanteri (og piker forfra) biter.
-    if (D.klasse === 'elefant' && A.klasse !== 'lett') m = Math.min(m, 0.5);
+    if (D.klasse === 'elefant' && A.klasse !== 'lett' && !A.kite) m = Math.min(m, 0.5);
+    // Steppens hesteskyttere skyter kusker og elefantførere på avstand.
+    if (A.kite && ranged && (D.klasse === 'vogn' || D.klasse === 'elefant')) m = Math.max(m, 1.5);
     // Hesteskyttere rir unna: ryttere tar dem ikke igjen.
     if (D.kite && A.klasse === 'kav' && !A.kite) m = Math.min(m, 0.6);
     if (A.klasse === 'vogn') cause = 'vogner';
@@ -1699,7 +1702,9 @@ function chooseTarget(g: G, s: Squad): number {
         }
         const O = UNITS[o.kind];
         let d = Math.hypot(o.x - s.x, o.z - s.z);
-        if (D.klasse === 'kav') {
+        // Hesteskyttere skyter på det nærmeste, helst tregt fotfolk - de rir ikke inn.
+        if (D.kite && O.klasse === 'tung') d -= 3;
+        if (D.klasse === 'kav' && !D.kite) {
             if (O.klasse === 'skytter') d -= 7;
             else if (O.kite) d -= 3;
             else if (O.klasse === 'lett') d -= 1.5;
@@ -1832,15 +1837,22 @@ function stepBattle(g: G, dt: number, io: IO | null) {
         if (!alive(s)) continue;
         if (s.hitT > 0) s.hitT -= dt;
         if (s.panic > 0) s.panic -= dt;
+        const D0 = UNITS[s.kind];
         if (s.buffT > 0) {
             s.buffT -= dt;
             if (s.buffT <= 0) {
                 if (s.buffKind === 'flukt') {
-                    // Skinnflukten er over: snu og støt igjen.
-                    s.charged = false;
-                    s.moving = 1;
-                    s.buffKind = 'kile';
-                    s.buffT = 3;
+                    // Skinnflukten er over: snu! Rytterne støter igjen, og hesteskytterne
+                    // skyter over skulderen (det parthiske skuddet).
+                    if (D0.kite) {
+                        s.buffKind = 'pil';
+                        s.buffT = 4;
+                    } else {
+                        s.charged = false;
+                        s.moving = 1;
+                        s.buffKind = 'kile';
+                        s.buffT = 3;
+                    }
                 } else s.buffKind = '';
             }
         }
