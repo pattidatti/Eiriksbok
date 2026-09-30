@@ -5,7 +5,7 @@
   "year": "1709-1720",
   "category": "Norge",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/dansketiden/store-nordiske-krig-hero.webp",
   "details": [
     "Krigen varte fra 1700 til 1721, og Danmark-Norge var med fra 1709 til 1720",
     "Karl XII tok Kristiania i 1716, men klarte ikke å holde byen",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/store-nordiske-krig-01.webp",
       "alt": "Små krigsskip i kamp i en trang, steinete fjord",
       "caption": "Dynekilen ligger i Bohuslän, sju kilometer nord for Strömstad. Her ble den svenske transportflåten fanget i juli 1716."
     },
@@ -122,7 +122,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/store-nordiske-krig-02.webp",
       "alt": "Soldater i snøstorm på et åpent høyfjell i skumringen",
       "caption": "Vinteren 1719 prøvde Armfeldts hær å gå hjem over fjellet. Tusenvis frøs i hjel."
     },
@@ -164,7 +164,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/store-nordiske-krig-03.webp",
       "alt": "Minnestatue av en sjøoffiser med sverd foran en havn",
       "caption": "Tordenskiold ble en folkehelt. Statuer av ham står i flere byer i Norge og Danmark."
     },

@@ -5,7 +5,7 @@
     "year": "1434-1737",
     "category": "Europa",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/renessansen/medici-familien-hero.webp",
     "factChecked": "2026-09-29",
     "details": [
         "Medici-familien ble rik som bankfolk, og banken passet blant annet på pengene til paven.",
@@ -24,7 +24,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/renessansen/medici-familien-01.webp",
             "alt": "Firenze med domkirken sett fra en høyde på 1400-tallet",
             "caption": "Firenze på 1400-tallet. Byen var liten, men rik, og det var her renessansen startet."
         },
@@ -101,7 +101,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/renessansen/medici-familien-02.webp",
             "alt": "Lorenzo de' Medici viser fram kunst for unge kunstnere i hagen",
             "caption": "Lorenzo den prektige samlet kunstnere og lærde rundt seg. En av dem var den unge Michelangelo."
         },
@@ -143,7 +143,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/renessansen/medici-familien-03.webp",
             "alt": "Besøkende ser på malerier i en lang gang i Uffizi-galleriet",
             "caption": "Uffizi i Firenze. Kunstsamlingen til Medici-familien ble et museum som alle kan besøke."
         },
