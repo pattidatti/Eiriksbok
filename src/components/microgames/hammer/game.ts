@@ -721,6 +721,7 @@ export type GameEvent =
     | { type: 'kile-treff'; x: number; z: number }
     | { type: 'storkonge-flykter'; x: number; z: number }
     | { type: 'elefant-raser'; x: number; z: number }
+    | { type: 'parthisk'; id: number; x: number; z: number }
     | { type: 'slag-slutt'; won: boolean }
     | { type: 'gjenstand'; item: ItemId };
 
@@ -1847,6 +1848,7 @@ function stepBattle(g: G, dt: number, io: IO | null) {
                     if (D0.kite) {
                         s.buffKind = 'pil';
                         s.buffT = 4;
+                        io?.event({ type: 'parthisk', id: s.id, x: s.x, z: s.z });
                     } else {
                         s.charged = false;
                         s.moving = 1;

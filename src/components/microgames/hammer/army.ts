@@ -312,7 +312,7 @@ export interface ArmySound {
 
 /** Et punkt i verden der kameraet kan dykke ned. */
 export interface Moment {
-    kind: 'kile' | 'storkonge' | 'elefant' | 'sti' | 'bolge' | 'smelt';
+    kind: 'kile' | 'storkonge' | 'elefant' | 'sti' | 'bolge' | 'smelt' | 'parthisk';
     x: number;
     z: number;
     pri: number;
@@ -352,6 +352,8 @@ function rand(a: number, b: number) {
 export class Army {
     figs: Fig[] = [];
     sqs = new Map<string, VSq>();
+    /** Hesteskyttere som skyter det parthiske skuddet: nøkkel -> til når. */
+    private parth = new Map<string, number>();
     arrows: Arrow[] = [];
     soft: Pt[] = [];
     hard: Pt[] = [];
@@ -440,6 +442,7 @@ export class Army {
         for (const p of this.glow) p.on = false;
         for (const s of this.splats) s.on = false;
         this.sqs.clear();
+        this.parth.clear();
         this.impulses.length = 0;
         this.hold = 0;
         this.frozen = [];
@@ -885,7 +888,32 @@ export class Army {
             case 'skudd': {
                 const a = this.sqs.get(this.keyOf(g, e.from));
                 const b = this.sqs.get(this.keyOf(g, e.to));
-                if (a && b) this.volley(a, b, e.kind);
+                if (a && b) {
+                    this.volley(a, b, e.kind);
+                    // Det parthiske skuddet: tre ganger så tette salver over skulderen.
+                    if ((this.parth.get(a.key) ?? 0) > this.time) {
+                        this.volley(a, b, e.kind);
+                        this.volley(a, b, e.kind);
+                    }
+                }
+                break;
+            }
+            case 'parthisk': {
+                const a = this.sqs.get(this.keyOf(g, e.id));
+                if (!a) break;
+                this.parth.set(a.key, this.time + 4);
+                // Snu i salen og slipp en sky av piler mot de nærmeste fiendene.
+                const foes = [...this.sqs.values()]
+                    .filter((q) => q.side !== a.side && !q.dead && !q.fled)
+                    .sort((p, q) => Math.hypot(p.x - a.x, p.z - a.z) - Math.hypot(q.x - a.x, q.z - a.z))
+                    .slice(0, 3);
+                for (const b of foes) {
+                    this.volley(a, b, a.kind);
+                    this.volley(a, b, a.kind);
+                }
+                this.flash(a.x, 1.2, a.z, 3, PAL.gul);
+                this.dust(a.x, a.z, Math.round(10 * Math.max(0.5, ps)), 1.6);
+                this.offer({ kind: 'parthisk', x: a.x, z: a.z, pri: 2 });
                 break;
             }
             case 'evne': {

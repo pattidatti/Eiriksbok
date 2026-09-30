@@ -104,10 +104,10 @@ export const CSS = `
 .ha-top{position:absolute;left:8px;right:8px;top:6px;display:flex;gap:6px;align-items:stretch;pointer-events:none;z-index:4}
 .ha-box{position:relative;background:rgba(28,23,20,.9);border:2px solid ${PAL.sot};box-shadow:0 0 0 2px ${PAL.gul} inset;padding:4px 10px 13px;display:flex;flex-direction:column;justify-content:center}
 .ha-box::after{content:'';position:absolute;left:2px;right:2px;bottom:2px;height:8px;background:${MEANDER};background-size:16px 8px;opacity:.9}
-.ha-lab{font-size:10px;letter-spacing:.14em;font-weight:800;color:${PAL.gul};text-transform:uppercase}
-.ha-val{font-family:Outfit,Inter,sans-serif;font-size:20px;font-weight:900;line-height:1.05;letter-spacing:.02em}
-.ha-name{font-family:Outfit,Inter,sans-serif;font-size:21px;font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:.05em}
-.ha-rule{font-size:12px;font-weight:700;line-height:1.25;max-width:300px}
+.ha-lab{font-size:13px;letter-spacing:.14em;font-weight:800;color:${PAL.gul};text-transform:uppercase}
+.ha-val{font-family:Outfit,Inter,sans-serif;font-size:22px;font-weight:900;line-height:1.05;letter-spacing:.02em}
+.ha-name{font-family:Outfit,Inter,sans-serif;font-size:23px;font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:.05em}
+.ha-rule{font-size:15.5px;font-weight:700;line-height:1.25;max-width:300px}
 .ha-camp{display:flex;gap:3px;margin-top:4px}
 .ha-camp i{width:13px;height:9px;background:#3a2f26;border:1px solid #000;display:block}
 .ha-camp i.w{background:${PAL.gul}}
@@ -115,50 +115,50 @@ export const CSS = `
 .ha-camp i.now{background:${PAL.kalk};animation:haBlink 1s infinite alternate}
 @keyframes haBlink{from{opacity:1}to{opacity:.45}}
 .ha-coin{display:inline-block;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f7dc8a,${PAL.gul} 55%,#8a6420);border:2px solid ${PAL.sot};vertical-align:-3px;margin-right:5px}
-.ha-hearts{font-size:18px;letter-spacing:2px;color:${PAL.rod};text-shadow:0 1px 0 #000}
+.ha-hearts{font-size:20px;letter-spacing:2px;color:${PAL.rod};text-shadow:0 1px 0 #000}
 .ha-syn{position:absolute;left:8px;top:74px;display:flex;flex-direction:column;gap:3px;z-index:4;pointer-events:none;max-width:215px}
-.ha-syn div{background:rgba(28,23,20,.78);border-left:5px solid #4a3c30;padding:2px 7px;font-size:11.5px;line-height:1.25}
+.ha-syn div{background:rgba(28,23,20,.78);border-left:5px solid #4a3c30;padding:2px 7px;font-size:15px;line-height:1.25}
 .ha-syn div.on{border-left-color:${PAL.gul};background:rgba(28,23,20,.92)}
 .ha-syn b{font-family:Outfit,Inter,sans-serif;letter-spacing:.02em}
 .ha-bottom{position:absolute;left:8px;right:8px;bottom:8px;display:flex;gap:8px;align-items:flex-end;z-index:5}
 .ha-shop{display:flex;gap:7px;flex:1;min-width:0;padding:8px 8px 8px;background:rgba(28,23,20,.82);border:2px solid ${PAL.sot};box-shadow:0 0 0 2px ${PAL.gul} inset;position:relative}
 .ha-shop::before{content:'';position:absolute;left:2px;right:2px;top:-12px;height:10px;background:${MEANDER};background-size:20px 10px;border:1px solid ${PAL.sot}}
-.ha-card{flex:1;min-width:0;max-width:176px;min-height:104px;color:${PAL.sot};border:2px solid ${PAL.sot};padding:6px 8px 9px 46px;text-align:left;cursor:grab;box-shadow:0 4px 0 ${PAL.sot};touch-action:none;user-select:none;position:relative;transition:transform .12s;
+.ha-card{flex:1;min-width:0;max-width:200px;min-height:104px;color:${PAL.sot};border:2px solid ${PAL.sot};padding:6px 8px 9px 42px;text-align:left;cursor:grab;box-shadow:0 4px 0 ${PAL.sot};touch-action:none;user-select:none;position:relative;transition:transform .12s;
  background-color:${PAL.kalk};background-image:repeating-linear-gradient(0deg,rgba(107,74,44,.13) 0 1px,transparent 1px 8px),repeating-linear-gradient(90deg,rgba(107,74,44,.13) 0 1px,transparent 1px 8px)}
 .ha-card:hover{transform:translateY(-4px) rotate(-.6deg)}
 .ha-card.sold{visibility:hidden}
 .ha-card.poor{opacity:.5;filter:saturate(.4)}
 .ha-card.scout{box-shadow:0 4px 0 ${PAL.sot},0 0 0 3px ${PAL.gul},0 0 16px 2px rgba(217,164,65,.7)}
 .ha-card .ic{position:absolute;left:5px;top:22px;width:36px;height:36px}
-.ha-card .n{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:13.5px;text-transform:uppercase;line-height:1.05;display:block;padding-right:24px}
-.ha-card .k{font-size:10.5px;font-weight:800;color:${PAL.umbra};display:block;margin:2px 0 3px}
-.ha-card .h{font-size:11px;line-height:1.25;display:block;font-weight:600}
-.ha-card .c{position:absolute;left:5px;top:4px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:16px;color:${PAL.sot};background:radial-gradient(circle at 35% 30%,#f7dc8a,${PAL.gul} 55%,#8a6420);border:2px solid ${PAL.sot}}
+.ha-card .n{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:15.5px;text-transform:uppercase;line-height:1.05;display:block;overflow-wrap:anywhere;hyphens:auto}
+.ha-card .k{font-size:13.5px;font-weight:800;color:${PAL.umbra};display:block;margin:2px 0 3px}
+.ha-card .h{font-size:14.5px;line-height:1.25;display:block;font-weight:600}
+.ha-card .c{position:absolute;left:5px;top:4px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:18px;color:${PAL.sot};background:radial-gradient(circle at 35% 30%,#f7dc8a,${PAL.gul} 55%,#8a6420);border:2px solid ${PAL.sot}}
 .ha-card .ic{top:38px}
 .ha-card .sw{position:absolute;left:0;right:0;bottom:0;height:6px}
-.ha-card .sc{position:absolute;right:6px;top:-11px;font-size:9.5px;font-weight:900;color:${PAL.sot};background:${PAL.gul};padding:1px 6px;letter-spacing:.08em;border:1.5px solid ${PAL.sot}}
+.ha-card .sc{position:absolute;right:6px;top:-11px;font-size:13px;font-weight:900;color:${PAL.sot};background:${PAL.gul};padding:1px 6px;letter-spacing:.08em;border:1.5px solid ${PAL.sot}}
 .ha-side{display:flex;flex-direction:column;gap:6px;width:140px}
-.ha-btn{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:14px;letter-spacing:.06em;text-transform:uppercase;background:rgba(28,23,20,.92);color:${PAL.kalk};border:2px solid ${PAL.sot};box-shadow:0 0 0 2px ${PAL.gul} inset,0 3px 0 ${PAL.sot};padding:9px 10px;cursor:pointer}
+.ha-btn{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:18px;letter-spacing:.06em;text-transform:uppercase;background:rgba(28,23,20,.92);color:${PAL.kalk};border:2px solid ${PAL.sot};box-shadow:0 0 0 2px ${PAL.gul} inset,0 3px 0 ${PAL.sot};padding:9px 10px;cursor:pointer}
 .ha-btn:hover:not(:disabled){background:${PAL.umbra}}
 .ha-btn:disabled{opacity:.45;cursor:default}
-.ha-btn.go{background:${PAL.rod};font-size:18px;padding:14px 10px;box-shadow:0 0 0 2px ${PAL.kalk} inset,0 4px 0 ${PAL.sot}}
+.ha-btn.go{background:${PAL.rod};font-size:21px;padding:14px 10px;box-shadow:0 0 0 2px ${PAL.kalk} inset,0 4px 0 ${PAL.sot}}
 .ha-btn.go:hover:not(:disabled){background:#b84a30}
 .ha-btn.on{background:${PAL.gul};color:${PAL.sot}}
-.ha-bench{position:absolute;left:8px;bottom:154px;display:flex;gap:5px;z-index:5;align-items:center}
-.ha-bench .lbl{font-family:Outfit,Inter,sans-serif;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-right:2px;background:${PAL.sot};color:${PAL.gul};padding:3px 6px;border:1.5px solid ${PAL.gul}}
-.ha-bs{width:78px;height:44px;border:2px dashed rgba(239,227,200,.7);background:rgba(28,23,20,.5);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;text-align:center;line-height:1.1;touch-action:none;user-select:none;cursor:grab;padding:2px}
+.ha-bench{position:absolute;left:8px;bottom:190px;display:flex;gap:5px;z-index:5;align-items:center}
+.ha-bench .lbl{font-family:Outfit,Inter,sans-serif;font-size:14.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-right:2px;background:${PAL.sot};color:${PAL.gul};padding:3px 6px;border:1.5px solid ${PAL.gul}}
+.ha-bs{width:78px;height:44px;border:2px dashed rgba(239,227,200,.7);background:rgba(28,23,20,.5);display:flex;align-items:center;justify-content:center;font-size:14.5px;font-weight:800;text-align:center;line-height:1.1;touch-action:none;user-select:none;cursor:grab;padding:2px}
 .ha-bs.full{border-style:solid;border-color:${PAL.sot};color:${PAL.sot};box-shadow:0 3px 0 ${PAL.sot}}
 .ha-slot{position:absolute;width:88px;height:60px;margin-left:-44px;margin-top:-30px;border:2px dashed transparent;border-radius:3px;z-index:3;touch-action:none;user-select:none;display:flex;align-items:flex-end;justify-content:center}
 .ha-slot.drop{border-color:rgba(239,227,200,.75);background:rgba(28,23,20,.12)}
 .ha-slot.over{border-color:${PAL.gul};border-style:solid;background:rgba(217,164,65,.3)}
 .ha-slot.has{cursor:grab}
-.ha-hint{position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11.5px;font-weight:900;padding:2px 7px;border:2px solid ${PAL.sot};pointer-events:none;box-shadow:0 2px 0 ${PAL.sot}}
+.ha-hint{position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:15px;font-weight:900;padding:2px 7px;border:2px solid ${PAL.sot};pointer-events:none;box-shadow:0 2px 0 ${PAL.sot}}
 .ha-hint.good{background:${PAL.gul};color:${PAL.sot}}
 .ha-hint.bad{background:${PAL.rod};color:${PAL.kalk}}
 .ha-hint.even{background:rgba(28,23,20,.85);color:${PAL.kalk}}
-.ha-lbl{position:absolute;transform:translate(-50%,-100%);font-size:10.5px;font-weight:800;white-space:nowrap;padding:1px 6px;background:rgba(239,227,200,.92);color:${PAL.sot};border:1.5px solid ${PAL.sot};pointer-events:none;z-index:2;box-shadow:0 2px 0 rgba(28,23,20,.5)}
+.ha-lbl{position:absolute;transform:translate(-50%,-100%);font-size:13.5px;font-weight:800;white-space:nowrap;padding:1px 6px;background:rgba(239,227,200,.92);color:${PAL.sot};border:1.5px solid ${PAL.sot};pointer-events:none;z-index:2;box-shadow:0 2px 0 rgba(28,23,20,.5)}
 .ha-lbl.foe{background:rgba(28,23,20,.88);color:#f3d7a8;border-color:${PAL.umbra}}
-.ha-ghost{position:absolute;pointer-events:none;z-index:20;transform:translate(-50%,-50%) rotate(-3deg);background:${PAL.kalk};color:${PAL.sot};border:2px solid ${PAL.sot};padding:5px 10px;font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;box-shadow:0 6px 0 ${PAL.sot},0 10px 20px rgba(0,0,0,.4)}
+.ha-ghost{position:absolute;pointer-events:none;z-index:20;transform:translate(-50%,-50%) rotate(-3deg);background:${PAL.kalk};color:${PAL.sot};border:2px solid ${PAL.sot};padding:5px 10px;font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;box-shadow:0 6px 0 ${PAL.sot},0 10px 20px rgba(0,0,0,.4)}
 .ha-fx{position:absolute;inset:0;pointer-events:none;z-index:6;overflow:hidden}
 .ha-burst{position:absolute;width:240px;height:240px;margin:-120px 0 0 -120px;border-radius:50%;background:radial-gradient(circle,rgba(255,252,236,1) 0,rgba(255,236,170,.95) 18%,rgba(217,164,65,.55) 40%,rgba(217,164,65,0) 68%);mix-blend-mode:screen;animation:haBurst .8s ease-out forwards}
 .ha-burst::after{content:'';position:absolute;inset:30px;border-radius:50%;border:5px solid rgba(255,244,210,.95);animation:haRing .8s ease-out forwards}
@@ -166,39 +166,44 @@ export const CSS = `
 @keyframes haRing{0%{transform:scale(.2);opacity:1}100%{transform:scale(1.9);opacity:0}}
 .ha-sell{outline:3px dashed ${PAL.rod};outline-offset:2px}
 .ha-battle{position:absolute;right:8px;bottom:8px;display:flex;gap:6px;z-index:5}
-.ha-ability{position:absolute;left:8px;bottom:8px;z-index:5}
-.ha-ability .ha-btn{font-size:20px;padding:13px 26px;background:${PAL.rod};box-shadow:0 0 0 2px ${PAL.kalk} inset,0 4px 0 ${PAL.sot}}
-.ha-ability .ha-btn small{display:block;font-size:10px;letter-spacing:.14em;opacity:.8}
+.ha-ability{position:absolute;left:8px;bottom:8px;z-index:5;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.ha-ability .ha-btn{font-size:23px;padding:13px 26px;background:${PAL.rod};box-shadow:0 0 0 2px ${PAL.kalk} inset,0 4px 0 ${PAL.sot}}
+.ha-ability .ha-btn small{display:block;font-size:13px;letter-spacing:.14em;opacity:.8}
 .ha-ability .ha-btn.ready{animation:haPulse .55s infinite alternate}
 @keyframes haPulse{from{box-shadow:0 0 0 2px ${PAL.kalk} inset,0 4px 0 ${PAL.sot},0 0 0 0 ${PAL.gul}}to{box-shadow:0 0 0 2px ${PAL.kalk} inset,0 4px 0 ${PAL.sot},0 0 22px 6px ${PAL.gul}}}
 .ha-reward{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:40px;gap:10px;background:linear-gradient(180deg,rgba(28,23,20,0) 30%,rgba(28,23,20,.7));z-index:8}
-.ha-reward h3{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:22px;letter-spacing:.08em;text-transform:uppercase;margin:0;padding:6px 18px 14px;background:${PAL.rod};border:2px solid ${PAL.sot};position:relative;box-shadow:0 4px 0 ${PAL.sot}}
+.ha-reward h3{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:25px;letter-spacing:.08em;text-transform:uppercase;margin:0;padding:6px 18px 14px;background:${PAL.rod};border:2px solid ${PAL.sot};position:relative;box-shadow:0 4px 0 ${PAL.sot}}
 .ha-reward h3::after{content:'';position:absolute;left:3px;right:3px;bottom:3px;height:8px;background:${MEANDER_RED};background-size:16px 8px}
 .ha-reward .row{display:flex;gap:12px}
 .ha-reward .ha-card{width:190px;max-width:none;min-height:118px;cursor:pointer}
 @container ha (max-width: 1060px) or (max-height: 600px) {
  .ha-card{min-height:58px;padding:5px 6px 8px 38px}
  .ha-card .h{display:none}
- .ha-card .k{font-size:9.5px;margin:1px 0 0}
- .ha-card .n{font-size:12px}
- .ha-card .c{width:26px;height:26px;font-size:14px}
+ .ha-card .k{font-size:11.5px;margin:1px 0 0}
+ .ha-card .n{font-size:14.5px}
+ .ha-card .c{width:26px;height:26px;font-size:17px}
  .ha-card .ic{width:28px;height:28px;top:30px;left:4px}
  .ha-shop{padding:5px;gap:5px}
  .ha-side{width:112px}
- .ha-btn{font-size:12px;padding:7px 8px}
- .ha-btn.go{font-size:15px;padding:10px 8px}
+ .ha-btn{font-size:14.5px;padding:7px 8px}
+ .ha-btn.go{font-size:18px;padding:10px 8px}
  .ha-bench{bottom:98px}
- .ha-bs{width:64px;height:36px;font-size:10px}
+ .ha-bs{width:64px;height:36px;font-size:12px}
  .ha-syn{display:none}
- .ha-rule{font-size:11px;max-width:190px}
+ .ha-rule{font-size:13px;max-width:190px}
  .ha-box{padding:3px 7px 12px}
- .ha-val,.ha-name{font-size:16px}
- .ha-ability .ha-btn{font-size:16px;padding:9px 16px}
- .ha-lbl{font-size:9.5px;padding:0 4px}
+ .ha-val,.ha-name{font-size:19px}
+ .ha-ability .ha-btn{font-size:19px;padding:9px 16px}
+ .ha-lbl{font-size:11.5px;padding:0 4px}
 }
 @container ha (max-width: 700px) {
  .ha-card .k{display:none}
  .ha-rule{display:none}
  .ha-camp{display:none}
 }
+.ha-root .arc-beat{width:min(440px,90%)}
+.ha-root .arc-beat-title{font-size:21px}
+.ha-root .arc-beat p{font-size:16px;line-height:1.4}
+.ha-root .arc-ring{display:none !important}
+.ha-tip{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:15px;letter-spacing:.04em;background:${PAL.gul};color:${PAL.sot};border:2px solid ${PAL.sot};padding:4px 10px;box-shadow:0 3px 0 ${PAL.sot}}
 `;

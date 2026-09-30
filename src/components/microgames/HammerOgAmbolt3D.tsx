@@ -501,6 +501,7 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
     const lblEls = useRef<(HTMLDivElement | null)[]>([]);
     const scoutEl = useRef<HTMLDivElement | null>(null);
     const lastV = useRef('');
+    const parthRef = useRef(-1);
     const beatTried = useRef(new Set<string>());
     const fxEl = useRef<HTMLDivElement | null>(null);
     const bandRef = useRef<Band>({ top: 80, bottom: 490 });
@@ -574,6 +575,11 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
             buzz(40);
         }
         if (e.type === 'kile-treff') text.float('KILEN!', ...xy(toScreen(e.x, e.z, 2.6)), PAL.gul, true);
+        if (e.type === 'parthisk' && parthRef.current !== gRef.current.round) {
+            parthRef.current = gRef.current.round;
+            text.banner('PARTHISK SKUDD!', PAL.rod);
+            buzz(40);
+        }
         if (e.type === 'elefant-raser') text.float('RASER!', ...xy(toScreen(e.x, e.z, 3)), PAL.kalk, true);
         if (e.type === 'slag-slutt') force((n) => n + 1);
     };
@@ -612,18 +618,18 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
         if (text.beatActive() || g.phase !== 'plan' || modeRef.current !== 'play') return;
         const planned = g.round === 0 ? 50 : 35;
         if (planned - g.phaseT < 2.2) return; // la hæren marsjere inn først
-        let best: { kind: Kind; x: number; z: number; pri: number } | null = null;
+        let best: { kind: Kind; pri: number } | null = null;
         for (const u of planUnits(g)) {
             const b = BEAT[u.kind];
             if (!b || beatTried.current.has(u.kind)) continue;
             const pri = b[2] + (u.side === 1 ? 3 : 0);
-            if (!best || pri > best.pri) best = { kind: u.kind, x: u.x, z: u.z, pri };
+            if (!best || pri > best.pri) best = { kind: u.kind, pri };
         }
         if (!best) return;
         const b = BEAT[best.kind]!;
-        const { x, z, kind } = best;
+        const { kind } = best;
         beatTried.current.add(kind);
-        text.beatOnce('u-' + kind, b[0], b[1], { at: () => toScreen(x, z, labelH(kind, 1) + 0.2) });
+        text.beatOnce('u-' + kind, b[0], b[1]);
     };
 
     // HUD og overlegg som følger 3D-scenen - oppdateres hver ramme uten React.
@@ -657,12 +663,6 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                 const ready = g.phase === 'slag' && g.abilityReady && !g.abilityUsed;
                 b.disabled = !ready;
                 b.className = `ha-btn${ready ? ' ready' : ''}`;
-                if (ready && modeRef.current === 'play')
-                    text.point('evne', 'Slå til når linja holder!', () => {
-                        const r = b.getBoundingClientRect();
-                        const s = stageRef.current?.getBoundingClientRect();
-                        return s ? { x: r.left - s.left + r.width / 2, y: r.top - s.top - 4 } : null;
-                    }, { until: () => gRef.current.abilityUsed || gRef.current.phase !== 'slag', seconds: 6, once: true });
             }
             const planning = g.phase === 'plan' && !army.holding();
             // Rutene eleven slipper på: over spillerens side av brettet.
@@ -704,14 +704,6 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
             }
             if (modeRef.current === 'play') {
                 tryBeat(g);
-                if (planning && g.round <= 1 && boardCount(g) > 1 && scoutEl.current && !text.beatActive())
-                    text.point('speider', 'Speideren: dette slår neste hær', () => {
-                        const el = scoutEl.current;
-                        const s = stageRef.current?.getBoundingClientRect();
-                        if (!el || !s || el.offsetParent === null) return null;
-                        const r = el.getBoundingClientRect();
-                        return { x: r.left - s.left + r.width / 2, y: r.top - s.top - 10 };
-                    }, { until: () => gRef.current.phase !== 'plan' || !gRef.current.shop.some((c) => c.scout && !c.sold), seconds: 7, once: true });
             }
             const v = `${g.boardV}:${g.phase}:${g.round}:${g.gold}:${g.shop.map((c) => (c.sold ? 1 : 0)).join('')}:${g.reward ? 1 : 0}:${g.abilityUsed}:${army.holding()}`;
             if (v !== lastV.current) {
@@ -782,10 +774,6 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
         sfx.drum();
         const def = battleDef(gRef.current);
         text.banner(`${def.name.toUpperCase()} ${def.year}`, PAL.rod);
-        text.point('dra', 'Dra et kort ut på sletta', () => {
-            const el = stageRef.current;
-            return el ? { x: el.clientWidth * 0.3, y: el.clientHeight - 150 } : null;
-        }, { until: () => boardCount(gRef.current) > 1, seconds: 12 });
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;
@@ -1127,6 +1115,7 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                                         </div>
                                     );
                                 })}
+                                {g.round === 0 && boardCount(g) < 2 && <span className="ha-tip">Dra et kort fra butikken opp på sletta</span>}
                             </div>
                         )}
 
@@ -1180,6 +1169,7 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                         {fighting && (
                             <>
                                 <div className="ha-ability">
+                                    {g.round < 2 && !g.abilityUsed && <div className="ha-tip">Slå til når linja holder!</div>}
                                     <button ref={hud.ability} className="ha-btn" onClick={doAbility}>
                                         <small>{LEADERS[g.leader].name}</small>
                                         {LEADERS[g.leader].evne}
