@@ -116,7 +116,7 @@ export const CSS = `
 @keyframes haBlink{from{opacity:1}to{opacity:.45}}
 .ha-coin{display:inline-block;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f7dc8a,${PAL.gul} 55%,#8a6420);border:2px solid ${PAL.sot};vertical-align:-3px;margin-right:5px}
 .ha-hearts{font-size:20px;letter-spacing:2px;color:${PAL.rod};text-shadow:0 1px 0 #000}
-.ha-syn{position:absolute;left:8px;top:74px;display:flex;flex-direction:column;gap:3px;z-index:4;pointer-events:none;max-width:215px}
+.ha-syn{position:absolute;left:8px;top:74px;display:flex;flex-direction:column;gap:3px;z-index:4;pointer-events:none;max-width:290px}
 .ha-syn div{background:rgba(28,23,20,.78);border-left:5px solid #4a3c30;padding:2px 7px;font-size:15px;line-height:1.25}
 .ha-syn div.on{border-left-color:${PAL.gul};background:rgba(28,23,20,.92)}
 .ha-syn b{font-family:Outfit,Inter,sans-serif;letter-spacing:.02em}
@@ -206,4 +206,7 @@ export const CSS = `
 .ha-root .arc-beat p{font-size:16px;line-height:1.4}
 .ha-root .arc-ring{display:none !important}
 .ha-tip{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:15px;letter-spacing:.04em;background:${PAL.gul};color:${PAL.sot};border:2px solid ${PAL.sot};padding:4px 10px;box-shadow:0 3px 0 ${PAL.sot}}
+.ha-card .sc.ny{background:${PAL.rod};color:${PAL.kalk}}
+.ha-syn div.ha-lesson{background:${PAL.kalk};color:${PAL.sot};border:2px solid ${PAL.sot};border-left:6px solid ${PAL.rod};padding:6px 10px 8px;font-size:15px;line-height:1.35;font-weight:600;box-shadow:0 3px 0 ${PAL.sot};margin-bottom:4px}
+.ha-lesson .t{display:block;font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:.05em;color:${PAL.rod};margin-bottom:2px}
 `;

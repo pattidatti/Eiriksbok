@@ -255,3 +255,25 @@ tåler det fienden kommer med.
 
 Simulering (400 runder per robot): makedonsk 84 %, persisk 89 %, steppe 87 %, indisk 91 %,
 blandet 90 %; kjøper-dyrt 3 %, bare-ryttere 0 %, knappemoser 0 %, passiv 0 %.
+
+**2026-09-30 - opptrapping (eierens bestilling: «bygg sakte opp kampene ... som en intuitiv
+tutorial»).** `LADDER` i `game.ts` styrer hvert slag: hvilke klasser butikken har, hvor mange
+kort og plasser, og om omrulling er lov.
+
+| Slag | Butikk | Plasser | Fiende | Lærdom |
+|---|---|---|---|---|
+| 1 Khaironeia | 2 kort: tungt fotfolk + ryttere | 2 | fast: 2 agrianere | ambolt og hammer |
+| 2 Pelion | 3 kort, + skyttere, omrulling | 3 | fast: agrianer foran, 2 kretere bak | ryttere mot skyttere |
+| 3 Granikos | 3 kort, + lett infanteri | 4 | fast: 2 persiske ryttere, hoplitt, bue | piker mot ryttere |
+| 4 Issos | 4 kort, + vogner og elefanter | 5 | tema + formue | skyttere mot tungt fotfolk |
+| 5 Gaugamela | 5 kort | 6 | tema + formue + motsvar | fienden leser deg |
+| 6-8 | 5 kort | 7-8 | som før | |
+
+Lærdommen står i en fast boks øverst til venstre hele planleggingen (ikke et lærings-kort -
+skallet tillater bare tre per runde), og nye kort får «NY»-merke. Gjenstander fra slag 3,
+enheter fra fremmede folk fra slag 5. Fiendens formue: 0,6 + 0,07 per slag, fra slag 4.
+Første slag byttet fra hoplitter til agrianere: hoplittenes spyd stoppet rytterne før falanksen
+rakk å binde fienden, så slaget lærte bort det motsatte av «ambolt og hammer».
+
+Simulering (400 runder): makedonsk 88 %, persisk 95 %, steppe 85 %, indisk 92 %, blandet 89 %;
+kjøper-dyrt 6 %, bare-ryttere 0 %, knappemoser 0 %.

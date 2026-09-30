@@ -44,6 +44,7 @@ import {
     finalScore,
     dailySeed,
     canFight,
+    step,
     matchupHint,
     unitAt,
     makeEnemy,
@@ -915,7 +916,8 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
     const g = gRef.current;
     const hudOn = mode === 'play' || mode === 'paused';
     const def = battleDef(g);
-    const syn = synergies(g).filter((s) => s.count > 0);
+    // De to første slagene: bare samspill som er i lås - mindre å lese mens man lærer.
+    const syn = synergies(g).filter((s) => s.count > 0 && (g.round >= 2 || s.level > 0));
     const planning = mode === 'play' && g.phase === 'plan';
     const fighting = mode === 'play' && g.phase === 'slag';
     const today = dailySeed();
@@ -1063,6 +1065,12 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                         {/* Samspill */}
                         {hudOn && (
                             <div className="ha-syn">
+                                {g.phase === 'plan' && step(g).nytt && (
+                                    <div className="ha-lesson">
+                                        <span className="t">{step(g).nytt!.tittel}</span>
+                                        {step(g).nytt!.tekst}
+                                    </div>
+                                )}
                                 <div className="on">
                                     <b>
                                         {boardCount(g)}/{boardCap(g)}
@@ -1145,19 +1153,22 @@ export default function HammerOgAmbolt3D({ onComplete }: MicroGameProps) {
                                                 </span>
                                                 <span className="h">{d ? d.hint : ITEMS[card.item!].text}</span>
                                                 {card.scout && <span className="sc">SPEIDEREN</span>}
+                                                {card.nytt && !card.scout && <span className="sc ny">NY</span>}
                                                 <span className="sw" style={{ background: d ? KL_COLOR[d.klasse] : PAL.gul }} />
                                             </div>
                                         );
                                     })}
                                 </div>
                                 <div className="ha-side">
-                                    <button
-                                        className="ha-btn"
-                                        onClick={doReroll}
-                                        disabled={g.gold < REROLL || g.challenge === 'ingen-omrulling'}
-                                    >
-                                        Rull om ({REROLL})
-                                    </button>
+                                    {step(g).omrulling && (
+                                        <button
+                                            className="ha-btn"
+                                            onClick={doReroll}
+                                            disabled={g.gold < REROLL || g.challenge === 'ingen-omrulling'}
+                                        >
+                                            Rull om ({REROLL})
+                                        </button>
+                                    )}
                                     <button className="ha-btn go" onClick={doFight} disabled={!canFight(g)}>
                                         Til slag!
                                     </button>

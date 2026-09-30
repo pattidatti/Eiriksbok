@@ -559,6 +559,8 @@ interface BattleDef {
     budget: number;
     commander?: Kind;
     maxUnits: number;
+    /** Fast hær for læringsslagene: [enhet, rekke, kolonne]. */
+    fixed?: [Kind, number, number][];
     text: string;
 }
 
@@ -570,8 +572,9 @@ export const BATTLE_DEFS: BattleDef[] = [
         theme: ['hoplitt'],
         pool: ['hoplitt', 'agrianer'],
         budget: 4,
+        fixed: [['agrianer', 0, 1], ['agrianer', 0, 3]],
         maxUnits: 5,
-        text: 'Athen og Theben. 18 år gamle Aleksander leder rytterne.',
+        text: 'Athen, Theben og deres lette hjelpetropper. 18 år gamle Aleksander leder rytterne.',
     },
     {
         name: 'Pelion',
@@ -580,6 +583,7 @@ export const BATTLE_DEFS: BattleDef[] = [
         theme: ['agrianer', 'kreter'],
         pool: ['hoplitt', 'hoplitt', 'agrianer'],
         budget: 7,
+        fixed: [['agrianer', 0, 2], ['kreter', 1, 1], ['kreter', 1, 3]],
         maxUnits: 6,
         text: 'Illyriske fjellfolk med kastespyd og buer.',
     },
@@ -590,6 +594,7 @@ export const BATTLE_DEFS: BattleDef[] = [
         theme: ['asp'],
         pool: ['hoplitt', 'hoplitt', 'bue'],
         budget: 9,
+        fixed: [['asp', 0, 0], ['asp', 0, 4], ['hoplitt', 0, 2], ['bue', 1, 2]],
         maxUnits: 6,
         text: 'Persiske ryttere langs elvebredden, greske leiesoldater bak.',
     },
@@ -659,6 +664,8 @@ export interface Card {
     sold?: boolean;
     /** Speiderens kort: svarer på temaet i neste slag. */
     scout?: boolean;
+    /** Klassen er ny i butikken i dette slaget. */
+    nytt?: boolean;
 }
 
 /** En enhet eleven eier (på brettet eller benken). */
@@ -842,8 +849,85 @@ export function colClosed(g: G, col: number) {
     return terrain(g) === 'smalt' && (col === 0 || col === 4);
 }
 
+/**
+ * Opptrappingen - spillet er sin egen tutorial. Hvert slag åpner én ny klasse i butikken,
+ * med få kort og få plasser i starten, og fienden i de tre første slagene er satt opp for
+ * å vise nettopp den regelen eleven lærer.
+ */
+export interface Step {
+    klasser: Klasse[];
+    kort: number;
+    plasser: number;
+    omrulling: boolean;
+    /** Det nye i dette slaget (lærings-øyeblikket når slaget åpner). */
+    nytt?: { tittel: string; tekst: string };
+}
+
+const K1: Klasse[] = ['tung', 'kav'];
+const K2: Klasse[] = [...K1, 'skytter'];
+const K3: Klasse[] = [...K2, 'lett'];
+const K4: Klasse[] = [...K3, 'vogn', 'elefant'];
+
+export const LADDER: Step[] = [
+    {
+        klasser: K1,
+        kort: 2,
+        plasser: 2,
+        omrulling: false,
+        nytt: {
+            tittel: 'Ambolt og hammer',
+            tekst: 'Sett fotfolket foran - det er ambolten som holder fienden fast. Rytterne på flanken er hammeren som slår inn fra siden.',
+        },
+    },
+    {
+        klasser: K2,
+        kort: 3,
+        plasser: 3,
+        omrulling: true,
+        nytt: {
+            tittel: 'Ryttere mot skyttere',
+            tekst: 'Illyrerne har skyttere bak en tynn linje. Skyttere dør fort når ryttere når dem - send rytterne dit. Nytt i butikken: skyttere.',
+        },
+    },
+    {
+        klasser: K3,
+        kort: 3,
+        plasser: 4,
+        omrulling: true,
+        nytt: {
+            tittel: 'Piker mot ryttere',
+            tekst: 'Perserne kommer med ryttere. Piker og spyd forfra stopper hester - still dem opp rett foran rytterne. Nytt i butikken: lett infanteri.',
+        },
+    },
+    {
+        klasser: K4,
+        kort: 4,
+        plasser: 5,
+        omrulling: true,
+        nytt: {
+            tittel: 'En vegg av fotfolk',
+            tekst: 'Ved Issos står tungt fotfolk skulder ved skulder. Skyttere bak din egen linje river veggen før den når fram. Nytt i butikken: vogner og elefanter.',
+        },
+    },
+    {
+        klasser: K4,
+        kort: 5,
+        plasser: 6,
+        omrulling: true,
+        nytt: {
+            tittel: 'Fienden leser deg',
+            tekst: 'Fra nå bygger fienden motsvar mot det du har mest av. En blandet hær er vanskeligere å slå.',
+        },
+    },
+    { klasser: K4, kort: 5, plasser: 7, omrulling: true },
+    { klasser: K4, kort: 5, plasser: 8, omrulling: true },
+    { klasser: K4, kort: 5, plasser: 8, omrulling: true },
+];
+
+export const step = (g: G) => LADDER[Math.min(g.round, LADDER.length - 1)];
+
 export function boardCap(g: G) {
-    return Math.min(8, 3 + g.round) + (g.items.includes('gordion') ? 1 : 0);
+    return step(g).plasser + (g.items.includes('gordion') ? 1 : 0);
 }
 
 export function boardUnits(g: G): { u: Unit; row: number; col: number }[] {
@@ -1043,6 +1127,7 @@ function shopPool(g: G): Kind[] {
     for (const [k, d] of Object.entries(UNITS) as [Kind, UnitDef][]) {
         if (d.hero || !g.pool.has(d.folk)) continue;
         if (g.challenge === 'uten-ryttere' && d.klasse === 'kav') continue;
+        if (!step(g).klasser.includes(d.klasse)) continue;
         out.push(k);
     }
     return out;
@@ -1065,17 +1150,17 @@ function costWeight(c: number, r: number) {
 export function rollShop(g: G) {
     const pool = shopPool(g);
     const shop: Card[] = [];
-    for (let i = 0; i < SHOP_SIZE; i++) {
+    for (let i = 0; i < step(g).kort; i++) {
         // Sjeldne ting: en historisk gjenstand, eller en enhet fra et folk du ikke har ennå.
         const r = g.rng();
-        if (g.round >= 1 && r < 0.07) {
+        if (g.round >= 2 && r < 0.07) {
             const left = (Object.keys(ITEMS) as ItemId[]).filter((k) => !g.items.includes(k));
             if (left.length) {
                 shop.push({ item: pick(g.rng, left), cost: 3 });
                 continue;
             }
         }
-        if (g.round >= 2 && r > 0.955) {
+        if (g.round >= 4 && r > 0.955) {
             const exotic = (Object.keys(UNITS) as Kind[]).filter(
                 (k) => !UNITS[k].hero && !g.pool.has(UNITS[k].folk) && !(g.challenge === 'uten-ryttere' && UNITS[k].klasse === 'kav')
             );
@@ -1100,11 +1185,14 @@ export function rollShop(g: G) {
         }
         shop.push({ kind: chosen, cost: UNITS[chosen].cost });
     }
+    // Nytt-merket: klassen åpnet i dette slaget.
+    const prev = g.round > 0 ? LADDER[Math.min(g.round - 1, LADDER.length - 1)].klasser : [];
+    for (const c of shop) if (c.kind && !prev.includes(UNITS[c.kind].klasse)) c.nytt = true;
     // Speiderens kort: ett kort som svarer på temaet i neste slag, hvis butikken har et.
     const answers = themeAnswer(g).filter((k) => pool.includes(k));
     if (answers.length) {
         const k = pick(g.rng, answers);
-        shop[0] = { kind: k, cost: UNITS[k].cost, scout: true };
+        shop[0] = { kind: k, cost: UNITS[k].cost, scout: true, nytt: !prev.includes(UNITS[k].klasse) };
     }
     g.shop = shop;
 }
@@ -1153,7 +1241,7 @@ const COUNTER: Record<Klasse, Kind[]> = {
  *   sharp   - forsterker motsvarene: riktig svar betyr mer enn rå pris
  *   wealth  - fienden er så rik som spilleren (enheter + gull) x (wealth + wealthGrow x runde)
  */
-export const TUNE = { theme: 0.45, counter: 0.3, lane: 0, sharp: 2, wealth: 0.85, wealthGrow: 0.06 };
+export const TUNE = { theme: 0.45, counter: 0.3, lane: 0, sharp: 2, wealth: 0.6, wealthGrow: 0.07 };
 const THEME_SHARE_OF = () => TUNE.theme;
 
 /** Hva spilleren eier: enheter (pris x 3^(stjerner-1)) pluss gull. */
@@ -1166,13 +1254,22 @@ export function playerWealth(g: G) {
 
 export function makeEnemy(g: G) {
     const THEME_SHARE = THEME_SHARE_OF();
+    const def0 = battleDef(g);
+    if (def0.fixed) {
+        // Læringsslag: en fast hær som viser akkurat den regelen eleven skal lære nå.
+        const grid: Unit[][] = [Array(COLS).fill(null), Array(COLS).fill(null)];
+        for (const [k, r, c] of def0.fixed) grid[r][c] = { uid: 0, kind: k, star: 1 };
+        g.enemy = grid;
+        g.enemyCommander = def0.commander ?? null;
+        return;
+    }
     const COUNTER_SHARE = TUNE.counter;
     const def = battleDef(g);
     const rng = g.rng;
     // Fienden er like rik som deg (enheter + gull), med et lite tillegg per slag. Å bare
     // kjøpe mer gjør deg ikke sterkere enn fienden - det gjør motsvar og samspill.
     // De to første slagene er innlæring: fast, snill fiende.
-    const wealth = TUNE.wealth > 0 && g.round >= 2 ? playerWealth(g) * (TUNE.wealth + TUNE.wealthGrow * g.round) : 0;
+    const wealth = TUNE.wealth > 0 && g.round >= 3 ? playerWealth(g) * (TUNE.wealth + TUNE.wealthGrow * g.round) : 0;
     let budget = Math.max(def.budget, Math.round(wealth));
     const full = budget;
     const picks: Kind[] = [];
@@ -1188,9 +1285,9 @@ export function makeEnemy(g: G) {
     };
     // Temaet først: det slaget er kjent for (vognene ved Gaugamela, elefantene ved Hydaspes).
     spend(THEME_SHARE, def.theme);
-    // Fra Granikos leser fienden deg også: en del av budsjettet går til motsvar mot det
-    // du har mest av.
-    if (g.round >= 2) {
+    // Fra slag 5 leser fienden deg også: en del av budsjettet går til motsvar mot det du
+    // har mest av.
+    if (g.round >= 4) {
         const w = classWeights(g.board);
         const top = (Object.keys(w) as Klasse[]).sort((a, b) => w[b] - w[a])[0];
         if (w[top] > 0) spend(COUNTER_SHARE, COUNTER[top]);
@@ -1399,7 +1496,7 @@ export function sell(g: G, from: Loc, io: IO | null): boolean {
 }
 
 export function reroll(g: G, io: IO | null): boolean {
-    if (g.phase !== 'plan' || g.gold < REROLL || g.challenge === 'ingen-omrulling') return false;
+    if (g.phase !== 'plan' || g.gold < REROLL || g.challenge === 'ingen-omrulling' || !step(g).omrulling) return false;
     g.gold -= REROLL;
     rollShop(g);
     g.valg += 1;

@@ -453,7 +453,8 @@ export function botTick(g: G, style: BotStyle, io: IO | null, rng: Rng, n: numbe
     const reserve = saves && g.round >= 1 && boardCount(g) >= boardCap(g) - 1 ? 10 : 0;
     let best = -1;
     const rich = g.gold >= reserve + 5 && g.bench.some((x) => !x);
-    let bestS = boardCount(g) < boardCap(g) ? -0.5 : rich ? 0.4 : 1.2;
+    // Tomt brett: kjøp det beste som finnes, uansett.
+    let bestS = boardCount(g) === 0 ? -Infinity : boardCount(g) < boardCap(g) ? -0.5 : rich ? 0.4 : 1.2;
     g.shop.forEach((card, i) => {
         if (card.sold || card.cost > g.gold) return;
         let s: number;
