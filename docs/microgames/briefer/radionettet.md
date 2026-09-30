@@ -159,5 +159,10 @@ Fem konsepter, alle innenfor bestillingen. Fersk dommer med bestillingen, Gøy /
   peker innenfor ringen, ruter utenfor rekkevidden er grå når man plasserer, avviste klikk får en
   lapp med grunnen (ingen radio ennå / utenfor ringen / alle kanaler brukt), klikk på
   kommandovogna forklarer, og hele ruta er klikkflate for enheten.
+- 2026-09-30, gråboksen GODKJENT av eieren: «Forstår hva jeg skal gjøre, alt i graybox virker
+  nice første minuttet.» Neste fase (fersk økt): kunst etter kunstbriefen (plakat-look, fly som
+  stuper, rekyl, røyk og ild, fallskjermer), `cover` med `--cover`, så gråboks-diagnose av
+  resten av slagene og slag 4-6 med fallskjermsoldater og ordrekort. Ikke embed i artikkelen
+  før spillet er ferdig (steg 6).
 - Ikke i gråboksen ennå: fallskjermsoldater (Normandie 1944), slag 4-6, ordrekort mellom
   slagene, flytting og salg av enheter.
