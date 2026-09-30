@@ -423,3 +423,56 @@ bli tom.
     Kortvalget syns sjelden i filmstripa fordi robotene velger etter 1,2 s. Maleriet velger målet selv
     (den farligste), så eleven peker ikke lenger. Salviati gjør 1478 mer dramatisk å se på, men ikke
     vanskeligere (samme tidtaker som Pazzi). Arm og hånd dekker av og til sjanseskiltet.
+- **Fase: forbedrer, runde 3 (2026-09-30).** Vurdering 3: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 3,
+  Unikt 4 (sum 18). Gøy har stått på 3 i tre runder, så kjerneløkka er endret igjen:
+  (1) *Gøy + Lærerikt, kortvalget er et ekte stopp:* kortene legges på bordet (0,9 s) og blir
+  liggende til eleven velger - klokka i runden står stille, og teksten under kortene sier det
+  («Klokka står stille til du velger»). Først etter 12 s brenner en lunte, og etter 20 s spares
+  gullet av seg selv (så den passive runden tar slutt). Det valgte kortet blir liggende 0,8 s med
+  «VALGT!»-stempel mens lappene flyr eller maleriet henges opp. Robotene leser i 0,9 + 2 s, så
+  valget ligger om lag 4 spillsekunder på bordet. Frysen ved kremt stjeler ikke lenger tid fra
+  trekningsklokka, så tidslinja er fast: kortvalget i 1478 ligger på bordet fra 78,2 til 82,2 s,
+  og filmbildet `film-06-80s.png` viser det (sjekket på kontaktarket). Maleriet henges opp i en
+  ny *studiolo* nede til venstre på bordet (seks plasser, «Studioloen - 2 av 6 malerier»), fienden
+  får en grønn «BEUNDRER»-brikke og en grønn blikkstripe mot studioloen i stedet for mot posen.
+  Maleriet koster 120 (var 100), bestikkelsen 45 (var 60).
+  (2) *Lesbart:* rådsherrene får navn etter plassen ved bordet (Rucellai, Strozzi, Soderini,
+  Capponi ...), så ingen to heter det samme. EHEM-boblen tegnes i en egen runde over alle gjester
+  og skilt, og står ved siden av hodet (ikke over skiltet). Regelskiltet «3 av 5 røde vinner» /
+  «Sikret: vennene vinner» står til venstre under posen (372, 456) og tegnes etter armen, så armen
+  aldri dekker det. HUD-en sier «Poeng ×1,75» og «øker for hver lapp», kista sier «Tapt trekning:
+  -70 florin» og teller ned («Tom om 2 tapte trekninger», «Neste tap tømmer kista!»). Gjestene har
+  ansikt ovenfra: ører, øyenbryn, øyne, nese, skjegg på de eldste, puffermer og krage.
+  (3) *Gøy - ferdighetstrappen:* hver gjest har et forvarsel. Albizzi løfter lua (større hatt,
+  skygge, hår under og en gullpil) 0,7 s før et ekte kremt - et falskt kremt kommer uten lueløft.
+  Pazzi (før 1478) rykker med hodet 0,6 s før han snur seg. Pavens mann ser aldri mot posen.
+  Albizzi og Pazzi kremter nå bare 0,15 s (andre 0,4 s), så den som bare venter på kremtet, blir
+  ofte for sen. Lapper: «Lua opp = ekte kremt kommer», «Kremt uten lueløft er falskt», «Pazzi
+  rykker med hodet før han ser», «Pavens mann ser aldri på posen». Tallene: tap 50 + 10 per
+  trekning (var 70 + 20), blikkfart +0,045 per trekning (var 0,06), 60 poeng for hver vunnet
+  trekning uansett multiplikator, paven gir 5 per lapp (var 10), rangene hevet (Notar 250, Prior
+  600, Gonfaloniere 1000, Il Magnifico 1700, Pater Patriae 2200). Den middels gode er nå treg
+  (hvert tredje øyeblikk, 0,6 s), men har lært forvarslene og fisker ned til fire svarte.
+  De tre reglene: hånd inn når alle ser bort og ut ved forvarsel/kremt; florin betaler alt og 3 av
+  5 vinner; kjenn gjestene (lua, rykket, pavens mann).
+  Simulering (200 runder, grønn): seende 97 % (median 1750, p10-p90 1487-2190), halvgod 34 % (median
+  755), ødeland 0 % (median 352, tom kiste), tilfeldig 0 %, passiv 0 %. 17,9 valg per minutt, press
+  0,16 -> 0,31 -> 0,67. Nettleseren: seende vant med 2007 poeng, JS p95 21,2 ms (p50 11,4) på
+  Chromebook-struping, audit 0 funn, likhet nærmest lop-med-lonna-3d (0,47).
+  - *Prøvd som ikke virket:* (1) Forvarsel med vanlig kremt (0,4 s) og den middels gode som så
+    hvert andre øyeblikk: roboten med forvarsel gjorde det like godt som roboten uten (35 mot 33 %) -
+    kremtet pluss frysen reddet alle. Først med 0,15 s kremt for Albizzi og Pazzi og en treg
+    middels (0,6 s) lønner forvarselet seg: med forvarsel 32 %, median 635; uten 9 %, median 420
+    (tatt av Pazzi i 1464). (2) Start med 170 florin: ødelanden overlevde lenger og fikk median
+    742, over den middels gode. (3) Pavens mann som aldri ser, med 10 florin per lapp: lappene
+    kostet 5, og ødelanden fylte posen med 20 venner i 1454. (4) 5 fiender i 1492 i stedet for 6:
+    hjalp den middels gode litt, men tok bort sluttøkningen - tilbake til 6. (5) Kortvalget på
+    faste 4 s uten fast klokke: frysen ved kremt forskjøv tidslinja 0-2,5 s, og filmbildet ved 80 s
+    traff trekningen i stedet for kortene. (6) Innlagte biter for skuldre, hender og indre hatt:
+    JS p95 24 ms - nå flate fyll (21,2 ms).
+  - *Kjente svakheter:* vinnerroboten vinner 97 %, så toppen ligger i rangene, ikke i å overleve.
+    Kremtet på 0,15 s for Albizzi og Pazzi er kort for et menneske uten forvarsel (sakte film
+    hjelper litt) - det er meningen, men kan føles urettferdig før eleven har sett lua. Pazzi-
+    trekningen i 1478 har fortsatt samme tidtaker for Pazzi og Salviati. Chromebook-marginen er
+    liten (21,2 av 22 ms). Studioloen i runden viser bare maleriene fra denne runden; samlingen på
+    tvers av runder står i menyen.

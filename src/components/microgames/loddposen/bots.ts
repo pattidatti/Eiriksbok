@@ -2,6 +2,8 @@ import type { Rng } from '../sim';
 import {
     aktiv,
     begynn,
+    forvarsel,
+    KORT_INN_S,
     kanVelge,
     lapper,
     odds,
@@ -10,7 +12,6 @@ import {
     trekkUt,
     utsendingHer,
     velgKort,
-    GAVE_S,
     LAPP_PRIS,
     MIN_LAPPER,
     MÅ_HA,
@@ -26,20 +27,24 @@ import {
 
 export type BotStyle = 'seende' | 'halvgod' | 'ødeland' | 'tilfeldig';
 
-/** Så lenge en elev trenger for å lese kortene. */
-const LESETID = 1.2;
+/**
+ * Så lenge en elev trenger for å lese kortene: de legges på bordet, så tenker hun i 2 s.
+ * Med kortet som virker etterpå (VALGT_S) ligger valget om lag 4 spillsekunder på bordet.
+ */
+const LESETID = KORT_INN_S + 2;
 
 const pazzi = (g: G) => g.rådsherrer.find((r) => stillePazzi(g, r) && aktiv(r));
 
 /**
  * Er det trygt å stikke hånda i posen nå? `stilleInn`: hvor sent i Pazzis stille bortblikk man
- * tør. `serHodet`: skiller Albizzis falske kremt (hodet snur seg ikke) fra ekte.
+ * tør. `serHodet`: skiller Albizzis falske kremt (lua løftes ikke, hodet snur seg ikke) fra ekte.
+ * Ingen går inn mens en gjest viser forvarselet (lua opp, hodet rykker).
  */
 function trygt(g: G, pazziVent: number, stilleInn: number, serHodet: boolean) {
     return g.rådsherrer.every((r) => {
         if (!aktiv(r)) return true;
         if (serHodet && r.blikk === 'varsel' && r.falsk) return true;
-        if (r.blikk !== 'bort') return false;
+        if (r.blikk !== 'bort' || forvarsel(g, r)) return false;
         if (stillePazzi(g, r)) return r.siden < stilleInn;
         // Før 1478 later Pazzi som han ser bort og snur seg tilbake - vent litt.
         if (r.slag === 'pazzi' && r.siden < pazziVent) return false;
@@ -77,17 +82,21 @@ function kortvalg(g: G, style: BotStyle) {
     return true;
 }
 
+/** Den middels gode fisker bare de verste fiendene: ned til så mange svarte. */
+const HALV_FISK = 4;
+
 /** Vinneren kjøper maleri når så mange blikk er ved bordet. */
 const MALERI_FRA_AKTIVE = 4;
 
 export function botTick(g: G, style: BotStyle, rng: Rng, tick: number) {
     if (g.ended || g.fase === 'trekning') return;
     if (style === 'tilfeldig') return tilfeldigTick(g, rng);
-    // Den middels gode er treg: ser på bordet bare annethvert øyeblikk.
-    if (style === 'halvgod' && tick % 2 !== 0) return;
+    // Den middels gode er treg: ser på bordet bare hvert tredje øyeblikk (0,6 s). Kremtet til
+    // Albizzi og Pazzi er for kort for den - forvarselet (lua, rykket) er det som redder den.
+    if (style === 'halvgod' && tick % 3 !== 0) return;
     // Gavefasen: bare gavekortet, og først når kortet er lest (som en elev).
     if (g.fase === 'gave') {
-        if (GAVE_S - g.faseT < LESETID) return;
+        if (g.valgt || g.faseT < LESETID) return;
         if (!kortvalg(g, style)) spar(g);
         return;
     }
@@ -99,7 +108,7 @@ export function botTick(g: G, style: BotStyle, rng: Rng, tick: number) {
     // Gull som skal ligge igjen i kista: vinneren tåler ett tap, den middels gode et halvt.
     // Har kista ikke råd til et tap uansett, må trekningen vinnes: da gjelder ingen reserve.
     const tap = tapPris(g);
-    // Mens pavens utsending følger med, koster en lapp bare 5: vinneren tør mer da.
+    // Mens pavens utsending sitter der, betaler paven litt for hver lapp: vinneren tør mer da.
     const pave = utsendingHer(g) && seende ? tap / 3 : 0;
     const res = ødeland || g.kiste < tap ? 0 : halv ? tap * 0.8 : tap - pave;
     const p = pazzi(g);
@@ -108,21 +117,24 @@ export function botTick(g: G, style: BotStyle, rng: Rng, tick: number) {
     if (g.hånd.act) {
         // Kremt = ut. Stille Pazzi: ut før blikket hans når posen.
         const pazziSnart = p && p.siden >= PAZZI_STILLE_S - (halv ? 0.7 : 0.25);
-        if (truet(g, !halv) || pazziSnart) return void trekkUt(g);
+        // Den forsiktige drar hånda ut allerede ved forvarselet (lua opp, hodet rykker).
+        const tidlig = halv && g.rådsherrer.some((r) => forvarsel(g, r));
+        if (truet(g, true) || pazziSnart || tidlig) return void trekkUt(g);
         if (g.hånd.act === 'slipp') {
             // Forsiktig: ut etter to lapper, og fornøyd med god nok sjanse.
             if (halv && (g.hånd.dukk >= 3 || o >= 0.9)) return void trekkUt(g);
             if (g.kiste - LAPP_PRIS < res) return void trekkUt(g);
             // Vinneren vet at banken ikke betaler renter for mer enn seks venner.
             if (seende && g.venner >= MÅ_HA - 1 + RENTE_TAK && g.kiste < 300) return void trekkUt(g);
-        } else if (!kanFiske || g.fiender <= 2) trekkUt(g);
+        } else if (!kanFiske || g.fiender <= (halv ? HALV_FISK : 2)) trekkUt(g);
         return;
     }
 
-    if (!trygt(g, halv ? 0.2 : 0.35, PAZZI_STILLE_S - (halv ? 1.3 : 0.8), !halv)) return;
+    if (!trygt(g, halv ? 0.2 : 0.35, PAZZI_STILLE_S - (halv ? 1.3 : 0.8), true)) return;
     if (halv && o >= 0.9) return;
 
-    if (seende && g.fiender > 2 && kanFiske) {
+    // Vinneren fisker fiendene ned til to. Den middels gode fisker bare litt (ned til fire).
+    if (((seende && g.fiender > 2) || (halv && g.fiender > HALV_FISK)) && kanFiske) {
         begynn(g, 'fisk');
         return;
     }
@@ -151,13 +163,13 @@ export const BOTS: Record<
     seende: {
         forventer: 'vinner',
         beskrivelse:
-            'Grådig: fisker fiendene ned til to, holder så hånda i posen til et ekte kremt (ser at Albizzis falske kremt ikke snur hodet, og drar ut før Pazzis tredje rykk fra 1478), sparer til ett tap, kjøper maleri når bordet er fullt av blikk og bestikker ellers, og tør mer mens pavens utsending betaler.',
+            'Grådig: fisker fiendene ned til to, går aldri inn mens en gjest viser forvarselet (Albizzi løfter lua, Pazzi rykker med hodet), holder så hånda i posen til et ekte kremt (ser at et kremt uten lueløft er falskt, og drar ut før Pazzis tredje rykk fra 1478), sparer til ett tap, kjøper maleri når bordet er fullt av blikk og bestikker ellers, og tør mer mens pavens mann sitter der.',
         style: 'seende',
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Forsiktig og treg: ser på bordet bare annethvert øyeblikk, drar hånda ut ved hvert kremt (også de falske) og etter to lapper, fisker aldri, bestikker bare med full kiste og nøyer seg med dårligere sjanse.',
+            'Forsiktig og treg: ser på bordet bare hvert tredje øyeblikk, men har lært forvarslene (drar hånda ut når Albizzi løfter lua eller Pazzi rykker med hodet, og bryr seg ikke om kremt uten lueløft), drar ut etter tre lapper, fisker bare ned til fire svarte, bestikker bare med full kiste og nøyer seg med dårligere sjanse.',
         style: 'halvgod',
     },
     ødeland: {
