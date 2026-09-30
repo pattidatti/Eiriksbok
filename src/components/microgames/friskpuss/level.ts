@@ -276,12 +276,15 @@ const FORSTE: Level = {
     name: 'Første dag',
     mirror: false,
     clock: 150,
-    // Middels robot: 3,8 / 10,4 / 11,9 s. Stramt: 25-30 % margin, ett søl per etappe er så vidt nok.
-    etapper: [6, 14, 16],
+    // Middels robot: 3,8 / 10,4 / 11,9 s. Klokka er stilt etter en elev som ser banen for første
+    // gang, ikke etter roboten: da den var 6 / 14 / 16 s, sto hele første etappe i panikk (rød kant,
+    // hjertebank, «3 SEKUNDER!») før eleven hadde funnet stigen. Farten belønnes med våt puss og
+    // stjerna under måltida, ikke med en klokke som slår nybegynneren ut.
+    etapper: [30, 40, 40],
     target: 40,
-    // Paven kommer tidlig. Han tar den som står og nøler, ikke den som går jevnt.
-    popeStart: 1,
-    popeSpeed: 3.1,
+    // Paven kommer når eleven har fått bøtta opp på gesimsen. Han tar den som står og nøler.
+    popeStart: 20,
+    popeSpeed: 2.7,
     popeClimb: 1.3,
     popeHigh: 2.0,
     slam: [0.16, 0.04],
@@ -449,10 +452,10 @@ const SKAPELSEN: Level = {
     name: 'Skapelsen',
     mirror: false,
     clock: 300,
-    // Middels robot: 9,0 / 32,2 / 22,3 / 7,9 s.
-    etapper: [13, 43, 30, 11],
+    // Middels robot: 9,0 / 32,2 / 22,3 / 7,9 s. Romslig for en ny elev (se Første dag).
+    etapper: [35, 75, 55, 30],
     target: 75,
-    popeStart: 10,
+    popeStart: 25,
     popeSpeed: 2.4,
     popeClimb: 1.3,
     popeHigh: 1.55,

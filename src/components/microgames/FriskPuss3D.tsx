@@ -34,6 +34,7 @@ import {
     popeDistance,
     clockPhase,
     clockLeft,
+    nextGoal,
     DRY_PENALTY,
     CHALLENGE_BONUS,
     HAIR_POINTS,
@@ -57,6 +58,7 @@ import {
     Checkpoints,
     CeilingClock,
     Slam,
+    NextBeacon,
 } from './friskpuss/world';
 import { Chapel, Lights } from './friskpuss/chapel';
 import { Player, Pope, Master, Ghost, Helper, Fx, SpeedLines } from './friskpuss/figures';
@@ -173,6 +175,7 @@ const LESSON = {
 const TIPS = {
     puss: 'Hold deg på bjelkene i veggen. Du faller aldri av dem, så de er raskest i lengden.',
     dag: 'Hver etappe har sin egen puss. Nå kalkkaret før den tørker - bjelkene i veggen er raskest i lengden.',
+    pavenGulv: 'Paven tar den som står stille. Gå mot lyset og klatre opp stigen - der oppe er kalkkaret.',
     paven: 'Paven klatrer bare på det som bærer. Tau-stillaset er veien fra ham - hopp på når det står stille ytterst.',
     slam: 'Kalk ble blandet med vann og sand til puss. Hold deg på veggbjelkene, de løse plankene koster tid du ikke har.',
 };
@@ -451,6 +454,8 @@ interface Slow {
 }
 
 const SLOW_LEN = 0.7;
+const LAPP_STALE = 4;
+const FLOAT_SECONDS = 2.8;
 
 function slowFactor(sl: Slow): number {
     if (sl.left <= 0) return 1;
@@ -800,7 +805,8 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
         const x1 = w - 160 - tw / 2;
         const cx = x0 <= x1 ? Math.max(x0, Math.min(x1, x)) : w / 2;
         const cy = Math.max(Math.max(185, h * 0.36), Math.min(h * 0.7, y));
-        text.float(label, cx, cy, color, big);
+        // 2,8 s: med standardens 1,2 s rakk eleven aldri å lese teksten over figuren.
+        text.float(label, cx, cy, color, big, FLOAT_SECONDS);
     };
 
     const endRun = (won: boolean) => {
@@ -864,7 +870,7 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
                   : g.cause === 'slam'
                     ? 'Kalkslammet nådde deg. Bøtta er full av grøt.'
                     : 'Pussen tørket. Feltet må hugges ned, og dagen er tapt.',
-            tip: won ? '' : TIPS[g.cause],
+            tip: won ? '' : g.cause === 'paven' && g.maxY < 4 ? TIPS.pavenGulv : TIPS[g.cause],
             lessons: text.lessons(3),
             stars: st,
             spills: totalSpills(g),
@@ -906,28 +912,24 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
                     }
                     case 'nesten':
                         // Nesten-søl og nesten-pave (game.ts): sakte film
-                        if (e.a !== 'pave-unna') nearMiss(e.a === 'pave' ? 'PAVEN!' : 'NESTEN!');
+                        // Bare når noe faktisk var nær ved å ta deg. Sakte film ved hver harde
+                        // landing eller kant gjorde at tempoet rykket uten at eleven skjønte hvorfor.
+                        if (e.a === 'pave') nearMiss('PAVEN!');
+                        else if (e.a === 'talje') nearMiss('NESTEN!');
                         break;
                     case 'hair': {
                         sfx.hair();
                         const p = e.p ?? g.p;
                         const r = projRef.current?.(PV_UI.set(p[0], p[1] + 1.9, p[2]));
-                        if (r && !r.behind)
-                            floatSafe(
-                                `PÅ HENGENDE HÅRET +${HAIR_POINTS * g.mult}`,
-                                r.x,
-                                r.y,
-                                PAL.gold,
-                                true
-                            );
-                        const nm = HAIR_NAME[e.a ?? ''];
-                        if (nm && r && !r.behind) floatSafe(nm, r.x, r.y + 26, PAL.ink, false);
+                        // Én liten linje, ikke to store: bonusen skal ikke drukne det som skjer.
+                        const nm = HAIR_NAME[e.a ?? ''] ?? 'PÅ HENGENDE HÅRET';
+                        if (r && !r.behind) floatSafe(`${nm} +${HAIR_POINTS * g.mult}`, r.x, r.y, PAL.gold, false);
                         break;
                     }
                     case 'grab':
+                        // Ingen sakte film her: den kom midt i vanlige hopp og gjorde spillet
+                        // rykkete å lese. Sakte film er spart til paven.
                         sfx.grab();
-                        // Nesten-bom: kantgrep i fritt fall
-                        if (slowRef.current.preVy < -6.5) nearMiss('NESTEN!');
                         break;
                     case 'creak': {
                         sfx.creak();
@@ -1044,7 +1046,7 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
                             'giornata',
                             'Giornata - et dagsverk',
                             'Fresko males på våt puss. Hver dag la de bare så mye puss som de rakk å male - et dagsverk, på italiensk giornata.',
-                            { seconds: 8 }
+                            { seconds: 5.5 }
                         );
                         text.lesson('giornata', LESSON.dag, 4);
                         break;
@@ -1267,10 +1269,30 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
     // Hvert bilde: fottrinn, støvsky ved landing og nesten-bom under taljene.
     const frameRef = useRef<(g: G, dt: number) => void>(() => {});
     const slowRef = useRef<Slow>({ left: 0, cd: 0, preVy: 0 });
+    const goalShown = useRef(false);
+    const popeShown = useRef(false);
+    const goalPoint = () => {
+        const v = nextGoal(gRef.current);
+        return [v[0], v[1] + 3.3, v[2]] as V3;
+    };
     const stepAcc = useRef(0);
     useEffect(() => {
         frameRef.current = (g: G, dt: number) => {
             if (modeRef.current !== 'play' || g.ended) return;
+            // Første gang i runden: pek på lyset over neste kalkkar, der bøtta skal.
+            if (!goalShown.current && g.t > 0.8) {
+                goalShown.current = true;
+                text.point('mål', g.cp === 0 ? 'Bøtta skal hit - følg lyset' : 'Hit', at(goalPoint), { seconds: 5 });
+            }
+            // Paven kommer inn døra: vis hvem han er, så eleven vet hva som skjedde om han tar igjen lærlingen.
+            if (!popeShown.current && g.popeActive) {
+                popeShown.current = true;
+                // Han kommer ofte inn døra bak kameraet, så banneret sier det også.
+                text.banner('PAVEN KOMMER!', PAL.red, 1.3);
+                text.point('paven-inn', 'Paven kommer! Ikke stå stille', at(() => [g.pope[0], g.pope[1] + 2.3, g.pope[2]] as V3), {
+                    seconds: 4,
+                });
+            }
             const sp = Math.hypot(g.v[0], g.v[2]);
             if (g.mode === 'ground' && sp > 1) {
                 stepAcc.current += sp * dt;
@@ -1338,14 +1360,22 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
     const lappSeen = useRef<Set<string>>(new Set());
     const lappId = useRef(0);
     // Bare én lapp om gangen. Kommer det en ny mens en står, venter den i kø (maks tre).
-    const lappQ = useRef<{ busy: boolean; q: { l: Lapp; seconds: number }[]; timer: number }>({ busy: false, q: [], timer: 0 });
+    // En lapp som har ventet lenger enn LAPP_STALE, droppes: «Løse planker» på 13 meter, lenge
+    // etter plankene, forvirret mer enn den forklarte.
+    const lappQ = useRef<{ busy: boolean; q: { l: Lapp; seconds: number; at: number }[]; timer: number }>({
+        busy: false,
+        q: [],
+        timer: 0,
+    });
     const lappShow = (l: Lapp, seconds: number) => {
         const lq = lappQ.current;
         lq.busy = true;
         setLapper([l]);
         window.clearTimeout(lq.timer);
         lq.timer = window.setTimeout(() => {
-            const next = lq.q.shift();
+            const now = performance.now();
+            let next = lq.q.shift();
+            while (next && (now - next.at) * Math.max(1, DEV_SPEED) > LAPP_STALE * 1000) next = lq.q.shift();
             if (next) lappShow(next.l, next.seconds);
             else {
                 lq.busy = false;
@@ -1375,7 +1405,7 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
         if (!lq.busy || o.now) lappShow(l, seconds);
         else {
             lq.q = lq.q.filter((x) => x.l.key !== key);
-            lq.q.push({ l, seconds });
+            lq.q.push({ l, seconds, at: performance.now() });
             if (lq.q.length > 3) lq.q.shift();
         }
     };
@@ -1467,6 +1497,8 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
         text.clear();
         text.resetRun();
         seen.current = new Set();
+        goalShown.current = false;
+        popeShown.current = false;
         setModeBoth('play');
         const chName = CHALLENGES.find((c) => c.id === ch)?.name;
         text.banner(chName ? chName.toUpperCase() : g.L.name.toUpperCase(), PAL.lapis, 1.4);
@@ -1652,6 +1684,7 @@ export default function FriskPuss3D({ onComplete }: MicroGameProps) {
                                 <Heiser gRef={gRef} L={L} />
                                 <Winds gRef={gRef} L={L} />
                                 <Checkpoints gRef={gRef} L={L} />
+                                <NextBeacon gRef={gRef} />
                                 <Finds gRef={gRef} L={L} fx={fx} />
                                 <Master gRef={gRef} L={L} />
                                 <Helper gRef={gRef} L={L} />

@@ -264,12 +264,14 @@ export interface FloatMsg {
     y: number;
     color: string;
     big: boolean;
+    /** Hvor lenge teksten står (s). Uten: 1,2 s med jevn fading. Med: står rolig og leses, fader til slutt. */
+    seconds?: number;
 }
 
 export class FloatStore extends Emitter {
     items: FloatMsg[] = [];
     private n = 0;
-    push(t: string, x: number, y: number, color = '#f7f1e3', big = false) {
+    push(t: string, x: number, y: number, color = '#f7f1e3', big = false, seconds?: number) {
         this.n++;
         const id = this.n;
         // Maks to samtidig, og aldri oppå hverandre: en ny tekst nær en som allerede
@@ -281,12 +283,12 @@ export class FloatStore extends Emitter {
             if (!hit) break;
             yy = hit.y - 32;
         }
-        this.items = [...this.items.slice(-1), { id, t, x, y: yy, color, big }];
+        this.items = [...this.items.slice(-1), { id, t, x, y: yy, color, big, seconds }];
         this.emit();
         window.setTimeout(() => {
             this.items = this.items.filter((f) => f.id !== id);
             this.emit();
-        }, 1300);
+        }, seconds ? seconds * 1000 + 100 : 1300);
     }
     clear() {
         this.items = [];

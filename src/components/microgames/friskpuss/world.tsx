@@ -12,7 +12,7 @@ import * as THREE from 'three';
 import { crispCanvas } from '../kit/crispText';
 import { toonGradientMap } from '../kit/toonGradient';
 import { ROOM, type Level } from './level';
-import { crumbleFallAt, hookU, loadY, windState, panicLen, HEIS_LOAD, type G } from './game';
+import { crumbleFallAt, hookU, loadY, windState, panicLen, nextGoal, HEIS_LOAD, type G } from './game';
 import { groundBelow } from './camera';
 import { PAL } from './look';
 import { boxGeo, hazeify, scaffoldMaterials } from './materials';
@@ -806,5 +806,81 @@ export function Slam({ gRef }: { gRef: GRef }) {
         <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} visible={false} material={mat}>
             <planeGeometry args={[ROOM.x1 - ROOM.x0, ROOM.z1 - ROOM.z0, 1, 1]} />
         </mesh>
+    );
+}
+
+// ---------------------------------------------------------------------------
+// Neste mål: en søyle av lys og en pil over neste kalkkar (til slutt over mesteren).
+// Eleven skal se hvor bøtta skal uten å lese noe. Den trygge veien dit må eleven fortsatt finne
+// selv; lyset sier bare «hit».
+// ---------------------------------------------------------------------------
+
+let BEAM_TEX: THREE.CanvasTexture | null = null;
+function beamTex() {
+    if (BEAM_TEX) return BEAM_TEX;
+    const c = document.createElement('canvas');
+    c.width = 4;
+    c.height = 128;
+    const x = c.getContext('2d')!;
+    const gr = x.createLinearGradient(0, 0, 0, 128);
+    gr.addColorStop(0, 'rgba(255,226,140,0)');
+    gr.addColorStop(0.55, 'rgba(255,214,110,0.35)');
+    gr.addColorStop(1, 'rgba(255,200,80,0.8)');
+    x.fillStyle = gr;
+    x.fillRect(0, 0, 4, 128);
+    BEAM_TEX = new THREE.CanvasTexture(c);
+    return BEAM_TEX;
+}
+
+const BEAM_H = 7;
+let BEAM_MAT: THREE.MeshBasicMaterial | null = null;
+const beamMaterial = () =>
+    (BEAM_MAT ??= new THREE.MeshBasicMaterial({
+        map: beamTex(),
+        transparent: true,
+        depthWrite: false,
+        side: THREE.DoubleSide,
+        fog: false,
+    }));
+const ARROW_MAT = toon({ color: ART.gold, emissive: new THREE.Color('#6a4a10') });
+
+export function NextBeacon({ gRef }: { gRef: GRef }) {
+    const root = useRef<THREE.Group>(null);
+    const arrow = useRef<THREE.Group>(null);
+    const fade = useRef(0);
+    useFrame((state, rawDt) => {
+        const g = gRef.current;
+        const r = root.current;
+        if (!r) return;
+        const dt = Math.min(0.05, rawDt);
+        const q = nextGoal(g);
+        P1.set(q[0], q[1], q[2]);
+        const near = Math.hypot(g.p[0] - P1.x, g.p[2] - P1.z) < 2.6 && Math.abs(g.p[1] - P1.y) < 1.6;
+        const want = g.ended || near ? 0 : 1;
+        fade.current += (want - fade.current) * Math.min(1, dt * 4);
+        r.visible = fade.current > 0.02;
+        r.position.copy(P1);
+        const t = state.clock.elapsedTime;
+        beamMaterial().opacity = fade.current * (0.75 + 0.2 * Math.sin(t * 3));
+        if (arrow.current) {
+            arrow.current.position.y = 2.6 + Math.sin(t * 4) * 0.22;
+            arrow.current.rotation.y = t * 1.6;
+            arrow.current.scale.setScalar(fade.current);
+        }
+    });
+    return (
+        <group ref={root}>
+            <mesh position={[0, BEAM_H / 2, 0]} material={beamMaterial()} renderOrder={5}>
+                <cylinderGeometry args={[0.55, 0.55, BEAM_H, 16, 1, true]} />
+            </mesh>
+            <group ref={arrow}>
+                <mesh rotation={[Math.PI, 0, 0]} material={ARROW_MAT}>
+                    <coneGeometry args={[0.32, 0.6, 4]} />
+                </mesh>
+                <mesh position={[0, 0.5, 0]} material={ARROW_MAT}>
+                    <boxGeometry args={[0.16, 0.5, 0.16]} />
+                </mesh>
+            </group>
+        </group>
     );
 }

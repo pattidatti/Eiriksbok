@@ -37,8 +37,13 @@ export function FloatLayer({ store }: { store: FloatStore }) {
             {store.items.map((f) => (
                 <div
                     key={f.id}
-                    className={`arc-float arc-display${f.big ? ' big' : ''}`}
-                    style={{ left: f.x, top: f.y, color: f.color }}
+                    className={`arc-float arc-display${f.big ? ' big' : ''}${f.seconds ? ' hold' : ''}`}
+                    style={{
+                        left: f.x,
+                        top: f.y,
+                        color: f.color,
+                        ...(f.seconds ? { animationDuration: `${f.seconds}s` } : null),
+                    }}
                 >
                     {f.t}
                 </div>

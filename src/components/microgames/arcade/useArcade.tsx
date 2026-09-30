@@ -188,8 +188,8 @@ export function useArcadeText(gameId: string, opts: { maxBeats?: number } = {}) 
             beatActive: () => coach.beat !== null,
             lesson: (key: string, text: string, weight = 1) => coach.lesson(key, text, weight),
             lessons: (max = 3) => coach.lessons(max),
-            float: (text: string, x: number, y: number, color?: string, big = false) =>
-                floats.push(text, x, y, color, big),
+            float: (text: string, x: number, y: number, color?: string, big = false, seconds?: number) =>
+                floats.push(text, x, y, color, big, seconds),
             timeScale: () => coach.timeScale(),
             /** Ny runde. */
             resetRun: () => {

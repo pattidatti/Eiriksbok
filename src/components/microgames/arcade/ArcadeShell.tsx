@@ -48,6 +48,8 @@ const CSS = `
 .arc-beat p{margin:6px 0 9px;font-weight:700;font-size:15.5px;line-height:1.35}
 .arc-float{position:absolute;transform:translate(-50%,-50%);font-size:19px;white-space:nowrap;pointer-events:none;z-index:15;text-shadow:0 2px 0 var(--arc-ink),2px 0 0 var(--arc-ink),-2px 0 0 var(--arc-ink),0 -2px 0 var(--arc-ink);animation:arcFloat 1.2s ease-out forwards}
 .arc-float.big{font-size:27px}
+.arc-float.hold{animation-name:arcFloatHold}
+@keyframes arcFloatHold{0%{opacity:0;margin-top:6px;scale:.6}8%{opacity:1;margin-top:0;scale:1.1}15%{scale:1}78%{opacity:1;margin-top:-10px}100%{opacity:0;margin-top:-30px}}
 @keyframes arcFloat{0%{opacity:0;margin-top:6px;scale:.6}12%{opacity:1;margin-top:0;scale:1.1}25%{scale:1}100%{opacity:0;margin-top:-46px}}
 .arc-lessons{text-align:left;margin:8px 0 4px;padding:8px 12px 6px;background:var(--arc-chip);border:calc(var(--arc-line) - .5px) dashed var(--arc-ink);border-radius:calc(var(--arc-radius) - 2px)}
 .arc-lessons-title{font-size:14px;margin-bottom:3px}

@@ -831,7 +831,8 @@ function tick(g: G, dt: number) {
 
     // Etappe-klokka: pussen i bøtta tørker. Da er det tilbake til kalkkaret (på «Uten
     // sjekkpunkter» er runden over).
-    g.etT += dt;
+    // Mens du søler eller pussen tørker, står klokka: pausen er for å se hva som skjedde.
+    if (g.mode !== 'spill') g.etT += dt;
     for (let k = g.cp + 1; k < L.checkpoints.length; k++) {
         if (g.skipped[k] || g.mode !== 'ground' || g.p[1] < L.checkpoints[k].p[1] + 1.0) continue;
         g.skipped[k] = true;
@@ -855,6 +856,7 @@ function wetBonus(g: G) {
 
 /** Pussen tørket: tilbake til forrige kalkkar med fersk puss, og det koster poeng. */
 export const DRY_PENALTY = 300;
+export const DRY_PAUSE = 1.4;
 function dry(g: G) {
     if (g.ch === 'utenCp') {
         end(g, 'tapt', 'puss');
@@ -863,8 +865,14 @@ function dry(g: G) {
     g.dries++;
     g.bonus -= DRY_PENALTY;
     emit(g, { k: 'dry', p: [g.p[0], g.p[1], g.p[2]] });
-    g.mode = 'ground';
-    respawn(g);
+    // Ikke rett tilbake: figuren står et øyeblikk med den tørre bøtta, så eleven ser hvorfor
+    // før figuren er ved kalkkaret igjen (spill-modus kaller respawn når tida er ute).
+    g.mode = 'spill';
+    g.spillT = DRY_PAUSE;
+    g.v = [0, 0, 0];
+    g.ladder = null;
+    g.rope = null;
+    g.heis = -1;
     g.mult = 1;
     g.cleanSinceCp = false;
     g.etT = 0;
@@ -1710,9 +1718,13 @@ export function popeDistance(g: G) {
     return Math.hypot(g.pope[0] - g.p[0], g.pope[1] - g.p[1], g.pope[2] - g.p[2]);
 }
 
-/** Hvor lenge panikken varer på slutten av en etappe: 9 s, eller 40 % på en kort etappe. */
+/**
+ * Hvor lenge panikken (rød kant, hjertebank) varer på slutten av en etappe: 6 s, eller 25 % på
+ * en kort etappe. Ni sekunder med pulserende rødt gjorde at spillet føltes kaotisk lenge før
+ * det var reell fare.
+ */
 export function panicLen(g: G) {
-    return Math.min(9, g.etLen * 0.4);
+    return Math.min(6, g.etLen * 0.25);
 }
 
 /**
@@ -1729,7 +1741,7 @@ export function pressure(g: G) {
     return Math.min(1, 0.2 + 0.3 * prog + clock + 0.35 * Math.max(pope, sl));
 }
 
-/** Etappe-klokka: 'frisk', 'sprekker' (siste 35 %) eller 'panikk' (siste 9 s). */
+/** Etappe-klokka: 'frisk', 'sprekker' (siste 35 %) eller 'panikk' (siste 6 s). */
 export function clockPhase(g: G): 'frisk' | 'sprekker' | 'panikk' {
     const left = Math.max(0, g.etLen - g.etT);
     return left < panicLen(g) ? 'panikk' : left < g.etLen * 0.35 ? 'sprekker' : 'frisk';
@@ -1757,6 +1769,28 @@ export function finalScore(g: G) {
 
 export function stars(g: G) {
     return [g.ended === 'vunnet', g.finds.every(Boolean), g.ended === 'vunnet' && g.t < g.L.target];
+}
+
+/**
+ * Hvor bøtta skal nå: neste kalkkar (som Checkpoints i world.tsx tegner det), eller mesteren.
+ * Står kalkkaret på toppen av en stige og du er under, er målet foten av stigen: det er neste
+ * steg du faktisk kan se fra gulvet.
+ */
+export function nextGoal(g: G): V3 {
+    const L = g.L;
+    const next = L.checkpoints[g.cp + 1];
+    if (!next) return L.master.p;
+    if (g.mode !== 'ladder') {
+        for (const ld of L.ladders) {
+            const topX = ld.x + ld.exit[0];
+            const topZ = ld.z + ld.exit[1];
+            if (Math.abs(ld.y1 - next.p[1]) > 1 || Math.hypot(topX - next.p[0], topZ - next.p[2]) > 3.5) continue;
+            if (g.p[1] < ld.y1 - 1.5 && g.p[1] > ld.y0 - 1.5) return [ld.x + ld.n[0] * 0.6, ld.y0, ld.z + ld.n[1] * 0.6];
+        }
+    }
+    const side = L.mirror ? -1 : 1;
+    const wz = next.p[2] > 0 ? 0.2 : -0.2;
+    return [next.p[0] + 1.45 * side, next.p[1], next.p[2] + wz * 1.5];
 }
 
 /** Sekunder igjen på etappe-klokka. */
