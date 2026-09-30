@@ -81,6 +81,13 @@
             "content": "Til slutt viste en greker ved navn Efialtes perserne en fjellsti rundt passet - han ville ha belønning. Da Leonidas skjønte at perserne kom bakfra, sendte han de fleste hjem. Han selv og resten ble igjen, og nesten alle falt, Leonidas inkludert (Sommerville, 2026). Samtidig endte sjøslaget ved Artemision uavgjort, og grekerne måtte gi opp forsvaret av Midt-Hellas (Steen, 2025). Slaget var et nederlag, men Hellas vant tid - tid til å samle flåten ved en liten øy ved navn Salamis."
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "thermopylae"
+            }
+        },
+        {
             "type": "image",
             "src": "/images/perserriket/perserkrigene-02.webp",
             "alt": "Greske triremer rammer persiske skip i et trangt sund",
