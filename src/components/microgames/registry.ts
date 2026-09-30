@@ -8,6 +8,7 @@ import type { MicroGameEntry } from './types';
 const GladiusDuel = lazy(() => import('./GladiusDuel'));
 const HavetKommer = lazy(() => import('./HavetKommer'));
 const GuddommeligVind3D = lazy(() => import('./GuddommeligVind3D'));
+const Thermopylae3D = lazy(() => import('./Thermopylae3D'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
@@ -2377,6 +2378,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Mongolinvasjonsrullen (Mōko Shūrai Ekotoba, 1293): tusjkontur og flate mineralfarger på papir, gullskyer rundt scenen',
         loader: () => import('./GuddommeligVind3D'),
         Component: GuddommeligVind3D as never,
+    },
+    thermopylae: {
+        id: 'thermopylae',
+        title: 'Tre dager i porten',
+        description:
+            'Thermopylae, august 480 fvt. Du er én hoplitt ved porten i den fokiske muren, i passet mellom fjellet og havet. Hele Persia marsjerer mot deg. Førsteperson med WASD: stikk med spydet, parer med bronseskjoldet når de løfter våpenet, og dytt dem i havet. Står du i porten, når bare tre persere deg og ingen kommer forbi. Går du ut på den brede stranda, blir du omringet. Dag 2 kommer De udødelige, dag 3 viser Efialtes dem stien over fjellet - og de kommer bakfra. Lyspæra: grekerne holdt passet fordi det var smalt, ikke fordi de var mange.',
+        estimatedSeconds: 200,
+        sjanger: 'førsteperson-nærkamp-arena',
+        tone: 'grusom',
+        hook: 'Du står i porten ved Thermopylae. Hold perserne ute i tre dager.',
+        cover: '/images/microgames/thermopylae.webp',
+        kunst: 'Gresk polykromi mot persisk glasert murstein: malt marmor og bronse i lav sol, turkist hav, blått og gult glasur',
+        loader: () => import('./Thermopylae3D'),
+        Component: Thermopylae3D as never,
     },
 };
 
