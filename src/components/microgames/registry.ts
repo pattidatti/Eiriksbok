@@ -10,6 +10,7 @@ const HavetKommer = lazy(() => import('./HavetKommer'));
 const GuddommeligVind3D = lazy(() => import('./GuddommeligVind3D'));
 const Lopegravene3D = lazy(() => import('./Lopegravene3D'));
 const Thermopylae3D = lazy(() => import('./Thermopylae3D'));
+const HammerOgAmbolt3D = lazy(() => import('./HammerOgAmbolt3D'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
@@ -2393,6 +2394,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Gresk polykromi mot persisk glasert murstein: malt marmor og bronse i lav sol, turkist hav, blått og gult glasur',
         loader: () => import('./Thermopylae3D'),
         Component: Thermopylae3D as never,
+    },
+    'hammer-og-ambolt': {
+        id: 'hammer-og-ambolt',
+        title: 'Hammer og ambolt',
+        description:
+            'Aleksanders slag, 338-326 fvt. Auto-battler i åtte slag: kjøp enheter i butikken, still dem opp i fremre og bakre rekke eller på flankene, og se hæren kjempe mot fiendehæren som allerede står på sletta. Sarissaen stopper ryttere, ryttere knuser skyttere, skyttere slår tungt fotfolk, og lett infanteri åpner rekkene for ljåvognene og stikker elefantene. Tre like smelter sammen, spart gull gir renter, og etter hver seier kan du ta en enhet fra den slåtte hæren inn i din egen - slik Aleksander gjorde. Den som leser fienden, slår en større hær.',
+        estimatedSeconds: 270,
+        sjanger: 'auto-battler',
+        tone: 'grusom',
+        hook: 'Du fører Aleksanders hær: les fiendehæren, kjøp det som slår den, og se kilen knuse linja.',
+        cover: '/images/microgames/hammer-og-ambolt.webp',
+        kunst: 'Aleksandermosaikken fra Pompeii: firefargemaleriet uten blått (kalkhvitt, sot, rød og gul oker) i lav, støvete sol',
+        loader: () => import('./HammerOgAmbolt3D'),
+        Component: HammerOgAmbolt3D as never,
     },
     'lopegravene-1718': {
         id: 'lopegravene-1718',

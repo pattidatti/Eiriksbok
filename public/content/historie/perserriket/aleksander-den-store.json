@@ -57,6 +57,13 @@
         },
         {
             "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "hammer-og-ambolt"
+            }
+        },
+        {
+            "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvorfor tapte Persia?",
