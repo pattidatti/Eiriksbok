@@ -14,19 +14,19 @@ import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
 import { usePlaytest, playtestSpeed } from './playtest';
 import {
-    newGame, update, pick, place, reroll, toggleLink, linkBlock, startWave, sperre, nextSlag, unitAt, isAir,
+    newGame, update, pick, place, reroll, toggleLink, linkBlock, relink, startWave, sperre, nextSlag, unitAt, isAir,
     usedChannels, waveDef, slagDef, CAUSE_TEXT, finalScore, type G, type IO,
 } from './radionettet/game';
-import { KORT, type KortId } from './radionettet/tuning';
+import { KORT, SCORE, type EKind, type KortId } from './radionettet/tuning';
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
 import { SLAG, TOTAL_WAVES } from './radionettet/levels';
 import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, type Proj } from './radionettet/world';
-import type { Hl } from './radionettet/hl';
+import { HQ_ID, type Hl } from './radionettet/hl';
 import { Soldiers } from './radionettet/soldiers';
 import { Markers, Highlight } from './radionettet/markers';
 import { Board } from './radionettet/terrain';
-import { Effects } from './radionettet/effects';
+import { Ambience, Effects } from './radionettet/effects';
 import { createFx } from './radionettet/fxPool';
 import { Hud } from './radionettet/hud';
 import { HUD_CSS } from './radionettet/hudData';
@@ -105,7 +105,39 @@ function makeSfx(a: ArcadeSynth) {
         else if (name === 'seier') a.arp(262, [0, 4, 7, 12, 16], 0.12, 0.06);
         else if (name === 'tap') a.tone(200, 60, 0.9, 'sawtooth', 0.06);
         else if (name === 'smell' && gate('smell', 90)) a.noise(0.25, 0.05, 500);
-        else if (name === 'salve' && gate('salve', 200)) a.noise(0.35, 0.05, 220);
+        else if (name === 'salve' && gate('salve', 200)) {
+            a.noise(0.6, 0.09, 140);
+            a.tone(90, 35, 0.5, 'sine', 0.09);
+        }
+        // Kampen: kanoner, gevær, maskingevær og luftvern. Fiendens lyder er litt svakere
+        // (lenger unna), og alt er strupet så en stor bølge ikke blir én lang støy.
+        else if (name === 'kanon' && gate('kanon', 110)) {
+            a.noise(0.45, 0.1, 260);
+            a.tone(140, 45, 0.3, 'sine', 0.1);
+        } else if (name === 'ekanon' && gate('ekanon', 150)) {
+            a.noise(0.4, 0.06, 200);
+            a.tone(110, 40, 0.3, 'sine', 0.06);
+        } else if (name === 'klang' && gate('klang', 120)) {
+            a.tone(1400, 900, 0.12, 'triangle', 0.035);
+            a.noise(0.1, 0.04, 2500);
+        } else if (name === 'nedslag' && gate('nedslag', 120)) a.noise(0.25, 0.05, 350);
+        else if (name === 'gevær' && gate('gevær', 70)) a.noise(0.08, 0.05, 1600);
+        else if (name === 'egevær' && gate('egevær', 90)) a.noise(0.07, 0.03, 1300);
+        else if (name === 'mg' && gate('mg', 350)) for (let i = 0; i < 5; i++) a.noise(0.05, 0.035, 1900, i * 0.06);
+        else if (name === 'flak' && gate('flak', 150)) {
+            a.noise(0.12, 0.05, 900);
+            a.noise(0.3, 0.035, 300, 0.12);
+        }
+        // Stemningen: fjern kanontorden, maskingevær langt borte, vind og måker.
+        else if (name === 'fjern') {
+            a.noise(1.4, 0.035, 70);
+            a.tone(55, 30, 1.2, 'sine', 0.04);
+        } else if (name === 'fjernMg') for (let i = 0; i < 7; i++) a.noise(0.05, 0.012, 1100, i * 0.08);
+        else if (name === 'vind') a.noise(3, 0.018, 500);
+        else if (name === 'måke') {
+            a.tone(1500, 1000, 0.22, 'triangle', 0.012);
+            a.tone(1450, 950, 0.3, 'triangle', 0.012, 0.28);
+        }
         else if (name === 'kutt' && gate('kutt', 300)) a.tone(1200, 400, 0.25, 'square', 0.04);
         else if (name === 'stup' && gate('stup', 400)) a.tone(520, 1250, 1.1, 'sawtooth', 0.025);
     };
@@ -189,7 +221,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     const projRef = useRef<Proj | null>(null);
     const stageRef = useRef<HTMLDivElement>(null);
     const pointer = useRef<[number, number]>([-5, -5]);
-    const hlRef = useRef<Hl>({ hover: -1, pick: -1, pickT: 0 });
+    const hlRef = useRef<Hl>({ hover: -1, pick: -1, pickT: 0, src: -1, srcT: 0 });
     const flashUnit = (id: number) => {
         hlRef.current.pick = id;
         hlRef.current.pickT = performance.now() / 1000;
@@ -227,7 +259,15 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         banner: (t) => text.banner(t, C.himmel),
         lesson: (k, t) => text.lesson(k, t),
         event: (name, x, z) => {
-            if (name.startsWith('drept:') || name.startsWith('flyNed:') || name === 'bomber') sfx('smell');
+            if (name.startsWith('drept:') || name.startsWith('flyNed:') || name === 'bomber') {
+                sfx('smell');
+                // Det tunge som slås ut, får poengene sine sprettende over seg.
+                const kind = name.split(':')[1] as EKind | undefined;
+                if (kind && kind !== 'einf') {
+                    const p = projRef.current?.(x, 1, z);
+                    if (p) text.float(`+${SCORE.drap[kind]}`, p.x, p.y, C.radio, kind === 'evogn' || kind === 'ebatt');
+                }
+            }
             else if (name === 'salve') sfx('salve');
             else if (name === 'batteri') {
                 // Munningsflammen avslører batteriet et øyeblikk.
@@ -335,7 +375,25 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         const u = unitAt(g, Math.floor(x) + 0.5, Math.floor(z) + 0.5);
         if (u) return onUnit(u.id);
         const [hx, hz] = slagDef(g).hq;
-        if (Math.hypot(x - hx, z - hz) < 1) text.point('hq', 'Klikk enhetene du vil koble', at(hx, hz, 1.4), { seconds: 3 });
+        if (Math.hypot(x - hx, z - hz) < 1.1) {
+            flashUnit(HQ_ID);
+            sfx('plasser');
+            text.point('hq', 'Klikk enhetene du vil koble', at(hx, hz, 1.4), { seconds: 3 });
+        }
+    };
+    /** Musa over kommandovogna: den får hjørner som enhetene. */
+    const onMove = (x: number, z: number) => {
+        pointer.current = [x, z];
+        const h = hlRef.current;
+        const [hx, hz] = slagDef(gRef.current).hq;
+        const near = Math.hypot(x - hx, z - hz) < 1.1;
+        if (near && h.hover === -1) {
+            h.hover = HQ_ID;
+            document.body.style.cursor = 'pointer';
+        } else if (!near && h.hover === HQ_ID) {
+            h.hover = -1;
+            document.body.style.cursor = '';
+        }
     };
     const onUnit = (id: number) => {
         const g = gRef.current;
@@ -348,7 +406,16 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         }
         synth.unlock();
         flashUnit(id);
-        if (toggleLink(g, id, io)) return;
+        if (toggleLink(g, id, io)) {
+            // Linja går fra kommandovogna eller stafetten: den lyser opp samtidig.
+            const u = g.units.find((v) => v.id === id);
+            if (u && u.linking > 0) {
+                relink(g);
+                hlRef.current.src = u.via > 0 ? u.via : HQ_ID;
+                hlRef.current.srcT = performance.now() / 1000;
+            }
+            return;
+        }
         // Si fra hvorfor klikket ikke koblet - ellers ser det ut som ingenting skjer.
         const u = g.units.find((v) => v.id === id);
         const why = u && linkBlock(g, u);
@@ -435,7 +502,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                 <ArcadeStage ref={stageRef} theme={THEME} background={C.papir} label="Radionettet - still opp hæren og koble den sammen med radio">
                     <MicroCanvas builtInLights={false} controls={false} contactShadows={false} background={C.papir} fog={null} postprocessing>
                         <Camera gRef={gRef} projRef={projRef} />
-                        <Board gRef={gRef} onPoint={onPoint} onMove={(x, z) => (pointer.current = [x, z])} />
+                        <Board gRef={gRef} onPoint={onPoint} onMove={onMove} />
                         <PlaceHints gRef={gRef} />
                         <Ghost gRef={gRef} pointer={pointer} />
                         <Markers gRef={gRef} />
@@ -444,7 +511,8 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                         <Soldiers gRef={gRef} speedRef={speedRef} hlRef={hlRef} />
                         <Enemies gRef={gRef} fxRef={fxRef} speedRef={speedRef} onDive={() => sfx('stup')} />
                         <Lines gRef={gRef} />
-                        <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} />
+                        <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
+                        <Ambience gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
                         <KitEffects bloomIntensity={0.8} bloomThreshold={0.9} />
                         <Loop gRef={gRef} modeRef={modeRef} ioRef={ioRef} speedRef={speedRef} onTick={onTick} />
                     </MicroCanvas>

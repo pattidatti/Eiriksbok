@@ -74,6 +74,10 @@ export interface Fx {
     t: number;
     life: number;
     fiende: boolean;
+    /** Hvem som skjøt (enhets- eller fiendetype), for flamme, granat og lyd. */
+    by?: string;
+    /** Målet er pansret: granaten slår gnister. */
+    hard?: boolean;
 }
 
 export type Phase = 'plan' | 'wave' | 'slagVunnet' | 'vunnet' | 'tapt';

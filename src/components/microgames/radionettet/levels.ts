@@ -35,6 +35,8 @@ export interface WaveDef {
     fast?: Kind[];
     /** Radiokanaler kommandovogna har i denne bølgen (0 = ingen radio ennå). */
     kanaler: number;
+    /** Fiendens fart ganges med dette (en rolig åpning skal ikke bli treg). */
+    fart?: number;
     /** Tåke: egne øyne ganges med dette (Bastogne). Nettet ser fortsatt det noen ser. */
     sikt?: number;
     /** Forsyninger før denne bølgen, i stedet for `ECONOMY.perBølge` (omringet). */
@@ -85,19 +87,21 @@ export const SLAG: SlagDef[] = [
             'I 1940 hadde tyskerne radio i hver stridsvogn. Vogner, infanteri og fly jobbet sammen, og det var derfor lynkrigen gikk så fort.',
         waves: [
             {
-                groups: [{ t: 1, kind: 'einf', n: 4, gap: 3 }],
+                groups: [{ t: 0.5, kind: 'einf', n: 5, gap: 1.8 }],
                 pool: ['inf', 'vogn'],
                 fast: ['inf', 'vogn', 'inf'],
                 kanaler: 0,
+                fart: 1.6,
             },
             {
                 groups: [
-                    { t: 1, kind: 'einf', n: 3, gap: 2.5 },
-                    { t: 7, kind: 'epak', n: 1, gap: 1 },
-                    { t: 12, kind: 'einf', n: 3, gap: 2.5 },
+                    { t: 0.5, kind: 'einf', n: 3, gap: 2 },
+                    { t: 5, kind: 'epak', n: 1, gap: 1 },
+                    { t: 9, kind: 'einf', n: 3, gap: 2 },
                 ],
                 pool: ['inf', 'vogn'],
                 kanaler: 3,
+                fart: 1.3,
                 nytt: {
                     key: 'radio',
                     tittel: 'Radioen',

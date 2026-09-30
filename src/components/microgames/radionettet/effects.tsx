@@ -128,7 +128,7 @@ const Z = new THREE.Vector3(0, 0, 1);
 const QZ = new THREE.Quaternion();
 const FLAT = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
 
-export function Effects({ gRef, fxRef, speedRef }: { gRef: React.MutableRefObject<G>; fxRef: React.MutableRefObject<FxPool>; speedRef: React.MutableRefObject<number> }) {
+export function Effects({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRefObject<G>; fxRef: React.MutableRefObject<FxPool>; speedRef: React.MutableRefObject<number>; sfx?: (name: string) => void }) {
     const seen = useMemo(() => new WeakSet<Fx>(), []);
     const meshes = useMemo(
         () => ({
@@ -153,7 +153,7 @@ export function Effects({ gRef, fxRef, speedRef }: { gRef: React.MutableRefObjec
             fx.clearScorch();
             fx.setDust(DUST[SLAG[g.slag]?.id] ?? '#b5a17c');
         }
-        consume(g, fx, seen);
+        consume(g, fx, seen, sfx);
         fx.step(dt);
         const lists = [meshes.smoke, meshes.glow];
         const n = [0, 0];
@@ -167,7 +167,7 @@ export function Effects({ gRef, fxRef, speedRef }: { gRef: React.MutableRefObjec
             // Vokser raskt først, så sakte; tettheten kommer fort og blekner mot slutten.
             const grow = 1 - (1 - Math.min(1, k)) ** 2.5;
             const r = (p.r0 + (p.r1 - p.r0) * grow) * 2.3;
-            const a = p.fall ? (k < 0.8 ? 1 : (1 - k) / 0.2) : p.glow ? (1 - k) ** 1.4 : Math.min(1, k * 8) * (1 - k) ** 1.3;
+            const a = p.drag === 0 ? 1 : p.fall ? (k < 0.8 ? 1 : (1 - k) / 0.2) : p.glow ? (1 - k) ** 1.4 : Math.min(1, k * 8) * (1 - k) ** 1.3;
             QZ.setFromAxisAngle(Z, p.spin + p.t * 0.3);
             Q.copy(st.camera.quaternion).multiply(QZ);
             M.compose(P.set(p.x, p.y, p.z), Q, S.set(r, r, r));
@@ -208,4 +208,78 @@ export function Effects({ gRef, fxRef, speedRef }: { gRef: React.MutableRefObjec
             <primitive object={meshes.glow} renderOrder={5} />
         </>
     );
+}
+
+/** Røyksøyler ved kanten av kartet per slag (brennende skip, gårder og landsbyer). */
+const COLUMNS: Record<string, [number, number][]> = {
+    dunkerque: [[-2.4, 1.4], [15.6, 9.7], [8.5, 10.6]],
+    alamein: [[16.4, 0.3], [0.6, 10.4]],
+    kursk: [[-0.7, 9.4], [16.6, 5.2], [10.5, -0.7]],
+    normandie: [[16.5, 9.2], [-0.8, 0.4]],
+    bastogne: [[0.4, -0.7], [16.4, 8.6]],
+    rhinen: [[16.6, 1.2], [3, 10.6]],
+};
+const SEA = new Set(['dunkerque', 'normandie']);
+
+/** Stemningen: røyksøyler, fjerne kanonglimt på fiendens side (tordenen kommer litt etter),
+ *  krutt-dis som driver over slagmarken, og vind og måker mens eleven planlegger. */
+export function Ambience({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRefObject<G>; fxRef: React.MutableRefObject<FxPool>; speedRef: React.MutableRefObject<number>; sfx?: (name: string) => void }) {
+    const t = useRef({ col: 0, flash: 2, mg: 6, haze: 1, vind: 3, måke: 5 });
+    const q = useQuality();
+    useFrame((_, raw) => {
+        const dt = Math.min(0.05, raw) * speedRef.current;
+        if (dt <= 0) return;
+        const g = gRef.current;
+        const fx = fxRef.current;
+        const id = SLAG[g.slag]?.id ?? '';
+        const s = t.current;
+        const wave = g.phase === 'wave';
+        // Røyksøylene: tett nede, bred og lys oppe.
+        s.col -= dt;
+        if (s.col <= 0) {
+            s.col = 0.28 / Math.max(0.3, q.particleScale);
+            for (const [x, z] of COLUMNS[id] ?? []) {
+                // Mørk ved bålet, grå og bred høyere oppe: partikkelen stiger lenge (lite luftmotstand).
+                const p = fx.puff(Math.random() < 0.35 ? 'sot' : 'røyk', x + (Math.random() - 0.5) * 0.25, 0.25, z, { r: 0.13, grow: 5.5, life: 6, up: 0.9, spread: 0.12 });
+                p.drag = 0.15;
+                p.a *= 0.8;
+                if (Math.random() < 0.35) fx.puff('ild', x, 0.25, z, { r: 0.14, grow: 1.5, life: 0.6, up: 0.6, spread: 0.2 });
+            }
+        }
+        // Fjerne kanoner bak fiendens linjer: glimtet først, tordenen etterpå.
+        s.flash -= dt;
+        if (s.flash <= 0) {
+            s.flash = wave ? 1.8 + Math.random() * 3 : 5 + Math.random() * 6;
+            const z = Math.random() * 10;
+            const x = 17.2 + Math.random() * 1.5;
+            fx.puff('blits', x, 0.4, z, { r: 0.9, grow: 1.6, life: 0.18, up: 0, spread: 0 });
+            fx.puff('ild', x, 0.4, z, { r: 0.5, grow: 1.4, life: 0.4, up: 0.3, spread: 0 });
+            fx.after(0.5 + Math.random() * 0.6, () => sfx?.('fjern'));
+        }
+        s.mg -= dt;
+        if (s.mg <= 0) {
+            s.mg = 5 + Math.random() * 7;
+            if (wave) sfx?.('fjernMg');
+        }
+        // Krutt-dis i bølgen: store, tynne skyer som driver med vinden.
+        s.haze -= dt;
+        if (s.haze <= 0) {
+            s.haze = (wave ? 1.6 : 4) / Math.max(0.3, q.particleScale);
+            const p = fx.puff('røyk', Math.random() * 14, 0.35, Math.random() * 10, { r: 0.7, grow: 2.2, life: 9, up: 0.03, spread: 0.1 });
+            p.a = wave ? 0.16 : 0.09;
+        }
+        if (!wave) {
+            s.vind -= dt;
+            if (s.vind <= 0) {
+                s.vind = 4 + Math.random() * 4;
+                sfx?.('vind');
+            }
+            s.måke -= dt;
+            if (s.måke <= 0) {
+                s.måke = 6 + Math.random() * 8;
+                if (SEA.has(id)) sfx?.('måke');
+            }
+        }
+    });
+    return null;
 }

@@ -27,6 +27,8 @@ interface Puff {
     /** Tyngdekraft (jordklumper faller ned). */
     fall: number;
     spin: number;
+    /** Luftmotstand (1 = vanlig; 0 = granat som flyr rett). */
+    drag: number;
     col: THREE.Color;
 }
 
@@ -57,7 +59,7 @@ export const MAX_SCORCH = 48;
 /** Effektlaget. Lages én gang i spillkomponenten og deles med figurene. */
 export function createFx() {
     const puffs: Puff[] = Array.from({ length: MAX_PUFF }, () => ({
-        on: false, glow: false, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, r0: 0, r1: 0, t: 0, life: 1, a: 1, fall: 0, spin: 0, col: COL.røyk,
+        on: false, glow: false, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, r0: 0, r1: 0, t: 0, life: 1, a: 1, fall: 0, spin: 0, drag: 1, col: COL.røyk,
     }));
     const scorches: Scorch[] = Array.from({ length: MAX_SCORCH }, () => ({ on: false, x: 0, z: 0, r: 0, rot: 0 }));
     let pi = 0;
@@ -85,8 +87,15 @@ export function createFx() {
         p.a = ALPHA[kind];
         p.fall = o.fall ?? 0;
         p.spin = Math.random() * Math.PI * 2;
+        p.drag = 1;
         p.col = kind === 'støv' ? dust : COL[kind];
+        return p;
     };
+    /** Noe som skal skje litt senere (granaten treffer når den kommer fram). */
+    const later: { t: number; fn: () => void }[] = [];
+    /** Vinden driver røyken sakte over slagmarken. */
+    const WIND_X = 0.22;
+    const WIND_Z = -0.08;
     const n = (k: number) => Math.max(1, Math.round(k * scale));
     const scorch = (x: number, z: number, r: number) => {
         const s = scorches[si];
@@ -107,8 +116,20 @@ export function createFx() {
         clearScorch: () => scorches.forEach((s) => (s.on = false)),
         /** Eldes og flyttes ett tidssteg. */
         step(dt: number) {
+            for (let i = later.length - 1; i >= 0; i--) {
+                later[i].t -= dt;
+                if (later[i].t <= 0) {
+                    const fn = later[i].fn;
+                    later.splice(i, 1);
+                    fn();
+                }
+            }
             for (const p of puffs) {
                 if (!p.on) continue;
+                if (!p.glow && !p.fall) {
+                    p.x += WIND_X * dt;
+                    p.z += WIND_Z * dt;
+                }
                 p.t += dt;
                 if (p.t >= p.life) p.on = false;
                 p.x += p.vx * dt;
@@ -118,10 +139,10 @@ export function createFx() {
                     p.vy -= p.fall * dt;
                     if (p.y < 0.02) p.on = false;
                 } else {
-                    p.vy *= 1 - dt * 0.6;
+                    p.vy *= 1 - dt * 0.6 * p.drag;
                 }
-                p.vx *= 1 - dt * 1.5;
-                p.vz *= 1 - dt * 1.5;
+                p.vx *= 1 - dt * 1.5 * p.drag;
+                p.vz *= 1 - dt * 1.5 * p.drag;
             }
         },
         /** Et smell: ildkule, glør, jord og tung røyk som stiger og driver. */
@@ -148,6 +169,53 @@ export function createFx() {
             puff('blits', x, y, z, { r: r * 1.1, grow: 1.2, life: 0.07, up: 0, spread: 0 });
             puff('røyk', x, y, z, { r: r * 0.8, grow: 2.6, life: 0.9, up: 0.3, spread: 0.3 });
         },
+        after(t: number, fn: () => void) {
+            if (later.length < 80) later.push({ t, fn });
+        },
+        /** Kanonskudd fra vogn eller panservern: stor flamme, trykkbølge av røyk forover og
+         *  støv som blåses ut fra bakken rundt løpet. */
+        muzzle(x: number, y: number, z: number, dx: number, dz: number, big = 1) {
+            puff('blits', x, y, z, { r: 0.34 * big, grow: 1.3, life: 0.09, up: 0, spread: 0 });
+            puff('ild', x + dx * 0.15, y, z + dz * 0.15, { r: 0.2 * big, grow: 1.6, life: 0.14, up: 0, spread: 0 });
+            for (let i = 0; i < n(4 * big); i++) {
+                const p = puff('røyk', x, y, z, { r: 0.12 * big, grow: 3, life: 1.1 + i * 0.15, up: 0.15, spread: 0.2 });
+                const v = 1.4 + i * 0.5;
+                p.vx += dx * v;
+                p.vz += dz * v;
+            }
+            for (let i = 0; i < n(5 * big); i++) {
+                const a = (i / 5) * Math.PI * 2;
+                const p = puff('støv', x - dx * 0.3, 0.06, z - dz * 0.3, { r: 0.1, grow: 2.6, life: 0.8, up: 0.1, spread: 0 });
+                p.vx = Math.cos(a) * 1.6;
+                p.vz = Math.sin(a) * 1.6;
+            }
+        },
+        /** Granaten: en glødende prikk som farer rett fram til målet. */
+        shell(x: number, y: number, z: number, x2: number, y2: number, z2: number, life: number) {
+            const p = puff('glo', x, y, z, { r: 0.07, grow: 1, life, up: 0, spread: 0 });
+            p.vx = (x2 - x) / life;
+            p.vy = (y2 - y) / life;
+            p.vz = (z2 - z) / life;
+            p.drag = 0;
+            p.life = life;
+        },
+        /** Treff på panser: gnister som spruter og en svart dott. */
+        sparks(x: number, y: number, z: number) {
+            puff('blits', x, y, z, { r: 0.22, grow: 1.2, life: 0.07, up: 0, spread: 0 });
+            for (let i = 0; i < n(7); i++) puff('glo', x, y, z, { r: 0.035, grow: 1, life: 0.45, up: 1.8, spread: 3.4, fall: 6 });
+            puff('sot', x, y, z, { r: 0.12, grow: 2.2, life: 0.9, up: 0.4, spread: 0.2 });
+        },
+        /** Granat i jorda (bom eller mykt mål): en liten sprut av jord og støv. */
+        thud(x: number, z: number) {
+            puff('blits', x, 0.2, z, { r: 0.18, grow: 1.2, life: 0.06, up: 0, spread: 0 });
+            for (let i = 0; i < n(4); i++) puff('jord', x, 0.12, z, { r: 0.035, grow: 1, life: 0.8, up: 2, spread: 1.4, fall: 8 });
+            puff('støv', x, 0.12, z, { r: 0.16, grow: 2.6, life: 1, up: 0.4, spread: 0.4 });
+        },
+        /** Luftvern: en svart sky som springer ut i lufta. */
+        flak(x: number, y: number, z: number) {
+            puff('blits', x, y, z, { r: 0.16, grow: 1.2, life: 0.06, up: 0, spread: 0 });
+            puff('sot', x, y, z, { r: 0.16, grow: 2.4, life: 1.4, up: 0.05, spread: 0.2 });
+        },
         /** Vrak som brenner: kalles jevnlig av figuren. Ild så lenge det er varmt, så røyksøyle. */
         burn(x: number, z: number, hot: number) {
             if (hot > 0.35 && Math.random() < 0.6) puff('ild', x + (Math.random() - 0.5) * 0.2, 0.35, z, { r: 0.13, grow: 1.4, life: 0.5, up: 0.9, spread: 0.2 });
@@ -158,8 +226,13 @@ export function createFx() {
 
 export type FxPool = ReturnType<typeof createFx>;
 
-/** Gjør spillets egne fx (smell, granater, kutt, skudd) om til effekter. */
-export function consume(g: G, fx: FxPool, seen: WeakSet<Fx>) {
+const HEAVY = new Set(['vogn', 'pv', 'evogn', 'epak']);
+const RIFLE = new Set(['inf', 'fsk', 'einf']);
+/** Hvor langt fram løpet stikker, og hvor høyt det sitter (figurskala 1,4). */
+const BARREL: Record<string, [number, number]> = { vogn: [0.6, 0.42], evogn: [0.6, 0.42], pv: [0.55, 0.28], epak: [0.55, 0.28] };
+
+/** Gjør spillets egne fx (smell, granater, kutt, skudd) om til effekter og lyd. */
+export function consume(g: G, fx: FxPool, seen: WeakSet<Fx>, sound?: (name: string) => void) {
     for (const f of g.fx) {
         if (seen.has(f)) continue;
         seen.add(f);
@@ -170,12 +243,43 @@ export function consume(g: G, fx: FxPool, seen: WeakSet<Fx>) {
             fx.star(f.x, 0.9, f.z, 0.4, 0.25, true);
             for (let i = 0; i < 4; i++) fx.puff('glo', f.x, 0.9, f.z, { r: 0.04, grow: 1, life: 0.7, up: 1.5, spread: 2.2, fall: 4 });
         } else if (f.kind === 'skudd') {
-            // Flammen ved løpet, litt ut mot målet.
             const dx = f.x2 - f.x;
             const dz = f.z2 - f.z;
             const d = Math.hypot(dx, dz) || 1;
-            fx.flash(f.x + (dx / d) * 0.45, 0.4, f.z + (dz / d) * 0.45, f.fiende ? 0.14 : 0.18);
-            if (f.alt < 0.3 && Math.random() < 0.5) fx.puff('støv', f.x2, 0.1, f.z2, { r: 0.1, grow: 2.2, life: 0.6, up: 0.4 });
+            const ux = dx / d;
+            const uz = dz / d;
+            const by = f.by ?? '';
+            if (HEAVY.has(by)) {
+                // Kanonskuddet: flamme ved munningen, granaten farer fram og treffer litt senere.
+                const [len, y] = BARREL[by];
+                const mx = f.x + ux * len;
+                const mz = f.z + uz * len;
+                fx.muzzle(mx, y, mz, ux, uz, by === 'vogn' || by === 'evogn' ? 1 : 0.8);
+                const ty = Math.max(0.25, f.alt);
+                fx.shell(mx, y, mz, f.x2, ty, f.z2, f.life);
+                const hard = !!f.hard;
+                fx.after(f.life, () => {
+                    if (hard) fx.sparks(f.x2, ty, f.z2);
+                    else fx.thud(f.x2, f.z2);
+                    sound?.(hard ? 'klang' : 'nedslag');
+                });
+                sound?.(f.fiende ? 'ekanon' : 'kanon');
+                if (!f.fiende) g.shake = Math.max(g.shake, 0.18);
+            } else if (by === 'lv') {
+                fx.flash(f.x + ux * 0.4, 0.55, f.z + uz * 0.4, 0.16);
+                const tx = f.x2 + (Math.random() - 0.5) * 0.5;
+                const tz = f.z2 + (Math.random() - 0.5) * 0.5;
+                const ty = f.alt + (Math.random() - 0.3) * 0.4;
+                fx.after(0.12, () => fx.flak(tx, ty, tz));
+                sound?.('flak');
+            } else if (by === 'jag' || by === 'ejag') {
+                sound?.('mg');
+            } else {
+                // Gevær og maskingevær: en liten flamme og støv der kulene slår ned.
+                fx.flash(f.x + ux * 0.45, 0.4, f.z + uz * 0.45, f.fiende ? 0.12 : 0.15);
+                if (f.alt < 0.3 && Math.random() < 0.6) fx.puff('støv', f.x2, 0.1, f.z2, { r: 0.08, grow: 2.2, life: 0.6, up: 0.4 });
+                sound?.(RIFLE.has(by) ? (f.fiende ? 'egevær' : 'gevær') : 'gevær');
+            }
         }
     }
 }

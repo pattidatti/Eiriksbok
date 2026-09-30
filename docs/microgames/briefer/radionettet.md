@@ -250,3 +250,21 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   trappen 1095 < 1835 < 5835, 14,7 valg/min. Ikke gjort ennå (forslag fra diagnosen): færre
   kanaler enn enheter så kanalene må flyttes oftere, forsyninger for enheter langt fram i nettet,
   batteriet hvert 10. sekund. Venter på at eieren spiller slag 2-6.
+- 2026-09-30, eierens rettelser etter test av slag 2-6 («Når man trykker på tårnet må også det
+  highlightes, ikke bare dem man vil koble sammen med. Npcer kan være pittelitt mindre. Dunkirk er
+  litt tregt i starten. Trenger mer effekter, skytelyder, ambient effekter, bedre kanonskudd fra
+  tanks og litt mer juice»). Gjort: kommandovogna får hjørner når musa står over den og når den
+  klikkes, og når en enhet kobles, lyser også den linja går fra (kommandovogna eller stafetten)
+  opp. Soldatene 13 % mindre, figurene 7 %. Dunkerque bølge 1-2: fienden går 1,6/1,3 ganger så
+  fort og kommer tettere (`fart` per bølge i `levels.ts`). Kanonskudd fra vogner og panservern:
+  stor munningsflamme, trykkbølge av røyk forover, støvring på bakken, en glødende granat som farer
+  til målet og slår gnister mot panser (jord mot mykt), tårnet smeller bakover i rekylen, og
+  kameraet rister litt. Luftvern gir svarte skyer i lufta. Lyd for hvert våpen (kanon, gevær,
+  maskingevær, luftvern, klang mot panser, tyngre artilleri), fiendens litt svakere. Stemningen
+  (`Ambience`): røyksøyler ved kartkanten, kanonglimt bak fiendens linjer med torden etterpå,
+  fjernt maskingevær, krutt-dis som driver med vinden, vind og måker (kystslagene) i planleggingen.
+  Poeng spretter opp over vogner, panservern, batterier og fly som slås ut. Feel-lista: før 1, 3
+  og delvis 4; etter 1, 3 og 4 (2, flaks/nesten-bom, mangler). Porter: simulering grønn (samvirke
+  94 %, trappen 1085 < 1845 < 5885), selvspill grønt (60 draw calls, JS p95 12 ms på lav).
+  Kanonskuddet er ikke sett i nettleseren (vogna kom ikke på skuddhold i testrunden). Venter på
+  at eieren hører og ser det.

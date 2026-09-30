@@ -83,8 +83,10 @@ function fx(kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre', x: number, z
     return { kind, x, z, x2: x, z2: z, alt, t: 0, life, fiende };
 }
 
-function shot(g: G, x: number, z: number, x2: number, z2: number, alt: number, fiende: boolean) {
-    g.fx.push({ kind: 'skudd', x, z, x2, z2, alt, t: 0, life: 0.14, fiende });
+/** Tunge løp (vogner og panservern) sender en synlig granat, lettere våpen et kort sporlys. */
+const HEAVY = new Set(['vogn', 'pv', 'evogn', 'epak']);
+function shot(g: G, x: number, z: number, x2: number, z2: number, alt: number, fiende: boolean, by: string, hard = false) {
+    g.fx.push({ kind: 'skudd', x, z, x2, z2, alt, t: 0, life: HEAVY.has(by) ? 0.2 : 0.14, fiende, by, hard });
 }
 
 // ---- Fienden kommer ---------------------------------------------------------------
@@ -153,7 +155,7 @@ function actGround(g: G, u: Unit, dt: number, io: IO) {
         io.event('salve', u.x, u.z);
     } else {
         hit(g, best, st.dps[ENEMIES[best.kind].armor] * p * mult, io);
-        shot(g, u.x, u.z, best.x, best.z, best.alt, false);
+        shot(g, u.x, u.z, best.x, best.z, best.alt, false, u.kind, ENEMIES[best.kind].armor === 'armor');
     }
 }
 
@@ -193,7 +195,7 @@ function actJag(g: G, u: Unit, dt: number, t: number, io: IO) {
         if (u.cd <= 0 && d2(u.ax, u.az, target.x, target.z) <= UNITS.jag.range) {
             u.cd = PERIOD.jag;
             hit(g, target, UNITS.jag.dps.air * PERIOD.jag * power(u) * (har(g, 'fly') ? KORT_TALL.fly : 1), io);
-            shot(g, u.ax, u.az, target.x, target.z, target.alt, false);
+            shot(g, u.ax, u.az, target.x, target.z, target.alt, false, u.kind);
         }
         return;
     }
@@ -336,7 +338,7 @@ function actEnemyGround(g: G, e: Enemy, dt: number, io: IO) {
         }
     }
     const hqInRange = d2(hx, hz, e.x, e.z) <= st.range;
-    let speed = st.speed;
+    let speed = st.speed * (waveDef(g).fart ?? 1);
     // Infanteriet stopper for å skyte, vogner kjører sakte videre, panservernet stopper bare nedgravd.
     if (target || hqInRange) speed = e.kind === 'evogn' ? st.speed * COMBAT.vognKjørerMensDenSkyter : e.kind === 'einf' ? 0 : speed;
     if (e.dug) speed = 0;
@@ -356,12 +358,12 @@ function actEnemyGround(g: G, e: Enemy, dt: number, io: IO) {
         e.cd = p;
         e.kick = 1;
         hurtUnit(g, target, st.dps[UNITS[target.kind].armor] * p, io);
-        shot(g, e.x, e.z, target.x, target.z, 0, true);
+        shot(g, e.x, e.z, target.x, target.z, 0, true, e.kind, UNITS[target.kind].armor === 'armor');
     } else if (hqInRange) {
         e.cd = p;
         e.kick = 1;
         g.hqHp -= st.dps.soft * p;
-        shot(g, e.x, e.z, hx, hz, 0, true);
+        shot(g, e.x, e.z, hx, hz, 0, true, e.kind, true);
         io.event('hqTreff', hx, hz);
     }
 }
@@ -440,7 +442,7 @@ function actEJag(g: G, e: Enemy, dt: number, io: IO) {
     if (e.cd <= 0 && d2(tgt.ax, tgt.az, e.x, e.z) <= ENEMIES.ejag.range) {
         e.cd = E_PERIOD.ejag;
         hurtUnit(g, tgt, ENEMIES.ejag.dps.air * E_PERIOD.ejag, io);
-        shot(g, e.x, e.z, tgt.ax, tgt.az, AIR_ALT, true);
+        shot(g, e.x, e.z, tgt.ax, tgt.az, AIR_ALT, true, e.kind);
     }
 }
 

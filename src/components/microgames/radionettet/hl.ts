@@ -6,7 +6,12 @@ export interface Hl {
     pick: number;
     /** performance.now() / 1000 da den ble klikket. */
     pickT: number;
+    /** Den linja går fra (kommandovogna eller en stafett-enhet): lyser opp samtidig med klikket. */
+    src: number;
+    srcT: number;
 }
+/** Kommandovogna i markeringen (enhetene har id fra 1). */
+export const HQ_ID = -2;
 export const HL_PICK = 0.9;
 export const hlOn = (h: Hl, id: number) => h.hover === id || (h.pick === id && performance.now() / 1000 - h.pickT < HL_PICK);
 

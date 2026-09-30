@@ -22,8 +22,8 @@ export type Speed = React.MutableRefObject<number>;
 const V = new THREE.Vector3();
 const lookOf = (g: G): Look => LOOK[slagDef(g).id] ?? 'kyst';
 /** Skala på figurene. Fly tegnes større, så rundellene og korsene leses ovenfra. */
-const FIG = 1.5;
-const AIR_FIG = 1.9;
+const FIG = 1.4;
+const AIR_FIG = 1.75;
 /** Kameraretningen: 30 grader fra siden, 48 grader ned. */
 const CAM_DIR = new THREE.Vector3(Math.sin(0.52) * Math.cos(0.84), Math.sin(0.84), Math.cos(0.52) * Math.cos(0.84));
 const CENTER = new THREE.Vector3(MAP_W / 2 - 0.8, 0, MAP_D / 2 + 0.2);
@@ -265,8 +265,10 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
             body.current.rotation.set(0, whole ? s.yaw : 0, u.kick * 0.08);
             if (top.current) {
                 top.current.rotation.y = whole ? 0 : s.yaw;
-                top.current.position.x = -u.kick * 0.1 * Math.cos(top.current.rotation.y);
-                top.current.position.z = u.kick * 0.1 * Math.sin(top.current.rotation.y);
+                // Rekylen: tårnet smeller bakover og glir fram igjen.
+                const rk = u.kick * u.kick * 0.2;
+                top.current.position.x = -rk * Math.cos(top.current.rotation.y);
+                top.current.position.z = rk * Math.sin(top.current.rotation.y);
             }
             if (u.kind === 'art' && u.kick > 0.9 && s.lastKick < 0.9) {
                 // Artilleriet har ikke sporlys: flammen og røykringen er skuddet.
@@ -439,7 +441,9 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
                 const tgt = g.units.find((u) => !u.dead && !isAir(u.kind) && (u.x - e.x) ** 2 + (u.z - e.z) ** 2 < 12);
                 if (tgt) aim = Math.atan2(-(tgt.z - e.z), tgt.x - e.x);
                 top.current.rotation.y = turn(top.current.rotation.y, aim - s.yaw, dt * 4);
-                top.current.position.x = -e.kick * 0.08;
+                const rk = e.kick * e.kick * 0.18;
+                top.current.position.x = -rk * Math.cos(top.current.rotation.y);
+                top.current.position.z = rk * Math.sin(top.current.rotation.y);
             }
             const bob = e.kind === 'einf' ? Math.abs(Math.sin(s.t * 8)) * 0.04 : moving ? Math.sin(s.t * 14) * 0.012 : 0;
             body.current.position.y = bob;

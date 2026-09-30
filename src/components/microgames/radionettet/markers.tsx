@@ -1,10 +1,10 @@
 import { useLayoutEffect, useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { isAir, stafettOf, type G } from './game';
+import { isAir, slagDef, stafettOf, type G } from './game';
 import { C } from './models';
 import { mergeParts } from '../kit';
-import { HL_PICK, type Hl } from './hl';
+import { HL_PICK, HQ_ID, type Hl } from './hl';
 
 // Det som ligger på bakken under enhetene, tegnet som to instanserte mesher:
 // - en myk skygge (bakt, så figuren står på bakken også på «lav» uten skyggekart;
@@ -141,35 +141,65 @@ const BRACKETS = mergeParts(
     ])
 );
 
-/** Markeringen: hjørner rundt enheten musa står over, og et lysende sprang når den klikkes. */
+/** Hvor markeringen står: en enhet, eller kommandovogna (`HQ_ID`). */
+function spot(g: G, id: number): [number, number, number] | null {
+    if (id === HQ_ID) {
+        const [x, z] = slagDef(g).hq;
+        return [x, z, 1.7];
+    }
+    const u = id >= 0 ? g.units.find((v) => v.id === id && !v.dead) : undefined;
+    if (!u) return null;
+    const air = isAir(u.kind);
+    return [air ? u.ax : u.x, air ? u.az : u.z, air ? 1.3 : 1];
+}
+
+/** Markeringen: hjørner rundt enheten musa står over, og et lysende sprang når den klikkes.
+ *  Kobles en enhet, lyser også den linja går fra (kommandovogna eller stafetten) opp. */
 export function Highlight({ gRef, hlRef }: { gRef: React.MutableRefObject<G>; hlRef: React.MutableRefObject<Hl> }) {
     const ref = useRef<THREE.Mesh>(null);
     const mat = useRef<THREE.MeshBasicMaterial>(null);
+    const srcRef = useRef<THREE.Mesh>(null);
+    const srcMat = useRef<THREE.MeshBasicMaterial>(null);
     const hover = useMemo(() => new THREE.Color('#fff4d0').multiplyScalar(1.2), []);
     const pick = useMemo(() => new THREE.Color(C.radio).multiplyScalar(2.2), []);
     useFrame((st) => {
         const m = ref.current;
-        if (!m || !mat.current) return;
+        const sm = srcRef.current;
+        if (!m || !mat.current || !sm || !srcMat.current) return;
         const h = hlRef.current;
         const g = gRef.current;
-        const since = performance.now() / 1000 - h.pickT;
+        const now = performance.now() / 1000;
+        const since = now - h.pickT;
         const picked = since < HL_PICK ? h.pick : -1;
-        const id = picked >= 0 ? picked : h.hover;
-        const u = id >= 0 ? g.units.find((v) => v.id === id && !v.dead) : undefined;
-        m.visible = !!u;
-        if (!u) return;
-        const air = isAir(u.kind);
-        m.position.set(air ? u.ax : u.x, 0.03, air ? u.az : u.z);
-        // Klikket: hjørnene smekker inn fra stort og blinker; ellers puster de rolig.
-        const k = picked >= 0 ? 1 + 0.5 * Math.max(0, 1 - since / 0.25) ** 2 : 1 + Math.sin(st.clock.elapsedTime * 5) * 0.03;
-        m.scale.setScalar(k * (air ? 1.3 : 1));
-        mat.current.color.copy(picked >= 0 ? pick : hover);
-        mat.current.opacity = picked >= 0 ? 1 - Math.max(0, since - 0.6) / 0.3 : 0.9;
+        const id = picked !== -1 ? picked : h.hover;
+        const p = id !== -1 ? spot(g, id) : null;
+        m.visible = !!p;
+        if (p) {
+            m.position.set(p[0], 0.03, p[1]);
+            // Klikket: hjørnene smekker inn fra stort og blinker; ellers puster de rolig.
+            const k = picked !== -1 ? 1 + 0.5 * Math.max(0, 1 - since / 0.25) ** 2 : 1 + Math.sin(st.clock.elapsedTime * 5) * 0.03;
+            m.scale.setScalar(k * p[2]);
+            mat.current.color.copy(picked !== -1 ? pick : hover);
+            mat.current.opacity = picked !== -1 ? 1 - Math.max(0, since - 0.6) / 0.3 : 0.9;
+        }
+        const sinceS = now - h.srcT;
+        const q = sinceS < HL_PICK + 0.2 && h.src !== id ? spot(g, h.src) : null;
+        sm.visible = !!q;
+        if (q) {
+            sm.position.set(q[0], 0.03, q[1]);
+            sm.scale.setScalar((1 + 0.5 * Math.max(0, 1 - sinceS / 0.25) ** 2) * q[2]);
+            srcMat.current.opacity = 1 - Math.max(0, sinceS - 0.8) / 0.3;
+        }
     });
     return (
         // Tegnes oppå figuren (som valg i et strategispill), ellers skjuler vogna hjørnene.
-        <mesh ref={ref} geometry={BRACKETS} renderOrder={20} visible={false}>
-            <meshBasicMaterial ref={mat} transparent depthWrite={false} depthTest={false} toneMapped={false} fog={false} />
-        </mesh>
+        <>
+            <mesh ref={ref} geometry={BRACKETS} renderOrder={20} visible={false}>
+                <meshBasicMaterial ref={mat} transparent depthWrite={false} depthTest={false} toneMapped={false} fog={false} />
+            </mesh>
+            <mesh ref={srcRef} geometry={BRACKETS} renderOrder={20} visible={false}>
+                <meshBasicMaterial ref={srcMat} color={pick} transparent depthWrite={false} depthTest={false} toneMapped={false} fog={false} />
+            </mesh>
+        </>
     );
 }
