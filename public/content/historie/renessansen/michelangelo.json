@@ -69,6 +69,13 @@
             "content": "I 1508 fikk Michelangelo et oppdrag han ikke ville ha. Pave Julius 2. ba ham male taket i Det sixtinske kapell (Vold, 2025). Michelangelo svarte at han var billedhugger, ikke maler. Han ville helst si nei. Men man sa ikke nei til paven. Michelangelo forkastet stillaset arkitekten Bramante hadde foreslått, og bygde sitt eget: en flyttbar konstruksjon som var festet i veggene (Vold, 2025). Der stod han i fire og et halvt år, høyt over gulvet, bøyd bakover med hodet i nakken og armene strukket opp mot taket. Han malte altså ikke liggende på ryggen, slik mange tror (Gilbert, u.å.). Han fikk vondt i nakken, maling rant i øynene, og ryggen ble stiv og skjev. I et fortvilet dikt til en venn klaget han over at skjegget pekte rett opp mot himmelen mens magen ble presset opp i strupen."
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "frisk-puss"
+            }
+        },
+        {
             "type": "text",
             "content": "Arbeidet var ferdig 1. november 1512, og resultatet ble et av kunsthistoriens mest berømte verk (Vold, 2025). Taket har ni store bilder fra skapelsesberetningen, omgitt av profeter og sibyller, og til sammen nesten 400 kvinne- og mannsskikkelser (Vold, 2025). På midten viser han skapelsen: Gud kommer flygende mot Adam og strekker fingeren mot ham, og bare en liten centimeter skiller dem. Det er som om hele universet henger i det lille gapet mellom de to fingertuppene. Folk som så det første gang, mente at en så stor visjon ikke kunne komme fra et menneske alene."
         },

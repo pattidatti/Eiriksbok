@@ -8,6 +8,7 @@ import type { MicroGameEntry } from './types';
 const GladiusDuel = lazy(() => import('./GladiusDuel'));
 const HavetKommer = lazy(() => import('./HavetKommer'));
 const GuddommeligVind3D = lazy(() => import('./GuddommeligVind3D'));
+const FriskPuss3D = lazy(() => import('./FriskPuss3D'));
 const Lopegravene3D = lazy(() => import('./Lopegravene3D'));
 const Thermopylae3D = lazy(() => import('./Thermopylae3D'));
 const HammerOgAmbolt3D = lazy(() => import('./HammerOgAmbolt3D'));
@@ -2422,6 +2423,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Karolinske slagmalerier (Lemke, Cederström): nattblått og snø, krutrøyk og lyskuler over grøftene, blå frakker med gule oppslag',
         loader: () => import('./Lopegravene3D'),
         Component: Lopegravene3D as never,
+    },
+    'frisk-puss': {
+        id: 'frisk-puss',
+        title: 'Frisk puss!',
+        description:
+            'Det sixtinske kapell, 1508. Du er Michelangelos lærling, og mesteren står 18 meter oppe under taket og roper etter frisk puss. Løp, hopp og klatre opp stillaset med bøtta før dagens felt tørker - og før pave Julius 2. klatrer etter deg. Bjelkene som er festet i hull i veggen, bærer. Løse planker ramler, og Bramantes tau-stillas svinger og kaster deg av hvis du ikke treffer takten. To baner: «Første dag» lærer deg stillaset, «Skapelsen» går rundt hele kapellet med trekk fra vinduene, tørr puss som løsner, våt puss som er glatt og tre snarveier for den flinke. Hver runde du klarer, fyller ut ett av de ni skapelsesbildene i taket, i den rekkefølgen Michelangelo malte dem. 3D-plattformer i tredjeperson: WASD eller piler, mellomrom for å hoppe, Q/E for å snu kameraet.',
+        estimatedSeconds: 180,
+        sjanger: '3d-plattformer-tredjeperson',
+        tone: 'lett',
+        hook: 'Du er Michelangelos lærling. Få bøtta med puss opp stillaset før den tørker.',
+        cover: '/images/microgames/frisk-puss.webp',
+        kunst: 'Det sixtinske kapell 1508-1512: veggfreskene fra Botticelli-tiden, blått hvelv med gullstjerner og Michelangelos lysende cangiante-felt, travertin og kalkpuss i skrått vinduslys og kalkstøv',
+        loader: () => import('./FriskPuss3D'),
+        Component: FriskPuss3D as never,
     },
 };
 
