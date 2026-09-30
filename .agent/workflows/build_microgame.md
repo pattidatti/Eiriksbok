@@ -595,7 +595,8 @@ kjerneløkka for den aksen (under). Nattrutinen har et leveringsgulv for andre n
 **Når vurderingen står stille, er det spillet som må endres - ikke pynten.** Står en akse på
 samme poeng to runder på rad, hjelper ikke flere farger, kameravinkler eller finere ringer. Gå
 tilbake til designbriefen og endre kjerneløkka for den aksen:
-- **Gøy under 4:** flere synlige valg per minutt, en trussel som vokser midtveis, et nytt
+- **Gøy under 4:** gå først gjennom feel-lista under - ofte er det den som mangler, ikke
+  reglene. Er den på plass: flere synlige valg per minutt, en trussel som vokser midtveis, et nytt
   element som dukker opp halvveis (ny motstander, nytt verktøy, nytt område), eller en
   risiko/belønning-avveiing eleven må ta hele tiden. «Ensformig klikking» betyr at eleven gjør
   det samme på samme måte - gi grepet et nytt formål eller en ny motstand.
@@ -604,6 +605,19 @@ tilbake til designbriefen og endre kjerneløkka for den aksen:
 - **Lærerikt under 4:** gjør fagregelen til en regel som faktisk avgjør utfallet, og la de
   historiske vendepunktene endre spillet (ikke bare vise et banner).
 - **Unikt under 4:** bytt sjanger eller perspektiv - ikke farge.
+
+**Feel-lista (hver forbedrer, hver runde).** Gøy er ofte feel, flaks, feedback og animasjon, og
+det kan vurdereren bare se på bilder - ikke kjenne. Derfor står ikke Gøy-tallet alene: sjekk
+disse fire i koden, og fiks det som mangler i tillegg til de tre forbedringene.
+1. **Hver handling svarer.** Lyd, et lite rykk eller partikler, og en kort stopp (hit-stop) ved
+   treff. Ingen klikk uten svar.
+2. **Flaks og nesten-bom.** Minst ett øyeblikk per brett der det går akkurat (en redning i siste
+   liten, en dobbel treff, et heldig kast), og at spillet viser det når det skjer.
+3. **Ting kommer og går.** Det som dukker opp, faller, dør eller blir tatt, får en animasjon inn
+   og ut - aldri bare på/av mellom to bilder.
+4. **Belønningen merkes.** Poeng, combo og seier teller opp, spretter og låter; et tap vises tydelig
+   nok til at eleven skjønner hvorfor.
+Skriv i `## Byggelogg` hvilke av de fire som var på plass før og etter runden.
 
 Et svakt spill leveres aldri - men det gis heller ikke opp: er det fortsatt under terskel, lagres
 det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der den slapp.
