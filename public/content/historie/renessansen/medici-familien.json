@@ -110,6 +110,13 @@
             "content": "Men det hadde en pris. Mens Lorenzo brukte penger på kunst, fester og gaver til politiske venner, gikk banken dårligere og dårligere. Formuen hans forsvant i luksus og gaver (Store norske leksikon, 2024c). Lorenzo døde i 1492. To år senere, i 1494, ble familien kastet ut av Firenze (Britannica-redaksjonen, u.å.-c)."
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "loddposen"
+            }
+        },
+        {
             "type": "header",
             "text": "Fra bankfolk til paver og hertuger"
         },

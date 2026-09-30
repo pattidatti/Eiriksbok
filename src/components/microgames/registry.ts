@@ -12,6 +12,7 @@ const FriskPuss3D = lazy(() => import('./FriskPuss3D'));
 const Lopegravene3D = lazy(() => import('./Lopegravene3D'));
 const Thermopylae3D = lazy(() => import('./Thermopylae3D'));
 const HammerOgAmbolt3D = lazy(() => import('./HammerOgAmbolt3D'));
+const Loddposen = lazy(() => import('./Loddposen'));
 const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
@@ -2437,6 +2438,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Aleksandermosaikken fra Pompeii: firefargemaleriet uten blått (kalkhvitt, sot, rød og gul oker) i lav, støvete sol',
         loader: () => import('./HammerOgAmbolt3D'),
         Component: HammerOgAmbolt3D as never,
+    },
+    loddposen: {
+        id: 'loddposen',
+        title: 'Loddposen',
+        description:
+            'Firenze, 1434-1492. Byen trekker lodd om de viktigste vervene, og du er Medici-familiens hemmelige hånd i rådhuset. Hold hånda i loddposen mens rådsherrene ser bort, så faller Medici-lappene ned én etter én - jo lenger du tør, jo mer betaler banken når vennene vinner. Kremter en rådsherre, må du dra hånda ut - blir du sett, blir Cosimo arrestert. Hver lapp koster florin, og en tapt trekning koster mer, så la aldri kista bli tom. Tre av fem trukne lapper må være venner. Gi byen kunst, så ser rådsherrene på kunsten i stedet for på posen. Lyspæra: Medici styrte Firenze uten en eneste tittel, fordi banken betalte vennene i posen.',
+        estimatedSeconds: 170,
+        sjanger: 'stealth-timing-bordplate',
+        tone: 'lett',
+        hook: 'Du er Medici-familiens hemmelige hånd. Få vennene ned i posen uten å bli sett.',
+        cover: '/images/microgames/loddposen.webp',
+        kunst: 'Florentinsk perspektiv-intarsia fra Palazzo Vecchio og domkirken: innlagt valnøtt, lønn og ebenholt, sandsvidde kanter, Medici-rødt og florin-gull i stearinlys',
+        loader: () => import('./Loddposen'),
+        Component: Loddposen as never,
     },
 };
 
