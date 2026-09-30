@@ -2413,7 +2413,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'loddposen',
         title: 'Loddposen',
         description:
-            'Firenze, 1434-1492. Byen trekker lodd om de viktigste vervene, og du er Medici-familiens hemmelige hånd i rådhuset. Smugle Medici-lapper ned i loddposen når rådsherrene ser bort, og fisk opp fiendelapper når du tør. Kremter en rådsherre, snur han seg snart - blir du sett med hånda i posen, blir Cosimo arrestert. Hver lapp og hver venn koster florin fra banken, men for mye gull gjør rådsherrene misunnelige. Gi byen kunst, så ser de på kunsten i stedet for på posen. Lyspæra: Medici styrte Firenze uten en eneste tittel, fordi banken betalte vennene i posen.',
+            'Firenze, 1434-1492. Byen trekker lodd om de viktigste vervene, og du er Medici-familiens hemmelige hånd i rådhuset. Hold hånda i loddposen mens rådsherrene ser bort, så faller Medici-lappene ned én etter én - jo lenger du tør, jo flere poeng. Kremter en rådsherre, må du dra hånda ut - blir du sett, blir Cosimo arrestert. Hver lapp koster florin, og en tapt trekning koster mer, så la aldri kista bli tom. Tre av fem trukne lapper må være venner. Gi byen kunst, så ser rådsherrene på kunsten i stedet for på posen. Lyspæra: Medici styrte Firenze uten en eneste tittel, fordi banken betalte vennene i posen.',
         estimatedSeconds: 170,
         sjanger: 'stealth-timing-bordplate',
         tone: 'lett',

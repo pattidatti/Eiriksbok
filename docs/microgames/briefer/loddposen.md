@@ -79,10 +79,21 @@ bli tom.
    står synlig som små innlagte kuler ved posen (røde = venner, svarte = fiender), så eleven ser
    oddsen hele tiden.
 
-   Det eleven skal huske (tre regler, ikke flere):
-   1. Flere venner i posen gir bedre sjanse i trekningen.
-   2. Hånda i posen når et blikk treffer = tatt.
-   3. Banken betaler vennene: bruk gullet på venner og kunst, men la aldri kista bli tom.
+   Det eleven skal huske (tre regler, ikke flere - endret etter gråboks-diagnose 1):
+   1. Hånd inn når alle ser bort, ut når noen kremter (0,7 s). Sett med hånda i posen = tatt.
+   2. Florin betaler alt: hver lapp koster 15, en tapt trekning koster 110, bare en vunnet
+      trekning gir renter. Tom kiste = tapt.
+   3. 3 av 5 vinner: minst tre venner blant de fem trukne lappene, så styrer Medici.
+
+   **Endret etter gråboks-diagnose 1 (gjelder foran punktene under):** Grådig hånd i stedet for
+   dra-og-slipp: hold på posen, første lapp faller etter 0,5 s, så én hvert 0,3 s, og fra tredje
+   lapp i samme dukk stiger multiplikatoren +0,25. Fiske = hold på fiendelappene, én opp hvert
+   0,6 s. Trekningen er 3 av 5 (aldri under 5 lapper i posen), og døden ved tre tapte på rad er
+   borte: tapt trekning koster 110 florin og nullstiller multiplikatoren, vunnet gir 150 florin i
+   renter. Misunnelseslinja er borte; kista rommer 300 (mer er bortkastet). Fra 1469 står
+   «Banken svikter», og rentene halveres. Fra 1478 kremter ikke Pazzi: han ser tilbake uten
+   varsel 2,5 s etter at han så bort, og kunst virker ikke på ham. Høyst 4 rådsherrer (pluss
+   gonfalonieren etter et tap), 5 fiendelapper (6 i 1492).
 
 4. **Presset og valgene.** En runde er åtte trekninger. Hver trekning er om lag 18 sekunder smugling,
    så 4 sekunder trekning i sakte film, så et gavekort på 3 sekunder.
@@ -248,3 +259,39 @@ bli tom.
     1469 er det eleven må lære, og den er ikke forklart i spillet ennå. Pazzis lureblikk er
     nesten ufarlig for en som reagerer på kremtet. Blikkstripene i gråboksen går ut over
     bordkanten, og i varsel peker stripa bare litt mot posen - må leses tydeligere i kunsten.
+- **Fase: bygg, gråboks etter diagnose 1 (2026-09-30).** Gjorde de tre endringene i
+  kjerneløkka fra gråboks-diagnosen (Gøy 3). (1) Grådig hånd: hold på posen (mellomrom), første
+  lapp faller etter 0,5 s, så én hvert 0,3 s, 15 florin per lapp, multiplikator +0,25 per lapp
+  etter den andre i samme dukk (maks x5). Kremtet gir 0,7 s til å slippe. Fiske = hold på
+  fiendelappene (F), én opp hvert 0,6 s. Dra-og-slipp fra bunken er borte. (2) 3 av 5 vinner,
+  aldri under 5 lapper i posen, døden ved tre tapte på rad er borte: tapt trekning koster 110
+  florin og nullstiller multiplikatoren, vunnet gir 150 florin i renter. (3) Misunnelseslinja og
+  lønna er borte (kista har en «tap: -110»-linje i stedet). Fra 1469 «Banken svikter», rentene
+  halveres. Fra 1478 kremter ikke Pazzi: han ser tilbake 2,5 s etter at han så bort, og kunst
+  virker ikke på ham. Andre tall: start 150 florin, handel 6 florin/s uansett hvem som styrer,
+  kista rommer 300, rådsherrer [3,3,3,4,4,4,4,4] + gonfaloniere etter tap, fiendelapper 5 (6 i
+  1492), bortblikk (5-10 s)/fart, fart 1 + 0,04 per trekning (x1,15 i 1478).
+  Robotene: vinneren er grådig (blir inne til kremt eller til Pazzi har sett bort i 2,25 s),
+  holder 125 florin i reserve, fisker når kista er tom og kjøper kunst ned til reserven. Middels
+  er treg (hvert 3. øyeblikk), drar hånda ut etter to lapper, fisker aldri og sparer bare halve
+  tapet. Taperen (ødeland) bruker hver florin på lapper og det dyreste kunstverket og fisker aldri.
+  Simulering (200 runder, grønn): seende 89 % (median 640), halvgod 54 % (median 467), ødeland
+  5 % (median 145, dør av tom kiste i 1434-1454), tilfeldig 0 % (tatt i 1434), passiv 0 % (tom
+  kiste i 1492). 17,4 valg per minutt, press 0,16 -> 0,31 -> 0,46, runden ca. 150 s.
+  Nettleseren: seende vant med 627 poeng, JS p95 4,2 ms på Chromebook-struping. Portfunn som er
+  ventet nå: cover mangler, ingen `useArcadeText`.
+  - *Prøvd som ikke virket:* (1) Pazzi stille etter 1,5 s (som diagnosen sa): vinneren kom seg
+    nesten aldri inn fra 1478 og ble tatt fordi første bortblikk kunne være kortere - nå 2,5 s og
+    alltid like langt. (2) Banken tjener bare mens vennene styrer: da overlevde den passive
+    (første trekning ga nok) eller alle døde i en spiral etter ett tap. (3) Renter +15 og 40 i
+    tap som i diagnosen: da var kista likegyldig og ødelanden vant 25-45 %; pengene må komme fra
+    rentene for at sparing skal bety noe. (4) Å halvere handelen per sekund fra 1469 i tillegg:
+    vinneren gikk tom i sluttspillet (64 %). (5) 6 rådsherrer og 9 fiendelapper mot slutten:
+    for trange vinduer, vinneren fikk 2 lapper i 1478. (6) Start 200 / tap 120: vinneren måtte
+    spare mer og falt til 65 %.
+  - *Kjente svakheter:* den passive dør først i 1492, så en elev som ikke gjør noe spiller hele
+    runden før han taper. Den middels gode dør oftest i 1434: ett uheldig første trekk med lite
+    i kista er slutt etter 18 s - kan føles urettferdig, vurder en mykere første trekning. Den
+    vinnende roboten teller Pazzis 2,5 s nøyaktig; en elev trenger et synlig hint (hatten som
+    rykker, en sandklokke) i kunsten. «Hold for å fiske»-feltet ligger under trekningskortene og
+    tapslinja på kista må leses tydeligere. Grådighet gir bare poeng, ikke overlevelse.

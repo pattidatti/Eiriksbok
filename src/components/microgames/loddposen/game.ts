@@ -2,14 +2,14 @@ import { seeded, type Rng } from '../sim';
 
 // LODDPOSEN - spillreglene (rene, uten React og uten tegning).
 //
-// Firenze 1434-1492. Byen trekker lodd om vervene. Du smugler Medici-lapper ned i
-// loddposen når rådsherrene ser bort, og fisker opp fiendelapper når du tør.
+// Firenze 1434-1492. Byen trekker lodd om vervene. Du holder hånda i loddposen mens
+// rådsherrene ser bort, og Medici-lappene faller ned én etter én. Jo lenger du tør, jo mer.
 //
 // De tre reglene eleven skal sitte igjen med:
-//   1. Flere venner i posen gir bedre sjanse i trekningen.
-//   2. Hånda i posen når et blikk treffer = tatt (Cosimo arrestert, som i 1433).
-//   3. Banken betaler vennene: hver lapp og hver lønn koster florin. For mye gull gjør
-//      rådsherrene misunnelige (de ser oftere), kunst gjør en rådsherre til beundrer.
+//   1. Hånda inn når alle ser bort, ut når noen kremter (sett med hånda i posen = tatt).
+//   2. Florin betaler alt: hver lapp koster, en tapt trekning koster, og bare en vunnet
+//      trekning gir renter (halvparten fra 1469). Tom kiste = tapt.
+//   3. 3 av 5 vinner: trekker Signoria minst tre venner av fem lapper, styrer Medici.
 //
 // En runde er åtte trekninger. Hver trekning: SMUGLE_S sekunder smugling (gavekortet står
 // de første KORT_S sekundene), så TREKK_S sekunder trekning.
@@ -27,29 +27,45 @@ export const RUN_SECONDS = TREKNINGER * (SMUGLE_S + TREKK_S);
 
 export const ÅR = [1434, 1444, 1454, 1464, 1469, 1478, 1485, 1492];
 /** Antall rådsherrer rundt bordet i hver trekning (gonfalonieren kommer i tillegg). */
-const RÅD = [3, 3, 4, 4, 5, 6, 6, 6];
+const RÅD = [3, 3, 3, 4, 4, 4, 4, 4];
 /** Fiendelapper rivalene legger i posen ved starten av hver trekning. */
-const FIENDER = [2, 3, 3, 4, 4, 4, 5, 5];
+const FIENDER = [5, 5, 5, 5, 5, 5, 5, 6];
+/** Så mange lapper trekkes, og så mange venner må til for å vinne. */
+export const TREKKES = 5;
+export const MÅ_HA = 3;
+/** Aldri færre lapper i posen enn dem som trekkes. */
+export const MIN_LAPPER = TREKKES;
 /** Pazzi sitter ved bordet fra trekning 4 (indeks 3). */
 const PAZZI_FRA = 3;
 /** 1469: Lorenzo tar over, banken tjener halvparten. */
 const LORENZO_FRA = 4;
-/** 1478: Pazzi-rystelsen, alle er mistenksomme. */
-const RYSTELSE = 5;
+/** 1478: Pazzi-rystelsen, alle er mistenksomme. Pazzi kremter ikke lenger. */
+export const RYSTELSE = 5;
+/** Fra 1478 ser Pazzi tilbake uten varsel så mange sekunder etter at han så bort. */
+export const PAZZI_STILLE_S = 2.5;
 
-export const SLIPP_S = 0.3;
-export const FISK_S = 0.7;
+/** Grådig hånd: første lapp faller etter FØRSTE_S, så én hvert NESTE_S så lenge hånda er inne. */
+export const FØRSTE_S = 0.5;
+export const NESTE_S = 0.3;
+/** Fiske: hold hånda over en fiendelapp så lenge, så er den ute. */
+export const FISK_S = 0.6;
+/** Kremtet: så lang tid har du på å dra hånda ut før blikket treffer. */
+export const VARSEL_S = 0.7;
 /** Sakte film når et blikk begynner å snu seg mens hånda er i posen. */
 const FRYS_S = 0.25;
 
-export const KISTE_START = 160;
-export const MISUNNELSE = 420;
-export const KISTE_MAKS = 700;
-const INNTEKT = 15; // florin per sekund før 1469
-export const LAPP_PRIS = 10;
-/** Lønn til vennene etter hver trekning: fast gave + per venn som fikk verv. */
-const LØNN_FAST = 30;
-const LØNN_PER_VENN = 20;
+export const KISTE_START = 150;
+/** Kista rommer ikke mer: gull over dette er bortkastet, så det lønner seg å bruke det. */
+export const KISTE_MAKS = 300;
+/** Florin per sekund fra handelen, uansett hvem som styrer. */
+const INNTEKT = 6;
+export const LAPP_PRIS = 15;
+/** Tapt trekning koster, vunnet trekning gir renter (halvparten fra 1469). */
+export const TAP_PRIS = 110;
+const RENTER = 150;
+/** Multiplikatoren: +0,25 per lapp etter den andre i samme dukk. */
+const MULT_PER_LAPP = 0.25;
+const MULT_MAKS = 5;
 
 export interface Kunst {
     navn: string;
@@ -104,7 +120,7 @@ export interface Rådsherre {
 }
 
 export type Handling = 'slipp' | 'fisk';
-export type Cause = 'tatt' | 'tom' | 'stemt';
+export type Cause = 'tatt' | 'tom';
 export type Fase = 'smugle' | 'trekning';
 
 export interface Hendelse {
@@ -119,16 +135,27 @@ export interface Hendelse {
         | 'vant'
         | 'tapte'
         | 'ren'
-        | 'lønn'
         | 'kunst'
         | 'kort'
         | 'pater'
         | 'tom'
-        | 'misunnelig';
+        | 'banken';
     tekst?: string;
     x?: number;
     y?: number;
 }
+
+export interface Hånd {
+    act: Handling | null;
+    /** Sekunder hånda har vært i posen. */
+    t: number;
+    /** Sekunder til neste lapp faller (eller neste fiendelapp er fisket opp). */
+    neste: number;
+    /** Lapper sluppet i denne dukken. */
+    dukk: number;
+    varslet: boolean;
+}
+const tomHånd = (): Hånd => ({ act: null, t: 0, neste: 0, dukk: 0, varslet: false });
 
 export interface Kort {
     valg: [Kunst, Kunst];
@@ -148,12 +175,11 @@ export interface G {
     venner: number;
     fiender: number;
     kiste: number;
-    hånd: { act: Handling | null; t: number; varslet: boolean };
+    hånd: Hånd;
     frys: number;
     kort: Kort | null;
     /** Resultatet av trekningen som vises nå: venn (true) eller fiende per lapp. */
     trukket: boolean[];
-    tapPåRad: number;
     gonfNeste: boolean;
     mult: number;
     poeng: number;
@@ -175,32 +201,34 @@ const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
 
 export const år = (g: G) => ÅR[g.trekning];
-export const misunnelig = (g: G) => g.kiste > MISUNNELSE;
 export const aktiv = (r: Rådsherre) => r.beundrer <= 0;
-export const inntekt = (g: G) => (g.trekning >= LORENZO_FRA ? INNTEKT / 2 : INNTEKT);
-export const lønn = (venner: number) => LØNN_FAST + LØNN_PER_VENN * venner;
+export const bankenSvikter = (g: G) => g.trekning >= LORENZO_FRA;
+export const inntekt = () => INNTEKT;
+export const renter = (g: G) => (bankenSvikter(g) ? RENTER / 2 : RENTER);
+/** Fra 1478 kremter ikke Pazzi, og kunst virker ikke på ham. */
+export const stillePazzi = (g: G, r: Rådsherre) => r.slag === 'pazzi' && g.trekning >= RYSTELSE;
+export const lapper = (g: G) => g.venner + g.fiender;
 
 /** Hvor fort blikkene går i denne trekningen (1 = rolig). */
 export function fart(g: G) {
-    let f = 1 + 0.07 * g.trekning;
-    if (g.trekning === RYSTELSE) f *= 1.3;
+    let f = 1 + 0.04 * g.trekning;
+    if (g.trekning === RYSTELSE) f *= 1.15;
     return f;
 }
-/** Varselet før et hode snur seg: kremt og rykk i hatten. 0,8 s i 1434, 0,4 s mot slutten. */
-export function varselTid(g: G) {
-    let v = lerp(0.8, 0.4, g.trekning / (TREKNINGER - 1));
-    if (misunnelig(g)) v *= 0.8;
-    return v;
+function velg(n: number, k: number) {
+    if (k < 0 || k > n) return 0;
+    let r = 1;
+    for (let i = 0; i < k; i++) r = (r * (n - i)) / (i + 1);
+    return r;
 }
 
-/** Sjansen for at minst to av tre trukne lapper er venner (hypergeometrisk). */
+/** Sjansen for at minst tre av fem trukne lapper er venner (hypergeometrisk). */
 export function odds(venner: number, fiender: number) {
     const n = venner + fiender;
-    if (n < 3) return venner >= 2 ? 1 : 0;
-    const c3 = (n * (n - 1) * (n - 2)) / 6;
-    const tre = (venner * (venner - 1) * (venner - 2)) / 6;
-    const to = ((venner * (venner - 1)) / 2) * fiender;
-    return (tre + to) / c3;
+    if (n < TREKKES) return venner >= MÅ_HA ? 1 : 0;
+    let p = 0;
+    for (let k = MÅ_HA; k <= TREKKES; k++) p += velg(venner, k) * velg(fiender, TREKKES - k);
+    return p / velg(n, TREKKES);
 }
 
 function seat(i: number, n: number) {
@@ -212,17 +240,21 @@ function seat(i: number, n: number) {
 }
 
 function nyBort(g: G, r: Rådsherre) {
-    const f = fart(g) * (misunnelig(g) ? 1.5 : 1);
+    const f = fart(g);
     r.blikk = 'bort';
     r.siden = 0;
-    if (r.slag === 'gonf') r.t = (2.2 + g.rng() * 1.8) / f;
-    else if (r.slag === 'pazzi' && g.rng() < 0.5) {
+    if (r.slag === 'gonf') r.t = (3.0 + g.rng() * 3.0) / f;
+    else if (stillePazzi(g, r)) {
+        // Etter Pazzi-sammensvergelsen: ser tilbake uten å kremte, alltid etter like lang tid.
+        r.lur = false;
+        r.t = PAZZI_STILLE_S;
+    } else if (r.slag === 'pazzi' && g.rng() < 0.5) {
         // Lureblikket: ser bort et øyeblikk og snur seg tilbake.
         r.lur = true;
         r.t = 0.55 + g.rng() * 0.35;
     } else {
         r.lur = false;
-        r.t = (3.0 + g.rng() * 4.0) / f;
+        r.t = (5.0 + g.rng() * 5.0) / f;
     }
     r.bortVinkel = Math.atan2(BAG.y - r.y, BAG.x - r.x) + (g.rng() < 0.5 ? -1 : 1) * (0.9 + g.rng() * 0.8);
 }
@@ -251,8 +283,11 @@ function lagRådsherrer(g: G) {
             beundrer: gammel ? Math.max(0, gammel.beundrer) : 0,
             sett: 0,
         };
+        if (stillePazzi(g, r)) r.beundrer = 0;
         nyBort(g, r);
         r.t *= 0.5 + g.rng() * 0.8;
+        // Pazzis stille blikk skal alltid komme etter like lang tid, også det første.
+        if (stillePazzi(g, r)) r.siden = PAZZI_STILLE_S - r.t;
         r.vinkel = r.bortVinkel;
         liste.push(r);
     }
@@ -274,6 +309,7 @@ function startTrekning(g: G) {
     g.venner = 0;
     g.fiender = FIENDER[g.trekning];
     g.trukket = [];
+    if (g.trekning === LORENZO_FRA) g.events.push({ k: 'banken', tekst: 'Banken svikter: rentene halveres' });
     lagRådsherrer(g);
     g.kort = lagKort(g);
     g.valg += 1;
@@ -291,11 +327,10 @@ export function newGame(seed: number): G {
         venner: 0,
         fiender: 0,
         kiste: KISTE_START,
-        hånd: { act: null, t: 0, varslet: false },
+        hånd: tomHånd(),
         frys: 0,
         kort: null,
         trukket: [],
-        tapPåRad: 0,
         gonfNeste: false,
         mult: 1,
         poeng: 0,
@@ -317,12 +352,16 @@ export function newGame(seed: number): G {
 
 // ---------- Grepene (samme for eleven og robotene) ----------
 
-/** Stikk hånda i posen: slipp en Medici-lapp (0,3 s) eller fisk opp en fiendelapp (0,7 s). */
+/**
+ * Stikk hånda i posen og hold den der. Slipp: første Medici-lapp faller etter 0,5 s, så én
+ * hvert 0,3 s (hver koster florin). Fisk: én fiendelapp opp hvert 0,6 s. Hånda er inne til
+ * `trekkUt`.
+ */
 export function begynn(g: G, act: Handling) {
     if (g.ended || g.fase !== 'smugle' || g.hånd.act) return false;
     if (act === 'slipp' && g.kiste < LAPP_PRIS) return false;
-    if (act === 'fisk' && g.fiender <= 0) return false;
-    g.hånd = { act, t: 0, varslet: false };
+    if (act === 'fisk' && (g.fiender <= 0 || lapper(g) <= MIN_LAPPER)) return false;
+    g.hånd = { act, t: 0, neste: act === 'slipp' ? FØRSTE_S : FISK_S, dukk: 0, varslet: false };
     // Stakk du hånda i posen mens noen ser rett på den? Da er du tatt med én gang.
     sjekkTatt(g);
     return true;
@@ -334,10 +373,9 @@ export function trekkUt(g: G) {
     const truet = g.rådsherrer.some((r) => aktiv(r) && r.blikk === 'varsel');
     if (truet || g.hånd.varslet) {
         g.nesten += 1;
-        g.mult = Math.min(4, g.mult + 0.25);
         g.events.push({ k: 'nesten', x: BAG.x, y: BAG.y - 80 });
     }
-    g.hånd = { act: null, t: 0, varslet: false };
+    g.hånd = tomHånd();
     return true;
 }
 
@@ -363,7 +401,7 @@ export function gi(g: G, id: number) {
     const k = g.kort;
     if (!k || !k.valgt) return false;
     const r = g.rådsherrer.find((q) => q.id === id);
-    if (!r || r.slag === 'gonf') return false;
+    if (!r || r.slag === 'gonf' || stillePazzi(g, r)) return false;
     if (g.kiste < k.valgt.pris) return false;
     g.kiste -= k.valgt.pris;
     r.beundrer = Math.max(r.beundrer, k.valgt.trekninger);
@@ -376,7 +414,7 @@ export function gi(g: G, id: number) {
 
 /** Den farligste rådsherren å gjøre til beundrer: den som har sett mest på posen. */
 export function farligst(g: G): Rådsherre | null {
-    const kand = g.rådsherrer.filter((r) => aktiv(r) && r.slag !== 'gonf');
+    const kand = g.rådsherrer.filter((r) => aktiv(r) && r.slag !== 'gonf' && !stillePazzi(g, r));
     if (!kand.length) return null;
     return kand.reduce((a, b) => {
         const va = a.sett + (a.slag === 'pazzi' ? 3 : 0);
@@ -399,11 +437,11 @@ function sjekkTatt(g: G) {
 function slutt(g: G, cause: Cause | null) {
     g.ended = cause ? 'tapt' : 'vunnet';
     g.cause = cause;
-    g.hånd = { act: null, t: 0, varslet: false };
+    g.hånd = tomHånd();
 }
 
 function oppdaterBlikk(g: G, dt: number) {
-    const f = fart(g) * (misunnelig(g) ? 1.5 : 1);
+    const f = fart(g);
     for (const r of g.rådsherrer) {
         const mot = Math.atan2(BAG.y - r.y, BAG.x - r.x);
         if (!aktiv(r)) {
@@ -416,9 +454,13 @@ function oppdaterBlikk(g: G, dt: number) {
         if (r.blikk === 'bort') r.siden += dt;
         if (r.blikk === 'ser') r.sett += dt;
         if (r.t <= 0) {
-            if (r.blikk === 'bort') {
+            if (r.blikk === 'bort' && stillePazzi(g, r)) {
+                // Ingen kremt: rett på posen.
+                r.blikk = 'ser';
+                r.t = (0.5 + g.rng() * 0.5) / f;
+            } else if (r.blikk === 'bort') {
                 r.blikk = 'varsel';
-                r.t = varselTid(g) * (r.lur ? 0.6 : 1);
+                r.t = VARSEL_S * (r.lur ? 0.6 : 1);
                 if (g.hånd.act && !g.hånd.varslet) {
                     // Nesten tatt: alt fryser i sakte film et lite øyeblikk.
                     g.hånd.varslet = true;
@@ -428,7 +470,7 @@ function oppdaterBlikk(g: G, dt: number) {
                 g.events.push({ k: 'varsel', x: r.x, y: r.y });
             } else if (r.blikk === 'varsel') {
                 r.blikk = 'ser';
-                r.t = r.slag === 'gonf' ? (1.0 + g.rng() * 0.6) / f : (0.5 + g.rng() * 0.5) / f;
+                r.t = r.slag === 'gonf' ? (0.8 + g.rng() * 0.4) / f : (0.5 + g.rng() * 0.5) / f;
             } else nyBort(g, r);
         }
         const mål = r.blikk === 'ser' ? mot : r.blikk === 'varsel' ? lerp(r.bortVinkel, mot, 0.35) : r.bortVinkel;
@@ -437,11 +479,12 @@ function oppdaterBlikk(g: G, dt: number) {
 }
 
 function trekk(g: G) {
-    // Tre lapper trekkes uten tilbakelegging.
+    // Fem lapper trekkes uten tilbakelegging. Rivalene fyller opp så posen aldri har færre.
+    if (lapper(g) < MIN_LAPPER) g.fiender = MIN_LAPPER - g.venner;
     let v = g.venner;
     let f = g.fiender;
     const res: boolean[] = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < TREKKES; i++) {
         const n = v + f;
         if (n <= 0) {
             res.push(false);
@@ -457,33 +500,28 @@ function trekk(g: G) {
 
 function avgjør(g: G) {
     const k = g.trukket.filter(Boolean).length;
-    const vant = k >= 2;
+    const vant = k >= MÅ_HA;
     if (vant) {
         g.vunnet += 1;
-        g.tapPåRad = 0;
-        const ren = k === 3;
-        if (ren) {
-            g.rene += 1;
-            g.mult = Math.min(4, g.mult + 0.5);
-        }
+        const ren = k === TREKKES;
+        if (ren) g.rene += 1;
         g.poeng += k * 10 * g.mult * (ren ? 2 : 1);
-        g.events.push({ k: ren ? 'ren' : 'vant' });
+        const r = renter(g);
+        g.kiste = Math.min(KISTE_MAKS, g.kiste + r);
+        g.events.push({ k: ren ? 'ren' : 'vant', tekst: `+${r} florin i renter` });
     } else {
-        g.tapPåRad += 1;
-        g.poeng += k * 5 * g.mult;
+        // Tapt trekning: Albizzi styrer, ingen renter, og det koster.
+        g.mult = 1;
+        g.poeng += k * 5;
         g.gonfNeste = true;
-        g.events.push({ k: 'tapte' });
+        g.kiste -= TAP_PRIS;
+        g.events.push({ k: 'tapte', tekst: `-${TAP_PRIS} florin` });
     }
-    // Banken betaler vennene.
-    const l = lønn(k);
-    g.kiste -= l;
-    g.events.push({ k: 'lønn', tekst: `-${l} florin i lønn og gaver` });
     if (g.kiste < 0) {
         g.kiste = 0;
         g.events.push({ k: 'tom' });
         return slutt(g, 'tom');
     }
-    if (g.tapPåRad >= 3) return slutt(g, 'stemt');
     if (g.trekning === 3 && !g.pater) {
         g.pater = true;
         g.events.push({ k: 'pater' });
@@ -512,9 +550,7 @@ export function update(g: G, dt: number) {
     }
 
     g.faseT -= dt;
-    const varMis = misunnelig(g);
-    g.kiste = Math.min(KISTE_MAKS, g.kiste + inntekt(g) * dt);
-    if (!varMis && misunnelig(g)) g.events.push({ k: 'misunnelig' });
+    g.kiste = Math.min(KISTE_MAKS, g.kiste + inntekt() * dt);
 
     if (g.kort) {
         g.kort.t -= dt;
@@ -534,27 +570,30 @@ export function update(g: G, dt: number) {
         h.t += dt;
         sjekkTatt(g);
         if (g.ended) return;
-        const dur = h.act === 'slipp' ? SLIPP_S : FISK_S;
-        if (h.t >= dur) {
+        h.neste -= dt;
+        if (h.neste <= 0) {
             if (h.act === 'slipp') {
-                g.kiste -= LAPP_PRIS;
-                g.venner += 1;
-                g.events.push({ k: 'slapp', x: BAG.x, y: BAG.y });
+                h.neste += NESTE_S;
+                if (g.kiste >= LAPP_PRIS) {
+                    g.kiste -= LAPP_PRIS;
+                    g.venner += 1;
+                    h.dukk += 1;
+                    // Grådighet lønner seg: fra tredje lapp i samme dukk stiger multiplikatoren.
+                    if (h.dukk > 2) g.mult = Math.min(MULT_MAKS, g.mult + MULT_PER_LAPP);
+                    g.events.push({ k: 'slapp', x: BAG.x, y: BAG.y });
+                }
             } else {
-                g.fiender = Math.max(0, g.fiender - 1);
-                g.events.push({ k: 'fisket', x: BAG.x, y: BAG.y });
+                h.neste += FISK_S;
+                if (g.fiender > 0 && lapper(g) > MIN_LAPPER) {
+                    g.fiender -= 1;
+                    g.events.push({ k: 'fisket', x: BAG.x, y: BAG.y });
+                }
             }
-            if (h.varslet) {
-                g.nesten += 1;
-                g.mult = Math.min(4, g.mult + 0.25);
-                g.events.push({ k: 'nesten', x: BAG.x, y: BAG.y - 80 });
-            }
-            g.hånd = { act: null, t: 0, varslet: false };
         }
     }
 
     if (g.faseT <= 0) {
-        g.hånd = { act: null, t: 0, varslet: false };
+        g.hånd = tomHånd();
         g.kort = null;
         g.fase = 'trekning';
         g.faseT = TREKK_S;
@@ -576,31 +615,25 @@ export function pressure(g: G) {
     const n = g.rådsherrer.length;
     const vakter = clamp((n - 3) / 4, 0, 1);
     const blikk = clamp((fart(g) - 1) / 0.9, 0, 1);
-    return clamp(0.15 + 0.45 * vakter + 0.3 * blikk + (misunnelig(g) ? 0.1 : 0), 0, 1);
+    return clamp(0.15 + 0.45 * vakter + 0.3 * blikk + (g.trekning >= RYSTELSE ? 0.1 : 0), 0, 1);
 }
 
 export const finalScore = (g: G) => Math.floor(g.poeng);
 
 export const ÅRSAK: Record<Cause, string> = {
     tatt: 'tatt med hånda i posen - Cosimo arrestert',
-    tom: 'kista gikk tom - vennene fikk ikke lønn',
-    stemt: 'tre tapte trekninger på rad - Albizzi stemte deg ut',
+    tom: 'kista gikk tom - ingen florin til vennene',
 };
 
 export const TIPS: Record<Cause, { tittel: string; tekst: string }> = {
     tatt: {
         tittel: 'Tatt med hånda i posen!',
         tekst:
-            'Rådsherrene arresterer Cosimo, som i 1433. Han slapp unna med eksil fordi han betalte bestikkelser. Tips: vent på kremtet, og slipp heller én lapp for lite enn én for mye.',
+            'Rådsherrene arresterer Cosimo, som i 1433. Han slapp unna med eksil fordi han betalte bestikkelser. Tips: dra hånda ut med en gang noen kremter. Og fra 1478 kremter ikke Pazzi - han snur seg etter halvannet sekund.',
     },
     tom: {
         tittel: 'Kista er tom',
         tekst:
-            'Uten penger forsvant vennene. Slik gikk det med Lorenzo: han brukte formuen på kunst, fester og gaver mens banken gikk dårligere, og i 1494 ble familien kastet ut. Tips: banken må bære gavene.',
-    },
-    stemt: {
-        tittel: 'Stemt ut av byen',
-        tekst:
-            'Albizzi-familien styrer Signoria og stemmer deg ut av byen. Tips: makten satt i posen. Uten venner i posen hjelper ikke alt gullet i verden.',
+            'Uten penger forsvant vennene. Slik gikk det med Lorenzo: han brukte formuen på kunst, fester og gaver mens banken gikk dårligere, og i 1494 ble familien kastet ut. Tips: en tapt trekning koster 110 florin og gir ingen renter. Kjøp nok venner til å vinne, men hold alltid nok i kista til ett tap.',
     },
 };

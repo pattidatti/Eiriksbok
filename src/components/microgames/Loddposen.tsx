@@ -17,28 +17,32 @@ import { usePlaytest, type PlaytestBot } from './playtest';
 import { seeded } from './sim';
 import {
     aktiv,
+    bankenSvikter,
     begynn,
     gi,
-    misunnelig,
     newGame,
     odds,
     spar,
+    stillePazzi,
     trekkUt,
     update,
     velgKunst,
     år,
     BAG,
     FISK_S,
+    FØRSTE_S,
     H,
     KISTE_MAKS,
     KORT_S,
-    MISUNNELSE,
+    MÅ_HA,
+    NESTE_S,
     RANGER,
     RUN_SECONDS,
-    SLIPP_S,
     SMUGLE_S,
+    TAP_PRIS,
     TIPS,
     TREKK_S,
+    TREKKES,
     TREKNINGER,
     W,
     type G,
@@ -49,11 +53,11 @@ import { snapshotOf } from './loddposen/sim';
 // LODDPOSEN - Medici-familien i Firenze, 1434-1492. GRÅBOKS (steg 3a i guiden):
 // bare spillreglene og primitive former. Ingen kunst, ingen juice ennå.
 //
-// Kjerneløkka: dra en Medici-lapp fra bunken ned i posen når alle rådsherrene ser bort
-// (eller trykk mellomrom). Trykk og hold på posen (eller F) for å fiske opp en fiendelapp.
-// Kremter en rådsherre, snur han seg snart - er hånda i posen da, er du tatt.
-// Hver lapp koster florin, og vennene vil ha lønn etter trekningen. Gavekortet gjør en
-// rådsherre til beundrer som ser på kunsten i stedet for posen.
+// Kjerneløkka: hold på posen (eller mellomrom) når alle rådsherrene ser bort. Første
+// Medici-lapp faller etter 0,5 s, så én hvert 0,3 s - jo lenger du tør, jo høyere
+// multiplikator. Kremter noen, har du 0,7 s på å slippe. Hold på fiendelappene (eller F)
+// for å fiske dem opp. Hver lapp koster florin, en tapt trekning koster 110. 3 av 5 vinner.
+// Gavekortet gjør en rådsherre til beundrer som ser på kunsten i stedet for posen.
 
 const GAME_ID = 'loddposen';
 
@@ -80,6 +84,8 @@ type Mode = 'menu' | 'play' | 'over';
 const PILE = { x: 500, y: 645 };
 const CHEST = { x: 60, y: 470, w: 50, h: 200 };
 const CARD = { x: 770, y: 470, w: 210, h: 200 };
+/** Fiendelappene ved siden av posen: hold på dem for å fiske. */
+const FIENDE = { x: BAG.x + 100, y: BAG.y - 45, w: 150, h: 90 };
 
 interface SaveData {
     best: number;
@@ -97,7 +103,7 @@ function cardButtons() {
     return [0, 1, 2].map((i) => ({ i, x: CARD.x + 10, y: CARD.y + 40 + i * 52, w: CARD.w - 20, h: 44 }));
 }
 
-function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
+function draw(g: G, view: ArcadeView) {
     const { ctx, w, h, dpr } = view;
     const s = Math.min(w / W, h / H);
     const ox = (w - W * s) / 2;
@@ -160,9 +166,18 @@ function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
         }
         ctx.fillStyle = '#ecd6a4';
         ctx.font = 'bold 12px Inter, sans-serif';
-        const navn = r.slag === 'pazzi' ? 'PAZZI' : r.slag === 'gonf' ? 'GONFALONIERE' : !aktiv(r) ? 'BEUNDRER' : '';
+        const navn =
+            r.slag === 'pazzi'
+                ? stillePazzi(g, r)
+                    ? 'PAZZI - KREMTER IKKE'
+                    : 'PAZZI'
+                : r.slag === 'gonf'
+                  ? 'GONFALONIERE'
+                  : !aktiv(r)
+                    ? 'BEUNDRER'
+                    : '';
         if (navn) ctx.fillText(navn, r.x, r.y + 46);
-        if (g.kort?.valgt && r.slag !== 'gonf') {
+        if (g.kort?.valgt && r.slag !== 'gonf' && !stillePazzi(g, r)) {
             ctx.strokeStyle = '#e0b23a';
             ctx.lineWidth = 3;
             ctx.setLineDash([6, 5]);
@@ -173,34 +188,56 @@ function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
         }
     }
 
-    // Posen og tellerkulene (røde = venner, svarte = fiender).
+    // Posen og tellerkulene (røde = venner under posen, svarte = fiender til høyre).
     const bule = BAG.r + Math.min(20, (g.venner + g.fiender) * 1.2);
     ctx.fillStyle = '#5a3a22';
     ctx.beginPath();
     ctx.arc(BAG.x, BAG.y, bule, 0, Math.PI * 2);
     ctx.fill();
-    if (g.hånd.act) {
+    const hånd = g.hånd;
+    if (hånd.act) {
         ctx.fillStyle = '#a8231c';
         ctx.fillRect(BAG.x - 14, BAG.y, 28, 150);
-        const dur = g.hånd.act === 'slipp' ? SLIPP_S : FISK_S;
-        ctx.strokeStyle = '#ecd6a4';
+        // Ringen fylles til neste lapp faller (eller neste fiendelapp er fisket opp).
+        const dur = hånd.act === 'fisk' ? FISK_S : hånd.dukk === 0 && hånd.t < FØRSTE_S ? FØRSTE_S : NESTE_S;
+        const del = Math.max(0, Math.min(1, 1 - hånd.neste / dur));
+        ctx.strokeStyle = hånd.act === 'fisk' ? '#8a7a60' : '#ecd6a4';
         ctx.lineWidth = 5;
         ctx.beginPath();
-        ctx.arc(BAG.x, BAG.y, bule + 8, -Math.PI / 2, -Math.PI / 2 + (Math.PI * 2 * g.hånd.t) / dur);
+        ctx.arc(BAG.x, BAG.y, bule + 8, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * del);
         ctx.stroke();
+        if (hånd.act === 'slipp' && hånd.dukk > 0) {
+            ctx.fillStyle = hånd.dukk > 2 ? '#ffcf4a' : '#ecd6a4';
+            ctx.font = 'bold 22px Inter, sans-serif';
+            ctx.fillText(`${hånd.dukk} i denne dukken`, BAG.x, BAG.y - bule - 44);
+        }
     }
-    for (let i = 0; i < g.venner + g.fiender; i++) {
-        const venn = i < g.venner;
-        const col = i % 8;
-        const row = Math.floor(i / 8);
-        ctx.fillStyle = venn ? '#d8342a' : '#1c1410';
+    for (let i = 0; i < g.venner; i++) {
+        const col = i % 10;
+        const row = Math.floor(i / 10);
+        ctx.fillStyle = '#d8342a';
         ctx.beginPath();
-        ctx.arc(BAG.x - 70 + col * 20, BAG.y + bule + 22 + row * 20, 8, 0, Math.PI * 2);
+        ctx.arc(BAG.x - 90 + col * 20, BAG.y + bule + 22 + row * 20, 8, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.fillStyle = hånd.act === 'fisk' ? '#8a6440' : '#7a5a3a';
+    ctx.fillRect(FIENDE.x, FIENDE.y, FIENDE.w, FIENDE.h);
+    for (let i = 0; i < g.fiender; i++) {
+        ctx.fillStyle = '#1c1410';
+        ctx.beginPath();
+        ctx.arc(FIENDE.x + 18 + (i % 6) * 23, FIENDE.y + 30 + Math.floor(i / 6) * 24, 9, 0, Math.PI * 2);
         ctx.fill();
     }
     ctx.fillStyle = '#ecd6a4';
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillText('HOLD FOR Å FISKE', FIENDE.x + FIENDE.w / 2, FIENDE.y + FIENDE.h - 10);
+    ctx.fillStyle = '#ecd6a4';
     ctx.font = 'bold 18px Inter, sans-serif';
-    ctx.fillText(`${Math.round(odds(g.venner, g.fiender) * 100)} % sjanse`, BAG.x, BAG.y - bule - 18);
+    ctx.fillText(
+        `${Math.round(odds(g.venner, g.fiender) * 100)} % sjanse (${MÅ_HA} av ${TREKKES})`,
+        BAG.x,
+        BAG.y - bule - 18
+    );
 
     // Bunken med Medici-lapper ved din plass.
     ctx.fillStyle = '#ecd6a4';
@@ -209,22 +246,14 @@ function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
     ctx.beginPath();
     ctx.arc(PILE.x, PILE.y, 10, 0, Math.PI * 2);
     ctx.fill();
-    if (drag) {
-        ctx.fillStyle = '#ecd6a4';
-        ctx.fillRect(drag.x - 25, drag.y - 16, 50, 32);
-        ctx.fillStyle = '#d8342a';
-        ctx.beginPath();
-        ctx.arc(drag.x, drag.y, 8, 0, Math.PI * 2);
-        ctx.fill();
-    }
 
-    // Kista med misunnelseslinja.
+    // Kista med tapslinja: under den tåler du ikke en tapt trekning.
     const fyll = Math.min(1, g.kiste / KISTE_MAKS);
     ctx.fillStyle = '#1c1410';
     ctx.fillRect(CHEST.x, CHEST.y, CHEST.w, CHEST.h);
-    ctx.fillStyle = misunnelig(g) ? '#ffcf4a' : '#e0b23a';
+    ctx.fillStyle = g.kiste < TAP_PRIS ? '#d8342a' : '#e0b23a';
     ctx.fillRect(CHEST.x, CHEST.y + CHEST.h * (1 - fyll), CHEST.w, CHEST.h * fyll);
-    const ly = CHEST.y + CHEST.h * (1 - MISUNNELSE / KISTE_MAKS);
+    const ly = CHEST.y + CHEST.h * (1 - TAP_PRIS / KISTE_MAKS);
     ctx.strokeStyle = '#ecd6a4';
     ctx.lineWidth = 3;
     ctx.beginPath();
@@ -235,7 +264,11 @@ function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
     ctx.fillStyle = '#ecd6a4';
     ctx.font = 'bold 15px Inter, sans-serif';
     ctx.fillText(`${Math.floor(g.kiste)} florin`, CHEST.x + CHEST.w + 12, CHEST.y + CHEST.h - 8);
-    if (misunnelig(g)) ctx.fillText('MISUNNELIGE!', CHEST.x + CHEST.w + 12, ly);
+    ctx.fillText(`tap: -${TAP_PRIS}`, CHEST.x + CHEST.w + 12, ly);
+    if (bankenSvikter(g)) {
+        ctx.fillStyle = '#ffaa28';
+        ctx.fillText('BANKEN SVIKTER', CHEST.x - 20, CHEST.y - 16);
+    }
 
     // Topplinja: år, trekning, tid, poeng.
     ctx.textAlign = 'left';
@@ -251,11 +284,7 @@ function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
     }
     ctx.textAlign = 'center';
     ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillText(
-        g.tapPåRad ? `Tapte trekninger på rad: ${g.tapPåRad}/3` : `Vunne trekninger: ${g.vunnet}`,
-        W / 2,
-        48
-    );
+    ctx.fillText(`Vunne trekninger: ${g.vunnet}`, W / 2, 48);
 
     // Gavekortet.
     if (g.kort) {
@@ -280,16 +309,16 @@ function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
         }
     }
 
-    // Trekningen: tre lapper snus én og én.
+    // Trekningen: fem lapper snus én og én.
     if (g.fase === 'trekning') {
         ctx.fillStyle = 'rgba(28,20,16,.6)';
         ctx.fillRect(0, 0, W, H);
         const gått = TREKK_S - g.faseT;
-        for (let i = 0; i < 3; i++) {
-            const x = W / 2 - 130 + i * 130;
-            const vis = gått > 0.5 + i * 0.8;
+        for (let i = 0; i < TREKKES; i++) {
+            const x = W / 2 - 240 + i * 120;
+            const vis = gått > 0.4 + i * 0.5;
             ctx.fillStyle = '#ecd6a4';
-            ctx.fillRect(x - 50, H / 2 - 70, 100, 140);
+            ctx.fillRect(x - 45, H / 2 - 65, 90, 130);
             if (vis) {
                 ctx.fillStyle = g.trukket[i] ? '#d8342a' : '#1c1410';
                 ctx.beginPath();
@@ -301,7 +330,11 @@ function draw(g: G, view: ArcadeView, drag: { x: number; y: number } | null) {
             const k = g.trukket.filter(Boolean).length;
             ctx.fillStyle = '#ecd6a4';
             ctx.font = 'bold 30px Inter, sans-serif';
-            ctx.fillText(k === 3 ? 'REN SIGNORIA!' : k === 2 ? 'VENNENE STYRER' : 'ALBIZZI VANT', W / 2, H / 2 + 120);
+            ctx.fillText(
+                k === TREKKES ? 'REN SIGNORIA!' : k >= MÅ_HA ? 'VENNENE STYRER' : `ALBIZZI VANT  -${TAP_PRIS} FLORIN`,
+                W / 2,
+                H / 2 + 120
+            );
         }
     }
     if (g.frys > 0) {
@@ -319,9 +352,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
     const [first] = useState(() => newGame(Math.floor(Math.random() * 1e9)));
     const gRef = useRef<G>(first);
     const tf = useRef({ s: 1, ox: 0, oy: 0 });
-    const drag = useRef<{ x: number; y: number } | null>(null);
-    const fishing = useRef(false);
-    const keys = useRef({ slipp: false, fisk: false });
+    const holder = useRef(false);
     const outcome = useRef<Outcome | null>(null);
     const [result, setResult] = useState<(Outcome & { g: G }) | null>(null);
     const botRng = useRef(seeded(1));
@@ -335,8 +366,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
     const start = () => {
         gRef.current = newGame(Math.floor(Math.random() * 1e9));
         outcome.current = null;
-        drag.current = null;
-        fishing.current = false;
+        holder.current = false;
         botN.current = 0;
         setResult(null);
         setModeBoth('play');
@@ -360,12 +390,11 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
         frame: (dt, view) => {
             const g = gRef.current;
             if (modeRef.current === 'play') {
-                if (keys.current.slipp && !g.hånd.act) begynn(g, 'slipp');
                 update(g, dt);
                 g.events.length = 0;
                 if (g.ended) endRun();
             }
-            tf.current = draw(g, view, drag.current);
+            tf.current = draw(g, view);
         },
     });
 
@@ -375,6 +404,8 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
         return { x: (e.clientX - r.left - t.ox) / t.s, y: (e.clientY - r.top - t.oy) / t.s };
     };
     const inBag = (p: { x: number; y: number }) => Math.hypot(p.x - BAG.x, p.y - BAG.y) < BAG.r + 25;
+    const iFiende = (p: { x: number; y: number }) =>
+        p.x >= FIENDE.x && p.x <= FIENDE.x + FIENDE.w && p.y >= FIENDE.y && p.y <= FIENDE.y + FIENDE.h;
 
     const onDown = (e: React.PointerEvent) => {
         if (modeRef.current !== 'play') return;
@@ -393,22 +424,14 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                 if (r) return void gi(g, r.id);
             }
         }
-        if (Math.hypot(p.x - PILE.x, p.y - PILE.y) < 60) drag.current = p;
-        else if (inBag(p)) fishing.current = begynn(g, 'fisk');
+        // Hold på posen = hånda inne, lappene faller. Hold på fiendelappene = fisk.
+        if (inBag(p)) holder.current = begynn(g, 'slipp');
+        else if (iFiende(p)) holder.current = begynn(g, 'fisk');
     };
-    const onMove = (e: React.PointerEvent) => {
-        if (drag.current) drag.current = toWorld(e);
-    };
-    const onUp = (e: React.PointerEvent) => {
-        const g = gRef.current;
-        if (drag.current) {
-            if (inBag(toWorld(e))) begynn(g, 'slipp');
-            drag.current = null;
-        }
-        if (fishing.current) {
-            fishing.current = false;
-            if (g.hånd.act === 'fisk') trekkUt(g);
-        }
+    const onUp = () => {
+        if (!holder.current) return;
+        holder.current = false;
+        trekkUt(gRef.current);
     };
 
     useEffect(() => {
@@ -416,10 +439,9 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
             if (modeRef.current !== 'play' || e.repeat) return;
             const g = gRef.current;
             if (e.code === 'Space') {
-                keys.current.slipp = true;
                 e.preventDefault();
+                begynn(g, 'slipp');
             } else if (e.code === 'KeyF') {
-                keys.current.fisk = true;
                 begynn(g, 'fisk');
             } else if (g.kort && (e.code === 'Digit1' || e.code === 'Digit2')) {
                 velgKunst(g, e.code === 'Digit1' ? 0 : 1);
@@ -427,11 +449,7 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
         };
         const up = (e: KeyboardEvent) => {
             const g = gRef.current;
-            if (e.code === 'Space') keys.current.slipp = false;
-            if (e.code === 'KeyF') {
-                keys.current.fisk = false;
-                if (g.hånd.act === 'fisk') trekkUt(g);
-            }
+            if ((e.code === 'Space' && g.hånd.act === 'slipp') || (e.code === 'KeyF' && g.hånd.act === 'fisk')) trekkUt(g);
         };
         window.addEventListener('keydown', down);
         window.addEventListener('keyup', up);
@@ -483,7 +501,6 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                     <canvas
                         ref={bindCanvas}
                         onPointerDown={onDown}
-                        onPointerMove={onMove}
                         onPointerUp={onUp}
                         onPointerCancel={onUp}
                         style={{ touchAction: 'none', cursor: 'grab' }}
@@ -493,9 +510,9 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                             <ArcadeLogo>Loddposen</ArcadeLogo>
                             <ArcadeTag>Medici i Firenze, 1434-1492</ArcadeTag>
                             <p style={{ margin: '10px 0 0', fontWeight: 600, fontSize: 14, lineHeight: 1.4 }}>
-                                Dra Medici-lapper ned i posen når ingen ser (eller hold mellomrom). Kremter
-                                noen, snur de seg snart. Hver lapp koster florin - men for mye gull gjør
-                                rådsherrene misunnelige.
+                                Hold på posen (eller mellomrom) når ingen ser - lappene faller så lenge
+                                hånda er inne. Kremter noen, slipp! Hver lapp koster florin, og 3 av 5
+                                trukne lapper må være venner.
                             </p>
                             <div style={{ marginTop: 14 }}>
                                 <ArcadeBigButton onClick={start}>Smugle</ArcadeBigButton>
@@ -520,9 +537,9 @@ export default function Loddposen({ onComplete }: MicroGameProps) {
                             />
                             <ArcadeLessons
                                 items={[
-                                    'Flere venner i posen gir bedre sjanse i trekningen.',
-                                    'Hånda i posen når et blikk treffer = tatt.',
-                                    'Banken betaler vennene: bruk gullet, men la aldri kista bli tom.',
+                                    'Hånda inn når alle ser bort, ut når noen kremter.',
+                                    'Florin betaler alt: lapper koster, en tapt trekning koster mer.',
+                                    '3 av 5 vinner: flere venner i posen gir bedre sjanse.',
                                 ]}
                             />
                             <div style={{ marginTop: 12 }}>

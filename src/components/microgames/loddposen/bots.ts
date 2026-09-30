@@ -4,30 +4,34 @@ import {
     begynn,
     farligst,
     gi,
-    lønn,
-    misunnelig,
+    lapper,
     odds,
     spar,
+    stillePazzi,
     trekkUt,
     velgKunst,
     LAPP_PRIS,
-    MISUNNELSE,
-    TREKNINGER,
+    MIN_LAPPER,
+    PAZZI_STILLE_S,
+    TAP_PRIS,
     type G,
 } from './game';
 
 // Selvspill-robotene for Loddposen. De bruker de samme grepene som eleven (begynn,
 // trekkUt, velgKunst, gi, spar) og ser bare det eleven ser: hvem som ser bort, hvem som
-// kremter, hvor lenge siden Pazzi snudde seg, kista og kulene ved posen.
+// kremter, hvor lenge siden Pazzi snudde seg, kista og sjansen ved posen.
 
 export type BotStyle = 'seende' | 'halvgod' | 'ødeland' | 'tilfeldig';
 
-/** Er det trygt å stikke hånda i posen nå? */
-function trygt(g: G, pazziVent: number) {
+const pazzi = (g: G) => g.rådsherrer.find((r) => stillePazzi(g, r) && aktiv(r));
+
+/** Er det trygt å stikke hånda i posen nå? `stilleInn`: hvor sent i Pazzis stille bortblikk man tør. */
+function trygt(g: G, pazziVent: number, stilleInn: number) {
     return g.rådsherrer.every((r) => {
         if (!aktiv(r)) return true;
         if (r.blikk !== 'bort') return false;
-        // Pazzi later som han ser bort og snur seg tilbake - vent litt etter at han snudde seg.
+        if (stillePazzi(g, r)) return r.siden < stilleInn;
+        // Før 1478 later Pazzi som han ser bort og snur seg tilbake - vent litt.
         if (r.slag === 'pazzi' && r.siden < pazziVent) return false;
         return true;
     });
@@ -35,11 +39,8 @@ function trygt(g: G, pazziVent: number) {
 
 const truet = (g: G) => g.rådsherrer.some((r) => aktiv(r) && r.blikk !== 'bort');
 
-/** Hvor mye gull som må ligge igjen i kista: lønna etter denne trekningen, og en buffer mot 1469. */
-function reserve(g: G) {
-    const buffer = g.trekning >= 2 && g.trekning < TREKNINGER - 1 ? 60 : 0;
-    return lønn(3) + buffer;
-}
+/** Gull som må ligge igjen i kista i tilfelle trekningen går tapt. */
+const reserve = () => TAP_PRIS + LAPP_PRIS;
 
 function kunstvalg(g: G, style: BotStyle) {
     const k = g.kort;
@@ -51,24 +52,22 @@ function kunstvalg(g: G, style: BotStyle) {
         return true;
     }
     if (style === 'ødeland') {
-        // Kjøper alltid det dyreste den har råd til - uten å tenke på lønna.
+        // Kjøper alltid det dyreste den har råd til - uten å tenke på kista.
         if (g.kiste >= k.valg[1].pris) return velgKunst(g, 1);
         if (g.kiste >= k.valg[0].pris) return velgKunst(g, 0);
         return false;
     }
+    const aktive = g.rådsherrer.filter(aktiv).length;
     if (style === 'halvgod') {
-        // Kjøper bare noe når kista er over misunnelseslinja.
-        if (misunnelig(g) && g.kiste - k.valg[0].pris >= lønn(3)) return velgKunst(g, 0);
+        // Kjøper det billige verket bare når kista er god og bordet er fullt.
+        if (aktive >= 5 && g.kiste - k.valg[0].pris >= 200) return velgKunst(g, 0);
         return false;
     }
-    // Kunst når bordet er fullt av blikk eller kista er misunnelig, men aldri så lønna ryker.
-    const aktive = g.rådsherrer.filter(aktiv).length;
-    const behov = misunnelig(g) || aktive >= 4 || g.kiste > MISUNNELSE - 60;
-    const res = lønn(3) + LAPP_PRIS * 4;
-    // Det verket som gir flest beundrer-trekninger per florin, og som kista tåler.
+    // Kunst når bordet er fullt av blikk, men aldri så kista ikke tåler en tapt trekning.
+    const res = reserve();
     const råd = ([0, 1] as const).filter((i) => g.kiste - k.valg[i].pris >= res);
     råd.sort((a, b) => k.valg[b].trekninger / k.valg[b].pris - k.valg[a].trekninger / k.valg[a].pris);
-    if (behov && råd.length) return velgKunst(g, råd[0]);
+    if (råd.length) return velgKunst(g, råd[0]);
     spar(g);
     return true;
 }
@@ -76,30 +75,39 @@ function kunstvalg(g: G, style: BotStyle) {
 export function botTick(g: G, style: BotStyle, rng: Rng, tick: number) {
     if (g.ended || g.fase !== 'smugle') return;
     if (style === 'tilfeldig') return tilfeldigTick(g, rng);
+    // Den middels gode er treg: ser på bordet bare hvert tredje øyeblikk.
     if (style === 'halvgod' && tick % 3 !== 0) return;
 
-    // Hånda i posen og noen kremter: et slipp er raskere enn kremtet, et fiske er det ikke.
-    // Pazzi kremter kortere enn de andre, så med ham drar vinneren alltid hånda ut.
+    const halv = style === 'halvgod';
+    const o = odds(g.venner, g.fiender);
+    const mål = halv ? 0.8 : g.trekning < 4 ? 0.9 : 0.95;
+    const ødeland = style === 'ødeland';
+    // Den middels gode sparer bare til halve tapet.
+    const tåler = ødeland ? LAPP_PRIS : halv ? TAP_PRIS / 2 + LAPP_PRIS : reserve() + LAPP_PRIS;
+    const p = pazzi(g);
+
     if (g.hånd.act) {
-        const pazziKremter = g.rådsherrer.some((r) => aktiv(r) && r.slag === 'pazzi' && r.blikk !== 'bort');
-        if (truet(g) && (g.hånd.act === 'fisk' || pazziKremter)) trekkUt(g);
+        // Kremt = ut. Stille Pazzi: ut før halvannet sekund er gått.
+        const pazziSnart = p && p.siden >= PAZZI_STILLE_S - (halv ? 0.7 : 0.25);
+        if (truet(g) || pazziSnart) return void trekkUt(g);
+        if (g.hånd.act === 'slipp') {
+            // Grådig: blir i posen til kremtet, med mindre sjansen er god nok eller kista er tom.
+            // Forsiktig: ut etter to lapper.
+            if (halv && g.hånd.dukk >= 2) return void trekkUt(g);
+            if (!ødeland && o >= mål) return void trekkUt(g);
+            if (g.kiste < tåler) return void trekkUt(g);
+        } else if (g.fiender <= 0 || lapper(g) <= MIN_LAPPER || o >= mål) trekkUt(g);
         return;
     }
 
     if (kunstvalg(g, style)) return;
 
-    const pazziVent = style === 'halvgod' ? 0.2 : 0.35;
-    if (!trygt(g, pazziVent)) return;
+    if (!trygt(g, halv ? 0.2 : 0.35, PAZZI_STILLE_S - (halv ? 1.3 : 0.8))) return;
+    if (o >= mål && !ødeland) return;
 
-    const o = odds(g.venner, g.fiender);
-    const mål = style === 'halvgod' ? 0.78 : g.trekning < 4 ? 0.88 : 0.93;
-    // Ødelanden kjøper venner så lenge det er gull i kista, uansett hvor gode oddsen er.
-    if (o >= mål && style !== 'ødeland') return;
-
-    const rå = style === 'ødeland' ? LAPP_PRIS : reserve(g) + LAPP_PRIS;
-    const harRåd = g.kiste >= rå;
-    // Fisk når gullet er knapt (fisking er gratis, men tar lengre tid).
-    if (style !== 'halvgod' && g.fiender > 0 && (!harRåd || (g.fiender >= 4 && rng() < 0.3))) {
+    const harRåd = g.kiste >= tåler;
+    // Fisk når gullet er knapt (fisking er gratis, men gir ingen multiplikator).
+    if (!halv && !ødeland && !harRåd && g.fiender > 0 && lapper(g) > MIN_LAPPER) {
         begynn(g, 'fisk');
         return;
     }
@@ -128,19 +136,19 @@ export const BOTS: Record<
     seende: {
         forventer: 'vinner',
         beskrivelse:
-            'Slipper lapper bare når alle ser bort (og venter litt etter Pazzi), drar hånda ut ved kremtet, holder gull til lønna og kjøper kunst til den farligste rådsherren når kista blir misunnelig.',
+            'Grådig: holder hånda i posen så lenge alle ser bort og drar den ut ved kremtet (og før Pazzis stille blikk fra 1478), holder 50 florin i reserve, fisker når kista er tom og kjøper kunst til den farligste rådsherren.',
         style: 'seende',
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger samme regler, men reagerer bare hvert tredje øyeblikk, fisker aldri, stoler for fort på Pazzi og nøyer seg med dårligere odds.',
+            'Forsiktig og treg: ser på bordet bare hvert tredje øyeblikk, drar hånda ut etter to lapper (ingen multiplikator), fisker aldri og nøyer seg med dårligere sjanse.',
         style: 'halvgod',
     },
     ødeland: {
         forventer: 'taper',
         beskrivelse:
-            'Smugler like flinkt som vinneren, men ignorerer banken: kjøper alltid det dyreste kunstverket og bruker hver florin på lapper uten å spare til lønna.',
+            'Smugler like flinkt som vinneren, men ignorerer kista: kjøper alltid det dyreste kunstverket og bruker hver florin på lapper uten å spare til en tapt trekning.',
         style: 'ødeland',
     },
     tilfeldig: {
