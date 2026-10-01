@@ -8,7 +8,7 @@ import { roadAt, waveDef, slagDef, isAir, power, har, type G, type IO, type Unit
 /** Sekunder mellom skudd per enhetstype (skaden er dps * periode). */
 const PERIOD: Record<Kind, number> = { inf: 0.7, vogn: 1.5, pv: 1.6, art: COMBAT.artSalve, lv: 0.45, jag: 0.5, bomb: 1, fsk: 0.7 };
 const E_PERIOD: Record<EKind, number> = { einf: 0.8, evogn: 1.6, epak: 1.8, estuka: 1, ejag: 0.5, ebatt: 1 };
-const AIR_ALT = 3.2;
+export const AIR_ALT = 3.2;
 const JAG_SPEED = 3.9;
 const BOMB_SPEED = 3;
 

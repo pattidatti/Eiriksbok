@@ -500,7 +500,7 @@ export function Board({
     const mat = useMemo(() => withClouds(new THREE.MeshStandardMaterial({ map: tex, roughness: 1, metalness: 0 }), look), [tex, look]);
     return (
         <group>
-            <Lighting look={look} />
+            <Lighting look={look} gRef={gRef} />
             <Haze look={look} tåke={tåke} />
             <mesh
                 geometry={geo}

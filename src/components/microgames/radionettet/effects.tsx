@@ -132,6 +132,8 @@ const FLAT = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0),
 const TQ = new THREE.Quaternion();
 const QY = new THREE.Quaternion();
 const Y = new THREE.Vector3(0, 1, 0);
+const V = new THREE.Vector3();
+const CQ = new THREE.Quaternion();
 
 /** Kratervollen: en lav, ujevn jordvoll rundt nedslaget (slagmarken blir arrete utover i slaget). */
 function craterRim() {
@@ -159,7 +161,7 @@ export function Effects({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRef
     const meshes = useMemo(
         () => ({
             smoke: particleMesh(smokeTexture(), MAX_PUFF, false, true),
-            glow: particleMesh(glowTexture(), 160, true, false),
+            glow: particleMesh(glowTexture(), 260, true, false),
         }),
         []
     );
@@ -187,20 +189,30 @@ export function Effects({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRef
         fx.step(dt);
         const lists = [meshes.smoke, meshes.glow];
         const n = [0, 0];
+        CQ.copy(st.camera.quaternion).invert();
         for (const p of fx.puffs) {
             if (!p.on) continue;
             const li = p.glow ? 1 : 0;
             const m = lists[li];
             const i = n[li];
-            if (i >= (li ? 160 : MAX_PUFF)) continue;
+            if (i >= (li ? 260 : MAX_PUFF)) continue;
             const k = p.t / p.life;
             // Vokser raskt først, så sakte; tettheten kommer fort og blekner mot slutten.
             const grow = 1 - (1 - Math.min(1, k)) ** 2.5;
             const r = (p.r0 + (p.r1 - p.r0) * grow) * 2.3;
-            const a = p.drag === 0 ? 1 : p.fall ? (k < 0.8 ? 1 : (1 - k) / 0.2) : p.glow ? (1 - k) ** 1.4 : Math.min(1, k * 8) * (1 - k) ** 1.3;
-            QZ.setFromAxisAngle(Z, p.spin + p.t * 0.3);
-            Q.copy(st.camera.quaternion).multiply(QZ);
-            M.compose(P.set(p.x, p.y, p.z), Q, S.set(r, r, r));
+            const a = p.streak > 0 ? 1 : p.fall ? (k < 0.8 ? 1 : (1 - k) / 0.2) : p.glow ? (1 - k) ** 1.4 : Math.min(1, k * 8) * (1 - k) ** 1.3;
+            if (p.streak > 0) {
+                // Sporlys og granater: strekkes ut langs farten slik kameraet ser den.
+                V.set(p.vx, p.vy, p.vz).applyQuaternion(CQ);
+                const len = Math.hypot(V.x, V.y) * p.streak;
+                QZ.setFromAxisAngle(Z, Math.atan2(V.y, V.x));
+                Q.copy(st.camera.quaternion).multiply(QZ);
+                M.compose(P.set(p.x - p.vx * p.streak * 0.5, p.y - p.vy * p.streak * 0.5, p.z - p.vz * p.streak * 0.5), Q, S.set(r + len, r, r));
+            } else {
+                QZ.setFromAxisAngle(Z, p.spin + p.t * 0.3);
+                Q.copy(st.camera.quaternion).multiply(QZ);
+                M.compose(P.set(p.x, p.y, p.z), Q, S.set(r, r, r));
+            }
             m.setMatrixAt(i, M);
             const col = m.geometry.getAttribute('aCol') as THREE.InstancedBufferAttribute;
             const al = m.geometry.getAttribute('aAlpha') as THREE.InstancedBufferAttribute;
@@ -272,7 +284,7 @@ const SEA = new Set(['dunkerque', 'normandie']);
 /** Stemningen: røyksøyler, fjerne kanonglimt på fiendens side (tordenen kommer litt etter),
  *  krutt-dis som driver over slagmarken, og vind og måker mens eleven planlegger. */
 export function Ambience({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRefObject<G>; fxRef: React.MutableRefObject<FxPool>; speedRef: React.MutableRefObject<number>; sfx?: (name: string) => void }) {
-    const t = useRef({ col: 0, flash: 2, mg: 6, haze: 1, vind: 3, måke: 5 });
+    const t = useRef({ col: 0, flash: 2, mg: 6, haze: 1, vind: 3, måke: 5, glør: 0, snø: 0 });
     const q = useQuality();
     useFrame((_, raw) => {
         const dt = Math.min(0.05, raw) * speedRef.current;
@@ -316,6 +328,24 @@ export function Ambience({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRe
             s.haze = (wave ? 1.6 : 4) / Math.max(0.3, q.particleScale);
             const p = fx.puff('røyk', Math.random() * 14, 0.35, Math.random() * 10, { r: 0.7, grow: 2.2, life: 9, up: 0.03, spread: 0.1 });
             p.a = wave ? 0.16 : 0.09;
+        }
+        // Glør og aske som stiger fra slagmarken mens kampen pågår.
+        s.glør -= dt;
+        if (wave && s.glør <= 0) {
+            s.glør = 0.12 / Math.max(0.3, q.particleScale);
+            const p = fx.puff('glo', Math.random() * 16, 0.2, Math.random() * 11, { r: 0.022, grow: 1, life: 3.5, up: 0.45, spread: 0.5 });
+            p.a = 0.75;
+        }
+        // Bastogne: snøen faller hele tida, sakte og skrått med vinden.
+        if (id === 'bastogne') {
+            s.snø -= dt;
+            if (s.snø <= 0) {
+                s.snø = 0.05 / Math.max(0.3, q.particleScale);
+                const p = fx.puff('vann', Math.random() * 18 - 1, 3.2, Math.random() * 13 - 1, { r: 0.028, grow: 1, life: 6, up: 0, spread: 0.2 });
+                p.vy = -0.55 - Math.random() * 0.2;
+                p.drag = 0;
+                p.a = 0.9;
+            }
         }
         if (!wave) {
             s.vind -= dt;

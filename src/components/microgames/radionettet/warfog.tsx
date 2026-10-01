@@ -11,7 +11,7 @@ import { CLOCK, DENS, MAX, flashes, fogFlash } from './fogState';
 // inne i den. Tre lag med flate plan i hver sin høyde gir dybde i det skrå kameraet; glimtene er
 // lys inne i tåka (`fogFlash`), ikke partikler, så de koster ingenting ekstra å tegne.
 
-const COLOR: Record<Look, string> = { kyst: '#7d8584', ørken: '#c2ae86', steppe: '#8f8468', vinter: '#c3cbd1' };
+const COLOR: Record<Look, string> = { kyst: '#6e7472', ørken: '#b59f78', steppe: '#7f735a', vinter: '#b9c2c9' };
 
 const VERT = `
 varying vec2 vW;
@@ -26,6 +26,7 @@ uniform float uTime;
 uniform float uSeed;
 uniform float uDens;
 uniform float uLayer;
+uniform float uEmber;
 uniform vec2 uShift;
 uniform vec3 uCol;
 uniform vec4 uFlash[${MAX}];
@@ -62,7 +63,13 @@ void main() {
     }
     glow = min(glow, 1.6);
     vec3 warm = vec3(1.9, 1.05, 0.45);
-    vec3 col = mix(uCol * (0.82 + cloud * 0.3), warm, min(1.0, glow * 0.9));
+    // Skyene har lys topp og mørk bunn: mer kontrast enn en flat dis.
+    vec3 col = uCol * (0.6 + cloud * 0.62);
+    // Branner nede i tåka: faste glør som flakker, mest på fiendens side.
+    float hot = uEmber * smoothstep(0.6, 0.86, fbm(gp * 0.42 + uSeed * 3.1)) * edge;
+    hot *= 0.7 + 0.3 * sin(uTime * 6.0 + gp.x * 2.3 + gp.y * 1.7);
+    col = mix(col, vec3(1.7, 0.62, 0.2), min(0.75, hot));
+    col = mix(col, warm, min(1.0, glow * 0.9));
     gl_FragColor = vec4(col, min(0.94, a + glow * 0.25 * edge));
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
@@ -81,6 +88,7 @@ function Layer({ y, seed, col }: { y: number; seed: number; col: string }) {
                     uSeed: { value: seed },
                     uDens: DENS,
                     uLayer: { value: y > 1 ? 0.7 : 1 },
+                    uEmber: { value: y < 0.5 ? 1 : 0 },
                     // Kameraet ser 48 grader ned fra sørøst (world.tsx CAM_DIR): xz / y.
                     uShift: { value: new THREE.Vector2(0.445 * y, 0.777 * y) },
                     uCol: { value: new THREE.Color(col) },

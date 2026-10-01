@@ -306,3 +306,14 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   fiende: spillet går i 0,18× mens kameraet dykker mot stedet, kanten mørkner og en dyp dunk høres.
   Porter: simulering uendret (samvirke 93 %, trappen 965 < 1730-1785 < 5835), selvspill grønt
   (71 draw calls, JS p95 7,3 ms på lav), scene-audit grønn. Venter på at eieren ser kampen.
+- 2026-10-01, eierens rettelser («la oss se om vi kan gjøre det enda litt mer visuelt imponerende og
+  mer juicy»). Gjort: Lys: lavere sol med lengre skygger og mer kontrast i alle slag, og himmellyset
+  mørkner litt i bølgen. Kampen lyser opp verden: smell, nedslag, kanonskudd og gnister tenner ekte
+  punktlys som farger bakken og figurene rundt (`flare.ts`). Sporlys: gevær, maskingevær og fly
+  skyter glødende streker (våre gule, fiendens rødoransje), og granatene strekkes ut langs farten.
+  Treff: figuren blinker hvitvarm, rister og klemmes sammen et øyeblikk. Smellene er større:
+  ildkule som ruller opp, gnistregn, støvring som blåses ut langs bakken, og vogner som går i
+  lufta får to-tre sekundærsmell når ammunisjonen går av (kameraet rister). Krigståka har lys topp
+  og mørk bunn, og branner som flakker nede i den. Glør stiger fra slagmarken i bølgen, og det
+  snør i Bastogne. Porter: simulering uendret (samvirke 93 %, trappen 965 < 1730-1785 < 5835),
+  selvspill grønt (71 draw calls, JS p95 9,3 ms på lav). Venter på at eieren ser kampen.

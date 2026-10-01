@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { RADIO, UNITS } from './tuning';
 import { MAP_D, MAP_W, FLYPLASS } from './levels';
 import { canPlace, isAir, reachable, slagDef, unitAt, usedChannels, type G, type Unit, type Enemy } from './game';
-import { C, LOOK, modelsFor, wreck, propeller, figureMaterial, figureMaterialHi, PROPS, type Look, type Model } from './models';
+import { C, LOOK, modelsFor, wreck, propeller, figureMaterial, figureMaterialHi, figureMaterialHit, PROPS, type Look, type Model } from './models';
 import type { FxPool } from './fxPool';
 import { rankMaterial } from './rank';
 import { cineDepth, type Cine } from './cine';
@@ -217,13 +217,24 @@ function turn(cur: number, target: number, k: number) {
     return cur + d * Math.min(1, k);
 }
 
-/** Bytter materialet på figurens deler (lysere når den er markert). */
-function paint(g: THREE.Object3D, hi: boolean) {
-    const m = hi ? figureMaterialHi() : figureMaterial();
+/** Bytter materialet på figurens deler: 0 vanlig, 1 markert (lysere), 2 truffet (blinker). */
+function paint(g: THREE.Object3D, mode: number) {
+    const all = [figureMaterial(), figureMaterialHi(), figureMaterialHit()];
+    const m = all[mode];
     g.traverse((o) => {
-        if ((o as THREE.Mesh).isMesh && (o as THREE.Mesh).material !== m && ((o as THREE.Mesh).material === figureMaterial() || (o as THREE.Mesh).material === figureMaterialHi())) (o as THREE.Mesh).material = m;
+        const mesh = o as THREE.Mesh;
+        if (mesh.isMesh && mesh.material !== m && all.includes(mesh.material as THREE.MeshStandardMaterial)) mesh.material = m;
     });
 }
+
+/** Treffet: blink, et lite rykk og en klem. Returnerer hvor sterkt (0-1) det er nå. */
+function hitPulse(s: { hitT: number; lastHp: number }, hp: number, dt: number) {
+    if (hp < s.lastHp - 1e-3) s.hitT = HIT_T;
+    s.lastHp = hp;
+    s.hitT = Math.max(0, s.hitT - dt);
+    return s.hitT / HIT_T;
+}
+const HIT_T = 0.14;
 
 function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit; look: Look; gRef: React.MutableRefObject<G>; onClick: (id: number) => void; fxRef: React.MutableRefObject<FxPool>; speedRef: Speed; hlRef: React.MutableRefObject<Hl> }) {
     const grp = useRef<THREE.Group>(null);
@@ -233,7 +244,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
     const bar = useRef<THREE.Mesh>(null);
     const props = useRef<THREE.Group>(null);
     const rank = useRef<THREE.Sprite>(null);
-    const st = useRef({ yaw: 0, aim: 0, lastKick: 0, deadT: -1, roll: 0, pitch: 0, lastH: 0, lastAlt: 0, fx: 0, fz: 0, fy: 0, vy: 0, hi: false });
+    const st = useRef({ yaw: 0, aim: 0, lastKick: 0, deadT: -1, roll: 0, pitch: 0, lastH: 0, lastAlt: 0, fx: 0, fz: 0, fy: 0, vy: 0, mode: 0, hitT: 0, lastHp: u.hp });
     const air = isAir(u.kind);
     const set = modelsFor(look);
     const topModel = set.unitTop[u.kind];
@@ -326,16 +337,22 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
         s.lastKick = u.kick;
         // Markert: lysere figur, og et lite hopp når den nettopp ble klikket.
         const hl = hlRef.current;
-        const hi = hlOn(hl, u.id);
-        if (hi !== s.hi) {
-            s.hi = hi;
-            paint(body.current, hi);
+        const hit = hitPulse(s, u.hp, Math.min(0.05, raw));
+        const mode = hit > 0.45 ? 2 : hlOn(hl, u.id) ? 1 : 0;
+        if (mode !== s.mode) {
+            s.mode = mode;
+            paint(body.current, mode);
         }
+        if (hit > 0 && !air) {
+            // Rykket: figuren skjelver litt sidelengs mens blinket varer.
+            body.current.position.x = (Math.random() - 0.5) * 0.08 * hit;
+            body.current.position.z = (Math.random() - 0.5) * 0.08 * hit;
+        } else if (!air) body.current.position.x = body.current.position.z = 0;
         const since = performance.now() / 1000 - hl.pickT;
         const hop = hl.pick === u.id && since < 0.35 ? Math.sin((since / 0.35) * Math.PI) : 0;
         const f = (air ? AIR_FIG : FIG) * (1 + hop * 0.14);
-        const sc = f * (1 + u.kick * 0.06);
-        body.current.scale.set(sc, f * (1 - u.kick * 0.05), sc);
+        const sc = f * (1 + u.kick * 0.06 + hit * 0.08);
+        body.current.scale.set(sc, f * (1 - u.kick * 0.05 - hit * 0.1), sc);
         if (rank.current) {
             // Merket smekker inn stort når enheten nettopp ble slått sammen, og følger flyet.
             const pop = hl.pick === u.id && since < 0.6 ? 1 + Math.sin((since / 0.6) * Math.PI) * 0.9 : 1;
@@ -412,7 +429,7 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
     const props = useRef<THREE.Group>(null);
     const fly = e.kind === 'estuka' || e.kind === 'ejag';
     const heavy = e.kind === 'evogn' || e.kind === 'epak' || e.kind === 'ebatt';
-    const st = useRef({ yaw: Math.PI, px: e.x, pz: e.z, deadT: -1, fx: 0, fy: 0, fz: 0, vy: 0, roll: 0, lastH: e.heading, bank: 0, phase: e.phase, dust: 0, t: e.id * 1.7 });
+    const st = useRef({ yaw: Math.PI, px: e.x, pz: e.z, deadT: -1, fx: 0, fy: 0, fz: 0, vy: 0, roll: 0, lastH: e.heading, bank: 0, phase: e.phase, dust: 0, t: e.id * 1.7, mode: 0, hitT: 0, lastHp: e.hp });
     const set = modelsFor(look);
     const topModel = set.enemyTop[e.kind];
     const model = set.enemy[e.kind];
@@ -504,9 +521,19 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
                 fx.puff('støv', e.x - Math.cos(s.yaw) * 0.6, 0.1, e.z + Math.sin(s.yaw) * 0.6, { r: 0.12, grow: 2.4, life: 0.9, up: 0.25, spread: 0.3 });
             }
         }
+        const hit = hitPulse(s, e.hp, Math.min(0.05, raw));
+        const mode = hit > 0.45 ? 2 : 0;
+        if (mode !== s.mode) {
+            s.mode = mode;
+            paint(body.current, mode);
+        }
+        if (hit > 0 && !fly) {
+            body.current.position.x = (Math.random() - 0.5) * 0.08 * hit;
+            body.current.position.z = (Math.random() - 0.5) * 0.08 * hit;
+        } else if (!fly) body.current.position.x = body.current.position.z = 0;
         const f = fly ? AIR_FIG : FIG;
-        const sc = f * (1 + e.kick * 0.05);
-        body.current.scale.set(sc, f, sc);
+        const sc = f * (1 + e.kick * 0.05 + hit * 0.08);
+        body.current.scale.set(sc, f * (1 - hit * 0.1), sc);
         const netSees = g.netSeen.has(e.id);
         // Nedgravd panservern som ingen i nettet ser: bare et blaff. Batteriet synes bare når det skyter.
         if (e.dug && !netSees) body.current.visible = e.kind === 'ebatt' ? e.kick > 0.25 : Math.sin(clock.clock.elapsedTime * 3) > 0.6;

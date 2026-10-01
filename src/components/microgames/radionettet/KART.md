@@ -19,6 +19,7 @@ Fase: **gråboks-diagnose 2 + slag 4-6** (kunst v2 står). Komponenten: `../Radi
 | `damage.tsx`/`damagePool.ts` | Skadetallene over den som blir truffet (combat sender `Fx` `tall`; `wait` = granaten er på vei) |
 | `cine.ts` | Kinokameraet og sakte film: `bulletTime(c, x, z, dur)` (minst 5 s mellom, bølgens siste fiende alltid), `cineScale` (spillets tempo, ganges inn i `io.timeScale`), `cineDepth` (zoom og vignett). `Camera` i `world.tsx` følger fienden i bølgen (zoom 1,2, svai), dykker mot stedet i sakte film, og viser hele kartet i planleggingen, med kort i hånda og med sperreild |
 | `warfog.tsx`/`fogState.ts` | Krigståka rundt brettet: tre lag plan med støy-skyer (to på lav), masken regnet på bakken bak tåka (`uShift`), artilleriglimt og salver som lyser den opp innenfra (`fogFlash`, også fra `Ambience`) |
+| `flare.ts` | Lysglimt fra kampen: fire punktlys (to på lav) som gjenbrukes (`flare()`), tegnet i `Flares` i `light.tsx`. `fxPool` tenner dem ved smell, nedslag, kanonskudd og gnister. Antallet lys er fast, ellers kompileres materialene på nytt |
 | `rank.ts` | Gradsmerket over sammenslåtte enheter (to vinkler / stjerne for veteran), sprite som aldri skjules |
 | `life.tsx` | Verden som lever: flyformasjoner høyt oppe (pynt), småbåter ved kysten |
 | `light.tsx`, `models.ts`, `hud.tsx`/`hudData.ts` | Lys per look, figurene (`PAL`, `SQUAD`, `soldierParts`), HUD |
@@ -59,6 +60,8 @@ med 7 igjen, trappen 965 < 1730 < 5835). Ett slag om gangen:
   i bakkeshaderen (`MARKS`), ikke som flate mesher (de skjæres av åsene).
 - Shader-materialer (`warfog.tsx`) må ha `#include <tonemapping_fragment>` og `<colorspace_fragment>`, ellers blir fargene mørke og grumsete.
 - Sammenslåing: `setTiles` verdi 3 (blå kanal) = en lik enhet å legge oppå; tegnes hvit og pulserende i bakkeshaderen.
+- Sporlys og granater er partikler med `streak` (strekkes langs farten i `effects.tsx`); `drag 0` alene betyr bare rett linje, ikke full tetthet.
+- Treff: figurene blinker med `figureMaterialHit` og rister (`hitPulse` i `world.tsx`), styrt av at `hp` faller.
 - Skadetallene starter aldri under 13 px (`pop` i `damagePool.ts`), ellers feiler selvspillets skriftport.
 - Åsene inne på brettet går bare opp fra null (`inner` i `ground.ts`): et søkk under null viser skjørtet.
 - Eierens dev-server på 5173 kan servere gamle filer: test mot egen Vite på 5190 (`.screenshots/vite.test.config.mjs`).
