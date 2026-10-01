@@ -1,4 +1,4 @@
-import { COMBAT, ENEMIES, KOMPANI, KORT_TALL, SCORE, UNITS, type Armor, type EKind, type Kind, type UnitStat } from './tuning';
+import { COMBAT, ECONOMY, ENEMIES, KOMPANI, KORT_TALL, SCORE, UNITS, type Armor, type EKind, type Kind, type UnitStat } from './tuning';
 import { MAP_D, MAP_W } from './levels';
 import { roadAt, waveDef, slagDef, isAir, power, har, type G, type IO, type Unit, type Enemy } from './game';
 import { stepOrders } from './orders';
@@ -89,6 +89,10 @@ export function hit(g: G, e: Enemy, dmg: number, io: IO) {
         e.dead = true;
         g.kills += 1;
         g.score += SCORE.drap[e.kind];
+        // Fienden slipper forsyninger: de går rett i kassa, og et tall flyr opp til den.
+        const bytte = ECONOMY.bytte[e.kind];
+        g.forsyninger += bytte;
+        g.fx.push({ kind: 'gull', x: e.x, z: e.z, x2: e.x, z2: e.z, alt: e.alt, t: 0, life: 0.3, fiende: false, n: bytte });
         g.fx.push(fx('smell', e.x, e.z, e.alt, false, ENEMIES[e.kind].fly ? 1.2 : 0.7));
         io.event((ENEMIES[e.kind].fly ? 'flyNed:' : 'drept:') + e.kind, e.x, e.z);
     }

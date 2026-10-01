@@ -104,5 +104,24 @@ linear-gradient(rgba(16,19,12,.25),rgba(16,19,12,.45))}
 .rn-btn[disabled]{opacity:.5;cursor:not-allowed}
 .rn-info{pointer-events:none;background:rgba(228,220,195,.95);border:2px solid #2a2f1e;border-radius:3px;padding:6px 10px;font-size:14px;color:#1f2318;max-width:320px}
 .rn-info b{font-weight:800}
-.rn-money{font-weight:800;font-size:18px;color:#f1ead2;background:#2f3522;border:2px solid #11130c;border-radius:3px;padding:4px 10px;pointer-events:none}
+.rn-money{display:flex;align-items:center;gap:6px;white-space:nowrap;font-weight:900;font-size:20px;color:#ffd75a;background:#2f3522;border:2px solid #11130c;border-radius:3px;padding:5px 10px;pointer-events:none;box-shadow:0 3px 0 #11130c}
+.rn-money .lbl{font-size:14px;font-weight:700;color:#f1ead2}
+.rn-money .kasse{width:16px;height:13px;border-radius:2px;background:linear-gradient(#e7b43a,#a8781c);box-shadow:inset 0 -4px 0 rgba(0,0,0,.2),0 0 0 1.5px #11130c}
+.rn-ordrer-plan{position:absolute;right:12px;bottom:176px;pointer-events:none;display:flex;flex-direction:column;align-items:flex-end;gap:28px}
+.rn-ordrer-tit{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#f1ead2;background:rgba(20,22,14,.78);padding:3px 8px;border-radius:3px}
+.rn-ordrer-plan .rn-evne{height:58px}
+.rn-evw{position:relative;pointer-events:auto}
+.rn-evne .lv{position:absolute;right:7px;bottom:7px;display:flex;gap:3px}
+.rn-evne .lv i{width:7px;height:7px;transform:rotate(45deg);background:rgba(241,234,210,.25);border:1px solid #11130c}
+.rn-evne .lv i[data-on="1"]{background:#ffd75a}
+.rn-evne[data-state="buy"]{background:linear-gradient(#3b3f30,#26291d);color:#b9b39c;border-style:dashed}
+.rn-evne[data-state="buy"] .sb{color:#b9b39c}
+.rn-evne[data-state="buy"][data-raad="1"]{color:#f1ead2;border-style:solid;border-color:#ffd75a;animation:rn-glow 1.2s ease-in-out infinite}
+.rn-evne[data-state="buy"][data-raad="1"] .sb{color:#ffd75a}
+.rn-evne[data-state="buy"][data-raad="1"]:hover{transform:translateY(-4px)}
+.rn-evne[data-state="owned"]{cursor:default}
+.rn-up{position:absolute;right:-4px;top:-24px;z-index:2;padding:2px 7px;border:2px solid #11130c;border-radius:3px;background:#5a5d48;color:#c9c3a8;font-weight:900;font-size:14px;font-family:Inter,sans-serif;cursor:pointer;box-shadow:0 2px 0 #11130c}
+.rn-up[data-raad="1"]{background:#ffd75a;color:#1f2318;animation:rn-glow 1.2s ease-in-out infinite}
+.rn-up[data-raad="1"]:hover{transform:translateY(-2px)}
+
 `;

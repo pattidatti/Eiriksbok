@@ -1,10 +1,10 @@
-import { UNITS, ECONOMY, ENEMIES, COMBAT, type Kind, type EKind, type KortId } from './tuning';
+import { UNITS, ECONOMY, ENEMIES, COMBAT, EVNE_ORDEN, type Kind, type EKind, type KortId } from './tuning';
 import { MAP_D, MAP_W } from './levels';
 import {
     pick, place, reroll, toggleLink, startWave, nextSlag, canPlace, channels, inRange, isAir,
     waveDef, roadAt, roadDistAll, ringOf, stafettOf, slagDef, type G, type IO, type Rng, type Unit, type Enemy,
 } from './game';
-import { ready, barrage, snipe, rocket, orderSquad, squadOf, canCall } from './orders';
+import { ready, barrage, snipe, rocket, orderSquad, squadOf, canCall, evner, owned, priceOf, buyEvne } from './orders';
 
 // Robotene. Samme grep som eleven: pick/place/toggleLink/startWave og ordrene (orders.ts).
 // Brukes av både simuleringen (sim.ts) og selvspillet i nettleseren.
@@ -263,7 +263,21 @@ function squadTick(g: G, io: IO, batt: Enemy | null | undefined) {
     return t ? orderSquad(g, t.x, t.z, io) : false;
 }
 
+/** Kjøp ordrer med forsyningene fienden slipper. Nye ordrer straks; neste nivå når det er
+ *  penger til overs (siste bølge i slaget: alt, for kassa tømmes til neste slag). Den halvgode
+ *  og nybegynneren bruker bare kompaniet, så de kjøper bare det. */
+function buyTick(g: G, io: IO, style: BotStyle, rng: Rng) {
+    if (style === 'tilfeldig') return rng() < 0.01 && buyEvne(g, EVNE_ORDEN[Math.floor(rng() * 4)], io);
+    const mine = evner(g).filter((id) => (style === 'halvgod' || style === 'nybegynner' ? id === 'kompani' : true));
+    const ny = mine.find((id) => !owned(g, id));
+    if (ny) return buyEvne(g, ny, io);
+    const last = g.wave === slagDef(g).waves.length - 1;
+    const up = mine.filter((id) => priceOf(g, id) !== null).sort((a, b) => priceOf(g, a)! - priceOf(g, b)!)[0];
+    return !!up && g.forsyninger >= priceOf(g, up)! + (last ? 0 : 6) && buyEvne(g, up, io);
+}
+
 function waveTick(g: G, style: BotStyle, io: IO, rng: Rng) {
+    if (buyTick(g, io, style, rng)) return;
     if (style === 'tilfeldig') {
         if (rng() < 0.1 && g.units.length) toggleLink(g, g.units[Math.floor(rng() * g.units.length)].id, io);
         if (rng() < 0.02) {

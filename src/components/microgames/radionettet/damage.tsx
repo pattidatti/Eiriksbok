@@ -30,7 +30,7 @@ export function DamageNumbers({
         const g = gRef.current;
         const def = slagDef(g);
         pool.take(g.fx, (x, z) => lift(def, x, z));
-        pool.step(Math.min(0.05, raw) * speedRef.current, proj);
+        pool.step(Math.min(0.05, raw) * speedRef.current, proj, Math.min(0.05, raw));
     });
     return null;
 }

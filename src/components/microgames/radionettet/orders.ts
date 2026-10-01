@@ -1,11 +1,13 @@
-import { EVNER, EVNE_ORDEN, KOMPANI, ORDERS, ENEMIES, type EvneId } from './tuning';
+import { EVNER, EVNE_ORDEN, KOMPANI, ORDERS, ENEMIES, NIVÅ, type EvneId, type Armor } from './tuning';
 import { MAP_D, MAP_W } from './levels';
-import { slagDef, waveDef, har, reachable, unitsCanLink, type G, type IO, type Unit, type Enemy } from './game';
+import { slagDef, har, reachable, unitsCanLink, type G, type IO, type Unit, type Enemy } from './game';
 import { area, hit, alive, observed } from './combat';
 
 // Ordrene i bølgen: det eleven gjør selv mens kampen går. Kompaniet (en tropp som går dit
 // eleven klikker), snikskytteren (ett mål), sperreild (et område) og rakettfly (en linje).
-// Alle har nedkjøling og er klare når bølgen starter. Tallene står i tuning.ts (`EVNER`, `ORDERS`).
+// Alle har nedkjøling og er klare når bølgen starter. Eleven kjøper dem med forsyninger
+// (`buyEvne`, også midt i bølgen), og nivå 2-3 lades fortere og slår hardere.
+// Tallene står i tuning.ts (`EVNER`, `NIVÅ`, `ORDERS`).
 
 /** Et nedslag: x, z og når det slår ned (sekunder etter ordren). */
 type Shot = [number, number, number];
@@ -47,19 +49,66 @@ export const ROCKET_T = 0.3;
 /** Flyet skyter når det er så langt fra midten av linja. */
 const FIRE_AT = 2.6;
 
-export function unlocked(g: G, id: EvneId) {
+/** Finnes ordren i butikken ennå (slag og bølge i `EVNER.fra`)? */
+export function offered(g: G, id: EvneId) {
     const [s, w] = EVNER[id].fra;
-    if (g.slag < s || (g.slag === s && g.wave < w)) return false;
-    return id !== 'sperre' || !!waveDef(g).sperreild;
+    return g.slag > s || (g.slag === s && g.wave >= w);
 }
 
-/** Evnene eleven har i denne bølgen, i tasterekkefølge. */
+/** Har eleven kjøpt ordren? */
+export const owned = (g: G, id: EvneId) => g.evne[id] > 0;
+
+/** Ordrene i butikken nå, i tasterekkefølge (kjøpt eller ikke). */
 export function evner(g: G) {
-    return EVNE_ORDEN.filter((id) => unlocked(g, id));
+    return EVNE_ORDEN.filter((id) => offered(g, id));
+}
+
+/** Prisen på neste kjøp (nivå 1, 2 eller 3), eller null når ordren er på toppen. */
+export function priceOf(g: G, id: EvneId) {
+    return EVNER[id].pris[g.evne[id]] ?? null;
+}
+
+/** Kjøp ordren eller neste nivå. Går i planleggingen og midt i bølgen. */
+export function buyEvne(g: G, id: EvneId, io?: IO) {
+    const pris = priceOf(g, id);
+    if (pris === null || !offered(g, id) || pris > g.forsyninger) return false;
+    if (g.phase !== 'plan' && g.phase !== 'wave') return false;
+    g.forsyninger -= pris;
+    g.evne[id] += 1;
+    g.valg += 1;
+    // Et sterkere kompani: flere tropper i det som står ute (og fullt helset).
+    const u = squadOf(g);
+    if (id === 'kompani' && u) squadLevel(g, u);
+    if (id === 'kompani' && g.phase === 'wave' && !u) {
+        g.ord.cd.kompani = 0;
+        g.ord.down = false;
+        spawnSquad(g);
+    }
+    // Neste nivå lades fortere: det som står igjen av nedkjølingen krymper også.
+    if (g.evne[id] > 1) g.ord.cd[id] *= NIVÅ.cd[g.evne[id] - 1] / NIVÅ.cd[g.evne[id] - 2];
+    io?.sfx('kjøp');
+    const [hx, hz] = slagDef(g).hq;
+    io?.event(`kjøpt:${id}:${g.evne[id]}`, hx, hz);
+    return true;
 }
 
 export function cdOf(g: G, id: EvneId) {
-    return EVNER[id].cd * (id === 'sperre' && har(g, 'sperre') ? ORDERS.sperreKort : 1);
+    const lv = Math.max(1, g.evne[id]);
+    return EVNER[id].cd * NIVÅ.cd[lv - 1] * (id === 'sperre' && har(g, 'sperre') ? ORDERS.sperreKort : 1);
+}
+
+/** Skaden til ordren på nivået eleven har kjøpt. */
+function kraft(g: G, id: EvneId, dmg: Record<Armor, number>, a: Armor) {
+    return dmg[a] * NIVÅ.kraft[Math.max(1, g.evne[id]) - 1];
+}
+const scaled = (g: G, id: EvneId, dmg: Record<Armor, number>) =>
+    ({ soft: kraft(g, id, dmg, 'soft'), armor: kraft(g, id, dmg, 'armor'), gun: kraft(g, id, dmg, 'gun'), air: kraft(g, id, dmg, 'air') });
+
+/** Kompaniet på nivå n er n tropper (`NIVÅ.kompani` ganger hp og skade). */
+function squadLevel(g: G, u: Unit) {
+    u.copies = Math.max(1, g.evne.kompani);
+    u.maxHp = KOMPANI.hp * NIVÅ.kompani[u.copies - 1];
+    u.hp = u.maxHp;
 }
 
 export const squadOf = (g: G) => g.units.find((u) => u.squad && !u.dead);
@@ -74,7 +123,7 @@ export function busy(g: G, id: EvneId) {
 }
 
 export function ready(g: G, id: EvneId) {
-    return g.phase === 'wave' && unlocked(g, id) && g.ord.cd[id] <= 0 && !busy(g, id);
+    return g.phase === 'wave' && owned(g, id) && g.ord.cd[id] <= 0 && !busy(g, id);
 }
 
 /** Væpn en evne (neste klikk på kartet bruker den), eller slå den av. Kompaniet: velg det. */
@@ -90,7 +139,7 @@ export function arm(g: G, id: EvneId) {
 
 // ---- Kompaniet ---------------------------------------------------------------------
 export function spawnSquad(g: G) {
-    if (!unlocked(g, 'kompani') || squadOf(g)) return;
+    if (!owned(g, 'kompani') || squadOf(g)) return;
     const [hx, hz] = slagDef(g).hq;
     const x = Math.min(MAP_W - 0.5, hx + 0.9);
     const z = hz + 0.35;
@@ -121,6 +170,7 @@ export function spawnSquad(g: G) {
         follow: -1,
         net: false,
     };
+    squadLevel(g, u);
     g.units.push(u);
 }
 
@@ -267,9 +317,10 @@ export function rocket(g: G, x: number, z: number, io?: IO) {
 function land(g: G, b: Barrage, dt: number, kind: 'sperre' | 'rakett', io: IO) {
     b.t += dt;
     const o = kind === 'sperre' ? ORDERS.sperreild : ORDERS.rakett;
+    const dmg = scaled(g, kind === 'sperre' ? 'sperre' : 'rakett', o.skade);
     while (b.next < b.shells.length && b.shells[b.next][2] <= b.t) {
         const [sx, sz] = b.shells[b.next++];
-        area(g, sx, sz, o.sprut, o.skade, io);
+        area(g, sx, sz, o.sprut, dmg, io);
         g.fx.push({ kind, x: sx, z: sz, x2: sx, z2: sz, alt: 0, t: 0, life: 0.5, fiende: false });
     }
     if (b.next < b.shells.length) return b;
@@ -284,7 +335,7 @@ export function stepOrders(g: G, dt: number, io: IO) {
     if (o.armed && !ready(g, o.armed)) o.armed = null;
     const u = squadOf(g);
     if (u) stepSquad(g, u, dt);
-    else if (unlocked(g, 'kompani')) {
+    else if (owned(g, 'kompani')) {
         // Kompaniet er slått ut: et nytt kommer fram ved kommandovogna etter nedkjølingen.
         if (!o.down) {
             o.down = true;
@@ -303,7 +354,7 @@ export function stepOrders(g: G, dt: number, io: IO) {
             const e = g.enemies.find((v) => v.id === s.id);
             if (e && alive(e)) {
                 g.fx.push({ kind: 'snik', x: s.x, z: s.z, x2: e.x, z2: e.z, alt: e.alt, t: 0, life: 0.3, fiende: false });
-                hit(g, e, ORDERS.snik.skade[ENEMIES[e.kind].armor], io);
+                hit(g, e, kraft(g, 'snik', ORDERS.snik.skade, ENEMIES[e.kind].armor), io);
                 io.event(e.dead ? 'snikDrap' : 'snik', e.x, e.z);
             }
             o.snipe = null;

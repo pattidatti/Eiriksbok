@@ -111,17 +111,20 @@ export const COMBAT = {
 
 // ---- Ordrene i bølgen: aktive evner med nedkjøling ------------------------------
 // Eleven gjør noe selv mens kampen går: styrer kompaniet, lar snikskytteren ta ett mål,
-// kaller inn sperreild og rakettfly. Alle er klare når bølgen starter, så lades de opp igjen.
+// kaller inn sperreild og rakettfly. Ordrene kjøpes med forsyninger (også midt i bølgen) og
+// gjelder resten av kampanjen; nivå 2 og 3 lades fortere og slår hardere.
+// `fra` = slag og bølge ordren kommer i butikken. `pris` = kjøp, nivå 2, nivå 3.
 export type EvneId = 'kompani' | 'snik' | 'sperre' | 'rakett';
 export const EVNE_ORDEN: EvneId[] = ['kompani', 'snik', 'sperre', 'rakett'];
-export const EVNER: Record<EvneId, { navn: string; tast: string; cd: number; fra: [number, number]; hint: string }> = {
+export const EVNER: Record<EvneId, { navn: string; tast: string; cd: number; fra: [number, number]; pris: [number, number, number]; hint: string }> = {
     /** Cd for kompaniet = sekunder før et nytt kompani kommer fram når det er slått ut. */
-    kompani: { navn: 'Kompaniet', tast: '1', cd: 16, fra: [0, 0], hint: 'Klikk det, så dit det skal' },
-    snik: { navn: 'Snikskytter', tast: '2', cd: 12, fra: [0, 2], hint: 'Klikk en fiende du ser' },
-    /** Sperreilden finnes bare i bølgene som har `sperreild` i levels.ts. */
-    sperre: { navn: 'Sperreild', tast: '3', cd: 32, fra: [1, 2], hint: 'Klikk der nettet ser fienden' },
-    rakett: { navn: 'Rakettfly', tast: '4', cd: 38, fra: [3, 1], hint: 'Klikk fienden nettet ser' },
+    kompani: { navn: 'Kompaniet', tast: '1', cd: 16, fra: [0, 0], pris: [4, 9, 14], hint: 'Klikk det, så dit det skal' },
+    snik: { navn: 'Snikskytter', tast: '2', cd: 12, fra: [0, 2], pris: [5, 9, 14], hint: 'Klikk en fiende du ser' },
+    sperre: { navn: 'Sperreild', tast: '3', cd: 32, fra: [1, 2], pris: [8, 12, 16], hint: 'Klikk der nettet ser fienden' },
+    rakett: { navn: 'Rakettfly', tast: '4', cd: 38, fra: [3, 1], pris: [9, 13, 17], hint: 'Klikk fienden nettet ser' },
 };
+/** Nivå 1-3: nedkjølingen ganges med `cd`, skaden med `kraft`. Kompaniet: nivå = tropper, hp og skade ganges med `kompani`. */
+export const NIVÅ = { cd: [1, 0.75, 0.55], kraft: [1, 1.3, 1.6], kompani: [1, 1.2, 1.4] };
 
 /** Kompaniet: en tropp infanteri eleven flytter selv (klikk det, klikk dit det skal).
  *  Har egen radio: det kompaniet ser, ser nettet - uten å bruke en kanal. */
@@ -140,14 +143,16 @@ export const ORDERS = {
 
 // ---- Økonomi ----------------------------------------------------------------
 export const ECONOMY = {
-    /** Etter hver bølge. */
-    perBølge: 12,
+    /** Fast lønn etter hver bølge. 0: forsyningene kommer fra fiendene eleven slår ut (`bytte`). */
+    perBølge: 0,
     /** Bytte butikken. */
     bytt: 1,
     /** Selg: andel av prisen tilbake. */
     salg: 0.5,
     /** Kort i butikken. */
     kort: 3,
+    /** Forsyninger fienden slipper når den slås ut (erobret utstyr). */
+    bytte: { einf: 1, evogn: 1, epak: 1, estuka: 1, ejag: 1, ebatt: 3 } as Record<EKind, number>,
 };
 
 // ---- Linja og poeng ---------------------------------------------------------------

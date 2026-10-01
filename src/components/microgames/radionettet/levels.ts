@@ -41,8 +41,6 @@ export interface WaveDef {
     sikt?: number;
     /** Forsyninger før denne bølgen, i stedet for `ECONOMY.perBølge` (omringet). */
     inntekt?: number;
-    /** Sperreild tilgjengelig (ordre med nedkjøling, orders.ts). */
-    sperreild?: boolean;
     /** Det nye i bølgen: lærings-øyeblikket når planleggingen starter. */
     nytt?: Nytt;
 }
@@ -188,12 +186,11 @@ export const SLAG: SlagDef[] = [
                 ],
                 pool: ['inf', 'vogn', 'art', 'pv'],
                 kanaler: 3,
-                sperreild: true,
                 nytt: {
                     key: 'sperreild',
-                    lapp: 'Nytt: sperreild! Trykk 3 i bølgen',
+                    lapp: 'Ny ordre i butikken: sperreild',
                     tittel: 'Sperreild',
-                    tekst: 'Trykk 3 i bølgen og klikk der nettet ser fienden. Granatene faller tre sekunder senere, så lades sperreilden opp igjen.',
+                    tekst: 'Kjøp sperreilden med forsyninger. Trykk 3 i bølgen og klikk der nettet ser fienden. Granatene faller tre sekunder senere.',
                 },
             },
         ],
@@ -318,7 +315,6 @@ export const SLAG: SlagDef[] = [
                 ],
                 pool: ['inf', 'vogn', 'art', 'pv', 'lv', 'fsk'],
                 kanaler: 4,
-                sperreild: true,
             },
             {
                 groups: [
@@ -331,7 +327,6 @@ export const SLAG: SlagDef[] = [
                 ],
                 pool: ['inf', 'vogn', 'art', 'pv', 'lv', 'jag', 'bomb', 'fsk'],
                 kanaler: 4,
-                sperreild: true,
             },
         ],
     },
@@ -375,7 +370,6 @@ export const SLAG: SlagDef[] = [
                 pool: ['inf', 'vogn', 'art', 'pv', 'fsk'],
                 kanaler: 4,
                 sikt: 0.6,
-                sperreild: true,
             },
             {
                 groups: [
@@ -390,7 +384,6 @@ export const SLAG: SlagDef[] = [
                 fast: ['bomb', 'jag', 'inf'],
                 kanaler: 4,
                 inntekt: 16,
-                sperreild: true,
                 nytt: { key: 'klart', lapp: 'Skyene letter! Flyene kan hjelpe igjen', kort: 0, tittel: 'Klarvær', tekst: 'Skyene letter. Nå kan flyene slippe forsyninger og angripe.' },
             },
         ],
@@ -422,7 +415,6 @@ export const SLAG: SlagDef[] = [
                 ],
                 pool: ['inf', 'vogn', 'art', 'pv', 'lv', 'fsk'],
                 kanaler: 4,
-                sperreild: true,
                 nytt: { key: 'brua', lapp: 'Hold brua! Kommer de over, taper du', tittel: 'Brua ved Remagen', tekst: 'Fienden vil ta tilbake brua. Slipper de over elva, er slaget tapt.' },
             },
             {
@@ -437,7 +429,6 @@ export const SLAG: SlagDef[] = [
                 pool: ['inf', 'vogn', 'art', 'pv', 'lv', 'jag', 'bomb', 'fsk'],
                 fast: ['fsk', 'fsk', 'jag'],
                 kanaler: 4,
-                sperreild: true,
                 nytt: { key: 'varsity', lapp: 'Hopp bak fienden, der batteriet står', kort: 0, tittel: 'Over Rhinen', tekst: 'Fallskjermsoldatene hopper bak fiendens linjer og finner det skjulte artilleriet.' },
             },
             {
@@ -453,7 +444,6 @@ export const SLAG: SlagDef[] = [
                 ],
                 pool: ['inf', 'vogn', 'art', 'pv', 'lv', 'jag', 'bomb', 'fsk'],
                 kanaler: 4,
-                sperreild: true,
             },
         ],
     },

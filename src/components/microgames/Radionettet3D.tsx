@@ -17,8 +17,8 @@ import {
     newGame, update, pick, place, reroll, toggleLink, linkBlock, relink, startWave, nextSlag, unitAt, isAir,
     usedChannels, waveDef, slagDef, CAUSE_TEXT, finalScore, type G, type IO,
 } from './radionettet/game';
-import { KORT, SCORE, EVNER, EVNE_ORDEN, type EKind, type KortId, type EvneId } from './radionettet/tuning';
-import { arm, orderSquad, snipe, barrage, rocket, squadOf, evner, unlocked } from './radionettet/orders';
+import { KORT, EVNER, EVNE_ORDEN, type EKind, type KortId, type EvneId } from './radionettet/tuning';
+import { arm, orderSquad, snipe, barrage, rocket, squadOf, evner, owned, buyEvne, priceOf } from './radionettet/orders';
 import { OrderView } from './radionettet/ordersView';
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
@@ -160,6 +160,14 @@ function makeSfx(a: ArcadeSynth) {
         else if (name === 'stup' && gate('stup', 400)) a.tone(520, 1250, 1.1, 'sawtooth', 0.025);
         // Ordrene i bølgen.
         else if (name === 'velg') a.tone(700, 980, 0.07, 'square', 0.04);
+        // Forsyninger i kassa (klirr) og et kjøp (kassaskuff og en fanfare-stump).
+        else if (name === 'mynt' && gate('mynt', 70)) {
+            a.tone(1760, 2350, 0.07, 'triangle', 0.03);
+            a.tone(2640, 2640, 0.09, 'triangle', 0.02, 0.05);
+        } else if (name === 'kjøp') {
+            a.noise(0.12, 0.05, 1800);
+            a.arp(392, [0, 4, 7, 12], 0.06, 0.05);
+        }
         else if (name === 'marsj') {
             a.arp(392, [0, 7], 0.06, 0.04);
             a.noise(0.25, 0.02, 600, 0.05);
@@ -241,10 +249,15 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
         // Kompaniet og ordrene: en lapp første gang hver ordre finnes, ved knappen.
         const u = squadOf(g);
         const atSquad = () => (u ? (proj.current?.(u.x, 1.6, u.z) ?? null) : null);
-        if (u && g.slag === 0 && g.wave === 0) text.point('kompani', 'Ditt kompani! Klikk det, så dit', atSquad, { once: true, until: () => g.ord.armed === 'kompani' || g.phase !== 'wave', seconds: 20 });
+        if (u) text.point('kompani', 'Ditt kompani! Klikk det, så dit', atSquad, { once: true, until: () => g.ord.armed === 'kompani' || g.phase !== 'wave', seconds: 20 });
         if (u && g.ord.armed === 'kompani') text.point('kompmål', 'Klikk der kompaniet skal gå', atSquad, { once: true, until: () => g.ord.armed !== 'kompani', seconds: 12 });
-        for (const id of evner(g))
-            if (id !== 'kompani') text.point(`evne-${id}`, `Nytt: ${EVNER[id].navn.toLowerCase()}! ${EVNER[id].hint}`, domAnchor(stage, `evne-${id}`), { once: true, until: () => g.ord.armed === id || g.phase !== 'wave', seconds: 12 });
+        for (const id of evner(g)) {
+            const pris = priceOf(g, id);
+            // Første gang eleven har råd til en ordre: pek på knappen. Kjøpt: hvordan den brukes.
+            if (!owned(g, id) && pris !== null && pris <= g.forsyninger)
+                text.point(`råd-${id}`, `Råd til ${EVNER[id].navn.toLowerCase()}! Trykk ${EVNER[id].tast}`, domAnchor(stage, `evne-${id}`), { once: true, until: () => owned(g, id) || g.phase !== 'wave', seconds: 10 });
+            else if (owned(g, id) && id !== 'kompani') text.point(`evne-${id}`, `${EVNER[id].navn}: ${EVNER[id].hint.toLowerCase()}`, domAnchor(stage, `evne-${id}`), { once: true, until: () => g.ord.armed === id || g.phase !== 'wave', seconds: 12 });
+        }
         for (const e of g.enemies)
             if (e.dug && !e.dead && !g.netSeen.has(e.id))
                 text.point('pak', 'Skjult panservern', at(e.x, e.z, 0.8), { tone: 'fare', once: true, until: () => e.dead || g.netSeen.has(e.id) });
@@ -337,12 +350,8 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         event: (name, x, z) => {
             if (name.startsWith('drept:') || name.startsWith('flyNed:') || name === 'bomber') {
                 sfx('smell');
-                // Det tunge som slås ut, får poengene sine sprettende over seg.
+                // Forsyningene fienden slipper, flyr til kassa (damagePool.ts).
                 const kind = name.split(':')[1] as EKind | undefined;
-                if (kind && kind !== 'einf') {
-                    const p = projRef.current?.(x, 1, z);
-                    if (p) text.float(`+${SCORE.drap[kind]}`, p.x, p.y, C.radio, kind === 'evogn' || kind === 'ebatt');
-                }
                 // Bølgens siste fiende får alltid sakte film; ellers bare det tunge.
                 const g = gRef.current;
                 const last = waveDef(g).groups.every((gr, i) => g.spawned[i] >= gr.n) && g.enemies.every((e) => e.dead || e.passed || e.kind === 'ebatt');
@@ -356,7 +365,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                 for (let i = 0; i < 3; i++) fxPool.puff('røyk', x, 0.4, z, { r: 0.22, grow: 2.6, life: 1.8, up: 0.4, spread: 0.8 });
                 sfx('salve');
                 const g = gRef.current;
-                text.point('batt', unlocked(g, 'sperre') ? 'Skjult batteri! Sperreild her (3)' : 'Skjult batteri! Finn det med infanteri', at(x, z), { tone: 'fare', once: true, seconds: 7 });
+                text.point('batt', owned(g, 'sperre') ? 'Skjult batteri! Sperreild her (3)' : 'Skjult batteri! Finn det med infanteri', at(x, z), { tone: 'fare', once: true, seconds: 7 });
             } else if (name === 'kutt' || name === 'brutt') {
                 sfx('kutt');
                 buzz(40);
@@ -370,6 +379,13 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                 for (let i = 0; i < 6; i++) fxPool.puff('støv', x, 0.1, z, { r: 0.16, grow: 2, life: 0.9, up: 0.2, spread: 1.6 });
             }
             else if (name === 'brudd') buzz(60);
+            else if (name.startsWith('kjøpt:')) {
+                // Et kjøp: knappen spretter fram, og kommandovogna melder det.
+                const [, id, lv] = name.split(':') as [string, EvneId, string];
+                const p = projRef.current?.(x, 1.2, z);
+                if (p) text.float(lv === '1' ? `${EVNER[id].navn.toUpperCase()}!` : `NIVÅ ${lv}`, p.x, p.y, C.radio, true);
+                buzz(30);
+            }
             else if (name === 'kompaniTapt') {
                 sfx('smell');
                 text.point('kompfall', 'Kompaniet falt. Et nytt kommer snart', at(x, z), { tone: 'fare', seconds: 3 });
@@ -508,11 +524,25 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             document.body.style.cursor = '';
         }
     };
-    /** Væpn en ordre (eller velg kompaniet); et nytt trykk slipper den. */
+    /** Kjøp ordren (eller neste nivå), i planleggingen eller midt i bølgen. */
+    const kjøp = (id: EvneId) => {
+        const g = gRef.current;
+        synth.unlock();
+        if (!buyEvne(g, id, io)) {
+            sfx('frakoble');
+            const pris = priceOf(g, id);
+            if (pris !== null && pris > g.forsyninger) text.point(`mangler-${id}`, `Mangler ${pris - g.forsyninger} forsyninger`, domAnchor(stageRef, `evne-${id}`), { tone: 'fare', seconds: 2 });
+            return;
+        }
+        const u = squadOf(g);
+        if (id === 'kompani' && u) flashUnit(u.id);
+    };
+    /** Væpn en ordre (eller velg kompaniet); et nytt trykk slipper den. Ikke kjøpt: kjøp den. */
     const evne = (id: EvneId) => {
         const g = gRef.current;
         synth.unlock();
-        if (g.phase !== 'wave' || !unlocked(g, id)) return;
+        if (g.phase !== 'wave' || !evner(g).includes(id)) return;
+        if (!owned(g, id)) return kjøp(id);
         if (!arm(g, id)) {
             sfx('frakoble');
             return;
@@ -568,6 +598,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         reroll: () => reroll(gRef.current),
         wave: () => startWave(gRef.current, io),
         evne,
+        kjøp,
         pause: () => {
             if (modeRef.current === 'play') setModeBoth('paused');
             else if (modeRef.current === 'paused') setModeBoth('play');
@@ -607,7 +638,9 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             }
             if (g.phase === 'wave') {
                 const k = /^Digit[1-4]$/.test(e.code) ? EVNE_ORDEN[Number(e.code.slice(5)) - 1] : e.code === 'KeyS' ? 'sperre' : null;
-                if (k) a.evne(k);
+                // Shift + tast kjøper neste nivå.
+                if (k && e.shiftKey) a.kjøp(k);
+                else if (k) a.evne(k);
                 return;
             }
             if (m !== 'play') return;

@@ -347,3 +347,21 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   Porter: simulering grønn (samvirke 99 %, uten radio 3 %, bare vogner 1 %, trappen 1780 <
   2165-2290 < 5785, 28 valg/min), selvspill grønt (82 draw calls, JS p95 9,6 ms på lav), scene-audit
   grønn. Venter på at eieren prøver ordrene.
+- 2026-10-01, eierens rettelser («powerups actions 1-4 etc, hadde vært nice at man kjøper dem. Da må
+  enemies droppe gull, og så kjøper man ting mellom rundene i en butikk (eller i runden også faktisk).
+  Må kunne unlocke action 1 ila første runde»). Gjort: Ordrene kjøpes. Hver fiende som slås ut, slipper
+  forsyninger (1, batteriet 3): et gyllent «+1» spretter opp over vraket og flyr i en bue inn i kassa,
+  som blinker, med en klirrelyd. Kassa står nede til venstre både i planleggingen og i bølgen. Den faste
+  lønna etter hver bølge er tatt bort (det er drapene som betaler; Bastogne får fortsatt flyslippet).
+  Ordrene kommer i butikken som før (kompaniet fra start, snikskytter Dunkerque bølge 3, sperreild
+  El Alamein bølge 3, rakettfly Normandie bølge 2), men må kjøpes: knappen er mørk og stiplet med
+  «Koster 4», og lyser gult med «Kjøp for 4» når eleven har råd. Klikk eller tasten kjøper, også midt i
+  bølgen; en lapp peker på knappen første gang eleven har råd. Kompaniet koster 4, så det kan kjøpes
+  etter to drap i første bølge i Dunkerque (eller rett fra start). Kjøpte ordrer gjelder hele kampanjen
+  og har nivå 1-3 (ruter nede til høyre på knappen); «▲ Nivå 2 · 9» over knappen (eller Shift + tast)
+  kjøper neste nivå: kortere nedkjøling og hardere slag, og kompaniet får flere soldater. I planleggingen
+  står ordrene til kjøp over «Neste bølge». Sperreilden er ikke lenger knyttet til enkelte bølger.
+  Poengtallene som spratt over tunge drap er tatt ut (gull-tallet tar plassen). Porter: simulering grønn
+  (samvirke 94 %, uten radio 1 %, bare vogner 3 %, trappen 1475 < 5355-5395 < 5825; de middels robotene
+  vinner kampanjen oftere enn før, ~78 %, fordi nivåene hoper seg opp - Kursk alene er ~45 %), selvspill
+  grønt (80 draw calls, JS p95 7,7 ms på lav). Venter på at eieren prøver å kjøpe ordrene.

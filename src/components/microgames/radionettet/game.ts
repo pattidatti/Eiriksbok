@@ -1,4 +1,4 @@
-import { ECONOMY, RADIO, SCORE, UNITS, COMBAT, PLAN_MAX, KORT, KORT_TALL, type EKind, type Kind, type KortId } from './tuning';
+import { ECONOMY, RADIO, SCORE, UNITS, COMBAT, PLAN_MAX, KORT, KORT_TALL, EVNER, EVNE_ORDEN, NIVÅ, type EvneId, type EKind, type Kind, type KortId } from './tuning';
 import { SLAG, MAP_W, MAP_D, TOTAL_WAVES, FLYPLASS, type SlagDef, type WaveDef } from './levels';
 import { stepWave } from './combat';
 import { resetOrders, spawnSquad, type Orders } from './orders';
@@ -71,7 +71,7 @@ export interface Enemy {
 }
 
 export interface Fx {
-    kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre' | 'rakett' | 'snik' | 'tall';
+    kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre' | 'rakett' | 'snik' | 'tall' | 'gull';
     x: number;
     z: number;
     x2: number;
@@ -84,7 +84,7 @@ export interface Fx {
     by?: string;
     /** Målet er pansret: granaten slår gnister. */
     hard?: boolean;
-    /** Skadetall over den som ble truffet (`tall`): hvor mye, og om det var drepende. */
+    /** Skadetall over den som ble truffet (`tall`): hvor mye, og om det var drepende. `gull`: forsyningene fienden slapp. */
     n?: number;
     kill?: boolean;
     /** Sekunder før tallet vises (granaten er på vei). */
@@ -120,6 +120,8 @@ export interface G {
     valg: number;
     /** Ordrene i bølgen (orders.ts): nedkjøling, den eleven sikter med, sperreild og rakettfly. */
     ord: Orders;
+    /** Nivået eleven har kjøpt hver ordre på (0 = ikke kjøpt). Gjelder hele kampanjen. */
+    evne: Record<EvneId, number>;
     cause: Cause | null;
     stjerner: number[];
     /** Øker hver gang en ny planlegging starter (visningen viser da det nye). */
@@ -239,6 +241,8 @@ export function newGame(seed = 1, startSlag = 0): G {
         tap: 0,
         valg: 0,
         ord: resetOrders(),
+        // Starter eleven på et senere slag, har eleven ordrene fra slagene før.
+        evne: Object.fromEntries(EVNE_ORDEN.map((id) => [id, EVNER[id].fra[0] < startSlag ? 1 : 0])) as Record<EvneId, number>,
         cause: null,
         stjerner: [],
         planSerial: 0,
@@ -309,9 +313,10 @@ export function pick(g: G, i: number) {
     return true;
 }
 
-/** Styrken til en enhet: to like på samme rute er sterkere, tre er en veteran. */
+/** Styrken til en enhet: to like på samme rute er sterkere, tre er en veteran.
+ *  Kompaniet: `copies` = nivået eleven har kjøpt (`NIVÅ.kompani`). */
 export function power(u: Unit) {
-    return COMBAT.kopier[Math.min(u.copies, 3) - 1];
+    return (u.squad ? NIVÅ.kompani : COMBAT.kopier)[Math.min(u.copies, 3) - 1];
 }
 
 export function isAir(k: Kind) {

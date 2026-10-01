@@ -346,7 +346,11 @@ export function consume(g: G, fx: FxPool, seen: WeakSet<Fx>, sound?: (name: stri
             fx.after(0.06, () => fx.sparks(f.x2, y2, f.z2));
             sound?.('snik');
         }
-        else if (f.kind === 'kutt') {
+        else if (f.kind === 'gull') {
+            // Forsyninger fienden slapp: et gyllent glimt, og en klirr når de er i kassa.
+            fx.after(0.12, () => fx.star(f.x, Math.max(0.5, f.alt), f.z, 0.3, 0.22, false));
+            fx.after(0.75, () => sound?.('mynt'));
+        } else if (f.kind === 'kutt') {
             // Linja ryker: gnister i lufta.
             fx.star(f.x, 0.9, f.z, 0.4, 0.25, true);
             for (let i = 0; i < 4; i++) fx.puff('glo', f.x, 0.9, f.z, { r: 0.04, grow: 1, life: 0.7, up: 1.5, spread: 2.2, fall: 4 });

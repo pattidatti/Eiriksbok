@@ -3,7 +3,7 @@ import { UNITS, ECONOMY, SCORE, COMBAT, PLAN_MAX, KORT, EVNER, type Kind, type K
 import { SLAG } from './levels';
 import { channels, usedChannels, type G } from './game';
 import { ROLE, EVNE_TEKST, wavePreview } from './hudData';
-import { evner, cdOf, busy, squadOf } from './orders';
+import { evner, cdOf, busy, squadOf, owned, priceOf } from './orders';
 
 // HUD-en over kartet: kommandobåndet øverst, butikken og ordrene nederst.
 // Den tar et øyeblikksbilde av spillet fem ganger i sekundet og tegner bare seg selv på nytt.
@@ -13,6 +13,8 @@ export interface HudActions {
     reroll: () => void;
     wave: () => void;
     evne: (id: EvneId) => void;
+    /** Kjøp ordren eller neste nivå. */
+    kjøp: (id: EvneId) => void;
     pause: () => void;
     paused: boolean;
     mute: () => void;
@@ -26,6 +28,9 @@ interface Evne {
     secs: number;
     armed: boolean;
     busy: boolean;
+    /** Nivået eleven har kjøpt (0 = ikke kjøpt) og prisen på neste kjøp (null = toppen). */
+    lv: number;
+    pris: number | null;
 }
 
 interface View {
@@ -60,14 +65,16 @@ function view(g: G): View {
         planT: g.planT,
         preview: g.phase === 'plan' ? wavePreview(g) : '',
         evner:
-            g.phase === 'wave'
+            g.phase === 'wave' || g.phase === 'plan'
                 ? evner(g).map((id) => ({
                       id,
-                      left: Math.min(1, g.ord.cd[id] / cdOf(g, id)),
+                      left: g.phase === 'wave' && owned(g, id) ? Math.min(1, g.ord.cd[id] / cdOf(g, id)) : 0,
                       secs: Math.ceil(g.ord.cd[id]),
                       armed: g.ord.armed === id,
                       // Kompaniet er «opptatt» når det er slått ut og venter.
-                      busy: id === 'kompani' ? !squadOf(g) : busy(g, id),
+                      busy: g.phase === 'wave' && owned(g, id) && (id === 'kompani' ? !squadOf(g) : busy(g, id)),
+                      lv: g.evne[id],
+                      pris: priceOf(g, id),
                   }))
                 : [],
         kort: [...g.kort],
@@ -135,7 +142,17 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
             <div className="rn-foot">
                 {plan ? (
                     <>
-                        <div className="rn-money">{g.forsyninger} forsyninger</div>
+                        <Kasse n={g.forsyninger} />
+                        {g.evner.length > 0 && (
+                            <div className="rn-ordrer-plan">
+                                <div className="rn-ordrer-tit">Ordrer i bølgen · kjøp med forsyninger</div>
+                                <div className="rn-evner">
+                                    {g.evner.map((e) => (
+                                        <EvneKnapp key={e.id} e={e} plan money={g.forsyninger} onClick={() => act.kjøp(e.id)} onUp={() => act.kjøp(e.id)} />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                         {g.shop.map((k, i) =>
                             k ? (
                                 <button key={i} data-mg-anchor={`kort${i}`} className="rn-card" data-on={g.holding === i ? 1 : 0} disabled={UNITS[k].pris > g.forsyninger} onClick={() => act.pick(i)}>
@@ -173,6 +190,7 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                     </>
                 ) : (
                     <>
+                        <Kasse n={g.forsyninger} />
                         <div className="rn-info rn-short">
                             {ch > 0 ? (
                                 <>
@@ -185,7 +203,7 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                         <div className="rn-grow" />
                         <div className="rn-evner">
                             {g.evner.map((e) => (
-                                <EvneKnapp key={e.id} e={e} onClick={() => act.evne(e.id)} />
+                                <EvneKnapp key={e.id} e={e} money={g.forsyninger} onClick={() => (e.lv > 0 ? act.evne(e.id) : act.kjøp(e.id))} onUp={() => act.kjøp(e.id)} />
                             ))}
                         </div>
                         <button className="rn-pause" data-on={act.paused ? 1 : 0} onClick={act.pause} aria-label="Pause">
@@ -199,21 +217,60 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
     );
 }
 
-/** Én ordreknapp: lader seg opp nedenfra, spretter når den er klar, gløder mens den venter. */
-function EvneKnapp({ e, onClick }: { e: Evne; onClick: () => void }) {
+/** Forsyningene. Tallene fra fiender som faller, flyr hit (damagePool.ts). */
+function Kasse({ n }: { n: number }) {
+    return (
+        <div className="rn-money" data-mg-anchor="penger">
+            <span className="kasse" aria-hidden />
+            {n} <span className="lbl">forsyninger</span>
+        </div>
+    );
+}
+
+/** Én ordreknapp: lader seg opp nedenfra, spretter når den er klar, gløder mens den venter.
+ *  Ikke kjøpt: prisen står på knappen (klikk eller tasten kjøper). Kjøpt: en liten ▲ kjøper neste nivå. */
+function EvneKnapp({ e, money, plan, onClick, onUp }: { e: Evne; money: number; plan?: boolean; onClick: () => void; onUp: () => void }) {
     const def = EVNER[e.id];
     const ready = e.left <= 0 && !e.busy;
-    // Sprett-animasjonen starter av seg selv når data-state går fra «wait» til «ready» (hudData.ts).
-    const state = e.armed ? 'armed' : ready ? 'ready' : 'wait';
-    const sub = e.armed ? EVNER[e.id].hint : e.busy && e.left <= 0 ? EVNE_TEKST[e.id].busy : !ready ? `Klar om ${e.secs} s` : EVNE_TEKST[e.id].klar;
+    const råd = e.pris !== null && e.pris <= money;
+    // Sprett-animasjonen starter av seg selv når data-state går fra «wait»/«buy» til «ready» (hudData.ts).
+    const state = e.lv === 0 ? 'buy' : plan ? 'owned' : e.armed ? 'armed' : ready ? 'ready' : 'wait';
+    const sub =
+        e.lv === 0
+            ? råd
+                ? `Kjøp for ${e.pris}`
+                : `Koster ${e.pris}`
+            : plan
+              ? 'Klar i bølgen'
+              : e.armed
+                ? EVNER[e.id].hint
+                : e.busy && e.left <= 0
+                  ? EVNE_TEKST[e.id].busy
+                  : !ready
+                    ? `Klar om ${e.secs} s`
+                    : EVNE_TEKST[e.id].klar;
     return (
-        <button className={`rn-evne ${e.id}`} data-state={state} data-mg-anchor={`evne-${e.id}`} onClick={onClick} aria-label={def.navn}>
-            <span className="cd" style={{ height: `${e.left * 100}%` }} />
-            <span className="top">
-                <span className="rn-key">{def.tast}</span>
-                <span className="nm">{def.navn}</span>
-            </span>
-            <span className="sb">{sub}</span>
-        </button>
+        <div className="rn-evw">
+            <button className={`rn-evne ${e.id}`} data-state={state} data-raad={råd ? 1 : 0} data-mg-anchor={`evne-${e.id}`} onClick={onClick} aria-label={e.lv === 0 ? `Kjøp ${def.navn}` : def.navn}>
+                <span className="cd" style={{ height: `${e.left * 100}%` }} />
+                <span className="top">
+                    <span className="rn-key">{def.tast}</span>
+                    <span className="nm">{def.navn}</span>
+                </span>
+                <span className="sb">{sub}</span>
+                {e.lv > 0 && (
+                    <span className="lv" aria-hidden>
+                        {[1, 2, 3].map((i) => (
+                            <i key={i} data-on={i <= e.lv ? 1 : 0} />
+                        ))}
+                    </span>
+                )}
+            </button>
+            {e.lv > 0 && e.pris !== null && (
+                <button className="rn-up" data-raad={råd ? 1 : 0} onClick={onUp} aria-label={`${def.navn} nivå ${e.lv + 1} for ${e.pris}`}>
+                    ▲ Nivå {e.lv + 1} · {e.pris}
+                </button>
+            )}
+        </div>
     );
 }
