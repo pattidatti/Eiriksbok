@@ -44,12 +44,21 @@ function sees(g: G, u: Unit, e: Enemy): boolean {
     return d <= eyes(g, u, e.dug);
 }
 
-/** Ser noen i nettet punktet (x, z)? Ordrene går over radioen: sperreild og rakettfly kan
- *  bare kalles inn dit nettet ser (eller tett ved kommandovogna). */
+/** Ildlederne: kompaniet og fallskjermjegerne bærer egen radio til artilleriet, så det de
+ *  ser, kan ordrene treffe - også utenfor radionettet (eieren 2026-10-01). */
+const spotter = (u: Unit) => !!u.squad || u.kind === 'fsk';
+
+/** Ser noen i nettet (eller en ildleder) punktet (x, z)? Ordrene går over radioen: sperreild og
+ *  rakettfly kan bare kalles inn dit noen ser (eller tett ved kommandovogna). */
 export function observed(g: G, x: number, z: number) {
     const [hx, hz] = slagDef(g).hq;
     if (d2(hx, hz, x, z) <= 2.2) return true;
-    return g.units.some((u) => !u.dead && inNet(u) && !isAir(u.kind) && d2(u.x, u.z, x, z) <= eyes(g, u, false));
+    return g.units.some((u) => !u.dead && (inNet(u) || spotter(u)) && !isAir(u.kind) && d2(u.x, u.z, x, z) <= eyes(g, u, false));
+}
+
+/** Kan ordrene få fienden som mål? Det nettet ser, pluss det en ildleder ser selv. */
+export function callable(g: G, e: Enemy) {
+    return g.netSeen.has(e.id) || g.units.some((u) => !u.dead && spotter(u) && sees(g, u, e));
 }
 
 function netVision(g: G) {

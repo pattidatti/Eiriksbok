@@ -17,8 +17,8 @@ export const ROLE: Record<Kind, string> = {
 /** Undertekst på ordreknappene: når den er klar, og mens den holder på. */
 export const EVNE_TEKST: Record<EvneId, { klar: string; busy: string }> = {
     kompani: { klar: 'Klikk, så dit', busy: 'Nytt kompani kommer' },
-    snik: { klar: 'Ett mål nettet ser', busy: 'Sikter ...' },
-    sperre: { klar: 'Ild der nettet ser', busy: 'Granater i lufta!' },
+    snik: { klar: 'Ett mål dine ser', busy: 'Sikter ...' },
+    sperre: { klar: 'Ild der dine ser', busy: 'Granater i lufta!' },
     rakett: { klar: 'Raketter på en linje', busy: 'Flyet stuper inn!' },
 };
 

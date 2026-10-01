@@ -317,8 +317,8 @@ export type FxPool = ReturnType<typeof createFx>;
 const RED = new THREE.Color('#ff4a2a');
 const HEAVY = new Set(['vogn', 'pv', 'evogn', 'epak']);
 const RIFLE = new Set(['inf', 'fsk', 'einf']);
-/** Hvor langt fram løpet stikker, og hvor høyt det sitter (figurskala 1,4). */
-const BARREL: Record<string, [number, number]> = { vogn: [0.6, 0.42], evogn: [0.6, 0.42], pv: [0.55, 0.28], epak: [0.55, 0.28] };
+/** Hvor langt fram løpet stikker, og hvor høyt det sitter (figurskala 1,15). */
+const BARREL: Record<string, [number, number]> = { vogn: [0.5, 0.35], evogn: [0.5, 0.35], pv: [0.45, 0.23], epak: [0.45, 0.23] };
 
 /** Gjør spillets egne fx (smell, granater, kutt, skudd) om til effekter og lyd. */
 export function consume(g: G, fx: FxPool, seen: WeakSet<Fx>, sound?: (name: string) => void) {
@@ -338,12 +338,20 @@ export function consume(g: G, fx: FxPool, seen: WeakSet<Fx>, sound?: (name: stri
             g.shake = Math.max(g.shake, f.kind === 'sperre' ? 0.55 : 0.4);
             sound?.(f.kind === 'sperre' ? 'salvenedslag' : 'nedslag');
         } else if (f.kind === 'snik') {
-            // Snikskuddet: ett skarpt glimt og en lang, lys strek rett i målet.
+            // Snikskuddet: munningsflamme og en røykdott der skytteren ligger, en lang, lys strek
+            // rett i målet, og treffet der: gnister og en sprut av støv. Ekkoet ruller etterpå.
             const y2 = Math.max(0.35, f.alt);
-            fx.flash(f.x, 0.5, f.z, 0.2);
-            fx.tracer(f.x, 0.5, f.z, f.x2, y2, f.z2, false);
-            fx.tracer(f.x, 0.52, f.z, f.x2, y2 + 0.02, f.z2, false);
-            fx.after(0.06, () => fx.sparks(f.x2, y2, f.z2));
+            const d = Math.hypot(f.x2 - f.x, f.z2 - f.z) || 1;
+            const dx = (f.x2 - f.x) / d;
+            const dz = (f.z2 - f.z) / d;
+            fx.muzzle(f.x + dx * 0.2, 0.4, f.z + dz * 0.2, dx, dz, 0.4);
+            fx.tracer(f.x, 0.42, f.z, f.x2, y2, f.z2, false);
+            fx.tracer(f.x, 0.44, f.z, f.x2, y2 + 0.02, f.z2, false);
+            const at = Math.max(0.08, d / 16);
+            fx.after(at, () => {
+                fx.sparks(f.x2, y2, f.z2);
+                for (let i = 0; i < 5; i++) fx.puff('støv', f.x2, 0.15, f.z2, { r: 0.08, grow: 2.4, life: 0.8, up: 0.6, spread: 1.6 });
+            });
             sound?.('snik');
         }
         else if (f.kind === 'gull') {

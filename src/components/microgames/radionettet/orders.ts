@@ -1,7 +1,7 @@
 import { EVNER, EVNE_ORDEN, KOMPANI, ORDERS, ENEMIES, NIVÅ, type EvneId, type Armor } from './tuning';
 import { MAP_D, MAP_W } from './levels';
 import { slagDef, har, reachable, unitsCanLink, type G, type IO, type Unit, type Enemy } from './game';
-import { area, hit, alive, observed } from './combat';
+import { area, hit, alive, observed, callable } from './combat';
 
 // Ordrene i bølgen: det eleven gjør selv mens kampen går. Kompaniet (en tropp som går dit
 // eleven klikker), snikskytteren (ett mål), sperreild (et område) og rakettfly (en linje).
@@ -175,9 +175,9 @@ export function spawnSquad(g: G) {
 }
 
 /** Kan eleven se fienden på kartet? (Skjulte kanoner og batterier bare når nettet ser dem.) */
-const visible = (g: G, e: Enemy) => alive(e) && !ENEMIES[e.kind].fly && (!e.dug || g.netSeen.has(e.id) || (e.kind === 'ebatt' && e.revealed));
-/** Snikskytteren får målet over radioen: bare det nettet ser. */
-const spotted = (g: G, e: Enemy) => visible(g, e) && g.netSeen.has(e.id);
+const visible = (g: G, e: Enemy) => alive(e) && !ENEMIES[e.kind].fly && (!e.dug || callable(g, e) || (e.kind === 'ebatt' && e.revealed));
+/** Snikskytteren får målet over radioen: det nettet ser, eller kompaniet og fallskjermjegerne. */
+const spotted = (g: G, e: Enemy) => visible(g, e) && callable(g, e);
 
 /** Nærmeste fiende på bakken eleven kan se (`net`: som nettet ser), innenfor r av klikket. */
 export function enemyNear(g: G, x: number, z: number, r: number, net = false) {

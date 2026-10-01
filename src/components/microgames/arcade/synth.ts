@@ -31,6 +31,8 @@ export interface ArcadeSynth {
     /** Stigende arpeggio i halvtoner over `base`. */
     arp: (base: number, steps: number[], gap?: number, vol?: number) => void;
     isMuted: () => boolean;
+    /** Lydkonteksten og utgangen, for spill som bygger egne lyder (null før unlock eller når lyden er av). */
+    context: () => { ac: AudioContext; out: AudioNode } | null;
     setMuted: (m: boolean) => void;
     dispose: () => void;
 }
@@ -117,6 +119,7 @@ export function createArcadeSynth(): ArcadeSynth {
         noise,
         arp,
         isMuted: () => muted,
+        context: () => (ready() && ac && master ? { ac, out: master } : null),
         setMuted: (m) => {
             muted = m;
             try {

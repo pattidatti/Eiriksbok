@@ -127,7 +127,8 @@ export const EVNER: Record<EvneId, { navn: string; tast: string; cd: number; fra
 export const NIVÅ = { cd: [1, 0.75, 0.55], kraft: [1, 1.3, 1.6], kompani: [1, 1.2, 1.4] };
 
 /** Kompaniet: en tropp infanteri eleven flytter selv (klikk det, klikk dit det skal).
- *  Har egen radio: det kompaniet ser, ser nettet - uten å bruke en kanal. */
+ *  Har egen radio: det kompaniet ser, ser nettet - uten å bruke en kanal. Utenfor nettet leder det
+ *  likevel ilden: ordrene treffer det kompaniet ser (det gjør fallskjermjegerne også). */
 export const KOMPANI = { hp: 130, fart: 1.5, range: 2.6, sight: 5.4, dps: { soft: 15, armor: 3, gun: 17, air: 0 } as Record<Armor, number> };
 
 export const ORDERS = {
@@ -136,7 +137,7 @@ export const ORDERS = {
     /** Kortet «Mer ammunisjon»: sperreilden lades så mye fortere. */
     sperreKort: 0.6,
     /** Snikskytteren: sekunder han sikter, og skaden (dreper en infanterigruppe, mannskapet ved en kanon). */
-    snik: { sikt: 0.55, skade: { soft: 60, armor: 22, gun: 70, air: 0 } as Record<Armor, number> },
+    snik: { sikt: 0.85, skade: { soft: 60, armor: 22, gun: 70, air: 0 } as Record<Armor, number> },
     /** Rakettfly (Typhoon): flyr inn fra vest, stuper og skyter `raketter` langs en linje. */
     rakett: { raketter: 8, lengde: 3.2, sprut: 0.8, fart: 7, skade: { soft: 40, armor: 70, gun: 55, air: 0 } as Record<Armor, number> },
 };

@@ -10,9 +10,9 @@ Fase: **rettelser etter eierens tester** (kunst v2, slag 1-6 og ordrene i bølge
 | `tuning.ts` | Alle tall: enheter (`UNITS`), fiender (`ENEMIES`), radio (`rekkevidde`, `stafett`), kamp (batteri, sprut), ordrene (`EVNER` med `pris`, `NIVÅ`), økonomi (`bytte` = det fienden slipper), poeng, ordrekort (`KORT`, `KORT_TALL`) |
 | `levels.ts` | Slagene (`SLAG`): veier (`veier`, gruppene velger `vei`), kommandovogn, `ring`, `elv`, start, bølger, butikk, kanaler, `sikt` (tåke), `fart` (fiendens fart per bølge), `inntekt`, batterier (`pos`), det nye i bølgen (`nytt`) |
 | `game.ts` | Tilstanden `G` og grepene: `pick`, `place` (+sammenslåing), `toggleLink`, `startWave`, `nextSlag(g, kort)`, `update`. Radioen: `reachable`, `relink` (stafetten, `u.via`), `canPlace` |
-| `orders.ts` | Ordrene i bølgen (`g.ord`): kompaniet eleven flytter (`orderSquad`, `u.squad`, egen radio `u.net`), snikskytter (`snipe`), sperreild (`barrage`), rakettfly (`rocket`), nedkjøling (`cd`), væpnet ordre (`armed`, `arm`). Kjøp: `offered` = i butikken fra slag/bølge (`EVNER.fra`), `owned`/`g.evne` = nivået eleven har kjøpt (hele kampanjen), `buyEvne` (planlegging og bølge), `priceOf`. Nivå 2-3: `cdOf` og `kraft` (`NIVÅ`); kompaniet: `copies` = nivå (`NIVÅ.kompani` i `power`). `canCall`: ild bare dit nettet ser (`observed` i combat.ts) |
-| `ordersView.tsx` | Visningen av ordrene: siktet under musa, sperreild-sonen som teller ned (signalrakett, hyl, innskyting, salve, røykteppe), rakettflyet som stuper inn, ring rundt valgt kompani og målet det går mot (`uAim`/`uZone`/`uStrike`/`uSel`/`uGoal` i `MARKS`) |
-| `ghosts.tsx` | Skikkelser i krigståka: fiendtlige vogner og infanterirekker som kryper forbi og trer fram som silhuetter når artilleriglimt lyser opp tåka (pynt) |
+| `orders.ts` | Ordrene i bølgen (`g.ord`): kompaniet eleven flytter (`orderSquad`, `u.squad`, egen radio `u.net`), snikskytter (`snipe`), sperreild (`barrage`), rakettfly (`rocket`), nedkjøling (`cd`), væpnet ordre (`armed`, `arm`). Kjøp: `offered` = i butikken fra slag/bølge (`EVNER.fra`), `owned`/`g.evne` = nivået eleven har kjøpt (hele kampanjen), `buyEvne` (planlegging og bølge), `priceOf`. Nivå 2-3: `cdOf` og `kraft` (`NIVÅ`); kompaniet: `copies` = nivå (`NIVÅ.kompani` i `power`). `canCall`: ild bare dit nettet eller en ildleder ser (`observed`/`callable` i combat.ts; ildlederne er kompaniet og fallskjermjegerne, også utenfor radioen) |
+| `ordersView.tsx` | Visningen av ordrene: siktet under musa, snikskytterens røde siktelinje og kikkertglimt fra skytteren til målet, sperreild-sonen som teller ned (signalrakett, hyl, innskyting, salve, røykteppe), rakettflyet som stuper inn, ring rundt valgt kompani og målet det går mot (`uAim`/`uZone`/`uStrike`/`uSel`/`uGoal` i `MARKS`) |
+| `ghosts.tsx` | Skikkelser i krigståka: fiendtlige vogner og infanterirekker som kryper forbi utenfor brettet (høyre kant og bak) og trer fram som silhuetter når artilleriglimt lyser opp tåka (pynt). Kommer en inn på brettet (`inside`), fødes den på nytt |
 | `combat.ts` | Én bølge per tidssteg (`stepWave`): fiender på sin vei (`e.r`), radionettets øyne (`netVision`, `eyes` med tåke/speidere), dine enheter, fly, batteriet (`actBatt`), nedslag med sprut (`impact`) |
 | `bots.ts`, `sim.ts` | Robotene og simuleringen (`nybegynner` = slik en elev spiller første gang: sprer seg, slår ikke sammen). `perSlag(bots, n)` tuner ett slag om gangen; `trace(bot, seed, verbose, slag)` |
 | `world.tsx` | Kamera, figurer (tårn dreier, rekyl, vrak, fly), radiolinjer (fra `u.via`), sporlys, gyldige ruter |
@@ -20,13 +20,14 @@ Fase: **rettelser etter eierens tester** (kunst v2, slag 1-6 og ordrene i bølge
 | `hl.ts`, `markers.tsx` | Markering (hover/klikk: hjørner + lysere figur; kommandovogna er `HQ_ID`, og `src` er der linja går fra), skygger, ringene (din/nett/fiende) og stafett-ringene |
 | `ground.ts`, `terrain.tsx`, `relief.tsx` | Høyden (`heightAt`; `lift`/`tilt` = bakken under et punkt i slaget, også åsene inne på brettet), skyskygger og bakkemarkeringene (`MARKS`: radioring, stafett-ringer, gyldige ruter, ruta under musa - tegnet i bakkeshaderen); bakken malt per slag, pynt, skjørt; vann, bru, kratervoller, stein, dis/tåke |
 | `damage.tsx`/`damagePool.ts` | Skadetallene over den som blir truffet (combat sender `Fx` `tall`; `wait` = granaten er på vei), og forsyningene fienden slipper (`Fx` `gull`, i `hit`): spretter opp og flyr i ekte tid til kassa (`data-mg-anchor="penger"` i hud.tsx) |
-| `cine.ts` | Kinokameraet og sakte film: `bulletTime(c, x, z, dur)` (minst 5 s mellom, bølgens siste fiende alltid), `cineScale` (spillets tempo, ganges inn i `io.timeScale`), `cineDepth` (zoom og vignett). `Camera` i `world.tsx` følger fienden i bølgen (zoom 1,2, svai), dykker mot stedet i sakte film, og viser hele kartet i planleggingen, med kort i hånda og med sperreild |
+| `cine.ts` | Sakte film bare på bølgens siste fiende: `bulletTime(c, x, z, dur)`, `cineScale` (spillets tempo, ganges inn i `io.timeScale`), `cineDepth` (litt zoom og vignett). `Camera` i `world.tsx` viser hele kartet hele tiden (ingen følging eller svai - eleven gir ordrer i kampen) |
 | `warfog.tsx`/`fogState.ts` | Krigståka rundt brettet: tre lag plan med støy-skyer (to på lav), masken regnet på bakken bak tåka (`uShift`), artilleriglimt og salver som lyser den opp innenfra (`fogFlash`, også fra `Ambience`) |
 | `flare.ts` | Lysglimt fra kampen: fire punktlys (to på lav) som gjenbrukes (`flare()`), tegnet i `Flares` i `light.tsx`. `fxPool` tenner dem ved smell, nedslag, kanonskudd og gnister. Antallet lys er fast, ellers kompileres materialene på nytt |
 | `rank.ts` | Gradsmerket over sammenslåtte enheter (to vinkler / stjerne for veteran), sprite som aldri skjules |
 | `life.tsx` | Verden som lever: småbåter ved kysten. (Pyntfly er tatt ut: fly på himmelen skal kjempe - eieren 2026-10-01) |
 | `light.tsx`, `models.ts`, `hud.tsx`/`hudData.ts` | Lys per look, figurene (`PAL`, `SQUAD`, `soldierParts`), HUD |
-| `fxPool.ts`/`effects.tsx` | Effekter: `consume` gjør skudd (`Fx.by` = hvem skjøt, `hard` = panser) om til flamme, granat, nedslag og lyd; `Ambience` er stemningen (røyksøyler per slag, kanonglimt, dis, vind/måker). Lydene står i `makeSfx` i `Radionettet3D.tsx` |
+| `fxPool.ts`/`effects.tsx` | Effekter: `consume` gjør skudd (`Fx.by` = hvem skjøt, `hard` = panser) om til flamme, granat, nedslag og lyd; `Ambience` er stemningen (røyksøyler per slag, kanonglimt, dis, vind/måker) |
+| `sound.ts` | Slagmarkslyden (`createField`): skudd, kanoner, nedslag, motorer og fløyta bygd av knall + filtrert støy + dunk, med ekko over sletta (konvolusjon) og kompressor. `makeSfx` i `Radionettet3D.tsx` struper (`GATES`) og har knappelydene |
 
 ## Fagregelen (én regel)
 
@@ -49,8 +50,8 @@ fallskjermsoldater (`hopp`) hvor som helst.
 
 ## Balanse
 
-`npx tsx scripts/sim-microgame.mts --ids radionettet` (grønn 2026-10-01 med kjøpte ordrer og bytte: samvirke 94 %,
-uten radio 1 %, bare vogner 3 %, trappen 1475 < 5355-5395 < 5825; Kursk er porten for de middels, ~45 % per slag). Ett slag om gangen:
+`npx tsx scripts/sim-microgame.mts --ids radionettet` (grønn 2026-10-01 med ildledere: samvirke 94 %,
+uten radio 2 %, bare vogner 3 %, trappen 1470 < 5355-5395 < 5895; Kursk er porten for de middels, ~45 % per slag). Ett slag om gangen:
 `npx tsx -e "import('./src/components/microgames/radionettet/sim.ts').then(m => m.perSlag(['samvirke','halvgod'], 60))"`
 
 ## Ordrene og pausen
@@ -81,4 +82,5 @@ uten radio 1 %, bare vogner 3 %, trappen 1475 < 5355-5395 < 5825; Kursk er porte
 - Åsene inne på brettet går bare opp fra null (`inner` i `ground.ts`): et søkk under null viser skjørtet.
 - Selvspillets roboter tikker på spilltid: mellom slagene går bare klokka (`update` i `Loop` når modus er `slag`), ellers blir roboten stående på «Slaget er vunnet».
 - Ordreknappene: tast og navn i én flex-rad (`.top`), ellers brytes navnet og underteksten havner under knappen. Ingen `scale` i animasjonene (skriftporten måler 13 px midt i spretten).
+- Figurskala: `FIG` i `world.tsx` (1,15) og `soldiers.tsx` (1,05); løpene i `BARREL` (fxPool.ts) følger figurskalaen.
 - Eierens dev-server på 5173 kan servere gamle filer: test mot egen Vite på 5190 (`.screenshots/vite.test.config.mjs`).

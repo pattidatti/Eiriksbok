@@ -17,13 +17,14 @@ import {
     newGame, update, pick, place, reroll, toggleLink, linkBlock, relink, startWave, nextSlag, unitAt, isAir,
     usedChannels, waveDef, slagDef, CAUSE_TEXT, finalScore, type G, type IO,
 } from './radionettet/game';
-import { KORT, EVNER, EVNE_ORDEN, type EKind, type KortId, type EvneId } from './radionettet/tuning';
+import { KORT, EVNER, EVNE_ORDEN, type KortId, type EvneId } from './radionettet/tuning';
 import { arm, orderSquad, snipe, barrage, rocket, squadOf, evner, owned, buyEvne, priceOf } from './radionettet/orders';
 import { OrderView } from './radionettet/ordersView';
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
 import { SLAG, TOTAL_WAVES } from './radionettet/levels';
 import { bulletTime, cineScale, newCine, type Cine } from './radionettet/cine';
+import { createField } from './radionettet/sound';
 import { WarFog } from './radionettet/warfog';
 import { fogFlash } from './radionettet/fogState';
 import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, type Proj } from './radionettet/world';
@@ -95,108 +96,46 @@ interface Save {
     stjerner: number[];
 }
 
+/** Hvor tett samme kamplyd kan gå (ms): en stor bølge skal ikke bli én lang støy. */
+const GATES: Record<string, number> = {
+    smell: 90, salve: 200, kanon: 110, ekanon: 150, klang: 120, nedslag: 120, gevær: 70, egevær: 90,
+    mg: 350, flak: 150, kutt: 300, stup: 400, salvenedslag: 70, rakett: 50, mynt: 70,
+};
+
 function makeSfx(a: ArcadeSynth) {
     const last: Record<string, number> = {};
-    const gate = (k: string, ms: number) => {
-        const now = performance.now();
-        if (now - (last[k] ?? 0) < ms) return false;
-        last[k] = now;
-        return true;
-    };
+    // Slagmarken (skudd, smell, ekko, motorer, fløyta) bygges i radionettet/sound.ts.
+    const field = createField(a);
     return (name: string) => {
+        const ms = GATES[name];
+        if (ms) {
+            const now = performance.now();
+            if (now - (last[name] ?? 0) < ms) return;
+            last[name] = now;
+        }
+        if (field(name)) return;
+        // Knappene og feiringene er bevisst enkle toner: de hører til spillet, ikke slagmarken.
         if (name === 'plasser') a.tone(220, 330, 0.09, 'square', 0.05);
         else if (name === 'koble') a.arp(660, [0, 7, 12], 0.05, 0.035);
         else if (name === 'frakoble') a.tone(500, 250, 0.12, 'square', 0.03);
         else if (name === 'veteran') a.arp(440, [0, 4, 7, 12], 0.07, 0.05);
-        else if (name === 'bølge') a.tone(180, 90, 0.5, 'sawtooth', 0.05);
         else if (name === 'ordre') a.tone(900, 300, 0.4, 'triangle', 0.05);
         else if (name === 'holdt') a.arp(330, [0, 5, 7], 0.1, 0.05);
         else if (name === 'seier') a.arp(262, [0, 4, 7, 12, 16], 0.12, 0.06);
         else if (name === 'tap') a.tone(200, 60, 0.9, 'sawtooth', 0.06);
-        else if (name === 'smell' && gate('smell', 90)) a.noise(0.25, 0.05, 500);
-        else if (name === 'salve' && gate('salve', 200)) {
-            a.noise(0.6, 0.09, 140);
-            a.tone(90, 35, 0.5, 'sine', 0.09);
-        }
-        // Kampen: kanoner, gevær, maskingevær og luftvern. Fiendens lyder er litt svakere
-        // (lenger unna), og alt er strupet så en stor bølge ikke blir én lang støy.
-        else if (name === 'kanon' && gate('kanon', 110)) {
-            a.noise(0.45, 0.1, 260);
-            a.tone(140, 45, 0.3, 'sine', 0.1);
-        } else if (name === 'ekanon' && gate('ekanon', 150)) {
-            a.noise(0.4, 0.06, 200);
-            a.tone(110, 40, 0.3, 'sine', 0.06);
-        } else if (name === 'klang' && gate('klang', 120)) {
-            a.tone(1400, 900, 0.12, 'triangle', 0.035);
-            a.noise(0.1, 0.04, 2500);
-        } else if (name === 'nedslag' && gate('nedslag', 120)) a.noise(0.25, 0.05, 350);
-        else if (name === 'gevær' && gate('gevær', 70)) a.noise(0.08, 0.05, 1600);
-        else if (name === 'egevær' && gate('egevær', 90)) a.noise(0.07, 0.03, 1300);
-        else if (name === 'mg' && gate('mg', 350)) for (let i = 0; i < 5; i++) a.noise(0.05, 0.035, 1900, i * 0.06);
-        else if (name === 'flak' && gate('flak', 150)) {
-            a.noise(0.12, 0.05, 900);
-            a.noise(0.3, 0.035, 300, 0.12);
-        }
-        // Stemningen: fjern kanontorden, maskingevær langt borte, vind og måker.
-        else if (name === 'fjern') {
-            a.noise(1.4, 0.035, 70);
-            a.tone(55, 30, 1.2, 'sine', 0.04);
-        } else if (name === 'fjernMg') for (let i = 0; i < 7; i++) a.noise(0.05, 0.012, 1100, i * 0.08);
-        else if (name === 'vind') a.noise(3, 0.018, 500);
-        else if (name === 'fly') {
-            // Motordur fra en formasjon høyt oppe: stiger og dør ut.
-            a.tone(82, 96, 4, 'sawtooth', 0.01);
-            a.noise(4, 0.014, 160);
-        }
         else if (name === 'måke') {
             a.tone(1500, 1000, 0.22, 'triangle', 0.012);
             a.tone(1450, 950, 0.3, 'triangle', 0.012, 0.28);
-        }
-        // Sakte film: et dypt sug og en tung, lav dunk.
-        else if (name === 'sakte') {
-            a.tone(220, 55, 0.9, 'sine', 0.07);
-            a.noise(0.8, 0.04, 140);
-        } else if (name === 'kutt' && gate('kutt', 300)) a.tone(1200, 400, 0.25, 'square', 0.04);
-        else if (name === 'stup' && gate('stup', 400)) a.tone(520, 1250, 1.1, 'sawtooth', 0.025);
-        // Ordrene i bølgen.
-        else if (name === 'velg') a.tone(700, 980, 0.07, 'square', 0.04);
+        } else if (name === 'velg') a.tone(700, 980, 0.07, 'square', 0.04);
         // Forsyninger i kassa (klirr) og et kjøp (kassaskuff og en fanfare-stump).
-        else if (name === 'mynt' && gate('mynt', 70)) {
+        else if (name === 'mynt') {
             a.tone(1760, 2350, 0.07, 'triangle', 0.03);
             a.tone(2640, 2640, 0.09, 'triangle', 0.02, 0.05);
         } else if (name === 'kjøp') {
             a.noise(0.12, 0.05, 1800);
             a.arp(392, [0, 4, 7, 12], 0.06, 0.05);
-        }
-        else if (name === 'marsj') {
-            a.arp(392, [0, 7], 0.06, 0.04);
-            a.noise(0.25, 0.02, 600, 0.05);
         } else if (name === 'klar') a.arp(523, [0, 4, 7, 12], 0.05, 0.045);
         else if (name === 'sikte') a.tone(1800, 1750, 0.35, 'sine', 0.018);
-        else if (name === 'snik') {
-            // Ett skarpt smell og ekkoet som ruller ut over slagmarken.
-            a.noise(0.06, 0.14, 3200);
-            a.tone(900, 120, 0.12, 'square', 0.05);
-            a.noise(0.9, 0.035, 700, 0.12);
-        } else if (name === 'signal') {
-            a.tone(400, 1600, 0.6, 'sawtooth', 0.03);
-            a.noise(0.5, 0.03, 2200);
-        } else if (name === 'fjernSalve') for (let i = 0; i < 4; i++) {
-            a.noise(0.9, 0.05, 90, i * 0.14);
-            a.tone(60, 32, 0.8, 'sine', 0.06, i * 0.14);
-        }
-        else if (name === 'hyl') {
-            // Granatene på vei ned: et fallende hyl.
-            a.tone(1900, 520, 1.2, 'sine', 0.045);
-            a.tone(1700, 480, 1.15, 'triangle', 0.02, 0.06);
-        } else if (name === 'salvenedslag' && gate('salvenedslag', 70)) {
-            a.noise(0.7, 0.13, 120);
-            a.tone(80, 28, 0.6, 'sine', 0.12);
-            a.noise(0.2, 0.05, 1500);
-        } else if (name === 'typhoon') {
-            a.tone(110, 190, 2.2, 'sawtooth', 0.025);
-            a.noise(2.4, 0.03, 300);
-        } else if (name === 'rakett' && gate('rakett', 50)) a.noise(0.35, 0.06, 2600);
     };
 }
 
@@ -251,6 +190,8 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
         const atSquad = () => (u ? (proj.current?.(u.x, 1.6, u.z) ?? null) : null);
         if (u) text.point('kompani', 'Ditt kompani! Klikk det, så dit', atSquad, { once: true, until: () => g.ord.armed === 'kompani' || g.phase !== 'wave', seconds: 20 });
         if (u && g.ord.armed === 'kompani') text.point('kompmål', 'Klikk der kompaniet skal gå', atSquad, { once: true, until: () => g.ord.armed !== 'kompani', seconds: 12 });
+        // Ildlederen: kompaniet har egen radio, så ordrene treffer det kompaniet ser - også utenfor nettet.
+        if (u && !u.net && (owned(g, 'snik') || owned(g, 'sperre') || owned(g, 'rakett'))) text.point('ildleder', 'Ordrene treffer det kompaniet ser', atSquad, { once: true, until: () => g.phase !== 'wave', seconds: 8 });
         for (const id of evner(g)) {
             const pris = priceOf(g, id);
             // Første gang eleven har råd til en ordre: pek på knappen. Kjøpt: hvordan den brukes.
@@ -316,13 +257,11 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     const speedRef = useRef(0);
     const cineRef = useRef<Cine>(newCine());
     const vigRef = useRef<HTMLDivElement>(null);
-    /** Sakte film når noe stort skjer i bølgen (ikke oppå et lærings-øyeblikk). */
-    const slowMo = (x: number, z: number, dur: number, force = false) => {
+    /** Sakte film på bølgens siste fiende (ikke oppå et lærings-øyeblikk). */
+    const slowMo = (x: number, z: number, dur: number) => {
         if (gRef.current.phase !== 'wave' || text.timeScale() < 1) return;
-        if (bulletTime(cineRef.current, x, z, dur, force)) {
-            sfx('sakte');
-            gRef.current.shake = Math.max(gRef.current.shake, 0.6);
-        }
+        bulletTime(cineRef.current, x, z, dur);
+        sfx('sakte');
     };
     const dmgRef = useRef<HTMLDivElement>(null);
     const [fxPool] = useState(createFx);
@@ -351,12 +290,10 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             if (name.startsWith('drept:') || name.startsWith('flyNed:') || name === 'bomber') {
                 sfx('smell');
                 // Forsyningene fienden slipper, flyr til kassa (damagePool.ts).
-                const kind = name.split(':')[1] as EKind | undefined;
-                // Bølgens siste fiende får alltid sakte film; ellers bare det tunge.
+                // Bare bølgens siste fiende får sakte film: midt i kampen har eleven ordrene å passe på.
                 const g = gRef.current;
                 const last = waveDef(g).groups.every((gr, i) => g.spawned[i] >= gr.n) && g.enemies.every((e) => e.dead || e.passed || e.kind === 'ebatt');
-                if (last) slowMo(x, z, 1.7, true);
-                else if (name === 'bomber' || name.startsWith('flyNed:') || kind === 'evogn' || kind === 'ebatt') slowMo(x, z, 1.2);
+                if (last) slowMo(x, z, 1.4);
             }
             else if (name === 'salve') sfx('salve');
             else if (name === 'batteri') {
@@ -395,7 +332,6 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             } else if (name === 'snikDrap') {
                 const p = projRef.current?.(x, 1, z);
                 if (p) text.float('SNIKSKYTTER!', p.x, p.y - 26, C.radio, true);
-                slowMo(x, z, 0.8);
             } else if (name === 'sperreild' || name === 'raketter') {
                 fogFlash(x, z, 1.4, 3.5);
                 buzz(80);
@@ -405,7 +341,6 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             }
             else if (name === 'tapt:vogn' && !gRef.current.units.some((u) => u.linked))
                 text.lesson('blind', 'Stridsvogna alene så ikke det skjulte panservernet. Med infanteri i samme radionett ser den det.', 2);
-            else if (name === 'hqTreff' || name === 'tapt:vogn' || name === 'tapt:art') slowMo(x, z, 1);
         },
         timeScale: () => text.timeScale() * cineScale(cineRef.current),
     };
@@ -489,7 +424,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         const ok = armed === 'sperre' ? barrage(g, x, z, io) : armed === 'rakett' ? rocket(g, x, z, io) : snipe(g, x, z, io);
         if (!ok) {
             sfx('frakoble');
-            text.point('nei-ordre', armed === 'snik' ? 'Klikk en fiende nettet ser' : 'Ingen i nettet ser dit', at(x, z), { tone: 'fare', seconds: 2.5 });
+            text.point('nei-ordre', armed === 'snik' ? 'Klikk en fiende nettet eller kompaniet ser' : 'Ingen i nettet eller kompaniet ser dit', at(x, z), { tone: 'fare', seconds: 2.5 });
         }
     };
     const onPoint = (x: number, z: number) => {

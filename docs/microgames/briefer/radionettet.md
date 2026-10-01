@@ -365,3 +365,24 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   (samvirke 94 %, uten radio 1 %, bare vogner 3 %, trappen 1475 < 5355-5395 < 5825; de middels robotene
   vinner kampanjen oftere enn før, ~78 %, fordi nivåene hoper seg opp - Kursk alene er ~45 %), selvspill
   grønt (80 draw calls, JS p95 7,7 ms på lav). Venter på at eieren prøver å kjøpe ordrene.
+- 2026-10-01, eierens rettelser («npc/styrker etc kan være enda litt mindre størrelse. Se om vi kan
+  gjøre lyden mer realistisk også. Ghost enemies skal ikke være inne på kartet, bare rundt.
+  Snikskytter mangler mer animasjoner, hvor kommer skuddet fra osv. Kompaniet/fallskjermjegere bør gi
+  sikt til å bruke spesialangrep utenfor radio. Nå som spilleren har mye å gjøre i selve kampen, så
+  kan vi roe ned alle kamera-animasjonene»). Gjort: Figurene er mindre (enheter og fiender 1,4 → 1,15,
+  fly 1,75 → 1,5, soldatene 1,3 → 1,05, rakettflyet og tåkeskikkelsene med). Lyden er bygd om
+  (`sound.ts`): hvert skudd er et knall, en kropp av filtrert støy og et dunk, med litt tilfeldig
+  tonehøyde, og alt ruller ut i et ekko over sletta; maskingevær er et ujevnt belte, kanonene brøler og
+  mørkner, nedslag kaster opp jord som drysser ned, panser synger når det treffes, radiolinja knitrer
+  når den ryker, Typhoon kommer og passerer, Stukaen hyler, og bølgen starter med offiserens fløyte.
+  Fiendens lyder er lenger unna (svakere, mørkere, mer ekko). Tåkeskikkelsene kjørte på tvers inn på
+  brettet (retningen var byttet om); nå går de langs fronten utenfor kanten og fødes på nytt om de
+  kommer inn. Snikskytteren: støv der skytteren kaster seg ned, kikkerten blinker, en rød siktelinje
+  kryper fra skytteren til målet og blir sterkere (sikter 0,85 s), så munningsflamme og røyk hos
+  skytteren, sporlys, og gnister og støv i målet med ekko etterpå. Ildledere: kompaniet og
+  fallskjermjegerne bærer egen radio til artilleriet, så sperreild, rakettfly og snikskytter treffer
+  det de ser, også utenfor radionettet (lapp første gang: «Ordrene treffer det kompaniet ser»).
+  Kameraet viser hele kartet hele bølgen (ingen følging, zoom eller svai), sakte film bare på bølgens
+  siste fiende (mildere, med litt zoom), og ristingen er halvert og kortere. Porter: simulering grønn
+  (samvirke 94 %, uten radio 2 %, bare vogner 3 %, trappen 1470 < 5355-5395 < 5895), selvspill
+  grønt (77 draw calls, JS p95 8,8 ms på lav). Venter på at eieren hører lyden og prøver ildlederne.

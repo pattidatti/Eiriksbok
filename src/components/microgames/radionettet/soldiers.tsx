@@ -16,7 +16,7 @@ const CUR: { def: SlagDef } = { def: SLAG[0] };
 // andre, og faller når troppen tar skade: en tropp på fire med halv styrke har to liggende.
 
 const MAX = 160;
-const FIG = 1.3;
+const FIG = 1.05;
 const M = new THREE.Matrix4();
 const H = new THREE.Matrix4();
 const L = new THREE.Matrix4();

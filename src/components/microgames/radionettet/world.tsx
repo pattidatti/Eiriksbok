@@ -25,8 +25,9 @@ export type Speed = React.MutableRefObject<number>;
 const V = new THREE.Vector3();
 const lookOf = (g: G): Look => LOOK[slagDef(g).id] ?? 'kyst';
 /** Skala på figurene. Fly tegnes større, så rundellene og korsene leses ovenfra. */
-const FIG = 1.4;
-const AIR_FIG = 1.75;
+const FIG = 1.15;
+const AIR_FIG = 1.5;
+const UP = new THREE.Vector3(0, 1, 0);
 /** Kameraretningen: 30 grader fra siden, 48 grader ned. */
 const CAM_DIR = new THREE.Vector3(Math.sin(0.52) * Math.cos(0.84), Math.sin(0.84), Math.cos(0.52) * Math.cos(0.84));
 const CENTER = new THREE.Vector3(MAP_W / 2 - 0.8, 0, MAP_D / 2 + 0.2);
@@ -39,9 +40,6 @@ const FIT = [
 const TOP = 78;
 const BOTTOM = 112;
 
-const UP = new THREE.Vector3(0, 1, 0);
-const YAW = new THREE.Quaternion();
-const PIV = new THREE.Vector3();
 
 export function Camera({ gRef, projRef, cineRef, speedRef, vigRef }: { gRef: React.MutableRefObject<G>; projRef: React.MutableRefObject<Proj | null>; cineRef: React.MutableRefObject<Cine>; speedRef: Speed; vigRef: React.RefObject<HTMLDivElement | null> }) {
     const cam = useRef<THREE.OrthographicCamera>(null);
@@ -50,8 +48,8 @@ export function Camera({ gRef, projRef, cineRef, speedRef, vigRef }: { gRef: Rea
     const base = useRef(new THREE.Vector3());
     const quat = useRef(new THREE.Quaternion());
     const zoom0 = useRef(1);
-    /** Kinokameraet: zoom, punktet det følger og svaiet, alle glidende. */
-    const cv = useRef({ zoom: 1, x: CENTER.x, z: CENTER.z, sway: 0, t: 0 });
+    /** Sakte film: zoom og punktet kameraet glir mot. */
+    const cv = useRef({ zoom: 1, x: CENTER.x, z: CENTER.z });
     useFrame((_, raw) => {
         const c = cam.current;
         if (!c) return;
@@ -87,56 +85,35 @@ export function Camera({ gRef, projRef, cineRef, speedRef, vigRef }: { gRef: Rea
         const aiming = !!g.ord.armed && g.ord.armed !== 'kompani';
         if (g.holding >= 0 || aiming) ci.slow = 0;
         const deep = cineDepth(ci);
-        // Planleggingen, et kort i hånda eller sperreild: hele kartet. Ellers følger kameraet kampen.
-        const tactical = g.phase !== 'wave' || g.holding >= 0 || aiming || g.ord.armed === 'kompani';
+        // Hele kartet hele tiden: eleven gir ordrer i kampen. Bare sakte film glir litt nærmere.
         let fx = CENTER.x, fz = CENTER.z, want = 1;
-        if (!tactical) {
-            let n = 0, sx = 0, sz = 0;
-            for (const e of g.enemies)
-                if (!e.dead && e.x > 0 && e.x < MAP_W && e.z > 0 && e.z < MAP_D) {
-                    sx += e.x;
-                    sz += e.z;
-                    n++;
-                }
-            if (n) {
-                fx = CENTER.x + (sx / n - CENTER.x) * 0.75;
-                fz = CENTER.z + (sz / n - CENTER.z) * 0.75;
-            }
-            want = 1.2;
-        }
         if (deep > 0) {
-            fx += (ci.x - fx) * deep;
-            fz += (ci.z - fz) * deep;
-            want += 0.5 * deep;
+            fx += (ci.x - fx) * deep * 0.5;
+            fz += (ci.z - fz) * deep * 0.5;
+            want += 0.15 * deep;
         }
         const ease = (r: number) => 1 - Math.exp(-real * r);
-        const fast = deep > 0 ? 7 : 1;
-        k.zoom += (want - k.zoom) * ease(fast * 1.1);
-        k.x += (fx - k.x) * ease(fast * 0.9);
-        k.z += (fz - k.z) * ease(fast * 0.9);
-        k.t += real;
-        k.sway += ((tactical ? 0 : Math.sin(k.t * 0.17) * 0.06) - k.sway) * ease(0.8);
+        k.zoom += (want - k.zoom) * ease(2.2);
+        k.x += (fx - k.x) * ease(2);
+        k.z += (fz - k.z) * ease(2);
         // Panoreringen holdes innenfor kartet: jo nærmere, jo lenger kan den gå.
         const pan = 1 - 1 / k.zoom;
         const ox = (k.x - CENTER.x) * pan;
         const oz = (k.z - CENTER.z) * pan;
         // Ristingen svinner i ekte tid (også i pause og mellom bølgene), kort og hardt.
-        g.shake = g.phase === 'wave' ? Math.min(1, Math.max(0, g.shake - real * 3.2)) : 0;
-        const sh = g.shake > 0 ? g.shake * g.shake * 0.16 : 0;
+        g.shake = g.phase === 'wave' ? Math.min(1, Math.max(0, g.shake - real * 4.5)) : 0;
+        const sh = g.shake > 0 ? g.shake * g.shake * 0.07 : 0;
         // MicroCanvas sikter kameraet mot sitt eget mål én gang; vi holder vår egen retning.
-        YAW.setFromAxisAngle(UP, k.sway);
-        c.quaternion.copy(YAW).multiply(quat.current);
-        PIV.set(CENTER.x + ox, 0, CENTER.z + oz);
+        c.quaternion.copy(quat.current);
         c.position.copy(base.current);
         c.position.x += ox;
         c.position.z += oz;
-        c.position.sub(PIV).applyQuaternion(YAW).add(PIV);
         c.position.x += (Math.random() - 0.5) * sh;
         c.position.y += (Math.random() - 0.5) * sh;
         c.zoom = zoom0.current * k.zoom;
         c.updateProjectionMatrix();
         c.updateMatrixWorld();
-        if (vigRef.current) vigRef.current.style.opacity = String(Math.min(1, deep * 0.9 + (k.zoom - 1) * 0.35));
+        if (vigRef.current) vigRef.current.style.opacity = String(Math.min(1, deep * 0.45));
         projRef.current = (x, y, z) => {
             V.set(x, y, z).project(c);
             return { x: (V.x * 0.5 + 0.5) * size.width, y: (-V.y * 0.5 + 0.5) * size.height };
@@ -397,7 +374,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
             </group>
             {/* Gradsmerket: to vinkler = to like på ruta, stjerne = veteran. Står over figuren og
                 skjules aldri bak den (depthTest av). */}
-            {(u.copies > 1 || u.squad) && <sprite ref={rank} material={rankMaterial(u.squad ? 0 : u.copies)} position={[0, 1.55, 0]} scale={0.5} renderOrder={5} />}
+            {(u.copies > 1 || u.squad) && <sprite ref={rank} material={rankMaterial(u.squad ? 0 : u.copies)} position={[0, 1.3, 0]} scale={0.5} renderOrder={5} />}
             <group ref={wreckRef} visible={false} scale={FIG}>
                 <Figure m={wreck()} />
             </group>

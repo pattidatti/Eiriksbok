@@ -33,11 +33,14 @@ function born(kind: Ghost['kind']): Ghost {
     const side = Math.random() < 0.6;
     const x = side ? MAP_W + 1.8 + Math.random() * 2.6 : 1 + Math.random() * (MAP_W - 2);
     const z = side ? Math.random() * MAP_D : -1.8 - Math.random() * 2;
-    // Kjører langs fronten: opp/ned på høyre side, til siden bak kartet.
-    const a = side ? (Math.random() < 0.5 ? Math.PI / 2 : -Math.PI / 2) + (Math.random() - 0.5) * 0.4 : (Math.random() < 0.5 ? 0 : Math.PI) + (Math.random() - 0.5) * 0.3;
+    // Kjører langs fronten: opp/ned på høyre side, til siden bak kartet - aldri inn på brettet.
+    const a = side ? (Math.random() < 0.5 ? 0 : Math.PI) + (Math.random() - 0.5) * 0.3 : (Math.random() < 0.5 ? Math.PI / 2 : -Math.PI / 2) + (Math.random() - 0.5) * 0.2;
     const v = kind === 'vogn' ? 0.25 : 0.18;
     return { kind, x, z, dx: Math.sin(a) * v, dz: Math.cos(a) * v, t: -Math.random() * 8, life: 14 + Math.random() * 12 };
 }
+
+/** Står skikkelsen inne på brettet (eller i kanten av det)? Da skal den ikke synes. */
+const inside = (x: number, z: number) => x > -0.6 && x < MAP_W + 1.4 && z > -1.2 && z < MAP_D + 0.6;
 
 /** Hvor sterkt glimtene i tåka lyser bak punktet. */
 function lit(x: number, z: number) {
@@ -68,7 +71,7 @@ export function FogGhosts({ gRef, speedRef }: { gRef: React.MutableRefObject<G>;
         for (let i = 0; i < n; i++) {
             const gh = list[i];
             gh.t += dt;
-            if (gh.t > gh.life) list[i] = born(gh.kind);
+            if (gh.t > gh.life || inside(gh.x, gh.z)) list[i] = born(gh.kind);
             const node = grp.current[i];
             if (!node) continue;
             if (gh.t < 0) {
@@ -92,7 +95,7 @@ export function FogGhosts({ gRef, speedRef }: { gRef: React.MutableRefObject<G>;
     return (
         <>
             {Array.from({ length: n }, (_, i) => (
-                <group key={i} ref={(r) => void (grp.current[i] = r)} visible={false} scale={1.4} renderOrder={1}>
+                <group key={i} ref={(r) => void (grp.current[i] = r)} visible={false} scale={1.15} renderOrder={1}>
                     {i % 2 ? (
                         Array.from({ length: MEN }, (_, k) => <mesh key={k} geometry={CAP} material={MATS[i]} position={[-k * 0.26, 0.13, (k % 2) * 0.12 - 0.06]} renderOrder={1} />)
                     ) : (
