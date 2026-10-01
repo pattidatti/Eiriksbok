@@ -31,6 +31,9 @@ const HOLD_MAKS = 5;
 const HOLD_KORT = 2.5;
 /** Seende holder et alvorlig par tilbake når et trinn faller om så få sekunder. */
 const STEP_HOLD = 5;
+/** Nød: over så mye sinne gir eleven etter for fristelsen (interner tyskerjenta, bot til
+ *  profittøren). Den flinke gjør det bare helt på kanten, den halvgode tidligere. */
+const NOD = { seende: 0.9, halvgod: 0.7 } as const;
 
 /** Skranken av riktig slag med minst arbeid foran seg. */
 function bestDesk(g: Game, kind: Route): number {
@@ -124,16 +127,23 @@ export function makeBot(opts: BotOpts, rng: Rng) {
         }
         const ready = g.folders.filter((f) => f.state === 'leir');
         if (!ready.length) return;
+        const nod =
+            (opts.style === 'seende' || opts.style === 'halvgod') && g.sinne > NOD[opts.style];
+        const hasInterner = g.desks.some((d) => d.kind === 'interner');
         const routeOf = (f: Folder): Route =>
-            opts.style === 'alt-rett'
-                ? 'rett'
-                : opts.style === 'alt-forelegg'
+            nod && f.kind === 'utenlov' && hasInterner
+                ? 'interner'
+                : nod && opts.style === 'halvgod' && f.kind === 'tykk'
                   ? 'forelegg'
-                  : f.kind === 'utenlov'
-                    ? 'avvis'
-                    : f.kind === 'lett'
+                  : opts.style === 'alt-rett'
+                    ? 'rett'
+                    : opts.style === 'alt-forelegg'
                       ? 'forelegg'
-                      : 'rett';
+                      : f.kind === 'utenlov'
+                        ? 'avvis'
+                        : f.kind === 'lett'
+                          ? 'forelegg'
+                          : 'rett';
         let f: Folder | undefined;
         if (opts.style === 'seende') {
             // Lette saker får forelegg straks: fast takst, så paret blir alltid jevnt.
@@ -167,7 +177,10 @@ export function makeBot(opts: BotOpts, rng: Rng) {
         let desk: number;
         if (opts.style === 'halvgod') desk = roughDesk(g, route, rng);
         else if (opts.style === 'seende')
-            desk = route === 'avvis' ? bestDesk(g, route) : pairDesk(g, f, route);
+            desk =
+                route === 'avvis' || route === 'interner'
+                    ? bestDesk(g, route)
+                    : pairDesk(g, f, route);
         else desk = bestDesk(g, route);
         // Uten rettssal (brett 1) går alt til forelegg.
         send(g, f.id, desk >= 0 ? desk : bestDesk(g, 'forelegg'));

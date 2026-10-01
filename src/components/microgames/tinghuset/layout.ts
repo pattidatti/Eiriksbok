@@ -3,7 +3,7 @@
 // eleven ser og det eleven treffer, alltid er det samme.
 
 import { TUNING } from './tuning';
-import type { Folder, Game } from './state';
+import type { Folder, Game, Route } from './state';
 
 export const W = TUNING.world.w;
 export const H = TUNING.world.h;
@@ -19,7 +19,7 @@ export interface Pt {
     y: number;
 }
 
-export const FOLDER_W = 46;
+export const FOLDER_W = 50;
 export const FOLDER_H = 30;
 
 /** Avrivningskalenderen øverst til venstre, linjalen rett under. */
@@ -33,17 +33,29 @@ const CAMP_TOP = 140;
 const CAMP_H = 104;
 const CAMP_STEP = 110;
 
-// Plass til sju skranker: forelegg, avvis og opptil fem rettssaler.
+// Høyre kolonne: tre stempler (forelegg, avvis, interner) og under dem én rettssal-hylle
+// med opptil fem dommerplasser.
 const DESK_X = 662;
 const DESK_W = 176;
-const DESK_H = 58;
-const DESK_TOP = 64;
-const DESK_STEP = 67;
+const STAMP_H = 50;
+const STAMP_Y: Record<Exclude<Route, 'rett'>, number> = { forelegg: 64, avvis: 120, interner: 176 };
+const SEAT_TOP = 250;
+const SEAT_H = 50;
+const SEAT_STEP = 56;
+/** Rettssal-hylla: én ramme rundt alle dommerplassene. */
+export const COURT: Rect = { x: DESK_X - 6, y: 232, w: DESK_W + 12, h: 300 };
+
+// Hvilken skranke som er hvilken (rekkefølgen i g.desks er den de kom i). Tegningen og
+// pekeren kaller syncDesks(g) før de spør om en skranke sin plass.
+let KINDS: Route[] = ['forelegg', 'avvis'];
+export function syncDesks(g: Game) {
+    KINDS = g.desks.map((d) => d.kind);
+}
 
 /** Domstabellen øverst på protokollarket: hva hver sakstype får i dag, og neste trinn. */
 export const TABLE: Rect = { x: 300, y: 54, w: 344, h: 92 };
-/** Nederst på arket: folk utenfor tinghuset, én rødblyant-strek per 1,5 % sinne. */
-export const CROWD: Rect = { x: 300, y: 470, w: 344, h: 62 };
+/** Nederst på arket: folk utenfor tinghuset, silhuetter som blir flere med sinnet. */
+export const CROWD: Rect = { x: 296, y: 414, w: 352, h: 118 };
 
 /** Avisa nederst til venstre: overskriftene skifter med året og med det eleven gjør. */
 export const AVIS: Rect = { x: 16, y: 472, w: 264, h: 60 };
@@ -61,12 +73,13 @@ export const campRect = (i: number): Rect => ({
     h: CAMP_H,
 });
 
-export const deskRect = (i: number): Rect => ({
-    x: DESK_X,
-    y: DESK_TOP + i * DESK_STEP,
-    w: DESK_W,
-    h: DESK_H,
-});
+export function deskRect(i: number): Rect {
+    const kind = KINDS[i] ?? 'rett';
+    if (kind !== 'rett') return { x: DESK_X, y: STAMP_Y[kind], w: DESK_W, h: STAMP_H };
+    let n = 0;
+    for (let k = 0; k < i; k++) if (KINDS[k] === 'rett') n++;
+    return { x: DESK_X, y: SEAT_TOP + n * SEAT_STEP, w: DESK_W, h: SEAT_H };
+}
 
 /** Der streken treffer skranken (venstre kant, midt på). */
 export const deskEntry = (i: number): Pt => {
@@ -102,8 +115,8 @@ export function campSlots(g: Game): Map<number, Pt> {
         const row = Math.floor(k / 5) % 3;
         const layer = Math.floor(k / 15);
         out.set(f.id, {
-            x: r.x + 34 + col * 49 + layer * 5,
-            y: r.y + 40 + row * 24 - layer * 4,
+            x: r.x + 36 + col * 49 + layer * 5,
+            y: r.y + 39 + row * 25 - layer * 4,
         });
     }
     return out;
@@ -111,6 +124,7 @@ export function campSlots(g: Game): Map<number, Pt> {
 
 /** Hvor en mappe hører hjemme akkurat nå (leir, kø eller skranke). null = på vei. */
 export function homeOf(g: Game, f: Folder, slots: Map<number, Pt>): Pt | null {
+    syncDesks(g);
     if (f.state === 'leir') return slots.get(f.id) ?? null;
     if (f.state === 'ko') {
         const k = g.desks[f.desk]?.queue.indexOf(f.id) ?? 0;
@@ -121,7 +135,7 @@ export function homeOf(g: Game, f: Folder, slots: Map<number, Pt>): Pt | null {
         const d = g.desks[f.desk];
         const second = d.joint === f.id;
         return d.kind === 'rett'
-            ? { x: r.x + 44 + (second ? 8 : 0), y: r.y + 34 + (second ? 4 : 0) }
+            ? { x: r.x + 78 + (second ? 6 : 0), y: r.y + 26 + (second ? 4 : 0) }
             : { x: r.x + 6, y: r.y + r.h / 2 + 2 };
     }
     return null;
@@ -147,9 +161,10 @@ export function folderAt(g: Game, x: number, y: number, slots = campSlots(g)): F
 
 /** Skranken under pekeren. Køen til venstre teller også som skranken. */
 export function deskAt(g: Game, x: number, y: number): number {
+    syncDesks(g);
     for (let i = 0; i < g.desks.length; i++) {
         const r = deskRect(i);
-        if (inside({ x: r.x - 130, y: r.y - 6, w: r.w + 136, h: r.h + 12 }, x, y)) return i;
+        if (inside({ x: r.x - 130, y: r.y - 3, w: r.w + 136, h: r.h + 6 }, x, y)) return i;
     }
     return -1;
 }

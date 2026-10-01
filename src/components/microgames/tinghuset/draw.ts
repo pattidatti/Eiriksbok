@@ -27,18 +27,20 @@ import {
     deskEntry,
     deskRect,
     homeOf,
+    syncDesks,
     type Pt,
     type Rect,
 } from './layout';
 import { LEVELS } from './levels';
-import { domTekst, straffTrinn } from './rules';
+import { accepts, domTekst, straffTrinn } from './rules';
 import type { Folder, Game } from './state';
+import { personOf } from './texts';
+import { drawCampSlots, drawClip, drawCourtShelf, drawCrowd, drawLaw, person } from './scene';
 import {
     drawAvis,
     drawCalendar,
     drawCards,
     drawCounter,
-    drawCrowd,
     drawGoal,
     drawInter,
     drawMeter,
@@ -49,6 +51,8 @@ import {
 import { TUNING } from './tuning';
 
 const K = TUNING;
+/** Interner-stempelet: mørk, brent rød - fristende, men galt. */
+const INTERN = '#7a2a24';
 const ease = (k: number) => 1 - Math.pow(1 - Math.min(1, Math.max(0, k)), 3);
 
 export interface ViewState {
@@ -62,13 +66,25 @@ export interface ViewState {
 
 export const newView = (): ViewState => ({ drag: null, selected: null, over: -1, sent: false });
 
-/** Kort dom på mappa: det den får NÅ om den går til retten. */
-function shortDom(f: Folder, trinn: number): string {
-    if (f.kind === 'lett') return 'medlem';
-    if (f.kind === 'utenlov') return 'uten lov';
-    if (f.grov) return trinn <= 4 ? 'dødsdom?' : 'livsvarig';
-    return domTekst(f.kind, 'rett', trinn).replace(' fengsel', '');
+/** Maskinskrift som klemmes litt sammen om ordet er for bredt for mappa. */
+function fit(
+    ctx: CanvasRenderingContext2D,
+    t: string,
+    y: number,
+    size: number,
+    color: string,
+    max: number
+) {
+    ctx.font = `bold ${size}px "Courier New", monospace`;
+    const w = ctx.measureText(t).width;
+    ctx.save();
+    if (w > max) ctx.scale(max / w, 1);
+    typed(ctx, t, 0, y, size, color, 'center');
+    ctx.restore();
 }
+
+/** Farge på handlingen: blått for saker uten lov, rødt for alvorlige, fiolett for NS-medlem. */
+const whatColor = (f: Folder) => (f.kind === 'utenlov' ? BLUE : f.kind === 'lett' ? VIOLET : RED);
 
 /** Hver mappe ligger litt skjevt (±3 grader), fast per mappe. */
 const tiltOf = (id: number) => (((id * 37) % 7) - 3) * (Math.PI / 180);
@@ -146,63 +162,34 @@ function drawFolder(
     if (hi) {
         ctx.strokeStyle = BLUE;
         ctx.lineWidth = 2;
-        ctx.strokeRect(-25, -17, 50, 34);
+        ctx.strokeRect(-28, -18, 56, 36);
     }
     if (f.grov) {
         // Drap og tortur: dobbel rødblyant rundt hele mappa.
         ctx.strokeStyle = RED;
         ctx.lineWidth = 1.6;
-        ctx.strokeRect(-24, -16, 48, 32);
-        ctx.strokeRect(-21, -13, 42, 26);
+        ctx.strokeRect(-26, -16, 52, 32);
+        ctx.strokeRect(-23, -13, 46, 26);
     }
-    typed(ctx, String(f.sak), -10, -5.5, 10, INK, 'center');
-    if (f.kind === 'lett') {
-        // Tilbakevirkende kraft: meldt inn i 1940, men loven som straffet det kom i 1944.
-        ctx.save();
-        ctx.translate(12, -6);
-        ctx.rotate(-0.22);
-        ctx.globalAlpha *= 0.85;
-        ctx.strokeStyle = VIOLET;
-        ctx.lineWidth = 1;
-        ctx.strokeRect(-13, -6, 26, 12);
-        typed(ctx, '1940', 0, 0.5, 10, VIOLET, 'center');
-        ctx.restore();
-    }
-    if (f.state === 'leir' || f.state === 'ko') {
-        const label = shortDom(f, straffTrinn(g.mnd));
-        if (blink && f.kind !== 'lett') {
-            const s = Math.ceil(secsToStep(g));
-            const on = Math.floor(fx.t * 4) % 2 === 0;
-            typed(ctx, on ? label : `om ${s} s`, 0, 7, 10, RED, 'center');
-        } else
-            typed(
-                ctx,
-                label,
-                0,
-                7,
-                10,
-                f.kind === 'utenlov' ? BLUE : f.grov ? RED : f.kind === 'lett' ? '#3e3b44' : INK,
-                'center'
-            );
+    // Personen bak saken: yrke øverst, handlingen under («Bonde» / «NS 1940»).
+    const [who, what] = personOf(f);
+    fit(ctx, who, -5.5, 9.5, INK, 42);
+    if (
+        blink &&
+        f.kind !== 'lett' &&
+        f.kind !== 'utenlov' &&
+        (f.state === 'leir' || f.state === 'ko')
+    ) {
+        // Straffenivået faller snart: handlingen veksler med nedtellingen.
+        const on = Math.floor(fx.t * 4) % 2 === 0;
+        fit(ctx, on ? what : `om ${Math.ceil(secsToStep(g))} s`, 7, 9.5, RED, 44);
+    } else fit(ctx, what, 7, 9.5, whatColor(f), 44);
+    // Like saker: klemme i samme farge. Er tvillingen på vei, tømmes en ring ved klemmen.
+    if (f.twin !== null) {
+        const eta = f.state === 'leir' ? twinEta(g, f) : null;
+        drawClip(ctx, f.sak, eta === null ? null : eta / 14);
     }
     ctx.restore();
-    // Tvillingen er på vei: blyantring med sekundene.
-    const eta = f.state === 'leir' ? twinEta(g, f) : null;
-    if (eta !== null) {
-        ctx.save();
-        ctx.translate(p.x + 22, p.y - 15);
-        ctx.fillStyle = SLIP;
-        ctx.beginPath();
-        ctx.arc(0, 0, 9, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = BLUE;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.arc(0, 0, 9, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * Math.min(1, eta / 14));
-        ctx.stroke();
-        typed(ctx, String(Math.ceil(eta)), 0, 0.5, 10, BLUE, 'center');
-        ctx.restore();
-    }
 }
 
 function drawCamp(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art, i: number) {
@@ -306,28 +293,6 @@ function drawCells(ctx: CanvasRenderingContext2D, fx: Fx, r: Rect, camp: number)
     });
 }
 
-function drawRoutes(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    const fi = g.desks.findIndex((d) => d.kind === 'forelegg');
-    if (fi < 0) return;
-    for (const ci of g.ruter) {
-        const r = campRect(ci);
-        const e = deskEntry(fi);
-        ctx.save();
-        ctx.globalAlpha = 0.4;
-        pencil(ctx, r.x + r.w, r.y + r.h / 2, e.x, e.y, BLUE, ci + 9, 1, 1.1);
-        // Små piler som går langs ruten.
-        const k = (fx.t * 0.6) % 1;
-        const px = r.x + r.w + (e.x - r.x - r.w) * k;
-        const py = r.y + r.h / 2 + (e.y - r.y - r.h / 2) * k;
-        ctx.globalAlpha = 0.8;
-        ctx.fillStyle = BLUE;
-        ctx.beginPath();
-        ctx.arc(px, py, 2.5, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-    }
-}
-
 function drawDesk(
     ctx: CanvasRenderingContext2D,
     art: Art,
@@ -344,7 +309,8 @@ function drawDesk(
     ctx.save();
     ctx.translate(off, 0);
     // Gyldige mål mens eleven drar: en rolig blå ramme (står stille, ingen flimmer).
-    if (v.drag) {
+    const dragged = v.drag ? g.folders.find((x) => x.id === v.drag!.id) : undefined;
+    if (v.drag && dragged && accepts(dragged.kind, d.kind)) {
         ctx.strokeStyle = BLUE;
         ctx.globalAlpha = v.over === i ? 0.9 : 0.3;
         ctx.lineWidth = v.over === i ? 3 : 1.5;
@@ -353,10 +319,15 @@ function drawDesk(
     }
     if (d.kind !== 'rett') {
         const avvis = d.kind === 'avvis';
-        // Stempelet puster når det er det eleven skal bruke nå.
+        const intern = d.kind === 'interner';
+        const utenlovVenter = g.folders.some((f) => f.kind === 'utenlov' && f.state === 'leir');
+        // Stempelet puster når det er det eleven skal bruke nå. Interner-stempelet puster
+        // også - når gata er sint og en tyskerjente-sak ligger klar. Det er fristelsen.
         const invite = avvis
-            ? g.folders.some((f) => f.kind === 'utenlov' && f.state === 'leir')
-            : g.level === 0 && !v.sent;
+            ? utenlovVenter
+            : intern
+              ? utenlovVenter && g.sinne > 0.45
+              : g.level === 0 && !v.sent;
         const breathe = invite
             ? 1 + Math.sin(fx.t * 3.2) * 0.025 - st.press * 0.08
             : 1 - st.press * 0.08;
@@ -366,7 +337,8 @@ function drawDesk(
         // Stempelblokka i tre med gummi under.
         ctx.fillStyle = 'rgba(20,16,14,0.30)';
         ctx.fillRect(-r.w / 2 + 3, -r.h / 2 + 5 - st.press * 2, r.w, r.h);
-        ctx.fillStyle = avvis ? BLUE : VIOLET;
+        const ink = avvis ? BLUE : intern ? INTERN : VIOLET;
+        ctx.fillStyle = ink;
         ctx.fillRect(-r.w / 2 - 2, -r.h / 2 + 2, r.w + 4, r.h);
         ctx.fillStyle = DESK;
         ctx.fillRect(-r.w / 2, -r.h / 2, r.w, r.h - 3);
@@ -376,18 +348,25 @@ function drawDesk(
         ctx.fillStyle = grain;
         ctx.fillRect(-r.w / 2, -r.h / 2, r.w, r.h - 3);
         // Etiketten på toppen viser avtrykket.
-        const ink = avvis ? BLUE : VIOLET;
         ctx.fillStyle = SLIP;
         ctx.fillRect(-r.w / 2 + 8, -r.h / 2 + 6, 104, 28);
         ctx.strokeStyle = ink;
         ctx.lineWidth = 1.5;
         ctx.strokeRect(-r.w / 2 + 11, -r.h / 2 + 9, 98, 22);
-        typed(ctx, avvis ? 'AVVIS' : 'FORELEGG', -r.w / 2 + 60, -r.h / 2 + 20.5, 14, ink, 'center');
         typed(
             ctx,
-            avvis ? 'ingen lov - ingen sak' : 'bot, fast takst',
+            avvis ? 'AVVIS' : intern ? 'INTERNER' : 'FORELEGG',
+            -r.w / 2 + 60,
+            -r.h / 2 + 20.5,
+            14,
+            ink,
+            'center'
+        );
+        typed(
+            ctx,
+            avvis ? 'ingen lov - ingen sak' : intern ? 'uten dom · roer gata' : 'bot, fast takst',
             -r.w / 2 + 66,
-            r.h / 2 - 11,
+            r.h / 2 - 8,
             10,
             ON_LEATHER,
             'center',
@@ -398,7 +377,7 @@ function drawDesk(
         ctx.restore();
         if (st.t < 0.3) {
             // Blekkring rundt stempelet når det slår ned.
-            ctx.strokeStyle = st.mild ? RED : d.kind === 'avvis' ? BLUE : VIOLET;
+            ctx.strokeStyle = st.mild ? RED : avvis ? BLUE : intern ? INTERN : VIOLET;
             ctx.globalAlpha = 1 - st.t / 0.3;
             ctx.lineWidth = 2;
             const grow = st.t * 40;
@@ -406,81 +385,65 @@ function drawDesk(
             ctx.globalAlpha = 1;
         }
     } else {
-        // Rettssalen: en oppslått protokollbok der dommen skrives tegn for tegn.
-        ctx.fillStyle = 'rgba(30,26,34,0.28)';
-        ctx.fillRect(r.x + 3, r.y + 4, r.w, r.h);
-        ctx.fillStyle = '#4a3a5c';
-        ctx.fillRect(r.x - 3, r.y - 3, r.w + 6, r.h + 6);
-        ctx.fillStyle = '#f1efe4';
-        ctx.fillRect(r.x, r.y, r.w / 2 - 1, r.h);
-        ctx.fillRect(r.x + r.w / 2 + 1, r.y, r.w / 2 - 1, r.h);
-        const spine = ctx.createLinearGradient(r.x + r.w / 2 - 10, 0, r.x + r.w / 2 + 10, 0);
-        spine.addColorStop(0, 'rgba(0,0,0,0)');
-        spine.addColorStop(0.5, 'rgba(30,26,34,0.35)');
-        spine.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx.fillStyle = spine;
-        ctx.fillRect(r.x + r.w / 2 - 10, r.y, 20, r.h);
-        const n = g.desks.slice(0, i + 1).filter((x) => x.kind === 'rett').length;
-        typed(ctx, `RETTSSAL ${n}`, r.x + 6, r.y + 10, 10, VIOLET);
-        ctx.strokeStyle = 'rgba(46,91,152,0.18)';
-        ctx.lineWidth = 0.8;
-        for (let ly = r.y + 22; ly < r.y + r.h - 4; ly += 11) {
-            ctx.beginPath();
-            ctx.moveTo(r.x + r.w / 2 + 6, ly);
-            ctx.lineTo(r.x + r.w - 6, ly);
-            ctx.stroke();
-        }
+        // En dommerplass i rettssal-hylla: dommeren bak skranken, saken på bordet, og dommen
+        // som skrives inn mens saken går.
+        ctx.fillStyle = '#efe9d6';
+        ctx.fillRect(r.x, r.y, r.w, r.h);
+        ctx.fillStyle = 'rgba(90,47,156,0.18)';
+        ctx.fillRect(r.x, r.y, 50, r.h);
         const f = d.current !== null ? g.folders.find((x) => x.id === d.current) : undefined;
+        // Dommeren: en silhuett i kappe som nikker mens saken går.
+        const nod = f ? Math.sin(fx.t * 3 + i) * 1.2 : 0;
+        person(
+            ctx,
+            r.x + 25,
+            r.y + r.h - 8 + nod * 0.3,
+            0.92,
+            0,
+            f ? INK : 'rgba(34,29,36,0.45)',
+            true
+        );
+        // Dommerbordet foran.
+        ctx.fillStyle = '#5a3b26';
+        ctx.fillRect(r.x + 4, r.y + r.h - 16, 44, 14);
+        ctx.fillStyle = 'rgba(255,230,200,0.18)';
+        ctx.fillRect(r.x + 4, r.y + r.h - 16, 44, 2);
+        ctx.strokeStyle = 'rgba(34,29,36,0.5)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
         if (f) {
             const prog = 1 - d.left / d.total;
-            const line = `Sak ${f.sak}: ${domTekst(f.kind, 'rett', straffTrinn(g.mnd)).replace(' fengsel', '')}`;
-            const shown = line.slice(0, Math.ceil(line.length * Math.min(1, prog * 1.15)));
-            typed(ctx, shown, r.x + r.w / 2 + 4, r.y + 16, 10, INK, 'left', false);
+            const dom = domTekst(f.kind, 'rett', straffTrinn(g.mnd), !!f.grov)
+                .replace(' fengsel', '')
+                .replace(/^Bot .*/, 'bot')
+                .replace('Livsvarig', 'livsvarig');
+            const shown = dom.slice(0, Math.ceil(dom.length * Math.min(1, prog * 1.3)));
+            typed(ctx, `Sak ${f.sak}`, r.x + 108, r.y + 14, 10, '#4b4250', 'left', false);
+            typed(ctx, shown, r.x + 108, r.y + 30, 12, VIOLET, 'left');
+            ctx.fillStyle = 'rgba(90,47,156,0.2)';
+            ctx.fillRect(r.x + 56, r.y + r.h - 7, r.w - 62, 3);
             ctx.fillStyle = VIOLET;
-            ctx.fillRect(r.x + r.w / 2 + 6, r.y + r.h - 9, (r.w / 2 - 12) * prog, 3);
-            // Den blinkende markøren i skrivemaskinen.
-            if (Math.floor(fx.t * 3) % 2 === 0) {
-                ctx.font = `10px "Courier New", monospace`;
-                const tw = ctx.measureText(shown).width;
-                ctx.fillStyle = INK;
-                ctx.fillRect(r.x + r.w / 2 + 7 + tw, r.y + 11, 1.2, 10);
-            }
-        } else {
-            // Ledig sal: den trykte dommen for en angiver akkurat nå - og neste trinn.
+            ctx.fillRect(r.x + 56, r.y + r.h - 7, (r.w - 62) * prog, 3);
+        } else
             typed(
                 ctx,
                 'ledig',
-                r.x + r.w * 0.75,
-                r.y + 18,
-                10,
-                'rgba(34,29,36,0.45)',
+                r.x + 112,
+                r.y + r.h / 2,
+                11,
+                'rgba(34,29,36,0.5)',
                 'center',
                 false
             );
-            const tr = straffTrinn(g.mnd);
-            const now = domTekst('alvorlig', 'rett', tr).replace(' fengsel', '');
-            const soon = LEVELS[g.level].linjal && secsToStep(g) < K.kalender.varselSek;
-            const next = domTekst('alvorlig', 'rett', tr + 1).replace(' fengsel', '');
-            const on = Math.floor(fx.t * 3) % 2 === 0;
-            typed(
-                ctx,
-                soon && on ? `→ ${next}` : `nå ${now}`,
-                r.x + r.w * 0.75,
-                r.y + 36,
-                10,
-                soon ? RED : VIOLET,
-                'center'
-            );
-        }
         if (st.t < 0.5 && st.press > 0) {
             ctx.save();
-            ctx.translate(r.x + r.w * 0.75, r.y + 36);
+            ctx.translate(r.x + 118, r.y + 26);
             ctx.rotate(-0.12);
             ctx.globalAlpha = Math.min(1, 1.2 - st.t * 2);
             ctx.strokeStyle = VIOLET;
             ctx.lineWidth = 2;
-            ctx.strokeRect(-38, -9, 76, 18);
-            typed(ctx, 'DOM AVSAGT', 0, 0.5, 10, VIOLET, 'center');
+            ctx.strokeRect(-46, -10, 92, 20);
+            typed(ctx, 'DOM AVSAGT', 0, 0.5, 11, VIOLET, 'center');
             ctx.restore();
         }
     }
@@ -512,29 +475,8 @@ function drawHint(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: ViewState) 
     ctx.restore();
 }
 
-/** Like saker i leirene: en tynn stiplet blyantstrek mellom tvillingene. */
-function drawPairs(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    ctx.save();
-    ctx.strokeStyle = BLUE;
-    ctx.lineWidth = 1;
-    ctx.globalAlpha = 0.35;
-    ctx.setLineDash([3, 4]);
-    for (const f of g.folders) {
-        if (f.twin === null || f.twin < 0 || f.id > f.twin || f.state !== 'leir') continue;
-        const t = g.folders.find((x) => x.id === f.twin);
-        if (!t || t.state !== 'leir') continue;
-        const a = fx.pos.get(f.id);
-        const b = fx.pos.get(t.id);
-        if (!a || !b) continue;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
-    }
-    ctx.restore();
-}
-
 export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, fx: Fx, art: Art) {
+    syncDesks(g);
     ctx.drawImage(art.paper, 0, 0, W, H);
     // Sinnet: rødblyant-skravering kryper inn fra høyre marg.
     if (g.sinne > 0.04) {
@@ -546,6 +488,9 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, f
         ctx.drawImage(art.hatch, 0, 0, W, H);
         ctx.restore();
     }
+    // Strekene ligger under protokollteksten (linjene har papir bak seg), aldri over den.
+    drawStrokes(ctx, fx);
+    drawLaw(ctx, g, fx);
     drawLog(ctx, fx);
     drawTable(ctx, g, fx);
     drawCrowd(ctx, g, fx);
@@ -553,12 +498,11 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, f
     drawCalendar(ctx, g, fx);
     drawGoal(ctx, g);
     drawRuler(ctx, g, fx);
+    drawCampSlots(ctx, g, fx);
     g.camps.forEach((_, i) => drawCamp(ctx, g, fx, art, i));
-    drawRoutes(ctx, g, fx);
+    drawCourtShelf(ctx, g, fx);
     g.desks.forEach((_, i) => drawDesk(ctx, art, g, fx, v, i));
-    drawPairs(ctx, g, fx);
     drawHint(ctx, g, fx, v);
-    drawStrokes(ctx, fx);
 
     const blink = LEVELS[g.level].linjal && secsToStep(g) < K.kalender.varselSek;
     // Mappene: kø og skranke først, så leirene, så de som glir (øverst).

@@ -3,7 +3,7 @@
 // nevnes saklig i én sjelden sak (dommen som trykkes) og i protokollbladene; en henrettelse
 // vises aldri. Kvinnene med tyske kjærester er en sak uten lov - riktig grep er å avvise den.
 
-import type { Cause, CardId } from './state';
+import type { Cause, CardId, Folder } from './state';
 
 export const RANKS: [number, string][] = [
     [0, 'Kontorbud'],
@@ -44,7 +44,7 @@ export const BEATS = {
     },
     par: {
         tittel: 'Like saker',
-        tekst: 'Samme saksnummer betyr samme handling. Avgjør begge før straffenivået faller, så får de samme dom.',
+        tekst: 'Lik farge på klemmen betyr samme handling. Avgjør begge før straffenivået faller, så får de samme dom.',
     },
     trinn: {
         tittel: 'Straffene blir mildere',
@@ -58,13 +58,13 @@ export const PINS = {
     rett: 'Rettssalen: én sak av gangen',
     sinne: 'Gata vil se dommer - fort',
     forloven: 'Meldt inn 1940. Loven kom i 1944.',
-    linjal: 'Straffenivået faller trinn for trinn',
-    tvilling: 'Tvillingen kommer - vent, eller døm nå?',
+    tvilling: 'Lik klemme kommer - vent, eller døm nå?',
     kort: 'Velg ett kort',
     rute: 'Fast rute sender grå mapper selv',
-    utenlov: 'Tyskerjente: ingen lov forbød det. Avvis.',
+    utenlov: 'Tyskerjente: ingen lov forbød det',
+    interner: 'Roer gata - men uten lov og dom',
     grov: 'Drap og tortur. Dødsstraff var mulig.',
-    profittor: 'Profittør: bot er raskt, rettssak er riktig',
+    profittor: 'Profittør: retten er treg, bot går fort',
 };
 
 /** «Dette skjedde»: det eleven skal sitte igjen med, knyttet til det som skjedde i runden. */
@@ -78,7 +78,7 @@ export const LESSONS = {
     utenlov:
         'Det var ikke forbudt å ha en tysk kjæreste. Likevel ble tusenvis av «tyskerjenter» straffet uten lov og dom. Du avviste sakene, selv om gata ble sint.',
     ulovlig:
-        'Du straffet en kvinne som ikke hadde brutt noen lov. Det skjedde med tusenvis i 1945, og staten ba om unnskyldning i 2018.',
+        'Du internerte en kvinne uten dom, selv om hun ikke hadde brutt noen lov. Det skjedde med tusenvis i 1945, og staten ba om unnskyldning i 2018.',
     grov: 'De grovste sakene kunne gi dødsdom. 30 nordmenn ble dømt til døden. Et par år senere ble lignende saker sjeldnere dømt så hardt.',
     forloven:
         'NS-medlemmer ble straffet etter en lov fra 1944, selv om det var lovlig å melde seg inn i 1940. Det kalles tilbakevirkende kraft.',
@@ -96,19 +96,41 @@ export const RETTFERDIG = {
         ulovlig: number;
         formildt: number;
         profBot: number;
+        trekk: number;
     }) =>
         [
             `${r.jevne} like saker fikk lik dom, ${r.ulike} fikk ulik dom bare fordi de kom opp på ulik tid.`,
             r.ulovlig > 0
-                ? `${r.ulovlig} uten lov ble straffet likevel. ${r.avvist} saker ble avvist.`
+                ? `${r.ulovlig} kvinner ble internert uten dom. ${r.avvist} saker ble avvist.`
                 : r.avvist > 0
                   ? `Alle ${r.avvist} saker uten lov ble avvist - ingen ble straffet uten lov.`
                   : '',
             r.formildt > 0 ? `${r.formildt} alvorlige saker slapp med forelegg.` : '',
-            r.profBot > 0 ? `${r.profBot} profittører slapp med bot.` : '',
+            r.profBot > 0 ? `Slapp unna: ${r.profBot} profittører fikk bare bot.` : '',
+            r.trekk > 0 ? `Det kostet deg ${r.trekk} poeng på slutten.` : '',
             'I virkeligheten ble tusenvis av kvinner straffet uten lov og dom. Staten ba om unnskyldning i 2018.',
         ].filter(Boolean),
 };
+
+// Personene bak mappene: yrke og handling («Bonde» / «NS 1940»). Fast per mappe (etter id),
+// så en mappe ikke bytter navn. Like saker (samme klemme) har samme handling, ulikt yrke.
+const YRKE = {
+    lett: ['Bonde', 'Lærer', 'Snekker', 'Postbud', 'Kontorist', 'Baker', 'Fisker', 'Kjøpmann'],
+    alvorlig: ['Sjåfør', 'Vekter', 'Tolk', 'Smed', 'Student', 'Arbeider', 'Frisør'],
+    tykk: ['Grossist', 'Reder', 'Kjøpmann', 'Direktør', 'Fabrikant'],
+    utenlov: ['Syerske', 'Servitør', 'Hushjelp', 'Kokke', 'Telefonist'],
+} as const;
+
+/** To linjer på mappa: hvem (yrket) og hva saken gjelder. */
+export function personOf(f: Folder): [string, string] {
+    const list = YRKE[f.kind];
+    const who = list[(f.id * 7 + f.sak * 3) % list.length];
+    if (f.grov) return ['Agent', 'drap'];
+    if (f.kind === 'lett') return [who, `NS ${f.sak % 3 === 0 ? 1941 : 1940}`];
+    if (f.kind === 'alvorlig') return [who, f.sak % 2 ? 'angiver' : 'STAPO'];
+    if (f.kind === 'tykk') return [who, 'profittør'];
+    return [who, 'tysk venn'];
+}
 
 /** Lærdommen fra det første ulike paret, med elevens egne tall. */
 export function ulikLesson(sak: number, a: string, b: string): string {

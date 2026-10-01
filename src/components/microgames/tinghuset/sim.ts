@@ -74,3 +74,35 @@ const spec: SimSpec<Game> = {
 };
 
 export default spec;
+
+/**
+ * Spor av sinnet for én robot over mange runder: sinnet ved gitte sekunder per runde.
+ * Brukes til å sammenligne simuleringen med nettleserrunden (filmstripen viser sinnet).
+ * `npx tsx -e "import('./src/components/microgames/tinghuset/sim.ts').then(m => console.log(m.sinneSpor('seende', 40)))"`
+ */
+export function sinneSpor(
+    name: keyof typeof BOTS = 'seende',
+    runder = 40,
+    ved: number[] = [20, 55, 80, 110, 150, 200]
+) {
+    const rows: { seed: number; vant: boolean; poeng: number; sinne: number[] }[] = [];
+    for (let seed = 1; seed <= runder; seed++) {
+        let r = seed * 9301 + 49297;
+        const rng = () => (r = (r * 233280 + 49297) % 2147483647) / 2147483647;
+        const g = newGame(seed);
+        const tick = makeBot(BOTS[name], rng);
+        const s: number[] = [];
+        let next = 0;
+        while (g.mode === 'play' && g.t < MAKS_SEKUNDER) {
+            if (g.t >= next) {
+                tick(g);
+                next += 0.2;
+            }
+            update(g, 0.05);
+            g.events.length = 0;
+            while (s.length < ved.length && g.t >= ved[s.length]) s.push(Math.round(g.sinne * 100));
+        }
+        rows.push({ seed, vant: g.mode === 'won', poeng: Math.floor(g.score), sinne: s });
+    }
+    return rows;
+}

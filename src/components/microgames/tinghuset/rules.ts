@@ -4,8 +4,9 @@
 //  2. Uten lov, ingen sak: kvinner med tyske kjærester («tyskerjenter») hadde ikke brutt noen
 //     lov. Riktig grep er å avvise saken - selv om sinnet i gatene stiger av det.
 // Folkemengden er motspilleren: det riktige (avvise, rettssak for profittøren, vente på
-// tvillingen) koster sinne. Det lettvinte (straffe uten lov, bot til profittøren) roer gata,
-// men koster multiplikatoren og poengene - og havner i protokollen.
+// tvillingen) koster sinne. Det lettvinte er en ekte fristelse: INTERNER-stempelet (straff uten
+// dom) roer gata kraftig, og et raskt forelegg tømmer køen for profittøren - men begge koster
+// multiplikatoren, havner i protokollen og trekkes fra poengene på slutten.
 //  3. Kalenderen gjør straffene mildere i synlige trinn - like saker avgjort på hver sin
 //     side av et trinn, får ulik trykt dom.
 // Her står grepene eleven gjør (send, velg kort) og hva som skjer når en sak avgjøres.
@@ -49,7 +50,7 @@ const kr = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 export function domTekst(kind: Folder['kind'], route: Route, trinn: number, grov = false): string {
     const D = K.dom;
     if (route === 'avvis') return 'Saken avvist';
-    if (kind === 'utenlov') return 'Straffet uten lov';
+    if (route === 'interner' || kind === 'utenlov') return 'Internert uten dom';
     if (route === 'forelegg') return D.forelegg;
     const niv = 1 - T.pp * trinn;
     if (grov) return niv >= D.grovNivaa - 1e-9 ? 'Dødsdom' : 'Livsvarig fengsel';
@@ -63,6 +64,7 @@ export function domTekst(kind: Folder['kind'], route: Route, trinn: number, grov
 export function caseTime(g: Game, d: Desk, f: Folder): number {
     if (d.kind === 'forelegg') return K.skranke.forelegg;
     if (d.kind === 'avvis') return K.skranke.avvis;
+    if (d.kind === 'interner') return K.skranke.interner;
     const base = f.kind === 'tykk' ? K.skranke.tykkRettssak : K.skranke.rettssak;
     return base * Math.pow(1 - K.skranke.dommereFart, g.dommere);
 }
@@ -79,6 +81,13 @@ export function deskLoad(g: Game, di: number): number {
     return s;
 }
 
+/** Interner-stempelet tar bare tyskerjente-saker, og de kan ikke få forelegg eller rettssak:
+ *  for dem finnes bare to veier - avvis (lov) eller interner (uten dom). */
+export function accepts(kind: Folder['kind'], route: Route): boolean {
+    if (kind === 'utenlov') return route === 'avvis' || route === 'interner';
+    return route !== 'interner';
+}
+
 /**
  * Elevens grep: dra en strek fra en mappe i en leir til en skranke. Mappa glir langs
  * streken og stiller seg i køen. Gir false om grepet ikke er lovlig.
@@ -88,6 +97,7 @@ export function send(g: Game, folderId: number, deskIdx: number): boolean {
     const f = folderById(g, folderId);
     const d = g.desks[deskIdx];
     if (!f || !d || f.state !== 'leir') return false;
+    if (!accepts(f.kind, d.kind)) return false;
     f.state = 'reiser';
     f.desk = deskIdx;
     f.travel = K.skranke.reise;
@@ -189,7 +199,8 @@ export function decide(g: Game, f: Folder, route: Route) {
             g.avvist++;
             g.events.push({ kind: 'avvist', v });
         } else {
-            // Straff uten lov: gata roer seg, men ingen poeng, og multiplikatoren faller til x1.
+            // Straff uten dom: gata roer seg kraftig, men ingen poeng, multiplikatoren faller
+            // til x1, og saken trekkes fra poengene på slutten.
             g.sinne = Math.max(0, g.sinne - K.sinne.ulovligLetter);
             g.mult = 1;
             g.ulovlig++;
@@ -215,7 +226,9 @@ export function decide(g: Game, f: Folder, route: Route) {
         else if (f.kind !== 'lett') {
             g.score += K.poeng.alvorligRett;
             g.alvorligRett++;
-            g.sinne = Math.max(0, g.sinne - K.sinne.rettLetter);
+            // Gata ser en dom og roer seg - men mildere dommer roer mindre (1946-48).
+            const roer = K.sinne.rettLetter * Math.pow(straffNivaa(g.mnd), K.sinne.rettNivaaEksp);
+            g.sinne = Math.max(0, g.sinne - roer);
         }
         g.events.push({ kind: 'avgjort', v });
     }
@@ -249,6 +262,19 @@ function judgePair(g: Game, a: Verdict, b: Verdict) {
         Math.abs(a.trinn - b.trinn) + (a.route !== b.route || a.mild || b.mild ? 12 : 0);
     if (!g.skjevest || skjevhet > g.skjevest.skjevhet) g.skjevest = { a, b, skjevhet };
     g.events.push({ kind: 'ulikt', a, b });
+}
+
+/** Regningen på slutten: straff uten dom og profittører som slapp unna trekkes fra poengene. */
+export function sluttRegning(g: Game) {
+    g.trekk = g.ulovlig * K.poeng.trekkUlovlig + g.profBot * K.poeng.trekkSlapp;
+    g.score = Math.max(0, g.score - g.trekk);
+}
+
+/** Interner-stempelet glir inn (sommeren 1945): straff uten dom blir mulig - og fristende. */
+export function openInterner(g: Game) {
+    if (g.desks.some((d) => d.kind === 'interner')) return;
+    g.desks.push({ kind: 'interner', queue: [], current: null, joint: null, left: 0, total: 0 });
+    g.events.push({ kind: 'interner' });
 }
 
 /** Skrankene jobber: start neste sak i køen, avgjør den som er ferdig. */

@@ -4,7 +4,7 @@
 // (game.ts) vet ingenting om dette.
 
 import { BLUE, INK, RED, SLIP, VIOLET, inkAlpha, pencil, typed } from './art';
-import { COUNTER, METER, deskEntry, deskRect, type Pt } from './layout';
+import { COUNTER, METER, deskEntry, deskRect, syncDesks, type Pt } from './layout';
 import { MONTHS, monthName } from './levels';
 import type { Game, GameEvent, Verdict } from './state';
 import { TUNING } from './tuning';
@@ -89,7 +89,7 @@ export interface Fx {
     cells: { camp: number; t: number; out: number }[];
     /** Avisa: en overskrift som svarer på det eleven gjorde, og når den kom. */
     news: { text: string; t: number } | null;
-    /** Plakatene utenfor tinghuset: hvor langt opp hver er hevet (0-1). */
+    /** Folkemengden utenfor tinghuset: hvor langt opp hver silhuett har kommet (0-1). */
     placards: number[];
     /** Når hver måneds overskrift kom første gang (for at avisa glir inn). */
     newsMonth: Map<number, number>;
@@ -132,7 +132,7 @@ export function newFx(): Fx {
 const ease = (k: number) => 1 - Math.pow(1 - Math.min(1, Math.max(0, k)), 3);
 
 /** Så mange linjer protokollen viser. */
-export const LOG_ROWS = 14;
+export const LOG_ROWS = 11;
 
 /** «jun 45» */
 function shortMonth(m: number) {
@@ -183,6 +183,7 @@ function cellTime(dom: string): number {
 
 /** Gjør spillets hendelser om til bevegelse. Lydene og tekstene tar komponenten seg av. */
 export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
+    syncDesks(g);
     if (
         e.kind === 'avgjort' ||
         e.kind === 'formildt' ||
@@ -233,7 +234,7 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
                     : v.route === 'avvis'
                       ? 'avvist'
                       : v.kind === 'utenlov'
-                        ? 'straffet'
+                        ? 'internert'
                         : v.dom.replace(' fengsel', ''),
             when: shortMonth(v.mnd),
             ink: inkAlpha(v.mnd),
@@ -252,7 +253,7 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
         const stay = e.kind === 'avgjort' && v.route === 'rett' ? cellTime(v.dom) : 0;
         if (stay > 0) fx.cells.push({ camp: v.camp, t: fx.t, out: fx.t + stay });
         if (e.kind === 'avvist') headline(fx, 'Folk krever straff for «tyskerjentene»');
-        else if (e.kind === 'ulovlig') headline(fx, 'Kvinne straffet - uten lov og dom', true);
+        else if (e.kind === 'ulovlig') headline(fx, 'Kvinne internert - uten lov og dom', true);
         else if (e.kind === 'formildt')
             headline(
                 fx,
@@ -290,7 +291,12 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
         fx.trinnT = 0;
     } else if (e.kind === 'leir') {
         fx.campOpen.set(g.camps.indexOf(e.camp), 0);
-    } else if (e.kind === 'brett' || e.kind === 'kort' || e.kind === 'sal') {
+    } else if (
+        e.kind === 'brett' ||
+        e.kind === 'kort' ||
+        e.kind === 'sal' ||
+        e.kind === 'interner'
+    ) {
         // Nye skranker glir inn.
         g.desks.forEach((_, i) => {
             if (!fx.deskOpen.has(i)) fx.deskOpen.set(i, 0);
@@ -511,6 +517,9 @@ export function drawLog(ctx: CanvasRenderingContext2D, fx: Fx) {
         }
         const line = `${String(l.sak).padStart(3, ' ')}  ${l.dom.padEnd(10, ' ')} ${l.when}`;
         const shown = line.slice(0, Math.ceil(l.t * 70));
+        // Papir bak linja: strekene som går under, krysser aldri bokstavene.
+        ctx.fillStyle = 'rgba(236,220,180,0.92)';
+        ctx.fillRect(x - 3, y - 8, 252, 16);
         ctx.save();
         ctx.globalAlpha = 0.35 + 0.6 * l.ink;
         const bad = l.mark === 'mild' || l.mark === 'ulovlig';

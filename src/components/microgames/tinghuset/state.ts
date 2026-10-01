@@ -8,8 +8,9 @@ import { TUNING } from './tuning';
 /** lett = vanlig NS-medlem (grå), alvorlig = angiver/statspoliti (rødt hjørne), tykk =
  *  profittør (økonomisk landssvik), utenlov = en kvinne med tysk kjæreste - ingen lov forbød det. */
 export type Kind = 'lett' | 'alvorlig' | 'tykk' | 'utenlov';
-/** avvis = «ingen lov - ingen sak»: saken henlegges uten straff. */
-export type Route = 'forelegg' | 'rett' | 'avvis';
+/** avvis = «ingen lov - ingen sak»: saken henlegges uten straff. interner = straff uten dom
+ *  (bare for tyskerjente-saker): gata roer seg, men det skjer uten lov og teller mot deg. */
+export type Route = 'forelegg' | 'rett' | 'avvis' | 'interner';
 export type FolderState = 'leir' | 'reiser' | 'ko' | 'behandles';
 export type CardId = 'rettssal' | 'dommere' | 'rute' | 'felles' | 'forelegg';
 export type Cause = 'vent' | 'mild';
@@ -79,6 +80,7 @@ export type GameEvent =
     | { kind: 'brett'; level: number }
     | { kind: 'kort' }
     | { kind: 'sal' }
+    | { kind: 'interner' }
     | { kind: 'trinn'; trinn: number }
     | { kind: 'leir'; camp: CampId };
 
@@ -134,6 +136,8 @@ export interface Game {
     /** Saker uten lov: avvist (riktig) og straffet likevel. */
     avvist: number;
     ulovlig: number;
+    /** Trekket på slutten: straffet uten dom og profittører som slapp unna (regnes ved slutt). */
+    trekk: number;
     valg: number;
     offer: Offer | null;
     nextOfferMnd: number;
@@ -189,6 +193,7 @@ export function newGame(seed: number): Game {
         profBot: 0,
         avvist: 0,
         ulovlig: 0,
+        trekk: 0,
         valg: 0,
         offer: null,
         nextOfferMnd: TUNING.kort.forsteMnd,

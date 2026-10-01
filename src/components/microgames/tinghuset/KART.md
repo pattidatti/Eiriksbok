@@ -11,13 +11,14 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
 | `game.ts`     | Kjerneløkka `update(g, dt)`: kalender, trinn-hendelsen, brettskifte, tilfang, sinne, kortvalg, tap/seier. `secsToStep`, `twinEta`, `skipTo`.       |
 | `bots.ts`     | Robotene: seende (forelegg straks på grå, venter på tvillingen, velger salen som dømmer nærmest i tid, holder par tilbake før et trinn), halvgod.  |
 | `sim.ts`      | `SimSpec` for `scripts/sim-microgame.mts`, `snapshotOf()` og `BOT_INFO` (delt med `usePlaytest`).                                                  |
-| `layout.ts`   | Hvor alt står på arket (960×540) og treff for pekeren: `campRect`, `deskRect`, `queueSpot`, `homeOf`, `folderAt`, `deskAt`, `cardRects`.           |
+| `layout.ts`   | Hvor alt står på arket (960×540) og treff for pekeren: `campRect`, `deskRect` (etter slag: tre stempler, så dommerplassene i `COURT`-hylla; kall `syncDesks(g)` først), `queueSpot`, `homeOf`, `folderAt`, `deskAt`, `cardRects`. |
+| `scene.ts`    | Silhuetter i papirklipp (`person`): folkemengden (`drawCrowd`), lovsiden i tom protokoll (`drawLaw`), plassene for nye leirer (`drawCampSlots`), rettssal-hylla (`drawCourtShelf`), tvillingklemmene (`drawClip`, `clipColor`). |
 | `art.ts`      | Palett og teksturer tegnet én gang: papir med fiber og vignett, rødblyant-skravering, mappesprites, treskaft. `pencil()`, `typed()`, `pickTier()`. |
 | `fx.ts`       | Juicen: mapper som glir, strek, stempeldunk, lapper som flyr, kalenderblad, ULIK DOM-lappene, protokoll-loggen midt på arket, skjermrist.          |
 | `draw.ts`     | Tegningen av arket: leirer (med leirplan og ventetid), skranker (forelegg, avvis, protokollbok med dagens dom), mapper, streker. `moveFolders()`. |
-| `hud.ts`      | HUD-en: kalender, mål, linjal, domstabellen, folk utenfor (plakater), avisa, måler, poeng, telleverk, kort, mellomside.                             |
+| `hud.ts`      | HUD-en: kalender, mål, linjal, LOVEN-tabellen (hva loven sier og straffen nå - ingen fasit), avisa, måler, poeng, telleverk, kort, mellomside.     |
 | `sfx.ts`      | Lydene (arkadeskallets synth): skrape, glid, dunk, klokke, jevnt/ulikt, murring.                                                                   |
-| `texts.ts`    | All tekst: tap og tips, lærings-øyeblikk (`BEATS`), lapper (`PINS`), «Dette skjedde», protokollbladene (`FINDS`), rangene.                         |
+| `texts.ts`    | All tekst: tap og tips, lærings-øyeblikk (`BEATS`), lapper (`PINS`), «Dette skjedde», protokollbladene (`FINDS`), rangene, `personOf` (yrke og handling på mappa). |
 | `screens.tsx` | Slutt-skjermen (to kolonner) og saksmappa.                                                                                                         |
 
 ## Sakstypene
@@ -25,10 +26,13 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
 - `lett` (grå): NS-medlem - forelegg. `alvorlig` (rødt hjørne): angiver/statspoliti - retten.
   `tykk`: profittør - retten, 18 s. `grov` (flagg på alvorlig, én gang fra måned 6): dødsdom så
   lenge straffenivået er minst 80 %, ellers livsvarig.
-- `utenlov` (lyst ark, stiplet blått): «tyskerjente», kvinne med tysk kjæreste. Riktig: AVVIS
-  (indeks 1, finnes fra start). Gir `sinne.avvist` (opp) og `poeng.avvist`. Straffet likevel =
-  `sinne.ulovligLetter` (ned), x1 og ingen poeng. Senere `utenlov.andel`. Aldri i par.
-- `tykk` med forelegg (bot): `sinne.botLetter`, x1, `g.profBot++`, hendelsen er `formildt`.
+- `utenlov` (lyst ark, stiplet blått): «tyskerjente», kvinne med tysk kjæreste. Bare to veier
+  (`accepts` i rules.ts): AVVIS (riktig, `sinne.avvist` opp, `poeng.avvist`) eller INTERNER
+  (straff uten dom: `sinne.ulovligLetter` kraftig ned, x1, `g.ulovlig++`). INTERNER-stempelet
+  kommer i brett 2 (`openInterner`, hendelse `interner`) og tar bare slike saker. Aldri i par.
+- `tykk` med forelegg (bot): raskt, `sinne.botLetter`, x1, `g.profBot++` («slapp unna»).
+- `sluttRegning`: ved seier/tap trekkes `poeng.trekkUlovlig` per internert og `trekkSlapp` per
+  profittør med bot (`g.trekk`, vises på slutt-skjermen).
 - Runden starter med en bunke på `tilfang.bunke` grå mapper i Ilebu. Brett 1 følger
   `tilfang.brett1` (tyskerjente etter 2 s, første angiver etter 9 s); rettssalen glir inn med den
   første angiveren (`openCourt`, hendelse `sal`).
@@ -36,9 +40,11 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
 ## Folkemengden (motspilleren)
 
 - `krav(g)`: gata krever straff hvert sekund (`sinne.krav` i 1945 ned til `kravSlutt` i 1948).
-- Ned: dom i retten for alvorlig/tykk (`rettLetter`), og det lettvinte (straff uten lov, bot).
+- Ned: dom i retten for alvorlig/tykk (`rettLetter` x straffenivå^`rettNivaaEksp`: milde dommer
+  roer mindre, så sinnet ikke faller til 0 i 1946-48), og det lettvinte (interner, bot).
+- Spor: `sinneSpor(robot, runder)` i sim.ts gir sinnet ved faste sekunder per runde.
 - Opp: avvise tyskerjente, forelegg til angiver (`forMildt`), mapper som venter.
-- Visning: plakater nederst på arket (`drawCrowd`), avisa nederst til venstre (`drawAvis`,
+- Visning: silhuetter i vinduet nederst (`drawCrowd` i scene.ts), avisa nederst til venstre (`drawAvis`,
   `headline()` i fx.ts), fengselsrutene i leirene (`fx.cells`, `drawCells`).
 
 ## Kjerneløkka
