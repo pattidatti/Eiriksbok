@@ -4,9 +4,8 @@
 import { TUNING } from './tuning';
 import { LEVELS } from './levels';
 import { makeOffer, nesteTrinnMnd, runDesks, runRoutes, runTravel, straffTrinn } from './rules';
-import { newGame, type Folder, type Game, type Kind } from './state';
+import { newGame as blankGame, type Folder, type Game, type Kind } from './state';
 
-export { newGame };
 export type { Game, Folder };
 export {
     send,
@@ -73,7 +72,22 @@ export function twinEta(g: Game, f: Folder): number | null {
     return p ? Math.max(0, p.at - g.t) : null;
 }
 
-function addFolder(g: Game, sak: number, kind: Kind, camp: number, twin: number | null) {
+/** En ny runde: en bunke mapper ligger allerede i Ilebu, så det er noe å gjøre fra første sekund. */
+export function newGame(seed: number): Game {
+    const g = blankGame(seed);
+    for (let i = 0; i < K.tilfang.bunke; i++) addFolder(g, g.nextSak++, 'lett', 0, null);
+    g.spawnT = interval(g);
+    return g;
+}
+
+function addFolder(
+    g: Game,
+    sak: number,
+    kind: Kind,
+    camp: number,
+    twin: number | null,
+    grov = false
+) {
     const f: Folder = {
         id: g.nextId++,
         sak,
@@ -84,6 +98,7 @@ function addFolder(g: Game, sak: number, kind: Kind, camp: number, twin: number 
         travel: 0,
         born: g.t,
         twin,
+        grov: grov || undefined,
     };
     g.folders.push(f);
     g.valg++; // hver ny mappe er et valg: forelegg eller rettssak, nå eller etter tvillingen
@@ -93,7 +108,12 @@ function addFolder(g: Game, sak: number, kind: Kind, camp: number, twin: number 
 
 function pickKind(g: Game): Kind {
     const lv = LEVELS[g.level];
-    if (lv.alvorlig <= 0) return 'lett';
+    const n = g.spawnN++;
+    const U = K.utenlov;
+    // Brett 1: hver fjerde nye mappe er en sak uten lov - den skal avvises.
+    if (lv.alvorlig <= 0)
+        return n >= U.forste && (n - U.forste) % U.hvert === 0 ? 'utenlov' : 'lett';
+    if (g.firstSerious && g.rng() < U.andel) return 'utenlov';
     // Brett 2: første alvorlige mappe kommer alene, med en lapp der blikket er.
     if (!g.firstSerious) {
         g.firstSerious = true;
@@ -109,11 +129,14 @@ function pickKind(g: Game): Kind {
 
 function spawn(g: Game) {
     const lv = LEVELS[g.level];
-    const kind = pickKind(g);
+    // Den ene saken om drap og tortur: én gang, alene, fra høsten 1945.
+    const grov = lv.par && !g.grovDone && g.mnd >= K.grov.mnd;
+    if (grov) g.grovDone = true;
+    const kind = grov ? 'alvorlig' : pickKind(g);
     const camp = Math.floor(g.rng() * g.camps.length);
     const sak = g.nextSak++;
-    if (!lv.par) {
-        addFolder(g, sak, kind, camp, null);
+    if (!lv.par || grov || kind === 'utenlov') {
+        addFolder(g, sak, kind, camp, null, grov);
         return 1;
     }
     const first = addFolder(g, sak, kind, camp, null);

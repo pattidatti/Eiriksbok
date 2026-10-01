@@ -1,6 +1,7 @@
 // All tekst i Tinghuset på ett sted: tap, lærdom, protokollbladene (funn), rangene og
 // lappene. Tonen er alvorlig: ingen vitser, ingen poeng for strenge straffer. Dødsstraff
-// står aldri på en dommerlapp; den nevnes bare saklig i protokollbladene.
+// nevnes saklig i én sjelden sak (dommen som trykkes) og i protokollbladene; en henrettelse
+// vises aldri. Kvinnene med tyske kjærester er en sak uten lov - riktig grep er å avvise den.
 
 import type { Cause, CardId } from './state';
 
@@ -58,6 +59,9 @@ export const PINS = {
     tvilling: 'Tvillingen kommer - vent, eller døm nå?',
     kort: 'Velg ett kort',
     rute: 'Fast rute sender grå mapper selv',
+    utenlov: 'Ingen lov forbød dette. Avvis saken.',
+    grov: 'Drap og tortur. Dødsstraff var mulig.',
+    profittor: 'Profittør: tjente på tyskerne. Treg sak.',
 };
 
 /** «Dette skjedde»: det eleven skal sitte igjen med, knyttet til det som skjedde i runden. */
@@ -68,6 +72,34 @@ export const LESSONS = {
         'Politiet etterforsket 92 805 saker. De alvorlige måtte for retten, og en rettssak tok tid.',
     nivaa: 'Straffene ble mildere fra 1945 til 1948. Sinnet var størst like etter krigen.',
     vent: 'Rundt 17 000 havnet i fengsel, og mange satt lenge før saken kom opp.',
+    utenlov:
+        'Det var ikke forbudt å ha en tysk kjæreste. Likevel ble flere tusen kvinner satt i leir uten lov og dom. Du avviste sakene - uten lov, ingen sak.',
+    ulovlig:
+        'Du straffet en kvinne som ikke hadde brutt noen lov. Det skjedde med tusenvis i 1945, og staten ba om unnskyldning i 2018.',
+    grov: 'De grovste sakene kunne gi dødsdom. 30 nordmenn ble dømt til døden. Et par år senere ble lignende saker sjeldnere dømt så hardt.',
+    profittor:
+        'Bare 3 262 ble dømt for økonomisk landssvik. Sakene tok lang tid, og mange som tjente penger på tyskerne, slapp unna.',
+};
+
+/** Slutt-skjermen spør om oppgjøret var rettferdig, med elevens egne tall. */
+export const RETTFERDIG = {
+    sporsmal: 'Var ditt oppgjør rettferdig?',
+    linjer: (r: {
+        ulike: number;
+        jevne: number;
+        avvist: number;
+        ulovlig: number;
+        formildt: number;
+    }) =>
+        [
+            `${r.jevne} like saker fikk lik dom, ${r.ulike} fikk ulik dom bare fordi de kom opp på ulik tid.`,
+            r.ulovlig > 0
+                ? `${r.ulovlig} uten lov ble straffet likevel. ${r.avvist} saker ble avvist.`
+                : r.avvist > 0
+                  ? `Alle ${r.avvist} saker uten lov ble avvist - ingen ble straffet uten lov.`
+                  : '',
+            r.formildt > 0 ? `${r.formildt} alvorlige saker slapp med forelegg.` : '',
+        ].filter(Boolean),
 };
 
 /** Lærdommen fra det første ulike paret, med elevens egne tall. */

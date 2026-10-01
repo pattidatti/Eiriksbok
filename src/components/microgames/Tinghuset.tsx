@@ -30,7 +30,18 @@ import { BOT_INFO, GAME_ID, MAKS_SEKUNDER, snapshotOf } from './tinghuset/sim';
 import { FindsScreen, OverScreen, type Result } from './tinghuset/screens';
 import { drawEnd, drawGame, moveFolders, newView, type ViewState } from './tinghuset/draw';
 import { addStroke, fxEvent, newFx, shakeOffset, stepFx, tearCalendar } from './tinghuset/fx';
-import { BLUE, INK, MONO, PAPER, RED, VIOLET, makeArt, pickTier, type Art } from './tinghuset/art';
+import {
+    BLUE,
+    INK,
+    LEATHER_DARK,
+    MONO,
+    PAPER,
+    RED,
+    VIOLET,
+    makeArt,
+    pickTier,
+    type Art,
+} from './tinghuset/art';
 import {
     COUNTER,
     H,
@@ -61,7 +72,9 @@ import {
 // TINGHUSET - landssvikoppgjøret 1945-1948.
 //
 // Tone: alvorlig. Eleven er påtalemyndigheten. Ingen poeng for strenge straffer - bare for
-// jevne og ryddige avgjørelser. Dødsstraff er aldri en spillhandling.
+// jevne og ryddige avgjørelser. Saker uten lov (kvinner med tyske kjærester) skal avvises,
+// og det gir aldri poeng å straffe dem. Dødsstraff nevnes saklig i én sjelden sak, men er
+// aldri en spillhandling, og en henrettelse vises aldri.
 //
 // Kjerneverbet: dra en blyantstrek fra en mappe i en leir til en skranke. Mappa glir,
 // stempelet slår ned, dommerlappen flyr ut i margen. Forelegg er raskt, men for mildt for
@@ -92,7 +105,7 @@ const THEME: ArcadeTheme = {
     bannerTop: '11%',
 };
 
-const BG = '#2b2730';
+const BG = LEATHER_DARK;
 
 type Mode = 'menu' | 'play' | 'paused' | 'over';
 
@@ -161,7 +174,6 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
         const won = g.mode === 'won';
         const s = saveRef.current;
         if (won) find('jurister');
-        else find('tyskerjenter');
         if (g.cause === 'vent') text.lesson('vent', LESSONS.vent, 3);
         const newFinds = run.current.finds.filter((f) => !s.found.includes(f));
         setResult({
@@ -170,6 +182,9 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
             jevne: g.jevne,
             avgjort: g.avgjort,
             ulike: g.ulike,
+            avvist: g.avvist,
+            ulovlig: g.ulovlig,
+            formildt: g.formildt,
             cause: g.cause,
             skjevest: g.skjevest,
             rank: rankFor(RANKS, g.jevne),
@@ -216,6 +231,27 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                             seconds: 6,
                             until: () => f.twin !== -1,
                         });
+                    if (f.kind === 'utenlov')
+                        text.point('utenlov', PINS.utenlov, atFolder(f.id), {
+                            once: true,
+                            seconds: 10,
+                            until: () =>
+                                !g.folders.some((x) => x.id === f.id && x.state === 'leir'),
+                        });
+                    if (f.grov)
+                        text.point('grov', PINS.grov, atFolder(f.id), {
+                            once: true,
+                            seconds: 8,
+                            until: () =>
+                                !g.folders.some((x) => x.id === f.id && x.state === 'leir'),
+                        });
+                    if (f.kind === 'tykk')
+                        text.point('profittor', PINS.profittor, atFolder(f.id), {
+                            once: true,
+                            seconds: 8,
+                            until: () =>
+                                !g.folders.some((x) => x.id === f.id && x.state === 'leir'),
+                        });
                     if (f.twin !== null && f.twin > 0)
                         text.beatOnce('par', BEATS.par.tittel, BEATS.par.tekst, {
                             at: atFolder(f.id),
@@ -230,13 +266,38 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                     if (v.route === 'rett') {
                         sfx.bell();
                         if (v.kind !== 'lett') text.lesson('rettssak', LESSONS.rettssak, 0.3);
-                        if (v.kind === 'tykk') find('okonomisk');
+                        if (v.kind === 'tykk') {
+                            find('okonomisk');
+                            text.lesson('profittor', LESSONS.profittor, 1);
+                        }
+                        if (v.grov) {
+                            find('rinnan');
+                            text.lesson('grov', LESSONS.grov, 1.6);
+                        }
                     } else {
                         find('forelegg');
                         if (v.kind === 'lett') find('medlem');
                     }
                     if (g.avgjort >= 100) find('saker');
                     if (g.alvorligRett >= 10) find('rinnan');
+                    break;
+                }
+                case 'avvist': {
+                    sfx.thud(false);
+                    sfx.dismiss();
+                    find('tyskerjenter');
+                    text.lesson('utenlov', LESSONS.utenlov, 1.4);
+                    const p = toScreen({ x: METER.x - 10, y: METER.y + METER.h * (1 - g.sinne) });
+                    text.float('folk ville se straff', p.x, p.y, RED);
+                    break;
+                }
+                case 'ulovlig': {
+                    sfx.thud(true);
+                    sfx.mild();
+                    buzz(60);
+                    text.lesson('ulovlig', LESSONS.ulovlig, 3);
+                    const p = toScreen({ x: COUNTER.x - 70, y: COUNTER.y + 10 });
+                    text.float('UTEN LOV - ingen poeng', p.x, p.y, RED, true);
                     break;
                 }
                 case 'formildt': {
@@ -342,7 +403,8 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
             if (!game.art || Math.abs(game.art.k - k) / k > 0.2) game.art = makeArt(k, tier);
             if (m === 'play') {
                 if (run.current.end < 0) {
-                    update(g, dt * text.timeScale());
+                    // Hit-stop: spillet står nesten stille et øyeblikk når stempelet treffer.
+                    update(g, dt * text.timeScale() * (fx.hitStop > 0 ? 0.15 : 1));
                     if (tearCalendar(fx, g) && (g.level > 0 || fx.lastDay % 3 === 0)) sfx.tear();
                     handleEvents(g);
                     // Murringen i gatene når sinnet er høyt.

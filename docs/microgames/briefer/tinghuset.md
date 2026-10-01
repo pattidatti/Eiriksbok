@@ -423,3 +423,71 @@ Likhetsvakt: nærmest petisjonen-3d (0,48).
 - Brett 1 er tynt med vilje (én leir, én skranke); arket ser tomt ut de første 25 sekundene.
 - Ingen rolig zoom ut når nye leirer åpner (arket er fast); leirene glir inn fra venstre i stedet.
 - Skrivemaskinfonten er «Courier New» med dobbeltrykk, ikke en egen tegnet tekstur.
+
+### 2026-10-01 - Forbedring 1 (fase 7, vurdering runde 1: 3/3/4/3/3 = 16), forbedrer
+
+**Gjort.** De tre forbedringene fra vurderingen, holdt til tre regler eleven må huske
+(«alvorlig sak hører hjemme i retten», «uten lov, ingen sak», «straffene synker med tiden»):
+
+1. **Tiden og «jevnt par» forklart i spillet.** Domstabellen «DOMMEN I DAG» øverst på
+   protokollarket viser hva hver sakstype får nå (NS-medlem: forelegg, uten lov: avvis saken,
+   angiver: retten 19 år, profittør: retten 9 år) og hva den får etter neste trinn («→ 18 år»),
+   med «neste trinn om N s» og linja «JEVNT PAR: samme nr., samme dom». Radene kommer etter hvert
+   som sakstypene dukker opp. Hver ledig rettssal viser den trykte dommen nå («nå 19 år») og
+   blinker «→ 18 år» rett før trinnet. Linjalen heter «STRAFF 95 %», og poenglappen sier
+   «jevnt par i retten: +×1» (før kuttet).
+2. **Artikkelens dilemmaer som sakstyper.** Saker uten lov (kvinner med tyske kjærester: lyst
+   ark, stiplet blått, «uten lov») skal til den nye AVVIS-skranken («ingen lov - ingen sak»).
+   Avvist: 10 poeng og +3 % sinne («folk ville se straff»). Straffet likevel: ingen poeng,
+   multiplikator x1, rødt «UTEN LOV» i protokollen. Ingen hårklipping eller ydmykelse vises.
+   Profittørene (de tykke mappene) har fått navn og lapp («Profittør: tjente på tyskerne. Treg
+   sak.») og en lærdom om 3 262 dømte. Én sjelden sak om drap og tortur (dobbel rødblyant)
+   kommer fra høsten 1945: i retten trykkes «Dødsdom» så lenge straffenivået er minst 80 %,
+   ellers «Livsvarig fengsel» - nevnt saklig, ingen henrettelse vises. Slutt-skjermen spør
+   «Var ditt oppgjør rettferdig?» med elevens tall (like saker med lik og ulik dom, saker uten
+   lov avvist eller straffet, alvorlige som slapp med forelegg). Protokollbladet om
+   tyskerjentene låses nå opp ved første avviste sak (før: første tap).
+3. **Press og liv fra første sekund, og nytt utseende.** Runden starter med en bunke på seks
+   mapper i Ilebu, brett 1 er 20 s (før 25) med en mappe per 2,2 s (før 4 s). Nederst på arket
+   står «FOLK UTENFOR TINGHUSET»: én rødblyant-tellestrek per 1,5 % sinne, i bunter på fem, som
+   skjelver mer jo sintere folk er. Leirene har fått en svak leirplan (brakker og gjerde) og en
+   statuslinje («2 venter · 16 d» eller «ingen uten dom»). Paletten er flyttet bort fra
+   petisjonen-3d: mørkt grønt skriveunderlag i lær med lampelys, et gulnet protokollark midt
+   på, kartotekkort for leirene, mål og poeng, mettere fiolett, blått og rødt.
+
+**Feel-lista.** Før: 2 (nesten-bom: «på håret», «ett trinn fra lik dom») og 3 (mapper glir inn,
+lapper flyr ut, skranker og leirer glir inn) var på plass; 1 manglet hit-stop og 4 manglet
+opptelling. Etter: 1 - stempelet har tyngde (hit-stop 35-120 ms, rist 2-3,5 px, mer
+blekkspruting, stempelet trykkes dypere, vått blekk på nyeste protokollinje, egen lyd for
+avvis). 4 - poengene teller opp og lappen hopper. Alle fire er på plass.
+
+**Simuleringen (200 runder per robot), grønn:** seende vinner 100 % (median 11 160), halvgod
+77 % (median 6 330 = 57 % av vinneren), alt-til-retten 0 % (210), alt-til-forelegg 0 % (340),
+knappemoser 0 % (130), passiv 0 %. 52,2 valg per minutt. Presset 0,20 -> 0,40 -> 0,63 (før
+0,14 -> 0,34 -> 0,57). Seendes sinne (40 runder): 3 % etter 3 s, 8 % etter 10 s, 14 % etter
+60 s, 23 % etter 180 s (før 0-2 % fram til 150 s); per tidel av kalenderen 0,09 ... 0,30.
+Rundt 8-9 avviste saker per runde. Selvspill: alle porter grønne, seende vant med 9 980 poeng
+(sim p10-p90 7 820-16 270), Chromebook JS p50 7,6 ms, bildeendring passiv 4,7 (før 2,2).
+Audit `--strict`: 0 funn. Likhet: nærmest petisjonen-3d 0,36 (farge 0,59; før 0,48 og 0,80).
+
+**Det som IKKE virket.**
+
+- Sinne +2 % per avvist sak og 6 % andel saker uten lov: seende lå bare på 8-20 %. 3 % og 7 %
+  ga en synlig, jevn stigning uten å true seieren.
+- `draw.ts` ble 981 linjer og stoppet selvspillet (maks 800). HUD-en er flyttet til `hud.ts`.
+- Plakaten uten `--cover-at` ble mellomsiden «Sommeren 1945» over arket; `--cover-at 110` gir
+  et fullt bord.
+- Et eget Playwright-skript for skjermbilder fant ikke `__mgPlaytest` (siden kom aldri til
+  spillet); brukte selvspillets filmstripe i stedet.
+
+**Kjente svakheter.**
+
+- Én selvspillrunde fikk 27 660 poeng (over sim p90), den neste 9 980 - nettleserrundene
+  varierer mer enn simuleringen.
+- Den venstre og høyre delen av læret er fortsatt tom under leirene og skrankene i brett 1-2
+  (nå mørkt lær, ikke hvite bokser).
+- Lappene «Dra mappa til stempelet» og «Ingen lov forbød dette» kan stå oppå hverandre når
+  eleven ikke har dratt noe de første 7 sekundene.
+- Folkemengden i margen er tellestreker, ikke figurer (kunstbriefen: ingen mennesker); en flink
+  spiller ser 5-15 streker.
+- Sakene har fortsatt ikke personer bak (bare saksnummer og type).

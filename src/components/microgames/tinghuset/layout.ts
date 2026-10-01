@@ -33,11 +33,17 @@ const CAMP_TOP = 140;
 const CAMP_H = 122;
 const CAMP_STEP = 130;
 
+// Plass til sju skranker: forelegg, avvis og opptil fem rettssaler.
 const DESK_X = 662;
 const DESK_W = 176;
-const DESK_H = 62;
-const DESK_TOP = 66;
-const DESK_STEP = 76;
+const DESK_H = 58;
+const DESK_TOP = 64;
+const DESK_STEP = 67;
+
+/** Domstabellen øverst på protokollarket: hva hver sakstype får i dag, og neste trinn. */
+export const TABLE: Rect = { x: 300, y: 54, w: 344, h: 92 };
+/** Nederst på arket: folk utenfor tinghuset, én rødblyant-strek per 1,5 % sinne. */
+export const CROWD: Rect = { x: 300, y: 470, w: 344, h: 62 };
 
 /** Sinnemåleren: en loddrett rødblyant-søyle i høyre marg. */
 export const METER: Rect = { x: 884, y: 76, w: 24, h: 384 };

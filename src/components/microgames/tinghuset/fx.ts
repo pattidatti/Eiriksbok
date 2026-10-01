@@ -17,6 +17,9 @@ export interface Slip {
     text: string;
     ink: number;
     mild: boolean;
+    /** Stempelet på lappen: AVGJORT, FOR MILDT, INGEN SAK eller UTEN LOV. */
+    stamp: string;
+    color: string;
     rot: number;
 }
 export interface Stroke {
@@ -49,12 +52,19 @@ export interface LogLine {
     dom: string;
     when: string;
     ink: number;
-    mark: 'jevn' | 'ulik' | 'mild' | null;
+    mark: 'jevn' | 'ulik' | 'mild' | 'avvist' | 'ulovlig' | null;
     t: number;
 }
 
 export interface Fx {
     shake: number;
+    /** Hit-stop: spillet står nesten stille et øyeblikk når stempelet treffer (s igjen). */
+    hitStop: number;
+    /** Poengene som vises (teller opp mot de ekte) og når de sist økte. */
+    scoreShown: number;
+    scorePop: number;
+    /** Strekene i folkemengden som er tegnet (glir mot sinnet). */
+    crowdShown: number;
     log: LogLine[];
     /** Mappenes synlige posisjon (glir mot plassen sin). */
     pos: Map<number, Pt>;
@@ -81,6 +91,10 @@ export interface Fx {
 export function newFx(): Fx {
     return {
         shake: 0,
+        hitStop: 0,
+        scoreShown: 0,
+        scorePop: 9,
+        crowdShown: 0,
         log: [],
         pos: new Map(),
         born: new Map(),
@@ -144,50 +158,79 @@ export function addStroke(fx: Fx, id: number, from: Pt, desk: number) {
 
 /** Gjør spillets hendelser om til bevegelse. Lydene og tekstene tar komponenten seg av. */
 export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
-    if (e.kind === 'avgjort' || e.kind === 'formildt') {
+    if (
+        e.kind === 'avgjort' ||
+        e.kind === 'formildt' ||
+        e.kind === 'avvist' ||
+        e.kind === 'ulovlig'
+    ) {
         const v = e.v;
         const r = deskRect(v.desk);
-        fx.stamps.push({
-            desk: v.desk,
-            t: 0,
-            mild: e.kind === 'formildt',
-            rett: v.route === 'rett',
-        });
+        const bad = e.kind === 'formildt' || e.kind === 'ulovlig';
+        fx.stamps.push({ desk: v.desk, t: 0, mild: bad, rett: v.route === 'rett' });
         const from = { x: r.x + r.w * 0.5, y: r.y + r.h * 0.5 };
-        // Et forelegg på en alvorlig sak flyr rett inn i sinnemåleren.
-        const to =
+        // Et forelegg på en alvorlig sak (og en avvist sak) flyr rett inn i sinnemåleren.
+        const toMeter = e.kind === 'formildt' || e.kind === 'avvist';
+        const to = toMeter
+            ? { x: METER.x + METER.w / 2, y: METER.y + METER.h * (1 - Math.min(1, g.sinne)) }
+            : { x: COUNTER.x + COUNTER.w / 2, y: COUNTER.y + 6 };
+        const stamp =
             e.kind === 'formildt'
-                ? { x: METER.x + METER.w / 2, y: METER.y + METER.h * (1 - Math.min(1, g.sinne)) }
-                : { x: COUNTER.x + COUNTER.w / 2, y: COUNTER.y + 6 };
+                ? 'FOR MILDT'
+                : e.kind === 'avvist'
+                  ? 'INGEN SAK'
+                  : e.kind === 'ulovlig'
+                    ? 'UTEN LOV'
+                    : 'AVGJORT';
         fx.slips.push({
             from,
             to,
             t: 0,
-            life: e.kind === 'formildt' ? 0.75 : 0.6,
+            life: toMeter ? 0.75 : 0.6,
             text: slipText(v),
             ink: inkAlpha(v.mnd),
-            mild: e.kind === 'formildt',
+            mild: bad,
+            stamp,
+            color: bad ? RED : e.kind === 'avvist' ? BLUE : VIOLET,
             rot: (Math.random() - 0.5) * 0.5,
         });
-        dust(fx, r.x + 40, r.y + r.h / 2, Math.round(5 * particles), '#8d8a80');
-        if (particles > 0.6) dust(fx, r.x + 40, r.y + r.h / 2, 3, VIOLET);
-        fx.shake = Math.max(fx.shake, v.route === 'rett' ? 0.08 : 0.05);
+        const heavy = v.route === 'rett';
+        dust(fx, r.x + 40, r.y + r.h / 2, Math.round((heavy ? 9 : 5) * particles), '#8d8a80');
+        if (particles > 0.6) dust(fx, r.x + 40, r.y + r.h / 2, heavy ? 7 : 4, VIOLET);
+        // Tyngde: risten og et lite stopp når stempelet treffer.
+        fx.shake = Math.max(fx.shake, heavy ? 0.13 : 0.07);
+        fx.hitStop = Math.max(fx.hitStop, heavy ? 0.07 : 0.035);
         fx.log.push({
             sak: v.sak,
-            dom: v.route === 'forelegg' ? 'forelegg' : v.dom.replace(' fengsel', ''),
+            dom:
+                v.route === 'forelegg' && v.kind !== 'utenlov'
+                    ? 'forelegg'
+                    : v.route === 'avvis'
+                      ? 'avvist'
+                      : v.kind === 'utenlov'
+                        ? 'straffet'
+                        : v.dom.replace(' fengsel', ''),
             when: shortMonth(v.mnd),
             ink: inkAlpha(v.mnd),
-            mark: e.kind === 'formildt' ? 'mild' : null,
+            mark:
+                e.kind === 'formildt'
+                    ? 'mild'
+                    : e.kind === 'avvist'
+                      ? 'avvist'
+                      : e.kind === 'ulovlig'
+                        ? 'ulovlig'
+                        : null,
             t: 0,
         });
         if (fx.log.length > LOG_ROWS) fx.log.shift();
         fx.pos.delete(v.id);
         fx.born.delete(v.id);
-        if (e.kind === 'formildt') {
+        if (bad) {
             fx.meterHit = 0;
             fx.multPop = 0;
-            fx.shake = 0.14;
-        }
+            fx.shake = 0.16;
+            fx.hitStop = 0.12;
+        } else if (e.kind === 'avvist') fx.meterHit = 0;
     }
     if (e.kind === 'jevnt' || e.kind === 'ulikt')
         for (const l of fx.log)
@@ -245,6 +288,8 @@ export function tearCalendar(fx: Fx, g: Game) {
 export function stepFx(fx: Fx, dt: number) {
     fx.t += dt;
     fx.shake = Math.max(0, fx.shake - dt);
+    fx.hitStop = Math.max(0, fx.hitStop - dt);
+    fx.scorePop += dt;
     fx.multPop += dt;
     fx.jevnePop += dt;
     fx.meterHit += dt;
@@ -268,10 +313,10 @@ export function stepFx(fx: Fx, dt: number) {
     fx.bits = fx.bits.filter((b) => b.t < b.life);
 }
 
-/** Skjermrist: 2 px i 80 ms på stempeldunk (sterkere ved FOR MILDT og ULIK DOM). */
+/** Skjermrist på stempeldunk: 2 px for forelegg, 3 px for rettssal, mer ved FOR MILDT og ULIK DOM. */
 export function shakeOffset(fx: Fx): Pt {
     if (fx.shake <= 0) return { x: 0, y: 0 };
-    const a = Math.min(1, fx.shake / 0.08) * 2;
+    const a = Math.min(1.6, fx.shake / 0.08) * 2.2;
     return { x: (Math.random() - 0.5) * 2 * a, y: (Math.random() - 0.5) * 2 * a };
 }
 
@@ -311,12 +356,12 @@ export function drawFlying(ctx: CanvasRenderingContext2D, fx: Fx) {
         ctx.fillRect(-62, -12, 128, 28);
         ctx.fillStyle = SLIP;
         ctx.fillRect(-64, -14, 128, 28);
-        typed(ctx, s.text, 0, -4, 9.5, INK, 'center', false);
+        typed(ctx, s.text, 0, -4, 10, INK, 'center', false);
         ctx.globalAlpha *= s.mild ? 0.95 : s.ink;
-        ctx.strokeStyle = s.mild ? RED : VIOLET;
+        ctx.strokeStyle = s.color;
         ctx.lineWidth = 1.5;
-        ctx.strokeRect(-36, 2, 72, 10);
-        typed(ctx, s.mild ? 'FOR MILDT' : 'AVGJORT', 0, 7.5, 8.5, s.mild ? RED : VIOLET, 'center');
+        ctx.strokeRect(-38, 2, 76, 11);
+        typed(ctx, s.stamp, 0, 8, 9.5, s.color, 'center');
         ctx.restore();
     }
     ctx.globalAlpha = 1;
@@ -414,11 +459,17 @@ export function drawLog(ctx: CanvasRenderingContext2D, fx: Fx) {
     const x = 304;
     fx.log.forEach((l, i) => {
         const y = 160 + i * 22 - 6;
+        // Nyeste linje: blekket er vått et øyeblikk.
+        if (l.t < 0.5 && i === fx.log.length - 1) {
+            ctx.fillStyle = `rgba(90,47,156,${0.12 * (1 - l.t / 0.5)})`;
+            ctx.fillRect(x - 4, y - 9, 330, 18);
+        }
         const line = `${String(l.sak).padStart(3, ' ')}  ${l.dom.padEnd(10, ' ')} ${l.when}`;
         const shown = line.slice(0, Math.ceil(l.t * 70));
         ctx.save();
         ctx.globalAlpha = 0.35 + 0.6 * l.ink;
-        typed(ctx, shown, x, y, 10.5, l.mark === 'mild' ? RED : INK, 'left', false);
+        const bad = l.mark === 'mild' || l.mark === 'ulovlig';
+        typed(ctx, shown, x, y, 11, bad ? RED : INK, 'left', false);
         ctx.restore();
         if (l.mark === 'jevn') {
             ctx.strokeStyle = BLUE;
@@ -431,6 +482,11 @@ export function drawLog(ctx: CanvasRenderingContext2D, fx: Fx) {
         } else if (l.mark === 'ulik') {
             pencil(ctx, x - 2, y + 6, x + 162, y + 5, RED, l.sak, 1, 1);
             typed(ctx, 'ULIK', x + 168, y, 10, RED);
-        } else if (l.mark === 'mild') typed(ctx, 'MILDT', x + 168, y, 10, RED);
+        } else if (l.mark === 'mild') typed(ctx, 'MILDT', x + 168, y, 10.5, RED);
+        else if (l.mark === 'avvist') typed(ctx, 'INGEN LOV', x + 168, y, 10.5, BLUE);
+        else if (l.mark === 'ulovlig') {
+            pencil(ctx, x - 2, y + 6, x + 162, y + 5, RED, l.sak, 1, 1);
+            typed(ctx, 'UTEN LOV', x + 168, y, 10.5, RED);
+        }
     });
 }

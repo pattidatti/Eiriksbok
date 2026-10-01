@@ -1,6 +1,8 @@
 // Fagkjernen i Tinghuset - de tre reglene eleven skal huske:
-//  1. Rettssak er rettferdig, men treg (én sak av gangen, kø).
-//  2. Forelegg er raskt, men for mildt for alvorlige saker (sinnet hopper).
+//  1. Alvorlig sak hører hjemme i retten: rettssak er rettferdig, men treg (én sak av gangen,
+//     kø); forelegg er raskt, men for mildt for angivere, statspoliti og profittører.
+//  2. Uten lov, ingen sak: kvinner med tyske kjærester hadde ikke brutt noen lov. Riktig grep
+//     er å avvise saken - selv om sinnet i gatene stiger litt av det.
 //  3. Kalenderen gjør straffene mildere i synlige trinn - like saker avgjort på hver sin
 //     side av et trinn, får ulik trykt dom.
 // Her står grepene eleven gjør (send, velg kort) og hva som skjer når en sak avgjøres.
@@ -41,10 +43,13 @@ export function nesteTrinnMnd(mnd: number): number | null {
 const kr = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
 /** Den trykte dommen for en sak avgjort på en vei i et trinn. Forelegg har fast takst. */
-export function domTekst(kind: Folder['kind'], route: Route, trinn: number): string {
+export function domTekst(kind: Folder['kind'], route: Route, trinn: number, grov = false): string {
     const D = K.dom;
+    if (route === 'avvis') return 'Saken avvist';
+    if (kind === 'utenlov') return 'Straffet uten lov';
     if (route === 'forelegg') return D.forelegg;
     const niv = 1 - T.pp * trinn;
+    if (grov) return niv >= D.grovNivaa - 1e-9 ? 'Dødsdom' : 'Livsvarig fengsel';
     if (kind === 'lett') return `Bot ${kr(Math.round((D.lettKr * niv) / 1000) * 1000)} kr`;
     const base = kind === 'alvorlig' ? D.alvorligAar : D.tykkAar;
     const aar = Math.round(base * niv * 2) / 2;
@@ -54,6 +59,7 @@ export function domTekst(kind: Folder['kind'], route: Route, trinn: number): str
 /** Hvor lenge en sak tar ved en skranke (s). */
 export function caseTime(g: Game, d: Desk, f: Folder): number {
     if (d.kind === 'forelegg') return K.skranke.forelegg;
+    if (d.kind === 'avvis') return K.skranke.avvis;
     const base = f.kind === 'tykk' ? K.skranke.tykkRettssak : K.skranke.rettssak;
     return base * Math.pow(1 - K.skranke.dommereFart, g.dommere);
 }
@@ -151,7 +157,9 @@ export function makeOffer(g: Game): CardId[] {
 
 /** En sak er avgjort ved skranken. Poeng, sinne og par regnes her. */
 export function decide(g: Game, f: Folder, route: Route) {
-    const mild = route === 'forelegg' && f.kind !== 'lett';
+    const utenlov = f.kind === 'utenlov';
+    // En ekte landssviksak som får forelegg (alvorlig) eller blir avvist, slipper for lett.
+    const mild = !utenlov && ((route === 'forelegg' && f.kind !== 'lett') || route === 'avvis');
     const trinn = straffTrinn(g.mnd);
     const v: Verdict = {
         id: f.id,
@@ -161,14 +169,33 @@ export function decide(g: Game, f: Folder, route: Route) {
         desk: f.desk,
         mnd: g.mnd,
         mild,
+        ulovlig: utenlov && route !== 'avvis',
+        grov: !!f.grov,
         trinn,
-        dom: domTekst(f.kind, route, trinn),
+        dom: domTekst(f.kind, route, trinn, !!f.grov),
     };
     g.folders = g.folders.filter((x) => x.id !== f.id);
     g.avgjort++;
+    if (utenlov) {
+        if (route === 'avvis') {
+            // Riktig: ingen lov, ingen sak. Folk i gatene ville se straff - sinnet stiger litt.
+            g.score += K.poeng.avvist;
+            g.sinne += K.sinne.avvist;
+            g.fraAvvist += K.sinne.avvist;
+            g.avvist++;
+            g.events.push({ kind: 'avvist', v });
+        } else {
+            // Straff uten lov: ingen poeng, og multiplikatoren faller til x1.
+            g.mult = 1;
+            g.ulovlig++;
+            g.events.push({ kind: 'ulovlig', v });
+        }
+        return;
+    }
     if (mild) {
-        g.sinne += K.sinne.forMildt;
-        g.fraMild += K.sinne.forMildt;
+        const jump = K.sinne.forMildt * (f.kind === 'lett' ? K.sinne.avvistLett : 1);
+        g.sinne += jump;
+        g.fraMild += jump;
         g.mult = 1;
         g.formildt++;
         g.events.push({ kind: 'formildt', v });

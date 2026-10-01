@@ -14,10 +14,21 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
 | `layout.ts`   | Hvor alt står på arket (960×540) og treff for pekeren: `campRect`, `deskRect`, `queueSpot`, `homeOf`, `folderAt`, `deskAt`, `cardRects`.           |
 | `art.ts`      | Palett og teksturer tegnet én gang: papir med fiber og vignett, rødblyant-skravering, mappesprites, treskaft. `pencil()`, `typed()`, `pickTier()`. |
 | `fx.ts`       | Juicen: mapper som glir, strek, stempeldunk, lapper som flyr, kalenderblad, ULIK DOM-lappene, protokoll-loggen midt på arket, skjermrist.          |
-| `draw.ts`     | Tegningen: kalender, mål, linjal, leirer, skranker (stempel og protokollbok), mapper, måler, telleverk, kort, mellomside. `moveFolders()`.         |
+| `draw.ts`     | Tegningen av arket: leirer (med leirplan og ventetid), skranker (forelegg, avvis, protokollbok med dagens dom), mapper, streker. `moveFolders()`. |
+| `hud.ts`      | HUD-en: kalender, mål, linjal, domstabellen («dommen i dag»), folk utenfor tinghuset (tellestreker), måler, poeng, telleverk, kort, mellomside.     |
 | `sfx.ts`      | Lydene (arkadeskallets synth): skrape, glid, dunk, klokke, jevnt/ulikt, murring.                                                                   |
 | `texts.ts`    | All tekst: tap og tips, lærings-øyeblikk (`BEATS`), lapper (`PINS`), «Dette skjedde», protokollbladene (`FINDS`), rangene.                         |
 | `screens.tsx` | Slutt-skjermen (to kolonner) og saksmappa.                                                                                                         |
+
+## Sakstypene
+
+- `lett` (grå): NS-medlem - forelegg. `alvorlig` (rødt hjørne): angiver/statspoliti - retten.
+  `tykk`: profittør - retten, 18 s. `grov` (flagg på alvorlig, én gang fra måned 6): dødsdom så
+  lenge straffenivået er minst 80 %, ellers livsvarig.
+- `utenlov` (lyst ark, stiplet blått): kvinne med tysk kjæreste. Riktig: AVVIS-skranken (indeks 1,
+  finnes fra start). Gir `sinne.avvist` og `poeng.avvist`. Straffet likevel = x1 og ingen poeng.
+  Brett 1: hver fjerde nye mappe; senere `utenlov.andel`. Aldri i par.
+- Runden starter med en bunke på `tilfang.bunke` grå mapper i Ilebu.
 
 ## Kjerneløkka
 

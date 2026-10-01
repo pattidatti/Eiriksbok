@@ -11,7 +11,7 @@ import { ArcadeLessons } from '../arcade/ArcadeLayers';
 import { BLUE, INK, MONO, RED, VIOLET } from './art';
 import { monthName } from './levels';
 import type { Cause, Verdict } from './state';
-import { FINDS, LOSS, SAKLIG, SEIER, type FindId } from './texts';
+import { FINDS, LOSS, RETTFERDIG, SAKLIG, SEIER, type FindId } from './texts';
 
 export interface Result {
     won: boolean;
@@ -19,6 +19,9 @@ export interface Result {
     jevne: number;
     avgjort: number;
     ulike: number;
+    avvist: number;
+    ulovlig: number;
+    formildt: number;
     cause: Cause | null;
     skjevest: { a: Verdict; b: Verdict } | null;
     rank: string;
@@ -97,6 +100,12 @@ export function OverScreen({
                         <ArcadeSmallButton onClick={onMenu}>Meny</ArcadeSmallButton>
                     </div>
                     <div style={{ textAlign: 'left' }}>
+                        <div className="th-fair">
+                            <b style={{ color: VIOLET }}>{RETTFERDIG.sporsmal}</b>
+                            {RETTFERDIG.linjer(result).map((l) => (
+                                <div key={l}>{l}</div>
+                            ))}
+                        </div>
                         <p style={P}>{result.won ? SEIER.ekte : loss.tip}</p>
                         <ArcadeLessons items={result.lessons} />
                         <p style={{ ...P, fontWeight: 500 }}>{result.won ? SEIER.slutt : SAKLIG}</p>
@@ -117,7 +126,9 @@ const OVER_CSS = `.th-over .arc-card{max-width:860px}
 .th-cols{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
 @media (min-width:720px){.th-cols{grid-template-columns:1fr 1fr}}
 .th-pair{display:flex;gap:8px;justify-content:center;margin:4px 0 8px;font-family:${MONO};font-size:13px}
-.th-pair>div{background:#f6f5ee;border:1.5px solid ${INK};padding:4px 8px}`;
+.th-pair>div{background:#f6f5ee;border:1.5px solid ${INK};padding:4px 8px}
+.th-fair{border-left:3px solid ${VIOLET};padding:2px 0 2px 10px;margin:0 0 8px;font-size:13px;line-height:1.35;font-weight:600}
+.th-fair b{display:block;font-size:15px;margin-bottom:2px}`;
 
 export function FindsScreen({ found, onClose }: { found: Set<FindId>; onClose: () => void }) {
     return (

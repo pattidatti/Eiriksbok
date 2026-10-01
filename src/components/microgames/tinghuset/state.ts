@@ -5,9 +5,11 @@ import { seeded, type Rng } from '../sim';
 import { LEVELS, type CampId } from './levels';
 import { TUNING } from './tuning';
 
-/** lett = vanlig NS-medlem (grå), alvorlig = angiver/statspoliti (rødt hjørne), tykk = økonomisk. */
-export type Kind = 'lett' | 'alvorlig' | 'tykk';
-export type Route = 'forelegg' | 'rett';
+/** lett = vanlig NS-medlem (grå), alvorlig = angiver/statspoliti (rødt hjørne), tykk =
+ *  profittør (økonomisk landssvik), utenlov = en kvinne med tysk kjæreste - ingen lov forbød det. */
+export type Kind = 'lett' | 'alvorlig' | 'tykk' | 'utenlov';
+/** avvis = «ingen lov - ingen sak»: saken henlegges uten straff. */
+export type Route = 'forelegg' | 'rett' | 'avvis';
 export type FolderState = 'leir' | 'reiser' | 'ko' | 'behandles';
 export type CardId = 'rettssal' | 'dommere' | 'rute' | 'felles' | 'forelegg';
 export type Cause = 'vent' | 'mild';
@@ -28,6 +30,8 @@ export interface Folder {
     born: number;
     /** Tvillingens id, eller null for en mappe uten par. */
     twin: number | null;
+    /** Den sjeldne saken om drap og tortur (dødsstraff var mulig). */
+    grov?: boolean;
 }
 
 export interface Verdict {
@@ -39,8 +43,11 @@ export interface Verdict {
     desk: number;
     /** Måneden saken ble avgjort i (desimal). */
     mnd: number;
-    /** Forelegg på en alvorlig sak. */
+    /** Forelegg på en alvorlig sak (eller en ekte landssviksak som ble avvist). */
     mild: boolean;
+    /** En sak uten lov som likevel ble straffet. */
+    ulovlig: boolean;
+    grov: boolean;
     /** Straffenivå-trinnet saken ble avgjort på (0 = 100 %). */
     trinn: number;
     /** Den trykte dommen: «7 år fengsel», «Bot og tap av rettigheter». */
@@ -62,6 +69,8 @@ export interface Desk {
 export type GameEvent =
     | { kind: 'avgjort'; v: Verdict }
     | { kind: 'formildt'; v: Verdict }
+    | { kind: 'avvist'; v: Verdict }
+    | { kind: 'ulovlig'; v: Verdict }
     | { kind: 'jevnt'; a: Verdict; b: Verdict; poeng: number }
     | { kind: 'ulikt'; a: Verdict; b: Verdict }
     | { kind: 'ny'; f: Folder }
@@ -99,10 +108,15 @@ export interface Game {
     /** Første alvorlige mappe på brett 2 kommer alene. */
     firstSerious: boolean;
     firstThick: boolean;
+    /** Antall nye mapper (til saker uten lov i brett 1) og om den grove saken har kommet. */
+    spawnN: number;
+    grovDone: boolean;
     sinne: number;
     /** Hvor sinnet kom fra (to nyanser av rødt i måleren). */
     fraVent: number;
     fraMild: number;
+    /** Sinnet fra saker uten lov som ble avvist (lys rød i måleren, aldri tapsårsak). */
+    fraAvvist: number;
     /** Straffenivå-trinnet nå (for hendelsen når et trinn faller). */
     trinn: number;
     score: number;
@@ -112,6 +126,9 @@ export interface Game {
     avgjort: number;
     alvorligRett: number;
     formildt: number;
+    /** Saker uten lov: avvist (riktig) og straffet likevel. */
+    avvist: number;
+    ulovlig: number;
     valg: number;
     offer: Offer | null;
     nextOfferMnd: number;
@@ -138,7 +155,10 @@ export function newGame(seed: number): Game {
         inter: 0,
         camps: [...lv.leirer],
         folders: [],
-        desks: [{ kind: 'forelegg', queue: [], current: null, joint: null, left: 0, total: 0 }],
+        desks: [
+            { kind: 'forelegg', queue: [], current: null, joint: null, left: 0, total: 0 },
+            { kind: 'avvis', queue: [], current: null, joint: null, left: 0, total: 0 },
+        ],
         waitingTwin: new Map(),
         nextId: 1,
         nextSak: 11,
@@ -146,9 +166,12 @@ export function newGame(seed: number): Game {
         pendingTwins: [],
         firstSerious: false,
         firstThick: false,
+        spawnN: 0,
+        grovDone: false,
         sinne: 0,
         fraVent: 0,
         fraMild: 0,
+        fraAvvist: 0,
         trinn: 0,
         score: 0,
         mult: 1,
@@ -157,6 +180,8 @@ export function newGame(seed: number): Game {
         avgjort: 0,
         alvorligRett: 0,
         formildt: 0,
+        avvist: 0,
+        ulovlig: 0,
         valg: 0,
         offer: null,
         nextOfferMnd: TUNING.kort.forsteMnd,
