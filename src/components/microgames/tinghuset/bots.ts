@@ -21,7 +21,12 @@ export const BOTS: Record<Style, BotOpts> = {
     'alt-forelegg': { every: 1, style: 'alt-forelegg' },
 };
 
-const CARD_PREF: CardId[] = ['rettssal', 'rute', 'dommere', 'felles', 'forelegg'];
+const CARD_PREF: CardId[] = ['rettssal', 'felles', 'rute', 'dommere', 'forelegg'];
+
+/** Så lenge (s) seende lar en mappe vente i leiren på tvillingen sin før den sender den. */
+const HOLD_MAKS = 5;
+/** Halvgod venter også på tvillingen, men gir opp tidligere. */
+const HOLD_KORT = 2.5;
 
 /** Skranken av riktig slag med minst arbeid foran seg. */
 function bestDesk(g: Game, kind: Route): number {
@@ -38,7 +43,22 @@ function bestDesk(g: Game, kind: Route): number {
     return best;
 }
 
-const firstDesk = (g: Game, kind: Route) => g.desks.findIndex((d) => d.kind === kind);
+/** Den skranken av riktig slag med kortest synlig kø - av og til en tilfeldig (unøyaktig). */
+function roughDesk(g: Game, kind: Route, rng: Rng): number {
+    const ids = g.desks.map((_, i) => i).filter((i) => g.desks[i].kind === kind);
+    if (!ids.length) return -1;
+    if (rng() < 0.25) return ids[Math.floor(rng() * ids.length)];
+    const seen = (i: number) => g.desks[i].queue.length + (g.desks[i].current !== null ? 1 : 0);
+    return ids.reduce((a, b) => (seen(b) < seen(a) ? b : a));
+}
+
+/** Skranken der tvillingen står i kø eller er på vei, om den er av riktig slag. */
+function partnerDesk(g: Game, f: Folder, kind: Route): number {
+    if (f.twin === null || f.twin < 0) return -1;
+    const t = g.folders.find((x) => x.id === f.twin);
+    if (!t || (t.state !== 'ko' && t.state !== 'reiser')) return -1;
+    return g.desks[t.desk]?.kind === kind ? t.desk : -1;
+}
 
 /** Har tvillingen alt fått sin vei (sendt, i kø, behandlet eller avgjort)? */
 function twinMoving(g: Game, f: Folder): boolean {
@@ -67,11 +87,20 @@ export function makeBot(opts: BotOpts, rng: Rng) {
         let f: Folder;
         if (opts.style === 'seende') {
             // Tvillingen til en sak som alt er på vei, går først - så holdes paret samlet i tid.
-            f =
-                ready.find((x) => twinMoving(g, x)) ??
-                ready.reduce((a, b) => (b.born < a.born ? b : a));
-        } else if (opts.style === 'halvgod') f = ready[Math.floor(rng() * ready.length)];
-        else f = ready[0];
+            // En mappe som venter på tvillingen sin, får vente litt (lik dom), men ikke for lenge
+            // (sinnet stiger mer for den).
+            const go = ready.filter((x) => x.twin !== -1 || g.t - x.born > HOLD_MAKS);
+            const twin = ready.find((x) => twinMoving(g, x));
+            if (twin) f = twin;
+            else if (go.length) f = go.reduce((a, b) => (b.born < a.born ? b : a));
+            else return;
+        } else if (opts.style === 'halvgod') {
+            // Husker regelen om like saker bare av og til, og venter for kort på tvillingen.
+            const twin = rng() < 0.5 ? ready.find((x) => twinMoving(g, x)) : undefined;
+            const go = ready.filter((x) => x.twin !== -1 || g.t - x.born > HOLD_KORT);
+            if (!twin && !go.length) return;
+            f = twin ?? go[Math.floor(rng() * go.length)];
+        } else f = ready[0];
 
         const route: Route =
             opts.style === 'alt-rett'
@@ -81,7 +110,13 @@ export function makeBot(opts: BotOpts, rng: Rng) {
                   : f.kind === 'lett'
                     ? 'forelegg'
                     : 'rett';
-        const desk = opts.style === 'halvgod' ? firstDesk(g, route) : bestDesk(g, route);
+        let desk: number;
+        if (opts.style === 'halvgod') desk = roughDesk(g, route, rng);
+        else if (opts.style === 'seende') {
+            // Med Felles behandling går tvillingen til samme sal, så paret dømmes sammen.
+            const p = g.felles && route === 'rett' ? partnerDesk(g, f, route) : -1;
+            desk = p >= 0 ? p : bestDesk(g, route);
+        } else desk = bestDesk(g, route);
         // Uten rettssal (brett 1) går alt til forelegg.
         send(g, f.id, desk >= 0 ? desk : bestDesk(g, 'forelegg'));
     };
