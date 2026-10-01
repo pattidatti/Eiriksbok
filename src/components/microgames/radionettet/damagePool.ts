@@ -7,7 +7,7 @@ const MAX = 40;
 
 export const DAMAGE_CSS = `
 .rn-dmg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:14}
-.rn-dmg span{position:absolute;left:0;top:0;display:none;font-family:'Stardos Stencil','Arial Narrow',sans-serif;font-weight:700;font-size:16px;line-height:1;white-space:nowrap;will-change:transform,opacity;
+.rn-dmg span{position:absolute;left:0;top:0;display:none;font-family:'Stardos Stencil','Arial Narrow',sans-serif;font-weight:700;font-size:17px;line-height:1;white-space:nowrap;will-change:transform,opacity;
 text-shadow:0 2px 0 #14160e,2px 0 0 #14160e,-2px 0 0 #14160e,0 -2px 0 #14160e,1px 1px 0 #14160e,-1px -1px 0 #14160e}
 `;
 
@@ -35,7 +35,8 @@ const COL = {
 
 /** Spretten: liten -> for stor -> riktig størrelse, som et slag. */
 function pop(k: number) {
-    if (k < 0.1) return 0.4 + (k / 0.1) * 1.0;
+    // Starter aldri under 13 px (minste skrift i spillvinduet).
+    if (k < 0.1) return 0.85 + (k / 0.1) * 0.55;
     if (k < 0.22) return 1.4 - ((k - 0.1) / 0.12) * 0.4;
     return 1;
 }
@@ -78,7 +79,7 @@ export class NumberPool {
             n.z = f.z;
             n.y = ground(f.x, f.z) + (f.alt > 0.3 ? f.alt + 0.35 : 0.95);
             n.dx = (Math.random() - 0.5) * 34;
-            n.big = f.kill ? 1.55 : heavy ? 1.25 : v >= 15 ? 1.05 : 0.88;
+            n.big = f.kill ? 1.55 : heavy ? 1.25 : v >= 15 ? 1.05 : 0.92;
             n.el.textContent = f.kill && !f.fiende ? `${v}!` : `${v}`;
             n.el.style.color = f.fiende ? (f.kill ? COL.tapt : COL.fiende) : f.kill ? COL.drap : f.hard ? COL.panser : COL.egen;
             n.el.style.display = 'none';

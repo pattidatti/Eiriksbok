@@ -103,7 +103,7 @@ export const MARKS = {
     uHq: { value: new THREE.Vector4() },
     uRelay: { value: Array.from({ length: MAX_RELAY }, () => new THREE.Vector4()) },
     uRelayN: { value: 0 },
-    /** Per rute: r = radioen når hit, g = bare fallskjermsoldater. */
+    /** Per rute: r = radioen når hit, g = bare fallskjermsoldater, b = en lik enhet å slå sammen med. */
     uTiles: { value: tiles },
     uTileOn: { value: 0 },
     /** x, z, gyldig, synlig */
@@ -112,7 +112,7 @@ export const MARKS = {
     uRadio: { value: new THREE.Color(C.radio) },
 };
 /** Skriv rutene (r/g per rute) og last dem opp. */
-export function setTiles(fill: (x: number, z: number) => 0 | 1 | 2) {
+export function setTiles(fill: (x: number, z: number) => 0 | 1 | 2 | 3) {
     const d = tiles.image.data as Uint8Array;
     for (let z = 0; z < MAP_D; z++)
         for (let x = 0; x < MAP_W; x++) {
@@ -120,7 +120,7 @@ export function setTiles(fill: (x: number, z: number) => 0 | 1 | 2) {
             const i = (z * MAP_W + x) * 4;
             d[i] = v === 1 ? 255 : 0;
             d[i + 1] = v === 2 ? 255 : 0;
-            d[i + 2] = 0;
+            d[i + 2] = v === 3 ? 255 : 0;
             d[i + 3] = 255;
         }
     tiles.needsUpdate = true;
@@ -201,7 +201,14 @@ float edge = min(min(loc.x, 1.0 - loc.x), min(loc.y, 1.0 - loc.y));
 if (uTileOn > 0.5 && cell.x >= 0.0 && cell.y >= 0.0 && cell.x < 16.0 && cell.y < 10.0) {
     vec4 tv = texture2D(uTiles, (cell + 0.5) / vec2(16.0, 10.0));
     float inT = smoothstep(0.1, 0.13, edge);
-    if (tv.r > 0.5 && inT * 0.42 > mA) { mA = inT * 0.42; mCol = uRadio; }
+    // En lik enhet står her: ruta pulserer hvit med tykk kant, så den skiller seg fra de gule.
+    if (tv.b > 0.5) {
+        float pulse = 0.6 + 0.3 * sin(uTime * 6.0);
+        float rim = (1.0 - smoothstep(0.05, 0.12, edge)) + inT * 0.3;
+        mA = max(mA, min(0.9, rim * pulse));
+        mCol = vec3(1.0, 0.98, 0.92);
+    }
+    else if (tv.r > 0.5 && inT * 0.42 > mA) { mA = inT * 0.42; mCol = uRadio; }
     else if (tv.g > 0.5 && inT * 0.35 > mA) { mA = inT * 0.35; mCol = vec3(0.73, 0.7, 0.63); }
 }
 if (uGhost.w > 0.5 && cell == floor(uGhost.xy)) {

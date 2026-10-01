@@ -290,3 +290,19 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   Porter: simulering grønn (samvirke 93 %, trappen 965 < 1730-1785 < 5835), selvspill grønt
   (73 draw calls, JS p95 6,7 ms på lav), scene-audit grønn. Venter på at eieren spiller Dunkerque
   igjen og prøver slag 2-6.
+- 2026-10-01, eierens rettelser («Var ikke klar over at man kan stacke infanteri, så det vises
+  isåfall veldig dårlig ingame. Savner fremdeles mer stemning og effekter, kan vi gjøre noe med
+  f.eks. fog rundt kanten av mappet med flimmer av artilleri? Hva med type bullettime og mer
+  dynamisk kamera når kampen pågår, man kan jo uansett ikke gjøre noe da. Vi må gjøre det mye mer
+  interessant å se på kampen utspille seg»). Gjort: Sammenslåing: holder eleven et kort, pulserer
+  ruta med en lik enhet hvit (de andre er gule), en lapp sier «Legg den oppå: to like blir sterkere,
+  tre blir veteran», sammenslåingen gir «STERKERE ×2» med gnister, og sammenslåtte enheter har et
+  gradsmerke over seg (to vinkler, stjerne for veteran) i stedet for de små gullprikkene.
+  Krigståke: tre lag med drivende tåke rundt hele brettet (tettere i Bastogne), med artilleri som
+  blinker og går i salver inne i tåka og fjern torden etterpå. Kinokamera: i bølgen glir kameraet
+  nærmere (1,2×), følger fienden og svaier litt; planleggingen, et kort i hånda og sperreild gir
+  hele kartet. Sakte film når en vogn eller et batteri slås ut, et fly styrter, bombene faller,
+  kommandovogna treffes eller en egen vogn går tapt (minst 5 s mellom), og alltid på bølgens siste
+  fiende: spillet går i 0,18× mens kameraet dykker mot stedet, kanten mørkner og en dyp dunk høres.
+  Porter: simulering uendret (samvirke 93 %, trappen 965 < 1730-1785 < 5835), selvspill grønt
+  (71 draw calls, JS p95 7,3 ms på lav), scene-audit grønn. Venter på at eieren ser kampen.

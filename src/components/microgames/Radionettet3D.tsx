@@ -21,6 +21,8 @@ import { KORT, SCORE, type EKind, type KortId } from './radionettet/tuning';
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
 import { SLAG, TOTAL_WAVES } from './radionettet/levels';
+import { bulletTime, cineScale, newCine, type Cine } from './radionettet/cine';
+import { WarFog } from './radionettet/warfog';
 import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, type Proj } from './radionettet/world';
 import { HQ_ID, type Hl } from './radionettet/hl';
 import { Soldiers } from './radionettet/soldiers';
@@ -146,7 +148,11 @@ function makeSfx(a: ArcadeSynth) {
             a.tone(1500, 1000, 0.22, 'triangle', 0.012);
             a.tone(1450, 950, 0.3, 'triangle', 0.012, 0.28);
         }
-        else if (name === 'kutt' && gate('kutt', 300)) a.tone(1200, 400, 0.25, 'square', 0.04);
+        // Sakte film: et dypt sug og en tung, lav dunk.
+        else if (name === 'sakte') {
+            a.tone(220, 55, 0.9, 'sine', 0.07);
+            a.noise(0.8, 0.04, 140);
+        } else if (name === 'kutt' && gate('kutt', 300)) a.tone(1200, 400, 0.25, 'square', 0.04);
         else if (name === 'stup' && gate('stup', 400)) a.tone(520, 1250, 1.1, 'sawtooth', 0.025);
     };
 }
@@ -185,6 +191,12 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
             const [x, z] = def.veier[r][0];
             text.point(`vei${g.slag}.${r}`, 'Fienden kommer også her', at(Math.min(15.2, Math.max(0.8, x)), Math.min(9.2, Math.max(0.6, z))), { tone: 'fare', once: true, until: () => g.phase !== 'plan', seconds: 30 });
         }
+    // Sammenslåing: holder eleven et kort og en lik enhet står på bakken, vis at den kan legges oppå.
+    if (g.phase === 'plan' && g.holding >= 0) {
+        const k = g.shop[g.holding];
+        const u = k && !isAir(k) ? g.units.find((v) => !v.dead && v.kind === k && !v.vet) : undefined;
+        if (u) text.point('sammen', 'Legg den oppå: to like blir sterkere, tre blir veteran', at(u.x, u.z, 1.2), { once: true, until: () => g.holding < 0, seconds: 14 });
+    }
     // Stafetten: første gang eleven holder et kort og har en bakkeenhet i nettet (fra El Alamein).
     if (g.phase === 'plan' && g.slag >= 1 && g.holding >= 0) {
         const u = g.units.find((v) => v.linked && !v.dead && !isAir(v.kind));
@@ -244,6 +256,16 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         if (u) flashUnit(u.id);
     };
     const speedRef = useRef(0);
+    const cineRef = useRef<Cine>(newCine());
+    const vigRef = useRef<HTMLDivElement>(null);
+    /** Sakte film når noe stort skjer i bølgen (ikke oppå et lærings-øyeblikk). */
+    const slowMo = (x: number, z: number, dur: number, force = false) => {
+        if (gRef.current.phase !== 'wave' || text.timeScale() < 1) return;
+        if (bulletTime(cineRef.current, x, z, dur, force)) {
+            sfx('sakte');
+            gRef.current.shake = Math.max(gRef.current.shake, 0.6);
+        }
+    };
     const dmgRef = useRef<HTMLDivElement>(null);
     const [fxPool] = useState(createFx);
     const fxRef = useRef(fxPool);
@@ -276,6 +298,11 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                     const p = projRef.current?.(x, 1, z);
                     if (p) text.float(`+${SCORE.drap[kind]}`, p.x, p.y, C.radio, kind === 'evogn' || kind === 'ebatt');
                 }
+                // Bølgens siste fiende får alltid sakte film; ellers bare det tunge.
+                const g = gRef.current;
+                const last = waveDef(g).groups.every((gr, i) => g.spawned[i] >= gr.n) && g.enemies.every((e) => e.dead || e.passed || e.kind === 'ebatt');
+                if (last) slowMo(x, z, 1.7, true);
+                else if (name === 'bomber' || name.startsWith('flyNed:') || kind === 'evogn' || kind === 'ebatt') slowMo(x, z, 1.2);
             }
             else if (name === 'salve') sfx('salve');
             else if (name === 'batteri') {
@@ -290,21 +317,26 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                 buzz(40);
                 const u = gRef.current.units.find((v) => Math.abs(v.x - x) < 0.1 && Math.abs(v.z - z) < 0.1);
                 if (u) text.point(`kutt${u.id}`, 'Linja røk! Klikk for å koble', at(x, z), { tone: 'fare', until: () => u.linked || u.dead, seconds: 6 });
-            } else if (name === 'veteran') {
+            } else if (name === 'veteran' || name === 'sammen') {
                 const p = projRef.current?.(x, 1, z);
-                if (p) text.float('VETERAN', p.x, p.y, C.radio, true);
+                if (p) text.float(name === 'veteran' ? 'VETERAN ★' : 'STERKERE ×2', p.x, p.y, C.radio, true);
+                // Gnister og støv ut fra ruta: sammenslåingen skal synes.
+                for (let i = 0; i < (name === 'veteran' ? 14 : 8); i++) fxPool.puff('glo', x, 0.6, z, { r: 0.06, grow: 0.6, life: 0.9, up: 2.2, spread: 1.4 });
+                for (let i = 0; i < 6; i++) fxPool.puff('støv', x, 0.1, z, { r: 0.16, grow: 2, life: 0.9, up: 0.2, spread: 1.6 });
             }
             else if (name === 'brudd') buzz(60);
             else if (name === 'tapt:vogn' && !gRef.current.units.some((u) => u.linked))
                 text.lesson('blind', 'Stridsvogna alene så ikke det skjulte panservernet. Med infanteri i samme radionett ser den det.', 2);
+            else if (name === 'hqTreff' || name === 'tapt:vogn' || name === 'tapt:art') slowMo(x, z, 1);
         },
-        timeScale: () => text.timeScale(),
+        timeScale: () => text.timeScale() * cineScale(cineRef.current),
     };
     const ioRef = useRef(io);
 
     const begin = (slag: number) => {
         synth.unlock();
         gRef.current = newGame((Math.random() * 1e9) | 0, slag);
+        cineRef.current = newCine();
         planSeen.current = -1;
         setResult(null);
         text.clear();
@@ -510,7 +542,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                 <style>{HUD_CSS + DAMAGE_CSS}</style>
                 <ArcadeStage ref={stageRef} theme={THEME} background={C.papir} label="Radionettet - still opp hæren og koble den sammen med radio">
                     <MicroCanvas builtInLights={false} controls={false} contactShadows={false} background={C.papir} fog={null} postprocessing>
-                        <Camera gRef={gRef} projRef={projRef} />
+                        <Camera gRef={gRef} projRef={projRef} cineRef={cineRef} speedRef={speedRef} vigRef={vigRef} />
                         <Board gRef={gRef} onPoint={onPoint} onMove={onMove} />
                         <PlaceHints gRef={gRef} />
                         <Ghost gRef={gRef} pointer={pointer} />
@@ -522,12 +554,19 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                         <Lines gRef={gRef} />
                         <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
                         <Ambience gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
+                        <WarFog gRef={gRef} speedRef={speedRef} sfx={sfx} />
                         <Flyovers gRef={gRef} speedRef={speedRef} sfx={sfx} />
                         <Boats gRef={gRef} fxRef={fxRef} speedRef={speedRef} />
                         <KitEffects bloomIntensity={0.8} bloomThreshold={0.9} />
                         <DamageNumbers gRef={gRef} projRef={projRef} layerRef={dmgRef} speedRef={speedRef} />
                         <Loop gRef={gRef} modeRef={modeRef} ioRef={ioRef} speedRef={speedRef} onTick={onTick} />
                     </MicroCanvas>
+                    {/* Vignetten: kanten mørkner når kameraet går nært og i sakte film. */}
+                    <div
+                        ref={vigRef}
+                        aria-hidden
+                        style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0, background: 'radial-gradient(ellipse at 50% 48%, transparent 52%, rgba(12,10,6,0.55) 100%)' }}
+                    />
                     <div ref={dmgRef} className="rn-dmg" aria-hidden />
 
                     {(mode === 'play' || mode === 'paused') && <Hud gRef={gRef} act={act} />}

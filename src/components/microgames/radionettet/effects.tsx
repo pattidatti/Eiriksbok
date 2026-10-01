@@ -1,6 +1,7 @@
 import { useLayoutEffect, useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+import { fogFlash } from './fogState';
 import { useQuality } from '../kit';
 import type { G, Fx } from './game';
 import { SLAG } from './levels';
@@ -300,6 +301,7 @@ export function Ambience({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRe
             const z = Math.random() * 10;
             const x = 17.2 + Math.random() * 1.5;
             fx.puff('blits', x, 0.4, z, { r: 0.9, grow: 1.6, life: 0.18, up: 0, spread: 0 });
+            fogFlash(x, z, 1.4, 3);
             fx.puff('ild', x, 0.4, z, { r: 0.5, grow: 1.4, life: 0.4, up: 0.3, spread: 0 });
             fx.after(0.5 + Math.random() * 0.6, () => sfx?.('fjern'));
         }

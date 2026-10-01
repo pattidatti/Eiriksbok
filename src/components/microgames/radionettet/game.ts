@@ -410,6 +410,9 @@ function merge(g: G, u: Unit, i: number, pris: number, io?: IO) {
         u.vet = true;
         io?.sfx('veteran');
         io?.event('veteran', u.x, u.z);
+    } else {
+        io?.sfx('plasser');
+        io?.event('sammen', u.x, u.z);
     }
     u.hp = u.maxHp;
     return true;

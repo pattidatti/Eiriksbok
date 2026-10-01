@@ -4,9 +4,11 @@ import { OrthographicCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { RADIO, UNITS } from './tuning';
 import { MAP_D, MAP_W, FLYPLASS } from './levels';
-import { canPlace, isAir, reachable, slagDef, usedChannels, type G, type Unit, type Enemy } from './game';
+import { canPlace, isAir, reachable, slagDef, unitAt, usedChannels, type G, type Unit, type Enemy } from './game';
 import { C, LOOK, modelsFor, wreck, propeller, figureMaterial, figureMaterialHi, PROPS, type Look, type Model } from './models';
 import type { FxPool } from './fxPool';
+import { rankMaterial } from './rank';
+import { cineDepth, type Cine } from './cine';
 import { hlOn, unitYaw, enemyYaw, type Hl } from './hl';
 import { MARKS, setTiles, lift, tilt } from './ground';
 
@@ -37,13 +39,20 @@ const FIT = [
 const TOP = 78;
 const BOTTOM = 112;
 
-export function Camera({ gRef, projRef }: { gRef: React.MutableRefObject<G>; projRef: React.MutableRefObject<Proj | null> }) {
+const UP = new THREE.Vector3(0, 1, 0);
+const YAW = new THREE.Quaternion();
+const PIV = new THREE.Vector3();
+
+export function Camera({ gRef, projRef, cineRef, speedRef, vigRef }: { gRef: React.MutableRefObject<G>; projRef: React.MutableRefObject<Proj | null>; cineRef: React.MutableRefObject<Cine>; speedRef: Speed; vigRef: React.RefObject<HTMLDivElement | null> }) {
     const cam = useRef<THREE.OrthographicCamera>(null);
     const { size } = useThree();
     const fitted = useRef('');
     const base = useRef(new THREE.Vector3());
     const quat = useRef(new THREE.Quaternion());
-    useFrame(() => {
+    const zoom0 = useRef(1);
+    /** Kinokameraet: zoom, punktet det følger og svaiet, alle glidende. */
+    const cv = useRef({ zoom: 1, x: CENTER.x, z: CENTER.z, sway: 0, t: 0 });
+    useFrame((_, raw) => {
         const c = cam.current;
         if (!c) return;
         const key = `${size.width}x${size.height}`;
@@ -59,7 +68,8 @@ export function Camera({ gRef, projRef }: { gRef: React.MutableRefObject<G>; pro
                 x0 = Math.min(x0, V.x); x1 = Math.max(x1, V.x); y0 = Math.min(y0, V.y); y1 = Math.max(y1, V.y);
             }
             const availH = size.height - TOP - BOTTOM;
-            c.zoom = Math.min((size.width - 24) / (x1 - x0), availH / (y1 - y0));
+            zoom0.current = Math.min((size.width - 24) / (x1 - x0), availH / (y1 - y0));
+            c.zoom = zoom0.current;
             // Midten av kartet skal ligge midt i den ledige plassen, ikke midt i vinduet.
             const right = new THREE.Vector3().setFromMatrixColumn(c.matrixWorld, 0);
             const up = new THREE.Vector3().setFromMatrixColumn(c.matrixWorld, 1);
@@ -68,14 +78,62 @@ export function Camera({ gRef, projRef }: { gRef: React.MutableRefObject<G>; pro
             quat.current.copy(c.quaternion);
         }
         const g = gRef.current;
+        const ci = cineRef.current;
+        const k = cv.current;
+        const real = Math.min(0.05, raw);
+        const running = speedRef.current > 0;
+        if (running && ci.slow > 0) ci.slow = Math.max(0, ci.slow - real);
+        // Et kort i hånda eller sperreild: eleven trenger hele kartet med en gang.
+        if (g.holding >= 0 || g.sperreArmed) ci.slow = 0;
+        const deep = cineDepth(ci);
+        // Planleggingen, et kort i hånda eller sperreild: hele kartet. Ellers følger kameraet kampen.
+        const tactical = g.phase !== 'wave' || g.holding >= 0 || g.sperreArmed;
+        let fx = CENTER.x, fz = CENTER.z, want = 1;
+        if (!tactical) {
+            let n = 0, sx = 0, sz = 0;
+            for (const e of g.enemies)
+                if (!e.dead && e.x > 0 && e.x < MAP_W && e.z > 0 && e.z < MAP_D) {
+                    sx += e.x;
+                    sz += e.z;
+                    n++;
+                }
+            if (n) {
+                fx = CENTER.x + (sx / n - CENTER.x) * 0.75;
+                fz = CENTER.z + (sz / n - CENTER.z) * 0.75;
+            }
+            want = 1.2;
+        }
+        if (deep > 0) {
+            fx += (ci.x - fx) * deep;
+            fz += (ci.z - fz) * deep;
+            want += 0.5 * deep;
+        }
+        const ease = (r: number) => 1 - Math.exp(-real * r);
+        const fast = deep > 0 ? 7 : 1;
+        k.zoom += (want - k.zoom) * ease(fast * 1.1);
+        k.x += (fx - k.x) * ease(fast * 0.9);
+        k.z += (fz - k.z) * ease(fast * 0.9);
+        k.t += real;
+        k.sway += ((tactical ? 0 : Math.sin(k.t * 0.17) * 0.06) - k.sway) * ease(0.8);
+        // Panoreringen holdes innenfor kartet: jo nærmere, jo lenger kan den gå.
+        const pan = 1 - 1 / k.zoom;
+        const ox = (k.x - CENTER.x) * pan;
+        const oz = (k.z - CENTER.z) * pan;
         const sh = g.shake > 0 ? g.shake * 0.12 : 0;
         // MicroCanvas sikter kameraet mot sitt eget mål én gang; vi holder vår egen retning.
-        c.quaternion.copy(quat.current);
+        YAW.setFromAxisAngle(UP, k.sway);
+        c.quaternion.copy(YAW).multiply(quat.current);
+        PIV.set(CENTER.x + ox, 0, CENTER.z + oz);
         c.position.copy(base.current);
+        c.position.x += ox;
+        c.position.z += oz;
+        c.position.sub(PIV).applyQuaternion(YAW).add(PIV);
         c.position.x += (Math.random() - 0.5) * sh;
         c.position.y += (Math.random() - 0.5) * sh;
+        c.zoom = zoom0.current * k.zoom;
         c.updateProjectionMatrix();
         c.updateMatrixWorld();
+        if (vigRef.current) vigRef.current.style.opacity = String(Math.min(1, deep * 0.9 + (k.zoom - 1) * 0.35));
         projRef.current = (x, y, z) => {
             V.set(x, y, z).project(c);
             return { x: (V.x * 0.5 + 0.5) * size.width, y: (-V.y * 0.5 + 0.5) * size.height };
@@ -88,7 +146,6 @@ const M = new THREE.Matrix4();
 const Q = new THREE.Quaternion();
 const P = new THREE.Vector3();
 const S = new THREE.Vector3();
-const UP = new THREE.Vector3(0, 1, 0);
 const DIR = new THREE.Vector3();
 const COL = new THREE.Color();
 
@@ -103,7 +160,12 @@ export function PlaceHints({ gRef }: { gRef: React.MutableRefObject<G> }) {
         if (k === key.current) return;
         key.current = k;
         MARKS.uTileOn.value = k ? 1 : 0;
-        if (k) setTiles((x, z) => (canPlace(g, x + 0.5, z + 0.5) ? (reachable(g, x + 0.5, z + 0.5) ? 1 : 2) : 0));
+        if (k)
+            setTiles((x, z) => {
+                if (!canPlace(g, x + 0.5, z + 0.5)) return 0;
+                if (unitAt(g, x + 0.5, z + 0.5)) return 3;
+                return reachable(g, x + 0.5, z + 0.5) ? 1 : 2;
+            });
     });
     return null;
 }
@@ -170,6 +232,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
     const wreckRef = useRef<THREE.Group>(null);
     const bar = useRef<THREE.Mesh>(null);
     const props = useRef<THREE.Group>(null);
+    const rank = useRef<THREE.Sprite>(null);
     const st = useRef({ yaw: 0, aim: 0, lastKick: 0, deadT: -1, roll: 0, pitch: 0, lastH: 0, lastAlt: 0, fx: 0, fz: 0, fy: 0, vy: 0, hi: false });
     const air = isAir(u.kind);
     const set = modelsFor(look);
@@ -215,6 +278,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
                 if (w?.visible && s.deadT < 9 && Math.random() < dt * 9) fx.burn(s.fx, s.fz, 1 - s.deadT / 9);
             }
             if (bar.current) bar.current.visible = false;
+            if (rank.current) rank.current.visible = false;
             return;
         }
         if (wreckRef.current) wreckRef.current.visible = false;
@@ -272,6 +336,12 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
         const f = (air ? AIR_FIG : FIG) * (1 + hop * 0.14);
         const sc = f * (1 + u.kick * 0.06);
         body.current.scale.set(sc, f * (1 - u.kick * 0.05), sc);
+        if (rank.current) {
+            // Merket smekker inn stort når enheten nettopp ble slått sammen, og følger flyet.
+            const pop = hl.pick === u.id && since < 0.6 ? 1 + Math.sin((since / 0.6) * Math.PI) * 0.9 : 1;
+            rank.current.scale.setScalar((air ? 0.45 : 0.5) * pop);
+            if (air) rank.current.position.y = (flying ? u.alt : 0) + 0.9;
+        }
         if (bar.current) {
             bar.current.visible = u.hp < u.maxHp;
             bar.current.scale.x = Math.max(0.01, u.hp / u.maxHp);
@@ -297,14 +367,10 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
                         <Figure m={topModel} />
                     </group>
                 )}
-                {u.copies > 1 &&
-                    Array.from({ length: u.copies }, (_, i) => (
-                        <mesh key={i} position={[0, 0.72, (i - (u.copies - 1) / 2) * 0.2]}>
-                            <octahedronGeometry args={[u.vet ? 0.08 : 0.05]} />
-                            <meshStandardMaterial color="#e2b43c" metalness={0.7} roughness={0.3} emissive="#6a4a00" />
-                        </mesh>
-                    ))}
             </group>
+            {/* Gradsmerket: to vinkler = to like på ruta, stjerne = veteran. Står over figuren og
+                skjules aldri bak den (depthTest av). */}
+            {u.copies > 1 && <sprite ref={rank} material={rankMaterial(u.copies)} position={[0, 1.55, 0]} scale={0.5} renderOrder={5} />}
             <group ref={wreckRef} visible={false} scale={FIG}>
                 <Figure m={wreck()} />
             </group>

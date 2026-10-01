@@ -17,6 +17,9 @@ Fase: **gråboks-diagnose 2 + slag 4-6** (kunst v2 står). Komponenten: `../Radi
 | `hl.ts`, `markers.tsx` | Markering (hover/klikk: hjørner + lysere figur; kommandovogna er `HQ_ID`, og `src` er der linja går fra), skygger, ringene (din/nett/fiende) og stafett-ringene |
 | `ground.ts`, `terrain.tsx`, `relief.tsx` | Høyden (`heightAt`; `lift`/`tilt` = bakken under et punkt i slaget, også åsene inne på brettet), skyskygger og bakkemarkeringene (`MARKS`: radioring, stafett-ringer, gyldige ruter, ruta under musa - tegnet i bakkeshaderen); bakken malt per slag, pynt, skjørt; vann, bru, kratervoller, stein, dis/tåke |
 | `damage.tsx`/`damagePool.ts` | Skadetallene over den som blir truffet (combat sender `Fx` `tall`; `wait` = granaten er på vei) |
+| `cine.ts` | Kinokameraet og sakte film: `bulletTime(c, x, z, dur)` (minst 5 s mellom, bølgens siste fiende alltid), `cineScale` (spillets tempo, ganges inn i `io.timeScale`), `cineDepth` (zoom og vignett). `Camera` i `world.tsx` følger fienden i bølgen (zoom 1,2, svai), dykker mot stedet i sakte film, og viser hele kartet i planleggingen, med kort i hånda og med sperreild |
+| `warfog.tsx`/`fogState.ts` | Krigståka rundt brettet: tre lag plan med støy-skyer (to på lav), masken regnet på bakken bak tåka (`uShift`), artilleriglimt og salver som lyser den opp innenfra (`fogFlash`, også fra `Ambience`) |
+| `rank.ts` | Gradsmerket over sammenslåtte enheter (to vinkler / stjerne for veteran), sprite som aldri skjules |
 | `life.tsx` | Verden som lever: flyformasjoner høyt oppe (pynt), småbåter ved kysten |
 | `light.tsx`, `models.ts`, `hud.tsx`/`hudData.ts` | Lys per look, figurene (`PAL`, `SQUAD`, `soldierParts`), HUD |
 | `fxPool.ts`/`effects.tsx` | Effekter: `consume` gjør skudd (`Fx.by` = hvem skjøt, `hard` = panser) om til flamme, granat, nedslag og lyd; `Ambience` er stemningen (røyksøyler per slag, kanonglimt, dis, vind/måker). Lydene står i `makeSfx` i `Radionettet3D.tsx` |
@@ -54,5 +57,8 @@ med 7 igjen, trappen 965 < 1730 < 5835). Ett slag om gangen:
 - Alt som står på bakken, må bruke `lift(def, x, z)` (og `tilt` for kjøretøy og ringer). Effektene får
   bakkehøyden selv (`fx.setGround`), så y i `fxPool` er over bakken. Store flate ringer/ruter hører hjemme
   i bakkeshaderen (`MARKS`), ikke som flate mesher (de skjæres av åsene).
+- Shader-materialer (`warfog.tsx`) må ha `#include <tonemapping_fragment>` og `<colorspace_fragment>`, ellers blir fargene mørke og grumsete.
+- Sammenslåing: `setTiles` verdi 3 (blå kanal) = en lik enhet å legge oppå; tegnes hvit og pulserende i bakkeshaderen.
+- Skadetallene starter aldri under 13 px (`pop` i `damagePool.ts`), ellers feiler selvspillets skriftport.
 - Åsene inne på brettet går bare opp fra null (`inner` i `ground.ts`): et søkk under null viser skjørtet.
 - Eierens dev-server på 5173 kan servere gamle filer: test mot egen Vite på 5190 (`.screenshots/vite.test.config.mjs`).
