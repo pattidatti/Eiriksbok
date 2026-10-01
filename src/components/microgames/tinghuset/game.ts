@@ -3,12 +3,21 @@
 
 import { TUNING } from './tuning';
 import { LEVELS } from './levels';
-import { makeOffer, runDesks, runRoutes, runTravel } from './rules';
+import { makeOffer, nesteTrinnMnd, runDesks, runRoutes, runTravel, straffTrinn } from './rules';
 import { newGame, type Folder, type Game, type Kind } from './state';
 
 export { newGame };
 export type { Game, Folder };
-export { send, pickCard, straffNivaa, deskLoad, caseTime } from './rules';
+export {
+    send,
+    pickCard,
+    straffNivaa,
+    straffTrinn,
+    nesteTrinnMnd,
+    domTekst,
+    deskLoad,
+    caseTime,
+} from './rules';
 
 const K = TUNING;
 
@@ -41,15 +50,27 @@ export function waiting(g: Game): number {
     return n;
 }
 
-/** Hvor mye de ventende mappene veier i sinnet: en mappe i leiren som venter på tvillingen
- *  sin (den har ikke kommet ennå), veier `ventTvilling`, de andre 1. */
-export function waitWeight(g: Game): number {
-    let n = 0;
-    for (const f of g.folders) {
-        if (f.state === 'leir') n += f.twin === -1 ? K.sinne.ventTvilling : 1;
-        else if (f.state === 'ko') n++;
+/** Sekunder spilltid til neste straffenivå-trinn faller (Infinity når nivået er på bunnen). */
+export function secsToStep(g: Game): number {
+    const m = nesteTrinnMnd(g.mnd);
+    if (m === null) return Infinity;
+    // Trinnet kan ligge i et senere brett; regn med farten i hvert brett.
+    let s = 0;
+    let mnd = g.mnd;
+    for (let li = g.level; li < LEVELS.length && mnd < m; li++) {
+        const lv = LEVELS[li];
+        const til = Math.min(m, lv.tilMnd);
+        s += Math.max(0, til - mnd) * lv.sekPerMnd;
+        mnd = til;
     }
-    return n;
+    return s;
+}
+
+/** Sekunder til tvillingen til en mappe dukker opp (null om den alt er her eller ikke finnes). */
+export function twinEta(g: Game, f: Folder): number | null {
+    if (f.twin !== -1) return null;
+    const p = g.pendingTwins.find((x) => x.twinOf === f.id);
+    return p ? Math.max(0, p.at - g.t) : null;
 }
 
 function addFolder(g: Game, sak: number, kind: Kind, camp: number, twin: number | null) {
@@ -149,6 +170,18 @@ function nextLevel(g: Game) {
     g.events.push({ kind: 'brett', level: g.level });
 }
 
+/** Hopp rett til et senere brett (etter første seier: start i mars 1946). */
+export function skipTo(g: Game, level: number) {
+    while (g.level < level && g.mode === 'play') {
+        g.mnd = LEVELS[g.level].tilMnd;
+        nextLevel(g);
+    }
+    g.firstSerious = true;
+    g.nextOfferMnd = g.mnd + K.kort.hverMnd;
+    g.trinn = straffTrinn(g.mnd);
+    g.events.length = 0;
+}
+
 /** Hopp over mellomsiden (klikk). */
 export function skipInter(g: Game) {
     g.inter = 0;
@@ -177,13 +210,19 @@ export function update(g: Game, dt: number) {
         if (g.mode !== 'play') return;
     }
 
+    const trinn = straffTrinn(g.mnd);
+    if (trinn !== g.trinn) {
+        g.trinn = trinn;
+        g.events.push({ kind: 'trinn', trinn });
+    }
+
     runSpawns(g, sdt);
     runTravel(g, sdt);
     runDesks(g, sdt);
     runRoutes(g, sdt);
 
     // Sinnet: hver mappe som venter uten dom fyller måleren litt hvert sekund.
-    const add = K.sinne.ventPerMappe * waitWeight(g) * sdt;
+    const add = K.sinne.ventPerMappe * waiting(g) * sdt;
     g.sinne += add;
     g.fraVent += add;
     g.sinne = Math.min(LEVELS[g.level].sinneTak, Math.max(0, g.sinne));

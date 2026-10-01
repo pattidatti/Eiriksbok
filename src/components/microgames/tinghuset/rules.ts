@@ -1,8 +1,8 @@
 // Fagkjernen i Tinghuset - de tre reglene eleven skal huske:
 //  1. Rettssak er rettferdig, men treg (én sak av gangen, kø).
 //  2. Forelegg er raskt, men for mildt for alvorlige saker (sinnet hopper).
-//  3. Kalenderen gjør straffene mildere måned for måned - like saker avgjort med mange
-//     måneder imellom, får ulik straff.
+//  3. Kalenderen gjør straffene mildere i synlige trinn - like saker avgjort på hver sin
+//     side av et trinn, får ulik trykt dom.
 // Her står grepene eleven gjør (send, velg kort) og hva som skjer når en sak avgjøres.
 
 import { TUNING } from './tuning';
@@ -19,9 +19,36 @@ import {
 
 const K = TUNING;
 
-/** Straffenivået i landet (1 = mai 1945, synker mot 1 - straffFall). */
+const T = K.kalender.trinn;
+const MAKS_TRINN = Math.round((1 - T.min) / T.pp);
+
+/** Straffenivå-trinnet i en måned (0 = 100 %, 1 = 95 % ...). */
+export function straffTrinn(mnd: number): number {
+    return Math.min(MAKS_TRINN, Math.floor(Math.max(0, mnd - T.startMnd) / T.hverMnd));
+}
+
+/** Straffenivået i landet (1 = mai 1945, synker i trinn på 5 prosentpoeng). */
 export function straffNivaa(mnd: number): number {
-    return 1 - K.kalender.straffFall * Math.min(1, Math.max(0, mnd / K.kalender.straffMnd));
+    return 1 - T.pp * straffTrinn(mnd);
+}
+
+/** Måneden neste trinn faller, eller null når nivået har nådd bunnen. */
+export function nesteTrinnMnd(mnd: number): number | null {
+    const t = straffTrinn(mnd);
+    return t >= MAKS_TRINN ? null : T.startMnd + (t + 1) * T.hverMnd;
+}
+
+const kr = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+/** Den trykte dommen for en sak avgjort på en vei i et trinn. Forelegg har fast takst. */
+export function domTekst(kind: Folder['kind'], route: Route, trinn: number): string {
+    const D = K.dom;
+    if (route === 'forelegg') return D.forelegg;
+    const niv = 1 - T.pp * trinn;
+    if (kind === 'lett') return `Bot ${kr(Math.round((D.lettKr * niv) / 1000) * 1000)} kr`;
+    const base = kind === 'alvorlig' ? D.alvorligAar : D.tykkAar;
+    const aar = Math.round(base * niv * 2) / 2;
+    return `${String(aar).replace('.', ',')} år fengsel`;
 }
 
 /** Hvor lenge en sak tar ved en skranke (s). */
@@ -122,23 +149,20 @@ export function makeOffer(g: Game): CardId[] {
     return out;
 }
 
-/** Straffen i år for en sak avgjort i retten nå. */
-function years(kind: Folder['kind'], mnd: number): number {
-    const base = kind === 'alvorlig' ? 8 : kind === 'tykk' ? 4 : 1;
-    return Math.max(0.5, Math.round(base * straffNivaa(mnd) * 2) / 2);
-}
-
 /** En sak er avgjort ved skranken. Poeng, sinne og par regnes her. */
 export function decide(g: Game, f: Folder, route: Route) {
     const mild = route === 'forelegg' && f.kind !== 'lett';
+    const trinn = straffTrinn(g.mnd);
     const v: Verdict = {
         id: f.id,
         sak: f.sak,
         kind: f.kind,
         route,
+        desk: f.desk,
         mnd: g.mnd,
         mild,
-        aar: route === 'rett' ? years(f.kind, g.mnd) : 0,
+        trinn,
+        dom: domTekst(f.kind, route, trinn),
     };
     g.folders = g.folders.filter((x) => x.id !== f.id);
     g.avgjort++;
@@ -167,21 +191,24 @@ export function decide(g: Game, f: Folder, route: Route) {
     judgePair(g, other, v);
 }
 
-/** To like saker er avgjort: jevnt eller ulikt? */
+/** To like saker er avgjort: jevnt når den trykte dommen er lik, ellers ulikt. */
 function judgePair(g: Game, a: Verdict, b: Verdict) {
-    const gap = Math.abs(a.mnd - b.mnd);
-    const even = a.route === b.route && !a.mild && !b.mild && gap <= K.kalender.jevnMnd;
+    const even = a.dom === b.dom && !a.mild && !b.mild;
     if (even) {
-        const poeng = K.poeng.jevntPar * g.mult;
+        // Forelegg holder multiplikatoren; bare et jevnt par i rettssalen øker den.
+        const rett = a.route === 'rett';
+        const poeng = (rett ? K.poeng.jevntPar : K.poeng.jevntForelegg) * g.mult;
         g.score += poeng;
         g.jevne++;
-        g.mult = Math.min(K.poeng.maksMult, g.mult + 1);
+        if (rett) g.mult = Math.min(K.poeng.maksMult, g.mult + 1);
         g.events.push({ kind: 'jevnt', a, b, poeng });
         return;
     }
     g.ulike++;
-    g.mult = 1;
-    const skjevhet = gap + (a.route !== b.route || a.mild || b.mild ? 12 : 0);
+    // Et ulikt par halverer multiplikatoren (x8 -> x4). Bare forelegg i en alvorlig sak gir x1.
+    g.mult = Math.max(1, Math.floor(g.mult / 2));
+    const skjevhet =
+        Math.abs(a.trinn - b.trinn) + (a.route !== b.route || a.mild || b.mild ? 12 : 0);
     if (!g.skjevest || skjevhet > g.skjevest.skjevhet) g.skjevest = { a, b, skjevhet };
     g.events.push({ kind: 'ulikt', a, b });
 }

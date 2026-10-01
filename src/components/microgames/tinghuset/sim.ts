@@ -18,7 +18,7 @@ export const BOT_INFO = {
     seende: {
         forventer: 'vinner',
         beskrivelse:
-            'Forelegg til grå mapper, retten til røde og tykke, venter opptil 5 s på tvillingen, sender tvillingen straks den kommer og velger Ny rettssal og Felles behandling.',
+            'Forelegg straks til grå mapper, retten til røde og tykke, venter opptil 5 s på tvillingen, sender tvillingen til salen som gir dom nærmest i tid, holder et alvorlig par tilbake når et trinn snart faller, og velger Ny rettssal og Felles behandling.',
     },
     halvgod: {
         forventer: 'middels',

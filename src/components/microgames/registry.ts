@@ -2473,7 +2473,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'tinghuset',
         title: 'Tinghuset',
         description:
-            'Mai 1945 til august 1948. Du er påtalemyndigheten etter krigen. Dra mappene fra leirene til en skranke: forelegg er raskt, men for mildt for angivere og statspoliti, og rettssalen er rettferdig, men tar én sak av gangen. Kalenderen gjør straffene mildere måned for måned, så to som gjorde det samme, må få saken sin avgjort tett i tid for å få samme straff. Hold sinnet i gatene nede til 1948.',
+            'Mai 1945 til august 1948. Du er påtalemyndigheten etter krigen. Dra mappene fra leirene til en skranke: forelegg er raskt, men for mildt for angivere og statspoliti, og rettssalen er rettferdig, men tar én sak av gangen. Straffenivået faller trinn for trinn, så to som gjorde det samme, må dømmes før neste trinn for å få samme dom. Hold sinnet i gatene nede til 1948.',
         estimatedSeconds: 240,
         sjanger: 'sanntids-logistikk',
         tone: 'alvorlig',
