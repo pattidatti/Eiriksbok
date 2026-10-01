@@ -690,8 +690,8 @@ MÅKA er en 5 på Gøy og Utseende.
 **Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20 av 25. Under
 terskel: gjør forbedringene og få en NY vurdering (ny underagent) som også får forrige rundes
 forbedringer og sier om de er løst. Et spill parkeres aldri; står en akse stille, endres
-kjerneløkka for den aksen (under). Nattrutinen har et leveringsgulv for andre natt på samme spill
-(se `daily_microgame_routine.md`, Jobb 4c).
+kjerneløkka for den aksen (under). Nattrutinen leverer hver natt, også under terskel
+(se `daily_microgame_routine.md`, Jobb 4d).
 
 **Når vurderingen står stille, er det spillet som må endres - ikke pynten.** Står en akse på
 samme poeng to runder på rad, hjelper ikke flere farger, kameravinkler eller finere ringer. Gå
@@ -706,6 +706,11 @@ tilbake til designbriefen og endre kjerneløkka for den aksen:
 - **Lærerikt under 4:** gjør fagregelen til en regel som faktisk avgjør utfallet, og la de
   historiske vendepunktene endre spillet (ikke bare vise et banner).
 - **Unikt under 4:** bytt sjanger eller perspektiv - ikke farge.
+- **Har to forbedrere lagt til nye regler, stempler eller sakstyper uten at Gøy steg:** neste grep
+  er å fjerne, ikke legge til. Tell reglene eleven må holde i hodet (hver ny knapp, sakstype eller
+  unntak er en regel). Er de flere enn tre, kutt ned til de tre som bærer fagkjernen, og bruk runden
+  på presset og feel i det som står igjen. Et spill med mange gode ideer og en flink spiller som
+  aldri er i fare, er kjedeligere enn et enkelt spill der det står om noe hele tiden.
 
 **Feel-lista (hver forbedrer, hver runde).** Gøy er ofte feel, flaks, feedback og animasjon, og
 det kan vurdereren bare se på bilder - ikke kjenne. Derfor står ikke Gøy-tallet alene: sjekk
@@ -720,8 +725,9 @@ disse fire i koden, og fiks det som mangler i tillegg til de tre forbedringene.
    nok til at eleven skjønner hvorfor.
 Skriv i `## Byggelogg` hvilke av de fire som var på plass før og etter runden.
 
-Et svakt spill leveres aldri - men det gis heller ikke opp: er det fortsatt under terskel, lagres
-det på en `claude/microgame-wip-*`-gren, og neste natt fortsetter rutinen der den slapp.
+Et spill gis aldri opp, og natta ender alltid med en PR: er det fortsatt under terskel etter siste
+runde, leveres det merket «(under terskel)» med det som gjenstår (se Jobb 4d i
+`daily_microgame_routine.md`). WIP-grenen er bare mellomlagring i løpet av natta.
 
 ---
 

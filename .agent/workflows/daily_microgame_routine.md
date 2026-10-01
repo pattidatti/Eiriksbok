@@ -90,7 +90,7 @@ git ls-tree -r --name-only origin/<gren> -- docs/microgames/briefer/   # har den
   manglene som oppgave. Står samme akse lavt som natta før, gjelder «Når vurderingen står stille».
   En godkjent WIP får vanlig gren/PR i Jobb 5.
 
-En WIP-gren fortsettes til den er levert. Andre natt på samme spill gjelder **leveringsgulvet** (Jobb 4c): spillet går ut som PR når det holder gulvet, selv om det ikke nådde full terskel, og de gjenstående forbedringene står i rapporten. Et spill skal aldri ligge på WIP i mer enn to netter.
+**Hver natt ender med en PR.** WIP-grenen er bare en mellomlagring underveis i natta (og et sikkerhetsnett hvis kjøringen dør eller push feiler). En WIP-gren som finnes om kvelden, er derfor en natt som krasjet: fortsett den her til den er levert, etter reglene i Jobb 4d.
 
 ### 1a. Eierens idékø
 
@@ -318,15 +318,20 @@ Under terskel: start en NY arbeider (felles innledning, rolle: «forbedreren»):
 
 Så 4c igjen med en ny vurderer. Inntil fire vurderingsrunder per natt. Et spill parkeres aldri.
 
-**Leveringsgulvet** (gjelder når spillet er på sin andre natt, altså en WIP fortsatt fra Jobb 1-0):
-maskinportene grønne, ingen akse under 3, Utseende minst 4 og sum minst 18. Holder spillet gulvet
-etter nattens siste runde, går det ut som PR (Jobb 5), med de gjenstående forbedringene i PR-en og
-rapporten. Under gulvet etter andre natt: en forbedrer gjør de to viktigste forbedringene, og du
-leverer likevel med tittelen merket «(under terskel)» i rapporten, så eieren kan gi tommel ned.
+**Natta ender alltid med levering.** Etter fjerde vurderingsrunde (eller tidligere hvis kvoten
+eller tiden går mot slutten - se på klokka før hver ny runde, og start ingen runde etter 06:30 UTC):
 
-Er spillet fortsatt under terskel etter fjerde runde på sin FØRSTE natt: IKKE åpne PR. Siste
-checkpoint ligger på `claude/microgame-wip-<dato>-<id>`. Rapporter i Jobb 6 med scorene og hva som
-manglet - neste natt fortsetter derfra (Jobb 1-0).
+- **Terskelen nådd:** vanlig PR (Jobb 5).
+- **Under terskelen:** én siste forbedrer gjør de to viktigste forbedringene fra siste vurdering
+  (ingen ny vurdering etterpå), og spillet går ut som PR likevel. Tittelen i PR-en og rapporten
+  merkes «(under terskel)», med scorene og det som gjenstår, så eieren kan gi tommel ned eller be
+  om en runde til i chat.
+- **Maskinportene røde etter siste forbedrer:** gå tilbake til siste checkpoint som var grønt
+  (`git log --oneline` - hver vurdering ble tatt på grønne porter) og lever det.
+
+Det eneste som stopper en levering, er tekniske feil (push, Playwright) og tone-stopp. «Ikke god
+nok ennå» er aldri en grunn til å la være å levere - det er en grunn til å skrive tydelig i
+rapporten hva som mangler.
 
 ---
 
@@ -412,4 +417,4 @@ gh issue comment 12 --repo pattidatti/eiriksbok --body "**Mikrospill $(date +%Y-
 👍 / 👎 fra eieren på denne kommentaren brukes til å kalibrere vurdereren."
 ```
 
-Varianter: «under terskel etter første natt - fortsetter neste natt fra <gren>» (med scorene og forbedringene som gjenstår), «levert på leveringsgulvet» (med det som gjenstår), «ingen kandidat tåler spill (tone)», «Playwright/push feilet». Rapporten skal alltid postes.
+Varianter: «levert under terskel» (med scorene og forbedringene som gjenstår), «ingen kandidat tåler spill (tone)», «Playwright/push feilet». Rapporten skal alltid postes.
