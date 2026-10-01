@@ -129,9 +129,11 @@ export function makeBot(opts: BotOpts, rng: Rng) {
                 ? 'rett'
                 : opts.style === 'alt-forelegg'
                   ? 'forelegg'
-                  : f.kind === 'lett'
-                    ? 'forelegg'
-                    : 'rett';
+                  : f.kind === 'utenlov'
+                    ? 'avvis'
+                    : f.kind === 'lett'
+                      ? 'forelegg'
+                      : 'rett';
         let f: Folder | undefined;
         if (opts.style === 'seende') {
             // Lette saker får forelegg straks: fast takst, så paret blir alltid jevnt.
@@ -142,7 +144,7 @@ export function makeBot(opts: BotOpts, rng: Rng) {
             const holdPair = (x: Folder) =>
                 soon && x.kind !== 'lett' && twinOf(g, x)?.state === 'leir';
             f =
-                ready.find((x) => x.kind === 'lett') ??
+                ready.find((x) => x.kind === 'lett' || x.kind === 'utenlov') ??
                 ready.find((x) => twinMoving(g, x)) ??
                 ready
                     .filter(
@@ -164,7 +166,8 @@ export function makeBot(opts: BotOpts, rng: Rng) {
         const route = routeOf(f);
         let desk: number;
         if (opts.style === 'halvgod') desk = roughDesk(g, route, rng);
-        else if (opts.style === 'seende') desk = pairDesk(g, f, route);
+        else if (opts.style === 'seende')
+            desk = route === 'avvis' ? bestDesk(g, route) : pairDesk(g, f, route);
         else desk = bestDesk(g, route);
         // Uten rettssal (brett 1) går alt til forelegg.
         send(g, f.id, desk >= 0 ? desk : bestDesk(g, 'forelegg'));

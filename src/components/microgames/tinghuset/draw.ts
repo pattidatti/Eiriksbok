@@ -7,48 +7,34 @@ import {
     BLUE,
     DESK,
     INK,
+    ON_LEATHER,
     PAPER_LIGHT,
     RED,
-    RED_SOFT,
     SLIP,
     VIOLET,
-    big,
     pencil,
     typed,
     type Art,
 } from './art';
-import {
-    addStroke,
-    drawFlying,
-    drawLog,
-    drawLeaves,
-    drawStrokes,
-    drawUlik,
-    stampPress,
-} from './fx';
+import { addStroke, drawFlying, drawLog, drawStrokes, drawUlik, stampPress } from './fx';
 import type { Fx } from './fx';
 import { secsToStep, twinEta } from './game';
-import {
-    CAL,
-    COUNTER,
-    GOAL,
-    H,
-    METER,
-    RULER,
-    SCORE,
-    W,
-    campRect,
-    campSlots,
-    cardRects,
-    deskEntry,
-    deskRect,
-    homeOf,
-    type Pt,
-} from './layout';
-import { LEVELS, monthName } from './levels';
+import { H, W, campRect, campSlots, deskEntry, deskRect, homeOf, type Pt } from './layout';
+import { LEVELS } from './levels';
 import { domTekst, straffTrinn } from './rules';
 import type { Folder, Game } from './state';
-import { CARD_TEXT } from './texts';
+import {
+    drawCalendar,
+    drawCards,
+    drawCounter,
+    drawCrowd,
+    drawGoal,
+    drawInter,
+    drawMeter,
+    drawRuler,
+    drawScore,
+    drawTable,
+} from './hud';
 import { TUNING } from './tuning';
 
 const K = TUNING;
@@ -68,6 +54,8 @@ export const newView = (): ViewState => ({ drag: null, selected: null, over: -1,
 /** Kort dom på mappa: det den får NÅ om den går til retten. */
 function shortDom(f: Folder, trinn: number): string {
     if (f.kind === 'lett') return 'medlem';
+    if (f.kind === 'utenlov') return 'uten lov';
+    if (f.grov) return trinn <= 4 ? 'dødsdom?' : 'livsvarig';
     return domTekst(f.kind, 'rett', trinn).replace(' fengsel', '');
 }
 
@@ -79,6 +67,13 @@ const tiltOf = (id: number) => (((id * 37) % 7) - 3) * (Math.PI / 180);
  * Kalles hver frame før tegningen.
  */
 export function moveFolders(g: Game, fx: Fx, dt: number) {
+    // Poengene teller opp, og folkemengden tegnes strek for strek.
+    if (g.score > fx.scoreShown + 0.5) {
+        if (fx.scorePop > 0.15) fx.scorePop = 0;
+        fx.scoreShown += Math.max(1, (g.score - fx.scoreShown) * Math.min(1, dt * 7));
+        fx.scoreShown = Math.min(fx.scoreShown, g.score);
+    } else fx.scoreShown = g.score;
+    fx.crowdShown += (Math.min(1, g.sinne) - fx.crowdShown) * Math.min(1, dt * 3);
     const slots = campSlots(g);
     const k = 1 - Math.exp(-dt * 14);
     for (const f of g.folders) {
@@ -142,6 +137,13 @@ function drawFolder(
         ctx.lineWidth = 2;
         ctx.strokeRect(-25, -17, 50, 34);
     }
+    if (f.grov) {
+        // Drap og tortur: dobbel rødblyant rundt hele mappa.
+        ctx.strokeStyle = RED;
+        ctx.lineWidth = 1.6;
+        ctx.strokeRect(-24, -16, 48, 32);
+        ctx.strokeRect(-21, -13, 42, 26);
+    }
     typed(ctx, String(f.sak), -10, -5.5, 10, INK, 'center');
     if (f.state === 'leir' || f.state === 'ko') {
         const label = shortDom(f, straffTrinn(g.mnd));
@@ -149,7 +151,16 @@ function drawFolder(
             const s = Math.ceil(secsToStep(g));
             const on = Math.floor(fx.t * 4) % 2 === 0;
             typed(ctx, on ? label : `om ${s} s`, 0, 7, 10, RED, 'center');
-        } else typed(ctx, label, 0, 7, 10, f.kind === 'lett' ? '#3e3b44' : INK, 'center');
+        } else
+            typed(
+                ctx,
+                label,
+                0,
+                7,
+                10,
+                f.kind === 'utenlov' ? BLUE : f.grov ? RED : f.kind === 'lett' ? '#3e3b44' : INK,
+                'center'
+            );
     }
     ctx.restore();
     // Tvillingen er på vei: blyantring med sekundene.
@@ -171,90 +182,6 @@ function drawFolder(
     }
 }
 
-function drawCalendar(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    const { x, y, w, h } = CAL;
-    // Blokka under (flere blader).
-    ctx.fillStyle = 'rgba(30,26,34,0.25)';
-    ctx.fillRect(x + 3, y + 5, w, h);
-    ctx.fillStyle = '#d8d6cb';
-    ctx.fillRect(x + 1.5, y + 2.5, w, h);
-    ctx.fillStyle = '#f3f2ea';
-    ctx.fillRect(x, y, w, h);
-    ctx.fillStyle = VIOLET;
-    ctx.fillRect(x, y, w, 20);
-    for (let i = 0; i < 6; i++) {
-        ctx.fillStyle = '#cfcfd4';
-        ctx.beginPath();
-        ctx.arc(x + 14 + i * 24.5, y + 4, 2.5, 0, Math.PI * 2);
-        ctx.fill();
-    }
-    const abs = 4 + Math.floor(g.mnd);
-    typed(ctx, String(1945 + Math.floor(abs / 12)), x + w / 2, y + 12, 12, '#f2f1ea', 'center');
-    const name = monthName(g.mnd).split(' ')[0].toUpperCase();
-    big(ctx, name, x + w / 2, y + 46, name.length > 7 ? 21 : 26, INK, 'center');
-    if (g.level === 0) {
-        // Brett 1: kalenderen går i dager.
-        const day = 8 + Math.floor((g.mnd % 1) * 23);
-        typed(ctx, `${day}. dag`, x + w / 2, y + 74, 11, INK, 'center', false);
-    } else {
-        const pct = g.mnd % 1;
-        ctx.fillStyle = 'rgba(91,62,140,0.18)';
-        ctx.fillRect(x + 14, y + 72, w - 28, 5);
-        ctx.fillStyle = VIOLET;
-        ctx.fillRect(x + 14, y + 72, (w - 28) * pct, 5);
-    }
-    drawLeaves(ctx, fx, CAL);
-}
-
-function drawGoal(ctx: CanvasRenderingContext2D, g: Game) {
-    const { x, y, w } = GOAL;
-    typed(ctx, 'MÅL', x, y + 6, 11, VIOLET);
-    typed(ctx, 'aug. 1948', x, y + 22, 12, INK);
-    typed(ctx, 'uten at sinnet', x, y + 37, 10, INK, 'left', false);
-    typed(ctx, 'sprekker', x, y + 50, 10, INK, 'left', false);
-    const k = Math.min(1, g.mnd / K.kalender.sluttMnd);
-    ctx.fillStyle = 'rgba(42,39,49,0.12)';
-    ctx.fillRect(x, y + 62, w, 6);
-    ctx.fillStyle = BLUE;
-    ctx.fillRect(x, y + 62, w * k, 6);
-    const left = Math.max(0, Math.ceil(K.kalender.sluttMnd - g.mnd));
-    typed(ctx, `${left} mnd igjen`, x, y + 78, 10, BLUE, 'left', false);
-}
-
-function drawRuler(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    const lv = LEVELS[g.level];
-    if (!lv.linjal) return;
-    const { x, y, w, h } = RULER;
-    const T = K.kalender.trinn;
-    const steps = Math.round((1 - T.min) / T.pp);
-    const tr = straffTrinn(g.mnd);
-    ctx.fillStyle = '#e9e1c8';
-    ctx.fillRect(x, y, w, h);
-    ctx.strokeStyle = 'rgba(42,39,49,0.6)';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(x + 0.5, y + 0.5, w - 1, h - 1);
-    const sw = (w - 90) / (steps + 1);
-    for (let i = 0; i <= steps; i++) {
-        const sx = x + 88 + i * sw;
-        const done = i < tr;
-        const now = i === tr;
-        ctx.fillStyle = now ? VIOLET : done ? 'rgba(91,62,140,0.25)' : 'rgba(42,39,49,0.10)';
-        const pop = now ? 1 + (1 - ease(fx.trinnT / 0.35)) * 0.6 : 1;
-        const bh = (h - 8) * pop;
-        ctx.fillRect(sx + 1, y + h / 2 - bh / 2, sw - 2, bh);
-    }
-    typed(ctx, `NIVÅ ${100 - tr * 5} %`, x + 6, y + h / 2 + 0.5, 11, VIOLET);
-    // Nedtelling når neste trinn er nær.
-    const s = secsToStep(g);
-    if (s < K.kalender.varselSek && Math.floor(fx.t * 4) % 2 === 0) {
-        const nx = x + 88 + (tr + 1) * sw;
-        ctx.strokeStyle = RED;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(nx, y + 1, sw, h - 2);
-        typed(ctx, `-5 % om ${Math.ceil(s)} s`, x + w, y + h + 9, 10, RED, 'right');
-    }
-}
-
 function drawCamp(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art, i: number) {
     const r = campRect(i);
     const open = fx.campOpen.get(i);
@@ -270,10 +197,28 @@ function drawCamp(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art, i: n
     ctx.strokeRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
     ctx.fillStyle = INK;
     ctx.fillRect(r.x, r.y + 24, r.w, 1);
+    // Leirplanen: brakker og gjerde, tegnet svakt i blekk (en plantegning fra arkivet).
+    ctx.save();
+    ctx.globalAlpha = 0.16;
+    ctx.strokeStyle = INK;
+    ctx.lineWidth = 1;
+    for (let b = 0; b < 4; b++) {
+        const bx = r.x + 22 + b * 60;
+        ctx.strokeRect(bx, r.y + 34, 46, 72);
+        for (let wy = r.y + 42; wy < r.y + 100; wy += 12) {
+            ctx.fillStyle = INK;
+            ctx.fillRect(bx + 3, wy, 4, 4);
+            ctx.fillRect(bx + 39, wy, 4, 4);
+        }
+    }
+    ctx.setLineDash([2, 4]);
+    ctx.strokeRect(r.x + 14, r.y + 29, r.w - 22, r.h - 34);
+    ctx.setLineDash([]);
+    ctx.restore();
     // Folk som venter uten dom: leiren fylles av rødblyant (rødt = det som haster).
     let heat = 0;
     for (const f of g.folders) if (f.state === 'leir' && f.camp === i) heat += g.t - f.born;
-    heat = Math.min(1, heat / 24);
+    heat = Math.min(1, heat / 40);
     if (heat > 0.02) {
         ctx.save();
         rect(ctx, r.x + 1, r.y + 25, r.w - 2, r.h - 26);
@@ -292,9 +237,23 @@ function drawCamp(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art, i: n
         ctx.fill();
     }
     typed(ctx, g.camps[i], r.x + 10, r.y + 13, 14, INK);
-    const n = g.folders.filter((f) => f.state === 'leir' && f.camp === i).length;
+    const here = g.folders.filter((f) => f.state === 'leir' && f.camp === i);
+    const n = here.length;
+    // Hvor lenge den som har ventet lengst, har sittet uten dom (dager i kalenderen).
+    const sek = here.reduce((m, f) => Math.max(m, g.t - f.born), 0);
+    const dager = Math.round((sek / LEVELS[g.level].sekPerMnd) * 30);
     if (g.ruter.includes(i)) typed(ctx, 'FAST RUTE', r.x + r.w - 8, r.y + 13, 11, BLUE, 'right');
-    else if (n >= 6) typed(ctx, `${n} VENTER`, r.x + r.w - 8, r.y + 13, 11, RED, 'right');
+    else if (n > 0)
+        typed(
+            ctx,
+            `${n} venter · ${dager} d`,
+            r.x + r.w - 8,
+            r.y + 13,
+            11,
+            n >= 6 || dager > 45 ? RED : INK,
+            'right'
+        );
+    else typed(ctx, 'ingen uten dom', r.x + r.w - 8, r.y + 13, 11, BLUE, 'right', false);
     ctx.restore();
 }
 
@@ -343,16 +302,22 @@ function drawDesk(
         ctx.strokeRect(r.x - 6, r.y - 5, r.w + 12, r.h + 10);
         ctx.globalAlpha = 1;
     }
-    if (d.kind === 'forelegg') {
-        const breathe =
-            g.level === 0 && !v.sent ? 1 + Math.sin(fx.t * 3.2) * 0.025 : 1 - st.press * 0.04;
+    if (d.kind !== 'rett') {
+        const avvis = d.kind === 'avvis';
+        // Stempelet puster når det er det eleven skal bruke nå.
+        const invite = avvis
+            ? g.folders.some((f) => f.kind === 'utenlov' && f.state === 'leir')
+            : g.level === 0 && !v.sent;
+        const breathe = invite
+            ? 1 + Math.sin(fx.t * 3.2) * 0.025 - st.press * 0.08
+            : 1 - st.press * 0.08;
         ctx.save();
         ctx.translate(r.x + r.w / 2, r.y + r.h / 2 + st.press * 2);
         ctx.scale(breathe, breathe);
         // Stempelblokka i tre med gummi under.
         ctx.fillStyle = 'rgba(20,16,14,0.30)';
         ctx.fillRect(-r.w / 2 + 3, -r.h / 2 + 5 - st.press * 2, r.w, r.h);
-        ctx.fillStyle = VIOLET;
+        ctx.fillStyle = avvis ? BLUE : VIOLET;
         ctx.fillRect(-r.w / 2 - 2, -r.h / 2 + 2, r.w + 4, r.h);
         ctx.fillStyle = DESK;
         ctx.fillRect(-r.w / 2, -r.h / 2, r.w, r.h - 3);
@@ -362,19 +327,29 @@ function drawDesk(
         ctx.fillStyle = grain;
         ctx.fillRect(-r.w / 2, -r.h / 2, r.w, r.h - 3);
         // Etiketten på toppen viser avtrykket.
+        const ink = avvis ? BLUE : VIOLET;
         ctx.fillStyle = SLIP;
-        ctx.fillRect(-r.w / 2 + 8, -r.h / 2 + 8, 104, 30);
-        ctx.strokeStyle = VIOLET;
+        ctx.fillRect(-r.w / 2 + 8, -r.h / 2 + 6, 104, 28);
+        ctx.strokeStyle = ink;
         ctx.lineWidth = 1.5;
-        ctx.strokeRect(-r.w / 2 + 11, -r.h / 2 + 11, 98, 24);
-        typed(ctx, 'FORELEGG', -r.w / 2 + 60, -r.h / 2 + 23.5, 14, VIOLET, 'center');
-        typed(ctx, 'fast takst', -r.w / 2 + 60, r.h / 2 - 12, 10, '#e8e3da', 'center', false);
+        ctx.strokeRect(-r.w / 2 + 11, -r.h / 2 + 9, 98, 22);
+        typed(ctx, avvis ? 'AVVIS' : 'FORELEGG', -r.w / 2 + 60, -r.h / 2 + 20.5, 14, ink, 'center');
+        typed(
+            ctx,
+            avvis ? 'ingen lov - ingen sak' : 'bot, fast takst',
+            -r.w / 2 + 66,
+            r.h / 2 - 11,
+            10,
+            ON_LEATHER,
+            'center',
+            false
+        );
         const kw = art.knob.width / art.k;
         ctx.drawImage(art.knob, r.w / 2 - kw - 6, -kw / 2, kw, kw);
         ctx.restore();
         if (st.t < 0.3) {
             // Blekkring rundt stempelet når det slår ned.
-            ctx.strokeStyle = st.mild ? RED : VIOLET;
+            ctx.strokeStyle = st.mild ? RED : d.kind === 'avvis' ? BLUE : VIOLET;
             ctx.globalAlpha = 1 - st.t / 0.3;
             ctx.lineWidth = 2;
             const grow = st.t * 40;
@@ -397,7 +372,7 @@ function drawDesk(
         ctx.fillStyle = spine;
         ctx.fillRect(r.x + r.w / 2 - 10, r.y, 20, r.h);
         const n = g.desks.slice(0, i + 1).filter((x) => x.kind === 'rett').length;
-        typed(ctx, `RETTSSAL ${n}`, r.x + 8, r.y + 10, 10, VIOLET);
+        typed(ctx, `RETTSSAL ${n}`, r.x + 6, r.y + 10, 10, VIOLET);
         ctx.strokeStyle = 'rgba(46,91,152,0.18)';
         ctx.lineWidth = 0.8;
         for (let ly = r.y + 22; ly < r.y + r.h - 4; ly += 11) {
@@ -411,27 +386,43 @@ function drawDesk(
             const prog = 1 - d.left / d.total;
             const line = `Sak ${f.sak}: ${domTekst(f.kind, 'rett', straffTrinn(g.mnd)).replace(' fengsel', '')}`;
             const shown = line.slice(0, Math.ceil(line.length * Math.min(1, prog * 1.15)));
-            typed(ctx, shown, r.x + r.w / 2 + 6, r.y + 16, 9.5, INK, 'left', false);
+            typed(ctx, shown, r.x + r.w / 2 + 4, r.y + 16, 10, INK, 'left', false);
             ctx.fillStyle = VIOLET;
             ctx.fillRect(r.x + r.w / 2 + 6, r.y + r.h - 9, (r.w / 2 - 12) * prog, 3);
             // Den blinkende markøren i skrivemaskinen.
             if (Math.floor(fx.t * 3) % 2 === 0) {
-                ctx.font = `9.5px "Courier New", monospace`;
+                ctx.font = `10px "Courier New", monospace`;
                 const tw = ctx.measureText(shown).width;
                 ctx.fillStyle = INK;
                 ctx.fillRect(r.x + r.w / 2 + 7 + tw, r.y + 11, 1.2, 10);
             }
-        } else
+        } else {
+            // Ledig sal: den trykte dommen for en angiver akkurat nå - og neste trinn.
             typed(
                 ctx,
                 'ledig',
                 r.x + r.w * 0.75,
-                r.y + 30,
+                r.y + 18,
                 10,
-                'rgba(42,39,49,0.35)',
+                'rgba(34,29,36,0.45)',
                 'center',
                 false
             );
+            const tr = straffTrinn(g.mnd);
+            const now = domTekst('alvorlig', 'rett', tr).replace(' fengsel', '');
+            const soon = LEVELS[g.level].linjal && secsToStep(g) < K.kalender.varselSek;
+            const next = domTekst('alvorlig', 'rett', tr + 1).replace(' fengsel', '');
+            const on = Math.floor(fx.t * 3) % 2 === 0;
+            typed(
+                ctx,
+                soon && on ? `→ ${next}` : `nå ${now}`,
+                r.x + r.w * 0.75,
+                r.y + 36,
+                10,
+                soon ? RED : VIOLET,
+                'center'
+            );
+        }
         if (st.t < 0.5 && st.press > 0) {
             ctx.save();
             ctx.translate(r.x + r.w * 0.75, r.y + 36);
@@ -449,200 +440,6 @@ function drawDesk(
         const c = d.queue.length >= 6 ? RED : INK;
         typed(ctx, `${d.queue.length} i kø`, r.x - 34, r.y - 2, 11, c, 'right');
     }
-    ctx.restore();
-}
-
-function drawMeter(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art) {
-    const { x, y, w, h } = METER;
-    const lv = LEVELS[g.level];
-    const hot = g.sinne > 0.7;
-    const pulse = hot ? 1 + Math.sin(fx.t * 9) * 0.06 : 1;
-    const hit = fx.meterHit < 0.4 ? 1 - fx.meterHit / 0.4 : 0;
-    ctx.save();
-    ctx.translate(x + w / 2, y + h);
-    ctx.scale(pulse + hit * 0.15, 1);
-    ctx.fillStyle = '#ecebe3';
-    ctx.fillRect(-w / 2, -h, w, h);
-    const fill = Math.min(1, g.sinne) * h;
-    const sum = g.fraVent + g.fraMild || 1;
-    const mildPart = fill * (g.fraMild / sum);
-    ctx.fillStyle = RED_SOFT;
-    ctx.fillRect(-w / 2 + 2, -fill, w - 4, fill - mildPart);
-    ctx.fillStyle = RED;
-    ctx.fillRect(-w / 2 + 2, -mildPart, w - 4, mildPart);
-    // Rødblyant-korn oppå fyllet.
-    ctx.save();
-    rect(ctx, -w / 2 + 2, -fill, w - 4, fill);
-    ctx.clip();
-    ctx.globalAlpha = 0.6;
-    ctx.drawImage(art.hatch, 0, 0, art.hatch.width, art.hatch.height, -w / 2 - 300, -h, W, H);
-    ctx.restore();
-    if (hit > 0) {
-        ctx.fillStyle = `rgba(255,255,255,${hit * 0.6})`;
-        ctx.fillRect(-w / 2, -fill, w, fill);
-    }
-    ctx.strokeStyle = INK;
-    ctx.lineWidth = 1.4;
-    ctx.strokeRect(-w / 2, -h, w, h);
-    for (let i = 1; i < 10; i++) {
-        ctx.fillStyle = 'rgba(42,39,49,0.4)';
-        ctx.fillRect(-w / 2, -h * (i / 10), i % 5 ? 5 : 9, 1);
-    }
-    if (lv.sinneTak < 1) {
-        const ty = -h * lv.sinneTak;
-        ctx.strokeStyle = INK;
-        ctx.setLineDash([4, 4]);
-        ctx.beginPath();
-        ctx.moveTo(-w / 2 - 5, ty);
-        ctx.lineTo(w / 2 + 5, ty);
-        ctx.stroke();
-        ctx.setLineDash([]);
-    }
-    ctx.restore();
-    ctx.save();
-    ctx.translate(x + w + 18, y + h / 2);
-    ctx.rotate(-Math.PI / 2);
-    typed(ctx, 'SINNET I GATENE', 0, 0, 13, RED, 'center');
-    ctx.restore();
-    typed(
-        ctx,
-        `${Math.round(Math.min(1, g.sinne) * 100)} %`,
-        x + w / 2,
-        y + h + 10,
-        11,
-        RED,
-        'center'
-    );
-}
-
-function drawScore(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    const { x, y, w } = SCORE;
-    typed(ctx, 'POENG', x, y + 8, 10, INK);
-    big(ctx, Math.floor(g.score).toLocaleString('nb-NO'), x, y + 28, 22, INK);
-    const pop = fx.multPop < 0.35 ? 1 + (1 - fx.multPop / 0.35) * 0.5 : 1;
-    ctx.save();
-    ctx.translate(x + w - 18, y + 26);
-    ctx.scale(pop, pop);
-    ctx.rotate(-0.08);
-    ctx.globalAlpha = 0.5 + Math.min(1, g.mult / 5) * 0.5;
-    ctx.strokeStyle = VIOLET;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(0, 0, 17, 0, Math.PI * 2);
-    ctx.stroke();
-    big(ctx, `×${g.mult}`, 0, 1, g.mult >= 10 ? 13 : 16, VIOLET, 'center');
-    ctx.restore();
-    typed(ctx, 'jevne par i retten øker ×', x, y + 50, 9.5, VIOLET, 'left', false);
-}
-
-function drawCounter(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    const { x, y, w, h } = COUNTER;
-    ctx.fillStyle = 'rgba(30,26,34,0.25)';
-    ctx.fillRect(x + 3, y + 4, w, h);
-    ctx.fillStyle = '#4b4651';
-    ctx.fillRect(x, y, w, h);
-    ctx.fillStyle = '#6a6470';
-    ctx.fillRect(x, y, w, 3);
-    typed(ctx, 'JEVNE DOMMER', x + w / 2, y + 11, 10, '#e9e6dc', 'center');
-    const digits = String(Math.min(999, g.jevne)).padStart(3, '0');
-    const roll = fx.jevnePop < 0.25 ? (1 - fx.jevnePop / 0.25) * 14 : 0;
-    for (let i = 0; i < 3; i++) {
-        const dx = x + 14 + i * 27;
-        ctx.fillStyle = '#1e1b22';
-        ctx.fillRect(dx, y + 21, 23, 31);
-        ctx.save();
-        rect(ctx, dx, y + 21, 23, 31);
-        ctx.clip();
-        big(ctx, digits[i], dx + 11.5, y + 37 + (i === 2 ? roll : 0), 22, '#f2efe6', 'center');
-        ctx.restore();
-    }
-}
-
-function drawCards(ctx: CanvasRenderingContext2D, g: Game) {
-    const o = g.offer;
-    if (!o) return;
-    const age = K.kort.varer - o.left;
-    const rs = cardRects(o.cards.length);
-    o.cards.forEach((c, i) => {
-        const r = rs[i];
-        const k = ease((age - i * 0.06) / 0.3);
-        const dy = (1 - k) * 260;
-        ctx.save();
-        ctx.translate(r.x + r.w / 2, r.y + r.h / 2 + dy);
-        ctx.rotate((i - 1) * 0.015);
-        ctx.fillStyle = 'rgba(30,26,34,0.3)';
-        ctx.fillRect(-r.w / 2 + 3, -r.h / 2 + 4, r.w, r.h);
-        ctx.fillStyle = SLIP;
-        ctx.fillRect(-r.w / 2, -r.h / 2, r.w, r.h);
-        ctx.strokeStyle = BLUE;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(-r.w / 2 + 0.5, -r.h / 2 + 0.5, r.w - 1, r.h - 1);
-        // Binders.
-        ctx.strokeStyle = '#7d7f86';
-        ctx.lineWidth = 1.6;
-        ctx.beginPath();
-        ctx.moveTo(-r.w / 2 + 14, -r.h / 2 - 7);
-        ctx.lineTo(-r.w / 2 + 14, -r.h / 2 + 12);
-        ctx.arc(-r.w / 2 + 18, -r.h / 2 + 12, 4, Math.PI, 0, true);
-        ctx.lineTo(-r.w / 2 + 22, -r.h / 2 - 4);
-        ctx.stroke();
-        typed(ctx, CARD_TEXT[c][0].toUpperCase(), -r.w / 2 + 32, -r.h / 2 + 16, 14, BLUE);
-        typed(ctx, CARD_TEXT[c][1], -r.w / 2 + 14, -r.h / 2 + 40, 10.5, INK, 'left', false);
-        typed(ctx, `trykk for å velge`, r.w / 2 - 10, r.h / 2 - 10, 9.5, BLUE, 'right', false);
-        ctx.restore();
-    });
-    // Tiden som er igjen: en blyantstrek som krymper.
-    const last = rs[rs.length - 1];
-    pencil(
-        ctx,
-        rs[0].x,
-        rs[0].y - 12,
-        rs[0].x + last.w * (o.left / K.kort.varer),
-        rs[0].y - 12,
-        BLUE,
-        4,
-        1,
-        2
-    );
-}
-
-function drawInter(ctx: CanvasRenderingContext2D, g: Game) {
-    if (g.inter <= 0) return;
-    const age = K.mellomside - g.inter;
-    const k = ease(age / 0.35);
-    const lv = LEVELS[g.level];
-    ctx.fillStyle = `rgba(30,26,34,${0.25 * k})`;
-    ctx.fillRect(0, 0, W, H);
-    ctx.save();
-    ctx.translate(W / 2, 250 - (1 - k) * 320);
-    ctx.rotate(-0.012);
-    ctx.fillStyle = 'rgba(30,26,34,0.3)';
-    ctx.fillRect(-256, -96, 520, 196);
-    ctx.fillStyle = SLIP;
-    ctx.fillRect(-260, -100, 520, 196);
-    ctx.strokeStyle = 'rgba(179,52,42,0.4)';
-    ctx.beginPath();
-    ctx.moveTo(-226, -100);
-    ctx.lineTo(-226, 96);
-    ctx.stroke();
-    typed(ctx, 'PROTOKOLL', -210, -76, 11, VIOLET);
-    big(ctx, lv.navn, -210, -46, 24, VIOLET);
-    const t = lv.protokoll;
-    const shown = t.slice(0, Math.floor(Math.max(0, age - 0.2) * 60));
-    // Enkel ordbryting for maskinskriften.
-    ctx.font = `bold 14px "Courier New", monospace`;
-    let line = '';
-    let yy = -10;
-    for (const word of shown.split(' ')) {
-        const test = line ? `${line} ${word}` : word;
-        if (ctx.measureText(test).width > 440 && line) {
-            typed(ctx, line, -210, yy, 14, INK);
-            line = word;
-            yy += 22;
-        } else line = test;
-    }
-    if (line) typed(ctx, line, -210, yy, 14, INK);
-    typed(ctx, 'trykk for å fortsette', 236, 78, 10.5, BLUE, 'right', false);
     ctx.restore();
 }
 
@@ -701,6 +498,8 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, f
         ctx.restore();
     }
     drawLog(ctx, fx);
+    drawTable(ctx, g, fx);
+    drawCrowd(ctx, g, fx);
     drawCalendar(ctx, g, fx);
     drawGoal(ctx, g);
     drawRuler(ctx, g, fx);

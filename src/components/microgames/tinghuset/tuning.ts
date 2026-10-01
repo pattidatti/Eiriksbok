@@ -24,6 +24,9 @@ export const TUNING = {
         alvorligAar: 20,
         tykkAar: 10,
         lettKr: 20000,
+        /** Den sjeldne saken om drap og tortur: dødsdom så lenge straffenivået er minst så
+         *  høyt, ellers livsvarig fengsel (Sørensen: dommer fra 1945-46 ville neppe kommet i 1948). */
+        grovNivaa: 0.8,
     },
 
     // Skrankene: hvor lenge en sak tar (sekunder spilltid).
@@ -31,6 +34,8 @@ export const TUNING = {
         forelegg: 0.8,
         rettssak: 9,
         tykkRettssak: 18,
+        /** Avvis-skranken («ingen lov - ingen sak»). */
+        avvis: 0.6,
         /** Flere dommere: rettssaler så mye raskere (0,1 = 10 %). */
         dommereFart: 0.1,
         /** Tiden mappa bruker på å gli langs streken. */
@@ -53,6 +58,10 @@ export const TUNING = {
         forMildt: 0.12,
         /** Alvorlig sak avgjort i rettssalen trekker ned. */
         rettLetter: 0.015,
+        /** En sak uten lov blir avvist: folk i gatene ville se straff, så sinnet stiger litt. */
+        avvist: 0.03,
+        /** En vanlig landssviksak som blir avvist, slipper unna (del av forMildt). */
+        avvistLett: 0.5,
         /** Fast tak på mapper på arket - over det er sinnet sprukket uansett. */
         maksMapper: 160,
     },
@@ -75,6 +84,8 @@ export const TUNING = {
         jevntForelegg: 40,
         alvorligRett: 20,
         lettForelegg: 10,
+        /** En sak uten lov avvist: en ryddig avgjørelse (aldri poeng for å straffe dem). */
+        avvist: 10,
         maksMult: 10,
     },
 
@@ -96,7 +107,21 @@ export const TUNING = {
         alvorligAndel: 0.35,
         /** Den første røde mappa får være alene så mange intervaller. */
         alene: 2,
+        /** Bunken som ligger i Ilebu når runden starter (ingen dødtid). */
+        bunke: 6,
     },
+
+    // Saker uten lov (kvinner med tyske kjærester): riktig grep er å avvise saken.
+    utenlov: {
+        /** Brett 1: hver n-te nye mappe, første som nummer `forste` (0-basert). */
+        hvert: 4,
+        forste: 2,
+        /** Andel senere i runden. */
+        andel: 0.07,
+    },
+
+    // Den ene saken om drap og tortur: kommer én gang, første mappe etter denne måneden.
+    grov: { mnd: 6 },
 
     // Mellomsidene mellom brettene (sekunder, eller klikk).
     mellomside: 2,

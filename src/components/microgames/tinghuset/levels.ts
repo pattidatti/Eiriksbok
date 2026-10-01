@@ -38,14 +38,14 @@ export const LEVELS: Level[] = [
         navn: 'Mai 1945',
         fraMnd: 0,
         tilMnd: 1,
-        sekPerMnd: 25,
+        sekPerMnd: 20,
         leirer: ['ILEBU'],
         rettssal: false,
         saler: 0,
         alvorlig: 0,
         par: false,
         tykk: false,
-        intervall: 4,
+        intervall: 2.2,
         sinneTak: 0.6,
         linjal: false,
         protokoll: 'Mai 1945. Freden er kommet. Tusenvis av NS-medlemmer blir arrestert.',
@@ -80,7 +80,8 @@ export const LEVELS: Level[] = [
         intervall: null,
         sinneTak: 1,
         linjal: true,
-        protokoll: 'Høsten 1945. To som gjorde det samme, skal få samme straff.',
+        protokoll:
+            'Høsten 1945. To som gjorde det samme, skal få samme straff. De grovste sakene kan gi dødsdom.',
     },
     {
         navn: 'Mars 1946 til august 1948',
@@ -96,7 +97,8 @@ export const LEVELS: Level[] = [
         intervall: null,
         sinneTak: 1,
         linjal: true,
-        protokoll: 'Mars 1946. Falstad åpner. Straffene blir mildere for hver måned.',
+        protokoll:
+            'Mars 1946. Falstad åpner. Profittørene kommer: tykke saker som tar lang tid i retten.',
     },
 ];
 

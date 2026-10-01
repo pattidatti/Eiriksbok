@@ -8,17 +8,26 @@ import { seeded } from '../sim';
 import { H, W } from './layout';
 import type { Kind } from './state';
 
-export const PAPER = '#d9dad2';
-export const PAPER_LIGHT = '#e7e7e0';
-export const SLIP = '#efeee6';
-export const INK = '#2a2731';
-export const VIOLET = '#5b3e8c';
-export const BLUE = '#2e5b98';
-export const RED = '#b3342a';
-export const RED_SOFT = '#cf7a6f';
-export const CARD = '#b49a62';
-export const CARD_GREY = '#a7a69c';
-export const DESK = '#3b3530';
+// Varmere og mer kontrast enn gråkopien i gråboksen: et gulnet protokollark på et mørkt,
+// grønt skriveunderlag i lær. Leirene er kartotekkort, skrankene står på læret.
+export const PAPER = '#ecdcb4';
+export const PAPER_LIGHT = '#f4e9cc';
+export const SLIP = '#f8f0da';
+export const INK = '#221d24';
+export const VIOLET = '#5a2f9c';
+export const BLUE = '#1f56a6';
+export const RED = '#c22c22';
+export const RED_SOFT = '#e0806f';
+export const CARD = '#c99f52';
+export const CARD_GREY = '#a3a597';
+export const DESK = '#3b2a1f';
+/** Skriveunderlaget i lær rundt arket. */
+export const LEATHER = '#1e3a2c';
+export const LEATHER_DARK = '#12251c';
+/** Tekst rett på læret. */
+export const ON_LEATHER = '#f1e4c2';
+/** Protokollarket midt på læret (verdenskoordinater). */
+export const SHEET = { x: 284, w: 368 };
 export const MONO = '"Courier New", Courier, ui-monospace, monospace';
 export const BIG = 'Outfit, Inter, system-ui, sans-serif';
 
@@ -141,71 +150,112 @@ export interface Art {
     tier: Tier;
 }
 
-/** Protokollarket: papir med fiber, linjering, svake gamle stempler og bakt vignett. */
+/** Skriveunderlaget i lær med protokollarket midt på: fiber, linjering, svake gamle stempler,
+ *  lampelys og bakt vignett. */
 function makePaper(k: number, tier: Tier) {
     const [c, x] = mk(W * k, H * k);
     x.scale(k, k);
     const rng = seeded(1945);
-    x.fillStyle = PAPER;
+    // Læret: mørk grønn med korn og slitte flekker.
+    x.fillStyle = LEATHER;
     x.fillRect(0, 0, W, H);
-    // Svake skjolder i papiret.
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 10; i++) {
         const cx = rng() * W;
         const cy = rng() * H;
-        const g = x.createRadialGradient(cx, cy, 0, cx, cy, 60 + rng() * 140);
-        g.addColorStop(0, `rgba(${rng() < 0.5 ? '255,255,250' : '170,168,150'},0.10)`);
+        const g = x.createRadialGradient(cx, cy, 0, cx, cy, 80 + rng() * 160);
+        g.addColorStop(0, `rgba(${rng() < 0.5 ? '70,110,80' : '8,20,14'},0.18)`);
         g.addColorStop(1, 'rgba(0,0,0,0)');
         x.fillStyle = g;
         x.fillRect(0, 0, W, H);
     }
+    for (let i = 0; i < (tier === 'lav' ? 2500 : 5000); i++) {
+        x.fillStyle = rng() < 0.5 ? 'rgba(0,0,0,0.10)' : 'rgba(150,190,150,0.05)';
+        x.fillRect(rng() * W, rng() * H, 1.2, 1.2);
+    }
+    // Sømmen rundt underlaget.
+    x.strokeStyle = 'rgba(241,228,194,0.16)';
+    x.setLineDash([5, 4]);
+    x.lineWidth = 1;
+    x.strokeRect(6.5, 6.5, W - 13, H - 13);
+    x.setLineDash([]);
+
+    const sx = SHEET.x;
+    const sw = SHEET.w;
+    // Arket under (et blad til i protokollen), litt skjevt.
+    x.save();
+    x.translate(sx + sw / 2, H / 2);
+    x.rotate(0.012);
+    x.fillStyle = 'rgba(0,0,0,0.35)';
+    x.fillRect(-sw / 2 + 5, -H / 2 - 4, sw, H + 20);
+    x.fillStyle = '#d9c799';
+    x.fillRect(-sw / 2 + 2, -H / 2 - 8, sw, H + 16);
+    x.restore();
+    x.fillStyle = 'rgba(0,0,0,0.30)';
+    x.fillRect(sx + 4, -4, sw, H + 8);
+    x.fillStyle = PAPER;
+    x.fillRect(sx, -4, sw, H + 8);
+    x.save();
+    x.beginPath();
+    x.rect(sx, 0, sw, H);
+    x.clip();
+    // Gulnede skjolder i papiret.
+    for (let i = 0; i < 10; i++) {
+        const cx = sx + rng() * sw;
+        const cy = rng() * H;
+        const g = x.createRadialGradient(cx, cy, 0, cx, cy, 40 + rng() * 110);
+        g.addColorStop(0, `rgba(${rng() < 0.5 ? '255,248,225' : '190,150,80'},0.14)`);
+        g.addColorStop(1, 'rgba(0,0,0,0)');
+        x.fillStyle = g;
+        x.fillRect(sx, 0, sw, H);
+    }
     // Papirfiber og korn.
-    const fibers = tier === 'lav' ? 1400 : tier === 'middels' ? 2600 : 4200;
+    const fibers = tier === 'lav' ? 700 : tier === 'middels' ? 1300 : 2100;
     x.lineWidth = 0.5;
     for (let i = 0; i < fibers; i++) {
-        const px = rng() * W;
+        const px = sx + rng() * sw;
         const py = rng() * H;
         const a = rng() * Math.PI;
         const l = 2 + rng() * 7;
-        x.strokeStyle = rng() < 0.5 ? 'rgba(60,58,70,0.07)' : 'rgba(255,255,255,0.18)';
+        x.strokeStyle = rng() < 0.5 ? 'rgba(90,60,30,0.08)' : 'rgba(255,252,240,0.25)';
         x.beginPath();
         x.moveTo(px, py);
         x.lineTo(px + Math.cos(a) * l, py + Math.sin(a) * l);
         x.stroke();
     }
-    for (let i = 0; i < 2600; i++) {
-        x.fillStyle = `rgba(42,39,49,${0.03 + rng() * 0.06})`;
-        x.fillRect(rng() * W, rng() * H, 0.8, 0.8);
+    for (let i = 0; i < 1300; i++) {
+        x.fillStyle = `rgba(60,40,20,${0.03 + rng() * 0.06})`;
+        x.fillRect(sx + rng() * sw, rng() * H, 0.8, 0.8);
     }
-    // Linjeringen i protokollen (midtfeltet) og margstrekene.
-    x.strokeStyle = 'rgba(46,91,152,0.10)';
+    // Linjeringen i protokollen og margstrekene.
+    x.strokeStyle = 'rgba(31,86,166,0.16)';
     x.lineWidth = 0.8;
-    for (let y = 150; y < H - 10; y += 22) {
+    for (let y = 150; y < 462; y += 22) {
         x.beginPath();
-        x.moveTo(296, y);
-        x.lineTo(640, y);
+        x.moveTo(sx + 12, y);
+        x.lineTo(sx + sw - 10, y);
         x.stroke();
     }
-    x.strokeStyle = 'rgba(179,52,42,0.22)';
+    x.strokeStyle = 'rgba(194,44,34,0.35)';
     x.beginPath();
-    x.moveTo(292, 0);
-    x.lineTo(292, H);
-    x.moveTo(296, 0);
-    x.lineTo(296, H);
+    x.moveTo(sx + 8, 0);
+    x.lineTo(sx + 8, H);
+    x.moveTo(sx + 12, 0);
+    x.lineTo(sx + 12, H);
     x.stroke();
     // Arkhodet, maskinskrevet.
-    x.globalAlpha = 0.75;
-    typed(x, 'PÅTALEMYNDIGHETEN', 466, 22, 11, INK, 'center');
-    typed(x, 'PROTOKOLL FOR LANDSSVIKSAKER', 466, 38, 13, INK, 'center');
-    x.globalAlpha = 0.35;
+    x.globalAlpha = 0.85;
+    typed(x, 'PÅTALEMYNDIGHETEN', sx + sw / 2, 20, 11, INK, 'center');
+    typed(x, 'PROTOKOLL FOR LANDSSVIKSAKER', sx + sw / 2, 36, 13, INK, 'center');
+    x.globalAlpha = 0.5;
     x.fillStyle = INK;
-    x.fillRect(330, 50, 272, 1);
+    x.fillRect(sx + 46, 47, sw - 92, 1.2);
     x.globalAlpha = 1;
     // Gamle, falmede stempelavtrykk på arket.
     const ghost = (t: string, gx: number, gy: number, r: number) => {
         x.save();
         x.translate(gx, gy);
         x.rotate(r);
-        x.globalAlpha = 0.07;
+        x.globalAlpha = 0.08;
         x.strokeStyle = VIOLET;
         x.lineWidth = 2.5;
         x.strokeRect(-70, -13, 140, 26);
@@ -213,22 +263,27 @@ function makePaper(k: number, tier: Tier) {
         x.restore();
         x.globalAlpha = 1;
     };
-    ghost('LANDSSVIKSAK', 520, 120, -0.08);
-    ghost('DOM AVSAGT', 400, 505, 0.05);
-    ghost('FORELEGG VEDTATT', 560, 470, -0.12);
+    ghost('LANDSSVIKSAK', 560, 300, -0.08);
+    ghost('DOM AVSAGT', 400, 360, 0.05);
     if (tier !== 'lav') {
         // Blekkspruting fra stemplene.
         for (let i = 0; i < 40; i++) {
-            x.fillStyle = `rgba(91,62,140,${0.04 + rng() * 0.08})`;
+            x.fillStyle = `rgba(90,47,156,${0.04 + rng() * 0.08})`;
             x.beginPath();
-            x.arc(300 + rng() * 600, rng() * H, 0.6 + rng() * 1.6, 0, Math.PI * 2);
+            x.arc(sx + rng() * sw, rng() * H, 0.6 + rng() * 1.6, 0, Math.PI * 2);
             x.fill();
         }
     }
-    // Lampevignett i hjørnene (flatt kontorlys ovenfra).
+    x.restore();
+    // Lampelyset: varmt midt på, mørkere hjørner.
+    const lamp = x.createRadialGradient(W * 0.48, H * 0.42, 20, W * 0.48, H * 0.42, W * 0.55);
+    lamp.addColorStop(0, 'rgba(255,214,150,0.12)');
+    lamp.addColorStop(1, 'rgba(255,214,150,0)');
+    x.fillStyle = lamp;
+    x.fillRect(0, 0, W, H);
     const v = x.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, W * 0.66);
     v.addColorStop(0, 'rgba(0,0,0,0)');
-    v.addColorStop(1, 'rgba(30,26,34,0.30)');
+    v.addColorStop(1, 'rgba(5,10,8,0.45)');
     x.fillStyle = v;
     x.fillRect(0, 0, W, H);
     return c;
@@ -276,7 +331,25 @@ function makeFolder(kind: Kind, k: number) {
     const [c, x] = mk((fw + pad * 2) * k, (fh + pad * 2) * k);
     x.scale(k, k);
     x.translate(pad, pad);
-    const rng = seeded(kind === 'lett' ? 3 : kind === 'alvorlig' ? 5 : 7);
+    const rng = seeded(kind === 'lett' ? 3 : kind === 'alvorlig' ? 5 : kind === 'tykk' ? 7 : 9);
+    if (kind === 'utenlov') {
+        // Saken uten lov: et tynt, lyst ark i en åpen omslagsmappe - det finnes ingen lov å
+        // henvise til. Stiplet blåblyant rundt: «avvis».
+        x.fillStyle = 'rgba(30,26,34,0.25)';
+        x.fillRect(1.5, 2.5, fw, fh);
+        x.fillStyle = '#efe6cf';
+        x.fillRect(0, 0, fw, fh);
+        x.fillStyle = '#e2d6b6';
+        x.fillRect(0, 0, fw, 4);
+        x.strokeStyle = BLUE;
+        x.lineWidth = 1.3;
+        x.setLineDash([3, 2.5]);
+        x.strokeRect(1, 1, fw - 2, fh - 2);
+        x.setLineDash([]);
+        x.fillStyle = '#fbf6e8';
+        x.fillRect(4, 4, fw - 8, 11);
+        return c;
+    }
     // Skygge.
     x.fillStyle = 'rgba(30,26,34,0.22)';
     x.fillRect(1.5, 2.5, fw, fh);
@@ -376,6 +449,7 @@ export function makeArt(k: number, tier: Tier): Art {
             lett: makeFolder('lett', k),
             alvorlig: makeFolder('alvorlig', k),
             tykk: makeFolder('tykk', k),
+            utenlov: makeFolder('utenlov', k),
         },
         knob: makeKnob(k),
     };

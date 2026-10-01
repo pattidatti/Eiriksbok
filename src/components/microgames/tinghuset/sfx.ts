@@ -42,6 +42,11 @@ export function makeSfx(s: ArcadeSynth) {
             s.tone(98, 70, 0.45, 'sawtooth', 0.06);
             s.noise(0.3, 0.06, 300, 0.05);
         },
+        /** En sak uten lov avvises: et lyst, tørt stempel og en mumling utenfra. */
+        dismiss: () => {
+            s.tone(660, 520, 0.12, 'triangle', 0.035);
+            s.noise(0.5, 0.025, 320, 0.08);
+        },
         /** Kalenderbladet rives av. */
         tear: () => s.noise(0.12, 0.05, 4200),
         /** Straffenivået faller ett trinn. */
