@@ -649,3 +649,11 @@ Likhet: nærmest guddommelig-vind 0,39.
 - Lappene står nå i protokollen ved siden av mappa, ikke rett over den; pila peker på
   protokollen, ikke på selve mappa.
 - Halvgod vinner nesten alltid (fristelsen redder den) - trappen ligger i poengene, ikke i seier.
+
+### Status etter natt 1 (2026-10-01) - UNDER TERSKEL
+
+Fire uavhengige vurderinger: sum 16 -> 17 -> 18 -> 17. Gøy og Utseende har stått på 3 i alle fire, Lærerikt nådde 5, Lesbart 3, Unikt 3-4.
+Gjenstår for neste natt (fra vurdering 4):
+1. Presset: halvgod vinner 98 % og seende 96 % - sinnet når aldri 50 % i 1946-48 i bildene. Fjern straffetabellen fra protokollen (eller gjør den til ren lovtekst), hold sinnet på 50-80 % i 1946-48 så INTERNER og bot til profittøren frister på ordentlig, rødt UTEN LOV-stempel og synlig «slapp unna: N» underveis. Mål: halvgod rundt 60 % seier.
+2. Rydd: bobler, dra-streker og ULIK DOM-lapper utenfor protokollfeltet (fast skuff), skriv radene ferdig (ikke «27 fo»), forklar «NS 1940».
+3. Klimaks i uttrykket: folkemengden fra tom plass til trengsel (tydelig skala med sinnet), tyskerjente-saker som navngitte personer, verdig.
