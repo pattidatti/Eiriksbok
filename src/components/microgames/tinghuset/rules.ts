@@ -1,8 +1,11 @@
 // Fagkjernen i Tinghuset - de tre reglene eleven skal huske:
 //  1. Alvorlig sak hører hjemme i retten: rettssak er rettferdig, men treg (én sak av gangen,
 //     kø); forelegg er raskt, men for mildt for angivere, statspoliti og profittører.
-//  2. Uten lov, ingen sak: kvinner med tyske kjærester hadde ikke brutt noen lov. Riktig grep
-//     er å avvise saken - selv om sinnet i gatene stiger litt av det.
+//  2. Uten lov, ingen sak: kvinner med tyske kjærester («tyskerjenter») hadde ikke brutt noen
+//     lov. Riktig grep er å avvise saken - selv om sinnet i gatene stiger av det.
+// Folkemengden er motspilleren: det riktige (avvise, rettssak for profittøren, vente på
+// tvillingen) koster sinne. Det lettvinte (straffe uten lov, bot til profittøren) roer gata,
+// men koster multiplikatoren og poengene - og havner i protokollen.
 //  3. Kalenderen gjør straffene mildere i synlige trinn - like saker avgjort på hver sin
 //     side av et trinn, får ulik trykt dom.
 // Her står grepene eleven gjør (send, velg kort) og hva som skjer når en sak avgjøres.
@@ -167,6 +170,7 @@ export function decide(g: Game, f: Folder, route: Route) {
         kind: f.kind,
         route,
         desk: f.desk,
+        camp: f.camp,
         mnd: g.mnd,
         mild,
         ulovlig: utenlov && route !== 'avvis',
@@ -185,14 +189,21 @@ export function decide(g: Game, f: Folder, route: Route) {
             g.avvist++;
             g.events.push({ kind: 'avvist', v });
         } else {
-            // Straff uten lov: ingen poeng, og multiplikatoren faller til x1.
+            // Straff uten lov: gata roer seg, men ingen poeng, og multiplikatoren faller til x1.
+            g.sinne = Math.max(0, g.sinne - K.sinne.ulovligLetter);
             g.mult = 1;
             g.ulovlig++;
             g.events.push({ kind: 'ulovlig', v });
         }
         return;
     }
-    if (mild) {
+    if (mild && f.kind === 'tykk' && route === 'forelegg') {
+        // Profittøren slapp med bot: raskt, og gata merker lite - men dommen er for mild.
+        g.sinne = Math.max(0, g.sinne - K.sinne.botLetter);
+        g.mult = 1;
+        g.profBot++;
+        g.events.push({ kind: 'formildt', v });
+    } else if (mild) {
         const jump = K.sinne.forMildt * (f.kind === 'lett' ? K.sinne.avvistLett : 1);
         g.sinne += jump;
         g.fraMild += jump;

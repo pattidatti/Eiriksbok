@@ -30,8 +30,8 @@ export const RULER: Rect = { x: 16, y: 106, w: 264, h: 22 };
 const CAMP_X = 16;
 const CAMP_W = 264;
 const CAMP_TOP = 140;
-const CAMP_H = 122;
-const CAMP_STEP = 130;
+const CAMP_H = 104;
+const CAMP_STEP = 110;
 
 // Plass til sju skranker: forelegg, avvis og opptil fem rettssaler.
 const DESK_X = 662;
@@ -45,6 +45,8 @@ export const TABLE: Rect = { x: 300, y: 54, w: 344, h: 92 };
 /** Nederst på arket: folk utenfor tinghuset, én rødblyant-strek per 1,5 % sinne. */
 export const CROWD: Rect = { x: 300, y: 470, w: 344, h: 62 };
 
+/** Avisa nederst til venstre: overskriftene skifter med året og med det eleven gjør. */
+export const AVIS: Rect = { x: 16, y: 472, w: 264, h: 60 };
 /** Sinnemåleren: en loddrett rødblyant-søyle i høyre marg. */
 export const METER: Rect = { x: 884, y: 76, w: 24, h: 384 };
 /** Telleverket (nummereringsstempelet) nederst til høyre. */
@@ -101,7 +103,7 @@ export function campSlots(g: Game): Map<number, Pt> {
         const layer = Math.floor(k / 15);
         out.set(f.id, {
             x: r.x + 34 + col * 49 + layer * 5,
-            y: r.y + 44 + row * 30 - layer * 4,
+            y: r.y + 40 + row * 24 - layer * 4,
         });
     }
     return out;

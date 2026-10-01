@@ -41,6 +41,8 @@ export interface Verdict {
     route: Route;
     /** Skranken som avgjorde saken. */
     desk: number;
+    /** Leiren mappa kom fra (den dømte sitter der etterpå). */
+    camp: number;
     /** Måneden saken ble avgjort i (desimal). */
     mnd: number;
     /** Forelegg på en alvorlig sak (eller en ekte landssviksak som ble avvist). */
@@ -76,6 +78,7 @@ export type GameEvent =
     | { kind: 'ny'; f: Folder }
     | { kind: 'brett'; level: number }
     | { kind: 'kort' }
+    | { kind: 'sal' }
     | { kind: 'trinn'; trinn: number }
     | { kind: 'leir'; camp: CampId };
 
@@ -126,6 +129,8 @@ export interface Game {
     avgjort: number;
     alvorligRett: number;
     formildt: number;
+    /** Profittører som slapp med bot (forelegg). */
+    profBot: number;
     /** Saker uten lov: avvist (riktig) og straffet likevel. */
     avvist: number;
     ulovlig: number;
@@ -155,6 +160,7 @@ export function newGame(seed: number): Game {
         inter: 0,
         camps: [...lv.leirer],
         folders: [],
+        // Rettssalen kommer med den første angiveren (game.ts).
         desks: [
             { kind: 'forelegg', queue: [], current: null, joint: null, left: 0, total: 0 },
             { kind: 'avvis', queue: [], current: null, joint: null, left: 0, total: 0 },
@@ -180,6 +186,7 @@ export function newGame(seed: number): Game {
         avgjort: 0,
         alvorligRett: 0,
         formildt: 0,
+        profBot: 0,
         avvist: 0,
         ulovlig: 0,
         valg: 0,

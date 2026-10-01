@@ -22,8 +22,8 @@ export const CARD = '#c99f52';
 export const CARD_GREY = '#a3a597';
 export const DESK = '#3b2a1f';
 /** Skriveunderlaget i lær rundt arket. */
-export const LEATHER = '#1e3a2c';
-export const LEATHER_DARK = '#12251c';
+export const LEATHER = '#4a2219';
+export const LEATHER_DARK = '#2a120c';
 /** Tekst rett på læret. */
 export const ON_LEATHER = '#f1e4c2';
 /** Protokollarket midt på læret (verdenskoordinater). */
@@ -156,20 +156,20 @@ function makePaper(k: number, tier: Tier) {
     const [c, x] = mk(W * k, H * k);
     x.scale(k, k);
     const rng = seeded(1945);
-    // Læret: mørk grønn med korn og slitte flekker.
+    // Læret: varm oksblodrød med korn og slitte flekker (et gammelt skrivebordsunderlag).
     x.fillStyle = LEATHER;
     x.fillRect(0, 0, W, H);
     for (let i = 0; i < 10; i++) {
         const cx = rng() * W;
         const cy = rng() * H;
         const g = x.createRadialGradient(cx, cy, 0, cx, cy, 80 + rng() * 160);
-        g.addColorStop(0, `rgba(${rng() < 0.5 ? '70,110,80' : '8,20,14'},0.18)`);
+        g.addColorStop(0, `rgba(${rng() < 0.5 ? '140,70,40' : '22,8,4'},0.2)`);
         g.addColorStop(1, 'rgba(0,0,0,0)');
         x.fillStyle = g;
         x.fillRect(0, 0, W, H);
     }
     for (let i = 0; i < (tier === 'lav' ? 2500 : 5000); i++) {
-        x.fillStyle = rng() < 0.5 ? 'rgba(0,0,0,0.10)' : 'rgba(150,190,150,0.05)';
+        x.fillStyle = rng() < 0.5 ? 'rgba(0,0,0,0.10)' : 'rgba(230,160,110,0.05)';
         x.fillRect(rng() * W, rng() * H, 1.2, 1.2);
     }
     // Sømmen rundt underlaget.

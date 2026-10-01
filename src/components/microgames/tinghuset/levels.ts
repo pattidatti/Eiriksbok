@@ -40,15 +40,17 @@ export const LEVELS: Level[] = [
         tilMnd: 1,
         sekPerMnd: 20,
         leirer: ['ILEBU'],
-        rettssal: false,
-        saler: 0,
+        // Rettssalen glir inn når den første angiveren kommer (se brett1 i tuning.ts).
+        rettssal: true,
+        saler: 1,
         alvorlig: 0,
         par: false,
         tykk: false,
         intervall: 2.2,
         sinneTak: 0.6,
         linjal: false,
-        protokoll: 'Mai 1945. Freden er kommet. Tusenvis av NS-medlemmer blir arrestert.',
+        protokoll:
+            'Mai 1945. Freden er kommet. Tusenvis blir arrestert, og folk i gatene vil se straff.',
     },
     {
         navn: 'Sommeren 1945',
@@ -64,7 +66,7 @@ export const LEVELS: Level[] = [
         intervall: null,
         sinneTak: 0.85,
         linjal: false,
-        protokoll: 'Sommeren 1945. Nå kommer angiverne og statspolitiet. De må for retten.',
+        protokoll: 'Sommeren 1945. Akershus fylles. Flere saker enn én rettssal rekker.',
     },
     {
         navn: 'Høsten 1945 til våren 1946',

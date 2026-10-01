@@ -16,11 +16,11 @@ export const RANKS: [number, string][] = [
 
 export const LOSS: Record<Cause, { msg: string; tip: string }> = {
     vent: {
-        msg: 'Folk satt for lenge uten dom.',
+        msg: 'Gata tok over: folk satt for lenge uten dom.',
         tip: 'Rundt 17 000 havnet i fengsel, og mange satt i månedsvis før saken kom opp. Gi forelegg til vanlige medlemssaker - da er rettssalen ledig for de alvorlige.',
     },
     mild: {
-        msg: 'Alvorlige saker slapp for lett.',
+        msg: 'Gata tok over: alvorlige saker slapp for lett.',
         tip: 'Et forelegg er en straff påtalemyndigheten foreslår, og det passer for små saker. Angivere og statspoliti måtte for retten.',
     },
 };
@@ -30,6 +30,8 @@ export const SAKLIG =
 
 export const SEIER = {
     tittel: 'Oppgjøret ble ordnet med lov og dom.',
+    /** Seier, men noen ble straffet uten lov: gata ble rolig, ikke rettferdig. */
+    tittelUlovlig: 'Gata ble rolig - men ikke bare med lov og dom.',
     ekte: 'De ekte tallene: 92 805 saker etterforsket, 46 085 straffet.',
     slutt: 'I 1950 ble 150 jurister spurt om oppgjøret var godt nok. De var delt nesten på midten.',
 };
@@ -38,7 +40,7 @@ export const SEIER = {
 export const BEATS = {
     alvorlig: {
         tittel: 'Angiver',
-        tekst: 'Angivere og statspoliti må for retten. Et forelegg er for mildt for dem - da blir folk sinte.',
+        tekst: 'Angivere må for retten. En dom i retten roer gata. Et forelegg er for mildt - da blir folk rasende.',
     },
     par: {
         tittel: 'Like saker',
@@ -52,16 +54,17 @@ export const BEATS = {
 
 /** Korte lapper ved tingen (maks 7 ord). */
 export const PINS = {
-    dra: 'Dra mappa til stempelet',
+    dra: 'Dra mappa til FORELEGG-stempelet',
     rett: 'Rettssalen: én sak av gangen',
-    sinne: 'Mapper som venter, gjør folk sinte',
+    sinne: 'Gata vil se dommer - fort',
+    forloven: 'Meldt inn 1940. Loven kom i 1944.',
     linjal: 'Straffenivået faller trinn for trinn',
     tvilling: 'Tvillingen kommer - vent, eller døm nå?',
     kort: 'Velg ett kort',
     rute: 'Fast rute sender grå mapper selv',
-    utenlov: 'Ingen lov forbød dette. Avvis saken.',
+    utenlov: 'Tyskerjente: ingen lov forbød det. Avvis.',
     grov: 'Drap og tortur. Dødsstraff var mulig.',
-    profittor: 'Profittør: tjente på tyskerne. Treg sak.',
+    profittor: 'Profittør: bot er raskt, rettssak er riktig',
 };
 
 /** «Dette skjedde»: det eleven skal sitte igjen med, knyttet til det som skjedde i runden. */
@@ -73,10 +76,12 @@ export const LESSONS = {
     nivaa: 'Straffene ble mildere fra 1945 til 1948. Sinnet var størst like etter krigen.',
     vent: 'Rundt 17 000 havnet i fengsel, og mange satt lenge før saken kom opp.',
     utenlov:
-        'Det var ikke forbudt å ha en tysk kjæreste. Likevel ble flere tusen kvinner satt i leir uten lov og dom. Du avviste sakene - uten lov, ingen sak.',
+        'Det var ikke forbudt å ha en tysk kjæreste. Likevel ble tusenvis av «tyskerjenter» straffet uten lov og dom. Du avviste sakene, selv om gata ble sint.',
     ulovlig:
         'Du straffet en kvinne som ikke hadde brutt noen lov. Det skjedde med tusenvis i 1945, og staten ba om unnskyldning i 2018.',
     grov: 'De grovste sakene kunne gi dødsdom. 30 nordmenn ble dømt til døden. Et par år senere ble lignende saker sjeldnere dømt så hardt.',
+    forloven:
+        'NS-medlemmer ble straffet etter en lov fra 1944, selv om det var lovlig å melde seg inn i 1940. Det kalles tilbakevirkende kraft.',
     profittor:
         'Bare 3 262 ble dømt for økonomisk landssvik. Sakene tok lang tid, og mange som tjente penger på tyskerne, slapp unna.',
 };
@@ -90,6 +95,7 @@ export const RETTFERDIG = {
         avvist: number;
         ulovlig: number;
         formildt: number;
+        profBot: number;
     }) =>
         [
             `${r.jevne} like saker fikk lik dom, ${r.ulike} fikk ulik dom bare fordi de kom opp på ulik tid.`,
@@ -99,6 +105,8 @@ export const RETTFERDIG = {
                   ? `Alle ${r.avvist} saker uten lov ble avvist - ingen ble straffet uten lov.`
                   : '',
             r.formildt > 0 ? `${r.formildt} alvorlige saker slapp med forelegg.` : '',
+            r.profBot > 0 ? `${r.profBot} profittører slapp med bot.` : '',
+            'I virkeligheten ble tusenvis av kvinner straffet uten lov og dom. Staten ba om unnskyldning i 2018.',
         ].filter(Boolean),
 };
 
@@ -112,7 +120,7 @@ export const CARD_TEXT: Record<CardId, [string, string]> = {
     dommere: ['Flere dommere', 'Rettssalene 10 % raskere'],
     rute: ['Fast rute', 'Grå mapper fra én leir får forelegg av seg selv'],
     felles: ['Felles behandling', 'Et par i samme rettssal dømmes samtidig'],
-    forelegg: ['Ny forelegg-skranke', 'Én forelegg-skranke til'],
+    forelegg: ['Nytt forelegg-stempel', 'Ett forelegg-stempel til'],
 };
 
 export type FindId =

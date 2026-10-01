@@ -22,6 +22,7 @@ export interface Result {
     avvist: number;
     ulovlig: number;
     formildt: number;
+    profBot: number;
     cause: Cause | null;
     skjevest: { a: Verdict; b: Verdict } | null;
     rank: string;
@@ -61,8 +62,18 @@ export function OverScreen({
                                 lineHeight: 1.15,
                             }}
                         >
-                            {result.won ? SEIER.tittel : loss.msg}
+                            {result.won
+                                ? result.ulovlig > 0
+                                    ? SEIER.tittelUlovlig
+                                    : SEIER.tittel
+                                : loss.msg}
                         </div>
+                        {!result.won && (
+                            <div style={{ ...P, color: RED }}>
+                                Sinnet i gatene nådde 100 %. Da straffer folk på egen hånd, uten
+                                dom.
+                            </div>
+                        )}
                         <div style={{ ...P, fontWeight: 700, marginTop: 6 }}>
                             Din rang: <b style={{ color: VIOLET }}>{result.rank}</b>
                             {result.record && ' - ny rekord!'}
