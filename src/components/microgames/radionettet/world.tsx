@@ -83,11 +83,12 @@ export function Camera({ gRef, projRef, cineRef, speedRef, vigRef }: { gRef: Rea
         const real = Math.min(0.05, raw);
         const running = speedRef.current > 0;
         if (running && ci.slow > 0) ci.slow = Math.max(0, ci.slow - real);
-        // Et kort i hånda eller sperreild: eleven trenger hele kartet med en gang.
-        if (g.holding >= 0 || g.sperreArmed) ci.slow = 0;
+        // Et kort i hånda eller en ordre å sikte med: eleven trenger hele kartet med en gang.
+        const aiming = !!g.ord.armed && g.ord.armed !== 'kompani';
+        if (g.holding >= 0 || aiming) ci.slow = 0;
         const deep = cineDepth(ci);
         // Planleggingen, et kort i hånda eller sperreild: hele kartet. Ellers følger kameraet kampen.
-        const tactical = g.phase !== 'wave' || g.holding >= 0 || g.sperreArmed;
+        const tactical = g.phase !== 'wave' || g.holding >= 0 || aiming || g.ord.armed === 'kompani';
         let fx = CENTER.x, fz = CENTER.z, want = 1;
         if (!tactical) {
             let n = 0, sx = 0, sz = 0;
@@ -119,7 +120,9 @@ export function Camera({ gRef, projRef, cineRef, speedRef, vigRef }: { gRef: Rea
         const pan = 1 - 1 / k.zoom;
         const ox = (k.x - CENTER.x) * pan;
         const oz = (k.z - CENTER.z) * pan;
-        const sh = g.shake > 0 ? g.shake * 0.12 : 0;
+        // Ristingen svinner i ekte tid (også i pause og mellom bølgene), kort og hardt.
+        g.shake = g.phase === 'wave' ? Math.min(1, Math.max(0, g.shake - real * 3.2)) : 0;
+        const sh = g.shake > 0 ? g.shake * g.shake * 0.16 : 0;
         // MicroCanvas sikter kameraet mot sitt eget mål én gang; vi holder vår egen retning.
         YAW.setFromAxisAngle(UP, k.sway);
         c.quaternion.copy(YAW).multiply(quat.current);
@@ -316,7 +319,14 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
             unitYaw.set(u.id, s.yaw);
             // Tårnet og løpet dreier mot fienden; skuddet rister hele figuren.
             const tgt = aimAt(g, u.x, u.z, UNITS[u.kind].range + 0.5, u.kind === 'lv');
-            if (tgt) s.aim = Math.atan2(-(tgt.z - u.z), tgt.x - u.x);
+            // Kompaniet på marsj ser dit det går.
+            const marching = u.squad && Math.hypot(u.x - s.fx, u.z - s.fz) > 1e-4;
+            if (u.squad) {
+                s.fx = u.x;
+                s.fz = u.z;
+            }
+            if (marching && !tgt) s.aim = u.heading - Math.PI / 2;
+            else if (tgt) s.aim = Math.atan2(-(tgt.z - u.z), tgt.x - u.x);
             s.yaw = turn(s.yaw, s.aim, dt * 5);
             const whole = u.kind !== 'vogn';
             body.current.rotation.set(0, whole ? s.yaw : 0, u.kick * 0.08);
@@ -387,7 +397,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
             </group>
             {/* Gradsmerket: to vinkler = to like på ruta, stjerne = veteran. Står over figuren og
                 skjules aldri bak den (depthTest av). */}
-            {u.copies > 1 && <sprite ref={rank} material={rankMaterial(u.copies)} position={[0, 1.55, 0]} scale={0.5} renderOrder={5} />}
+            {(u.copies > 1 || u.squad) && <sprite ref={rank} material={rankMaterial(u.squad ? 0 : u.copies)} position={[0, 1.55, 0]} scale={0.5} renderOrder={5} />}
             <group ref={wreckRef} visible={false} scale={FIG}>
                 <Figure m={wreck()} />
             </group>
@@ -620,7 +630,7 @@ export function Lines({ gRef }: { gRef: React.MutableRefObject<G> }) {
         const time = st.clock.elapsedTime;
         let n = 0;
         for (const u of g.units) {
-            if (u.dead || !(u.linked || u.linking > 0)) continue;
+            if (u.dead || !(u.linked || u.linking > 0 || u.net)) continue;
             const air = isAir(u.kind);
             const tx = air ? u.ax : u.x;
             const tz = air ? u.az : u.z;

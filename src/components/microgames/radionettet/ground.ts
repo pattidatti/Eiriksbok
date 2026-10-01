@@ -110,6 +110,15 @@ export const MARKS = {
     uGhost: { value: new THREE.Vector4() },
     /** Radiofargen (samme som linjene). */
     uRadio: { value: new THREE.Color(C.radio) },
+    /** Ordrene (orders.ts). Siktet under musa: x, z, radius, type (1 sirkel, 2 linje, 3 trådkors; negativ = ikke lov her). */
+    uAim: { value: new THREE.Vector4() },
+    /** Sperreilden på vei: x, z, radius, fremdrift 0-1 (over 1 = granatene faller). 0 i w = av. */
+    uZone: { value: new THREE.Vector4() },
+    /** Rakettflyets linje: x, z, lengde, fremdrift (0 = av). */
+    uStrike: { value: new THREE.Vector4() },
+    /** Kompaniet valgt: x, z, på. Målet det går mot: x, z, tid siden ordren, på. */
+    uSel: { value: new THREE.Vector4() },
+    uGoal: { value: new THREE.Vector4() },
 };
 /** Skriv rutene (r/g per rute) og last dem opp. */
 export function setTiles(fill: (x: number, z: number) => 0 | 1 | 2 | 3) {
@@ -165,6 +174,11 @@ uniform sampler2D uTiles;
 uniform float uTileOn;
 uniform vec4 uGhost;
 uniform vec3 uRadio;
+uniform vec4 uAim;
+uniform vec4 uZone;
+uniform vec4 uStrike;
+uniform vec4 uSel;
+uniform vec4 uGoal;
 float h2(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 float vn(vec2 p) {
     vec2 i = floor(p); vec2 f = fract(p); f = f * f * (3.0 - 2.0 * f);
@@ -214,6 +228,66 @@ if (uTileOn > 0.5 && cell.x >= 0.0 && cell.y >= 0.0 && cell.x < 16.0 && cell.y <
 if (uGhost.w > 0.5 && cell == floor(uGhost.xy)) {
     float inG = smoothstep(0.04, 0.07, edge) * 0.62;
     if (inG > mA) { mA = inG; mCol = uGhost.z > 0.5 ? vec3(0.42, 0.85, 0.36) : vec3(0.9, 0.3, 0.22); }
+}
+// Ordrene. Siktet følger musa: gult der ordren kan gå, rødt der ingen i nettet ser.
+if (abs(uAim.w) > 0.5) {
+    vec3 ac = uAim.w > 0.0 ? vec3(1.0, 0.82, 0.25) : vec3(0.95, 0.25, 0.18);
+    vec2 da = vWxz - uAim.xy;
+    float kind = abs(uAim.w);
+    float dd = kind < 1.5 ? length(da) : kind < 2.5 ? length(vec2(max(abs(da.x) - uAim.z * 0.5, 0.0), da.y)) : length(da);
+    float rr = kind < 1.5 ? uAim.z : kind < 2.5 ? 0.55 : 0.55;
+    float a = atan(da.y, da.x) / 6.2832 * 40.0 - uTime * 0.6;
+    float dash = smoothstep(0.15, 0.25, fract(a)) * (1.0 - smoothstep(0.65, 0.75, fract(a)));
+    float rim = (1.0 - smoothstep(0.03, 0.07, abs(dd - rr))) * (kind < 2.5 ? dash : 1.0);
+    float fill = (1.0 - smoothstep(rr - 0.05, rr, dd)) * 0.16;
+    float cross = (1.0 - smoothstep(0.015, 0.04, min(abs(da.x), abs(da.y)))) * (1.0 - smoothstep(rr * 0.6, rr * 0.75, length(da))) * step(rr * 0.2, length(da));
+    float k = max(rim * 0.9, max(fill, cross * 0.8));
+    if (k > mA) { mA = k; mCol = ac; }
+}
+// Sperreilden er bestilt: rød sone som pulserer, og en ring som krymper mot midten til granatene faller.
+if (uZone.w > 0.0) {
+    vec2 dz = vWxz - uZone.xy;
+    float d = length(dz);
+    float p = uZone.w;
+    float on = p < 1.0 ? 1.0 : max(0.0, 1.0 - (p - 1.0) * 1.5);
+    float pulse = 0.5 + 0.5 * sin(uTime * (8.0 + p * 10.0));
+    float rim = (1.0 - smoothstep(0.03, 0.08, abs(d - uZone.z))) * (0.6 + 0.4 * pulse);
+    float shrink = (1.0 - smoothstep(0.02, 0.06, abs(d - uZone.z * max(0.0, 1.0 - p)))) * step(p, 1.0) * 0.9;
+    float fill = (1.0 - smoothstep(uZone.z - 0.08, uZone.z, d)) * (0.12 + 0.12 * pulse);
+    float hatch = (1.0 - smoothstep(uZone.z - 0.08, uZone.z, d)) * step(0.5, fract((dz.x + dz.y) * 2.2 + uTime * 0.8)) * 0.1;
+    float k = max(max(rim, shrink), fill + hatch) * on;
+    if (k > mA) { mA = k; mCol = vec3(1.0, 0.22, 0.12); }
+}
+// Rakettflyets linje: en rød stripe som fylles fra vest mot øst.
+if (uStrike.w > 0.0) {
+    vec2 ds = vWxz - uStrike.xy;
+    float d = length(vec2(max(abs(ds.x) - uStrike.z * 0.5, 0.0), ds.y));
+    float fillTo = -uStrike.z * 0.5 + uStrike.z * clamp(uStrike.w, 0.0, 1.0);
+    float rim = 1.0 - smoothstep(0.03, 0.07, abs(d - 0.5));
+    float inside = (1.0 - smoothstep(0.45, 0.5, d)) * step(ds.x, fillTo) * 0.3;
+    float chev = (1.0 - smoothstep(0.45, 0.5, d)) * step(0.55, fract(ds.x * 1.6 - abs(ds.y) * 1.6 - uTime * 3.0)) * 0.22;
+    float k = max(rim * 0.85, inside + chev) * (uStrike.w > 1.2 ? max(0.0, 1.0 - (uStrike.w - 1.2) * 2.0) : 1.0);
+    if (k > mA) { mA = k; mCol = vec3(1.0, 0.3, 0.15); }
+}
+// Kompaniet valgt: en hvit ring rundt troppen og bølger som går ut fra den.
+if (uSel.z > 0.5) {
+    float d = length(vWxz - uSel.xy);
+    float rim = 1.0 - smoothstep(0.03, 0.07, abs(d - 0.62));
+    float wave = fract(uTime * 1.2);
+    float out1 = (1.0 - smoothstep(0.02, 0.06, abs(d - 0.62 - wave * 0.6))) * (1.0 - wave) * 0.7;
+    float k = max(rim, out1);
+    if (k > mA) { mA = k; mCol = vec3(1.0, 0.97, 0.85); }
+}
+// Målet kompaniet går mot: et kryss og en ring som slår ut fra punktet når ordren gis.
+if (uGoal.w > 0.5) {
+    vec2 dg = vWxz - uGoal.xy;
+    float d = length(dg);
+    float age = uGoal.z;
+    float burst = (1.0 - smoothstep(0.02, 0.07, abs(d - 0.15 - age * 1.4))) * max(0.0, 1.0 - age * 1.8);
+    float ring = (1.0 - smoothstep(0.02, 0.05, abs(d - 0.32))) * 0.75;
+    float x = (1.0 - smoothstep(0.02, 0.045, min(abs(dg.x - dg.y), abs(dg.x + dg.y)) * 0.7071)) * (1.0 - smoothstep(0.2, 0.24, d));
+    float k = max(burst, max(ring, x * 0.85));
+    if (k > mA) { mA = k; mCol = vec3(1.0, 0.97, 0.85); }
 }
 `
             )

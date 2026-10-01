@@ -482,6 +482,14 @@ eieren gjør det:
   klikke på eller plassere på.
 - **Flimmer når man drar eller holder over.** Markering av gyldige ruter mens eleven drar noe
   skal stå stille: ingen ny tilstand per musebevegelse som tegner rutene på nytt.
+- **Risting som henger igjen.** Skjermrystelse svinner i ekte tid (i kameraet), ikke i spillets
+  tidssteg - ellers står den og rister i pausen og mellom rundene (Radionettet, 2026-10-01).
+- **Passiv tilskuer i kampen.** Auto-battlere og tower defense trenger noe eleven gjør mens kampen
+  går: en enhet å styre (klikk og gå/angrip) og «store» ordrer med nedkjøling som varsles før de
+  smeller (sone på bakken, nedtelling, lyd). Og en synlig pauseknapp - gjerne taktisk pause der
+  eleven kan sikte og gi ordrer (eier, 2026-10-01).
+- **Pynt som ser ut som spill.** Fly eller enheter som krysser kartet uten å være med i kampen,
+  forvirrer. Pynt holdes i tåka og kulissene (silhuetter), ikke over brettet.
 - **Bestillingen tolket fritt.** Se «Bestillingen er lov».
 
 ### Skarp tekst i 3D

@@ -1,6 +1,7 @@
-import { ECONOMY, RADIO, SCORE, UNITS, COMBAT, ORDERS, PLAN_MAX, KORT, KORT_TALL, type EKind, type Kind, type KortId } from './tuning';
+import { ECONOMY, RADIO, SCORE, UNITS, COMBAT, PLAN_MAX, KORT, KORT_TALL, type EKind, type Kind, type KortId } from './tuning';
 import { SLAG, MAP_W, MAP_D, TOTAL_WAVES, FLYPLASS, type SlagDef, type WaveDef } from './levels';
 import { stepWave } from './combat';
+import { resetOrders, spawnSquad, type Orders } from './orders';
 
 // Tilstanden og grepene eleven (og robotene) gjør. Kampen per tidssteg står i combat.ts.
 
@@ -36,6 +37,11 @@ export interface Unit {
     dead: boolean;
     /** Rekyl og treff for visningen. */
     kick: number;
+    /** Kompaniet eleven styrer selv (orders.ts): ikke i butikken, ingen kanal, egen radio. */
+    squad?: boolean;
+    /** Kompaniet: fienden det går etter (-1 = går til tx, tz), og om radioen når det nå. */
+    follow?: number;
+    net?: boolean;
 }
 
 export interface Enemy {
@@ -65,7 +71,7 @@ export interface Enemy {
 }
 
 export interface Fx {
-    kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre' | 'tall';
+    kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre' | 'rakett' | 'snik' | 'tall';
     x: number;
     z: number;
     x2: number;
@@ -112,9 +118,8 @@ export interface G {
     kills: number;
     tap: number;
     valg: number;
-    sperreild: number;
-    sperreArmed: boolean;
-    pendingSperre: { x: number; z: number; t: number } | null;
+    /** Ordrene i bølgen (orders.ts): nedkjøling, den eleven sikter med, sperreild og rakettfly. */
+    ord: Orders;
     cause: Cause | null;
     stjerner: number[];
     /** Øker hver gang en ny planlegging starter (visningen viser da det nye). */
@@ -233,9 +238,7 @@ export function newGame(seed = 1, startSlag = 0): G {
         kills: 0,
         tap: 0,
         valg: 0,
-        sperreild: 0,
-        sperreArmed: false,
-        pendingSperre: null,
+        ord: resetOrders(),
         cause: null,
         stjerner: [],
         planSerial: 0,
@@ -263,7 +266,6 @@ function startSlag_(g: G) {
     g.forsyninger = def.start;
     g.linje = SCORE.linje;
     g.hqHp = COMBAT.hqHp;
-    g.sperreild = 0;
     startPlan(g, true);
 }
 
@@ -272,8 +274,7 @@ function startPlan(g: G, first: boolean) {
     g.phase = 'plan';
     g.planT = 0;
     if (!first) g.forsyninger += (w.inntekt ?? ECONOMY.perBølge) + (har(g, 'forsyning') ? KORT_TALL.forsyning : 0);
-    g.sperreild = (w.sperreild ? ORDERS.perSlag : 0) + (har(g, 'sperre') ? 1 : 0);
-    g.sperreArmed = false;
+    g.ord = resetOrders();
     g.holding = -1;
     g.shop = w.fast ? [...w.fast] : drawShop(g);
     g.valg += g.shop.length;
@@ -345,7 +346,7 @@ export function canPlace(g: G, x: number, z: number): boolean {
 }
 
 export function unitAt(g: G, x: number, z: number) {
-    return g.units.find((u) => !u.dead && !isAir(u.kind) && Math.abs(u.x - x) < 0.1 && Math.abs(u.z - z) < 0.1);
+    return g.units.find((u) => !u.dead && !u.squad && !isAir(u.kind) && Math.abs(u.x - x) < 0.1 && Math.abs(u.z - z) < 0.1);
 }
 
 /** Legg kortet på ruta. Fly: (x, z) ignoreres. */
@@ -443,7 +444,7 @@ export function stafettOf(_g: G) {
     return RADIO.stafett;
 }
 
-const isRelay = (u: Unit, not = -1) => u.linked && !u.dead && !isAir(u.kind) && u.id !== not;
+const isRelay = (u: Unit, not = -1) => !u.squad && u.linked && !u.dead && !isAir(u.kind) && u.id !== not;
 
 /** Når radioen hit? Innenfor ringen, eller innenfor stafetten fra en bakkeenhet i nettet. */
 export function reachable(g: G, x: number, z: number, not = -1) {
@@ -517,7 +518,7 @@ export function linkBlock(g: G, u: Unit): 'ingenRadio' | 'rekkevidde' | 'fullt' 
 /** Kjerneverbet: koble en enhet til radionettet, eller koble den fra. */
 export function toggleLink(g: G, id: number, io?: IO): boolean {
     const u = g.units.find((v) => v.id === id);
-    if (!u || u.dead || g.phase === 'vunnet' || g.phase === 'tapt') return false;
+    if (!u || u.dead || u.squad || g.phase === 'vunnet' || g.phase === 'tapt') return false;
     if (u.linked || u.linking > 0) {
         u.linked = false;
         u.linking = 0;
@@ -544,18 +545,10 @@ export function startWave(g: G, io?: IO) {
             u.az = u.z;
         }
     }
+    g.ord = resetOrders();
+    spawnSquad(g);
     io?.sfx('bølge');
     io?.banner(`BØLGE ${g.wave + 1} AV ${slagDef(g).waves.length}`);
-    return true;
-}
-
-/** Ordren: sperreild på et punkt. Første klikk væpner, neste velger stedet. */
-export function sperre(g: G, x: number, z: number, io?: IO) {
-    if (g.phase !== 'wave' || g.sperreild <= 0 || g.pendingSperre) return false;
-    g.sperreild -= 1;
-    g.sperreArmed = false;
-    g.pendingSperre = { x, z, t: ORDERS.sperreild.forsinkelse };
-    io?.sfx('ordre');
     return true;
 }
 
@@ -599,8 +592,10 @@ export function update(g: G, dt: number, io: IO) {
 
 function waveWon(g: G, io: IO) {
     g.enemies = [];
+    g.ord = resetOrders();
     for (const u of g.units) if (isAir(u.kind)) u.mode = 'bakke';
-    g.units = g.units.filter((u) => !u.dead);
+    // Kompaniet trekker seg tilbake mellom bølgene; det kommer fram igjen ved kommandovogna.
+    g.units = g.units.filter((u) => !u.dead && !u.squad);
     const def = slagDef(g);
     if (g.wave + 1 < def.waves.length) {
         g.wave += 1;

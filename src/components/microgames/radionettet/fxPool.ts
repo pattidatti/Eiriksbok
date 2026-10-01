@@ -259,6 +259,23 @@ export function createFx() {
                 p.vz = Math.sin(a) * 1.6;
             }
         },
+        /** Rakett fra flyet: glødende hale og en stripe hvit røyk etter seg. */
+        rocket(x: number, y: number, z: number, x2: number, z2: number, life: number) {
+            bolt('spor', x, y, z, x2, 0.1, z2, life, 0.07, 0.12);
+            puff('blits', x, y, z, { r: 0.22, grow: 1.2, life: 0.08, up: 0, spread: 0 });
+            for (let k = 0; k < 6 && later.length < 80; k++) {
+                const f = k / 6;
+                later.push({ t: life * f, fn: () => void puff('røyk', x + (x2 - x) * f, y + (0.1 - y) * f, z + (z2 - z) * f, { r: 0.08, grow: 3, life: 1.3, up: 0.1, spread: 0.1 }) });
+            }
+        },
+        /** Signalraketten fra kommandovogna: en rød stjerne som stiger og henger i lufta. */
+        signal(x: number, z: number) {
+            const p = bolt('ild', x, 0.6, z, x + 0.4, 5.2, z - 0.3, 0.7, 0.1, 0.06);
+            p.g = 0;
+            for (let k = 1; k < 8 && later.length < 80; k++) later.push({ t: 0.7 + k * 0.12, fn: () => void puff('ild', x + 0.4, 5.1 - k * 0.12, z - 0.3, { r: 0.16, grow: 1.4, life: 0.35, up: 0, spread: 0.05 }) });
+            for (let k = 0; k < 5; k++) puff('røyk', x, 0.7 + k * 0.9, z, { r: 0.07, grow: 2.2, life: 1.8, up: 0.2, spread: 0.05 });
+            flare(x, 5, z, 1.2, 1.6, 9, RED);
+        },
         /** Granaten: en glødende prikk som farer rett fram til målet. */
         shell(x: number, y: number, z: number, x2: number, y2: number, z2: number, life: number) {
             bolt('glo', x, y, z, x2, y2, z2, life, 0.08, 0.05);
@@ -297,6 +314,7 @@ export function createFx() {
 
 export type FxPool = ReturnType<typeof createFx>;
 
+const RED = new THREE.Color('#ff4a2a');
 const HEAVY = new Set(['vogn', 'pv', 'evogn', 'epak']);
 const RIFLE = new Set(['inf', 'fsk', 'einf']);
 /** Hvor langt fram løpet stikker, og hvor høyt det sitter (figurskala 1,4). */
@@ -312,7 +330,22 @@ export function consume(g: G, fx: FxPool, seen: WeakSet<Fx>, sound?: (name: stri
             fx.boom(f.x, f.alt, f.z, big);
             if (big >= 1) g.shake = Math.max(g.shake, 0.35);
         }
-        else if (f.kind === 'granat' || f.kind === 'sperre') fx.blast(f.x, f.z, f.fiende);
+        else if (f.kind === 'granat') fx.blast(f.x, f.z, f.fiende);
+        else if (f.kind === 'sperre' || f.kind === 'rakett') {
+            // Sperreild og raketter: tunge nedslag med ildkule, jord og krater.
+            fx.blast(f.x, f.z);
+            fx.boom(f.x, 0, f.z, f.kind === 'sperre' ? 0.75 : 0.6);
+            g.shake = Math.max(g.shake, f.kind === 'sperre' ? 0.55 : 0.4);
+            sound?.(f.kind === 'sperre' ? 'salvenedslag' : 'nedslag');
+        } else if (f.kind === 'snik') {
+            // Snikskuddet: ett skarpt glimt og en lang, lys strek rett i målet.
+            const y2 = Math.max(0.35, f.alt);
+            fx.flash(f.x, 0.5, f.z, 0.2);
+            fx.tracer(f.x, 0.5, f.z, f.x2, y2, f.z2, false);
+            fx.tracer(f.x, 0.52, f.z, f.x2, y2 + 0.02, f.z2, false);
+            fx.after(0.06, () => fx.sparks(f.x2, y2, f.z2));
+            sound?.('snik');
+        }
         else if (f.kind === 'kutt') {
             // Linja ryker: gnister i lufta.
             fx.star(f.x, 0.9, f.z, 0.4, 0.25, true);

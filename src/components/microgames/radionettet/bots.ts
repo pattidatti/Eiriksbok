@@ -1,11 +1,12 @@
 import { UNITS, ECONOMY, ENEMIES, COMBAT, type Kind, type EKind, type KortId } from './tuning';
 import { MAP_D, MAP_W } from './levels';
 import {
-    pick, place, reroll, toggleLink, startWave, sperre, nextSlag, canPlace, channels, inRange, isAir,
-    waveDef, roadAt, roadDistAll, ringOf, stafettOf, slagDef, type G, type IO, type Rng, type Unit,
+    pick, place, reroll, toggleLink, startWave, nextSlag, canPlace, channels, inRange, isAir,
+    waveDef, roadAt, roadDistAll, ringOf, stafettOf, slagDef, type G, type IO, type Rng, type Unit, type Enemy,
 } from './game';
+import { ready, barrage, snipe, rocket, orderSquad, squadOf, canCall } from './orders';
 
-// Robotene. Samme grep som eleven: pick/place/toggleLink/startWave/sperre.
+// Robotene. Samme grep som eleven: pick/place/toggleLink/startWave og ordrene (orders.ts).
 // Brukes av både simuleringen (sim.ts) og selvspillet i nettleseren.
 
 export type BotStyle = 'samvirke' | 'halvgod' | 'nybegynner' | 'uten-radio' | 'bare-vogner' | 'tilfeldig';
@@ -23,7 +24,7 @@ export const BOTS: Record<BotStyle, BotDef> = {
     },
     halvgod: {
         forventer: 'middels',
-        beskrivelse: 'Samme plan og kjøp, men kobler ikke opp igjen når en linje ryker i bølgen og bruker ikke sperreilden.',
+        beskrivelse: 'Samme plan og kjøp, men kobler ikke opp igjen når en linje ryker i bølgen og gir ingen ordrer utenom å sende kompaniet mot fienden.',
     },
     nybegynner: {
         forventer: 'middels',
@@ -50,7 +51,7 @@ const COUNTER: Record<EKind, Kind[]> = { einf: ['inf', 'art'], evogn: ['pv', 'vo
 export const KORT_ORDEN: KortId[] = ['kanal', 'speidere', 'sperre', 'forsyning', 'fly'];
 
 function count(g: G, k: Kind) {
-    return g.units.filter((u) => !u.dead && u.kind === k).reduce((n, u) => n + u.copies, 0);
+    return g.units.filter((u) => !u.dead && !u.squad && u.kind === k).reduce((n, u) => n + u.copies, 0);
 }
 
 function need(g: G, k: Kind, style: BotStyle) {
@@ -147,7 +148,7 @@ function linkValue(g: G, u: Unit) {
 function tuneRadio(g: G, io: IO) {
     const C = channels(g);
     if (!C) return false;
-    const cands = g.units.filter((u) => !u.dead && inRange(g, u)).sort((a, b) => linkValue(g, b) - linkValue(g, a));
+    const cands = g.units.filter((u) => !u.dead && !u.squad && inRange(g, u)).sort((a, b) => linkValue(g, b) - linkValue(g, a));
     const want = new Set(cands.slice(0, C).map((u) => u.id));
     const wrong = g.units.find((u) => !u.dead && (u.linked || u.linking > 0) && !want.has(u.id));
     if (wrong) return toggleLink(g, wrong.id, io);
@@ -206,40 +207,74 @@ function planTick(g: G, style: BotStyle, io: IO, rng: Rng) {
     startWave(g, io);
 }
 
+const groundAlive = (g: G) => g.enemies.filter((e) => !e.dead && !e.passed && !ENEMIES[e.kind].fly && e.kind !== 'ebatt');
+
+/** Der fienden står tettest (og har kommet lengst), eller null. */
+function densest(g: G, min: number): [number, number] | null {
+    let best: [number, number] | null = null;
+    let bs = min;
+    for (const e of groundAlive(g)) {
+        if (!canCall(g, 'sperre', e.x, e.z)) continue;
+        let s = 0;
+        for (const f of groundAlive(g)) if (Math.hypot(e.x - f.x, e.z - f.z) < 1.8) s += f.hp / 50;
+        s += e.s / g.roads[e.r].len;
+        if (s > bs) {
+            bs = s;
+            best = [e.x, e.z];
+        }
+    }
+    return best;
+}
+
+/** Ordrene i bølgen: sperreild og rakettfly der det monner, snikskytteren på kanonene, og
+ *  kompaniet mot batteriet eller fienden som har kommet lengst. */
+function ordersTick(g: G, io: IO, style: BotStyle) {
+    if (style === 'halvgod' || style === 'nybegynner') return squadTick(g, io, null);
+    const batt = g.enemies.find((e) => e.kind === 'ebatt' && !e.dead && (g.netSeen.has(e.id) || e.revealed));
+    if (ready(g, 'sperre')) {
+        if (batt && barrage(g, batt.x, batt.z, io)) return true;
+        // Et batteri som ikke har vist seg ennå: spar sperreilden til det.
+        const venter = g.enemies.some((e) => e.kind === 'ebatt' && !e.dead) || (waveDef(g).groups.some((gr) => gr.kind === 'ebatt') && g.waveT < 20);
+        const best = venter ? null : densest(g, 3);
+        if (best) return barrage(g, best[0], best[1], io);
+    }
+    if (ready(g, 'rakett')) {
+        const best = densest(g, 2.5);
+        if (best) return rocket(g, best[0], best[1], io);
+    }
+    if (ready(g, 'snik')) {
+        const pri = (k: string) => (k === 'ebatt' ? 3 : k === 'epak' ? 2 : k === 'einf' ? 1 : 0);
+        const t = g.enemies
+            .filter((e) => !e.dead && !e.passed && pri(e.kind) > 0 && g.netSeen.has(e.id))
+            .sort((a, b) => pri(b.kind) - pri(a.kind) || b.s - a.s)[0];
+        if (t && snipe(g, t.x, t.z, io)) return true;
+    }
+    // Robotene som skal tape, styrer ikke kompaniet: et kompani som speider for vognene er
+    // nettopp samvirket (infanteri og vogner i samme nett).
+    if (style === 'uten-radio' || style === 'bare-vogner') return false;
+    return squadTick(g, io, batt);
+}
+
+function squadTick(g: G, io: IO, batt: Enemy | null | undefined) {
+    const sq = squadOf(g);
+    if (!sq || (sq.follow ?? -1) >= 0) return false;
+    const front = groundAlive(g).sort((a, b) => b.s / g.roads[b.r].len - a.s / g.roads[a.r].len)[0];
+    const t = batt ?? front;
+    return t ? orderSquad(g, t.x, t.z, io) : false;
+}
+
 function waveTick(g: G, style: BotStyle, io: IO, rng: Rng) {
     if (style === 'tilfeldig') {
         if (rng() < 0.1 && g.units.length) toggleLink(g, g.units[Math.floor(rng() * g.units.length)].id, io);
         if (rng() < 0.02) {
             const road = g.roads[Math.floor(rng() * g.roads.length)];
             const [x, z] = roadAt(road, rng() * road.len);
-            sperre(g, x, z, io);
+            if (!barrage(g, x, z, io) && !snipe(g, x, z, io)) orderSquad(g, x, z, io);
         }
         return;
     }
-    if (style !== 'uten-radio' && tuneRadio(g, io)) return;
-    if (g.sperreild > 0) {
-        // Et batteri nettet har funnet, får sperreilden. Ellers der fienden står tettest.
-        const batt = g.enemies.find((e) => e.kind === 'ebatt' && !e.dead && (g.netSeen.has(e.id) || e.revealed));
-        if (batt) {
-            sperre(g, batt.x, batt.z, io);
-            return;
-        }
-        // Et batteri som ikke har vist seg ennå: spar sperreilden til det.
-        if (g.enemies.some((e) => e.kind === 'ebatt' && !e.dead) || (waveDef(g).groups.some((gr) => gr.kind === 'ebatt') && g.waveT < 20)) return;
-        let best: [number, number] | null = null;
-        let bs = 3;
-        for (const e of g.enemies) {
-            if (e.dead || e.passed || ENEMIES[e.kind].fly || e.kind === 'ebatt') continue;
-            let s = 0;
-            for (const f of g.enemies) if (!f.dead && !f.passed && !ENEMIES[f.kind].fly && Math.hypot(e.x - f.x, e.z - f.z) < 1.8) s += f.hp / 50;
-            s += e.s / g.roads[e.r].len;
-            if (s > bs) {
-                bs = s;
-                best = [e.x, e.z];
-            }
-        }
-        if (best) sperre(g, best[0], best[1], io);
-    }
+    if (style !== 'uten-radio' && style !== 'halvgod' && style !== 'nybegynner' && tuneRadio(g, io)) return;
+    ordersTick(g, io, style);
 }
 
 /** Ett robotgrep. */
@@ -250,6 +285,6 @@ export function botTick(g: G, style: BotStyle, io: IO, rng: Rng) {
         return;
     }
     if (g.phase === 'plan') planTick(g, style === 'halvgod' ? 'samvirke' : style, io, rng);
-    // Den halvgode og nybegynneren kobler ikke opp igjen i bølgen og bruker ikke sperreilden.
-    else if (g.phase === 'wave' && style !== 'halvgod' && style !== 'nybegynner') waveTick(g, style, io, rng);
+    // Den halvgode og nybegynneren kobler ikke opp igjen i bølgen og styrer bare kompaniet.
+    else if (g.phase === 'wave') waveTick(g, style, io, rng);
 }

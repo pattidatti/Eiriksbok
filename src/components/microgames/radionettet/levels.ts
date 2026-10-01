@@ -41,7 +41,7 @@ export interface WaveDef {
     sikt?: number;
     /** Forsyninger før denne bølgen, i stedet for `ECONOMY.perBølge` (omringet). */
     inntekt?: number;
-    /** Sperreild tilgjengelig. */
+    /** Sperreild tilgjengelig (ordre med nedkjøling, orders.ts). */
     sperreild?: boolean;
     /** Det nye i bølgen: lærings-øyeblikket når planleggingen starter. */
     nytt?: Nytt;
@@ -191,9 +191,9 @@ export const SLAG: SlagDef[] = [
                 sperreild: true,
                 nytt: {
                     key: 'sperreild',
-                    lapp: 'Nytt: sperreild! Trykk S i bølgen',
+                    lapp: 'Nytt: sperreild! Trykk 3 i bølgen',
                     tittel: 'Sperreild',
-                    tekst: 'Du har én sperreild. Trykk S og klikk et sted på veien. Granatene faller to sekunder senere.',
+                    tekst: 'Trykk 3 i bølgen og klikk der nettet ser fienden. Granatene faller tre sekunder senere, så lades sperreilden opp igjen.',
                 },
             },
         ],

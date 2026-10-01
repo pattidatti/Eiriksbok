@@ -14,15 +14,18 @@ import { createArcadeSynth, buzz, type ArcadeSynth } from './arcade/synth';
 import { useArcadeSave, rankFor, nextRank } from './arcade/save';
 import { usePlaytest, playtestSpeed } from './playtest';
 import {
-    newGame, update, pick, place, reroll, toggleLink, linkBlock, relink, startWave, sperre, nextSlag, unitAt, isAir,
+    newGame, update, pick, place, reroll, toggleLink, linkBlock, relink, startWave, nextSlag, unitAt, isAir,
     usedChannels, waveDef, slagDef, CAUSE_TEXT, finalScore, type G, type IO,
 } from './radionettet/game';
-import { KORT, SCORE, type EKind, type KortId } from './radionettet/tuning';
+import { KORT, SCORE, EVNER, EVNE_ORDEN, type EKind, type KortId, type EvneId } from './radionettet/tuning';
+import { arm, orderSquad, snipe, barrage, rocket, squadOf, evner, unlocked } from './radionettet/orders';
+import { OrderView } from './radionettet/ordersView';
 import { botTick, BOTS, type BotStyle } from './radionettet/bots';
 import { snapshotOf } from './radionettet/sim';
 import { SLAG, TOTAL_WAVES } from './radionettet/levels';
 import { bulletTime, cineScale, newCine, type Cine } from './radionettet/cine';
 import { WarFog } from './radionettet/warfog';
+import { fogFlash } from './radionettet/fogState';
 import { Camera, PlaceHints, Units, Enemies, Lines, Ghost, type Proj } from './radionettet/world';
 import { HQ_ID, type Hl } from './radionettet/hl';
 import { Soldiers } from './radionettet/soldiers';
@@ -30,7 +33,8 @@ import { Markers, Highlight } from './radionettet/markers';
 import { Board } from './radionettet/terrain';
 import { Ambience, Effects } from './radionettet/effects';
 import { createFx } from './radionettet/fxPool';
-import { Flyovers, Boats } from './radionettet/life';
+import { Boats } from './radionettet/life';
+import { FogGhosts } from './radionettet/ghosts';
 import { Hud } from './radionettet/hud';
 import { DamageNumbers } from './radionettet/damage';
 import { DAMAGE_CSS } from './radionettet/damagePool';
@@ -154,6 +158,37 @@ function makeSfx(a: ArcadeSynth) {
             a.noise(0.8, 0.04, 140);
         } else if (name === 'kutt' && gate('kutt', 300)) a.tone(1200, 400, 0.25, 'square', 0.04);
         else if (name === 'stup' && gate('stup', 400)) a.tone(520, 1250, 1.1, 'sawtooth', 0.025);
+        // Ordrene i bølgen.
+        else if (name === 'velg') a.tone(700, 980, 0.07, 'square', 0.04);
+        else if (name === 'marsj') {
+            a.arp(392, [0, 7], 0.06, 0.04);
+            a.noise(0.25, 0.02, 600, 0.05);
+        } else if (name === 'klar') a.arp(523, [0, 4, 7, 12], 0.05, 0.045);
+        else if (name === 'sikte') a.tone(1800, 1750, 0.35, 'sine', 0.018);
+        else if (name === 'snik') {
+            // Ett skarpt smell og ekkoet som ruller ut over slagmarken.
+            a.noise(0.06, 0.14, 3200);
+            a.tone(900, 120, 0.12, 'square', 0.05);
+            a.noise(0.9, 0.035, 700, 0.12);
+        } else if (name === 'signal') {
+            a.tone(400, 1600, 0.6, 'sawtooth', 0.03);
+            a.noise(0.5, 0.03, 2200);
+        } else if (name === 'fjernSalve') for (let i = 0; i < 4; i++) {
+            a.noise(0.9, 0.05, 90, i * 0.14);
+            a.tone(60, 32, 0.8, 'sine', 0.06, i * 0.14);
+        }
+        else if (name === 'hyl') {
+            // Granatene på vei ned: et fallende hyl.
+            a.tone(1900, 520, 1.2, 'sine', 0.045);
+            a.tone(1700, 480, 1.15, 'triangle', 0.02, 0.06);
+        } else if (name === 'salvenedslag' && gate('salvenedslag', 70)) {
+            a.noise(0.7, 0.13, 120);
+            a.tone(80, 28, 0.6, 'sine', 0.12);
+            a.noise(0.2, 0.05, 1500);
+        } else if (name === 'typhoon') {
+            a.tone(110, 190, 2.2, 'sawtooth', 0.025);
+            a.noise(2.4, 0.03, 300);
+        } else if (name === 'rakett' && gate('rakett', 50)) a.noise(0.35, 0.06, 2600);
     };
 }
 
@@ -203,6 +238,13 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
         if (u) text.point('stafett', 'Enheter i nettet sender radioen videre', at(u.x, u.z, 0.9), { once: true, until: () => g.holding < 0, seconds: 12 });
     }
     if (g.phase === 'wave') {
+        // Kompaniet og ordrene: en lapp første gang hver ordre finnes, ved knappen.
+        const u = squadOf(g);
+        const atSquad = () => (u ? (proj.current?.(u.x, 1.6, u.z) ?? null) : null);
+        if (u && g.slag === 0 && g.wave === 0) text.point('kompani', 'Ditt kompani! Klikk det, så dit', atSquad, { once: true, until: () => g.ord.armed === 'kompani' || g.phase !== 'wave', seconds: 20 });
+        if (u && g.ord.armed === 'kompani') text.point('kompmål', 'Klikk der kompaniet skal gå', atSquad, { once: true, until: () => g.ord.armed !== 'kompani', seconds: 12 });
+        for (const id of evner(g))
+            if (id !== 'kompani') text.point(`evne-${id}`, `Nytt: ${EVNER[id].navn.toLowerCase()}! ${EVNER[id].hint}`, domAnchor(stage, `evne-${id}`), { once: true, until: () => g.ord.armed === id || g.phase !== 'wave', seconds: 12 });
         for (const e of g.enemies)
             if (e.dug && !e.dead && !g.netSeen.has(e.id))
                 text.point('pak', 'Skjult panservern', at(e.x, e.z, 0.8), { tone: 'fare', once: true, until: () => e.dead || g.netSeen.has(e.id) });
@@ -219,6 +261,9 @@ function Loop({ gRef, modeRef, ioRef, speedRef, onTick }: { gRef: React.MutableR
         speedRef.current = modeRef.current === 'play' ? DEV_SPEED * ioRef.current.timeScale() : 0;
         if (modeRef.current === 'play')
             for (let k = 0; k < steps && modeRef.current === 'play'; k++) update(gRef.current, dt * ioRef.current.timeScale(), ioRef.current);
+        // Mellom slagene går bare klokka (update gjør ingenting annet da), så robotene i
+        // selvspillet, som tikker på spilltid, kommer videre fra «Slaget er vunnet».
+        else if (modeRef.current === 'slag') update(gRef.current, frameDt, ioRef.current);
         onTick(rawDt);
     });
     return null;
@@ -311,7 +356,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                 for (let i = 0; i < 3; i++) fxPool.puff('røyk', x, 0.4, z, { r: 0.22, grow: 2.6, life: 1.8, up: 0.4, spread: 0.8 });
                 sfx('salve');
                 const g = gRef.current;
-                text.point('batt', g.sperreild > 0 ? 'Skjult batteri! Sperreild her (S)' : 'Skjult batteri! Finn det med infanteri', at(x, z), { tone: 'fare', once: true, seconds: 7 });
+                text.point('batt', unlocked(g, 'sperre') ? 'Skjult batteri! Sperreild her (3)' : 'Skjult batteri! Finn det med infanteri', at(x, z), { tone: 'fare', once: true, seconds: 7 });
             } else if (name === 'kutt' || name === 'brutt') {
                 sfx('kutt');
                 buzz(40);
@@ -325,6 +370,23 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                 for (let i = 0; i < 6; i++) fxPool.puff('støv', x, 0.1, z, { r: 0.16, grow: 2, life: 0.9, up: 0.2, spread: 1.6 });
             }
             else if (name === 'brudd') buzz(60);
+            else if (name === 'kompaniTapt') {
+                sfx('smell');
+                text.point('kompfall', 'Kompaniet falt. Et nytt kommer snart', at(x, z), { tone: 'fare', seconds: 3 });
+            } else if (name === 'kompaniKlar') {
+                sfx('klar');
+                text.point('kompklar', 'Nytt kompani klart', at(x + 0.9, z), { seconds: 2.5 });
+            } else if (name === 'snikDrap') {
+                const p = projRef.current?.(x, 1, z);
+                if (p) text.float('SNIKSKYTTER!', p.x, p.y - 26, C.radio, true);
+                slowMo(x, z, 0.8);
+            } else if (name === 'sperreild' || name === 'raketter') {
+                fogFlash(x, z, 1.4, 3.5);
+                buzz(80);
+            } else if (name === 'sperreOrdre' || name === 'rakettOrdre') {
+                const p = projRef.current?.(x, 1, z);
+                if (p) text.float(name === 'sperreOrdre' ? 'ILD!' : 'ANGREP!', p.x, p.y, '#ff6a3a', true);
+            }
             else if (name === 'tapt:vogn' && !gRef.current.units.some((u) => u.linked))
                 text.lesson('blind', 'Stridsvogna alene så ikke det skjulte panservernet. Med infanteri i samme radionett ser den det.', 2);
             else if (name === 'hqTreff' || name === 'tapt:vogn' || name === 'tapt:art') slowMo(x, z, 1);
@@ -401,14 +463,24 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     };
 
     // ---- Grepene -------------------------------------------------------------------
-    const onPoint = (x: number, z: number) => {
-        const g = gRef.current;
-        if (modeRef.current !== 'play') return;
-        synth.unlock();
-        if (g.sperreArmed) {
-            sperre(g, x, z, io);
+    /** Klikk på kartet med en ordre væpnet: kompaniet går, ilden kalles inn, snikskytteren skyter. */
+    const orderAt = (g: G, x: number, z: number) => {
+        const armed = g.ord.armed;
+        if (armed === 'kompani') {
+            orderSquad(g, x, z, io);
             return;
         }
+        const ok = armed === 'sperre' ? barrage(g, x, z, io) : armed === 'rakett' ? rocket(g, x, z, io) : snipe(g, x, z, io);
+        if (!ok) {
+            sfx('frakoble');
+            text.point('nei-ordre', armed === 'snik' ? 'Klikk en fiende nettet ser' : 'Ingen i nettet ser dit', at(x, z), { tone: 'fare', seconds: 2.5 });
+        }
+    };
+    const onPoint = (x: number, z: number) => {
+        const g = gRef.current;
+        if (modeRef.current !== 'play' && modeRef.current !== 'paused') return;
+        synth.unlock();
+        if (g.ord.armed) return orderAt(g, x, z);
         if (g.holding >= 0) {
             placeAndMark(g, x, z);
             return;
@@ -436,9 +508,28 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
             document.body.style.cursor = '';
         }
     };
+    /** Væpn en ordre (eller velg kompaniet); et nytt trykk slipper den. */
+    const evne = (id: EvneId) => {
+        const g = gRef.current;
+        synth.unlock();
+        if (g.phase !== 'wave' || !unlocked(g, id)) return;
+        if (!arm(g, id)) {
+            sfx('frakoble');
+            return;
+        }
+        sfx('velg');
+        const u = squadOf(g);
+        if (id === 'kompani' && u && g.ord.armed === 'kompani') flashUnit(u.id);
+    };
     const onUnit = (id: number) => {
         const g = gRef.current;
-        if (modeRef.current !== 'play') return;
+        if (modeRef.current !== 'play' && modeRef.current !== 'paused') return;
+        const clicked = g.units.find((v) => v.id === id);
+        // Kompaniet: klikk velger det (og et nytt klikk slipper det).
+        if (clicked?.squad) return evne('kompani');
+        // Sikter eleven med en ordre, gjelder klikket stedet enheten står.
+        if (g.ord.armed && g.ord.armed !== 'kompani' && clicked) return orderAt(g, clicked.x, clicked.z);
+        if (g.ord.armed === 'kompani') g.ord.armed = null;
         if (g.holding >= 0) {
             const u = g.units.find((v) => v.id === id);
             if (u && !isAir(u.kind)) placeAndMark(g, u.x, u.z);
@@ -476,14 +567,12 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         },
         reroll: () => reroll(gRef.current),
         wave: () => startWave(gRef.current, io),
-        sperre: () => {
-            const g = gRef.current;
-            if (g.sperreild > 0 && g.phase === 'wave') g.sperreArmed = !g.sperreArmed;
-        },
+        evne,
         pause: () => {
             if (modeRef.current === 'play') setModeBoth('paused');
             else if (modeRef.current === 'paused') setModeBoth('play');
         },
+        paused: mode === 'paused',
         mute: () => {
             synth.unlock();
             synth.setMuted(!synth.isMuted());
@@ -500,13 +589,29 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
             const a = actRef.current;
+            const g = gRef.current;
+            const m = modeRef.current;
+            if (m !== 'play' && m !== 'paused') return;
+            // Esc slipper en ordre eleven sikter med; ellers pause.
+            if (e.code === 'Escape' && g.ord.armed) {
+                g.ord.armed = null;
+                return;
+            }
             if (e.code === 'Escape' || e.code === 'KeyP') return a.pause();
-            if (modeRef.current !== 'play') return;
             if (e.code === 'Space') {
                 e.preventDefault();
-                a.wave();
-            } else if (e.code === 'KeyR') a.reroll();
-            else if (e.code === 'KeyS') a.sperre();
+                // Planleggingen: start bølgen. I bølgen: pause.
+                if (g.phase === 'plan' && m === 'play') a.wave();
+                else if (g.phase === 'wave') a.pause();
+                return;
+            }
+            if (g.phase === 'wave') {
+                const k = /^Digit[1-4]$/.test(e.code) ? EVNE_ORDEN[Number(e.code.slice(5)) - 1] : e.code === 'KeyS' ? 'sperre' : null;
+                if (k) a.evne(k);
+                return;
+            }
+            if (m !== 'play') return;
+            if (e.code === 'KeyR') a.reroll();
             else if (/^Digit[1-3]$/.test(e.code)) a.pick(Number(e.code.slice(5)) - 1);
         };
         window.addEventListener('keydown', down);
@@ -555,7 +660,8 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                         <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
                         <Ambience gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
                         <WarFog gRef={gRef} speedRef={speedRef} sfx={sfx} />
-                        <Flyovers gRef={gRef} speedRef={speedRef} sfx={sfx} />
+                        <FogGhosts gRef={gRef} speedRef={speedRef} />
+                        <OrderView gRef={gRef} fxRef={fxRef} speedRef={speedRef} pointer={pointer} sfx={sfx} />
                         <Boats gRef={gRef} fxRef={fxRef} speedRef={speedRef} />
                         <KitEffects bloomIntensity={0.8} bloomThreshold={0.9} />
                         <DamageNumbers gRef={gRef} projRef={projRef} layerRef={dmgRef} speedRef={speedRef} />
@@ -597,12 +703,17 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                         </ArcadeScreen>
                     )}
 
+                    {/* Pausen er taktisk: kartet synes, og eleven kan sikte og gi ordrer før kampen går videre. */}
+                    {mode === 'paused' && <div className="rn-pausetone" aria-hidden />}
                     {mode === 'paused' && (
-                        <ArcadeScreen>
-                            <ArcadeLogo>PAUSE</ArcadeLogo>
-                            <ArcadeBigButton onClick={() => setModeBoth('play')}>Fortsett</ArcadeBigButton>
-                            <ArcadeSmallButton onClick={() => setModeBoth('menu')}>Til menyen</ArcadeSmallButton>
-                        </ArcadeScreen>
+                        <div className="rn-pausekort">
+                            <b>PAUSE</b>
+                            <span>Gi ordrer, så fortsett</span>
+                            <button onClick={() => setModeBoth('play')}>Fortsett</button>
+                            <button className="lys" onClick={() => setModeBoth('menu')}>
+                                Meny
+                            </button>
+                        </div>
                     )}
 
                     {mode === 'slag' && result && (

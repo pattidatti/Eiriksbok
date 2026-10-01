@@ -317,3 +317,33 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   og mørk bunn, og branner som flakker nede i den. Glør stiger fra slagmarken i bølgen, og det
   snør i Bastogne. Porter: simulering uendret (samvirke 93 %, trappen 965 < 1730-1785 < 5835),
   selvspill grønt (71 draw calls, JS p95 9,3 ms på lav). Venter på at eieren ser kampen.
+- 2026-10-01, eierens rettelser («Screenshake varer lenge etter at en runde er ferdig. Sperreildknappen
+  må være mye mer juicy. Slike big-spender-cooldowns må vi ha flere av, spilleren må kunne være mer aktiv
+  i selve kampene, f.eks. bevege en liten gruppe infanteri, click to move og attack. Evt kanoner,
+  snipere osv som aktive abilitys med cooldown. Sperreilden må ha mye mer animasjoner, området må
+  vises, noe må skje før det sprenger. Vi trenger også en pauseknapp.» Underveis: «Flyene som går over
+  battlefield er stilig, men la oss holde dem vekke siden de ikke har noen effekt. Kan ha
+  tanks/infanteri som man av og til kan glimte i tåken»). Gjort:
+  Ristingen ble aldri dempet utenfor bølgen (den svant bare i kampens tidssteg); nå svinner den i
+  ekte tid i kameraet, kort og hardt, og er null mellom bølgene.
+  Ordrene i bølgen (`orders.ts`), med nedkjøling og en knapperad nederst (tast 1-4): **Kompaniet**
+  (fra Dunkerque bølge 1) - en tropp eleven klikker og sender dit den skal eller mot en fiende; den
+  har egen radio, så det den ser, ser nettet (speider for artilleriet og vognene), og et nytt kompani
+  kommer etter 16 s hvis det faller. **Snikskytter** (fra Dunkerque bølge 3) - klikk en fiende nettet
+  ser, den sikter et halvt sekund og skyter (dreper en infanterigruppe, mannskapet på en kanon).
+  **Sperreild** (der bølgen har det) er nå en ordre med nedkjøling (32 s, kortet «Mer ammunisjon» gir
+  0,6×): siktet viser området under musa (gult = lov, rødt = ingen i nettet ser dit), så går en
+  signalrakett opp fra kommandovogna, fjern torden fra kanonene, et fallende hyl, to innskytingsskudd,
+  en rød sone som pulserer med en ring som krymper til null - og 14 nedslag over 1,6 s med ildkuler,
+  kratre og røykteppe etterpå. Knappen har røde fareskrå-striper som går, gløder når den er klar,
+  rister når den er væpnet. **Rakettfly** (fra Normandie bølge 2) - en Typhoon stuper inn fra vest
+  og skyter åtte raketter langs en linje. Fagregelen: ild kalles inn over radioen, så sperreild og
+  rakettfly går bare dit noen i nettet ser, og snikskytteren får bare mål nettet ser.
+  Pause: egen knapp i ordreraden (Mellomrom i bølgen), og pausen er taktisk - kartet synes, og
+  eleven kan sikte og gi ordrer før kampen går videre. Pyntflyene er tatt ut; i stedet kryper
+  fiendtlige vogner og infanterirekker forbi ute i krigståka og trer fram som silhuetter når
+  artilleriglimt lyser opp tåka (`ghosts.tsx`). Selvspillet kunne bli stående på «Slaget er vunnet»
+  (robotene tikker på spilltid, og klokka stod stille mellom slagene) - rettet.
+  Porter: simulering grønn (samvirke 99 %, uten radio 3 %, bare vogner 1 %, trappen 1780 <
+  2165-2290 < 5785, 28 valg/min), selvspill grønt (82 draw calls, JS p95 9,6 ms på lav), scene-audit
+  grønn. Venter på at eieren prøver ordrene.

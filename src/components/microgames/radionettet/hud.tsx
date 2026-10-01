@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { UNITS, ECONOMY, SCORE, COMBAT, PLAN_MAX, KORT, type Kind, type KortId } from './tuning';
+import { UNITS, ECONOMY, SCORE, COMBAT, PLAN_MAX, KORT, EVNER, type Kind, type KortId, type EvneId } from './tuning';
 import { SLAG } from './levels';
 import { channels, usedChannels, type G } from './game';
-import { ROLE, wavePreview } from './hudData';
+import { ROLE, EVNE_TEKST, wavePreview } from './hudData';
+import { evner, cdOf, busy, squadOf } from './orders';
 
 // HUD-en over kartet: kommandobåndet øverst, butikken og ordrene nederst.
 // Den tar et øyeblikksbilde av spillet fem ganger i sekundet og tegner bare seg selv på nytt.
@@ -11,10 +12,20 @@ export interface HudActions {
     pick: (i: number) => void;
     reroll: () => void;
     wave: () => void;
-    sperre: () => void;
+    evne: (id: EvneId) => void;
     pause: () => void;
+    paused: boolean;
     mute: () => void;
     muted: boolean;
+}
+
+interface Evne {
+    id: EvneId;
+    /** Andel igjen av nedkjølingen (0 = klar) og sekunder igjen. */
+    left: number;
+    secs: number;
+    armed: boolean;
+    busy: boolean;
 }
 
 interface View {
@@ -30,9 +41,7 @@ interface View {
     holding: number;
     planT: number;
     preview: string;
-    sperreild: number;
-    sperreArmed: boolean;
-    pending: boolean;
+    evner: Evne[];
     kort: KortId[];
 }
 
@@ -50,9 +59,17 @@ function view(g: G): View {
         holding: g.holding,
         planT: g.planT,
         preview: g.phase === 'plan' ? wavePreview(g) : '',
-        sperreild: g.sperreild,
-        sperreArmed: g.sperreArmed,
-        pending: !!g.pendingSperre,
+        evner:
+            g.phase === 'wave'
+                ? evner(g).map((id) => ({
+                      id,
+                      left: Math.min(1, g.ord.cd[id] / cdOf(g, id)),
+                      secs: Math.ceil(g.ord.cd[id]),
+                      armed: g.ord.armed === id,
+                      // Kompaniet er «opptatt» når det er slått ut og venter.
+                      busy: id === 'kompani' ? !squadOf(g) : busy(g, id),
+                  }))
+                : [],
         kort: [...g.kort],
     };
 }
@@ -156,25 +173,47 @@ export function Hud({ gRef, act }: { gRef: React.MutableRefObject<G>; act: HudAc
                     </>
                 ) : (
                     <>
-                        <div className="rn-info">
+                        <div className="rn-info rn-short">
                             {ch > 0 ? (
                                 <>
-                                    <b>Klikk en enhet</b> for å koble den til radioen eller ta den ut.
+                                    <b>Klikk en enhet</b> for å koble den til radioen.
                                 </>
                             ) : (
-                                <>Enhetene kjemper selv. Se hva som skjer.</>
+                                <>Enhetene kjemper selv. Styr kompaniet.</>
                             )}
                         </div>
                         <div className="rn-grow" />
-                        {(g.sperreild > 0 || g.pending) && (
-                            <button className="rn-btn big" data-on={g.sperreArmed ? 1 : 0} style={g.sperreArmed ? { background: '#d9a92c', color: '#1f2318' } : undefined} onClick={act.sperre}>
-                                <span className="rn-key">S</span>
-                                {g.sperreArmed ? 'Klikk på kartet' : g.pending ? 'Granatene faller ...' : 'SPERREILD'}
-                            </button>
-                        )}
+                        <div className="rn-evner">
+                            {g.evner.map((e) => (
+                                <EvneKnapp key={e.id} e={e} onClick={() => act.evne(e.id)} />
+                            ))}
+                        </div>
+                        <button className="rn-pause" data-on={act.paused ? 1 : 0} onClick={act.pause} aria-label="Pause">
+                            <span className="ic" aria-hidden>{act.paused ? '▶' : '❚❚'}</span>
+                            <span className="rn-key">Mellomrom</span>
+                        </button>
                     </>
                 )}
             </div>
         </>
+    );
+}
+
+/** Én ordreknapp: lader seg opp nedenfra, spretter når den er klar, gløder mens den venter. */
+function EvneKnapp({ e, onClick }: { e: Evne; onClick: () => void }) {
+    const def = EVNER[e.id];
+    const ready = e.left <= 0 && !e.busy;
+    // Sprett-animasjonen starter av seg selv når data-state går fra «wait» til «ready» (hudData.ts).
+    const state = e.armed ? 'armed' : ready ? 'ready' : 'wait';
+    const sub = e.armed ? EVNER[e.id].hint : e.busy && e.left <= 0 ? EVNE_TEKST[e.id].busy : !ready ? `Klar om ${e.secs} s` : EVNE_TEKST[e.id].klar;
+    return (
+        <button className={`rn-evne ${e.id}`} data-state={state} data-mg-anchor={`evne-${e.id}`} onClick={onClick} aria-label={def.navn}>
+            <span className="cd" style={{ height: `${e.left * 100}%` }} />
+            <span className="top">
+                <span className="rn-key">{def.tast}</span>
+                <span className="nm">{def.navn}</span>
+            </span>
+            <span className="sb">{sub}</span>
+        </button>
     );
 }

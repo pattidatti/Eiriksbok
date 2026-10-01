@@ -109,11 +109,33 @@ export const COMBAT = {
     flyØyne: 7,
 };
 
-// ---- Sperreild (ordre) -----------------------------------------------------
+// ---- Ordrene i bølgen: aktive evner med nedkjøling ------------------------------
+// Eleven gjør noe selv mens kampen går: styrer kompaniet, lar snikskytteren ta ett mål,
+// kaller inn sperreild og rakettfly. Alle er klare når bølgen starter, så lades de opp igjen.
+export type EvneId = 'kompani' | 'snik' | 'sperre' | 'rakett';
+export const EVNE_ORDEN: EvneId[] = ['kompani', 'snik', 'sperre', 'rakett'];
+export const EVNER: Record<EvneId, { navn: string; tast: string; cd: number; fra: [number, number]; hint: string }> = {
+    /** Cd for kompaniet = sekunder før et nytt kompani kommer fram når det er slått ut. */
+    kompani: { navn: 'Kompaniet', tast: '1', cd: 16, fra: [0, 0], hint: 'Klikk det, så dit det skal' },
+    snik: { navn: 'Snikskytter', tast: '2', cd: 12, fra: [0, 2], hint: 'Klikk en fiende du ser' },
+    /** Sperreilden finnes bare i bølgene som har `sperreild` i levels.ts. */
+    sperre: { navn: 'Sperreild', tast: '3', cd: 32, fra: [1, 2], hint: 'Klikk der nettet ser fienden' },
+    rakett: { navn: 'Rakettfly', tast: '4', cd: 38, fra: [3, 1], hint: 'Klikk fienden nettet ser' },
+};
+
+/** Kompaniet: en tropp infanteri eleven flytter selv (klikk det, klikk dit det skal).
+ *  Har egen radio: det kompaniet ser, ser nettet - uten å bruke en kanal. */
+export const KOMPANI = { hp: 130, fart: 1.5, range: 2.6, sight: 5.4, dps: { soft: 15, armor: 3, gun: 17, air: 0 } as Record<Armor, number> };
+
 export const ORDERS = {
-    sperreild: { forsinkelse: 2, radius: 1.8, skade: { soft: 120, armor: 90, gun: 120, air: 0 } as Record<Armor, number> },
-    /** Antall sperreild per slag. */
-    perSlag: 1,
+    /** Sperreild: ordre, så innskyting, så en salve med `granater` nedslag over `varighet` sekunder. */
+    sperreild: { forsinkelse: 2.6, radius: 1.9, granater: 14, varighet: 1.6, sprut: 0.95, skade: { soft: 36, armor: 26, gun: 36, air: 0 } as Record<Armor, number> },
+    /** Kortet «Mer ammunisjon»: sperreilden lades så mye fortere. */
+    sperreKort: 0.6,
+    /** Snikskytteren: sekunder han sikter, og skaden (dreper en infanterigruppe, mannskapet ved en kanon). */
+    snik: { sikt: 0.55, skade: { soft: 60, armor: 22, gun: 70, air: 0 } as Record<Armor, number> },
+    /** Rakettfly (Typhoon): flyr inn fra vest, stuper og skyter `raketter` langs en linje. */
+    rakett: { raketter: 8, lengde: 3.2, sprut: 0.8, fart: 7, skade: { soft: 40, armor: 70, gun: 55, air: 0 } as Record<Armor, number> },
 };
 
 // ---- Økonomi ----------------------------------------------------------------
@@ -143,7 +165,7 @@ export const SCORE = {
 export type KortId = 'kanal' | 'sperre' | 'forsyning' | 'speidere' | 'fly';
 export const KORT: Record<KortId, { tittel: string; tekst: string }> = {
     kanal: { tittel: 'Ny radiokanal', tekst: 'Kommandovogna får én kanal til.' },
-    sperre: { tittel: 'Mer ammunisjon', tekst: 'Én sperreild ekstra i hver bølge.' },
+    sperre: { tittel: 'Mer ammunisjon', tekst: 'Sperreilden lades nesten dobbelt så fort.' },
     forsyning: { tittel: 'Forsyninger', tekst: '+4 forsyninger etter hver bølge.' },
     speidere: { tittel: 'Speidere', tekst: 'Infanteriet ser 1,5 ruter lenger, også skjulte kanoner.' },
     fly: { tittel: 'Flystøtte', tekst: 'Jager- og bombefly slår 30 % hardere.' },
