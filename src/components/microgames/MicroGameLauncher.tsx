@@ -20,7 +20,7 @@ interface MicroGameLauncherProps {
     hook?: string;
     cover?: string;
     loading?: boolean;
-    // Kortet er kommet inn i bildet: lysstripen sveiper over én gang.
+    // Kortet er i bildet: «Spill»-knappen puster.
     inView?: boolean;
     /** Får kortets plass på skjermen, så innflygingen kan starte der (MicroGameIntro). */
     onStart: (from?: DOMRect) => void;
@@ -113,12 +113,6 @@ export function MicroGameLauncher({
                             aria-hidden
                             className="absolute inset-0 hidden sm:block bg-gradient-to-r from-slate-950/85 via-slate-950/40 to-transparent"
                         />
-                        <span
-                            aria-hidden
-                            className={`mg-launcher-sheen pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 ${
-                                inView ? 'mg-launcher-sheen--intro' : ''
-                            }`}
-                        />
                         {/* Mobil: bare knappen oppå bildet. */}
                         <span className="absolute right-3 bottom-3 sm:hidden">
                             {playButton(true)}
@@ -162,14 +156,6 @@ export function MicroGameLauncher({
                     <span
                         aria-hidden
                         className="pointer-events-none absolute inset-0 bg-gradient-to-r from-indigo-50 via-violet-50/60 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                    {/* Lysstripe som sveiper over kortet - én gang når det kommer inn
-                        i bildet, og igjen ved hover. Se .mg-launcher i index.css. */}
-                    <span
-                        aria-hidden
-                        className={`mg-launcher-sheen pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 ${
-                            inView ? 'mg-launcher-sheen--intro' : ''
-                        }`}
                     />
                     <span className="relative flex items-center gap-3 px-3.5 py-3 sm:px-4">
                         <motion.span

@@ -143,7 +143,7 @@ export function MicroGameBlock({
         if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
     }, []);
 
-    // Synlighet: tenn lysstripen første gang kortet ses, og hent spillet i
+    // Synlighet: la «Spill»-knappen puste når kortet ses, og hent spillet i
     // forkant hvis eleven blir værende i nærheten. (Må stå før early return.)
     React.useEffect(() => {
         const el = rootRef.current;
