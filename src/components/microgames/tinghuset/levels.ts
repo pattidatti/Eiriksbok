@@ -15,13 +15,15 @@ export interface Level {
     leirer: CampId[];
     /** Har brettet rettssal? */
     rettssal: boolean;
+    /** Så mange rettssaler åpner brettet (kortene kan gi én til). */
+    saler: number;
     /** Andel alvorlige saker (0 = bare grå mapper). */
     alvorlig: number;
     /** Kommer mappene i par med samme saksnummer? */
     par: boolean;
     /** Tykke økonomiske mapper? */
     tykk: boolean;
-    /** Sekunder mellom hver ny mappe. null = rampe fra TUNING.tilfang. */
+    /** Sekunder mellom hver ny mappe. null = kurven i TUNING.tilfang. */
     intervall: number | null;
     /** Sinnet kan ikke gå over dette (brett 1 og 2 kan ikke tapes). */
     sinneTak: number;
@@ -39,6 +41,7 @@ export const LEVELS: Level[] = [
         sekPerMnd: 25,
         leirer: ['ILEBU'],
         rettssal: false,
+        saler: 0,
         alvorlig: 0,
         par: false,
         tykk: false,
@@ -54,10 +57,11 @@ export const LEVELS: Level[] = [
         sekPerMnd: 10,
         leirer: ['ILEBU', 'AKERSHUS'],
         rettssal: true,
+        saler: 1,
         alvorlig: TUNING.tilfang.alvorligAndel,
         par: false,
         tykk: false,
-        intervall: 3,
+        intervall: null,
         sinneTak: 0.85,
         linjal: false,
         protokoll: 'Sommeren 1945. Nå kommer angiverne og statspolitiet. De må for retten.',
@@ -69,10 +73,11 @@ export const LEVELS: Level[] = [
         sekPerMnd: 7,
         leirer: ['ILEBU', 'AKERSHUS'],
         rettssal: true,
+        saler: 2,
         alvorlig: TUNING.tilfang.alvorligAndel,
         par: true,
         tykk: false,
-        intervall: 2.2,
+        intervall: null,
         sinneTak: 1,
         linjal: true,
         protokoll: 'Høsten 1945. To som gjorde det samme, skal få samme straff.',
@@ -84,6 +89,7 @@ export const LEVELS: Level[] = [
         sekPerMnd: 4,
         leirer: ['ILEBU', 'AKERSHUS', 'FALSTAD'],
         rettssal: true,
+        saler: 4,
         alvorlig: TUNING.tilfang.alvorligAndel,
         par: true,
         tykk: true,

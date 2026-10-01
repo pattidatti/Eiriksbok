@@ -16,15 +16,16 @@ Eierens bestilling: ingen (`/tmp/bestilling.txt` var tom).
 
 Fem konsepter, alle i tonen `alvorlig`. Dommer: fersk underagent, runde 1.
 
-| # | Konsept | Sjanger / perspektiv / eleven er | Gøy | Fag |
-|---|---|---|---|---|
-| 1 | **Tinghuset** - dra linjer fra leirene til skranker (forelegg, rettssak) og få 90 000 saker gjennom før sinnet tar over | sanntids logistikk (Mini Metro møter Overcooked) / kart ovenfra, 2D / en institusjon | 4 | 4 |
-| 2 | **Torget** - gjet en sint folkemengde inn i tinghuset før det blir hevn i gatene | folkemengde-sim / isometrisk 3D / én politimann | 3 | 2 |
-| 3 | **Vekten** - legg straff-lodd på rettferdighetens vekt mens sinne-vinden vil vippe den | fysikk-puslespill / fra siden, 2D / en ting (vekten) | 3 | 4 |
-| 4 | **Pengesporet** - koble kvitteringer og kontrakter med røde tråder før bevisene brennes | detektiv / oppslagstavle forfra, 2D / en gransker | 2 | 3 |
-| 5 | **Anordningen** - fly som lovteksten fra London til Norge før folk dømmer selv | flyging / tredjeperson 3D / en ting (loven) | 3 | 1 |
+| #   | Konsept                                                                                                                 | Sjanger / perspektiv / eleven er                                                     | Gøy | Fag |
+| --- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --- | --- |
+| 1   | **Tinghuset** - dra linjer fra leirene til skranker (forelegg, rettssak) og få 90 000 saker gjennom før sinnet tar over | sanntids logistikk (Mini Metro møter Overcooked) / kart ovenfra, 2D / en institusjon | 4   | 4   |
+| 2   | **Torget** - gjet en sint folkemengde inn i tinghuset før det blir hevn i gatene                                        | folkemengde-sim / isometrisk 3D / én politimann                                      | 3   | 2   |
+| 3   | **Vekten** - legg straff-lodd på rettferdighetens vekt mens sinne-vinden vil vippe den                                  | fysikk-puslespill / fra siden, 2D / en ting (vekten)                                 | 3   | 4   |
+| 4   | **Pengesporet** - koble kvitteringer og kontrakter med røde tråder før bevisene brennes                                 | detektiv / oppslagstavle forfra, 2D / en gransker                                    | 2   | 3   |
+| 5   | **Anordningen** - fly som lovteksten fra London til Norge før folk dømmer selv                                          | flyging / tredjeperson 3D / en ting (loven)                                          | 3   | 1   |
 
 **Dommerens begrunnelse (kort).**
+
 - Tinghuset: å tegne linjer og se mappene flyte er et sterkt verb som forstås med én gang, og
   mengden saker gjør at også en flink spiller kommer i fare. Kø, ventetid og at like saker får ulik
   dom etter når de kommer opp, er selve regelen. Trekk: for mange regler (minst fem), sinnet virker
@@ -39,6 +40,7 @@ Fem konsepter, alle i tonen `alvorlig`. Dommer: fersk underagent, runde 1.
 **Vinner: 1 Tinghuset.**
 
 **Løftet (til 5 på Gøy), slik dommeren skrev det:**
+
 1. Bare tre regler: rettssak er rettferdig men treg; forelegg er raskt men for mildt i alvorlige
    saker; kalenderen går 1945 til 1948, og straffenivået blir mildere for hver måned. Kutt
    granskerne som egen regel.
@@ -50,7 +52,7 @@ Fem konsepter, alle i tonen `alvorlig`. Dommer: fersk underagent, runde 1.
 4. Poeng uten tak: rekorden er antall saker avgjort med jevn straff.
 
 Alle fire punktene er innarbeidet under. Den faglige innvendingen er rettet: køen gjør ingen straff
-mildere. Kalenderen senker straffenivået for alle saker samtidig, og køen avgjør bare *når* i
+mildere. Kalenderen senker straffenivået for alle saker samtidig, og køen avgjør bare _når_ i
 kalenderen en sak blir avgjort.
 
 ## Designbrief
@@ -69,51 +71,51 @@ kalenderen en sak blir avgjort.
    vanskelige sakene.
 
 3. **Fagkjernen - tre regler eleven må huske (og ikke flere):**
-   - **Rettssak er rettferdig, men treg.** Hvis du sender en sak til rettssalen, får den riktig
-     straff, men salen tar bare én sak av gangen (5 s per sak, 10 s for en tykk økonomisk mappe),
-     og resten står i kø.
-   - **Forelegg er raskt, men for mildt for alvorlige saker.** Hvis du gir forelegg til et vanlig
-     NS-medlem, er det riktig og tar 1 s. Hvis du gir forelegg til en angiver eller en fra
-     statspolitiet, slipper de for lett - sinnet hopper med en gang, og lappen stemples «FOR MILDT».
-   - **Kalenderen gjør straffene mildere måned for måned.** Straffenivået står under kalenderen og
-     synker fra 100 % i mai 1945 til rundt 50 % i 1948 (forenkling: i virkeligheten varierte det
-     fra sak til sak, men retningen var den samme). Hvis to like saker blir avgjort med mange
-     måneder imellom, får de ulik straff - ikke fordi den ene sto i kø, men fordi straffenivået i
-     landet sank mens den ventet.
+    - **Rettssak er rettferdig, men treg.** Hvis du sender en sak til rettssalen, får den riktig
+      straff, men salen tar bare én sak av gangen (5 s per sak, 10 s for en tykk økonomisk mappe),
+      og resten står i kø.
+    - **Forelegg er raskt, men for mildt for alvorlige saker.** Hvis du gir forelegg til et vanlig
+      NS-medlem, er det riktig og tar 1 s. Hvis du gir forelegg til en angiver eller en fra
+      statspolitiet, slipper de for lett - sinnet hopper med en gang, og lappen stemples «FOR MILDT».
+    - **Kalenderen gjør straffene mildere måned for måned.** Straffenivået står under kalenderen og
+      synker fra 100 % i mai 1945 til rundt 50 % i 1948 (forenkling: i virkeligheten varierte det
+      fra sak til sak, men retningen var den samme). Hvis to like saker blir avgjort med mange
+      måneder imellom, får de ulik straff - ikke fordi den ene sto i kø, men fordi straffenivået i
+      landet sank mens den ventet.
 
-   «Like saker» er konkret: mappene kommer i **par** med samme saksnummer (to personer som gjorde
-   omtrent det samme, arrestert i hver sin leir). Et par er **jevnt** når begge avgjøres samme vei
-   og innen 2 måneder av hverandre. Ellers er det **ulikt**, og de to dommerlappene legges side om
-   side midt på skjermen i 1,5 s uten at spillet stopper: «Sak 41. Juni 1945: 6 år fengsel. Mars
-   1947: 3 år fengsel. Samme handling.» Regelen kan ikke byttes ut uten at spillet endres: hele
-   kunsten er å holde parene samlet i tid mens kalenderen går.
+    «Like saker» er konkret: mappene kommer i **par** med samme saksnummer (to personer som gjorde
+    omtrent det samme, arrestert i hver sin leir). Et par er **jevnt** når begge avgjøres samme vei
+    og innen 2 måneder av hverandre. Ellers er det **ulikt**, og de to dommerlappene legges side om
+    side midt på skjermen i 1,5 s uten at spillet stopper: «Sak 41. Juni 1945: 6 år fengsel. Mars
+    1947: 3 år fengsel. Samme handling.» Regelen kan ikke byttes ut uten at spillet endres: hele
+    kunsten er å holde parene samlet i tid mens kalenderen går.
 
 4. **Presset og valgene.**
-   - *Eskalerer:* nye mapper kommer stadig raskere uten øvre grense (fra én per 4 s i mai 1945 til
-     under én per 0,6 s i 1948, og videre). Nye leirer åpner (Ilebu, Akershus, Falstad). Køen foran
-     rettssalen vokser synlig som en stabel.
-   - *Sinnet* er én rødblyant-måler i høyre marg. Den stiger med én tydelig årsak hver: **hver
-     mappe som venter uten dom** (i leir eller kø) fyller den litt hvert sekund - jo flere
-     mapper på arket, jo raskere stiger den; og **hvert forelegg på en alvorlig sak** gir et hopp
-     på 12 %. En alvorlig sak avgjort i rettssalen trekker den ned 3 %. Ingen skjulte kjeder.
-   - *Valg minst hvert 10. sekund (målt i selvspillet):* hver ny mappe er et valg (forelegg eller
-     rettssak, nå eller etter tvillingen), hvilken sak som får rettssalen først, og når et par skal
-     sendes. Hver tredje måned (ca. 12-15 s) kommer tre kortlapper opp nederst; spillet går videre i
-     30 % fart mens eleven velger (velger eleven ikke innen 8 s, legges kortene bort). Kortene:
-     *Ny rettssal* (én skranke til), *Flere dommere* (rettssaler 25 % raskere), *Fast rute* (en
-     strek som blir stående og sender lette saker fra én leir til forelegg av seg selv), *Felles
-     behandling* (et par i samme rettssal avgjøres samtidig), *Ny forelegg-skranke*. Eleven venter
-     aldri: det er alltid en mappe å sende eller et par å vokte.
+    - _Eskalerer:_ nye mapper kommer stadig raskere uten øvre grense (fra én per 4 s i mai 1945 til
+      under én per 0,6 s i 1948, og videre). Nye leirer åpner (Ilebu, Akershus, Falstad). Køen foran
+      rettssalen vokser synlig som en stabel.
+    - _Sinnet_ er én rødblyant-måler i høyre marg. Den stiger med én tydelig årsak hver: **hver
+      mappe som venter uten dom** (i leir eller kø) fyller den litt hvert sekund - jo flere
+      mapper på arket, jo raskere stiger den; og **hvert forelegg på en alvorlig sak** gir et hopp
+      på 12 %. En alvorlig sak avgjort i rettssalen trekker den ned 3 %. Ingen skjulte kjeder.
+    - _Valg minst hvert 10. sekund (målt i selvspillet):_ hver ny mappe er et valg (forelegg eller
+      rettssak, nå eller etter tvillingen), hvilken sak som får rettssalen først, og når et par skal
+      sendes. Hver tredje måned (ca. 12-15 s) kommer tre kortlapper opp nederst; spillet går videre i
+      30 % fart mens eleven velger (velger eleven ikke innen 8 s, legges kortene bort). Kortene:
+      _Ny rettssal_ (én skranke til), _Flere dommere_ (rettssaler 25 % raskere), _Fast rute_ (en
+      strek som blir stående og sender lette saker fra én leir til forelegg av seg selv), _Felles
+      behandling_ (et par i samme rettssal avgjøres samtidig), _Ny forelegg-skranke_. Eleven venter
+      aldri: det er alltid en mappe å sende eller et par å vokte.
 
 5. **Tap (sinnet sprekker), med to årsaker som hver gir sitt tips.** Måleren husker hvor fyllet kom
    fra (to nyanser av rødt i streken), og tapsskjermen nevner den største:
-   - **«Folk satt for lenge uten dom.»** Tips: «Rundt 17 000 havnet i fengsel, og mange satt i
-     månedsvis før saken kom opp. Gi forelegg til vanlige medlemssaker - da er rettssalen ledig for
-     de alvorlige.»
-   - **«Alvorlige saker slapp for lett.»** Tips: «Et forelegg er en straff påtalemyndigheten
-     foreslår, og det passer for små saker. Angivere og statspoliti måtte for retten.»
-   Begge tapsskjermene har samme saklige linje nederst: «Når sinnet tar over, blir folk straffet
-   uten dom. I 1945 skjedde det med tusenvis av kvinner som ikke hadde brutt noen lov.»
+    - **«Folk satt for lenge uten dom.»** Tips: «Rundt 17 000 havnet i fengsel, og mange satt i
+      månedsvis før saken kom opp. Gi forelegg til vanlige medlemssaker - da er rettssalen ledig for
+      de alvorlige.»
+    - **«Alvorlige saker slapp for lett.»** Tips: «Et forelegg er en straff påtalemyndigheten
+      foreslår, og det passer for små saker. Angivere og statspoliti måtte for retten.»
+      Begge tapsskjermene har samme saklige linje nederst: «Når sinnet tar over, blir folk straffet
+      uten dom. I 1945 skjedde det med tusenvis av kvinner som ikke hadde brutt noen lov.»
 
 6. **Seier.** Kalenderen når august 1948 uten at sinnet har sprukket: «Oppgjøret ble ordnet med lov
    og dom.» Da har eleven vunnet, uansett poeng. Seiersskjermen viser elevens to tall (saker avgjort,
@@ -122,22 +124,22 @@ kalenderen en sak blir avgjort.
    nok. De var delt nesten på midten.»
 
 7. **En runde til.**
-   - *Poeng uten tak:* jevnt par = 100 × multiplikator; alvorlig sak i rettssal = 20; lett sak med
-     forelegg = 10. Ingen poeng for hvor streng straffen er. Siden tilfanget vokser uten grense, er
-     det ikke noe tak.
-   - *Multiplikator* ×1 til ×5: øker for hvert jevne par på rad, nullstilles av et ulikt par eller
-     et forelegg på en alvorlig sak.
-   - *Rekord:* antall jevne dommer (par) i én runde, pluss beste poeng.
-   - *Ranger* (etter jevne dommer): Kontorbud (0), Skrivemaskinist (10), Arkivar (25),
-     Politifullmektig (45), Statsadvokat (70), Riksadvokat (100+).
-   - *Funn: protokollblad* (ti, samles på tvers av runder i en saksmappe på startskjermen). Hvert blad
-     låses opp av en handling og er én setning fagstoff: landssvikanordningen 15. desember 1944
-     (første mappe), tilbakevirkende kraft for NS-medlemskap (første medlemssak), forelegg (første
-     forelegg), 92 805 saker (100 avgjort i én runde), Sørensen-sitatet om at dødsdommer fra
-     1945-46 neppe ville kommet i 1948 (første ulike par), 17 000 i fengsel og de siste ut i 1957
-     (rettssalen har 5 i kø), økonomisk landssvik og 3 262 dømte (første tykke mappe i retten),
-     Rinnanbanden og statspolitiet (10 alvorlige saker i rettssal), tyskerjentene og unnskyldningen
-     i 2018 (første tap), juristene i 1950 (første seier).
+    - _Poeng uten tak:_ jevnt par = 100 × multiplikator; alvorlig sak i rettssal = 20; lett sak med
+      forelegg = 10. Ingen poeng for hvor streng straffen er. Siden tilfanget vokser uten grense, er
+      det ikke noe tak.
+    - _Multiplikator_ ×1 til ×5: øker for hvert jevne par på rad, nullstilles av et ulikt par eller
+      et forelegg på en alvorlig sak.
+    - _Rekord:_ antall jevne dommer (par) i én runde, pluss beste poeng.
+    - _Ranger_ (etter jevne dommer): Kontorbud (0), Skrivemaskinist (10), Arkivar (25),
+      Politifullmektig (45), Statsadvokat (70), Riksadvokat (100+).
+    - _Funn: protokollblad_ (ti, samles på tvers av runder i en saksmappe på startskjermen). Hvert blad
+      låses opp av en handling og er én setning fagstoff: landssvikanordningen 15. desember 1944
+      (første mappe), tilbakevirkende kraft for NS-medlemskap (første medlemssak), forelegg (første
+      forelegg), 92 805 saker (100 avgjort i én runde), Sørensen-sitatet om at dødsdommer fra
+      1945-46 neppe ville kommet i 1948 (første ulike par), 17 000 i fengsel og de siste ut i 1957
+      (rettssalen har 5 i kø), økonomisk landssvik og 3 262 dømte (første tykke mappe i retten),
+      Rinnanbanden og statspolitiet (10 alvorlige saker i rettssal), tyskerjentene og unnskyldningen
+      i 2018 (første tap), juristene i 1950 (første seier).
 
 8. **Sjanger, perspektiv og 2D/3D.** Sanntids logistikk og sortering (Mini Metro møter Overcooked).
    Bordplate rett ovenfra: et protokollark på et skrivebord. **2D canvas.** Begrunnelse: bildekulturen
@@ -184,23 +186,24 @@ kalenderen en sak blir avgjort.
       tilfanget øker til seieren. Etter første seier kan eleven hoppe rett til mars 1946.
 
 **Sjekk mot guiden.**
-- *Er kjerneverbet deilig i seg selv?* Ja: en strek med skrapelyd, glid og stempeldunk er en
+
+- _Er kjerneverbet deilig i seg selv?_ Ja: en strek med skrapelyd, glid og stempeldunk er en
   fullført handling på under ett sekund, og den gjentas hundrevis av ganger uten å bli seig fordi
   hver mappe er et lite valg.
-- *Er fagkjernen en REGEL som avgjør om man vinner?* Ja: den som sender alt til retten, drukner i kø
+- _Er fagkjernen en REGEL som avgjør om man vinner?_ Ja: den som sender alt til retten, drukner i kø
   og taper på ventetid; den som gir alt forelegg, taper på alvorlige saker som slipper for lett; den
   som ikke forstår at straffenivået synker med kalenderen, får ulike par og mister multiplikatoren.
   Bare den som bruker forelegg på lette saker, retten på alvorlige og holder parene samlet i tid,
   får høye poeng.
-- *Nytt valg minst hvert 10. sekund?* Ja: fra brett 2 kommer en mappe hvert 2-3 s, kortvalg hvert
+- _Nytt valg minst hvert 10. sekund?_ Ja: fra brett 2 kommer en mappe hvert 2-3 s, kortvalg hvert
   12-15 s. Brett 1 er bevisst tynnere (én mappe per 4 s).
-- *Stiger presset?* Ja: tilfanget øker uten tak, nye leirer og mappetyper, rettssalkøen vokser, og
+- _Stiger presset?_ Ja: tilfanget øker uten tak, nye leirer og mappetyper, rettssalkøen vokser, og
   sinnet fylles raskere jo flere mapper som ligger.
 
-**Robotene (til simuleringen).** *Seende:* forelegg til grå, retten til røde og tykke, sender
-tvillinger rett etter hverandre, velger Ny rettssal og Fast rute - vinner, mange jevne par. *Taper
-A:* alt til retten - taper på «satt for lenge uten dom». *Taper B:* alt til forelegg - taper på
-«slapp for lett». *Knappemoser:* tilfeldige streker - taper tidlig. Porten: seende > A og B på
+**Robotene (til simuleringen).** _Seende:_ forelegg til grå, retten til røde og tykke, sender
+tvillinger rett etter hverandre, velger Ny rettssal og Fast rute - vinner, mange jevne par. _Taper
+A:_ alt til retten - taper på «satt for lenge uten dom». _Taper B:_ alt til forelegg - taper på
+«slapp for lett». _Knappemoser:_ tilfeldige streker - taper tidlig. Porten: seende > A og B på
 seier og jevne par, og A og B taper på hver sin årsak.
 
 ## Kunstbrief
@@ -212,13 +215,13 @@ seier og jevne par, og A og B taper på hver sin årsak.
    haster). Tre kjennetegn: ujevn maskinskrift med fargebånd som går tomt, fiolett stempelblekk som
    ikke dekker helt, og grove blyantstreker oppå det maskinskrevne.
 2. **Palett.**
-   - `#d9dad2` gjennomslagspapir, kjølig grå (bakgrunn, arket)
-   - `#2a2731` fargebånd-svart med fiolett skjær (maskinskrift, konturer, tall)
-   - `#5b3e8c` stempelfiolett (skranker, stempler, kalender; avgjort-farge som blekner:
-     100 % blekk i 1945, 75 % i 1946, 50 % i 1947, 30 % i 1948)
-   - `#2e5b98` blåblyant (elevens streker, faste ruter, «jevnt»)
-   - `#b3342a` rødblyant (sinnemåleren, røde hjørner på alvorlige mapper, «FOR MILDT»)
-   - `#b49a62` arkivpapp (mappene)
+    - `#d9dad2` gjennomslagspapir, kjølig grå (bakgrunn, arket)
+    - `#2a2731` fargebånd-svart med fiolett skjær (maskinskrift, konturer, tall)
+    - `#5b3e8c` stempelfiolett (skranker, stempler, kalender; avgjort-farge som blekner:
+      100 % blekk i 1945, 75 % i 1946, 50 % i 1947, 30 % i 1948)
+    - `#2e5b98` blåblyant (elevens streker, faste ruter, «jevnt»)
+    - `#b3342a` rødblyant (sinnemåleren, røde hjørner på alvorlige mapper, «FOR MILDT»)
+    - `#b49a62` arkivpapp (mappene)
 3. **Form og overflate.** Alt er flatt papir med fiberkorn. Mappene er små rektangler i arkivpapp
    med et maskinskrevet saksnummer, litt skjevt lagt (±3 grader), med kort mørk kant og en tynn
    skygge under når de glir. Alvorlige mapper har et rødblyant-hjørne; økonomiske er tykkere med en
@@ -286,6 +289,7 @@ Nettleseren: seende vant med 31 370 poeng (innenfor simuleringens bånd), JS 1,2
 Chromebook-takt. Portfunn som gjenstår: cover og «bildet står stille uten input» (juice/kunst-fasen).
 
 **Det som IKKE virket.**
+
 - Kjøring 1: sinnet fra ventende mapper var for svakt (0,0012 per mappe per s), og kortene kunne gi
   ubegrenset med rettssaler og dommere (10 saler, 6 dommere = 0,9 s per rettssak). Alt-til-retten vant
   80 % og knappemoseren 10 %.
@@ -296,6 +300,7 @@ Chromebook-takt. Portfunn som gjenstår: cover og «bildet står stille uten inp
   kortvalg når bunken er tom.
 
 **Kjente svakheter (til gråboks-diagnosen).**
+
 - Vinnerroboten tar fem grep i sekundet og er aldri i fare (høyeste sinne rundt 0,05). På bildene midt
   i runden er arket nesten tomt. Presset kjennes bare av en elev som drar tregere enn roboten. Den
   halvgode (ett grep i sekundet) når 0,2 i sinne. Vurder et tettere tilfang eller færre kort, så også
@@ -304,3 +309,50 @@ Chromebook-takt. Portfunn som gjenstår: cover og «bildet står stille uten inp
 - Fast rute legges automatisk på neste leir uten rute; eleven velger ikke leiren ennå.
 - Mappene farges ikke etter året de avgjøres i ennå, og lappene for ulike par vises bare som en boks.
 - Tvillingen kommer 0,3-2,5 s etter den første, så valget «vent på tvillingen» er lite i praksis.
+
+### 2026-10-01 - Gråboks-diagnose 1 (fase 3a), byggmester
+
+**Gjort.** Diagnosens tre endringer i kjerneløkka, ingenting annet.
+
+1. Tilfanget følger en kurve i `tuning.ts` (`tilfang.kurve`): 1 mappe per 3 s i juni 1945, 1 per
+   1,5 s i januar 1946, 1 per 0,8 s i 1947 og 1 per 0,65 s i august 1948. Brettene åpner selv
+   rettssalene (`saler` i `levels.ts`: 1, 2 og 4), og kortene gir bare én sal til (ca. 20 % ved
+   fire saler). Dommere- og forelegg-kortene er tatt ut av bunken (seks skranker får plass på
+   arket). Rettssak 9 s (tykk 18 s), forelegg 0,8 s. Fast rute tok allerede bare lette saker.
+2. Tvillingen kommer 5-14 s etter den første. En mappe som venter i leiren på tvillingen sin, gir
+   1,5x sinne og har «x1,5» under seg. Ulikt par viser to lapper med rødt stempel «ULIK DOM» og
+   straffenivået hver dom fikk (2,5 s).
+3. Multiplikatoren går til x10 og faller til x1 ved ulikt par eller forelegg i alvorlig sak.
+   Robotene: seende venter opptil 5 s på tvillingen, sender tvillingen straks den kommer og legger den
+   i samme sal med Felles behandling. Halvgod er treg (hvert fjerde tick), tar mappene i tilfeldig
+   rekkefølge, husker tvillingen bare halve tiden, venter bare 2,5 s og velger kortest synlig kø med
+   en bom hver fjerde gang (før: alltid første sal, som ble håpløst med fire saler).
+
+**Simuleringen (200 runder per robot), grønn:** seende vinner 100 % (median 18 520), halvgod 77 %
+(median 11 500 = 62 % av vinneren), alt-til-retten 0 % (170), alt-til-forelegg 0 % (600),
+knappemoser 0 % (370), passiv 0 %. 50,3 valg per minutt. Presset 0,14 -> 0,42 -> 0,71. Seendes
+gjennomsnittlige sinne per tidel av kalenderen: 0,00 0,07 0,19 0,26 0,32 0,35 0,38 0,42 0,46 0,51
+(høyeste median 0,54). Halvgod ender rundt 0,5 og taper mest i 1948.
+Nettleseren (fart 4): seende vant med 10 100 poeng, under simuleringens p10 (14 260). Cover og
+«bildet står stille uten input» er fortsatt portfunn (ventet).
+
+**Det som IKKE virket.**
+
+- Seende uten venting på tvillingen: aldri sint (høyeste 0,07), men bare 11 000 poeng. Med 7 s
+  venting: sinnet gikk til 0,7 midt i runden og seende tapte 41 %. 5 s ga både poeng og fare.
+- Sinne 0,004 per mappe og 0,03 lettelse per rettssak: sinnet hoppet mellom null og fullt (enten
+  rakk salene unna eller ikke). 0,0025 og 0,015 ga en jevn stigning. 0,003 og 0,015 ga seende bare
+  79 % seier.
+- Rettssak 8 s og slutt på 0,7 s: salene rakk fortsatt unna i 1948, sinnet sto flatt.
+- Halvgod som aldri ventet på tvillingen: 50 % av vinneren (for langt nede, nesten bare ulike par).
+
+**Kjente svakheter.**
+
+- Fast rute venter ikke på tvillingen, så lette par blir ofte ulike når ruten tar dem. Det er et
+  ekte valg, men på bildet fra februar 1947 har alle tre leirene fast rute (bunken er tom etter fem
+  kort) og multiplikatoren står på x1. Trolig derfor nettleserrunden fikk færre poeng enn
+  simuleringen. Vurder om ruten skal vente på tvillingen, eller om rute-kortet skal være færre.
+- Seende er sintere enn halvgod midt i runden, fordi den venter på tvillingene. Det er dilemmaet,
+  men en elev kan lese det som at god spilling straffes.
+- I 1947 kan salene stå tomme et øyeblikk mellom bølgene; presset kommer mest fra leirene.
+- Vinduet på to måneder er 8 s i brett 4 (4 s per måned), ikke 15 s som diagnosen antok.

@@ -18,12 +18,12 @@ export const BOT_INFO = {
     seende: {
         forventer: 'vinner',
         beskrivelse:
-            'Forelegg til grå mapper, retten til røde og tykke, sender tvillingen rett etter den første og velger Ny rettssal og Fast rute.',
+            'Forelegg til grå mapper, retten til røde og tykke, venter opptil 5 s på tvillingen, sender tvillingen straks den kommer og velger Ny rettssal og Felles behandling.',
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger reglene, men handler bare hvert fjerde tick, tar mappene i tilfeldig rekkefølge og velger kort på måfå.',
+            'Følger reglene, men handler bare hvert fjerde tick, tar mappene i tilfeldig rekkefølge, venter bare 2,5 s på tvillingen, bommer av og til på skranken og velger kort på måfå.',
     },
     'alt-rett': {
         forventer: 'taper',

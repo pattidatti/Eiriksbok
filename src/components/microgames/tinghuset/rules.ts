@@ -6,6 +6,7 @@
 // Her står grepene eleven gjør (send, velg kort) og hva som skjer når en sak avgjøres.
 
 import { TUNING } from './tuning';
+import { LEVELS } from './levels';
 import {
     folderById,
     type CardId,
@@ -104,12 +105,13 @@ export function applyCard(g: Game, c: CardId) {
 
 /** Tre kort å velge mellom. Det første kortvalget er fast: svaret på køen eleven nettopp så. */
 export function makeOffer(g: Game): CardId[] {
-    if (g.offers === 0) return ['rettssal', 'dommere', 'rute'];
+    if (g.offers === 0) return ['rettssal', 'rute', 'felles'];
     const pool: CardId[] = [];
     if (g.dommere < K.skranke.maksDommere) pool.push('dommere');
     const count = (k: Route) => g.desks.filter((d) => d.kind === k).length;
-    if (count('rett') < K.skranke.maksSaler) pool.push('rettssal');
-    if (count('forelegg') < K.skranke.maksForelegg) pool.push('forelegg');
+    // Kortene gir bare litt mer enn det brettet selv åpner (se maksSaler i tuning.ts).
+    if (count('rett') < LEVELS[g.level].saler + K.skranke.maksSaler) pool.push('rettssal');
+    if (count('forelegg') < 1 + K.skranke.maksForelegg) pool.push('forelegg');
     if (g.ruter.length < g.camps.length) pool.push('rute');
     if (!g.felles) pool.push('felles');
     const out: CardId[] = [];

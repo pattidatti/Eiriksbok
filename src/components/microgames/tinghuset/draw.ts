@@ -107,7 +107,7 @@ export function deskAt(g: Game, x: number, y: number): number {
 
 export const CARD_TEXT: Record<CardId, [string, string]> = {
     rettssal: ['Ny rettssal', 'Én rettssal til'],
-    dommere: ['Flere dommere', 'Rettssalene 25 % raskere'],
+    dommere: ['Flere dommere', 'Rettssalene 10 % raskere'],
     rute: ['Fast rute', 'Grå mapper fra én leir går til forelegg av seg selv'],
     felles: ['Felles behandling', 'Et par i samme rettssal avgjøres samtidig'],
     forelegg: ['Ny forelegg-skranke', 'Én forelegg-skranke til'],
@@ -119,6 +119,9 @@ export function verdictText(v: Verdict): string {
     if (v.route === 'forelegg') return `${when}: ${v.mild ? 'bot - FOR MILDT' : 'bot'}`;
     return `${when}: ${String(v.aar).replace('.', ',')} år fengsel`;
 }
+
+/** Så lenge (s) lappene for et ulikt par ligger oppe. */
+export const LAPP_TID = 2.5;
 
 export interface ViewState {
     drag: { id: number; x: number; y: number } | null;
@@ -165,6 +168,9 @@ function folder(ctx: CanvasRenderingContext2D, f: Folder, x: number, y: number, 
         ctx.fill();
     }
     label(ctx, String(f.sak), x - 4, y + 1, 11, INK, 'center');
+    // Venter på tvillingen sin: folk blir sintere av den (x1,5).
+    if (f.twin === -1 && f.state === 'leir')
+        label(ctx, 'x1,5', x, r.y + r.h + 7, 10, RED, 'center');
 }
 
 export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, now: number) {
@@ -285,15 +291,26 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, n
     );
     label(ctx, `${Math.floor(g.score)} poeng  ×${g.mult}`, W - 20, H - 18, 14, VIOLET, 'right');
 
-    // Ulike par: lappene side om side midt på skjermen.
+    // Ulike par: lappene side om side midt på skjermen, med rødt stempel «ULIK DOM» på begge
+    // og straffenivået som skilte dem.
     const lapp = v.lapper[v.lapper.length - 1];
-    if (lapp && now - lapp.t < 1.5) {
-        const r = { x: W / 2 - 200, y: 200, w: 400, h: 96 };
-        box(ctx, r, '#f2f1ea', RED, 3);
-        label(ctx, `SAK ${lapp.a.sak}. SAMME HANDLING.`, W / 2, r.y + 18, 14, RED, 'center');
-        label(ctx, verdictText(lapp.a), W / 2, r.y + 44, 14, INK, 'center', false);
-        label(ctx, verdictText(lapp.b), W / 2, r.y + 66, 14, INK, 'center', false);
-        label(ctx, 'ULIK STRAFF', W / 2, r.y + 86, 12, RED, 'center');
+    if (lapp && now - lapp.t < LAPP_TID) {
+        label(ctx, `SAK ${lapp.a.sak}. SAMME HANDLING.`, W / 2, 196, 15, RED, 'center');
+        [lapp.a, lapp.b].forEach((d, k) => {
+            const r = { x: W / 2 - 214 + k * 220, y: 212, w: 208, h: 92 };
+            box(ctx, r, '#f2f1ea', INK, 2);
+            label(ctx, verdictText(d), r.x + r.w / 2, r.y + 22, 13, INK, 'center', false);
+            const prosent = Math.round(straffNivaa(d.mnd) * 100);
+            label(ctx, `straffenivå ${prosent} %`, r.x + r.w / 2, r.y + 44, 13, VIOLET, 'center');
+            ctx.save();
+            ctx.translate(r.x + r.w / 2, r.y + 70);
+            ctx.rotate(-0.12);
+            ctx.strokeStyle = RED;
+            ctx.lineWidth = 3;
+            ctx.strokeRect(-70, -14, 140, 28);
+            label(ctx, 'ULIK DOM', 0, 1, 18, RED, 'center');
+            ctx.restore();
+        });
     }
 
     // Kortvalget.

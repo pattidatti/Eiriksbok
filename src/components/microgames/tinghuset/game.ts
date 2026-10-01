@@ -16,8 +16,16 @@ const K = TUNING;
 export function interval(g: Game): number {
     const lv = LEVELS[g.level];
     if (lv.intervall !== null) return lv.intervall;
-    const p = (g.mnd - lv.fraMnd) / (lv.tilMnd - lv.fraMnd);
-    return K.tilfang.senStart + (K.tilfang.senSlutt - K.tilfang.senStart) * p;
+    // Kurven: lineært mellom punktene [måned, sekunder], flat før første og etter siste.
+    const k = K.tilfang.kurve;
+    if (g.mnd <= k[0][0]) return k[0][1];
+    for (let i = 1; i < k.length; i++) {
+        const [m1, s1] = k[i];
+        if (g.mnd > m1) continue;
+        const [m0, s0] = k[i - 1];
+        return s0 + ((s1 - s0) * (g.mnd - m0)) / (m1 - m0);
+    }
+    return k[k.length - 1][1];
 }
 
 /** 0-1: hvor hardt spillet presser nå - tilfanget og sinnet. */
@@ -30,6 +38,17 @@ export function pressure(g: Game): number {
 export function waiting(g: Game): number {
     let n = 0;
     for (const f of g.folders) if (f.state === 'leir' || f.state === 'ko') n++;
+    return n;
+}
+
+/** Hvor mye de ventende mappene veier i sinnet: en mappe i leiren som venter på tvillingen
+ *  sin (den har ikke kommet ennå), veier `ventTvilling`, de andre 1. */
+export function waitWeight(g: Game): number {
+    let n = 0;
+    for (const f of g.folders) {
+        if (f.state === 'leir') n += f.twin === -1 ? K.sinne.ventTvilling : 1;
+        else if (f.state === 'ko') n++;
+    }
     return n;
 }
 
@@ -120,7 +139,10 @@ function nextLevel(g: Game) {
             g.camps.push(c);
             g.events.push({ kind: 'leir', camp: c });
         }
-    if (lv.rettssal && !g.desks.some((d) => d.kind === 'rett'))
+    // Brettet åpner sine rettssaler. Salene eleven har fått fra kort, kommer i tillegg.
+    const saler = g.desks.filter((d) => d.kind === 'rett').length;
+    const fraKort = Math.max(0, saler - LEVELS[g.level - 1].saler);
+    for (let i = saler; i < lv.saler + fraKort; i++)
         g.desks.push({ kind: 'rett', queue: [], current: null, joint: null, left: 0, total: 0 });
     g.inter = K.mellomside;
     g.spawnT = Math.min(g.spawnT, 0.8);
@@ -161,7 +183,7 @@ export function update(g: Game, dt: number) {
     runRoutes(g, sdt);
 
     // Sinnet: hver mappe som venter uten dom fyller måleren litt hvert sekund.
-    const add = K.sinne.ventPerMappe * waiting(g) * sdt;
+    const add = K.sinne.ventPerMappe * waitWeight(g) * sdt;
     g.sinne += add;
     g.fraVent += add;
     g.sinne = Math.min(LEVELS[g.level].sinneTak, Math.max(0, g.sinne));
