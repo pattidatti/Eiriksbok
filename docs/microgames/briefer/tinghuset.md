@@ -268,3 +268,39 @@ canvas, bordplate rett ovenfra, looken fra landssviksakene i Riksarkivet.
 under ett valg per 10 s der. Straffenivået som synker jevnt fra 100 % til 50 % er en forenkling; teksten
 sier det. Tallene for tilfang, rettssak-tid og sinne er utgangspunkt og må finstilles i `tuning.ts`.
 Radionettet er også ovenfra og fra andre verdenskrig; likhetsvakten bør sjekke plakaten.
+
+### 2026-10-01 - Gråboks (fase 3a), byggmester
+
+**Gjort.** Bygde gråboksen i `src/components/microgames/tinghuset/` etter kodeformen: `KART.md`,
+`tuning.ts` (alle tall), `levels.ts` (de fire brettene fra punkt 11 som data), `state.ts`, `rules.ts`
+(fagkjernen: send, avgjør, par, kort), `game.ts` (kjerneløkka), `bots.ts`, `sim.ts`, `draw.ts`
+(bare bokser og strek). Komponenten `Tinghuset.tsx` (dra mappe til skranke, eller trykk mappe og så
+skranke; klikk på kort og mellomsider) med `usePlaytest`. Registrert i `registry.ts` med `sjanger`,
+`tone: 'alvorlig'`, `hook`, `cover` og `kunst`. Ikke embedded i artikkelen ennå. Største fil: 365 linjer.
+
+**Simuleringen (200 runder per robot), grønn på tredje kjøring:**
+seende vinner 100 % (median 30 860), halvgod 94 % (median 28 780), alt-til-retten 0 % (median 470,
+taper på «satt for lenge uten dom»), alt-til-forelegg 0 % (median 930, taper på «slapp for lett»),
+knappemoser 1 % (median 1 100), passiv 0 %. 40,6 valg per minutt; presset 0,09 -> 0,14 -> 0,31.
+Nettleseren: seende vant med 31 370 poeng (innenfor simuleringens bånd), JS 1,2 ms per bilde på
+Chromebook-takt. Portfunn som gjenstår: cover og «bildet står stille uten input» (juice/kunst-fasen).
+
+**Det som IKKE virket.**
+- Kjøring 1: sinnet fra ventende mapper var for svakt (0,0012 per mappe per s), og kortene kunne gi
+  ubegrenset med rettssaler og dommere (10 saler, 6 dommere = 0,9 s per rettssak). Alt-til-retten vant
+  80 % og knappemoseren 10 %.
+- Kjøring 2: med sinne 0,004 og tak på 3 rettssaler og 2 forelegg-skranker tapte taperne, men den
+  halvgode lå for nær vinneren (27 710 mot 28 680), fordi dommere-kortet fortsatt kunne stables.
+- Kjøring 3 (grønn): tak på 2 dommere og raskere tilfang mot slutten (0,45 s i stedet for 0,6 s).
+- I nettleseren: et tomt kortvalg (alle kort brukt opp) krasjet tegningen. Nå kommer det ikke noe
+  kortvalg når bunken er tom.
+
+**Kjente svakheter (til gråboks-diagnosen).**
+- Vinnerroboten tar fem grep i sekundet og er aldri i fare (høyeste sinne rundt 0,05). På bildene midt
+  i runden er arket nesten tomt. Presset kjennes bare av en elev som drar tregere enn roboten. Den
+  halvgode (ett grep i sekundet) når 0,2 i sinne. Vurder et tettere tilfang eller færre kort, så også
+  en flink spiller ser stabler i leirene.
+- Ferdighetstrappen er smal: halvgod 93 % av vinneren (kravet er under 95 %).
+- Fast rute legges automatisk på neste leir uten rute; eleven velger ikke leiren ennå.
+- Mappene farges ikke etter året de avgjøres i ennå, og lappene for ulike par vises bare som en boks.
+- Tvillingen kommer 0,3-2,5 s etter den første, så valget «vent på tvillingen» er lite i praksis.
