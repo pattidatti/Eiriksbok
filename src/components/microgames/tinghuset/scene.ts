@@ -95,7 +95,8 @@ const SKILT: [number, string][] = [
 export function drawCrowd(ctx: CanvasRenderingContext2D, _g: Game, fx: Fx) {
     const { x, y, w, h } = CROWD;
     const anger = Math.min(1, fx.crowdShown);
-    const want = Math.round(3 + anger * (SPOTS.length - 3));
+    // Fra en tom plass (en og annen forbipasserende) til full trengsel ved 85 % sinne.
+    const want = Math.round(Math.min(1, Math.pow(anger / 0.85, 1.3)) * SPOTS.length);
     while (fx.placards.length < SPOTS.length) fx.placards.push(0);
     ctx.save();
     // Gata: blek himmel, tinghusets søyler bak, fortauet foran.

@@ -23,7 +23,7 @@ export const BOT_INFO = {
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger reglene (også avvis uten lov), men handler bare hvert fjerde tick, tar mappene i tilfeldig rekkefølge, venter bare 2,5 s på tvillingen, bommer av og til på skranken og velger kort på måfå.',
+            'Følger reglene (også avvis uten lov), men handler bare hvert fjerde tick, tar mappene i tilfeldig rekkefølge, venter bare 2,5 s på tvillingen, og bommer av og til på skranken.',
     },
     'alt-rett': {
         forventer: 'taper',
@@ -37,7 +37,7 @@ export const BOT_INFO = {
     tilfeldig: {
         forventer: 'taper',
         tilfeldig: true,
-        beskrivelse: 'Drar tilfeldige mapper til tilfeldige skranker og velger kort på måfå.',
+        beskrivelse: 'Drar tilfeldige mapper til tilfeldige skranker.',
     },
 } as const;
 

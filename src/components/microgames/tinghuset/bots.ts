@@ -1,12 +1,12 @@
 // Robotene i Tinghuset. Én kilde for både simuleringen (sim.ts) og selvspillet i
 // nettleseren (usePlaytest i Tinghuset.tsx). De bruker de samme grepene som eleven:
-// send(mappe, skranke) og pickCard(indeks).
+// send(mappe, skranke).
 
 import type { Rng } from '../sim';
-import { caseTime, deskLoad, pickCard, send } from './rules';
+import { caseTime, deskLoad, send } from './rules';
 import { secsToStep } from './game';
 import { TUNING } from './tuning';
-import type { CardId, Folder, Game, Route } from './state';
+import type { Folder, Game, Route } from './state';
 
 type Style = 'seende' | 'halvgod' | 'alt-rett' | 'alt-forelegg';
 
@@ -23,16 +23,14 @@ export const BOTS: Record<Style, BotOpts> = {
     'alt-forelegg': { every: 1, style: 'alt-forelegg' },
 };
 
-const CARD_PREF: CardId[] = ['rettssal', 'felles', 'rute', 'dommere', 'forelegg'];
-
 /** Så lenge (s) seende lar en alvorlig mappe vente i leiren på tvillingen sin. */
 const HOLD_MAKS = 5;
 /** Halvgod venter også på tvillingen, men gir opp tidligere. */
 const HOLD_KORT = 2.5;
 /** Seende holder et alvorlig par tilbake når et trinn faller om så få sekunder. */
 const STEP_HOLD = 5;
-/** Nød: over så mye sinne gir eleven etter for fristelsen (interner tyskerjenta, bot til
- *  profittøren). Den flinke gjør det bare helt på kanten, den halvgode tidligere. */
+/** Nød: over så mye sinne gir eleven etter for fristelsen (interner tyskerjenta). Den flinke
+ *  gjør det bare helt på kanten, den halvgode tidligere. */
 const NOD = { seende: 0.9, halvgod: 0.7 } as const;
 
 /** Skranken av riktig slag med minst arbeid foran seg. */
@@ -81,7 +79,7 @@ function finishOf(g: Game, f: Folder): number {
     let s = d.current !== null ? d.left : 0;
     for (const id of d.queue) {
         const q = g.folders.find((x) => x.id === id);
-        if (q) s += caseTime(g, d, q);
+        if (q) s += caseTime(d, q);
         if (id === f.id) break;
     }
     return s;
@@ -89,15 +87,12 @@ function finishOf(g: Game, f: Folder): number {
 
 /** Når (s) en ny mappe sendt til skranke `di` nå, får dommen sin. */
 const finishAt = (g: Game, di: number, f: Folder) =>
-    TUNING.skranke.reise + deskLoad(g, di) + caseTime(g, g.desks[di], f);
+    TUNING.skranke.reise + deskLoad(g, di) + caseTime(g.desks[di], f);
 
 /** Skranken der mappa får dommen nærmest tvillingen sin i tid (lik trykt dom). */
 function pairDesk(g: Game, f: Folder, kind: Route): number {
     const t = twinOf(g, f);
     const target = t && t.state !== 'leir' ? finishOf(g, t) : 0;
-    // Felles behandling: står tvillingen i kø i en rettssal, går denne til samme sal.
-    if (g.felles && kind === 'rett' && t?.state === 'ko' && g.desks[t.desk]?.kind === 'rett')
-        return t.desk;
     let best = -1;
     let gap = Infinity;
     g.desks.forEach((d, i) => {
@@ -116,15 +111,6 @@ export function makeBot(opts: BotOpts, rng: Rng) {
     return (g: Game) => {
         if (g.mode !== 'play' || g.inter > 0) return;
         if (n++ % opts.every) return;
-        if (g.offer) {
-            const cards = g.offer.cards;
-            if (opts.style === 'seende') {
-                const i = CARD_PREF.map((c) => cards.indexOf(c)).find((x) => x >= 0) ?? 0;
-                pickCard(g, i);
-            } else if (opts.style === 'halvgod') pickCard(g, Math.floor(rng() * cards.length));
-            else pickCard(g, 0);
-            return;
-        }
         const ready = g.folders.filter((f) => f.state === 'leir');
         if (!ready.length) return;
         const nod =
@@ -133,17 +119,15 @@ export function makeBot(opts: BotOpts, rng: Rng) {
         const routeOf = (f: Folder): Route =>
             nod && f.kind === 'utenlov' && hasInterner
                 ? 'interner'
-                : nod && opts.style === 'halvgod' && f.kind === 'tykk'
-                  ? 'forelegg'
-                  : opts.style === 'alt-rett'
-                    ? 'rett'
-                    : opts.style === 'alt-forelegg'
-                      ? 'forelegg'
-                      : f.kind === 'utenlov'
-                        ? 'avvis'
-                        : f.kind === 'lett'
-                          ? 'forelegg'
-                          : 'rett';
+                : opts.style === 'alt-rett'
+                  ? 'rett'
+                  : opts.style === 'alt-forelegg'
+                    ? 'forelegg'
+                    : f.kind === 'utenlov'
+                      ? 'avvis'
+                      : f.kind === 'lett'
+                        ? 'forelegg'
+                        : 'rett';
         let f: Folder | undefined;
         if (opts.style === 'seende') {
             // Lette saker får forelegg straks: fast takst, så paret blir alltid jevnt.
@@ -187,14 +171,10 @@ export function makeBot(opts: BotOpts, rng: Rng) {
     };
 }
 
-/** Knappemoseren: tilfeldig mappe til tilfeldig skranke, tilfeldige kort. */
+/** Knappemoseren: tilfeldig mappe til tilfeldig skranke. */
 export function makeRandomBot(rng: Rng) {
     return (g: Game) => {
         if (g.mode !== 'play' || g.inter > 0) return;
-        if (g.offer) {
-            if (rng() < 0.3) pickCard(g, Math.floor(rng() * g.offer.cards.length));
-            return;
-        }
         if (rng() < 0.5) return;
         const ready = g.folders.filter((f) => f.state === 'leir');
         if (!ready.length) return;

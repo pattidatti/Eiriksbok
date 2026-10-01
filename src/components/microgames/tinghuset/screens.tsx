@@ -22,7 +22,6 @@ export interface Result {
     avvist: number;
     ulovlig: number;
     formildt: number;
-    profBot: number;
     /** Trukket fra poengene på slutten (straff uten dom, profittører som slapp unna). */
     trekk: number;
     cause: Cause | null;
@@ -94,7 +93,7 @@ export function OverScreen({
                         />
                         {result.trekk > 0 && (
                             <div style={{ ...P, color: RED, fontWeight: 700 }}>
-                                Uten dom: {result.ulovlig} · Slapp unna: {result.profBot} · trukket{' '}
+                                Uten dom: {result.ulovlig} · trukket{' '}
                                 {result.trekk.toLocaleString('nb-NO')} poeng
                             </div>
                         )}

@@ -16,7 +16,6 @@ import { createArcadeSynth, buzz } from './arcade/synth';
 import { usePlaytest } from './playtest';
 import {
     newGame,
-    pickCard,
     secsToStep,
     send,
     skipInter,
@@ -49,11 +48,9 @@ import {
     RULER,
     W,
     campRect,
-    cardRects,
     deskAt,
     deskRect,
     folderAt,
-    inside,
     syncDesks,
     type Pt,
 } from './tinghuset/layout';
@@ -189,7 +186,6 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
             avvist: g.avvist,
             ulovlig: g.ulovlig,
             formildt: g.formildt,
-            profBot: g.profBot,
             trekk: g.trekk,
             cause: g.cause,
             skjevest: g.skjevest,
@@ -384,15 +380,6 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                     });
                     break;
                 }
-                case 'kort': {
-                    sfx.cards();
-                    const r = cardRects(1)[0];
-                    text.point('kort', PINS.kort, atRect(r.x + r.w / 2, r.y - 16), {
-                        until: () => !g.offer,
-                        once: true,
-                    });
-                    break;
-                }
                 case 'leir':
                     sfx.page();
                     break;
@@ -570,11 +557,6 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
             synth.unlock();
             if (g.inter > 0) {
                 skipInter(g);
-                return;
-            }
-            if (g.offer) {
-                const i = cardRects(g.offer.cards.length).findIndex((r) => inside(r, p.x, p.y));
-                if (i >= 0 && pickCard(g, i)) sfx.thud(false);
                 return;
             }
             const f = folderAt(g, p.x, p.y);

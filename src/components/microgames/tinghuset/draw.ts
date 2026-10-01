@@ -39,7 +39,6 @@ import { drawCampSlots, drawClip, drawCourtShelf, drawCrowd, drawLaw, person } f
 import {
     drawAvis,
     drawCalendar,
-    drawCards,
     drawCounter,
     drawGoal,
     drawInter,
@@ -417,8 +416,10 @@ function drawDesk(
                 .replace(' fengsel', '')
                 .replace(/^Bot .*/, 'bot')
                 .replace('Livsvarig', 'livsvarig');
+            // Hele dommen står fra start (lyst), og blekket mørkner tegn for tegn mens saken går.
             const shown = dom.slice(0, Math.ceil(dom.length * Math.min(1, prog * 1.3)));
             typed(ctx, `Sak ${f.sak}`, r.x + 108, r.y + 14, 10, '#4b4250', 'left', false);
+            typed(ctx, dom, r.x + 108, r.y + 30, 12, 'rgba(90,47,156,0.35)', 'left', false);
             typed(ctx, shown, r.x + 108, r.y + 30, 12, VIOLET, 'left');
             ctx.fillStyle = 'rgba(90,47,156,0.2)';
             ctx.fillRect(r.x + 56, r.y + r.h - 7, r.w - 62, 3);
@@ -535,7 +536,6 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, f
     drawScore(ctx, g, fx);
     drawCounter(ctx, g, fx);
     drawUlik(ctx, fx);
-    drawCards(ctx, g);
     if (g.sinne > 0.1) {
         ctx.globalAlpha = Math.min(1, (g.sinne - 0.1) * 1.1);
         ctx.drawImage(art.dark, 0, 0, W, H);

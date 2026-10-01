@@ -1,9 +1,8 @@
 // Tilstanden i Tinghuset: typene og en ny runde. Ingen regler her - de står i rules.ts
-// (sende, avgjøre, par, kort) og game.ts (tiden, tilfanget, sinnet).
+// (sende, avgjøre, par) og game.ts (tiden, tilfanget, sinnet).
 
 import { seeded, type Rng } from '../sim';
 import { LEVELS, type CampId } from './levels';
-import { TUNING } from './tuning';
 
 /** lett = vanlig NS-medlem (grå), alvorlig = angiver/statspoliti (rødt hjørne), tykk =
  *  profittør (økonomisk landssvik), utenlov = en kvinne med tysk kjæreste - ingen lov forbød det. */
@@ -12,7 +11,6 @@ export type Kind = 'lett' | 'alvorlig' | 'tykk' | 'utenlov';
  *  (bare for tyskerjente-saker): gata roer seg, men det skjer uten lov og teller mot deg. */
 export type Route = 'forelegg' | 'rett' | 'avvis' | 'interner';
 export type FolderState = 'leir' | 'reiser' | 'ko' | 'behandles';
-export type CardId = 'rettssal' | 'dommere' | 'rute' | 'felles' | 'forelegg';
 export type Cause = 'vent' | 'mild';
 
 export interface Folder {
@@ -61,9 +59,8 @@ export interface Desk {
     kind: Route;
     /** Mapper som venter (id-er), første først. */
     queue: number[];
-    /** Mappa som behandles nå (og tvillingen ved felles behandling). */
+    /** Mappa som behandles nå. */
     current: number | null;
-    joint: number | null;
     left: number;
     /** Hvor lang tid saken tar i alt (for visningen). */
     total: number;
@@ -78,17 +75,10 @@ export type GameEvent =
     | { kind: 'ulikt'; a: Verdict; b: Verdict }
     | { kind: 'ny'; f: Folder }
     | { kind: 'brett'; level: number }
-    | { kind: 'kort' }
     | { kind: 'sal' }
     | { kind: 'interner' }
     | { kind: 'trinn'; trinn: number }
     | { kind: 'leir'; camp: CampId };
-
-export interface Offer {
-    cards: CardId[];
-    /** Igjen før kortene legges bort (vanlig tid). */
-    left: number;
-}
 
 export interface Game {
     rng: Rng;
@@ -131,22 +121,15 @@ export interface Game {
     avgjort: number;
     alvorligRett: number;
     formildt: number;
-    /** Profittører som slapp med bot (forelegg). */
-    profBot: number;
     /** Saker uten lov: avvist (riktig) og straffet likevel. */
     avvist: number;
     ulovlig: number;
-    /** Trekket på slutten: straffet uten dom og profittører som slapp unna (regnes ved slutt). */
+    /** Trekket på slutten: straffet uten dom (regnes ved slutt). */
     trekk: number;
     valg: number;
-    offer: Offer | null;
-    nextOfferMnd: number;
-    offers: number;
-    dommere: number;
-    /** Leirer med fast rute til forelegg (indekser i camps). */
+    /** Leirer med fast rute til forelegg (indekser i camps). Brettene gir dem. */
     ruter: number[];
     ruteT: number;
-    felles: boolean;
     /** Det skjeveste paret (største avstand i måneder eller ulik vei). */
     skjevest: { a: Verdict; b: Verdict; skjevhet: number } | null;
     events: GameEvent[];
@@ -166,8 +149,8 @@ export function newGame(seed: number): Game {
         folders: [],
         // Rettssalen kommer med den første angiveren (game.ts).
         desks: [
-            { kind: 'forelegg', queue: [], current: null, joint: null, left: 0, total: 0 },
-            { kind: 'avvis', queue: [], current: null, joint: null, left: 0, total: 0 },
+            { kind: 'forelegg', queue: [], current: null, left: 0, total: 0 },
+            { kind: 'avvis', queue: [], current: null, left: 0, total: 0 },
         ],
         waitingTwin: new Map(),
         nextId: 1,
@@ -190,18 +173,12 @@ export function newGame(seed: number): Game {
         avgjort: 0,
         alvorligRett: 0,
         formildt: 0,
-        profBot: 0,
         avvist: 0,
         ulovlig: 0,
         trekk: 0,
         valg: 0,
-        offer: null,
-        nextOfferMnd: TUNING.kort.forsteMnd,
-        offers: 0,
-        dommere: 0,
         ruter: [],
         ruteT: 0,
-        felles: false,
         skjevest: null,
         events: [],
     };

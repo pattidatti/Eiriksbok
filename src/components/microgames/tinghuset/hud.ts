@@ -12,18 +12,16 @@ import {
     SLIP,
     VIOLET,
     big,
-    pencil,
     typed,
     type Art,
 } from './art';
 import { drawLeaves } from './fx';
 import type { Fx } from './fx';
 import { secsToStep } from './game';
-import { AVIS, CAL, COUNTER, GOAL, TABLE, H, METER, RULER, SCORE, W, cardRects } from './layout';
+import { AVIS, CAL, COUNTER, GOAL, TABLE, H, METER, RULER, SCORE, W } from './layout';
 import { LEVELS, monthName } from './levels';
-import { domTekst, nesteTrinnMnd, straffTrinn } from './rules';
+import { straffTrinn } from './rules';
 import type { Game } from './state';
-import { CARD_TEXT } from './texts';
 import { TUNING } from './tuning';
 
 const K = TUNING;
@@ -242,61 +240,43 @@ export function drawCounter(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     }
 }
 
-/** Loven øverst på arket: hva loven sier om hver sakstype, og hvor strenge dommene i retten er
- *  akkurat nå. Ingen fasit - tabellen sier ikke hvilket stempel du skal bruke. Radene kommer
- *  etter hvert som sakstypene dukker opp (opptrappingen). */
+/** Loven øverst på arket: hva landssvikanordningen sier om hver sakstype - ren lovtekst, ingen
+ *  fasit og ingen straffetabell. Straffen står på mappa og i salen. Radene kommer etter hvert som
+ *  sakstypene dukker opp (opptrappingen). */
 export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     const { x, y, w } = TABLE;
     const lv = LEVELS[g.level];
-    const tr = straffTrinn(g.mnd);
-    const next = lv.linjal && nesteTrinnMnd(g.mnd) !== null ? tr + 1 : null;
     const soon = lv.linjal && secsToStep(g) < K.kalender.varselSek;
-    const pop = lv.linjal ? 1 + (1 - ease(fx.trinnT / 0.4)) * 0.25 : 1;
-    const aar = (kind: 'alvorlig' | 'tykk', t: number) =>
-        domTekst(kind, 'rett', t).replace(' fengsel', '');
-    const rows: [string, string, string | null, string][] = [
-        ['NS-medlem', 'landssvik, mild straff', null, VIOLET],
-        ['tyskerjente', 'ingen lov er brutt', null, BLUE],
+    const pop = lv.linjal && fx.trinnT < 0.4 ? 1 + (1 - ease(fx.trinnT / 0.4)) * 0.25 : 1;
+    const rows: [string, string, string][] = [
+        ['NS-medlem', 'landssvik. «NS 1940»: meldt inn 1940', VIOLET],
+        ['tyskerjente', 'ingen lov forbød tysk kjæreste', BLUE],
     ];
-    if (g.firstSerious)
-        rows.push([
-            'angiver',
-            `fengsel, nå ${aar('alvorlig', tr)}`,
-            next !== null ? aar('alvorlig', next) : null,
-            RED,
-        ]);
-    if (g.level >= 3 || g.firstThick)
-        rows.push([
-            'profittør',
-            `fengsel, nå ${aar('tykk', tr)}`,
-            next !== null ? aar('tykk', next) : null,
-            RED,
-        ]);
+    if (g.firstSerious) rows.push(['angiver', 'grov landssvik - fengsel', RED]);
+    if (g.level >= 3 || g.firstThick) rows.push(['profittør', 'tjente på tyskerne - fengsel', RED]);
     typed(ctx, 'LOVEN', x + 4, y + 7, 11, VIOLET);
     typed(ctx, 'landssvikanordningen 1944', x + 52, y + 7, 10, '#4b4250', 'left', false);
     const s = secsToStep(g);
     if (lv.linjal && s < 8) {
+        ctx.save();
+        ctx.translate(x + w - 4, y + 7);
+        ctx.scale(pop, pop);
         typed(
             ctx,
             Number.isFinite(s) ? `mildere om ${Math.ceil(s)} s` : 'laveste trinn',
-            x + w - 4,
-            y + 7,
+            0,
+            0,
             11,
             soon ? RED : VIOLET,
             'right',
             false
         );
+        ctx.restore();
     }
-    rows.forEach(([label, now, nxt, c], i) => {
+    rows.forEach(([label, text, c], i) => {
         const ry = y + 24 + i * 15;
         typed(ctx, label, x + 4, ry, 11, c);
-        ctx.save();
-        ctx.translate(x + 104, ry);
-        if (nxt) ctx.scale(pop, pop);
-        typed(ctx, now, 0, 0, 11, INK, 'left', false);
-        ctx.restore();
-        if (nxt && s < 8)
-            typed(ctx, `→ ${nxt}`, x + w - 4, ry, 11, soon ? RED : '#6d5f78', 'right', false);
+        typed(ctx, text, x + 92, ry, 11, INK, 'left', false);
     });
     const lines = rows.length + (lv.par ? 1 : 0);
     if (lv.par) {
@@ -372,54 +352,6 @@ export function drawAvis(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     const red = born >= 0 || g.sinne > 0.75;
     lines.slice(0, 2).forEach((l, i) => typed(ctx, l, 8, 30 + i * 16, 13, red ? RED : INK));
     ctx.restore();
-}
-
-export function drawCards(ctx: CanvasRenderingContext2D, g: Game) {
-    const o = g.offer;
-    if (!o) return;
-    const age = K.kort.varer - o.left;
-    const rs = cardRects(o.cards.length);
-    o.cards.forEach((c, i) => {
-        const r = rs[i];
-        const k = ease((age - i * 0.06) / 0.3);
-        const dy = (1 - k) * 260;
-        ctx.save();
-        ctx.translate(r.x + r.w / 2, r.y + r.h / 2 + dy);
-        ctx.rotate((i - 1) * 0.015);
-        ctx.fillStyle = 'rgba(30,26,34,0.3)';
-        ctx.fillRect(-r.w / 2 + 3, -r.h / 2 + 4, r.w, r.h);
-        ctx.fillStyle = SLIP;
-        ctx.fillRect(-r.w / 2, -r.h / 2, r.w, r.h);
-        ctx.strokeStyle = BLUE;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(-r.w / 2 + 0.5, -r.h / 2 + 0.5, r.w - 1, r.h - 1);
-        // Binders.
-        ctx.strokeStyle = '#7d7f86';
-        ctx.lineWidth = 1.6;
-        ctx.beginPath();
-        ctx.moveTo(-r.w / 2 + 14, -r.h / 2 - 7);
-        ctx.lineTo(-r.w / 2 + 14, -r.h / 2 + 12);
-        ctx.arc(-r.w / 2 + 18, -r.h / 2 + 12, 4, Math.PI, 0, true);
-        ctx.lineTo(-r.w / 2 + 22, -r.h / 2 - 4);
-        ctx.stroke();
-        typed(ctx, CARD_TEXT[c][0].toUpperCase(), -r.w / 2 + 32, -r.h / 2 + 16, 14, BLUE);
-        typed(ctx, CARD_TEXT[c][1], -r.w / 2 + 14, -r.h / 2 + 38, 11, INK, 'left', false);
-        typed(ctx, `trykk for å velge`, r.w / 2 - 10, r.h / 2 - 10, 10, BLUE, 'right', false);
-        ctx.restore();
-    });
-    // Tiden som er igjen: en blyantstrek som krymper.
-    const last = rs[rs.length - 1];
-    pencil(
-        ctx,
-        rs[0].x,
-        rs[0].y - 12,
-        rs[0].x + last.w * (o.left / K.kort.varer),
-        rs[0].y - 12,
-        BLUE,
-        4,
-        1,
-        2
-    );
 }
 
 export function drawInter(ctx: CanvasRenderingContext2D, g: Game) {

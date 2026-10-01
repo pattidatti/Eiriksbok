@@ -4,7 +4,6 @@
 import { TUNING } from './tuning';
 import { LEVELS } from './levels';
 import {
-    makeOffer,
     nesteTrinnMnd,
     openInterner,
     runDesks,
@@ -18,7 +17,6 @@ import { newGame as blankGame, type Folder, type Game, type Kind } from './state
 export type { Game, Folder };
 export {
     send,
-    pickCard,
     straffNivaa,
     straffTrinn,
     nesteTrinnMnd,
@@ -147,7 +145,7 @@ function pickKind(g: Game): Kind {
 /** Den første angiveren kommer: rettssalen glir inn i samme øyeblikk (svaret på saken). */
 function openCourt(g: Game) {
     if (g.desks.some((d) => d.kind === 'rett')) return;
-    g.desks.push({ kind: 'rett', queue: [], current: null, joint: null, left: 0, total: 0 });
+    g.desks.push({ kind: 'rett', queue: [], current: null, left: 0, total: 0 });
     g.events.push({ kind: 'sal' });
 }
 
@@ -211,11 +209,12 @@ function nextLevel(g: Game) {
             g.camps.push(c);
             g.events.push({ kind: 'leir', camp: c });
         }
-    // Brettet åpner sine rettssaler. Salene eleven har fått fra kort, kommer i tillegg.
+    // Brettet åpner sine rettssaler, og grå saker får fast rute til forelegg i flere leirer.
     const saler = g.desks.filter((d) => d.kind === 'rett').length;
-    const fraKort = Math.max(0, saler - LEVELS[g.level - 1].saler);
-    for (let i = saler; i < lv.saler + fraKort; i++)
-        g.desks.push({ kind: 'rett', queue: [], current: null, joint: null, left: 0, total: 0 });
+    for (let i = saler; i < lv.saler; i++)
+        g.desks.push({ kind: 'rett', queue: [], current: null, left: 0, total: 0 });
+    for (let i = 0; i < Math.min(lv.ruter, g.camps.length); i++)
+        if (!g.ruter.includes(i)) g.ruter.push(i);
     g.inter = K.mellomside;
     g.spawnT = Math.min(g.spawnT, 0.8);
     g.events.push({ kind: 'brett', level: g.level });
@@ -228,7 +227,6 @@ export function skipTo(g: Game, level: number) {
         nextLevel(g);
     }
     g.firstSerious = true;
-    g.nextOfferMnd = g.mnd + K.kort.hverMnd;
     g.trinn = straffTrinn(g.mnd);
     g.events.length = 0;
 }
@@ -245,13 +243,7 @@ export function update(g: Game, dt: number) {
         g.inter -= dt;
         return;
     }
-    let scale = 1;
-    if (g.offer) {
-        scale = K.kort.fart;
-        g.offer.left -= dt;
-        if (g.offer.left <= 0) g.offer = null;
-    }
-    const sdt = dt * scale;
+    const sdt = dt;
     const lv = LEVELS[g.level];
 
     g.mnd += sdt / lv.sekPerMnd;
@@ -278,19 +270,6 @@ export function update(g: Game, dt: number) {
     g.sinne += add;
     g.fraVent += add;
     g.sinne = Math.min(LEVELS[g.level].sinneTak, Math.max(0, g.sinne));
-
-    // Kortvalget hver tredje måned.
-    if (!g.offer && g.mnd >= g.nextOfferMnd) {
-        const cards = makeOffer(g);
-        g.nextOfferMnd += K.kort.hverMnd;
-        // Når alle kortene er brukt opp, kommer det ingen flere kortvalg.
-        if (cards.length) {
-            g.offer = { cards, left: K.kort.varer };
-            g.offers++;
-            g.valg++;
-            g.events.push({ kind: 'kort' });
-        }
-    }
 
     if (g.sinne >= 1 || g.folders.length > K.sinne.maksMapper) {
         g.mode = 'lost';

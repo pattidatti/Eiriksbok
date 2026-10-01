@@ -94,11 +94,6 @@ export const queueSpot = (i: number, k: number): Pt => {
     return { x: e.x - kk * 9, y: e.y - kk * 1.5 + (k % 2) * 2 };
 };
 
-/** Kortene: tre maskinskrevne lapper midt på arket, aldri over leirene eller skrankene. */
-export function cardRects(n: number): Rect[] {
-    return Array.from({ length: n }, (_, i) => ({ x: 318, y: 292 + i * 78, w: 250, h: 68 }));
-}
-
 export const inside = (r: Rect, x: number, y: number) =>
     x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h;
 
@@ -133,9 +128,8 @@ export function homeOf(g: Game, f: Folder, slots: Map<number, Pt>): Pt | null {
     if (f.state === 'behandles') {
         const r = deskRect(f.desk);
         const d = g.desks[f.desk];
-        const second = d.joint === f.id;
         return d.kind === 'rett'
-            ? { x: r.x + 78 + (second ? 6 : 0), y: r.y + 26 + (second ? 4 : 0) }
+            ? { x: r.x + 78, y: r.y + 26 }
             : { x: r.x + 6, y: r.y + r.h / 2 + 2 };
     }
     return null;

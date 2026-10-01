@@ -38,16 +38,8 @@ export const TUNING = {
         avvis: 0.6,
         /** Interner-stempelet (straff uten dom, bare tyskerjente-saker). */
         interner: 0.6,
-        /** Flere dommere: rettssaler så mye raskere (0,1 = 10 %). */
-        dommereFart: 0.1,
         /** Tiden mappa bruker på å gli langs streken. */
         reise: 0.35,
-        /** Flest rettssaler, forelegg-skranker og dommere kortene kan gi i tillegg til brettets
-         *  egne. Brett 4 har fire saler; ett kort til gir bare rundt 20 % mer. Seks skranker får
-         *  plass på arket. */
-        maksSaler: 1,
-        maksForelegg: 0,
-        maksDommere: 0,
         /** Fast rute sender én lett mappe så ofte (aldri alvorlige). */
         ruteHvert: 0.5,
     },
@@ -58,9 +50,9 @@ export const TUNING = {
          *  retten (og det lettvinte: straff uten lov, bot) tar det ned igjen. */
         krav: 0.0045,
         /** Kravet i august 1948: sinnet var størst like etter krigen og la seg med årene. */
-        kravSlutt: 0.0005,
+        kravSlutt: 0.0013,
         /** Per ventende mappe (i leir eller kø) per sekund. */
-        ventPerMappe: 0.002,
+        ventPerMappe: 0.0016,
         /** Hopp når en alvorlig sak får forelegg. */
         forMildt: 0.12,
         /** Alvorlig sak avgjort i rettssalen: gata ser en dom, og sinnet synker. */
@@ -69,9 +61,7 @@ export const TUNING = {
         avvist: 0.07,
         /** En tyskerjente blir internert uten dom (galt): gata roer seg kraftig, men det skjer
          *  uten lov, multiplikatoren går til x1, og det trekkes på slutten. */
-        ulovligLetter: 0.15,
-        /** En profittør får bot (forelegg): raskt og stille i gata, men han slapp unna. */
-        botLetter: 0.03,
+        ulovligLetter: 0.08,
         /** Milde dommer roer gata mindre: en dom i retten tar ned rettLetter x straffenivå
          *  opphøyd i denne (1948: 45 % -> rundt en firedel så mye som i 1945). */
         rettNivaaEksp: 1,
@@ -79,16 +69,6 @@ export const TUNING = {
         avvistLett: 0.5,
         /** Fast tak på mapper på arket - over det er sinnet sprukket uansett. */
         maksMapper: 160,
-    },
-
-    // Kortvalget hver tredje måned.
-    kort: {
-        forsteMnd: 7,
-        hverMnd: 3,
-        /** Spillet går i denne farten mens kortene ligger oppe. */
-        fart: 0.3,
-        /** Sekunder (vanlig tid) før kortene legges bort. */
-        varer: 8,
     },
 
     // Poeng uten tak.
@@ -101,9 +81,8 @@ export const TUNING = {
         lettForelegg: 10,
         /** En sak uten lov avvist: en ryddig avgjørelse (aldri poeng for å straffe dem). */
         avvist: 10,
-        /** Trekk på slutten per tyskerjente straffet uten dom, og per profittør som slapp unna. */
+        /** Trekk på slutten per tyskerjente straffet uten dom. */
         trekkUlovlig: 300,
-        trekkSlapp: 150,
         maksMult: 10,
     },
 

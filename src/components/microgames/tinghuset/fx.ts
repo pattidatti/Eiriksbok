@@ -293,7 +293,6 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
         fx.campOpen.set(g.camps.indexOf(e.camp), 0);
     } else if (
         e.kind === 'brett' ||
-        e.kind === 'kort' ||
         e.kind === 'sal' ||
         e.kind === 'interner'
     ) {
@@ -457,7 +456,8 @@ export function drawUlik(ctx: CanvasRenderingContext2D, fx: Fx) {
     const inK = ease(u.t / 0.18);
     const out = u.t > ULIK_TID - 0.35 ? (ULIK_TID - u.t) / 0.35 : 1;
     const cx = 466;
-    const cy = 214;
+    // Over vinduet mot gata: folk ser at like saker fikk ulik straff. Aldri over protokollen.
+    const cy = 452;
     ctx.save();
     ctx.globalAlpha = Math.max(0, out);
     ctx.fillStyle = 'rgba(42,39,49,0.10)';

@@ -15,8 +15,10 @@ export interface Level {
     leirer: CampId[];
     /** Har brettet rettssal? */
     rettssal: boolean;
-    /** Så mange rettssaler åpner brettet (kortene kan gi én til). */
+    /** Så mange rettssaler åpner brettet. */
     saler: number;
+    /** Så mange leirer (fra Ilebu) sender grå saker til forelegg av seg selv. */
+    ruter: number;
     /** Andel alvorlige saker (0 = bare grå mapper). */
     alvorlig: number;
     /** Kommer mappene i par med samme saksnummer? */
@@ -43,6 +45,7 @@ export const LEVELS: Level[] = [
         // Rettssalen glir inn når den første angiveren kommer (se brett1 i tuning.ts).
         rettssal: true,
         saler: 1,
+        ruter: 0,
         alvorlig: 0,
         par: false,
         tykk: false,
@@ -60,6 +63,7 @@ export const LEVELS: Level[] = [
         leirer: ['ILEBU', 'AKERSHUS'],
         rettssal: true,
         saler: 1,
+        ruter: 0,
         alvorlig: TUNING.tilfang.alvorligAndel,
         par: false,
         tykk: false,
@@ -76,6 +80,7 @@ export const LEVELS: Level[] = [
         leirer: ['ILEBU', 'AKERSHUS'],
         rettssal: true,
         saler: 2,
+        ruter: 1,
         alvorlig: TUNING.tilfang.alvorligAndel,
         par: true,
         tykk: false,
@@ -92,7 +97,8 @@ export const LEVELS: Level[] = [
         sekPerMnd: 4,
         leirer: ['ILEBU', 'AKERSHUS', 'FALSTAD'],
         rettssal: true,
-        saler: 4,
+        saler: 5,
+        ruter: 3,
         alvorlig: TUNING.tilfang.alvorligAndel,
         par: true,
         tykk: true,

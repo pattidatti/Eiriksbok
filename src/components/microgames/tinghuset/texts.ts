@@ -3,7 +3,7 @@
 // nevnes saklig i én sjelden sak (dommen som trykkes) og i protokollbladene; en henrettelse
 // vises aldri. Kvinnene med tyske kjærester er en sak uten lov - riktig grep er å avvise den.
 
-import type { Cause, CardId, Folder } from './state';
+import type { Cause, Folder } from './state';
 
 export const RANKS: [number, string][] = [
     [0, 'Kontorbud'],
@@ -59,7 +59,6 @@ export const PINS = {
     sinne: 'Gata vil se dommer - fort',
     forloven: 'Meldt inn 1940. Loven kom i 1944.',
     tvilling: 'Lik klemme kommer - vent, eller døm nå?',
-    kort: 'Velg ett kort',
     rute: 'Fast rute sender grå mapper selv',
     utenlov: 'Tyskerjente: ingen lov forbød det',
     interner: 'Roer gata - men uten lov og dom',
@@ -95,7 +94,6 @@ export const RETTFERDIG = {
         avvist: number;
         ulovlig: number;
         formildt: number;
-        profBot: number;
         trekk: number;
     }) =>
         [
@@ -106,7 +104,6 @@ export const RETTFERDIG = {
                   ? `Alle ${r.avvist} saker uten lov ble avvist - ingen ble straffet uten lov.`
                   : '',
             r.formildt > 0 ? `${r.formildt} alvorlige saker slapp med forelegg.` : '',
-            r.profBot > 0 ? `Slapp unna: ${r.profBot} profittører fikk bare bot.` : '',
             r.trekk > 0 ? `Det kostet deg ${r.trekk} poeng på slutten.` : '',
             'I virkeligheten ble tusenvis av kvinner straffet uten lov og dom. Staten ba om unnskyldning i 2018.',
         ].filter(Boolean),
@@ -121,7 +118,9 @@ const YRKE = {
     utenlov: ['Syerske', 'Servitør', 'Hushjelp', 'Kokke', 'Telefonist'],
 } as const;
 
-/** To linjer på mappa: hvem (yrket) og hva saken gjelder. */
+const NAVN = ['Anna', 'Kari', 'Liv', 'Eva', 'Ruth', 'Gerd', 'Aud', 'Inga', 'Signe', 'Elsa'];
+
+/** To linjer på mappa: hvem (yrket, eller navn og alder) og hva saken gjelder. */
 export function personOf(f: Folder): [string, string] {
     const list = YRKE[f.kind];
     const who = list[(f.id * 7 + f.sak * 3) % list.length];
@@ -129,21 +128,15 @@ export function personOf(f: Folder): [string, string] {
     if (f.kind === 'lett') return [who, `NS ${f.sak % 3 === 0 ? 1941 : 1940}`];
     if (f.kind === 'alvorlig') return [who, f.sak % 2 ? 'angiver' : 'STAPO'];
     if (f.kind === 'tykk') return [who, 'profittør'];
-    return [who, 'tysk venn'];
+    // Tyskerjente-sakene er navngitte unge kvinner, ikke en sakstype.
+    const navn = NAVN[(f.id * 5 + f.sak) % NAVN.length];
+    return [`${navn}, ${17 + ((f.id * 3 + f.sak) % 6)}`, 'tysk venn'];
 }
 
 /** Lærdommen fra det første ulike paret, med elevens egne tall. */
 export function ulikLesson(sak: number, a: string, b: string): string {
     return `Sak ${sak}: ${a} og ${b}. Samme handling, ulik straff - bare fordi saken kom opp senere.`;
 }
-
-export const CARD_TEXT: Record<CardId, [string, string]> = {
-    rettssal: ['Ny rettssal', 'Én rettssal til'],
-    dommere: ['Flere dommere', 'Rettssalene 10 % raskere'],
-    rute: ['Fast rute', 'Grå mapper fra én leir får forelegg av seg selv'],
-    felles: ['Felles behandling', 'Et par i samme rettssal dømmes samtidig'],
-    forelegg: ['Nytt forelegg-stempel', 'Ett forelegg-stempel til'],
-};
 
 export type FindId =
     | 'anordning'

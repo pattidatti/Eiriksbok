@@ -657,3 +657,39 @@ Gjenstår for neste natt (fra vurdering 4):
 1. Presset: halvgod vinner 98 % og seende 96 % - sinnet når aldri 50 % i 1946-48 i bildene. Fjern straffetabellen fra protokollen (eller gjør den til ren lovtekst), hold sinnet på 50-80 % i 1946-48 så INTERNER og bot til profittøren frister på ordentlig, rødt UTEN LOV-stempel og synlig «slapp unna: N» underveis. Mål: halvgod rundt 60 % seier.
 2. Rydd: bobler, dra-streker og ULIK DOM-lapper utenfor protokollfeltet (fast skuff), skriv radene ferdig (ikke «27 fo»), forklar «NS 1940».
 3. Klimaks i uttrykket: folkemengden fra tom plass til trengsel (tydelig skala med sinnet), tyskerjente-saker som navngitte personer, verdig.
+
+### 2026-10-01 - Fullføring i chat (etter natt 1, vurdering 4: sum 17), byggmester
+
+Natta stoppet på WIP etter fire runder fordi rutinen ikke tillot levering første natt (endret samme
+dag: natta ender nå alltid med PR). Gøy hadde stått på 3 i fire runder mens hver forbedrer la til
+nye regler. Denne runden kuttet i stedet.
+
+**Gjort.**
+
+1. **Kuttet til tre regler.** Kortvalget er borte (ny rettssal, fast rute, felles behandling,
+   flere dommere). Brettene åpner selv rettssalene (1, 1, 2, 5) og fast rute for grå saker
+   (ingen, ingen, Ilebu, alle leirer) - eleven bruker grepene på de røde parene og
+   tyskerjente-sakene. Profittøren kan bare gå til retten (ingen bot-fristelse); INTERNER er den
+   ene fristelsen. Reglene eleven holder i hodet: alvorlig sak i retten, uten lov ingen sak,
+   like saker samme dom (straffene synker med tiden).
+2. **Presset.** `ventPerMappe` 0,0016, `kravSlutt` 0,0013, `ulovligLetter` 0,08. Seendes sinne
+   (median/p10, 60 runder) ved 20, 55, 80, 110, 150 og 200 s: 20/20, 36/26, 42/30, 46/31,
+   48/28, 64/35 (før 20/20, 37/26, 43/32, 40/26, 42/27, 58/21) - den flinke er nå i fare.
+3. **Ryddet.** LOVEN er ren lovtekst (ingen «nå 17 år» og «→ 16 år»), med «NS 1940»: meldt inn
+   1940. Dommen i rettssalen står hel fra start i lyst blekk og mørkner tegn for tegn (før så den
+   avkuttet ut: «17 å», «8,»). ULIK DOM-lappene slås ned over vinduet mot gata, ikke over
+   protokollen. Folkemengden går fra tom plass til full trengsel ved 85 % sinne (før minst tre
+   personer). Tyskerjente-sakene har navn og alder («Anna, 19»).
+
+**Simuleringen (200 runder per robot), grønn:** seende vinner 85 % (median 8 700, p10-p90
+5 690-12 730), halvgod 95 % (median 5 720 = 66 % av vinneren), alt-til-retten 0 %,
+alt-til-forelegg 0 %, knappemoser 0 %, passiv 0 %. 50,9 valg per minutt. Presset
+0,27 -> 0,53 -> 0,77. Likhet: nærmest guddommelig-vind 0,39.
+
+**Det som IKKE virket.** Uten kortene vant seende bare 37 % (for få rettssaler i 1947-48); fem
+saler i brett 4 ga 77 %, og lavere `ventPerMappe` 85 %. Lavere `ulovligLetter` alene flyttet ikke
+halvgod: den taper ikke på sinne, den taper poeng på ulike par.
+
+**Kjente svakheter.** Halvgod vinner fortsatt nesten alltid; trappen ligger i poengene og i
+antall internerte. Lokalt feiler selvspill og audit på en 403 fra miljøet (samme på Radionettet,
+som er på main); i sky-miljøet var de grønne.
