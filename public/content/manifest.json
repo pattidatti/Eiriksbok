@@ -4160,6 +4160,21 @@
               ],
               "createdDate": "2026-09-28T03:33:27+02:00",
               "lastUpdated": "2026-09-28T07:38:16+02:00"
+            },
+            {
+              "id": "landssvikoppgjoret",
+              "title": "Landssvikoppgjøret: Da Norge dømte sine egne",
+              "description": "Hvordan Norge straffet rundt 46 000 landssvikere etter krigen, og hvorfor folk fortsatt diskuterer om oppgjøret var rettferdig.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "andre-verdenskrig",
+                "norge",
+                "rettsstat",
+                "okkupasjon",
+                "landssvik"
+              ],
+              "createdDate": "2026-10-01T00:00:00Z"
             }
           ]
         },

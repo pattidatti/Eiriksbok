@@ -26,6 +26,7 @@ const PalassveggenBenin = lazy(() => import('./content/interactive/PalassveggenB
 const AngkorLagForLag = lazy(() => import('./content/interactive/AngkorLagForLag').then(m => ({ default: m.AngkorLagForLag })));
 const HvorforKomDe = lazy(() => import('./content/interactive/HvorforKomDe').then(m => ({ default: m.HvorforKomDe })));
 const KrigsseilernesRegnskap = lazy(() => import('./content/interactive/KrigsseilernesRegnskap').then(m => ({ default: m.KrigsseilernesRegnskap })));
+const RettsoppgjoretsSaker = lazy(() => import('./content/interactive/RettsoppgjoretsSaker').then(m => ({ default: m.RettsoppgjoretsSaker })));
 const SvalbardTraktatTest = lazy(() => import('./content/interactive/SvalbardTraktatTest').then(m => ({ default: m.SvalbardTraktatTest })));
 const Sikkerhetsnettet = lazy(() => import('./content/interactive/Sikkerhetsnettet').then(m => ({ default: m.Sikkerhetsnettet })));
 const TerraNulliusDommen = lazy(() => import('./content/interactive/TerraNulliusDommen').then(m => ({ default: m.TerraNulliusDommen })));
@@ -555,6 +556,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     PalassveggenBenin,
     AngkorLagForLag,
     KrigsseilernesRegnskap,
+    RettsoppgjoretsSaker,
     AmerikaBevisSortering,
     GrenseTegner,
     StilleKilder,

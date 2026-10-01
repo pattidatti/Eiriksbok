@@ -1,0 +1,264 @@
+{
+  "id": "landssvikoppgjoret",
+  "title": "Landssvikoppgjøret: Da Norge dømte sine egne",
+  "layout": "rich",
+  "year": "1945-1957",
+  "category": "Norge",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "factChecked": "2026-10-01",
+  "details": [
+    "Rundt 46 000 nordmenn ble straffet for å ha hjulpet okkupantene under andre verdenskrig",
+    "25 nordmenn ble henrettet, blant dem Vidkun Quisling i 1945",
+    "Tusenvis av «tyskerjenter» ble straffet uten lov og dom - staten ba om unnskyldning i 2018"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Våren 1945 var krigen over. Folk jublet i gatene, flagget vaiet og fangene kom hjem. Men midt i festen sto et vanskelig spørsmål: Hva skulle Norge gjøre med de nordmennene som hadde hjulpet tyskerne i fem år? Noen hadde vært medlemmer i Vidkun Quislings parti. Noen hadde angitt naboer til det tyske hemmelige politiet. Andre hadde tjent store penger på å bygge for okkupantene. Mange var sinte og ville ha hevn."
+    },
+    {
+      "type": "text",
+      "content": "Svaret ble landssvikoppgjøret, også kalt rettsoppgjøret. Landssvik betyr å svike sitt eget land, for eksempel ved å hjelpe en fiende som har tatt over landet. I løpet av få år ble rundt 50 000 nordmenn dømt (Sørensen, 2016). Denne artikkelen handler om hvordan oppgjøret foregikk, og om hvorfor folk fortsatt diskuterer om det var rettferdig."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Arresterte NS-medlemmer føres bort av hjemmestyrker våren 1945",
+      "caption": "Etter freden ble tusenvis av nordmenn arrestert. Mange av dem satt fengslet i månedsvis før saken kom opp."
+    },
+    {
+      "type": "header",
+      "text": "Hvem var landssvikerne?"
+    },
+    {
+      "type": "text",
+      "content": "De fleste som ble straffet, hadde vært medlemmer av Nasjonal Samling, forkortet NS. NS var partiet til Vidkun Quisling. Under krigen styrte NS landet sammen med tyskerne. Du kan lese mer om hvordan det var å leve i Norge disse årene i artikkelen om [Norge under okkupasjonen](/historie/andre-verdenskrig/norge-under-okkupasjonen)."
+    },
+    {
+      "type": "text",
+      "content": "Men landssvik var mer enn partimedlemskap. Noen jobbet for det tyske sikkerhetspolitiet og hjalp til med å jakte på motstandsfolk. Andre solgte varer eller arbeid til okkupantene og tjente godt på det. Dette kalles økonomisk landssvik. Alle disse gruppene kunne straffes, men straffene ble svært forskjellige."
+    },
+    {
+      "type": "header",
+      "text": "Lovene ble laget i London"
+    },
+    {
+      "type": "text",
+      "content": "Under krigen satt den norske regjeringen i eksil i London. Eksil betyr at man må styre landet sitt fra utlandet. Derfra laget regjeringen nye regler for hvordan landssvikerne skulle straffes når krigen var over. Den viktigste regelen kom 15. desember 1944 og het landssvikanordningen (Andenæs mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Den mest omstridte delen handlet om NS. Regjeringen bestemte at det var straffbart å ha vært medlem av NS etter 9. april 1940, dagen tyskerne gikk inn i Norge. Problemet var at det ikke var forbudt å være med i NS da folk meldte seg inn. Loven fikk det juristene kaller tilbakevirkende kraft: den straffet noe som var lovlig da det skjedde. Ingen andre land i Vest-Europa som var okkupert av Tyskland, gjorde noe lignende (Sørensen, 2016)."
+    },
+    {
+      "type": "text",
+      "content": "Regjeringen bestemte også at alle NS-medlemmer sammen skulle betale for skadene partiet hadde gjort, som et slags felles regnskap. Den regelen ble aldri gjennomført, og den ble fort fjernet igjen (Sørensen, 2016)."
+    },
+    {
+      "type": "header",
+      "text": "Oppgjøret i tall"
+    },
+    {
+      "type": "text",
+      "content": "Politiet etterforsket 92 805 saker. Av dem endte 46 085 med straff, 30 002 menn og 16 083 kvinner. Rundt 17 000 havnet i fengsel, og 80 av dem fikk livstid (Andenæs mfl., 2026). Mange av de andre fikk bot og tap av rettigheter i samfunnet. Ofte skjedde det gjennom et forelegg. Et forelegg er en straff som påtalemyndigheten foreslår. Godtar den tiltalte straffen, slipper saken å gå gjennom en lang rettssak."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Landssvikoppgjøret i tall",
+        "content": "92 805 saker ble etterforsket. 46 085 personer ble straffet, av dem 16 083 kvinner. Rundt 17 000 fikk fengsel, 80 av dem på livstid. 30 nordmenn ble dømt til døden, og 25 ble skutt (Andenæs mfl., 2026)."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Dødsstraffen kom tilbake"
+    },
+    {
+      "type": "text",
+      "content": "Norge hadde ikke henrettet noen i fredstid siden 1876, og i straffeloven fra 1902 var dødsstraffen tatt bort. Men i oktober 1941 innførte regjeringen i London dødsstraff igjen. Det skjedde etter at tyskerne hadde skutt to nordmenn, Viggo Hansteen og Rolf Wickstrøm (Brandal, 2015). Nå skulle de verste forræderne kunne straffes med livet."
+    },
+    {
+      "type": "text",
+      "content": "Den mest kjente saken var mot Vidkun Quisling selv. Han ble dømt til døden 10. september 1945. Høyesterett avviste anken hans, og 24. oktober 1945 ble han skutt på Akershus festning i Oslo (Dahl & Skodvin, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Til sammen ble 30 nordmenn dømt til døden, og 25 av dem ble henrettet. Tre av dem var NS-politikere. 22 hadde jobbet for det tyske hemmelige politiet eller det norske statspolitiet, og ti av disse var med i den beryktede Rinnanbanden i Trøndelag (Andenæs mfl., 2026). I tillegg ble 12 tyskere henrettet for krigsforbrytelser (Brandal, 2015). Den siste som ble skutt, var NS-ministeren Ragnar Skancke, 28. august 1948. I 1950 tok Stortinget dødsstraffen bort i fredstid igjen (Brandal, 2015)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Enkelte som ble dømt til døden og henrettet i 1945‒1946, ville neppe fått dødsdom om saken deres var kommet opp i 1948.",
+        "author": "Historikeren Øystein Sørensen (2016)"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Prøv selv: Hva skjedde med dem?"
+    },
+    {
+      "type": "text",
+      "content": "Landssvikerne var ikke én gruppe. En minister, en angiver, et vanlig partimedlem, en rik bedriftseier og en ung kvinne med tysk kjæreste ble behandlet helt ulikt. Gjett hvordan hver sak endte, og legg merke til hvilke saker som gikk gjennom retten."
+    },
+    {
+      "type": "component",
+      "name": "RettsoppgjoretsSaker",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Straffene ble mildere med tiden"
+    },
+    {
+      "type": "text",
+      "content": "Sitatet over viser et viktig problem. Like etter krigen var sinnet stort, og straffene var harde. Etter noen år hadde folk roet seg, og de samme handlingene ga mildere straff (Sørensen, 2016). Det betyr at to personer som hadde gjort omtrent det samme, kunne få helt ulik straff bare fordi saken deres kom opp på ulike tidspunkt. De siste som hadde fått livstid, kom ut i 1957 (Andenæs mfl., 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Fengselscelle med en enkel seng og et lite vindu med sprosser",
+      "caption": "Rundt 17 000 nordmenn fikk fengselsstraff. De siste med livstidsdom slapp ut i 1957."
+    },
+    {
+      "type": "header",
+      "text": "Kvinnene som ble straffet uten dom"
+    },
+    {
+      "type": "text",
+      "content": "En gruppe ble behandlet på en måte som Norge senere har skammet seg over. Mellom 40 000 og 50 000 norske kvinner hadde et forhold til en tysk soldat under krigen, og det ble født rundt 10 000 til 12 000 barn (Rivrud & Creed, 2018). Folk kalte kvinnene «tyskerjenter». Det var ikke forbudt i noen lov å ha en tysk kjæreste. Likevel ble flere tusen kvinner satt i leir det første året etter freden (Sørensen, 2016). Mange fikk håret klippet av foran sinte folkemengder. Kvinner som hadde giftet seg med en tysker, mistet det norske statsborgerskapet og ble sendt til Tyskland (Rivrud & Creed, 2018)."
+    },
+    {
+      "type": "text",
+      "content": "Over 70 år senere, i 2018, ba statsminister Erna Solberg om unnskyldning på vegne av regjeringen. Hun sa: «Vår konklusjon er at norske myndigheter brøt med rettsstatens grunnprinsipp om at ingen borger skal straffes uten dom eller dømmes uten lov» (Rivrud & Creed, 2018). En rettsstat er et land der staten selv må følge lovene, og der ingen kan straffes uten en rettferdig rettssak. Den samme ideen finner du i [menneskerettighetserklæringen](/historie/den-franske-revolusjon/menneskerettighetserklaeringen) fra den franske revolusjonen, og den står også i [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven)."
+    },
+    {
+      "type": "header",
+      "text": "Var oppgjøret rettferdig?"
+    },
+    {
+      "type": "text",
+      "content": "Folk har vært uenige om dette helt siden 1945. I 1950 spurte noen 150 jurister i Oslo hva de mente. 63 svarte at oppgjøret var godt nok, 64 at det ikke var godt nok, og 22 visste ikke (Andenæs mfl., 2026). Selv ekspertene var altså delt nesten på midten."
+    },
+    {
+      "type": "text",
+      "content": "Kritikerne pekte på flere ting. Loven om NS-medlemskap straffet noe som var lovlig da det skjedde. Straffene ble mildere år for år. Og mange av dem som hadde tjent store penger på tyskerne, slapp unna. Bare 3 262 personer ble dømt for økonomisk landssvik, og det var bare rundt en femdel av dem som ble etterforsket (Andenæs mfl., 2026). Mange syntes det var urettferdig at vanlige partimedlemmer ble straffet, mens rike forretningsfolk gikk fri."
+    },
+    {
+      "type": "text",
+      "content": "Andre mener at oppgjøret var nødvendig. Etter fem år med okkupasjon var folk så sinte at mange kunne ha tatt loven i egne hender. Ved å la domstolene ta sakene fikk Norge et ordnet oppgjør i stedet for hevn i gatene. Noe av det samme skjedde i [Nürnbergprosessen](/historie/lov-og-rett/nurnbergprosessen), der lederne i Nazi-Tyskland ble stilt for retten i stedet for å bli skutt uten dom."
+    },
+    {
+      "type": "text",
+      "content": "Landssvikoppgjøret viser hvor vanskelig det er å være rettferdig når sinnet er stort. Det viser også at en rettsstat blir testet når den skal behandle dem folk liker minst. Det var nettopp der Norge sviktet tyskerjentene."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Eldre kvinne ser på et gammelt svart-hvitt-fotografi av seg selv som ung",
+      "caption": "Mange av kvinnene som ble straffet uten dom, levde lenge med skammen. Unnskyldningen kom først i 2018."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr landssvik, og hvilket parti hadde de fleste landssvikerne vært medlem av?",
+          "Hvor mange saker ble etterforsket, og hvor mange personer ble straffet i landssvikoppgjøret?",
+          "Når ble dødsstraff innført igjen, og hvorfor skjedde det akkurat da?",
+          "Hva ba Erna Solberg om unnskyldning for i 2018?"
+        ],
+        "reflekter": [
+          "Forklar hva det betyr at en lov har tilbakevirkende kraft. Hvorfor var det et problem i loven om NS-medlemskap?",
+          "Straffene ble mildere fra 1945 til 1948. Forklar hvorfor, og hvorfor det kan regnes som urettferdig.",
+          "Sammenlign hvordan vanlige NS-medlemmer og bedriftseiere som tjente på tyskerne ble behandlet. Hva mener du om forskjellen?",
+          "Hvorfor sviktet staten rettsstaten i behandlingen av tyskerjentene, men ikke i sakene som gikk gjennom retten?"
+        ],
+        "gaaVidere": [
+          "Diskuter i gruppa: Var det riktig å bruke dødsstraff etter krigen, selv om Norge hadde tatt den bort i 1902?",
+          "Skriv et kort leserinnlegg fra 1945 der du enten forsvarer eller kritiserer landssvikoppgjøret. Bruk minst to fakta fra artikkelen.",
+          "Finn et eksempel fra vår egen tid der folk krever hard straff fordi de er sinte. Hva kan vi lære av landssvikoppgjøret?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Omtrent hvor mange nordmenn ble straffet i landssvikoppgjøret?",
+            "options": [
+              "Rundt 5 000",
+              "Rundt 46 000",
+              "Rundt 92 000",
+              "Rundt 200 000"
+            ],
+            "correctAnswer": 1,
+            "explanation": "46 085 personer ble straffet. Nesten dobbelt så mange saker, 92 805, ble etterforsket."
+          },
+          {
+            "question": "Hvorfor var loven om NS-medlemskap så omstridt?",
+            "options": [
+              "Den gjaldt bare kvinner",
+              "Den straffet noe som var lovlig da folk meldte seg inn",
+              "Den ble laget av tyskerne",
+              "Den ga ingen straff i det hele tatt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Loven fikk tilbakevirkende kraft. Det var ikke forbudt å være med i NS da folk meldte seg inn."
+          },
+          {
+            "question": "Hvor mange nordmenn ble henrettet etter landssvikoppgjøret?",
+            "options": [
+              "3",
+              "12",
+              "25",
+              "80"
+            ],
+            "correctAnswer": 2,
+            "explanation": "30 nordmenn ble dømt til døden, og 25 av dem ble skutt. I tillegg ble 12 tyskere henrettet for krigsforbrytelser."
+          },
+          {
+            "question": "Hva var spesielt galt med behandlingen av tyskerjentene?",
+            "options": [
+              "De fikk for lav bot",
+              "De ble straffet uten lov og uten dom",
+              "De fikk ikke stemme ved valget i 1945",
+              "De ble dømt av en tysk domstol"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Det var ikke forbudt å ha en tysk kjæreste, men tusenvis ble satt i leir uten rettssak. I 2018 ba statsministeren om unnskyldning."
+          },
+          {
+            "question": "Hvem var den siste som ble henrettet etter landssvikoppgjøret?",
+            "options": [
+              "Vidkun Quisling",
+              "Henry Rinnan",
+              "Ragnar Skancke",
+              "Albert Viljam Hagelin"
+            ],
+            "correctAnswer": 2,
+            "explanation": "NS-ministeren Ragnar Skancke ble skutt 28. august 1948. Quisling ble henrettet allerede i oktober 1945."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Andenæs, J., Sulland, F., Pryser, T. & Risto, T. (2026). *Landssvikoppgjøret*. Store norske leksikon. Hentet 01.10.2026 fra https://snl.no/landssvikoppgjøret",
+          "Brandal, N. (2015). *Dødsstraff under rettsoppgjøret*. Norgeshistorie, Universitetet i Oslo. Hentet 01.10.2026 fra https://www.norgeshistorie.no/andre-verdenskrig/1728-dodsstraff-under-rettsoppgjoret.html",
+          "Dahl, H. F. & Skodvin, M. (2026). *Vidkun Quisling*. Store norske leksikon. Hentet 01.10.2026 fra https://snl.no/Vidkun_Quisling",
+          "Rivrud, K. & Creed, I. (2018, 17. oktober). Statsministeren sier unnskyld til tyskerjentene. *NRK*. https://www.nrk.no/vestfoldogtelemark/statsministeren-sier-unnskyld-til-tyskerjentene-1.14250555",
+          "Sørensen, Ø. (2016). *Rettsoppgjøret etter andre verdenskrig*. Norgeshistorie, Universitetet i Oslo. Hentet 01.10.2026 fra https://www.norgeshistorie.no/andre-verdenskrig/1744-rettsoppgjoret-etter-andre-verdenskrig.html"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
