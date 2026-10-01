@@ -40,9 +40,10 @@ const CSS = `
 .arc-pin[data-below="1"]::after{bottom:auto;top:-9px;transform:rotate(225deg)}
 .arc-pin[data-edge]:not([data-edge=""])::after{display:none}
 .arc-pin[data-edge]:not([data-edge=""])::before{content:attr(data-edge);margin-right:6px;font-size:18px;line-height:1}
-.arc-ring{position:absolute;left:0;top:0;width:68px;height:68px;border-radius:50%;border:4px solid var(--arc-accent);box-shadow:0 0 0 3px var(--arc-ink);animation:arcRing 1s ease-in-out infinite alternate}
-@keyframes arcRing{from{scale:.8;opacity:.6}to{scale:1.1;opacity:1}}
-.arc-beat{position:absolute;left:0;top:0;width:min(340px,84%);pointer-events:auto;background:var(--arc-paper);border:var(--arc-line) solid var(--arc-ink);border-radius:calc(var(--arc-radius) + 2px);box-shadow:0 var(--arc-drop) 0 var(--arc-ink);padding:10px 14px 10px;color:var(--arc-ink);font-family:var(--arc-body-font);text-align:left;animation:arcBeat .3s cubic-bezier(.2,1.4,.4,1) both;will-change:transform}
+.arc-ring{position:absolute;left:0;top:0;width:68px;height:68px;border-radius:50%;border:4px solid var(--arc-accent);box-shadow:0 0 0 3px var(--arc-ink);pointer-events:none}
+.arc-ring::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:3px solid var(--arc-accent);animation:arcRing 1.3s ease-out infinite}
+@keyframes arcRing{from{transform:scale(1);opacity:.9}to{transform:scale(1.9);opacity:0}}
+.arc-beat{position:absolute;left:0;top:0;width:min(340px,84%);pointer-events:auto;background:var(--arc-paper);border:var(--arc-line) solid var(--arc-ink);border-radius:calc(var(--arc-radius) + 2px);box-shadow:0 var(--arc-drop) 0 var(--arc-ink);padding:10px 14px 10px;color:var(--arc-ink);font-family:var(--arc-body-font);text-align:left;animation:arcBeat .3s cubic-bezier(.2,1.4,.4,1) both}
 @keyframes arcBeat{from{opacity:0;scale:.7}to{opacity:1;scale:1}}
 .arc-beat-title{font-size:19px;line-height:1.1}
 .arc-beat p{margin:6px 0 9px;font-weight:700;font-size:15.5px;line-height:1.35}
@@ -64,7 +65,7 @@ const CSS = `
 @keyframes arcBump{50%{transform:rotate(calc(var(--arc-tilt) * 2)) scale(1.35)}}
 .arc-wig{animation:arcWig .6s infinite alternate}
 @keyframes arcWig{from{transform:rotate(-4deg)}to{transform:rotate(4deg) scale(1.08)}}
-@media (prefers-reduced-motion: reduce){.arc-banner.show{animation:none}.arc-ring,.arc-beat{animation:none}.arc-wig,.arc-bar.low{animation:none}}
+@media (prefers-reduced-motion: reduce){.arc-banner.show{animation:none}.arc-ring::after,.arc-beat{animation:none}.arc-wig,.arc-bar.low{animation:none}}
 `;
 
 function themeVars(t: ArcadeTheme): React.CSSProperties {

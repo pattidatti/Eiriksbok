@@ -28,7 +28,10 @@ import { Markers, Highlight } from './radionettet/markers';
 import { Board } from './radionettet/terrain';
 import { Ambience, Effects } from './radionettet/effects';
 import { createFx } from './radionettet/fxPool';
+import { Flyovers, Boats } from './radionettet/life';
 import { Hud } from './radionettet/hud';
+import { DamageNumbers } from './radionettet/damage';
+import { DAMAGE_CSS } from './radionettet/damagePool';
 import { HUD_CSS } from './radionettet/hudData';
 import { C } from './radionettet/models';
 
@@ -134,6 +137,11 @@ function makeSfx(a: ArcadeSynth) {
             a.tone(55, 30, 1.2, 'sine', 0.04);
         } else if (name === 'fjernMg') for (let i = 0; i < 7; i++) a.noise(0.05, 0.012, 1100, i * 0.08);
         else if (name === 'vind') a.noise(3, 0.018, 500);
+        else if (name === 'fly') {
+            // Motordur fra en formasjon høyt oppe: stiger og dør ut.
+            a.tone(82, 96, 4, 'sawtooth', 0.01);
+            a.noise(4, 0.014, 160);
+        }
         else if (name === 'måke') {
             a.tone(1500, 1000, 0.22, 'triangle', 0.012);
             a.tone(1450, 950, 0.3, 'triangle', 0.012, 0.28);
@@ -163,7 +171,7 @@ function coach(g: G, text: ArcadeText, stage: React.RefObject<HTMLDivElement | n
         const start = def.veier[0][0];
         text.point('fiende', 'Fienden kommer inn her', at(start[0] - 1.2, start[1]), { tone: 'fare', until: () => g.phase !== 'plan', seconds: 60 });
         if (g.units.length === 0 && g.holding < 0) text.point('kort', 'Klikk et kort', domAnchor(stage, 'kort0'), { until: () => g.holding >= 0 || g.units.length > 0, seconds: 60 });
-        if (g.holding >= 0) text.point('rute', 'Klikk en gul rute ved veien', at(7.5, 4.5), { until: () => g.holding < 0, seconds: 60 });
+        if (g.holding >= 0) text.point('rute', 'Klikk en gul rute ved veien', at(10.5, 4.5), { until: () => g.holding < 0, seconds: 60 });
         if (g.units.length >= 2 && g.holding < 0) text.point('bolge', 'Klar? Start bølgen', domAnchor(stage, 'bolge'), { until: () => g.phase !== 'plan', seconds: 60 });
     }
     if (g.phase === 'plan' && waveDef(g).kanaler > 0 && usedChannels(g) === 0 && g.units.length) {
@@ -236,6 +244,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
         if (u) flashUnit(u.id);
     };
     const speedRef = useRef(0);
+    const dmgRef = useRef<HTMLDivElement>(null);
     const [fxPool] = useState(createFx);
     const fxRef = useRef(fxPool);
     const coachT = useRef(0);
@@ -498,7 +507,7 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
     return (
         <MicroGameFrame title="Radionettet" bleed>
             <div className="p-2">
-                <style>{HUD_CSS}</style>
+                <style>{HUD_CSS + DAMAGE_CSS}</style>
                 <ArcadeStage ref={stageRef} theme={THEME} background={C.papir} label="Radionettet - still opp hæren og koble den sammen med radio">
                     <MicroCanvas builtInLights={false} controls={false} contactShadows={false} background={C.papir} fog={null} postprocessing>
                         <Camera gRef={gRef} projRef={projRef} />
@@ -513,9 +522,13 @@ export default function Radionettet3D({ onComplete }: MicroGameProps) {
                         <Lines gRef={gRef} />
                         <Effects gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
                         <Ambience gRef={gRef} fxRef={fxRef} speedRef={speedRef} sfx={sfx} />
+                        <Flyovers gRef={gRef} speedRef={speedRef} sfx={sfx} />
+                        <Boats gRef={gRef} fxRef={fxRef} speedRef={speedRef} />
                         <KitEffects bloomIntensity={0.8} bloomThreshold={0.9} />
+                        <DamageNumbers gRef={gRef} projRef={projRef} layerRef={dmgRef} speedRef={speedRef} />
                         <Loop gRef={gRef} modeRef={modeRef} ioRef={ioRef} speedRef={speedRef} onTick={onTick} />
                     </MicroCanvas>
+                    <div ref={dmgRef} className="rn-dmg" aria-hidden />
 
                     {(mode === 'play' || mode === 'paused') && <Hud gRef={gRef} act={act} />}
                     {textLayer}

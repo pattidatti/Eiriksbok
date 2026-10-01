@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { MAP_D, MAP_W, type SlagDef } from './levels';
 import type { Look } from './models';
-import { CLOCK, WATER_Y, craterSpots, seeded } from './ground';
+import { CLOCK, WATER_Y, craterSpots, heightAt, seeded } from './ground';
 
 // Dybden i landskapet: havet ved Dunkerque med ekte vann, voller rundt kratrene i 3D,
 // småstein og tuster over brettet som kaster skygge, og dis i det fjerne.
@@ -94,7 +94,7 @@ export function BoardDetail({ def, look, detail }: { def: SlagDef; look: Look; d
         const r = rims.current;
         if (r) {
             spots.forEach(([x, z, rr], i) => {
-                M.compose(P.set(x, 0, z), Q.setFromEuler(E.set(0, x * 7.3 + z, 0)), S.set(rr * 1.2, rr, rr * 1.05));
+                M.compose(P.set(x, heightAt(look, x, z, def.elv), z), Q.setFromEuler(E.set(0, x * 7.3 + z, 0)), S.set(rr * 1.2, rr, rr * 1.05));
                 r.setMatrixAt(i, M);
             });
             r.count = spots.length;
@@ -104,14 +104,14 @@ export function BoardDetail({ def, look, detail }: { def: SlagDef; look: Look; d
         const b = bits.current;
         if (b) {
             pebbles.forEach(([x, z, a, s], i) => {
-                M.compose(P.set(x, 0, z), Q.setFromEuler(E.set(look === 'ørken' ? a : 0.15, a, 0)), S.set(s, look === 'ørken' ? s * 0.6 : s, s));
+                M.compose(P.set(x, heightAt(look, x, z, def.elv), z), Q.setFromEuler(E.set(look === 'ørken' ? a : 0.15, a, 0)), S.set(s, look === 'ørken' ? s * 0.6 : s, s));
                 b.setMatrixAt(i, M);
             });
             b.count = pebbles.length;
             b.instanceMatrix.needsUpdate = true;
             b.computeBoundingSphere();
         }
-    }, [spots, pebbles, look]);
+    }, [spots, pebbles, look, def.elv]);
     return (
         <>
             <instancedMesh ref={rims} args={[rimGeo, undefined, 32]} castShadow receiveShadow>

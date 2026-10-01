@@ -60,8 +60,15 @@ function canTarget(g: G, u: Unit, e: Enemy) {
     return u.linked && g.netSeen.has(e.id);
 }
 
+/** Skadetallet som spretter opp over den som ble truffet (fiende = treff på dine). */
+function tall(g: G, x: number, z: number, alt: number, n: number, fiende: boolean, hard: boolean, kill: boolean) {
+    if (n < 0.5) return;
+    g.fx.push({ kind: 'tall', x, z, x2: x, z2: z, alt, t: 0, life: 0.3, fiende, hard, n, kill });
+}
+
 function hit(g: G, e: Enemy, dmg: number, io: IO) {
     if (!alive(e)) return;
+    tall(g, e.x, e.z, e.alt, Math.min(dmg, e.hp), false, ENEMIES[e.kind].armor === 'armor', e.hp - dmg <= 0);
     e.hp -= dmg;
     e.kick = 1;
     if (e.hp <= 0) {
@@ -86,7 +93,13 @@ function fx(kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre', x: number, z
 /** Tunge løp (vogner og panservern) sender en synlig granat, lettere våpen et kort sporlys. */
 const HEAVY = new Set(['vogn', 'pv', 'evogn', 'epak']);
 function shot(g: G, x: number, z: number, x2: number, z2: number, alt: number, fiende: boolean, by: string, hard = false) {
-    g.fx.push({ kind: 'skudd', x, z, x2, z2, alt, t: 0, life: HEAVY.has(by) ? 0.2 : 0.14, fiende, by, hard });
+    const life = HEAVY.has(by) ? 0.2 : 0.14;
+    // Skadetallet kommer når granaten treffer, ikke når den går ut av løpet.
+    for (let i = g.fx.length - 1; i >= Math.max(0, g.fx.length - 3); i--) {
+        const f = g.fx[i];
+        if (f.kind === 'tall' && f.t === 0 && f.x === x2 && f.z === z2) f.wait = life;
+    }
+    g.fx.push({ kind: 'skudd', x, z, x2, z2, alt, t: 0, life, fiende, by, hard });
 }
 
 // ---- Fienden kommer ---------------------------------------------------------------
@@ -262,6 +275,7 @@ function scaled(r: Record<Armor, number>, k: number): Record<Armor, number> {
 
 // ---- Fiendens enheter ----------------------------------------------------------------
 function hurtUnit(g: G, u: Unit, dmg: number, io: IO) {
+    if (!u.dead) tall(g, ux(u), uz(u), flying(u) ? u.alt : 0, Math.min(dmg, u.hp), true, UNITS[u.kind].armor === 'armor', u.hp - dmg <= 0);
     u.hp -= dmg;
     u.kick = 1;
     if (u.hp <= 0 && !u.dead) {
@@ -363,6 +377,7 @@ function actEnemyGround(g: G, e: Enemy, dt: number, io: IO) {
         e.cd = p;
         e.kick = 1;
         g.hqHp -= st.dps.soft * p;
+        tall(g, hx, hz, 0.6, st.dps.soft * p, true, true, false);
         shot(g, e.x, e.z, hx, hz, 0, true, e.kind, true);
         io.event('hqTreff', hx, hz);
     }

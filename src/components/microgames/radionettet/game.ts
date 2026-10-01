@@ -65,7 +65,7 @@ export interface Enemy {
 }
 
 export interface Fx {
-    kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre';
+    kind: 'skudd' | 'smell' | 'granat' | 'kutt' | 'sperre' | 'tall';
     x: number;
     z: number;
     x2: number;
@@ -78,6 +78,11 @@ export interface Fx {
     by?: string;
     /** Målet er pansret: granaten slår gnister. */
     hard?: boolean;
+    /** Skadetall over den som ble truffet (`tall`): hvor mye, og om det var drepende. */
+    n?: number;
+    kill?: boolean;
+    /** Sekunder før tallet vises (granaten er på vei). */
+    wait?: number;
 }
 
 export type Phase = 'plan' | 'wave' | 'slagVunnet' | 'vunnet' | 'tapt';

@@ -125,11 +125,17 @@ export function CoachLayer({ store }: { store: CoachStore }) {
                         x = Math.min(W - w - 8, Math.max(8, a.x - w / 2));
                         y = a.y - h - 36 > 8 ? a.y - h - 36 : Math.min(H - h - 8, a.y + 36);
                     }
-                    card.style.transform = `translate(${x}px, ${y}px)`;
+                    card.style.left = `${x}px`;
+                    card.style.top = `${y}px`;
                 }
                 if (ring) {
                     ring.style.display = a ? 'block' : 'none';
-                    if (a) ring.style.transform = `translate(${a.x - 34}px, ${a.y - 34}px)`;
+                    // Ringen står fast på punktet og pulserer ut fra det (::after). Plasseres med
+                    // left/top, ikke transform: en skalering oppå translate får den til å gli.
+                    if (a) {
+                        ring.style.left = `${a.x - 34}px`;
+                        ring.style.top = `${a.y - 34}px`;
+                    }
                 }
             }
         };

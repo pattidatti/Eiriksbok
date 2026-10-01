@@ -8,6 +8,7 @@ import { canPlace, isAir, reachable, slagDef, usedChannels, type G, type Unit, t
 import { C, LOOK, modelsFor, wreck, propeller, figureMaterial, figureMaterialHi, PROPS, type Look, type Model } from './models';
 import type { FxPool } from './fxPool';
 import { hlOn, unitYaw, enemyYaw, type Hl } from './hl';
+import { MARKS, setTiles, lift, tilt } from './ground';
 
 // Visningen av enhetene: detaljerte figurer i ekte lys på et ortografisk kart.
 // Alt leser spilltilstanden fra gRef i useFrame; React tegner bare på nytt når
@@ -90,46 +91,21 @@ const S = new THREE.Vector3();
 const UP = new THREE.Vector3(0, 1, 0);
 const DIR = new THREE.Vector3();
 const COL = new THREE.Color();
-const FLAT = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
 
-/** Gyldige ruter mens eleven holder et kort. Tegnes én gang per kort, ikke per musebevegelse. */
+/** Gyldige ruter mens eleven holder et kort, tegnet i bakken (ground.ts). Skrives én gang per
+ *  kort, ikke per musebevegelse. Gult der radioen når; grått der bare fallskjermsoldater kan hoppe. */
 export function PlaceHints({ gRef }: { gRef: React.MutableRefObject<G> }) {
-    const ref = useRef<THREE.InstancedMesh>(null);
     const key = useRef('');
-    const inRange = useMemo(() => new THREE.Color(C.radio), []);
-    const out = useMemo(() => new THREE.Color('#b9b3a0'), []);
-    useLayoutEffect(() => {
-        ref.current?.setColorAt(0, inRange);
-    }, [inRange]);
     useFrame(() => {
         const g = gRef.current;
-        const m = ref.current;
-        if (!m) return;
         // Nøkkelen endres når kortet, hæren eller nettet endres (stafetten flytter grensen).
         const k = g.holding >= 0 && g.phase === 'plan' ? `${g.holding}:${g.shop[g.holding]}:${g.units.length}:${g.slag}:${usedChannels(g)}:${g.units.filter((u) => u.linked).length}` : '';
         if (k === key.current) return;
         key.current = k;
-        // Gult der radioen når (ringen og stafetten). Grått: bare fallskjermsoldater kan hoppe dit.
-        let n = 0;
-        if (k)
-            for (let x = 0; x < MAP_W; x++)
-                for (let z = 0; z < MAP_D; z++)
-                    if (canPlace(g, x + 0.5, z + 0.5)) {
-                        M.compose(P.set(x + 0.5, 0.01, z + 0.5), FLAT, S.set(0.78, 0.78, 1));
-                        m.setMatrixAt(n, M);
-                        m.setColorAt(n, reachable(g, x + 0.5, z + 0.5) ? inRange : out);
-                        n++;
-                    }
-        m.count = n;
-        m.instanceMatrix.needsUpdate = true;
-        if (m.instanceColor) m.instanceColor.needsUpdate = true;
+        MARKS.uTileOn.value = k ? 1 : 0;
+        if (k) setTiles((x, z) => (canPlace(g, x + 0.5, z + 0.5) ? (reachable(g, x + 0.5, z + 0.5) ? 1 : 2) : 0));
     });
-    return (
-        <instancedMesh ref={ref} args={[undefined, undefined, MAP_W * MAP_D]} frustumCulled={false}>
-            <planeGeometry args={[1, 1]} />
-            <meshBasicMaterial transparent opacity={0.5} depthWrite={false} toneMapped={false} />
-        </instancedMesh>
-    );
+    return null;
 }
 
 // ---- Figurer -------------------------------------------------------------------
@@ -225,7 +201,7 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
                 s.roll += dt * 7;
                 if (Math.random() < 0.6) fx.puff('sot', s.fx, s.fy, s.fz, { r: 0.14, grow: 2.4, life: 1.4, up: 0.2, spread: 0.2 });
                 if (s.fy <= 0) fx.boom(s.fx, 0, s.fz, 1);
-                grp.current.position.set(s.fx, 0, s.fz);
+                grp.current.position.set(s.fx, lift(slagDef(g), s.fx, s.fz), s.fz);
                 body.current.position.y = Math.max(0, s.fy);
                 body.current.rotation.set(s.roll, u.heading - Math.PI / 2, -0.6, 'YZX');
                 body.current.visible = s.fy > 0;
@@ -243,7 +219,13 @@ function UnitView({ u, look, gRef, onClick, fxRef, speedRef, hlRef }: { u: Unit;
         }
         if (wreckRef.current) wreckRef.current.visible = false;
         body.current.visible = true;
-        grp.current.position.set(air ? u.ax : u.x, 0, air ? u.az : u.z);
+        // Står på åsen der den er; vogner og kanoner heller med bakken.
+        const def = slagDef(g);
+        const px = air ? u.ax : u.x;
+        const pz = air ? u.az : u.z;
+        grp.current.position.set(px, lift(def, px, pz), pz);
+        if (flying) grp.current.quaternion.identity();
+        else tilt(def, px, pz, grp.current.quaternion);
         body.current.position.y = flying ? u.alt : 0;
         if (air) {
             // Flyene krenger i svingene og stiger med nesa opp.
@@ -398,7 +380,7 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
                 s.roll += dt * 8;
                 if (Math.random() < 0.7) fx.puff('sot', s.fx, s.fy, s.fz, { r: 0.14, grow: 2.6, life: 1.5, up: 0.2, spread: 0.2 });
                 if (s.fy <= 0) fx.boom(s.fx, 0, s.fz, 1.1);
-                grp.current.position.set(s.fx, 0, s.fz);
+                grp.current.position.set(s.fx, lift(slagDef(g), s.fx, s.fz), s.fz);
                 body.current.position.y = Math.max(0, s.fy);
                 body.current.rotation.set(s.roll, e.heading - Math.PI / 2, -0.7, 'YZX');
                 body.current.visible = s.fy > 0;
@@ -415,7 +397,10 @@ function EnemyView({ e, look, gRef, fxRef, speedRef, onDive }: { e: Enemy; look:
         }
         body.current.visible = true;
         if (wreckRef.current) wreckRef.current.visible = false;
-        grp.current.position.set(e.x, 0, e.z);
+        const def = slagDef(g);
+        grp.current.position.set(e.x, lift(def, e.x, e.z), e.z);
+        if (e.alt > 0) grp.current.quaternion.identity();
+        else tilt(def, e.x, e.z, grp.current.quaternion);
         body.current.position.y = e.alt;
         if (fly) {
             const tr = turn(0, e.heading - s.lastH, 1) / Math.max(1e-3, dt);
@@ -534,8 +519,9 @@ export function Lines({ gRef }: { gRef: React.MutableRefObject<G> }) {
         const g = gRef.current;
         const dm = dashRef.current;
         if (!dm) return;
-        const [hx, hz] = slagDef(g).hq;
-        const ay = 2.9;
+        const def = slagDef(g);
+        const [hx, hz] = def.hq;
+        const ay = 2.9 + lift(def, hx, hz);
         const ax = hx - 0.42;
         const az = hz + 0.14;
         const time = st.clock.elapsedTime;
@@ -545,11 +531,11 @@ export function Lines({ gRef }: { gRef: React.MutableRefObject<G> }) {
             const air = isAir(u.kind);
             const tx = air ? u.ax : u.x;
             const tz = air ? u.az : u.z;
-            const ty = air && u.mode !== 'bakke' ? u.alt + 0.3 : 0.9;
+            const ty = (air && u.mode !== 'bakke' ? u.alt + 0.3 : 0.9) + lift(def, tx, tz);
             // Stafett: linja går fra enheten som sender radioen videre, ikke fra kommandovogna.
             const via = u.via ? g.units.find((v) => v.id === u.via && !v.dead) : undefined;
             const sx = via ? via.x : ax;
-            const sy = via ? 0.9 : ay;
+            const sy = via ? 0.9 + lift(def, via.x, via.z) : ay;
             const sz = via ? via.z : az;
             DIR.set(tx - sx, ty - sy, tz - sz);
             const len = DIR.length();
@@ -586,8 +572,8 @@ export function Lines({ gRef }: { gRef: React.MutableRefObject<G> }) {
             // Sporlyset er en kort strek som farer fra løpet til målet.
             const t = Math.min(1, f.t / f.life);
             const t0 = Math.max(0, t - 0.45);
-            const y0 = 0.4;
-            const y1 = Math.max(0.35, f.alt);
+            const y0 = 0.4 + lift(def, f.x, f.z);
+            const y1 = Math.max(0.35, f.alt) + lift(def, f.x2, f.z2);
             pos.set([f.x + (f.x2 - f.x) * t0, y0 + (y1 - y0) * t0, f.z + (f.z2 - f.z) * t0, f.x + (f.x2 - f.x) * t, y0 + (y1 - y0) * t, f.z + (f.z2 - f.z) * t], k * 6);
             const c = f.fiende ? fiende : egen;
             col.set([c.r, c.g, c.b, c.r, c.g, c.b], k * 6);
@@ -610,22 +596,14 @@ export function Lines({ gRef }: { gRef: React.MutableRefObject<G> }) {
     );
 }
 
-/** Kortet eleven holder, under musepekeren. Flyttes i useFrame, aldri med state. */
+/** Ruta under musepekeren mens eleven holder et kort (grønn = lov, rød = ikke lov), tegnet i bakken. */
 export function Ghost({ gRef, pointer }: { gRef: React.MutableRefObject<G>; pointer: React.MutableRefObject<[number, number]> }) {
-    const m = useRef<THREE.Mesh>(null);
     useFrame(() => {
         const g = gRef.current;
         const k = g.holding >= 0 ? g.shop[g.holding] : null;
-        if (!m.current) return;
         const [x, z] = pointer.current;
-        m.current.visible = !!k && !isAir(k) && g.phase === 'plan' && x >= 0 && z >= 0 && x < MAP_W && z < MAP_D;
-        m.current.position.set(Math.floor(x) + 0.5, 0.02, Math.floor(z) + 0.5);
-        (m.current.material as THREE.MeshBasicMaterial).color.set(canPlace(g, x, z) ? C.ringEgen : C.fare);
+        const on = !!k && !isAir(k) && g.phase === 'plan' && x >= 0 && z >= 0 && x < MAP_W && z < MAP_D;
+        MARKS.uGhost.value.set(x, z, canPlace(g, x, z) ? 1 : 0, on ? 1 : 0);
     });
-    return (
-        <mesh ref={m} rotation-x={-Math.PI / 2}>
-            <planeGeometry args={[0.9, 0.9]} />
-            <meshBasicMaterial transparent opacity={0.6} toneMapped={false} />
-        </mesh>
-    );
+    return null;
 }

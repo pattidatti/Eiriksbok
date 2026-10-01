@@ -90,7 +90,7 @@ Fem konsepter, alle innenfor bestillingen. Fersk dommer med bestillingen, Gøy /
       sender bare infanteri, sakte. Lærer: kjøp, plasser, se kampen. *Bølge 2:* fienden har en
       panservernkanon som graver seg ned og blir usynlig for vogna. Før bølgen: kommandovogna
       får radio (3 kanaler), lærings-øyeblikket «Koble vogna og infanteriet - da ser vogna det
-      infanteriet ser». *Bølge 3:* to panservern og to vogner; butikken byr tre infanterikort
+      infanteriet ser». *Bølge 3:* to panservern og én vogn; butikken byr tre infanterikort
       til samme pris - første sammenslåing til veteran. Seier: evakueringen er ferdig.
     - **Slag 2 - El Alamein, oktober 1942.** *Bølge 1:* nytt: Artilleri. Fienden masserer
       infanteri langt ute; artilleriet skyter bare det nettet ser. *Bølge 2:* nytt: ditt eget
@@ -268,3 +268,25 @@ effektsystemet (`fxPool.ts`), som bare trenger nytt utseende.
   94 %, trappen 1085 < 1845 < 5885), selvspill grønt (60 draw calls, JS p95 12 ms på lav).
   Kanonskuddet er ikke sett i nettleseren (vogna kom ikke på skuddhold i testrunden). Venter på
   at eieren hører og ser det.
+- 2026-10-01, eierens rettelser etter test av Dunkerque («Kommer ikke forbi wave 3 på første map.
+  Damage må vises når man skyter/bomber slik at man kan se tallene over hodet på dem man treffer.
+  Den ringen som går fram og tilbake er dårlig design; ringen må pulsere rundt en spot. Kjedelig å
+  plassere så langt fra spawn og vente. Savner mer stemning, effekter, dynamisk verden og fysisk
+  dybde i kartet - veldig flatt»). Arbeidet gjort i eget git-tre (`../eiriksbok-radionettet`,
+  gren `radionettet-rettelser`) så bildecronen ikke sveiper det med. Gjort:
+  Balanse: ny robot `nybegynner` (sprer enhetene, slår aldri sammen, kobler ikke opp igjen i
+  bølgen) - den vant Dunkerque med 1 linjepunkt igjen, som forklarer at eieren tapte bølge 3.
+  Nå: start 10 forsyninger (fra 8), bølge 3 har én fiendevogn (fra to) og litt luftigere grupper;
+  nybegynneren vinner med 7 igjen. Starten: kommandovogna står langt fram (4,5; 5,5) med ring 7, og
+  veien er flyttet, så eleven stiller opp nær der fienden kommer inn, og kampen begynner noen
+  sekunder etter «Bølge». Skadetall (`damage.tsx`/`damagePool.ts`) over alle som blir truffet.
+  Ringen i lærings-øyeblikket (felles arkadeskall) står stille og sender en bølge ut fra punktet;
+  feilen var `scale` oppå `translate`, og regelen står nå i build_microgame.md. Dybde: brettet har
+  lave åser (`lift`/`tilt` i `ground.ts`) som enheter, fiender, soldater, linjer, sporlys og effekter
+  følger, og vogner heller med bakken; radioringen, stafett-ringene og rutene tegnes i bakkeshaderen
+  så de ligger på åsene. Dynamisk verden: kratre med jordvoll blir liggende der granater og bomber
+  slo ned, vrakdeler kastes opp med røykhale, flyformasjoner krysser himmelen høyt oppe med skygge
+  og motordur, og småbåter går mellom stranda og skipene ved Dunkerque og Normandie (`life.tsx`).
+  Porter: simulering grønn (samvirke 93 %, trappen 965 < 1730-1785 < 5835), selvspill grønt
+  (73 draw calls, JS p95 6,7 ms på lav), scene-audit grønn. Venter på at eieren spiller Dunkerque
+  igjen og prøver slag 2-6.

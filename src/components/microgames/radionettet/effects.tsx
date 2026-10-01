@@ -5,6 +5,7 @@ import { useQuality } from '../kit';
 import type { G, Fx } from './game';
 import { SLAG } from './levels';
 import { consume, MAX_PUFF, MAX_SCORCH, type FxPool } from './fxPool';
+import { lift, tilt } from './ground';
 
 // Tegner partiklene fra fxPool.ts med tre instanserte mesher: myk røyk og støv (vanlig
 // blanding), ild og glimt (additiv, gløder), og brannflekkene flatt på bakken.
@@ -127,6 +128,30 @@ const S = new THREE.Vector3();
 const Z = new THREE.Vector3(0, 0, 1);
 const QZ = new THREE.Quaternion();
 const FLAT = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
+const TQ = new THREE.Quaternion();
+const QY = new THREE.Quaternion();
+const Y = new THREE.Vector3(0, 1, 0);
+
+/** Kratervollen: en lav, ujevn jordvoll rundt nedslaget (slagmarken blir arrete utover i slaget). */
+function craterRim() {
+    const prof = [
+        new THREE.Vector2(0.0, -0.05),
+        new THREE.Vector2(0.45, -0.04),
+        new THREE.Vector2(0.7, 0.07),
+        new THREE.Vector2(0.85, 0.09),
+        new THREE.Vector2(1.05, 0.02),
+        new THREE.Vector2(1.25, -0.03),
+    ];
+    const g = new THREE.LatheGeometry(prof, 14);
+    const pos = g.getAttribute('position');
+    for (let i = 0; i < pos.count; i++) {
+        const a = Math.atan2(pos.getZ(i), pos.getX(i));
+        const k = 1 + Math.sin(a * 3 + 1) * 0.1 + Math.sin(a * 5) * 0.06;
+        pos.setXYZ(i, pos.getX(i) * k, pos.getY(i) * (0.7 + 0.6 * Math.max(0, Math.sin(a * 2 + 0.5))), pos.getZ(i) * k);
+    }
+    g.computeVertexNormals();
+    return g;
+}
 
 export function Effects({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRefObject<G>; fxRef: React.MutableRefObject<FxPool>; speedRef: React.MutableRefObject<number>; sfx?: (name: string) => void }) {
     const seen = useMemo(() => new WeakSet<Fx>(), []);
@@ -139,6 +164,8 @@ export function Effects({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRef
     );
     const scorchTex = useMemo(() => scorchTexture(), []);
     const scorchRef = useRef<THREE.InstancedMesh>(null);
+    const rimRef = useRef<THREE.InstancedMesh>(null);
+    const rimGeo = useMemo(() => craterRim(), []);
     const slag = useRef(-1);
     const q = useQuality();
     useLayoutEffect(() => {
@@ -152,6 +179,8 @@ export function Effects({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRef
             slag.current = g.slag;
             fx.clearScorch();
             fx.setDust(DUST[SLAG[g.slag]?.id] ?? '#b5a17c');
+            const def = SLAG[g.slag];
+            if (def) fx.setGround((x, z) => lift(def, x, z));
         }
         consume(g, fx, seen, sfx);
         fx.step(dt);
@@ -185,21 +214,39 @@ export function Effects({ gRef, fxRef, speedRef, sfx }: { gRef: React.MutableRef
             m.geometry.getAttribute('aAlpha').needsUpdate = true;
         });
         const sm = scorchRef.current;
+        const rm = rimRef.current;
         if (sm) {
             let c = 0;
             for (const s of fx.scorches) {
                 if (!s.on) continue;
+                // Svidd flekk som ligger på åsen, og et krater med voll der det smalt hardt.
+                const def = SLAG[g.slag];
                 QZ.setFromAxisAngle(Z, s.rot);
-                Q.copy(FLAT).multiply(QZ);
-                M.compose(P.set(s.x, 0.008 + c * 0.00005, s.z), Q, S.set(s.r * 2, s.r * 2, 1));
-                sm.setMatrixAt(c++, M);
+                tilt(def, s.x, s.z, TQ);
+                Q.copy(TQ).multiply(FLAT).multiply(QZ);
+                const y = lift(def, s.x, s.z);
+                M.compose(P.set(s.x, y + 0.03 + c * 0.00005, s.z), Q, S.set(s.r * 2, s.r * 2, 1));
+                sm.setMatrixAt(c, M);
+                if (rm) {
+                    Q.copy(TQ).multiply(QY.setFromAxisAngle(Y, s.rot));
+                    M.compose(P.set(s.x, y - 0.02, s.z), Q, S.set(s.r * 0.95, s.r * 0.75, s.r * 0.95));
+                    rm.setMatrixAt(c, M);
+                }
+                c++;
             }
             sm.count = c;
             sm.instanceMatrix.needsUpdate = true;
+            if (rm) {
+                rm.count = c;
+                rm.instanceMatrix.needsUpdate = true;
+            }
         }
     });
     return (
         <>
+            <instancedMesh ref={rimRef} args={[rimGeo, undefined, MAX_SCORCH]} frustumCulled={false} receiveShadow>
+                <meshStandardMaterial color="#4a3f30" roughness={1} flatShading />
+            </instancedMesh>
             <instancedMesh ref={scorchRef} args={[undefined, undefined, MAX_SCORCH]} frustumCulled={false}>
                 <planeGeometry args={[1, 1]} />
                 <meshBasicMaterial map={scorchTex} transparent depthWrite={false} toneMapped={false} />

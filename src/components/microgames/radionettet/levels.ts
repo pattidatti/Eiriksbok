@@ -79,9 +79,12 @@ export const SLAG: SlagDef[] = [
         sted: 'Dunkerque, Frankrike',
         dato: 'Mai 1940',
         bånd: 'DUNKERQUE · MAI 1940',
-        veier: [[[16.6, 2], [11, 2], [11, 6.5], [6, 6.5], [6, 3], [-0.6, 3]]],
-        hq: [2, 5.5],
-        start: 8,
+        // Kommandovogna står langt fram og ringen er stor: eleven kan stille opp nær der fienden
+        // kommer inn, og kampen begynner noen sekunder etter «Bølge» (eier: «kjedelig å vente»).
+        veier: [[[16.6, 2], [12.5, 2], [12.5, 6.5], [7.5, 6.5], [7.5, 3], [-0.6, 3]]],
+        hq: [4.5, 5.5],
+        ring: 7,
+        start: 10,
         seier: 'Evakueringen lyktes. 338 000 soldater kom seg over til England.',
         lærdom:
             'I 1940 hadde tyskerne radio i hver stridsvogn. Vogner, infanteri og fly jobbet sammen, og det var derfor lynkrigen gikk så fort.',
@@ -111,9 +114,9 @@ export const SLAG: SlagDef[] = [
             {
                 groups: [
                     { t: 1, kind: 'einf', n: 4, gap: 2 },
-                    { t: 6, kind: 'epak', n: 2, gap: 3 },
-                    { t: 10, kind: 'evogn', n: 2, gap: 4 },
-                    { t: 18, kind: 'einf', n: 4, gap: 2 },
+                    { t: 6, kind: 'epak', n: 2, gap: 4 },
+                    { t: 12, kind: 'evogn', n: 1, gap: 7 },
+                    { t: 22, kind: 'einf', n: 3, gap: 2 },
                 ],
                 pool: ['inf', 'vogn'],
                 fast: ['inf', 'inf', 'inf'],

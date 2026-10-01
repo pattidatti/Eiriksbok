@@ -29,6 +29,8 @@ interface Puff {
     spin: number;
     /** Luftmotstand (1 = vanlig; 0 = granat som flyr rett). */
     drag: number;
+    /** Bakkehøyden der den startet (åsene på brettet). */
+    g: number;
     col: THREE.Color;
 }
 
@@ -59,7 +61,7 @@ export const MAX_SCORCH = 48;
 /** Effektlaget. Lages én gang i spillkomponenten og deles med figurene. */
 export function createFx() {
     const puffs: Puff[] = Array.from({ length: MAX_PUFF }, () => ({
-        on: false, glow: false, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, r0: 0, r1: 0, t: 0, life: 1, a: 1, fall: 0, spin: 0, drag: 1, col: COL.røyk,
+        on: false, glow: false, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0, r0: 0, r1: 0, t: 0, life: 1, a: 1, fall: 0, spin: 0, drag: 1, g: 0, col: COL.røyk,
     }));
     const scorches: Scorch[] = Array.from({ length: MAX_SCORCH }, () => ({ on: false, x: 0, z: 0, r: 0, rot: 0 }));
     let pi = 0;
@@ -68,14 +70,17 @@ export function createFx() {
     let scale = 1;
     /** Støvfargen følger bakken i slaget. */
     const dust = COL.støv.clone();
+    /** Bakkehøyden i slaget: alle y-er under er over bakken, ikke over null. */
+    let ground = (_x: number, _z: number) => 0;
     const puff = (kind: PuffKind, x: number, y: number, z: number, o: { r?: number; grow?: number; life?: number; up?: number; spread?: number; fall?: number } = {}) => {
         const p = puffs[pi];
         pi = (pi + 1) % MAX_PUFF;
         const s = o.spread ?? 0.4;
         p.on = true;
         p.glow = GLOW[kind];
+        p.g = ground(x, z);
         p.x = x;
-        p.y = y;
+        p.y = y + p.g;
         p.z = z;
         p.vx = (Math.random() - 0.5) * s;
         p.vz = (Math.random() - 0.5) * s;
@@ -112,6 +117,8 @@ export function createFx() {
         star,
         scorch,
         setScale: (s: number) => (scale = s),
+        setGround: (fn: (x: number, z: number) => number) => (ground = fn),
+        groundAt: (x: number, z: number) => ground(x, z),
         setDust: (hex: string) => dust.set(hex),
         clearScorch: () => scorches.forEach((s) => (s.on = false)),
         /** Eldes og flyttes ett tidssteg. */
@@ -137,7 +144,7 @@ export function createFx() {
                 p.z += p.vz * dt;
                 if (p.fall) {
                     p.vy -= p.fall * dt;
-                    if (p.y < 0.02) p.on = false;
+                    if (p.y < p.g + 0.02) p.on = false;
                 } else {
                     p.vy *= 1 - dt * 0.6 * p.drag;
                 }
@@ -153,6 +160,14 @@ export function createFx() {
             for (let i = 0; i < n(6 * big); i++) puff(i % 3 ? 'sot' : 'røyk', x, y + 0.35, z, { r: 0.24 * big, grow: 3.2, life: 2.6, up: 0.8, spread: 0.9 });
             if (y < 0.3) {
                 for (let i = 0; i < n(5); i++) puff('jord', x, 0.2, z, { r: 0.05, grow: 1, life: 1.2, up: 2.6, spread: 2.4, fall: 7 });
+                // Vrakdeler: svarte biter som kastes høyt og faller ned igjen med røykhale.
+                if (big >= 0.9)
+                    for (let i = 0; i < n(4); i++) {
+                        const p = puff('sot', x, 0.4, z, { r: 0.07, grow: 1.1, life: 1.6, up: 4.2, spread: 3.4, fall: 7.5 });
+                        p.a = 1;
+                        for (let k = 1; k < 4 && later.length < 80; k++)
+                            later.push({ t: k * 0.12, fn: () => void (p.on && puff('røyk', p.x, p.y - p.g, p.z, { r: 0.05, grow: 2.4, life: 0.8, up: 0.1, spread: 0.05 })) });
+                    }
                 scorch(x, z, 0.55 * big);
             }
         },
@@ -194,7 +209,7 @@ export function createFx() {
         shell(x: number, y: number, z: number, x2: number, y2: number, z2: number, life: number) {
             const p = puff('glo', x, y, z, { r: 0.07, grow: 1, life, up: 0, spread: 0 });
             p.vx = (x2 - x) / life;
-            p.vy = (y2 - y) / life;
+            p.vy = (y2 + ground(x2, z2) - p.y) / life;
             p.vz = (z2 - z) / life;
             p.drag = 0;
             p.life = life;

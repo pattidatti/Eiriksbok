@@ -464,6 +464,15 @@ eieren gjør det:
   det). Etiketter i HUD, kort og slutt-skjerm også.
 - **Pekere som svinger eller følger en 3D-ting.** Hint står fast (en lapp ved tingen, eller en fast
   plass i HUD) - aldri en pil som sveiver fram og tilbake for å tiltrekke seg oppmerksomhet.
+- **Ringer som glir fram og tilbake.** En ring som skal vise et sted, står stille på stedet og
+  pulserer ut fra det (en bølge som vokser og blekner), aldri en ring som flytter seg eller vugger.
+  «Mange spill gjør samme feil» (eier, 2026-10-01). Fellen i CSS: et element som plasseres med
+  `transform: translate(...)` og animeres med `scale`, skaleres rundt hjørnet av forelderen og glir
+  hundrevis av piksler. Plasser med `left`/`top`, animer en `::after`-bølge (se `.arc-ring`).
+- **Skaden synes ikke.** I spill der noe skyter eller bomber, spretter skaden opp som tall over
+  den som blir truffet: liten -> for stor -> riktig størrelse, stiger og blekner, dine treff lyse,
+  treff på dine røde, drepende treff store. «Det er alltid nice» (eier, 2026-10-01). Referanse:
+  `radionettet/damagePool.ts` (DOM-lager som flyttes i `useFrame`, ingen React-state per treff).
 - **Kastet inn i alt på en gang.** Opptrappingen fra designbriefen (punkt 11) må finnes i spillet,
   ikke bare i briefen.
 - **For kaotisk og for fort.** Tempoet starter lavt; eleven skal rekke å se hva som skjedde.
