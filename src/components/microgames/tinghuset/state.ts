@@ -35,12 +35,16 @@ export interface Verdict {
     sak: number;
     kind: Kind;
     route: Route;
+    /** Skranken som avgjorde saken. */
+    desk: number;
     /** Måneden saken ble avgjort i (desimal). */
     mnd: number;
     /** Forelegg på en alvorlig sak. */
     mild: boolean;
-    /** Straffen i år fengsel (0 = bot). */
-    aar: number;
+    /** Straffenivå-trinnet saken ble avgjort på (0 = 100 %). */
+    trinn: number;
+    /** Den trykte dommen: «7 år fengsel», «Bot og tap av rettigheter». */
+    dom: string;
 }
 
 export interface Desk {
@@ -63,6 +67,7 @@ export type GameEvent =
     | { kind: 'ny'; f: Folder }
     | { kind: 'brett'; level: number }
     | { kind: 'kort' }
+    | { kind: 'trinn'; trinn: number }
     | { kind: 'leir'; camp: CampId };
 
 export interface Offer {
@@ -98,6 +103,8 @@ export interface Game {
     /** Hvor sinnet kom fra (to nyanser av rødt i måleren). */
     fraVent: number;
     fraMild: number;
+    /** Straffenivå-trinnet nå (for hendelsen når et trinn faller). */
+    trinn: number;
     score: number;
     mult: number;
     jevne: number;
@@ -142,6 +149,7 @@ export function newGame(seed: number): Game {
         sinne: 0,
         fraVent: 0,
         fraMild: 0,
+        trinn: 0,
         score: 0,
         mult: 1,
         jevne: 0,

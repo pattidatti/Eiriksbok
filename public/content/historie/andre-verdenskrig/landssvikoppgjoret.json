@@ -117,6 +117,13 @@
       "content": "Sitatet over viser et viktig problem. Like etter krigen var sinnet stort, og straffene var harde. Etter noen år hadde folk roet seg, og de samme handlingene ga mildere straff (Sørensen, 2016). Det betyr at to personer som hadde gjort omtrent det samme, kunne få helt ulik straff bare fordi saken deres kom opp på ulike tidspunkt. De siste som hadde fått livstid, kom ut i 1957 (Andenæs mfl., 2026)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "tinghuset"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/placeholder.webp",
       "alt": "Fengselscelle med en enkel seng og et lite vindu med sprosser",

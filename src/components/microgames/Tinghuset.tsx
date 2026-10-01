@@ -8,202 +8,437 @@ import {
     ArcadeTag,
     ArcadeBigButton,
     ArcadeSmallButton,
-    ArcadeStats,
 } from './arcade/ArcadeShell';
 import { useArcadeLoop, useArcadeText, type ArcadeView } from './arcade/useArcade';
-import { ArcadeLessons } from './arcade/ArcadeLayers';
 import type { ArcadeTheme } from './arcade/tokens';
-import { useArcadeSave, rankFor } from './arcade/save';
+import { useArcadeSave, rankFor, nextRank } from './arcade/save';
+import { createArcadeSynth, buzz } from './arcade/synth';
 import { usePlaytest } from './playtest';
-import { newGame, pickCard, send, skipInter, update, type Game } from './tinghuset/game';
-import { BOTS, makeBot, makeRandomBot } from './tinghuset/bots';
-import type { Cause } from './tinghuset/state';
-import { BOT_INFO, GAME_ID, MAKS_SEKUNDER, snapshotOf } from './tinghuset/sim';
 import {
+    newGame,
+    pickCard,
+    secsToStep,
+    send,
+    skipInter,
+    skipTo,
+    update,
+    type Game,
+} from './tinghuset/game';
+import { BOTS, makeBot, makeRandomBot } from './tinghuset/bots';
+import type { Verdict } from './tinghuset/state';
+import { BOT_INFO, GAME_ID, MAKS_SEKUNDER, snapshotOf } from './tinghuset/sim';
+import { FindsScreen, OverScreen, type Result } from './tinghuset/screens';
+import { drawEnd, drawGame, moveFolders, newView, type ViewState } from './tinghuset/draw';
+import { addStroke, fxEvent, newFx, shakeOffset, stepFx, tearCalendar } from './tinghuset/fx';
+import { BLUE, INK, MONO, PAPER, RED, VIOLET, makeArt, pickTier, type Art } from './tinghuset/art';
+import {
+    COUNTER,
     H,
-    INK,
-    MONO,
-    PAPER,
-    RED,
-    VIOLET,
+    METER,
+    RULER,
     W,
+    campRect,
     cardRects,
     deskAt,
-    drawGame,
+    deskRect,
     folderAt,
     inside,
-    verdictText,
-} from './tinghuset/draw';
-import type { ViewState } from './tinghuset/draw';
+    type Pt,
+} from './tinghuset/layout';
+import { monthName } from './tinghuset/levels';
+import { makeSfx } from './tinghuset/sfx';
+import {
+    BEATS,
+    FINDS,
+    LESSONS,
+    PAUSE_MSG,
+    PINS,
+    RANKS,
+    ulikLesson,
+    type FindId,
+} from './tinghuset/texts';
 
-// TINGHUSET - landssvikoppgjøret 1945-1948. GRÅBOKS: bare spillreglene og primitive former.
+// TINGHUSET - landssvikoppgjøret 1945-1948.
 //
 // Tone: alvorlig. Eleven er påtalemyndigheten. Ingen poeng for strenge straffer - bare for
 // jevne og ryddige avgjørelser. Dødsstraff er aldri en spillhandling.
 //
-// Kjerneløkka: dra en strek fra en mappe i en leir til en skranke. Forelegg er raskt, men for
-// mildt for alvorlige saker; rettssak er rettferdig, men treg. Kalenderen senker straffenivået
-// måned for måned, så to like saker må avgjøres tett i tid for å få samme straff.
+// Kjerneverbet: dra en blyantstrek fra en mappe i en leir til en skranke. Mappa glir,
+// stempelet slår ned, dommerlappen flyr ut i margen. Forelegg er raskt, men for mildt for
+// alvorlige saker; rettssak er rettferdig, men treg. Straffenivået faller i synlige trinn,
+// så to like saker må dømmes på samme trinn for å få samme trykte dom.
 //
 // Brief: docs/microgames/briefer/tinghuset.md. Kart over mappa: tinghuset/KART.md.
 
-const THEME: Partial<ArcadeTheme> = {
+const THEME: ArcadeTheme = {
     ink: INK,
-    paper: PAPER,
+    paper: '#efeee6',
     accent: VIOLET,
     cta: VIOLET,
     ctaText: '#f2f1ea',
-    chip: '#ecece6',
-    scrim: 'rgba(20,18,24,.4)',
+    chip: '#e2e1d8',
+    scrim: 'rgba(30,26,34,.45)',
     font: MONO,
     fontWeight: 800,
     bodyFont: 'Inter, system-ui, sans-serif',
-    tracking: '0.03em',
+    tracking: '0.04em',
     textCase: 'uppercase',
     radius: 0,
     line: 2,
     drop: 3,
-    tilt: 0,
-    bannerTop: '22%',
+    tilt: -1,
+    hudText: INK,
+    hudStroke: PAPER,
+    bannerTop: '11%',
 };
 
-type Mode = 'menu' | 'play' | 'over';
+const BG = '#2b2730';
 
-const RANKS: [number, string][] = [
-    [0, 'Kontorbud'],
-    [10, 'Skrivemaskinist'],
-    [25, 'Arkivar'],
-    [45, 'Politifullmektig'],
-    [70, 'Statsadvokat'],
-    [100, 'Riksadvokat'],
-];
-
-const LOSS = {
-    vent: {
-        msg: 'Folk satt for lenge uten dom.',
-        tip: 'Rundt 17 000 havnet i fengsel, og mange satt i månedsvis før saken kom opp. Gi forelegg til vanlige medlemssaker - da er rettssalen ledig for de alvorlige.',
-    },
-    mild: {
-        msg: 'Alvorlige saker slapp for lett.',
-        tip: 'Et forelegg er en straff påtalemyndigheten foreslår, og det passer for små saker. Angivere og statspoliti måtte for retten.',
-    },
-};
-const LESSONS = {
-    forelegg:
-        'Et forelegg er en straff påtalemyndigheten foreslår uten rettssak. Det passet for vanlige NS-medlemmer, ikke for angivere og statspoliti.',
-    rettssak:
-        'Rundt 92 800 saker ble etterforsket etter krigen. De alvorlige måtte for retten, og det tok tid.',
-    nivaa: 'Straffene ble mildere fra 1945 til 1948. Sinnet var størst like etter krigen.',
-    ulikt: 'To som gjorde det samme, kunne få ulik straff bare fordi saken kom opp et annet år.',
-};
-
-const SAKLIG =
-    'Når sinnet tar over, blir folk straffet uten dom. I 1945 skjedde det med tusenvis av kvinner som ikke hadde brutt noen lov.';
+type Mode = 'menu' | 'play' | 'paused' | 'over';
 
 interface Save {
     bestJevne: number;
     bestScore: number;
+    found: FindId[];
+    wins: number;
+    runs: number;
 }
 
-interface Result {
-    won: boolean;
-    score: number;
-    jevne: number;
-    avgjort: number;
-    cause: Cause | null;
-    skjevest: string | null;
-    rank: string;
-    lessons: string[];
-}
+const lapp = (v: Verdict) => `${monthName(v.mnd)}: ${v.dom}`;
 
 export default function Tinghuset({ onComplete }: MicroGameProps) {
     const [mode, setMode] = useState<Mode>('menu');
     const modeRef = useRef<Mode>('menu');
-    const [save, updateSave] = useArcadeSave<Save>(GAME_ID, { bestJevne: 0, bestScore: 0 });
+    const [save, updateSave] = useArcadeSave<Save>(GAME_ID, {
+        bestJevne: 0,
+        bestScore: 0,
+        found: [],
+        wins: 0,
+        runs: 0,
+    });
+    const saveRef = useRef(save);
     const [result, setResult] = useState<Result | null>(null);
+    const [showFinds, setShowFinds] = useState(false);
     const [text, textLayer] = useArcadeText(GAME_ID);
-    const game = useRef<{ g: Game }>({ g: newGame(1) }).current;
-    const view = useRef<ViewState>({ drag: null, selected: null, lapper: [] });
+    const [game] = useState(() => ({ g: newGame(1), fx: newFx(), art: null as Art | null }));
+    const [tier] = useState(pickTier);
+    const [synth] = useState(createArcadeSynth);
+    const [sfx] = useState(() => makeSfx(synth));
+    const [muted, setMuted] = useState(() => synth.isMuted());
+    const view = useRef<ViewState>(newView());
     const tf = useRef({ s: 1, ox: 0, oy: 0 });
-    const botDriving = useRef(false);
+    const run = useRef({ end: -1, endAt: 0, sends: 0, finds: [] as FindId[], crowd: 0, ruter: 0 });
+
+    useEffect(() => {
+        saveRef.current = save;
+    }, [save]);
+    useEffect(() => () => synth.dispose(), [synth]);
+    useEffect(() => () => text.clear(), [text]);
 
     const setModeBoth = (m: Mode) => {
         modeRef.current = m;
         setMode(m);
     };
 
+    // Ankere for lappene: samme regnestykke som tegningen.
+    const toScreen = (p: Pt) => ({
+        x: tf.current.ox + p.x * tf.current.s,
+        y: tf.current.oy + p.y * tf.current.s,
+    });
+    const atFolder = (id: number) => () => {
+        const p = game.fx.pos.get(id);
+        return p ? toScreen({ x: p.x, y: p.y - 18 }) : null;
+    };
+    const atRect = (x: number, y: number) => () => toScreen({ x, y });
+
+    const find = (id: FindId) => {
+        if (saveRef.current.found.includes(id) || run.current.finds.includes(id)) return;
+        run.current.finds.push(id);
+        text.banner('NYTT PROTOKOLLBLAD', VIOLET, 1.4);
+    };
+
     const endRun = (g: Game) => {
         const won = g.mode === 'won';
-        const sk = g.skjevest;
+        const s = saveRef.current;
+        if (won) find('jurister');
+        else find('tyskerjenter');
+        if (g.cause === 'vent') text.lesson('vent', LESSONS.vent, 3);
+        const newFinds = run.current.finds.filter((f) => !s.found.includes(f));
         setResult({
             won,
             score: Math.floor(g.score),
             jevne: g.jevne,
             avgjort: g.avgjort,
+            ulike: g.ulike,
             cause: g.cause,
-            skjevest: sk ? `Sak ${sk.a.sak}. ${verdictText(sk.a)}. ${verdictText(sk.b)}.` : null,
+            skjevest: g.skjevest,
             rank: rankFor(RANKS, g.jevne),
+            next: nextRank(RANKS, g.jevne),
             lessons: text.lessons(3),
+            record: g.jevne > s.bestJevne,
+            newFinds,
         });
-        updateSave((s) => ({
-            bestJevne: Math.max(s.bestJevne, g.jevne),
-            bestScore: Math.max(s.bestScore, Math.floor(g.score)),
+        updateSave((p) => ({
+            bestJevne: Math.max(p.bestJevne, g.jevne),
+            bestScore: Math.max(p.bestScore, Math.floor(g.score)),
+            found: [...p.found, ...newFinds.filter((f) => !p.found.includes(f))],
+            wins: p.wins + (won ? 1 : 0),
+            runs: p.runs + 1,
         }));
-        if (won || g.level >= 2) onComplete({ score: Math.min(1, g.jevne / 50), completed: true });
+        if (won || g.level >= 2) onComplete({ score: Math.min(1, g.jevne / 60), completed: true });
+        text.clear();
         setModeBoth('over');
     };
 
     const handleEvents = (g: Game) => {
+        const fx = game.fx;
+        const parts = tier === 'lav' ? 0.6 : tier === 'middels' ? 1 : 1.5;
         for (const e of g.events) {
-            if (e.kind === 'ulikt') {
-                view.current.lapper.push({ a: e.a, b: e.b, t: g.t });
-                text.lesson('ulikt', LESSONS.ulikt, 1.5);
-            } else if (e.kind === 'formildt') {
-                text.banner('FOR MILDT', RED, 1);
-                text.lesson('forelegg', LESSONS.forelegg, 1.4);
-            } else if (e.kind === 'avgjort' && e.v.route === 'rett' && e.v.kind !== 'lett')
-                text.lesson('rettssak', LESSONS.rettssak, 1);
-            else if (e.kind === 'brett') {
-                view.current.lapper = [];
-                if (e.level === 2) text.lesson('nivaa', LESSONS.nivaa, 1.2);
+            fxEvent(fx, g, e, parts);
+            switch (e.kind) {
+                case 'ny': {
+                    const f = e.f;
+                    find('anordning');
+                    if (g.level === 0 && f.id === 1)
+                        text.point('dra', PINS.dra, atFolder(f.id), {
+                            until: () => view.current.sent,
+                            seconds: 14,
+                        });
+                    if (f.kind === 'alvorlig' && g.level === 1)
+                        text.beatOnce('alvorlig', BEATS.alvorlig.tittel, BEATS.alvorlig.tekst, {
+                            at: atFolder(f.id),
+                            until: () =>
+                                !g.folders.some((x) => x.id === f.id && x.state === 'leir'),
+                        });
+                    if (f.twin === -1 && g.level === 2)
+                        text.point('tvilling', PINS.tvilling, atFolder(f.id), {
+                            once: true,
+                            seconds: 6,
+                            until: () => f.twin !== -1,
+                        });
+                    if (f.twin !== null && f.twin > 0)
+                        text.beatOnce('par', BEATS.par.tittel, BEATS.par.tekst, {
+                            at: atFolder(f.id),
+                            until: () =>
+                                !g.folders.some((x) => x.id === f.id && x.state === 'leir'),
+                        });
+                    break;
+                }
+                case 'avgjort': {
+                    const v = e.v;
+                    sfx.thud(v.route === 'rett');
+                    if (v.route === 'rett') {
+                        sfx.bell();
+                        if (v.kind !== 'lett') text.lesson('rettssak', LESSONS.rettssak, 0.3);
+                        if (v.kind === 'tykk') find('okonomisk');
+                    } else {
+                        find('forelegg');
+                        if (v.kind === 'lett') find('medlem');
+                    }
+                    if (g.avgjort >= 100) find('saker');
+                    if (g.alvorligRett >= 10) find('rinnan');
+                    break;
+                }
+                case 'formildt': {
+                    sfx.thud(true);
+                    sfx.mild();
+                    buzz(60);
+                    text.lesson('forelegg', LESSONS.forelegg, 1.5);
+                    const p = toScreen({ x: METER.x - 10, y: METER.y + METER.h * (1 - g.sinne) });
+                    text.float('FOR MILDT', p.x, p.y, RED, true);
+                    break;
+                }
+                case 'jevnt': {
+                    sfx.even(g.mult);
+                    const rett = e.a.route === 'rett';
+                    const close = rett && secsToStep(g) < 1.5;
+                    const p = toScreen({ x: COUNTER.x - 70, y: COUNTER.y + 10 });
+                    text.float(
+                        `+${e.poeng}${close ? ' på håret' : ''}`,
+                        p.x,
+                        p.y,
+                        rett ? VIOLET : BLUE,
+                        rett
+                    );
+                    break;
+                }
+                case 'ulikt': {
+                    sfx.uneven();
+                    buzz([30, 40, 30]);
+                    text.lesson('ulikt', ulikLesson(e.a.sak, lapp(e.a), lapp(e.b)), 2);
+                    find('sorensen');
+                    if (Math.abs(e.a.trinn - e.b.trinn) === 1 && e.a.route === e.b.route) {
+                        const p = toScreen({ x: 466, y: 320 });
+                        text.float('ett trinn fra lik dom', p.x, p.y, RED);
+                    }
+                    break;
+                }
+                case 'trinn':
+                    sfx.step();
+                    text.lesson('nivaa', LESSONS.nivaa, 0.6);
+                    {
+                        const n0 = run.current.sends;
+                        text.beatOnce('trinn', BEATS.trinn.tittel, BEATS.trinn.tekst, {
+                            at: atRect(RULER.x + RULER.w / 2, RULER.y + RULER.h),
+                            until: () => run.current.sends > n0,
+                        });
+                    }
+                    break;
+                case 'brett':
+                    sfx.page();
+                    if (e.level === 1) {
+                        const di = g.desks.findIndex((d) => d.kind === 'rett');
+                        const r = deskRect(Math.max(0, di));
+                        text.point('rett', PINS.rett, atRect(r.x + r.w / 2, r.y + r.h), {
+                            seconds: 7,
+                        });
+                    }
+                    if (e.level === 2)
+                        text.point(
+                            'linjal',
+                            PINS.linjal,
+                            atRect(RULER.x + 140, RULER.y + RULER.h),
+                            {
+                                seconds: 7,
+                            }
+                        );
+                    break;
+                case 'kort': {
+                    sfx.cards();
+                    const r = cardRects(1)[0];
+                    text.point('kort', PINS.kort, atRect(r.x + r.w / 2, r.y - 16), {
+                        until: () => !g.offer,
+                        once: true,
+                    });
+                    break;
+                }
+                case 'leir':
+                    sfx.page();
+                    break;
             }
         }
         g.events.length = 0;
+        if (g.desks.some((d) => d.kind === 'rett' && d.queue.length >= 5)) find('fengsel');
+        if (g.sinne > 0.35)
+            text.point('sinne', PINS.sinne, atRect(METER.x, METER.y + METER.h * 0.4), {
+                once: true,
+                seconds: 6,
+            });
+        if (g.ruter.length > run.current.ruter) {
+            run.current.ruter = g.ruter.length;
+            const r = campRect(g.ruter[g.ruter.length - 1]);
+            text.point('rute', PINS.rute, atRect(r.x + r.w - 40, r.y), { seconds: 5 });
+        }
     };
 
     const { stageRef, bindStage, bindCanvas } = useArcadeLoop({
         frame: (dt, v: ArcadeView) => {
             const g = game.g;
+            const fx = game.fx;
+            const m = modeRef.current;
             const s = Math.min(v.w / W, v.h / H);
             tf.current = { s, ox: (v.w - W * s) / 2, oy: (v.h - H * s) / 2 };
-            if (modeRef.current === 'play') {
-                update(g, dt);
-                handleEvents(g);
-                if (g.mode !== 'play') endRun(g);
+            const k = Math.min(3, Math.max(0.75, s * v.dpr));
+            if (!game.art || Math.abs(game.art.k - k) / k > 0.2) game.art = makeArt(k, tier);
+            if (m === 'play') {
+                if (run.current.end < 0) {
+                    update(g, dt * text.timeScale());
+                    if (tearCalendar(fx, g) && (g.level > 0 || fx.lastDay % 3 === 0)) sfx.tear();
+                    handleEvents(g);
+                    // Murringen i gatene når sinnet er høyt.
+                    run.current.crowd -= dt;
+                    if (g.sinne > 0.45 && run.current.crowd <= 0) {
+                        run.current.crowd = 1.4 - g.sinne * 0.6;
+                        sfx.crowd(g.sinne);
+                    }
+                    if (g.mode !== 'play') {
+                        run.current.end = 0;
+                        run.current.endAt = performance.now();
+                        if (g.mode === 'won') sfx.win();
+                        else sfx.lose();
+                    }
+                } else {
+                    run.current.end += dt;
+                    if (performance.now() - run.current.endAt > 900) {
+                        run.current.end = -2;
+                        endRun(g);
+                    }
+                }
             }
+            moveFolders(g, fx, dt);
+            stepFx(fx, m === 'paused' ? 0 : dt);
+
             const ctx = v.ctx;
             ctx.setTransform(v.dpr, 0, 0, v.dpr, 0, 0);
-            ctx.fillStyle = '#c9cac2';
+            ctx.fillStyle = BG;
             ctx.fillRect(0, 0, v.w, v.h);
+            const sh = shakeOffset(fx);
+            const t = tf.current;
             ctx.setTransform(
-                v.dpr * s,
+                v.dpr * t.s,
                 0,
                 0,
-                v.dpr * s,
-                v.dpr * tf.current.ox,
-                v.dpr * tf.current.oy
+                v.dpr * t.s,
+                v.dpr * (t.ox + sh.x * t.s),
+                v.dpr * (t.oy + sh.y * t.s)
             );
-            drawGame(ctx, g, view.current, g.t);
+            drawGame(ctx, g, view.current, fx, game.art);
+            if (run.current.end >= 0) drawEnd(ctx, g, run.current.end);
+        },
+        onHidden: () => {
+            if (modeRef.current === 'play') pause();
         },
     });
 
-    const start = () => {
-        game.g = newGame(Math.floor(Math.random() * 1e9));
-        view.current = { drag: null, selected: null, lapper: [] };
+    const start = (variant?: string) => {
+        synth.unlock();
+        const g = newGame(Math.floor(Math.random() * 1e9));
+        if (variant === 'mars') skipTo(g, 3);
+        game.g = g;
+        game.fx = newFx();
+        game.fx.lastMonth = Math.floor(g.mnd);
+        view.current = newView();
+        run.current = { end: -1, endAt: 0, sends: 0, finds: [], crowd: 0, ruter: 0 };
         setResult(null);
+        setShowFinds(false);
         text.resetRun();
         setModeBoth('play');
+        sfx.page();
     };
+    const pause = () => {
+        if (modeRef.current !== 'play' || run.current.end >= 0) return;
+        view.current.drag = null;
+        setModeBoth('paused');
+    };
+    const resume = () => setModeBoth('play');
+    const toMenu = () => {
+        game.g = newGame(1);
+        game.fx = newFx();
+        view.current = newView();
+        text.clear();
+        setModeBoth('menu');
+    };
+    const toggleMute = () => {
+        synth.unlock();
+        synth.setMuted(!synth.isMuted());
+        setMuted(synth.isMuted());
+    };
+
+    useEffect(() => {
+        const down = (e: KeyboardEvent) => {
+            const r = stageRef.current?.getBoundingClientRect();
+            if (!r || r.bottom < 0 || r.top > window.innerHeight) return;
+            const m = modeRef.current;
+            if (e.code === 'Escape' || e.code === 'KeyP') {
+                if (m === 'play') pause();
+                else if (m === 'paused') resume();
+            } else if (e.code === 'KeyM') toggleMute();
+        };
+        window.addEventListener('keydown', down);
+        return () => window.removeEventListener('keydown', down);
+        // pause/resume/toggleMute leser bare refs
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const toWorld = (e: React.PointerEvent) => {
         const r = stageRef.current?.getBoundingClientRect();
@@ -212,42 +447,63 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
         return { x: (e.clientX - r.left - t.ox) / t.s, y: (e.clientY - r.top - t.oy) / t.s };
     };
 
+    const doSend = (g: Game, id: number, desk: number) => {
+        const from = game.fx.pos.get(id);
+        if (!send(g, id, desk)) return;
+        if (from) addStroke(game.fx, id, { ...from }, desk);
+        view.current.sent = true;
+        run.current.sends++;
+        sfx.send();
+    };
+
     // Peker: dra fra en mappe til en skranke. Eller trykk mappa, så skranken.
-    const onPointer = (e: React.PointerEvent) => {
-        if (modeRef.current !== 'play') return;
-        botDriving.current = false;
+    const onPointer = (e: React.PointerEvent<HTMLCanvasElement>) => {
+        if (modeRef.current !== 'play' || run.current.end >= 0) return;
         const g = game.g;
         const p = toWorld(e);
         const v = view.current;
         if (e.type === 'pointerdown') {
+            synth.unlock();
             if (g.inter > 0) {
                 skipInter(g);
                 return;
             }
             if (g.offer) {
                 const i = cardRects(g.offer.cards.length).findIndex((r) => inside(r, p.x, p.y));
-                if (i >= 0) pickCard(g, i);
+                if (i >= 0 && pickCard(g, i)) sfx.thud(false);
                 return;
             }
             const f = folderAt(g, p.x, p.y);
             if (f) {
-                (e.target as Element).setPointerCapture?.(e.pointerId);
+                e.currentTarget.setPointerCapture?.(e.pointerId);
                 v.drag = { id: f.id, x: p.x, y: p.y };
+                v.over = -1;
+                sfx.pick();
                 return;
             }
             const d = deskAt(g, p.x, p.y);
-            if (d >= 0 && v.selected !== null) send(g, v.selected, d);
+            if (d >= 0 && v.selected !== null) doSend(g, v.selected, d);
             v.selected = null;
-        } else if (e.type === 'pointermove' && v.drag) {
-            v.drag.x = p.x;
-            v.drag.y = p.y;
+        } else if (e.type === 'pointermove') {
+            if (v.drag) {
+                const moved = Math.hypot(p.x - v.drag.x, p.y - v.drag.y);
+                v.drag.x = p.x;
+                v.drag.y = p.y;
+                v.over = deskAt(g, p.x, p.y);
+                if (moved > 3) sfx.scratch(performance.now() / 1000);
+            } else {
+                const over =
+                    folderAt(g, p.x, p.y) || (v.selected !== null && deskAt(g, p.x, p.y) >= 0);
+                e.currentTarget.style.cursor = over ? 'grab' : 'default';
+            }
         } else if ((e.type === 'pointerup' || e.type === 'pointercancel') && v.drag) {
             const d = deskAt(g, p.x, p.y);
-            if (d >= 0) {
-                send(g, v.drag.id, d);
+            if (d >= 0 && e.type === 'pointerup') {
+                doSend(g, v.drag.id, d);
                 v.selected = null;
             } else v.selected = v.drag.id;
             v.drag = null;
+            v.over = -1;
         }
     };
 
@@ -262,8 +518,13 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
     usePlaytest(GAME_ID, () => {
         const tick = (k: keyof typeof botTicks) => () => {
             if (modeRef.current !== 'play') return;
-            botDriving.current = true;
-            botTicks[k](game.g);
+            const g = game.g;
+            const before = g.folders.filter((f) => f.state !== 'leir').length;
+            botTicks[k](g);
+            if (g.folders.filter((f) => f.state !== 'leir').length !== before) {
+                view.current.sent = true;
+                run.current.sends++;
+            }
         };
         return {
             maksSekunder: MAKS_SEKUNDER,
@@ -272,7 +533,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                 if (modeRef.current === 'menu') return { ...s, fase: 'meny' };
                 return s;
             },
-            start: () => start(),
+            start: (variant) => start(variant),
             bots: {
                 seende: { ...BOT_INFO.seende, tick: tick('seende') },
                 halvgod: { ...BOT_INFO.halvgod, tick: tick('halvgod') },
@@ -283,7 +544,8 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
         };
     });
 
-    useEffect(() => () => text.clear(), [text]);
+    const hudOn = mode === 'play' || mode === 'paused';
+    const found = new Set(save.found);
 
     return (
         <MicroGameFrame title="Tinghuset" bleed>
@@ -291,7 +553,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                 <ArcadeStage
                     ref={bindStage}
                     theme={THEME}
-                    background="#c9cac2"
+                    background={BG}
                     label="Tinghuset - landssvikoppgjøret 1945-1948"
                 >
                     <canvas
@@ -300,11 +562,46 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                         onPointerMove={onPointer}
                         onPointerUp={onPointer}
                         onPointerCancel={onPointer}
-                        style={{ cursor: 'pointer', touchAction: 'none' }}
+                        style={{ touchAction: 'none' }}
                     />
+
+                    {hudOn && (
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: 8,
+                                right: 8,
+                                display: 'flex',
+                                gap: 6,
+                                zIndex: 5,
+                            }}
+                        >
+                            <button
+                                type="button"
+                                className="arc-small"
+                                style={{ padding: '4px 9px', fontSize: 13 }}
+                                onClick={toggleMute}
+                                aria-label={muted ? 'Slå på lyd' : 'Slå av lyd'}
+                                title="Lyd (M)"
+                            >
+                                {muted ? 'LYD AV' : 'LYD'}
+                            </button>
+                            <button
+                                type="button"
+                                className="arc-small"
+                                style={{ padding: '4px 9px', fontSize: 13 }}
+                                onClick={pause}
+                                aria-label="Pause"
+                                title="Pause (Esc)"
+                            >
+                                ❚❚ Esc
+                            </button>
+                        </div>
+                    )}
+
                     {textLayer}
 
-                    {mode === 'menu' && (
+                    {mode === 'menu' && !showFinds && (
                         <ArcadeScreen>
                             <ArcadeLogo>TINGHUSET</ArcadeLogo>
                             <ArcadeTag>Mai 1945 - august 1948</ArcadeTag>
@@ -316,70 +613,52 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                                     lineHeight: 1.4,
                                 }}
                             >
-                                Dra mappene fra leirene til en skranke. Forelegg er raskt, men for
-                                mildt for angivere og statspoliti. Rettssaken er rettferdig, men
-                                treg. To like saker skal få samme straff.
+                                Dra mappene til en skranke. Like saker skal få lik dom.
                             </p>
-                            <ArcadeBigButton onClick={start}>Spill</ArcadeBigButton>
-                            <div style={{ fontSize: 13, fontWeight: 600 }}>
-                                Rekord: <b>{save.bestJevne}</b> jevne dommer
+                            <ArcadeBigButton onClick={() => start()}>Spill</ArcadeBigButton>
+                            {save.wins > 0 && (
+                                <ArcadeSmallButton onClick={() => start('mars')}>
+                                    Start i mars 1946
+                                </ArcadeSmallButton>
+                            )}
+                            <div style={{ fontSize: 13, fontWeight: 600, margin: '10px 0 6px' }}>
+                                Rekord: <b>{save.bestJevne}</b> jevne dommer &nbsp;/&nbsp;{' '}
+                                {rankFor(RANKS, save.bestJevne)}
+                            </div>
+                            <ArcadeSmallButton onClick={() => setShowFinds(true)}>
+                                Saksmappa ({save.found.length}/{FINDS.length})
+                            </ArcadeSmallButton>
+                        </ArcadeScreen>
+                    )}
+
+                    {mode === 'menu' && showFinds && (
+                        <FindsScreen found={found} onClose={() => setShowFinds(false)} />
+                    )}
+                    {mode === 'paused' && (
+                        <ArcadeScreen>
+                            <div className="arc-display" style={{ fontSize: 28 }}>
+                                Pause
+                            </div>
+                            <p style={{ fontWeight: 600, margin: '8px 0 0', fontSize: 14 }}>
+                                {PAUSE_MSG}
+                            </p>
+                            <ArcadeBigButton onClick={resume}>Fortsett</ArcadeBigButton>
+                            <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
+                                <ArcadeSmallButton onClick={() => start()}>
+                                    Start på nytt
+                                </ArcadeSmallButton>
+                                <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
                             </div>
                         </ArcadeScreen>
                     )}
 
                     {mode === 'over' && result && (
-                        <ArcadeScreen>
-                            <div
-                                className="arc-display"
-                                style={{ fontSize: 22, color: result.won ? VIOLET : RED }}
-                            >
-                                {result.won
-                                    ? 'Oppgjøret ble ordnet med lov og dom.'
-                                    : LOSS[result.cause ?? 'vent'].msg}
-                            </div>
-                            <div className="arc-display" style={{ fontSize: 18, margin: '4px 0' }}>
-                                {result.rank}
-                            </div>
-                            {!result.won && (
-                                <p
-                                    style={{
-                                        margin: '4px 0',
-                                        fontWeight: 700,
-                                        fontSize: 13,
-                                        lineHeight: 1.35,
-                                    }}
-                                >
-                                    {LOSS[result.cause ?? 'vent'].tip}
-                                </p>
-                            )}
-                            <ArcadeLessons items={result.lessons} />
-                            <ArcadeStats
-                                items={[
-                                    { value: result.avgjort, label: 'saker avgjort' },
-                                    { value: result.jevne, label: 'jevne par' },
-                                    { value: result.score, label: 'poeng' },
-                                ]}
-                            />
-                            {result.won && (
-                                <p style={{ margin: '4px 0', fontSize: 12.5, lineHeight: 1.35 }}>
-                                    De ekte tallene: 92 805 saker etterforsket, 46 085 straffet.
-                                    {result.skjevest
-                                        ? ` Ditt skjeveste par: ${result.skjevest}`
-                                        : ''}{' '}
-                                    I 1950 ble 150 jurister spurt om oppgjøret var godt nok. De var
-                                    delt nesten på midten.
-                                </p>
-                            )}
-                            {!result.won && (
-                                <p style={{ margin: '4px 0', fontSize: 12.5, lineHeight: 1.35 }}>
-                                    {SAKLIG}
-                                </p>
-                            )}
-                            <ArcadeBigButton onClick={start}>Igjen</ArcadeBigButton>
-                            <ArcadeSmallButton onClick={() => setModeBoth('menu')}>
-                                Meny
-                            </ArcadeSmallButton>
-                        </ArcadeScreen>
+                        <OverScreen
+                            result={result}
+                            foundCount={save.found.length}
+                            onAgain={() => start()}
+                            onMenu={toMenu}
+                        />
                     )}
                 </ArcadeStage>
             </div>

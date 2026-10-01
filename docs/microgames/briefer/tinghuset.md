@@ -356,3 +356,70 @@ Nettleseren (fart 4): seende vant med 10 100 poeng, under simuleringens p10 (14 
   men en elev kan lese det som at god spilling straffes.
 - I 1947 kan salene stå tomme et øyeblikk mellom bølgene; presset kommer mest fra leirene.
 - Vinduet på to måneder er 8 s i brett 4 (4 s per måned), ikke 15 s som diagnosen antok.
+
+### 2026-10-01 - Bygg (fase 3b-6), byggmester
+
+**Gjort.** Først diagnose 2 sine tre endringer i kjerneløkka:
+
+1. Straffenivået faller i synlige trinn på 5 prosentpoeng (hver 3. måned fra september 1945, bunn
+   45 %). Dommen trykkes etter trinnet (`domTekst`): alvorlig 20 år ved 100 % og 1 år mindre per
+   trinn, økonomisk 10 år og et halvt år mindre, vanlig medlem i retten 20 000 kr og 1000 kr
+   mindre. Mappa viser dommen den får NÅ og blinker «om N s» når et trinn er under 3 s unna.
+   ULIK DOM bare når den trykte dommen er ulik.
+2. Forelegg har fast takst («Bot og tap av rettigheter») og holder multiplikatoren; et jevnt
+   forelegg-par gir 40 x mult. Bare et jevnt par i retten gir 100 x mult og +1 (tak x10).
+3. Ingen 1,5x sinne på mapper som venter på tvillingen; blyantringen på mappa teller ned til
+   tvillingen kommer. Ulikt par halverer multiplikatoren; bare forelegg i alvorlig sak gir x1.
+
+Robotene: seende gir forelegg straks på grå (alltid jevnt), venter opptil 5 s på en alvorlig
+tvilling, sender tvillingen til salen som gir dom nærmest partneren i tid, og holder et alvorlig
+par tilbake når et trinn faller om under 5 s. Halvgod som før (treg, tilfeldig rekkefølge, husker
+tvillingen halve tiden, bommer på salen).
+
+Så bygget: arkadeskall med eget tema og HUD som er arkivet selv (avrivningskalender som river av
+et blad per dag i mai 1945 og per måned etterpå, mål-feltet «aug. 1948 / N mnd igjen»,
+straffenivå-linjal, rødblyant-sinnemåler, poeng med multiplikator-stempel, telleverk «JEVNE
+DOMMER»). Kunsten (`art.ts`): gjennomslagspapir med fiber, linjering, falmede stempler og bakt
+vignett; mapper i arkivpapp (grå, rødt hjørne, tykk med binders); forelegg som gummistempel med
+treskaft; rettssalen som oppslått protokollbok der dommen skrives tegn for tegn; blyantstreker
+som tre forskjøvne linjer. Juice (`fx.ts`): streken tegnes, mappa glir, stempelet slår ned med
+dunk, blekkring, støv og 2 px rist, dommerlappen flyr til telleverket (FOR MILDT flyr inn i
+måleren), protokoll-logg midt på arket (hver dom skrives inn, blå hake på jevne par, rød strek og
+ULIK på ulike, blekket blekner år for år), ULIK DOM-lappene slås ned midt på arket, leirer og
+saler glir inn, telleverket ruller, multiplikatoren spretter, leirene fylles av rødblyant når
+folk venter, kantene mørkner og skravering kryper inn med sinnet. Nesten-bom: «+400 på håret»
+når et jevnt par rakk trinnet, «ett trinn fra lik dom». Lyd (`sfx.ts`), pause (Esc/P og knapp),
+lyd av/på (M), tre lærings-øyeblikk (angiver, like saker, trinnet), korte lapper, «Dette skjedde»,
+to tapsårsaker med tips, seier med de ekte tallene, det skjeveste paret og juristene i 1950,
+ranger, rekord, ti protokollblad i saksmappa, «Start i mars 1946» etter første seier.
+Embedded i artikkelen etter «Sitatet over viser et viktig problem ...». Største fil: `draw.ts`
+(ca. 770 linjer).
+
+**Simuleringen (200 runder per robot), grønn:** seende vinner 100 % (median 11 530), halvgod 82 %
+(median 6 610 = 57 % av vinneren), alt-til-retten 0 % (170, «satt for lenge uten dom»),
+alt-til-forelegg 0 % (320, «slapp for lett»), knappemoser 0 % (310), passiv 0 %. 50,3 valg per
+minutt. Presset 0,14 -> 0,34 -> 0,57.
+Selvspill: alle porter grønne, seende vant med 8 140 poeng (simuleringens p10 er 8 020),
+JS 4,3 ms per bilde på Chromebook-takt, bildeendring passiv 2,2. Audit `--strict`: 0 funn.
+Likhetsvakt: nærmest petisjonen-3d (0,48).
+
+**Det som IKKE virket.**
+
+- Første selvspill: «bildet står stille uten input» (0,6) og ingen «Dette skjedde». Slutt-skjermen
+  kom etter 1,6 s spilltid, som i headless tok lenger tid enn harnessen venter; nå 0,9 s ekte tid.
+- Kalenderblad per dag i brett 1 løftet bildeendringen bare til 1,0. Det som virket: leirene
+  fylles av rødblyant når mapper blir liggende (2,2) - og det er samtidig fagkjernen («mapper som
+  venter = sinne») vist der det skjer.
+- Papirskjoldene ble først tegnet med to ulike sentre i den radielle gradienten og ga store
+  trekantede flekker over arket.
+- En `str.replace` på registry med en tom delstreng ødela hele fila; gjenopprettet fra git.
+
+**Kjente svakheter.**
+
+- Den flinke roboten er sjelden i fare i nettleseren (sinne rundt 0,1-0,3); presset kommer mest
+  for en elev som drar tregere enn fem grep i sekundet.
+- Lærings-øyeblikket om trinnet står over leirene mens det vises (sakte film, slutter ved neste
+  grep).
+- Brett 1 er tynt med vilje (én leir, én skranke); arket ser tomt ut de første 25 sekundene.
+- Ingen rolig zoom ut når nye leirer åpner (arket er fast); leirene glir inn fra venstre i stedet.
+- Skrivemaskinfonten er «Courier New» med dobbeltrykk, ikke en egen tegnet tekstur.

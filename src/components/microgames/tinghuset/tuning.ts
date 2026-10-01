@@ -8,11 +8,22 @@ export const TUNING = {
     // Kalenderen: måned 0 = mai 1945, seier når måned SLUTT_MND er nådd (september 1948).
     kalender: {
         sluttMnd: 40,
-        /** Straffenivået synker lineært fra 100 % til (1 - fall) over så mange måneder. */
-        straffFall: 0.5,
-        straffMnd: 39,
-        /** Et par er jevnt når begge avgjøres samme vei og innen så mange måneder. */
-        jevnMnd: 2,
+        /** Straffenivået synker i synlige trinn: første trinn faller i måned `startMnd` +
+         *  `hverMnd`, så hver `hverMnd` måned, `pp` hver gang, aldri under `min`. */
+        trinn: { startMnd: 4, hverMnd: 3, pp: 0.05, min: 0.45 },
+        /** Mappa blinker med nedtelling når neste trinn er så nær (sekunder). */
+        varselSek: 3,
+    },
+
+    // Dommene som står på lappen. Et par er jevnt når den trykte dommen er lik.
+    dom: {
+        /** Forelegg har fast takst uansett straffenivå. */
+        forelegg: 'Bot og tap av rettigheter',
+        /** Rettssak: grunnstraff ved 100 %; hvert trinn trekker 1 år (alvorlig), et halvt år
+         *  (økonomisk) eller 1000 kr (vanlig medlem). */
+        alvorligAar: 20,
+        tykkAar: 10,
+        lettKr: 20000,
     },
 
     // Skrankene: hvor lenge en sak tar (sekunder spilltid).
@@ -38,8 +49,6 @@ export const TUNING = {
     sinne: {
         /** Per ventende mappe (i leir eller kø) per sekund. */
         ventPerMappe: 0.0025,
-        /** En mappe i leiren som venter på tvillingen sin, teller så mye mer. */
-        ventTvilling: 1.5,
         /** Hopp når en alvorlig sak får forelegg. */
         forMildt: 0.12,
         /** Alvorlig sak avgjort i rettssalen trekker ned. */
@@ -60,7 +69,10 @@ export const TUNING = {
 
     // Poeng uten tak.
     poeng: {
+        /** Jevnt par i rettssalen: så mye x multiplikator, og multiplikatoren +1. */
         jevntPar: 100,
+        /** Jevnt par med forelegg (fast takst): så mye x multiplikator, multiplikatoren står. */
+        jevntForelegg: 40,
         alvorligRett: 20,
         lettForelegg: 10,
         maksMult: 10,
