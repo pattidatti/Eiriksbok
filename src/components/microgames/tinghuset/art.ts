@@ -325,7 +325,7 @@ function makeDark(k: number) {
 
 /** En mappe i arkivpapp, ferdigtegnet. Alvorlige har rødblyant-hjørne, tykke har binders. */
 function makeFolder(kind: Kind, k: number) {
-    const fw = 46;
+    const fw = 50;
     const fh = kind === 'tykk' ? 36 : 30;
     const pad = 4;
     const [c, x] = mk((fw + pad * 2) * k, (fh + pad * 2) * k);

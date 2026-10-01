@@ -19,20 +19,7 @@ import {
 import { drawLeaves } from './fx';
 import type { Fx } from './fx';
 import { secsToStep } from './game';
-import {
-    AVIS,
-    CAL,
-    COUNTER,
-    CROWD,
-    GOAL,
-    TABLE,
-    H,
-    METER,
-    RULER,
-    SCORE,
-    W,
-    cardRects,
-} from './layout';
+import { AVIS, CAL, COUNTER, GOAL, TABLE, H, METER, RULER, SCORE, W, cardRects } from './layout';
 import { LEVELS, monthName } from './levels';
 import { domTekst, nesteTrinnMnd, straffTrinn } from './rules';
 import type { Game } from './state';
@@ -255,8 +242,9 @@ export function drawCounter(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     }
 }
 
-/** Domstabellen øverst på arket: hva hver sakstype får i dag, og hva den får etter neste trinn.
- *  Radene kommer etter hvert som sakstypene dukker opp (opptrappingen). */
+/** Loven øverst på arket: hva loven sier om hver sakstype, og hvor strenge dommene i retten er
+ *  akkurat nå. Ingen fasit - tabellen sier ikke hvilket stempel du skal bruke. Radene kommer
+ *  etter hvert som sakstypene dukker opp (opptrappingen). */
 export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     const { x, y, w } = TABLE;
     const lv = LEVELS[g.level];
@@ -264,32 +252,33 @@ export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     const next = lv.linjal && nesteTrinnMnd(g.mnd) !== null ? tr + 1 : null;
     const soon = lv.linjal && secsToStep(g) < K.kalender.varselSek;
     const pop = lv.linjal ? 1 + (1 - ease(fx.trinnT / 0.4)) * 0.25 : 1;
-    const rows: [string, string, string | null, string][] = [
-        ['NS-medlem', 'forelegg', null, INK],
-        ['tyskerjente', 'avvis saken', null, BLUE],
-    ];
     const aar = (kind: 'alvorlig' | 'tykk', t: number) =>
         domTekst(kind, 'rett', t).replace(' fengsel', '');
+    const rows: [string, string, string | null, string][] = [
+        ['NS-medlem', 'landssvik, mild straff', null, VIOLET],
+        ['tyskerjente', 'ingen lov er brutt', null, BLUE],
+    ];
     if (g.firstSerious)
         rows.push([
             'angiver',
-            `retten ${aar('alvorlig', tr)}`,
+            `fengsel, nå ${aar('alvorlig', tr)}`,
             next !== null ? aar('alvorlig', next) : null,
             RED,
         ]);
     if (g.level >= 3 || g.firstThick)
         rows.push([
             'profittør',
-            `retten ${aar('tykk', tr)}`,
+            `fengsel, nå ${aar('tykk', tr)}`,
             next !== null ? aar('tykk', next) : null,
             RED,
         ]);
-    typed(ctx, 'DOMMEN I DAG', x + 4, y + 7, 11, VIOLET);
+    typed(ctx, 'LOVEN', x + 4, y + 7, 11, VIOLET);
+    typed(ctx, 'landssvikanordningen 1944', x + 52, y + 7, 10, '#4b4250', 'left', false);
     const s = secsToStep(g);
     if (lv.linjal && s < 8) {
         typed(
             ctx,
-            Number.isFinite(s) ? `neste trinn om ${Math.ceil(s)} s` : 'laveste trinn',
+            Number.isFinite(s) ? `mildere om ${Math.ceil(s)} s` : 'laveste trinn',
             x + w - 4,
             y + 7,
             11,
@@ -302,7 +291,7 @@ export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
         const ry = y + 24 + i * 15;
         typed(ctx, label, x + 4, ry, 11, c);
         ctx.save();
-        ctx.translate(x + 112, ry);
+        ctx.translate(x + 104, ry);
         if (nxt) ctx.scale(pop, pop);
         typed(ctx, now, 0, 0, 11, INK, 'left', false);
         ctx.restore();
@@ -310,73 +299,17 @@ export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
             typed(ctx, `→ ${nxt}`, x + w - 4, ry, 11, soon ? RED : '#6d5f78', 'right', false);
     });
     const lines = rows.length + (lv.par ? 1 : 0);
-    if (lv.par)
-        typed(ctx, 'JEVNT PAR: samme nr., samme dom', x + 4, y + 24 + rows.length * 15, 11, BLUE);
+    if (lv.par) {
+        // Like saker: klemmer i samme farge (tegnet, ikke forklart med saksnummer).
+        const ry = y + 24 + rows.length * 15;
+        ['#178a6e', '#d97b1f'].forEach((c, k) => {
+            ctx.fillStyle = c;
+            ctx.fillRect(x + 5 + k * 9, ry - 6, 6, 12);
+        });
+        typed(ctx, 'lik klemme = samme handling', x + 26, ry, 11, BLUE);
+    }
     ctx.fillStyle = 'rgba(34,29,36,0.35)';
     ctx.fillRect(x, y + 16 + lines * 15, w, 1);
-}
-
-/** Plakatene folk holder opp utenfor tinghuset. Ingen ansikter - bare papp på stokker. */
-const SKILT = [
-    'STRAFF DEM',
-    'DØM DEM',
-    'LANDSSVIK!',
-    'FENGSEL!',
-    'HUSK 1940',
-    'HARDERE!',
-    'STRAFF!',
-    'RETT NÅ',
-    'IKKE GLEM',
-    'SKAM!',
-];
-
-/**
- * Folk utenfor tinghuset: plakater på stokker som heves én etter én når sinnet stiger, og
- * senkes når det legger seg. De rister mer jo sintere folk er.
- */
-export function drawCrowd(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    const { x, y, w, h } = CROWD;
-    const want = Math.round(fx.crowdShown * SKILT.length * 1.15);
-    while (fx.placards.length < SKILT.length) fx.placards.push(0);
-    typed(ctx, 'FOLK UTENFOR TINGHUSET', x + 4, y + 6, 11, RED);
-    if (want === 0 && fx.placards.every((p) => p < 0.05))
-        typed(ctx, 'stille i gatene', x + w - 4, y + 6, 11, '#6d5f78', 'right', false);
-    const shake = Math.min(1, g.sinne) * 2.4;
-    ctx.save();
-    rect(ctx, x - 4, y + 12, w + 8, h - 10);
-    ctx.clip();
-    // Bakerste rad først (de odde), så forreste.
-    for (const back of [true, false]) {
-        SKILT.forEach((txt, i) => {
-            if ((i % 2 === 0) === back) return;
-            const target = i < want ? 1 : 0;
-            fx.placards[i] += (target - fx.placards[i]) * 0.08;
-            const up = ease(fx.placards[i]);
-            if (up < 0.02) return;
-            // Fem plasser per rad; bakre rad forskjøvet en halv plass og høyere opp.
-            const px = x + 6 + Math.floor(i / 2) * 60 + (back ? 26 : 0);
-            const jx = Math.sin(fx.t * (4 + (i % 3)) + i * 1.7) * shake;
-            const jy = Math.abs(Math.cos(fx.t * (5 + (i % 4)) + i)) * shake;
-            const base = y + (back ? 30 : 40) + (1 - up) * 44 - jy;
-            ctx.save();
-            ctx.translate(px + jx, base);
-            ctx.rotate(Math.sin(i * 2.3) * 0.12 + jx * 0.02);
-            ctx.font = `bold 10px "Courier New", monospace`;
-            const tw = ctx.measureText(txt).width + 10;
-            ctx.fillStyle = '#6b4a2e';
-            ctx.fillRect(tw / 2 - 1.5, 6, 3, 30);
-            ctx.fillStyle = 'rgba(30,20,14,0.3)';
-            ctx.fillRect(2, -6, tw, 16);
-            ctx.fillStyle = back ? '#e6d8b4' : '#f3e8cc';
-            ctx.fillRect(0, -8, tw, 16);
-            ctx.strokeStyle = 'rgba(34,29,36,0.5)';
-            ctx.lineWidth = 1;
-            ctx.strokeRect(0.5, -7.5, tw - 1, 15);
-            typed(ctx, txt, tw / 2, 0, 10, RED, 'center');
-            ctx.restore();
-        });
-    }
-    ctx.restore();
 }
 
 /** Avisa: dagens overskrift etter kalenderen, eller et svar på det eleven nettopp gjorde. */

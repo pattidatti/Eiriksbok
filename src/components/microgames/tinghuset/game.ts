@@ -3,7 +3,16 @@
 
 import { TUNING } from './tuning';
 import { LEVELS } from './levels';
-import { makeOffer, nesteTrinnMnd, runDesks, runRoutes, runTravel, straffTrinn } from './rules';
+import {
+    makeOffer,
+    nesteTrinnMnd,
+    openInterner,
+    runDesks,
+    runRoutes,
+    runTravel,
+    sluttRegning,
+    straffTrinn,
+} from './rules';
 import { newGame as blankGame, type Folder, type Game, type Kind } from './state';
 
 export type { Game, Folder };
@@ -190,9 +199,12 @@ function runSpawns(g: Game, sdt: number) {
 function nextLevel(g: Game) {
     if (g.level >= LEVELS.length - 1) {
         g.mode = 'won';
+        sluttRegning(g);
         return;
     }
     g.level++;
+    // Sommeren 1945: interner-stempelet (straff uten dom) blir en fristelse.
+    if (g.level >= 1) openInterner(g);
     const lv = LEVELS[g.level];
     for (const c of lv.leirer)
         if (!g.camps.includes(c)) {
@@ -283,5 +295,6 @@ export function update(g: Game, dt: number) {
     if (g.sinne >= 1 || g.folders.length > K.sinne.maksMapper) {
         g.mode = 'lost';
         g.cause = g.fraMild > g.fraVent ? 'mild' : 'vent';
+        sluttRegning(g);
     }
 }

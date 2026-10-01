@@ -36,6 +36,8 @@ export const TUNING = {
         tykkRettssak: 18,
         /** Avvis-skranken («ingen lov - ingen sak»). */
         avvis: 0.6,
+        /** Interner-stempelet (straff uten dom, bare tyskerjente-saker). */
+        interner: 0.6,
         /** Flere dommere: rettssaler så mye raskere (0,1 = 10 %). */
         dommereFart: 0.1,
         /** Tiden mappa bruker på å gli langs streken. */
@@ -56,19 +58,23 @@ export const TUNING = {
          *  retten (og det lettvinte: straff uten lov, bot) tar det ned igjen. */
         krav: 0.0045,
         /** Kravet i august 1948: sinnet var størst like etter krigen og la seg med årene. */
-        kravSlutt: 0.0015,
+        kravSlutt: 0.0005,
         /** Per ventende mappe (i leir eller kø) per sekund. */
-        ventPerMappe: 0.0025,
+        ventPerMappe: 0.002,
         /** Hopp når en alvorlig sak får forelegg. */
         forMildt: 0.12,
         /** Alvorlig sak avgjort i rettssalen: gata ser en dom, og sinnet synker. */
         rettLetter: 0.04,
         /** En tyskerjente-sak blir avvist (riktig): folk ville se straff, så sinnet stiger. */
         avvist: 0.07,
-        /** En tyskerjente blir straffet likevel (galt): gata roer seg, men det skjer uten lov. */
-        ulovligLetter: 0.06,
-        /** En profittør får bot (forelegg): raskt og stille i gata, men multiplikatoren går til x1. */
-        botLetter: 0.01,
+        /** En tyskerjente blir internert uten dom (galt): gata roer seg kraftig, men det skjer
+         *  uten lov, multiplikatoren går til x1, og det trekkes på slutten. */
+        ulovligLetter: 0.15,
+        /** En profittør får bot (forelegg): raskt og stille i gata, men han slapp unna. */
+        botLetter: 0.03,
+        /** Milde dommer roer gata mindre: en dom i retten tar ned rettLetter x straffenivå
+         *  opphøyd i denne (1948: 45 % -> rundt en firedel så mye som i 1945). */
+        rettNivaaEksp: 1,
         /** En vanlig landssviksak som blir avvist, slipper unna (del av forMildt). */
         avvistLett: 0.5,
         /** Fast tak på mapper på arket - over det er sinnet sprukket uansett. */
@@ -95,6 +101,9 @@ export const TUNING = {
         lettForelegg: 10,
         /** En sak uten lov avvist: en ryddig avgjørelse (aldri poeng for å straffe dem). */
         avvist: 10,
+        /** Trekk på slutten per tyskerjente straffet uten dom, og per profittør som slapp unna. */
+        trekkUlovlig: 300,
+        trekkSlapp: 150,
         maksMult: 10,
     },
 

@@ -54,6 +54,7 @@ import {
     deskRect,
     folderAt,
     inside,
+    syncDesks,
     type Pt,
 } from './tinghuset/layout';
 import { monthName } from './tinghuset/levels';
@@ -159,9 +160,11 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
         y: tf.current.oy + p.y * tf.current.s,
     });
     // Mens mellomsiden står, venter lappene (de skal aldri dekke protokollkortet).
+    // Lappene for en mappe står i protokollen rett til høyre for leiren, i høyde med mappa -
+    // aldri over leirens navn eller straff-linjalen.
     const atFolder = (id: number) => () => {
         const p = game.fx.pos.get(id);
-        return p && game.g.inter <= 0 ? toScreen({ x: p.x, y: p.y - 18 }) : null;
+        return p && game.g.inter <= 0 ? toScreen({ x: 384, y: p.y + 14 }) : null;
     };
     const atRect = (x: number, y: number) => () => (game.g.inter <= 0 ? toScreen({ x, y }) : null);
 
@@ -187,6 +190,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
             ulovlig: g.ulovlig,
             formildt: g.formildt,
             profBot: g.profBot,
+            trekk: g.trekk,
             cause: g.cause,
             skjevest: g.skjevest,
             rank: rankFor(RANKS, g.jevne),
@@ -209,6 +213,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
 
     const handleEvents = (g: Game) => {
         const fx = game.fx;
+        syncDesks(g);
         const parts = tier === 'lav' ? 0.6 : tier === 'middels' ? 1 : 1.5;
         for (const e of g.events) {
             fxEvent(fx, g, e, parts);
@@ -218,15 +223,10 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                     find('anordning');
                     if (g.level === 0 && f.id === 1)
                         // Ved stempelet, så den ikke kolliderer med lappene i leiren.
-                        text.point(
-                            'dra',
-                            PINS.dra,
-                            atRect(deskRect(0).x - 80, deskRect(0).y + 20),
-                            {
-                                until: () => view.current.sent,
-                                seconds: 14,
-                            }
-                        );
+                        text.point('dra', PINS.dra, atRect(530, 250), {
+                            until: () => view.current.sent,
+                            seconds: 14,
+                        });
                     if (f.kind === 'lett' && g.level === 1)
                         text.point('forloven', PINS.forloven, atFolder(f.id), {
                             once: true,
@@ -315,7 +315,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                     buzz(60);
                     text.lesson('ulovlig', LESSONS.ulovlig, 3);
                     const p = toScreen({ x: COUNTER.x - 70, y: COUNTER.y + 10 });
-                    text.float('gata roer seg - UTEN LOV, ×1', p.x, p.y, RED, true);
+                    text.float('gata roer seg - UTEN DOM, −300 til slutt', p.x, p.y, RED, true);
                     break;
                 }
                 case 'formildt': {
@@ -327,7 +327,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                         find('okonomisk');
                         text.lesson('profittor', LESSONS.profittor, 1.5);
                         const p = toScreen({ x: COUNTER.x - 70, y: COUNTER.y + 10 });
-                        text.float('slapp med bot - ×1', p.x, p.y, RED, true);
+                        text.float('slapp unna - −150 til slutt', p.x, p.y, RED, true);
                         break;
                     }
                     text.lesson('forelegg', LESSONS.forelegg, 1.5);
@@ -373,16 +373,17 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                     break;
                 case 'brett':
                     sfx.page();
-                    if (e.level === 2)
-                        text.point(
-                            'linjal',
-                            PINS.linjal,
-                            atRect(RULER.x + 140, RULER.y + RULER.h),
-                            {
-                                seconds: 7,
-                            }
-                        );
                     break;
+                case 'interner': {
+                    // Sommeren 1945: straff uten dom blir mulig. Lappen står til venstre for
+                    // stempelet, over protokollen - aldri over stempelets navn.
+                    const di = g.desks.findIndex((d) => d.kind === 'interner');
+                    const r = deskRect(Math.max(0, di));
+                    text.point('interner', PINS.interner, atRect(540, r.y + 40), {
+                        seconds: 8,
+                    });
+                    break;
+                }
                 case 'kort': {
                     sfx.cards();
                     const r = cardRects(1)[0];
@@ -401,7 +402,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                     const di = g.desks.findIndex((d) => d.kind === 'rett');
                     const r = deskRect(Math.max(0, di));
                     // Lappen står til venstre for salen, over køen - aldri over salen selv.
-                    text.point('rett', PINS.rett, atRect(r.x - 70, r.y + 16), {
+                    text.point('rett', PINS.rett, atRect(540, r.y + 50), {
                         seconds: 7,
                     });
                     break;
@@ -411,14 +412,14 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
         g.events.length = 0;
         if (g.desks.some((d) => d.kind === 'rett' && d.queue.length >= 5)) find('fengsel');
         if (g.sinne > 0.35)
-            text.point('sinne', PINS.sinne, atRect(METER.x, METER.y + METER.h * 0.4), {
+            text.point('sinne', PINS.sinne, atRect(METER.x + 12, METER.y + 30), {
                 once: true,
                 seconds: 6,
             });
         if (g.ruter.length > run.current.ruter) {
             run.current.ruter = g.ruter.length;
             const r = campRect(g.ruter[g.ruter.length - 1]);
-            text.point('rute', PINS.rute, atRect(r.x + r.w - 40, r.y), { seconds: 5 });
+            text.point('rute', PINS.rute, atRect(384, r.y + 40), { seconds: 5 });
         }
     };
 
@@ -451,7 +452,7 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                     }
                 } else {
                     run.current.end += dt;
-                    if (performance.now() - run.current.endAt > 900) {
+                    if (performance.now() - run.current.endAt > 650) {
                         run.current.end = -2;
                         endRun(g);
                     }
@@ -541,7 +542,18 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
 
     const doSend = (g: Game, id: number, desk: number) => {
         const from = game.fx.pos.get(id);
-        if (!send(g, id, desk)) return;
+        if (!send(g, id, desk)) {
+            // Feil stempel for saken: si hvorfor, der stempelet er.
+            const f = g.folders.find((x) => x.id === id);
+            const r = deskRect(desk);
+            const q = toScreen({ x: r.x + 40, y: r.y + 8 });
+            if (f?.kind === 'utenlov')
+                text.float('ingen lov - avvis eller interner', q.x, q.y, BLUE);
+            else if (g.desks[desk]?.kind === 'interner')
+                text.float('bare for saker uten lov', q.x, q.y, RED);
+            sfx.pick();
+            return;
+        }
         if (from) addStroke(game.fx, id, { ...from }, desk);
         view.current.sent = true;
         run.current.sends++;

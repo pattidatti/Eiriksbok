@@ -228,8 +228,9 @@ seier og jevne par, og A og B taper på hver sin årsak.
    binders. Leirene er maskinskrevne bokser med navn i versaler og to hullmaskin-hull. Skrankene er
    gummistempler sett ovenfra (rundt treskaft, stempelflate med tekst). Rettssalen er en oppslått
    protokollbok der en linje skrives tegn for tegn mens saken går. Blyantstreker tegnes som tre
-   tynne, litt forskjøvne linjer med korn, aldri som glatte vektorstreker. Ingen mennesker,
-   ingen ansikter, ingen symboler fra NS.
+   tynne, litt forskjøvne linjer med korn, aldri som glatte vektorstreker. Mennesker bare som
+   silhuetter i papirklipp uten ansikter (folkemengden utenfor tinghuset, dommerne i retten,
+   arresterte på vei til leiren) - aldri ydmykelse eller vold. Ingen symboler fra NS.
 4. **Lys.** Flatt kontorlys ovenfra med en svak lampevignett i hjørnene. Når sinnet stiger, mørkner
    kantene av arket og rødblyant-skravering kryper inn fra høyre marg - lyset endrer seg aldri på
    annen måte.
@@ -571,3 +572,80 @@ Audit `--strict`: 0 funn. Likhet: nærmest frisk-puss 0,38 (før petisjonen-3d 0
 - Den grove saken (dødsdom eller livsvarig) er fortsatt bare én sak per runde og gir ikke ULIK
   DOM senere i runden.
 - Folkemengden er plakater, ikke figurer (kunstbriefen: ingen mennesker).
+
+### 2026-10-01 - Forbedring 3 (fase 7, vurdering runde 3: 3/3/5/3/4 = 18), forbedrer
+
+Gøy og Utseende har stått på 3 i tre runder. Kjerneløkka er endret: dommen er et valg, ikke et
+oppslag. Fortsatt tre regler å huske («alvorlig sak i retten», «uten lov, ingen sak»,
+«straffene synker med tiden»).
+
+**Gjort.**
+
+1. **Dommen er et valg, med en ekte fristelse (Gøy).** «DOMMEN I DAG» (fasiten: hvilket stempel)
+   er byttet med «LOVEN»: hva landssvikanordningen sier om hver sakstype og hvor streng straffen i
+   retten er nå («angiver: fengsel, nå 17 år», «tyskerjente: ingen lov er brutt»). Nytt stempel i
+   brett 2: INTERNER («uten dom · roer gata»), som bare tar tyskerjente-saker og puster når gata
+   er sint og en slik sak ligger klar. Det tar ned sinnet 15 % (før 6 %), men gir x1, «UTEN LOV»
+   i protokollen og trekker 300 poeng på slutten. Tyskerjente-saker kan nå bare avvises eller
+   interneres (`accepts`), og feil stempel får en forklaring der stempelet er. Profittøren kan få
+   et raskt forelegg (0,8 s mot 18 s i retten, -3 % sinne), men teller som «slapp unna» og koster
+   150 poeng på slutten. Slutt-skjermen viser «Uten dom: N · Slapp unna: N · trukket X poeng».
+   Sinnet holdes oppe i 1946-48: en dom i retten roer gata med `rettLetter` x straffenivå (milde
+   dommer roer mindre), kravet fra gata faller mindre mot 1948, og ventende mapper teller litt
+   mindre. **Samsvar:** det var ingen kodeforskjell mellom nettleser og simulering. Ny funksjon
+   `sinneSpor` i sim.ts viste at gjennomsnittet 0,23-0,50 skjulte to typer runder: de beste
+   rundene (5 rettssaler og felles behandling) slo sinnet ned til 0-5 % etter 150 s, fordi hver
+   dom tok 4 % uansett år. Nettleserrunden med 16 250 poeng var en slik runde. Nå er dette fikset
+   i reglene (ikke i robotene).
+2. **Ryddigere skjerm (Lesbart).** Lappene for mapper står i protokollen ved siden av leiren, i
+   høyde med mappa - aldri over leirnavnet eller STRAFF-linja; linjal-lappen er fjernet (trinn-
+   øyeblikket forklarer det samme). Strekene ligger under protokollteksten (papir bak hver linje),
+   og faste ruter tegner ikke lenger en strek over arket. Ingen tekstmarkør i rettssalene.
+   Tvillingpar har en klemme i samme farge («lik klemme = samme handling») i stedet for
+   «samme nr.»; tallet i ringen er borte (ringen tømmes i klemmens farge). De fem like
+   rettssalene er én hylle, «RETTEN», med dommerplasser.
+3. **Liv i uttrykket (Utseende).** Plakatskiltene er byttet med en folkemengde i papirklipp i et
+   vindu ut mot gata: tinghusets gavl og søyler bak, opptil 54 silhuetter med hatt, skaut og
+   sixpence som kommer opp fra fortauet med sinnet og går igjen når det legger seg, fire av dem
+   med plakater over 30 %. Mappene har person: yrke og handling («Bonde / NS 1940», «Tolk /
+   angiver», «Grossist / profittør», «Syerske / tysk venn»). De første sekundene skrives loven
+   inn i den tomme protokollen, og plassene for Akershus og Falstad viser «åpner juni 1945» med en
+   rekke arresterte silhuetter på vei. Dommerplassene har en dommer i kappe bak dommerbordet som
+   nikker mens saken går. Kunstbriefen er oppdatert: mennesker som silhuetter uten ansikter, aldri
+   ydmykelse eller vold.
+
+**Feel-lista.** Før: alle fire på plass (hit-stop og rist, «på håret», ting glir inn og ut,
+poeng teller opp). Etter: alle fire, og lagt til i 1 (feil stempel gir lyd og forklaring i
+stedet for et stumt klikk) og 3 (silhuettene kommer og går, hylla og interner-stempelet glir inn,
+dommeren nikker). Ingen av de fire manglet.
+
+**Simuleringen (200 runder per robot), grønn:** seende vinner 96 % (median 10 310, p10-p90
+7 120-14 560), halvgod 98 % (median 5 770 = 56 % av vinneren), alt-til-retten 0 % (40),
+alt-til-forelegg 0 % (40), knappemoser 0 % (0), passiv 0 %. 52,2 valg per minutt. Presset
+0,27 -> 0,52 -> 0,75 (før 0,27 -> 0,53 -> 0,69). Seendes sinne (60 runder, median/p10 ved
+20, 55, 80, 110, 150 og 200 s): 20/20, 37/26, 43/32, 40/26, 42/27, 58/21 (før falt p10 til
+1-5 % etter 150 s). Fristelsen brukt: seende 0,3 internerte per runde (bare i nød over 90 %),
+halvgod 1,4 internerte og 1,1 profittører med bot per runde (gir etter over 70 %).
+Selvspill: alle porter grønne, seende vant med 18 220 poeng (forrige kjøring 9 690),
+Chromebook JS p50 11,8 ms / p95 15,9 ms, bildeendring passiv 10,2. Audit `--strict`: 0 funn.
+Likhet: nærmest guddommelig-vind 0,39.
+
+**Det som IKKE virket.**
+
+- `rettNivaaEksp` 1,8 alene: seende vant bare 22 % (sinnet steg til 0,7-0,9 i 1947-48). Med
+  eksponent 1, `kravSlutt` 0,0005 og `ventPerMappe` 0,002 vinner seende 96 %.
+- Uten nød-regel i robotene ble halvgod 23-52 %; en halvgod elev gir etter for fristelsen når
+  gata er sint, og da vinner den, men med færre poeng (trekket).
+- Første fasadetegning i folkevinduet (ni smale søyler) så ut som gitter foran folk; nå seks
+  brede søyler med gavl, svakt tegnet.
+- Slutt-skjermen kom 900 ms etter stempelet og ble av og til ikke målt av selvspillet
+  («ingen Dette skjedde»); nå 650 ms.
+
+**Kjente svakheter.**
+
+- Nettleserrundene varierer fortsatt mye: én hadde 72 % sinne ved 110 s, den neste (plakaten)
+  11 % med 18 220 poeng (over sim p90). Svært gode runder kan fortsatt roe gata mye.
+- Mappene er tette i leirene (to linjer à 9,5 px på 50 px); lange yrker klemmes litt sammen.
+- Lappene står nå i protokollen ved siden av mappa, ikke rett over den; pila peker på
+  protokollen, ikke på selve mappa.
+- Halvgod vinner nesten alltid (fristelsen redder den) - trappen ligger i poengene, ikke i seier.
