@@ -52,14 +52,23 @@ export const TUNING = {
 
     // Sinnet i gatene (0-1). Fullt = tap.
     sinne: {
+        /** Gata krever straff: sinnet stiger av seg selv så mye per sekund. Bare dommer i
+         *  retten (og det lettvinte: straff uten lov, bot) tar det ned igjen. */
+        krav: 0.0045,
+        /** Kravet i august 1948: sinnet var størst like etter krigen og la seg med årene. */
+        kravSlutt: 0.0015,
         /** Per ventende mappe (i leir eller kø) per sekund. */
         ventPerMappe: 0.0025,
         /** Hopp når en alvorlig sak får forelegg. */
         forMildt: 0.12,
-        /** Alvorlig sak avgjort i rettssalen trekker ned. */
-        rettLetter: 0.015,
-        /** En sak uten lov blir avvist: folk i gatene ville se straff, så sinnet stiger litt. */
-        avvist: 0.03,
+        /** Alvorlig sak avgjort i rettssalen: gata ser en dom, og sinnet synker. */
+        rettLetter: 0.04,
+        /** En tyskerjente-sak blir avvist (riktig): folk ville se straff, så sinnet stiger. */
+        avvist: 0.07,
+        /** En tyskerjente blir straffet likevel (galt): gata roer seg, men det skjer uten lov. */
+        ulovligLetter: 0.06,
+        /** En profittør får bot (forelegg): raskt og stille i gata, men multiplikatoren går til x1. */
+        botLetter: 0.01,
         /** En vanlig landssviksak som blir avvist, slipper unna (del av forMildt). */
         avvistLett: 0.5,
         /** Fast tak på mapper på arket - over det er sinnet sprukket uansett. */
@@ -108,17 +117,25 @@ export const TUNING = {
         /** Den første røde mappa får være alene så mange intervaller. */
         alene: 2,
         /** Bunken som ligger i Ilebu når runden starter (ingen dødtid). */
-        bunke: 6,
+        bunke: 4,
+        /** Brett 1 (mai 1945): fast rekkefølge, så hver ny sakstype kommer alene. Tyskerjenta
+         *  kommer etter 2 s, den første angiveren etter 9 s - da glir rettssalen inn. */
+        brett1: [
+            'utenlov',
+            'lett',
+            'lett',
+            'alvorlig',
+            'lett',
+            'utenlov',
+            'lett',
+            'lett',
+            'alvorlig',
+        ] as const,
     },
 
-    // Saker uten lov (kvinner med tyske kjærester): riktig grep er å avvise saken.
-    utenlov: {
-        /** Brett 1: hver n-te nye mappe, første som nummer `forste` (0-basert). */
-        hvert: 4,
-        forste: 2,
-        /** Andel senere i runden. */
-        andel: 0.07,
-    },
+    // Tyskerjente-saker (kvinner med tyske kjærester, ingen lov forbød det): riktig grep er å
+    // avvise saken. Andelen etter brett 1.
+    utenlov: { andel: 0.1 },
 
     // Den ene saken om drap og tortur: kommer én gang, første mappe etter denne måneden.
     grov: { mnd: 6 },

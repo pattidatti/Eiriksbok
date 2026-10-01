@@ -36,6 +36,12 @@ export function interval(g: Game): number {
     return k[k.length - 1][1];
 }
 
+/** Hvor mye gata krever straff per sekund nå: mest i 1945, mindre mot 1948. */
+export function krav(g: Game): number {
+    const k = Math.min(1, g.mnd / K.kalender.sluttMnd);
+    return K.sinne.krav + (K.sinne.kravSlutt - K.sinne.krav) * k;
+}
+
 /** 0-1: hvor hardt spillet presser nå - tilfanget og sinnet. */
 export function pressure(g: Game): number {
     const tilfang = Math.min(1, K.press.minIntervall / interval(g));
@@ -109,12 +115,14 @@ function addFolder(
 function pickKind(g: Game): Kind {
     const lv = LEVELS[g.level];
     const n = g.spawnN++;
-    const U = K.utenlov;
-    // Brett 1: hver fjerde nye mappe er en sak uten lov - den skal avvises.
-    if (lv.alvorlig <= 0)
-        return n >= U.forste && (n - U.forste) % U.hvert === 0 ? 'utenlov' : 'lett';
-    if (g.firstSerious && g.rng() < U.andel) return 'utenlov';
-    // Brett 2: første alvorlige mappe kommer alene, med en lapp der blikket er.
+    // Brett 1: fast rekkefølge, så hver ny sakstype kommer alene og eleven ser den.
+    if (g.level === 0) {
+        const seq = K.tilfang.brett1;
+        const k = seq[n % seq.length];
+        if (k === 'alvorlig') g.firstSerious = true;
+        return k;
+    }
+    if (g.rng() < K.utenlov.andel) return 'utenlov';
     if (!g.firstSerious) {
         g.firstSerious = true;
         return 'alvorlig';
@@ -127,12 +135,20 @@ function pickKind(g: Game): Kind {
     return 'alvorlig';
 }
 
+/** Den første angiveren kommer: rettssalen glir inn i samme øyeblikk (svaret på saken). */
+function openCourt(g: Game) {
+    if (g.desks.some((d) => d.kind === 'rett')) return;
+    g.desks.push({ kind: 'rett', queue: [], current: null, joint: null, left: 0, total: 0 });
+    g.events.push({ kind: 'sal' });
+}
+
 function spawn(g: Game) {
     const lv = LEVELS[g.level];
     // Den ene saken om drap og tortur: én gang, alene, fra høsten 1945.
     const grov = lv.par && !g.grovDone && g.mnd >= K.grov.mnd;
     if (grov) g.grovDone = true;
     const kind = grov ? 'alvorlig' : pickKind(g);
+    if (kind !== 'lett' && kind !== 'utenlov') openCourt(g);
     const camp = Math.floor(g.rng() * g.camps.length);
     const sak = g.nextSak++;
     if (!lv.par || grov || kind === 'utenlov') {
@@ -244,8 +260,9 @@ export function update(g: Game, dt: number) {
     runDesks(g, sdt);
     runRoutes(g, sdt);
 
-    // Sinnet: hver mappe som venter uten dom fyller måleren litt hvert sekund.
-    const add = K.sinne.ventPerMappe * waiting(g) * sdt;
+    // Sinnet: gata krever straff, og hver mappe som venter uten dom fyller måleren litt.
+    // Gata krever straff hele tiden (folk utenfor vokser); dommer i retten roer den.
+    const add = (K.sinne.ventPerMappe * waiting(g) + krav(g)) * sdt;
     g.sinne += add;
     g.fraVent += add;
     g.sinne = Math.min(LEVELS[g.level].sinneTak, Math.max(0, g.sinne));

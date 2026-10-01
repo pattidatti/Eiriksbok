@@ -491,3 +491,83 @@ Audit `--strict`: 0 funn. Likhet: nærmest petisjonen-3d 0,36 (farge 0,59; før 
 - Folkemengden i margen er tellestreker, ikke figurer (kunstbriefen: ingen mennesker); en flink
   spiller ser 5-15 streker.
 - Sakene har fortsatt ikke personer bak (bare saksnummer og type).
+
+### 2026-10-01 - Forbedring 2 (fase 7, vurdering runde 2: 3/3/4/3/4 = 17), forbedrer
+
+Gøy og Utseende har stått på 3 i to runder, så kjerneløkka for Gøy er endret: folkemengden er nå
+en motspiller, ikke en måler som står på 5 %. Eleven har fortsatt tre regler å huske («alvorlig
+sak i retten», «uten lov, ingen sak», «straffene synker med tiden»).
+
+**Gjort.**
+
+1. **Folkemengden er motspilleren (Gøy).** Gata krever straff hvert sekund (`krav`: 0,0045 i 1945
+   ned til 0,0015 i 1948 - sinnet var størst like etter krigen). Bare dommer i retten roer gata
+   (`rettLetter` 0,04 per alvorlig sak). Det riktige koster synlig sinne: å avvise en
+   tyskerjente-sak gir +7 % («Folk krever straff for «tyskerjentene»» i avisa), en profittør i
+   retten tar 18 s, og å vente på tvillingen lar mappene stå. Det lettvinte roer gata, men koster:
+   å straffe en tyskerjente gir -6 % sinne, men ×1, null poeng og «UTEN LOV» i protokollen; bot til
+   en profittør gir ikke sinne, men ×1 og «FOR MILDT». Seieren heter «Gata ble rolig - men ikke
+   bare med lov og dom» når noen ble straffet uten lov. Brett 1 har fast rekkefølge: fire grå
+   mapper ved start, tyskerjenta alene etter 2 s, den første angiveren etter 9 s - og da glir
+   rettssalen inn som svaret (lappen og lærings-øyeblikket sier at en dom i retten roer gata).
+   Profittøren er det nye elementet halvveis (mars 1946), nå med en ekte fristelse.
+2. **Dilemmaene har navn og pris (Lærerikt).** «uten lov» heter «tyskerjente» i domstabellen og
+   lappen (saklig: eleven er påtalemyndigheten, ingen hårklipping eller ydmykelse vises, aldri
+   poeng for å straffe dem). Slutt-skjermen sier alltid at tusenvis av kvinner i virkeligheten
+   ble straffet uten lov og dom, og at staten ba om unnskyldning i 2018, og teller profittører som
+   slapp med bot. Tilbakevirkende kraft: alle NS-mapper har et fiolett «1940»-stempel, lappen
+   «Meldt inn 1940. Loven kom i 1944.» i brett 2 og en lærdom om tilbakevirkende kraft. Avisa har
+   «Quisling dømt til døden» og «Quisling henrettet på Akershus» som saklige overskrifter.
+3. **Fylt og ryddet skjerm (Utseende, Lesbart).** Fengselsrutene: hver fengselsdom gir en fiolett
+   rute med gitter i en brakke i leiren saken kom fra («8 dømt»), og ruta tømmes (gitteret glir
+   opp, ruta blekner) når tiden er sonet - leirene fylles i 1945-46 og tømmes mot 1948. Avisa
+   nederst til venstre skifter overskrift med måneden og svarer på det eleven gjør (avvist,
+   uten lov, bot, ulik dom, uro). Tellestrekene er byttet ut med plakater på stokker («STRAFF DEM»,
+   «HUSK 1940») som heves én etter én med sinnet og rister mer jo sintere folk er (ingen ansikter,
+   som kunstbriefen sier). Varm oksblodrød lærflate i stedet for kald grønn. Færre tall: linjalen
+   og «STRAFF %» kommer først når første trinn er under 8 s unna, multiplikatoren bare over ×1,
+   «neste trinn om N s» og «→ 18 år» bare under 8 s. «Skranke» er borte fra det eleven ser
+   («stempel» eller «rettssal»). Mellomsiden skrives tre ganger så fort (ikke lenger avkuttet).
+   Lappene venter mens mellomsiden står, «Dra mappa» står ved stempelet og rettssal-lappen til
+   venstre for salen. Tapet: stempelet «GATA TOK OVER» med årsaken under, og slutt-skjermen sier
+   «Sinnet i gatene nådde 100 %».
+
+**Feel-lista.** Før: alle fire på plass (hit-stop og rist, «på håret», ting glir inn og ut,
+poeng teller opp). Etter: fortsatt alle fire, og de nye tingene følger samme regel - plakater
+heves og senkes, fengselsrutene stemples inn og åpnes, avisa glir inn ved ny overskrift,
+nye flyt-tekster på det lettvinte valget («gata roer seg - UTEN LOV, ×1», «slapp med bot - ×1»).
+Ingen av de fire manglet, så ingen er lagt til.
+
+**Simuleringen (200 runder per robot), grønn:** seende vinner 95 % (median 10 350, p10-p90
+6 890-15 090), halvgod 66 % (median 6 220 = 60 % av vinneren), alt-til-retten 0 % (80),
+alt-til-forelegg 0 % (270), knappemoser 0 % (100), passiv 0 %. 52,2 valg per minutt. Presset
+0,27 -> 0,53 -> 0,69. Seendes sinne (40 runder, per tidel av kalenderen): 0,23 0,44 0,49 0,48
+0,50 0,46 0,43 0,40 0,36 0,32 (før 0,09 ... 0,30); første 20 s i snitt 0,13. Den lettvinte veien
+(seende som straffer tyskerjenter og gir profittører bot, 60 runder): sinne 0,04, vinner alltid,
+men 6 650 poeng mot 11 340 og 12 straffet uten lov per runde. «Nød» (lettvint bare over 60 %
+sinne): 10 640 poeng, 0,8 straffet uten lov - en ekte avveiing.
+Selvspill: alle porter grønne, seende vant med 16 250 poeng (forrige kjøring 7 650 - begge innenfor
+eller nær sim p10-p90), Chromebook JS p50 7,5 ms / p95 13,3 ms, bildeendring passiv 9,1 (før 4,7).
+Audit `--strict`: 0 funn. Likhet: nærmest frisk-puss 0,38 (før petisjonen-3d 0,36).
+
+**Det som IKKE virket.**
+
+- Bare flere avviste saker (+6 %) og sterkere `rettLetter` uten eget krav fra gata: seende lå på
+  0,06-0,10 hele runden, fordi dommene i retten spiste opp alt.
+- Fast krav 0,006 per sekund hele runden: seende vant bare 2 av 40 (sinne 0,8 fra midten). Et
+  krav som synker mot 1948 og `rettLetter` 0,04 ga 0,23-0,50.
+- Første plakatoppsett (14 plakater spredd med modulo) la plakatene oppå hverandre og kuttet
+  teksten; nå ti plakater i to rader med faste plasser.
+- «Dra mappa»-lappen på første mappe kolliderte med tyskerjente-lappen etter 7 s når eleven ikke
+  drar; nå står den ved stempelet.
+
+**Kjente svakheter.**
+
+- Nettleserrunden der seende fikk 16 250 poeng hadde lite sinne (9 % ved 110 s, 3 % ved 150 s);
+  simuleringen ligger rundt 0,4. Nettleserrundene varierer mer enn simuleringen.
+- «1940»-stempelet gjør de grå mappene trangere (saksnummer, stempel og «medlem» på 46 px).
+- Fengselsrutene og avisa er ren visning: løslatelsen følger dommens lengde, ikke en regel eleven
+  styrer.
+- Den grove saken (dødsdom eller livsvarig) er fortsatt bare én sak per runde og gir ikke ULIK
+  DOM senere i runden.
+- Folkemengden er plakater, ikke figurer (kunstbriefen: ingen mennesker).

@@ -15,7 +15,7 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
 | `art.ts`      | Palett og teksturer tegnet én gang: papir med fiber og vignett, rødblyant-skravering, mappesprites, treskaft. `pencil()`, `typed()`, `pickTier()`. |
 | `fx.ts`       | Juicen: mapper som glir, strek, stempeldunk, lapper som flyr, kalenderblad, ULIK DOM-lappene, protokoll-loggen midt på arket, skjermrist.          |
 | `draw.ts`     | Tegningen av arket: leirer (med leirplan og ventetid), skranker (forelegg, avvis, protokollbok med dagens dom), mapper, streker. `moveFolders()`. |
-| `hud.ts`      | HUD-en: kalender, mål, linjal, domstabellen («dommen i dag»), folk utenfor tinghuset (tellestreker), måler, poeng, telleverk, kort, mellomside.     |
+| `hud.ts`      | HUD-en: kalender, mål, linjal, domstabellen, folk utenfor (plakater), avisa, måler, poeng, telleverk, kort, mellomside.                             |
 | `sfx.ts`      | Lydene (arkadeskallets synth): skrape, glid, dunk, klokke, jevnt/ulikt, murring.                                                                   |
 | `texts.ts`    | All tekst: tap og tips, lærings-øyeblikk (`BEATS`), lapper (`PINS`), «Dette skjedde», protokollbladene (`FINDS`), rangene.                         |
 | `screens.tsx` | Slutt-skjermen (to kolonner) og saksmappa.                                                                                                         |
@@ -25,10 +25,21 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
 - `lett` (grå): NS-medlem - forelegg. `alvorlig` (rødt hjørne): angiver/statspoliti - retten.
   `tykk`: profittør - retten, 18 s. `grov` (flagg på alvorlig, én gang fra måned 6): dødsdom så
   lenge straffenivået er minst 80 %, ellers livsvarig.
-- `utenlov` (lyst ark, stiplet blått): kvinne med tysk kjæreste. Riktig: AVVIS-skranken (indeks 1,
-  finnes fra start). Gir `sinne.avvist` og `poeng.avvist`. Straffet likevel = x1 og ingen poeng.
-  Brett 1: hver fjerde nye mappe; senere `utenlov.andel`. Aldri i par.
-- Runden starter med en bunke på `tilfang.bunke` grå mapper i Ilebu.
+- `utenlov` (lyst ark, stiplet blått): «tyskerjente», kvinne med tysk kjæreste. Riktig: AVVIS
+  (indeks 1, finnes fra start). Gir `sinne.avvist` (opp) og `poeng.avvist`. Straffet likevel =
+  `sinne.ulovligLetter` (ned), x1 og ingen poeng. Senere `utenlov.andel`. Aldri i par.
+- `tykk` med forelegg (bot): `sinne.botLetter`, x1, `g.profBot++`, hendelsen er `formildt`.
+- Runden starter med en bunke på `tilfang.bunke` grå mapper i Ilebu. Brett 1 følger
+  `tilfang.brett1` (tyskerjente etter 2 s, første angiver etter 9 s); rettssalen glir inn med den
+  første angiveren (`openCourt`, hendelse `sal`).
+
+## Folkemengden (motspilleren)
+
+- `krav(g)`: gata krever straff hvert sekund (`sinne.krav` i 1945 ned til `kravSlutt` i 1948).
+- Ned: dom i retten for alvorlig/tykk (`rettLetter`), og det lettvinte (straff uten lov, bot).
+- Opp: avvise tyskerjente, forelegg til angiver (`forMildt`), mapper som venter.
+- Visning: plakater nederst på arket (`drawCrowd`), avisa nederst til venstre (`drawAvis`,
+  `headline()` i fx.ts), fengselsrutene i leirene (`fx.cells`, `drawCells`).
 
 ## Kjerneløkka
 
@@ -41,7 +52,7 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
    100 x mult og +1 (tak x10), med forelegg 40 x mult (holder mult). Ulikt halverer mult.
 5. Straffenivået faller 5 prosentpoeng hver 3. måned fra måned 4 (bunn 45 %). Mappa viser dommen
    den får nå og blinker «om N s» når et trinn er nær (`varselSek`).
-6. Sinnet stiger med `ventPerMappe` per mappe i leir eller kø. Fullt = tap; årsaken er den største
+6. Sinnet stiger med `krav(g)` og `ventPerMappe` per mappe i leir eller kø. Fullt = tap; årsaken er den største
    av `fraVent` og `fraMild`.
 
 ## Knapper som styrer mest

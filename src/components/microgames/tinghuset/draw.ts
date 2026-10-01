@@ -19,11 +19,22 @@ import {
 import { addStroke, drawFlying, drawLog, drawStrokes, drawUlik, stampPress } from './fx';
 import type { Fx } from './fx';
 import { secsToStep, twinEta } from './game';
-import { H, W, campRect, campSlots, deskEntry, deskRect, homeOf, type Pt } from './layout';
+import {
+    H,
+    W,
+    campRect,
+    campSlots,
+    deskEntry,
+    deskRect,
+    homeOf,
+    type Pt,
+    type Rect,
+} from './layout';
 import { LEVELS } from './levels';
 import { domTekst, straffTrinn } from './rules';
 import type { Folder, Game } from './state';
 import {
+    drawAvis,
     drawCalendar,
     drawCards,
     drawCounter,
@@ -145,6 +156,18 @@ function drawFolder(
         ctx.strokeRect(-21, -13, 42, 26);
     }
     typed(ctx, String(f.sak), -10, -5.5, 10, INK, 'center');
+    if (f.kind === 'lett') {
+        // Tilbakevirkende kraft: meldt inn i 1940, men loven som straffet det kom i 1944.
+        ctx.save();
+        ctx.translate(12, -6);
+        ctx.rotate(-0.22);
+        ctx.globalAlpha *= 0.85;
+        ctx.strokeStyle = VIOLET;
+        ctx.lineWidth = 1;
+        ctx.strokeRect(-13, -6, 26, 12);
+        typed(ctx, '1940', 0, 0.5, 10, VIOLET, 'center');
+        ctx.restore();
+    }
     if (f.state === 'leir' || f.state === 'ko') {
         const label = shortDom(f, straffTrinn(g.mnd));
         if (blink && f.kind !== 'lett') {
@@ -197,24 +220,17 @@ function drawCamp(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art, i: n
     ctx.strokeRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
     ctx.fillStyle = INK;
     ctx.fillRect(r.x, r.y + 24, r.w, 1);
-    // Leirplanen: brakker og gjerde, tegnet svakt i blekk (en plantegning fra arkivet).
+    // Leirplanen: fire brakker og gjerde, tegnet svakt i blekk (en plantegning fra arkivet).
     ctx.save();
     ctx.globalAlpha = 0.16;
     ctx.strokeStyle = INK;
     ctx.lineWidth = 1;
-    for (let b = 0; b < 4; b++) {
-        const bx = r.x + 22 + b * 60;
-        ctx.strokeRect(bx, r.y + 34, 46, 72);
-        for (let wy = r.y + 42; wy < r.y + 100; wy += 12) {
-            ctx.fillStyle = INK;
-            ctx.fillRect(bx + 3, wy, 4, 4);
-            ctx.fillRect(bx + 39, wy, 4, 4);
-        }
-    }
+    for (let b = 0; b < 4; b++) ctx.strokeRect(r.x + 22 + b * 60, r.y + 32, 46, r.h - 38);
     ctx.setLineDash([2, 4]);
-    ctx.strokeRect(r.x + 14, r.y + 29, r.w - 22, r.h - 34);
+    ctx.strokeRect(r.x + 14, r.y + 28, r.w - 22, r.h - 32);
     ctx.setLineDash([]);
     ctx.restore();
+    drawCells(ctx, fx, r, i);
     // Folk som venter uten dom: leiren fylles av rødblyant (rødt = det som haster).
     let heat = 0;
     for (const f of g.folders) if (f.state === 'leir' && f.camp === i) heat += g.t - f.born;
@@ -237,6 +253,8 @@ function drawCamp(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art, i: n
         ctx.fill();
     }
     typed(ctx, g.camps[i], r.x + 10, r.y + 13, 14, INK);
+    const fanger = fx.cells.filter((c) => c.camp === i && fx.t < c.out).length;
+    if (fanger > 0) typed(ctx, `${fanger} dømt`, r.x + 104, r.y + 13, 11, VIOLET, 'left');
     const here = g.folders.filter((f) => f.state === 'leir' && f.camp === i);
     const n = here.length;
     // Hvor lenge den som har ventet lengst, har sittet uten dom (dager i kalenderen).
@@ -255,6 +273,37 @@ function drawCamp(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, art: Art, i: n
         );
     else typed(ctx, 'ingen uten dom', r.x + r.w - 8, r.y + 13, 11, BLUE, 'right', false);
     ctx.restore();
+}
+
+/**
+ * Fengselsrutene: hver dømt får en rute med gitter i en brakke. Ruta fylles med et lite
+ * stempelslag når dommen faller, og tømmes (gitteret åpnes, ruta blekner) når tiden er sonet.
+ */
+function drawCells(ctx: CanvasRenderingContext2D, fx: Fx, r: Rect, camp: number) {
+    const mine = fx.cells.filter((c) => c.camp === camp);
+    const per = 12;
+    mine.slice(0, per * 4).forEach((c, k) => {
+        const b = k % 4;
+        const n = Math.floor(k / 4);
+        const cx = r.x + 26 + b * 60 + (n % 3) * 14;
+        const cy = r.y + 38 + Math.floor(n / 3) * 15;
+        const inK = ease((fx.t - c.t) / 0.3);
+        const outK = fx.t > c.out ? Math.min(1, (fx.t - c.out) / 0.6) : 0;
+        ctx.save();
+        ctx.translate(cx + 6, cy + 6);
+        const sc = 1 + (1 - inK) * 0.8;
+        ctx.scale(sc, sc);
+        ctx.globalAlpha = inK * (1 - outK);
+        ctx.fillStyle = outK > 0 ? 'rgba(31,86,166,0.35)' : 'rgba(90,47,156,0.75)';
+        ctx.fillRect(-6, -6, 12, 12);
+        ctx.strokeStyle = INK;
+        ctx.lineWidth = 1;
+        ctx.strokeRect(-6, -6, 12, 12);
+        // Gitteret: tre sprosser som glir opp når den dømte slipper ut.
+        ctx.fillStyle = '#efe4c8';
+        for (let s = 0; s < 3; s++) ctx.fillRect(-4 + s * 3.6, -6 - outK * 10, 1.2, 12);
+        ctx.restore();
+    });
 }
 
 function drawRoutes(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
@@ -500,6 +549,7 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, f
     drawLog(ctx, fx);
     drawTable(ctx, g, fx);
     drawCrowd(ctx, g, fx);
+    drawAvis(ctx, g, fx);
     drawCalendar(ctx, g, fx);
     drawGoal(ctx, g);
     drawRuler(ctx, g, fx);
@@ -569,6 +619,22 @@ export function drawEnd(ctx: CanvasRenderingContext2D, g: Game, t: number) {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = won ? VIOLET : RED;
-    ctx.fillText(won ? 'AVSLUTTET 1948' : 'UTEN DOM', 0, 3);
+    ctx.fillText(won ? 'AVSLUTTET 1948' : 'GATA TOK OVER', 0, 3);
     ctx.restore();
+    if (!won && k >= 1) {
+        // Tapet forklart der blikket er: hvorfor gata tok over.
+        ctx.save();
+        ctx.translate(W / 2, H / 2 + 74);
+        ctx.fillStyle = 'rgba(248,240,218,0.95)';
+        ctx.fillRect(-250, -18, 500, 36);
+        ctx.strokeStyle = RED;
+        ctx.lineWidth = 2;
+        ctx.strokeRect(-250, -18, 500, 36);
+        const why =
+            g.cause === 'mild'
+                ? 'Sinnet nådde 100 %: alvorlige saker fikk bare bot.'
+                : 'Sinnet nådde 100 %: for mange ventet uten dom.';
+        typed(ctx, why, 0, 0, 14, RED, 'center');
+        ctx.restore();
+    }
 }

@@ -85,6 +85,14 @@ export interface Fx {
     lastDay: number;
     campOpen: Map<number, number>;
     deskOpen: Map<number, number>;
+    /** De dømte i fengselsrutene: leiren, når de kom inn og når de slipper ut (fx.t). */
+    cells: { camp: number; t: number; out: number }[];
+    /** Avisa: en overskrift som svarer på det eleven gjorde, og når den kom. */
+    news: { text: string; t: number } | null;
+    /** Plakatene utenfor tinghuset: hvor langt opp hver er hevet (0-1). */
+    placards: number[];
+    /** Når hver måneds overskrift kom første gang (for at avisa glir inn). */
+    newsMonth: Map<number, number>;
     t: number;
 }
 
@@ -113,6 +121,10 @@ export function newFx(): Fx {
         lastDay: 0,
         campOpen: new Map(),
         deskOpen: new Map(),
+        cells: [],
+        news: null,
+        placards: [],
+        newsMonth: new Map(),
         t: 0,
     };
 }
@@ -156,6 +168,19 @@ export function addStroke(fx: Fx, id: number, from: Pt, desk: number) {
     fx.strokes.push({ id, from, to: deskEntry(desk), t: 0, seed: id * 1.7 });
 }
 
+/** Avisa svarer på det eleven gjør (høyst én ny overskrift per 5 s). */
+export function headline(fx: Fx, text: string, force = false) {
+    if (!force && fx.news && fx.t - fx.news.t < 5) return;
+    fx.news = { text, t: fx.t };
+}
+
+/** Så lenge (s) en dømt sitter i fengselsruta: lengre dom, lengre tid (de fleste slapp tidlig). */
+function cellTime(dom: string): number {
+    if (dom.startsWith('Livsvarig')) return 60;
+    const aar = parseFloat(dom.replace(',', '.'));
+    return Number.isFinite(aar) ? 10 + aar * 2 : 0;
+}
+
 /** Gjør spillets hendelser om til bevegelse. Lydene og tekstene tar komponenten seg av. */
 export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
     if (
@@ -170,7 +195,7 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
         fx.stamps.push({ desk: v.desk, t: 0, mild: bad, rett: v.route === 'rett' });
         const from = { x: r.x + r.w * 0.5, y: r.y + r.h * 0.5 };
         // Et forelegg på en alvorlig sak (og en avvist sak) flyr rett inn i sinnemåleren.
-        const toMeter = e.kind === 'formildt' || e.kind === 'avvist';
+        const toMeter = (e.kind === 'formildt' && v.kind !== 'tykk') || e.kind === 'avvist';
         const to = toMeter
             ? { x: METER.x + METER.w / 2, y: METER.y + METER.h * (1 - Math.min(1, g.sinne)) }
             : { x: COUNTER.x + COUNTER.w / 2, y: COUNTER.y + 6 };
@@ -223,6 +248,23 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
             t: 0,
         });
         if (fx.log.length > LOG_ROWS) fx.log.shift();
+        // En fengselsdom: den dømte flytter inn i en rute i leiren saken kom fra.
+        const stay = e.kind === 'avgjort' && v.route === 'rett' ? cellTime(v.dom) : 0;
+        if (stay > 0) fx.cells.push({ camp: v.camp, t: fx.t, out: fx.t + stay });
+        if (e.kind === 'avvist') headline(fx, 'Folk krever straff for «tyskerjentene»');
+        else if (e.kind === 'ulovlig') headline(fx, 'Kvinne straffet - uten lov og dom', true);
+        else if (e.kind === 'formildt')
+            headline(
+                fx,
+                v.kind === 'tykk' ? 'Profittør slapp med bot' : 'Angiver slapp med bot!',
+                true
+            );
+        else if (v.grov)
+            headline(
+                fx,
+                v.dom === 'Dødsdom' ? 'Dødsdom i tinghuset' : 'Livsvarig for drap og tortur',
+                true
+            );
         fx.pos.delete(v.id);
         fx.born.delete(v.id);
         if (bad) {
@@ -240,6 +282,7 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
         if (e.a.route === 'rett') fx.multPop = 0;
         fx.checks.push({ x: COUNTER.x + COUNTER.w / 2, y: COUNTER.y - 14, t: 0 });
     } else if (e.kind === 'ulikt') {
+        headline(fx, `Sak ${e.a.sak}: samme handling, ulik straff`, true);
         fx.ulik.push({ a: e.a, b: e.b, t: 0 });
         fx.multPop = 0;
         fx.shake = 0.12;
@@ -247,7 +290,7 @@ export function fxEvent(fx: Fx, g: Game, e: GameEvent, particles: number) {
         fx.trinnT = 0;
     } else if (e.kind === 'leir') {
         fx.campOpen.set(g.camps.indexOf(e.camp), 0);
-    } else if (e.kind === 'brett' || e.kind === 'kort') {
+    } else if (e.kind === 'brett' || e.kind === 'kort' || e.kind === 'sal') {
         // Nye skranker glir inn.
         g.desks.forEach((_, i) => {
             if (!fx.deskOpen.has(i)) fx.deskOpen.set(i, 0);
@@ -303,6 +346,8 @@ export function stepFx(fx: Fx, dt: number) {
     fx.leaves = fx.leaves.filter((l) => (l.t += dt) < 1.4);
     fx.ulik = fx.ulik.filter((u) => (u.t += dt) < ULIK_TID);
     fx.checks = fx.checks.filter((c) => (c.t += dt) < 0.9);
+    // Løslatt: ruta tømmes en stund etter at dommen er sonet (animasjonen tar 0,6 s).
+    fx.cells = fx.cells.filter((c) => fx.t < c.out + 0.6);
     for (const b of fx.bits) {
         b.t += dt;
         b.x += b.vx * dt;

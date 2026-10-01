@@ -19,7 +19,20 @@ import {
 import { drawLeaves } from './fx';
 import type { Fx } from './fx';
 import { secsToStep } from './game';
-import { CAL, COUNTER, CROWD, GOAL, TABLE, H, METER, RULER, SCORE, W, cardRects } from './layout';
+import {
+    AVIS,
+    CAL,
+    COUNTER,
+    CROWD,
+    GOAL,
+    TABLE,
+    H,
+    METER,
+    RULER,
+    SCORE,
+    W,
+    cardRects,
+} from './layout';
 import { LEVELS, monthName } from './levels';
 import { domTekst, nesteTrinnMnd, straffTrinn } from './rules';
 import type { Game } from './state';
@@ -91,11 +104,12 @@ export function drawGoal(ctx: CanvasRenderingContext2D, g: Game) {
 
 export function drawRuler(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     const lv = LEVELS[g.level];
-    if (!lv.linjal) return;
+    const tr = straffTrinn(g.mnd);
+    // Linjalen kommer først når det første trinnet nærmer seg - færre tall før de trengs.
+    if (!lv.linjal || (tr === 0 && secsToStep(g) > 8)) return;
     const { x, y, w, h } = RULER;
     const T = K.kalender.trinn;
     const steps = Math.round((1 - T.min) / T.pp);
-    const tr = straffTrinn(g.mnd);
     ctx.fillStyle = '#e9e1c8';
     ctx.fillRect(x, y, w, h);
     ctx.strokeStyle = 'rgba(42,39,49,0.6)';
@@ -200,6 +214,8 @@ export function drawScore(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     ctx.scale(sp, sp);
     big(ctx, Math.floor(fx.scoreShown).toLocaleString('nb-NO'), 0, 0, 22, INK);
     ctx.restore();
+    // Multiplikatoren vises bare når den betyr noe (over x1, eller like etter at den falt).
+    if (g.mult <= 1 && fx.multPop > 1.2) return;
     const pop = fx.multPop < 0.35 ? 1 + (1 - fx.multPop / 0.35) * 0.5 : 1;
     ctx.save();
     ctx.translate(x + w - 18, y + 26);
@@ -250,11 +266,11 @@ export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     const pop = lv.linjal ? 1 + (1 - ease(fx.trinnT / 0.4)) * 0.25 : 1;
     const rows: [string, string, string | null, string][] = [
         ['NS-medlem', 'forelegg', null, INK],
-        ['uten lov', 'avvis saken', null, BLUE],
+        ['tyskerjente', 'avvis saken', null, BLUE],
     ];
     const aar = (kind: 'alvorlig' | 'tykk', t: number) =>
         domTekst(kind, 'rett', t).replace(' fengsel', '');
-    if (g.level >= 1)
+    if (g.firstSerious)
         rows.push([
             'angiver',
             `retten ${aar('alvorlig', tr)}`,
@@ -269,8 +285,8 @@ export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
             RED,
         ]);
     typed(ctx, 'DOMMEN I DAG', x + 4, y + 7, 11, VIOLET);
-    if (lv.linjal) {
-        const s = secsToStep(g);
+    const s = secsToStep(g);
+    if (lv.linjal && s < 8) {
         typed(
             ctx,
             Number.isFinite(s) ? `neste trinn om ${Math.ceil(s)} s` : 'laveste trinn',
@@ -290,7 +306,8 @@ export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
         if (nxt) ctx.scale(pop, pop);
         typed(ctx, now, 0, 0, 11, INK, 'left', false);
         ctx.restore();
-        if (nxt) typed(ctx, `→ ${nxt}`, x + w - 4, ry, 11, soon ? RED : '#6d5f78', 'right', false);
+        if (nxt && s < 8)
+            typed(ctx, `→ ${nxt}`, x + w - 4, ry, 11, soon ? RED : '#6d5f78', 'right', false);
     });
     const lines = rows.length + (lv.par ? 1 : 0);
     if (lv.par)
@@ -299,40 +316,129 @@ export function drawTable(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     ctx.fillRect(x, y + 16 + lines * 15, w, 1);
 }
 
-/** Folk utenfor tinghuset: én rødblyant-strek per 1,5 % sinne, i bunter på fem. De skjelver
- *  mer jo sintere de er. Ingen ansikter - bare tellestreker i margen. */
+/** Plakatene folk holder opp utenfor tinghuset. Ingen ansikter - bare papp på stokker. */
+const SKILT = [
+    'STRAFF DEM',
+    'DØM DEM',
+    'LANDSSVIK!',
+    'FENGSEL!',
+    'HUSK 1940',
+    'HARDERE!',
+    'STRAFF!',
+    'RETT NÅ',
+    'IKKE GLEM',
+    'SKAM!',
+];
+
+/**
+ * Folk utenfor tinghuset: plakater på stokker som heves én etter én når sinnet stiger, og
+ * senkes når det legger seg. De rister mer jo sintere folk er.
+ */
 export function drawCrowd(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
-    const { x, y, w } = CROWD;
-    const n = fx.crowdShown * 65;
-    const full = Math.floor(n);
+    const { x, y, w, h } = CROWD;
+    const want = Math.round(fx.crowdShown * SKILT.length * 1.15);
+    while (fx.placards.length < SKILT.length) fx.placards.push(0);
     typed(ctx, 'FOLK UTENFOR TINGHUSET', x + 4, y + 6, 11, RED);
-    if (full === 0 && n < 0.05)
+    if (want === 0 && fx.placards.every((p) => p < 0.05))
         typed(ctx, 'stille i gatene', x + w - 4, y + 6, 11, '#6d5f78', 'right', false);
-    const shake = Math.min(1, g.sinne) * 2.2;
-    for (let i = 0; i < Math.ceil(n); i++) {
-        const grp = Math.floor(i / 5);
-        const k = i < full ? 1 : n - full;
-        const gx = x + 8 + grp * 25.5;
-        const gy = y + 22;
-        const jx = Math.sin(fx.t * (5 + (i % 3)) + i * 1.7) * shake;
-        const jy = Math.cos(fx.t * (4 + (i % 4)) + i) * shake * 0.6;
-        ctx.save();
-        if (i % 5 === 4)
-            pencil(ctx, gx - 3 + jx, gy + 22 + jy, gx + 19 + jx, gy + 4 + jy, RED, i + 1, k, 2);
-        else
-            pencil(
-                ctx,
-                gx + (i % 5) * 4.5 + jx,
-                gy + jy,
-                gx + (i % 5) * 4.5 + 1 + jx,
-                gy + 26 + jy,
-                RED,
-                i + 1,
-                k,
-                1.4
-            );
-        ctx.restore();
+    const shake = Math.min(1, g.sinne) * 2.4;
+    ctx.save();
+    rect(ctx, x - 4, y + 12, w + 8, h - 10);
+    ctx.clip();
+    // Bakerste rad først (de odde), så forreste.
+    for (const back of [true, false]) {
+        SKILT.forEach((txt, i) => {
+            if ((i % 2 === 0) === back) return;
+            const target = i < want ? 1 : 0;
+            fx.placards[i] += (target - fx.placards[i]) * 0.08;
+            const up = ease(fx.placards[i]);
+            if (up < 0.02) return;
+            // Fem plasser per rad; bakre rad forskjøvet en halv plass og høyere opp.
+            const px = x + 6 + Math.floor(i / 2) * 60 + (back ? 26 : 0);
+            const jx = Math.sin(fx.t * (4 + (i % 3)) + i * 1.7) * shake;
+            const jy = Math.abs(Math.cos(fx.t * (5 + (i % 4)) + i)) * shake;
+            const base = y + (back ? 30 : 40) + (1 - up) * 44 - jy;
+            ctx.save();
+            ctx.translate(px + jx, base);
+            ctx.rotate(Math.sin(i * 2.3) * 0.12 + jx * 0.02);
+            ctx.font = `bold 10px "Courier New", monospace`;
+            const tw = ctx.measureText(txt).width + 10;
+            ctx.fillStyle = '#6b4a2e';
+            ctx.fillRect(tw / 2 - 1.5, 6, 3, 30);
+            ctx.fillStyle = 'rgba(30,20,14,0.3)';
+            ctx.fillRect(2, -6, tw, 16);
+            ctx.fillStyle = back ? '#e6d8b4' : '#f3e8cc';
+            ctx.fillRect(0, -8, tw, 16);
+            ctx.strokeStyle = 'rgba(34,29,36,0.5)';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(0.5, -7.5, tw - 1, 15);
+            typed(ctx, txt, tw / 2, 0, 10, RED, 'center');
+            ctx.restore();
+        });
     }
+    ctx.restore();
+}
+
+/** Avisa: dagens overskrift etter kalenderen, eller et svar på det eleven nettopp gjorde. */
+const NYHETER: [number, string][] = [
+    [0, 'Freden er her - tusenvis arrestert'],
+    [1, '«Døm dem nå!» Leirene fylles'],
+    [4, 'Quisling dømt til døden'],
+    [5, 'Quisling henrettet på Akershus'],
+    [8, 'Rettssakene tar tid - køen vokser'],
+    [12, 'Ett år etter freden: mange venter fortsatt'],
+    [17, 'Mildere dommer i retten'],
+    [24, 'Færre i gatene - sinnet legger seg'],
+    [31, 'Mange landssvikere prøveløslatt'],
+    [36, 'Oppgjøret nærmer seg slutten'],
+];
+
+export function drawAvis(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
+    const { x, y, w, h } = AVIS;
+    let text = NYHETER[0][1];
+    let key = 0;
+    for (const [m, t] of NYHETER)
+        if (g.mnd >= m) {
+            text = t;
+            key = m;
+        }
+    let born = -1;
+    if (fx.news && fx.t - fx.news.t < 6) {
+        text = fx.news.text;
+        born = fx.news.t;
+    } else if (g.sinne > 0.75) text = 'Uro utenfor tinghuset';
+    // Ny overskrift: avisa slås opp på nytt (glir inn fra venstre).
+    const since = born >= 0 ? fx.t - born : fx.t - (fx.newsMonth.get(key) ?? 0);
+    if (!fx.newsMonth.has(key)) fx.newsMonth.set(key, fx.t);
+    const k = ease(since / 0.35);
+    ctx.save();
+    ctx.translate(x - (1 - k) * 40, y);
+    ctx.rotate(-0.015);
+    ctx.globalAlpha = 0.4 + 0.6 * k;
+    ctx.fillStyle = 'rgba(0,0,0,0.35)';
+    ctx.fillRect(3, 4, w, h);
+    ctx.fillStyle = '#e8dfc8';
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = INK;
+    ctx.fillRect(6, 17, w - 12, 1.5);
+    typed(ctx, 'AVISA', 8, 9, 11, INK);
+    typed(ctx, monthName(g.mnd), w - 8, 9, 10, '#5e5560', 'right', false);
+    // Overskriften, brutt over to linjer.
+    ctx.font = `bold 13px "Courier New", monospace`;
+    const words = text.split(' ');
+    const lines: string[] = [];
+    let line = '';
+    for (const wd of words) {
+        const test = line ? `${line} ${wd}` : wd;
+        if (ctx.measureText(test).width > w - 16 && line) {
+            lines.push(line);
+            line = wd;
+        } else line = test;
+    }
+    if (line) lines.push(line);
+    const red = born >= 0 || g.sinne > 0.75;
+    lines.slice(0, 2).forEach((l, i) => typed(ctx, l, 8, 30 + i * 16, 13, red ? RED : INK));
+    ctx.restore();
 }
 
 export function drawCards(ctx: CanvasRenderingContext2D, g: Game) {
@@ -405,7 +511,8 @@ export function drawInter(ctx: CanvasRenderingContext2D, g: Game) {
     typed(ctx, 'PROTOKOLL', -210, -76, 11, VIOLET);
     big(ctx, lv.navn, -210, -46, 24, VIOLET);
     const t = lv.protokoll;
-    const shown = t.slice(0, Math.floor(Math.max(0, age - 0.2) * 60));
+    // Teksten skrives fort nok til at hele setningen står lenge før siden forsvinner.
+    const shown = t.slice(0, Math.floor(Math.max(0, age - 0.15) * 180));
     // Enkel ordbryting for maskinskriften.
     ctx.font = `bold 14px "Courier New", monospace`;
     let line = '';
