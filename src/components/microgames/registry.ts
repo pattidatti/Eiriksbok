@@ -244,6 +244,7 @@ const Petisjonen3D = lazy(() => import('./Petisjonen3D'));
 const InnMotStranda = lazy(() => import('./InnMotStranda'));
 const SeinenSnur = lazy(() => import('./SeinenSnur'));
 const KursForGronland3D = lazy(() => import('./KursForGronland3D'));
+const Tinghuset = lazy(() => import('./Tinghuset'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2467,6 +2468,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         cover: '/images/microgames/radionettet.webp',
         loader: () => import('./Radionettet3D'),
         Component: Radionettet3D as never,
+    },
+    tinghuset: {
+        id: 'tinghuset',
+        title: 'Tinghuset',
+        description:
+            'Mai 1945 til august 1948. Du er påtalemyndigheten etter krigen. Dra mappene fra leirene til et stempel eller en rettssal: forelegg er raskt, men for mildt for angivere, og rettssalen er rettferdig, men tar én sak av gangen. Folk i gatene vil se straff - også for tyskerjentene, som ingen lov forbød. Avvis dem, og sinnet stiger. Straffenivået faller trinn for trinn, så to som gjorde det samme, må dømmes før neste trinn for å få samme dom. Hold sinnet i gatene nede til 1948.',
+        estimatedSeconds: 240,
+        sjanger: 'sanntids-logistikk',
+        tone: 'alvorlig',
+        hook: 'Du er påtalemyndigheten i 1945. Gata vil se straff - du skal følge loven.',
+        cover: '/images/microgames/tinghuset.webp',
+        kunst: 'Landssviksakene i Riksarkivet: arkivmapper i grå og brun papp, gjennomslagspapir med skrivemaskintekst, fiolette gummistempler og rød-blå blyant',
+        loader: () => import('./Tinghuset'),
+        Component: Tinghuset as never,
     },
 };
 

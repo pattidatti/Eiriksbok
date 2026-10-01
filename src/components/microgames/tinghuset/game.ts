@@ -1,0 +1,280 @@
+// Kjerneløkka i Tinghuset: tiden går, mappene kommer, skrankene jobber, sinnet stiger.
+// update(g, dt) er hele spillet - visningen og robotene bruker bare den og grepene i rules.ts.
+
+import { TUNING } from './tuning';
+import { LEVELS } from './levels';
+import {
+    nesteTrinnMnd,
+    openInterner,
+    runDesks,
+    runRoutes,
+    runTravel,
+    sluttRegning,
+    straffTrinn,
+} from './rules';
+import { newGame as blankGame, type Folder, type Game, type Kind } from './state';
+
+export type { Game, Folder };
+export {
+    send,
+    straffNivaa,
+    straffTrinn,
+    nesteTrinnMnd,
+    domTekst,
+    deskLoad,
+    caseTime,
+} from './rules';
+
+const K = TUNING;
+
+/** Sekunder mellom hver ny mappe akkurat nå. */
+export function interval(g: Game): number {
+    const lv = LEVELS[g.level];
+    if (lv.intervall !== null) return lv.intervall;
+    // Kurven: lineært mellom punktene [måned, sekunder], flat før første og etter siste.
+    const k = K.tilfang.kurve;
+    if (g.mnd <= k[0][0]) return k[0][1];
+    for (let i = 1; i < k.length; i++) {
+        const [m1, s1] = k[i];
+        if (g.mnd > m1) continue;
+        const [m0, s0] = k[i - 1];
+        return s0 + ((s1 - s0) * (g.mnd - m0)) / (m1 - m0);
+    }
+    return k[k.length - 1][1];
+}
+
+/** Hvor mye gata krever straff per sekund nå: mest i 1945, mindre mot 1948. */
+export function krav(g: Game): number {
+    const k = Math.min(1, g.mnd / K.kalender.sluttMnd);
+    return K.sinne.krav + (K.sinne.kravSlutt - K.sinne.krav) * k;
+}
+
+/** 0-1: hvor hardt spillet presser nå - tilfanget og sinnet. */
+export function pressure(g: Game): number {
+    const tilfang = Math.min(1, K.press.minIntervall / interval(g));
+    return Math.min(1, K.press.tilfang * tilfang + K.press.sinne * g.sinne);
+}
+
+/** Antall mapper som venter uten dom (i leir eller kø). */
+export function waiting(g: Game): number {
+    let n = 0;
+    for (const f of g.folders) if (f.state === 'leir' || f.state === 'ko') n++;
+    return n;
+}
+
+/** Sekunder spilltid til neste straffenivå-trinn faller (Infinity når nivået er på bunnen). */
+export function secsToStep(g: Game): number {
+    const m = nesteTrinnMnd(g.mnd);
+    if (m === null) return Infinity;
+    // Trinnet kan ligge i et senere brett; regn med farten i hvert brett.
+    let s = 0;
+    let mnd = g.mnd;
+    for (let li = g.level; li < LEVELS.length && mnd < m; li++) {
+        const lv = LEVELS[li];
+        const til = Math.min(m, lv.tilMnd);
+        s += Math.max(0, til - mnd) * lv.sekPerMnd;
+        mnd = til;
+    }
+    return s;
+}
+
+/** Sekunder til tvillingen til en mappe dukker opp (null om den alt er her eller ikke finnes). */
+export function twinEta(g: Game, f: Folder): number | null {
+    if (f.twin !== -1) return null;
+    const p = g.pendingTwins.find((x) => x.twinOf === f.id);
+    return p ? Math.max(0, p.at - g.t) : null;
+}
+
+/** En ny runde: protokollsiden sier målet, og én mappe venter i Ilebu. */
+export function newGame(seed: number): Game {
+    const g = blankGame(seed);
+    g.inter = K.mellomside;
+    for (let i = 0; i < K.tilfang.bunke; i++) addFolder(g, g.nextSak++, 'lett', 0, null);
+    g.spawnT = interval(g);
+    return g;
+}
+
+function addFolder(
+    g: Game,
+    sak: number,
+    kind: Kind,
+    camp: number,
+    twin: number | null,
+    grov = false
+) {
+    const f: Folder = {
+        id: g.nextId++,
+        sak,
+        kind,
+        camp,
+        state: 'leir',
+        desk: -1,
+        travel: 0,
+        born: g.t,
+        twin,
+        grov: grov || undefined,
+    };
+    g.folders.push(f);
+    g.valg++; // hver ny mappe er et valg: forelegg eller rettssak, nå eller etter tvillingen
+    g.events.push({ kind: 'ny', f });
+    return f;
+}
+
+function pickKind(g: Game): Kind {
+    const lv = LEVELS[g.level];
+    const n = g.spawnN++;
+    // Brett 1: fast rekkefølge, så hver ny sakstype kommer alene og eleven ser den.
+    if (g.level === 0) {
+        const seq = K.tilfang.brett1;
+        const k = seq[n % seq.length];
+        if (k === 'alvorlig') g.firstSerious = true;
+        return k;
+    }
+    if (g.rng() < K.utenlov.andel) return 'utenlov';
+    if (!g.firstSerious) {
+        g.firstSerious = true;
+        return 'alvorlig';
+    }
+    if (g.rng() >= lv.alvorlig) return 'lett';
+    if (lv.tykk && (!g.firstThick || g.rng() < K.tilfang.tykkAndel)) {
+        g.firstThick = true;
+        return 'tykk';
+    }
+    return 'alvorlig';
+}
+
+/** Den første angiveren kommer: rettssalen glir inn i samme øyeblikk (svaret på saken). */
+function openCourt(g: Game) {
+    if (g.desks.some((d) => d.kind === 'rett')) return;
+    g.desks.push({ kind: 'rett', queue: [], current: null, left: 0, total: 0 });
+    g.events.push({ kind: 'sal' });
+}
+
+function spawn(g: Game) {
+    const lv = LEVELS[g.level];
+    // Den ene saken om drap og tortur: én gang, alene, fra høsten 1945.
+    const grov = lv.par && !g.grovDone && g.mnd >= K.grov.mnd;
+    if (grov) g.grovDone = true;
+    const kind = grov ? 'alvorlig' : pickKind(g);
+    if (kind !== 'lett' && kind !== 'utenlov') openCourt(g);
+    const camp = Math.floor(g.rng() * g.camps.length);
+    const sak = g.nextSak++;
+    if (!lv.par || grov || kind === 'utenlov') {
+        addFolder(g, sak, kind, camp, null, grov);
+        return 1;
+    }
+    const first = addFolder(g, sak, kind, camp, null);
+    const other =
+        g.camps.length > 1
+            ? (camp + 1 + Math.floor(g.rng() * (g.camps.length - 1))) % g.camps.length
+            : camp;
+    const delay =
+        K.tilfang.tvillingMin + g.rng() * (K.tilfang.tvillingMaks - K.tilfang.tvillingMin);
+    g.pendingTwins.push({ at: g.t + delay, sak, kind, camp: other, twinOf: first.id });
+    first.twin = -1; // tvillingen finnes, men har ikke kommet ennå
+    return 2;
+}
+
+function runSpawns(g: Game, sdt: number) {
+    g.spawnT -= sdt;
+    if (g.spawnT <= 0) {
+        const hadSerious = g.firstSerious;
+        const n = spawn(g);
+        // Den første røde mappa får være alene en stund, så eleven ser den.
+        const alone = !hadSerious && g.firstSerious ? K.tilfang.alene : 1;
+        g.spawnT += interval(g) * n * alone;
+    }
+    for (let i = g.pendingTwins.length - 1; i >= 0; i--) {
+        const p = g.pendingTwins[i];
+        if (g.t < p.at) continue;
+        g.pendingTwins.splice(i, 1);
+        const t = addFolder(g, p.sak, p.kind, p.camp, p.twinOf);
+        const a = g.folders.find((f) => f.id === p.twinOf);
+        // Er første tvilling alt avgjort, venter dommen i waitingTwin på denne.
+        if (a) a.twin = t.id;
+    }
+}
+
+function nextLevel(g: Game) {
+    if (g.level >= LEVELS.length - 1) {
+        g.mode = 'won';
+        sluttRegning(g);
+        return;
+    }
+    g.level++;
+    // Sommeren 1945: interner-stempelet (straff uten dom) blir en fristelse.
+    if (g.level >= 1) openInterner(g);
+    const lv = LEVELS[g.level];
+    for (const c of lv.leirer)
+        if (!g.camps.includes(c)) {
+            g.camps.push(c);
+            g.events.push({ kind: 'leir', camp: c });
+        }
+    // Brettet åpner sine rettssaler, og grå saker får fast rute til forelegg i flere leirer.
+    const saler = g.desks.filter((d) => d.kind === 'rett').length;
+    for (let i = saler; i < lv.saler; i++)
+        g.desks.push({ kind: 'rett', queue: [], current: null, left: 0, total: 0 });
+    for (let i = 0; i < Math.min(lv.ruter, g.camps.length); i++)
+        if (!g.ruter.includes(i)) g.ruter.push(i);
+    g.inter = K.mellomside;
+    g.spawnT = Math.min(g.spawnT, 0.8);
+    g.events.push({ kind: 'brett', level: g.level });
+}
+
+/** Hopp rett til et senere brett (etter første seier: start i mars 1946). */
+export function skipTo(g: Game, level: number) {
+    while (g.level < level && g.mode === 'play') {
+        g.mnd = LEVELS[g.level].tilMnd;
+        nextLevel(g);
+    }
+    g.firstSerious = true;
+    g.trinn = straffTrinn(g.mnd);
+    g.events.length = 0;
+}
+
+/** Hopp over mellomsiden (klikk). */
+export function skipInter(g: Game) {
+    g.inter = 0;
+}
+
+export function update(g: Game, dt: number) {
+    if (g.mode !== 'play') return;
+    g.t += dt;
+    if (g.inter > 0) {
+        g.inter -= dt;
+        return;
+    }
+    const sdt = dt;
+    const lv = LEVELS[g.level];
+
+    g.mnd += sdt / lv.sekPerMnd;
+    if (g.mnd >= lv.tilMnd) {
+        g.mnd = lv.tilMnd;
+        nextLevel(g);
+        if (g.mode !== 'play') return;
+    }
+
+    const trinn = straffTrinn(g.mnd);
+    if (trinn !== g.trinn) {
+        g.trinn = trinn;
+        g.events.push({ kind: 'trinn', trinn });
+    }
+
+    runSpawns(g, sdt);
+    runTravel(g, sdt);
+    runDesks(g, sdt);
+    runRoutes(g, sdt);
+
+    // Sinnet: gata krever straff, og hver mappe som venter uten dom fyller måleren litt.
+    // Gata krever straff hele tiden (folk utenfor vokser); dommer i retten roer den.
+    const add = (K.sinne.ventPerMappe * waiting(g) + krav(g)) * sdt;
+    g.sinne += add;
+    g.fraVent += add;
+    g.sinne = Math.min(LEVELS[g.level].sinneTak, Math.max(0, g.sinne));
+
+    if (g.sinne >= 1 || g.folders.length > K.sinne.maksMapper) {
+        g.mode = 'lost';
+        g.cause = g.fraMild > g.fraVent ? 'mild' : 'vent';
+        sluttRegning(g);
+    }
+}
