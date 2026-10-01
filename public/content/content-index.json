@@ -1,5 +1,5 @@
 {
-  "buildId": 148486449082758,
+  "buildId": 211721904605813,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2055,6 +2055,9 @@
     ],
     "krigsseilerne": [
       "content/historie/andre-verdenskrig/krigsseilerne.json"
+    ],
+    "landssvikoppgjoret": [
+      "content/historie/andre-verdenskrig/landssvikoppgjoret.json"
     ],
     "norge-under-okkupasjonen": [
       "content/historie/andre-verdenskrig/norge-under-okkupasjonen.json"
@@ -5520,6 +5523,7 @@
     "historie/andre-verdenskrig/krigen-i-stillehavet": "content/historie/andre-verdenskrig/krigen-i-stillehavet.json",
     "historie/andre-verdenskrig/krigens-lop": "content/historie/andre-verdenskrig/krigens-lop.json",
     "historie/andre-verdenskrig/krigsseilerne": "content/historie/andre-verdenskrig/krigsseilerne.json",
+    "historie/andre-verdenskrig/landssvikoppgjoret": "content/historie/andre-verdenskrig/landssvikoppgjoret.json",
     "historie/andre-verdenskrig/norge-under-okkupasjonen": "content/historie/andre-verdenskrig/norge-under-okkupasjonen.json",
     "historie/andre-verdenskrig/oversikt": "content/historie/andre-verdenskrig/oversikt.json",
     "historie/andre-verdenskrig/slaget-om-stalingrad": "content/historie/andre-verdenskrig/slaget-om-stalingrad.json",
