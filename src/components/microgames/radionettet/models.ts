@@ -118,6 +118,17 @@ export function figureMaterialHi() {
     return figHi;
 }
 
+let figHit: THREE.MeshStandardMaterial | null = null;
+/** Treffet: figuren blinker hvitvarm et øyeblikk. */
+export function figureMaterialHit() {
+    if (!figHit) {
+        figHit = figureMaterial().clone();
+        figHit.emissive.set('#fff1d6');
+        figHit.emissiveIntensity = 1.4;
+    }
+    return figHit;
+}
+
 let figMat: THREE.MeshStandardMaterial | null = null;
 /** Ett materiale for alle figurer: fargen ligger i hjørnene, mønsteret i teksturen. */
 export function figureMaterial() {

@@ -5,6 +5,7 @@ import { isAir, slagDef, stafettOf, type G } from './game';
 import { C } from './models';
 import { mergeParts } from '../kit';
 import { HL_PICK, HQ_ID, type Hl } from './hl';
+import { MARKS, MAX_RELAY, lift, tilt } from './ground';
 
 // Det som ligger på bakken under enhetene, tegnet som to instanserte mesher:
 // - en myk skygge (bakt, så figuren står på bakken også på «lav» uten skyggekart;
@@ -17,6 +18,7 @@ const M = new THREE.Matrix4();
 const P = new THREE.Vector3();
 const S = new THREE.Vector3();
 const FLAT = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
+const Q = new THREE.Quaternion();
 
 function blobTexture() {
     const cv = document.createElement('canvas');
@@ -34,7 +36,6 @@ function blobTexture() {
 export function Markers({ gRef }: { gRef: React.MutableRefObject<G> }) {
     const blobRef = useRef<THREE.InstancedMesh>(null);
     const ringRef = useRef<THREE.InstancedMesh>(null);
-    const relayRef = useRef<THREE.InstancedMesh>(null);
     const tex = useMemo(() => blobTexture(), []);
     const col = useMemo(
         () => ({
@@ -53,17 +54,23 @@ export function Markers({ gRef }: { gRef: React.MutableRefObject<G> }) {
         const rm = ringRef.current;
         if (!bm || !rm) return;
         const g = gRef.current;
+        const def = slagDef(g);
         let nb = 0;
         let nr = 0;
+        // Skygge og ring legger seg etter bakken (åsene på brettet).
+        const onGround = (x: number, z: number, up: number) => {
+            P.set(x, lift(def, x, z) + up, z);
+            return tilt(def, x, z, Q).multiply(FLAT);
+        };
         const blob = (x: number, z: number, r: number, alt: number) => {
             if (nb >= MAX) return;
             const k = r * (1 - Math.min(0.45, alt * 0.09));
-            M.compose(P.set(x, 0.012 + nb * 0.0001, z), FLAT, S.set(k, k * (alt > 0.05 ? 0.7 : 1), 1));
+            M.compose(P, onGround(x, z, 0.03 + nb * 0.0001), S.set(k, k * (alt > 0.05 ? 0.7 : 1), 1));
             bm.setMatrixAt(nb++, M);
         };
         const ring = (x: number, z: number, r: number, c: THREE.Color) => {
             if (nr >= MAX) return;
-            M.compose(P.set(x, 0.02, z), FLAT, S.set(r, r, 1));
+            M.compose(P, onGround(x, z, 0.045), S.set(r, r, 1));
             rm.setMatrixAt(nr, M);
             rm.setColorAt(nr++, c);
         };
@@ -94,19 +101,13 @@ export function Markers({ gRef }: { gRef: React.MutableRefObject<G> }) {
             }
         }
         // Stafett-ringene: hvor langt hver enhet i nettet sender radioen (i planleggingen).
-        const lm = relayRef.current;
-        if (lm) {
-            let nl = 0;
-            const r = stafettOf(g);
-            if (g.phase === 'plan')
-                for (const u of g.units)
-                    if (u.linked && !u.dead && !isAir(u.kind) && nl < 16) {
-                        M.compose(P.set(u.x, 0.015, u.z), FLAT, S.set(r, r, 1));
-                        lm.setMatrixAt(nl++, M);
-                    }
-            lm.count = nl;
-            lm.instanceMatrix.needsUpdate = true;
-        }
+        // Tegnes i bakken (ground.ts), så de ligger over åsene.
+        let nl = 0;
+        const r = stafettOf(g);
+        if (g.phase === 'plan')
+            for (const u of g.units)
+                if (u.linked && !u.dead && !isAir(u.kind) && nl < MAX_RELAY) MARKS.uRelay.value[nl++].set(u.x, u.z, r, 1);
+        MARKS.uRelayN.value = nl;
         bm.count = nb;
         rm.count = nr;
         bm.instanceMatrix.needsUpdate = true;
@@ -118,10 +119,6 @@ export function Markers({ gRef }: { gRef: React.MutableRefObject<G> }) {
             <instancedMesh ref={blobRef} args={[undefined, undefined, MAX]} frustumCulled={false} renderOrder={1}>
                 <planeGeometry args={[1, 1]} />
                 <meshBasicMaterial map={tex} color="#000" transparent opacity={0.42} depthWrite={false} toneMapped={false} />
-            </instancedMesh>
-            <instancedMesh ref={relayRef} args={[undefined, undefined, 16]} frustumCulled={false} renderOrder={2}>
-                <ringGeometry args={[0.975, 1, 64]} />
-                <meshBasicMaterial color={C.radio} transparent opacity={0.45} depthWrite={false} toneMapped={false} />
             </instancedMesh>
             <instancedMesh ref={ringRef} args={[undefined, undefined, MAX]} frustumCulled={false} renderOrder={2}>
                 <ringGeometry args={[0.43, 0.5, 32]} />
@@ -175,7 +172,7 @@ export function Highlight({ gRef, hlRef }: { gRef: React.MutableRefObject<G>; hl
         const p = id !== -1 ? spot(g, id) : null;
         m.visible = !!p;
         if (p) {
-            m.position.set(p[0], 0.03, p[1]);
+            m.position.set(p[0], lift(slagDef(g), p[0], p[1]) + 0.03, p[1]);
             // Klikket: hjørnene smekker inn fra stort og blinker; ellers puster de rolig.
             const k = picked !== -1 ? 1 + 0.5 * Math.max(0, 1 - since / 0.25) ** 2 : 1 + Math.sin(st.clock.elapsedTime * 5) * 0.03;
             m.scale.setScalar(k * p[2]);
@@ -186,7 +183,7 @@ export function Highlight({ gRef, hlRef }: { gRef: React.MutableRefObject<G>; hl
         const q = sinceS < HL_PICK + 0.2 && h.src !== id ? spot(g, h.src) : null;
         sm.visible = !!q;
         if (q) {
-            sm.position.set(q[0], 0.03, q[1]);
+            sm.position.set(q[0], lift(slagDef(g), q[0], q[1]) + 0.03, q[1]);
             sm.scale.setScalar((1 + 0.5 * Math.max(0, 1 - sinceS / 0.25) ** 2) * q[2]);
             srcMat.current.opacity = 1 - Math.max(0, sinceS - 0.8) / 0.3;
         }

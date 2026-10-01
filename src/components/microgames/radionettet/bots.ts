@@ -8,7 +8,7 @@ import {
 // Robotene. Samme grep som eleven: pick/place/toggleLink/startWave/sperre.
 // Brukes av både simuleringen (sim.ts) og selvspillet i nettleseren.
 
-export type BotStyle = 'samvirke' | 'halvgod' | 'uten-radio' | 'bare-vogner' | 'tilfeldig';
+export type BotStyle = 'samvirke' | 'halvgod' | 'nybegynner' | 'uten-radio' | 'bare-vogner' | 'tilfeldig';
 
 interface BotDef {
     forventer: 'vinner' | 'taper' | 'middels';
@@ -24,6 +24,10 @@ export const BOTS: Record<BotStyle, BotDef> = {
     halvgod: {
         forventer: 'middels',
         beskrivelse: 'Samme plan og kjøp, men kobler ikke opp igjen når en linje ryker i bølgen og bruker ikke sperreilden.',
+    },
+    nybegynner: {
+        forventer: 'middels',
+        beskrivelse: 'Spiller som en elev første gang: sprer enhetene utover i stedet for å slå dem sammen, kobler i planleggingen, men kobler ikke opp igjen i bølgen.',
     },
     'uten-radio': {
         forventer: 'taper',
@@ -93,7 +97,7 @@ function tileScore(g: G, k: Kind, x: number, z: number) {
     return cover + inR + near - (rd < 1.2 && k !== 'inf' ? 2 : 0);
 }
 
-function bestTile(g: G, k: Kind, rng: Rng, random: boolean): [number, number] | null {
+function bestTile(g: G, k: Kind, rng: Rng, random: boolean, merge = true): [number, number] | null {
     const opts: [number, number, number][] = [];
     for (let x = 0; x < MAP_W; x++)
         for (let z = 0; z < MAP_D; z++) {
@@ -104,8 +108,13 @@ function bestTile(g: G, k: Kind, rng: Rng, random: boolean): [number, number] | 
         }
     if (!opts.length) return null;
     // Slå sammen med en like enhet når det går.
-    const same = g.units.find((u) => !u.dead && !isAir(u.kind) && u.kind === k && !u.vet);
+    const same = merge ? g.units.find((u) => !u.dead && !isAir(u.kind) && u.kind === k && !u.vet) : undefined;
     if (same && !random) return [same.x, same.z];
+    // Nybegynneren legger aldri to på samme rute.
+    if (!merge) {
+        const free = opts.filter(([x, z]) => !g.units.some((u) => !u.dead && !isAir(u.kind) && u.x === x && u.z === z));
+        if (free.length) opts.splice(0, opts.length, ...free);
+    }
     opts.sort((a, b) => b[2] - a[2]);
     return [opts[0][0], opts[0][1]];
 }
@@ -154,7 +163,7 @@ function planTick(g: G, style: BotStyle, io: IO, rng: Rng) {
     if (g.holding >= 0) {
         const k = g.shop[g.holding]!;
         if (isAir(k)) return place(g, 0, 0, io);
-        const t = bestTile(g, k, rng, random);
+        const t = bestTile(g, k, rng, random, style !== 'nybegynner');
         if (t && place(g, t[0], t[1], io)) return;
         g.holding = -1;
         return;
@@ -241,6 +250,6 @@ export function botTick(g: G, style: BotStyle, io: IO, rng: Rng) {
         return;
     }
     if (g.phase === 'plan') planTick(g, style === 'halvgod' ? 'samvirke' : style, io, rng);
-    // Den halvgode kobler ikke opp igjen i bølgen og bruker ikke sperreilden.
-    else if (g.phase === 'wave' && style !== 'halvgod') waveTick(g, style, io, rng);
+    // Den halvgode og nybegynneren kobler ikke opp igjen i bølgen og bruker ikke sperreilden.
+    else if (g.phase === 'wave' && style !== 'halvgod' && style !== 'nybegynner') waveTick(g, style, io, rng);
 }

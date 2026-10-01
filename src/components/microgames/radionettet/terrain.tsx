@@ -1,14 +1,13 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useFrame, type ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useQuality, mergeParts } from '../kit';
-import { RADIO } from './tuning';
+import { useQuality } from '../kit';
 import { MAP_D, MAP_W, FLYPLASS, SLAG, type SlagDef } from './levels';
 import { usedChannels, waveDef, ringOf, type G } from './game';
 import { C, DECO, LOOK, figureMaterial, hqModel, type Look, type Model } from './models';
 import { Lighting } from './light';
 import { BoardDetail, Bridges, Haze, Water } from './relief';
-import { GD, GW, X0, Z0, SKIRT_Y, WATER_Y, craterSpots, groundGeometry, heightAt, isSea, withClouds } from './ground';
+import { GD, GW, X0, Z0, SKIRT_Y, WATER_Y, craterSpots, groundGeometry, heightAt, isSea, withClouds, lift, tilt, MARKS } from './ground';
 
 // Slagmarken som et ekte landskap sett ovenfra: bakken males én gang i canvas per slag
 // (gress, jord, sand, hjulspor, kratre, veien), og pynten utenfor kartet er instanser
@@ -501,7 +500,7 @@ export function Board({
     const mat = useMemo(() => withClouds(new THREE.MeshStandardMaterial({ map: tex, roughness: 1, metalness: 0 }), look), [tex, look]);
     return (
         <group>
-            <Lighting look={look} />
+            <Lighting look={look} gRef={gRef} />
             <Haze look={look} tåke={tåke} />
             <mesh
                 geometry={geo}
@@ -530,45 +529,25 @@ export function Board({
     );
 }
 
-/** Radioringen: stiplet, én geometri. */
-const RING = mergeParts(
-    Array.from({ length: 56 }, (_, i) => {
-        const a = (i / 56) * Math.PI * 2;
-        return {
-            geometry: new THREE.PlaneGeometry(0.07, 0.36),
-            position: [Math.cos(a) * RADIO.rekkevidde, 0.02, Math.sin(a) * RADIO.rekkevidde] as [number, number, number],
-            rotation: [-Math.PI / 2, 0, -a] as [number, number, number],
-            color: C.radio,
-        };
-    })
-);
-
-/** Kommandovogna med antennelampe som blinker når nettet er oppe, og radioringen rundt. */
+/** Kommandovogna med antennelampe som blinker når nettet er oppe. Radioringen rundt den
+ *  tegnes i bakken (`MARKS.uHq`), så den ligger over åsene. */
 function Hq({ def, look, gRef }: { def: SlagDef; look: Look; gRef: React.MutableRefObject<G> }) {
     const [x, z] = def.hq;
     const tip = useRef<THREE.Mesh>(null);
-    const ring = useRef<THREE.Group>(null);
     const model = useMemo(() => hqModel(look), [look]);
+    const quat = useMemo(() => tilt(def, x, z, new THREE.Quaternion(), 0.8), [def, x, z]);
     useFrame((st) => {
         const on = usedChannels(gRef.current) > 0;
         if (tip.current) tip.current.visible = on && Math.sin(st.clock.elapsedTime * 7) > -0.2;
-        if (ring.current) {
-            ring.current.rotation.y = st.clock.elapsedTime * 0.05;
-            ring.current.scale.setScalar(ringOf(gRef.current) / RADIO.rekkevidde);
-        }
+        MARKS.uHq.value.set(x, z, ringOf(gRef.current), 1);
     });
     return (
-        <group position={[x, 0, z]}>
+        <group position={[x, lift(def, x, z), z]} quaternion={quat}>
             <group scale={1.4}>
                 <mesh geometry={model} material={figureMaterial()} castShadow receiveShadow />
                 <mesh ref={tip} position={[-0.3, 2.08, 0.1]}>
                     <sphereGeometry args={[0.07, 8, 6]} />
                     <meshBasicMaterial color={C.radio} toneMapped={false} />
-                </mesh>
-            </group>
-            <group ref={ring}>
-                <mesh geometry={RING}>
-                    <meshBasicMaterial vertexColors transparent opacity={0.75} depthWrite={false} toneMapped={false} />
                 </mesh>
             </group>
         </group>

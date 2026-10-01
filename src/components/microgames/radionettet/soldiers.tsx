@@ -5,6 +5,11 @@ import { isAir, slagDef, type G } from './game';
 import { HIP, LOOK, SQUAD, figureMaterial, soldierParts, type Look, type Post } from './models';
 import { enemyYaw, hlOn, unitYaw, type Hl } from './hl';
 import type { Speed } from './world';
+import { lift } from './ground';
+import { SLAG, type SlagDef } from './levels';
+
+/** Slaget som tegnes nå (soldatene står på åsene). */
+const CUR: { def: SlagDef } = { def: SLAG[0] };
 
 // Soldatene: infanteriet og mannskapet ved kanonene, tegnet som instanser (tre draw calls
 // per side). Hver soldat har egen gange, kneler og sikter, rykker i rekylen litt etter de
@@ -197,7 +202,7 @@ function squad(c: Ctx, id: number, kind: string, x: number, z: number, yaw: numb
         m.recoil = Math.max(0, m.recoil - c.dt * 6);
     });
     if (hidden) return;
-    c.base.compose(P.set(x, 0, z), Q.setFromEuler(E.set(0, yaw, 0)), S.setScalar(FIG));
+    c.base.compose(P.set(x, lift(CUR.def, x, z), z), Q.setFromEuler(E.set(0, yaw, 0)), S.setScalar(FIG));
     S.set(1, 1, 1);
     const isCrew = kind !== 'inf' && kind !== 'einf' && kind !== 'fsk';
     const engaged = sq.fired < 3;
@@ -223,6 +228,7 @@ function Side({ gRef, speedRef, hlRef, fiende, look }: { gRef: React.MutableRefO
         const leg = legRef.current;
         if (!rifle || !crew || !leg) return;
         const g = gRef.current;
+        CUR.def = slagDef(g);
         const dt = Math.min(0.05, raw) * speedRef.current;
         if (g.slag !== lastSlag.current) {
             lastSlag.current = g.slag;
