@@ -32,9 +32,10 @@ Ferdig bygg (fase 3b). Brief: `docs/microgames/briefer/tinghuset.md`. Komponent:
   kommer i brett 2 (`openInterner`, hendelse `interner`) og tar bare slike saker. Aldri i par.
 - `sluttRegning`: ved seier/tap trekkes `poeng.trekkUlovlig` per internert (`g.trekk`, vises på
   slutt-skjermen).
-- Runden starter med en bunke på `tilfang.bunke` grå mapper i Ilebu. Brett 1 følger
-  `tilfang.brett1` (tyskerjente etter 2 s, første angiver etter 9 s); rettssalen glir inn med den
-  første angiveren (`openCourt`, hendelse `sal`).
+- Runden starter med protokollsiden for brett 1 (målet i én setning) og én grå mappe i Ilebu
+  (`tilfang.bunke`). Brett 1 er rolig med vilje: 32 s, én mappe hvert 3. s, `sinneTak` 0,25.
+  Det følger `tilfang.brett1`: tre grå, første angiver etter 12 s (rettssalen glir inn,
+  `openCourt`, hendelse `sal`), tyskerjenta først etter 24 s.
 
 ## Folkemengden (motspilleren)
 

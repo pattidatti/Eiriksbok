@@ -167,8 +167,8 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
 
     const find = (id: FindId) => {
         if (saveRef.current.found.includes(id) || run.current.finds.includes(id)) return;
+        // Bladet vises på slutt-skjermen, ikke som banner midt i runden.
         run.current.finds.push(id);
-        text.banner('NYTT PROTOKOLLBLAD', VIOLET, 1.4);
     };
 
     const endRun = (g: Game) => {
@@ -222,13 +222,6 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                         text.point('dra', PINS.dra, atRect(530, 250), {
                             until: () => view.current.sent,
                             seconds: 14,
-                        });
-                    if (f.kind === 'lett' && g.level === 1)
-                        text.point('forloven', PINS.forloven, atFolder(f.id), {
-                            once: true,
-                            seconds: 6,
-                            until: () =>
-                                !g.folders.some((x) => x.id === f.id && x.state === 'leir'),
                         });
                     if (f.kind === 'alvorlig' && g.level <= 1)
                         text.beatOnce('alvorlig', BEATS.alvorlig.tittel, BEATS.alvorlig.tekst, {
@@ -383,17 +376,11 @@ export default function Tinghuset({ onComplete }: MicroGameProps) {
                 case 'leir':
                     sfx.page();
                     break;
-                case 'sal': {
-                    // Den første angiveren er her, og rettssalen glir inn - svaret på saken.
+                case 'sal':
+                    // Den første angiveren er her, og rettssalen glir inn - lappen på mappa
+                    // (lærings-øyeblikket «Angiver») forklarer den.
                     sfx.page();
-                    const di = g.desks.findIndex((d) => d.kind === 'rett');
-                    const r = deskRect(Math.max(0, di));
-                    // Lappen står til venstre for salen, over køen - aldri over salen selv.
-                    text.point('rett', PINS.rett, atRect(540, r.y + 50), {
-                        seconds: 7,
-                    });
                     break;
-                }
             }
         }
         g.events.length = 0;

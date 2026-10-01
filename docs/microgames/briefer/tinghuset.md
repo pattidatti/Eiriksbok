@@ -693,3 +693,23 @@ halvgod: den taper ikke på sinne, den taper poeng på ulike par.
 **Kjente svakheter.** Halvgod vinner fortsatt nesten alltid; trappen ligger i poengene og i
 antall internerte. Lokalt feiler selvspill og audit på en 403 fra miljøet (samme på Radionettet,
 som er på main); i sky-miljøet var de grønne.
+
+### 2026-10-01 - Roligere start (eierens spilletest)
+
+Eieren: «Fett konsept, men altfor kaotisk i starten» - rakk ikke å bli kjent med arket og målet
+før mapper, sinte folk og lapper kom. Kuttet, ingen nye regler:
+
+1. Brett 1 starter med protokollsiden («Din jobb: dra hver mappe til riktig stempel ...») og én
+   grå mappe i stedet for en bunke på fire.
+2. Brett 1 er lengre og roligere: 32 s (før 20), én mappe hvert 3. s (før 2,2), sinnet har tak
+   på 25 % (før 60 %). Sakstypene kommer én og én: tre grå, angiveren etter 12 s, tyskerjenta
+   etter 24 s (før 2 s).
+3. Kuttet støy: «NYTT PROTOKOLLBLAD»-banneret midt i runden (bladene vises på slutt-skjermen),
+   lappen ved rettssalen (lærings-øyeblikket «Angiver» sier det samme) og «Meldt inn 1940»-lappen.
+   Mellomsidene står 3 s (før 2), så setningen rekker å bli lest.
+
+**Simuleringen (200 runder per robot), grønn:** seende vinner 86 % (median 8 950), halvgod 95 %
+(median 5 940), alt-til-retten, alt-til-forelegg, tilfeldig og passiv 0 %. 47,0 valg per minutt.
+Presset 0,21 -> 0,47 -> 0,75 (før 0,27 -> 0,53 -> 0,77). Selvspill (egen Vite på 5191): seende vant
+med 9 340, Chromebook JS p50 5,3 ms / p95 13,2 ms; eneste funn er 403-feilen fra det lokale miljøet.
+

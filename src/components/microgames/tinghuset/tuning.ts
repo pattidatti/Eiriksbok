@@ -104,20 +104,22 @@ export const TUNING = {
         alvorligAndel: 0.35,
         /** Den første røde mappa får være alene så mange intervaller. */
         alene: 2,
-        /** Bunken som ligger i Ilebu når runden starter (ingen dødtid). */
-        bunke: 4,
-        /** Brett 1 (mai 1945): fast rekkefølge, så hver ny sakstype kommer alene. Tyskerjenta
-         *  kommer etter 2 s, den første angiveren etter 9 s - da glir rettssalen inn. */
+        /** Mappene som ligger i Ilebu når runden starter: én, så eleven ser stempelet først. */
+        bunke: 1,
+        /** Brett 1 (mai 1945): fast rekkefølge, så hver ny sakstype kommer alene og etter at
+         *  eleven har stemplet noen grå. Første angiver etter 12 s - da glir rettssalen inn -
+         *  og tyskerjenta først etter 24 s, når de to andre grepene sitter. */
         brett1: [
-            'utenlov',
             'lett',
-            'lett',
-            'alvorlig',
-            'lett',
-            'utenlov',
             'lett',
             'lett',
             'alvorlig',
+            'lett',
+            'lett',
+            'utenlov',
+            'lett',
+            'alvorlig',
+            'lett',
         ] as const,
     },
 
@@ -129,7 +131,7 @@ export const TUNING = {
     grov: { mnd: 6 },
 
     // Mellomsidene mellom brettene (sekunder, eller klikk).
-    mellomside: 2,
+    mellomside: 3,
 
     // Hvor hardt spillet presser: vekt på tilfang og på sinne i `press`.
     press: { tilfang: 0.6, sinne: 0.4, minIntervall: 0.65 },

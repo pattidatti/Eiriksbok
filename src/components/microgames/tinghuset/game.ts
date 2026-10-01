@@ -85,9 +85,10 @@ export function twinEta(g: Game, f: Folder): number | null {
     return p ? Math.max(0, p.at - g.t) : null;
 }
 
-/** En ny runde: en bunke mapper ligger allerede i Ilebu, så det er noe å gjøre fra første sekund. */
+/** En ny runde: protokollsiden sier målet, og én mappe venter i Ilebu. */
 export function newGame(seed: number): Game {
     const g = blankGame(seed);
+    g.inter = K.mellomside;
     for (let i = 0; i < K.tilfang.bunke; i++) addFolder(g, g.nextSak++, 'lett', 0, null);
     g.spawnT = interval(g);
     return g;

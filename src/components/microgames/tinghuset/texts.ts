@@ -55,9 +55,7 @@ export const BEATS = {
 /** Korte lapper ved tingen (maks 7 ord). */
 export const PINS = {
     dra: 'Dra mappa til FORELEGG-stempelet',
-    rett: 'Rettssalen: én sak av gangen',
     sinne: 'Gata vil se dommer - fort',
-    forloven: 'Meldt inn 1940. Loven kom i 1944.',
     tvilling: 'Lik klemme kommer - vent, eller døm nå?',
     rute: 'Fast rute sender grå mapper selv',
     utenlov: 'Tyskerjente: ingen lov forbød det',

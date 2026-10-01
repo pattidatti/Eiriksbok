@@ -40,7 +40,7 @@ export const LEVELS: Level[] = [
         navn: 'Mai 1945',
         fraMnd: 0,
         tilMnd: 1,
-        sekPerMnd: 20,
+        sekPerMnd: 32,
         leirer: ['ILEBU'],
         // Rettssalen glir inn når den første angiveren kommer (se brett1 i tuning.ts).
         rettssal: true,
@@ -49,11 +49,12 @@ export const LEVELS: Level[] = [
         alvorlig: 0,
         par: false,
         tykk: false,
-        intervall: 2.2,
-        sinneTak: 0.6,
+        intervall: 3,
+        // Rolig start: gata murrer, men kan ikke bli sint før eleven kjenner arket.
+        sinneTak: 0.25,
         linjal: false,
         protokoll:
-            'Mai 1945. Freden er kommet. Tusenvis blir arrestert, og folk i gatene vil se straff.',
+            'Mai 1945. Tusenvis er arrestert. Din jobb: dra hver mappe til riktig stempel, så alle får en straff etter loven.',
     },
     {
         navn: 'Sommeren 1945',
