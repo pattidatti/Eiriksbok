@@ -69,6 +69,7 @@ const EMPTY: HudState = {
     oppdrag: [],
     oppdragMelding: null,
     ting: [],
+    system: {},
 };
 
 const TING: Record<string, string> = { brev: 'Et brev', botte: 'En bøtte vann' };
