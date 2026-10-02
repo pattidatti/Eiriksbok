@@ -1,0 +1,271 @@
+{
+  "id": "titanic",
+  "title": "Titanic: Skipet som ikke kunne synke",
+  "layout": "rich",
+  "year": "1912",
+  "category": "Verden",
+  "readTime": "8 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "factChecked": "2026-10-02",
+  "details": [
+    "Titanic traff et isfjell 14. april 1912 og sank på 2 timer og 40 minutter - rundt 1500 mennesker døde",
+    "Livbåtene hadde plass til 1178 av rundt 2200 om bord, og mange ble sendt ut halvtomme",
+    "I første klasse ble nesten to av tre reddet, i tredje klasse bare én av fire",
+    "Ulykken førte til SOLAS-avtalen i 1914: livbåtplass til alle om bord"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er natt den 14. april 1912, midt ute på Atlanterhavet. Havet er helt blankt, og det er bitende kaldt. Klokka 23.40 roper utkikken i masta en advarsel: et isfjell rett foran! Skipet svinger, men det er for sent. Isen skraper langs siden av skroget. Mange av passasjerene merker nesten ingenting. Noen tror det bare var en liten dult. Men skipet som de fleste trodde ikke kunne synke, har fått et dødelig sår."
+    },
+    {
+      "type": "text",
+      "content": "Skipet het Titanic. Skipet var på sin aller første tur, fra England til New York. To timer og førti minutter etter smellet, klokka 02.20 natt til 15. april, var Titanic borte. Rundt 1500 mennesker døde, og rundt 700 ble reddet (Sebak, 2024). I denne artikkelen skal du finne ut hvorfor så mange døde, og hvorfor det ikke var tilfeldig hvem som overlevde."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Titanic legger ut fra havna på sin første tur",
+      "caption": "Titanic la ut på sin første tur 10. april 1912. Fem dager senere lå skipet på havbunnen."
+    },
+    {
+      "type": "header",
+      "text": "Et flytende palass"
+    },
+    {
+      "type": "text",
+      "content": "Titanic ble bygd ved verftet Harland and Wolff i Belfast og ble sjøsatt i 1911. Skipet var 269 meter langt, nesten like langt som tre fotballbaner etter hverandre. Det kunne ta 2435 passasjerer og hadde i tillegg rundt 900 i mannskapet (Sebak, 2024). Titanic var et barn av den industrielle tiden. Store [dampmaskiner](/historie/industriell-revolusjon/dampmaskinen) drevet av kull fikk det enorme skipet til å gå."
+    },
+    {
+      "type": "text",
+      "content": "Om bord var skipet delt i tre klasser, nesten som tre etasjer i samfunnet. I første klasse reiste noen av de rikeste menneskene i verden. De bodde i store og flotte lugarer. I andre klasse reiste folk med vanlige, gode inntekter. I tredje klasse reiste de som hadde minst penger. Mange av dem var utvandrere på vei til et nytt liv i Amerika."
+    },
+    {
+      "type": "text",
+      "content": "Også nordmenn var med. Ifølge NRK (2012) var 31 passasjerer om bord norskfødte, og de aller fleste av dem reiste på tredje klasse. De var en del av den store [utvandringen til Amerika](/historie/norge-i-moderne-tid/utvandringen-til-amerika), der hundretusenvis av nordmenn reiste over havet for å finne arbeid og jord."
+    },
+    {
+      "type": "header",
+      "text": "Skipet som ikke kunne synke"
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor trodde så mange at Titanic ikke kunne synke? Svaret ligger i hvordan skipet var bygd. Skroget var delt inn i 16 rom med vanntette vegger mellom. Dørene mellom rommene kunne stenges fra broen, der kapteinen styrte skipet. Verftet mente at fire av rommene kunne fylles med vann uten at skipet sank. Derfor begynte mange å kalle Titanic usynkelig (Tikkanen, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Men det var en svakhet. Veggene mellom rommene gikk ikke helt opp til taket (Tikkanen, 2026). Tenk deg en isbitform du fyller med vann. Hvis du vipper den, renner vannet over kanten fra den ene ruta til den neste. Slik gikk det med Titanic. Isfjellet hadde laget hull i flere rom enn skipet tålte. Da baugen sank dypere, rant vannet over veggene og inn i rom etter rom."
+    },
+    {
+      "type": "header",
+      "text": "Livbåtene: plass til bare halvparten"
+    },
+    {
+      "type": "text",
+      "content": "Nå kommer den viktigste delen av historien. Titanic hadde 20 livbåter. Til sammen var det plass til 1178 personer i dem (Sebak, 2024). Men om bord var det rundt 2200 mennesker (Tikkanen, 2026). Selv om hver eneste plass hadde blitt brukt, ville nesten halvparten ikke fått plass. Det var som en skolebuss med seter til bare halve klassen, på en tur der setet er det eneste som kan redde deg."
+    },
+    {
+      "type": "text",
+      "content": "Og det ble enda verre. Mange av livbåtene ble sendt ned på vannet halvtomme. Den første livbåten hadde plass til 65, men bare 28 satt i den. En annen båt med plass til 40 fikk bare med seg 12 mennesker (Sebak, 2024). Tenk deg at du står på et stort, varmt og opplyst skip som ser helt trygt ut. Ville du gått ned i en liten båt på det svarte, iskalde havet? Da folk forsto at skipet faktisk sank, var mange av båtene allerede borte."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Titanic i tall",
+        "content": "Lengde: 269 meter. Om bord: rundt 2200 mennesker. Livbåter: 20, med plass til 1178 personer. Tid fra isfjellet til skipet sank: 2 timer og 40 minutter. Døde: rundt 1500. Reddet: rundt 700 (Sebak, 2024; Tikkanen, 2026)."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Prøv selv: Hvem kom seg i båtene?"
+    },
+    {
+      "type": "text",
+      "content": "Etter ulykken satte britiske myndigheter i gang en stor granskning. Det betyr at de undersøkte nøye hva som hadde skjedd og hvem som hadde dødd. Granskningen telte opp hvor mange som ble reddet i hver klasse (British Wreck Commissioner, 1912). Før du ser på tallene, kan du gjette selv i komponenten under."
+    },
+    {
+      "type": "component",
+      "name": "TitanicLivbaatene",
+      "props": {
+        "title": "Livbåtene på Titanic"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Klasse avgjorde sjansen din"
+    },
+    {
+      "type": "text",
+      "content": "Tallene fra granskningen er tydelige. I første klasse ble 202 av 322 passasjerer reddet. Det er nesten to av tre. I andre klasse ble 115 av 277 reddet. I tredje klasse ble bare 176 av 709 reddet, altså én av fire. Av mannskapet ble 210 av 898 reddet (British Wreck Commissioner, 1912)."
+    },
+    {
+      "type": "text",
+      "content": "Tallene viser også at kvinner og barn ble sluppet i båtene først. Nesten alle kvinnene i første klasse overlevde, 139 av 144. Men av mennene i tredje klasse overlevde bare 55 av 454 (British Wreck Commissioner, 1912). Hvor du sov på skipet, og hvor mye billetten din kostet, hadde altså mye å si for om du levde neste morgen. Tenk over hvorfor: Hvor lå lugarene i tredje klasse? Hvor lå livbåtene? Og hvem fikk beskjed først?"
+    },
+    {
+      "type": "text",
+      "content": "For de norske passasjerene gikk det slik: Av de 31 norskfødte overlevde 10, mens 21 omkom (NRK, 2012). De fleste av dem hadde reist på tredje klasse."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Av i alt 31 norskættede passasjerer ombord i Titanic var det altså 10 personer som overlevde og 21 som omkom.",
+        "author": "NRK, 2012"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Redningen kom for sent"
+    },
+    {
+      "type": "text",
+      "content": "Mens Titanic sank, sendte telegrafistene ut nødsignaler med radio. Radio var ny teknologi i 1912, litt som en forløper for [telefonen og telegrafen](/historie/teknologi-og-hverdagsliv/telefonen) du kan lese om i en annen artikkel. Skipet Carpathia fanget opp signalene og satte kursen mot ulykkesstedet. Men det tok lang tid. Carpathia begynte å plukke opp folk fra livbåtene klokka 04.10, nesten to timer etter at Titanic hadde sunket. Redningen var ferdig klokka 08.30 (Sebak, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "De som havnet i vannet, hadde nesten ingen sjanse. Havet var iskaldt, og ingen kom tilbake for å hente dem i tide. Derfor er det livbåtene som er nøkkelen til hele historien. Den som fikk en plass i en båt, overlevde. Den som ikke fikk det, døde nesten alltid."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Overlevende i livbåt på et iskaldt hav ved daggry",
+      "caption": "Ved daggry kom skipet Carpathia og plukket opp de overlevende fra livbåtene."
+    },
+    {
+      "type": "header",
+      "text": "Nye regler etter ulykken"
+    },
+    {
+      "type": "text",
+      "content": "Titanic-ulykken sjokkerte hele verden. Folk ville vite hvordan noe slikt kunne skje. Svaret ble nye regler. Etter ulykken måtte alle passasjerskip ha livbåter med plass til alle om bord. Radioen skulle være bemannet hele døgnet, slik at ingen nødsignaler ble oversett. Det ble også opprettet en egen ispatrulje som skulle holde øye med isfjell i Atlanterhavet (Sebak, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "I 1914 ble land enige om en internasjonal avtale om sikkerhet til sjøs. Den heter SOLAS, som er en forkortelse for de engelske ordene for sikkerhet for liv til sjøs. Ifølge FNs sjøfartsorganisasjon IMO (u.å.) kom den første utgaven av avtalen som et svar på Titanic-ulykken. SOLAS gjelder fortsatt i dag, i en nyere utgave. Det betyr at hver gang du tar en ferje, er det plass til deg i en livbåt, delvis på grunn av Titanic."
+    },
+    {
+      "type": "header",
+      "text": "Hva kan vi lære av Titanic?"
+    },
+    {
+      "type": "text",
+      "content": "Titanic sank bare to år før [første verdenskrig](/historie/forste-verdenskrig/oversikt) begynte. Skipet var noe av det mest moderne folk hadde bygd. Likevel hadde ingen sørget for at alle fikk en plass i livbåtene. Lærdommen gjelder fortsatt: Ny teknologi gjør oss ikke trygge hvis vi slutter å spørre «hva om det verste skjer?»."
+    },
+    {
+      "type": "text",
+      "content": "Ulykken viser også hvor mye klassesamfunnet betydde. Alle på Titanic sto overfor det samme isfjellet og det samme kalde havet. Likevel hadde en rik passasjer i første klasse mye større sjanse til å overleve enn en fattig utvandrer i tredje klasse. Det var ikke bare flaks som avgjorde hvem som levde. Det var regler, plassering og penger."
+    },
+    {
+      "type": "text",
+      "content": "Vraket av Titanic ble funnet i 1985. Det ligger på 3800 meters dyp, rundt 13 nautiske mil, omtrent 24 kilometer, unna stedet skipet oppga i nødsignalene (Sebak, 2024). Der nede ligger fortsatt restene av skipet som ikke kunne synke."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Vraket av Titanic på havbunnen i mørket",
+      "caption": "Vraket av Titanic ble funnet i 1985, på 3800 meters dyp."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Når og hvor traff Titanic isfjellet, og hvor lang tid tok det før skipet sank?",
+          "Hvor mange livbåter hadde Titanic, og hvor mange var det plass til i dem?",
+          "Hvorfor trodde mange at Titanic ikke kunne synke?",
+          "Hvor mange nordmenn var om bord, og hvor mange av dem overlevde?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor det ikke hjalp at Titanic hadde vanntette rom.",
+          "Sammenlign hvor mange som ble reddet i første og tredje klasse. Hva kan forklare forskjellen?",
+          "Mange livbåter ble sendt ut halvtomme. Hvorfor tror du det skjedde, og hvem har ansvaret for det?",
+          "Hvorfor var livbåtene nøkkelen til hvem som overlevde, og ikke svømmeferdighet eller styrke?"
+        ],
+        "gaaVidere": [
+          "Neste gang du tar en ferje eller et fly: Se etter sikkerhetsreglene. Hvilke av dem kan du knytte til Titanic?",
+          "Diskuter i gruppa: Finnes det situasjoner i dag der penger avgjør hvem som er trygge når en katastrofe skjer? Finn ett eksempel.",
+          "Skriv en kort dagbok fra natten 14. april 1912, sett fra en passasjer i tredje klasse."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvor mange mennesker var det plass til i Titanics livbåter?",
+            "options": [
+              "Alle om bord",
+              "1178",
+              "500",
+              "2435"
+            ],
+            "correctAnswer": 1,
+            "explanation": "De 20 livbåtene hadde plass til 1178 personer, men om bord var det rundt 2200 mennesker."
+          },
+          {
+            "question": "Hvorfor sank Titanic selv om skroget var delt i vanntette rom?",
+            "options": [
+              "Rommene var av tre",
+              "Veggene mellom rommene gikk ikke helt opp, og flere rom enn skipet tålte ble fylt",
+              "Kapteinen glemte å stenge dørene",
+              "Skipet hadde ingen vanntette rom"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Isfjellet laget hull i flere rom enn skipet tålte. Vannet rant over veggene fra rom til rom."
+          },
+          {
+            "question": "Hvilken gruppe passasjerer hadde størst sjanse til å overleve?",
+            "options": [
+              "Tredje klasse",
+              "Andre klasse",
+              "Første klasse",
+              "Alle hadde lik sjanse"
+            ],
+            "correctAnswer": 2,
+            "explanation": "I første klasse ble nesten to av tre reddet. I tredje klasse ble bare én av fire reddet."
+          },
+          {
+            "question": "Hva er SOLAS?",
+            "options": [
+              "Navnet på skipet som reddet de overlevende",
+              "En internasjonal avtale om sikkerhet til sjøs fra 1914",
+              "Rederiet som eide Titanic",
+              "Et radiosignal for nød"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Den første SOLAS-avtalen kom i 1914 som et svar på Titanic-ulykken, og den gjelder fortsatt i en nyere utgave."
+          },
+          {
+            "question": "Hvilket skip kom først for å redde de overlevende?",
+            "options": [
+              "Carpathia",
+              "Californian",
+              "Olympic",
+              "Lusitania"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Carpathia begynte å plukke opp folk fra livbåtene klokka 04.10 om morgenen 15. april."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "British Wreck Commissioner. (1912). *Report on the loss of the \"Titanic\" (s.s.): Passenger and crew numbers and percentages*. Titanic Inquiry Project. Hentet 02.10.2026 fra https://www.titanicinquiry.org/BOTApp/BOTApp01.php",
+          "IMO. (u.å.). *International Convention for the Safety of Life at Sea (SOLAS), 1974*. International Maritime Organization. Hentet 02.10.2026 fra https://www.imo.org/en/About/Conventions/Pages/International-Convention-for-the-Safety-of-Life-at-Sea-(SOLAS),-1974.aspx",
+          "NRK. (2012, 2. april). 31 nordmenn overlevde Titanic. *NRK Trøndelag*. https://www.nrk.no/trondelag/31-nordmenn-overlevde-titanic-1.8059699",
+          "Sebak, P. K. (2024). *Titanic*. Store norske leksikon. Hentet 02.10.2026 fra https://snl.no/Titanic",
+          "Tikkanen, A. (2026). *Titanic*. Encyclopaedia Britannica. Hentet 02.10.2026 fra https://www.britannica.com/topic/Titanic"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

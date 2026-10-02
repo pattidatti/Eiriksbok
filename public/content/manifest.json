@@ -5061,6 +5061,21 @@
               ],
               "createdDate": "2026-08-26T04:08:24+02:00",
               "lastUpdated": "2026-08-26T07:39:10+02:00"
+            },
+            {
+              "id": "titanic",
+              "title": "Titanic: Skipet som ikke kunne synke",
+              "description": "Titanic sank i 1912, og livbåtene hadde bare plass til halvparten - klasse avgjorde hvem som overlevde.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "titanic",
+                "skipsfart",
+                "teknologi",
+                "klassesamfunn",
+                "sikkerhet",
+                "1900-tallet"
+              ],
+              "createdDate": "2026-10-02T00:00:00Z"
             }
           ]
         },
