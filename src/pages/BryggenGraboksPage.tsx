@@ -62,6 +62,7 @@ const EMPTY: HudState = {
     quality: 'full',
     samtale: null,
     replikk: null,
+    bunter: 0,
 };
 
 const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
@@ -216,6 +217,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                     <span>Junge</span>
                     <span className="tabular-nums">{hud.playerHp}</span>
                 </div>
+                {hud.bunter > 0 && <div className="mt-1 text-[13px] text-slate-600">Bunter båret: <span className="font-semibold tabular-nums text-slate-900">{hud.bunter}</span></div>}
                 <div className="mt-1 h-2.5 overflow-hidden rounded-full bg-slate-200">
                     <div className="h-full rounded-full bg-rose-600 transition-[width] duration-200" style={{ width: `${hpPct}%` }} />
                 </div>

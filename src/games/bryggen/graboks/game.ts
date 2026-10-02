@@ -18,6 +18,7 @@ import type { BryggenWorld } from '../bygg/bryggen';
 import { Etterbehandling } from '../motor/post';
 import type { LydKobling } from '../motor/lydkobling';
 import type { FolkStyring, ReplikkHud, SamtaleHud } from './folkstyring';
+import type { Baering } from './baering';
 
 /** Hvilken verden løkka kjører: grå prøvescene eller Bryggen bygget av modulsettet. */
 export type WorldId = 'graboks' | 'gard';
@@ -56,6 +57,8 @@ export interface HudState {
     samtale: SamtaleHud | null;
     /** En kort replikk fra noen i nærheten (undertekst). */
     replikk: ReplikkHud | null;
+    /** Bunter tørrfisk gutten har båret inn i bua. */
+    bunter: number;
 }
 
 /** Full: normal- og AO-kart, miljølys og skygger. Lav: bare fargetekstur og ruhet. */
@@ -126,6 +129,8 @@ export class GrayboxGame {
     private lydValg = { onsket: false, paa: true, volum: 0.8 };
     /** Folkene: hvem gutten kan snakke med, og samtalen (bare Bryggen-scenen). */
     private folk: FolkStyring | null = null;
+    /** Bære tørrfisk fra kaia til bua (bare Bryggen-scenen). */
+    private baering: Baering | null = null;
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
@@ -254,6 +259,9 @@ export class GrayboxGame {
             if (this.disposed) return;
             this.folk = new FolkStyring(this.world);
             this.folk.onEndring = this.pushHudSoon;
+            const { Baering } = await import('./baering');
+            if (this.disposed) return;
+            this.baering = new Baering(this.world, this.player);
             this.settLyd(this.lydValg.paa, this.lydValg.volum);
             if (this.lydValg.onsket) void this.lyd.start();
         }
@@ -447,6 +455,11 @@ export class GrayboxGame {
             inp.jumpPressed = inp.interactPressed = inp.lightPressed = inp.heavyPressed = false;
             inp.dodgePressed = inp.finisherPressed = inp.blockHeld = inp.sprint = false;
         }
+        // Med en bunt i armene: saktere, og ingen sprint, hopp eller slag.
+        if (this.baering?.baerer) {
+            dir.multiplyScalar(0.42);
+            inp.sprint = inp.jumpPressed = inp.lightPressed = inp.heavyPressed = inp.dodgePressed = false;
+        }
 
         if (this.mode === 'boat') {
             this.boat.step(dt, { forward: inp.move.y, turn: inp.move.x });
@@ -475,6 +488,11 @@ export class GrayboxGame {
             });
             if (inp.interactPressed && this.prompt?.startsWith('E: Gå om bord')) this.embark();
             else if (inp.interactPressed && this.prompt?.startsWith('E: Snakk')) this.folk?.snakk(this.player.pos);
+            else if (inp.interactPressed && this.prompt && this.prompt === this.baering?.prompt) {
+                const m = this.baering.trykk();
+                if (m) this.flash(m, 5);
+                this.promptTimer = 0;
+            }
             this.checkWater(dt);
         }
 
@@ -579,6 +597,7 @@ export class GrayboxGame {
         if (this.mode === 'foot') {
             const d = Math.hypot(this.boat.pos.x - this.player.pos.x, this.boat.pos.z - this.player.pos.z);
             this.prompt = d < 3.4 && this.player.grounded && !this.pc.busy ? 'E: Gå om bord i færingen' : null;
+            this.prompt ??= this.baering?.oppdater() ?? null;
             if (this.folk) {
                 this.folk.update(0.15, this.player.pos, this.player.yaw, !this.prompt && !this.pc.busy && !this.ai.aggro);
                 this.prompt ??= this.folk.prompt;
@@ -612,6 +631,7 @@ export class GrayboxGame {
 
     private embark(): void {
         this.folk?.slutt();
+        this.baering?.slipp();
         this.mode = 'boat';
         this.player.setSeated(true);
         this.player.anim.play('Row', { fade: 0.25, loop: true });
@@ -752,6 +772,7 @@ export class GrayboxGame {
             quality: this.quality,
             samtale: this.folk?.samtale ?? null,
             replikk: this.folk?.replikk ?? null,
+            bunter: this.baering?.antall ?? 0,
         });
     }
 }

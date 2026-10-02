@@ -288,7 +288,7 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
 }
 
 /** En bunt tørrfisk surret med tau, i samme materiale og farger som buntene i bua. */
-function buntMesh(mats: Materials): THREE.Object3D {
+export function buntMesh(mats: Materials): THREE.Object3D {
     const k = new MeshKit();
     k.withUv(0.04, () => {
         k.withTint({ top: 1.45, bottom: 1.1, hue: [1.02, 0.98, 0.86] }, () => k.box('raatre', 0, 0, 0, 0.5, 0.26, 0.3, { grain: 'x' }));

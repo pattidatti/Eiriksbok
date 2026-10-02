@@ -419,6 +419,8 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     return {
         near, mid, colliders: [...c.specs, ...folk.colliders], ild: ildPos, rom,
         gaaende: folk.gaaende, snakkbare: folk.snakkbare,
+        // Gutten kan bære bunter fra stabelen på kaia til bismeren i bua, som skutedrengen.
+        bunter: [{ hent: V(ox - 4.55, 0, 2.15), lever: V(ox - 3.75, 0.2, 10.3) }],
         tick: (t, dt, ctx) => {
             ilder.forEach((f) => f.update(t, dt));
             folk.tick(t, dt, ctx);

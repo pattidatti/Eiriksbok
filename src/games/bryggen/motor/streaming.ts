@@ -33,6 +33,8 @@ export interface CellContent {
     rom?: Rom[];
     /** Folk som går (føttene, oppdatert av `tick`). Verdenen gir de nærmeste en kollider. */
     gaaende?: THREE.Vector3[];
+    /** Hvor gutten kan hente bunter tørrfisk, og hvor de skal leveres (bære-aktiviteten). */
+    bunter?: { hent: THREE.Vector3; lever: THREE.Vector3 }[];
     /** Folk man kan snakke med (E). */
     snakkbare?: Snakkbar[];
     /** Rydder det cella eier selv (materialer som ikke hører til Materials). */
@@ -184,6 +186,10 @@ export class CellStreamer {
 
     *gaaende(): Generator<THREE.Vector3> {
         for (const cell of this.live.values()) if (cell.content?.near.visible) yield* cell.content.gaaende ?? [];
+    }
+
+    *bunter(): Generator<{ hent: THREE.Vector3; lever: THREE.Vector3 }> {
+        for (const cell of this.live.values()) yield* cell.content?.bunter ?? [];
     }
 
     *snakkbare(): Generator<Snakkbar> {
