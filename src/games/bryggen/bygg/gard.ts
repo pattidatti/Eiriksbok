@@ -331,6 +331,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     const p = plan();
     const ilder: Ild[] = [];
     const ildPos: THREE.Vector3[] = [];
+    const roykPos: THREE.Vector3[] = [];
     const rom: Rom[] = [];
     const plasser: Plass[] = [];
     const iVerden = (list: Plass[], m: THREE.Matrix4, rot: number) =>
@@ -363,6 +364,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
             near.add(ild.group);
             ilder.push(ild);
             ildPos.push(ild.group.position.clone().setY(ild.group.position.y + 0.5));
+            roykPos.push(ild.group.position.clone().setY(eaveY(h.spec) + riseOf(h.spec)));
             rom.push({ box: info.rom.box.clone().applyMatrix4(m), demp: info.rom.demp });
         }
         if (ki.buckets.size > 0) {
@@ -432,7 +434,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     const folk = await lagFolk(plasser, mats, Math.abs(Math.round(ox)) + 7, ruter(ox, back));
     near.add(folk.group);
     return {
-        near, mid, inne, samlet: { delt, samlet }, colliders: [...c.specs, ...folk.colliders], ild: ildPos, rom,
+        near, mid, inne, samlet: { delt, samlet }, colliders: [...c.specs, ...folk.colliders], ild: ildPos, royk: roykPos, rom,
         gaaende: folk.gaaende, snakkbare: folk.snakkbare,
         // Gjeldsboka ligger på pulten der husbonden står og skriver (bu.ts).
         steder: plasser.filter((p) => p.id === 'husbonden').map((p) => ({ id: 'gjeldsbok', pos: p.pos.clone(), r: 1.9 })),

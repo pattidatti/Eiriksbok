@@ -16,6 +16,7 @@ import { Gore } from '../motor/gore';
 import { buildGraybox, type GrayboxLayout } from './scene';
 import type { BryggenWorld } from '../bygg/bryggen';
 import { Etterbehandling } from '../motor/post';
+import { Lyssetting, stemningFraUrl } from '../motor/stemning';
 import type { LydKobling } from '../motor/lydkobling';
 import type { FolkStyring, ReplikkHud, SamtaleHud } from './folkstyring';
 import type { OppdragHud, OppdragMelding } from './oppdrag';
@@ -95,7 +96,7 @@ export class GrayboxGame {
     private ai!: EnemyAI;
     private boat!: Faering;
     private gore = new Gore();
-    private sun!: THREE.DirectionalLight;
+    private lys!: Lyssetting;
     private readonly worldId: WorldId;
     private world: BryggenWorld | null = null;
     private streamTimer = 0;
@@ -136,7 +137,6 @@ export class GrayboxGame {
     private low: boolean;
     /** ?skygger=0 slår av skygger også på full kvalitet (for måling). */
     private readonly shadowsAllowed: boolean;
-    private hemi!: THREE.HemisphereLight;
     /** Etterbehandlingen (kantutjevning, fargetone, vignett). Bare Bryggen-scenen på full kvalitet. */
     private post: Etterbehandling | null = null;
     /** Lyden (bare Bryggen-scenen). Startes av første tastetrykk eller klikk (`startLyd`). */
@@ -187,41 +187,20 @@ export class GrayboxGame {
         if (this.disposed) return;
         this.phys = new Physics(R);
 
-        // Lys og luft: grått Bergen-vær. Tåka skjuler det som er langt unna.
-        const fogColor = 0x9ba4ab;
-        this.scene.background = new THREE.Color(fogColor);
-        this.scene.fog = new THREE.FogExp2(fogColor, 0.024);
-        const hemi = new THREE.HemisphereLight(0xc9d2da, 0x4a4843, 1.5);
-        this.hemi = hemi;
-        this.scene.add(hemi);
-        this.sun = new THREE.DirectionalLight(0xfff4e6, 1.5);
-        this.sun.position.set(-14, 22, -10);
-        this.sun.castShadow = true;
-        this.sun.shadow.mapSize.set(1024, 1024);
-        const sc = this.sun.shadow.camera;
-        sc.left = -16;
-        sc.right = 16;
-        sc.top = 16;
-        sc.bottom = -16;
-        sc.near = 1;
-        sc.far = 70;
-        this.sun.shadow.bias = -0.0006;
-        this.sun.shadow.normalBias = 0.03;
-        this.scene.add(this.sun, this.sun.target);
+        // Lys, tåke og himmel fra stemningen (?lys=kveld|graatt|morgen, stemning.ts).
+        this.lys = new Lyssetting(this.scene, stemningFraUrl(), { bryggen: this.worldId === 'gard' });
 
         if (this.worldId === 'gard') {
             const { buildBryggen } = await import('../bygg/bryggen');
-            this.world = await buildBryggen(this.scene, this.phys, this.renderer, { low: this.low });
+            this.world = await buildBryggen(this.scene, this.phys, this.renderer, this.lys, { low: this.low });
             if (this.disposed) return;
             this.layout = this.world.layout;
             // Cellene rundt start må stå før første fysikksteg, ellers faller gutten gjennom kaia.
             await this.world.streamer.update(this.layout.playerStart);
             if (this.disposed) return;
-            // Miljølyset fra himmelen gjør en del av jobben halvkulelyset gjør i gråboksen.
-            hemi.intensity = this.low ? 1.7 : 1.25;
-            this.renderer.toneMappingExposure = 1.2;
+            this.renderer.toneMappingExposure = this.lys.s.eksponering;
             // ?post=0 slår av etterbehandlingen (for å sammenligne og måle).
-            if (new URLSearchParams(location.search).get('post') !== '0') this.post = new Etterbehandling();
+            if (new URLSearchParams(location.search).get('post') !== '0') this.post = new Etterbehandling(this.lys.s, this.lys.solRetning);
         } else {
             this.layout = buildGraybox(this.scene, this.phys);
         }
@@ -365,6 +344,7 @@ export class GrayboxGame {
         this.world?.streamer.dispose();
         this.world?.materials.dispose();
         this.world?.environment.dispose();
+        this.world?.dispose();
         this.post?.dispose();
         this.lyd?.dispose();
         if (document.pointerLockElement === this.renderer.domElement) document.exitPointerLock();
@@ -541,6 +521,12 @@ export class GrayboxGame {
         if (this.pc.f.dead && !this.message) this.flash('Du ble slått ned. Trykk R for å prøve igjen.', 99);
     }
 
+    /** Fotokameraet (bare i dev): da strømmes byen, og lyset, støvet og regnet regnes, rundt det. */
+    private fotoPos(): THREE.Vector3 | null {
+        const foto = import.meta.env.DEV ? (window as { __bryggenFoto?: { pos: number[] } }).__bryggenFoto : undefined;
+        return foto ? new THREE.Vector3().fromArray(foto.pos) : null;
+    }
+
     private renderFrame(dt: number, gameDt: number, alpha: number): void {
         this.boat.render(alpha);
         this.player.render(alpha, gameDt);
@@ -585,25 +571,19 @@ export class GrayboxGame {
             if (this.streamTimer <= 0) {
                 this.streamTimer = 0.3;
                 // Med fotokameraet (dev) strømmes byen rundt kameraet, ikke gutten.
-                const foto = import.meta.env.DEV ? (window as { __bryggenFoto?: { pos: number[] } }).__bryggenFoto : undefined;
-                void this.world.streamer.update(foto ? new THREE.Vector3().fromArray(foto.pos) : follow, follow);
+                void this.world.streamer.update(this.fotoPos() ?? follow, follow);
             }
             // Inne i et rom: dagslyset dempes mykt, så ildstedet tar over. Kameraet avgjør, ikke
             // gutten, ellers blir rommet mørkt mens kameraet ennå står ute i gårdsrommet.
             this.clock += dt;
-            const inne = this.world.update(this.clock, dt, this.cam.camera.position, { pos: this.player.anim.root.position, fart: this.player.speed });
+            const inne = this.world.update(this.clock, dt, this.fotoPos() ?? this.cam.camera.position, { pos: this.player.anim.root.position, fart: this.player.speed });
             this.inne += (inne - this.inne) * Math.min(1, dt * 3);
             this.lyd?.update(dt, this.inne, this.mode);
-            const ute = 1 - this.inne * 0.65;
-            this.hemi.intensity = (this.low ? 1.7 : 1.25) * ute;
-            this.sun.intensity = 1.5 * (1 - this.inne * 0.85);
-            this.scene.environmentIntensity = 0.9 * ute;
+            this.world.post = !!this.post && !this.low;
+            this.world.skygger = this.renderer.shadowMap.enabled;
         }
-
-        // Skyggen følger spilleren.
-        const p = follow;
-        this.sun.position.set(p.x - 14, p.y + 22, p.z - 10);
-        this.sun.target.position.set(p.x, p.y, p.z);
+        // Dagslyset dempes inne, og skyggen følger spilleren.
+        this.lys.oppdater(follow, this.inne, this.low, this.scene);
 
         this.updatePrompts(dt);
         const w = this.container.clientWidth;

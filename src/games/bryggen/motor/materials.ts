@@ -5,6 +5,7 @@
 // geometrien; materialene og teksturene blir liggende til spillet avsluttes.
 import * as THREE from 'three';
 import type { MatKey } from './meshkit';
+import { Vaat } from './vaat';
 
 const BASE = '/games/bryggen/textures/';
 
@@ -49,6 +50,8 @@ export class Materials {
     private readonly maxAnisotropy: number;
     /** Lav kvalitet: bare fargetekstur og ruhet. Sparer to teksturoppslag per piksel. */
     private low: boolean;
+    /** Våte flater (vaat.ts): alle materialene her deler den. */
+    readonly vaat = new Vaat();
 
     constructor(renderer: THREE.WebGLRenderer, opts: { low?: boolean } = {}) {
         this.low = !!opts.low;
@@ -69,7 +72,7 @@ export class Materials {
         await Promise.all(jobs);
         if (!this.low) await this.loadDetail();
         // Mørke åpninger (inn i loftet, under svalgangen): ingen tekstur, bare nesten svart tre.
-        this.mats.set('mork', new THREE.MeshStandardMaterial({ color: 0x1b1714, roughness: 1, vertexColors: true }));
+        this.mats.set('mork', this.medVaat(new THREE.MeshStandardMaterial({ color: 0x1b1714, roughness: 1, vertexColors: true }), 'mork'));
     }
 
     get(key: MatKey): THREE.MeshStandardMaterial {
@@ -92,6 +95,7 @@ export class Materials {
         if (!m) {
             m = (key === 'lod' ? this.lodMaterial() : this.get(key)).clone();
             m.onBeforeCompile = (sh) => {
+                this.vaat.patch(sh, key);
                 sh.fragmentShader = sh.fragmentShader.replace(
                     '#include <fog_fragment>',
                     `#ifdef USE_FOG
@@ -105,7 +109,7 @@ export class Materials {
                     #endif`
                 );
             };
-            m.customProgramCacheKey = () => 'tynn-take';
+            m.customProgramCacheKey = () => `tynn-take:${key}`;
             // Strømmingen kjenner landemerker på dette og lar dem stå i tåka (streaming.ts).
             m.userData.tynnTake = true;
             this.tynne.set(key, m);
@@ -115,8 +119,15 @@ export class Materials {
 
     /** Middels nivå: flat farge fra vertex-fargene, ingen teksturer. */
     lodMaterial(): THREE.MeshStandardMaterial {
-        if (!this.lodMat) this.lodMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, vertexColors: true });
+        if (!this.lodMat) this.lodMat = this.medVaat(new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, vertexColors: true }), 'lod');
         return this.lodMat;
+    }
+
+    /** Hekter vætan på materialet (én shader per nøkkel). */
+    private medVaat(m: THREE.MeshStandardMaterial, key: MatKey | 'lod'): THREE.MeshStandardMaterial {
+        m.onBeforeCompile = (sh) => this.vaat.patch(sh, key);
+        m.customProgramCacheKey = () => `vaat:${key}`;
+        return m;
     }
 
     lodColor(key: MatKey): THREE.Color {
@@ -146,7 +157,7 @@ export class Materials {
             color: new THREE.Color(...(def.color ?? [1, 1, 1])),
             vertexColors: true,
         });
-        this.mats.set(key, m);
+        this.mats.set(key, this.medVaat(m, key));
     }
 
     /** Laster normal- og ARM-kartene én gang, første gang full kvalitet trengs. */
@@ -214,9 +225,15 @@ export class Materials {
  * Miljølys fra en enkel himmel: lys grå over, mørk brun-grå under. Gir treverket
  * et svakt gjenskinn og våte flater litt glans, uten et ekte himmelbilde.
  */
-export function makeSkyEnvironment(renderer: THREE.WebGLRenderer, top: number, horizon: number, bottom: number): THREE.Texture {
+export function makeSkyEnvironment(
+    renderer: THREE.WebGLRenderer,
+    top: number,
+    horizon: number,
+    bottom: number,
+    sol?: { retning: THREE.Vector3; farge: number; styrke: number }
+): THREE.Texture {
     const scene = new THREE.Scene();
-    const geo = new THREE.SphereGeometry(10, 32, 16);
+    const geo = new THREE.SphereGeometry(10, 64, 32);
     const cTop = new THREE.Color(top);
     const cHor = new THREE.Color(horizon);
     const cBot = new THREE.Color(bottom);
@@ -227,6 +244,11 @@ export function makeSkyEnvironment(renderer: THREE.WebGLRenderer, top: number, h
         const y = pos.getY(i) / 10;
         if (y > 0) c.copy(cHor).lerp(cTop, Math.pow(y, 0.6));
         else c.copy(cHor).lerp(cBot, Math.min(1, -y * 2.5));
+        // Lyset rundt sola: våte flater speiler en varm flekk mot sola.
+        if (sol) {
+            const mot = Math.max(0, (pos.getX(i) * sol.retning.x + pos.getY(i) * sol.retning.y + pos.getZ(i) * sol.retning.z) / 10);
+            c.add(new THREE.Color(sol.farge).multiplyScalar(sol.styrke * (Math.pow(mot, 8) * 0.8 + Math.pow(mot, 64) * 2.5)));
+        }
         colors.push(c.r, c.g, c.b);
     }
     geo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));

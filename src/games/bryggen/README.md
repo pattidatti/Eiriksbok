@@ -16,7 +16,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Håkonshallen innenfor.
   På torget står selgere i bodene, og kjøpere, en tjenestejente med bøtte, en fisker og en svenn går
   mellom bodene, brønnen og kaia. Snakk med kornselgeren og borgeren (de har samtaler).
-  `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
+  `?lys=kveld|graatt|morgen` velger lysstemning (standard: kveld etter regnet, `motor/stemning.ts`).
+  `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
 - Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md). I Bryggen
@@ -46,7 +47,11 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning |
 | `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
 | `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
-| `motor/post.ts` | Etterbehandling på full kvalitet: FXAA, fargetone (kaldt ute, varmt inne), vignett, filmkorn. Ett pass |
+| `motor/stemning.ts` | Lysstemningene (`?lys=kveld\|graatt\|morgen`): sol, fyll, tåke, himmelfarger, regn, vætan og dis. `Lyssetting` eier sola og halvkulelyset, demper dem inne og flytter skyggen med gutten |
+| `motor/himmel.ts` | Himmelkuppelen: fargeovergang, skyer som driver, sola bak skyene. Tegnes etter alt som ikke er gjennomsiktig, med dybden bakerst |
+| `motor/vaat.ts` | Våte flater: mørkere og blankere tre, flekker, pytter i gjørma og på steinen, tørt inne i rommene. Hektes på materialene i `Materials` |
+| `motor/luft.ts` | Røyk fra ljorene (ett tegnekall for hele byen) og støv i rommet kameraet står i: glimt og disflak som bare lyser i sollyset, så strålen gjennom døra synes |
+| `motor/post.ts` | Etterbehandling på full kvalitet: SSAO (halv oppløsning), glød (kvart og åttendels), lysstråler fra sola, solglød i tåka, dis over Vågen, FXAA, fargetone, vignett, filmkorn |
 | `motor/faering-modell.ts` | Færingen som modell: klinkbygd skrog med bordganger, stavner, ripe, tiljer og tofter |
 | `motor/skrog.ts` | Skroget og riggen skipene deles om: klinkbygd skrog av tverrsnitt, stavner, dekk, mast, rå med beslått seil, vant, ror og konveks kollider |
 | `motor/kogge-modell.ts` | Koggen: flatbunnet, høye sider, rette stavner, kasteller forut og akter, mastekurv, ror på akterstevnen |
@@ -166,10 +171,25 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Landemerker som skal synes over hele byen (Mariakirken, steinbyggene på Holmen) bruker `materials.tynnTake(key)`: kopier av
   materialene med halvparten så tett tåke, som følger kvalitetsbyttet. Med vanlig tåke er alt borte
   bak 100 m. Ikke bruk det på vanlige hus: da forsvinner dybden.
-- Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten. Lysdempingen inne og
-  regnet følger likevel det vanlige kameraet, så fotokameraet viser regn også inne i et rom.
+- Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten, og lysdempingen inne,
+  støvet og regnet følger også fotokameraet. Skyggen følger fortsatt gutten.
 - `__bryggenMaaker` og `__bryggenVerden` (bare i dev): testskript kan flytte måker og skru regnet
-  (`__bryggenVerden.regn`, 0-1). `?regn=0` i adressen gir tørt vær, `?post=0` slår av etterbehandlingen.
+  (`__bryggenVerden.regn`, 0-1). `__bryggenPost.paa` slår passene i etterbehandlingen av og på
+  (`ao`, `glod`, `straaler`, og `visAo` viser bare SSAO-bufferen), `__bryggenRoyk.paa` og
+  `__bryggenStov.paa` røyken og støvet, `__bryggenLys` er sola og skyggen. `?regn=0` i adressen gir tørt vær, `?post=0` slår av etterbehandlingen.
+- Lyset kommer fra stemningen (`stemning.ts`), ikke fra tall spredt rundt i koden. Form på lav
+  polycount kommer av forskjellen mellom sol og fyll: kvelden har sol 3,4 mot fyll 1,05, grått vær
+  1,5 mot 1,25. Nye stemninger legges i `STEMNINGER`; gråboksen bruker alltid den grå.
+- Himmelen tegnes etter alt som ikke er gjennomsiktig, med `gl_Position.xyww` (dybde 1,0) og uten å skrive dybde.
+  Tegnet først kostet den 1,7 ms i gårdsrommet: skyene ble regnet ut under hele bildet.
+- Etterbehandlingen kjenner himmelen på dybden (1,0). Gløden rundt sola legges på i etterbehandlingen
+  likt over himmel og tåke, ellers skiller de lag. Uten etterbehandling gløder himmelen litt selv.
+- Vætan (`vaat.ts`) ligger i shaderen til materialene i `Materials`. Ting med egne materialer
+  (figurer, færingen) blir ikke våte. Inne i de nærmeste seks rommene er det tørt.
+- Støvet (`luft.ts`) får sol og skygge av Lambert. Uten skygger (lav kvalitet) ville det lyst i hele
+  rommet, så det vises bare når sola kaster skygge. Disflakene er store og legges oppå alt bak dem:
+  630 av dem kostet 14 ms i bua. Hold antallet lavt, og la dem forsvinne tett på kameraet.
+- Røyken kommer fra `CellContent.royk` (hullet i taket over ildstedet). De fire nærmeste ryker.
 - Etterbehandlingen tegner scenen til en buffer som later som den er en XR-buffer
   (`isXRRenderTarget`). Ellers tonemapper ikke Three, og tåka blandes inn før tonekurven: alt i
   tåka blir lysere og blåere enn bildet eieren godkjente. Bufferen holder ferdige sRGB-piksler.

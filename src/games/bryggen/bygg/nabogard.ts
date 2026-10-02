@@ -15,7 +15,7 @@ import * as THREE from 'three';
 import { ColliderKit, MeshKit, slaSammen } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
-import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
 import { lagFolk, type FigurNavn } from './folk';
 import type { Rute } from './vandrer';
 import {
@@ -310,9 +310,12 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `nabo${p.seed}:lod`;
     const folk = await lagFolk([], mats, p.seed, naboRuter(ox, p, yardX, back, rng(p.seed * 31 + 9)));
+    // Det ryker fra ljoren i schøtstua (luft.ts). Huset står på tvers, midt i gården [S].
+    const st = p.schotstue ? houses[houses.length - 1].spec : null;
+    const royk = st ? [new THREE.Vector3(ox, eaveY(st) + riseOf(st), back + p.houseW / 2)] : undefined;
     near.add(folk.group);
     return {
-        near, mid, samlet: { delt, samlet }, colliders: c.specs, gaaende: folk.gaaende, snakkbare: folk.snakkbare,
+        near, mid, samlet: { delt, samlet }, colliders: c.specs, gaaende: folk.gaaende, snakkbare: folk.snakkbare, royk,
         tick: (t, dt, ctx) => folk.tick(t, dt, ctx),
         dispose: () => folk.dispose(),
     };

@@ -11,7 +11,7 @@
 import * as THREE from 'three';
 import type { Physics } from '../motor/physics';
 import { WATER_Y } from '../motor/boat';
-import { CellStreamer, iRom, type CellContent, type CellCtx, type CellDef } from '../motor/streaming';
+import { CellStreamer, iRom, type CellContent, type CellCtx, type CellDef, type Rom } from '../motor/streaming';
 import { Materials, makeSkyEnvironment } from '../motor/materials';
 import { flakk } from '../motor/ild';
 import { lagVann, type Vann } from '../motor/vann';
@@ -19,6 +19,9 @@ import { Maaker } from '../motor/maaker';
 import { Regn } from '../motor/regn';
 import { Rotter, type RotteSone } from '../motor/rotter';
 import { Katter } from '../motor/katter';
+import { Himmel } from '../motor/himmel';
+import { Royk, Stov } from '../motor/luft';
+import type { Lyssetting } from '../motor/stemning';
 import { lagSkipene } from './skip';
 import type { GrayboxLayout } from '../graboks/scene';
 import { FRONT_Z, GARD_DEPTH, GARD_W, YARD_W, type Sides } from './gard';
@@ -41,12 +44,19 @@ export interface BryggenWorld {
     si: ((hvem: string, tekst: string, fra?: THREE.Vector3) => void) | null;
     /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
     environment: THREE.Texture;
+    /** Etterbehandlingen er på: da legger den gløden rundt sola på himmelen (himmel.ts). */
+    post: boolean;
+    /** Sola kaster skygger. Uten dem ville støvet lyst i hele rommet, ikke bare i strålen. */
+    skygger: boolean;
+    /** Hvor vått det er nå (0-1). Henger etter regnet: det tørker sakte. */
+    vaat: number;
     /**
      * Kalles hvert bilde: flammene lever, ildlyset flyttes til nærmeste ildsted, og svaret sier
      * hvor langt inne i et rom `focus` er (0 ute, 1 godt inne). `focus` er kameraet; `spiller`
      * er gutten (måkene letter når han kommer for nær).
      */
     update: (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }) => number;
+    dispose: () => void;
 }
 
 /** Hvor nær et ildsted man må være for at ildlyset skal stå der. */
@@ -58,18 +68,21 @@ const CELL_Z = FRONT_Z + GARD_DEPTH / 2;
 /** Hopp i kailinja per nabogård (meter fram/tilbake). */
 const FRONT_JOG = [-0.9, 0.4, -0.5, 0.7, -1.2, 0.2, -0.4, 0.9];
 
-export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: THREE.WebGLRenderer, opts: { low?: boolean } = {}): Promise<BryggenWorld> {
+export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: THREE.WebGLRenderer, lys: Lyssetting, opts: { low?: boolean } = {}): Promise<BryggenWorld> {
     const materials = new Materials(renderer, { low: opts.low });
     const [gardMod, naboMod, kirkeMod] = await Promise.all([import('./gard'), import('./nabogard'), import('./mariakirken'), materials.load()]);
 
-    // Himmel og miljølys: Bergen i grått vær. Litt kaldere enn gråboksen.
-    const fog = 0x95a0a8;
-    scene.background = new THREE.Color(fog);
-    scene.fog = new THREE.FogExp2(fog, 0.021);
+    // Himmel og miljølys fra stemningen (stemning.ts). Tåka og lysene har `Lyssetting` satt.
     // Lav kvalitet dropper miljølyset (ett oppslag mindre per piksel) og løfter lyset litt i stedet.
-    const environment = makeSkyEnvironment(renderer, 0xb9c3cb, 0x939ea6, 0x3a3833);
+    const st = lys.s;
+    const environment = makeSkyEnvironment(renderer, st.zenit, st.horisont, 0x3a3833, { retning: lys.solRetning, farge: st.solFarge, styrke: st.solGlod });
     scene.environment = opts.low ? null : environment;
-    scene.environmentIntensity = 0.9;
+    scene.environmentIntensity = st.miljo;
+    const himmel = new Himmel(st, lys.solRetning);
+    // Røyk fra ljorene og støv i rommene (luft.ts).
+    const royk = new Royk(lys.solRetning, st.solFarge, st.himmel);
+    const stov = new Stov(lys.solRetning);
+    scene.add(himmel.mesh, royk.mesh, stov.mesh);
 
     const floor = new THREE.Mesh(new THREE.BoxGeometry(400, 0.5, 200), new THREE.MeshStandardMaterial({ color: 0x1f2426, roughness: 1 }));
     floor.position.set(0, WATER_Y - 3, -98);
@@ -117,7 +130,10 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         };
     });
     // ── Vågen ── (etter cellene: speilingen trenger bryggefrontens ende i begge retninger)
-    const vann = lagVann({ y: WATER_Y, frontZ: FRONT_Z, frontX0: xw, frontX1: xe, horisont: 0xa3adb4, zenit: 0xc3ccd3 });
+    const vann = lagVann({
+        y: WATER_Y, frontZ: FRONT_Z, frontX0: xw, frontX1: xe, horisont: st.takeFarge, zenit: st.zenit,
+        sol: { retning: lys.solRetning, farge: st.solFarge, styrke: st.solGlod },
+    });
     scene.add(vann.mesh);
     // Skipene i Vågen (skip.ts): koggen og jektene gynger med bølgene og har kollider mot færingen.
     const skip = lagSkipene(phys, materials, (x) => slots.find((s) => x >= s.x0 && x < s.x1)?.front ?? 0);
@@ -205,12 +221,23 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         naere.sort((a, b) => a.d - b.d);
         pool.forEach((m, i) => m.flytt(naere[i]?.p ?? parkert));
         vann.update(t, world.regn);
+        himmel.update(t, focus, world.post, st.solGlod);
+        royk.update(t, [...streamer.royk()], focus);
+        // Vått med en gang det regner, tørt først etter flere minutter.
+        const vaatMaal = Math.max(st.vaat, Math.min(1, world.regn * 1.4));
+        world.vaat += (vaatMaal - world.vaat) * Math.min(1, dt * (vaatMaal > world.vaat ? 0.5 : 0.004));
+        materials.vaat.mengde = world.vaat;
         skip.update(t);
         maaker.update(dt, t, spiller?.pos ?? focus, spiller?.fart ?? 0);
         sonerTid -= dt;
         if (sonerTid <= 0) {
             sonerTid = 0.5;
             soner = [...uteSoner];
+            // Inne er det tørt: de nærmeste rommene til vætan (vaat.ts). Et skjevt rom (kirken) får
+            // boksen rundt seg i verdensrom.
+            materials.vaat.settRom(
+                [...streamer.rom()].map(verdensboks).sort((a, b) => a.distanceToPoint(focus) - b.distanceToPoint(focus))
+            );
             for (const { box, demp, yaw } of streamer.rom()) {
                 if (demp >= 1 || yaw !== undefined) continue; // schøtstua og ølstua (ild og folk), og kirken
                 const id = `rom:${box.min.x.toFixed(1)}:${box.min.y.toFixed(1)}:${box.min.z.toFixed(1)}`;
@@ -240,16 +267,25 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         } else ildlys.intensity = 0;
         // Inne: 1 når man er mer enn en meter innenfor veggen, tonet ned mot døra.
         let inne = 0;
+        // Støvet står i det rommet kameraet er dypest inne i (ikke i skjeve rom: der ville det
+        // drevet ut gjennom veggene).
+        let innerst: THREE.Box3 | null = null;
+        let dypest = 0;
         for (const r of streamer.rom()) {
             const b = r.box;
             const f = iRom(r, focus, _f);
             if (f.y < b.min.y - 0.5 || f.y > b.max.y) continue;
             const dx = Math.min(f.x - b.min.x, b.max.x - f.x);
             const dz = Math.min(f.z - b.min.z, b.max.z - f.z);
-            const demp = r.demp;
-            inne = Math.max(inne, THREE.MathUtils.clamp(Math.min(dx, dz) / 1.0 + 0.3, 0, 1) * demp);
+            const her = THREE.MathUtils.clamp(Math.min(dx, dz) / 1.0 + 0.3, 0, 1);
+            inne = Math.max(inne, her * r.demp);
+            if (her > dypest && !r.yaw) {
+                dypest = her;
+                innerst = b;
+            }
         }
         regn.update(t % 600, focus, world.regn, Math.min(1, inne * 2));
+        stov.update(t, world.skygger ? innerst : null, inne);
         return inne;
     };
 
@@ -295,12 +331,20 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         kaiKant: { x0: xw, x1: xe, y: WATER_Y + 0.15, z: -0.6 },
         underlag,
         si: null,
-        // ?regn=0 til 1 overstyrer (for skjermbilder og måling). Standard: jevnt Bergen-regn.
-        regn: regnFraUrl() ?? 0.6,
+        // ?regn=0 til 1 overstyrer (for skjermbilder og måling). Standard: det stemningen sier.
+        regn: regnFraUrl() ?? st.regn,
+        post: false,
+        skygger: true,
+        vaat: st.vaat,
         streamer,
         materials,
         environment,
         update,
+        dispose: () => {
+            himmel.dispose();
+            royk.dispose();
+            stov.dispose();
+        },
         layout: {
             playerStart: new THREE.Vector3(0, 0, 2.4),
             playerYaw: 0,
@@ -311,8 +355,16 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         },
     };
     // Utviklerverktøy: testskript kan lese hvor måkene er og skru regnet (`__bryggenVerden.regn`).
-    if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenRotter: rotter, __bryggenVerden: world });
+    if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenRotter: rotter, __bryggenVerden: world, __bryggenHimmel: himmel, __bryggenStov: stov, __bryggenRoyk: royk });
     return world;
+}
+
+/** Boksen rundt et rom i verdensrom (et skjevt rom dreies rundt midten av boksen sin). */
+function verdensboks(r: Rom): THREE.Box3 {
+    if (!r.yaw) return r.box;
+    const c = r.box.getCenter(new THREE.Vector3());
+    const m = new THREE.Matrix4().makeTranslation(c.x, c.y, c.z).multiply(new THREE.Matrix4().makeRotationY(r.yaw)).multiply(new THREE.Matrix4().makeTranslation(-c.x, -c.y, -c.z));
+    return r.box.clone().applyMatrix4(m);
 }
 
 function regnFraUrl(): number | null {
