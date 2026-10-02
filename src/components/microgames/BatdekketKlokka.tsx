@@ -15,12 +15,12 @@ import { useArcadeSave } from './arcade/save';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest } from './playtest';
 import { newGame, update, type Game } from './klokka/game';
-import { hold, klarBåt, klokke, rang, tomme, brukt, vink } from './klokka/rules';
+import { bytt, hold, klokke, rang, tomme, brukt } from './klokka/rules';
 import { BOTS } from './klokka/bots';
 import { GAME_ID, snapshotOf } from './klokka/sim';
 import { skala, tegn, tilArk, treff } from './klokka/draw';
 import { TUNING } from './klokka/tuning';
-import { I1912, REGLER, SOLAS, STYRING, TAP } from './klokka/texts';
+import { I1912, MÅL, REGLER, SOLAS, STYRING, TAP, TAPT_ÅRSAK } from './klokka/texts';
 import type { Side } from './klokka/levels';
 
 // BÅTDEKKET KLOKKA 00.45 - Titanic, natt til 15. april 1912. Gråboks (steg 3a):
@@ -50,7 +50,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
     const [save, updateSave] = useArcadeSave<Save>(GAME_ID, { færrestTomme: null });
     const [slutt, setSlutt] = useState<Game | null>(null);
     const skalaRef = useRef({ s: 1, ox: 0, oy: 0 });
-    const peker = useRef<{ fra: Side | 'kø' | null; t: number } | null>(null);
+    const peker = useRef<{ fra: Side | 'landgang' | null; t: number } | null>(null);
 
     const setModeBoth = (m: Mode) => {
         modeRef.current = m;
@@ -60,11 +60,11 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
     const ferdig = (g: Game) => {
         setSlutt(g);
         setModeBoth('over');
+        const t = tomme(g);
+        updateSave((s) => ({
+            færrestTomme: s.færrestTomme === null ? t : Math.min(s.færrestTomme, t),
+        }));
         if (g.mode === 'won') {
-            const t = tomme(g);
-            updateSave((s) => ({
-                færrestTomme: s.færrestTomme === null ? t : Math.min(s.færrestTomme, t),
-            }));
             onComplete({ score: Math.max(0.3, brukt(g) / 1178), completed: true });
         }
     };
@@ -87,13 +87,15 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         setModeBoth('play');
     };
 
-    // Tastatur: piltaster vinker, A/D holder (firer) babord/styrbord.
+    // Tastatur: piltastene og mellomrom bytter landgang, A/D holder (firer) babord/styrbord.
     useEffect(() => {
         const ned = (e: KeyboardEvent) => {
             const g = gameRef.current;
             if (modeRef.current !== 'play') return;
-            if (e.key === 'ArrowLeft') vink(g, 'B');
-            else if (e.key === 'ArrowRight') vink(g, 'S');
+            if (e.repeat && !'aAdD'.includes(e.key)) return;
+            if (e.key === 'ArrowLeft') bytt(g, 'B');
+            else if (e.key === 'ArrowRight') bytt(g, 'S');
+            else if (e.key === ' ') bytt(g);
             else if (e.key === 'a' || e.key === 'A') hold(g, 'B');
             else if (e.key === 'd' || e.key === 'D') hold(g, 'S');
             else return;
@@ -111,7 +113,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         };
     }, []);
 
-    // Peker: dra fra køen til en båt = vink. Trykk på en båt = vink, hold = fir.
+    // Peker: klikk på landgangen = bytt side. Kort trykk på en båt = landgangen dit,
+    // hold på båten = fir den.
     const onPointer = (e: React.PointerEvent<HTMLCanvasElement>) => {
         const g = gameRef.current;
         if (modeRef.current !== 'play') return;
@@ -122,18 +125,17 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             e.currentTarget.setPointerCapture?.(e.pointerId);
             peker.current = { fra: hit, t: g.t };
             if (hit === 'B' || hit === 'S') hold(g, hit);
+            else if (hit === 'landgang') bytt(g);
         } else if (e.type === 'pointerup' || e.type === 'pointercancel') {
             const p0 = peker.current;
             peker.current = null;
             hold(g, null);
             if (!p0 || e.type === 'pointercancel') return;
-            if (p0.fra === 'kø' && (hit === 'B' || hit === 'S')) vink(g, hit);
-            else if (
+            if (
                 (p0.fra === 'B' || p0.fra === 'S') &&
-                g.t - p0.t < TUNING.firing.holdForsinkelse &&
-                klarBåt(g, p0.fra)
+                g.t - p0.t < TUNING.firing.holdForsinkelse
             )
-                vink(g, p0.fra);
+                bytt(g, p0.fra);
         }
     };
 
@@ -165,7 +167,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
     });
 
     const g = slutt;
-    const tapt = g && g.mode === 'lost' ? TAP[g.årsak ?? 'vann'] : null;
+    const tapt = g && g.mode === 'lost' ? TAP[g.årsak ?? 'tomme'] : null;
 
     return (
         <MicroGameFrame title="Båtdekket klokka 00.45" bleed>
@@ -187,6 +189,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                         <ArcadeScreen>
                             <ArcadeLogo>BÅTDEKKET KLOKKA 00.45</ArcadeLogo>
                             <ArcadeTag>Titanic, natt til 15. april 1912</ArcadeTag>
+                            <p style={{ fontSize: 15, fontWeight: 600 }}>{MÅL}</p>
                             <ol
                                 style={{
                                     textAlign: 'left',
@@ -211,33 +214,35 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
 
                     {mode === 'over' && g && (
                         <ArcadeScreen>
+                            <ArcadeLogo>
+                                {tapt ? tapt.tittel : 'Du reddet flere enn i 1912'}
+                            </ArcadeLogo>
+                            <ArcadeStats
+                                items={[
+                                    { value: brukt(g), label: 'reddet' },
+                                    { value: I1912.reddet, label: 'reddet i 1912' },
+                                    { value: tomme(g), label: 'tomme plasser' },
+                                    { value: I1912.tomme, label: 'tomme i 1912' },
+                                ]}
+                            />
                             {tapt ? (
-                                <>
-                                    <ArcadeLogo>{tapt.tittel}</ArcadeLogo>
-                                    <p style={{ fontSize: 15 }}>
-                                        {g.tapsBåt} klokka {klokke(g.t)}. {brukt(g)} plasser brukt
-                                        så langt.
-                                    </p>
-                                    <p style={{ fontSize: 14 }}>{tapt.tips}</p>
-                                </>
+                                <p style={{ fontSize: 14 }}>{tapt.tips}</p>
                             ) : (
-                                <>
-                                    <ArcadeLogo>Alle 20 båtene er på vannet</ArcadeLogo>
-                                    <ArcadeStats
-                                        items={[
-                                            { value: brukt(g), label: 'plasser brukt' },
-                                            { value: tomme(g), label: 'tomme' },
-                                            { value: I1912.tomme, label: 'tomme i 1912' },
-                                        ]}
-                                    />
-                                    <ArcadeTag>{rang(tomme(g))}</ArcadeTag>
-                                    <p style={{ fontSize: 14 }}>
-                                        1912: rundt {I1912.brukt} plasser brukt. {I1912.tomme}{' '}
-                                        tomme.
-                                    </p>
-                                    <p style={{ fontSize: 13 }}>{SOLAS}</p>
-                                </>
+                                <ArcadeTag>{rang(tomme(g))}</ArcadeTag>
                             )}
+                            {g.tapte.length > 0 && (
+                                <p style={{ fontSize: 13 }}>
+                                    Tapte båter:{' '}
+                                    {g.tapte
+                                        .map(
+                                            (x) =>
+                                                `${x.navn} ${klokke(x.kl)} (${TAPT_ÅRSAK[x.årsak]})`
+                                        )
+                                        .join(', ')}
+                                    .
+                                </p>
+                            )}
+                            <p style={{ fontSize: 13 }}>{SOLAS}</p>
                             <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
                                 <ArcadeBigButton onClick={start}>Prøv igjen</ArcadeBigButton>
                                 <ArcadeSmallButton onClick={() => setModeBoth('menu')}>

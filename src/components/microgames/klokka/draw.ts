@@ -3,7 +3,7 @@
 
 import type { ArcadeView } from '../arcade/useArcade';
 import { BRETT, type Side } from './levels';
-import { frist, høySide, klokke, krengning, ledig, tomme, brukt, vannDekk } from './rules';
+import { frist, høySide, klokke, klarBåt, krengning, ledig, tomme, brukt, vannDekk } from './rules';
 import type { Båt, Game } from './state';
 import { TUNING } from './tuning';
 
@@ -44,13 +44,13 @@ export const tilArk = (k: Skala, x: number, y: number) => ({
     y: (y - k.oy) / k.s,
 });
 
-/** Hva pekeren treffer: en båtside, køen eller ingenting. */
-export function treff(x: number, y: number): Side | 'kø' | null {
+/** Hva pekeren treffer: en båtside, landgangen (køen) eller ingenting. */
+export function treff(x: number, y: number): Side | 'landgang' | null {
     if (y > 80 && y < 520) {
         if (Math.abs(x - BÅT_X.B) < BÅT_W / 2 + 20) return 'B';
         if (Math.abs(x - BÅT_X.S) < BÅT_W / 2 + 20) return 'S';
     }
-    if (x > SKROG.x0 && x < SKROG.x1 && y > 70 && y < 165) return 'kø';
+    if (x > SKROG.x0 - 60 && x < SKROG.x1 + 60 && y > 60 && y < 165) return 'landgang';
     return null;
 }
 
@@ -161,17 +161,85 @@ function vann(c: CanvasRenderingContext2D, g: Game) {
     c.stroke();
 }
 
+/** En liten person: hode og kropp. */
+function figur(c: CanvasRenderingContext2D, x: number, y: number) {
+    c.beginPath();
+    c.arc(x, y - 9, 2.2, 0, Math.PI * 2);
+    c.fill();
+    c.fillRect(x - 2, y - 6, 4, 7);
+}
+
+/** Køen som små figurer i gruppene sine. Forrest (nærmest landgangen) til venstre for midten. */
 function kø(c: CanvasRenderingContext2D, g: Game) {
     const n = g.kø.reduce((s, x) => s + x.antall, 0);
-    const vis = Math.min(n, 120);
-    for (let i = 0; i < vis; i++) {
-        const x = MIDT - 110 + (i % 30) * 7.5;
-        const y = 135 - Math.floor(i / 30) * 9;
-        c.fillStyle = i < (g.kø[0]?.antall ?? 0) ? F.gul : '#b8954a';
-        c.fillRect(x, y, 5, 7);
+    // Køen står i en klump på dekket; gruppene skilles med et lite mellomrom.
+    let x = 0;
+    let rad = 0;
+    const bredde = 200;
+    let vist = 0;
+    for (let gi = 0; gi < g.kø.length && vist < 90; gi++) {
+        const gr = g.kø[gi];
+        c.fillStyle = gi === 0 ? F.gul : gr.klasse === 3 ? '#9a7a3e' : '#b8954a';
+        for (let i = 0; i < gr.antall && vist < 90; i++, vist++) {
+            if (x > bredde) {
+                x = 0;
+                rad++;
+            }
+            figur(c, MIDT - bredde / 2 + x, 140 - rad * 14);
+            x += 6.5;
+        }
+        x += 7;
     }
-    tekst(c, `KØ ${n}`, MIDT, 92, 16, n ? F.gul : F.svak);
-    if (g.kø[0]) tekst(c, `forrest: ${g.kø[0].antall}`, MIDT, 74, 12, F.svak);
+    tekst(c, n > vist ? `KØ ${n} (+${n - vist} til)` : `KØ ${n}`, MIDT, 70, 15, n ? F.gul : F.svak);
+}
+
+/** Landgangen: en rampe fra køen mot båten på den siden den peker. */
+function landgang(c: CanvasRenderingContext2D, g: Game) {
+    const side = g.landgang;
+    const mål = BÅT_X[side] + (side === 'B' ? BÅT_W / 2 - 10 : -BÅT_W / 2 + 10);
+    const fra = side === 'B' ? MIDT - 110 : MIDT + 110;
+    const venter = g.t < g.landgangKlar;
+    const åpen = !!klarBåt(g, side) && !venter;
+    c.strokeStyle = åpen ? F.gul : F.svak;
+    c.lineWidth = 6;
+    c.beginPath();
+    c.moveTo(fra, 146);
+    c.lineTo(mål, 120);
+    c.stroke();
+    // Pilspiss mot båten.
+    const dir = side === 'B' ? -1 : 1;
+    c.fillStyle = c.strokeStyle;
+    c.beginPath();
+    c.moveTo(mål + dir * 6, 118);
+    c.lineTo(mål - dir * 12, 108);
+    c.lineTo(mål - dir * 12, 130);
+    c.closePath();
+    c.fill();
+    tekst(c, 'LANDGANG - klikk for å bytte', MIDT, 162, 11, F.svak);
+}
+
+/** Lunta: en linje som brenner ned fra båten ble klar til fristen. */
+function lunte(c: CanvasRenderingContext2D, g: Game, b: Båt, x: number, y: number) {
+    const fr = frist(b);
+    const igjen = Math.max(0, fr.t - g.t);
+    const andel = Math.min(1, igjen / 30);
+    const w = BÅT_W;
+    c.strokeStyle = F.svak;
+    c.lineWidth = 3;
+    c.beginPath();
+    c.moveTo(x - w / 2, y);
+    c.lineTo(x + w / 2, y);
+    c.stroke();
+    c.strokeStyle = igjen < TUNING.varsel ? F.rød : F.gul;
+    c.beginPath();
+    c.moveTo(x - w / 2, y);
+    c.lineTo(x - w / 2 + w * andel, y);
+    c.stroke();
+    // Gnisten i enden.
+    c.fillStyle = F.rød;
+    c.beginPath();
+    c.arc(x - w / 2 + w * andel, y, 4, 0, Math.PI * 2);
+    c.fill();
 }
 
 function båt(c: CanvasRenderingContext2D, g: Game, side: Side) {
@@ -204,8 +272,9 @@ function båt(c: CanvasRenderingContext2D, g: Game, side: Side) {
     }
     tekst(c, `${b.folk} / ${b.plasser}`, x, y - 14, 18, b.folk === b.plasser ? F.gul : F.linje);
     tekst(c, b.navn, x, y + 44, 12, F.svak);
+    if (b.ned === 0) lunte(c, g, b, x, y - 34);
     if (fare) tekst(c, fr.årsak === 'lås' ? 'LÅSES SNART' : 'VANNET KOMMER', x, y + 60, 12, F.rød);
-    if (b.ned === 0 && b.folk > 0 && ledig(b) >= 0)
+    if (b.ned === 0 && b.folk > 0 && ledig(b) >= 0 && side === g.landgang)
         tekst(c, side === 'B' ? 'hold A' : 'hold D', x, y + 76, 11, F.svak);
 }
 
@@ -214,7 +283,9 @@ function hud(c: CanvasRenderingContext2D, g: Game) {
     c.lineWidth = 1;
     c.strokeRect(760, 440, 190, 90);
     tekst(c, klokke(g.t), 855, 470, 34, F.linje);
-    tekst(c, `Brukt ${brukt(g)}   Tomme ${tomme(g)}`, 855, 508, 13, F.linje);
+    const r = brukt(g);
+    tekst(c, `Reddet ${r} (1912: ${TUNING.seier})`, 855, 500, 13, r > TUNING.seier ? F.gul : F.linje);
+    tekst(c, `Tomme plasser ${tomme(g)}`, 855, 518, 12, F.svak);
     const br = BRETT[Math.min(g.brett, BRETT.length - 1)];
     tekst(c, br.tittel, 20, 470, 14, F.linje, 'left');
     tekst(
@@ -250,6 +321,7 @@ export function tegn(view: ArcadeView, g: Game) {
     profil(c, g);
     snitt(c, g);
     vann(c, g);
+    landgang(c, g);
     kø(c, g);
     båt(c, g, 'B');
     båt(c, g, 'S');

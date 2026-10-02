@@ -30,7 +30,7 @@ export interface Gruppe {
 
 export interface Hendelse {
     t: number;
-    slag: 'ombord' | 'nede' | 'brett' | 'rakett' | 'tapt' | 'vunnet' | 'ankommer';
+    slag: 'ombord' | 'nede' | 'brett' | 'rakett' | 'tapt' | 'vunnet' | 'ankommer' | 'bytt';
     side?: Side;
     tekst?: string;
 }
@@ -39,8 +39,10 @@ export interface Game {
     rng: Rng;
     t: number; // spillsekunder etter 00.45
     mode: 'play' | 'won' | 'lost';
-    årsak: 'vann' | 'lås' | null;
-    tapsBåt: string | null;
+    /** Hvorfor runden ble tapt: for mange tomme plasser, eller båtene gikk tapt. */
+    årsak: 'tomme' | 'tapt' | null;
+    /** Båtene vannet eller krengningen tok, med årsak. */
+    tapte: { navn: string; årsak: 'vann' | 'lås'; kl: number }[];
     brett: number;
     kortTil: number; // brettkortet står til dette tidspunktet
     båter: Båt[];
@@ -52,8 +54,15 @@ export interface Game {
     nesteGruppe: Record<Klasse, number>;
     portÅpner: number;
     nesteId: number;
+    /** Siden landgangen peker mot. Køen går selv inn i båten på den siden. */
+    landgang: Side;
+    /** Landgangen står stille til dette tidspunktet (etter et sidebytte). */
+    landgangKlar: number;
+    /** Brøkdel av en person som er på vei over landgangen. */
+    landgangRest: number;
     hold: Side | null;
     holdT: number;
+    /** Ærlige valg: sidebytter og firinger som starter. */
     valg: number;
     hendelser: Hendelse[];
     raketter: number[]; // tidspunkt for raketter som er skutt opp
@@ -83,7 +92,7 @@ export function newGame(seed: number): Game {
         t: 0,
         mode: 'play',
         årsak: null,
-        tapsBåt: null,
+        tapte: [],
         brett: 0,
         kortTil: 0,
         båter,
@@ -94,6 +103,9 @@ export function newGame(seed: number): Game {
         nesteGruppe: { 1: 0, 2: 0, 3: 0 },
         portÅpner: p0 + rng() * (p1 - p0),
         nesteId: 1,
+        landgang: 'S',
+        landgangKlar: 0,
+        landgangRest: 0,
         hold: null,
         holdT: 0,
         valg: 0,

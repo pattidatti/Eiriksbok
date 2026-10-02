@@ -4,7 +4,7 @@ import type { PlaytestSnapshot } from '../playtest';
 import type { SimSpec } from '../sim';
 import { BOTS } from './bots';
 import { update, type Game } from './game';
-import { brukt, nedeAntall, press } from './rules';
+import { brukt, ferdigBåter, press } from './rules';
 import { newGame } from './state';
 import { TUNING } from './tuning';
 import { ALLE_BÅTER } from './levels';
@@ -13,9 +13,7 @@ export const GAME_ID = 'klokka-0045';
 
 export function årsakTekst(g: Game): string | undefined {
     if (g.mode !== 'lost') return undefined;
-    return g.årsak === 'lås'
-        ? `krengningen låste ${g.tapsBåt} mot skroget`
-        : `vannet tok ${g.tapsBåt} før den var nede`;
+    return g.årsak === 'tomme' ? 'for mange tomme plasser' : 'båtene gikk tapt';
 }
 
 export function snapshotOf(g: Game | null, meny = false): PlaytestSnapshot {
@@ -23,7 +21,7 @@ export function snapshotOf(g: Game | null, meny = false): PlaytestSnapshot {
     return {
         fase: g.mode === 'won' ? 'vunnet' : g.mode === 'lost' ? 'tapt' : 'spiller',
         poeng: brukt(g),
-        framdrift: nedeAntall(g) / ALLE_BÅTER.length,
+        framdrift: ferdigBåter(g) / ALLE_BÅTER.length,
         tid: g.t,
         valg: g.valg,
         press: press(g),

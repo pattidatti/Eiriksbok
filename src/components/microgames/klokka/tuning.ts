@@ -14,9 +14,20 @@ export const TUNING = {
     // Klokka: runden slutter når skipet er borte.
     slutt: kl('02.20'),
 
+    /** Seier: redd flere enn dette (de som faktisk ble reddet i 1912) før natta er over. */
+    seier: 705,
+
+    // Landgangen: én rampe som peker mot babord eller styrbord. Køen går selv om bord.
+    landgang: {
+        /** Folk per sekund som går over landgangen og setter seg. */
+        perSek: 10,
+        /** Sekunder landgangen står stille når du bytter side. */
+        bytt: 0.6,
+    },
+
     // Firingen. Sekunder du må holde for å fire en båt helt ned på den lave siden.
     firing: {
-        /** Holdet må vare så lenge før tauet begynner å løpe (et kort trykk vinker i stedet). */
+        /** Holdet må vare så lenge før tauet begynner å løpe (et kort trykk flytter landgangen i stedet). */
         holdForsinkelse: 0.2,
         livbåt: 4.2,
         kutter: 3.4,
@@ -35,9 +46,9 @@ export const TUNING = {
         { t: kl('00.45'), grader: 0 },
         { t: kl('01.05'), grader: 1.5 },
         { t: kl('01.30'), grader: 3 },
-        { t: kl('01.40'), grader: 0 },
-        { t: kl('02.10'), grader: -7 },
-        { t: kl('02.20'), grader: -8 },
+        { t: kl('01.38'), grader: 0 },
+        { t: kl('02.00'), grader: -6 },
+        { t: kl('02.20'), grader: -9 },
     ],
     /** Krenger skipet så mye mot babord, låses livbåtene og kutterne på styrbord mot skroget. */
     låsGrader: 5,
@@ -60,23 +71,24 @@ export const TUNING = {
             åpner: kl('00.45'),
             gang: [4, 7] as [number, number],
             faser: [
-                { fra: kl('00.45'), intervall: [5, 7], størrelse: [2, 6] },
-                { fra: kl('00.50'), intervall: [3, 4.5], størrelse: [3, 8] },
-                { fra: kl('01.10'), intervall: [2.8, 4], størrelse: [4, 9] },
+                // Ingen tror at skipet synker: små grupper som nøler.
+                { fra: kl('00.45'), intervall: [6, 9], størrelse: [2, 5] },
+                { fra: kl('00.55'), intervall: [3.5, 5], størrelse: [3, 7] },
+                { fra: kl('01.10'), intervall: [3, 4], størrelse: [4, 8] },
             ],
         },
         2: {
             åpner: kl('01.00'),
             gang: [8, 14] as [number, number],
             faser: [
-                { fra: kl('01.00'), intervall: [2.2, 3.2], størrelse: [5, 11] },
-                { fra: kl('01.30'), intervall: [1.8, 2.6], størrelse: [6, 12] },
+                { fra: kl('01.00'), intervall: [2.5, 3.5], størrelse: [5, 10] },
+                { fra: kl('01.25'), intervall: [2, 2.8], størrelse: [6, 11] },
             ],
         },
         3: {
-            åpner: kl('01.20'),
+            åpner: kl('01.25'),
             gang: [18, 28] as [number, number],
-            faser: [{ fra: kl('01.20'), intervall: [1.6, 2.4], størrelse: [10, 18] }],
+            faser: [{ fra: kl('01.25'), intervall: [2.4, 3.2], størrelse: [8, 14] }],
         },
     } as Record<
         1 | 2 | 3,
@@ -87,13 +99,13 @@ export const TUNING = {
         }
     >,
     /** Gitterporten for tredje klasse: hvor langt opp den står (0-1), og når den åpnes. */
-    port: { pos: 0.55, åpner: [kl('01.33'), kl('01.38')] as [number, number] },
+    port: { pos: 0.55, åpner: [kl('01.36'), kl('01.42')] as [number, number] },
 
     /** Nødrakettene (klokkeslett). Bare til visningen - fasene over gjør gruppene større. */
-    raketter: [kl('00.50'), kl('01.00'), kl('01.10'), kl('01.20'), kl('01.30')],
+    raketter: [kl('00.55'), kl('01.00'), kl('01.10'), kl('01.20'), kl('01.30')],
 
-    // Planleggeren (rules.ts, sisteStart): typisk gruppe og sekunder per vink.
-    plan: { gruppe: 10, vinkSek: 0.25 },
+    // Planleggeren (rules.ts, sisteStart): sekunder mellom to firinger med samme hånd.
+    plan: { pause: 0.3 },
 
     // Presset (0-1) i snapshot: vann, krengning og kø.
     press: { vann: 0.55, krengning: 0.2, kø: 0.25, køFull: 60 },

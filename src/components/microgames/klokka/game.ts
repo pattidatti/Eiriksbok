@@ -1,8 +1,10 @@
-// Kjerneløkka: update(g, dt) flytter klokka, folkene i trappene, båtene på
-// davitene og sjekker fristene. Grepene (vink, hold) står i rules.ts.
+// Kjerneløkka: update(g, dt) flytter klokka, folkene i trappene og over landgangen,
+// båtene på davitene og sjekker fristene. Grepene (bytt, hold) står i rules.ts.
+// Seier: redd flere enn i 1912 (TUNING.seier) før natta er over. En tapt båt er
+// ikke tap i seg selv - plassene i den er bare borte.
 
 import { BRETT, type Side } from './levels';
-import { fase, firetid, frist, mellom } from './rules';
+import { brukt, fase, firetid, frist, gåOmBord, mellom, taptePlasser, tomme } from './rules';
 import type { Game, Klasse } from './state';
 import { TUNING } from './tuning';
 
@@ -38,7 +40,6 @@ function gå(g: Game, dt: number) {
             gr.pos = 1;
             gr.iKø = true;
             g.kø.push(gr);
-            g.valg++; // ny gruppe på dekket: babord eller styrbord?
             g.hendelser.push({ t: g.t, slag: 'ankommer' });
         }
     }
@@ -55,7 +56,6 @@ function davitene(g: Game) {
         if (!neste) continue;
         neste.tilstand = 'henger';
         g.davit[side] = neste.nr;
-        g.valg++; // ny båt: når skal den ned?
     }
 }
 
@@ -66,6 +66,7 @@ function firing(g: Game, dt: number) {
     const b = g.båter[i];
     g.holdT += dt;
     if (g.holdT < TUNING.firing.holdForsinkelse) return;
+    if (b.tilstand === 'henger') g.valg++; // å fire nå er et valg
     b.tilstand = 'fires';
     b.ned += dt / firetid(b, g.t);
     if (b.ned >= 1) {
@@ -82,28 +83,42 @@ function firing(g: Game, dt: number) {
 
 function frister(g: Game) {
     for (const b of g.båter) {
-        if (b.tilstand === 'nede' || b.tilstand === 'tapt') continue;
+        if (b.tilstand === 'nede' || b.tilstand === 'tapt' || b.tilstand === 'venter') continue;
         const f = frist(b);
-        if (g.t >= f.t) {
-            b.tilstand = 'tapt';
-            g.mode = 'lost';
-            g.årsak = f.årsak;
-            g.tapsBåt = b.navn;
-            g.hendelser.push({ t: g.t, slag: 'tapt', tekst: b.navn });
-            return;
+        if (g.t < f.t) continue;
+        // Lunta har brent ned: båten og plassene i den er borte. Runden går videre.
+        b.tilstand = 'tapt';
+        g.tapte.push({ navn: b.navn, årsak: f.årsak, kl: g.t });
+        if (g.davit[b.side] === b.nr) {
+            g.davit[b.side] = null;
+            g.svingTil[b.side] = g.t + TUNING.firing.svingUt;
+            if (g.hold === b.side) {
+                g.hold = null;
+                g.holdT = 0;
+            }
         }
+        g.hendelser.push({ t: g.t, slag: 'tapt', tekst: b.navn });
     }
+    // Båter som aldri rakk å svinge ut, er også borte når fristen er passert.
+    for (const b of g.båter)
+        if (b.tilstand === 'venter' && g.t >= frist(b).t) {
+            b.tilstand = 'tapt';
+            g.tapte.push({ navn: b.navn, årsak: frist(b).årsak, kl: g.t });
+        }
+}
+
+/** Natta er over: alle båtene er nede eller tapt, eller klokka har passert 02.20. */
+function slutt(g: Game) {
+    g.mode = brukt(g) > TUNING.seier ? 'won' : 'lost';
+    if (g.mode === 'lost') g.årsak = tomme(g) >= taptePlasser(g) ? 'tomme' : 'tapt';
+    g.hendelser.push({ t: g.t, slag: g.mode === 'won' ? 'vunnet' : 'tapt' });
 }
 
 function brettFerdig(g: Game) {
     const mine = g.båter.filter((b) => b.brett === g.brett);
-    if (!mine.every((b) => b.tilstand === 'nede')) return;
+    if (!mine.every((b) => b.tilstand === 'nede' || b.tilstand === 'tapt')) return;
     g.brett++;
-    if (g.brett >= BRETT.length) {
-        g.mode = 'won';
-        g.hendelser.push({ t: g.t, slag: 'vunnet' });
-        return;
-    }
+    if (g.brett >= BRETT.length) return slutt(g);
     g.kortTil = g.t + TUNING.firing.kort;
     g.hendelser.push({ t: g.t, slag: 'brett', tekst: BRETT[g.brett].tittel });
 }
@@ -120,8 +135,10 @@ export function update(g: Game, dt: number) {
     nyeGrupper(g);
     gå(g, dt);
     davitene(g);
+    gåOmBord(g, dt);
     firing(g, dt);
+    frister(g);
     brettFerdig(g);
-    if (g.mode === 'play') frister(g);
+    if (g.mode === 'play' && g.t >= TUNING.slutt) slutt(g);
     if (g.hendelser.length > 60) g.hendelser.splice(0, g.hendelser.length - 60);
 }

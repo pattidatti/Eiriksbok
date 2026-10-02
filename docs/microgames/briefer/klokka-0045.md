@@ -358,3 +358,30 @@ preussisk blått, lanternegule plasser i natta».
   klokka - den er ferdig 01.33; venter-alltid får mange plasser før den taper, så ferdighetstrappen
   hviler på at halvgod vinner; folk i trappene tegnes under vannflata; portfunn som er ventet nå:
   ingen cover, ingen useArcadeText / «Dette skjedde», bildet står nesten stille uten input.
+- **Fase: diagnose-grep 1 (byggmester, 2026-10-02).** Gjorde de tre endringene i kjerneløkka fra
+  gråboks-diagnosen. (1) Seier = redde flere enn 1912 (705) når natta er over (alle båtene nede eller
+  tapt, eller 02.20). En tapt båt er ikke lenger tap i seg selv: båten og folkene i den er borte, og
+  runden går videre. Tap gir årsak og tips: «For mange tomme plasser» eller «Båtene gikk tapt», og
+  sluttskjermen viser reddet mot 705, tomme mot 472 og lista over tapte båter. (2) Landgang i stedet
+  for å vinke hver gruppe: en rampe peker mot babord eller styrbord, køen går selv om bord (10 folk i
+  sekundet), eleven bytter side med ett klikk (landgangen, kort trykk på båten, mellomrom eller
+  piltastene) og holder for å fire (A/D eller hold på båten). Et bytte stopper landgangen i 0,6 s.
+  (3) Knapp tid: få folk i starten (grupper på 2-5 hvert 6.-9. sekund til 00.55), tette absolutte
+  frister (brett 1: 01.02, 01.07, 01.12; brett 2: 01.18-01.38; brett 3: 01.48-02.04; brett 4:
+  02.09-02.17), og fristen vises som en lunte over hver båt som henger. Billig i tillegg: køen er små
+  figurer i grupper (forreste gruppe gul, tredje klasse mørkere) i stedet for rutenett. `valg` teller
+  nå bare sidebytter og firinger som starter. Robotene bruker samme grep (`bytt`, `hold`); planleggeren
+  regner nå med svingetid per side og brettkortet. Simulering (200 runder per robot), grønn: klok vinner
+  100 % (median 875 reddet, p10-p90 861-890), halvgod 100 % (769), fir-straks 0 % (626, p90 665),
+  venter-alltid 0 % (224, mister nesten alle båtene i brett 1 og 2), tilfeldig 0 % (4), passiv 0 %.
+  10,2 valg per minutt, press 0,11 -> 0,32 -> 0,78. Nettleseren: klok vant med 858 (innenfor simens
+  p10-p90). Det som IKKE virket: første forsøk hadde nesten ingen folk før 01.25 og så en flom - da vant
+  fir-straks over klok (582 mot 536), fordi fir-straks kom tidlig til brett 3 og 4 og fikk dem fulle i
+  flommen, mens klok ble stående med 300 i køen og landgangen som flaskehals (7-8 folk i sekundet). Det
+  hjalp med jevnere ankomster (mer andre klasse fra 01.00), 10 folk i sekundet over landgangen, brett 3
+  spredt ut, og at klok flytter landgangen også mens den firer. Kjente svakheter: fir-straks taper bare
+  på brett 1 og 2 (flere folk tidlig løfter den mot 705); venter-alltid ligger svært lavt (224), så
+  straffen for å vente er brutal; halvgod vinner 100 % (trappa holder på medianer, men middels er lett);
+  teksten «LANDGANG - klikk for å bytte» overlapper dekksnavnet; brett 1 har bare styrbord, så
+  landgangen betyr ingenting der; sluttskjermen viser ennå ikke hvilke klasser som ble igjen. Portfunn
+  som er ventet nå: ingen cover, ingen useArcadeText / «Dette skjedde», bildet står nesten stille uten input.
