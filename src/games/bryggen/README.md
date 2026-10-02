@@ -34,6 +34,11 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/meshkit.ts` | Geometri-settet: bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
 | `motor/materials.ts` | PBR-materialene (farge, normal, ARM) og miljølys fra en enkel himmel |
 | `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå |
+| `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning |
+| `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
+| `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
+| `motor/post.ts` | Etterbehandling på full kvalitet: FXAA, fargetone (kaldt ute, varmt inne), vignett, filmkorn. Ett pass |
+| `motor/faering-modell.ts` | Færingen som modell: klinkbygd skrog med bordganger, stavner, ripe, tiljer og tofter |
 | `motor/ild.ts` | Åpen ild: flammetunger, glør og røyk (tre tegnekall per bål), og `flakk(t)` som lyset følger |
 | `bygg/moduler.ts` | Modulsettet: laft med laftehoder, gavl, bordkledd fasade, torvtak, bordtak, vinsj, dører, glugger og utkraget overetasje |
 | `bygg/inne.ts` | Hus man kan gå inn i: hule etasjer med hull for åpne dører og glugger, golv, bjelkelag med trappehull og rekkverk, trapp, terskelkiler, innergavler og åser |
@@ -103,7 +108,18 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Landemerker som skal synes over hele byen (Mariakirken) bruker `materials.tynnTake(key)`: kopier av
   materialene med halvparten så tett tåke, som følger kvalitetsbyttet. Med vanlig tåke er alt borte
   bak 100 m. Ikke bruk det på vanlige hus: da forsvinner dybden.
-- Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten.
+- Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten. Lysdempingen inne og
+  regnet følger likevel det vanlige kameraet, så fotokameraet viser regn også inne i et rom.
+- `__bryggenMaaker` og `__bryggenVerden` (bare i dev): testskript kan flytte måker og skru regnet
+  (`__bryggenVerden.regn`, 0-1). `?regn=0` i adressen gir tørt vær, `?post=0` slår av etterbehandlingen.
+- Etterbehandlingen tegner scenen til en buffer som later som den er en XR-buffer
+  (`isXRRenderTarget`). Ellers tonemapper ikke Three, og tåka blandes inn før tonekurven: alt i
+  tåka blir lysere og blåere enn bildet eieren godkjente. Bufferen holder ferdige sRGB-piksler.
+- Rendereren teller tegnekall for hele bildet (`info.autoReset = false`, nullstilt i løkka), fordi
+  etterbehandlingen tegner to ganger.
+- Vannet speiler ikke scenen. Speilingen sjekker strålen mot en tenkt vegg langs bryggefronten
+  (høyde trukket per gård). Flytter fronten seg, må `frontZ` i `lagVann` følge med.
+- Vær i ett tall: `world.regn` (0-1) styrer både regnstrekene og ringene i vannet.
 - Ting som ikke skal ha treårer (tørrfisk) lages av `raatre` innenfor `k.withUv(0.04, …)`: UV-ene
   krympes, så flaten får nesten én farge fra teksturen. Formen må da komme fra geometrien og
   `shade` per hjørne. Aldri 0: normalkartet trenger UV-er som endrer seg.

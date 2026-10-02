@@ -609,8 +609,15 @@ Mixamo brukes ikke (krever innlogging).
   Taktekkingen er heller ikke funnet **[K]**. Vinkelen mot gårdsrekkene og avstanden er valgt for
   spillet **[S]**. Kirken har egne materialkopier med halvparten så tett tåke, ellers forsvinner
   den bak 100 m. Ingen kollidere: man kommer ikke dit før Maria allmenning bygges
+- [~] Vågen, vær og etterbehandling (02.10.2026): vannet har bølger (lange dønninger, krapp vind,
+  fin krusning nær kameraet), falsk speiling av husrekka og ringer fra regndråper. Regnet faller i en
+  boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,
+  kjølig fargetone ute og varm inne ved ilden, vignett og filmkorn. Bildet ellers er pikselt likt det
+  eieren godkjente (målt). Koster ca. 1 FPS i programvare-GL, ingenting på lav. Venter på eierens spilltest
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
-- [ ] Færing (gråboksens form, med ekte treteksturer)
+- [~] Færing (02.10.2026): klinkbygd skrog med fire bordganger per side, stavner i begge ender, ripe,
+  tiljer og tofter, med råtre-teksturen fra byen [S: formen er en vanlig vestlandsfæring, ikke målt
+  opp fra et funn]. Venter på eierens spilltest
 - [~] Figurer (02.10.2026, `motor/figur.ts`, `bygg/folk.ts`): UAL-mannequinen kledd i kode, én
   geometri og ett materiale per drakt. Kjortel med belte og skjørt som følger lårene, hette med kappe
   over skuldrene og lang tut (oppe hos de voksne, nede som krage hos guttene), hoser og lave sko.
@@ -628,7 +635,10 @@ Mixamo brukes ikke (krever innlogging).
   samtaler. De strømmes med cella og har kollider. Hvem som fantes i gården (husbonde, svenner, drenger,
   alle ugifte menn og gutter) er [V]; hva rangene gjorde er fortalt for 1600/1700-tallet [U]; hvem som
   sitter og gjør hva er [S]
-- [ ] Dyr: hund, måke, rotte
+- [~] Dyr: måker bygget 02.10.2026 (`motor/maaker.ts`): 16 måker i ett tegnekall, laget i kode
+  (ingen asset: lavpoly-pakkene kolliderte med stilen, §9.7). De sirkler over kaia, lander på
+  kaidekket og vannet, snur seg og hopper, og letter i flokk når gutten spurter forbi eller går helt
+  inntil. Venter på eierens spilltest. Hund og rotte mangler
 - [ ] Lyd: regn, måker, plankegang, åretak, folk på plattysk og norsk. Funnet: *Rain (loopable)*, 4 OGG-løkker, CC0, direkte nedlasting fra OpenGameArt. *Steps in wood floor* (CC0, OpenGameArt). Måker, åretak og stemmer **[K]** (neste sted å lete: Wikimedia Commons, der lyd er direkte nedlastbar; sjekk lisens per fil)
 
 ---

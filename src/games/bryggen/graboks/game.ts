@@ -15,6 +15,7 @@ import { EnemyAI, PlayerCombat, type CombatSink, type DamageEvent } from '../mot
 import { Gore } from '../motor/gore';
 import { buildGraybox, type GrayboxLayout } from './scene';
 import type { BryggenWorld } from '../bygg/bryggen';
+import { Etterbehandling } from '../motor/post';
 
 /** Hvilken verden løkka kjører: grå prøvescene eller Bryggen bygget av modulsettet. */
 export type WorldId = 'graboks' | 'gard';
@@ -112,6 +113,8 @@ export class GrayboxGame {
     /** ?skygger=0 slår av skygger også på full kvalitet (for måling). */
     private readonly shadowsAllowed: boolean;
     private hemi!: THREE.HemisphereLight;
+    /** Etterbehandlingen (kantutjevning, fargetone, vignett). Bare Bryggen-scenen på full kvalitet. */
+    private post: Etterbehandling | null = null;
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
@@ -127,6 +130,8 @@ export class GrayboxGame {
         this.renderer.toneMappingExposure = 1.05;
         this.renderer.shadowMap.enabled = opts.shadows && !opts.low;
         this.renderer.shadowMap.type = THREE.PCFShadowMap;
+        // Etterbehandlingen tegner to ganger per bilde: tell hele bildet, ikke bare siste tegning.
+        this.renderer.info.autoReset = false;
         container.appendChild(this.renderer.domElement);
         this.renderer.domElement.style.display = 'block';
         this.renderer.domElement.tabIndex = 0;
@@ -183,6 +188,8 @@ export class GrayboxGame {
             // Miljølyset fra himmelen gjør en del av jobben halvkulelyset gjør i gråboksen.
             hemi.intensity = this.low ? 1.7 : 1.25;
             this.renderer.toneMappingExposure = 1.2;
+            // ?post=0 slår av etterbehandlingen (for å sammenligne og måle).
+            if (new URLSearchParams(location.search).get('post') !== '0') this.post = new Etterbehandling();
         } else {
             this.layout = buildGraybox(this.scene, this.phys);
         }
@@ -214,9 +221,12 @@ export class GrayboxGame {
         this.pc = new PlayerCombat(this.player, 100);
         this.ai = new EnemyAI(this.enemy, 110, enemyTint);
 
-        // Færingen får ekte treteksturer senere (asset-tracker §10); i Bryggen-scenen er den i alle fall brun.
-        const boatColor = this.world ? 0x6b5848 : 0x8a8d8f;
-        this.boat = new Faering(this.phys, L.boatStart, L.boatYaw, new THREE.MeshStandardMaterial({ color: boatColor, roughness: 0.9 }));
+        // Færingen: i Bryggen-scenen med samme råtre-tekstur som byen (bare fargekartet, så den
+        // ikke trenger å følge kvalitetsbyttet), i gråboksen grå.
+        const boatMat = this.world
+            ? new THREE.MeshStandardMaterial({ map: this.world.materials.get('raatre').map, color: 0xb59a80, roughness: 0.8 })
+            : new THREE.MeshStandardMaterial({ color: 0x8a8d8f, roughness: 0.9 });
+        this.boat = new Faering(this.phys, L.boatStart, L.boatYaw, boatMat);
         this.boat.onBump = (s) => this.cam.addShake(Math.min(0.2, s * 0.06));
         this.boat.onCatch = () => {
             if (this.mode === 'boat') this.cam.addShake(0.015);
@@ -275,6 +285,7 @@ export class GrayboxGame {
         this.world?.streamer.dispose();
         this.world?.materials.dispose();
         this.world?.environment.dispose();
+        this.post?.dispose();
         if (document.pointerLockElement === this.renderer.domElement) document.exitPointerLock();
         this.scene.traverse((o) => {
             const m = o as THREE.Mesh;
@@ -354,7 +365,9 @@ export class GrayboxGame {
             this.cam.camera.position.fromArray(foto.pos);
             this.cam.camera.lookAt(foto.look[0], foto.look[1], foto.look[2]);
         }
-        this.renderer.render(this.scene, this.cam.camera);
+        this.renderer.info.reset();
+        if (this.post && !this.low) this.post.render(this.renderer, this.scene, this.cam.camera, this.clock, this.inne);
+        else this.renderer.render(this.scene, this.cam.camera);
 
         // Måling: tid mellom bilder (inkluderer GPU-ventetid via rAF).
         if (dt > 0) {
@@ -475,7 +488,7 @@ export class GrayboxGame {
             // Inne i et rom: dagslyset dempes mykt, så ildstedet tar over. Kameraet avgjør, ikke
             // gutten, ellers blir rommet mørkt mens kameraet ennå står ute i gårdsrommet.
             this.clock += dt;
-            const inne = this.world.update(this.clock, dt, this.cam.camera.position);
+            const inne = this.world.update(this.clock, dt, this.cam.camera.position, { pos: this.player.anim.root.position, fart: this.player.speed });
             this.inne += (inne - this.inne) * Math.min(1, dt * 3);
             const ute = 1 - this.inne * 0.65;
             this.hemi.intensity = (this.low ? 1.7 : 1.25) * ute;

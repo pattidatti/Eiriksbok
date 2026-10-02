@@ -14,6 +14,9 @@ import { WATER_Y } from '../motor/boat';
 import { CellStreamer, type CellContent, type CellDef } from '../motor/streaming';
 import { Materials, makeSkyEnvironment } from '../motor/materials';
 import { flakk } from '../motor/ild';
+import { lagVann, type Vann } from '../motor/vann';
+import { Maaker } from '../motor/maaker';
+import { Regn } from '../motor/regn';
 import type { GrayboxLayout } from '../graboks/scene';
 import { FRONT_Z, GARD_DEPTH, GARD_W, type Sides } from './gard';
 import type { GardParams } from './nabogard';
@@ -22,13 +25,17 @@ export interface BryggenWorld {
     layout: GrayboxLayout;
     streamer: CellStreamer;
     materials: Materials;
+    vann: Vann;
+    /** Hvor mye det regner (0 tørt, 1 øsregn). Kan endres mens spillet går. */
+    regn: number;
     /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
     environment: THREE.Texture;
     /**
      * Kalles hvert bilde: flammene lever, ildlyset flyttes til nærmeste ildsted, og svaret sier
-     * hvor langt inne i et rom `focus` er (0 ute, 1 godt inne).
+     * hvor langt inne i et rom `focus` er (0 ute, 1 godt inne). `focus` er kameraet; `spiller`
+     * er gutten (måkene letter når han kommer for nær).
      */
-    update: (t: number, dt: number, focus: THREE.Vector3) => number;
+    update: (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }) => number;
 }
 
 /** Hvor nær et ildsted man må være for at ildlyset skal stå der. */
@@ -53,15 +60,6 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     scene.environment = opts.low ? null : environment;
     scene.environmentIntensity = 0.9;
 
-    // ── Vågen ──
-    const water = new THREE.Mesh(
-        new THREE.PlaneGeometry(400, 200),
-        new THREE.MeshStandardMaterial({ color: 0x2c3a3f, roughness: 0.12, metalness: 0.0, envMapIntensity: 1.4 })
-    );
-    water.rotation.x = -Math.PI / 2;
-    water.position.set(0, WATER_Y, -98);
-    water.receiveShadow = true;
-    scene.add(water);
     const floor = new THREE.Mesh(new THREE.BoxGeometry(400, 0.5, 200), new THREE.MeshStandardMaterial({ color: 0x1f2426, roughness: 1 }));
     floor.position.set(0, WATER_Y - 3, -98);
     scene.add(floor);
@@ -118,6 +116,14 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             build: () => s.build(sides),
         };
     });
+    // ── Vågen ── (etter cellene: speilingen trenger bryggefrontens ende i begge retninger)
+    const vann = lagVann({ y: WATER_Y, frontZ: FRONT_Z, frontX0: xw, frontX1: xe, horisont: 0xa3adb4, zenit: 0xc3ccd3 });
+    scene.add(vann.mesh);
+    // Måker over kaia, og regn rundt kameraet.
+    const maaker = new Maaker({ x0: xw, x1: xe, kaiZ0: 0, kaiZ1: FRONT_Z, sjoZ: -40, vannY: WATER_Y }, phys);
+    const regn = new Regn();
+    scene.add(maaker.mesh, regn.mesh);
+
     // Mariakirken i nordenden (mot Holmen, +x), oppe i bakken bak gårdene. Den står som kulisse
     // utenfor grensa, så cella har ingen kollidere.
     const back = FRONT_Z + GARD_DEPTH;
@@ -137,8 +143,10 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     ildlys.name = 'ildlys';
     scene.add(ildlys);
     const _d = new THREE.Vector3();
-    const update = (t: number, dt: number, focus: THREE.Vector3): number => {
+    const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
         streamer.tick(t, dt);
+        vann.update(t, world.regn);
+        maaker.update(dt, t, spiller?.pos ?? focus, spiller?.fart ?? 0);
         let best: THREE.Vector3 | null = null;
         let bestD = ILD_R;
         for (const p of streamer.ildsteder()) {
@@ -160,6 +168,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             const dz = Math.min(focus.z - b.min.z, b.max.z - focus.z);
             inne = Math.max(inne, THREE.MathUtils.clamp(Math.min(dx, dz) / 1.0 + 0.3, 0, 1) * demp);
         }
+        regn.update(t % 600, focus, world.regn, Math.min(1, inne * 2));
         return inne;
     };
 
@@ -175,7 +184,10 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     wall(xMax + 0.5, -60, 0.5, 60);
     wall((xMin + xMax) / 2, -120, (xMax - xMin) / 2 + 1, 0.5);
 
-    return {
+    const world: BryggenWorld = {
+        vann,
+        // ?regn=0 til 1 overstyrer (for skjermbilder og måling). Standard: jevnt Bergen-regn.
+        regn: regnFraUrl() ?? 0.6,
         streamer,
         materials,
         environment,
@@ -189,4 +201,13 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             rescue: new THREE.Vector3(-1.5, 0, 2.5),
         },
     };
+    // Utviklerverktøy: testskript kan lese hvor måkene er og skru regnet (`__bryggenVerden.regn`).
+    if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenVerden: world });
+    return world;
+}
+
+function regnFraUrl(): number | null {
+    const r = new URLSearchParams(location.search).get('regn');
+    const v = r === null ? NaN : Number(r);
+    return Number.isFinite(v) ? THREE.MathUtils.clamp(v, 0, 1) : null;
 }

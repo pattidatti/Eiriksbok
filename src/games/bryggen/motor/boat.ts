@@ -6,6 +6,7 @@
 import * as THREE from 'three';
 import type RAPIER_NS from '@dimforge/rapier3d-compat';
 import { GROUP_BOAT, type Physics } from './physics';
+import { lagFaeringSkrog } from './faering-modell';
 
 export const WATER_Y = -1.35;
 
@@ -139,32 +140,11 @@ export class Faering {
     }
 
     private buildMesh(material: THREE.Material): void {
-        // Grått skrog: spiss i begge ender (færingen er tveendt, som vikingskipene).
-        const shape = new THREE.Shape();
-        const L = 2.95;
-        const W = 0.72;
-        shape.moveTo(0, -L);
-        shape.quadraticCurveTo(W * 1.25, -L * 0.45, W, 0);
-        shape.quadraticCurveTo(W * 1.25, L * 0.45, 0, L);
-        shape.quadraticCurveTo(-W * 1.25, L * 0.45, -W, 0);
-        shape.quadraticCurveTo(-W * 1.25, -L * 0.45, 0, -L);
-        const outer = new THREE.ExtrudeGeometry(shape, { depth: 0.55, bevelEnabled: false, curveSegments: 10 });
-        outer.rotateX(-Math.PI / 2);
-        const hullMesh = new THREE.Mesh(outer, material);
-        hullMesh.position.y = -0.2;
-        hullMesh.castShadow = true;
-        const inner = new THREE.Mesh(
-            new THREE.ExtrudeGeometry(shape, { depth: 0.5, bevelEnabled: false, curveSegments: 10 }).rotateX(-Math.PI / 2),
-            new THREE.MeshStandardMaterial({ color: 0x3d4247, roughness: 1 })
-        );
-        inner.scale.set(0.86, 1, 0.92);
-        inner.position.y = -0.14;
-        this.hull.add(hullMesh, inner);
-        for (const z of [-1.4, -0.25, 1.1]) {
-            const thwart = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.05, 0.22), material);
-            thwart.position.set(0, 0.17, z);
-            this.hull.add(thwart);
-        }
+        // Klinkbygd skrog, tveendt (spiss i begge ender, som vikingskipene). Innsida er mørkere.
+        const mork = material.clone() as THREE.MeshStandardMaterial;
+        mork.side = THREE.BackSide;
+        mork.color.multiplyScalar(0.5);
+        this.hull.add(lagFaeringSkrog(material, mork));
         // Keipar (åretoller) og årer, festet der roeren sitter.
         for (const side of [1, -1]) {
             const pivot = new THREE.Group();
