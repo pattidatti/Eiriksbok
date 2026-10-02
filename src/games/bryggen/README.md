@@ -43,6 +43,10 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
 | `motor/post.ts` | Etterbehandling på full kvalitet: FXAA, fargetone (kaldt ute, varmt inne), vignett, filmkorn. Ett pass |
 | `motor/faering-modell.ts` | Færingen som modell: klinkbygd skrog med bordganger, stavner, ripe, tiljer og tofter |
+| `motor/skrog.ts` | Skroget og riggen skipene deles om: klinkbygd skrog av tverrsnitt, stavner, dekk, mast, rå med beslått seil, vant, ror og konveks kollider |
+| `motor/kogge-modell.ts` | Koggen: flatbunnet, høye sider, rette stavner, kasteller forut og akter, mastekurv, ror på akterstevnen |
+| `motor/jekt-modell.ts` | Jekta: lavt, åpent skrog med bunter av tørrfisk midtskips, vengen akter, ett råseil |
+| `bygg/skip.ts` | Skipene i Vågen: kogge og jekt fortøyd ved kaia, en jekt for anker. Gynger med bølgene, kollider mot færingen |
 | `motor/rotter.ts` | Rotter: rusler langs vegger, snuser, piler i rykk, fryser når gutten står stille, flykter inn i hull og under ting. Soner, skjulesteder og et API til «Rottejakt på lagerloftet» (`skrem`, `fang`, `framme`, `onHendelse`) |
 | `motor/rotte-modell.ts` | Svartrotta som modell (ca. 720 trekanter) og vertex-shaderen som animerer den: trav, sprang med strekk i kroppen, snusing, reise seg, halen. Pels som støy i pikselen |
 | `motor/katter.ts` | Katter: én til tre i rottesonene (rom først, én ute). Rusler, sitter, vasker seg, sover sammenkrøllet, lusker lavt mot en rotte som er framme og kaster seg (`Rotter.fang` ved treff, `Rotter.skrem` ved bom), viker unna gutten når han løper mot den |
@@ -193,4 +197,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   `tynnTake` fordi tårnet er et landemerke. Bare støttemuren og grinda kolliderer; trappa opp ender ved
   grinda. Rådhuset går i allmenningens egne bøtter, så hele cella er ca. 15 tegnekall.
 - `__bryggenKatter` (bare i dev): `still(i, tilstand, pos?, yaw?)` setter katt `i` i en tilstand og holder den der (til skjermbilder). Kattene bruker de samme sonene som rottene og leser `rotter.framme`; de tar ikke `onHendelse` (lyden eier den).
+- Skipene (`bygg/skip.ts`) står ikke i en celle: de er få og synes over hele Vågen. Hvert skip er én
+  `MeshKit` (ett tegnekall per materiale: `raatre` for treverk og seil, `mork` for tauverk) og én
+  konveks kollider som står stille. De gynger etter `vannHoyde` i `vann.ts`, som må følge bølgene i
+  GLSL-en der. Seilet er lyst `raatre` innenfor `withUv` (som tørrfisken). Fibrene i treteksturene går
+  langs v, så bordene i skroget har v langs skipet.
 - Ingen fil over 800 linjer.

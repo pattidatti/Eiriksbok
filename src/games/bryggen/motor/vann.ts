@@ -83,6 +83,27 @@ export function lagVann(o: VannOpts): Vann {
     };
 }
 
+/** De lange bølgene i `vannNormal` (retning, bølgelengde, høyde, fart). Må følge GLSL-en under. */
+const DONNINGER: [number, number, number, number, number][] = [
+    [0.25, 1.0, 9.0, 0.05, 1.6],
+    [-0.6, 0.8, 5.3, 0.03, 1.2],
+    [0.9, 0.45, 2.1, 0.012, 0.9],
+];
+
+/**
+ * Høyden på vannflata over `y` i punktet (x, z) ved tid `t`: de samme sinusbølgene som shaderen
+ * regner normalen av. Flata selv er flat, men skip som gynger etter denne, gynger i takt med
+ * krusningen man ser.
+ */
+export function vannHoyde(x: number, z: number, t: number): number {
+    let h = 0;
+    for (const [dx, dz, lambda, amp, fart] of DONNINGER) {
+        const l = Math.hypot(dx, dz);
+        h += amp * Math.sin((6.2831 / lambda) * ((dx * x + dz * z) / l - fart * t));
+    }
+    return h;
+}
+
 const VANN_GLSL = /* glsl */ `
 varying vec3 vVann;
 uniform float uTid;
