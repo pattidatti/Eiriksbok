@@ -37,7 +37,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/hode.ts` | Nytt hode i stedet for mannequinens egg: skalle, kjeve, hår/skjegg/hette, ører, hals, og ansiktet (øyne, bryn, nese, munn) |
 | `motor/meshkit.ts` | Geometri-settet: bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
 | `motor/materials.ts` | PBR-materialene (farge, normal, ARM) og miljølys fra en enkel himmel |
-| `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå |
+| `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå, delt/samlet, innredning og tåkegrense |
 | `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning |
 | `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
 | `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
@@ -85,8 +85,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Slagene veksler arm: høyre først, så venstre, og en ny rekke starter med høyre. Venstre kross er
   `Punch_Cross` speilet ved lasting (`mirror` i `animator.ts`). UAL har ikke et eget venstre krosslag,
   og jabben har for lite skulder i seg.
-- Bygninger lages i kode av modulene og slås sammen til én geometri per materiale per hus
-  (én `MeshKit` per hus). Ikke legg til nye materialer for variasjon: bruk fargefaktoren (`tint`).
+- Bygninger lages i kode av modulene og slås sammen til én geometri per materiale (`MeshKit`).
+  Ikke legg til nye materialer for variasjon: bruk fargefaktoren (`tint`). Hvert materiale i en
+  `MeshKit` er ett tegnekall, og ett til i skyggen.
 - UV-ene er i meter. Hvor mange meter én tekstur dekker står i `materials.ts`. Laftestokkene er
   `LOG_H` = 0,24 m, og laftehodene følger samme mål.
 - Hus bygges i eget rom: x på tvers, z innover fra gavlen mot sjøen, y opp. Verden: x langs sjøen
@@ -96,9 +97,24 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   `phys.addBox` direkte fra byggekoden, ellers blir de liggende når cella kastes.
 - Svalganger og trapper har håndlist med prop-kollider. En 1 m bred trapp uten håndlist mister
   gutten sidelengs når kameraet følger etter.
-- Nabogårdene er én `MeshKit` per halvdel (forhusene med kaia, og resten innover), ikke én per hus.
-  Da kan Three hoppe over halvdelen som er utenfor bildet eller skyggekameraet, uten at tegnekallene
-  løper løpsk. Laftehodene deres har 5 kanter (`hodeSeg`); de var to tredeler av trekantene.
+- Gårdene (også den første) er én `MeshKit` per halvdel (forhusene med kaia, og resten innover),
+  ikke én per hus. Da kan Three hoppe over halvdelen som er utenfor bildet eller skyggekameraet, uten
+  at tegnekallene løper løpsk. Laftehodene til nabogårdene har 5 kanter (`hodeSeg`); de var to
+  tredeler av trekantene. Én `MeshKit` per hus kostet den første gården 68 tegnekall fra Vågen.
+- Lenger unna enn `SAMLET_R` (30 m fra gutten) tegnes halvdelene samlet (`CellContent.samlet`,
+  laget med `slaSammen`): der ser man begge uansett. Den samlede kaster ikke skygge, for kula rundt
+  hele cella traff nesten alltid skyggekameraet og doblet skyggetrekantene. Ny cellegeometri som er
+  delt, skal ha et samlet nivå.
+- Innredning (bua, schøtstua) bygges i en egen `MeshKit` per hus og går i `CellContent.inne`: den
+  kaster ikke skygge (veggene skygger allerede for sola inne) og skjules bak `INNE_R` (30 m), der den
+  bare er et mørkt hull bak en dør. Bua alene er ca. 75k trekanter.
+- Bak `TAAKE_R` (110 m) tegnes ikke cella i det hele tatt: tåka er over 99 % tett der. Landemerker
+  bruker `tynnTake`, og strømmingen kjenner dem på det og lar dem stå.
+- Del modeller i én geometri per materiale (`mergeGeometries`) når delene ikke beveger seg hver for
+  seg. Færingen var 13 tegnekall, nå 4 (skroget, innsida og én per åre).
+- Mål tegnekall med fotokameraet og kjør strømmingen selv fra skriptet
+  (`streamer.update(fotoPos, guttPos)`): programvare-GL bruker ofte over 250 ms per bilde, og da står
+  spillets klokke stille (`dt = 0`), så cellene får aldri vite at kameraet flyttet seg.
 - Kaifronten hopper mellom gårdene (`FRONT_JOG`). Cella som stikker lengst ut bygger sideveggen i
   bolverket (`kaiJog`), og stokkene går litt inn bak naboens front så hjørnet blir tett.
 - Utviklerverktøy (bare i dev): `window.__bryggenFoto = { pos: [x, y, z], look: [x, y, z] }` låser

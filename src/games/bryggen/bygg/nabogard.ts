@@ -12,7 +12,7 @@
 // Hele gården (hus, svalganger, kai og småting) er én MeshKit: ett tegnekall per materiale for
 // hele cella. Den første gården har én per hus, men den står der spilleren starter.
 import * as THREE from 'three';
-import { ColliderKit, MeshKit } from '../motor/meshkit';
+import { ColliderKit, MeshKit, slaSammen } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
 import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
@@ -301,14 +301,18 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
         c.box(x, 0.25, p.front + 0.45, 0.32, 0.6, 0.32, true);
     }
 
-    const near = toGroup(fram, mats, `nabo${p.seed}:fram`);
-    near.add(toGroup(bak, mats, `nabo${p.seed}:bak`));
+    // Halvdelene nær, og hele gården samlet lenger unna (streaming.ts, SAMLET_R).
+    const near = new THREE.Group();
+    near.name = `nabo${p.seed}`;
+    const delt = [toGroup(fram, mats, `nabo${p.seed}:fram`), toGroup(bak, mats, `nabo${p.seed}:bak`)];
+    const samlet = toGroup(slaSammen([fram, bak]), mats, `nabo${p.seed}:samlet`, false);
+    near.add(...delt, samlet);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `nabo${p.seed}:lod`;
     const folk = await lagFolk([], mats, p.seed, naboRuter(ox, p, yardX, back, rng(p.seed * 31 + 9)));
     near.add(folk.group);
     return {
-        near, mid, colliders: c.specs, gaaende: folk.gaaende, snakkbare: folk.snakkbare,
+        near, mid, samlet: { delt, samlet }, colliders: c.specs, gaaende: folk.gaaende, snakkbare: folk.snakkbare,
         tick: (t, dt, ctx) => folk.tick(t, dt, ctx),
         dispose: () => folk.dispose(),
     };

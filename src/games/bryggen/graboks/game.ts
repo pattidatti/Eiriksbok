@@ -568,7 +568,7 @@ export class GrayboxGame {
                 this.streamTimer = 0.3;
                 // Med fotokameraet (dev) strømmes byen rundt kameraet, ikke gutten.
                 const foto = import.meta.env.DEV ? (window as { __bryggenFoto?: { pos: number[] } }).__bryggenFoto : undefined;
-                void this.world.streamer.update(foto ? new THREE.Vector3().fromArray(foto.pos) : follow);
+                void this.world.streamer.update(foto ? new THREE.Vector3().fromArray(foto.pos) : follow, follow);
             }
             // Inne i et rom: dagslyset dempes mykt, så ildstedet tar over. Kameraet avgjør, ikke
             // gutten, ellers blir rommet mørkt mens kameraet ennå står ute i gårdsrommet.

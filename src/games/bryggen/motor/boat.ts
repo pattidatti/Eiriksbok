@@ -6,6 +6,7 @@
 import * as THREE from 'three';
 import type RAPIER_NS from '@dimforge/rapier3d-compat';
 import { GROUP_BOAT, type Physics } from './physics';
+import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { lagFaeringSkrog } from './faering-modell';
 
 export const WATER_Y = -1.35;
@@ -149,11 +150,10 @@ export class Faering {
         for (const side of [1, -1]) {
             const pivot = new THREE.Group();
             pivot.position.set(side * 0.74, 0.4, -0.25);
-            const shaft = new THREE.Mesh(new THREE.BoxGeometry(2.6, 0.05, 0.05), material);
+            // Skaftet og bladet i én geometri: ett tegnekall per åre.
+            const blade = new THREE.BoxGeometry(0.7, 0.02, 0.13).translate(side * 1.0, 0, 0);
+            const shaft = new THREE.Mesh(mergeGeometries([new THREE.BoxGeometry(2.6, 0.05, 0.05), blade]), material);
             shaft.position.x = side * 0.9;
-            const blade = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.02, 0.13), material);
-            blade.position.set(side * 1.0, 0, 0);
-            shaft.add(blade);
             pivot.add(shaft);
             this.hull.add(pivot);
             this.oars.push(pivot);
