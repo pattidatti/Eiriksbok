@@ -459,6 +459,18 @@ function ruter(ox: number, back: number): Rute[] {
                 { p: P(-1.4, 0, 3.9) },
             ],
         },
+        // En svenn går opp trappa, bortover svalgangen til loftsdøra og ned igjen.
+        {
+            figur: 'svenn', fart: 0.9, start: 2,
+            stopp: [
+                { p: P(-0.4, 0, 39.6), vent: 3, se: 0 },
+                { p: P(-1.47, 0, 38.3) },
+                { p: P(-1.47, DECK_Y, 33.95) },
+                { p: P(-1.47, DECK_Y, 10.3), vent: 4, se: -Math.PI / 2 },
+                { p: P(-1.47, DECK_Y, 33.95) },
+                { p: P(-1.47, 0, 38.3) },
+            ],
+        },
         {
             figur: 'svenn', fart: 1.0, start: 1,
             stopp: [

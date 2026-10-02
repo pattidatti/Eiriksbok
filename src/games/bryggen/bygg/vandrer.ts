@@ -50,6 +50,8 @@ export class Vandrer {
     private sistSagt = -99;
     private snudd: THREE.Vector3 | null = null;
     private readonly fart: number;
+    /** Der hen gikk fra (forrige punkt): høyden følger rett linje derfra, så trapper blir jevne. */
+    private fra: THREE.Vector3;
     readonly a: Animator;
     readonly rute: Rute;
     private readonly bunt: THREE.Object3D;
@@ -62,6 +64,7 @@ export class Vandrer {
         const s0 = (rute.start ?? 0) % n;
         this.pos = rute.stopp[s0].p.clone();
         this.i = (s0 + 1) % n;
+        this.fra = this.pos.clone();
         const nxt = rute.stopp[this.i].p;
         this.yaw = Math.atan2(nxt.x - this.pos.x, nxt.z - this.pos.z);
         this.fart = (rute.fart ?? 1.15) * (0.92 + ((seed * 0.618) % 1) * 0.16);
@@ -117,6 +120,7 @@ export class Vandrer {
             const dist = _d.length();
             const stopper = st.vent !== undefined || st.last !== undefined;
             if (dist < (stopper ? 0.1 : 0.45)) {
+                this.fra = st.p;
                 this.i = (this.i + 1) % this.rute.stopp.length;
                 this.vent = st.vent ?? 0;
                 if (st.last !== undefined && st.last !== this.baerer) {
@@ -142,7 +146,8 @@ export class Vandrer {
                         ctx.si(NAVN[this.rute.figur], trekk(VEI[this.rute.figur], t));
                     }
                 } else this.blokkert = 0;
-                this.pos.y += (st.p.y - this.pos.y) * Math.min(1, dt * 5);
+                const hele = Math.hypot(st.p.x - this.fra.x, st.p.z - this.fra.z);
+                this.pos.y = THREE.MathUtils.lerp(this.fra.y, st.p.y, hele > 0.01 ? THREE.MathUtils.clamp(1 - dist / hele, 0, 1) : 1);
             }
         }
         this.speed += THREE.MathUtils.clamp(maal - this.speed, -AKS * 1.6 * dt, AKS * dt);
