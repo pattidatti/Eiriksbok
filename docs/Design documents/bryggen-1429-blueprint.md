@@ -634,7 +634,8 @@ Mixamo brukes ikke (krever innlogging).
   hetter med tut, kjortler og hoser, laget så sent som i 1430-årene; Bockstensmannen 1340-1370), og
   på Bryggen er det funnet sko og tekstiler i hopetall [V Bymuseet]. Fargene er [S]: ufarget for
   guttene, plantefarget for husbonden. Snitt og farger på Bryggen i 1420-årene er ikke sjekket mot
-  Bryggens Museum **[K]**. Fienden i Bryggen-scenen bruker svenn-drakten. Gjenstår: nordlandsfisker,
+  Bryggens Museum **[K]**. Fienden i Bryggen-scenen bruker svenn-drakten. Nordlandsfiskeren (02.10.2026) står på kaia og forteller om gjelda fra sin side
+  (samtale med «Dette vet vi»); klærne hans er [S], ikke sjekket [K]. Gjenstår:
   tyv, byvakt.
 - [~] Folk i gården (02.10.2026): i bua fører husbonden gjeldsboka ved pulten, svennen leser av
   bismeren og skutedrengen står med en bunt i armene. I schøtstua sitter en svenn og en skutedreng på

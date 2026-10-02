@@ -55,11 +55,21 @@ export const DRAKTER = {
         hoser: 0x5e554b, sko: 0x3a2a1f, hette: 0x666d78, hetteOppe: false, tut: 0.14, kappe: 0.14,
         slank: 0.55, hode: 1.06,
     },
+    /**
+     * Nordlandsfiskeren som har kommet med jekta: grå vadmel, hetta oppe, skjegg, mørkere hud
+     * av vær og vind. Ingen pung. Klærne til fiskerne i nord i 1420-årene er ikke sjekket [K];
+     * dette er et valg [S].
+     */
+    fisker: {
+        navn: 'fisker', hud: 0xc48f72, haar: 0x6e604f, skjegg: 0x7a6a58, kjortel: 0x5e5a52, kjortelNed: 0.04,
+        belte: 0x2f2419, hoser: 0x48413a, sko: 0x3b2c20, hette: 0x4f5458, hetteOppe: true, tut: 0.12, kappe: 0.22,
+        mage: 0.05,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
 
-export const HOYDE: Record<FigurNavn, number> = { junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52 };
+export const HOYDE: Record<FigurNavn, number> = { junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52, fisker: 1.71 };
 
 /**
  * Hva en figur gjør på plassen sin. Alt er løkker på stedet.
@@ -69,8 +79,9 @@ export const HOYDE: Record<FigurNavn, number> = { junge: 1.58, husbonde: 1.74, s
  *  - rore: står ved gryta med sleiva
  *  - veie: rekker opp mot bismeren og leser av merkene
  *  - baere: står med en bunt tørrfisk i armene, klar til å gå
+ *  - staa: står og venter
  */
-export type Rolle = 'sitte' | 'spise' | 'skrive' | 'rore' | 'veie' | 'baere';
+export type Rolle = 'sitte' | 'spise' | 'skrive' | 'rore' | 'veie' | 'baere' | 'staa';
 
 export interface Plass {
     figur: FigurNavn;
@@ -90,6 +101,9 @@ const KLIPP: Record<Rolle, { clip: string; speed: number; hold?: number }> = {
     rore: { clip: 'Hender_Fram', speed: 0.8 },
     veie: { clip: 'Interact', speed: 0.55 },
     baere: { clip: 'Hender_Fram', speed: 0, hold: 0.3 },
+    // Tomt klipp: bevegelseslagets hvile. Idle_Loop som helkroppsklipp er samme action som
+    // hvilen i bevegelseslaget, og slipper man det, stopper hvilen også (T-stilling).
+    staa: { clip: '', speed: 1 },
 };
 
 /** Hoftene i sitteklippet står så langt bak føttene og så høyt, i riggens egne meter (1,83 m høy). */
@@ -148,8 +162,8 @@ class Staaende {
     }
     vend(mot: THREE.Vector3 | null): void {
         if (!this.clip) return;
-        if (mot && !this.mot) this.a.release(0.4);
-        if (!mot && this.mot) {
+        if (mot && !this.mot && this.clip.clip) this.a.release(0.4);
+        if (!mot && this.mot && this.clip.clip) {
             this.a.play(this.clip.clip, { loop: true, fade: 0.5, timeScale: this.clip.speed });
             if (this.clip.hold !== undefined) this.a.setPhase(this.clip.hold);
         }
@@ -191,7 +205,7 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         const a = new Animator(kleFigur(rig, drakt), h);
         const k = KLIPP[p.rolle];
         const clip = rig.clips.get(k.clip);
-        a.play(k.clip, { loop: true, fade: 0.01, timeScale: k.speed, startAt: rnd() * (clip?.duration ?? 1) });
+        if (k.clip) a.play(k.clip, { loop: true, fade: 0.01, timeScale: k.speed, startAt: rnd() * (clip?.duration ?? 1) });
         if (k.hold !== undefined) a.setPhase(k.hold);
         a.update(0.02, 0);
         // Folkene står stille, så Three kan hoppe over dem som er utenfor bildet. Kula rundt

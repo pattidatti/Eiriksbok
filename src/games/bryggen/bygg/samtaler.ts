@@ -32,6 +32,7 @@ export const NAVN: Record<string, string> = {
     svenn: 'Svennen',
     dreng: 'Skutedrengen',
     stuedreng: 'Stuedrengen',
+    fisker: 'Fiskeren',
 };
 
 /** Til teksten «E: Snakk med …». */
@@ -41,6 +42,7 @@ export const BESTEMT: Record<string, string> = {
     svenn: 'svennen',
     dreng: 'skutedrengen',
     stuedreng: 'stuedrengen',
+    fisker: 'fiskeren',
 };
 
 const REGLER = 'Hvilke regler gjelder her?';
@@ -119,6 +121,47 @@ export const SAMTALER: Record<string, Samtale> = {
     },
 };
 
+// Fiskeren: «Jekta kommer» fra blueprint §7.2, handelen sett fra hans side. Tørrfisk som over
+// 80 prosent av eksporten på 1300-tallet, korn og utstyr «på bok» og gjeld i årevis er [V] (§4.3).
+// Navnet, Lofoten og hans egen gjeld er [S]. At jektene seilte sørover om sommeren er [V/U].
+SAMTALER.fisker = {
+    start: {
+        tekst: 'Du er ny her, ser jeg. Jeg heter Ottar. Jeg har seilt hele veien fra Lofoten med fisken min. Mange uker sørover langs kysten.',
+        valg: [
+            { tekst: 'Hva får du for fisken?', til: 'korn' },
+            { tekst: 'Hvorfor selger du den til oss?', til: 'gjeld' },
+        ],
+    },
+    korn: {
+        tekst: 'Korn og mel, mest. Salt, hamp til garn og litt øl. Det vokser nesten ikke korn der jeg bor. Uten kornet fra dere sulter vi om vinteren.',
+        valg: [{ tekst: 'Hvorfor selger du den til oss?', til: 'gjeld' }],
+    },
+    gjeld: {
+        tekst: 'Fordi jeg skylder husbonden din. I fjor var fisket dårlig. Jeg fikk korn likevel, men han skrev det i boka. Nå betaler jeg med årets fisk.',
+        til: 'gjeld2',
+    },
+    gjeld2: {
+        tekst: 'Blir fisket dårlig i år også, skylder jeg enda mer neste sommer. Faren min skyldte også. Det er slik det går.',
+        valg: [
+            { tekst: 'Kan du ikke selge til noen andre?', til: 'andre' },
+            { tekst: 'Er vekta riktig?', til: 'vekt' },
+        ],
+    },
+    andre: {
+        tekst: 'Hvem skulle det være? Det er her kornet kommer inn. Og den som skylder, kan ikke velge hvem han handler med.',
+        til: 'vet',
+    },
+    vekt: {
+        tekst: 'Jeg veide fisken selv før jeg dro. Men her er det deres bismer og deres lodd. Du får tenke selv på hva det betyr, gutt.',
+        til: 'vet',
+    },
+    vet: {
+        hvem: 'Dette vet vi',
+        vet: true,
+        tekst: 'Tørrfisk var over 80 prosent av det Norge solgte til utlandet på 1300-tallet. Fiskerne i nord fikk korn og utstyr med en gang og betalte med fisk senere. Mange satt i gjeld til kjøpmennene i Bergen i årevis. Hvor stor gjelda var for en vanlig fisker i 1420-årene, vet vi ikke sikkert.',
+    },
+};
+
 /** Det de sier når gutten snakker med dem (uten en egen samtale). */
 export const REPLIKKER: Record<string, string[]> = {
     husbonde: ['Står du og glaner? Fisken bærer seg ikke selv.', 'Tell to ganger og skriv én gang. Da blir det riktig.'],
@@ -145,6 +188,7 @@ export const VEI: Record<string, string[]> = {
     svenn: ['Til side, junge!', 'Har du ikke noe å gjøre?'],
     dreng: ['Flytt deg! Denne er tung.', 'Gå til side, junge!'],
     stuedreng: ['Pass deg!', 'Flytt deg, da!'],
+    fisker: ['Gå til side, gutt.'],
 };
 
 /** Velger en replikk som skifter med tiden, så det ikke er den samme hver gang. */

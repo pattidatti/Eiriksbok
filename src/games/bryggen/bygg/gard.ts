@@ -405,6 +405,8 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
         k.withTint({ top: 0.7, bottom: 0.7 }, () => k.log('raatre', V(x, -0.1, 0.45), V(x, 0.55, 0.45), 0.17, 8, true, 0.15));
         c.box(x, 0.25, 0.45, 0.32, 0.6, 0.32, true);
     }
+    // Nordlandsfiskeren som kom med jekta står på kaia og venter på oppgjøret [S].
+    plasser.push({ figur: 'fisker', rolle: 'staa', pos: V(ox + 6.1, 0, 1.7), yaw: -1.35, samtale: 'fisker' });
     // Buntene skutedrengen bærer inn i bua: lagt opp på kaia fra båten [S].
     buntStabel(k, c, -4.55, 1.45);
     near.add(toGroup(k, mats, 'felles'));
