@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet, Anchor } from 'lucide-react';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
@@ -20,6 +20,14 @@ export const PracticePage: React.FC = () => {
             icon: Swords,
             color: 'bg-slate-800',
             link: '/oving/rpg'
+        },
+        {
+            id: 'bryggen',
+            title: 'Bryggen 1429',
+            description: 'Gå rundt på Bryggen i Bergen i 1429. Bær tørrfisk fra kaia, vei den på bismeren og snakk med folk på kaia og torget. Spillet er under arbeid.',
+            icon: Anchor,
+            color: 'bg-amber-700',
+            link: '/test/bryggen-gard'
         },
         {
             id: 'pengeliv',
