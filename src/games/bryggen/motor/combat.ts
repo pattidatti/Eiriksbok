@@ -48,6 +48,8 @@ export class PlayerCombat {
     private queued: 'light' | 'heavy' | null = null;
     private combo = 0;
     private comboTimer = 0;
+    /** Neste slag tas med høyre. Armene veksler etter hvert slag; en ny runde starter med høyre. */
+    private rightNext = true;
     private blockStart = -1;
     blocking = false;
     private dodge = 0;
@@ -85,7 +87,10 @@ export class PlayerCombat {
         this.time += dt;
         this.f.iframes = Math.max(0, this.f.iframes - dt);
         this.comboTimer = Math.max(0, this.comboTimer - dt);
-        if (this.comboTimer === 0) this.combo = 0;
+        if (this.comboTimer === 0) {
+            this.combo = 0;
+            this.rightNext = true;
+        }
         if (this.f.dead) return;
         if (this.f.stagger > 0) {
             this.f.stagger -= dt;
@@ -175,24 +180,24 @@ export class PlayerCombat {
             lungeV.set(Math.sin(c.yaw), Math.cos(c.yaw)).multiplyScalar(1.5);
         }
 
+        // Krosslaget har skulderen og hofta med i slaget. Venstre er et speilet klipp.
+        const cross = kind === 'finisher' || this.rightNext ? 'Punch_Cross' : 'Punch_Cross_L';
+        if (kind !== 'finisher') this.rightNext = !this.rightNext;
         if (kind === 'light') {
             this.combo = (this.combo % 3) + 1;
-            this.comboTimer = 0.9;
             const third = this.combo === 3;
-            c.anim.play(third ? 'Punch_Cross' : this.combo === 1 ? 'Punch_Jab' : 'Punch_Cross', {
-                fade: 0.06,
-                startAt: third ? 0.1 : 0.12,
-                timeScale: third ? 1.7 : 2.0,
-            });
+            c.anim.play(cross, { fade: 0.06, startAt: third ? 0.1 : 0.12, timeScale: third ? 1.7 : 2.0 });
             this.attack = { kind, t: 0, dur: third ? 0.5 : 0.36, hitAt: third ? 0.22 : 0.15, hit: false, lunge, target };
         } else if (kind === 'heavy') {
             this.combo = 0;
-            c.anim.play('Punch_Cross', { fade: 0.08, startAt: 0.0, timeScale: 1.15 });
+            c.anim.play(cross, { fade: 0.08, startAt: 0.0, timeScale: 1.15 });
             this.attack = { kind, t: 0, dur: 0.78, hitAt: 0.4, hit: false, lunge, target };
         } else {
-            c.anim.play('Punch_Cross', { fade: 0.05, startAt: 0.05, timeScale: 1.0 });
+            c.anim.play(cross, { fade: 0.05, startAt: 0.05, timeScale: 1.0 });
             this.attack = { kind, t: 0, dur: 0.95, hitAt: 0.42, hit: false, lunge, target };
         }
+        // Rekka (og armvekslingen) holder seg et drøyt halvsekund etter at slaget er ferdig.
+        this.comboTimer = this.attack.dur + 0.55;
         c.lock(this.attack.dur + 0.05, lungeV.x, lungeV.y);
     }
 

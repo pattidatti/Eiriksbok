@@ -30,4 +30,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   midten av trinnene. En skrå plate med enden ned i bakken stopper figuren ved første trinn.
 - Bein slås opp med navnet fra riggen via `findBone` (GLTFLoader fjerner punktum: `DEF-foot.L`
   heter `DEF-footL` i Three).
+- Slagene veksler arm: høyre først, så venstre, og en ny rekke starter med høyre. Venstre kross er
+  `Punch_Cross` speilet ved lasting (`mirror` i `animator.ts`). UAL har ikke et eget venstre krosslag,
+  og jabben har for lite skulder i seg.
 - Ingen fil over 800 linjer.

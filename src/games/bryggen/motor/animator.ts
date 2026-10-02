@@ -46,6 +46,9 @@ function buildTemplate(scene: THREE.Group, animations: THREE.AnimationClip[]): R
 
     // Sydde klipp: underkropp fra ett klipp, overkropp fra et annet.
     stitch(clips, 'Row', 'Sitting_Idle_Loop', 'Driving_Loop');
+    // UAL har bare ett krosslag, med høyre hånd. Speilet gir et like tungt slag med venstre,
+    // så slagene kan veksle uten at annethvert blir det svake jabbet.
+    mirror(scene, clips, 'Punch_Cross', 'Punch_Cross_L');
 
     scene.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(scene);
@@ -62,6 +65,104 @@ function stitch(clips: Map<string, THREE.AnimationClip>, name: string, lower: st
         ...up.tracks.filter((t) => !LOWER_BONE.test(t.name)),
     ].map((t) => t.clone());
     clips.set(name, new THREE.AnimationClip(name, up.duration, tracks));
+}
+
+/** Speiling gjennom YZ-planet (modellen ser langs +Z, venstre er +X). */
+const mirrorQ = (q: THREE.Quaternion) => new THREE.Quaternion(q.x, -q.y, -q.z, q.w);
+
+/**
+ * Lag en speilvendt kopi av et klipp: venstre og høyre bytter plass.
+ *
+ * Beinas egne akser er ikke speilbilder av hverandre, så vi kan ikke bare snu fortegn på
+ * de lokale rotasjonene. I stedet spilles klippet av bilde for bilde, og hvert beins
+ * endring fra hvilestillingen (i verdensrommet) speiles over på makkeren:
+ *   G'(b') = m(G(b)) · m(R(b))⁻¹ · R(b')
+ * der R er hvilestillingen og m speilingen. Så regnes alt tilbake til lokale rotasjoner.
+ */
+function mirror(scene: THREE.Group, clips: Map<string, THREE.AnimationClip>, src: string, name: string) {
+    const clip = clips.get(src);
+    if (!clip) return;
+    const bones: THREE.Bone[] = [];
+    scene.traverse((o) => {
+        if ((o as THREE.Bone).isBone) bones.push(o as THREE.Bone);
+    });
+    const byName = new Map(bones.map((b) => [b.name, b]));
+    const twin = (b: THREE.Bone) => {
+        const m = /^(.*)([LR])$/.exec(b.name);
+        const other = m && byName.get(m[1] + (m[2] === 'L' ? 'R' : 'L'));
+        return other ?? b;
+    };
+    const restQ = bones.map((b) => b.quaternion.clone());
+    const restP = bones.map((b) => b.position.clone());
+    scene.updateMatrixWorld(true);
+    const restW = new Map(bones.map((b) => [b, b.getWorldQuaternion(new THREE.Quaternion())]));
+
+    // Interpolanter for sporene klippet har, per bein og egenskap.
+    const sample = new Map<string, THREE.Interpolant>();
+    const timeSet = new Set<number>();
+    for (const t of clip.tracks) {
+        // createInterpolant finnes i three, men mangler i typene. Den velger slerp for rotasjoner.
+        sample.set(t.name, (t as unknown as { createInterpolant(): THREE.Interpolant }).createInterpolant());
+        t.times.forEach((x) => timeSet.add(x));
+    }
+    const times = [...timeSet].sort((a, b) => a - b);
+    const qOut = new Map<THREE.Bone, number[]>(bones.map((b) => [b, []]));
+    const pOut = new Map<THREE.Bone, number[]>(bones.map((b) => [b, []]));
+    const gW = new Map<THREE.Bone, THREE.Quaternion>();
+    const pW = new Map<THREE.Bone, THREE.Vector3>();
+    const mW = new Map<THREE.Bone, THREE.Quaternion>();
+    const mP = new Map<THREE.Bone, THREE.Vector3>();
+    const q = new THREE.Quaternion();
+    const v = new THREE.Vector3();
+    const s = new THREE.Vector3();
+
+    for (const time of times) {
+        bones.forEach((b, i) => {
+            const rq = sample.get(`${b.name}.quaternion`)?.evaluate(time);
+            const rp = sample.get(`${b.name}.position`)?.evaluate(time);
+            if (rq) b.quaternion.fromArray(rq);
+            else b.quaternion.copy(restQ[i]);
+            if (rp) b.position.fromArray(rp);
+            else b.position.copy(restP[i]);
+        });
+        scene.updateMatrixWorld(true);
+        for (const b of bones) {
+            gW.set(b, b.getWorldQuaternion(new THREE.Quaternion()));
+            pW.set(b, b.getWorldPosition(new THREE.Vector3()));
+        }
+        for (const b of bones) {
+            const t = twin(b);
+            const d = mirrorQ(gW.get(b)!).multiply(mirrorQ(restW.get(b)!).invert());
+            mW.set(t, d.multiply(restW.get(t)!));
+            const p = pW.get(b)!;
+            mP.set(t, new THREE.Vector3(-p.x, p.y, p.z));
+        }
+        for (const b of bones) {
+            const parent = b.parent!;
+            const pq = (parent as THREE.Bone).isBone ? mW.get(parent as THREE.Bone)! : parent.getWorldQuaternion(q);
+            const local = pq.clone().invert().multiply(mW.get(b)!);
+            qOut.get(b)!.push(local.x, local.y, local.z, local.w);
+            const pp = (parent as THREE.Bone).isBone ? mP.get(parent as THREE.Bone)! : parent.getWorldPosition(v);
+            parent.getWorldScale(s);
+            const lp = mP.get(b)!.clone().sub(pp).applyQuaternion(pq.clone().invert()).divide(s);
+            pOut.get(b)!.push(lp.x, lp.y, lp.z);
+        }
+    }
+    bones.forEach((b, i) => {
+        b.quaternion.copy(restQ[i]);
+        b.position.copy(restP[i]);
+    });
+    scene.updateMatrixWorld(true);
+
+    const tracks: THREE.KeyframeTrack[] = [];
+    for (const b of bones) {
+        const t = twin(b);
+        if (sample.has(`${t.name}.quaternion`) || sample.has(`${b.name}.quaternion`))
+            tracks.push(new THREE.QuaternionKeyframeTrack(`${b.name}.quaternion`, times, qOut.get(b)!));
+        if (sample.has(`${t.name}.position`) || sample.has(`${b.name}.position`))
+            tracks.push(new THREE.VectorKeyframeTrack(`${b.name}.position`, times, pOut.get(b)!));
+    }
+    clips.set(name, new THREE.AnimationClip(name, clip.duration, tracks));
 }
 
 /**
