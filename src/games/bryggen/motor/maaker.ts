@@ -55,6 +55,8 @@ export class Maaker {
     private readonly dummy = new THREE.Object3D();
     private readonly rng: () => number;
     private skremtTid = 0;
+    /** Kalles når en flokk letter (lyden bruker det): hvor, og hvor mange. */
+    onLetter?: (pos: THREE.Vector3, antall: number) => void;
 
     private readonly omr: MaakeOmraade;
     private readonly phys: Physics;
@@ -240,13 +242,16 @@ export class Maaker {
     }
 
     private skremFra(sted: THREE.Vector3, spiller: THREE.Vector3): void {
+        let antall = 0;
         for (const m of this.fugler) {
             if (m.tilstand !== 'staar' || m.pos.distanceTo(sted) > 7) continue;
+            antall++;
             const bort = new THREE.Vector3(m.pos.x - spiller.x, 0, m.pos.z - spiller.z);
             this.lettFra(m, bort);
             // Ikke alle på samme bildet: noen reagerer litt senere.
             m.tid = -this.rng() * 0.35;
         }
+        if (antall) this.onLetter?.(sted.clone(), antall);
     }
 
     private lettFra(m: Maake, bort: THREE.Vector3): void {

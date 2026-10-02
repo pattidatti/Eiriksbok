@@ -17,8 +17,9 @@ import { flakk } from '../motor/ild';
 import { lagVann, type Vann } from '../motor/vann';
 import { Maaker } from '../motor/maaker';
 import { Regn } from '../motor/regn';
+import { Rotter, type RotteSone } from '../motor/rotter';
 import type { GrayboxLayout } from '../graboks/scene';
-import { FRONT_Z, GARD_DEPTH, GARD_W, type Sides } from './gard';
+import { FRONT_Z, GARD_DEPTH, GARD_W, YARD_W, type Sides } from './gard';
 import type { GardParams } from './nabogard';
 
 export interface BryggenWorld {
@@ -26,6 +27,12 @@ export interface BryggenWorld {
     streamer: CellStreamer;
     materials: Materials;
     vann: Vann;
+    maaker: Maaker;
+    rotter: Rotter;
+    /** Kaikanten (bolverket) langs hele bryggefronten: der bølgene klukker. */
+    kaiKant: { x0: number; x1: number; y: number; z: number };
+    /** Hva gutten går på her: planker ute, golv inne eller gjørme (fottrinnene). */
+    underlag: (p: THREE.Vector3) => 'tre-ute' | 'tre-inne' | 'gjorme';
     /** Hvor mye det regner (0 tørt, 1 øsregn). Kan endres mens spillet går. */
     regn: number;
     /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
@@ -124,6 +131,27 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const regn = new Regn();
     scene.add(maaker.mesh, regn.mesh);
 
+    // Rotter: i buene og på lagerloftene (rommene uten ild), langs bolverket foran hver gård, og
+    // under svalgangene i den første gården. Ute er stripene smale og inntil noe, så det aldri er
+    // rotter midt i gårdsrommet.
+    const rotter = new Rotter(phys);
+    scene.add(rotter.mesh);
+    const V3 = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+    const uteSoner: RotteSone[] = slots.map((s) => ({
+        id: `kai:${s.id}`,
+        box: new THREE.Box3(V3(s.x0 + 0.6, 0, s.front + 0.06), V3(s.x1 - 0.6, 1, s.front + 0.7)),
+        antall: 1,
+        ute: true,
+    }));
+    const y2 = YARD_W / 2;
+    uteSoner.push(
+        { id: 'svalgang:v', box: new THREE.Box3(V3(-y2 + 0.02, 0, FRONT_Z + 2), V3(-y2 + 0.6, 1, FRONT_Z + 28)), antall: 1, ute: true },
+        { id: 'svalgang:o', box: new THREE.Box3(V3(y2 - 0.6, 0, FRONT_Z + 5), V3(y2 - 0.02, 1, FRONT_Z + 26)), antall: 1, ute: true },
+    );
+    const romSoner = new Map<string, RotteSone>();
+    let soner: RotteSone[] = uteSoner;
+    let sonerTid = 0;
+
     // Mariakirken i nordenden (mot Holmen, +x), oppe i bakken bak gårdene. Den står som kulisse
     // utenfor grensa, så cella har ingen kollidere.
     const back = FRONT_Z + GARD_DEPTH;
@@ -147,6 +175,23 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         streamer.tick(t, dt);
         vann.update(t, world.regn);
         maaker.update(dt, t, spiller?.pos ?? focus, spiller?.fart ?? 0);
+        sonerTid -= dt;
+        if (sonerTid <= 0) {
+            sonerTid = 0.5;
+            soner = [...uteSoner];
+            for (const { box, demp } of streamer.rom()) {
+                if (demp >= 1) continue; // schøtstua: ild og folk
+                const id = `rom:${box.min.x.toFixed(1)}:${box.min.y.toFixed(1)}:${box.min.z.toFixed(1)}`;
+                let s = romSoner.get(id);
+                if (!s) {
+                    const areal = (box.max.x - box.min.x) * (box.max.z - box.min.z);
+                    s = { id, box, antall: areal > 25 ? 3 : 2 };
+                    romSoner.set(id, s);
+                }
+                soner.push(s);
+            }
+        }
+        rotter.update(dt, soner, spiller?.pos ?? focus, spiller?.fart ?? 0);
         let best: THREE.Vector3 | null = null;
         let bestD = ILD_R;
         for (const p of streamer.ildsteder()) {
@@ -184,8 +229,26 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     wall(xMax + 0.5, -60, 0.5, 60);
     wall((xMin + xMax) / 2, -120, (xMax - xMin) / 2 + 1, 0.5);
 
+    // Underlaget: inne i et rom er det golv; oppe (svalganger, trapper, loft) og på kaia planker.
+    // I allmenningen er det gjørme utenfor plankegangen opp midten, og bak gårdene gjørme. Ellers
+    // går man på plankene i gårdsrommene.
+    const allm = slots.find((s) => s.id === 'nikolaikirkeallmenningen');
+    const underlag = (p: THREE.Vector3): 'tre-ute' | 'tre-inne' | 'gjorme' => {
+        for (const { box } of streamer.rom()) {
+            if (p.x > box.min.x && p.x < box.max.x && p.z > box.min.z && p.z < box.max.z && p.y > box.min.y - 0.3 && p.y < box.max.y) return 'tre-inne';
+        }
+        if (p.y > 0.6 || p.z < FRONT_Z + 0.2) return 'tre-ute';
+        if (allm && p.x > allm.x0 && p.x < allm.x1) return Math.abs(p.x - (allm.x0 + allm.x1) / 2) < 1.2 ? 'tre-ute' : 'gjorme';
+        if (p.z > back - 1) return 'gjorme';
+        return 'tre-ute';
+    };
+
     const world: BryggenWorld = {
         vann,
+        maaker,
+        rotter,
+        kaiKant: { x0: xw, x1: xe, y: WATER_Y + 0.15, z: -0.6 },
+        underlag,
         // ?regn=0 til 1 overstyrer (for skjermbilder og måling). Standard: jevnt Bergen-regn.
         regn: regnFraUrl() ?? 0.6,
         streamer,
@@ -202,7 +265,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         },
     };
     // Utviklerverktøy: testskript kan lese hvor måkene er og skru regnet (`__bryggenVerden.regn`).
-    if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenVerden: world });
+    if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenRotter: rotter, __bryggenVerden: world });
     return world;
 }
 

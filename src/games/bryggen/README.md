@@ -16,6 +16,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md). I Bryggen
   får figurene klær (`motor/figur.ts`, draktene i `bygg/folk.ts`); gråboksen beholder mannequinen.
   Folk står, sitter og jobber i bua og schøtstua.
+- Lyd: `public/games/bryggen/audio/` (CC0 og offentlig eie, se KILDE.md). Lyden starter ved første
+  klikk eller Enter. «Lyd»-knappen øverst til høyre (eller M) slår av og på, og glidebryteren ved siden
+  av er volumet. Valget huskes i nettleseren (`bryggen-lyd`).
 
 ## Oppbygning
 
@@ -39,6 +42,10 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
 | `motor/post.ts` | Etterbehandling på full kvalitet: FXAA, fargetone (kaldt ute, varmt inne), vignett, filmkorn. Ett pass |
 | `motor/faering-modell.ts` | Færingen som modell: klinkbygd skrog med bordganger, stavner, ripe, tiljer og tofter |
+| `motor/rotter.ts` | Rotter: rusler langs vegger, snuser, piler i rykk, fryser når gutten står stille, flykter inn i hull og under ting. Soner, skjulesteder og et API til «Rottejakt på lagerloftet» (`skrem`, `fang`, `framme`, `onHendelse`) |
+| `motor/rotte-modell.ts` | Svartrotta som modell (ca. 720 trekanter) og vertex-shaderen som animerer den: trav, sprang med strekk i kroppen, snusing, reise seg, halen. Pels som støy i pikselen |
+| `motor/lyd.ts` | Lydbildet med Web Audio: ute-buss med lavpass som lukker seg inne, inne-buss med romklang, løkker, korte lyder fra sprites, romlig lyd der lytteren følger kameraet |
+| `motor/lydkobling.ts` | Hva som høres hvor: regn og vind etter været, bølger på kaikanten, ildstedet, måker og rotter der de er, fottrinn etter underlaget, åretak og vann mot skroget |
 | `motor/ild.ts` | Åpen ild: flammetunger, glør og røyk (tre tegnekall per bål), og `flakk(t)` som lyset følger |
 | `bygg/moduler.ts` | Modulsettet: laft med laftehoder, gavl, bordkledd fasade, torvtak, bordtak, vinsj, dører, glugger og utkraget overetasje |
 | `bygg/inne.ts` | Hus man kan gå inn i: hule etasjer med hull for åpne dører og glugger, golv, bjelkelag med trappehull og rekkverk, trapp, terskelkiler, innergavler og åser |
@@ -141,4 +148,19 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Sittende plasseres med `pos` midt på benkesetet: i `Sitting_Idle_Loop` står hoftene 0,33 m bak og
   0,54 m over riggens føtter (1,83 m høy rigg), og det passer benker på 0,45 m.
 - Folk skal stå minst en drøy meter fra døråpninger og trappefoten, og helst langs veggen uten dør.
+- Rottene bor i soner (`RotteSone`): rommene uten ild fra `streamer.rom()` (bua, lagerloftet), en smal
+  stripe langs kaikanten foran hver gård og stripene inntil veggen under svalgangene. Ute er stripene
+  smale med vilje: rotter midt i gårdsrommet på høylys dag skal ikke skje. Skjulestedene finnes med
+  stråler når sona dukker opp (golv, ingenting oppå, en vegg eller ting innen 25 cm).
+- Rottene styrer uten navmesh: noen få retninger rundt den de vil, en stråle fram og en ned (golvet må
+  være der, og ikke mer enn et lite trinn). Kanten av sona er en usynlig vegg. Gjemte rotter tegnes
+  ikke (`mesh.count` er bare de som synes).
+- Lyden laster ingenting før første klikk eller tastetrykk (nettleseren krever det), og alle lydfilene
+  er Opus i Ogg. Korte lyder ligger i sprites med oppslag i `lyd.json`; nye lyder legges inn der og i
+  KILDE.md, med lisensen sjekket per fil.
+- Fottrinnene kommer fra animasjonen: når et fotbein (`DEF-footL`/`DEF-footR`) har sunket minst 5 cm
+  og stopper nær bakken, er det et steg. Underlaget avgjøres av `world.underlag(p)`.
+- Lyder i rommet (rotter, fottrinn) går på inne-bussen; alt som hører hjemme ute går på ute-bussen og
+  blir dempet gjennom veggene når kameraet er inne.
+- `__bryggenRotter` (bare i dev): testskript kan lese og stille rottene, og kalle `update` med egen dt.
 - Ingen fil over 800 linjer.

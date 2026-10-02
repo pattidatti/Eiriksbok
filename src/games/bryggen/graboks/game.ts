@@ -16,6 +16,7 @@ import { Gore } from '../motor/gore';
 import { buildGraybox, type GrayboxLayout } from './scene';
 import type { BryggenWorld } from '../bygg/bryggen';
 import { Etterbehandling } from '../motor/post';
+import type { LydKobling } from '../motor/lydkobling';
 
 /** Hvilken verden løkka kjører: grå prøvescene eller Bryggen bygget av modulsettet. */
 export type WorldId = 'graboks' | 'gard';
@@ -115,6 +116,9 @@ export class GrayboxGame {
     private hemi!: THREE.HemisphereLight;
     /** Etterbehandlingen (kantutjevning, fargetone, vignett). Bare Bryggen-scenen på full kvalitet. */
     private post: Etterbehandling | null = null;
+    /** Lyden (bare Bryggen-scenen). Startes av første tastetrykk eller klikk (`startLyd`). */
+    private lyd: LydKobling | null = null;
+    private lydValg = { onsket: false, paa: true, volum: 0.8 };
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
@@ -211,6 +215,7 @@ export class GrayboxGame {
         this.scene.add(this.player.anim.root);
         this.player.onLand = (impact) => {
             if (impact > 9) this.cam.addShake(Math.min(0.25, impact * 0.015));
+            this.lyd?.landet(impact);
         };
 
         this.enemy = new Character(this.phys, new Animator(enemyRig, ADULT_TUNING.height, enemyTint), ADULT_TUNING, L.enemyStart);
@@ -230,8 +235,17 @@ export class GrayboxGame {
         this.boat.onBump = (s) => this.cam.addShake(Math.min(0.2, s * 0.06));
         this.boat.onCatch = () => {
             if (this.mode === 'boat') this.cam.addShake(0.015);
+            this.lyd?.aaretak();
         };
         this.scene.add(this.boat.group, this.gore.group);
+
+        if (this.world) {
+            const { LydKobling } = await import('../motor/lydkobling');
+            if (this.disposed) return;
+            this.lyd = new LydKobling(this.world, this.cam.camera, this.player, this.boat);
+            this.settLyd(this.lydValg.paa, this.lydValg.volum);
+            if (this.lydValg.onsket) void this.lyd.start();
+        }
 
         // Første fysikksteg så alle kolliderer står på plass før spilleren beveger seg.
         this.phys.step();
@@ -249,6 +263,20 @@ export class GrayboxGame {
 
     focus(): void {
         this.renderer.domElement.focus();
+    }
+
+    /** Slår på lyden. Må kalles fra et tastetrykk eller klikk (ellers holder nettleseren den stille). */
+    startLyd(): void {
+        this.lydValg.onsket = true;
+        void this.lyd?.start();
+    }
+
+    settLyd(paa: boolean, volum: number): void {
+        this.lydValg.paa = paa;
+        this.lydValg.volum = volum;
+        if (!this.lyd) return;
+        this.lyd.lyd.paa = paa;
+        this.lyd.lyd.volum = volum;
     }
 
     get quality(): Quality {
@@ -286,6 +314,7 @@ export class GrayboxGame {
         this.world?.materials.dispose();
         this.world?.environment.dispose();
         this.post?.dispose();
+        this.lyd?.dispose();
         if (document.pointerLockElement === this.renderer.domElement) document.exitPointerLock();
         this.scene.traverse((o) => {
             const m = o as THREE.Mesh;
@@ -490,6 +519,7 @@ export class GrayboxGame {
             this.clock += dt;
             const inne = this.world.update(this.clock, dt, this.cam.camera.position, { pos: this.player.anim.root.position, fart: this.player.speed });
             this.inne += (inne - this.inne) * Math.min(1, dt * 3);
+            this.lyd?.update(dt, this.inne, this.mode);
             const ute = 1 - this.inne * 0.65;
             this.hemi.intensity = (this.low ? 1.7 : 1.25) * ute;
             this.sun.intensity = 1.5 * (1 - this.inne * 0.85);

@@ -9,6 +9,22 @@ import type { GrayboxGame, HudState, Quality, WorldId } from '../games/bryggen/g
 // Knappen øverst til høyre (eller G) bytter kvalitet mens spillet går. Valget huskes i nettleseren.
 
 const QUALITY_KEY = 'bryggen-kvalitet';
+const LYD_KEY = 'bryggen-lyd';
+
+interface LydValg {
+    paa: boolean;
+    volum: number;
+}
+
+function lagretLyd(): LydValg {
+    try {
+        const v = JSON.parse(localStorage.getItem(LYD_KEY) ?? 'null') as Partial<LydValg> | null;
+        if (v && typeof v.paa === 'boolean' && typeof v.volum === 'number') return { paa: v.paa, volum: Math.min(1, Math.max(0, v.volum)) };
+    } catch {
+        // Lagring blokkert eller ødelagt verdi: standard.
+    }
+    return { paa: true, volum: 0.8 };
+}
 
 function initialQuality(params: URLSearchParams): Quality {
     const q = params.get('kvalitet');
@@ -72,6 +88,7 @@ const CONTROLS: [string, string][] = [
     ['F', 'avslutt (når fienden vakler)'],
     ['R', 'start slagsmålet på nytt'],
     ['G', 'bytt grafikk (full / lav)'],
+    ['M', 'lyd av / på'],
 ];
 
 /** Den første gården bygget av modulsettet. */
@@ -87,6 +104,8 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
     const [started, setStarted] = useState(false);
     const [showControls, setShowControls] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [lyd, setLyd] = useState<LydValg>(lagretLyd);
+    const lydRef = useRef(lyd);
 
     useEffect(() => {
         let cancelled = false;
@@ -97,6 +116,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             if (cancelled || !mountRef.current || !floatRef.current) return;
             const game = new GrayboxGame(mountRef.current, floatRef.current, setHud, { shadows, world, low });
             gameRef.current = game;
+            game.settLyd(lydRef.current.paa, lydRef.current.volum);
             (window as unknown as { __bryggen?: GrayboxGame }).__bryggen = game;
             game.start().catch((e: unknown) => setError(String(e)));
         });
@@ -119,9 +139,22 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
         void game.setQuality(next);
     };
 
+    // Lydvalget huskes i nettleseren og sendes til spillet.
+    const endreLyd = (neste: LydValg) => {
+        lydRef.current = neste;
+        setLyd(neste);
+        gameRef.current?.settLyd(neste.paa, neste.volum);
+        try {
+            localStorage.setItem(LYD_KEY, JSON.stringify(neste));
+        } catch {
+            // Lagring blokkert: valget gjelder bare denne økta.
+        }
+    };
+
     useEffect(() => {
         const onKey = (e: KeyboardEvent) => {
             if (e.code === 'KeyG' && !e.repeat) toggleQuality();
+            if (e.code === 'KeyM' && !e.repeat) endreLyd({ ...lydRef.current, paa: !lydRef.current.paa });
         };
         window.addEventListener('keydown', onKey);
         return () => window.removeEventListener('keydown', onKey);
@@ -129,6 +162,8 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
 
     const start = (withMouse: boolean) => {
         setStarted(true);
+        // Lyden får bare starte fra et klikk eller tastetrykk.
+        gameRef.current?.startLyd();
         const root = document.documentElement;
         if (!document.fullscreenElement) root.requestFullscreen?.().catch(() => undefined);
         if (withMouse) gameRef.current?.requestPointerLock();
@@ -150,7 +185,14 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
     // Portal til <body>: sidens layout har stablingskontekster som ellers legger toppmenyen over spillet.
     return createPortal(
         <div className="fixed inset-0 z-[1000] overflow-hidden bg-slate-400 select-none">
-            <div ref={mountRef} className="absolute inset-0" onClick={() => started && !hud.pointerLocked && gameRef.current?.requestPointerLock()} />
+            <div
+                ref={mountRef}
+                className="absolute inset-0"
+                onClick={() => {
+                    gameRef.current?.startLyd();
+                    if (started && !hud.pointerLocked) gameRef.current?.requestPointerLock();
+                }}
+            />
             <div ref={floatRef} className="pointer-events-none absolute inset-0" />
 
             {/* Musa er sluppet (Esc eller fokus borte): ett klikk låser den igjen. */}
@@ -200,6 +242,35 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                     </button>
                     <span className="text-base font-bold text-slate-900">{hud.fps} FPS</span>
                 </div>
+                {world === 'gard' && (
+                    <div className="mt-1 flex items-center justify-end gap-2">
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                gameRef.current?.startLyd();
+                                endreLyd({ ...lyd, paa: !lyd.paa });
+                            }}
+                            title="Lyd av og på (M)"
+                            className="rounded-lg bg-slate-200 px-2 py-0.5 text-[13px] font-semibold text-slate-800 hover:bg-slate-300"
+                        >
+                            Lyd: {lyd.paa ? 'på' : 'av'} (M)
+                        </button>
+                        <input
+                            type="range"
+                            min={0}
+                            max={100}
+                            value={Math.round(lyd.volum * 100)}
+                            onClick={(e) => e.stopPropagation()}
+                            onChange={(e) => {
+                                gameRef.current?.startLyd();
+                                endreLyd({ paa: true, volum: Number(e.target.value) / 100 });
+                            }}
+                            aria-label="Volum"
+                            title="Volum"
+                            className="h-1.5 w-24 cursor-pointer accent-indigo-600"
+                        />
+                    </div>
+                )}
                 <div>{hud.frameMs} ms/bilde · sim {hud.simMs} ms</div>
                 <div>{hud.drawCalls} tegnekall · {Math.round(hud.triangles / 1000)}k trekanter</div>
                 {hud.cells > 0 && <div>{hud.cells} celler lastet</div>}

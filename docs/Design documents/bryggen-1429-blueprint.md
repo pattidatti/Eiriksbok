@@ -504,6 +504,12 @@ Inne i schøtstua (02.10.2026, samme maskin): 21-22 FPS på full og 51-53 på la
 46-135k trekanter avhengig av hvor kameraet ser. Innredningen ligger i husets egne bøtter; bålet koster
 tre tegnekall og ett felles punktlys, stein ett til.
 
+Rotter og lyd (02.10.2026, programvare-GL, samme maskin): rottene koster ett tegnekall (pluss ett i
+skyggen) og ca. 720 trekanter per rotte som synes; gjemte rotter tegnes ikke. JS-tiden målt i siden
+over 600 bilder med 12 rotter (9 framme): 0,06 ms per bilde i snitt for rottene og 0,015 ms for
+lyden. Maskinen var så lastet at FPS-måleren sto fast på 15-16 både med og uten rotter og lyd, og med
+og uten etterbehandling (`?post=0`), så forskjellen kunne ikke måles der.
+
 Inne i bua (02.10.2026, samme maskin, programvare-GL): 14-18 FPS på full og 39 på lav, 105-148
 tegnekall og 131-151k trekanter. Tørrfisken kostet først 70k trekanter (rund fisk, begge sider av
 stabelen); flat fisk på ti trekanter, og bare på sidene som synes, tok den ned til ca. 10k.
@@ -555,6 +561,7 @@ bygget i kode med `import()`, ikke glTF. Fjernt nivå (silhuettkort) er ikke lag
 | Treverk alternativ | ambientCG `WoodFloor0xx`, `Wood0xx`, `Planks0xx` | CC0 | Ja | Verifisert API |
 | Dyr (hund, gris, katt, måke, rotte) | Quaternius *Animal Pack Vol.2* (hund, katt) og *Farm Animals* (gris, hest, ku, sau) på OpenGameArt, direkte zip uten innlogging | CC0 | Ja, men bare FBX. Konvertert til GLB med `fbx2gltf` uten feil | **Prøvd, ikke tatt inn.** 560-800 trekanter, flat lavpoly-stil og bare 2 klipp (stå, gå). Stilen kolliderer med PBR-byen. Holder som stand-in; ekte løsning [K]. Måke og rotte mangler |
 | Realistiske menneskefigurer med klær | Det finnes få CC0-figurer som er realistiske og animerte. Kandidater: MakeHuman-eksport (CC0) retargetet til UAL-skjelettet; Quaternius-figurer | CC0 | MakeHuman krever lokal app, ikke nedlasting **[K]** | Største asset-risiko |
+| Lyd (regn, vind, bølger mot brygge, ild, måker, rotter, fottrinn på tre og gjørme, åretak) | Freesound (forhåndslytting uten innlogging), OpenGameArt, Wikimedia Commons | CC0 / offentlig eie, sjekket per fil | Ja | **I bruk** 02.10.2026, se `public/games/bryggen/audio/KILDE.md` |
 | Klatreanimasjon, sidesteg, garde-gange | Mangler i gratis-UAL (finnes i UAL Pro, også CC0, men betalt) | CC0 | Nei (betalt) | Gråboksen bruker Push_Loop + Crouch som erstatning |
 
 Mixamo brukes ikke (krever innlogging).
@@ -638,8 +645,26 @@ Mixamo brukes ikke (krever innlogging).
 - [~] Dyr: måker bygget 02.10.2026 (`motor/maaker.ts`): 16 måker i ett tegnekall, laget i kode
   (ingen asset: lavpoly-pakkene kolliderte med stilen, §9.7). De sirkler over kaia, lander på
   kaidekket og vannet, snur seg og hopper, og letter i flokk når gutten spurter forbi eller går helt
-  inntil. Venter på eierens spilltest. Hund og rotte mangler
-- [ ] Lyd: regn, måker, plankegang, åretak, folk på plattysk og norsk. Funnet: *Rain (loopable)*, 4 OGG-løkker, CC0, direkte nedlasting fra OpenGameArt. *Steps in wood floor* (CC0, OpenGameArt). Måker, åretak og stemmer **[K]** (neste sted å lete: Wikimedia Commons, der lyd er direkte nedlastbar; sjekk lisens per fil)
+  inntil. Venter på eierens spilltest. Rotter bygget 02.10.2026 (`motor/rotter.ts`, `motor/rotte-modell.ts`):
+  svartrotte laget i kode (ca. 720 trekanter, pels som støy i pikselen), alle i ett tegnekall og animert i
+  vertex-shaderen (trav, sprang der kroppen strekker seg, snusing, reiser seg, halen slapp i bue eller
+  rett bak). De bor i bua og på lagerloftet, langs bolverket og under svalgangene, aldri midt i
+  gårdsrommet. De rusler langs veggene, stopper og snuser, piler i rykk, fryser når gutten står helt
+  stille og flykter inn i hull og under stablene når han kommer. Står han stille lenge, våger de seg
+  fram igjen. API-et (`skrem`, `fang`, `framme`, `onHendelse`) er klart for «Rottejakt på lagerloftet»
+  (§7.2); katt og feller mangler. Svartrotta kom til Norge tidlig på 1200-tallet eller før, brunrotta
+  først omkring 1750 [V SNL «svartrotte», «brunrotte»], så rottene på Bryggen i 1420-årene var
+  svartrotter: slank kropp, hale lengre enn kroppen, store ører, mørk grå. Venter på eierens
+  spilltest. Hund mangler
+- [~] Lyd (02.10.2026, `motor/lyd.ts`, `motor/lydkobling.ts`): regn ute og på taket inne etter
+  `world.regn`, vind, bølger som klukker mot bolverket der kaikanten er nærmest, ildstedet i schøtstua,
+  måker som skriker fra der de er (og i kor når flokken letter), rotter som piper og krafser, fottrinn
+  på planker ute, golv inne og gjørme (i takt med fotbeina i animasjonen), åretak med plask og knirk
+  og vann mot skroget etter farten. Romlig lyd med lytteren i kameraet; inne lukkes et lavpass over
+  alt som er ute, og rommet får litt klang. Starter ved første klikk eller Enter; «Lyd»-knapp, M og
+  volum, husket i nettleseren. 21 kildefiler fra Freesound (CC0), OpenGameArt (CC0) og Wikimedia
+  Commons (offentlig eie), lisens sjekket per fil (`public/games/bryggen/audio/KILDE.md`), ca. 960 kB
+  Opus. Venter på eierens spilltest. Folk på plattysk og norsk mangler **[K]**
 
 ---
 
