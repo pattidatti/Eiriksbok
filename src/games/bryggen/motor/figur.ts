@@ -45,6 +45,11 @@ export interface Drakt {
     /** Hodet skalert rundt halsen (1 = som riggen). */
     hode?: number;
     pung?: number;
+    /**
+     * Figuren sitter (eget navn, egen geometri). Da følger nederste del av skjørtet leggene i
+     * stedet for lårene, så det henger ned over knærne. Ellers ble kanten en åpen bolle rundt knærne.
+     */
+    sitter?: boolean;
 }
 
 const cache = new Map<string, RigTemplate>();
@@ -466,7 +471,8 @@ class Kledd implements Kropp {
         const i = this.pos.length / 3;
         this.pos.push(v.x, v.y, v.z);
         this.col.push(c.r, c.g, c.b);
-        const w = bones.slice(0, 4);
+        // Fire bein per hjørne: de tyngste vinner.
+        const w = bones.filter((x) => x[1] > 0).sort((a, b) => b[1] - a[1]).slice(0, 4);
         while (w.length < 4) w.push([0, 0]);
         const sum = w.reduce((s, x) => s + x[1], 0) || 1;
         this.skinI.push(...w.map((x) => x[0]));
@@ -496,6 +502,8 @@ class Kledd implements Kropp {
         const spineI = this.bone('DEF-spine.001');
         const tL = this.bone('DEF-thigh.L');
         const tR = this.bone('DEF-thigh.R');
+        const sL = this.bone('DEF-shin.L');
+        const sR = this.bone('DEF-shin.R');
         // Tverrsnittet av kroppen ved beltet og hoftene, målt etter at kroppen er formet.
         const band = (y: number) => {
             let rx = 0.08;
@@ -535,10 +543,16 @@ class Kledd implements Kropp {
                 const side = smooth(x / rx, -0.55, 0.55);
                 const leg = 0.85 * smooth(t, 0, 0.9);
                 this.color('kjortel', c).multiplyScalar(shade);
+                // Sittende: ringene ved og under kneet følger leggen (halvt ved kneet), og
+                // hoftene slipper taket helt der nede, så kanten henger rett ned.
+                const legg = this.d.sitter ? (li >= levels.length - 1 ? 1 : li === levels.length - 2 ? 0.55 : 0) : 0;
+                const lw = this.d.sitter && legg > 0 ? 1 : leg;
                 ring.push(this.vert(v, c, [
-                    [li === 0 ? spineI : hipsI, 1 - leg],
-                    [tL, leg * side],
-                    [tR, leg * (1 - side)],
+                    [li === 0 ? spineI : hipsI, 1 - lw],
+                    [tL, lw * side * (1 - legg)],
+                    [tR, lw * (1 - side) * (1 - legg)],
+                    [sL, lw * side * legg],
+                    [sR, lw * (1 - side) * legg],
                 ]));
             }
             return ring;

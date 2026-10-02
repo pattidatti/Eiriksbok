@@ -185,7 +185,10 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
     for (const p of plasser) {
         const h = HOYDE[p.figur];
         const s = h / rig.height;
-        const a = new Animator(kleFigur(rig, DRAKTER[p.figur]), h);
+        const sitter = p.rolle === 'sitte' || p.rolle === 'spise';
+        // De som sitter har egen geometri: skjørtet henger over knærne (figur.ts).
+        const drakt: Drakt = sitter ? { ...DRAKTER[p.figur], navn: `${p.figur}:sitt`, sitter: true } : DRAKTER[p.figur];
+        const a = new Animator(kleFigur(rig, drakt), h);
         const k = KLIPP[p.rolle];
         const clip = rig.clips.get(k.clip);
         a.play(k.clip, { loop: true, fade: 0.01, timeScale: k.speed, startAt: rnd() * (clip?.duration ?? 1) });
@@ -198,7 +201,6 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         });
 
         const fwd = new THREE.Vector3(Math.sin(p.yaw), 0, Math.cos(p.yaw));
-        const sitter = p.rolle === 'sitte' || p.rolle === 'spise';
         const foot = sitter ? p.pos.clone().addScaledVector(fwd, SITT_BAK * s) : p.pos.clone();
         if (sitter) foot.y -= 0.45 - 0.42 * s;
         a.root.position.copy(foot);
