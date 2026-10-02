@@ -45,6 +45,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/faering-modell.ts` | Færingen som modell: klinkbygd skrog med bordganger, stavner, ripe, tiljer og tofter |
 | `motor/rotter.ts` | Rotter: rusler langs vegger, snuser, piler i rykk, fryser når gutten står stille, flykter inn i hull og under ting. Soner, skjulesteder og et API til «Rottejakt på lagerloftet» (`skrem`, `fang`, `framme`, `onHendelse`) |
 | `motor/rotte-modell.ts` | Svartrotta som modell (ca. 720 trekanter) og vertex-shaderen som animerer den: trav, sprang med strekk i kroppen, snusing, reise seg, halen. Pels som støy i pikselen |
+| `motor/katter.ts` | Katter: én til tre i rottesonene (rom først, én ute). Rusler, sitter, vasker seg, sover sammenkrøllet, lusker lavt mot en rotte som er framme og kaster seg (`Rotter.fang` ved treff, `Rotter.skrem` ved bom), viker unna gutten når han løper mot den |
+| `motor/katt-modell.ts` | Katten som modell (ca. 1450 trekanter) og vertex-shaderen: bein med ett ledd lagt ut med IK, gange, galopp, luske, sitte, vaske seg, sove i ring (ryggraden bøyd), kast, halen langs en kurve. Tabbystriper og pels i pikselen. Egen dybde-shader, så skyggen følger stillingen |
 | `motor/lyd.ts` | Lydbildet med Web Audio: ute-buss med lavpass som lukker seg inne, inne-buss med romklang, løkker, korte lyder fra sprites, romlig lyd der lytteren følger kameraet |
 | `motor/lydkobling.ts` | Hva som høres hvor: regn og vind etter været, bølger på kaikanten, ildstedet, måker og rotter der de er, fottrinn etter underlaget, åretak og vann mot skroget |
 | `motor/ild.ts` | Åpen ild: flammetunger, glør og røyk (tre tegnekall per bål), og `flakk(t)` som lyset følger |
@@ -190,4 +192,5 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Nikolaikirken og kirkegården står bak grensa for det spilleren kan gå på (som Mariakirken), og bruker
   `tynnTake` fordi tårnet er et landemerke. Bare støttemuren og grinda kolliderer; trappa opp ender ved
   grinda. Rådhuset går i allmenningens egne bøtter, så hele cella er ca. 15 tegnekall.
+- `__bryggenKatter` (bare i dev): `still(i, tilstand, pos?, yaw?)` setter katt `i` i en tilstand og holder den der (til skjermbilder). Kattene bruker de samme sonene som rottene og leser `rotter.framme`; de tar ikke `onHendelse` (lyden eier den).
 - Ingen fil over 800 linjer.
