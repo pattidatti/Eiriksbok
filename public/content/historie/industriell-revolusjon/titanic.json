@@ -5,7 +5,7 @@
   "year": "1912",
   "category": "Verden",
   "readTime": "8 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/industriell-revolusjon/titanic-hero.webp",
   "factChecked": "2026-10-02",
   "details": [
     "Titanic traff et isfjell 14. april 1912 og sank på 2 timer og 40 minutter - rundt 1500 mennesker døde",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/titanic-01.webp",
       "alt": "Titanic legger ut fra havna på sin første tur",
       "caption": "Titanic la ut på sin første tur 10. april 1912. Fem dager senere lå skipet på havbunnen."
     },
@@ -129,7 +129,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/titanic-02.webp",
       "alt": "Overlevende i livbåt på et iskaldt hav ved daggry",
       "caption": "Ved daggry kom skipet Carpathia og plukket opp de overlevende fra livbåtene."
     },
@@ -163,7 +163,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/titanic-03.webp",
       "alt": "Vraket av Titanic på havbunnen i mørket",
       "caption": "Vraket av Titanic ble funnet i 1985, på 3800 meters dyp."
     },
