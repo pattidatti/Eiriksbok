@@ -36,14 +36,15 @@
 import * as THREE from 'three';
 import { MeshKit, type MatKey, type Tint } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
-import { LIST, STEIN, TAK, paFlate } from './mariakirken';
+import { LIST, STEIN, TAK, paFlate } from './stein';
+import { murMedHull } from './buer';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
 /** Bak denne avstanden (fra kaienden) tegnes steinbyggene i flat farge. */
 const HOLMEN_LOD = 100;
 /** Bakken på Holmen over kaidekket, og strandlinja: Holmen stikker så langt ut i Vågen [S]. */
-const BAKKE = 0.6;
+export const BAKKE = 0.6;
 const STRAND_Z = -20;
 
 /** Mørke åpninger i muren: steinteksturen nesten svart (ingen egen bøtte). */
@@ -204,7 +205,7 @@ function kastell(p: Pensel): void {
 
 // ── Håkonshallen ──
 // Hallens eget rom: x på tvers (±8,2), z på langs (±18,5), +x mot Vågen.
-const HALL = { x: 48, z: 16, rot: Math.PI / 2 + 0.3, hw: 8.2, hl: 18.5, eave: 14, pitch: 1.0 };
+export const HALL = { x: 48, z: 16, rot: Math.PI / 2 + 0.3, hw: 8.2, hl: 18.5, eave: 14, pitch: 1.0 };
 
 /** Trappegavl: muren går opp over takflatene i trinn [V i dag, U i 1420-årene]. */
 function trappegavl(p: Pensel, z: number, dir: 1 | -1): void {
@@ -384,7 +385,7 @@ function trehus(k: MeshKit, f: Farger, x: number, z: number, rot: number, b: num
 }
 
 /** Kongsgården og bispegården: husene trukket for spillet [S]. x, z, vinkel, bredde, lengde, takfot, torv. */
-const HUS: [number, number, number, number, number, number, boolean][] = [
+export const HUS: [number, number, number, number, number, number, boolean][] = [
     [22, 6, 0.2, 7, 12, 5.5, true],
     [20, 30, -0.1, 8, 14, 6.5, false],
     [38, 44, 0.3, 7, 10, 4.5, true],
@@ -398,12 +399,17 @@ const HUS: [number, number, number, number, number, number, boolean][] = [
     [150, -10, 0.25, 6, 9, 4.5, true],
 ];
 
+/** Husene i HUS som står i borggården, der man kan gå. */
+export const BORG_HUS = [0, 1];
+
 function bakkeOgHus(k: MeshKit, f: Farger): void {
     // Bakken: jord og tråkk innenfor muren (kanten mot sjøen er stein, i `kaikant`).
     flat(k, f.jord, 0.8, () => k.quad('mork', V(0.5, BAKKE, 110), V(174, 0, 0), V(0, 0, STRAND_Z - 110), [0, 0], [0.8, 0.8]));
     // Vollgrava på landsida av tårnet [V], som en mørk stripe med vann.
     flat(k, new THREE.Color(0x1d2628), 1, () => k.quad('mork', V(KASTELL.x - 9.5, BAKKE + 0.02, STRAND_Z + 4.5), V(18, 0, 0), V(0, 0, -3.6)));
-    for (const [x, z, rot, b, l, eave, torv] of HUS) {
+    for (const [i, [x, z, rot, b, l, eave, torv]] of HUS.entries()) {
+        // Husene i borggården bygges av modulsettet i borggårdscella (bergenhus.ts).
+        if (BORG_HUS.includes(i)) continue;
         const tone = 0.85 + (((x * 7 + z * 13) % 10) / 10) * 0.35;
         trehus(k, f, x, z, rot, b, l, eave, torv ? 0.6 : 0.9, torv, tone);
     }
@@ -419,6 +425,9 @@ function kaikant(p: Pensel): void {
     });
 }
 
+/** Porttårnet i ringmuren: midten (Holmens rom), tykkelsen, lengden langs muren og gjennomgangen. */
+export const PORT = { x: 2, z: 16, b: 3.6, l: 9, w: 2.4, h: 3.0 };
+
 function murene(p: Pensel): void {
     const h = 7;
     // Langs sjøen fra tårnet og vestover mot Kristkirken, og opp mot Mariakirken på Bryggen-sida.
@@ -427,11 +436,16 @@ function murene(p: Pensel): void {
     mur(p, 2, STRAND_Z - 0.6, KASTELL.x - KASTELL.b / 2 + 0.2, STRAND_Z - 0.6, h);
     mur(p, 2, STRAND_Z - 1.4, 2, 12, h);
     mur(p, 2, 20, 2, 70, h);
-    // Porten mot byen: et lavt porttårn over åpningen, med saltak [S].
-    p.k.at(2, BAKKE, 16, 0, () => {
-        kropp(p, 0, 0, 3.6, 9, -0.3, 9);
+    // Porten mot byen: et lavt porttårn over åpningen, med saltak [S]. Nær går porten tvers
+    // gjennom tårnet, med hvelv over; langt unna er tårnet en kloss.
+    p.k.at(PORT.x, BAKKE, PORT.z, 0, () => {
+        if (p.fjern) kropp(p, 0, 0, PORT.b, PORT.l, -0.3, 9);
+        else {
+            stein(p, STEIN, (key) => p.k.at(0, 0, 0, -Math.PI / 2, () =>
+                murMedHull(p.k, null, key, -PORT.l / 2, PORT.l / 2, -0.3, 9, PORT.b, [{ u: 0, y0: -0.3, w: PORT.w, h: PORT.h + 0.3 }], { fot: true })
+            ));
+        }
         saltak(p, 1.8, 8.7, 1.0, -4.5, 4.5, 0.25, true);
-        paFlate(p.k, 'nx', 0, 0, 1.8, 4.5, () => glugg(p, 0, 0, 2.4, 3.0));
     });
 }
 

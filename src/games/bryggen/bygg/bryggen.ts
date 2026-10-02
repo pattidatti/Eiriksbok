@@ -11,7 +11,7 @@
 import * as THREE from 'three';
 import type { Physics } from '../motor/physics';
 import { WATER_Y } from '../motor/boat';
-import { CellStreamer, type CellContent, type CellCtx, type CellDef } from '../motor/streaming';
+import { CellStreamer, iRom, type CellContent, type CellCtx, type CellDef } from '../motor/streaming';
 import { Materials, makeSkyEnvironment } from '../motor/materials';
 import { flakk } from '../motor/ild';
 import { lagVann, type Vann } from '../motor/vann';
@@ -149,20 +149,33 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     let soner: RotteSone[] = uteSoner;
     let sonerTid = 0;
 
-    // Mariakirken i nordenden (mot Holmen, +x), oppe i bakken bak gårdene. Den står som kulisse
-    // utenfor grensa, så cella har ingen kollidere.
+    // Mariakirken i nordenden (mot Holmen, +x), på nordsida av Øvregaten bak gårdene. Kirkegården
+    // har mur rundt og port mot gata; man går inn sørportalen (mariakirken.ts).
     const back = FRONT_Z + GARD_DEPTH;
-    const kirke = { x: xe - 30, z: back + 30 };
+    const kirke = { x: xe - 30, z: back + 37 };
+    const kgard = { x0: kirke.x - 24, x1: xe, z0: back + 9.5, z1: back + 65 };
     cells.push({
         id: 'mariakirken',
-        center: new THREE.Vector2(kirke.x, kirke.z + 6),
-        half: new THREE.Vector2(34, 34),
-        build: async () => kirkeMod.buildMariakirkeCell(materials, kirke.x, kirke.z, back + 2.5),
+        center: new THREE.Vector2((kgard.x0 + kgard.x1) / 2, (kgard.z0 + kgard.z1) / 2),
+        half: new THREE.Vector2((kgard.x1 - kgard.x0) / 2, (kgard.z1 - kgard.z0) / 2),
+        build: () => kirkeMod.buildMariakirkeCell(materials, kirke.x, kirke.z, kgard),
     });
-    // Kulissene over Vågen: Holmen i nordvest (+x) står statisk med to nivåer, Stranden på den
-    // andre siden er en celle. Ingen kollidere: grensene stopper spilleren før dem.
-    const [holmenMod, strandMod] = await Promise.all([import('./holmen'), import('./stranden')]);
-    scene.add(holmenMod.lagHolmen(materials, xe));
+    // Øvregaten bak gårdene, 2 m opp: kirketrappa i allmenningen er oppgangen (ovregaten.ts).
+    const [gateMod, allmMod, holmenMod, bergMod, strandMod] = await Promise.all([
+        import('./ovregaten'), import('./allmenning'), import('./holmen'), import('./bergenhus'), import('./stranden'),
+    ]);
+    cells.push(...gateMod.gateCeller(materials, {
+        xw, xe,
+        allm: [ax0, ax0 + ALLM_W],
+        nikolai: { x: [ax0 - 6, ax0 + ALLM_W + 6], z: allmMod.MUR_Z + 7 },
+        maria: { x: [kgard.x0, kgard.x1], z: kgard.z0 - 0.35 },
+    }));
+    // Holmen i nordvest (+x) står statisk med to nivåer, et stykke forbi kaienden. Veien dit og
+    // borggården innenfor porten er celler man går i (bergenhus.ts). Stranden på den andre siden
+    // av Vågen er en kulisse uten kollidere.
+    const hx = xe + bergMod.HOLMEN_D;
+    scene.add(holmenMod.lagHolmen(materials, hx));
+    cells.push(...bergMod.holmenCeller(materials, xe, slots[slots.length - 1].front));
     cells.push(strandMod.strandCelle(materials, xw - 20, xe - 10));
     const streamer = new CellStreamer(phys, cells);
     scene.add(streamer.root);
@@ -173,6 +186,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     ildlys.name = 'ildlys';
     scene.add(ildlys);
     const _d = new THREE.Vector3();
+    const _f = new THREE.Vector3();
     // Folk som går har ingen egen kollider. De nærmeste gutten får låne en kapsel fra poolen, så
     // han ikke går gjennom dem (og de stopper selv før de går på ham, vandrer.ts).
     const pool = Array.from({ length: 5 }, () => phys.addMover(0.55, 0.26));
@@ -197,8 +211,8 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         if (sonerTid <= 0) {
             sonerTid = 0.5;
             soner = [...uteSoner];
-            for (const { box, demp } of streamer.rom()) {
-                if (demp >= 1) continue; // schøtstua: ild og folk
+            for (const { box, demp, yaw } of streamer.rom()) {
+                if (demp >= 1 || yaw !== undefined) continue; // schøtstua og ølstua (ild og folk), og kirken
                 const id = `rom:${box.min.x.toFixed(1)}:${box.min.y.toFixed(1)}:${box.min.z.toFixed(1)}`;
                 let s = romSoner.get(id);
                 if (!s) {
@@ -226,10 +240,13 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         } else ildlys.intensity = 0;
         // Inne: 1 når man er mer enn en meter innenfor veggen, tonet ned mot døra.
         let inne = 0;
-        for (const { box: b, demp } of streamer.rom()) {
-            if (focus.y < b.min.y - 0.5 || focus.y > b.max.y) continue;
-            const dx = Math.min(focus.x - b.min.x, b.max.x - focus.x);
-            const dz = Math.min(focus.z - b.min.z, b.max.z - focus.z);
+        for (const r of streamer.rom()) {
+            const b = r.box;
+            const f = iRom(r, focus, _f);
+            if (f.y < b.min.y - 0.5 || f.y > b.max.y) continue;
+            const dx = Math.min(f.x - b.min.x, b.max.x - f.x);
+            const dz = Math.min(f.z - b.min.z, b.max.z - f.z);
+            const demp = r.demp;
             inne = Math.max(inne, THREE.MathUtils.clamp(Math.min(dx, dz) / 1.0 + 0.3, 0, 1) * demp);
         }
         regn.update(t % 600, focus, world.regn, Math.min(1, inne * 2));
@@ -237,13 +254,16 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     };
 
     // ── Usynlige grenser ──
+    // På land holder cellene selv grensene der de slutter: støttemuren, gjerdene og kirkegårdsmurene
+    // langs Øvregaten, lagerhusene ved veien til Holmen og grensa rundt borggården. Her står bare
+    // endene av byen, sikringer langt ute, og grensene i Vågen for færingen.
     const xMin = xw;
     const xMax = xe;
     const wall = (cx: number, cz: number, hx: number, hz: number) =>
         phys.addBox(new THREE.Vector3(cx, 0, cz), new THREE.Vector3(hx, 14, hz));
-    wall(xMin - 0.5, back / 2, 0.5, back / 2 + 2);
-    wall(xMax + 0.5, back / 2, 0.5, back / 2 + 2);
-    wall((xMin + xMax) / 2, back + 0.5, (xMax - xMin) / 2 + 1, 0.5);
+    wall(xMin - 0.5, 45, 0.5, 47);
+    wall((xMin + hx + 40) / 2, kgard.z1 + 4, (hx + 40 - xMin) / 2, 0.5);
+    wall(hx + 40, 50, 0.5, 80);
     wall(xMin - 0.5, -60, 0.5, 60);
     wall(xMax + 0.5, -60, 0.5, 60);
     wall((xMin + xMax) / 2, -120, (xMax - xMin) / 2 + 1, 0.5);
@@ -252,10 +272,16 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // I allmenningen er det gjørme utenfor plankegangen opp midten, og bak gårdene gjørme. Ellers
     // går man på plankene i gårdsrommene.
     const allm = slots.find((s) => s.id === 'nikolaikirkeallmenningen');
+    const _u = new THREE.Vector3();
     const underlag = (p: THREE.Vector3): 'tre-ute' | 'tre-inne' | 'gjorme' => {
-        for (const { box } of streamer.rom()) {
-            if (p.x > box.min.x && p.x < box.max.x && p.z > box.min.z && p.z < box.max.z && p.y > box.min.y - 0.3 && p.y < box.max.y) return 'tre-inne';
+        for (const r of streamer.rom()) {
+            const box = r.box;
+            const q = iRom(r, p, _u);
+            if (q.x > box.min.x && q.x < box.max.x && q.z > box.min.z && q.z < box.max.z && q.y > box.min.y - 0.3 && q.y < box.max.y) return 'tre-inne';
         }
+        // Øvregaten: plankeveit i midten, gjørme og gress ellers. Holmen og veien dit: gjørme.
+        if (p.z > back && p.y > 1.5) return Math.abs(p.z - gateMod.GATE.veit) < gateMod.GATE.veitW / 2 ? 'tre-ute' : 'gjorme';
+        if (p.x > xe && p.z > FRONT_Z) return 'gjorme';
         if (p.y > 0.6 || p.z < FRONT_Z + 0.2) return 'tre-ute';
         if (allm && p.x > allm.x0 && p.x < allm.x1) return Math.abs(p.x - (allm.x0 + allm.x1) / 2) < 1.2 ? 'tre-ute' : 'gjorme';
         if (p.z > back - 1) return 'gjorme';

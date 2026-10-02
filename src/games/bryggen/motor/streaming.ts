@@ -117,6 +117,21 @@ export interface Sted {
 export interface Rom {
     box: THREE.Box3;
     demp: number;
+    /**
+     * Rommet står skjevt (Mariakirken): boksen gjelder i et rom dreid `yaw` om y rundt midten av
+     * boksen. Bruk `iRom` før punktet testes mot boksen. Skjeve rom får ikke rotter.
+     */
+    yaw?: number;
+}
+
+const _c = new THREE.Vector3();
+
+/** Punktet `p` i rommets eget rom (det samme punktet når rommet ikke står skjevt). */
+export function iRom(r: Rom, p: THREE.Vector3, ut = new THREE.Vector3()): THREE.Vector3 {
+    ut.copy(p);
+    if (!r.yaw) return ut;
+    r.box.getCenter(_c);
+    return ut.sub(_c).applyAxisAngle(THREE.Object3D.DEFAULT_UP, -r.yaw).add(_c);
 }
 
 export interface CellDef {
@@ -125,6 +140,11 @@ export interface CellDef {
     center: THREE.Vector2;
     half: THREE.Vector2;
     build: () => Promise<CellContent>;
+    /**
+     * Egen grense for nær-nivået (standard NEAR_R). Øvregaten bruker kortere: fra gårdsrommene
+     * ligger gata bak husene, og i tåka på 45 m holder flatt nivå.
+     */
+    naerR?: number;
 }
 
 interface LiveCell {
@@ -171,7 +191,7 @@ export class CellStreamer {
             if (!cell && d < LOAD_R) jobs.push(this.load(def));
             else if (cell && d > DROP_R) this.drop(cell);
             else if (cell?.state === 'live' && cell.content) {
-                const near = d < NEAR_R || !cell.content.mid;
+                const near = d < (def.naerR ?? NEAR_R) || !cell.content.mid;
                 const sett = d < TAAKE_R || !!cell.landemerke;
                 cell.content.near.visible = near && sett;
                 if (cell.content.mid) cell.content.mid.visible = !near && sett;

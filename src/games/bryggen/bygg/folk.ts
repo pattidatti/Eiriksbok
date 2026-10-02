@@ -115,7 +115,7 @@ export const DRAKTER = {
         slank: 0.55, hode: 1.03,
     },
 
-    // ── Tyven, kirken og kongens folk (oppdragene, oppdrag-data.ts) ── Alt [S], ikke sjekket [K].
+    // ── Tyven, kirken, ølstua og kongens folk (oppdragene, oppdrag-data.ts) ── Alt [S], ikke sjekket [K].
     /** Tyven: en mager gutt fra nord, slitt grå vadmel, hetta oppe og trukket ned. */
     tyv: {
         navn: 'tyv', hud: 0xc69476, haar: 0x7a6650, kjortel: 0x4d4a44, kjortelNed: -0.02, belte: 0x2a2018,
@@ -140,6 +140,18 @@ export const DRAKTER = {
         hoser: 0x2a2a2e, sko: 0x1d1612, hette: 0x1e1e22, hetteOppe: true, tut: 0.36, kappe: 0.2,
         slank: 0.25, pung: 0.5,
     },
+    /** Klokkeren i Mariakirken: ringer og steller lysene. Grå kjortel til leggen, hetta oppe. */
+    klokker: {
+        navn: 'klokker', hud: 0xd2a084, haar: 0x6e5c48, kjortel: 0x4a4640, kjortelNed: 0.3, belte: 0x241b14,
+        hoser: 0x35322e, sko: 0x231a12, hette: 0x2e2c2a, hetteOppe: true, tut: 0.1, kappe: 0.2,
+        slank: 0.4,
+    },
+    /** Ølkona i ølstua ved Øvregaten: rødbrun kjortel til anklene, lys hodeduk, forkle-farget belte. */
+    olkone: {
+        navn: 'olkone', hud: 0xd9a385, haar: 0x7a5434, kjortel: 0x6e3b2c, kjortelNed: 0.42, belte: 0xb8ad94,
+        hoser: 0x463d36, sko: 0x2d2119, hette: 0xddd3bd, hetteOppe: true, tut: 0.04, kappe: 0.2,
+        mage: 0.4, slank: 0.2,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
@@ -147,7 +159,7 @@ export type FigurNavn = keyof typeof DRAKTER;
 export const HOYDE: Record<FigurNavn, number> = {
     junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52, fisker: 1.71,
     fiskekone: 1.58, kornselger: 1.73, bondekone: 1.55, bodker: 1.7, kjopekone: 1.61, borger: 1.75, tjenestejente: 1.54,
-    tyv: 1.68, prest: 1.72, vakt: 1.82, skriver: 1.7,
+    tyv: 1.68, prest: 1.72, vakt: 1.82, skriver: 1.7, klokker: 1.66, olkone: 1.6,
 };
 
 /**

@@ -20,7 +20,7 @@
 import * as THREE from 'three';
 import { ColliderKit, MeshKit, type Tint } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
-import { LIST, STEIN, TAK, apning, gesims, paFlate } from './mariakirken';
+import { LIST, STEIN, TAK, apning, gesims, paFlate } from './stein';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -215,7 +215,7 @@ export interface KirkeOpts {
     /** Vestfronten av tårnet (x) og midtlinja av skipet (z) i verden. */
     ox: number;
     oz: number;
-    /** Forkanten av støttemuren mot allmenningen, og åpningen der trappa kommer opp. */
+    /** Forkanten av kirkegårdsmuren mot Øvregaten, og åpningen med grinda (rett over kirketrappa). */
     murZ: number;
     x0: number;
     x1: number;
@@ -223,9 +223,9 @@ export interface KirkeOpts {
 }
 
 /**
- * Kirken på kirkegården, støttemuren mot allmenningen og en stengt grind øverst i trappa.
- * Kirkegården ligger bak grensa for det spilleren kan gå på ennå, så bare muren og grinda
- * kolliderer. Én MeshKit for alt, med materialene med tynnere tåke: tårnet er et landemerke.
+ * Kirken på kirkegården, muren mot Øvregaten og en stengt grind. Kirkegården ligger bak grensa for
+ * det spilleren kan gå på, så bare muren og grinda kolliderer. Én MeshKit for alt, med materialene
+ * med tynnere tåke: tårnet er et landemerke.
  */
 export function buildNikolaikirken(mats: Materials, o: KirkeOpts): { near: THREE.Group; mid: THREE.Mesh; colliders: ColliderKit['specs'] } {
     const k = new MeshKit();
@@ -240,7 +240,7 @@ export function buildNikolaikirken(mats: Materials, o: KirkeOpts): { near: THREE
     });
     lod.at(o.ox, NIKOLAI_Y, o.oz, ROT, () => kirkeLod(lod, (key) => mats.lodColor(key)));
 
-    // Kirkegården: torv på en hylle i bakken, gjørme langs sørveggen der det bygges.
+    // Kirkegården: torv på samme høyde som gata, gjørme langs sørveggen der det bygges.
     const z1 = o.oz + 14;
     const xm = (o.x0 + o.x1) / 2;
     const w = o.x1 - o.x0;
@@ -251,26 +251,26 @@ export function buildNikolaikirken(mats: Materials, o: KirkeOpts): { near: THREE
     k.withTint({ top: 0.75, bottom: 0.75 }, () =>
         k.box('gjorme', o.ox - (SKIP.z0 + SKIP.z1) / 2, NIKOLAI_Y + 0.01, sor - 1.6, SKIP.z1 - SKIP.z0 + 6, 0.04, 3.4, { skip: ['bottom'] })
     );
-    // Støttemuren med brystning, i to deler rundt grinda, og muren under grinda.
-    const murY0 = -0.3;
+    // Den lave muren langs gata, i to deler rundt grinda, og en terskel under grinda.
+    const murY0 = NIKOLAI_Y - 0.4;
     const murTop = NIKOLAI_Y + 0.9;
     const mur = (a: number, b: number, top: number) =>
         k.withTint(STEIN, () => k.box('stein', (a + b) / 2, (murY0 + top) / 2, o.murZ + 0.35, b - a, top - murY0, 0.7, { skip: ['bottom'], shadeFoot: true }));
     mur(o.x0, o.gap[0], murTop);
     mur(o.gap[1], o.x1, murTop);
-    mur(o.gap[0], o.gap[1], NIKOLAI_Y);
-    for (const x of o.gap) {
-        k.withTint(LIST, () => k.box('stein', x, (murY0 + murTop + 0.5) / 2, o.murZ + 0.35, 0.6, murTop + 0.5 - murY0, 0.8, { skip: ['bottom'] }));
-    }
-    c.box(xm, (murY0 + murTop) / 2, o.murZ + 0.35, w, murTop - murY0, 0.7);
-    // Grinda: stengt mens det bygges [S].
+    mur(o.gap[0], o.gap[1], NIKOLAI_Y + 0.05);
+    k.withTint(LIST, () => {
+        for (const [a, b] of [[o.x0, o.gap[0]], [o.gap[1], o.x1]]) k.box('stein', (a + b) / 2, murTop + 0.05, o.murZ + 0.35, b - a + 0.1, 0.1, 0.8);
+        for (const x of o.gap) k.box('stein', x, (murY0 + murTop + 0.5) / 2, o.murZ + 0.35, 0.6, murTop + 0.5 - murY0, 0.8, { skip: ['bottom'] });
+    });
+    c.box(xm, (murY0 + murTop + 0.6) / 2, o.murZ + 0.35, w, murTop + 0.6 - murY0, 0.7);
+    // Grinda: stengt mens kirken repareres [S].
     const gw = o.gap[1] - o.gap[0] - 0.6;
     const gx = (o.gap[0] + o.gap[1]) / 2;
     k.withTint({ top: 0.8, bottom: 0.8, hue: [1.04, 0.98, 0.9] }, () => {
         for (let x = gx - gw / 2 + 0.08; x < gx + gw / 2; x += 0.2) k.box('raatre', x, NIKOLAI_Y + 0.75, o.murZ + 0.4, 0.12, 1.5, 0.05);
         for (const y of [0.35, 1.2]) k.box('raatre', gx, NIKOLAI_Y + y, o.murZ + 0.45, gw, 0.12, 0.06);
     });
-    c.box(gx, NIKOLAI_Y + 0.75, o.murZ + 0.4, gw, 1.5, 0.12, true);
 
     const near = new THREE.Group();
     near.name = 'nikolaikirken';

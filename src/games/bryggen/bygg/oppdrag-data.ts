@@ -394,7 +394,7 @@ export const OPPDRAG: OppdragDef[] = [
                     valg: [{ tekst: 'Jeg har et brev fra presten i Mariakirken.', til: 'brev' }],
                 },
                 brev: {
-                    tekst: 'Fra presten? Gå inn, da. Skriveren sitter i borggården, ved hallen. Rør ingenting.',
+                    tekst: 'Fra presten? Gå inn, da. Skriveren står ved pulten sin i borggården, foran hallen. Rør ingenting.',
                     gest: 'vift',
                     gjor: 'hendelse:snakk:vakta',
                 },

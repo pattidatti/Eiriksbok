@@ -8,9 +8,12 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Første gård: `/test/bryggen-gard` (modulsettet, strømming, kai, Nikolaikirkeallmenningen og 14 nabogårder).
   Gå rett opp gårdsrommet og inn den åpne døra bakerst: schøtstua med ildstedet. Forhuset til venstre
   for kaia (vest) har bu-døra åpen: bua med tørrfisk, bismer og pult, trappa opp til lagerloftet og
-  døra ut på svalgangen. Mariakirken står oppe i bakken bak gårdene i nordenden (+x, mot Holmen):
-  gå østover langs kaia, eller se fra Vågen. Nikolaikirkeallmenningen (+x for gården) har torg med boder
-  og brønn, rådhuset med svalgang man kan gå opp på, og Nikolaikirken under reparasjon øverst.
+  døra ut på svalgangen. Nikolaikirkeallmenningen (+x for gården) har torg med boder og brønn,
+  rådhuset med svalgang man kan gå opp på, og kirketrappa øverst opp til Øvregaten. Gata går bak alle
+  gårdene, 2 m opp, med norske hus og ølstua på nordsida (gå østover fra trappa), Nikolaikirken under
+  reparasjon rett over trappa og Mariakirken lenger øst: inn porten i kirkegårdsmuren, langs gangstien
+  og inn sørportalen. Kaia fortsetter forbi den siste gården til porten på Holmen, med borggården foran
+  Håkonshallen innenfor.
   På torget står selgere i bodene, og kjøpere, en tjenestejente med bøtte, en fisker og en svenn går
   mellom bodene, brønnen og kaia. Snakk med kornselgeren og borgeren (de har samtaler).
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
@@ -67,13 +70,18 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `graboks/folkstyring.ts` | Hvem gutten kan snakke med (E), samtalen som pågår og replikkene som vises som undertekst |
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper) |
-| `bygg/allmenning.ts` | Nikolaikirkeallmenningen: gjørme, plankegang, kort kai, rådhuset (steinkjeller, laftet stue, svalgang og trapp) og steintrappa opp mot kirkegården |
+| `bygg/allmenning.ts` | Nikolaikirkeallmenningen: gjørme, plankegang, kort kai, rådhuset (steinkjeller, laftet stue, svalgang og trapp), steintrappa opp til Øvregaten og støttemuren med den åpne grinda |
 | `bygg/torgfolk.ts` | Folkene på torget: selgerne i bodene og rutene til dem som går (kjøpere, tjenestejenta ved brønnen, fiskeren og svennen på plankegangen), med et kart over hvor tingene står |
 | `bygg/torg.ts` | Torglivet: salgsboder med tørrfisk, korn, kurver og tønner, brønn med vinde, slede med tønne, spor og pytter i gjørma |
-| `bygg/nikolaikirken.ts` | Nikolaikirken øverst i allmenningen: romansk steinkirke med vesttårn, under reparasjon etter brannen 1413 (nytt tak i vest, sperrer og stillas i øst), kirkegård med støttemur og stengt grind |
+| `bygg/nikolaikirken.ts` | Nikolaikirken på nordsida av Øvregaten, rett over kirketrappa: romansk steinkirke med vesttårn, under reparasjon etter brannen 1413 (nytt tak i vest, sperrer og stillas i øst), kirkegård med lav mur mot gata og stengt grind |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
-| `bygg/mariakirken.ts` | Mariakirken som kulisse: tvillingtårn, treskipet basilika, gotisk kor, kirkegård med mur. Ingen kollidere |
-| `bygg/holmen.ts` | Holmen som kulisse forbi kaienden (+x): kastellet ved sjøen, ringmuren med port, Håkonshallen med trappegavler, Kristkirken, Apostelkirken, trehus i kongsgården og bispegården. Statisk `THREE.LOD`, ingen kollidere |
+| `bygg/mariakirken.ts` | Mariakirken utenpå: tvillingtårn, pulttak og saltak, strebepilarer, og kirkegården med mur, port, gangsti og gravkors (alt kolliderer) |
+| `bygg/mariakirken-inne.ts` | Mariakirken som hule murer (sideskip med vinduer og sørportalen, arkaden, korbuen, koret) og rommet inne: steingolv, gravheller, trinn opp i koret, høyalter og sidealter med lys, krusifiks, bjelker. Presten og klokkeren |
+| `bygg/buer.ts` | `murMedHull`: en mur med ekte hull tvers gjennom (dører, buer, vinduer), rund eller spiss bue, med kollidere |
+| `bygg/stein.ts` | Det steinbyggene deler: kleberstein-tonene, `paFlate`, `apning` (vindu eller portal, med eller uten mørk fylling), gesimser |
+| `bygg/ovregaten.ts` | Øvregaten bak gårdene: støttemur med brystning, plankeveit, norske hus med smug og gjerder, ølstua med ildsted, folk som går og står. Celler langs x |
+| `bygg/bergenhus.ts` | Veien fra kaienden til porten på Holmen (kai, plankevei, rampe, lagerhus) og borggården innenfor (bakke, ringmur og port som kollidere, trehusene, skriverboden, vaktene og skriveren) |
+| `bygg/holmen.ts` | Holmen som kulisse forbi veien (+x): kastellet ved sjøen, ringmuren med porttårn (ekte gjennomgang nær), Håkonshallen med trappegavler, Kristkirken, Apostelkirken, trehus i kongsgården og bispegården. Statisk `THREE.LOD`; kolliderne står i `bergenhus.ts` |
 | `bygg/stranden.ts` | Stranden på den andre siden av Vågen: glisne laftehus, naust, tømmer og et skip på stokker, trukket fra et frø. Én celle bak grensa, ingen kollidere |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
 | `motor/gestikk.ts` | Gester mens folk snakker: prateklippet (`Idle_Talking_Loop`) og vift, vink, kom hit, pek, nikk, rist, skuldre, bukk og rop dreid i figurens rom (`Animator.figurDrei`). `gestFra(tekst)` velger gest fra det som blir sagt |
@@ -228,9 +236,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Det gutten har gjort som folk husker, står i `SPOR` (`samtaler.ts`): bunter båret, juks, om fiskeren
   har merket det. `startNode` velger hvor en samtale starter ut fra det. Ikke lagret ennå.
 - `game.ts` er nær 800 linjer. Nye systemer får egen fil i `graboks/` og hektes på med få linjer.
-- Nikolaikirken og kirkegården står bak grensa for det spilleren kan gå på (som Mariakirken), og bruker
-  `tynnTake` fordi tårnet er et landemerke. Bare støttemuren og grinda kolliderer; trappa opp ender ved
-  grinda. Rådhuset går i allmenningens egne bøtter, så hele cella er ca. 15 tegnekall.
+- Nikolaikirken og kirkegården står bak grensa for det spilleren kan gå på, og bruker `tynnTake` fordi
+  tårnet er et landemerke. Bare muren mot gata kolliderer; grinda er stengt. Rådhuset går i
+  allmenningens egne bøtter, så hele cella er ca. 15 tegnekall.
 - `__bryggenKatter` (bare i dev): `still(i, tilstand, pos?, yaw?)` setter katt `i` i en tilstand og holder den der (til skjermbilder). Kattene bruker de samme sonene som rottene og leser `rotter.framme`; de tar ikke `onHendelse` (lyden eier den).
 - Skipene (`bygg/skip.ts`) står ikke i en celle: de er få og synes over hele Vågen. Hvert skip er én
   `MeshKit` (ett tegnekall per materiale: `raatre` for treverk og seil, `mork` for tauverk) og én
@@ -244,9 +252,11 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Trekanter (gavler) må ha hjørnene i rekkefølgen som gir normalen ut fra bygget: ved `z0` (−z ut)
   `(hw, …), (−hw, …), topp`, ved `z1` motsatt. Ellers kastes de bort når man ser dem utenfra.
 - Holmen er statisk i scenen som en `THREE.LOD` (nær: stein og bordtak med tynn tåke, pluss trehusene i
-  flat farge; langt unna, bak 100 m fra kaienden: alt i flat farge i ett tegnekall). Den skal synes fra
-  hele Vågen, også der en celle ikke ville vært lastet. Stranden er en vanlig celle: den er borte i tåka
-  fra kaia uansett.
+  flat farge; langt unna, bak 100 m fra Holmen: alt i flat farge i ett tegnekall). Den skal synes fra
+  hele Vågen, også der en celle ikke ville vært lastet. Den står `HOLMEN_D` (24 m) forbi kaienden; veien
+  dit og borggården er celler (`bergenhus.ts`) med kolliderne for ringmuren, porten og hallen. Husene i
+  `BORG_HUS` tegnes ikke av kulissen, men av modulsettet i borggårdscella. Stranden er en vanlig celle:
+  den er borte i tåka fra kaia uansett.
 - Alt folk sier, står i en boble over hodet (`Hoder.si`), ikke som undertekst. `CellCtx.si` tar føttene
   til den som snakker (`fra`), så boblen havner over riktig hode. Bare «Dette vet vi» står i panelet nederst.
 - `Snakkbar` har `hode`, `gest` og `synlig`. Nye folk som skal snakkes med, lages av `lagFolk` og får dem gratis.
@@ -263,4 +273,25 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Oppdrag: et mål er en hendelse (`veid`, `sted:<id>`, `snakk:<person>`, `slaa:tyven`). Steder meldes av
   cellene (`CellContent.steder`, f.eks. `bronn` og `gjeldsbok`). Et oppdrag uten mål er klart med en gang
   (et brev som bare skal leveres). `__bryggen.folk.oppdrag` i konsollen kan ta, telle og levere.
-
+- Øvregaten ligger 2 m over gårdene (`GATE.y` = `NIKOLAI_Y`), og støttemuren foran (z 61,05-61,75) er
+  grensa bakerst i gårdene. På land holder cellene grensene selv: brystningen på muren, gjerdene i
+  smugene mellom husene (`GATE.gjerde`), kirkegårdsmurene, lagerhusene ved veien til Holmen og grensa
+  rundt borggården. `bryggen.ts` har bare endene av byen, sikringer langt ute og grensene i Vågen.
+- Gata deles i celler langs x (`gateCeller`), kuttet ved kirkegårdene. Gatecellene har `naerR: 45`
+  (CellDef): fra gårdsrommene ligger gata bak husene, og det flate nivået holder i tåka der. Med vanlig
+  NEAR_R kostet gata 38 tegnekall fra gårdsrommet. Lenger unna enn `SAMLET_R` kaster de ikke skygge
+  (en kopi av gruppa uten skygge i `samlet`).
+- En mur man skal gå eller se gjennom, bygges med `murMedHull` (buer.ts), ikke med en boks og en mørk
+  `apning`. `apning(…, fyll = false)` gir bare steinkransen rundt det ekte hullet. Hull som står over
+  hverandre (arkaden og lysgluggene over) må i hver sin `murMedHull`: hullene i én mur kan ikke
+  overlappe langs muren.
+- Et hult steinbygg med åpent tak trenger gavltrekantene også innenfra (`triMot` med normalen inn), og
+  gesimsen som lister langs ytterveggene: `gesims` er en massiv plate og blir et himling inne.
+- Rom som står skjevt (Mariakirken, 30°) har `yaw` på `Rom`. Test alltid punktet med `iRom(r, p)` før
+  boksen. Skjeve rom får ikke rotter (sonene er akse-justerte).
+- Lys som skal lyse selv (alterlysene) går i et eget `MeshBasicMaterial` som cella eier og kaster i
+  `dispose`. Duker og voks går i `lodMaterial` (hvit med farge per hjørne). Ildlyset flyttes til
+  alteret via cellas `ild`, som til ildstedene.
+- Ølstua er et hus med `inne.ljore` som schøtstua (`schotstue()` lager ildstedet, benkene og plassene),
+  med andre folk på plassene. Ilden der ligger i `inne`, så den skjules på avstand.
+- Vakta står på bysida av porten, men eies av borggårdscella. Veien og borggården er alltid lastet samtidig.

@@ -28,6 +28,7 @@ export const PERSONER: Record<string, Person> = {
     ingrid: { navn: 'Ingrid', tittel: 'tjenestejente' },
     presten: { navn: 'Herr Johannes', tittel: 'prest i Mariakirken' },
     klokkeren: { navn: 'Bertolt', tittel: 'klokker' },
+    gunhild: { navn: 'Gunhild', tittel: 'ølkone' },
     vakta: { navn: 'Vakta', tittel: 'ved porten på Bergenhus' },
     skriveren: { navn: 'Peder', tittel: 'kongens skriver' },
     tyven: { navn: 'Tyven', tittel: '' },
@@ -51,4 +52,6 @@ export const TITTEL: Record<string, string> = {
     prest: 'Prest',
     vakt: 'Vakt',
     skriver: 'Skriver',
+    klokker: 'Klokker',
+    olkone: 'Ølkone',
 };

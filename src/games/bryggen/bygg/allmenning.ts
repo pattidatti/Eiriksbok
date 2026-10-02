@@ -16,7 +16,7 @@ import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
 import { hus, husLod, rng, type HouseSpec } from './moduler';
 import { DECK_Y, FRONT_Z, GARD_DEPTH, SV_W, T, WARM, kai, kaiJog, svalgang, toGroup, tonne, trapp, type Sides } from './gard';
-import { LIST, STEIN, apning, paFlate } from './mariakirken';
+import { LIST, STEIN, apning, paFlate } from './stein';
 import { NIKOLAI_Y, PORTAL_Z, buildNikolaikirken } from './nikolaikirken';
 import { lagFolk } from './folk';
 import { bod, bronn, pytt, slede, spor } from './torg';
@@ -26,10 +26,12 @@ const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
 /** Rådhuset i cellas rom: x fra `x0` til `x0 + w`, z fra `z0` og `l` innover. */
 const RAD = { x0: 11.6, w: 6, z0: 30, l: 12 };
-/** Steintrappa opp mot kirkegården: midt på, fra `z0` til muren. */
+/** Steintrappa opp til Øvregaten: midt på, fra `z0` til støttemuren. */
 const KTRAPP = { x: 9.4, w: 2.4, z0: 57.5, z1: 60.95 };
-/** Grensa bak byen (bryggen.ts) står like bak her; muren står på den. */
-const MUR_Z = 61.05;
+/** Støttemuren under Øvregaten (forkanten). Gata ligger oppå, i høyde med kirkegården (NIKOLAI_Y). */
+export const MUR_Z = 61.05;
+/** Nikolaikirken og kirkegården står så langt bak støttemuren: Øvregaten går imellom. */
+const GATE_D = 7;
 
 /**
  * Rådhuset: en grunnmur av stein med et laftet rom oppå, svalgang langs allmenningen og trapp opp.
@@ -89,7 +91,43 @@ function radhus(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, ox: n
     trapp(k, c, xWall - SV_W, xWall, RAD.z0 + 0.3, sz0, DECK_Y, xWall - SV_W);
 }
 
-/** Steintrappa opp mot kirkegården, med stablede vanger på sidene. */
+/**
+ * Støttemuren der allmenningen møter Øvregaten: stein med brystning, og en åpning med grinda slått
+ * opp der kirketrappa kommer opp. Gata langs gårdene har samme mur (ovregaten.ts). Muren og
+ * grinda er [S]: at Øvregaten lå høyere enn Bryggen og at gårdene gikk opp mot den, er [V §5.2].
+ */
+function stottemur(k: MeshKit, c: ColliderKit, w: number): void {
+    const y0 = -0.3;
+    const top = NIKOLAI_Y + 0.9;
+    const gap = [KTRAPP.x - KTRAPP.w / 2 - 0.4, KTRAPP.x + KTRAPP.w / 2 + 0.4];
+    const zc = MUR_Z + 0.35;
+    const mur = (a: number, b: number, t: number) => {
+        k.withTint(STEIN, () => k.box('stein', (a + b) / 2, (y0 + t) / 2, zc, b - a, t - y0, 0.7, { skip: ['bottom'], shadeFoot: true }));
+        c.box((a + b) / 2, (y0 + t + 0.6) / 2, zc, b - a, t + 0.6 - y0, 0.7);
+    };
+    mur(0, gap[0], top);
+    mur(gap[1], w, top);
+    k.withTint(STEIN, () => k.box('stein', (gap[0] + gap[1]) / 2, (y0 + NIKOLAI_Y) / 2, zc, gap[1] - gap[0], NIKOLAI_Y - y0, 0.7, { skip: ['bottom'] }));
+    c.box((gap[0] + gap[1]) / 2, (y0 + NIKOLAI_Y) / 2, zc, gap[1] - gap[0], NIKOLAI_Y - y0, 0.7);
+    k.withTint(LIST, () => {
+        for (const [a, b] of [[0, gap[0]], [gap[1], w]]) k.box('stein', (a + b) / 2, top + 0.05, zc, b - a, 0.1, 0.8);
+        for (const x of gap) k.box('stein', x, (y0 + top + 0.5) / 2, zc, 0.6, top + 0.5 - y0, 0.8, { skip: ['bottom'] });
+    });
+    // Grinda: to fløyer slått opp mot gata, så veien opp er åpen.
+    const gw = (gap[1] - gap[0] - 0.6) / 2;
+    for (const s of [-1, 1]) {
+        const hx = s < 0 ? gap[0] + 0.3 : gap[1] - 0.3;
+        k.at(hx, NIKOLAI_Y, zc + 0.1, s * 1.75, () => {
+            k.withTint({ top: 0.8, bottom: 0.8, hue: [1.04, 0.98, 0.9] }, () => {
+                for (let x = 0.08; x < gw; x += 0.2) k.box('raatre', -s * x, 0.75, 0, 0.12, 1.5, 0.05);
+                for (const y of [0.35, 1.2]) k.box('raatre', (-s * gw) / 2, y, 0, gw, 0.12, 0.06);
+            });
+            c.box((-s * gw) / 2, 0.75, 0, gw, 1.5, 0.1, true);
+        }, c);
+    }
+}
+
+/** Steintrappa opp mot Øvregaten, med stablede vanger på sidene. */
 function kirketrapp(k: MeshKit, c: ColliderKit): void {
     const { x, w, z0, z1 } = KTRAPP;
     const n = 10;
@@ -171,15 +209,17 @@ export async function buildAllmenningCell(mats: Materials, x0: number, x1: numbe
     // Rådhuset går i allmenningens egne bøtter, som nabogårdene: få tegnekall for hele cella.
     radhus(k, c, lod, mats, x0);
     kirketrapp(k, c);
+    stottemur(k, c, w);
 
     const near = toGroup(k, mats, 'allmenning');
-    // Nikolaikirken: tårnet mot Holmen, sørportalen rett over kirketrappa.
+    // Nikolaikirken på den andre siden av Øvregaten: tårnet mot Holmen, sørportalen og den stengte
+    // grinda rett over kirketrappa.
     const kirke = buildNikolaikirken(mats, {
         ox: x0 + KTRAPP.x + PORTAL_Z,
-        oz: MUR_Z + 8,
-        murZ: MUR_Z,
-        x0: x0 - 14,
-        x1: x1 + 14,
+        oz: MUR_Z + GATE_D + 8,
+        murZ: MUR_Z + GATE_D,
+        x0: x0 - 6,
+        x1: x1 + 6,
         gap: [x0 + KTRAPP.x - KTRAPP.w / 2 - 0.4, x0 + KTRAPP.x + KTRAPP.w / 2 + 0.4],
     });
     near.add(kirke.near);

@@ -64,6 +64,8 @@ export const NAVN: Record<string, string> = {
     prest: 'Presten',
     vakt: 'Vakta',
     skriver: 'Skriveren',
+    klokker: 'Klokkeren',
+    olkone: 'Ølkona',
 };
 
 /** Til teksten «E: Snakk med …». */
@@ -85,6 +87,8 @@ export const BESTEMT: Record<string, string> = {
     prest: 'presten',
     vakt: 'vakta',
     skriver: 'skriveren',
+    klokker: 'klokkeren',
+    olkone: 'ølkona',
 };
 
 const REGLER = 'Hvilke regler gjelder her?';
@@ -376,6 +380,20 @@ export const REPLIKKER: Record<string, string[]> = {
         'En god tønne lekker ikke en dråpe.',
     ],
     kjopekone: ['Fisken er dyr i dag.', 'Har du ikke noe arbeid å gjøre, gutt?', 'Skal du handle, eller står du bare der?'],
+    klokker: [
+        'Lysene skal brenne til messen er over. Ikke blås på dem, gutt.',
+        'Jeg ringer klokkene. Hører du dem fra Bryggen?',
+        'Ta av deg hetta når du er i Guds hus.',
+    ],
+    olkone: [
+        'Øl får du ikke, gutt. Kom igjen når du har penger.',
+        'Her drikker bergensere, ikke tyskere. Dere har deres egne stuer.',
+        'Hold deg unna ilden, den er varm.',
+    ],
+    borger: ['Øvregaten er vår gate. Bryggen er deres.', 'Gå hjem til Kontoret, gutt.'],
+    prest: ['Gud være med deg, gutt.'],
+    vakt: ['Gå videre.'],
+    skriver: ['Jeg har mye å skrive. Gå nå.'],
     tjenestejente: [
         'Vannet er tungt. Jeg går denne veien mange ganger om dagen.',
         'Ikke dytt, da søler jeg.',

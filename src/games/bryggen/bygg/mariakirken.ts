@@ -1,7 +1,8 @@
-// Mariakirken: fasaden bak gårdene i nordenden av Bryggen, oppe i bakken mot Øvregaten.
+// Mariakirken: bak gårdene i nordenden av Bryggen, på nordsida av Øvregaten.
 //
-// Blueprint §5.2 og §5.3: Bergens eldste sognekirke, overdratt Kontoret 1408 [V]. Den står bare
-// som kulisse: man kommer ikke dit, og den har ingen kollidere. Bygget av kleberstein mellom
+// Blueprint §5.2 og §5.3: Bergens eldste sognekirke, overdratt Kontoret 1408 [V]. Man går inn fra
+// gata gjennom porten i kirkegårdsmuren, langs gangstien og inn sørportalen; rommet innenfor står
+// i mariakirken-inne.ts. Bygget av kleberstein mellom
 // 1140 og 1180 som en treskipet basilika: et høyt midtskip og to lavere sideskip under egne tak
 // [V SNL]. Tvillingtårnene i vest fikk formen sin etter brannen i 1248 og er 27 m til gesimsen,
 // med et forhall imellom [V SNL, Wikipedia]. Koret ble forlenget mot øst etter 1248, i gotisk stil
@@ -13,91 +14,25 @@
 // mot gårdsrekkene er valgt for spillet [S]. Taktekkingen er heller ikke kjent [K].
 //
 // Kirkens eget rom: x på tvers (−x er sørsida), z fra vestfronten (z = 0) mot koret i øst, y opp
-// fra kirkegården. Hele kirken er én MeshKit (ett tegnekall per materiale), med egne kopier av
-// materialene der tåka er halvparten så tett (`Materials.tynnTake`): et landemerke skal synes.
+// fra kirkegården. Hele kirken utenpå er én MeshKit (ett tegnekall per materiale), med egne kopier
+// av materialene der tåka er halvparten så tett (`Materials.tynnTake`): et landemerke skal synes.
+// Innredningen er en egen MeshKit som skjules på avstand. At kirkegården har mur og port mot gata,
+// og hvor gangstien går, er [S].
 import * as THREE from 'three';
-import { MeshKit, type Tint } from '../motor/meshkit';
+import { ColliderKit, MeshKit, type Tint } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
+import { STEIN, LIST, TAK, apning, paFlate, gesims, type Flate } from './stein';
+import { murMedHull } from './buer';
+import { FORHALL_H, KIRKE_LEN, KOR, PORTAL, SIDESKIP, SKIP, TARN, inventar, skipOgKor } from './mariakirken-inne';
+import { lagFolk } from './folk';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
-/** Kirkegården ligger så høyt over kaidekket: bakken stiger mot Øvregaten [S]. */
-export const KIRKE_Y = 2.2;
+/** Kirkegården ligger i samme høyde som Øvregaten: bakken stiger fra Bryggen [S]. */
+export const KIRKE_Y = 2.0;
 /** Vinkelen kirken står i: koret peker innover og litt mot Vågsbunnen (−x). */
 const ROT = -Math.PI / 6;
-
-// Mål i kirkens rom (meter).
-const TARN = { x0: 2.6, x1: 9, z1: 7.5, h: 27, tak: 7 };
-const FORHALL_H = 13.5;
-const SKIP = { z0: 7.5, z1: 30.5, hw: 5, h: 15.5, pitch: 0.95 };
-const SIDESKIP = { hw: 9, h: 8.6, top: 11.4 };
-const KOR = { z1: 44, hw: 5, h: 12.5, pitch: 0.95 };
-export const KIRKE_LEN = KOR.z1;
-
-// Kleberstein: grå med et grønnskjær, mørkere nederst der regnet spruter opp.
-export const STEIN: Tint = { top: 0.98, bottom: 0.72, hue: [0.9, 0.97, 0.95] };
-export const LIST: Tint = { top: 1.1, bottom: 1.1, hue: [0.95, 1.0, 0.97] };
-export const TAK: Tint = { top: 0.72, bottom: 0.72, hue: [0.92, 0.9, 0.9] };
-const HULL: Tint = { top: 1, bottom: 1 };
-
-/** Kjør `fn` på veggflaten: z = 0 er flaten, +z peker ut, x går langs veggen. */
-export type Flate = 'px' | 'nx' | 'pz' | 'nz';
-export function paFlate(k: MeshKit, f: Flate, cx: number, cz: number, hx: number, hz: number, fn: () => void): void {
-    if (f === 'pz') k.at(cx, 0, cz + hz, 0, fn);
-    else if (f === 'nz') k.at(cx, 0, cz - hz, Math.PI, fn);
-    else if (f === 'px') k.at(cx + hx, 0, cz, Math.PI / 2, fn);
-    else k.at(cx - hx, 0, cz, -Math.PI / 2, fn);
-}
-
-/**
- * Vindu eller portal i veggflaten: en mørk åpning med rund (romansk) eller spiss (gotisk) bue,
- * og en lysere steinkrans rundt buen. `u` er midten langs veggen, `y0` bunnen, `h` opp til
- * der buen starter.
- */
-export function apning(k: MeshKit, u: number, y0: number, w: number, h: number, bue: 'rund' | 'spiss' = 'rund'): void {
-    const z = 0.05;
-    const r = w / 2;
-    k.withTint(HULL, () => {
-        k.quad('mork', V(u - r, y0, z), V(w, 0, 0), V(0, h, 0));
-        if (bue === 'spiss') {
-            k.tri('mork', V(u - r, y0 + h, z), V(u + r, y0 + h, z), V(u, y0 + h + w * 0.9, z), [0, 0], [0, 0], [0, 0]);
-            return;
-        }
-        const seg = 8;
-        for (let i = 0; i < seg; i++) {
-            const a0 = (i / seg) * Math.PI;
-            const a1 = ((i + 1) / seg) * Math.PI;
-            k.tri('mork', V(u, y0 + h, z), V(u + Math.cos(a0) * r, y0 + h + Math.sin(a0) * r, z), V(u + Math.cos(a1) * r, y0 + h + Math.sin(a1) * r, z), [0, 0], [0, 0], [0, 0]);
-        }
-    });
-    // Buesteinene: en krans av små firkanter rundt buen, litt ute fra veggen.
-    const t = Math.min(0.32, w * 0.22);
-    k.withTint(LIST, () => {
-        // Gotiske vinduer får en list under i stedet: smale lansetter har ikke plass til krans.
-        if (bue === 'spiss') {
-            k.box('stein', u, y0 - 0.1, z + 0.1, w + 0.5, 0.2, 0.3);
-            return;
-        }
-        const seg = 8;
-        const ro = r + t;
-        for (let i = 0; i < seg; i++) {
-            const a0 = (i / seg) * Math.PI;
-            const a1 = ((i + 1) / seg) * Math.PI;
-            const p0 = V(u + Math.cos(a0) * r, y0 + h + Math.sin(a0) * r, z + 0.04);
-            const p1 = V(u + Math.cos(a1) * r, y0 + h + Math.sin(a1) * r, z + 0.04);
-            const q0 = V(u + Math.cos(a0) * ro, y0 + h + Math.sin(a0) * ro, z + 0.04);
-            const q1 = V(u + Math.cos(a1) * ro, y0 + h + Math.sin(a1) * ro, z + 0.04);
-            k.tri('stein', p0, q0, q1, [p0.x, p0.y], [q0.x, q0.y], [q1.x, q1.y]);
-            k.tri('stein', p0, q1, p1, [p0.x, p0.y], [q1.x, q1.y], [p1.x, p1.y]);
-        }
-    });
-}
-
-/** Gesims: en list som stikker litt ut rundt toppen av en boks. */
-export function gesims(k: MeshKit, cx: number, cz: number, sx: number, sz: number, y: number, ut = 0.22): void {
-    k.withTint(LIST, () => k.box('stein', cx, y, cz, sx + ut * 2, 0.32, sz + ut * 2));
-}
 
 /**
  * Saltak langs z fra `z0` til `z1`, med møne midt over x = 0. `hw` er halve bredden ved
@@ -189,14 +124,25 @@ function tarn(k: MeshKit, side: -1 | 1): void {
     pyramide(k, cx, cz, w / 2 + 0.35, TARN.h + 0.15, TARN.tak);
 }
 
-/** Selve kirken i sitt eget rom. */
-function kirke(k: MeshKit): void {
+/** List langs toppen av en yttervegg, bare utenpå (rommet innenfor er hult). */
+function takList(k: MeshKit, x: number, z0: number, z1: number, y: number, ut: number): void {
+    k.withTint(LIST, () => k.box('stein', x, y, (z0 + z1) / 2, ut * 2, 0.32, z1 - z0 + ut * 2));
+}
+
+/**
+ * Selve kirken i sitt eget rom. Tårnene og forhallet er massive; skipet og koret er hule murer med
+ * ekte vinduer og portal (mariakirken-inne.ts). `c` får kolliderne.
+ */
+function kirke(k: MeshKit, c: ColliderKit): void {
     tarn(k, -1);
     tarn(k, 1);
+    const w = TARN.x1 - TARN.x0;
+    for (const side of [-1, 1]) c.box(side * (TARN.x0 + TARN.x1) / 2, TARN.h / 2, TARN.z1 / 2, w, TARN.h, TARN.z1);
 
-    // Forhallet mellom tårnene, med vestportalen og et vindu over.
+    // Forhallet mellom tårnene, med vestportalen og et vindu over. Portalen er lukket.
     const fw = TARN.x0 * 2;
     k.withTint(STEIN, () => k.box('stein', 0, FORHALL_H / 2, TARN.z1 / 2, fw, FORHALL_H, TARN.z1, { skip: ['bottom'], shadeFoot: true }));
+    c.box(0, FORHALL_H / 2, TARN.z1 / 2, fw, FORHALL_H, TARN.z1);
     gesims(k, 0, TARN.z1 / 2, fw, TARN.z1, FORHALL_H, 0.12);
     paFlate(k, 'nz', 0, TARN.z1 / 2, fw / 2, TARN.z1 / 2, () => {
         // Portalen trappes inn i flere ledd; her som en fremspringende ramme rundt åpningen.
@@ -205,49 +151,49 @@ function kirke(k: MeshKit): void {
         apning(k, 0, 8.6, 1.1, 1.2);
     });
 
-    // Midtskipet: høyt, med vinduer øverst bare på sørsida (−x) [V].
+    skipOgKor(k, c);
+
+    // Midtskipet: høyt, med vinduer øverst bare på sørsida (−x) [V]. Hullene er ekte; her bare kransen.
     const sz = SKIP.z1 - SKIP.z0;
     const szc = (SKIP.z0 + SKIP.z1) / 2;
-    k.withTint(STEIN, () => k.box('stein', 0, SKIP.h / 2, szc, SKIP.hw * 2, SKIP.h, sz, { skip: ['bottom'], shadeFoot: true }));
-    gesims(k, 0, szc, SKIP.hw * 2, sz, SKIP.h - 0.1, 0.18);
+    for (const s of [-1, 1]) takList(k, s * SKIP.hw, SKIP.z0, SKIP.z1, SKIP.h - 0.1, 0.18);
     // Vestgavlen synes over forhallet, mellom tårnene.
     saltak(k, SKIP.hw + 0.2, SKIP.h, SKIP.pitch, SKIP.z0, SKIP.z1, { z0: true, z1: true });
     paFlate(k, 'nx', 0, szc, SKIP.hw, sz / 2, () => {
-        for (let i = 0; i < 4; i++) apning(k, -sz / 2 + 3.4 + i * 5.4, SIDESKIP.top + 0.9, 0.85, 1.6);
+        for (let i = 0; i < 4; i++) apning(k, -sz / 2 + 3.4 + i * 5.4, SIDESKIP.top + 0.9, 0.85, 1.6, 'rund', false);
     });
 
     // Sideskipene: lave, under hvert sitt pulttak [V].
     const aw = SIDESKIP.hw - SKIP.hw;
     for (const side of [-1, 1] as const) {
         const ax = side * (SKIP.hw + aw / 2);
-        k.withTint(STEIN, () => k.box('stein', ax, SIDESKIP.h / 2, szc, aw, SIDESKIP.h, sz, { skip: ['bottom', 'nz'], shadeFoot: true }));
-        gesims(k, ax + side * 0.1, szc, aw - 0.2, sz, SIDESKIP.h - 0.1, 0.14);
+        takList(k, side * SIDESKIP.hw, SKIP.z0, SKIP.z1, SIDESKIP.h - 0.1, 0.14);
         pulttak(k, side * (SIDESKIP.hw + 0.15), side * SKIP.hw, SIDESKIP.h, SIDESKIP.top, SKIP.z0, SKIP.z1);
         paFlate(k, side < 0 ? 'nx' : 'px', ax, szc, aw / 2, sz / 2, () => {
             for (let i = 0; i < 4; i++) {
                 const u = -sz / 2 + 3.4 + i * 5.4;
                 // Sørportalen [V]: nest østligst på sørsida, i stedet for et vindu.
                 if (side < 0 && i === 2) continue;
-                apning(k, u * -side, 4.2, 0.8, 1.7);
+                apning(k, u * -side, 4.2, 0.8, 1.7, 'rund', false);
             }
         });
     }
-    // Sørportalen med lav ramme rundt.
+    // Sørportalen: en lav ramme rundt, med det samme hullet tvers gjennom.
     paFlate(k, 'nx', -(SKIP.hw + aw / 2), szc, aw / 2, sz / 2, () => {
-        const u = -sz / 2 + 3.4 + 2 * 5.4;
-        k.withTint(LIST, () => k.box('stein', u, 2.2, 0.25, 3.4, 4.4, 0.5, { skip: ['bottom'] }));
-        k.at(0, 0, 0.5, 0, () => apning(k, u, 0, 1.7, 2.7));
-    });
+        const u = PORTAL.z - szc;
+        k.withTint(LIST, () => k.at(0, 0, 0.25, 0, () => murMedHull(k, c, 'stein', u - 1.7, u + 1.7, 0, 4.4, 0.5, [{ u, y0: 0, w: PORTAL.w, h: PORTAL.h }]), c));
+        k.at(0, 0, 0.5, 0, () => apning(k, u, 0, PORTAL.w, PORTAL.h, 'rund', false));
+    }, c);
 
     // Koret: like bredt som midtskipet, lavere, forlenget i gotisk stil etter 1248 [V].
     const kz = KOR.z1 - SKIP.z1;
     const kzc = (SKIP.z1 + KOR.z1) / 2;
-    k.withTint(STEIN, () => k.box('stein', 0, KOR.h / 2, kzc, KOR.hw * 2, KOR.h, kz, { skip: ['bottom', 'nz'], shadeFoot: true }));
-    gesims(k, 0, kzc, KOR.hw * 2, kz, KOR.h - 0.1, 0.18);
+    for (const s of [-1, 1]) takList(k, s * KOR.hw, SKIP.z1, KOR.z1, KOR.h - 0.1, 0.18);
+    k.withTint(LIST, () => k.box('stein', 0, KOR.h - 0.1, KOR.z1, KOR.hw * 2 + 0.36, 0.32, 0.36));
     saltak(k, KOR.hw + 0.2, KOR.h, KOR.pitch, SKIP.z1, KOR.z1, { z1: true });
     for (const side of [-1, 1] as const) {
         paFlate(k, side < 0 ? 'nx' : 'px', 0, kzc, KOR.hw, kz / 2, () => {
-            for (const u of [-4.3, 0, 4.3]) apning(k, u, 4.0, 1.05, 5.0, 'spiss');
+            for (const u of [-4.3, 0, 4.3]) apning(k, u, 4.0, 1.05, 5.0, 'spiss', false);
         });
         // Strebepilarer mellom vinduene: gotikkens måte å holde veggen.
         for (const z of [kzc - 2.15, kzc + 2.15, KOR.z1 - 0.45]) {
@@ -255,12 +201,13 @@ function kirke(k: MeshKit): void {
                 k.box('stein', side * (KOR.hw + 0.45), 4.5, z, 0.9, 9, 0.9, { skip: ['bottom'], shadeFoot: true });
                 k.box('stein', side * (KOR.hw + 0.3), 9.9, z, 0.6, 1.8, 0.8, { skip: ['bottom'] });
             });
+            c.box(side * (KOR.hw + 0.45), 4.5, z, 0.9, 9, 0.9);
         }
     }
     paFlate(k, 'pz', 0, kzc, KOR.hw, kz / 2, () => {
-        apning(k, -2.1, 4.4, 0.9, 4.6, 'spiss');
-        apning(k, 0, 4.0, 1.1, 5.6, 'spiss');
-        apning(k, 2.1, 4.4, 0.9, 4.6, 'spiss');
+        apning(k, -2.1, 4.4, 0.9, 4.6, 'spiss', false);
+        apning(k, 0, 4.0, 1.1, 5.6, 'spiss', false);
+        apning(k, 2.1, 4.4, 0.9, 4.6, 'spiss', false);
     });
 }
 
@@ -293,45 +240,124 @@ function kirkeLod(k: MeshKit, lod: (key: 'stein' | 'bordtak') => THREE.Color): v
     });
 }
 
+/** Kirkegården: muren rundt (x0..x1, fra muren mot gata i z0 og innover til z1). */
+export interface Kirkegard {
+    x0: number;
+    x1: number;
+    z0: number;
+    z1: number;
+}
+
+/** Avstand fra punktet (x, z) til linjestykket a-b. */
+function avstand(x: number, z: number, a: THREE.Vector2, b: THREE.Vector2): number {
+    const ab = b.clone().sub(a);
+    const t = THREE.MathUtils.clamp(((x - a.x) * ab.x + (z - a.y) * ab.y) / ab.lengthSq(), 0, 1);
+    return Math.hypot(x - (a.x + ab.x * t), z - (a.y + ab.y * t));
+}
+
 /**
- * Cella med Mariakirken: kirkegården på en hylle i bakken, med mur mot gårdene nedenfor.
- * `cx`, `cz` er midten av kirken i verdensrom. Ingen kollidere: kirken er kulisse til man
- * kan gå opp Maria allmenning (senere fase).
+ * Cella med Mariakirken: kirkegården i høyde med Øvregaten, med mur rundt og port mot gata, en
+ * gangsti av heller fram til sørportalen, og kirkerommet innenfor (mariakirken-inne.ts). `cx`, `cz`
+ * er midten av kirken i verdensrom. Presten og klokkeren står inne.
  */
-export function buildMariakirkeCell(mats: Materials, cx: number, cz: number, murZ: number): CellContent {
+export async function buildMariakirkeCell(mats: Materials, cx: number, cz: number, g: Kirkegard): Promise<CellContent> {
     const k = new MeshKit();
+    const c = new ColliderKit();
     const lod = new MeshKit();
     // Kirkens origo er midt på vestfronten; flytt så midten av kirken havner i (cx, cz).
     const half = KIRKE_LEN / 2;
     const ox = cx - Math.sin(ROT) * half;
     const oz = cz - Math.cos(ROT) * half;
-    k.at(ox, KIRKE_Y, oz, ROT, () => kirke(k));
+    const M = new THREE.Matrix4().makeRotationY(ROT).setPosition(ox, KIRKE_Y, oz);
+    k.at(ox, KIRKE_Y, oz, ROT, () => kirke(k, c), c);
     lod.at(ox, KIRKE_Y, oz, ROT, () => kirkeLod(lod, (key) => mats.lodColor(key)));
 
-    // Kirkegården: gress på en hylle, muren mot gårdene, og gjørme i glippen nedenfor.
-    const gx0 = cx - 34, gx1 = cx + 34;
-    const gz1 = cz + 40;
+    // Inne: vanlige materialer, flate farger (duker og voks) og flammene, hver sin bøtte.
+    const ki = new MeshKit();
+    const kl = new MeshKit();
+    const kf = new MeshKit();
+    for (const x of [ki, kl, kf]) x.matrix = M.clone();
+    c.matrix = M.clone();
+    const inne = inventar(ki, kl, kf, c);
+    c.matrix = new THREE.Matrix4();
+    const iVerden = (p: THREE.Vector3) => p.clone().applyMatrix4(M);
+
+    // Gangstien: fra porten i muren rett innover, og på skrå bort til sørportalen.
+    const portal = iVerden(new THREE.Vector3(-SIDESKIP.hw, 0, PORTAL.z));
+    const ut = iVerden(new THREE.Vector3(-SIDESKIP.hw - 6, 0, PORTAL.z));
+    const sti = [new THREE.Vector2(ut.x, g.z0), new THREE.Vector2(ut.x, ut.z), new THREE.Vector2(portal.x, portal.z)];
+    const port = { x: ut.x, w: 2.2 };
+
+    // Kirkegården: gress på en hylle, i samme høyde som gata, og kollider under det hele.
+    const gx = (g.x0 + g.x1) / 2;
+    const gzm = (g.z0 + g.z1) / 2;
     k.withTint({ top: 0.85, bottom: 0.85, hue: [0.95, 1, 0.9] }, () =>
-        k.box('torv', cx, KIRKE_Y / 2 - 0.5, (murZ + gz1) / 2, gx1 - gx0, KIRKE_Y + 1, gz1 - murZ, { skip: ['bottom', 'nz'] })
+        k.box('torv', gx, KIRKE_Y / 2 - 0.5, gzm, g.x1 - g.x0, KIRKE_Y + 1, g.z1 - g.z0, { skip: ['bottom', 'nz'] })
     );
-    k.withTint(STEIN, () => k.box('stein', cx, (KIRKE_Y + 1.1) / 2 - 0.2, murZ, gx1 - gx0, KIRKE_Y + 1.5, 0.7, { skip: ['bottom'], shadeFoot: true }));
-    k.withTint({ top: 0.7, bottom: 0.7 }, () => k.box('gjorme', cx, -0.06, murZ - 1.8, gx1 - gx0, 0.1, 3.6, { skip: ['bottom'] }));
-    // Trekors på gravene: lave, skeive, i rader på sørsida av kirken [S].
+    c.box(gx, KIRKE_Y - 0.75, gzm, g.x1 - g.x0, 1.5, g.z1 - g.z0);
+    k.withTint({ top: 0.9, bottom: 0.9, hue: [0.97, 0.98, 0.96] }, () => {
+        for (let i = 0; i + 1 < sti.length; i++) {
+            const a = sti[i];
+            const b = sti[i + 1];
+            const len = a.distanceTo(b) + 1.2;
+            k.at((a.x + b.x) / 2, KIRKE_Y, (a.y + b.y) / 2, Math.atan2(b.x - a.x, b.y - a.y), () => {
+                // Heller i to rader, litt ujevne.
+                for (let z = -len / 2 + 0.35; z < len / 2; z += 0.72) {
+                    for (const x of [-0.42, 0.42]) k.box('stein', x + Math.sin(z * 7.3) * 0.04, 0.015, z, 0.78, 0.04, 0.66, { skip: ['bottom'] });
+                }
+            });
+        }
+    });
+    // Muren rundt, med porten mot gata [S]. Muren står på gata foran og på bakken ellers.
+    const murTop = KIRKE_Y + 0.95;
+    const mur = (x0: number, z0: number, x1: number, z1: number) => {
+        const cxm = (x0 + x1) / 2;
+        const czm = (z0 + z1) / 2;
+        const sx = Math.max(0.7, Math.abs(x1 - x0));
+        const sz = Math.max(0.7, Math.abs(z1 - z0));
+        k.withTint(STEIN, () => k.box('stein', cxm, (KIRKE_Y - 0.4 + murTop) / 2, czm, sx, murTop - KIRKE_Y + 0.4, sz, { skip: ['bottom'], shadeFoot: true }));
+        k.withTint(LIST, () => k.box('stein', cxm, murTop + 0.05, czm, sx + 0.1, 0.1, sz + 0.1));
+        c.box(cxm, (KIRKE_Y - 0.4 + murTop) / 2 + 0.3, czm, sx, murTop - KIRKE_Y + 1.0, sz);
+    };
+    mur(g.x0, g.z0, port.x - port.w / 2, g.z0);
+    mur(port.x + port.w / 2, g.z0, g.x1, g.z0);
+    mur(g.x0, g.z0, g.x0, g.z1);
+    mur(g.x1, g.z0, g.x1, g.z1);
+    mur(g.x0, g.z1, g.x1, g.z1);
+    // Portstolpene og grinda, som står åpen inn mot kirkegården.
+    for (const s of [-1, 1]) {
+        const x = port.x + s * (port.w / 2 + 0.1);
+        k.withTint(LIST, () => k.box('stein', x, KIRKE_Y + 0.7, g.z0, 0.5, 1.8, 0.8, { skip: ['bottom'] }));
+        k.at(port.x + s * (port.w / 2 - 0.05), KIRKE_Y, g.z0 + 0.1, s * 1.9, () => {
+            k.withTint({ top: 0.8, bottom: 0.8, hue: [1.04, 0.98, 0.9] }, () => {
+                for (let x2 = 0.1; x2 < port.w / 2; x2 += 0.2) k.box('raatre', -s * x2, 0.75, 0, 0.1, 1.3, 0.05);
+                for (const y of [0.35, 1.15]) k.box('raatre', (-s * port.w) / 4, y, 0, port.w / 2, 0.1, 0.06);
+            });
+            c.box((-s * port.w) / 4, 0.75, 0, port.w / 2, 1.3, 0.1, true);
+        }, c);
+    }
+
+    // Trekors på gravene: lave, skeive, i rader på sørsida av kirken, unna stien [S].
     let seed = 7;
     const r = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
     k.withTint({ top: 0.6, bottom: 0.6 }, () => {
-        for (let i = 0; i < 26; i++) {
-            const along = -16 + (i % 9) * 4 + r() * 1.2;
-            const out = 12.5 + Math.floor(i / 9) * 3 + r();
+        for (let i = 0; i < 40; i++) {
+            const along = -16 + (i % 10) * 3.6 + r() * 1.2;
+            const out = 12.5 + Math.floor(i / 10) * 2.8 + r();
             // Sørsida er kirkens −x: i verden (−cos, sin) ganger avstanden ut.
             const x = cx - Math.cos(ROT) * out + Math.sin(ROT) * along;
             const z = cz + Math.sin(ROT) * out + Math.cos(ROT) * along;
-            if (z < murZ + 1.5) continue;
+            if (z < g.z0 + 1.5 || x < g.x0 + 1 || x > g.x1 - 1 || z > g.z1 - 1) continue;
+            if (Math.min(avstand(x, z, sti[0], sti[1]), avstand(x, z, sti[1], sti[2])) < 1.8) continue;
             const tilt = (r() - 0.5) * 0.2;
-            k.at(x, KIRKE_Y, z, ROT + (r() - 0.5) * 0.4, () => {
+            const yaw = ROT + (r() - 0.5) * 0.4;
+            k.at(x, KIRKE_Y, z, yaw, () => {
                 k.slab('raatre', new THREE.Matrix4().makeRotationZ(tilt).setPosition(0, 0.55, 0), 0.1, 1.1, 0.08);
                 k.slab('raatre', new THREE.Matrix4().makeRotationZ(tilt).setPosition(0, 0.75, 0), 0.6, 0.09, 0.07);
             });
+            c.matrix = new THREE.Matrix4().makeRotationY(yaw).setPosition(x, KIRKE_Y, z);
+            c.box(0, 0.55, 0, 0.5, 1.1, 0.15, true);
+            c.matrix = new THREE.Matrix4();
         }
     });
 
@@ -345,7 +371,41 @@ export function buildMariakirkeCell(mats: Materials, cx: number, cz: number, mur
         mesh.receiveShadow = true;
         near.add(mesh);
     }
+    // Innredningen: skjules på avstand og kaster ikke skygge (streaming.ts, `inne`).
+    const rom = new THREE.Group();
+    rom.name = 'mariakirken:inne';
+    for (const [key, b] of ki.buckets) {
+        const mesh = new THREE.Mesh(b.toGeometry(), mats.get(key));
+        mesh.name = `mariakirken:inne:${key}`;
+        mesh.receiveShadow = true;
+        rom.add(mesh);
+    }
+    const flat = new THREE.Mesh(kl.bucket('mork').toGeometry(), mats.lodMaterial());
+    flat.name = 'mariakirken:duker';
+    // Flammene lyser selv: et eget materiale uten lys, som cella eier og kaster.
+    const flammeMat = new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false });
+    const flammer = new THREE.Mesh(kf.bucket('mork').toGeometry(), flammeMat);
+    flammer.name = 'mariakirken:flammer';
+    rom.add(flat, flammer);
+    near.add(rom);
+
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.tynnTake('lod'));
     mid.name = 'mariakirken:lod';
-    return { near, mid, colliders: [] };
+
+    // Rommet står skjevt som kirken: boksen gjelder rundt midten, dreid med kirken (streaming.ts, `iRom`).
+    const midt = iVerden(inne.rom.getCenter(new THREE.Vector3()));
+    const halv = inne.rom.getSize(new THREE.Vector3()).multiplyScalar(0.5);
+    const folk = await lagFolk(inne.folk.map((p) => ({ ...p, pos: iVerden(p.pos), yaw: p.yaw + ROT })), mats, 1408);
+    near.add(folk.group);
+    return {
+        near, mid, inne: [rom], colliders: [...c.specs, ...folk.colliders],
+        rom: [{ box: new THREE.Box3(midt.clone().sub(halv), midt.clone().add(halv)), demp: 0.7, yaw: ROT }],
+        ild: inne.ild.map(iVerden),
+        snakkbare: folk.snakkbare,
+        tick: folk.tick,
+        dispose: () => {
+            folk.dispose();
+            flammeMat.dispose();
+        },
+    };
 }

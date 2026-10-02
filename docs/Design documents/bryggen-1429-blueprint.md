@@ -9,7 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Øvregaten med ølstua, Mariakirken innvendig og veien til Bergenhus med borggården kan gås til, og oppdragene «Brev til Mariakirken» og «Budet til Bergenhus» kan spilles til ende, bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -212,7 +212,7 @@ utgravningsplaner og gamle bykart **[K]**.
 | **Vågsbunnen** | Bunnen av Vågen. Mikaelskirken brant 1413. Skostredet: korteste vei mellom Bryggen og Stranden | [V] | Fase 2 |
 | **Skomakerne** | De fem tyske lauene («de fif Amten»): bakere, barberere, buntmakere, gullsmeder, skomakere, ca. 150 mann. Skomakerne var sterkest og kunne sperre Skostredet. Oppløst 1560 | [V] Wikipedia; [U] tall for 1420-årene | Fase 2 |
 | **Stranden** | Strandsiden sørvest for Vågen, de norske borgernes side | [V] grovt; detaljer [K] | Fase 2 |
-| **Øvregaten** | Gata bak Bryggen. Gårdene gikk opp mot den | [V] | Fase 2 |
+| **Øvregaten** | Gata bak Bryggen. Gårdene gikk opp mot den. Hvor høyt den lå over Bryggen i 1420-årene, hvordan den var lagt og hvilke hus som sto der, er ikke funnet **[K]** | [V] | Bygget 02.10.2026 (§10) |
 | **Nordnes** | Munkeliv kloster (grunnlagt 1107-1110, birgittinere fra 1420-årene, brent 1455). Rettersted nær Margaretakirken på nordøstsiden i middelalderen; flyttet til vestsiden på 1500-tallet | [V] | Fase 4 |
 | Andre kirker i perioden | *Martinskirken:* på oversiden av Øvregaten, der Fløibanens nedre stasjon står i dag. Tysk kirke for Bryggen fra ca. 1400; biskop Aslak Bolt godkjente i 1408 Mariakirken og Martinskirken som sognekirker for tyskerne. *Nikolaikirken:* steinkirke øverst på Nikolaikirkeallmenningen (ved dagens nr. 5b), skadet eller ødelagt i brannen 1413, igjen 1476, ruin med steintårn ca. 1580 **[U]** om den var i bruk i 1420-årene. *Jonsklosteret:* augustinerkloster, kirka lå ved dagens Fortunen mellom Strandgaten og Tårnplass, brant 1561. *Korskirken* og *Olavskirken* (i dag Domkirken) står fortsatt. *Mikaelskirken* brant 1413 | [V] Byleksikon, Wikipedia | Fase 2-4 |
 
@@ -644,7 +644,19 @@ Mixamo brukes ikke (krever innlogging).
   pyramidetakene er et valg **[S]**, for hvordan tårnene endte i 1420-årene er ikke funnet **[K]**.
   Taktekkingen er heller ikke funnet **[K]**. Vinkelen mot gårdsrekkene og avstanden er valgt for
   spillet **[S]**. Kirken har egne materialkopier med halvparten så tett tåke, ellers forsvinner
-  den bak 100 m. Ingen kollidere: man kommer ikke dit før Maria allmenning bygges
+  den bak 100 m. Kirken kan nå gås inn i (02.10.2026, `bygg/mariakirken-inne.ts`, `bygg/buer.ts`): kirkegården
+  er flyttet 7 m bakover på nordsida av Øvregaten og har mur rundt, port mot gata og en gangsti av heller til
+  sørportalen, som er et ekte hull. Skipet og koret er hule murer: sideskipene med vinduer høyt oppe, arkaden
+  med fire buer på pilarer mellom midtskipet og sideskipene, lysgluggene over bare på sørsida, korbuen og det
+  gotiske koret med spisse vinduer, alt med ekte hull man ser dagslyset gjennom [V formen, SNL/Wikipedia].
+  Inne: steingolv med gravheller, to trinn opp i koret, høyalter med linduk og to lys, et sidealter i nordre
+  sideskip, krusifiks på en bjelke i korbuen, åpent tak med bjelker. Ingen benker: menigheten sto (allment
+  kjent, men ikke lagt inn i kildelista **[K]**). At
+  Kontorets folk ble begravet i kirken, er [V §5.2]; hellene, alterne, lysene, krusifikset og det åpne taket
+  er [S], for innredningen i 1420-årene er ikke funnet **[K]**. Altertavla som står der i dag, er ikke tatt
+  med: når den kom til kirken, er ikke sjekket **[K]**. Presten (herr Johannes) og klokkeren (Bertolt) er
+  [S]. Dagslyset dempes inne (rommet står skjevt som kirken, `Rom.yaw`), og ildlyset står ved alterlysene.
+  Ca. 34 tegnekall og 45k trekanter inne med full kvalitet. Venter på eierens spilltest
 - [~] Nikolaikirkeallmenningen (02.10.2026, `bygg/allmenning.ts`, `bygg/torg.ts`, `bygg/nikolaikirken.ts`):
   18 m bred gjørmeallmenning med plankegang opp midten [V bredden]. Torget: fire salgsboder (tørrfisk,
   korn, kurver, tønner), brønn med vinde, slede med tønne, sledespor og pytter. At allmenningen var torg til
@@ -656,7 +668,9 @@ Mixamo brukes ikke (krever innlogging).
   bruk i 1420-årene, er **[U]**; byleksikonet sier skadet eller ødelagt 1413 «og igjen 1476», så her er den
   under reparasjon **[S]**: tårnet med nytt tak (byklokka og brannvakta [V bylova 1276]), nytt tak over
   vestre del av skipet, bare sperrer, sot og stillas i øst, hogd stein og mørtelkar foran. Målene er **[S]**.
-  Kirkegården står bak grensa med støttemur og stengt grind øverst i steintrappa. Gapestokk er ikke lagt
+  Kirkegården står bak grensa. Fra 02.10.2026 står kirken og kirkegården 7 m lenger bak, på nordsida av
+  Øvregaten, med lav mur og stengt grind mot gata; steintrappa går opp til gata gjennom støttemuren, der
+  grinda står åpen **[S]**. Gapestokk er ikke lagt
   inn: ingen kilde funnet for en gapestokk på allmenningen i 1420-årene **[K]**. Ca. 10k trekanter og
   15 tegnekall for hele cella. Venter på eierens spilltest. Torgfolk (02.10.2026, `bygg/torgfolk.ts`):
   en fiskekone, en kornselger, en bondekone med kurver og en bødker står i bodene; en kjøpekone går
@@ -684,7 +698,29 @@ Mixamo brukes ikke (krever innlogging).
   tegnekall, ellers 1 (steinbyggene med tynn tåke). Stranden er én celle bak grensa: 3 tegnekall nær, 1 lenger
   unna, ingenting fra kaia. Målt med kulissene skjult og vist: +1 til +4 fra Vågen, +3 ved kaienden, +6 når
   begge er nær; fra kaia og Vågen samme eller færre tegnekall enn de 20 boksene før (147/163 mot 148/168).
-  Ingen kollidere: grensene stopper spilleren før dem. Venter på eierens spilltest
+  Stranden har ingen kollidere: grensene stopper spilleren før den. Venter på eierens spilltest.
+  Holmen og Bergenhus kan gås til (02.10.2026, `bygg/bergenhus.ts`): Holmen står 24 m lenger ut, og kaia
+  fortsetter forbi den siste gården til porten i ringmuren, med en plankevei, en rampe av steinheller og
+  tre lagerhus innerst. Porttårnet har en ekte gjennomgang med hvelv. Innenfor er borggården foran
+  Håkonshallen en celle med kollidere (bakke, ringmur, port, hallen, de to trehusene i kongsgården, nå av
+  modulsettet), en skriverbu med pult under et skråtak, vakta på bysida av porten, en vakt til innenfor,
+  en som går over borggården og kongens skriver ved pulten. At høvedsmannen satt på Bergenhus som kongens
+  fremste mann i byen, er [V §3]; hvor porten var, hvordan borggården var lagt og hva som lå mellom
+  Bryggen og Holmen i 1420-årene, er ikke funnet **[K]**. Avstanden er komprimert, og porten, vaktene,
+  skriverboden og lagerhusene er **[S]**. Veien 65 tegnekall, borggården 46. Venter på eierens spilltest
+- [~] Øvregaten (02.10.2026, `bygg/ovregaten.ts`): gata bak alle gårdene, 2 m opp på en støttemur av stein med
+  brystning, plankeveit i midten og gjørme langs kantene. Kirketrappa i Nikolaikirkeallmenningen er oppgangen.
+  På nordsida står Nikolaikirken (rett over trappa) og Mariakirken lenger øst, og imellom og vestover norske
+  laftehus med gavlen mot gata, trukket fra et frø, med smale smug stengt av plankegjerder. Øst for
+  Nikolaikirken ligger ølstua: langveggen med åpen dør mot gata, ildsted midt på golvet under ljoren, benker
+  og bord, ølkona Gunhild ved gryta og tre bergensere på benkene; en bødker og øltønner ved døra, og en
+  tjenestejente som henter øl i bøtte. En borger går gata, og koner står og går vestover. At Øvregaten gikk
+  bak Bryggen og at gårdene gikk opp mot den, og at Martinskirken lå på oversiden og Nikolaikirken på langs
+  av den, er [V §5.2]; hvem som bodde langs gata, er ikke funnet **[K]**, så de norske husene er **[S]**. Høyden, støttemuren, plankeveiten, husene og
+  ølstua er **[S]**; hvor høyt gata lå og hvordan den så ut i 1420-årene, er ikke funnet **[K]**. Draktene
+  til ølkona og klokkeren er **[S]**, ikke sjekket **[K]**. Gatecellene bytter til flatt nivå bak 45 m:
+  med full kvalitet koster gata +4 tegnekall fra gårdsrommet og torget (160 og 182 mot 156 og 176 før),
+  +5 fra Vågen. Venter på eierens spilltest
 - [~] Vågen, vær og etterbehandling (02.10.2026): vannet har bølger (lange dønninger, krapp vind,
   fin krusning nær kameraet), falsk speiling av husrekka og ringer fra regndråper. Regnet faller i en
   boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,
