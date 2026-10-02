@@ -245,6 +245,7 @@ const InnMotStranda = lazy(() => import('./InnMotStranda'));
 const SeinenSnur = lazy(() => import('./SeinenSnur'));
 const KursForGronland3D = lazy(() => import('./KursForGronland3D'));
 const Tinghuset = lazy(() => import('./Tinghuset'));
+const BatdekketKlokka = lazy(() => import('./BatdekketKlokka'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2482,6 +2483,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Landssviksakene i Riksarkivet: arkivmapper i grå og brun papp, gjennomslagspapir med skrivemaskintekst, fiolette gummistempler og rød-blå blyant',
         loader: () => import('./Tinghuset'),
         Component: Tinghuset as never,
+    },
+    'klokka-0045': {
+        id: 'klokka-0045',
+        title: 'Båtdekket klokka 00.45',
+        description:
+            'Titanic, natt til 15. april 1912. Du er styrmann på båtdekket. Folk kommer opp trappene og stiller seg i én kø, og du velger bare når en båt fires ned og til hvilken side neste gruppe vinkes. En båt som er nede, kan aldri fylles igjen. Folk fra tredje klasse bor lengst nede og kommer sist opp. Vannet stiger og skipet krenger - en båt som henger for lenge, blir tatt av vannet eller låst mot skroget. Få alle 20 båtene på vannet før klokka 02.20, så fulle som mulig.',
+        estimatedSeconds: 230,
+        sjanger: 'tidspress-servering',
+        tone: 'alvorlig',
+        hook: 'Du er styrmann på Titanic. Fir båten nå - eller vent på dem i trappa?',
+        cover: '/images/microgames/klokka-0045.webp',
+        kunst: 'Harland and Wolffs blåkopier av Titanic: hvite tusjlinjer og nagler på preussisk blått, lanternegule plasser i natta',
+        loader: () => import('./BatdekketKlokka'),
+        Component: BatdekketKlokka as never,
     },
 };
 

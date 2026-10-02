@@ -1,0 +1,107 @@
+// Typene og en ny runde. Ingen regler her - de står i rules.ts og game.ts.
+
+import { seeded, type Rng } from '../sim';
+import { ALLE_BÅTER, BRETT, type BåtData, type Side } from './levels';
+import { TUNING } from './tuning';
+
+export type Klasse = 1 | 2 | 3;
+
+export interface Båt extends BåtData {
+    nr: number; // indeks i ALLE_BÅTER
+    brett: number;
+    /** venter = ikke ute ennå, henger = klar ved dekket, fires = på vei ned, nede = på vannet. */
+    tilstand: 'venter' | 'henger' | 'fires' | 'nede' | 'tapt';
+    folk: number;
+    fra: [number, number, number]; // hvor mange fra første, andre og tredje klasse
+    /** 0 = ved dekket, 1 = på vannet. */
+    ned: number;
+    nedeKl: number | null;
+}
+
+export interface Gruppe {
+    id: number;
+    klasse: Klasse;
+    antall: number;
+    /** 0 = i lugarene, 1 = på båtdekket. */
+    pos: number;
+    gang: number; // sekunder hele veien
+    iKø: boolean;
+}
+
+export interface Hendelse {
+    t: number;
+    slag: 'ombord' | 'nede' | 'brett' | 'rakett' | 'tapt' | 'vunnet' | 'ankommer';
+    side?: Side;
+    tekst?: string;
+}
+
+export interface Game {
+    rng: Rng;
+    t: number; // spillsekunder etter 00.45
+    mode: 'play' | 'won' | 'lost';
+    årsak: 'vann' | 'lås' | null;
+    tapsBåt: string | null;
+    brett: number;
+    kortTil: number; // brettkortet står til dette tidspunktet
+    båter: Båt[];
+    /** Båten som henger på hver side nå (indeks i båter), eller null. */
+    davit: Record<Side, number | null>;
+    svingTil: Record<Side, number>;
+    grupper: Gruppe[]; // på vei opp
+    kø: Gruppe[]; // på dekket, i den rekkefølgen de kom
+    nesteGruppe: Record<Klasse, number>;
+    portÅpner: number;
+    nesteId: number;
+    hold: Side | null;
+    holdT: number;
+    valg: number;
+    hendelser: Hendelse[];
+    raketter: number[]; // tidspunkt for raketter som er skutt opp
+}
+
+export function newGame(seed: number): Game {
+    const rng = seeded(seed);
+    const [p0, p1] = TUNING.port.åpner;
+    const båter: Båt[] = [];
+    BRETT.forEach((br, bi) =>
+        br.båter.forEach((d) =>
+            båter.push({
+                ...d,
+                nr: båter.length,
+                brett: bi,
+                tilstand: 'venter',
+                folk: 0,
+                fra: [0, 0, 0],
+                ned: 0,
+                nedeKl: null,
+            })
+        )
+    );
+    if (båter.length !== ALLE_BÅTER.length) throw new Error('båtlista stemmer ikke');
+    const g: Game = {
+        rng,
+        t: 0,
+        mode: 'play',
+        årsak: null,
+        tapsBåt: null,
+        brett: 0,
+        kortTil: 0,
+        båter,
+        davit: { B: null, S: null },
+        svingTil: { B: 0, S: 0 },
+        grupper: [],
+        kø: [],
+        nesteGruppe: { 1: 0, 2: 0, 3: 0 },
+        portÅpner: p0 + rng() * (p1 - p0),
+        nesteId: 1,
+        hold: null,
+        holdT: 0,
+        valg: 0,
+        hendelser: [],
+        raketter: [],
+    };
+    // Første fem sekunder: en liten gruppe står allerede og nøler i køen.
+    g.kø.push({ id: g.nesteId++, klasse: 1, antall: 4, pos: 1, gang: 1, iKø: true });
+    for (const k of [1, 2, 3] as Klasse[]) g.nesteGruppe[k] = TUNING.klasser[k].åpner + 2;
+    return g;
+}

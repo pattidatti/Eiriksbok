@@ -338,3 +338,23 @@ preussisk blått, lanternegule plasser i natta».
   får plass, så køen er én og går forfra. Kjente svakheter: verbet står og faller på at dra og hold
   kjennes fysisk; ankomstfarten må ha nok tilfeldighet til at rytmen ikke kan pugges; tallene i
   båtprotokollen må hentes fra artikkelens kilder, ellers skrives kortet uten tall.
+- **Fase: gråboks (byggmester, 2026-10-02).** Bygde spillreglene i `src/components/microgames/klokka/`
+  (KART.md, tuning.ts, levels.ts, state.ts, rules.ts, game.ts, bots.ts, sim.ts, draw.ts, texts.ts) og
+  skallet `BatdekketKlokka.tsx`, registrert som `klokka-0045` (sjanger `tidspress-servering`, tone
+  `alvorlig`, kunst fra kunstbriefen). Ikke embeddet. Brettene følger punkt 11 (3 + 7 + 6 båter) pluss
+  brett 4 (4 sammenleggbare), til sammen 1178 plasser. Køen er én og går forfra; eleven velger bare side
+  og når båten fires. Tap: vannet når festet (frist per båt), eller krengningen mot babord passerer 5
+  grader mens en styrbord-livbåt henger. Visningen er primitive former (snitt som krenger, vann, kø,
+  prikker for plasser). Simulering (200 runder per robot), grønn: klok vinner 100 % (median 1091 brukt,
+  87 tomme), halvgod 100 % (1000 brukt, 178 tomme), fir-straks 100 % (337 brukt, 841 tomme),
+  venter-alltid 3 % (median 795 før tapet, taper på låsingen i brett 3), tilfeldig 0 %, passiv 0 %.
+  55 valg per minutt, press 0,10 -> 0,32 -> 0,73. Nettleseren: klok vant med 1127 (innenfor simens
+  p10-p90). Første simulering var rød: klok vant 0 % fordi planleggeren ikke regnet med tiden det tar å
+  vinke en båt full, og fordi for få folk kom opp før fristene i brett 3. Det som virket: tredje og andre
+  klasse kommer tidligere og i større grupper, brett 3 fikk to minutter mer før låsingen, og
+  planleggeren regner med vinketid. Det som IKKE virket: å la klok fire straks når tiden var ute (den
+  firet tomme båter med 160 i køen) og «halvgod» med bare hvert tredje grep (tapte på låsingen).
+  Kjente svakheter: fir-straks får 841 tomme (briefens mål 450-600) fordi brettene ikke venter på
+  klokka - den er ferdig 01.33; venter-alltid får mange plasser før den taper, så ferdighetstrappen
+  hviler på at halvgod vinner; folk i trappene tegnes under vannflata; portfunn som er ventet nå:
+  ingen cover, ingen useArcadeText / «Dette skjedde», bildet står nesten stille uten input.
