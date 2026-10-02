@@ -72,6 +72,7 @@ const DemographyPage = React.lazy(routeFactories.DemographyPage);
 const VirkemiddelverkstedetPage = React.lazy(routeFactories.VirkemiddelverkstedetPage);
 const MiniGamesPage = React.lazy(routeFactories.MiniGamesPage);
 const GamePage = React.lazy(routeFactories.GamePage);
+const BryggenGraboksPage = React.lazy(routeFactories.BryggenGraboksPage);
 const RpgPage = React.lazy(routeFactories.RpgPage);
 const CompetencyGoalsPage = React.lazy(routeFactories.CompetencyGoalsPage);
 const MicroGamePreviewPage = React.lazy(routeFactories.MicroGamePreviewPage);
@@ -150,6 +151,8 @@ const router = createBrowserRouter([
       { path: "oving/arkade", element: <ArkadePage /> },
       { path: "oving/spill", element: <MiniGamesPage /> },
       { path: "oving/spill/:gameId", element: <GamePage /> },
+      // Motorprøve for Bryggen-spillet. Bevisst ikke lenket fra galleriet.
+      { path: "test/bryggen-graboks", element: <BryggenGraboksPage /> },
       { path: "oving/rpg", element: <RpgPage /> },
       { path: "oving/pengeliv", element: <Pengeliv /> },
       { path: "mikrospill", element: <MicroGamePreviewPage /> },

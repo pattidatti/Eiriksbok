@@ -1,0 +1,172 @@
+// Inndata for Bryggen-motoren. Tastatur, mus og styrepute samles til én tilstand som
+// spillogikken leser én gang per simuleringssteg.
+//
+// Alt kan spilles med bare tastatur: piltastene styrer kameraet, og J/K/L/Q/F dekker
+// kampen. Mus er et tillegg, aldri et krav.
+
+export interface InputFrame {
+    /** Bevegelse i kameraets rom: x = høyre, y = fram. Lengde ≤ 1. */
+    move: { x: number; y: number };
+    sprint: boolean;
+    jumpPressed: boolean;
+    interactPressed: boolean;
+    lightPressed: boolean;
+    heavyPressed: boolean;
+    blockHeld: boolean;
+    dodgePressed: boolean;
+    finisherPressed: boolean;
+    resetPressed: boolean;
+}
+
+export interface LookInput {
+    /** Kamerarotasjon fra mus siden forrige lesing (radianer). */
+    mouse: { yaw: number; pitch: number };
+    /** Kamerarotasjon fra piltaster, -1..1 per akse. */
+    keys: { x: number; y: number };
+}
+
+/** Hvor lenge venstre musknapp må holdes før slaget blir et tungt slag. */
+const HEAVY_HOLD_S = 0.32;
+
+export class Input {
+    private keys = new Set<string>();
+    private pressed = new Set<string>();
+    private mouseYaw = 0;
+    private mousePitch = 0;
+    private lmbDownAt = -1;
+    private lmbHeavyFired = false;
+    private rmb = false;
+    private lightQueued = false;
+    private heavyQueued = false;
+    private readonly el: HTMLElement;
+    sensitivity = 0.0024;
+
+    constructor(el: HTMLElement) {
+        this.el = el;
+        window.addEventListener('keydown', this.onKeyDown);
+        window.addEventListener('keyup', this.onKeyUp);
+        window.addEventListener('blur', this.onBlur);
+        el.addEventListener('mousedown', this.onMouseDown);
+        window.addEventListener('mouseup', this.onMouseUp);
+        window.addEventListener('mousemove', this.onMouseMove);
+        el.addEventListener('contextmenu', this.onContextMenu);
+    }
+
+    dispose(): void {
+        window.removeEventListener('keydown', this.onKeyDown);
+        window.removeEventListener('keyup', this.onKeyUp);
+        window.removeEventListener('blur', this.onBlur);
+        this.el.removeEventListener('mousedown', this.onMouseDown);
+        window.removeEventListener('mouseup', this.onMouseUp);
+        window.removeEventListener('mousemove', this.onMouseMove);
+        this.el.removeEventListener('contextmenu', this.onContextMenu);
+    }
+
+    get pointerLocked(): boolean {
+        return document.pointerLockElement === this.el;
+    }
+
+    requestPointerLock(): void {
+        // Pointer lock er valgfritt: uten den virker piltastene og vanlig musedrag ikke,
+        // men spillet er fortsatt spillbart med tastatur.
+        this.el.requestPointerLock?.()?.catch?.(() => undefined);
+    }
+
+    /** Leses én gang per simuleringssteg. Nullstiller «trykket»-hendelser. */
+    read(now: number): InputFrame {
+        const k = this.keys;
+        let mx = 0;
+        let my = 0;
+        if (k.has('KeyW')) my += 1;
+        if (k.has('KeyS')) my -= 1;
+        if (k.has('KeyD')) mx += 1;
+        if (k.has('KeyA')) mx -= 1;
+        const len = Math.hypot(mx, my);
+        if (len > 1) {
+            mx /= len;
+            my /= len;
+        }
+
+        // Holdt venstre knapp lenge nok: tungt slag fyrer mens knappen fortsatt er nede,
+        // slik at det føles som å lade opp slaget.
+        if (this.lmbDownAt >= 0 && !this.lmbHeavyFired && now - this.lmbDownAt > HEAVY_HOLD_S) {
+            this.lmbHeavyFired = true;
+            this.heavyQueued = true;
+        }
+
+        const p = this.pressed;
+        const frame: InputFrame = {
+            move: { x: mx, y: my },
+            sprint: k.has('ShiftLeft') || k.has('ShiftRight'),
+            jumpPressed: p.has('Space'),
+            interactPressed: p.has('KeyE'),
+            lightPressed: p.has('KeyJ') || this.lightQueued,
+            heavyPressed: p.has('KeyK') || this.heavyQueued,
+            blockHeld: k.has('KeyL') || this.rmb,
+            dodgePressed: p.has('KeyQ') || p.has('ControlLeft') || p.has('KeyC'),
+            finisherPressed: p.has('KeyF'),
+            resetPressed: p.has('KeyR'),
+        };
+        p.clear();
+        this.lightQueued = false;
+        this.heavyQueued = false;
+        return frame;
+    }
+
+    /** Kamera leses per tegnet bilde, ikke per simuleringssteg, så det aldri hakker. */
+    takeLook(): LookInput {
+        const k = this.keys;
+        const look: LookInput = {
+            mouse: { yaw: this.mouseYaw, pitch: this.mousePitch },
+            keys: {
+                x: (k.has('ArrowRight') ? 1 : 0) - (k.has('ArrowLeft') ? 1 : 0),
+                y: (k.has('ArrowUp') ? 1 : 0) - (k.has('ArrowDown') ? 1 : 0),
+            },
+        };
+        this.mouseYaw = 0;
+        this.mousePitch = 0;
+        return look;
+    }
+
+    private onKeyDown = (e: KeyboardEvent) => {
+        if (e.code.startsWith('Arrow') || e.code === 'Space') e.preventDefault();
+        if (!this.keys.has(e.code)) this.pressed.add(e.code);
+        this.keys.add(e.code);
+    };
+
+    private onKeyUp = (e: KeyboardEvent) => {
+        this.keys.delete(e.code);
+    };
+
+    private onBlur = () => {
+        this.keys.clear();
+        this.rmb = false;
+        this.lmbDownAt = -1;
+    };
+
+    private onMouseDown = (e: MouseEvent) => {
+        if (e.button === 0) {
+            this.lmbDownAt = performance.now() / 1000;
+            this.lmbHeavyFired = false;
+        } else if (e.button === 2) {
+            this.rmb = true;
+        }
+    };
+
+    private onMouseUp = (e: MouseEvent) => {
+        if (e.button === 0 && this.lmbDownAt >= 0) {
+            if (!this.lmbHeavyFired) this.lightQueued = true;
+            this.lmbDownAt = -1;
+        } else if (e.button === 2) {
+            this.rmb = false;
+        }
+    };
+
+    private onMouseMove = (e: MouseEvent) => {
+        if (!this.pointerLocked) return;
+        this.mouseYaw -= e.movementX * this.sensitivity;
+        this.mousePitch -= e.movementY * this.sensitivity;
+    };
+
+    private onContextMenu = (e: Event) => e.preventDefault();
+}
