@@ -13,6 +13,13 @@ const ACTOR = 0x0002;
 const BOAT = 0x0004;
 /** Tynne ting (stolper, rekkverk, tønner): figurer og båter stopper, kameraet ikke. */
 const PROP = 0x0008;
+/**
+ * Sikt-skjermer: former som bare stopper siktlinjer (navneskiltene over hodene), ikke figurer,
+ * båter eller kameraet. Kastellene på koggen og et seil som er satt står over skrog-kollideren.
+ */
+const SKJERM = 0x0010;
+/** Et filter-bit ingen bruker: skjermene kolliderer ikke med noe, men spørringer (0xffff) ser dem. */
+const INGEN = 0x8000;
 
 /** Rapier-grupper: høye 16 bit = medlemskap, lave 16 bit = hva den kolliderer med. */
 const groups = (member: number, filter: number) => (member << 16) | filter;
@@ -20,10 +27,13 @@ export const GROUP_WORLD = groups(WORLD, WORLD | ACTOR | BOAT);
 export const GROUP_PROP = groups(PROP, ACTOR | BOAT);
 export const GROUP_ACTOR = groups(ACTOR, WORLD | ACTOR | PROP);
 export const GROUP_BOAT = groups(BOAT, WORLD | PROP);
+export const GROUP_SKJERM = groups(SKJERM, INGEN);
 /** Brukes av spørringer som bare skal se den statiske verden. */
 export const QUERY_WORLD = groups(0xffff, WORLD);
 /** Kant-sjekk for klatring: verden og tynne ting (man kan klatre på en tønne). */
 export const QUERY_SOLID = groups(0xffff, WORLD | PROP);
+/** Siktlinjer (navneskilt): verden og sikt-skjermene. */
+export const QUERY_SIKT = groups(0xffff, WORLD | SKJERM);
 
 let rapierPromise: Promise<Rapier> | null = null;
 export function loadRapier(): Promise<Rapier> {
@@ -75,6 +85,14 @@ export class Physics {
         return this.world.createCollider(desc);
     }
 
+    /** Statisk sikt-skjerm (konveks form rundt punktene): stopper bare `raySikt`. */
+    addSkjerm(points: THREE.Vector3[]): RAPIER_NS.Collider | null {
+        const flat = new Float32Array(points.flatMap((p) => [p.x, p.y, p.z]));
+        const desc = this.R.ColliderDesc.convexHull(flat);
+        if (!desc) return null;
+        return this.world.createCollider(desc.setCollisionGroups(GROUP_SKJERM));
+    }
+
     /**
      * En kapsel som flyttes av koden (folk som går). Den står i prop-gruppen: gutten og fienden
      * stopper mot den, kameraet ser den ikke. `flytt` setter føttene der neste steg starter.
@@ -91,14 +109,14 @@ export class Physics {
 
     /**
      * En konveks form som flyttes av koden (skip og båter som seiler og ror). Står i verden-gruppen,
-     * så færingen gutten ror stopper mot den. `flytt` setter posisjon og retning (yaw) til neste steg.
+     * så færingen gutten ror stopper mot den, eller med `skjerm` som sikt-skjerm (seilet). `flytt` setter posisjon og retning (yaw) til neste steg.
      */
-    addMovingHull(points: THREE.Vector3[]): { flytt: (x: number, y: number, z: number, yaw: number) => void; fjern: () => void } | null {
+    addMovingHull(points: THREE.Vector3[], skjerm = false): { flytt: (x: number, y: number, z: number, yaw: number) => void; fjern: () => void } | null {
         const flat = new Float32Array(points.flatMap((p) => [p.x, p.y, p.z]));
         const desc = this.R.ColliderDesc.convexHull(flat);
         if (!desc) return null;
         const body = this.world.createRigidBody(this.R.RigidBodyDesc.kinematicPositionBased().setTranslation(0, -100, 0));
-        this.world.createCollider(desc.setCollisionGroups(GROUP_WORLD), body);
+        this.world.createCollider(desc.setCollisionGroups(skjerm ? GROUP_SKJERM : GROUP_WORLD), body);
         return {
             flytt: (x, y, z, yaw) => {
                 body.setNextKinematicTranslation({ x, y, z });
@@ -126,6 +144,13 @@ export class Physics {
             point: new THREE.Vector3(origin.x + dir.x * t, origin.y + dir.y * t, origin.z + dir.z * t),
             normal: new THREE.Vector3(hit.normal.x, hit.normal.y, hit.normal.z),
         };
+    }
+
+    /** Er siktlinja brutt (verden eller en sikt-skjerm) innen `maxDist`? */
+    raySikt(origin: THREE.Vector3, dir: THREE.Vector3, maxDist: number): boolean {
+        this.ray.origin = { x: origin.x, y: origin.y, z: origin.z };
+        this.ray.dir = { x: dir.x, y: dir.y, z: dir.z };
+        return !!this.world.castRay(this.ray, maxDist, true, undefined, QUERY_SIKT);
     }
 
     /**
