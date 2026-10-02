@@ -12,7 +12,7 @@ import * as THREE from 'three';
 const MAKS_ROM = 6;
 
 /** Hvor lett det blir pytter på hvert materiale (0 = aldri). */
-const PYTT: Record<string, number> = { gjorme: 0.45, stein: 0.35, gardsrom: 0.25, dekke: 0.15, lod: 0.2 };
+const PYTT: Record<string, number> = { gjorme: 0.3, stein: 0.25, gardsrom: 0.25, dekke: 0.15, lod: 0.2 };
 /** Hvor mye mørkere et materiale blir vått. Tre suger, stein mindre. */
 const MORK: Record<string, number> = { stein: 0.72, torv: 0.8, mork: 1, lod: 0.7 };
 
@@ -99,14 +99,15 @@ void vaatFlate(inout vec3 farge, inout float ruhet, inout vec3 n, float pyttVekt
     float w = uVaat * mix(0.25, 1.0, opp) * mix(0.55, 1.0, smoothstep(0.25, 0.7, f));
     farge *= mix(1.0, mork, w);
     ruhet = mix(ruhet, min(ruhet, 0.3), w * 0.85);
-    // Pytter: i søkkene (lav støy) på flater som vender opp.
+    // Pytter: i søkkene (lav støy) på flater som vender opp. Små og grumsete: gjørmevann speiler
+    // himmelen svakt, det er ikke et speil. Store, blanke flekker så ut som snø på torget.
     if (pyttVekt > 0.0) {
-        float s = vaStoy(vVaatPos.xz * 0.35 + 7.0) * 0.7 + vaStoy(vVaatPos.xz * 1.3) * 0.3;
-        float p = smoothstep(0.7 - pyttVekt * 0.1, 0.73 - pyttVekt * 0.1, 1.0 - s) * opp * smoothstep(0.3, 0.9, uVaat);
-        farge *= mix(1.0, 0.35, p);
-        ruhet = mix(ruhet, 0.06, p);
-        // Vannflata er flat: ingen ujevnheter fra normalkartet.
-        n = normalize(mix(n, (viewMatrix * vec4(0.0, 1.0, 0.0, 0.0)).xyz, p));
+        float s = vaStoy(vVaatPos.xz * 0.6 + 7.0) * 0.65 + vaStoy(vVaatPos.xz * 2.1) * 0.35;
+        float p = smoothstep(0.72 - pyttVekt * 0.1, 0.79 - pyttVekt * 0.1, 1.0 - s) * opp * smoothstep(0.3, 0.9, uVaat);
+        farge *= mix(1.0, 0.42, p);
+        ruhet = mix(ruhet, 0.34, p);
+        // Vannflata er nesten flat: lite igjen av ujevnhetene fra normalkartet.
+        n = normalize(mix(n, (viewMatrix * vec4(0.0, 1.0, 0.0, 0.0)).xyz, p * 0.85));
     }
 }
 `;

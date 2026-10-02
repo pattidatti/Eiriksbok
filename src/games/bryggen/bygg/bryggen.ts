@@ -17,6 +17,7 @@ import { flakk } from '../motor/ild';
 import { lagVann, type Vann } from '../motor/vann';
 import { Maaker } from '../motor/maaker';
 import { Regn } from '../motor/regn';
+import { Drypp } from '../motor/drypp';
 import { Rotter, type RotteSone } from '../motor/rotter';
 import { Katter } from '../motor/katter';
 import { Himmel } from '../motor/himmel';
@@ -50,6 +51,8 @@ export interface BryggenWorld {
     skygger: boolean;
     /** Hvor vått det er nå (0-1). Henger etter regnet: det tørker sakte. */
     vaat: number;
+    /** Hvor mye av sola kameraet står i skyggen for (0-1), ute. Øyet venner seg til det (stemning.ts). */
+    skygge: number;
     /**
      * Kalles hvert bilde: flammene lever, ildlyset flyttes til nærmeste ildsted, og svaret sier
      * hvor langt inne i et rom `focus` er (0 ute, 1 godt inne). `focus` er kameraet; `spiller`
@@ -141,7 +144,8 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // Måker over kaia, og regn rundt kameraet.
     const maaker = new Maaker({ x0: xw, x1: xe, kaiZ0: 0, kaiZ1: FRONT_Z, sjoZ: -40, vannY: WATER_Y }, phys);
     const regn = new Regn();
-    scene.add(maaker.mesh, regn.mesh);
+    const drypp = new Drypp(phys);
+    scene.add(maaker.mesh, regn.mesh, drypp.mesh);
 
     // Rotter: i buene og på lagerloftene (rommene uten ild), langs bolverket foran hver gård, og
     // under svalgangene i den første gården. Ute er stripene smale og inntil noe, så det aldri er
@@ -208,6 +212,11 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const pool = Array.from({ length: 5 }, () => phys.addMover(0.55, 0.26));
     const parkert = new THREE.Vector3(0, -100, 0);
     const naere: { p: THREE.Vector3; d: number }[] = [];
+    // Skyggen kameraet står i: noen stråler mot sola rundt det, et par ganger i sekundet.
+    const SKYGGE_PROVER = [[0, 0], [1.5, 0], [-1.5, 0], [0, 1.5], [0, -1.5]];
+    const _s = new THREE.Vector3();
+    let skyggeTid = 0;
+    let skyggeMaal = 0;
     const ctx: CellCtx = { kamera: new THREE.Vector3(), spiller: new THREE.Vector3(), si: (hvem, tekst, fra) => world.si?.(hvem, tekst, fra) };
     const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
         ctx.kamera.copy(focus);
@@ -285,6 +294,15 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             }
         }
         regn.update(t % 600, focus, world.regn, Math.min(1, inne * 2));
+        drypp.update(t % 600, focus, streamer.drypp(), world.vaat, world.regn, Math.min(1, inne * 2));
+        skyggeTid -= dt;
+        if (skyggeTid <= 0) {
+            skyggeTid = 0.25;
+            let n = 0;
+            for (const [dx, dz] of SKYGGE_PROVER) if (phys.rayWorld(_s.set(focus.x + dx, focus.y, focus.z + dz), lys.solRetning, 60)) n++;
+            skyggeMaal = n / SKYGGE_PROVER.length;
+        }
+        world.skygge += (skyggeMaal - world.skygge) * Math.min(1, dt * 1.2);
         stov.update(t, world.skygger ? innerst : null, inne);
         return inne;
     };
@@ -336,6 +354,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         post: false,
         skygger: true,
         vaat: st.vaat,
+        skygge: 0,
         streamer,
         materials,
         environment,
@@ -344,6 +363,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             himmel.dispose();
             royk.dispose();
             stov.dispose();
+            drypp.dispose();
         },
         layout: {
             playerStart: new THREE.Vector3(0, 0, 2.4),
@@ -355,7 +375,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         },
     };
     // Utviklerverktøy: testskript kan lese hvor måkene er og skru regnet (`__bryggenVerden.regn`).
-    if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenRotter: rotter, __bryggenVerden: world, __bryggenHimmel: himmel, __bryggenStov: stov, __bryggenRoyk: royk });
+    if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenRotter: rotter, __bryggenVerden: world, __bryggenHimmel: himmel, __bryggenStov: stov, __bryggenRoyk: royk, __bryggenDrypp: drypp });
     return world;
 }
 

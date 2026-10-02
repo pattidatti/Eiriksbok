@@ -304,7 +304,7 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
     mid.name = 'ovregaten:lod';
     return {
         near, mid, inne, rom, ild, colliders: [...c.specs, ...f.colliders], samlet: { delt: [naer], samlet: uten },
-        gaaende: f.gaaende, snakkbare: f.snakkbare,
+        gaaende: f.gaaende, snakkbare: f.snakkbare, drypp: k.skjegg,
         tick: (t, dt, ctx) => {
             ilder.forEach((x) => x.update(t, dt));
             f.tick(t, dt, ctx);

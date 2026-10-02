@@ -48,8 +48,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
 | `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
 | `motor/stemning.ts` | Lysstemningene (`?lys=kveld\|graatt\|morgen`): sol, fyll, tåke, himmelfarger, regn, vætan og dis. `Lyssetting` eier sola og halvkulelyset, demper dem inne og flytter skyggen med gutten |
-| `motor/himmel.ts` | Himmelkuppelen: fargeovergang, skyer som driver, sola bak skyene. Tegnes etter alt som ikke er gjennomsiktig, med dybden bakerst |
+| `motor/himmel.ts` | Himmelkuppelen: fargeovergang, skyer som driver, sola bak skyene, og fjellene rundt Bergen (`FJELL`) som en profil langs horisonten. Tegnes etter alt som ikke er gjennomsiktig, med dybden bakerst |
 | `motor/vaat.ts` | Våte flater: mørkere og blankere tre, flekker, pytter i gjørma og på steinen, tørt inne i rommene. Hektes på materialene i `Materials` |
+| `motor/drypp.ts` | Drypp fra takskjeggene (`CellContent.drypp`, lagt inn av `tak` og `svalgang`) nær kameraet når det er vått. Ett tegnekall, falt i vertex-shaderen |
 | `motor/luft.ts` | Røyk fra ljorene (ett tegnekall for hele byen) og støv i rommet kameraet står i: glimt og disflak som bare lyser i sollyset, så strålen gjennom døra synes |
 | `motor/post.ts` | Etterbehandling på full kvalitet: SSAO (halv oppløsning), glød (kvart og åttendels), lysstråler fra sola, solglød i tåka, dis over Vågen, FXAA, fargetone, vignett, filmkorn |
 | `motor/faering-modell.ts` | Færingen som modell: klinkbygd skrog med bordganger, stavner, ripe, tiljer og tofter |
@@ -77,7 +78,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper) |
 | `bygg/allmenning.ts` | Nikolaikirkeallmenningen: gjørme, plankegang, kort kai, rådhuset (steinkjeller, laftet stue, svalgang og trapp), steintrappa opp til Øvregaten og støttemuren med den åpne grinda |
 | `bygg/torgfolk.ts` | Folkene på torget: selgerne i bodene og rutene til dem som går (kjøpere, tjenestejenta ved brønnen, fiskeren og svennen på plankegangen), med et kart over hvor tingene står |
-| `bygg/torg.ts` | Torglivet: salgsboder med tørrfisk, korn, kurver og tønner, brønn med vinde, slede med tønne, spor og pytter i gjørma |
+| `bygg/torg.ts` | Torglivet: salgsboder med tørrfisk, korn, kurver og tønner, brønn med vinde, slede med tønne og spor i gjørma (pyttene ligger i `vaat.ts`) |
 | `bygg/nikolaikirken.ts` | Nikolaikirken på nordsida av Øvregaten, rett over kirketrappa: romansk steinkirke med vesttårn, under reparasjon etter brannen 1413 (nytt tak i vest, sperrer og stillas i øst), kirkegård med lav mur mot gata og stengt grind |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
 | `bygg/mariakirken.ts` | Mariakirken utenpå: tvillingtårn, pulttak og saltak, strebepilarer, og kirkegården med mur, port, gangsti og gravkors (alt kolliderer) |
@@ -189,6 +190,18 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Støvet (`luft.ts`) får sol og skygge av Lambert. Uten skygger (lav kvalitet) ville det lyst i hele
   rommet, så det vises bare når sola kaster skygge. Disflakene er store og legges oppå alt bak dem:
   630 av dem kostet 14 ms i bua. Hold antallet lavt, og la dem forsvinne tett på kameraet.
+- Fjellene er ikke geometri: himmelen regner ut en profil fra toppene i `FJELL` (posisjon, høyde, bredde),
+  sett fra kameraet. Retning, høyde og bredde per topp regnes på CPU-en i `Himmel.update`, og over den
+  høyeste toppen hopper shaderen over alt. Med acos, atan og fem oktaver støy per piksel kostet de 2-3 ms
+  fra Vågen; nå 0,1-0,5. De må være tunge av dis, ellers står de skarpere enn husene 100 m unna.
+- Står kameraet i skyggen ute, løftes fyllyset og miljølyset (`Stemning.skyggeLoft`, `BryggenWorld.skygge`:
+  fem stråler mot sola fire ganger i sekundet). Det er øyet som venner seg til mørket, og lyset de
+  solbelyste veggene kaster ned i de smale gårdsrommene, som halvkulelyset ikke kan vise.
+- Takskjegg registreres med `MeshKit.takskjegg(a, b)` og går til cella som `drypp`. Nye hus av `hus()` får
+  det gratis; andre tak man vil ha drypp fra, må melde skjegget selv. Dryppet faller til første kollider
+  under (strålen tar med prop), og steder med under 0,3 m fall droppes (hovedtaket over svalgangstaket).
+- Pyttene ligger i shaderen (`vaat.ts`), ikke som geometri. Store, blanke pytter så ut som snø på torget:
+  de er små, mørke og ganske ru (0,34).
 - Røyken kommer fra `CellContent.royk` (hullet i taket over ildstedet). De fire nærmeste ryker.
 - Etterbehandlingen tegner scenen til en buffer som later som den er en XR-buffer
   (`isXRRenderTarget`). Ellers tonemapper ikke Three, og tåka blandes inn før tonekurven: alt i

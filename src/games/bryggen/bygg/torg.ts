@@ -171,11 +171,3 @@ export function spor(k: MeshKit, x: number, z0: number, z1: number, w: number, s
         }
     });
 }
-
-/**
- * Vannpytt: flat og blank, litt over gjørma. Grå og kald som himmelen den speiler, med flat farge
- * (UV-ene krympet) så steinteksturen ikke synes.
- */
-export function pytt(k: MeshKit, x: number, z: number, r: number): void {
-    k.withTint({ top: 1.75, bottom: 1.75, hue: [0.88, 0.96, 1.1] }, () => k.withUv(0.04, () => k.log('stein', V(x, -0.01, z), V(x, 0.012, z), r, 10, true, r * 0.9)));
-}

@@ -733,7 +733,15 @@ Mixamo brukes ikke (krever innlogging).
   lysstråler, solglød i tåka og dis over Vågen. «graatt» er nær bildet eieren godkjente først. Målt i
   Edge med GPU (AMD, 1366×768, median ms per bilde, main mot ny): full 14-21 mot 16-26, lav 10-12 mot
   10-13 (uendret). Kaia er dyrest (+5-8 ms: skygger 2048, SSAO ca. 1, røyk ca. 1, og folkene nær
-  kameraet animeres fullt). Venter på eierens spilltest
+  kameraet animeres fullt). Rettet samme kveld: «morgen» har sola mot sør utpå formiddagen (en ekte
+  morgensol står i øst bak gårdene og legger hele fronten i skygge) **[S]**; i skyggen ute løftes
+  fyllyset (øyet venner seg, og veggene kaster lys ned i gårdsrommene); pyttene er små, mørke og
+  ruere, og pyttene som geometri på torget er fjernet; det drypper fra takskjeggene og
+  svalgangstakene når det er vått. Fjellene rundt Bergen står i himmelen: Fløyen rett bak Bryggen,
+  Blåmanen, Rundemanen og Sandviksfjellet mot nord, Ulriken lenger inne, Løvstakken, Damsgårdsfjellet
+  og Lyderhorn over Vågen og Askøy lavt over Byfjorden. Høydene er ekte [V]; plasseringene er grovt
+  avlest og litt flyttet **[S]**. I gråvær forsvinner toppene i skyene. Alt dette sammen: +0,1 til
+  +0,7 ms (Edge med GPU, median, to runder mot main). Venter på eierens spilltest
 - [~] Bære og veie (02.10.2026, `graboks/baering.ts`, `graboks/bismer.ts`): E ved stabelen på kaia gir
   gutten en bunt i armene (saktere gange, ingen sprint, hopp eller slag). Ved bismeren i bua henger
   bunten i kroken, og eleven flytter hanken med A og D til stanga ligger vannrett, og leser av

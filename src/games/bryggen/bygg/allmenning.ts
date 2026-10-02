@@ -19,7 +19,7 @@ import { DECK_Y, FRONT_Z, GARD_DEPTH, SV_W, T, WARM, kai, kaiJog, svalgang, toGr
 import { LIST, STEIN, apning, paFlate } from './stein';
 import { NIKOLAI_Y, PORTAL_Z, buildNikolaikirken } from './nikolaikirken';
 import { lagFolk } from './folk';
-import { bod, bronn, pytt, slede, spor } from './torg';
+import { bod, bronn, slede, spor } from './torg';
 import { torgPlasser, torgRuter } from './torgfolk';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
@@ -191,10 +191,9 @@ export async function buildAllmenningCell(mats: Materials, x0: number, x1: numbe
     }
     for (const [x, z, t] of [[3.4, 2.6, 0.9], [4.1, 3.2, 0.8], [15.2, 2.4, 0.95]] as const) tonne(k, c, x, z, t);
 
-    // Sporene etter sleder og kjerrer, og pytter der regnet blir stående [S].
+    // Sporene etter sleder og kjerrer [S]. Pyttene ligger i shaderen (vaat.ts).
     spor(k, 6.1, front + 1.6, 56, 0.8, 1);
     spor(k, RAD.x0 + RAD.w / 2, front + 1.6, RAD.z0 - 0.4, 0.8, 4);
-    for (const [x, z, rr] of [[5.2, 9.5, 0.7], [13.0, 17.0, 0.55], [6.6, 31.5, 0.8], [11.4, 47.5, 0.6], [4.4, 54.5, 0.5]] as const) pytt(k, x, z, rr);
 
     // Bodene: langs vestsida, og to øverst der torget trolig var [V Wikipedia, «trolig»].
     const motOst = -Math.PI / 2;
@@ -231,7 +230,7 @@ export async function buildAllmenningCell(mats: Materials, x0: number, x1: numbe
     near.add(folk.group);
     return {
         near, mid, colliders: [...c.specs, ...kirke.colliders, ...folk.colliders],
-        gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose,
+        gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose, drypp: k.skjegg,
         // Ved sveiva på brønnen (mot øst): her henter gutten vann (oppdrag.ts).
         steder: [{ id: 'bronn', pos: V(x0 + 5.75, 0, 37), r: 1.5 }],
     };

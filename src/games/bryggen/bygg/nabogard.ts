@@ -316,6 +316,7 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     near.add(folk.group);
     return {
         near, mid, samlet: { delt, samlet }, colliders: c.specs, gaaende: folk.gaaende, snakkbare: folk.snakkbare, royk,
+        drypp: [...fram.skjegg, ...bak.skjegg],
         tick: (t, dt, ctx) => folk.tick(t, dt, ctx),
         dispose: () => folk.dispose(),
     };

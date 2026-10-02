@@ -43,6 +43,15 @@ export interface Stemning {
     vaat: number;
     /** Dis lavt over Vågen (etterbehandlingen). */
     dis: number;
+    /**
+     * Hvor mye fyllyset og miljølyset løftes når kameraet står i skyggen ute (0 = ingenting).
+     * Øyet venner seg til mørket, og i de smale gårdsrommene kaster de solbelyste veggene lys
+     * ned på hverandre. Det siste kan ikke halvkulelyset vise, så dette gjør jobben.
+     */
+    skyggeLoft: number;
+    /** Fjellene rundt byen (himmel.ts): fargen nær, og hvor fort disen tar dem (meter). */
+    fjell: number;
+    fjellDis: number;
 }
 
 export const STEMNINGER: Record<StemningId, Stemning> = {
@@ -66,6 +75,9 @@ export const STEMNINGER: Record<StemningId, Stemning> = {
         regn: 0.0,
         vaat: 0.85,
         dis: 1.0,
+        skyggeLoft: 0.7,
+        fjell: 0x2c3a30,
+        fjellDis: 2600,
     },
     graatt: {
         sol: [-14, 22, -10],
@@ -87,16 +99,22 @@ export const STEMNINGER: Record<StemningId, Stemning> = {
         regn: 0.6,
         vaat: 0.6,
         dis: 0.6,
+        skyggeLoft: 0,
+        fjell: 0x3a4641,
+        fjellDis: 1500,
     },
     morgen: {
-        sol: [-0.45, 0.5, 0.74],
+        // En ekte morgensol står i øst, bak gårdene (+z), og da ligger hele bryggefronten i
+        // skygge. Her har sola kommet rundt mot sør (-x) utpå formiddagen: den streifer gavlene
+        // og lyser rett på langveggene og ned i gårdsrommene [S].
+        sol: [-0.8, 0.62, -0.08],
         solFarge: 0xfff0dc,
         solStyrke: 2.8,
         himmel: 0x9db7d4,
         bakke: 0x40382f,
-        fyll: 0.65,
+        fyll: 0.85,
         fyllLav: 1.05,
-        miljo: 0.6,
+        miljo: 0.75,
         takeFarge: 0xb4bcc4,
         takeTetthet: 0.013,
         eksponering: 1.0,
@@ -108,6 +126,9 @@ export const STEMNINGER: Record<StemningId, Stemning> = {
         regn: 0.0,
         vaat: 0.35,
         dis: 0.7,
+        skyggeLoft: 0.45,
+        fjell: 0x33463a,
+        fjellDis: 3200,
     },
 };
 
@@ -165,15 +186,19 @@ export class Lyssetting {
         if (import.meta.env.DEV) Object.assign(window, { __bryggenLys: this });
     }
 
-    /** Kalles hvert bilde. `inne` 0..1 demper dagslyset (ilden tar over), og skyggen følger `follow`. */
-    oppdater(follow: THREE.Vector3, inne: number, low: boolean, scene: THREE.Scene): void {
+    /**
+     * Kalles hvert bilde. `inne` 0..1 demper dagslyset (ilden tar over), og skyggen følger `follow`.
+     * `skygge` 0..1 er hvor mye kameraet står i skyggen ute (`BryggenWorld.skygge`).
+     */
+    oppdater(follow: THREE.Vector3, inne: number, low: boolean, scene: THREE.Scene, skygge = 0): void {
         this.sol.position.copy(follow).addScaledVector(this.solRetning, this.avstand);
         this.sol.target.position.copy(follow);
         if (!this.bryggen) return;
         const s = this.s;
         const ute = 1 - inne * 0.65;
-        this.hemi.intensity = (low ? s.fyllLav : s.fyll) * ute;
+        const loft = 1 + s.skyggeLoft * skygge * (1 - inne);
+        this.hemi.intensity = (low ? s.fyllLav : s.fyll) * ute * loft;
         this.sol.intensity = s.solStyrke * (1 - inne * 0.85);
-        scene.environmentIntensity = s.miljo * ute;
+        scene.environmentIntensity = s.miljo * ute * loft;
     }
 }

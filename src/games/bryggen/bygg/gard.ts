@@ -179,6 +179,9 @@ export function svalgang(k: MeshKit, c: ColliderKit, o: SvalgangOpts): void {
         .makeRotationZ(o.out * -a)
         .setPosition(o.xWall + o.out * (SV_W + 0.3) / 2, (roofIn + roofOut) / 2 - 0.02 + 0.03, zm);
     k.slab('bordtak', m, run, 0.06, len + 0.4, { grain: 'x' });
+    // Det drypper fra ytterkanten (drypp.ts), og hovedtaket over drypper ned på dette taket.
+    const xk = o.xWall + o.out * (SV_W + 0.3);
+    k.takskjegg(V(xk, roofOut - 0.06, o.z0 - 0.2), V(xk, roofOut - 0.06, o.z1 + 0.2));
     const q = new THREE.Euler().setFromRotationMatrix(m);
     c.box(o.xWall + o.out * (SV_W + 0.3) / 2, (roofIn + roofOut) / 2, zm, run, 0.08, len + 0.4, false, q);
 }
@@ -434,7 +437,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     const folk = await lagFolk(plasser, mats, Math.abs(Math.round(ox)) + 7, ruter(ox, back));
     near.add(folk.group);
     return {
-        near, mid, inne, samlet: { delt, samlet }, colliders: [...c.specs, ...folk.colliders], ild: ildPos, royk: roykPos, rom,
+        near, mid, inne, samlet: { delt, samlet }, colliders: [...c.specs, ...folk.colliders], ild: ildPos, royk: roykPos, rom, drypp: [...fram.skjegg, ...bak.skjegg],
         gaaende: folk.gaaende, snakkbare: folk.snakkbare,
         // Gjeldsboka ligger på pulten der husbonden står og skriver (bu.ts).
         steder: plasser.filter((p) => p.id === 'husbonden').map((p) => ({ id: 'gjeldsbok', pos: p.pos.clone(), r: 1.9 })),

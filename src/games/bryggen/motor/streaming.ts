@@ -65,6 +65,8 @@ export interface CellContent {
     royk?: THREE.Vector3[];
     /** Rom man kan gå inn i, i verdensrom. Inne dempes dagslyset. */
     rom?: Rom[];
+    /** Takskjegg i verdensrom, to punkter per skjegg (`MeshKit.skjegg`). Det drypper fra dem (drypp.ts). */
+    drypp?: THREE.Vector3[];
     /** Folk som går (føttene, oppdatert av `tick`). Verdenen gir de nærmeste en kollider. */
     gaaende?: THREE.Vector3[];
     /** Hvor gutten kan hente bunter tørrfisk, og hvor de skal leveres (bære-aktiviteten). */
@@ -272,6 +274,11 @@ export class CellStreamer {
 
     *royk(): Generator<THREE.Vector3> {
         for (const cell of this.live.values()) yield* cell.content?.royk ?? [];
+    }
+
+    /** Takskjeggene i cellene som er lastet, ett par punkter per skjegg. */
+    *drypp(): Generator<THREE.Vector3[]> {
+        for (const cell of this.live.values()) if (cell.content?.drypp) yield cell.content.drypp;
     }
 
     *rom(): Generator<Rom> {

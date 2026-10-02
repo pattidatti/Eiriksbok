@@ -101,7 +101,7 @@ async function buildVeiCell(mats: Materials, x0: number, x1: number, vest: numbe
     near.add(folk.group);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'holmenveien:lod';
-    return { near, mid, colliders: [...c.specs, ...folk.colliders], gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose };
+    return { near, mid, colliders: [...c.specs, ...folk.colliders], gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose, drypp: k.skjegg };
 }
 
 /** Skriverboden: et skråtak på fire stolper over en pult, inntil hallen [S]. */
@@ -207,7 +207,7 @@ async function buildBorgCell(mats: Materials, hx: number): Promise<CellContent> 
     near.add(folk.group);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'bergenhus:lod';
-    return { near, mid, colliders: [...c.specs, ...folk.colliders], gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose };
+    return { near, mid, colliders: [...c.specs, ...folk.colliders], gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose, drypp: k.skjegg };
 }
 
 /**

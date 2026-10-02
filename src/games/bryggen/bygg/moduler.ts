@@ -420,6 +420,10 @@ function tak(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
             const rb = new THREE.Matrix4().multiplyMatrices(top.m, new THREE.Matrix4().makeTranslation(side * (-top.len / 2 + 0.16), 0, 0));
             k.slab('raatre', rb, 0.3, 0.04, L);
         }
+        // Takskjegget, der regnvannet drypper fra (drypp.ts).
+        const ut = s.w / 2 + EAVE_OVER;
+        const yk = ridgeY - ut * s.pitch;
+        k.takskjegg(V(side * ut, yk, zA), V(side * ut, yk, zB));
         const col = takflate(s, side, 0.26, 0, 0);
         const q = new THREE.Quaternion().setFromRotationMatrix(col.m);
         const p = new THREE.Vector3().setFromMatrixPosition(col.m);

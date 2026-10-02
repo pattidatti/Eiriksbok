@@ -57,6 +57,8 @@ export class MeshKit {
     readonly buckets = new Map<MatKey, Bucket>();
     matrix = new THREE.Matrix4();
     tint: Tint = PLAIN;
+    /** Takskjegg i verdensrom, to punkter per skjegg: der dryppet faller fra (drypp.ts). */
+    readonly skjegg: THREE.Vector3[] = [];
     /** Ganges med alle UV-er (`withUv`). */
     private uvScale = 1;
     private readonly stack: THREE.Matrix4[] = [];
@@ -92,6 +94,11 @@ export class MeshKit {
         fn();
         if (c && old) c.matrix = old;
         this.pop();
+    }
+
+    /** Legger til et takskjegg fra `a` til `b` (i det lokale rommet). */
+    takskjegg(a: THREE.Vector3, b: THREE.Vector3): void {
+        this.skjegg.push(a.clone().applyMatrix4(this.matrix), b.clone().applyMatrix4(this.matrix));
     }
 
     withTint(t: Tint, fn: () => void): void {
