@@ -241,6 +241,8 @@ SAMTALER.fisker.vetvekt = {
     hvem: 'Dette vet vi',
     vet: true,
     tekst: 'Bylova fra 1276 bestemte hvor tungt et bismerpund skulle være, så alle skulle veie likt. Fiskerne var avhengige av kjøpmennene som veide fisken. Om noen jukset med vekta på Bryggen i 1420-årene, og hvor ofte, vet vi ikke.',
+};
+
 // Kornselgeren på torget: «Kontoret styrte kornimporten» og «jektene førte bygg, havre, hvete og
 // hamp nordover» er [V] (blueprint §4.3). At gutten kom med koggen fra Lübeck, er prologen (§6).
 // At en norsk kremmer kjøpte korn av Kontoret og solgte det videre på torget, er [S]; prisene er [U].
