@@ -13,7 +13,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
-- Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md)
+- Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md). I Bryggen
+  får figurene klær (`motor/figur.ts`, draktene i `bygg/folk.ts`); gråboksen beholder mannequinen.
+  Folk står, sitter og jobber i bua og schøtstua.
 
 ## Oppbygning
 
@@ -27,6 +29,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/boat.ts` | Færing med åretak |
 | `motor/combat.ts` | Arkade-slagsmål og fiende-AI |
 | `motor/gore.ts` | Blod som blir liggende |
+| `motor/figur.ts` | Kler på UAL-riggen: hjørnefarge per bein, klær blåst ut fra beinet, musklene jevnet ut, skjørt, kappe og tut på hetta, pung, kroppsfasong. Én geometri og ett materiale per drakt |
+| `motor/hode.ts` | Nytt hode i stedet for mannequinens egg: skalle, kjeve, hår/skjegg/hette, ører, hals, og ansiktet (øyne, bryn, nese, munn) |
 | `motor/meshkit.ts` | Geometri-settet: bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
 | `motor/materials.ts` | PBR-materialene (farge, normal, ARM) og miljølys fra en enkel himmel |
 | `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå |
@@ -34,6 +38,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/moduler.ts` | Modulsettet: laft med laftehoder, gavl, bordkledd fasade, torvtak, bordtak, vinsj, dører, glugger og utkraget overetasje |
 | `bygg/inne.ts` | Hus man kan gå inn i: hule etasjer med hull for åpne dører og glugger, golv, bjelkelag med trappehull og rekkverk, trapp, terskelkiler, innergavler og åser |
 | `bygg/bu.ts` | Bua og lagerloftet: tørrfisk i stabler og bunter, kornsekker, tranfat, bismer, skrivepult med gjeldsbok og kiste |
+| `bygg/folk.ts` | Draktene (junge, husbonde, svenn, skutedreng, stuedreng) og folkene i en celle: animator, kollider og løkke på stedet |
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper), allmenningen |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
@@ -70,7 +75,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Kaifronten hopper mellom gårdene (`FRONT_JOG`). Cella som stikker lengst ut bygger sideveggen i
   bolverket (`kaiJog`), og stokkene går litt inn bak naboens front så hjørnet blir tett.
 - Utviklerverktøy (bare i dev): `window.__bryggenFoto = { pos: [x, y, z], look: [x, y, z] }` låser
-  kameraet til skjermbilder og måling fra Vågen; `window.__bryggenPos` viser hvor gutten står.
+  kameraet til skjermbilder og måling fra Vågen; `window.__bryggenPos` viser hvor gutten står, og
+  `window.__bryggenFolk()` hvor folkene i de lastede cellene står (drakt, posisjon, retning).
 - Utkraging (`krag` i `HouseSpec`): hver etasje over den første står så mye lenger ut mot sjøen.
   `floorZ(s, i)` er framgavlen til etasje `i` og `frontZ(s)` den øverste; taket, gavltrekanten og
   vinsjen starter der. Bare forhusene krager, så husene bak i rekka ikke kolliderer med dem.
@@ -102,4 +108,21 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   krympes, så flaten får nesten én farge fra teksturen. Formen må da komme fra geometrien og
   `shade` per hjørne. Aldri 0: normalkartet trenger UV-er som endrer seg.
 - Hold minst 1,5 m fritt der en trapp kommer opp. Gutten trenger plass til å gå av og snu.
+- Figurer kles av `kleFigur(rig, drakt)`. Samme `navn` deler geometri, så variasjon er en ny drakt,
+  ikke et nytt materiale. Fargen ligger i hjørnene, materialet heter `M_Main` (hvit), så `setTint`
+  i kampen fortsatt virker. Geometrien slås sammen på et rutenett på 2 cm (`forenkle`): mannequinen
+  har ca. 14k trekanter, mest leddkuler og fingre som ikke synes under klærne.
+- Mannequinen er en bodybuilder i T-stilling. Klær som bare blåses ut fra huden, får brystmuskler
+  og svære armer. Derfor: armene trekkes mot en jevn radius rundt beinet, overkroppen mot en
+  ellipse per høyde, og kappa på hetta er et eget skall (`kappe`) som kroppen under trekkes inn
+  under (`underKappa`). Mål aldri bredder med armene med: i hvilestillingen står de rett ut.
+- Hodet er byttet ut (`hode.ts`): mannequinhodet har hjørner 6 cm fra hverandre og spiss hake.
+  Små ting (øyne, nese) legges til etter `forenkle`, ellers smelter de sammen på 2 cm-rutenettet.
+- Folk i en celle lages av `lagFolk(plasser, mats)` i cellas `build` og eies av cella: kolliderne går
+  i `colliders` (prop, så kameraet ikke hopper), `tick` driver animasjonen og `dispose` tar figurene
+  ut av `near` før cella kaster geometrien, siden figurgeometrien deles. Folkene står stille og har
+  `frustumCulled` på; spilleren og fienden har det av.
+- Sittende plasseres med `pos` midt på benkesetet: i `Sitting_Idle_Loop` står hoftene 0,33 m bak og
+  0,54 m over riggens føtter (1,83 m høy rigg), og det passer benker på 0,45 m.
+- Folk skal stå minst en drøy meter fra døråpninger og trappefoten, og helst langs veggen uten dør.
 - Ingen fil over 800 linjer.

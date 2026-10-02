@@ -12,6 +12,7 @@ import * as THREE from 'three';
 import type { ColliderKit, MeshKit } from '../motor/meshkit';
 import { floorY, floorZ, rng, type HouseSpec } from './moduler';
 import { WALL_T, golvY, trappehull } from './inne';
+import type { Plass } from './folk';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -26,8 +27,8 @@ interface Rect {
     z1: number;
 }
 
-/** Bygger bua (etasje 0) og lagerloftet (etasje 1) i husets eget rom. */
-export function bu(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
+/** Bygger bua (etasje 0) og lagerloftet (etasje 1) i husets eget rom. Gir folkene i bua. */
+export function bu(k: MeshKit, c: ColliderKit, s: HouseSpec): Plass[] {
     const r = rng(1426);
     const xIn = s.w / 2 - WALL_T;
     const sv = s.inne?.trapp?.side ?? -1;
@@ -65,6 +66,17 @@ export function bu(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
     // Buntene innenfor loftsdøra: herfra går de i tauet fra vinsjen og ned på kaia.
     bunter(k, c, rect(X(-1.45), X(-0.6), zf + 0.15, zf + 1.3), y1, 3, r);
     sekker(k, c, rect(X(0.6), X(1.4), l - 1.4, l - 0.15), y1, r);
+
+    // ── Folkene [S] ──
+    // Husbonden fører gjeldsboka ved pulten, svennen leser av bismeren, og skutedrengen står
+    // med en bunt i armene, klar til å bære den ut døra mot gårdsrommet. Ingen står i døråpningene,
+    // i ganglinja fra porten eller ved trappefoten.
+    const yaw = (fx: number, fz: number) => Math.atan2(fx, fz);
+    return [
+        { figur: 'husbonde', rolle: 'skrive', pos: V(X(-xIn + 0.55) + sv * 0.62, y0, 0.95), yaw: yaw(-sv, 0) },
+        { figur: 'svenn', rolle: 'veie', pos: V(X(-0.75), y0, 3.2), yaw: Math.PI },
+        { figur: 'dreng', rolle: 'baere', pos: V(X(-1.6), y0, 5.0), yaw: yaw(-sv, 1) },
+    ];
 }
 
 const rect = (a: number, b: number, z0: number, z1: number): Rect => ({ x0: Math.min(a, b), x1: Math.max(a, b), z0, z1 });

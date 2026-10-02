@@ -9,7 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -508,6 +508,22 @@ Inne i bua (02.10.2026, samme maskin, programvare-GL): 14-18 FPS på full og 39 
 tegnekall og 131-151k trekanter. Tørrfisken kostet først 70k trekanter (rund fisk, begge sider av
 stabelen); flat fisk på ti trekanter, og bare på sidene som synes, tok den ned til ca. 10k.
 
+Med figurer og folk (02.10.2026, samme maskin, Vulkan-llvmpipe, målt annenhver gang mot forrige
+commit i en egen worktree, to runder; maskinlasten svingte mye, så FPS-en er støyete):
+
+| Vinkel | Før: FPS, tegnekall, trekanter | Etter: FPS, tegnekall, trekanter |
+|---|---|---|
+| Bua, mot pulten og bismeren | 8-14, 105, 156k | 11-12, 106, 153k |
+| Bua, husbonden ved pulten | 9-16, 102, 156k | 12-14, 102, 148k |
+| Schøtstua, mot ilden og benken | 10-17, 42, 56k | 13-14, 44, 57k |
+| Schøtstua, husbonden ved bordet | 13-18, 30, 46k | 14-15, 31, 43k |
+| Kaia, jungen forfra | 17-21, 44, 111k | 14-17, 42, 93k |
+
+Første versjon kostet ca. 14k trekanter per figur (98k for sju folk), og alle ble tegnet selv utenfor
+bildet. Etter sammenslåingen på 2 cm og frustum-culling for folkene er en figur en brøkdel av
+mannequinen, og trekantene står omtrent stille selv med sju folk. Hver synlig figur er ett tegnekall
+(pluss skygge). FPS-en flyttet seg ikke ut over støyen. Chromebook-tallet mangler fortsatt.
+
 ### 9.6 Strømming og LOD
 
 **Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
@@ -547,7 +563,8 @@ Mixamo brukes ikke (krever innlogging).
 
 - Klatringen bruker Push_Loop og Crouch_Idle som stand-in. Den mangler ekte hendene-på-kanten-klipp.
 - Fienden sirkler med garden oppe og glir litt på føttene (ingen sidesteg-klipp i gratispakken).
-- Mannequin-figuren er nøytral og glatt. Den er for å prøve følelsen, ikke utseendet.
+- Mannequin-figuren er nøytral og glatt i gråboksen. I Bryggen har den fått klær (§10), men kroppen er
+  fortsatt mannequinens: brede skuldre, ingen fingre, et enkelt ansikt.
 - Fienden har ingen veifinning (navmesh). Klatrer gutten opp på svalgangen, blir fienden stående under.
 - Konsollen viser én advarsel fra Rapier sin init (samme som i den gamle motoren).
 - Fotlås ble prøvd og forlatt (2026-10-02): UAL-klippene er stiliserte, så fart målt fra
@@ -594,7 +611,23 @@ Mixamo brukes ikke (krever innlogging).
   den bak 100 m. Ingen kollidere: man kommer ikke dit før Maria allmenning bygges
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
 - [ ] Færing (gråboksens form, med ekte treteksturer)
-- [ ] Figurer: junge, husbonde, svenn, nordlandsfisker, tyv, byvakt
+- [~] Figurer (02.10.2026, `motor/figur.ts`, `bygg/folk.ts`): UAL-mannequinen kledd i kode, én
+  geometri og ett materiale per drakt. Kjortel med belte og skjørt som følger lårene, hette med kappe
+  over skuldrene og lang tut (oppe hos de voksne, nede som krage hos guttene), hoser og lave sko.
+  Jungen (spilleren) er 1,58 m, smal og med litt større hode, kort kjortel i ufarget vadmel. Husbonden
+  har lang blå kjortel, rød hette, mage, skjegg og pung. Svennen, skutedrengen og stuedrengen har egne
+  farger og høyder. At menn i Nord-Europa gikk slik kledd i senmiddelalderen, er [V] (Herjolfsnes:
+  hetter med tut, kjortler og hoser, laget så sent som i 1430-årene; Bockstensmannen 1340-1370), og
+  på Bryggen er det funnet sko og tekstiler i hopetall [V Bymuseet]. Fargene er [S]: ufarget for
+  guttene, plantefarget for husbonden. Snitt og farger på Bryggen i 1420-årene er ikke sjekket mot
+  Bryggens Museum **[K]**. Fienden i Bryggen-scenen bruker svenn-drakten. Gjenstår: nordlandsfisker,
+  tyv, byvakt.
+- [~] Folk i gården (02.10.2026): i bua fører husbonden gjeldsboka ved pulten, svennen leser av
+  bismeren og skutedrengen står med en bunt i armene. I schøtstua sitter en svenn og en skutedreng på
+  benken ved ilden, stuedrengen rører i gryta og en husbonde spiser ved bordet. Løkker på stedet, ingen
+  samtaler. De strømmes med cella og har kollider. Hvem som fantes i gården (husbonde, svenner, drenger,
+  alle ugifte menn og gutter) er [V]; hva rangene gjorde er fortalt for 1600/1700-tallet [U]; hvem som
+  sitter og gjør hva er [S]
 - [ ] Dyr: hund, måke, rotte
 - [ ] Lyd: regn, måker, plankegang, åretak, folk på plattysk og norsk. Funnet: *Rain (loopable)*, 4 OGG-løkker, CC0, direkte nedlasting fra OpenGameArt. *Steps in wood floor* (CC0, OpenGameArt). Måker, åretak og stemmer **[K]** (neste sted å lete: Wikimedia Commons, der lyd er direkte nedlastbar; sjekk lisens per fil)
 
@@ -663,6 +696,12 @@ Nielsen, M. A., Friðriksdóttir, J. K. & Rindal, M. (Red.). (2022). *Magnus Hå
 Salvesen, H. & Hofstad, K. (2024). *våg - masseenhet*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no](https://snl.no/v%C3%A5g_-_masseenhet)
 
 Store norske leksikon. (u.å.). *bismerpund*. Hentet 02.10.2026 fra [snl.no/bismerpund](https://snl.no/bismerpund)
+
+Bymuseet i Bergen. (u.å.). *Under jorden på Bryggens Museum*. Hentet 02.10.2026 fra [bymuseet.no](https://bymuseet.no/utstillinger/bryggens-museum/)
+
+Wikipedia. (2026). *Herjolfsnes*. Hentet 02.10.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Herjolfsnes) (sekundærkilde for klesfunnene og dateringen til 1430-årene)
+
+Wikipedia. (2026). *Bockstensmannen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Bockstensmannen) (sekundærkilde, klærne datert 1340-1370)
 
 Wikipedia. (2026). *Allmenning (gater)*, *Martinskirken (Bergen)*, *Nikolaikirken i Bergen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Allmenning_(gater)) (sekundærkilder, stemmer med byleksikonet)
 

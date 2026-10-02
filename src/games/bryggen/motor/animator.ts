@@ -46,6 +46,8 @@ function buildTemplate(scene: THREE.Group, animations: THREE.AnimationClip[]): R
 
     // Sydde klipp: underkropp fra ett klipp, overkropp fra et annet.
     stitch(clips, 'Row', 'Sitting_Idle_Loop', 'Driving_Loop');
+    // Står og har hendene framme: skrive ved pulten, røre i gryta, holde en bunt.
+    stitch(clips, 'Hender_Fram', 'Idle_Loop', 'Driving_Loop');
     // UAL har bare ett krosslag, med høyre hånd. Speilet gir et like tungt slag med venstre,
     // så slagene kan veksle uten at annethvert blir det svake jabbet.
     mirror(scene, clips, 'Punch_Cross', 'Punch_Cross_L');

@@ -7,6 +7,7 @@ import * as THREE from 'three';
 import { loadRapier, Physics } from '../motor/physics';
 import { Input } from '../motor/input';
 import { Animator, loadRig } from '../motor/animator';
+import { kleFigur, RIG_URL } from '../motor/figur';
 import { BOY_TUNING, Character, type CharacterTuning } from '../motor/character';
 import { RIG_BOAT, RIG_COMBAT, RIG_WALK, SpringArmCamera } from '../motor/camera';
 import { Faering, WATER_Y } from '../motor/boat';
@@ -19,7 +20,6 @@ import type { BryggenWorld } from '../bygg/bryggen';
 export type WorldId = 'graboks' | 'gard';
 
 const STEP = 1 / 60;
-const RIG_URL = '/games/bryggen/models/mannequin.glb';
 
 const ADULT_TUNING: CharacterTuning = { ...BOY_TUNING, height: 1.8, radius: 0.32, walkSpeed: 1.2, runSpeed: 3.0, sprintSpeed: 5.0 };
 
@@ -188,7 +188,17 @@ export class GrayboxGame {
         }
         const L = this.layout;
 
-        this.player = new Character(this.phys, new Animator(rig, BOY_TUNING.height), BOY_TUNING, L.playerStart);
+        // I Bryggen har figurene klær (folk.ts). Gråboksen beholder den nakne mannequinen.
+        let playerRig = rig;
+        let enemyRig = rig;
+        let enemyTint = 0x5a4a3c;
+        if (this.world) {
+            const { DRAKTER } = await import('../bygg/folk');
+            playerRig = kleFigur(rig, DRAKTER.junge);
+            enemyRig = kleFigur(rig, DRAKTER.svenn);
+            enemyTint = 0xffffff;
+        }
+        this.player = new Character(this.phys, new Animator(playerRig, BOY_TUNING.height), BOY_TUNING, L.playerStart);
         this.player.yaw = L.playerYaw;
         this.player.prevYaw = L.playerYaw;
         this.scene.add(this.player.anim.root);
@@ -196,13 +206,13 @@ export class GrayboxGame {
             if (impact > 9) this.cam.addShake(Math.min(0.25, impact * 0.015));
         };
 
-        this.enemy = new Character(this.phys, new Animator(rig, ADULT_TUNING.height, 0x5a4a3c), ADULT_TUNING, L.enemyStart);
+        this.enemy = new Character(this.phys, new Animator(enemyRig, ADULT_TUNING.height, enemyTint), ADULT_TUNING, L.enemyStart);
         this.enemy.yaw = Math.PI;
         this.enemy.prevYaw = Math.PI;
         this.scene.add(this.enemy.anim.root);
 
         this.pc = new PlayerCombat(this.player, 100);
-        this.ai = new EnemyAI(this.enemy, 110, 0x5a4a3c);
+        this.ai = new EnemyAI(this.enemy, 110, enemyTint);
 
         // Færingen får ekte treteksturer senere (asset-tracker §10); i Bryggen-scenen er den i alle fall brun.
         const boatColor = this.world ? 0x6b5848 : 0x8a8d8f;
@@ -330,10 +340,16 @@ export class GrayboxGame {
         this.renderFrame(dt, gameDt, alpha);
         // Utviklerverktøy (bare i dev): et fast kamera for skjermbilder og måling fra Vågen.
         // Sett window.__bryggenFoto = { pos: [x, y, z], look: [x, y, z] } i konsollen.
-        // window.__bryggenPos viser hvor gutten står (til testskript).
-        const dev = window as { __bryggenFoto?: { pos: number[]; look: number[] }; __bryggenPos?: number[] };
+        // window.__bryggenPos viser hvor gutten står (til testskript), og __bryggenFolk() hvor
+        // folkene i de lastede cellene står og hvilken vei de ser.
+        const dev = window as {
+            __bryggenFoto?: { pos: number[]; look: number[] };
+            __bryggenPos?: number[];
+            __bryggenFolk?: () => { navn: string; pos: number[]; yaw: number }[];
+        };
         const foto = import.meta.env.DEV ? dev.__bryggenFoto : undefined;
         if (import.meta.env.DEV && this.player) dev.__bryggenPos = this.player.pos.toArray();
+        if (import.meta.env.DEV && !dev.__bryggenFolk) dev.__bryggenFolk = () => this.folkListe();
         if (foto) {
             this.cam.camera.position.fromArray(foto.pos);
             this.cam.camera.lookAt(foto.look[0], foto.look[1], foto.look[2]);
@@ -400,6 +416,25 @@ export class GrayboxGame {
         this.gore.update(dt);
 
         if (this.pc.f.dead && !this.message) this.flash('Du ble slått ned. Trykk R for å prøve igjen.', 99);
+    }
+
+    /** Utviklerverktøy: folkene i scenen (figur-meshene heter `figur:<drakt>`). */
+    private folkListe(): { navn: string; pos: number[]; yaw: number }[] {
+        const ut: { navn: string; pos: number[]; yaw: number }[] = [];
+        const q = new THREE.Quaternion();
+        this.scene.traverse((g) => {
+            if (g.name !== 'folk') return;
+            for (const root of g.children) {
+                let navn = '';
+                root.traverse((o) => {
+                    if (o.name.startsWith('figur:')) navn = o.name.slice(6);
+                });
+                root.getWorldQuaternion(q);
+                const fwd = new THREE.Vector3(0, 0, 1).applyQuaternion(q);
+                ut.push({ navn, pos: root.getWorldPosition(new THREE.Vector3()).toArray(), yaw: Math.atan2(fwd.x, fwd.z) });
+            }
+        });
+        return ut;
     }
 
     private renderFrame(dt: number, gameDt: number, alpha: number): void {

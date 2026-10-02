@@ -19,6 +19,7 @@ import { bu } from './bu';
 import { romIHus } from './inne';
 import type { Rom } from '../motor/streaming';
 import { Ild } from '../motor/ild';
+import { lagFolk, type Plass } from './folk';
 
 export const HOUSE_W = 7;
 export const YARD_W = 4;
@@ -321,7 +322,7 @@ export interface Sides {
 }
 
 /** Selve gården, med kai foran. `ox` er midten av gården langs sjøen. */
-export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): CellContent {
+export async function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): Promise<CellContent> {
     const c = new ColliderKit();
     const near = new THREE.Group();
     near.name = 'gard';
@@ -330,6 +331,9 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
     const ilder: Ild[] = [];
     const ildPos: THREE.Vector3[] = [];
     const rom: Rom[] = [];
+    const plasser: Plass[] = [];
+    const iVerden = (list: Plass[], m: THREE.Matrix4, rot: number) =>
+        list.forEach((p) => plasser.push({ ...p, pos: p.pos.clone().applyMatrix4(m), yaw: p.yaw + rot }));
     // Ett hus = én MeshKit = ett tegnekall per materiale.
     p.houses.forEach((h, i) => {
         const k = new MeshKit();
@@ -339,11 +343,12 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
         hus(k, c, h.spec);
         if (h.spec.inne && !h.spec.inne.ljore) {
             // Bua: ingen ild. Lyset kommer inn gjennom dørene, så dagslyset dempes bare litt.
-            bu(k, c, h.spec);
+            iVerden(bu(k, c, h.spec), m, h.rot ?? 0);
             for (const r of romIHus(h.spec, 0.55)) rom.push({ box: r.box.applyMatrix4(m), demp: r.demp });
         } else if (h.spec.inne) {
             // Innredningen går i husets egne bøtter: ingen ekstra tegnekall.
             const info = schotstue(k, c, h.spec);
+            iVerden(info.folk, m, h.rot ?? 0);
             const ild = new Ild({ smokeTop: eaveY(h.spec) + riseOf(h.spec) - 0.3 - info.ild.y, spread: 0.45 });
             ild.group.position.copy(info.ild).applyMatrix4(m);
             near.add(ild.group);
@@ -403,10 +408,19 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
 
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'gard:lod';
+    // Folkene i bua og schøtstua lages og kastes med cella (folk.ts).
+    const folk = await lagFolk(plasser, mats, Math.abs(Math.round(ox)) + 7);
+    near.add(folk.group);
     return {
-        near, mid, colliders: c.specs, ild: ildPos, rom,
-        tick: (t, dt) => ilder.forEach((f) => f.update(t, dt)),
-        dispose: () => ilder.forEach((f) => f.dispose()),
+        near, mid, colliders: [...c.specs, ...folk.colliders], ild: ildPos, rom,
+        tick: (t, dt) => {
+            ilder.forEach((f) => f.update(t, dt));
+            folk.tick(dt);
+        },
+        dispose: () => {
+            ilder.forEach((f) => f.dispose());
+            folk.dispose();
+        },
     };
 }
 

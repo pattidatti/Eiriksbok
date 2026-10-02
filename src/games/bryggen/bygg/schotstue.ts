@@ -11,6 +11,7 @@ import type { ColliderKit, MeshKit } from '../motor/meshkit';
 import { eaveY, rng, type HouseSpec } from './moduler';
 import { GOLV_Y, WALL_T, romIHus } from './inne';
 import type { Rom } from '../motor/streaming';
+import type { Plass } from './folk';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -24,6 +25,8 @@ export interface SchotstueInfo {
     ild: THREE.Vector3;
     /** Rommet innenfor veggene, i husets rom. */
     rom: Rom;
+    /** Folk som sitter og jobber her, i husets rom. */
+    folk: Plass[];
 }
 
 /** Bygger innredningen i husets eget rom. Huset må ha `inne`. */
@@ -64,7 +67,25 @@ export function schotstue(k: MeshKit, c: ColliderKit, s: HouseSpec): SchotstueIn
     return {
         ild: V(0, GOLV_Y + 0.12, cz),
         rom: romIHus(s, 1)[0],
+        folk: folk(s, cz),
     };
+}
+
+/**
+ * Folkene: to på benken ved ilden som ser inn i varmen, en stuedreng som rører i gryta, og
+ * husbonden som spiser ved bordet [S]. Alle står eller sitter på veggen uten dører, så veien
+ * fra døra til ilden er fri.
+ */
+function folk(s: HouseSpec, cz: number): Plass[] {
+    const xb = -(s.w / 2 - WALL_T - BENK_D / 2);
+    const seat = GOLV_Y + BENK_H;
+    const mot = (x: number, z: number, tx: number, tz: number) => Math.atan2(tx - x, tz - z);
+    return [
+        { figur: 'svenn', rolle: 'sitte', pos: V(xb, seat, cz - 0.85), yaw: mot(xb, cz - 0.85, 0, cz) },
+        { figur: 'dreng', rolle: 'sitte', pos: V(xb, seat, cz + 0.95), yaw: mot(xb, cz + 0.95, 0, cz) },
+        { figur: 'stuedreng', rolle: 'rore', pos: V(-1.12, GOLV_Y, cz + 0.15), yaw: Math.PI / 2 },
+        { figur: 'husbonde', rolle: 'spise', pos: V(xb, seat, cz - 4.6), yaw: Math.PI / 2 },
+    ];
 }
 
 /**
