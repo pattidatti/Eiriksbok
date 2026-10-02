@@ -32,6 +32,13 @@ export const PERSONER: Record<string, Person> = {
     vakta: { navn: 'Vakta', tittel: 'ved porten på Bergenhus' },
     skriveren: { navn: 'Peder', tittel: 'kongens skriver' },
     tyven: { navn: 'Tyven', tittel: '' },
+    hans: { navn: 'Mester Hans', tittel: 'skomaker' },
+    claus: { navn: 'Claus', tittel: 'skomaker' },
+    wilken: { navn: 'Wilken', tittel: 'baker' },
+    gerlach: { navn: 'Gerlach', tittel: 'gullsmed' },
+    henneke: { navn: 'Henneke', tittel: 'buntmaker' },
+    johan: { navn: 'Mester Johan', tittel: 'barberer' },
+    asbjorn: { navn: 'Asbjørn', tittel: 'smed' },
 };
 
 /** Tittelen når en figur ikke har eget navn: drakten sier hva hen er. */
@@ -54,4 +61,12 @@ export const TITTEL: Record<string, string> = {
     skriver: 'Skriver',
     klokker: 'Klokker',
     olkone: 'Ølkone',
+    skomaker: 'Skomaker',
+    skomakersvenn: 'Skomakersvenn',
+    baker: 'Baker',
+    bakerdreng: 'Bakerdreng',
+    gullsmed: 'Gullsmed',
+    buntmaker: 'Buntmaker',
+    barberer: 'Barberer',
+    smed: 'Smed',
 };

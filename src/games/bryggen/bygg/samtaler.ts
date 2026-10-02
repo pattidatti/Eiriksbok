@@ -66,6 +66,14 @@ export const NAVN: Record<string, string> = {
     skriver: 'Skriveren',
     klokker: 'Klokkeren',
     olkone: 'Ølkona',
+    skomaker: 'Skomakeren',
+    skomakersvenn: 'Skomakersvennen',
+    baker: 'Bakeren',
+    bakerdreng: 'Bakerdrengen',
+    gullsmed: 'Gullsmeden',
+    buntmaker: 'Buntmakeren',
+    barberer: 'Barbereren',
+    smed: 'Smeden',
 };
 
 /** Til teksten «E: Snakk med …». */
@@ -89,9 +97,19 @@ export const BESTEMT: Record<string, string> = {
     skriver: 'skriveren',
     klokker: 'klokkeren',
     olkone: 'ølkona',
+    skomaker: 'skomakeren',
+    skomakersvenn: 'skomakersvennen',
+    baker: 'bakeren',
+    bakerdreng: 'bakerdrengen',
+    gullsmed: 'gullsmeden',
+    buntmaker: 'buntmakeren',
+    barberer: 'barbereren',
+    smed: 'smeden',
 };
 
 const REGLER = 'Hvilke regler gjelder her?';
+
+const VET_SKOSTREDET = 'Skostredet gikk rundt bunnen av Vågen. Det var den nordligste veien mellom Bryggen og Stranden. Langs gata sto det opptil 36 skomakerboder med to skomakere i hver, og de hadde egne brygger mot Vågen. De fleste var tyskere. De tyske håndverkerne i Bergen var delt i fem lag, kalt amt: skomakere, bakere, gullsmeder, buntmakere (de syr pels) og barberere. Skomakerne var sterkest. I 1507 nektet de til og med hertug Christian å gå gjennom gata. Hvordan bodene så ut innvendig, og hvem som sto i dem i 1420-årene, vet vi ikke. Det er laget for spillet.';
 
 export const SAMTALER: Record<string, Samtale> = {
     husbonde: {
@@ -345,6 +363,60 @@ SAMTALER.borger = {
     },
 };
 
+// Skomakeren i Skostredet: gata, amtene og bommen. Fakta fra Byleksikon «Skostredet» og Wikipedia
+// (de fem amtene) [V]; samtalen er [S].
+SAMTALER.skomaker = {
+    start: {
+        tekst: 'Sko, junge? Nei, du har ikke penger. Men du kan se på. Her syr vi sko til halve byen.',
+        valg: [
+            { tekst: 'Hvorfor er det så mange skomakere her?', til: 'mange' },
+            { tekst: 'Er dere tyskere, som på Kontoret?', til: 'tyske' },
+            { tekst: 'Hvorfor ligger det en bom over gata?', til: 'bom' },
+        ],
+    },
+    mange: {
+        tekst: 'Hele gata er skomakere. Over tretti boder, to mann i hver. Derfor heter den Skostredet.',
+        valg: [
+            { tekst: 'Er dere tyskere, som på Kontoret?', til: 'tyske' },
+            { tekst: 'Takk, mester.', til: 'vet' },
+        ],
+    },
+    tyske: {
+        tekst: 'Tyskere, ja. Men vi hører ikke til Kontoret. Vi har vårt eget amt, et lag bare for skomakere. Bakerne, gullsmedene, buntmakerne og barbererne har hvert sitt.',
+        valg: [
+            { tekst: 'Hvorfor ligger det en bom over gata?', til: 'bom' },
+            { tekst: 'Takk, mester.', til: 'vet' },
+        ],
+    },
+    bom: {
+        tekst: 'Gata er vår. Når amtet vil det, legger vi en bom over den. Da kommer ingen fra Bryggen til Stranden denne veien, samme hvem de er.',
+        til: 'vet',
+    },
+    vet: { hvem: 'Dette vet vi', vet: true, tekst: VET_SKOSTREDET },
+};
+
+// Skomakersvennen ved bommen over Skostredet: skomakerne kunne sperre gata [V Byleksikon]. At den
+// er sperret akkurat nå, er [S]: det holder spilleren innenfor byen som er bygget.
+SAMTALER.sperring = {
+    start: {
+        tekst: 'Stopp der, junge. Her går du ikke forbi.',
+        valg: [
+            { tekst: 'Hvorfor ikke?', til: 'hvorfor' },
+            { tekst: 'Jeg skal bare til Stranden.', til: 'stranden' },
+        ],
+    },
+    hvorfor: {
+        tekst: 'Mesterne har bestemt at bommen skal ligge i dag. Skostredet er skomakernes gate, ikke Kontorets.',
+        til: 'vet',
+    },
+    stranden: {
+        tekst: 'Da får du ta båten over Vågen. Ferja går fra kaia foran gårdene.',
+        til: 'vet',
+    },
+    vet: { hvem: 'Dette vet vi', vet: true, tekst: VET_SKOSTREDET },
+};
+
+
 /** Det de sier når gutten snakker med dem (uten en egen samtale). */
 export const REPLIKKER: Record<string, string[]> = {
     husbonde: ['Står du og glaner? Fisken bærer seg ikke selv.', 'Tell to ganger og skriv én gang. Da blir det riktig.'],
@@ -394,6 +466,42 @@ export const REPLIKKER: Record<string, string[]> = {
     prest: ['Gud være med deg, gutt.'],
     vakt: ['Gå videre.'],
     skriver: ['Jeg har mye å skrive. Gå nå.'],
+    skomaker: [
+        'Sko slites fort i gjørma her. Det er bra for oss skomakere.',
+        'Vi er to i hver bod. Han der lærer faget av meg.',
+        'Sko til Kontoret, sko til borgerne. Alle trenger sko.',
+    ],
+    skomakersvenn: [
+        'Tråden trekkes gjennom hullet med to nåler, en fra hver side. Se.',
+        'Jeg kom fra Lübeck for å lære faget her.',
+        'Mester sier at jeg kan bli mester selv om noen år.',
+    ],
+    baker: [
+        'Brød! Varmt brød fra ovnen!',
+        'Kornet kommer med koggene. Uten korn, ikke noe brød.',
+        'Ovnen er av stein. Ild i et trehus må passes godt på.',
+    ],
+    bakerdreng: ['Jeg står opp før det er lyst og fyrer i ovnen.', 'Vil du kjøpe brød? Nei? Gå videre da.'],
+    gullsmed: [
+        'Ikke ta på noe, gutt. Dette er sølv.',
+        'Jeg lager spenner, ringer og begre til dem som har råd.',
+        'Essa er liten, men den blir varm nok til å smelte sølv.',
+    ],
+    buntmaker: [
+        'Pels fra nord: rev, ekorn og mår. Vi syr den til kåper og fór.',
+        'Om vinteren vil alle ha pels. Da har vi det travelt.',
+        'Kjenn hvor mykt ekornskinnet er. Nei, ikke med de skitne hendene.',
+    ],
+    barberer: [
+        'Jeg barberer, klipper hår og trekker tenner. Og jeg årelater de syke.',
+        'Sitt stille, ellers skjærer jeg deg.',
+        'Har du vondt i en tann, gutt? Jeg har tanga her.',
+    ],
+    smed: [
+        'Hestesko, spiker, kroker til buene. Alt av jern lages her.',
+        'Jeg er bergenser, ikke tysker. Smia er min egen.',
+        'Gå unna essa. Gnistene brenner hull i kjortelen.',
+    ],
     tjenestejente: [
         'Vannet er tungt. Jeg går denne veien mange ganger om dagen.',
         'Ikke dytt, da søler jeg.',
@@ -411,6 +519,8 @@ export const VEI: Record<string, string[]> = {
     kjopekone: ['Pass deg, gutt!', 'Flytt deg, jeg skal forbi.'],
     borger: ['Til side, tyskergutt.', 'Gå av veien!'],
     tjenestejente: ['Flytt deg, da!', 'Pass deg, jeg bærer vann.'],
+    skomakersvenn: ['Til side, junge!', 'Skinnene er tunge. Flytt deg.'],
+    bakerdreng: ['Pass deg, brødet!'],
 };
 
 /** Velger en replikk som skifter med tiden, så det ikke er den samme hver gang. */

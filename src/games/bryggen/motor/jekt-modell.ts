@@ -163,7 +163,7 @@ function veng(k: MeshKit, sp: SkrogSpec, zFra: number): void {
 }
 
 /** Bygger en jekt i `k`. `last` 0-1 er hvor mye fisk som ligger igjen; `seed` gir haugen. */
-export function lagJekt(k: MeshKit, sp: SkrogSpec, lastMengde: number, seed: number): SkipInfo {
+export function lagJekt(k: MeshKit, sp: SkrogSpec, lastMengde: number, seed: number, medRaa = true): SkipInfo {
     const r = trekker(seed);
     skrog(k, sp, BORD, INNE, 2);
     stavner(k, sp, 0.13, BORD);
@@ -189,7 +189,8 @@ export function lagJekt(k: MeshKit, sp: SkrogSpec, lastMengde: number, seed: num
 
     const mh = 12.5 * (sp.L / 7.6);
     mast(k, V3(0, gulv, mastZ), mh, 0.24, 0.12, LYST);
-    raa(k, mastZ + 0.28, mh - 2.1, sp.B * 2.1, LYST, 0.34);
+    const ra = { z: mastZ + 0.28, y: mh - 2.1, halv: sp.B * 2.1, seilR: 0.34, bunn: hoyder(sp, 0).ripe + 0.7 };
+    if (medRaa) raa(k, ra.z, ra.y, ra.halv, LYST, ra.seilR);
     vant(k, sp, mastZ, mh - 1.4, 2, 0.9);
     ror(k, sp, 0.95, BORD);
 
@@ -199,5 +200,5 @@ export function lagJekt(k: MeshKit, sp: SkrogSpec, lastMengde: number, seed: num
         if (v) fortoy.push(V3(v.x - 0.08, hoyder(sp, z / sp.L).ripe + 0.08, z));
     }
     const baug = V3(0, hoyder(sp, 1).ripe - 0.1, sp.L - 0.2);
-    return { fortoy, baug };
+    return { fortoy, baug, raa: ra };
 }

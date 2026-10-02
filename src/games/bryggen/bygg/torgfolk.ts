@@ -36,6 +36,24 @@ export function torgPlasser(x0: number): Plass[] {
         { figur: 'kornselger', rolle: 'staa', pos: P(1.05, 19.6), yaw: OST, samtale: 'kornselger', id: 'torstein' },
         { figur: 'bondekone', rolle: 'staa', pos: P(1.05, 48.3), yaw: OST, id: 'gudrun' },
         { figur: 'bodker', rolle: 'staa', pos: P(16.45, 50.7), yaw: VEST, id: 'arne' },
+        ...koggeMannskap(),
+    ];
+}
+
+/**
+ * Mannskapet på koggen som ligger fortøyd utenfor allmenningen (skip.ts: x 24, 9,2 m ut fra kaia,
+ * baugen mot Holmen). Dekket står omtrent i høyde med kaia. Skipets rom regnes om til verden:
+ * forut (+z i skipet) er +x, og babord (+x i skipet) er -z. Hvem som var om bord, er [S].
+ */
+function koggeMannskap(): Plass[] {
+    const sx = 24;
+    const sz = 0.3 - 9.2;
+    const D = (lx: number, lz: number) => new THREE.Vector3(sx + lz, 0.02, sz - lx);
+    return [
+        // En åpner luka til lasterommet, en står ved ripa og ser inn mot byen, en kveiler tau forut.
+        { figur: 'dreng', rolle: 'veie', pos: D(1.6, -3.3), yaw: 0 },
+        { figur: 'svenn', rolle: 'staa', pos: D(-2.4, 0.8), yaw: 0.2 },
+        { figur: 'fisker', rolle: 'hamre', pos: D(0.4, 4.6), yaw: OST },
     ];
 }
 

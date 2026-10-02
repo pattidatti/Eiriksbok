@@ -245,6 +245,7 @@ export class GrayboxGame {
             this.lyd?.aaretak();
         };
         this.scene.add(this.boat.group, this.gore.group);
+        if (this.world) this.world.faering = this.boat.group;
 
         if (this.world) {
             const { LydKobling } = await import('../motor/lydkobling');

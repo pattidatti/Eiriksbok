@@ -209,7 +209,7 @@ utgravningsplaner og gamle bykart **[K]**.
 | **Mariakirken** | Bergens eldste sognekirke, bygget før 1160. Overdratt Kontoret 1408 | [V] | MVP (fasade) |
 | **Vågen** | Den isfrie havna. Gikk lenger inn enn i dag (til dagens Domkirkegaten, i eldre tid). Strandlinja rundt år 1000 lå 100-150 m innenfor dagens kai | [V]; linja i 1420 som bryggefronten over [U] | **MVP** |
 | **Holmen** | Håkonshallen (ferdig 1261). Magnus Lagabøtes tårn («kastellet ved sjøen», ca. 1273, ringmur, grav og vindebro). Kristkirken (første steinkirke, domkirke, revet 1531). Apostelkirken (ca. 1300, revet 1529-30). Kongsgården og bispegården (brent 1429) | [V] | Fase 3 |
-| **Vågsbunnen** | Bunnen av Vågen. Mikaelskirken brant 1413. Skostredet: korteste vei mellom Bryggen og Stranden | [V] | Fase 2 |
+| **Vågsbunnen** | Bunnen av Vågen. Mikaelskirken brant 1413 (og 1393) og ble ikke bygget opp igjen; den var sognekirke for de tyske skomakerne. Tyske skomakere leide Vågsbunnen gård av kongen i 1330 og holdt til i Vågsbunnen gjennom middelalderen. Skostredet: den nordligste veien mellom Bryggen og Stranden, med opptil 36 skomakerboder med to håndverkere i hver og brygger mot Vågen | [V] Byleksikon «Skostredet», Wikipedia «Vågsbunnen» | Bygget 02.10.2026 (§10) |
 | **Skomakerne** | De fem tyske lauene («de fif Amten»): bakere, barberere, buntmakere, gullsmeder, skomakere, ca. 150 mann. Skomakerne var sterkest og kunne sperre Skostredet. Oppløst 1560 | [V] Wikipedia; [U] tall for 1420-årene | Fase 2 |
 | **Stranden** | Strandsiden sørvest for Vågen, de norske borgernes side | [V] grovt; detaljer [K] | Fase 2 |
 | **Øvregaten** | Gata bak Bryggen. Gårdene gikk opp mot den. Hvor høyt den lå over Bryggen i 1420-årene, hvordan den var lagt og hvilke hus som sto der, er ikke funnet **[K]** | [V] | Bygget 02.10.2026 (§10) |
@@ -557,6 +557,23 @@ naboene nå samlet, så trekantene der sank mindre. Igjen: skipene (4 kall og 22
 allmenningen (16 kall), silhuettene i tåka (20 bokser, ett kall hver når man ser mot Vågen fra kaia)
 og havbunnen under det ugjennomsiktige vannet (ett kall).
 
+Trafikken, Vågsbunnen, Nordnes og flere folk (02.10.2026, SwiftShader/Vulkan i Playwright, 1366×768, full
+kvalitet, fotokameraet låst, fem avlesninger etter 9 s; main i egen dev-server på samme maskin):
+
+| Kamera | main: ms, tegnekall, trekanter | ny: ms, tegnekall, trekanter |
+|---|---|---|
+| Vågen `[4, 5, -34]` → `[6, 3, 12]` | 71, 203, 297k | 72, 234, 359k |
+| Gårdsrommet `[0, 1.7, 3]` → `[0, 1.2, 30]` | 79, 200, 424k | 78, 220, 458k |
+| Kaia `[-8, 1.7, -1.5]` → `[6, 2.5, 6]` | 82, 183, 375k | 80, 206, 425k |
+| Torget `[17, 1.7, 4]` → `[19, 3, 30]` | 80, 205, 340k | 77, 222, 367k |
+
+Tiden per bilde flytter seg ikke (programvare-GL er pikselbundet). Tegnekallene øker med 20-35: skipene som
+seiler (tre per skip og tre i skyggen), færingene (skrog, årer, roer og last), mannskapet på koggen og de som
+prater på kaia. Fra Vågen er det nå 234 av 250 i budsjettet, så nye ting i Vågen bør slås sammen. Lasten i
+lekteren var åtte tegnekall (fire bunter à to deler) og er slått sammen til én. Inne i Skostredet 54-104
+tegnekall og 130-230k trekanter. Nordnes er ett tegnekall. Trekantene i gårdsrommet var over 400k allerede
+før (424k), nå 458k: figurene på kaia. Chromebook-tallet mangler fortsatt.
+
 ### 9.6 Strømming og LOD
 
 **Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
@@ -794,6 +811,44 @@ Mixamo brukes ikke (krever innlogging).
   husbonden i bua gir en samtale med valg (1-3) om arbeidet, gjelda, hvem som bestemmer og de tre
   reglene fra prologen, og den slutter med en «Dette vet vi»-tekst. De andre sier en kort replikk.
   Kameraet går over skulderen på gutten, og den han snakker med snur seg. Venter på eierens spilltest
+- [~] Trafikk i Vågen (02.10.2026, `bygg/trafikk.ts`): en kogge og en jekt seiler inn fra havet forbi
+  Holmen med seilet satt, ankrer, beslår seilet, ligger noen minutter, snur sakte og seiler ut igjen i
+  tåka. Tre færinger med roere: ferja mellom kaia foran den første gården og Stranden (med en passasjer),
+  lekteren som henter tørrfisk fra jekta for anker og ror den til kaia, og en fisker som ror inn fra havet
+  og legger til ved en bryggetrapp i Vågsbunnen. Fire færinger ligger fortøyd ved bryggene der. De viker
+  for hverandre, for skipene og for gutten, og skipene og færingene har kollidere som flytter seg med
+  (gutten kan ikke ro gjennom dem). Mannskap på koggen ved kaia. Kogger inn og ut og jekter med tørrfisk
+  er [V/U §8.9]; at folk ble rodd over Vågen og varene losset med småbåter fra skip for anker, er **[S]**:
+  slik fungerte havner uten dypvannskai, men det er ikke funnet en kilde på Vågen i 1420-årene **[K]**.
+  Rutene, tidene og hvem som ror, er [S]. Vannet tegnes ikke lenger innenfor skrogene (det sto opp i
+  jektene og færingen før). Venter på eierens spilltest
+- [~] Vågsbunnen og håndverkerne (02.10.2026, `bygg/vaagsbunnen.ts`, `bygg/verksted.ts`,
+  `bygg/kirker-vaagsbunnen.ts`): kaia fortsetter vest for den siste gården til Auta allmenning (Bryggens
+  sørgrense [V]) med plankegang, sledespor og en steintrapp opp til Øvregaten, og videre inn i Skostredet.
+  På sjøsida av gata står skomakerboder med ryggen mot kaia og bryggetrapper ned til vannet i smauene
+  imellom; i hver bod sitter to skomakere, mesteren ved disken og svennen ved benken [V: opptil 36 boder
+  med to i hver, brygger mot Vågen]. På landsida står verkstedene til de andre amtene: bakeren med
+  steinovn som gløder og brød på disken, gullsmeden med esse og begre, buntmakeren med pelser som henger
+  fra taket, barbereren med en kunde i stolen, en norsk smed med esse, belg og ambolt, og to skomakere til
+  [V de fem amtene; S at de lå her og hvordan bodene så ut]. Hver bod har en luke slått opp over disken og
+  et skilt (sko, brød, beger, skinn, bekken, hestesko) [S; barbererbekkenet som skilt er kjent fra senere
+  tid U]. Bak verkstedene: bolighus med gjerder og ved, og ruinen av Mikaelskirken med sotede murer,
+  steinrøys, forkullede bjelker og trekors rundt [V at den brant 1413 og ikke ble gjenreist; S hvordan
+  ruinen så ut, ikke funnet K]. I vest ligger en bom over gata med en skomakersvenn som vakt; han og
+  mester Hans har samtaler som slutter med «Dette vet vi» om Skostredet og amtene [V at skomakerne kunne
+  stenge gata, 1507]. Bak bommen svinger gata rundt bunnen av Vågen, og Korskirken står på neset [V at den
+  ble reist der; S utseendet]. Kunder, en skomakersvenn som bærer skinn, en tjenestejente med vann, en
+  borger som går opp trappa, en fisker til smia og en bondekone går i gata. Hvordan Vågsbunnen så ut i
+  1420-årene, er ikke funnet **[K]**; avstandene er komprimert som resten av byen **[S]**. Draktene til
+  håndverkerne er [S], ikke sjekket [K]. Venter på eierens spilltest
+- [~] Nordnes over Vågen (02.10.2026, `bygg/nordnes.ts`): en ås som stiger bak Stranden og går ned i
+  sjøen ytterst, med Munkeliv kloster i lia (steinkirke med vesttårn og tre hus rundt en klostergård) og
+  naust og laftehus ved sjøen. At klosteret lå på Nordnes og at birgittinerne overtok det i 1420-årene,
+  er [V §5.2]; utseendet er **[S]**, ikke funnet **[K]**. Retterstedet er ikke med. Flat farge i ett
+  tegnekall, med tynnere tåke (en blek silhuett i disen). Åsen fortsetter bak Stranden til bunnen av
+  Vågen. Venter på eierens spilltest
+- [~] Flere folk langs Bryggen (02.10.2026): på kaia foran de fleste nabogårdene står to og prater (en fra
+  gården og en fra byen eller båtene), med prateklippet. Alt [S]. Venter på eierens spilltest
 - [~] Dyr: måker bygget 02.10.2026 (`motor/maaker.ts`): 16 måker i ett tegnekall, laget i kode
   (ingen asset: lavpoly-pakkene kolliderte med stilen, §9.7). De sirkler over kaia, lander på
   kaidekket og vannet, snur seg og hopper, og letter i flokk når gutten spurter forbi eller går helt
@@ -838,6 +893,10 @@ Hartvedt, G. H. & Skreien, N. (2009). *Spill*. Bergen byleksikon, Bergen byarkiv
 Hartvedt, G. H. & Skreien, N. (2009). *Middelalderkirker (oversikt)*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/14317214)
 
 Hartvedt, G. H. & Skreien, N. (2009). *Rettersteder*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1422831)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Skostredet*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1423165)
+
+Wikipedia. (u.å.). *Vågsbunnen (Bergen)*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/V%C3%A5gsbunnen_(Bergen))
 
 Det Hanseatiske Museum og Schøtstuene. (u.å.). *Drengeliv*. Museum Vest. Hentet 02.10.2026 fra [hanseatiskemuseum.museumvest.no](https://hanseatiskemuseum.museumvest.no/drengeliv)
 

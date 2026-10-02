@@ -16,7 +16,7 @@ import { ColliderKit, MeshKit, slaSammen } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
 import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
-import { lagFolk, type FigurNavn } from './folk';
+import { lagFolk, type FigurNavn, type Plass } from './folk';
 import type { Rute } from './vandrer';
 import {
     COLD, DARK, FRONT_Z, GARD_DEPTH, SV_W, WARM, DECK_Y,
@@ -290,10 +290,17 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
             if (free(row, z)) tonne(kitAt(z), c, xWall, z, lerp(0.8, 1.0, r()));
         }
     }
-    // Kaia: noen tønner og pullerter langs kanten.
+    // Kaia: noen tønner og pullerter langs kanten. Tønnene står ikke der to står og prater.
     k = fram;
+    const prat = naboPlasser(ox, p, yardX, rng(p.seed * 17 + 3));
     const nT = 1 + Math.floor(r() * 3);
-    for (let i = 0; i < nT; i++) tonne(k, c, lerp(-W / 2 + 1, W / 2 - 1, r()), p.front + lerp(2.4, 3.6, r()), lerp(0.8, 1.0, r()));
+    for (let i = 0; i < nT; i++) {
+        const tx = lerp(-W / 2 + 1, W / 2 - 1, r());
+        const tz = p.front + lerp(2.4, 3.6, r());
+        const tt = lerp(0.8, 1.0, r());
+        if (prat.some((q) => Math.abs(q.pos.x - ox - tx) < 1.1)) continue;
+        tonne(k, c, tx, tz, tt);
+    }
     for (let x = -W / 2 + lerp(1.5, 3, r()); x < W / 2 - 1; x += lerp(5, 7, r())) {
         k.withTint({ top: 0.7, bottom: 0.7 }, () =>
             k.log('raatre', new THREE.Vector3(x, -0.1, p.front + 0.45), new THREE.Vector3(x, 0.55, p.front + 0.45), 0.17, 8, true, 0.15)
@@ -309,7 +316,7 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     near.add(...delt, samlet);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `nabo${p.seed}:lod`;
-    const folk = await lagFolk([], mats, p.seed, naboRuter(ox, p, yardX, back, rng(p.seed * 31 + 9)));
+    const folk = await lagFolk(prat, mats, p.seed, naboRuter(ox, p, yardX, back, rng(p.seed * 31 + 9)));
     // Det ryker fra ljoren i schøtstua (luft.ts). Huset står på tvers, midt i gården [S].
     const st = p.schotstue ? houses[houses.length - 1].spec : null;
     const royk = st ? [new THREE.Vector3(ox, eaveY(st) + riseOf(st), back + p.houseW / 2)] : undefined;
@@ -320,6 +327,28 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
         tick: (t, dt, ctx) => folk.tick(t, dt, ctx),
         dispose: () => folk.dispose(),
     };
+}
+
+/**
+ * To som står og prater på kaia foran gården [S]: en fra gården og en som har kommet med båt eller
+ * fra byen. De står inntil husgavlene, unna gårdsrommet der gutten bærer bunter, og bak tønnene.
+ */
+function naboPlasser(ox: number, p: GardParams, yardX: number, r: () => number): Plass[] {
+    if (r() < 0.25) return []; // ikke alle gårder har noen ute akkurat nå
+    const W = gardWidth(p);
+    const z = p.front + 3.0;
+    // Den siden av gårdsrommet som har mest plass.
+    const side = yardX - ox > 0 ? -1 : 1;
+    const x = ox + side * lerp(W * 0.18, W * 0.32, r());
+    if (Math.abs(x - yardX) < 2.5) return [];
+    const her: FigurNavn[] = ['husbonde', 'svenn', 'dreng'];
+    const gjest: FigurNavn[] = ['fisker', 'borger', 'kornselger', 'skomaker', 'svenn'];
+    const a = her[Math.floor(r() * her.length)];
+    const b = gjest[Math.floor(r() * gjest.length)];
+    return [
+        { figur: a, rolle: 'prate', pos: new THREE.Vector3(x - 0.55, 0, z), yaw: Math.PI / 2 - 0.35 },
+        { figur: b, rolle: r() < 0.5 ? 'prate' : 'staa', pos: new THREE.Vector3(x + 0.55, 0, z - 0.15), yaw: -Math.PI / 2 - 0.25 },
+    ];
 }
 
 /**

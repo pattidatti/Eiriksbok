@@ -14,16 +14,20 @@ import type { Physics } from '../motor/physics';
 import type { Materials } from '../motor/materials';
 import { ColliderKit, MeshKit } from '../motor/meshkit';
 import { WATER_Y } from '../motor/boat';
-import { vannHoyde } from '../motor/vann';
+import { vannHoyde, type SkrogFot } from '../motor/vann';
 import { KOGGE, lagKogge, type SkipInfo } from '../motor/kogge-modell';
 import { jektSpec, lagJekt } from '../motor/jekt-modell';
-import { V3, skrogKollider, tau, type SkrogSpec } from '../motor/skrog';
+import { V3, skrogKollider, tau, vannlinje, type SkrogSpec } from '../motor/skrog';
 import { toGroup } from './gard';
 
 export interface Skipene {
     group: THREE.Group;
     /** Kalles hvert bilde med samme tid som vannet, så skipene gynger i takt med krusningen. */
     update: (t: number) => void;
+    /** Omrisset av hvert skrog i vannlinja (vannet tegnes ikke innenfor). */
+    skrog: SkrogFot[];
+    /** Jekta som ligger for anker (lekteren i trafikk.ts losser den). */
+    anker: { x: number; z: number; yaw: number };
     dispose: () => void;
 }
 
@@ -59,6 +63,7 @@ interface Skip {
     sp: SkrogSpec;
     rull: number;
     fase: number;
+    fot: SkrogFot;
 }
 
 /** `kaiFront(x)` er z for kaifronten (bolverket) ved x. */
@@ -106,7 +111,10 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
             const col = phys.addHull(s.points);
             if (col) kollidere.push(col);
         }
-        skip.push({ root, x: p.x, z, yaw: p.yaw, sp, rull: p.rull, fase: i * 2.1 });
+        // Skipet ligger 0,15 m dypere enn skroget sier (update): vannlinja står litt opp i skroget.
+        const vl = vannlinje(sp, 0.3);
+        const fot: SkrogFot = { x: p.x + Math.sin(p.yaw) * vl.forut, z: z + Math.cos(p.yaw) * vl.forut, yaw: p.yaw, L: vl.L, B: vl.B, fyldig: vl.fyldig };
+        skip.push({ root, x: p.x, z, yaw: p.yaw, sp, rull: p.rull, fase: i * 2.1, fot });
     });
 
     const update = (t: number) => {
@@ -132,6 +140,11 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
     return {
         group,
         update,
+        skrog: skip.map((s) => s.fot),
+        anker: (() => {
+            const p = PLASSER.find((q) => q.z !== undefined)!;
+            return { x: p.x, z: p.z!, yaw: p.yaw };
+        })(),
         dispose: () => {
             for (const c of kollidere) phys.world.removeCollider(c, false);
             group.traverse((o) => {

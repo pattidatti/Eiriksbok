@@ -42,6 +42,8 @@ export interface SkipInfo {
     fortoy: THREE.Vector3[];
     /** Klyssgatt forut, der ankertauet går ut. */
     baug: THREE.Vector3;
+    /** Råa: hvor langt forut (z), høyden, halve lengden og hvor tykt seilet er beslått. */
+    raa: { z: number; y: number; halv: number; seilR: number; bunn: number };
 }
 
 /**
@@ -142,7 +144,8 @@ function tonne(k: MeshKit, x: number, z: number, y: number): void {
 }
 
 /** Bygger koggen i `k` (skipets rom). */
-export function lagKogge(k: MeshKit): SkipInfo {
+/** `medRaa: false` utelater råa og seilet: et skip som seiler, får dem i egne deler (trafikk.ts). */
+export function lagKogge(k: MeshKit, medRaa = true): SkipInfo {
     const sp = KOGGE;
     skrog(k, sp, TJAERE, INNE, 3);
     stavner(k, sp, 0.16, TJAERE);
@@ -172,7 +175,8 @@ export function lagKogge(k: MeshKit): SkipInfo {
         k.log('raatre', V3(0, kurvY, MAST_Z), V3(0, kurvY + 1.0, MAST_Z), 0.8, 10, true, 0.85);
         k.log('raatre', V3(0, kurvY + 0.95, MAST_Z), V3(0, kurvY + 1.08, MAST_Z), 0.9, 10, false);
     });
-    raa(k, MAST_Z + 0.4, kurvY - 2.2, 8.6, LYST, 0.48);
+    const ra = { z: MAST_Z + 0.4, y: kurvY - 2.2, halv: 8.6, seilR: 0.48, bunn: hoyder(sp, 0).ripe + 0.9 };
+    if (medRaa) raa(k, ra.z, ra.y, ra.halv, LYST, ra.seilR);
     vant(k, sp, MAST_Z, kurvY - 0.1, 4, 0.95);
     const baug = punkt(sp, 1, 1, 1);
     baug.x = 0;
@@ -189,5 +193,5 @@ export function lagKogge(k: MeshKit): SkipInfo {
         const v = vedHoyde(sp, z / sp.L, hoyder(sp, z / sp.L).ripe - 0.05);
         if (v) fortoy.push(V3(v.x - 0.1, hoyder(sp, z / sp.L).ripe + 0.1, z));
     }
-    return { fortoy, baug: baug.add(V3(0, -0.3, -0.4)) };
+    return { fortoy, baug: baug.add(V3(0, -0.3, -0.4)), raa: ra };
 }

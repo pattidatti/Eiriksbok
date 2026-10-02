@@ -152,6 +152,58 @@ export const DRAKTER = {
         hoser: 0x463d36, sko: 0x2d2119, hette: 0xddd3bd, hetteOppe: true, tut: 0.04, kappe: 0.2,
         mage: 0.4, slank: 0.2,
     },
+
+    // ── Håndverkerne i Vågsbunnen (vaagsbunnen.ts) ── Tyskere i de fem amtene [V], og en norsk smed.
+    // Draktene er valgt for spillet [S]: arbeidsklær i vadmel, mørke lærforklær som beltefarge og
+    // kortere kjortel. Ikke sjekket mot tekstilfunnene [K].
+    /** Skomakermesteren: mørkebrun kjortel, hetta nede, kort skjegg. */
+    skomaker: {
+        navn: 'skomaker', hud: 0xcf9b7f, haar: 0x5a4430, skjegg: 0x5e4834, kjortel: 0x4f3a2a, kjortelNed: 0.04,
+        belte: 0x2a1a10, hoser: 0x3e3a34, sko: 0x241810, hette: 0x6a5a48, hetteOppe: false, tut: 0.2, kappe: 0.16,
+        mage: 0.35,
+    },
+    /** Skomakersvennen: yngre, grå vadmel, hetta oppe. */
+    skomakersvenn: {
+        navn: 'skomakersvenn', hud: 0xd6a487, haar: 0x8a6a46, kjortel: 0x5f5a50, kjortelNed: 0.0, belte: 0x2e2015,
+        hoser: 0x4a443c, sko: 0x2b1e14, hette: 0x6e4b33, hetteOppe: true, tut: 0.22, kappe: 0.16,
+        slank: 0.3,
+    },
+    /** Bakeren: lys kjortel av ubleket lin, melet ned, hetta nede. */
+    baker: {
+        navn: 'baker', hud: 0xe0ae92, haar: 0x9a7a52, skjegg: 0xa0805a, kjortel: 0xcfc4ac, kjortelNed: 0.1,
+        belte: 0x8a7a62, hoser: 0x6a6258, sko: 0x3a2a1f, hette: 0xddd4c0, hetteOppe: false, tut: 0.1, kappe: 0.15,
+        mage: 0.7,
+    },
+    /** Bakerdrengen: ung gutt i lyst lin. */
+    bakerdreng: {
+        navn: 'bakerdreng', hud: 0xdcae92, haar: 0xb08a58, kjortel: 0xbdb39b, kjortelNed: -0.04, belte: 0x6a5c48,
+        hoser: 0x5e554b, sko: 0x3a2a1f, hette: 0xa89e88, hetteOppe: false, tut: 0.12, kappe: 0.14,
+        slank: 0.55, hode: 1.05,
+    },
+    /** Gullsmeden: velstående, mørkerød kjortel til leggen, svart hette, pung. */
+    gullsmed: {
+        navn: 'gullsmed', hud: 0xd8a88c, haar: 0x4a3626, skjegg: 0x55402c, kjortel: 0x5c2226, kjortelNed: 0.26,
+        belte: 0x1a120c, hoser: 0x2c2c30, sko: 0x1d1612, hette: 0x1f1d1c, hetteOppe: true, tut: 0.34, kappe: 0.19,
+        mage: 0.3, pung: 0.8,
+    },
+    /** Buntmakeren: syr pels. Brun kjortel og en hette av pels (lys kappe). */
+    buntmaker: {
+        navn: 'buntmaker', hud: 0xcf9d80, haar: 0x6a5038, skjegg: 0x725a42, kjortel: 0x4a4436, kjortelNed: 0.12,
+        belte: 0x2a1d14, hoser: 0x463f36, sko: 0x2a1e16, hette: 0xb09272, hetteOppe: true, tut: 0.08, kappe: 0.28,
+        mage: 0.25,
+    },
+    /** Barbereren: blå kjortel, hvit linklut (lys hette nede), glattbarbert. */
+    barberer: {
+        navn: 'barberer', hud: 0xdcaa8e, haar: 0x3e2f22, kjortel: 0x34465c, kjortelNed: 0.14, belte: 0x2a1d14,
+        hoser: 0x3a3a3c, sko: 0x231a12, hette: 0xe2dccd, hetteOppe: false, tut: 0.06, kappe: 0.16,
+        slank: 0.3,
+    },
+    /** Smeden: norsk, svær, sotet kjortel, lærforkle (mørkt belte), skjegg. */
+    smed: {
+        navn: 'smed', hud: 0xc48d70, haar: 0x2e241b, skjegg: 0x33281e, kjortel: 0x3c3630, kjortelNed: -0.02,
+        belte: 0x1e140c, hoser: 0x2e2b28, sko: 0x1d1510, hette: 0x4a4440, hetteOppe: false, tut: 0.12, kappe: 0.15,
+        mage: 0.4,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
@@ -160,6 +212,7 @@ export const HOYDE: Record<FigurNavn, number> = {
     junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52, fisker: 1.71,
     fiskekone: 1.58, kornselger: 1.73, bondekone: 1.55, bodker: 1.7, kjopekone: 1.61, borger: 1.75, tjenestejente: 1.54,
     tyv: 1.68, prest: 1.72, vakt: 1.82, skriver: 1.7, klokker: 1.66, olkone: 1.6,
+    skomaker: 1.7, skomakersvenn: 1.74, baker: 1.72, bakerdreng: 1.5, gullsmed: 1.73, buntmaker: 1.68, barberer: 1.76, smed: 1.84,
 };
 
 /**
@@ -171,8 +224,11 @@ export const HOYDE: Record<FigurNavn, number> = {
  *  - veie: rekker opp mot bismeren og leser av merkene
  *  - baere: står med en bunt tørrfisk i armene, klar til å gå
  *  - staa: står og venter
+ *  - hamre: står og arbeider med armene (smeden ved ambolten, bakeren ved trauet)
+ *  - knele: kneler og arbeider nede ved golvet
+ *  - prate: står og prater med noen (gestikulerer)
  */
-export type Rolle = 'sitte' | 'spise' | 'skrive' | 'rore' | 'veie' | 'baere' | 'staa';
+export type Rolle = 'sitte' | 'spise' | 'skrive' | 'rore' | 'veie' | 'baere' | 'staa' | 'hamre' | 'knele' | 'prate';
 
 export interface Plass {
     figur: FigurNavn;
@@ -197,6 +253,9 @@ const KLIPP: Record<Rolle, { clip: string; speed: number; hold?: number }> = {
     // Tomt klipp: bevegelseslagets hvile. Idle_Loop som helkroppsklipp er samme action som
     // hvilen i bevegelseslaget, og slipper man det, stopper hvilen også (T-stilling).
     staa: { clip: '', speed: 1 },
+    hamre: { clip: 'Hender_Fram', speed: 1.7 },
+    knele: { clip: 'Fixing_Kneeling', speed: 0.9 },
+    prate: { clip: 'Idle_Talking_Loop', speed: 0.85 },
 };
 
 /** Hoftene i sitteklippet står så langt bak føttene og så høyt, i riggens egne meter (1,83 m høy). */

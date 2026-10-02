@@ -44,7 +44,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/meshkit.ts` | Geometri-settet: bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
 | `motor/materials.ts` | PBR-materialene (farge, normal, ARM) og miljølys fra en enkel himmel |
 | `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå, delt/samlet, innredning og tåkegrense |
-| `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning |
+| `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning. Tegnes ikke innenfor skrogene (`settSkrog`) |
 | `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
 | `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
 | `motor/stemning.ts` | Lysstemningene (`?lys=kveld\|graatt\|morgen`): sol, fyll, tåke, himmelfarger, regn, vætan og dis. `Lyssetting` eier sola og halvkulelyset, demper dem inne og flytter skyggen med gutten |
@@ -57,7 +57,12 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/skrog.ts` | Skroget og riggen skipene deles om: klinkbygd skrog av tverrsnitt, stavner, dekk, mast, rå med beslått seil, vant, ror og konveks kollider |
 | `motor/kogge-modell.ts` | Koggen: flatbunnet, høye sider, rette stavner, kasteller forut og akter, mastekurv, ror på akterstevnen |
 | `motor/jekt-modell.ts` | Jekta: lavt, åpent skrog med bunter av tørrfisk midtskips, vengen akter, ett råseil |
-| `bygg/skip.ts` | Skipene i Vågen: kogge og jekt fortøyd ved kaia, en jekt for anker. Gynger med bølgene, kollider mot færingen |
+| `bygg/skip.ts` | Skipene i Vågen: kogge og jekt fortøyd ved kaia, en jekt for anker. Gynger med bølgene, kollider mot færingen, og melder omrisset i vannlinja (`skrog`) |
+| `bygg/trafikk.ts` | Trafikken i Vågen: koggen og jekta som seiler inn, ankrer (seilet beslås), snur og seiler ut i tåka; færinger med roere som ror faste ruter (ferja, lekteren, fiskeren) og viker for hverandre og for gutten; færinger fortøyd ved bryggene i Vågsbunnen |
+| `bygg/vaagsbunnen.ts` | Vågsbunnen: Auta allmenning med trappa opp til Øvregaten, Skostredet med skomakerboder og verksteder, bryggetrapper, bommen over gata, folkene, og kulissen ved bunnen av Vågen med Korskirken (`endeCelle`) |
+| `bygg/verksted.ts` | Verkstedboden: laftehus med dør og en luke som er slått opp over disken, skilt i en arm, og innredning per fag (skomaker, baker, gullsmed, buntmaker, barberer, smed) |
+| `bygg/kirker-vaagsbunnen.ts` | Ruinen av Mikaelskirken (brant 1413) og Korskirken som landemerke |
+| `bygg/nordnes.ts` | Nordnes over Vågen: åsen, Munkeliv kloster i lia og naust ved sjøen, i flat farge i ett tegnekall (`fjernLand`) |
 | `motor/rotter.ts` | Rotter: rusler langs vegger, snuser, piler i rykk, fryser når gutten står stille, flykter inn i hull og under ting. Soner, skjulesteder og et API til «Rottejakt på lagerloftet» (`skrem`, `fang`, `framme`, `onHendelse`) |
 | `motor/rotte-modell.ts` | Svartrotta som modell (ca. 720 trekanter) og vertex-shaderen som animerer den: trav, sprang med strekk i kroppen, snusing, reise seg, halen. Pels som støy i pikselen |
 | `motor/katter.ts` | Katter: én til tre i rottesonene (rom først, én ute). Rusler, sitter, vasker seg, sover sammenkrøllet, lusker lavt mot en rotte som er framme og kaster seg (`Rotter.fang` ved treff, `Rotter.skrem` ved bom), viker unna gutten når han løper mot den |
@@ -328,3 +333,23 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Ølstua er et hus med `inne.ljore` som schøtstua (`schotstue()` lager ildstedet, benkene og plassene),
   med andre folk på plassene. Ilden der ligger i `inne`, så den skjules på avstand.
 - Vakta står på bysida av porten, men eies av borggårdscella. Veien og borggården er alltid lastet samtidig.
+- Alt som flyter, melder omrisset sitt i vannlinja (`SkrogFot`) til `vann.settSkrog`, ellers står vannet
+  opp i båten (vannet er et plan, og skrogene stikker under det). Skipene og trafikken samler omrissene
+  selv (`skip.skrog`, `trafikk.skrog`); færingen gutten ror, meldes av `world.faering`. `vannlinje(sp, y)`
+  i `skrog.ts` regner ut omrisset for kogger og jekter. Høyst `MAKS_SKROG` (24) om gangen.
+- Trafikken har ingen veifinning: rutene legges i åpent vann, unna skipene som ligger fast. Færingene
+  viker for alt (også gutten), skipene bare for gutten, og den som blir holdt igjen lenge, svinger unna.
+  Skip svinger fortere jo fortere de går, men snur sakte også stillestående (varpet eller slept i havn).
+  Ute i tåka (`hopp`) hopper de tilbake til start. Kolliderne flyttes med (`Physics.addMovingHull`).
+- Vågsbunnen trekker skomakerbodene (`sjoRad`) først fra cellas frø, så `brygger()` regner ut de samme
+  bryggetrappene uten å bygge cella (trafikken fortøyer båtene ved siden av dem). Legg ikke ny trekning
+  foran den.
+- Verkstedene er rom med `yaw: 0`: det holder rottene ute (rommene med folk hele dagen), uten å dreie dem.
+- Det glødende i bakerovnen og essene går i en egen `MeshKit` (`glod`) som cella tegner med et eget
+  selvlysende materiale og kaster i `dispose`. Bare smia har flammer (`Ild`); ildlyset står ved den
+  nærmeste ovnen eller essa.
+- Land langt unna over Vågen (Nordnes) bruker `materials.fjernLand()`: flat farge uten væte (pyttene
+  ble hvite flekker på takene) og tåke med 0,3 av tettheten, så åsen står som en blek silhuett.
+- Vågsbunnen og Auta allmenning ligger vest for `xwGard` (der gårdene slutter); `xw` i `bryggen.ts` er
+  den vestre enden av byen etter det. Støttemuren under Øvregaten har en åpning for Auta-trappa
+  (`GateOppsett.trapper`).

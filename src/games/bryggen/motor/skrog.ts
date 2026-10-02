@@ -279,6 +279,45 @@ export function raa(k: MeshKit, z: number, y: number, halv: number, tint: Tint, 
     });
 }
 
+/**
+ * Råa med seilet satt: duken henger fra råa ned til `bunn` og buker seg forut for vinden (`buk` m).
+ * Begge sider tegnes (man ser seilet bakfra og forfra). Skjøtene går fra de nedre hjørnene akterut.
+ */
+export function seilSatt(k: MeshKit, z: number, y: number, halv: number, bunn: number, buk: number, tint: Tint): void {
+    k.withTint(tint, () => k.log('raatre', V3(-halv, y, z), V3(halv, y, z), 0.13, 7, true, 0.13));
+    const NX = 8;
+    const NY = 6;
+    const w = halv * 0.94;
+    const pt = (i: number, j: number) => {
+        const u = i / NX;
+        const v = j / NY; // 0 nederst
+        const x = -w + 2 * w * u;
+        // Duken er litt smalere nederst, og buker mest midt på og litt under midten.
+        const xx = x * (0.92 + 0.08 * v);
+        const b = buk * Math.sin(Math.PI * u) * Math.sin(Math.PI * (0.15 + 0.85 * v)) ;
+        return V3(xx, bunn + (y - 0.15 - bunn) * v, z + 0.1 + b);
+    };
+    k.withUv(0.04, () =>
+        k.withTint(SEIL, () => {
+            for (let i = 0; i < NX; i++) {
+                for (let j = 0; j < NY; j++) {
+                    const a = pt(i, j);
+                    const b = pt(i + 1, j);
+                    const d = pt(i, j + 1);
+                    const c = pt(i + 1, j + 1);
+                    // To trekantpar per rute, ett for hver side.
+                    const s0 = SEIL.bottom + (SEIL.top - SEIL.bottom) * (j / NY);
+                    const s1 = SEIL.bottom + (SEIL.top - SEIL.bottom) * ((j + 1) / NY);
+                    k.tri('raatre', a, b, c, [a.x, a.y], [b.x, b.y], [c.x, c.y], [s0, s0, s1]);
+                    k.tri('raatre', a, c, d, [a.x, a.y], [c.x, c.y], [d.x, d.y], [s0, s1, s1]);
+                    k.tri('raatre', a, c, b, [a.x, a.y], [c.x, c.y], [b.x, b.y], [s0 * 0.8, s1 * 0.8, s0 * 0.8]);
+                    k.tri('raatre', a, d, c, [a.x, a.y], [d.x, d.y], [c.x, c.y], [s0 * 0.8, s1 * 0.8, s1 * 0.8]);
+                }
+            }
+        })
+    );
+}
+
 /** Et tau mellom to punkter (tjæret hamp, mørkt). Litt slakk når `slakk` > 0. */
 export function tau(k: MeshKit, a: THREE.Vector3, b: THREE.Vector3, r = 0.025, slakk = 0): void {
     const tint: Tint = { top: 0.7, bottom: 0.7 };
@@ -353,4 +392,23 @@ export function skrogKollider(c: ColliderKit, sp: SkrogSpec): void {
         }
     }
     c.hull(pts);
+}
+
+/**
+ * Omrisset av skroget i høyden `y` (skipets rom), for vannet (`SkrogFot` i vann.ts): halv lengde,
+ * halv bredde, og hvor langt midten av omrisset står forut for skipets midte (stavnene heller
+ * ulikt). Vannet tegnes ikke innenfor, så det ikke står opp gjennom bunnen.
+ */
+export function vannlinje(sp: SkrogSpec, y: number): { L: number; B: number; fyldig: number; forut: number } {
+    let zF = 0;
+    let zA = 0;
+    let B = 0;
+    for (let i = -60; i <= 60; i++) {
+        const v = vedHoyde(sp, i / 60, y);
+        if (!v) continue;
+        zF = Math.max(zF, v.z);
+        zA = Math.min(zA, v.z);
+        B = Math.max(B, v.x);
+    }
+    return { L: (zF - zA) / 2 + 0.05, B: B + 0.06, fyldig: sp.fyldig, forut: (zF + zA) / 2 };
 }

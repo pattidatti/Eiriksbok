@@ -89,6 +89,25 @@ export class Physics {
         };
     }
 
+    /**
+     * En konveks form som flyttes av koden (skip og båter som seiler og ror). Står i verden-gruppen,
+     * så færingen gutten ror stopper mot den. `flytt` setter posisjon og retning (yaw) til neste steg.
+     */
+    addMovingHull(points: THREE.Vector3[]): { flytt: (x: number, y: number, z: number, yaw: number) => void; fjern: () => void } | null {
+        const flat = new Float32Array(points.flatMap((p) => [p.x, p.y, p.z]));
+        const desc = this.R.ColliderDesc.convexHull(flat);
+        if (!desc) return null;
+        const body = this.world.createRigidBody(this.R.RigidBodyDesc.kinematicPositionBased().setTranslation(0, -100, 0));
+        this.world.createCollider(desc.setCollisionGroups(GROUP_WORLD), body);
+        return {
+            flytt: (x, y, z, yaw) => {
+                body.setNextKinematicTranslation({ x, y, z });
+                body.setNextKinematicRotation({ x: 0, y: Math.sin(yaw / 2), z: 0, w: Math.cos(yaw / 2) });
+            },
+            fjern: () => this.world.removeRigidBody(body),
+        };
+    }
+
     step(): void {
         this.world.step();
     }

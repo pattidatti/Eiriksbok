@@ -24,10 +24,29 @@ export interface VannOpts {
     sol?: { retning: THREE.Vector3; farge: number; styrke: number };
 }
 
+/**
+ * Omrisset til et skrog i vannlinja: midten (x, z), retningen (0 = forut mot +z), halv lengde og
+ * halv bredde der, og hvor fyldig det er (høyere = bredere mot endene). Vannet tegnes ikke
+ * innenfor, så det aldri står opp gjennom bunnen av en båt.
+ */
+export interface SkrogFot {
+    x: number;
+    z: number;
+    yaw: number;
+    L: number;
+    B: number;
+    fyldig: number;
+}
+
+/** Så mange skrog kan vannet holde utenfor samtidig. */
+export const MAKS_SKROG = 24;
+
 export interface Vann {
     mesh: THREE.Mesh;
     /** Kalles hvert bilde. `regn` 0..1. */
     update: (t: number, regn: number) => void;
+    /** Skrogene som ligger i vannet nå (de nærmeste først om det er flere enn MAKS_SKROG). */
+    settSkrog: (skrog: readonly SkrogFot[]) => void;
     dispose: () => void;
 }
 
@@ -42,6 +61,9 @@ export function lagVann(o: VannOpts): Vann {
         uSolFarge: { value: new THREE.Color(o.sol?.farge ?? 0).multiplyScalar(o.sol?.styrke ?? 0) },
         // Hvor mye sola lyser på bryggefronten (som vender mot -z): da speiles husene lysere.
         uFrontLys: { value: new THREE.Color(o.sol?.farge ?? 0).multiplyScalar(Math.max(0, -(o.sol?.retning.z ?? 0)) * 0.35) },
+        uSkrogA: { value: Array.from({ length: MAKS_SKROG }, () => new THREE.Vector4()) },
+        uSkrogB: { value: Array.from({ length: MAKS_SKROG }, () => new THREE.Vector4()) },
+        uSkrogN: { value: 0 },
     };
     const mat = new THREE.MeshStandardMaterial({
         color: 0x16201f,
@@ -56,6 +78,7 @@ export function lagVann(o: VannOpts): Vann {
             .replace('#include <worldpos_vertex>', '#include <worldpos_vertex>\nvVann = (modelMatrix * vec4(transformed, 1.0)).xyz;');
         sh.fragmentShader = sh.fragmentShader
             .replace('#include <common>', `#include <common>\n${VANN_GLSL}`)
+            .replace('#include <clipping_planes_fragment>', '#include <clipping_planes_fragment>\nif (iSkrog(vVann.xz)) discard;')
             .replace(
                 '#include <normal_fragment_maps>',
                 `#include <normal_fragment_maps>
@@ -70,9 +93,10 @@ export function lagVann(o: VannOpts): Vann {
     };
     mat.customProgramCacheKey = () => 'bryggen-vann';
 
-    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(400, 200), mat);
+    // Fra Vågsbunnen til et godt stykke forbi Holmen, der skipene seiler inn fra havet.
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(600, 200), mat);
     mesh.rotation.x = -Math.PI / 2;
-    mesh.position.set(0, o.y, -98);
+    mesh.position.set(40, o.y, -98);
     mesh.receiveShadow = true;
     mesh.name = 'vaagen';
 
@@ -81,6 +105,15 @@ export function lagVann(o: VannOpts): Vann {
         update: (t, regn) => {
             uniforms.uTid.value = t;
             uniforms.uRegn.value = regn;
+        },
+        settSkrog: (skrog) => {
+            const n = Math.min(MAKS_SKROG, skrog.length);
+            for (let i = 0; i < n; i++) {
+                const s = skrog[i];
+                uniforms.uSkrogA.value[i].set(s.x, s.z, Math.sin(s.yaw), Math.cos(s.yaw));
+                uniforms.uSkrogB.value[i].set(s.L, s.B, s.fyldig, 0);
+            }
+            uniforms.uSkrogN.value = n;
         },
         dispose: () => {
             mesh.geometry.dispose();
@@ -120,6 +153,23 @@ uniform vec3 uFront; // z, x0, x1
 uniform vec3 uSol;
 uniform vec3 uSolFarge;
 uniform vec3 uFrontLys;
+uniform vec4 uSkrogA[${MAKS_SKROG}]; // x, z, sin(yaw), cos(yaw)
+uniform vec4 uSkrogB[${MAKS_SKROG}]; // halv lengde, halv bredde, fyldig
+uniform int uSkrogN;
+
+// Innenfor et skrog i vannlinja: der skal vannet ikke tegnes (det ville stått opp i båten).
+bool iSkrog(vec2 p) {
+    for (int i = 0; i < ${MAKS_SKROG}; i++) {
+        if (i >= uSkrogN) break;
+        vec2 d = p - uSkrogA[i].xy;
+        float langs = dot(d, uSkrogA[i].zw);
+        float tvers = d.x * uSkrogA[i].w - d.y * uSkrogA[i].z;
+        float u = abs(langs) / uSkrogB[i].x;
+        if (u >= 1.0) continue;
+        if (abs(tvers) < uSkrogB[i].y * pow(1.0 - pow(u, uSkrogB[i].z), 0.7)) return true;
+    }
+    return false;
+}
 
 float vHash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);

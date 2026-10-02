@@ -117,6 +117,36 @@ export class Materials {
         return m;
     }
 
+    private fjernMat?: THREE.MeshStandardMaterial;
+    /**
+     * Land langt unna over Vågen (Nordnes): flat farge fra vertex-fargene, uten væte (pyttene ble
+     * hvite flekker på takene der borte), og med enda tynnere tåke enn landemerkene, så åsen står
+     * som en blek silhuett i disen og ikke forsvinner helt.
+     */
+    fjernLand(): THREE.MeshStandardMaterial {
+        if (!this.fjernMat) {
+            const m = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, vertexColors: true, envMapIntensity: 0.4 });
+            m.onBeforeCompile = (sh) => {
+                sh.fragmentShader = sh.fragmentShader.replace(
+                    '#include <fog_fragment>',
+                    `#ifdef USE_FOG
+                        float fd = fogDensity * 0.3;
+                        #ifdef FOG_EXP2
+                            float fogFactor = 1.0 - exp( - fd * fd * vFogDepth * vFogDepth );
+                        #else
+                            float fogFactor = smoothstep( fogNear, fogFar * 3.0, vFogDepth );
+                        #endif
+                        gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, fogFactor );
+                    #endif`
+                );
+            };
+            m.customProgramCacheKey = () => 'fjern-land';
+            m.userData.tynnTake = true;
+            this.fjernMat = m;
+        }
+        return this.fjernMat;
+    }
+
     /** Middels nivå: flat farge fra vertex-fargene, ingen teksturer. */
     lodMaterial(): THREE.MeshStandardMaterial {
         if (!this.lodMat) this.lodMat = this.medVaat(new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1, vertexColors: true }), 'lod');

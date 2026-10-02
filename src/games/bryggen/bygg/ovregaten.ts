@@ -45,6 +45,8 @@ export interface GateOppsett {
     xe: number;
     /** Nikolaikirkeallmenningen: der står allmenningens egen støttemur med trappa. */
     allm: [number, number];
+    /** Flere åpninger i støttemuren der en trapp kommer opp (Auta allmenning, vaagsbunnen.ts). */
+    trapper?: [number, number][];
     /** Nikolaikirkegården og Mariakirkegården: muren mot gata, og hvor langt gata går før den. */
     nikolai: { x: [number, number]; z: number };
     maria: { x: [number, number]; z: number };
@@ -216,8 +218,14 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
         const st = mats.lodColor('stein');
         lod.withTint({ top: 1, bottom: 1, hue: [st.r, st.g, st.b] }, () => lod.box('mork', (x0 + x1) / 2, (top - 0.3) / 2, zc, x1 - x0, top + 0.3, 0.7, { skip: ['bottom'] }));
     };
-    mur(a, Math.min(b, o.allm[0]));
-    mur(Math.max(a, o.allm[1]), b);
+    // Muren går mellom åpningene: allmenningen og trappene.
+    const hull = [o.allm, ...(o.trapper ?? [])].sort((p, q) => p[0] - q[0]);
+    let fra = a;
+    for (const [h0, h1] of hull) {
+        mur(fra, Math.min(b, h0));
+        fra = Math.max(fra, h1);
+    }
+    mur(fra, b);
     // Endene av gata: en mur med brystning mot det som ligger lavere.
     for (const [x, s] of [[o.xw, 1], [o.xe, -1]] as const) {
         if (x < a - 0.01 || x > b + 0.01) continue;

@@ -14,7 +14,7 @@ import { WATER_Y } from '../motor/boat';
 import { CellStreamer, iRom, type CellContent, type CellCtx, type CellDef, type Rom } from '../motor/streaming';
 import { Materials, makeSkyEnvironment } from '../motor/materials';
 import { flakk } from '../motor/ild';
-import { lagVann, type Vann } from '../motor/vann';
+import { lagVann, type SkrogFot, type Vann } from '../motor/vann';
 import { Maaker } from '../motor/maaker';
 import { Regn } from '../motor/regn';
 import { Drypp } from '../motor/drypp';
@@ -53,6 +53,8 @@ export interface BryggenWorld {
     vaat: number;
     /** Hvor mye av sola kameraet står i skyggen for (0-1), ute. Øyet venner seg til det (stemning.ts). */
     skygge: number;
+    /** Færingen gutten ror (settes av spillet): vannet holdes ute av den også. */
+    faering: THREE.Object3D | null;
     /**
      * Kalles hvert bilde: flammene lever, ildlyset flyttes til nærmeste ildsted, og svaret sier
      * hvor langt inne i et rom `focus` er (0 ute, 1 godt inne). `focus` er kameraet; `spiller`
@@ -73,7 +75,7 @@ const FRONT_JOG = [-0.9, 0.4, -0.5, 0.7, -1.2, 0.2, -0.4, 0.9];
 
 export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: THREE.WebGLRenderer, lys: Lyssetting, opts: { low?: boolean } = {}): Promise<BryggenWorld> {
     const materials = new Materials(renderer, { low: opts.low });
-    const [gardMod, naboMod, kirkeMod] = await Promise.all([import('./gard'), import('./nabogard'), import('./mariakirken'), materials.load()]);
+    const [gardMod, naboMod, kirkeMod, vbMod] = await Promise.all([import('./gard'), import('./nabogard'), import('./mariakirken'), import('./vaagsbunnen'), materials.load()]);
 
     // Himmel og miljølys fra stemningen (stemning.ts). Tåka og lysene har `Lyssetting` satt.
     // Lav kvalitet dropper miljølyset (ett oppslag mindre per piksel) og løfter lyset litt i stedet.
@@ -87,8 +89,8 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const stov = new Stov(lys.solRetning);
     scene.add(himmel.mesh, royk.mesh, stov.mesh);
 
-    const floor = new THREE.Mesh(new THREE.BoxGeometry(400, 0.5, 200), new THREE.MeshStandardMaterial({ color: 0x1f2426, roughness: 1 }));
-    floor.position.set(0, WATER_Y - 3, -98);
+    const floor = new THREE.Mesh(new THREE.BoxGeometry(600, 0.5, 200), new THREE.MeshStandardMaterial({ color: 0x1f2426, roughness: 1 }));
+    floor.position.set(40, WATER_Y - 3, -98);
     scene.add(floor);
 
     // ── Cellene ──
@@ -121,6 +123,11 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         prevE = pe;
         prevW = pw;
     }
+    // Vågsbunnen vest for den siste gården: Auta allmenning, Skostredet og håndverkerne (vaagsbunnen.ts).
+    // Fra her av er `xw` den vestre enden av byen; `xwGard` er der gårdene slutter.
+    const xwGard = xw;
+    slots.push(...vbMod.vaagsbunnenPlasser(materials, xwGard));
+    xw = xwGard - vbMod.VB_BREDDE;
     // Langs fronten fra -x til +x: hver celle får vite hvor langt ute kaia til naboene står.
     slots.sort((a, b) => a.x0 - b.x0);
     const cells: CellDef[] = slots.map((s, i) => {
@@ -141,6 +148,12 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // Skipene i Vågen (skip.ts): koggen og jektene gynger med bølgene og har kollider mot færingen.
     const skip = lagSkipene(phys, materials, (x) => slots.find((s) => x >= s.x0 && x < s.x1)?.front ?? 0);
     scene.add(skip.group);
+    // Trafikken: skip som seiler inn og ankrer, og færinger som ror (trafikk.ts).
+    const jektAnker = skip.anker;
+    const trafikk = await (await import('./trafikk')).lagTrafikk(phys, materials, {
+        xw, xe, kaiFront: (x) => slots.find((s) => x >= s.x0 && x < s.x1)?.front ?? 0, bunnX: xw + 6, anker: jektAnker, brygger: vbMod.brygger(xwGard),
+    });
+    scene.add(trafikk.group);
     // Måker over kaia, og regn rundt kameraet.
     const maaker = new Maaker({ x0: xw, x1: xe, kaiZ0: 0, kaiZ1: FRONT_Z, sjoZ: -40, vannY: WATER_Y }, phys);
     const regn = new Regn();
@@ -187,6 +200,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     cells.push(...gateMod.gateCeller(materials, {
         xw, xe,
         allm: [ax0, ax0 + ALLM_W],
+        trapper: [[vbMod.autaX(xwGard) - vbMod.AUTA_HULL, vbMod.autaX(xwGard) + vbMod.AUTA_HULL]],
         nikolai: { x: [ax0 - 6, ax0 + ALLM_W + 6], z: allmMod.MUR_Z + 7 },
         maria: { x: [kgard.x0, kgard.x1], z: kgard.z0 - 0.35 },
     }));
@@ -195,8 +209,11 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // av Vågen er en kulisse uten kollidere.
     const hx = xe + bergMod.HOLMEN_D;
     scene.add(holmenMod.lagHolmen(materials, hx));
+    // Nordnes på den andre siden av Vågen, der Stranden slutter: åsen og Munkeliv kloster (nordnes.ts).
+    scene.add((await import('./nordnes')).lagNordnes(materials, xe - 12, xw - 40));
     cells.push(...bergMod.holmenCeller(materials, xe, slots[slots.length - 1].front));
     cells.push(strandMod.strandCelle(materials, xw - 20, xe - 10));
+    cells.push(vbMod.endeCelle(materials, xw));
     const streamer = new CellStreamer(phys, cells);
     scene.add(streamer.root);
 
@@ -218,6 +235,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     let skyggeTid = 0;
     let skyggeMaal = 0;
     const ctx: CellCtx = { kamera: new THREE.Vector3(), spiller: new THREE.Vector3(), si: (hvem, tekst, fra) => world.si?.(hvem, tekst, fra) };
+    const skrog: SkrogFot[] = [];
     const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
         ctx.kamera.copy(focus);
         ctx.spiller.copy(spiller?.pos ?? focus);
@@ -237,6 +255,15 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         world.vaat += (vaatMaal - world.vaat) * Math.min(1, dt * (vaatMaal > world.vaat ? 0.5 : 0.004));
         materials.vaat.mengde = world.vaat;
         skip.update(t);
+        // Vannet holdes ute av alle skrogene: de som ligger fast, og færingen.
+        skrog.length = 0;
+        trafikk.update(t, dt, focus, world.faering);
+        skrog.push(...skip.skrog, ...trafikk.skrog);
+        if (world.faering) {
+            const f = world.faering;
+            skrog.push({ x: f.position.x, z: f.position.z, yaw: f.rotation.y, L: 2.85, B: 0.72, fyldig: 2 });
+        }
+        vann.settSkrog(skrog);
         maaker.update(dt, t, spiller?.pos ?? focus, spiller?.fart ?? 0);
         sonerTid -= dt;
         if (sonerTid <= 0) {
@@ -339,6 +366,12 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         if (p.y > 0.6 || p.z < FRONT_Z + 0.2) return 'tre-ute';
         if (allm && p.x > allm.x0 && p.x < allm.x1) return Math.abs(p.x - (allm.x0 + allm.x1) / 2) < 1.2 ? 'tre-ute' : 'gjorme';
         if (p.z > back - 1) return 'gjorme';
+        // Vågsbunnen: plankeveien i Skostredet og plankegangen i Auta allmenning, ellers gjørme.
+        if (p.x < xwGard) {
+            const ax = vbMod.autaX(xwGard);
+            if (Math.abs(p.z - 15) < 1.3 || (Math.abs(p.x - ax) < 1.1 && p.x > ax - 1.1)) return 'tre-ute';
+            return 'gjorme';
+        }
         return 'tre-ute';
     };
 
@@ -355,6 +388,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         skygger: true,
         vaat: st.vaat,
         skygge: 0,
+        faering: null,
         streamer,
         materials,
         environment,
@@ -364,6 +398,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             royk.dispose();
             stov.dispose();
             drypp.dispose();
+            trafikk.dispose();
         },
         layout: {
             playerStart: new THREE.Vector3(0, 0, 2.4),
