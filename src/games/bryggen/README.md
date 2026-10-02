@@ -8,7 +8,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Første gård: `/test/bryggen-gard` (modulsettet, strømming, kai, Nikolaikirkeallmenningen og 14 nabogårder).
   Gå rett opp gårdsrommet og inn den åpne døra bakerst: schøtstua med ildstedet. Forhuset til venstre
   for kaia (vest) har bu-døra åpen: bua med tørrfisk, bismer og pult, trappa opp til lagerloftet og
-  døra ut på svalgangen.
+  døra ut på svalgangen. Mariakirken står oppe i bakken bak gårdene i nordenden (+x, mot Holmen):
+  gå østover langs kaia, eller se fra Vågen.
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
@@ -36,6 +37,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper), allmenningen |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
+| `bygg/mariakirken.ts` | Mariakirken som kulisse: tvillingtårn, treskipet basilika, gotisk kor, kirkegård med mur. Ingen kollidere |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
 
@@ -92,4 +94,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Står kameraet inne i et `rom`, dempes sola, halvkulelyset og miljølyset mykt, så ilden tar over.
   Kameraet avgjør, ikke gutten: ellers blir rommet mørkt mens kameraet ennå står ute. `rom.demp` sier
   hvor mye (1 i schøtstua, 0,55 i bua der det ikke brenner ild og lyset kommer inn døra).
+- Landemerker som skal synes over hele byen (Mariakirken) bruker `materials.tynnTake(key)`: kopier av
+  materialene med halvparten så tett tåke, som følger kvalitetsbyttet. Med vanlig tåke er alt borte
+  bak 100 m. Ikke bruk det på vanlige hus: da forsvinner dybden.
+- Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten.
 - Ingen fil over 800 linjer.

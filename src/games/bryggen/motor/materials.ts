@@ -24,6 +24,9 @@ interface MatDef {
 // Stokkene i laft-teksturen er ca. 0,24 m (10 per flis). Laftehodene i modulene følger samme mål.
 export const LOG_H = 0.24;
 
+/** Hvor tett tåka er rundt landemerkene (`tynnTake`), mot resten av byen. */
+const TYNN_TAKE = 0.5;
+
 const DEFS: Record<Exclude<MatKey, 'mork'>, MatDef> = {
     laft: { file: 'laft', tile: LOG_H * 10, color: [1.55, 1.45, 1.35], normalScale: 1.1, lodColor: 0x4a3c31 },
     bordvegg: { file: 'bordvegg', tile: 2.0, color: [1.45, 1.38, 1.3], lodColor: 0x4f4338 },
@@ -76,6 +79,37 @@ export class Materials {
     }
 
     private lodMat?: THREE.MeshStandardMaterial;
+    /** Kopiene med tynnere tåke, per materiale ('lod' for middels nivå). */
+    private readonly tynne = new Map<MatKey | 'lod', THREE.MeshStandardMaterial>();
+
+    /**
+     * Samme materiale med tynnere tåke, til landemerker som skal synes over hele byen
+     * (Mariakirken). Med vanlig tåke er de borte bak 100 m. Kopien deler teksturene og følger
+     * kvalitetsbyttet, men får egen shader (bygges én gang).
+     */
+    tynnTake(key: MatKey | 'lod'): THREE.MeshStandardMaterial {
+        let m = this.tynne.get(key);
+        if (!m) {
+            m = (key === 'lod' ? this.lodMaterial() : this.get(key)).clone();
+            m.onBeforeCompile = (sh) => {
+                sh.fragmentShader = sh.fragmentShader.replace(
+                    '#include <fog_fragment>',
+                    `#ifdef USE_FOG
+                        float fd = fogDensity * ${TYNN_TAKE.toFixed(2)};
+                        #ifdef FOG_EXP2
+                            float fogFactor = 1.0 - exp( - fd * fd * vFogDepth * vFogDepth );
+                        #else
+                            float fogFactor = smoothstep( fogNear, fogFar * 2.0, vFogDepth );
+                        #endif
+                        gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, fogFactor );
+                    #endif`
+                );
+            };
+            m.customProgramCacheKey = () => 'tynn-take';
+            this.tynne.set(key, m);
+        }
+        return m;
+    }
 
     /** Middels nivå: flat farge fra vertex-fargene, ingen teksturer. */
     lodMaterial(): THREE.MeshStandardMaterial {
@@ -150,6 +184,15 @@ export class Materials {
             m.roughness = d ? 1 : 0.85;
             m.needsUpdate = true;
         }
+        for (const [key, m] of this.tynne) {
+            const b = key === 'lod' ? this.lodMat : this.mats.get(key);
+            if (!b) continue;
+            m.normalMap = b.normalMap;
+            m.aoMap = b.aoMap;
+            m.roughnessMap = b.roughnessMap;
+            m.roughness = b.roughness;
+            m.needsUpdate = true;
+        }
         for (const t of this.textures) {
             if (t.anisotropy === this.anisotropy) continue;
             t.anisotropy = this.anisotropy;
@@ -160,6 +203,7 @@ export class Materials {
     dispose(): void {
         this.mats.forEach((m) => m.dispose());
         this.lodMat?.dispose();
+        this.tynne.forEach((m) => m.dispose());
         this.textures.forEach((t) => t.dispose());
     }
 }

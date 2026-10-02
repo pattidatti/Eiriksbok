@@ -9,7 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -583,6 +583,15 @@ Mixamo brukes ikke (krever innlogging).
   innenfor den åpne loftsdøra under vinsjen. Ingen ild: lyset kommer inn dører og glugger [V forbud
   mot åpen ild]. At forhusene var lagerhus med uisolerte loft, er [V]; innredningen i 1420-årene
   er ikke beskrevet i kildene vi har **[K]**, så den følger museet og senere bilder **[S]**
+- [~] Mariakirken som fasade (02.10.2026, `bygg/mariakirken.ts`): oppe i bakken bak gårdene i nordenden,
+  på en kirkegård med mur og trekors. Kleberstein, treskipet basilika med høyt midtskip og lave
+  sideskip under pulttak, tvillingtårn i vest på 27 m til gesimsen med forhall imellom, romanske
+  vinduer høyt oppe bare på sørsida, sørportalen, og gotisk kor med spisse vinduer og strebepilarer
+  [V SNL (Ekroll & Thune 2025), Wikipedia]. Tårntoppene i dag er fra 1500-tallet [V]; de lave
+  pyramidetakene er et valg **[S]**, for hvordan tårnene endte i 1420-årene er ikke funnet **[K]**.
+  Taktekkingen er heller ikke funnet **[K]**. Vinkelen mot gårdsrekkene og avstanden er valgt for
+  spillet **[S]**. Kirken har egne materialkopier med halvparten så tett tåke, ellers forsvinner
+  den bak 100 m. Ingen kollidere: man kommer ikke dit før Maria allmenning bygges
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
 - [ ] Færing (gråboksens form, med ekte treteksturer)
 - [ ] Figurer: junge, husbonde, svenn, nordlandsfisker, tyv, byvakt
@@ -609,6 +618,8 @@ Det Hanseatiske Museum og Schøtstuene. (u.å.). *Drengeliv*. Museum Vest. Hente
 
 Det Hanseatiske Museum og Schøtstuene. (u.å.). *Rommene i Schøtstuene*. Museum Vest. Hentet 02.10.2026 fra [hanseatiskemuseum.museumvest.no](https://hanseatiskemuseum.museumvest.no/rommene-i-schotstuene)
 
+Ekroll, Ø. & Thune, N. A. (2025). *Mariakirken - Bergen*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/Mariakirken_-_Bergen](https://snl.no/Mariakirken_-_Bergen)
+
 Eldjarn, G. (2024). *jekt*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/jekt](https://snl.no/jekt)
 
 Hammer, E. (u.å.). *Bergenhus festning*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/Bergenhus_festning](https://snl.no/Bergenhus_festning)
@@ -628,6 +639,8 @@ Orning, H. J. (2015). *Fiskeeventyret*. Norgeshistorie, Universitetet i Oslo. He
 Salvesen, H. & Petersen, L. I. R. (2025). *vitaliebrødrene*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/vitaliebrødrene](https://snl.no/vitaliebr%C3%B8drene)
 
 Stiftelsen Bryggen. (u.å.). *Byggemåte*. Hentet 02.10.2026 fra [stiftelsenbryggen.no](https://stiftelsenbryggen.no/verdensarven-bryggen/byggemate/)
+
+Wikipedia. (2026). *Mariakirken i Bergen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Mariakirken_i_Bergen)
 
 Wikipedia. (2026). *De fif Amten*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/De_fif_Amten) (sekundærkilde, bekreftes mot Bryggens Museum før bruk)
 

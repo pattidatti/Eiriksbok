@@ -42,7 +42,7 @@ const FRONT_JOG = [-0.9, 0.4, -0.5, 0.7, -1.2, 0.2, -0.4, 0.9];
 
 export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: THREE.WebGLRenderer, opts: { low?: boolean } = {}): Promise<BryggenWorld> {
     const materials = new Materials(renderer, { low: opts.low });
-    const [gardMod, naboMod] = await Promise.all([import('./gard'), import('./nabogard'), materials.load()]);
+    const [gardMod, naboMod, kirkeMod] = await Promise.all([import('./gard'), import('./nabogard'), import('./mariakirken'), materials.load()]);
 
     // Himmel og miljølys: Bergen i grått vær. Litt kaldere enn gråboksen.
     const fog = 0x95a0a8;
@@ -118,6 +118,16 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             build: () => s.build(sides),
         };
     });
+    // Mariakirken i nordenden (mot Holmen, +x), oppe i bakken bak gårdene. Den står som kulisse
+    // utenfor grensa, så cella har ingen kollidere.
+    const back = FRONT_Z + GARD_DEPTH;
+    const kirke = { x: xe - 30, z: back + 30 };
+    cells.push({
+        id: 'mariakirken',
+        center: new THREE.Vector2(kirke.x, kirke.z + 6),
+        half: new THREE.Vector2(34, 34),
+        build: async () => kirkeMod.buildMariakirkeCell(materials, kirke.x, kirke.z, back + 2.5),
+    });
     const streamer = new CellStreamer(phys, cells);
     scene.add(streamer.root);
 
@@ -158,7 +168,6 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const xMax = xe;
     const wall = (cx: number, cz: number, hx: number, hz: number) =>
         phys.addBox(new THREE.Vector3(cx, 0, cz), new THREE.Vector3(hx, 14, hz));
-    const back = FRONT_Z + GARD_DEPTH;
     wall(xMin - 0.5, back / 2, 0.5, back / 2 + 2);
     wall(xMax + 0.5, back / 2, 0.5, back / 2 + 2);
     wall((xMin + xMax) / 2, back + 0.5, (xMax - xMin) / 2 + 1, 0.5);
