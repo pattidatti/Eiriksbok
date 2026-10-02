@@ -98,4 +98,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   materialene med halvparten så tett tåke, som følger kvalitetsbyttet. Med vanlig tåke er alt borte
   bak 100 m. Ikke bruk det på vanlige hus: da forsvinner dybden.
 - Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten.
+- Ting som ikke skal ha treårer (tørrfisk) lages av `raatre` innenfor `k.withUv(0.04, …)`: UV-ene
+  krympes, så flaten får nesten én farge fra teksturen. Formen må da komme fra geometrien og
+  `shade` per hjørne. Aldri 0: normalkartet trenger UV-er som endrer seg.
+- Hold minst 1,5 m fritt der en trapp kommer opp. Gutten trenger plass til å gå av og snu.
 - Ingen fil over 800 linjer.

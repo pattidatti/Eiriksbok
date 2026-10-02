@@ -55,9 +55,10 @@ export function bu(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
     const zf = floorZ(s, 1) + WALL_T;
     const hull = trappehull(s);
     const midt = s.upperDoors?.find((d) => d.side === -sv)?.z ?? 4.5;
-    // Langs veggen med trappa: foran hullet, og bak det.
+    // Langs veggen med trappa: foran hullet, og bak det. Bak hullet står stabelen et godt stykke
+    // unna, ellers stanger gutten i den når han kommer opp av trappa.
     stabel(k, c, rect(X(xIn - 1.3), X(xIn - 0.05), zf + 0.25, (hull?.z0 ?? 3.5) - 0.4), y1, 1.55, r, sv);
-    stabel(k, c, rect(X(xIn - 1.3), X(xIn - 0.05), (hull?.z1 ?? 6.2) + 0.5, l - 0.1), y1, 1.7, r, sv);
+    stabel(k, c, rect(X(xIn - 1.3), X(xIn - 0.05), (hull?.z1 ?? 6.2) + 1.5, l - 0.1), y1, 1.7, r, sv);
     // Mot svalgangen: foran og bak døra.
     stabel(k, c, rect(X(-xIn + 0.05), X(-xIn + 1.35), zf + 0.9, midt - 0.85), y1, 1.6, r, -sv as -1 | 1);
     stabel(k, c, rect(X(-xIn + 0.05), X(-xIn + 1.35), midt + 0.85, l - 0.1), y1, 1.5, r, -sv as -1 | 1);
@@ -69,36 +70,61 @@ export function bu(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
 const rect = (a: number, b: number, z0: number, z1: number): Rect => ({ x0: Math.min(a, b), x1: Math.max(a, b), z0, z1 });
 
 /**
- * Én tørrfisk: flat, ikke rund. Fisken ble flekket og hengt til tørk, så den er bred ved hodet,
- * smal mot halen og bare et par centimeter tykk, med halen som en vifte. Ligger fra hodet i `a`
- * langs `dir`, i planet (flatsiden opp). Ti trekanter.
+ * Én tørrfisk: lang, smal og stiv, med ryggen som en kam på midten og sidene som faller av, og
+ * halen som en vifte. Fisken tørket på hjell og ble skjev, så halen løfter seg litt. Ligger fra
+ * `a` langs `dir`, kammen opp. Tegnes fra `fra` meter ut: i en stabel ligger resten av fisken inne
+ * i kjernen og synes ikke.
+ *
+ * UV-ene dekker bare noen centimeter av teksturen, så fisken får én flat farge (ingen treårer), og
+ * formen kommer fra lyset på kammen og de mørkere kantene.
  */
-function fisk(k: MeshKit, a: THREE.Vector3, dir: THREE.Vector3, len: number, r: () => number, tilt = 0): void {
-    const tone = 0.85 + r() * 0.3;
+function fisk(k: MeshKit, a: THREE.Vector3, dir: THREE.Vector3, len: number, r: () => number, tilt = 0, fra = 0): void {
+    const tone = FISK.top * (0.85 + r() * 0.3);
     const side = new THREE.Vector3(-dir.z, 0, dir.x);
     const up = new THREE.Vector3(0, 1, 0).applyAxisAngle(dir, tilt);
     side.applyAxisAngle(dir, tilt);
-    const body = len * 0.82;
-    const hw = 0.06 + r() * 0.02;
-    const th = 0.018;
-    const at = (t: number, s2: number, h: number) => a.clone().addScaledVector(dir, t).addScaledVector(side, s2).addScaledVector(up, h);
-    // Hodeenden, magen og halerota.
-    const h0 = at(0, -hw * 0.8, 0), h1 = at(0, hw * 0.8, 0);
-    const m0 = at(body * 0.3, -hw, th), m1 = at(body * 0.3, hw, th);
-    const t0 = at(body, -0.018, 0), t1 = at(body, 0.018, 0);
-    const f0 = at(len, -0.07, 0), f1 = at(len, 0.07, 0);
-    k.withTint({ ...FISK, top: FISK.top * tone, bottom: FISK.bottom * tone }, () => {
-        // Oversiden: to trekanter fra hodet til magen og to videre til halerota. Undersiden synes
-        // nesten aldri (fisken ligger i stabler), så den har bare de to midterste.
-        k.tri('raatre', h0, h1, m1, [0, 0], [0, 0.1], [0.2, 0.1]);
-        k.tri('raatre', h0, m1, m0, [0, 0], [0.2, 0.1], [0.2, -0.1]);
-        k.tri('raatre', m0, m1, t1, [0.2, -0.1], [0.2, 0.1], [0.6, 0.02]);
-        k.tri('raatre', m0, t1, t0, [0.2, -0.1], [0.6, 0.02], [0.6, 0]);
-        // Halen: en vifte, begge sider.
-        k.tri('raatre', t0, f0, f1, [0, 0], [0.1, -0.07], [0.1, 0.07]);
-        k.tri('raatre', t0, f1, f0, [0, 0], [0.1, 0.07], [0.1, -0.07]);
-        k.tri('raatre', t0, t1, f1, [0, 0], [0, 0.02], [0.1, 0.07]);
-        k.tri('raatre', t0, f1, t1, [0, 0], [0.1, 0.07], [0, 0.02]);
+    const body = len * 0.84;
+    const hw = 0.055 + r() * 0.02;
+    const kam = 0.028 + r() * 0.01;
+    const loft = (r() - 0.3) * 0.06;
+    const u0 = r() * 1.2;
+    const v0 = r() * 1.2;
+    const at = (t: number, s2: number, h: number) => {
+        const lift = loft * Math.max(0, t / len - 0.5) * 2;
+        return a.clone().addScaledVector(dir, t).addScaledVector(side, s2).addScaledVector(up, h + lift);
+    };
+    const uv = (t: number, s2: number): [number, number] => [u0 + s2 * 0.05, v0 + t * 0.05];
+    // Stasjoner langs fisken: avstand, halv bredde og kammens høyde.
+    const st: [number, number, number][] = [
+        [0, hw * 0.75, kam * 0.7],
+        [body * 0.3, hw, kam],
+        [body * 0.65, hw * 0.65, kam * 0.7],
+        [body, hw * 0.35, kam * 0.3],
+    ];
+    const KANT = 0.62 * tone;
+    const RYGG = 1.08 * tone;
+    k.withTint(FISK, () => {
+        for (let i = 0; i < st.length - 1; i++) {
+            const [ta, wa, ha] = st[i];
+            const [tb, wb, hb] = st[i + 1];
+            if (tb < fra) continue;
+            const La = at(ta, -wa, 0), Sa = at(ta, 0, ha), Ra = at(ta, wa, 0);
+            const Lb = at(tb, -wb, 0), Sb = at(tb, 0, hb), Rb = at(tb, wb, 0);
+            k.tri('raatre', La, Sa, Sb, uv(ta, -wa), uv(ta, 0), uv(tb, 0), [KANT, RYGG, RYGG]);
+            k.tri('raatre', La, Sb, Lb, uv(ta, -wa), uv(tb, 0), uv(tb, -wb), [KANT, RYGG, KANT]);
+            k.tri('raatre', Sa, Ra, Rb, uv(ta, 0), uv(ta, wa), uv(tb, wb), [RYGG, KANT, KANT]);
+            k.tri('raatre', Sa, Rb, Sb, uv(ta, 0), uv(tb, wb), uv(tb, 0), [RYGG, KANT, RYGG]);
+        }
+        // Halen: en vifte med et hakk i enden, begge sider, litt mørkere.
+        // Fra halerota (en bred kant, ikke en spiss) og ut til to fliker med et hakk imellom.
+        const wr = hw * 0.35;
+        const r0 = at(body, -wr, 0), r1 = at(body, wr, 0);
+        const f0 = at(len, -0.05, 0), fm = at(len - 0.03, 0, 0), f1 = at(len, 0.05, 0);
+        const S = 0.8 * tone;
+        for (const [a2, b2, c2] of [[r0, f0, fm], [r0, fm, r1], [r1, fm, f1]] as const) {
+            k.tri('raatre', a2, c2, b2, uv(0, 0), uv(0.03, 0.03), uv(0.03, -0.03), [S, KANT, KANT]);
+            k.tri('raatre', a2, b2, c2, uv(0, 0), uv(0.03, -0.03), uv(0.03, 0.03), [S, KANT, KANT]);
+        }
     });
 }
 
@@ -115,28 +141,48 @@ function stabel(k: MeshKit, c: ColliderKit, rc: Rect, y: number, h: number, r: (
     if (w < 0.4 || d < 0.4) return;
     const xm = (rc.x0 + rc.x1) / 2;
     const zm = (rc.z0 + rc.z1) / 2;
-    // Kjernen: samme farge som fisken, litt mørkere, så glippene ikke ser hule ut.
-    const inn = bunt ? 0.04 : 0.25;
-    k.withTint(bunt ? FISK : { top: 0.8, bottom: 0.6, hue: FISK.hue }, () =>
-        k.box('raatre', xm, y + h / 2 - 0.02, zm, w - inn, h - 0.04, d - (bunt ? 0.02 : 0.1), { skip: ['bottom'], grain: 'x' })
-    );
-    c.box(xm, y + h / 2, zm, w - 0.1, h, d - 0.05, bunt);
     const dy = 0.07;
     const lag = Math.max(2, Math.floor(h / dy));
+    // Kjernen går opp til det øverste hele laget, så fisken der ligger oppå og dekker den. Flat og
+    // mørk, så glippene mellom lagene leses som skygge og ikke som en kasse. En bunt er lysere.
+    const inn = bunt ? 0.04 : 0.25;
+    const kh = 0.015 + (lag - 1) * dy;
+    k.withUv(0.04, () =>
+        k.withTint(bunt ? { top: 0.95, bottom: 0.8, hue: FISK.hue } : { top: 0.42, bottom: 0.3, hue: FISK.hue }, () =>
+            k.box('raatre', xm, y + kh / 2, zm, w - inn, kh, d - (bunt ? 0.02 : 0.1), { skip: ['bottom'] })
+        )
+    );
+    c.box(xm, y + h / 2, zm, w - 0.1, h, d - 0.05, bunt);
     const rad = Math.max(2, Math.floor(d / 0.13));
     const len = bunt ? w * 0.5 + 0.12 : w * 0.62 + 0.1;
-    for (let i = 0; i < lag; i++) {
+    // Under toppen synes bare det som stikker ut av kjernen.
+    const skjult = Math.max(0, (w - inn) / 2 - 0.2);
+    // Det øverste hele laget dekker kjernen; over det et ujevnt halvt lag (ikke i bunter, de stables).
+    for (let i = 0; i <= (bunt ? lag - 1 : lag); i++) {
         const yy = y + 0.03 + i * dy;
-        // Toppen er ujevn: øverste lag er ikke fullt.
-        const n = i === lag - 1 ? Math.floor(rad * (0.4 + r() * 0.4)) : rad;
-        for (let j = 0; j < n; j++) {
+        const n = i === lag ? Math.floor(rad * (0.3 + r() * 0.4)) : rad;
+        const j0 = i === lag ? Math.floor(r() * (rad - n)) : 0;
+        for (let j = j0; j < j0 + n; j++) {
             const z = rc.z0 + 0.04 + ((d - 0.08) * (j + 0.5)) / rad + (r() - 0.5) * 0.03;
             // Fra hver side: hodet inne i stabelen, halen ut. Annenhver rad forskjøvet.
             for (const fra of (i + j) % 2 === 0 ? [true, false] : [false, true]) {
                 if (wall !== 0 && (fra ? -1 : 1) === wall && i < lag - 1) continue;
                 const jx = (r() - 0.5) * 0.08;
                 const a = V(fra ? xm - 0.05 + jx : xm + 0.05 + jx, yy + (fra ? 0 : dy * 0.4), z);
-                fisk(k, a, V(fra ? -1 : 1, 0, (r() - 0.5) * 0.2).normalize(), len, r, (r() - 0.5) * 0.25);
+                fisk(k, a, V(fra ? -1 : 1, 0, (r() - 0.5) * 0.12).normalize(), len, r, (r() - 0.5) * 0.12, i >= lag - 1 ? 0 : skjult);
+            }
+        }
+    }
+    if (bunt) return;
+    // Endene: her ligger fisken på langs, med halen ut, så enden ikke blir en naken kloss.
+    const nx = Math.max(2, Math.round(w / 0.17));
+    for (let i = 0; i < lag; i++) {
+        const yy = y + 0.03 + i * dy + dy * 0.5;
+        for (const e of [-1, 1]) {
+            const ze = e < 0 ? rc.z0 + 0.3 : rc.z1 - 0.3;
+            for (let j = 0; j < nx; j++) {
+                const x = rc.x0 + (w * (j + 0.5 + (i % 2) * 0.4)) / (nx + 0.4) + (r() - 0.5) * 0.04;
+                fisk(k, V(x, yy, ze), V((r() - 0.5) * 0.15, 0, e).normalize(), 0.5, r, (r() - 0.5) * 0.15, 0.2);
             }
         }
     }

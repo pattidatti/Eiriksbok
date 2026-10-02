@@ -57,6 +57,8 @@ export class MeshKit {
     readonly buckets = new Map<MatKey, Bucket>();
     matrix = new THREE.Matrix4();
     tint: Tint = PLAIN;
+    /** Ganges med alle UV-er (`withUv`). */
+    private uvScale = 1;
     private readonly stack: THREE.Matrix4[] = [];
 
     bucket(key: MatKey): Bucket {
@@ -99,13 +101,24 @@ export class MeshKit {
         this.tint = old;
     }
 
+    /**
+     * Kjør `fn` med UV-ene krympet: en liten skala gir flaten nesten én farge fra teksturen, uten
+     * årer (tørrfisk av treteksturen). Ikke 0: normalkartet trenger UV-er som endrer seg.
+     */
+    withUv(scale: number, fn: () => void): void {
+        const old = this.uvScale;
+        this.uvScale = scale;
+        fn();
+        this.uvScale = old;
+    }
+
     private vert(b: Bucket, p: THREE.Vector3, n: THREE.Vector3, u: number, v: number, shade: number): void {
         _p.copy(p).applyMatrix4(this.matrix);
         _nm.getNormalMatrix(this.matrix);
         _n.copy(n).applyMatrix3(_nm).normalize();
         b.pos.push(_p.x, _p.y, _p.z);
         b.nor.push(_n.x, _n.y, _n.z);
-        b.uv.push(u, v);
+        b.uv.push(u * this.uvScale, v * this.uvScale);
         const h = this.tint.hue ?? [1, 1, 1];
         b.col.push(shade * h[0], shade * h[1], shade * h[2]);
     }
