@@ -20,7 +20,7 @@ export const TUNING = {
     // Landgangen: én rampe som peker mot babord eller styrbord. Køen går selv om bord.
     landgang: {
         /** Folk per sekund som går over landgangen og setter seg. */
-        perSek: 16,
+        perSek: 10,
         /** Sekunder landgangen står stille når du bytter side. */
         bytt: 0.6,
         /** På den høye siden går det tregere: perSek x (1 - dette x krengning / maks). */
@@ -54,6 +54,11 @@ export const TUNING = {
     låsGrader: 5,
     /** Sekunder før fristen tauet blinker rødt. */
     varsel: 10,
+    /**
+     * Kortere lunte ved krengning: på den lave siden (den skipet krenger mot) når vannet
+     * festet tidligere. Fristen flyttes så mange sekunder fram per grad krengning.
+     */
+    lunteKrengning: 2.6,
 
     // Vannet: høyde 0 = G-dekk, 7 = båtdekket. Punkter i tid (til tegningen og presset).
     vann: [
@@ -107,8 +112,17 @@ export const TUNING = {
     >,
     /** Alvoret virker bare på disse klassene (tredje klasse holdes uansett bak porten). */
     alvorKlasser: [1, 2] as const,
-    /** Gitterporten for tredje klasse: hvor langt opp den står (0-1, 3/7 = D-dekk), og når den åpnes. */
-    port: { pos: 3 / 7, åpner: [kl('01.36'), kl('01.41')] as [number, number] },
+    /**
+     * Gitterporten for tredje klasse: hvor langt opp den står (0-1, 3/7 = D-dekk), og når
+     * den åpnes av seg selv hvis ingen sender stuerten (sent - i 1912 fant mange aldri veien).
+     */
+    port: { pos: 3 / 7, åpner: [kl('01.58'), kl('02.02')] as [number, number] },
+
+    /**
+     * Stuerten (verb nummer to): eleven sender ham ned for å åpne porten. Mens han er borte,
+     * står landgangen stille - båtene venter. Han kan sendes én gang, fra `fra`.
+     */
+    stuert: { fra: kl('01.12'), ned: 5, borte: 10 },
 
     /** Nødrakettene (klokkeslett). Hver gjør folk litt mer redde (se alvor). */
     raketter: [kl('00.55'), kl('01.00'), kl('01.10'), kl('01.20'), kl('01.30'), kl('01.40')],
@@ -119,12 +133,11 @@ export const TUNING = {
     // Presset (0-1) i snapshot: vann, krengning og kø.
     press: { vann: 0.55, krengning: 0.2, kø: 0.25, køFull: 60 },
 
-    // Rangene etter tomme plasser: siste rad der tomme < grensen, gjelder.
+    // Rangtrinnene etter reddet: siste rad der reddet > grensen, gjelder. Første trinn er
+    // seieren (flere enn i 1912), de neste er for «én natt til».
     ranger: [
-        [Infinity, 'Som i 1912'],
-        [472, 'Bedre enn 1912'],
-        [300, 'Rolig hånd'],
-        [150, 'Hver plass teller'],
-        [40, 'Ingen tomme hull'],
+        [705, 'Flere enn i 1912'],
+        [800, 'Rolig hånd'],
+        [870, 'Hver plass teller'],
     ] as [number, string][],
 } as const;

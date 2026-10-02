@@ -87,9 +87,11 @@ export const fraArk = (k: Skala, x: number, y: number) => ({
 });
 
 /** Hva pekeren treffer: en båtside, landgangen (køen) eller ingenting. */
-export function treff(x: number, y: number): Side | 'landgang' | null {
+export function treff(x: number, y: number): Side | 'landgang' | 'port' | null {
     // Tittelfeltene nede i hjørnene er ikke spillflate.
     if (y > 410 && (x < 168 || x > 792)) return null;
+    // Gitterporten til tredje klasse (krengningen er bare noen få grader).
+    if (Math.hypot(x - TRAPP[3].x, y - (DEKK_Y(3) - 15)) < 34) return 'port';
     if (y > 64 && y < 530) {
         if (x < SKROG.x0 - 4) return 'B';
         if (x > SKROG.x1 + 4) return 'S';

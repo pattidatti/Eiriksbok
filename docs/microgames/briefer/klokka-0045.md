@@ -419,3 +419,46 @@ preussisk blått, lanternegule plasser i natta».
   (det er riktig etter reglene, men eleven kan lese det som at tomme båter er bra); mellom 01.53 og
   02.00 kan begge davitene stå tomme mens køen venter på de sammenleggbare; sluttskjermen er lang og
   må rulles i spalten.
+- **Fase: forbedring 1 etter vurdering 1 (forbedrer, 2026-10-02).** Vurdering 1: Gøy 3, Utseende 4,
+  Lærerikt 5, Lesbart 4, Unikt 4 (sum 20). Gjorde de tre forbedringene. (1) Vanskeligere: lunta er
+  kortere på den lave siden (`lunteKrengning` 2,6 s per grad krengning mot båten, fast per båt så
+  planleggeren regner riktig), landgangen tar 10 folk i sekundet (var 16), og rangtrinn etter reddet:
+  over 705 «Flere enn i 1912» (seier), over 800 «Rolig hånd», over 870 «Hver plass teller». HUD-stolpen
+  har strek for hvert trinn og viser «NESTE: OVER 800» når 705 er slått; et nytt trinn midt i natta gir
+  banner og tre klokketoner; sluttskjermen sier hvor mange som manglet til neste trinn. (2) Verb nummer
+  to: stuerten. Porten til tredje klasse åpnes ikke lenger av seg selv kl. 01.36-01.41. Eleven sender
+  stuerten ned (S, pil ned eller klikk på porten) én gang fra 01.12; han løper ned trappa med en lykt,
+  porten glir opp etter 5 s, og landgangen står stille i 10 s mens han er borte («LANDGANGEN VENTER»).
+  Sendes han aldri, åpnes porten av seg selv rundt 01.58 - for sent for de fleste båtene. Eleven velger
+  fortsatt aldri hvem: porten slipper alle inn i samme kø. Reglene eleven må huske er tre (tomme plasser
+  er borte, lunta/vannet, porten og stuerten) - startskjermens regel om trappene ble byttet ut med
+  porten. Robotene: klok sender stuerten så snart køen er under 6 (senest 20 s etter 01.12); halvgod
+  husker det på et tilfeldig tidspunkt 01.24-01.48; fir-straks og venter-alltid sender ham aldri;
+  tilfeldig trykker tilfeldig. Uten stuerten får klok rundt 730 i stedet for 865, så verbet bærer.
+  (3) Lesbart: «BB/SB» er byttet til «BABORD = VENSTRE / STYRBORD = HØYRE» i profilstripa og «HOLD: FIR
+  VENSTRE/HØYRE» i tastefeltet, startskjermen forklarer babord og styrbord; lunta er dobbelt så tykk,
+  blir rød, blinker fortere og viser sekundene de siste 10 s; sluttskjermen er flyttet til
+  `klokka/Slutt.tsx` og har to spalter (880 px bred), så alt inkludert SOLAS-linja står på 1366x768
+  uten rulling (sjekket på klok-slutt.png).
+  Feel-lista: før runden var 1 (lyd og partikler, men ingen hit-stop eller rykk) og 3 (båter svinger
+  ut, driver bort, lanterner spretter) på plass. Etter: 1 - en full båt gir hit-stop (110 ms i 12 %
+  fart) og hele tegningen får et lite rykk når en båt treffer vannet; 2 - «I SISTE LITEN» med egen lyd
+  når en båt når vannet med under 5 s igjen av lunta; 3 - i tillegg porten som glir opp og stuerten som
+  løper; 4 - reddet teller opp med tikk på sluttskjermen, rangen spretter inn, klassestolpene vokser,
+  og rangtrinn midt i natta gir banner og klokker. Alle fire er nå på plass.
+  Simulering (200 runder per robot), grønn: klok vinner 100 % (median 865, p10-p90 843-887), halvgod
+  56 % (median 707, p10-p90 688-723), fir-straks 0 % (70), venter-alltid 0 % (206), tilfeldig 0 % (15),
+  passiv 0 %. 12,9 valg per minutt, press 0,10 -> 0,49 -> 0,77. Nettleseren: klok vant med 849
+  (innenfor simen), selvspill, audit --strict (0 funn) og likhet (nærmest stavkirken-3d 0,29) grønne.
+  Det som IKKE virket: (a) lunta alene (3,5 s per grad) traff klok hardere enn halvgod (834 mot 709,
+  klok under trinn 850); (b) å la porten åpne seg av seg selv senere (01.58) flyttet ikke halvgod,
+  fordi den sender stuerten innen 01.48 og køen uansett er større enn plassene sent på natta; (c) å
+  gjøre halvgod mer forsiktig (margin 8-10 s, nøyer seg med 75 % full) ga 15-80 % avhengig av en
+  halv sekunds endring - knivsegg, og rutinen sier at balansen skal ligge i reglene. Det som virket
+  var tregere landgang (10 i sekundet) pluss lunte 2,6, med halvgod som før bortsett fra stuerten.
+  Første selvspill var rødt fordi BatdekketKlokka.tsx ble 921 linjer; sluttskjermen ble flyttet ut.
+  Kjente svakheter: halvgod ligger like over 705, så små tallendringer flytter vinnerandelen mye;
+  den beste tiden å sende stuerten er nesten alltid «tidlig, når køen er kort» - valget har én
+  riktig retning, men koster en synlig pause; trinnet 870 er nådd av klok i litt under halvparten av
+  rundene (bevisst, som topptrinn); stuerten tegnes bare i 10 s og ses ikke på filmrammene;
+  «I SISTE LITEN» kan komme samtidig med «Tomme plasser er borte»-øyeblikket.

@@ -4,7 +4,18 @@
 import type { Rng } from '../sim';
 import type { PlaytestBot } from '../playtest';
 import type { Side } from './levels';
-import { bytt, hold, klarBåt, ledig, påVei, sisteStart } from './rules';
+import {
+    bytt,
+    hold,
+    kanSendeStuert,
+    klarBåt,
+    køAntall,
+    ledig,
+    påVei,
+    sendStuert,
+    sisteStart,
+} from './rules';
+import { kl } from './tuning';
 import type { Båt } from './state';
 import type { Game } from './state';
 
@@ -36,9 +47,31 @@ function pekMot(g: Game, ønsket: Båt | undefined, bedreMed: number, slakk: (b:
  * som kommer etter), firer fulle båter med en gang, og har landgangen mot båten med
  * kortest lunte.
  */
-function klok(margin: number, fullNok: number, bedreMed: number, ser: number): Grep {
+/**
+ * Når stuerten sendes. Den kloke sender ham så snart køen er nesten tom (da koster det
+ * lite at landgangen står), og senest etter `senest` sekunder. Den halvgode husker det
+ * først på et tilfeldig tidspunkt.
+ */
+type Stuert = (g: Game) => boolean;
+const stuertKlok =
+    (senest: number): Stuert =>
+    (g) =>
+        køAntall(g) < 6 || g.t > kl('01.12') + senest;
+const stuertSent = (rng: Rng, fra: string, til: string): Stuert => {
+    const når = kl(fra) + rng() * (kl(til) - kl(fra));
+    return (g) => g.t >= når;
+};
+
+function klok(
+    margin: number,
+    fullNok: number,
+    bedreMed: number,
+    ser: number,
+    stuert: Stuert
+): Grep {
     return (g) => {
         if (g.mode !== 'play') return;
+        if (kanSendeStuert(g) && stuert(g)) sendStuert(g);
         const plan = sisteStart(g);
         const klare = SIDER.map((s) => klarBåt(g, s)).filter((b) => b !== null);
         const slakk = (b: Båt) => (plan.get(b.nr) ?? Infinity) - g.t - margin;
@@ -109,8 +142,9 @@ function venterAlltid(): Grep {
 function tilfeldig(rng: Rng): Grep {
     return (g) => {
         if (g.mode !== 'play') return;
-        const r = Math.floor(rng() * 5);
-        if (r === 0) bytt(g);
+        const r = Math.floor(rng() * 6);
+        if (r === 5) sendStuert(g);
+        else if (r === 0) bytt(g);
         else if (r === 1) hold(g, 'B');
         else if (r === 2) hold(g, 'S');
         else hold(g, null);
@@ -136,30 +170,31 @@ export const BOTS: Record<string, BotDef> = {
     klok: {
         forventer: 'vinner',
         beskrivelse:
-            'Har landgangen mot båten med kortest lunte, venter så lenge vannet og krengningen tåler det og firer fulle båter straks.',
-        make: () => klok(1.2, 1, 2, 22),
+            'Har landgangen mot båten med kortest lunte, venter så lenge vannet og krengningen tåler det, firer fulle båter straks og sender stuerten ned til porten så snart køen er nesten tom.',
+        make: () => klok(1.2, 1, 2, 22, stuertKlok(20)),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger samme plan, men reagerer bare hvert andre øyeblikk, firer med god margin og nøyer seg med nesten fulle båter.',
-        make: () => treg(2, klok(6, 0.8, 6, 0)),
+            'Følger samme plan, men reagerer bare hvert andre øyeblikk, firer med god margin, nøyer seg med nesten fulle båter og husker stuerten først et stykke ut i natta.',
+        make: (rng) => treg(2, klok(6, 0.8, 6, 0, stuertSent(rng, '01.24', '01.48'))),
     },
     'fir-straks': {
         forventer: 'taper',
         beskrivelse:
-            'Firer så snart det sitter noen i båten - ignorerer at tomme plasser er borte for alltid.',
+            'Firer så snart det sitter noen i båten - ignorerer at tomme plasser er borte for alltid. Sender aldri stuerten.',
         make: () => firStraks(),
     },
     'venter-alltid': {
         forventer: 'taper',
-        beskrivelse: 'Venter alltid på full båt, uansett lunta - vannet og krengningen tar båtene.',
+        beskrivelse:
+            'Venter alltid på full båt, uansett lunta - vannet og krengningen tar båtene. Sender aldri stuerten.',
         make: () => venterAlltid(),
     },
     tilfeldig: {
         forventer: 'taper',
         tilfeldig: true,
-        beskrivelse: 'Bytter side, holder og slipper tilfeldig uten plan.',
+        beskrivelse: 'Bytter side, holder, slipper og sender stuerten tilfeldig uten plan.',
         make: (rng) => tilfeldig(rng),
     },
 };

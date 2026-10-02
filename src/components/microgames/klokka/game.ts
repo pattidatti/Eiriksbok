@@ -4,7 +4,18 @@
 // ikke tap i seg selv - plassene i den er bare borte.
 
 import { BRETT, type Side } from './levels';
-import { alvor, brukt, fase, firetid, frist, gåOmBord, mellom, taptePlasser, tomme } from './rules';
+import {
+    alvor,
+    brukt,
+    fase,
+    firetid,
+    frist,
+    gåOmBord,
+    mellom,
+    portTid,
+    taptePlasser,
+    tomme,
+} from './rules';
 import type { Game, Klasse } from './state';
 import { TUNING } from './tuning';
 
@@ -39,9 +50,14 @@ function nyeGrupper(g: Game) {
 
 function gå(g: Game, dt: number) {
     const port = TUNING.port.pos;
-    if (!g.portÅpen && g.t >= g.portÅpner) {
+    // Porten åpnes når stuerten er nede - eller av seg selv, sent.
+    if (!g.portÅpen && g.t >= portTid(g)) {
         g.portÅpen = true;
-        g.hendelser.push({ t: g.t, slag: 'port' });
+        g.hendelser.push({
+            t: g.t,
+            slag: 'port',
+            tekst: g.stuertSendt === null ? 'selv' : 'stuert',
+        });
     }
     for (const gr of g.grupper) {
         gr.pos += dt / gr.gang;

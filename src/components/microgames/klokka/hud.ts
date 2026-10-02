@@ -1,7 +1,7 @@
 // Profilstripa (båtoversikten), tittelfeltet (klokka, reddet mot målet) og tastefeltet.
 
 import { BRETT, type Side } from './levels';
-import { brukt, klokke, tomme, vannDekk } from './rules';
+import { brukt, kanSendeStuert, klokke, nesteTrinn, tomme, vannDekk } from './rules';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 import { MIDT } from './geom';
@@ -88,8 +88,8 @@ export function profil(c: CanvasRenderingContext2D, g: Game) {
         });
     }
     c.restore();
-    etikett(c, 'BB', 262, 20, 10, P.blyant, 'right');
-    etikett(c, 'SB', 262, 31, 10, P.blyant, 'right');
+    etikett(c, 'BABORD = VENSTRE', 262, 20, 10, P.blyant, 'right');
+    etikett(c, 'STYRBORD = HØYRE', 262, 31, 10, P.blyant, 'right');
     etikett(c, 'PROFIL', 698, 21, 10, P.blyant, 'left');
     strek(c, () => c.rect(272, 10, 416, 54), 0.8, P.blyant, 0.5);
 }
@@ -136,18 +136,30 @@ export function tittelfelt(c: CanvasRenderingContext2D, g: Game) {
     strek(c, () => c.rect(bx, y + 88, bw, 4), 0.8, P.hvit, 0.7);
     c.fillStyle = P.gul;
     c.fillRect(bx, y + 88, (bw * Math.min(r, maks)) / maks, 4);
-    const mx = bx + (bw * TUNING.seier) / maks;
-    strek(
+    // Rangtrinnene som streker på stolpen: den første (1912) er målet.
+    TUNING.ranger.forEach(([grense], i) => {
+        const mx = bx + (bw * grense) / maks;
+        strek(
+            c,
+            () => {
+                c.moveTo(mx, y + (i === 0 ? 85 : 87));
+                c.lineTo(mx, y + (i === 0 ? 95 : 93));
+            },
+            i === 0 ? 1.4 : 1,
+            r > grense ? P.gul : P.hvit,
+            1
+        );
+    });
+    const neste = nesteTrinn(r);
+    etikett(
         c,
-        () => {
-            c.moveTo(mx, y + 85);
-            c.lineTo(mx, y + 95);
-        },
-        1.4,
-        P.hvit,
-        1
+        !slått ? `MÅL: OVER ${TUNING.seier}` : neste ? `NESTE: OVER ${neste[0]}` : 'ØVERSTE TRINN',
+        x + 5,
+        y + 104,
+        10,
+        slått ? P.gul : P.hvit,
+        'left'
     );
-    etikett(c, `MÅL: OVER ${TUNING.seier}`, x + 5, y + 104, 10, P.hvit, 'left');
     etikett(c, `TOMME ${tomme(g)}`, x + 5, y + 115, 10, P.blyant, 'left');
 }
 
@@ -173,14 +185,23 @@ export function tasteFelt(c: CanvasRenderingContext2D, g: Game) {
     );
     const br = BRETT[g.brett];
     etikett(c, br.banner, x + 6, y + 10, 10, P.hvit, 'left');
-    etikett(c, br.tittel.toUpperCase(), x + 6, y + 22, 10, P.blyant, 'left');
-    tast(c, x + 18, y + 44, '←');
-    tast(c, x + 40, y + 44, '→');
-    etikett(c, 'BYTT SIDE', x + 56, y + 45, 10, P.hvit, 'left');
-    tast(c, x + 18, y + 66, 'A', g.hold === 'B');
-    etikett(c, 'HOLD: FIR BB', x + 34, y + 67, 10, P.hvit, 'left');
-    tast(c, x + 18, y + 88, 'D', g.hold === 'S');
-    etikett(c, 'HOLD: FIR SB', x + 34, y + 89, 10, P.hvit, 'left');
-    tast(c, x + 22, y + 109, 'ESC');
-    etikett(c, 'PAUSE', x + 44, y + 110, 10, P.blyant, 'left');
+    etikett(c, br.tittel.toUpperCase(), x + 6, y + 22, 9, P.blyant, 'left');
+    tast(c, x + 18, y + 42, '←');
+    tast(c, x + 40, y + 42, '→');
+    etikett(c, 'BYTT SIDE', x + 56, y + 43, 10, P.hvit, 'left');
+    tast(c, x + 18, y + 61, 'A', g.hold === 'B');
+    etikett(c, 'HOLD: FIR VENSTRE', x + 34, y + 62, 10, P.hvit, 'left');
+    tast(c, x + 18, y + 80, 'D', g.hold === 'S');
+    etikett(c, 'HOLD: FIR HØYRE', x + 34, y + 81, 10, P.hvit, 'left');
+    const kan = kanSendeStuert(g);
+    tast(c, x + 18, y + 99, 'S', kan && Math.sin(g.t * 4) > 0);
+    etikett(
+        c,
+        g.stuertSendt !== null || g.portÅpen ? 'PORTEN ER ÅPEN' : 'STUERT: ÅPNE PORTEN',
+        x + 34,
+        y + 100,
+        10,
+        kan ? P.gul : P.blyant,
+        'left'
+    );
 }

@@ -93,44 +93,51 @@ function båtForm(
     c.restore();
 }
 
-/** Lunta: brenner ned mot fristen (vannet eller krengningen). */
+/**
+ * Lunta: brenner ned mot fristen (vannet eller krengningen). Tykk og gul; de siste
+ * sekundene blir den rød og blinker, og et tall viser sekundene som er igjen.
+ */
 function lunte(c: CanvasRenderingContext2D, g: Game, b: Båt, x: number, y: number) {
     const igjen = Math.max(0, frist(b).t - g.t);
     const andel = Math.min(1, igjen / 40);
     const w = BÅT_W - 16;
     const fare = igjen < TUNING.varsel;
+    const blink = fare ? 0.55 + 0.45 * Math.sin(g.t * (10 + (TUNING.varsel - igjen) * 1.6)) : 1;
     strek(
         c,
         () => {
             c.moveTo(x - w / 2, y);
             c.lineTo(x + w / 2, y);
         },
-        1.4,
+        3,
         P.blyant,
-        0.6
+        0.55
     );
     const ende = x - w / 2 + w * andel;
+    c.globalAlpha = blink;
     strek(
         c,
         () => {
             c.moveTo(x - w / 2, y);
             c.lineTo(ende, y);
         },
-        2.6,
+        fare ? 7 : 5,
         fare ? P.rød : P.gul,
         0.95
     );
+    c.globalAlpha = 1;
+    if (fare) etikett(c, `${Math.ceil(igjen)} S`, x + w / 2 + 6, y, 11, P.rød, 'left', 800);
     // Gnisten.
     const fl = 0.6 + 0.4 * Math.sin(g.t * 31);
     c.fillStyle = P.hvit;
     c.globalAlpha = fl;
     c.beginPath();
-    c.arc(ende, y, 2.6, 0, Math.PI * 2);
+    c.arc(ende, y, fare ? 4 : 3.2, 0, Math.PI * 2);
     c.fill();
     c.fillStyle = fare ? P.rød : P.gul;
     for (let i = 0; i < 3; i++) {
         const a = g.t * 13 + i * 2.1;
-        c.fillRect(ende + Math.cos(a) * 5, y + Math.sin(a) * 4 - 1, 1.4, 1.4);
+        c.fillRect(ende + Math.cos(a) * 6, y + Math.sin(a) * 5 - 1, 1.6, 1.6);
     }
     c.globalAlpha = 1;
 }

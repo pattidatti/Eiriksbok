@@ -3,7 +3,10 @@
 
 export const REGLER = [
     { ikon: 'båt', tekst: 'En båt som er nede, kan aldri fylles igjen.' },
-    { ikon: 'trapp', tekst: 'Jo lenger nede folk bor, jo seinere kommer de opp.' },
+    {
+        ikon: 'trapp',
+        tekst: 'Tredje klasse står bak en port nede i skipet. Send stuerten (S) for å åpne den. Da venter landgangen litt.',
+    },
     { ikon: 'vann', tekst: 'Vannet stiger og skipet krenger. Lunta viser når båten er tapt.' },
 ] as const;
 
@@ -11,14 +14,17 @@ export const REGLER = [
 export const MÅL = 'I 1912 ble rundt 705 reddet i livbåtene. Redd flere før skipet er borte.';
 
 export const STYRING =
-    'Køen går selv om bord der landgangen peker. Du velger side og når båten fires.';
+    'Køen går selv om bord der landgangen peker. Du velger side (babord = venstre, styrbord = høyre), når båten fires og når stuerten går. Aldri hvem.';
 
 /** Lappene (maks 7 ord). */
 export const LAPP = {
     fir: 'Hold D eller hold på båten',
     bytt: 'Klikk eller ← → for å bytte side',
     alvor: 'Flere skjønner at skipet synker',
-    port: 'Porten er åpen',
+    port: 'Stuerten åpnet porten',
+    portSelv: 'Porten åpnet seg - sent',
+    stuert: 'Trykk S: send stuerten ned',
+    stuertGår: 'Landgangen venter på stuerten',
     lås: 'Krengningen låser styrbord-båtene snart',
     sist: 'Skyv dem av før vannet kommer',
 };
@@ -32,7 +38,7 @@ export const BEAT = {
     },
     tredje: {
         tittel: 'Tredje klasse kommer sist',
-        tekst: 'De bodde lengst nede, og porten åpnes sent. Spar plass i båtene til dem.',
+        tekst: 'De bodde lengst nede, bak en stengt port. Send stuerten ned (S) - men mens han er borte, står landgangen stille.',
     },
     frist: {
         tittel: 'Lunta brenner ned',
@@ -44,11 +50,11 @@ export const BEAT = {
 export const TAP = {
     tomme: {
         tittel: 'For mange tomme plasser',
-        tips: 'Båtene gikk før folk rakk å komme. Fir de første tidlig, så flere skjønner at det er alvor - men vent på gruppene du ser i trappene, og spar båter til tredje klasse.',
+        tips: 'Båtene gikk før folk rakk å komme. Fir de første tidlig, så flere skjønner at det er alvor. Send stuerten ned til porten tidlig, mens køen er kort - da rekker tredje klasse båtene.',
     },
     tapt: {
         tittel: 'Vannet tok båtene',
-        tips: 'Klokka 02.05 gikk den siste båten ned fra Titanic. Vannet kom forfra, dekk for dekk. Fir båten før lunta er brent ned, også om den ikke er full. På den høye siden går alt tregere.',
+        tips: 'Fir båten før lunta er brent ned, også om den ikke er full. Når skipet krenger mot en side, kommer vannet fortere der - lunta blir kortere. På den høye siden går firingen tregere.',
     },
 };
 
@@ -74,11 +80,14 @@ export const KLASSER_1912 = [
 export const LÆRDOM = {
     alvor: 'Da de første båtene gikk, kom flere opp på dekket. I 1912 ville mange ikke gå i de første båtene - skipet virket tryggere.',
     tomme: (n: number) => `${n} plasser sto tomme i båtene dine. I 1912 var det 472.`,
-    tredje: (n: number) =>
-        `Tredje klasse kom sist, bak porten nede i skipet. ${n} av 709 fra tredje klasse fikk plass i båtene dine. I 1912 var det 176.`,
+    tredje: (n: number, port: string, stuert: boolean) =>
+        `Porten til tredje klasse åpnet ${stuert ? 'seg da stuerten kom ned' : 'seg av seg selv'} klokka ${port}. ${n} av 709 fra tredje klasse fikk plass i båtene dine. I 1912 var det 176.`,
     tapt: (n: number, p: number) =>
         `Vannet og krengningen tok ${n} ${n === 1 ? 'båt' : 'båter'} med ${p} plasser. Den siste båten fra Titanic gikk klokka 02.05.`,
     solas: 'Selv med hver plass brukt var det plass til bare halvparten. Etter Titanic skal livbåtene ha plass til alle (SOLAS, 1914).',
+    /** Neste rangtrinn - for «én natt til». */
+    neste: (grense: number, navn: string, mangler: number) =>
+        `Neste trinn: over ${grense} reddet («${navn}»). Du manglet ${mangler}.`,
 };
 
 /** Pausemeldinger (saklige fakta). */

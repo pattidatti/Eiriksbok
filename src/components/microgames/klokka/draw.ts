@@ -6,11 +6,11 @@
 
 import type { ArcadeView } from '../arcade/useArcade';
 
-import { køAntall } from './rules';
+import { kanSendeStuert, køAntall, portTid } from './rules';
 import type { Game, Gruppe } from './state';
 import { TUNING } from './tuning';
 import { ARK, DEKK_Y, MIDT, SKROG, TRAPP, iVerden, skala, vannY, vinkel } from './geom';
-import { rakettLys, type Fx } from './fx';
+import { rakettLys, ristNå, type Fx } from './fx';
 import { P, etikett, frø, lagPapir, lagSnitt, ramme, strek } from './papir';
 
 import { artAv, figur, type TegneValg } from './former';
@@ -212,19 +212,66 @@ function trappefolk(c: CanvasRenderingContext2D, g: Game) {
         );
     }
     c.globalAlpha = 1;
-    // Porten.
+    // Porten. Den glir til side når den åpnes.
     const x = TRAPP[3].x;
     const åpen = g.portÅpen;
+    const kan = kanSendeStuert(g);
+    if (kan) {
+        // Porten venter på stuerten: en rolig, pulserende ring.
+        const p = 0.5 + 0.5 * Math.sin(g.t * 4);
+        c.strokeStyle = P.gul;
+        c.globalAlpha = 0.35 + 0.5 * p;
+        c.lineWidth = 1.6;
+        c.beginPath();
+        c.arc(x, portY - 15, 22 + p * 4, 0, Math.PI * 2);
+        c.stroke();
+        c.globalAlpha = 1;
+    }
     c.strokeStyle = åpen ? P.blyant : P.rød;
     c.lineWidth = 1.4;
     c.beginPath();
     c.rect(x - 12, portY - 30, 24, 30);
-    const sk = åpen ? 10 : 0;
+    const sk = åpen ? 10 * Math.min(1, (g.t - portTid(g)) / 0.7) : 0;
     for (let b = -8; b <= 8; b += 4) {
         c.moveTo(x + b - sk, portY - 30);
         c.lineTo(x + b - sk, portY);
     }
     c.stroke();
+}
+
+/**
+ * Stuerten: en hvit figur med lykt som løper ned trappa til porten på D-dekk og
+ * opp igjen. Mens han er borte, står landgangen stille.
+ */
+function stuert(c: CanvasRenderingContext2D, g: Game) {
+    if (g.stuertSendt === null) return;
+    const s = g.t - g.stuertSendt;
+    const { ned, borte } = TUNING.stuert;
+    if (s < 0 || s > borte) return;
+    const port = TUNING.port.pos;
+    // Ned fra båtdekket (1) til porten, så opp igjen.
+    const pos =
+        s < ned ? 1 - (1 - port) * (s / ned) : port + (1 - port) * ((s - ned) / (borte - ned));
+    const t = TRAPP[3];
+    const dekk = t.fra + pos * (7 - t.fra);
+    const d = Math.floor(dekk);
+    const frac = dekk - d;
+    const v = (d - t.fra) % 2 === 0 ? -1 : 1;
+    const x = t.x + v * 9 - v * 18 * frac;
+    const fot = DEKK_Y(t.fra) + (DEKK_Y(7) - DEKK_Y(t.fra)) * pos;
+    c.fillStyle = P.hvit;
+    figur(c, x + Math.sin(g.t * 14) * 0.6, fot, 12, 0);
+    // Lykta.
+    const fl = 0.75 + 0.25 * Math.sin(g.t * 23);
+    c.fillStyle = P.gul;
+    c.globalAlpha = 0.3 * fl;
+    c.beginPath();
+    c.arc(x + 5, fot - 7, 7, 0, Math.PI * 2);
+    c.fill();
+    c.globalAlpha = 1;
+    c.beginPath();
+    c.arc(x + 5, fot - 7, 1.8, 0, Math.PI * 2);
+    c.fill();
 }
 
 /** Køen på båtdekket: alle i én kø, den forreste nærmest landgangen. */
@@ -283,7 +330,8 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
     c.setTransform(view.dpr, 0, 0, view.dpr, 0, 0);
     c.drawImage(hentPapir(w * view.dpr, h * view.dpr, o.lav), 0, 0, w, h);
     c.save();
-    c.translate(k.ox, k.oy);
+    const r = ristNå(fx, g.t);
+    c.translate(k.ox + r.x * k.s, k.oy + r.y * k.s);
     c.scale(k.s, k.s);
     c.lineCap = 'round';
     c.lineJoin = 'round';
@@ -301,6 +349,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
     lys(c, g, a);
     c.drawImage(hentSnitt(Math.min(3, k.s * view.dpr)), 0, 0, ARK.w, ARK.h);
     trappefolk(c, g);
+    stuert(c, g);
     kø(c, g, kq, dt);
     c.restore();
 
@@ -322,6 +371,12 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
         const p = iVerden(TRAPP[3].x, DEKK_Y(3) - 40, a);
         etikett(c, `3. KLASSE ${bakPort}`, p.x, p.y, 10, P.gul, 'center');
     }
+    if (o.spiller && kanSendeStuert(g)) {
+        const p = iVerden(TRAPP[3].x, DEKK_Y(3) + 14, a);
+        etikett(c, 'S: SEND STUERTEN', p.x, p.y, 10, P.hvit, 'center', 800);
+    }
+    if (g.stuertSendt !== null && g.t < g.stuertSendt + TUNING.stuert.borte)
+        etikett(c, 'LANDGANGEN VENTER - STUERTEN ER NEDE', MIDT, 90, 10, P.hvit, 'center');
 
     raketter(c, g, fx);
     profil(c, g);

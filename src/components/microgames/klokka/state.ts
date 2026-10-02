@@ -40,7 +40,8 @@ export interface Hendelse {
         | 'ankommer'
         | 'bytt'
         | 'port'
-        | 'sving';
+        | 'sving'
+        | 'stuert';
     side?: Side;
     tekst?: string;
     /** Båten hendelsen gjelder (indeks i båter). */
@@ -70,6 +71,8 @@ export interface Game {
     igjen: Record<Klasse, number>;
     portÅpner: number;
     portÅpen: boolean;
+    /** Når stuerten ble sendt ned for å åpne porten (null = ikke sendt). */
+    stuertSendt: number | null;
     nesteId: number;
     /** Siden landgangen peker mot. Køen går selv inn i båten på den siden. */
     landgang: Side;
@@ -124,6 +127,7 @@ export function newGame(seed: number): Game {
         },
         portÅpner: p0 + rng() * (p1 - p0),
         portÅpen: false,
+        stuertSendt: null,
         nesteId: 1,
         landgang: 'S',
         landgangKlar: 0,

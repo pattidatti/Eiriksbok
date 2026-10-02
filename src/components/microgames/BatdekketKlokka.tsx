@@ -8,10 +8,8 @@ import {
     ArcadeTag,
     ArcadeBigButton,
     ArcadeSmallButton,
-    ArcadeStats,
 } from './arcade/ArcadeShell';
 import { useArcadeLoop, useArcadeText } from './arcade/useArcade';
-import { ArcadeLessons } from './arcade/ArcadeLayers';
 import { useArcadeSave } from './arcade/save';
 import { createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
@@ -23,9 +21,13 @@ import {
     bytt,
     frist,
     hold,
+    kanSendeStuert,
     klokke,
+    nesteTrinn,
+    portTid,
     rang,
     reddetKlasse,
+    sendStuert,
     taptePlasser,
     tomme,
 } from './klokka/rules';
@@ -48,19 +50,16 @@ import { lagLyd } from './klokka/lyd';
 import { TUNING } from './klokka/tuning';
 import { BRETT, type Side } from './klokka/levels';
 import { P } from './klokka/papir';
+import { SluttSkjerm, type Resultat } from './klokka/Slutt';
 import {
     BEAT,
     I1912,
-    KLASSER_1912,
     LAPP,
     LÆRDOM,
     MÅL,
     PAUSE,
     REGLER,
-    SOLAS,
     STYRING,
-    TAP,
-    TAPT_ÅRSAK,
 } from './klokka/texts';
 
 // BÅTDEKKET KLOKKA 00.45 - Titanic, natt til 15. april 1912. Eleven er styrmann på
@@ -90,6 +89,7 @@ const THEME: Partial<ArcadeTheme> = {
 };
 
 type Mode = 'menu' | 'play' | 'paused' | 'over';
+
 interface Save {
     færrestTomme: number | null;
     flestReddet: number;
@@ -98,17 +98,6 @@ interface Save {
     protokoll: string[];
 }
 const START_SAVE: Save = { færrestTomme: null, flestReddet: 0, runder: 0, protokoll: [] };
-
-interface Resultat {
-    vant: boolean;
-    reddet: number;
-    tomme: number;
-    klasser: [number, number, number];
-    rang: string;
-    nyRekord: boolean;
-    nyeFulle: string[];
-    lærdom: string[];
-}
 
 /** Små tegninger til de tre reglene på startskjermen (samme strek som spillet). */
 function RegelIkon({ ikon }: { ikon: 'båt' | 'trapp' | 'vann' }) {
@@ -161,11 +150,15 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
     const [pauseMsg, setPauseMsg] = useState(PAUSE[0]);
     const [text, textLayer] = useArcadeText(GAME_ID);
     const skalaRef = useRef(skala(960, 540));
-    const peker = useRef<{ fra: Side | 'landgang' | null; t: number } | null>(null);
+    const peker = useRef<{ fra: Side | 'landgang' | 'port' | null; t: number } | null>(null);
     const lav = useRef(guessTier().tier === 'lav');
     // Det spillet har sagt i denne runden (lapper og varsler som bare skal komme én gang).
     const sagt = useRef(new Set<string>());
     const bytter = useRef(0);
+    /** Hit-stop: spillet går nesten stille et øyeblikk når en full båt treffer vannet. */
+    const hitStop = useRef(0);
+    /** Hvor mange rangtrinn som er passert i denne runden. */
+    const trinn = useRef(0);
 
     useEffect(() => {
         saveRef.current = save;
@@ -205,7 +198,11 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             .filter((b) => b.nedeKl !== null)
             .sort((a, b) => (a.nedeKl ?? 0) - (b.nedeKl ?? 0))[0];
         if (g.tapte.length) text.lesson('tapt', LÆRDOM.tapt(g.tapte.length, taptePlasser(g)), 3);
-        text.lesson('tredje', LÆRDOM.tredje(kl[2]), 2.5);
+        text.lesson(
+            'tredje',
+            LÆRDOM.tredje(kl[2], klokke(portTid(g)), g.stuertSendt !== null),
+            g.stuertSendt === null ? 3.2 : 2.5
+        );
         text.lesson('tomme', LÆRDOM.tomme(t), t > I1912.tomme ? 2.8 : 2);
         if (første && (første.nedeKl ?? 99) < 30) text.lesson('alvor', LÆRDOM.alvor, 1.6);
         text.lesson('solas', LÆRDOM.solas, 1);
@@ -224,7 +221,11 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             reddet: r,
             tomme: t,
             klasser: kl,
-            rang: vant ? rang(t) : 'Ikke bedre enn 1912',
+            rang: vant ? rang(r) : 'Ikke bedre enn 1912',
+            neste: (() => {
+                const n = nesteTrinn(r);
+                return n ? { grense: n[0], navn: n[1], mangler: n[0] + 1 - r } : null;
+            })(),
             nyRekord,
             nyeFulle,
             lærdom: text.lessons(3),
@@ -242,7 +243,16 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             else if (h.slag === 'nede' && h.båt !== undefined) {
                 const b = g.båter[h.båt];
                 lyd.plask();
-                if (b.folk >= b.plasser) lyd.klokke();
+                if (b.folk >= b.plasser) {
+                    lyd.klokke();
+                    hitStop.current = performance.now() + 110;
+                }
+                // Nesten-bom: båten nådde vannet med bare noen sekunder igjen av lunta.
+                const igjen = frist(b).t - g.t;
+                if (igjen < 5 && modeRef.current === 'play') {
+                    lyd.nesten();
+                    text.banner('I SISTE LITEN', P.gul, 1.6);
+                }
                 const tomt = b.plasser - b.folk;
                 if (tomt > 0 && modeRef.current === 'play') {
                     const side = b.side;
@@ -275,7 +285,12 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 lyd.port();
                 const a = vinkel(g.t);
                 const p = iVerden(TRAPP[3].x, DEKK_Y(3) - 30, a);
-                text.point('port', LAPP.port, ark(p.x, p.y), { seconds: 4 });
+                text.point('port', h.tekst === 'selv' ? LAPP.portSelv : LAPP.port, ark(p.x, p.y), {
+                    seconds: 4,
+                });
+            } else if (h.slag === 'stuert') {
+                lyd.stuert();
+                text.point('stuertGår', LAPP.stuertGår, ark(480, DEKK_Y(7) - 30), { seconds: 3 });
             } else if (h.slag === 'bytt') {
                 lyd.bytt();
                 bytter.current++;
@@ -347,6 +362,23 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 });
             }
         }
+        // Stuerten kan sendes: vis det ved porten til han er sendt.
+        if (!s.has('stuert') && kanSendeStuert(g)) {
+            s.add('stuert');
+            text.point('stuert', LAPP.stuert, ark(TRAPP[3].x, DEKK_Y(3) + 30), {
+                until: () => !kanSendeStuert(gameRef.current),
+                seconds: 12,
+                once: true,
+            });
+        }
+        // Et nytt rangtrinn passert midt i natta: klokketoner og banner.
+        const r = brukt(g);
+        while (trinn.current < TUNING.ranger.length && r > TUNING.ranger[trinn.current][0]) {
+            const [, navn] = TUNING.ranger[trinn.current];
+            trinn.current++;
+            lyd.trinn();
+            text.banner(navn.toUpperCase(), P.gul, 2.2);
+        }
         // Lyd fra taljene mens en båt fires.
         if (g.hold) {
             const i = g.davit[g.hold];
@@ -361,6 +393,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             let steg = 0;
             if (m === 'play') {
                 steg = dt * text.timeScale();
+                if (performance.now() < hitStop.current) steg *= 0.12;
                 update(g, steg);
                 hendelser(g);
                 coach(g);
@@ -385,6 +418,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         køRef.current = nyKøVisning();
         sagt.current = new Set();
         bytter.current = 0;
+        trinn.current = 0;
+        hitStop.current = 0;
         hold(g, null);
         setResultat(null);
         text.resetRun();
@@ -415,7 +450,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         setMuted(synth.isMuted());
     };
 
-    // Tastatur: piltastene og mellomrom bytter landgang, A/D holder (firer), Esc/P pause.
+    // Tastatur: piltastene og mellomrom bytter landgang, A/D holder (firer), S eller pil ned
+    // sender stuerten, Esc/P pause.
     useEffect(() => {
         const ned = (e: KeyboardEvent) => {
             const g = gameRef.current;
@@ -443,6 +479,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             else if (e.code === 'Space') bytt(g);
             else if (e.code === 'KeyA') hold(g, 'B');
             else if (e.code === 'KeyD') hold(g, 'S');
+            else if (e.code === 'KeyS' || e.code === 'ArrowDown') sendStuert(g);
             else return;
             e.preventDefault();
         };
@@ -475,6 +512,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             peker.current = { fra: hit, t: g.t };
             if (hit === 'B' || hit === 'S') hold(g, hit);
             else if (hit === 'landgang') bytt(g);
+            else if (hit === 'port') sendStuert(g);
         } else if (e.type === 'pointerup' || e.type === 'pointercancel') {
             const p0 = peker.current;
             peker.current = null;
@@ -514,7 +552,6 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
 
     const res = resultat;
     const g = gameRef.current;
-    const tapt = res && !res.vant ? TAP[g.årsak ?? 'tomme'] : null;
     const hudOn = mode === 'play' || mode === 'paused';
     const knapp: React.CSSProperties = {
         pointerEvents: 'auto',
@@ -560,7 +597,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                             onClick={pause}
                             aria-label="Pause"
                         >
-                            ❚❚ PAUSE
+                            ❚❚ PAUSE (ESC)
                         </button>
                         <button
                             type="button"
@@ -637,122 +674,14 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                     )}
 
                     {mode === 'over' && res && (
-                        <ArcadeScreen>
-                            <div style={{ fontSize: 13, color: P.blyant, letterSpacing: '0.08em' }}>
-                                KLOKKA {klokke(g.t)}
-                            </div>
-                            <ArcadeLogo>
-                                {tapt ? tapt.tittel : 'Flere reddet enn i 1912'}
-                            </ArcadeLogo>
-                            <div
-                                style={{
-                                    display: 'flex',
-                                    gap: 8,
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                }}
-                            >
-                                <ArcadeTag color={res.vant ? P.gul : P.blyant}>
-                                    {res.rang}
-                                </ArcadeTag>
-                                {res.nyRekord && <ArcadeTag color={P.hvit}>Ny rekord</ArcadeTag>}
-                            </div>
-                            <ArcadeStats
-                                items={[
-                                    { value: res.reddet, label: 'reddet' },
-                                    { value: I1912.reddet, label: 'reddet i 1912' },
-                                    { value: res.tomme, label: 'tomme plasser' },
-                                    { value: I1912.tomme, label: 'tomme i 1912' },
-                                ]}
-                            />
-                            <div style={{ margin: '8px 0 2px', textAlign: 'left', fontSize: 13 }}>
-                                <div style={{ color: P.blyant, marginBottom: 4 }}>
-                                    Hvem kom i båtene dine (gul) - og i 1912 (hvit strek)
-                                </div>
-                                {KLASSER_1912.map((k, i) => {
-                                    const din = res.klasser[i];
-                                    return (
-                                        <div
-                                            key={k.navn}
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                gap: 8,
-                                                margin: '3px 0',
-                                            }}
-                                        >
-                                            <span style={{ width: 72, flex: 'none' }}>
-                                                {k.navn}
-                                            </span>
-                                            <div
-                                                style={{
-                                                    position: 'relative',
-                                                    flex: 1,
-                                                    height: 12,
-                                                    border: `1px solid ${P.hvit}`,
-                                                }}
-                                            >
-                                                <div
-                                                    style={{
-                                                        width: `${(100 * din) / k.av}%`,
-                                                        height: '100%',
-                                                        background: P.gul,
-                                                    }}
-                                                />
-                                                <div
-                                                    style={{
-                                                        position: 'absolute',
-                                                        top: -3,
-                                                        bottom: -3,
-                                                        left: `${(100 * k.reddet) / k.av}%`,
-                                                        width: 2,
-                                                        background: P.hvit,
-                                                    }}
-                                                />
-                                            </div>
-                                            <span
-                                                style={{
-                                                    width: 92,
-                                                    flex: 'none',
-                                                    textAlign: 'right',
-                                                }}
-                                            >
-                                                {din} av {k.av}
-                                            </span>
-                                        </div>
-                                    );
-                                })}
-                                <div style={{ color: P.blyant, marginTop: 4 }}>
-                                    Køen gikk forfra. Ingen ble valgt bort - de som kom sist opp,
-                                    ble igjen.
-                                </div>
-                            </div>
-                            {tapt && <p style={{ fontSize: 14, margin: '6px 0' }}>{tapt.tips}</p>}
-                            {g.tapte.length > 0 && (
-                                <p style={{ fontSize: 13, margin: '4px 0' }}>
-                                    Tapte båter:{' '}
-                                    {g.tapte
-                                        .map(
-                                            (x) =>
-                                                `${x.navn} ${klokke(x.kl)} (${TAPT_ÅRSAK[x.årsak]})`
-                                        )
-                                        .join(', ')}
-                                    .
-                                </p>
-                            )}
-                            <ArcadeLessons items={res.lærdom} />
-                            <p style={{ fontSize: 13, margin: '4px 0', color: P.blyant }}>
-                                {SOLAS}
-                            </p>
-                            <p style={{ fontSize: 13, margin: '4px 0' }}>
-                                Båtprotokollen: {save.protokoll.length} av 20 båter firet helt fulle
-                                {res.nyeFulle.length > 0 && ` - nye: ${res.nyeFulle.join(', ')}`}.
-                            </p>
-                            <ArcadeBigButton onClick={start}>En natt til</ArcadeBigButton>
-                            <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
-                                <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
-                            </div>
-                        </ArcadeScreen>
+                        <SluttSkjerm
+                            res={res}
+                            g={g}
+                            protokoll={save.protokoll.length}
+                            tikk={lyd.tikk}
+                            start={start}
+                            toMenu={toMenu}
+                        />
                     )}
                 </ArcadeStage>
             </div>

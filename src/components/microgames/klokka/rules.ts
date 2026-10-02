@@ -33,10 +33,24 @@ export const låsTid = (() => {
 /** Kan krengningen låse denne båten? Bare livbåter og kuttere på styrbord. */
 export const kanLåses = (b: Båt) => b.side === 'S' && b.slag !== 'sammenleggbar';
 
-/** Fristen for en båt og hva som tar den: vannet eller krengningen. */
+/** Grader skipet krenger MOT en side (pluss = den siden ligger lavt). */
+export const krengMot = (side: Side, t: number) => (side === 'S' ? 1 : -1) * krengning(t);
+
+/**
+ * Fristen for en båt og hva som tar den: vannet eller krengningen. På den lave siden
+ * når vannet festet tidligere - lunta er kortere jo mer skipet krenger mot båten.
+ */
+const fristLager = new Map<string, { t: number; årsak: 'vann' | 'lås' }>();
 export function frist(b: Båt): { t: number; årsak: 'vann' | 'lås' } {
-    if (kanLåses(b) && låsTid < b.frist) return { t: låsTid, årsak: 'lås' };
-    return { t: b.frist, årsak: 'vann' };
+    const lagret = fristLager.get(b.navn);
+    if (lagret) return lagret;
+    const vann = b.frist - TUNING.lunteKrengning * Math.max(0, krengMot(b.side, b.frist));
+    const f =
+        kanLåses(b) && låsTid < vann
+            ? { t: låsTid, årsak: 'lås' as const }
+            : { t: vann, årsak: 'vann' as const };
+    fristLager.set(b.navn, f);
+    return f;
 }
 
 /** Høy side = siden skipet IKKE krenger mot. */
@@ -78,10 +92,30 @@ export function bytt(g: Game, side?: Side) {
     const ny = side ?? (g.landgang === 'B' ? 'S' : 'B');
     if (ny === g.landgang) return;
     g.landgang = ny;
-    g.landgangKlar = g.t + TUNING.landgang.bytt;
+    g.landgangKlar = Math.max(g.landgangKlar, g.t + TUNING.landgang.bytt);
     g.valg++; // bytte side er et valg
     g.hendelser.push({ t: g.t, slag: 'bytt', side: ny });
 }
+
+/** Kan stuerten sendes ned nå? Én gang, når tredje klasse er på vei mot porten. */
+export const kanSendeStuert = (g: Game) =>
+    g.mode === 'play' && g.stuertSendt === null && !g.portÅpen && g.t >= TUNING.stuert.fra;
+
+/**
+ * Verb nummer to: send stuerten ned for å åpne porten til tredje klasse. Mens han er
+ * borte, står landgangen stille (båtene venter). Eleven velger når - aldri hvem.
+ */
+export function sendStuert(g: Game) {
+    if (!kanSendeStuert(g)) return;
+    g.stuertSendt = g.t;
+    g.landgangKlar = Math.max(g.landgangKlar, g.t + TUNING.stuert.borte);
+    g.valg++;
+    g.hendelser.push({ t: g.t, slag: 'stuert' });
+}
+
+/** Når porten åpnes: når stuerten er nede, eller av seg selv (sent). */
+export const portTid = (g: Game) =>
+    g.stuertSendt === null ? g.portÅpner : Math.min(g.portÅpner, g.stuertSendt + TUNING.stuert.ned);
 
 /** Folk per sekund over landgangen mot en side nå (tregere mot den høye siden). */
 export function landgangFart(g: Game, side: Side): number {
@@ -125,7 +159,7 @@ export function påVei(g: Game, innen: number): number {
     let n = 0;
     for (const gr of g.grupper) {
         const igjen = (1 - gr.pos) * gr.gang;
-        const venterPort = gr.klasse === 3 && !g.portÅpen ? Math.max(0, g.portÅpner - g.t) : 0;
+        const venterPort = gr.klasse === 3 && !g.portÅpen ? Math.max(0, portTid(g) - g.t) : 0;
         if (igjen + venterPort <= innen) n += gr.antall;
     }
     return n;
@@ -211,9 +245,14 @@ export function klokke(t: number): string {
     return `${String(Math.floor(m / 60)).padStart(2, '0')}.${String(m % 60).padStart(2, '0')}`;
 }
 
-/** Rangen etter tomme plasser (siste rad i TUNING.ranger der tomme < grensen). */
-export function rang(tommePlasser: number): string {
-    let r = TUNING.ranger[0][1];
-    for (const [grense, navn] of TUNING.ranger) if (tommePlasser < grense) r = navn;
+/** Rangen etter reddet (siste rad i TUNING.ranger der reddet > grensen). */
+export function rang(reddet: number): string {
+    let r = 'Som i 1912';
+    for (const [grense, navn] of TUNING.ranger) if (reddet > grense) r = navn;
     return r;
+}
+
+/** Neste rangtrinn over det du har (grensen og navnet), eller null på toppen. */
+export function nesteTrinn(reddet: number): [number, string] | null {
+    return TUNING.ranger.find(([grense]) => reddet <= grense) ?? null;
 }

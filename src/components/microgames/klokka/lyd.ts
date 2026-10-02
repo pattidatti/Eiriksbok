@@ -14,6 +14,9 @@ export interface Lyd {
     tapt: () => void;
     bytt: () => void;
     port: () => void;
+    stuert: () => void;
+    nesten: () => void;
+    trinn: () => void;
     start: () => void;
 }
 
@@ -58,6 +61,22 @@ export function lagLyd(s: ArcadeSynth): Lyd {
         port: () => {
             s.tone(240, 180, 0.25, 'square', 0.025);
             s.noise(0.3, 0.05, 1200);
+        },
+        /** Stuerten går: raske skritt nedover. */
+        stuert: () => {
+            for (let i = 0; i < 4; i++) s.noise(0.05, 0.05, 600 - i * 60, i * 0.14);
+            s.tone(520, 390, 0.18, 'triangle', 0.035);
+        },
+        /** I siste liten: to rolige toner som løser seg. */
+        nesten: () => {
+            s.tone(440, 440, 0.35, 'sine', 0.05);
+            s.tone(587, 587, 0.9, 'sine', 0.05, 0.18);
+        },
+        /** Et nytt rangtrinn: tre stigende klokketoner. */
+        trinn: () => {
+            s.tone(523, 523, 0.9, 'sine', 0.05);
+            s.tone(659, 659, 0.9, 'sine', 0.05, 0.14);
+            s.tone(784, 784, 1.3, 'sine', 0.05, 0.28);
         },
         start: () => s.tone(330, 330, 0.9, 'sine', 0.05),
     };
