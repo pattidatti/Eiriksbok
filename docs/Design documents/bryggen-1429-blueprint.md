@@ -636,6 +636,24 @@ Mixamo brukes ikke (krever innlogging).
   Kirkegården står bak grensa med støttemur og stengt grind øverst i steintrappa. Gapestokk er ikke lagt
   inn: ingen kilde funnet for en gapestokk på allmenningen i 1420-årene **[K]**. Ca. 10k trekanter og
   15 tegnekall for hele cella. Venter på eierens spilltest
+- [~] Holmen og Stranden som kulisser (02.10.2026, `bygg/holmen.ts`, `bygg/stranden.ts`), i stedet for de grå
+  boksene. Holmen ligger forbi kaienden (+x) og stikker ut i Vågen: kastellet ved sjøen (Magnus Lagabøtes tårn,
+  1270-årene, «ringmurstårn med vollgrav og vindebro», kapell med gotiske vinduer [V Byleksikon]; omtrent
+  kvadratisk, tre etasjer og kjeller [V Lokalhistoriewiki]; høyden og pyramidetaket **[S]**), ringmuren med tinner
+  og et porttårn mot byen (ringmur etter 1248 [V]; løpet og tinnene **[S]**, ikke funnet **[K]**), Håkonshallen
+  (gråstein med hjørnekvadrer av kleberstein, tre høyder, spissbuevinduer [V Byleksikon], ca. 37 x 16,4 m
+  [V Wikipedia]; trappegavlene er kjent fra Scholeus ca. 1580, i 1420-årene **[U]**), Kristkirken nordvest for
+  hallen (treskipet stein, 40 x ca. 20 m [V Byleksikon]; tårnet, koret og takene **[S]**, ingen bilder finnes),
+  Apostelkirken (gotisk kapell, revet 1529 [V UiB]; utseendet **[U]**/**[S]**) og trehus i kongsgården og ved
+  naustet i bispegården (begge brent 1429 [V Byleksikon]; husene **[S]**). Stranden: glisne grupper av lave
+  laftehus med torvtak, naust med gavlen mot sjøen, tømmerstabler og et skip på stokker, trukket fra et frø.
+  Bylova 1276 satte av stranda til skipsbygging og tømmer, og husene spredte seg dit etter 1300 [V Wikipedia
+  «Strandsiden»]; hvor tett det var bygd i 1420-årene, er ikke funnet **[K]**, så det er glissent **[S]**.
+  Avstander og vinkler er komprimert **[S]**. Holmen er statisk med to nivåer (`THREE.LOD`): nær kaienden 3
+  tegnekall, ellers 1 (steinbyggene med tynn tåke). Stranden er én celle bak grensa: 3 tegnekall nær, 1 lenger
+  unna, ingenting fra kaia. Målt med kulissene skjult og vist: +1 til +4 fra Vågen, +3 ved kaienden, +6 når
+  begge er nær; fra kaia og Vågen samme eller færre tegnekall enn de 20 boksene før (147/163 mot 148/168).
+  Ingen kollidere: grensene stopper spilleren før dem. Venter på eierens spilltest
 - [~] Vågen, vær og etterbehandling (02.10.2026): vannet har bølger (lange dønninger, krapp vind,
   fin krusning nær kameraet), falsk speiling av husrekka og ringer fra regndråper. Regnet faller i en
   boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,
@@ -791,6 +809,26 @@ Wikipedia. (2026). *Herjolfsnes*. Hentet 02.10.2026 fra [en.wikipedia.org](https
 Wikipedia. (2026). *Bockstensmannen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Bockstensmannen) (sekundærkilde, klærne datert 1340-1370)
 
 Wikipedia. (2026). *Allmenning (gater)*, *Martinskirken (Bergen)*, *Nikolaikirken i Bergen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Allmenning_(gater)) (sekundærkilder, stemmer med byleksikonet)
+
+Brochmann, O. (2025). *Håkonshallen*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/Håkonshallen](https://snl.no/H%C3%A5konshallen)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Håkonshallen*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1424979)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Rosenkrantztårnet*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1425132)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Bergenhus (festningsanlegg)*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1424494)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Kristkirkene*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1425026)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Bispegårder*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1420444)
+
+Universitetet i Bergen. (u.å.). *Kongsgården i Bergen*. Landslovjubileet 2024. Hentet 02.10.2026 fra [landslovjubileet.uib.no](https://landslovjubileet.uib.no/introduksjon/holmen)
+
+Lokalhistoriewiki.no. (u.å.). *Rosenkrantztårnet*. Norsk lokalhistorisk institutt. Hentet 02.10.2026 fra [lokalhistoriewiki.no](https://lokalhistoriewiki.no/wiki/Rosenkrantzt%C3%A5rnet) (kastellet omtrent kvadratisk, tre etasjer og kjeller)
+
+Wikipedia. (2026). *Håkonshallen*, *Rosenkrantztårnet*, *Kristkirkene på Holmen i Bergen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/H%C3%A5konshallen) (sekundærkilder: grunnflaten 37 x 16,4 m og trappegavlen etter Scholeus-stikket; stemmer med byleksikonet)
+
+Wikipedia. (2026). *Strandsiden (Bergen)*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Strandsiden_(Bergen)) (sekundærkilde for bylova 1276 og utbyggingen etter 1300)
 
 ### Kildeoppgavene (status 02.10.2026)
 
