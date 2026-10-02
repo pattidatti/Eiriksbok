@@ -70,6 +70,13 @@
     },
     {
       "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "klokka-0045"
+      }
+    },
+    {
+      "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Titanic i tall",
