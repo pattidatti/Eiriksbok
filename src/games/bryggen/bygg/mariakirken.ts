@@ -36,14 +36,14 @@ const KOR = { z1: 44, hw: 5, h: 12.5, pitch: 0.95 };
 export const KIRKE_LEN = KOR.z1;
 
 // Kleberstein: grå med et grønnskjær, mørkere nederst der regnet spruter opp.
-const STEIN: Tint = { top: 0.98, bottom: 0.72, hue: [0.9, 0.97, 0.95] };
-const LIST: Tint = { top: 1.1, bottom: 1.1, hue: [0.95, 1.0, 0.97] };
-const TAK: Tint = { top: 0.72, bottom: 0.72, hue: [0.92, 0.9, 0.9] };
+export const STEIN: Tint = { top: 0.98, bottom: 0.72, hue: [0.9, 0.97, 0.95] };
+export const LIST: Tint = { top: 1.1, bottom: 1.1, hue: [0.95, 1.0, 0.97] };
+export const TAK: Tint = { top: 0.72, bottom: 0.72, hue: [0.92, 0.9, 0.9] };
 const HULL: Tint = { top: 1, bottom: 1 };
 
 /** Kjør `fn` på veggflaten: z = 0 er flaten, +z peker ut, x går langs veggen. */
-type Flate = 'px' | 'nx' | 'pz' | 'nz';
-function paFlate(k: MeshKit, f: Flate, cx: number, cz: number, hx: number, hz: number, fn: () => void): void {
+export type Flate = 'px' | 'nx' | 'pz' | 'nz';
+export function paFlate(k: MeshKit, f: Flate, cx: number, cz: number, hx: number, hz: number, fn: () => void): void {
     if (f === 'pz') k.at(cx, 0, cz + hz, 0, fn);
     else if (f === 'nz') k.at(cx, 0, cz - hz, Math.PI, fn);
     else if (f === 'px') k.at(cx + hx, 0, cz, Math.PI / 2, fn);
@@ -55,7 +55,7 @@ function paFlate(k: MeshKit, f: Flate, cx: number, cz: number, hx: number, hz: n
  * og en lysere steinkrans rundt buen. `u` er midten langs veggen, `y0` bunnen, `h` opp til
  * der buen starter.
  */
-function apning(k: MeshKit, u: number, y0: number, w: number, h: number, bue: 'rund' | 'spiss' = 'rund'): void {
+export function apning(k: MeshKit, u: number, y0: number, w: number, h: number, bue: 'rund' | 'spiss' = 'rund'): void {
     const z = 0.05;
     const r = w / 2;
     k.withTint(HULL, () => {
@@ -95,7 +95,7 @@ function apning(k: MeshKit, u: number, y0: number, w: number, h: number, bue: 'r
 }
 
 /** Gesims: en list som stikker litt ut rundt toppen av en boks. */
-function gesims(k: MeshKit, cx: number, cz: number, sx: number, sz: number, y: number, ut = 0.22): void {
+export function gesims(k: MeshKit, cx: number, cz: number, sx: number, sz: number, y: number, ut = 0.22): void {
     k.withTint(LIST, () => k.box('stein', cx, y, cz, sx + ut * 2, 0.32, sz + ut * 2));
 }
 
@@ -103,7 +103,7 @@ function gesims(k: MeshKit, cx: number, cz: number, sx: number, sz: number, y: n
  * Saltak langs z fra `z0` til `z1`, med møne midt over x = 0. `hw` er halve bredden ved
  * takfoten (raft). Gavltrekantene tegnes i stein der `gavl` sier det.
  */
-function saltak(k: MeshKit, hw: number, eave: number, pitch: number, z0: number, z1: number, gavl: { z0?: boolean; z1?: boolean }): void {
+export function saltak(k: MeshKit, hw: number, eave: number, pitch: number, z0: number, z1: number, gavl: { z0?: boolean; z1?: boolean }): void {
     const over = 0.5;
     const rise = hw * pitch;
     const a = Math.atan(pitch);

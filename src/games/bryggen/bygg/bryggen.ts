@@ -92,7 +92,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     interface Slot { id: string; x0: number; x1: number; front: number; build: (sides: Sides) => Promise<CellContent> }
     const slots: Slot[] = [
         { id: 'gard-1', x0: -GARD_W / 2, x1: GARD_W / 2, front: 0, build: async (s) => gardMod.buildGardCell(materials, 0, s) },
-        { id: 'nikolaikirkeallmenningen', x0: ax0, x1: ax0 + ALLM_W, front: 0.3, build: async (s) => gardMod.buildAllmenningCell(materials, ax0, ax0 + ALLM_W, 0.3, s) },
+        { id: 'nikolaikirkeallmenningen', x0: ax0, x1: ax0 + ALLM_W, front: 0.3, build: async (s) => (await import('./allmenning')).buildAllmenningCell(materials, ax0, ax0 + ALLM_W, 0.3, s) },
     ];
     let xe = ax0 + ALLM_W;
     let xw = -GARD_W / 2;

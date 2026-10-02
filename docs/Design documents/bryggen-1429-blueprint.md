@@ -616,6 +616,20 @@ Mixamo brukes ikke (krever innlogging).
   Taktekkingen er heller ikke funnet **[K]**. Vinkelen mot gårdsrekkene og avstanden er valgt for
   spillet **[S]**. Kirken har egne materialkopier med halvparten så tett tåke, ellers forsvinner
   den bak 100 m. Ingen kollidere: man kommer ikke dit før Maria allmenning bygges
+- [~] Nikolaikirkeallmenningen (02.10.2026, `bygg/allmenning.ts`, `bygg/torg.ts`, `bygg/nikolaikirken.ts`):
+  18 m bred gjørmeallmenning med plankegang opp midten [V bredden]. Torget: fire salgsboder (tørrfisk,
+  korn, kurver, tønner), brønn med vinde, slede med tønne, sledespor og pytter. At allmenningen var torg til
+  1470 og at den første torgplassen trolig lå øverst, er [V Byleksikon, Wikipedia]; bodene, brønnen og
+  sleden er **[S]**. Rådhuset (stefnustova) med steinkjeller, laftet stue, svalgang og trapp man kan gå opp:
+  at rådhuset sto ved allmenningen og kirken (ca. 1300-1558), er [V]; utseende og plass er **[S]**, for det
+  er ikke funnet **[K]**. Nikolaikirken øverst: romansk steinkirke med ett skip og vesttårn like bredt som
+  skipet [V Wikipedia, «trolig»], på langs av Øvregaten [V], tårnet mot Holmen [S: utledet]. Om den var i
+  bruk i 1420-årene, er **[U]**; byleksikonet sier skadet eller ødelagt 1413 «og igjen 1476», så her er den
+  under reparasjon **[S]**: tårnet med nytt tak (byklokka og brannvakta [V bylova 1276]), nytt tak over
+  vestre del av skipet, bare sperrer, sot og stillas i øst, hogd stein og mørtelkar foran. Målene er **[S]**.
+  Kirkegården står bak grensa med støttemur og stengt grind øverst i steintrappa. Gapestokk er ikke lagt
+  inn: ingen kilde funnet for en gapestokk på allmenningen i 1420-årene **[K]**. Ca. 10k trekanter og
+  15 tegnekall for hele cella. Venter på eierens spilltest
 - [~] Vågen, vær og etterbehandling (02.10.2026): vannet har bølger (lange dønninger, krapp vind,
   fin krusning nær kameraet), falsk speiling av husrekka og ringer fra regndråper. Regnet faller i en
   boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,

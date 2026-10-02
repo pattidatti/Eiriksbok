@@ -90,7 +90,7 @@ const rect = (a: number, b: number, z0: number, z1: number): Rect => ({ x0: Math
  * UV-ene dekker bare noen centimeter av teksturen, så fisken får én flat farge (ingen treårer), og
  * formen kommer fra lyset på kammen og de mørkere kantene.
  */
-function fisk(k: MeshKit, a: THREE.Vector3, dir: THREE.Vector3, len: number, r: () => number, tilt = 0, fra = 0): void {
+export function fisk(k: MeshKit, a: THREE.Vector3, dir: THREE.Vector3, len: number, r: () => number, tilt = 0, fra = 0): void {
     const tone = FISK.top * (0.85 + r() * 0.3);
     const side = new THREE.Vector3(-dir.z, 0, dir.x);
     const up = new THREE.Vector3(0, 1, 0).applyAxisAngle(dir, tilt);
@@ -224,7 +224,7 @@ function bunter(k: MeshKit, c: ColliderKit, rc: Rect, y: number, hoy: number, r:
 }
 
 /** Kornsekker av hamp: stående, litt slappe på toppen, noen lent mot hverandre. */
-function sekker(k: MeshKit, c: ColliderKit, rc: Rect, y: number, r: () => number): void {
+export function sekker(k: MeshKit, c: ColliderKit, rc: Rect, y: number, r: () => number): void {
     const step = 0.5;
     const nx = Math.max(1, Math.floor((rc.x1 - rc.x0) / step));
     const nz = Math.max(1, Math.floor((rc.z1 - rc.z0) / step));
