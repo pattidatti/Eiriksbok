@@ -187,7 +187,7 @@ export class GrayboxGame {
         if (this.disposed) return;
         this.phys = new Physics(R);
 
-        // Lys, tåke og himmel fra stemningen (?lys=kveld|graatt|morgen, stemning.ts).
+        // Lys, tåke og himmel fra døgnet (?lys=kveld|morgen|dag|graatt|natt, stemning.ts og dogn.ts).
         this.lys = new Lyssetting(this.scene, stemningFraUrl(), { bryggen: this.worldId === 'gard' });
 
         if (this.worldId === 'gard') {
@@ -198,9 +198,8 @@ export class GrayboxGame {
             // Cellene rundt start må stå før første fysikksteg, ellers faller gutten gjennom kaia.
             await this.world.streamer.update(this.layout.playerStart);
             if (this.disposed) return;
-            this.renderer.toneMappingExposure = this.lys.s.eksponering;
             // ?post=0 slår av etterbehandlingen (for å sammenligne og måle).
-            if (new URLSearchParams(location.search).get('post') !== '0') this.post = new Etterbehandling(this.lys.s, this.lys.solRetning);
+            if (new URLSearchParams(location.search).get('post') !== '0') this.post = new Etterbehandling(this.lys);
         } else {
             this.layout = buildGraybox(this.scene, this.phys);
         }
@@ -343,7 +342,6 @@ export class GrayboxGame {
         this.input.dispose();
         this.world?.streamer.dispose();
         this.world?.materials.dispose();
-        this.world?.environment.dispose();
         this.world?.dispose();
         this.post?.dispose();
         this.lyd?.dispose();
@@ -584,6 +582,7 @@ export class GrayboxGame {
         }
         // Dagslyset dempes inne, og skyggen følger spilleren.
         this.lys.oppdater(follow, this.inne, this.low, this.scene, this.world?.skygge ?? 0);
+        if (this.world) this.renderer.toneMappingExposure = this.lys.s.eksponering;
 
         this.updatePrompts(dt);
         const w = this.container.clientWidth;

@@ -12,6 +12,8 @@ const N = 2600;
 const BOKS = new THREE.Vector3(36, 18, 36);
 
 export class Regn {
+    /** Fargen på strekene. Settes etter lyset ute (natt: mørkere). */
+    readonly farge = new THREE.Color(0xc8d0d6);
     readonly mesh: THREE.LineSegments;
     private readonly mat: THREE.ShaderMaterial;
 
@@ -44,7 +46,7 @@ export class Regn {
                     uBoks: { value: BOKS.clone() },
                     uVind: { value: new THREE.Vector2(1.6, 0.6) },
                     uStyrke: { value: 0 },
-                    uFarge: { value: new THREE.Color(0xc8d0d6) },
+                    uFarge: { value: null },
                 },
             ]),
             vertexShader: /* glsl */ `
@@ -85,6 +87,8 @@ export class Regn {
             depthWrite: false,
             fog: true,
         });
+        // `merge` kloner verdiene: fargen skal være det samme objektet som `farge`.
+        this.mat.uniforms.uFarge.value = this.farge;
         this.mesh = new THREE.LineSegments(geo, this.mat);
         this.mesh.frustumCulled = false;
         this.mesh.renderOrder = 10;

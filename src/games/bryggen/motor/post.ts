@@ -19,11 +19,8 @@
 // i lineært lys før tonekurven, og da blir alt i tåka lysere og blåere enn det eieren godkjente.
 // Med `isXRRenderTarget` gjør Three nøyaktig det samme som mot skjermen.
 import * as THREE from 'three';
-import type { Stemning } from './stemning';
+import type { Lyssetting } from './stemning';
 import { WATER_Y } from './boat';
-
-/** Fargen slik den står i stemningen (sRGB-tallene), til shadere som jobber i skjermfarger. */
-const srgb = (hex: number) => new THREE.Color().setHex(hex, THREE.LinearSRGBColorSpace);
 
 export class Etterbehandling {
     private readonly rt: THREE.WebGLRenderTarget;
@@ -41,14 +38,17 @@ export class Etterbehandling {
     private readonly mBlur: THREE.ShaderMaterial;
     private readonly mStraaler: THREE.ShaderMaterial;
     private readonly mFinal: THREE.ShaderMaterial;
-    private readonly solRetning = new THREE.Vector3(0, 1, 0);
+    private readonly solRetning: THREE.Vector3;
+    private readonly lys: Lyssetting;
     private readonly _v = new THREE.Vector3();
     private readonly _f = new THREE.Vector3();
     /** Hvilke pass som kjører (for å måle hva hvert av dem koster). */
     readonly paa = { ao: true, glod: true, straaler: true, visAo: false };
 
-    constructor(s: Stemning, solRetning: THREE.Vector3) {
-        this.solRetning.copy(solRetning);
+    /** Sola og fargene leses fra lyssettingen hvert bilde (de følger døgnet). */
+    constructor(lys: Lyssetting) {
+        this.lys = lys;
+        this.solRetning = lys.solRetning;
         const opts = { depthBuffer: false, type: THREE.UnsignedByteType, minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter };
         this.rt = new THREE.WebGLRenderTarget(1, 1, { depthBuffer: true });
         this.rt.depthTexture = new THREE.DepthTexture(1, 1, THREE.UnsignedIntType);
@@ -93,11 +93,11 @@ export class Etterbehandling {
             uKamMatrise: { value: new THREE.Matrix4() },
             uKamPos: { value: new THREE.Vector3() },
             uSol: { value: this.solRetning },
-            uSolFarge: { value: srgb(s.solFarge) },
-            uGlod: { value: s.solGlod },
-            uTakeTetthet: { value: s.takeTetthet },
-            uDis: { value: s.dis },
-            uDisFarge: { value: srgb(s.takeFarge).lerp(srgb(s.solFarge), 0.15 * s.solGlod) },
+            uSolFarge: { value: new THREE.Color() },
+            uGlod: { value: 0 },
+            uTakeTetthet: { value: lys.s.takeTetthet },
+            uDis: { value: 0 },
+            uDisFarge: { value: new THREE.Color() },
             uVannY: { value: WATER_Y },
             uStraalerStyrke: { value: 0 },
             uBloom: { value: 1 },
@@ -160,6 +160,12 @@ export class Etterbehandling {
         }
         this.mAo.uniforms.uProjSkala.value = camera.projectionMatrix.elements[5] * this.size.y * 0.5;
         const u = this.mFinal.uniforms;
+        // Bufferen holder sRGB-piksler: fargene fra lyssettingen (lineære) gjøres om.
+        const { s, c, lysFade } = this.lys;
+        u.uSolFarge.value.copy(c.solFarge).convertLinearToSRGB();
+        u.uGlod.value = s.solGlod * lysFade;
+        u.uDis.value = s.dis;
+        u.uDisFarge.value.copy(c.takeFarge).convertLinearToSRGB().lerp(u.uSolFarge.value, 0.15 * u.uGlod.value);
         u.uBrukAo.value = this.paa.ao;
         u.uVisAo.value = this.paa.visAo;
         if (this.paa.ao) {

@@ -12,7 +12,7 @@ import * as THREE from 'three';
 import type { Physics } from '../motor/physics';
 import { WATER_Y } from '../motor/boat';
 import { CellStreamer, iRom, type CellContent, type CellCtx, type CellDef, type Rom } from '../motor/streaming';
-import { Materials, makeSkyEnvironment } from '../motor/materials';
+import { Materials, Himmellys } from '../motor/materials';
 import { flakk } from '../motor/ild';
 import { lagVann, type Vann } from '../motor/vann';
 import { Maaker } from '../motor/maaker';
@@ -39,12 +39,12 @@ export interface BryggenWorld {
     kaiKant: { x0: number; x1: number; y: number; z: number };
     /** Hva gutten går på her: planker ute, golv inne eller gjørme (fottrinnene). */
     underlag: (p: THREE.Vector3) => 'tre-ute' | 'tre-inne' | 'gjorme';
-    /** Hvor mye det regner (0 tørt, 1 øsregn). Kan endres mens spillet går. */
+    /** Hvor mye det regner (0 tørt, 1 øsregn). Kommer fra været (`lys.vaer`, dogn.ts). */
     regn: number;
     /** Får replikkene folkene sier (vises som undertekst). Settes av spillet. */
     si: ((hvem: string, tekst: string, fra?: THREE.Vector3) => void) | null;
-    /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
-    environment: THREE.Texture;
+    /** Miljølyset fra himmelen. Bare full kvalitet bruker det. Byttes ut mens døgnet går. */
+    readonly environment: THREE.Texture;
     /** Etterbehandlingen er på: da legger den gløden rundt sola på himmelen (himmel.ts). */
     post: boolean;
     /** Sola kaster skygger. Uten dem ville støvet lyst i hele rommet, ikke bare i strålen. */
@@ -75,15 +75,21 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const materials = new Materials(renderer, { low: opts.low });
     const [gardMod, naboMod, kirkeMod] = await Promise.all([import('./gard'), import('./nabogard'), import('./mariakirken'), materials.load()]);
 
-    // Himmel og miljølys fra stemningen (stemning.ts). Tåka og lysene har `Lyssetting` satt.
-    // Lav kvalitet dropper miljølyset (ett oppslag mindre per piksel) og løfter lyset litt i stedet.
+    // Himmel og miljølys fra lyssettingen (stemning.ts), som følger døgnet. Tåka og lysene har
+    // `Lyssetting` satt. Lav kvalitet dropper miljølyset (ett oppslag mindre per piksel) og løfter
+    // lyset litt i stedet.
     const st = lys.s;
-    const environment = makeSkyEnvironment(renderer, st.zenit, st.horisont, 0x3a3833, { retning: lys.solRetning, farge: st.solFarge, styrke: st.solGlod });
-    scene.environment = opts.low ? null : environment;
+    const miljoLys = () => ({
+        topp: lys.c.zenit, horisont: lys.c.horisont, sol: lys.solRetning, solFarge: lys.c.solFarge,
+        solStyrke: st.solGlod * lys.lysFade, lysniva: Math.min(1, st.fyll * (lys.c.himmel.r + lys.c.himmel.g + lys.c.himmel.b) / 1.2),
+    });
+    const himmellys = new Himmellys(renderer, miljoLys());
+    scene.environment = opts.low ? null : himmellys.texture;
     scene.environmentIntensity = st.miljo;
-    const himmel = new Himmel(st, lys.solRetning);
+    let miljoTid = 2;
+    const himmel = new Himmel(lys);
     // Røyk fra ljorene og støv i rommene (luft.ts).
-    const royk = new Royk(lys.solRetning, st.solFarge, st.himmel);
+    const royk = new Royk(lys.solRetning, lys.c.solFarge, lys.c.himmel);
     const stov = new Stov(lys.solRetning);
     scene.add(himmel.mesh, royk.mesh, stov.mesh);
 
@@ -133,10 +139,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         };
     });
     // ── Vågen ── (etter cellene: speilingen trenger bryggefrontens ende i begge retninger)
-    const vann = lagVann({
-        y: WATER_Y, frontZ: FRONT_Z, frontX0: xw, frontX1: xe, horisont: st.takeFarge, zenit: st.zenit,
-        sol: { retning: lys.solRetning, farge: st.solFarge, styrke: st.solGlod },
-    });
+    const vann = lagVann({ y: WATER_Y, frontZ: FRONT_Z, frontX0: xw, frontX1: xe, lys });
     scene.add(vann.mesh);
     // Skipene i Vågen (skip.ts): koggen og jektene gynger med bølgene og har kollider mot færingen.
     const skip = lagSkipene(phys, materials, (x) => slots.find((s) => x >= s.x0 && x < s.x1)?.front ?? 0);
@@ -219,6 +222,15 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     let skyggeMaal = 0;
     const ctx: CellCtx = { kamera: new THREE.Vector3(), spiller: new THREE.Vector3(), si: (hvem, tekst, fra) => world.si?.(hvem, tekst, fra) };
     const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
+        // Døgnet og været først: alt under leser fargene og sola derfra.
+        lys.tikk(dt, scene);
+        world.regn = lys.vaer.regn;
+        miljoTid -= dt;
+        if (miljoTid <= 0) {
+            miljoTid = 2;
+            himmellys.oppdater(miljoLys());
+            if (scene.environment) scene.environment = himmellys.texture;
+        }
         ctx.kamera.copy(focus);
         ctx.spiller.copy(spiller?.pos ?? focus);
         streamer.tick(t, dt, ctx);
@@ -230,10 +242,11 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         naere.sort((a, b) => a.d - b.d);
         pool.forEach((m, i) => m.flytt(naere[i]?.p ?? parkert));
         vann.update(t, world.regn);
-        himmel.update(t, focus, world.post, st.solGlod);
+        himmel.update(t, focus, world.post);
+        royk.lysFade = lys.lysFade;
         royk.update(t, [...streamer.royk()], focus);
         // Vått med en gang det regner, tørt først etter flere minutter.
-        const vaatMaal = Math.max(st.vaat, Math.min(1, world.regn * 1.4));
+        const vaatMaal = Math.min(1, world.regn * 1.4);
         world.vaat += (vaatMaal - world.vaat) * Math.min(1, dt * (vaatMaal > world.vaat ? 0.5 : 0.004));
         materials.vaat.mengde = world.vaat;
         skip.update(t);
@@ -293,8 +306,12 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
                 innerst = b;
             }
         }
+        // Regnet og dryppet lyser ikke selv: de får lyset fra himmelen.
+        regn.farge.setHex(0xc8d0d6).multiplyScalar(vann.husLys());
+        drypp.farge.setHex(0xdde4ea).multiplyScalar(vann.husLys());
         regn.update(t % 600, focus, world.regn, Math.min(1, inne * 2));
-        drypp.update(t % 600, focus, streamer.drypp(), world.vaat, world.regn, Math.min(1, inne * 2));
+        // Det drypper mens det regner og et par minutter etterpå, så lenge det renner av takene.
+        drypp.update(t % 600, focus, streamer.drypp(), lys.vaer.takvann, world.regn, Math.min(1, inne * 2));
         skyggeTid -= dt;
         if (skyggeTid <= 0) {
             skyggeTid = 0.25;
@@ -349,17 +366,19 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         kaiKant: { x0: xw, x1: xe, y: WATER_Y + 0.15, z: -0.6 },
         underlag,
         si: null,
-        // ?regn=0 til 1 overstyrer (for skjermbilder og måling). Standard: det stemningen sier.
-        regn: regnFraUrl() ?? st.regn,
+        regn: lys.vaer.regn,
         post: false,
         skygger: true,
-        vaat: st.vaat,
+        vaat: lys.vaatStart,
         skygge: 0,
         streamer,
         materials,
-        environment,
+        get environment() {
+            return himmellys.texture;
+        },
         update,
         dispose: () => {
+            himmellys.dispose();
             himmel.dispose();
             royk.dispose();
             stov.dispose();
@@ -374,7 +393,14 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             rescue: new THREE.Vector3(-1.5, 0, 2.5),
         },
     };
-    // Utviklerverktøy: testskript kan lese hvor måkene er og skru regnet (`__bryggenVerden.regn`).
+    // ?regn=0 til 1 låser været på det regnet (for skjermbilder og måling).
+    const regnUrl = regnFraUrl();
+    if (regnUrl !== null) {
+        lys.vaer.laas(regnUrl);
+        world.regn = regnUrl;
+    }
+    // Utviklerverktøy: testskript kan lese hvor måkene er og skru regnet
+    // (`__bryggenLys.vaer.laas(0.6)`; `null` slipper været løs igjen).
     if (import.meta.env.DEV) Object.assign(window, { __bryggenMaaker: maaker, __bryggenRotter: rotter, __bryggenVerden: world, __bryggenHimmel: himmel, __bryggenStov: stov, __bryggenRoyk: royk, __bryggenDrypp: drypp });
     return world;
 }
