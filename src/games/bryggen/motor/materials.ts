@@ -106,6 +106,8 @@ export class Materials {
                 );
             };
             m.customProgramCacheKey = () => 'tynn-take';
+            // Strømmingen kjenner landemerker på dette og lar dem stå i tåka (streaming.ts).
+            m.userData.tynnTake = true;
             this.tynne.set(key, m);
         }
         return m;

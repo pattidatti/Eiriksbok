@@ -7,6 +7,7 @@
 // Skroget er laget i kode av tverrsnitt langs båten, og UV-ene er i meter (langs båten og rundt
 // skroget), så treteksturen fra byen legger seg som planker i riktig retning.
 import * as THREE from 'three';
+import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 /** Halv lengde (fra midten til stavnen) og halv bredde midtskips, i meter. */
 export const FAERING_L = 2.9;
@@ -75,20 +76,18 @@ export function lagFaeringSkrog(tre: THREE.Material, mork: THREE.Material): THRE
     skrog.setIndex(idx);
     skrog.computeVertexNormals();
     // Utsida og innsida i samme flate. Innsida er mørkere (skygge og vann i bunnen).
-    const ute = new THREE.Mesh(skrog, tre);
-    ute.castShadow = true;
-    const inne = new THREE.Mesh(skrog, mork);
-    g.add(ute, inne);
+    // Alle delene samles til slutt i én geometri per materiale: to tegnekall for hele båten
+    // (pluss ett i skyggen) i stedet for tretten.
+    const treDeler: THREE.BufferGeometry[] = [skrog];
+    const morkDeler: THREE.BufferGeometry[] = [skrog];
 
     // Ripa: en list langs toppen av øverste bord, rundt hele båten.
     const ripe = (side: number) => {
         const pts: THREE.Vector3[] = [];
         for (let i = 0; i <= N; i++) pts.push(punkt(-1 + (2 * i) / N, 1, side, 0.012));
-        const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), N, 0.028, 5, false), tre);
-        m.castShadow = true;
-        return m;
+        return new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), N, 0.028, 5, false);
     };
-    g.add(ripe(1), ripe(-1));
+    treDeler.push(ripe(1), ripe(-1));
 
     // Stavnene: en bøyd stokk i hver ende som reiser seg over ripa.
     for (const ende of [-1, 1]) {
@@ -99,9 +98,7 @@ export function lagFaeringSkrog(tre: THREE.Material, mork: THREE.Material): THRE
             const { kjol, ripe: r } = snitt(u);
             pts.push(new THREE.Vector3(0, THREE.MathUtils.lerp(kjol, r + 0.14, t), u * FAERING_L + ende * t * 0.12));
         }
-        const m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 10, 0.045, 5, false), tre);
-        m.castShadow = true;
-        g.add(m);
+        treDeler.push(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 10, 0.045, 5, false));
     }
 
     // Tiljene (golvbordene) i bunnen: litt over vannflata og formet etter skroget i den høyden,
@@ -135,13 +132,25 @@ export function lagFaeringSkrog(tre: THREE.Material, mork: THREE.Material): THRE
     tiljeGeo.setAttribute('uv', new THREE.Float32BufferAttribute(tuv, 2));
     tiljeGeo.setIndex(ti);
     tiljeGeo.computeVertexNormals();
-    g.add(new THREE.Mesh(tiljeGeo, mork));
+    morkDeler.push(tiljeGeo);
     for (const z of [-1.4, -0.25, 1.1]) {
         const { b } = snitt(z / FAERING_L);
-        const tofte = new THREE.Mesh(new THREE.BoxGeometry(b * 1.85, 0.05, 0.22), tre);
-        tofte.position.set(0, 0.2, z);
-        tofte.castShadow = true;
-        g.add(tofte);
+        treDeler.push(new THREE.BoxGeometry(b * 1.85, 0.05, 0.22).translate(0, 0.2, z));
     }
+    const ute = new THREE.Mesh(samle(treDeler), tre);
+    ute.castShadow = true;
+    g.add(ute, new THREE.Mesh(samle(morkDeler), mork));
+    return g;
+}
+
+/** Slår sammen indekserte deler med posisjon, normal og UV til én geometri (ett tegnekall). */
+function samle(deler: THREE.BufferGeometry[]): THREE.BufferGeometry {
+    const g = mergeGeometries(deler.map((d) => {
+        const ut = new THREE.BufferGeometry();
+        for (const a of ['position', 'normal', 'uv']) ut.setAttribute(a, d.getAttribute(a));
+        ut.setIndex(d.index);
+        return ut;
+    }));
+    if (!g) throw new Error('samle: delene har ulike attributter');
     return g;
 }

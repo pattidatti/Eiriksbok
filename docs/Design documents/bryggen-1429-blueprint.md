@@ -536,10 +536,33 @@ fronten. Fra Vågen 294 tegnekall og 428k trekanter, mot 272 og 354k med folkene
 skygge, og folk lenger unna enn 45 m tegnes ikke. Scenen uten folk ligger allerede over 250
 tegnekall fra Vågen på full kvalitet; det må ses på før flere gårder får innhold.
 
+Tegnekallene kuttet (02.10.2026, SwiftShader, 1366×768, full kvalitet, fotokameraet låst; målt med
+`renderBufferDirect` pakket inn per pass, fem bilder per kamera, to kjøringer, tallene var like hver
+gang). Vågen: `pos [4, 5, -34]`, `look [6, 3, 12]`. Gårdsrommet: `pos [0, 1.7, 3]`, `look [0, 1.2, 30]`. Totalen er
+`renderer.info`; skygge og scene er tellingen per pass (den kan avvike med et par kall).
+
+| Kamera | Før: kall (skygge, scene), trekanter | Etter: kall (skygge, scene), trekanter |
+|---|---|---|
+| Vågen | 322 (74, 249), 497k | 202 (44, 159), 346k |
+| Gårdsrommet | 249 (74, 176), 407k | 173 (44, 130), 378k |
+
+Hva tegnekallene gikk til: den første gården var én `MeshKit` per hus, 12 stykker med 5-8 materialer
+hver (68 kall pluss 29 i skyggen), og nabogårdene 15-16 kall hver fordi halvdelene dobler
+materialene. Bua var 77k trekanter i ett kall (innredningen), tegnet to ganger fordi den sto i
+skyggen. Færingen var 13 kall. Kuttet: gården i to halvdeler (som nabogårdene) med innredningen i en
+egen del uten skygge som skjules bak 30 m; halvdelene tegnes samlet lenger unna enn 30 m fra gutten
+(uten skygge); færingen i én geometri per materiale; celler bak 110 m (tett tåke) tegnes ikke.
+Skjermbildene før og etter er like utenom det som beveger seg (folk, måker, skip). I gårdsrommet tegnes
+naboene nå samlet, så trekantene der sank mindre. Igjen: skipene (4 kall og 22k trekanter i skyggen),
+allmenningen (16 kall), silhuettene i tåka (20 bokser, ett kall hver når man ser mot Vågen fra kaia)
+og havbunnen under det ugjennomsiktige vannet (ett kall).
+
 ### 9.6 Strømming og LOD
 
 **Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
 middels-nivået (husene som bokser og prismer i flat farge, én tegning per celle) vises bak 70 m.
+Gårdene er delt i to halvdeler nær gutten og samlet bak 30 m; innredningen skjules bak 30 m, og
+ingenting tegnes bak 110 m utenom landemerkene (§9.5, tegnekallene kuttet).
 Kolliderne lages og fjernes med cella. Cellene er foreløpig én gård eller allmenning bred (9-20 × 61 m; nabogårdene har ulik bredde),
 bygget i kode med `import()`, ikke glTF. Fjernt nivå (silhuettkort) er ikke laget; tåka gjør jobben.
 

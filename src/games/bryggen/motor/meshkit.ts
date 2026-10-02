@@ -243,6 +243,26 @@ export class MeshKit {
     }
 }
 
+/**
+ * Slår sammen flere MeshKit til én: bøttene med samme materiale legges etter hverandre. Til
+ * avstandsnivået der en celle er delt i halvdeler (`CellContent.samlet`).
+ */
+export function slaSammen(kits: MeshKit[]): MeshKit {
+    const ut = new MeshKit();
+    for (const k of kits) {
+        for (const [key, b] of k.buckets) {
+            const t = ut.bucket(key);
+            const base = t.vertexCount;
+            for (const v of b.pos) t.pos.push(v);
+            for (const v of b.nor) t.nor.push(v);
+            for (const v of b.uv) t.uv.push(v);
+            for (const v of b.col) t.col.push(v);
+            for (const i of b.idx) t.idx.push(base + i);
+        }
+    }
+    return ut;
+}
+
 /** Kollider-beskrivelse. Strømmingen lager Rapier-kroppene når cellen lastes, og fjerner dem igjen. */
 export type ColliderSpec =
     | { kind: 'box'; center: THREE.Vector3; half: THREE.Vector3; rot?: THREE.Euler; prop?: boolean }

@@ -7,7 +7,9 @@
 // Hver celle har to nivåer:
 //  - nær: full geometri med PBR, og kollidere i Rapier
 //  - middels: sammenslåtte bokser med flat farge, ingen tekstur (vises bak NEAR_R)
-// Tåka skjuler resten, så det trengs ikke et tredje nivå ennå.
+// Tåka skjuler resten, så det trengs ikke et tredje nivå ennå. Bak TAAKE_R er tåka tett, og da
+// tegnes ikke cella i det hele tatt (unntatt landemerker med tynnere tåke). Innredningen (`inne`)
+// synes bare gjennom dører og glugger, og skjules bak INNE_R.
 //
 // Kollidere finnes bare for celler som er lastet. Når cellen kastes, fjernes Rapier-kroppene
 // og geometrien. Materialene deles og blir liggende (se materials.ts).
@@ -20,10 +22,39 @@ export const LOAD_R = 120;
 export const DROP_R = 180;
 /** Bak denne avstanden vises middels-nivået i stedet for full geometri. */
 export const NEAR_R = 70;
+/**
+ * Bak denne avstanden er tåka (FogExp2 0,021) over 99 % tett: cella tegnes ikke, verken nær
+ * eller middels. Celler blir liggende lastet helt ut til DROP_R, og ellers kostet hver av dem et
+ * tegnekall i ren tåkefarge. Landemerker (materialer fra `tynnTake`) synes lenger og skjules ikke.
+ */
+export const TAAKE_R = 110;
+/**
+ * Innredningen i et hus synes bare gjennom en åpen dør eller glugg. Lenger unna enn dette (fra
+ * cella) skjules den: fra Vågen er bua et mørkt hull i tåka.
+ */
+export const INNE_R = 30;
+/**
+ * Celler som er delt i halvdeler (så Three kan hoppe over den som er utenfor bildet eller
+ * skyggekameraet), tegnes samlet lenger unna enn dette: der ser man uansett begge halvdelene,
+ * og delingen dobler bare tegnekallene. Den samlede kaster ikke skygge (kula rundt hele cella
+ * traff nesten alltid skyggekameraet), så den brukes bare så langt fra skyggens midte at
+ * skyggene ikke når inn i skyggekameraet (32 m bredt, skygger på opptil 8 m).
+ */
+export const SAMLET_R = 30;
 
 export interface CellContent {
     near: THREE.Object3D;
     mid?: THREE.Object3D;
+    /**
+     * Innredning (bua, schøtstua): en del av `near` som skjules når cella er lenger unna enn
+     * INNE_R. Kaster ikke skygge; veggene skygger allerede for sola inne.
+     */
+    inne?: THREE.Object3D[];
+    /**
+     * Samme geometri to ganger: `delt` (halvdelene) nær, `samlet` (én tegning per materiale for
+     * hele cella) bak SAMLET_R. Begge ligger i `near`.
+     */
+    samlet?: { delt: THREE.Object3D[]; samlet: THREE.Object3D };
     colliders: ColliderSpec[];
     /** Det som lever i cella (flammer, røyk, folk). Kalles hvert bilde mens nær-nivået vises. */
     tick?: (t: number, dt: number, ctx: CellCtx) => void;
@@ -84,6 +115,8 @@ interface LiveCell {
     bodies: RAPIER_NS.Collider[];
     /** Satt når cella ble forlatt mens den lastet: kast den så fort den er ferdig. */
     dropped?: boolean;
+    /** Har materialer med tynnere tåke (et landemerke): skjules ikke bak TAAKE_R. */
+    landemerke?: boolean;
 }
 
 export class CellStreamer {
@@ -107,19 +140,29 @@ export class CellStreamer {
 
     /**
      * Kalles jevnlig med spillerens (eller kameraets) posisjon. Returnerer et løfte som er
-     * ferdig når alle celler innen LOAD_R er lastet; ved oppstart ventes det på det.
+     * ferdig når alle celler innen LOAD_R er lastet; ved oppstart ventes det på det. `skygge` er
+     * midten av skyggekameraet (gutten), når den ikke er `focus` (fotokameraet i dev).
      */
-    update(focus: THREE.Vector3): Promise<void> {
+    update(focus: THREE.Vector3, skygge: THREE.Vector3 = focus): Promise<void> {
         const jobs: Promise<void>[] = [];
         for (const def of this.cells) {
             const d = this.dist(def, focus.x, focus.z);
+            const dSkygge = skygge === focus ? d : this.dist(def, skygge.x, skygge.z);
             const cell = this.live.get(def.id);
             if (!cell && d < LOAD_R) jobs.push(this.load(def));
             else if (cell && d > DROP_R) this.drop(cell);
             else if (cell?.state === 'live' && cell.content) {
                 const near = d < NEAR_R || !cell.content.mid;
-                cell.content.near.visible = near;
-                if (cell.content.mid) cell.content.mid.visible = !near;
+                const sett = d < TAAKE_R || !!cell.landemerke;
+                cell.content.near.visible = near && sett;
+                if (cell.content.mid) cell.content.mid.visible = !near && sett;
+                for (const o of cell.content.inne ?? []) o.visible = d < INNE_R;
+                const sam = cell.content.samlet;
+                if (sam) {
+                    const delt = Math.min(d, dSkygge) < SAMLET_R;
+                    for (const o of sam.delt) o.visible = delt;
+                    sam.samlet.visible = !delt;
+                }
             }
         }
         return Promise.all(jobs).then(() => undefined);
@@ -137,6 +180,10 @@ export class CellStreamer {
         }
         cell.content = content;
         cell.state = 'live';
+        content.near.traverse((o) => {
+            const m = (o as THREE.Mesh).material as THREE.Material | undefined;
+            if (m?.userData.tynnTake) cell.landemerke = true;
+        });
         for (const spec of content.colliders) {
             const c = spec.kind === 'box'
                 ? this.phys.addBox(spec.center, spec.half, spec.rot, spec.prop)
@@ -144,6 +191,8 @@ export class CellStreamer {
             if (c) cell.bodies.push(c);
         }
         this.root.add(content.near);
+        // Til første `update`: delt nær, samlet skjult.
+        if (content.samlet) content.samlet.samlet.visible = false;
         if (content.mid) {
             content.mid.visible = false;
             this.root.add(content.mid);

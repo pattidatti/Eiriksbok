@@ -9,7 +9,7 @@
 // akkurat her ved Nikolaikirkeallmenningen i 1420-årene er ikke slått fast [K], så gården har
 // ikke navn ennå.
 import * as THREE from 'three';
-import { ColliderKit, MeshKit, type MatKey } from '../motor/meshkit';
+import { ColliderKit, MeshKit, slaSammen, type MatKey } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
 import { WATER_Y } from '../motor/boat';
@@ -335,20 +335,28 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     const plasser: Plass[] = [];
     const iVerden = (list: Plass[], m: THREE.Matrix4, rot: number) =>
         list.forEach((p) => plasser.push({ ...p, pos: p.pos.clone().applyMatrix4(m), yaw: p.yaw + rot }));
-    // Ett hus = én MeshKit = ett tegnekall per materiale.
+    // Husene slås sammen i to halvdeler som nabogårdene (forhusene med kaia, og resten innover):
+    // én tegning per materiale per halvdel. Som ett hus per MeshKit kostet gården 68 tegnekall
+    // fra Vågen og 29 i skyggen. Innredningen (bua, schøtstua) får en egen MeshKit per hus uten
+    // skygge: veggene skygger allerede for sola inne, og den skjules på avstand (`inne`).
+    const fram = new MeshKit();
+    const bak = new MeshKit();
+    const split = FRONT_Z + 22;
+    const inne: THREE.Object3D[] = [];
     p.houses.forEach((h, i) => {
-        const k = new MeshKit();
+        const k = h.z < split && !h.rot ? fram : bak;
         const m = new THREE.Matrix4().makeRotationY(h.rot ?? 0).setPosition(ox + h.x, 0, h.z);
         k.matrix = m.clone();
         c.matrix = m.clone();
         hus(k, c, h.spec);
+        const ki = new MeshKit();
+        ki.matrix = m.clone();
         if (h.spec.inne && !h.spec.inne.ljore) {
             // Bua: ingen ild. Lyset kommer inn gjennom dørene, så dagslyset dempes bare litt.
-            iVerden(bu(k, c, h.spec), m, h.rot ?? 0);
+            iVerden(bu(ki, c, h.spec), m, h.rot ?? 0);
             for (const r of romIHus(h.spec, 0.55)) rom.push({ box: r.box.applyMatrix4(m), demp: r.demp });
         } else if (h.spec.inne) {
-            // Innredningen går i husets egne bøtter: ingen ekstra tegnekall.
-            const info = schotstue(k, c, h.spec);
+            const info = schotstue(ki, c, h.spec);
             iVerden(info.folk, m, h.rot ?? 0);
             const ild = new Ild({ smokeTop: eaveY(h.spec) + riseOf(h.spec) - 0.3 - info.ild.y, spread: 0.45 });
             ild.group.position.copy(info.ild).applyMatrix4(m);
@@ -357,13 +365,17 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
             ildPos.push(ild.group.position.clone().setY(ild.group.position.y + 0.5));
             rom.push({ box: info.rom.box.clone().applyMatrix4(m), demp: info.rom.demp });
         }
-        near.add(toGroup(k, mats, `hus${i}`));
+        if (ki.buckets.size > 0) {
+            const g = toGroup(ki, mats, `hus${i}:inne`, false);
+            near.add(g);
+            inne.push(g);
+        }
         lod.matrix = m.clone();
         husLod(lod, h.spec, (key) => mats.lodColor(key));
     });
 
-    // Felles: gårdsrommet, svalgangene, trappene, kaia og småting.
-    const k = new MeshKit();
+    // Felles: gårdsrommet, svalgangene, trappene, kaia og småting. Går i forhalvdelen.
+    const k = fram;
     k.matrix = new THREE.Matrix4().makeTranslation(ox, 0, 0);
     c.matrix = k.matrix.clone();
     const back = p.backZ;
@@ -409,7 +421,10 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     plasser.push({ figur: 'fisker', rolle: 'staa', pos: V(ox + 6.1, 0, 1.7), yaw: -1.35, samtale: 'fisker' });
     // Buntene skutedrengen bærer inn i bua: lagt opp på kaia fra båten [S].
     buntStabel(k, c, -4.55, 1.45);
-    near.add(toGroup(k, mats, 'felles'));
+    // Halvdelene nær, og hele gården samlet lenger unna (streaming.ts, SAMLET_R).
+    const delt = [toGroup(fram, mats, 'gard:fram'), toGroup(bak, mats, 'gard:bak')];
+    const samlet = toGroup(slaSammen([fram, bak]), mats, 'gard:samlet', false);
+    near.add(...delt, samlet);
 
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'gard:lod';
@@ -417,7 +432,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     const folk = await lagFolk(plasser, mats, Math.abs(Math.round(ox)) + 7, ruter(ox, back));
     near.add(folk.group);
     return {
-        near, mid, colliders: [...c.specs, ...folk.colliders], ild: ildPos, rom,
+        near, mid, inne, samlet: { delt, samlet }, colliders: [...c.specs, ...folk.colliders], ild: ildPos, rom,
         gaaende: folk.gaaende, snakkbare: folk.snakkbare,
         // Gutten kan bære bunter fra stabelen på kaia til bismeren i bua, som skutedrengen.
         bunter: [{ hent: V(ox - 4.55, 0, 2.15), lever: V(ox - 3.75, 0.2, 10.3) }],
