@@ -15,6 +15,9 @@ import type { CellContent } from '../motor/streaming';
 import { WATER_Y } from '../motor/boat';
 import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
 import { schotstue } from './schotstue';
+import { bu } from './bu';
+import { romIHus } from './inne';
+import type { Rom } from '../motor/streaming';
 import { Ild } from '../motor/ild';
 
 export const HOUSE_W = 7;
@@ -72,8 +75,11 @@ function plan(): { houses: Placed[]; backZ: number; west: { z0: number; z1: numb
     };
     const one = 1 as const;
     const wEnd = row(xw, 1, [
+        // Bua og lagerloftet kan gås inn i: fra kaia gjennom bu-døra, fra gårdsrommet, og fra
+        // svalgangen inn i loftet. Trappa står langs veggen mot nabogården (bu.ts).
         { l: 9.5, floors: [2.6, 2.4, 2.3], roof: 'torv', pitch: 0.9, tint: T(1.0, WARM), facade: true, vinsj: true, krag: 0.38, gap: 0.9,
-            doors: [{ side: one, z: 2.2 }, { side: one, z: 6.8, open: true }], upperDoors: [{ side: one, z: 4.5 }] },
+            doors: [{ side: one, z: 2.2 }, { side: one, z: 6.8, open: true }], upperDoors: [{ side: one, z: 4.5, open: true }],
+            inne: { etasjer: 2, trapp: { side: -1, z0: 3.0, z1: 6.2 } } },
         { l: 8, floors: [2.6, 2.5], roof: 'bordtak', pitch: 0.8, tint: T(0.92, COLD), gap: 0,
             doors: [{ side: one, z: 3 }], upperDoors: [{ side: one, z: 5.5 }] },
         { l: 9, floors: [2.6, 2.4, 2.2], roof: 'torv', pitch: 0.9, tint: T(0.96, DARK), gap: 0.9,
@@ -323,7 +329,7 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
     const p = plan();
     const ilder: Ild[] = [];
     const ildPos: THREE.Vector3[] = [];
-    const rom: THREE.Box3[] = [];
+    const rom: Rom[] = [];
     // Ett hus = én MeshKit = ett tegnekall per materiale.
     p.houses.forEach((h, i) => {
         const k = new MeshKit();
@@ -331,7 +337,11 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
         k.matrix = m.clone();
         c.matrix = m.clone();
         hus(k, c, h.spec);
-        if (h.spec.inne) {
+        if (h.spec.inne && !h.spec.inne.ljore) {
+            // Bua: ingen ild. Lyset kommer inn gjennom dørene, så dagslyset dempes bare litt.
+            bu(k, c, h.spec);
+            for (const r of romIHus(h.spec, 0.55)) rom.push({ box: r.box.applyMatrix4(m), demp: r.demp });
+        } else if (h.spec.inne) {
             // Innredningen går i husets egne bøtter: ingen ekstra tegnekall.
             const info = schotstue(k, c, h.spec);
             const ild = new Ild({ smokeTop: eaveY(h.spec) + riseOf(h.spec) - 0.3 - info.ild.y, spread: 0.45 });
@@ -339,7 +349,7 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
             near.add(ild.group);
             ilder.push(ild);
             ildPos.push(ild.group.position.clone().setY(ild.group.position.y + 0.5));
-            rom.push(info.rom.clone().applyMatrix4(m));
+            rom.push({ box: info.rom.box.clone().applyMatrix4(m), demp: info.rom.demp });
         }
         near.add(toGroup(k, mats, `hus${i}`));
         lod.matrix = m.clone();
@@ -375,7 +385,7 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
     for (const [x, z, t] of [[-7.6, 2.6, 0.95], [-6.9, 3.4, 0.8], [4.2, 3.1, 1.0], [7.5, 2.4, 0.9]] as const) tonne(k, c, x, z, t);
     // I gårdsrommet: tønner inntil veggen, og brannkar med vann under svalgangen ved trappene [S].
     // Alt står inntil veggene, så midten av gårdsrommet og trappefoten er fri.
-    for (const [x, z, t] of [[-1.55, 11.5, 0.85], [1.55, 26.5, 0.95], [1.55, 27.2, 0.8], [-1.55, 30.5, 0.9]] as const) tonne(k, c, x, z, t);
+    for (const [x, z, t] of [[-1.55, 10.2, 0.85], [1.55, 26.5, 0.95], [1.55, 27.2, 0.8], [-1.55, 30.5, 0.9]] as const) tonne(k, c, x, z, t);
     brannkar(k, c, -1.5, p.west.z1 - 1.4);
     brannkar(k, c, 1.5, p.east.z1 - 1.4);
     k.withTint({ top: 0.9, bottom: 0.9 }, () => {

@@ -30,9 +30,18 @@ export interface CellContent {
     /** Ildsteder i verdensrom. Verdenen flytter det felles ildlyset til det nærmeste. */
     ild?: THREE.Vector3[];
     /** Rom man kan gå inn i, i verdensrom. Inne dempes dagslyset. */
-    rom?: THREE.Box3[];
+    rom?: Rom[];
     /** Rydder det cella eier selv (materialer som ikke hører til Materials). */
     dispose?: () => void;
+}
+
+/**
+ * Et rom man kan gå inn i. `demp` er hvor mye dagslyset dempes inne: 1 i schøtstua, der ilden
+ * tar over, mindre i en bu der lyset bare kommer inn gjennom døra.
+ */
+export interface Rom {
+    box: THREE.Box3;
+    demp: number;
 }
 
 export interface CellDef {
@@ -146,7 +155,7 @@ export class CellStreamer {
         for (const cell of this.live.values()) yield* cell.content?.ild ?? [];
     }
 
-    *rom(): Generator<THREE.Box3> {
+    *rom(): Generator<Rom> {
         for (const cell of this.live.values()) yield* cell.content?.rom ?? [];
     }
 

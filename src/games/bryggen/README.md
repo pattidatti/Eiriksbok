@@ -6,7 +6,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Blueprint og motor-audit: `docs/Design documents/bryggen-1429-blueprint.md`
 - Gråboks: `/test/bryggen-graboks` (egen rute, ikke i galleriet). `?skygger=0` måler uten skygger.
 - Første gård: `/test/bryggen-gard` (modulsettet, strømming, kai, Nikolaikirkeallmenningen og 14 nabogårder).
-  Gå rett opp gårdsrommet og inn den åpne døra bakerst: schøtstua med ildstedet.
+  Gå rett opp gårdsrommet og inn den åpne døra bakerst: schøtstua med ildstedet. Forhuset til venstre
+  for kaia (vest) har bu-døra åpen: bua med tørrfisk, bismer og pult, trappa opp til lagerloftet og
+  døra ut på svalgangen.
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
@@ -29,7 +31,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå |
 | `motor/ild.ts` | Åpen ild: flammetunger, glør og røyk (tre tegnekall per bål), og `flakk(t)` som lyset følger |
 | `bygg/moduler.ts` | Modulsettet: laft med laftehoder, gavl, bordkledd fasade, torvtak, bordtak, vinsj, dører, glugger og utkraget overetasje |
-| `bygg/inne.ts` | Hus man kan gå inn i: fire vegger med hull for åpne dører og glugger, sotet innside, golv, innergavler og åser |
+| `bygg/inne.ts` | Hus man kan gå inn i: hule etasjer med hull for åpne dører og glugger, golv, bjelkelag med trappehull og rekkverk, trapp, terskelkiler, innergavler og åser |
+| `bygg/bu.ts` | Bua og lagerloftet: tørrfisk i stabler og bunter, kornsekker, tranfat, bismer, skrivepult med gjeldsbok og kiste |
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper), allmenningen |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
@@ -71,13 +74,22 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   vinsjen starter der. Bare forhusene krager, så husene bak i rekka ikke kolliderer med dem.
 - Glugger og annen pynt som trekkes, bruker et eget frø (`rng` i `moduler.ts`). Da flytter ikke
   resten av gården seg når noe nytt legges til i trekningen.
-- Hus med `inne` (bare én etasje, ingen utkraging) bygges hule av `laftKroppInne`. Åpne dører og
-  glugger blir ekte hull; døra står slått inn mot veggen. Ljoren (`inne.ljore`) deler taket i tre
-  biter langs huset (`takBiter`), og midtbiten starter et stykke ned fra mønet.
+- Hus med `inne` bygges hule av `laftKroppInne`, `inne.etasjer` fra bunnen (standard: alle, og da
+  går rommet opp under taket). Etasjene over bygges lukket av `laftKropp(…, from)`. Utkraging virker
+  også i hule etasjer. Åpne dører og glugger blir ekte hull; døra står slått inn mot veggen, og i de
+  hule etasjene står gavldørene (bu-døra, loftsdørene) åpne. Ljoren (`inne.ljore`) deler taket i tre
+  biter langs huset (`takBiter`), og midtbiten starter et stykke ned fra mønet. Med ljore er
+  innsiden sotet og cella får schøtstua; uten blir det bu (`bu.ts`).
+- `k.at(x, y, z, rot, fn, c)`: send med `ColliderKit` når `fn` lager kollidere, ellers havner de i
+  rommet utenfor. (Uten den sto schøtstuas veggkollidere feil, og man gikk gjennom langveggene.)
+- Golvet inne ligger 0,2 m over bakken, og autostep tar ikke den kanten. Hver åpen dør på bakkeplan
+  får en usynlig kile over terskelen (`terskel`). Ting utenfor en åpen dør må stå minst en halv
+  meter unna, ellers sklir gutten forbi døråpningen.
 - Ildlyset er ett `PointLight` for hele byen, alltid i scenen, flyttet til nærmeste ildsted (innen
   24 m) av `world.update`. Ikke legg lys i cellene: et lys som kommer og går (også når nær-nivået
   skjules) tvinger Three til å bygge alle shaderne på nytt.
 - Cellene kan ha `tick` (flammer), `ild` (ildsteder), `rom` (bokser man kan gå inn i) og `dispose`.
   Står kameraet inne i et `rom`, dempes sola, halvkulelyset og miljølyset mykt, så ilden tar over.
-  Kameraet avgjør, ikke gutten: ellers blir rommet mørkt mens kameraet ennå står ute.
+  Kameraet avgjør, ikke gutten: ellers blir rommet mørkt mens kameraet ennå står ute. `rom.demp` sier
+  hvor mye (1 i schøtstua, 0,55 i bua der det ikke brenner ild og lyset kommer inn døra).
 - Ingen fil over 800 linjer.

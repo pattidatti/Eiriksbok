@@ -78,11 +78,17 @@ export class MeshKit {
         if (m) this.matrix = m;
     }
 
-    /** Kjør `fn` med en ekstra flytting/rotasjon. */
-    at(x: number, y: number, z: number, rotY: number, fn: () => void): void {
+    /**
+     * Kjør `fn` med en ekstra flytting/rotasjon. Lager `fn` kollidere, send med `c`: da flyttes
+     * de på samme måte. Ellers havner de i rommet utenfor (og står feil).
+     */
+    at(x: number, y: number, z: number, rotY: number, fn: () => void, c?: ColliderKit): void {
         const m = new THREE.Matrix4().makeRotationY(rotY).setPosition(x, y, z);
         this.push(m);
+        const old = c?.matrix;
+        if (c) c.matrix = c.matrix.clone().multiply(m);
         fn();
+        if (c && old) c.matrix = old;
         this.pop();
     }
 

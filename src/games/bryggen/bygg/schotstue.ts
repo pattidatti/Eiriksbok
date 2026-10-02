@@ -9,7 +9,8 @@
 import * as THREE from 'three';
 import type { ColliderKit, MeshKit } from '../motor/meshkit';
 import { eaveY, rng, type HouseSpec } from './moduler';
-import { GOLV_Y, WALL_T } from './inne';
+import { GOLV_Y, WALL_T, romIHus } from './inne';
+import type { Rom } from '../motor/streaming';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -22,7 +23,7 @@ export interface SchotstueInfo {
     /** Midt i bålet, i husets rom. */
     ild: THREE.Vector3;
     /** Rommet innenfor veggene, i husets rom. */
-    rom: THREE.Box3;
+    rom: Rom;
 }
 
 /** Bygger innredningen i husets eget rom. Huset må ha `inne`. */
@@ -62,7 +63,7 @@ export function schotstue(k: MeshKit, c: ColliderKit, s: HouseSpec): SchotstueIn
     vedstabel(k, c, -xIn + 0.35, s.l - WALL_T - 1.4, r);
     return {
         ild: V(0, GOLV_Y + 0.12, cz),
-        rom: new THREE.Box3(V(-xIn, 0, WALL_T), V(xIn, eaveY(s) + 2, s.l - WALL_T)),
+        rom: romIHus(s, 1)[0],
     };
 }
 

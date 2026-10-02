@@ -11,7 +11,7 @@
 import * as THREE from 'three';
 import { type ColliderKit, type MatKey, type MeshKit, type Tint } from '../motor/meshkit';
 import { LOG_H } from '../motor/materials';
-import { SOT, dorbladInne, laftKroppInne } from './inne';
+import { LOFTSDOR, PORT, SOT, apentTak, biter, dorbladInne, gavlHull, hule, laftKroppInne, OVREDOR, terskel } from './inne';
 
 export interface HouseSpec {
     w: number;
@@ -30,16 +30,25 @@ export interface HouseSpec {
     vinsj?: boolean;
     /** Dører i første etasje: side (-1 = mot -x, 1 = mot +x) og z. */
     doors?: { side: -1 | 1; z: number; open?: boolean }[];
-    /** Dører i andre etasje ut mot svalgangen. */
-    upperDoors?: { side: -1 | 1; z: number }[];
+    /** Dører i andre etasje ut mot svalgangen. Åpne dører går inn i loftet når det er hult. */
+    upperDoors?: { side: -1 | 1; z: number; open?: boolean }[];
     /** Kanter rundt hvert laftehode (standard 8). Nabogårdene bruker færre: hodene er to tredeler av trekantene. */
     hodeSeg?: number;
     /** Hvor mye hver etasje over den første stikker ut over gavlen mot sjøen (m). */
     krag?: number;
     /** Små vinduer med luke. Side 0 er framgavlen (`at` = x), ellers en langvegg (`at` = z). */
     glugger?: Glugg[];
-    /** Huset har et rom man kan gå inn i (bare én etasje, ingen utkraging). Se inne.ts. */
-    inne?: { ljore?: Ljore };
+    /** Huset har rom man kan gå inn i. Se inne.ts. */
+    inne?: Inne;
+}
+
+export interface Inne {
+    /** Røykhull over ildstedet (schøtstua). */
+    ljore?: Ljore;
+    /** Hvor mange etasjer fra bunnen som er hule. Standard: alle (rommet går opp under taket). */
+    etasjer?: number;
+    /** Trapp langs langveggen `side` fra golvet i `z0` opp til loftet i `z1`. */
+    trapp?: { side: -1 | 1; z0: number; z1: number };
 }
 
 /** Røykhullet i taket over ildstedet: midt på langs (`z`), `len` langt og `down` ned fra mønet. */
@@ -63,7 +72,7 @@ export const riseOf = (s: HouseSpec) => s.pitch * (s.w / 2);
 export const floorZ = (s: HouseSpec, i: number) => -(s.krag ?? 0) * Math.min(i, s.floors.length - 1);
 /** Framgavlen øverst, der gavltrekanten og taket starter. */
 export const frontZ = (s: HouseSpec) => floorZ(s, s.floors.length - 1);
-const floorY = (s: HouseSpec, i: number) => s.floors.slice(0, i).reduce((a, b) => a + b, 0);
+export const floorY = (s: HouseSpec, i: number) => s.floors.slice(0, i).reduce((a, b) => a + b, 0);
 
 /** Liten, deterministisk tilfeldighet (mulberry32): samme frø gir samme hus hver gang. */
 export function rng(seed: number): () => number {
@@ -86,13 +95,15 @@ const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 /**
  * Veggene som laftet kropp, én etasje om gangen, med mørk fot (fukt og skitt nederst) og svill
  * av råtre. Kraget en etasje ut, bærer bjelkehoder den over gavlen på etasjen under.
+ * `from` er første etasje som bygges lukket (de under er hule, se inne.ts).
  */
-function laftKropp(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
+function laftKropp(k: MeshKit, c: ColliderKit, s: HouseSpec, from = 0): void {
     const t = s.tint;
     // Svillen: en grov stokk som huset hviler på.
-    k.withTint({ ...t, top: t.top * 0.7 }, () => k.box('raatre', 0, 0.12, s.l / 2, s.w + 0.06, 0.24, s.l + 0.06, { skip: ['bottom'] }));
+    if (from === 0) k.withTint({ ...t, top: t.top * 0.7 }, () => k.box('raatre', 0, 0.12, s.l / 2, s.w + 0.06, 0.24, s.l + 0.06, { skip: ['bottom'] }));
     const foot = 0.9;
     s.floors.forEach((fh, i) => {
+        if (i < from) return;
         const y0 = floorY(s, i);
         const y1 = y0 + fh;
         const zf = floorZ(s, i);
@@ -116,7 +127,7 @@ function laftKropp(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
  * Undersiden der en etasje stikker ut: bjelkehoder som bærer den, en tverrbjelke ytterst og
  * mørke bord imellom. Alt fra `zf` (den nye fronten) inn til `zb` (fronten under).
  */
-function utkraging(k: MeshKit, s: HouseSpec, y0: number, zf: number, zb: number): void {
+export function utkraging(k: MeshKit, s: HouseSpec, y0: number, zf: number, zb: number): void {
     const t = s.tint;
     const d = zb - zf;
     k.withTint({ ...t, top: t.top * 0.45, bottom: t.top * 0.45 }, () => k.box('raatre', 0, y0 - 0.02, zf + d / 2, s.w, 0.04, d, { skip: ['top'] }));
@@ -219,8 +230,8 @@ export function dor(k: MeshKit, w: number, h: number, y0: number, open = false, 
 }
 
 /** Snur dør-rommet så døra sitter på en langvegg (side ±1) eller på framgavlen. */
-function onLongWall(k: MeshKit, s: HouseSpec, side: -1 | 1, z: number, fn: () => void): void {
-    k.at(side * (s.w / 2), 0, z, side > 0 ? -Math.PI / 2 : Math.PI / 2, fn);
+function onLongWall(k: MeshKit, s: HouseSpec, side: -1 | 1, z: number, fn: () => void, c?: ColliderKit): void {
+    k.at(side * (s.w / 2), 0, z, side > 0 ? -Math.PI / 2 : Math.PI / 2, fn, c);
 }
 
 // ── Fasaden mot sjøen ──
@@ -228,26 +239,42 @@ function onLongWall(k: MeshKit, s: HouseSpec, side: -1 | 1, z: number, fn: () =>
 /**
  * Bordkledd framgavl: stående bord fra bakken til mønet, en stor bu-dør nederst og
  * loftsdører over hverandre midt på, slik at varene kan heises rett inn på hvert loft.
+ * I de hule etasjene står dørene åpne, og bordene har ekte hull for dører og glugger.
  */
-function fasade(k: MeshKit, s: HouseSpec): void {
+function fasade(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
     const h = eaveY(s);
     const t = s.tint;
     s.floors.forEach((fh, i) => {
         const y0 = floorY(s, i);
         const zf = floorZ(s, i);
+        const apen = i < hule(s);
         // Bordene henger litt ned over bjelkehodene på etasjen under, som et vannbord.
         const drop = i > 0 && zf < floorZ(s, i - 1) ? 0.1 : 0;
-        k.withTint(i === 0 ? { ...t, bottom: t.top * 0.6 } : t, () =>
-            k.box('bordvegg', 0, y0 + fh / 2 - drop / 2, zf - 0.035, s.w + 0.06, fh + drop, 0.07, { skip: ['pz'], shadeFoot: i === 0 })
-        );
+        const hw = s.w / 2 + 0.03;
+        for (const b of biter(-hw, hw, y0 - drop, y0 + fh, apen ? gavlHull(s, i) : [])) {
+            const skip: ('pz' | 'top' | 'bottom')[] = ['pz'];
+            if (b.y1 >= y0 + fh - 0.001) skip.push('top');
+            k.withTint(i === 0 ? { ...t, bottom: t.top * 0.6 } : t, () =>
+                k.box('bordvegg', (b.a + b.b) / 2, (b.y0 + b.y1) / 2, zf - 0.035, b.b - b.a, b.y1 - b.y0, 0.07, { skip, shadeFoot: i === 0 && b.y0 < 0.01 })
+            );
+        }
         // Hjørnebord: dekker overgangen til laften på langveggene.
         k.withTint({ ...t, top: t.top * 0.8 }, () => {
             for (const sx of [-1, 1]) k.box('raatre', sx * (s.w / 2 + 0.02), y0 + fh / 2, zf + 0.02, 0.12, fh, 0.16);
         });
         k.at(0, 0, zf - 0.07, 0, () => {
-            if (i === 0) dor(k, 1.5, 2.05, 0.18, false);
-            else dor(k, 1.0, 1.45, y0 + 0.35, false);
+            if (i === 0) dor(k, PORT.w, PORT.h, PORT.y0, apen, apen);
+            else dor(k, LOFTSDOR.w, LOFTSDOR.h, y0 + LOFTSDOR.over, apen, apen);
         });
+        if (apen) {
+            k.at(0, 0, zf, 0, () => {
+                if (i === 0) {
+                    dorbladInne(k, c, PORT.w, PORT.h, PORT.y0);
+                    terskel(c, PORT.w);
+                }
+                else dorbladInne(k, c, LOFTSDOR.w, LOFTSDOR.h, y0 + LOFTSDOR.over);
+            }, c);
+        }
     });
     // Øverste luke (inn i gavlloftet) står åpen: der går tauet fra vinsjen.
     if (s.vinsj) k.at(0, 0, frontZ(s) - 0.07, 0, () => dor(k, 0.95, 1.25, h + 0.25, true));
@@ -287,9 +314,9 @@ function glugger(k: MeshKit, s: HouseSpec): void {
         const gh = loft ? 0.45 : 0.55;
         if (g.side === 0) {
             const z = (loft ? frontZ(s) : floorZ(s, g.floor)) - (s.facade ? 0.07 : 0);
-            k.at(g.at, 0, z, 0, () => glugg(k, w, gh, y0, g.open));
+            k.at(g.at, 0, z, 0, () => glugg(k, w, gh, y0, g.open, g.floor < hule(s)));
         } else {
-            const through = !!s.inne && g.floor === 0;
+            const through = g.floor < hule(s);
             onLongWall(k, s, g.side, g.at, () => glugg(k, w, gh, y0, g.open, through));
         }
     }
@@ -373,7 +400,7 @@ function tak(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
             const t0 = bit.t0 ?? -0.12;
             // Underlaget: bord fra mønet og ned (synes under takskjegget, og innenfra som sotet tak).
             const under = takflate(s, side, 0.06, 0, 0, t0, zc);
-            k.withTint(s.inne ? SOT : k.tint, () => k.slab('bordtak', under.m, under.len, 0.06, bit.z1 - bit.z0, { grain: 'x' }));
+            k.withTint(apentTak(s) ? SOT : k.tint, () => k.slab('bordtak', under.m, under.len, 0.06, bit.z1 - bit.z0, { grain: 'x' }));
             if (s.roof !== 'torv') continue;
             // Torva: tykk, litt kortere enn underlaget i endene, avrundet i tonen mot kanten.
             const ta = bit.z0 === zA ? bit.z0 + 0.12 : bit.z0;
@@ -486,9 +513,9 @@ function ljore(k: MeshKit, s: HouseSpec, lj: Ljore): void {
 export function hus(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
     k.withTint(s.tint, () => {
         if (s.inne) laftKroppInne(k, c, s);
-        else laftKropp(k, c, s);
+        if (hule(s) < s.floors.length) laftKropp(k, c, s, hule(s));
         laftehoder(k, s);
-        if (s.facade) fasade(k, s);
+        if (s.facade) fasade(k, c, s);
         gavl(k, s, frontZ(s), -1, s.facade ? 0.07 : 0);
         gavl(k, s, s.l, 1);
         tak(k, c, s);
@@ -499,10 +526,20 @@ export function hus(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
             const through = !!s.inne && !!d.open;
             onLongWall(k, s, d.side, d.z, () => {
                 dor(k, 1.05, 1.9, 0.24, d.open, through);
-                if (through) dorbladInne(k, c);
-            });
+                if (through) {
+                    dorbladInne(k, c);
+                    terskel(c, 1.05);
+                }
+            }, c);
         }
-        for (const d of s.upperDoors ?? []) onLongWall(k, s, d.side, d.z, () => dor(k, 0.95, 1.85, s.floors[0] + 0.1));
+        for (const d of s.upperDoors ?? []) {
+            const through = hule(s) > 1 && !!d.open;
+            const y0 = s.floors[0] + OVREDOR.over;
+            onLongWall(k, s, d.side, d.z, () => {
+                dor(k, OVREDOR.w, OVREDOR.h, y0, d.open, through);
+                if (through) dorbladInne(k, c, OVREDOR.w, OVREDOR.h, y0);
+            }, c);
+        }
     });
 }
 

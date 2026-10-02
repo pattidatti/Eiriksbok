@@ -144,11 +144,11 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         } else ildlys.intensity = 0;
         // Inne: 1 når man er mer enn en meter innenfor veggen, tonet ned mot døra.
         let inne = 0;
-        for (const b of streamer.rom()) {
+        for (const { box: b, demp } of streamer.rom()) {
             if (focus.y < b.min.y - 0.5 || focus.y > b.max.y) continue;
             const dx = Math.min(focus.x - b.min.x, b.max.x - focus.x);
             const dz = Math.min(focus.z - b.min.z, b.max.z - focus.z);
-            inne = Math.max(inne, THREE.MathUtils.clamp(Math.min(dx, dz) / 1.0 + 0.3, 0, 1));
+            inne = Math.max(inne, THREE.MathUtils.clamp(Math.min(dx, dz) / 1.0 + 0.3, 0, 1) * demp);
         }
         return inne;
     };

@@ -9,7 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -504,6 +504,10 @@ Inne i schøtstua (02.10.2026, samme maskin): 21-22 FPS på full og 51-53 på la
 46-135k trekanter avhengig av hvor kameraet ser. Innredningen ligger i husets egne bøtter; bålet koster
 tre tegnekall og ett felles punktlys, stein ett til.
 
+Inne i bua (02.10.2026, samme maskin, programvare-GL): 14-18 FPS på full og 39 på lav, 105-148
+tegnekall og 131-151k trekanter. Tørrfisken kostet først 70k trekanter (rund fisk, begge sider av
+stabelen); flat fisk på ti trekanter, og bare på sidene som synes, tok den ned til ca. 10k.
+
 ### 9.6 Strømming og LOD
 
 **Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
@@ -571,8 +575,14 @@ Mixamo brukes ikke (krever innlogging).
   bord på bukker med skåler, kjenger og brød, ved i hjørnet. Ildlyset flakker, og dagslyset dempes
   når kameraet er inne. At schøtstuene hadde åpen ild, er [V]; innredningen i 1420-årene er ikke
   beskrevet i kildene vi har **[K]**, så den følger eldre norske røykstuer **[S]**. Steinteksturen er
-  Poly Haven `rock_wall_08` (CC0). Mangler: inngang i de andre husene (bua), ildhus, ekte gårdsnavn og
-  -bredder fra utgravningsplanene **[K]**
+  Poly Haven `rock_wall_08` (CC0). Mangler: ildhus, ekte gårdsnavn og -bredder fra utgravningsplanene **[K]**
+- [~] Bua og lagerloftet (02.10.2026): vestre forhus kan gås inn i fra kaia (bu-døra står åpen),
+  fra gårdsrommet og fra svalgangen. Bua: stabler av tørrfisk med halene ut, bunter surret med tau,
+  kornsekker, tranfat på slind, bismeren med en bunt i kroken, skrivepult med gjeldsboka og kiste.
+  Bratt trapp langs veggen opp gjennom et hull i bjelkelaget til loftet, med flere stabler og bunter
+  innenfor den åpne loftsdøra under vinsjen. Ingen ild: lyset kommer inn dører og glugger [V forbud
+  mot åpen ild]. At forhusene var lagerhus med uisolerte loft, er [V]; innredningen i 1420-årene
+  er ikke beskrevet i kildene vi har **[K]**, så den følger museet og senere bilder **[S]**
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
 - [ ] Færing (gråboksens form, med ekte treteksturer)
 - [ ] Figurer: junge, husbonde, svenn, nordlandsfisker, tyv, byvakt
