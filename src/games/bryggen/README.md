@@ -9,7 +9,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Gå rett opp gårdsrommet og inn den åpne døra bakerst: schøtstua med ildstedet. Forhuset til venstre
   for kaia (vest) har bu-døra åpen: bua med tørrfisk, bismer og pult, trappa opp til lagerloftet og
   døra ut på svalgangen. Mariakirken står oppe i bakken bak gårdene i nordenden (+x, mot Holmen):
-  gå østover langs kaia, eller se fra Vågen.
+  gå østover langs kaia, eller se fra Vågen. Nikolaikirkeallmenningen (+x for gården) har torg med boder
+  og brønn, rådhuset med svalgang man kan gå opp på, og Nikolaikirken under reparasjon øverst.
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
@@ -57,7 +58,10 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `graboks/bismer.ts`, `graboks/BismerVisning.tsx` | Veie på bismer: flytt hanken til stanga ligger vannrett og les av merket (nordisk bismer, SNL) |
 | `graboks/folkstyring.ts` | Hvem gutten kan snakke med (E), samtalen som pågår og replikkene som vises som undertekst |
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
-| `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper), allmenningen |
+| `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper) |
+| `bygg/allmenning.ts` | Nikolaikirkeallmenningen: gjørme, plankegang, kort kai, rådhuset (steinkjeller, laftet stue, svalgang og trapp) og steintrappa opp mot kirkegården |
+| `bygg/torg.ts` | Torglivet: salgsboder med tørrfisk, korn, kurver og tønner, brønn med vinde, slede med tønne, spor og pytter i gjørma |
+| `bygg/nikolaikirken.ts` | Nikolaikirken øverst i allmenningen: romansk steinkirke med vesttårn, under reparasjon etter brannen 1413 (nytt tak i vest, sperrer og stillas i øst), kirkegård med støttemur og stengt grind |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
 | `bygg/mariakirken.ts` | Mariakirken som kulisse: tvillingtårn, treskipet basilika, gotisk kor, kirkegård med mur. Ingen kollidere |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
@@ -183,4 +187,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Programvare-GL i Playwright kan gi bilder over 0,25 s, og løkka kaster dem (fanebytte-vernet). Da
   står spillet nesten stille i testen. Test bevegelse med `?kvalitet=lav&post=0` og et lite vindu.
 - `game.ts` er nær 800 linjer. Nye systemer får egen fil i `graboks/` og hektes på med få linjer.
+- Nikolaikirken og kirkegården står bak grensa for det spilleren kan gå på (som Mariakirken), og bruker
+  `tynnTake` fordi tårnet er et landemerke. Bare støttemuren og grinda kolliderer; trappa opp ender ved
+  grinda. Rådhuset går i allmenningens egne bøtter, så hele cella er ca. 15 tegnekall.
 - Ingen fil over 800 linjer.

@@ -498,26 +498,3 @@ function buntStabel(k: MeshKit, c: ColliderKit, x: number, z: number): void {
     }
     c.box(x, 0.27, z, 1.1, 0.54, 0.4, true);
 }
-
-/**
- * Nikolaikirkeallmenningen: den brede branngata fra sjøen og opp, byens midtpunkt og torg til
- * 1470 (§5.2). 18 m bred nederst ved Vinkjelleren [V]. Bakken er gjørme med en plankegang
- * opp midten. Kirken øverst og rådhuset (stefnustova) kommer senere.
- */
-export function buildAllmenningCell(mats: Materials, x0: number, x1: number, front: number, sides: Sides = {}): CellContent {
-    const k = new MeshKit();
-    const c = new ColliderKit();
-    const xm = (x0 + x1) / 2;
-    const w = x1 - x0;
-    const depth = FRONT_Z + GARD_DEPTH - front;
-    const zm = front + depth / 2;
-    k.box('gjorme', xm, -0.1, zm + 0.6, w, 0.2, depth - 1.2, { skip: ['bottom'] });
-    c.box(xm, -0.75, zm, w, 1.5, depth);
-    // Plankegang opp midten, og en kort kai ytterst.
-    k.withTint({ top: 0.85, bottom: 0.85 }, () => k.box('gardsrom', xm, -0.02, zm + 2, 2.2, 0.12, depth - 4, { skip: ['bottom'] }));
-    kai(k, c, x0, x1, front, 1.2);
-    kaiJog(k, x0, front, sides.west, -1);
-    kaiJog(k, x1, front, sides.east, 1);
-    const near = toGroup(k, mats, 'allmenning');
-    return { near, colliders: c.specs };
-}
