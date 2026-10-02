@@ -116,8 +116,11 @@ og Sogn, og ca. 300 norske døde på de fire store skipene. Spillet skal vise at
 **Hvem vitaliebrødrene kjempet for [U]:** Historikere er uenige om raidene i 1428-29 var rene
 røvertokt eller angrep på forsyningslinjene til den norske unionsflåten under krigen mot
 Holstein og hansaen (SNL). Hvordan Det tyske kontor på Bryggen forholdt seg mens byen brant, er
-ikke beskrevet i kildene vi har funnet **[K]**. Kapittel 2 må skrives slik at spilleren ser
-tvetydigheten, ikke et fasitsvar.
+ikke beskrevet i noen av de åpne kildene (søkt 02.10.2026: byleksikonet, SNL, norsk og engelsk
+Wikipedia). Det vi vet: hansabyene var i krig med kongen, og raiderne kom delvis fra Wismar, en
+hansaby. Kildene nevner bare kongsgården, bispegården og «deler av byen» som brent, ikke Bryggen
+**[U]**. Neste kilde å lese er Brekke, *Kontoret. Hanseatenes historie* (2024). Kapittel 2 må
+skrives slik at spilleren ser tvetydigheten, ikke et fasitsvar.
 
 **Olav Nilssons tittel:** Eieren skrev «fogden». Kildene kaller ham *høvedsmann* på Bergenhus:
 kongens fremste mann i byen, med ansvar for borgen, loven og forsvaret [V]. Spillet bruker
@@ -137,7 +140,7 @@ kongens fremste mann i byen, med ansvar for borgen, loven og forsvaret [V]. Spil
 | Schøtstuene | Samlingsrom bak gården. Om vinteren flyttet hele gården inn for varme måltider | [V] |
 | Straff | En stuedreng kunne få «fem harde slag over ryggen» for å bryte en regel | [V] museets fortelling, senere tid [U] |
 | Straffelekene | Røykspillet (bundet over brennende avfall fra garveriene, dynket med seks tønner vann, kunne ende med døden), vannspillet (slag så hardt at offeret led i uker), borgspillet (pisking; Christian 4. så det i 1599), damspillet (kastet i skittent vann). Forbudt av hansabyene 1592, Kontoret nektet. Avskaffet ved lov 1671 | [V] for 1500/1600-tallet; [U] for 1400-tallet |
-| Vakthunder, port som stenges om kvelden | Ofte nevnt i populærfortellinger om Bryggen | **[K]** Ikke funnet i verifiserte kilder. Hold det som designvalg [S] til det er bekreftet |
+| Vakthunder, port som stenges om kvelden | Ofte nevnt i populærfortellinger om Bryggen. Søkt 02.10.2026 uten treff i åpne kilder. Museet nevner bare at schøtstuene skulle stenges «i rett tid» om kvelden, og at en edru svenn skulle sitte vakt med brannsprøyte og vannbøtte (senere tid) | **[S]** Hunder og stengt port er designvalg. «Dette vet vi» sier ikke at det var slik |
 | «Nordens farligste plass» | Mannsoverskuddet ga prostitusjon og kriminalitet | [V] Orning |
 
 ### 4.3 Handelen
@@ -149,8 +152,20 @@ kongens fremste mann i byen, med ansvar for borgen, loven og forsvaret [V]. Spil
 - Sommer-ankomsten til jektene: SNL beskriver at jektene hentet tørrfisken i juni og seilte til
   Bergen. Detaljene gjelder senere århundrer [U]. Spillet bruker «jektene kommer om sommeren»
   uten eksakte datoer.
-- Vekt og mynt: hvilke vektenheter (våg, pund) og myntsorter (mark, skilling, lübsk mark) som
-  ble brukt i Bergen på 1420-tallet **[K]**. Må slås opp før økonomien bygges.
+- **Mynt [V]:** Det ble ikke preget norsk mynt fra 1387 til 1482. Det kjennes ingen norske
+  mynter fra Erik av Pommern, Christoffer av Bayern eller Christian 1. (Holst). I Bergen betalte
+  man med hansabyenes mynter: lybske *witten* og hulpenninger, og danske mynter etter at Danmark
+  tok i bruk det lybske systemet. Regneenhetene var de gamle: 1 mark = 8 øre = 24 ertog = 240
+  penninger [V Samlerhuset]. Spillet bruker «witten» som mynten i lomma og «mark» som det store
+  regnestykket i gjeldsboka.
+- **Vekt [V]:** Fisk ble veid i *våg* og *bismerpund*. Bylova av 1276 satte 1 bismerpund =
+  24 merker ≈ 5,1 kg. Fra 1604 er 1 våg = 3 bismerpund ≈ 18,5 kg; på Vestlandet kunne en våg
+  være ca. 22,5 kg (SNL). Våg-størrelsen i 1420-årene er ikke slått fast **[U]**. Spillet bruker
+  «en våg er omtrent det en gutt kan bære» (ca. 18 kg) og veier med bismer (stangvekt med lodd).
+- **Priser [U]:** Ingen åpne kilder gir priser for 1420-årene. Bytteforholdet fisk mot korn er
+  kjent: rundt år 1500 fikk fiskeren 8 kg rug for 1 kg tørrfisk på markedet i Bergen, og 50 år
+  senere bare halvparten (Holm mfl. 2019, etter Nedkvitne 1988). Spillet regner i *bytteforhold*
+  (fisk mot korn), ikke i oppdiktede myntpriser, og sier at tallet er fra rundt 1500.
 - Middelnedertysk ga 30-40 prosent av norske dagligord: *arbeid, handel, toll, betale* [V].
   Spillet bruker dette: plattyske ord i dialogen som eleven kjenner igjen.
 
@@ -187,18 +202,18 @@ utgravningsplaner og gamle bykart **[K]**.
 |---|---|---|---|
 | **Bryggen** | Smale, lange parseller, forretning mot bryggen, lager/bo/verksted innover. Enkel- og dobbeltgårder, svalganger over gårdsrommet i andre etasje. Laftehus med torvtak etter brannen 1248. 2-3 etasjers uisolerte lagerhus (loft). Bygget på bolverk av kryssstablet tømmer | [V] | **MVP** |
 | Bryggens gårder | Navn som overlevde: Finnegården, Holmedalen, Bellgården, Jakobsfjorden, Svensgården, Enhjørningsgården, Bredsgården. Brynjolvsgard i nord var større | [V] | MVP (2-3 gårder) |
-| Allmenninger | Dreggsallmenning og Nikolaikirkeallmenning nevnes | [V]; full liste [K] | MVP (én) |
-| Bryggefronten | Fronten ble flyttet ut i Vågen over tid. Hvor den stod i 1420-årene | **[K]** utgravningsplaner | MVP |
+| Allmenninger | Brede tverrgater fra sjøen og opp, sikret av kongen etter brannen i 1248 som branngater. Bylova 1276: 8 alen (ca. 4,4 m) brede. Nattevakta skulle melde seg ved hver allmenning. Langs Bryggen fra nord til sør: *Maria allmenning* (mot Mariakirken, funnet 1979, 7-8 m bred nederst), *Bua allmenning* (mellom Bugården og Bredsgården), *Breida allmenning* (der Svensgården står), *Nikolaikirkeallmenning* / Yngre Breida (byens midtpunkt, torg til 1470, rådhuset *stefnustova*, 18 m bred ved Vinkjelleren), *Auta allmenning* (dagens Vetrlidsallmenning, Bryggens sørgrense) | [V] Byleksikon, Wikipedia | MVP (Nikolaikirkeallmenning) |
+| Bryggefronten | Vågen ble fylt ut etter hver storbrann fram til 1332; kailinja fra 1332 er kjent fra utgravninger og skriftlige kilder. Etter brannen i 1476 lå fasaden og kaifronten på samme sted til 1900 (Ersland 2022). I 1420-årene lå fronten et sted mellom 1332-linja og 1476-linja **[U]**. Spillet bruker 1332-linja: det er den siste dokumenterte før vår tid | [V] grenser; [U] eksakt linje | MVP |
 | Takene | Torvtak fra middelalderen [V]. Dagens teglstein er fra etter 1702-brannen [V Stiftelsen Bryggen]. Gråboks/MVP bruker torv og bordtak | [V] | MVP |
 | **Mariakirken** | Bergens eldste sognekirke, bygget før 1160. Overdratt Kontoret 1408 | [V] | MVP (fasade) |
-| **Vågen** | Den isfrie havna. Gikk lenger inn enn i dag (til dagens Domkirkegaten, i eldre tid) | [V]; strandlinje 1420 [K] | **MVP** |
+| **Vågen** | Den isfrie havna. Gikk lenger inn enn i dag (til dagens Domkirkegaten, i eldre tid). Strandlinja rundt år 1000 lå 100-150 m innenfor dagens kai | [V]; linja i 1420 som bryggefronten over [U] | **MVP** |
 | **Holmen** | Håkonshallen (ferdig 1261). Magnus Lagabøtes tårn («kastellet ved sjøen», ca. 1273, ringmur, grav og vindebro). Kristkirken (første steinkirke, domkirke, revet 1531). Apostelkirken (ca. 1300, revet 1529-30). Kongsgården og bispegården (brent 1429) | [V] | Fase 3 |
 | **Vågsbunnen** | Bunnen av Vågen. Mikaelskirken brant 1413. Skostredet: korteste vei mellom Bryggen og Stranden | [V] | Fase 2 |
 | **Skomakerne** | De fem tyske lauene («de fif Amten»): bakere, barberere, buntmakere, gullsmeder, skomakere, ca. 150 mann. Skomakerne var sterkest og kunne sperre Skostredet. Oppløst 1560 | [V] Wikipedia; [U] tall for 1420-årene | Fase 2 |
 | **Stranden** | Strandsiden sørvest for Vågen, de norske borgernes side | [V] grovt; detaljer [K] | Fase 2 |
 | **Øvregaten** | Gata bak Bryggen. Gårdene gikk opp mot den | [V] | Fase 2 |
 | **Nordnes** | Munkeliv kloster (grunnlagt 1107-1110, birgittinere fra 1420-årene, brent 1455). Rettersted nær Margaretakirken på nordøstsiden i middelalderen; flyttet til vestsiden på 1500-tallet | [V] | Fase 4 |
-| Andre kirker i perioden | Korskirken, Olavskirken (fransiskanernes, i dag Domkirken), Nikolaikirken, Jonsklosteret, Nonneseter, Martinskirken | [V] liste; plassering [K] | Fase 2-4 |
+| Andre kirker i perioden | *Martinskirken:* på oversiden av Øvregaten, der Fløibanens nedre stasjon står i dag. Tysk kirke for Bryggen fra ca. 1400; biskop Aslak Bolt godkjente i 1408 Mariakirken og Martinskirken som sognekirker for tyskerne. *Nikolaikirken:* steinkirke øverst på Nikolaikirkeallmenningen (ved dagens nr. 5b), skadet eller ødelagt i brannen 1413, igjen 1476, ruin med steintårn ca. 1580 **[U]** om den var i bruk i 1420-årene. *Jonsklosteret:* augustinerkloster, kirka lå ved dagens Fortunen mellom Strandgaten og Tårnplass, brant 1561. *Korskirken* og *Olavskirken* (i dag Domkirken) står fortsatt. *Mikaelskirken* brant 1413 | [V] Byleksikon, Wikipedia | Fase 2-4 |
 
 ### 5.3 MVP-avgrensning
 
@@ -279,12 +294,25 @@ på tur (Arkham-modellen).
 
 ### 8.2 Ettersøkt og rettspleie
 Tre nivåer: **mistenkt** (folk ser deg), **etterlyst** (byvakta/Kontorets folk leter), **jaget**
-(alle vakter, hunder [K]). Hvem som jager avhenger av offeret og stedet: Kontoret dømte sine egne
+(alle vakter, hunder [S]). Hvem som jager avhenger av offeret og stedet: Kontoret dømte sine egne
 etter egne regler [V: eget samfunn med egne lover], kongens høvedsmann og bytinget resten.
 Rettspleien skal være lærerik: bytinget (fjerdingene hadde 12 representanter hver, bylov 1276
-[V]), bøter, pisking, landsforvisning, og galgen på Nordnes som game over. Nøyaktige straffer
-etter Magnus Lagabøtes bylov må slås opp **[K]**. Byfolk kan drepes, men konsekvensen er hard
-og varig.
+[V]), bøter, pisking, landsforvisning, og galgen på Nordnes som game over. Byfolk kan drepes, men
+konsekvensen er hard og varig.
+
+**Tyveribolken i bylova (1276), egen oversettelse fra norrønt [V tekst; oversettelsen bør
+sjekkes mot en trykt norsk oversettelse]:**
+
+| Hva | Første gang | Neste gang |
+|---|---|---|
+| Stjeler mat fordi han sulter og ikke kan arbeide | Ingen straff | |
+| Stjeler for en verdi av 1 øre | Kjøper seg fri fra pisking med 3 mark sølv | 6 mark. Kan han ikke betale: pisket og brennemerket med en nøkkel på kinnet. Tredje gang: pisket, og kongen tar 6 mark. Fjerde gang: drept |
+| Stjeler for en halv mark | Bot på 13 mark og 8 ertog, eller landsforvist | Drept |
+| Stjeler for en mark eller mer | Straffes av kongens mann, men beholder livet | Mister jord, eiendom og livet |
+| Den bestjålne tar tyven med godset | Godset bindes på ryggen hans (om det er vitner), og han føres bundet til *gjaldkeren*, kongens mann som holdt orden i byen | |
+
+Dette passer spillet: den første sulten er tilgitt, og straffen øker for hver gang. Fattigdom og
+hardhet i samme lov. Slagsmål og drap (mannhelgebolken) er ikke oversatt ennå **[K]**.
 
 ### 8.3 Rykte
 Fem målere (K, B, N, Ki, F), fra -100 til 100. Handlinger flytter dem, ofte to i motsatt
@@ -300,7 +328,7 @@ rettigheter (nøkkel til lageret, egen stue, egen handel).
 
 ### 8.6 Økonomi
 Lønn i mat og husrom, små penger fra arbeid, store penger fra egen handel som bryter Kontorets
-regler. Myntsorter og priser **[K]**.
+regler. Mynt, vekt og bytteforhold: se §4.3.
 
 ### 8.7 Dagsplaner
 Hver figur har en enkel plan: arbeid, måltid, kirke, ølstue, søvn. Porten til Kontoret stenges
@@ -447,11 +475,11 @@ Scenen har 40-200 tegnekall og 28-43k trekanter. Simuleringen koster nesten inge
 | Hva | Kilde | Lisens | Automatisk nedlasting | Status |
 |---|---|---|---|---|
 | Animert figur, 46 klipp (gange, jogg, sprint, hopp, slag, rulling, treff, død, sitte, sverd, svømme, kjøre) | Quaternius, *Universal Animation Library* (Standard), speilet på GitHub `J-Ponzo/gltf-universal-animation-library` | CC0 1.0 | Ja (`raw.githubusercontent.com`), lisensfil med | **I bruk** i gråboksen (22 klipp, 2,3 MB GLB) |
-| Treteksturer (planker, laft, bord) | Poly Haven: `wood_planks`, `weathered_planks`, `rough_wood`, `old_planks_02`, `wood_plank_wall`, `plank_flooring`, `old_wood_floor` | CC0 | Ja, åpent API (`api.polyhaven.com/files/<id>`) | Verifisert at de finnes |
-| Tak | Poly Haven `thatch_roof_angled` (strå; torv må lages), `moss_wood`, `grass_ground`, `leafy_grass` | CC0 | Ja | Verifisert |
-| Bakke, gjørme, stein | Poly Haven `aerial_mud_1`, `cobblestone_floor_01`, `grass_path_2`; ambientCG `Ground0xx`, `Rock0xx` | CC0 | Ja (ambientCG: `ambientcg.com/get?file=<id>_1K-JPG.zip`) | Verifisert API |
+| Treteksturer (planker, laft, bord) | Poly Haven: `wood_plank_wall` (laft), `weathered_planks` (bordvegg), `old_planks_02` (bordtak), `old_wood_floor` (bryggedekke), `wood_planks_dirt` (gårdsrom), `rough_wood` (stolper, trapper) | CC0 | Ja, åpent API (`api.polyhaven.com/files/<id>`) | **Hentet** 02.10.2026: 1K, WebP, farge + normal + ARM i `public/games/bryggen/textures/` (se KILDE.md) |
+| Tak | Poly Haven `sparse_grass` (torv: mosegrodd, lav gress) | CC0 | Ja | **Hentet** (`torv_*`). Strå (`thatch_roof_angled`) passer ikke Bryggen |
+| Bakke, gjørme, stein | Poly Haven `brown_mud_leaves_01` (gjørme i smug og allmenninger); ambientCG `Ground0xx`, `Rock0xx` ved behov | CC0 | Ja (ambientCG: `ambientcg.com/get?file=<id>_1K-JPG.zip`) | **Hentet** (`gjorme_*`) |
 | Treverk alternativ | ambientCG `WoodFloor0xx`, `Wood0xx`, `Planks0xx` | CC0 | Ja | Verifisert API |
-| Dyr (hund, gris, katt, måke, rotte) | Quaternius-pakker (animerte dyr) via GitHub-speil eller poly.pizza | CC0 | **[K]** finne speil uten innlogging | Ikke hentet |
+| Dyr (hund, gris, katt, måke, rotte) | Quaternius *Animal Pack Vol.2* (hund, katt) og *Farm Animals* (gris, hest, ku, sau) på OpenGameArt, direkte zip uten innlogging | CC0 | Ja, men bare FBX. Konvertert til GLB med `fbx2gltf` uten feil | **Prøvd, ikke tatt inn.** 560-800 trekanter, flat lavpoly-stil og bare 2 klipp (stå, gå). Stilen kolliderer med PBR-byen. Holder som stand-in; ekte løsning [K]. Måke og rotte mangler |
 | Realistiske menneskefigurer med klær | Det finnes få CC0-figurer som er realistiske og animerte. Kandidater: MakeHuman-eksport (CC0) retargetet til UAL-skjelettet; Quaternius-figurer | CC0 | MakeHuman krever lokal app, ikke nedlasting **[K]** | Største asset-risiko |
 | Klatreanimasjon, sidesteg, garde-gange | Mangler i gratis-UAL (finnes i UAL Pro, også CC0, men betalt) | CC0 | Nei (betalt) | Gråboksen bruker Push_Loop + Crouch som erstatning |
 
@@ -475,7 +503,7 @@ Mixamo brukes ikke (krever innlogging).
 - [ ] Færing (gråboksens form, med ekte treteksturer)
 - [ ] Figurer: junge, husbonde, svenn, nordlandsfisker, tyv, byvakt
 - [ ] Dyr: hund, måke, rotte
-- [ ] Lyd: regn, måker, plankegang, åretak, folk på plattysk og norsk (CC0-kilder **[K]**)
+- [ ] Lyd: regn, måker, plankegang, åretak, folk på plattysk og norsk. Funnet: *Rain (loopable)*, 4 OGG-løkker, CC0, direkte nedlasting fra OpenGameArt. *Steps in wood floor* (CC0, OpenGameArt). Måker, åretak og stemmer **[K]** (neste sted å lete: Wikimedia Commons, der lyd er direkte nedlastbar; sjekk lisens per fil)
 
 ---
 
@@ -523,11 +551,31 @@ Wikipedia. (2026). *Slaget ved Bergen 1429*. Hentet 02.10.2026 fra [no.wikipedia
 
 **Assets:** Quaternius. (2025). *Universal Animation Library* (Standard). CC0 1.0. Hentet 02.10.2026 fra [github.com/J-Ponzo/gltf-universal-animation-library](https://github.com/J-Ponzo/gltf-universal-animation-library). Poly Haven (CC0) og ambientCG (CC0), API-ene verifisert 02.10.2026.
 
-### Åpne kildeoppgaver før bygging [K]
+Ersland, G. A. (2022). *Perspektiv på Bryggen og det historiske bylandskapet* [Lysbildenotat]. Stiftelsen Bryggen. Hentet 02.10.2026 fra [stiftelsenbryggen.no](https://stiftelsenbryggen.no/sb/wp-content/uploads/VEDLEGG-2.-GAE-Bryggens-bylandskap.pdf)
 
-1. Bryggens Museums utgravningsplaner: hvor bryggefronten og allmenningene lå i 1420-årene.
-2. Vakthunder og stengt port om kvelden: finnes det kilder fra 1400-tallet?
-3. Mynt, vekt og priser i Bergen på 1420-tallet.
-4. Hvordan Det tyske kontor forholdt seg under plyndringene 1428-29.
-5. Straffer etter Magnus Lagabøtes bylov (1276) for tyveri, slagsmål og drap.
-6. Plassering av kirkene (Nikolaikirken, Martinskirken, Jonsklosteret) på et 1400-tallskart.
+Hartvedt, G. H. & Skreien, N. (2009). *Allmenninger*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1424448)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Nikolaikirken*. Bergen byleksikon, Bergen byarkiv. Hentet 02.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1425080)
+
+Holm, P., Ludlow, F., Scherer, C. mfl. (2019). The North Atlantic Fish Revolution (ca. AD 1500). *Quaternary Research, 108*, 92-106. [doi.org/10.1017/qua.2018.153](https://doi.org/10.1017/qua.2018.153)
+
+Holst, H. (u.å.). *Norges mynter til slutten av 16. århundrede*. Danskmønt.dk. Hentet 02.10.2026 fra [danskmoent.dk](https://www.danskmoent.dk/artikler/holst.htm)
+
+Nielsen, M. A., Friðriksdóttir, J. K. & Rindal, M. (Red.). (2022). *Magnus Håkonsson Lagabøtes bylov og farmannslov*. Bokselskap / Nasjonalbiblioteket. Hentet 02.10.2026 fra [bokselskap.no](https://www.bokselskap.no/wp-content/themes/bokselskap2/tekster/pdf/bylov.pdf) (tyveribolken s. 111, egen oversettelse)
+
+Salvesen, H. & Hofstad, K. (2024). *våg - masseenhet*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no](https://snl.no/v%C3%A5g_-_masseenhet)
+
+Store norske leksikon. (u.å.). *bismerpund*. Hentet 02.10.2026 fra [snl.no/bismerpund](https://snl.no/bismerpund)
+
+Wikipedia. (2026). *Allmenning (gater)*, *Martinskirken (Bergen)*, *Nikolaikirken i Bergen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Allmenning_(gater)) (sekundærkilder, stemmer med byleksikonet)
+
+### Kildeoppgavene (status 02.10.2026)
+
+1. ~~Bryggefronten og allmenningene i 1420-årene.~~ Løst så langt åpne kilder rekker (§5.2):
+   1332-linja og 1476-linja er grensene, allmenningene er navngitt. Gjenstår: de eksakte
+   utgravningsplanene (Herteig, *The Bryggen Papers*) for å tegne kartet i meter **[K]**.
+2. ~~Vakthunder og stengt port.~~ Ingen kilde funnet. Blir designvalg [S] (§4.2).
+3. ~~Mynt, vekt og priser.~~ Løst (§4.3). Priser bare som bytteforhold fisk mot korn, rundt 1500 [U].
+4. Kontoret under plyndringene 1428-29: ikke funnet i åpne kilder [U]. Les Brekke (2024) **[K]**.
+5. ~~Straffer for tyveri.~~ Løst (§8.2). Slagsmål og drap (mannhelgebolken) gjenstår **[K]**.
+6. ~~Kirkenes plassering.~~ Løst for Martinskirken, Nikolaikirken og Jonsklosteret (§5.2).
