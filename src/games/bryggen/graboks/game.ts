@@ -13,6 +13,10 @@ import { Faering, WATER_Y } from '../motor/boat';
 import { EnemyAI, PlayerCombat, type CombatSink, type DamageEvent } from '../motor/combat';
 import { Gore } from '../motor/gore';
 import { buildGraybox, type GrayboxLayout } from './scene';
+import type { BryggenWorld } from '../bygg/bryggen';
+
+/** Hvilken verden løkka kjører: grå prøvescene eller Bryggen bygget av modulsettet. */
+export type WorldId = 'graboks' | 'gard';
 
 const STEP = 1 / 60;
 const RIG_URL = '/games/bryggen/models/mannequin.glb';
@@ -41,6 +45,8 @@ export interface HudState {
     /** Spilleren startet med mus (da skal musa være låst mens det spilles). */
     mouseMode: boolean;
     boatSpeed: number;
+    /** Lastede celler (bare i Bryggen-scenen). */
+    cells: number;
 }
 
 interface Floater {
@@ -68,6 +74,9 @@ export class GrayboxGame {
     private boat!: Faering;
     private gore = new Gore();
     private sun!: THREE.DirectionalLight;
+    private readonly worldId: WorldId;
+    private world: BryggenWorld | null = null;
+    private streamTimer = 0;
     private raf = 0;
     private last = 0;
     private acc = 0;
@@ -91,8 +100,12 @@ export class GrayboxGame {
     private simTimes: number[] = [];
     private hudTimer = 0;
 
-    constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean }) {
+    private readonly low: boolean;
+
+    constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
+        this.worldId = opts.world ?? 'graboks';
+        this.low = !!opts.low;
         this.floatLayer = floatLayer;
         this.onHud = onHud;
         this.renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
@@ -100,7 +113,7 @@ export class GrayboxGame {
         this.renderer.outputColorSpace = THREE.SRGBColorSpace;
         this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
         this.renderer.toneMappingExposure = 1.05;
-        this.renderer.shadowMap.enabled = opts.shadows;
+        this.renderer.shadowMap.enabled = opts.shadows && !opts.low;
         this.renderer.shadowMap.type = THREE.PCFShadowMap;
         container.appendChild(this.renderer.domElement);
         this.renderer.domElement.style.display = 'block';
@@ -129,7 +142,8 @@ export class GrayboxGame {
         const fogColor = 0x9ba4ab;
         this.scene.background = new THREE.Color(fogColor);
         this.scene.fog = new THREE.FogExp2(fogColor, 0.024);
-        this.scene.add(new THREE.HemisphereLight(0xc9d2da, 0x4a4843, 1.5));
+        const hemi = new THREE.HemisphereLight(0xc9d2da, 0x4a4843, 1.5);
+        this.scene.add(hemi);
         this.sun = new THREE.DirectionalLight(0xfff4e6, 1.5);
         this.sun.position.set(-14, 22, -10);
         this.sun.castShadow = true;
@@ -145,7 +159,20 @@ export class GrayboxGame {
         this.sun.shadow.normalBias = 0.03;
         this.scene.add(this.sun, this.sun.target);
 
-        this.layout = buildGraybox(this.scene, this.phys);
+        if (this.worldId === 'gard') {
+            const { buildBryggen } = await import('../bygg/bryggen');
+            this.world = await buildBryggen(this.scene, this.phys, this.renderer, { low: this.low });
+            if (this.disposed) return;
+            this.layout = this.world.layout;
+            // Cellene rundt start må stå før første fysikksteg, ellers faller gutten gjennom kaia.
+            await this.world.streamer.update(this.layout.playerStart);
+            if (this.disposed) return;
+            // Miljølyset fra himmelen gjør en del av jobben halvkulelyset gjør i gråboksen.
+            hemi.intensity = this.low ? 1.7 : 1.25;
+            this.renderer.toneMappingExposure = 1.2;
+        } else {
+            this.layout = buildGraybox(this.scene, this.phys);
+        }
         const L = this.layout;
 
         this.player = new Character(this.phys, new Animator(rig, BOY_TUNING.height), BOY_TUNING, L.playerStart);
@@ -164,7 +191,9 @@ export class GrayboxGame {
         this.pc = new PlayerCombat(this.player, 100);
         this.ai = new EnemyAI(this.enemy, 110, 0x5a4a3c);
 
-        this.boat = new Faering(this.phys, L.boatStart, L.boatYaw, new THREE.MeshStandardMaterial({ color: 0x8a8d8f, roughness: 0.9 }));
+        // Færingen får ekte treteksturer senere (asset-tracker §10); i Bryggen-scenen er den i alle fall brun.
+        const boatColor = this.world ? 0x6b5848 : 0x8a8d8f;
+        this.boat = new Faering(this.phys, L.boatStart, L.boatYaw, new THREE.MeshStandardMaterial({ color: boatColor, roughness: 0.9 }));
         this.boat.onBump = (s) => this.cam.addShake(Math.min(0.2, s * 0.06));
         this.boat.onCatch = () => {
             if (this.mode === 'boat') this.cam.addShake(0.015);
@@ -196,6 +225,8 @@ export class GrayboxGame {
         document.removeEventListener('pointerlockchange', this.pushHudSoon);
         document.removeEventListener('fullscreenchange', this.onFullscreen);
         this.input.dispose();
+        this.world?.streamer.dispose();
+        this.world?.materials.dispose();
         if (document.pointerLockElement === this.renderer.domElement) document.exitPointerLock();
         this.scene.traverse((o) => {
             const m = o as THREE.Mesh;
@@ -348,6 +379,15 @@ export class GrayboxGame {
         // Kameraet helt inntil gutten (rygg mot veggen): ton ham ut i stedet for å vise innsiden.
         const arm = this.cam.armLength;
         this.player.anim.setOpacity(this.mode === 'boat' ? 1 : THREE.MathUtils.clamp((arm - 0.45) / 0.5, 0.15, 1));
+
+        // Strømming: sjekk cellene et par ganger i sekundet, ikke hvert bilde.
+        if (this.world) {
+            this.streamTimer -= dt;
+            if (this.streamTimer <= 0) {
+                this.streamTimer = 0.3;
+                void this.world.streamer.update(follow);
+            }
+        }
 
         // Skyggen følger spilleren.
         const p = follow;
@@ -533,6 +573,7 @@ export class GrayboxGame {
             pointerLocked: this.input.pointerLocked,
             mouseMode: this.input.mouseMode,
             boatSpeed: this.boat ? Math.abs(this.boat.speed) : 0,
+            cells: this.world ? this.world.streamer.liveCount : 0,
         });
     }
 }

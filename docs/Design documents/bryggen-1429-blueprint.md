@@ -9,9 +9,10 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Blueprint + gråboks. Venter på eierens godkjenning av følelse, motor og navn |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet; venter på eierens vurdering. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
-| Motor | Ny, liten Three.js-motor i `src/games/bryggen/motor/` (anbefalt, se §9) |
+| Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
+| Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
 | Dato | 2026-10-02 |
 
 Merkene brukt i dokumentet:
@@ -201,7 +202,7 @@ utgravningsplaner og gamle bykart **[K]**.
 | Sted | Hva vi vet | Merke | Fase |
 |---|---|---|---|
 | **Bryggen** | Smale, lange parseller, forretning mot bryggen, lager/bo/verksted innover. Enkel- og dobbeltgårder, svalganger over gårdsrommet i andre etasje. Laftehus med torvtak etter brannen 1248. 2-3 etasjers uisolerte lagerhus (loft). Bygget på bolverk av kryssstablet tømmer | [V] | **MVP** |
-| Bryggens gårder | Navn som overlevde: Finnegården, Holmedalen, Bellgården, Jakobsfjorden, Svensgården, Enhjørningsgården, Bredsgården. Brynjolvsgard i nord var større | [V] | MVP (2-3 gårder) |
+| Bryggens gårder | Navn som overlevde: Finnegården, Holmedalen, Bellgården, Jakobsfjorden, Svensgården, Enhjørningsgården, Bredsgården. Brynjolvsgard i nord var større. Hvilken gård som lå inntil Nikolaikirkeallmenningen i 1420-årene er ikke funnet **[K]**, så den første gården i spillet har ikke navn ennå | [V] | MVP (2-3 gårder) |
 | Allmenninger | Brede tverrgater fra sjøen og opp, sikret av kongen etter brannen i 1248 som branngater. Bylova 1276: 8 alen (ca. 4,4 m) brede. Nattevakta skulle melde seg ved hver allmenning. Langs Bryggen fra nord til sør: *Maria allmenning* (mot Mariakirken, funnet 1979, 7-8 m bred nederst), *Bua allmenning* (mellom Bugården og Bredsgården), *Breida allmenning* (der Svensgården står), *Nikolaikirkeallmenning* / Yngre Breida (byens midtpunkt, torg til 1470, rådhuset *stefnustova*, 18 m bred ved Vinkjelleren), *Auta allmenning* (dagens Vetrlidsallmenning, Bryggens sørgrense) | [V] Byleksikon, Wikipedia | MVP (Nikolaikirkeallmenning) |
 | Bryggefronten | Vågen ble fylt ut etter hver storbrann fram til 1332; kailinja fra 1332 er kjent fra utgravninger og skriftlige kilder. Etter brannen i 1476 lå fasaden og kaifronten på samme sted til 1900 (Ersland 2022). I 1420-årene lå fronten et sted mellom 1332-linja og 1476-linja **[U]**. Spillet bruker 1332-linja: det er den siste dokumenterte før vår tid | [V] grenser; [U] eksakt linje | MVP |
 | Takene | Torvtak fra middelalderen [V]. Dagens teglstein er fra etter 1702-brannen [V Stiftelsen Bryggen]. Gråboks/MVP bruker torv og bordtak | [V] | MVP |
@@ -423,6 +424,10 @@ ingenting fra `src/games/engine/`.
 | `motor/combat.ts` | Spillerkamp og fiende-AI (tilnærme, sirkle, varsle, slå, komme seg, vakle) |
 | `motor/gore.ts` | Blodsprut og flekker som to InstancedMesh-er |
 | `graboks/game.ts` | Løkka: faste 1/60-steg, interpolert tegning, treffpause og sakte film |
+| `motor/meshkit.ts` | Geometri i bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
+| `motor/materials.ts` | PBR-materialer fra teksturene i `public/games/bryggen/textures/`, miljølys, lav-nivå |
+| `motor/streaming.ts` | Strømming per celle (§9.6) |
+| `bygg/moduler.ts`, `bygg/gard.ts`, `bygg/bryggen.ts` | Modulsettet, den første gården og scenen rundt |
 
 Hver fil under 800 linjer. Løkka simulerer i faste steg og tegner så ofte nettleseren vil.
 
@@ -455,7 +460,28 @@ Scenen har 40-200 tegnekall og 28-43k trekanter. Simuleringen koster nesten inge
 0,3 ms selv strupet), så taket er GPU-en. Tallet som gjelder er det eieren leser av måleren
 øverst til høyre på sin egen Chromebook. Med `?skygger=0` måles uten skygger.
 
+**Målt på den første gården** (02.10.2026, samme rute og oppløsning, llvmpipe via Vulkan). Maskinen
+hadde mer last enn ved forrige måling, så gråboksen er målt på nytt ved siden av:
+
+| Oppsett | Snitt FPS | 95-persentil | Sim-tid | Tegnekall | Trekanter |
+|---|---|---|---|---|---|
+| Gråboks, skygger på | 38 | 33,4 ms | 0,24 ms | ca. 60 | 28k |
+| Gård, full kvalitet | 22 | 50-67 ms | 0,40 ms | 65-125 | 46-64k |
+| Gård, `?kvalitet=lav` | 53 | 33,3 ms | 0,23 ms | 64-110 | 48-62k |
+| Gård, full, CPU strupet 4× | 21 | 66,7 ms | 1,83 ms | 65 | 51k |
+| Gård, lav, CPU strupet 4× | 52 | 33,4 ms | 0,80 ms | 71 | 48k |
+
+Tegnekall og trekanter ligger godt under budsjettet. Det som koster på en programvare-rasterizer er
+pikslene: tre teksturoppslag, normalkart, miljølys og skygger på hver flate. Lav-nivået fjerner
+normal- og AO-kart, miljølys og skygger og ser nesten likt ut. Hvilket nivå Chromebooken skal få som
+standard, avgjøres av måleren på eierens egen maskin.
+
 ### 9.6 Strømming og LOD
+
+**Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
+middels-nivået (husene som bokser og prismer i flat farge, én tegning per celle) vises bak 70 m.
+Kolliderne lages og fjernes med cella. Cellene er foreløpig én gård eller allmenning bred (18 × 61 m),
+bygget i kode med `import()`, ikke glTF. Fjernt nivå (silhuettkort) er ikke laget; tåka gjør jobben.
 
 - Byen deles i celler på ca. 60×60 m (en gårdsrekke, Holmen, Vågsbunnen ...). Hver celle er en
   egen glTF/JSON lastet med `import()`/fetch når spilleren er innen 120 m, og kastet ved 180 m.
@@ -502,7 +528,9 @@ Mixamo brukes ikke (krever innlogging).
 ## 10. Asset-tracker (MVP)
 
 - [ ] Hero: Bryggen fra Vågen i regn, 1426, koggen legger til (for galleriet)
-- [ ] Bryggens gårder: modulsett (laft, svalgang, gavl, torvtak, bordtak, trapp, vinsj)
+- [~] Bryggens gårder: modulsett (laft, svalgang, gavl, torvtak, bordtak, trapp, vinsj). Bygget og
+  brukt på én gård (`/test/bryggen-gard`). Nabogårdene er plassholdere i flat farge til den første
+  er godkjent. Mangler: utkraget overetasje, glugger, inngang i husene, schøtstue og ildhus innvendig
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
 - [ ] Færing (gråboksens form, med ekte treteksturer)
 - [ ] Figurer: junge, husbonde, svenn, nordlandsfisker, tyv, byvakt

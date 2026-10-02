@@ -71,6 +71,7 @@ export const routeFactories: Record<string, PageFactory> = {
     MiniGamesPage: () => import('./pages/MiniGamesPage').then(module => ({ default: module.MiniGamesPage })),
     GamePage: () => import('./pages/GamePage').then(module => ({ default: module.GamePage })),
     BryggenGraboksPage: () => import('./pages/BryggenGraboksPage').then(module => ({ default: module.BryggenGraboksPage })),
+    BryggenGardPage: () => import('./pages/BryggenGraboksPage').then(module => ({ default: module.BryggenGardPage })),
     RpgPage: () => import('./features/rpg/RpgPage'),
     CompetencyGoalsPage: () => import('./pages/CompetencyGoalsPage').then(module => ({ default: module.CompetencyGoalsPage })),
     SkyPage: () => import('./pages/SkyPage').then(module => ({ default: module.SkyPage })),

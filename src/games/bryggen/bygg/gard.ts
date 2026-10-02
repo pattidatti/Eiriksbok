@@ -1,0 +1,419 @@
+// Én gård på Bryggen, bygget av modulsettet: en dobbeltgård med to husrekker og et gårdsrom
+// imellom, svalganger i andre etasje, trapper, kai med bolverk og vinsjer i gavlene mot sjøen.
+//
+// Blueprint §5.2: smale, lange parseller med forretning mot bryggen og lager, bolig og verksted
+// innover; enkelt- og dobbeltgårder med svalganger over gårdsrommet; laftehus med torvtak;
+// 2-3 etasjers lagerhus; bygget på bolverk av kryss-stablet tømmer.
+//
+// Målene er valgt for spillet [S]: husene er 7 m brede og gårdsrommet 4 m. Hvilken gård som sto
+// akkurat her ved Nikolaikirkeallmenningen i 1420-årene er ikke slått fast [K], så gården har
+// ikke navn ennå.
+import * as THREE from 'three';
+import { ColliderKit, MeshKit, type MatKey } from '../motor/meshkit';
+import type { Materials } from '../motor/materials';
+import type { CellContent } from '../motor/streaming';
+import { WATER_Y } from '../motor/boat';
+import { hus, husLod, type HouseSpec } from './moduler';
+
+export const HOUSE_W = 7;
+export const YARD_W = 4;
+export const GARD_W = HOUSE_W * 2 + YARD_W; // 18 m
+/** Gavlene står så langt inn fra bolverket. Kaia ligger foran. */
+export const FRONT_Z = 5;
+export const GARD_DEPTH = 56;
+const DECK_Y = 2.6; // svalgangen: oppå første etasje
+const SV_W = 1.05;
+
+const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+
+interface Placed {
+    spec: HouseSpec;
+    x: number;
+    z: number;
+    /** Rotasjon om y. 0 = gavlen mot sjøen. */
+    rot?: number;
+}
+
+// Tonene: tjæret, værbitt tre. Hvert hus litt ulikt, så rekka ikke blir én flate.
+const T = (top: number, hue: [number, number, number]) => ({ top, bottom: top, hue });
+const WARM: [number, number, number] = [1.06, 0.98, 0.9];
+const COLD: [number, number, number] = [0.92, 0.95, 1.0];
+const DARK: [number, number, number] = [0.9, 0.86, 0.82];
+
+/**
+ * Husene i gården. Vest-rekka har gårdsrommet på +x-siden, øst-rekka på -x-siden.
+ * Forhusene mot sjøen har tre etasjer, bordkledd gavl og vinsj. Innover blir husene lavere,
+ * og bakerst, på tvers av gårdsrommet, ligger schøtstua: samlingsrommet der hele gården spiste
+ * og varmet seg om vinteren. Bare der og i ildhuset var det lov med ild [V].
+ */
+function plan(): { houses: Placed[]; backZ: number; west: { z0: number; z1: number }; east: { z0: number; z1: number } } {
+    const xw = -(YARD_W / 2 + HOUSE_W / 2);
+    const xe = YARD_W / 2 + HOUSE_W / 2;
+    const houses: Placed[] = [];
+    const row = (x: number, yardSide: -1 | 1, list: (Omit<HouseSpec, 'w' | 'cornersFront' | 'cornersBack'> & { gap: number })[]) => {
+        let z = FRONT_Z;
+        list.forEach((h, i) => {
+            const prevGap = i === 0 ? 1 : list[i - 1].gap;
+            const spec: HouseSpec = {
+                ...h,
+                w: HOUSE_W,
+                cornersFront: i === 0 ? !h.facade : prevGap > 0.3,
+                cornersBack: h.gap > 0.3 || i === list.length - 1,
+                doors: (h.doors ?? []).map((d) => ({ ...d, side: yardSide })),
+                upperDoors: (h.upperDoors ?? []).map((d) => ({ ...d, side: yardSide })),
+            };
+            houses.push({ spec, x, z });
+            z += h.l + h.gap;
+        });
+        return z;
+    };
+    const one = 1 as const;
+    const wEnd = row(xw, 1, [
+        { l: 9.5, floors: [2.6, 2.4, 2.3], roof: 'torv', pitch: 0.9, tint: T(1.0, WARM), facade: true, vinsj: true, gap: 0.9,
+            doors: [{ side: one, z: 2.2 }, { side: one, z: 6.8, open: true }], upperDoors: [{ side: one, z: 4.5 }] },
+        { l: 8, floors: [2.6, 2.5], roof: 'bordtak', pitch: 0.8, tint: T(0.92, COLD), gap: 0,
+            doors: [{ side: one, z: 3 }], upperDoors: [{ side: one, z: 5.5 }] },
+        { l: 9, floors: [2.6, 2.4, 2.2], roof: 'torv', pitch: 0.9, tint: T(0.96, DARK), gap: 0.9,
+            doors: [{ side: one, z: 2.5 }, { side: one, z: 6.5 }], upperDoors: [{ side: one, z: 4 }] },
+        { l: 7.5, floors: [2.6, 2.4], roof: 'torv', pitch: 0.85, tint: T(1.02, WARM), gap: 0.9,
+            doors: [{ side: one, z: 3.5 }] },
+        { l: 6, floors: [3.0], roof: 'bordtak', pitch: 0.75, tint: T(0.88, DARK), gap: 0,
+            doors: [{ side: one, z: 3, open: true }] },
+    ]);
+    const neg = -1 as const;
+    const eEnd = row(xe, -1, [
+        { l: 10, floors: [2.6, 2.5, 2.3], roof: 'torv', pitch: 0.95, tint: T(0.94, DARK), facade: true, vinsj: true, gap: 0,
+            doors: [{ side: neg, z: 2.5 }, { side: neg, z: 7.2 }], upperDoors: [{ side: neg, z: 5.5 }] },
+        { l: 8.5, floors: [2.6, 2.4, 2.2], roof: 'torv', pitch: 0.9, tint: T(1.03, WARM), gap: 0.9,
+            doors: [{ side: neg, z: 4 }], upperDoors: [{ side: neg, z: 2.5 }, { side: neg, z: 6.5 }] },
+        { l: 9, floors: [2.6, 2.4], roof: 'bordtak', pitch: 0.8, tint: T(0.9, COLD), gap: 0,
+            doors: [{ side: neg, z: 4.5, open: true }], upperDoors: [{ side: neg, z: 3 }] },
+        { l: 8, floors: [2.6, 2.4], roof: 'torv', pitch: 0.85, tint: T(0.98, DARK), gap: 0.9,
+            doors: [{ side: neg, z: 3 }] },
+        { l: 6, floors: [3.0], roof: 'torv', pitch: 0.8, tint: T(0.92, WARM), gap: 0 },
+    ]);
+    // Schøtstua på tvers bakerst. Rotert en kvart omdreining: gavlene peker mot nabogårdene,
+    // og side +1 (med døra) vender mot gårdsrommet.
+    const backZ = Math.max(wEnd, eEnd) + 1.2;
+    houses.push({
+        x: -GARD_W / 2,
+        z: backZ + HOUSE_W / 2,
+        rot: Math.PI / 2,
+        spec: {
+            w: HOUSE_W, l: GARD_W, floors: [3.6], roof: 'torv', pitch: 0.85, tint: T(0.9, DARK),
+            cornersFront: true, cornersBack: true,
+            doors: [{ side: 1, z: GARD_W / 2, open: true }, { side: 1, z: GARD_W / 2 - 4.5 }],
+        },
+    });
+    // Svalgangene går over forhusene og de neste to husene; trappa står i enden.
+    return { houses, backZ, west: { z0: FRONT_Z + 1.2, z1: FRONT_Z + 29 }, east: { z0: FRONT_Z + 4.5, z1: Math.min(eEnd, wEnd) - 14 } };
+}
+
+// ── Svalgang og trapp ──
+
+interface SvalgangOpts {
+    xWall: number;
+    /** Retning fra veggen ut i gårdsrommet. */
+    out: -1 | 1;
+    z0: number;
+    z1: number;
+    /** Hvilken ende trappa kommer opp i (der står det ikke rekkverk). */
+    stairEnd: 'z0' | 'z1';
+}
+
+/**
+ * Svalgang: plankedekke på utkragede bjelker, stolper ned til bakken og opp til et eget lite
+ * tak, og en tett brystning av stående bord. Tynne ting kolliderer i prop-gruppen, så kameraet
+ * ikke stopper på dem.
+ */
+function svalgang(k: MeshKit, c: ColliderKit, o: SvalgangOpts): void {
+    const xo = o.xWall + o.out * SV_W;
+    const xm = (o.xWall + xo) / 2;
+    const len = o.z1 - o.z0;
+    const zm = (o.z0 + o.z1) / 2;
+    k.box('dekke', xm, DECK_Y - 0.05, zm, SV_W, 0.1, len);
+    c.box(xm, DECK_Y - 0.05, zm, SV_W, 0.1, len);
+    // Bjelkehoder under dekket og en langsgående bjelke ytterst.
+    k.withTint({ top: 0.8, bottom: 0.8 }, () => {
+        for (let z = o.z0 + 0.4; z < o.z1; z += 1.2) k.box('raatre', xm + o.out * 0.03, DECK_Y - 0.17, z, SV_W + 0.06, 0.14, 0.12);
+        k.box('raatre', xo - o.out * 0.07, DECK_Y - 0.2, zm, 0.14, 0.2, len);
+    });
+    // Stolper: fra bakken og helt opp til svalgangstaket.
+    const roofIn = DECK_Y + 2.4;
+    const roofOut = DECK_Y + 2.12;
+    for (let z = o.z0 + 0.15; z <= o.z1 - 0.1; z += 2.6) {
+        k.box('raatre', xo - o.out * 0.08, roofOut / 2, z, 0.15, roofOut, 0.15);
+        c.box(xo - o.out * 0.08, roofOut / 2, z, 0.15, roofOut, 0.15, true);
+    }
+    // Brystning: tette, stående bord, 1 m høy, med håndlist.
+    const rail = (z0: number, z1: number) => {
+        const rl = z1 - z0;
+        const rz = (z0 + z1) / 2;
+        k.withTint({ top: 0.95, bottom: 0.7 }, () => k.box('bordvegg', xo - o.out * 0.04, DECK_Y + 0.48, rz, 0.05, 0.96, rl, { shadeFoot: true }));
+        k.box('raatre', xo - o.out * 0.04, DECK_Y + 1.0, rz, 0.1, 0.07, rl);
+        c.box(xo - o.out * 0.04, DECK_Y + 0.5, rz, 0.08, 1.0, rl, true);
+    };
+    rail(o.z0, o.z1);
+    // Endevern der trappa ikke kommer opp.
+    const endZ = o.stairEnd === 'z1' ? o.z0 : o.z1;
+    k.box('bordvegg', xm, DECK_Y + 0.48, endZ, SV_W, 0.96, 0.05);
+    c.box(xm, DECK_Y + 0.5, endZ, SV_W, 1.0, 0.08, true);
+    // Svalgangstaket: bord som heller ut fra veggen.
+    const a = Math.atan2(roofIn - roofOut, SV_W);
+    const run = (SV_W + 0.3) / Math.cos(a);
+    const m = new THREE.Matrix4()
+        .makeRotationZ(o.out * -a)
+        .setPosition(o.xWall + o.out * (SV_W + 0.3) / 2, (roofIn + roofOut) / 2 - 0.02 + 0.03, zm);
+    k.slab('bordtak', m, run, 0.06, len + 0.4, { grain: 'x' });
+    const q = new THREE.Euler().setFromRotationMatrix(m);
+    c.box(o.xWall + o.out * (SV_W + 0.3) / 2, (roofIn + roofOut) / 2, zm, run, 0.08, len + 0.4, false, q);
+}
+
+/**
+ * Trapp fra bakken opp til svalgangen. Kollideren er en kile som står på bakken, med skråflaten
+ * gjennom midten av trinnene (README: en skrå plate med enden i bakken stopper figuren).
+ */
+function trapp(k: MeshKit, c: ColliderKit, x0: number, x1: number, zBottom: number, zTop: number, h: number, railX: number): void {
+    const dir = Math.sign(zTop - zBottom);
+    const run = Math.abs(zTop - zBottom);
+    const steps = Math.round(h / 0.2);
+    const rise = h / steps;
+    const tread = run / steps;
+    const xm = (x0 + x1) / 2;
+    const w = Math.abs(x1 - x0);
+    for (let i = 0; i < steps; i++) {
+        const z = zBottom + dir * tread * (i + 0.5);
+        k.box('raatre', xm, rise * (i + 1) - 0.035, z, w - 0.16, 0.07, tread + 0.04, { grain: 'x' });
+    }
+    // Vanger: to skrå planker trinnene hviler på.
+    const ang = Math.atan2(h, run);
+    const len = Math.hypot(h, run) + 0.25;
+    for (const x of [Math.min(x0, x1) + 0.04, Math.max(x0, x1) - 0.04]) {
+        const m = new THREE.Matrix4().makeRotationX(-dir * ang).setPosition(x, h / 2 - 0.05, (zBottom + zTop) / 2);
+        k.withTint({ top: 0.85, bottom: 0.85 }, () => k.slab('raatre', m, 0.07, 0.26, len));
+    }
+    const pts: THREE.Vector3[] = [];
+    for (const x of [x0, x1]) {
+        pts.push(V(x, 0, zBottom), V(x, rise / 2, zBottom), V(x, h, zTop - dir * tread / 2), V(x, h, zTop), V(x, 0, zTop));
+    }
+    c.hull(pts);
+    // Håndlist på siden mot gårdsrommet: en stolpe nederst og en skrå list opp til svalgangen.
+    // Kollideren er en tynn, skrå plate (prop), så gutten ikke glir av trappa sidelengs.
+    const rx = railX + Math.sign((x0 + x1) / 2 - railX) * 0.05;
+    k.box('raatre', rx, 0.55, zBottom - dir * 0.05, 0.12, 1.1, 0.12);
+    const rm = new THREE.Matrix4().makeRotationX(-dir * ang).setPosition(rx, h / 2 + 0.95, (zBottom + zTop) / 2);
+    k.slab('raatre', rm, 0.08, 0.08, Math.hypot(h, run));
+    const rail: THREE.Vector3[] = [];
+    for (const x of [rx - 0.04, rx + 0.04]) rail.push(V(x, 0, zBottom), V(x, 1.05, zBottom), V(x, h + 1.05, zTop), V(x, h, zTop));
+    c.hull(rail, true);
+}
+
+// ── Kaia og bolverket ──
+
+/**
+ * Bolverket: tømmer stablet i kryss, langsgående stokker annenhver omfar og endene av
+ * tverrstokkene imellom. Kaidekket ligger oppå. `x0..x1` langs sjøen, fronten i z = `front`.
+ */
+export function kai(k: MeshKit, c: ColliderKit, x0: number, x1: number, front: number, depth: number, deck: MatKey = 'dekke'): void {
+    const w = x1 - x0;
+    const xm = (x0 + x1) / 2;
+    k.box(deck, xm, -0.09, front + depth / 2, w, 0.18, depth, { skip: ['bottom'] });
+    // Fast grunn under: kaia og bakken er én kollider.
+    c.box(xm, -0.75, front + depth / 2, w, 1.5, depth);
+    // Kantbjelke ytterst på dekket.
+    k.withTint({ top: 0.85, bottom: 0.85 }, () => k.box('raatre', xm, -0.06, front + 0.1, w, 0.2, 0.22));
+    // Fyll bak stokkene: ellers ser man vannet gjennom glippene mellom omfarene.
+    k.withTint({ top: 0.25, bottom: 0.25 }, () => k.box('raatre', xm, (WATER_Y - 1.4) / 2 - 0.1, front + 0.28, w, -WATER_Y + 1.2, 0.2, { skip: ['pz', 'top', 'bottom'] }));
+    const r = 0.15;
+    const bottom = WATER_Y - 1.4;
+    let layer = 0;
+    for (let y = -0.32; y > bottom; y -= r * 2) {
+        const wet = y < WATER_Y + 0.15; // tang og væte nederst
+        const tone = wet ? 0.45 : 0.8 - layer * 0.04;
+        k.withTint({ top: tone, bottom: tone, hue: wet ? [0.85, 0.95, 0.8] : [1, 1, 1] }, () => {
+            if (layer % 2 === 0) {
+                k.log('laft', V(x0, y, front + r), V(x1, y, front + r), r, 7, false);
+            } else {
+                for (let x = x0 + 0.45; x < x1; x += 0.95) {
+                    const jx = Math.sin(x * 12.9898 + layer) * 0.08;
+                    k.log('raatre', V(x + jx, y, front - 0.06), V(x + jx, y, front + 1.2), r * 0.95, 6);
+                }
+            }
+        });
+        layer++;
+    }
+}
+
+/** Pullert, tønne eller kasse: småting som gir kaia skala. Tynne ting kolliderer som prop. */
+function tonne(k: MeshKit, c: ColliderKit, x: number, z: number, tone = 1): void {
+    k.withTint({ top: tone, bottom: tone, hue: WARM }, () => k.log('raatre', V(x, 0, z), V(x, 0.9, z), 0.33, 10, true, 0.31));
+    k.withTint({ top: 0.35, bottom: 0.35 }, () => {
+        k.log('raatre', V(x, 0.18, z), V(x, 0.24, z), 0.338, 10, false);
+        k.log('raatre', V(x, 0.68, z), V(x, 0.74, z), 0.325, 10, false);
+    });
+    c.box(x, 0.45, z, 0.62, 0.9, 0.62, true);
+}
+
+/**
+ * Brannkar: et lavt, bredt kar med vann. Ildforbudet og vannet i gårdene er kjent fra senere
+ * tid [V for 1600/1700-tallet, U for 1420-årene]; her er det et designvalg [S].
+ */
+function brannkar(k: MeshKit, c: ColliderKit, x: number, z: number): void {
+    k.withTint({ top: 0.8, bottom: 0.8, hue: DARK }, () => k.log('raatre', V(x, 0, z), V(x, 0.62, z), 0.42, 12, true, 0.45));
+    k.withTint({ top: 0.3, bottom: 0.3 }, () => k.log('raatre', V(x, 0.4, z), V(x, 0.46, z), 0.448, 12, false));
+    // Vannflaten: mørk og blank, litt under kanten.
+    k.withTint({ top: 0.18, bottom: 0.18, hue: [0.8, 0.9, 1] }, () => k.log('mork', V(x, 0.5, z), V(x, 0.56, z), 0.4, 12, true));
+    c.box(x, 0.31, z, 0.84, 0.62, 0.84, true);
+}
+
+// ── Cellene ──
+
+function toGroup(kit: MeshKit, mats: Materials, name: string, shadows = true): THREE.Group {
+    const g = new THREE.Group();
+    g.name = name;
+    for (const [key, b] of kit.buckets) {
+        if (b.vertexCount === 0) continue;
+        const mesh = new THREE.Mesh(b.toGeometry(), mats.get(key));
+        mesh.name = `${name}:${key}`;
+        mesh.castShadow = shadows && key !== 'dekke' && key !== 'gardsrom' && key !== 'gjorme';
+        mesh.receiveShadow = true;
+        g.add(mesh);
+    }
+    return g;
+}
+
+/** Selve gården, med kai foran. `ox` er midten av gården langs sjøen. */
+export function buildGardCell(mats: Materials, ox: number): CellContent {
+    const c = new ColliderKit();
+    const near = new THREE.Group();
+    near.name = 'gard';
+    const lod = new MeshKit();
+    const p = plan();
+    // Ett hus = én MeshKit = ett tegnekall per materiale.
+    p.houses.forEach((h, i) => {
+        const k = new MeshKit();
+        const m = new THREE.Matrix4().makeRotationY(h.rot ?? 0).setPosition(ox + h.x, 0, h.z);
+        k.matrix = m.clone();
+        c.matrix = m.clone();
+        hus(k, c, h.spec);
+        near.add(toGroup(k, mats, `hus${i}`));
+        lod.matrix = m.clone();
+        husLod(lod, h.spec, (key) => mats.lodColor(key));
+    });
+
+    // Felles: gårdsrommet, svalgangene, trappene, kaia og småting.
+    const k = new MeshKit();
+    k.matrix = new THREE.Matrix4().makeTranslation(ox, 0, 0);
+    c.matrix = k.matrix.clone();
+    const back = p.backZ;
+    // Gårdsrommet: plankegang langs smuget, litt mørkere inn mot veggene.
+    k.withTint({ top: 0.95, bottom: 0.95 }, () => k.box('gardsrom', 0, -0.07, (FRONT_Z + back) / 2, YARD_W, 0.14, back - FRONT_Z, { skip: ['bottom'] }));
+    k.withTint({ top: 0.55, bottom: 0.55 }, () => {
+        for (const x of [-YARD_W / 2 + 0.06, YARD_W / 2 - 0.06]) k.box('raatre', x, -0.02, (FRONT_Z + back) / 2, 0.14, 0.1, back - FRONT_Z);
+    });
+    c.box(0, -0.75, (FRONT_Z + back) / 2, GARD_W, 1.5, back - FRONT_Z);
+    // Gjørme under hele gården: synes i glippene mellom husene og bak schøtstua.
+    const end = FRONT_Z + GARD_DEPTH;
+    k.withTint({ top: 0.7, bottom: 0.7 }, () => k.box('gjorme', 0, -0.06, (FRONT_Z + end) / 2, GARD_W, 0.1, end - FRONT_Z, { skip: ['bottom'] }));
+    kai(k, c, -GARD_W / 2, GARD_W / 2, 0, FRONT_Z);
+
+    const xwIn = -YARD_W / 2;
+    const xeIn = YARD_W / 2;
+    svalgang(k, c, { xWall: xwIn, out: 1, z0: p.west.z0, z1: p.west.z1, stairEnd: 'z1' });
+    trapp(k, c, xwIn, xwIn + SV_W, p.west.z1 + 4.2, p.west.z1, DECK_Y, xwIn + SV_W);
+    svalgang(k, c, { xWall: xeIn, out: -1, z0: p.east.z0, z1: p.east.z1, stairEnd: 'z1' });
+    trapp(k, c, xeIn - SV_W, xeIn, p.east.z1 + 4.2, p.east.z1, DECK_Y, xeIn - SV_W);
+
+    // Tønner og en kassestabel: noe å klatre på opp mot svalgangen, og skala på kaia.
+    for (const [x, z, t] of [[-7.6, 2.6, 0.95], [-6.9, 3.4, 0.8], [4.2, 3.1, 1.0], [7.5, 2.4, 0.9]] as const) tonne(k, c, x, z, t);
+    // I gårdsrommet: tønner inntil veggen, og brannkar med vann under svalgangen ved trappene [S].
+    // Alt står inntil veggene, så midten av gårdsrommet og trappefoten er fri.
+    for (const [x, z, t] of [[-1.55, 11.5, 0.85], [1.55, 26.5, 0.95], [1.55, 27.2, 0.8], [-1.55, 30.5, 0.9]] as const) tonne(k, c, x, z, t);
+    brannkar(k, c, -1.5, p.west.z1 - 1.4);
+    brannkar(k, c, 1.5, p.east.z1 - 1.4);
+    k.withTint({ top: 0.9, bottom: 0.9 }, () => {
+        k.box('bordvegg', 1.35, 0.6, 19.5, 1.1, 1.2, 1.1);
+        k.box('bordvegg', 1.45, 0.4, 22.0, 0.8, 0.8, 0.8);
+    });
+    c.box(1.35, 0.6, 19.5, 1.1, 1.2, 1.1);
+    c.box(1.45, 0.4, 22.0, 0.8, 0.8, 0.8);
+    // Pullerter langs kaikanten.
+    for (const x of [-7, -1, 5]) {
+        k.withTint({ top: 0.7, bottom: 0.7 }, () => k.log('raatre', V(x, -0.1, 0.45), V(x, 0.55, 0.45), 0.17, 8, true, 0.15));
+        c.box(x, 0.25, 0.45, 0.32, 0.6, 0.32, true);
+    }
+    near.add(toGroup(k, mats, 'felles'));
+
+    const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
+    mid.name = 'gard:lod';
+    return { near, mid, colliders: c.specs };
+}
+
+/**
+ * Nabogård som ikke er bygget ennå: hus i flat farge (samme som middels-nivået), men med
+ * ekte kai foran og kollidere. Ærlig plassholder til modulsettet er godkjent på den første gården.
+ */
+export function buildProxyGard(mats: Materials, ox: number, front: number, seed: number): CellContent {
+    const k = new MeshKit();
+    const c = new ColliderKit();
+    const rnd = (i: number) => {
+        const s = Math.sin(seed * 91.7 + i * 47.3) * 43758.5453;
+        return s - Math.floor(s);
+    };
+    let i = 0;
+    for (const x of [-(YARD_W / 2 + HOUSE_W / 2), YARD_W / 2 + HOUSE_W / 2]) {
+        let z = FRONT_Z + front + rnd(i++) * 0.8;
+        while (z < FRONT_Z + GARD_DEPTH - 6) {
+            const l = 7 + rnd(i++) * 3.5;
+            const floors = rnd(i++) > 0.5 ? [2.6, 2.4, 2.2] : [2.6, 2.4];
+            const spec: HouseSpec = {
+                w: HOUSE_W, l, floors, roof: rnd(i++) > 0.35 ? 'torv' : 'bordtak', pitch: 0.8 + rnd(i++) * 0.15,
+                tint: { top: 0.85 + rnd(i++) * 0.25, bottom: 1 }, cornersFront: false, cornersBack: false, facade: z < FRONT_Z + front + 1,
+            };
+            const m = new THREE.Matrix4().makeTranslation(ox + x, 0, z);
+            k.matrix = m;
+            husLod(k, spec, (key) => mats.lodColor(key));
+            c.matrix = m;
+            c.box(0, 3, l / 2, HOUSE_W, 6, l);
+            z += l + (rnd(i++) > 0.6 ? 0.6 : 0);
+        }
+    }
+    const lodMesh = new THREE.Mesh(k.bucket('mork').toGeometry(), mats.lodMaterial());
+    lodMesh.castShadow = true;
+    lodMesh.receiveShadow = true;
+    // Kaia og gårdsrommet er ekte, så det går an å gå langs hele bryggefronten.
+    const g = new MeshKit();
+    g.matrix = new THREE.Matrix4().makeTranslation(ox, 0, 0);
+    c.matrix = g.matrix.clone();
+    kai(g, c, -GARD_W / 2, GARD_W / 2, front, FRONT_Z);
+    const z0 = front + FRONT_Z;
+    const z1 = FRONT_Z + GARD_DEPTH;
+    g.box('gardsrom', 0, -0.07, (z0 + z1) / 2, YARD_W, 0.14, z1 - z0, { skip: ['bottom'] });
+    g.withTint({ top: 0.7, bottom: 0.7 }, () => g.box('gjorme', 0, -0.06, (z0 + z1) / 2, GARD_W, 0.1, z1 - z0, { skip: ['bottom'] }));
+    c.box(0, -0.75, (z0 + z1) / 2, GARD_W, 1.5, z1 - z0);
+    const near = toGroup(g, mats, `nabo${seed}`);
+    near.add(lodMesh);
+    const mid = new THREE.Mesh(k.bucket('mork').toGeometry(), mats.lodMaterial());
+    return { near, mid, colliders: c.specs };
+}
+
+/**
+ * Nikolaikirkeallmenningen: den brede branngata fra sjøen og opp, byens midtpunkt og torg til
+ * 1470 (§5.2). 18 m bred nederst ved Vinkjelleren [V]. Bakken er gjørme med en plankegang
+ * opp midten. Kirken øverst og rådhuset (stefnustova) kommer senere.
+ */
+export function buildAllmenningCell(mats: Materials, x0: number, x1: number, front: number): CellContent {
+    const k = new MeshKit();
+    const c = new ColliderKit();
+    const xm = (x0 + x1) / 2;
+    const w = x1 - x0;
+    const depth = FRONT_Z + GARD_DEPTH - front;
+    const zm = front + depth / 2;
+    k.box('gjorme', xm, -0.1, zm + 0.6, w, 0.2, depth - 1.2, { skip: ['bottom'] });
+    c.box(xm, -0.75, zm, w, 1.5, depth);
+    // Plankegang opp midten, og en kort kai ytterst.
+    k.withTint({ top: 0.85, bottom: 0.85 }, () => k.box('gardsrom', xm, -0.02, zm + 2, 2.2, 0.12, depth - 4, { skip: ['bottom'] }));
+    kai(k, c, x0, x1, front, 1.2);
+    const near = toGroup(k, mats, 'allmenning');
+    return { near, colliders: c.specs };
+}

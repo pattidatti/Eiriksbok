@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { GrayboxGame, HudState } from '../games/bryggen/graboks/game';
+import type { GrayboxGame, HudState, WorldId } from '../games/bryggen/graboks/game';
 
-// Testrute for motorprøven til Bryggen-spillet. Ikke koblet inn i galleriet.
-// /test/bryggen-graboks  (legg til ?skygger=0 for å måle uten skygger)
+// Testruter for Bryggen-spillet. Ikke koblet inn i galleriet.
+// /test/bryggen-graboks  grå prøvescene (følelsen)
+// /test/bryggen-gard     den første gården bygget av modulsettet
+// Legg til ?skygger=0 for å måle uten skygger, ?kvalitet=lav for lav-nivået (uten normalkart og skygger).
 
 const EMPTY: HudState = {
     loading: true,
@@ -26,6 +28,20 @@ const EMPTY: HudState = {
     pointerLocked: false,
     mouseMode: false,
     boatSpeed: 0,
+    cells: 0,
+};
+
+const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
+    graboks: {
+        tag: 'Motorprøve · gråboks',
+        title: 'Bryggen, 1420-årene',
+        text: 'Ingen grafikk ennå, bare følelsen. Løp gjennom gårdsrommet, klatre opp på svalgangen fra kassestabelen, prøv kameraet i det trange smuget til høyre, ro færingen ved kaia og slåss med tyven inne i gårdsrommet.',
+    },
+    gard: {
+        tag: 'Modulsett · første gård',
+        title: 'En gård på Bryggen',
+        text: 'Den første gården bygget av modulsettet: laftehus med torv- og bordtak, svalganger over gårdsrommet, vinsjer i gavlene og kai på bolverk. Nikolaikirkeallmenningen ligger til høyre. Nabogårdene er plassholdere til denne er godkjent.',
+    },
 };
 
 const CONTROLS: [string, string][] = [
@@ -42,7 +58,12 @@ const CONTROLS: [string, string][] = [
     ['R', 'start slagsmålet på nytt'],
 ];
 
-export function BryggenGraboksPage() {
+/** Den første gården bygget av modulsettet. */
+export function BryggenGardPage() {
+    return <BryggenGraboksPage world="gard" />;
+}
+
+export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
     const mountRef = useRef<HTMLDivElement>(null);
     const floatRef = useRef<HTMLDivElement>(null);
     const gameRef = useRef<GrayboxGame | null>(null);
@@ -53,10 +74,12 @@ export function BryggenGraboksPage() {
 
     useEffect(() => {
         let cancelled = false;
-        const shadows = new URLSearchParams(window.location.search).get('skygger') !== '0';
+        const params = new URLSearchParams(window.location.search);
+        const shadows = params.get('skygger') !== '0';
+        const low = params.get('kvalitet') === 'lav';
         import('../games/bryggen/graboks/game').then(({ GrayboxGame }) => {
             if (cancelled || !mountRef.current || !floatRef.current) return;
-            const game = new GrayboxGame(mountRef.current, floatRef.current, setHud, { shadows });
+            const game = new GrayboxGame(mountRef.current, floatRef.current, setHud, { shadows, world, low });
             gameRef.current = game;
             (window as unknown as { __bryggen?: GrayboxGame }).__bryggen = game;
             game.start().catch((e: unknown) => setError(String(e)));
@@ -66,7 +89,7 @@ export function BryggenGraboksPage() {
             gameRef.current?.dispose();
             gameRef.current = null;
         };
-    }, []);
+    }, [world]);
 
     const start = (withMouse: boolean) => {
         setStarted(true);
@@ -131,6 +154,7 @@ export function BryggenGraboksPage() {
                 <div className="text-base font-bold text-slate-900">{hud.fps} FPS</div>
                 <div>{hud.frameMs} ms/bilde · sim {hud.simMs} ms</div>
                 <div>{hud.drawCalls} tegnekall · {Math.round(hud.triangles / 1000)}k trekanter</div>
+                {hud.cells > 0 && <div>{hud.cells} celler lastet</div>}
             </div>
 
             {/* Faste hint nederst i midten: der blikket er */}
@@ -177,13 +201,9 @@ export function BryggenGraboksPage() {
             {!started && (
                 <div className="absolute inset-0 flex items-center justify-center bg-slate-100/80 backdrop-blur-sm">
                     <div className="w-[min(560px,92vw)] rounded-2xl bg-white p-6 shadow-xl">
-                        <p className="text-[13px] font-semibold uppercase tracking-wide text-indigo-600">Motorprøve · gråboks</p>
-                        <h1 className="mt-1 text-2xl font-bold text-slate-900">Bryggen, 1420-årene</h1>
-                        <p className="mt-2 text-[15px] text-slate-600">
-                            Ingen grafikk ennå, bare følelsen. Løp gjennom gårdsrommet, klatre opp på svalgangen fra
-                            kassestabelen, prøv kameraet i det trange smuget til høyre, ro færingen ved kaia og slåss med
-                            tyven inne i gårdsrommet.
-                        </p>
+                        <p className="text-[13px] font-semibold uppercase tracking-wide text-indigo-600">{INTRO[world].tag}</p>
+                        <h1 className="mt-1 text-2xl font-bold text-slate-900">{INTRO[world].title}</h1>
+                        <p className="mt-2 text-[15px] text-slate-600">{INTRO[world].text}</p>
                         {error && <p className="mt-3 rounded-lg bg-rose-50 p-2 text-[13px] text-rose-700">{error}</p>}
                         <div className="mt-5 flex flex-wrap gap-3">
                             <button
