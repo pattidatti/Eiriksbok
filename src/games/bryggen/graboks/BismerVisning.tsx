@@ -52,6 +52,11 @@ export function BismerVisning({ b }: { b: BismerHud }) {
                 <line x1={kx - 34} y1={ky + 58} x2={kx + 34} y2={ky + 58} stroke="#7a5c37" strokeWidth={3} />
                 <line x1={kx - 34} y1={ky + 80} x2={kx + 34} y2={ky + 80} stroke="#7a5c37" strokeWidth={3} />
             </svg>
+            {b.juks && (
+                <p className="mb-1 rounded-lg bg-amber-50 px-2 py-1 text-[14px] font-semibold text-amber-800">
+                    E: si det merket viser · 2: si et halvt pund mindre, slik svennen vil
+                </p>
+            )}
             <p className="text-[13px] text-slate-600">
                 Bunten henger i kroken, kolla er den tunge enden. Når stanga ligger vannrett, viser merket ved hanken vekta i bismerpund
                 (ett bismerpund er ca. 5 kg).

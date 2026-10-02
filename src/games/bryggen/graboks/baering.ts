@@ -9,6 +9,7 @@ import type { BryggenWorld } from '../bygg/bryggen';
 import { buntMesh } from '../bygg/folk';
 import type { Character } from '../motor/character';
 import { BismerSpill } from './bismer';
+import { SPOR } from '../bygg/samtaler';
 
 const NAER = 1.5;
 
@@ -61,17 +62,39 @@ export class Baering {
         if (this.baerer) return this.antall === 0 ? 'Tung! En bunt er omtrent en våg, det en gutt klarer å bære. Bær den opp gårdsrommet og inn i bua.' : null;
         // Bunten henger i kroken: nå skal den veies. Vekta trekkes rundt en våg (ca. 3 bismerpund).
         this.trekk = (this.trekk * 9301 + 0.4927) % 1;
-        this.veier = new BismerSpill(Math.round((2.5 + this.trekk * 1.1) * 10) / 10);
-        return this.antall === 0
-            ? 'Bunten henger i kroken på bismeren. Flytt hanken med A og D til stanga ligger vannrett, og les av merket med E.'
-            : null;
+        // Fra tredje bunt vil svennen at gutten skal lese av for lite på fisken til nordlendingen [S].
+        const juks = this.antall >= 2;
+        this.veier = new BismerSpill(Math.round((2.5 + this.trekk * 1.1) * 10) / 10, juks);
+        if (this.antall === 0) return 'Bunten henger i kroken på bismeren. Flytt hanken med A og D til stanga ligger vannrett, og les av merket med E.';
+        if (this.antall === 2) return 'Svennen hvisker: «Denne er nordlendingens fisk. Si et halvt pund mindre enn merket viser. Husbonden vil ha det slik.»';
+        return null;
     }
 
-    /** Mens veiingen pågår: `styr` flytter hanken, `les` leser av. */
-    styr(dt: number, styr: number, les: boolean): void {
+    /**
+     * Mens veiingen pågår: `styr` flytter hanken, `les` leser av ærlig, `jukse` leser av et halvt
+     * pund for lite (bare når svennen har bedt om det). Jo oftere gutten jukser, jo større er
+     * sjansen for at fiskeren merker det (risiko-måleren i §7.1).
+     */
+    styr(dt: number, styr: number, les: boolean, jukse = false): void {
         const v = this.veier;
         if (!v) return;
         v.step(dt, styr);
+        if (jukse && v.juks) {
+            const lest = Math.max(0, v.lesAv() - 0.5);
+            this.veier = null;
+            this.antall++;
+            SPOR.juks++;
+            this.trekk = (this.trekk * 9301 + 0.4927) % 1;
+            const tatt = !SPOR.tatt && this.trekk < Math.min(0.85, 0.2 * SPOR.juks);
+            if (tatt) SPOR.tatt = true;
+            const tall = lest.toFixed(1).replace('.', ',');
+            this.onMelding(
+                tatt
+                    ? `Du sier ${tall} bismerpund. Fiskeren står i døra og ser på deg. Han sier ingenting, men han så det.`
+                    : `Du sier ${tall} bismerpund. Svennen nikker fornøyd. Fiskeren får betalt for mindre fisk enn han leverte.`
+            );
+            return;
+        }
         if (!les) return;
         const lest = v.lesAv();
         const feil = Math.abs(lest - v.sann);

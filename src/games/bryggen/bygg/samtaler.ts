@@ -23,8 +23,14 @@ export interface Replikk {
     vet?: boolean;
 }
 
-/** En samtale: nodene etter id. Den starter i `start`. */
+/** En samtale: nodene etter id. Den starter i `start`, eller i `mistro` når fiskeren har tatt gutten i juks. */
 export type Samtale = Record<string, Replikk>;
+
+/**
+ * Det gutten har gjort som folk husker: hvor mange ganger han har jukset på vekta, og om
+ * fiskeren har merket det. Et lite forstadium til ryktet i §8.3.
+ */
+export const SPOR = { juks: 0, tatt: false };
 
 export const NAVN: Record<string, string> = {
     junge: 'Jungen',
@@ -160,6 +166,29 @@ SAMTALER.fisker = {
         vet: true,
         tekst: 'Tørrfisk var over 80 prosent av det Norge solgte til utlandet på 1300-tallet. Fiskerne i nord fikk korn og utstyr med en gang og betalte med fisk senere. Mange satt i gjeld til kjøpmennene i Bergen i årevis. Hvor stor gjelda var for en vanlig fisker i 1420-årene, vet vi ikke sikkert.',
     },
+};
+
+// Juks på vekta (§7.1): svennen ber gutten lese av for lite på fisken til nordlendingen [S]. At
+// bylova av 1276 fastsatte bismerpundet, er [V]; om og hvor ofte noen jukset på Bryggen, vet vi ikke [U].
+SAMTALER.fisker.mistro = {
+    tekst: 'Du. Den bunten veide mer enn du sa. Jeg veide den selv hjemme, og jeg så hvor hanken sto.',
+    valg: [
+        { tekst: 'Svennen sa jeg skulle gjøre det.', til: 'mistro2' },
+        { tekst: 'Du så feil.', til: 'mistro3' },
+    ],
+};
+SAMTALER.fisker.mistro2 = {
+    tekst: 'Det tror jeg på. Men det var du som holdt i bismeren. Neste år husker jeg ansiktet ditt, gutt.',
+    til: 'vetvekt',
+};
+SAMTALER.fisker.mistro3 = {
+    tekst: 'Jeg har veid fisk i tretti år. Jeg kan ikke gjøre noe med det her. Det vet du, og det vet han som sendte deg.',
+    til: 'vetvekt',
+};
+SAMTALER.fisker.vetvekt = {
+    hvem: 'Dette vet vi',
+    vet: true,
+    tekst: 'Bylova fra 1276 bestemte hvor tungt et bismerpund skulle være, så alle skulle veie likt. Fiskerne var avhengige av kjøpmennene som veide fisken. Om noen jukset med vekta på Bryggen i 1420-årene, og hvor ofte, vet vi ikke.',
 };
 
 /** Det de sier når gutten snakker med dem (uten en egen samtale). */

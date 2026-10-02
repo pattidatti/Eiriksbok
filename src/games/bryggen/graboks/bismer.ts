@@ -27,6 +27,8 @@ export interface BismerHud {
     vinkel: number;
     /** Merkene: posisjon langs stanga og hva de viser. */
     merker: { p: number; tekst: string; hel: boolean }[];
+    /** Svennen har bedt gutten lese av for lite: 2 jukser. */
+    juks: boolean;
 }
 
 export class BismerSpill {
@@ -35,9 +37,11 @@ export class BismerSpill {
     private fart = 0;
     readonly sann: number;
     readonly merker: BismerHud['merker'];
+    readonly juks: boolean;
 
-    constructor(sann: number) {
+    constructor(sann: number, juks = false) {
         this.sann = sann;
+        this.juks = juks;
         this.merker = [];
         for (let m = 0; m <= 6; m += 0.5) {
             this.merker.push({ p: balanse(m), tekst: Number.isInteger(m) ? String(m) : '', hel: Number.isInteger(m) });
@@ -56,7 +60,7 @@ export class BismerSpill {
     }
 
     get hud(): BismerHud {
-        return { p: this.p, vinkel: this.vinkel, merker: this.merker };
+        return { p: this.p, vinkel: this.vinkel, merker: this.merker, juks: this.juks };
     }
 
     /** Leser av der hanken står, rundet til en tidel. */

@@ -447,7 +447,7 @@ export class GrayboxGame {
         if (inp.resetPressed) this.resetFight();
         // Samtale eller veiing: gutten står stille, E og mellomrom går videre, 1-3 svarer.
         const veier = !!this.baering?.veier;
-        if (veier) this.baering!.styr(dt, inp.move.x, inp.interactPressed || inp.jumpPressed);
+        if (veier) this.baering!.styr(dt, inp.move.x, inp.interactPressed || inp.jumpPressed, inp.valg === 2);
         const prat = (this.folk?.laast ?? false) || veier;
         if (prat) {
             if (!veier) this.folk!.input(inp.interactPressed || inp.jumpPressed, inp.valg);

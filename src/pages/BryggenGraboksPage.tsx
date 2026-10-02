@@ -219,10 +219,10 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                     <span>Junge</span>
                     <span className="tabular-nums">{hud.playerHp}</span>
                 </div>
-                {hud.bunter > 0 && <div className="mt-1 text-[13px] text-slate-600">Bunter båret: <span className="font-semibold tabular-nums text-slate-900">{hud.bunter}</span></div>}
                 <div className="mt-1 h-2.5 overflow-hidden rounded-full bg-slate-200">
                     <div className="h-full rounded-full bg-rose-600 transition-[width] duration-200" style={{ width: `${hpPct}%` }} />
                 </div>
+                {hud.bunter > 0 && <div className="mt-1 text-[13px] text-slate-600">Bunter båret: <span className="font-semibold tabular-nums text-slate-900">{hud.bunter}</span></div>}
             </div>
 
             {hud.enemyActive && (
@@ -341,7 +341,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             )}
 
             {/* Kontroller */}
-            {started && !hud.samtale && (
+            {started && !hud.samtale && !hud.bismer && (
                 <div className="absolute bottom-4 left-4 max-w-xs rounded-xl bg-white/85 px-3 py-2 text-[13px] text-slate-700 shadow-md backdrop-blur">
                     <button className="font-semibold text-slate-900" onClick={() => setShowControls((v) => !v)}>
                         {showControls ? 'Skjul kontroller' : 'Vis kontroller'}

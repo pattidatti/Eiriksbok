@@ -647,7 +647,11 @@ Mixamo brukes ikke (krever innlogging).
   merket i bismerpund. På den nordiske bismeren flyttes hanken langs stanga, ikke loddet [V SNL
   «bismer»]. Merkene står tettere jo tyngre varen er, slik de gjør på en ekte bismer. Bismerpund
   ca. 5,1 kg [V bylova 1276]; at en bunt er omtrent en våg (ca. 3 bismerpund) er [U]. Leser han
-  av før stanga ligger rett, veier svennen på nytt. Venter på eierens spilltest
+  av før stanga ligger rett, veier svennen på nytt. Juks på vekta: fra tredje bunt hvisker svennen
+  at gutten skal si et halvt pund mindre på nordlendingens fisk (2 på tastaturet). Sjansen for at
+  fiskeren merker det øker for hver gang (20, 40, 60 prosent ...). Da møter fiskeren gutten med det
+  neste gang de snakker, og samtalen ender med en «Dette vet vi» om bylovas bismerpund [V] og at vi ikke
+  vet om eller hvor ofte noen jukset på Bryggen [U]. Selve ordren fra svennen er [S]. Venter på eierens spilltest
 - [~] Kogge og jekter i Vågen (02.10.2026, `bygg/skip.ts`, `motor/skrog.ts`, `motor/kogge-modell.ts`,
   `motor/jekt-modell.ts`): en kogge fortøyd et par meter ut fra kaia ved Nikolaikirkeallmenningen, en
   jekt lastet med tørrfisk langs kaia vest for den første gården, og en mindre jekt for anker lenger ute.
