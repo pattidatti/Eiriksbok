@@ -11,15 +11,18 @@
 import * as THREE from 'three';
 import type { Physics } from '../motor/physics';
 import { WATER_Y } from '../motor/boat';
-import { CellStreamer, type CellDef } from '../motor/streaming';
+import { CellStreamer, type CellContent, type CellDef } from '../motor/streaming';
 import { Materials, makeSkyEnvironment } from '../motor/materials';
 import type { GrayboxLayout } from '../graboks/scene';
-import { FRONT_Z, GARD_DEPTH, GARD_W } from './gard';
+import { FRONT_Z, GARD_DEPTH, GARD_W, type Sides } from './gard';
+import type { GardParams } from './nabogard';
 
 export interface BryggenWorld {
     layout: GrayboxLayout;
     streamer: CellStreamer;
     materials: Materials;
+    /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
+    environment: THREE.Texture;
 }
 
 const ALLM_W = 18; // Nikolaikirkeallmenningen nederst [V]
@@ -30,17 +33,16 @@ const FRONT_JOG = [-0.9, 0.4, -0.5, 0.7, -1.2, 0.2, -0.4, 0.9];
 
 export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: THREE.WebGLRenderer, opts: { low?: boolean } = {}): Promise<BryggenWorld> {
     const materials = new Materials(renderer, { low: opts.low });
-    const [gardMod] = await Promise.all([import('./gard'), materials.load()]);
+    const [gardMod, naboMod] = await Promise.all([import('./gard'), import('./nabogard'), materials.load()]);
 
     // Himmel og miljølys: Bergen i grått vær. Litt kaldere enn gråboksen.
     const fog = 0x95a0a8;
     scene.background = new THREE.Color(fog);
     scene.fog = new THREE.FogExp2(fog, 0.021);
     // Lav kvalitet dropper miljølyset (ett oppslag mindre per piksel) og løfter lyset litt i stedet.
-    if (!opts.low) {
-        scene.environment = makeSkyEnvironment(renderer, 0xb9c3cb, 0x939ea6, 0x3a3833);
-        scene.environmentIntensity = 0.9;
-    }
+    const environment = makeSkyEnvironment(renderer, 0xb9c3cb, 0x939ea6, 0x3a3833);
+    scene.environment = opts.low ? null : environment;
+    scene.environmentIntensity = 0.9;
 
     // ── Vågen ──
     const water = new THREE.Mesh(
@@ -67,38 +69,52 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     for (let i = 0; i < 18; i++) far(-90 + i * 11, -95 - (i % 3) * 4, 8, 6 + (i % 4) * 1.5, 7);
 
     // ── Cellene ──
-    // Gården vi bygger ferdig først, Nikolaikirkeallmenningen på Holmen-siden av den, og nabogårder som
-    // plassholdere i begge retninger langs bryggefronten.
-    const cells: CellDef[] = [];
-    const half = new THREE.Vector2(GARD_W / 2, GARD_DEPTH / 2 + FRONT_Z / 2);
-    cells.push({
-        id: 'gard-1',
-        center: new THREE.Vector2(0, CELL_Z),
-        half,
-        build: async () => gardMod.buildGardCell(materials, 0),
-    });
-    const ax0 = GARD_W / 2;
-    cells.push({
-        id: 'nikolaikirkeallmenningen',
-        center: new THREE.Vector2(ax0 + ALLM_W / 2, CELL_Z),
-        half: new THREE.Vector2(ALLM_W / 2, half.y),
-        build: async () => gardMod.buildAllmenningCell(materials, ax0, ax0 + ALLM_W, 0.3),
-    });
+    // Gården vi bygde ferdig først, Nikolaikirkeallmenningen på Holmen-siden av den, og nabogårder
+    // av modulsettet i begge retninger langs bryggefronten. Hver nabo trekkes slik at den ikke
+    // ligner gården ved siden av (nabogard.ts), og bredden varierer, så gårdene legges etter
+    // hverandre fra midten og utover.
     const span = 7;
+    const ax0 = GARD_W / 2;
+    interface Slot { id: string; x0: number; x1: number; front: number; build: (sides: Sides) => Promise<CellContent> }
+    const slots: Slot[] = [
+        { id: 'gard-1', x0: -GARD_W / 2, x1: GARD_W / 2, front: 0, build: async (s) => gardMod.buildGardCell(materials, 0, s) },
+        { id: 'nikolaikirkeallmenningen', x0: ax0, x1: ax0 + ALLM_W, front: 0.3, build: async (s) => gardMod.buildAllmenningCell(materials, ax0, ax0 + ALLM_W, 0.3, s) },
+    ];
+    let xe = ax0 + ALLM_W;
+    let xw = -GARD_W / 2;
+    let prevE: GardParams | undefined;
+    let prevW: GardParams | undefined;
     for (let i = 1; i <= span; i++) {
-        const xe = ax0 + ALLM_W + GARD_W * (i - 0.5);
-        const xw = -GARD_W * i;
-        const fe = FRONT_JOG[i % FRONT_JOG.length];
-        const fw = FRONT_JOG[(i + 3) % FRONT_JOG.length];
-        cells.push({ id: `nabo-o${i}`, center: new THREE.Vector2(xe, CELL_Z), half, build: async () => gardMod.buildProxyGard(materials, xe, fe, i) });
-        cells.push({ id: `nabo-v${i}`, center: new THREE.Vector2(xw, CELL_Z), half, build: async () => gardMod.buildProxyGard(materials, xw, fw, i + 50) });
+        const pe = naboMod.naboParams(1000 + i, FRONT_JOG[i % FRONT_JOG.length], prevE);
+        const pw = naboMod.naboParams(2000 + i, FRONT_JOG[(i + 3) % FRONT_JOG.length], prevW);
+        const we = naboMod.gardWidth(pe);
+        const ww = naboMod.gardWidth(pw);
+        const cxE = xe + we / 2;
+        const cxW = xw - ww / 2;
+        slots.push({ id: `nabo-o${i}`, x0: xe, x1: xe + we, front: pe.front, build: async (s) => naboMod.buildNaboCell(materials, cxE, pe, s) });
+        slots.push({ id: `nabo-v${i}`, x0: xw - ww, x1: xw, front: pw.front, build: async (s) => naboMod.buildNaboCell(materials, cxW, pw, s) });
+        xe += we;
+        xw -= ww;
+        prevE = pe;
+        prevW = pw;
     }
+    // Langs fronten fra -x til +x: hver celle får vite hvor langt ute kaia til naboene står.
+    slots.sort((a, b) => a.x0 - b.x0);
+    const cells: CellDef[] = slots.map((s, i) => {
+        const sides: Sides = { west: slots[i - 1]?.front, east: slots[i + 1]?.front };
+        return {
+            id: s.id,
+            center: new THREE.Vector2((s.x0 + s.x1) / 2, CELL_Z),
+            half: new THREE.Vector2((s.x1 - s.x0) / 2, GARD_DEPTH / 2 + FRONT_Z / 2),
+            build: () => s.build(sides),
+        };
+    });
     const streamer = new CellStreamer(phys, cells);
     scene.add(streamer.root);
 
     // ── Usynlige grenser ──
-    const xMin = -GARD_W * (span + 0.5);
-    const xMax = ax0 + ALLM_W + GARD_W * span;
+    const xMin = xw;
+    const xMax = xe;
     const wall = (cx: number, cz: number, hx: number, hz: number) =>
         phys.addBox(new THREE.Vector3(cx, 0, cz), new THREE.Vector3(hx, 14, hz));
     const back = FRONT_Z + GARD_DEPTH;
@@ -112,6 +128,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     return {
         streamer,
         materials,
+        environment,
         layout: {
             playerStart: new THREE.Vector3(0, 0, 2.4),
             playerYaw: 0,

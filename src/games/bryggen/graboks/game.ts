@@ -47,7 +47,12 @@ export interface HudState {
     boatSpeed: number;
     /** Lastede celler (bare i Bryggen-scenen). */
     cells: number;
+    /** Grafikknivået som brukes nå. */
+    quality: Quality;
 }
+
+/** Full: normal- og AO-kart, miljølys og skygger. Lav: bare fargetekstur og ruhet. */
+export type Quality = 'full' | 'lav';
 
 interface Floater {
     el: HTMLDivElement;
@@ -100,12 +105,16 @@ export class GrayboxGame {
     private simTimes: number[] = [];
     private hudTimer = 0;
 
-    private readonly low: boolean;
+    private low: boolean;
+    /** ?skygger=0 slår av skygger også på full kvalitet (for måling). */
+    private readonly shadowsAllowed: boolean;
+    private hemi!: THREE.HemisphereLight;
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
         this.worldId = opts.world ?? 'graboks';
         this.low = !!opts.low;
+        this.shadowsAllowed = opts.shadows;
         this.floatLayer = floatLayer;
         this.onHud = onHud;
         this.renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
@@ -143,6 +152,7 @@ export class GrayboxGame {
         this.scene.background = new THREE.Color(fogColor);
         this.scene.fog = new THREE.FogExp2(fogColor, 0.024);
         const hemi = new THREE.HemisphereLight(0xc9d2da, 0x4a4843, 1.5);
+        this.hemi = hemi;
         this.scene.add(hemi);
         this.sun = new THREE.DirectionalLight(0xfff4e6, 1.5);
         this.sun.position.set(-14, 22, -10);
@@ -218,6 +228,31 @@ export class GrayboxGame {
         this.renderer.domElement.focus();
     }
 
+    get quality(): Quality {
+        return this.low ? 'lav' : 'full';
+    }
+
+    /** Bytter grafikknivå mens spillet går. Første bytte til full laster detaljkartene. */
+    async setQuality(q: Quality): Promise<void> {
+        const low = q === 'lav';
+        if (low === this.low) return;
+        this.low = low;
+        this.pushHud();
+        if (this.world) {
+            await this.world.materials.setLow(low);
+            if (this.disposed || this.low !== low) return;
+            this.scene.environment = low ? null : this.world.environment;
+            this.hemi.intensity = low ? 1.7 : 1.25;
+        }
+        this.renderer.shadowMap.enabled = this.shadowsAllowed && !low;
+        // Skyggene er bakt inn i shaderne: alle materialer må bygges på nytt.
+        this.scene.traverse((o) => {
+            const mat = (o as THREE.Mesh).material as THREE.Material | THREE.Material[] | undefined;
+            if (Array.isArray(mat)) mat.forEach((m) => (m.needsUpdate = true));
+            else if (mat) mat.needsUpdate = true;
+        });
+    }
+
     dispose(): void {
         this.disposed = true;
         cancelAnimationFrame(this.raf);
@@ -227,6 +262,7 @@ export class GrayboxGame {
         this.input.dispose();
         this.world?.streamer.dispose();
         this.world?.materials.dispose();
+        this.world?.environment.dispose();
         if (document.pointerLockElement === this.renderer.domElement) document.exitPointerLock();
         this.scene.traverse((o) => {
             const m = o as THREE.Mesh;
@@ -290,6 +326,16 @@ export class GrayboxGame {
         const simMs = performance.now() - t0;
 
         this.renderFrame(dt, gameDt, alpha);
+        // Utviklerverktøy (bare i dev): et fast kamera for skjermbilder og måling fra Vågen.
+        // Sett window.__bryggenFoto = { pos: [x, y, z], look: [x, y, z] } i konsollen.
+        // window.__bryggenPos viser hvor gutten står (til testskript).
+        const dev = window as { __bryggenFoto?: { pos: number[]; look: number[] }; __bryggenPos?: number[] };
+        const foto = import.meta.env.DEV ? dev.__bryggenFoto : undefined;
+        if (import.meta.env.DEV && this.player) dev.__bryggenPos = this.player.pos.toArray();
+        if (foto) {
+            this.cam.camera.position.fromArray(foto.pos);
+            this.cam.camera.lookAt(foto.look[0], foto.look[1], foto.look[2]);
+        }
         this.renderer.render(this.scene, this.cam.camera);
 
         // Måling: tid mellom bilder (inkluderer GPU-ventetid via rAF).
@@ -574,6 +620,7 @@ export class GrayboxGame {
             mouseMode: this.input.mouseMode,
             boatSpeed: this.boat ? Math.abs(this.boat.speed) : 0,
             cells: this.world ? this.world.streamer.liveCount : 0,
+            quality: this.quality,
         });
     }
 }

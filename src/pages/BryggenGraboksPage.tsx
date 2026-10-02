@@ -1,11 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { GrayboxGame, HudState, WorldId } from '../games/bryggen/graboks/game';
+import type { GrayboxGame, HudState, Quality, WorldId } from '../games/bryggen/graboks/game';
 
 // Testruter for Bryggen-spillet. Ikke koblet inn i galleriet.
 // /test/bryggen-graboks  grå prøvescene (følelsen)
 // /test/bryggen-gard     den første gården bygget av modulsettet
 // Legg til ?skygger=0 for å måle uten skygger, ?kvalitet=lav for lav-nivået (uten normalkart og skygger).
+// Knappen øverst til høyre (eller G) bytter kvalitet mens spillet går. Valget huskes i nettleseren.
+
+const QUALITY_KEY = 'bryggen-kvalitet';
+
+function initialQuality(params: URLSearchParams): Quality {
+    const q = params.get('kvalitet');
+    if (q === 'lav' || q === 'full') return q;
+    try {
+        if (localStorage.getItem(QUALITY_KEY) === 'lav') return 'lav';
+    } catch {
+        // Lagring kan være blokkert. Da blir det full kvalitet.
+    }
+    return 'full';
+}
 
 const EMPTY: HudState = {
     loading: true,
@@ -29,6 +43,7 @@ const EMPTY: HudState = {
     mouseMode: false,
     boatSpeed: 0,
     cells: 0,
+    quality: 'full',
 };
 
 const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
@@ -40,7 +55,7 @@ const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
     gard: {
         tag: 'Modulsett · første gård',
         title: 'En gård på Bryggen',
-        text: 'Den første gården bygget av modulsettet: laftehus med torv- og bordtak, svalganger over gårdsrommet, vinsjer i gavlene og kai på bolverk. Nikolaikirkeallmenningen ligger til høyre. Nabogårdene er plassholdere til denne er godkjent.',
+        text: 'Den første gården bygget av modulsettet: laftehus med torv- og bordtak, svalganger over gårdsrommet, vinsjer i gavlene og kai på bolverk. Nikolaikirkeallmenningen ligger til høyre, og nabogårdene langs bryggefronten er bygget av det samme settet.',
     },
 };
 
@@ -56,6 +71,7 @@ const CONTROLS: [string, string][] = [
     ['Q / C', 'unnamanøver'],
     ['F', 'avslutt (når fienden vakler)'],
     ['R', 'start slagsmålet på nytt'],
+    ['G', 'bytt grafikk (full / lav)'],
 ];
 
 /** Den første gården bygget av modulsettet. */
@@ -76,7 +92,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
         let cancelled = false;
         const params = new URLSearchParams(window.location.search);
         const shadows = params.get('skygger') !== '0';
-        const low = params.get('kvalitet') === 'lav';
+        const low = initialQuality(params) === 'lav';
         import('../games/bryggen/graboks/game').then(({ GrayboxGame }) => {
             if (cancelled || !mountRef.current || !floatRef.current) return;
             const game = new GrayboxGame(mountRef.current, floatRef.current, setHud, { shadows, world, low });
@@ -90,6 +106,26 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             gameRef.current = null;
         };
     }, [world]);
+
+    const toggleQuality = () => {
+        const game = gameRef.current;
+        if (!game) return;
+        const next: Quality = game.quality === 'full' ? 'lav' : 'full';
+        try {
+            localStorage.setItem(QUALITY_KEY, next);
+        } catch {
+            // Lagring blokkert: byttet gjelder bare denne økta.
+        }
+        void game.setQuality(next);
+    };
+
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if (e.code === 'KeyG' && !e.repeat) toggleQuality();
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, []);
 
     const start = (withMouse: boolean) => {
         setStarted(true);
@@ -150,8 +186,20 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             )}
 
             {/* Ytelse */}
-            <div className="pointer-events-none absolute right-4 top-4 rounded-xl bg-white/85 px-3 py-2 text-right text-[13px] tabular-nums text-slate-700 shadow-md backdrop-blur">
-                <div className="text-base font-bold text-slate-900">{hud.fps} FPS</div>
+            <div className="absolute right-4 top-4 rounded-xl bg-white/85 px-3 py-2 text-right text-[13px] tabular-nums text-slate-700 shadow-md backdrop-blur">
+                <div className="flex items-center justify-end gap-2">
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            toggleQuality();
+                        }}
+                        title="Bytt grafikk (G)"
+                        className="rounded-lg bg-slate-200 px-2 py-0.5 text-[13px] font-semibold text-slate-800 hover:bg-slate-300"
+                    >
+                        Grafikk: {hud.quality === 'full' ? 'full' : 'lav'} (G)
+                    </button>
+                    <span className="text-base font-bold text-slate-900">{hud.fps} FPS</span>
+                </div>
                 <div>{hud.frameMs} ms/bilde · sim {hud.simMs} ms</div>
                 <div>{hud.drawCalls} tegnekall · {Math.round(hud.triangles / 1000)}k trekanter</div>
                 {hud.cells > 0 && <div>{hud.cells} celler lastet</div>}

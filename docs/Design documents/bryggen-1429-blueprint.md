@@ -9,7 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet; venter på eierens vurdering. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -474,13 +474,37 @@ hadde mer last enn ved forrige måling, så gråboksen er målt på nytt ved sid
 Tegnekall og trekanter ligger godt under budsjettet. Det som koster på en programvare-rasterizer er
 pikslene: tre teksturoppslag, normalkart, miljølys og skygger på hver flate. Lav-nivået fjerner
 normal- og AO-kart, miljølys og skygger og ser nesten likt ut. Hvilket nivå Chromebooken skal få som
-standard, avgjøres av måleren på eierens egen maskin.
+standard, avgjøres av måleren på eierens egen maskin. Eieren spilte på full kvalitet og syntes begge
+nivåene ser bra ut (02.10.2026). Standard er full; eleven bytter med «Grafikk»-knappen eller G, og
+valget huskes i nettleseren.
+
+**Målt med nabogårdene av modulsettet** (02.10.2026, samme rute, oppløsning og llvmpipe). Forrige
+commit (plassholderne i flat farge) ble kjørt i en egen worktree og målt annenhver gang med den nye,
+så maskinlasten er lik:
+
+| Oppsett | Snitt FPS | Laveste | Tegnekall | Trekanter |
+|---|---|---|---|---|
+| Plassholdere, full | 22 | 19 | 27-103 | 36-62k |
+| Nabogårder, full | 19,5 | 17 | 32-157 | 39-122k |
+| Plassholdere, lav | 47 | 39 | 30-105 | 37-62k |
+| Nabogårder, lav | 40 | 31 | 30-156 | 39-122k |
+
+Fra Vågen med hele fronten i bildet: ca. 155 tegnekall og 120-180k trekanter, 17-20 FPS på full. Alt
+holder seg innenfor §9.5. Prisen (ca. 12 % på full, 15 % på lav) er pikslene: teksturert tre der
+plassholderne var flat farge. Den første versjonen hadde hele nabogården som én klump og ga 176k
+trekanter; delt i to halvdeler og med laftehoder på 5 kanter ble det 122k, men FPS-en flyttet seg
+nesten ikke. Det bekrefter at programvare-rasteriseren er pikselbundet. En gård tar ca. 12 ms å bygge
+når cella strømmes inn. Chromebook-tallet mangler fortsatt (eieren hadde ikke maskinen tilgjengelig);
+på stasjonær går full kvalitet «nydelig».
+
+Med utkraging og glugger (samme to bilder fra Vågen): 19 FPS på full og 37,5 på lav, 182-190
+tegnekall og 145-157k trekanter (fra 149k). Ingen nye materialer, så tegnekallene står stille.
 
 ### 9.6 Strømming og LOD
 
 **Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
 middels-nivået (husene som bokser og prismer i flat farge, én tegning per celle) vises bak 70 m.
-Kolliderne lages og fjernes med cella. Cellene er foreløpig én gård eller allmenning bred (18 × 61 m),
+Kolliderne lages og fjernes med cella. Cellene er foreløpig én gård eller allmenning bred (9-20 × 61 m; nabogårdene har ulik bredde),
 bygget i kode med `import()`, ikke glTF. Fjernt nivå (silhuettkort) er ikke laget; tåka gjør jobben.
 
 - Byen deles i celler på ca. 60×60 m (en gårdsrekke, Holmen, Vågsbunnen ...). Hver celle er en
@@ -529,8 +553,15 @@ Mixamo brukes ikke (krever innlogging).
 
 - [ ] Hero: Bryggen fra Vågen i regn, 1426, koggen legger til (for galleriet)
 - [~] Bryggens gårder: modulsett (laft, svalgang, gavl, torvtak, bordtak, trapp, vinsj). Bygget og
-  brukt på én gård (`/test/bryggen-gard`). Nabogårdene er plassholdere i flat farge til den første
-  er godkjent. Mangler: utkraget overetasje, glugger, inngang i husene, schøtstue og ildhus innvendig
+  brukt på én gård (`/test/bryggen-gard`), godkjent av eieren 02.10.2026. De 14 nabogårdene er bygget
+  av samme sett (`bygg/nabogard.ts`), trukket fra et frø: enkelt- eller dobbeltgård, husbredde,
+  gårdsrom, antall hus, etasjer, torv/bordtak, svalganger, tone og gavl (bordkledd med vinsj eller
+  laftet). To gårder ved siden av hverandre får aldri samme tone, og som oftest ulik gavl. Kaia følger
+  hoppene i `FRONT_JOG` med sidevegg i bolverket. Utkraget overetasje og glugger med luker lagt
+  til modulsettet 02.10.2026: forhusene krager 0,22-0,45 m per etasje (hver femte har rett gavl),
+  båret av bjelkehoder; glugger på framgavlen og langveggen mot gårdsrommet, noen med luka slått
+  opp. Hvor mye gårdene på Bryggen kraget i 1420-årene, er ikke målt opp **[K]**. Mangler: inngang i
+  husene, schøtstue og ildhus innvendig, ekte gårdsnavn og -bredder fra utgravningsplanene **[K]**
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
 - [ ] Færing (gråboksens form, med ekte treteksturer)
 - [ ] Figurer: junge, husbonde, svenn, nordlandsfisker, tyv, byvakt

@@ -39,14 +39,21 @@ export class Materials {
     private readonly loader = new THREE.TextureLoader();
     private readonly mats = new Map<MatKey, THREE.MeshStandardMaterial>();
     private readonly textures: THREE.Texture[] = [];
-    private readonly anisotropy: number;
+    /** Normal- og ARM-kartene per materiale. Lastes først når full kvalitet brukes. */
+    private readonly detail = new Map<MatKey, { normal: THREE.Texture; arm: THREE.Texture }>();
+    private detailLoad: Promise<void> | null = null;
+    private readonly maxAnisotropy: number;
     /** Lav kvalitet: bare fargetekstur og ruhet. Sparer to teksturoppslag per piksel. */
-    private readonly low: boolean;
+    private low: boolean;
 
     constructor(renderer: THREE.WebGLRenderer, opts: { low?: boolean } = {}) {
         this.low = !!opts.low;
         // 4 er nok til at plankene på bakken ikke blir grøt på skrå, og billig på Chromebook.
-        this.anisotropy = this.low ? 1 : Math.min(4, renderer.capabilities.getMaxAnisotropy());
+        this.maxAnisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+    }
+
+    private get anisotropy(): number {
+        return this.low ? 1 : this.maxAnisotropy;
     }
 
     /** Laster alle teksturene. Spillet venter på denne før første bilde. */
@@ -56,6 +63,7 @@ export class Materials {
             jobs.push(this.make(key, def));
         }
         await Promise.all(jobs);
+        if (!this.low) await this.loadDetail();
         // Mørke åpninger (inn i loftet, under svalgangen): ingen tekstur, bare nesten svart tre.
         this.mats.set('mork', new THREE.MeshStandardMaterial({ color: 0x1b1714, roughness: 1, vertexColors: true }));
     }
@@ -90,25 +98,62 @@ export class Materials {
     }
 
     private async make(key: MatKey, def: MatDef): Promise<void> {
-        const [map, normalMap, arm] = await Promise.all([
-            this.tex(`${BASE}${def.file}_diff.webp`, true, def.tile),
-            this.low ? null : this.tex(`${BASE}${def.file}_nor.webp`, false, def.tile),
-            this.low ? null : this.tex(`${BASE}${def.file}_arm.webp`, false, def.tile),
-        ]);
+        const map = await this.tex(`${BASE}${def.file}_diff.webp`, true, def.tile);
         const ns = def.normalScale ?? 1;
         const m = new THREE.MeshStandardMaterial({
             map,
-            normalMap,
             normalScale: new THREE.Vector2(ns, ns),
-            aoMap: arm,
             aoMapIntensity: 1,
-            roughnessMap: arm,
-            roughness: this.low ? 0.85 : 1,
+            roughness: 0.85,
             metalness: 0,
             color: new THREE.Color(...(def.color ?? [1, 1, 1])),
             vertexColors: true,
         });
         this.mats.set(key, m);
+    }
+
+    /** Laster normal- og ARM-kartene én gang, første gang full kvalitet trengs. */
+    private loadDetail(): Promise<void> {
+        if (!this.detailLoad) {
+            const entries = Object.entries(DEFS) as [Exclude<MatKey, 'mork'>, MatDef][];
+            this.detailLoad = Promise.all(
+                entries.map(async ([key, def]) => {
+                    const [normal, arm] = await Promise.all([
+                        this.tex(`${BASE}${def.file}_nor.webp`, false, def.tile),
+                        this.tex(`${BASE}${def.file}_arm.webp`, false, def.tile),
+                    ]);
+                    this.detail.set(key, { normal, arm });
+                })
+            ).then(() => this.applyQuality());
+        }
+        return this.detailLoad;
+    }
+
+    /** Bytter kvalitet mens spillet går. Full kvalitet laster detaljkartene første gang. */
+    async setLow(low: boolean): Promise<void> {
+        this.low = low;
+        if (!low) await this.loadDetail();
+        this.applyQuality();
+    }
+
+    private applyQuality(): void {
+        // Også materialer som ikke står i scenen nå: skyggene er bakt inn i shaderne deres.
+        if (this.lodMat) this.lodMat.needsUpdate = true;
+        for (const [key, m] of this.mats) {
+            m.needsUpdate = true;
+            if (key === 'mork') continue;
+            const d = this.low ? undefined : this.detail.get(key);
+            m.normalMap = d?.normal ?? null;
+            m.aoMap = d?.arm ?? null;
+            m.roughnessMap = d?.arm ?? null;
+            m.roughness = d ? 1 : 0.85;
+            m.needsUpdate = true;
+        }
+        for (const t of this.textures) {
+            if (t.anisotropy === this.anisotropy) continue;
+            t.anisotropy = this.anisotropy;
+            t.needsUpdate = true;
+        }
     }
 
     dispose(): void {
