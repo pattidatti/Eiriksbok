@@ -534,3 +534,32 @@ preussisk blått, lanternegule plasser i natta».
   vinnerandelen mye; banneret «STYRBORD ER STENGT» står på samme høyde som de andre bannerne
   (bannerTop 58 %); tapsskjermen med tall-tipset er ikke sett på et skjermbilde (selvspillet vinner);
   «HØY SIDE - TREGT» står fortsatt under båten på den høye siden.
+- **Fase: siste forbedring etter vurdering 4 (forbedrer, 2026-10-02).** Vurdering 4: Gøy 3, Utseende 4,
+  Lærerikt 4, Lesbart 4, Unikt 4 (sum 19). Bare to grep, ingen nye regler og ingen balanseendring.
+  (A) Lesbart: all tekst er ute av midten av skroget. Bannerne (fase, «BÅT N ER TAPT», «STYRBORD ER
+  STENGT», rangtrinn, «I SISTE LITEN») står nå i fase-boksen nede til venstre (`meld()` i
+  komponenten, `tasteFelt()` i hud.ts): boksen blinker i meldingens farge og teksten krymper om den
+  er lang. S-boblen er borte; ved gitterporten står et pulserende tastetegn «S ÅPNE PORTEN» rett
+  under porten. Boblen «Landgangen venter på stuerten» er fjernet (linja over dekket sier det
+  samme). Lærings-øyeblikket om tomme plasser står ved siden av skroget, ikke i snittet.
+  «HØY SIDE - TREGT» er nå to linjer: «HØY SIDE:» / «LANDGANGEN GÅR TREGT». Den ubrukte
+  `LÆRDOM.solas` er slettet, så SOLAS står bare én gang på sluttskjermen (sett på skjermbildet).
+  (B) Lærerikt/look: profilstripa viser de 16 vanntette rommene. Fire er fulle når runden starter,
+  det femte fylles rundt 01.04, og resten fylles i takt med vannet (`fulleRom()` i hud.ts, bare
+  visning fra `TUNING.vann`). Skottene stopper under dekket (veggene gikk ikke helt opp), og skottet
+  etter rom 4 er rødt. Ved siden av profilen står «VANNTETTE ROM / N AV 16 FULLE» (rødt over 4).
+  Når det femte er fullt, står lappen «SKIPET TÅLTE BARE 4 FULLE ROM» under profilen i 7 s.
+  «Dette skjedde» har en linje om de 16 rommene og veggene som ikke gikk helt opp (vekt 2,2).
+  Simulering (200 runder per robot), grønn og uendret: klok vinner 100 % (median 785, p10-p90
+  763-801), halvgod 49 % (704, 674-730), fir-straks 0 % (62), venter-alltid 0 % (336), tilfeldig
+  0 % (7), passiv 0 %. 17,9 valg per minutt, press 0,40 -> 0,59 -> 0,74.
+  Nettleseren: klok vant med 761 (rett under simens p10, porten grønn), tekstdekning av midten 0,0 s,
+  audit --strict 0 funn, likhet nærmest loddposen 0,42 - alt grønt.
+  Det som IKKE virket / ble valgt bort: å flytte arkadeskallets banner (`bannerTop`) til toppen -
+  der ville det dekket profilstripa med de nye rommene, så meldingene tegnes i fase-boksen i
+  stedet. En DOM-lapp for rom-beskjeden ville stått over profilen; den er tegnet på lerretet.
+  Kjente svakheter: meldingene i fase-boksen er mindre synlige enn et banner midt på skjermen (de
+  blinker de første 1,2 s for å fange blikket); Gøy-punktet fra vurderingen (stuerten som ekte valg)
+  er ikke gjort med vilje; rom-linja i «Dette skjedde» faller ut når runden har tapte båter (bare
+  fire linjer vises); «S ÅPNE PORTEN» kan havne under vannflata sent i natta (se film-07); rom-lappen
+  kan stå samtidig med linja «LANDGANGEN VENTER» over dekket hvis stuerten sendes rundt 01.04-01.08.

@@ -6,6 +6,16 @@ export interface TegneValg {
     lav: boolean;
     /** Menyen og slutt-skjermen: ingen HUD-hint. */
     spiller: boolean;
+    /** Meldingen som blinker i fase-boksen (i stedet for et banner midt på skroget). */
+    melding?: Melding | null;
+}
+
+/** En kort melding i fase-boksen: fase, tapt båt, rangtrinn. `t0` og `sek` er spilltid. */
+export interface Melding {
+    tekst: string;
+    farge: string;
+    t0: number;
+    sek: number;
 }
 
 // ---------- Små byggeklosser ----------

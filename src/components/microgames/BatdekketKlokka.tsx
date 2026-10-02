@@ -21,7 +21,6 @@ import {
     bytt,
     frist,
     hold,
-    kanSendeStuert,
     klokke,
     låsTid,
     nesteTrinn,
@@ -34,6 +33,7 @@ import {
 import { BOTS } from './klokka/bots';
 import { GAME_ID, snapshotOf } from './klokka/sim';
 import { tegn, nyKøVisning } from './klokka/draw';
+import type { Melding } from './klokka/former';
 import {
     DEKK_Y,
     TRAPP,
@@ -150,6 +150,15 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
     const hitStop = useRef(0);
     /** Hvor mange rangtrinn som er passert i denne runden. */
     const trinn = useRef(0);
+    /**
+     * Meldingen i fase-boksen nede til venstre (fase, tapt båt, rangtrinn). Den står i kanten,
+     * ikke midt på skroget, så den aldri dekker spillet eller lappene ved porten.
+     */
+    const melding = useRef<Melding | null>(null);
+    const meld = (tekst: string | undefined, farge: string, sek: number) => {
+        if (!tekst) return;
+        melding.current = { tekst, farge, t0: gameRef.current.t, sek: sek + 1.4 };
+    };
 
     useEffect(() => {
         saveRef.current = save;
@@ -197,6 +206,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         text.lesson('tomme', LÆRDOM.tomme(t), t > I1912.tomme ? 2.8 : 2);
         if (første && (første.nedeKl ?? 99) < 30) text.lesson('alvor', LÆRDOM.alvor, 1.6);
         text.lesson('carpathia', LÆRDOM.carpathia, 2.9);
+        // De 16 vanntette rommene i profilstripa: hvorfor skipet sank.
+        text.lesson('rom', LÆRDOM.rom, 2.2);
         // SOLAS står alltid under lista på sluttskjermen, så den gjentas ikke her.
         updateSave((s) => ({
             færrestTomme: vant
@@ -243,14 +254,15 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 const igjen = frist(b).t - g.t;
                 if (igjen < 5 && modeRef.current === 'play') {
                     lyd.nesten();
-                    text.banner('I SISTE LITEN', P.gul, 1.6);
+                    meld('I SISTE LITEN', P.gul, 1.6);
                 }
                 const tomt = b.plasser - b.folk;
                 if (tomt > 0 && modeRef.current === 'play') {
                     const side = b.side;
                     const t0 = g.t;
                     text.beatOnce('tomme', BEAT.tomme.tittel, BEAT.tomme.tekst(tomt), {
-                        at: () => fraArk(skalaRef.current, side === 'B' ? 420 : 540, 330),
+                        // Ved siden av skroget der båten landet, ikke midt i snittet.
+                        at: () => fraArk(skalaRef.current, side === 'B' ? 190 : 770, 330),
                         until: () => gameRef.current.t > t0 + 1.2,
                     });
                     if (!sagt.current.has('alvor')) {
@@ -269,9 +281,9 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 }
             } else if (h.slag === 'tapt') {
                 lyd.tapt();
-                text.banner(`${h.tekst?.toUpperCase()} ER TAPT`, P.rød, 2.4);
+                meld(`${h.tekst?.toUpperCase()} ER TAPT`, P.rød, 2.4);
             } else if (h.slag === 'brett' && h.tekst) {
-                text.banner(h.tekst, P.hvit, 2.6);
+                meld(h.tekst, P.hvit, 2.6);
                 if (BRETT[g.brett].banner.startsWith('02.00'))
                     text.point('sist', LAPP.sist, vedBåt('S', -10), { seconds: 5 });
             } else if (h.slag === 'port') {
@@ -286,8 +298,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                           : LAPP.port;
                 text.point('port', lapp, ark(p.x, p.y), { seconds: 4 });
             } else if (h.slag === 'stuert') {
+                // Linja over dekket sier at landgangen venter (draw.ts) - ingen ekstra boble.
                 lyd.stuert();
-                text.point('stuertGår', LAPP.stuertGår, ark(480, DEKK_Y(7) - 30), { seconds: 2.5 });
             } else if (h.slag === 'bytt') {
                 lyd.bytt();
                 bytter.current++;
@@ -344,7 +356,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         if (g.t >= låsTid && !s.has('låst')) {
             s.add('låst');
             lyd.tapt();
-            text.banner('STYRBORD ER STENGT', P.rød, 2.4);
+            meld('STYRBORD ER STENGT', P.rød, 2.4);
         }
         // Tredje klasse samler seg bak porten.
         if (!s.has('tredje')) {
@@ -365,22 +377,15 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 });
             }
         }
-        // Stuerten kan sendes: vis det ved porten til han er sendt.
-        if (!s.has('stuert') && kanSendeStuert(g)) {
-            s.add('stuert');
-            text.point('stuert', LAPP.stuert, ark(TRAPP[3].x, DEKK_Y(3) + 30), {
-                until: () => !kanSendeStuert(gameRef.current),
-                seconds: 12,
-                once: true,
-            });
-        }
+        // Stuerten kan sendes: tastetegnet «S ÅPNE PORTEN» står ved gitteret (draw.ts), så det
+        // trengs ingen boble midt på skroget.
         // Et nytt rangtrinn passert midt i natta: klokketoner og banner.
         const r = brukt(g);
         while (trinn.current < TUNING.ranger.length && r > TUNING.ranger[trinn.current][0]) {
             const [, navn] = TUNING.ranger[trinn.current];
             trinn.current++;
             lyd.trinn();
-            text.banner(navn.toUpperCase(), P.gul, 2.2);
+            meld(navn.toUpperCase(), P.gul, 2.2);
         }
         // Lyd fra taljene mens en båt fires.
         if (g.hold) {
@@ -406,6 +411,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             tegn(view, g, fxRef.current, køRef.current, m === 'play' ? steg : 0, {
                 lav: lav.current,
                 spiller: m === 'play' || m === 'paused',
+                melding: melding.current,
             });
         },
         onHidden: () => {
@@ -423,6 +429,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         bytter.current = 0;
         trinn.current = 0;
         hitStop.current = 0;
+        melding.current = null;
         hold(g, null);
         setResultat(null);
         text.resetRun();
@@ -430,7 +437,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         lyd.start();
         window.setTimeout(() => {
             if (modeRef.current !== 'play') return;
-            text.banner(BRETT[0].banner, P.hvit, 2.6);
+            meld(BRETT[0].banner, P.hvit, 2.6);
         }, 250);
     };
     const pause = () => {

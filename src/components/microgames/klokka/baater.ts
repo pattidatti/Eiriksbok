@@ -191,8 +191,11 @@ export function davitBåt(c: CanvasRenderingContext2D, g: Game, side: Side, fx: 
             blink ? P.rød : P.hvit,
             'center'
         );
-    else if (høy && b.ned === 0 && b.slag !== 'sammenleggbar')
-        etikett(c, 'HØY SIDE - TREGT', p.x, under + 42, 10, P.rød, 'center');
+    else if (høy && b.ned === 0 && b.slag !== 'sammenleggbar') {
+        // Skipet krenger bort fra denne siden: folk går oppover landgangen, og det tar tid.
+        etikett(c, 'HØY SIDE:', p.x, under + 41, 10, P.rød, 'center', 800);
+        etikett(c, 'LANDGANGEN GÅR TREGT', p.x, under + 53, 10, P.rød, 'center', 800);
+    }
     if (o.spiller && b.tilstand === 'henger') {
         const kx = side === 'B' ? p.x - w / 2 - 22 : p.x + w / 2 + 22;
         const holder = g.hold === side;

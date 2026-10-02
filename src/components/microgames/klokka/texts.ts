@@ -25,8 +25,8 @@ export const LAPP = {
     portStengt: 'Porten gled igjen',
     rakett: 'Nødrakett - flere skjønner at det er alvor',
     portSelv: 'Porten åpnet seg - sent',
-    stuert: 'Trykk S: send stuerten til porten',
-    stuertGår: 'Landgangen venter på stuerten',
+    /** Når det femte av de 16 vanntette rommene er fullt (profilstripa). */
+    rom: 'Skipet tålte bare 4 fulle rom',
     lås: 'Krengningen låser styrbord-båtene 01.50',
     sist: 'Skyv dem av før vannet kommer',
 };
@@ -96,7 +96,7 @@ export const LÆRDOM = {
         `Vannet og krengningen tok ${n} ${n === 1 ? 'båt' : 'båter'} med ${p} plasser. Den siste båten fra Titanic gikk klokka 02.05.`,
     carpathia:
         'Redningsskipet Carpathia kom klokka 04.10, halvannen time etter at Titanic sank. Bare de som satt i båtene, ble reddet.',
-    solas: 'Selv med hver plass brukt var det plass til bare halvparten. Etter Titanic skal livbåtene ha plass til alle (SOLAS, 1914).',
+    rom: 'Titanic hadde 16 vanntette rom. Isfjellet åpnet de 5 første, og skipet tålte bare 4 fulle. Veggene mellom rommene gikk ikke helt opp, så vannet rant over fra rom til rom.',
     /** Neste rangtrinn - for «én natt til». */
     neste: (grense: number, navn: string, mangler: number) =>
         `Neste trinn: over ${grense} reddet («${navn}»). Du manglet ${mangler}.`,

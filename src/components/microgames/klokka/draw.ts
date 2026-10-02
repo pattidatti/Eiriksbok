@@ -13,7 +13,7 @@ import { ARK, DEKK_Y, MIDT, SKROG, TRAPP, iVerden, skala, vannY, vinkel } from '
 import { rakettLys, ristNå, type Fx } from './fx';
 import { P, etikett, frø, lagPapir, lagSnitt, ramme, strek } from './papir';
 
-import { artAv, figur, type TegneValg } from './former';
+import { artAv, figur, tast, type TegneValg } from './former';
 import { davitBåt, driver, flytTall, landgang, plask, raketter, stempel } from './baater';
 import { profil, tasteFelt, tittelfelt } from './hud';
 
@@ -378,8 +378,13 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
         etikett(c, `3. KLASSE ${bakPort}`, p.x, p.y, 10, P.gul, 'center');
     }
     if (o.spiller && kanSendeStuert(g)) {
+        // S-lappen hører til porten: tastetegnet rett under gitteret, ingen boble over skroget.
         const p = iVerden(TRAPP[3].x, DEKK_Y(3) + 14, a);
-        etikett(c, 'S: ÅPNE PORTEN', p.x, p.y, 11, P.hvit, 'center', 800);
+        const puls = 0.75 + 0.25 * Math.sin(g.t * 5);
+        c.globalAlpha = puls;
+        tast(c, p.x - 46, p.y, 'S', true);
+        c.globalAlpha = 1;
+        etikett(c, 'ÅPNE PORTEN', p.x - 34, p.y + 1, 11, P.hvit, 'left', 800);
     }
     if (g.portÅpen && g.portLukkes > g.t && !(g.t >= g.portÅpner)) {
         const p = iVerden(TRAPP[3].x, DEKK_Y(3) + 14, a);
@@ -402,7 +407,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
     profil(c, g);
     if (o.spiller) {
         tittelfelt(c, g);
-        tasteFelt(c, g);
+        tasteFelt(c, g, o.melding);
     }
     ramme(c);
     // Rakettlyset: hele tegningen blekes et øyeblikk.
