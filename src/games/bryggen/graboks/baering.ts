@@ -83,6 +83,7 @@ export class Baering {
             const lest = Math.max(0, v.lesAv() - 0.5);
             this.veier = null;
             this.antall++;
+            SPOR.baret++;
             SPOR.juks++;
             this.trekk = (this.trekk * 9301 + 0.4927) % 1;
             const tatt = !SPOR.tatt && this.trekk < Math.min(0.85, 0.2 * SPOR.juks);
@@ -100,6 +101,7 @@ export class Baering {
         const feil = Math.abs(lest - v.sann);
         this.veier = null;
         this.antall++;
+        SPOR.baret++;
         const tall = (x: number) => x.toFixed(1).replace('.', ',');
         this.onMelding(
             feil <= 0.15

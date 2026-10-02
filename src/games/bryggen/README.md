@@ -192,6 +192,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   gutten kan snakke med; `samtale` på en `Plass` peker til en samtale i `samtaler.ts`.
 - Programvare-GL i Playwright kan gi bilder over 0,25 s, og løkka kaster dem (fanebytte-vernet). Da
   står spillet nesten stille i testen. Test bevegelse med `?kvalitet=lav&post=0` og et lite vindu.
+- Det gutten har gjort som folk husker, står i `SPOR` (`samtaler.ts`): bunter båret, juks, om fiskeren
+  har merket det. `startNode` velger hvor en samtale starter ut fra det. Ikke lagret ennå.
 - `game.ts` er nær 800 linjer. Nye systemer får egen fil i `graboks/` og hektes på med få linjer.
 - Nikolaikirken og kirkegården står bak grensa for det spilleren kan gå på (som Mariakirken), og bruker
   `tynnTake` fordi tårnet er et landemerke. Bare støttemuren og grinda kolliderer; trappa opp ender ved

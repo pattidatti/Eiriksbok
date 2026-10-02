@@ -6,7 +6,7 @@
 import * as THREE from 'three';
 import type { Snakkbar } from '../motor/streaming';
 import type { BryggenWorld } from '../bygg/bryggen';
-import { BESTEMT, NAVN, REPLIKKER, SAMTALER, SPOR, trekk, type Samtale } from '../bygg/samtaler';
+import { BESTEMT, NAVN, REPLIKKER, SAMTALER, startNode, trekk, type Samtale } from '../bygg/samtaler';
 
 export interface SamtaleHud {
     hvem: string;
@@ -110,7 +110,7 @@ export class FolkStyring {
         if (s) {
             if (this.snudd) this.snudd.npc.vend(null);
             this.snudd = null;
-            this.aktiv = { s, node: SPOR.tatt && s.mistro ? 'mistro' : 'start', npc };
+            this.aktiv = { s, node: startNode(npc.samtale!, s), npc };
             npc.vend(gutt);
             this.replikk = null;
             this.vis();

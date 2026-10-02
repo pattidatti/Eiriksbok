@@ -30,7 +30,15 @@ export type Samtale = Record<string, Replikk>;
  * Det gutten har gjort som folk husker: hvor mange ganger han har jukset på vekta, og om
  * fiskeren har merket det. Et lite forstadium til ryktet i §8.3.
  */
-export const SPOR = { juks: 0, tatt: false };
+export const SPOR = { juks: 0, tatt: false, baret: 0 };
+
+/** Hvor en samtale starter, etter det gutten har gjort (SPOR). */
+export function startNode(id: string, s: Samtale): string {
+    if (id === 'fisker' && SPOR.tatt && s.mistro) return 'mistro';
+    if (id === 'husbonde' && SPOR.juks > 0 && s.medskyldig) return 'medskyldig';
+    if (id === 'husbonde' && SPOR.baret >= 3 && s.flink) return 'flink';
+    return 'start';
+}
 
 export const NAVN: Record<string, string> = {
     junge: 'Jungen',
@@ -166,6 +174,36 @@ SAMTALER.fisker = {
         vet: true,
         tekst: 'Tørrfisk var over 80 prosent av det Norge solgte til utlandet på 1300-tallet. Fiskerne i nord fikk korn og utstyr med en gang og betalte med fisk senere. Mange satt i gjeld til kjøpmennene i Bergen i årevis. Hvor stor gjelda var for en vanlig fisker i 1420-årene, vet vi ikke sikkert.',
     },
+};
+
+// Husbonden når gutten har båret og veid, og når han har jukset for gården [S]. Spillet handler om
+// hva gutten blir med på (§2): her får han ros for å holde munn.
+SAMTALER.husbonde.flink = {
+    tekst: 'Du har båret og veid. Bra, junge. Men husk det jeg sa: det er gårdens fisk du bærer, ikke din.',
+    valg: [
+        { tekst: 'Hvilke regler var det igjen?', til: 'regel1' },
+        { tekst: 'Hva er det vi teller?', til: 'telle' },
+    ],
+};
+SAMTALER.husbonde.medskyldig = {
+    tekst: 'Svennen sier du gjorde som han sa ved bismeren. Det er bra. Den som kan holde munn, blir svenn selv en dag.',
+    valg: [
+        { tekst: 'Fiskeren fikk betalt for mindre enn han leverte.', til: 'medskyldig2' },
+        { tekst: 'Takk, husbonde.', til: 'medskyldig3' },
+    ],
+};
+SAMTALER.husbonde.medskyldig2 = {
+    tekst: 'Han skylder oss mer enn det. Og uten kornet vårt hadde han sultet i vinter. Tenk på det før du synes synd på ham.',
+    til: 'vetgjeld',
+};
+SAMTALER.husbonde.medskyldig3 = {
+    tekst: 'Gå og bær mer. Og husk hvem som gir deg mat.',
+    til: 'vetgjeld',
+};
+SAMTALER.husbonde.vetgjeld = {
+    hvem: 'Dette vet vi',
+    vet: true,
+    tekst: 'Kontoret styrte både kornet som kom til Bergen og kjøpet av tørrfisk, og mange fiskere satt i gjeld til kjøpmennene. Hva en husbonde sa til jungene sine, er ikke skrevet ned. Samtalen er laget for spillet.',
 };
 
 // Juks på vekta (§7.1): svennen ber gutten lese av for lite på fisken til nordlendingen [S]. At
