@@ -621,6 +621,13 @@ Mixamo brukes ikke (krever innlogging).
   boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,
   kjølig fargetone ute og varm inne ved ilden, vignett og filmkorn. Bildet ellers er pikselt likt det
   eieren godkjente (målt). Koster ca. 1 FPS i programvare-GL, ingenting på lav. Venter på eierens spilltest
+- [~] Bære og veie (02.10.2026, `graboks/baering.ts`, `graboks/bismer.ts`): E ved stabelen på kaia gir
+  gutten en bunt i armene (saktere gange, ingen sprint, hopp eller slag). Ved bismeren i bua henger
+  bunten i kroken, og eleven flytter hanken med A og D til stanga ligger vannrett, og leser av
+  merket i bismerpund. På den nordiske bismeren flyttes hanken langs stanga, ikke loddet [V SNL
+  «bismer»]. Merkene står tettere jo tyngre varen er, slik de gjør på en ekte bismer. Bismerpund
+  ca. 5,1 kg [V bylova 1276]; at en bunt er omtrent en våg (ca. 3 bismerpund) er [U]. Leser han
+  av før stanga ligger rett, veier svennen på nytt. Venter på eierens spilltest
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
 - [~] Færing (02.10.2026): klinkbygd skrog med fire bordganger per side, stavner i begge ender, ripe,
   tiljer og tofter, med råtre-teksturen fra byen [S: formen er en vanlig vestlandsfæring, ikke målt

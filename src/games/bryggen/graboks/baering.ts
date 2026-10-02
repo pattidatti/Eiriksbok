@@ -8,6 +8,7 @@ import * as THREE from 'three';
 import type { BryggenWorld } from '../bygg/bryggen';
 import { buntMesh } from '../bygg/folk';
 import type { Character } from '../motor/character';
+import { BismerSpill } from './bismer';
 
 const NAER = 1.5;
 
@@ -19,6 +20,11 @@ export class Baering {
     private readonly gutt: Character;
     private readonly bunt: THREE.Object3D;
     private maal: { hent: THREE.Vector3; lever: THREE.Vector3 } | null = null;
+    /** Veiingen som pågår (gutten står stille ved bismeren). */
+    veier: BismerSpill | null = null;
+    /** Meldinger til gutten (vises øverst). */
+    onMelding: (tekst: string) => void = () => undefined;
+    private trekk = 0.37;
 
     constructor(world: BryggenWorld, gutt: Character) {
         this.world = world;
@@ -53,10 +59,30 @@ export class Baering {
         this.baerer = !this.baerer;
         this.vis();
         if (this.baerer) return this.antall === 0 ? 'Tung! En bunt er omtrent en våg, det en gutt klarer å bære. Bær den opp gårdsrommet og inn i bua.' : null;
+        // Bunten henger i kroken: nå skal den veies. Vekta trekkes rundt en våg (ca. 3 bismerpund).
+        this.trekk = (this.trekk * 9301 + 0.4927) % 1;
+        this.veier = new BismerSpill(Math.round((2.5 + this.trekk * 1.1) * 10) / 10);
+        return this.antall === 0
+            ? 'Bunten henger i kroken på bismeren. Flytt hanken med A og D til stanga ligger vannrett, og les av merket med E.'
+            : null;
+    }
+
+    /** Mens veiingen pågår: `styr` flytter hanken, `les` leser av. */
+    styr(dt: number, styr: number, les: boolean): void {
+        const v = this.veier;
+        if (!v) return;
+        v.step(dt, styr);
+        if (!les) return;
+        const lest = v.lesAv();
+        const feil = Math.abs(lest - v.sann);
+        this.veier = null;
         this.antall++;
-        if (this.antall === 1) return 'Bunten ligger ved bismeren. Der veier svennen den, og husbonden skriver vekta i gjeldsboka.';
-        if (this.antall % 5 === 0) return `${this.antall} bunter båret. Skutedrengen bærer slik hele dagen når jektene er kommet.`;
-        return null;
+        const tall = (x: number) => x.toFixed(1).replace('.', ',');
+        this.onMelding(
+            feil <= 0.15
+                ? `${tall(lest)} bismerpund. Svennen nikker, og husbonden skriver det i gjeldsboka. (${this.antall} båret)`
+                : `Du leste ${tall(lest)}, men stanga lå ikke vannrett. Svennen veier på nytt: ${tall(v.sann)} bismerpund. «Se etter at stanga ligger rett, junge.»`
+        );
     }
 
     /** Slipp bunten (om bord i færingen, slått ned). Den går tilbake til stabelen. */

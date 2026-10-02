@@ -19,6 +19,7 @@ import { Etterbehandling } from '../motor/post';
 import type { LydKobling } from '../motor/lydkobling';
 import type { FolkStyring, ReplikkHud, SamtaleHud } from './folkstyring';
 import type { Baering } from './baering';
+import type { BismerHud } from './bismer';
 
 /** Hvilken verden løkka kjører: grå prøvescene eller Bryggen bygget av modulsettet. */
 export type WorldId = 'graboks' | 'gard';
@@ -59,6 +60,8 @@ export interface HudState {
     replikk: ReplikkHud | null;
     /** Bunter tørrfisk gutten har båret inn i bua. */
     bunter: number;
+    /** Bismeren mens en bunt veies. */
+    bismer: BismerHud | null;
 }
 
 /** Full: normal- og AO-kart, miljølys og skygger. Lav: bare fargetekstur og ruhet. */
@@ -262,6 +265,7 @@ export class GrayboxGame {
             const { Baering } = await import('./baering');
             if (this.disposed) return;
             this.baering = new Baering(this.world, this.player);
+            this.baering.onMelding = (m) => this.flash(m, 6);
             this.settLyd(this.lydValg.paa, this.lydValg.volum);
             if (this.lydValg.onsket) void this.lyd.start();
         }
@@ -427,7 +431,7 @@ export class GrayboxGame {
             }
         }
         this.hudTimer += dt;
-        if (this.hudTimer > 0.25) {
+        if (this.hudTimer > (this.baering?.veier ? 0.03 : 0.25)) {
             this.hudTimer = 0;
             this.pushHud();
         }
@@ -441,10 +445,12 @@ export class GrayboxGame {
         const dir = new THREE.Vector2().addScaledVector(fwd, inp.move.y).addScaledVector(right, inp.move.x);
 
         if (inp.resetPressed) this.resetFight();
-        // Samtale: gutten står stille, E og mellomrom går videre, 1-3 svarer.
-        const prat = this.folk?.laast ?? false;
+        // Samtale eller veiing: gutten står stille, E og mellomrom går videre, 1-3 svarer.
+        const veier = !!this.baering?.veier;
+        if (veier) this.baering!.styr(dt, inp.move.x, inp.interactPressed || inp.jumpPressed);
+        const prat = (this.folk?.laast ?? false) || veier;
         if (prat) {
-            this.folk!.input(inp.interactPressed || inp.jumpPressed, inp.valg);
+            if (!veier) this.folk!.input(inp.interactPressed || inp.jumpPressed, inp.valg);
             dir.set(0, 0);
             // Gutten snur seg mot den han snakker med.
             const f = this.folk!.fokus;
@@ -594,6 +600,10 @@ export class GrayboxGame {
         if (this.promptTimer > 0) return;
         this.promptTimer = 0.15;
         this.landCandidate = null;
+        if (this.baering?.veier) {
+            this.prompt = null;
+            return;
+        }
         if (this.mode === 'foot') {
             const d = Math.hypot(this.boat.pos.x - this.player.pos.x, this.boat.pos.z - this.player.pos.z);
             this.prompt = d < 3.4 && this.player.grounded && !this.pc.busy ? 'E: Gå om bord i færingen' : null;
@@ -773,6 +783,7 @@ export class GrayboxGame {
             samtale: this.folk?.samtale ?? null,
             replikk: this.folk?.replikk ?? null,
             bunter: this.baering?.antall ?? 0,
+            bismer: this.baering?.veier?.hud ?? null,
         });
     }
 }

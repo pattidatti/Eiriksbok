@@ -53,6 +53,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/folk.ts` | Draktene (junge, husbonde, svenn, skutedreng, stuedreng) og folkene i en celle: animator, kollider, løkke på stedet, animasjon etter avstand, og de som går |
 | `bygg/vandrer.ts` | Folk som går faste ruter: svinger, bremser, tar opp og legger fra seg bunter, stopper og sier fra når gutten står i veien |
 | `bygg/samtaler.ts` | Hva folkene sier: samtalen med husbonden (de tre reglene, valg 1-3, «Dette vet vi»), korte replikker, og hva de sier når gutten står i veien |
+| `graboks/baering.ts` | Bære bunter tørrfisk fra stabelen på kaia til bismeren i bua (E), og veiingen der |
+| `graboks/bismer.ts`, `graboks/BismerVisning.tsx` | Veie på bismer: flytt hanken til stanga ligger vannrett og les av merket (nordisk bismer, SNL) |
 | `graboks/folkstyring.ts` | Hvem gutten kan snakke med (E), samtalen som pågår og replikkene som vises som undertekst |
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper), allmenningen |
@@ -178,4 +180,5 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   gutten kan snakke med; `samtale` på en `Plass` peker til en samtale i `samtaler.ts`.
 - Programvare-GL i Playwright kan gi bilder over 0,25 s, og løkka kaster dem (fanebytte-vernet). Da
   står spillet nesten stille i testen. Test bevegelse med `?kvalitet=lav&post=0` og et lite vindu.
+- `game.ts` er nær 800 linjer. Nye systemer får egen fil i `graboks/` og hektes på med få linjer.
 - Ingen fil over 800 linjer.

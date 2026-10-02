@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { GrayboxGame, HudState, Quality, WorldId } from '../games/bryggen/graboks/game';
+import { BismerVisning } from '../games/bryggen/graboks/BismerVisning';
 
 // Testruter for Bryggen-spillet. Ikke koblet inn i galleriet.
 // /test/bryggen-graboks  grå prøvescene (følelsen)
@@ -63,6 +64,7 @@ const EMPTY: HudState = {
     samtale: null,
     replikk: null,
     bunter: 0,
+    bismer: null,
 };
 
 const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
@@ -295,6 +297,8 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                     <div className="rounded-xl bg-white/90 px-4 py-2 text-base font-semibold text-slate-800 shadow-lg">{hud.prompt}</div>
                 )}
             </div>
+
+            {hud.bismer && <BismerVisning b={hud.bismer} />}
 
             {/* Samtalen: fast nederst i midten, stor og lys, så den kan leses på storskjerm. */}
             {hud.samtale && (
