@@ -192,5 +192,7 @@ export async function buildAllmenningCell(mats: Materials, x0: number, x1: numbe
     return {
         near, mid, colliders: [...c.specs, ...kirke.colliders, ...folk.colliders],
         gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose,
+        // Ved sveiva på brønnen (mot øst): her henter gutten vann (oppdrag.ts).
+        steder: [{ id: 'bronn', pos: V(x0 + 5.75, 0, 37), r: 1.5 }],
     };
 }

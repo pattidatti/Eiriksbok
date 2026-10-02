@@ -252,6 +252,35 @@ export class Lydbilde {
         };
     }
 
+    /**
+     * Et lite klokkespill uten fil: rene toner med myk anslag og lang hale (oppdrag tatt, levert).
+     * `noter` er [frekvens, start (s), lengde (s)].
+     */
+    toner(noter: [number, number, number][], styrke = 0.25): void {
+        const ctx = this.ctx;
+        if (!ctx || !this._paa || ctx.state !== 'running') return;
+        const t0 = ctx.currentTime + 0.02;
+        for (const [hz, start, len] of noter) {
+            for (const [mult, v] of [[1, 1], [2.01, 0.28], [3.02, 0.08]] as const) {
+                const o = ctx.createOscillator();
+                o.type = 'sine';
+                o.frequency.value = hz * mult;
+                const g = ctx.createGain();
+                const t = t0 + start;
+                g.gain.setValueAtTime(0, t);
+                g.gain.linearRampToValueAtTime(styrke * v, t + 0.012);
+                g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+                o.connect(g).connect(this.inneBuss);
+                o.start(t);
+                o.stop(t + len + 0.05);
+                o.onended = () => {
+                    o.disconnect();
+                    g.disconnect();
+                };
+            }
+        }
+    }
+
     dispose(): void {
         for (const l of this.lokker.values()) {
             try {

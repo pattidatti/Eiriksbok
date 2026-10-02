@@ -21,6 +21,7 @@ import { ColliderKit, MeshKit, type ColliderSpec } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import { disposeObject, type CellCtx, type Snakkbar } from '../motor/streaming';
 import { Vandrer, type Rute } from './vandrer';
+import { Gestikk } from '../motor/gestikk';
 
 const HUD = 0xd9a88a;
 
@@ -113,6 +114,32 @@ export const DRAKTER = {
         hoser: 0x5b5047, sko: 0x3a2a1f, hette: 0x8a7f6a, hetteOppe: false, tut: 0.08, kappe: 0.15,
         slank: 0.55, hode: 1.03,
     },
+
+    // ── Tyven, kirken og kongens folk (oppdragene, oppdrag-data.ts) ── Alt [S], ikke sjekket [K].
+    /** Tyven: en mager gutt fra nord, slitt grå vadmel, hetta oppe og trukket ned. */
+    tyv: {
+        navn: 'tyv', hud: 0xc69476, haar: 0x7a6650, kjortel: 0x4d4a44, kjortelNed: -0.02, belte: 0x2a2018,
+        hoser: 0x3b3833, sko: 0x2a2018, hette: 0x3e4044, hetteOppe: true, tut: 0.1, kappe: 0.2,
+        slank: 0.75, hode: 1.04,
+    },
+    /** Presten i Mariakirken: svart, lang kjortel til anklene, hvit krage (hetta nede), glattbarbert. */
+    prest: {
+        navn: 'prest', hud: 0xd8a98c, haar: 0x8a7a66, kjortel: 0x22201f, kjortelNed: 0.46, belte: 0x111010,
+        hoser: 0x1c1b1a, sko: 0x1a1512, hette: 0xe6e1d6, hetteOppe: false, tut: 0.06, kappe: 0.18,
+        mage: 0.35,
+    },
+    /** Vakta på Bergenhus: kongens mann, rød og grå, brun hette oppe, skjegg. */
+    vakt: {
+        navn: 'vakt', hud: 0xcf9a7c, haar: 0x3a2c20, skjegg: 0x3e2f22, kjortel: 0x6e2a22, kjortelNed: 0.1,
+        belte: 0x1e1610, hoser: 0x3c3c3a, sko: 0x231a12, hette: 0x56565a, hetteOppe: true, tut: 0.14, kappe: 0.26,
+        mage: 0.1,
+    },
+    /** Kongens skriver: lang mørkeblå kjortel, svart hette oppe, pung med blekk og penner. */
+    skriver: {
+        navn: 'skriver', hud: 0xd9aa8e, haar: 0x5b4632, kjortel: 0x24324a, kjortelNed: 0.34, belte: 0x1a1410,
+        hoser: 0x2a2a2e, sko: 0x1d1612, hette: 0x1e1e22, hetteOppe: true, tut: 0.36, kappe: 0.2,
+        slank: 0.25, pung: 0.5,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
@@ -120,6 +147,7 @@ export type FigurNavn = keyof typeof DRAKTER;
 export const HOYDE: Record<FigurNavn, number> = {
     junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52, fisker: 1.71,
     fiskekone: 1.58, kornselger: 1.73, bondekone: 1.55, bodker: 1.7, kjopekone: 1.61, borger: 1.75, tjenestejente: 1.54,
+    tyv: 1.68, prest: 1.72, vakt: 1.82, skriver: 1.7,
 };
 
 /**
@@ -143,6 +171,8 @@ export interface Plass {
     yaw: number;
     /** Id i samtalene (samtaler.ts). Uten: en kort replikk når gutten snakker med hen. */
     samtale?: string;
+    /** Hvem hen er (personer.ts): eget navn over hodet, og hen kan gi og ta imot oppdrag. */
+    id?: string;
 }
 
 const KLIPP: Record<Rolle, { clip: string; speed: number; hold?: number }> = {
@@ -215,35 +245,63 @@ class Takt {
     }
 }
 
-/** Stående figurer som snakkes med snur seg mot gutten. De som sitter, blir sittende. */
+/**
+ * Figurer på plassen sin. Stående snur seg mot gutten når han snakker med dem; de som sitter, blir
+ * sittende. Begge gestikulerer når de sier noe (gestikk.ts), og går tilbake til det de holdt på
+ * med etterpå.
+ */
 class Staaende {
     private mot: THREE.Vector3 | null = null;
     private yaw: number;
     private readonly a: Animator;
     private readonly p: Plass;
-    private readonly clip: { clip: string; speed: number; hold?: number } | null;
-    constructor(a: Animator, p: Plass, clip: { clip: string; speed: number; hold?: number } | null) {
+    private readonly clip: { clip: string; speed: number; hold?: number };
+    private readonly sitter: boolean;
+    readonly gestikk: Gestikk;
+    constructor(a: Animator, p: Plass, clip: { clip: string; speed: number; hold?: number }, sitter: boolean) {
         this.a = a;
         this.p = p;
         this.clip = clip;
+        this.sitter = sitter;
         this.yaw = p.yaw;
+        this.gestikk = new Gestikk(a);
+        this.gestikk.sitter = sitter;
+        this.gestikk.onFerdig = () => this.tilbake();
     }
-    vend(mot: THREE.Vector3 | null): void {
-        if (!this.clip) return;
-        if (mot && !this.mot && this.clip.clip) this.a.release(0.4);
-        if (!mot && this.mot && this.clip.clip) {
+    /** Tilbake til det hen holdt på med: hvile mens hen ser på gutten, ellers klippet sitt. */
+    private tilbake(): void {
+        if (this.mot && !this.sitter) this.a.release(0.4);
+        else if (this.clip.clip) {
             this.a.play(this.clip.clip, { loop: true, fade: 0.5, timeScale: this.clip.speed });
             if (this.clip.hold !== undefined) this.a.setPhase(this.clip.hold);
-        }
+        } else this.a.release(0.4);
+    }
+    vend(mot: THREE.Vector3 | null): void {
+        if (this.sitter) return;
+        if (mot && !this.mot && this.clip.clip && !this.gestikk.aktiv) this.a.release(0.4);
+        const var_ = this.mot;
         this.mot = mot?.clone() ?? null;
+        if (!mot && var_) {
+            this.gestikk.stopp();
+            this.tilbake();
+        }
     }
     step(dt: number): void {
+        this.gestikk.tick(dt);
+        if (this.sitter) return;
         const root = this.a.root.position;
         const want = this.mot ? Math.atan2(this.mot.x - root.x, this.mot.z - root.z) : this.p.yaw;
         const diff = Math.atan2(Math.sin(want - this.yaw), Math.cos(want - this.yaw));
         this.yaw += THREE.MathUtils.clamp(diff, -3 * dt, 3 * dt);
         this.a.root.rotation.y = this.yaw;
     }
+}
+
+/** Toppen av hodet: hodebeinet pluss et stykke opp (hetta). Uten bein: føttene pluss høyden. */
+export function hodeTopp(a: Animator, hoyde: number, ut: THREE.Vector3): THREE.Vector3 {
+    const b = a.bein('DEF-head');
+    if (b && a.root.visible) return b.getWorldPosition(ut).setY(ut.y + 0.22 * (hoyde / 1.75));
+    return ut.copy(a.root.position).setY(a.root.position.y + hoyde + 0.1);
 }
 
 /**
@@ -290,9 +348,15 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         group.add(a.root);
         anims.push(a);
         takter.push(new Takt(a));
-        const st = new Staaende(a, p, sitter ? null : k);
+        const st = new Staaende(a, p, k, sitter);
         staaende.push(st);
-        snakkbare.push({ figur: p.figur, pos: foot.clone(), samtale: p.samtale, vend: (mot) => st.vend(mot) });
+        snakkbare.push({
+            figur: p.figur, id: p.id, pos: foot.clone(), samtale: p.samtale,
+            vend: (mot) => st.vend(mot),
+            hode: (ut) => hodeTopp(a, h, ut),
+            gest: (g, len) => st.gestikk.gjor(g, len),
+            synlig: () => a.root.visible,
+        });
 
         // Kollideren: en boks rundt kroppen (prop, så kameraet ikke hopper når noen står i veien).
         c.matrix = new THREE.Matrix4().makeRotationY(p.yaw).setPosition(foot);
@@ -322,7 +386,14 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         group.add(a.root);
         anims.push(a);
         vandrere.push(v);
-        snakkbare.push({ figur: rute.figur, pos: v.pos, samtale: rute.samtale, vend: (mot) => v.vend(mot) });
+        const h = HOYDE[rute.figur];
+        snakkbare.push({
+            figur: rute.figur, id: rute.id, pos: v.pos, samtale: rute.samtale,
+            vend: (mot) => v.vend(mot),
+            hode: (ut) => hodeTopp(a, h, ut),
+            gest: (g, len) => v.gest(g, len),
+            synlig: () => a.root.visible,
+        });
     });
     const vTakt = vandrere.map((v) => new Takt(v.a));
 
@@ -375,7 +446,7 @@ export function buntMesh(mats: Materials): THREE.Object3D {
 }
 
 /** En vannbøtte av staver med to bånd, full av vann, som i brønnen på torget (torg.ts) [S]. */
-function botteMesh(mats: Materials): THREE.Object3D {
+export function botteMesh(mats: Materials): THREE.Object3D {
     const k = new MeshKit();
     const V = (y: number) => new THREE.Vector3(0, y, 0);
     k.withTint({ top: 0.8, bottom: 0.8, hue: [1.06, 0.98, 0.88] }, () => k.log('raatre', V(-0.15), V(0.13), 0.13, 10, true, 0.15));

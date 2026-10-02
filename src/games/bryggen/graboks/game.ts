@@ -18,6 +18,10 @@ import type { BryggenWorld } from '../bygg/bryggen';
 import { Etterbehandling } from '../motor/post';
 import type { LydKobling } from '../motor/lydkobling';
 import type { FolkStyring, ReplikkHud, SamtaleHud } from './folkstyring';
+import type { OppdragHud, OppdragMelding } from './oppdrag';
+import type { Tyv } from './tyv';
+import { Flytere } from './flytere';
+import { devVerktoy } from './dev';
 import type { Baering } from './baering';
 import type { BismerHud } from './bismer';
 
@@ -62,18 +66,18 @@ export interface HudState {
     bunter: number;
     /** Bismeren mens en bunt veies. */
     bismer: BismerHud | null;
+    /** Fienden varsler et svingslag som ikke kan blokkeres. */
+    telegraphSving: boolean;
+    /** Oppdragslista (bare Bryggen-scenen). */
+    oppdrag: OppdragHud[];
+    /** Siste oppdragsmelding (nytt, mål nådd, fullført), og et tall som skifter for hver ny. */
+    oppdragMelding: (OppdragMelding & { n: number }) | null;
+    /** Det gutten bærer for oppdragene. */
+    ting: string[];
 }
 
 /** Full: normal- og AO-kart, miljølys og skygger. Lav: bare fargetekstur og ruhet. */
 export type Quality = 'full' | 'lav';
-
-interface Floater {
-    el: HTMLDivElement;
-    pos: THREE.Vector3;
-    age: number;
-    life: number;
-    drift: number;
-}
 
 export class GrayboxGame {
     private readonly renderer: THREE.WebGLRenderer;
@@ -107,11 +111,19 @@ export class GrayboxGame {
     private mode: 'foot' | 'boat' = 'foot';
     private disposed = false;
     private ready = false;
-    private floaters: Floater[] = [];
+    private flytere: Flytere;
     private telegraph = false;
+    private telegraphSving = false;
+    private oppdragMelding: (OppdragMelding & { n: number }) | null = null;
+    /** Tyven i gården (bare Bryggen-scenen): ute bare mens oppdraget hans er aktivt. */
+    private tyv: Tyv | null = null;
     private message: string | null = null;
     private messageTimer = 0;
     private prompt: string | null = null;
+    private oppdragPrompt: string | null = null;
+    /** Hvilken skulder kameraet står over i en samtale, og hvor lenge det har vært for trangt der. */
+    private samtaleSide = 1;
+    private trang = 0;
     private promptTimer = 0;
     private landCandidate: THREE.Vector3 | null = null;
     private drowning = 0;
@@ -141,6 +153,7 @@ export class GrayboxGame {
         this.low = !!opts.low;
         this.shadowsAllowed = opts.shadows;
         this.floatLayer = floatLayer;
+        this.flytere = new Flytere(floatLayer);
         this.onHud = onHud;
         this.renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
         this.renderer.setPixelRatio(Math.min(1, window.devicePixelRatio || 1));
@@ -221,7 +234,7 @@ export class GrayboxGame {
         if (this.world) {
             const { DRAKTER } = await import('../bygg/folk');
             playerRig = kleFigur(rig, DRAKTER.junge);
-            enemyRig = kleFigur(rig, DRAKTER.svenn);
+            enemyRig = kleFigur(rig, DRAKTER.tyv);
             enemyTint = 0xffffff;
         }
         this.player = new Character(this.phys, new Animator(playerRig, BOY_TUNING.height), BOY_TUNING, L.playerStart);
@@ -260,12 +273,28 @@ export class GrayboxGame {
             this.lyd = new LydKobling(this.world, this.cam.camera, this.player, this.boat);
             const { FolkStyring } = await import('./folkstyring');
             if (this.disposed) return;
-            this.folk = new FolkStyring(this.world);
+            const gutt = this.player;
+            this.folk = new FolkStyring(this.world, this.phys, this.floatLayer, {
+                hode: (ut) => (gutt.anim.bein('DEF-head')?.getWorldPosition(ut).setY(ut.y + 0.2) ?? ut.copy(gutt.pos).setY(gutt.pos.y + 1.8)),
+                synlig: () => this.mode === 'foot',
+            });
             this.folk.onEndring = this.pushHudSoon;
+            const oppdrag = this.folk.oppdrag;
+            let n = 0;
+            oppdrag.onMelding = (m) => {
+                this.oppdragMelding = { ...m, n: ++n };
+                this.lyd?.oppdrag(m.type);
+                this.pushHudSoon();
+            };
             const { Baering } = await import('./baering');
+            const { Tyv } = await import('./tyv');
             if (this.disposed) return;
             this.baering = new Baering(this.world, this.player);
             this.baering.onMelding = (m) => this.flash(m, 6);
+            this.baering.onVeid = () => oppdrag.hendelse('veid');
+            oppdrag.onTing = (t) => this.baering?.visTing(t);
+            this.baering.visTing(oppdrag.ting);
+            this.tyv = new Tyv(this.enemy, this.ai, this.folk, L.enemyStart);
             this.settLyd(this.lydValg.paa, this.lydValg.volum);
             if (this.lydValg.onsket) void this.lyd.start();
         }
@@ -348,7 +377,8 @@ export class GrayboxGame {
         });
         this.renderer.dispose();
         this.renderer.domElement.remove();
-        this.floaters.forEach((f) => f.el.remove());
+        this.flytere.dispose();
+        this.folk?.dispose();
     }
 
     /** Tall til ytelsesrapporten (leses av Playwright). */
@@ -401,18 +431,8 @@ export class GrayboxGame {
         const simMs = performance.now() - t0;
 
         this.renderFrame(dt, gameDt, alpha);
-        // Utviklerverktøy (bare i dev): et fast kamera for skjermbilder og måling fra Vågen.
-        // Sett window.__bryggenFoto = { pos: [x, y, z], look: [x, y, z] } i konsollen.
-        // window.__bryggenPos viser hvor gutten står (til testskript), og __bryggenFolk() hvor
-        // folkene i de lastede cellene står og hvilken vei de ser.
-        const dev = window as {
-            __bryggenFoto?: { pos: number[]; look: number[] };
-            __bryggenPos?: number[];
-            __bryggenFolk?: () => { navn: string; pos: number[]; yaw: number }[];
-        };
-        const foto = import.meta.env.DEV ? dev.__bryggenFoto : undefined;
-        if (import.meta.env.DEV && this.player) dev.__bryggenPos = this.player.pos.toArray();
-        if (import.meta.env.DEV && !dev.__bryggenFolk) dev.__bryggenFolk = () => this.folkListe();
+        // Utviklerverktøy (bare i dev): fotokamera, hvor gutten og folkene står (dev.ts).
+        const foto = import.meta.env.DEV ? devVerktoy(this.scene, this.player) : undefined;
         if (foto) {
             this.cam.camera.position.fromArray(foto.pos);
             this.cam.camera.lookAt(foto.look[0], foto.look[1], foto.look[2]);
@@ -444,7 +464,10 @@ export class GrayboxGame {
         const right = new THREE.Vector2(-fwd.y, fwd.x);
         const dir = new THREE.Vector2().addScaledVector(fwd, inp.move.y).addScaledVector(right, inp.move.x);
 
-        if (inp.resetPressed) this.resetFight();
+        if (inp.resetPressed && (!this.tyv || this.tyv.aktiv)) {
+            this.resetFight();
+            this.tyv?.nyRunde();
+        }
         // Samtale eller veiing: gutten står stille, E og mellomrom går videre, 1-3 svarer.
         const veier = !!this.baering?.veier;
         if (veier) this.baering!.styr(dt, inp.move.x, inp.interactPressed || inp.jumpPressed, inp.valg === 2);
@@ -485,7 +508,7 @@ export class GrayboxGame {
                 dodge: inp.dodgePressed,
                 finisher: inp.finisherPressed,
             };
-            this.pc.step(dt, combatInput, dir, [this.ai], this.sink);
+            this.pc.step(dt, combatInput, dir, !this.tyv || this.tyv.aktiv ? [this.ai] : [], this.sink);
             const canMove = !this.pc.busy;
             this.player.step(dt, {
                 dir: canMove ? dir : new THREE.Vector2(),
@@ -494,6 +517,11 @@ export class GrayboxGame {
             });
             if (inp.interactPressed && this.prompt?.startsWith('E: Gå om bord')) this.embark();
             else if (inp.interactPressed && this.prompt?.startsWith('E: Snakk')) this.folk?.snakk(this.player.pos);
+            else if (inp.interactPressed && this.prompt && this.prompt === this.oppdragPrompt) {
+                const m = this.folk?.oppdrag.trykk();
+                if (m) this.flash(m, 7);
+                this.promptTimer = 0;
+            }
             else if (inp.interactPressed && this.prompt && this.prompt === this.baering?.prompt) {
                 const m = this.baering.trykk();
                 if (m) this.flash(m, 5);
@@ -502,31 +530,15 @@ export class GrayboxGame {
             this.checkWater(dt);
         }
 
-        const enemyIntent = this.ai.step(dt, this.pc, this.sink);
-        this.enemy.step(dt, { dir: enemyIntent, sprint: false, jump: false });
+        if (!this.tyv || this.tyv.aktiv) {
+            const enemyIntent = this.ai.step(dt, this.pc, this.sink);
+            this.enemy.step(dt, { dir: enemyIntent, sprint: false, jump: false });
+        }
+        this.tyv?.update(dt);
         this.phys.step();
         this.gore.update(dt);
 
         if (this.pc.f.dead && !this.message) this.flash('Du ble slått ned. Trykk R for å prøve igjen.', 99);
-    }
-
-    /** Utviklerverktøy: folkene i scenen (figur-meshene heter `figur:<drakt>`). */
-    private folkListe(): { navn: string; pos: number[]; yaw: number }[] {
-        const ut: { navn: string; pos: number[]; yaw: number }[] = [];
-        const q = new THREE.Quaternion();
-        this.scene.traverse((g) => {
-            if (g.name !== 'folk') return;
-            for (const root of g.children) {
-                let navn = '';
-                root.traverse((o) => {
-                    if (o.name.startsWith('figur:')) navn = o.name.slice(6);
-                });
-                root.getWorldQuaternion(q);
-                const fwd = new THREE.Vector3(0, 0, 1).applyQuaternion(q);
-                ut.push({ navn, pos: root.getWorldPosition(new THREE.Vector3()).toArray(), yaw: Math.atan2(fwd.x, fwd.z) });
-            }
-        });
-        return ut;
     }
 
     private renderFrame(dt: number, gameDt: number, alpha: number): void {
@@ -552,7 +564,13 @@ export class GrayboxGame {
         // Samtale: kameraet glir rundt til bak gutten, så den han snakker med ses forfra.
         const fokus = this.folk?.fokus;
         if (fokus) {
-            const want = Math.atan2(fokus.x - this.player.pos.x, fokus.z - this.player.pos.z) + Math.PI + 0.35;
+            // For trangt bak den ene skulderen (vegg)? Prøv den andre.
+            this.trang = this.cam.armLength < 1.0 ? this.trang + dt : 0;
+            if (this.trang > 0.5) {
+                this.samtaleSide = -this.samtaleSide;
+                this.trang = -1;
+            }
+            const want = Math.atan2(fokus.x - this.player.pos.x, fokus.z - this.player.pos.z) + Math.PI + 0.35 * this.samtaleSide;
             this.cam.yaw += Math.atan2(Math.sin(want - this.cam.yaw), Math.cos(want - this.cam.yaw)) * Math.min(1, dt * 2.5);
         }
         this.cam.update(dt, this.input.takeLook(), follow, this.phys);
@@ -588,7 +606,10 @@ export class GrayboxGame {
         this.sun.target.position.set(p.x, p.y, p.z);
 
         this.updatePrompts(dt);
-        this.updateFloaters(dt);
+        const w = this.container.clientWidth;
+        const h = this.container.clientHeight;
+        this.flytere.update(dt, this.cam.camera, w, h);
+        this.folk?.tegn(dt, this.cam.camera, w, h);
         if (this.messageTimer > 0) {
             this.messageTimer -= dt;
             if (this.messageTimer <= 0) this.message = null;
@@ -608,6 +629,8 @@ export class GrayboxGame {
             const d = Math.hypot(this.boat.pos.x - this.player.pos.x, this.boat.pos.z - this.player.pos.z);
             this.prompt = d < 3.4 && this.player.grounded && !this.pc.busy ? 'E: Gå om bord i færingen' : null;
             this.prompt ??= this.baering?.oppdater() ?? null;
+            this.oppdragPrompt = this.world && this.folk ? this.folk.oppdrag.prompt(this.player.pos, this.world.streamer.steder()) : null;
+            this.prompt ??= this.oppdragPrompt;
             if (this.folk) {
                 this.folk.update(0.15, this.player.pos, this.player.yaw, !this.prompt && !this.pc.busy && !this.ai.aggro);
                 this.prompt ??= this.folk.prompt;
@@ -696,7 +719,7 @@ export class GrayboxGame {
 
     // ── Kampens utganger: skadetall, blod, treffpause ──
     private sink: CombatSink = {
-        damage: (e: DamageEvent) => this.spawnFloater(e),
+        damage: (e: DamageEvent) => this.flytere.spawn(e),
         blood: (at, dir, amount) => {
             const floor = at.y < this.player.pos.y + 3 ? Math.min(this.player.pos.y, this.enemy.pos.y) : at.y - 1.5;
             this.gore.spray(at, dir, amount, floor);
@@ -707,52 +730,13 @@ export class GrayboxGame {
             if (this.ai.f.dead && this.ai.f.hp <= 0) this.slowmo = 0.6;
         },
         whiff: () => undefined,
-        telegraph: (on) => {
+        telegraph: (on, sving) => {
             this.telegraph = on;
+            this.telegraphSving = on && !!sving;
             this.pushHud();
         },
+        lyd: (hva, pos, hvem, om) => this.lyd?.kamp(hva, pos, hvem, om),
     };
-
-    private spawnFloater(e: DamageEvent): void {
-        const el = document.createElement('div');
-        const text =
-            e.kind === 'counter' && e.amount === 0 ? 'MOTSLAG!' :
-            e.kind === 'blocked' ? `Blokkert ${e.amount}` :
-            e.kind === 'finisher' ? `${e.amount}` :
-            `${e.amount}`;
-        const color =
-            e.kind === 'taken' ? '#fca5a5' :
-            e.kind === 'blocked' ? '#cbd5e1' :
-            e.kind === 'counter' ? '#fde68a' :
-            e.kind === 'finisher' ? '#fecaca' : '#ffffff';
-        const size = e.kind === 'finisher' ? 34 : e.kind === 'counter' ? 22 : e.amount >= 18 ? 28 : 21;
-        el.textContent = text;
-        el.style.cssText = `position:absolute;left:0;top:0;font:800 ${size}px Inter,system-ui,sans-serif;color:${color};` +
-            'text-shadow:0 2px 0 #000,0 0 6px rgba(0,0,0,.8);pointer-events:none;white-space:nowrap;will-change:transform;';
-        this.floatLayer.appendChild(el);
-        this.floaters.push({ el, pos: e.at.clone(), age: 0, life: 0.9, drift: (Math.random() - 0.5) * 30 });
-    }
-
-    private updateFloaters(dt: number): void {
-        const w = this.container.clientWidth;
-        const h = this.container.clientHeight;
-        const v = new THREE.Vector3();
-        this.floaters = this.floaters.filter((f) => {
-            f.age += dt;
-            if (f.age >= f.life) {
-                f.el.remove();
-                return false;
-            }
-            v.copy(f.pos).project(this.cam.camera);
-            const k = f.age / f.life;
-            const pop = k < 0.12 ? 0.6 + (k / 0.12) * 0.6 : 1.2 - Math.min(0.2, (k - 0.12) * 0.5);
-            const x = (v.x * 0.5 + 0.5) * w + f.drift * k;
-            const y = (-v.y * 0.5 + 0.5) * h - k * 55;
-            f.el.style.transform = `translate(-50%,-50%) translate(${x}px,${y}px) scale(${pop})`;
-            f.el.style.opacity = String(v.z > 1 ? 0 : 1 - Math.max(0, (k - 0.6) / 0.4));
-            return true;
-        });
-    }
 
     private pushHud(): void {
         const s = this.stats();
@@ -784,6 +768,10 @@ export class GrayboxGame {
             replikk: this.folk?.replikk ?? null,
             bunter: this.baering?.antall ?? 0,
             bismer: this.baering?.veier?.hud ?? null,
+            telegraphSving: this.telegraphSving,
+            oppdrag: this.folk?.oppdrag.hud() ?? [],
+            oppdragMelding: this.oppdragMelding,
+            ting: [...(this.folk?.oppdrag.ting ?? [])],
         });
     }
 }

@@ -14,6 +14,7 @@ import type { Character } from './character';
 import type { Faering } from './boat';
 import type { BryggenWorld } from '../bygg/bryggen';
 import type { RotteHendelse } from './rotter';
+import type { KampLyd } from './combat';
 
 export type Underlag = 'tre-ute' | 'tre-inne' | 'gjorme';
 
@@ -165,6 +166,24 @@ export class LydKobling {
         const u = this.world.underlag(p);
         const styrke = THREE.MathUtils.clamp(0.35 + fart * 0.13, 0.35, 1);
         this.lyd.spill('fottrinn', u, { pos: p, ref: 2, styrke, fart: 0.93 + Math.random() * 0.14, buss: 'inne' });
+    }
+
+    /**
+     * Lyd i kampen. Stemmen til gutten (12 år) spilles lysere og fortere enn den voksne
+     * innspillingen; fienden litt dypere. Slagene varierer litt i tonehøyde så de ikke blir like.
+     */
+    kamp(hva: KampLyd, pos: THREE.Vector3, hvem: 'gutt' | 'fiende', om = 0): void {
+        const stemme = hva === 'stonn' || hva === 'smerte';
+        const fart = stemme ? (hvem === 'gutt' ? 1.32 : 0.93) + Math.random() * 0.06 : 0.9 + Math.random() * 0.2;
+        const styrke = hva === 'sus' ? 0.55 : hva === 'stonn' ? (hvem === 'gutt' ? 0.5 : 0.65) : hva === 'smerte' ? 0.7 : hva === 'fall' ? 0.9 : 1;
+        this.lyd.spill('kamp', hva, { pos: pos.clone().setY(pos.y + 1.2), ref: 2.2, styrke, fart, buss: 'inne', om });
+    }
+
+    /** Oppdrag: tatt (to toner opp), et mål nådd (én), fullført (tre, en dur-treklang). */
+    oppdrag(type: 'nytt' | 'maal' | 'ferdig'): void {
+        if (type === 'nytt') this.lyd.toner([[523.3, 0, 0.9], [784, 0.12, 1.2]], 0.16);
+        else if (type === 'maal') this.lyd.toner([[659.3, 0, 0.8]], 0.13);
+        else this.lyd.toner([[523.3, 0, 1.4], [659.3, 0.11, 1.4], [784, 0.22, 1.6], [1046.5, 0.36, 2.0]], 0.15);
     }
 
     private rotte(h: RotteHendelse): void {

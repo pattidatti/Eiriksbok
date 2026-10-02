@@ -6,7 +6,7 @@
 // 1420-årene, er ikke slått fast [U] (§4.3).
 import * as THREE from 'three';
 import type { BryggenWorld } from '../bygg/bryggen';
-import { buntMesh } from '../bygg/folk';
+import { botteMesh, buntMesh } from '../bygg/folk';
 import type { Character } from '../motor/character';
 import { BismerSpill } from './bismer';
 import { SPOR } from '../bygg/samtaler';
@@ -25,6 +25,11 @@ export class Baering {
     veier: BismerSpill | null = null;
     /** Meldinger til gutten (vises øverst). */
     onMelding: (tekst: string) => void = () => undefined;
+    /** En bunt er veid (oppdraget «Fisken bærer seg ikke selv» teller). */
+    onVeid: () => void = () => undefined;
+    /** Vannbøtta gutten bærer for oppdraget «Vann til gryta». */
+    private readonly botte: THREE.Object3D;
+    private harBotte = false;
     private trekk = 0.37;
 
     constructor(world: BryggenWorld, gutt: Character) {
@@ -36,6 +41,17 @@ export class Baering {
         this.bunt.scale.setScalar(0.92);
         this.bunt.visible = false;
         gutt.anim.root.add(this.bunt);
+        this.botte = botteMesh(world.materials);
+        this.botte.position.set(0, 0.8, 0.26);
+        this.botte.scale.setScalar(0.9);
+        this.botte.visible = false;
+        gutt.anim.root.add(this.botte);
+    }
+
+    /** Viser det gutten bærer for oppdragene (bøtta foran seg med begge hender). */
+    visTing(ting: ReadonlySet<string>): void {
+        this.harBotte = ting.has('botte');
+        this.vis();
     }
 
     /** Finner hva gutten kan gjøre der han står. Gir teksten til «E: …», eller null. */
@@ -85,6 +101,7 @@ export class Baering {
             this.antall++;
             SPOR.baret++;
             SPOR.juks++;
+            this.onVeid();
             this.trekk = (this.trekk * 9301 + 0.4927) % 1;
             const tatt = !SPOR.tatt && this.trekk < Math.min(0.85, 0.2 * SPOR.juks);
             if (tatt) SPOR.tatt = true;
@@ -102,6 +119,7 @@ export class Baering {
         this.veier = null;
         this.antall++;
         SPOR.baret++;
+        this.onVeid();
         const tall = (x: number) => x.toFixed(1).replace('.', ',');
         this.onMelding(
             feil <= 0.15
@@ -119,6 +137,7 @@ export class Baering {
 
     private vis(): void {
         this.bunt.visible = this.baerer;
-        this.gutt.anim.overlay(this.baerer ? 'Baere_Over' : null, 0.3);
+        this.botte.visible = this.harBotte && !this.baerer;
+        this.gutt.anim.overlay(this.baerer || this.harBotte ? 'Baere_Over' : null, 0.3);
     }
 }

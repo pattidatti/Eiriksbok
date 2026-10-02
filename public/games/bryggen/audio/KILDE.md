@@ -38,6 +38,11 @@ stille (`Lydbilde.stottet`).
 | | `skrik` (2) | [rat-squeak.wav](https://freesound.org/people/toefur/sounds/288941/), [Rat.ogg](https://freesound.org/people/egomassive/sounds/536753/) | toefur, egomassive | CC0 |
 | | `kraps` (7) | [Clawing or Scratching at wood](https://freesound.org/people/Wigglesworth/sounds/830466/) | Wigglesworth | CC0 |
 | `maaker.ogg` | `skrik` (8), `latter` (2) | [Gull 1.ogg](https://commons.wikimedia.org/wiki/File:Gull_1.ogg), [Gull 2.ogg](https://commons.wikimedia.org/wiki/File:Gull_2.ogg) (gråmåke, fra PDSounds) | avphillips | Offentlig eie |
+| `kamp.ogg` | `sus` (12) | [Short Whoosh, 13x](https://freesound.org/people/Kinoton/sounds/427979/) | Kinoton | CC0 |
+| | `stonn` (12) | [Male Fight Grunts](https://freesound.org/people/ale-batec/sounds/511023/) | ale-batec | CC0 |
+| | `smerte` (3) | [Male Grunts](https://freesound.org/people/Kodack/sounds/256603/) | Kodack | CC0 |
+| | `fall` (2) | [S03-22 Two body falls on wood.wav](https://freesound.org/people/craigsmith/sounds/675927/) | craigsmith | CC0 |
+| | `slag-lett` (5), `slag-tung` (5), `blokk` (5) | [Impact Sounds](https://kenney.nl/assets/impact-sounds) (`impactPunch_medium`, `impactPunch_heavy`, `impactSoft_medium`) | Kenney | CC0 |
 | `aare.ogg` | `tak` (6) | [R23-38-Oar Splash.wav](https://freesound.org/people/craigsmith/sounds/480840/) | craigsmith | CC0 |
 | | `knirk` (5) | [G27-11-Ship Creaks.wav](https://freesound.org/people/craigsmith/sounds/438357/) | craigsmith | CC0 |
 

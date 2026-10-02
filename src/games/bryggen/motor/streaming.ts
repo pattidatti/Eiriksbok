@@ -17,6 +17,7 @@ import * as THREE from 'three';
 import type RAPIER_NS from '@dimforge/rapier3d-compat';
 import type { Physics } from './physics';
 import type { ColliderSpec } from './meshkit';
+import type { Gest } from './gestikk';
 
 export const LOAD_R = 120;
 export const DROP_R = 180;
@@ -68,6 +69,8 @@ export interface CellContent {
     bunter?: { hent: THREE.Vector3; lever: THREE.Vector3 }[];
     /** Folk man kan snakke med (E). */
     snakkbare?: Snakkbar[];
+    /** Navngitte steder oppdragene bruker (brønnen, gjeldsboka, porten), i verdensrom. */
+    steder?: Sted[];
     /** Rydder det cella eier selv (materialer som ikke hører til Materials). */
     dispose?: () => void;
 }
@@ -76,19 +79,35 @@ export interface CellContent {
 export interface CellCtx {
     kamera: THREE.Vector3;
     spiller: THREE.Vector3;
-    /** En kort replikk fra noen i cella (vises som undertekst). */
-    si: (hvem: string, tekst: string) => void;
+    /** En kort replikk fra noen i cella. Med `fra` (føttene til den som snakker) står den over hodet. */
+    si: (hvem: string, tekst: string, fra?: THREE.Vector3) => void;
 }
 
 /** En figur man kan snakke med. `pos` er føttene og følger figuren. */
 export interface Snakkbar {
     /** Drakten (husbonde, svenn, ...). Avgjør hva hen sier. */
     figur: string;
+    /** Hvem hen er (personer.ts), for navnet over hodet og oppdragene. Uten: bare tittelen. */
+    id?: string;
     pos: THREE.Vector3;
     /** Id i samtalene (samtaler.ts). Uten: en kort replikk. */
     samtale?: string;
     /** Snu seg mot noen og stoppe det hen holder på med (`null`: fortsett). */
     vend: (mot: THREE.Vector3 | null) => void;
+    /** Toppen av hodet i verdensrom (skrives i `ut`). Navn, merker og snakkebobler står over den. */
+    hode: (ut: THREE.Vector3) => THREE.Vector3;
+    /** Gjør en gest (gestikk.ts) mens hen sier noe. */
+    gest: (g: Gest, varighet?: number) => void;
+    /** Tegnes figuren nå (ikke for langt unna)? */
+    synlig: () => boolean;
+}
+
+/** Et navngitt sted i en celle: noe gutten kan gjøre noe ved, eller komme fram til. */
+export interface Sted {
+    id: string;
+    pos: THREE.Vector3;
+    /** Hvor nær han må være (meter). Standard 1,6. */
+    r?: number;
 }
 
 /**
@@ -239,6 +258,10 @@ export class CellStreamer {
 
     *bunter(): Generator<{ hent: THREE.Vector3; lever: THREE.Vector3 }> {
         for (const cell of this.live.values()) yield* cell.content?.bunter ?? [];
+    }
+
+    *steder(): Generator<Sted> {
+        for (const cell of this.live.values()) yield* cell.content?.steder ?? [];
     }
 
     *snakkbare(): Generator<Snakkbar> {

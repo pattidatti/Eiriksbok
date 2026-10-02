@@ -76,6 +76,13 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/holmen.ts` | Holmen som kulisse forbi kaienden (+x): kastellet ved sjøen, ringmuren med port, Håkonshallen med trappegavler, Kristkirken, Apostelkirken, trehus i kongsgården og bispegården. Statisk `THREE.LOD`, ingen kollidere |
 | `bygg/stranden.ts` | Stranden på den andre siden av Vågen: glisne laftehus, naust, tømmer og et skip på stokker, trukket fra et frø. Én celle bak grensa, ingen kollidere |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
+| `motor/gestikk.ts` | Gester mens folk snakker: prateklippet (`Idle_Talking_Loop`) og vift, vink, kom hit, pek, nikk, rist, skuldre, bukk og rop dreid i figurens rom (`Animator.figurDrei`). `gestFra(tekst)` velger gest fra det som blir sagt |
+| `bygg/personer.ts` | Navn og tittel over hodet for folk med `id` på plassen eller ruta |
+| `bygg/oppdrag-data.ts` | Oppdragene: giver, mål (hendelser), mottaker, samtalene (tilbud, underveis, levering) og «Dette vet vi» |
+| `graboks/oppdrag.ts` | Oppdragsmotoren: status, teller hendelser, merker («!», «?», grå «?»), steder med E, lagret i `bryggen-oppdrag` |
+| `graboks/hoder.ts` | HTML over hodene: navneskilt, oppdragsmerke og snakkeboble som skrives fram. Skjult bak vegger (stråle fra kameraet) |
+| `graboks/tyv.ts` | Tyven i gården: ute bare mens oppdraget hans er aktivt, roper over hodet, teller `slaa:tyven` |
+| `graboks/flytere.ts`, `graboks/dev.ts` | Skadetallene i kampen, og utviklerverktøyene (flyttet ut av `game.ts`) |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
 
 ## Regler
@@ -240,3 +247,20 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   flat farge; langt unna, bak 100 m fra kaienden: alt i flat farge i ett tegnekall). Den skal synes fra
   hele Vågen, også der en celle ikke ville vært lastet. Stranden er en vanlig celle: den er borte i tåka
   fra kaia uansett.
+- Alt folk sier, står i en boble over hodet (`Hoder.si`), ikke som undertekst. `CellCtx.si` tar føttene
+  til den som snakker (`fra`), så boblen havner over riktig hode. Bare «Dette vet vi» står i panelet nederst.
+- `Snakkbar` har `hode`, `gest` og `synlig`. Nye folk som skal snakkes med, lages av `lagFolk` og får dem gratis.
+- Gester og kampkroppen legges på i `Animator.foerOppdatering` (én per figur): rett før mixeren, så de
+  aldri legges på to ganger når figuren bare oppdateres 15 ganger i sekundet. Skulderbeina (`DEF-shoulder`)
+  flytter hele armen mye: bruk overarmen.
+- Riggen har nå også `Idle_Talking_Loop`, `Sitting_Talking_Loop`, `Sword_Attack`, `PickUp_Table`,
+  `Spell_Simple_Shoot`/`_Enter`, `Crouch_Fwd_Loop`, `Walk_Formal_Loop` og `Idle_Torch_Loop` (31 klipp).
+  Bygg `mannequin.glb` på nytt med `@gltf-transform` (resample, dedup, prune) fra
+  `AnimationLibrary_Godot_Standard.gltf`, ellers forsvinner klipp.
+- Kampen: rekka er jab, kross, svingslag (starten av `Sword_Attack`, sluppet før det dype utfallet). Tungt
+  slag og avslutning er også svingslaget. Fienden velger kross, to jab eller et svingslag som går gjennom
+  garden (varsles i oransje: rull unna). Lyd fra `kamp.ogg` via `CombatSink.lyd`; gutten får lysere stemme.
+- Oppdrag: et mål er en hendelse (`veid`, `sted:<id>`, `snakk:<person>`, `slaa:tyven`). Steder meldes av
+  cellene (`CellContent.steder`, f.eks. `bronn` og `gjeldsbok`). Et oppdrag uten mål er klart med en gang
+  (et brev som bare skal leveres). `__bryggen.folk.oppdrag` i konsollen kan ta, telle og levere.
+

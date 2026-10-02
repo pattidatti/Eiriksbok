@@ -10,6 +10,7 @@ import type { Animator } from '../motor/animator';
 import type { CellCtx } from '../motor/streaming';
 import type { FigurNavn } from './folk';
 import { NAVN, trekk, VEI } from './samtaler';
+import { Gestikk, gestFra, type Gest } from '../motor/gestikk';
 
 export interface Stopp {
     /** Føttene, i verdensrom. */
@@ -35,6 +36,8 @@ export interface Rute {
     samtale?: string;
     /** Hva hen bærer mellom `last`-punktene: en bunt tørrfisk (standard) eller en vannbøtte. */
     baer?: 'bunt' | 'botte';
+    /** Hvem hen er (personer.ts). */
+    id?: string;
 }
 
 const SVING = 3.2; // rad/s
@@ -61,6 +64,9 @@ export class Vandrer {
     readonly a: Animator;
     readonly rute: Rute;
     private readonly bunt: THREE.Object3D;
+    private readonly gestikk: Gestikk;
+    /** Et punkt ved siden av gutten hen går via når han blir stående i veien. */
+    private omvei: THREE.Vector3 | null = null;
 
     constructor(a: Animator, rute: Rute, bunt: THREE.Object3D, seed: number) {
         this.a = a;
@@ -85,11 +91,24 @@ export class Vandrer {
         this.visLast();
         this.a.root.position.copy(this.pos);
         this.a.root.rotation.y = this.yaw;
+        this.gestikk = new Gestikk(a);
+        this.gestikk.onFerdig = () => this.a.release(0.35);
+    }
+
+    /**
+     * En gest mens hen snakker. Med noe i armene blir det med hodet; prateklippet bare når hen
+     * står stille (det er et helkroppsklipp).
+     */
+    gest(g: Gest, varighet?: number): void {
+        if (this.baerer && g !== 'nikk' && g !== 'riste') g = g === 'vift' ? 'riste' : 'nikk';
+        if (g === 'snakk' && !this.snudd) g = 'nikk';
+        this.gestikk.gjor(g, varighet);
     }
 
     /** Snu seg mot noen og bli stående (samtale). `null`: gå videre. */
     vend(mot: THREE.Vector3 | null): void {
         this.snudd = mot ? mot.clone() : null;
+        if (!mot) this.gestikk.stopp();
     }
 
     private visLast(): void {
@@ -105,6 +124,7 @@ export class Vandrer {
 
     /** Logikken (hvert bilde). Animasjonen oppdateres av eieren, som kan gjøre det sjeldnere langt unna. */
     step(dt: number, t: number, ctx: CellCtx): void {
+        this.gestikk.tick(dt);
         let maal = 0;
         if (this.snudd) {
             this.snu(Math.atan2(this.snudd.x - this.pos.x, this.snudd.z - this.pos.z), dt);
@@ -124,10 +144,12 @@ export class Vandrer {
             if (se !== undefined) this.snu(se, dt);
         } else {
             const st = this.rute.stopp[this.i];
-            _d.subVectors(st.p, this.pos).setY(0);
+            // Omveien rundt gutten først, så videre mot punktet.
+            if (this.omvei && Math.hypot(this.omvei.x - this.pos.x, this.omvei.z - this.pos.z) < 0.3) this.omvei = null;
+            _d.subVectors(this.omvei ?? st.p, this.pos).setY(0);
             const dist = _d.length();
-            const stopper = st.vent !== undefined || st.last !== undefined || st.gjor === true;
-            if (dist < (stopper ? 0.1 : 0.45)) {
+            const stopper = !this.omvei && (st.vent !== undefined || st.last !== undefined || st.gjor === true);
+            if (!this.omvei && dist < (stopper ? 0.1 : 0.45)) {
                 this.fra = st.p;
                 this.i = (this.i + 1) % this.rute.stopp.length;
                 this.vent = st.vent ?? 0;
@@ -154,11 +176,22 @@ export class Vandrer {
                     this.blokkert += dt;
                     if (this.blokkert > 1.1 && t - this.sistSagt > 9) {
                         this.sistSagt = t;
-                        ctx.si(NAVN[this.rute.figur], trekk(VEI[this.rute.figur], t));
+                        const tekst = trekk(VEI[this.rute.figur], t);
+                        ctx.si(NAVN[this.rute.figur], tekst, this.pos);
+                        this.gest(gestFra(tekst));
+                    }
+                    // Blir han stående, går hen rundt ham: et skritt til siden, bort fra ham.
+                    if (this.blokkert > 2.6 && !this.omvei) {
+                        const fx = Math.sin(this.yaw);
+                        const fz = Math.cos(this.yaw);
+                        const side = px * fz - pz * fx > 0 ? -1 : 1; // gutten til høyre: gå til venstre
+                        this.omvei = new THREE.Vector3(this.pos.x + fz * side * 0.95 + fx * 0.5, this.pos.y, this.pos.z - fx * side * 0.95 + fz * 0.5);
+                        this.blokkert = 0;
                     }
                 } else this.blokkert = 0;
                 const hele = Math.hypot(st.p.x - this.fra.x, st.p.z - this.fra.z);
-                this.pos.y = THREE.MathUtils.lerp(this.fra.y, st.p.y, hele > 0.01 ? THREE.MathUtils.clamp(1 - dist / hele, 0, 1) : 1);
+                const igjen = Math.hypot(st.p.x - this.pos.x, st.p.z - this.pos.z);
+                this.pos.y = THREE.MathUtils.lerp(this.fra.y, st.p.y, hele > 0.01 ? THREE.MathUtils.clamp(1 - igjen / hele, 0, 1) : 1);
             }
         }
         this.speed += THREE.MathUtils.clamp(maal - this.speed, -AKS * 1.6 * dt, AKS * dt);

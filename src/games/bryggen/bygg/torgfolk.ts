@@ -32,10 +32,10 @@ const SJO = Math.PI;
 export function torgPlasser(x0: number): Plass[] {
     const P = (x: number, z: number) => new THREE.Vector3(x0 + x, 0, z);
     return [
-        { figur: 'fiskekone', rolle: 'veie', pos: P(1.05, 12.3), yaw: OST },
-        { figur: 'kornselger', rolle: 'staa', pos: P(1.05, 19.6), yaw: OST, samtale: 'kornselger' },
-        { figur: 'bondekone', rolle: 'staa', pos: P(1.05, 48.3), yaw: OST },
-        { figur: 'bodker', rolle: 'staa', pos: P(16.45, 50.7), yaw: VEST },
+        { figur: 'fiskekone', rolle: 'veie', pos: P(1.05, 12.3), yaw: OST, id: 'ragnhild' },
+        { figur: 'kornselger', rolle: 'staa', pos: P(1.05, 19.6), yaw: OST, samtale: 'kornselger', id: 'torstein' },
+        { figur: 'bondekone', rolle: 'staa', pos: P(1.05, 48.3), yaw: OST, id: 'gudrun' },
+        { figur: 'bodker', rolle: 'staa', pos: P(16.45, 50.7), yaw: VEST, id: 'arne' },
     ];
 }
 
@@ -46,7 +46,7 @@ export function torgRuter(x0: number): Rute[] {
         // Kjøpekona: fiskeboden, kornboden, et stopp ved brønnen, kurvboden, og ned igjen langs
         // plankegangen øst for brønnen og sleden.
         {
-            figur: 'kjopekone', fart: 0.95, start: 0,
+            figur: 'kjopekone', fart: 0.95, start: 0, id: 'sigrid',
             stopp: [
                 { p: P(2.9, 12.9), vent: 5, se: VEST, gjor: true },
                 { p: P(3.6, 16.0) },
@@ -65,7 +65,7 @@ export function torgRuter(x0: number): Rute[] {
         },
         // Borgeren: står ved kornboden, går opp plankegangen til tønneboden og ned igjen.
         {
-            figur: 'borger', fart: 1.05, start: 3, samtale: 'borger',
+            figur: 'borger', fart: 1.05, start: 3, samtale: 'borger', id: 'eirik',
             stopp: [
                 { p: P(2.9, 19.0), vent: 7, se: VEST, gjor: true },
                 { p: P(4.4, 22.5) },
@@ -83,7 +83,7 @@ export function torgRuter(x0: number): Rute[] {
         },
         // Tjenestejenta: fra kaia opp til brønnen, sveiver opp en bøtte vann og bærer den ned igjen.
         {
-            figur: 'tjenestejente', fart: 1.0, start: 1, baer: 'botte',
+            figur: 'tjenestejente', fart: 1.0, start: 1, baer: 'botte', id: 'ingrid',
             stopp: [
                 { p: P(6.9, 3.4), vent: 3, se: SJO, last: false },
                 { p: P(6.9, 22.0) },

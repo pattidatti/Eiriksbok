@@ -38,7 +38,7 @@ export interface BryggenWorld {
     /** Hvor mye det regner (0 tørt, 1 øsregn). Kan endres mens spillet går. */
     regn: number;
     /** Får replikkene folkene sier (vises som undertekst). Settes av spillet. */
-    si: ((hvem: string, tekst: string) => void) | null;
+    si: ((hvem: string, tekst: string, fra?: THREE.Vector3) => void) | null;
     /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
     environment: THREE.Texture;
     /**
@@ -178,7 +178,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const pool = Array.from({ length: 5 }, () => phys.addMover(0.55, 0.26));
     const parkert = new THREE.Vector3(0, -100, 0);
     const naere: { p: THREE.Vector3; d: number }[] = [];
-    const ctx: CellCtx = { kamera: new THREE.Vector3(), spiller: new THREE.Vector3(), si: (hvem, tekst) => world.si?.(hvem, tekst) };
+    const ctx: CellCtx = { kamera: new THREE.Vector3(), spiller: new THREE.Vector3(), si: (hvem, tekst, fra) => world.si?.(hvem, tekst, fra) };
     const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
         ctx.kamera.copy(focus);
         ctx.spiller.copy(spiller?.pos ?? focus);

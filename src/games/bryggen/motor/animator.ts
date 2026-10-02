@@ -184,6 +184,10 @@ function findBone(root: THREE.Object3D, name: string): THREE.Object3D | undefine
     return root.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(name));
 }
 
+const _q1 = new THREE.Quaternion();
+const _q2 = new THREE.Quaternion();
+const _q3 = new THREE.Quaternion();
+
 export interface PlayOptions {
     fade?: number;
     loop?: boolean;
@@ -225,6 +229,12 @@ export class Animator {
     private materials: THREE.MeshStandardMaterial[] = [];
     /** Ekstra bein-rotasjon lagt oppå animasjonen etter mixeren (f.eks. ryggen i åretaket). */
     private boneOffsets = new Map<THREE.Object3D, THREE.Euler>();
+    /**
+     * Rotasjoner i figurens eget rom (x mot figurens venstre, y opp, z fram), lagt oppå
+     * animasjonen etter mixeren. Gestene (gestikk.ts) bruker dem: «løft armen fram» er den samme
+     * aksen for alle bein, uansett hvordan beinets egne akser står.
+     */
+    private figurRot: { bone: THREE.Object3D; q: THREE.Quaternion }[] = [];
 
     constructor(template: RigTemplate, heightMeters: number, tint?: number) {
         this.template = template;
@@ -354,6 +364,29 @@ export class Animator {
         else this.boneOffsets.delete(b);
     }
 
+    /**
+     * Drei et bein `vinkel` radianer rundt `akse` i figurens rom, oppå animasjonen. Gjelder bare
+     * neste `update`: gestene setter det på nytt hvert bilde. Foreldre før barn (overarm før
+     * underarm), ellers dreies barnet fra en gammel stilling.
+     */
+    figurDrei(bone: string, akse: THREE.Vector3, vinkel: number): void {
+        if (Math.abs(vinkel) < 1e-4) return;
+        const b = this.boneCache.get(bone) ?? findBone(this.model, bone);
+        if (!b) return;
+        this.boneCache.set(bone, b);
+        this.figurRot.push({ bone: b, q: new THREE.Quaternion().setFromAxisAngle(akse, vinkel) });
+    }
+    private boneCache = new Map<string, THREE.Object3D>();
+    /** Kalles først i hver `update`: gestene legger inn sine `figurDrei` her (gestikk.ts). */
+    foerOppdatering: (() => void) | null = null;
+
+    /** Et bein fra riggen (navnet som i riggen, med punktum), eller undefined. */
+    bein(name: string): THREE.Object3D | undefined {
+        const b = this.boneCache.get(name) ?? findBone(this.model, name);
+        if (b) this.boneCache.set(name, b);
+        return b;
+    }
+
     setTimeScale(ts: number): void {
         if (!this.current) return;
         const l = this.full.get(this.current);
@@ -381,6 +414,7 @@ export class Animator {
      */
     update(dt: number, speed: number): void {
         const realDt = dt;
+        this.foerOppdatering?.();
         if (this.freeze > 0) {
             this.freeze -= dt;
             dt = 0;
@@ -456,6 +490,19 @@ export class Animator {
             bone.rotateX(rot.x);
             bone.rotateY(rot.y);
             bone.rotateZ(rot.z);
+        }
+        if (this.figurRot.length) {
+            // Figurens rom er `lean` (under roten og leningen). Ny lokal rotasjon:
+            // L' = P⁻¹ · R · P · L, der P er forelderens rotasjon i figurens rom.
+            this.lean.updateMatrixWorld(true);
+            const leanInv = this.lean.getWorldQuaternion(_q1).invert();
+            for (const { bone, q } of this.figurRot) {
+                const P = bone.parent!.getWorldQuaternion(_q2).premultiply(leanInv);
+                const d = _q3.copy(P).invert().multiply(q).multiply(P);
+                bone.quaternion.premultiply(d);
+                bone.updateMatrixWorld(true);
+            }
+            this.figurRot.length = 0;
         }
     }
 }

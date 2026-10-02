@@ -83,7 +83,7 @@ function folk(s: HouseSpec, cz: number): Plass[] {
     return [
         { figur: 'svenn', rolle: 'sitte', pos: V(xb, seat, cz - 0.85), yaw: mot(xb, cz - 0.85, 0, cz) },
         { figur: 'dreng', rolle: 'sitte', pos: V(xb, seat, cz + 0.95), yaw: mot(xb, cz + 0.95, 0, cz) },
-        { figur: 'stuedreng', rolle: 'rore', pos: V(-1.12, GOLV_Y, cz + 0.15), yaw: Math.PI / 2 },
+        { figur: 'stuedreng', rolle: 'rore', pos: V(-1.12, GOLV_Y, cz + 0.15), yaw: Math.PI / 2, id: 'hennig' },
         { figur: 'husbonde', rolle: 'spise', pos: V(xb, seat, cz - 4.6), yaw: Math.PI / 2 },
     ];
 }

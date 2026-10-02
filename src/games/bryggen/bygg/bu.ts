@@ -74,8 +74,8 @@ export function bu(k: MeshKit, c: ColliderKit, s: HouseSpec): Plass[] {
     // først (samtaler.ts).
     const yaw = (fx: number, fz: number) => Math.atan2(fx, fz);
     return [
-        { figur: 'husbonde', rolle: 'skrive', pos: V(X(-xIn + 0.55) + sv * 0.62, y0, 0.95), yaw: yaw(-sv, 0), samtale: 'husbonde' },
-        { figur: 'svenn', rolle: 'veie', pos: V(X(-0.75), y0, 3.2), yaw: Math.PI },
+        { figur: 'husbonde', rolle: 'skrive', pos: V(X(-xIn + 0.55) + sv * 0.62, y0, 0.95), yaw: yaw(-sv, 0), samtale: 'husbonde', id: 'husbonden' },
+        { figur: 'svenn', rolle: 'veie', pos: V(X(-0.75), y0, 3.2), yaw: Math.PI, id: 'lambert' },
     ];
 }
 

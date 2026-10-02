@@ -418,7 +418,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
         c.box(x, 0.25, 0.45, 0.32, 0.6, 0.32, true);
     }
     // Nordlandsfiskeren som kom med jekta står på kaia og venter på oppgjøret [S].
-    plasser.push({ figur: 'fisker', rolle: 'staa', pos: V(ox + 6.1, 0, 1.7), yaw: -1.35, samtale: 'fisker' });
+    plasser.push({ figur: 'fisker', rolle: 'staa', pos: V(ox + 6.1, 0, 1.7), yaw: -1.35, samtale: 'fisker', id: 'ottar' });
     // Buntene skutedrengen bærer inn i bua: lagt opp på kaia fra båten [S].
     buntStabel(k, c, -4.55, 1.45);
     // Halvdelene nær, og hele gården samlet lenger unna (streaming.ts, SAMLET_R).
@@ -434,6 +434,8 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     return {
         near, mid, inne, samlet: { delt, samlet }, colliders: [...c.specs, ...folk.colliders], ild: ildPos, rom,
         gaaende: folk.gaaende, snakkbare: folk.snakkbare,
+        // Gjeldsboka ligger på pulten der husbonden står og skriver (bu.ts).
+        steder: plasser.filter((p) => p.id === 'husbonden').map((p) => ({ id: 'gjeldsbok', pos: p.pos.clone(), r: 1.9 })),
         // Gutten kan bære bunter fra stabelen på kaia til bismeren i bua, som skutedrengen.
         bunter: [{ hent: V(ox - 4.55, 0, 2.15), lever: V(ox - 3.75, 0.2, 10.3) }],
         tick: (t, dt, ctx) => {
@@ -458,7 +460,7 @@ function ruter(ox: number, back: number): Rute[] {
     const BU = 0.2; // golvet inne
     return [
         {
-            figur: 'dreng', fart: 1.05, start: 3,
+            figur: 'dreng', fart: 1.05, start: 3, id: 'tideke',
             stopp: [
                 { p: P(-4.55, 0, 2.35), last: true, se: Math.PI, vent: 0.4 },
                 { p: P(-1.3, 0, 4.0) },
@@ -487,7 +489,7 @@ function ruter(ox: number, back: number): Rute[] {
             ],
         },
         {
-            figur: 'svenn', fart: 1.0, start: 1,
+            figur: 'svenn', fart: 1.0, start: 1, id: 'gerd',
             stopp: [
                 { p: P(0.45, 0, back - 2.2), vent: 6, se: Math.PI },
                 { p: P(0.45, 0, 33) },

@@ -7,6 +7,8 @@
 // («slag over ryggen») og hvem som gjorde hva er fortalt for 1600- og 1700-tallet [U]; derfor
 // slutter samtalen med en «Dette vet vi»-tekst (§3). Ordene og replikkene ellers er [S].
 
+import type { Gest } from '../motor/gestikk';
+
 export interface Valg {
     tekst: string;
     til: string;
@@ -21,6 +23,10 @@ export interface Replikk {
     til?: string;
     /** En «Dette vet vi»-tekst: hva vi vet, hvor vi vet det fra, og hva vi ikke vet. */
     vet?: boolean;
+    /** Gesten den som snakker gjør (gestikk.ts). Uten: velges fra teksten. */
+    gest?: Gest;
+    /** Noe som skjer når replikken vises: `ta:<oppdrag>`, `lever:<oppdrag>`, `hendelse:<navn>`, `gi:<ting>`, `ta-ting:<ting>`. */
+    gjor?: string;
 }
 
 /** En samtale: nodene etter id. Den starter i `start`, eller i `mistro` når fiskeren har tatt gutten i juks. */
@@ -54,6 +60,10 @@ export const NAVN: Record<string, string> = {
     kjopekone: 'Kona',
     borger: 'Borgeren',
     tjenestejente: 'Tjenestejenta',
+    tyv: 'Tyven',
+    prest: 'Presten',
+    vakt: 'Vakta',
+    skriver: 'Skriveren',
 };
 
 /** Til teksten «E: Snakk med …». */
@@ -71,6 +81,10 @@ export const BESTEMT: Record<string, string> = {
     kjopekone: 'kona',
     borger: 'borgeren',
     tjenestejente: 'tjenestejenta',
+    tyv: 'tyven',
+    prest: 'presten',
+    vakt: 'vakta',
+    skriver: 'skriveren',
 };
 
 const REGLER = 'Hvilke regler gjelder her?';

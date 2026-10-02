@@ -65,7 +65,13 @@ const EMPTY: HudState = {
     replikk: null,
     bunter: 0,
     bismer: null,
+    telegraphSving: false,
+    oppdrag: [],
+    oppdragMelding: null,
+    ting: [],
 };
+
+const TING: Record<string, string> = { brev: 'Et brev', botte: 'En bøtte vann' };
 
 const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
     graboks: {
@@ -85,7 +91,7 @@ const CONTROLS: [string, string][] = [
     ['Shift', 'sprint'],
     ['Mellomrom', 'hopp / klatre opp på kanter'],
     ['Mus / piltaster', 'kamera'],
-    ['E', 'snakk / gå om bord / i land'],
+    ['E', 'snakk / gjør / gå om bord / i land'],
     ['1, 2, 3', 'svar i en samtale'],
     ['Venstre klikk / J', 'lett slag'],
     ['Hold venstre / K', 'tungt slag'],
@@ -93,6 +99,7 @@ const CONTROLS: [string, string][] = [
     ['Q / C', 'unnamanøver'],
     ['F', 'avslutt (når fienden vakler)'],
     ['R', 'start slagsmålet på nytt'],
+    ['O', 'skjul / vis oppdragene'],
     ['G', 'bytt grafikk (full / lav)'],
     ['M', 'lyd av / på'],
 ];
@@ -111,6 +118,17 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
     const [showControls, setShowControls] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [lyd, setLyd] = useState<LydValg>(lagretLyd);
+    const [visOppdrag, setVisOppdrag] = useState(true);
+    // Oppdragsmeldingen (nytt, mål, fullført) står i noen sekunder, så forsvinner den.
+    const [melding, setMelding] = useState<HudState['oppdragMelding']>(null);
+    const meldingN = hud.oppdragMelding?.n ?? 0;
+    useEffect(() => {
+        if (!hud.oppdragMelding) return;
+        setMelding(hud.oppdragMelding);
+        const t = window.setTimeout(() => setMelding(null), hud.oppdragMelding.type === 'maal' ? 2800 : 5200);
+        return () => window.clearTimeout(t);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [meldingN]);
     const lydRef = useRef(lyd);
 
     useEffect(() => {
@@ -161,6 +179,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
         const onKey = (e: KeyboardEvent) => {
             if (e.code === 'KeyG' && !e.repeat) toggleQuality();
             if (e.code === 'KeyM' && !e.repeat) endreLyd({ ...lydRef.current, paa: !lydRef.current.paa });
+            if (e.code === 'KeyO' && !e.repeat) setVisOppdrag((v) => !v);
         };
         window.addEventListener('keydown', onKey);
         return () => window.removeEventListener('keydown', onKey);
@@ -286,8 +305,8 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             {/* Faste hint nederst i midten: der blikket er */}
             <div className="pointer-events-none absolute bottom-24 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
                 {hud.telegraph && (
-                    <div className="rounded-xl bg-amber-300 px-4 py-2 text-base font-bold text-slate-900 shadow-lg">
-                        Han slår! Blokker (L / høyre) eller rull unna (Q)
+                    <div className={`rounded-xl px-4 py-2 text-base font-bold shadow-lg ${hud.telegraphSving ? 'bg-orange-600 text-white' : 'bg-amber-300 text-slate-900'}`}>
+                        {hud.telegraphSving ? 'Stort svingslag! Rull unna (Q), det går gjennom garden' : 'Han slår! Blokker (L / høyre) eller rull unna (Q)'}
                     </div>
                 )}
                 {hud.finisherReady && (
@@ -300,31 +319,35 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
 
             {hud.bismer && <BismerVisning b={hud.bismer} />}
 
-            {/* Samtalen: fast nederst i midten, stor og lys, så den kan leses på storskjerm. */}
+            {/* Samtalen: replikkene står i boblene over hodene. Nederst står bare hvem man snakker med og
+                svarene, og «Dette vet vi» i sin helhet: det er ikke noen i spillet som sier det. */}
             {hud.samtale && (
                 <div className="pointer-events-none absolute bottom-6 left-1/2 w-[min(720px,92vw)] -translate-x-1/2">
-                    <div
-                        className={`rounded-2xl px-5 py-4 shadow-xl ${hud.samtale.vet ? 'border-2 border-amber-300 bg-amber-50/95' : 'bg-white/95'}`}
-                    >
-                        <div className={`text-[13px] font-bold uppercase tracking-wide ${hud.samtale.vet ? 'text-amber-700' : 'text-indigo-700'}`}>
-                            {hud.samtale.hvem}
+                    {hud.samtale.vet ? (
+                        <div className="rounded-2xl border-2 border-amber-300 bg-amber-50/95 px-5 py-4 shadow-xl">
+                            <div className="text-[13px] font-bold uppercase tracking-wide text-amber-700">{hud.samtale.hvem}</div>
+                            <p className="mt-1 text-[17px] leading-snug text-slate-900">{hud.samtale.tekst}</p>
+                            <div className="mt-2 text-right text-[13px] font-semibold text-slate-500">E: videre</div>
                         </div>
-                        <p className="mt-1 text-[17px] leading-snug text-slate-900">{hud.samtale.tekst}</p>
-                        {hud.samtale.valg.length > 0 ? (
-                            <ol className="mt-3 flex flex-col gap-1.5">
+                    ) : hud.samtale.valg.length > 0 ? (
+                        <div className="rounded-2xl bg-slate-900/80 px-4 py-3 shadow-xl backdrop-blur">
+                            <div className="text-[12px] font-bold uppercase tracking-wide text-amber-200">Svar {hud.samtale.hvem}</div>
+                            <ol className="mt-2 flex flex-col gap-1.5">
                                 {hud.samtale.valg.map((v, i) => (
-                                    <li key={v} className="flex items-baseline gap-2 text-[15px] font-semibold text-slate-800">
-                                        <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-indigo-600 text-[13px] font-bold text-white">
+                                    <li key={v} className="flex items-baseline gap-2 text-[16px] font-semibold text-white">
+                                        <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-amber-400 text-[13px] font-bold text-slate-900">
                                             {i + 1}
                                         </span>
                                         {v}
                                     </li>
                                 ))}
                             </ol>
-                        ) : (
-                            <div className="mt-2 text-right text-[13px] font-semibold text-slate-500">E: videre</div>
-                        )}
-                    </div>
+                        </div>
+                    ) : (
+                        <div className="mx-auto w-max rounded-xl bg-slate-900/75 px-4 py-2 text-[14px] font-semibold text-white shadow-lg">
+                            <span className="text-amber-200">{hud.samtale.hvem}</span> · E: videre
+                        </div>
+                    )}
                 </div>
             )}
             {!hud.samtale && hud.replikk && (
@@ -333,6 +356,51 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                     {hud.replikk.tekst}
                 </div>
             )}
+
+            {/* Oppdragslista: til høyre, under målerne, som i WoW. */}
+            {world === 'gard' && visOppdrag && (hud.oppdrag.length > 0 || hud.ting.length > 0) && (
+                <div className="pointer-events-none absolute right-4 top-36 w-72 text-right">
+                    <div className="text-[12px] font-bold uppercase tracking-widest text-amber-100 [text-shadow:0_1px_3px_rgba(0,0,0,.9)]">Oppdrag (O)</div>
+                    {hud.oppdrag.map((o) => (
+                        <div key={o.id} className="mt-2">
+                            <div className={`text-[15px] font-bold [text-shadow:0_1px_3px_rgba(0,0,0,.95)] ${o.klar ? 'text-emerald-300' : 'text-amber-300'}`}>
+                                {o.klar && '✓ '}
+                                {o.tittel}
+                            </div>
+                            {o.linjer.map((l) => (
+                                <div
+                                    key={l.tekst}
+                                    className={`text-[13.5px] leading-snug [text-shadow:0_1px_2px_rgba(0,0,0,.95)] ${l.ferdig ? 'text-slate-300 line-through decoration-1' : 'text-white'}`}
+                                >
+                                    {l.tekst}
+                                    {l.antall && <span className="ml-1 font-semibold tabular-nums text-amber-100">{l.antall}</span>}
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                    {hud.ting.length > 0 && (
+                        <div className="mt-2 text-[13px] italic text-slate-100 [text-shadow:0_1px_2px_rgba(0,0,0,.95)]">
+                            Du bærer: {hud.ting.map((t) => TING[t] ?? t).join(', ').toLowerCase()}
+                        </div>
+                    )}
+                </div>
+            )}
+
+            {melding && (
+                <div key={melding.n} className="bryggen-melding pointer-events-none absolute left-1/2 top-[27%] w-[min(560px,90vw)] text-center">
+                    <div className={`text-[13px] font-bold uppercase tracking-[0.25em] [text-shadow:0_1px_4px_rgba(0,0,0,.9)] ${melding.type === 'ferdig' ? 'text-emerald-300' : 'text-amber-200'}`}>
+                        {melding.type === 'nytt' ? 'Nytt oppdrag' : melding.type === 'ferdig' ? 'Oppdrag fullført' : melding.tittel}
+                    </div>
+                    <div className="mt-1 font-[Outfit,Inter,sans-serif] text-[28px] font-extrabold leading-tight text-amber-300 [text-shadow:0_2px_0_#3d2800,0_0_14px_rgba(0,0,0,.7)]">
+                        {melding.type === 'maal' ? melding.tekst : melding.tittel}
+                    </div>
+                    {melding.type !== 'maal' && (
+                        <div className="mx-auto mt-2 max-w-md text-[15px] font-medium leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,.95)]">{melding.tekst}</div>
+                    )}
+                </div>
+            )}
+            <style>{`.bryggen-melding{animation:bryggen-melding .5s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes bryggen-melding{from{opacity:0;transform:translate(-50%,10px) scale(.9)}to{opacity:1;transform:translate(-50%,0) scale(1)}}`}</style>
 
             {hud.message && (
                 <div className="pointer-events-none absolute left-1/2 top-24 max-w-xl -translate-x-1/2 rounded-xl bg-white/90 px-5 py-3 text-center text-[15px] font-medium text-slate-800 shadow-lg">
