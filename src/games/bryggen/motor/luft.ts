@@ -22,8 +22,15 @@ export class Royk {
     /** Av/på (for måling). */
     paa = true;
     private readonly u: Record<string, THREE.IUniform>;
+    private readonly solFarge: THREE.Color;
+    private readonly skygge: THREE.Color;
+    /** Hvor mye av sollyset som når fram (0 når sola er nede og månen ikke oppe). */
+    lysFade = 1;
 
-    constructor(solRetning: THREE.Vector3, solFarge: number, skygge: number) {
+    /** Sola og fargene deles med lyssettingen (`Lyssetting.solRetning`, `c.solFarge`, `c.himmel`). */
+    constructor(solRetning: THREE.Vector3, solFarge: THREE.Color, skygge: THREE.Color) {
+        this.solFarge = solFarge;
+        this.skygge = skygge;
         const n = MAKS_KILDER * FLAK;
         const hjorne = new Float32Array(n * 4 * 2);
         const fro = new Float32Array(n * 4 * 4);
@@ -53,9 +60,9 @@ export class Royk {
             uTid: { value: 0 },
             uKilder: { value: Array.from({ length: MAKS_KILDER }, () => new THREE.Vector4(0, -999, 0, 0)) },
             uVind: { value: new THREE.Vector3(-0.35, 0, 0.22) },
-            uSol: { value: solRetning.clone() },
-            uSolFarge: { value: new THREE.Color(solFarge) },
-            uSkygge: { value: new THREE.Color(skygge) },
+            uSol: { value: solRetning },
+            uSolFarge: { value: new THREE.Color() },
+            uSkygge: { value: new THREE.Color() },
         };
         const mat = new THREE.ShaderMaterial({
             uniforms: THREE.UniformsUtils.merge([THREE.UniformsLib.fog, this.u]),
@@ -122,6 +129,8 @@ export class Royk {
             depthWrite: false,
             fog: true,
         });
+        // `merge` kloner verdiene: legg de samme objektene inn igjen, så `update` når shaderen.
+        Object.assign(mat.uniforms, this.u);
         this.mesh = new THREE.Mesh(geo, mat);
         this.mesh.frustumCulled = false;
         this.mesh.renderOrder = 5;
@@ -131,6 +140,9 @@ export class Royk {
     /** `kilder`: hullene i taket der røyken kommer ut. De nærmeste `fokus` ryker. */
     update(t: number, kilder: THREE.Vector3[], fokus: THREE.Vector3): void {
         this.u.uTid.value = t % 3600;
+        // Lyset på røyken: sola (borte om natta) og himmellyset i skyggesida.
+        (this.u.uSolFarge.value as THREE.Color).copy(this.solFarge).multiplyScalar(this.lysFade);
+        (this.u.uSkygge.value as THREE.Color).copy(this.skygge);
         const naer = [...kilder].sort((a, b) => a.distanceToSquared(fokus) - b.distanceToSquared(fokus));
         const arr = this.u.uKilder.value as THREE.Vector4[];
         for (let i = 0; i < MAKS_KILDER; i++) {
@@ -189,7 +201,7 @@ export class Stov {
             blending: THREE.AdditiveBlending,
             side: THREE.DoubleSide,
         });
-        const sol = { value: solRetning.clone() };
+        const sol = { value: solRetning };
         mat.onBeforeCompile = (sh) => {
             Object.assign(sh.uniforms, this.u, { uSolDir: sol });
             // Begge sider av flaket vender mot sola: sett fra skyggesiden snur Three ellers

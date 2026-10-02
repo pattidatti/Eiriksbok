@@ -16,48 +16,58 @@
 // av dis: tåka i spillet er mye tettere enn ekte luft, og fjell som sto skarpere enn husene
 // 100 m unna, ville sett klistret på ut.
 import * as THREE from 'three';
-import type { Stemning } from './stemning';
+import type { Lyssetting } from './stemning';
 
 const R = 140; // innenfor kameraets fjerne plan (160)
 
 /**
- * Fjellene i spillets rom (+x mot nord og Holmen, -z mot vest over Vågen, +z østover inn i
- * landet), målt fra Bryggen: x, z, høyde over havet og hvor bred foten er (alt i meter).
- * Høydene er ekte [V]; plasseringen er grovt avlest fra kartet og litt flyttet for spillet [S].
+ * Fjellene i spillets rom, målt fra Bryggen: x, z, høyde over havet og hvor bred foten er (alt i
+ * meter). Spillets +x går langs Vågen mot Holmen, som i virkeligheten er omtrent nordvest (330°),
+ * +z inn i landet (nordøst) og -z over Vågen (sørvest). Toppene er regnet om fra kartet med den
+ * dreiningen: nord og øst i km fra Bryggen, så x = 0,866·N - 0,5·Ø og z = 0,5·N + 0,866·Ø.
+ * Høydene og retningene er ekte [V]; bredden er valgt for spillet [S].
  */
 const FJELL: [number, number, number, number][] = [
-    [250, 900, 320, 1100], // Fløyen, rett bak Bryggen
-    [800, 1350, 551, 1100], // Blåmanen
-    [1500, 1700, 568, 1300], // Rundemanen
-    [1750, 850, 417, 1100], // Sandviksfjellet
-    [2600, 300, 250, 1200], // lia ned mot Sandviken
-    [-1700, 3000, 643, 2000], // Ulriken
-    [-700, 1700, 400, 1500], // Fjellsiden mellom Fløyen og Ulriken
-    [-2500, -1200, 477, 1600], // Løvstakken
-    [-1500, -2300, 317, 1400], // Damsgårdsfjellet
-    [-1600, -5300, 396, 1800], // Lyderhorn
-    [3600, -3600, 230, 3000], // Askøy over Byfjorden
+    [-910, 830, 320, 1100], // Fløyen, bak og til høyre for Bryggen sett fra Vågen
+    [-630, 1490, 399, 1000], // Fløyfjellet, ryggen fra Fløyen opp mot Blåmanen, rett bak Bryggen
+    [-120, 2510, 551, 1100], // Blåmanen
+    [350, 3220, 568, 1300], // Rundemanen
+    [1230, 2070, 417, 1100], // Sandviksfjellet
+    [990, 1490, 250, 1200], // lia over Sandviken
+    [-3690, 1950, 643, 1700], // Ulriken, over enden av Vågen
+    [-2130, 1080, 230, 1000], // lav rygg mellom Fløyen og Ulriken
+    [-3780, -1320, 477, 1600], // Løvstakken
+    [-1970, -2520, 317, 1400], // Damsgårdsfjellet
+    [60, -5670, 396, 1800], // Lyderhorn
+    [5460, -1460, 230, 3000], // Askøy over Byfjorden
 ];
 
 export class Himmel {
     readonly mesh: THREE.Mesh;
     private readonly u: Record<string, THREE.IUniform>;
 
-    constructor(s: Stemning, solRetning: THREE.Vector3) {
+    private readonly lys: Lyssetting;
+
+    /** Fargene og retningene deles med lyssettingen og følger døgnet uten kopiering. */
+    constructor(lys: Lyssetting) {
+        this.lys = lys;
         this.u = {
-            uZenit: { value: new THREE.Color(s.zenit) },
-            uHorisont: { value: new THREE.Color(s.takeFarge) },
-            uSky: { value: new THREE.Color(s.sky) },
-            uSolFarge: { value: new THREE.Color(s.solFarge) },
-            uSol: { value: solRetning.clone() },
-            uDekke: { value: s.skydekke },
+            uZenit: { value: lys.c.zenit },
+            uHorisont: { value: lys.c.takeFarge },
+            uSky: { value: lys.c.sky },
+            uSolFarge: { value: lys.c.solFarge },
+            uSol: { value: lys.solRetning },
+            uSolSkive: { value: lys.solen },
+            uMaane: { value: lys.maanen },
+            uNatt: { value: 0 },
+            uDekke: { value: 0 },
             uGlodHer: { value: 0 },
             uTid: { value: 0 },
             uFjellA: { value: FJELL.map(() => new THREE.Vector4()) },
             uFjellL: { value: FJELL.map(() => 0) },
             uFjellMaks: { value: 0 },
-            uFjellFarge: { value: new THREE.Color(s.fjell) },
-            uFjellDis: { value: s.fjellDis },
+            uFjellFarge: { value: lys.c.fjell },
+            uFjellDis: { value: 2600 },
         };
         const mat = new THREE.ShaderMaterial({
             uniforms: this.u,
@@ -84,8 +94,12 @@ export class Himmel {
     }
 
     /** `post`: etterbehandlingen legger på gløden rundt sola. Ellers gjør himmelen det selv. */
-    update(t: number, kamera: THREE.Vector3, post: boolean, glod: number): void {
+    update(t: number, kamera: THREE.Vector3, post: boolean): void {
         this.mesh.position.copy(kamera);
+        const lys = this.lys;
+        this.u.uDekke.value = lys.s.skydekke;
+        this.u.uFjellDis.value = lys.s.fjellDis;
+        this.u.uNatt.value = lys.natt;
         // Fjellene sett fra kameraet: retningen mot toppen, hvor høyt den rager (vinkel), hvor
         // bred foten er (vinkel) og avstanden. Høyeste topp pluss ryggene er grensa for shaderen.
         const a = this.u.uFjellA.value as THREE.Vector4[];
@@ -102,7 +116,7 @@ export class Himmel {
         });
         this.u.uFjellMaks.value = maks + 0.05;
         this.u.uTid.value = t % 3600;
-        this.u.uGlodHer.value = post ? 0 : glod * 0.6;
+        this.u.uGlodHer.value = post ? 0 : lys.s.solGlod * lys.lysFade * 0.6;
     }
 
     dispose(): void {
@@ -117,6 +131,9 @@ uniform vec3 uHorisont;
 uniform vec3 uSky;
 uniform vec3 uSolFarge;
 uniform vec3 uSol;
+uniform vec3 uSolSkive;
+uniform vec3 uMaane;
+uniform float uNatt;
 uniform float uDekke;
 uniform float uGlodHer;
 uniform float uTid;
@@ -136,6 +153,10 @@ float hStoy(vec2 p) {
     vec2 f = fract(p);
     f = f * f * (3.0 - 2.0 * f);
     return mix(mix(hHash(i), hHash(i + vec2(1.0, 0.0)), f.x), mix(hHash(i + vec2(0.0, 1.0)), hHash(i + vec2(1.0, 1.0)), f.x), f.y);
+}
+
+float hHash3(vec3 p) {
+    return fract(sin(dot(p, vec3(127.1, 311.7, 74.7))) * 43758.5453);
 }
 
 float hFbm3(vec2 p) {
@@ -172,8 +193,38 @@ void main() {
     float horisont = smoothstep(0.0, 0.18, y);
     c = mix(c, sky, tett * horisont);
 
+    // Stjernene: ett rutenett på kula, og en stjerne i noen få av rutene. Borte bak skyene, nede
+    // i disen og nær månen.
+    if (uNatt > 0.01 && d.y > 0.02) {
+        vec3 q = d * 150.0;
+        vec3 rute = floor(q);
+        float h = hHash3(rute);
+        if (h > 0.982) {
+            vec3 sp = rute + 0.5 + (vec3(hHash3(rute + 7.1), hHash3(rute + 3.7), hHash3(rute + 9.3)) - 0.5) * 0.6;
+            float lysS = (h - 0.982) / 0.018;
+            float blink = 0.75 + 0.25 * sin(uTid * (2.0 + lysS * 3.0) + h * 400.0);
+            float stj = smoothstep(0.16, 0.0, length(q - sp)) * (0.25 + lysS * lysS * 1.6) * blink;
+            float vekk = (1.0 - tett) * smoothstep(0.03, 0.3, y) * (1.0 - smoothstep(0.995, 0.9999, dot(d, uMaane)));
+            c += vec3(0.85, 0.9, 1.0) * stj * vekk * uNatt;
+        }
+    }
+
+    // Månen: en lys skive med mørke flekker (havene på månen), og en ring av lys rundt i skyene.
+    float motM = dot(d, uMaane);
+    if (uMaane.y > -0.05 && motM > 0.99) {
+        vec3 t1 = normalize(cross(uMaane, vec3(0.0, 1.0, 0.0)));
+        vec3 t2 = cross(t1, uMaane);
+        vec2 uv = vec2(dot(d, t1), dot(d, t2)) / 0.0125;
+        float r = length(uv);
+        float flekk = 0.72 + 0.28 * hFbm3(uv * 1.6 + 4.0);
+        float synlig = smoothstep(-0.02, 0.04, uMaane.y) * (0.35 + 0.65 * uNatt);
+        vec3 mf = vec3(0.9, 0.93, 1.0);
+        c += mf * smoothstep(1.0, 0.9, r) * flekk * (1.0 - tett * 0.8) * 2.6 * synlig;
+        c += mf * (pow(motM, 900.0) * 0.22 + pow(motM, 90.0) * 0.08) * (0.4 + tett) * synlig;
+    }
+
     // Sola: en skive bak skyene, så sterk at gløden i etterbehandlingen tar den.
-    float skive = smoothstep(0.99955, 0.99975, mot);
+    float skive = smoothstep(0.99955, 0.99975, dot(d, uSolSkive));
     c += uSolFarge * skive * (1.0 - tett * 0.85) * 6.0;
     c += uSolFarge * (pow(mot, 12.0) * 0.35 + pow(mot, 120.0) * 0.6) * uGlodHer;
 
@@ -224,7 +275,10 @@ void main() {
             vec3 fc = uFjellFarge * mix(0.55, 1.45, flekk) * (1.0 + 0.25 * side * sign(motSol + 0.0001) * (1.0 - abs(motSol)));
             // Toppen får litt av sollyset.
             fc += uSolFarge * 0.06 * smoothstep(-0.03, 0.0, el - fjell) * max(0.0, -motSol + 0.3);
-            float dis = 1.0 - exp(-avst / uFjellDis);
+            // Disen tar de nære fjellene som før, men tetner saktere bak halvannen kilometer: ellers
+            // var Ulriken (fire km unna) nesten borte.
+            float avstD = min(avst, 1500.0 + (avst - 1500.0) * 0.35);
+            float dis = 1.0 - exp(-avstD / uFjellDis);
             dis = mix(dis, 1.0, (1.0 - smoothstep(0.0, 0.06, el)) * 0.55);
             fc = mix(fc, uHorisont, clamp(dis, 0.0, 0.97));
             c = mix(c, fc, iFjell);

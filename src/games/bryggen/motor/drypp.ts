@@ -25,6 +25,8 @@ interface Sted {
 }
 
 export class Drypp {
+    /** Fargen på dråpene. Settes etter lyset ute (natt: mørkere). */
+    readonly farge = new THREE.Color(0xdde4ea);
     readonly mesh: THREE.LineSegments;
     private readonly mat: THREE.ShaderMaterial;
     private readonly topp: Float32Array;
@@ -54,7 +56,7 @@ export class Drypp {
                     uKamera: { value: new THREE.Vector3() },
                     uStyrke: { value: 0 },
                     uTakt: { value: 1 },
-                    uFarge: { value: new THREE.Color(0xdde4ea) },
+                    uFarge: { value: null },
                 },
             ]),
             vertexShader: /* glsl */ `
@@ -99,6 +101,8 @@ export class Drypp {
             depthWrite: false,
             fog: true,
         });
+        // `merge` kloner verdiene: fargen skal være det samme objektet som `farge`.
+        this.mat.uniforms.uFarge.value = this.farge;
         this.mesh = new THREE.LineSegments(geo, this.mat);
         this.mesh.frustumCulled = false;
         this.mesh.renderOrder = 10;
@@ -106,15 +110,16 @@ export class Drypp {
     }
 
     /**
-     * `skjegg` er takskjeggene i de lastede cellene, `vaat` hvor vått det er (0-1), `regn` om det
-     * regner nå, og `inne` 0..1 (kameraet under tak).
+     * `skjegg` er takskjeggene i de lastede cellene, `takvann` hvor mye vann som ennå renner av
+     * takene (0-1, `Vaer.takvann`), `regn` om det regner nå, og `inne` 0..1 (kameraet under tak).
+     * Mens takene tørker, drypper det sjeldnere og til slutt ikke i det hele tatt.
      */
-    update(t: number, kamera: THREE.Vector3, skjegg: Iterable<THREE.Vector3[]>, vaat: number, regn: number, inne: number): void {
+    update(t: number, kamera: THREE.Vector3, skjegg: Iterable<THREE.Vector3[]>, takvann: number, regn: number, inne: number): void {
         const u = this.mat.uniforms;
         u.uTid.value = t;
         u.uKamera.value.copy(kamera);
-        u.uTakt.value = 1 + regn * 2.5;
-        const styrke = THREE.MathUtils.smoothstep(vaat, 0.3, 0.7) * (1 - inne);
+        u.uTakt.value = 0.45 + takvann * 0.75 + regn * 2.5;
+        const styrke = THREE.MathUtils.smoothstep(takvann, 0.06, 0.4) * (1 - inne);
         u.uStyrke.value = styrke;
         this.mesh.visible = styrke > 0.01;
         if (!this.mesh.visible) return;

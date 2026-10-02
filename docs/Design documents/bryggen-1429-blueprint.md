@@ -759,6 +759,17 @@ Mixamo brukes ikke (krever innlogging).
   og Lyderhorn over Vågen og Askøy lavt over Byfjorden. Høydene er ekte [V]; plasseringene er grovt
   avlest og litt flyttet **[S]**. I gråvær forsvinner toppene i skyene. Alt dette sammen: +0,1 til
   +0,7 ms (Edge med GPU, median, to runder mot main). Venter på eierens spilltest
+- [~] Døgn og vær (02.10.2026, `motor/dogn.ts`, `stemning.ts`, `himmel.ts`): eieren spilltestet lyset og
+  fjellene («ser flott ut») og ba om døgnsyklus. Et døgn er 18 minutter: 10 minutter dag og 8 minutter
+  natt **[S]**. Sola står opp i øst-nordøst, går gjennom sør og ned i nordvest og står maks 45° høyt,
+  som sent på sommeren i Bergen **[V]**. Stemningen blandes fra nøkkelbilder etter solhøyden (natt,
+  blåtime, solnedgang, kveld, dag) og mot grå utgaver når det trekker over. Om natta lyser månen (lavt
+  i sør), med stjerner, månehalo i skyene og måneglitter i vannet. Bygene kommer og går (oppholdsvær
+  2,5-5 min, regn 1-2,5 min), og det drypper fra takene bare mens det regner og et par minutter etter.
+  Spillets rom var tenkt med +x mot nord; Bryggen ligger egentlig langs Vågen mot nordvest **[V]**.
+  Fjellene og solbanen er nå regnet om med den dreiningen: Fløyen står bak og til høyre fra Vågen,
+  Fløyfjellet rett bak, og Ulriken over enden av Vågen (synlig fra kaia). Kostnad: ingen målbar
+  (Edge med GPU, median, to runder mot main; natta som kvelden). Venter på eierens spilltest
 - [~] Bære og veie (02.10.2026, `graboks/baering.ts`, `graboks/bismer.ts`): E ved stabelen på kaia gir
   gutten en bunt i armene (saktere gange, ingen sprint, hopp eller slag). Ved bismeren i bua henger
   bunten i kroken, og eleven flytter hanken med A og D til stanga ligger vannrett, og leser av

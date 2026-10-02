@@ -252,40 +252,61 @@ export class Materials {
 }
 
 /**
- * Miljølys fra en enkel himmel: lys grå over, mørk brun-grå under. Gir treverket
- * et svakt gjenskinn og våte flater litt glans, uten et ekte himmelbilde.
+ * Miljølys fra en enkel himmel: himmelfargen over, mørk brun-grå under, og en varm flekk mot
+ * sola. Gir treverket et svakt gjenskinn og våte flater litt glans, uten et ekte himmelbilde.
+ *
+ * Himmelen skifter med døgnet, så kartet lages på nytt med jevne mellomrom (`oppdater`): fargene
+ * skrives inn i hjørnene på kula, og den samme PMREM-generatoren tegner den. Et nytt kart med
+ * samme størrelse bygger ingen shadere på nytt.
  */
-export function makeSkyEnvironment(
-    renderer: THREE.WebGLRenderer,
-    top: number,
-    horizon: number,
-    bottom: number,
-    sol?: { retning: THREE.Vector3; farge: number; styrke: number }
-): THREE.Texture {
-    const scene = new THREE.Scene();
-    const geo = new THREE.SphereGeometry(10, 64, 32);
-    const cTop = new THREE.Color(top);
-    const cHor = new THREE.Color(horizon);
-    const cBot = new THREE.Color(bottom);
-    const colors: number[] = [];
-    const pos = geo.getAttribute('position');
-    const c = new THREE.Color();
-    for (let i = 0; i < pos.count; i++) {
-        const y = pos.getY(i) / 10;
-        if (y > 0) c.copy(cHor).lerp(cTop, Math.pow(y, 0.6));
-        else c.copy(cHor).lerp(cBot, Math.min(1, -y * 2.5));
-        // Lyset rundt sola: våte flater speiler en varm flekk mot sola.
-        if (sol) {
-            const mot = Math.max(0, (pos.getX(i) * sol.retning.x + pos.getY(i) * sol.retning.y + pos.getZ(i) * sol.retning.z) / 10);
-            c.add(new THREE.Color(sol.farge).multiplyScalar(sol.styrke * (Math.pow(mot, 8) * 0.8 + Math.pow(mot, 64) * 2.5)));
-        }
-        colors.push(c.r, c.g, c.b);
+export class Himmellys {
+    texture: THREE.Texture;
+    private rt: THREE.WebGLRenderTarget;
+    private readonly scene = new THREE.Scene();
+    private readonly geo = new THREE.SphereGeometry(10, 48, 24);
+    private readonly farger: THREE.BufferAttribute;
+    private readonly pmrem: THREE.PMREMGenerator;
+    private readonly bunn = new THREE.Color(0x3a3833);
+
+    constructor(renderer: THREE.WebGLRenderer, lys: { topp: THREE.Color; horisont: THREE.Color; sol: THREE.Vector3; solFarge: THREE.Color; solStyrke: number; lysniva: number }) {
+        this.farger = new THREE.BufferAttribute(new Float32Array(this.geo.getAttribute('position').count * 3), 3);
+        this.geo.setAttribute('color', this.farger);
+        this.scene.add(new THREE.Mesh(this.geo, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
+        this.pmrem = new THREE.PMREMGenerator(renderer);
+        this.rt = this.lag(lys);
+        this.texture = this.rt.texture;
     }
-    geo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-    scene.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
-    const pmrem = new THREE.PMREMGenerator(renderer);
-    const rt = pmrem.fromScene(scene, 0.02);
-    pmrem.dispose();
-    geo.dispose();
-    return rt.texture;
+
+    private lag(lys: { topp: THREE.Color; horisont: THREE.Color; sol: THREE.Vector3; solFarge: THREE.Color; solStyrke: number; lysniva: number }): THREE.WebGLRenderTarget {
+        const pos = this.geo.getAttribute('position');
+        const c = new THREE.Color();
+        const s = new THREE.Color();
+        const bunn = new THREE.Color().copy(this.bunn).multiplyScalar(lys.lysniva);
+        for (let i = 0; i < pos.count; i++) {
+            const y = pos.getY(i) / 10;
+            if (y > 0) c.copy(lys.horisont).lerp(lys.topp, Math.pow(y, 0.6));
+            else c.copy(lys.horisont).lerp(bunn, Math.min(1, -y * 2.5));
+            // Lyset rundt sola: våte flater speiler en varm flekk mot sola.
+            const mot = Math.max(0, (pos.getX(i) * lys.sol.x + pos.getY(i) * lys.sol.y + pos.getZ(i) * lys.sol.z) / 10);
+            c.add(s.copy(lys.solFarge).multiplyScalar(lys.solStyrke * (Math.pow(mot, 8) * 0.8 + Math.pow(mot, 64) * 2.5)));
+            this.farger.setXYZ(i, c.r, c.g, c.b);
+        }
+        this.farger.needsUpdate = true;
+        return this.pmrem.fromScene(this.scene, 0.02);
+    }
+
+    /** Lager kartet på nytt. Det gamle kastes etter at det nye er tatt i bruk. */
+    oppdater(lys: { topp: THREE.Color; horisont: THREE.Color; sol: THREE.Vector3; solFarge: THREE.Color; solStyrke: number; lysniva: number }): THREE.Texture {
+        const gammel = this.rt;
+        this.rt = this.lag(lys);
+        this.texture = this.rt.texture;
+        gammel.dispose();
+        return this.texture;
+    }
+
+    dispose(): void {
+        this.rt.dispose();
+        this.pmrem.dispose();
+        this.geo.dispose();
+    }
 }

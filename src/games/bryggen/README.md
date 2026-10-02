@@ -16,7 +16,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Håkonshallen innenfor.
   På torget står selgere i bodene, og kjøpere, en tjenestejente med bøtte, en fisker og en svenn går
   mellom bodene, brønnen og kaia. Snakk med kornselgeren og borgeren (de har samtaler).
-  `?lys=kveld|graatt|morgen` velger lysstemning (standard: kveld etter regnet, `motor/stemning.ts`).
+  Døgnet går: 10 minutter dag og 8 minutter natt, med sol og måne som flytter seg og byger som kommer
+  og går (`motor/dogn.ts`). `?lys=kveld|morgen|dag|graatt|natt` velger hvor døgnet starter (standard:
+  kveld etter regnet), og `?dogn=0` stopper klokka og været.
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
@@ -47,8 +49,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning. Tegnes ikke innenfor skrogene (`settSkrog`) |
 | `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
 | `motor/regn.ts` | Regn: streker i en boks rundt kameraet, flyttet i vertex-shaderen. Ett tegnekall, av inne |
-| `motor/stemning.ts` | Lysstemningene (`?lys=kveld\|graatt\|morgen`): sol, fyll, tåke, himmelfarger, regn, vætan og dis. `Lyssetting` eier sola og halvkulelyset, demper dem inne og flytter skyggen med gutten |
-| `motor/himmel.ts` | Himmelkuppelen: fargeovergang, skyer som driver, sola bak skyene, og fjellene rundt Bergen (`FJELL`) som en profil langs horisonten. Tegnes etter alt som ikke er gjennomsiktig, med dybden bakerst |
+| `motor/dogn.ts` | Døgnet og været: klokka (10 min dag, 8 min natt), hvor sola og månen står, bygene (`Vaer`: skydekke, regn og vannet som renner av takene) og startpunktene for `?lys=` |
+| `motor/stemning.ts` | Lysstemningene som nøkkelbilder etter solhøyden (natt, skumring, solnedgang, kveld, dag, og grå utgaver av dem). `Lyssetting` blander dem hvert bilde, eier sola (om natta månen) og halvkulelyset, tåka og de delte fargene, demper lyset inne og flytter skyggen med gutten |
+| `motor/himmel.ts` | Himmelkuppelen: fargeovergang, skyer som driver, sola bak skyene, månen og stjernene om natta, og fjellene rundt Bergen (`FJELL`) som en profil langs horisonten. Tegnes etter alt som ikke er gjennomsiktig, med dybden bakerst |
 | `motor/vaat.ts` | Våte flater: mørkere og blankere tre, flekker, pytter i gjørma og på steinen, tørt inne i rommene. Hektes på materialene i `Materials` |
 | `motor/drypp.ts` | Drypp fra takskjeggene (`CellContent.drypp`, lagt inn av `tak` og `svalgang`) nær kameraet når det er vått. Ett tegnekall, falt i vertex-shaderen |
 | `motor/luft.ts` | Røyk fra ljorene (ett tegnekall for hele byen) og støv i rommet kameraet står i: glimt og disflak som bare lyser i sollyset, så strålen gjennom døra synes |
@@ -180,12 +183,25 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten, og lysdempingen inne,
   støvet og regnet følger også fotokameraet. Skyggen følger fortsatt gutten.
 - `__bryggenMaaker` og `__bryggenVerden` (bare i dev): testskript kan flytte måker og skru regnet
-  (`__bryggenVerden.regn`, 0-1). `__bryggenPost.paa` slår passene i etterbehandlingen av og på
+  (`__bryggenLys.vaer.laas`, 0-1). `__bryggenPost.paa` slår passene i etterbehandlingen av og på
   (`ao`, `glod`, `straaler`, og `visAo` viser bare SSAO-bufferen), `__bryggenRoyk.paa` og
   `__bryggenStov.paa` røyken og støvet, `__bryggenLys` er sola og skyggen. `?regn=0` i adressen gir tørt vær, `?post=0` slår av etterbehandlingen.
 - Lyset kommer fra stemningen (`stemning.ts`), ikke fra tall spredt rundt i koden. Form på lav
   polycount kommer av forskjellen mellom sol og fyll: kvelden har sol 3,4 mot fyll 1,05, grått vær
-  1,5 mot 1,25. Nye stemninger legges i `STEMNINGER`; gråboksen bruker alltid den grå.
+  1,5 mot 1,25. Stemningen er nøkkelbilder etter solhøyden (`KLAR` og `GRAA`), blandet hvert bilde
+  og mot de grå når det trekker over. Gråboksen bruker alltid den grå og har ingen klokke.
+- Fargene og retningene i `Lyssetting` (`c.*`, `solRetning`, `solen`, `maanen`) er delte objekter som
+  endres på stedet. Legg dem rett i uniformene (himmelen, vannet, røyken gjør det), ikke kopier dem.
+  `UniformsUtils.merge` kloner verdiene: legg objektet inn igjen etterpå (røyken sto stille i tid av
+  dette før døgnet kom).
+- `solRetning` er lyset som kaster skygge: sola om dagen, månen om natta. Byttet skjer mens begge er
+  under horisonten (`lysFade` 0), så skyggen hopper ikke. Skyggekartet er 2048 når lyset står lavt og
+  1024 ellers, byttet med slark.
+- Miljølyset (`Himmellys` i `materials.ts`) lages på nytt hvert andre sekund, med samme PMREM-generator
+  og samme størrelse, så ingen shadere bygges på nytt.
+- Spillets rom er dreid mot kompasset: +x (mot Holmen) er nordvest (330°), -z (over Vågen) sørvest.
+  Fjellene og sol- og månebanen er regnet om med den dreiningen. Derfor står sola bak gårdene om
+  morgenen og lyser på bryggefronten fra midt på dagen til kvelden, og Ulriken står over enden av Vågen.
 - Himmelen tegnes etter alt som ikke er gjennomsiktig, med `gl_Position.xyww` (dybde 1,0) og uten å skrive dybde.
   Tegnet først kostet den 1,7 ms i gårdsrommet: skyene ble regnet ut under hele bildet.
 - Etterbehandlingen kjenner himmelen på dybden (1,0). Gløden rundt sola legges på i etterbehandlingen
@@ -195,13 +211,15 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Støvet (`luft.ts`) får sol og skygge av Lambert. Uten skygger (lav kvalitet) ville det lyst i hele
   rommet, så det vises bare når sola kaster skygge. Disflakene er store og legges oppå alt bak dem:
   630 av dem kostet 14 ms i bua. Hold antallet lavt, og la dem forsvinne tett på kameraet.
-- Fjellene er ikke geometri: himmelen regner ut en profil fra toppene i `FJELL` (posisjon, høyde, bredde),
+- Fjellene er ikke geometri: himmelen regner ut en profil fra toppene i `FJELL` (posisjon fra ekte kart, høyde, bredde),
   sett fra kameraet. Retning, høyde og bredde per topp regnes på CPU-en i `Himmel.update`, og over den
   høyeste toppen hopper shaderen over alt. Med acos, atan og fem oktaver støy per piksel kostet de 2-3 ms
-  fra Vågen; nå 0,1-0,5. De må være tunge av dis, ellers står de skarpere enn husene 100 m unna.
+  fra Vågen; nå 0,1-0,5. De må være tunge av dis, ellers står de skarpere enn husene 100 m unna. Disen
+  tetner saktere bak 1,5 km, ellers forsvinner Ulriken (4 km).
 - Står kameraet i skyggen ute, løftes fyllyset og miljølyset (`Stemning.skyggeLoft`, `BryggenWorld.skygge`:
   fem stråler mot sola fire ganger i sekundet). Det er øyet som venner seg til mørket, og lyset de
   solbelyste veggene kaster ned i de smale gårdsrommene, som halvkulelyset ikke kan vise.
+- Det drypper bare mens det regner og et par minutter etterpå (`Vaer.takvann`), ikke fordi bakken er våt.
 - Takskjegg registreres med `MeshKit.takskjegg(a, b)` og går til cella som `drypp`. Nye hus av `hus()` får
   det gratis; andre tak man vil ha drypp fra, må melde skjegget selv. Dryppet faller til første kollider
   under (strålen tar med prop), og steder med under 0,3 m fall droppes (hovedtaket over svalgangstaket).
@@ -215,7 +233,10 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   etterbehandlingen tegner to ganger.
 - Vannet speiler ikke scenen. Speilingen sjekker strålen mot en tenkt vegg langs bryggefronten
   (høyde trukket per gård). Flytter fronten seg, må `frontZ` i `lagVann` følge med.
-- Vær i ett tall: `world.regn` (0-1) styrer både regnstrekene og ringene i vannet.
+- Været eies av `lys.vaer` (dogn.ts). `world.regn` (0-1) leses derfra hvert bilde og styrer både
+  regnstrekene og ringene i vannet. Testskript låser været med `__bryggenLys.vaer.laas(0.6)` (`null`
+  slipper det), og stiller klokka med `__bryggenLys.still(sek)` (sekunder fra soloppgang; 600 er
+  solnedgang, 840 midt på natta).
 - Ting som ikke skal ha treårer (tørrfisk) lages av `raatre` innenfor `k.withUv(0.04, …)`: UV-ene
   krympes, så flaten får nesten én farge fra teksturen. Formen må da komme fra geometrien og
   `shade` per hjørne. Aldri 0: normalkartet trenger UV-er som endrer seg.

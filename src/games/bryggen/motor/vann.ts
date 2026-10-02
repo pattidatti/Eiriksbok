@@ -9,6 +9,7 @@
 // Regnet lager ringer: vannet deles i ruter på 0,45 m, og hver rute får en dråpe som treffer på
 // sitt eget tidspunkt. Ringene skrus opp og ned med `regn` (0 tørt, 1 øsregn).
 import * as THREE from 'three';
+import type { Lyssetting } from './stemning';
 
 export interface VannOpts {
     /** Høyden på vannflata. */
@@ -17,11 +18,11 @@ export interface VannOpts {
     frontZ: number;
     frontX0: number;
     frontX1: number;
-    /** Himmelfargen i horisonten og rett opp (det vannet speiler). */
-    horisont: number;
-    zenit: number;
-    /** Sola: gir en glitrende stripe i vannet mot sola. `styrke` 0 = ingen (gråvær). */
-    sol?: { retning: THREE.Vector3; farge: number; styrke: number };
+    /**
+     * Himmelfargene vannet speiler, og sola (om natta månen) som gir en glitrende stripe i vannet.
+     * Fargene og retningen deles med lyssettingen og følger døgnet.
+     */
+    lys: Lyssetting;
 }
 
 /**
@@ -47,6 +48,8 @@ export interface Vann {
     update: (t: number, regn: number) => void;
     /** Skrogene som ligger i vannet nå (de nærmeste først om det er flere enn MAKS_SKROG). */
     settSkrog: (skrog: readonly SkrogFot[]) => void;
+    /** Hvor lyst det er ute, målt mot kvelden i sol (1). Til ting som får lyset fra himmelen. */
+    husLys: () => number;
     dispose: () => void;
 }
 
@@ -54,13 +57,15 @@ export function lagVann(o: VannOpts): Vann {
     const uniforms = {
         uTid: { value: 0 },
         uRegn: { value: 0 },
-        uHorisont: { value: new THREE.Color(o.horisont) },
-        uZenit: { value: new THREE.Color(o.zenit) },
+        uHorisont: { value: o.lys.c.takeFarge },
+        uZenit: { value: o.lys.c.zenit },
         uFront: { value: new THREE.Vector3(o.frontZ, o.frontX0, o.frontX1) },
-        uSol: { value: o.sol?.retning.clone() ?? new THREE.Vector3(0, 1, 0) },
-        uSolFarge: { value: new THREE.Color(o.sol?.farge ?? 0).multiplyScalar(o.sol?.styrke ?? 0) },
+        uSol: { value: o.lys.solRetning },
+        uSolFarge: { value: new THREE.Color() },
         // Hvor mye sola lyser på bryggefronten (som vender mot -z): da speiles husene lysere.
-        uFrontLys: { value: new THREE.Color(o.sol?.farge ?? 0).multiplyScalar(Math.max(0, -(o.sol?.retning.z ?? 0)) * 0.35) },
+        uFrontLys: { value: new THREE.Color() },
+        // Hvor lyse husene er i speilingen (1 en kveld i sol, mørkere om natta).
+        uHusLys: { value: 1 },
         uSkrogA: { value: Array.from({ length: MAKS_SKROG }, () => new THREE.Vector4()) },
         uSkrogB: { value: Array.from({ length: MAKS_SKROG }, () => new THREE.Vector4()) },
         uSkrogN: { value: 0 },
@@ -105,6 +110,12 @@ export function lagVann(o: VannOpts): Vann {
         update: (t, regn) => {
             uniforms.uTid.value = t;
             uniforms.uRegn.value = regn;
+            const { s: st, c, solRetning, lysFade } = o.lys;
+            uniforms.uSolFarge.value.copy(c.solFarge).multiplyScalar(st.solGlod * lysFade);
+            uniforms.uFrontLys.value.copy(c.solFarge).multiplyScalar(Math.max(0, -solRetning.z) * 0.35 * lysFade * st.solStyrke / 3.4);
+            // Fyllyset fra himmelen, målt mot kvelden husfargene er satt for.
+            const himmel = (c.himmel.r * 0.3 + c.himmel.g * 0.59 + c.himmel.b * 0.11) * st.fyll;
+            uniforms.uHusLys.value = THREE.MathUtils.clamp(himmel / 0.374, 0.12, 1.3);
         },
         settSkrog: (skrog) => {
             const n = Math.min(MAKS_SKROG, skrog.length);
@@ -115,6 +126,7 @@ export function lagVann(o: VannOpts): Vann {
             }
             uniforms.uSkrogN.value = n;
         },
+        husLys: () => uniforms.uHusLys.value,
         dispose: () => {
             mesh.geometry.dispose();
             mat.dispose();
@@ -170,6 +182,7 @@ bool iSkrog(vec2 p) {
     }
     return false;
 }
+uniform float uHusLys;
 
 float vHash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
@@ -248,6 +261,7 @@ vec3 vannSpeil(vec3 wp, vec3 n) {
             float tone = vHash(vec2(gard, 5.0));
             vec3 tre = mix(vec3(0.075, 0.055, 0.04), vec3(0.12, 0.09, 0.065), tone);
             tre = mix(tre * 0.45, tre, smoothstep(0.0, 3.0, treff.y));
+            tre *= uHusLys;
             tre += vec3(0.16, 0.1, 0.06) * uFrontLys * smoothstep(0.5, 2.5, treff.y);
             // Tåka ligger også mellom vannet og husene.
             float tf = 1.0 - exp(-0.0004 * s * s);
