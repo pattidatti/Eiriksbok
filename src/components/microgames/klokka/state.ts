@@ -16,12 +16,10 @@ export interface Båt extends BåtData {
     /** 0 = ved dekket, 1 = på vannet. */
     ned: number;
     nedeKl: number | null;
-    /** Sammenleggbar båt som stuerten har rigget (kan svinge ut med en gang). */
-    rigget: boolean;
 }
 
-/** Hvor stuerten går: ned til porten, eller rigge neste sammenleggbare båt. */
-export type StuertMål = 'port' | 'rigg';
+/** Hvor stuerten går: bare ned til porten (mannskapet rigger de sammenleggbare båtene selv). */
+export type StuertMål = 'port';
 
 export interface Gruppe {
     id: number;
@@ -46,8 +44,7 @@ export interface Hendelse {
         | 'bytt'
         | 'port'
         | 'sving'
-        | 'stuert'
-        | 'rigget';
+        | 'stuert';
     side?: Side;
     tekst?: string;
     /** Båten hendelsen gjelder (indeks i båter). */
@@ -87,8 +84,8 @@ export interface Game {
     stuertSendt: number | null;
     stuertMål: StuertMål;
     stuertGjort: boolean;
-    /** Turer stuerten har gått til porten og til båtene. */
-    turer: { port: number; rigg: number };
+    /** Turer stuerten har gått til porten. */
+    turer: { port: number };
     nesteId: number;
     /** Siden landgangen peker mot. Køen går selv inn i båten på den siden. */
     landgang: Side;
@@ -119,7 +116,6 @@ export function newGame(seed: number): Game {
                 fra: [0, 0, 0],
                 ned: 0,
                 nedeKl: null,
-                rigget: false,
             })
         )
     );
@@ -150,7 +146,7 @@ export function newGame(seed: number): Game {
         stuertSendt: null,
         stuertMål: 'port',
         stuertGjort: true,
-        turer: { port: 0, rigg: 0 },
+        turer: { port: 0 },
         nesteId: 1,
         landgang: 'S',
         landgangKlar: 0,

@@ -5,7 +5,7 @@ Ferdig spill (fase 3c). Brief: `docs/microgames/briefer/klokka-0045.md`. Kompone
 
 | Fil         | Hva den gjør                                                                                                                                                                                                                                                                                        |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tuning.ts` | Alle tallene: seiersgrensen (705), landgangen, firetider, krengning og kortere lunte ved krengning, vann, alvoret (tilstrømningen), klassene (antall fra granskningen, faser), gitterporten og stuerten, raketter, rangtrinnene (705/770/820). `kl('01.40')` gir spillsekunder.                     |
+| `tuning.ts` | Alle tallene: seiersgrensen (705), landgangen, firetider, krengning og kortere lunte ved krengning, vann, alvoret (tilstrømningen), klassene (antall fra granskningen, faser), gitterporten og stuerten, raketter, rangtrinnene (705/790/830). `kl('01.40')` gir spillsekunder.                     |
 | `levels.ts` | De 20 båtene, ti per side, i den rekkefølgen de svinger ut (`klar`, `frist`), og fasene i natta (`BRETT`, styrt av klokka).                                                                                                                                                                         |
 | `state.ts`  | Typene (`Game`, `Båt`, `Gruppe`, `Hendelse`) og `newGame(seed)`. Ingen regler.                                                                                                                                                                                                                      |
 | `rules.ts`  | Fagkjernen: `bytt()`, `gåOmBord()` (køen går forfra, tregere mot høy side), `hold()`, `sendStuert()`/`kanSendeStuert()`/`portTid()`, `frist()` (kortere på den lave siden), `firetid()`, `alvor()`, `sisteStart()` (planleggeren), `påVei()`, `press()`, `rang()`/`nesteTrinn()`, `reddetKlasse()`. |
@@ -27,15 +27,16 @@ Ferdig spill (fase 3c). Brief: `docs/microgames/briefer/klokka-0045.md`. Kompone
 
 1. Grupper starter i lugarene og går opp trappa. Første og andre klasse kommer fortere jo flere
    båter som er nede (`alvor`): i 1912 ville mange ikke gå i de første båtene. Tredje klasse
-   samler seg bak gitterporten på D-dekk. Stuerten går én tur om gangen (`sendStuert(g, mål)`, fra
-   01.08): til porten (S, pil ned, klikk på porten) - den står åpen i `stuert.portÅpen` sekunder og
-   glir igjen - eller rigge neste sammenleggbare båt (R, pil opp), som da kan svinge ut med en gang
-   i stedet for 02.07. Landgangen står stille i `stuert.borte` sekunder per tur. Porten åpnes for
+   samler seg bak gitterporten på D-dekk. Stuerten går én tur om gangen til porten (`sendStuert`,
+   fra 01.08; S, pil ned, klikk på porten) - den står åpen i `stuert.portÅpen` sekunder og glir
+   igjen. Landgangen står stille i `stuert.borte` (3) sekunder per tur. Mannskapet rigger de
+   sammenleggbare båtene selv (`klar` 01.40-01.55 i levels.ts) - ingen rigging for eleven. Porten åpnes for
    godt av seg selv ca. 01.58 - for sent. Runden starter 00.55 (`TUNING.start`) med folk i køen.
 2. Hver side har sin rekke båter; det henger alltid én på babord og én på styrbord, hver med sin
    lunte (frist). Landgangen fyller bare båten den peker mot. `bytt()` snur den (0,6 s stopp).
 3. `hold(side)`: etter 0,2 s løper tauet; slipper du, stopper båten. En båt på vei ned tar ingen flere.
-4. Lunta brenner ned mot fristen (vannet, eller krengningen som låser styrbord-livbåtene ca. 01.56).
+4. Lunta brenner ned mot fristen (vannet, eller krengningen som låser styrbord-livbåtene ca. 01.50,
+   banner «STYRBORD ER STENGT»).
    På den lave siden kommer vannet tidligere: `lunteKrengning` sekunder per grad.
    Brenner den ut, er båten tapt - runden går videre.
 5. Slutt når alle båtene er nede eller tapt, eller 02.20. Seier: reddet > 705. Tap: `tomme` eller `tapt`.
@@ -48,8 +49,7 @@ Ferdig spill (fase 3c). Brief: `docs/microgames/briefer/klokka-0045.md`. Kompone
 - Bølgen: `klasser[3]` og `port.åpner` mot fristene for båt 11-4 og de sammenleggbare.
 - Flaskehalsen: `landgang.perSek` og firetidene. Middels (halvgod) ligger like over 705, så små
   endringer i `perSek`, `lunteKrengning` og `stuert` flytter vinnerandelen mye.
-- Stuerten: port- og riggeturene konkurrerer om de samme pausene i landgangen. Klok går til porten
-  når køen er under 60 og mange venter der, og rigger når ingen hengende båt har kort lunte.
+- Stuerten: bare porten. Klok går til porten når køen er under 60 og mange venter der.
 - Presset har et lunteledd (`press.lunte`): hvor nær den kortest lunta er fristen.
 
 ## Fallgruver

@@ -12,9 +12,9 @@ import {
 } from '../arcade/ArcadeShell';
 import { ArcadeLessons } from '../arcade/ArcadeLayers';
 import type { Game } from './state';
-import { klokke } from './rules';
+import { frist, klokke } from './rules';
 import { P } from './papir';
-import { I1912, KLASSER_1912, LÆRDOM, SOLAS, TAP, TAPT_ÅRSAK } from './texts';
+import { I1912, KLASSER_1912, LÆRDOM, SOLAS, TAP, TAPT_ÅRSAK, TIPS_TALL } from './texts';
 
 export interface Resultat {
     vant: boolean;
@@ -62,6 +62,26 @@ function TellOpp({ til, tikk }: { til: number; tikk: () => void }) {
     return <>{n}</>;
 }
 
+/**
+ * Ett tips med tall fra runden: båten med flest tomme plasser (fir senere), eller den
+ * første båten som gikk tapt mens den hang (fir før lunta er brent ned).
+ */
+function konkretTips(g: Game): string | null {
+    if (g.årsak === 'tapt') {
+        for (const t of g.tapte) {
+            const b = g.båter.find((x) => x.navn === t.navn);
+            if (b && b.folk > 0)
+                return TIPS_TALL.tapt(b.navn, b.folk, b.plasser, t.årsak === 'lås');
+        }
+    }
+    const nede = g.båter.filter((b) => b.tilstand === 'nede' && b.nedeKl !== null);
+    nede.sort((a, b) => b.plasser - b.folk - (a.plasser - a.folk));
+    const b = nede[0];
+    if (!b || b.folk >= b.plasser) return null;
+    const igjen = Math.max(0, Math.round(frist(b).t - (b.nedeKl ?? 0)));
+    return TIPS_TALL.tomme(b.navn, b.folk, b.plasser, igjen);
+}
+
 export function SluttSkjerm({
     res,
     g,
@@ -78,6 +98,7 @@ export function SluttSkjerm({
     toMenu: () => void;
 }) {
     const tapt = !res.vant ? TAP[g.årsak ?? 'tomme'] : null;
+    const tipsTall = !res.vant ? konkretTips(g) : null;
     return (
         <div className="klokka-slutt" style={{ display: 'contents' }}>
             <style>{SLUTT_CSS}</style>
@@ -210,7 +231,11 @@ export function SluttSkjerm({
                         </div>
                     </div>
                     <div style={{ textAlign: 'left' }}>
-                        {tapt && <p style={{ fontSize: 14, margin: '0 0 6px' }}>{tapt.tips}</p>}
+                        {tapt && (
+                            <p style={{ fontSize: 14, margin: '0 0 6px' }}>
+                                {tipsTall ?? tapt.tips}
+                            </p>
+                        )}
                         {g.tapte.length > 0 && (
                             <p style={{ fontSize: 13, margin: '4px 0' }}>
                                 Tapte båter:{' '}

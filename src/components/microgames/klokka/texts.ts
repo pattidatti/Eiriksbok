@@ -9,7 +9,7 @@ export const REGLER = [
     { ikon: 'vann', tekst: 'Lunta over båten brenner ned. Når den er borte, tar vannet båten.' },
     {
         ikon: 'trapp',
-        tekst: 'Stuerten: åpne porten for tredje klasse (S) eller rigg en sammenleggbar båt (R). Landgangen venter mens han går.',
+        tekst: 'Tredje klasse står bak en stengt port. Trykk S, så løper stuerten ned og åpner den en stund.',
     },
 ] as const;
 
@@ -23,12 +23,11 @@ export const LAPP = {
     alvor: 'Flere skjønner at skipet synker',
     port: 'Porten er åpen - en stund',
     portStengt: 'Porten gled igjen',
-    rigg: 'R: la stuerten rigge en sammenleggbar båt',
-    rigget: (navn: string) => `${navn} er klar`,
+    rakett: 'Nødrakett - flere skjønner at det er alvor',
     portSelv: 'Porten åpnet seg - sent',
     stuert: 'Trykk S: send stuerten til porten',
     stuertGår: 'Landgangen venter på stuerten',
-    lås: 'Krengningen låser styrbord-båtene snart',
+    lås: 'Krengningen låser styrbord-båtene 01.50',
     sist: 'Skyv dem av før vannet kommer',
 };
 
@@ -41,7 +40,7 @@ export const BEAT = {
     },
     tredje: {
         tittel: 'Tredje klasse kommer sist',
-        tekst: 'De bodde lengst nede, bak en stengt port. Stuerten kan åpne den (S) en stund - men mens han er borte, står landgangen stille.',
+        tekst: 'De bodde lengst nede, bak en stengt port. Stuerten kan åpne den (S) en stund - mens han løper, står landgangen stille et øyeblikk.',
     },
     frist: {
         tittel: 'Lunta brenner ned',
@@ -53,12 +52,20 @@ export const BEAT = {
 export const TAP = {
     tomme: {
         tittel: 'For mange tomme plasser',
-        tips: 'Båtene gikk før folk rakk å komme. Fir de første tidlig, så flere skjønner at det er alvor. Send stuerten til porten når køen er kort, og la ham rigge de sammenleggbare båtene før 02.00.',
+        tips: 'Båtene gikk før folk rakk å komme. Fir de første tidlig, så flere skjønner at det er alvor. Send stuerten til porten når køen er kort.',
     },
     tapt: {
         tittel: 'Vannet tok båtene',
         tips: 'Fir båten før lunta er brent ned, også om den ikke er full. Når skipet krenger mot en side, kommer vannet fortere der - lunta blir kortere. På den høye siden går firingen tregere.',
     },
+};
+
+/** Ett konkret tips med tall fra runden (tapsskjermen). */
+export const TIPS_TALL = {
+    tomme: (navn: string, folk: number, plasser: number, igjen: number) =>
+        `${navn} gikk med ${folk} av ${plasser}, og lunta hadde ${igjen} sekunder igjen. Vent til køen har fylt båten - fir først når lunta blir kort.`,
+    tapt: (navn: string, folk: number, plasser: number, lås: boolean) =>
+        `${navn} hang med ${folk} av ${plasser} da ${lås ? 'krengningen låste den' : 'vannet tok den'}. Fir før lunta er brent ned, også om båten ikke er full.`,
 };
 
 /** Hvorfor en båt gikk tapt (vises i lista på sluttskjermen). */
@@ -83,10 +90,12 @@ export const KLASSER_1912 = [
 export const LÆRDOM = {
     alvor: 'Da de første båtene gikk, kom flere opp på dekket. I 1912 ville mange ikke gå i de første båtene - skipet virket tryggere.',
     tomme: (n: number) => `${n} plasser sto tomme i båtene dine. I 1912 var det 472.`,
-    tredje: (n: number, port: string, turer: number, rigget: number) =>
-        `Porten til tredje klasse åpnet ${turer ? `seg første gang da stuerten kom ned (${turer} ${turer === 1 ? 'tur' : 'turer'})` : 'seg av seg selv'} klokka ${port}. Han rigget ${rigget} av 4 sammenleggbare båter. ${n} av 709 fra tredje klasse fikk plass i båtene dine. I 1912 var det 176.`,
+    tredje: (n: number, port: string, turer: number) =>
+        `Porten til tredje klasse åpnet ${turer ? `seg første gang da stuerten kom ned (${turer} ${turer === 1 ? 'tur' : 'turer'})` : 'seg av seg selv'} klokka ${port}. ${n} av 709 fra tredje klasse fikk plass i båtene dine. I 1912 var det 176.`,
     tapt: (n: number, p: number) =>
         `Vannet og krengningen tok ${n} ${n === 1 ? 'båt' : 'båter'} med ${p} plasser. Den siste båten fra Titanic gikk klokka 02.05.`,
+    carpathia:
+        'Redningsskipet Carpathia kom klokka 04.10, halvannen time etter at Titanic sank. Bare de som satt i båtene, ble reddet.',
     solas: 'Selv med hver plass brukt var det plass til bare halvparten. Etter Titanic skal livbåtene ha plass til alle (SOLAS, 1914).',
     /** Neste rangtrinn - for «én natt til». */
     neste: (grense: number, navn: string, mangler: number) =>

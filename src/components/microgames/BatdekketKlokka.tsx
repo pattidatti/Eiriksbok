@@ -23,6 +23,7 @@ import {
     hold,
     kanSendeStuert,
     klokke,
+    låsTid,
     nesteTrinn,
     rang,
     reddetKlasse,
@@ -140,9 +141,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
     const [pauseMsg, setPauseMsg] = useState(PAUSE[0]);
     const [text, textLayer] = useArcadeText(GAME_ID);
     const skalaRef = useRef(skala(960, 540));
-    const peker = useRef<{ fra: Side | 'landgang' | 'port' | 'rigg' | null; t: number } | null>(
-        null
-    );
+    const peker = useRef<{ fra: Side | 'landgang' | 'port' | null; t: number } | null>(null);
     const lav = useRef(guessTier().tier === 'lav');
     // Det spillet har sagt i denne runden (lapper og varsler som bare skal komme én gang).
     const sagt = useRef(new Set<string>());
@@ -192,12 +191,13 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         if (g.tapte.length) text.lesson('tapt', LÆRDOM.tapt(g.tapte.length, taptePlasser(g)), 3);
         text.lesson(
             'tredje',
-            LÆRDOM.tredje(kl[2], klokke(g.portFørst ?? g.portÅpner), g.turer.port, g.turer.rigg),
+            LÆRDOM.tredje(kl[2], klokke(g.portFørst ?? g.portÅpner), g.turer.port),
             g.turer.port === 0 ? 3.2 : 2.5
         );
         text.lesson('tomme', LÆRDOM.tomme(t), t > I1912.tomme ? 2.8 : 2);
         if (første && (første.nedeKl ?? 99) < 30) text.lesson('alvor', LÆRDOM.alvor, 1.6);
-        text.lesson('solas', LÆRDOM.solas, 1);
+        text.lesson('carpathia', LÆRDOM.carpathia, 2.9);
+        // SOLAS står alltid under lista på sluttskjermen, så den gjentas ikke her.
         updateSave((s) => ({
             færrestTomme: vant
                 ? s.færrestTomme === null
@@ -220,7 +220,7 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             })(),
             nyRekord,
             nyeFulle,
-            lærdom: text.lessons(3),
+            lærdom: text.lessons(4),
         });
         setModeBoth('over');
         onComplete({ score: Math.max(0.3, Math.min(1, r / 1000)), completed: true });
@@ -264,7 +264,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 lyd.rakett();
                 if (!sagt.current.has('rakett')) {
                     sagt.current.add('rakett');
-                    text.banner('NØDRAKETT', P.hvit, 2);
+                    // Øverst i himmelen, ikke midt på skroget.
+                    text.point('rakett', LAPP.rakett, ark(150, 70), { seconds: 3 });
                 }
             } else if (h.slag === 'tapt') {
                 lyd.tapt();
@@ -284,11 +285,6 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                           ? LAPP.portStengt
                           : LAPP.port;
                 text.point('port', lapp, ark(p.x, p.y), { seconds: 4 });
-            } else if (h.slag === 'rigget' && h.tekst) {
-                lyd.port();
-                text.point('rigget', LAPP.rigget(h.tekst), ark(480, DEKK_Y(7) - 30), {
-                    seconds: 3,
-                });
             } else if (h.slag === 'stuert') {
                 lyd.stuert();
                 text.point('stuertGår', LAPP.stuertGår, ark(480, DEKK_Y(7) - 30), { seconds: 2.5 });
@@ -344,6 +340,12 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 text.point('lås', LAPP.lås, vedBåt(side, -10), { seconds: 5 });
             }
         }
+        // 01.50: krengningen stenger styrbord. Fra nå er det fart og to sider som gjelder.
+        if (g.t >= låsTid && !s.has('låst')) {
+            s.add('låst');
+            lyd.tapt();
+            text.banner('STYRBORD ER STENGT', P.rød, 2.4);
+        }
         // Tredje klasse samler seg bak porten.
         if (!s.has('tredje')) {
             const bak = g.grupper.reduce(
@@ -371,11 +373,6 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 seconds: 12,
                 once: true,
             });
-        }
-        // Rigging: vis R når brett 3 er godt i gang og en sammenleggbar kan rigges.
-        if (!s.has('rigg') && g.brett >= 2 && kanSendeStuert(g, 'rigg')) {
-            s.add('rigg');
-            text.point('rigg', LAPP.rigg, ark(300, 505), { seconds: 7, once: true });
         }
         // Et nytt rangtrinn passert midt i natta: klokketoner og banner.
         const r = brukt(g);
@@ -486,7 +483,6 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             else if (e.code === 'KeyA') hold(g, 'B');
             else if (e.code === 'KeyD') hold(g, 'S');
             else if (e.code === 'KeyS' || e.code === 'ArrowDown') sendStuert(g, 'port');
-            else if (e.code === 'KeyR' || e.code === 'ArrowUp') sendStuert(g, 'rigg');
             else return;
             e.preventDefault();
         };
@@ -520,7 +516,6 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             if (hit === 'B' || hit === 'S') hold(g, hit);
             else if (hit === 'landgang') bytt(g);
             else if (hit === 'port') sendStuert(g, 'port');
-            else if (hit === 'rigg') sendStuert(g, 'rigg');
         } else if (e.type === 'pointerup' || e.type === 'pointercancel') {
             const p0 = peker.current;
             peker.current = null;

@@ -22,7 +22,7 @@ export const TUNING = {
     // Landgangen: én rampe som peker mot babord eller styrbord. Køen går selv om bord.
     landgang: {
         /** Folk per sekund som går over landgangen og setter seg. */
-        perSek: 10,
+        perSek: 9,
         /** Sekunder landgangen står stille når du bytter side. */
         bytt: 0.6,
         /** På den høye siden går det tregere: perSek x (1 - dette x krengning / maks). */
@@ -49,8 +49,9 @@ export const TUNING = {
         { t: kl('01.05'), grader: 1.5 },
         { t: kl('01.30'), grader: 3 },
         { t: kl('01.38'), grader: 0 },
-        { t: kl('02.00'), grader: -6 },
-        { t: kl('02.20'), grader: -9 },
+        { t: kl('01.50'), grader: -5.2 },
+        { t: kl('02.05'), grader: -8 },
+        { t: kl('02.20'), grader: -10 },
     ],
     /** Krenger skipet så mye mot babord, låses livbåtene og kutterne på styrbord mot skroget. */
     låsGrader: 5,
@@ -60,7 +61,7 @@ export const TUNING = {
      * Kortere lunte ved krengning: på den lave siden (den skipet krenger mot) når vannet
      * festet tidligere. Fristen flyttes så mange sekunder fram per grad krengning.
      */
-    lunteKrengning: 2.6,
+    lunteKrengning: 4.3,
 
     // Vannet: høyde 0 = G-dekk, 7 = båtdekket. Punkter i tid (til tegningen og presset).
     vann: [
@@ -121,11 +122,11 @@ export const TUNING = {
     port: { pos: 3 / 7, åpner: [kl('01.58'), kl('02.02')] as [number, number] },
 
     /**
-     * Stuerten (verb nummer to), en tur om gangen: ned til porten (den står åpen i `portÅpen`
-     * sekunder og glir igjen) eller rigge neste sammenleggbare båt. Mens han er borte, står
-     * landgangen stille. Uriggede sammenleggbare kan først svinge ut 02.07 (levels.ts) - for sent.
+     * Stuerten (verb nummer to), en tur om gangen ned til porten. Den står åpen i `portÅpen`
+     * sekunder og glir igjen. Landgangen står stille i `borte` sekunder mens han løper.
+     * Mannskapet rigger de sammenleggbare båtene selv (klar i levels.ts).
      */
-    stuert: { fra: kl('01.08'), ned: 4, borte: 8, portÅpen: 20 },
+    stuert: { fra: kl('01.08'), ned: 4, borte: 3, portÅpen: 20 },
 
     /** Nødrakettene (klokkeslett). Hver gjør folk litt mer redde (se alvor). */
     raketter: [
@@ -148,7 +149,7 @@ export const TUNING = {
     // seieren (flere enn i 1912), de neste er for «én natt til».
     ranger: [
         [705, 'Flere enn i 1912'],
-        [770, 'Rolig hånd'],
-        [820, 'Hver plass teller'],
+        [790, 'Rolig hånd'],
+        [830, 'Hver plass teller'],
     ] as [number, string][],
 } as const;

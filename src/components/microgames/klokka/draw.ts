@@ -6,7 +6,7 @@
 
 import type { ArcadeView } from '../arcade/useArcade';
 
-import { kanSendeStuert, køAntall, nesteSammenleggbar, stuertBorte } from './rules';
+import { kanSendeStuert, køAntall, stuertBorte } from './rules';
 import type { Game, Gruppe } from './state';
 import { TUNING } from './tuning';
 import { ARK, DEKK_Y, MIDT, SKROG, TRAPP, iVerden, skala, vannY, vinkel } from './geom';
@@ -386,13 +386,9 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
         etikett(c, `ÅPEN ${Math.ceil(g.portLukkes - g.t)} S`, p.x, p.y, 11, P.gul, 'center', 800);
     }
     if (stuertBorte(g)) {
-        const rigg = g.stuertMål === 'rigg';
-        const neste = nesteSammenleggbar(g);
         etikett(
             c,
-            rigg
-                ? `LANDGANGEN VENTER - STUERTEN RIGGER ${neste && !g.stuertGjort ? neste.navn.toUpperCase() : 'BÅTEN'}`
-                : 'LANDGANGEN VENTER - STUERTEN ER NEDE VED PORTEN',
+            'LANDGANGEN VENTER - STUERTEN LØPER TIL PORTEN',
             MIDT,
             90,
             12,

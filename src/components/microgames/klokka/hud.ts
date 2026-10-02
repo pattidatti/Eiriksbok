@@ -1,7 +1,7 @@
 // Profilstripa (båtoversikten), tittelfeltet (klokka, reddet mot målet) og tastefeltet.
 
 import { BRETT, type Side } from './levels';
-import { brukt, kanSendeStuert, klokke, nesteTrinn, tomme, vannDekk } from './rules';
+import { brukt, klokke, nesteTrinn, tomme, vannDekk } from './rules';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 import { MIDT } from './geom';
@@ -167,10 +167,11 @@ export function tittelfelt(c: CanvasRenderingContext2D, g: Game) {
 }
 
 export function tasteFelt(c: CanvasRenderingContext2D, g: Game) {
+    // Bare fasen og sidebyttet: A, D og S står ved båtene og porten der de skal brukes.
     const x = 10;
-    const y = 410;
+    const y = 480;
     const w = 156;
-    const h = 120;
+    const h = 50;
     c.fillStyle = P.papir;
     c.globalAlpha = 0.92;
     c.fillRect(x, y, w, h);
@@ -192,35 +193,4 @@ export function tasteFelt(c: CanvasRenderingContext2D, g: Game) {
     tast(c, x + 18, y + 40, '←');
     tast(c, x + 40, y + 40, '→');
     etikett(c, 'BYTT SIDE', x + 56, y + 41, 10, P.hvit, 'left');
-    tast(c, x + 18, y + 57, 'A', g.hold === 'B');
-    etikett(c, 'HOLD: FIR VENSTRE', x + 34, y + 58, 10, P.hvit, 'left');
-    tast(c, x + 18, y + 74, 'D', g.hold === 'S');
-    etikett(c, 'HOLD: FIR HØYRE', x + 34, y + 75, 10, P.hvit, 'left');
-    // Stuerten: én tur om gangen, til porten eller til de sammenleggbare båtene.
-    const port = kanSendeStuert(g, 'port');
-    const rigg = kanSendeStuert(g, 'rigg');
-    const blink = Math.sin(g.t * 4) > 0;
-    tast(c, x + 18, y + 92, 'S', port && blink);
-    etikett(
-        c,
-        g.portÅpen ? 'PORTEN ER ÅPEN' : 'STUERT: ÅPNE PORT',
-        x + 34,
-        y + 93,
-        10,
-        port ? P.gul : P.blyant,
-        'left'
-    );
-    const igjen = g.båter.filter(
-        (b) => b.slag === 'sammenleggbar' && b.tilstand === 'venter' && !b.rigget
-    ).length;
-    tast(c, x + 18, y + 109, 'R', rigg && blink);
-    etikett(
-        c,
-        igjen ? `STUERT: RIGG BÅT (${igjen})` : 'ALLE ER RIGGET',
-        x + 34,
-        y + 110,
-        10,
-        rigg ? P.gul : P.blyant,
-        'left'
-    );
 }

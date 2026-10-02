@@ -497,3 +497,40 @@ preussisk blått, lanternegule plasser i natta».
   øvre grense; topptrinnet 820 nås av klok i rundt hver femte runde; selvspillet ble kjørt før
   rigge-lappen ble flyttet fra tastefeltet til midt på dekket (bare en posisjon). Sluttskjermens
   tapsbilde med konkret tips (punkt 3 i vurderingen) er ikke endret.
+- **Fase: forbedring 3 etter vurdering 3 (forbedrer, 2026-10-02).** Vurdering 3: Gøy 3, Utseende 4,
+  Lærerikt 5, Lesbart 4, Unikt 4 (sum 20). Gøy har stått på 3 i tre runder, og to forbedrere har lagt
+  til regler (stuert, port, rigging) uten at Gøy steg. Denne runden FJERNET i stedet. Reglene eleven
+  må holde i hodet var fire (landgang og tomme plasser, lunta, porten, riggingen) - nå tre:
+  landgangen og tomme plasser, lunta (vannet og krengningen), porten til tredje klasse.
+  (1) Slutt på venting: riggingen (R) er borte. Mannskapet rigger de sammenleggbare båtene selv
+  (`klar` 01.40/01.45/01.55/01.55), så landgangen fryser aldri lenge. Stuerten går bare til porten,
+  og landgangen står stille i 3 s per tur (var 8). Han kan ikke sendes på nytt før han er nede.
+  (2) Eskalering: krengningen stenger styrbord rundt 01.50 (var 01.56; punkter 01.50 -5,2 grader,
+  02.05 -8, 02.20 -10) med banner «STYRBORD ER STENGT» og lyd; lunta på den lave siden er kortere
+  (`lunteKrengning` 4,3 s per grad, var 2,6), så luntene brenner fortere mot slutten. Landgangen tar
+  9 i sekundet (var 10). Seier er fortsatt over 705; rangtrinnene er løftet til 790 og 830 (var
+  770/820). (3) Ryddet skjerm: tastefeltet nede til venstre viser bare fasen og «← → BYTT SIDE» (A, D
+  og S står allerede ved båtene og porten); NØDRAKETT er en liten lapp øverst til venstre i
+  himmelen, ikke et banner midt på skroget; en båt som fires uten å være full viser «-N TOMME» i
+  rødt under seg hele veien ned; tapsskjermen gir ett tips med tall fra runden («Båt 6 gikk med 9 av
+  65, og lunta hadde 31 sekunder igjen ...» eller «Båt 13 hang med 40 av 65 da krengningen låste
+  den ...»); «Dette skjedde» har en linje om Carpathia (kom 04.10, for sent) og viser fire linjer.
+  SOLAS-lærdommen er tatt ut av lista fordi SOLAS alltid står under den (den sto to ganger).
+  Feel-lista: 1-4 var på plass før runden. Lagt til: 1 - banner og lyd når styrbord stenges; 4 -
+  «-N TOMME» følger båten mens den fires, og tapet viser hvorfor med tall.
+  Simulering (200 runder per robot), grønn: klok vinner 100 % (median 785, p10-p90 763-801), halvgod
+  49 % (704, 674-730), fir-straks 0 % (62), venter-alltid 0 % (336), tilfeldig 0 % (7), passiv 0 %.
+  17,9 valg per minutt (var 15,8), press 0,40 -> 0,59 -> 0,74 (var 0,40 -> 0,56 -> 0,85).
+  Nettleseren: klok vant med 776 (innenfor simen), selvspill, audit --strict (0 funn) og likhet
+  (nærmest loddposen 0,37) grønne.
+  Det som IKKE virket: (a) bare å fjerne riggingen ga halvgod 100 % (820) - riggingen var det som
+  felte den; (b) landgang 8 i sekundet gjorde halvgod bedre enn klok (794 mot 778), fordi klok venter
+  på full båt og da kommer for sent; (c) `lunteKrengning` 5,5 er en klippe - en hel båt går tapt, og
+  klok vinner bare 1-10 %; (d) 10 i sekundet med lunte 4-4,7 ga halvgod 77-100 %. Det som virket:
+  9 i sekundet og lunte 4,3.
+  Kjente svakheter: presset i siste tredjedel er lavere enn før (0,74 mot 0,85), fordi køen ikke
+  lenger blir stående mens landgangen fryser - spillet er travlere, men kø-leddet i press-tallet
+  ser det ikke; halvgod ligger rett på grensen (median 704), så små endringer i lunta flytter
+  vinnerandelen mye; banneret «STYRBORD ER STENGT» står på samme høyde som de andre bannerne
+  (bannerTop 58 %); tapsskjermen med tall-tipset er ikke sett på et skjermbilde (selvspillet vinner);
+  «HØY SIDE - TREGT» står fortsatt under båten på den høye siden.

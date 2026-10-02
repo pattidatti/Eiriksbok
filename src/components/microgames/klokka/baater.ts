@@ -178,7 +178,10 @@ export function davitBåt(c: CanvasRenderingContext2D, g: Game, side: Side, fx: 
     målelinje(c, p.x, under, w, `${b.folk} / ${b.plasser}`, full ? P.gul : P.hvit);
     if (b.ned === 0) lunte(c, g, b, p.x, under + 15);
     etikett(c, b.navn.toUpperCase(), p.x, under + 29, 10, P.blyant, 'center');
-    if (fare && b.ned === 0)
+    // Båten fires uten å være full: de tomme plassene følger den ned.
+    if (fires && !full)
+        etikett(c, `-${b.plasser - b.folk} TOMME`, p.x, under + 44, 13, P.rød, 'center', 800);
+    else if (fare && b.ned === 0)
         etikett(
             c,
             fr.årsak === 'lås' ? 'LÅSES SNART' : 'VANNET KOMMER',

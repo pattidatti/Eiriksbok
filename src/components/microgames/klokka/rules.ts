@@ -104,20 +104,17 @@ export const stuertBorte = (g: Game) =>
 /** Porten står åpen for godt fra dette tidspunktet (sent - i 1912 fant mange aldri veien). */
 export const portFast = (g: Game) => g.t >= g.portÅpner;
 
-/** Neste sammenleggbare båt stuerten kan rigge (C, D, A, B), eller null. */
-export const nesteSammenleggbar = (g: Game): Båt | null =>
-    g.båter.find((b) => b.slag === 'sammenleggbar' && b.tilstand === 'venter' && !b.rigget) ?? null;
-
-/** Kan stuerten gå nå, til porten eller til båtene? Én tur om gangen. */
-export function kanSendeStuert(g: Game, mål: StuertMål = 'port') {
+/** Kan stuerten gå til porten nå? Én tur om gangen, og bare når porten er stengt. */
+export function kanSendeStuert(g: Game, _mål: StuertMål = 'port') {
     if (g.mode !== 'play' || g.t < TUNING.stuert.fra || stuertBorte(g)) return false;
-    return mål === 'port' ? !g.portÅpen && !portFast(g) : nesteSammenleggbar(g) !== null;
+    if (g.stuertSendt !== null && !g.stuertGjort) return false;
+    return !g.portÅpen && !portFast(g);
 }
 
 /**
- * Verb nummer to: send stuerten ned til porten til tredje klasse (den står åpen en stund
- * og glir igjen), eller la ham rigge neste sammenleggbare båt. Mens han er borte, står
- * landgangen stille. Eleven velger hvor han går - aldri hvem som får plass.
+ * Verb nummer to: send stuerten ned til porten til tredje klasse. Den står åpen en stund
+ * og glir igjen. Landgangen står stille et lite øyeblikk mens han løper (han holder den).
+ * Eleven velger når - aldri hvem som får plass.
  */
 export function sendStuert(g: Game, mål: StuertMål = 'port') {
     if (!kanSendeStuert(g, mål)) return;

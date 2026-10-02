@@ -12,7 +12,6 @@ import {
     frist,
     gåOmBord,
     mellom,
-    nesteSammenleggbar,
     portFast,
     taptePlasser,
     tomme,
@@ -52,24 +51,10 @@ function nyeGrupper(g: Game) {
 function gå(g: Game, dt: number) {
     const port = TUNING.port.pos;
     const st = TUNING.stuert;
-    // Stuerten er fram: porten glir opp en stund, eller neste sammenleggbare båt er rigget.
+    // Stuerten er fram: porten glir opp en stund.
     if (g.stuertSendt !== null && !g.stuertGjort && g.t >= g.stuertSendt + st.ned) {
         g.stuertGjort = true;
-        if (g.stuertMål === 'port') g.portLukkes = g.t + st.portÅpen;
-        else {
-            const b = nesteSammenleggbar(g);
-            if (b) {
-                b.rigget = true;
-                b.klar = Math.min(b.klar, g.t);
-                g.hendelser.push({
-                    t: g.t,
-                    slag: 'rigget',
-                    side: b.side,
-                    båt: b.nr,
-                    tekst: b.navn,
-                });
-            }
-        }
+        g.portLukkes = g.t + st.portÅpen;
     }
     // Porten: åpen mens stuerten holder den, og for godt når den åpner seg av seg selv (sent).
     const åpen = portFast(g) || g.t < g.portLukkes;

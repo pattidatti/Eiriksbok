@@ -91,10 +91,10 @@ export const BRETT: Brett[] = [
         banner: '02.00 DE SISTE BÅTENE',
         tittel: 'Sammenleggbare båter',
         båter: [
-            b('Sammenleggbar C', 'S', 'sammenleggbar', '02.07', '02.09'),
-            b('Sammenleggbar D', 'B', 'sammenleggbar', '02.07', '02.11'),
-            b('Sammenleggbar A', 'S', 'sammenleggbar', '02.07', '02.16'),
-            b('Sammenleggbar B', 'B', 'sammenleggbar', '02.07', '02.18'),
+            b('Sammenleggbar C', 'S', 'sammenleggbar', '01.40', '02.09'),
+            b('Sammenleggbar D', 'B', 'sammenleggbar', '01.45', '02.11'),
+            b('Sammenleggbar A', 'S', 'sammenleggbar', '01.55', '02.16'),
+            b('Sammenleggbar B', 'B', 'sammenleggbar', '01.55', '02.18'),
         ],
     },
 ];
