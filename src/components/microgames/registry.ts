@@ -2488,11 +2488,11 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'klokka-0045',
         title: 'Båtdekket klokka 00.45',
         description:
-            'Titanic, natt til 15. april 1912. Du er styrmann på båtdekket. Folk kommer opp trappene og stiller seg i én kø, og du velger bare når en båt fires ned og til hvilken side neste gruppe vinkes. En båt som er nede, kan aldri fylles igjen. Folk fra tredje klasse bor lengst nede og kommer sist opp. Vannet stiger og skipet krenger - en båt som henger for lenge, blir tatt av vannet eller låst mot skroget. Få alle 20 båtene på vannet før klokka 02.20, så fulle som mulig.',
+            'Titanic, natt til 15. april 1912. Du er styrmann på båtdekket. Folk kommer opp trappene og stiller seg i én kø, og køen går selv om bord der landgangen peker. Du velger bare side og når båten fires ned - aldri hvem som får plass. En båt som er nede, kan aldri fylles igjen, men hver båt som går, får flere til å skjønne at skipet synker. Tredje klasse kommer sist, bak en port langt nede. Redd flere enn de 705 som ble reddet i 1912, før vannet tar båtene.',
         estimatedSeconds: 230,
         sjanger: 'tidspress-servering',
         tone: 'alvorlig',
-        hook: 'Du er styrmann på Titanic. Fir båten nå - eller vent på dem i trappa?',
+        hook: 'Du er styrmann på Titanic. Fir båten nå - eller vent på dem du ser i trappa?',
         cover: '/images/microgames/klokka-0045.webp',
         kunst: 'Harland and Wolffs blåkopier av Titanic: hvite tusjlinjer og nagler på preussisk blått, lanternegule plasser i natta',
         loader: () => import('./BatdekketKlokka'),

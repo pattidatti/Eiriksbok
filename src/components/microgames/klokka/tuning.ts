@@ -20,9 +20,11 @@ export const TUNING = {
     // Landgangen: én rampe som peker mot babord eller styrbord. Køen går selv om bord.
     landgang: {
         /** Folk per sekund som går over landgangen og setter seg. */
-        perSek: 10,
+        perSek: 16,
         /** Sekunder landgangen står stille når du bytter side. */
         bytt: 0.6,
+        /** På den høye siden går det tregere: perSek x (1 - dette x krengning / maks). */
+        høySide: 0.35,
     },
 
     // Firingen. Sekunder du må holde for å fire en båt helt ned på den lave siden.
@@ -37,8 +39,6 @@ export const TUNING = {
         høyTreghet: 0.9,
         /** Sekunder før neste båt henger klar på daviten. */
         svingUt: 1.6,
-        /** Sekunder brettkortet står før de nye båtene svinger ut. */
-        kort: 2.0,
     },
 
     // Krengningen i grader (pluss = mot styrbord, minus = mot babord), som punkter i tid.
@@ -64,45 +64,54 @@ export const TUNING = {
         { t: kl('02.20'), dekk: 7.2 },
     ],
 
-    // Folk på vei opp. Hver klasse har en trapp og faser med intervall og gruppestørrelse.
-    // gang = sekunder fra lugarene til båtdekket (trengsel gir spredning).
+    // Alvoret: i 1912 nektet mange å gå i de første båtene. Hver båt som er nede (og hver
+    // nødrakett) får flere til å forstå at skipet synker. Tilstrømningen fra første og andre
+    // klasse ganges med min(1, base + perBåt x båter nede + perRakett x raketter).
+    alvor: { base: 0.22, perBåt: 0.16, perRakett: 0.05 },
+
+    // Folk på vei opp. Hver klasse har en trapp, et antall (granskningen 1912) og faser
+    // med intervall og gruppestørrelse. gang = sekunder fra lugarene til båtdekket.
     klasser: {
         1: {
+            antall: 322,
             åpner: kl('00.45'),
             gang: [4, 7] as [number, number],
             faser: [
-                // Ingen tror at skipet synker: små grupper som nøler.
-                { fra: kl('00.45'), intervall: [6, 9], størrelse: [2, 5] },
-                { fra: kl('00.55'), intervall: [3.5, 5], størrelse: [3, 7] },
-                { fra: kl('01.10'), intervall: [3, 4], størrelse: [4, 8] },
+                { fra: kl('00.45'), intervall: [3, 5], størrelse: [6, 12] },
+                { fra: kl('01.05'), intervall: [2.6, 4], størrelse: [8, 14] },
             ],
         },
         2: {
-            åpner: kl('01.00'),
+            antall: 277,
+            åpner: kl('00.55'),
             gang: [8, 14] as [number, number],
             faser: [
-                { fra: kl('01.00'), intervall: [2.5, 3.5], størrelse: [5, 10] },
-                { fra: kl('01.25'), intervall: [2, 2.8], størrelse: [6, 11] },
+                { fra: kl('00.55'), intervall: [3, 5], størrelse: [8, 16] },
+                { fra: kl('01.15'), intervall: [2.6, 4], størrelse: [10, 18] },
             ],
         },
         3: {
-            åpner: kl('01.25'),
-            gang: [18, 28] as [number, number],
-            faser: [{ fra: kl('01.25'), intervall: [2.4, 3.2], størrelse: [8, 14] }],
+            antall: 709,
+            åpner: kl('01.12'),
+            gang: [18, 26] as [number, number],
+            faser: [{ fra: kl('01.12'), intervall: [1.6, 2.2], størrelse: [8, 14] }],
         },
     } as Record<
         1 | 2 | 3,
         {
+            antall: number;
             åpner: number;
             gang: [number, number];
             faser: { fra: number; intervall: number[]; størrelse: number[] }[];
         }
     >,
-    /** Gitterporten for tredje klasse: hvor langt opp den står (0-1), og når den åpnes. */
-    port: { pos: 0.55, åpner: [kl('01.36'), kl('01.42')] as [number, number] },
+    /** Alvoret virker bare på disse klassene (tredje klasse holdes uansett bak porten). */
+    alvorKlasser: [1, 2] as const,
+    /** Gitterporten for tredje klasse: hvor langt opp den står (0-1, 3/7 = D-dekk), og når den åpnes. */
+    port: { pos: 3 / 7, åpner: [kl('01.36'), kl('01.41')] as [number, number] },
 
-    /** Nødrakettene (klokkeslett). Bare til visningen - fasene over gjør gruppene større. */
-    raketter: [kl('00.55'), kl('01.00'), kl('01.10'), kl('01.20'), kl('01.30')],
+    /** Nødrakettene (klokkeslett). Hver gjør folk litt mer redde (se alvor). */
+    raketter: [kl('00.55'), kl('01.00'), kl('01.10'), kl('01.20'), kl('01.30'), kl('01.40')],
 
     // Planleggeren (rules.ts, sisteStart): sekunder mellom to firinger med samme hånd.
     plan: { pause: 0.3 },

@@ -385,3 +385,37 @@ preussisk blått, lanternegule plasser i natta».
   teksten «LANDGANG - klikk for å bytte» overlapper dekksnavnet; brett 1 har bare styrbord, så
   landgangen betyr ingenting der; sluttskjermen viser ennå ikke hvilke klasser som ble igjen. Portfunn
   som er ventet nå: ingen cover, ingen useArcadeText / «Dette skjedde», bildet står nesten stille uten input.
+- **Fase: diagnose-grep 2, kunst, juice og tekst (byggmester, 2026-10-02).** Gjorde de tre endringene
+  fra diagnose 2. (1) Hver side har sin egen rekke på ti båter, så det henger alltid én båt på babord
+  og én på styrbord, hver med sin lunte; landgangen fyller bare den den peker mot (tregere mot den
+  høye siden). Brettene er nå faser på klokka (00.45, 01.00, 01.30, 02.00), ikke porter mellom
+  båtene; bare de sammenleggbare venter til 02.00. (2) Alvoret: første og andre klasse kommer
+  fortere for hver båt som er nede (og litt for hver rakett), fra 22 % til full fart etter rundt fem
+  båter. Å sende de første båtene halvtomme får folk til å komme - det er dilemmaet i starten.
+  (3) Hver klasse har antallet fra granskningen (322, 277, 709). Tredje klasse samler seg synlig bak
+  en gitterport på D-dekk med et tall over, porten åpnes 01.36-01.41, og bølgen kommer når de siste
+  livbåtene henger. Sluttskjermen viser hvor mange fra hver klasse som kom i båtene, mot 1912.
+  Robotene: «klok» firer også når ingen er i køen eller i trappene de neste 22 sekundene; «fir-straks»
+  firer nå som briefen sier, så snart noen sitter i båten. Kunsten: blåkopipapir og skipssnitt tegnes
+  én gang til offscreen-lerret, snittet krenger, vannet stiger dekk for dekk og slukker lyset,
+  silhuetter uten ansikt i trappene og i køen, båter i verftsstil med lanterner som tennes med et
+  lite sprett, taljer som rykker, båten som svinger og skraper mot skroget på den høye siden, plask,
+  «FULL»-stempel og klokke, båter som driver ut i mørket, nødraketter som bleker tegningen,
+  profilstripe med de 20 båtplassene, tittelfelt (klokke, reddet mot målet 705, tomme) og tastefelt.
+  Tekst via `useArcadeText`: tre lærings-øyeblikk (tomme plasser, lunta, tredje klasse), lapper ved
+  båten og landgangen, bannere for fasene, «Dette skjedde» knyttet til runden. Lyd, pause,
+  rekord (flest reddet, færrest tomme), ranger og båtprotokollen (båter firet helt fulle).
+  Simulering (200 runder per robot), grønn: klok vinner 100 % (median 958, p10-p90 940-979),
+  halvgod 100 % (813), fir-straks 0 % (110), venter-alltid 0 % (383), tilfeldig 0 % (18), passiv 0 %.
+  12,8 valg per minutt, press 0,09 -> 0,27 -> 0,70. Nettleseren: klok vant med 955 (innenfor simen), alle porter grønne (selvspill, audit --strict, likhet: nærmest loddposen 0,27).
+  Det som IKKE virket: med bare alvoret og «fir når køen er tom» som taper vant den 100 % (809-846):
+  midt på natta er tilstrømningen større enn landgangen og firingen klarer, så køen blir aldri tom
+  og den roboten oppfører seg som en god spiller. Bølgevise grupper, raskere landgang (16 i sekundet)
+  og båter uten brettgrenser hjalp ikke på det. Selvspillet klaget først på at bildet sto stille
+  (2,0) og at draw.ts var for lang; tåke som driver, større bølger og båter som svinger løste det
+  første, oppdeling i draw/baater/hud/former det andre. Kjente svakheter: halvgod vinner fortsatt
+  100 % (den kloke får rundt 150 flere); de sene båtene fylles nesten alltid, så forskjellen ligger
+  i brett 1-2 og i om livbåtene spares til bølgen; klok sender de første båtene med bare 4-11 folk
+  (det er riktig etter reglene, men eleven kan lese det som at tomme båter er bra); mellom 01.53 og
+  02.00 kan begge davitene stå tomme mens køen venter på de sammenleggbare; sluttskjermen er lang og
+  må rulles i spalten.

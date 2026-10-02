@@ -4,7 +4,7 @@
 // ikke tap i seg selv - plassene i den er bare borte.
 
 import { BRETT, type Side } from './levels';
-import { brukt, fase, firetid, frist, gåOmBord, mellom, taptePlasser, tomme } from './rules';
+import { alvor, brukt, fase, firetid, frist, gåOmBord, mellom, taptePlasser, tomme } from './rules';
 import type { Game, Klasse } from './state';
 import { TUNING } from './tuning';
 
@@ -12,12 +12,18 @@ export { newGame, type Game } from './state';
 
 const SIDER: Side[] = ['B', 'S'];
 
+/**
+ * Nye grupper går opp fra lugarene. Første og andre klasse kommer fortere jo mer
+ * alvor det er (båter som er nede, raketter). Hver klasse har et fast antall folk.
+ */
 function nyeGrupper(g: Game) {
+    const a = alvor(g);
     for (const k of [1, 2, 3] as Klasse[]) {
         const kl = TUNING.klasser[k];
-        if (g.t < kl.åpner || g.t < g.nesteGruppe[k]) continue;
+        if (g.t < kl.åpner || g.t < g.nesteGruppe[k] || g.igjen[k] <= 0) continue;
         const f = fase(k, g.t);
-        const antall = Math.round(mellom(g, f.størrelse));
+        const antall = Math.min(g.igjen[k], Math.round(mellom(g, f.størrelse)));
+        g.igjen[k] -= antall;
         g.grupper.push({
             id: g.nesteId++,
             klasse: k,
@@ -26,16 +32,21 @@ function nyeGrupper(g: Game) {
             gang: mellom(g, kl.gang),
             iKø: false,
         });
-        g.nesteGruppe[k] = g.t + mellom(g, f.intervall);
+        const tregere = (TUNING.alvorKlasser as readonly number[]).includes(k) ? a : 1;
+        g.nesteGruppe[k] = g.t + mellom(g, f.intervall) / tregere;
     }
 }
 
 function gå(g: Game, dt: number) {
     const port = TUNING.port.pos;
+    if (!g.portÅpen && g.t >= g.portÅpner) {
+        g.portÅpen = true;
+        g.hendelser.push({ t: g.t, slag: 'port' });
+    }
     for (const gr of g.grupper) {
         gr.pos += dt / gr.gang;
         // Gitterporten for tredje klasse: de samler seg bak den til den åpnes.
-        if (gr.klasse === 3 && g.t < g.portÅpner && gr.pos > port) gr.pos = port;
+        if (gr.klasse === 3 && !g.portÅpen && gr.pos > port) gr.pos = port;
         if (gr.pos >= 1) {
             gr.pos = 1;
             gr.iKø = true;
@@ -46,16 +57,15 @@ function gå(g: Game, dt: number) {
     g.grupper = g.grupper.filter((gr) => !gr.iKø);
 }
 
+/** Neste båt på hver side svinger ut når daviten er ledig og båten er klar. */
 function davitene(g: Game) {
-    if (g.t < g.kortTil) return;
     for (const side of SIDER) {
         if (g.davit[side] !== null || g.t < g.svingTil[side]) continue;
-        const neste = g.båter.find(
-            (b) => b.brett === g.brett && b.side === side && b.tilstand === 'venter'
-        );
-        if (!neste) continue;
+        const neste = g.båter.find((b) => b.side === side && b.tilstand === 'venter');
+        if (!neste || g.t < neste.klar) continue;
         neste.tilstand = 'henger';
         g.davit[side] = neste.nr;
+        g.hendelser.push({ t: g.t, slag: 'sving', side, båt: neste.nr });
     }
 }
 
@@ -77,16 +87,18 @@ function firing(g: Game, dt: number) {
         g.svingTil[b.side] = g.t + TUNING.firing.svingUt;
         g.hold = null;
         g.holdT = 0;
-        g.hendelser.push({ t: g.t, slag: 'nede', side: b.side });
+        g.hendelser.push({ t: g.t, slag: 'nede', side: b.side, båt: b.nr });
     }
 }
 
 function frister(g: Game) {
     for (const b of g.båter) {
-        if (b.tilstand === 'nede' || b.tilstand === 'tapt' || b.tilstand === 'venter') continue;
+        if (b.tilstand === 'nede' || b.tilstand === 'tapt') continue;
         const f = frist(b);
         if (g.t < f.t) continue;
         // Lunta har brent ned: båten og plassene i den er borte. Runden går videre.
+        // Båter som aldri rakk å svinge ut, er også borte.
+        const hang = b.tilstand !== 'venter';
         b.tilstand = 'tapt';
         g.tapte.push({ navn: b.navn, årsak: f.årsak, kl: g.t });
         if (g.davit[b.side] === b.nr) {
@@ -97,14 +109,9 @@ function frister(g: Game) {
                 g.holdT = 0;
             }
         }
-        g.hendelser.push({ t: g.t, slag: 'tapt', tekst: b.navn });
+        if (hang)
+            g.hendelser.push({ t: g.t, slag: 'tapt', tekst: b.navn, side: b.side, båt: b.nr });
     }
-    // Båter som aldri rakk å svinge ut, er også borte når fristen er passert.
-    for (const b of g.båter)
-        if (b.tilstand === 'venter' && g.t >= frist(b).t) {
-            b.tilstand = 'tapt';
-            g.tapte.push({ navn: b.navn, årsak: frist(b).årsak, kl: g.t });
-        }
 }
 
 /** Natta er over: alle båtene er nede eller tapt, eller klokka har passert 02.20. */
@@ -114,13 +121,16 @@ function slutt(g: Game) {
     g.hendelser.push({ t: g.t, slag: g.mode === 'won' ? 'vunnet' : 'tapt' });
 }
 
-function brettFerdig(g: Game) {
-    const mine = g.båter.filter((b) => b.brett === g.brett);
-    if (!mine.every((b) => b.tilstand === 'nede' || b.tilstand === 'tapt')) return;
-    g.brett++;
-    if (g.brett >= BRETT.length) return slutt(g);
-    g.kortTil = g.t + TUNING.firing.kort;
-    g.hendelser.push({ t: g.t, slag: 'brett', tekst: BRETT[g.brett].tittel });
+/** Fasen i natta følger klokka. */
+function brettet(g: Game) {
+    let br = 0;
+    BRETT.forEach((x, i) => {
+        if (g.t >= x.start) br = i;
+    });
+    if (br !== g.brett) {
+        g.brett = br;
+        g.hendelser.push({ t: g.t, slag: 'brett', tekst: BRETT[br].banner });
+    }
 }
 
 export function update(g: Game, dt: number) {
@@ -132,13 +142,14 @@ export function update(g: Game, dt: number) {
             g.raketter.push(r);
             g.hendelser.push({ t: g.t, slag: 'rakett' });
         }
+    brettet(g);
     nyeGrupper(g);
     gå(g, dt);
     davitene(g);
     gåOmBord(g, dt);
     firing(g, dt);
     frister(g);
-    brettFerdig(g);
+    if (g.båter.every((b) => b.tilstand === 'nede' || b.tilstand === 'tapt')) slutt(g);
     if (g.mode === 'play' && g.t >= TUNING.slutt) slutt(g);
-    if (g.hendelser.length > 60) g.hendelser.splice(0, g.hendelser.length - 60);
+    if (g.hendelser.length > 80) g.hendelser.splice(0, g.hendelser.length - 80);
 }

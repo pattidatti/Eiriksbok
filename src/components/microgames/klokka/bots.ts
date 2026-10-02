@@ -4,7 +4,7 @@
 import type { Rng } from '../sim';
 import type { PlaytestBot } from '../playtest';
 import type { Side } from './levels';
-import { bytt, hold, klarBåt, ledig, sisteStart } from './rules';
+import { bytt, hold, klarBåt, ledig, påVei, sisteStart } from './rules';
 import type { Båt } from './state';
 import type { Game } from './state';
 
@@ -36,17 +36,24 @@ function pekMot(g: Game, ønsket: Båt | undefined, bedreMed: number, slakk: (b:
  * som kommer etter), firer fulle båter med en gang, og har landgangen mot båten med
  * kortest lunte.
  */
-function klok(margin: number, fullNok: number, bedreMed: number): Grep {
+function klok(margin: number, fullNok: number, bedreMed: number, ser: number): Grep {
     return (g) => {
         if (g.mode !== 'play') return;
         const plan = sisteStart(g);
         const klare = SIDER.map((s) => klarBåt(g, s)).filter((b) => b !== null);
         const slakk = (b: Båt) => (plan.get(b.nr) ?? Infinity) - g.t - margin;
         klare.sort((a, b) => slakk(a) - slakk(b));
+        // Ingen i køen og ingen i trappene (eller bak porten) på lenge: send båten,
+        // så skjønner flere at det er alvor.
+        const ledigeNå = klare.reduce((s, b) => s + ledig(b), 0);
+        const ingenKommer = (b: Båt) =>
+            ser > 0 && !g.kø.length && b.folk >= 3 && påVei(g, ser) < ledigeNå * 0.15;
         // Landgangen flyttes også mens hånda firer den andre båten.
         const firer = fortsett(g);
         if (!firer) {
-            const nå = klare.find((b) => b.folk >= b.plasser * fullNok || slakk(b) <= 0);
+            const nå = klare.find(
+                (b) => b.folk >= b.plasser * fullNok || slakk(b) <= 0 || ingenKommer(b)
+            );
             if (nå) hold(g, nå.side);
             else hold(g, null);
         }
@@ -59,13 +66,13 @@ function klok(margin: number, fullNok: number, bedreMed: number): Grep {
     };
 }
 
-/** Ignorerer fagkjernen om tomme plasser: firer så snart det sitter noen i båten og køen er tom. */
+/** Ignorerer fagkjernen om tomme plasser: firer så snart det sitter noen i båten. */
 function firStraks(): Grep {
     return (g) => {
         if (g.mode !== 'play' || fortsett(g)) return;
         const klare = SIDER.map((s) => klarBåt(g, s)).filter((b) => b !== null);
         for (const b of klare)
-            if (ledig(b) === 0 || (b.folk > 0 && !g.kø.length)) {
+            if (b.folk > 0) {
                 hold(g, b.side);
                 return;
             }
@@ -130,24 +137,23 @@ export const BOTS: Record<string, BotDef> = {
         forventer: 'vinner',
         beskrivelse:
             'Har landgangen mot båten med kortest lunte, venter så lenge vannet og krengningen tåler det og firer fulle båter straks.',
-        make: () => klok(1.2, 1, 2),
+        make: () => klok(1.2, 1, 2, 22),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
             'Følger samme plan, men reagerer bare hvert andre øyeblikk, firer med god margin og nøyer seg med nesten fulle båter.',
-        make: () => treg(2, klok(6, 0.8, 6)),
+        make: () => treg(2, klok(6, 0.8, 6, 0)),
     },
     'fir-straks': {
         forventer: 'taper',
         beskrivelse:
-            'Firer så snart det sitter noen i båten og køen er tom - ignorerer at tomme plasser er borte for alltid.',
+            'Firer så snart det sitter noen i båten - ignorerer at tomme plasser er borte for alltid.',
         make: () => firStraks(),
     },
     'venter-alltid': {
         forventer: 'taper',
-        beskrivelse:
-            'Venter alltid på full båt, uansett lunta - vannet og krengningen tar båtene.',
+        beskrivelse: 'Venter alltid på full båt, uansett lunta - vannet og krengningen tar båtene.',
         make: () => venterAlltid(),
     },
     tilfeldig: {

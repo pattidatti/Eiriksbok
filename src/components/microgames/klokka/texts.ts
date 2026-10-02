@@ -1,27 +1,54 @@
-// All tekst i spillet: startregler, tap med tips og sluttskjermen.
+// All tekst i spillet: startreglene, lappene, lærings-øyeblikkene, tap med tips og
+// sluttskjermen. Tonen er alvorlig og saklig: ingen vitser, ingen tall over døde.
 
 export const REGLER = [
-    'En båt som er nede, kan aldri fylles igjen.',
-    'Jo lenger nede i skipet folk bor, jo seinere kommer de opp.',
-    'Vannet stiger og dekket heller. En båt som henger for lenge, blir tatt av vannet eller låst mot skroget.',
-];
+    { ikon: 'båt', tekst: 'En båt som er nede, kan aldri fylles igjen.' },
+    { ikon: 'trapp', tekst: 'Jo lenger nede folk bor, jo seinere kommer de opp.' },
+    { ikon: 'vann', tekst: 'Vannet stiger og skipet krenger. Lunta viser når båten er tapt.' },
+] as const;
 
-/** Målet, på startskjermen over reglene. */
-export const MÅL =
-    'I 1912 ble rundt 705 mennesker reddet i livbåtene, og 472 plasser sto tomme. Redd flere enn 705 før natta er over.';
+/** Målet, på startskjermen. */
+export const MÅL = 'I 1912 ble rundt 705 reddet i livbåtene. Redd flere før skipet er borte.';
 
 export const STYRING =
-    'Landgangen peker mot én båt, og køen går selv om bord. Klikk på landgangen (eller mellomrom/piltastene) for å bytte side. Hold på båten for å fire den ned (A for babord, D for styrbord).';
+    'Køen går selv om bord der landgangen peker. Du velger side og når båten fires.';
+
+/** Lappene (maks 7 ord). */
+export const LAPP = {
+    fir: 'Hold D eller hold på båten',
+    bytt: 'Klikk eller ← → for å bytte side',
+    alvor: 'Flere skjønner at skipet synker',
+    port: 'Porten er åpen',
+    lås: 'Krengningen låser styrbord-båtene snart',
+    sist: 'Skyv dem av før vannet kommer',
+};
+
+/** Lærings-øyeblikkene (fagkjernen, maks tre per runde). */
+export const BEAT = {
+    tomme: {
+        tittel: 'Tomme plasser er borte',
+        tekst: (n: number) =>
+            `Båten gikk med ${n} tomme plasser. De kan aldri fylles igjen - men nå forstår flere at skipet synker.`,
+    },
+    tredje: {
+        tittel: 'Tredje klasse kommer sist',
+        tekst: 'De bodde lengst nede, og porten åpnes sent. Spar plass i båtene til dem.',
+    },
+    frist: {
+        tittel: 'Lunta brenner ned',
+        tekst: 'Når lunta er borte, tar vannet båten. Fir før det, også om den ikke er full.',
+    },
+};
 
 /** Tap: hvorfor du ikke slo 1912, og et tips. */
 export const TAP = {
     tomme: {
         tittel: 'For mange tomme plasser',
-        tips: 'Du firte båtene før folk rakk å komme. I 1912 gikk de første båtene halvtomme fordi mange ikke trodde at skipet sank. Vent til lunta er kort før du firer, og ha landgangen mot båten med kortest lunte.',
+        tips: 'Båtene gikk før folk rakk å komme. Fir de første tidlig, så flere skjønner at det er alvor - men vent på gruppene du ser i trappene, og spar båter til tredje klasse.',
     },
     tapt: {
-        tittel: 'Båtene gikk tapt',
-        tips: 'Du ventet for lenge på fulle båter, og vannet eller krengningen tok dem - med folkene i. En halvfull båt på vannet redder flere enn en full båt som aldri kommer ned. Fir når lunta er nesten brent ned.',
+        tittel: 'Vannet tok båtene',
+        tips: 'Klokka 02.05 gikk den siste båten ned fra Titanic. Vannet kom forfra, dekk for dekk. Fir båten før lunta er brent ned, også om den ikke er full. På den høye siden går alt tregere.',
     },
 };
 
@@ -35,3 +62,29 @@ export const SOLAS =
     'Selv med hver plass brukt var det ikke plass til over 1000 av dem om bord. Etter Titanic ble det en regel at livbåtene skal ha plass til alle (SOLAS, 1914).';
 
 export const I1912 = { reddet: 705, tomme: 472 };
+
+/** Granskningen 1912 (British Wreck Commissioner): reddet av passasjerene i hver klasse. */
+export const KLASSER_1912 = [
+    { navn: '1. klasse', reddet: 202, av: 322 },
+    { navn: '2. klasse', reddet: 115, av: 277 },
+    { navn: '3. klasse', reddet: 176, av: 709 },
+];
+
+/** «Dette skjedde»: knyttet til det eleven gjorde i runden. */
+export const LÆRDOM = {
+    alvor: 'Da de første båtene gikk, kom flere opp på dekket. I 1912 ville mange ikke gå i de første båtene - skipet virket tryggere.',
+    tomme: (n: number) => `${n} plasser sto tomme i båtene dine. I 1912 var det 472.`,
+    tredje: (n: number) =>
+        `Tredje klasse kom sist, bak porten nede i skipet. ${n} av 709 fra tredje klasse fikk plass i båtene dine. I 1912 var det 176.`,
+    tapt: (n: number, p: number) =>
+        `Vannet og krengningen tok ${n} ${n === 1 ? 'båt' : 'båter'} med ${p} plasser. Den siste båten fra Titanic gikk klokka 02.05.`,
+    solas: 'Selv med hver plass brukt var det plass til bare halvparten. Etter Titanic skal livbåtene ha plass til alle (SOLAS, 1914).',
+};
+
+/** Pausemeldinger (saklige fakta). */
+export const PAUSE = [
+    'Titanic hadde 20 livbåter med plass til 1178. Om bord var rundt 2200.',
+    'Den første livbåten hadde plass til 65. Bare 28 satt i den.',
+    'En båt med plass til 40 fikk med seg bare 12.',
+    'Det gikk 2 timer og 40 minutter fra isfjellet til skipet sank.',
+];

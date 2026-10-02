@@ -30,9 +30,23 @@ export interface Gruppe {
 
 export interface Hendelse {
     t: number;
-    slag: 'ombord' | 'nede' | 'brett' | 'rakett' | 'tapt' | 'vunnet' | 'ankommer' | 'bytt';
+    slag:
+        | 'ombord'
+        | 'nede'
+        | 'brett'
+        | 'rakett'
+        | 'tapt'
+        | 'vunnet'
+        | 'ankommer'
+        | 'bytt'
+        | 'port'
+        | 'sving';
     side?: Side;
     tekst?: string;
+    /** Båten hendelsen gjelder (indeks i båter). */
+    båt?: number;
+    /** Plassen i båten (ved ombord). */
+    plass?: number;
 }
 
 export interface Game {
@@ -43,8 +57,8 @@ export interface Game {
     årsak: 'tomme' | 'tapt' | null;
     /** Båtene vannet eller krengningen tok, med årsak. */
     tapte: { navn: string; årsak: 'vann' | 'lås'; kl: number }[];
+    /** Fasen i natta (indeks i BRETT), styrt av klokka. */
     brett: number;
-    kortTil: number; // brettkortet står til dette tidspunktet
     båter: Båt[];
     /** Båten som henger på hver side nå (indeks i båter), eller null. */
     davit: Record<Side, number | null>;
@@ -52,7 +66,10 @@ export interface Game {
     grupper: Gruppe[]; // på vei opp
     kø: Gruppe[]; // på dekket, i den rekkefølgen de kom
     nesteGruppe: Record<Klasse, number>;
+    /** Folk fra hver klasse som ennå ikke har gått opp fra lugarene. */
+    igjen: Record<Klasse, number>;
     portÅpner: number;
+    portÅpen: boolean;
     nesteId: number;
     /** Siden landgangen peker mot. Køen går selv inn i båten på den siden. */
     landgang: Side;
@@ -94,14 +111,19 @@ export function newGame(seed: number): Game {
         årsak: null,
         tapte: [],
         brett: 0,
-        kortTil: 0,
         båter,
         davit: { B: null, S: null },
         svingTil: { B: 0, S: 0 },
         grupper: [],
         kø: [],
         nesteGruppe: { 1: 0, 2: 0, 3: 0 },
+        igjen: {
+            1: TUNING.klasser[1].antall - 4,
+            2: TUNING.klasser[2].antall,
+            3: TUNING.klasser[3].antall,
+        },
         portÅpner: p0 + rng() * (p1 - p0),
+        portÅpen: false,
         nesteId: 1,
         landgang: 'S',
         landgangKlar: 0,

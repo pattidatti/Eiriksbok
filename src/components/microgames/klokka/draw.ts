@@ -1,331 +1,342 @@
-// Gråboksen: snittet av skipet med primitive former. Ingen kunst, ingen juice.
-// Alt tegnes i et virtuelt ark på 960x540 som skaleres inn i canvasen.
+// Tegningen: Harland and Wolffs blåkopi av Titanic, snitt ved spant 80, i natta.
+// Papir og skipssnitt ligger ferdig i papir.ts; her tegnes bare det som beveger seg:
+// lys i rommene, folk i trappene og i køen, landgangen, båtene på davitene, vannet,
+// båtene som driver ut i mørket og nødrakettene. Båtene står i baater.ts, profilstripa og
+// tittelfeltet (HUD-en) i hud.ts, små byggeklosser i former.ts.
 
 import type { ArcadeView } from '../arcade/useArcade';
-import { BRETT, type Side } from './levels';
-import { frist, høySide, klokke, klarBåt, krengning, ledig, tomme, brukt, vannDekk } from './rules';
-import type { Båt, Game } from './state';
+
+import { køAntall } from './rules';
+import type { Game, Gruppe } from './state';
 import { TUNING } from './tuning';
+import { ARK, DEKK_Y, MIDT, SKROG, TRAPP, iVerden, skala, vannY, vinkel } from './geom';
+import { rakettLys, type Fx } from './fx';
+import { P, etikett, frø, lagPapir, lagSnitt, ramme, strek } from './papir';
 
-export const ARK = { w: 960, h: 540 };
-const MIDT = 480;
-const DEKK_Y = (i: number) => 150 + (7 - i) * 45; // 0 = G-dekk, 7 = båtdekket
-const SKROG = { x0: 340, x1: 620, bunn: 500 };
-const BÅT_X: Record<Side, number> = { B: 230, S: 730 };
-const BÅT_W = 150;
-/** Trappene: x, og hvilket dekk klassen bor på. */
-const TRAPP: Record<1 | 2 | 3, { x: number; fra: number }> = {
-    1: { x: 430, fra: 5 },
-    2: { x: 500, fra: 3 },
-    3: { x: 580, fra: 0 },
-};
+import { artAv, figur, type TegneValg } from './former';
+import { davitBåt, driver, landgang, plask, raketter, stempel } from './baater';
+import { profil, tasteFelt, tittelfelt } from './hud';
 
-const F = {
-    bg: '#2a2f38',
-    linje: '#c9d1dc',
-    svak: '#6b7585',
-    gul: '#f2c25a',
-    rød: '#e05a4a',
-    vann: '#0d1a33',
-};
+export type { TegneValg } from './former';
+// ---------- Hurtiglager for det som står stille ----------
 
-export interface Skala {
-    s: number;
-    ox: number;
-    oy: number;
+let papir: { cv: HTMLCanvasElement; key: string } | null = null;
+let snitt: { cv: HTMLCanvasElement; key: string } | null = null;
+
+function hentPapir(w: number, h: number, lav: boolean) {
+    const key = `${Math.round(w)}x${Math.round(h)}${lav}`;
+    if (!papir || papir.key !== key) papir = { cv: lagPapir(w, h, lav), key };
+    return papir.cv;
 }
-export const skala = (w: number, h: number): Skala => {
-    const s = Math.min(w / ARK.w, h / ARK.h);
-    return { s, ox: (w - ARK.w * s) / 2, oy: (h - ARK.h * s) / 2 };
-};
-/** Fra CSS-piksler i canvasen til arket. */
-export const tilArk = (k: Skala, x: number, y: number) => ({
-    x: (x - k.ox) / k.s,
-    y: (y - k.oy) / k.s,
-});
+function hentSnitt(s: number) {
+    const key = s.toFixed(2);
+    if (!snitt || snitt.key !== key) snitt = { cv: lagSnitt(s), key };
+    return snitt.cv;
+}
 
-/** Hva pekeren treffer: en båtside, landgangen (køen) eller ingenting. */
-export function treff(x: number, y: number): Side | 'landgang' | null {
-    if (y > 80 && y < 520) {
-        if (Math.abs(x - BÅT_X.B) < BÅT_W / 2 + 20) return 'B';
-        if (Math.abs(x - BÅT_X.S) < BÅT_W / 2 + 20) return 'S';
+// ---------- Himmel, hav og vann ----------
+
+function himmel(c: CanvasRenderingContext2D, g: Game, o: TegneValg) {
+    const r = frø(7);
+    c.fillStyle = P.hvit;
+    for (let i = 0; i < 70; i++) {
+        const x = 20 + r() * (ARK.w - 40);
+        const y = 66 + r() * 220;
+        const blink = o.lav ? 0.5 : 0.35 + 0.3 * Math.sin(g.t * (0.6 + r()) + i);
+        c.globalAlpha = 0.18 + 0.25 * blink;
+        c.fillRect(x, y, 1.2, 1.2);
     }
-    if (x > SKROG.x0 - 60 && x < SKROG.x1 + 60 && y > 60 && y < 165) return 'landgang';
-    return null;
-}
-
-export const båtY = (b: Båt) => 128 + b.ned * (SKROG.bunn - 150);
-
-function tekst(
-    c: CanvasRenderingContext2D,
-    t: string,
-    x: number,
-    y: number,
-    px = 14,
-    farge = F.linje,
-    align: CanvasTextAlign = 'center'
-) {
-    c.fillStyle = farge;
-    c.font = `600 ${px}px system-ui, sans-serif`;
-    c.textAlign = align;
-    c.textBaseline = 'middle';
-    c.fillText(t, x, y);
-}
-
-function profil(c: CanvasRenderingContext2D, g: Game) {
-    const n = g.båter.length;
-    const bw = 24;
-    const x0 = MIDT - (n * (bw + 4)) / 2;
-    tekst(c, 'BÅTENE', x0 - 40, 26, 12, F.svak);
-    g.båter.forEach((b, i) => {
-        const x = x0 + i * (bw + 4);
-        c.strokeStyle = b.tilstand === 'tapt' ? F.rød : b.tilstand === 'venter' ? F.svak : F.linje;
-        c.lineWidth = 1.5;
-        c.strokeRect(x, 16, bw, 20);
-        if (b.tilstand === 'nede') {
-            c.fillStyle = F.gul;
-            c.fillRect(
-                x + 2,
-                18 + 16 * (1 - b.folk / b.plasser),
-                bw - 4,
-                16 * (b.folk / b.plasser)
-            );
-        }
-        if (b.tilstand === 'henger' || b.tilstand === 'fires') {
-            c.fillStyle = F.linje;
-            c.fillRect(x + 2, 38, bw - 4, 3);
-        }
-    });
-}
-
-function snitt(c: CanvasRenderingContext2D, g: Game) {
-    c.save();
-    c.translate(MIDT, 320);
-    c.rotate((krengning(g.t) * Math.PI) / 180);
-    c.translate(-MIDT, -320);
-    c.strokeStyle = F.linje;
-    c.lineWidth = 2;
-    c.beginPath();
-    c.moveTo(SKROG.x0, DEKK_Y(7));
-    c.lineTo(SKROG.x0, SKROG.bunn);
-    c.lineTo(SKROG.x1, SKROG.bunn);
-    c.lineTo(SKROG.x1, DEKK_Y(7));
-    c.stroke();
-    const navn = ['G', 'F', 'E', 'D', 'C', 'B', 'A', 'BÅTDEKK'];
-    for (let i = 0; i <= 7; i++) {
-        c.strokeStyle = i === 7 ? F.linje : F.svak;
-        c.lineWidth = i === 7 ? 3 : 1;
-        c.beginPath();
-        c.moveTo(i === 7 ? SKROG.x0 - 60 : SKROG.x0, DEKK_Y(i));
-        c.lineTo(i === 7 ? SKROG.x1 + 60 : SKROG.x1, DEKK_Y(i));
-        c.stroke();
-        tekst(c, navn[i], SKROG.x0 + 6, DEKK_Y(i) + 12, 10, F.svak, 'left');
-    }
-    // Trappene og porten for tredje klasse.
-    for (const k of [1, 2, 3] as const) {
-        const tr = TRAPP[k];
-        c.strokeStyle = g.t >= TUNING.klasser[k].åpner ? F.linje : F.svak;
-        c.lineWidth = 1;
-        c.strokeRect(tr.x - 10, DEKK_Y(7), 20, DEKK_Y(tr.fra) - DEKK_Y(7));
-        tekst(c, `${k}. kl`, tr.x, DEKK_Y(tr.fra) + 12, 10, F.svak);
-    }
-    const portY = DEKK_Y(0) + (DEKK_Y(7) - DEKK_Y(0)) * TUNING.port.pos;
-    c.strokeStyle = g.t < g.portÅpner ? F.rød : F.svak;
-    c.lineWidth = 3;
-    c.beginPath();
-    c.moveTo(TRAPP[3].x - 12, portY);
-    c.lineTo(TRAPP[3].x + 12, portY);
-    c.stroke();
-    // Gruppene på vei opp.
-    for (const gr of g.grupper) {
-        const tr = TRAPP[gr.klasse];
-        const y = DEKK_Y(tr.fra) + (DEKK_Y(7) - DEKK_Y(tr.fra)) * gr.pos;
-        c.fillStyle = F.gul;
-        c.beginPath();
-        c.arc(tr.x, y - 6, 2 + Math.sqrt(gr.antall) * 1.6, 0, Math.PI * 2);
-        c.fill();
-    }
-    c.restore();
-}
-
-function vann(c: CanvasRenderingContext2D, g: Game) {
-    const y = DEKK_Y(vannDekk(g.t)) + 20;
-    c.fillStyle = F.vann;
-    c.globalAlpha = 0.85;
-    c.fillRect(0, Math.min(y, SKROG.bunn), ARK.w, ARK.h);
     c.globalAlpha = 1;
-    c.strokeStyle = F.linje;
-    c.beginPath();
-    c.moveTo(0, Math.min(y, SKROG.bunn));
-    c.lineTo(ARK.w, Math.min(y, SKROG.bunn));
-    c.stroke();
 }
 
-/** En liten person: hode og kropp. */
-function figur(c: CanvasRenderingContext2D, x: number, y: number) {
-    c.beginPath();
-    c.arc(x, y - 9, 2.2, 0, Math.PI * 2);
-    c.fill();
-    c.fillRect(x - 2, y - 6, 4, 7);
-}
-
-/** Køen som små figurer i gruppene sine. Forrest (nærmest landgangen) til venstre for midten. */
-function kø(c: CanvasRenderingContext2D, g: Game) {
-    const n = g.kø.reduce((s, x) => s + x.antall, 0);
-    // Køen står i en klump på dekket; gruppene skilles med et lite mellomrom.
-    let x = 0;
-    let rad = 0;
-    const bredde = 200;
-    let vist = 0;
-    for (let gi = 0; gi < g.kø.length && vist < 90; gi++) {
-        const gr = g.kø[gi];
-        c.fillStyle = gi === 0 ? F.gul : gr.klasse === 3 ? '#9a7a3e' : '#b8954a';
-        for (let i = 0; i < gr.antall && vist < 90; i++, vist++) {
-            if (x > bredde) {
-                x = 0;
-                rad++;
-            }
-            figur(c, MIDT - bredde / 2 + x, 140 - rad * 14);
-            x += 6.5;
-        }
-        x += 7;
-    }
-    tekst(c, n > vist ? `KØ ${n} (+${n - vist} til)` : `KØ ${n}`, MIDT, 70, 15, n ? F.gul : F.svak);
-}
-
-/** Landgangen: en rampe fra køen mot båten på den siden den peker. */
-function landgang(c: CanvasRenderingContext2D, g: Game) {
-    const side = g.landgang;
-    const mål = BÅT_X[side] + (side === 'B' ? BÅT_W / 2 - 10 : -BÅT_W / 2 + 10);
-    const fra = side === 'B' ? MIDT - 110 : MIDT + 110;
-    const venter = g.t < g.landgangKlar;
-    const åpen = !!klarBåt(g, side) && !venter;
-    c.strokeStyle = åpen ? F.gul : F.svak;
-    c.lineWidth = 6;
-    c.beginPath();
-    c.moveTo(fra, 146);
-    c.lineTo(mål, 120);
-    c.stroke();
-    // Pilspiss mot båten.
-    const dir = side === 'B' ? -1 : 1;
-    c.fillStyle = c.strokeStyle;
-    c.beginPath();
-    c.moveTo(mål + dir * 6, 118);
-    c.lineTo(mål - dir * 12, 108);
-    c.lineTo(mål - dir * 12, 130);
-    c.closePath();
-    c.fill();
-    tekst(c, 'LANDGANG - klikk for å bytte', MIDT, 162, 11, F.svak);
-}
-
-/** Lunta: en linje som brenner ned fra båten ble klar til fristen. */
-function lunte(c: CanvasRenderingContext2D, g: Game, b: Båt, x: number, y: number) {
-    const fr = frist(b);
-    const igjen = Math.max(0, fr.t - g.t);
-    const andel = Math.min(1, igjen / 30);
-    const w = BÅT_W;
-    c.strokeStyle = F.svak;
-    c.lineWidth = 3;
-    c.beginPath();
-    c.moveTo(x - w / 2, y);
-    c.lineTo(x + w / 2, y);
-    c.stroke();
-    c.strokeStyle = igjen < TUNING.varsel ? F.rød : F.gul;
-    c.beginPath();
-    c.moveTo(x - w / 2, y);
-    c.lineTo(x - w / 2 + w * andel, y);
-    c.stroke();
-    // Gnisten i enden.
-    c.fillStyle = F.rød;
-    c.beginPath();
-    c.arc(x - w / 2 + w * andel, y, 4, 0, Math.PI * 2);
-    c.fill();
-}
-
-function båt(c: CanvasRenderingContext2D, g: Game, side: Side) {
-    const x = BÅT_X[side];
-    const i = g.davit[side];
-    tekst(c, side === 'B' ? 'BABORD' : 'STYRBORD', x, 66, 12, F.svak);
-    if (høySide(g.t) === side) tekst(c, 'HØY SIDE', x, 82, 11, F.rød);
-    if (i === null) return;
-    const b = g.båter[i];
-    const y = båtY(b);
-    const fr = frist(b);
-    const fare = fr.t - g.t < TUNING.varsel;
-    c.strokeStyle = fare && Math.floor(g.t * 4) % 2 ? F.rød : F.linje;
-    c.lineWidth = 2;
-    c.beginPath();
-    c.moveTo(x - BÅT_W / 2 + 10, 100);
-    c.lineTo(x - BÅT_W / 2 + 10, y);
-    c.moveTo(x + BÅT_W / 2 - 10, 100);
-    c.lineTo(x + BÅT_W / 2 - 10, y);
-    c.stroke();
-    c.strokeStyle = F.linje;
-    c.strokeRect(x - BÅT_W / 2, y, BÅT_W, 30);
-    // Plassene: en prikk per plass, gul når den er tatt.
-    const per = Math.ceil(b.plasser / 2);
-    for (let p = 0; p < b.plasser; p++) {
-        const px = x - BÅT_W / 2 + 6 + (p % per) * ((BÅT_W - 12) / per);
-        const py = y + 9 + Math.floor(p / per) * 11;
-        c.fillStyle = p < b.folk ? F.gul : '#3d4452';
-        c.fillRect(px, py, 3, 6);
-    }
-    tekst(c, `${b.folk} / ${b.plasser}`, x, y - 14, 18, b.folk === b.plasser ? F.gul : F.linje);
-    tekst(c, b.navn, x, y + 44, 12, F.svak);
-    if (b.ned === 0) lunte(c, g, b, x, y - 34);
-    if (fare) tekst(c, fr.årsak === 'lås' ? 'LÅSES SNART' : 'VANNET KOMMER', x, y + 60, 12, F.rød);
-    if (b.ned === 0 && b.folk > 0 && ledig(b) >= 0 && side === g.landgang)
-        tekst(c, side === 'B' ? 'hold A' : 'hold D', x, y + 76, 11, F.svak);
-}
-
-function hud(c: CanvasRenderingContext2D, g: Game) {
-    c.strokeStyle = F.linje;
-    c.lineWidth = 1;
-    c.strokeRect(760, 440, 190, 90);
-    tekst(c, klokke(g.t), 855, 470, 34, F.linje);
-    const r = brukt(g);
-    tekst(c, `Reddet ${r} (1912: ${TUNING.seier})`, 855, 500, 13, r > TUNING.seier ? F.gul : F.linje);
-    tekst(c, `Tomme plasser ${tomme(g)}`, 855, 518, 12, F.svak);
-    const br = BRETT[Math.min(g.brett, BRETT.length - 1)];
-    tekst(c, br.tittel, 20, 470, 14, F.linje, 'left');
-    tekst(
+/** Havet bak skipet: horisonten og dønninger som driver sakte (parallakse). */
+function havetBak(c: CanvasRenderingContext2D, g: Game, o: TegneValg) {
+    const vy = vannY(g.t);
+    const hor = vy - 30;
+    strek(
         c,
-        `Brett ${Math.min(g.brett + 1, BRETT.length)} av ${BRETT.length}`,
-        20,
-        492,
-        12,
-        F.svak,
-        'left'
+        () => {
+            c.moveTo(16, hor);
+            c.lineTo(ARK.w - 16, hor);
+        },
+        0.8,
+        P.blyant,
+        0.5
+    );
+    if (o.lav) return;
+    for (let l = 0; l < 3; l++) {
+        const y = hor + 7 + l * 7;
+        const fart = 4 + l * 6;
+        c.globalAlpha = 0.18 + l * 0.08;
+        c.strokeStyle = P.hvit;
+        c.lineWidth = 0.7;
+        c.beginPath();
+        for (let x = -40 + ((g.t * fart) % 40); x < ARK.w; x += 40) {
+            c.moveTo(x, y);
+            c.quadraticCurveTo(x + 6, y - 2, x + 12, y);
+        }
+        c.stroke();
+    }
+    c.globalAlpha = 1;
+}
+
+function bølge(x: number, t: number, lag: number) {
+    return (
+        Math.sin(x * 0.035 + t * 1.3 + lag) * 3 +
+        Math.sin(x * 0.011 - t * 0.8 + lag * 2) * 4 +
+        Math.sin(x * 0.09 + t * 2.4) * 1
     );
 }
 
-function kort(c: CanvasRenderingContext2D, g: Game) {
-    if (g.t >= g.kortTil + 0.6 && g.t > 2.5) return;
-    const br = BRETT[Math.min(g.brett, BRETT.length - 1)];
-    c.fillStyle = 'rgba(20,24,30,0.85)';
-    c.fillRect(MIDT - 220, 200, 440, 90);
-    c.strokeStyle = F.linje;
-    c.strokeRect(MIDT - 220, 200, 440, 90);
-    tekst(c, br.tittel, MIDT, 230, 24, F.linje);
-    tekst(c, br.tekst, MIDT, 264, 14, F.linje);
+/** Tåke som driver sakte over natta (lyse flekker på papiret). */
+function tåke(c: CanvasRenderingContext2D, g: Game) {
+    for (let i = 0; i < 3; i++) {
+        const x = ((g.t * (9 + i * 5) + i * 380) % (ARK.w + 500)) - 250;
+        const y = 150 + i * 90;
+        const gr = c.createRadialGradient(x, y, 0, x, y, 230);
+        gr.addColorStop(0, 'rgba(150,180,225,0.10)');
+        gr.addColorStop(1, 'rgba(150,180,225,0)');
+        c.fillStyle = gr;
+        c.fillRect(x - 230, y - 230, 460, 460);
+    }
 }
 
-export function tegn(view: ArcadeView, g: Game) {
+function vann(c: CanvasRenderingContext2D, g: Game, o: TegneValg) {
+    const vy = vannY(g.t);
+    const steg = o.lav ? 24 : 12;
+    c.fillStyle = P.dyp;
+    c.globalAlpha = 0.86;
+    c.beginPath();
+    c.moveTo(0, ARK.h);
+    for (let x = 0; x <= ARK.w; x += steg) c.lineTo(x, vy + bølge(x, g.t, 0));
+    c.lineTo(ARK.w, ARK.h);
+    c.closePath();
+    c.fill();
+    c.globalAlpha = 1;
+    strek(
+        c,
+        () => {
+            for (let x = 0; x <= ARK.w; x += steg) {
+                const y = vy + bølge(x, g.t, 0);
+                if (x === 0) c.moveTo(x, y);
+                else c.lineTo(x, y);
+            }
+        },
+        1.4,
+        P.hvit,
+        0.85
+    );
+    // Hvite bølgestreker under flata (skravur).
+    const lag = o.lav ? 1 : 3;
+    c.strokeStyle = P.hvit;
+    c.lineWidth = 0.7;
+    for (let l = 1; l <= lag; l++) {
+        c.globalAlpha = 0.28 - l * 0.06;
+        c.beginPath();
+        const y0 = vy + l * 13;
+        for (let x = ((l * 37 + g.t * 6 * (l % 2 ? 1 : -1)) % 60) - 60; x < ARK.w; x += 60) {
+            const y = y0 + bølge(x, g.t, l) * 0.6;
+            c.moveTo(x, y);
+            c.quadraticCurveTo(x + 9, y - 3, x + 18, y);
+        }
+        c.stroke();
+    }
+    c.globalAlpha = 1;
+}
+
+// ---------- Inne i skipet (snittets ramme) ----------
+
+/** Lys i rommene: lanternegult der vannet ikke er, slukker dekk for dekk. */
+function lys(c: CanvasRenderingContext2D, g: Game, a: number) {
+    const vy = vannY(g.t);
+    const r = frø(33);
+    for (let i = 0; i < 7; i++) {
+        const y1 = DEKK_Y(i);
+        for (let x = SKROG.x0 + 10; x < SKROG.x1 - 16; x += 23) {
+            const på = r() < 0.55;
+            const fl = r();
+            if (!på) continue;
+            if (Object.values(TRAPP).some((t) => Math.abs(t.x - x - 6) < 18)) continue;
+            const p = iVerden(x + 6, y1 - 9, a);
+            const avstand = vy - p.y;
+            if (avstand < 0) continue;
+            let alfa = 0.85;
+            if (avstand < 16 && Math.sin(g.t * 23 + fl * 40) < -0.2) alfa *= 0.3;
+            c.fillStyle = P.gul;
+            c.globalAlpha = alfa * 0.16;
+            c.fillRect(x, y1 - 17, 12, 13);
+            c.globalAlpha = alfa;
+            c.fillRect(x + 3, y1 - 13, 6, 5);
+        }
+    }
+    c.globalAlpha = 1;
+}
+
+/** Gruppene i trappene: små klynger av folk på vei opp. */
+function trappefolk(c: CanvasRenderingContext2D, g: Game) {
+    c.fillStyle = P.gul;
+    const venter: Gruppe[] = [];
+    for (const gr of g.grupper) {
+        const t = TRAPP[gr.klasse];
+        if (gr.klasse === 3 && !g.portÅpen && gr.pos >= TUNING.port.pos - 1e-6) {
+            venter.push(gr);
+            continue;
+        }
+        const m = Math.min(gr.antall, 7);
+        for (let i = 0; i < m; i++) {
+            const pos = Math.max(0, gr.pos - i * 0.011);
+            const dekk = t.fra + pos * (7 - t.fra);
+            const d = Math.floor(dekk);
+            const frac = dekk - d;
+            const v = (d - t.fra) % 2 === 0 ? -1 : 1;
+            const x = t.x + v * 9 - v * 18 * frac;
+            const fot = DEKK_Y(t.fra) + (DEKK_Y(7) - DEKK_Y(t.fra)) * pos;
+            const gang = Math.sin(g.t * 9 + gr.id + i) * 0.6;
+            figur(c, x + gang, fot, 10, artAv(gr.id * 7 + i));
+        }
+    }
+    // Tredje klasse bak gitterporten på D-dekk.
+    const n = venter.reduce((s, x) => s + x.antall, 0);
+    const portY = DEKK_Y(3);
+    const vist = Math.min(n, 44);
+    for (let i = 0; i < vist; i++) {
+        const rad = Math.floor(i / 11);
+        const kol = i % 11;
+        c.globalAlpha = 1 - rad * 0.16;
+        figur(
+            c,
+            TRAPP[3].x + 16 + kol * 5.4 + (rad % 2) * 2.5,
+            portY - rad * 4,
+            10 - rad * 0.5,
+            artAv(i * 3 + 1)
+        );
+    }
+    c.globalAlpha = 1;
+    // Porten.
+    const x = TRAPP[3].x;
+    const åpen = g.portÅpen;
+    c.strokeStyle = åpen ? P.blyant : P.rød;
+    c.lineWidth = 1.4;
+    c.beginPath();
+    c.rect(x - 12, portY - 30, 24, 30);
+    const sk = åpen ? 10 : 0;
+    for (let b = -8; b <= 8; b += 4) {
+        c.moveTo(x + b - sk, portY - 30);
+        c.lineTo(x + b - sk, portY);
+    }
+    c.stroke();
+}
+
+/** Køen på båtdekket: alle i én kø, den forreste nærmest landgangen. */
+function kø(c: CanvasRenderingContext2D, g: Game, kq: KøVisning, dt: number) {
+    const fot = DEKK_Y(7) - 1;
+    const pr = 32;
+    const start = g.landgang === 'B' ? SKROG.x0 + 16 : SKROG.x1 - 16;
+    const retning = g.landgang === 'B' ? 1 : -1;
+    let j = 0;
+    const maks = 128;
+    for (let gi = 0; gi < g.kø.length && j < maks; gi++) {
+        const gr = g.kø[gi];
+        for (let i = 0; i < gr.antall && j < maks; i++, j++) {
+            const rad = Math.floor(j / pr);
+            const kol = j % pr;
+            const tx = start + retning * (kol * 7.6 + rad * 3.4 + (gi % 2) * 1.5);
+            const ty = fot - rad * 5.5;
+            if (kq.x[j] === undefined) {
+                kq.x[j] = tx;
+                kq.y[j] = ty;
+            }
+            const k = Math.min(1, dt * 7);
+            kq.x[j] += (tx - kq.x[j]) * k;
+            kq.y[j] += (ty - kq.y[j]) * k;
+            kq.art[j] = artAv(gr.id * 13 + i);
+            kq.foran[j] = gi === 0 ? 1 : 0;
+        }
+    }
+    kq.x.length = j;
+    kq.y.length = j;
+    // Tegn bakerste rad først.
+    for (let i = j - 1; i >= 0; i--) {
+        const rad = Math.floor(i / pr);
+        c.globalAlpha = (kq.foran[i] ? 1 : 0.8) - rad * 0.12;
+        c.fillStyle = P.gul;
+        const sv = Math.sin(g.t * 1.7 + i * 0.9) * 0.9;
+        figur(c, kq.x[i] + sv, kq.y[i], 13 - rad * 0.6, kq.art[i]);
+    }
+    c.globalAlpha = 1;
+}
+
+export interface KøVisning {
+    x: number[];
+    y: number[];
+    art: number[];
+    foran: number[];
+}
+export const nyKøVisning = (): KøVisning => ({ x: [], y: [], art: [], foran: [] });
+
+// ---------- Hele tegningen ----------
+
+export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: number, o: TegneValg) {
     const { ctx: c, w, h } = view;
-    c.fillStyle = F.bg;
-    c.fillRect(0, 0, w, h);
+    if (w < 4) return;
     const k = skala(w, h);
+    c.setTransform(view.dpr, 0, 0, view.dpr, 0, 0);
+    c.drawImage(hentPapir(w * view.dpr, h * view.dpr, o.lav), 0, 0, w, h);
     c.save();
     c.translate(k.ox, k.oy);
     c.scale(k.s, k.s);
+    c.lineCap = 'round';
+    c.lineJoin = 'round';
+
+    himmel(c, g, o);
+    tåke(c, g);
+    havetBak(c, g, o);
+
+    // Snittet krenger rundt PIVOT.
+    const a = vinkel(g.t);
+    c.save();
+    c.translate(MIDT, 300);
+    c.rotate(a);
+    c.translate(-MIDT, -300);
+    lys(c, g, a);
+    c.drawImage(hentSnitt(Math.min(3, k.s * view.dpr)), 0, 0, ARK.w, ARK.h);
+    trappefolk(c, g);
+    kø(c, g, kq, dt);
+    c.restore();
+
+    vann(c, g, o);
+    driver(c, g, fx);
+    landgang(c, g, fx, a);
+    davitBåt(c, g, 'B', fx, o);
+    davitBåt(c, g, 'S', fx, o);
+    plask(c, g, fx);
+    stempel(c, g, fx);
+
+    // Etiketter som ikke krenger.
+    const n = køAntall(g);
+    if (n > 0) etikett(c, `KØ ${n}`, MIDT, 104, 11, P.gul, 'center');
+    const bakPort = g.grupper
+        .filter((gr) => gr.klasse === 3 && !g.portÅpen && gr.pos >= TUNING.port.pos - 1e-6)
+        .reduce((s, gr) => s + gr.antall, 0);
+    if (bakPort > 0) {
+        const p = iVerden(TRAPP[3].x, DEKK_Y(3) - 40, a);
+        etikett(c, `3. KLASSE ${bakPort}`, p.x, p.y, 10, P.gul, 'center');
+    }
+
+    raketter(c, g, fx);
     profil(c, g);
-    snitt(c, g);
-    vann(c, g);
-    landgang(c, g);
-    kø(c, g);
-    båt(c, g, 'B');
-    båt(c, g, 'S');
-    hud(c, g);
-    kort(c, g);
+    if (o.spiller) {
+        tittelfelt(c, g);
+        tasteFelt(c, g);
+    }
+    ramme(c);
+    // Rakettlyset: hele tegningen blekes et øyeblikk.
+    const l = rakettLys(fx, g.t);
+    if (l > 0) {
+        c.fillStyle = P.hvit;
+        c.globalAlpha = l * 0.22;
+        c.fillRect(0, 0, ARK.w, ARK.h);
+        c.globalAlpha = 1;
+    }
     c.restore();
 }

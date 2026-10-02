@@ -17,6 +17,8 @@ const lerpPunkter = (pts: readonly { t: number }[], key: string, t: number): num
     return v(pts[pts.length - 1]);
 };
 
+export const maksKrengning = Math.max(...TUNING.krengning.map((p) => Math.abs(p.grader)));
+
 /** Krengning i grader: pluss mot styrbord, minus mot babord. */
 export const krengning = (t: number) => lerpPunkter(TUNING.krengning, 'grader', t);
 /** Vannhøyde i dekk (0 = G-dekk, 7 = båtdekket). */
@@ -48,8 +50,13 @@ export function firetid(b: Båt, t: number): number {
     const f = TUNING.firing;
     const base = f[b.slag];
     if (b.slag === 'sammenleggbar' || høySide(t) !== b.side) return base;
-    const maks = Math.max(...TUNING.krengning.map((p) => Math.abs(p.grader)));
-    return base * (1 + (f.høyTreghet * Math.abs(krengning(t))) / maks);
+    return base * (1 + (f.høyTreghet * Math.abs(krengning(t))) / maksKrengning);
+}
+
+/** Alvoret 0-1: hvor fort første og andre klasse kommer opp (båter nede og raketter). */
+export function alvor(g: Game): number {
+    const a = TUNING.alvor;
+    return Math.min(1, a.base + a.perBåt * nedeAntall(g) + a.perRakett * g.raketter.length);
 }
 
 export const ledig = (b: Båt) => b.plasser - b.folk;
@@ -76,6 +83,13 @@ export function bytt(g: Game, side?: Side) {
     g.hendelser.push({ t: g.t, slag: 'bytt', side: ny });
 }
 
+/** Folk per sekund over landgangen mot en side nå (tregere mot den høye siden). */
+export function landgangFart(g: Game, side: Side): number {
+    const l = TUNING.landgang;
+    if (høySide(g.t) !== side) return l.perSek;
+    return l.perSek * (1 - (l.høySide * Math.abs(krengning(g.t))) / maksKrengning);
+}
+
 /**
  * Køen går over landgangen, forfra, inn i båten den peker mot (bare før firingen har
  * startet). Er gruppa større enn plassene som er igjen, blir resten stående først i køen.
@@ -86,17 +100,15 @@ export function gåOmBord(g: Game, dt: number) {
         g.landgangRest = 0;
         return;
     }
-    g.landgangRest += dt * TUNING.landgang.perSek;
+    g.landgangRest += dt * landgangFart(g, b.side);
     while (g.landgangRest >= 1 && g.kø.length && ledig(b) > 0) {
         const forrest = g.kø[0];
         b.folk++;
         b.fra[forrest.klasse - 1]++;
         forrest.antall--;
         g.landgangRest--;
-        if (forrest.antall <= 0) {
-            g.kø.shift();
-            g.hendelser.push({ t: g.t, slag: 'ombord', side: b.side });
-        }
+        if (forrest.antall <= 0) g.kø.shift();
+        g.hendelser.push({ t: g.t, slag: 'ombord', side: b.side, båt: b.nr, plass: b.folk - 1 });
     }
 }
 
@@ -113,7 +125,7 @@ export function påVei(g: Game, innen: number): number {
     let n = 0;
     for (const gr of g.grupper) {
         const igjen = (1 - gr.pos) * gr.gang;
-        const venterPort = gr.klasse === 3 && g.t < g.portÅpner ? g.portÅpner - g.t : 0;
+        const venterPort = gr.klasse === 3 && !g.portÅpen ? Math.max(0, g.portÅpner - g.t) : 0;
         if (igjen + venterPort <= innen) n += gr.antall;
     }
     return n;
@@ -122,13 +134,11 @@ export function påVei(g: Game, innen: number): number {
 /**
  * Planleggeren: siste tidspunkt du kan begynne å fire hver båt som ikke er nede,
  * om alle båtene etter den skal rekke fristen sin. Regner bakfra med firingen i
- * serie (én hånd), tiden neste båt på samme side trenger for å svinge ut, og
- * brettkortet mellom brettene.
+ * serie (én hånd) og tiden neste båt på samme side trenger for å svinge ut.
  */
 export function sisteStart(g: Game): Map<number, number> {
     const rest = g.båter.filter((b) => b.tilstand !== 'nede' && b.tilstand !== 'tapt');
-    // Rekkefølge: brett for brett, innen brettet etter frist.
-    rest.sort((a, b) => a.brett - b.brett || frist(a).t - frist(b).t);
+    rest.sort((a, b) => frist(a).t - frist(b).t);
     const ut = new Map<number, number>();
     const f = TUNING.firing;
     let nesteHånd = Infinity;
@@ -145,13 +155,6 @@ export function sisteStart(g: Game): Map<number, number> {
         ut.set(b.nr, start);
         nesteHånd = start;
         nesteSide[b.side] = Math.min(nesteSide[b.side], start);
-        if (i > 0 && rest[i - 1].brett !== b.brett) {
-            // Neste brett kan ikke starte før dette er ferdig og kortet har stått.
-            const grense = Math.min(nesteHånd, nesteSide.B, nesteSide.S) - f.kort - f.svingUt;
-            nesteHånd = grense;
-            nesteSide.B = grense + f.svingUt;
-            nesteSide.S = grense + f.svingUt;
-        }
     }
     return ut;
 }
@@ -170,7 +173,7 @@ export function fase(k: Klasse, t: number) {
 /** Presset 0-1: vannet stiger, skipet krenger, køen vokser. */
 export function press(g: Game): number {
     const p = TUNING.press;
-    const maks = Math.max(...TUNING.krengning.map((x) => Math.abs(x.grader)));
+    const maks = maksKrengning;
     return Math.min(
         1,
         (p.vann * vannDekk(g.t)) / 7 +
@@ -189,6 +192,18 @@ export const taptePlasser = (g: Game) =>
 export const ferdigBåter = (g: Game) =>
     g.båter.filter((b) => b.tilstand === 'nede' || b.tilstand === 'tapt').length;
 export const nedeAntall = (g: Game) => g.båter.filter((b) => b.tilstand === 'nede').length;
+
+/** Reddet fra hver klasse (folk i båter som er nede). */
+export function reddetKlasse(g: Game): [number, number, number] {
+    const r: [number, number, number] = [0, 0, 0];
+    for (const b of g.båter)
+        if (b.tilstand === 'nede') for (let k = 0; k < 3; k++) r[k] += b.fra[k];
+    return r;
+}
+
+/** Folk fra tredje klasse bak porten eller på vei opp. */
+export const tredjePåVei = (g: Game) =>
+    g.grupper.reduce((s, gr) => s + (gr.klasse === 3 ? gr.antall : 0), 0);
 
 /** Klokkeslett som tekst: «01.37». */
 export function klokke(t: number): string {

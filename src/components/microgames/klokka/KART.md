@@ -1,51 +1,49 @@
 # Båtdekket klokka 00.45 - kart over mappa
 
-Gråboks (fase 3a). Brief: `docs/microgames/briefer/klokka-0045.md`. Komponent: `../BatdekketKlokka.tsx`.
+Ferdig spill (fase 3c). Brief: `docs/microgames/briefer/klokka-0045.md`. Komponent: `../BatdekketKlokka.tsx`
+(skall, input, tekst via `useArcadeText`, lyd, selvspill, start-/pause-/sluttskjerm).
 
-| Fil         | Hva den gjør                                                                                                   |
-| ----------- | -------------------------------------------------------------------------------------------------------------- |
-| `tuning.ts` | Alle tallene: seiersgrensen (705), landgangen, firetider, krengning, vann, ankomster per klasse (faser), gitterporten, planleggeren, ranger. `kl('01.40')` gir spillsekunder. |
-| `levels.ts` | De fire brettene og de 20 båtene (side, slag, plasser, frist = når vannet når festet, tette frister).          |
-| `state.ts`  | Typene (`Game`, `Båt`, `Gruppe`) og `newGame(seed)`. Ingen regler.                                              |
-| `rules.ts`  | Fagkjernen: `bytt()` (landgangen bytter side), `gåOmBord()` (køen går forfra inn i båten landgangen peker mot), `hold()`, `frist()` (vann eller lås), `firetid()`, `sisteStart()` (planleggeren), `press()`, `rang()`. |
-| `game.ts`   | Kjerneløkka `update(g, dt)`: raketter, nye grupper, gange og port, davitene, landgangen, firingen, frister (tapte båter), brettskifte, slutt. |
-| `bots.ts`   | Robotene (én kilde for sim og usePlaytest): klok, halvgod, fir-straks, venter-alltid, tilfeldig.              |
-| `sim.ts`    | `SimSpec` for `scripts/sim-microgame.mts`, `snapshotOf()` og `GAME_ID`.                                         |
-| `draw.ts`   | Gråboks-tegningen på et virtuelt ark 960x540: profilstripe, snitt som krenger, vann, landgangen, køen som små figurer i grupper, båtene med lunte, HUD, brettkort. `treff()` for pekeren. |
-| `texts.ts`  | Startreglene, tap med tips, SOLAS-linja og tallene fra 1912.                                                    |
+| Fil         | Hva den gjør |
+| ----------- | ------------ |
+| `tuning.ts` | Alle tallene: seiersgrensen (705), landgangen, firetider, krengning, vann, alvoret (tilstrømningen), klassene (antall fra granskningen, faser), gitterporten, raketter, ranger. `kl('01.40')` gir spillsekunder. |
+| `levels.ts` | De 20 båtene, ti per side, i den rekkefølgen de svinger ut (`klar`, `frist`), og fasene i natta (`BRETT`, styrt av klokka). |
+| `state.ts`  | Typene (`Game`, `Båt`, `Gruppe`, `Hendelse`) og `newGame(seed)`. Ingen regler. |
+| `rules.ts`  | Fagkjernen: `bytt()`, `gåOmBord()` (køen går forfra, tregere mot høy side), `hold()`, `frist()`, `firetid()`, `alvor()`, `sisteStart()` (planleggeren), `påVei()`, `press()`, `rang()`, `reddetKlasse()`. |
+| `game.ts`   | Kjerneløkka `update(g, dt)`: raketter, fase, nye grupper (alvoret), gange og port, davitene, landgangen, firingen, frister, slutt. |
+| `bots.ts`   | Robotene (én kilde for sim og usePlaytest): klok, halvgod, fir-straks, venter-alltid, tilfeldig. |
+| `sim.ts`    | `SimSpec` for `scripts/sim-microgame.mts`, `snapshotOf()` og `GAME_ID`. |
+| `geom.ts`   | Geometrien på arket 960x540: dekk, skrog, davitene, trappene, krengningen (`iVerden`), `båtPos`, `skala`/`tilArk`/`fraArk`, `treff()` for pekeren. |
+| `papir.ts`  | Det som står stille, tegnet én gang til offscreen-lerret: blåkopipapiret og skipssnittet. Paletten `P` og `strek()` (dobbel, håndtegnet strek). |
+| `draw.ts`   | `tegn()`: setter sammen bildet. Himmel, tåke, havet bak, lys i rommene, folk i trappene og bak porten, køen, vannet, rakettlyset. |
+| `baater.ts` | Båtene på davitene (lanterner, taljer, målelinje, lunte, tastetegn), landgangen med folk som går over, båter som driver, plask, «FULL»-stempel, raketter. |
+| `hud.ts`    | Profilstripa (de 20 båtplassene), tittelfeltet (klokka, reddet mot målet, tomme) og tastefeltet. |
+| `former.ts` | Små byggeklosser: silhuetten `figur()`, `målelinje()`, `tast()` og `TegneValg`. |
+| `fx.ts`     | Effekter fra hendelsene: folk over landgangen, lanterner som tennes, plask, «FULL»-stempel, raketter. Ingen regler. |
+| `lyd.ts`    | Lydene på arkadeskallets synth. |
+| `texts.ts`  | All tekst: regler, lapper, lærings-øyeblikk, tap med tips, «Dette skjedde», klassetall fra 1912, pausefakta. |
 
 ## Kjerneløkka
 
-1. Grupper starter i lugarene (klasse 1, 2, 3 åpner til ulike klokkeslett) og går opp trappa
-   (`gang`). Tredje klasse stopper ved gitterporten til `portÅpner`. På dekket stiller de seg i én kø.
-   Få folk i starten (ingen tror at skipet synker), mange mot slutten.
-2. Landgangen peker mot babord eller styrbord. `gåOmBord()`: køen går selv, forfra, inn i båten på
-   den siden med `landgang.perSek` folk i sekundet (bare før firingen har startet). `bytt()` snur
-   landgangen; den står stille i `landgang.bytt` sekunder. Eleven velger NÅR og hvilken side, aldri HVEM.
-3. `hold(side)`: etter `holdForsinkelse` løper tauet; båten firer med `firetid` (tregere på
-   den høye siden). Slipper du, stopper båten. En båt som har begynt å gå ned, kan ikke fylles.
-4. Hver hengende båt har en lunte som brenner ned mot fristen (vannet når festet, eller krengningen
-   låser styrbord-livbåtene). Brenner lunta ut, er båten og folkene i den tapt - men runden går videre.
-5. Når båten er nede eller tapt, svinger neste båt på den siden ut etter `svingUt`. Når alle båtene i
-   brettet er nede eller tapt, kommer neste brett (kortet står `kort` sekunder). Klokka går hele tiden.
-6. Slutt når alle båtene er nede eller tapt (eller 02.20). Seier: reddet (`brukt`) > `seier` (705, som i
-   1912). Tap: årsaken er `tomme` om tomme plasser i båtene på vannet veier mer enn plassene i tapte
-   båter, ellers `tapt`.
-7. `valg` teller bare sidebytter og firinger som starter (ærlig, ikke pyntet).
+1. Grupper starter i lugarene og går opp trappa. Første og andre klasse kommer fortere jo flere
+   båter som er nede (`alvor`): i 1912 ville mange ikke gå i de første båtene. Tredje klasse
+   samler seg bak gitterporten på D-dekk til `portÅpner` (ca. 01.38), og kommer så i en bølge.
+2. Hver side har sin rekke båter; det henger alltid én på babord og én på styrbord, hver med sin
+   lunte (frist). Landgangen fyller bare båten den peker mot. `bytt()` snur den (0,6 s stopp).
+3. `hold(side)`: etter 0,2 s løper tauet; slipper du, stopper båten. En båt på vei ned tar ingen flere.
+4. Lunta brenner ned mot fristen (vannet, eller krengningen som låser styrbord-livbåtene ca. 01.56).
+   Brenner den ut, er båten tapt - runden går videre.
+5. Slutt når alle båtene er nede eller tapt, eller 02.20. Seier: reddet > 705. Tap: `tomme` eller `tapt`.
+6. `valg` teller sidebytter og firinger som starter.
 
 ## Knapper
 
-- Vanskelighet totalt: `klasser.*.faser` (hvor mange som kommer når) mot fristene i `levels.ts`.
-  Tette frister tidlig gjør at venting på full båt koster båtene etter.
-- Landgangen: `landgang.perSek` (flaskehalsen sent på natta) og `landgang.bytt` (prisen for å bytte).
-- Låsing: `krengning` og `låsGrader`. Høy side tregere: `firing.høyTreghet`.
-- Robotenes plan: `plan.pause` (sekunder mellom to firinger) og marginen i `bots.ts`.
+- Dilemmaet tidlig: `alvor` (base, perBåt) mot fristene i brett 1. Lav base = den døde starten.
+- Bølgen: `klasser[3]` og `port.åpner` mot fristene for båt 11-4 og de sammenleggbare.
+- Flaskehalsen: `landgang.perSek` og firetidene.
 
 ## Fallgruver
 
-- Fristene er absolutte klokkeslett, men brettene starter når forrige er ferdig. Fir-straks kommer
-  tidlig til brett 3 og 4 og fyller dem fulle i flommen; den taper bare fordi brett 1 og 2 går nesten
-  tomme. Gir du flere folk tidlig, stiger fir-straks mot 705.
-- Venter-alltid mister nesten alle båtene i brett 1 og 2 (folkene i dem er borte), så den ligger langt
-  under. Gjør du landgangen mye raskere, kan den klare seg.
-- `poeng` = reddet (folk i båter som er nede). Folk i tapte båter teller ikke.
+- Alt over 1178 folk får aldri plass; sene båter fylles nesten alltid. Forskjellen mellom robotene
+  ligger i brett 1-2 (alvoret) og i om båtene spares til bølgen.
+- `fx` og `draw` leser bare spillet; hendelsene tømmes av komponenten hver ramme.
+- Tegningen bruker `g.t`, så pausen og sakte film fryser animasjonene også.
