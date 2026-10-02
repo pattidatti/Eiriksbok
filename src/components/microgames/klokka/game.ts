@@ -12,7 +12,8 @@ import {
     frist,
     gåOmBord,
     mellom,
-    portTid,
+    nesteSammenleggbar,
+    portFast,
     taptePlasser,
     tomme,
 } from './rules';
@@ -50,13 +51,36 @@ function nyeGrupper(g: Game) {
 
 function gå(g: Game, dt: number) {
     const port = TUNING.port.pos;
-    // Porten åpnes når stuerten er nede - eller av seg selv, sent.
-    if (!g.portÅpen && g.t >= portTid(g)) {
-        g.portÅpen = true;
+    const st = TUNING.stuert;
+    // Stuerten er fram: porten glir opp en stund, eller neste sammenleggbare båt er rigget.
+    if (g.stuertSendt !== null && !g.stuertGjort && g.t >= g.stuertSendt + st.ned) {
+        g.stuertGjort = true;
+        if (g.stuertMål === 'port') g.portLukkes = g.t + st.portÅpen;
+        else {
+            const b = nesteSammenleggbar(g);
+            if (b) {
+                b.rigget = true;
+                b.klar = Math.min(b.klar, g.t);
+                g.hendelser.push({
+                    t: g.t,
+                    slag: 'rigget',
+                    side: b.side,
+                    båt: b.nr,
+                    tekst: b.navn,
+                });
+            }
+        }
+    }
+    // Porten: åpen mens stuerten holder den, og for godt når den åpner seg av seg selv (sent).
+    const åpen = portFast(g) || g.t < g.portLukkes;
+    if (åpen !== g.portÅpen) {
+        g.portÅpen = åpen;
+        g.portEndret = g.t;
+        if (åpen) g.portFørst ??= g.t;
         g.hendelser.push({
             t: g.t,
             slag: 'port',
-            tekst: g.stuertSendt === null ? 'selv' : 'stuert',
+            tekst: !åpen ? 'stengt' : portFast(g) && g.t >= g.portLukkes ? 'selv' : 'stuert',
         });
     }
     for (const gr of g.grupper) {

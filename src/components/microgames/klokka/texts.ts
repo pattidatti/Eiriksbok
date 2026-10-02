@@ -2,28 +2,31 @@
 // sluttskjermen. Tonen er alvorlig og saklig: ingen vitser, ingen tall over døde.
 
 export const REGLER = [
-    { ikon: 'båt', tekst: 'En båt som er nede, kan aldri fylles igjen.' },
+    {
+        ikon: 'båt',
+        tekst: 'Køen går om bord der landgangen peker (← →). Hold A eller D for å fire. Tomme plasser er borte.',
+    },
+    { ikon: 'vann', tekst: 'Lunta over båten brenner ned. Når den er borte, tar vannet båten.' },
     {
         ikon: 'trapp',
-        tekst: 'Tredje klasse står bak en port nede i skipet. Send stuerten (S) for å åpne den. Da venter landgangen litt.',
+        tekst: 'Stuerten: åpne porten for tredje klasse (S) eller rigg en sammenleggbar båt (R). Landgangen venter mens han går.',
     },
-    { ikon: 'vann', tekst: 'Vannet stiger og skipet krenger. Lunta viser når båten er tapt.' },
 ] as const;
 
 /** Målet, på startskjermen. */
 export const MÅL = 'I 1912 ble rundt 705 reddet i livbåtene. Redd flere før skipet er borte.';
-
-export const STYRING =
-    'Køen går selv om bord der landgangen peker. Du velger side (babord = venstre, styrbord = høyre), når båten fires og når stuerten går. Aldri hvem.';
 
 /** Lappene (maks 7 ord). */
 export const LAPP = {
     fir: 'Hold D eller hold på båten',
     bytt: 'Klikk eller ← → for å bytte side',
     alvor: 'Flere skjønner at skipet synker',
-    port: 'Stuerten åpnet porten',
+    port: 'Porten er åpen - en stund',
+    portStengt: 'Porten gled igjen',
+    rigg: 'R: la stuerten rigge en sammenleggbar båt',
+    rigget: (navn: string) => `${navn} er klar`,
     portSelv: 'Porten åpnet seg - sent',
-    stuert: 'Trykk S: send stuerten ned',
+    stuert: 'Trykk S: send stuerten til porten',
     stuertGår: 'Landgangen venter på stuerten',
     lås: 'Krengningen låser styrbord-båtene snart',
     sist: 'Skyv dem av før vannet kommer',
@@ -38,7 +41,7 @@ export const BEAT = {
     },
     tredje: {
         tittel: 'Tredje klasse kommer sist',
-        tekst: 'De bodde lengst nede, bak en stengt port. Send stuerten ned (S) - men mens han er borte, står landgangen stille.',
+        tekst: 'De bodde lengst nede, bak en stengt port. Stuerten kan åpne den (S) en stund - men mens han er borte, står landgangen stille.',
     },
     frist: {
         tittel: 'Lunta brenner ned',
@@ -50,7 +53,7 @@ export const BEAT = {
 export const TAP = {
     tomme: {
         tittel: 'For mange tomme plasser',
-        tips: 'Båtene gikk før folk rakk å komme. Fir de første tidlig, så flere skjønner at det er alvor. Send stuerten ned til porten tidlig, mens køen er kort - da rekker tredje klasse båtene.',
+        tips: 'Båtene gikk før folk rakk å komme. Fir de første tidlig, så flere skjønner at det er alvor. Send stuerten til porten når køen er kort, og la ham rigge de sammenleggbare båtene før 02.00.',
     },
     tapt: {
         tittel: 'Vannet tok båtene',
@@ -80,8 +83,8 @@ export const KLASSER_1912 = [
 export const LÆRDOM = {
     alvor: 'Da de første båtene gikk, kom flere opp på dekket. I 1912 ville mange ikke gå i de første båtene - skipet virket tryggere.',
     tomme: (n: number) => `${n} plasser sto tomme i båtene dine. I 1912 var det 472.`,
-    tredje: (n: number, port: string, stuert: boolean) =>
-        `Porten til tredje klasse åpnet ${stuert ? 'seg da stuerten kom ned' : 'seg av seg selv'} klokka ${port}. ${n} av 709 fra tredje klasse fikk plass i båtene dine. I 1912 var det 176.`,
+    tredje: (n: number, port: string, turer: number, rigget: number) =>
+        `Porten til tredje klasse åpnet ${turer ? `seg første gang da stuerten kom ned (${turer} ${turer === 1 ? 'tur' : 'turer'})` : 'seg av seg selv'} klokka ${port}. Han rigget ${rigget} av 4 sammenleggbare båter. ${n} av 709 fra tredje klasse fikk plass i båtene dine. I 1912 var det 176.`,
     tapt: (n: number, p: number) =>
         `Vannet og krengningen tok ${n} ${n === 1 ? 'båt' : 'båter'} med ${p} plasser. Den siste båten fra Titanic gikk klokka 02.05.`,
     solas: 'Selv med hver plass brukt var det plass til bare halvparten. Etter Titanic skal livbåtene ha plass til alle (SOLAS, 1914).',

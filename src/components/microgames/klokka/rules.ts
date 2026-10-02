@@ -2,7 +2,7 @@
 // fristene (vannet og krengningen) og planleggeren robotene bruker.
 
 import type { Side } from './levels';
-import type { Båt, Game, Klasse } from './state';
+import type { Båt, Game, Klasse, StuertMål } from './state';
 import { SEK_PER_MIN, TUNING } from './tuning';
 
 const lerpPunkter = (pts: readonly { t: number }[], key: string, t: number): number => {
@@ -97,25 +97,46 @@ export function bytt(g: Game, side?: Side) {
     g.hendelser.push({ t: g.t, slag: 'bytt', side: ny });
 }
 
-/** Kan stuerten sendes ned nå? Én gang, når tredje klasse er på vei mot porten. */
-export const kanSendeStuert = (g: Game) =>
-    g.mode === 'play' && g.stuertSendt === null && !g.portÅpen && g.t >= TUNING.stuert.fra;
+/** Er stuerten borte nå (landgangen står stille)? */
+export const stuertBorte = (g: Game) =>
+    g.stuertSendt !== null && g.t < g.stuertSendt + TUNING.stuert.borte;
 
-/**
- * Verb nummer to: send stuerten ned for å åpne porten til tredje klasse. Mens han er
- * borte, står landgangen stille (båtene venter). Eleven velger når - aldri hvem.
- */
-export function sendStuert(g: Game) {
-    if (!kanSendeStuert(g)) return;
-    g.stuertSendt = g.t;
-    g.landgangKlar = Math.max(g.landgangKlar, g.t + TUNING.stuert.borte);
-    g.valg++;
-    g.hendelser.push({ t: g.t, slag: 'stuert' });
+/** Porten står åpen for godt fra dette tidspunktet (sent - i 1912 fant mange aldri veien). */
+export const portFast = (g: Game) => g.t >= g.portÅpner;
+
+/** Neste sammenleggbare båt stuerten kan rigge (C, D, A, B), eller null. */
+export const nesteSammenleggbar = (g: Game): Båt | null =>
+    g.båter.find((b) => b.slag === 'sammenleggbar' && b.tilstand === 'venter' && !b.rigget) ?? null;
+
+/** Kan stuerten gå nå, til porten eller til båtene? Én tur om gangen. */
+export function kanSendeStuert(g: Game, mål: StuertMål = 'port') {
+    if (g.mode !== 'play' || g.t < TUNING.stuert.fra || stuertBorte(g)) return false;
+    return mål === 'port' ? !g.portÅpen && !portFast(g) : nesteSammenleggbar(g) !== null;
 }
 
-/** Når porten åpnes: når stuerten er nede, eller av seg selv (sent). */
-export const portTid = (g: Game) =>
-    g.stuertSendt === null ? g.portÅpner : Math.min(g.portÅpner, g.stuertSendt + TUNING.stuert.ned);
+/**
+ * Verb nummer to: send stuerten ned til porten til tredje klasse (den står åpen en stund
+ * og glir igjen), eller la ham rigge neste sammenleggbare båt. Mens han er borte, står
+ * landgangen stille. Eleven velger hvor han går - aldri hvem som får plass.
+ */
+export function sendStuert(g: Game, mål: StuertMål = 'port') {
+    if (!kanSendeStuert(g, mål)) return;
+    g.stuertSendt = g.t;
+    g.stuertMål = mål;
+    g.stuertGjort = false;
+    g.turer[mål]++;
+    g.landgangKlar = Math.max(g.landgangKlar, g.t + TUNING.stuert.borte);
+    g.valg++;
+    g.hendelser.push({ t: g.t, slag: 'stuert', tekst: mål });
+}
+
+/** Når porten åpnes neste gang: nå, når stuerten er nede, eller av seg selv (sent). */
+export function portTid(g: Game): number {
+    if (g.portÅpen) return g.t;
+    if (g.stuertSendt !== null && !g.stuertGjort && g.stuertMål === 'port')
+        return Math.min(g.portÅpner, g.stuertSendt + TUNING.stuert.ned);
+    return g.portÅpner;
+}
 
 /** Folk per sekund over landgangen mot en side nå (tregere mot den høye siden). */
 export function landgangFart(g: Game, side: Side): number {
@@ -208,11 +229,20 @@ export function fase(k: Klasse, t: number) {
 export function press(g: Game): number {
     const p = TUNING.press;
     const maks = maksKrengning;
+    // Lunta: hvor nær den båten som henger med kortest lunte er fristen sin.
+    let lunte = 0;
+    for (const side of ['B', 'S'] as Side[]) {
+        const i = g.davit[side];
+        if (i === null) continue;
+        const igjen = frist(g.båter[i]).t - g.t;
+        lunte = Math.max(lunte, Math.min(1, Math.max(0, 1 - igjen / p.lunteSek)));
+    }
     return Math.min(
         1,
         (p.vann * vannDekk(g.t)) / 7 +
             (p.krengning * Math.abs(krengning(g.t))) / maks +
-            p.kø * Math.min(1, køAntall(g) / p.køFull)
+            p.kø * Math.min(1, køAntall(g) / p.køFull) +
+            p.lunte * lunte
     );
 }
 

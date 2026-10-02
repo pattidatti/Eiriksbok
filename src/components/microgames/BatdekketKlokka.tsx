@@ -24,7 +24,6 @@ import {
     kanSendeStuert,
     klokke,
     nesteTrinn,
-    portTid,
     rang,
     reddetKlasse,
     sendStuert,
@@ -51,16 +50,7 @@ import { TUNING } from './klokka/tuning';
 import { BRETT, type Side } from './klokka/levels';
 import { P } from './klokka/papir';
 import { SluttSkjerm, type Resultat } from './klokka/Slutt';
-import {
-    BEAT,
-    I1912,
-    LAPP,
-    LÆRDOM,
-    MÅL,
-    PAUSE,
-    REGLER,
-    STYRING,
-} from './klokka/texts';
+import { BEAT, I1912, LAPP, LÆRDOM, MÅL, PAUSE, REGLER } from './klokka/texts';
 
 // BÅTDEKKET KLOKKA 00.45 - Titanic, natt til 15. april 1912. Eleven er styrmann på
 // båtdekket og velger bare NÅR en båt fires og hvilken side landgangen peker mot - aldri
@@ -150,7 +140,9 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
     const [pauseMsg, setPauseMsg] = useState(PAUSE[0]);
     const [text, textLayer] = useArcadeText(GAME_ID);
     const skalaRef = useRef(skala(960, 540));
-    const peker = useRef<{ fra: Side | 'landgang' | 'port' | null; t: number } | null>(null);
+    const peker = useRef<{ fra: Side | 'landgang' | 'port' | 'rigg' | null; t: number } | null>(
+        null
+    );
     const lav = useRef(guessTier().tier === 'lav');
     // Det spillet har sagt i denne runden (lapper og varsler som bare skal komme én gang).
     const sagt = useRef(new Set<string>());
@@ -200,8 +192,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
         if (g.tapte.length) text.lesson('tapt', LÆRDOM.tapt(g.tapte.length, taptePlasser(g)), 3);
         text.lesson(
             'tredje',
-            LÆRDOM.tredje(kl[2], klokke(portTid(g)), g.stuertSendt !== null),
-            g.stuertSendt === null ? 3.2 : 2.5
+            LÆRDOM.tredje(kl[2], klokke(g.portFørst ?? g.portÅpner), g.turer.port, g.turer.rigg),
+            g.turer.port === 0 ? 3.2 : 2.5
         );
         text.lesson('tomme', LÆRDOM.tomme(t), t > I1912.tomme ? 2.8 : 2);
         if (første && (første.nedeKl ?? 99) < 30) text.lesson('alvor', LÆRDOM.alvor, 1.6);
@@ -285,12 +277,21 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 lyd.port();
                 const a = vinkel(g.t);
                 const p = iVerden(TRAPP[3].x, DEKK_Y(3) - 30, a);
-                text.point('port', h.tekst === 'selv' ? LAPP.portSelv : LAPP.port, ark(p.x, p.y), {
-                    seconds: 4,
+                const lapp =
+                    h.tekst === 'selv'
+                        ? LAPP.portSelv
+                        : h.tekst === 'stengt'
+                          ? LAPP.portStengt
+                          : LAPP.port;
+                text.point('port', lapp, ark(p.x, p.y), { seconds: 4 });
+            } else if (h.slag === 'rigget' && h.tekst) {
+                lyd.port();
+                text.point('rigget', LAPP.rigget(h.tekst), ark(480, DEKK_Y(7) - 30), {
+                    seconds: 3,
                 });
             } else if (h.slag === 'stuert') {
                 lyd.stuert();
-                text.point('stuertGår', LAPP.stuertGår, ark(480, DEKK_Y(7) - 30), { seconds: 3 });
+                text.point('stuertGår', LAPP.stuertGår, ark(480, DEKK_Y(7) - 30), { seconds: 2.5 });
             } else if (h.slag === 'bytt') {
                 lyd.bytt();
                 bytter.current++;
@@ -370,6 +371,11 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                 seconds: 12,
                 once: true,
             });
+        }
+        // Rigging: vis R når brett 3 er godt i gang og en sammenleggbar kan rigges.
+        if (!s.has('rigg') && g.brett >= 2 && kanSendeStuert(g, 'rigg')) {
+            s.add('rigg');
+            text.point('rigg', LAPP.rigg, ark(300, 505), { seconds: 7, once: true });
         }
         // Et nytt rangtrinn passert midt i natta: klokketoner og banner.
         const r = brukt(g);
@@ -479,7 +485,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             else if (e.code === 'Space') bytt(g);
             else if (e.code === 'KeyA') hold(g, 'B');
             else if (e.code === 'KeyD') hold(g, 'S');
-            else if (e.code === 'KeyS' || e.code === 'ArrowDown') sendStuert(g);
+            else if (e.code === 'KeyS' || e.code === 'ArrowDown') sendStuert(g, 'port');
+            else if (e.code === 'KeyR' || e.code === 'ArrowUp') sendStuert(g, 'rigg');
             else return;
             e.preventDefault();
         };
@@ -512,7 +519,8 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
             peker.current = { fra: hit, t: g.t };
             if (hit === 'B' || hit === 'S') hold(g, hit);
             else if (hit === 'landgang') bytt(g);
-            else if (hit === 'port') sendStuert(g);
+            else if (hit === 'port') sendStuert(g, 'port');
+            else if (hit === 'rigg') sendStuert(g, 'rigg');
         } else if (e.type === 'pointerup' || e.type === 'pointercancel') {
             const p0 = peker.current;
             peker.current = null;
@@ -642,9 +650,6 @@ export default function BatdekketKlokka({ onComplete }: MicroGameProps) {
                                     </div>
                                 ))}
                             </div>
-                            <p style={{ fontSize: 13, margin: '4px 0 0', color: P.blyant }}>
-                                {STYRING}
-                            </p>
                             <ArcadeBigButton onClick={start}>Til båtdekket</ArcadeBigButton>
                             {save.runder > 0 && (
                                 <p style={{ fontSize: 13, margin: 0 }}>

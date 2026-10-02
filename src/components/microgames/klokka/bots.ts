@@ -15,8 +15,8 @@ import {
     sendStuert,
     sisteStart,
 } from './rules';
-import { kl } from './tuning';
-import type { Båt } from './state';
+import { kl, TUNING } from './tuning';
+import type { Båt, StuertMål } from './state';
 import type { Game } from './state';
 
 type Grep = (g: Game) => void;
@@ -47,19 +47,43 @@ function pekMot(g: Game, ønsket: Båt | undefined, bedreMed: number, slakk: (b:
  * som kommer etter), firer fulle båter med en gang, og har landgangen mot båten med
  * kortest lunte.
  */
+/** Folk fra tredje klasse som står bak den stengte porten. */
+const bakPort = (g: Game) =>
+    g.grupper
+        .filter((gr) => gr.klasse === 3 && !g.portÅpen && gr.pos >= TUNING.port.pos - 1e-6)
+        .reduce((s, gr) => s + gr.antall, 0);
+
 /**
- * Når stuerten sendes. Den kloke sender ham så snart køen er nesten tom (da koster det
- * lite at landgangen står), og senest etter `senest` sekunder. Den halvgode husker det
- * først på et tilfeldig tidspunkt.
+ * Hvor stuerten skal (eller null). Den kloke sender ham når køen er kort (da koster det
+ * lite at landgangen står): til porten når mange venter der, og til de sammenleggbare
+ * båtene fra `riggFra`. Den halvgode husker ham bare av og til.
  */
-type Stuert = (g: Game) => boolean;
+type Stuert = (g: Game) => StuertMål | null;
 const stuertKlok =
-    (senest: number): Stuert =>
-    (g) =>
-        køAntall(g) < 6 || g.t > kl('01.12') + senest;
-const stuertSent = (rng: Rng, fra: string, til: string): Stuert => {
-    const når = kl(fra) + rng() * (kl(til) - kl(fra));
-    return (g) => g.t >= når;
+    (riggFra: string, minPort: number, kort: number): Stuert =>
+    (g) => {
+        const rolig = køAntall(g) < 8;
+        // Ingen båt som henger, har kort lunte: da tåler landgangen en pause.
+        const plan = sisteStart(g);
+        const romslig = SIDER.every((s) => {
+            const b = klarBåt(g, s);
+            return !b || (plan.get(b.nr) ?? Infinity) - g.t > TUNING.stuert.borte + 4;
+        });
+        // Kort kø og mange bak porten: hent dem. Lang kø: rigg heller en båt til.
+        const trengerFolk = bakPort(g) >= minPort && køAntall(g) < kort;
+        if (kanSendeStuert(g, 'port') && trengerFolk && (rolig || romslig)) return 'port';
+        if (g.t >= kl(riggFra) && kanSendeStuert(g, 'rigg') && romslig && !trengerFolk)
+            return 'rigg';
+        return null;
+    };
+const stuertGlemsk = (rng: Rng, hvert: [number, number], riggFra: string): Stuert => {
+    let neste = kl('01.20') + rng() * hvert[1];
+    return (g) => {
+        if (g.t < neste) return null;
+        neste = g.t + hvert[0] + rng() * (hvert[1] - hvert[0]);
+        if (g.t >= kl(riggFra) && kanSendeStuert(g, 'rigg') && rng() < 0.5) return 'rigg';
+        return kanSendeStuert(g, 'port') ? 'port' : null;
+    };
 };
 
 function klok(
@@ -71,7 +95,8 @@ function klok(
 ): Grep {
     return (g) => {
         if (g.mode !== 'play') return;
-        if (kanSendeStuert(g) && stuert(g)) sendStuert(g);
+        const mål = stuert(g);
+        if (mål) sendStuert(g, mål);
         const plan = sisteStart(g);
         const klare = SIDER.map((s) => klarBåt(g, s)).filter((b) => b !== null);
         const slakk = (b: Båt) => (plan.get(b.nr) ?? Infinity) - g.t - margin;
@@ -143,7 +168,7 @@ function tilfeldig(rng: Rng): Grep {
     return (g) => {
         if (g.mode !== 'play') return;
         const r = Math.floor(rng() * 6);
-        if (r === 5) sendStuert(g);
+        if (r === 5) sendStuert(g, rng() < 0.5 ? 'port' : 'rigg');
         else if (r === 0) bytt(g);
         else if (r === 1) hold(g, 'B');
         else if (r === 2) hold(g, 'S');
@@ -170,14 +195,14 @@ export const BOTS: Record<string, BotDef> = {
     klok: {
         forventer: 'vinner',
         beskrivelse:
-            'Har landgangen mot båten med kortest lunte, venter så lenge vannet og krengningen tåler det, firer fulle båter straks og sender stuerten ned til porten så snart køen er nesten tom.',
-        make: () => klok(1.2, 1, 2, 22, stuertKlok(20)),
+            'Har landgangen mot båten med kortest lunte, venter så lenge vannet og krengningen tåler det, firer fulle båter straks og sender stuerten når køen er kort: til porten når mange venter der, og til de sammenleggbare båtene mot slutten.',
+        make: () => klok(1.2, 1, 2, 22, stuertKlok('01.42', 25, 60)),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger samme plan, men reagerer bare hvert andre øyeblikk, firer med god margin, nøyer seg med nesten fulle båter og husker stuerten først et stykke ut i natta.',
-        make: (rng) => treg(2, klok(6, 0.8, 6, 0, stuertSent(rng, '01.24', '01.48'))),
+            'Følger samme plan, men reagerer bare hvert andre øyeblikk, firer med god margin, nøyer seg med nesten fulle båter og husker stuerten bare av og til.',
+        make: (rng) => treg(2, klok(6, 0.8, 6, 0, stuertGlemsk(rng, [25, 45], '01.50'))),
     },
     'fir-straks': {
         forventer: 'taper',

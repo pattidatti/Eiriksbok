@@ -16,7 +16,12 @@ export interface Båt extends BåtData {
     /** 0 = ved dekket, 1 = på vannet. */
     ned: number;
     nedeKl: number | null;
+    /** Sammenleggbar båt som stuerten har rigget (kan svinge ut med en gang). */
+    rigget: boolean;
 }
+
+/** Hvor stuerten går: ned til porten, eller rigge neste sammenleggbare båt. */
+export type StuertMål = 'port' | 'rigg';
 
 export interface Gruppe {
     id: number;
@@ -41,7 +46,8 @@ export interface Hendelse {
         | 'bytt'
         | 'port'
         | 'sving'
-        | 'stuert';
+        | 'stuert'
+        | 'rigget';
     side?: Side;
     tekst?: string;
     /** Båten hendelsen gjelder (indeks i båter). */
@@ -71,8 +77,18 @@ export interface Game {
     igjen: Record<Klasse, number>;
     portÅpner: number;
     portÅpen: boolean;
-    /** Når stuerten ble sendt ned for å åpne porten (null = ikke sendt). */
+    /** Porten glir igjen her (etter at stuerten åpnet den). */
+    portLukkes: number;
+    /** Når porten sist åpnet eller lukket seg (til animasjonen). */
+    portEndret: number;
+    /** Første gang porten åpnet seg (null = aldri). */
+    portFørst: number | null;
+    /** Når stuerten sist ble sendt (null = aldri), hvor, og om jobben er gjort. */
     stuertSendt: number | null;
+    stuertMål: StuertMål;
+    stuertGjort: boolean;
+    /** Turer stuerten har gått til porten og til båtene. */
+    turer: { port: number; rigg: number };
     nesteId: number;
     /** Siden landgangen peker mot. Køen går selv inn i båten på den siden. */
     landgang: Side;
@@ -103,13 +119,14 @@ export function newGame(seed: number): Game {
                 fra: [0, 0, 0],
                 ned: 0,
                 nedeKl: null,
+                rigget: false,
             })
         )
     );
     if (båter.length !== ALLE_BÅTER.length) throw new Error('båtlista stemmer ikke');
     const g: Game = {
         rng,
-        t: 0,
+        t: TUNING.start,
         mode: 'play',
         årsak: null,
         tapte: [],
@@ -127,7 +144,13 @@ export function newGame(seed: number): Game {
         },
         portÅpner: p0 + rng() * (p1 - p0),
         portÅpen: false,
+        portLukkes: -1,
+        portEndret: -9,
+        portFørst: null,
         stuertSendt: null,
+        stuertMål: 'port',
+        stuertGjort: true,
+        turer: { port: 0, rigg: 0 },
         nesteId: 1,
         landgang: 'S',
         landgangKlar: 0,
@@ -136,10 +159,20 @@ export function newGame(seed: number): Game {
         holdT: 0,
         valg: 0,
         hendelser: [],
-        raketter: [],
+        raketter: TUNING.raketter.filter((r) => r < TUNING.start),
     };
-    // Første fem sekunder: en liten gruppe står allerede og nøler i køen.
-    g.kø.push({ id: g.nesteId++, klasse: 1, antall: 4, pos: 1, gang: 1, iKø: true });
-    for (const k of [1, 2, 3] as Klasse[]) g.nesteGruppe[k] = TUNING.klasser[k].åpner + 2;
+    // Runden starter midt i det: en gruppe står allerede i køen og flere er i trappa.
+    g.kø.push({ id: g.nesteId++, klasse: 1, antall: 14, pos: 1, gang: 1, iKø: true });
+    g.igjen[1] -= 10;
+    for (const [klasse, antall, pos] of [
+        [1, 9, 0.75],
+        [1, 7, 0.4],
+        [2, 10, 0.2],
+    ] as [Klasse, number, number][]) {
+        g.igjen[klasse] -= antall;
+        g.grupper.push({ id: g.nesteId++, klasse, antall, pos, gang: 9, iKø: false });
+    }
+    for (const k of [1, 2, 3] as Klasse[])
+        g.nesteGruppe[k] = Math.max(TUNING.start, TUNING.klasser[k].åpner) + 2;
     return g;
 }

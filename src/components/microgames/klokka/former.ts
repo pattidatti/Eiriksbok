@@ -11,11 +11,19 @@ export interface TegneValg {
 // ---------- Små byggeklosser ----------
 
 /** En silhuett uten ansikt: hode og kropp (frakk, kjole eller barn). */
-export function figur(c: CanvasRenderingContext2D, x: number, fot: number, h: number, art: number) {
+export function figur(
+    c: CanvasRenderingContext2D,
+    x: number,
+    fot: number,
+    h: number,
+    art: number,
+    kant = false
+) {
     if (art === 2) h *= 0.72;
     const r = h * 0.13;
     c.beginPath();
     c.arc(x, fot - h + r, r, 0, Math.PI * 2);
+    if (kant) c.stroke();
     c.fill();
     const skulder = fot - h + r * 2.1;
     const b = h * 0.17;
@@ -38,6 +46,7 @@ export function figur(c: CanvasRenderingContext2D, x: number, fot: number, h: nu
         c.lineTo(x - b * 1.1, fot - h * 0.12);
     }
     c.closePath();
+    if (kant) c.stroke();
     c.fill();
 }
 

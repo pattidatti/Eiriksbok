@@ -5,7 +5,7 @@ import { type Side } from './levels';
 import { frist, høySide, klarBåt, ledig } from './rules';
 import type { Båt, Game } from './state';
 import { TUNING } from './tuning';
-import { BÅT_H, BÅT_W, DEKK_Y, MIDT, SKROG, båtPos, iVerden, vannY } from './geom';
+import { ARK, BÅT_H, BÅT_W, DEKK_Y, MIDT, SKROG, båtPos, iVerden, vannY } from './geom';
 import { type Fx } from './fx';
 import { P, etikett, strek } from './papir';
 
@@ -358,6 +358,30 @@ export function stempel(c: CanvasRenderingContext2D, g: Game, fx: Fx) {
         c.globalAlpha = inn * (k > 0.75 ? (1 - k) / 0.25 : 1);
         strek(c, () => c.rect(-28, -11, 56, 22), 2, P.gul, 1);
         etikett(c, 'FULL', 0, 1, 15, P.gul, 'center', 800);
+        c.restore();
+    }
+    c.globalAlpha = 1;
+}
+
+/**
+ * Tallene som flyter opp fra båten når den treffer vannet: lite, for stort, riktig
+ * størrelse, så stiger de og blekner. TOMME er like stort som REDDET - og rødt.
+ */
+export function flytTall(c: CanvasRenderingContext2D, g: Game, fx: Fx) {
+    for (const s of fx.tall) {
+        const k = g.t - s.t0;
+        if (k < 0) continue;
+        const sk =
+            k < 0.12 ? 0.4 + (k / 0.12) * 1.0 : k < 0.3 ? 1.4 - ((k - 0.12) / 0.18) * 0.4 : 1;
+        const y = vannY(g.t) - 62 - s.rekke * 26 - k * 16;
+        const x = Math.max(70, Math.min(ARK.w - 70, s.x));
+        c.save();
+        c.translate(x, y);
+        c.scale(sk, sk);
+        c.globalAlpha = k > 1.8 ? Math.max(0, 1 - (k - 1.8) / 0.8) : 1;
+        c.shadowColor = P.dyp;
+        c.shadowBlur = 6;
+        etikett(c, s.tekst, 0, 0, 22, s.rød ? P.rød : P.gul, 'center', 800);
         c.restore();
     }
     c.globalAlpha = 1;

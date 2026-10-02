@@ -6,7 +6,7 @@
 
 import type { ArcadeView } from '../arcade/useArcade';
 
-import { kanSendeStuert, køAntall, portTid } from './rules';
+import { kanSendeStuert, køAntall, nesteSammenleggbar, stuertBorte } from './rules';
 import type { Game, Gruppe } from './state';
 import { TUNING } from './tuning';
 import { ARK, DEKK_Y, MIDT, SKROG, TRAPP, iVerden, skala, vannY, vinkel } from './geom';
@@ -14,7 +14,7 @@ import { rakettLys, ristNå, type Fx } from './fx';
 import { P, etikett, frø, lagPapir, lagSnitt, ramme, strek } from './papir';
 
 import { artAv, figur, type TegneValg } from './former';
-import { davitBåt, driver, landgang, plask, raketter, stempel } from './baater';
+import { davitBåt, driver, flytTall, landgang, plask, raketter, stempel } from './baater';
 import { profil, tasteFelt, tittelfelt } from './hud';
 
 export type { TegneValg } from './former';
@@ -231,7 +231,9 @@ function trappefolk(c: CanvasRenderingContext2D, g: Game) {
     c.lineWidth = 1.4;
     c.beginPath();
     c.rect(x - 12, portY - 30, 24, 30);
-    const sk = åpen ? 10 * Math.min(1, (g.t - portTid(g)) / 0.7) : 0;
+    // Porten glir til side når den åpnes, og tilbake når den glir igjen.
+    const glid = Math.min(1, (g.t - g.portEndret) / 0.7);
+    const sk = 10 * (åpen ? glid : 1 - glid);
     for (let b = -8; b <= 8; b += 4) {
         c.moveTo(x + b - sk, portY - 30);
         c.lineTo(x + b - sk, portY);
@@ -244,7 +246,7 @@ function trappefolk(c: CanvasRenderingContext2D, g: Game) {
  * opp igjen. Mens han er borte, står landgangen stille.
  */
 function stuert(c: CanvasRenderingContext2D, g: Game) {
-    if (g.stuertSendt === null) return;
+    if (g.stuertSendt === null || g.stuertMål !== 'port') return;
     const s = g.t - g.stuertSendt;
     const { ned, borte } = TUNING.stuert;
     if (s < 0 || s > borte) return;
@@ -277,7 +279,7 @@ function stuert(c: CanvasRenderingContext2D, g: Game) {
 /** Køen på båtdekket: alle i én kø, den forreste nærmest landgangen. */
 function kø(c: CanvasRenderingContext2D, g: Game, kq: KøVisning, dt: number) {
     const fot = DEKK_Y(7) - 1;
-    const pr = 32;
+    const pr = 24;
     const start = g.landgang === 'B' ? SKROG.x0 + 16 : SKROG.x1 - 16;
     const retning = g.landgang === 'B' ? 1 : -1;
     let j = 0;
@@ -287,8 +289,8 @@ function kø(c: CanvasRenderingContext2D, g: Game, kq: KøVisning, dt: number) {
         for (let i = 0; i < gr.antall && j < maks; i++, j++) {
             const rad = Math.floor(j / pr);
             const kol = j % pr;
-            const tx = start + retning * (kol * 7.6 + rad * 3.4 + (gi % 2) * 1.5);
-            const ty = fot - rad * 5.5;
+            const tx = start + retning * (kol * 10 + rad * 4.5 + (gi % 2) * 2);
+            const ty = fot - rad * 7;
             if (kq.x[j] === undefined) {
                 kq.x[j] = tx;
                 kq.y[j] = ty;
@@ -303,12 +305,15 @@ function kø(c: CanvasRenderingContext2D, g: Game, kq: KøVisning, dt: number) {
     kq.x.length = j;
     kq.y.length = j;
     // Tegn bakerste rad først.
+    // Mørk kant rundt hver silhuett, så de skiller seg fra hverandre og fra dekket.
+    c.strokeStyle = P.dyp;
+    c.lineWidth = 1.6;
     for (let i = j - 1; i >= 0; i--) {
         const rad = Math.floor(i / pr);
-        c.globalAlpha = (kq.foran[i] ? 1 : 0.8) - rad * 0.12;
-        c.fillStyle = P.gul;
+        c.globalAlpha = (kq.foran[i] ? 1 : 0.82) - rad * 0.12;
+        c.fillStyle = kq.foran[i] ? P.gul : P.lykt;
         const sv = Math.sin(g.t * 1.7 + i * 0.9) * 0.9;
-        figur(c, kq.x[i] + sv, kq.y[i], 13 - rad * 0.6, kq.art[i]);
+        figur(c, kq.x[i] + sv, kq.y[i], 17 - rad * 0.8, kq.art[i], true);
     }
     c.globalAlpha = 1;
 }
@@ -360,6 +365,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
     davitBåt(c, g, 'S', fx, o);
     plask(c, g, fx);
     stempel(c, g, fx);
+    flytTall(c, g, fx);
 
     // Etiketter som ikke krenger.
     const n = køAntall(g);
@@ -373,10 +379,28 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, kq: KøVisning, dt: numb
     }
     if (o.spiller && kanSendeStuert(g)) {
         const p = iVerden(TRAPP[3].x, DEKK_Y(3) + 14, a);
-        etikett(c, 'S: SEND STUERTEN', p.x, p.y, 10, P.hvit, 'center', 800);
+        etikett(c, 'S: ÅPNE PORTEN', p.x, p.y, 11, P.hvit, 'center', 800);
     }
-    if (g.stuertSendt !== null && g.t < g.stuertSendt + TUNING.stuert.borte)
-        etikett(c, 'LANDGANGEN VENTER - STUERTEN ER NEDE', MIDT, 90, 10, P.hvit, 'center');
+    if (g.portÅpen && g.portLukkes > g.t && !(g.t >= g.portÅpner)) {
+        const p = iVerden(TRAPP[3].x, DEKK_Y(3) + 14, a);
+        etikett(c, `ÅPEN ${Math.ceil(g.portLukkes - g.t)} S`, p.x, p.y, 11, P.gul, 'center', 800);
+    }
+    if (stuertBorte(g)) {
+        const rigg = g.stuertMål === 'rigg';
+        const neste = nesteSammenleggbar(g);
+        etikett(
+            c,
+            rigg
+                ? `LANDGANGEN VENTER - STUERTEN RIGGER ${neste && !g.stuertGjort ? neste.navn.toUpperCase() : 'BÅTEN'}`
+                : 'LANDGANGEN VENTER - STUERTEN ER NEDE VED PORTEN',
+            MIDT,
+            90,
+            12,
+            P.hvit,
+            'center',
+            800
+        );
+    }
 
     raketter(c, g, fx);
     profil(c, g);

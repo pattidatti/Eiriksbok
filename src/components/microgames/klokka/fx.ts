@@ -27,6 +27,8 @@ export interface Fx {
     /** Båter vannet tok (en kort strek som synker). */
     tapt: { x: number; y: number; t0: number }[];
     nesteDrift: Record<Side, number>;
+    /** «+N REDDET» og «-N TOMME» som flyter opp fra båten når den treffer vannet. */
+    tall: { x: number; t0: number; tekst: string; rød: boolean; rekke: number }[];
     /** Et lite rykk i hele tegningen (g.t og styrke 0-1) når en båt treffer vannet. */
     rist: { t0: number; styrke: number };
 }
@@ -42,6 +44,7 @@ export function nyFx(g: Game): Fx {
         tapt: [],
         nesteDrift: { B: 0, S: 0 },
         rist: { t0: -9, styrke: 0 },
+        tall: [],
     };
 }
 
@@ -58,6 +61,10 @@ export function fxHendelse(fx: Fx, g: Game, h: Hendelse) {
         fx.plask.push({ x: p.x, y: p.y + 18, t0: g.t, stor: true });
         if (b.folk >= b.plasser) fx.stempel.push({ båt: b.nr, t0: g.t, x: p.x, y: p.y });
         fx.rist = { t0: g.t, styrke: b.folk >= b.plasser ? 1 : 0.55 };
+        fx.tall.push({ x: p.x, t0: g.t, tekst: `+${b.folk} REDDET`, rød: false, rekke: 0 });
+        const tom = b.plasser - b.folk;
+        if (tom > 0)
+            fx.tall.push({ x: p.x, t0: g.t + 0.25, tekst: `-${tom} TOMME`, rød: true, rekke: 1 });
         fx.driver.push({
             båt: b.nr,
             side: h.side,
@@ -81,6 +88,7 @@ export function fxRydd(fx: Fx, t: number) {
     fx.raketter = fx.raketter.filter((r) => t - r.t0 < 5);
     fx.stempel = fx.stempel.filter((s) => t - s.t0 < 2.4);
     fx.tapt = fx.tapt.filter((s) => t - s.t0 < 3);
+    fx.tall = fx.tall.filter((s) => t - s.t0 < 2.6);
 }
 
 /** Rykket i tegningen nå (forskyvning i arkpunkter). */

@@ -96,9 +96,9 @@ export function profil(c: CanvasRenderingContext2D, g: Game) {
 
 export function tittelfelt(c: CanvasRenderingContext2D, g: Game) {
     const x = 800;
-    const y = 410;
+    const y = 396;
     const w = 150;
-    const h = 120;
+    const h = 136;
     c.fillStyle = P.papir;
     c.globalAlpha = 0.92;
     c.fillRect(x, y, w, h);
@@ -111,8 +111,8 @@ export function tittelfelt(c: CanvasRenderingContext2D, g: Game) {
             c.lineTo(x + w, y + 30);
             c.moveTo(x, y + 70);
             c.lineTo(x + w, y + 70);
-            c.moveTo(x, y + 96);
-            c.lineTo(x + w, y + 96);
+            c.moveTo(x, y + 112);
+            c.lineTo(x + w, y + 112);
         },
         1.1,
         P.hvit,
@@ -160,7 +160,10 @@ export function tittelfelt(c: CanvasRenderingContext2D, g: Game) {
         slått ? P.gul : P.hvit,
         'left'
     );
-    etikett(c, `TOMME ${tomme(g)}`, x + 5, y + 115, 10, P.blyant, 'left');
+    // TOMME like stort som REDDET: tomme plasser er borte for alltid.
+    const tom = tomme(g);
+    etikett(c, 'TOMME', x + 5, y + 124, 10, P.blyant, 'left');
+    etikett(c, String(tom), x + w - 5, y + 125, 15, tom > 0 ? P.rød : P.hvit, 'right', 800);
 }
 
 export function tasteFelt(c: CanvasRenderingContext2D, g: Game) {
@@ -186,22 +189,38 @@ export function tasteFelt(c: CanvasRenderingContext2D, g: Game) {
     const br = BRETT[g.brett];
     etikett(c, br.banner, x + 6, y + 10, 10, P.hvit, 'left');
     etikett(c, br.tittel.toUpperCase(), x + 6, y + 22, 9, P.blyant, 'left');
-    tast(c, x + 18, y + 42, '←');
-    tast(c, x + 40, y + 42, '→');
-    etikett(c, 'BYTT SIDE', x + 56, y + 43, 10, P.hvit, 'left');
-    tast(c, x + 18, y + 61, 'A', g.hold === 'B');
-    etikett(c, 'HOLD: FIR VENSTRE', x + 34, y + 62, 10, P.hvit, 'left');
-    tast(c, x + 18, y + 80, 'D', g.hold === 'S');
-    etikett(c, 'HOLD: FIR HØYRE', x + 34, y + 81, 10, P.hvit, 'left');
-    const kan = kanSendeStuert(g);
-    tast(c, x + 18, y + 99, 'S', kan && Math.sin(g.t * 4) > 0);
+    tast(c, x + 18, y + 40, '←');
+    tast(c, x + 40, y + 40, '→');
+    etikett(c, 'BYTT SIDE', x + 56, y + 41, 10, P.hvit, 'left');
+    tast(c, x + 18, y + 57, 'A', g.hold === 'B');
+    etikett(c, 'HOLD: FIR VENSTRE', x + 34, y + 58, 10, P.hvit, 'left');
+    tast(c, x + 18, y + 74, 'D', g.hold === 'S');
+    etikett(c, 'HOLD: FIR HØYRE', x + 34, y + 75, 10, P.hvit, 'left');
+    // Stuerten: én tur om gangen, til porten eller til de sammenleggbare båtene.
+    const port = kanSendeStuert(g, 'port');
+    const rigg = kanSendeStuert(g, 'rigg');
+    const blink = Math.sin(g.t * 4) > 0;
+    tast(c, x + 18, y + 92, 'S', port && blink);
     etikett(
         c,
-        g.stuertSendt !== null || g.portÅpen ? 'PORTEN ER ÅPEN' : 'STUERT: ÅPNE PORTEN',
+        g.portÅpen ? 'PORTEN ER ÅPEN' : 'STUERT: ÅPNE PORT',
         x + 34,
-        y + 100,
+        y + 93,
         10,
-        kan ? P.gul : P.blyant,
+        port ? P.gul : P.blyant,
+        'left'
+    );
+    const igjen = g.båter.filter(
+        (b) => b.slag === 'sammenleggbar' && b.tilstand === 'venter' && !b.rigget
+    ).length;
+    tast(c, x + 18, y + 109, 'R', rigg && blink);
+    etikett(
+        c,
+        igjen ? `STUERT: RIGG BÅT (${igjen})` : 'ALLE ER RIGGET',
+        x + 34,
+        y + 110,
+        10,
+        rigg ? P.gul : P.blyant,
         'left'
     );
 }

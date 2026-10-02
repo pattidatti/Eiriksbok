@@ -462,3 +462,38 @@ preussisk blått, lanternegule plasser i natta».
   riktig retning, men koster en synlig pause; trinnet 870 er nådd av klok i litt under halvparten av
   rundene (bevisst, som topptrinn); stuerten tegnes bare i 10 s og ses ikke på filmrammene;
   «I SISTE LITEN» kan komme samtidig med «Tomme plasser er borte»-øyeblikket.
+- **Fase: forbedring 2 etter vurdering 2 (forbedrer, 2026-10-02).** Vurdering 2: Gøy 3, Utseende 4,
+  Lærerikt 5, Lesbart 4, Unikt 4 (sum 20). Gøy har stått på 3 i to runder, så kjerneløkka ble endret.
+  (1) Dødtiden i starten er borte: runden starter 00.55 (`TUNING.start`), ikke 00.45, med 14 folk i
+  køen og tre grupper i trappene, alvoret starter på 0,5 (var 0,22), og de fire første lunte-fristene
+  er 01.07-01.14. Den første båten må fylles og fires i løpet av de første 25 sekundene. Presset har
+  fått et lunteledd (hvor nær den korteste lunta er fristen), fordi lunta er det eleven faktisk føler
+  i starten. (2) Stuerten er et gjentatt valg: én tur om gangen, enten ned til porten (S) - den står
+  åpen i 20 s og glir igjen - eller rigge neste sammenleggbare båt (R). Uriggede sammenleggbare kan
+  først svinge ut 02.07, og D og B på den lave siden går da tapt. Hver tur koster 8 s der landgangen
+  står stille. Eleven velger fortsatt aldri hvem. Reglene på startskjermen er tre (landgang og
+  tomme plasser, lunta, stuerten), og menyen har ikke lenger egen styringstekst. (3) Respons:
+  «+N REDDET» (gul) og «-N TOMME» (rød, like stor) flyter opp fra båten når den treffer vannet
+  (liten, for stor, riktig størrelse, stiger og blekner); TOMME står i tittelfeltet like stort som
+  REDDET og er rødt; køen tegnes med større silhuetter (17 px) med mørk kant, forreste gruppe gul og
+  resten mørkere; tastefeltet har S og R med tall for båter igjen å rigge; klikk på radene virker.
+  Rangtrinnene er flyttet til 705/770/820 fordi klok nå får rundt 790.
+  Feel-lista: 1-4 var på plass før runden. Lagt til: 1 og 4 - flytende tall ved hver båt som lander,
+  med TOMME i rødt; 3 - porten glir både opp og igjen, og nedtelling «ÅPEN N S» ved porten.
+  Simulering (200 runder per robot), grønn: klok vinner 100 % (median 792, p10-p90 774-823), halvgod
+  70 % (716, 686-752), fir-straks 0 % (63), venter-alltid 0 % (372), tilfeldig 0 % (8), passiv 0 %.
+  15,8 valg per minutt (var 12,9), press 0,40 -> 0,56 -> 0,85 (var 0,10 -> 0,49 -> 0,77).
+  Nettleseren: klok vant med 790 (innenfor simen), selvspill, audit --strict (0 funn) og likhet
+  (nærmest loddposen 0,36) grønne.
+  Det som IKKE virket: (a) å bare starte 00.55 med alvoret på 0,34 - klok vant 0 % (645), fordi de
+  første seks båtene gikk med 10-46 folk; (b) klok som bare rigget når køen var under 8 - det skjedde
+  aldri, han rigget først 02.01, og landgangen sto stille akkurat da de siste båtene skulle fylles
+  (C gikk tom); (c) klok som sendte stuerten til porten når 90 ventet uansett kø - turene var
+  bortkastet når køen allerede var større enn plassene. Det som virket: rigg når ingen hengende båt
+  har kort lunte, port når køen er under 60.
+  Kjente svakheter: en del av presset i første tredjedel kommer fra det nye lunteleddet - uten det
+  ville tallet vært lavere, men folk og frister er også reelt flyttet fram; stuerten tegnes bare på
+  vei til porten, ikke når han rigger (da står det bare tekst øverst); halvgod (70 %) ligger nær
+  øvre grense; topptrinnet 820 nås av klok i rundt hver femte runde; selvspillet ble kjørt før
+  rigge-lappen ble flyttet fra tastefeltet til midt på dekket (bare en posisjon). Sluttskjermens
+  tapsbilde med konkret tips (punkt 3 i vurderingen) er ikke endret.

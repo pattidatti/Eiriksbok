@@ -51,13 +51,13 @@ const b = (
 export const BRETT: Brett[] = [
     {
         start: kl('00.45'),
-        banner: '00.45 BÅTDEKKET',
+        banner: '00.55 BÅTDEKKET',
         tittel: 'Ingen tror at skipet synker',
         båter: [
-            b('Båt 7', 'S', 'livbåt', '00.45', '01.04', 28),
-            b('Båt 6', 'B', 'livbåt', '00.45', '01.06'),
-            b('Båt 5', 'S', 'livbåt', '00.45', '01.10'),
-            b('Båt 8', 'B', 'livbåt', '00.45', '01.12'),
+            b('Båt 7', 'S', 'livbåt', '00.45', '01.07', 28),
+            b('Båt 6', 'B', 'livbåt', '00.45', '01.09'),
+            b('Båt 5', 'S', 'livbåt', '00.45', '01.12'),
+            b('Båt 8', 'B', 'livbåt', '00.45', '01.14'),
         ],
     },
     {
@@ -91,10 +91,10 @@ export const BRETT: Brett[] = [
         banner: '02.00 DE SISTE BÅTENE',
         tittel: 'Sammenleggbare båter',
         båter: [
-            b('Sammenleggbar C', 'S', 'sammenleggbar', '02.00', '02.09'),
-            b('Sammenleggbar D', 'B', 'sammenleggbar', '02.00', '02.11'),
-            b('Sammenleggbar A', 'S', 'sammenleggbar', '02.00', '02.16'),
-            b('Sammenleggbar B', 'B', 'sammenleggbar', '02.00', '02.18'),
+            b('Sammenleggbar C', 'S', 'sammenleggbar', '02.07', '02.09'),
+            b('Sammenleggbar D', 'B', 'sammenleggbar', '02.07', '02.11'),
+            b('Sammenleggbar A', 'S', 'sammenleggbar', '02.07', '02.16'),
+            b('Sammenleggbar B', 'B', 'sammenleggbar', '02.07', '02.18'),
         ],
     },
 ];

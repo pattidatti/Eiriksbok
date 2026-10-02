@@ -11,6 +11,8 @@ export const kl = (hhmm: string) => {
 };
 
 export const TUNING = {
+    /** Runden starter her (spillsekunder etter 00.45). Den rolige første halvtimen er kortet bort. */
+    start: kl('00.55'),
     // Klokka: runden slutter når skipet er borte.
     slutt: kl('02.20'),
 
@@ -72,7 +74,7 @@ export const TUNING = {
     // Alvoret: i 1912 nektet mange å gå i de første båtene. Hver båt som er nede (og hver
     // nødrakett) får flere til å forstå at skipet synker. Tilstrømningen fra første og andre
     // klasse ganges med min(1, base + perBåt x båter nede + perRakett x raketter).
-    alvor: { base: 0.22, perBåt: 0.16, perRakett: 0.05 },
+    alvor: { base: 0.5, perBåt: 0.12, perRakett: 0.05 },
 
     // Folk på vei opp. Hver klasse har en trapp, et antall (granskningen 1912) og faser
     // med intervall og gruppestørrelse. gang = sekunder fra lugarene til båtdekket.
@@ -119,25 +121,34 @@ export const TUNING = {
     port: { pos: 3 / 7, åpner: [kl('01.58'), kl('02.02')] as [number, number] },
 
     /**
-     * Stuerten (verb nummer to): eleven sender ham ned for å åpne porten. Mens han er borte,
-     * står landgangen stille - båtene venter. Han kan sendes én gang, fra `fra`.
+     * Stuerten (verb nummer to), en tur om gangen: ned til porten (den står åpen i `portÅpen`
+     * sekunder og glir igjen) eller rigge neste sammenleggbare båt. Mens han er borte, står
+     * landgangen stille. Uriggede sammenleggbare kan først svinge ut 02.07 (levels.ts) - for sent.
      */
-    stuert: { fra: kl('01.12'), ned: 5, borte: 10 },
+    stuert: { fra: kl('01.08'), ned: 4, borte: 8, portÅpen: 20 },
 
     /** Nødrakettene (klokkeslett). Hver gjør folk litt mer redde (se alvor). */
-    raketter: [kl('00.55'), kl('01.00'), kl('01.10'), kl('01.20'), kl('01.30'), kl('01.40')],
+    raketter: [
+        kl('00.50'),
+        kl('00.55'),
+        kl('01.00'),
+        kl('01.10'),
+        kl('01.20'),
+        kl('01.30'),
+        kl('01.40'),
+    ],
 
     // Planleggeren (rules.ts, sisteStart): sekunder mellom to firinger med samme hånd.
     plan: { pause: 0.3 },
 
     // Presset (0-1) i snapshot: vann, krengning og kø.
-    press: { vann: 0.55, krengning: 0.2, kø: 0.25, køFull: 60 },
+    press: { vann: 0.45, krengning: 0.15, kø: 0.2, køFull: 60, lunte: 0.4, lunteSek: 25 },
 
     // Rangtrinnene etter reddet: siste rad der reddet > grensen, gjelder. Første trinn er
     // seieren (flere enn i 1912), de neste er for «én natt til».
     ranger: [
         [705, 'Flere enn i 1912'],
-        [800, 'Rolig hånd'],
-        [870, 'Hver plass teller'],
+        [770, 'Rolig hånd'],
+        [820, 'Hver plass teller'],
     ] as [number, string][],
 } as const;

@@ -11,6 +11,8 @@ export const P = {
     gul: '#f2c25a',
     rød: '#c8463a',
     blyant: '#7f93b3',
+    /** Folkene bak den forreste gruppa i køen. */
+    lykt: '#c99a4a',
 };
 
 export const SKRIFT = '"Courier New", ui-monospace, monospace';
