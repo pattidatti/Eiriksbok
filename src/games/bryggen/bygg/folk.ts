@@ -16,7 +16,7 @@
 // ikke sjekket mot Bryggens Museum [K].
 import * as THREE from 'three';
 import { Animator, loadRig } from '../motor/animator';
-import { kleFigur, RIG_URL, type Drakt } from '../motor/figur';
+import { GROV, kleFigur, RIG_URL, type Drakt } from '../motor/figur';
 import { ColliderKit, MeshKit, type ColliderSpec } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import { disposeObject, type CellCtx, type Snakkbar } from '../motor/streaming';
@@ -127,18 +127,35 @@ export interface Folk {
 
 /** Nærmere enn dette animeres hvert bilde; lenger unna 15 ganger i sekundet, og bak FJERN ikke. */
 const NAER = 16;
-const FJERN = 55;
+const FJERN = 45;
+/** Bak denne avstanden: grov geometri og ingen skygge. */
+const GROV_R = 13;
+/** Lenger unna enn dette tegnes ikke folk: tåka har nesten tatt dem, og de koster tegnekall. */
+const SYNLIG = 45;
 
 /** Hvor ofte animasjonen oppdateres etter avstand. Tåka skjuler det som står langt unna. */
 class Takt {
     private acc = 0;
     readonly a: Animator;
+    private mesh: THREE.Mesh | null = null;
+    private readonly fin: THREE.BufferGeometry | null = null;
+    private readonly grov: THREE.BufferGeometry | undefined;
     constructor(a: Animator) {
         this.a = a;
+        a.model.traverse((o) => {
+            if (o.name.startsWith('figur:')) this.mesh = o as THREE.Mesh;
+        });
+        this.fin = this.mesh?.geometry ?? null;
+        this.grov = this.fin ? GROV.get(this.fin) : undefined;
     }
     update(dt: number, speed: number, kamera: THREE.Vector3): void {
         const d = this.a.root.position.distanceTo(kamera);
-        this.a.root.visible = d < FJERN + 15;
+        this.a.root.visible = d < SYNLIG;
+        if (this.mesh && this.fin && this.grov) {
+            const langt = d > GROV_R;
+            this.mesh.geometry = langt ? this.grov : this.fin;
+            this.mesh.castShadow = !langt;
+        }
         if (d > FJERN) return;
         this.acc += dt;
         if (d > NAER && this.acc < 1 / 15) return;

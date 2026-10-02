@@ -172,8 +172,10 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   gårdsrommet og et stykke inn fra kaikanten, og ting står inntil veggene. Ruta i den første gården og i
   nabogårdene står i `gard.ts` og `nabogard.ts`. De har ingen egen kollider: verdenen låner ut fem
   kapsler (`Physics.addMover`, prop-gruppen) til dem som er nærmest gutten.
-- Animasjonen til folk oppdateres hvert bilde innen 16 m, 15 ganger i sekundet ut til 55 m, og ikke
-  lenger unna (`Takt` i `folk.ts`). Logikken til dem som går, kjører alltid.
+- Animasjonen til folk oppdateres hvert bilde innen 16 m, 15 ganger i sekundet ut til 45 m, og de
+  tegnes ikke lenger unna (`Takt` i `folk.ts`). Bak 13 m bytter figuren til det grove nivået
+  (`GROV` i `figur.ts`, ca. 2,5k trekanter mot 6,7k) og kaster ikke skygge. Logikken til dem som
+  går, kjører alltid.
 - Overkroppsklipp oppå gangen (bære noe): `Animator.overlay('Baere_Over')`. Mixeren normaliserer
   vektene per bein, så `overlay` regner om vekten til andelen overkroppen skal ha.
 - Cellenes `tick` får `CellCtx` (kamera, gutt og `si` for replikker). `snakkbare` i en celle er folk

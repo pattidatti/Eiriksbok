@@ -54,6 +54,12 @@ export interface Drakt {
 
 const cache = new Map<string, RigTemplate>();
 
+/**
+ * Det grove nivået til hver figurgeometri (ca. en firedel av trekantene). Folk langt unna
+ * bytter til det (`Takt` i folk.ts): budsjettet er ≤ 2k trekanter for figurer langt unna (§9.5).
+ */
+export const GROV = new WeakMap<THREE.BufferGeometry, THREE.BufferGeometry>();
+
 /** Kler på riggen. Klippene deles med originalen; bare figuren er ny. */
 export function kleFigur(rig: RigTemplate, d: Drakt): RigTemplate {
     const hit = cache.get(d.navn);
@@ -65,7 +71,8 @@ export function kleFigur(rig: RigTemplate, d: Drakt): RigTemplate {
         if ((o as THREE.SkinnedMesh).isSkinnedMesh) meshes.push(o as THREE.SkinnedMesh);
     });
     const first = meshes[0];
-    const geo = new Kledd(first, meshes, d).build();
+    const geo = new Kledd(first, meshes, d, false).build();
+    GROV.set(geo, new Kledd(first, meshes, d, true).build());
     const mat = new THREE.MeshStandardMaterial({ name: 'M_Main', vertexColors: true, roughness: 0.92, metalness: 0, side: THREE.DoubleSide });
     const mesh = new THREE.SkinnedMesh(geo, mat);
     mesh.name = `figur:${d.navn}`;
@@ -108,6 +115,7 @@ class Kledd implements Kropp {
     private bandZ1: number[] = [];
     private bandY0 = 0;
     snittHals = 0;
+    readonly grov: boolean;
 
     pos: number[] = [];
     private col: number[] = [];
@@ -115,8 +123,9 @@ class Kledd implements Kropp {
     private skinW: number[] = [];
     index: number[] = [];
 
-    constructor(first: THREE.SkinnedMesh, meshes: THREE.SkinnedMesh[], d: Drakt) {
+    constructor(first: THREE.SkinnedMesh, meshes: THREE.SkinnedMesh[], d: Drakt, grov: boolean) {
         this.d = d;
+        this.grov = grov;
         this.meshes = meshes;
         this.bones = first.skeleton.bones;
         this.bones.forEach((b, i) => this.boneIx.set(b.name, i));
@@ -154,14 +163,15 @@ class Kledd implements Kropp {
 
         this.maalLemmer();
         for (const m of this.meshes) this.addMesh(m);
-        this.forenkle(0.02);
+        this.forenkle(this.grov ? 0.055 : 0.02);
         // Det som legges til etter forenklingen: småting i ansiktet ville ellers smeltet sammen
         // på 2 cm-rutenettet (øynene ble streker).
         this.skjort();
         this.kappe();
         this.tut();
         if (d.pung) this.pungen();
-        ansikt(this, hodet(this));
+        const tris = hodet(this);
+        if (!this.grov) ansikt(this, tris);
 
         const g = new THREE.BufferGeometry();
         g.setAttribute('position', new THREE.Float32BufferAttribute(this.pos, 3));
@@ -524,7 +534,7 @@ class Kledd implements Kropp {
         const w1 = band(hipY);
         const legX = Math.abs(this.p('DEF-shin.L').x) + 0.09;
         const levels = [top, hipY, (hipY + this.hemY) / 2 + 0.05, this.hemY + 0.06, this.hemY];
-        const N = 20;
+        const N = this.grov ? 10 : 20;
         const c = new THREE.Color();
         const rings = levels.map((y, li) => {
             const t = THREE.MathUtils.clamp((top - y) / (top - this.hemY), 0, 1);
@@ -600,7 +610,7 @@ class Kledd implements Kropp {
             [hem, skulder + 0.015, foran + 0.002, bakZ - 0.008, 0.7],
         ];
         this.underKappa(levels);
-        const N = 24;
+        const N = this.grov ? 12 : 24;
         const c = new THREE.Color();
         const rings = levels.map(([y, rx, z1, z0, shade], li) => {
             const ring: number[] = [];

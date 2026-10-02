@@ -18,6 +18,8 @@ export interface Kropp {
     readonly headR: number;
     readonly headBox: THREE.Box3;
     readonly snittHals: number;
+    /** Det grove nivået for figurer langt unna: færre hjørner, ingen småting i ansiktet. */
+    readonly grov: boolean;
     bone(name: string): number;
     p(name: string): THREE.Vector3;
     vert(v: THREE.Vector3, c: THREE.Color, bones: [number, number][]): number;
@@ -41,8 +43,8 @@ export function hodet(k: Kropp): [number, number] {
     const RY = R * 0.88;
     const RZf = (hb.max.z - k.headC.z) * 0.95;
     const RZb = (k.headC.z - hb.min.z) * 0.95;
-    const NI = 36;
-    const NJ = 28;
+    const NI = k.grov ? 14 : 36;
+    const NJ = k.grov ? 10 : 28;
     const col = new THREE.Color();
     const rings: number[][] = [];
     const i0 = k.index.length;

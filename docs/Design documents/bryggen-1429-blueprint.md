@@ -530,6 +530,12 @@ bildet. Etter sammenslåingen på 2 cm og frustum-culling for folkene er en figu
 mannequinen, og trekantene står omtrent stille selv med sju folk. Hver synlig figur er ett tegnekall
 (pluss skygge). FPS-en flyttet seg ikke ut over støyen. Chromebook-tallet mangler fortsatt.
 
+Med folk som går (02.10.2026, programvare-GL, 1366×768, full kvalitet): 38-40 figurer lastet langs
+fronten. Fra Vågen 294 tegnekall og 428k trekanter, mot 272 og 354k med folkene skjult; i gårdsrommet
+224 mot 212 tegnekall. En figur er 6,7k trekanter nær og 2,5k på det grove nivået bak 13 m, uten
+skygge, og folk lenger unna enn 45 m tegnes ikke. Scenen uten folk ligger allerede over 250
+tegnekall fra Vågen på full kvalitet; det må ses på før flere gårder får innhold.
+
 ### 9.6 Strømming og LOD
 
 **Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
