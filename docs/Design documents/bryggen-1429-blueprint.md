@@ -690,6 +690,14 @@ Mixamo brukes ikke (krever innlogging).
   boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,
   kjølig fargetone ute og varm inne ved ilden, vignett og filmkorn. Bildet ellers er pikselt likt det
   eieren godkjente (målt). Koster ca. 1 FPS i programvare-GL, ingenting på lav. Venter på eierens spilltest
+- [~] Lys og stemning (02.10.2026, `motor/stemning.ts`, `himmel.ts`, `vaat.ts`, `luft.ts`, `post.ts`):
+  tre stemninger (`?lys=kveld|graatt|morgen`), standard er kveld etter regnet med lav sol over Vågen,
+  varme fasader og lange skygger. Himmel med skyer og sol, solglitter i vannet, våte flater med pytter,
+  røyk fra ljorene og støv som lyser i sollyset gjennom døra i bua. Full kvalitet får SSAO, glød,
+  lysstråler, solglød i tåka og dis over Vågen. «graatt» er nær bildet eieren godkjente først. Målt i
+  Edge med GPU (AMD, 1366×768, median ms per bilde, main mot ny): full 14-21 mot 16-26, lav 10-12 mot
+  10-13 (uendret). Kaia er dyrest (+5-8 ms: skygger 2048, SSAO ca. 1, røyk ca. 1, og folkene nær
+  kameraet animeres fullt). Venter på eierens spilltest
 - [~] Bære og veie (02.10.2026, `graboks/baering.ts`, `graboks/bismer.ts`): E ved stabelen på kaia gir
   gutten en bunt i armene (saktere gange, ingen sprint, hopp eller slag). Ved bismeren i bua henger
   bunten i kroken, og eleven flytter hanken med A og D til stanga ligger vannrett, og leser av

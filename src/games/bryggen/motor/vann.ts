@@ -20,6 +20,8 @@ export interface VannOpts {
     /** Himmelfargen i horisonten og rett opp (det vannet speiler). */
     horisont: number;
     zenit: number;
+    /** Sola: gir en glitrende stripe i vannet mot sola. `styrke` 0 = ingen (gråvær). */
+    sol?: { retning: THREE.Vector3; farge: number; styrke: number };
 }
 
 export interface Vann {
@@ -36,6 +38,10 @@ export function lagVann(o: VannOpts): Vann {
         uHorisont: { value: new THREE.Color(o.horisont) },
         uZenit: { value: new THREE.Color(o.zenit) },
         uFront: { value: new THREE.Vector3(o.frontZ, o.frontX0, o.frontX1) },
+        uSol: { value: o.sol?.retning.clone() ?? new THREE.Vector3(0, 1, 0) },
+        uSolFarge: { value: new THREE.Color(o.sol?.farge ?? 0).multiplyScalar(o.sol?.styrke ?? 0) },
+        // Hvor mye sola lyser på bryggefronten (som vender mot -z): da speiles husene lysere.
+        uFrontLys: { value: new THREE.Color(o.sol?.farge ?? 0).multiplyScalar(Math.max(0, -(o.sol?.retning.z ?? 0)) * 0.35) },
     };
     const mat = new THREE.MeshStandardMaterial({
         color: 0x16201f,
@@ -111,6 +117,9 @@ uniform float uRegn;
 uniform vec3 uHorisont;
 uniform vec3 uZenit;
 uniform vec3 uFront; // z, x0, x1
+uniform vec3 uSol;
+uniform vec3 uSolFarge;
+uniform vec3 uFrontLys;
 
 float vHash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
@@ -172,6 +181,9 @@ vec3 vannSpeil(vec3 wp, vec3 n) {
     r.y = max(r.y, 0.0);
     float fres = 0.02 + 0.98 * pow(1.0 - max(dot(n, -v), 0.0), 5.0);
     vec3 farge = mix(uHorisont, uZenit, pow(r.y, 0.6));
+    // Sola i vannet: et bredt skjær og glitter der bølgene vender rett mot den.
+    float mot = max(dot(r, uSol), 0.0);
+    farge += uSolFarge * (pow(mot, 18.0) * 0.5 + pow(mot, 400.0) * 30.0);
     if (r.z > 0.001) {
         float s = (uFront.x - wp.z) / r.z; // hvor langt strålen går før den når fronten
         vec3 treff = wp + r * s;
@@ -186,6 +198,7 @@ vec3 vannSpeil(vec3 wp, vec3 n) {
             float tone = vHash(vec2(gard, 5.0));
             vec3 tre = mix(vec3(0.075, 0.055, 0.04), vec3(0.12, 0.09, 0.065), tone);
             tre = mix(tre * 0.45, tre, smoothstep(0.0, 3.0, treff.y));
+            tre += vec3(0.16, 0.1, 0.06) * uFrontLys * smoothstep(0.5, 2.5, treff.y);
             // Tåka ligger også mellom vannet og husene.
             float tf = 1.0 - exp(-0.0004 * s * s);
             farge = mix(tre, uHorisont, tf);

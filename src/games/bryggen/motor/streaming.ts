@@ -60,6 +60,8 @@ export interface CellContent {
     tick?: (t: number, dt: number, ctx: CellCtx) => void;
     /** Ildsteder i verdensrom. Verdenen flytter det felles ildlyset til det nærmeste. */
     ild?: THREE.Vector3[];
+    /** Hull i taket (ljoren) der røyken fra et ildsted kommer ut, i verdensrom (luft.ts). */
+    royk?: THREE.Vector3[];
     /** Rom man kan gå inn i, i verdensrom. Inne dempes dagslyset. */
     rom?: Rom[];
     /** Folk som går (føttene, oppdatert av `tick`). Verdenen gir de nærmeste en kollider. */
@@ -227,6 +229,10 @@ export class CellStreamer {
     /** Ildstedene og rommene i cellene som er lastet. */
     *ildsteder(): Generator<THREE.Vector3> {
         for (const cell of this.live.values()) yield* cell.content?.ild ?? [];
+    }
+
+    *royk(): Generator<THREE.Vector3> {
+        for (const cell of this.live.values()) yield* cell.content?.royk ?? [];
     }
 
     *rom(): Generator<Rom> {
