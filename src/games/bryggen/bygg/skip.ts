@@ -122,7 +122,8 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
             const hB = vannHoyde(s.x + fz * b, s.z - fx * b, t);
             const hS = vannHoyde(s.x - fz * b, s.z + fx * b, t);
             const tid = t + s.fase;
-            s.root.position.y = WATER_Y + (hF + hA + hB + hS) / 4 + Math.sin(tid * 0.55) * 0.035;
+            // Litt dypere enn skroget sier: ellers løfter kjølen seg over vannet i endene.
+            s.root.position.y = WATER_Y - 0.15 + (hF + hA + hB + hS) / 4 + Math.sin(tid * 0.55) * 0.035;
             s.root.rotation.x = -(hF - hA) / (2 * l) + Math.sin(tid * 0.41 + 1.3) * s.rull * 0.35;
             s.root.rotation.z = (hB - hS) / (2 * b) + Math.sin(tid * 0.83) * s.rull;
         }
