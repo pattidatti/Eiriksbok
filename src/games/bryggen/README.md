@@ -73,6 +73,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/nikolaikirken.ts` | Nikolaikirken øverst i allmenningen: romansk steinkirke med vesttårn, under reparasjon etter brannen 1413 (nytt tak i vest, sperrer og stillas i øst), kirkegård med støttemur og stengt grind |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
 | `bygg/mariakirken.ts` | Mariakirken som kulisse: tvillingtårn, treskipet basilika, gotisk kor, kirkegård med mur. Ingen kollidere |
+| `bygg/holmen.ts` | Holmen som kulisse forbi kaienden (+x): kastellet ved sjøen, ringmuren med port, Håkonshallen med trappegavler, Kristkirken, Apostelkirken, trehus i kongsgården og bispegården. Statisk `THREE.LOD`, ingen kollidere |
+| `bygg/stranden.ts` | Stranden på den andre siden av Vågen: glisne laftehus, naust, tømmer og et skip på stokker, trukket fra et frø. Én celle bak grensa, ingen kollidere |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
 
@@ -130,7 +132,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Står kameraet inne i et `rom`, dempes sola, halvkulelyset og miljølyset mykt, så ilden tar over.
   Kameraet avgjør, ikke gutten: ellers blir rommet mørkt mens kameraet ennå står ute. `rom.demp` sier
   hvor mye (1 i schøtstua, 0,55 i bua der det ikke brenner ild og lyset kommer inn døra).
-- Landemerker som skal synes over hele byen (Mariakirken) bruker `materials.tynnTake(key)`: kopier av
+- Landemerker som skal synes over hele byen (Mariakirken, steinbyggene på Holmen) bruker `materials.tynnTake(key)`: kopier av
   materialene med halvparten så tett tåke, som følger kvalitetsbyttet. Med vanlig tåke er alt borte
   bak 100 m. Ikke bruk det på vanlige hus: da forsvinner dybden.
 - Med `__bryggenFoto` satt strømmes byen rundt fotokameraet, ikke gutten. Lysdempingen inne og
@@ -213,3 +215,12 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   GLSL-en der. Seilet er lyst `raatre` innenfor `withUv` (som tørrfisken). Fibrene i treteksturene går
   langs v, så bordene i skroget har v langs skipet.
 - Ingen fil over 800 linjer.
+- `MeshKit.quad` og `tri` leser bare `tint.hue`, ikke `tint.top`/`bottom` (det gjør bare `box`). Mørke
+  åpninger laget med `quad`/`tri` må få skyggen som argument (`vShade`, `shade`), ellers blir de like
+  lyse som veggen rundt.
+- Trekanter (gavler) må ha hjørnene i rekkefølgen som gir normalen ut fra bygget: ved `z0` (−z ut)
+  `(hw, …), (−hw, …), topp`, ved `z1` motsatt. Ellers kastes de bort når man ser dem utenfra.
+- Holmen er statisk i scenen som en `THREE.LOD` (nær: stein og bordtak med tynn tåke, pluss trehusene i
+  flat farge; langt unna, bak 100 m fra kaienden: alt i flat farge i ett tegnekall). Den skal synes fra
+  hele Vågen, også der en celle ikke ville vært lastet. Stranden er en vanlig celle: den er borte i tåka
+  fra kaia uansett.

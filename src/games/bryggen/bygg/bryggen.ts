@@ -75,17 +75,6 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     floor.position.set(0, WATER_Y - 3, -98);
     scene.add(floor);
 
-    // ── Silhuetter i tåka: Holmen i nordvest (+x), Stranden på den andre siden av Vågen ──
-    const farMat = new THREE.MeshStandardMaterial({ color: 0x7a848c, roughness: 1 });
-    const far = (x: number, z: number, w: number, h: number, d: number) => {
-        const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), farMat);
-        m.position.set(x, h / 2 - 1.2, z);
-        scene.add(m);
-    };
-    far(150, -40, 30, 16, 18); // Håkonshallen (bare formen)
-    far(128, -62, 11, 24, 11); // tårnet
-    for (let i = 0; i < 18; i++) far(-90 + i * 11, -95 - (i % 3) * 4, 8, 6 + (i % 4) * 1.5, 7);
-
     // ── Cellene ──
     // Gården vi bygde ferdig først, Nikolaikirkeallmenningen på Holmen-siden av den, og nabogårder
     // av modulsettet i begge retninger langs bryggefronten. Hver nabo trekkes slik at den ikke
@@ -170,6 +159,11 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         half: new THREE.Vector2(34, 34),
         build: async () => kirkeMod.buildMariakirkeCell(materials, kirke.x, kirke.z, back + 2.5),
     });
+    // Kulissene over Vågen: Holmen i nordvest (+x) står statisk med to nivåer, Stranden på den
+    // andre siden er en celle. Ingen kollidere: grensene stopper spilleren før dem.
+    const [holmenMod, strandMod] = await Promise.all([import('./holmen'), import('./stranden')]);
+    scene.add(holmenMod.lagHolmen(materials, xe));
+    cells.push(strandMod.strandCelle(materials, xw - 20, xe - 10));
     const streamer = new CellStreamer(phys, cells);
     scene.add(streamer.root);
 
