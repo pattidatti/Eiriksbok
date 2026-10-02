@@ -33,6 +33,7 @@ const DEFS: Record<Exclude<MatKey, 'mork'>, MatDef> = {
     gardsrom: { file: 'gardsrom', tile: 1.8, color: [0.82, 0.8, 0.78], lodColor: 0x4d3e30 },
     gjorme: { file: 'gjorme', tile: 3.2, color: [0.9, 0.86, 0.82], normalScale: 1.2, lodColor: 0x4a3b2c },
     raatre: { file: 'raatre', tile: 1.2, color: [0.95, 0.9, 0.85], lodColor: 0x5b544c },
+    stein: { file: 'stein', tile: 2.0, color: [1.25, 1.2, 1.15], lodColor: 0x4b4741 },
 };
 
 export class Materials {

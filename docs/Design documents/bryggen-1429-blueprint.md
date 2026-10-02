@@ -9,7 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -500,6 +500,10 @@ på stasjonær går full kvalitet «nydelig».
 Med utkraging og glugger (samme to bilder fra Vågen): 19 FPS på full og 37,5 på lav, 182-190
 tegnekall og 145-157k trekanter (fra 149k). Ingen nye materialer, så tegnekallene står stille.
 
+Inne i schøtstua (02.10.2026, samme maskin): 21-22 FPS på full og 51-53 på lav, 33-187 tegnekall og
+46-135k trekanter avhengig av hvor kameraet ser. Innredningen ligger i husets egne bøtter; bålet koster
+tre tegnekall og ett felles punktlys, stein ett til.
+
 ### 9.6 Strømming og LOD
 
 **Status 02.10.2026:** bygget i `motor/streaming.ts`. Celler lastes innen 120 m og kastes bak 180 m;
@@ -560,8 +564,15 @@ Mixamo brukes ikke (krever innlogging).
   hoppene i `FRONT_JOG` med sidevegg i bolverket. Utkraget overetasje og glugger med luker lagt
   til modulsettet 02.10.2026: forhusene krager 0,22-0,45 m per etasje (hver femte har rett gavl),
   båret av bjelkehoder; glugger på framgavlen og langveggen mot gårdsrommet, noen med luka slått
-  opp. Hvor mye gårdene på Bryggen kraget i 1420-årene, er ikke målt opp **[K]**. Mangler: inngang i
-  husene, schøtstue og ildhus innvendig, ekte gårdsnavn og -bredder fra utgravningsplanene **[K]**
+  opp. Hvor mye gårdene på Bryggen kraget i 1420-årene, er ikke målt opp **[K]**. Utkragingen og gluggene godkjent av eieren 02.10.2026.
+- [~] Schøtstua innvendig (02.10.2026): man går inn den åpne døra bakerst i gårdsrommet. Hule
+  laftevegger med sotet innside, golv over bakken, ildsted av stein midt på golvet med flammer, glør
+  og røyk som stiger mot ljoren, gryte i kjetting fra en stang over ilden, langbenker langs veggene,
+  bord på bukker med skåler, kjenger og brød, ved i hjørnet. Ildlyset flakker, og dagslyset dempes
+  når kameraet er inne. At schøtstuene hadde åpen ild, er [V]; innredningen i 1420-årene er ikke
+  beskrevet i kildene vi har **[K]**, så den følger eldre norske røykstuer **[S]**. Steinteksturen er
+  Poly Haven `rock_wall_08` (CC0). Mangler: inngang i de andre husene (bua), ildhus, ekte gårdsnavn og
+  -bredder fra utgravningsplanene **[K]**
 - [ ] Kogge (navigerbar senere; MVP: legger til i introen)
 - [ ] Færing (gråboksens form, med ekte treteksturer)
 - [ ] Figurer: junge, husbonde, svenn, nordlandsfisker, tyv, byvakt

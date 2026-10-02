@@ -25,6 +25,14 @@ export interface CellContent {
     near: THREE.Object3D;
     mid?: THREE.Object3D;
     colliders: ColliderSpec[];
+    /** Det som lever i cella (flammer, røyk). Kalles hvert bilde mens nær-nivået vises. */
+    tick?: (t: number, dt: number) => void;
+    /** Ildsteder i verdensrom. Verdenen flytter det felles ildlyset til det nærmeste. */
+    ild?: THREE.Vector3[];
+    /** Rom man kan gå inn i, i verdensrom. Inne dempes dagslyset. */
+    rom?: THREE.Box3[];
+    /** Rydder det cella eier selv (materialer som ikke hører til Materials). */
+    dispose?: () => void;
 }
 
 export interface CellDef {
@@ -88,6 +96,7 @@ export class CellStreamer {
         this.live.set(def.id, cell);
         const content = await def.build();
         if (cell.dropped) {
+            content.dispose?.();
             disposeObject(content.near);
             if (content.mid) disposeObject(content.mid);
             return;
@@ -115,6 +124,7 @@ export class CellStreamer {
         }
         for (const b of cell.bodies) this.phys.world.removeCollider(b, false);
         if (cell.content) {
+            cell.content.dispose?.();
             this.root.remove(cell.content.near);
             disposeObject(cell.content.near);
             if (cell.content.mid) {
@@ -122,6 +132,22 @@ export class CellStreamer {
                 disposeObject(cell.content.mid);
             }
         }
+    }
+
+    /** Kjører det som lever i cellene som vises nær. */
+    tick(t: number, dt: number): void {
+        for (const cell of this.live.values()) {
+            if (cell.content?.tick && cell.content.near.visible) cell.content.tick(t, dt);
+        }
+    }
+
+    /** Ildstedene og rommene i cellene som er lastet. */
+    *ildsteder(): Generator<THREE.Vector3> {
+        for (const cell of this.live.values()) yield* cell.content?.ild ?? [];
+    }
+
+    *rom(): Generator<THREE.Box3> {
+        for (const cell of this.live.values()) yield* cell.content?.rom ?? [];
     }
 
     /** Til målerne: hvor mange celler er lastet nå. */

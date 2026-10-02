@@ -12,7 +12,7 @@
 // dører og en mørk kant nederst på veggene, uten ekstra materialer.
 import * as THREE from 'three';
 
-export type MatKey = 'laft' | 'bordvegg' | 'bordtak' | 'torv' | 'dekke' | 'gardsrom' | 'gjorme' | 'raatre' | 'mork';
+export type MatKey = 'laft' | 'bordvegg' | 'bordtak' | 'torv' | 'dekke' | 'gardsrom' | 'gjorme' | 'raatre' | 'stein' | 'mork';
 
 const _p = new THREE.Vector3();
 const _n = new THREE.Vector3();

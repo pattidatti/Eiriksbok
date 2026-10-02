@@ -6,6 +6,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Blueprint og motor-audit: `docs/Design documents/bryggen-1429-blueprint.md`
 - Gråboks: `/test/bryggen-graboks` (egen rute, ikke i galleriet). `?skygger=0` måler uten skygger.
 - Første gård: `/test/bryggen-gard` (modulsettet, strømming, kai, Nikolaikirkeallmenningen og 14 nabogårder).
+  Gå rett opp gårdsrommet og inn den åpne døra bakerst: schøtstua med ildstedet.
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
@@ -26,7 +27,10 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/meshkit.ts` | Geometri-settet: bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
 | `motor/materials.ts` | PBR-materialene (farge, normal, ARM) og miljølys fra en enkel himmel |
 | `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå |
+| `motor/ild.ts` | Åpen ild: flammetunger, glør og røyk (tre tegnekall per bål), og `flakk(t)` som lyset følger |
 | `bygg/moduler.ts` | Modulsettet: laft med laftehoder, gavl, bordkledd fasade, torvtak, bordtak, vinsj, dører, glugger og utkraget overetasje |
+| `bygg/inne.ts` | Hus man kan gå inn i: fire vegger med hull for åpne dører og glugger, sotet innside, golv, innergavler og åser |
+| `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper), allmenningen |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
@@ -67,4 +71,13 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   vinsjen starter der. Bare forhusene krager, så husene bak i rekka ikke kolliderer med dem.
 - Glugger og annen pynt som trekkes, bruker et eget frø (`rng` i `moduler.ts`). Da flytter ikke
   resten av gården seg når noe nytt legges til i trekningen.
+- Hus med `inne` (bare én etasje, ingen utkraging) bygges hule av `laftKroppInne`. Åpne dører og
+  glugger blir ekte hull; døra står slått inn mot veggen. Ljoren (`inne.ljore`) deler taket i tre
+  biter langs huset (`takBiter`), og midtbiten starter et stykke ned fra mønet.
+- Ildlyset er ett `PointLight` for hele byen, alltid i scenen, flyttet til nærmeste ildsted (innen
+  24 m) av `world.update`. Ikke legg lys i cellene: et lys som kommer og går (også når nær-nivået
+  skjules) tvinger Three til å bygge alle shaderne på nytt.
+- Cellene kan ha `tick` (flammer), `ild` (ildsteder), `rom` (bokser man kan gå inn i) og `dispose`.
+  Står kameraet inne i et `rom`, dempes sola, halvkulelyset og miljølyset mykt, så ilden tar over.
+  Kameraet avgjør, ikke gutten: ellers blir rommet mørkt mens kameraet ennå står ute.
 - Ingen fil over 800 linjer.

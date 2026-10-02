@@ -13,6 +13,7 @@ import type { Physics } from '../motor/physics';
 import { WATER_Y } from '../motor/boat';
 import { CellStreamer, type CellContent, type CellDef } from '../motor/streaming';
 import { Materials, makeSkyEnvironment } from '../motor/materials';
+import { flakk } from '../motor/ild';
 import type { GrayboxLayout } from '../graboks/scene';
 import { FRONT_Z, GARD_DEPTH, GARD_W, type Sides } from './gard';
 import type { GardParams } from './nabogard';
@@ -23,7 +24,15 @@ export interface BryggenWorld {
     materials: Materials;
     /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
     environment: THREE.Texture;
+    /**
+     * Kalles hvert bilde: flammene lever, ildlyset flyttes til nærmeste ildsted, og svaret sier
+     * hvor langt inne i et rom `focus` er (0 ute, 1 godt inne).
+     */
+    update: (t: number, dt: number, focus: THREE.Vector3) => number;
 }
+
+/** Hvor nær et ildsted man må være for at ildlyset skal stå der. */
+const ILD_R = 24;
 
 const ALLM_W = 18; // Nikolaikirkeallmenningen nederst [V]
 const CELL_Z = FRONT_Z + GARD_DEPTH / 2;
@@ -112,6 +121,38 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const streamer = new CellStreamer(phys, cells);
     scene.add(streamer.root);
 
+    // Ildlyset: ett lys for hele byen, alltid i scenen (et lys som kommer og går tvinger Three
+    // til å bygge alle shaderne på nytt). Det står på ildstedet nærmest spilleren, eller er av.
+    const ildlys = new THREE.PointLight(0xff8a3c, 0, 13, 1.6);
+    ildlys.name = 'ildlys';
+    scene.add(ildlys);
+    const _d = new THREE.Vector3();
+    const update = (t: number, dt: number, focus: THREE.Vector3): number => {
+        streamer.tick(t, dt);
+        let best: THREE.Vector3 | null = null;
+        let bestD = ILD_R;
+        for (const p of streamer.ildsteder()) {
+            const d = _d.subVectors(p, focus).length();
+            if (d < bestD) {
+                bestD = d;
+                best = p;
+            }
+        }
+        if (best) {
+            ildlys.position.copy(best);
+            ildlys.intensity = 12 * flakk(t);
+        } else ildlys.intensity = 0;
+        // Inne: 1 når man er mer enn en meter innenfor veggen, tonet ned mot døra.
+        let inne = 0;
+        for (const b of streamer.rom()) {
+            if (focus.y < b.min.y - 0.5 || focus.y > b.max.y) continue;
+            const dx = Math.min(focus.x - b.min.x, b.max.x - focus.x);
+            const dz = Math.min(focus.z - b.min.z, b.max.z - focus.z);
+            inne = Math.max(inne, THREE.MathUtils.clamp(Math.min(dx, dz) / 1.0 + 0.3, 0, 1));
+        }
+        return inne;
+    };
+
     // ── Usynlige grenser ──
     const xMin = xw;
     const xMax = xe;
@@ -129,6 +170,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         streamer,
         materials,
         environment,
+        update,
         layout: {
             playerStart: new THREE.Vector3(0, 0, 2.4),
             playerYaw: 0,

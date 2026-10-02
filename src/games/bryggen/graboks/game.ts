@@ -82,6 +82,9 @@ export class GrayboxGame {
     private readonly worldId: WorldId;
     private world: BryggenWorld | null = null;
     private streamTimer = 0;
+    private clock = 0;
+    /** Hvor langt inne i et rom kameraet er, glattet (0 ute, 1 inne). */
+    private inne = 0;
     private raf = 0;
     private last = 0;
     private acc = 0;
@@ -242,7 +245,6 @@ export class GrayboxGame {
             await this.world.materials.setLow(low);
             if (this.disposed || this.low !== low) return;
             this.scene.environment = low ? null : this.world.environment;
-            this.hemi.intensity = low ? 1.7 : 1.25;
         }
         this.renderer.shadowMap.enabled = this.shadowsAllowed && !low;
         // Skyggene er bakt inn i shaderne: alle materialer må bygges på nytt.
@@ -433,6 +435,15 @@ export class GrayboxGame {
                 this.streamTimer = 0.3;
                 void this.world.streamer.update(follow);
             }
+            // Inne i et rom: dagslyset dempes mykt, så ildstedet tar over. Kameraet avgjør, ikke
+            // gutten, ellers blir rommet mørkt mens kameraet ennå står ute i gårdsrommet.
+            this.clock += dt;
+            const inne = this.world.update(this.clock, dt, this.cam.camera.position);
+            this.inne += (inne - this.inne) * Math.min(1, dt * 3);
+            const ute = 1 - this.inne * 0.65;
+            this.hemi.intensity = (this.low ? 1.7 : 1.25) * ute;
+            this.sun.intensity = 1.5 * (1 - this.inne * 0.85);
+            this.scene.environmentIntensity = 0.9 * ute;
         }
 
         // Skyggen følger spilleren.

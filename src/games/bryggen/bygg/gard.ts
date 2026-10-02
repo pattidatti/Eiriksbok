@@ -13,7 +13,9 @@ import { ColliderKit, MeshKit, type MatKey } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
 import { WATER_Y } from '../motor/boat';
-import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { schotstue } from './schotstue';
+import { Ild } from '../motor/ild';
 
 export const HOUSE_W = 7;
 export const YARD_W = 4;
@@ -104,7 +106,9 @@ function plan(): { houses: Placed[]; backZ: number; west: { z0: number; z1: numb
             w: HOUSE_W, l: GARD_W, floors: [3.6], roof: 'torv', pitch: 0.85, tint: T(0.9, DARK),
             cornersFront: true, cornersBack: true,
             doors: [{ side: 1, z: GARD_W / 2, open: true }, { side: 1, z: GARD_W / 2 - 4.5 }],
-            glugger: [{ side: 1, at: GARD_W / 2 + 3, floor: 0, open: true }, { side: 1, at: GARD_W / 2 - 7.5, floor: 0 }],
+            glugger: [{ side: 1, at: GARD_W / 2 + 3, floor: 0, open: true }, { side: 1, at: GARD_W / 2 - 7.5, floor: 0, open: true }],
+            // Den man kan gå inn i: ildsted midt på golvet og ljore rett over (schotstue.ts).
+            inne: { ljore: { z: GARD_W / 2, len: 1.4, down: 0.9 } },
         },
     });
     // Svalgangene går over forhusene og de neste to husene; trappa står i enden.
@@ -317,6 +321,9 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
     near.name = 'gard';
     const lod = new MeshKit();
     const p = plan();
+    const ilder: Ild[] = [];
+    const ildPos: THREE.Vector3[] = [];
+    const rom: THREE.Box3[] = [];
     // Ett hus = én MeshKit = ett tegnekall per materiale.
     p.houses.forEach((h, i) => {
         const k = new MeshKit();
@@ -324,6 +331,16 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
         k.matrix = m.clone();
         c.matrix = m.clone();
         hus(k, c, h.spec);
+        if (h.spec.inne) {
+            // Innredningen går i husets egne bøtter: ingen ekstra tegnekall.
+            const info = schotstue(k, c, h.spec);
+            const ild = new Ild({ smokeTop: eaveY(h.spec) + riseOf(h.spec) - 0.3 - info.ild.y, spread: 0.45 });
+            ild.group.position.copy(info.ild).applyMatrix4(m);
+            near.add(ild.group);
+            ilder.push(ild);
+            ildPos.push(ild.group.position.clone().setY(ild.group.position.y + 0.5));
+            rom.push(info.rom.clone().applyMatrix4(m));
+        }
         near.add(toGroup(k, mats, `hus${i}`));
         lod.matrix = m.clone();
         husLod(lod, h.spec, (key) => mats.lodColor(key));
@@ -376,7 +393,11 @@ export function buildGardCell(mats: Materials, ox: number, sides: Sides = {}): C
 
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'gard:lod';
-    return { near, mid, colliders: c.specs };
+    return {
+        near, mid, colliders: c.specs, ild: ildPos, rom,
+        tick: (t, dt) => ilder.forEach((f) => f.update(t, dt)),
+        dispose: () => ilder.forEach((f) => f.dispose()),
+    };
 }
 
 /**

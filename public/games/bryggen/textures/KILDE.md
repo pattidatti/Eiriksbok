@@ -21,6 +21,7 @@ Tre filer per sett:
 | `gardsrom_*` | `wood_planks_dirt` | Plankegangen i gårdsrommet |
 | `gjorme_*` | `brown_mud_leaves_01` | Gjørme i smug og allmenninger |
 | `raatre_*` | `rough_wood` | Stolper, bjelker, trapper, vinsj |
+| `stein_*` | `rock_wall_08` | Ildstedet i schøtstua (hentet 02.10.2026, samme oppskrift) |
 
 Filene er registrert i `scripts/image-ledger.json` slik at `optimize-images` ikke komprimerer
 dem på nytt (normalkart tåler dårlig en ekstra lossy runde).
