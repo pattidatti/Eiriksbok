@@ -18,6 +18,7 @@ import { lagVann, type Vann } from '../motor/vann';
 import { Maaker } from '../motor/maaker';
 import { Regn } from '../motor/regn';
 import { Rotter, type RotteSone } from '../motor/rotter';
+import { lagSkipene } from './skip';
 import type { GrayboxLayout } from '../graboks/scene';
 import { FRONT_Z, GARD_DEPTH, GARD_W, YARD_W, type Sides } from './gard';
 import type { GardParams } from './nabogard';
@@ -126,6 +127,9 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // ── Vågen ── (etter cellene: speilingen trenger bryggefrontens ende i begge retninger)
     const vann = lagVann({ y: WATER_Y, frontZ: FRONT_Z, frontX0: xw, frontX1: xe, horisont: 0xa3adb4, zenit: 0xc3ccd3 });
     scene.add(vann.mesh);
+    // Skipene i Vågen (skip.ts): koggen og jektene gynger med bølgene og har kollider mot færingen.
+    const skip = lagSkipene(phys, materials, (x) => slots.find((s) => x >= s.x0 && x < s.x1)?.front ?? 0);
+    scene.add(skip.group);
     // Måker over kaia, og regn rundt kameraet.
     const maaker = new Maaker({ x0: xw, x1: xe, kaiZ0: 0, kaiZ1: FRONT_Z, sjoZ: -40, vannY: WATER_Y }, phys);
     const regn = new Regn();
@@ -174,6 +178,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
         streamer.tick(t, dt);
         vann.update(t, world.regn);
+        skip.update(t);
         maaker.update(dt, t, spiller?.pos ?? focus, spiller?.fart ?? 0);
         sonerTid -= dt;
         if (sonerTid <= 0) {

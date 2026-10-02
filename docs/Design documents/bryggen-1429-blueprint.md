@@ -621,7 +621,18 @@ Mixamo brukes ikke (krever innlogging).
   boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,
   kjølig fargetone ute og varm inne ved ilden, vignett og filmkorn. Bildet ellers er pikselt likt det
   eieren godkjente (målt). Koster ca. 1 FPS i programvare-GL, ingenting på lav. Venter på eierens spilltest
-- [ ] Kogge (navigerbar senere; MVP: legger til i introen)
+- [~] Kogge og jekter i Vågen (02.10.2026, `bygg/skip.ts`, `motor/skrog.ts`, `motor/kogge-modell.ts`,
+  `motor/jekt-modell.ts`): en kogge fortøyd et par meter ut fra kaia ved Nikolaikirkeallmenningen, en
+  jekt lastet med tørrfisk langs kaia vest for den første gården, og en mindre jekt for anker lenger ute.
+  Koggen: flat bunn, høye sider, rette stavner som heller ut, én mast med mastekurv og råseil, roret på
+  akterstevnen og kasteller forut og akter [V SNL «kogge»]; kravellbygd under vannet og klinkbygd over
+  [V], vist klinkbygd siden bunnen ikke synes. 23 x 7,2 m, innenfor 80-100 fot og 1:3-1:4 [V]; mast,
+  kasteller og fribord er [S]. Jekta: klinkbygd og flatbunnet, ett råseil, tørrfisk høyt opp mot masta,
+  vengen akter [V SNL «jekt»], men målene og vengen gjelder senere århundrer [U]; 15 m [S]. Seilene er
+  beslått (rullet sammen på råa) fordi skipene ligger i havn [S]. Laget i kode med råtre-teksturen og
+  fargefaktor per hjørne: to tegnekall per skip, ca. 30k trekanter for alle tre. De gynger med samme
+  bølger som vannet, og skroget har en konveks kollider så færingen ikke ror gjennom. Venter på eierens
+  spilltest. Gjenstår: koggen som legger til i introen, folk om bord, last som losses, navigerbar kogge.
 - [~] Færing (02.10.2026): klinkbygd skrog med fire bordganger per side, stavner i begge ender, ripe,
   tiljer og tofter, med råtre-teksturen fra byen [S: formen er en vanlig vestlandsfæring, ikke målt
   opp fra et funn]. Venter på eierens spilltest
@@ -689,6 +700,8 @@ Det Hanseatiske Museum og Schøtstuene. (u.å.). *Rommene i Schøtstuene*. Museu
 Ekroll, Ø. & Thune, N. A. (2025). *Mariakirken - Bergen*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/Mariakirken_-_Bergen](https://snl.no/Mariakirken_-_Bergen)
 
 Eldjarn, G. (2024). *jekt*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/jekt](https://snl.no/jekt)
+
+Store norske leksikon. (2025). *kogge* (fagkonsulent Svein Ording). Hentet 02.10.2026 fra [snl.no/kogge](https://snl.no/kogge)
 
 Hammer, E. (u.å.). *Bergenhus festning*. Store norske leksikon. Hentet 02.10.2026 fra [snl.no/Bergenhus_festning](https://snl.no/Bergenhus_festning)
 
