@@ -4,7 +4,7 @@
 // - Bølgene klukker mot bolverket: én løkke som står på kaikanten der den er nærmest kameraet.
 // - Ildstedet knitrer der det står (nærmeste innen 15 m).
 // - Måkene skriker fra der en måke faktisk er, og en hel flokk skriker når den letter.
-// - Rottene piper, krafser og skriker fra der rotta er (lave, man må være nær).
+// - Rottene piper, krafser og skriker fra der rotta er (lave, man må være nær), også når katta tar en.
 // - Fottrinn: når en fot når bunnen av steget i animasjonen (fotbeinet slutter å synke), velges
 //   underlaget der gutten står: planker ute, golv inne eller gjørme.
 // - Færingen: et plask og et åretak når åra settes i, og vann mot skroget etter farten.
@@ -172,7 +172,7 @@ export class LydKobling {
         const f = 0.92 + Math.random() * 0.22;
         if (h.type === 'pip') l.spill('rotter', Math.random() < 0.3 ? 'kvitre' : 'pip', { pos: h.pos, ref: 0.8, styrke: 0.5, fart: f, buss: 'inne' });
         else if (h.type === 'kraps') l.spill('rotter', 'kraps', { pos: h.pos, ref: 0.7, styrke: 0.4, fart: f, buss: 'inne' });
-        else if (h.type === 'skrik') l.spill('rotter', 'skrik', { pos: h.pos, ref: 1, styrke: 0.7, fart: f, buss: 'inne' });
+        else if (h.type === 'skrik' || h.type === 'fanget') l.spill('rotter', 'skrik', { pos: h.pos, ref: 1, styrke: 0.7, fart: f, buss: 'inne' });
     }
 
     private flokk(pos: THREE.Vector3, antall: number): void {

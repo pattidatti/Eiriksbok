@@ -18,6 +18,7 @@ import { lagVann, type Vann } from '../motor/vann';
 import { Maaker } from '../motor/maaker';
 import { Regn } from '../motor/regn';
 import { Rotter, type RotteSone } from '../motor/rotter';
+import { Katter } from '../motor/katter';
 import type { GrayboxLayout } from '../graboks/scene';
 import { FRONT_Z, GARD_DEPTH, GARD_W, YARD_W, type Sides } from './gard';
 import type { GardParams } from './nabogard';
@@ -135,7 +136,8 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // under svalgangene i den første gården. Ute er stripene smale og inntil noe, så det aldri er
     // rotter midt i gårdsrommet.
     const rotter = new Rotter(phys);
-    scene.add(rotter.mesh);
+    const katter = new Katter(phys, rotter); // katter i de samme sonene, på jakt etter rottene
+    scene.add(rotter.mesh, katter.mesh);
     const V3 = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
     const uteSoner: RotteSone[] = slots.map((s) => ({
         id: `kai:${s.id}`,
@@ -192,6 +194,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
             }
         }
         rotter.update(dt, soner, spiller?.pos ?? focus, spiller?.fart ?? 0);
+        katter.update(dt, soner, spiller?.pos ?? focus, spiller?.fart ?? 0);
         let best: THREE.Vector3 | null = null;
         let bestD = ILD_R;
         for (const p of streamer.ildsteder()) {

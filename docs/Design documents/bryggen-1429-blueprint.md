@@ -652,7 +652,12 @@ Mixamo brukes ikke (krever innlogging).
   gårdsrommet. De rusler langs veggene, stopper og snuser, piler i rykk, fryser når gutten står helt
   stille og flykter inn i hull og under stablene når han kommer. Står han stille lenge, våger de seg
   fram igjen. API-et (`skrem`, `fang`, `framme`, `onHendelse`) er klart for «Rottejakt på lagerloftet»
-  (§7.2); katt og feller mangler. Svartrotta kom til Norge tidlig på 1200-tallet eller før, brunrotta
+  (§7.2). Katter bygget 02.10.2026 (`motor/katter.ts`, `motor/katt-modell.ts`): laget i kode som rotta
+  (ca. 1450 trekanter, tabbystriper i pikselen), én til tre i de samme sonene, ett tegnekall. De rusler,
+  sitter, vasker seg og sover sammenkrøllet; ser de en rotte, lusker de lavt i rykk og kaster seg (fanger
+  eller skremmer via rotte-API-et), og de viker unna gutten når han løper mot dem. Kattebein fra Bryggen
+  er et stort funnmateriale, og nesten alle kattene var flådd [V Hufthammer, Universitetsmuseet i Bergen,
+  «1956 Tamkatten»]; at de ble holdt som rottefangere på loftene er [S], pelsfargene er [S]. Feller mangler. Svartrotta kom til Norge tidlig på 1200-tallet eller før, brunrotta
   først omkring 1750 [V SNL «svartrotte», «brunrotte»], så rottene på Bryggen i 1420-årene var
   svartrotter: slank kropp, hale lengre enn kroppen, store ører, mørk grå. Venter på eierens
   spilltest. Hund mangler
