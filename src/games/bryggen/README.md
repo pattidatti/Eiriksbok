@@ -11,6 +11,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   døra ut på svalgangen. Mariakirken står oppe i bakken bak gårdene i nordenden (+x, mot Holmen):
   gå østover langs kaia, eller se fra Vågen. Nikolaikirkeallmenningen (+x for gården) har torg med boder
   og brønn, rådhuset med svalgang man kan gå opp på, og Nikolaikirken under reparasjon øverst.
+  På torget står selgere i bodene, og kjøpere, en tjenestejente med bøtte, en fisker og en svenn går
+  mellom bodene, brønnen og kaia. Snakk med kornselgeren og borgeren (de har samtaler).
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys og skygger. Knappen «Grafikk» øverst til
   høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
   Detaljkartene lastes først når full kvalitet brukes første gang.
@@ -57,7 +59,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/moduler.ts` | Modulsettet: laft med laftehoder, gavl, bordkledd fasade, torvtak, bordtak, vinsj, dører, glugger og utkraget overetasje |
 | `bygg/inne.ts` | Hus man kan gå inn i: hule etasjer med hull for åpne dører og glugger, golv, bjelkelag med trappehull og rekkverk, trapp, terskelkiler, innergavler og åser |
 | `bygg/bu.ts` | Bua og lagerloftet: tørrfisk i stabler og bunter, kornsekker, tranfat, bismer, skrivepult med gjeldsbok og kiste |
-| `bygg/folk.ts` | Draktene (junge, husbonde, svenn, skutedreng, stuedreng) og folkene i en celle: animator, kollider, løkke på stedet, animasjon etter avstand, og de som går |
+| `bygg/folk.ts` | Draktene (junge, husbonde, svenn, skutedreng, stuedreng, fisker og de norske byfolkene på torget) og folkene i en celle: animator, kollider, løkke på stedet, animasjon etter avstand, og de som går |
 | `bygg/vandrer.ts` | Folk som går faste ruter: svinger, bremser, tar opp og legger fra seg bunter, stopper og sier fra når gutten står i veien |
 | `bygg/samtaler.ts` | Hva folkene sier: samtalen med husbonden (de tre reglene, valg 1-3, «Dette vet vi»), korte replikker, og hva de sier når gutten står i veien |
 | `graboks/baering.ts` | Bære bunter tørrfisk fra stabelen på kaia til bismeren i bua (E), og veiingen der |
@@ -66,6 +68,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper) |
 | `bygg/allmenning.ts` | Nikolaikirkeallmenningen: gjørme, plankegang, kort kai, rådhuset (steinkjeller, laftet stue, svalgang og trapp) og steintrappa opp mot kirkegården |
+| `bygg/torgfolk.ts` | Folkene på torget: selgerne i bodene og rutene til dem som går (kjøpere, tjenestejenta ved brønnen, fiskeren og svennen på plankegangen), med et kart over hvor tingene står |
 | `bygg/torg.ts` | Torglivet: salgsboder med tørrfisk, korn, kurver og tønner, brønn med vinde, slede med tønne, spor og pytter i gjørma |
 | `bygg/nikolaikirken.ts` | Nikolaikirken øverst i allmenningen: romansk steinkirke med vesttårn, under reparasjon etter brannen 1413 (nytt tak i vest, sperrer og stillas i øst), kirkegård med støttemur og stengt grind |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
@@ -181,7 +184,12 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Folk som går (`Rute` i `vandrer.ts`) har ingen veifinning: punktene legges der det er fritt, midt i
   gårdsrommet og et stykke inn fra kaikanten, og ting står inntil veggene. Ruta i den første gården og i
   nabogårdene står i `gard.ts` og `nabogard.ts`. De har ingen egen kollider: verdenen låner ut fem
-  kapsler (`Physics.addMover`, prop-gruppen) til dem som er nærmest gutten.
+  kapsler (`Physics.addMover`, prop-gruppen) til dem som er nærmest gutten. Vandrerne kolliderer ikke
+  med hverandre, så gi hver sin fil langs z (se `torgfolk.ts`). `gjor` på et stopp spiller
+  `Interact` uten å bære noe; `baer: 'botte'` på ruta gir en vannbøtte i stedet for en bunt; `samtale`
+  på ruta gir en som går en hel samtale.
+- Står gutten der en vandrer skal stoppe, blir vandreren stående og si fra. Testskript som snakker med
+  noen ved en bod, må flytte gutten bort før de venter på at noen andre kommer dit.
 - Animasjonen til folk oppdateres hvert bilde innen 16 m, 15 ganger i sekundet ut til 45 m, og de
   tegnes ikke lenger unna (`Takt` i `folk.ts`). Bak 13 m bytter figuren til det grove nivået
   (`GROV` i `figur.ts`, ca. 2,5k trekanter mot 6,7k) og kaster ikke skygge. Logikken til dem som

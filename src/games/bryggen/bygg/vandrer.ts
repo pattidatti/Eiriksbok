@@ -20,6 +20,8 @@ export interface Stopp {
     se?: number;
     /** Tar opp (true) eller legger fra seg (false) en bunt her. */
     last?: boolean;
+    /** Gjør noe med hendene her uten å bære noe bort (sveiver opp vann, tar på varene). */
+    gjor?: boolean;
 }
 
 export interface Rute {
@@ -29,6 +31,10 @@ export interface Rute {
     fart?: number;
     /** Hvilket punkt hen starter ved. */
     start?: number;
+    /** Id i samtalene (samtaler.ts). Uten: en kort replikk. */
+    samtale?: string;
+    /** Hva hen bærer mellom `last`-punktene: en bunt tørrfisk (standard) eller en vannbøtte. */
+    baer?: 'bunt' | 'botte';
 }
 
 const SVING = 3.2; // rad/s
@@ -104,6 +110,8 @@ export class Vandrer {
             this.snu(Math.atan2(this.snudd.x - this.pos.x, this.snudd.z - this.pos.z), dt);
         } else if (this.handling > 0) {
             this.handling -= dt;
+            const se = this.rute.stopp[(this.i - 1 + this.rute.stopp.length) % this.rute.stopp.length].se;
+            if (se !== undefined) this.snu(se, dt);
             if (this.nyLast !== null && this.handling < HANDLING * 0.45) {
                 this.baerer = this.nyLast;
                 this.nyLast = null;
@@ -118,7 +126,7 @@ export class Vandrer {
             const st = this.rute.stopp[this.i];
             _d.subVectors(st.p, this.pos).setY(0);
             const dist = _d.length();
-            const stopper = st.vent !== undefined || st.last !== undefined;
+            const stopper = st.vent !== undefined || st.last !== undefined || st.gjor === true;
             if (dist < (stopper ? 0.1 : 0.45)) {
                 this.fra = st.p;
                 this.i = (this.i + 1) % this.rute.stopp.length;
@@ -126,6 +134,9 @@ export class Vandrer {
                 if (st.last !== undefined && st.last !== this.baerer) {
                     this.handling = HANDLING;
                     this.nyLast = st.last;
+                    this.a.play('Interact', { fade: 0.25, timeScale: 1.15 });
+                } else if (st.gjor) {
+                    this.handling = HANDLING;
                     this.a.play('Interact', { fade: 0.25, timeScale: 1.15 });
                 }
             } else {

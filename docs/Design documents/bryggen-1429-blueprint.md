@@ -635,7 +635,15 @@ Mixamo brukes ikke (krever innlogging).
   vestre del av skipet, bare sperrer, sot og stillas i øst, hogd stein og mørtelkar foran. Målene er **[S]**.
   Kirkegården står bak grensa med støttemur og stengt grind øverst i steintrappa. Gapestokk er ikke lagt
   inn: ingen kilde funnet for en gapestokk på allmenningen i 1420-årene **[K]**. Ca. 10k trekanter og
-  15 tegnekall for hele cella. Venter på eierens spilltest
+  15 tegnekall for hele cella. Venter på eierens spilltest. Torgfolk (02.10.2026, `bygg/torgfolk.ts`):
+  en fiskekone, en kornselger, en bondekone med kurver og en bødker står i bodene; en kjøpekone går
+  mellom bodene og brønnen og stopper ved disken, en borger går mellom kornboden og tønneboden, en
+  tjenestejente henter vann med bøtte ved brønnen, nordlandsfiskeren går opp plankegangen og ser på
+  kirka, og en svenn går opp trappa til rådhuset og venter ved døra. Samtaler: kornselgeren forteller
+  at kornet kommer med koggene fra hansabyene og at Kontoret styrer det [V §4.3]; borgeren gir et norsk
+  syn på tyskerne (en av ti i byen, egne lover, ugifte, strid om makta [V §3, §4.2]). Begge slutter med
+  «Dette vet vi». Hvem som sto på torget og hva de solgte, er **[S]**; draktene til norske kvinner og
+  håndverkere er **[S]**, ikke sjekket mot Bryggens Museum **[K]**
 - [~] Vågen, vær og etterbehandling (02.10.2026): vannet har bølger (lange dønninger, krapp vind,
   fin krusning nær kameraet), falsk speiling av husrekka og ringer fra regndråper. Regnet faller i en
   boks rundt kameraet og skrus av inne. Full kvalitet får ett etterbehandlingspass: kantutjevning,
@@ -673,7 +681,9 @@ Mixamo brukes ikke (krever innlogging).
   på Bryggen er det funnet sko og tekstiler i hopetall [V Bymuseet]. Fargene er [S]: ufarget for
   guttene, plantefarget for husbonden. Snitt og farger på Bryggen i 1420-årene er ikke sjekket mot
   Bryggens Museum **[K]**. Fienden i Bryggen-scenen bruker svenn-drakten. Nordlandsfiskeren (02.10.2026) står på kaia og forteller om gjelda fra sin side
-  (samtale med «Dette vet vi»); klærne hans er [S], ikke sjekket [K]. Gjenstår:
+  (samtale med «Dette vet vi»); klærne hans er [S], ikke sjekket [K]. Norske byfolk på torget
+  (02.10.2026): fiskekone, bondekone, kjøpekone og tjenestejente (kjortel til anklene, lys hette som
+  hodeduk, tjenestejenta med hetta nede), kornselger, borger og bødker; alt [S], sjekkes [K]. Gjenstår:
   tyv, byvakt.
 - [~] Folk i gården (02.10.2026): i bua fører husbonden gjeldsboka ved pulten, svennen leser av
   bismeren og skutedrengen står med en bunt i armene. I schøtstua sitter en svenn og en skutedreng på

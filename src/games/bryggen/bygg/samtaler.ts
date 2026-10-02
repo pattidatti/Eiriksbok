@@ -33,6 +33,13 @@ export const NAVN: Record<string, string> = {
     dreng: 'Skutedrengen',
     stuedreng: 'Stuedrengen',
     fisker: 'Fiskeren',
+    fiskekone: 'Fiskekona',
+    kornselger: 'Kornselgeren',
+    bondekone: 'Bondekona',
+    bodker: 'Bødkeren',
+    kjopekone: 'Kona',
+    borger: 'Borgeren',
+    tjenestejente: 'Tjenestejenta',
 };
 
 /** Til teksten «E: Snakk med …». */
@@ -43,6 +50,13 @@ export const BESTEMT: Record<string, string> = {
     dreng: 'skutedrengen',
     stuedreng: 'stuedrengen',
     fisker: 'fiskeren',
+    fiskekone: 'fiskekona',
+    kornselger: 'kornselgeren',
+    bondekone: 'bondekona',
+    bodker: 'bødkeren',
+    kjopekone: 'kona',
+    borger: 'borgeren',
+    tjenestejente: 'tjenestejenta',
 };
 
 const REGLER = 'Hvilke regler gjelder her?';
@@ -162,6 +176,90 @@ SAMTALER.fisker = {
     },
 };
 
+// Kornselgeren på torget: «Kontoret styrte kornimporten» og «jektene førte bygg, havre, hvete og
+// hamp nordover» er [V] (blueprint §4.3). At gutten kom med koggen fra Lübeck, er prologen (§6).
+// At en norsk kremmer kjøpte korn av Kontoret og solgte det videre på torget, er [S]; prisene er [U].
+SAMTALER.kornselger = {
+    start: {
+        tekst: 'Korn! Bygg, havre og hvete! Vil du kjøpe, gutt, eller bare se?',
+        valg: [
+            { tekst: 'Hvor kommer kornet fra?', til: 'fra' },
+            { tekst: 'Hvem bestemmer prisen?', til: 'kontoret' },
+        ],
+    },
+    fra: {
+        tekst: 'Det kommer med koggene fra de tyske byene. Fra Lübeck, der du kommer fra, og fra de andre hansabyene. En hansaby er en by som er med i handelsforbundet til tyskerne.',
+        til: 'fra2',
+    },
+    fra2: {
+        tekst: 'Mye av kornet blir ikke her. Jektene tar det med nordover til fiskerne, og kommer tilbake med tørrfisk.',
+        valg: [{ tekst: 'Hvem bestemmer prisen?', til: 'kontoret' }],
+    },
+    kontoret: {
+        tekst: 'Kjøpmennene på Bryggen, de som kaller seg Kontoret. De styrer kornet som kommer til byen. Jeg kjøper av dem og selger videre her på torget.',
+        til: 'kontoret2',
+    },
+    kontoret2: {
+        tekst: 'Så når kornet blir dyrt, er det ikke jeg som har bestemt det. Det er husbonden din og de andre i gårdene.',
+        valg: [
+            { tekst: 'Er det urettferdig?', til: 'rett' },
+            { tekst: 'Takk. Jeg må gå.', til: 'vet' },
+        ],
+    },
+    rett: {
+        tekst: 'Det sier du ikke høyt her, gutt. Uten kornet deres sulter vi. Men det er de som har makta over det, ikke vi som bor i byen.',
+        til: 'vet',
+    },
+    vet: {
+        hvem: 'Dette vet vi',
+        vet: true,
+        tekst: 'Det tyske kontor styrte kornet som kom til Bergen, og saltet fiskerne trengte. Jektene tok korn med seg nordover og kom tilbake med tørrfisk. Vi vet ikke hvordan handelen på torget foregikk i 1420-årene, eller hva kornet kostet.',
+    },
+};
+
+// Borgeren: et norsk syn på tyskerne. At omtrent en av ti av Bergens ca. 10 000 innbyggere var
+// tyskere, at de var ugifte og hadde egne lover, at høvedsmannen ikke likte det, og at det var
+// strid mellom Kontoret og norske borgere og håndverkere, er [V] (blueprint §3, §4.2). Hva han
+// mener og hvordan han sier det, er [S]. «Byen er farlig om natta» bygger på at mange ugifte menn
+// ga mye kriminalitet [V Orning], sagt forsiktig.
+SAMTALER.borger = {
+    start: {
+        tekst: 'Du er en av de nye guttene fra Bryggen, ser jeg. Det synes på klærne. Og du snakker tysk.',
+        valg: [
+            { tekst: 'Hva synes du om oss tyskere?', til: 'syn' },
+            { tekst: 'Hvor mange tyskere bor her?', til: 'antall' },
+        ],
+    },
+    antall: {
+        tekst: 'Én av ti i byen er tysker, sier folk. Dere bor sammen på Bryggen, med egne lover og eget styre. Det er nesten en egen by inni byen vår.',
+        valg: [{ tekst: 'Hva synes du om oss tyskere?', til: 'syn' }],
+    },
+    syn: {
+        tekst: 'Jeg er borger her. Det betyr at jeg bor i byen og har lov til å drive handel her. Og jeg handler med dere, for dere har kornet. Uten det sulter vi.',
+        til: 'syn2',
+    },
+    syn2: {
+        tekst: 'Men dere gifter dere ikke, og dere holder dere for dere selv. Mange unge menn uten familie i samme by. Folk sier at Bergen er farlig å gå i om natta.',
+        valg: [
+            { tekst: 'Er alle tyskere slik?', til: 'alle' },
+            { tekst: 'Hvem har makta i byen?', til: 'makt' },
+        ],
+    },
+    alle: {
+        tekst: 'Nei. Jeg kjøper øl av en tysker som aldri har lurt meg. Det er ikke hver enkelt av dere jeg er sint på. Det er Kontoret.',
+        til: 'makt',
+    },
+    makt: {
+        tekst: 'Kontoret har kornet og egne lover. Høvedsmannen oppe på Bergenhus, kongens fremste mann i byen, liker det ikke. Ikke vi heller. Men det er ikke vi som bestemmer.',
+        til: 'vet',
+    },
+    vet: {
+        hvem: 'Dette vet vi',
+        vet: true,
+        tekst: 'Omtrent en av ti av de rundt 10 000 menneskene i Bergen var tyskere. De bodde på Bryggen med egne lover og giftet seg ikke med norske kvinner. Det var strid mellom Kontoret og norske borgere og håndverkere. Hva vanlige bergensere tenkte om tyskerne i 1420-årene, er nesten ikke skrevet ned. Det borgeren sier her, er laget for spillet.',
+    },
+};
+
 /** Det de sier når gutten snakker med dem (uten en egen samtale). */
 export const REPLIKKER: Record<string, string[]> = {
     husbonde: ['Står du og glaner? Fisken bærer seg ikke selv.', 'Tell to ganger og skriv én gang. Da blir det riktig.'],
@@ -180,6 +278,28 @@ export const REPLIKKER: Record<string, string[]> = {
         'Ved og vann, ved og vann. Det er det jeg gjør hele dagen.',
         'Du er ny, du. Da får du vaske gryta i kveld.',
     ],
+    fisker: ['Jeg skal se på kirka før jeg seiler hjem.', 'Byen er stor, men jeg savner havet hjemme.'],
+    fiskekone: [
+        'Tørrfisk! Fin fisk fra nord!',
+        'Legg den i vann noen dager før du koker den. Da blir den myk.',
+        'Du har ikke penger, du. Gå videre.',
+    ],
+    bondekone: [
+        'Egg og erter, rett fra gården!',
+        'Jeg rodde inn til byen i morges, før det ble lyst.',
+        'Ikke klem på eggene, gutt.',
+    ],
+    bodker: [
+        'Jeg er bødker. Jeg lager tønner av staver og bånd.',
+        'Uten tønner kommer verken øl eller tran noen vei.',
+        'En god tønne lekker ikke en dråpe.',
+    ],
+    kjopekone: ['Fisken er dyr i dag.', 'Har du ikke noe arbeid å gjøre, gutt?', 'Skal du handle, eller står du bare der?'],
+    tjenestejente: [
+        'Vannet er tungt. Jeg går denne veien mange ganger om dagen.',
+        'Ikke dytt, da søler jeg.',
+        'Fruen min vil ha vannet før det blir mørkt.',
+    ],
 };
 
 /** Når gutten står i veien. */
@@ -189,6 +309,9 @@ export const VEI: Record<string, string[]> = {
     dreng: ['Flytt deg! Denne er tung.', 'Gå til side, junge!'],
     stuedreng: ['Pass deg!', 'Flytt deg, da!'],
     fisker: ['Gå til side, gutt.'],
+    kjopekone: ['Pass deg, gutt!', 'Flytt deg, jeg skal forbi.'],
+    borger: ['Til side, tyskergutt.', 'Gå av veien!'],
+    tjenestejente: ['Flytt deg, da!', 'Pass deg, jeg bærer vann.'],
 };
 
 /** Velger en replikk som skifter med tiden, så det ikke er den samme hver gang. */
