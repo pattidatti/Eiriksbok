@@ -402,7 +402,7 @@ Lest i `src/games/engine/` (GameEngine.ts er 3646 linjer, alt i én klasse).
 
 Ny, liten motor i Three.js. Gråboksen er beviset: på én økt løste den alle tre audit-punktene
 med Rapier KCC, faste steg med interpolering, fjærarm med kulekast og ekte skjelettanimasjon
-med fotlåst fart. Det som mangler (strømming, LOD, navmesh, sekvensverktøy) er godt kjente
+i klippenes egen takt. Det som mangler (strømming, LOD, navmesh, sekvensverktøy) er godt kjente
 teknikker som passer inn i samme lille arkitektur. Babylon gir mer ferdig, men koster en ny
 verktøykjede og en ekstra motor i appen. Å fikse den gamle betyr å røre grunnmuren under spill
 som ikke skal røres.
@@ -417,7 +417,7 @@ ingenting fra `src/games/engine/`.
 | `motor/physics.ts` | Rapier-verden, kollisjonsgrupper (verden, figurer, båter, tynne ting kameraet ignorerer), stråle- og kulekast |
 | `motor/input.ts` | Tastatur, mus, styrepute. Simulering leser per steg, kameraet per bilde |
 | `motor/character.ts` | KinematicCharacterController med akselerasjon, sving med vekt, hopp med nådetid, kantklatring (lav kant = hvelv, høy = dra seg opp, grep i lufta) |
-| `motor/animator.ts` | AnimationMixer med to lag: fartsblandet bevegelse (fotlåst: farten måles fra fotsporet i klippet) og helkropp med inn/ut-toning. Sydde klipp (underkropp fra ett, overkropp fra et annet) |
+| `motor/animator.ts` | AnimationMixer med to lag: fartsblandet bevegelse (hver figur oppgir gå-/jogge-/sprintfart, og der spilles klippet i sin egen takt) og helkropp med inn/ut-toning. Sydde klipp (underkropp fra ett, overkropp fra et annet) |
 | `motor/camera.ts` | Fjærarm: kulekast større enn nærplanet, trekkes inn umiddelbart, slippes sakte ut; skulderen kastes sideveis og krymper i smug |
 | `motor/boat.ts` | Færing med åretak (dytt bare mens bladene er i vannet), vannmotstand, kollisjon via egen KCC |
 | `motor/combat.ts` | Spillerkamp og fiende-AI (tilnærme, sirkle, varsle, slå, komme seg, vakle) |
@@ -492,6 +492,10 @@ Mixamo brukes ikke (krever innlogging).
 - Mannequin-figuren er nøytral og glatt. Den er for å prøve følelsen, ikke utseendet.
 - Fienden har ingen veifinning (navmesh). Klatrer gutten opp på svalgangen, blir fienden stående under.
 - Konsollen viser én advarsel fra Rapier sin init (samme som i den gamle motoren).
+- Fotlås ble prøvd og forlatt (2026-10-02): UAL-klippene er stiliserte, så fart målt fra
+  fotsporet gir tull (jogg-foten 4,5 m/s, sprint «saktere» enn jogg). I tillegg fant
+  oppslaget aldri fotbeina (GLTFLoader fjerner punktum fra nodenavn), og sprint-klippet gikk
+  i firedobbel takt. Nå bestemmer figurens egne farter takten. Liten fotglid i jogg kan synes.
 
 ---
 

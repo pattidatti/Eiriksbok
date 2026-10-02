@@ -2,8 +2,13 @@
 //
 // To lag:
 //  1. Bevegelse (stå, gå, jogge, sprinte). Klippene blandes etter faktisk fart, og alle
-//     tre deler én fase. Avspillingsfarten regnes ut fra hvor langt foten flytter seg i
-//     klippet, så føttene står stille på bakken i stedet for å gli.
+//     tre deler én fase. Hver figur sier hvilken fart den går, jogger og sprinter i
+//     (setGait), og ved akkurat de fartene spilles klippet i sin egen takt.
+//
+//     Hvorfor ikke måle farten fra fotsporet: UAL-klippene er stiliserte. Jogg-foten glir
+//     4,5 m/s bakover mens den står i bakken, og sprint-foten «saktere» enn jogg-foten.
+//     Med målt fart spilte gråboksen sprint-klippet i firedobbel takt. Takten er det øyet
+//     leser som fart, så den skal stemme; en liten fotglid i en kort jogg-stans synes ikke.
 //  2. Helkropp (hopp, slag, rulling, treff, sitte, klatre). Tones inn over bevegelseslaget
 //     og ut igjen, med egne vekter - ingen brå bytter.
 //
@@ -21,8 +26,6 @@ const LOWER_BONE = /(thigh|shin|foot|toe|hips|root)/i;
 export interface RigTemplate {
     scene: THREE.Group;
     clips: Map<string, THREE.AnimationClip>;
-    /** Bakkefart (m/s ved skala 1) for hvert bevegelsesklipp, målt fra fotsporet. */
-    groundSpeed: Map<string, number>;
     /** Høyden på figuren i modellens egne enheter. */
     height: number;
 }
@@ -47,14 +50,7 @@ function buildTemplate(scene: THREE.Group, animations: THREE.AnimationClip[]): R
     scene.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(scene);
     const height = box.max.y - box.min.y;
-
-    const groundSpeed = new Map<string, number>();
-    for (const name of LOCO) {
-        const clip = clips.get(name);
-        if (!clip) continue;
-        groundSpeed.set(name, name === 'Idle_Loop' ? 0 : measureGroundSpeed(scene, clip));
-    }
-    return { scene, clips, groundSpeed, height };
+    return { scene, clips, height };
 }
 
 function stitch(clips: Map<string, THREE.AnimationClip>, name: string, lower: string, upper: string) {
@@ -69,41 +65,11 @@ function stitch(clips: Map<string, THREE.AnimationClip>, name: string, lower: st
 }
 
 /**
- * Hvor fort beveger bakken seg under en fot som står i et klipp der figuren går på stedet?
- * Vi spiller klippet av på en kopi, finner rutene der foten er lavest (i bakkekontakt) og
- * måler hvor fort den glir bakover da. Det er farten figuren må flytte seg med for at
- * foten skal stå helt stille.
+ * Finn et bein med navnet fra riggen. GLTFLoader fjerner punktum fra nodenavn
+ * («DEF-spine.001» blir «DEF-spine001»), så navnet må vaskes på samme måte før oppslaget.
  */
-function measureGroundSpeed(template: THREE.Group, clip: THREE.AnimationClip): number {
-    const root = cloneSkinned(template) as THREE.Group;
-    const mixer = new THREE.AnimationMixer(root);
-    mixer.clipAction(clip).play();
-    const feet = ['DEF-foot.L', 'DEF-foot.R']
-        .map((n) => root.getObjectByName(n))
-        .filter((o): o is THREE.Object3D => !!o);
-    const N = 64;
-    const samples = feet.map(() => [] as THREE.Vector3[]);
-    for (let i = 0; i <= N; i++) {
-        mixer.setTime((clip.duration * i) / N);
-        root.updateMatrixWorld(true);
-        feet.forEach((f, k) => samples[k].push(f.getWorldPosition(new THREE.Vector3())));
-    }
-    const dt = clip.duration / N;
-    let sum = 0;
-    let count = 0;
-    for (const s of samples) {
-        const minY = Math.min(...s.map((v) => v.y));
-        const maxY = Math.max(...s.map((v) => v.y));
-        const contact = minY + (maxY - minY) * 0.12;
-        for (let i = 1; i < s.length; i++) {
-            if (s[i].y <= contact && s[i - 1].y <= contact) {
-                sum += Math.hypot(s[i].x - s[i - 1].x, s[i].z - s[i - 1].z) / dt;
-                count++;
-            }
-        }
-    }
-    mixer.stopAllAction();
-    return count > 0 ? sum / count : 1;
+function findBone(root: THREE.Object3D, name: string): THREE.Object3D | undefined {
+    return root.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(name));
 }
 
 export interface PlayOptions {
@@ -127,7 +93,12 @@ export class Animator {
     readonly model: THREE.Object3D;
     readonly mixer: THREE.AnimationMixer;
     private readonly template: RigTemplate;
-    private readonly scale: number;
+    /** Farten (m/s) der hvert bevegelsesklipp spilles i sin egen takt. */
+    private gait = new Map<string, number>([
+        ['Walk_Loop', 1.1],
+        ['Jog_Fwd_Loop', 3.4],
+        ['Sprint_Loop', 5.6],
+    ]);
     private loco = new Map<string, Layered>();
     private full = new Map<string, Layered>();
     private locoPhase = 0;
@@ -144,8 +115,7 @@ export class Animator {
     constructor(template: RigTemplate, heightMeters: number, tint?: number) {
         this.template = template;
         this.model = cloneSkinned(template.scene);
-        this.scale = heightMeters / template.height;
-        this.model.scale.setScalar(this.scale);
+        this.model.scale.setScalar(heightMeters / template.height);
         this.model.traverse((o) => {
             const mesh = o as THREE.SkinnedMesh;
             if (!mesh.isMesh) return;
@@ -173,9 +143,16 @@ export class Animator {
         }
     }
 
-    /** Bakkefarten et bevegelsesklipp «hører til», i meter per sekund for denne figuren. */
+    /** Farten (m/s) et bevegelsesklipp hører til for denne figuren. */
     speedOf(name: string): number {
-        return (this.template.groundSpeed.get(name) ?? 1) * this.scale;
+        return this.gait.get(name) ?? 1;
+    }
+
+    /** Sett farten figuren går, jogger og sprinter i. */
+    setGait(walk: number, jog: number, sprint: number): void {
+        this.gait.set('Walk_Loop', walk);
+        this.gait.set('Jog_Fwd_Loop', jog);
+        this.gait.set('Sprint_Loop', sprint);
     }
 
     /** Spill et helkroppsklipp over bevegelseslaget. */
@@ -235,7 +212,7 @@ export class Animator {
 
     /** Legg en rotasjon oppå et bein (navn fra riggen). Nullstill med `null`. */
     setBoneOffset(bone: string, rot: THREE.Euler | null): void {
-        const b = this.model.getObjectByName(bone);
+        const b = findBone(this.model, bone);
         if (!b) return;
         if (rot) this.boneOffsets.set(b, rot);
         else this.boneOffsets.delete(b);
@@ -293,8 +270,8 @@ export class Animator {
             w.Sprint_Loop = t;
         } else w.Sprint_Loop = 1;
 
-        // Felles fase: syklus-lengden i meter er en vektet blanding av klippene, så faseraten
-        // gir nøyaktig riktig fotfart uansett blanding.
+        // Felles fase: syklus-lengden i meter er en vektet blanding av klippene, så takten
+        // glir jevnt mellom klippene og er klippets egen ved hver gangart.
         let cycleMeters = 0;
         let moveWeight = 0;
         for (const n of ['Walk_Loop', 'Jog_Fwd_Loop', 'Sprint_Loop']) {

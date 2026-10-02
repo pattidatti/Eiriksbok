@@ -66,6 +66,15 @@ export class Physics {
         return this.world.createCollider(desc);
     }
 
+    /** Statisk konveks form rundt punktene (f.eks. en kile under en trapp). */
+    addHull(points: THREE.Vector3[], prop = false): RAPIER_NS.Collider | null {
+        const flat = new Float32Array(points.flatMap((p) => [p.x, p.y, p.z]));
+        const desc = this.R.ColliderDesc.convexHull(flat);
+        if (!desc) return null;
+        desc.setCollisionGroups(prop ? GROUP_PROP : GROUP_WORLD).setFriction(0.8);
+        return this.world.createCollider(desc);
+    }
+
     step(): void {
         this.world.step();
     }

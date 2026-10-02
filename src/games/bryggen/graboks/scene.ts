@@ -168,22 +168,35 @@ export function buildGraybox(scene: THREE.Scene, phys: Physics): GrayboxLayout {
         box(SV_X0 + 0.02, SV_Y + 0.95, z, 0.06, 1.9, 0.95, M.dark, { collide: false, shadow: false });
     }
 
-    // ── Trapp opp til svalgangen (glatt rampe som kolliderer, trinn som vises) ──
+    // ── Trapp opp til svalgangen ──
+    // Kollideren er en kile som står på bakken. Skråflaten går gjennom midten av hvert
+    // trinn, så føttene står på trinnene. Nederst er det en kant på et halvt trinn, som
+    // autostep tar. (En skrå plate med ende ned i bakken stoppet gutten ved første trinn.)
     const ST_Z0 = 38.6; // nederst
     const ST_Z1 = SV_Z1; // øverst
     const run = ST_Z0 - ST_Z1;
     const angle = Math.atan2(SV_Y, run);
     const rampLen = Math.hypot(SV_Y, run);
-    phys.addBox(
-        new THREE.Vector3((SV_X0 + SV_X1) / 2, SV_Y / 2 - 0.08, (ST_Z0 + ST_Z1) / 2),
-        new THREE.Vector3((SV_X1 - SV_X0) / 2, 0.08, rampLen / 2),
-        new THREE.Euler(angle, 0, 0)
-    );
     const steps = 13;
+    const rise = SV_Y / steps;
+    const tread = run / steps;
+    {
+        const pts: THREE.Vector3[] = [];
+        for (const x of [SV_X0, SV_X1]) {
+            pts.push(
+                new THREE.Vector3(x, 0, ST_Z0),
+                new THREE.Vector3(x, rise / 2, ST_Z0),
+                new THREE.Vector3(x, SV_Y, ST_Z1 + tread / 2),
+                new THREE.Vector3(x, SV_Y, ST_Z1),
+                new THREE.Vector3(x, 0, ST_Z1)
+            );
+        }
+        phys.addHull(pts);
+    }
     for (let i = 0; i < steps; i++) {
-        const h = (SV_Y / steps) * (i + 1);
-        const z = ST_Z0 - (run / steps) * (i + 0.5);
-        box((SV_X0 + SV_X1) / 2, h - 0.04, z, SV_X1 - SV_X0, 0.08, run / steps + 0.02, M.wood, { collide: false });
+        const h = rise * (i + 1);
+        const z = ST_Z0 - tread * (i + 0.5);
+        box((SV_X0 + SV_X1) / 2, h - 0.04, z, SV_X1 - SV_X0, 0.08, tread + 0.02, M.wood, { collide: false });
     }
     // Vange (sidevange) på trappa mot gårdsrommet.
     box(SV_X1 - 0.04, SV_Y / 2 + 0.45, (ST_Z0 + ST_Z1) / 2, 0.08, 0.1, rampLen, M.wood, {

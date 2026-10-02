@@ -26,4 +26,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Simuleringen går i faste steg. Alt som flytter seg har `prevPos`/`pos` og tegnes interpolert.
 - Kameraet leser input per bilde, simuleringen per steg.
 - Tynne ting (stolper, rekkverk, tønner) legges i `prop`-gruppen så kameraet ikke kollapser.
+- Trapper kolliderer som en kile (`Physics.addHull`) som står på bakken, med skråflaten gjennom
+  midten av trinnene. En skrå plate med enden ned i bakken stopper figuren ved første trinn.
+- Bein slås opp med navnet fra riggen via `findBone` (GLTFLoader fjerner punktum: `DEF-foot.L`
+  heter `DEF-footL` i Three).
 - Ingen fil over 800 linjer.

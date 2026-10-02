@@ -24,6 +24,7 @@ const EMPTY: HudState = {
     enemyDead: false,
     message: null,
     pointerLocked: false,
+    mouseMode: false,
     boatSpeed: 0,
 };
 
@@ -93,6 +94,18 @@ export function BryggenGraboksPage() {
             <div ref={mountRef} className="absolute inset-0" onClick={() => started && !hud.pointerLocked && gameRef.current?.requestPointerLock()} />
             <div ref={floatRef} className="pointer-events-none absolute inset-0" />
 
+            {/* Musa er sluppet (Esc eller fokus borte): ett klikk låser den igjen. */}
+            {started && hud.mouseMode && !hud.pointerLocked && (
+                <button
+                    onClick={() => gameRef.current?.requestPointerLock()}
+                    className="absolute inset-0 flex items-center justify-center bg-slate-900/25"
+                >
+                    <span className="rounded-2xl bg-white px-6 py-4 text-lg font-semibold text-slate-900 shadow-xl">
+                        Klikk for å spille videre
+                    </span>
+                </button>
+            )}
+
             {/* Liv */}
             <div className="pointer-events-none absolute left-4 top-4 w-64 rounded-xl bg-white/85 px-3 py-2 shadow-md backdrop-blur">
                 <div className="flex items-baseline justify-between text-[13px] font-semibold text-slate-700">
@@ -157,7 +170,7 @@ export function BryggenGraboksPage() {
                             ))}
                         </dl>
                     )}
-                    {!hud.pointerLocked && <div className="mt-1 text-slate-500">Klikk i bildet for å styre kameraet med musa.</div>}
+                    {!hud.pointerLocked && !hud.mouseMode && <div className="mt-1 text-slate-500">Klikk i bildet for å styre kameraet med musa.</div>}
                 </div>
             )}
 

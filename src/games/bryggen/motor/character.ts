@@ -24,6 +24,8 @@ export interface MoveIntent {
 export interface CharacterTuning {
     radius: number;
     height: number;
+    /** Fartene der gange-, jogge- og sprintklippet spilles i sin egen takt. */
+    walkSpeed: number;
     runSpeed: number;
     sprintSpeed: number;
     accel: number;
@@ -37,6 +39,7 @@ export interface CharacterTuning {
 export const BOY_TUNING: CharacterTuning = {
     radius: 0.28,
     height: 1.58,
+    walkSpeed: 1.1,
     runSpeed: 3.4,
     sprintSpeed: 5.6,
     accel: 11,
@@ -68,6 +71,8 @@ export class Character {
     readonly pos = new THREE.Vector3();
     readonly prevPos = new THREE.Vector3();
     readonly vel = new THREE.Vector2();
+    /** Glattet vannrett fart slik den faktisk ble (det beina skal gå i). */
+    private moveSpeed = 0;
     vy = 0;
     yaw = 0;
     prevYaw = 0;
@@ -101,7 +106,8 @@ export class Character {
         );
         this.cc = phys.world.createCharacterController(0.02);
         this.cc.setUp({ x: 0, y: 1, z: 0 });
-        // Trapper bygges som ramper (glatt), men små kanter (dørstokker, planker) tas av autostep.
+        // Trapper kolliderer som glatte kiler (Physics.addHull), små kanter (dørstokker,
+        // planker, nederste halve trinn) tas av autostep.
         this.cc.enableAutostep(0.32, 0.18, false);
         this.cc.enableSnapToGround(0.35);
         this.cc.setMaxSlopeClimbAngle((52 * Math.PI) / 180);
@@ -109,6 +115,7 @@ export class Character {
         this.cc.setSlideEnabled(true);
         this.pos.copy(start);
         this.prevPos.copy(start);
+        anim.setGait(tune.walkSpeed, tune.runSpeed, tune.sprintSpeed);
     }
 
     get speed(): number {
@@ -153,6 +160,7 @@ export class Character {
         this.yaw = yaw;
         this.prevYaw = yaw;
         this.vel.set(0, 0);
+        this.moveSpeed = 0;
         this.vy = 0;
         this.body.setTranslation({ x: p.x, y: p.y + this.tune.height / 2, z: p.z }, true);
         this.body.setNextKinematicTranslation({ x: p.x, y: p.y + this.tune.height / 2, z: p.z });
@@ -257,14 +265,18 @@ export class Character {
         const nz = bp.z + m.z;
         this.body.setNextKinematicTranslation({ x: nx, y: ny, z: nz });
 
-        // Faktisk fart etter kollisjon: går vi inn i en vegg, skal farten ned (ellers
-        // «lades» farten opp mot veggen og figuren skyter av gårde når den slipper).
-        if (dt > 0) {
-            const ax = m.x / dt;
-            const az = m.z / dt;
-            if (this.mode !== 'locked') {
-                const actual = Math.hypot(ax, az);
-                if (actual < this.vel.length() - 0.05) this.vel.setLength(Math.max(actual, 0));
+        // Går vi inn i en vegg, skal farten inn i veggen bort (ellers «lades» farten opp mot
+        // veggen og figuren skyter av gårde når den slipper). Bare vegger: en trapp eller
+        // en skråning gir også kortere vannrett forflytning, men der skal farten beholdes.
+        if (this.mode !== 'locked') {
+            for (let i = 0, n = this.cc.numComputedCollisions(); i < n; i++) {
+                const c = this.cc.computedCollision(i);
+                if (!c || Math.abs(c.normal1.y) > 0.5) continue;
+                const hl = Math.hypot(c.normal1.x, c.normal1.z);
+                const wx = c.normal1.x / hl;
+                const wz = c.normal1.z / hl;
+                const into = this.vel.x * wx + this.vel.y * wz;
+                if (into < 0) this.vel.set(this.vel.x - into * wx, this.vel.y - into * wz);
             }
         }
 
@@ -274,15 +286,16 @@ export class Character {
             const impact = -this.vy;
             this.vy = 0;
             if (this.mode !== 'locked' && this.mode !== 'dead') this.mode = 'ground';
-            if (this.airTime > 0.25) {
-                if (impact > 9) {
-                    this.landLock = 0.35;
-                    this.anim.play('Jump_Land', { fade: 0.06, startAt: 0.05, timeScale: 1.6 });
-                } else if (this.anim.current?.startsWith('Jump')) {
-                    this.anim.play('Jump_Land', { fade: 0.06, startAt: 0.35, timeScale: 2.2 });
-                }
-                this.onLand?.(impact);
-            } else if (this.anim.current?.startsWith('Jump')) this.anim.release(0.12);
+            // Landingsklippet er en hel knebøy (1,25 s). Løper gutten videre, går beina rett
+            // over i løp. Bare en hard landing eller en landing på stedet får knebøyen.
+            const moving = this.vel.length() > 1 || intent.dir.lengthSq() > 0.04;
+            if (this.airTime > 0.25 && impact > 9) {
+                this.landLock = 0.3;
+                this.anim.play('Jump_Land', { fade: 0.06, startAt: 0.1, timeScale: 1.8 });
+            } else if (this.airTime > 0.25 && !moving && this.anim.current?.startsWith('Jump')) {
+                this.anim.play('Jump_Land', { fade: 0.06, startAt: 0.4, timeScale: 2.4 });
+            } else if (this.anim.current?.startsWith('Jump')) this.anim.release(0.1);
+            if (this.airTime > 0.25) this.onLand?.(impact);
             this.airTime = 0;
         } else if (!this.grounded) {
             this.airTime += dt;
@@ -293,9 +306,18 @@ export class Character {
                 this.anim.play('Jump_Loop', { fade: 0.2, loop: true });
             }
         }
-        if (this.grounded && this.anim.current === 'Jump_Land' && this.anim.progress() > 0.95) this.anim.release(0.18);
+        // Knebøyen slipper så fort den er ferdig, eller straks gutten vil gå (etter en hard
+        // landing først når låsen er over).
+        if (this.grounded && this.anim.current === 'Jump_Land' &&
+            (this.anim.progress() > 0.95 || (this.landLock <= 0 && intent.dir.lengthSq() > 0.04))) {
+            this.anim.release(0.12);
+        }
 
         this.pos.set(nx, ny - t.height / 2, nz);
+        // Beina følger faktisk forflytning, ikke ønsket fart: i trappa og langs en vegg går
+        // gutten kortere enn farten sier, og da skal skrittene bli tregere, ikke trippe.
+        const moved = Math.hypot(this.pos.x - this.prevPos.x, this.pos.z - this.prevPos.z) / dt;
+        this.moveSpeed += (Math.min(moved, this.vel.length() + 0.2) - this.moveSpeed) * 0.4;
 
         // ── Retning: figuren ser dit den beveger seg ──
         const sp = this.vel.length();
@@ -424,8 +446,9 @@ export class Character {
         this.smoothLean.y += (sideLean - this.smoothLean.y) * Math.min(1, dt * 6);
         this.anim.lean.rotation.set(this.smoothLean.x, 0, this.smoothLean.y);
 
-        const animSpeed = this.mode === 'ground' || this.mode === 'air' ? sp : 0;
-        this.anim.update(dt, this.mode === 'air' ? 0 : animSpeed);
+        const animSpeed = this.mode === 'ground' ? this.moveSpeed : this.mode === 'air' ? sp : 0;
+        // Også i lufta: da står gangblandingen klar på riktig fart når beina lander.
+        this.anim.update(dt, animSpeed);
     }
 }
 

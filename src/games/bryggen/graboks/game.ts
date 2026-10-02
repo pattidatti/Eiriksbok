@@ -17,7 +17,7 @@ import { buildGraybox, type GrayboxLayout } from './scene';
 const STEP = 1 / 60;
 const RIG_URL = '/games/bryggen/models/mannequin.glb';
 
-const ADULT_TUNING: CharacterTuning = { ...BOY_TUNING, height: 1.8, radius: 0.32, runSpeed: 3.0, sprintSpeed: 5.0 };
+const ADULT_TUNING: CharacterTuning = { ...BOY_TUNING, height: 1.8, radius: 0.32, walkSpeed: 1.2, runSpeed: 3.0, sprintSpeed: 5.0 };
 
 export interface HudState {
     loading: boolean;
@@ -38,6 +38,8 @@ export interface HudState {
     enemyDead: boolean;
     message: string | null;
     pointerLocked: boolean;
+    /** Spilleren startet med mus (da skal musa være låst mens det spilles). */
+    mouseMode: boolean;
     boatSpeed: number;
 }
 
@@ -108,7 +110,15 @@ export class GrayboxGame {
         this.resize();
         window.addEventListener('resize', this.resize);
         document.addEventListener('pointerlockchange', this.pushHudSoon);
+        document.addEventListener('fullscreenchange', this.onFullscreen);
     }
+
+    /** Chrome slipper musa når fullskjermen slår inn. Lås den igjen når skjermen står. */
+    private onFullscreen = () => {
+        if (this.input.mouseMode && document.fullscreenElement && !this.input.pointerLocked) {
+            this.input.requestPointerLock();
+        }
+    };
 
     async start(): Promise<void> {
         const [R, rig] = await Promise.all([loadRapier(), loadRig(RIG_URL)]);
@@ -184,6 +194,7 @@ export class GrayboxGame {
         cancelAnimationFrame(this.raf);
         window.removeEventListener('resize', this.resize);
         document.removeEventListener('pointerlockchange', this.pushHudSoon);
+        document.removeEventListener('fullscreenchange', this.onFullscreen);
         this.input.dispose();
         if (document.pointerLockElement === this.renderer.domElement) document.exitPointerLock();
         this.scene.traverse((o) => {
@@ -520,6 +531,7 @@ export class GrayboxGame {
             enemyDead: !!this.ai && this.ai.f.dead,
             message: this.message,
             pointerLocked: this.input.pointerLocked,
+            mouseMode: this.input.mouseMode,
             boatSpeed: this.boat ? Math.abs(this.boat.speed) : 0,
         });
     }

@@ -66,10 +66,31 @@ export class Input {
         return document.pointerLockElement === this.el;
     }
 
+    /** Spilleren valgte mus: et klikk i spillet låser musa i stedet for å slå. */
+    mouseMode = false;
+
     requestPointerLock(): void {
-        // Pointer lock er valgfritt: uten den virker piltastene og vanlig musedrag ikke,
-        // men spillet er fortsatt spillbart med tastatur.
-        this.el.requestPointerLock?.()?.catch?.(() => undefined);
+        // Pointer lock er valgfritt: uten den er spillet fortsatt spillbart med tastatur.
+        // Rå musebevegelse (uten akselerasjon fra OS) der nettleseren støtter det.
+        if (this.pointerLocked) return;
+        this.mouseMode = true;
+        const el = this.el as HTMLElement & {
+            requestPointerLock(opts?: { unadjustedMovement?: boolean }): Promise<void> | void;
+        };
+        try {
+            const p = el.requestPointerLock({ unadjustedMovement: true });
+            if (p && typeof p.catch === 'function') {
+                p.catch(() => {
+                    try {
+                        (el.requestPointerLock() as Promise<void> | undefined)?.catch?.(() => undefined);
+                    } catch {
+                        /* låsen kan nektes (f.eks. rett etter Esc), neste klikk prøver igjen */
+                    }
+                });
+            }
+        } catch {
+            /* som over */
+        }
     }
 
     /** Leses én gang per simuleringssteg. Nullstiller «trykket»-hendelser. */
@@ -145,6 +166,11 @@ export class Input {
     };
 
     private onMouseDown = (e: MouseEvent) => {
+        // Uten lås er klikket bare for å ta musa tilbake, ikke et slag.
+        if (this.mouseMode && !this.pointerLocked) {
+            this.requestPointerLock();
+            return;
+        }
         if (e.button === 0) {
             this.lmbDownAt = performance.now() / 1000;
             this.lmbHeavyFired = false;
