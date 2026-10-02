@@ -18,7 +18,9 @@ import { hus, husLod, rng, type HouseSpec } from './moduler';
 import { DECK_Y, FRONT_Z, GARD_DEPTH, SV_W, T, WARM, kai, kaiJog, svalgang, toGroup, tonne, trapp, type Sides } from './gard';
 import { LIST, STEIN, apning, paFlate } from './mariakirken';
 import { NIKOLAI_Y, PORTAL_Z, buildNikolaikirken } from './nikolaikirken';
+import { lagFolk } from './folk';
 import { bod, bronn, pytt, slede, spor } from './torg';
+import { torgPlasser, torgRuter } from './torgfolk';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -116,9 +118,10 @@ function kirketrapp(k: MeshKit, c: ColliderKit): void {
 
 /**
  * Hele allmenningen som én celle: gjørme, plankegang, kai, torgliv, rådhuset og Nikolaikirken
- * øverst. `x0..x1` langs sjøen og kaifronten i z = `front`.
+ * øverst. `x0..x1` langs sjøen og kaifronten i z = `front`. Folkene på torget (torgfolk.ts) eies
+ * av cella.
  */
-export function buildAllmenningCell(mats: Materials, x0: number, x1: number, front: number, sides: Sides = {}): CellContent {
+export async function buildAllmenningCell(mats: Materials, x0: number, x1: number, front: number, sides: Sides = {}): Promise<CellContent> {
     const k = new MeshKit();
     const c = new ColliderKit();
     const lod = new MeshKit();
@@ -184,5 +187,10 @@ export function buildAllmenningCell(mats: Materials, x0: number, x1: number, fro
     const lodMesh = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     lodMesh.name = 'allmenning:lod';
     mid.add(lodMesh, kirke.mid);
-    return { near, mid, colliders: [...c.specs, ...kirke.colliders] };
+    const folk = await lagFolk(torgPlasser(x0), mats, 1470, torgRuter(x0));
+    near.add(folk.group);
+    return {
+        near, mid, colliders: [...c.specs, ...kirke.colliders, ...folk.colliders],
+        gaaende: folk.gaaende, snakkbare: folk.snakkbare, tick: folk.tick, dispose: folk.dispose,
+    };
 }

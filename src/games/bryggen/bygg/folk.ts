@@ -65,11 +65,62 @@ export const DRAKTER = {
         belte: 0x2f2419, hoser: 0x48413a, sko: 0x3b2c20, hette: 0x4f5458, hetteOppe: true, tut: 0.12, kappe: 0.22,
         mage: 0.05,
     },
+
+    // ── Norske byfolk på torget i Nikolaikirkeallmenningen (torgfolk.ts) ──
+    // Draktene er valgt for spillet [S]: samme snitt som guttene på Kontoret (kjortel, hette,
+    // hoser), kvinnene med kjortel til anklene og en lys hette som hodeduk, uten skjegg. Hva norske
+    // kvinner og håndverkere i Bergen gikk med i 1420-årene, og om gifte kvinner dekket håret, er
+    // ikke sjekket [K Bryggens Museum, tekstilfunnene fra Bryggen].
+    /** Fiskekona i fiskeboden: lang brun kjortel, lys hodeduk (hette). */
+    fiskekone: {
+        navn: 'fiskekone', hud: 0xd29e82, haar: 0x6b5139, kjortel: 0x6a5240, kjortelNed: 0.42, belte: 0x3a2a1e,
+        hoser: 0x4a4038, sko: 0x33251b, hette: 0xd6cdb8, hetteOppe: true, tut: 0.04, kappe: 0.2,
+        mage: 0.25, slank: 0.3,
+    },
+    /** Kornselgeren: norsk kremmer som kjøper korn av Kontoret og selger det videre. Rødbrun kjortel, pung. */
+    kornselger: {
+        navn: 'kornselger', hud: 0xcf9b7d, haar: 0x8a6a46, skjegg: 0x8f7050, kjortel: 0x7a4632, kjortelNed: 0.14,
+        belte: 0x2d2016, hoser: 0x4b4a3e, sko: 0x2f2318, hette: 0x5b6a52, hetteOppe: true, tut: 0.22, kappe: 0.19,
+        mage: 0.45, pung: 0.7,
+    },
+    /** Bondekona med kurvene: har rodd inn til byen med egg og erter. Grå kjortel, ufarget hodeduk. */
+    bondekone: {
+        navn: 'bondekone', hud: 0xc99577, haar: 0x9a8a72, kjortel: 0x6e6b60, kjortelNed: 0.44, belte: 0x3e2d1f,
+        hoser: 0x4d453c, sko: 0x35271c, hette: 0xc8bea6, hetteOppe: true, tut: 0.03, kappe: 0.22,
+        mage: 0.1, slank: 0.2,
+    },
+    /** Bødkeren i tønneboden: lager og selger tønner. Kort kjortel til arbeid, hetta nede, skjegg. */
+    bodker: {
+        navn: 'bodker', hud: 0xc99478, haar: 0x4a3a2b, skjegg: 0x55432f, kjortel: 0x5a4a36, kjortelNed: 0.0,
+        belte: 0x2a1d14, hoser: 0x3f4a4f, sko: 0x2b1f17, hette: 0x6f5a41, hetteOppe: false, tut: 0.18, kappe: 0.16,
+        mage: 0.2,
+    },
+    /** Kjøpekona: blå kjortel til anklene (råd til plantefarge), lys hodeduk. */
+    kjopekone: {
+        navn: 'kjopekone', hud: 0xdcab8f, haar: 0x5a4330, kjortel: 0x3f5670, kjortelNed: 0.42, belte: 0x2f2218,
+        hoser: 0x463d36, sko: 0x2d2119, hette: 0xe0d8c6, hetteOppe: true, tut: 0.04, kappe: 0.19,
+        slank: 0.35,
+    },
+    /** Borgeren: norsk bymann med eget hus og handel. Grønn kjortel under kneet, rødbrun hette, skjegg. */
+    borger: {
+        navn: 'borger', hud: 0xd6a184, haar: 0x4a3626, skjegg: 0x5a4532, kjortel: 0x3f5a3e, kjortelNed: 0.2,
+        belte: 0x281c13, hoser: 0x4f4a40, sko: 0x2a1e16, hette: 0x7a3a2c, hetteOppe: true, tut: 0.3, kappe: 0.2,
+        mage: 0.3, pung: 0.6,
+    },
+    /** Tjenestejenta som henter vann: ung, ufarget vadmel, hetta nede så håret synes. */
+    tjenestejente: {
+        navn: 'tjenestejente', hud: 0xe0b196, haar: 0xa77d4c, kjortel: 0x857865, kjortelNed: 0.36, belte: 0x3b2a1e,
+        hoser: 0x5b5047, sko: 0x3a2a1f, hette: 0x8a7f6a, hetteOppe: false, tut: 0.08, kappe: 0.15,
+        slank: 0.55, hode: 1.03,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
 
-export const HOYDE: Record<FigurNavn, number> = { junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52, fisker: 1.71 };
+export const HOYDE: Record<FigurNavn, number> = {
+    junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52, fisker: 1.71,
+    fiskekone: 1.58, kornselger: 1.73, bondekone: 1.55, bodker: 1.7, kjopekone: 1.61, borger: 1.75, tjenestejente: 1.54,
+};
 
 /**
  * Hva en figur gjør på plassen sin. Alt er løkker på stedet.
@@ -263,15 +314,15 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
             if ((o as THREE.Mesh).isMesh) o.frustumCulled = true;
         });
         const s = HOYDE[rute.figur] / rig.height;
-        const bunt = buntMesh(mats);
-        bunt.position.set(0, 1.0 * s, 0.3 * s);
+        const bunt = rute.baer === 'botte' ? botteMesh(mats) : buntMesh(mats);
+        bunt.position.set(0, (rute.baer === 'botte' ? 0.9 : 1.0) * s, 0.3 * s);
         a.root.add(bunt);
         egne.push(bunt);
         const v = new Vandrer(a, rute, bunt, seed + i * 3.7);
         group.add(a.root);
         anims.push(a);
         vandrere.push(v);
-        snakkbare.push({ figur: rute.figur, pos: v.pos, vend: (mot) => v.vend(mot) });
+        snakkbare.push({ figur: rute.figur, pos: v.pos, samtale: rute.samtale, vend: (mot) => v.vend(mot) });
     });
     const vTakt = vandrere.map((v) => new Takt(v.a));
 
@@ -313,6 +364,25 @@ export function buntMesh(mats: Materials): THREE.Object3D {
     k.withTint({ top: 1.1, bottom: 0.9, hue: [1.12, 1.02, 0.8] }, () => {
         for (const dx of [-0.13, 0.13]) k.box('raatre', dx, 0, 0, 0.035, 0.27, 0.31);
     });
+    const g = new THREE.Group();
+    for (const [key, b] of k.buckets) {
+        if (b.vertexCount === 0) continue;
+        const m = new THREE.Mesh(b.toGeometry(), mats.get(key));
+        m.castShadow = true;
+        g.add(m);
+    }
+    return g;
+}
+
+/** En vannbøtte av staver med to bånd, full av vann, som i brønnen på torget (torg.ts) [S]. */
+function botteMesh(mats: Materials): THREE.Object3D {
+    const k = new MeshKit();
+    const V = (y: number) => new THREE.Vector3(0, y, 0);
+    k.withTint({ top: 0.8, bottom: 0.8, hue: [1.06, 0.98, 0.88] }, () => k.log('raatre', V(-0.15), V(0.13), 0.13, 10, true, 0.15));
+    k.withTint({ top: 0.45, bottom: 0.45 }, () => {
+        for (const y of [-0.08, 0.07]) k.log('raatre', V(y - 0.02), V(y + 0.02), 0.143 + y * 0.03, 10, false, 0.143 + y * 0.03);
+    });
+    k.withTint({ top: 0.2, bottom: 0.2, hue: [0.8, 0.9, 1] }, () => k.withUv(0.04, () => k.log('mork', V(0.1), V(0.12), 0.135, 10, true, 0.135)));
     const g = new THREE.Group();
     for (const [key, b] of k.buckets) {
         if (b.vertexCount === 0) continue;
