@@ -16,6 +16,8 @@ export interface InputFrame {
     dodgePressed: boolean;
     finisherPressed: boolean;
     resetPressed: boolean;
+    /** Et svar i en samtale: 1, 2 eller 3 (tallrekka eller talltastaturet). */
+    valg: number | null;
 }
 
 export interface LookInput {
@@ -127,6 +129,7 @@ export class Input {
             dodgePressed: p.has('KeyQ') || p.has('ControlLeft') || p.has('KeyC'),
             finisherPressed: p.has('KeyF'),
             resetPressed: p.has('KeyR'),
+            valg: [1, 2, 3].find((n) => p.has(`Digit${n}`) || p.has(`Numpad${n}`)) ?? null,
         };
         p.clear();
         this.lightQueued = false;

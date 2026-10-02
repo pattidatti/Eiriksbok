@@ -17,6 +17,7 @@ import { buildGraybox, type GrayboxLayout } from './scene';
 import type { BryggenWorld } from '../bygg/bryggen';
 import { Etterbehandling } from '../motor/post';
 import type { LydKobling } from '../motor/lydkobling';
+import type { FolkStyring, ReplikkHud, SamtaleHud } from './folkstyring';
 
 /** Hvilken verden løkka kjører: grå prøvescene eller Bryggen bygget av modulsettet. */
 export type WorldId = 'graboks' | 'gard';
@@ -51,6 +52,10 @@ export interface HudState {
     cells: number;
     /** Grafikknivået som brukes nå. */
     quality: Quality;
+    /** Samtalen som pågår (bare Bryggen-scenen). */
+    samtale: SamtaleHud | null;
+    /** En kort replikk fra noen i nærheten (undertekst). */
+    replikk: ReplikkHud | null;
 }
 
 /** Full: normal- og AO-kart, miljølys og skygger. Lav: bare fargetekstur og ruhet. */
@@ -119,6 +124,8 @@ export class GrayboxGame {
     /** Lyden (bare Bryggen-scenen). Startes av første tastetrykk eller klikk (`startLyd`). */
     private lyd: LydKobling | null = null;
     private lydValg = { onsket: false, paa: true, volum: 0.8 };
+    /** Folkene: hvem gutten kan snakke med, og samtalen (bare Bryggen-scenen). */
+    private folk: FolkStyring | null = null;
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
@@ -243,6 +250,10 @@ export class GrayboxGame {
             const { LydKobling } = await import('../motor/lydkobling');
             if (this.disposed) return;
             this.lyd = new LydKobling(this.world, this.cam.camera, this.player, this.boat);
+            const { FolkStyring } = await import('./folkstyring');
+            if (this.disposed) return;
+            this.folk = new FolkStyring(this.world);
+            this.folk.onEndring = this.pushHudSoon;
             this.settLyd(this.lydValg.paa, this.lydValg.volum);
             if (this.lydValg.onsket) void this.lyd.start();
         }
@@ -422,6 +433,20 @@ export class GrayboxGame {
         const dir = new THREE.Vector2().addScaledVector(fwd, inp.move.y).addScaledVector(right, inp.move.x);
 
         if (inp.resetPressed) this.resetFight();
+        // Samtale: gutten står stille, E og mellomrom går videre, 1-3 svarer.
+        const prat = this.folk?.laast ?? false;
+        if (prat) {
+            this.folk!.input(inp.interactPressed || inp.jumpPressed, inp.valg);
+            dir.set(0, 0);
+            // Gutten snur seg mot den han snakker med.
+            const f = this.folk!.fokus;
+            if (f) {
+                const want = Math.atan2(f.x - this.player.pos.x, f.z - this.player.pos.z);
+                this.player.yaw += Math.atan2(Math.sin(want - this.player.yaw), Math.cos(want - this.player.yaw)) * Math.min(1, dt * 6);
+            }
+            inp.jumpPressed = inp.interactPressed = inp.lightPressed = inp.heavyPressed = false;
+            inp.dodgePressed = inp.finisherPressed = inp.blockHeld = inp.sprint = false;
+        }
 
         if (this.mode === 'boat') {
             this.boat.step(dt, { forward: inp.move.y, turn: inp.move.x });
@@ -449,6 +474,7 @@ export class GrayboxGame {
                 jump: canMove && inp.jumpPressed,
             });
             if (inp.interactPressed && this.prompt?.startsWith('E: Gå om bord')) this.embark();
+            else if (inp.interactPressed && this.prompt?.startsWith('E: Snakk')) this.folk?.snakk(this.player.pos);
             this.checkWater(dt);
         }
 
@@ -499,6 +525,12 @@ export class GrayboxGame {
         if (this.mode === 'boat') this.cam.autoFollowYaw = this.boat.yaw + Math.PI;
         else if (!this.input.pointerLocked && this.player.speed > 1.2) this.cam.autoFollowYaw = this.player.yaw + Math.PI;
         else this.cam.autoFollowYaw = null;
+        // Samtale: kameraet glir rundt til bak gutten, så den han snakker med ses forfra.
+        const fokus = this.folk?.fokus;
+        if (fokus) {
+            const want = Math.atan2(fokus.x - this.player.pos.x, fokus.z - this.player.pos.z) + Math.PI + 0.35;
+            this.cam.yaw += Math.atan2(Math.sin(want - this.cam.yaw), Math.cos(want - this.cam.yaw)) * Math.min(1, dt * 2.5);
+        }
         this.cam.update(dt, this.input.takeLook(), follow, this.phys);
 
         // Kameraet helt inntil gutten (rygg mot veggen): ton ham ut i stedet for å vise innsiden.
@@ -547,9 +579,14 @@ export class GrayboxGame {
         if (this.mode === 'foot') {
             const d = Math.hypot(this.boat.pos.x - this.player.pos.x, this.boat.pos.z - this.player.pos.z);
             this.prompt = d < 3.4 && this.player.grounded && !this.pc.busy ? 'E: Gå om bord i færingen' : null;
+            if (this.folk) {
+                this.folk.update(0.15, this.player.pos, this.player.yaw, !this.prompt && !this.pc.busy && !this.ai.aggro);
+                this.prompt ??= this.folk.prompt;
+            }
         } else {
             this.landCandidate = this.findLanding();
             this.prompt = this.landCandidate ? 'E: Gå i land' : null;
+            this.folk?.update(0.15, this.player.pos, this.player.yaw, false);
         }
     }
 
@@ -574,6 +611,7 @@ export class GrayboxGame {
     }
 
     private embark(): void {
+        this.folk?.slutt();
         this.mode = 'boat';
         this.player.setSeated(true);
         this.player.anim.play('Row', { fade: 0.25, loop: true });
@@ -712,6 +750,8 @@ export class GrayboxGame {
             boatSpeed: this.boat ? Math.abs(this.boat.speed) : 0,
             cells: this.world ? this.world.streamer.liveCount : 0,
             quality: this.quality,
+            samtale: this.folk?.samtale ?? null,
+            replikk: this.folk?.replikk ?? null,
         });
     }
 }

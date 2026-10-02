@@ -11,7 +11,7 @@
 import * as THREE from 'three';
 import type { Physics } from '../motor/physics';
 import { WATER_Y } from '../motor/boat';
-import { CellStreamer, type CellContent, type CellDef } from '../motor/streaming';
+import { CellStreamer, type CellContent, type CellCtx, type CellDef } from '../motor/streaming';
 import { Materials, makeSkyEnvironment } from '../motor/materials';
 import { flakk } from '../motor/ild';
 import { lagVann, type Vann } from '../motor/vann';
@@ -35,6 +35,8 @@ export interface BryggenWorld {
     underlag: (p: THREE.Vector3) => 'tre-ute' | 'tre-inne' | 'gjorme';
     /** Hvor mye det regner (0 tørt, 1 øsregn). Kan endres mens spillet går. */
     regn: number;
+    /** Får replikkene folkene sier (vises som undertekst). Settes av spillet. */
+    si: ((hvem: string, tekst: string) => void) | null;
     /** Miljølyset fra himmelen. Bare full kvalitet bruker det. */
     environment: THREE.Texture;
     /**
@@ -171,8 +173,23 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     ildlys.name = 'ildlys';
     scene.add(ildlys);
     const _d = new THREE.Vector3();
+    // Folk som går har ingen egen kollider. De nærmeste gutten får låne en kapsel fra poolen, så
+    // han ikke går gjennom dem (og de stopper selv før de går på ham, vandrer.ts).
+    const pool = Array.from({ length: 5 }, () => phys.addMover(0.55, 0.26));
+    const parkert = new THREE.Vector3(0, -100, 0);
+    const naere: { p: THREE.Vector3; d: number }[] = [];
+    const ctx: CellCtx = { kamera: new THREE.Vector3(), spiller: new THREE.Vector3(), si: (hvem, tekst) => world.si?.(hvem, tekst) };
     const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
-        streamer.tick(t, dt);
+        ctx.kamera.copy(focus);
+        ctx.spiller.copy(spiller?.pos ?? focus);
+        streamer.tick(t, dt, ctx);
+        naere.length = 0;
+        for (const p of streamer.gaaende()) {
+            const d = p.distanceToSquared(ctx.spiller);
+            if (d < 144) naere.push({ p, d });
+        }
+        naere.sort((a, b) => a.d - b.d);
+        pool.forEach((m, i) => m.flytt(naere[i]?.p ?? parkert));
         vann.update(t, world.regn);
         maaker.update(dt, t, spiller?.pos ?? focus, spiller?.fart ?? 0);
         sonerTid -= dt;
@@ -249,6 +266,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         rotter,
         kaiKant: { x0: xw, x1: xe, y: WATER_Y + 0.15, z: -0.6 },
         underlag,
+        si: null,
         // ?regn=0 til 1 overstyrer (for skjermbilder og måling). Standard: jevnt Bergen-regn.
         regn: regnFraUrl() ?? 0.6,
         streamer,

@@ -25,14 +25,37 @@ export interface CellContent {
     near: THREE.Object3D;
     mid?: THREE.Object3D;
     colliders: ColliderSpec[];
-    /** Det som lever i cella (flammer, røyk). Kalles hvert bilde mens nær-nivået vises. */
-    tick?: (t: number, dt: number) => void;
+    /** Det som lever i cella (flammer, røyk, folk). Kalles hvert bilde mens nær-nivået vises. */
+    tick?: (t: number, dt: number, ctx: CellCtx) => void;
     /** Ildsteder i verdensrom. Verdenen flytter det felles ildlyset til det nærmeste. */
     ild?: THREE.Vector3[];
     /** Rom man kan gå inn i, i verdensrom. Inne dempes dagslyset. */
     rom?: Rom[];
+    /** Folk som går (føttene, oppdatert av `tick`). Verdenen gir de nærmeste en kollider. */
+    gaaende?: THREE.Vector3[];
+    /** Folk man kan snakke med (E). */
+    snakkbare?: Snakkbar[];
     /** Rydder det cella eier selv (materialer som ikke hører til Materials). */
     dispose?: () => void;
+}
+
+/** Det cellene får vite hvert bilde: hvor kameraet og gutten er, og en munn. */
+export interface CellCtx {
+    kamera: THREE.Vector3;
+    spiller: THREE.Vector3;
+    /** En kort replikk fra noen i cella (vises som undertekst). */
+    si: (hvem: string, tekst: string) => void;
+}
+
+/** En figur man kan snakke med. `pos` er føttene og følger figuren. */
+export interface Snakkbar {
+    /** Drakten (husbonde, svenn, ...). Avgjør hva hen sier. */
+    figur: string;
+    pos: THREE.Vector3;
+    /** Id i samtalene (samtaler.ts). Uten: en kort replikk. */
+    samtale?: string;
+    /** Snu seg mot noen og stoppe det hen holder på med (`null`: fortsett). */
+    vend: (mot: THREE.Vector3 | null) => void;
 }
 
 /**
@@ -144,9 +167,9 @@ export class CellStreamer {
     }
 
     /** Kjører det som lever i cellene som vises nær. */
-    tick(t: number, dt: number): void {
+    tick(t: number, dt: number, ctx: CellCtx): void {
         for (const cell of this.live.values()) {
-            if (cell.content?.tick && cell.content.near.visible) cell.content.tick(t, dt);
+            if (cell.content?.tick && cell.content.near.visible) cell.content.tick(t, dt, ctx);
         }
     }
 
@@ -157,6 +180,14 @@ export class CellStreamer {
 
     *rom(): Generator<Rom> {
         for (const cell of this.live.values()) yield* cell.content?.rom ?? [];
+    }
+
+    *gaaende(): Generator<THREE.Vector3> {
+        for (const cell of this.live.values()) if (cell.content?.near.visible) yield* cell.content.gaaende ?? [];
+    }
+
+    *snakkbare(): Generator<Snakkbar> {
+        for (const cell of this.live.values()) if (cell.content?.near.visible) yield* cell.content.snakkbare ?? [];
     }
 
     /** Til målerne: hvor mange celler er lastet nå. */

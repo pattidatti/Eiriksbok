@@ -68,14 +68,14 @@ export function bu(k: MeshKit, c: ColliderKit, s: HouseSpec): Plass[] {
     sekker(k, c, rect(X(0.6), X(1.4), l - 1.4, l - 0.15), y1, r);
 
     // ── Folkene [S] ──
-    // Husbonden fører gjeldsboka ved pulten, svennen leser av bismeren, og skutedrengen står
-    // med en bunt i armene, klar til å bære den ut døra mot gårdsrommet. Ingen står i døråpningene,
-    // i ganglinja fra porten eller ved trappefoten.
+    // Husbonden fører gjeldsboka ved pulten, og svennen leser av bismeren. Ingen står i
+    // døråpningene, i ganglinja fra porten eller ved trappefoten. Skutedrengen går: han bærer
+    // buntene fra kaia og inn hit (ruta ligger i gard.ts). Husbonden er den gutten snakker med
+    // først (samtaler.ts).
     const yaw = (fx: number, fz: number) => Math.atan2(fx, fz);
     return [
-        { figur: 'husbonde', rolle: 'skrive', pos: V(X(-xIn + 0.55) + sv * 0.62, y0, 0.95), yaw: yaw(-sv, 0) },
+        { figur: 'husbonde', rolle: 'skrive', pos: V(X(-xIn + 0.55) + sv * 0.62, y0, 0.95), yaw: yaw(-sv, 0), samtale: 'husbonde' },
         { figur: 'svenn', rolle: 'veie', pos: V(X(-0.75), y0, 3.2), yaw: Math.PI },
-        { figur: 'dreng', rolle: 'baere', pos: V(X(-1.6), y0, 5.0), yaw: yaw(-sv, 1) },
     ];
 }
 

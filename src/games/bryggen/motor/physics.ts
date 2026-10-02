@@ -75,6 +75,20 @@ export class Physics {
         return this.world.createCollider(desc);
     }
 
+    /**
+     * En kapsel som flyttes av koden (folk som går). Den står i prop-gruppen: gutten og fienden
+     * stopper mot den, kameraet ser den ikke. `flytt` setter føttene der neste steg starter.
+     */
+    addMover(halfHeight: number, radius: number): { flytt: (feet: THREE.Vector3) => void; fjern: () => void } {
+        const body = this.world.createRigidBody(this.R.RigidBodyDesc.kinematicPositionBased().setTranslation(0, -100, 0));
+        this.world.createCollider(this.R.ColliderDesc.capsule(halfHeight, radius).setCollisionGroups(GROUP_PROP), body);
+        const y = halfHeight + radius;
+        return {
+            flytt: (p) => body.setNextKinematicTranslation({ x: p.x, y: p.y + y, z: p.z }),
+            fjern: () => this.world.removeRigidBody(body),
+        };
+    }
+
     step(): void {
         this.world.step();
     }

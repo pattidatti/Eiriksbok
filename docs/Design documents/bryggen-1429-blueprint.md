@@ -641,7 +641,13 @@ Mixamo brukes ikke (krever innlogging).
   benken ved ilden, stuedrengen rører i gryta og en husbonde spiser ved bordet. Løkker på stedet, ingen
   samtaler. De strømmes med cella og har kollider. Hvem som fantes i gården (husbonde, svenner, drenger,
   alle ugifte menn og gutter) er [V]; hva rangene gjorde er fortalt for 1600/1700-tallet [U]; hvem som
-  sitter og gjør hva er [S]
+  sitter og gjør hva er [S]. Folk som går (02.10.2026, `bygg/vandrer.ts`): skutedrengen bærer bunter
+  fra en stabel på kaia opp gårdsrommet og inn i bua, svennen går fra schøtstua ned til kaia og ser ut
+  over Vågen. I hver nabogård går en voksen langs kaia og en gutt bærer bunter opp gårdsrommet. De
+  stopper og sier fra når gutten står i veien. Samtaler (02.10.2026, `bygg/samtaler.ts`): E ved
+  husbonden i bua gir en samtale med valg (1-3) om arbeidet, gjelda, hvem som bestemmer og de tre
+  reglene fra prologen, og den slutter med en «Dette vet vi»-tekst. De andre sier en kort replikk.
+  Kameraet går over skulderen på gutten, og den han snakker med snur seg. Venter på eierens spilltest
 - [~] Dyr: måker bygget 02.10.2026 (`motor/maaker.ts`): 16 måker i ett tegnekall, laget i kode
   (ingen asset: lavpoly-pakkene kolliderte med stilen, §9.7). De sirkler over kaia, lander på
   kaidekket og vannet, snur seg og hopper, og letter i flokk når gutten spurter forbi eller går helt

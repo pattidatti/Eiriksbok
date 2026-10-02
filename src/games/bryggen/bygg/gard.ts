@@ -20,6 +20,7 @@ import { romIHus } from './inne';
 import type { Rom } from '../motor/streaming';
 import { Ild } from '../motor/ild';
 import { lagFolk, type Plass } from './folk';
+import type { Rute } from './vandrer';
 
 export const HOUSE_W = 7;
 export const YARD_W = 4;
@@ -404,24 +405,82 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
         k.withTint({ top: 0.7, bottom: 0.7 }, () => k.log('raatre', V(x, -0.1, 0.45), V(x, 0.55, 0.45), 0.17, 8, true, 0.15));
         c.box(x, 0.25, 0.45, 0.32, 0.6, 0.32, true);
     }
+    // Buntene skutedrengen bærer inn i bua: lagt opp på kaia fra båten [S].
+    buntStabel(k, c, -4.55, 1.45);
     near.add(toGroup(k, mats, 'felles'));
 
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'gard:lod';
     // Folkene i bua og schøtstua lages og kastes med cella (folk.ts).
-    const folk = await lagFolk(plasser, mats, Math.abs(Math.round(ox)) + 7);
+    const folk = await lagFolk(plasser, mats, Math.abs(Math.round(ox)) + 7, ruter(ox, back));
     near.add(folk.group);
     return {
         near, mid, colliders: [...c.specs, ...folk.colliders], ild: ildPos, rom,
-        tick: (t, dt) => {
+        gaaende: folk.gaaende, snakkbare: folk.snakkbare,
+        tick: (t, dt, ctx) => {
             ilder.forEach((f) => f.update(t, dt));
-            folk.tick(dt);
+            folk.tick(t, dt, ctx);
         },
         dispose: () => {
             ilder.forEach((f) => f.dispose());
             folk.dispose();
         },
     };
+}
+
+/**
+ * Folk som går i den første gården [S]. Skutedrengen bærer bunter fra stabelen på kaia, opp
+ * gårdsrommet og inn den åpne bu-døra, og legger dem ved bismeren. Svennen går fra schøtstua ned
+ * til kaia, ser ut over Vågen en stund og går tilbake. De holder hver sin side av midten, så de
+ * ikke møtes nese mot nese, og alt de går forbi står inntil veggene.
+ */
+function ruter(ox: number, back: number): Rute[] {
+    const P = (x: number, y: number, z: number) => V(ox + x, y, z);
+    const BU = 0.2; // golvet inne
+    return [
+        {
+            figur: 'dreng', fart: 1.05, start: 3,
+            stopp: [
+                { p: P(-4.55, 0, 2.35), last: true, se: Math.PI, vent: 0.4 },
+                { p: P(-1.3, 0, 4.0) },
+                { p: P(-0.45, 0, 6.5) },
+                { p: P(-0.45, 0, 11.0) },
+                { p: P(-1.5, 0, 11.8) },
+                { p: P(-2.95, BU, 11.7) },
+                { p: P(-3.8, BU, 10.45), last: false, se: -Math.PI / 2, vent: 0.6 },
+                { p: P(-2.9, BU, 11.85) },
+                { p: P(-1.4, 0, 11.85) },
+                { p: P(-0.5, 0, 10.6) },
+                { p: P(-0.5, 0, 6.5) },
+                { p: P(-1.4, 0, 3.9) },
+            ],
+        },
+        {
+            figur: 'svenn', fart: 1.0, start: 1,
+            stopp: [
+                { p: P(0.45, 0, back - 2.2), vent: 6, se: Math.PI },
+                { p: P(0.45, 0, 33) },
+                { p: P(0.45, 0, 6) },
+                { p: P(1.1, 0, 1.6), vent: 8, se: Math.PI },
+                { p: P(0.5, 0, 6) },
+                { p: P(0.5, 0, 33) },
+            ],
+        },
+    ];
+}
+
+/** En stabel bunter tørrfisk på kaia, surret med tau: det skutedrengen bærer inn. */
+function buntStabel(k: MeshKit, c: ColliderKit, x: number, z: number): void {
+    const lag: [number, number, number][] = [[-0.27, 0, 0], [0.27, 0, 0], [0, 0.27, 0.02]];
+    for (const [dx, y, dz] of lag) {
+        k.withUv(0.04, () => {
+            k.withTint({ top: 1.45, bottom: 1.1, hue: [1.02, 0.98, 0.86] }, () => k.box('raatre', x + dx, y + 0.13, z + dz, 0.5, 0.26, 0.3, { grain: 'x' }));
+        });
+        k.withTint({ top: 1.1, bottom: 0.9, hue: [1.12, 1.02, 0.8] }, () => {
+            for (const t of [-0.13, 0.13]) k.box('raatre', x + dx + t, y + 0.13, z + dz, 0.035, 0.27, 0.31);
+        });
+    }
+    c.box(x, 0.27, z, 1.1, 0.54, 0.4, true);
 }
 
 /**

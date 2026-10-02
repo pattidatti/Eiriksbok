@@ -50,7 +50,10 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/moduler.ts` | Modulsettet: laft med laftehoder, gavl, bordkledd fasade, torvtak, bordtak, vinsj, dører, glugger og utkraget overetasje |
 | `bygg/inne.ts` | Hus man kan gå inn i: hule etasjer med hull for åpne dører og glugger, golv, bjelkelag med trappehull og rekkverk, trapp, terskelkiler, innergavler og åser |
 | `bygg/bu.ts` | Bua og lagerloftet: tørrfisk i stabler og bunter, kornsekker, tranfat, bismer, skrivepult med gjeldsbok og kiste |
-| `bygg/folk.ts` | Draktene (junge, husbonde, svenn, skutedreng, stuedreng) og folkene i en celle: animator, kollider og løkke på stedet |
+| `bygg/folk.ts` | Draktene (junge, husbonde, svenn, skutedreng, stuedreng) og folkene i en celle: animator, kollider, løkke på stedet, animasjon etter avstand, og de som går |
+| `bygg/vandrer.ts` | Folk som går faste ruter: svinger, bremser, tar opp og legger fra seg bunter, stopper og sier fra når gutten står i veien |
+| `bygg/samtaler.ts` | Hva folkene sier: samtalen med husbonden (de tre reglene, valg 1-3, «Dette vet vi»), korte replikker, og hva de sier når gutten står i veien |
+| `graboks/folkstyring.ts` | Hvem gutten kan snakke med (E), samtalen som pågår og replikkene som vises som undertekst |
 | `bygg/schotstue.ts` | Schøtstua innvendig: ildsted av stein, gryte i kjetting, langbenker, bord på bukker, ved |
 | `bygg/gard.ts` | Den første gården: husplan, svalganger, trapper, kai på bolverk (med sidevegg der kaia hopper), allmenningen |
 | `bygg/nabogard.ts` | Nabogårdene: trukket fra et frø (enkelt/dobbel, bredde, antall hus, høyde, torv/bordtak, svalganger, tone), aldri lik gården ved siden av |
@@ -163,4 +166,16 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Lyder i rommet (rotter, fottrinn) går på inne-bussen; alt som hører hjemme ute går på ute-bussen og
   blir dempet gjennom veggene når kameraet er inne.
 - `__bryggenRotter` (bare i dev): testskript kan lese og stille rottene, og kalle `update` med egen dt.
+- Folk som går (`Rute` i `vandrer.ts`) har ingen veifinning: punktene legges der det er fritt, midt i
+  gårdsrommet og et stykke inn fra kaikanten, og ting står inntil veggene. Ruta i den første gården og i
+  nabogårdene står i `gard.ts` og `nabogard.ts`. De har ingen egen kollider: verdenen låner ut fem
+  kapsler (`Physics.addMover`, prop-gruppen) til dem som er nærmest gutten.
+- Animasjonen til folk oppdateres hvert bilde innen 16 m, 15 ganger i sekundet ut til 55 m, og ikke
+  lenger unna (`Takt` i `folk.ts`). Logikken til dem som går, kjører alltid.
+- Overkroppsklipp oppå gangen (bære noe): `Animator.overlay('Baere_Over')`. Mixeren normaliserer
+  vektene per bein, så `overlay` regner om vekten til andelen overkroppen skal ha.
+- Cellenes `tick` får `CellCtx` (kamera, gutt og `si` for replikker). `snakkbare` i en celle er folk
+  gutten kan snakke med; `samtale` på en `Plass` peker til en samtale i `samtaler.ts`.
+- Programvare-GL i Playwright kan gi bilder over 0,25 s, og løkka kaster dem (fanebytte-vernet). Da
+  står spillet nesten stille i testen. Test bevegelse med `?kvalitet=lav&post=0` og et lite vindu.
 - Ingen fil over 800 linjer.

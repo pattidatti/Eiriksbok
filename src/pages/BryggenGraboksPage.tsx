@@ -60,6 +60,8 @@ const EMPTY: HudState = {
     boatSpeed: 0,
     cells: 0,
     quality: 'full',
+    samtale: null,
+    replikk: null,
 };
 
 const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
@@ -80,7 +82,8 @@ const CONTROLS: [string, string][] = [
     ['Shift', 'sprint'],
     ['Mellomrom', 'hopp / klatre opp på kanter'],
     ['Mus / piltaster', 'kamera'],
-    ['E', 'gå om bord / i land'],
+    ['E', 'snakk / gå om bord / i land'],
+    ['1, 2, 3', 'svar i en samtale'],
     ['Venstre klikk / J', 'lett slag'],
     ['Hold venstre / K', 'tungt slag'],
     ['Høyre / L (hold)', 'blokker'],
@@ -291,6 +294,40 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                 )}
             </div>
 
+            {/* Samtalen: fast nederst i midten, stor og lys, så den kan leses på storskjerm. */}
+            {hud.samtale && (
+                <div className="pointer-events-none absolute bottom-6 left-1/2 w-[min(720px,92vw)] -translate-x-1/2">
+                    <div
+                        className={`rounded-2xl px-5 py-4 shadow-xl ${hud.samtale.vet ? 'border-2 border-amber-300 bg-amber-50/95' : 'bg-white/95'}`}
+                    >
+                        <div className={`text-[13px] font-bold uppercase tracking-wide ${hud.samtale.vet ? 'text-amber-700' : 'text-indigo-700'}`}>
+                            {hud.samtale.hvem}
+                        </div>
+                        <p className="mt-1 text-[17px] leading-snug text-slate-900">{hud.samtale.tekst}</p>
+                        {hud.samtale.valg.length > 0 ? (
+                            <ol className="mt-3 flex flex-col gap-1.5">
+                                {hud.samtale.valg.map((v, i) => (
+                                    <li key={v} className="flex items-baseline gap-2 text-[15px] font-semibold text-slate-800">
+                                        <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-indigo-600 text-[13px] font-bold text-white">
+                                            {i + 1}
+                                        </span>
+                                        {v}
+                                    </li>
+                                ))}
+                            </ol>
+                        ) : (
+                            <div className="mt-2 text-right text-[13px] font-semibold text-slate-500">E: videre</div>
+                        )}
+                    </div>
+                </div>
+            )}
+            {!hud.samtale && hud.replikk && (
+                <div className="pointer-events-none absolute bottom-8 left-1/2 max-w-[min(640px,92vw)] -translate-x-1/2 rounded-xl bg-slate-900/80 px-4 py-2 text-center text-[16px] text-white shadow-lg">
+                    <span className="font-bold text-amber-200">{hud.replikk.hvem}: </span>
+                    {hud.replikk.tekst}
+                </div>
+            )}
+
             {hud.message && (
                 <div className="pointer-events-none absolute left-1/2 top-24 max-w-xl -translate-x-1/2 rounded-xl bg-white/90 px-5 py-3 text-center text-[15px] font-medium text-slate-800 shadow-lg">
                     {hud.message}
@@ -298,7 +335,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             )}
 
             {/* Kontroller */}
-            {started && (
+            {started && !hud.samtale && (
                 <div className="absolute bottom-4 left-4 max-w-xs rounded-xl bg-white/85 px-3 py-2 text-[13px] text-slate-700 shadow-md backdrop-blur">
                     <button className="font-semibold text-slate-900" onClick={() => setShowControls((v) => !v)}>
                         {showControls ? 'Skjul kontroller' : 'Vis kontroller'}

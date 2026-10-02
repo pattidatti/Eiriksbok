@@ -16,6 +16,8 @@ import { ColliderKit, MeshKit } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
 import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { lagFolk, type FigurNavn } from './folk';
+import type { Rute } from './vandrer';
 import {
     COLD, DARK, FRONT_Z, GARD_DEPTH, SV_W, WARM, DECK_Y,
     brannkar, kai, kaiJog, svalgang, toGroup, tonne, trapp,
@@ -231,7 +233,7 @@ function planNabo(p: GardParams) {
 }
 
 /** En nabogård som celle. `ox` er midten langs sjøen. */
-export function buildNaboCell(mats: Materials, ox: number, p: GardParams, sides: Sides = {}): CellContent {
+export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, sides: Sides = {}): Promise<CellContent> {
     const plan = planNabo(p);
     const { W, rows, houses, back, yardX, r } = plan;
     const z0 = FRONT_Z + p.front;
@@ -303,5 +305,48 @@ export function buildNaboCell(mats: Materials, ox: number, p: GardParams, sides:
     near.add(toGroup(bak, mats, `nabo${p.seed}:bak`));
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `nabo${p.seed}:lod`;
-    return { near, mid, colliders: c.specs };
+    const folk = await lagFolk([], mats, p.seed, naboRuter(ox, p, yardX, back, rng(p.seed * 31 + 9)));
+    near.add(folk.group);
+    return {
+        near, mid, colliders: c.specs, gaaende: folk.gaaende, snakkbare: folk.snakkbare,
+        tick: (t, dt, ctx) => folk.tick(t, dt, ctx),
+        dispose: () => folk.dispose(),
+    };
+}
+
+/**
+ * Folk i nabogården [S]: en som rusler langs kaia og stopper for å se ut over Vågen, og en gutt
+ * som bærer bunter fra kaikanten og opp midt i gårdsrommet (alt annet står inntil veggene der).
+ * Hvem og hvor langt trekkes fra frøet, så ingen to gårder ser like ut.
+ */
+function naboRuter(ox: number, p: GardParams, yardX: number, back: number, r: () => number): Rute[] {
+    const W = gardWidth(p);
+    const kz = p.front + 1.3;
+    const P = (x: number, z: number) => new THREE.Vector3(ox + x, 0, z);
+    const voksne: FigurNavn[] = ['svenn', 'husbonde', 'svenn', 'dreng'];
+    const gutter: FigurNavn[] = ['dreng', 'stuedreng', 'dreng'];
+    const a = -W / 2 + 1.4;
+    const b = W / 2 - 1.4;
+    const midt = lerp(a, b, 0.3 + r() * 0.4);
+    const inn = lerp(FRONT_Z + p.front + 8, back - 5, r());
+    return [
+        {
+            figur: voksne[Math.floor(r() * voksne.length)], fart: lerp(0.85, 1.1, r()), start: Math.floor(r() * 4),
+            stopp: [
+                { p: P(a, kz), vent: lerp(2, 5, r()), se: Math.PI },
+                { p: P(midt, kz + 0.2) },
+                { p: P(b, kz), vent: lerp(3, 7, r()), se: Math.PI },
+                { p: P(midt, kz - 0.1) },
+            ],
+        },
+        {
+            figur: gutter[Math.floor(r() * gutter.length)], fart: lerp(0.95, 1.15, r()), start: Math.floor(r() * 5),
+            stopp: [
+                { p: P(yardX, p.front + 1.5), last: true, se: Math.PI, vent: 0.5 },
+                { p: P(yardX + 0.15, FRONT_Z + p.front + 2) },
+                { p: P(yardX, inn), last: false, vent: 0.5 },
+                { p: P(yardX - 0.15, FRONT_Z + p.front + 2) },
+            ],
+        },
+    ];
 }

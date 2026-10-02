@@ -51,6 +51,8 @@ function buildTemplate(scene: THREE.Group, animations: THREE.AnimationClip[]): R
     // UAL har bare ett krosslag, med høyre hånd. Speilet gir et like tungt slag med venstre,
     // så slagene kan veksle uten at annethvert blir det svake jabbet.
     mirror(scene, clips, 'Punch_Cross', 'Punch_Cross_L');
+    // Bare overkroppen: bære noe foran seg mens beina går (overlay).
+    upperOnly(clips, 'Baere_Over', 'Driving_Loop');
 
     scene.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(scene);
@@ -66,6 +68,13 @@ function stitch(clips: Map<string, THREE.AnimationClip>, name: string, lower: st
         ...lo.tracks.filter((t) => LOWER_BONE.test(t.name)),
         ...up.tracks.filter((t) => !LOWER_BONE.test(t.name)),
     ].map((t) => t.clone());
+    clips.set(name, new THREE.AnimationClip(name, up.duration, tracks));
+}
+
+function upperOnly(clips: Map<string, THREE.AnimationClip>, name: string, src: string) {
+    const up = clips.get(src);
+    if (!up) return;
+    const tracks = up.tracks.filter((t) => !LOWER_BONE.test(t.name)).map((t) => t.clone());
     clips.set(name, new THREE.AnimationClip(name, up.duration, tracks));
 }
 
@@ -204,6 +213,8 @@ export class Animator {
     ]);
     private loco = new Map<string, Layered>();
     private full = new Map<string, Layered>();
+    /** Overkroppsklipp oppå bevegelsen (bære noe mens man går). */
+    private over: Layered | null = null;
     private locoPhase = 0;
     private locoMaster = 1;
     private locoMasterTarget = 1;
@@ -283,6 +294,28 @@ export class Animator {
         this.locoMasterTarget = 0;
         this.locoFadeRate = 1 / fade;
         this.current = name;
+    }
+
+    /**
+     * Spill et klipp som bare har overkroppen (f.eks. `Baere_Over`) oppå bevegelseslaget, så
+     * beina fortsatt går. `null` toner det ut. Mixeren normaliserer vektene per bein, så
+     * vekten regnes om til det forholdet som gir overkroppen andelen `weight`.
+     */
+    overlay(name: string | null, fade = 0.3): void {
+        if (name && this.over?.action.getClip().name !== name) {
+            const clip = this.template.clips.get(name);
+            if (!clip) return;
+            this.over?.action.stop();
+            const action = this.mixer.clipAction(clip);
+            action.setLoop(THREE.LoopRepeat, Infinity);
+            action.timeScale = 0;
+            action.time = clip.duration * 0.3;
+            action.play();
+            this.over = { action, weight: 0, target: 1, fadeRate: 1 / fade };
+        } else if (this.over) {
+            this.over.target = name ? 1 : 0;
+            this.over.fadeRate = 1 / Math.max(0.01, fade);
+        }
     }
 
     /** Tilbake til bevegelseslaget. */
@@ -405,6 +438,17 @@ export class Animator {
             l.weight += Math.sign(l.target - l.weight) * Math.min(Math.abs(l.target - l.weight), step);
             l.action.setEffectiveWeight(l.weight);
             if (l.weight <= 0.001 && l.target === 0 && l.action.isRunning()) l.action.stop();
+        }
+
+        if (this.over) {
+            const o = this.over;
+            o.weight += Math.sign(o.target - o.weight) * Math.min(Math.abs(o.target - o.weight), o.fadeRate * realDt);
+            const w = Math.min(o.weight, 0.97);
+            o.action.setEffectiveWeight(w / (1 - w));
+            if (o.weight <= 0.001 && o.target === 0) {
+                o.action.stop();
+                this.over = null;
+            }
         }
 
         this.mixer.update(dt);

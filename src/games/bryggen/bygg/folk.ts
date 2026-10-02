@@ -19,7 +19,8 @@ import { Animator, loadRig } from '../motor/animator';
 import { kleFigur, RIG_URL, type Drakt } from '../motor/figur';
 import { ColliderKit, MeshKit, type ColliderSpec } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
-import { disposeObject } from '../motor/streaming';
+import { disposeObject, type CellCtx, type Snakkbar } from '../motor/streaming';
+import { Vandrer, type Rute } from './vandrer';
 
 const HUD = 0xd9a88a;
 
@@ -78,6 +79,8 @@ export interface Plass {
     pos: THREE.Vector3;
     /** Retningen figuren ser (0 = +z). */
     yaw: number;
+    /** Id i samtalene (samtaler.ts). Uten: en kort replikk når gutten snakker med hen. */
+    samtale?: string;
 }
 
 const KLIPP: Record<Rolle, { clip: string; speed: number; hold?: number }> = {
@@ -101,20 +104,80 @@ export async function lagFigur(navn: FigurNavn): Promise<Animator> {
 export interface Folk {
     group: THREE.Group;
     colliders: ColliderSpec[];
-    tick: (dt: number) => void;
+    /** Føttene til dem som går (verdenen gir de nærmeste en kollider). */
+    gaaende: THREE.Vector3[];
+    snakkbare: Snakkbar[];
+    tick: (t: number, dt: number, ctx: CellCtx) => void;
     dispose: () => void;
+}
+
+/** Nærmere enn dette animeres hvert bilde; lenger unna 15 ganger i sekundet, og bak FJERN ikke. */
+const NAER = 16;
+const FJERN = 55;
+
+/** Hvor ofte animasjonen oppdateres etter avstand. Tåka skjuler det som står langt unna. */
+class Takt {
+    private acc = 0;
+    readonly a: Animator;
+    constructor(a: Animator) {
+        this.a = a;
+    }
+    update(dt: number, speed: number, kamera: THREE.Vector3): void {
+        const d = this.a.root.position.distanceTo(kamera);
+        this.a.root.visible = d < FJERN + 15;
+        if (d > FJERN) return;
+        this.acc += dt;
+        if (d > NAER && this.acc < 1 / 15) return;
+        this.a.update(this.acc, speed);
+        this.acc = 0;
+    }
+}
+
+/** Stående figurer som snakkes med snur seg mot gutten. De som sitter, blir sittende. */
+class Staaende {
+    private mot: THREE.Vector3 | null = null;
+    private yaw: number;
+    private readonly a: Animator;
+    private readonly p: Plass;
+    private readonly clip: { clip: string; speed: number; hold?: number } | null;
+    constructor(a: Animator, p: Plass, clip: { clip: string; speed: number; hold?: number } | null) {
+        this.a = a;
+        this.p = p;
+        this.clip = clip;
+        this.yaw = p.yaw;
+    }
+    vend(mot: THREE.Vector3 | null): void {
+        if (!this.clip) return;
+        if (mot && !this.mot) this.a.release(0.4);
+        if (!mot && this.mot) {
+            this.a.play(this.clip.clip, { loop: true, fade: 0.5, timeScale: this.clip.speed });
+            if (this.clip.hold !== undefined) this.a.setPhase(this.clip.hold);
+        }
+        this.mot = mot?.clone() ?? null;
+    }
+    step(dt: number): void {
+        const root = this.a.root.position;
+        const want = this.mot ? Math.atan2(this.mot.x - root.x, this.mot.z - root.z) : this.p.yaw;
+        const diff = Math.atan2(Math.sin(want - this.yaw), Math.cos(want - this.yaw));
+        this.yaw += THREE.MathUtils.clamp(diff, -3 * dt, 3 * dt);
+        this.a.root.rotation.y = this.yaw;
+    }
 }
 
 /**
  * Lager folkene i en celle. Cella eier dem: kolliderne går i cellas liste, og `dispose` rydder
  * animatorene. Figurgeometrien deles med alle andre figurer og kastes aldri her.
  */
-export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1): Promise<Folk> {
+export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter: Rute[] = []): Promise<Folk> {
     const rig = await loadRig(RIG_URL);
     const group = new THREE.Group();
     group.name = 'folk';
     const c = new ColliderKit();
     const anims: Animator[] = [];
+    const takter: Takt[] = [];
+    const staaende: Staaende[] = [];
+    const vandrere: Vandrer[] = [];
+    const snakkbare: Snakkbar[] = [];
     const egne: THREE.Object3D[] = [];
     let r = seed;
     const rnd = () => ((r = (r * 16807) % 2147483647) / 2147483647);
@@ -142,6 +205,10 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1): Prom
         a.root.rotation.y = p.yaw;
         group.add(a.root);
         anims.push(a);
+        takter.push(new Takt(a));
+        const st = new Staaende(a, p, sitter ? null : k);
+        staaende.push(st);
+        snakkbare.push({ figur: p.figur, pos: foot.clone(), samtale: p.samtale, vend: (mot) => st.vend(mot) });
 
         // Kollideren: en boks rundt kroppen (prop, så kameraet ikke hopper når noen står i veien).
         c.matrix = new THREE.Matrix4().makeRotationY(p.yaw).setPosition(foot);
@@ -156,11 +223,37 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1): Prom
         }
     }
 
+    ruter.forEach((rute, i) => {
+        const a = new Animator(kleFigur(rig, DRAKTER[rute.figur]), HOYDE[rute.figur]);
+        a.update(0.02, 0);
+        a.model.traverse((o) => {
+            if ((o as THREE.Mesh).isMesh) o.frustumCulled = true;
+        });
+        const s = HOYDE[rute.figur] / rig.height;
+        const bunt = buntMesh(mats);
+        bunt.position.set(0, 1.0 * s, 0.3 * s);
+        a.root.add(bunt);
+        egne.push(bunt);
+        const v = new Vandrer(a, rute, bunt, seed + i * 3.7);
+        group.add(a.root);
+        anims.push(a);
+        vandrere.push(v);
+        snakkbare.push({ figur: rute.figur, pos: v.pos, vend: (mot) => v.vend(mot) });
+    });
+    const vTakt = vandrere.map((v) => new Takt(v.a));
+
     return {
         group,
         colliders: c.specs,
-        tick: (dt) => {
-            for (const a of anims) a.update(dt, 0);
+        gaaende: vandrere.map((v) => v.pos),
+        snakkbare,
+        tick: (t, dt, ctx) => {
+            for (const st of staaende) st.step(dt);
+            for (const tk of takter) tk.update(dt, 0, ctx.kamera);
+            vandrere.forEach((v, i) => {
+                v.step(dt, t, ctx);
+                vTakt[i].update(dt, v.speed, ctx.kamera);
+            });
         },
         dispose: () => {
             for (const a of anims) {
