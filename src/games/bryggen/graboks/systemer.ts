@@ -21,6 +21,8 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push((await import('./syrytme')).lagSyrytme(k));
     ut.push((await import('./messe')).lagMesse(k));
     ut.push((await import('./terning')).lagTerning(k));
+    // Kontoret: oppdragskjeden «Kontorets lov» og mer liv i gården (kontoret.ts).
+    ut.push(...(await import('./kontoret')).lagKontoret(k));
     if (import.meta.env.DEV) ut.push(fotoSystem());
     return ut;
 }

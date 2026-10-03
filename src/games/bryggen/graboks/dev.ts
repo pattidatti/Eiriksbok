@@ -71,6 +71,12 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number }>
     kirke: { pos: [100.6, 2.05, 105.4], yaw: 0.15 },
     alter: { pos: [95.8, 2.05, 100.6], yaw: -0.54 },
     olstua: { pos: [38.2, 2.2, 74.0], yaw: 0.88 },
+    // Kontoret (kontor-steder.ts): schøtstua foran oldermannen, fiskestablene i bua, pulten, Sølve, vinsjen.
+    schotstua: { pos: [3.6, 0.2, 53.0], yaw: Math.PI / 2 },
+    bua: { pos: [-5.6, 0.2, 8.6], yaw: Math.PI },
+    pult: { pos: [-3.4, 0.2, 7.6], yaw: Math.PI },
+    solve: { pos: [2.4, 0, 2.9], yaw: Math.PI },
+    vinsj: { pos: [-5.9, 0, 2.2], yaw: 0 },
 };
 
 /** `?sted=`: flytt startpunktet før cellene rundt det lastes (bare i dev). */

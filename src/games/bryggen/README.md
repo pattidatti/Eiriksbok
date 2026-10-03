@@ -416,3 +416,34 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Vågsbunnen og Auta allmenning ligger vest for `xwGard` (der gårdene slutter); `xw` i `bryggen.ts` er
   den vestre enden av byen etter det. Støttemuren under Øvregaten har en åpning for Auta-trappa
   (`GateOppsett.trapper`).
+
+## Kontoret: «Kontorets lov» (oppdragskjede og fire jobber)
+
+Kontoret som makt på Bryggen, i den første gården: oldermannen Tidemann Ruge og sekretæren Magister
+Arnold står ved østveggen i schøtstua, Sølve fra Vesterålen på kaia, og en bødker og en skutedreng
+arbeider i gården (hammerslag fra kaia, replikker når gutten går forbi). Seks oppdrag går av seg selv
+etter hverandre (hvert tas når det forrige leveres), krav: «Fisken bærer seg ikke selv».
+
+| Fil | Hva |
+|---|---|
+| `bygg/kontor-data.ts` | Kjeden (6 oppdrag med belønning), folkene (lagt til `PERSONER`, `NAVN`, `REPLIKKER` herfra), Sølves konto i gjeldsboka, og hva Sølve sier etter det gutten har gjort |
+| `graboks/kontoret.ts` | Hektes på `systemer.ts` med én linje: cella med folkene, hammeren, og de fem systemene under |
+| `graboks/kontor-steder.ts` | Hvor ting står (schøtstua, fiskestablene i bua, pulten, Sølve, vinsjen) |
+| `graboks/kontor-morgensprache.ts`, `ui/KontorMorgensprache.tsx` | Morgensprache med fast kamera: reglene og straffene leses opp, og gutten lover. Andre gang dommen: ros, fem harde slag (telles av seg selv, rødt gjenskinn, ingen vitser), eller dom over Sølve |
+| `graboks/kontor-sortering.ts`, `ui/KontorSortering.tsx` | Sortere 14 tørrfisk i fin/middels/vrak (1-3 eller J/K/L) mot klokka. Mellomrom kjenner etter fuktig fisk inni |
+| `graboks/kontor-prute.ts`, `ui/KontorPrute.tsx` | Prute kilo rug for kilo fisk med Sølve (A/D, mellomrom byr). Grensen hans leses av tegnene. Tom tålmodighet: han må ta husbondens seks, for ingen andre kjøper |
+| `graboks/kontor-gjeldsbok.ts`, `ui/KontorGjeldsbok.tsx` | Føre Sølves konto: skriv summen så langt med talltastene, Enter skriver med blekk, feil gir flekk. X hopper over saltlinja hvis gutten lovte Sølve det |
+| `graboks/kontor-vinsj.ts`, `ui/KontorVinsj.tsx` | Vinsjen i gavlen: A og D etter tur sveiver, samme tast to ganger glipper, S holder igjen i tauet, W slipper litt tau, E drar bunten inn ved loftsdøra når den henger stille. Vindkast og smell. Bunten og tauet synes i 3D på gavlen, og kameraet ser opp langs den |
+| `ui/Kontor.tsx` | Panelene, hektet på `Aktiviteter.tsx` med én linje |
+
+Valget som slår tilbake: Sølve ber gutten hoppe over saltet i boka (oppdrag 4). Selve valget gjøres i
+boka (X eller skriv). Har han hoppet over, finner sekretæren feilen når han teller lageret etter vinsjen
+(oppdrag 5), og gutten velger igjen: si sannheten (dom: fem harde slag) eller skylde på Sølve (Sølve
+kastes ut fra kaia og forsvinner). Prisen fra prutingen styrer hvor mye rug Sølve må ta på kreditt.
+Flaggene står øverst i `kontor-data.ts`. Belønningen bruker `belonning` og `gjor`-kommandoene
+`rykte:K:+n`, `witten:+n` (kontrakten i `oppdrag-data.ts`).
+
+Dev: `?sted=schotstua|bua|pult|solve|vinsj`, og `?oppdrag=kontor-morgensprache` (eller `kontor-sortere`,
+`kontor-prute`, `kontor-gjeldsbok`, `kontor-vinsj`, `kontor-dom`). Eksempel:
+`/test/bryggen-gard?sted=vinsj&oppdrag=kontor-vinsj` går rett til vinsjen. Gjeldsboka trenger at
+Sølve er snakket med først (`?hendelse=snakk:solve`).

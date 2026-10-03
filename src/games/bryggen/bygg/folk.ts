@@ -206,6 +206,14 @@ export const DRAKTER = {
         belte: 0x1e140c, hoser: 0x2e2b28, sko: 0x1d1510, hette: 0x4a4440, hetteOppe: false, tut: 0.12, kappe: 0.15,
         mage: 0.4,
     },
+
+    // ── Kontoret (kontor-data.ts) ── [S]: ingen kilde for hva en oldermann bar i 1420-årene [K].
+    /** Oldermannen på Kontoret: lang, mørk vinrød kjortel til anklene, svart hette oppe, grått skjegg. */
+    oldermann: {
+        navn: 'oldermann', hud: 0xd0a086, haar: 0x9a948a, skjegg: 0xa8a39a, kjortel: 0x4a1f24, kjortelNed: 0.44,
+        belte: 0x1a120c, hoser: 0x2a2626, sko: 0x1d1612, hette: 0x1c1a1a, hetteOppe: true, tut: 0.46, kappe: 0.24,
+        mage: 0.5, pung: 0.9,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
@@ -215,6 +223,7 @@ export const HOYDE: Record<FigurNavn, number> = {
     fiskekone: 1.58, kornselger: 1.73, bondekone: 1.55, bodker: 1.7, kjopekone: 1.61, borger: 1.75, tjenestejente: 1.54,
     tyv: 1.68, prest: 1.72, vakt: 1.82, skriver: 1.7, klokker: 1.66, olkone: 1.6,
     skomaker: 1.7, skomakersvenn: 1.74, baker: 1.72, bakerdreng: 1.5, gullsmed: 1.73, buntmaker: 1.68, barberer: 1.76, smed: 1.84,
+    oldermann: 1.76,
 };
 
 /**
