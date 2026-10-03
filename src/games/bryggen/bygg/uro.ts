@@ -242,7 +242,16 @@ export class Uro {
 
     /** Hvert bilde (fra cellas `tick`). */
     tick(t: number, dt: number, kamera: THREE.Vector3): void {
-        if (this.maler.size) this.byggMaler();
+        if (this.maler.size) {
+            this.byggMaler();
+            // Lukene i en mal står spredt: malen skjules når hele kula rundt dem er bak UTE.
+            for (const m of this.maler.values()) {
+                for (const im of m.mesh) {
+                    const b = im.boundingSphere;
+                    im.visible = !b || b.center.distanceTo(kamera) < UTE + b.radius;
+                }
+            }
+        }
         const v = vind(t);
         for (const d of this.deler) {
             const naer = d.obj.position.distanceToSquared(kamera) < UTE * UTE;
