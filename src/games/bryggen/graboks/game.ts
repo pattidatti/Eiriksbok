@@ -18,6 +18,7 @@ import type { BryggenWorld } from '../bygg/bryggen';
 import { Etterbehandling } from '../motor/post';
 import { Lyssetting, stemningFraUrl } from '../motor/stemning';
 import type { LydKobling } from '../motor/lydkobling';
+import type { BussVolum } from '../motor/lyd';
 import type { FolkStyring } from './folkstyring';
 import type { OppdragMelding } from './oppdrag';
 import type { Tyv } from './tyv';
@@ -41,7 +42,7 @@ export class GrayboxGame {
     private readonly renderer: THREE.WebGLRenderer;
     private readonly scene = new THREE.Scene();
     private readonly cam: SpringArmCamera;
-    private readonly input: Input;
+    readonly input: Input;
     private readonly container: HTMLElement;
     private readonly floatLayer: HTMLElement;
     private readonly onHud: (s: HudState) => void;
@@ -98,9 +99,14 @@ export class GrayboxGame {
     private post: Etterbehandling | null = null;
     /** Lyden (bare Bryggen-scenen). Startes av første tastetrykk eller klikk (`startLyd`). */
     private lyd: LydKobling | null = null;
-    private lydValg = { onsket: false, paa: true, volum: 0.8 };
+    private lydValg = { onsket: false, paa: true, volum: 0.8, busser: { ute: 1, inne: 1, hendelse: 1 } as BussVolum };
+    /** Pausemenyen (ui/Pausemeny.tsx) og valgene fra innstillingene (ui/innstillinger.ts). */
+    private pauset = false;
+    private pauseBilde = 0;
+    private skyggerPaa = true;
+    postPaa = true;
     /** Folkene: hvem gutten kan snakke med, og samtalen (bare Bryggen-scenen). */
-    private folk: FolkStyring | null = null;
+    folk: FolkStyring | null = null;
     /** Bære tørrfisk fra kaia til bua (bare Bryggen-scenen). */
     private baering: Baering | null = null;
     /** Systemene som er hektet på løkka (systemer.ts), og det som eier E-teksten nå. */
@@ -137,7 +143,7 @@ export class GrayboxGame {
 
     /** Chrome slipper musa når fullskjermen slår inn. Lås den igjen når skjermen står. */
     private onFullscreen = () => {
-        if (this.input.mouseMode && document.fullscreenElement && !this.input.pointerLocked) {
+        if (this.input.mouseMode && !this.pauset && document.fullscreenElement && !this.input.pointerLocked) {
             this.input.requestPointerLock();
         }
     };
@@ -270,10 +276,17 @@ export class GrayboxGame {
         void this.lyd?.start();
     }
 
-    settLyd(paa: boolean, volum: number): void {
-        this.lydValg.paa = paa;
-        this.lydValg.volum = volum;
+    /** Pause: simuleringen, døgnet og været står, tastene går til menyen, lyden dempes, bildet tegnes sjelden. */
+    pause(p: boolean): void {
+        this.pauset = p;
+        this.input.aktiv = !p;
+        if (this.lyd) this.lyd.lyd.dempet = p;
+    }
+
+    settLyd(paa: boolean, volum: number, busser = this.lydValg.busser): void {
+        Object.assign(this.lydValg, { paa, volum, busser });
         if (!this.lyd) return;
+        this.lyd.lyd.busser = busser;
         this.lyd.lyd.paa = paa;
         this.lyd.lyd.volum = volum;
     }
@@ -283,17 +296,19 @@ export class GrayboxGame {
     }
 
     /** Bytter grafikknivå mens spillet går. Første bytte til full laster detaljkartene. */
-    async setQuality(q: Quality): Promise<void> {
+    async setQuality(q: Quality, skygger = this.skyggerPaa): Promise<void> {
         const low = q === 'lav';
-        if (low === this.low) return;
-        this.low = low;
-        this.pushHud();
-        if (this.world) {
-            await this.world.materials.setLow(low);
-            if (this.disposed || this.low !== low) return;
-            this.scene.environment = low ? null : this.world.environment;
-        }
-        this.renderer.shadowMap.enabled = this.shadowsAllowed && !low;
+        this.skyggerPaa = skygger;
+        if (low !== this.low) {
+            this.low = low;
+            this.pushHud();
+            if (this.world) {
+                await this.world.materials.setLow(low);
+                if (this.disposed || this.low !== low) return;
+                this.scene.environment = low ? null : this.world.environment;
+            }
+        } else if (this.renderer.shadowMap.enabled === (this.shadowsAllowed && skygger && !low)) return;
+        this.renderer.shadowMap.enabled = this.shadowsAllowed && this.skyggerPaa && !low;
         // Skyggene er bakt inn i shaderne: alle materialer må bygges på nytt.
         this.scene.traverse((o) => {
             const mat = (o as THREE.Mesh).material as THREE.Material | THREE.Material[] | undefined;
@@ -355,6 +370,7 @@ export class GrayboxGame {
         let dt = (now - this.last) / 1000;
         this.last = now;
         if (document.hidden || dt > 0.25) dt = 0; // fanebytte: ikke ta igjen tapt tid
+        if (this.pauset) { dt = 0; if (++this.pauseBilde % 12) return; } // pause: tegn hvert 12. bilde
         const t0 = performance.now();
 
         // Treffpause og sakte film skalerer spilltiden, aldri kameraet.
@@ -387,7 +403,7 @@ export class GrayboxGame {
             this.cam.camera.lookAt(foto.look[0], foto.look[1], foto.look[2]);
         }
         this.renderer.info.reset();
-        if (this.post && !this.low) this.post.render(this.renderer, this.scene, this.cam.camera, this.clock, this.inne);
+        if (this.post && !this.low && this.postPaa) this.post.render(this.renderer, this.scene, this.cam.camera, this.clock, this.inne);
         else this.renderer.render(this.scene, this.cam.camera);
 
         // Måling: tid mellom bilder (inkluderer GPU-ventetid via rAF).
@@ -562,7 +578,7 @@ export class GrayboxGame {
             const inne = this.world.update(this.clock, dt, this.fotoPos() ?? this.cam.camera.position, { pos: this.player.anim.root.position, fart: this.player.speed });
             this.inne += (inne - this.inne) * Math.min(1, dt * 3);
             this.lyd?.update(dt, this.inne, this.mode);
-            this.world.post = !!this.post && !this.low;
+            this.world.post = !!this.post && !this.low && this.postPaa;
             this.world.skygger = this.renderer.shadowMap.enabled;
         }
         // Dagslyset dempes inne, og skyggen følger spilleren.

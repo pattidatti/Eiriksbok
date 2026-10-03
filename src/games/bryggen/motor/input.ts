@@ -42,6 +42,11 @@ export class Input {
     private heavyQueued = false;
     private readonly el: HTMLElement;
     sensitivity = 0.0024;
+    /** Musefølsomhet og piltastfart fra innstillingene (1 = standard). */
+    folsomhet = 1;
+    /** Snu opp og ned for kameraet (mus og piltaster). */
+    inverterY = false;
+    private _aktiv = true;
 
     constructor(el: HTMLElement) {
         this.el = el;
@@ -66,6 +71,19 @@ export class Input {
 
     get pointerLocked(): boolean {
         return document.pointerLockElement === this.el;
+    }
+
+    /** Av mens pausemenyen er oppe: tastene går til menyen, og ingenting blir liggende igjen etterpå. */
+    get aktiv(): boolean {
+        return this._aktiv;
+    }
+
+    set aktiv(a: boolean) {
+        this._aktiv = a;
+        this.onBlur();
+        this.pressed.clear();
+        this.lightQueued = this.heavyQueued = false;
+        this.mouseYaw = this.mousePitch = 0;
     }
 
     /** Spilleren valgte mus: et klikk i spillet låser musa i stedet for å slå. */
@@ -140,11 +158,12 @@ export class Input {
     /** Kamera leses per tegnet bilde, ikke per simuleringssteg, så det aldri hakker. */
     takeLook(): LookInput {
         const k = this.keys;
+        const f = this.folsomhet;
         const look: LookInput = {
             mouse: { yaw: this.mouseYaw, pitch: this.mousePitch },
             keys: {
-                x: (k.has('ArrowRight') ? 1 : 0) - (k.has('ArrowLeft') ? 1 : 0),
-                y: (k.has('ArrowUp') ? 1 : 0) - (k.has('ArrowDown') ? 1 : 0),
+                x: ((k.has('ArrowRight') ? 1 : 0) - (k.has('ArrowLeft') ? 1 : 0)) * f,
+                y: ((k.has('ArrowUp') ? 1 : 0) - (k.has('ArrowDown') ? 1 : 0)) * f * (this.inverterY ? -1 : 1),
             },
         };
         this.mouseYaw = 0;
@@ -153,6 +172,7 @@ export class Input {
     }
 
     private onKeyDown = (e: KeyboardEvent) => {
+        if (!this._aktiv) return;
         if (e.code.startsWith('Arrow') || e.code === 'Space') e.preventDefault();
         if (!this.keys.has(e.code)) this.pressed.add(e.code);
         this.keys.add(e.code);
@@ -170,6 +190,7 @@ export class Input {
 
     private onMouseDown = (e: MouseEvent) => {
         // Uten lås er klikket bare for å ta musa tilbake, ikke et slag.
+        if (!this._aktiv) return;
         if (this.mouseMode && !this.pointerLocked) {
             this.requestPointerLock();
             return;
@@ -192,9 +213,9 @@ export class Input {
     };
 
     private onMouseMove = (e: MouseEvent) => {
-        if (!this.pointerLocked) return;
-        this.mouseYaw -= e.movementX * this.sensitivity;
-        this.mousePitch -= e.movementY * this.sensitivity;
+        if (!this.pointerLocked || !this._aktiv) return;
+        this.mouseYaw -= e.movementX * this.sensitivity * this.folsomhet;
+        this.mousePitch -= e.movementY * this.sensitivity * this.folsomhet * (this.inverterY ? -1 : 1);
     };
 
     private onContextMenu = (e: Event) => e.preventDefault();
