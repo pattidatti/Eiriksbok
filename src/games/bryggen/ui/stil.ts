@@ -26,6 +26,8 @@ export const ETIKETT = 'text-[13px] font-bold uppercase tracking-[0.16em] text-[
 /** Hovedknapp og vanlig knapp. */
 export const KNAPP = 'bry-knapp bry-fokus rounded-lg px-4 py-2 text-[16px] font-bold disabled:opacity-50';
 export const KNAPP_2 = 'bry-knapp2 bry-fokus rounded-lg px-4 py-2 text-[16px] font-bold disabled:opacity-50';
+/** Farlig knapp: noe som ikke kan angres («Begynn på nytt», «Avslutt»). Ser ikke ut som hovedknappen. */
+export const KNAPP_FARE = 'bry-fare bry-fokus rounded-lg px-4 py-2 text-[16px] font-bold disabled:opacity-50';
 
 // ---- Tillegg (ui-stil, 2026-10-03). Bruk dem gjerne i nye paneler. ----
 

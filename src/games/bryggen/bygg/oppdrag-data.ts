@@ -23,6 +23,7 @@ import { SIDEOPPDRAG } from './sideoppdrag';
 import { BUDET, BYEN_OPPDRAG } from './byen-oppdrag';
 import { RUNER } from './runeoppdrag'; // Pinnene i gjørma (Stranden, verden2)
 import { KONTOR_OPPDRAG } from './kontor-data';
+import './rykte-samtaler'; // kald og varm start, og svar som ryktet låser opp (etter at alle samtalene finnes)
 
 /** Fraksjonene (blueprint §7): Kontoret, Bergenhus/kongens menn, norske borgere, kirken, nordlandsfiskerne. */
 export type Fraksjon = 'K' | 'B' | 'N' | 'Ki' | 'F';

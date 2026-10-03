@@ -153,3 +153,21 @@ export function rykteOrd(v: number): string {
     if (v < 50) return 'Likt';
     return 'Æret';
 }
+
+/** Ryktet i trinn: -2 hatet, -1 mistrodd, 0 ukjent, 1 likt, 2 æret (samme grenser som `rykteOrd`). */
+export function rykteTrinn(v: number): -2 | -1 | 0 | 1 | 2 {
+    if (v <= -50) return -2;
+    if (v <= -15) return -1;
+    if (v < 15) return 0;
+    if (v < 50) return 1;
+    return 2;
+}
+
+/**
+ * Ryktet slik det står nå, for data og systemer som ikke skal importere rollespillet (samtalene,
+ * vaktene, prutingen). Settes av graboks/rpg.ts; i gråboksen er alt 0.
+ */
+export const RYKTE: { les: (f: Fraksjon) => number } = { les: () => 0 };
+
+/** `rykteTrinn` for en fraksjon, slik det står nå. */
+export const rykteNaa = (f: Fraksjon): -2 | -1 | 0 | 1 | 2 => rykteTrinn(RYKTE.les(f));

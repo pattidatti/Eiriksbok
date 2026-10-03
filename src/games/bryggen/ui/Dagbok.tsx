@@ -64,7 +64,7 @@ export function Dagbok({ bok, vet, onNullstill }: { bok: Bok | null; vet: string
                         <div>
                             <p className="text-[16px] font-bold text-[#2b1d10]">Alle oppdragene og alt i «Dette vet vi» blir glemt, og du starter på nytt. Er du sikker?</p>
                             <div className="mt-2 flex gap-2">
-                                <Knapp farge="rod" onClick={onNullstill}>
+                                <Knapp farge="farlig" onClick={onNullstill}>
                                     Ja, begynn på nytt
                                 </Knapp>
                                 <Knapp autoFocus onClick={() => setSporr(false)}>
@@ -73,7 +73,7 @@ export function Dagbok({ bok, vet, onNullstill }: { bok: Bok | null; vet: string
                             </div>
                         </div>
                     ) : (
-                        <Knapp onClick={() => setSporr(true)}>Begynn på nytt</Knapp>
+                        <Knapp farge="farlig" onClick={() => setSporr(true)}>Begynn på nytt</Knapp>
                     )}
                 </div>
             )}

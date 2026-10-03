@@ -16,7 +16,7 @@
 // (fisken på loftet, terningspillet) og `SPOR` (juks på vekta) lagres her også.
 import type { Belonning, Ferdighet, Fraksjon, Krav } from '../bygg/oppdrag-data';
 import { OPPDRAG } from '../bygg/oppdrag-data';
-import { FERDIGHETER, FERDIGHET_REKKE, FRAKSJONER, FRAKSJON_REKKE, NIVAA, RANGER, rykteOrd } from '../bygg/rpg-data';
+import { FERDIGHETER, FERDIGHET_REKKE, FRAKSJONER, FRAKSJON_REKKE, NIVAA, RANGER, RYKTE, rykteOrd, rykteTrinn } from '../bygg/rpg-data';
 import { SIDE } from '../bygg/sideoppdrag';
 import { SPOR } from '../bygg/samtaler';
 import type { Oppdrag } from './oppdrag';
@@ -148,15 +148,36 @@ export class Rollespill {
         this.lagre();
     }
 
+    /**
+     * Hvem som betaler et oppdrag: fraksjonen som får mest rykte av det (lønna kommer fra dem som er
+     * fornøyd med jobben). Uten rykte i belønningen: ingen.
+     */
+    static betaler(b: Belonning): Fraksjon | null {
+        let best: Fraksjon | null = null;
+        for (const f of FRAKSJON_REKKE) if ((b.rykte?.[f] ?? 0) > (best ? b.rykte![best]! : 0)) best = f;
+        return best;
+    }
+
+    /** Hva ryktet hos den som betaler gjør med lønna: -2 (hatet) til +2 (æret) witten [S]. */
+    ryktePluss(b: Belonning): { n: number; f: Fraksjon | null } {
+        const f = Rollespill.betaler(b);
+        return { n: f ? rykteTrinn(this.rykte[f]) : 0, f };
+    }
+
     private gi(b: Belonning, lonn: boolean): void {
         const base = b.witten ?? 0;
         if (base > 0 && lonn) {
             const rangPluss = this.rang;
             const prutPluss = Math.round(base * 0.2 * this.nivaa('prute'));
+            // Ryktet regnes før belønningens eget rykte legges til: det er det de syntes da de betalte.
+            const { n: rykte, f } = this.ryktePluss(b);
+            const sum = Math.max(1, base + rangPluss + prutPluss + rykte);
             const deler = [`${base} i lønn`];
             if (rangPluss) deler.push(`${rangPluss} for rangen`);
             if (prutPluss) deler.push(`${prutPluss} for prutingen`);
-            this.endreWitten(base + rangPluss + prutPluss, deler.length > 1 ? deler.join(' + ') : undefined);
+            if (rykte > 0 && f) deler.push(`${rykte} fordi ${FRAKSJONER[f].hos} liker deg`);
+            if (rykte < 0 && f) deler.push(`${-rykte} trukket fordi ${FRAKSJONER[f].hos} ikke stoler på deg`);
+            this.endreWitten(sum, deler.length > 1 ? deler.join(', ') : undefined);
         } else if (base) this.endreWitten(base);
         for (const f of FRAKSJON_REKKE) if (b.rykte?.[f]) this.endreRykte(f, b.rykte[f]!);
         for (const f of FERDIGHET_REKKE) if (b.ferdighet?.[f]) this.ov(f, b.ferdighet[f]!);
@@ -333,6 +354,7 @@ export function lagRollespill(k: SpillKontekst): Spillsystem {
     const oppdrag = k.folk.oppdrag;
     const rpg = new Rollespill(oppdrag);
     aktiv = rpg;
+    RYKTE.les = (f) => rpg.rykte[f];
     let kort: RpgKort[] = [];
     let n = 0;
     let lagreTid = 0;
@@ -436,6 +458,7 @@ export function lagRollespill(k: SpillKontekst): Spillsystem {
         },
         dispose() {
             if (aktiv === rpg) aktiv = null;
+            RYKTE.les = () => 0;
         },
     };
 }

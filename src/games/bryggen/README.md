@@ -43,7 +43,8 @@ tekst, tjærebrunt og seglrødt. Overskrifter i Grenze Gotisch (gotisk, men lett
 Alegreya Sans. Fontene er selvhostet (`@fontsource/grenze-gotisch`, `@fontsource/alegreya-sans`) og
 lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på pergament er over 7:1.
 
-- Nye paneler bruker eksportene i `ui/stil.ts`: `KORT`, `PANEL`, `ETIKETT`, `KNAPP`, `KNAPP_2`, og
+- Nye paneler bruker eksportene i `ui/stil.ts`: `KORT`, `PANEL`, `ETIKETT`, `KNAPP`, `KNAPP_2`, `KNAPP_FARE`
+  (det som ikke kan angres: «Begynn på nytt», «Avslutt»; `<Knapp farge="farlig">` i menydeler), og
   tilleggene `DISPLAY`, `TEKST`, `SVAK`, `HJELP`, `ROD`/`GRONN`/`VARM`, `RILLE` + `FYLL.*` (stolper),
   `BRIKKE` (tallbrikke 1-3), `TAST` (tast i lister), `UTHEV`, `STREK`, `LIN`, `FARGE` (hex til SVG).
 - `ui/stil.css` ligger i Tailwind-laget `components`, så en Tailwind-klasse på samme element vinner.
@@ -160,7 +161,7 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `ui/Dagbok.tsx`, `ui/vetlager.ts` | Dagboka: oppdragene med «om» og «hvor», og «Dette vet vi»-tekstene eleven har lest (`bryggen-vet`). «Begynn på nytt» bak en bekreftelse |
 | `ui/stil.ts`, `ui/stil.css`, `ui/Melding.tsx`, `ui/Segl.tsx` | Den felles stilen (pergament, blekk, segl), oppdragsmeldingene med seremonien for «Oppdrag fullført», og voksseglet |
 | `graboks/rpg.ts`, `bygg/rpg-data.ts` | Rollespillet (blueprint §8.3-8.6): rykte hos fem fraksjoner, pungen, ferdigheter som blir bedre av bruk, rangstigen. Leser `belonning` og `gjor`-kommandoene, låser svar med `Valg.krav`, lagret i `bryggen-rpg` (se «Rollespillet» under) |
-| `ui/RpgHud.tsx`, `ui/Meg.tsx` | Pungen og rangen i livskortet, kortene midt på skjermen når noe endrer seg, og «Meg» i pausemenyen |
+| `ui/RpgHud.tsx`, `ui/Meg.tsx` | Pungen og rangen i livskortet, kortene til venstre under livskortet når noe endrer seg (midt på dekket de gutten i samtaler), og «Meg» i pausemenyen |
 | `ui/menydeler.tsx`, `ui/fokus.ts`, `ui/fullskjerm.ts` | Bryter, glidebryter, knapp og overskrift; piltastnavigasjon og fokusring; fullskjerm med Esc-lås |
 
 ## Regler
@@ -233,7 +234,11 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
   meter unna, ellers sklir gutten forbi døråpningen.
 - Ildlyset er ett `PointLight` for hele byen, alltid i scenen, flyttet til nærmeste ildsted (innen
   24 m) av `world.update`. Ikke legg lys i cellene: et lys som kommer og går (også når nær-nivået
-  skjules) tvinger Three til å bygge alle shaderne på nytt.
+  skjules) tvinger Three til å bygge alle shaderne på nytt. Det rekker 17 m og faller av med 1,2, så
+  det når gavlveggene i schøtstua (17,6 m lang). Inne går eksponeringen opp med `inne` (opptil 60 %,
+  `game.ts`): øyet venner seg til mørket, som `skyggeLoft` ute. Sotet (`SOT` i inne.ts) er lysere
+  nederst, der folk står. Talglys og andre flammer som skal synes i mørket, går i et eget
+  selvlysende materiale (`kontor-lys.ts`, `flamme` i mariakirken-inne.ts), ikke som lys.
 - Cellene kan ha `tick` (flammer), `ild` (ildsteder), `rom` (bokser man kan gå inn i) og `dispose`.
   Står kameraet inne i et `rom`, dempes sola, halvkulelyset og miljølyset mykt, så ilden tar over.
   Kameraet avgjør, ikke gutten: ellers blir rommet mørkt mens kameraet ennå står ute. `rom.demp` sier
@@ -472,7 +477,18 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 - Et svar med `krav: { rykte: { N: 15 } }` (eller `rang`, `witten`, `ferdighet`) står låst med hengelås og
   grunnen under, til gutten oppfyller det. Sett låste svar sist, så tallene på de åpne ikke flytter seg.
   Samtaler kan ha fire svar (tast 1-4).
-- Lønna for et oppdrag øker med rangen (+1 witten per trinn) og prutingen (+20 % per nivå).
+- Lønna for et oppdrag øker med rangen (+1 witten per trinn), prutingen (+20 % per nivå) og ryktet hos
+  den som betaler: fraksjonen som får mest rykte av oppdraget (`Rollespill.betaler`), fra -2 (hatet) til
+  +2 (æret) witten, minst 1. Kortet forklarer hva lønna består av.
+- `RYKTE.les(f)` og `rykteNaa(f)` (rpg-data.ts) gir ryktet til data og systemer som ikke skal importere
+  rollespillet. `rykteTrinn` gir -2..2 med samme grenser som ordene (hatet ... æret).
+- Ryktet i samtalene (`bygg/rykte-samtaler.ts`): `SAMTALE_FRAKSJON` (samtaler.ts) sier hvem folk hører
+  til, og `startNode` velger `kald` (mistrodd eller verre) eller `varm` (likt eller bedre) når noden finnes.
+  Låste svar åpner ny kunnskap eller en rett: husbonden (K 30), Ottar (F 15), kornselgeren (N 15),
+  høvedsmannen (B 20, gir `bergenhus-fri`) og presten i Jonskirken (Ki 15). En samtale fra et oppdrag
+  (`samtaleFor`) har sin egen start og bryr seg ikke om ryktet. Test: `?sted=torg` står foran kornselgeren.
+- Sølve pruter etter ryktet hos fiskerne: grensen en halv kilo lavere og én mer i tålmodighet per trinn
+  over ukjent, motsatt under (`kontor-prute.ts`).
 - Ferdighetene øves av det gutten gjør: bunter båret (bære), riktig avlest bismer (regne og veie), hvert
   tredje slag som treffer (slåss), hver 40. meter i færingen (ro), og samtaler om priser (prute). Nivåene
   (0-5) står i `NIVAA`. Effektene settes på delene som bruker dem: `Baering.fart`, `slark` og `roligere`,
@@ -501,6 +517,13 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 - Ettersøkt er eget system (`ETTERSOKT` i ettersokt.ts): andre systemer kaller `sett(p)`, `ser(p)` og
   `meld(niva, grunn)`. Vaktene som tar imot bot står i `VAKTPERSONER`. Boten og dommen går gjennom
   belønningskontrakten (`witten:-n`, `rykte:B:-n`). Samtalen hos gjaldkeren bruker `ettersokt:fri`.
+- Ryktet hos kongens menn: synsmåleren fylles fra 0,55 (æret) til 1,6 (hatet) så fort (`SYN_RYKTE`), vaktene
+  hilser eller truer når gutten går forbi (`HILSEN`), og en mistrodd gutt i vaktsonen blir etterlyst i
+  stedet for vist bort. Med `bergenhus-fri` (høvedsmannen, B 20) gjelder ikke vaktsonen ham før han stjeler.
+- Boten hos en vakt er `botNaa(niva)`: `BOT` minus rykte-trinnet hos B (likt på mistenkt: 0, han slipper
+  med en advarsel). Har gutten ikke nok witten, sier E-teksten det, og E betyr å gi seg (gjaldkeren). Hos
+  gjaldkeren er «betal» et låst svar (`krav: { witten }`), og andre gang er boten dobbel (`gjaldker-bot`).
+- Nivået lagres i `bryggen-ettersokt` (jaget lagres som etterlyst) og glemmes ved «Begynn på nytt».
 - `HOLMEN.brann`: mens det brenner, står Ulf og Kolbein i bøttekjeden (brann.ts) og ser ingenting.
 - Dev: `?sted=holmenveien|porten|muren|lytte|borggard|lagerhus` og `?oppdrag=bergenhus` eller `?oppdrag=brann`.
   Eksempel: `/test/bryggen-gard?sted=lytte&oppdrag=bergenhus&hendelse=snakk:vakta` står bak vaktbua, klar til å lytte.

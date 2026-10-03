@@ -181,7 +181,7 @@ export function Pausemeny({ valg, onEndre, harLyd, bok, vet, onFortsett, onAvslu
                         <div className="px-3">
                             <p className={`${TEKST} text-[17px]`}>Vil du avslutte spillet? Fremgangen din er lagret, så du kan fortsette neste gang.</p>
                             <div className="mt-4 flex gap-2">
-                                <Knapp farge="rod" onClick={onAvslutt}>
+                                <Knapp farge="farlig" onClick={onAvslutt}>
                                     Ja, avslutt
                                 </Knapp>
                                 <Knapp onClick={tilMenyen}>Nei, bli her</Knapp>

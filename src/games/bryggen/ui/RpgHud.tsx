@@ -86,11 +86,11 @@ function Kortet({ k, i }: { k: RpgKort; i: number }) {
     return (
         <motion.div
             layout
-            initial={{ opacity: 0, y: 18, scale: 0.85 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -14, scale: 0.95, transition: { duration: 0.35 } }}
+            initial={{ opacity: 0, x: -28, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -20, scale: 0.95, transition: { duration: 0.35 } }}
             transition={{ type: 'spring', stiffness: 380, damping: 20, delay: Math.min(i, 4) * 0.08 }}
-            className={`bry flex items-center gap-3 rounded-xl border-2 px-4 shadow-xl ${f.ramme} ${stor ? 'w-[min(460px,90vw)] py-3' : 'w-max max-w-[min(460px,90vw)] py-2'}`}
+            className={`bry flex items-center gap-3 rounded-xl border-2 px-4 shadow-xl ${f.ramme} ${stor ? 'w-[min(420px,90vw)] py-3' : 'w-max max-w-[min(420px,90vw)] py-2'}`}
         >
             <span className={`inline-flex shrink-0 items-center justify-center rounded-lg px-2 py-0.5 text-[13px] font-bold uppercase tracking-wide ${f.merke}`}>
                 <Etikett k={k} />
@@ -110,13 +110,16 @@ function Kortet({ k, i }: { k: RpgKort; i: number }) {
     );
 }
 
-/** Kortene midt på skjermen (systempanel på plassen 'hel'). */
+/**
+ * Kortene til venstre under livskortet (systempanel på plassen 'hel'). Midt på skjermen dekket de
+ * gutten og den han snakket med.
+ */
 export function RpgKortPanel({ data }: { data: unknown }) {
     const d = data as RpgHud;
     // Rang og nye nivåer først, så resten i den rekkefølgen de kom.
     const kort = [...d.kort].sort((a, b) => Number(b.type === 'rang') - Number(a.type === 'rang'));
     return (
-        <div className="pointer-events-none absolute left-1/2 top-[45%] z-[1050] flex -translate-x-1/2 flex-col items-center gap-1.5">
+        <div className="pointer-events-none absolute left-4 top-[8.5rem] z-[1050] flex flex-col items-start gap-1.5">
             <AnimatePresence>
                 {kort.map((k, i) => (
                     <Kortet key={k.id} k={k} i={i} />

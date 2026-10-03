@@ -597,7 +597,8 @@ export class GrayboxGame {
         }
         // Dagslyset dempes inne, og skyggen følger spilleren.
         this.lys.oppdater(follow, this.inne, this.low, this.scene, this.world?.skygge ?? 0);
-        if (this.world) this.renderer.toneMappingExposure = this.lys.s.eksponering;
+        // Øyet venner seg til mørket inne: opptil 60 % mer eksponering (schøtstua er 1, bua 0,55).
+        if (this.world) this.renderer.toneMappingExposure = this.lys.s.eksponering * (1 + 0.6 * this.inne);
 
         this.updatePrompts(dt);
         const w = this.container.clientWidth;

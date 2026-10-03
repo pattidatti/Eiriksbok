@@ -2,7 +2,7 @@
 // Tastatur først: piltast opp/ned flytter mellom valgene, Enter/mellomrom velger, Esc går tilbake.
 import type { ReactNode } from 'react';
 import { FOKUS } from './fokus';
-import { KNAPP, KNAPP_2 } from './stil';
+import { KNAPP, KNAPP_2, KNAPP_FARE } from './stil';
 
 export function Bryter({ tekst, hjelp, paa, onBytt, disabled }: { tekst: string; hjelp?: string; paa: boolean; onBytt: (v: boolean) => void; disabled?: boolean }) {
     return (
@@ -61,9 +61,10 @@ export function Glider({
     );
 }
 
-export function Knapp({ children, onClick, farge = 'lys', autoFocus }: { children: ReactNode; onClick: () => void; farge?: 'lys' | 'blaa' | 'rod'; autoFocus?: boolean }) {
+export function Knapp({ children, onClick, farge = 'lys', autoFocus }: { children: ReactNode; onClick: () => void; farge?: 'lys' | 'blaa' | 'rod' | 'farlig'; autoFocus?: boolean }) {
     // 'blaa' og 'rod' er begge hovedknappen (seglrød) nå; navnene beholdes for dem som bruker dem.
-    const f = farge === 'lys' ? KNAPP_2 : KNAPP;
+    // 'farlig' er for det som ikke kan angres (begynne på nytt, avslutte).
+    const f = farge === 'lys' ? KNAPP_2 : farge === 'farlig' ? KNAPP_FARE : KNAPP;
     return (
         <button autoFocus={autoFocus} onClick={onClick} className={`${f} py-2.5`}>
             {children}

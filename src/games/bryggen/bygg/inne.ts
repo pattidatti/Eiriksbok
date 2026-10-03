@@ -21,8 +21,11 @@ const FOOT = 0.9;
 const LAG_T = 0.12;
 const BJELKE_H = 0.18;
 
-/** Sot fra ildstedet: mørkest øverst, der røyken samlet seg under taket. */
-export const SOT: Tint = { top: 0.3, bottom: 0.52, hue: [0.95, 0.9, 0.84] };
+/**
+ * Sot fra ildstedet: mørkest øverst, der røyken samlet seg under taket. Nede, der folk står og
+ * sitter, er veggen lysere: der gnis den av skuldre og vasker, og det er den ilden lyser opp.
+ */
+export const SOT: Tint = { top: 0.3, bottom: 0.72, hue: [0.95, 0.9, 0.84] };
 /** Innsiden av en bu uten ild: ubehandlet laft, mørkere nede ved golvet. */
 const BU_INNE: Tint = { top: 0.72, bottom: 0.5, hue: [1.02, 0.97, 0.9] };
 

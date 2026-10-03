@@ -14,11 +14,18 @@
 // [V] Gjaldkeren, kongens mann som holdt orden i byen, og at tyven ble ført til ham (bylova 1276,
 // blueprint §8.2). [V] Kontoret dømte sine egne etter egne regler (blueprint §8.2). Nivåene, tidene og
 // boten i witten er laget for spillet [S]. Hunder (§8.2) er ikke med ennå.
+//
+// Boten hos en vakt følger ryktet hos kongens menn (likt: mindre, mistrodd: mer), og den må kunne
+// betales: har gutten ikke nok witten, kan han bare gi seg. Hos gjaldkeren blir boten dobbelt så stor
+// andre gang (`gjaldker-bot`), slik bylova øker straffen for hver gang [V tyveribolken, §8.2].
+// Nivået lagres i `bryggen-ettersokt` (jaget lagres som etterlyst: ingen løper etter ham etter en omstart).
 import * as THREE from 'three';
 import { TYVERI_VET } from '../bygg/byen-oppdrag';
+import { rykteNaa } from '../bygg/rpg-data';
 import type { Samtale } from '../bygg/samtaler';
 import type { Snakkbar } from '../motor/streaming';
 import type { InputFrame } from '../motor/input';
+import { aktivtRollespill } from './rpg';
 import { finnPerson, naer } from './sidefolk';
 import type { SpillKontekst, Spillsystem } from './system';
 
@@ -29,10 +36,19 @@ export const NIVA_NAVN = ['', 'Mistenkt', 'Etterlyst', 'Jaget'] as const;
 
 /** Sekunder uten å bli sett før nivået synker ett trinn [S]. */
 const GLEM: Record<1 | 2 | 3, number> = { 1: 14, 2: 28, 3: 10 };
-/** Boten hos en vakt, i witten [S]. */
+/** Boten hos en vakt, i witten, med ukjent rykte [S]. */
 export const BOT: Record<1 | 2, number> = { 1: 1, 2: 3 };
-/** Det man mister hos gjaldkeren [S]. */
+/** Det man mister hos gjaldkeren første gang; andre gang dobbelt [S]. */
 const DOM_BOT = 4;
+const LAGER = 'bryggen-ettersokt';
+
+/** Boten hos en vakt nå: én mindre for hvert rykte-trinn over ukjent hos kongens menn, én mer under [S]. */
+export function botNaa(niva: 1 | 2): number {
+    return Math.max(0, BOT[niva] - rykteNaa('B'));
+}
+
+/** Witten i pungen (rollespillet), eller nok til alt i gråboksen. */
+const pung = (): number => aktivtRollespill()?.witten ?? Infinity;
 
 /** Hvor gutten blir ført: foran gjaldkeren ved skriverboden (settes av holmenvakt.ts). */
 export const GJALDKER_PLASS = { pos: new THREE.Vector3(), yaw: 0 };
@@ -139,7 +155,32 @@ export function lagEttersokt(k: SpillKontekst): Spillsystem {
         for (const del of h.split(';')) if (del.trim() === 'ettersokt:fri') ETTERSOKT.nullstill();
     };
 
+    // Nivået fra forrige gang (ikke i et nytt spill). Jaget blir etterlyst: ingen løper etter ham nå.
+    try {
+        const raa = oppdrag.nyttSpill ? null : (JSON.parse(localStorage.getItem(LAGER) ?? 'null') as { niva?: unknown; grunn?: unknown } | null);
+        const n = typeof raa?.niva === 'number' ? Math.min(2, Math.max(0, Math.round(raa.niva))) : 0;
+        if (n > 0) {
+            ETTERSOKT.niva = n as Niva;
+            ETTERSOKT.grunn = raa?.grunn === 'tyveri' || raa?.grunn === 'port' ? raa.grunn : 'snik';
+            ETTERSOKT.usett = 0;
+            ETTERSOKT.n++;
+        }
+    } catch {
+        // Ødelagt eller blokkert lagring: start uten.
+    }
+    const lagre = () => {
+        try {
+            if (ETTERSOKT.niva === 0) localStorage.removeItem(LAGER);
+            else localStorage.setItem(LAGER, JSON.stringify({ niva: ETTERSOKT.niva, grunn: ETTERSOKT.grunn }));
+        } catch {
+            // Lagring blokkert: gjelder bare denne økta.
+        }
+    };
+    // «Begynn på nytt» glemmer det også.
+    oppdrag.utvidelser.push({ nullstill: () => ETTERSOKT.nullstill() });
+
     ETTERSOKT.onEndring = (niva, var_) => {
+        lagre();
         // Panelet øverst i midten spretter fram med nivået (ui/Ettersokt.tsx), så ingen melding her.
         if (niva > var_) {
             k.cam.addShake(0.03 + niva * 0.02);
@@ -156,6 +197,10 @@ export function lagEttersokt(k: SpillKontekst): Spillsystem {
     /** Samtalen hos gjaldkeren: dommen etter hva gutten gjorde, og tyveribolken. */
     function dom(): Samtale {
         const tyv = ETTERSOKT.grunn === 'tyveri';
+        const andreGang = oppdrag.flagg.has('gjaldker-bot');
+        const bot = andreGang ? DOM_BOT * 2 : DOM_BOT;
+        // Har han ikke nok, står svaret låst med grunnen under (rpg.ts).
+        const betal = { tekst: `Jeg betaler boten (${bot} witten).`, til: 'betal', krav: { witten: bot } };
         return {
             start: {
                 tekst: tyv
@@ -163,23 +208,22 @@ export function lagEttersokt(k: SpillKontekst): Spillsystem {
                     : 'Vakta sier du lusket rundt kongens vaktbu og løp fra dem. Du stjal ingenting. Men du lot som du var en tyv.',
                 gest: 'peke',
                 valg: [
-                    { tekst: `Jeg betaler boten (${DOM_BOT} witten).`, til: 'betal' },
                     { tekst: 'Jeg har ingen penger.', til: 'ingen' },
                     ...(tyv ? [{ tekst: 'Jeg var sulten.', til: 'sulten' }] : []),
+                    betal,
                 ],
             },
             sulten: {
                 tekst: 'Sulten? Du har mat i schøtstua hver dag, tyskergutt. Loven tilgir den som stjeler fordi han sulter og ikke kan arbeide. Det gjelder ikke deg.',
                 gest: 'riste',
-                valg: [
-                    { tekst: `Jeg betaler boten (${DOM_BOT} witten).`, til: 'betal' },
-                    { tekst: 'Jeg har ingen penger.', til: 'ingen' },
-                ],
+                valg: [{ tekst: 'Jeg har ingen penger.', til: 'ingen' }, betal],
             },
             betal: {
-                tekst: 'Da er saken ute av verden denne gangen. Neste gang blir boten dobbelt så stor.',
+                tekst: andreGang
+                    ? 'Andre gang, og dobbel bot. Loven er tålmodig, men ikke uten ende. Tredje gang blir det ikke penger.'
+                    : 'Da er saken ute av verden denne gangen. Neste gang blir boten dobbelt så stor.',
                 gest: 'nikk',
-                gjor: `witten:-${DOM_BOT};rykte:B:-2;ettersokt:fri;flagg:gjaldker-bot`,
+                gjor: `witten:-${bot};rykte:B:-2;ettersokt:fri;flagg:gjaldker-bot`,
                 til: 'vet',
             },
             ingen: {
@@ -214,7 +258,10 @@ export function lagEttersokt(k: SpillKontekst): Spillsystem {
                 if (!naer(gutt, v.pos, 2.4)) continue;
                 naerVakt = v;
                 if (ETTERSOKT.niva === 3) return `E: Gi deg til ${v.navn}`;
-                return `E: Gå fram og betal boten til ${v.navn} (${BOT[ETTERSOKT.niva as 1 | 2]} witten)`;
+                const bot = botNaa(ETTERSOKT.niva as 1 | 2);
+                if (bot === 0) return `E: Gå fram til ${v.navn} (han kjenner deg)`;
+                if (bot > pung()) return `E: Gi deg til ${v.navn} (du har ikke ${bot} witten til boten)`;
+                return `E: Gå fram og betal boten til ${v.navn} (${bot} witten)`;
             }
             return null;
         },
@@ -225,7 +272,16 @@ export function lagEttersokt(k: SpillKontekst): Spillsystem {
                 fore();
                 return null;
             }
-            const bot = BOT[ETTERSOKT.niva as 1 | 2];
+            const bot = botNaa(ETTERSOKT.niva as 1 | 2);
+            // Ikke nok i pungen: han kan bare gi seg, og blir ført til gjaldkeren.
+            if (bot > pung()) {
+                fore();
+                return null;
+            }
+            if (bot === 0) {
+                ETTERSOKT.nullstill();
+                return `${v.navn} kjenner deg. «Gå hjem, junge. Denne gangen har jeg ikke sett deg.»`;
+            }
             oppdrag.gjor(`witten:-${bot};rykte:B:-1`);
             ETTERSOKT.nullstill();
             k.lyd?.lyd.toner([[1318, 0, 0.12], [1568, 0.07, 0.12], [1175, 0.14, 0.2]], 0.07);
@@ -288,7 +344,9 @@ export function lagEttersokt(k: SpillKontekst): Spillsystem {
                 ? 'Løp og kom deg ut av syne, eller gi deg (E ved vakta).'
                 : sett
                     ? 'Noen ser deg nå. Kom deg bak noe!'
-                    : `Hold deg skjult i ${Math.ceil(igjen)} s, eller betal boten til en vakt (E).`;
+                    : botNaa(Math.min(2, ETTERSOKT.niva) as 1 | 2) > pung()
+                        ? `Hold deg skjult i ${Math.ceil(igjen)} s. Du har ikke nok witten til boten.`
+                        : `Hold deg skjult i ${Math.ceil(igjen)} s, eller betal boten til en vakt (E).`;
             return {
                 niva: ETTERSOKT.niva, navn: NIVA_NAVN[ETTERSOKT.niva], glemmer: Math.min(1, ETTERSOKT.usett / GLEM[lvl]),
                 sekIgjen: igjen, grunn: ETTERSOKT.grunn, tips, n: ETTERSOKT.n, svart, svartTekst,

@@ -68,6 +68,8 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number; b
     detmar: { pos: [-178.3, 0, 16.6], yaw: -Math.PI / 2 },
     bard: { pos: [-23.4, 0, 0.9], yaw: -2.57 },
     ottar: { pos: [6.1, 0, 3.1], yaw: Math.PI },
+    // Foran kornselgeren Torstein på torget i Nikolaikirkeallmenningen (rykte-samtaler.ts).
+    torg: { pos: [11.6, 0, 19.6], yaw: -Math.PI / 2 },
     kirke: { pos: [100.6, 2.05, 105.4], yaw: 0.15 },
     alter: { pos: [95.8, 2.05, 100.6], yaw: -0.54 },
     olstua: { pos: [38.2, 2.2, 74.0], yaw: 0.88 },

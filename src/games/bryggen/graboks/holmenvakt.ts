@@ -14,12 +14,18 @@
 // Ettersøkt-nivåene styrer vaktene: mistenkt (vakta som så ham, går dit), etterlyst (alle leter
 // der han sist ble sett), jaget (den nærmeste løper etter ham).
 //
+// Ryktet hos kongens menn (rpg-data.ts) endrer hvordan vaktene møter gutten: de ser ham saktere når
+// de liker ham og fortere når de mistror ham, de hilser eller truer når han går forbi, og den som er
+// mistrodd, blir ikke bare vist bort fra vaktsonen, men etterlyst. Med høvedsmannens ord
+// (`bergenhus-fri`, rykte-samtaler.ts) gjelder ikke vaktsonen for ham, så lenge han ikke stjeler.
+//
 // Alt her er laget for spillet [S]. Se byen-oppdrag.ts for det vi vet om kongens menn.
 import * as THREE from 'three';
 import { ORDET } from '../bygg/byen-oppdrag';
 import { GJALDKER_LOKAL, HOLMEN_D } from '../bygg/bergenhus';
 import { hodeTopp, lagFigur } from '../bygg/folk';
 import { HOLMEN, KOLBEIN, SKATTEFISK, VAKTBU, VAKTSKIFTE, VAKTSONE, holmenVerden } from '../bygg/holmenvei';
+import { rykteNaa } from '../bygg/rpg-data';
 import type { Samtale } from '../bygg/samtaler';
 import type { Animator } from '../motor/animator';
 import { FigurLod } from '../motor/figurlod';
@@ -43,6 +49,15 @@ const _a = V();
 const _b = V();
 const _d = V();
 const _ned = V(0, -1, 0);
+/** Hvor fort synsmåleren fylles, etter ryktet hos kongens menn (hatet, mistrodd, ukjent, likt, æret) [S]. */
+const SYN_RYKTE = [1.6, 1.3, 1, 0.75, 0.55];
+/** Det vaktene sier når gutten går forbi, etter ryktet (ukjent: ingenting) [S]. */
+const HILSEN: Record<-2 | -1 | 1 | 2, string[]> = {
+    [-2]: ['Gå videre, tysker, før jeg finner en grunn.', 'Deg har jeg sett før. Gå.'],
+    [-1]: ['Jeg har øye med deg, tyskergutt.', 'Hendene der jeg ser dem.'],
+    1: ['God dag, junge.', 'Kald vind i dag. Gå på.'],
+    2: ['Der er han som hjelper kongens menn. Gå trygt.', 'God dag, junge. Hils husbonden din.'],
+};
 
 type Modus = 'runde' | 'post' | 'sok' | 'jakt' | 'hjem';
 
@@ -228,6 +243,8 @@ export function lagHolmenvakt(k: SpillKontekst): Spillsystem {
     }
 
     const uz = (p: THREE.Vector3) => ({ u: p.x - HOLMEN.xe, z: p.z });
+    /** Høvedsmannen har sagt fra (rykte-samtaler.ts): vaktsonen gjelder ikke ham, så lenge han ikke stjeler. */
+    const fri = () => oppdrag.flagg.has('bergenhus-fri') && tyveriVindu <= 0;
     function iSonen(p: THREE.Vector3): boolean {
         const { u, z } = uz(p);
         return u > VAKTSONE.u0 && u < VAKTSONE.u1 && z > VAKTSONE.z0 && z < VAKTSONE.z1 + 0.5 && p.y < 1.5;
@@ -411,7 +428,8 @@ export function lagHolmenvakt(k: SpillKontekst): Spillsystem {
             const naer_ = THREE.MathUtils.lerp(2.3, 0.55, dist / r);
             const fart = k.player.speed;
             const beve = fart < 0.3 ? 0.5 : fart < 2 ? 0.8 : fart < 4 ? 1.1 : 1.6;
-            v.maler = Math.min(1, v.maler + dt * 0.95 * naer_ * beve * (alarm ? 2.5 : 1));
+            const rykte = SYN_RYKTE[rykteNaa('B') + 2];
+            v.maler = Math.min(1, v.maler + dt * 0.95 * naer_ * beve * rykte * (alarm ? 2.5 : 1));
         } else v.maler = Math.max(0, v.maler - dt * (v.harSett ? 0.35 : 0.5));
         if (v.maler >= 1 && ser) {
             const grunn = tyveriVindu > 0 ? 'tyveri' : 'snik';
@@ -440,7 +458,13 @@ export function lagHolmenvakt(k: SpillKontekst): Spillsystem {
 
     /** Vakta som kommer helt bort til gutten mens han er mistenkt: tilbake til kaia. */
     function bortvist(v: Vakt): void {
-        si(v, 'Ut herfra! Kongens vaktbu er ikke for tyskergutter.', 3.5);
+        if (rykteNaa('B') < 0) {
+            // Mistrodd: han blir ikke vist bort, han blir etterlyst. Bot eller gjaldkeren (ettersokt.ts).
+            si(v, 'Deg kjenner vi. Nå er du etterlyst, tysker.', 3.5);
+            ETTERSOKT.meld(2, 'snik', k.player.pos);
+            return;
+        }
+        si(v, rykteNaa('B') > 0 ? 'Du igjen, junge? Gå tilbake før noen andre ser deg.' : 'Ut herfra! Kongens vaktbu er ikke for tyskergutter.', 3.5);
         v.modus = 'hjem';
         v.maler = 0;
         v.harSett = false;
@@ -573,10 +597,19 @@ export function lagHolmenvakt(k: SpillKontekst): Spillsystem {
             // Synet gjelder i vaktsonen, mens gutten er ettersøkt, og rett etter et tyveri.
             // Brannvakt for gjaldkeren («Brann i lagerhuset»): da har gutten lov å være i vaktsonen.
             const vekter = (oppdrag.status('brann') === 'aktiv' || oppdrag.status('brann') === 'klar') && ETTERSOKT.niva === 0;
-            const aktiv = naerVei && !ETTERSOKT.fores && !HOLMEN.brann && !vekter && (iSonen(gutt) || ETTERSOKT.niva > 0 || tyveriVindu > 0);
+            const aktiv = naerVei && !ETTERSOKT.fores && !HOLMEN.brann && !vekter && ((iSonen(gutt) && !fri()) || ETTERSOKT.niva > 0 || tyveriVindu > 0);
             for (const v of vakter) {
                 if (v === porten && !porten.snakkbar) continue;
                 syn(v, dt, aktiv);
+            }
+            // Ingen leter etter ham: vaktene hilser eller truer når han går forbi, etter ryktet.
+            const rykteB = rykteNaa('B');
+            if (rykteB !== 0 && ETTERSOKT.niva === 0 && !aktiv) {
+                for (const v of mobile) {
+                    if (v.modus === 'jakt' || !naer(gutt, v.pos, 3.2) || klokke - v.sistSagt < 25) continue;
+                    const r = HILSEN[rykteB];
+                    si(v, r[Math.floor(klokke) % r.length]);
+                }
             }
             // Mistenkt, og vakta er over ham: vist bort.
             if (ETTERSOKT.niva === 1 && !ETTERSOKT.fores) {
@@ -603,7 +636,7 @@ export function lagHolmenvakt(k: SpillKontekst): Spillsystem {
             const naerVei = paaVeien(gutt);
             const bu = holmenVerden(VAKTBU.u, 0, VAKTBU.z, _b);
             const visKjegler = naerVei && !HOLMEN.brann && !((oppdrag.status('brann') === 'aktiv' || oppdrag.status('brann') === 'klar') && ETTERSOKT.niva === 0) && (gutt.distanceTo(bu) < 34 || ETTERSOKT.niva > 0 || trinn() === 2);
-            const aktiv = iSonen(gutt) || ETTERSOKT.niva > 0 || tyveriVindu > 0;
+            const aktiv = (iSonen(gutt) && !fri()) || ETTERSOKT.niva > 0 || tyveriVindu > 0;
             const w = k.floatLayer.clientWidth;
             const h = k.floatLayer.clientHeight;
             for (const v of vakter) {

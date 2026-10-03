@@ -99,6 +99,24 @@
         transform: translateY(1px);
     }
 
+    /* Farlig knapp («Begynn på nytt», «Avslutt»): lyst papir med tykk seglrød kant og rød tekst, og
+       en stripe til venstre. Ser ikke ut som hovedknappen, så den trykkes ikke av vane. */
+    .bry-fare {
+        font-family: 'Alegreya Sans', Inter, system-ui, sans-serif;
+        background: #fbf3e2;
+        color: #8a2417;
+        border: 2px solid #9a2a1c;
+        border-left-width: 7px;
+        box-shadow: 0 1px 3px rgba(60, 15, 8, 0.25);
+    }
+    .bry-fare:hover {
+        background: #9a2a1c;
+        color: #fff8ec;
+    }
+    .bry-fare:active {
+        transform: translateY(1px);
+    }
+
     /* Tastaturfokus: en tydelig seglrød ring utenfor en lys kant, synlig på pergament og over spillet. */
     .bry-fokus:focus-visible {
         outline: 3px solid #9a2a1c;

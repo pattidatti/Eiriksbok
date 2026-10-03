@@ -227,7 +227,9 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
 
     // Ildlyset: ett lys for hele byen, alltid i scenen (et lys som kommer og går tvinger Three
     // til å bygge alle shaderne på nytt). Det står på ildstedet nærmest spilleren, eller er av.
-    const ildlys = new THREE.PointLight(0xff8a3c, 0, 13, 1.6);
+    // Det faller sakte av (1,2) og rekker 17 m: schøtstua er 17,6 m lang, og oldermannen står ved
+    // gavlveggen 7 m fra ilden. Med 1,6 og 13 m sto han i mørket.
+    const ildlys = new THREE.PointLight(0xff8a3c, 0, 17, 1.2);
     ildlys.name = 'ildlys';
     scene.add(ildlys);
     const _d = new THREE.Vector3();
@@ -317,7 +319,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         }
         if (best) {
             ildlys.position.copy(best);
-            ildlys.intensity = 12 * flakk(t);
+            ildlys.intensity = 10 * flakk(t);
         } else ildlys.intensity = 0;
         // Inne: 1 når man er mer enn en meter innenfor veggen, tonet ned mot døra.
         let inne = 0;

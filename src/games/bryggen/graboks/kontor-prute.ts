@@ -10,8 +10,12 @@
 // [V] Bytteforholdet rundt 1500: 8 kg rug for 1 kg tørrfisk i Bergen, halvparten 50 år senere (Holm mfl.
 // 2019, etter Nedkvitne 1988; blueprint §4.3). [V] Kontoret styrte kornimporten. [U] tallene i
 // 1420-årene. Sølve, grensen og tålmodigheten er [S].
+//
+// Ryktet hos fiskerne (rpg-data.ts) teller: liker de gutten, ligger grensen en halv kilo lavere og
+// Sølve har én til to mer i tålmodighet. Mistror de ham, er det motsatt [S].
 import type { InputFrame } from '../motor/input';
 import type { Snakkbar } from '../motor/streaming';
+import { rykteNaa } from '../bygg/rpg-data';
 import { finnPerson, maalNaadd, naer } from './sidefolk';
 import type { SpillKontekst, Spillsystem } from './system';
 
@@ -53,6 +57,7 @@ export function lagPrute(k: SpillKontekst): Spillsystem {
     let ber = START_BER;
     let grense = 7;
     let taal = MAKS;
+    let maks = MAKS;
     let logg: PruteHud['logg'] = [];
     let sier = '';
     let tegn = '';
@@ -147,10 +152,12 @@ export function lagPrute(k: SpillKontekst): Spillsystem {
             return 'E: Prut med Sølve om fisken';
         },
         trykk() {
-            grense = [6.5, 7, 7, 7.5, 7.5, 8][Math.floor(Math.random() * 6)];
+            const rykte = rykteNaa('F');
+            grense = [6.5, 7, 7, 7.5, 7.5, 8][Math.floor(Math.random() * 6)] - rykte * 0.5;
             ber = START_BER;
             bud = 5;
-            taal = MAKS;
+            maks = MAKS + rykte;
+            taal = maks;
             logg = [];
             n = 0;
             stemning = 'rolig';
@@ -158,7 +165,11 @@ export function lagPrute(k: SpillKontekst): Spillsystem {
             fTid = 0;
             solve?.vend(k.player.pos);
             si('Ti kilo rug for en kilo fisk. Barna mine skal ha brød hele vinteren.');
-            tegn = 'Sølve står med armene i kors ved fiskebuntene sine.';
+            tegn = rykte > 0
+                ? 'Sølve har hørt at du er grei mot fiskerne. Han står avslappet ved buntene sine.'
+                : rykte < 0
+                    ? 'Sølve har hørt hva du har gjort mot fiskerne. Han stoler ikke på deg.'
+                    : 'Sølve står med armene i kors ved fiskebuntene sine.';
             k.hudSnart();
         },
         steg(dt: number, inp: InputFrame) {
@@ -201,7 +212,7 @@ export function lagPrute(k: SpillKontekst): Spillsystem {
         rask: () => fase !== null,
         hud(): PruteHud | null {
             if (!fase) return null;
-            return { fase, bud, ber, logg: logg.slice(-4), taalmodighet: taal, maks: MAKS, husbonden: HUSBONDEN, sier, tegn, stemning, pris, grense, n };
+            return { fase, bud, ber, logg: logg.slice(-4), taalmodighet: taal, maks, husbonden: HUSBONDEN, sier, tegn, stemning, pris, grense, n };
         },
         dispose() {
             fase = null;

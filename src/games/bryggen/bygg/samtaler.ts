@@ -8,7 +8,8 @@
 // slutter samtalen med en «Dette vet vi»-tekst (§3). Ordene og replikkene ellers er [S].
 
 import type { Gest } from '../motor/gestikk';
-import type { Krav } from './oppdrag-data';
+import type { Fraksjon, Krav } from './oppdrag-data';
+import { rykteNaa } from './rpg-data';
 
 export interface Valg {
     tekst: string;
@@ -41,11 +42,31 @@ export type Samtale = Record<string, Replikk>;
  */
 export const SPOR = { juks: 0, tatt: false, baret: 0 };
 
-/** Hvor en samtale starter, etter det gutten har gjort (SPOR). */
+/**
+ * Hvem den man snakker med hører til. Ryktet der velger en kald (`kald`, mistrodd eller hatet) eller
+ * varm (`varm`, likt eller æret) start, om samtalen har den noden (rykte-samtaler.ts).
+ */
+export const SAMTALE_FRAKSJON: Record<string, Fraksjon> = {
+    husbonde: 'K',
+    fisker: 'F',
+    kornselger: 'N',
+    borger: 'N',
+    skomaker: 'N',
+    hovedsmann: 'B',
+    jonspresten: 'Ki',
+};
+
+/** Hvor en samtale starter, etter det gutten har gjort (SPOR) og ryktet han har. */
 export function startNode(id: string, s: Samtale): string {
     if (id === 'fisker' && SPOR.tatt && s.mistro) return 'mistro';
     if (id === 'husbonde' && SPOR.juks > 0 && s.medskyldig) return 'medskyldig';
     if (id === 'husbonde' && SPOR.baret >= 3 && s.flink) return 'flink';
+    const f = SAMTALE_FRAKSJON[id];
+    if (f) {
+        const t = rykteNaa(f);
+        if (t < 0 && s.kald) return 'kald';
+        if (t > 0 && s.varm) return 'varm';
+    }
     return 'start';
 }
 

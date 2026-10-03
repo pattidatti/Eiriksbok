@@ -138,7 +138,7 @@ function lys(ki: MeshKit, kl: MeshKit, kf: MeshKit, x: number, y: number, z: num
 }
 
 /** En liten flamme: to kryssede ruter med spiss topp, i ett materiale uten lys (alltid like klar). */
-function flamme(kf: MeshKit, p: THREE.Vector3): void {
+export function flamme(kf: MeshKit, p: THREE.Vector3): void {
     const h = 0.07;
     const w = 0.022;
     kf.withTint({ top: 1, bottom: 1, hue: [1.0, 0.78, 0.38] }, () => {

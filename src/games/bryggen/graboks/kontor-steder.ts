@@ -11,6 +11,8 @@ export const KONTOR_STEDER = {
     oldermann: V(7.25, INNE, 53.0),
     /** Sekretæren står ved siden av ham med protokollen. */
     sekretaer: V(7.0, INNE, 51.75),
+    /** Lysestaken med talglyset, inntil gavlveggen mellom de to (kontor-lys.ts). */
+    lysestake: V(8.15, INNE, 52.35),
     /** Der gutten stiller seg foran oldermannen på Morgensprache. */
     foran: V(5.0, INNE, 53.0),
     /** Ved fiskestablene langs vestveggen i bua: her sorteres tørrfisken. */

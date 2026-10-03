@@ -51,11 +51,16 @@ export function lagKontoret(k: SpillKontekst): Spillsystem[] {
         half: new THREE.Vector2(9, 28),
         build: async () => {
             const { lagFolk } = await import('../bygg/folk');
+            const { lysestake } = await import('../bygg/kontor-lys');
             const folk = await lagFolk(plasser, k.world.materials, 1429);
             snakkbare = folk.snakkbare;
             folkGruppe = folk.group;
+            // Talglyset mellom oldermannen og sekretæren, inntil gavlveggen (kontor-lys.ts).
+            const stake = lysestake(k.world.materials, S.lysestake);
+            const near = new THREE.Group();
+            near.add(folk.group, stake.group);
             return {
-                near: folk.group,
+                near,
                 colliders: folk.colliders,
                 snakkbare: folk.snakkbare,
                 gaaende: folk.gaaende,
@@ -75,6 +80,7 @@ export function lagKontoret(k: SpillKontekst): Spillsystem[] {
                 },
                 dispose: () => {
                     folk.dispose();
+                    stake.dispose();
                     snakkbare = [];
                     folkGruppe = null;
                 },
