@@ -374,10 +374,12 @@ export function koblFilmer(k: SpillKontekst, spill: (f: Film) => void, vedStart:
         else if (hva === 'flagg' && id === 'tyv-vakta') vis('vakta');
         else if (hva === 'lever' && id === 'tyven') vis('kap1-ut');
     });
-    // ?film=<id> spiller en film rett etter start (for å se og teste den). Ellers prologen i et nytt spill.
-    const valgt = new URLSearchParams(location.search).get('film');
+    // ?film=<id> spiller en film rett etter start (for å se og teste den). Ellers prologen i et nytt spill,
+    // men ikke når ?sted= (dev.ts) har satt gutten et annet sted: prologen ville flyttet ham tilbake.
+    const q = new URLSearchParams(location.search);
+    const valgt = q.get('film');
     if (valgt && FILMER[valgt]) vedStart(FILMER[valgt](k));
-    else if (!sett('ankomst') && o.status('ankomst') === 'ny') vedStart(FILMER.ankomst(k));
+    else if (!(import.meta.env.DEV && q.has('sted')) && !sett('ankomst') && o.status('ankomst') === 'ny') vedStart(FILMER.ankomst(k));
     // Dev: `window.__bryggenFilm('<id>')` spiller en film nå, bygget av spillet slik det er nå.
     if (import.meta.env.DEV) (window as { __bryggenFilm?: (id: string) => void }).__bryggenFilm = (id) => spill(FILMER[id](k));
     // Lastet midt i jakten: det er fortsatt natt.
