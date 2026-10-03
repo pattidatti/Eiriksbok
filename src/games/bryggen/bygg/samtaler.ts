@@ -54,6 +54,7 @@ export const SAMTALE_FRAKSJON: Record<string, Fraksjon> = {
     skomaker: 'N',
     hovedsmann: 'B',
     jonspresten: 'Ki',
+    sperring: 'N',
 };
 
 /** Hvor en samtale starter, etter det gutten har gjort (SPOR) og ryktet han har. */

@@ -189,4 +189,20 @@ export function leggTilRykte(): void {
             }
         );
     }
+
+    // ── Detmar ved bommen (Byfolket) ── Ryktet åpner veien til fots til Stranden (bommen.ts).
+    {
+        const s = SAMTALER.sperring;
+        laast(s, { tekst: 'Folk i gata vet hvem jeg er. Løft bommen for meg.', til: 'loft', krav: { rykte: { N: 15 } } });
+        s.loft = {
+            tekst: 'Ja, du er han som byfolket snakker godt om. Greit. Gå forbi, gå langs kaia og over til Stranden. Men ta ikke med deg folk fra Kontoret.',
+            gest: 'nikk',
+            gjor: 'flagg:bommen-aapen',
+        };
+        moter(
+            s,
+            { tekst: 'Deg kjenner vi. Her går du ikke forbi, Kontor-gutt.', gest: 'peke' },
+            { tekst: 'Du igjen, junge. Folk i gata snakker godt om deg.', gest: 'nikk' }
+        );
+    }
 }

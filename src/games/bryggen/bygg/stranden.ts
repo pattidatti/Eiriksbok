@@ -26,6 +26,8 @@ const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 export const STRAND_Z = -122;
 const BAKKE = 0.3;
 const DYBDE = 40;
+/** Hvor mye lenger inn husene står der Strandgaten går langs sjøen (strandgaten.ts). */
+export const VEI = 6.5;
 
 type Del = 'vegg' | 'tak' | 'tre';
 const KEY: Record<Del, MatKey> = { vegg: 'laft', tak: 'torv', tre: 'raatre' };
@@ -160,17 +162,25 @@ function skipPaStokker(p: Pensel, x: number, z: number): void {
     });
 }
 
-/** Rekka langs stranda fra `x0` til `x1`, trukket fra frøet. `hull` er den gåbare biten (strandliv.ts), som hoppes over. */
-function stranda(p: Pensel, x0: number, x1: number, hull?: [number, number]): void {
+/**
+ * Rekka langs stranda fra `x0` til `x1`, trukket fra frøet. `hull` er den gåbare biten (strandliv.ts), som
+ * hoppes over. Vest for `vei` går Strandgaten langs sjøen (strandgaten.ts): der står alt `VEI` lenger inne,
+ * og bakken begynner bak gata.
+ */
+function stranda(p: Pensel, x0: number, x1: number, hull?: [number, number], vei?: number): void {
     const rng = lagRng(1429);
     const k = p.k;
     p.hull = hull;
+    const sz = (x: number) => (vei !== undefined && x < vei ? STRAND_Z - VEI : STRAND_Z);
     // Bakken: jord og gress, med en kant av stein og jord ned mot sjøen.
-    const bakke = (a: number, b: number) => mal(p, 'tak', { top: 0.6, bottom: 0.45, hue: [0.9, 0.85, 0.75] }, (key) =>
-        k.box(key, (a + b) / 2, BAKKE / 2 - 2, STRAND_Z - DYBDE / 2, b - a, BAKKE + 4, DYBDE, { skip: ['bottom'], shadeFoot: true })
+    const bakke = (a: number, b: number, z0 = STRAND_Z) => mal(p, 'tak', { top: 0.6, bottom: 0.45, hue: [0.9, 0.85, 0.75] }, (key) =>
+        k.box(key, (a + b) / 2, BAKKE / 2 - 2, z0 - DYBDE / 2, b - a, BAKKE + 4, DYBDE, { skip: ['bottom'], shadeFoot: true })
     );
     if (hull) {
-        bakke(x0, hull[0]);
+        if (vei !== undefined) {
+            bakke(x0, Math.min(vei, hull[0]), STRAND_Z - VEI);
+            if (vei < hull[0]) bakke(vei, hull[0]);
+        } else bakke(x0, hull[0]);
         bakke(hull[1], x1);
     } else bakke(x0, x1);
     let skipBygd = false;
@@ -187,7 +197,7 @@ function stranda(p: Pensel, x0: number, x1: number, hull?: [number, number]): vo
             const n = rng() < 0.5 ? 1 : 2;
             for (let i = 0; i < n; i++) {
                 const b = 5 + rng() * 2;
-                hus(p, x + b / 2, STRAND_Z + 0.6, (rng() - 0.5) * 0.12, b, 8 + rng() * 3, 1.9 + rng() * 0.5, 0.95, tone, true);
+                hus(p, x + b / 2, sz(x) + 0.6, (rng() - 0.5) * 0.12, b, 8 + rng() * 3, 1.9 + rng() * 0.5, 0.95, tone, true);
                 x += b + 0.8;
             }
             x += 3 + rng() * 5;
@@ -196,27 +206,27 @@ function stranda(p: Pensel, x0: number, x1: number, hull?: [number, number]): vo
             const b = 6 + rng() * 2.5;
             const l = 7 + rng() * 4;
             const to = rng() < 0.4;
-            hus(p, x + b / 2, STRAND_Z - 1 - rng() * 2, (rng() - 0.5) * 0.15, b, l, to ? 4.6 : 2.6 + rng() * 0.6, 0.6, tone, false);
+            hus(p, x + b / 2, sz(x) - 1 - rng() * 2, (rng() - 0.5) * 0.15, b, l, to ? 4.6 : 2.6 + rng() * 0.6, 0.6, tone, false);
             const bak = 1 + Math.floor(rng() * 2);
             for (let i = 0; i < bak; i++) {
                 const bb = 5 + rng() * 2;
-                hus(p, x + bb / 2 + (rng() - 0.3) * 3, STRAND_Z - l - 3 - i * 9, (rng() - 0.5) * 0.2, bb, 6 + rng() * 2, 2.4 + rng() * 0.6, 0.6, tone, false);
+                hus(p, x + bb / 2 + (rng() - 0.3) * 3, sz(x) - l - 3 - i * 9, (rng() - 0.5) * 0.2, bb, 6 + rng() * 2, 2.4 + rng() * 0.6, 0.6, tone, false);
             }
             x += b + 3 + rng() * 6;
         } else if (!skipBygd && x > x0 + 60) {
-            skipPaStokker(p, x + 9, STRAND_Z - 5);
-            tommer(p, x + 9, STRAND_Z - 11, 7, 3, rng);
+            skipPaStokker(p, x + 9, sz(x) - 5);
+            tommer(p, x + 9, sz(x) - 11, 7, 3, rng);
             skipBygd = true;
             x += 22;
         } else {
-            tommer(p, x + 4, STRAND_Z - 3 - rng() * 3, 5 + rng() * 3, 2 + Math.floor(rng() * 3), rng);
+            tommer(p, x + 4, sz(x) - 3 - rng() * 3, 5 + rng() * 3, 2 + Math.floor(rng() * 3), rng);
             x += 10;
         }
     }
 }
 
-/** Cella med Stranden fra `x0` til `x1` langs Vågen. */
-export function strandCelle(mats: Materials, x0: number, x1: number, hull?: [number, number]): CellDef {
+/** Cella med Stranden fra `x0` til `x1` langs Vågen. `vei`: Strandgaten går langs sjøen vest for den. */
+export function strandCelle(mats: Materials, x0: number, x1: number, hull?: [number, number], vei?: number): CellDef {
     return {
         id: 'stranden',
         center: new THREE.Vector2((x0 + x1) / 2, STRAND_Z - DYBDE / 2),
@@ -225,8 +235,8 @@ export function strandCelle(mats: Materials, x0: number, x1: number, hull?: [num
             const naer = new MeshKit();
             const mid = new MeshKit();
             const farge: Record<Del, THREE.Color> = { vegg: mats.lodColor('laft'), tak: mats.lodColor('torv'), tre: mats.lodColor('raatre') };
-            stranda({ k: naer, fjern: false, farge }, x0, x1, hull);
-            stranda({ k: mid, fjern: true, farge }, x0, x1, hull);
+            stranda({ k: naer, fjern: false, farge }, x0, x1, hull, vei);
+            stranda({ k: mid, fjern: true, farge }, x0, x1, hull, vei);
             const near = new THREE.Group();
             near.name = 'stranden';
             for (const [key, b] of naer.buckets) {

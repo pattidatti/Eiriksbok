@@ -44,7 +44,7 @@ const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 export const VB_BREDDE = 66;
 export const AUTA_W = 8;
 /** Gata: plankeveien langs x, og hvor bodene står. */
-const GATE = { z: 15, w: 2.4, sjo: 12.0, land: 18.2 };
+export const GATE = { z: 15, w: 2.4, sjo: 12.0, land: 18.2 };
 /** Trappa opp til Øvregaten i Auta allmenning (bredde og hvor den starter). */
 const TRAPP = { w: 2.4, z0: 57.5, z1: MUR_Z };
 /** Hvor bred åpningen i støttemuren må være for trappa (ovregaten.ts). */
@@ -380,22 +380,26 @@ function bryggetrapp(k: MeshKit, c: ColliderKit, x: number, front: number): void
     c.box(x, 0.5, front - 0.2, 1.4, 1.0, 0.12, true);
 }
 
-/** Bommen over gata: tønner på hver side og en stokk på bukker imellom. */
+/** Hvor bommen står: x og gata den stenger (z fra `z0` til `z1`). Selve stokken og kollideren eies av bommen.ts. */
+export const BOM = { z0: GATE.sjo + 0.6, z1: GATE.land - 0.6 };
+
+/**
+ * Bommen over gata: tønner på hver side og bukker. Stokken som ligger over (og stenger) er ikke her:
+ * den eies av bommen.ts, som løfter den når Detmar slipper gutten forbi. Bukken i midten er borte, så
+ * stokken kan svinge opp.
+ */
 function bom(k: MeshKit, c: ColliderKit, x: number): void {
-    const z0 = GATE.sjo + 0.6;
-    const z1 = GATE.land - 0.6;
+    const { z0, z1 } = BOM;
     k.withTint({ top: 0.7, bottom: 0.7, hue: WARM }, () => {
-        for (const z of [z0 + 0.8, (z0 + z1) / 2, z1 - 0.8]) {
+        for (const z of [z0 + 0.8, z1 - 0.8]) {
             for (const s of [-1, 1]) {
                 const m = new THREE.Matrix4().makeRotationX(s * 0.35).setPosition(x, 0.45, z + s * 0.15);
                 k.slab('raatre', m, 0.08, 0.95, 0.08);
             }
         }
-        k.log('raatre', V(x, 0.95, z0), V(x, 0.95, z1), 0.13, 8, true);
     });
     tonne(k, c, x - 0.6, z0 + 0.1, 0.85);
     tonne(k, c, x - 0.5, z1 - 0.1, 0.75);
-    c.box(x, 0.8, (z0 + z1) / 2, 0.5, 1.6, z1 - z0 + 1.2, true);
 }
 
 /**
@@ -590,7 +594,9 @@ export function endeCelle(mats: Materials, xb: number): CellDef {
                         w, l: 6, floors: [2.5], roof: 'torv', pitch: 0.8, tint: T(0.85 + r() * 0.15, toner[i % 3]),
                         cornersFront: true, cornersBack: true, hodeSeg: 5, glugger: [{ side: 0, at: 0, floor: 0, open: r() < 0.5 }],
                     };
-                    const m = new THREE.Matrix4().makeRotationY(rot).setPosition(xb - 3.5 - i * 5.6, 0, z + (rot ? 3 : -3));
+                    // Husene på sjøsiden står 3 m lenger vest: hjørnet ved bommen er åpent ned til kaia
+                    // langs bunnen av Vågen (strandgaten.ts).
+                    const m = new THREE.Matrix4().makeRotationY(rot).setPosition(xb - 3.5 - (rot ? 3 : 0) - i * 5.6, 0, z + (rot ? 3 : -3));
                     k.matrix = m.clone();
                     c.matrix = m.clone();
                     lod.matrix = m.clone();

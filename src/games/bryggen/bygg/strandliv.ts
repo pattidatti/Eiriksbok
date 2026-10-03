@@ -35,6 +35,7 @@ import { lagDagsfolk, type Dagsfigur, type FasePlass, type Vei } from './dagspla
 import { glemPinner, meldPinner } from './runepinner';
 import type { Stopp } from './vandrer';
 import { graveflekk } from './vaagsbunnen-liv';
+import { STRAND_Z, VEI } from './stranden';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -521,14 +522,20 @@ function binge(k: MeshKit, c: ColliderKit, u0: number, u1: number, v0: number, v
     tonne(k, c, x1 - 0.6, z1 - 0.6, 0.6);
 }
 
-/** Gjerdene rundt den gåbare biten: på sidene helt ut til bolverket, og bak. */
+/**
+ * Gjerdene rundt den gåbare biten: på sidene helt ut til bolverket, og bak. I vest går gjerdet ikke helt
+ * ut: der kommer Strandgaten inn langs sjøen fra bunnen av Vågen (strandgaten.ts).
+ */
 function grenser(k: MeshKit, c: ColliderKit): void {
     const h = 1.7;
+    const aapning = SZ - STRAND_Z + VEI - 0.4;
     k.withTint({ top: 0.78, bottom: 0.58, hue: DARK }, () => {
         for (const s of [-1, 1]) {
             const x = X_S + s * (STRAND_HW - 0.1);
-            k.box('bordvegg', x, h / 2, SZ - DYBDE / 2, 0.06, h, DYBDE, { shadeFoot: true });
-            c.box(x, 2, SZ - DYBDE / 2, 0.3, 4, DYBDE + 0.6);
+            const fra = s < 0 ? aapning : 0;
+            const l = DYBDE - fra;
+            k.box('bordvegg', x, h / 2, SZ - fra - l / 2, 0.06, h, l, { shadeFoot: true });
+            c.box(x, 2, SZ - fra - l / 2, 0.3, 4, l + 0.6);
         }
         k.box('bordvegg', X_S, h / 2, SZ - DYBDE + 0.1, STRAND_HW * 2, h, 0.06, { shadeFoot: true });
         c.box(X_S, 2, SZ - DYBDE + 0.1, STRAND_HW * 2, 4, 0.3);

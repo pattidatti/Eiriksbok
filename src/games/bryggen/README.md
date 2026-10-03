@@ -551,7 +551,15 @@ Regler:
 - Rutene i en dagsplan må ligge der det er fritt, og `Vei` i cella må gi en vei ut til gata som ikke går
   gjennom hus (bak bodene på Strandtorget går den rundt vestenden).
 - Folk med `id` i Vågsbunnen (de oppdragene trenger) er der hele døgnet; de andre i verkstedene går hjem om natta.
-- Stranden og Vågsbunnen henger ikke sammen til fots: bommen over Skostredet stenger, så gutten ror over.
+- Stranden og Vågsbunnen henger sammen til fots når bommen over Skostredet er løftet (`bygg/strandgaten.ts`,
+  `graboks/bommen.ts`): Detmar løfter den når byfolket kjenner gutten (svar låst med N 15, flagget
+  `bommen-aapen`, lagret). Veien går vestover i gata bak bommen, sørover på kaia langs bunnen av Vågen og
+  østover på Strandgaten til den gåbare biten. Kulissene der har ingen kollidere: `strandgatenCelle` gir
+  bakken, husfrontene som usynlige vegger og gjerdene; mot Vågen står veggen i vannet rett utenfor kaia
+  (bryggen.ts). Husene på Stranden vest for den gåbare biten står `VEI` (6,5 m) lenger inne (stranden.ts),
+  og gjerdet på vestsida av den gåbare biten er åpent ut mot sjøen. Stokken og kollideren i bommen eies av
+  `bommen.ts`, ikke av cella. `world.xw` er vestenden av byen (-182,1).
+  Dev: `?sted=bommen|bakbommen|vaagkaia|strandgaten`.
 - I Playwright går simuleringen mye saktere enn klokka (programvare-GL): vent på HUD-teksten, ikke på faste tider.
 
 ## Kontoret: «Kontorets lov» (oppdragskjede og fire jobber)

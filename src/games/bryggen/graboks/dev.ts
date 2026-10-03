@@ -85,6 +85,11 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number; b
     gunnvor: { pos: [-28.5, 0, -134.6], yaw: Math.PI },
     jonskirken: { pos: [-18, 0, -136.4], yaw: Math.PI },
     skostredet: { pos: [-128, 0, 15], yaw: -Math.PI / 2 },
+    // Veien til fots (strandgaten.ts): foran bommen, bak den i gata, på kaia langs bunnen av Vågen, og på Strandgaten.
+    bommen: { pos: [-178.4, 0, 15], yaw: -Math.PI / 2 },
+    bakbommen: { pos: [-183.8, 0, 15], yaw: -Math.PI / 2 },
+    vaagkaia: { pos: [-183.6, 0, -60], yaw: Math.PI },
+    strandgaten: { pos: [-120, 0, -123], yaw: Math.PI / 2 },
     // Kontoret (kontor-steder.ts): schøtstua foran oldermannen, fiskestablene i bua, pulten, Sølve, vinsjen.
     schotstua: { pos: [3.6, 0.2, 53.0], yaw: Math.PI / 2 },
     bua: { pos: [-5.6, 0.2, 8.6], yaw: Math.PI },

@@ -55,6 +55,8 @@ export interface BryggenWorld {
     skygge: number;
     /** Færingen gutten ror (settes av spillet): vannet holdes ute av den også. */
     faering: THREE.Object3D | null;
+    /** Vestenden av byen: x der Vågen slutter (bommen over Skostredet står like øst for den). */
+    xw: number;
     /** Kattene i rottesonene (katter.ts): lydkoblingen lytter på dem. */
     katter: Katter;
     /** Skipene som ligger fast i Vågen (koggen og jektene, skip.ts). */
@@ -223,7 +225,10 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     cells.push(...bergMod.holmenCeller(materials, xe, slots[slots.length - 1].front));
     // Den gåbare biten av Stranden (strandliv.ts) står i et hull i kulissen.
     const strandLiv = await import('./strandliv');
-    cells.push(strandMod.strandCelle(materials, xw - 20, xe - 10, strandLiv.STRAND_X));
+    // Vest for den gåbare biten går Strandgaten langs sjøen: husene der står lenger inne (stranden.ts).
+    cells.push(strandMod.strandCelle(materials, xw - 20, xe - 10, strandLiv.STRAND_X, strandLiv.STRAND_X[0]));
+    // Veien til fots rundt bunnen av Vågen: forbi bommen, langs kaia og Strandgaten (strandgaten.ts).
+    cells.push((await import('./strandgaten')).strandgatenCelle(materials, xw, strandLiv.STRAND_X[0]));
     cells.push(strandLiv.strandlivCelle(materials));
     cells.push(vbMod.endeCelle(materials, xw));
     const streamer = new CellStreamer(phys, cells);
@@ -370,10 +375,13 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     const xMax = xe;
     const wall = (cx: number, cz: number, hx: number, hz: number) =>
         phys.addBox(new THREE.Vector3(cx, 0, cz), new THREE.Vector3(hx, 14, hz));
-    wall(xMin - 0.5, 45, 0.5, 47);
+    // Vestenden på land: nord for gata bak bommen. Gata, kaia langs bunnen av Vågen og Strandgaten har
+    // grensene sine i strandgaten.ts.
+    wall(xMin - 0.5, (vbMod.GATE.land + 0.7 + 92) / 2, 0.5, (92 - vbMod.GATE.land - 0.7) / 2);
     wall((xMin + hx + 40) / 2, kgard.z1 + 4, (hx + 40 - xMin) / 2, 0.5);
     wall(hx + 40, 50, 0.5, 80);
-    wall(xMin - 0.5, -60, 0.5, 60);
+    // Bunnen av Vågen: i vannet rett utenfor kaia, så gutten kan gå på kaia og båten ikke kommer inn på den.
+    wall(xMin + 0.5, -60.5, 0.5, 60.5);
     wall(xMax + 0.5, -60, 0.5, 60);
     // Over Vågen, med en åpning der man kan legge til på Stranden (bolverket der kolliderer selv).
     const [sx0, sx1] = strandLiv.STRAND_X;
@@ -422,6 +430,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         ekstraSkrog: [],
         skip,
         katter,
+        xw,
         streamer,
         materials,
         get environment() {

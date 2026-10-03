@@ -364,6 +364,12 @@ regler. Mynt, vekt og bytteforhold: se §4.3.
 **Status 03.10.2026:** Pungen med witten er bygget (HUD og «Meg»). Oppdragene gir små penger, og
 terningspillet vinner eller taper ekte witten. Egen handel og bytteforhold i gjeldsboka gjenstår.
 
+### 8.6b Veien rundt Vågen
+
+*03.10.2026:* Vågsbunnen og Stranden henger sammen til fots: forbi bommen over Skostredet (Detmar løfter den
+når byfolket kjenner gutten, rykte N 15), langs kaia i bunnen av Vågen og Strandgaten. Byen gikk rundt den
+innerste enden av Vågen [V Byleksikon]; hvordan veien så ut i 1420-årene, er [K], og kaia og gjerdene er [S].
+
 ### 8.7 Dagsplaner
 Hver figur har en enkel plan: arbeid, måltid, kirke, ølstue, søvn. Porten til Kontoret stenges
 om kvelden [K/S]. Gårdsvakter med hunder [K/S].
