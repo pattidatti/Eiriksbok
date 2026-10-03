@@ -4,8 +4,8 @@
 import type { Rng } from '../sim';
 import { PLAYTEST_DT, type PlaytestBot } from '../playtest';
 import { flate, helning, stegStol } from './crowd';
-import { bytt, hold, kanBytte, marsj } from './game';
-import { harFlertall, type Game } from './state';
+import { aktivtBanner, bytt, hold, marsj } from './game';
+import { FLERTALL, type Game } from './state';
 import { TUNING } from './tuning';
 
 type Grep = (g: Game) => void;
@@ -67,25 +67,22 @@ function surf(g: Game, horisont: number) {
     hold(g, på === av ? vane(g) : på > av);
 }
 
-/** Bytt når et banner gir køen flertallet - akkurat når det treffer, eller etter `sen` sekunder. */
+/**
+ * Les banneret: ta kandidaten bare når den har flertallsfargen etter valget og den som sitter
+ * ikke har det. `sen` = sekunder etter at banneret treffer (0 = perfekt).
+ */
 function vurderBytte(g: Game, sen: number) {
-    if (!kanBytte(g) || !g.kø) return;
-    const ny = g.kø.farge;
-    const sitter = g.stol?.farge;
-    for (const b of g.bannere) {
-        const flertallEtter = b.rødt >= 58 ? 'rød' : 'blå';
-        if (flertallEtter !== ny || flertallEtter === sitter) continue;
-        const dt = g.t - b.t;
-        if (dt >= sen - 0.15 && dt < sen + 2) {
-            bytt(g);
-            return;
-        }
-    }
-    // Sitter det en uten flertall og køen har det, bytt uansett (sent er bedre enn aldri).
-    const uten = g.stol && !harFlertall(g, g.stol.farge);
-    const ventende = g.bannere.some((b) => !b.truffet);
-    const sist = Math.max(-99, ...g.bannere.filter((b) => b.truffet).map((b) => b.t));
-    if (sen > 0 && uten && harFlertall(g, ny) && !ventende && g.t - sist > sen) bytt(g);
+    const b = aktivtBanner(g);
+    if (!b || !b.passasjer) return;
+    const etter = b.rødt >= FLERTALL ? 'rød' : 'blå';
+    if (b.passasjer.farge !== etter || g.stol.farge === etter) return;
+    if (g.t - b.t >= sen - 0.15) bytt(g);
+}
+
+/** Bytter på hvert banner, uansett farge: av gammel vane. */
+function vaneBytte(g: Game, rng: Rng) {
+    const b = aktivtBanner(g);
+    if (b && g.t - b.t >= -0.2 + rng() * 0.4) bytt(g);
 }
 
 /** Bare hvert n-te tick: en treg elev. */
@@ -109,11 +106,11 @@ export const BOTS: Record<string, BotDef> = {
     nølende: {
         forventer: 'middels',
         beskrivelse:
-            'Følger flertallet, men treg: handler bare hvert andre øyeblikk, planlegger ikke landingen og bytter et drøyt sekund etter banneret.',
+            'Følger flertallet, men treg: handler bare hvert andre øyeblikk, ser kort framover og bytter et drøyt sekund etter banneret.',
         make: () =>
             treg(2, (g) => {
                 vurderBytte(g, 1.2);
-                surf(g, 0.6);
+                surf(g, 1.2);
             }),
     },
     'kongens-mann': {
@@ -122,14 +119,24 @@ export const BOTS: Record<string, BotDef> = {
             'Surfer like godt som flertallsmannen, men bytter aldri: holder på kongens embetsmann i stolen.',
         make: () => (g) => surf(g, 2.4),
     },
+    nervøs: {
+        forventer: 'taper',
+        beskrivelse:
+            'Surfer godt, men bytter av gammel vane på hvert banner, også når kandidaten ikke har flertallet (Schweigaard-fella).',
+        make: (rng) => (g) => {
+            vaneBytte(g, rng);
+            surf(g, 2.4);
+        },
+    },
     knappemoser: {
         forventer: 'taper',
         tilfeldig: true,
         beskrivelse: 'Holder, slipper og bytter på måfå.',
         make: (rng) => (g) => {
+            // Like stor sjanse for hvert av de tre grepene.
             const r = rng();
-            if (r < 0.45) hold(g, true);
-            else if (r < 0.9) hold(g, false);
+            if (r < 1 / 3) hold(g, true);
+            else if (r < 2 / 3) hold(g, false);
             else bytt(g);
         },
     },

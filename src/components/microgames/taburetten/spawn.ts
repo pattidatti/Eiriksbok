@@ -1,6 +1,6 @@
 // Tingene i gata: hindringer (hopp eller dukk) og avisark (risiko for poeng), og treff mot dem.
 
-import { nesteTopp } from './crowd';
+import { nesteTopp, påØy } from './crowd';
 import { BRETT, type HType } from './levels';
 import type { Game } from './state';
 import { TUNING } from './tuning';
@@ -41,10 +41,12 @@ export function nyeTing(g: Game, marsj: number) {
     if (g.t < g.nesteHindring) return;
     const L = HE.bølgelengde;
     const ts = typer(g, marsj);
-    const type = ts[Math.floor(g.rng() * ts.length)];
+    let type = ts[Math.floor(g.rng() * ts.length)];
     // Litt variasjon i avstanden: en bølge fram eller tilbake.
     const topp0 = nesteTopp(g.x + HI.foran + Math.floor(g.rng() * 3 - 1) * L);
     const x = topp0 + HI.fase * L;
+    // Før dommen: mellom kongens øyer synker stolen, så der står bare lave kjerrer.
+    if (g.vern && !(påØy(g, x - HI.øyMargin) && påØy(g, x + HI.øyMargin))) type = 'kjerre';
     g.hindringer.push({ x, type, topp: TOPP[type], bunn: HI.trådBunn, forbi: false });
     g.valg++;
     if (g.fri || BRETT[g.brett].ark) {

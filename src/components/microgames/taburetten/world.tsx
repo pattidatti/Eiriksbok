@@ -1,233 +1,255 @@
-// Gråboks-visningen: bokser og flate farger, ingen kunst. Leser spillet fra gRef hver frame.
+// Verden: følgekameraet i gatehøyde, papirkulissene på Karl Johan (Slottet, Stortinget,
+// fasadene, brosteinen) og alt det andre satt sammen. Leser spillet fra gRef hver frame.
 
 import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { flate, løft } from './crowd';
-import { flertallsFarge, type Game } from './state';
-import { TUNING } from './tuning';
-import { FARGE } from './farger';
+import { useQuality } from '../kit';
+import { løft } from './crowd';
+import { Mengde, Stol, Vernlinjer } from './folk';
+import type { Fx } from './fx';
+import type { Game } from './state';
+import { teksturer } from './teksturer';
+import { Avisark, Biter, Hindringer, Plakater } from './ting';
 
-const KOLONNER = 110;
-const RADER = 3;
-const AVSTAND = 0.42;
+type GRef = React.MutableRefObject<Game>;
+type FxRef = React.MutableRefObject<Fx>;
 
-/** Mengden: søyler av hender i tre rader, høyden fra bølgene. */
-function Hender({ gRef }: { gRef: React.MutableRefObject<Game> }) {
-    const ref = useRef<THREE.InstancedMesh>(null);
-    const m = useMemo(() => new THREE.Matrix4(), []);
-    const c = useMemo(() => new THREE.Color(), []);
-    useFrame(() => {
-        const mesh = ref.current;
-        if (!mesh) return;
+const v = new THREE.Vector3();
+const blikk = new THREE.Vector3();
+
+/** Lavt følgekamera: dykker med stolen når den synker, løfter seg og trekker ut ved store kast. */
+function Kamera({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
+    const cy = useRef(2.2);
+    const cz = useRef(11);
+    useFrame(({ camera, size, clock }, raw) => {
         const g = gRef.current;
-        const x0 = Math.floor((g.x - 14) / AVSTAND) * AVSTAND;
-        const farge = FARGE[flertallsFarge(g)];
-        let i = 0;
-        for (let r = 0; r < RADER; r++)
-            for (let k = 0; k < KOLONNER; k++) {
-                const x = x0 + k * AVSTAND + r * 0.21;
-                // Radene bak rekker litt høyere, så de synes over raden foran.
-                const h = Math.max(0.15, flate(g, x) - 0.15 + r * 0.25);
-                m.makeScale(0.3, h, 0.3);
-                m.setPosition(x, h / 2, -0.9 - r * 0.9);
-                mesh.setMatrixAt(i, m);
-                c.set(farge).multiplyScalar(1 - r * 0.18);
-                mesh.setColorAt(i, c);
-                i++;
-            }
-        mesh.instanceMatrix.needsUpdate = true;
-        if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
+        const fx = fxRef.current;
+        const dt = Math.min(0.05, raw);
+        const målY = Math.max(1.4, Math.min(7, g.y * 0.62 + 1.3));
+        const målZ = 11 + Math.max(0, g.y - 3.2) * 0.9;
+        cy.current += (målY - cy.current) * Math.min(1, dt * 3);
+        cz.current += (målZ - cz.current) * Math.min(1, dt * 2);
+        // Skjelvet svinner i ekte tid.
+        fx.skjelv = Math.max(0, fx.skjelv - raw * 1.8);
+        const s = fx.skjelv * fx.skjelv;
+        const t = clock.elapsedTime;
+        camera.position.set(
+            g.x + 1.4 + Math.sin(t * 41) * s * 0.35,
+            cy.current - 0.6 + Math.sin(t * 37) * s * 0.3,
+            cz.current
+        );
+        blikk.set(g.x + 3.4, cy.current + 0.35, -1.5);
+        camera.lookAt(blikk);
+        camera.rotation.z += Math.sin(t * 29) * s * 0.04;
+        v.set(g.x, g.y + 1.2, 0).project(camera);
+        fx.stolSkjerm =
+            v.z < 1 ? { x: (v.x * 0.5 + 0.5) * size.width, y: (-v.y * 0.5 + 0.5) * size.height } : null;
+    });
+    return null;
+}
+
+/** Et plan som følger kameraet sidelengs i fliser, så kulissen står fast i verden. */
+function Flis({
+    gRef,
+    bredde,
+    fliser,
+    y,
+    z,
+    h,
+    map,
+    parallakse = 0,
+    farge = '#fff',
+}: {
+    gRef: GRef;
+    bredde: number;
+    fliser: number;
+    y: number;
+    z: number;
+    h: number;
+    map: THREE.Texture;
+    parallakse?: number;
+    farge?: string;
+}) {
+    const ref = useRef<THREE.Mesh>(null);
+    const kart = useMemo(() => {
+        const m = map.clone();
+        m.repeat.set(fliser, 1);
+        m.needsUpdate = true;
+        return m;
+    }, [map, fliser]);
+    useFrame(() => {
+        const g = gRef.current;
+        if (!ref.current) return;
+        // Parallakse: fjerne lag følger kameraet litt, så de glir saktere forbi.
+        const fx = g.x * parallakse;
+        const lok = g.x - fx;
+        ref.current.position.x = fx + Math.floor(lok / bredde) * bredde + 6;
     });
     return (
-        <instancedMesh
-            ref={ref}
-            args={[undefined, undefined, KOLONNER * RADER]}
-            frustumCulled={false}
-        >
-            <boxGeometry args={[1, 1, 1]} />
-            <meshBasicMaterial />
-        </instancedMesh>
+        <mesh ref={ref} position={[0, y, z]} userData={{ sceneAuditIgnore: true }}>
+            <planeGeometry args={[bredde * fliser, h]} />
+            <meshBasicMaterial map={kart} transparent alphaTest={0.1} color={farge} fog={false} />
+        </mesh>
     );
 }
 
-/** Stolen, passasjeren, livgarden og den neste i køen. */
-function Stol({ gRef }: { gRef: React.MutableRefObject<Game> }) {
-    const stol = useRef<THREE.Group>(null);
-    const pass = useRef<THREE.Mesh>(null);
-    const passMat = useRef<THREE.MeshBasicMaterial>(null);
-    const hatt = useRef<THREE.Mesh>(null);
-    const vern = useRef<THREE.Group>(null);
-    const kø = useRef<THREE.Mesh>(null);
-    const køMat = useRef<THREE.MeshBasicMaterial>(null);
+/** Ett stort kulisse-stykke (Stortinget, Slottet) som kommer igjen med jevne mellomrom. */
+function Stykke({
+    gRef,
+    map,
+    hver,
+    fra,
+    y,
+    z,
+    b,
+    h,
+    parallakse,
+}: {
+    gRef: GRef;
+    map: THREE.Texture;
+    hver: number;
+    fra: number;
+    y: number;
+    z: number;
+    b: number;
+    h: number;
+    parallakse: number;
+}) {
+    const ref = useRef<THREE.Mesh>(null);
     useFrame(() => {
         const g = gRef.current;
-        if (!stol.current) return;
-        stol.current.position.set(g.x, g.y, 0);
-        stol.current.rotation.z = g.luft ? Math.atan2(g.vy, g.vx) * 0.4 : 0;
-        if (pass.current && passMat.current && hatt.current) {
-            pass.current.visible = !!g.stol;
-            hatt.current.visible = !!g.stol;
-            if (g.stol) passMat.current.color.set(FARGE[g.stol.farge]);
-        }
-        if (vern.current) {
-            vern.current.visible = løft(g) === 'vern';
-            vern.current.position.set(g.x, 0, 0.6);
-            vern.current.children.forEach((ch, i) => {
-                const h = Math.max(0.2, flate(g, g.x + (i - 1.5) * 0.5));
-                ch.scale.y = h;
-                ch.position.set((i - 1.5) * 0.5, h / 2, 0);
-            });
-        }
-        if (kø.current && køMat.current) {
-            kø.current.visible = !!g.kø && g.køSynlig;
-            if (g.kø) køMat.current.color.set(FARGE[g.kø.farge]);
-            const kx = g.x - 1.6;
-            kø.current.position.set(kx, flate(g, kx) + 0.55, -0.4);
+        if (!ref.current) return;
+        const fx = g.x * parallakse;
+        const lok = g.x - fx - fra;
+        ref.current.position.x = fx + fra + Math.round(lok / hver) * hver;
+    });
+    return (
+        <mesh ref={ref} position={[0, y, z]} userData={{ sceneAuditIgnore: true }}>
+            <planeGeometry args={[b, h]} />
+            <meshBasicMaterial map={map} transparent alphaTest={0.1} fog={false} />
+        </mesh>
+    );
+}
+
+/** Brosteinen og den stiplede gatelinja som lyser når stolen synker. */
+function Gate({ gRef }: { gRef: GRef }) {
+    const t = teksturer();
+    const gate = useRef<THREE.Mesh>(null);
+    const linje = useRef<THREE.Mesh>(null);
+    const linjeMat = useRef<THREE.MeshBasicMaterial>(null);
+    const stein = useMemo(() => {
+        const m = t.brostein.clone();
+        m.repeat.set(20, 4);
+        m.needsUpdate = true;
+        return m;
+    }, [t]);
+    const strek = useMemo(() => {
+        const m = t.strek.clone();
+        m.repeat.set(40, 1);
+        m.needsUpdate = true;
+        return m;
+    }, [t]);
+    useFrame(({ clock }) => {
+        const g = gRef.current;
+        const x = Math.floor(g.x / 4) * 4;
+        if (gate.current) gate.current.position.x = x;
+        if (linje.current && linjeMat.current) {
+            linje.current.position.x = x;
+            const l = løft(g);
+            const fare = l === 'synk' || l === 'mellom' ? Math.max(0, 1 - g.base / 1.6) : 0;
+            linjeMat.current.opacity = 0.35 + fare * (0.5 + 0.15 * Math.sin(clock.elapsedTime * 10));
+            linje.current.scale.y = 1 + fare * 1.5;
         }
     });
     return (
         <>
-            <group ref={stol}>
-                {/* Sete og fire ben */}
-                <mesh position={[0, 0.32, 0]}>
-                    <boxGeometry args={[0.9, 0.18, 0.8]} />
-                    <meshBasicMaterial color={FARGE.stol} />
-                </mesh>
-                {[-0.35, 0.35].map((x) =>
-                    [-0.3, 0.3].map((z) => (
-                        <mesh key={`${x}${z}`} position={[x, 0.12, z]}>
-                            <boxGeometry args={[0.1, 0.3, 0.1]} />
-                            <meshBasicMaterial color={FARGE.stol} />
-                        </mesh>
-                    ))
-                )}
-                <mesh ref={pass} position={[0, 0.75, 0]}>
-                    <boxGeometry args={[0.5, 0.7, 0.4]} />
-                    <meshBasicMaterial ref={passMat} color={FARGE.blå} />
-                </mesh>
-                <mesh ref={hatt} position={[0, 1.28, 0]}>
-                    <boxGeometry args={[0.32, 0.36, 0.32]} />
-                    <meshBasicMaterial color={FARGE.hatt} />
-                </mesh>
-            </group>
-            <group ref={vern}>
-                {[0, 1, 2, 3].map((i) => (
-                    <mesh key={i}>
-                        <boxGeometry args={[0.3, 1, 0.3]} />
-                        <meshBasicMaterial color={FARGE.gull} />
-                    </mesh>
-                ))}
-            </group>
-            <mesh ref={kø}>
-                <boxGeometry args={[0.4, 0.6, 0.3]} />
-                <meshBasicMaterial ref={køMat} color={FARGE.rød} />
+            <mesh ref={gate} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -4]}>
+                <planeGeometry args={[80, 16]} />
+                <meshBasicMaterial map={stein} />
+            </mesh>
+            <mesh ref={linje} position={[0, 0.08, 0.7]}>
+                <planeGeometry args={[80, 0.12]} />
+                <meshBasicMaterial ref={linjeMat} map={strek} transparent depthWrite={false} />
             </mesh>
         </>
     );
 }
 
-const POOL = 12;
-
-/** Hindringer, avisark og bannere fra lister i spillet, tegnet fra en fast pott. */
-function Ting({ gRef }: { gRef: React.MutableRefObject<Game> }) {
-    const hindre = useRef<(THREE.Mesh | null)[]>([]);
-    const ark = useRef<(THREE.Mesh | null)[]>([]);
-    const bannere = useRef<(THREE.Mesh | null)[]>([]);
-    const bannerMat = useRef<(THREE.MeshBasicMaterial | null)[]>([]);
-    useFrame(() => {
+/** Solstreker på bart papir når flertallet kaster stolen høyt. */
+function Sol({ gRef }: { gRef: GRef }) {
+    const t = teksturer();
+    const ref = useRef<THREE.Mesh>(null);
+    const mat = useRef<THREE.MeshBasicMaterial>(null);
+    useFrame(({ clock }) => {
         const g = gRef.current;
-        const B = TUNING.hindring.bredde;
-        hindre.current.forEach((m, i) => {
-            if (!m) return;
-            const o = g.hindringer[i];
-            m.visible = !!o;
-            if (!o) return;
-            if (o.type === 'tråd') {
-                m.scale.set(B, 0.12, 0.2);
-                m.position.set(o.x, o.bunn + 0.06, 0);
-            } else {
-                m.scale.set(B, o.topp, 1.2);
-                m.position.set(o.x, o.topp / 2, 0);
-            }
-        });
-        ark.current.forEach((m, i) => {
-            if (!m) return;
-            const a = g.ark[i];
-            m.visible = !!a && !a.tatt;
-            if (a) m.position.set(a.x, a.y, 0);
-        });
-        bannere.current.forEach((m, i) => {
-            if (!m) return;
-            const b = g.bannere[i];
-            m.visible = !!b && !b.truffet;
-            if (!b) return;
-            m.position.set(g.x + (b.t - g.t) * g.vx, 4, -0.2);
-            bannerMat.current[i]?.color.set(b.rødt >= 58 ? FARGE.rød : FARGE.blå);
-        });
+        if (!ref.current || !mat.current) return;
+        ref.current.position.set(g.x * 0.9 + 18, 16, -50);
+        ref.current.rotation.z = clock.elapsedTime * 0.03;
+        const høy = Math.max(0, Math.min(1, (g.y - 2.5) / 3));
+        mat.current.opacity += (0.12 + høy * 0.4 - mat.current.opacity) * 0.05;
     });
     return (
-        <>
-            {Array.from({ length: POOL }, (_, i) => (
-                <mesh key={`h${i}`} ref={(el) => void (hindre.current[i] = el)} visible={false}>
-                    <boxGeometry args={[1, 1, 1]} />
-                    <meshBasicMaterial color={FARGE.hindring} />
-                </mesh>
-            ))}
-            {Array.from({ length: POOL }, (_, i) => (
-                <mesh key={`a${i}`} ref={(el) => void (ark.current[i] = el)} visible={false}>
-                    <boxGeometry args={[0.5, 0.65, 0.05]} />
-                    <meshBasicMaterial color={FARGE.ark} />
-                </mesh>
-            ))}
-            {Array.from({ length: 3 }, (_, i) => (
-                <mesh key={`b${i}`} ref={(el) => void (bannere.current[i] = el)} visible={false}>
-                    <boxGeometry args={[0.25, 8, 0.25]} />
-                    <meshBasicMaterial
-                        ref={(el) => void (bannerMat.current[i] = el)}
-                        color={FARGE.rød}
-                        transparent
-                        opacity={0.6}
-                    />
-                </mesh>
-            ))}
-        </>
+        <mesh ref={ref} userData={{ sceneAuditIgnore: true }}>
+            <planeGeometry args={[34, 34]} />
+            <meshBasicMaterial ref={mat} map={t.stråler} transparent opacity={0.12} depthWrite={false} />
+        </mesh>
     );
 }
 
-/** Gata, den stiplede gatelinja og kameraet som følger stolen. */
-function Gate({ gRef }: { gRef: React.MutableRefObject<Game> }) {
-    const gate = useRef<THREE.Group>(null);
-    useFrame(({ camera }) => {
-        const g = gRef.current;
-        const cy = Math.max(1.6, g.y * 0.55 + 1.4);
-        camera.position.set(g.x + 2, cy + 0.6, 12);
-        camera.lookAt(g.x + 4.5, cy, -1);
-        if (gate.current) gate.current.position.x = Math.floor(g.x / 2) * 2;
-    });
-    return (
-        <group ref={gate}>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[10, 0, -2]}>
-                <planeGeometry args={[90, 14]} />
-                <meshBasicMaterial color="#b9ad94" />
-            </mesh>
-            {Array.from({ length: 30 }, (_, i) => (
-                <mesh key={i} position={[-20 + i * 2, 0.03, 1.2]}>
-                    <boxGeometry args={[1, 0.04, 0.12]} />
-                    <meshBasicMaterial color={FARGE.gate} />
-                </mesh>
-            ))}
-        </group>
-    );
-}
-
-export function Verden({ gRef }: { gRef: React.MutableRefObject<Game> }) {
+export function Verden({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
+    const t = teksturer();
+    const kv = useQuality();
     return (
         <>
+            <Kamera gRef={gRef} fxRef={fxRef} />
+            <Sol gRef={gRef} />
+            {/* Himmel-streker og Slottet langt bak */}
+            <Flis gRef={gRef} bredde={30} fliser={3} y={15} z={-48} h={7.5} map={t.sky} parallakse={0.85} />
+            <Stykke
+                gRef={gRef}
+                map={t.slottet}
+                hver={260}
+                fra={22}
+                y={6.5}
+                z={-60}
+                b={45}
+                h={15}
+                parallakse={0.8}
+            />
+            {kv.detail > 0.7 && (
+                <Flis
+                    gRef={gRef}
+                    bredde={24}
+                    fliser={4}
+                    y={5}
+                    z={-26}
+                    h={9}
+                    map={t.fasader}
+                    parallakse={0.45}
+                    farge="#c9bfa6"
+                />
+            )}
+            <Stykke
+                gRef={gRef}
+                map={t.stortinget}
+                hver={180}
+                fra={40}
+                y={4.6}
+                z={-16}
+                b={18}
+                h={9}
+                parallakse={0.25}
+            />
+            <Flis gRef={gRef} bredde={16} fliser={4} y={3} z={-9} h={6} map={t.fasader} />
             <Gate gRef={gRef} />
-            <Hender gRef={gRef} />
-            <Stol gRef={gRef} />
-            <Ting gRef={gRef} />
+            <Vernlinjer gRef={gRef} />
+            <Mengde gRef={gRef} />
+            <Plakater gRef={gRef} fxRef={fxRef} />
+            <Avisark gRef={gRef} />
+            <Stol gRef={gRef} fxRef={fxRef} />
+            <Hindringer gRef={gRef} />
+            <Biter gRef={gRef} fxRef={fxRef} />
         </>
     );
 }

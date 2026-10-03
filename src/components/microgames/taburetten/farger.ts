@@ -1,4 +1,4 @@
-// Gråboksfargene, hentet fra paletten i kunstbriefen.
+// Paletten fra kunstbriefen og skriftene (vittighetsblad: fraktur i masthodet, antikva ellers).
 
 export const FARGE = {
     rød: '#c23b2b',
@@ -9,4 +9,9 @@ export const FARGE = {
     hatt: '#221c18',
     ark: '#f4ecd8',
     hindring: '#4a4038',
+    papir: '#ece0c4',
 };
+
+export const FRAKTUR =
+    "'UnifrakturMaguntia', 'Old English Text MT', 'Goudy Text MT', Georgia, serif";
+export const ANTIKVA = "'Old Standard TT', Georgia, 'Times New Roman', serif";

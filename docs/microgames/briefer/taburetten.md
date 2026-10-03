@@ -371,3 +371,43 @@ i flosshatt, rødt og blått som håndkolorering'`, `tone: 'lett'`.
   er en egen DOM-linje, ikke useArcadeText; hindringene tegnes foran mengden og leses dårlig.
   Røyktesten meldte bare manglende cover og for lange bannere (rettet etterpå: maks 5 ord).
   Gråboks-diagnosen (fersk vurderer med Gøy 1-5) er ikke gjort - jeg kan ikke starte underagenter.
+
+### Fase: bygg - kunst, juice og tekst (2026-10-03)
+
+- Gjorde: de tre endringene fra gråboks-diagnose 1 i kjerneløkka. (1) Multiplikatoren bygges av
+  landinger: +1 per fin landing (maks x8), dunk gir x1, perfekt bytte +2, og uten flertall står den
+  på x1. (2) Kongens øyer før dommen (`øyer.ts`): livgarden bærer Selmer bare på gule øyer, mellom
+  dem drar den røde mengden stolen ned, og gapet vokser når stripa blir rødere (valget 1882). Dommen
+  fjerner øyene. (3) Valgbannere med farge og kandidat: «3. april: Schweigaard» (blå felle, feil
+  bytte dumper stolen 0,6 m, og Aprilministeriet faller før Sverdrup kommer) og «26. juni:
+  Sverdrup». Frispillet blander kandidater: flertallets mann når valget snur, ellers en felle.
+  Køen og «tom stol» er fjernet (bytte skjer bare fra banneret). Ny robot `nervøs` (bytter på hvert
+  banner). Så kunsten etter kunstbriefen: tresnitt i canvas (`tegning.ts`, `kulisser.ts`) med
+  karikaturer av Selmer, Schweigaard, Sverdrup og to tenkte statsråder, flosshatt som letter,
+  livgarde, instanserte hender og ermer i rødt og blått etter stripas andel (gull på øyene),
+  Karl Johan-fasader, Stortinget og Slottet i parallakselag, brostein med fare-linje, avisplakater
+  med `crispCanvas` og stiplet treffsone, hindringer med lys papirkant. Juice: klem og papirbiter
+  ved landing, glorie og «Hør, hør!» ved perfekt bytte, statsråden som kastes av i en bue,
+  fartsstreker, solstreker når du flyr høyt, skjelv i ekte tid, kamera som dykker og trekker ut,
+  skravering som kryper inn når stolen synker, lyd for alt. Vittighetsblad-HUD med masthode,
+  kalender, stripe med 114 figurer, prisrubrikk, «Neste»-oval, «I stolen», mål og taster. All
+  tekst via `useArcadeText` (lapper fryst der de dukker opp, to lærings-øyeblikk: dommen og
+  Sverdrup, «Dette skjedde» knyttet til det eleven gjorde). Samlekort for de tre statsrådene,
+  ranger, rekord. Embedet i artikkelen etter avsnittet om Sverdrups regjering.
+- Simulering (200 runder per robot, grønn): flertallsmann vinner 100 % (median 12757), nølende
+  (middels) 92 % (median 7535), kongens-mann 0 % (6338), nervøs 0 % (6042), knappemoser 0 % (823),
+  passiv 0 %. 29,7 valg per minutt. Press 0,17 -> 0,25 -> 0,34 (stiger fra brett 1). Nettleseren:
+  flertallsmann vant med 12842 poeng; Chromebook 3,4 ms JS per bilde, 25 draw calls. Audit og
+  likhetsvakt grønne (nærmest petisjonen-3d, 0,40).
+- Prøvde, virket ikke: (1) bølgehøyde 0,4 mellom øyene - kastene ble så små at vinneren smalt i
+  sporvogner (6 % seier); (2) høye hindringer i gapene - umulige for en synkende stol, nå blir de
+  kjerrer; (3) knappemoser med 10 % bytte-sjanse vant 8 % - nå er de tre grepene like sannsynlige;
+  (4) seiersbonus 2500 - den halvgode havnet under kongens-mann, som surfer perfekt fram til han
+  synker; (5) plakaten i stolens fart - den var utenfor bildet til siste sekund; (6) lapper festet
+  til stolen vippet med bølgene og havnet i hjørnet.
+- Kjente svakheter: ferdighetstrappen hviler på seiersbonusen (5000), fordi kongens-mann surfer like
+  godt som vinneren til dommen. Schweigaard-fella er dødelig (historisk riktig, men hard første
+  gang). Frispillet er ikke med i simuleringen. Ingen ekte fraktur-font (kun systemfallback), og
+  det delbare «lengste regjering»-utklippet er bare et tall på slutt-skjermen. Taps-tipset for
+  hindringer er svakere fag enn synke-tipset. Uavhengig vurdering (port 3) er ikke gjort - jeg kan
+  ikke starte underagenter.

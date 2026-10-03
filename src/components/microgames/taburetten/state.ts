@@ -4,7 +4,7 @@ import { seeded, type Rng } from '../sim';
 import { RØDT_START, SELMER, type Farge, type HType, type Passasjer } from './levels';
 import { TUNING } from './tuning';
 
-export type Årsak = 'gata' | 'hindring' | 'tom';
+export type Årsak = 'gata' | 'hindring';
 
 export interface Hindring {
     x: number;
@@ -22,11 +22,21 @@ export interface Ark {
     tatt: boolean;
 }
 
+/** Kongens øy før dommen: livgarden bærer stolen mellom x0 og x1. */
+export interface Øy {
+    x0: number;
+    x1: number;
+}
+
 export interface Banner {
     /** Når banneret treffer stolen (spilt tid). */
     t: number;
     tekst: string;
     rødt: number;
+    /** Kandidaten som løper med banneret (null = bare et valg eller en dom). */
+    passasjer: Passasjer | null;
+    /** Eleven har tatt kandidaten. */
+    tatt: boolean;
     dom: boolean;
     seier: boolean;
     /** Snur banneret hvem som har flertallet? */
@@ -37,8 +47,12 @@ export interface Banner {
 
 /** Det spillet vil vise eleven. Komponenten tømmer lista hver frame. */
 export type Ut =
-    | { type: 'lapp' | 'banner' | 'nedtelling'; tekst: string }
-    | { type: 'fin' | 'dunk' | 'ark' | 'perfekt' | 'bytte' | 'unødvendig' | 'dom' | 'seier' }
+    | { type: 'lapp'; nøkkel: string }
+    | { type: 'banner'; tekst: string; farge: Farge | null; navn: string | null }
+    | { type: 'nedtelling'; tekst: string }
+    | { type: 'fin'; mult: number }
+    | { type: 'dunk' | 'ark' | 'dom' | 'seier' | 'øy' | 'gap' | 'smell' }
+    | { type: 'perfekt' | 'bytte' | 'unødvendig' | 'feil'; navn: string; farge: Farge }
     | { type: 'tap'; årsak: Årsak };
 
 export interface Game {
@@ -65,14 +79,9 @@ export interface Game {
     vern: boolean;
 
     // Passasjerene
-    stol: Passasjer | null;
-    kø: Passasjer | null;
-    køSynlig: boolean;
-    /** Sekunder til neste passasjer har løpt opp ved siden av stolen. */
-    køKlar: number;
-    /** Fargen til den forrige i stolen (køen henter den andre). */
-    sisteFarge: Farge;
-    tomTid: number;
+    stol: Passasjer;
+    /** Den forrige som satt (flyr av i en bue i visningen). */
+    forrige: Passasjer | null;
     /** Sekunder den som sitter har sittet. */
     sitteTid: number;
     lengsteRegjering: number;
@@ -85,8 +94,9 @@ export interface Game {
     poeng: number;
     meter: number;
     mult: number;
-    multTid: number;
     kombo: number;
+    /** Perfekte bytter på rad («Hør, hør!»). */
+    perfektRekke: number;
     fine: number;
     dunk: number;
     arkTatt: number;
@@ -97,6 +107,11 @@ export interface Game {
     brett: number;
     manus: number;
     hindringer: Hindring[];
+    øyer: Øy[];
+    /** Der neste øy begynner. */
+    nesteØy: number;
+    /** Stolen er på en øy nå (for overgangene i visningen). */
+    påØy: boolean;
     ark: Ark[];
     bannere: Banner[];
     nesteHindring: number;
@@ -134,11 +149,7 @@ export function newGame(seed: number): Game {
         rødt: RØDT_START,
         vern: true,
         stol: SELMER,
-        kø: null,
-        køSynlig: false,
-        køKlar: 0,
-        sisteFarge: 'blå',
-        tomTid: 0,
+        forrige: null,
         sitteTid: 0,
         lengsteRegjering: 0,
         sisteBytte: -99,
@@ -146,8 +157,8 @@ export function newGame(seed: number): Game {
         poeng: 0,
         meter: 0,
         mult: 1,
-        multTid: 0,
         kombo: 0,
+        perfektRekke: 0,
         fine: 0,
         dunk: 0,
         arkTatt: 0,
@@ -156,6 +167,9 @@ export function newGame(seed: number): Game {
         brett: 0,
         manus: 0,
         hindringer: [],
+        øyer: [{ x0: -30, x1: TUNING.øy.førsteSlutt }],
+        nesteØy: TUNING.øy.førsteSlutt + TUNING.øy.gapStart + TUNING.øy.gapK * (RØDT_START - 58),
+        påØy: true,
         ark: [],
         bannere: [],
         nesteHindring: 2.5,

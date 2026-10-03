@@ -1,46 +1,53 @@
 # Taburetten - kart
 
 Riksretten 1884 som crowd-surf-løper: du er statsrådsstolen på hendene til Stortinget.
-Brief: `docs/microgames/briefer/taburetten.md`. Fase: **gråboks** (bokser og flate farger, ingen kunst
-eller juice). Komponenten: `../Taburetten3D.tsx` (meny, løkke, input, usePlaytest, slutt-skjerm).
+Brief: `docs/microgames/briefer/taburetten.md`. Fase: **bygd** (kunst, juice, tekst, lyd).
+Komponenten: `../Taburetten3D.tsx` (meny, løkke, input, tekst, lyd, lagring, usePlaytest, slutt-skjerm).
 
 ## Filene
 
 | Fil | Hva |
 |---|---|
-| `tuning.ts` | Alle tall: fysikk (tyngde, `tungFaktor`, `kast`, fart), hender (bølger, vern, flertall), synk, bytte (perfekt-vindu, køtid, tom stol, seier), poeng, hindringer, frispill, press |
-| `levels.ts` | Brettene (`BRETT`: marsjfart, hindringer) og manuset (`MANUS`: lapper, bannere, dommen, Schweigaard, køen med Sverdrup, seiersbanneret). Passasjerene |
+| `tuning.ts` | Alle tall: fysikk, hender (bølger, vern, flertall), kongens øyer (`øy`), synk (`feilFall`), bytte (perfekt-/sent-vindu, seier), poeng (multiplikator fra landinger), hindringer, frispill, press |
+| `levels.ts` | Brettene (`BRETT`), manuset (`MANUS`: lapper, valgbannere med kandidat, dommen), passasjerene med `figur`, kalenderen |
 | `state.ts` | Tilstanden `Game`, `newGame(seed)`, `harFlertall`, `Ut` (hendelser til visningen) |
-| `crowd.ts` | **Fagregelen**: `løft(g)` (flertall / vern / synk / tom) og `oppdaterHender`. Bølgene (`flate`, `helning`), stolens fysikk (`stegStol`: hold = tung, kast ved bølgetopp uten hold, fin landing/dunk) |
-| `game.ts` | `update(g, dt)`, grepene `hold`, `bytt` (perfekt / unødvendig / vanlig), `fortsett` (frispill), manus, frispill-bannere, køen, tap og seier, `press`, `framdrift` |
-| `spawn.ts` | Hindringer og avisark foran stolen (`nyeTing`), treff (`kollisjoner`) |
-| `bots.ts`, `sim.ts` | Robotene (`flertallsmann`, `nølende`, `kongens-mann`, `knappemoser`) og simuleringen. Robotene planlegger med `utsikt` (spiller kopien videre) |
-| `world.tsx` | Gråboksen i R3F: hender (instanser), stol, livgarde, kø, hindringer, ark, bannerstolper, gata, følgekamera |
-| `hud.tsx`, `hudData.ts` | Stripa, kalenderen, poeng og x-multiplikator, hvem som sitter og neste, Bytt-knappen |
-| `texts.ts`, `farger.ts` | Regler, tips ved tap, lærdom, ranger. Paletten fra kunstbriefen |
+| `crowd.ts` | **Fagregelen**: `løft(g)` (flertall / vern på øy / mellom øyer / synk) og `oppdaterHender`. Bølgene og stolens fysikk (`stegStol`) |
+| `øyer.ts` | Kongens øyer før dommen: gapet vokser med rødt flertall (`gap`) |
+| `game.ts` | `update`, grepene `hold`, `bytt` (perfekt / bytte / unødvendig / feil), `aktivtBanner`, `fortsett`, manus, frispill-bannere, tap og seier, `press`, `framdrift`, `tilSeier` |
+| `spawn.ts` | Hindringer og avisark foran stolen; mellom øyene bare lave kjerrer |
+| `bots.ts`, `sim.ts` | Robotene (`flertallsmann`, `nølende`, `kongens-mann`, `nervøs`, `knappemoser`) og simuleringen |
+| `tegning.ts`, `kulisser.ts` | Tresnitt i canvas: hånd, erme, mengde, stol, karikaturer, hatter, gardist, stråler; hindringer, avisark, fasader, Stortinget, Slottet, brostein, valgplakaten |
+| `teksturer.ts` | Teksturbanken (tegnes én gang per side) |
+| `world.tsx` | Kamera (dykker og trekker ut, skjelv i ekte tid), kulisser med parallakse, gata og fare-linja, solstreker |
+| `folk.tsx` | Mengden (instanserte hender og ermer, rødt/blått i stripas andel), stolen med statsråd, hatt, livgarde, den som kastes av, glorie, fartsstreker, vernlinja |
+| `ting.tsx` | Hindringer, avisark, valgplakater (`crispCanvas`) med stiplet treffsone, papirbiter |
+| `hud.tsx`, `hudData.ts` | Vittighetsblad-HUD: masthode med kalender, stripa (114 figurer), prisrubrikk, «Neste»-oval, «I stolen», mål og taster, Bytt-knapp, skravering ved synking |
+| `fx.ts`, `lyd.ts` | Øyeblikkene for juice (tidsstempler, skjelv, ankere) og lydene |
+| `texts.ts`, `farger.ts` | Regler, lapper, lærings-øyeblikk, tips, «Dette skjedde», ranger, samlekort. Palett og skrifter |
 
 ## Fagregelen (én regel)
 
-`crowd.ts` → `løft()`: fargen i stolen med flertall i stripa = høye bølger (høyere jo større flertall);
-blå før dommen = vernlinja; ellers jevn synking (`synk.fart`) til gata. Ingen flaks: løftet regnes fra
-stripa, ikke fra hendene under stolen.
+`crowd.ts` → `løft()`: fargen i stolen med flertall i stripa = høye bølger; blå før dommen = livgarden
+bærer bare på øyene, imellom drar flertallet stolen ned; ellers jevn synking (`synk.fart`) til gata.
+Uten flertall står multiplikatoren på x1. Valgbanneret har en kandidat: ta den bare hvis den har
+flertallsfargen og den som sitter ikke har det (`bytt`).
 
 ## Knapper i tuning.ts
 
-- Hvor snart Schweigaard når gata: `synk.fart` (sammen med `MANUS`-tidene for dommen og seiersbanneret).
-- Hopphøyde: `fysikk.kast` og bølgehøyden (`hender.vernAmp`, `flertallAmp*`). Hindringshøyder: `hindring.lav/kjerre/middels/trådBunn`, plassering `hindring.fase`.
-- Perfekt bytte: `bytte.perfektVindu`. Tom stol: `bytte.køTid` > `bytte.tomMaks` gjør dobbeltbytte farlig.
-- Frispill: `fri.*` (fart, bannertetthet, margin) og `synk.fri*`.
+- Selmer etter dommen: `synk.fart` (dør rundt 56 s). Schweigaard-fella: `synk.feilFall`.
+- Øyene: `øy.gapStart`, `øy.gapK`, `øy.synk`. Hopphøyde: `fysikk.kast`, `hender.*Amp`.
+- Multiplikator: `poeng.multFin`, `multPerfekt`, `multMaks`. Trappen: `poeng.seier`, `poeng.perfekt`.
+- Frispill: `fri.*` og `synk.fri*`.
 
 ## Balanse
 
-`npx tsx scripts/sim-microgame.mts --ids taburetten` (grønn 2026-10-03 i gråboksen).
+`npx tsx scripts/sim-microgame.mts --ids taburetten` (grønn 2026-10-03 etter diagnosen).
 
 ## Fallgruver
 
-- Kampanjen slutter med seier (`mode = 'won'`); «Fly videre» kaller `fortsett` og starter frispillet.
-  Simuleringen ser bare kampanjen.
-- Robotenes `utsikt` må bruke samme delsteg som `update` (`PLAYTEST_DT / delsteg`), ellers bommer den på hindringer.
-- Hindringstypen velges etter brettet stolen er i når den når hindringen (`brettVed`), ellers møter Selmer
-  brett 1-hindringer etter dommen.
-- `world.tsx` eksporterer bare komponenter (fast refresh); fargene ligger i `farger.ts`.
+- Kampanjen slutter med seier (`mode = 'won'`); «Fly videre» kaller `fortsett`. Simuleringen ser bare kampanjen.
+- Robotenes `utsikt` må bruke samme delsteg som `update`.
+- Høye hindringer før dommen står bare midt på en øy (`hindring.øyMargin`), ellers blir de umulige.
+- Dommen løfter stolen til vernhøyden, så Selmer synker like langt uansett hvor dommen treffer.
+- Komponentfiler eksporterer bare komponenter; konstanter i `farger.ts`, `texts.ts`, `fx.ts`.
+- Plakaten ruller med `PL_FART` (ikke stolens fart), ellers er den utenfor bildet til det er for sent.

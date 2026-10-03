@@ -8,13 +8,22 @@ const H = TUNING.hender;
 const F = TUNING.fysikk;
 const K = (2 * Math.PI) / H.bølgelengde;
 
-export type Løft = 'flertall' | 'vern' | 'synk' | 'tom';
+export type Løft = 'flertall' | 'vern' | 'mellom' | 'synk';
 
-/** Hva bærer stolen nå? Bare stripa (og kongens vern før dommen) avgjør. */
+/** Er x på en av kongens øyer? */
+export function påØy(g: Game, x: number): boolean {
+    for (const ø of g.øyer) if (x >= ø.x0 && x <= ø.x1) return true;
+    return false;
+}
+
+/**
+ * Hva bærer stolen nå? Bare stripa (og kongens vern før dommen) avgjør.
+ * Før dommen bærer livgarden en blå regjering, men bare på kongens øyer; imellom drar
+ * den røde mengden stolen ned.
+ */
 export function løft(g: Game): Løft {
-    if (!g.stol) return 'tom';
     if (harFlertall(g, g.stol.farge)) return 'flertall';
-    if (g.vern && g.stol.farge === 'blå') return 'vern';
+    if (g.vern && g.stol.farge === 'blå') return påØy(g, g.x) ? 'vern' : 'mellom';
     return 'synk';
 }
 
@@ -38,7 +47,6 @@ export function nesteTopp(x: number): number {
 
 /** Målet for hendene når fargen har flertall: større flertall = høyere og raskere. */
 export function flertallsMål(g: Game): { base: number; amp: number } {
-    if (!g.stol) return { base: 0, amp: 0 };
     const seter = g.stol.farge === 'rød' ? g.rødt : SETER - g.rødt;
     const andel = seter / SETER - 0.5;
     return {
@@ -60,12 +68,12 @@ export function oppdaterHender(g: Game, dt: number) {
     } else if (l === 'vern') {
         g.base = mot(g.base, H.vernHøyde, H.stigFart * dt);
         g.amp = mot(g.amp, H.vernAmp, H.ampFart * dt);
-    } else if (l === 'synk') {
+    } else if (l === 'mellom') {
+        g.base = Math.max(0, g.base - TUNING.øy.synk * dt);
+        g.amp = mot(g.amp, TUNING.øy.amp, H.ampFart * dt);
+    } else {
         g.base = Math.max(0, g.base - g.synkFart * dt);
         g.amp = mot(g.amp, H.synkAmp, H.ampFart * dt);
-    } else {
-        g.base = Math.max(0, g.base - TUNING.synk.tomFart * dt);
-        g.amp = mot(g.amp, 0, H.ampFart * dt);
     }
 }
 

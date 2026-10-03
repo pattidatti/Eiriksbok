@@ -13,82 +13,108 @@ import {
     ArcadeTag,
 } from './arcade/ArcadeShell';
 import { ArcadeLessons } from './arcade/ArcadeLayers';
-import { useArcadeText } from './arcade/useArcade';
-import { useArcadeSave, rankFor } from './arcade/save';
+import { useArcadeText, type ArcadeText } from './arcade/useArcade';
+import { useArcadeSave, nextRank, rankFor } from './arcade/save';
+import { buzz, createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest, playtestSpeed } from './playtest';
 import { bytt, fortsett, hold, newGame, update, type Game } from './taburetten/game';
 import { BOTS } from './taburetten/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './taburetten/sim';
 import { Verden } from './taburetten/world';
-import { FARGE } from './taburetten/farger';
+import { ANTIKVA, FARGE, FRAKTUR } from './taburetten/farger';
 import { Hud } from './taburetten/hud';
 import { lesHud, type HudData } from './taburetten/hudData';
+import { nyFx, nå, type Fx } from './taburetten/fx';
+import { lagLyd } from './taburetten/lyd';
 import type { Ut } from './taburetten/state';
 import {
-    KONTROLL,
+    LAPP,
     LÆRDOM,
     MÅL,
     PAUSE,
     RANGER,
     REGLER,
+    SAMLEKORT,
+    SEIERS_RANG,
     SEIER_TEKST,
     TIPS,
     TIPS_APRIL,
+    TIPS_VERN,
+    ØYEBLIKK,
 } from './taburetten/texts';
 
 // TABURETTEN - Riksretten 1884. Eleven er statsrådsstolen som surfer på hendene til
-// Stortinget. Gråboks: primitive former, ingen kunst og ingen juice ennå.
+// Stortinget nedover Karl Johan. Et vittighetsblad fra 1880-tallet i bevegelse.
 
 const SPEED = playtestSpeed();
 
 const THEME: Partial<ArcadeTheme> = {
     ink: '#221c18',
-    paper: '#ece0c4',
+    paper: '#f4ecd8',
     accent: FARGE.gull,
     cta: FARGE.rød,
-    ctaText: '#fff',
+    ctaText: '#fffaf0',
+    chip: '#e3d6b6',
+    scrim: 'rgba(34,28,24,0.55)',
+    font: FRAKTUR,
+    fontWeight: 400,
+    bodyFont: ANTIKVA,
+    tracking: '0.5px',
+    textCase: 'none',
     radius: 0,
-    tilt: 0,
-    bannerTop: '22%',
+    line: 3,
+    drop: 5,
+    tilt: -1,
+    hudText: '#221c18',
+    hudStroke: '#f4ecd8',
+    bannerTop: '30%',
 };
 
-type Mode = 'menu' | 'play' | 'paused' | 'over';
+type Mode = 'menu' | 'play' | 'paused' | 'dying' | 'over';
 
 interface Save {
     best: number;
     runs: number;
     wins: number;
     lengste: number;
+    meter: number;
+    kort: string[];
+    ark: number;
 }
-const DEFAULT_SAVE: Save = { best: 0, runs: 0, wins: 0, lengste: 0 };
+const DEFAULT_SAVE: Save = { best: 0, runs: 0, wins: 0, lengste: 0, meter: 0, kort: [], ark: 0 };
 
 interface Resultat {
     vunnet: boolean;
     poeng: number;
     meter: number;
     lengste: number;
+    lengsteHvem: string;
     rang: string;
+    neste: [number, string] | null;
     tekst: string;
     nyRekord: boolean;
-    /** Seieren i kampanjen: «Fly videre» starter frispillet. */
     kanFly: boolean;
+    lærdom: string[];
+    nyeKort: string[];
 }
 
 function Loop({
     gRef,
     modeRef,
+    textRef,
     onUt,
     onHud,
 }: {
     gRef: React.MutableRefObject<Game>;
     modeRef: React.MutableRefObject<Mode>;
+    textRef: React.MutableRefObject<ArcadeText>;
     onUt: React.MutableRefObject<(u: Ut) => void>;
     onHud: React.MutableRefObject<(g: Game) => void>;
 }) {
     const acc = useRef(0);
     useFrame((_, raw) => {
-        const dt = Math.min(0.05, raw);
+        const dt = Math.min(0.05, raw) * textRef.current.timeScale();
         const g = gRef.current;
         if (modeRef.current === 'play')
             for (let k = 0; k < SPEED && g.mode === 'play'; k++) update(g, dt);
@@ -96,7 +122,7 @@ function Loop({
             const ut = g.ut.splice(0);
             for (const u of ut) onUt.current(u);
         }
-        acc.current += dt;
+        acc.current += raw;
         if (acc.current > 0.1) {
             acc.current = 0;
             onHud.current(g);
@@ -110,28 +136,53 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
     const modeRef = useRef<Mode>('menu');
     const [first] = useState(() => newGame(Math.floor(Math.random() * 1e9)));
     const gRef = useRef<Game>(first);
+    const fxRef = useRef<Fx>(nyFx());
     const [hud, setHud] = useState<HudData>(() => lesHud(first));
-    const [lapp, setLapp] = useState<string | null>(null);
     const [res, setRes] = useState<Resultat | null>(null);
     const [save, updateSave] = useArcadeSave<Save>(GAME_ID, DEFAULT_SAVE);
     const saveRef = useRef(save);
     const [text, textLayer] = useArcadeText(GAME_ID);
+    const textRef = useRef(text);
+    const [synth] = useState(createArcadeSynth);
+    const [lyd] = useState(() => lagLyd(synth));
+    const [muted, setMuted] = useState(() => synth.isMuted());
+    const stageRef = useRef<HTMLDivElement>(null);
     const completed = useRef(false);
-    const lappTimer = useRef<number | null>(null);
+    const tattSchweigaard = useRef(false);
 
     useEffect(() => {
         saveRef.current = save;
-    }, [save]);
+        textRef.current = text;
+    });
+    useEffect(() => () => synth.dispose(), [synth]);
 
     const setModeBoth = (m: Mode) => {
         modeRef.current = m;
         setMode(m);
     };
 
-    const visLapp = (t: string) => {
-        setLapp(t);
-        if (lappTimer.current) window.clearTimeout(lappTimer.current);
-        lappTimer.current = window.setTimeout(() => setLapp(null), 6000);
+    // Ankere for lapper og lærings-øyeblikk (piksler i spillvinduet).
+    // Lappene står fast der de dukket opp (aldri en lapp som følger stolen opp og ned).
+    const fast = (kilde: () => { x: number; y: number } | null) => {
+        let p: { x: number; y: number } | null = null;
+        return () => (p ??= kilde());
+    };
+    const stolNå = () => {
+        // Stolen står alltid i venstre del av bildet; klem ankeret dit, så lappen aldri havner i et hjørne.
+        const w = stageRef.current?.clientWidth ?? 1000;
+        const h = stageRef.current?.clientHeight ?? 600;
+        const p = fxRef.current.stolSkjerm ?? { x: w * 0.32, y: h * 0.42 };
+        return {
+            x: Math.min(w * 0.55, Math.max(w * 0.15, p.x)),
+            y: Math.min(h * 0.7, Math.max(h * 0.25, p.y)),
+        };
+    };
+    // Valgbannerets lapp står ved «Neste»-ovalen i høyre marg.
+    const vedNeste = () => ({ x: (stageRef.current?.clientWidth ?? 1000) - 90, y: 440 });
+    const vedStripa = () => ({ x: (stageRef.current?.clientWidth ?? 1000) / 2, y: 130 });
+    const flyt = (t: string, farge = '#221c18', stor = false) => {
+        const p = fxRef.current.stolSkjerm;
+        if (p) text.float(t, p.x, p.y - 40, farge, stor);
     };
 
     const avslutt = (vunnet: boolean) => {
@@ -139,49 +190,190 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
         const poeng = Math.floor(g.poeng);
         const prev = saveRef.current;
         const lengste = Math.round(g.lengsteRegjering);
+        const båret = ['Selmer', g.forrige?.navn, g.stol.navn].filter(
+            (n): n is string => !!n && SAMLEKORT.some((k) => k.navn === n)
+        );
+        if (tattSchweigaard.current) båret.push('Schweigaard');
+        const nyeKort = [...new Set(båret)].filter((n) => !prev.kort.includes(n));
+        const best = Math.max(prev.best, poeng);
         updateSave((s) => ({
             best: Math.max(s.best, poeng),
             runs: s.runs + 1,
-            wins: s.wins + (vunnet ? 1 : 0),
+            wins: s.wins + (vunnet && !g.fri ? 1 : 0),
             lengste: Math.max(s.lengste, lengste),
+            meter: Math.max(s.meter, Math.floor(g.meter)),
+            kort: [...new Set([...s.kort, ...nyeKort])],
+            ark: s.ark + g.arkTatt,
         }));
         let tekst = SEIER_TEKST;
-        if (!vunnet && g.årsak)
-            tekst =
-                g.årsak === 'gata' && g.stol?.navn === 'Schweigaard' ? TIPS_APRIL : TIPS[g.årsak];
+        if (!vunnet && g.årsak) {
+            if (g.årsak === 'gata' && g.stol.navn === 'Schweigaard') tekst = TIPS_APRIL;
+            else if (g.årsak === 'gata' && g.vern) tekst = TIPS_VERN;
+            else tekst = TIPS[g.årsak];
+        }
+        if (g.fri) tekst = `${TIPS[g.årsak ?? 'gata']}`;
+        if (!vunnet && g.årsak === 'gata') text.lesson('gata', LÆRDOM.gata, 3);
+        const rang = vunnet && !g.fri ? SEIERS_RANG : rankFor(RANGER, poeng);
         setRes({
             vunnet,
             poeng,
             meter: Math.floor(g.meter),
             lengste,
-            rang: vunnet && !g.fri ? 'Parlamentariker' : rankFor(RANGER, poeng),
+            lengsteHvem: g.stol.navn,
+            rang,
+            neste: nextRank(RANGER, best),
             tekst,
-            nyRekord: poeng > prev.best,
+            nyRekord: poeng > prev.best && prev.runs > 0,
             kanFly: vunnet && !g.fri,
+            lærdom: text.lessons(3),
+            nyeKort,
         });
-        setLapp(null);
+        text.clear();
         setModeBoth('over');
         if ((vunnet || g.fri) && !completed.current) {
             completed.current = true;
-            onComplete({ score: Math.min(1, Math.max(0.4, poeng / 12000)), completed: true });
+            onComplete({ score: Math.min(1, Math.max(0.4, poeng / 15000)), completed: true });
         }
     };
 
     const onUt = useRef<(u: Ut) => void>(() => {});
     const onHud = useRef<(g: Game) => void>(() => {});
     const bots = useRef<Record<string, (g: Game) => void>>({});
+
     const visUt = (u: Ut) => {
-        if (u.type === 'banner') text.banner(u.tekst, FARGE.hindring, 3);
-        else if (u.type === 'lapp' || u.type === 'nedtelling') visLapp(u.tekst);
-        else if (u.type === 'perfekt') text.banner('Perfekt bytte!', FARGE.gull, 1.4);
-        else if (u.type === 'unødvendig')
-            visLapp('Unødvendig bytte - multiplikatoren nullstilles.');
-        else if (u.type === 'dom') visLapp('Livgarden slipper. Uten flertall synker stolen.');
-        else if (u.type === 'tap') window.setTimeout(() => avslutt(false), 900);
-        else if (u.type === 'seier') {
-            text.banner('Sverdrup sitter!', FARGE.rød, 2);
-            window.setTimeout(() => avslutt(true), 1200);
+        const g = gRef.current;
+        const fx = fxRef.current;
+        const T = nå();
+        switch (u.type) {
+            case 'lapp':
+                if (u.nøkkel === 'hold')
+                    text.point('hold', LAPP.hold, fast(stolNå), {
+                        until: () => gRef.current.hold,
+                        seconds: 8,
+                    });
+                else if (u.nøkkel === 'vern') {
+                    text.point('vern', LAPP.vern, fast(stolNå), { seconds: 5 });
+                    text.lesson('vern', LÆRDOM.vern, 1);
+                }
+                break;
+            case 'gap':
+                text.point('gap', LAPP.gap, fast(stolNå), { tone: 'fare', seconds: 3, once: true });
+                break;
+            case 'banner':
+                lyd.banner();
+                if (u.tekst === 'Valget 1882') {
+                    text.banner('VALGET 1882', FARGE.rød, 2.4);
+                    text.point('valg', LAPP.valg, vedStripa, { seconds: 4 });
+                    text.lesson('valg', LÆRDOM.valg, 1);
+                } else if (u.navn === 'Schweigaard') {
+                    text.point('schweigaard', LAPP.schweigaard, vedNeste, {
+                        tone: 'fare',
+                        seconds: 6,
+                    });
+                } else if (u.navn === 'Sverdrup') {
+                    const vist = text.beatOnce(
+                        'sverdrup',
+                        ØYEBLIKK.sverdrup.tittel,
+                        ØYEBLIKK.sverdrup.tekst,
+                        { at: vedNeste }
+                    );
+                    if (!vist)
+                        text.point('sverdrup', LAPP.sverdrup, vedNeste, {
+                            tone: 'bra',
+                            seconds: 6,
+                        });
+                } else if (g.fri && g.friNr === 1) {
+                    text.point('fri', LAPP.fri, vedNeste, { seconds: 5 });
+                }
+                break;
+            case 'nedtelling':
+                break;
+            case 'dom':
+                lyd.dom();
+                fx.skjelv = Math.max(fx.skjelv, 0.6);
+                text.banner('DOMMEN 1884', '#221c18', 2.6);
+                text.beatOnce('dom', ØYEBLIKK.dom.tittel, ØYEBLIKK.dom.tekst, { at: fast(stolNå) });
+                text.lesson('dom', LÆRDOM.dom, 2);
+                break;
+            case 'fin':
+                fx.fin = T;
+                lyd.fin(u.mult);
+                if (u.mult >= 3) flyt(`x${u.mult}`, FARGE.gull, u.mult >= 6);
+                else flyt('Fin landing!', '#221c18');
+                buzz(15);
+                break;
+            case 'dunk':
+                fx.dunk = T;
+                fx.skjelv = Math.max(fx.skjelv, 0.3);
+                lyd.dunk();
+                flyt('Dunk! x1', FARGE.rød);
+                break;
+            case 'ark':
+                fx.ark = T;
+                lyd.ark();
+                flyt(`+${60 * g.mult} avisark`, '#221c18');
+                break;
+            case 'perfekt':
+            case 'bytte':
+            case 'unødvendig':
+            case 'feil': {
+                fx.bytte = T;
+                fx.kastet = g.forrige;
+                fx.kastX = g.x;
+                fx.kastY = g.y;
+                if (u.navn === 'Schweigaard') {
+                    tattSchweigaard.current = true;
+                    text.lesson('april', LÆRDOM.aprilTatt, 3);
+                }
+                if (u.type === 'perfekt') {
+                    fx.perfekt = T;
+                    fx.skjelv = Math.max(fx.skjelv, 0.35);
+                    lyd.perfekt(g.perfektRekke);
+                    flyt(
+                        g.perfektRekke > 1 ? `Hør, hør! x${g.perfektRekke}` : 'PERFEKT BYTTE!',
+                        FARGE.gull,
+                        true
+                    );
+                    buzz([20, 40, 20]);
+                } else if (u.type === 'bytte') {
+                    lyd.bytte();
+                    flyt(`${u.navn} hopper opp`, FARGE[u.farge]);
+                } else {
+                    lyd.feil();
+                    fx.skjelv = Math.max(fx.skjelv, 0.4);
+                    text.point(`b${u.type}`, u.type === 'feil' ? LAPP.feil : LAPP.unødvendig, fast(stolNå), {
+                        tone: 'fare',
+                        seconds: 3,
+                    });
+                }
+                if (u.navn === 'Sverdrup') text.lesson('sverdrup', LÆRDOM.sverdrup, 3);
+                if (g.fri && u.type !== 'feil' && u.type !== 'unødvendig')
+                    text.lesson('snur', LÆRDOM.snur, 2);
+                break;
+            }
+            case 'øy':
+                break;
+            case 'smell':
+                break;
+            case 'tap':
+                fx.smell = T;
+                fx.skjelv = 1;
+                if (u.årsak === 'hindring') lyd.smell();
+                else lyd.gata();
+                buzz(200);
+                setModeBoth('dying');
+                window.setTimeout(() => avslutt(false), 1500);
+                break;
+            case 'seier':
+                lyd.seier();
+                fx.perfekt = T;
+                text.banner('SVERDRUP SITTER!', FARGE.rød, 2.4);
+                setModeBoth('dying');
+                window.setTimeout(() => avslutt(true), 1800);
+                break;
         }
+        if (u.type === 'banner' && u.navn === 'Sverdrup' && !tattSchweigaard.current)
+            text.lesson('april', LÆRDOM.aprilForbi, 1);
     };
     useEffect(() => {
         onUt.current = visUt;
@@ -189,12 +381,14 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
     });
 
     const start = () => {
+        synth.unlock();
         gRef.current = newGame(Math.floor(Math.random() * 1e9));
+        fxRef.current = nyFx();
+        tattSchweigaard.current = false;
         bots.current = {};
         text.clear();
         text.resetRun();
         setRes(null);
-        setLapp(null);
         setHud(lesHud(gRef.current));
         setModeBoth('play');
     };
@@ -206,23 +400,35 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
     const pause = () => {
         if (modeRef.current === 'play') setModeBoth('paused');
     };
-    const resume = () => setModeBoth('play');
+    const resume = () => {
+        synth.unlock();
+        setModeBoth('play');
+    };
     const toMenu = () => setModeBoth('menu');
     const doBytt = () => {
         if (modeRef.current === 'play') bytt(gRef.current);
     };
+    const lydAv = () => {
+        synth.unlock();
+        synth.setMuted(!synth.isMuted());
+        setMuted(synth.isMuted());
+    };
 
-    // Tastatur: pil ned = len, mellomrom = bytt, Esc = pause.
+    // Tastatur: pil ned = len, mellomrom = bytt, Esc/P = pause.
     useEffect(() => {
         const ned = (e: KeyboardEvent) => {
+            if (modeRef.current === 'paused' && (e.key === 'Escape' || e.key === 'p')) {
+                setModeBoth('play');
+                return;
+            }
             if (modeRef.current !== 'play') return;
             if (e.key === 'ArrowDown') {
                 hold(gRef.current, true);
                 e.preventDefault();
             } else if (e.key === ' ') {
-                bytt(gRef.current);
+                if (!e.repeat) bytt(gRef.current);
                 e.preventDefault();
-            } else if (e.key === 'Escape') setModeBoth('paused');
+            } else if (e.key === 'Escape' || e.key === 'p' || e.key === 'P') setModeBoth('paused');
         };
         const opp = (e: KeyboardEvent) => {
             if (e.key === 'ArrowDown') hold(gRef.current, false);
@@ -235,12 +441,30 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
         };
     }, []);
 
+    // Pause når spillet scrolles ut av syne eller fanen skjules.
+    useEffect(() => {
+        const el = stageRef.current;
+        if (!el) return;
+        const io = new IntersectionObserver(([e]) => {
+            if (!e.isIntersecting && modeRef.current === 'play') setModeBoth('paused');
+        });
+        io.observe(el);
+        const skjult = () => {
+            if (document.hidden && modeRef.current === 'play') setModeBoth('paused');
+        };
+        document.addEventListener('visibilitychange', skjult);
+        return () => {
+            io.disconnect();
+            document.removeEventListener('visibilitychange', skjult);
+        };
+    }, []);
+
     usePlaytest(GAME_ID, () => ({
         maksSekunder: MAKS_SEKUNDER,
         snapshot: () => {
-            const g = gRef.current;
-            const m = modeRef.current;
-            return snapshotOf(g, m === 'menu');
+            const s = snapshotOf(gRef.current, modeRef.current === 'menu');
+            // Under fallet/jubelen før slutt-skjermen står runden ennå.
+            return modeRef.current === 'dying' ? { ...s, fase: 'spiller' as const } : s;
         },
         start: () => start(),
         bots: Object.fromEntries(
@@ -266,14 +490,25 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
         hold(gRef.current, på);
     };
 
-    const spiller = mode === 'play' || mode === 'paused';
+    const spiller = mode === 'play' || mode === 'paused' || mode === 'dying';
+    const knapper = (
+        <>
+            <ArcadeSmallButton onClick={pause} ariaLabel="Pause">
+                Pause (Esc)
+            </ArcadeSmallButton>
+            <ArcadeSmallButton onClick={lydAv} ariaLabel="Lyd av eller på">
+                {muted ? 'Lyd: av' : 'Lyd: på'}
+            </ArcadeSmallButton>
+        </>
+    );
     return (
         <MicroGameFrame title="Taburetten" bleed>
             <div className="p-2">
                 <ArcadeStage
+                    ref={stageRef}
                     theme={THEME}
                     label="Taburetten - Riksretten 1884"
-                    background="#ece0c4"
+                    background={FARGE.papir}
                 >
                     <div
                         style={{ position: 'absolute', inset: 0, touchAction: 'none' }}
@@ -282,68 +517,67 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                         onPointerCancel={press(false)}
                     >
                         <MicroCanvas
-                            camera={{ position: [2, 3, 12], fov: 40 }}
-                            background="#ece0c4"
+                            camera={{ position: [2, 2, 11], fov: 40 }}
+                            background={FARGE.papir}
                             fog={null}
                             controls={false}
                             contactShadows={false}
+                            builtInLights={false}
                         >
-                            <Loop gRef={gRef} modeRef={modeRef} onUt={onUt} onHud={onHud} />
-                            <Verden gRef={gRef} />
+                            <Loop
+                                gRef={gRef}
+                                modeRef={modeRef}
+                                textRef={textRef}
+                                onUt={onUt}
+                                onHud={onHud}
+                            />
+                            <Verden gRef={gRef} fxRef={fxRef} />
                         </MicroCanvas>
                     </div>
+                    {/* Papirkorn over hele trykket */}
+                    <div
+                        aria-hidden
+                        style={{
+                            position: 'absolute',
+                            inset: 0,
+                            pointerEvents: 'none',
+                            mixBlendMode: 'multiply',
+                            opacity: 0.35,
+                            backgroundImage:
+                                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.55 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>\")",
+                        }}
+                    />
 
-                    {spiller && <Hud d={hud} onBytt={doBytt} />}
-                    {spiller && (
-                        <div style={{ position: 'absolute', top: 12, left: 12 }}>
-                            <ArcadeSmallButton onClick={pause} ariaLabel="Pause">
-                                Pause (Esc)
-                            </ArcadeSmallButton>
-                        </div>
-                    )}
-                    {spiller && lapp && (
-                        <div
-                            style={{
-                                position: 'absolute',
-                                bottom: 84,
-                                left: '50%',
-                                transform: 'translateX(-50%)',
-                                maxWidth: '80%',
-                                background: '#221c18',
-                                color: '#ece0c4',
-                                padding: '6px 14px',
-                                fontSize: 18,
-                                textAlign: 'center',
-                                pointerEvents: 'none',
-                            }}
-                        >
-                            {lapp}
-                        </div>
-                    )}
+                    {spiller && <Hud d={hud} onBytt={doBytt} knapper={knapper} />}
 
                     {textLayer}
 
                     {mode === 'menu' && (
                         <ArcadeScreen>
                             <ArcadeLogo>Taburetten</ArcadeLogo>
-                            <ArcadeTag>Riksretten 1884</ArcadeTag>
-                            <p style={{ fontSize: 18, fontWeight: 600, margin: '10px 0 6px' }}>
+                            <ArcadeTag color={FARGE.blå}>Riksretten 1884</ArcadeTag>
+                            <p style={{ fontSize: 19, fontWeight: 700, margin: '10px 0 6px' }}>
                                 {MÅL}
                             </p>
-                            <div
-                                style={{ display: 'grid', gap: 6, textAlign: 'left', fontSize: 18 }}
+                            <ol
+                                style={{
+                                    display: 'grid',
+                                    gap: 6,
+                                    textAlign: 'left',
+                                    fontSize: 17,
+                                    margin: '4px 0 10px',
+                                    paddingLeft: 22,
+                                }}
                             >
-                                {REGLER.map((r, i) => (
-                                    <div key={r.ikon}>
-                                        <b>{i + 1}.</b> {r.tekst}
-                                    </div>
+                                {REGLER.map((r) => (
+                                    <li key={r}>{r}</li>
                                 ))}
-                                <div style={{ opacity: 0.8 }}>{KONTROLL}</div>
-                            </div>
+                            </ol>
                             <ArcadeBigButton onClick={start}>Sett i gang</ArcadeBigButton>
                             {save.runs > 0 && (
-                                <p style={{ fontSize: 18, margin: 0 }}>
-                                    Rekord: <b>{save.best}</b> &nbsp;/&nbsp; Lengste regjering:{' '}
+                                <p style={{ fontSize: 16, margin: '8px 0 0' }}>
+                                    Rekord: <b>{save.best.toLocaleString('nb-NO')}</b> · Lengst:{' '}
+                                    <b>{save.meter} m</b> · Lengste regjering:{' '}
                                     <b>{save.lengste} s</b>
                                 </p>
                             )}
@@ -364,22 +598,68 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
 
                     {mode === 'over' && res && (
                         <ArcadeScreen>
-                            <ArcadeLogo>
-                                {res.vunnet ? 'Parlamentarisme!' : 'Stolen falt'}
-                            </ArcadeLogo>
-                            <ArcadeTag>{res.rang}</ArcadeTag>
-                            <p style={{ fontSize: 18, margin: '8px 0' }}>{res.tekst}</p>
+                            <ArcadeLogo>{res.vunnet ? 'Parlamentarisme!' : 'Stolen falt'}</ArcadeLogo>
+                            <ArcadeTag color={res.vunnet ? FARGE.rød : FARGE.blå}>
+                                {res.rang}
+                            </ArcadeTag>
+                            <p style={{ fontSize: 17, margin: '8px 0' }}>
+                                {!res.vunnet && <b>Tips: </b>}
+                                {res.tekst}
+                            </p>
                             <ArcadeStats
                                 items={[
                                     {
-                                        value: res.poeng,
+                                        value: res.poeng.toLocaleString('nb-NO'),
                                         label: res.nyRekord ? 'Ny rekord!' : 'Poeng',
                                     },
                                     { value: `${res.meter} m`, label: 'Karl Johan' },
-                                    { value: `${res.lengste} s`, label: 'Lengste regjering' },
+                                    {
+                                        value: `${res.lengste} s`,
+                                        label: 'Lengste regjering',
+                                    },
                                 ]}
                             />
-                            <ArcadeLessons items={LÆRDOM} />
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    gap: 8,
+                                    justifyContent: 'center',
+                                    margin: '8px 0',
+                                    flexWrap: 'wrap',
+                                }}
+                            >
+                                {SAMLEKORT.map((k) => {
+                                    const har = save.kort.includes(k.navn);
+                                    return (
+                                        <div
+                                            key={k.navn}
+                                            title={k.fakta}
+                                            style={{
+                                                width: 150,
+                                                padding: '4px 6px',
+                                                border: `2px ${har ? 'solid' : 'dashed'} #221c18`,
+                                                background: har ? '#fffaf0' : 'transparent',
+                                                opacity: har ? 1 : 0.55,
+                                                fontSize: 14,
+                                                textAlign: 'left',
+                                            }}
+                                        >
+                                            <b>
+                                                {k.navn}
+                                                {res.nyeKort.includes(k.navn) ? ' - nytt kort!' : ''}
+                                            </b>
+                                            <div>{har ? k.fakta : 'Bær ham i stolen'}</div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                            <ArcadeLessons items={res.lærdom.length ? res.lærdom : [LÆRDOM.sverdrup]} />
+                            {res.neste && (
+                                <p style={{ fontSize: 14, margin: '4px 0' }}>
+                                    Neste rang: {res.neste[1]} ved {res.neste[0].toLocaleString('nb-NO')}{' '}
+                                    poeng
+                                </p>
+                            )}
                             {res.kanFly && (
                                 <ArcadeBigButton onClick={flyVidere}>Fly videre</ArcadeBigButton>
                             )}
