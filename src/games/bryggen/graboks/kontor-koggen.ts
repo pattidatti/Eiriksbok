@@ -3,7 +3,7 @@
 // tvers (babord øverst, styrbord nederst). Endene er smale, og masta står midt i. Lasten kommer i en kø:
 // tranfat (tunge), bunter tørrfisk og store pakker (to rom, R snur dem). Hver ting som settes, flytter
 // tyngdepunktet: koggen krenger og trimmer i 3D (`Skipene.krenging`) og på tegningen. Står alt, eller
-// går floen ut, sier Hinrik om hun ligger rett.
+// går floen ut, sier Hermen om hun ligger rett.
 //
 // Etter at oppdraget er levert, kan jobben tas igjen for lønn én gang per døgn.
 //
@@ -56,8 +56,8 @@ export interface KoggenHud {
 const GRENSE_SIDE = 2.5;
 const GRENSE_TRIM = 6;
 const TID = 150;
-/** Hvor Hinrik står: på kaia ved allmenningen, foran koggen (skip.ts: x 24, 9,2 m ut). */
-export const HINRIK = new THREE.Vector3(23.2, 0, 1.15);
+/** Hvor Hermen står: på kaia ved allmenningen, foran koggen (skip.ts: x 24, 9,2 m ut). */
+export const HERMEN = new THREE.Vector3(23.2, 0, 1.15);
 
 function nyKo(): Art[] {
     const ko: Art[] = [...Array(4).fill('tran'), ...Array(6).fill('bunt'), ...Array(5).fill('pakke')];
@@ -107,7 +107,7 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
     let fTid = 0;
     let n = 0;
     let arbeid = false;
-    let hinrik: Snakkbar | null = null;
+    let hermen: Snakkbar | null = null;
     // Døgnene som har gått (klokka går rundt), og døgnet jobben sist ble gjort.
     let dag = 0;
     let forrige = k.lys.klokke;
@@ -116,11 +116,11 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
     const trengs = () => oppdrag.status('kontor-koggen') === 'aktiv' && !maalNaadd(oppdrag, 'kontor-koggen', 0);
     const kanArbeide = () => oppdrag.status('kontor-koggen') === 'levert' && dag > sistJobb;
 
-    // Hinrik og lasten som venter på kaia, i en egen liten celle (som sidefolk.ts).
-    const plasser: Plass[] = [{ figur: 'skipper', rolle: 'staa', pos: HINRIK.clone(), yaw: Math.PI, id: 'hinrik' }];
+    // Hermen og lasten som venter på kaia, i en egen liten celle (som sidefolk.ts).
+    const plasser: Plass[] = [{ figur: 'skipper', rolle: 'staa', pos: HERMEN.clone(), yaw: Math.PI, id: 'hermen' }];
     k.world.streamer.leggTil({
         id: 'koggen-last',
-        center: new THREE.Vector2(HINRIK.x, 2),
+        center: new THREE.Vector2(HERMEN.x, 2),
         half: new THREE.Vector2(6, 3),
         build: async () => {
             const { lagFolk } = await import('../bygg/folk');
@@ -167,9 +167,9 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
         fase = 'slutt';
         fTid = 0;
         tekst = tidUte
-            ? 'Floen er her. Hinriks folk må stue resten selv, i full fart.'
+            ? 'Floen er her. Hermens folk må stue resten selv, i full fart.'
             : rett
-                ? 'Hinrik ser ned i lasterommet og nikker. Hun ligger rett.'
+                ? 'Hermen ser ned i lasterommet og nikker. Hun ligger rett.'
                 : Math.abs(b.side) > GRENSE_SIDE
                     ? `Hun krenger mot ${b.side > 0 ? 'styrbord' : 'babord'}. Det er for mye vekt på den ene siden.`
                     : `Hun ligger tungt ${b.trim > 0 ? 'forut' : 'akter'}. De tunge fatene står for langt ut i enden.`;
@@ -212,9 +212,9 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
         },
         prompt(gutt) {
             if (fase || !(trengs() || kanArbeide())) return null;
-            hinrik = finnPerson(k.world, 'hinrik');
-            if (!hinrik || !naer(gutt, hinrik.pos, 2.4)) return null;
-            return trengs() ? 'E: Stu lasten i koggen' : 'E: Stu lasten for Hinrik (arbeid for lønn)';
+            hermen = finnPerson(k.world, 'hermen');
+            if (!hermen || !naer(gutt, hermen.pos, 2.4)) return null;
+            return trengs() ? 'E: Stu lasten i koggen' : 'E: Stu lasten for Hermen (arbeid for lønn)';
         },
         trykk() {
             arbeid = !trengs();
@@ -228,8 +228,8 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
             n = 0;
             tekst = '';
             krenging();
-            hinrik?.vend(k.player.pos);
-            k.world.si?.('Hinrik', 'Tranfatene er tyngst. Midt i skipet med dem.', hinrik?.pos);
+            hermen?.vend(k.player.pos);
+            k.world.si?.('Hermen', 'Tranfatene er tyngst. Midt i skipet med dem.', hermen?.pos);
             k.hudSnart();
         },
         steg(dt: number, inp: InputFrame) {
@@ -239,7 +239,7 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
             if (fase === 'slutt') {
                 if (fTid > 1 && (inp.jumpPressed || inp.interactPressed || fTid > 12)) {
                     fase = null;
-                    hinrik?.vend(null);
+                    hermen?.vend(null);
                     k.world.skip.krenging('kogge', 0, 0);
                     k.hudSnart();
                 }
@@ -288,7 +288,7 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
             if (inp.dodgePressed) {
                 fase = null;
                 k.world.skip.krenging('kogge', 0, 0);
-                k.world.si?.('Hinrik', 'Kom tilbake før floen, da.', hinrik?.pos);
+                k.world.si?.('Hermen', 'Kom tilbake før floen, da.', hermen?.pos);
                 k.hudSnart();
             }
             return true;

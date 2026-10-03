@@ -593,7 +593,7 @@ levert, kan de tas igjen for lønn én gang per døgn (døgnet telles når `lys.
 
 | Fil | Hva |
 |---|---|
-| `graboks/kontor-koggen.ts`, `ui/KontorKoggen.tsx` | «Last koggen» hos skipperen Hinrik på kaia ved allmenningen: pakkepuslespill i lasterommet (8 x 4, smale ender, masta), tranfat (4), bunter (1) og store pakker (2, R snur). Krenging og trim regnes som vekt ganger avstand fra midten, og koggen krenger i 3D (`Skipene.krenging`, `world.skip`). Floen gir 150 s |
+| `graboks/kontor-koggen.ts`, `ui/KontorKoggen.tsx` | «Last koggen» hos skipperen Hermen på kaia ved allmenningen: pakkepuslespill i lasterommet (8 x 4, smale ender, masta), tranfat (4), bunter (1) og store pakker (2, R snur). Krenging og trim regnes som vekt ganger avstand fra midten, og koggen krenger i 3D (`Skipene.krenging`, `world.skip`). Floen gir 150 s |
 | `graboks/kontor-veiing.ts`, `ui/KontorVeiing.tsx` | «Bårds fisk på bismeren» ved jekta: fem bunter på bismeren (`BismerSpill`), så tre svar i våger (3 bismerpund i en våg, `PUND_PER_VAAG`; feilene er å svare i pund eller dele på to). Bårds eget tall er litt høyere: fisken tørker på veien |
 
 Dev: `?sted=koggen&oppdrag=kontor-koggen` og `?sted=bard&oppdrag=kontor-veiing`.

@@ -7,12 +7,12 @@
 // store: Bremerkoggen fra 1380 er 24 m lang og 8 m bred, og kunne trolig laste 90 til 130 tonn
 // (Wikipedia «Bremen cog», hentet 03.10.2026). [V] Bylova av 1276 satte 1 bismerpund til ca. 5,1 kg, og
 // fra 1604 er 1 våg 3 bismerpund; hvor stor en våg var i 1420-årene, er [U] (blueprint §4.3).
-// Hinrik, Bård sin jobb, lasten og tallene er [S].
+// Hermen, Bård sin jobb, lasten og tallene er [S].
 import type { OppdragDef } from './oppdrag-data';
 import { PERSONER, TITTEL } from './personer';
 import { BESTEMT, NAVN, REPLIKKER } from './samtaler';
 
-PERSONER.hinrik = { navn: 'Hinrik', tittel: 'skipper på koggen fra Lübeck' };
+PERSONER.hermen = { navn: 'Hermen', tittel: 'skipper på koggen fra Lübeck' };
 TITTEL.skipper = 'Skipper';
 NAVN.skipper = 'Skipperen';
 BESTEMT.skipper = 'skipperen';
@@ -31,12 +31,12 @@ export const VET_VAAG =
 const KOGGEN: OppdragDef = {
     id: 'kontor-koggen',
     tittel: 'Last koggen',
-    giver: 'hinrik',
-    mottaker: 'hinrik',
+    giver: 'hermen',
+    mottaker: 'hermen',
     krav: ['fisk'],
     om: 'Koggen fra Lübeck skal ut på flo. Stu lasten i lasterommet: tunge tranfat midt i skipet, og like mye på hver side, så den ikke krenger.',
-    hvor: 'Skipperen Hinrik på kaia ved allmenningen',
-    maal: [{ hendelse: 'kontor:lastet', tekst: 'Stu lasten i koggen (E hos Hinrik)' }],
+    hvor: 'Skipperen Hermen på kaia ved allmenningen',
+    maal: [{ hendelse: 'kontor:lastet', tekst: 'Stu lasten i koggen (E hos Hermen)' }],
     tilbud: {
         start: {
             tekst: 'Du er fra gården der borte? Fint. Fisken og tranen skal ned i lasterommet før floen. Mine folk bærer. Du sier hvor det skal stå.',
@@ -57,7 +57,7 @@ const KOGGEN: OppdragDef = {
     leveringStart: (f) => (f.has('koggen-rett') ? 'rett' : 'skeiv'),
     levering: {
         rett: {
-            tekst: 'Hun ligger rett som en planke. Det har jeg ikke sett en junge gjøre før. Si til husbonden din at Hinrik er fornøyd.',
+            tekst: 'Hun ligger rett som en planke. Det har jeg ikke sett en junge gjøre før. Si til husbonden din at Hermen er fornøyd.',
             gest: 'nikk',
             gjor: 'lever:kontor-koggen;witten:+2',
             til: 'vet',
@@ -70,7 +70,7 @@ const KOGGEN: OppdragDef = {
         },
         vet: { hvem: 'Dette vet vi', vet: true, tekst: VET_KOGGEN },
     },
-    lonn: 'Hinrik vet hvem du er.',
+    lonn: 'Hermen vet hvem du er.',
     belonning: { witten: 2, rykte: { K: 3 } },
 };
 
