@@ -36,6 +36,25 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Spillet står mens menyen er oppe (`GrayboxGame.pause`). I fullskjerm låses Esc (Chrome), så Esc
   åpner menyen i stedet for å gå ut av fullskjermen.
 
+## UI-stilen (ui/stil.ts, ui/stil.css)
+
+HUD, menyer og paneler har et eget uttrykk for hansabyen Bergen 1429: pergament og lin, blekkfarget
+tekst, tjærebrunt og seglrødt. Overskrifter i Grenze Gotisch (gotisk, men lett å lese), brødtekst i
+Alegreya Sans. Fontene er selvhostet (`@fontsource/grenze-gotisch`, `@fontsource/alegreya-sans`) og
+lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på pergament er over 7:1.
+
+- Nye paneler bruker eksportene i `ui/stil.ts`: `KORT`, `PANEL`, `ETIKETT`, `KNAPP`, `KNAPP_2`, og
+  tilleggene `DISPLAY`, `TEKST`, `SVAK`, `HJELP`, `ROD`/`GRONN`/`VARM`, `RILLE` + `FYLL.*` (stolper),
+  `BRIKKE` (tallbrikke 1-3), `TAST` (tast i lister), `UTHEV`, `STREK`, `LIN`, `FARGE` (hex til SVG).
+- `ui/stil.css` ligger i Tailwind-laget `components`, så en Tailwind-klasse på samme element vinner.
+- Tastaturfokus: seglrød ring med lys kant (`bry-fokus`, også `FOKUS` i `ui/fokus.ts`).
+- «Oppdrag fullført» (`ui/Melding.tsx`): arket ruller ut, tittelen skrives med blekk som tørker, og et
+  voksegl med en kogge (`ui/Segl.tsx`) stemples ned så arket rister og voksdråper spruter. Lyden er
+  papir, et dumpt slag (`Lyd.stempel`) og klokkene (`LydKobling.oppdrag`). Med redusert bevegelse
+  tones arket bare inn med seglet på plass.
+- Navneskilt og snakkebobler (`graboks/hoder.ts`) i samme stil. Laget med hodene er egen
+  stablingskontekst, så navn og bobler aldri legger seg over HUD-en eller menyene.
+
 ## Oppbygning
 
 | Mappe/fil | Hva |
@@ -133,6 +152,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `ui/Pausemeny.tsx` | Pausemenyen (Esc): Fortsett, Innstillinger, Kontroller, Oppdrag og dagbok, Avslutt. Tastatur først |
 | `ui/InnstillingerPanel.tsx`, `ui/innstillinger.ts` | Innstillingene (grafikk, skygger, lys og dis, lyd per buss, kamerafart, snu opp og ned, ytelse), lagret i `bryggen-innstillinger`. Leser og flytter over de gamle `bryggen-kvalitet` og `bryggen-lyd` |
 | `ui/Dagbok.tsx`, `ui/vetlager.ts` | Dagboka: oppdragene med «om» og «hvor», og «Dette vet vi»-tekstene eleven har lest (`bryggen-vet`). «Begynn på nytt» bak en bekreftelse |
+| `ui/stil.ts`, `ui/stil.css`, `ui/Melding.tsx`, `ui/Segl.tsx` | Den felles stilen (pergament, blekk, segl), oppdragsmeldingene med seremonien for «Oppdrag fullført», og voksseglet |
 | `ui/menydeler.tsx`, `ui/fokus.ts`, `ui/fullskjerm.ts` | Bryter, glidebryter, knapp og overskrift; piltastnavigasjon og fokusring; fullskjerm med Esc-lås |
 
 ## Regler

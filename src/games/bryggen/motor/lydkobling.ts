@@ -183,7 +183,11 @@ export class LydKobling {
     oppdrag(type: 'nytt' | 'maal' | 'ferdig'): void {
         if (type === 'nytt') this.lyd.toner([[523.3, 0, 0.9], [784, 0.12, 1.2]], 0.16);
         else if (type === 'maal') this.lyd.toner([[659.3, 0, 0.8]], 0.13);
-        else this.lyd.toner([[523.3, 0, 1.4], [659.3, 0.11, 1.4], [784, 0.22, 1.6], [1046.5, 0.36, 2.0]], 0.15);
+        else {
+            // Seremonien i ui/Melding.tsx: arket ruller ut, seglet treffer etter ca. 1 s, så klokkene.
+            this.lyd.stempel(0.98, 1);
+            this.lyd.toner([[523.3, 1.15, 1.4], [659.3, 1.26, 1.4], [784, 1.37, 1.6], [1046.5, 1.51, 2.0]], 0.13);
+        }
     }
 
     private rotte(h: RotteHendelse): void {

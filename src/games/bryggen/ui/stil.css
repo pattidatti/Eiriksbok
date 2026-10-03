@@ -1,0 +1,307 @@
+/* Bryggen 1429: utseendet til HUD, menyer og paneler. Pergament og lin, blekk, tjærebrunt og
+   seglrødt. Lyst og lesbart (blueprint §2): mørk blekktekst på lyst pergament, kontrast over 7:1
+   for brødtekst, minst 13 px. Klassene brukes via ui/stil.ts, ikke direkte.
+
+   Fargene (også i stil.ts som FARGE):
+     pergament #f6edd9   lin #ebdfc4   kant #b99a68
+     blekk     #2b1d10   blekk-svak #5c4630
+     tjære     #5a3519   segl #9a2a1c   gull #b07d24 (bare pynt, aldri tekst på lyst) */
+
+/* I laget «components», så Tailwind-klasser (text-*, bg-*) på samme element fortsatt vinner. */
+@layer components {
+    .bry {
+        --bry-pergament: #f6edd9;
+        --bry-lin: #ebdfc4;
+        --bry-kant: #b99a68;
+        --bry-blekk: #2b1d10;
+        --bry-svak: #5c4630;
+        --bry-tjaere: #5a3519;
+        --bry-segl: #9a2a1c;
+        --bry-gull: #b07d24;
+        font-family: 'Alegreya Sans', Inter, system-ui, sans-serif;
+        color: var(--bry-blekk);
+    }
+
+    /* Fibrene i papiret: to svake stripemønstre på skrå, flekker i kantene og en lys midte. */
+    .bry-pergament {
+        background-color: #f6edd9;
+        background-image:
+            radial-gradient(120% 90% at 50% 40%, rgba(255, 251, 240, 0.7) 0%, rgba(255, 251, 240, 0) 60%),
+            radial-gradient(60% 50% at 0% 0%, rgba(160, 120, 60, 0.13), transparent 70%),
+            radial-gradient(60% 50% at 100% 100%, rgba(150, 105, 50, 0.14), transparent 70%),
+            repeating-linear-gradient(97deg, rgba(120, 85, 40, 0.035) 0 1px, transparent 1px 5px),
+            repeating-linear-gradient(-8deg, rgba(120, 85, 40, 0.03) 0 1px, transparent 1px 7px);
+        color: #2b1d10;
+    }
+
+    /* Lin: grovere vev, litt mørkere. Til sidestolpen i pausemenyen og innfelte felt. */
+    .bry-lin {
+        background-color: #ebdfc4;
+        background-image:
+            repeating-linear-gradient(0deg, rgba(90, 60, 25, 0.06) 0 1px, transparent 1px 3px),
+            repeating-linear-gradient(90deg, rgba(90, 60, 25, 0.05) 0 1px, transparent 1px 3px);
+        color: #2b1d10;
+    }
+
+    .bry-kort {
+        border: 1px solid rgba(110, 76, 36, 0.45);
+        box-shadow:
+            inset 0 0 0 1px rgba(255, 250, 238, 0.6),
+            inset 0 0 18px rgba(140, 95, 40, 0.18),
+            0 6px 18px rgba(40, 24, 8, 0.28);
+    }
+
+    .bry-panel {
+        border: 1px solid rgba(110, 76, 36, 0.55);
+        box-shadow:
+            inset 0 0 0 3px rgba(246, 237, 217, 0.9),
+            inset 0 0 0 4px rgba(110, 76, 36, 0.35),
+            inset 0 0 28px rgba(140, 95, 40, 0.2),
+            0 12px 32px rgba(40, 24, 8, 0.35);
+    }
+
+    .bry-display {
+        font-family: 'Grenze Gotisch', 'Alegreya Sans', Georgia, serif;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+    }
+
+    /* Hovedknappen: seglrød, som voks. */
+    .bry-knapp,
+    .bry-knapp2 {
+        font-family: 'Alegreya Sans', Inter, system-ui, sans-serif;
+    }
+    .bry-knapp {
+        background: linear-gradient(180deg, #ad3626 0%, #8c2417 100%);
+        color: #fff8ec;
+        border: 1px solid #6c190f;
+        box-shadow: inset 0 1px 0 rgba(255, 200, 170, 0.35), 0 2px 4px rgba(60, 15, 8, 0.35);
+        text-shadow: 0 1px 0 rgba(60, 10, 4, 0.5);
+    }
+    .bry-knapp:hover {
+        background: linear-gradient(180deg, #b93c2b 0%, #97291a 100%);
+    }
+    .bry-knapp:active {
+        transform: translateY(1px);
+    }
+
+    /* Vanlig knapp: lin med tjærebrun kant. */
+    .bry-knapp2 {
+        background: linear-gradient(180deg, #f3e7cc 0%, #e4d3ae 100%);
+        color: #2b1d10;
+        border: 1px solid #a5844f;
+        box-shadow: inset 0 1px 0 rgba(255, 252, 240, 0.8), 0 1px 3px rgba(60, 35, 10, 0.25);
+    }
+    .bry-knapp2:hover {
+        background: linear-gradient(180deg, #f8eed7 0%, #eadbb9 100%);
+    }
+    .bry-knapp2:active {
+        transform: translateY(1px);
+    }
+
+    /* Tastaturfokus: en tydelig seglrød ring utenfor en lys kant, synlig på pergament og over spillet. */
+    .bry-fokus:focus-visible {
+        outline: 3px solid #9a2a1c;
+        outline-offset: 3px;
+        box-shadow: 0 0 0 3px #fff8ec;
+    }
+
+    /* Stolpe (liv, flamme, fisk): innfelt rille i treverk. */
+    .bry-rille {
+        background: #d9c7a0;
+        box-shadow: inset 0 1px 2px rgba(60, 35, 10, 0.45);
+    }
+
+    /* Tallmerke for valg 1, 2, 3: en liten seglrød brikke. */
+    .bry-brikke {
+        background: radial-gradient(circle at 35% 30%, #c0472f, #8c2417 70%);
+        color: #fff8ec;
+        box-shadow: 0 1px 2px rgba(60, 15, 8, 0.4);
+    }
+
+    /* Skillelinje: blekkstrek som tynnes ut i endene. */
+    .bry-strek {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(90, 53, 25, 0.55) 15%, rgba(90, 53, 25, 0.55) 85%, transparent);
+    }
+
+    /* ---------- Oppdrag fullført: seremonien ----------
+       1) Arket ruller seg ut (0-0,45 s). 2) Tittelen skrives med blekk, fra venstre (0,35-1,1 s), og
+       blekket tørker fra blankt svart til matt brunt (1,1-2,2 s). 3) Seglet faller ned og stemples
+       (0,9 s), arket rister, og voksdråper spruter. Med redusert bevegelse: bare tonet inn. */
+    .bry-ark-inn {
+        animation: bry-ark-inn 0.5s cubic-bezier(0.2, 1.2, 0.4, 1) both;
+        transform-origin: 50% 0%;
+    }
+    @keyframes bry-ark-inn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -8px) scaleY(0.15);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0) scaleY(1);
+        }
+    }
+    .bry-ark-dunk {
+        animation:
+            bry-ark-inn 0.5s cubic-bezier(0.2, 1.2, 0.4, 1) both,
+            bry-dunk 0.32s ease-out 0.98s forwards;
+    }
+    @keyframes bry-dunk {
+        0% {
+            transform: translate(-50%, 0) scale(1);
+        }
+        30% {
+            transform: translate(-50%, 3px) scale(0.985);
+        }
+        60% {
+            transform: translate(-50%, -1px) scale(1.005);
+        }
+        100% {
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+    .bry-blekk {
+        animation:
+            bry-skriv 0.8s steps(18, end) 0.35s both,
+            bry-torke 1.2s ease-out 1.1s both;
+    }
+    @keyframes bry-skriv {
+        from {
+            clip-path: inset(0 100% 0 0);
+        }
+        to {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+    @keyframes bry-torke {
+        from {
+            color: #0b0603;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+        to {
+            color: #3a2412;
+            text-shadow: none;
+        }
+    }
+    .bry-under {
+        animation: bry-ton 0.6s ease-out 1.2s both;
+    }
+    @keyframes bry-ton {
+        from {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+    .bry-segl {
+        animation: bry-segl 0.34s cubic-bezier(0.5, 0, 0.9, 0.4) 0.66s both;
+    }
+    @keyframes bry-segl {
+        0% {
+            opacity: 0;
+            transform: translateY(-70px) scale(2.1) rotate(-28deg);
+        }
+        70% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotate(-12deg);
+        }
+    }
+    .bry-segl-ring {
+        opacity: 0;
+        animation: bry-ring 0.6s ease-out 1s forwards;
+    }
+    @keyframes bry-ring {
+        from {
+            opacity: 0.7;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 0;
+            transform: scale(1.9);
+        }
+    }
+    .bry-drape {
+        opacity: 0;
+        animation: bry-drape 0.5s cubic-bezier(0.1, 0.7, 0.3, 1) 1s forwards;
+    }
+    @keyframes bry-drape {
+        from {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        to {
+            opacity: 0;
+            transform: translate(var(--dx), var(--dy)) scale(0.4);
+        }
+    }
+    .bry-ut {
+        animation: bry-ut 0.5s ease-in both;
+    }
+    @keyframes bry-ut {
+        from {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+        to {
+            opacity: 0;
+            transform: translate(-50%, -12px);
+        }
+    }
+
+    /* Vanlige meldinger (nytt oppdrag, mål nådd) og kort som dukker opp. */
+    .bry-inn {
+        animation: bry-inn 0.45s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+    }
+    @keyframes bry-inn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, 10px) scale(0.92);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .bry-ark-inn,
+        .bry-ark-dunk,
+        .bry-inn {
+            animation: bry-bare-ton 0.3s ease-out both;
+        }
+        .bry-blekk,
+        .bry-under,
+        .bry-segl {
+            animation: none;
+        }
+        .bry-segl {
+            transform: rotate(-12deg);
+        }
+        .bry-segl-ring,
+        .bry-drape {
+            display: none;
+        }
+        .bry-knapp:active,
+        .bry-knapp2:active {
+            transform: none;
+        }
+    }
+    @keyframes bry-bare-ton {
+        from {
+            opacity: 0;
+            transform: translate(-50%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+}

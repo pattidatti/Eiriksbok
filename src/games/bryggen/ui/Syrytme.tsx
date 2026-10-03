@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import type { Dom, SyrytmeHud } from '../graboks/syrytme';
 import { useNaa } from './useNaa';
+import { ETIKETT, GRONN, HJELP, PANEL, ROD, TEKST } from './stil';
 
 // Sålen hos mester Hans: læret glir fra høyre mot nåla. Hullene i øvre rad tas med A, de i nedre
 // med D. Tråden legger seg mellom hullene som er sydd, og viser hvor pent det ble. Spillet regner
@@ -12,11 +13,11 @@ const OVER = 58;
 const UNDER = 118;
 
 const ORD: Record<Dom, { tekst: string; farge: string }> = {
-    perfekt: { tekst: 'Perfekt!', farge: '#047857' },
-    bra: { tekst: 'Bra', farge: '#0f766e' },
-    skjev: { tekst: 'Skjevt', farge: '#b45309' },
-    feil: { tekst: 'Feil nål!', farge: '#be123c' },
-    bom: { tekst: 'Bom!', farge: '#be123c' },
+    perfekt: { tekst: 'Perfekt!', farge: '#3f6b2a' },
+    bra: { tekst: 'Bra', farge: '#4d6b2a' },
+    skjev: { tekst: 'Skjevt', farge: '#8a5a12' },
+    feil: { tekst: 'Feil nål!', farge: '#9a2a1c' },
+    bom: { tekst: 'Bom!', farge: '#9a2a1c' },
 };
 
 export function Syrytme({ h }: { h: SyrytmeHud }) {
@@ -35,13 +36,13 @@ export function Syrytme({ h }: { h: SyrytmeHud }) {
     const sydd = h.sting.filter((s) => s.dom);
 
     return (
-        <div className="pointer-events-none absolute z-[1100] bottom-6 left-1/2 w-[min(640px,94vw)] -translate-x-1/2 rounded-2xl bg-white/95 px-4 pb-3 pt-3 shadow-xl">
+        <div className={`pointer-events-none absolute z-[1100] bottom-6 left-1/2 w-[min(640px,94vw)] -translate-x-1/2 px-4 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between gap-3">
-                <span className="text-[13px] font-bold uppercase tracking-wide text-indigo-700">Skomakerverkstedet: sy sålen</span>
-                <span className="flex items-center gap-1 text-[14px] font-semibold text-slate-700" aria-label={`${h.bom} av ${h.maksBom + 1} bom`}>
+                <span className={ETIKETT}>Skomakerverkstedet: sy sålen</span>
+                <span className="flex items-center gap-1 text-[14px] font-semibold text-[#3d2a17]" aria-label={`${h.bom} av ${h.maksBom + 1} bom`}>
                     Bom:
                     {Array.from({ length: h.maksBom + 1 }, (_, i) => (
-                        <span key={i} className={`ml-0.5 h-3.5 w-3.5 rounded-full ${i < h.bom ? 'bg-rose-600' : 'border-2 border-slate-300'}`} />
+                        <span key={i} className={`ml-0.5 h-3.5 w-3.5 rounded-full ${i < h.bom ? 'bg-[#9a2a1c]' : 'border-2 border-[#b99a68]'}`} />
                     ))}
                 </span>
             </div>
@@ -119,7 +120,7 @@ export function Syrytme({ h }: { h: SyrytmeHud }) {
                                 stroke="#334155"
                                 strokeWidth={1.5}
                             />
-                            <text x={NAAL_X - 22} y={ned ? 22 : 166} textAnchor="middle" fontSize={17} fontWeight={800} fill={aktiv ? '#4338ca' : '#64748b'}>
+                            <text x={NAAL_X - 22} y={ned ? 22 : 166} textAnchor="middle" fontSize={17} fontWeight={800} fill={aktiv ? '#9a2a1c' : '#7a6248'}>
                                 {ned ? 'A' : 'D'}
                             </text>
                         </motion.g>
@@ -145,19 +146,19 @@ export function Syrytme({ h }: { h: SyrytmeHud }) {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 1.2 }}
                             transition={{ type: 'spring', stiffness: 420, damping: 18 }}
-                            className="absolute -top-[92px] left-[27%] rounded-lg bg-white/85 px-2 text-[22px] font-black shadow"
+                            className="absolute -top-[92px] left-[27%] rounded-md border border-[#b99a68] bg-[#fbf5e6]/95 px-2 text-[22px] font-black shadow"
                             style={{ color: ORD[h.siste.dom].farge }}
                         >
                             {ORD[h.siste.dom].tekst}
-                            {h.rekke >= 3 && <span className="ml-2 text-[16px] text-indigo-700">{h.rekke} på rad</span>}
+                            {h.rekke >= 3 && <span className="ml-2 text-[16px] text-[#5a3519]">{h.rekke} på rad</span>}
                         </motion.div>
                     )}
                 </AnimatePresence>
             </div>
-            <p className={`mt-1 text-[15px] leading-snug ${h.fase === 'revet' ? 'font-semibold text-rose-700' : h.fase === 'ferdig' ? 'font-semibold text-emerald-700' : 'text-slate-900'}`}>
+            <p className={`mt-1 ${TEKST} ${h.fase === 'revet' ? `font-semibold ${ROD}` : h.fase === 'ferdig' ? `font-semibold ${GRONN}` : ''}`}>
                 {h.tekst}
             </p>
-            <p className="mt-0.5 text-[13px] text-slate-500">
+            <p className={`mt-0.5 ${HJELP}`}>
                 {h.fase === 'syr' ? 'Q: gi opp' : h.fase === 'ferdig' ? 'Mellomrom: ferdig' : 'Mellomrom: begynn · Q: gå fra benken'}
             </p>
         </div>

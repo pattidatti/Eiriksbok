@@ -2,6 +2,7 @@
 // Tastatur først: piltast opp/ned flytter mellom valgene, Enter/mellomrom velger, Esc går tilbake.
 import type { ReactNode } from 'react';
 import { FOKUS } from './fokus';
+import { KNAPP, KNAPP_2 } from './stil';
 
 export function Bryter({ tekst, hjelp, paa, onBytt, disabled }: { tekst: string; hjelp?: string; paa: boolean; onBytt: (v: boolean) => void; disabled?: boolean }) {
     return (
@@ -10,14 +11,14 @@ export function Bryter({ tekst, hjelp, paa, onBytt, disabled }: { tekst: string;
             aria-checked={paa}
             disabled={disabled}
             onClick={() => onBytt(!paa)}
-            className={`flex w-full items-center justify-between gap-4 rounded-xl px-3 py-2 text-left hover:bg-slate-100 disabled:opacity-50 ${FOKUS}`}
+            className={`flex w-full items-center justify-between gap-4 rounded-lg px-3 py-2 text-left hover:bg-[#ead9b4]/60 disabled:opacity-50 ${FOKUS}`}
         >
             <span>
-                <span className="block text-[16px] font-semibold text-slate-900">{tekst}</span>
-                {hjelp && <span className="block text-[13px] text-slate-600">{hjelp}</span>}
+                <span className="block text-[17px] font-bold text-[#2b1d10]">{tekst}</span>
+                {hjelp && <span className="block text-[14px] text-[#5c4630]">{hjelp}</span>}
             </span>
-            <span className={`relative h-7 w-12 shrink-0 rounded-full transition-colors ${paa ? 'bg-indigo-600' : 'bg-slate-300'}`}>
-                <span className={`absolute top-1 h-5 w-5 rounded-full bg-white shadow transition-[left] ${paa ? 'left-6' : 'left-1'}`} />
+            <span className={`relative h-7 w-12 shrink-0 rounded-full border transition-colors ${paa ? 'border-[#6c190f] bg-[#9a2a1c]' : 'border-[#a5844f] bg-[#d9c7a0]'}`}>
+                <span className={`absolute top-[3px] h-5 w-5 rounded-full bg-[#fbf5e6] shadow transition-[left] ${paa ? 'left-6' : 'left-1'}`} />
                 <span className="sr-only">{paa ? 'på' : 'av'}</span>
             </span>
         </button>
@@ -42,10 +43,10 @@ export function Glider({
     onEndre: (v: number) => void;
 }) {
     return (
-        <label className="block rounded-xl px-3 py-2 hover:bg-slate-100">
-            <span className="flex items-baseline justify-between text-[16px] font-semibold text-slate-900">
+        <label className="block rounded-lg px-3 py-2 hover:bg-[#ead9b4]/60">
+            <span className="flex items-baseline justify-between text-[17px] font-bold text-[#2b1d10]">
                 {tekst}
-                <span className="text-[14px] font-semibold tabular-nums text-slate-600">{vis(verdi)}</span>
+                <span className="text-[15px] font-bold tabular-nums text-[#5c4630]">{vis(verdi)}</span>
             </span>
             <input
                 type="range"
@@ -54,21 +55,25 @@ export function Glider({
                 step={steg}
                 value={verdi}
                 onChange={(e) => onEndre(Number(e.target.value))}
-                className={`mt-1.5 h-2 w-full cursor-pointer rounded-full accent-indigo-600 ${FOKUS}`}
+                className={`mt-1.5 h-2 w-full cursor-pointer rounded-full accent-[#9a2a1c] ${FOKUS}`}
             />
         </label>
     );
 }
 
 export function Knapp({ children, onClick, farge = 'lys', autoFocus }: { children: ReactNode; onClick: () => void; farge?: 'lys' | 'blaa' | 'rod'; autoFocus?: boolean }) {
-    const f = farge === 'blaa' ? 'bg-indigo-600 text-white hover:bg-indigo-700' : farge === 'rod' ? 'bg-rose-600 text-white hover:bg-rose-700' : 'bg-slate-200 text-slate-900 hover:bg-slate-300';
+    // 'blaa' og 'rod' er begge hovedknappen (seglrød) nå; navnene beholdes for dem som bruker dem.
+    const f = farge === 'lys' ? KNAPP_2 : KNAPP;
     return (
-        <button autoFocus={autoFocus} onClick={onClick} className={`rounded-xl px-4 py-2.5 text-[16px] font-semibold ${f} ${FOKUS}`}>
+        <button autoFocus={autoFocus} onClick={onClick} className={`${f} py-2.5`}>
             {children}
         </button>
     );
 }
 
 export function Overskrift({ children }: { children: ReactNode }) {
-    return <h3 className="mb-1 mt-4 px-3 text-[13px] font-bold uppercase tracking-widest text-indigo-700 first:mt-0">{children}</h3>;
+    return <h3 className="bry-display mb-1 mt-5 flex items-center gap-3 px-3 text-[21px] leading-none text-[#5a3519] first:mt-0">
+            {children}
+            <span className="bry-strek flex-1" aria-hidden="true" />
+        </h3>;
 }

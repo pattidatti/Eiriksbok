@@ -39,30 +39,40 @@ const BOBLE_R = 24;
 /** Tegn i sekundet når boblen skriver fram teksten. */
 const SKRIV = 55;
 
+// Samme utseende som resten av UI-et (ui/stil.ts): navnet i Grenze Gotisch, boblene som pergament
+// med blekktekst og tjærebrun kant. Fontene lastes av ui/stil.ts.
 const STIL = `
 .bh-hode{position:absolute;left:0;top:0;display:flex;flex-direction:column;align-items:center;
   pointer-events:none;will-change:transform,opacity;transform-origin:50% 100%}
-.bh-navn{font:700 15px/1.1 Outfit,Inter,system-ui,sans-serif;color:#fff;letter-spacing:.01em;
-  text-shadow:0 1px 2px rgba(0,0,0,.95),0 0 6px rgba(0,0,0,.6);white-space:nowrap;text-align:center;transition:opacity .25s}
-.bh-navn small{display:block;font:600 11.5px/1.2 Inter,system-ui,sans-serif;color:#e5dccb;letter-spacing:.04em;
+.bh-navn{font:700 19px/1.05 'Grenze Gotisch','Alegreya Sans',Georgia,serif;color:#fbf3df;letter-spacing:.015em;
+  text-shadow:0 1px 1px #1a0f05,0 0 2px #1a0f05,0 0 7px rgba(26,15,5,.75);white-space:nowrap;text-align:center;transition:opacity .25s}
+.bh-navn small{display:block;font:700 13px/1.2 'Alegreya Sans',Inter,system-ui,sans-serif;color:#eadcc0;letter-spacing:.05em;
   text-transform:lowercase;margin-top:1px}
-.bh-navn.bh-giver{color:#ffe08a}
-.bh-merke{font:900 34px/1 Outfit,Inter,system-ui,sans-serif;color:#ffd23f;margin-bottom:2px;
-  text-shadow:0 0 2px #000,0 2px 0 #6b4a00,0 0 10px rgba(255,190,40,.75);-webkit-text-stroke:1.5px #3d2800;
+.bh-navn.bh-giver{color:#ffd66e}
+.bh-merke{font:900 36px/1 'Grenze Gotisch',Georgia,serif;color:#f4c446;margin-bottom:2px;
+  text-shadow:0 0 2px #000,0 2px 0 #5a3a00,0 0 10px rgba(255,190,40,.7);-webkit-text-stroke:1.5px #3d2800;
   animation:bh-dupp 1.6s ease-in-out infinite;transition:opacity .3s}
-.bh-merke.bh-gra{color:#c9c9c9;text-shadow:0 0 2px #000,0 2px 0 #444;-webkit-text-stroke:1.5px #222;animation:none}
+.bh-merke.bh-gra{color:#cfc6b4;text-shadow:0 0 2px #000,0 2px 0 #444;-webkit-text-stroke:1.5px #222;animation:none}
 @keyframes bh-dupp{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-.bh-boble{position:relative;max-width:310px;width:max-content;margin-bottom:10px;padding:9px 13px 10px;
-  background:rgba(255,252,244,.96);color:#1c1917;border-radius:14px;
-  font:500 16px/1.32 Inter,system-ui,sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.28),0 0 0 1px rgba(80,60,30,.18);
+.bh-boble{position:relative;max-width:320px;width:max-content;margin-bottom:11px;padding:8px 14px 9px;
+  background-color:#f6edd9;color:#2b1d10;border-radius:10px;border:1.5px solid #8a6438;
+  background-image:radial-gradient(120% 90% at 50% 35%,rgba(255,251,240,.75),rgba(255,251,240,0) 65%),
+    repeating-linear-gradient(97deg,rgba(120,85,40,.04) 0 1px,transparent 1px 5px);
+  font:500 17px/1.3 'Alegreya Sans',Inter,system-ui,sans-serif;
+  box-shadow:inset 0 0 12px rgba(140,95,40,.18),0 5px 14px rgba(30,18,6,.35);
   transform-origin:50% 100%;transition:opacity .28s ease, transform .28s cubic-bezier(.2,1.4,.4,1)}
-.bh-boble::after{content:'';position:absolute;left:50%;bottom:-9px;margin-left:-9px;border:9px solid transparent;
-  border-bottom:0;border-top-color:rgba(255,252,244,.96)}
+.bh-boble::before{content:'';position:absolute;left:50%;bottom:-11px;margin-left:-10px;border:10px solid transparent;
+  border-bottom:0;border-top-color:#8a6438}
+.bh-boble::after{content:'';position:absolute;left:50%;bottom:-8px;margin-left:-8px;border:8px solid transparent;
+  border-bottom:0;border-top-color:#f6edd9}
 .bh-boble.bh-skjult{opacity:0;transform:scale(.6) translateY(8px)}
 .bh-boble .bh-rest{opacity:0}
-.bh-boble.bh-rop{font-weight:700}
-.bh-boble.bh-gutt{background:rgba(232,240,255,.96)}
-.bh-boble.bh-gutt::after{border-top-color:rgba(232,240,255,.96)}
+.bh-boble.bh-rop{font-weight:800;border-color:#9a2a1c}
+.bh-boble.bh-rop::before{border-top-color:#9a2a1c}
+.bh-boble.bh-gutt{background-color:#fffaf0;border-color:#9a2a1c;border-left-width:4px}
+.bh-boble.bh-gutt::before{border-top-color:#9a2a1c}
+.bh-boble.bh-gutt::after{border-top-color:#fffaf0}
+@media (prefers-reduced-motion: reduce){.bh-merke{animation:none}.bh-boble{transition:opacity .2s ease}}
 `;
 
 interface Boble {
@@ -102,6 +112,9 @@ export class Hoder {
     constructor(lag: HTMLElement, phys: Physics) {
         this.lag = lag;
         this.phys = phys;
+        // Egen stablingskontekst: z-indeksene på hodene (nærmeste øverst) gjelder bare inni laget, så
+        // navn og bobler legger seg aldri over HUD-en, menyene eller startskjermen.
+        lag.style.isolation = 'isolate';
         if (!document.getElementById('bryggen-hoder-stil')) {
             const st = document.createElement('style');
             st.id = 'bryggen-hoder-stil';
@@ -207,7 +220,7 @@ export class Hoder {
             } else el.boble.classList.add('bh-skjult');
 
             // Mindre lenger unna, men aldri for smått til å lese.
-            const s = THREE.MathUtils.clamp(5.5 / Math.max(0.1, d), 0.62, 1.05);
+            const s = THREE.MathUtils.clamp(5.5 / Math.max(0.1, d), 0.78, 1.05);
             const x = (_v.x * 0.5 + 0.5) * w;
             const y = Math.max(8, (-_v.y * 0.5 + 0.5) * h);
             el.rot.style.transform = `translate(-50%,-100%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${s.toFixed(3)})`;

@@ -1,6 +1,8 @@
 // Startskjermen: hva scenen er, og om eleven vil spille med mus eller bare tastatur (Enter).
+import { useEffect, useRef } from 'react';
 import type { WorldId } from '../graboks/game';
-import { FOKUS } from './fokus';
+import { Segl } from './Segl';
+import { DISPLAY, ETIKETT, KNAPP, KNAPP_2, PANEL, ROD, STREK, SVAK, TEKST, UTHEV } from './stil';
 
 const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
     graboks: {
@@ -17,19 +19,26 @@ const INTRO: Record<WorldId, { tag: string; title: string; text: string }> = {
 
 export function Startskjerm({ world, laster, feil, onStart }: { world: WorldId; laster: boolean; feil: string | null; onStart: (mus: boolean) => void }) {
     const i = INTRO[world];
+    // Fokus på «Bare tastatur» når spillet er lastet: Enter starter da med tastatur, og fokusringen viser det.
+    const tastatur = useRef<HTMLButtonElement>(null);
+    useEffect(() => {
+        if (!laster) tastatur.current?.focus();
+    }, [laster]);
     return (
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-100/80 backdrop-blur-sm">
-            <div className="w-[min(600px,92vw)] rounded-3xl bg-white p-7 shadow-xl">
-                <p className="text-[13px] font-bold uppercase tracking-widest text-indigo-700">{i.tag}</p>
-                <h1 className="mt-1 font-[Outfit,Inter,sans-serif] text-[30px] font-extrabold leading-tight text-slate-900">{i.title}</h1>
-                <p className="mt-2 text-[16px] leading-snug text-slate-700">{i.text}</p>
-                <p className="mt-3 text-[15px] text-slate-600">Esc åpner menyen med kontroller, innstillinger og oppdragene dine.</p>
-                {feil && <p className="mt-3 rounded-lg bg-rose-50 p-2 text-[14px] text-rose-700">{feil}</p>}
-                <div className="mt-5 flex flex-wrap gap-3">
-                    <button disabled={laster} onClick={() => onStart(true)} className={`rounded-xl bg-indigo-600 px-5 py-3 text-[17px] font-semibold text-white shadow disabled:opacity-50 ${FOKUS}`}>
+        <div className="bry absolute inset-0 z-30 flex items-center justify-center bg-[#e9dcc0]/70 backdrop-blur-[3px]">
+            <div className={`relative w-[min(620px,92vw)] px-8 pb-7 pt-7 ${PANEL}`}>
+                <Segl className="absolute -right-5 -top-6 rotate-[14deg] drop-shadow-[0_4px_6px_rgba(60,20,8,0.35)]" storrelse={92} />
+                <p className={ETIKETT}>{i.tag}</p>
+                <h1 className={`${DISPLAY} mt-1 text-[44px] leading-[1.05]`}>{i.title}</h1>
+                <div className={`${STREK} mt-3`} />
+                <p className={`${TEKST} mt-3 text-[17px]`}>{i.text}</p>
+                <p className={`${SVAK} mt-3 text-[15px]`}>Esc åpner menyen med kontroller, innstillinger og oppdragene dine.</p>
+                {feil && <p className={`${UTHEV} mt-3 p-2 text-[14px] ${ROD}`}>{feil}</p>}
+                <div className="mt-6 flex flex-wrap gap-3">
+                    <button disabled={laster} onClick={() => onStart(true)} className={`${KNAPP} px-6 py-3 text-[18px]`}>
                         {laster ? 'Laster ...' : 'Start med mus'}
                     </button>
-                    <button disabled={laster} onClick={() => onStart(false)} className={`rounded-xl bg-slate-200 px-5 py-3 text-[17px] font-semibold text-slate-900 disabled:opacity-50 ${FOKUS}`}>
+                    <button ref={tastatur} disabled={laster} onClick={() => onStart(false)} className={`${KNAPP_2} px-6 py-3 text-[18px]`}>
                         Bare tastatur (Enter)
                     </button>
                 </div>
