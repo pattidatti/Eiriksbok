@@ -346,3 +346,28 @@ i flosshatt, rødt og blått som håndkolorering'`, `tone: 'lett'`.
 - Kjente svakheter: brett 1 og 2 har ingen bytte-valg, så valgene der er bare hindringer og avisark;
   sjekk i gråboksen at det holder seg over ett valg per 10 s. Frispillet bruker tenkte valg uten
   årstall. Taps-tipset for hindringer er svakere fag enn synke-tipset.
+
+### Fase: bygg - gråboks (2026-10-03)
+
+- Gjorde: bygde gråboksen etter steg 3a i `src/components/microgames/taburetten/` (KART.md, tuning.ts,
+  levels.ts, state.ts, crowd.ts, game.ts, spawn.ts, bots.ts, sim.ts, world.tsx, hud.tsx, hudData.ts,
+  texts.ts, farger.ts) og `Taburetten3D.tsx` (R3F med bokser, DOM-HUD, usePlaytest). Brett 1-3 fra
+  punkt 11 som manus i levels.ts, seier på «Sverdrup danner regjering», «Fly videre» starter frispillet
+  (tenkte valg, trangere flertall, raskere synking, kortere perfekt-vindu). Fagregelen er `løft()` i
+  crowd.ts. Registrert i registry.ts med `kunst` fra kunstbriefen. Ikke embedet i artikkelen.
+- Simulering (200 runder per robot, grønn): flertallsmann vinner 100 % (median 9097), nølende
+  (middels) vinner 100 % (median 5536), kongens-mann 0 % (median 5145), knappemoser 0 % (median 132),
+  passiv 0 % (median 3910). 28,8 valg per minutt, press 0,04 -> 0,06 -> 0,34. Nettleseren: flertallsmann
+  vant med 8935 poeng (simuleringen 8791-9384), 3,1 ms JS per bilde på Chromebook-nivå.
+- Prøvde, virket ikke: (1) hindringer midt i bølgedalen med vernbølger på 0,5 og kast 1,55 - selv
+  vinnerroboten kom ikke over, farten falt til minstefarten; (2) melkekjerre på 0,95 og 0,6 m med
+  synkefart 0,068 - en synkende stol har bare små hopp (bølgene flater ut), så kjerrene ble umulige
+  før banneret; (3) robot som planla med et grovere tidssteg enn spillet bommet på hindringer med
+  millimeter; (4) uten spredning i hindringene ga alle seeds samme runde (0 % varians).
+- Kjente svakheter: ferdighetstrappen er trang nederst (kongens-mann 5145 mot nølende 5536) fordi
+  multiplikatoren vokser med tiden uansett hvem som sitter; knappemoseren dør alltid i brett 1
+  (hindringene, ikke fagregelen); presset er flatt i brett 1-2 og stiger først når Schweigaard synker;
+  kampanjen har bare ett byttevalg, så fella (valg som ikke snur) finnes bare i frispillet; lappene
+  er en egen DOM-linje, ikke useArcadeText; hindringene tegnes foran mengden og leses dårlig.
+  Røyktesten meldte bare manglende cover og for lange bannere (rettet etterpå: maks 5 ord).
+  Gråboks-diagnosen (fersk vurderer med Gøy 1-5) er ikke gjort - jeg kan ikke starte underagenter.
