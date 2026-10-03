@@ -17,7 +17,7 @@ export function KontorGjeldsbok({ h }: { h: GjeldsbokHud }) {
         <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(620px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Gjeldsboka</span>
-                <span className="text-[14px] text-slate-700">
+                <span className="text-[14px] text-[#5c4630]">
                     Pris: {fmt(h.pris)} kilo rug per kilo fisk
                     {h.feil > 0 && <span className="ml-3 font-semibold text-rose-700">{h.feil} blekkflekker</span>}
                 </span>
@@ -54,7 +54,7 @@ export function KontorGjeldsbok({ h }: { h: GjeldsbokHud }) {
                                         </motion.span>
                                     )
                                 ) : naa_ ? (
-                                    <span className="text-indigo-800">
+                                    <span className="text-[#9a2a1c]">
                                         {h.tall}
                                         <span className={blink ? 'opacity-100' : 'opacity-0'}>|</span>
                                     </span>
@@ -85,8 +85,8 @@ export function KontorGjeldsbok({ h }: { h: GjeldsbokHud }) {
                     <div className="mt-0.5 font-semibold">X: hopp over linja · eller skriv summen som vanlig</div>
                 </motion.div>
             )}
-            {h.fase !== 'skriv' && <p className="mt-2 text-[16px] font-semibold leading-snug text-slate-900">{h.tekst}</p>}
-            <p className="mt-1 text-[13px] text-slate-500">
+            {h.fase !== 'skriv' && <p className="mt-2 text-[16px] font-semibold leading-snug text-[#2b1d10]">{h.tekst}</p>}
+            <p className="mt-1 text-[13px] text-[#7a6650]">
                 {h.fase === 'klar'
                     ? 'Mellomrom: begynn · Q: gå'
                     : h.fase === 'slutt'

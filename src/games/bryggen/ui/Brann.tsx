@@ -13,18 +13,18 @@ export function Brann({ data }: { data: unknown }) {
         <div className={`w-[min(600px,94vw)] px-5 py-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Brann i lagerhuset</span>
-                {aktiv && <span className="text-[14px] text-slate-700">Bøtter kastet: <b className="tabular-nums text-slate-900">{h.kast}</b></span>}
+                {aktiv && <span className="text-[14px] text-[#5c4630]">Bøtter kastet: <b className="tabular-nums text-[#2b1d10]">{h.kast}</b></span>}
             </div>
             <div className="mt-2 flex items-center gap-3">
                 <span className="w-12 text-[14px] font-bold text-red-700">Ilden</span>
-                <div className="h-4 flex-1 overflow-hidden rounded-full bg-slate-200">
+                <div className="h-4 flex-1 overflow-hidden rounded-full bg-[#e2d2b0]">
                     <motion.div
                         className="h-full rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-600"
                         animate={{ width: `${ild}%` }}
                         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                     />
                 </div>
-                <span className="w-10 text-right text-[15px] font-black tabular-nums text-slate-900">{ild}</span>
+                <span className="w-10 text-right text-[15px] font-black tabular-nums text-[#2b1d10]">{ild}</span>
             </div>
             {aktiv && (
                 <div className="relative mt-3 h-14 rounded-xl bg-sky-50 ring-1 ring-sky-200">
@@ -34,7 +34,7 @@ export function Brann({ data }: { data: unknown }) {
                     {Array.from({ length: h.ledd + 1 }, (_, i) => (
                         <div
                             key={i}
-                            className={`absolute top-6 h-6 w-6 -translate-x-1/2 rounded-full border-2 ${i === h.ledd ? (h.iKjeden ? 'border-indigo-600 bg-indigo-100' : 'border-dashed border-slate-400 bg-white') : 'border-slate-400 bg-white'}`}
+                            className={`absolute top-6 h-6 w-6 -translate-x-1/2 rounded-full border-2 ${i === h.ledd ? (h.iKjeden ? 'border-[#b8402d] bg-[#f6e3d8]' : 'border-dashed border-[#a5844f] bg-[#fbf5e6]') : 'border-[#a5844f] bg-[#fbf5e6]'}`}
                             style={{ left: `${6 + (i / h.ledd) * 80}%` }}
                         />
                     ))}
@@ -47,7 +47,7 @@ export function Brann({ data }: { data: unknown }) {
                             style={{ left: `${6 + (Math.min(s, h.ledd + 0.2) / h.ledd) * 80}%` }}
                         />
                     ))}
-                    <span className="absolute bottom-0.5 text-[13px] font-bold text-indigo-700" style={{ left: `${6 + 80}%`, transform: 'translateX(-50%)' }}>Du</span>
+                    <span className="absolute bottom-0.5 text-[13px] font-bold text-[#9a2a1c]" style={{ left: `${6 + 80}%`, transform: 'translateX(-50%)' }}>Du</span>
                 </div>
             )}
             {h.gnist > 0 && (
@@ -59,7 +59,7 @@ export function Brann({ data }: { data: unknown }) {
                 </div>
             )}
             <div className="mt-2 flex min-h-[24px] items-center justify-between gap-3">
-                <span className="text-[15px] font-semibold leading-snug text-slate-900">{h.tekst}</span>
+                <span className="text-[15px] font-semibold leading-snug text-[#2b1d10]">{h.tekst}</span>
                 <AnimatePresence mode="popLayout">
                     {h.svar && (
                         <motion.span
@@ -74,7 +74,7 @@ export function Brann({ data }: { data: unknown }) {
                     )}
                 </AnimatePresence>
             </div>
-            {h.iKjeden && <p className="mt-1 text-[13px] text-slate-500">Mellomrom / E: kast · Q: gå ut av kjeden</p>}
+            {h.iKjeden && <p className="mt-1 text-[13px] text-[#7a6650]">Mellomrom / E: kast · Q: gå ut av kjeden</p>}
         </div>
     );
 }

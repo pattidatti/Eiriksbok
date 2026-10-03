@@ -30,7 +30,7 @@ export function KontorVinsj({ h }: { h: VinsjHud }) {
         <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(600px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Vinsjen i gavlen</span>
-                <span className="text-[14px] text-slate-700">
+                <span className="text-[14px] text-[#5c4630]">
                     <motion.span key={h.bunter} initial={{ scale: 1.5 }} animate={{ scale: 1 }} className="mr-3 inline-block font-bold tabular-nums text-emerald-700">
                         {h.bunter} / {h.av} bunter
                     </motion.span>
@@ -94,12 +94,12 @@ export function KontorVinsj({ h }: { h: VinsjHud }) {
                         key={t}
                         animate={h.neste === t && h.fase === 'heis' && !h.holder ? { scale: [1, 1.12, 1] } : { scale: 0.9 }}
                         transition={{ repeat: h.neste === t ? Infinity : 0, duration: 0.6 }}
-                        className={`flex h-11 w-11 items-center justify-center rounded-xl text-[20px] font-black ${h.neste === t && !h.holder ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-500'}`}
+                        className={`flex h-11 w-11 items-center justify-center rounded-xl text-[20px] font-black ${h.neste === t && !h.holder ? 'bg-[#9a2a1c] text-white' : 'bg-[#e2d2b0] text-[#7a6650]'}`}
                     >
                         {t}
                     </motion.div>
                 ))}
-                <div className="text-[15px] leading-snug text-slate-800">
+                <div className="text-[15px] leading-snug text-[#2b1d10]">
                     {glipp ? (
                         <span className="font-bold text-rose-700">Glipp! Tauet slurer.</span>
                     ) : h.holder ? (
@@ -115,8 +115,8 @@ export function KontorVinsj({ h }: { h: VinsjHud }) {
                     )}
                 </div>
             </div>
-            {h.fase !== 'heis' && h.tekst && <p className="mt-1 text-[15px] font-semibold text-slate-900">{h.tekst}</p>}
-            <p className="mt-1 text-[13px] text-slate-500">
+            {h.fase !== 'heis' && h.tekst && <p className="mt-1 text-[15px] font-semibold text-[#2b1d10]">{h.tekst}</p>}
+            <p className="mt-1 text-[13px] text-[#7a6650]">
                 {h.fase === 'klar' ? 'Mellomrom: begynn · Q: gå' : h.fase === 'slutt' ? 'Mellomrom: ferdig' : 'A og D etter tur: sveiv · S: hold igjen · W: slipp tau · E: dra inn ved døra'}
             </p>
         </div>

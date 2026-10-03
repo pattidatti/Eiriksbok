@@ -35,21 +35,21 @@ export function Ettersokt({ data }: { data: unknown }) {
                         {NIVAER.map((n, i) => (
                             <div key={n} className="flex-1">
                                 <div
-                                    className={`h-2.5 rounded-full ${i < h.niva ? FARGE[i] : 'bg-slate-200'} ${i === h.niva - 1 ? 'animate-pulse' : ''}`}
+                                    className={`h-2.5 rounded-full ${i < h.niva ? FARGE[i] : 'bg-[#e2d2b0]'} ${i === h.niva - 1 ? 'animate-pulse' : ''}`}
                                 />
                                 <div
-                                    className={`mt-0.5 text-center text-[13px] ${i < h.niva ? 'font-bold text-slate-800' : 'text-slate-400'}`}
+                                    className={`mt-0.5 text-center text-[13px] ${i < h.niva ? 'font-bold text-[#2b1d10]' : 'text-[#7a6650]'}`}
                                 >
                                     {n}
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <div className="mt-1 text-[15px] font-semibold leading-snug text-slate-800">
+                    <div className="mt-1 text-[15px] font-semibold leading-snug text-[#2b1d10]">
                         {h.tips}
                     </div>
                     <div
-                        className="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-200"
+                        className="mt-1 h-1.5 overflow-hidden rounded-full bg-[#e2d2b0]"
                         title="Til vaktene glemmer deg"
                     >
                         <div

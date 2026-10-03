@@ -66,7 +66,7 @@ export function KontorSortering({ h }: { h: SorteringHud }) {
         <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(620px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Sortere tørrfisk</span>
-                <span className="text-[14px] text-slate-700">
+                <span className="text-[14px] text-[#5c4630]">
                     <span className="mr-3 tabular-nums">Fisk {h.nr} av {h.av}</span>
                     <motion.span key={h.riktige} initial={{ scale: 1.4 }} animate={{ scale: 1 }} className="inline-block font-bold tabular-nums text-emerald-700">
                         {h.riktige} riktig
@@ -77,8 +77,8 @@ export function KontorSortering({ h }: { h: SorteringHud }) {
 
             {h.fase === 'sorter' && h.fisk && (
                 <>
-                    <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-200">
-                        <div className={`h-full rounded-full ${andel < 0.3 ? 'bg-rose-500' : 'bg-indigo-500'}`} style={{ width: `${andel * 100}%` }} />
+                    <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#e2d2b0]">
+                        <div className={`h-full rounded-full ${andel < 0.3 ? 'bg-rose-500' : 'bg-[#f6e3d8]0'}`} style={{ width: `${andel * 100}%` }} />
                     </div>
                     <AnimatePresence mode="popLayout">
                         <motion.div
@@ -87,7 +87,7 @@ export function KontorSortering({ h }: { h: SorteringHud }) {
                             animate={{ x: 0, opacity: 1, rotate: 0 }}
                             exit={{ y: 60, opacity: 0, scale: 0.6, x: h.siste?.klasse ? (h.siste.klasse - 2) * 180 : 0 }}
                             transition={{ type: 'spring', stiffness: 320, damping: 24 }}
-                            className="mt-1 rounded-xl bg-slate-50"
+                            className="mt-1 rounded-xl bg-[#efe3c8]"
                         >
                             <FiskTegning f={h.fisk} kjent={h.kjent} />
                         </motion.div>
@@ -98,13 +98,13 @@ export function KontorSortering({ h }: { h: SorteringHud }) {
                                 {h.fisk.fuktig ? 'Myk og fuktig inni!' : 'Tørr og hard. Den holder.'}
                             </motion.span>
                         ) : (
-                            <span className="text-[13px] text-slate-500">Mellomrom: kjenn på fisken (koster litt tid)</span>
+                            <span className="text-[13px] text-[#7a6650]">Mellomrom: kjenn på fisken (koster litt tid)</span>
                         )}
                     </div>
                 </>
             )}
 
-            {h.fase !== 'sorter' && <p className="mt-2 text-[16px] font-semibold leading-snug text-slate-900">{h.tekst}</p>}
+            {h.fase !== 'sorter' && <p className="mt-2 text-[16px] font-semibold leading-snug text-[#2b1d10]">{h.tekst}</p>}
 
             <div className="mt-2 grid grid-cols-3 gap-2">
                 {HAUGER.map((g, i) => (
@@ -129,7 +129,7 @@ export function KontorSortering({ h }: { h: SorteringHud }) {
                     </motion.p>
                 )}
             </AnimatePresence>
-            <p className="mt-1 text-[13px] text-slate-500">
+            <p className="mt-1 text-[13px] text-[#7a6650]">
                 {h.fase === 'klar' ? 'Mellomrom: begynn · Q: gå' : h.fase === 'slutt' ? 'Mellomrom: ferdig' : '1, 2 eller 3 (eller J, K, L): legg i haugen'}
             </p>
         </div>

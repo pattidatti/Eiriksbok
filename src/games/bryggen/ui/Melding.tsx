@@ -29,7 +29,7 @@ export function Melding({ m, varighet }: { m: M; varighet: number }) {
         return () => window.clearTimeout(t);
     }, [m, varighet]);
 
-    const plass = 'pointer-events-none absolute left-1/2 top-[22%] text-center';
+    const plass = 'pointer-events-none absolute z-[1100] left-1/2 top-[22%] text-center';
 
     if (m.type === 'maal') {
         return (

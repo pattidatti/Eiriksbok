@@ -52,22 +52,22 @@ export function PungLinje({ data }: { data: unknown }) {
     const [vis, puls] = useTeller(d?.witten ?? 0);
     if (!d) return null;
     return (
-        <div className="mt-1.5 flex items-center gap-1.5 text-[14px] text-slate-700">
+        <div className="mt-1.5 flex items-center gap-1.5 text-[14px] text-[#5c4630]">
             <motion.span key={puls} initial={{ scale: puls ? 1.5 : 1, rotate: puls ? -20 : 0 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 420, damping: 11 }} className="inline-flex">
                 <Mynt />
             </motion.span>
-            <span className="font-bold tabular-nums text-slate-900">{vis}</span> witten
+            <span className="font-bold tabular-nums text-[#2b1d10]">{vis}</span> witten
         </div>
     );
 }
 
 function farge(k: RpgKort): { ramme: string; merke: string } {
-    if (k.type === 'rang') return { ramme: 'border-amber-400 bg-amber-50', merke: 'bg-amber-500 text-white' };
-    if (k.type === 'nivaa') return { ramme: 'border-indigo-300 bg-indigo-50', merke: 'bg-indigo-600 text-white' };
+    if (k.type === 'rang') return { ramme: 'border-[#b07d24] bg-[#fbf1d6]', merke: 'bg-[#9a2a1c] text-[#fbf5e6]' };
+    if (k.type === 'nivaa') return { ramme: 'border-[#b8402d] bg-[#f6e3d8]', merke: 'bg-[#9a2a1c] text-white' };
     if (k.type === 'laast') return { ramme: 'border-rose-300 bg-rose-50', merke: 'bg-rose-600 text-white' };
-    if (k.type === 'witten') return { ramme: 'border-amber-300 bg-white', merke: k.opp ? 'bg-amber-100 text-amber-900' : 'bg-slate-200 text-slate-700' };
+    if (k.type === 'witten') return { ramme: 'border-[#c9a45c] bg-[#fbf5e6]', merke: k.opp ? 'bg-[#f3e2b8] text-[#5a3519]' : 'bg-[#e2d2b0] text-[#5c4630]' };
     if (k.type === 'rykte' && k.fraksjon) return { ramme: KORT, merke: FRAKSJONER[k.fraksjon].lys };
-    return { ramme: KORT, merke: 'bg-slate-100 text-slate-800' };
+    return { ramme: KORT, merke: 'bg-[#efe3c8] text-[#2b1d10]' };
 }
 
 function Etikett({ k }: { k: RpgKort }) {
@@ -90,21 +90,21 @@ function Kortet({ k, i }: { k: RpgKort; i: number }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -14, scale: 0.95, transition: { duration: 0.35 } }}
             transition={{ type: 'spring', stiffness: 380, damping: 20, delay: Math.min(i, 4) * 0.08 }}
-            className={`flex items-center gap-3 rounded-2xl border-2 px-4 shadow-xl ${f.ramme} ${stor ? 'w-[min(460px,90vw)] py-3' : 'w-max max-w-[min(460px,90vw)] py-2'}`}
+            className={`bry flex items-center gap-3 rounded-xl border-2 px-4 shadow-xl ${f.ramme} ${stor ? 'w-[min(460px,90vw)] py-3' : 'w-max max-w-[min(460px,90vw)] py-2'}`}
         >
             <span className={`inline-flex shrink-0 items-center justify-center rounded-lg px-2 py-0.5 text-[13px] font-bold uppercase tracking-wide ${f.merke}`}>
                 <Etikett k={k} />
             </span>
             <div className="min-w-0">
-                <div className={`flex items-baseline gap-2 font-bold leading-tight text-slate-900 ${stor ? 'font-[Outfit,Inter,sans-serif] text-[22px]' : 'text-[16px]'}`}>
+                <div className={`flex items-baseline gap-2 font-bold leading-tight text-[#2b1d10] ${stor ? 'bry-display text-[22px]' : 'text-[16px]'}`}>
                     <span>{k.tittel}</span>
                     {k.verdi && (
-                        <motion.span key={k.verdi} initial={{ scale: 1.6 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 500, damping: 12 }} className={`tabular-nums ${k.opp ? 'text-emerald-700' : 'text-rose-700'}`}>
+                        <motion.span key={k.verdi} initial={{ scale: 1.6 }} animate={{ scale: 1 }} transition={{ type: 'spring', stiffness: 500, damping: 12 }} className={`tabular-nums ${k.opp ? 'text-[#3f6b2a]' : 'text-[#9a2a1c]'}`}>
                             {k.verdi}
                         </motion.span>
                     )}
                 </div>
-                {k.tekst && <div className={`leading-snug text-slate-700 ${stor ? 'text-[15px]' : 'text-[14px]'}`}>{k.tekst}</div>}
+                {k.tekst && <div className={`leading-snug text-[#5c4630] ${stor ? 'text-[15px]' : 'text-[14px]'}`}>{k.tekst}</div>}
             </div>
         </motion.div>
     );

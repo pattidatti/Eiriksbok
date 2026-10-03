@@ -26,11 +26,11 @@ export function KontorMorgensprache({ h }: { h: MorgenspracheHud }) {
             <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(620px,94vw)] -translate-x-1/2 px-6 pb-4 pt-4 ${PANEL}`}>
                 <div className="flex items-baseline justify-between">
                     <span className={ETIKETT}>{h.tittel}</span>
-                    <span className="text-[13px] tabular-nums text-slate-500">
+                    <span className="text-[13px] tabular-nums text-[#7a6650]">
                         {h.nr} / {h.av}
                     </span>
                 </div>
-                {b.hvem && <div className="mt-2 text-[15px] font-bold text-slate-900">{b.hvem}</div>}
+                {b.hvem && <div className="mt-2 text-[15px] font-bold text-[#2b1d10]">{b.hvem}</div>}
 
                 <AnimatePresence mode="wait">
                     {b.regel && (
@@ -52,7 +52,7 @@ export function KontorMorgensprache({ h }: { h: MorgenspracheHud }) {
                     )}
                 </AnimatePresence>
 
-                <p className="mt-2 min-h-[48px] text-[16px] leading-snug text-slate-800">{vis}</p>
+                <p className="mt-2 min-h-[48px] text-[16px] leading-snug text-[#2b1d10]">{vis}</p>
 
                 {b.slag ? (
                     <div className="mt-2 flex items-center justify-center gap-3">
@@ -70,7 +70,7 @@ export function KontorMorgensprache({ h }: { h: MorgenspracheHud }) {
                 ) : null}
 
                 {b.regel && (
-                    <p className="mt-2 text-[13px] italic text-slate-500">
+                    <p className="mt-2 text-[13px] italic text-[#7a6650]">
                         Vi vet ikke hvilke straffer Kontoret brukte i 1420-årene. «Fem harde slag over ryggen» er fra museets fortelling om livet på Bryggen
                         flere hundre år senere.
                     </p>
@@ -79,14 +79,14 @@ export function KontorMorgensprache({ h }: { h: MorgenspracheHud }) {
                 {b.valg && h.ferdigSkrevet && (
                     <div className="mt-2 flex flex-col gap-1">
                         {b.valg.map((v, i) => (
-                            <div key={v} className="rounded-lg bg-indigo-50 px-3 py-1.5 text-[15px] font-semibold text-indigo-900">
+                            <div key={v} className="rounded-lg bg-[#f6e3d8] px-3 py-1.5 text-[15px] font-semibold text-[#9a2a1c]">
                                 {i + 1}: {v}
                             </div>
                         ))}
                     </div>
                 )}
 
-                <p className="mt-2 text-[13px] text-slate-500">
+                <p className="mt-2 text-[13px] text-[#7a6650]">
                     {b.slag ? (slagFerdig ? 'Mellomrom: videre' : '') : b.valg ? (h.ferdigSkrevet ? 'Svar med 1 eller 2' : 'Mellomrom: vis hele') : 'Mellomrom eller E: videre'}
                 </p>
             </div>

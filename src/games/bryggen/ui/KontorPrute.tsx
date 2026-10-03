@@ -10,7 +10,7 @@ const MAKS = 10;
 const x = (v: number) => `${((v - MIN) / (MAKS - MIN)) * 100}%`;
 
 const STEMNING: Record<Stemning, { tekst: string; farge: string }> = {
-    rolig: { tekst: 'venter', farge: 'text-slate-600' },
+    rolig: { tekst: 'venter', farge: 'text-[#5c4630]' },
     noler: { tekst: 'nøler', farge: 'text-amber-700' },
     sur: { tekst: 'sur', farge: 'text-orange-700' },
     sint: { tekst: 'sint', farge: 'text-rose-700' },
@@ -23,28 +23,28 @@ export function KontorPrute({ h }: { h: PruteHud }) {
         <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(620px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Prute med Sølve</span>
-                <span className="flex items-center gap-1.5 text-[14px] text-slate-700">
+                <span className="flex items-center gap-1.5 text-[14px] text-[#5c4630]">
                     Tålmodighet
                     {Array.from({ length: h.maks }, (_, i) => (
                         <motion.span
                             key={i}
                             animate={{ scale: i < h.taalmodighet ? 1 : 0.7, opacity: i < h.taalmodighet ? 1 : 0.35 }}
-                            className={`inline-block h-3 w-3 rounded-full ${i < h.taalmodighet ? 'bg-indigo-600' : 'bg-slate-300'}`}
+                            className={`inline-block h-3 w-3 rounded-full ${i < h.taalmodighet ? 'bg-[#9a2a1c]' : 'bg-[#cdb68a]'}`}
                         />
                     ))}
                     <span className={`ml-1 font-semibold ${st.farge}`}>{st.tekst}</span>
                 </span>
             </div>
 
-            <motion.p key={h.sier} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} className="mt-2 text-[16px] font-semibold leading-snug text-slate-900">
+            <motion.p key={h.sier} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} className="mt-2 text-[16px] font-semibold leading-snug text-[#2b1d10]">
                 Sølve: «{h.sier}»
             </motion.p>
-            <p className="text-[15px] italic text-slate-600">{h.tegn}</p>
+            <p className="text-[15px] italic text-[#5c4630]">{h.tegn}</p>
 
             {/* Skalaen. */}
             <div className="relative mx-2 mb-1 mt-9 h-3 rounded-full bg-gradient-to-r from-amber-200 via-stone-200 to-emerald-200">
                 {Array.from({ length: MAKS - MIN + 1 }, (_, i) => (
-                    <span key={i} className="absolute top-4 -translate-x-1/2 text-[13px] tabular-nums text-slate-500" style={{ left: x(MIN + i) }}>
+                    <span key={i} className="absolute top-4 -translate-x-1/2 text-[13px] tabular-nums text-[#7a6650]" style={{ left: x(MIN + i) }}>
                         {MIN + i}
                     </span>
                 ))}
@@ -61,27 +61,27 @@ export function KontorPrute({ h }: { h: PruteHud }) {
                     Sølve: {fmt(h.ber)}
                 </motion.span>
                 <motion.div
-                    className="absolute -top-3 h-9 w-9 -translate-x-1/2 rounded-full border-4 border-white bg-indigo-600 shadow-lg"
+                    className="absolute -top-3 h-9 w-9 -translate-x-1/2 rounded-full border-4 border-white bg-[#9a2a1c] shadow-lg"
                     animate={{ left: x(ferdig ? h.pris : h.bud) }}
                     transition={{ type: 'spring', stiffness: 500, damping: 25 }}
                 />
             </div>
 
             <div className="mt-7 flex items-baseline justify-between">
-                <span className="text-[15px] text-slate-700">
+                <span className="text-[15px] text-[#5c4630]">
                     Ditt bud:{' '}
-                    <motion.span key={h.bud} initial={{ scale: 1.3 }} animate={{ scale: 1 }} className="inline-block text-[22px] font-black tabular-nums text-indigo-700">
+                    <motion.span key={h.bud} initial={{ scale: 1.3 }} animate={{ scale: 1 }} className="inline-block text-[22px] font-black tabular-nums text-[#9a2a1c]">
                         {fmt(ferdig ? h.pris : h.bud)}
                     </motion.span>{' '}
                     kilo rug for 1 kilo fisk
                 </span>
-                <span className="text-[13px] text-slate-500">Rundt år 1500: ca. 8</span>
+                <span className="text-[13px] text-[#7a6650]">Rundt år 1500: ca. 8</span>
             </div>
 
             {h.logg.length > 0 && !ferdig && (
                 <div className="mt-1 flex flex-wrap gap-1.5">
                     {h.logg.map((l, i) => (
-                        <span key={i} className={`rounded-md px-2 py-0.5 text-[13px] ${l.stemning === 'sint' ? 'bg-rose-50 text-rose-800' : l.stemning === 'sur' ? 'bg-orange-50 text-orange-800' : 'bg-slate-100 text-slate-700'}`}>
+                        <span key={i} className={`rounded-md px-2 py-0.5 text-[13px] ${l.stemning === 'sint' ? 'bg-rose-50 text-rose-800' : l.stemning === 'sur' ? 'bg-orange-50 text-orange-800' : 'bg-[#efe3c8] text-[#5c4630]'}`}>
                             {fmt(l.bud)}: {l.svar}
                         </span>
                     ))}
@@ -98,7 +98,7 @@ export function KontorPrute({ h }: { h: PruteHud }) {
                 </motion.div>
             )}
 
-            <p className="mt-1 text-[13px] text-slate-500">
+            <p className="mt-1 text-[13px] text-[#7a6650]">
                 {h.fase === 'klar' ? 'Mellomrom: begynn å prute' : ferdig ? 'Mellomrom: ferdig' : 'A/D (eller 1/2): endre budet · Mellomrom: by · Q: gå'}
             </p>
         </div>

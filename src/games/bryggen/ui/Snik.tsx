@@ -24,11 +24,11 @@ export function Snik({ data }: { data: unknown }) {
                 <span className={ETIKETT}>Snik</span>
                 <span className={`text-[17px] font-black ${s.farge}`}>{s.tekst}</span>
             </div>
-            <div className="mt-1 h-2.5 overflow-hidden rounded-full bg-slate-200">
+            <div className="mt-1 h-2.5 overflow-hidden rounded-full bg-[#e2d2b0]">
                 <div className={`h-full rounded-full ${s.bar}`} style={{ width: `${Math.max(h.status === 'skjult' ? 0 : 6, h.maler * 100)}%` }} />
             </div>
             {h.linjer.map((l) => (
-                <div key={l} className="mt-1 text-[15px] leading-snug text-slate-800">{l}</div>
+                <div key={l} className="mt-1 text-[15px] leading-snug text-[#2b1d10]">{l}</div>
             ))}
         </motion.div>
     );

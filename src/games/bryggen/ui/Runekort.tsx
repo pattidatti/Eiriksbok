@@ -107,12 +107,12 @@ export function RunekortPanel({ data }: { data: unknown }) {
     const p = d.pinne;
     return (
         <div
-            className={`${PANEL} pointer-events-auto mt-2 w-[min(620px,92vw)] p-5 text-slate-800`}
+            className={`${PANEL} pointer-events-auto mt-2 w-[min(620px,92vw)] p-5 text-[#2b1d10]`}
             style={{ opacity: inn, transform: `translateY(${(1 - inn) * 18}px) scale(${0.96 + inn * 0.04})` }}
         >
             <div className="flex items-baseline justify-between gap-3">
                 <div className={ETIKETT}>Runepinne · {p.slag}</div>
-                <div className="text-[13px] font-semibold text-slate-500">
+                <div className="text-[13px] font-semibold text-[#7a6650]">
                     {d.funnet} av {d.totalt} funnet
                 </div>
             </div>
@@ -123,17 +123,17 @@ export function RunekortPanel({ data }: { data: unknown }) {
                     <div className="rounded-xl bg-amber-50 px-4 py-2 text-[14px] text-amber-900">Runene på denne pinnen er ikke gjengitt her.</div>
                 )}
             </div>
-            {p.runer && <div className="mt-1 text-center font-mono text-[14px] tracking-wider text-slate-500">{p.runer.split(':').join(' · ')}</div>}
-            <div className="mt-3 text-center font-serif text-[22px] font-semibold leading-snug text-slate-900">«{p.norsk}»</div>
-            <div className="mt-1 text-center text-[13px] text-slate-500">
+            {p.runer && <div className="mt-1 text-center font-mono text-[14px] tracking-wider text-[#7a6650]">{p.runer.split(':').join(' · ')}</div>}
+            <div className="mt-3 text-center font-serif text-[22px] font-semibold leading-snug text-[#2b1d10]">«{p.norsk}»</div>
+            <div className="mt-1 text-center text-[13px] text-[#7a6650]">
                 Funnet {d.hvor}. Den ekte pinnen: {p.funn}
             </div>
             <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50/80 p-3">
                 <div className="text-[13px] font-bold uppercase tracking-widest text-amber-800">Dette vet vi</div>
-                <p className="mt-1 text-[15px] leading-relaxed text-slate-800">{p.vet}</p>
-                <p className="mt-2 text-[13px] text-slate-500">Kilde: {p.kilde}. Runene over er tegnet etter den latinske gjengivelsen.</p>
+                <p className="mt-1 text-[15px] leading-relaxed text-[#2b1d10]">{p.vet}</p>
+                <p className="mt-2 text-[13px] text-[#7a6650]">Kilde: {p.kilde}. Runene over er tegnet etter den latinske gjengivelsen.</p>
             </div>
-            <div className="mt-3 text-right text-[14px] font-semibold text-indigo-700">E: Legg pinnen i pungen</div>
+            <div className="mt-3 text-right text-[14px] font-semibold text-[#9a2a1c]">E: Legg pinnen i pungen</div>
         </div>
     );
 }
