@@ -19,15 +19,19 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Døgnet går: 10 minutter dag og 8 minutter natt, med sol og måne som flytter seg og byger som kommer
   og går (`motor/dogn.ts`). `?lys=kveld|morgen|dag|graatt|natt` velger hvor døgnet starter (standard:
   kveld etter regnet), og `?dogn=0` stopper klokka og været.
-  `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. Knappen «Grafikk» øverst til
-  høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
-  Detaljkartene lastes først når full kvalitet brukes første gang.
+  `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. G (eller
+  Innstillinger i pausemenyen) bytter mens spillet går, og valget huskes i nettleseren
+  (`bryggen-innstillinger`). Detaljkartene lastes først når full kvalitet brukes første gang.
 - Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md). I Bryggen
   får figurene klær (`motor/figur.ts`, draktene i `bygg/folk.ts`); gråboksen beholder mannequinen.
   Folk står, sitter og jobber i bua og schøtstua.
 - Lyd: `public/games/bryggen/audio/` (CC0 og offentlig eie, se KILDE.md). Lyden starter ved første
-  klikk eller Enter. «Lyd»-knappen øverst til høyre (eller M) slår av og på, og glidebryteren ved siden
-  av er volumet. Valget huskes i nettleseren (`bryggen-lyd`).
+  klikk eller Enter. M slår av og på. Hovedvolum og volum per buss (ute, inne, hendelser) står under
+  Innstillinger i pausemenyen, og huskes i `bryggen-innstillinger`.
+- Menyene (`ui/`): startskjerm (Enter = bare tastatur), og pausemenyen på Esc med Fortsett,
+  Innstillinger, Kontroller, Oppdrag og dagbok, og Avslutt. Alt styres med piltaster, Enter og Esc.
+  Spillet står mens menyen er oppe (`GrayboxGame.pause`). I fullskjerm låses Esc (Chrome), så Esc
+  åpner menyen i stedet for å gå ut av fullskjermen.
 
 ## Oppbygning
 
@@ -106,6 +110,13 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `graboks/tyv.ts` | Tyven i gården: ute bare mens oppdraget hans er aktivt, roper over hodet, teller `slaa:tyven` |
 | `graboks/flytere.ts`, `graboks/dev.ts` | Skadetallene i kampen, og utviklerverktøyene (flyttet ut av `game.ts`) |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
+| `ui/Hud.tsx` | HUD-en mens det spilles: liv, oppdragslista, meldinger, samtalen, E-tekstene, ytelsesboksen og systempanelene |
+| `ui/systemPaneler.ts` | Krokpunkt for HUD-paneler til systemene: `hud.system[navn]` tegnes av panelet som er registrert her |
+| `ui/Startskjerm.tsx` | Startskjermen: hva scenen er, start med mus eller bare tastatur |
+| `ui/Pausemeny.tsx` | Pausemenyen (Esc): Fortsett, Innstillinger, Kontroller, Oppdrag og dagbok, Avslutt. Tastatur først |
+| `ui/InnstillingerPanel.tsx`, `ui/innstillinger.ts` | Innstillingene (grafikk, skygger, lys og dis, lyd per buss, kamerafart, snu opp og ned, ytelse), lagret i `bryggen-innstillinger`. Leser og flytter over de gamle `bryggen-kvalitet` og `bryggen-lyd` |
+| `ui/Dagbok.tsx`, `ui/vetlager.ts` | Dagboka: oppdragene med «om» og «hvor», og «Dette vet vi»-tekstene eleven har lest (`bryggen-vet`). «Begynn på nytt» bak en bekreftelse |
+| `ui/menydeler.tsx`, `ui/fokus.ts`, `ui/fullskjerm.ts` | Bryter, glidebryter, knapp og overskrift; piltastnavigasjon og fokusring; fullskjerm med Esc-lås |
 
 ## Regler
 

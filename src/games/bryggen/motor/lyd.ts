@@ -4,7 +4,11 @@
 //
 //   løkker og lyder ute ──► ute-bussen ──► lavpass (stenger seg inne) ──┐
 //   lyder inne (rotter, fottrinn) ───────► inne-bussen ─────────────────┼──► hoved (volum) ──► høyttaler
+//   hendelser (kamp, oppdragstoner) ─────► hendelse-bussen ─────────────┤
 //                                         └► romklang (bare inne) ──────┘
+//
+// Hver buss har sitt eget volum fra innstillingene (`busser`). Pausemenyen demper hovedbussen
+// (`dempet`) uten å røre volumet eleven har valgt.
 //
 // Ute-bussen er alt som hører hjemme utendørs: regn, vind, bølger, måker, båten. Står kameraet
 // inne i et rom, lukkes lavpasset ned mot noen hundre hertz, så verden utenfor høres dempet
@@ -39,18 +43,27 @@ export interface SpillOpts {
     /** Avspillingsfart: tonehøyde og lengde (1 = som innspilt). */
     fart?: number;
     /** Ute (gjennom lavpasset når man er inne) eller inne (rett ut, med romklang). */
-    buss?: 'ute' | 'inne';
+    buss?: Buss;
     /** Avstanden der lyden har fullt volum (meter). Mindre = må være nærmere for å høre den. */
     ref?: number;
     /** Start om så mange sekunder. */
     om?: number;
 }
 
+/** Bussene: omgivelser ute, lyder i rommet, og hendelser (kamp, oppdrag). */
+export type Buss = 'ute' | 'inne' | 'hendelse';
+export type BussVolum = Record<Buss, number>;
+
 export class Lydbilde {
     private ctx: AudioContext | null = null;
     private hoved!: GainNode;
     private uteBuss!: GainNode;
     private inneBuss!: GainNode;
+    private hendelseBuss!: GainNode;
+    /** Volumet eleven har valgt per buss (0-1). Inne-bussen dempes ikke av `settInne`; ute-bussen gjør det. */
+    private bussVolum: BussVolum = { ute: 1, inne: 1, hendelse: 1 };
+    private uteInne = 1;
+    private _dempet = false;
     private lavpass!: BiquadFilterNode;
     private klang!: GainNode;
     private buffere = new Map<string, AudioBuffer>();
@@ -80,6 +93,39 @@ export class Lydbilde {
     set volum(v: number) {
         this._volum = THREE.MathUtils.clamp(v, 0, 1);
         this.settHoved();
+    }
+
+    /** Pausemenyen: hovedbussen tones ned, volumet eleven har valgt beholdes. */
+    get dempet(): boolean {
+        return this._dempet;
+    }
+
+    set dempet(d: boolean) {
+        this._dempet = d;
+        this.settHoved();
+    }
+
+    get busser(): BussVolum {
+        return { ...this.bussVolum };
+    }
+
+    set busser(b: BussVolum) {
+        for (const k of ['ute', 'inne', 'hendelse'] as const) this.bussVolum[k] = THREE.MathUtils.clamp(b[k] ?? 1, 0, 1);
+        this.settBusser();
+    }
+
+    private bussNode(b: Buss | undefined): GainNode {
+        return b === 'inne' ? this.inneBuss : b === 'hendelse' ? this.hendelseBuss : this.uteBuss;
+    }
+
+    private settBusser(): void {
+        if (!this.ctx) return;
+        const t = this.ctx.currentTime;
+        const v = this.bussVolum;
+        // Kvadratisk, som hovedvolumet: glidebryteren føles jevn.
+        this.uteBuss.gain.setTargetAtTime(this.uteInne * v.ute * v.ute, t, 0.08);
+        this.inneBuss.gain.setTargetAtTime(v.inne * v.inne, t, 0.08);
+        this.hendelseBuss.gain.setTargetAtTime(v.hendelse * v.hendelse, t, 0.08);
     }
 
     get paa(): boolean {
@@ -115,14 +161,18 @@ export class Lydbilde {
         this.uteBuss.connect(this.lavpass).connect(this.hoved);
         this.inneBuss = ctx.createGain();
         this.inneBuss.connect(this.hoved);
+        this.hendelseBuss = ctx.createGain();
+        this.hendelseBuss.connect(this.hoved);
         // Romklang: et kort, kunstig rom (støy som dør ut på et halvt sekund). Ingen fil å laste.
         const romklang = ctx.createConvolver();
         romklang.buffer = lagRomklang(ctx, 0.55);
         this.klang = ctx.createGain();
         this.klang.gain.value = 0;
         this.inneBuss.connect(romklang);
+        this.hendelseBuss.connect(romklang);
         romklang.connect(this.klang).connect(this.hoved);
         this.settHoved();
+        this.settBusser();
         this.laster = this.last(ctx);
         return this.laster;
     }
@@ -144,8 +194,8 @@ export class Lydbilde {
 
     private settHoved(): void {
         if (!this.ctx) return;
-        const maal = this._paa ? this._volum * this._volum : 0; // kvadratisk: glidebryteren føles jevn
-        this.hoved.gain.setTargetAtTime(maal, this.ctx.currentTime, 0.08);
+        const maal = this._paa && !this._dempet ? this._volum * this._volum : 0; // kvadratisk: glidebryteren føles jevn
+        this.hoved.gain.setTargetAtTime(maal, this.ctx.currentTime, this._dempet ? 0.15 : 0.08);
     }
 
     /** Lytteren følger kameraet. */
@@ -181,7 +231,8 @@ export class Lydbilde {
         // Fra 20 kHz ute til ca. 500 Hz godt inne, jevnt i oktaver.
         const hz = 20000 * Math.pow(500 / 20000, THREE.MathUtils.clamp(inne, 0, 1));
         this.lavpass.frequency.setTargetAtTime(hz, t, 0.12);
-        this.uteBuss.gain.setTargetAtTime(1 - inne * 0.35, t, 0.12);
+        this.uteInne = 1 - inne * 0.35;
+        this.uteBuss.gain.setTargetAtTime(this.uteInne * this.bussVolum.ute * this.bussVolum.ute, t, 0.12);
         this.klang.gain.setTargetAtTime(inne * 0.5, t, 0.15);
     }
 
@@ -189,7 +240,7 @@ export class Lydbilde {
      * Setter volumet (og stedet) til en løkke. Løkka startes første gang den får volum over null,
      * og fortsetter (stille) etterpå, så den ikke starter forfra hver gang man går ut og inn.
      */
-    lokke(navn: string, styrke: number, opts: { pos?: THREE.Vector3 | null; buss?: 'ute' | 'inne'; ref?: number; fart?: number } = {}): void {
+    lokke(navn: string, styrke: number, opts: { pos?: THREE.Vector3 | null; buss?: Buss; ref?: number; fart?: number } = {}): void {
         const ctx = this.ctx;
         if (!ctx || !this.manifest) return;
         let l = this.lokker.get(navn);
@@ -207,8 +258,8 @@ export class Lydbilde {
             kilde.connect(gain);
             if (opts.pos) {
                 panner = lagPanner(ctx, opts.ref ?? 2, 1);
-                gain.connect(panner).connect(opts.buss === 'inne' ? this.inneBuss : this.uteBuss);
-            } else gain.connect(opts.buss === 'inne' ? this.inneBuss : this.uteBuss);
+                gain.connect(panner).connect(this.bussNode(opts.buss));
+            } else gain.connect(this.bussNode(opts.buss));
             // Ulike startpunkt: to løkker av samme lengde skal ikke gå i takt.
             kilde.start(0, Math.random() * buf.duration);
             l = { kilde, gain, panner };
@@ -237,7 +288,7 @@ export class Lydbilde {
         const gain = ctx.createGain();
         gain.gain.value = o.styrke ?? 1;
         kilde.connect(gain);
-        const buss = o.buss === 'inne' ? this.inneBuss : this.uteBuss;
+        const buss = this.bussNode(o.buss);
         if (o.pos) {
             const p = lagPanner(ctx, o.ref ?? 1.5, 1.2);
             settPos(p, o.pos, ctx.currentTime);
@@ -270,7 +321,7 @@ export class Lydbilde {
                 g.gain.setValueAtTime(0, t);
                 g.gain.linearRampToValueAtTime(styrke * v, t + 0.012);
                 g.gain.exponentialRampToValueAtTime(0.0001, t + len);
-                o.connect(g).connect(this.inneBuss);
+                o.connect(g).connect(this.hendelseBuss);
                 o.start(t);
                 o.stop(t + len + 0.05);
                 o.onended = () => {
