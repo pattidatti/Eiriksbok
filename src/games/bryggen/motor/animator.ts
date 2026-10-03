@@ -184,6 +184,17 @@ function findBone(root: THREE.Object3D, name: string): THREE.Object3D | undefine
     return root.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(name));
 }
 
+/**
+ * Liten, fast tilfeldighet per figur (i rekkefølgen de lages), så folk ikke puster, står og går i takt.
+ * Samme rekkefølge gir samme verdier, så skjermbilder blir like fra gang til gang.
+ */
+let figurNr = 0;
+function figurTall(): number {
+    figurNr++;
+    const x = Math.sin(figurNr * 12.9898 + 78.233) * 43758.5453;
+    return x - Math.floor(x);
+}
+
 const _q1 = new THREE.Quaternion();
 const _q2 = new THREE.Quaternion();
 const _q3 = new THREE.Quaternion();
@@ -255,6 +266,11 @@ export class Animator {
         this.root.add(this.lean);
         this.mixer = new THREE.AnimationMixer(this.model);
 
+        // Hver figur får sin egen takt i hvilen og starter et annet sted i den og i gangen. Ellers
+        // puster og går alle i takt, og det ser ut som en tropp.
+        const r1 = figurTall();
+        const r2 = figurTall();
+        this.locoPhase = r2;
         for (const name of LOCO) {
             const clip = template.clips.get(name);
             if (!clip) continue;
@@ -263,8 +279,28 @@ export class Animator {
             action.setEffectiveWeight(name === 'Idle_Loop' ? 1 : 0);
             // Fasen styres manuelt (se update), så mixeren skal ikke flytte tiden selv.
             if (name !== 'Idle_Loop') action.timeScale = 0;
+            else {
+                action.time = r1 * clip.duration;
+                action.timeScale = 0.84 + r2 * 0.3;
+            }
             this.loco.set(name, { action, weight: name === 'Idle_Loop' ? 1 : 0, target: 0, fadeRate: 8 });
         }
+    }
+
+    /**
+     * Bytt gangklippet (f.eks. `Walk_Formal_Loop` for presten og de fine herrene). Takten følger
+     * fortsatt farten (`setGait`).
+     */
+    brukGang(navn: string): void {
+        const clip = this.template.clips.get(navn);
+        const l = this.loco.get('Walk_Loop');
+        if (!clip || !l || l.action.getClip() === clip) return;
+        l.action.stop();
+        const action = this.mixer.clipAction(clip);
+        action.play();
+        action.timeScale = 0;
+        action.setEffectiveWeight(l.action.getEffectiveWeight());
+        l.action = action;
     }
 
     /** Farten (m/s) et bevegelsesklipp hører til for denne figuren. */
@@ -377,8 +413,14 @@ export class Animator {
         this.figurRot.push({ bone: b, q: new THREE.Quaternion().setFromAxisAngle(akse, vinkel) });
     }
     private boneCache = new Map<string, THREE.Object3D>();
-    /** Kalles først i hver `update`: gestene legger inn sine `figurDrei` her (gestikk.ts). */
-    foerOppdatering: (() => void) | null = null;
+    /**
+     * Kalles først i hver `update`: gestene, kampkroppen og livet (liv.ts) legger inn sine `figurDrei`
+     * her. Flere kan henge på samme figur; dreiningene legges oppå hverandre.
+     */
+    private foerListe: (() => void)[] = [];
+    foer(fn: () => void): void {
+        this.foerListe.push(fn);
+    }
 
     /** Et bein fra riggen (navnet som i riggen, med punktum), eller undefined. */
     bein(name: string): THREE.Object3D | undefined {
@@ -414,7 +456,7 @@ export class Animator {
      */
     update(dt: number, speed: number): void {
         const realDt = dt;
-        this.foerOppdatering?.();
+        for (const fn of this.foerListe) fn();
         if (this.freeze > 0) {
             this.freeze -= dt;
             dt = 0;
@@ -445,7 +487,7 @@ export class Animator {
         let cycleMeters = 0;
         let moveWeight = 0;
         for (const n of ['Walk_Loop', 'Jog_Fwd_Loop', 'Sprint_Loop']) {
-            const clip = this.template.clips.get(n);
+            const clip = this.loco.get(n)?.action.getClip();
             if (!clip || w[n] === 0) continue;
             cycleMeters += w[n] * this.speedOf(n) * clip.duration;
             moveWeight += w[n];

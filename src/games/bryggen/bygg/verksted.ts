@@ -44,6 +44,8 @@ export interface VerkstedInfo {
     rom: THREE.Box3;
     /** Røykhullet i taket over ildstedet. */
     royk: THREE.Vector3 | null;
+    /** Der skiltet henger i armen (tauet festes her), i bodens rom. */
+    skilt: THREE.Vector3;
 }
 
 const T = 0.2; // veggtykkelse
@@ -148,12 +150,17 @@ export function verksted(k: MeshKit, ki: MeshKit, glod: MeshKit, c: ColliderKit,
         k.log('raatre', V(sx, 2.75, 0), V(sx, 2.75, -1.0), 0.04, 5);
         k.log('raatre', V(sx, 2.35, 0), V(sx, 2.75, -0.6), 0.025, 4);
     });
-    k.withTint({ top: 0.55, bottom: 0.55, hue: [1.1, 1.0, 0.8] }, () => k.log('mork', V(sx, 2.73, -0.9), V(sx, 2.45, -0.9), 0.008, 3, false));
-    skilt(k, s.fag, sx, 2.4, -0.9);
+    // Selve tegnet henger i et tau og svinger i vinden: cella lager det med `skiltHeng` (uro.ts).
 
     // Innredningen.
     const inne = innredning(ki, glod, c, s, { l0, l1, d0, d1 }, r);
-    return { ...inne, rom: new THREE.Box3(V(-hw + T, 0, T), V(hw - T, h + rise * 0.6, l - T)) };
+    return { ...inne, rom: new THREE.Box3(V(-hw + T, 0, T), V(hw - T, h + rise * 0.6, l - T)), skilt: V(sx, 2.73, -0.9) };
+}
+
+/** Tauet og fagets tegn under, med festet i origo: henges i en `Uro.pendel`. */
+export function skiltHeng(k: MeshKit, fag: Fag): void {
+    k.withTint({ top: 0.55, bottom: 0.55, hue: [1.1, 1.0, 0.8] }, () => k.log('mork', V(0, 0, 0), V(0, -0.28, 0), 0.008, 3, false));
+    skilt(k, fag, 0, -0.33, 0);
 }
 
 /** Fagets tegn i skiltarmen. */

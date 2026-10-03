@@ -128,6 +128,8 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `bygg/holmen.ts` | Holmen som kulisse forbi veien (+x): kastellet ved sjøen, ringmuren med porttårn (ekte gjennomgang nær), Håkonshallen med trappegavler, Kristkirken, Apostelkirken, trehus i kongsgården og bispegården. Statisk `THREE.LOD`; kolliderne står i `bergenhus.ts` |
 | `bygg/stranden.ts` | Stranden på den andre siden av Vågen: glisne laftehus, naust, tømmer og et skip på stokker, trukket fra et frø. Én celle bak grensa, ingen kollidere |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
+| `motor/liv.ts` | Livet i figurene: hodet ser seg rundt og ser på gutten når han kommer nær, vekta flyttes, pusten, og holdningen per drakt (`HOLDNING`: krokete gammelkone, fyllik som henger med hodet). `FIN_GANG` går med `Walk_Formal_Loop`. Hver figur får egen takt og fase i hvilen og gangen (`Animator`), så ingen går eller puster i takt |
+| `bygg/uro.ts` | Ting som rører seg: `Uro` med `pendel` (skilt i vinden), `gynge` (vugge), `luke` (åpen om dagen, slår i vinden), `heis` (bunt opp under vinsjen), og `klesvask` (seilduk som vinden i shaderen blåser). `vind()` følger været (`koblVind`). Delene skjules bak 40 m |
 | `motor/gestikk.ts` | Gester mens folk snakker: prateklippet (`Idle_Talking_Loop`) og vift, vink, kom hit, pek, nikk, rist, skuldre, bukk og rop dreid i figurens rom (`Animator.figurDrei`). `gestFra(tekst)` velger gest fra det som blir sagt |
 | `bygg/personer.ts` | Navn og tittel over hodet for folk med `id` på plassen eller ruta |
 | `bygg/oppdrag-data.ts` | Oppdragene: giver, mål (hendelser), mottaker, samtalene (tilbud, underveis, levering) og «Dette vet vi» |
@@ -386,7 +388,7 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 - Alt folk sier, står i en boble over hodet (`Hoder.si`), ikke som undertekst. `CellCtx.si` tar føttene
   til den som snakker (`fra`), så boblen havner over riktig hode. Bare «Dette vet vi» står i panelet nederst.
 - `Snakkbar` har `hode`, `gest` og `synlig`. Nye folk som skal snakkes med, lages av `lagFolk` og får dem gratis.
-- Gester og kampkroppen legges på i `Animator.foerOppdatering` (én per figur): rett før mixeren, så de
+- Gester, kampkroppen og livet (`motor/liv.ts`) legges på med `Animator.foer(fn)` (flere per figur): rett før mixeren, så de
   aldri legges på to ganger når figuren bare oppdateres 15 ganger i sekundet. Skulderbeina (`DEF-shoulder`)
   flytter hele armen mye: bruk overarmen.
 - Riggen har nå også `Idle_Talking_Loop`, `Sitting_Talking_Loop`, `Sword_Attack`, `PickUp_Table`,

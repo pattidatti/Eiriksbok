@@ -104,6 +104,10 @@ export class Vandrer {
     // ── Dagsplaner (dagsplan.ts) ──
     /** Figuren er hjemme (eller gått ut av området): står parkert under bakken og gjør ingenting. */
     skjult = false;
+    /** Bøyer seg, tar opp eller legger fra seg noe (liv.ts ser da ned på hendene). */
+    get opptatt(): boolean {
+        return this.handling > 0;
+    }
     /** Punktet hen går mot nå (indeks i `rute.stopp`). */
     get neste(): number {
         return this.i;

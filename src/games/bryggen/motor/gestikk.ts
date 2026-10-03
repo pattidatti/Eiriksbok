@@ -175,9 +175,9 @@ export class Gestikk {
         this.a = a;
         // Gesten legges oppå rett før animatoren oppdateres, så den aldri legges på to ganger
         // når figuren langt unna bare oppdateres 15 ganger i sekundet.
-        a.foerOppdatering = () => {
+        a.foer(() => {
             if (this.g) leggPaaGest(this.a, this.g, this.t, this.len, this.side);
-        };
+        });
     }
 
     get aktiv(): boolean {

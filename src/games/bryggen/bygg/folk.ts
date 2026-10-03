@@ -24,6 +24,7 @@ import type { Materials } from '../motor/materials';
 import { disposeObject, type CellCtx, type Snakkbar } from '../motor/streaming';
 import { Vandrer, type Rute } from './vandrer';
 import { Gestikk } from '../motor/gestikk';
+import { FIN_GANG, HOLDNING, Liv } from '../motor/liv';
 
 const HUD = 0xd9a88a;
 
@@ -334,6 +335,9 @@ const KLIPP: Record<Rolle, { clip: string; speed: number; hold?: number }> = {
     prate: { clip: 'Idle_Talking_Loop', speed: 0.85 },
 };
 
+/** Roller der hendene er opptatt: blikket går mest ned på arbeidet (liv.ts). */
+const ARBEID = new Set<Rolle>(['skrive', 'rore', 'veie', 'hamre', 'knele', 'spise']);
+
 /** Hoftene i sitteklippet står så langt bak føttene og så høyt, i riggens egne meter (1,83 m høy). */
 const SITT_BAK = 0.33;
 
@@ -394,7 +398,7 @@ class Takt {
 class Staaende {
     private mot: THREE.Vector3 | null = null;
     private yaw: number;
-    private readonly a: Animator;
+    readonly a: Animator;
     private readonly p: Plass;
     private readonly clip: { clip: string; speed: number; hold?: number };
     private readonly sitter: boolean;
@@ -458,6 +462,9 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
     const takter: Takt[] = [];
     const staaende: Staaende[] = [];
     const vandrere: Vandrer[] = [];
+    /** Livet i hver figur (liv.ts): de som står, så de som går. */
+    const livS: Liv[] = [];
+    const livV: Liv[] = [];
     const snakkbare: Snakkbar[] = [];
     const egne: THREE.Object3D[] = [];
     let r = seed;
@@ -472,7 +479,8 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         const a = new Animator(kleFigur(rig, drakt), h);
         const k = KLIPP[p.rolle];
         const clip = rig.clips.get(k.clip);
-        if (k.clip) a.play(k.clip, { loop: true, fade: 0.01, timeScale: k.speed, startAt: rnd() * (clip?.duration ?? 1) });
+        // Egen takt per figur (±10 %), så to som hamrer ved siden av hverandre ikke slår i takt.
+        if (k.clip) a.play(k.clip, { loop: true, fade: 0.01, timeScale: k.speed * (0.9 + rnd() * 0.2), startAt: rnd() * (clip?.duration ?? 1) });
         if (k.hold !== undefined) a.setPhase(k.hold);
         a.update(0.02, 0);
         // Folkene står stille, så Three kan hoppe over dem som er utenfor bildet. Kula rundt
@@ -491,6 +499,9 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         takter.push(new Takt(a, p.bak));
         const st = new Staaende(a, p, k, sitter);
         staaende.push(st);
+        const liv = new Liv(a, seed * 31 + staaende.length * 7.3, HOLDNING[p.figur]);
+        liv.arbeid = ARBEID.has(p.rolle);
+        livS.push(liv);
         snakkbare.push({
             figur: p.figur, id: p.id, pos: foot.clone(), samtale: p.samtale,
             vend: (mot) => st.vend(mot),
@@ -523,6 +534,11 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         a.root.add(bunt);
         egne.push(bunt);
         const v = new Vandrer(a, rute, bunt, seed + i * 3.7);
+        // Hver har sin egen gange: fine herrer går avmålt, og skrittlengden varierer litt.
+        if (FIN_GANG.has(rute.figur)) a.brukGang('Walk_Formal_Loop');
+        const g = 0.9 + rnd() * 0.22;
+        a.setGait(1.1 * g, 3.4 * g, 5.6 * g);
+        livV.push(new Liv(a, seed * 17 + i * 5.1, HOLDNING[rute.figur]));
         group.add(a.root);
         anims.push(a);
         vandrere.push(v);
@@ -543,10 +559,19 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         gaaende: vandrere.map((v) => v.pos),
         snakkbare,
         tick: (t, dt, ctx) => {
-            for (const st of staaende) st.step(dt);
+            staaende.forEach((st, i) => {
+                st.step(dt);
+                const a = st.a;
+                livS[i].av = st.gestikk.aktiv;
+                if (a.root.visible) livS[i].tick(dt, a.root.position, a.root.rotation.y, ctx.spiller);
+            });
             for (const tk of takter) tk.update(dt, 0, ctx.kamera);
             vandrere.forEach((v, i) => {
                 v.step(dt, t, ctx);
+                const liv = livV[i];
+                liv.gaar = v.speed > 0.15;
+                liv.arbeid = v.opptatt;
+                if (v.a.root.visible && !v.skjult) liv.tick(dt, v.pos, v.yaw, ctx.spiller);
                 vTakt[i].update(dt, v.speed, ctx.kamera);
             });
         },

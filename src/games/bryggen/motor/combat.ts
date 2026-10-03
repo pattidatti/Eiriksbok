@@ -21,7 +21,7 @@ const Z = new THREE.Vector3(0, 0, 1);
 /**
  * Kroppen i kampen, oppå klippene: overkroppen vrir seg inn i slaget og lener seg etter det, og
  * hodet og ryggen kastes bakover når man blir truffet. Fjærer som dør ut, satt av kampen og lagt
- * på rett før animatoren oppdateres (`Animator.foerOppdatering`).
+ * på rett før animatoren oppdateres (`Animator.foer`).
  */
 class Kropp {
     vri = 0;
@@ -36,13 +36,13 @@ class Kropp {
     private maalLen = 0;
     private tid = 0;
     constructor(a: Animator) {
-        a.foerOppdatering = () => {
+        a.foer(() => {
             a.figurDrei('DEF-spine.001', Y, this.vri * 0.55);
             a.figurDrei('DEF-spine.002', Y, this.vri * 0.45);
             a.figurDrei('DEF-spine.001', X, this.len);
             a.figurDrei('DEF-head', X, this.hode);
             a.figurDrei('DEF-head', Z, this.hodeSide);
-        };
+        });
     }
     /** Vri inn i et slag (`side` 1: høyre hånd), fra en spenning bakover til et kast forover. */
     slag(side: number, kraft: number, tilTreff: number): void {

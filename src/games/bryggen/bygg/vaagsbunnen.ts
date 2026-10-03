@@ -25,7 +25,8 @@ import type { CellContent, CellDef, Rom, Sted } from '../motor/streaming';
 import { Ild } from '../motor/ild';
 import { COLD, DARK, FRONT_Z, GARD_DEPTH, T, WARM, kai, kaiJog, toGroup, tonne, type Sides } from './gard';
 import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
-import { verksted, type Fag, type VerkstedSpec } from './verksted';
+import { skiltHeng, verksted, type Fag, type VerkstedSpec } from './verksted';
+import { Uro } from './uro';
 import { korskirken, mikaelskirken } from './kirker-vaagsbunnen';
 import type { Plass } from './folk';
 import type { Stopp } from './vandrer';
@@ -154,6 +155,8 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
     let dorer: THREE.Vector3[] = [];
     let ruin: THREE.Vector3 | null = null;
     const steder: Sted[] = [];
+    /** Skiltene som svinger i vinden (uro.ts). */
+    const uro = new Uro(mats, `vaagsbunnen-${del}:uro`);
     const back = FRONT_Z + GARD_DEPTH;
     const auta = del === 'o' ? x1 - AUTA_W : x1; // vestkanten av allmenningen
 
@@ -219,6 +222,7 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
         c.matrix = m.clone();
         lod.matrix = m.clone();
         const info = verksted(k, ki, glod, c, spec, r);
+        uro.pendel(info.skilt.clone().applyMatrix4(m), rot, (kk) => skiltHeng(kk, spec.fag), 0.3, 1.5 + (Math.abs(cx * 0.37) % 0.5), 'z');
         verkstedLod(lod, spec, mats);
         info.folk.forEach((p, i) => {
             plasser.push({
@@ -314,7 +318,7 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
     const folk = await lagDagsfolk(fasePlasser, figurer, liv.vei, mats, del === 'o' ? 1330 : 1413);
     meldDyreSoner(`vaagsbunnen-${del}`, liv.soner);
     meldPinner(`vaagsbunnen-${del}`, liv.pinner);
-    near.add(naer, uten, inne, folk.group);
+    near.add(naer, uten, inne, folk.group, uro.group);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `vaagsbunnen-${del}:lod`;
     return {
@@ -324,10 +328,12 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
         tick: (t, dt, ctx) => {
             ilder.forEach((f) => f.update(t, dt));
             folk.tick(t, dt, ctx);
+            uro.tick(t, dt, ctx.kamera);
         },
         dispose: () => {
             ilder.forEach((f) => f.dispose());
             folk.dispose();
+            uro.dispose();
             glodMat.dispose();
             glemDyreSoner(`vaagsbunnen-${del}`);
             glemPinner(`vaagsbunnen-${del}`);

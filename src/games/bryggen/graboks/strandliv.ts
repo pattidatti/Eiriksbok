@@ -12,6 +12,7 @@ import * as THREE from 'three';
 import type { InputFrame } from '../motor/input';
 import { Dyrene } from '../motor/dyr';
 import { fase, koblKlokke } from '../bygg/dagsplan';
+import { koblVind } from '../bygg/uro';
 import { RUNEPINNER, pinner, type PinneSted, type Runepinne } from '../bygg/runepinner';
 import { huskVet } from '../ui/vetlager';
 import type { SpillKontekst, Spillsystem } from './system';
@@ -40,6 +41,7 @@ interface Pinne {
 
 export function lagStrandliv(k: SpillKontekst): Spillsystem {
     koblKlokke(() => k.lys.klokke);
+    koblVind(() => k.lys.vaer);
     const oppdrag = k.folk.oppdrag;
     const dyr = new Dyrene();
     dyr.natt = () => fase() === 'natt';
