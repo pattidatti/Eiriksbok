@@ -681,7 +681,12 @@ Regler:
 - `rang:<n>` i `gjor` gir minst den rangen (tidshoppet til 14 år, stuejunge).
 - Tolket gutten for Volmer, kjenner vakta ham igjen første gang han kommer på veien til Holmen etter kapitlet:
   mistenkt (`ETTERSOKT.meld`), med grunnen tyveri. Flagget `kap2-meldt` gjør at det skjer én gang.
-- Folk i nabogårdene som pratet med en tysker, står og prater alene i 1428 (utenTyske tar bare bort den ene).
+- Den som pratet med en tysker, står i stedet for å prate med lufta i 1428: `utenTyske` gjør `prate` om til `staa`
+  når ingen annen som prater står nærmere enn 1,8 m.
+- Sa gutten nei til Åsa, kommer plyndrerne til Stranden først når han er 35 m fra stua (`NEI_R`), med et rop bak ham.
+  Da har «De tok to av sekkene» noe bak seg når han kommer tilbake.
+- Kornsekken i armene er en egen liggende sekk (`armer` i kap2.ts), ikke en kopi av de stående sekkene i haugen:
+  en stående sekk gikk inn i brystet og så ut som en mørk kloss.
 
 Dev: `?film=kap2-inn`, `?sted=jekta|volmer|sekkene`, `?oppdrag=kap2` (eller `kap2-kjoper`, `kap2-korn`;
 et tatt kapittel-oppdrag setter året til 1428). Eksempel:

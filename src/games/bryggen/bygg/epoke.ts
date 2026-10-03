@@ -23,8 +23,20 @@ const BLIR = new Set(['hennig', 'volmer']);
 /** Fiskerne som handlet med Kontoret på kaia, er heller ikke der uten kjøpmennene [S]. */
 const BORTE = new Set(['ottar', 'solve', 'hermen']);
 
-/** Folkene i gårdene og ved Kontorets kai, uten dem som ikke er i byen våren 1428. */
+/** Hvor nær to som prater står (m). Står ingen så nær, er den andre borte. */
+const PRAT_R = 1.8;
+
+/**
+ * Folkene i gårdene og ved Kontorets kai, uten dem som ikke er i byen våren 1428. En som pratet med en
+ * tysker som er borte, står i stedet for å prate med lufta.
+ */
 export function utenTyske<T extends Plass | Rute>(folk: T[]): T[] {
     if (!EPOKE.kap2) return folk;
-    return folk.filter((p) => (p.id ? !BORTE.has(p.id) && (BLIR.has(p.id) || !TYSKE.has(p.figur)) : !TYSKE.has(p.figur)));
+    const igjen = folk.filter((p) => (p.id ? !BORTE.has(p.id) && (BLIR.has(p.id) || !TYSKE.has(p.figur)) : !TYSKE.has(p.figur)));
+    const prater = igjen.filter((p): p is T & Plass => 'rolle' in p && p.rolle === 'prate');
+    return igjen.map((p) => {
+        if (!('rolle' in p) || p.rolle !== 'prate') return p;
+        const alene = !prater.some((q) => q !== p && q.pos.distanceTo(p.pos) < PRAT_R);
+        return alene ? { ...p, rolle: 'staa' } : p;
+    });
 }

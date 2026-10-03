@@ -33,6 +33,8 @@ const V = (p: readonly number[]) => new THREE.Vector3(p[0], p[1], p[2]);
 const PARKERT = new THREE.Vector3(0, -60, 30);
 /** Hvor nær gutten må stå for E (m). Ringen på bakken er like stor. */
 const R = 1.6;
+/** Sa gutten nei til Åsa, kommer plyndrerne når han er så langt unna stua (m). */
+const NEI_R = 35;
 
 /** Det plyndreren roper i kampen (combat.ts `onRop`). Alvor, ingen vitser. */
 const ROP = {
@@ -177,10 +179,27 @@ export function lagKap2(k: SpillKontekst): Spillsystem {
     const gjemt = new THREE.Group();
     gjemt.name = 'kap2-gjemt';
     k.scene.add(haug, gjemt);
-    const iArmene = sekkMal.clone();
-    iArmene.position.y = -0.36;
-    const armer = new THREE.Group();
-    armer.add(iArmene);
+    // I armene ligger sekken på tvers foran brystet, som bunten (Baering setter den der). En stående sekk
+    // gikk inn i kroppen og så ut som en mørk kloss.
+    const armer = (() => {
+        const mk = new MeshKit();
+        const P = (x: number, y = 0) => new THREE.Vector3(x, y, 0);
+        // Liten UV-skala: treverket i teksturen blir en jevn, lys flate, som bunten (folk.ts).
+        mk.withUv(0.03, () => {
+            mk.withTint({ top: 1.5, bottom: 1.2, hue: [1.12, 1.02, 0.8] }, () => {
+                mk.log('raatre', P(-0.27), P(-0.14), 0.12, 12, true, 0.17);
+                mk.log('raatre', P(-0.14), P(0.08), 0.17, 12, false, 0.18);
+                mk.log('raatre', P(0.08), P(0.24, 0.02), 0.18, 12, false, 0.07);
+            });
+            // Snora rundt halsen.
+            mk.withTint({ top: 0.7, bottom: 0.6 }, () => mk.log('raatre', P(0.23, 0.02), P(0.27, 0.02), 0.075, 7, false));
+        });
+        const g = toGroup(mk, k.world.materials, 'kap2-sekk-armer');
+        const ytre = new THREE.Group();
+        g.position.y = 0.04;
+        ytre.add(g);
+        return ytre;
+    })();
     let baerer = false;
     const antall = () => [1, 2, 3].filter((i) => flagg.has(`kap2-sekk${i}`)).length;
     const valgt = () => (flagg.has('kap2-naust') ? 'naust' : flagg.has('kap2-loft') ? 'loft' : flagg.has('kap2-nei') ? 'nei' : null);
@@ -367,8 +386,12 @@ export function lagKap2(k: SpillKontekst): Spillsystem {
                 visteN = n;
                 visSekker();
             }
-            // Gutten sa nei til Åsa: familien gjemmer kornet selv, og målet er nådd.
-            if (status('kap2-korn') === 'aktiv' && valgt() === 'nei' && !maalNaadd(oppdrag, 'kap2-korn', 1)) oppdrag.hendelse('kap2:korn');
+            // Gutten sa nei til Åsa: plyndrerne kommer til Stranden når han har gått derfra, og målet er nådd.
+            // Da står det noe bak «De tok to av sekkene» når han kommer tilbake.
+            if (status('kap2-korn') === 'aktiv' && valgt() === 'nei' && !maalNaadd(oppdrag, 'kap2-korn', 1) && Math.hypot(k.player.pos.x - S.sekker[0], k.player.pos.z - S.sekker[2]) > NEI_R) {
+                oppdrag.hendelse('kap2:korn');
+                k.flash('Bak deg, fra Stranden, hører du rop. Plyndrerne har gått i land der.', 5);
+            }
             // En plyndrer var i gang da spillet ble lagret: han kommer på nytt.
             if (fase === 'av' && status('kap2-korn') === 'aktiv' && antall() >= 3 && !maalNaadd(oppdrag, 'kap2-korn', 1)) startKamp();
             if (fase === 'kamp' && k.ai.f.dead) {
@@ -393,7 +416,7 @@ export function lagKap2(k: SpillKontekst): Spillsystem {
                 else if (v === 'naust' || v === 'loft') {
                     const hvor = v === 'naust' ? 'inn i naustet, under båten' : 'ut på Jonsbryggen';
                     hint = baerer ? `Bær sekken ${hvor}. (${antall()} av 3)` : `Hent en sekk ved døra til stua. (${antall()} av 3)`;
-                } else hint = null;
+                } else hint = 'Plyndrerne kan komme når som helst. Gå hjem til gården.';
             } else hint = null;
         },
         prompt(gutt) {
