@@ -10,7 +10,7 @@ import { huskVet } from './vetlager';
 
 const TING: Record<string, string> = { brev: 'Et brev', botte: 'En bøtte vann' };
 
-const KORT = 'rounded-2xl border border-white/70 bg-white/90 shadow-lg backdrop-blur';
+import { KORT } from './stil';
 
 interface Props {
     hud: HudState;

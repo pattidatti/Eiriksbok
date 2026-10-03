@@ -21,6 +21,24 @@ import type { Samtale } from './samtaler';
 import { SAMTALER, SPOR } from './samtaler';
 import { SIDEOPPDRAG } from './sideoppdrag';
 
+/** Fraksjonene (blueprint §7): Kontoret, Bergenhus/kongens menn, norske borgere, kirken, nordlandsfiskerne. */
+export type Fraksjon = 'K' | 'B' | 'N' | 'Ki' | 'F';
+/** Ferdighetene som blir bedre av bruk (blueprint §8.4). */
+export type Ferdighet = 'styrke' | 'slaass' | 'prute' | 'ro' | 'regning';
+
+/**
+ * Det gutten får (eller mister) når oppdraget leveres (blueprint §8.3-8.6). Rollespillsystemet
+ * (rykte, pung, ferdigheter, rang) leser dette. Valg underveis gir mer med hendelser i `gjor`:
+ *   rykte:<fraksjon>:<+n|-n>   f.eks. `rykte:F:+5;rykte:K:-3`
+ *   witten:<+n|-n>             mynter i pungen
+ *   ferdighet:<navn>           én øvelse i en ferdighet
+ */
+export interface Belonning {
+    witten?: number;
+    rykte?: Partial<Record<Fraksjon, number>>;
+    ferdighet?: Partial<Record<Ferdighet, number>>;
+}
+
 export interface Maal {
     /** Hendelsen som teller (se over). */
     hendelse: string;
@@ -63,6 +81,8 @@ export interface OppdragDef {
     ting?: string;
     /** Hva gutten fikk ut av det (vises når oppdraget leveres). */
     lonn: string;
+    /** Rykte, mynter og øvelse når oppdraget leveres (se `Belonning`). */
+    belonning?: Belonning;
 }
 
 // ── 0. Ny i gården (prologen) ── Filmen «Ankomst med koggen» (filmer.ts) gir gutten dette oppdraget.
