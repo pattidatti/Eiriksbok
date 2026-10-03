@@ -340,6 +340,9 @@ const ARBEID = new Set<Rolle>(['skrive', 'rore', 'veie', 'hamre', 'knele', 'spis
 
 /** Hoftene i sitteklippet står så langt bak føttene og så høyt, i riggens egne meter (1,83 m høy). */
 const SITT_BAK = 0.33;
+const SITT_HOFTE = 0.545;
+/** Hofteleddet ligger så høyt over setet: baken har tykkelse. */
+const SITT_SETE = 0.09;
 
 /** En figur i gården. Lager animatoren og plasserer den. Bruk `animer` hvert bilde. */
 export async function lagFigur(navn: FigurNavn): Promise<Animator> {
@@ -491,7 +494,8 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
 
         const fwd = new THREE.Vector3(Math.sin(p.yaw), 0, Math.cos(p.yaw));
         const foot = sitter ? p.pos.clone().addScaledVector(fwd, SITT_BAK * s) : p.pos.clone();
-        if (sitter) foot.y -= 0.45 - 0.42 * s;
+        // Riggen (føttene) står på golvet, og hoftene havner rett over setet. Målt med `__bryggenFolk()`.
+        if (sitter) foot.y += SITT_SETE - SITT_HOFTE * s;
         a.root.position.copy(foot);
         a.root.rotation.y = p.yaw;
         group.add(a.root);

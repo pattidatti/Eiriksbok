@@ -15,7 +15,7 @@ import type { Oppdrag } from './oppdrag';
 interface Dev {
     __bryggenFoto?: { pos: number[]; look: number[] };
     __bryggenPos?: number[];
-    __bryggenFolk?: () => { navn: string; pos: number[]; yaw: number }[];
+    __bryggenFolk?: () => FolkInfo[];
 }
 
 export function devVerktoy(scene: THREE.Scene, gutt: Character | undefined): { pos: number[]; look: number[] } | undefined {
@@ -25,20 +25,28 @@ export function devVerktoy(scene: THREE.Scene, gutt: Character | undefined): { p
     return dev.__bryggenFoto;
 }
 
+/** En figur i scenen: drakt, føttene, retning, og høyden på hoftene og den laveste foten (beina). */
+interface FolkInfo { navn: string; pos: number[]; yaw: number; hofte: number; fot: number }
+
 /** Folkene i scenen (figur-meshene heter `figur:<drakt>`). */
-function folkListe(scene: THREE.Scene): { navn: string; pos: number[]; yaw: number }[] {
-    const ut: { navn: string; pos: number[]; yaw: number }[] = [];
+function folkListe(scene: THREE.Scene): FolkInfo[] {
+    const ut: FolkInfo[] = [];
+    const v = new THREE.Vector3();
     const q = new THREE.Quaternion();
     scene.traverse((g) => {
         if (g.name !== 'folk') return;
         for (const root of g.children) {
             let navn = '';
+            let hofte = NaN;
+            let fot = Infinity;
             root.traverse((o) => {
                 if (o.name.startsWith('figur:')) navn = o.name.slice(6);
+                if (o.name === 'DEF-hips') hofte = o.getWorldPosition(v).y;
+                if (o.name === 'DEF-footL' || o.name === 'DEF-footR') fot = Math.min(fot, o.getWorldPosition(v).y);
             });
             root.getWorldQuaternion(q);
             const fwd = new THREE.Vector3(0, 0, 1).applyQuaternion(q);
-            ut.push({ navn, pos: root.getWorldPosition(new THREE.Vector3()).toArray(), yaw: Math.atan2(fwd.x, fwd.z) });
+            ut.push({ navn, pos: root.getWorldPosition(new THREE.Vector3()).toArray(), yaw: Math.atan2(fwd.x, fwd.z), hofte, fot });
         }
     });
     return ut;
