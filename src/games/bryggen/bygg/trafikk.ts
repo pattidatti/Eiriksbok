@@ -21,7 +21,7 @@ import { WATER_Y } from '../motor/boat';
 import { vannHoyde, type SkrogFot } from '../motor/vann';
 import { KOGGE, lagKogge, type SkipInfo } from '../motor/kogge-modell';
 import { jektSpec, lagJekt } from '../motor/jekt-modell';
-import { raa, seilSatt, skrogKollider, vannlinje, type SkrogSpec } from '../motor/skrog';
+import { skrogKollider, vannlinje, type SkrogSpec } from '../motor/skrog';
 import { lagFaeringSkrog } from '../motor/faering-modell';
 import { Animator, loadRig } from '../motor/animator';
 import { kleFigur, RIG_URL } from '../motor/figur';
@@ -29,6 +29,7 @@ import { cullFigur, FigurLod } from '../motor/figurlod';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { DRAKTER, HOYDE, type FigurNavn } from './folk';
 import { toGroup, tonne } from './gard';
+import { SeilHeis } from './seilheis';
 
 const V2 = (x: number, z: number) => new THREE.Vector2(x, z);
 
@@ -172,8 +173,7 @@ class Farkost {
 class Seiler {
     readonly f: Farkost;
     readonly root = new THREE.Group();
-    private readonly satt: THREE.Object3D;
-    private readonly beslatt: THREE.Object3D;
+    private readonly seil: SeilHeis;
     private readonly sp: SkrogSpec;
     private readonly fot: SkrogFot;
     private readonly vl: { L: number; B: number; fyldig: number; forut: number };
@@ -192,13 +192,8 @@ class Seiler {
         this.root.add(toGroup(k, mats, navn));
         const ra = info.raa;
         const tint = { top: 0.8, bottom: 0.8, hue: [1.04, 0.98, 0.9] as [number, number, number] };
-        const ks = new MeshKit();
-        seilSatt(ks, ra.z, ra.y, ra.halv, ra.bunn, ra.halv * 0.16, tint);
-        const kb = new MeshKit();
-        raa(kb, ra.z, ra.y - 0.4, ra.halv, tint, ra.seilR);
-        this.satt = toGroup(ks, mats, `${navn}:seil`);
-        this.beslatt = toGroup(kb, mats, `${navn}:beslatt`);
-        this.root.add(this.satt, this.beslatt);
+        this.seil = new SeilHeis(mats, navn, ra, tint, 1);
+        this.root.add(this.seil.group);
         this.root.rotation.order = 'YXZ';
         this.vl = vannlinje(sp, 0.3);
         this.fot = { x: 0, z: 0, yaw: 0, L: this.vl.L, B: this.vl.B, fyldig: this.vl.fyldig };
@@ -219,11 +214,9 @@ class Seiler {
         const f = this.f;
         // Seilet beslås når skipet ligger for anker, og settes når det skal ut igjen.
         const vil = f.paaAnker || (f.vent > 0 && f.speed < 0.3) ? 0 : 1;
-        this.seilet += THREE.MathUtils.clamp(vil - this.seilet, -dt * 0.5, dt * 0.5);
-        this.satt.visible = this.seilet > 0.5;
-        this.beslatt.visible = !this.satt.visible;
-        // Duken buker mindre mens den heises og fires (skalert i høyden fra råa).
-        this.satt.scale.set(1, 1, Math.max(0.2, this.seilet));
+        // Duken rulles ut fra råa og samles opp igjen (seilheis.ts).
+        this.seil.mot(vil, dt, 0.22);
+        this.seilet = this.seil.s;
         const x = f.pos.x;
         const z = f.pos.y;
         const fx = Math.sin(f.yaw);
@@ -243,7 +236,7 @@ class Seiler {
         this.root.visible = this.root.position.distanceTo(kamera) < 190;
         this.kol?.flytt(x, WATER_Y, z, f.yaw);
         for (const sk of this.skjerm) sk.flytt(x, WATER_Y, z, f.yaw);
-        this.seilSkjerm?.flytt(x, this.satt.visible ? WATER_Y : -100, z, f.yaw);
+        this.seilSkjerm?.flytt(x, this.seil.s > 0.5 ? WATER_Y : -100, z, f.yaw);
         const fot = this.fot;
         fot.x = x + fx * this.vl.forut;
         fot.z = z + fz * this.vl.forut;

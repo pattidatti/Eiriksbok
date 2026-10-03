@@ -90,6 +90,7 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `motor/seilduk.ts` | Seilduken (`MatKey` 'seil'): ett delt materiale for alle seil, tekstur tegnet på lerret én gang (duker, sømmer, lapper, bonnet, kanttau, skitt), kypert-vev som relieff på full kvalitet, vind og lys gjennom duken i shaderen |
 | `motor/kogge-modell.ts` | Koggen: flatbunnet, høye sider, rette stavner, kasteller forut og akter, mastekurv, ror på akterstevnen |
 | `motor/jekt-modell.ts` | Jekta: lavt, åpent skrog med bunter av tørrfisk midtskips, vengen akter, ett råseil |
+| `bygg/seilheis.ts` | Seilet som heises og fires: duken rulles ut nedover fra råa og samles opp igjen før den beslås. Trafikken bruker den når skipene ankrer og seiler ut; jekta ved kaia (`torke` i skip.ts) henger seilet til tørk et par minutter av hvert femte når det er opphold |
 | `bygg/skip.ts` | Skipene i Vågen: kogge og jekt fortøyd ved kaia, en jekt for anker. Gynger med bølgene, kollider mot færingen, og melder omrisset i vannlinja (`skrog`) |
 | `bygg/trafikk.ts` | Trafikken i Vågen: koggen og jekta som seiler inn, ankrer (seilet beslås), snur og seiler ut i tåka; færinger med roere som ror faste ruter (ferja, lekteren, fiskeren) og viker for hverandre og for gutten; færinger fortøyd ved bryggene i Vågsbunnen |
 | `bygg/vaagsbunnen.ts` | Vågsbunnen: Auta allmenning med trappa opp til Øvregaten, Skostredet med skomakerboder og verksteder, bryggetrapper, bommen over gata, folkene, og kulissen ved bunnen av Vågen med Korskirken (`endeCelle`) |

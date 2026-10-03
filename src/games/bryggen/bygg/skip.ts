@@ -19,6 +19,8 @@ import { KOGGE, lagKogge, type SkipInfo } from '../motor/kogge-modell';
 import { jektSpec, lagJekt } from '../motor/jekt-modell';
 import { V3, skrogKollider, tau, vannlinje, type SkrogSpec } from '../motor/skrog';
 import { toGroup } from './gard';
+import { SeilHeis } from './seilheis';
+import { vaerNaa } from './uro';
 
 export interface Skipene {
     group: THREE.Group;
@@ -48,13 +50,17 @@ interface Plassering {
     /** Hvor mye skipet ruller: mindre når det er fortøyd. */
     rull: number;
     bygg: (k: MeshKit) => { info: SkipInfo; sp: SkrogSpec };
+    /** Henger seilet opp til tørk en stund når det er opphold. */
+    torke?: boolean;
 }
 
 const PLASSER: Plassering[] = [
     { navn: 'kogge', x: 24, ut: 9.2, yaw: Math.PI / 2, rull: 0.007, bygg: (k) => ({ info: lagKogge(k), sp: KOGGE }) },
     {
         navn: 'jekt-kai', x: -25, ut: 3.6, yaw: -Math.PI / 2, rull: 0.012,
-        bygg: (k) => { const sp = jektSpec(1); return { info: lagJekt(k, sp, 0.85, 7), sp }; },
+        // Råa og seilet er en egen del: mannskapet henger seilet opp til tørk når det er opphold (seilheis.ts).
+        bygg: (k) => { const sp = jektSpec(1); return { info: lagJekt(k, sp, 0.85, 7, false), sp }; },
+        torke: true,
     },
     {
         navn: 'jekt-anker', x: -40, z: -19, yaw: 2.55, rull: 0.022,
@@ -82,6 +88,7 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
     group.name = 'skip';
     const skip: Skip[] = [];
     const kollidere: RAPIER_NS.Collider[] = [];
+    const seil: { heis: SeilHeis; fase: number }[] = [];
 
     PLASSER.forEach((p, i) => {
         const front = kaiFront(p.x);
@@ -112,6 +119,11 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
         root.position.set(p.x, WATER_Y, z);
         root.rotation.y = p.yaw;
         group.add(root);
+        if (p.torke) {
+            const heis = new SeilHeis(mats, p.navn, info.raa, { top: 0.8, bottom: 0.8, hue: [1.04, 0.98, 0.9] });
+            root.add(heis.group);
+            seil.push({ heis, fase: i * 37 });
+        }
 
         const c = new ColliderKit();
         c.matrix = base;
@@ -132,7 +144,16 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
         skip.push({ root, navn: p.navn, x: p.x, z, yaw: p.yaw, sp, rull: p.rull, fase: i * 2.1, fot, ekstra: { rull: 0, duv: 0, maalRull: 0, maalDuv: 0 } });
     });
 
+    let forrige = -1;
     const update = (t: number) => {
+        const dt = forrige < 0 ? 0 : Math.min(0.1, Math.max(0, t - forrige));
+        forrige = t;
+        // Seilet til tørk: opp et par minutter av hvert femte, bare når det ikke regner.
+        for (const sl of seil) {
+            const syk = (t + sl.fase) % 300;
+            const opp = syk > 40 && syk < 190 && vaerNaa().regn < 0.15;
+            sl.heis.mot(opp ? 1 : 0, dt, 0.12);
+        }
         for (const s of skip) {
             // Høyden på vannet ved baugen, akterenden og begge sider: skipet følger bølgene, men
             // et langt skrog jevner dem ut. Oppå det en langsom rulling og duving.

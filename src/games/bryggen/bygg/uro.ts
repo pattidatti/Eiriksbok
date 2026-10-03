@@ -22,6 +22,11 @@ export function koblVind(f: () => { dekke: number; regn: number }): void {
     vaer = f;
 }
 
+/** Været nå (skydekke og regn, 0-1), for dem som ikke har lyssettingen (skip.ts). */
+export function vaerNaa(): { dekke: number; regn: number } {
+    return vaer?.() ?? { dekke: 0.3, regn: 0 };
+}
+
 /** Vinden nå (0-1,3): grunnpust etter været, med kast oppå. `t` i sekunder. */
 export function vind(t: number): number {
     const v = vaer?.() ?? { dekke: 0.3, regn: 0 };
