@@ -3665,6 +3665,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "medici-familien",
+      "title": "Medici-familien: Bankfolkene som kjøpte renessansen",
+      "description": "Medici-familien ble rik på bank, styrte Firenze uten krone og betalte for kunsten vi i dag forbinder med renessansen.",
+      "startDate": 1434,
+      "endDate": 1737,
+      "displayDate": "1434-1737",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "renessansen",
+      "link": "/historie/renessansen/medici-familien",
+      "tags": [
+        "renessansen",
+        "medici",
+        "firenze",
+        "italia",
+        "kunst",
+        "makt"
+      ],
+      "lat": 43.77,
+      "lng": 11.26,
+      "placeLabel": "Firenze",
+      "placeCountryId": 380,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "boktrykkerkunsten-sub-1",
       "title": "Gutenbergs gjennombrudd",
       "description": "Johannes Gutenberg utvikler metoden med løse typer i metall i Mainz. De eldste kjente trykkene fra pressa hans er fra omkring 1445.",
@@ -5171,6 +5196,32 @@
       "subjectId": "krle",
       "topicId": "religion",
       "link": "/krle/religion/sikhisme/sentrale-trekk"
+    },
+    {
+      "id": "store-nordiske-krig",
+      "title": "Den store nordiske krig: Da Karl XII ville ta Norge",
+      "description": "Karl XII tok Kristiania i 1716, men tapte Norge da Tordenskiold tok kanonene hans i Dynekilen og vinteren tok hæren i Trøndelag.",
+      "startDate": 1709,
+      "endDate": 1720,
+      "displayDate": "1709-1720",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/store-nordiske-krig",
+      "tags": [
+        "dansketiden",
+        "norge",
+        "sverige",
+        "krig",
+        "tordenskiold",
+        "karl-xii",
+        "1700-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
     },
     {
       "id": "dampmaskinen",
@@ -7204,6 +7255,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "riksretten-1884",
+      "title": "Riksretten 1884: Da Stortinget tok makta",
+      "description": "Kongen sa nei fire ganger, og Stortinget svarte med å dømme hele regjeringen. Slik fikk Norge parlamentarismen.",
+      "startDate": 1872,
+      "endDate": 1884,
+      "displayDate": "1872-1884",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/riksretten-1884",
+      "tags": [
+        "historie",
+        "norge",
+        "norgeshistorie",
+        "demokrati",
+        "parlamentarisme",
+        "union",
+        "1800-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "eic-sub-4",
       "title": "Oppløsning",
       "description": "Kompaniet blir formelt oppløst.",
@@ -7731,6 +7808,26 @@
       "placeLabel": "Kina",
       "placeCountryId": 156,
       "geoConfidence": "tag"
+    },
+    {
+      "id": "titanic",
+      "title": "Titanic: Skipet som ikke kunne synke",
+      "description": "Titanic sank i 1912, og livbåtene hadde bare plass til halvparten - klasse avgjorde hvem som overlevde.",
+      "startDate": 1912,
+      "endDate": null,
+      "displayDate": "1912",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "industriell-revolusjon",
+      "link": "/historie/industriell-revolusjon/titanic",
+      "tags": [
+        "titanic",
+        "skipsfart",
+        "teknologi",
+        "klassesamfunn",
+        "sikkerhet",
+        "1900-tallet"
+      ]
     },
     {
       "id": "federal-reserve-1913",
@@ -9470,6 +9567,31 @@
         "konsekvenser",
         "politikk"
       ]
+    },
+    {
+      "id": "landssvikoppgjoret",
+      "title": "Landssvikoppgjøret: Da Norge dømte sine egne",
+      "description": "Hvordan Norge straffet rundt 46 000 landssvikere etter krigen, og hvorfor folk fortsatt diskuterer om oppgjøret var rettferdig.",
+      "startDate": 1945,
+      "endDate": 1957,
+      "displayDate": "1945-1957",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "andre-verdenskrig",
+      "link": "/historie/andre-verdenskrig/landssvikoppgjoret",
+      "tags": [
+        "historie",
+        "andre-verdenskrig",
+        "norge",
+        "rettsstat",
+        "okkupasjon",
+        "landssvik"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
     },
     {
       "id": "oversikt-sub-0",
