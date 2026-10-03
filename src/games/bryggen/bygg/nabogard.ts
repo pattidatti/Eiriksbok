@@ -15,7 +15,8 @@ import * as THREE from 'three';
 import { ColliderKit, MeshKit, slaSammen } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
-import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { eaveY, frontZ, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { Uro } from './uro';
 import { lagFolk, type FigurNavn, type Plass } from './folk';
 import type { Rute } from './vandrer';
 import {
@@ -247,6 +248,9 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     const kitAt = (z: number) => (z < split ? fram : bak);
     const c = new ColliderKit();
     const lod = new MeshKit();
+    // Heisingen i gavlen (uro.ts): om dagen går bunter opp fra kaia og inn på loftet i annenhver gård [S].
+    const uro = new Uro(mats, `nabo${p.seed}:uro`);
+    const heiser = p.seed % 2 === 0;
     for (const h of houses) {
         const k = kitAt(h.z);
         const m = new THREE.Matrix4().makeRotationY(h.rot ?? 0).setPosition(ox + h.x, 0, h.z);
@@ -255,6 +259,10 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
         hus(k, c, h.spec);
         lod.matrix = m.clone();
         husLod(lod, h.spec, (key) => mats.lodColor(key));
+        if (heiser && h.spec.vinsj) {
+            const trinse = new THREE.Vector3(0, eaveY(h.spec) + riseOf(h.spec) - 1.05, frontZ(h.spec) - 1.29).applyMatrix4(m);
+            uro.heis(trinse, h.rot ?? 0, (kk) => buntHeis(kk), 0.95, ['morgen', 'dag']);
+        }
     }
 
     fram.matrix = new THREE.Matrix4().makeTranslation(ox, 0, 0);
@@ -320,13 +328,29 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     // Det ryker fra ljoren i schøtstua (luft.ts). Huset står på tvers, midt i gården [S].
     const st = p.schotstue ? houses[houses.length - 1].spec : null;
     const royk = st ? [new THREE.Vector3(ox, eaveY(st) + riseOf(st), back + p.houseW / 2)] : undefined;
-    near.add(folk.group);
+    near.add(folk.group, uro.group);
     return {
         near, mid, samlet: { delt, samlet }, colliders: c.specs, gaaende: folk.gaaende, snakkbare: folk.snakkbare, royk,
         drypp: [...fram.skjegg, ...bak.skjegg],
-        tick: (t, dt, ctx) => folk.tick(t, dt, ctx),
-        dispose: () => folk.dispose(),
+        tick: (t, dt, ctx) => {
+            folk.tick(t, dt, ctx);
+            uro.tick(t, dt, ctx.kamera);
+        },
+        dispose: () => {
+            folk.dispose();
+            uro.dispose();
+        },
     };
+}
+
+/** En bunt tørrfisk surret med tau, som henger i kroken (toppen i origo). */
+function buntHeis(k: MeshKit): void {
+    k.withUv(0.04, () => {
+        k.withTint({ top: 1.45, bottom: 1.1, hue: [1.02, 0.98, 0.86] }, () => k.box('raatre', 0, -0.2, 0, 0.6, 0.4, 0.36, { grain: 'x' }));
+    });
+    k.withTint({ top: 0.9, bottom: 0.8, hue: [1.12, 1.02, 0.8] }, () => {
+        for (const dx of [-0.16, 0.16]) k.box('raatre', dx, -0.2, 0, 0.04, 0.41, 0.37);
+    });
 }
 
 /**

@@ -99,22 +99,25 @@ export class Uro {
     }
 
     /**
-     * En luke eller dør på et hengsel (loddrett akse i origo): står åpen i delene av dagen i `aapenNaar`
-     * og lukket ellers, og slår litt i vinden når den står åpen. Bygg den lukket, med bladet langs +x.
+     * En luke eller dør på et hengsel (loddrett akse i origo). `aapen` er vinkelen når den står åpen.
+     * `naar` er delene av dagen den står åpen (en glugg-luke), eller en funksjon som sier om den skal
+     * være åpen nå (en dør som går opp når noen kommer). Slår litt i vinden når den står åpen. Bygg
+     * den lukket, med bladet fra hengselet langs +x.
      */
-    luke(pos: THREE.Vector3, rotY: number, fn: (k: MeshKit) => void, aapen: number, aapenNaar: Fase[], akse: 'y' | 'x' = 'y'): void {
+    luke(pos: THREE.Vector3, rotY: number, fn: (k: MeshKit) => void, aapen: number, naar: Fase[] | (() => boolean)): void {
         const { rot, vend } = this.lag(pos, rotY, fn);
         const forskyv = ((pos.x * 13.1 + pos.z * 7.7) % 40) - 20;
-        let vinkel = aapenNaar.includes(fase(forskyv)) ? aapen : 0;
+        const skal = typeof naar === 'function' ? naar : () => naar.includes(fase(forskyv));
+        const fart = typeof naar === 'function' ? 2.2 : 0.8;
+        let vinkel = skal() ? aapen : 0;
         const f = (pos.x * 0.53 + pos.z * 0.29) % 6.28;
         this.deler.push({
             obj: vend,
             tick: (t, dt, vi) => {
-                const vil = aapenNaar.includes(fase(forskyv)) ? aapen : 0;
-                vinkel += THREE.MathUtils.clamp(vil - vinkel, -dt * 0.8, dt * 0.8);
+                const vil = skal() ? aapen : 0;
+                vinkel += THREE.MathUtils.clamp(vil - vinkel, -dt * fart, dt * fart);
                 const slark = vil !== 0 ? vi * 0.06 * Math.sin(t * 1.3 + f) * Math.sin(t * 0.41 + f) : 0;
-                if (akse === 'y') rot.rotation.y = vinkel + slark * Math.sign(aapen);
-                else rot.rotation.x = vinkel + slark * Math.sign(aapen);
+                rot.rotation.y = vinkel + slark * Math.sign(aapen);
             },
         });
     }

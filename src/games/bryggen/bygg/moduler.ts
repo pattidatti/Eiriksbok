@@ -29,7 +29,7 @@ export interface HouseSpec {
     facade?: boolean;
     vinsj?: boolean;
     /** Dører i første etasje: side (-1 = mot -x, 1 = mot +x) og z. */
-    doors?: { side: -1 | 1; z: number; open?: boolean }[];
+    doors?: { side: -1 | 1; z: number; open?: boolean; uro?: boolean }[];
     /** Dører i andre etasje ut mot svalgangen. Åpne dører går inn i loftet når det er hult. */
     upperDoors?: { side: -1 | 1; z: number; open?: boolean }[];
     /** Kanter rundt hvert laftehode (standard 8). Nabogårdene bruker færre: hodene er to tredeler av trekantene. */
@@ -64,6 +64,8 @@ export interface Glugg {
     /** Etasjen (0 = nederst). `floors.length` er gavlloftet over takfoten. */
     floor: number;
     open?: boolean;
+    /** Luka er en egen del som åpnes og lukkes (uro.ts): huset får bare hullet. */
+    uro?: boolean;
 }
 
 export const eaveY = (s: HouseSpec) => s.floors.reduce((a, b) => a + b, 0);
@@ -284,7 +286,7 @@ function fasade(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
  * Glugg: et lite vindu uten glass, med karm og en luke av stående bord. Står luka åpen, henger
  * den slått ut til siden og hullet er mørkt. Samme rom som `dor`: veggen i z = 0, utsiden -z.
  */
-export function glugg(k: MeshKit, w: number, h: number, y0: number, open = false, through = false): void {
+export function glugg(k: MeshKit, w: number, h: number, y0: number, open = false, through = false, utenLuke = false): void {
     const t = k.tint;
     const fw = 0.09;
     k.withTint({ ...t, top: t.top * 0.62 }, () => {
@@ -296,6 +298,7 @@ export function glugg(k: MeshKit, w: number, h: number, y0: number, open = false
     });
     if (open) {
         if (!through) k.box('mork', 0, y0 + h / 2, -0.01, w, h, 0.02, { skip: ['pz'] });
+        if (utenLuke) return;
         // Luka slått ut mot veggen ved siden av.
         k.withTint({ ...t, top: t.top * 1.2, hue: [1.06, 1.0, 0.92] }, () => k.box('bordvegg', -w - fw, y0 + h / 2, -0.11, w, h, 0.035));
     } else {
@@ -306,20 +309,30 @@ export function glugg(k: MeshKit, w: number, h: number, y0: number, open = false
 
 /** Gluggene på huset: på framgavlen eller en langvegg, i riktig etasje. */
 function glugger(k: MeshKit, s: HouseSpec): void {
-    const h = eaveY(s);
     for (const g of s.glugger ?? []) {
-        const loft = g.floor >= s.floors.length;
-        const y0 = loft ? h + 0.3 : floorY(s, g.floor) + (g.floor === 0 ? 1.1 : 0.95);
-        const w = loft ? 0.5 : 0.6;
-        const gh = loft ? 0.45 : 0.55;
-        if (g.side === 0) {
-            const z = (loft ? frontZ(s) : floorZ(s, g.floor)) - (s.facade ? 0.07 : 0);
-            k.at(g.at, 0, z, 0, () => glugg(k, w, gh, y0, g.open, g.floor < hule(s)));
-        } else {
-            const through = g.floor < hule(s);
-            onLongWall(k, s, g.side, g.at, () => glugg(k, w, gh, y0, g.open, through));
-        }
+        const { m, w, h, y0 } = gluggRamme(s, g);
+        k.push(m);
+        glugg(k, w, h, y0, g.open || g.uro, g.floor < hule(s), g.uro);
+        k.pop();
     }
+}
+
+/** Rommet en glugg bygges i (veggen i z = 0, utsiden -z), i husets rom, og målene. */
+export function gluggRamme(s: HouseSpec, g: Glugg): { m: THREE.Matrix4; w: number; h: number; y0: number } {
+    const loft = g.floor >= s.floors.length;
+    const y0 = loft ? eaveY(s) + 0.3 : floorY(s, g.floor) + (g.floor === 0 ? 1.1 : 0.95);
+    const w = loft ? 0.5 : 0.6;
+    const h = loft ? 0.45 : 0.55;
+    if (g.side === 0) {
+        const z = (loft ? frontZ(s) : floorZ(s, g.floor)) - (s.facade ? 0.07 : 0);
+        return { m: new THREE.Matrix4().makeTranslation(g.at, 0, z), w, h, y0 };
+    }
+    return { m: langveggRamme(s, g.side, g.at), w, h, y0 };
+}
+
+/** Rommet for en dør eller glugg på langveggen `side` ved `z` (som `onLongWall`). */
+export function langveggRamme(s: HouseSpec, side: -1 | 1, z: number): THREE.Matrix4 {
+    return new THREE.Matrix4().makeRotationY(side > 0 ? -Math.PI / 2 : Math.PI / 2).setPosition(side * (s.w / 2), 0, z);
 }
 
 /**
@@ -537,7 +550,8 @@ export function hus(k: MeshKit, c: ColliderKit, s: HouseSpec): void {
         for (const d of s.doors ?? []) {
             const through = !!s.inne && !!d.open;
             onLongWall(k, s, d.side, d.z, () => {
-                dor(k, 1.05, 1.9, 0.24, d.open, through);
+                // Med `uro` er dørbladet en egen del som går opp og igjen (uro.ts): huset får bare åpningen.
+                dor(k, 1.05, 1.9, 0.24, d.open || d.uro, through);
                 if (through) {
                     dorbladInne(k, c);
                     terskel(c, 1.05);

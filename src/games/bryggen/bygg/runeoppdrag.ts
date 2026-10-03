@@ -15,6 +15,7 @@ Object.assign(PERSONER, {
     tora: { navn: 'Tora', tittel: 'kona til Arnfinn' },
     arnfinn: { navn: 'Arnfinn', tittel: 'skomakersvenn' },
     jonspresten: { navn: 'Herr Sigurd', tittel: 'prest i Jonskirken' },
+    aasa: { navn: 'Åsa', tittel: 'vever' },
 });
 Object.assign(TITTEL, { gammelkone: 'Gammel kone', husmann: 'Husmann', husfrue: 'Kone', gutt: 'Gutt', jente: 'Jente', fyllik: 'Svenn' });
 Object.assign(BESTEMT, { gammelkone: 'den gamle kona', husmann: 'husmannen', husfrue: 'kona', gutt: 'gutten', jente: 'jenta', fyllik: 'svennen' });
@@ -56,6 +57,36 @@ SAMTALER.jonspresten = {
         hvem: 'Dette vet vi',
         vet: true,
         tekst: 'Jonsklosteret var et kloster for augustinere på Strandsiden. Det ble grunnlagt før 1180. På 1300-tallet hadde det store pengeproblemer, og rundt år 1400 sto det trolig nesten tomt. Kirka ble brukt i over hundre år til. Hvordan kirka og klosteret så ut, og hvem som var prest der, vet vi ikke.',
+    },
+};
+
+// Åsa i stua til husmannen på Stranden (heim.ts) vever vadmel på oppstadveven. «Dette vet vi»: [V] SNL
+// «oppstadvev» (oppreist vev, to sidestolper og én tøybom, renningen holdes stram av kljåsteiner, brukt til
+// klær, veggtepper og åklær; flatvevstolen tok gradvis over i Norden inn mot middelalderen; brukt i dag i
+// Fitjar og Manndalen). [U] at hun ville hatt oppstadvev i 1420-årene. Åsa og det hun sier er [S].
+SAMTALER.aasa = {
+    start: {
+        tekst: 'Kom inn, men ikke rør veven. Jeg har holdt på i tre uker med dette stykket.',
+        gest: 'vift',
+        valg: [
+            { tekst: 'Hva er steinene som henger nederst?', til: 'stein' },
+            { tekst: 'Hva skal du med tøyet?', til: 'toy' },
+        ],
+    },
+    stein: {
+        tekst: 'Det er kljåsteiner. De henger i trådene og holder dem stramme, så jeg kan slå tøyet tett. Uten dem blir det bare floker.',
+        gest: 'peke',
+        til: 'vet',
+    },
+    toy: {
+        tekst: 'Klær til ungene til vinteren. Det som blir igjen, bytter jeg mot korn på torget.',
+        gest: 'skuldre',
+        til: 'vet',
+    },
+    vet: {
+        hvem: 'Dette vet vi',
+        vet: true,
+        tekst: 'En oppstadvev står oppreist. Den har to tykke stolper på sidene og en bom øverst. De loddrette trådene, renningen, henger fra bommen og holdes stramme av steiner som kalles kljåsteiner. Slike vever ble brukt til å veve klær, veggtepper og tepper til senga. I Norden tok en annen vev, flatvevstolen, gradvis over. Men på noen steder i Norge, som Fitjar og Manndalen, vever folk på oppstadvev ennå i dag. Om folk på Stranden vevde slik i 1420-årene, vet vi ikke sikkert.',
     },
 };
 

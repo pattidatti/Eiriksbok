@@ -28,7 +28,13 @@ import type { CellDef, Rom, Sted } from '../motor/streaming';
 import { WATER_Y } from '../motor/boat';
 import { glemDyreSoner, meldDyreSoner } from '../motor/dyr';
 import { COLD, DARK, T, WARM, kai, toGroup, tonne } from './gard';
-import { hus, husLod, rng, type HouseSpec } from './moduler';
+import { eaveY, gluggRamme, hus, husLod, langveggRamme, riseOf, rng, type HouseSpec } from './moduler';
+import { GOLV_Y, romIHus } from './inne';
+import { dorblad, gluggLuke, naust, stue, vugge } from './heim';
+import { Uro } from './uro';
+import { Ild } from '../motor/ild';
+import { bakPortaler, Portaler } from '../motor/portal';
+import { lagFaeringSkrog } from '../motor/faering-modell';
 import { bod, bronn, slede, spor } from './torg';
 import { apning, gesims, LIST, STEIN, TAK, paFlate } from './stein';
 import { lagDagsfolk, type Dagsfigur, type FasePlass, type Vei } from './dagsplan';
@@ -72,17 +78,19 @@ interface HusPlan {
     tone: [number, number, number];
     naust?: boolean;
     forfall?: boolean;
+    /** Man kan gå inn (heim.ts): stua til husmannen, og det ene naustet. */
+    inne?: boolean;
 }
 
 const HUS: HusPlan[] = [
-    { u: -26.5, v: 16, w: 5.8, l: 8, side: -1, floors: [2.6], roof: 'torv', tone: WARM },
+    { u: -26.5, v: 16, w: 5.8, l: 8, side: -1, floors: [2.6], roof: 'torv', tone: WARM, inne: true },
     { u: -18.5, v: 16, w: 5.6, l: 7.5, side: -1, floors: [2.5], roof: 'torv', tone: DARK },
     { u: 21, v: 16, w: 6.2, l: 8.5, side: 1, floors: [2.6, 2.2], roof: 'torv', tone: COLD },
     { u: 28.6, v: 16, w: 5.2, l: 7.4, side: 1, floors: [2.5], roof: 'bordtak', tone: WARM },
     // Klosterhuset: forfallent, gluggene står åpne og mørke [V «mer eller mindre øde»; S utseendet].
     { u: 12, v: 17, w: 5.5, l: 11, side: -1, floors: [2.8, 2.3], roof: 'torv', tone: DARK, forfall: true },
     // Naustene ved sjøen.
-    { u: -27, v: 3.4, w: 5.6, l: 7.4, side: 1, floors: [2.2], roof: 'torv', tone: DARK, naust: true },
+    { u: -27, v: 3.4, w: 5.6, l: 7.4, side: 1, floors: [2.2], roof: 'torv', tone: DARK, naust: true, inne: true },
     { u: -20.5, v: 3.6, w: 5.2, l: 6.8, side: -1, floors: [2.0], roof: 'torv', tone: WARM, naust: true },
 ];
 
@@ -129,22 +137,45 @@ export function strandlivCelle(mats: Materials): CellDef {
             spor(k, X_S + 1, SZ - 10, SZ - 4, 0.8, 3);
 
             // ── Husene ──
+            // Stua og naustet man kan gå inn i (heim.ts), og dørene og gluggelukene som går opp og igjen (uro.ts).
+            const uro = new Uro(mats, 'stranden-liv:uro');
+            const inne: THREE.Group[] = [];
+            const ilder: Ild[] = [];
+            const ild: THREE.Vector3[] = [];
+            const inneFolk: FasePlass[] = [];
+            /** Føttene til dem som kan gå gjennom en dør (gutten og de som går), oppdatert i `tick`. */
+            const fotter: THREE.Vector3[] = [];
+            const ri = rng(1416);
+            const royk: THREE.Vector3[] = [];
+            // Færingen i naustet er nytjæret (som den på Strandgaten): egne materialer som cella kaster.
+            const tjaere = new THREE.MeshStandardMaterial({ map: mats.get('raatre').map, color: 0x6a5444, roughness: 0.55 });
+            const tjaereInn = tjaere.clone();
+            tjaereInn.side = THREE.BackSide;
+            tjaereInn.color.multiplyScalar(0.6);
             HUS.forEach((h) => {
+                // Samme rekkefølge på trekningene som før (takvinkel, tone, gluggene), så husene står likt.
+                const pitch = h.naust ? 0.95 : 0.8 + r() * 0.1;
+                const tint = T(h.forfall ? 0.8 : 0.84 + r() * 0.16, h.tone);
+                const gl = h.naust ? [] : h.forfall
+                    ? [{ side: 0, at: -1.2, floor: 0, open: true }, { side: 0, at: 1.3, floor: 1, open: true }, { side: (-h.side) as -1 | 1, at: 4, floor: 0, open: true }, { side: (-h.side) as -1 | 1, at: 7.5, floor: 1, open: true }]
+                    : [{ side: 0, at: h.w * 0.18, floor: 0, open: r() < 0.6 }, { side: (-h.side) as -1 | 1, at: h.l * 0.55, floor: 0, open: r() < 0.5 }];
                 const spec: HouseSpec = {
-                    w: h.w, l: h.l, floors: h.floors, roof: h.roof, pitch: h.naust ? 0.95 : 0.8 + r() * 0.1,
-                    tint: T(h.forfall ? 0.8 : 0.84 + r() * 0.16, h.tone), cornersFront: !h.naust, cornersBack: true, hodeSeg: 5,
-                    doors: [{ side: h.side, z: h.forfall ? 2.2 : 1.3 }],
-                    glugger: h.naust ? [] : h.forfall
-                        ? [{ side: 0, at: -1.2, floor: 0, open: true }, { side: 0, at: 1.3, floor: 1, open: true }, { side: (-h.side) as -1 | 1, at: 4, floor: 0, open: true }, { side: (-h.side) as -1 | 1, at: 7.5, floor: 1, open: true }]
-                        : [{ side: 0, at: h.w * 0.18, floor: 0, open: r() < 0.6 }, { side: (-h.side) as -1 | 1, at: h.l * 0.55, floor: 0, open: r() < 0.5 }],
+                    w: h.w, l: h.l, floors: h.floors, roof: h.roof, pitch, tint, cornersFront: !h.naust, cornersBack: true, hodeSeg: 5,
+                    // Vanlige hus: døra er et eget blad som går opp når noen kommer. Stua står åpen.
+                    doors: h.naust ? [] : [{ side: h.side, z: h.forfall ? 2.2 : 1.3, open: h.inne, uro: !h.inne }],
+                    // Gluggelukene åpnes om morgenen og lukkes om natta (ikke i det forfalne klosterhuset).
+                    glugger: gl.map((g) => (h.forfall ? g : { ...g, open: false, uro: true })) as HouseSpec['glugger'],
+                    facade: h.naust && h.inne,
+                    inne: h.inne ? (h.naust ? {} : { ljore: { z: h.l * 0.55, len: 1.2, down: 0.9 } }) : undefined,
                 };
                 const m = new THREE.Matrix4().makeRotationY(Math.PI).setPosition(X_S + h.u, 0, SZ - h.v);
                 k.matrix = m.clone();
                 c.matrix = m.clone();
                 lod.matrix = m.clone();
+                const a0 = k.aapninger.length;
                 hus(k, c, spec);
                 husLod(lod, spec, (key) => mats.lodColor(key));
-                if (h.naust) {
+                if (h.naust && !h.inne) {
                     // Den store porten i gavlen mot sjøen: mørk, med to dørblad som står på gløtt [S].
                     const pw = h.w * 0.62;
                     k.quad('laft', V(pw / 2, 0, -0.04), V(-pw, 0, 0), V(0, 2.0, 0), [0, 0], [0.1, 0.1]);
@@ -153,6 +184,51 @@ export function strandlivCelle(mats: Materials): CellDef {
                 k.matrix = new THREE.Matrix4();
                 c.matrix = new THREE.Matrix4();
                 lod.matrix = new THREE.Matrix4();
+                const yaw = Math.PI;
+                // Dørbladet og lukene som egne deler.
+                for (const d of spec.doors ?? []) {
+                    if (!d.uro) continue;
+                    const f = m.clone().multiply(langveggRamme(spec, d.side, d.z));
+                    const dorUte = V(0, 0, -0.9).applyMatrix4(f);
+                    const fy = yaw + (d.side > 0 ? -Math.PI / 2 : Math.PI / 2);
+                    uro.luke(V(-1.05 / 2, 0.24, 0).applyMatrix4(f), fy, (kk) => kk.withTint(spec.tint, () => dorblad(kk)), 1.5,
+                        () => fotter.some((p) => Math.abs(p.y - dorUte.y) < 1.5 && Math.hypot(p.x - dorUte.x, p.z - dorUte.z) < 1.7));
+                }
+                for (const g of spec.glugger ?? []) {
+                    if (!g.uro) continue;
+                    const gr = gluggRamme(spec, g);
+                    const f = m.clone().multiply(gr.m);
+                    const fy = yaw + (g.side === 0 ? 0 : g.side > 0 ? -Math.PI / 2 : Math.PI / 2);
+                    uro.luke(V(-gr.w / 2, gr.y0, 0).applyMatrix4(f), fy, (kk) => kk.withTint(spec.tint, () => gluggLuke(kk, gr.w, gr.h)), 2.75, ['morgen', 'dag', 'kveld']);
+                }
+                if (!h.inne) return;
+                // Innredningen tegnes bare der den kan synes gjennom døra, porten og gluggene (portal.ts).
+                const ki = new MeshKit();
+                ki.matrix = m.clone();
+                const ci = new ColliderKit();
+                ci.matrix = m.clone();
+                const portaler = new Portaler(k.aapninger.slice(a0), romIHus(spec, 1).map((rr) => rr.box.clone().applyMatrix4(m)));
+                const info = h.naust ? naust(ki, ci, spec, ri) : stue(ki, ci, spec, ri);
+                const g = bakPortaler(toGroup(ki, mats, h.naust ? 'naust:inne' : 'stue:inne', false), portaler);
+                rom.push({ box: info.rom.box.clone().applyMatrix4(m), demp: info.rom.demp });
+                if ('baat' in info) {
+                    // Færingen på stokkene.
+                    const baat = lagFaeringSkrog(tjaere, tjaereInn);
+                    baat.position.copy(info.baat).applyMatrix4(m).setY(GOLV_Y + 0.36);
+                    baat.rotation.y = yaw;
+                    g.add(baat);
+                } else {
+                    for (const p of info.folk) inneFolk.push({ ...p, pos: p.pos.clone().applyMatrix4(m), yaw: p.yaw + yaw, bak: portaler, naar: ['morgen', 'dag', 'kveld', 'natt'] });
+                    const fl = new Ild({ smokeTop: eaveY(spec) + riseOf(spec) - 0.3 - info.ild.y, spread: 0.4 });
+                    fl.group.position.copy(info.ild).applyMatrix4(m);
+                    ilder.push(fl);
+                    g.add(fl.group);
+                    ild.push(fl.group.position.clone().setY(fl.group.position.y + 0.5));
+                    royk.push(V(X_S + h.u, eaveY(spec) + riseOf(spec), SZ - h.v - spec.l * 0.55));
+                    uro.gynge(info.vugge.clone().applyMatrix4(m), yaw, vugge, 0.1, 2.0);
+                }
+                c.specs.push(...ci.specs);
+                inne.push(g);
             });
             forfall(k, c);
 
@@ -185,7 +261,7 @@ export function strandlivCelle(mats: Materials): CellDef {
 
             // ── Folkene ──
             const { plasser, figurer } = strandFolk();
-            const folk = await lagDagsfolk(plasser, figurer, vei, mats, 1180);
+            const folk = await lagDagsfolk([...plasser, ...inneFolk], figurer, vei, mats, 1180);
 
             const near = toGroup(k, mats, 'stranden-liv');
             const kg = new THREE.Group();
@@ -197,7 +273,7 @@ export function strandlivCelle(mats: Materials): CellDef {
                 mesh.name = `jonskirken:${key}`;
                 kg.add(mesh);
             }
-            near.add(kg, folk.group);
+            near.add(kg, folk.group, uro.group, ...inne);
             const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
             mid.name = 'stranden-liv:lod';
 
@@ -215,9 +291,20 @@ export function strandlivCelle(mats: Materials): CellDef {
             return {
                 near, mid, colliders: [...c.specs, ...folk.colliders], rom, drypp: k.skjegg, steder,
                 gaaende: folk.gaaende, snakkbare: folk.snakkbare,
-                tick: folk.tick,
+                inne, ild, royk,
+                tick: (t, dt, ctx) => {
+                    fotter.length = 0;
+                    fotter.push(ctx.spiller, ...folk.gaaende);
+                    ilder.forEach((f) => f.update(t, dt));
+                    folk.tick(t, dt, ctx);
+                    uro.tick(t, dt, ctx.kamera);
+                },
                 dispose: () => {
                     folk.dispose();
+                    uro.dispose();
+                    ilder.forEach((f) => f.dispose());
+                    tjaere.dispose();
+                    tjaereInn.dispose();
                     glemDyreSoner('stranden-liv');
                     glemPinner('stranden-liv');
                 },

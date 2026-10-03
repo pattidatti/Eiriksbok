@@ -161,7 +161,7 @@ export class Liv {
 
 /** Holdningen til draktene som skiller seg ut. De andre trekker sin egen (nysgjerrig, urolig). */
 export const HOLDNING: Partial<Record<string, Holdning>> = {
-    gammelkone: { rygg: 0.32, hode: 0.12, skuldre: 0.3, urolig: 0.3 },
+    gammelkone: { rygg: 0.24, hode: 0.1, skuldre: 0.25, urolig: 0.3 },
     fyllik: { rygg: 0.2, hode: 0.38, skuldre: 0.45, nysgjerrig: 0.15, urolig: 0.15 },
     prest: { rygg: -0.04, hode: 0.05, nysgjerrig: 0.6, urolig: 0.25 },
     hovedsmann: { rygg: -0.06, hode: -0.04, nysgjerrig: 0.5, urolig: 0.35 },

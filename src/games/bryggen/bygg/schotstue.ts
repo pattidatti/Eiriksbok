@@ -92,7 +92,7 @@ function folk(s: HouseSpec, cz: number): Plass[] {
  * Ildstedet: en lav ramme av stein med aske og ved i, midt på golvet. Kollideren er høyere enn
  * steinene, så gutten ikke går rett i varmen.
  */
-function ildsted(k: MeshKit, c: ColliderKit, cz: number, r: () => number): void {
+export function ildsted(k: MeshKit, c: ColliderKit, cz: number, r: () => number): void {
     const w = 1.5;
     const l = 1.9;
     const y = GOLV_Y;
@@ -131,7 +131,7 @@ function ildsted(k: MeshKit, c: ColliderKit, cz: number, r: () => number): void 
  * Gryta henger i en kjetting fra en stang over ilden. Stanga ligger på to bjelker på tvers av
  * rommet, festet i langveggene.
  */
-function gryte(k: MeshKit, c: ColliderKit, cz: number, s: HouseSpec): void {
+export function gryte(k: MeshKit, c: ColliderKit, cz: number, s: HouseSpec): void {
     const yb = eaveY(s) - 0.15;
     const xIn = s.w / 2 - WALL_T;
     k.withTint({ top: 0.32, bottom: 0.32, hue: [0.95, 0.9, 0.85] }, () => {
@@ -155,7 +155,7 @@ function gryte(k: MeshKit, c: ColliderKit, cz: number, s: HouseSpec): void {
 }
 
 /** Langbenk: tykke planker på korte bein, langs veggen fra `z0` til `z1`. */
-function benk(k: MeshKit, c: ColliderKit, x: number, z0: number, z1: number): void {
+export function benk(k: MeshKit, c: ColliderKit, x: number, z0: number, z1: number): void {
     const len = z1 - z0;
     const zm = (z0 + z1) / 2;
     const y = GOLV_Y + BENK_H;
@@ -205,7 +205,7 @@ function bord(k: MeshKit, c: ColliderKit, x: number, z0: number, z1: number, r: 
 }
 
 /** Ved stablet i hjørnet: kløyvde kubber med endeveden ut. */
-function vedstabel(k: MeshKit, c: ColliderKit, x: number, z: number, r: () => number): void {
+export function vedstabel(k: MeshKit, c: ColliderKit, x: number, z: number, r: () => number): void {
     const len = 0.5;
     for (let row = 0; row < 4; row++) {
         for (let i = 0; i < 6 - row; i++) {

@@ -499,7 +499,9 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         takter.push(new Takt(a, p.bak));
         const st = new Staaende(a, p, k, sitter);
         staaende.push(st);
-        const liv = new Liv(a, seed * 31 + staaende.length * 7.3, HOLDNING[p.figur]);
+        // Den som sitter, er allerede bøyd i sitteklippet: halv rygg-bøy, ellers ser hen ut til å ligge.
+        const hold = HOLDNING[p.figur];
+        const liv = new Liv(a, seed * 31 + staaende.length * 7.3, hold && sitter ? { ...hold, rygg: (hold.rygg ?? 0) * 0.4, hode: (hold.hode ?? 0) * 0.5 } : hold);
         liv.arbeid = ARBEID.has(p.rolle);
         livS.push(liv);
         snakkbare.push({
