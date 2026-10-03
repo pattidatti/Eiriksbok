@@ -269,6 +269,13 @@ Fraksjonene: **K** Kontoret, **B** Bergenhus/kongens menn, **N** norske borgere 
 | Dykke etter tapt last | Pust, mørke, finne og feste tauet | Sjøfart og risiko | K |
 | Jage tyver fra koggene | Jakt og kamp på dekk og rigg | Livet i havna | K |
 
+**Status 03.10.2026 (Kontoret):** fire av jobbene er bygget som én oppdragskjede i den første gården,
+«Kontorets lov» (`bygg/kontor-data.ts`): sortere etter kvalitet (bua), prute med en fisker (bytteforholdet
+fisk mot rug, §4.3), gjeldsbok (Sølves konto, nordfarergjelda) og heise med vinsjen i gavlen. Kjeden
+begynner og slutter med Morgensprache i schøtstua, der oldermannen og sekretæren leser de tre reglene med
+straff, og dømmer etter valget med gjeldsboka (§4.2; straffene for 1420-årene er [U]/[K]). «Laste koggen»
+og «veie på bismer» som egen jobb står igjen. Venter på eierens spilltest.
+
 ### 7.2 Nye forslag (8)
 
 | Aktivitet | Mekanikk | Læringsmål | Fraksjon |

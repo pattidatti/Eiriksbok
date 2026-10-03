@@ -9,6 +9,7 @@ import { Messe } from './Messe';
 import { Rottejakt } from './Rottejakt';
 import { Syrytme } from './Syrytme';
 import { Terning } from './Terning';
+import { Kontor } from './Kontor';
 
 export function Aktiviteter({ system }: { system: Record<string, unknown> }) {
     const rotter = system.rottejakt as RottejaktHud | null | undefined;
@@ -21,6 +22,7 @@ export function Aktiviteter({ system }: { system: Record<string, unknown> }) {
             {sy && <Syrytme h={sy} />}
             {messe && <Messe h={messe} />}
             {terning && <Terning h={terning} />}
+            <Kontor system={system} />
         </>
     );
 }

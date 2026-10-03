@@ -28,6 +28,8 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push((await import('./holmenvakt')).lagHolmenvakt(k));
     ut.push((await import('./brann')).lagBrann(k));
     ut.push((await import('./strandliv')).lagStrandliv(k)); // Stranden og Vågsbunnen: dagsplaner, dyr, runepinner
+    // Kontoret: oppdragskjeden «Kontorets lov» og mer liv i gården (kontoret.ts).
+    ut.push(...(await import('./kontoret')).lagKontoret(k));
     if (import.meta.env.DEV) ut.push(fotoSystem());
     return ut;
 }
