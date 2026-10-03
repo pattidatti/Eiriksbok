@@ -1,5 +1,5 @@
 {
-  "buildId": 122168987735816,
+  "buildId": 138378075372784,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2711,6 +2711,9 @@
     ],
     "oljealderen": [
       "content/historie/norge-i-moderne-tid/oljealderen.json"
+    ],
+    "riksretten-1884": [
+      "content/historie/norge-i-moderne-tid/riksretten-1884.json"
     ],
     "samiske-rettigheter": [
       "content/historie/norge-i-moderne-tid/samiske-rettigheter.json"
@@ -5744,6 +5747,7 @@
     "historie/norge-i-moderne-tid/koronapandemien": "content/historie/norge-i-moderne-tid/koronapandemien.json",
     "historie/norge-i-moderne-tid/nasjonale-minoriteter": "content/historie/norge-i-moderne-tid/nasjonale-minoriteter.json",
     "historie/norge-i-moderne-tid/oljealderen": "content/historie/norge-i-moderne-tid/oljealderen.json",
+    "historie/norge-i-moderne-tid/riksretten-1884": "content/historie/norge-i-moderne-tid/riksretten-1884.json",
     "historie/norge-i-moderne-tid/samiske-rettigheter": "content/historie/norge-i-moderne-tid/samiske-rettigheter.json",
     "historie/norge-i-moderne-tid/svalbard": "content/historie/norge-i-moderne-tid/svalbard.json",
     "historie/norge-i-moderne-tid/thranebevegelsen": "content/historie/norge-i-moderne-tid/thranebevegelsen.json",

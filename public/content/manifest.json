@@ -3427,6 +3427,24 @@
               "lastUpdated": "2026-07-30T23:58:56+02:00"
             },
             {
+              "id": "riksretten-1884",
+              "title": "Riksretten 1884: Da Stortinget tok makta",
+              "description": "Kongen sa nei fire ganger, og Stortinget svarte med å dømme hele regjeringen. Slik fikk Norge parlamentarismen.",
+              "image": "/images/placeholder.webp",
+              "year": "1872-1884",
+              "layout": "rich",
+              "tags": [
+                "historie",
+                "norge",
+                "norgeshistorie",
+                "demokrati",
+                "parlamentarisme",
+                "union",
+                "1800-tallet"
+              ],
+              "createdDate": "2026-10-03T00:00:00Z"
+            },
+            {
               "id": "unionsopplosningen-1905",
               "title": "Unionsoppløsningen 1905",
               "description": "Hvordan unionen med Sverige ble fredelig oppløst etter en spent sommer i 1905.",

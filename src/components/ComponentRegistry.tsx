@@ -120,6 +120,7 @@ const GreskGudeMatch = lazy(() => import('./content/interactive/GreskGudeMatch')
 const TestPaastanden = lazy(() => import('./content/interactive/TestPaastanden').then(m => ({ default: m.TestPaastanden })));
 const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansionMap').then(m => ({ default: m.RomanExpansionMap })));
 const Tiltakspakken = lazy(() => import('./content/interactive/Tiltakspakken').then(m => ({ default: m.Tiltakspakken })));
+const MaktDragkampen = lazy(() => import('./content/interactive/MaktDragkampen').then(m => ({ default: m.MaktDragkampen })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
 const Varslingskjeden = lazy(() => import('./content/interactive/Varslingskjeden').then(m => ({ default: m.Varslingskjeden })));
 const EisenhowersValg = lazy(() => import('./content/interactive/EisenhowersValg').then(m => ({ default: m.EisenhowersValg })));
@@ -635,6 +636,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KaizenVerksted,
     SuverenitetsSkala,
     Tiltakspakken,
+    MaktDragkampen,
     TrolleyProblem,
     Varslingskjeden,
     EisenhowersValg,
