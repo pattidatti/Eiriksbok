@@ -4,7 +4,7 @@ import { seeded, type Rng } from '../sim';
 import { RØDT_START, SELMER, type Farge, type HType, type Manus, type Passasjer } from './levels';
 import { TUNING } from './tuning';
 
-export type Årsak = 'gata' | 'hindring';
+export type Årsak = 'gata' | 'hindring' | 'velt';
 
 /** Venstre må ha over 60 % (69 av 114) før Odelstinget kan anklage. */
 export const ANKLAG_SETER = 69;
@@ -71,8 +71,11 @@ export type Ut =
               | 'smell'
               | 'bom'
               | 'ikkeAnklag'
-              | 'tomtBytte';
+              | 'tomtBytte'
+              | 'slipp'
+              | 'hardtFall';
       }
+    | { type: 'høyt'; bonus: number }
     | { type: 'anklag'; bonus: number }
     | { type: 'nesten'; hva: 'hindring' | 'gata' }
     | { type: 'rødsone' }
@@ -97,6 +100,14 @@ export interface Game {
     /** Spilt tid da eleven sist holdt inne (livgarden bærer bare en stol i bruk). */
     sistHold: number;
     sForrige: number;
+    /** Spilt tid da eleven sist slapp (for det perfekte slippet like før toppen). */
+    slippT: number;
+    /** Stolen er i et høyt slipp (over Stortinget) og har ennå ikke landet. */
+    høyt: boolean;
+    /** Høyeste punkt i dette svevet. */
+    toppY: number;
+    /** Høye slipp landet fint (for slutt-skjermen og loggen). */
+    høyeSlipp: number;
 
     // Hendene (løftet fra stripa)
     base: number;
@@ -185,6 +196,10 @@ export function newGame(seed: number): Game {
         hold: false,
         sistHold: 3,
         sForrige: 0,
+        slippT: -9,
+        høyt: false,
+        toppY: 0,
+        høyeSlipp: 0,
         base: H.vernHøyde,
         amp: H.vernAmp,
         rødt: RØDT_START,

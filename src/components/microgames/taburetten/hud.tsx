@@ -28,7 +28,7 @@ const kort: React.CSSProperties = {
     fontFamily: ANTIKVA,
 };
 
-/** Stripa: 114 små tresnitt-figurer, håndkolorert, med midtstreken ved 58. */
+/** Stripa: 114 små tresnitt-figurer, håndkolorert, med midtstreken ved 58 og 60 %-streken ved 69. */
 const Stripe = memo(function Stripe({ rødt }: { rødt: number }) {
     const figurer = useMemo(
         () =>
@@ -58,6 +58,17 @@ const Stripe = memo(function Stripe({ rødt }: { rødt: number }) {
         <svg viewBox="0 0 1140 38" style={{ width: '100%', height: 30, display: 'block' }}>
             {figurer}
             <line x1={575} x2={575} y1={0} y2={38} stroke={SVERTE} strokeWidth={4} />
+            {/* 60 %-grensen for Anklag! (69 av 114) */}
+            <line
+                x1={685}
+                x2={685}
+                y1={0}
+                y2={38}
+                stroke={FARGE.gull}
+                strokeWidth={5}
+                strokeDasharray="6 3"
+            />
+            <line x1={685} x2={685} y1={0} y2={38} stroke={SVERTE} strokeWidth={1.2} />
         </svg>
     );
 });
@@ -206,7 +217,8 @@ export function Hud({
                 >
                     <span style={{ color: FARGE.rød }}>{d.rødt} Venstre (rødt)</span>
                     <span style={{ fontSize: 14 }}>
-                        Stortinget - flertall: 58 · {flertall === 'rød' ? 'rødt' : 'blått'} har det
+                        Stortinget - flertall: 58 (svart strek) · Anklag!: 69 (gull strek) ·{' '}
+                        {flertall === 'rød' ? 'rødt' : 'blått'} har flertallet
                     </span>
                     <span style={{ color: FARGE.blå }}>{blått} Høyre (blått)</span>
                 </div>

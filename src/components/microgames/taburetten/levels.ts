@@ -39,13 +39,20 @@ export interface Brett {
  * Sverdrup i stolen (3). Etter dommen stiger presset: raskere, og til slutt høye hindringer.
  */
 export const BRETT: Brett[] = [
-    { navn: 'Selmers stol', år: '1880-1882', marsj: 5, hindringHver: 4, typer: ['lav'], ark: true },
+    {
+        navn: 'Selmers stol',
+        år: '1872-1882',
+        marsj: 5,
+        hindringHver: 2.8,
+        typer: ['lav', 'tråd'],
+        ark: true,
+    },
     {
         navn: 'Odelstinget',
         år: '1882-1883',
         marsj: 5.5,
-        hindringHver: 6,
-        typer: ['kjerre'],
+        hindringHver: 3.5,
+        typer: ['kjerre', 'tråd'],
         ark: true,
     },
     {
@@ -100,6 +107,7 @@ export const MANUS: Manus[] = [
  */
 export const ETTER_ANKLAG: Manus[] = [
     { t: 3, type: 'banner', tekst: 'Dommen i riksretten', rødt: 83, dom: true },
+    { t: 4.2, type: 'lapp', nøkkel: 'april' },
     {
         t: 11,
         type: 'banner',
@@ -115,15 +123,16 @@ export const FRI_FØRSTE = [false, true];
 
 /** Datoen i masthodet (kalenderen), etter spilt tid fram til anklagen. */
 export const KALENDER: { fra: number; tekst: string }[] = [
-    { fra: 0, tekst: 'Våren 1882' },
-    { fra: 22, tekst: 'Høsten 1882' },
+    { fra: 0, tekst: '1872: Kongens nei' },
+    { fra: 7, tekst: '1880' },
+    { fra: 22, tekst: 'Valget 1882' },
 ];
 
 /** Kalenderen etter anklagen (sekunder etter anklagen). Selmer sitter aldri etter 27.2.1884. */
 export const KALENDER_ETTER: { fra: number; tekst: string }[] = [
     { fra: 0, tekst: '23. april 1883' },
     { fra: 1.5, tekst: 'Februar 1884' },
-    { fra: 3, tekst: '3. april 1884' },
-    { fra: 7, tekst: 'Juni 1884' },
+    { fra: 4, tekst: 'April 1884' },
+    { fra: 8, tekst: 'Juni 1884' },
     { fra: 11, tekst: '26. juni 1884' },
 ];

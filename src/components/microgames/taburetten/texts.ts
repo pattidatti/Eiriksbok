@@ -1,12 +1,12 @@
 // Tekstene i Taburetten: regler, lapper, lærings-øyeblikk, tips ved tap, ranger og «Dette skjedde».
 
-import type { Årsak } from './state';
+import type { Game, Årsak } from './state';
 
 export const MÅL = 'Hendene bærer bare den regjeringen flertallet vil ha.';
 
 /** Tre korte linjer: verbet, anklagen og byttet. */
 export const REGLER = [
-    'Hold inne ned bølgene, slipp på toppen.',
+    'Hold inne ned bølgene, slipp like før toppen - høyt over Stortinget gir mest.',
     'Anklag! (A) virker først når Venstre har over 60 prosent.',
     'Bytt (mellomrom) bare når kandidaten har flertallet.',
 ];
@@ -18,7 +18,7 @@ export const LAPP = {
     rød: 'Over 60 prosent! Trykk A: Anklag!',
     bom: 'Gapene vokser! Trykk A før du synker',
     ikkeAnklag: 'For tidlig! Venstre trenger over 60 prosent',
-    tomtBytte: 'Ingen kandidat å bytte med - x1',
+    tomtBytte: 'Ingen kandidat ennå - vent på banneret',
     gap: 'Uten vern drar flertallet deg ned',
     valg: 'Venstre fikk over 60 prosent',
     schweigaard: 'Kongen setter inn Schweigaard - uten flertall',
@@ -32,7 +32,7 @@ export const LAPP = {
 export const ØYEBLIKK = {
     anklag: {
         tittel: 'Odelstinget kan anklage',
-        tekst: 'Venstre har over 60 prosent. Trykk A for å anklage regjeringen. Venter du, blir bonusen større - men gapene vokser.',
+        tekst: 'Venstre har over 60 prosent. Trykk A for å anklage regjeringen. Venter du, vokser gapene mellom kongens gullfelt.',
     },
     dom: {
         tittel: 'Kongens vern er borte',
@@ -46,13 +46,14 @@ export const ØYEBLIKK = {
 
 export const TIPS: Record<Årsak, string> = {
     gata: 'Regjeringen hadde ikke flertallet bak seg. Etter 1884 kan bare den flertallet vil ha, bli sittende. Bytt når banneret gir flertallets mann.',
+    velt: 'Du slapp høyt, men landet på oppsiden av bølgen, og stolen veltet. Hold inne i lufta for å dykke ned på nedsiden. Flertallet bærer deg - du trenger ikke fly høyest hver gang.',
     hindring:
         'En regjering uten flertall flyr lavt og må dukke for alt. Med flertallet under deg kommer du over. Slipp på toppen av bølgen for å hoppe.',
 };
 export const TIPS_VERN =
     'Kongens vern bar Selmer bare på gullet. Mellom gullfeltene drar Venstre-flertallet stolen ned - få fart og hopp over gapene.';
-export const TIPS_STILLE =
-    'Stolen lå stille, og livgarden slapp. Hold inne ned bølgene og slipp på toppen. Venstre hadde flertallet - bare kongens vern holdt Selmer oppe.';
+export const TIPS_HØYT =
+    'Du fløy høyt og traff noe. Et høyt slipp gir mye, men over bølgene henger telegraftrådene. Flertallet bærer deg - du trenger ikke fly høyest hele tiden.';
 export const TIPS_ANKLAG =
     'Odelstinget måtte anklage regjeringen før riksretten kunne dømme den. Trykk A (Anklag!) når stripa er over 60 prosent rød - venter du for lenge, vokser gapene.';
 export const TIPS_APRIL =
@@ -93,3 +94,15 @@ export const SAMLEKORT: { navn: string; fakta: string }[] = [
     { navn: 'Schweigaard', fakta: 'Aprilministeriet: under to måneder i 1884.' },
     { navn: 'Sverdrup', fakta: 'Første regjering med flertallet bak seg, 1884.' },
 ];
+
+/** Tipset på slutt-skjermen: hva som felte eleven, og hvorfor (faglig). */
+export function velgTips(g: Game, vunnet: boolean): string {
+    if (g.fri) return TIPS[g.årsak ?? 'gata'];
+    if (vunnet || !g.årsak) return SEIER_TEKST;
+    if (g.stol.navn === 'Schweigaard') return TIPS_APRIL;
+    if (g.vern && !g.anklaget && g.rødt >= 69) return TIPS_ANKLAG;
+    if (g.årsak === 'hindring' && g.toppY > 5) return TIPS_HØYT;
+    if (g.årsak === 'gata' && g.vern) return TIPS_VERN;
+    if (g.årsak === 'hindring' && !g.vern && g.stol.farge === 'blå') return TIPS.gata;
+    return TIPS[g.årsak];
+}

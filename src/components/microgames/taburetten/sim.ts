@@ -10,6 +10,7 @@ export const GAME_ID = 'taburetten';
 const ÅRSAK = {
     gata: 'stolen landet i gata uten flertall',
     hindring: 'smell i en hindring',
+    velt: 'stolen veltet etter et høyt slipp',
     tom: 'tom stol (regjeringskrise)',
 } as const;
 

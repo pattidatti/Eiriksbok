@@ -19,6 +19,16 @@ export const TUNING = {
         landHelning: 0.12,
         /** «Fin landing!»: ekstra fart. */
         finBoost: 1.3,
+        /** Perfekt slipp: sluppet så kort tid (s) før toppen, i minst marsjfart + slippFart. */
+        slippVindu: 0.2,
+        slippFart: -1,
+        /** Det perfekte slippet kaster så mange ganger høyere (over Stortinget). */
+        slippKast: 1.8,
+        /** Kastet i det høye slippet holdes mellom disse (m/s): toppen havner over Stortingets tak. */
+        slippMin: 5,
+        slippMaks: 12,
+        /** Hard landing etter et høyt slipp: farten faller til minFart og stolen dumper så mye (m). */
+        hardtFall: 1.4,
         /** Klumsete dunk på oppsiden: farten ganges med dette. */
         dunkFaktor: 0.72,
         /** Høyden på stolen med statsråd (kollisjon mot tråder). */
@@ -58,8 +68,6 @@ export const TUNING = {
         gapK: 0.42,
         /** Hvor fort mengden drar stolen ned mellom øyene (m/s). */
         synk: 0.4,
-        /** Livgarden bærer bare når eleven har holdt inne de siste så mange sekundene. */
-        rytme: 3,
         /** Bølgehøyden mellom øyene (de røde hendene vil ikke bære). */
         amp: 0.6,
         /** Så langt foran stolen øyene legges ut (m). */
@@ -99,8 +107,6 @@ export const TUNING = {
         seierSek: 8,
         /** Perfekt bytte kaster stolen opp. */
         perfektKast: 6,
-        /** Bytt uten kandidat på et banner: stolen vipper så mye (m), og x1. */
-        tomtBytte: 0.3,
     },
 
     poeng: {
@@ -108,6 +114,9 @@ export const TUNING = {
         finLanding: 15,
         avisark: 60,
         perfekt: 500,
+        /** Høyt slipp over Stortinget som lander fint (ganget med multiplikatoren). */
+        høyt: 250,
+        multHøyt: 2,
         /** Anklagen (fin landing på de røde hendene), ganget med multiplikatoren. */
         anklag: 150,
         seier: 5000,

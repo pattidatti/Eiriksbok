@@ -28,16 +28,18 @@ Komponenten: `../Taburetten3D.tsx` (meny, løkke, input, tekst, lyd, lagring, us
 ## Fagregelen (én regel)
 
 `crowd.ts` → `løft()`: fargen i stolen med flertall i stripa = høye bølger; blå før dommen = livgarden
-bærer bare på øyene og bare når eleven rir (`rir`: holdt inne siste `øy.rytme` s), imellom drar
-flertallet stolen ned; ellers jevn synking (`synk.fart`) til gata. Uten flertall står multiplikatoren på x1.
-Tre grep (`game.ts`): `hold`, `anklag` (A, virker bare med 69+ røde, bonus vokser per rød sone man
-venter mens gapene vokser (`voksGap`), for tidlig = stolen dumper) og `bytt` (mellomrom; uten kandidat =
-stolen vipper). Dommen kommer 3 s etter anklagen: Selmer kastes av, Schweigaard settes inn av seg selv.
+bærer på øyene (gullet), imellom drar flertallet stolen ned; ellers jevn synking (`synk.fart`) til gata.
+Uten flertall står multiplikatoren på x1.
+Tre regler eleven holder i hodet (`game.ts`): `hold` (med det perfekte slippet: sluppet `fysikk.slippVindu`
+s før toppen = høyt kast over Stortinget; fin landing = `poeng.høyt`, ellers hardt fall: fart borte, x1,
+`fysikk.hardtFall` m ned), `anklag` (A, virker bare med 69+ røde; bonusen vokser per rød sone man venter
+mens gapene vokser (`voksGap`); for tidlig = stolen dumper) og `bytt` (mellomrom; uten kandidat skjer
+ingenting). Dommen kommer 3 s etter anklagen: Selmer kastes av, Schweigaard settes inn av seg selv.
 
 ## Knapper i tuning.ts
 
 - Schweigaard etter dommen: `synk.fart` (når gata like etter Sverdrup-vinduet). Brett 2 har ingen hindringer.
-- Passiv taper ved ~10 s: `øy.rytme`, `øy.synk`. Push-your-luck: `anklag.bomGap`, `anklag.bomMaks`, `poeng.anklag`.
+- Det høye slippet: `fysikk.slippVindu`, `slippKast`, `slippMin`/`slippMaks`, `hardtFall`, `poeng.høyt`. Passiv taper: `øy.synk`, gapene. Push-your-luck: `anklag.bomGap`, `anklag.bomMaks`, `poeng.anklag`.
 - Øyene: `øy.gapStart`, `øy.gapK`, `øy.synk`. Hopphøyde: `fysikk.kast`, `hender.*Amp`.
 - Multiplikator: `poeng.multFin`, `multPerfekt`, `multMaks`. Trappen: `poeng.seier`, `poeng.perfekt`.
 - Frispill: `fri.*` og `synk.fri*`.
@@ -48,7 +50,8 @@ stolen vipper). Dommen kommer 3 s etter anklagen: Selmer kastes av, Schweigaard 
 
 ## Fallgruver
 
-- Anklag er en egen knapp (A); kongens-mann og grådig (venter 3 soner) dør i de voksende gapene.
+- Anklag er en egen knapp (A); kongens-mann dør i de voksende gapene. Grådig jager det høye slippet og velter eller smeller i tråder.
+- `Taburetten3D.tsx` står på 800 linjer (taket i selvspillet): nye hendelser trenger at noe flyttes ut først.
 - Kampanjen slutter med seier (`mode = 'won'`); «Fly videre» kaller `fortsett`. Simuleringen ser bare kampanjen.
 - Robotenes `utsikt` må bruke samme delsteg som `update`.
 - Høye hindringer før dommen står bare midt på en øy (`hindring.øyMargin`), ellers blir de umulige.

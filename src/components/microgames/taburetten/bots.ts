@@ -37,8 +37,17 @@ function utsikt(g: Game, først: boolean, horisont: number): number {
     const tatt = new Set<number>();
     let v = 0;
     for (let t = 0; t < horisont; t += h) {
+        const varHold = k.hold;
         k.hold = t < 0.2 ? først : vane(k);
+        k.t += h;
+        if (varHold && !k.hold) k.slippT = k.t;
+        const varHøyt = k.høyt;
         const l = stegStol(k, h, marsj(g));
+        if (l && varHøyt) {
+            k.høyt = false;
+            if (l.kvalitet === 'dunk') return v - 100 + t;
+            v += l.kvalitet === 'fin' ? 3 : -3;
+        }
         for (const o of g.hindringer) {
             if (Math.abs(k.x - o.x) > halv) continue;
             if (o.type === 'tråd' ? k.y + TUNING.fysikk.stolHøyde > o.bunn - m : k.y < o.topp + m)
@@ -84,6 +93,15 @@ function vurderAnklag(g: Game, vent: number) {
     if (kanAnklage(g) && g.bom >= vent) anklag(g);
 }
 
+/** Grådig vane: tung ned bølgen og videre opp, slipper først rett før toppen. */
+function høytSlipp(g: Game): boolean {
+    if (g.luft) return false;
+    const L = TUNING.hender.bølgelengde;
+    const tilTopp = (((L / 4 - g.x) % L) + L) % L;
+    if (tilTopp < g.vx * 0.12) return false;
+    return true;
+}
+
 /** Bare hvert n-te tick: en treg elev. */
 function treg(n: number, grep: Grep): Grep {
     let i = 0;
@@ -123,11 +141,13 @@ export const BOTS: Record<string, BotDef> = {
     grådig: {
         forventer: 'taper',
         beskrivelse:
-            'Surfer godt og bytter riktig, men venter for lenge med Anklag! for å få større bonus, mens gapene vokser.',
+            'Anklager og bytter riktig, men jager det høye slippet hver gang: lener helt opp mot toppen og slipper i siste liten, uansett hva som henger over gata.',
         make: () => (g) => {
-            vurderAnklag(g, 3);
+            vurderAnklag(g, 1);
             vurderBytte(g, 0);
-            surf(g, 2.4);
+            const fri = !g.hindringer.some((o) => !o.forbi && o.x > g.x && o.x < g.x + 4);
+            if (fri) hold(g, høytSlipp(g));
+            else surf(g, 2.4);
         },
     },
     knappemoser: {

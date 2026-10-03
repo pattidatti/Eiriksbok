@@ -84,6 +84,7 @@ export function anklag(g: Game) {
 
 /** Hold inne = len deg fram (tung). Slipp = lett. */
 export function hold(g: Game, på: boolean) {
+    if (g.hold && !på) g.slippT = g.t;
     g.hold = på;
     if (på) g.sistHold = g.t;
 }
@@ -108,12 +109,8 @@ export function kanBytte(g: Game): boolean {
 export function bytt(g: Game) {
     const b = aktivtBanner(g);
     if (!b || !b.passasjer) {
-        // Bytt uten kandidat: stolen vipper, og multiplikatoren faller til x1.
-        if (g.mode === 'play') {
-            g.base = Math.max(0, g.base - TUNING.bytte.tomtBytte);
-            g.mult = 1;
-            g.ut.push({ type: 'tomtBytte' });
-        }
+        // Bytt uten kandidat: ingenting skjer (ingen straff), bare en kort beskjed.
+        if (g.mode === 'play') g.ut.push({ type: 'tomtBytte' });
         return;
     }
     const ny = b.passasjer;
@@ -324,10 +321,32 @@ export function update(g: Game, dt: number) {
     const n = TUNING.fysikk.delsteg;
     const x0 = g.x;
     for (let i = 0; i < n && g.mode === 'play'; i++) {
+        const varLuft = g.luft;
         const l = stegStol(g, dt / n, marsj(g));
+        if (!varLuft && g.luft && g.høyt) g.ut.push({ type: 'slipp' });
         // Uten flertall klapper ingen: multiplikatoren står på x1.
         const bæres = løft(g) !== 'synk';
-        if (l?.kvalitet === 'fin') {
+        const varHøyt = l !== null && g.høyt;
+        if (l) g.høyt = false;
+        if (varHøyt && l?.kvalitet === 'fin') {
+            // Høyt slipp landet fint: stor bonus.
+            g.fine++;
+            g.høyeSlipp++;
+            g.kombo++;
+            g.mult = bæres ? Math.min(P.multMaks, g.mult + P.multHøyt) : 1;
+            const bonus = Math.round(P.høyt * g.mult);
+            g.poeng += bonus;
+            g.ut.push({ type: 'høyt', bonus });
+        } else if (varHøyt) {
+            // Hard landing fra høyt: farten borte, stolen dumper, x1.
+            g.dunk++;
+            g.kombo = 0;
+            g.mult = 1;
+            g.vx = TUNING.fysikk.minFart;
+            g.base = Math.max(0, g.base - TUNING.fysikk.hardtFall);
+            g.y = Math.min(g.y, g.base + g.amp);
+            g.ut.push({ type: 'hardtFall' });
+        } else if (l?.kvalitet === 'fin') {
             g.fine++;
             g.kombo++;
             g.mult = bæres ? Math.min(P.multMaks, g.mult + P.multFin) : 1;

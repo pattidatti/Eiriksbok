@@ -18,7 +18,6 @@ import { useArcadeSave, nextRank, rankFor } from './arcade/save';
 import { buzz, createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest, playtestSpeed } from './playtest';
-import { rir } from './taburetten/crowd';
 import { anklag, bytt, fortsett, hold, newGame, update, type Game } from './taburetten/game';
 import { BOTS } from './taburetten/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './taburetten/sim';
@@ -38,12 +37,7 @@ import {
     REGLER,
     SAMLEKORT,
     SEIERS_RANG,
-    SEIER_TEKST,
-    TIPS,
-    TIPS_ANKLAG,
-    TIPS_APRIL,
-    TIPS_STILLE,
-    TIPS_VERN,
+    velgTips,
     ØYEBLIKK,
 } from './taburetten/texts';
 
@@ -214,16 +208,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
             kort: [...new Set([...s.kort, ...nyeKort])],
             ark: s.ark + g.arkTatt,
         }));
-        let tekst = SEIER_TEKST;
-        if (!vunnet && g.årsak) {
-            if (g.stol.navn === 'Schweigaard') tekst = TIPS_APRIL;
-            else if (g.vern && !g.anklaget && g.rødt >= 69) tekst = TIPS_ANKLAG;
-            else if (g.årsak === 'gata' && g.vern && !rir(g)) tekst = TIPS_STILLE;
-            else if (g.årsak === 'gata' && g.vern) tekst = TIPS_VERN;
-            else if (g.årsak === 'hindring' && !g.vern && g.stol.farge === 'blå') tekst = TIPS.gata;
-            else tekst = TIPS[g.årsak];
-        }
-        if (g.fri) tekst = `${TIPS[g.årsak ?? 'gata']}`;
+        const tekst = velgTips(g, vunnet);
         if (!vunnet && g.årsak === 'gata') text.lesson('gata', LÆRDOM.gata, 3);
         const rang = vunnet && !g.fri ? SEIERS_RANG : rankFor(RANGER, poeng);
         setRes({
@@ -267,7 +252,9 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                         until: () => gRef.current.hold,
                         seconds: 8,
                     });
-                else if (u.nøkkel === 'vern') {
+                else if (u.nøkkel === 'april') {
+                    text.banner('APRILMINISTERIET: SCHWEIGAARD', FARGE.blå, 2.6); // andre akt
+                } else if (u.nøkkel === 'vern') {
                     text.point('vern', LAPP.vern, fast(stolNå), { seconds: 5 });
                     text.lesson('vern', LÆRDOM.vern, 1);
                 }
@@ -320,9 +307,8 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 buzz(40);
                 break;
             case 'tomtBytte':
-                lyd.feil();
-                fx.dunk = T;
-                flyt('Ingen å bytte med! x1', FARGE.blå);
+                lyd.dunk();
+                flyt('Ingen å bytte med ennå', FARGE.blå);
                 text.point('tomtBytte', LAPP.tomtBytte, fast(stolNå), {
                     tone: 'fare',
                     seconds: 2.5,
@@ -331,7 +317,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 break;
             case 'bom':
                 lyd.dunk();
-                flyt(`Bonus x${Math.min(5, g.bom + 1)} - gapene vokser`, FARGE.gull, true);
+                flyt('Gapene vokser!', FARGE.blå, true);
                 text.point('bom', LAPP.bom, fast(stolNå), { tone: 'fare', seconds: 3, once: true });
                 break;
             case 'anklag':
@@ -377,6 +363,25 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 if (u.mult >= 3) flyt(`x${u.mult}`, FARGE.gull, u.mult >= 6);
                 else flyt('Fin landing!', FARGE.blå, true);
                 buzz(15);
+                break;
+            case 'slipp':
+                fx.perfekt = T;
+                lyd.fin(4);
+                flyt('Perfekt slipp! Over Stortinget!', FARGE.gull, true);
+                break;
+            case 'høyt':
+                fx.fin = T;
+                fx.stopp = T + 0.12;
+                lyd.perfekt(1);
+                flyt(`HØYT SLIPP! +${u.bonus}`, FARGE.gull, true);
+                buzz([15, 20, 30]);
+                break;
+            case 'hardtFall':
+                fx.dunk = T;
+                fx.skjelv = Math.max(fx.skjelv, 0.6);
+                lyd.feil();
+                flyt('Hardt fall! Land på nedsiden', FARGE.rød, true);
+                buzz(50);
                 break;
             case 'dunk':
                 fx.dunk = T;

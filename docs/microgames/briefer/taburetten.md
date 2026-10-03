@@ -493,3 +493,52 @@ i flosshatt, rødt og blått som håndkolorering'`, `tone: 'lett'`.
   har bare ett ekte Bytt-valg (Sverdrup); fellene finnes i frispillet. Gullfeltene er markert som
   platåer i tegningen, men fysikken er den samme bølgen. «Kongens nei» fra 1872 er tekst, ikke en
   egen fase. Middels (49 %) ligger under halvparten.
+
+### Fase: forbedrer 3 (2026-10-03)
+
+- Gjorde (vurdering 3: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 4, Unikt 4; Gøy har stått på 3 i tre
+  runder, og to forbedrere har lagt til regler uten effekt, så denne runden FJERNET regler):
+  Reglene eleven må holde i hodet var seks (hold/slipp, livgarden bærer bare en stol i bruk, Anklag!
+  over 60 %, bonus for å vente, Bytt til flertallets mann, Bytt uten kandidat vipper). Kuttet til tre:
+  (a) hold ned bølgene og slipp før toppen, (b) Anklag! virker over 60 %, (c) Bytt til den med
+  flertallet. Fjernet: livgarde-kravet (`rir`/`øy.rytme` - livgarden bærer Selmer på gullet uansett)
+  og bytt-straffen (`bytte.tomtBytte` - tomt bytte gir bare «Ingen å bytte med ennå», ingen x1).
+  Vente-bonusen på Anklag! står igjen som et tall på knappen, men er ikke en regel eleven må kunne.
+  (1) Risiko og belønning i selve verbet: det PERFEKTE SLIPPET. Lener du helt opp mot toppen og
+  slipper de siste 0,2 s før den, kaster hendene stolen høyt over Stortinget («Perfekt slipp! Over
+  Stortinget!»). Lander du fint på nedsiden: «HØYT SLIPP! +250 x mult» og multiplikatoren +2.
+  Lander du på oppsiden eller flatt: «Hardt fall!» - farten borte, x1, stolen dumper 1,4 m (nær
+  gata uten flertall). Telegraftråder henger nå også i første og andre brett (før dommen bare på gullet), så
+  det høye slippet har en ekte fare over seg. Tap-tipset `TIPS_HØYT` når man smeller høyt oppe.
+  Grådig-roboten er nå den som jager det høye slippet hver gang (ser bare 4 m fram): median 115 mot
+  kongens-mann 5547 - en egen risiko, ikke samme tall. Tettere hindringer i første brett (hver 2,8 s,
+  lave og tråder) og andre (hver 3,5 s, kjerrer og tråder).
+  (2) Tre akter i avishodet: «1872: Kongens nei» (åpningen) -> «1880» -> «Valget 1882» ->
+  «23. april 1883» -> «Februar 1884» (dommen) -> «April 1884» med eget banner
+  «APRILMINISTERIET: SCHWEIGAARD» 1,2 s etter dommen -> «Juni 1884» -> «26. juni 1884».
+  (3) Lesbart: gull stiplet strek på stripa ved 69 (60 %-grensen for Anklag!) ved siden av den svarte
+  flertallsstreken, og stripeteksten forklarer begge.
+- Feel-lista: før runden var alle fire på plass. Lagt til for det nye grepet: 1 (perfekt slipp har
+  lyd, glorie og flytetekst; hardt fall har skjelv, hit-stop og lapp), 2 (det høye slippet er et
+  nesten-øyeblikk: fin eller hard landing avgjøres i lufta), 4 («HØYT SLIPP! +n» med hit-stop, lyd og
+  vibrering).
+- Simulering (200 runder per robot, grønn): flertallsmann 92 % (median 14077), nølende (middels) 48 %
+  (6045), kongens-mann 0 % (5547), grådig 9 % (median 115, p90 3978 - jager høye slipp og velter
+  eller smeller), knappemoser 2 % (125), passiv 0 % (629). 43,8 valg/min (var 36,2). Press 0,16 ->
+  0,27 -> 0,61. Nettleser: flertallsmann vant med 14404, Chromebook 4,1 ms JS per bilde, 28 draw
+  calls. Audit 0 funn. Likhet: nærmest tinghuset 0,34. `Taburetten3D.tsx` er på 800 linjer (taket):
+  valget av tap-tips er flyttet til `velgTips` i `texts.ts`.
+- Prøvde, virket ikke: (1) marsj 6-6,5 i første brett for å løfte presset i første tredjedel over
+  0,3 - kongens-mann og nølende døde i gapene etter 20 s, trappen snudde og grådig vant 67 %;
+  (2) å la en hard landing etter et høyt slipp velte stolen (tap) - flertallsmann falt til 39 %,
+  fordi han ikke ser hele svevet i forveien; (3) fast høyt kast (`slippMin` 9) - landingen ble
+  alltid fin, og grådig vant 47-66 %; (4) bomGap 8 - middels falt til 34 %; (5) Anklag! uten
+  vente-bonus - middels-medianen falt under kongens-mann (beholdt bonusen som tall på knappen).
+- Kjente svakheter: presset i første tredjedel står fortsatt på 0,16 (målet var over 0,3) - det
+  krever at starten blir raskere uten at gapene dreper middels; neste grep er kortere gap og
+  raskere marsj samtidig. Aprilministeriet er et banner og en dato, ikke en egen tegnet scene med
+  smuldrende gull. Anklag!-knappen blinker ikke når 60 % nås (bare gull strek på stripa).
+  Hindringene som feller eleven har ikke fått egne figurer eller egne tap-tekster (bare `TIPS_HØYT`
+  når man smeller høyt oppe). Sverdrup-fasens «skog av røde pinner» er ikke tynnet. Den passive
+  runden i selvspillet lever nå 23 s uten å nå gata (livgarde-kravet er borte), så tap-skjermen
+  vises ikke i selvspillet - `passiv-slutt.png` er gammel.

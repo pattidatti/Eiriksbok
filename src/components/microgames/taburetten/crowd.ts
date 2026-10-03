@@ -26,11 +26,6 @@ export function iRødSone(g: Game, x: number): boolean {
     return kanAnklage(g) && !påØy(g, x);
 }
 
-/** Rir eleven bølgene? Livgarden bærer bare en stol som er i bruk (holdt inne nylig). */
-export function rir(g: Game): boolean {
-    return g.t - g.sistHold < TUNING.øy.rytme;
-}
-
 /**
  * Hva bærer stolen nå? Bare stripa (og kongens vern før dommen) avgjør.
  * Før dommen bærer livgarden en blå regjering, men bare på kongens øyer; imellom drar
@@ -38,7 +33,7 @@ export function rir(g: Game): boolean {
  */
 export function løft(g: Game): Løft {
     if (harFlertall(g, g.stol.farge)) return 'flertall';
-    if (g.vern && g.stol.farge === 'blå') return påØy(g, g.x) && rir(g) ? 'vern' : 'mellom';
+    if (g.vern && g.stol.farge === 'blå') return påØy(g, g.x) ? 'vern' : 'mellom';
     return 'synk';
 }
 
@@ -108,6 +103,7 @@ export function stegStol(g: Game, h: number, marsj: number): Landing | null {
         g.vx += (marsj - g.vx) * F.luftDrag * h;
         g.x += g.vx * h;
         g.y += g.vy * h;
+        g.toppY = Math.max(g.toppY, g.y);
         const ys = flate(g, g.x);
         if (g.y <= ys) {
             const s = helning(g, g.x);
@@ -137,6 +133,11 @@ export function stegStol(g: Game, h: number, marsj: number): Landing | null {
     if (!g.hold && s > 0 && sNy <= 0 && g.amp > 0.05) {
         g.luft = true;
         g.vy = g.vx * g.amp * K * F.kast;
+        g.toppY = g.y;
+        // Det perfekte slippet: lent helt opp mot toppen, sluppet i siste liten, i god fart.
+        // Da kaster hendene stolen høyt over Stortinget - stor bonus, men hard landing er farlig.
+        g.høyt = g.t - g.slippT < F.slippVindu && g.vx > marsj + F.slippFart;
+        if (g.høyt) g.vy = Math.min(F.slippMaks, Math.max(F.slippMin, g.vy * F.slippKast));
     }
     g.sForrige = sNy;
     return null;
