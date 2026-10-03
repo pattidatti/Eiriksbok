@@ -17,6 +17,7 @@ import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from '.
 import { schotstue } from './schotstue';
 import { bu } from './bu';
 import { romIHus } from './inne';
+import { bakPortaler, Portaler } from '../motor/portal';
 import type { Rom } from '../motor/streaming';
 import { Ild } from '../motor/ild';
 import { lagFolk, type Plass } from './folk';
@@ -352,9 +353,12 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
         const m = new THREE.Matrix4().makeRotationY(h.rot ?? 0).setPosition(ox + h.x, 0, h.z);
         k.matrix = m.clone();
         c.matrix = m.clone();
+        const a0 = k.aapninger.length;
         hus(k, c, h.spec);
+        const husRom: THREE.Box3[] = [];
         const ki = new MeshKit();
         ki.matrix = m.clone();
+        const antPlasser = plasser.length;
         if (h.spec.inne && !h.spec.inne.ljore) {
             // Bua: ingen ild. Lyset kommer inn gjennom dørene, så dagslyset dempes bare litt.
             iVerden(bu(ki, c, h.spec), m, h.rot ?? 0);
@@ -370,8 +374,14 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
             roykPos.push(ild.group.position.clone().setY(eaveY(h.spec) + riseOf(h.spec)));
             rom.push({ box: info.rom.box.clone().applyMatrix4(m), demp: info.rom.demp });
         }
+        // Alle de hule etasjene, også de som ikke demper lyset: står kameraet i en av dem, tegnes alt.
+        if (h.spec.inne) husRom.push(...romIHus(h.spec, 1).map((r) => r.box.applyMatrix4(m)));
         if (ki.buckets.size > 0) {
-            const g = toGroup(ki, mats, `hus${i}:inne`, false);
+            // Innredningen tegnes bare der den kan synes gjennom dørene og gluggene (portal.ts),
+            // og folkene inne følger med (`bak` på plassen, folk.ts).
+            const portaler = new Portaler(k.aapninger.slice(a0), husRom);
+            for (let j = antPlasser; j < plasser.length; j++) plasser[j].bak = portaler;
+            const g = bakPortaler(toGroup(ki, mats, `hus${i}:inne`, false), portaler);
             near.add(g);
             inne.push(g);
         }

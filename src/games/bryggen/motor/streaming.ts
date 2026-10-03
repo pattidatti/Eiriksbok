@@ -315,6 +315,8 @@ export class CellStreamer {
 export function disposeObject(o: THREE.Object3D): void {
     o.traverse((x) => {
         const m = x as THREE.Mesh;
-        if (m.geometry) m.geometry.dispose();
+        // BatchedMesh (portal.ts) eier også teksturer med matrisene og hvilke biter som tegnes.
+        if ((x as THREE.BatchedMesh).isBatchedMesh) (x as THREE.BatchedMesh).dispose();
+        else if (m.geometry) m.geometry.dispose();
     });
 }

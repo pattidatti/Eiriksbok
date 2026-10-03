@@ -99,6 +99,10 @@ function vegg(k: MeshKit, c: ColliderKit, s: HouseSpec, len: number, hull: Hull[
         k.withTint(inn, () => k.box('laft', mid, (y0 + y1) / 2, T / 2, b - a, y1 - y0, T, { skip: ['top', 'bottom', 'nz', 'px', 'nx'], shadeFoot: true }));
         c.box(mid, (y0 + y1) / 2, T / 2, b - a, y1 - y0, T);
     }
+    // Hullene er portaler inn til innredningen (portal.ts). Utsiden er -z.
+    for (const h of hull) {
+        k.aapning([V(h.x - h.w / 2, h.y0, 0), V(h.x + h.w / 2, h.y0, 0), V(h.x + h.w / 2, h.y0 + h.h, 0), V(h.x - h.w / 2, h.y0 + h.h, 0)], V(0, 0, -1));
+    }
     // Stripa mellom veggtoppen og taket på innsiden.
     if (innerTop > top) {
         k.withTint({ ...inn, bottom: inn.top }, () =>

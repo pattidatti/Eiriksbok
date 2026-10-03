@@ -17,6 +17,8 @@ import { Ild } from '../motor/ild';
 import { COLD, DARK, T, WARM, toGroup, tonne } from './gard';
 import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
 import { schotstue } from './schotstue';
+import { romIHus } from './inne';
+import { bakPortaler, Portaler } from '../motor/portal';
 import { lagFolk, type FigurNavn, type Plass } from './folk';
 import type { Rute } from './vandrer';
 import { LIST, STEIN } from './stein';
@@ -241,6 +243,7 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
         const m = new THREE.Matrix4().makeRotationY(h.rot).setPosition(h.x, y, h.z);
         k.matrix = m.clone();
         c.matrix = m.clone();
+        const a0 = k.aapninger.length;
         hus(k, c, h.spec);
         lod.matrix = m.clone();
         husLod(lod, h.spec, (key) => mats.lodColor(key));
@@ -250,9 +253,11 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
             const info = schotstue(ki, c, h.spec);
             // Ølstua er bergensernes: de samme plassene som i schøtstua, men andre folk [S].
             const bytt: Partial<Record<FigurNavn, FigurNavn>> = { svenn: 'fisker', dreng: 'kornselger', stuedreng: 'olkone', husbonde: 'borger' };
+            // Innredningen og folkene inne tegnes bare der de kan synes gjennom døra og gluggene (portal.ts).
+            const portaler = new Portaler(k.aapninger.slice(a0), romIHus(h.spec, 1).map((r) => r.box.applyMatrix4(m)));
             for (const p of info.folk) {
                 const figur = bytt[p.figur] ?? p.figur;
-                plasser.push({ ...p, figur, id: figur === 'olkone' ? 'gunhild' : undefined, pos: p.pos.clone().applyMatrix4(m), yaw: p.yaw + h.rot });
+                plasser.push({ ...p, figur, id: figur === 'olkone' ? 'gunhild' : undefined, pos: p.pos.clone().applyMatrix4(m), yaw: p.yaw + h.rot, bak: portaler });
             }
             const f = new Ild({ smokeTop: eaveY(h.spec) + riseOf(h.spec) - 0.3 - info.ild.y, spread: 0.45 });
             f.group.position.copy(info.ild).applyMatrix4(m);
@@ -260,7 +265,7 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
             ild.push(f.group.position.clone().setY(f.group.position.y + 0.5));
             rom.push({ box: info.rom.box.clone().applyMatrix4(m), demp: info.rom.demp });
             // Ilden synes bare gjennom døra: den skjules på avstand sammen med innredningen.
-            const g = toGroup(ki, mats, 'olstue:inne', false);
+            const g = bakPortaler(toGroup(ki, mats, 'olstue:inne', false), portaler);
             g.add(f.group);
             near.add(g);
             inne.push(g);

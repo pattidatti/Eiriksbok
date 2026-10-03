@@ -11,6 +11,7 @@
 // Hvert hjørne har også en fargefaktor (vertex-farge). Den gir variasjon mellom husene, mørkere
 // dører og en mørk kant nederst på veggene, uten ekstra materialer.
 import * as THREE from 'three';
+import type { Aapning } from './portal';
 
 export type MatKey = 'laft' | 'bordvegg' | 'bordtak' | 'torv' | 'dekke' | 'gardsrom' | 'gjorme' | 'raatre' | 'stein' | 'mork';
 
@@ -94,6 +95,18 @@ export class MeshKit {
         fn();
         if (c && old) c.matrix = old;
         this.pop();
+    }
+
+    /**
+     * Hull man kan se inn i et hus gjennom (åpne dører, glugger, ljoren), i verdensrom. Innredningen
+     * bak tegnes bare når den kan synes gjennom ett av dem (portal.ts).
+     */
+    readonly aapninger: Aapning[] = [];
+
+    /** Registrerer et hull: hjørnene rundt kanten og retningen ut, i det lokale rommet. */
+    aapning(hjorner: THREE.Vector3[], ut: THREE.Vector3): void {
+        _nm.getNormalMatrix(this.matrix);
+        this.aapninger.push({ p: hjorner.map((h) => h.clone().applyMatrix4(this.matrix)), n: ut.clone().applyMatrix3(_nm).normalize() });
     }
 
     /** Legger til et takskjegg fra `a` til `b` (i det lokale rommet). */
