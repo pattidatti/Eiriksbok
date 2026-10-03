@@ -12,7 +12,8 @@
 //   'bunn'   nederst i midten, over E-teksten (et valg, en instruks)
 //   'hel'    hele skjermen, over resten av HUD-en (filmscener, sorte striper, tekst på svart)
 //
-// Hold paneler lyse og lesbare (hvit/slate, minst 13 px, helst 15-17 px), som resten av HUD-en.
+// Hold paneler lyse og lesbare (minst 13 px, helst 15-17 px), som resten av HUD-en. Bruk klassene i
+// ui/stil.ts (KORT, PANEL, ETIKETT, TEKST, KNAPP ...), så får panelet pergament-looken av seg selv.
 import type { ComponentType } from 'react';
 import { FilmVisning } from '../graboks/FilmVisning';
 import type { FilmHud } from '../graboks/sekvens';

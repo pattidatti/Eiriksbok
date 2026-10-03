@@ -1,19 +1,20 @@
 // Filmscenen over spillet (sekvens.ts): svarte striper oppe og nede, teksten nederst, «hopp over»
 // og svart overgang når filmen begynner og slutter. Over navneskiltene og boblene (z 1000).
 import type { FilmHud } from './sekvens';
+import { BRY } from '../ui/stil';
 
 export function FilmVisning({ f }: { f: FilmHud }) {
     return (
-        <div className="pointer-events-none absolute inset-0 z-[1100]">
-            <div className="absolute inset-x-0 top-0 h-[9vh] bg-black" />
-            <div className="absolute inset-x-0 bottom-0 flex h-[13vh] items-center justify-center bg-black px-6">
+        <div className={`${BRY} pointer-events-none absolute inset-0 z-[1100]`}>
+            <div className="absolute inset-x-0 top-0 h-[9vh] bg-black shadow-[0_1px_0_rgba(176,125,36,0.55)]" />
+            <div className="absolute inset-x-0 bottom-0 flex h-[13vh] items-center justify-center bg-black px-6 shadow-[0_-1px_0_rgba(176,125,36,0.55)]">
                 {f.tekst && (
-                    <p key={f.tekst} className="bryggen-filmtekst max-w-3xl text-center font-[Outfit,Inter,sans-serif] text-[20px] font-semibold leading-snug text-amber-50">
+                    <p key={f.tekst} className="bryggen-filmtekst max-w-3xl text-center text-[22px] font-medium leading-snug text-[#f6edd9]">
                         {f.tekst}
                     </p>
                 )}
             </div>
-            <div className="absolute bottom-[13vh] right-4 mb-2 rounded-lg bg-black/55 px-3 py-1 text-[13px] font-semibold text-white/85">
+            <div className="absolute bottom-[13vh] right-4 mb-2 rounded-md border border-[#b99a68]/60 bg-[#f6edd9]/85 px-3 py-1 text-[14px] font-bold text-[#2b1d10] shadow">
                 {f.hopp}
             </div>
             <div

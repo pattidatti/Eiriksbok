@@ -1,7 +1,8 @@
 // Tastaturstyringen i menyene: piltast opp/ned flytter mellom valgene, og fokus synes godt.
 import type { KeyboardEvent } from 'react';
 
-export const FOKUS = 'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500 focus-visible:ring-offset-2';
+// Seglrød ring med lys kant (stil.css, .bry-fokus): synes på pergament og over spillet.
+export const FOKUS = 'bry-fokus';
 
 const FOKUSERBAR = 'button:not([disabled]), input:not([disabled]), [tabindex="0"]';
 

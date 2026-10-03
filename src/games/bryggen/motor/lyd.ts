@@ -332,6 +332,71 @@ export class Lydbilde {
         }
     }
 
+    /**
+     * Seglet som stemples (oppdrag fullført, ui/Melding.tsx): et dumpt slag i voks og bord, laget av
+     * en dempet støyhvisl og en lav tone som faller. `om` er sekunder fra nå. `papir` legger på
+     * lyden av arket som rulles ut (lys støy som sveiper).
+     */
+    stempel(om: number, papir = 0): void {
+        const ctx = this.ctx;
+        if (!ctx || !this._paa || ctx.state !== 'running') return;
+        const t0 = ctx.currentTime + 0.02;
+        const stoy = (lengde: number) => {
+            const n = Math.ceil(ctx.sampleRate * lengde);
+            const buf = ctx.createBuffer(1, n, ctx.sampleRate);
+            const d = buf.getChannelData(0);
+            for (let i = 0; i < n; i++) d[i] = Math.random() * 2 - 1;
+            const k = ctx.createBufferSource();
+            k.buffer = buf;
+            return k;
+        };
+        const kobl = (kilde: AudioScheduledSourceNode, ledd: AudioNode[], t: number, len: number) => {
+            let siste: AudioNode = kilde;
+            for (const l of ledd) siste = siste.connect(l);
+            siste.connect(this.hendelseBuss);
+            kilde.start(t);
+            kilde.stop(t + len);
+            kilde.onended = () => {
+                kilde.disconnect();
+                for (const l of ledd) l.disconnect();
+            };
+        };
+        if (papir > 0) {
+            const t = t0;
+            const k = stoy(0.45);
+            const f = ctx.createBiquadFilter();
+            f.type = 'bandpass';
+            f.Q.value = 0.8;
+            f.frequency.setValueAtTime(1800, t);
+            f.frequency.exponentialRampToValueAtTime(5200, t + 0.4);
+            const g = ctx.createGain();
+            g.gain.setValueAtTime(0, t);
+            g.gain.linearRampToValueAtTime(0.09 * papir, t + 0.08);
+            g.gain.exponentialRampToValueAtTime(0.0001, t + 0.42);
+            kobl(k, [f, g], t, 0.45);
+        }
+        const t = t0 + om;
+        // Slaget: lavpasset støy, kort.
+        const k = stoy(0.2);
+        const f = ctx.createBiquadFilter();
+        f.type = 'lowpass';
+        f.frequency.setValueAtTime(900, t);
+        f.frequency.exponentialRampToValueAtTime(220, t + 0.15);
+        const g = ctx.createGain();
+        g.gain.setValueAtTime(0.5, t);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
+        kobl(k, [f, g], t, 0.2);
+        // Kroppen i slaget: en lav tone som faller.
+        const o = ctx.createOscillator();
+        o.type = 'sine';
+        o.frequency.setValueAtTime(95, t);
+        o.frequency.exponentialRampToValueAtTime(42, t + 0.22);
+        const og = ctx.createGain();
+        og.gain.setValueAtTime(0.55, t);
+        og.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+        kobl(o, [og], t, 0.3);
+    }
+
     dispose(): void {
         for (const l of this.lokker.values()) {
             try {

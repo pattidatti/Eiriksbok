@@ -10,6 +10,7 @@ import { Dagbok, type Bok } from './Dagbok';
 import { Knapp } from './menydeler';
 import { FOKUS, flyttFokus, pilNav } from './fokus';
 import type { Innstillinger } from './innstillinger';
+import { DISPLAY, ETIKETT, LIN, PANEL, TAST, TEKST, UTHEV } from './stil';
 
 type Valg = 'fortsett' | 'innstillinger' | 'kontroller' | 'dagbok' | 'avslutt';
 
@@ -102,12 +103,13 @@ export function Pausemeny({ valg, onEndre, harLyd, bok, vet, onFortsett, onAvslu
     };
 
     return (
-        <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
-            <div role="dialog" aria-modal="true" aria-label="Pause" className="flex h-[min(640px,92vh)] w-[min(940px,95vw)] overflow-hidden rounded-3xl bg-white shadow-2xl">
-                <div onKeyDown={menyTast} className="flex w-64 shrink-0 flex-col gap-1.5 bg-slate-100 p-4">
+        <div className="bry absolute inset-0 z-20 flex items-center justify-center bg-[#3a2814]/35 backdrop-blur-[3px]" onClick={(e) => e.stopPropagation()}>
+            <div role="dialog" aria-modal="true" aria-label="Pause" className={`flex h-[min(640px,92vh)] w-[min(940px,95vw)] overflow-hidden ${PANEL}`}>
+                <div onKeyDown={menyTast} className={`flex w-64 shrink-0 flex-col gap-1.5 border-r border-[#a5844f]/70 p-4 shadow-[inset_-6px_0_10px_-6px_rgba(60,35,10,0.35)] ${LIN}`}>
                     <div className="px-2 pb-2">
-                        <p className="text-[13px] font-bold uppercase tracking-widest text-indigo-700">Pause</p>
-                        <p className="font-[Outfit,Inter,sans-serif] text-[20px] font-extrabold leading-tight text-slate-900">Bryggen, 1420-årene</p>
+                        <p className={ETIKETT}>Pause</p>
+                        <p className={`${DISPLAY} text-[30px] leading-none`}>Bryggen</p>
+                        <p className="mt-1 text-[15px] font-semibold text-[#5c4630]">1420-årene</p>
                     </div>
                     {MENY.map(([id, tekst]) => (
                         <button
@@ -122,29 +124,33 @@ export function Pausemeny({ valg, onEndre, harLyd, bok, vet, onFortsett, onAvslu
                                 velg(id);
                             }}
                             aria-current={vis === id}
-                            className={`rounded-xl px-4 py-3 text-left text-[18px] font-semibold ${FOKUS} ${
-                                vis === id ? (id === 'fortsett' ? 'bg-indigo-600 text-white' : 'bg-white text-indigo-700 shadow') : 'text-slate-800 hover:bg-white/70'
+                            className={`rounded-lg border px-4 py-2.5 text-left text-[19px] font-bold ${FOKUS} ${
+                                vis === id
+                                    ? id === 'fortsett'
+                                        ? 'bry-knapp'
+                                        : 'border-[#a5844f] border-l-4 border-l-[#9a2a1c] bg-[#faf3e2] text-[#5a3519] shadow-sm'
+                                    : 'border-transparent text-[#2b1d10] hover:bg-[#faf3e2]/60'
                             }`}
                         >
                             {tekst}
                         </button>
                     ))}
-                    <p className="mt-auto px-2 text-[13px] leading-snug text-slate-600">Pil opp og ned, Enter for å velge, Esc for å gå tilbake. Fremgangen lagres hele tiden.</p>
+                    <p className="mt-auto px-2 text-[13px] leading-snug text-[#5c4630]">Pil opp og ned, Enter for å velge, Esc for å gå tilbake. Fremgangen lagres hele tiden.</p>
                 </div>
 
                 <div ref={panelRef} onKeyDown={panelTast} className="min-w-0 flex-1 overflow-y-auto p-5">
-                    <h2 className="mb-3 px-3 text-[22px] font-bold text-slate-900">{MENY.find(([id]) => id === vis)?.[1]}</h2>
+                    <h2 className={`${DISPLAY} mb-3 px-3 text-[30px] leading-tight`}>{MENY.find(([id]) => id === vis)?.[1]}</h2>
                     {vis === 'fortsett' && (
-                        <div className="px-3 text-[16px] leading-relaxed text-slate-700">
+                        <div className={`px-3 ${TEKST} leading-relaxed`}>
                             <p>Spillet står stille mens menyen er oppe. Klokka, været og folkene venter på deg.</p>
                             <p className="mt-2">Trykk Enter eller Esc for å spille videre.</p>
                             {bok && bok.some((o) => o.status !== 'levert') && (
-                                <div className="mt-4 rounded-xl bg-amber-50 p-3">
-                                    <p className="text-[13px] font-bold uppercase tracking-widest text-amber-800">Oppdragene dine</p>
+                                <div className={`mt-4 p-3 ${UTHEV}`}>
+                                    <p className={ETIKETT}>Oppdragene dine</p>
                                     {bok
                                         .filter((o) => o.status !== 'levert')
                                         .map((o) => (
-                                            <p key={o.id} className="text-[16px] font-semibold text-slate-900">
+                                            <p key={o.id} className="text-[17px] font-bold text-[#2b1d10]">
                                                 {o.status === 'klar' ? '✓ ' : ''}
                                                 {o.tittel}
                                             </p>
@@ -159,9 +165,9 @@ export function Pausemeny({ valg, onEndre, harLyd, bok, vet, onFortsett, onAvslu
                             {KONTROLLER.map(([k, v]) => (
                                 <div key={k} className="contents">
                                     <dt>
-                                        <kbd className="inline-block rounded-lg border border-slate-300 bg-slate-50 px-2 py-0.5 text-[15px] font-bold text-slate-900 shadow-sm">{k}</kbd>
+                                        <kbd className={TAST}>{k}</kbd>
                                     </dt>
-                                    <dd className="self-center text-[16px] text-slate-800">{v}</dd>
+                                    <dd className={`self-center ${TEKST}`}>{v}</dd>
                                 </div>
                             ))}
                         </dl>
@@ -169,7 +175,7 @@ export function Pausemeny({ valg, onEndre, harLyd, bok, vet, onFortsett, onAvslu
                     {vis === 'dagbok' && <Dagbok bok={bok} vet={vet} onNullstill={onNullstill} />}
                     {vis === 'avslutt' && (
                         <div className="px-3">
-                            <p className="text-[17px] leading-snug text-slate-800">Vil du avslutte spillet? Fremgangen din er lagret, så du kan fortsette neste gang.</p>
+                            <p className={`${TEKST} text-[17px]`}>Vil du avslutte spillet? Fremgangen din er lagret, så du kan fortsette neste gang.</p>
                             <div className="mt-4 flex gap-2">
                                 <Knapp farge="rod" onClick={onAvslutt}>
                                     Ja, avslutt

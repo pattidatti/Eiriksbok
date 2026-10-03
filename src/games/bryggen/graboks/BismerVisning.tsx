@@ -1,4 +1,5 @@
 import type { BismerHud } from './bismer';
+import { ETIKETT, GRONN, HJELP, PANEL, UTHEV, VARM } from '../ui/stil';
 
 // Bismeren tegnet stort midt på skjermen mens en bunt veies: stanga vipper rundt hanken,
 // bunten henger i kroken til venstre, kolla er den tunge enden til høyre. Merkene er bismerpund.
@@ -14,10 +15,10 @@ export function BismerVisning({ b }: { b: BismerHud }) {
     const kx = Math.cos(b.vinkel) * venstre;
     const ky = Math.sin(b.vinkel) * venstre;
     return (
-        <div className="pointer-events-none absolute left-1/2 top-[30%] w-[min(640px,94vw)] -translate-x-1/2 rounded-2xl bg-white px-4 pb-3 pt-3 shadow-xl">
+        <div className={`pointer-events-none absolute left-1/2 top-[30%] w-[min(640px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
-                <span className="text-[13px] font-bold uppercase tracking-wide text-indigo-700">Bismeren</span>
-                <span className={`text-[14px] font-semibold ${rett ? 'text-emerald-700' : 'text-slate-500'}`}>
+                <span className={ETIKETT}>Bismeren</span>
+                <span className={`text-[15px] font-bold ${rett ? GRONN : 'text-[#5c4630]'}`}>
                     {rett ? 'Stanga ligger vannrett: les av med E' : 'A / D: flytt hanken'}
                 </span>
             </div>
@@ -36,7 +37,7 @@ export function BismerVisning({ b }: { b: BismerHud }) {
                             <g key={m.p}>
                                 <line x1={x} y1={-5} x2={x} y2={m.hel ? 12 : 7} stroke="#2b1d12" strokeWidth={m.hel ? 2.5 : 1.5} />
                                 {m.tekst && (
-                                    <text x={x} y={28} textAnchor="middle" fontSize={16} fontWeight={700} fill="#1e293b">
+                                    <text x={x} y={28} textAnchor="middle" fontSize={16} fontWeight={700} fill="#2b1d10">
                                         {m.tekst}
                                     </text>
                                 )}
@@ -44,7 +45,7 @@ export function BismerVisning({ b }: { b: BismerHud }) {
                         );
                     })}
                     {/* Hanken: en ring av tau rundt stanga */}
-                    <rect x={-6} y={-12} width={12} height={24} rx={4} fill="none" stroke={rett ? '#047857' : '#7c5a3a'} strokeWidth={4} />
+                    <rect x={-6} y={-12} width={12} height={24} rx={4} fill="none" stroke={rett ? '#3f6b2a' : '#7c5a3a'} strokeWidth={4} />
                 </g>
                 {/* Kroken og bunten */}
                 <line x1={kx} y1={ky} x2={kx} y2={ky + 38} stroke="#475569" strokeWidth={3} />
@@ -53,11 +54,11 @@ export function BismerVisning({ b }: { b: BismerHud }) {
                 <line x1={kx - 34} y1={ky + 80} x2={kx + 34} y2={ky + 80} stroke="#7a5c37" strokeWidth={3} />
             </svg>
             {b.juks && (
-                <p className="mb-1 rounded-lg bg-amber-50 px-2 py-1 text-[14px] font-semibold text-amber-800">
+                <p className={`mb-1 px-2 py-1 text-[15px] font-semibold ${VARM} ${UTHEV}`}>
                     E: si det merket viser · 2: si et halvt pund mindre, slik svennen vil
                 </p>
             )}
-            <p className="text-[13px] text-slate-600">
+            <p className={HJELP}>
                 Bunten henger i kroken, kolla er den tunge enden. Når stanga ligger vannrett, viser merket ved hanken vekta i bismerpund
                 (ett bismerpund er ca. 5 kg).
             </p>

@@ -35,7 +35,7 @@ export function InnstillingerPanel({ valg, onEndre, harLyd, onFullskjerm }: { va
             />
 
             <Overskrift>Lyd</Overskrift>
-            {!harLyd && <p className="px-3 pb-1 text-[14px] text-slate-600">Denne scenen har ikke lyd ennå.</p>}
+            {!harLyd && <p className="px-3 pb-1 text-[14px] text-[#5c4630]">Denne scenen har ikke lyd ennå.</p>}
             <Bryter tekst="Lyd (M)" paa={valg.lyd.paa} onBytt={(p) => settLyd({ paa: p })} />
             <Glider tekst="Hovedvolum" verdi={valg.lyd.volum} vis={prosent} onEndre={(v) => settLyd({ volum: v, paa: true })} />
             {BUSSER.map(([b, tekst]) => (

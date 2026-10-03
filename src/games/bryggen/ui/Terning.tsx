@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { JUKSESIDER, type TerningHud } from '../graboks/terning';
 import { useNaa } from './useNaa';
+import { ETIKETT, GRONN, HJELP, PANEL, ROD, TEKST, UTHEV, VARM } from './stil';
 
 // Terningspillet i ølstua: Einars to terninger øverst, guttens nederst. Mens terningene ruller,
 // skifter øynene og terningene vipper; når de stopper, spretter de på plass.
@@ -19,7 +20,7 @@ function Terningen({ verdi, ruller, nr, juks, naa }: { verdi: number; ruller: bo
     const steg = Math.floor(naa / 70);
     const vis = ruller ? (juks ? JUKSESIDER[(steg * 7 + nr) % 6] : 1 + ((steg * 5 + nr * 3) % 6)) : verdi;
     const vipp = ruller ? Math.sin(naa / 45 + nr) * 25 : 0;
-    if (!vis) return <div className="h-14 w-14 rounded-xl border-2 border-dashed border-slate-300" />;
+    if (!vis) return <div className="h-14 w-14 rounded-xl border-2 border-dashed border-[#d9b98a]/60" />;
     return (
         <motion.div
             key={ruller ? 'r' : `s${verdi}`}
@@ -49,18 +50,18 @@ export function Terning({ h }: { h: TerningHud }) {
     const visDin = h.din[0] > 0 && (h.fase === 'kaster' || h.fase === 'runde' || h.fase === 'tatt' || h.fase === 'slutt');
     const tapt = h.fase === 'tatt';
     return (
-        <div className="pointer-events-none absolute z-[1100] bottom-6 left-1/2 w-[min(560px,94vw)] -translate-x-1/2 rounded-2xl bg-white/95 px-5 pb-3 pt-3 shadow-xl">
+        <div className={`pointer-events-none absolute z-[1100] bottom-6 left-1/2 w-[min(560px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
-                <span className="text-[13px] font-bold uppercase tracking-wide text-indigo-700">Terninger i ølstua</span>
-                <span className="text-[14px] text-slate-700">
+                <span className={ETIKETT}>Terninger i ølstua</span>
+                <span className="text-[14px] text-[#3d2a17]">
                     {h.runde > 0 && <span className="mr-3">Runde {Math.min(h.runde, h.runder)} av {h.runder}</span>}
-                    <motion.span key={h.witten} initial={{ scale: 1.4 }} animate={{ scale: 1 }} className={`inline-block font-bold tabular-nums ${h.witten > h.start ? 'text-emerald-700' : h.witten < h.start ? 'text-rose-700' : 'text-slate-900'}`}>
+                    <motion.span key={h.witten} initial={{ scale: 1.4 }} animate={{ scale: 1 }} className={`inline-block font-bold tabular-nums ${h.witten > h.start ? GRONN : h.witten < h.start ? ROD : 'text-[#2b1d10]'}`}>
                         {h.witten} witten
                     </motion.span>
                 </span>
             </div>
 
-            <div className="mt-3 grid grid-cols-[90px_1fr_60px] items-center gap-y-3 rounded-xl bg-amber-900/90 px-3 py-3 text-amber-50">
+            <div className="mt-3 grid grid-cols-[90px_1fr_60px] items-center gap-y-3 rounded-lg border border-[#3a2210] bg-gradient-to-b from-[#6b4322] to-[#4e2d14] px-3 py-3 text-[#f6edd9] shadow-[inset_0_2px_6px_rgba(0,0,0,0.35)]">
                 <span className="text-[15px] font-semibold">Einar</span>
                 <div className="flex gap-3">
                     <Terningen verdi={visEinar ? h.einar[0] : 0} ruller={einarRuller} nr={1} naa={naa} />
@@ -75,17 +76,17 @@ export function Terning({ h }: { h: TerningHud }) {
                 <span className="text-right text-[22px] font-black tabular-nums">{visDin && !dinRuller ? sum(h.din) : ''}</span>
             </div>
 
-            {h.einarSier && <p className="mt-2 text-[15px] italic text-slate-600">{h.einarSier}</p>}
+            {h.einarSier && <p className="mt-2 text-[15px] italic text-[#5c4630]">{h.einarSier}</p>}
             {!ruller && (
-                <p className={`mt-1 text-[16px] font-semibold leading-snug ${tapt ? 'text-rose-700' : 'text-slate-900'}`}>{h.tekst}</p>
+                <p className={`mt-1 ${TEKST} font-semibold ${tapt ? ROD : ''}`}>{h.tekst}</p>
             )}
             {h.fase === 'din' && (
-                <div className="mt-2 rounded-lg bg-amber-50 px-3 py-2 text-[14px] text-amber-900">
+                <div className={`mt-2 px-3 py-2 text-[15px] ${UTHEV}`}>
                     Under benken ligger en terning med to firere og to femmere, men ingen ener eller toer.
-                    <div className="mt-1 font-semibold">Mellomrom eller 1: kast · 2: kast med jukseterningen · 3: reis deg</div>
+                    <div className={`mt-1 font-semibold ${VARM}`}>Mellomrom eller 1: kast · 2: kast med jukseterningen · 3: reis deg</div>
                 </div>
             )}
-            <p className="mt-1 text-[13px] text-slate-500">
+            <p className={`mt-1 ${HJELP}`}>
                 {h.fase === 'klar' ? 'Mellomrom: begynn · Q: gå fra bordet' : h.fase === 'runde' ? 'Mellomrom: neste · 3: reis deg' : h.fase === 'slutt' || h.fase === 'tatt' ? 'Mellomrom: reis deg fra bordet' : ''}
             </p>
         </div>
