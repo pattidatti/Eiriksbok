@@ -25,7 +25,7 @@ import type { CellContent, CellDef, Rom, Sted } from '../motor/streaming';
 import { Ild } from '../motor/ild';
 import { COLD, DARK, FRONT_Z, GARD_DEPTH, T, WARM, kai, kaiJog, toGroup, tonne, type Sides } from './gard';
 import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
-import { skiltHeng, verksted, type Fag, type VerkstedSpec } from './verksted';
+import { LUKE_OPPE, lukeForm, lukeKlaff, skiltHeng, verksted, type Fag, type VerkstedSpec } from './verksted';
 import { Uro } from './uro';
 import { korskirken, mikaelskirken } from './kirker-vaagsbunnen';
 import type { Plass } from './folk';
@@ -37,7 +37,7 @@ import { glemPinner, meldPinner } from './runepinner';
 import { LIST, STEIN } from './stein';
 import { MUR_Z } from './allmenning';
 import { NIKOLAI_Y } from './nikolaikirken';
-import { spor } from './torg';
+import { bakkeBoks, sporFurer } from './bakke';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -161,7 +161,9 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
     const auta = del === 'o' ? x1 - AUTA_W : x1; // vestkanten av allmenningen
 
     // Bakken: gjørme helt opp til støttemuren under Øvregaten, og kaia ytterst.
-    k.withTint({ top: 0.9, bottom: 0.9 }, () => k.box('gjorme', (x0 + x1) / 2, -0.1, (FRONT_Z + back) / 2, x1 - x0, 0.2, back - FRONT_Z, { skip: ['bottom'] }));
+    // Sledesporene i Auta allmenning er renner i bakken (bakke.ts).
+    const furer = del === 'o' ? sporFurer(autaX(x1) - 2.6, FRONT_Z + 1, TRAPP.z0 - 2, 0.8, 7) : [];
+    k.withTint({ top: 0.9, bottom: 0.9 }, () => bakkeBoks(k, 'gjorme', (x0 + x1) / 2, -0.1, (FRONT_Z + back) / 2, x1 - x0, 0.2, back - FRONT_Z, { furer }));
     c.box((x0 + x1) / 2, -0.75, (FRONT_Z + back) / 2, x1 - x0, 1.5, back - FRONT_Z);
     kai(k, c, x0, x1, front, FRONT_Z - front);
     kaiJog(k, x0, front, sides.west, -1);
@@ -185,7 +187,6 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
             for (const s of [-1, 1]) k.box('raatre', ax + s * 0.95, 0.02, (pz0 + TRAPP.z0) / 2, 0.12, 0.1, TRAPP.z0 - pz0);
         });
         trapp(k, c, ax);
-        spor(k, ax - 2.6, FRONT_Z + 1, TRAPP.z0 - 2, 0.8, 7);
         // Brannkar og en vannpost midt i allmenningen: branngata skulle holdes fri [V allmenninger som branngater].
         for (const [dz, t] of [[3.2, 0.85], [3.9, 0.75]] as const) tonne(k, c, x1 - 0.9, FRONT_Z + dz, t);
         // Et plankegjerde langs gårdsgrensa, så allmenningen har en kant.
@@ -223,6 +224,9 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
         lod.matrix = m.clone();
         const info = verksted(k, ki, glod, c, spec, r);
         uro.pendel(info.skilt.clone().applyMatrix4(m), rot, (kk) => skiltHeng(kk, spec.fag), 0.3, 1.5 + (Math.abs(cx * 0.37) % 0.5), 'z');
+        // Luka over disken står oppe morgen, dag og kveld, og slås ned om natta. Like brede luker er ett tegnekall.
+        const lf = lukeForm(info.luke.w);
+        uro.lukeMal(`klaff:${lf}`, (kk) => lukeKlaff(kk, info.luke), info.luke.hengsel.clone().applyMatrix4(m), rot, info.luke.farge, LUKE_OPPE, ['morgen', 'dag', 'kveld'], 'x', info.luke.w / lf);
         verkstedLod(lod, spec, mats);
         info.folk.forEach((p, i) => {
             plasser.push({
@@ -573,7 +577,7 @@ export function endeCelle(mats: Materials, xb: number): CellDef {
             const c = new ColliderKit();
             const r = rng(1190);
             // Land der Vågen slutter: kai i flukt med fronten langs bunnen av Vågen, gjørme bak.
-            k.withTint({ top: 0.85, bottom: 0.85 }, () => k.box('gjorme', (x0 + xb) / 2, -0.1, (z0 + z1) / 2, xb - x0, 0.2, z1 - z0, { skip: ['bottom'] }));
+            k.withTint({ top: 0.85, bottom: 0.85 }, () => bakkeBoks(k, 'gjorme', (x0 + xb) / 2, -0.1, (z0 + z1) / 2, xb - x0, 0.2, z1 - z0));
             lod.withTint({ top: 1, bottom: 1, hue: [0.29, 0.23, 0.17] }, () => lod.box('mork', (x0 + xb) / 2, -0.05, (z0 + z1) / 2, xb - x0, 0.1, z1 - z0, { skip: ['bottom'] }));
             k.at(xb, 0, 0, -Math.PI / 2, () => kai(k, c, z0 + 2, 0, 0, 2.5));
             // Husrekka langs bunnen av Vågen, med gavlen mot vannet (+x).

@@ -28,20 +28,21 @@ import type { CellDef, Rom, Sted } from '../motor/streaming';
 import { WATER_Y } from '../motor/boat';
 import { glemDyreSoner, meldDyreSoner } from '../motor/dyr';
 import { COLD, DARK, T, WARM, kai, toGroup, tonne } from './gard';
-import { eaveY, gluggRamme, hus, husLod, langveggRamme, riseOf, rng, type HouseSpec } from './moduler';
+import { eaveY, hus, husLod, riseOf, rng, type HouseSpec } from './moduler';
 import { GOLV_Y, romIHus } from './inne';
-import { dorblad, gluggLuke, naust, stue, vugge } from './heim';
+import { husLuker, naust, stue, vugge } from './heim';
 import { Uro } from './uro';
 import { Ild } from '../motor/ild';
 import { bakPortaler, Portaler } from '../motor/portal';
 import { lagFaeringSkrog } from '../motor/faering-modell';
-import { bod, bronn, slede, spor } from './torg';
+import { bod, bronn, slede } from './torg';
 import { apning, gesims, LIST, STEIN, TAK, paFlate } from './stein';
 import { lagDagsfolk, type Dagsfigur, type FasePlass, type Vei } from './dagsplan';
 import { glemPinner, meldPinner } from './runepinner';
 import type { Stopp } from './vandrer';
 import { graveflekk } from './vaagsbunnen-liv';
 import { STRAND_Z, VEI } from './stranden';
+import { bakkeBoks, sporFurer } from './bakke';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -124,7 +125,8 @@ export function strandlivCelle(mats: Materials): CellDef {
             const rom: Rom[] = [];
 
             // ── Bakken, bolverket og Jonsbryggen ──
-            k.withTint({ top: 0.88, bottom: 0.88 }, () => k.box('gjorme', X_S, -0.1, SZ - (3 + DYBDE) / 2, STRAND_HW * 2, 0.2, DYBDE - 3, { skip: ['bottom'] }));
+            const furer = sporFurer(X_S + 1, SZ - 10, SZ - 4, 0.8, 3);
+            k.withTint({ top: 0.88, bottom: 0.88 }, () => bakkeBoks(k, 'gjorme', X_S, -0.1, SZ - (3 + DYBDE) / 2, STRAND_HW * 2, 0.2, DYBDE - 3, { furer }));
             c.box(X_S, -0.75, SZ - (3 + DYBDE) / 2, STRAND_HW * 2, 1.5, DYBDE - 3);
             k.at(X_S, 0, SZ, Math.PI, () => kai(k, c, -STRAND_HW, STRAND_HW, 0, 3), c);
             lod.withTint({ top: 1, bottom: 1, hue: [0.29, 0.23, 0.17] }, () => lod.box('mork', X_S, -0.05, SZ - DYBDE / 2, STRAND_HW * 2, 0.1, DYBDE, { skip: ['bottom'] }));
@@ -134,7 +136,6 @@ export function strandlivCelle(mats: Materials): CellDef {
             k.withTint({ top: 0.55, bottom: 0.55 }, () => {
                 for (const s of [-1, 1]) k.box('raatre', X_S, 0.03, SZ - GATE_V + s * 1.2, STRAND_HW * 2 - 1, 0.1, 0.14);
             });
-            spor(k, X_S + 1, SZ - 10, SZ - 4, 0.8, 3);
 
             // ── Husene ──
             // Stua og naustet man kan gå inn i (heim.ts), og dørene og gluggelukene som går opp og igjen (uro.ts).
@@ -185,22 +186,8 @@ export function strandlivCelle(mats: Materials): CellDef {
                 c.matrix = new THREE.Matrix4();
                 lod.matrix = new THREE.Matrix4();
                 const yaw = Math.PI;
-                // Dørbladet og lukene som egne deler.
-                for (const d of spec.doors ?? []) {
-                    if (!d.uro) continue;
-                    const f = m.clone().multiply(langveggRamme(spec, d.side, d.z));
-                    const dorUte = V(0, 0, -0.9).applyMatrix4(f);
-                    const fy = yaw + (d.side > 0 ? -Math.PI / 2 : Math.PI / 2);
-                    uro.luke(V(-1.05 / 2, 0.24, 0).applyMatrix4(f), fy, (kk) => kk.withTint(spec.tint, () => dorblad(kk)), 1.5,
-                        () => fotter.some((p) => Math.abs(p.y - dorUte.y) < 1.5 && Math.hypot(p.x - dorUte.x, p.z - dorUte.z) < 1.7));
-                }
-                for (const g of spec.glugger ?? []) {
-                    if (!g.uro) continue;
-                    const gr = gluggRamme(spec, g);
-                    const f = m.clone().multiply(gr.m);
-                    const fy = yaw + (g.side === 0 ? 0 : g.side > 0 ? -Math.PI / 2 : Math.PI / 2);
-                    uro.luke(V(-gr.w / 2, gr.y0, 0).applyMatrix4(f), fy, (kk) => kk.withTint(spec.tint, () => gluggLuke(kk, gr.w, gr.h)), 2.75, ['morgen', 'dag', 'kveld']);
-                }
+                // Dørbladet og lukene som egne deler (heim.ts, uro.ts).
+                husLuker(uro, spec, m, Math.PI, fotter);
                 if (!h.inne) return;
                 // Innredningen tegnes bare der den kan synes gjennom døra, porten og gluggene (portal.ts).
                 const ki = new MeshKit();

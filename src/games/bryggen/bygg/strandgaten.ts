@@ -23,6 +23,7 @@ import { veiLiv } from './veiliv';
 import { lagDagsfolk } from './dagsplan';
 import { glemDyreSoner, meldDyreSoner } from '../motor/dyr';
 import { lagFaeringSkrog } from '../motor/faering-modell';
+import { bakkeBoks } from './bakke';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -102,7 +103,7 @@ export function strandgatenCelle(mats: Materials, xw: number, strandX0: number):
             // Kaia vender mot Vågen (+z), som bolverket på Stranden.
             k.at(xm, 0, SZ, Math.PI, () => kai(k, c, -L / 2, L / 2, 0, KAI_D), c);
             k.withTint({ top: 0.85, bottom: 0.85 }, () =>
-                k.box('gjorme', xm, -0.1, (SZ - KAI_D + GJERDE_Z) / 2 - 0.3, L, 0.2, SZ - KAI_D - GJERDE_Z + 0.6, { skip: ['bottom'] })
+                bakkeBoks(k, 'gjorme', xm, -0.1, (SZ - KAI_D + GJERDE_Z) / 2 - 0.3, L, 0.2, SZ - KAI_D - GJERDE_Z + 0.6)
             );
             c.box(xm, -0.75, (SZ - KAI_D + GJERDE_Z) / 2, L, 1.5, SZ - KAI_D - GJERDE_Z);
             // En plankevei oppå gjørma, og tønner og en kjerre her og der.

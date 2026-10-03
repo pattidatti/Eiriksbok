@@ -21,6 +21,7 @@ import { lagFolk, type Plass } from './folk';
 import type { Rute } from './vandrer';
 import { STEIN } from './stein';
 import { HOLMEN, byggVaktomraade } from './holmenvei';
+import { bakkeBoks } from './bakke';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -53,7 +54,7 @@ async function buildVeiCell(mats: Materials, x0: number, x1: number, vest: numbe
     // Gjørma innover, helt bak lagerhusene (det man ser), og kollider under.
     const z0 = FRONT_Z;
     const z1 = 75;
-    k.withTint({ top: 0.7, bottom: 0.7 }, () => k.box('gjorme', (x0 + x1) / 2, -0.06, (z0 + z1) / 2, x1 - x0, 0.1, z1 - z0, { skip: ['bottom'] }));
+    k.withTint({ top: 0.7, bottom: 0.7 }, () => bakkeBoks(k, 'gjorme', (x0 + x1) / 2, -0.06, (z0 + z1) / 2, x1 - x0, 0.1, z1 - z0));
     c.box((x0 + x1) / 2, -0.75, (z0 + z1) / 2, x1 - x0, 1.5, z1 - z0);
     // Plankeveien på skrå fra kaia bort til rampa foran porten.
     const a = new THREE.Vector2((x0 + x1) / 2 - 3, FRONT_Z);
@@ -146,7 +147,7 @@ async function buildBorgCell(mats: Materials, hx: number): Promise<CellContent> 
     const { x1, z0, z1 } = BORG;
     // Bakken: tråkket gjørme i borggården, og en sti av heller fra porten bort til hallen.
     // Bakken går helt ut til kanten mot veien, så det ikke blir en glipe under porten.
-    k.withTint({ top: 0.75, bottom: 0.75, hue: [0.95, 0.95, 0.92] }, () => k.box('gjorme', x1 / 2, BAKKE + 0.02, (z0 + z1) / 2, x1, 0.06, z1 - z0, { skip: ['bottom'] }));
+    k.withTint({ top: 0.75, bottom: 0.75, hue: [0.95, 0.95, 0.92] }, () => bakkeBoks(k, 'gjorme', x1 / 2, BAKKE + 0.02, (z0 + z1) / 2, x1, 0.06, z1 - z0, { styrke: 0.5, rusk: 0.15 }));
     c.box(18, BAKKE - 0.75, (z0 - 20 + z1) / 2, 36, 1.5, z1 - z0 + 20);
     const sk = V(27.6, 0, 23.0);
     const a = new THREE.Vector2(PORT.x + PORT.b / 2, PORT.z);

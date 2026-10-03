@@ -71,12 +71,29 @@ export class Vaat {
 
 const VAAT_GLSL = /* glsl */ `
 varying vec3 vVaatPos;
+/** Høyden i bakken der pikselen ligger (0 lavt, 1 høyt), satt av relieffet (relieff.ts). */
+float relHoyde = 0.5;
 uniform float uVaat;
 uniform vec3 uRomMin[${MAKS_ROM}];
 uniform vec3 uRomMax[${MAKS_ROM}];
 
 float vaHash(vec2 p) {
     return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453);
+}
+
+// Pyttene bruker en egen hash uten sinus, regnet likt i JS (bakke.ts: pyttStoy), så søkkene i
+// bakken ligger der pyttene kommer.
+float pyHash(vec2 p) {
+    vec3 p3 = fract(vec3(p.xyx) * 0.1031);
+    p3 += dot(p3, p3.yzx + 33.33);
+    return fract((p3.x + p3.y) * p3.z);
+}
+
+float pyStoy(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    return mix(mix(pyHash(i), pyHash(i + vec2(1.0, 0.0)), f.x), mix(pyHash(i + vec2(0.0, 1.0)), pyHash(i + vec2(1.0, 1.0)), f.x), f.y);
 }
 
 float vaStoy(vec2 p) {
@@ -102,7 +119,9 @@ void vaatFlate(inout vec3 farge, inout float ruhet, inout vec3 n, float pyttVekt
     // Pytter: i søkkene (lav støy) på flater som vender opp. Små og grumsete: gjørmevann speiler
     // himmelen svakt, det er ikke et speil. Store, blanke flekker så ut som snø på torget.
     if (pyttVekt > 0.0) {
-        float s = vaStoy(vVaatPos.xz * 0.6 + 7.0) * 0.65 + vaStoy(vVaatPos.xz * 2.1) * 0.35;
+        float s = pyStoy(vVaatPos.xz * 0.6 + 7.0) * 0.65 + pyStoy(vVaatPos.xz * 2.1) * 0.35;
+        // Med relieff: vannet ligger i søkkene og ikke oppå steinene.
+        s += (relHoyde - 0.5) * 0.35;
         float p = smoothstep(0.72 - pyttVekt * 0.1, 0.79 - pyttVekt * 0.1, 1.0 - s) * opp * smoothstep(0.3, 0.9, uVaat);
         farge *= mix(1.0, 0.42, p);
         ruhet = mix(ruhet, 0.34, p);

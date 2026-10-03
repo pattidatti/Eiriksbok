@@ -16,7 +16,9 @@ import type { ColliderKit, MeshKit } from '../motor/meshkit';
 import type { Rom } from '../motor/streaming';
 import { DARK, WARM, tonne } from './gard';
 import { GOLV_Y, WALL_T, romIHus } from './inne';
-import { eaveY, type HouseSpec } from './moduler';
+import { eaveY, gluggRamme, langveggRamme, type HouseSpec } from './moduler';
+import type { Uro } from './uro';
+import type { Fase } from './dagsplan';
 import { benk, gryte, ildsted } from './schotstue';
 import type { Plass } from './folk';
 
@@ -36,6 +38,35 @@ export function dorblad(k: MeshKit, w = 1.05, h = 1.9): void {
 export function gluggLuke(k: MeshKit, w = 0.6, h = 0.55): void {
     k.withTint({ top: 1.15, bottom: 1.0, hue: [1.06, 1.0, 0.92] }, () => k.box('bordvegg', w / 2, h / 2, -0.035, w, h, 0.03));
     k.withTint({ top: 0.45, bottom: 0.45 }, () => k.box('bordvegg', w / 2, h / 2, -0.055, w * 0.85, 0.05, 0.015));
+}
+
+/** Hvor nær noen må stå døra (utenfor) før den går opp. */
+const DOR_NAER = 1.7;
+
+/**
+ * Bladene til dørene og gluggelukene med `uro` i et hus (`m`: husets rom til verden, `yaw`: husets
+ * dreining). Dørene går opp når noen i `fotter` står ved dem; lukene står åpne i delene av dagen i
+ * `luker`. Alle dører og luker med samme mål i en `Uro` er ett tegnekall (`lukeMal`), med husets farge.
+ */
+export function husLuker(uro: Uro, spec: HouseSpec, m: THREE.Matrix4, yaw: number, fotter: THREE.Vector3[], luker: Fase[] = ['morgen', 'dag', 'kveld']): void {
+    const h = spec.tint.hue ?? [1, 1, 1];
+    const lys = THREE.MathUtils.clamp(spec.tint.top / 0.95, 0.8, 1.15);
+    const farge = new THREE.Color(h[0] * lys, h[1] * lys, h[2] * lys);
+    for (const d of spec.doors ?? []) {
+        if (!d.uro) continue;
+        const f = m.clone().multiply(langveggRamme(spec, d.side, d.z));
+        const ute = V(0, 0, -0.9).applyMatrix4(f);
+        const fy = yaw + (d.side > 0 ? -Math.PI / 2 : Math.PI / 2);
+        uro.lukeMal('dor', (k) => dorblad(k), V(-1.05 / 2, 0.24, 0).applyMatrix4(f), fy, farge, 1.5,
+            () => fotter.some((p) => Math.abs(p.y - ute.y) < 1.5 && Math.hypot(p.x - ute.x, p.z - ute.z) < DOR_NAER));
+    }
+    for (const g of spec.glugger ?? []) {
+        if (!g.uro) continue;
+        const gr = gluggRamme(spec, g);
+        const f = m.clone().multiply(gr.m);
+        const fy = yaw + (g.side === 0 ? 0 : g.side > 0 ? -Math.PI / 2 : Math.PI / 2);
+        uro.lukeMal(`glugg:${gr.w}x${gr.h}`, (k) => gluggLuke(k, gr.w, gr.h), V(-gr.w / 2, gr.y0, 0).applyMatrix4(f), fy, farge, 2.75, luker);
+    }
 }
 
 // ── Stua ──

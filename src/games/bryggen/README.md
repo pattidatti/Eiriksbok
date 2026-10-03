@@ -130,6 +130,8 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `bygg/stranden.ts` | Stranden på den andre siden av Vågen: glisne laftehus, naust, tømmer og et skip på stokker, trukket fra et frø. Én celle bak grensa, ingen kollidere |
 | `bygg/bryggen.ts` | Scenen: Vågen, cellene langs bryggefronten, grenser |
 | `motor/liv.ts` | Livet i figurene: hodet ser seg rundt og ser på gutten når han kommer nær, vekta flyttes, pusten, og holdningen per drakt (`HOLDNING`: krokete gammelkone, fyllik som henger med hodet). `FIN_GANG` går med `Walk_Formal_Loop`. Hver figur får egen takt og fase i hvilen og gangen (`Animator`), så ingen går eller puster i takt |
+| `bygg/bakke.ts` | Bakken med form: toppen av gjørmeboksene er et rutenett med søkk, små hauger, hjulspor (`Fure`, `sporFurer`) og rusk (små steiner og flis). Søkkene ligger der pyttene kommer (`pyttStoy` er samme støy som i vaat.ts). `bakkeBoks` erstatter `k.box('gjorme', …)` |
+| `motor/relieff.ts` | Relieff (parallax occlusion mapping) i gjørma og plankene i gårdsrommet: teksturoppslaget flyttes langs synslinja etter et høydekart (`_disp`), så stein og blader stikker opp og fugene har bunn. Bare på full kvalitet og nærmere enn 14 m |
 | `bygg/uro.ts` | Ting som rører seg: `Uro` med `pendel` (skilt i vinden), `gynge` (vugge), `luke` (åpen om dagen, slår i vinden), `heis` (bunt opp under vinsjen), og `klesvask` (seilduk som vinden i shaderen blåser). `vind()` følger været (`koblVind`). Delene skjules bak 40 m |
 | `motor/gestikk.ts` | Gester mens folk snakker: prateklippet (`Idle_Talking_Loop`) og vift, vink, kom hit, pek, nikk, rist, skuldre, bukk og rop dreid i figurens rom (`Animator.figurDrei`). `gestFra(tekst)` velger gest fra det som blir sagt |
 | `bygg/personer.ts` | Navn og tittel over hodet for folk med `id` på plassen eller ruta |
@@ -324,8 +326,10 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
   i `colliders` (prop, så kameraet ikke hopper), `tick` driver animasjonen og `dispose` tar figurene
   ut av `near` før cella kaster geometrien, siden figurgeometrien deles. Folkene står stille og har
   `frustumCulled` på; spilleren og fienden har det av.
-- Sittende plasseres med `pos` midt på benkesetet: i `Sitting_Idle_Loop` står hoftene 0,33 m bak og
-  0,54 m over riggens føtter (1,83 m høy rigg), og det passer benker på 0,45 m.
+- Sittende plasseres med `pos` midt på benkesetet (y = toppen av setet): i `Sitting_Idle_Loop` står
+  hoftene 0,33 m bak og 0,545 m over riggens føtter (1,83 m høy rigg). `lagFolk` setter riggen så
+  hofteleddet havner 9 cm over setet (`SITT_SETE`), og da når føttene golvet på benker rundt 0,45 m.
+  Mål med `__bryggenFolk()` (`hofte` og `fot` er høyden på hofteleddet og den laveste ankelen).
 - Folk skal stå minst en drøy meter fra døråpninger og trappefoten, og helst langs veggen uten dør.
 - Rottene bor i soner (`RotteSone`): rommene uten ild fra `streamer.rom()` (bua, lagerloftet), en smal
   stripe langs kaikanten foran hver gård og stripene inntil veggen under svalgangene. Ute er stripene
@@ -364,6 +368,22 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
   står spillet nesten stille i testen. Test bevegelse med `?kvalitet=lav&post=0` og et lite vindu.
 - Det gutten har gjort som folk husker, står i `SPOR` (`samtaler.ts`): bunter båret, juks, om fiskeren
   har merket det. `startNode` velger hvor en samtale starter ut fra det. Ikke lagret ennå.
+- Bakken (gjørma) lages med `bakkeBoks`/`bakke` (bakke.ts), ikke `k.box('gjorme', …)`. Formen holder seg
+  mellom -9 og +4,5 cm fra toppen av boksen, og flater ut 0,7 m fra kantene, så den møter vegger, kai og
+  nabocellene. Kolliderne er fortsatt flate: føttene synker litt ned i haugene. Store flater får ruter på
+  0,7 m (`bakkeBoks`), ellers 0,5 m. Gjørma kaster ikke skygge, men rusket (stein, raatre) gjør det.
+- Pyttene (`vaat.ts`) bruker `pyStoy` med en hash uten sinus, regnet i 32-bits flyt likt i JS
+  (`pyttStoy`, bakke.ts). Endres den ene, må den andre følge med, ellers står vannet på haugene.
+- Relieffet (`relieff.ts`) settes på materialene i `RELIEFF` (dybde i meter) når detaljkartene lastes, med
+  `RELIEFF`-define. Vætan eier `relHoyde` (0,5 uten relieff), og relieffet skriver den.
+- SSAO regner normalen fra naboene på den siden som ligger nærmest i dybden, og har en vinkel-bias
+  (0,18): med dFdx/dFdy på halv oppløsning ble golv og bakke stripete.
+- Dører og gluggeluker som rører seg på et hus: `husLuker(uro, spec, m, yaw, fotter, luker)` (heim.ts).
+  Alle med samme form i en `Uro` er én InstancedMesh (`Uro.lukeMal`): ett tegnekall for alle dørene, ett
+  per gluggestørrelse, med husets farge per instans. Luka over disken i verkstedene er en klaff
+  (`lukeKlaff`, akse 'x') i to formbredder (`lukeForm`), strukket til bredden sin. Brukt på Stranden, i
+  Øvregaten (dørene og lukene mot gata), i Vågsbunnen (luka over disken slås ned om natta) og i
+  nabogårdene (de lukkede dørene, og gluggene som sto åpne).
 - `game.ts` er nær 800 linjer. Nye systemer får egen fil i `graboks/` og hektes på med få linjer.
 - Nikolaikirken og kirkegården står bak grensa for det spilleren kan gå på, og bruker `tynnTake` fordi
   tårnet er et landemerke. Bare muren mot gata kolliderer; grinda er stengt. Rådhuset går i

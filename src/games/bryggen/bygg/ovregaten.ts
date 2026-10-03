@@ -24,6 +24,9 @@ import type { Rute } from './vandrer';
 import { LIST, STEIN } from './stein';
 import { MUR_Z } from './allmenning';
 import { NIKOLAI_Y } from './nikolaikirken';
+import { bakkeBoks } from './bakke';
+import { husLuker } from './heim';
+import { Uro } from './uro';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -105,9 +108,11 @@ function planHus(o: GateOppsett): { hus: GateHus[]; gjerder: [number, number][];
                 w, l: 7 + r() * 3.5, floors: r() < 0.45 ? [2.5, 2.3] : [2.7], roof: r() < 0.75 ? 'torv' : 'bordtak',
                 pitch: 0.8 + r() * 0.15, tint: T(0.86 + r() * 0.18, toner[Math.floor(r() * 3)]),
                 cornersFront: true, cornersBack: true, hodeSeg: 5,
-                doors: [{ side: dor, z: 1.3 }],
+                // Døra er et eget blad som går opp når noen kommer (uro.ts).
+                doors: [{ side: dor, z: 1.3, uro: true }],
             };
-            spec.glugger = trekkGlugger(spec, dor, true, rng(i * 31 + Math.round(a)));
+            // Lukene mot gata åpnes om morgenen og lukkes om natta. Trekningen er den samme som før.
+            spec.glugger = trekkGlugger(spec, dor, true, rng(i * 31 + Math.round(a))).map((g) => (g.side === 0 ? { ...g, open: false, uro: true } : g));
             hus.push({ x: x + gap + w / 2, z: GATE.hus, rot: 0, spec });
             x += gap + w;
         }
@@ -188,12 +193,15 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
     const ild: THREE.Vector3[] = [];
     const ilder: Ild[] = [];
     const plasser: Plass[] = [];
+    /** Dørene og lukene som går opp og igjen, og føttene som åpner dørene. */
+    const uro = new Uro(mats, `ovregaten-${Math.round(a)}:uro`);
+    const fotter: THREE.Vector3[] = [];
 
     // Bakken: gjørme oppå, helt fram til kirkegårdsmurene og inn under husene.
     const bit = (x0: number, x1: number, z1: number) => {
         if (x1 - x0 < 0.01) return;
         const zm = (GATE.mur1 + z1) / 2;
-        k.withTint({ top: 0.72, bottom: 0.72 }, () => k.box('gjorme', (x0 + x1) / 2, y - 0.05, zm, x1 - x0, 0.1, z1 - GATE.mur1, { skip: ['bottom'] }));
+        k.withTint({ top: 0.72, bottom: 0.72 }, () => bakkeBoks(k, 'gjorme', (x0 + x1) / 2, y - 0.05, zm, x1 - x0, 0.1, z1 - GATE.mur1));
         c.box((x0 + x1) / 2, y - 0.75, zm, x1 - x0, 1.5, z1 - GATE.mur1);
         lod.withTint({ top: 1, bottom: 1, hue: [0.29, 0.23, 0.17] }, () => lod.box('mork', (x0 + x1) / 2, y - 0.05, zm, x1 - x0, 0.1, z1 - GATE.mur1, { skip: ['bottom'] }));
     };
@@ -247,6 +255,7 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
         hus(k, c, h.spec);
         lod.matrix = m.clone();
         husLod(lod, h.spec, (key) => mats.lodColor(key));
+        husLuker(uro, h.spec, m, h.rot, fotter);
         if (h.olstue) {
             const ki = new MeshKit();
             ki.matrix = m.clone();
@@ -312,7 +321,7 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
     const naer = toGroup(k, mats, 'ovregaten');
     const uten = naer.clone();
     uten.traverse((x) => (x.castShadow = false));
-    near.add(naer, uten, f.group);
+    near.add(naer, uten, f.group, uro.group);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'ovregaten:lod';
     return {
@@ -321,10 +330,14 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
         tick: (t, dt, ctx) => {
             ilder.forEach((x) => x.update(t, dt));
             f.tick(t, dt, ctx);
+            fotter.length = 0;
+            fotter.push(ctx.spiller, ...f.gaaende);
+            uro.tick(t, dt, ctx.kamera);
         },
         dispose: () => {
             ilder.forEach((x) => x.dispose());
             f.dispose();
+            uro.dispose();
         },
     };
 }

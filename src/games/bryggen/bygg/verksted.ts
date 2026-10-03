@@ -46,6 +46,8 @@ export interface VerkstedInfo {
     royk: THREE.Vector3 | null;
     /** Der skiltet henger i armen (tauet festes her), i bodens rom. */
     skilt: THREE.Vector3;
+    /** Luka over disken (`lukeKlaff`), som henges opp i cellas `Uro`. */
+    luke: VerkstedLuke;
 }
 
 const T = 0.2; // veggtykkelse
@@ -131,14 +133,11 @@ export function verksted(k: MeshKit, ki: MeshKit, glod: MeshKit, c: ColliderKit,
     const lw = l1 - l0;
     k.withTint({ top: 0.8, bottom: 0.8, hue: [1.05, 0.98, 0.9] }, () => k.box('raatre', lm, DISK_Y, -0.08, lw + 0.1, 0.07, 0.62, { grain: 'x' }));
     c.box(lm, DISK_Y / 2 + 0.02, -0.06, lw + 0.1, DISK_Y + 0.04, 0.62, true);
-    const lukeH = LUKE_Y - DISK_Y - 0.08;
-    const vinkel = 1.15;
-    const ml = new THREE.Matrix4().makeTranslation(lm, LUKE_Y, -0.02).multiply(new THREE.Matrix4().makeRotationX(vinkel)).multiply(new THREE.Matrix4().makeTranslation(0, -lukeH / 2, -0.03));
-    k.withTint({ ...s.tint, top: s.tint.top * 0.85 }, () => k.slab('bordvegg', ml, lw, lukeH, 0.05));
-    const lukeEnde = V(0, -lukeH, 0).applyAxisAngle(V(1, 0, 0), vinkel);
-    k.withTint({ top: 0.6, bottom: 0.6 }, () => {
-        for (const x of [l0 + 0.1, l1 - 0.1]) k.log('raatre', V(x, DISK_Y + 0.04, -0.3), V(x, LUKE_Y + lukeEnde.y + 0.02, lukeEnde.z - 0.02), 0.025, 5);
-    });
+    // Luka og stengene er en egen del (`lukeKlaff`) som cella henger opp i en `Uro`: den slås ned om natta.
+    const luke: VerkstedLuke = {
+        hengsel: V(lm, LUKE_Y, -0.02), w: lw, h: LUKE_Y - DISK_Y - 0.08,
+        farge: new THREE.Color(...(s.tint.hue ?? [1, 1, 1])).multiplyScalar(s.tint.top * 0.85),
+    };
     if (aapen) {
         // Smia: bare en lav bom foran, og ingen disk-forkle.
         k.withTint({ top: 0.6, bottom: 0.6 }, () => k.box('raatre', lm, 0.5, 0.1, lw, 0.1, 0.12));
@@ -154,7 +153,42 @@ export function verksted(k: MeshKit, ki: MeshKit, glod: MeshKit, c: ColliderKit,
 
     // Innredningen.
     const inne = innredning(ki, glod, c, s, { l0, l1, d0, d1 }, r);
-    return { ...inne, rom: new THREE.Box3(V(-hw + T, 0, T), V(hw - T, h + rise * 0.6, l - T)), skilt: V(sx, 2.73, -0.9) };
+    return { ...inne, rom: new THREE.Box3(V(-hw + T, 0, T), V(hw - T, h + rise * 0.6, l - T)), skilt: V(sx, 2.73, -0.9), luke };
+}
+
+/** Vinkelen luka står i når den er slått opp over disken. */
+export const LUKE_OPPE = 1.15;
+
+/** Luka over disken: hengselet (i bodens rom), bredden, høyden og fargen. */
+export interface VerkstedLuke {
+    hengsel: THREE.Vector3;
+    w: number;
+    h: number;
+    farge: THREE.Color;
+}
+
+/**
+ * Luka som en klaff med hengselet i origo (vannrett, langs x), hengende ned (lukket). Stengene som
+ * holder den oppe står fast i underkanten: når luka slås ned, havner de inne bak veggen. Nøytral
+ * tint: fargen kommer fra `VerkstedLuke.farge` i `Uro.lukeMal`.
+ */
+export function lukeKlaff(k: MeshKit, l: VerkstedLuke): void {
+    const w = lukeForm(l.w);
+    k.withTint({ top: 1, bottom: 1 }, () => k.box('bordvegg', 0, -l.h / 2, -0.055, w, l.h, 0.05));
+    // Stengene: fra underkanten av luka ned til disken, regnet i lukas rom når den står oppe.
+    const ende = V(0, -l.h, -0.03);
+    const disk = V(0, DISK_Y + 0.04 - LUKE_Y, -0.3 + 0.02).applyAxisAngle(V(1, 0, 0), -LUKE_OPPE);
+    k.withTint({ top: 0.7, bottom: 0.7 }, () => {
+        for (const x of [-w / 2 + 0.1, w / 2 - 0.1]) k.log('raatre', V(x, disk.y, disk.z), V(x, ende.y, ende.z), 0.025, 5);
+    });
+}
+
+/**
+ * Bredden formen til luka bygges i: lukene deler form (ett tegnekall i `Uro.lukeMal`) og strekkes
+ * til sin egen bredde. To former, så de brede ikke får dobbelt så brede bord.
+ */
+export function lukeForm(w: number): number {
+    return w < 3 ? 2.2 : 3.8;
 }
 
 /** Tauet og fagets tegn under, med festet i origo: henges i en `Uro.pendel`. */

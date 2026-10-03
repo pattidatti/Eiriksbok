@@ -19,7 +19,8 @@ import { DECK_Y, FRONT_Z, GARD_DEPTH, SV_W, T, WARM, kai, kaiJog, svalgang, toGr
 import { LIST, STEIN, apning, paFlate } from './stein';
 import { NIKOLAI_Y, PORTAL_Z, buildNikolaikirken } from './nikolaikirken';
 import { lagFolk } from './folk';
-import { bod, bronn, slede, spor } from './torg';
+import { bod, bronn, slede } from './torg';
+import { bakke, sporFurer } from './bakke';
 import { torgPlasser, torgRuter } from './torgfolk';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
@@ -173,7 +174,10 @@ export async function buildAllmenningCell(mats: Materials, x0: number, x1: numbe
     c.matrix = k.matrix.clone();
 
     // Bakken: gjørme over det hele, plankegang opp midten til kirketrappa, og en kort kai ytterst.
-    k.box('gjorme', xm, -0.1, zm + 0.6, w, 0.2, depth - 1.2, { skip: ['bottom'] });
+    // Sporene etter sleder og kjerrer er renner i gjørma [S]. Pyttene ligger i søkkene (bakke.ts, vaat.ts).
+    const furer = [...sporFurer(6.1, front + 1.6, 56, 0.8, 1), ...sporFurer(RAD.x0 + RAD.w / 2, front + 1.6, RAD.z0 - 0.4, 0.8, 4)];
+    k.box('gjorme', xm, -0.1, zm + 0.6, w, 0.2, depth - 1.2, { skip: ['top', 'bottom'] });
+    bakke(k, 'gjorme', 0, w, zm + 0.6 - (depth - 1.2) / 2, zm + 0.6 + (depth - 1.2) / 2, 0, { furer });
     c.box(xm, -0.75, zm, w, 1.5, depth);
     const pz0 = front + 2.7;
     const pz1 = KTRAPP.z0 + 0.05;
@@ -191,9 +195,6 @@ export async function buildAllmenningCell(mats: Materials, x0: number, x1: numbe
     }
     for (const [x, z, t] of [[3.4, 2.6, 0.9], [4.1, 3.2, 0.8], [15.2, 2.4, 0.95]] as const) tonne(k, c, x, z, t);
 
-    // Sporene etter sleder og kjerrer [S]. Pyttene ligger i shaderen (vaat.ts).
-    spor(k, 6.1, front + 1.6, 56, 0.8, 1);
-    spor(k, RAD.x0 + RAD.w / 2, front + 1.6, RAD.z0 - 0.4, 0.8, 4);
 
     // Bodene: langs vestsida, og to øverst der torget trolig var [V Wikipedia, «trolig»].
     const motOst = -Math.PI / 2;

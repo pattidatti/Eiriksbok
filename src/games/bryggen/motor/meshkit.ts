@@ -53,6 +53,15 @@ export interface Tint {
 
 const PLAIN: Tint = { top: 1, bottom: 1 };
 
+/** Ett hjørne i `MeshKit.grid`. `shade` starter som `tint.top`. */
+export interface GridHjorne {
+    p: THREE.Vector3;
+    n: THREE.Vector3;
+    u: number;
+    v: number;
+    shade: number;
+}
+
 /** Bygger geometri i bøtter. `matrix` er gjeldende transformasjon (lokalt hus-rom → verden). */
 export class MeshKit {
     readonly buckets = new Map<MatKey, Bucket>();
@@ -161,6 +170,32 @@ export class MeshKit {
         this.vert(b, p.copy(o).add(ua).add(va), n, uv0[0] + lu, uv0[1] + lv, s1);
         this.vert(b, p.copy(o).add(va), n, uv0[0], uv0[1] + lv, s1);
         b.idx.push(base, base + 1, base + 2, base, base + 2, base + 3);
+    }
+
+    /**
+     * Rutenett med (cols + 1) x (rows + 1) hjørner (bakke med relieff). `at(i, j, h)` fyller inn
+     * hjørnet: posisjon og normal i det lokale rommet, UV i meter og fargefaktor. Kvadratene deles
+     * langs samme diagonal, og flaten vender mot normalen når i går langs x og j langs z.
+     */
+    grid(key: MatKey, cols: number, rows: number, at: (i: number, j: number, h: GridHjorne) => void): void {
+        const b = this.bucket(key);
+        const base = b.vertexCount;
+        const h: GridHjorne = { p: new THREE.Vector3(), n: new THREE.Vector3(0, 1, 0), u: 0, v: 0, shade: 1 };
+        for (let j = 0; j <= rows; j++) {
+            for (let i = 0; i <= cols; i++) {
+                h.n.set(0, 1, 0);
+                h.shade = this.tint.top;
+                at(i, j, h);
+                this.vert(b, h.p, h.n, h.u, h.v, h.shade);
+            }
+        }
+        const w = cols + 1;
+        for (let j = 0; j < rows; j++) {
+            for (let i = 0; i < cols; i++) {
+                const a = base + j * w + i;
+                b.idx.push(a, a + w, a + 1, a + 1, a + w, a + w + 1);
+            }
+        }
     }
 
     /** Trekant (gavlspiss). UV i meter i flatens plan. */

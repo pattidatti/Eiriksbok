@@ -17,6 +17,7 @@ import type { Materials } from '../motor/materials';
 import type { CellContent } from '../motor/streaming';
 import { eaveY, frontZ, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
 import { Uro } from './uro';
+import { husLuker } from './heim';
 import { lagFolk, type FigurNavn, type Plass } from './folk';
 import type { Rute } from './vandrer';
 import {
@@ -24,6 +25,7 @@ import {
     brannkar, kai, kaiJog, svalgang, toGroup, tonne, trapp,
     type Placed, type Sides,
 } from './gard';
+import { bakkeBoks } from './bakke';
 
 type Hue = [number, number, number];
 const HUES: Hue[] = [WARM, COLD, DARK];
@@ -178,7 +180,8 @@ function rekke(p: GardParams, r: () => number, x: number, yardSide: -1 | 1, svCo
         const cand = s.l > 8 ? [0.28, 0.72] : [0.5];
         for (const f of cand) {
             const zz = s.l * f + lerp(-0.4, 0.4, r());
-            if (!blocked(h.z + zz)) doors.push({ side: yardSide, z: zz, open: r() < 0.25 });
+            // De lukkede dørene er egne blad som går opp når noen kommer forbi (uro.ts).
+            if (!blocked(h.z + zz)) doors.push(r() < 0.25 ? { side: yardSide, z: zz, open: true } : { side: yardSide, z: zz, uro: true });
         }
         s.doors = doors;
         if (sv && h.z < sv.z1 && h.z + s.l > sv.z0 && s.floors.length > 1) {
@@ -189,7 +192,8 @@ function rekke(p: GardParams, r: () => number, x: number, yardSide: -1 | 1, svCo
     }
     // Gluggene trekkes for seg (eget frø per hus), så resten av gården ikke flytter seg.
     houses.forEach((h, i) => {
-        h.spec.glugger = trekkGlugger(h.spec, yardSide, i === 0, rng(p.seed * 13 + i * 101 + (x > 0 ? 7 : 0)));
+        // Gluggene som sto åpne, åpnes om morgenen og slås igjen om kvelden (uro.ts). De andre er stengt.
+        h.spec.glugger = trekkGlugger(h.spec, yardSide, i === 0, rng(p.seed * 13 + i * 101 + (x > 0 ? 7 : 0))).map((g) => (g.open ? { ...g, open: false, uro: true } : g));
     });
     return { x, yardSide, houses, end, sv };
 }
@@ -250,6 +254,8 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     const lod = new MeshKit();
     // Heisingen i gavlen (uro.ts): om dagen går bunter opp fra kaia og inn på loftet i annenhver gård [S].
     const uro = new Uro(mats, `nabo${p.seed}:uro`);
+    /** Føttene som åpner dørene: gutten og dem som går. */
+    const fotter: THREE.Vector3[] = [];
     const heiser = p.seed % 2 === 0;
     for (const h of houses) {
         const k = kitAt(h.z);
@@ -259,6 +265,7 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
         hus(k, c, h.spec);
         lod.matrix = m.clone();
         husLod(lod, h.spec, (key) => mats.lodColor(key));
+        husLuker(uro, h.spec, m, h.rot ?? 0, fotter, ['morgen', 'dag']);
         if (heiser && h.spec.vinsj) {
             const trinse = new THREE.Vector3(0, eaveY(h.spec) + riseOf(h.spec) - 1.05, frontZ(h.spec) - 1.29).applyMatrix4(m);
             uro.heis(trinse, h.rot ?? 0, (kk) => buntHeis(kk), 0.95, ['morgen', 'dag']);
@@ -271,7 +278,7 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     let k = fram;
     // Gårdsrommet, gjørme under resten og fast grunn.
     k.withTint({ top: 0.95, bottom: 0.95 }, () => k.box('gardsrom', yardX, -0.07, (z0 + back) / 2, p.yardW, 0.14, back - z0, { skip: ['bottom'] }));
-    k.withTint({ top: 0.7, bottom: 0.7 }, () => k.box('gjorme', 0, -0.06, (z0 + zBack) / 2, W, 0.1, zBack - z0, { skip: ['bottom'] }));
+    k.withTint({ top: 0.7, bottom: 0.7 }, () => bakkeBoks(k, 'gjorme', 0, -0.06, (z0 + zBack) / 2, W, 0.1, zBack - z0));
     c.box(0, -0.75, (z0 + zBack) / 2, W, 1.5, zBack - z0);
     kai(k, c, -W / 2, W / 2, p.front, FRONT_Z);
     kaiJog(k, -W / 2, p.front, sides.west, -1);
@@ -334,6 +341,8 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
         drypp: [...fram.skjegg, ...bak.skjegg],
         tick: (t, dt, ctx) => {
             folk.tick(t, dt, ctx);
+            fotter.length = 0;
+            fotter.push(ctx.spiller, ...folk.gaaende);
             uro.tick(t, dt, ctx.kamera);
         },
         dispose: () => {

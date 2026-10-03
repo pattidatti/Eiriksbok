@@ -157,17 +157,3 @@ export function slede(k: MeshKit, c: ColliderKit, x: number, z: number, rot: num
     }, c);
 }
 
-/**
- * Hjulspor og medespor i gjørma: to mørke, våte striper som slingrer litt, fra `z0` til `z1`.
- * `w` er avstanden mellom dem.
- */
-export function spor(k: MeshKit, x: number, z0: number, z1: number, w: number, seed: number): void {
-    const seg = 0.9;
-    k.withTint({ top: 0.6, bottom: 0.6, hue: [0.95, 0.95, 1.0] }, () => {
-        for (let z = z0; z < z1 - 0.1; z += seg) {
-            const l = Math.min(seg, z1 - z);
-            const j = Math.sin(z * 0.37 + seed) * 0.12 + Math.sin(z * 0.9 + seed * 2) * 0.03;
-            for (const sx of [-w / 2, w / 2]) k.box('gjorme', x + sx + j, 0.004, z + l / 2, 0.17, 0.02, l + 0.12, { skip: ['bottom'] });
-        }
-    });
-}

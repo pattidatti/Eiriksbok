@@ -25,3 +25,14 @@ Tre filer per sett:
 
 Filene er registrert i `scripts/image-ledger.json` slik at `optimize-images` ikke komprimerer
 dem på nytt (normalkart tåler dårlig en ekstra lossy runde).
+
+## Høydekart til relieffet (hentet 03.10.2026)
+
+To høydekart (`Displacement`, 1K JPG, md5 sjekket mot `api.polyhaven.com/files/<id>`), gjort om til
+gråtone-WebP (q85, `normalise`) med sharp. Brukes av relieffet i bakken (`motor/relieff.ts`) på full
+kvalitet. CC0 1.0 som resten.
+
+| Fil | Poly Haven-id | Brukes til |
+|---|---|---|
+| `gjorme_disp.webp` | `brown_mud_leaves_01` | Steinene og bladene i gjørma får dybde |
+| `gardsrom_disp.webp` | `wood_planks_dirt` | Fugene mellom plankene i gårdsrommet |

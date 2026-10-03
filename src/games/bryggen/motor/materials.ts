@@ -7,6 +7,7 @@ import * as THREE from 'three';
 import type { MatKey } from './meshkit';
 import { Vaat } from './vaat';
 import { SEIL_LOD, kastSeilduk, lagSeilduk, seilKvalitet } from './seilduk';
+import { RELIEFF, patchRelieff } from './relieff';
 
 const BASE = '/games/bryggen/textures/';
 
@@ -46,7 +47,9 @@ export class Materials {
     private readonly mats = new Map<MatKey, THREE.MeshStandardMaterial>();
     private readonly textures: THREE.Texture[] = [];
     /** Normal- og ARM-kartene per materiale. Lastes først når full kvalitet brukes. */
-    private readonly detail = new Map<MatKey, { normal: THREE.Texture; arm: THREE.Texture }>();
+    private readonly detail = new Map<MatKey, { normal: THREE.Texture; arm: THREE.Texture; hoyde?: THREE.Texture }>();
+    /** Høydekartet til relieffet (relieff.ts) per materiale, som uniform i shaderen. */
+    private readonly hoyde = new Map<MatKey, { value: THREE.Texture | null }>();
     private detailLoad: Promise<void> | null = null;
     private readonly maxAnisotropy: number;
     /** Lav kvalitet: bare fargetekstur og ruhet. Sparer to teksturoppslag per piksel. */
@@ -158,6 +161,18 @@ export class Materials {
 
     /** Hekter vætan på materialet (én shader per nøkkel). */
     private medVaat(m: THREE.MeshStandardMaterial, key: MatKey | 'lod'): THREE.MeshStandardMaterial {
+        const rel = key !== 'lod' && RELIEFF[key] !== undefined && key in DEFS ? key : null;
+        if (rel) {
+            const u = { value: null as THREE.Texture | null };
+            this.hoyde.set(rel, u);
+            const dybde = RELIEFF[rel] / DEFS[rel as keyof typeof DEFS].tile;
+            m.onBeforeCompile = (sh) => {
+                patchRelieff(sh, u, dybde);
+                this.vaat.patch(sh, key);
+            };
+            m.customProgramCacheKey = () => `vaat:${key}:relieff`;
+            return m;
+        }
         m.onBeforeCompile = (sh) => this.vaat.patch(sh, key);
         m.customProgramCacheKey = () => `vaat:${key}`;
         return m;
@@ -199,11 +214,12 @@ export class Materials {
             const entries = Object.entries(DEFS) as [Exclude<MatKey, 'mork' | 'seil'>, MatDef][];
             this.detailLoad = Promise.all(
                 entries.map(async ([key, def]) => {
-                    const [normal, arm] = await Promise.all([
+                    const [normal, arm, hoyde] = await Promise.all([
                         this.tex(`${BASE}${def.file}_nor.webp`, false, def.tile),
                         this.tex(`${BASE}${def.file}_arm.webp`, false, def.tile),
+                        RELIEFF[key] !== undefined ? this.tex(`${BASE}${def.file}_disp.webp`, false, def.tile) : undefined,
                     ]);
-                    this.detail.set(key, { normal, arm });
+                    this.detail.set(key, { normal, arm, hoyde });
                 })
             ).then(() => this.applyQuality());
         }
@@ -232,6 +248,14 @@ export class Materials {
             m.aoMap = d?.arm ?? null;
             m.roughnessMap = d?.arm ?? null;
             m.roughness = d ? 1 : 0.85;
+            const h = this.hoyde.get(key);
+            if (h) {
+                h.value = d?.hoyde ?? null;
+                // Three leser `defines` på alle materialer, men typene har det bare på ShaderMaterial.
+                const md = m as THREE.MeshStandardMaterial & { defines?: Record<string, string> };
+                if (h.value) md.defines = { ...md.defines, RELIEFF: '' };
+                else if (md.defines) delete md.defines.RELIEFF;
+            }
             m.needsUpdate = true;
         }
         for (const [key, m] of this.tynne) {

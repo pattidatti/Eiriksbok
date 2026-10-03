@@ -2,7 +2,8 @@
 // kvelden, en vugge som gynger, bunter som heises opp i gavlen, og klesvask som blafrer på snora.
 //
 // Hver del er en liten egen mesh med hengselet i origo (`Uro`). Den koster ett tegnekall per materiale,
-// så cellene har få av dem, og de står stille og skjules bak `UTE` meter. Klesvasken er ikke deler: den
+// så cellene har få av dem, og de står stille og skjules bak `UTE` meter. Luker og dører med samme form
+// (`lukeMal`) deler én InstancedMesh: alle i cella er ett tegnekall. Klesvasken er ikke deler: den
 // er seilduk (`seil`-materialet, seilduk.ts) i cellas vanlige geometri, og vinden i shaderen blåser den
 // uten at noe regnes ut her.
 //
@@ -38,6 +39,26 @@ export function vind(t: number): number {
 /** Bak dette (fra kameraet) står delene stille og skjules. */
 const UTE = 40;
 
+const _m = new THREE.Matrix4();
+
+/**
+ * Vinkelen til en luke på et hengsel over tid: åpen (`aapen`) i delene av dagen i `naar`, eller når
+ * funksjonen sier det. Står den åpen, slår den litt i vinden.
+ */
+function hengsel(pos: THREE.Vector3, aapen: number, naar: Fase[] | (() => boolean)): (t: number, dt: number, vi: number) => number {
+    const forskyv = ((pos.x * 13.1 + pos.z * 7.7) % 40) - 20;
+    const skal = typeof naar === 'function' ? naar : () => naar.includes(fase(forskyv));
+    const fart = typeof naar === 'function' ? 2.2 : 0.8;
+    let vinkel = skal() ? aapen : 0;
+    const f = (pos.x * 0.53 + pos.z * 0.29) % 6.28;
+    return (t, dt, vi) => {
+        const vil = skal() ? aapen : 0;
+        vinkel += THREE.MathUtils.clamp(vil - vinkel, -dt * fart, dt * fart);
+        const slark = vil !== 0 ? vi * 0.06 * Math.sin(t * 1.3 + f) * Math.sin(t * 0.41 + f) : 0;
+        return vinkel + slark * Math.sign(aapen);
+    };
+}
+
 interface Del {
     obj: THREE.Object3D;
     tick: (t: number, dt: number, v: number) => void;
@@ -47,6 +68,8 @@ export class Uro {
     readonly group = new THREE.Group();
     private readonly deler: Del[] = [];
     private readonly mats: Materials;
+    /** Luker som deler form (`lukeMal`): formen, delene og InstancedMesh-ene (laget i første `tick`). */
+    private readonly maler = new Map<string, { k: MeshKit; deler: { vend: THREE.Object3D; rot: THREE.Object3D; farge: THREE.Color }[]; mesh: THREE.InstancedMesh[] }>();
 
     constructor(mats: Materials, navn = 'uro') {
         this.mats = mats;
@@ -111,20 +134,72 @@ export class Uro {
      */
     luke(pos: THREE.Vector3, rotY: number, fn: (k: MeshKit) => void, aapen: number, naar: Fase[] | (() => boolean)): void {
         const { rot, vend } = this.lag(pos, rotY, fn);
-        const forskyv = ((pos.x * 13.1 + pos.z * 7.7) % 40) - 20;
-        const skal = typeof naar === 'function' ? naar : () => naar.includes(fase(forskyv));
-        const fart = typeof naar === 'function' ? 2.2 : 0.8;
-        let vinkel = skal() ? aapen : 0;
-        const f = (pos.x * 0.53 + pos.z * 0.29) % 6.28;
+        const vinkel = hengsel(pos, aapen, naar);
+        this.deler.push({ obj: vend, tick: (t, dt, vi) => (rot.rotation.y = vinkel(t, dt, vi)) });
+    }
+
+    /**
+     * Som `luke`, men alle luker med samme `mal` (samme form, bygget av `fn` første gang) tegnes som én
+     * InstancedMesh per materiale: ett tegnekall for alle dørene eller gluggelukene i cella. Fargen per
+     * hus kommer i `farge` (ganges med fargene i formen). Bygg formen med nøytral tint. `akse` 'x' gir
+     * en klaff med vannrett hengsel (luka over disken i verkstedene), bygget hengende ned fra origo.
+     * `skalaX` strekker formen langs x (luker som er litt bredere eller smalere enn formen).
+     */
+    lukeMal(mal: string, fn: (k: MeshKit) => void, pos: THREE.Vector3, rotY: number, farge: THREE.Color, aapen: number, naar: Fase[] | (() => boolean), akse: 'x' | 'y' = 'y', skalaX = 1): void {
+        let m = this.maler.get(mal);
+        if (!m) {
+            const k = new MeshKit();
+            fn(k);
+            m = { k, deler: [], mesh: [] };
+            this.maler.set(mal, m);
+        }
+        const vend = new THREE.Object3D();
+        vend.position.copy(pos);
+        vend.rotation.y = rotY;
+        vend.scale.x = skalaX;
+        vend.updateMatrix();
+        const rot = new THREE.Object3D();
+        const vinkel = hengsel(pos, aapen, naar);
+        rot.rotation[akse] = vinkel(0, 0, 0);
+        m.deler.push({ vend, rot, farge: farge.clone() });
+        const mm = m;
+        const i = m.deler.length - 1;
         this.deler.push({
             obj: vend,
             tick: (t, dt, vi) => {
-                const vil = skal() ? aapen : 0;
-                vinkel += THREE.MathUtils.clamp(vil - vinkel, -dt * fart, dt * fart);
-                const slark = vil !== 0 ? vi * 0.06 * Math.sin(t * 1.3 + f) * Math.sin(t * 0.41 + f) : 0;
-                rot.rotation.y = vinkel + slark * Math.sign(aapen);
+                rot.rotation[akse] = vinkel(t, dt, vi);
+                rot.updateMatrix();
+                _m.multiplyMatrices(vend.matrix, rot.matrix);
+                for (const im of mm.mesh) {
+                    im.setMatrixAt(i, _m);
+                    im.instanceMatrix.needsUpdate = true;
+                }
             },
         });
+    }
+
+    /** Lager InstancedMesh-ene for malene (første `tick`, når alle lukene er lagt til). */
+    private byggMaler(): void {
+        for (const [navn, m] of this.maler) {
+            if (m.mesh.length) continue;
+            for (const [key, b] of m.k.buckets) {
+                if (b.vertexCount === 0) continue;
+                const im = new THREE.InstancedMesh(b.toGeometry(), this.mats.get(key), m.deler.length);
+                im.name = `${this.group.name}:${navn}:${key}`;
+                im.castShadow = true;
+                im.receiveShadow = true;
+                m.deler.forEach((d, i) => {
+                    d.rot.updateMatrix();
+                    im.setMatrixAt(i, _m.multiplyMatrices(d.vend.matrix, d.rot.matrix));
+                    im.setColorAt(i, d.farge);
+                });
+                // Lukene står spredt i cella og rører seg lite: kula rundt alle holder.
+                im.computeBoundingSphere();
+                if (im.boundingSphere) im.boundingSphere.radius += 1.5;
+                m.mesh.push(im);
+                this.group.add(im);
+            }
+        }
     }
 
     /**
@@ -167,6 +242,7 @@ export class Uro {
 
     /** Hvert bilde (fra cellas `tick`). */
     tick(t: number, dt: number, kamera: THREE.Vector3): void {
+        if (this.maler.size) this.byggMaler();
         const v = vind(t);
         for (const d of this.deler) {
             const naer = d.obj.position.distanceToSquared(kamera) < UTE * UTE;
@@ -178,6 +254,7 @@ export class Uro {
     dispose(): void {
         this.group.traverse((o) => {
             if (o instanceof THREE.Mesh) o.geometry.dispose();
+            if (o instanceof THREE.InstancedMesh) o.dispose();
         });
     }
 }

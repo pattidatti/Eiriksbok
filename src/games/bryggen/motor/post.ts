@@ -250,7 +250,7 @@ float ign(vec2 p) {
 `;
 
 // SSAO etter «Alchemy»/SAO: åtte prøver i en spiral rundt pikselen, innenfor en halvkule på
-// ca. 0,9 m. Normalen regnes ut av dybden selv.
+// ca. 0,9 m. Normalen regnes ut av dybden selv, og det som ligger nær flaten teller ikke.
 const AO_GLSL = /* glsl */ `
 uniform vec2 uPx;
 uniform float uProjSkala;
@@ -260,7 +260,15 @@ void main() {
     float d = dybde(vUv);
     if (d >= 1.0) { gl_FragColor = vec4(1.0); return; }
     vec3 P = viewPos(vUv, d);
-    vec3 n = normalize(cross(dFdx(P), dFdy(P)));
+    // Normalen fra naboene på den siden som ligger nærmest i dybden: dFdx/dFdy på halv oppløsning
+    // ga striper på golv og bakke, og kanter blør ikke inn.
+    vec2 ux = vec2(uPx.x, 0.0);
+    vec2 uy = vec2(0.0, uPx.y);
+    vec3 Pr = viewPos(vUv + ux, dybde(vUv + ux)) - P;
+    vec3 Pl = P - viewPos(vUv - ux, dybde(vUv - ux));
+    vec3 Pu = viewPos(vUv + uy, dybde(vUv + uy)) - P;
+    vec3 Pd = P - viewPos(vUv - uy, dybde(vUv - uy));
+    vec3 n = normalize(cross(abs(Pr.z) < abs(Pl.z) ? Pr : Pl, abs(Pu.z) < abs(Pd.z) ? Pu : Pd));
     if (dot(n, P) > 0.0) n = -n;
     float rPx = clamp(R * uProjSkala / -P.z, 3.0, 90.0);
     float a0 = ign(gl_FragCoord.xy) * 6.2831;
@@ -273,7 +281,9 @@ void main() {
         vec3 v = viewPos(uv, dq) - P;
         float vv = dot(v, v);
         float fall = max(0.0, 1.0 - vv / (R * R));
-        sum += max(0.0, dot(v, n) - 0.012 * -P.z) / (vv + 0.01) * fall;
+        // Vinkel-bias: det som ligger under ca. 10° over flaten, skygger ikke. Ellers blir den
+        // bølgende bakken (bakke.ts) stripete av små feil i normalen fra dybden.
+        sum += max(0.0, dot(v, n) - 0.012 * -P.z - 0.18 * sqrt(vv)) / (vv + 0.01) * fall;
     }
     float ao = max(0.0, 1.0 - sum * (0.45 * 2.0 / float(N)));
     gl_FragColor = vec4(vec3(ao * ao), 1.0);

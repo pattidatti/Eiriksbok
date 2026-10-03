@@ -22,6 +22,7 @@ import type { Rom } from '../motor/streaming';
 import { Ild } from '../motor/ild';
 import { lagFolk, type Plass } from './folk';
 import type { Rute } from './vandrer';
+import { bakkeBoks } from './bakke';
 
 export const HOUSE_W = 7;
 export const YARD_W = 4;
@@ -402,7 +403,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     c.box(0, -0.75, (FRONT_Z + back) / 2, GARD_W, 1.5, back - FRONT_Z);
     // Gjørme under hele gården: synes i glippene mellom husene og bak schøtstua.
     const end = FRONT_Z + GARD_DEPTH;
-    k.withTint({ top: 0.7, bottom: 0.7 }, () => k.box('gjorme', 0, -0.06, (FRONT_Z + end) / 2, GARD_W, 0.1, end - FRONT_Z, { skip: ['bottom'] }));
+    k.withTint({ top: 0.7, bottom: 0.7 }, () => bakkeBoks(k, 'gjorme', 0, -0.06, (FRONT_Z + end) / 2, GARD_W, 0.1, end - FRONT_Z));
     kai(k, c, -GARD_W / 2, GARD_W / 2, 0, FRONT_Z);
     kaiJog(k, -GARD_W / 2, 0, sides.west, -1);
     kaiJog(k, GARD_W / 2, 0, sides.east, 1);

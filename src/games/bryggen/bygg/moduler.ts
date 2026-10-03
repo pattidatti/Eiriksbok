@@ -324,7 +324,9 @@ export function gluggRamme(s: HouseSpec, g: Glugg): { m: THREE.Matrix4; w: numbe
     const w = loft ? 0.5 : 0.6;
     const h = loft ? 0.45 : 0.55;
     if (g.side === 0) {
-        const z = (loft ? frontZ(s) : floorZ(s, g.floor)) - (s.facade ? 0.07 : 0);
+        // Gavlbordene står 3,5 cm utenfor laften (`gavl`): loftsgluggen sitter i dem, ellers ligger det
+        // mørke hullet bak bordene.
+        const z = (loft ? frontZ(s) - 0.035 : floorZ(s, g.floor)) - (s.facade ? 0.07 : 0);
         return { m: new THREE.Matrix4().makeTranslation(g.at, 0, z), w, h, y0 };
     }
     return { m: langveggRamme(s, g.side, g.at), w, h, y0 };
