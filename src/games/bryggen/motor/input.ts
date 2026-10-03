@@ -18,6 +18,12 @@ export interface InputFrame {
     resetPressed: boolean;
     /** Et svar i en samtale: 1, 2 eller 3 (tallrekka eller talltastaturet). */
     valg: number | null;
+    /**
+     * Alle taster som ble trykket ned siden forrige steg (`KeyboardEvent.code`), med tida for trykket
+     * (`performance.now()`, ms). Et kort trykk mistes ikke selv om tasten er sluppet før steget, og
+     * takten i syrytme.ts dømmer etter når tasten ble trykket, ikke når steget kom.
+     */
+    trykt: ReadonlyMap<string, number>;
 }
 
 export interface LookInput {
@@ -33,6 +39,7 @@ const HEAVY_HOLD_S = 0.32;
 export class Input {
     private keys = new Set<string>();
     private pressed = new Set<string>();
+    private trykkTid = new Map<string, number>();
     private mouseYaw = 0;
     private mousePitch = 0;
     private lmbDownAt = -1;
@@ -42,6 +49,11 @@ export class Input {
     private heavyQueued = false;
     private readonly el: HTMLElement;
     sensitivity = 0.0024;
+    /** Musefølsomhet og piltastfart fra innstillingene (1 = standard). */
+    folsomhet = 1;
+    /** Snu opp og ned for kameraet (mus og piltaster). */
+    inverterY = false;
+    private _aktiv = true;
 
     constructor(el: HTMLElement) {
         this.el = el;
@@ -66,6 +78,19 @@ export class Input {
 
     get pointerLocked(): boolean {
         return document.pointerLockElement === this.el;
+    }
+
+    /** Av mens pausemenyen er oppe: tastene går til menyen, og ingenting blir liggende igjen etterpå. */
+    get aktiv(): boolean {
+        return this._aktiv;
+    }
+
+    set aktiv(a: boolean) {
+        this._aktiv = a;
+        this.onBlur();
+        this.pressed.clear();
+        this.lightQueued = this.heavyQueued = false;
+        this.mouseYaw = this.mousePitch = 0;
     }
 
     /** Spilleren valgte mus: et klikk i spillet låser musa i stedet for å slå. */
@@ -130,8 +155,10 @@ export class Input {
             finisherPressed: p.has('KeyF'),
             resetPressed: p.has('KeyR'),
             valg: [1, 2, 3].find((n) => p.has(`Digit${n}`) || p.has(`Numpad${n}`)) ?? null,
+            trykt: new Map(this.trykkTid),
         };
         p.clear();
+        this.trykkTid.clear();
         this.lightQueued = false;
         this.heavyQueued = false;
         return frame;
@@ -140,11 +167,12 @@ export class Input {
     /** Kamera leses per tegnet bilde, ikke per simuleringssteg, så det aldri hakker. */
     takeLook(): LookInput {
         const k = this.keys;
+        const f = this.folsomhet;
         const look: LookInput = {
             mouse: { yaw: this.mouseYaw, pitch: this.mousePitch },
             keys: {
-                x: (k.has('ArrowRight') ? 1 : 0) - (k.has('ArrowLeft') ? 1 : 0),
-                y: (k.has('ArrowUp') ? 1 : 0) - (k.has('ArrowDown') ? 1 : 0),
+                x: ((k.has('ArrowRight') ? 1 : 0) - (k.has('ArrowLeft') ? 1 : 0)) * f,
+                y: ((k.has('ArrowUp') ? 1 : 0) - (k.has('ArrowDown') ? 1 : 0)) * f * (this.inverterY ? -1 : 1),
             },
         };
         this.mouseYaw = 0;
@@ -153,8 +181,13 @@ export class Input {
     }
 
     private onKeyDown = (e: KeyboardEvent) => {
+        if (!this._aktiv) return;
         if (e.code.startsWith('Arrow') || e.code === 'Space') e.preventDefault();
-        if (!this.keys.has(e.code)) this.pressed.add(e.code);
+        if (!this.keys.has(e.code)) {
+            this.pressed.add(e.code);
+            // Tida tasten faktisk ble trykket, også om hendelsen først kommer fram etter et tungt bilde.
+            this.trykkTid.set(e.code, e.timeStamp || performance.now());
+        }
         this.keys.add(e.code);
     };
 
@@ -170,6 +203,7 @@ export class Input {
 
     private onMouseDown = (e: MouseEvent) => {
         // Uten lås er klikket bare for å ta musa tilbake, ikke et slag.
+        if (!this._aktiv) return;
         if (this.mouseMode && !this.pointerLocked) {
             this.requestPointerLock();
             return;
@@ -192,9 +226,9 @@ export class Input {
     };
 
     private onMouseMove = (e: MouseEvent) => {
-        if (!this.pointerLocked) return;
-        this.mouseYaw -= e.movementX * this.sensitivity;
-        this.mousePitch -= e.movementY * this.sensitivity;
+        if (!this.pointerLocked || !this._aktiv) return;
+        this.mouseYaw -= e.movementX * this.sensitivity * this.folsomhet;
+        this.mousePitch -= e.movementY * this.sensitivity * this.folsomhet * (this.inverterY ? -1 : 1);
     };
 
     private onContextMenu = (e: Event) => e.preventDefault();

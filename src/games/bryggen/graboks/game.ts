@@ -18,11 +18,12 @@ import type { BryggenWorld } from '../bygg/bryggen';
 import { Etterbehandling } from '../motor/post';
 import { Lyssetting, stemningFraUrl } from '../motor/stemning';
 import type { LydKobling } from '../motor/lydkobling';
+import type { BussVolum } from '../motor/lyd';
 import type { FolkStyring } from './folkstyring';
 import type { OppdragMelding } from './oppdrag';
 import type { Tyv } from './tyv';
 import { Flytere } from './flytere';
-import { devVerktoy } from './dev';
+import { devOppdrag, devStart, devVerktoy } from './dev';
 import { finnLanding } from './baat';
 import type { Baering } from './baering';
 import type { Spillsystem } from './system';
@@ -41,7 +42,7 @@ export class GrayboxGame {
     private readonly renderer: THREE.WebGLRenderer;
     private readonly scene = new THREE.Scene();
     private readonly cam: SpringArmCamera;
-    private readonly input: Input;
+    readonly input: Input;
     private readonly container: HTMLElement;
     private readonly floatLayer: HTMLElement;
     private readonly onHud: (s: HudState) => void;
@@ -98,14 +99,23 @@ export class GrayboxGame {
     private post: Etterbehandling | null = null;
     /** Lyden (bare Bryggen-scenen). Startes av første tastetrykk eller klikk (`startLyd`). */
     private lyd: LydKobling | null = null;
-    private lydValg = { onsket: false, paa: true, volum: 0.8 };
+    private lydValg = { onsket: false, paa: true, volum: 0.8, busser: { ute: 1, inne: 1, hendelse: 1 } as BussVolum };
+    /** Pausemenyen (ui/Pausemeny.tsx) og valgene fra innstillingene (ui/innstillinger.ts). */
+    private pauset = false;
+    private pauseBilde = 0;
+    private skyggerPaa = true;
+    postPaa = true;
     /** Folkene: hvem gutten kan snakke med, og samtalen (bare Bryggen-scenen). */
-    private folk: FolkStyring | null = null;
+    folk: FolkStyring | null = null;
     /** Bære tørrfisk fra kaia til bua (bare Bryggen-scenen). */
     private baering: Baering | null = null;
     /** Systemene som er hektet på løkka (systemer.ts), og det som eier E-teksten nå. */
     private systemer: Spillsystem[] = [];
     private systemPrompt: Spillsystem | null = null;
+    /** Et system (en filmscene) plasserte kameraet i forrige bilde. */
+    private systemKamera = false;
+    /** Et system holdt gutten i forrige steg (en aktivitet pågår): da vises ingen «E: …». */
+    private systemHolder = false;
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
@@ -137,7 +147,7 @@ export class GrayboxGame {
 
     /** Chrome slipper musa når fullskjermen slår inn. Lås den igjen når skjermen står. */
     private onFullscreen = () => {
-        if (this.input.mouseMode && document.fullscreenElement && !this.input.pointerLocked) {
+        if (this.input.mouseMode && !this.pauset && document.fullscreenElement && !this.input.pointerLocked) {
             this.input.requestPointerLock();
         }
     };
@@ -155,6 +165,7 @@ export class GrayboxGame {
             this.world = await buildBryggen(this.scene, this.phys, this.renderer, this.lys, { low: this.low });
             if (this.disposed) return;
             this.layout = this.world.layout;
+            if (import.meta.env.DEV) devStart(this.layout);
             // Cellene rundt start må stå før første fysikksteg, ellers faller gutten gjennom kaia.
             await this.world.streamer.update(this.layout.playerStart);
             if (this.disposed) return;
@@ -240,10 +251,11 @@ export class GrayboxGame {
             const w = this.world;
             this.systemer = await lagSystemer({
                 scene: this.scene, renderer: this.renderer, phys: this.phys, world: w, player: this.player, enemy: this.enemy,
-                ai: this.ai, cam: this.cam, folk: this.folk!, baering: this.baering!, lys: this.lys, lyd: this.lyd,
+                ai: this.ai, tyv: this.tyv!, cam: this.cam, folk: this.folk!, baering: this.baering!, lys: this.lys, lyd: this.lyd,
                 floatLayer: this.floatLayer, flash: (t, s) => this.flash(t, s), hudSnart: this.pushHudSoon, modus: () => this.mode,
             });
             if (this.disposed) return;
+            if (import.meta.env.DEV) devOppdrag(oppdrag);
         }
 
         // Første fysikksteg så alle kolliderer står på plass før spilleren beveger seg.
@@ -270,10 +282,17 @@ export class GrayboxGame {
         void this.lyd?.start();
     }
 
-    settLyd(paa: boolean, volum: number): void {
-        this.lydValg.paa = paa;
-        this.lydValg.volum = volum;
+    /** Pause: simuleringen, døgnet og været står, tastene går til menyen, lyden dempes, bildet tegnes sjelden. */
+    pause(p: boolean): void {
+        this.pauset = p;
+        this.input.aktiv = !p;
+        if (this.lyd) this.lyd.lyd.dempet = p;
+    }
+
+    settLyd(paa: boolean, volum: number, busser = this.lydValg.busser): void {
+        Object.assign(this.lydValg, { paa, volum, busser });
         if (!this.lyd) return;
+        this.lyd.lyd.busser = busser;
         this.lyd.lyd.paa = paa;
         this.lyd.lyd.volum = volum;
     }
@@ -283,17 +302,19 @@ export class GrayboxGame {
     }
 
     /** Bytter grafikknivå mens spillet går. Første bytte til full laster detaljkartene. */
-    async setQuality(q: Quality): Promise<void> {
+    async setQuality(q: Quality, skygger = this.skyggerPaa): Promise<void> {
         const low = q === 'lav';
-        if (low === this.low) return;
-        this.low = low;
-        this.pushHud();
-        if (this.world) {
-            await this.world.materials.setLow(low);
-            if (this.disposed || this.low !== low) return;
-            this.scene.environment = low ? null : this.world.environment;
-        }
-        this.renderer.shadowMap.enabled = this.shadowsAllowed && !low;
+        this.skyggerPaa = skygger;
+        if (low !== this.low) {
+            this.low = low;
+            this.pushHud();
+            if (this.world) {
+                await this.world.materials.setLow(low);
+                if (this.disposed || this.low !== low) return;
+                this.scene.environment = low ? null : this.world.environment;
+            }
+        } else if (this.renderer.shadowMap.enabled === (this.shadowsAllowed && skygger && !low)) return;
+        this.renderer.shadowMap.enabled = this.shadowsAllowed && this.skyggerPaa && !low;
         // Skyggene er bakt inn i shaderne: alle materialer må bygges på nytt.
         this.scene.traverse((o) => {
             const mat = (o as THREE.Mesh).material as THREE.Material | THREE.Material[] | undefined;
@@ -355,6 +376,7 @@ export class GrayboxGame {
         let dt = (now - this.last) / 1000;
         this.last = now;
         if (document.hidden || dt > 0.25) dt = 0; // fanebytte: ikke ta igjen tapt tid
+        if (this.pauset) { dt = 0; if (++this.pauseBilde % 12) return; } // pause: tegn hvert 12. bilde
         const t0 = performance.now();
 
         // Treffpause og sakte film skalerer spilltiden, aldri kameraet.
@@ -380,14 +402,20 @@ export class GrayboxGame {
 
         this.renderFrame(dt, gameDt, alpha);
         // Utviklerverktøy (bare i dev): fotokamera, hvor gutten og folkene står (dev.ts).
-        for (const s of this.systemer) if (s.kamera?.(this.cam.camera, dt)) break;
+        this.systemKamera = false;
+        for (const s of this.systemer) {
+            if (s.kamera?.(this.cam.camera, dt)) {
+                this.systemKamera = true;
+                break;
+            }
+        }
         const foto = import.meta.env.DEV ? devVerktoy(this.scene, this.player) : undefined;
         if (foto) {
             this.cam.camera.position.fromArray(foto.pos);
             this.cam.camera.lookAt(foto.look[0], foto.look[1], foto.look[2]);
         }
         this.renderer.info.reset();
-        if (this.post && !this.low) this.post.render(this.renderer, this.scene, this.cam.camera, this.clock, this.inne);
+        if (this.post && !this.low && this.postPaa) this.post.render(this.renderer, this.scene, this.cam.camera, this.clock, this.inne);
         else this.renderer.render(this.scene, this.cam.camera);
 
         // Måling: tid mellom bilder (inkluderer GPU-ventetid via rAF).
@@ -400,7 +428,7 @@ export class GrayboxGame {
             }
         }
         this.hudTimer += dt;
-        if (this.hudTimer > (this.baering?.veier ? 0.03 : 0.25)) {
+        if (this.hudTimer > (this.baering?.veier || this.systemer.some((s) => s.rask?.()) ? 0.03 : 0.25)) {
             this.hudTimer = 0;
             this.pushHud();
         }
@@ -420,6 +448,7 @@ export class GrayboxGame {
         // Et system som bruker inputen selv (filmscene, aktivitet): gutten står stille.
         let holdt = false;
         for (const s of this.systemer) if (s.steg?.(dt, inp)) holdt = true;
+        this.systemHolder = holdt;
         if (holdt) {
             dir.set(0, 0);
             inp.jumpPressed = inp.interactPressed = inp.lightPressed = inp.heavyPressed = false;
@@ -546,7 +575,8 @@ export class GrayboxGame {
 
         // Kameraet helt inntil gutten (rygg mot veggen): ton ham ut i stedet for å vise innsiden.
         const arm = this.cam.armLength;
-        this.player.anim.setOpacity(this.mode === 'boat' ? 1 : THREE.MathUtils.clamp((arm - 0.45) / 0.5, 0.15, 1));
+        // Ikke når en filmscene har kameraet: da er fjærarmen ikke det som ser.
+        this.player.anim.setOpacity(this.mode === 'boat' || this.systemKamera ? 1 : THREE.MathUtils.clamp((arm - 0.45) / 0.5, 0.15, 1));
 
         // Strømming: sjekk cellene et par ganger i sekundet, ikke hvert bilde.
         if (this.world) {
@@ -562,7 +592,7 @@ export class GrayboxGame {
             const inne = this.world.update(this.clock, dt, this.fotoPos() ?? this.cam.camera.position, { pos: this.player.anim.root.position, fart: this.player.speed });
             this.inne += (inne - this.inne) * Math.min(1, dt * 3);
             this.lyd?.update(dt, this.inne, this.mode);
-            this.world.post = !!this.post && !this.low;
+            this.world.post = !!this.post && !this.low && this.postPaa;
             this.world.skygger = this.renderer.shadowMap.enabled;
         }
         // Dagslyset dempes inne, og skyggen følger spilleren.
@@ -586,7 +616,7 @@ export class GrayboxGame {
         this.promptTimer = 0.15;
         this.landCandidate = null;
         this.systemPrompt = null;
-        if (this.baering?.veier) {
+        if (this.baering?.veier || this.systemHolder) {
             this.prompt = null;
             return;
         }

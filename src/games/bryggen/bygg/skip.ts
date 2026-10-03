@@ -26,6 +26,8 @@ export interface Skipene {
     update: (t: number) => void;
     /** Omrisset av hvert skrog i vannlinja (vannet tegnes ikke innenfor). */
     skrog: SkrogFot[];
+    /** Omrisset av skipene som synes nå (en filmscene kan skjule koggen, sekvens.ts). */
+    synlige: () => SkrogFot[];
     /** Jekta som ligger for anker (lekteren i trafikk.ts losser den). */
     anker: { x: number; z: number; yaw: number };
     dispose: () => void;
@@ -111,6 +113,11 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
             const col = phys.addHull(s.points);
             if (col) kollidere.push(col);
         }
+        // Kastellene står over skrog-kollideren: de skjuler bare navneskiltene bak (sikt-skjerm).
+        for (const pts of info.skjerm ?? []) {
+            const col = phys.addSkjerm(pts.map((q) => q.clone().applyMatrix4(base)));
+            if (col) kollidere.push(col);
+        }
         // Skipet ligger 0,15 m dypere enn skroget sier (update): vannlinja står litt opp i skroget.
         const vl = vannlinje(sp, 0.3);
         const fot: SkrogFot = { x: p.x + Math.sin(p.yaw) * vl.forut, z: z + Math.cos(p.yaw) * vl.forut, yaw: p.yaw, L: vl.L, B: vl.B, fyldig: vl.fyldig };
@@ -141,6 +148,7 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
         group,
         update,
         skrog: skip.map((s) => s.fot),
+        synlige: () => skip.filter((s) => s.root.visible).map((s) => s.fot),
         anker: (() => {
             const p = PLASSER.find((q) => q.z !== undefined)!;
             return { x: p.x, z: p.z!, yaw: p.yaw };

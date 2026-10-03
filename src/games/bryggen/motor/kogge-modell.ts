@@ -44,13 +44,15 @@ export interface SkipInfo {
     baug: THREE.Vector3;
     /** Råa: hvor langt forut (z), høyden, halve lengden og hvor tykt seilet er beslått. */
     raa: { z: number; y: number; halv: number; seilR: number; bunn: number };
+    /** Sikt-skjermer over skrog-kollideren (kastellene), i skipets rom. Se `Physics.addSkjerm`. */
+    skjerm?: THREE.Vector3[][];
 }
 
 /**
  * Et kastell: skrogsidene fortsetter opp fra ripa til et dekk i høyden `topp`, med en brystning
  * (0,9 m) rundt. `u0..u1` langs skipet; `vegg` er enden som vender inn mot midtskips.
  */
-function kastell(k: MeshKit, sp: SkrogSpec, u0: number, u1: number, topp: number, vegg: number): void {
+function kastell(k: MeshKit, sp: SkrogSpec, u0: number, u1: number, topp: number, vegg: number): THREE.Vector3[] {
     const M = 10;
     const rad: { x: number; z: number; ripe: number }[] = [];
     for (let i = 0; i <= M; i++) {
@@ -61,9 +63,11 @@ function kastell(k: MeshKit, sp: SkrogSpec, u0: number, u1: number, topp: number
     }
     const n = rad.length - 1;
     const BRYST = 0.9;
+    const skjerm: THREE.Vector3[] = [];
     const midt = (p: THREE.Vector3) => V3(0, p.y, p.z);
     for (const side of [-1, 1]) {
         // Utsida: bordkledd fra ripa til toppen av brystningen. Innsida bare over dekket.
+        for (const r of rad) skjerm.push(V3(side * r.x, r.ripe - 0.3, r.z), V3(side * r.x, topp + BRYST, r.z));
         k.withTint(KASTELL, () =>
             flate(
                 k, 'raatre', n, 1,
@@ -124,6 +128,7 @@ function kastell(k: MeshKit, sp: SkrogSpec, u0: number, u1: number, topp: number
     k.withTint(KASTELL, () => {
         for (const sx of [-1, 1]) k.log('raatre', V3(sx * (e.x - 0.08), DEKK_Y, e.z + dir * 0.1), V3(sx * (e.x - 0.08), topp + BRYST + 0.15, e.z + dir * 0.1), 0.11, 6, true);
     });
+    return skjerm;
 }
 
 /** Lasteluke på hoveddekket: en lav karm med luker. */
@@ -153,9 +158,9 @@ export function lagKogge(k: MeshKit, medRaa = true): SkipInfo {
 
     // Akterkastellet er stort og høyt, forkastellet mindre (som på kogger fra 1300-tallet [S]).
     const uA = -6.6 / sp.L;
-    kastell(k, sp, -0.985, uA, hoyder(sp, -1).ripe + 1.7, uA);
+    const skjerm = [kastell(k, sp, -0.985, uA, hoyder(sp, -1).ripe + 1.7, uA)];
     const uF = 7.4 / sp.L;
-    kastell(k, sp, uF, 0.975, hoyder(sp, 1).ripe + 0.9, uF);
+    skjerm.push(kastell(k, sp, uF, 0.975, hoyder(sp, 1).ripe + 0.9, uF));
 
     // Hoveddekket: luker, ankerspill og noen tønner.
     luke(k, -3.3, 2.6, 2.2);
@@ -193,5 +198,5 @@ export function lagKogge(k: MeshKit, medRaa = true): SkipInfo {
         const v = vedHoyde(sp, z / sp.L, hoyder(sp, z / sp.L).ripe - 0.05);
         if (v) fortoy.push(V3(v.x - 0.1, hoyder(sp, z / sp.L).ripe + 0.1, z));
     }
-    return { fortoy, baug: baug.add(V3(0, -0.3, -0.4)), raa: ra };
+    return { fortoy, baug: baug.add(V3(0, -0.3, -0.4)), raa: ra, skjerm };
 }

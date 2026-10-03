@@ -12,6 +12,7 @@ import type { LydKobling } from '../motor/lydkobling';
 import type { BryggenWorld } from '../bygg/bryggen';
 import type { FolkStyring } from './folkstyring';
 import type { Baering } from './baering';
+import type { Tyv } from './tyv';
 
 /** Det et system kan nå i spillet. Bare Bryggen-scenen (ikke gråboksen) har systemer. */
 export interface SpillKontekst {
@@ -23,6 +24,8 @@ export interface SpillKontekst {
     /** Figuren kampen bruker (tyven). */
     enemy: Character;
     ai: EnemyAI;
+    /** Tyven i gården (kapittel 1, tyv.ts). */
+    tyv: Tyv;
     cam: SpringArmCamera;
     folk: FolkStyring;
     baering: Baering;
@@ -51,6 +54,8 @@ export interface Spillsystem {
     prompt?(gutt: THREE.Vector3): string | null;
     /** E ble trykket mens systemets prompt sto. Kan gi en melding midt på skjermen. */
     trykk?(): string | null | void;
+    /** Trenger HUD-en å oppdateres ofte nå (en aktivitet med takt eller terninger)? Da ca. 30 ganger i sekundet. */
+    rask?(): boolean;
     /** Data til React-HUD-en (`HudState.system[navn]`). Kalles når HUD-en oppdateres. */
     hud?(): unknown;
     dispose?(): void;

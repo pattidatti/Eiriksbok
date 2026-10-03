@@ -18,6 +18,7 @@ import type { ColliderKit, MeshKit } from '../motor/meshkit';
 import { murMedHull, triMot, type Hull } from './buer';
 import { LIST, STEIN } from './stein';
 import type { Plass } from './folk';
+import type { Sted } from '../motor/streaming';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -173,6 +174,11 @@ export interface KirkeInne {
     folk: Plass[];
     /** Rommet innenfor murene (lokalt rom). */
     rom: THREE.Box3;
+    /**
+     * Stedene «Messe i Mariakirken» bruker (lokalt rom): foran sidealteret og høyalteret, og oppå
+     * høyalteret der lyset settes (`hoyalter-topp`, aldri et mål i seg selv).
+     */
+    steder: Sted[];
 }
 
 /**
@@ -239,5 +245,10 @@ export function inventar(ki: MeshKit, kl: MeshKit, kf: MeshKit, c: ColliderKit):
             { figur: 'klokker', rolle: 'skrive', pos: klokker, yaw: 0, id: 'klokkeren' },
         ],
         rom: new THREE.Box3(V(-XS, -0.5, VEST), V(XS, SKIP.h + 4, OST)),
+        steder: [
+            { id: 'sidealter', pos: V(sx - 0.5, GOLV, sz - 0.9), r: 2.0 },
+            { id: 'hoyalter', pos: V(0, KORGOLV, az - 0.85), r: 1.6 },
+            { id: 'hoyalter-topp', pos: V(0.25, KORGOLV + 1.03, az - 0.1), r: 0 },
+        ],
     };
 }

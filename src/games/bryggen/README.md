@@ -19,15 +19,22 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   Døgnet går: 10 minutter dag og 8 minutter natt, med sol og måne som flytter seg og byger som kommer
   og går (`motor/dogn.ts`). `?lys=kveld|morgen|dag|graatt|natt` velger hvor døgnet starter (standard:
   kveld etter regnet), og `?dogn=0` stopper klokka og været.
-  `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. Knappen «Grafikk» øverst til
-  høyre (eller G) bytter mens spillet går, og valget huskes i nettleseren (`bryggen-kvalitet`).
-  Detaljkartene lastes først når full kvalitet brukes første gang.
+  `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. G (eller
+  Innstillinger i pausemenyen) bytter mens spillet går, og valget huskes i nettleseren
+  (`bryggen-innstillinger`). Detaljkartene lastes først når full kvalitet brukes første gang.
+- Filmscener: `?film=<id>` (`ankomst`, `prolog-ut`, `kap1-inn`, `vakta`, `kap1-ut`) spiller en film rett
+  etter start, og i dev gjør `window.__bryggenFilm('<id>')` det samme midt i spillet. Filmen merkes som sett
+  i lagringen (`bryggen-oppdrag`) også da. Et nytt spill (ingen lagring) begynner med `ankomst`.
 - Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md). I Bryggen
   får figurene klær (`motor/figur.ts`, draktene i `bygg/folk.ts`); gråboksen beholder mannequinen.
   Folk står, sitter og jobber i bua og schøtstua.
 - Lyd: `public/games/bryggen/audio/` (CC0 og offentlig eie, se KILDE.md). Lyden starter ved første
-  klikk eller Enter. «Lyd»-knappen øverst til høyre (eller M) slår av og på, og glidebryteren ved siden
-  av er volumet. Valget huskes i nettleseren (`bryggen-lyd`).
+  klikk eller Enter. M slår av og på. Hovedvolum og volum per buss (ute, inne, hendelser) står under
+  Innstillinger i pausemenyen, og huskes i `bryggen-innstillinger`.
+- Menyene (`ui/`): startskjerm (Enter = bare tastatur), og pausemenyen på Esc med Fortsett,
+  Innstillinger, Kontroller, Oppdrag og dagbok, og Avslutt. Alt styres med piltaster, Enter og Esc.
+  Spillet står mens menyen er oppe (`GrayboxGame.pause`). I fullskjerm låses Esc (Chrome), så Esc
+  åpner menyen i stedet for å gå ut av fullskjermen.
 
 ## Oppbygning
 
@@ -45,6 +52,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/hode.ts` | Nytt hode i stedet for mannequinens egg: skalle, kjeve, hår/skjegg/hette, ører, hals, og ansiktet (øyne, bryn, nese, munn) |
 | `motor/meshkit.ts` | Geometri-settet: bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
 | `motor/materials.ts` | PBR-materialene (farge, normal, ARM) og miljølys fra en enkel himmel |
+| `motor/portal.ts` | Portal-culling for innredningen: delt i biter på 1,5 m (`BatchedMesh` per materiale, fortsatt ett tegnekall), og hver bit tegnes bare når den kan synes gjennom en åpen dør, glugg eller ljoren. Står kameraet inne i huset eller i døråpningen, tegnes alt |
+| `motor/figurlod.ts` | Nivåene til figurene: fin geometri med skygge nær, grov uten skygge bak 13 m (`FigurLod`), og frustum-culling med litt større kule for figurer som flytter seg (`cullFigur`) |
 | `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå, delt/samlet, innredning og tåkegrense |
 | `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning. Tegnes ikke innenfor skrogene (`settSkrog`) |
 | `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
@@ -103,9 +112,28 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/oppdrag-data.ts` | Oppdragene: giver, mål (hendelser), mottaker, samtalene (tilbud, underveis, levering) og «Dette vet vi» |
 | `graboks/oppdrag.ts` | Oppdragsmotoren: status, teller hendelser, merker («!», «?», grå «?»), steder med E, lagret i `bryggen-oppdrag` |
 | `graboks/hoder.ts` | HTML over hodene: navneskilt, oppdragsmerke og snakkeboble som skrives fram. Skjult bak vegger (stråle fra kameraet) |
-| `graboks/tyv.ts` | Tyven i gården: ute bare mens oppdraget hans er aktivt, roper over hodet, teller `slaa:tyven` |
+| `graboks/tyv.ts` | Tyven i natt (kapittel 1): venter ved loftsdøra, løper en fast rute over svalgangene og ned i smuget når gutten kommer nær, gjemmer seg om gutten mister ham, slåss i smuget. Etterpå: samtalen (ta ham med selv eller rope på vakta) |
+| `graboks/system.ts`, `graboks/systemer.ts` | Krokene i løkka (`Spillsystem`) og listen over systemene som er hektet på: filmene, tyven og opplæringen |
+| `graboks/sekvens.ts` | Sekvensverktøyet for filmscener (blueprint §6, §9.6): en tidslinje av kameraskudd (kutt, glid, sakte kjøring), figurer (klipp, gå langs et løp, vis/skjul, bære), replikker i bobler, tekst nederst og `gjor`-steg. Spilles i løkka, ingen video. Gutten står stille; Mellomrom, E eller Esc hopper over: da kjøres alle `gjor` som gjenstår og `slutt`, så sluttilstanden blir lik. Sett film lagres som flagget `film:<id>` |
+| `bygg/filmer.ts` | Filmene som data: `ankomst` (prologen, koggen fra Lübeck legger til, bak startskjermen i et nytt spill), `prolog-ut` (etter «fisk»), `kap1-inn` (natt, vakt i gården), `vakta` (gutten ropte på vakta) og `kap1-ut` (morgenen etter, to utgaver etter valget). `koblFilmer` sier når de kommer |
+| `graboks/FilmVisning.tsx` | Filmen over spillet: svarte striper, teksten nederst, «hopp over», svart overgang |
+| `graboks/opplaering.ts` | Opplæringen etter prologen: ett hint om gangen (gå, se deg rundt, snakk med E, ro), husket som `laert:<id>` |
+| `bygg/sideoppdrag.ts` | Sideoppdragene fra blueprint §7.2 (rottejakt, skomakerverkstedet, jekta, messen, terningene): data og samtaler, lagt til `OPPDRAG`. `SIDE` holder det systemene husker (fisken, hvordan terningspillet endte) |
+| `graboks/sidefolk.ts` | Bård ved jekta (egen celle, `CellStreamer.leggTil`) og hjelperne `finnPerson`, `naer`, `maalNaadd` |
+| `graboks/rottejakt.ts`, `ui/Rottejakt.tsx` | Feller med agn på lagerloftet, katta, fisken som blir gnagd på |
+| `graboks/syrytme.ts`, `ui/Syrytme.tsx` | Sy sålen hos mester Hans: hull glir mot nåla i takt med hammeren, A for øvre rad, D for nedre. Dømmes etter når tasten ble trykket (`InputFrame.trykt`), ikke når steget kom |
+| `graboks/messe.ts`, `ui/Messe.tsx` | Lyset fra sidealteret til høyalteret (saktere gange, flammen slukner av løp og hopp), og svarene på latin (1-3) med bjella når presten løfter brødet. Stedene står i `mariakirken-inne.ts` |
+| `graboks/terning.ts`, `ui/Terning.tsx` | Tre runder terning med Einar i ølstua, med jukseterningen fra Vågsbunnen (2) og sjansen for å bli tatt |
+| `ui/Aktiviteter.tsx` | Velger HUD-komponenten for aktivitetene i sideoppdragene (`HudState.system`), tegnet fra `ui/Hud.tsx` |
 | `graboks/flytere.ts`, `graboks/dev.ts` | Skadetallene i kampen, og utviklerverktøyene (flyttet ut av `game.ts`) |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
+| `ui/Hud.tsx` | HUD-en mens det spilles: liv, oppdragslista, meldinger, samtalen, E-tekstene, ytelsesboksen og systempanelene |
+| `ui/systemPaneler.tsx`, `ui/SystemHint.tsx` | Krokpunkt for HUD-paneler til systemene: `hud.system[navn]` tegnes av panelet som er registrert her (filmen over alt, hint fra tyven og opplæringen nederst) |
+| `ui/Startskjerm.tsx` | Startskjermen: hva scenen er, start med mus eller bare tastatur |
+| `ui/Pausemeny.tsx` | Pausemenyen (Esc): Fortsett, Innstillinger, Kontroller, Oppdrag og dagbok, Avslutt. Tastatur først |
+| `ui/InnstillingerPanel.tsx`, `ui/innstillinger.ts` | Innstillingene (grafikk, skygger, lys og dis, lyd per buss, kamerafart, snu opp og ned, ytelse), lagret i `bryggen-innstillinger`. Leser og flytter over de gamle `bryggen-kvalitet` og `bryggen-lyd` |
+| `ui/Dagbok.tsx`, `ui/vetlager.ts` | Dagboka: oppdragene med «om» og «hvor», og «Dette vet vi»-tekstene eleven har lest (`bryggen-vet`). «Begynn på nytt» bak en bekreftelse |
+| `ui/menydeler.tsx`, `ui/fokus.ts`, `ui/fullskjerm.ts` | Bryter, glidebryter, knapp og overskrift; piltastnavigasjon og fokusring; fullskjerm med Esc-lås |
 
 ## Regler
 
@@ -142,6 +170,11 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Innredning (bua, schøtstua) bygges i en egen `MeshKit` per hus og går i `CellContent.inne`: den
   kaster ikke skygge (veggene skygger allerede for sola inne) og skjules bak `INNE_R` (30 m), der den
   bare er et mørkt hull bak en dør. Bua alene er ca. 75k trekanter.
+- Innredningen går gjennom `bakPortaler` (portal.ts), og folkene inne får `bak` på plassen: de
+  tegnes bare når kameraet kan se dem gjennom en åpning. Åpningene registreres med
+  `MeshKit.aapning` der hullet lages (`vegg` i inne.ts for dører og glugger, `ljore` i moduler.ts).
+  Et nytt hull inn i et hus med innredning må registreres, ellers mangler innredningen bak det.
+  Ting i innredningen må stå innenfor veggene: det som står utenfor, blir borte sett utenfra.
 - Bak `TAAKE_R` (110 m) tegnes ikke cella i det hele tatt: tåka er over 99 % tett der. Landemerker
   bruker `tynnTake`, og strømmingen kjenner dem på det og lar dem stå.
 - Del modeller i én geometri per materiale (`mergeGeometries`) når delene ikke beveger seg hver for
@@ -284,7 +317,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   noen ved en bod, må flytte gutten bort før de venter på at noen andre kommer dit.
 - Animasjonen til folk oppdateres hvert bilde innen 16 m, 15 ganger i sekundet ut til 45 m, og de
   tegnes ikke lenger unna (`Takt` i `folk.ts`). Bak 13 m bytter figuren til det grove nivået
-  (`GROV` i `figur.ts`, ca. 2,5k trekanter mot 6,7k) og kaster ikke skygge. Logikken til dem som
+  (`GROV` i `figur.ts`, ca. 2,5k trekanter mot 6,7k) og kaster ikke skygge (`FigurLod`, også for
+  roerne i færingene). Logikken til dem som
   går, kjører alltid.
 - Overkroppsklipp oppå gangen (bære noe): `Animator.overlay('Baere_Over')`. Mixeren normaliserer
   vektene per bein, så `overlay` regner om vekten til andelen overkroppen skal ha.
@@ -329,6 +363,14 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Kampen: rekka er jab, kross, svingslag (starten av `Sword_Attack`, sluppet før det dype utfallet). Tungt
   slag og avslutning er også svingslaget. Fienden velger kross, to jab eller et svingslag som går gjennom
   garden (varsles i oransje: rull unna). Lyd fra `kamp.ogg` via `CombatSink.lyd`; gutten får lysere stemme.
+- Sideoppdragene i dev: `?sted=loft|hans|detmar|bard|ottar|kirke|alter|olstua` starter gutten ved stedet
+  (`DEV_STEDER` i `dev.ts`), `?oppdrag=sko,messe` tar oppdragene uten krav (også om de er levert), og
+  `?hendelse=messe:lys` sender hendelser. Eksempel: `/test/bryggen-gard?sted=alter&oppdrag=messe&hendelse=messe:lys`
+  går rett til svarene i messen.
+- Et system som holder gutten (`steg` gir true) skjuler «E: …» mens aktiviteten pågår, og `rask()` gir
+  HUD-en ca. 30 oppdateringer i sekundet. Aktivitetene animerer selv mellom oppdateringene (`ui/useNaa.ts`),
+  og panelene står over navneskiltene (`z-[1100]`). Hold dem 640 px brede eller smalere: kontrollpanelet nede
+  til venstre tar 336 px på 1366 x 768.
 - Oppdrag: et mål er en hendelse (`veid`, `sted:<id>`, `snakk:<person>`, `slaa:tyven`). Steder meldes av
   cellene (`CellContent.steder`, f.eks. `bronn` og `gjeldsbok`). Et oppdrag uten mål er klart med en gang
   (et brev som bare skal leveres). `__bryggen.folk.oppdrag` i konsollen kan ta, telle og levere.

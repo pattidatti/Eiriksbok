@@ -277,7 +277,7 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
         }
         // Bommen over Skostredet ved den vestre enden: tønner og en stokk på bukker [V at skomakerne kunne stenge gata; S hvordan].
         bom(k, c, x0 + 1.2);
-        plasser.push({ figur: 'skomakersvenn', rolle: 'staa', pos: V(x0 + 2.3, 0, GATE.z + 1.6), yaw: OST, samtale: 'sperring' });
+        plasser.push({ figur: 'skomakersvenn', rolle: 'staa', pos: V(x0 + 2.3, 0, GATE.z + 1.6), yaw: OST, samtale: 'sperring', id: 'detmar' });
         // Gjerde bak ruinen og mot vest: her slutter byen som er bygget.
         k.withTint({ top: 0.8, bottom: 0.6, hue: DARK }, () => k.box('bordvegg', x0 + 0.1, 0.8, (GATE.land + back) / 2, 0.05, 1.6, back - GATE.land, { shadeFoot: true }));
     }

@@ -174,6 +174,11 @@ export class CellStreamer {
         this.root.name = 'celler';
     }
 
+    /** Legger til en celle mens spillet går (sideoppdragenes folk, sidefolk.ts). Lastes ved neste `update`. */
+    leggTil(def: CellDef): void {
+        if (!this.cells.some((c) => c.id === def.id)) this.cells.push(def);
+    }
+
     /** Avstand fra punktet til cellas rektangel (0 inne i cella). */
     private dist(def: CellDef, x: number, z: number): number {
         const dx = Math.max(0, Math.abs(x - def.center.x) - def.half.x);
@@ -315,6 +320,8 @@ export class CellStreamer {
 export function disposeObject(o: THREE.Object3D): void {
     o.traverse((x) => {
         const m = x as THREE.Mesh;
-        if (m.geometry) m.geometry.dispose();
+        // BatchedMesh (portal.ts) eier også teksturer med matrisene og hvilke biter som tegnes.
+        if ((x as THREE.BatchedMesh).isBatchedMesh) (x as THREE.BatchedMesh).dispose();
+        else if (m.geometry) m.geometry.dispose();
     });
 }

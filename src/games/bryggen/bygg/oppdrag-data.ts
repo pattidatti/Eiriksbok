@@ -11,12 +11,15 @@
 //   snakk:<person>     samtalen med en person for oppdraget er ferdig (`samtaler`)
 //   slaa:tyven         tyven er slått ned
 //
+// `gjor` kan ha flere handlinger skilt med `;`, og `flagg:<navn>` husker et valg (oppdrag.ts).
+//
 // Er alle målene nådd (eller det ikke er noen, som når et brev bare skal leveres), står «?» over
 // mottakeren, og samtalen med hen er `levering`.
 //
 // Historien og ordene er laget for spillet [S]. Fakta i «Dette vet vi» er merket i kommentarene.
 import type { Samtale } from './samtaler';
 import { SAMTALER, SPOR } from './samtaler';
+import { SIDEOPPDRAG } from './sideoppdrag';
 
 export interface Maal {
     /** Hendelsen som teller (se over). */
@@ -52,7 +55,8 @@ export interface OppdragDef {
     underveis: Samtale;
     /** Samtalen når målene er nådd. Noden med `gjor: 'lever:<id>'` leverer. */
     levering: Samtale;
-    leveringStart?: () => string;
+    /** Startnoden i leveringen. Får flaggene (valg i historien, oppdrag.ts). */
+    leveringStart?: (flagg: ReadonlySet<string>) => string;
     /** Samtaler med andre for oppdraget: hendelsen `snakk:<person>` sendes når samtalen slutter. */
     samtaler?: Record<string, Samtale>;
     /** Noe gutten bærer fra han tar oppdraget til det leveres (`brev`). */
@@ -61,10 +65,13 @@ export interface OppdragDef {
     lonn: string;
 }
 
+// ── 0. Ny i gården (prologen) ── Filmen «Ankomst med koggen» (filmer.ts) gir gutten dette oppdraget.
+// Det har ingen mål: husbonden venter i bua, og samtalen om de tre reglene er leveringen.
 // ── 1. Fisken bærer seg ikke selv ──
 // Husbondens samtale om de tre reglene (samtaler.ts) er tilbudet: den slutter med at han sender
 // gutten ned på kaia.
 const H = SAMTALER.husbonde;
+H.start.gjor = 'lever:ankomst';
 H.slutt.gjor = 'ta:fisk';
 H.glemme.gjor = 'ta:fisk';
 H.flink.gjor = 'lever:fisk';
@@ -99,12 +106,26 @@ F.hjelpNei = { tekst: 'Nei. Du er ny, og det er deres bok. Jeg skjønner det.', 
 
 export const OPPDRAG: OppdragDef[] = [
     {
+        id: 'ankomst',
+        tittel: 'Ny i gården',
+        giver: 'husbonden',
+        mottaker: 'husbonden',
+        om: 'Du kom med koggen fra Lübeck i dag. Husbonden, Hinrik Kolle, venter på deg i bua. Den ligger i forhuset til venstre for kaia.',
+        hvor: 'Bua, i forhuset til venstre for kaia',
+        maal: [],
+        tilbud: { start: { tekst: 'Kom inn i bua, junge.', gest: 'kom', gjor: 'ta:ankomst' } },
+        underveis: { start: { tekst: 'Kom inn i bua, junge. Her inne.', gest: 'kom' } },
+        levering: H,
+        lonn: 'Du har fått plass i gården. Nå er du junge hos Hinrik Kolle.',
+    },
+    {
         id: 'fisk',
         tittel: 'Fisken bærer seg ikke selv',
         giver: 'husbonden',
         mottaker: 'husbonden',
         om: 'Husbonden vil at du skal bære tørrfisk fra stabelen på kaia inn i bua, og veie hver bunt på bismeren.',
         hvor: 'Stabelen på kaia, bismeren i bua',
+        krav: ['ankomst'],
         maal: [{ hendelse: 'veid', tekst: 'Bær og vei bunter tørrfisk', antall: 3 }],
         tilbud: H,
         underveis: {
@@ -214,66 +235,135 @@ export const OPPDRAG: OppdragDef[] = [
         lonn: 'Hennig deler suppa med deg i kveld.',
     },
     {
+        // Kapittel 1, «Tyven i natt» (blueprint §6), høsten 1426. Lambert ber gutten holde vakt om
+        // natta. Filmen (filmer.ts) stiller klokka, tyven kommer ut av loftet og løper (tyv.ts), og
+        // jakten ender i et slagsmål bakerst i gården. Så velger gutten: ta tyven med selv, eller rope
+        // på vakta. Tyven er en sulten gutt fra nord [S]. Loven er tyveribolken i bylova (§8.2) [V].
         id: 'tyven',
-        tittel: 'Tyven i gården',
+        tittel: 'Tyven i natt',
         giver: 'lambert',
         mottaker: 'lambert',
         krav: ['fisk'],
-        om: 'Noen har tatt fisk fra lageret i natt. Lambert tror tyven fortsatt gjemmer seg bakerst i gården.',
-        hvor: 'Bakerst i gårdsrommet',
-        maal: [{ hendelse: 'slaa:tyven', tekst: 'Stopp tyven bakerst i gården' }],
+        om: 'Det forsvinner fisk fra lagerloftet om natta. Lambert har satt deg til å holde vakt i gården.',
+        hvor: 'Gårdsrommet og svalgangene, om natta',
+        maal: [
+            { hendelse: 'slaa:tyven', tekst: 'Ta igjen tyven og stopp ham' },
+            { hendelse: 'snakk:tyven', tekst: 'Bestem hva som skal skje med tyven', etter: true },
+        ],
         tilbud: {
             start: {
-                tekst: 'Junge, kom hit. Det mangler fisk på loftet. To bunter, kanskje tre.',
+                tekst: 'Junge, kom hit. Det har forsvunnet fisk fra loftet to netter på rad. Noen kommer inn mens vi sover.',
                 gest: 'kom',
                 til: 'start2',
             },
             start2: {
-                tekst: 'Jeg så noen bakerst i gården i morges. Han er ikke en av oss. Gå og se. Men pass deg, han er større enn deg.',
+                tekst: 'I natt holder du vakt i gården. Ser du noen, så løp etter ham og ikke slipp ham. Pass deg, han er nok større enn deg.',
                 gest: 'peke',
                 valg: [
-                    { tekst: 'Jeg skal finne ham.', til: 'ja' },
-                    { tekst: 'Hvorfor går ikke du?', til: 'hvorfor' },
+                    { tekst: 'Jeg skal holde vakt.', til: 'ja' },
+                    { tekst: 'Hvorfor meg?', til: 'hvorfor' },
                 ],
             },
             hvorfor: {
-                tekst: 'Fordi jeg står ved bismeren, og fordi en junge må lære å passe på gården. Gå nå.',
+                tekst: 'Fordi du er lett på foten, og fordi du ikke sover så tungt som Gerd. En junge må lære å passe på gården.',
                 gest: 'vift',
                 til: 'ja',
             },
-            ja: { tekst: 'Han er bakerst, ved schøtstua. Blokker når han slår, og slå når han vakler.', gest: 'peke', gjor: 'ta:tyven' },
+            ja: { tekst: 'Blokker når han slår, og slå når han vakler. Og ikke gå deg bort i mørket.', gest: 'peke', gjor: 'ta:tyven' },
         },
         underveis: {
-            start: { tekst: 'Har du funnet ham? Bakerst i gården, ved schøtstua.', gest: 'peke' },
+            start: { tekst: 'Du skal holde vakt i natt, junge. Ikke stå her og prat.', gest: 'vift' },
+        },
+        samtaler: {
+            tyven: {
+                start: {
+                    tekst: 'Ikke slå mer! Jeg gir meg!',
+                    gest: 'riste',
+                    til: 'start2',
+                },
+                start2: {
+                    tekst: 'Jeg heter Sigurd. Jeg kom med en jekt fra Helgeland i sommer. Skipperen seilte hjem uten meg. Jeg har ikke spist på fire dager.',
+                    gest: 'skuldre',
+                    valg: [
+                        { tekst: 'Hvorfor stjal du fra oss?', til: 'hvorfor' },
+                        { tekst: 'Du blir med meg til Lambert.', til: 'selv' },
+                        { tekst: 'Vakt! Her er en tyv!', til: 'vakta' },
+                    ],
+                },
+                hvorfor: {
+                    tekst: 'Dere har loftet fullt av fisk. Hjemme sulter folk om vinteren. Jeg tok bare det jeg klarte å bære.',
+                    gest: 'snakk',
+                    valg: [
+                        { tekst: 'Du blir med meg til Lambert.', til: 'selv' },
+                        { tekst: 'Vakt! Her er en tyv!', til: 'vakta' },
+                    ],
+                },
+                selv: {
+                    tekst: 'Til tyskeren din? Ja vel. Jeg klarer ikke å løpe mer uansett.',
+                    gest: 'skuldre',
+                    gjor: 'flagg:tyv-selv;hendelse:snakk:tyven',
+                },
+                vakta: {
+                    tekst: 'Nei! Ikke vakta! Da blir jeg pisket ...',
+                    gest: 'riste',
+                    gjor: 'flagg:tyv-vakta;hendelse:snakk:tyven',
+                },
+            },
         },
         levering: {
+            // Lagret før kapittel 1 ble bygget ut: tyven ble bare slått ned.
             start: {
                 tekst: 'Slo du ham ned? Det var en mager gutt fra nord. Han hadde ikke spist på flere dager, sier stuedrengen.',
                 gest: 'snakk',
+                til: 'lov',
+            },
+            selv: {
+                tekst: 'Du tok ham med deg hit? Han er jo bare en gutt. Se så mager han er.',
+                gest: 'snakk',
                 valg: [
-                    { tekst: 'Hva skjer med ham nå?', til: 'straff' },
-                    { tekst: 'Han var sulten.', til: 'sulten' },
+                    { tekst: 'Han var sulten. Skipperen dro uten ham.', til: 'sulten' },
+                    { tekst: 'Hva skjer med ham nå?', til: 'lov' },
                 ],
             },
             sulten: {
-                tekst: 'Det er han ikke alene om. Men fisken er gårdens, og det er vår jobb å passe på den.',
+                tekst: 'Det er han ikke alene om i denne byen. Men fisken er gårdens, og vi må passe på den.',
                 gest: 'skuldre',
-                til: 'straff',
+                til: 'lov',
             },
-            straff: {
-                tekst: 'Vi gir ham til kongens mann i byen. Stjeler man fordi man sulter, slipper man som regel straff første gang. Neste gang blir det verre.',
+            lov: {
+                tekst: 'Vi gjør som loven sier. Vi binder fisken på ryggen hans og fører ham til gjaldkeren. Det er kongens mann, og han holder orden i byen.',
                 gest: 'snakk',
                 gjor: 'lever:tyven',
+                til: 'lov2',
+            },
+            vakta: {
+                tekst: 'Jeg hørte at du ropte på vakta. Da er tyven gjaldkerens sak nå, ikke vår. Gjaldkeren er kongens mann, og han holder orden i byen.',
+                gest: 'snakk',
+                gjor: 'lever:tyven',
+                til: 'lov2',
+            },
+            hardt: {
+                tekst: 'Jeg hørte at du ropte på vakta. Og vakta sier at du slo hardt. For hardt. Pass deg, junge. Den som slår for hardt, kan selv havne hos gjaldkeren.',
+                gest: 'riste',
+                gjor: 'lever:tyven',
+                til: 'lov2',
+            },
+            lov2: {
+                tekst: 'Stjeler man fordi man sulter, slipper man som regel straff første gang. Neste gang går det verre. Godt vaktet, junge.',
+                gest: 'nikk',
                 til: 'vet',
             },
             vet: {
                 hvem: 'Dette vet vi',
                 vet: true,
-                // [V] bylova 1276, tyveribolken (blueprint §8.2). Om lova ble fulgt slik på Bryggen, [U].
-                tekst: 'Bylova fra 1276 sa at den som stjal mat fordi han sultet og ikke kunne arbeide, ikke skulle straffes. Andre tyver fikk strengere straff for hver gang de ble tatt. Hvordan lova ble brukt mot tyver på Bryggen i 1420-årene, vet vi ikke sikkert.',
+                // [V] bylova 1276, tyveribolken (blueprint §8.2): sult fritar, straffen øker for hver gang,
+                // godset bindes på ryggen og tyven føres til gjaldkeren. Oversettelsen bør sjekkes mot en
+                // trykt utgave. Om lova ble brukt slik på Bryggen, [U]. Sigurd, Lambert og vakta er [S].
+                tekst: 'Bylova fra 1276 hadde egne regler om tyveri. Den som stjal mat fordi han sultet og ikke klarte å arbeide, skulle ikke straffes. Andre tyver fikk strengere straff for hver gang de ble tatt: først en bot, så pisking og et brennemerke på kinnet, og til slutt kunne de bli drept. Den som tok en tyv, skulle binde tyvegodset på ryggen hans og føre ham til gjaldkeren, kongens mann i byen. Hvordan lova ble brukt på Bryggen i 1420-årene, vet vi ikke sikkert. Sigurd og vakta er laget for spillet.',
             },
         },
-        lonn: 'Svennene snakker om deg i schøtstua.',
+        leveringStart: (f) => (f.has('tyv-selv') ? 'selv' : f.has('tyv-vakta') ? (f.has('tyv-hardt') ? 'hardt' : 'vakta') : 'start'),
+        lonn: 'Svennene snakker om deg i schøtstua. Den nye jungen tok tyven.',
     },
     {
         id: 'brev',
@@ -431,4 +521,5 @@ export const OPPDRAG: OppdragDef[] = [
         },
         lonn: 'Du har vært innenfor muren på Bergenhus.',
     },
+    ...SIDEOPPDRAG,
 ];

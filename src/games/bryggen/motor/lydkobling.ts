@@ -176,7 +176,7 @@ export class LydKobling {
         const stemme = hva === 'stonn' || hva === 'smerte';
         const fart = stemme ? (hvem === 'gutt' ? 1.32 : 0.93) + Math.random() * 0.06 : 0.9 + Math.random() * 0.2;
         const styrke = hva === 'sus' ? 0.55 : hva === 'stonn' ? (hvem === 'gutt' ? 0.5 : 0.65) : hva === 'smerte' ? 0.7 : hva === 'fall' ? 0.9 : 1;
-        this.lyd.spill('kamp', hva, { pos: pos.clone().setY(pos.y + 1.2), ref: 2.2, styrke, fart, buss: 'inne', om });
+        this.lyd.spill('kamp', hva, { pos: pos.clone().setY(pos.y + 1.2), ref: 2.2, styrke, fart, buss: 'hendelse', om });
     }
 
     /** Oppdrag: tatt (to toner opp), et mål nådd (én), fullført (tre, en dur-treklang). */

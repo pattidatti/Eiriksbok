@@ -401,6 +401,7 @@ export async function buildMariakirkeCell(mats: Materials, cx: number, cz: numbe
         near, mid, inne: [rom], colliders: [...c.specs, ...folk.colliders],
         rom: [{ box: new THREE.Box3(midt.clone().sub(halv), midt.clone().add(halv)), demp: 0.7, yaw: ROT }],
         ild: inne.ild.map(iVerden),
+        steder: inne.steder.map((st) => ({ ...st, pos: iVerden(st.pos) })),
         snakkbare: folk.snakkbare,
         tick: folk.tick,
         dispose: () => {
