@@ -27,6 +27,7 @@ import { SKO_AASA } from './veioppdrag'; // Skoene til Åsa (veien rundt Vågen)
 import { KONTOR_OPPDRAG } from './kontor-data';
 import { JOBB_OPPDRAG } from './kontor-jobber';
 import { KAP2_OPPDRAG } from './kap2-data'; // Kapittel 2, «Uten motstand» (1428)
+import { KAP3_OPPDRAG } from './kap3-data'; // Kapittel 3, «Brannen» (1429)
 import { leggTilRykte } from './rykte-samtaler';
 
 /** Fraksjonene (blueprint §7): Kontoret, Bergenhus/kongens menn, norske borgere, kirken, nordlandsfiskerne. */
@@ -490,6 +491,7 @@ export const OPPDRAG: OppdragDef[] = [
     ...KONTOR_OPPDRAG,
     ...JOBB_OPPDRAG, // Last koggen og Bårds fisk på bismeren (kontor-jobber.ts)
     ...KAP2_OPPDRAG, // Uten motstand, Han som kjøper, Kornet (kap2-data.ts)
+    ...KAP3_OPPDRAG, // Leidangen, Brannen (kap3-data.ts)
 ];
 
 // Kald og varm start, og svar som ryktet låser opp: sist, når samtalene over har fått sine svar.

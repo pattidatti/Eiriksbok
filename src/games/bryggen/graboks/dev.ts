@@ -116,6 +116,8 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number; b
     jekta: { pos: [-20.4, 0, 2.2], yaw: -1.9 },
     volmer: { pos: [22.6, 0, 2.9], yaw: Math.PI },
     sekkene: { pos: [-30.6, 0, -135.6], yaw: -2.2 },
+    // Kapittel 3 (kap3-data.ts): foran Asbjørn og buntene på kaia (pulten i bua er `pult`).
+    asbjorn: { pos: [-6.4, 0, 2.0], yaw: -Math.PI / 2 },
 };
 
 /** `?sted=`: flytt startpunktet før cellene rundt det lastes (bare i dev). */

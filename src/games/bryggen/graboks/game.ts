@@ -493,7 +493,11 @@ export class GrayboxGame {
             this.player.step(dt, { dir: new THREE.Vector2(), sprint: false, jump: false });
             this.player.pos.set(seat.x, seat.y - 0.5, seat.z);
             this.player.yaw = this.boat.yaw + Math.PI;
-            if (inp.interactPressed && this.landCandidate) this.disembark(this.landCandidate);
+            if (inp.interactPressed && this.prompt && this.systemPrompt) {
+                const m = this.systemPrompt.trykk?.();
+                if (m) this.flash(m, 6);
+                this.promptTimer = 0;
+            } else if (inp.interactPressed && this.landCandidate) this.disembark(this.landCandidate);
         } else {
             this.boat.step(dt, null);
             const combatInput = {
@@ -632,7 +636,10 @@ export class GrayboxGame {
         }
         if (this.mode === 'foot') {
             const d = Math.hypot(this.boat.pos.x - this.player.pos.x, this.boat.pos.z - this.player.pos.z);
-            this.prompt = d < 3.4 && this.player.grounded && !this.pc.busy ? 'E: Gå om bord i færingen' : null;
+            // Med noe i armene som et system eier (kornsekken, buntene i kapittel 3), går han ikke om bord:
+            // systemet som ga tingen, sier hva E gjør ved færingen.
+            const ombord = d < 3.4 && this.player.grounded && !this.pc.busy && !this.baering?.baererTing;
+            this.prompt = ombord ? 'E: Gå om bord i færingen' : null;
             for (const s of this.systemer) {
                 if (this.prompt) break;
                 const p = s.prompt?.(this.player.pos) ?? null;
@@ -646,8 +653,19 @@ export class GrayboxGame {
                 this.prompt ??= this.folk.prompt;
             }
         } else {
-            this.landCandidate = finnLanding(this.boat, this.phys);
-            this.prompt = this.landCandidate ? 'E: Gå i land' : null;
+            // I båten spørres systemene først (dra en mann opp av sjøen, kapittel 3), så å gå i land.
+            this.prompt = null;
+            for (const s of this.systemer) {
+                const p = s.baatPrompt?.(this.boat.pos) ?? null;
+                if (p) {
+                    [this.prompt, this.systemPrompt] = [p, s];
+                    break;
+                }
+            }
+            if (!this.prompt) {
+                this.landCandidate = finnLanding(this.boat, this.phys);
+                this.prompt = this.landCandidate ? 'E: Gå i land' : null;
+            }
             this.folk?.update(0.15, this.player.pos, this.player.yaw, false);
         }
     }

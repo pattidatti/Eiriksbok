@@ -57,9 +57,12 @@ export interface Spillsystem {
     kamera?(kamera: THREE.PerspectiveCamera, dt: number): boolean;
     /** «E: …»-teksten systemet vil vise der gutten står, eller null. Spørres når ingen andre har en. */
     prompt?(gutt: THREE.Vector3): string | null;
+    /** Som `prompt`, men mens gutten ror (færingens plass). Spørres før «E: Gå i land». `trykk` gjør det. */
+    baatPrompt?(baat: THREE.Vector3): string | null;
     /**
      * Hvor gutten skal gå nå: punkt og radius (den samme som gir «E: …»). Merket på bakken
      * (maalmerke.ts) viser dem, så eleven ser nøyaktig hvor han skal stå. Spørres noen ganger i sekundet.
+     * Mens han ror, vises bare punktene ute på sjøen (y under null).
      */
     maal?(): Iterable<{ pos: THREE.Vector3; r: number }>;
     /** E ble trykket mens systemets prompt sto. Kan gi en melding midt på skjermen. */

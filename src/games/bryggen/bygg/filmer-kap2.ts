@@ -36,9 +36,9 @@ function kap2Inn(k: SpillKontekst): Film {
         skjul: ['gutt', 'kogge'],
         figurer: {
             kogge: { rekvisitt: (kk) => filmKogge(kk, false), pos: [x, WATER_Y, z], yaw: fast?.rotation.y ?? Math.PI / 2 },
-            husbonde: { drakt: 'husbonde', pos: [2.1, 0, 1.7], yaw: -Math.PI / 2 },
-            gutt: { drakt: 'junge', pos: [0.5, 0, 2.1], yaw: Math.PI / 2 },
-            hennig: { drakt: 'stuedreng', pos: [-0.7, 0, 2.5], yaw: Math.PI / 2 },
+            husbonde: { drakt: 'husbonde', pos: [0.5, 0, 1.7], yaw: -Math.PI / 2 },
+            gutt: { drakt: 'junge', pos: [-1.1, 0, 2.1], yaw: Math.PI / 2 },
+            hennig: { drakt: 'stuedreng', pos: [-2.3, 0, 2.5], yaw: Math.PI / 2 },
         },
         steg: [
             {
@@ -54,8 +54,9 @@ function kap2Inn(k: SpillKontekst): Film {
             // [V] Ersland 2020: kjøpmennene fra de vendiske byene forlot Bergen våren 1427.
             { t: 4.5, tekst: 'Kongen og hansabyene er i krig. Byrådet i Lübeck sender bud: alle kjøpmennene skal reise hjem.' },
             { t: 9.5, tekst: null },
-            // To-skudd på kaia: husbonden og gutten, Hennig bak.
-            { t: 9.5, kamera: { pos: [0.9, 1.6, -1.6], blikk: [1.2, 1.35, 2.0], fov: 46, til: { pos: [0.6, 1.6, -1.9] } } },
+            // To-skudd på kaia: husbonden og gutten, Hennig bak. Vest for fiskeren Sølve, som står på kaia
+            // ved (2,7, 1,3) i 1427: i en lang grå kjortel så han ut som en fremmed kvinne i skuddet.
+            { t: 9.5, kamera: { pos: [-0.7, 1.6, -1.6], blikk: [-0.4, 1.35, 2.0], fov: 46, til: { pos: [-1.0, 1.6, -1.9] } } },
             { t: 10, si: 'husbonde', tekst: 'Koggen går i dag. Du og Hennig blir her og passer gården til vi kommer tilbake.' },
             { t: 14, si: 'gutt', tekst: 'Hvor lenge blir dere borte?' },
             { t: 16.2, si: 'husbonde', tekst: 'Til krigen er over. Ingen vet hvor lenge. Hold ilden i schøtstua, og hold dørene stengt.' },

@@ -33,6 +33,8 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push(...(await import('./kontoret')).lagKontoret(k));
     // Kapittel 2, «Uten motstand» (1428): året, plyndrerne, sekkene og kampen (kap2.ts).
     ut.push((await import('./kap2')).lagKap2(k));
+    // Kapittel 3, «Brannen» (1429): året, skipene, buntene, valget og Holmen som brenner (kap3.ts).
+    ut.push((await import('./kap3')).lagKap3(k));
     // Merkene på bakken der gutten skal gjøre noe (bunten, oppdragsstedene, systemenes `maal`).
     ut.push((await import('./maalmerke')).lagMaalMerker(k, ut));
     if (import.meta.env.DEV) ut.push(fotoSystem());

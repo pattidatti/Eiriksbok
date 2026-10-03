@@ -63,6 +63,15 @@ export class Faering {
         this.group.add(this.hull);
     }
 
+    /** Legg båten et annet sted, stille (en filmscene som flytter gutten tilbake til kaia). */
+    flytt(p: THREE.Vector3, yaw: number): void {
+        this.pos.set(p.x, WATER_Y, p.z);
+        this.prevPos.copy(this.pos);
+        this.yaw = this.prevYaw = yaw;
+        this.speed = this.yawVel = 0;
+        this.body.setTranslation({ x: p.x, y: WATER_Y + 0.3, z: p.z }, true);
+    }
+
     /** Sete-posisjon i verden, der roerens hofter skal være. */
     seatWorld(out: THREE.Vector3): THREE.Vector3 {
         return out.set(0, 0.22, -0.25).applyMatrix4(this.hull.matrixWorld);

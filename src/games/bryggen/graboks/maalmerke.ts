@@ -104,7 +104,7 @@ export class MaalMerker implements Spillsystem {
     private finn(): Punkt[] {
         const { world, folk, baering, player } = this.k;
         const ut: Punkt[] = [];
-        if (baering.baerer) for (const b of world.streamer.bunter()) ut.push({ pos: b.lever, r: NAER });
+        if (baering.baerer && !baering.baererTing) for (const b of world.streamer.bunter()) ut.push({ pos: b.lever, r: NAER });
         const trengs = folk.oppdrag.stederSomTrengs();
         if (trengs.size) {
             for (const s of world.streamer.steder()) if (trengs.has(s.id)) ut.push({ pos: s.pos, r: s.r ?? 1.6 });
@@ -137,7 +137,7 @@ export class MaalMerker implements Spillsystem {
         this.spor -= dt;
         if (this.spor <= 0) {
             this.spor = SPOR_HVER;
-            this.punkter = this.k.modus() === 'foot' ? this.finn() : [];
+            this.punkter = this.k.modus() === 'foot' ? this.finn() : this.finn().filter((p) => p.pos.y < 0);
         }
         const g = this.k.player.pos;
         // Pulsen er lik for alle merkene og står på stedet: lysere og mørkere, aldri større og mindre.

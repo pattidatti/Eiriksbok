@@ -38,7 +38,7 @@ export function lagSidefolk(k: SpillKontekst): Spillsystem {
         half: new THREE.Vector2(2, 2),
         build: async () => {
             const { lagFolk } = await import('../bygg/folk');
-            const folk = await lagFolk(EPOKE.kap2 ? [] : plasser, k.world.materials, 1349);
+            const folk = await lagFolk(EPOKE.aar !== null ? [] : plasser, k.world.materials, 1349);
             return {
                 near: folk.group,
                 colliders: folk.colliders,

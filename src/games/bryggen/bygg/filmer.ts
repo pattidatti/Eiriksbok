@@ -12,6 +12,7 @@
 //   vakta     gutten ropte på vakta etter slagsmålet: vaktene henter tyven
 //   kap1-ut   «tyven» er levert: morgenen etter
 //   kap2-inn, kap2-jekta, kap2-ut: kapittel 2 (filmer-kap2.ts)
+//   kap3-inn, kap3-slaget, kap3-ut: kapittel 3 (filmer-kap3.ts)
 //
 // Gutten, husbonden, Lambert, Sigurd, skipperen og vaktene er laget for spillet [S], og det samme er
 // replikkene og hvor ting skjer. Historiske påstander er merket der de står.
@@ -27,6 +28,7 @@ import { VAKTPOST, VAKTPOST_YAW, RUTE } from '../graboks/tyv';
 import type { Film, Rekvisitt, P3 } from '../graboks/sekvens';
 import type { SpillKontekst } from '../graboks/system';
 import { KAP2_FILMER } from './filmer-kap2';
+import { KAP3_FILMER } from './filmer-kap3';
 
 /** Der gutten står når prologen slutter (spillets startpunkt på kaia), og retningen mot bua. */
 export const KAI_START: P3 = [0, 0, 2.4];
@@ -366,6 +368,7 @@ export const FILMER: Record<string, (k: SpillKontekst) => Film> = {
     vakta,
     'kap1-ut': kap1Ut,
     ...KAP2_FILMER, // kap2-inn, kap2-jekta, kap2-ut (filmer-kap2.ts)
+    ...KAP3_FILMER, // kap3-inn, kap3-slaget, kap3-ut (filmer-kap3.ts)
 };
 
 /** Når filmene kommer: på oppdragene og valgene (oppdrag.ts), og prologen i et nytt spill. */
@@ -383,6 +386,9 @@ export function koblFilmer(k: SpillKontekst, spill: (f: Film) => void, vedStart:
         else if (hva === 'flagg' && id === 'kap2-start') vis('kap2-inn');
         else if (hva === 'flagg' && id === 'kap2-jekta') vis('kap2-jekta');
         else if (hva === 'lever' && id === 'kap2-korn') vis('kap2-ut');
+        else if (hva === 'flagg' && id === 'kap3-start') vis('kap3-inn');
+        else if (hva === 'flagg' && id === 'kap3-skipet') vis('kap3-slaget');
+        else if (hva === 'lever' && id === 'kap3-valg') vis('kap3-ut');
     });
     // ?film=<id> spiller en film rett etter start (for å se og teste den). Ellers prologen i et nytt spill,
     // men ikke når ?sted= (dev.ts) har satt gutten et annet sted: prologen ville flyttet ham tilbake.

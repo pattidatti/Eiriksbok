@@ -87,6 +87,8 @@ export interface IldOpts {
     smokeTop: number;
     /** Bredden på bålet. */
     spread?: number;
+    /** Den glødende flekken under flammene (standard på). Av for ild som står på et tak. */
+    glod?: boolean;
 }
 
 /** Ett bål. Legg `group` i cella der flammene skal stå, og kall `update` hvert bilde. */
@@ -130,7 +132,8 @@ export class Ild {
         const spread = opts.spread ?? 0.5;
         this.glow = new THREE.Mesh(new THREE.CircleGeometry(spread * 0.8, 12).rotateX(-Math.PI / 2), this.glowMat);
         this.glow.position.y = 0.02;
-        this.group.add(this.glow, this.flames, this.smoke);
+        this.group.add(this.flames, this.smoke);
+        if (opts.glod ?? true) this.group.add(this.glow);
         for (let i = 0; i < this.flames.count; i++) this.fp.push(this.spawn(Math.random() * 0.7, 0.5 + Math.random() * 0.35, spread * 0.6));
         for (let i = 0; i < this.smoke.count; i++) this.sp.push(this.spawn(Math.random() * 4, 3.5 + Math.random() * 1.5, spread * 0.4));
     }

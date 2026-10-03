@@ -282,6 +282,13 @@ export const DRAKTER = {
         belte: 0x22180f, hoser: 0x2e2a28, sko: 0x1d1612, hette: 0x1e1c1c, hetteOppe: false, tut: 0.22, kappe: 0.2,
         mage: 0.45, pung: 0.9,
     },
+    // ── Kapittel 3, april 1429 (kap3-data.ts) ── [S]: hva bygdefolket i leidangen bar, er ikke funnet [K].
+    /** Leidangsmannen fra bygdene: grov brun vadmelskjortel, grønngrå hette oppe, skjegg, bred. */
+    leidang: {
+        navn: 'leidang', hud: 0xc99478, haar: 0x5a4632, skjegg: 0x604a34, kjortel: 0x6a5434, kjortelNed: 0.02,
+        belte: 0x2a1d12, hoser: 0x4a4436, sko: 0x33261a, hette: 0x4e5644, hetteOppe: true, tut: 0.1, kappe: 0.26,
+        mage: 0.15,
+    },
     oldermann: {
         navn: 'oldermann', hud: 0xd0a086, haar: 0x9a948a, skjegg: 0xa8a39a, kjortel: 0x4a1f24, kjortelNed: 0.44,
         belte: 0x1a120c, hoser: 0x2a2626, sko: 0x1d1612, hette: 0x1c1a1a, hetteOppe: true, tut: 0.46, kappe: 0.24,
@@ -298,7 +305,7 @@ export const HOYDE: Record<FigurNavn, number> = {
     hovedsmann: 1.8, gjaldker: 1.76,
     skomaker: 1.7, skomakersvenn: 1.74, baker: 1.72, bakerdreng: 1.5, gullsmed: 1.73, buntmaker: 1.68, barberer: 1.76, smed: 1.84,
     gammelkone: 1.5, husmann: 1.72, husfrue: 1.6, gutt: 1.26, jente: 1.22, fyllik: 1.73,
-    oldermann: 1.76, skipper: 1.77, plyndrer: 1.8, kjoper: 1.74,
+    oldermann: 1.76, skipper: 1.77, plyndrer: 1.8, kjoper: 1.74, leidang: 1.78,
 };
 
 /**
