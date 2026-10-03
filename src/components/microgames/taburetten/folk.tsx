@@ -57,7 +57,8 @@ export function Mengde({ gRef }: { gRef: GRef }) {
         const tid = clock.elapsedTime;
         let i = 0;
         for (let r = 0; r < rader; r++) {
-            const løft = r * 0.32;
+            // Bakre rader står bare litt høyere, så alle hender holder seg under konturlinja.
+            const løft = r * 0.06;
             for (let k = 0; k < KOLONNER; k++) {
                 const kol = k0 + k;
                 const x = kol * AVSTAND + (r % 2) * 0.17;
@@ -67,7 +68,7 @@ export function Mengde({ gRef }: { gRef: GRef }) {
                 const vern = r === 0 && g.vern && påØy(g, x);
                 // Flertallet bærer bølgen, mindretallet holder hendene lavere.
                 const vink = Math.sin(tid * 3 + kol) * 0.06;
-                let y = flate(g, x) + løft - 0.12 + vink;
+                let y = flate(g, x) + løft - 0.3 + vink;
                 if (!flertall && !vern) y = Math.min(y, SKULDER + 0.5 + u * 0.4 + løft);
                 y = Math.max(SKULDER + løft * 0.6, y);
                 const z = RAD_Z[r];

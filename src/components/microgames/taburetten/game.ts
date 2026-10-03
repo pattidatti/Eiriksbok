@@ -17,6 +17,7 @@ import {
     FRI_FØRSTE,
     FRI_PASSASJER,
     MANUS,
+    SCHWEIGAARD,
     SVERDRUP,
     type Farge,
     type Manus,
@@ -46,11 +47,28 @@ export function marsj(g: Game): number {
     return BRETT[g.brett].marsj;
 }
 
+/** Bonusen for å anklage nå: vokser for hver røde sone du våget å vente (og gapene vokser). */
+export function anklagBonus(g: Game): number {
+    return P.anklag * g.mult * (1 + Math.min(TUNING.anklag.bomMaks, g.bom));
+}
+
 /**
- * Anklagen: en fin landing på de røde hendene etter valget 1882. Da reiser Odelstinget
- * riksrett, og resten av manuset (dommen, Schweigaard, Sverdrup) settes i gang herfra.
+ * Anklag! (egen knapp): virker bare når Venstre har over 60 % i stripa (etter valget 1882).
+ * Da reiser Odelstinget riksrett, og resten av manuset (dommen, Sverdrup) settes i gang herfra.
  */
-function anklag(g: Game) {
+export function anklag(g: Game) {
+    if (g.mode !== 'play' || g.fri) return;
+    if (!kanAnklage(g)) {
+        // For tidlig: uten over 60 % faller anklagen, og kongens folk dytter stolen ned.
+        if (!g.anklaget) {
+            g.base = Math.max(0, g.base - TUNING.anklag.forTidlig);
+            g.mult = 1;
+            g.ut.push({ type: 'ikkeAnklag' });
+        }
+        return;
+    }
+    const bonus = Math.round(anklagBonus(g));
+    g.poeng += bonus;
     g.anklaget = true;
     g.anklagT = g.t;
     g.iRød = false;
@@ -58,8 +76,8 @@ function anklag(g: Game) {
         m.type === 'nedtelling' ? { ...m, t: m.t + g.t, til: m.til + g.t } : { ...m, t: m.t + g.t }
     ).sort((a, b) => utløs(a) - utløs(b));
     g.seierT = g.t + SEIER_ETTER;
-    g.poeng += P.anklag * g.mult;
-    g.ut.push({ type: 'anklag' });
+    g.valg++;
+    g.ut.push({ type: 'anklag', bonus });
 }
 
 // ---------- Grepene (samme for eleven og robotene) ----------
@@ -67,6 +85,7 @@ function anklag(g: Game) {
 /** Hold inne = len deg fram (tung). Slipp = lett. */
 export function hold(g: Game, på: boolean) {
     g.hold = på;
+    if (på) g.sistHold = g.t;
 }
 
 /** Banneret med en kandidat som kan tas nå (fra perfekt-vinduet før til sent-vinduet etter). */
@@ -88,7 +107,15 @@ export function kanBytte(g: Game): boolean {
 /** Bytt: den i setet kastes av, kandidaten fra banneret hopper opp. */
 export function bytt(g: Game) {
     const b = aktivtBanner(g);
-    if (!b || !b.passasjer) return;
+    if (!b || !b.passasjer) {
+        // Bytt uten kandidat: stolen vipper, og multiplikatoren faller til x1.
+        if (g.mode === 'play') {
+            g.base = Math.max(0, g.base - TUNING.bytte.tomtBytte);
+            g.mult = 1;
+            g.ut.push({ type: 'tomtBytte' });
+        }
+        return;
+    }
     const ny = b.passasjer;
     const etter = flertallI(b.rødt);
     const gammelHar = g.stol.farge === etter;
@@ -120,6 +147,8 @@ export function bytt(g: Game) {
         g.sverdrupT = g.t;
         g.brett = 3;
         g.nesteHindring = g.t;
+        // Flertallet tar stolen: full fart med en gang (kanonen).
+        g.vx = Math.max(g.vx, marsj(g));
     }
     b.tatt = true;
     g.forrige = g.stol;
@@ -227,6 +256,14 @@ function treffBannere(g: Game) {
             g.øyer.length = 0;
             // Livgarden løfter stolen en siste gang før den slipper.
             g.base = Math.max(g.base, TUNING.hender.vernHøyde);
+            // Selmer er dømt og kastes av. Kongen setter inn Schweigaard (Aprilministeriet).
+            g.forrige = g.stol;
+            g.stol = SCHWEIGAARD;
+            g.sitteTid = 0;
+            g.mult = 1;
+            // Ingen nye hindringer mens Schweigaard synker: presset er synkingen.
+            g.hindringer = g.hindringer.filter((o) => o.x < g.x);
+            g.nesteHindring = Infinity;
             g.ut.push({ type: 'dom' });
         }
         if (g.fri) {
@@ -260,6 +297,18 @@ function seier(g: Game, dt: number) {
     }
 }
 
+/** Eleven ventet med Anklag!: hvert gap foran stolen blir lengre med en gang (synlig). */
+function voksGap(g: Game) {
+    let k = 0;
+    for (const ø of g.øyer) {
+        if (ø.x0 <= g.x) continue;
+        k++;
+        ø.x0 += k * TUNING.anklag.bomGap;
+        ø.x1 += k * TUNING.anklag.bomGap;
+    }
+    g.nesteØy += (k + 1) * TUNING.anklag.bomGap;
+}
+
 // ---------- Ett tidssteg ----------
 
 export function update(g: Game, dt: number) {
@@ -284,7 +333,6 @@ export function update(g: Game, dt: number) {
             g.mult = bæres ? Math.min(P.multMaks, g.mult + P.multFin) : 1;
             g.poeng += P.finLanding * g.mult;
             g.ut.push({ type: 'fin', mult: g.mult });
-            if (iRødSone(g, g.x)) anklag(g);
         } else if (l?.kvalitet === 'dunk') {
             g.dunk++;
             g.kombo = 0;
@@ -305,6 +353,7 @@ export function update(g: Game, dt: number) {
             g.ut.push({ type: 'rødsone' });
         } else if (kanAnklage(g)) {
             g.bom++;
+            if (g.bom <= TUNING.anklag.bomMaks) voksGap(g);
             g.ut.push({ type: 'bom' });
         }
         g.iRød = rød;

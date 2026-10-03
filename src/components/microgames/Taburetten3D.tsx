@@ -18,7 +18,8 @@ import { useArcadeSave, nextRank, rankFor } from './arcade/save';
 import { buzz, createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest, playtestSpeed } from './playtest';
-import { bytt, fortsett, hold, newGame, update, type Game } from './taburetten/game';
+import { rir } from './taburetten/crowd';
+import { anklag, bytt, fortsett, hold, newGame, update, type Game } from './taburetten/game';
 import { BOTS } from './taburetten/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './taburetten/sim';
 import { Verden } from './taburetten/world';
@@ -41,6 +42,7 @@ import {
     TIPS,
     TIPS_ANKLAG,
     TIPS_APRIL,
+    TIPS_STILLE,
     TIPS_VERN,
     ØYEBLIKK,
 } from './taburetten/texts';
@@ -216,6 +218,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
         if (!vunnet && g.årsak) {
             if (g.stol.navn === 'Schweigaard') tekst = TIPS_APRIL;
             else if (g.vern && !g.anklaget && g.rødt >= 69) tekst = TIPS_ANKLAG;
+            else if (g.årsak === 'gata' && g.vern && !rir(g)) tekst = TIPS_STILLE;
             else if (g.årsak === 'gata' && g.vern) tekst = TIPS_VERN;
             else if (g.årsak === 'hindring' && !g.vern && g.stol.farge === 'blå') tekst = TIPS.gata;
             else tekst = TIPS[g.årsak];
@@ -278,11 +281,6 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                     text.banner('VALGET 1882', FARGE.rød, 2.4);
                     text.point('valg', LAPP.valg, vedStripa, { seconds: 4 });
                     text.lesson('valg', LÆRDOM.valg, 1);
-                } else if (u.navn === 'Schweigaard') {
-                    text.point('schweigaard', LAPP.schweigaard, vedNeste, {
-                        tone: 'fare',
-                        seconds: 6,
-                    });
                 } else if (u.navn === 'Sverdrup') {
                     const vist = text.beatOnce(
                         'sverdrup',
@@ -313,9 +311,27 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                         once: true,
                     });
                 break;
+            case 'ikkeAnklag':
+                lyd.feil();
+                fx.dunk = T;
+                fx.skjelv = Math.max(fx.skjelv, 0.35);
+                flyt('Avvist! x1', FARGE.blå, true);
+                text.point('ikkeAnklag', LAPP.ikkeAnklag, vedStripa, { tone: 'fare', seconds: 3 });
+                buzz(40);
+                break;
+            case 'tomtBytte':
+                lyd.feil();
+                fx.dunk = T;
+                flyt('Ingen å bytte med! x1', FARGE.blå);
+                text.point('tomtBytte', LAPP.tomtBytte, fast(stolNå), {
+                    tone: 'fare',
+                    seconds: 2.5,
+                    once: true,
+                });
+                break;
             case 'bom':
                 lyd.dunk();
-                flyt('Bom!', FARGE.blå, true);
+                flyt(`Bonus x${Math.min(5, g.bom + 1)} - gapene vokser`, FARGE.gull, true);
                 text.point('bom', LAPP.bom, fast(stolNå), { tone: 'fare', seconds: 3, once: true });
                 break;
             case 'anklag':
@@ -324,7 +340,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 fx.stopp = T + 0.18;
                 fx.skjelv = Math.max(fx.skjelv, 0.5);
                 lyd.perfekt(2);
-                flyt('ANKLAGET!', FARGE.rød, true);
+                flyt(`ANKLAGET! +${u.bonus}`, FARGE.rød, true);
                 text.banner('ODELSTINGET ANKLAGER', FARGE.rød, 2.2);
                 text.lesson('anklag', LÆRDOM.anklag, 3);
                 buzz([30, 30, 60]);
@@ -336,8 +352,20 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 buzz(10);
                 break;
             case 'dom':
+                // Selmer er dømt og flyr av; kongen setter inn Schweigaard av seg selv.
+                tattSchweigaard.current = true;
+                fx.bytte = T;
+                fx.kastet = g.forrige;
+                fx.kastX = g.x;
+                fx.kastY = g.y;
+                fx.stopp = T + 0.2;
                 lyd.dom();
                 fx.skjelv = Math.max(fx.skjelv, 0.6);
+                text.point('schweigaard', LAPP.schweigaard, vedStripa, {
+                    tone: 'fare',
+                    seconds: 5,
+                });
+                text.lesson('april', LÆRDOM.april, 2);
                 text.banner('DOMMEN 1884', '#221c18', 2.6);
                 text.beatOnce('dom', ØYEBLIKK.dom.tittel, ØYEBLIKK.dom.tekst, { at: fast(stolNå) });
                 text.lesson('dom', LÆRDOM.dom, 2);
@@ -369,10 +397,6 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 fx.kastet = g.forrige;
                 fx.kastX = g.x;
                 fx.kastY = g.y;
-                if (u.navn === 'Schweigaard') {
-                    tattSchweigaard.current = true;
-                    text.lesson('april', LÆRDOM.aprilTatt, 3);
-                }
                 if (u.type === 'perfekt') {
                     fx.perfekt = T;
                     fx.stopp = T + 0.12;
@@ -427,8 +451,6 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 window.setTimeout(() => avslutt(true), 1800);
                 break;
         }
-        if (u.type === 'banner' && u.navn === 'Sverdrup' && !tattSchweigaard.current)
-            text.lesson('april', LÆRDOM.aprilForbi, 1);
     };
     useEffect(() => {
         onUt.current = visUt;
@@ -463,6 +485,9 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
     const doBytt = () => {
         if (modeRef.current === 'play') bytt(gRef.current);
     };
+    const doAnklag = () => {
+        if (modeRef.current === 'play') anklag(gRef.current);
+    };
     const lydAv = () => {
         synth.unlock();
         synth.setMuted(!synth.isMuted());
@@ -479,6 +504,9 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
             if (modeRef.current !== 'play') return;
             if (e.key === 'ArrowDown') {
                 hold(gRef.current, true);
+                e.preventDefault();
+            } else if (e.key === 'a' || e.key === 'A') {
+                if (!e.repeat) anklag(gRef.current);
                 e.preventDefault();
             } else if (e.key === ' ') {
                 if (!e.repeat) bytt(gRef.current);
@@ -573,7 +601,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                     >
                         <MicroCanvas
                             camera={{ position: [2, 2, 11], fov: 40 }}
-                            background={FARGE.papir}
+                            background={FARGE.himmel}
                             fog={null}
                             controls={false}
                             contactShadows={false}
@@ -604,7 +632,9 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                         }}
                     />
 
-                    {spiller && <Hud d={hud} onBytt={doBytt} knapper={knapper} />}
+                    {spiller && (
+                        <Hud d={hud} onBytt={doBytt} onAnklag={doAnklag} knapper={knapper} />
+                    )}
 
                     {textLayer}
 

@@ -60,7 +60,20 @@ export type Ut =
     | { type: 'banner'; tekst: string; farge: Farge | null; navn: string | null }
     | { type: 'nedtelling'; tekst: string }
     | { type: 'fin'; mult: number }
-    | { type: 'dunk' | 'ark' | 'dom' | 'seier' | 'øy' | 'gap' | 'smell' | 'anklag' | 'bom' }
+    | {
+          type:
+              | 'dunk'
+              | 'ark'
+              | 'dom'
+              | 'seier'
+              | 'øy'
+              | 'gap'
+              | 'smell'
+              | 'bom'
+              | 'ikkeAnklag'
+              | 'tomtBytte';
+      }
+    | { type: 'anklag'; bonus: number }
     | { type: 'nesten'; hva: 'hindring' | 'gata' }
     | { type: 'rødsone' }
     | { type: 'perfekt' | 'bytte' | 'unødvendig' | 'feil'; navn: string; farge: Farge }
@@ -81,6 +94,8 @@ export interface Game {
     vy: number;
     luft: boolean;
     hold: boolean;
+    /** Spilt tid da eleven sist holdt inne (livgarden bærer bare en stol i bruk). */
+    sistHold: number;
     sForrige: number;
 
     // Hendene (løftet fra stripa)
@@ -168,6 +183,7 @@ export function newGame(seed: number): Game {
         vy: 0,
         luft: false,
         hold: false,
+        sistHold: 3,
         sForrige: 0,
         base: H.vernHøyde,
         amp: H.vernAmp,

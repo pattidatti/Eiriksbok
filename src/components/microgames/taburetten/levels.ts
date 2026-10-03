@@ -51,16 +51,16 @@ export const BRETT: Brett[] = [
     {
         navn: 'Riksretten',
         år: '1884',
-        marsj: 6,
-        hindringHver: 6,
+        marsj: 8,
+        hindringHver: 99,
         typer: ['kjerre'],
         ark: true,
     },
     {
         navn: 'Sverdrup',
         år: 'juni 1884',
-        marsj: 8,
-        hindringHver: 2.6,
+        marsj: 10.5,
+        hindringHver: 2.1,
         typer: ['middels', 'tråd', 'lav'],
         ark: true,
     },
@@ -94,16 +94,14 @@ export const MANUS: Manus[] = [
 ];
 
 /**
- * Etter anklagen: tidene er sekunder etter at eleven anklaget (landet på de røde hendene).
- * Dommen kommer bare fordi eleven anklaget - ikke av seg selv på en dato.
+ * Etter anklagen: tidene er sekunder etter at eleven trykket Anklag!.
+ * Dommen kommer bare fordi eleven anklaget - ingen nedtelling gjør det for eleven.
+ * Ved dommen kastes Selmer av, og kongen setter inn Schweigaard (Aprilministeriet) av seg selv.
  */
 export const ETTER_ANKLAG: Manus[] = [
-    { t: 0, type: 'nedtelling', tekst: 'Riksretten dømmer', til: 4 },
-    { t: 4, type: 'banner', tekst: 'Dommen i riksretten', rødt: 83, dom: true },
-    // Fella: kongens nye mann er også blå. Den som bytter av vane, synker fortere.
-    { t: 11, type: 'banner', tekst: '3. april: Schweigaard', rødt: 83, passasjer: SCHWEIGAARD },
+    { t: 3, type: 'banner', tekst: 'Dommen i riksretten', rødt: 83, dom: true },
     {
-        t: 20,
+        t: 11,
         type: 'banner',
         tekst: '26. juni: Sverdrup',
         rødt: 83,
@@ -121,12 +119,11 @@ export const KALENDER: { fra: number; tekst: string }[] = [
     { fra: 22, tekst: 'Høsten 1882' },
 ];
 
-/** Kalenderen etter anklagen (sekunder etter anklagen). */
+/** Kalenderen etter anklagen (sekunder etter anklagen). Selmer sitter aldri etter 27.2.1884. */
 export const KALENDER_ETTER: { fra: number; tekst: string }[] = [
     { fra: 0, tekst: '23. april 1883' },
-    { fra: 4, tekst: '27. februar 1884' },
-    { fra: 7, tekst: 'Mars 1884' },
-    { fra: 11, tekst: '3. april 1884' },
-    { fra: 14, tekst: 'Juni 1884' },
-    { fra: 20, tekst: '26. juni 1884' },
+    { fra: 1.5, tekst: 'Februar 1884' },
+    { fra: 3, tekst: '3. april 1884' },
+    { fra: 7, tekst: 'Juni 1884' },
+    { fra: 11, tekst: '26. juni 1884' },
 ];

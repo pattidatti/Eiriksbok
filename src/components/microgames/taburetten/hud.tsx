@@ -85,17 +85,19 @@ const Tast = ({ children }: { children: React.ReactNode }) => (
 const STATUS: Record<HudData['bæres'], string> = {
     flertall: 'Flertallet bærer deg',
     vern: 'Kongens vern bærer deg',
-    mellom: 'Ingen vern her - synker!',
+    mellom: 'Livgarden slipper - synker!',
     synk: 'Uten flertall - synker!',
 };
 
 export function Hud({
     d,
     onBytt,
+    onAnklag,
     knapper,
 }: {
     d: HudData;
     onBytt: () => void;
+    onAnklag: () => void;
     knapper: React.ReactNode;
 }) {
     const blått = 114 - d.rødt;
@@ -211,28 +213,33 @@ export function Hud({
                 <Stripe rødt={d.rødt} />
             </div>
 
-            {/* Neste kandidat i høyre marg */}
+            {/* Neste kandidat i høyre marg: farge og flertall kan leses FØR eleven trykker. */}
             {d.neste && (
                 <div
                     style={{
                         position: 'absolute',
                         right: 14,
-                        top: 150,
-                        width: 150,
+                        top: 140,
+                        width: 196,
                         ...kort,
+                        border: `4px solid ${FARGE[d.neste.farge]}`,
                         padding: 8,
                         textAlign: 'center',
                         pointerEvents: 'none',
+                        transform: d.perfektNå ? 'scale(1.1) rotate(-2deg)' : 'none',
+                        transition: 'transform 0.12s',
                     }}
                 >
-                    <div style={{ fontSize: 14, fontWeight: 800, letterSpacing: 2 }}>NESTE</div>
+                    <div style={{ fontSize: 15, fontWeight: 800, letterSpacing: 2 }}>
+                        {d.kanBytte ? 'HOPPER OPP NÅ' : `KOMMER OM ${d.neste.om} s`}
+                    </div>
                     <div
                         style={{
-                            width: 110,
-                            height: 128,
+                            width: 120,
+                            height: 136,
                             margin: '4px auto',
                             borderRadius: '50%',
-                            border: `5px solid ${FARGE[d.neste.farge]}`,
+                            border: `6px solid ${FARGE[d.neste.farge]}`,
                             overflow: 'hidden',
                             background: '#fffaf0',
                         }}
@@ -240,14 +247,26 @@ export function Hud({
                         <img
                             src={portrett(d.neste.figur)}
                             alt=""
-                            style={{ width: 128, marginLeft: -12, marginTop: -6 }}
+                            style={{ width: 138, marginLeft: -12, marginTop: -6 }}
                         />
                     </div>
-                    <div style={{ fontSize: 18, fontWeight: 800, color: FARGE[d.neste.farge] }}>
-                        {d.neste.navn}
+                    <div style={{ fontSize: 22, fontWeight: 800, color: FARGE[d.neste.farge] }}>
+                        {d.neste.navn} ({d.neste.farge === 'rød' ? 'Venstre' : 'Høyre'})
                     </div>
-                    <div style={{ fontSize: 14 }}>
-                        {d.neste.farge === flertall ? 'har flertallet' : 'har IKKE flertallet'}
+                    <div
+                        style={{
+                            marginTop: 4,
+                            padding: '4px 6px',
+                            fontSize: 18,
+                            fontWeight: 800,
+                            color: d.neste.har ? SVERTE : '#fffaf0',
+                            background: d.neste.har ? FARGE.gull : SVERTE,
+                            border: `2px solid ${SVERTE}`,
+                        }}
+                    >
+                        {d.neste.har
+                            ? `✓ FLERTALL: ${d.neste.seter} av 114`
+                            : `✗ BARE ${d.neste.seter} av 114`}
                     </div>
                 </div>
             )}
@@ -315,10 +334,52 @@ export function Hud({
             >
                 <div style={{ fontWeight: 800 }}>{d.mål}</div>
                 <div style={{ marginTop: 3 }}>
-                    Len: <Tast>Hold mus</Tast>/<Tast>↓</Tast> · Bytt: <Tast>Mellomrom</Tast>
+                    Len: <Tast>Hold mus</Tast>/<Tast>↓</Tast>
+                    {d.anklag.synlig ? (
+                        <>
+                            {' '}
+                            · Anklag: <Tast>A</Tast>
+                        </>
+                    ) : (
+                        <>
+                            {' '}
+                            · Bytt: <Tast>Mellomrom</Tast>
+                        </>
+                    )}
                 </div>
             </div>
 
+            {d.anklag.synlig && (
+                <button
+                    type="button"
+                    onPointerDown={(e) => {
+                        e.stopPropagation();
+                        onAnklag();
+                    }}
+                    style={{
+                        position: 'absolute',
+                        right: 14,
+                        bottom: 14,
+                        ...kort,
+                        fontSize: 24,
+                        fontWeight: 800,
+                        padding: '8px 18px',
+                        cursor: 'pointer',
+                        color: d.anklag.virker ? '#fffaf0' : SVERTE,
+                        background: d.anklag.virker ? FARGE.rød : '#d8cdb2',
+                        opacity: d.anklag.virker ? 1 : 0.8,
+                        animation: d.anklag.virker ? 'tabPuls 0.8s ease-in-out infinite' : 'none',
+                        lineHeight: 1.1,
+                    }}
+                >
+                    Anklag! <Tast>A</Tast>
+                    <div style={{ fontSize: 15, fontWeight: 700 }}>
+                        {d.anklag.virker
+                            ? `+${d.anklag.bonus} - vent = mer, men gapene vokser`
+                            : 'Venstre trenger over 60 %'}
+                    </div>
+                </button>
+            )}
             {(d.kanBytte || d.neste) && (
                 <button
                     type="button"
@@ -331,19 +392,27 @@ export function Hud({
                         right: 14,
                         bottom: 14,
                         ...kort,
-                        fontSize: 24,
+                        fontSize: d.perfektNå ? 30 : 24,
                         fontWeight: 800,
                         padding: '10px 22px',
                         cursor: 'pointer',
-                        background: d.perfektNå ? FARGE.gull : d.kanBytte ? '#fffaf0' : '#d8cdb2',
+                        color: d.kanBytte && d.neste && !d.perfektNå ? '#fffaf0' : SVERTE,
+                        background: d.perfektNå
+                            ? FARGE.gull
+                            : d.kanBytte && d.neste
+                              ? FARGE[d.neste.farge]
+                              : '#d8cdb2',
                         opacity: d.kanBytte ? 1 : 0.65,
-                        transform: d.perfektNå ? 'scale(1.08)' : 'none',
+                        transform: d.perfektNå ? 'scale(1.15)' : 'none',
                         transition: 'transform 0.1s',
                     }}
                 >
-                    Bytt <Tast>Mellomrom</Tast>
+                    {d.neste ? `Bytt til ${d.neste.navn}` : 'Bytt'} <Tast>Mellomrom</Tast>
                 </button>
             )}
+            <style>
+                {'@keyframes tabPuls{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}'}
+            </style>
         </>
     );
 }

@@ -1,6 +1,7 @@
 // Terrenget eleven surfer på, gjort lesbart: en tykk svertelinje langs toppen av hendene,
-// skygge under nedoverbakkene (der du lener og lander), gull der kongens livgarde bærer, og
-// rødt der Odelstinget kan anklage (de røde hendene mellom øyene etter valget 1882).
+// skygge under nedoverbakkene (der du lener og lander), gull der kongens livgarde bærer (merket
+// med skiltet LIVGARDEN), og rødt mellom gullfeltene etter valget 1882. Linja og skyggen ligger
+// foran hendene, og hendene står under konturen (folk.tsx).
 
 import { useEffect, useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
@@ -20,7 +21,7 @@ const Z = -0.12;
 const LINJE_BUNN = 0.06;
 const LINJE_TOPP = 0.17;
 /** Skyggen under nedoverbakkene. */
-const SKYGGE = 0.75;
+const SKYGGE = 1.3;
 
 const sverte = new THREE.Color(FARGE.hatt);
 const gull = new THREE.Color(FARGE.gull);
@@ -52,16 +53,16 @@ export function Kontur({ gRef }: { gRef: GRef }) {
     const cc = useMemo(() => crispCanvas(320, 96), []);
     useEffect(() => {
         cc.draw((ctx, w, h) => {
-            ctx.fillStyle = FARGE.rød;
+            ctx.fillStyle = FARGE.gull;
             ctx.fillRect(0, 0, w, h);
             ctx.strokeStyle = FARGE.hatt;
             ctx.lineWidth = 6;
             ctx.strokeRect(3, 3, w - 6, h - 6);
-            ctx.fillStyle = '#fff8e8';
-            ctx.font = `800 40px ${ANTIKVA}`;
+            ctx.fillStyle = FARGE.hatt;
+            ctx.font = `800 44px ${ANTIKVA}`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText('ANKLAG HER!', w / 2, h / 2 + 2);
+            ctx.fillText('LIVGARDEN', w / 2, h / 2 + 2);
         });
     }, [cc]);
     useEffect(
@@ -84,16 +85,14 @@ export function Kontur({ gRef }: { gRef: GRef }) {
         const sc = skygge.attributes.color.array as Float32Array;
         const x0 = Math.floor(g.x) + FRA;
         const puls = 0.75 + 0.25 * Math.sin(clock.elapsedTime * 6);
-        let rødStart: number | null = null;
         for (let i = 0; i < N; i++) {
             const x = x0 + (i / (N - 1)) * LENGDE;
             const y = flate(g, x);
             const s = helning(g, x);
             const øy = g.vern && påØy(g, x);
             const rødSone = iRødSone(g, x);
-            if (rødSone && rødStart === null && x > g.x + 1) rødStart = x;
             // Linja: gull på øyene, rødt der du kan anklage, ellers sverte.
-            const tykk = øy || rødSone ? 1.6 : 1;
+            const tykk = øy ? 2.2 : rødSone ? 1.6 : 1;
             c.copy(øy ? gull : rødSone ? rød : sverte);
             const a = i * 6;
             lp[a] = x;
@@ -121,7 +120,7 @@ export function Kontur({ gRef }: { gRef: GRef }) {
             sc[k] = sk.r;
             sc[k + 1] = sk.g;
             sc[k + 2] = sk.b;
-            sc[k + 3] = 0.5 * ned + (rødSone ? 0.25 : 0);
+            sc[k + 3] = 0.62 * ned + (rødSone ? 0.2 : 0);
             sc[k + 4] = sk.r;
             sc[k + 5] = sk.g;
             sc[k + 6] = sk.b;
@@ -133,18 +132,15 @@ export function Kontur({ gRef }: { gRef: GRef }) {
         skygge.attributes.color.needsUpdate = true;
         linje.computeBoundingSphere();
         skygge.computeBoundingSphere();
-        // Skiltet står over starten av neste røde sone (eller den stolen er i).
+        // Skiltet LIVGARDEN står over gullfeltet (platået) foran eller under stolen.
         const sk = skilt.current;
         if (sk) {
-            const her = iRødSone(g, g.x);
-            const x = her ? g.x + 2.2 : rødStart;
-            sk.visible = x !== null;
-            if (x !== null)
-                sk.position.set(
-                    x + 1.6,
-                    flate(g, x) + 1.3 + Math.sin(clock.elapsedTime * 3) * 0.08,
-                    Z
-                );
+            const ø = g.vern ? g.øyer.find((o) => o.x1 > g.x + 3 && o.x0 < g.x + 22) : undefined;
+            sk.visible = !!ø;
+            if (ø) {
+                const x = Math.min(ø.x1 - 1.5, Math.max(ø.x0 + 1.5, g.x + 6));
+                sk.position.set(x, flate(g, x) + 1.1 + Math.sin(clock.elapsedTime * 3) * 0.06, Z);
+            }
         }
     });
 

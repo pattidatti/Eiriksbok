@@ -147,7 +147,10 @@ export function tegnFasader(): HTMLCanvasElement {
         const h = 230 + Math.floor(r() * 120);
         const top = 384 - h;
         const hus = (k: Ctx) => k.rect(x, top, b, h);
-        form(ctx, hus, { farge: r() < 0.5 ? '#ddd0b0' : '#d8c8a4', strek: 4, forskyv: 0 });
+        // Håndkolorert som på et kolorert tresnitt: oker, teglrødt og blågrått, lagt med pensel.
+        const vask = r();
+        const farge = vask < 0.36 ? '#d9b46a' : vask < 0.7 ? '#d6957e' : '#a9b9cd';
+        form(ctx, hus, { farge, strek: 4, forskyv: 0 });
         ctx.save();
         ctx.beginPath();
         hus(ctx);

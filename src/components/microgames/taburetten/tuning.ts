@@ -13,6 +13,8 @@ export const TUNING = {
         maksFart: 15,
         /** Hvor fort farten trekkes mot marsjfarten til brettet (per sekund). */
         drag: 0.9,
+        /** Det samme i lufta (svakere): stolen tar igjen marsjfarten også når den flyr. */
+        luftDrag: 0.6,
         /** Helning på landingsstedet som teller som ned- eller oppside. */
         landHelning: 0.12,
         /** «Fin landing!»: ekstra fart. */
@@ -35,7 +37,7 @@ export const TUNING = {
         flertallBase: 2.4,
         flertallBaseK: 7,
         flertallAmp: 0.45,
-        flertallAmpK: 3.2,
+        flertallAmpK: 4,
         /** Uten flertall flater bølgene ut til dette. */
         synkAmp: 0.25,
         /** Hvor fort hendene reiser seg når flertallet får stolen (m/s). */
@@ -55,7 +57,9 @@ export const TUNING = {
         gapStart: 3,
         gapK: 0.42,
         /** Hvor fort mengden drar stolen ned mellom øyene (m/s). */
-        synk: 0.3,
+        synk: 0.4,
+        /** Livgarden bærer bare når eleven har holdt inne de siste så mange sekundene. */
+        rytme: 3,
         /** Bølgehøyden mellom øyene (de røde hendene vil ikke bære). */
         amp: 0.6,
         /** Så langt foran stolen øyene legges ut (m). */
@@ -65,14 +69,16 @@ export const TUNING = {
     /** Anklagen: en fin landing på de røde hendene mellom øyene etter valget 1882. */
     anklag: {
         /** Hver røde sone stolen krysser uten å anklage, gjør gapene så mye lengre (m). */
-        bomGap: 4,
-        bomMaks: 6,
+        bomGap: 6,
+        bomMaks: 4,
+        /** Anklag! før Venstre har over 60 %: stolen dumper så mye (m), og x1. */
+        forTidlig: 0.35,
     },
 
     /** Jevn synking uten flertall (m/s). Fast fart - ingen flaks. */
     synk: {
         /** Kampanjen: satt slik at Schweigaard når gata et godt stykke inn i brett 3. */
-        fart: 0.065,
+        fart: 0.12,
         /** Feil bytte (en uten flertall, som Schweigaard): stolen dumper så mye med en gang (m). */
         feilFall: 0.8,
         /** Frispillet: synkefarten øker per banner opp til maks. */
@@ -84,7 +90,7 @@ export const TUNING = {
     /** Bytte av passasjer. */
     bytte: {
         /** Perfekt bytte: så nær banneret (sekunder, ±). Krymper i frispillet. */
-        perfektVindu: 0.6,
+        perfektVindu: 0.45,
         perfektMin: 0.35,
         perfektKrymp: 0.03,
         /** Så lenge etter banneret kandidaten løper ved siden av og kan tas (sent bytte). */
@@ -93,6 +99,8 @@ export const TUNING = {
         seierSek: 8,
         /** Perfekt bytte kaster stolen opp. */
         perfektKast: 6,
+        /** Bytt uten kandidat på et banner: stolen vipper så mye (m), og x1. */
+        tomtBytte: 0.3,
     },
 
     poeng: {
@@ -101,7 +109,7 @@ export const TUNING = {
         avisark: 60,
         perfekt: 500,
         /** Anklagen (fin landing på de røde hendene), ganget med multiplikatoren. */
-        anklag: 300,
+        anklag: 150,
         seier: 5000,
         /** Multiplikatoren bygges av landinger: +1 per fin landing, dunk = x1, perfekt bytte +2. */
         multFin: 1,

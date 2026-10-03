@@ -26,6 +26,11 @@ export function iRødSone(g: Game, x: number): boolean {
     return kanAnklage(g) && !påØy(g, x);
 }
 
+/** Rir eleven bølgene? Livgarden bærer bare en stol som er i bruk (holdt inne nylig). */
+export function rir(g: Game): boolean {
+    return g.t - g.sistHold < TUNING.øy.rytme;
+}
+
 /**
  * Hva bærer stolen nå? Bare stripa (og kongens vern før dommen) avgjør.
  * Før dommen bærer livgarden en blå regjering, men bare på kongens øyer; imellom drar
@@ -33,7 +38,7 @@ export function iRødSone(g: Game, x: number): boolean {
  */
 export function løft(g: Game): Løft {
     if (harFlertall(g, g.stol.farge)) return 'flertall';
-    if (g.vern && g.stol.farge === 'blå') return påØy(g, g.x) ? 'vern' : 'mellom';
+    if (g.vern && g.stol.farge === 'blå') return påØy(g, g.x) && rir(g) ? 'vern' : 'mellom';
     return 'synk';
 }
 
@@ -99,6 +104,8 @@ export function stegStol(g: Game, h: number, marsj: number): Landing | null {
     const grav = F.tyngde * (g.hold ? F.tungFaktor : 1);
     if (g.luft) {
         g.vy -= grav * h;
+        // Mengden kaster stolen framover: også i lufta trekkes farten mot marsjfarten.
+        g.vx += (marsj - g.vx) * F.luftDrag * h;
         g.x += g.vx * h;
         g.y += g.vy * h;
         const ys = flate(g, g.x);

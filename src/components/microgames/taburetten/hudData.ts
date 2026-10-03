@@ -1,9 +1,9 @@
 // Det HUD-en viser, lest av spillet ti ganger i sekundet.
 
 import { kanAnklage, løft } from './crowd';
-import { aktivtBanner, tilJuli, tilSeier } from './game';
+import { aktivtBanner, anklagBonus, tilJuli, tilSeier } from './game';
 import { KALENDER, KALENDER_ETTER, type Farge, type Figur } from './levels';
-import { SETER, type Game } from './state';
+import { FLERTALL, SETER, type Game } from './state';
 
 export interface HudData {
     rødt: number;
@@ -15,7 +15,18 @@ export interface HudData {
     stolFarge: Farge;
     stolFigur: Figur;
     /** Neste kandidat på et banner som kommer. */
-    neste: { navn: string; farge: Farge; figur: Figur; om: number } | null;
+    neste: {
+        navn: string;
+        farge: Farge;
+        figur: Figur;
+        om: number;
+        /** Har kandidaten flertallet etter banneret? (kan leses FØR eleven trykker) */
+        har: boolean;
+        /** Seter kandidatens farge har etter banneret. */
+        seter: number;
+    } | null;
+    /** Anklag!-knappen: synlig før dommen, virker bare med over 60 % rødt. */
+    anklag: { synlig: boolean; virker: boolean; bonus: number };
     kanBytte: boolean;
     perfektNå: boolean;
     meter: number;
@@ -54,8 +65,18 @@ export function lesHud(g: Game): HudData {
         stolFarge: g.stol.farge,
         stolFigur: g.stol.figur,
         neste: kommer?.passasjer
-            ? { ...kommer.passasjer, om: Math.max(0, Math.ceil(kommer.t - g.t)) }
+            ? {
+                  ...kommer.passasjer,
+                  om: Math.max(0, Math.ceil(kommer.t - g.t)),
+                  har: (kommer.rødt >= FLERTALL ? 'rød' : 'blå') === kommer.passasjer.farge,
+                  seter: kommer.passasjer.farge === 'rød' ? kommer.rødt : SETER - kommer.rødt,
+              }
             : null,
+        anklag: {
+            synlig: !g.fri && g.vern && !g.anklaget && g.t > 4,
+            virker: kanAnklage(g),
+            bonus: Math.round(anklagBonus(g)),
+        },
         kanBytte: !!aktiv,
         perfektNå: !!aktiv && Math.abs(g.t - aktiv.t) <= g.perfektVindu,
         meter: Math.floor(g.meter),
@@ -77,7 +98,7 @@ function mål(g: Game): string {
             ? `Mål: flertallets mann i stolen - 26. juni om ${om} s`
             : 'Bytt til Sverdrup!';
     }
-    if (kanAnklage(g)) return 'Mål: land på de røde hendene - anklag!';
+    if (kanAnklage(g)) return `Mål: trykk A - Anklag! (+${Math.round(anklagBonus(g))})`;
     return 'Mål: surf fram til valget 1882';
 }
 

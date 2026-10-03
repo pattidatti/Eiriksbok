@@ -448,3 +448,48 @@ i flosshatt, rødt og blått som håndkolorering'`, `tone: 'lett'`.
   (stolen står i et gap). Den passive runden i selvspillet (20 s) er for kort til å vise en tap-skjerm,
   så tap-skjermen er ikke sett i selvspillet. Kongens veto som egne hindringer er ikke laget (ville
   blitt en fjerde regel). Øyene er fortsatt ikke ekte platåer i fysikken, bare markert med gull.
+
+### Fase: forbedrer 2 (2026-10-03)
+
+- Gjorde (vurdering 2: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 3, Unikt 3; Gøy stod stille, så
+  kjerneløkka ble endret): (1) Anklag! er en egen handling (A eller knappen nederst til høyre, vist i
+  spillvinduet). Den virker bare når Venstre har over 60 % (69+ røde); trykker du for tidlig, dumper
+  stolen og multiplikatoren faller til x1. Ingen nedtelling: dommen kommer 3 s etter at eleven trykket.
+  «Land på rødt» er ikke lenger en regel, så reglene er fortsatt tre (verbet, Anklag!, Bytt).
+  Risiko/belønning hele runden: bonusen for Anklag! vokser for hver røde sone du våger å vente, men
+  gapene foran deg vokser synlig med en gang (`voksGap`). Livgarden bærer bare en stol som er i bruk
+  (holdt inne siste 3 s), og Bytt uten kandidat vipper stolen (x1). (2) Historien: ved dommen
+  (27.2.1884) kastes Selmer av, og kongen setter inn Schweigaard av seg selv (kalenderen hopper til
+  3. april). Schweigaard-banneret er fjernet; eleven må la ham synke og bytte til Sverdrup.
+  Striden fra 1872 er tatt med som tekst (lappen «Kongens nei: livgarden bærer Selmer på gull» og
+  «Dette skjedde»), uten ny regel og uten å gjøre første minutt tregere. (3) Presset: Schweigaard
+  synker raskere (0,12) i et raskere brett uten hindringer, Sverdrup-etappen går i marsj 10,5 med
+  hindring hvert 2,1 s, brattere flertallsbølger (`flertallAmpK` 4), perfekt-vindu 0,45 s, full fart
+  når Sverdrup tas, og stolen trekkes mot marsjfarten også i lufta. Bytt-øyeblikket: «Neste»-kortet er
+  større, viser parti og «✓ FLERTALL: 83 av 114» / «✗ BARE n av 114» før du trykker, og knappen blir
+  «Bytt til Sverdrup» i kandidatens farge (gull i perfekt-vinduet). Tap-skjermen vises nå i selvspillet:
+  passiv taper ved 10 s med tipset om at livgarden slipper en stol som ligger stille. Lesbart: hendene
+  står under konturlinja (bakre rader løftes 0,06 i stedet for 0,32), mørkere og dypere skygge på
+  nedoverbakkene, gull-linja er tykkere og har skiltet LIVGARDEN over platået. Unikt: himmelen er en
+  berlinerblå vask og fasadene håndkolorert i oker, teglrødt og blågrått (ikke bart gulnet papir).
+- Feel-lista: før runden var alle fire på plass for de gamle grepene. Lagt til for de nye: 1 (Anklag!,
+  avvist anklage og tomt bytte har lyd, skjelv og flytetekst; dommen har hit-stop og Selmer flyr av),
+  2 («Reddet i siste liten!» når Sverdrup tas lavt er nå vanlig fordi Schweigaard synker fort),
+  4 (bonusen telles i «ANKLAGET! +n» og vokser synlig på knappen).
+- Simulering (200 runder per robot, grønn): flertallsmann 97 % (median 13392), nølende (middels) 49 %
+  (6469), kongens-mann 0 % (4820), grådig 0 % (4820), knappemoser 0 % (114), passiv 0 % (taper ved
+  10 s). 36,2 valg/min. Press 0,16 -> 0,27 -> 0,62 (var 0,18 -> 0,39). Nettleser: flertallsmann vant
+  med 13488, Chromebook 3,3 ms JS per bilde, 28 draw calls; passiv-slutt viser tap-skjermen. Audit 0
+  funn. Likhet: nærmest thermopylae 0,29 (petisjonen-3d ikke lenger nærmest; var 0,67).
+- Prøvde, virket ikke: (1) raskere synking i gapene (0,8-1,4 m/s) - den gode surferen døde før den
+  passive, fordi den som lener ligger på hendene i dalene; (2) synking bare når stolen ligger på
+  hendene - da overlevde den passive (den kastes opp på hver topp); (3) gap-vekst bare på nye øyer -
+  øyene legges 40 m foran, så den grådige merket aldri veksten (nå flyttes øyene foran med en gang);
+  (4) Anklag! uten straff - knappemoseren vant 52 %; (5) kjerrer etter dommen - en synkende
+  Schweigaard smalt i dem og middels falt til 32 %; (6) marsj 9 i Sverdrup-etappen - stolen fløt sakte
+  på de store bølgene og presset ble 0,4.
+- Kjente svakheter: grådig (venter 3 soner) og kongens-mann dør likt, så det beste valget er å vente
+  høyst én sone - push-your-luck-vinduet er smalt (`anklag.bomGap` 5 ville gitt mer rom). Kampanjen
+  har bare ett ekte Bytt-valg (Sverdrup); fellene finnes i frispillet. Gullfeltene er markert som
+  platåer i tegningen, men fysikken er den samme bølgen. «Kongens nei» fra 1872 er tekst, ikke en
+  egen fase. Middels (49 %) ligger under halvparten.

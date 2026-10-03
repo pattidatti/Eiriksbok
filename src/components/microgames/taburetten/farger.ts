@@ -10,6 +10,8 @@ export const FARGE = {
     ark: '#f4ecd8',
     hindring: '#4a4038',
     papir: '#ece0c4',
+    /** Himmelen: berlinerblå vask over papiret (håndkolorering), ikke bart gulnet papir. */
+    himmel: '#bccad8',
 };
 
 export const FRAKTUR =

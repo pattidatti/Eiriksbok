@@ -3,8 +3,8 @@
 
 import type { Rng } from '../sim';
 import { PLAYTEST_DT, type PlaytestBot } from '../playtest';
-import { flate, helning, iRødSone, stegStol } from './crowd';
-import { aktivtBanner, bytt, hold, marsj } from './game';
+import { flate, helning, kanAnklage, stegStol } from './crowd';
+import { aktivtBanner, anklag, bytt, hold, marsj } from './game';
 import { FLERTALL, type Game } from './state';
 import { TUNING } from './tuning';
 
@@ -26,10 +26,9 @@ function vane(g: Game): boolean {
 
 /**
  * Spill videre i en kopi: `først` de neste 0,2 s, så grunnvanen. Gir en verdi:
- * krasj er katastrofe, fin landing og avisark er bra, dunk er dårlig. `anklag` er hva en
- * fin landing på de røde hendene er verdt (negativ for den som er lojal mot kongen).
+ * krasj er katastrofe, fin landing og avisark er bra, dunk er dårlig.
  */
-function utsikt(g: Game, først: boolean, horisont: number, anklag: number): number {
+function utsikt(g: Game, først: boolean, horisont: number): number {
     const k = { ...g } as Game;
     const h = PLAYTEST_DT / TUNING.fysikk.delsteg;
     // Litt sikkerhetsmargin rundt hindringene.
@@ -51,20 +50,20 @@ function utsikt(g: Game, først: boolean, horisont: number, anklag: number): num
                 v += 2;
             }
         });
-        if (l?.kvalitet === 'fin') v += iRødSone(k, k.x) ? anklag : 0.5;
+        if (l?.kvalitet === 'fin') v += 0.5;
         if (l?.kvalitet === 'dunk') v -= 0.5;
     }
     return v + k.vx * 0.4;
 }
 
 /** Len og hopp. `horisont` > 0: se framover og velg det beste; 0: bare grunnvanen. */
-function surf(g: Game, horisont: number, anklag = 6) {
+function surf(g: Game, horisont: number) {
     if (horisont <= 0) {
         hold(g, vane(g));
         return;
     }
-    const på = utsikt(g, true, horisont, anklag);
-    const av = utsikt(g, false, horisont, anklag);
+    const på = utsikt(g, true, horisont);
+    const av = utsikt(g, false, horisont);
     hold(g, på === av ? vane(g) : på > av);
 }
 
@@ -80,10 +79,9 @@ function vurderBytte(g: Game, sen: number) {
     if (g.t - b.t >= sen - 0.15) bytt(g);
 }
 
-/** Bytter på hvert banner, uansett farge: av gammel vane. */
-function vaneBytte(g: Game, rng: Rng) {
-    const b = aktivtBanner(g);
-    if (b && g.t - b.t >= -0.2 + rng() * 0.4) bytt(g);
+/** Anklag! når Venstre har over 60 %, etter å ha våget `vent` røde soner for bonusen. */
+function vurderAnklag(g: Game, vent: number) {
+    if (kanAnklage(g) && g.bom >= vent) anklag(g);
 }
 
 /** Bare hvert n-te tick: en treg elev. */
@@ -98,8 +96,9 @@ export const BOTS: Record<string, BotDef> = {
     flertallsmann: {
         forventer: 'vinner',
         beskrivelse:
-            'Lener ned bølgene og slipper opp dem, planlegger landingen, anklager på første røde sone og bytter til flertallets mann akkurat når banneret treffer stolen.',
+            'Lener ned bølgene og slipper opp dem, planlegger landingen, våger én rød sone før han trykker Anklag! og bytter til flertallets mann akkurat når banneret treffer stolen.',
         make: () => (g) => {
+            vurderAnklag(g, 1);
             vurderBytte(g, 0);
             surf(g, 2.4);
         },
@@ -107,9 +106,10 @@ export const BOTS: Record<string, BotDef> = {
     nølende: {
         forventer: 'middels',
         beskrivelse:
-            'Følger flertallet, men treg: handler bare hvert andre øyeblikk, ser kort framover og bytter et drøyt sekund etter banneret.',
+            'Følger flertallet, men treg: handler bare hvert andre øyeblikk, ser kort framover, anklager først etter to røde soner og bytter et drøyt sekund etter banneret.',
         make: () =>
             treg(2, (g) => {
+                vurderAnklag(g, 2);
                 vurderBytte(g, 1.2);
                 surf(g, 1.2);
             }),
@@ -118,27 +118,29 @@ export const BOTS: Record<string, BotDef> = {
         forventer: 'taper',
         beskrivelse:
             'Surfer like godt som flertallsmannen, men er lojal mot kongen: anklager aldri og bytter aldri.',
-        make: () => (g) => surf(g, 2.4, -6),
+        make: () => (g) => surf(g, 2.4),
     },
-    nervøs: {
+    grådig: {
         forventer: 'taper',
         beskrivelse:
-            'Surfer godt, men bytter av gammel vane på hvert banner, også når kandidaten ikke har flertallet (Schweigaard-fella).',
-        make: (rng) => (g) => {
-            vaneBytte(g, rng);
+            'Surfer godt og bytter riktig, men venter for lenge med Anklag! for å få større bonus, mens gapene vokser.',
+        make: () => (g) => {
+            vurderAnklag(g, 3);
+            vurderBytte(g, 0);
             surf(g, 2.4);
         },
     },
     knappemoser: {
         forventer: 'taper',
         tilfeldig: true,
-        beskrivelse: 'Holder, slipper og bytter på måfå.',
+        beskrivelse: 'Holder, slipper, anklager og bytter på måfå.',
         make: (rng) => (g) => {
-            // Like stor sjanse for hvert av de tre grepene.
+            // Like stor sjanse for hold og slipp; bytt og anklag deler den siste tredjedelen.
             const r = rng();
             if (r < 1 / 3) hold(g, true);
             else if (r < 2 / 3) hold(g, false);
-            else bytt(g);
+            else if (r < 5 / 6) bytt(g);
+            else anklag(g);
         },
     },
 };
