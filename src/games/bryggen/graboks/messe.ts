@@ -205,6 +205,10 @@ export function lagMesse(k: SpillKontekst): Spillsystem {
 
     return {
         navn: 'messe',
+        maal() {
+            const s = !fase && lysTrengs() ? sted(baerer ? 'hoyalter' : 'sidealter') : null;
+            return s ? [{ pos: s.pos, r: s.r ?? 1.5 }] : [];
+        },
         prompt(gutt) {
             naerSted = null;
             if (fase) return null;

@@ -28,7 +28,7 @@ export function KontorVinsj({ h }: { h: VinsjHud }) {
     const glipp = naa - h.glippTid < 400;
     const sveivVinkel = h.tak * 90;
     return (
-        <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(600px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
+        <div className={`pointer-events-none relative w-[min(600px,94vw)] px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Vinsjen i gavlen</span>
                 <span className="text-[14px] text-[#5c4630]">

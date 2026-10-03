@@ -19,11 +19,11 @@ export function KontorMorgensprache({ h }: { h: MorgenspracheHud }) {
         <>
             {roed > 0 && (
                 <div
-                    className="pointer-events-none absolute inset-0 z-[1090]"
+                    className="pointer-events-none fixed inset-0 z-[1090]"
                     style={{ background: `radial-gradient(ellipse at center, rgba(0,0,0,0) 35%, rgba(127,29,29,${0.55 * roed}) 100%)` }}
                 />
             )}
-            <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(620px,94vw)] -translate-x-1/2 px-6 pb-4 pt-4 ${PANEL}`}>
+            <div className={`pointer-events-none relative w-[min(620px,94vw)] px-6 pb-4 pt-4 ${PANEL}`}>
                 <div className="flex items-baseline justify-between">
                     <span className={ETIKETT}>{h.tittel}</span>
                     <span className="text-[13px] tabular-nums text-[#7a6650]">

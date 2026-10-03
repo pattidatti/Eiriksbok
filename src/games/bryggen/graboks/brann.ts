@@ -274,6 +274,9 @@ export function lagBrann(k: SpillKontekst): Spillsystem {
 
     return {
         navn: 'brann',
+        maal() {
+            return fase === 'varslet' || fase === 'ute' ? [{ pos: V(GUTT.u, 0, GUTT.z), r: 1.8 }] : [];
+        },
         prompt(gutt) {
             promptHva = null;
             if (fase === 'ryker' && naer(gutt, V(HUS.u, 0, HUS.z), 16, 2)) {

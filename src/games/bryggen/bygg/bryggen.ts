@@ -11,7 +11,7 @@
 import * as THREE from 'three';
 import type { Physics } from '../motor/physics';
 import { WATER_Y } from '../motor/boat';
-import { CellStreamer, iRom, type CellContent, type CellCtx, type CellDef, type Rom } from '../motor/streaming';
+import { CellStreamer, INNE_R, INNE_R_FULL, iRom, type CellContent, type CellCtx, type CellDef, type Rom } from '../motor/streaming';
 import { Materials, Himmellys } from '../motor/materials';
 import { flakk } from '../motor/ild';
 import { lagVann, type SkrogFot, type Vann } from '../motor/vann';
@@ -72,8 +72,13 @@ export interface BryggenWorld {
     dispose: () => void;
 }
 
-/** Hvor nær et ildsted man må være for at ildlyset skal stå der. */
-const ILD_R = 24;
+/**
+ * Hvor nær et ildsted kameraet må være for at et ildlys skal stå der: lav og full kvalitet. Lyset
+ * toner inn over den ytterste tredjedelen, så det aldri slår seg på i ett bilde.
+ */
+const ILD_R = { lav: 24, full: 48 };
+/** Ildlys på hvert nivå: på full kvalitet lyser de tre nærmeste ildstedene, ikke bare ett. */
+const ILD_ANTALL = { lav: 1, full: 3 };
 
 const ALLM_W = 18; // Nikolaikirkeallmenningen nederst [V]
 const CELL_Z = FRONT_Z + GARD_DEPTH / 2;
@@ -238,9 +243,19 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // til å bygge alle shaderne på nytt). Det står på ildstedet nærmest spilleren, eller er av.
     // Det faller sakte av (1,2) og rekker 17 m: schøtstua er 17,6 m lang, og oldermannen står ved
     // gavlveggen 7 m fra ilden. Med 1,6 og 13 m sto han i mørket.
-    const ildlys = new THREE.PointLight(0xff8a3c, 0, 17, 1.2);
-    ildlys.name = 'ildlys';
-    scene.add(ildlys);
+    //
+    // På full kvalitet er det tre slike lys, alltid i scenen (de to ekstra er skjult på lav; byttet
+    // bygger shaderne på nytt uansett). Hvert lys holder på ildstedet sitt så lenge det er blant de
+    // nærmeste, toner ned før det flytter seg, og toner inn etter avstanden: ingen lys som hopper
+    // eller popper opp.
+    const ildlys = Array.from({ length: ILD_ANTALL.full }, (_, i) => {
+        const l = new THREE.PointLight(0xff8a3c, 0, 17, 1.2);
+        l.name = 'ildlys';
+        scene.add(l);
+        return { l, sted: null as THREE.Vector3 | null, vekt: 0, fase: i * 1.7 };
+    });
+    const ildValgt: THREE.Vector3[] = [];
+    const ildAvstand = new Map<THREE.Vector3, number>();
     const _d = new THREE.Vector3();
     const _f = new THREE.Vector3();
     // Folk som går har ingen egen kollider. De nærmeste gutten får låne en kapsel fra poolen, så
@@ -255,6 +270,39 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     let skyggeMaal = 0;
     const ctx: CellCtx = { kamera: new THREE.Vector3(), spiller: new THREE.Vector3(), si: (hvem, tekst, fra) => world.si?.(hvem, tekst, fra) };
     const skrog: SkrogFot[] = [];
+    const oppdaterIldlys = (t: number, dt: number, focus: THREE.Vector3): void => {
+        const niva = materials.lav ? 'lav' : 'full';
+        const R = ILD_R[niva];
+        const n = ILD_ANTALL[niva];
+        streamer.inneR = niva === 'lav' ? INNE_R : INNE_R_FULL;
+        // De n nærmeste ildstedene innen R.
+        ildAvstand.clear();
+        ildValgt.length = 0;
+        for (const p of streamer.ildsteder()) {
+            const d = _d.subVectors(p, focus).length();
+            if (d < R) {
+                ildAvstand.set(p, d);
+                ildValgt.push(p);
+            }
+        }
+        ildValgt.sort((a, b) => ildAvstand.get(a)! - ildAvstand.get(b)!);
+        ildValgt.length = Math.min(ildValgt.length, n);
+        const ledige = ildValgt.filter((p) => !ildlys.some((x, i) => i < n && x.sted === p));
+        ildlys.forEach((x, i) => {
+            x.l.visible = i < n;
+            const beholder = i < n && !!x.sted && ildValgt.includes(x.sted);
+            if (!beholder && x.vekt < 0.02 && i < n) {
+                // Helt nede: flytt til et ildsted som ikke har lys ennå.
+                x.sted = ledige.shift() ?? null;
+                if (x.sted) x.l.position.copy(x.sted);
+            }
+            const d = x.sted ? ildAvstand.get(x.sted) : undefined;
+            const maal = i < n && x.sted && d !== undefined && ildValgt.includes(x.sted) ? 1 - THREE.MathUtils.smoothstep(d, R * 0.66, R) : 0;
+            x.vekt += (maal - x.vekt) * Math.min(1, dt * (maal > x.vekt ? 2.5 : 5));
+            x.l.intensity = x.vekt < 0.005 ? 0 : 10 * flakk(t + x.fase) * x.vekt;
+        });
+    };
+
     const update = (t: number, dt: number, focus: THREE.Vector3, spiller?: { pos: THREE.Vector3; fart: number }): number => {
         // Døgnet og været først: alt under leser fargene og sola derfra.
         lys.tikk(dt, scene);
@@ -317,19 +365,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         }
         rotter.update(dt, soner, spiller?.pos ?? focus, spiller?.fart ?? 0);
         katter.update(dt, soner, spiller?.pos ?? focus, spiller?.fart ?? 0);
-        let best: THREE.Vector3 | null = null;
-        let bestD = ILD_R;
-        for (const p of streamer.ildsteder()) {
-            const d = _d.subVectors(p, focus).length();
-            if (d < bestD) {
-                bestD = d;
-                best = p;
-            }
-        }
-        if (best) {
-            ildlys.position.copy(best);
-            ildlys.intensity = 10 * flakk(t);
-        } else ildlys.intensity = 0;
+        oppdaterIldlys(t, dt, focus);
         // Inne: 1 når man er mer enn en meter innenfor veggen, tonet ned mot døra.
         let inne = 0;
         // Støvet står i det rommet kameraet er dypest inne i (ikke i skjeve rom: der ville det

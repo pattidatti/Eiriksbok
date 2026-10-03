@@ -154,11 +154,11 @@
     @keyframes bry-ark-inn {
         from {
             opacity: 0;
-            transform: translate(-50%, -8px) scaleY(0.15);
+            transform: translate(0, -8px) scaleY(0.15);
         }
         to {
             opacity: 1;
-            transform: translate(-50%, 0) scaleY(1);
+            transform: translate(0, 0) scaleY(1);
         }
     }
     .bry-ark-dunk {
@@ -168,16 +168,16 @@
     }
     @keyframes bry-dunk {
         0% {
-            transform: translate(-50%, 0) scale(1);
+            transform: translate(0, 0) scale(1);
         }
         30% {
-            transform: translate(-50%, 3px) scale(0.985);
+            transform: translate(0, 3px) scale(0.985);
         }
         60% {
-            transform: translate(-50%, -1px) scale(1.005);
+            transform: translate(0, -1px) scale(1.005);
         }
         100% {
-            transform: translate(-50%, 0) scale(1);
+            transform: translate(0, 0) scale(1);
         }
     }
     .bry-blekk {
@@ -266,11 +266,11 @@
     @keyframes bry-ut {
         from {
             opacity: 1;
-            transform: translate(-50%, 0);
+            transform: translate(0, 0);
         }
         to {
             opacity: 0;
-            transform: translate(-50%, -12px);
+            transform: translate(0, -12px);
         }
     }
 
@@ -281,11 +281,11 @@
     @keyframes bry-inn {
         from {
             opacity: 0;
-            transform: translate(-50%, 10px) scale(0.92);
+            transform: translate(0, 10px) scale(0.92);
         }
         to {
             opacity: 1;
-            transform: translate(-50%, 0) scale(1);
+            transform: translate(0, 0) scale(1);
         }
     }
 
@@ -315,11 +315,11 @@
     @keyframes bry-bare-ton {
         from {
             opacity: 0;
-            transform: translate(-50%, 0);
+            transform: translate(0, 0);
         }
         to {
             opacity: 1;
-            transform: translate(-50%, 0);
+            transform: translate(0, 0);
         }
     }
 }

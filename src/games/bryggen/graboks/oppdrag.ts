@@ -230,9 +230,8 @@ export class Oppdrag {
         }
     }
 
-    /** Teksten til «E: …» når gutten står ved et sted et aktivt oppdrag trenger. */
-    prompt(gutt: THREE.Vector3, steder: Iterable<Sted>): string | null {
-        this.naerSted = null;
+    /** Stedene de aktive oppdragene trenger nå (id-ene, `sted:<id>`). Merkene på bakken (maalmerke.ts) bruker dem også. */
+    stederSomTrengs(): Set<string> {
         const trengs = new Set<string>();
         for (const o of OPPDRAG) {
             const t = this.tilstand.get(o.id);
@@ -243,6 +242,13 @@ export class Oppdrag {
                 trengs.add(m.hendelse.slice(5));
             });
         }
+        return trengs;
+    }
+
+    /** Teksten til «E: …» når gutten står ved et sted et aktivt oppdrag trenger. */
+    prompt(gutt: THREE.Vector3, steder: Iterable<Sted>): string | null {
+        this.naerSted = null;
+        const trengs = this.stederSomTrengs();
         if (!trengs.size) return null;
         for (const s of steder) {
             if (!trengs.has(s.id)) continue;

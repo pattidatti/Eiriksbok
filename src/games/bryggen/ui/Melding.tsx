@@ -21,7 +21,10 @@ const DRAAPER: [number, number, number][] = [
     [-10, -46, 4],
 ];
 
-/** `varighet`: hvor lenge meldingen står (ms) før Hud.tsx fjerner den. Toner ut det siste halve sekundet. */
+/**
+ * `varighet`: hvor lenge meldingen står (ms) før Hud.tsx fjerner den. Toner ut det siste halve sekundet.
+ * Står i kolonnen øverst i midten (Hud.tsx), under fienden og panelene der, så ingenting legger seg oppå.
+ */
 export function Melding({ m, varighet }: { m: M; varighet: number }) {
     const [ut, setUt] = useState(false);
     useEffect(() => {
@@ -29,7 +32,7 @@ export function Melding({ m, varighet }: { m: M; varighet: number }) {
         return () => window.clearTimeout(t);
     }, [m, varighet]);
 
-    const plass = 'pointer-events-none absolute z-[1100] left-1/2 top-[22%] text-center';
+    const plass = 'pointer-events-none relative z-[1100] text-center';
 
     if (m.type === 'maal') {
         return (

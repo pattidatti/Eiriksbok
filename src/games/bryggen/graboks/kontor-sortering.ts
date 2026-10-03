@@ -149,6 +149,9 @@ export function lagSortering(k: SpillKontekst): Spillsystem {
 
     return {
         navn: 'kontor-sortering',
+        maal() {
+            return !fase && trengs() ? [{ pos: KONTOR_STEDER.sortering, r: 1.8 }] : [];
+        },
         prompt(gutt) {
             if (fase || !trengs() || !naer(gutt, KONTOR_STEDER.sortering, 1.8)) return null;
             return 'E: Sorter tørrfisken fra jekta';

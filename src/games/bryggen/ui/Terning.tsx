@@ -50,7 +50,7 @@ export function Terning({ h }: { h: TerningHud }) {
     const visDin = h.din[0] > 0 && (h.fase === 'kaster' || h.fase === 'runde' || h.fase === 'tatt' || h.fase === 'slutt');
     const tapt = h.fase === 'tatt';
     return (
-        <div className={`pointer-events-none absolute z-[1100] bottom-6 left-1/2 w-[min(560px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
+        <div className={`pointer-events-none relative w-[min(560px,94vw)] px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Terninger i ølstua</span>
                 <span className="text-[14px] text-[#3d2a17]">

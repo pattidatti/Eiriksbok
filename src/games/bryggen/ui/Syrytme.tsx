@@ -36,7 +36,7 @@ export function Syrytme({ h }: { h: SyrytmeHud }) {
     const sydd = h.sting.filter((s) => s.dom);
 
     return (
-        <div className={`pointer-events-none absolute z-[1100] bottom-6 left-1/2 w-[min(640px,94vw)] -translate-x-1/2 px-4 pb-3 pt-3 ${PANEL}`}>
+        <div className={`pointer-events-none relative w-[min(640px,94vw)] px-4 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between gap-3">
                 <span className={ETIKETT}>Skomakerverkstedet: sy sålen</span>
                 <span className="flex items-center gap-1 text-[14px] font-semibold text-[#3d2a17]" aria-label={`${h.bom} av ${h.maksBom + 1} bom`}>

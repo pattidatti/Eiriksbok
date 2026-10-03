@@ -7,10 +7,14 @@
 //   { navn: 'rottejakt', plass: 'hoyre', Komponent: RottejaktPanel },
 //
 // Plassene:
+//   'venstre' i kolonnen under livskortet øverst til venstre (kort som kommer og går)
 //   'hoyre'  under oppdragslista øverst til høyre (tellere, små lister)
 //   'midt'   øverst i midten, under livet til fienden (en klokke, en poengsum)
 //   'bunn'   nederst i midten, over E-teksten (et valg, en instruks)
 //   'hel'    hele skjermen, over resten av HUD-en (filmscener, sorte striper, tekst på svart)
+//
+// Panelene på 'venstre', 'hoyre', 'midt' og 'bunn' står i kolonner (Hud.tsx) og stables der: gi dem
+// bredde, men aldri `absolute` eller faste avstander fra kanten, ellers legger de seg oppå hverandre.
 //
 // Hold paneler lyse og lesbare (minst 13 px, helst 15-17 px), som resten av HUD-en. Bruk klassene i
 // ui/stil.ts (KORT, PANEL, ETIKETT, TEKST, KNAPP ...), så får panelet pergament-looken av seg selv.
@@ -24,7 +28,7 @@ import { Snik } from './Snik';
 import { Brann } from './Brann';
 import { RunekortPanel } from './Runekort'; // Runepinnene (verden2)
 
-export type PanelPlass = 'hoyre' | 'midt' | 'bunn' | 'hel';
+export type PanelPlass = 'venstre' | 'hoyre' | 'midt' | 'bunn' | 'hel';
 
 export interface SystemPanel {
     /** Samme navn som `Spillsystem.navn`. */
@@ -37,7 +41,7 @@ export const SYSTEM_PANELER: SystemPanel[] = [
     { navn: 'film', plass: 'hel', Komponent: ({ data }) => <FilmVisning f={data as FilmHud} /> },
     { navn: 'tyv', plass: 'bunn', Komponent: SystemHint },
     { navn: 'opplaering', plass: 'bunn', Komponent: SystemHint },
-    { navn: 'rpg', plass: 'hel', Komponent: RpgKortPanel },
+    { navn: 'rpg', plass: 'venstre', Komponent: RpgKortPanel },
     // Kongens menn på Holmen (byen-oppdrag.ts).
     { navn: 'ettersokt', plass: 'hoyre', Komponent: Ettersokt },
     { navn: 'ettersokt', plass: 'hel', Komponent: EttersoktSvart },

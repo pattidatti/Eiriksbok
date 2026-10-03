@@ -160,7 +160,9 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `ui/Aktiviteter.tsx` | Velger HUD-komponenten for aktivitetene i sideoppdragene (`HudState.system`), tegnet fra `ui/Hud.tsx` |
 | `graboks/flytere.ts`, `graboks/dev.ts` | Skadetallene i kampen, og utviklerverktøyene (flyttet ut av `game.ts`) |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
-| `ui/Hud.tsx` | HUD-en mens det spilles: liv, oppdragslista, meldinger, samtalen, E-tekstene, ytelsesboksen og systempanelene |
+| `ui/Hud.tsx` | HUD-en mens det spilles: liv, oppdragslista, meldinger, samtalen, E-tekstene, ytelsesboksen og systempanelene, i fire kolonner som stabler |
+| `graboks/meldingko.ts` | Oppdragsmeldingene i kø: én om gangen, venter på samtaler, bobler og filmer |
+| `graboks/maalmerke.ts` | Ringen og lyssøyla der gutten skal gjøre noe (bunten, oppdragssteder, systemenes `maal()`) |
 | `ui/systemPaneler.tsx`, `ui/SystemHint.tsx` | Krokpunkt for HUD-paneler til systemene: `hud.system[navn]` tegnes av panelet som er registrert her (filmen over alt, hint fra tyven og opplæringen nederst) |
 | `ui/Startskjerm.tsx` | Startskjermen: hva scenen er, start med mus eller bare tastatur |
 | `ui/Pausemeny.tsx` | Pausemenyen (Esc): Fortsett, Innstillinger, Kontroller, Oppdrag og dagbok, Avslutt. Tastatur først |
@@ -239,7 +241,7 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 - Golvet inne ligger 0,2 m over bakken, og autostep tar ikke den kanten. Hver åpen dør på bakkeplan
   får en usynlig kile over terskelen (`terskel`). Ting utenfor en åpen dør må stå minst en halv
   meter unna, ellers sklir gutten forbi døråpningen.
-- Ildlyset er ett `PointLight` for hele byen, alltid i scenen, flyttet til nærmeste ildsted (innen
+- Ildlyset er ett `PointLight` for hele byen (tre på full kvalitet, se under), alltid i scenen, flyttet til nærmeste ildsted (innen
   24 m) av `world.update`. Ikke legg lys i cellene: et lys som kommer og går (også når nær-nivået
   skjules) tvinger Three til å bygge alle shaderne på nytt. Det rekker 17 m og faller av med 1,2, så
   det når gavlveggene i schøtstua (17,6 m lang). Inne går eksponeringen opp med `inne` (opptil 60 %,
@@ -386,6 +388,23 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
   (`lukeKlaff`, akse 'x') i to formbredder (`lukeForm`), strukket til bredden sin. Brukt på Stranden, i
   Øvregaten (dørene og lukene mot gata), i Vågsbunnen (luka over disken slås ned om natta) og i
   nabogårdene (de lukkede dørene, og gluggene som sto åpne).
+- `figurDrei` og `setBoneOffset` legges oppå det mixeren skrev, og `Animator` setter beina tilbake før neste
+  `mixer.update`. Mixeren skriver nemlig et bein bare når verdien fra klippene endrer seg
+  (`PropertyMixer.apply`): et bein med fast stilling fikk dreiningen lagt oppå én gang til hvert bilde, og
+  overkroppen snurret rundt. Ikke dreie bein utenom `Animator` uten å gjøre det samme.
+- HUD-en (`ui/Hud.tsx`) står i fire kolonner (oppe til venstre, oppe i midten, oppe til høyre, nede i midten)
+  som stabler det som vises. Paneler (systempaneler og aktiviteter) får bredde, men aldri `absolute` eller
+  faste avstander fra kanten. Plassene i `systemPaneler.tsx`: `venstre`, `hoyre`, `midt`, `bunn`, `hel`.
+- Oppdragsmeldingene går i kø (`graboks/meldingko.ts`): én om gangen, og de venter (høyst 8 s) mens en
+  samtale pågår eller en boble står øverst i midten (`Hoder.bobleMidt`), og så lenge en film går.
+  Lyden spilles når meldingen vises.
+- Merkene på bakken (`graboks/maalmerke.ts`): en gyllen ring like stor som området der «E: …» virker, og en
+  lyssøyle som synes på avstand. Vises for stedet bunten skal legges, stedene de aktive oppdragene trenger
+  (`Oppdrag.stederSomTrengs`), og det systemene melder med `maal()` (system.ts). Et nytt system med et fast
+  E-sted skal ha `maal()` med samme punkt og radius som `prompt`.
+- Ildlyset: ett `PointLight` på lav kvalitet (24 m), tre på full (48 m), alltid i scenen. Hvert lys
+  holder på ildstedet sitt, toner ned før det flytter seg og toner inn etter avstanden (`oppdaterIldlys` i
+  bryggen.ts). Innredningen (og ilden inne) tegnes ut til `INNE_R_FULL` (55 m) på full kvalitet.
 - `game.ts` er nær 800 linjer. Nye systemer får egen fil i `graboks/` og hektes på med få linjer.
 - Nikolaikirken og kirkegården står bak grensa for det spilleren kan gå på, og bruker `tynnTake` fordi
   tårnet er et landemerke. Bare muren mot gata kolliderer; grinda er stengt. Rådhuset går i

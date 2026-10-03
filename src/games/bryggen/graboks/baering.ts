@@ -11,7 +11,8 @@ import type { Character } from '../motor/character';
 import { BismerSpill } from './bismer';
 import { SPOR } from '../bygg/samtaler';
 
-const NAER = 1.5;
+/** Hvor nær stabelen eller bismeren gutten må stå (m). Merket på bakken (maalmerke.ts) er like stort. */
+export const NAER = 1.5;
 
 export class Baering {
     baerer = false;

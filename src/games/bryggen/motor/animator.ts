@@ -246,6 +246,21 @@ export class Animator {
      * aksen for alle bein, uansett hvordan beinets egne akser står.
      */
     private figurRot: { bone: THREE.Object3D; q: THREE.Quaternion }[] = [];
+    /**
+     * Stillingen klippene ga beina vi dreide oppå sist. Mixeren skriver et bein bare når verdien fra
+     * klippene har endret seg (`PropertyMixer.apply`). Står klippet stille for et bein (fast spor,
+     * ferdig klipp som holdes, dt 0), ville dreiningen ellers blitt lagt oppå én gang til hvert
+     * bilde, og overkroppen snurret rundt. Settes tilbake før mixeren hver gang.
+     */
+    private rene = new Map<THREE.Object3D, THREE.Quaternion>();
+    private dreid: THREE.Object3D[] = [];
+    private husk(bone: THREE.Object3D): void {
+        let q = this.rene.get(bone);
+        if (!q) this.rene.set(bone, (q = new THREE.Quaternion()));
+        if (this.dreid.includes(bone)) return;
+        q.copy(bone.quaternion);
+        this.dreid.push(bone);
+    }
 
     constructor(template: RigTemplate, heightMeters: number, tint?: number) {
         this.template = template;
@@ -527,8 +542,11 @@ export class Animator {
             }
         }
 
+        for (const b of this.dreid) b.quaternion.copy(this.rene.get(b)!);
+        this.dreid.length = 0;
         this.mixer.update(dt);
         for (const [bone, rot] of this.boneOffsets) {
+            this.husk(bone);
             bone.rotateX(rot.x);
             bone.rotateY(rot.y);
             bone.rotateZ(rot.z);
@@ -539,6 +557,7 @@ export class Animator {
             this.lean.updateMatrixWorld(true);
             const leanInv = this.lean.getWorldQuaternion(_q1).invert();
             for (const { bone, q } of this.figurRot) {
+                this.husk(bone);
                 const P = bone.parent!.getWorldQuaternion(_q2).premultiply(leanInv);
                 const d = _q3.copy(P).invert().multiply(q).multiply(P);
                 bone.quaternion.premultiply(d);

@@ -137,6 +137,9 @@ export function lagVinsj(k: SpillKontekst): Spillsystem {
 
     return {
         navn: 'kontor-vinsj',
+        maal() {
+            return !fase && trengs() ? [{ pos: KONTOR_STEDER.vinsj, r: 1.6 }] : [];
+        },
         prompt(gutt) {
             if (fase || !trengs() || !naer(gutt, KONTOR_STEDER.vinsj, 1.6)) return null;
             return 'E: Heis fisk med vinsjen';

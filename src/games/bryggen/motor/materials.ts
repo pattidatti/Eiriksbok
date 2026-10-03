@@ -227,6 +227,11 @@ export class Materials {
     }
 
     /** Bytter kvalitet mens spillet går. Full kvalitet laster detaljkartene første gang. */
+    /** Lav kvalitet nå? (Verdenen gir ildlyset og innredningen kortere rekkevidde da, bryggen.ts.) */
+    get lav(): boolean {
+        return this.low;
+    }
+
     async setLow(low: boolean): Promise<void> {
         this.low = low;
         if (!low) await this.loadDetail();

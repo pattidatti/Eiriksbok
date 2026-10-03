@@ -31,6 +31,8 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push((await import('./bommen')).lagBommen(k)); // bommen over Skostredet: veien til fots til Stranden
     // Kontoret: oppdragskjeden «Kontorets lov» og mer liv i gården (kontoret.ts).
     ut.push(...(await import('./kontoret')).lagKontoret(k));
+    // Merkene på bakken der gutten skal gjøre noe (bunten, oppdragsstedene, systemenes `maal`).
+    ut.push((await import('./maalmerke')).lagMaalMerker(k, ut));
     if (import.meta.env.DEV) ut.push(fotoSystem());
     return ut;
 }

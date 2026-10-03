@@ -53,7 +53,7 @@ export function KontorKoggen({ h }: { h: KoggenHud }) {
     const skeivTrim = Math.abs(h.trim) > h.grenseTrim;
     const krenger = Math.max(-18, Math.min(18, h.side * 3.2));
     return (
-        <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(640px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
+        <div className={`pointer-events-none relative w-[min(640px,94vw)] px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Lasterommet i koggen</span>
                 <span className={`text-[14px] font-bold tabular-nums ${h.igjen < 30 ? ROD : 'text-[#5c4630]'}`}>Floen om {Math.ceil(h.igjen)} s</span>

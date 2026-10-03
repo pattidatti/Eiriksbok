@@ -7,7 +7,7 @@ import { ETIKETT, FYLL, PANEL, RILLE, SVAK, TEKST, VARM } from './stil';
 export function Rottejakt({ h }: { h: RottejaktHud }) {
     const farge = h.fisk > 60 ? FYLL.gronn : h.fisk > 30 ? FYLL.gull : FYLL.segl;
     return (
-        <div className={`pointer-events-none absolute z-[1100] left-4 top-28 w-[300px] px-4 py-3 ${PANEL}`}>
+        <div className={`pointer-events-none w-[300px] px-4 py-3 ${PANEL}`}>
             <div className={ETIKETT}>Rottejakt på lagerloftet</div>
             <div className="mt-2 flex items-baseline justify-between text-[16px] text-[#2b1d10]">
                 <span>Fisken</span>

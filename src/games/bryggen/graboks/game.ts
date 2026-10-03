@@ -20,7 +20,7 @@ import { Lyssetting, stemningFraUrl } from '../motor/stemning';
 import type { LydKobling } from '../motor/lydkobling';
 import type { BussVolum } from '../motor/lyd';
 import type { FolkStyring } from './folkstyring';
-import type { OppdragMelding } from './oppdrag';
+import { MeldingKo } from './meldingko';
 import type { Tyv } from './tyv';
 import { Flytere } from './flytere';
 import { devOppdrag, devStart, devVerktoy } from './dev';
@@ -73,7 +73,8 @@ export class GrayboxGame {
     private flytere: Flytere;
     private telegraph = false;
     private telegraphSving = false;
-    private oppdragMelding: (OppdragMelding & { n: number }) | null = null;
+    /** Oppdragsmeldingene venter på tur og til samtalen er over (meldingko.ts). */
+    private meldinger = new MeldingKo();
     /** Tyven i gården (bare Bryggen-scenen): ute bare mens oppdraget hans er aktivt. */
     private tyv: Tyv | null = null;
     private message: string | null = null;
@@ -231,12 +232,8 @@ export class GrayboxGame {
             });
             this.folk.onEndring = this.pushHudSoon;
             const oppdrag = this.folk.oppdrag;
-            let n = 0;
-            oppdrag.onMelding = (m) => {
-                this.oppdragMelding = { ...m, n: ++n };
-                this.lyd?.oppdrag(m.type);
-                this.pushHudSoon();
-            };
+            oppdrag.onMelding = (m) => this.meldinger.legg(m);
+            this.meldinger.onVis = (m) => this.lyd?.oppdrag(m.type);
             const { Baering } = await import('./baering');
             const { Tyv } = await import('./tyv');
             if (this.disposed) return;
@@ -373,6 +370,10 @@ export class GrayboxGame {
         this.cam.camera.updateProjectionMatrix();
     };
 
+    /** En samtale eller en boble midt i bildet: oppdragsmeldingen venter litt (meldingko.ts). */
+    private meldingVenter = (): boolean => !!this.folk?.samtale || !!this.folk?.hoder.bobleMidt;
+    private filmGaar = (): boolean => this.systemer.some((s) => s.navn === 'film' && s.hud?.() != null);
+
     private pushHudSoon = () => {
         this.hudTimer = 1;
     };
@@ -434,6 +435,7 @@ export class GrayboxGame {
                 this.simTimes.shift();
             }
         }
+        if (this.meldinger.tick(dt, this.meldingVenter, this.filmGaar)) this.pushHudSoon();
         this.hudTimer += dt;
         if (this.hudTimer > (this.baering?.veier || this.systemer.some((s) => s.rask?.()) ? 0.03 : 0.25)) {
             this.hudTimer = 0;
@@ -758,7 +760,7 @@ export class GrayboxGame {
             bismer: this.baering?.veier?.hud ?? null,
             telegraphSving: this.telegraphSving,
             oppdrag: this.folk?.oppdrag.hud() ?? [],
-            oppdragMelding: this.oppdragMelding,
+            oppdragMelding: this.meldinger.naa,
             ting: [...(this.folk?.oppdrag.ting ?? [])],
             system: Object.fromEntries(this.systemer.map((s) => [s.navn, s.hud?.()])),
         });

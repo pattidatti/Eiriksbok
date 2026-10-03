@@ -13,7 +13,7 @@ export function KontorVeiing({ h }: { h: VeiingHud }) {
     return (
         <>
             {h.bismer && <BismerVisning b={h.bismer} />}
-            <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(600px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
+            <div className={`pointer-events-none relative w-[min(600px,94vw)] px-5 pb-3 pt-3 ${PANEL}`}>
                 <div className="flex items-baseline justify-between">
                     <span className={ETIKETT}>Bårds fisk på bismeren</span>
                     <span className={`${SVAK} font-bold tabular-nums`}>

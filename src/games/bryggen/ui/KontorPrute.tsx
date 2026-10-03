@@ -20,7 +20,7 @@ export function KontorPrute({ h }: { h: PruteHud }) {
     const ferdig = h.fase === 'enig' || h.fase === 'tvunget';
     const st = STEMNING[h.stemning];
     return (
-        <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(620px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
+        <div className={`pointer-events-none relative w-[min(620px,94vw)] px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Prute med Sølve</span>
                 <span className="flex items-center gap-1.5 text-[14px] text-[#5c4630]">

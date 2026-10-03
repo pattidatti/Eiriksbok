@@ -14,7 +14,7 @@ export function KontorGjeldsbok({ h }: { h: GjeldsbokHud }) {
     const linje = h.linjer[h.nr];
     const fristet = h.fase === 'skriv' && linje?.salt && h.kanHoppe;
     return (
-        <div className={`pointer-events-none absolute bottom-6 left-1/2 z-[1100] w-[min(620px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
+        <div className={`pointer-events-none relative w-[min(620px,94vw)] px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-baseline justify-between">
                 <span className={ETIKETT}>Gjeldsboka</span>
                 <span className="text-[14px] text-[#5c4630]">

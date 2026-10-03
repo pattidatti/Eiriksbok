@@ -35,6 +35,11 @@ export const TAAKE_R = 110;
  */
 export const INNE_R = 30;
 /**
+ * På full kvalitet står innredningen (og ilden inne) ut til hit: ilden i schøtstuene og verkstedene
+ * synes gjennom dørene på avstand i stedet for å poppe opp. Portalene (portal.ts) holder prisen nede.
+ */
+export const INNE_R_FULL = 55;
+/**
  * Celler som er delt i halvdeler (så Three kan hoppe over den som er utenfor bildet eller
  * skyggekameraet), tegnes samlet lenger unna enn dette: der ser man uansett begge halvdelene,
  * og delingen dobler bare tegnekallene. Den samlede kaster ikke skygge (kula rundt hele cella
@@ -167,6 +172,8 @@ export class CellStreamer {
     private readonly live = new Map<string, LiveCell>();
     private readonly cells: CellDef[];
     private readonly phys: Physics;
+    /** Hvor langt unna innredningen tegnes (INNE_R, eller INNE_R_FULL på full kvalitet). Settes av verdenen. */
+    inneR = INNE_R;
 
     constructor(phys: Physics, cells: CellDef[]) {
         this.phys = phys;
@@ -204,7 +211,7 @@ export class CellStreamer {
                 const sett = d < TAAKE_R || !!cell.landemerke;
                 cell.content.near.visible = near && sett;
                 if (cell.content.mid) cell.content.mid.visible = !near && sett;
-                for (const o of cell.content.inne ?? []) o.visible = d < INNE_R;
+                for (const o of cell.content.inne ?? []) o.visible = d < this.inneR;
                 const sam = cell.content.samlet;
                 if (sam) {
                     const delt = Math.min(d, dSkygge) < SAMLET_R;

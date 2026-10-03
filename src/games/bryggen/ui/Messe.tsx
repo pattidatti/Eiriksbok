@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import type { MesseHud } from '../graboks/messe';
 import { BRIKKE, ETIKETT, FYLL, GRONN, HJELP, PANEL, RILLE, ROD, SVAK, TEKST, VARM } from './stil';
 
-// Messen i Mariakirken: flammen mens gutten bærer lyset (øverst til venstre), og svarene i messen
-// nederst, så presten og boblen over hodet hans synes midt i bildet.
+// Messen i Mariakirken: flammen mens gutten bærer lyset (`Flamme`, i kolonnen øverst til venstre), og
+// svarene i messen nederst, så presten og boblen over hodet hans synes midt i bildet.
 
-function Flamme({ f }: { f: number }) {
+export function Flamme({ f }: { f: number }) {
     const pst = Math.round(f * 100);
     const farge = f > 0.6 ? FYLL.gull : f > 0.3 ? FYLL.tjaere : FYLL.segl;
     return (
-        <div className={`pointer-events-none absolute z-[1100] left-4 top-28 w-[300px] px-4 py-3 ${PANEL}`}>
+        <div className={`pointer-events-none w-[300px] px-4 py-3 ${PANEL}`}>
             <div className={ETIKETT}>Lyset til høyalteret</div>
             <div className="mt-2 flex items-center gap-3">
                 <motion.div
@@ -36,11 +36,10 @@ function Flamme({ f }: { f: number }) {
 }
 
 export function Messe({ h }: { h: MesseHud }) {
-    if (h.flamme !== null) return <Flamme f={h.flamme} />;
     const bjelle = h.fase === 'vent' || h.fase === 'loft';
     const vis = h.fase === 'svar' || h.fase === 'riktig' || h.fase === 'feil';
     return (
-        <div className={`pointer-events-none absolute z-[1100] bottom-6 left-1/2 w-[min(640px,94vw)] -translate-x-1/2 px-5 pb-3 pt-3 ${PANEL}`}>
+        <div className={`pointer-events-none relative w-[min(640px,94vw)] px-5 pb-3 pt-3 ${PANEL}`}>
             <div className="flex items-center justify-between">
                 <span className={ETIKETT}>Messe i Mariakirken</span>
                 <span className="flex items-center gap-1.5" aria-label={`Del ${h.nr + 1} av ${h.antall}`}>

@@ -108,6 +108,11 @@ export class Hoder {
     private els = new Map<Hode, El>();
     private bobler = new Map<Hode, Boble>();
     private klokke = 0;
+    /**
+     * En boble står øverst i midten, der oppdragsmeldingen ville stått (Melding.tsx, ca. 600 px bred
+     * og 300 px ned fra toppen). Da venter meldingen (meldingko.ts).
+     */
+    bobleMidt = false;
 
     constructor(lag: HTMLElement, phys: Physics) {
         this.lag = lag;
@@ -144,6 +149,7 @@ export class Hoder {
      */
     update(dt: number, kamera: THREE.PerspectiveCamera, folk: Iterable<Hode>, info: (f: Hode) => HodeInfo | null, w: number, h: number): void {
         this.klokke += dt;
+        this.bobleMidt = false;
         for (const [f, b] of this.bobler) if (this.klokke - b.tid > b.varighet) this.bobler.delete(f);
         for (const el of this.els.values()) el.sett = false;
         const kam = kamera.position;
@@ -223,6 +229,8 @@ export class Hoder {
             const s = THREE.MathUtils.clamp(5.5 / Math.max(0.1, d), 0.78, 1.05);
             const x = (_v.x * 0.5 + 0.5) * w;
             const y = Math.max(8, (-_v.y * 0.5 + 0.5) * h);
+            // Boblen går ca. 160 px opp fra hodet.
+            if (boble && visBoble && el.opac > 0.3 && Math.abs(x - w / 2) < 380 && y < 470) this.bobleMidt = true;
             el.rot.style.transform = `translate(-50%,-100%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${s.toFixed(3)})`;
             el.rot.style.opacity = el.opac.toFixed(3);
             // De nærmeste øverst.

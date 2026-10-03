@@ -170,6 +170,9 @@ export function lagMorgensprache(k: SpillKontekst): Spillsystem {
 
     return {
         navn: 'kontor-morgensprache',
+        maal() {
+            return !bilder && venter() ? [{ pos: KONTOR_STEDER.foran, r: 1.7 }] : [];
+        },
         prompt(gutt) {
             if (bilder || !venter()) return null;
             if (!naer(gutt, KONTOR_STEDER.foran, 1.7)) return null;

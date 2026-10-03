@@ -95,6 +95,9 @@ export function lagGjeldsbok(k: SpillKontekst): Spillsystem {
 
     return {
         navn: 'kontor-gjeldsbok',
+        maal() {
+            return !fase && trengs() ? [{ pos: KONTOR_STEDER.pult, r: 2.0 }] : [];
+        },
         prompt(gutt) {
             if (fase || !trengs() || !naer(gutt, KONTOR_STEDER.pult, 2.0)) return null;
             return 'E: Før Sølves konto i gjeldsboka';

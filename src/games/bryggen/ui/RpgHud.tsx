@@ -111,7 +111,7 @@ function Kortet({ k, i }: { k: RpgKort; i: number }) {
 }
 
 /**
- * Kortene til venstre under livskortet (systempanel på plassen 'hel'). Midt på skjermen dekket de
+ * Kortene til venstre under livskortet (systempanel på plassen 'venstre'). Midt på skjermen dekket de
  * gutten og den han snakket med.
  */
 export function RpgKortPanel({ data }: { data: unknown }) {
@@ -119,7 +119,7 @@ export function RpgKortPanel({ data }: { data: unknown }) {
     // Rang og nye nivåer først, så resten i den rekkefølgen de kom.
     const kort = [...d.kort].sort((a, b) => Number(b.type === 'rang') - Number(a.type === 'rang'));
     return (
-        <div className="pointer-events-none absolute left-4 top-[8.5rem] z-[1050] flex flex-col items-start gap-1.5">
+        <div className="pointer-events-none flex flex-col items-start gap-1.5">
             <AnimatePresence>
                 {kort.map((k, i) => (
                     <Kortet key={k.id} k={k} i={i} />
