@@ -318,6 +318,14 @@ export class CellStreamer {
         return this.live.size;
     }
 
+    /**
+     * Kast alle cellene, så de bygges på nytt ved neste `update` (epoke.ts: folkene i 1428 er andre
+     * enn ellers). Kall det når kameraet ser bort, eller bildet er svart.
+     */
+    lastPaNytt(): void {
+        for (const cell of [...this.live.values()]) this.drop(cell);
+    }
+
     dispose(): void {
         for (const cell of [...this.live.values()]) this.drop(cell);
     }

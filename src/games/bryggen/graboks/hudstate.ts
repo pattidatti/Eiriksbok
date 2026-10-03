@@ -16,6 +16,8 @@ export interface HudState {
     enemyHp: number;
     enemyMax: number;
     enemyActive: boolean;
+    /** Navnet over livet til fienden: tyven, eller den som har lånt kampfiguren (`Tyv.laan`). */
+    enemyNavn: string;
     telegraph: boolean;
     finisherReady: boolean;
     playerDead: boolean;

@@ -31,6 +31,8 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push((await import('./bommen')).lagBommen(k)); // bommen over Skostredet: veien til fots til Stranden
     // Kontoret: oppdragskjeden «Kontorets lov» og mer liv i gården (kontoret.ts).
     ut.push(...(await import('./kontoret')).lagKontoret(k));
+    // Kapittel 2, «Uten motstand» (1428): året, plyndrerne, sekkene og kampen (kap2.ts).
+    ut.push((await import('./kap2')).lagKap2(k));
     // Merkene på bakken der gutten skal gjøre noe (bunten, oppdragsstedene, systemenes `maal`).
     ut.push((await import('./maalmerke')).lagMaalMerker(k, ut));
     if (import.meta.env.DEV) ut.push(fotoSystem());

@@ -23,6 +23,7 @@ import { Ild } from '../motor/ild';
 import { lagFolk, type Plass } from './folk';
 import type { Rute } from './vandrer';
 import { bakkeBoks } from './bakke';
+import { utenTyske } from './epoke';
 
 export const HOUSE_W = 7;
 export const YARD_W = 4;
@@ -445,7 +446,7 @@ export async function buildGardCell(mats: Materials, ox: number, sides: Sides = 
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = 'gard:lod';
     // Folkene i bua og schøtstua lages og kastes med cella (folk.ts).
-    const folk = await lagFolk(plasser, mats, Math.abs(Math.round(ox)) + 7, ruter(ox, back));
+    const folk = await lagFolk(utenTyske(plasser), mats, Math.abs(Math.round(ox)) + 7, utenTyske(ruter(ox, back)));
     near.add(folk.group);
     return {
         near, mid, inne, samlet: { delt, samlet }, colliders: [...c.specs, ...folk.colliders], ild: ildPos, royk: roykPos, rom, drypp: [...fram.skjegg, ...bak.skjegg],

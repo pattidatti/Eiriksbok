@@ -744,6 +744,7 @@ export class GrayboxGame {
             enemyHp: this.ai ? this.ai.f.hp : 0,
             enemyMax: this.ai ? this.ai.f.maxHp : 1,
             enemyActive: !!this.ai && this.ai.aggro && !this.ai.f.dead,
+            enemyNavn: this.tyv?.laan?.navn ?? 'Tyven',
             telegraph: this.telegraph,
             finisherReady: !!this.ai && this.ai.canBeFinished && this.enemy.pos.distanceTo(this.player.pos) < 3.5,
             playerDead: !!this.pc && this.pc.f.dead,

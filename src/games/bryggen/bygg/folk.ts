@@ -268,6 +268,20 @@ export const DRAKTER = {
         belte: 0x2a1d14, hoser: 0x4a3f36, sko: 0x2b1f17, hette: 0x4b3624, hetteOppe: true, tut: 0.12, kappe: 0.2,
         mage: 0.35,
     },
+    // ── Kapittel 2, våren 1428 (kap2-data.ts) ── [S]: ingen kilde for hva vitaliebrødrene eller en
+    // fremmed skipper bar [K].
+    /** Plyndreren: slitt, mørk rødbrun kjortel for sjøen, lærhette oppe, skjegg, bred. */
+    plyndrer: {
+        navn: 'plyndrer', hud: 0xc08a6c, haar: 0x3a2a1c, skjegg: 0x3e2c1e, kjortel: 0x5a3026, kjortelNed: 0.0,
+        belte: 0x1e140c, hoser: 0x35302a, sko: 0x1e150e, hette: 0x3c2a1a, hetteOppe: true, tut: 0.1, kappe: 0.24,
+        mage: 0.2,
+    },
+    /** Volmer, skipperen som kjøper: grå kjortel til leggen, svart hette nede, kort skjegg, stor pung. */
+    kjoper: {
+        navn: 'kjoper', hud: 0xd0a086, haar: 0x7a6a58, skjegg: 0x82705c, kjortel: 0x55585c, kjortelNed: 0.2,
+        belte: 0x22180f, hoser: 0x2e2a28, sko: 0x1d1612, hette: 0x1e1c1c, hetteOppe: false, tut: 0.22, kappe: 0.2,
+        mage: 0.45, pung: 0.9,
+    },
     oldermann: {
         navn: 'oldermann', hud: 0xd0a086, haar: 0x9a948a, skjegg: 0xa8a39a, kjortel: 0x4a1f24, kjortelNed: 0.44,
         belte: 0x1a120c, hoser: 0x2a2626, sko: 0x1d1612, hette: 0x1c1a1a, hetteOppe: true, tut: 0.46, kappe: 0.24,
@@ -284,7 +298,7 @@ export const HOYDE: Record<FigurNavn, number> = {
     hovedsmann: 1.8, gjaldker: 1.76,
     skomaker: 1.7, skomakersvenn: 1.74, baker: 1.72, bakerdreng: 1.5, gullsmed: 1.73, buntmaker: 1.68, barberer: 1.76, smed: 1.84,
     gammelkone: 1.5, husmann: 1.72, husfrue: 1.6, gutt: 1.26, jente: 1.22, fyllik: 1.73,
-    oldermann: 1.76, skipper: 1.77,
+    oldermann: 1.76, skipper: 1.77, plyndrer: 1.8, kjoper: 1.74,
 };
 
 /**
@@ -348,6 +362,25 @@ const SITT_SETE = 0.09;
 export async function lagFigur(navn: FigurNavn): Promise<Animator> {
     const rig = await loadRig(RIG_URL);
     return new Animator(kleFigur(rig, DRAKTER[navn]), HOYDE[navn]);
+}
+
+/**
+ * Gi en figur som allerede står i scenen en annen drakt (kampfiguren er tyven i kapittel 1 og en
+ * plyndrer i kapittel 2). Bare geometrien byttes: skjelettet, animasjonene og materialet er de samme.
+ */
+export async function byttDrakt(a: Animator, navn: FigurNavn): Promise<void> {
+    const t = kleFigur(await loadRig(RIG_URL), DRAKTER[navn]);
+    let geo: THREE.BufferGeometry | null = null;
+    t.scene.traverse((o) => {
+        if ((o as THREE.SkinnedMesh).isSkinnedMesh && o.name.startsWith('figur:')) geo = (o as THREE.SkinnedMesh).geometry;
+    });
+    if (!geo) return;
+    a.root.traverse((o) => {
+        if ((o as THREE.SkinnedMesh).isSkinnedMesh && o.name.startsWith('figur:')) {
+            (o as THREE.SkinnedMesh).geometry = geo!;
+            o.name = `figur:${navn}`;
+        }
+    });
 }
 
 export interface Folk {

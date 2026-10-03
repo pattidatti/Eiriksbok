@@ -135,7 +135,7 @@ export function Hud({ hud, world, visOppdrag, visYtelse, toast, onMeny, onFullsk
                 {hud.enemyActive && (
                     <div className={`w-72 px-4 py-2.5 ${KORT}`}>
                         <div className="bry-display text-center text-[21px] leading-none text-[#2b1d10]">
-                            Tyven
+                            {hud.enemyNavn}
                         </div>
                         <div className={`mt-1 h-3 rounded-full ${RILLE}`}>
                             <div

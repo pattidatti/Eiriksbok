@@ -41,6 +41,7 @@ export const SYSTEM_PANELER: SystemPanel[] = [
     { navn: 'film', plass: 'hel', Komponent: ({ data }) => <FilmVisning f={data as FilmHud} /> },
     { navn: 'tyv', plass: 'bunn', Komponent: SystemHint },
     { navn: 'opplaering', plass: 'bunn', Komponent: SystemHint },
+    { navn: 'kap2', plass: 'bunn', Komponent: SystemHint }, // kapittel 2: sekkene og plyndreren
     { navn: 'rpg', plass: 'venstre', Komponent: RpgKortPanel },
     // Kongens menn på Holmen (byen-oppdrag.ts).
     { navn: 'ettersokt', plass: 'hoyre', Komponent: Ettersokt },

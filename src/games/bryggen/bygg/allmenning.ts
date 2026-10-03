@@ -22,6 +22,7 @@ import { lagFolk } from './folk';
 import { bod, bronn, slede } from './torg';
 import { bakke, sporFurer } from './bakke';
 import { torgPlasser, torgRuter } from './torgfolk';
+import { utenTyske } from './epoke';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -227,7 +228,7 @@ export async function buildAllmenningCell(mats: Materials, x0: number, x1: numbe
     const lodMesh = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     lodMesh.name = 'allmenning:lod';
     mid.add(lodMesh, kirke.mid);
-    const folk = await lagFolk(torgPlasser(x0), mats, 1470, torgRuter(x0));
+    const folk = await lagFolk(utenTyske(torgPlasser(x0)), mats, 1470, utenTyske(torgRuter(x0)));
     near.add(folk.group);
     return {
         near, mid, colliders: [...c.specs, ...kirke.colliders, ...folk.colliders],

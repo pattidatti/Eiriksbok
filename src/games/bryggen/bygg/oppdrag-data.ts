@@ -8,7 +8,8 @@
 // Hendelsene (oppdrag.ts teller dem):
 //   veid               en bunt er veid på bismeren (baering.ts)
 //   sted:<id>          gutten trykket E ved et navngitt sted (streaming.ts `steder`)
-//   snakk:<person>     samtalen med en person for oppdraget er ferdig (`samtaler`)
+//   snakk:<person>     samtalen med en person for oppdraget er ferdig (`samtaler`); sendes med
+//                      `gjor: 'hendelse:snakk:<person>'` på noden som teller, ikke av seg selv
 //   slaa:tyven         tyven er slått ned
 //
 // `gjor` kan ha flere handlinger skilt med `;`, og `flagg:<navn>` husker et valg (oppdrag.ts).
@@ -25,6 +26,7 @@ import { RUNER } from './runeoppdrag'; // Pinnene i gjørma (Stranden, verden2)
 import { SKO_AASA } from './veioppdrag'; // Skoene til Åsa (veien rundt Vågen)
 import { KONTOR_OPPDRAG } from './kontor-data';
 import { JOBB_OPPDRAG } from './kontor-jobber';
+import { KAP2_OPPDRAG } from './kap2-data'; // Kapittel 2, «Uten motstand» (1428)
 import { leggTilRykte } from './rykte-samtaler';
 
 /** Fraksjonene (blueprint §7): Kontoret, Bergenhus/kongens menn, norske borgere, kirken, nordlandsfiskerne. */
@@ -95,7 +97,7 @@ export interface OppdragDef {
     levering: Samtale;
     /** Startnoden i leveringen. Får flaggene (valg i historien, oppdrag.ts). */
     leveringStart?: (flagg: ReadonlySet<string>) => string;
-    /** Samtaler med andre for oppdraget: hendelsen `snakk:<person>` sendes når samtalen slutter. */
+    /** Samtaler med andre for oppdraget. Noden som teller, sender `hendelse:snakk:<person>` i `gjor`. */
     samtaler?: Record<string, Samtale>;
     /** Noe gutten bærer fra han tar oppdraget til det leveres (`brev`). */
     ting?: string;
@@ -487,6 +489,7 @@ export const OPPDRAG: OppdragDef[] = [
     SKO_AASA, // Skoene til Åsa (veioppdrag.ts)
     ...KONTOR_OPPDRAG,
     ...JOBB_OPPDRAG, // Last koggen og Bårds fisk på bismeren (kontor-jobber.ts)
+    ...KAP2_OPPDRAG, // Uten motstand, Han som kjøper, Kornet (kap2-data.ts)
 ];
 
 // Kald og varm start, og svar som ryktet låser opp: sist, når samtalene over har fått sine svar.

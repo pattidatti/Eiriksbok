@@ -79,6 +79,11 @@ export class Tyv implements Spillsystem {
     private nedeTalt = false;
     /** Holdes igjen (en film går eller venter): tyven står stille. */
     holdt: () => boolean = () => false;
+    /**
+     * Kampfiguren er lånt ut til et annet system (plyndreren i kapittel 2, kap2.ts). Da styrer låneren
+     * hvor figuren står og når kampen gjelder, og tyven gjør ingenting.
+     */
+    laan: { aktiv: () => boolean; nyRunde: () => void; navn: string } | null = null;
     readonly hode: Hode;
     private readonly snakkbar: Snakkbar;
     private hint: string | null = null;
@@ -171,6 +176,7 @@ export class Tyv implements Spillsystem {
 
     /** Skal kampen styre fienden dette steget (game.ts)? */
     get aktiv(): boolean {
+        if (this.laan) return this.laan.aktiv();
         return this.fase === 'kamp' || this.fase === 'nede';
     }
 
@@ -190,6 +196,7 @@ export class Tyv implements Spillsystem {
 
     update(dt: number): void {
         this.klokke += dt;
+        if (this.laan) return;
         const status = this.status();
         const gutt = this.k?.player.pos;
         if (status === 'ny' || status === 'levert') {
@@ -352,6 +359,10 @@ export class Tyv implements Spillsystem {
 
     /** R: start slagsmålet på nytt (bare i kampen). */
     nyRunde(): void {
+        if (this.laan) {
+            this.laan.nyRunde();
+            return;
+        }
         if (this.fase !== 'kamp' && this.fase !== 'nede') return;
         if (this.status() !== 'aktiv' || this.slaatt()) return;
         this.sett(RUTE[RUTE.length - 1].p, Math.PI);
@@ -362,6 +373,7 @@ export class Tyv implements Spillsystem {
     // ── Spillsystem: E ved tyven når han ligger nede, og hintet under jakten ──
 
     prompt(gutt: THREE.Vector3): string | null {
+        if (this.laan) return null;
         if (this.fase !== 'nede' || this.folk.laast) return null;
         if (!this.folk.oppdrag.samtaleFor('tyven')) return null;
         return gutt.distanceTo(this.c.pos) < 2.4 ? 'E: Snakk med tyven' : null;
@@ -378,6 +390,7 @@ export class Tyv implements Spillsystem {
     }
 
     hud(): { tekst: string } | null {
+        if (this.laan) return null;
         if (this.holdt() || !this.hint || this.fase === 'parkert') return null;
         return { tekst: this.hint };
     }

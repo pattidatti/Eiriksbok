@@ -16,6 +16,7 @@ import type { Snakkbar } from '../motor/streaming';
 import { ColliderKit, MeshKit } from '../motor/meshkit';
 import { finnPerson, maalNaadd, naer } from './sidefolk';
 import type { SpillKontekst, Spillsystem } from './system';
+import { utenTyske } from '../bygg/epoke';
 
 export const KOLS = 8;
 export const RADER = 4;
@@ -125,7 +126,7 @@ export function lagKoggen(k: SpillKontekst): Spillsystem {
         build: async () => {
             const { lagFolk } = await import('../bygg/folk');
             const { tonne, toGroup } = await import('../bygg/gard');
-            const folk = await lagFolk(plasser, k.world.materials, 1380);
+            const folk = await lagFolk(utenTyske(plasser), k.world.materials, 1380);
             const mk = new MeshKit();
             const c = new ColliderKit();
             // Tranfatene og buntene som venter på å komme om bord.

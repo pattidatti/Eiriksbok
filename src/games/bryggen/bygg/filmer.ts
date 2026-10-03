@@ -11,6 +11,7 @@
 //   kap1-inn  oppdraget «tyven» er tatt: natt, gutten holder vakt, en skygge på svalgangen
 //   vakta     gutten ropte på vakta etter slagsmålet: vaktene henter tyven
 //   kap1-ut   «tyven» er levert: morgenen etter
+//   kap2-inn, kap2-jekta, kap2-ut: kapittel 2 (filmer-kap2.ts)
 //
 // Gutten, husbonden, Lambert, Sigurd, skipperen og vaktene er laget for spillet [S], og det samme er
 // replikkene og hvor ting skjer. Historiske påstander er merket der de står.
@@ -25,20 +26,25 @@ import { toGroup } from './gard';
 import { VAKTPOST, VAKTPOST_YAW, RUTE } from '../graboks/tyv';
 import type { Film, Rekvisitt, P3 } from '../graboks/sekvens';
 import type { SpillKontekst } from '../graboks/system';
+import { KAP2_FILMER } from './filmer-kap2';
 
 /** Der gutten står når prologen slutter (spillets startpunkt på kaia), og retningen mot bua. */
-const KAI_START: P3 = [0, 0, 2.4];
+export const KAI_START: P3 = [0, 0, 2.4];
 const MOT_BUA = Math.atan2(-3.4, 3.6);
 const OPP = new THREE.Vector3(0, 1, 0);
 
 /** Sett gutten et sted og kameraet bak ham. */
-function flyttGutt(k: SpillKontekst, p: P3, yaw: number): void {
+export function flyttGutt(k: SpillKontekst, p: P3, yaw: number): void {
     k.player.teleport(new THREE.Vector3(p[0], p[1], p[2]), yaw);
     k.cam.yaw = yaw + Math.PI;
 }
 
-/** Koggen som seiler inn i prologen: samme modell som den som ligger fortøyd (skip.ts). */
-function filmKogge(k: SpillKontekst): Rekvisitt {
+/**
+ * Koggen som seiler inn i prologen: samme modell som den som ligger fortøyd (skip.ts). Med
+ * `medMannskap` seiler mannskapet på den fortøyde koggen med (prologen); plyndrernes kogger i
+ * kapittel 2 seiler uten.
+ */
+export function filmKogge(k: SpillKontekst, medMannskap = true): Rekvisitt {
     const mk = new MeshKit();
     const info = lagKogge(mk, false);
     const root = new THREE.Group();
@@ -64,7 +70,7 @@ function filmKogge(k: SpillKontekst): Rekvisitt {
     const fastPos = fast ? fast.getWorldPosition(new THREE.Vector3()) : null;
     const fastYaw = fast?.rotation.y ?? Math.PI / 2;
     const mannskap: { o: THREE.Object3D; lokal: THREE.Vector3; pos: THREE.Vector3; yaw: number }[] = [];
-    if (fastPos) {
+    if (fastPos && medMannskap) {
         k.scene.traverse((g) => {
             if (g.name !== 'folk') return;
             for (const o of g.children) {
@@ -359,6 +365,7 @@ export const FILMER: Record<string, (k: SpillKontekst) => Film> = {
     'kap1-inn': kap1Inn,
     vakta,
     'kap1-ut': kap1Ut,
+    ...KAP2_FILMER, // kap2-inn, kap2-jekta, kap2-ut (filmer-kap2.ts)
 };
 
 /** Når filmene kommer: på oppdragene og valgene (oppdrag.ts), og prologen i et nytt spill. */
@@ -373,6 +380,9 @@ export function koblFilmer(k: SpillKontekst, spill: (f: Film) => void, vedStart:
         else if (hva === 'ta' && id === 'tyven') vis('kap1-inn');
         else if (hva === 'flagg' && id === 'tyv-vakta') vis('vakta');
         else if (hva === 'lever' && id === 'tyven') vis('kap1-ut');
+        else if (hva === 'flagg' && id === 'kap2-start') vis('kap2-inn');
+        else if (hva === 'flagg' && id === 'kap2-jekta') vis('kap2-jekta');
+        else if (hva === 'lever' && id === 'kap2-korn') vis('kap2-ut');
     });
     // ?film=<id> spiller en film rett etter start (for å se og teste den). Ellers prologen i et nytt spill,
     // men ikke når ?sted= (dev.ts) har satt gutten et annet sted: prologen ville flyttet ham tilbake.

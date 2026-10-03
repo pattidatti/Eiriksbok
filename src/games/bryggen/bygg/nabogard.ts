@@ -26,6 +26,7 @@ import {
     type Placed, type Sides,
 } from './gard';
 import { bakkeBoks } from './bakke';
+import { utenTyske } from './epoke';
 
 type Hue = [number, number, number];
 const HUES: Hue[] = [WARM, COLD, DARK];
@@ -331,7 +332,7 @@ export async function buildNaboCell(mats: Materials, ox: number, p: GardParams, 
     near.add(...delt, samlet);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `nabo${p.seed}:lod`;
-    const folk = await lagFolk(prat, mats, p.seed, naboRuter(ox, p, yardX, back, rng(p.seed * 31 + 9)));
+    const folk = await lagFolk(utenTyske(prat), mats, p.seed, utenTyske(naboRuter(ox, p, yardX, back, rng(p.seed * 31 + 9))));
     // Det ryker fra ljoren i schøtstua (luft.ts). Huset står på tvers, midt i gården [S].
     const st = p.schotstue ? houses[houses.length - 1].spec : null;
     const royk = st ? [new THREE.Vector3(ox, eaveY(st) + riseOf(st), back + p.houseW / 2)] : undefined;

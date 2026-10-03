@@ -112,6 +112,10 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number; b
     vinsj: { pos: [-5.9, 0, 2.2], yaw: 0 },
     // Jobbene (kontor-jobber.ts): foran Hermen ved koggen, og foran Bård ved jekta.
     koggen: { pos: [23.2, 0, 2.6], yaw: Math.PI },
+    // Kapittel 2 (kap2-data.ts): ved jekta (E spiller filmen), foran Volmer, og ved sekkene foran stua til Åsa.
+    jekta: { pos: [-20.4, 0, 2.2], yaw: -1.9 },
+    volmer: { pos: [22.6, 0, 2.9], yaw: Math.PI },
+    sekkene: { pos: [-30.6, 0, -135.6], yaw: -2.2 },
 };
 
 /** `?sted=`: flytt startpunktet før cellene rundt det lastes (bare i dev). */

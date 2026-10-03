@@ -31,6 +31,8 @@ export class Baering {
     /** Vannbøtta gutten bærer for oppdraget «Vann til gryta». */
     private readonly botte: THREE.Object3D;
     private harBotte = false;
+    /** Noe annet enn en bunt i armene (en kornsekk i kapittel 2, kap2.ts), eller null. */
+    private annet: THREE.Object3D | null = null;
     private trekk = 0.37;
     /** Farten med en bunt i armene, del av vanlig fart. Styrke-ferdigheten løfter den (rpg.ts). */
     fart = 0.42;
@@ -68,6 +70,8 @@ export class Baering {
         const p = this.gutt.pos;
         this.prompt = null;
         this.maal = null;
+        // Med en sekk i armene er det systemet som ga den, som vet hvor den skal.
+        if (this.annet) return null;
         for (const b of this.world.streamer.bunter()) {
             const mal = this.baerer ? b.lever : b.hent;
             if (Math.hypot(mal.x - p.x, mal.z - p.z) < NAER && Math.abs(mal.y - p.y) < 0.8) {
@@ -141,12 +145,31 @@ export class Baering {
     /** Slipp bunten (om bord i færingen, slått ned). Den går tilbake til stabelen. */
     slipp(): void {
         if (!this.baerer) return;
-        this.baerer = false;
+        this.baerTing(null);
+    }
+
+    /**
+     * Bær noe annet enn en bunt tørrfisk (kornsekken i kapittel 2): samme fart og samme regler (ingen
+     * sprint, hopp eller slag). `null` legger det fra seg. Systemet som gir tingen, eier den.
+     */
+    baerTing(t: THREE.Object3D | null): void {
+        if (this.annet) this.annet.removeFromParent();
+        this.annet = t;
+        if (t) {
+            t.position.set(0, 0.86, 0.27);
+            this.gutt.anim.root.add(t);
+        }
+        this.baerer = !!t;
         this.vis();
     }
 
+    /** Bærer gutten noe som ikke er en bunt (`baerTing`)? */
+    get baererTing(): boolean {
+        return !!this.annet;
+    }
+
     private vis(): void {
-        this.bunt.visible = this.baerer;
+        this.bunt.visible = this.baerer && !this.annet;
         this.botte.visible = this.harBotte && !this.baerer;
         this.gutt.anim.overlay(this.baerer || this.harBotte ? 'Baere_Over' : null, 0.3);
     }

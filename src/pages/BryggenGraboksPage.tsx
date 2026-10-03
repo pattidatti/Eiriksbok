@@ -18,7 +18,7 @@ import { byttFullskjerm, fullskjerm } from '../games/bryggen/ui/fullskjerm';
 
 const EMPTY: HudState = {
     loading: true, fps: 0, frameMs: 0, simMs: 0, drawCalls: 0, triangles: 0, prompt: null, mode: 'foot',
-    playerHp: 100, enemyHp: 0, enemyMax: 1, enemyActive: false, telegraph: false, finisherReady: false,
+    playerHp: 100, enemyHp: 0, enemyMax: 1, enemyActive: false, enemyNavn: 'Tyven', telegraph: false, finisherReady: false,
     playerDead: false, enemyDead: false, message: null, pointerLocked: false, mouseMode: false, boatSpeed: 0,
     cells: 0, quality: 'full', samtale: null, replikk: null, bunter: 0, bismer: null, telegraphSving: false,
     oppdrag: [], oppdragMelding: null, ting: [], system: {},

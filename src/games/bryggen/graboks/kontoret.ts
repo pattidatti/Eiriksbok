@@ -21,6 +21,7 @@ import { lagVinsj } from './kontor-vinsj';
 import { lagKoggen } from './kontor-koggen';
 import { lagVeiing } from './kontor-veiing';
 import type { SpillKontekst, Spillsystem } from './system';
+import { utenTyske } from '../bygg/epoke';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -54,7 +55,7 @@ export function lagKontoret(k: SpillKontekst): Spillsystem[] {
         build: async () => {
             const { lagFolk } = await import('../bygg/folk');
             const { lysestake } = await import('../bygg/kontor-lys');
-            const folk = await lagFolk(plasser, k.world.materials, 1429);
+            const folk = await lagFolk(utenTyske(plasser), k.world.materials, 1429);
             snakkbare = folk.snakkbare;
             folkGruppe = folk.group;
             // Talglyset mellom oldermannen og sekretæren, inntil gavlveggen (kontor-lys.ts).

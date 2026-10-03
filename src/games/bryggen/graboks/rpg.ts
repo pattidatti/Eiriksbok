@@ -3,8 +3,8 @@
 //
 // Kontrakten (bygg/oppdrag-data.ts):
 //   - `belonning` på et oppdrag gis når det leveres (lytter på `Oppdrag.lyttere`, 'lever').
-//   - `gjor`-kommandoene `rykte:<F>:<+n>`, `witten:<+n>` (og `witten:-gevinst`) og `ferdighet:<navn>`
-//     kommer fra samtalene via `Oppdrag.utvidelser`.
+//   - `gjor`-kommandoene `rykte:<F>:<+n>`, `witten:<+n>` (og `witten:-gevinst`), `ferdighet:<navn>` og
+//     `rang:<n>` (minst denne rangen, ved et tidshopp) kommer fra samtalene via `Oppdrag.utvidelser`.
 //   - `Valg.krav` låser et svar i en samtale (`FolkStyring.kravGrunn`).
 //
 // Ferdighetene øves av det gutten gjør: bunter båret (bære), riktig avlest bismer (regne), slag som
@@ -261,6 +261,16 @@ export class Rollespill {
         } else if (hva === 'ferdighet') {
             const [f, n] = arg.split(':');
             if (f in this.ovelse) this.ov(f as Ferdighet, Number(n) || 1, 60);
+        } else if (hva === 'rang') {
+            // `rang:1`: minst denne rangen (et tidshopp i historien). Rangen faller aldri.
+            const n = Math.min(RANGER.length - 1, Math.round(Number(arg)));
+            if (n > this.rang) {
+                this.rang = n;
+                const r = RANGER[n];
+                this.onKort({ type: 'rang', tittel: `Ny rang: ${r.navn}`, tekst: `${r.om} ${r.rett}`, opp: true, nokkel: `rang:${n}` });
+                this.onLyd('rang');
+                this.lagre();
+            }
         }
     }
 

@@ -9,6 +9,7 @@ import type { Snakkbar } from '../motor/streaming';
 import type { Plass } from '../bygg/folk';
 import type { SpillKontekst, Spillsystem } from './system';
 import type { Oppdrag } from './oppdrag';
+import { EPOKE } from '../bygg/epoke';
 
 /** Personen med denne id-en i cellene som er lastet, eller null. */
 export function finnPerson(world: BryggenWorld, id: string): Snakkbar | null {
@@ -37,7 +38,7 @@ export function lagSidefolk(k: SpillKontekst): Spillsystem {
         half: new THREE.Vector2(2, 2),
         build: async () => {
             const { lagFolk } = await import('../bygg/folk');
-            const folk = await lagFolk(plasser, k.world.materials, 1349);
+            const folk = await lagFolk(EPOKE.kap2 ? [] : plasser, k.world.materials, 1349);
             return {
                 near: folk.group,
                 colliders: folk.colliders,
