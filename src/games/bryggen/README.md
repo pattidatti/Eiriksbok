@@ -22,7 +22,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. G (eller
   Innstillinger i pausemenyen) bytter mens spillet går, og valget huskes i nettleseren
   (`bryggen-innstillinger`). Detaljkartene lastes først når full kvalitet brukes første gang.
-- Filmscener: `?film=<id>` (`ankomst`, `prolog-ut`, `kap1-inn`, `vakta`, `kap1-ut`) spiller en film rett
+- Filmscener: `?film=<id>` (`ankomst`, `prolog-ut`, `kap1-inn`, `vakta`, `kap1-ut`, `kap2-inn`, `kap2-jekta`, `kap2-ut`) spiller en film rett
   etter start, og i dev gjør `window.__bryggenFilm('<id>')` det samme midt i spillet. Filmen merkes som sett
   i lagringen (`bryggen-oppdrag`) også da. Et nytt spill (ingen lagring) begynner med `ankomst`.
 - Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md). I Bryggen
@@ -143,7 +143,7 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `graboks/tyv.ts` | Tyven i natt (kapittel 1): venter ved loftsdøra, løper en fast rute over svalgangene og ned i smuget når gutten kommer nær, gjemmer seg om gutten mister ham, slåss i smuget. Etterpå: samtalen (ta ham med selv eller rope på vakta) |
 | `graboks/system.ts`, `graboks/systemer.ts` | Krokene i løkka (`Spillsystem`) og listen over systemene som er hektet på: filmene, tyven og opplæringen |
 | `graboks/sekvens.ts` | Sekvensverktøyet for filmscener (blueprint §6, §9.6): en tidslinje av kameraskudd (kutt, glid, sakte kjøring), figurer (klipp, gå langs et løp, vis/skjul, bære), replikker i bobler, tekst nederst og `gjor`-steg. Spilles i løkka, ingen video. Gutten står stille; Mellomrom, E eller Esc hopper over: da kjøres alle `gjor` som gjenstår og `slutt`, så sluttilstanden blir lik. Sett film lagres som flagget `film:<id>` |
-| `bygg/filmer.ts` | Filmene som data: `ankomst` (prologen, koggen fra Lübeck legger til, bak startskjermen i et nytt spill), `prolog-ut` (etter «fisk»), `kap1-inn` (natt, vakt i gården), `vakta` (gutten ropte på vakta) og `kap1-ut` (morgenen etter, to utgaver etter valget). `koblFilmer` sier når de kommer |
+| `bygg/filmer.ts` | Filmene som data: `ankomst` (prologen, koggen fra Lübeck legger til, bak startskjermen i et nytt spill), `prolog-ut` (etter «fisk»), `kap1-inn` (natt, vakt i gården), `vakta` (gutten ropte på vakta) og `kap1-ut` (morgenen etter, to utgaver etter valget). `koblFilmer` sier når de kommer. Kapittel 2 står i `bygg/filmer-kap2.ts` |
 | `graboks/FilmVisning.tsx` | Filmen over spillet: svarte striper, teksten nederst, «hopp over», svart overgang |
 | `graboks/opplaering.ts` | Opplæringen etter prologen: ett hint om gangen (gå, se deg rundt, snakk med E, ro), husket som `laert:<id>` |
 | `bygg/sideoppdrag.ts` | Sideoppdragene fra blueprint §7.2 (rottejakt, skomakerverkstedet, jekta, messen, terningene): data og samtaler, lagt til `OPPDRAG`. `SIDE` holder det systemene husker (fisken, hvordan terningspillet endte) |
@@ -448,7 +448,8 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
   HUD-en ca. 30 oppdateringer i sekundet. Aktivitetene animerer selv mellom oppdateringene (`ui/useNaa.ts`),
   og panelene står over navneskiltene (`z-[1100]`). Hold dem 640 px brede eller smalere: kontrollpanelet nede
   til venstre tar 336 px på 1366 x 768.
-- Oppdrag: et mål er en hendelse (`veid`, `sted:<id>`, `snakk:<person>`, `slaa:tyven`). Steder meldes av
+- Oppdrag: et mål er en hendelse (`veid`, `sted:<id>`, `snakk:<person>`, `slaa:tyven`). `snakk:<person>` sendes ikke av seg
+  selv når samtalen slutter: noden som teller, må ha `gjor: 'hendelse:snakk:<person>'`. Steder meldes av
   cellene (`CellContent.steder`, f.eks. `bronn` og `gjeldsbok`). Et oppdrag uten mål er klart med en gang
   (et brev som bare skal leveres). `__bryggen.folk.oppdrag` i konsollen kan ta, telle og levere.
 - Øvregaten ligger 2 m over gårdene (`GATE.y` = `NIKOLAI_Y`), og støttemuren foran (z 61,05-61,75) er
@@ -654,3 +655,35 @@ Dev: `?sted=schotstua|bua|pult|solve|vinsj`, og `?oppdrag=kontor-morgensprache` 
 `kontor-prute`, `kontor-gjeldsbok`, `kontor-vinsj`, `kontor-dom`). Eksempel:
 `/test/bryggen-gard?sted=vinsj&oppdrag=kontor-vinsj` går rett til vinsjen. Gjeldsboka trenger at
 Sølve er snakket med først (`?hendelse=snakk:solve`).
+
+## Kapittel 2: «Uten motstand» (våren 1428)
+
+Blueprint §4.1 og §6.1. Kjøpmennene fra Lübeck og de andre vendiske byene forlot Bergen våren 1427 og kom
+tilbake i 1433 [V Ersland 2020]. Gutten og stuedrengen Hennig er satt igjen for å passe gården [S], og i 1428
+plyndrer vitaliebrødrene byen uten motstand [V SNL]. Krav: «Tyven i natt» levert. Lambert har «!».
+
+| Fil | Hva |
+|---|---|
+| `bygg/kap2-data.ts` | De tre oppdragene (`kap2` Uten motstand, `kap2-kjoper` Han som kjøper, `kap2-korn` Kornet), samtalene (Lambert, Torstein, Hennig, Volmer, Åsa, Bård etter plyndringen), de fire «Dette vet vi»-tekstene og `KAP2_STEDER` (skipene, jekta, Volmer, sekkene, naustet, brygga) |
+| `bygg/filmer-kap2.ts` | `kap2-inn` (1427 til 1428, «Et år går»), `kap2-jekta` (plyndrerne tar fisken til Bård) og `kap2-ut` (mai 1428, krangelen ved porten, kornet etter valget). Koblet i `koblFilmer` på flaggene `kap2-start`, `kap2-jekta` og leveringen av `kap2-korn` |
+| `bygg/epoke.ts` | `EPOKE.kap2` og `utenTyske(folk)`: gårdene, nabogårdene, torget, Kontoret og Hermen bygges uten folkene fra Kontoret mens det er 1428 (Hennig og Volmer blir) |
+| `graboks/kap2.ts` | Systemet: året (fra `kap2-epoke` til `kap2-ferdig`, bygger cellene på nytt med `CellStreamer.lastPaNytt`), plyndrernes to kogger for anker med kollider, cellene med Bård, plyndrerne og Volmer, E ved jekta, sekkene på Stranden og plyndreren som går i land |
+
+Regler:
+- Året skifter bare mens kameraet ser bort: i skuddet over Vågen i `kap2-inn` (`kap2-epoke`) og i det siste
+  skuddet over sjøen i `kap2-ut` (`kap2-ferdig`). Etterpå er byen fri lek uten årstall igjen: Kontoret er
+  tilbake, og alle oppdragene fra 1426 kan tas.
+- Kampen er den samme som i kapittel 1. Kampfiguren eies av tyven; `Tyv.laan` lar et annet system låne den
+  (da gjør tyven ingenting, og `aktiv` og R spør låneren). `byttDrakt(anim, 'plyndrer')` (folk.ts) bytter
+  bare geometrien på figuren som står i scenen, og den får tyvedrakten tilbake etterpå.
+- Sekkene bæres med `Baering.baerTing(objekt)`: samme fart og regler som en bunt, og `slipp()` (om bord i
+  færingen) legger den fra seg. Systemet som ga tingen, eier den.
+- `rang:<n>` i `gjor` gir minst den rangen (tidshoppet til 14 år, stuejunge).
+- Tolket gutten for Volmer, kjenner vakta ham igjen første gang han kommer på veien til Holmen etter kapitlet:
+  mistenkt (`ETTERSOKT.meld`), med grunnen tyveri. Flagget `kap2-meldt` gjør at det skjer én gang.
+- Folk i nabogårdene som pratet med en tysker, står og prater alene i 1428 (utenTyske tar bare bort den ene).
+
+Dev: `?film=kap2-inn`, `?sted=jekta|volmer|sekkene`, `?oppdrag=kap2` (eller `kap2-kjoper`, `kap2-korn`;
+et tatt kapittel-oppdrag setter året til 1428). Eksempel:
+`/test/bryggen-gard?sted=sekkene&oppdrag=kap2-korn&hendelse=snakk:aasa` står ved sekkene, men valget hos Åsa
+må tas i samtalen (flaggene `kap2-naust`, `kap2-loft`, `kap2-nei`).

@@ -9,8 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Øvregaten med ølstua, Mariakirken innvendig og veien til Bergenhus med borggården kan gås til, og oppdragene «Brev til Mariakirken» og «Budet til Bergenhus» kan spilles til ende, bygget 02.10.2026, venter på eierens spilltest. UI-et har fått egen stil for Bergen 1429 (pergament, blekk, seglrødt, gotiske overskrifter, seremoni med segl for «Oppdrag fullført»), bygget 03.10.2026, venter på eierens vurdering. Navn ikke valgt |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Øvregaten med ølstua, Mariakirken innvendig og veien til Bergenhus med borggården kan gås til, og oppdragene «Brev til Mariakirken» og «Budet til Bergenhus» kan spilles til ende, bygget 02.10.2026, venter på eierens spilltest. Kongens menn på Holmen (høvedsmann uten navn [K], gjaldker, vakter med synsfelt), «Budet til Bergenhus» med sniking, vaktrunder og dagens ord, ettersøkt med tre nivåer, bot og gjaldkeren (§8.2), og «Brann i lagerhuset» med bøttekjede, bygget 03.10.2026, venter på eierens spilltest. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Øvregaten med ølstua, Mariakirken innvendig og veien til Bergenhus med borggården kan gås til, og oppdragene «Brev til Mariakirken» og «Budet til Bergenhus» kan spilles til ende, bygget 02.10.2026, venter på eierens spilltest. Kongens menn på Holmen (høvedsmann uten navn [K], gjaldker, vakter med synsfelt), «Budet til Bergenhus» med sniking, vaktrunder og dagens ord, ettersøkt med tre nivåer, bot og gjaldkeren (§8.2), og «Brann i lagerhuset» med bøttekjede, bygget 03.10.2026, venter på eierens spilltest. Kapittel 2 «Uten motstand» (våren 1428) bygget 03.10.2026 etter nytt kildesøk: Kontoret hadde reist i 1427 [V Ersland 2020], så gutten og Hennig passer gården alene; plyndringen, Volmer som kjøper og kornet til Åsa (§4.1, §6.1). Venter på eierens spilltest. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -104,7 +103,9 @@ vet. Eksempel for straffelekene:
 | 1408 | Mariakirken overdras til Det tyske kontor | [V] Bergen byleksikon (Middelalderkirker) |
 | 1413 | Mikaelskirken i Vågsbunnen brenner | [V] Byleksikon |
 | 1420-årene | Birgittinerne overtar Munkeliv kloster på Nordnes. Dobbeltkloster med nonner og munker | [V] Lokalhistoriewiki |
-| 1428 | En avdeling av vitaliebrødrene plyndrer Bergen uten motstand | [V] SNL vitaliebrødrene |
+| 1426-1435 | Krig mellom kong Erik og hansabyene. Kjernen er striden mellom kongen og grevene av Holstein om Slesvig | [V] Ersland 2020 |
+| vår 1427 | Kjøpmennene fra Lübeck, Wismar, Stralsund og Lüneburg forlater Bergen, motvillig (i januar 1427 hadde oldermennene gjort en lokal fred med kongens mann på borgen). De kommer tilbake i juli 1433 | [V] Ersland 2020, etter Hanserecesse, DN VII 382 og krøniken til Christian von Geren |
+| 1428 | En avdeling av vitaliebrødrene plyndrer Bergen uten motstand. Jektene i Vågen tvinges til å gi fra seg fisken uten betaling, engelske kjøpmenn og mange borgere flykter, og plyndrerne seiler til Wismar med byttet i mai | [V] SNL vitaliebrødrene (uten motstand); resten [U] no.wikipedia etter Ersland & Holm 2000, ikke lest selv |
 | april 1429 | Bartholomeus Voet kommer med 7 skip og ca. 400 mann. Norsk leidangsflåte møter dem i Vågen. Voet får hjelp av ca. 10 skip fra Wismar. Byen plyndres og brennes, også kongsgården og bispegården på Holmen | [V] Byleksikon; flåtestørrelsen [U] |
 | 1432 | Nytt overfall | [V] Byleksikon |
 | 1450 | Unionstraktaten mellom Danmark og Norge signeres på Bergenhus under Christian 1.s besøk | [V] SNL Bergenhus festning |
@@ -115,14 +116,28 @@ vet. Eksempel for straffelekene:
 kilder antyder opptil 100)». Norsk Wikipedia anslår 40-50 skip og ca. 1500 mann fra Hordaland
 og Sogn, og ca. 300 norske døde på de fire store skipene. Spillet skal vise at tallene er usikre.
 
-**Hvem vitaliebrødrene kjempet for [U]:** Historikere er uenige om raidene i 1428-29 var rene
-røvertokt eller angrep på forsyningslinjene til den norske unionsflåten under krigen mot
-Holstein og hansaen (SNL). Hvordan Det tyske kontor på Bryggen forholdt seg mens byen brant, er
-ikke beskrevet i noen av de åpne kildene (søkt 02.10.2026: byleksikonet, SNL, norsk og engelsk
-Wikipedia). Det vi vet: hansabyene var i krig med kongen, og raiderne kom delvis fra Wismar, en
-hansaby. Kildene nevner bare kongsgården, bispegården og «deler av byen» som brent, ikke Bryggen
-**[U]**. Neste kilde å lese er Brekke, *Kontoret. Hanseatenes historie* (2024). Kapittel 2 må
-skrives slik at spilleren ser tvetydigheten, ikke et fasitsvar.
+**Hvem vitaliebrødrene kjempet for, og hvor Kontoret var [U] (søkt på nytt 03.10.2026):**
+
+- **Kontoret var ikke i byen [V].** Kjøpmennene fra de vendiske byene forlot Bergen våren 1427 og kom
+  tilbake i juli 1433 (Ersland 2020, med Hanserecesse og Christian von Geren som kilder). De var
+  motvillige: oldermennene hadde i januar 1427 gjort en lokal fred med kongens mann på borgen (DN VII 382),
+  og de var trolig redde for at engelske kjøpmenn og andre hansabyer skulle ta handelen [U, «probably»].
+  Ersland finner ingen opplysninger om skip fra Danzig eller andre hansabyer i Bergen i 1428 og 1429.
+  Om noen tyskere ble igjen for å passe gårdene, står ikke i kildene **[U]**.
+- **Hvem raidene tjente [U].** Tre forklaringer: rene røvertokt, angrep på forsyningene til den norske
+  unionsflåten (SNL), eller at hansabyene selv sendte vitaliebrødrene for å jage bort konkurrentene,
+  engelskmenn, nederlendere og bremere, som handlet i Bergen mens Kontoret var borte (no.wikipedia etter
+  Ersland & Holm 2000; Yngvar Nielsen foreslo et slikt motiv allerede i 1877, etter Ersland 2020).
+- **En sen, partisk kilde [V at den sier det].** «Bergens Fundas» (ca. 1559) sier at tyskere plyndret og
+  brente byen i 1390-årene og igjen under krigen med kong Erik. Ersland: fortellingene er langt fra
+  feilfrie og sterkt farget i nordmennenes favør.
+- **Ikke funnet:** hvem som kjøpte det plyndrerne tok, hvorfor ingen forsvarte byen, og om gårdene på
+  Bryggen ble plyndret i 1428 **[K]**. Når biskop Aslak Bolt flyktet på et engelsk skip, er uklart (1428
+  hos no.wikipedia, 1429 hos Lokalhistoriewiki og en.wikipedia) **[U]**, så han er ikke med.
+- Brekke, *Kontoret. Hanseatenes historie* (2024): fant ingen omtaler eller utdrag på nett som tar opp
+  1428-29 **[K]**. Boka bør leses før kapittel 3.
+
+Kapittel 2 (§6.1) er skrevet slik at spilleren ser tvetydigheten, ikke et fasitsvar.
 
 **Olav Nilssons tittel:** Eieren skrev «fogden». Kildene kaller ham *høvedsmann* på Bergenhus:
 kongens fremste mann i byen, med ansvar for borgen, loven og forsvaret [V]. Spillet bruker
@@ -233,8 +248,8 @@ Gutten kommer i 1426 som 12-åring. Da er han 15 i 1429 og 41 i 1455.
 |---|---|---|---|---|---|
 | Prolog: **Ankomst med koggen** *(MVP)* | vår 1426 | 12 | ny junge | Koggen fra Lübeck legger til. Opplæring i å gå, ro og snakke. Gutten får gård og husbonde og lærer de tre første reglene: ingen ild, ingen kvinner, ingen handel på egen hånd | Ingen. Eleven lærer byen |
 | 1: **Tyven i natt** *(MVP)* | høst 1426 | 12 | stuejunge | Noen stjeler fra gården. Gutten sniker og jager over svalganger og tak; det ender i et slagsmål i smuget. Første møte med vaktene og ettersøkt-systemet | Tar han tyven selv, eller roper han på vakta? Tyven er en sulten nordlandsgutt [S] |
-| 2: **Uten motstand** | 1428 | 14 | stuejunge | Vitaliebrødrene plyndrer byen. Ingen forsvarer den. Gutten ser at noen i byen tjener på kaoset | Hjelper han en norsk familie å gjemme kornet? Rykte hos borgerne mot Kontoret |
-| 3: **Brannen** | april 1429 | 15 | skutedreng | Voets 7 skip mot leidangsflåten i Vågen. Wismar-skipene kommer. Kongsgården og bispegården brenner. Gutten ror færing gjennom slaget | Ro ut for å redde folk fra de tapte skipene, eller berge lasten til husbonden? [S] |
+| 2: **Uten motstand** *(bygget 03.10.2026, §6.1)* | våren 1428 | 14 | stuejunge | Kontoret reiste hjem våren 1427 [V]; gutten og stuedrengen Hennig er satt igjen for å passe gården [S]. Vitaliebrødrene plyndrer byen, og ingen forsvarer den [V]. Gutten ser plyndrerne ta fisken til Bård, og en fremmed skipper som kjøper det plyndrede billig [S] | Tolke for skipperen (witten, men N og F faller)? Gjemme kornet til Åsas familie i naustet, på husbondens loft (N opp, K ned), eller si nei (K opp, N ned) |
+| 3: **Brannen** | april 1429 | 15 | skutedreng | Voets 7 skip mot leidangsflåten i Vågen. Wismar-skipene kommer. Kongsgården og bispegården brenner. Gutten ror færing gjennom slaget | Ro ut for å redde folk fra de tapte skipene, eller berge lasten til husbonden? [S] **Må skrives om:** husbonden og Kontoret var ikke i Bergen i 1429 (§4.1, Ersland 2020). «Lasten til husbonden» kan være det som står igjen i gården |
 | 4: **Nordfarerne** | 1430-årene | 16-20 | skutedreng → lærling | Jektene kommer. Gutten fører gjeldsboka og ser hva den gjør med en fiskerfamilie. Straffelekene som overgang til neste rang | Juks på vekta for husbonden? Slette en gjeld? |
 | 5: **Egen handel** | 1440-årene | 22-30 | svenn (gesell) | Gutten lærer opp yngre junger og driver egen handel i det skjulte. Konflikt med skomakerne i Skostredet. Christian 1. på Bergenhus i 1450 | Brudd på Kontorets regler gir penger, men risiko |
 | 6: **Høvedsmannen** | sommer 1455 | 41 | husbonde | Olav Nilsson kommer tilbake til Bergen og vil tvinge tyskerne under norsk lov. Kontoret planlegger | Hvem forteller han hva? |
@@ -243,6 +258,22 @@ Gutten kommer i 1426 som 12-åring. Da er han 15 i 1429 og 41 i 1455.
 
 **Filmscener [S]:** én per kapittel inn og ut, laget i motoren (ingen video). Kamera og
 animasjon styres av et lite sekvensverktøy (se §9.6).
+
+### 6.1 Kapittel 2: Uten motstand (bygget 03.10.2026)
+
+Godkjent plan 03.10.2026: gutten blir igjen som gårdsvakt, byen går tilbake til fri lek uten årstall
+etter kapitlet, og den som tjener på kaoset er en tysktalende skipper som ikke er fra Wismar.
+
+| Del | Hva skjer | Merke |
+|---|---|---|
+| Fra kapittel 1 | Når «Tyven i natt» er levert, har Lambert «!»: budet fra Lübeck om krigen (kongen mot grevene i Holstein om Slesvig) og at oldermennene ville bli | [V] Ersland 2020; replikkene [S] |
+| Film `kap2-inn` | Våren 1427: koggen seiler hjem, husbonden setter gutten og Hennig igjen. «Et år går.» Våren 1428 ligger to fremmede kogger for anker i Vågen. Rangen blir minst stuejunge | [V] avreisen; [S] at gutten og Hennig ble igjen |
+| Året 1428 | Mens kapitlet pågår, er folkene fra Kontoret borte fra gårdene og kaia (`bygg/epoke.ts`). Bare Hennig er igjen | [V] avreisen; [U] om noen ble igjen |
+| 1. Uten motstand | Torstein på torget pakker for å gå til fjells; ingen vet hvor kongens menn er. E ved jekta: filmen der plyndrerne tar fisken til Bård uten å betale | [V] uten motstand (SNL); [U] jektene (Wikipedia); Torstein og Bård [S] |
+| 2. Han som kjøper | Volmer, en tysktalende skipper («ikke fra Wismar, krigen er ikke min»), kjøper plyndret fisk billig og vil ha gutten som tolk. Ja: 4 witten, N -6, F -4, og vakta på veien til Holmen kjenner ham igjen etter kapitlet (mistenkt). Nei: N +3 | [K] hvem som kjøpte; Volmer [S] |
+| 3. Kornet | Åsa på Stranden: tre sekker rug til neste høst. Folk tror sjørøverne ikke rører tyskernes gårder. Naustet (N +4), husbondens loft (N +6, K -5) eller nei (K +3, N -6). Sekkene bæres med `Baering`; så går en plyndrer i land, og kampen er den fra kapittel 1 | [S] |
+| Film `kap2-ut` | Mai 1428: koggene seiler. To plyndrere ved porten til gården krangler om tyskergården skal røres. «Om gården sto fordi den var tysk, eller fordi de hadde nok, vet ingen.» Så kornet etter valget, og «Kjøpmennene kommer ikke tilbake før i 1433» | [U] med vilje; [V] 1433 |
+| «Dette vet vi» | Fire tekster: uten motstand (Torstein), kjøpmennene som reiste i 1427 (Hennig), hvem plyndrerne kjempet for (Volmer), og «Bergens Fundas» som sen, partisk kilde (Åsa) | LK20 mål 2 |
 
 ---
 
@@ -282,10 +313,8 @@ om til våger, [U] våg-størrelsen) er bygget (`bygg/kontor-jobber.ts`). De kan
 
 | Aktivitet | Mekanikk | Læringsmål | Fraksjon |
 |---|---|---|---|
-| **Runepinnen** | Les og risse runer på trepinner: eierlapper på varer, beskjeder, en bønn. Puslespill med runealfabetet | På Bryggen er det funnet 597 runeinnskrifter, mest på trepinner [V]. Folk skrev i hverdagen | N, K |
-| **Brannvakt og bøttekjede** | Patruljér gårdene om natta og finn ulovlig ild; når det brenner, organiser bøttekjeden før det sprer seg. *Første utgave bygget 03.10.2026 ved lagerhusene på veien til Holmen (`graboks/brann.ts`): rop, bøttekjede i takt, gnister* | Ildforbudet og hvorfor (brannene 1248, 1476, 1702) [V] | K, N |
 | **Runepinnen** | Les og risse runer på trepinner: eierlapper på varer, beskjeder, en bønn. Puslespill med runealfabetet | På Bryggen er det funnet rundt 670 runeinnskrifter, mest på trepinner [V Wikipedia «Bryggen inscriptions»; tallet 597 som sto her, er ikke funnet igjen]. Folk skrev i hverdagen | N, K |
-| **Brannvakt og bøttekjede** | Patruljér gårdene om natta og finn ulovlig ild; når det brenner, organiser bøttekjeden før det sprer seg | Ildforbudet og hvorfor (brannene 1248, 1476, 1702) [V] | K, N |
+| **Brannvakt og bøttekjede** | Patruljér gårdene om natta og finn ulovlig ild; når det brenner, organiser bøttekjeden før det sprer seg. *Første utgave bygget 03.10.2026 ved lagerhusene på veien til Holmen (`graboks/brann.ts`): rop, bøttekjede i takt, gnister* | Ildforbudet og hvorfor (brannene 1248, 1476, 1702) [V] | K, N |
 | **Jekta kommer** | Møt en nordlandsfisker på kaia; samtale der du ser handelen fra *hans* side, med gjelden fra fjoråret | Perspektivbytte: fiskerens liv | F |
 | **Skomakerverkstedet i Skostredet** | Syrytme og lærstykker; senere en sperret gate du må forhandle deg gjennom | De tyske håndverkerne og konflikten med Kontoret [V] | N, K |
 | **Budet til Bergenhus** | Lever et brev til kongens skriver gjennom porten på Holmen: sniking, passord, timing på vaktene. *Bygget 03.10.2026: synsfelt på bakken, vaktskiftet der ordet sies, porten stengt uten ordet (`graboks/holmenvakt.ts`)* | Kongens makt og hvor den satt | B |
@@ -1015,6 +1044,14 @@ Salvesen, H. & Hofstad, K. (2024). *våg - masseenhet*. Store norske leksikon. H
 
 Store norske leksikon. (u.å.). *bismerpund*. Hentet 02.10.2026 fra [snl.no/bismerpund](https://snl.no/bismerpund)
 
+Ersland, G. A. (2020). The Notau harbour and the Kontor in Bergen. *AmS-Skrifter, 27*, 237 ff. Hentet 03.10.2026 fra [journals.uis.no](https://journals.uis.no/index.php/AmS-Skrifter/article/view/276)
+
+Wikipedia. (2026). *Slaget ved Bergen 1429*. Hentet 03.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Slaget_ved_Bergen_1429) (sekundærkilde for 1428: jektene, flukten, Wismar og at hansaen ga vitaliebrødrene lov; bygger på Ersland & Holm 2000, *Norsk forsvarshistorie* bind 1, ikke lest selv)
+
+Wikipedia. (2026). *Dano-Hanseatic War (1426-1435)*. Hentet 03.10.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Dano-Hanseatic_War_(1426%E2%80%931435)) (sekundærkilde: Bergen plyndret 1428 og 1429 av vitaliebrødre alliert med Holstein og hansaen)
+
+Lokalhistoriewiki.no. (u.å.). *Aslak Bolt*. Hentet 03.10.2026 fra [lokalhistoriewiki.no](https://lokalhistoriewiki.no/wiki/Aslak_Bolt) (flukten på engelsk skip, datert 1429)
+
 Bymuseet i Bergen. (u.å.). *Under jorden på Bryggens Museum*. Hentet 02.10.2026 fra [bymuseet.no](https://bymuseet.no/utstillinger/bryggens-museum/)
 
 Wikipedia. (2026). *Herjolfsnes*. Hentet 02.10.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Herjolfsnes) (sekundærkilde for klesfunnene og dateringen til 1430-årene)
@@ -1058,6 +1095,8 @@ Hansen, G. (u.å.). *1979 Frekke runepinner fra Bryggen*. Tohundre fortellinger,
    utgravningsplanene (Herteig, *The Bryggen Papers*) for å tegne kartet i meter **[K]**.
 2. ~~Vakthunder og stengt port.~~ Ingen kilde funnet. Blir designvalg [S] (§4.2).
 3. ~~Mynt, vekt og priser.~~ Løst (§4.3). Priser bare som bytteforhold fisk mot korn, rundt 1500 [U].
-4. Kontoret under plyndringene 1428-29: ikke funnet i åpne kilder [U]. Les Brekke (2024) **[K]**.
+4. ~~Kontoret under plyndringene 1428-29.~~ Løst så langt åpne kilder rekker (03.10.2026): kjøpmennene var
+   reist (Ersland 2020). Hvem som tjente på plyndringen og om Bryggen ble rørt, er ikke funnet **[K]**.
+   Brekke (2024) er fortsatt ikke lest.
 5. ~~Straffer for tyveri.~~ Løst (§8.2). Slagsmål og drap (mannhelgebolken) gjenstår **[K]**.
 6. ~~Kirkenes plassering.~~ Løst for Martinskirken, Nikolaikirken og Jonsklosteret (§5.2).
