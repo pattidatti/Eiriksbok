@@ -43,6 +43,10 @@ const STEDER: Record<string, { prompt: string; melding: string }> = {
         prompt: 'E: Les i gjeldsboka',
         melding: '«Ottar fra Lofoten. Skylder 14 våger fisk fra i fjor. Fikk korn, salt og hamp i vinter: 6 våger.» Til sammen 20 våger.',
     },
+    vaagkaia: {
+        prompt: 'E: Se ut over Vågen',
+        melding: 'Herfra ser du hele Vågen: Bryggen på den ene siden, Stranden på den andre og Holmen ytterst. Skoene ligger trygt under armen. Videre bort Strandgaten.',
+    },
 };
 
 const LAGER = 'bryggen-oppdrag';

@@ -22,6 +22,7 @@ import { SAMTALER, SPOR } from './samtaler';
 import { SIDEOPPDRAG } from './sideoppdrag';
 import { BUDET, BYEN_OPPDRAG } from './byen-oppdrag';
 import { RUNER } from './runeoppdrag'; // Pinnene i gjørma (Stranden, verden2)
+import { SKO_AASA } from './veioppdrag'; // Skoene til Åsa (veien rundt Vågen)
 import { KONTOR_OPPDRAG } from './kontor-data';
 import { JOBB_OPPDRAG } from './kontor-jobber';
 import { leggTilRykte } from './rykte-samtaler';
@@ -483,6 +484,7 @@ export const OPPDRAG: OppdragDef[] = [
     ...SIDEOPPDRAG,
     ...BYEN_OPPDRAG,
     RUNER, // Pinnene i gjørma (runeoppdrag.ts)
+    SKO_AASA, // Skoene til Åsa (veioppdrag.ts)
     ...KONTOR_OPPDRAG,
     ...JOBB_OPPDRAG, // Last koggen og Bårds fisk på bismeren (kontor-jobber.ts)
 ];

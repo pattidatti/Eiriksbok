@@ -8,7 +8,7 @@ import { Aktiviteter } from './Aktiviteter';
 import { SYSTEM_PANELER, type PanelPlass } from './systemPaneler';
 import { huskVet } from './vetlager';
 
-const TING: Record<string, string> = { brev: 'Et brev', botte: 'En bøtte vann' };
+const TING: Record<string, string> = { brev: 'Et brev', botte: 'En bøtte vann', sko: 'Et par sko' };
 
 import { BRIKKE, ETIKETT, FYLL, GRONN, KNAPP, KNAPP_2, KORT, RILLE, ROD, SVAK, TEKST } from './stil';
 import { Melding } from './Melding';

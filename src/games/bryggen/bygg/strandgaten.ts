@@ -158,6 +158,8 @@ export function strandgatenCelle(mats: Materials, xw: number, strandX0: number):
                 near,
                 colliders: [...c.specs, ...folk.colliders],
                 gaaende: folk.gaaende,
+                // Midt på kaia langs bunnen av Vågen («Skoene til Åsa», veioppdrag.ts).
+                steder: [{ id: 'vaagkaia', pos: new THREE.Vector3((M.kaiVaag.x0 + M.kaiVaag.x1) / 2, 0, (M.kaiVaag.z0 + M.kaiVaag.z1) / 2), r: 4 }],
                 snakkbare: folk.snakkbare,
                 tick: folk.tick,
                 dispose: () => {
