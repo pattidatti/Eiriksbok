@@ -12,6 +12,7 @@ import type { LydKobling } from '../motor/lydkobling';
 import type { BryggenWorld } from '../bygg/bryggen';
 import type { FolkStyring } from './folkstyring';
 import type { Baering } from './baering';
+import type { Tyv } from './tyv';
 
 /** Det et system kan nå i spillet. Bare Bryggen-scenen (ikke gråboksen) har systemer. */
 export interface SpillKontekst {
@@ -23,6 +24,8 @@ export interface SpillKontekst {
     /** Figuren kampen bruker (tyven). */
     enemy: Character;
     ai: EnemyAI;
+    /** Tyven i gården (kapittel 1, tyv.ts). */
+    tyv: Tyv;
     cam: SpringArmCamera;
     folk: FolkStyring;
     baering: Baering;

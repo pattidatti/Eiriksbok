@@ -22,6 +22,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   `?kvalitet=lav` slår av normal- og AO-kart, miljølys, skygger og etterbehandlingen. G (eller
   Innstillinger i pausemenyen) bytter mens spillet går, og valget huskes i nettleseren
   (`bryggen-innstillinger`). Detaljkartene lastes først når full kvalitet brukes første gang.
+- Filmscener: `?film=<id>` (`ankomst`, `prolog-ut`, `kap1-inn`, `vakta`, `kap1-ut`) spiller en film rett
+  etter start, og i dev gjør `window.__bryggenFilm('<id>')` det samme midt i spillet. Filmen merkes som sett
+  i lagringen (`bryggen-oppdrag`) også da. Et nytt spill (ingen lagring) begynner med `ankomst`.
 - Figur og animasjoner: `public/games/bryggen/models/` (Quaternius UAL, CC0, se KILDE.md). I Bryggen
   får figurene klær (`motor/figur.ts`, draktene i `bygg/folk.ts`); gråboksen beholder mannequinen.
   Folk står, sitter og jobber i bua og schøtstua.
@@ -107,11 +110,16 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `bygg/oppdrag-data.ts` | Oppdragene: giver, mål (hendelser), mottaker, samtalene (tilbud, underveis, levering) og «Dette vet vi» |
 | `graboks/oppdrag.ts` | Oppdragsmotoren: status, teller hendelser, merker («!», «?», grå «?»), steder med E, lagret i `bryggen-oppdrag` |
 | `graboks/hoder.ts` | HTML over hodene: navneskilt, oppdragsmerke og snakkeboble som skrives fram. Skjult bak vegger (stråle fra kameraet) |
-| `graboks/tyv.ts` | Tyven i gården: ute bare mens oppdraget hans er aktivt, roper over hodet, teller `slaa:tyven` |
+| `graboks/tyv.ts` | Tyven i natt (kapittel 1): venter ved loftsdøra, løper en fast rute over svalgangene og ned i smuget når gutten kommer nær, gjemmer seg om gutten mister ham, slåss i smuget. Etterpå: samtalen (ta ham med selv eller rope på vakta) |
+| `graboks/system.ts`, `graboks/systemer.ts` | Krokene i løkka (`Spillsystem`) og listen over systemene som er hektet på: filmene, tyven og opplæringen |
+| `graboks/sekvens.ts` | Sekvensverktøyet for filmscener (blueprint §6, §9.6): en tidslinje av kameraskudd (kutt, glid, sakte kjøring), figurer (klipp, gå langs et løp, vis/skjul, bære), replikker i bobler, tekst nederst og `gjor`-steg. Spilles i løkka, ingen video. Gutten står stille; Mellomrom, E eller Esc hopper over: da kjøres alle `gjor` som gjenstår og `slutt`, så sluttilstanden blir lik. Sett film lagres som flagget `film:<id>` |
+| `bygg/filmer.ts` | Filmene som data: `ankomst` (prologen, koggen fra Lübeck legger til, bak startskjermen i et nytt spill), `prolog-ut` (etter «fisk»), `kap1-inn` (natt, vakt i gården), `vakta` (gutten ropte på vakta) og `kap1-ut` (morgenen etter, to utgaver etter valget). `koblFilmer` sier når de kommer |
+| `graboks/FilmVisning.tsx` | Filmen over spillet: svarte striper, teksten nederst, «hopp over», svart overgang |
+| `graboks/opplaering.ts` | Opplæringen etter prologen: ett hint om gangen (gå, se deg rundt, snakk med E, ro), husket som `laert:<id>` |
 | `graboks/flytere.ts`, `graboks/dev.ts` | Skadetallene i kampen, og utviklerverktøyene (flyttet ut av `game.ts`) |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
 | `ui/Hud.tsx` | HUD-en mens det spilles: liv, oppdragslista, meldinger, samtalen, E-tekstene, ytelsesboksen og systempanelene |
-| `ui/systemPaneler.ts` | Krokpunkt for HUD-paneler til systemene: `hud.system[navn]` tegnes av panelet som er registrert her |
+| `ui/systemPaneler.tsx`, `ui/SystemHint.tsx` | Krokpunkt for HUD-paneler til systemene: `hud.system[navn]` tegnes av panelet som er registrert her (filmen over alt, hint fra tyven og opplæringen nederst) |
 | `ui/Startskjerm.tsx` | Startskjermen: hva scenen er, start med mus eller bare tastatur |
 | `ui/Pausemeny.tsx` | Pausemenyen (Esc): Fortsett, Innstillinger, Kontroller, Oppdrag og dagbok, Avslutt. Tastatur først |
 | `ui/InnstillingerPanel.tsx`, `ui/innstillinger.ts` | Innstillingene (grafikk, skygger, lys og dis, lyd per buss, kamerafart, snu opp og ned, ytelse), lagret i `bryggen-innstillinger`. Leser og flytter over de gamle `bryggen-kvalitet` og `bryggen-lyd` |

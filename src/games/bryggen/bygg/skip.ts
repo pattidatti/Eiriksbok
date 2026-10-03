@@ -26,6 +26,8 @@ export interface Skipene {
     update: (t: number) => void;
     /** Omrisset av hvert skrog i vannlinja (vannet tegnes ikke innenfor). */
     skrog: SkrogFot[];
+    /** Omrisset av skipene som synes nå (en filmscene kan skjule koggen, sekvens.ts). */
+    synlige: () => SkrogFot[];
     /** Jekta som ligger for anker (lekteren i trafikk.ts losser den). */
     anker: { x: number; z: number; yaw: number };
     dispose: () => void;
@@ -146,6 +148,7 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
         group,
         update,
         skrog: skip.map((s) => s.fot),
+        synlige: () => skip.filter((s) => s.root.visible).map((s) => s.fot),
         anker: (() => {
             const p = PLASSER.find((q) => q.z !== undefined)!;
             return { x: p.x, z: p.z!, yaw: p.yaw };

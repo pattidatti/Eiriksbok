@@ -1,5 +1,5 @@
 // HUD-en mens det spilles: liv, oppdragslista, meldingene, samtalen og «Dette vet vi», E-tekstene,
-// ytelsesboksen og systempanelene (systemPaneler.ts). Lyst tema og stor skrift: den skal leses på
+// ytelsesboksen og systempanelene (systemPaneler.tsx). Lyst tema og stor skrift: den skal leses på
 // en Chromebook (1366×768) og på projektor. Ingen tekst under 13 px.
 import { useEffect, useState } from 'react';
 import type { HudState, WorldId } from '../graboks/game';
@@ -52,6 +52,9 @@ export function Hud({ hud, world, visOppdrag, visYtelse, toast, onMeny, onFullsk
 
     const hpPct = Math.max(0, hud.playerHp);
     const enemyPct = Math.max(0, (hud.enemyHp / hud.enemyMax) * 100);
+    // En filmscene går (sekvens.ts): da vises bare filmen.
+    if (hud.system.film != null) return <Paneler hud={hud} plass="hel" />;
+
     const harOppdrag = world === 'gard' && visOppdrag && (hud.oppdrag.length > 0 || hud.ting.length > 0);
 
     return (

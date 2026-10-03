@@ -55,6 +55,8 @@ export interface BryggenWorld {
     skygge: number;
     /** Færingen gutten ror (settes av spillet): vannet holdes ute av den også. */
     faering: THREE.Object3D | null;
+    /** Andre skrog vannet skal holdes ute av (koggen i en filmscene, sekvens.ts). */
+    ekstraSkrog: SkrogFot[];
     /**
      * Kalles hvert bilde: flammene lever, ildlyset flyttes til nærmeste ildsted, og svaret sier
      * hvor langt inne i et rom `focus` er (0 ute, 1 godt inne). `focus` er kameraet; `spiller`
@@ -271,7 +273,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         // Vannet holdes ute av alle skrogene: de som ligger fast, og færingen.
         skrog.length = 0;
         trafikk.update(t, dt, focus, world.faering);
-        skrog.push(...skip.skrog, ...trafikk.skrog);
+        skrog.push(...skip.synlige(), ...trafikk.skrog, ...world.ekstraSkrog);
         if (world.faering) {
             const f = world.faering;
             skrog.push({ x: f.position.x, z: f.position.z, yaw: f.rotation.y, L: 2.85, B: 0.72, fyldig: 2 });
@@ -405,6 +407,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         vaat: lys.vaatStart,
         skygge: 0,
         faering: null,
+        ekstraSkrog: [],
         streamer,
         materials,
         get environment() {

@@ -112,6 +112,8 @@ export class GrayboxGame {
     /** Systemene som er hektet på løkka (systemer.ts), og det som eier E-teksten nå. */
     private systemer: Spillsystem[] = [];
     private systemPrompt: Spillsystem | null = null;
+    /** Et system (en filmscene) plasserte kameraet i forrige bilde. */
+    private systemKamera = false;
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
@@ -246,7 +248,7 @@ export class GrayboxGame {
             const w = this.world;
             this.systemer = await lagSystemer({
                 scene: this.scene, renderer: this.renderer, phys: this.phys, world: w, player: this.player, enemy: this.enemy,
-                ai: this.ai, cam: this.cam, folk: this.folk!, baering: this.baering!, lys: this.lys, lyd: this.lyd,
+                ai: this.ai, tyv: this.tyv!, cam: this.cam, folk: this.folk!, baering: this.baering!, lys: this.lys, lyd: this.lyd,
                 floatLayer: this.floatLayer, flash: (t, s) => this.flash(t, s), hudSnart: this.pushHudSoon, modus: () => this.mode,
             });
             if (this.disposed) return;
@@ -396,7 +398,13 @@ export class GrayboxGame {
 
         this.renderFrame(dt, gameDt, alpha);
         // Utviklerverktøy (bare i dev): fotokamera, hvor gutten og folkene står (dev.ts).
-        for (const s of this.systemer) if (s.kamera?.(this.cam.camera, dt)) break;
+        this.systemKamera = false;
+        for (const s of this.systemer) {
+            if (s.kamera?.(this.cam.camera, dt)) {
+                this.systemKamera = true;
+                break;
+            }
+        }
         const foto = import.meta.env.DEV ? devVerktoy(this.scene, this.player) : undefined;
         if (foto) {
             this.cam.camera.position.fromArray(foto.pos);
@@ -562,7 +570,8 @@ export class GrayboxGame {
 
         // Kameraet helt inntil gutten (rygg mot veggen): ton ham ut i stedet for å vise innsiden.
         const arm = this.cam.armLength;
-        this.player.anim.setOpacity(this.mode === 'boat' ? 1 : THREE.MathUtils.clamp((arm - 0.45) / 0.5, 0.15, 1));
+        // Ikke når en filmscene har kameraet: da er fjærarmen ikke det som ser.
+        this.player.anim.setOpacity(this.mode === 'boat' || this.systemKamera ? 1 : THREE.MathUtils.clamp((arm - 0.45) / 0.5, 0.15, 1));
 
         // Strømming: sjekk cellene et par ganger i sekundet, ikke hvert bilde.
         if (this.world) {

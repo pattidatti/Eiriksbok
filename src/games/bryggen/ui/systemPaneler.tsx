@@ -14,6 +14,9 @@
 //
 // Hold paneler lyse og lesbare (hvit/slate, minst 13 px, helst 15-17 px), som resten av HUD-en.
 import type { ComponentType } from 'react';
+import { FilmVisning } from '../graboks/FilmVisning';
+import type { FilmHud } from '../graboks/sekvens';
+import { SystemHint } from './SystemHint';
 
 export type PanelPlass = 'hoyre' | 'midt' | 'bunn' | 'hel';
 
@@ -24,4 +27,8 @@ export interface SystemPanel {
     Komponent: ComponentType<{ data: unknown }>;
 }
 
-export const SYSTEM_PANELER: SystemPanel[] = [];
+export const SYSTEM_PANELER: SystemPanel[] = [
+    { navn: 'film', plass: 'hel', Komponent: ({ data }) => <FilmVisning f={data as FilmHud} /> },
+    { navn: 'tyv', plass: 'bunn', Komponent: SystemHint },
+    { navn: 'opplaering', plass: 'bunn', Komponent: SystemHint },
+];
