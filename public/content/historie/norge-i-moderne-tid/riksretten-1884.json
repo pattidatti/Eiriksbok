@@ -138,6 +138,13 @@
       "content": "Regjeringen virket usikker og rådvill. Allerede 31. mai sa Schweigaard til kongen at han ville gå av. Kongen prøvde å få to andre til å danne regjering, men ingen av dem klarte det. 23. juni 1884 måtte han vende seg til Johan Sverdrup, lederen for flertallet. Tre dager senere, 26. juni, var Sverdrups regjering klar (Dørum, 2026). For første gang hadde Norge en regjering som hadde tilliten til flertallet på Stortinget (Gisle, 2026)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "taburetten"
+      }
+    },
+    {
       "type": "text",
       "content": "1. juli 1884 skrev kongen endelig under på vedtaket om at statsrådene skulle møte i Stortinget (Mardal & Dørum, 2026). Saken som hadde startet hele striden, var vunnet."
     },

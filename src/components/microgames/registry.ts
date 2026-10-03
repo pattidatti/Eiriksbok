@@ -246,6 +246,7 @@ const SeinenSnur = lazy(() => import('./SeinenSnur'));
 const KursForGronland3D = lazy(() => import('./KursForGronland3D'));
 const Tinghuset = lazy(() => import('./Tinghuset'));
 const BatdekketKlokka = lazy(() => import('./BatdekketKlokka'));
+const Taburetten3D = lazy(() => import('./Taburetten3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2497,6 +2498,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Harland and Wolffs blåkopier av Titanic: hvite tusjlinjer og nagler på preussisk blått, lanternegule plasser i natta',
         loader: () => import('./BatdekketKlokka'),
         Component: BatdekketKlokka as never,
+    },
+    taburetten: {
+        id: 'taburetten',
+        title: 'Taburetten',
+        description:
+            'Riksretten 1884. Du er statsrådsstolen som surfer på hendene til Stortinget nedover Karl Johan. Hold inne for å lene deg ned bølgene, slipp for å bli kastet til værs. Stripa øverst er Stortinget: har fargen i stolen flertall, bærer hendene deg høyt, ellers synker du. Før 1884 holder kongens livgarde en blå regjering oppe. Dommen i riksretten tar vernet, og fra da av kan bare den flertallet vil ha, bli sittende. Bytt regjering når valgbanneret treffer stolen.',
+        estimatedSeconds: 90,
+        sjanger: 'crowd-surf-løper',
+        tone: 'lett',
+        hook: 'Du er stolen alle slåss om. Hendene bærer bare den flertallet vil ha - hvem setter du i setet?',
+        cover: '/images/microgames/taburetten.webp',
+        kunst: 'Norske vittighetsblader og avistresnitt fra 1880-tallet: krysskravert sverte på gulnet papir, karikaturer i flosshatt, rødt og blått som håndkolorering',
+        loader: () => import('./Taburetten3D'),
+        Component: Taburetten3D as never,
     },
 };
 
