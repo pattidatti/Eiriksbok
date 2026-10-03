@@ -1,9 +1,17 @@
 // Systemene som hektes på løkka (system.ts). Legg nye til her med én linje, i den rekkefølgen de
 // skal spørres: den første som vil ha E eller kameraet, får det.
 import type { SpillKontekst, Spillsystem } from './system';
+import { Sekvens } from './sekvens';
+import { Opplaering } from './opplaering';
+import { koblFilmer } from '../bygg/filmer';
 
 export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
-    void k;
-    const ut: Spillsystem[] = [];
-    return ut;
+    // Filmscenene først: mens en film går, eier den kameraet og inputen.
+    const film = new Sekvens(k);
+    const opplaering = new Opplaering(k);
+    k.tyv.koble(k);
+    k.tyv.holdt = () => film.spiller;
+    opplaering.holdt = () => film.spiller;
+    koblFilmer(k, (f) => film.spill(f), (f) => film.vedStart(f));
+    return [film, k.tyv, opplaering];
 }

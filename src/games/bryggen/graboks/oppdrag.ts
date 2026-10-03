@@ -57,9 +57,35 @@ export class Oppdrag {
     /** Det gutten bærer endret seg (bøtta skal vises i hånda). */
     onTing: (ting: ReadonlySet<string>) => void = () => undefined;
     private naerSted: Sted | null = null;
+    /**
+     * Ting spillet husker utenom oppdragene: filmer som er sett (`film:<id>`), hint eleven har lært
+     * (`laert:<id>`) og valg i historien (`tyv-selv`). Lagres sammen med oppdragene.
+     */
+    readonly flagg = new Set<string>();
+    /** Fantes det ingen lagring da spillet startet? Da begynner prologen. */
+    readonly nyttSpill: boolean;
+    /** Lyttere: `ta`, `lever` og `flagg` med id (filmene starter på dem, sekvens.ts). */
+    readonly lyttere: ((hva: 'ta' | 'lever' | 'flagg', id: string) => void)[] = [];
 
     constructor() {
-        this.last();
+        this.nyttSpill = !this.last();
+    }
+
+    private meld(hva: 'ta' | 'lever' | 'flagg', id: string): void {
+        for (const l of this.lyttere) l(hva, id);
+    }
+
+    /** Sett et flagg (et valg i historien) og lagre. */
+    settFlagg(f: string): void {
+        if (this.flagg.has(f)) return;
+        this.flagg.add(f);
+        this.lagre();
+        this.meld('flagg', f);
+    }
+
+    /** Lagre nå (etter at flagg er endret direkte). */
+    lagreNaa(): void {
+        this.lagre();
     }
 
     private def(id: string): OppdragDef | undefined {
@@ -84,6 +110,7 @@ export class Oppdrag {
         this.onMelding({ type: 'nytt', tittel: o.tittel, tekst: o.om });
         this.sjekk(o);
         this.endret();
+        this.meld('ta', id);
     }
 
     /** Leverer et oppdrag (fra en samtale med mottakeren). */
@@ -97,6 +124,7 @@ export class Oppdrag {
         this.nye.delete(id);
         this.onMelding({ type: 'ferdig', tittel: o.tittel, tekst: o.lonn });
         this.endret();
+        this.meld('lever', id);
     }
 
     /** Noe har skjedd i spillet (se oppdrag-data.ts). Teller for alle aktive oppdrag. */
@@ -162,20 +190,23 @@ export class Oppdrag {
      */
     samtaleFor(person: string | undefined): { s: Samtale; start: string } | null {
         if (!person) return null;
-        for (const o of OPPDRAG) if (this.status(o.id) === 'klar' && o.mottaker === person) return { s: o.levering, start: o.leveringStart?.() ?? 'start' };
+        for (const o of OPPDRAG) if (this.status(o.id) === 'klar' && o.mottaker === person) return { s: o.levering, start: o.leveringStart?.(this.flagg) ?? 'start' };
         for (const o of OPPDRAG) if (this.status(o.id) === 'aktiv' && o.samtaler?.[person] && this.venterSnakk(o, person)) return { s: o.samtaler[person], start: 'start' };
         for (const o of OPPDRAG) if (o.giver === person && this.tilgjengelig(o)) return { s: o.tilbud, start: o.tilbudStart?.() ?? 'start' };
         for (const o of OPPDRAG) if (this.status(o.id) === 'aktiv' && (o.giver === person || o.mottaker === person)) return { s: o.underveis, start: 'start' };
         return null;
     }
 
-    /** `gjor` på en replikk (samtaler.ts). */
+    /** `gjor` på en replikk (samtaler.ts). Flere handlinger skilles med `;`. */
     gjor(handling: string): void {
-        const [hva, ...rest] = handling.split(':');
-        const arg = rest.join(':');
-        if (hva === 'ta') this.ta(arg);
-        else if (hva === 'lever') this.lever(arg);
-        else if (hva === 'hendelse') this.hendelse(arg);
+        for (const h of handling.split(';')) {
+            const [hva, ...rest] = h.trim().split(':');
+            const arg = rest.join(':');
+            if (hva === 'ta') this.ta(arg);
+            else if (hva === 'lever') this.lever(arg);
+            else if (hva === 'hendelse') this.hendelse(arg);
+            else if (hva === 'flagg') this.settFlagg(arg);
+        }
     }
 
     /** Teksten til «E: …» når gutten står ved et sted et aktivt oppdrag trenger. */
@@ -242,6 +273,7 @@ export class Oppdrag {
         this.tilstand.clear();
         this.ting.clear();
         this.nye.clear();
+        this.flagg.clear();
         this.endret();
     }
 
@@ -253,24 +285,37 @@ export class Oppdrag {
 
     private lagre(): void {
         try {
-            const data = { t: Object.fromEntries(this.tilstand), ting: [...this.ting] };
+            const data = { t: Object.fromEntries(this.tilstand), ting: [...this.ting], flagg: [...this.flagg] };
             localStorage.setItem(LAGER, JSON.stringify(data));
         } catch {
             // Lagring blokkert: fremgangen gjelder bare denne økta.
         }
     }
 
-    private last(): void {
+    /** Leser lagringen. Gir false når det ikke var noen (et nytt spill). */
+    private last(): boolean {
         try {
-            const data = JSON.parse(localStorage.getItem(LAGER) ?? 'null') as { t: Record<string, Tilstand>; ting: string[] } | null;
-            if (!data) return;
+            const data = JSON.parse(localStorage.getItem(LAGER) ?? 'null') as { t: Record<string, Tilstand>; ting: string[]; flagg?: string[] } | null;
+            if (!data || !data.t) return false;
             for (const [id, t] of Object.entries(data.t)) {
                 const o = this.def(id);
                 if (o && Array.isArray(t.teller)) this.tilstand.set(id, { status: t.status, teller: o.maal.map((_, i) => t.teller[i] ?? 0) });
             }
             for (const x of data.ting ?? []) this.ting.add(x);
+            for (const x of data.flagg ?? []) this.flagg.add(x);
+            // Lagret før prologen fantes (uten flagg): eleven har allerede kommet til gården. Hopp over
+            // prologen, opplæringen og filmene til det som er gjort.
+            if (!data.flagg) {
+                if (!this.tilstand.has('ankomst')) this.tilstand.set('ankomst', { status: 'levert', teller: [] });
+                for (const f of ['film:ankomst', 'laert:gaa', 'laert:kamera', 'laert:snakk', 'laert:svar', 'laert:ro']) this.flagg.add(f);
+                if (this.status('fisk') === 'levert') this.flagg.add('film:prolog-ut');
+                if (this.status('tyven') !== 'ny') this.flagg.add('film:kap1-inn');
+                if (this.status('tyven') === 'levert') this.flagg.add('film:kap1-ut');
+            }
+            return true;
         } catch {
             // Ødelagt eller blokkert lagring: start på nytt.
+            return false;
         }
     }
 }

@@ -47,6 +47,8 @@ export class FolkStyring {
     private klokke = 0;
     /** Kalles når HUD-en må oppdateres med en gang. */
     onEndring: () => void = () => undefined;
+    /** En filmscene går (sekvens.ts): ingen navn eller merker over hodene. */
+    film = false;
     /** Andre som kan ha noe over hodet (gutten, tyven). */
     readonly ekstra: { h: Hode; info: () => HodeInfo | null }[] = [];
 
@@ -114,7 +116,9 @@ export class FolkStyring {
         const alle = [...this.world.streamer.snakkbare(), ...ekstra.keys()];
         this.hoder.update(dt, kamera, alle, (f) => {
             const e = ekstra.get(f);
-            return e ? e() : this.info(f as Snakkbar);
+            const i = e ? e() : this.info(f as Snakkbar);
+            // I en filmscene står bare boblene, ikke navn og merker.
+            return this.film && i ? { ...i, navn: '', tittel: '', merke: null } : i;
         }, w, h);
     }
 
@@ -186,6 +190,16 @@ export class FolkStyring {
         const tekst = trekk(REPLIKKER[npc.figur], this.klokke);
         this.hoder.si(npc, tekst);
         npc.gest(gestFra(tekst), Math.min(4.5, 1.6 + tekst.length / 25));
+    }
+
+    /** Start en samtale med noen som ikke står i en celle (tyven, tyv.ts). */
+    aapne(s: Samtale, npc: Snakkbar, gutt: THREE.Vector3, start = 'start'): void {
+        if (this.snudd) this.snudd.npc.vend(null);
+        this.snudd = null;
+        this.aktiv = { s, node: start, npc };
+        npc.vend(gutt);
+        this.replikk = null;
+        this.vis();
     }
 
     /** Inndata mens samtalen pågår: videre (E, mellomrom) eller et valg (1-3). */

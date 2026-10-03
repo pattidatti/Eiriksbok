@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { GrayboxGame, HudState, Quality, WorldId } from '../games/bryggen/graboks/game';
 import { BismerVisning } from '../games/bryggen/graboks/BismerVisning';
+import { FilmVisning } from '../games/bryggen/graboks/FilmVisning';
+import type { FilmHud } from '../games/bryggen/graboks/sekvens';
 
 // Testruter for Bryggen-spillet. Ikke koblet inn i galleriet.
 // /test/bryggen-graboks  grå prøvescene (følelsen)
@@ -205,6 +207,13 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
         return () => window.removeEventListener('keydown', onKey);
     });
 
+    // En filmscene går (sekvens.ts): da vises bare filmen. Hint fra systemene (tyven, opplæringen)
+    // står nederst i midten.
+    const film = (hud.system.film as FilmHud | null | undefined) ?? null;
+    const hint = Object.entries(hud.system)
+        .filter(([navn]) => navn !== 'film')
+        .map(([, v]) => (v as { tekst?: unknown } | null | undefined)?.tekst)
+        .find((t): t is string => typeof t === 'string');
     const hpPct = Math.max(0, hud.playerHp);
     const enemyPct = Math.max(0, (hud.enemyHp / hud.enemyMax) * 100);
 
@@ -234,7 +243,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             )}
 
             {/* Liv */}
-            <div className="pointer-events-none absolute left-4 top-4 w-64 rounded-xl bg-white/85 px-3 py-2 shadow-md backdrop-blur">
+            {!film && (<div className="pointer-events-none absolute left-4 top-4 w-64 rounded-xl bg-white/85 px-3 py-2 shadow-md backdrop-blur">
                 <div className="flex items-baseline justify-between text-[13px] font-semibold text-slate-700">
                     <span>Junge</span>
                     <span className="tabular-nums">{hud.playerHp}</span>
@@ -243,9 +252,9 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                     <div className="h-full rounded-full bg-rose-600 transition-[width] duration-200" style={{ width: `${hpPct}%` }} />
                 </div>
                 {hud.bunter > 0 && <div className="mt-1 text-[13px] text-slate-600">Bunter båret: <span className="font-semibold tabular-nums text-slate-900">{hud.bunter}</span></div>}
-            </div>
+            </div>)}
 
-            {hud.enemyActive && (
+            {hud.enemyActive && !film && (
                 <div className="pointer-events-none absolute left-1/2 top-4 w-72 -translate-x-1/2 rounded-xl bg-white/85 px-3 py-2 shadow-md backdrop-blur">
                     <div className="text-center text-[13px] font-semibold text-slate-700">Tyven</div>
                     <div className="mt-1 h-2.5 overflow-hidden rounded-full bg-slate-200">
@@ -255,7 +264,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             )}
 
             {/* Ytelse */}
-            <div className="absolute right-4 top-4 rounded-xl bg-white/85 px-3 py-2 text-right text-[13px] tabular-nums text-slate-700 shadow-md backdrop-blur">
+            {!film && (<div className="absolute right-4 top-4 rounded-xl bg-white/85 px-3 py-2 text-right text-[13px] tabular-nums text-slate-700 shadow-md backdrop-blur">
                 <div className="flex items-center justify-end gap-2">
                     <button
                         onClick={(e) => {
@@ -301,10 +310,10 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                 <div>{hud.frameMs} ms/bilde · sim {hud.simMs} ms</div>
                 <div>{hud.drawCalls} tegnekall · {Math.round(hud.triangles / 1000)}k trekanter</div>
                 {hud.cells > 0 && <div>{hud.cells} celler lastet</div>}
-            </div>
+            </div>)}
 
             {/* Faste hint nederst i midten: der blikket er */}
-            <div className="pointer-events-none absolute bottom-24 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
+            {!film && (<div className="pointer-events-none absolute bottom-24 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
                 {hud.telegraph && (
                     <div className={`rounded-xl px-4 py-2 text-base font-bold shadow-lg ${hud.telegraphSving ? 'bg-orange-600 text-white' : 'bg-amber-300 text-slate-900'}`}>
                         {hud.telegraphSving ? 'Stort svingslag! Rull unna (Q), det går gjennom garden' : 'Han slår! Blokker (L / høyre) eller rull unna (Q)'}
@@ -316,7 +325,10 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                 {hud.prompt && (
                     <div className="rounded-xl bg-white/90 px-4 py-2 text-base font-semibold text-slate-800 shadow-lg">{hud.prompt}</div>
                 )}
-            </div>
+                {hint && !hud.samtale && (
+                    <div className="max-w-xl rounded-xl bg-amber-50/95 px-4 py-2 text-center text-[15px] font-semibold text-amber-900 shadow-lg ring-1 ring-amber-300">{hint}</div>
+                )}
+            </div>)}
 
             {hud.bismer && <BismerVisning b={hud.bismer} />}
 
@@ -359,7 +371,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             )}
 
             {/* Oppdragslista: til høyre, under målerne, som i WoW. */}
-            {world === 'gard' && visOppdrag && (hud.oppdrag.length > 0 || hud.ting.length > 0) && (
+            {world === 'gard' && visOppdrag && !film && (hud.oppdrag.length > 0 || hud.ting.length > 0) && (
                 <div className="pointer-events-none absolute right-4 top-36 w-72 text-right">
                     <div className="text-[12px] font-bold uppercase tracking-widest text-amber-100 [text-shadow:0_1px_3px_rgba(0,0,0,.9)]">Oppdrag (O)</div>
                     {hud.oppdrag.map((o) => (
@@ -403,14 +415,14 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             <style>{`.bryggen-melding{animation:bryggen-melding .5s cubic-bezier(.2,1.3,.4,1) both}
 @keyframes bryggen-melding{from{opacity:0;transform:translate(-50%,10px) scale(.9)}to{opacity:1;transform:translate(-50%,0) scale(1)}}`}</style>
 
-            {hud.message && (
+            {hud.message && !film && (
                 <div className="pointer-events-none absolute left-1/2 top-24 max-w-xl -translate-x-1/2 rounded-xl bg-white/90 px-5 py-3 text-center text-[15px] font-medium text-slate-800 shadow-lg">
                     {hud.message}
                 </div>
             )}
 
             {/* Kontroller */}
-            {started && !hud.samtale && !hud.bismer && (
+            {started && !hud.samtale && !hud.bismer && !film && (
                 <div className="absolute bottom-4 left-4 max-w-xs rounded-xl bg-white/85 px-3 py-2 text-[13px] text-slate-700 shadow-md backdrop-blur">
                     <button className="font-semibold text-slate-900" onClick={() => setShowControls((v) => !v)}>
                         {showControls ? 'Skjul kontroller' : 'Vis kontroller'}
@@ -428,6 +440,8 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
                     {!hud.pointerLocked && !hud.mouseMode && <div className="mt-1 text-slate-500">Klikk i bildet for å styre kameraet med musa.</div>}
                 </div>
             )}
+
+            {film && <FilmVisning f={film} />}
 
             {!started && (
                 <div className="absolute inset-0 flex items-center justify-center bg-slate-100/80 backdrop-blur-sm">
