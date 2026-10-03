@@ -4,9 +4,13 @@
 //   måling fra Vågen). Funksjonen gir det tilbake, så løkka kan sette kameraet.
 // - `window.__bryggenPos` er der gutten står (til testskript).
 // - `window.__bryggenFolk()` gir folkene i de lastede cellene (drakt, posisjon, retning).
+// - `?sted=<navn>` starter gutten ved et sted fra `DEV_STEDER` (sideoppdragene), `?oppdrag=a,b` tar
+//   oppdragene (krav hoppes over, et levert oppdrag tas på nytt), og `?hendelse=a,b` sender hendelser
+//   (f.eks. `messe:lys` for å hoppe rett til svarene i messen).
 import * as THREE from 'three';
 import type { Character } from '../motor/character';
 import type { Spillsystem } from './system';
+import type { Oppdrag } from './oppdrag';
 
 interface Dev {
     __bryggenFoto?: { pos: number[]; look: number[] };
@@ -55,4 +59,31 @@ export function fotoSystem(): Spillsystem {
             kamera.updateMatrixWorld();
         },
     };
+}
+
+/** Startpunkter for `?sted=` (verdensrom, føttene) og retningen gutten ser. Målt i spillet 03.10.2026. */
+const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number }> = {
+    loft: { pos: [-5.5, 3.6, 9.5], yaw: 0 },
+    hans: { pos: [-140.8, 0, 16.9], yaw: 0 },
+    detmar: { pos: [-178.3, 0, 16.6], yaw: -Math.PI / 2 },
+    bard: { pos: [-23.4, 0, 0.9], yaw: -2.57 },
+    ottar: { pos: [6.1, 0, 3.1], yaw: Math.PI },
+    kirke: { pos: [100.6, 2.05, 105.4], yaw: 0.15 },
+    alter: { pos: [95.8, 2.05, 100.6], yaw: -0.54 },
+    olstua: { pos: [38.2, 2.2, 74.0], yaw: 0.88 },
+};
+
+/** `?sted=`: flytt startpunktet før cellene rundt det lastes (bare i dev). */
+export function devStart(layout: { playerStart: THREE.Vector3; playerYaw: number }): void {
+    const s = DEV_STEDER[new URLSearchParams(location.search).get('sted') ?? ''];
+    if (!s) return;
+    layout.playerStart.fromArray(s.pos);
+    layout.playerYaw = s.yaw;
+}
+
+/** `?oppdrag=` og `?hendelse=`: ta oppdrag og send hendelser når spillet er klart (bare i dev). */
+export function devOppdrag(oppdrag: Oppdrag): void {
+    const q = new URLSearchParams(location.search);
+    for (const id of (q.get('oppdrag') ?? '').split(',').filter(Boolean)) oppdrag.devTa(id);
+    for (const h of (q.get('hendelse') ?? '').split(',').filter(Boolean)) oppdrag.hendelse(h);
 }

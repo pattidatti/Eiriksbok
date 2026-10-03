@@ -15,6 +15,12 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     opplaering.holdt = () => film.spiller;
     koblFilmer(k, (f) => film.spill(f), (f) => film.vedStart(f));
     const ut: Spillsystem[] = [film, k.tyv, opplaering];
+    // Sideoppdragene (bygg/sideoppdrag.ts).
+    ut.push((await import('./sidefolk')).lagSidefolk(k));
+    ut.push((await import('./rottejakt')).lagRottejakt(k));
+    ut.push((await import('./syrytme')).lagSyrytme(k));
+    ut.push((await import('./messe')).lagMesse(k));
+    ut.push((await import('./terning')).lagTerning(k));
     if (import.meta.env.DEV) ut.push(fotoSystem());
     return ut;
 }

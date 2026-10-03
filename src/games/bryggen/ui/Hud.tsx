@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import type { HudState, WorldId } from '../graboks/game';
 import { BismerVisning } from '../graboks/BismerVisning';
+import { Aktiviteter } from './Aktiviteter';
 import { SYSTEM_PANELER, type PanelPlass } from './systemPaneler';
 import { huskVet } from './vetlager';
 
@@ -154,6 +155,7 @@ export function Hud({ hud, world, visOppdrag, visYtelse, toast, onMeny, onFullsk
             </div>
 
             {hud.bismer && <BismerVisning b={hud.bismer} />}
+            <Aktiviteter system={hud.system} />
 
             {/* Samtalen: replikkene står i boblene over hodene. Nederst står hvem man snakker med og
                 svarene, og «Dette vet vi» i sin helhet: det er ikke noen i spillet som sier det. */}

@@ -54,6 +54,8 @@ export interface Spillsystem {
     prompt?(gutt: THREE.Vector3): string | null;
     /** E ble trykket mens systemets prompt sto. Kan gi en melding midt på skjermen. */
     trykk?(): string | null | void;
+    /** Trenger HUD-en å oppdateres ofte nå (en aktivitet med takt eller terninger)? Da ca. 30 ganger i sekundet. */
+    rask?(): boolean;
     /** Data til React-HUD-en (`HudState.system[navn]`). Kalles når HUD-en oppdateres. */
     hud?(): unknown;
     dispose?(): void;

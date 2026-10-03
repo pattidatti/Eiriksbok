@@ -18,6 +18,12 @@ export interface InputFrame {
     resetPressed: boolean;
     /** Et svar i en samtale: 1, 2 eller 3 (tallrekka eller talltastaturet). */
     valg: number | null;
+    /**
+     * Alle taster som ble trykket ned siden forrige steg (`KeyboardEvent.code`), med tida for trykket
+     * (`performance.now()`, ms). Et kort trykk mistes ikke selv om tasten er sluppet før steget, og
+     * takten i syrytme.ts dømmer etter når tasten ble trykket, ikke når steget kom.
+     */
+    trykt: ReadonlyMap<string, number>;
 }
 
 export interface LookInput {
@@ -33,6 +39,7 @@ const HEAVY_HOLD_S = 0.32;
 export class Input {
     private keys = new Set<string>();
     private pressed = new Set<string>();
+    private trykkTid = new Map<string, number>();
     private mouseYaw = 0;
     private mousePitch = 0;
     private lmbDownAt = -1;
@@ -148,8 +155,10 @@ export class Input {
             finisherPressed: p.has('KeyF'),
             resetPressed: p.has('KeyR'),
             valg: [1, 2, 3].find((n) => p.has(`Digit${n}`) || p.has(`Numpad${n}`)) ?? null,
+            trykt: new Map(this.trykkTid),
         };
         p.clear();
+        this.trykkTid.clear();
         this.lightQueued = false;
         this.heavyQueued = false;
         return frame;
@@ -174,7 +183,11 @@ export class Input {
     private onKeyDown = (e: KeyboardEvent) => {
         if (!this._aktiv) return;
         if (e.code.startsWith('Arrow') || e.code === 'Space') e.preventDefault();
-        if (!this.keys.has(e.code)) this.pressed.add(e.code);
+        if (!this.keys.has(e.code)) {
+            this.pressed.add(e.code);
+            // Tida tasten faktisk ble trykket, også om hendelsen først kommer fram etter et tungt bilde.
+            this.trykkTid.set(e.code, e.timeStamp || performance.now());
+        }
         this.keys.add(e.code);
     };
 

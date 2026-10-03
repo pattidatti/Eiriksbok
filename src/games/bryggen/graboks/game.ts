@@ -23,7 +23,7 @@ import type { FolkStyring } from './folkstyring';
 import type { OppdragMelding } from './oppdrag';
 import type { Tyv } from './tyv';
 import { Flytere } from './flytere';
-import { devVerktoy } from './dev';
+import { devOppdrag, devStart, devVerktoy } from './dev';
 import { finnLanding } from './baat';
 import type { Baering } from './baering';
 import type { Spillsystem } from './system';
@@ -114,6 +114,8 @@ export class GrayboxGame {
     private systemPrompt: Spillsystem | null = null;
     /** Et system (en filmscene) plasserte kameraet i forrige bilde. */
     private systemKamera = false;
+    /** Et system holdt gutten i forrige steg (en aktivitet pågår): da vises ingen «E: …». */
+    private systemHolder = false;
 
     constructor(container: HTMLElement, floatLayer: HTMLElement, onHud: (s: HudState) => void, opts: { shadows: boolean; world?: WorldId; low?: boolean }) {
         this.container = container;
@@ -163,6 +165,7 @@ export class GrayboxGame {
             this.world = await buildBryggen(this.scene, this.phys, this.renderer, this.lys, { low: this.low });
             if (this.disposed) return;
             this.layout = this.world.layout;
+            if (import.meta.env.DEV) devStart(this.layout);
             // Cellene rundt start må stå før første fysikksteg, ellers faller gutten gjennom kaia.
             await this.world.streamer.update(this.layout.playerStart);
             if (this.disposed) return;
@@ -252,6 +255,7 @@ export class GrayboxGame {
                 floatLayer: this.floatLayer, flash: (t, s) => this.flash(t, s), hudSnart: this.pushHudSoon, modus: () => this.mode,
             });
             if (this.disposed) return;
+            if (import.meta.env.DEV) devOppdrag(oppdrag);
         }
 
         // Første fysikksteg så alle kolliderer står på plass før spilleren beveger seg.
@@ -424,7 +428,7 @@ export class GrayboxGame {
             }
         }
         this.hudTimer += dt;
-        if (this.hudTimer > (this.baering?.veier ? 0.03 : 0.25)) {
+        if (this.hudTimer > (this.baering?.veier || this.systemer.some((s) => s.rask?.()) ? 0.03 : 0.25)) {
             this.hudTimer = 0;
             this.pushHud();
         }
@@ -444,6 +448,7 @@ export class GrayboxGame {
         // Et system som bruker inputen selv (filmscene, aktivitet): gutten står stille.
         let holdt = false;
         for (const s of this.systemer) if (s.steg?.(dt, inp)) holdt = true;
+        this.systemHolder = holdt;
         if (holdt) {
             dir.set(0, 0);
             inp.jumpPressed = inp.interactPressed = inp.lightPressed = inp.heavyPressed = false;
@@ -611,7 +616,7 @@ export class GrayboxGame {
         this.promptTimer = 0.15;
         this.landCandidate = null;
         this.systemPrompt = null;
-        if (this.baering?.veier) {
+        if (this.baering?.veier || this.systemHolder) {
             this.prompt = null;
             return;
         }

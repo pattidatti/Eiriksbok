@@ -101,9 +101,9 @@ export class Oppdrag {
     }
 
     /** Tar et oppdrag (fra en samtale). */
-    ta(id: string): void {
+    ta(id: string, tving = false): void {
         const o = this.def(id);
-        if (!o || !this.tilgjengelig(o)) return;
+        if (!o || this.tilstand.has(id) || (!tving && !this.tilgjengelig(o))) return;
         this.tilstand.set(id, { status: 'aktiv', teller: o.maal.map(() => 0) });
         if (o.ting) this.ting.add(o.ting);
         this.nye.add(id);
@@ -111,6 +111,12 @@ export class Oppdrag {
         this.sjekk(o);
         this.endret();
         this.meld('ta', id);
+    }
+
+    /** Utviklerverktøy (`?oppdrag=` i dev.ts): glem oppdraget og ta det på nytt, uten krav. */
+    devTa(id: string): void {
+        this.tilstand.delete(id);
+        this.ta(id, true);
     }
 
     /** Leverer et oppdrag (fra en samtale med mottakeren). */
