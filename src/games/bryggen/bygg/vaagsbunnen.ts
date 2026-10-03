@@ -27,8 +27,12 @@ import { COLD, DARK, FRONT_Z, GARD_DEPTH, T, WARM, kai, kaiJog, toGroup, tonne, 
 import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
 import { verksted, type Fag, type VerkstedSpec } from './verksted';
 import { korskirken, mikaelskirken } from './kirker-vaagsbunnen';
-import { lagFolk, type Plass } from './folk';
-import type { Rute } from './vandrer';
+import type { Plass } from './folk';
+import type { Stopp } from './vandrer';
+import { lagDagsfolk, type Dagsfigur, type FasePlass } from './dagsplan';
+import { vaagsbunnenLiv } from './vaagsbunnen-liv';
+import { glemDyreSoner, meldDyreSoner } from '../motor/dyr';
+import { glemPinner, meldPinner } from './runepinner';
 import { LIST, STEIN } from './stein';
 import { MUR_Z } from './allmenning';
 import { NIKOLAI_Y } from './nikolaikirken';
@@ -147,7 +151,8 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
     const royk: THREE.Vector3[] = [];
     const ilder: Ild[] = [];
     const plasser: Plass[] = [];
-    const ruter: Rute[] = [];
+    let dorer: THREE.Vector3[] = [];
+    let ruin: THREE.Vector3 | null = null;
     const steder: Sted[] = [];
     const back = FRONT_Z + GARD_DEPTH;
     const auta = del === 'o' ? x1 - AUTA_W : x1; // vestkanten av allmenningen
@@ -247,11 +252,12 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
 
     // Bak verkstedene: i øst bolighus med gjerder og ved, i vest ruinen av Mikaelskirken.
     if (del === 'o') {
-        bakgard(k, c, lod, mats, x0, auta, r);
+        dorer = bakgard(k, c, lod, mats, x0, auta, r);
     } else {
         const mx = (x0 + x1) / 2 + 2;
         const mz = 41;
         k.at(mx, 0, mz, 0, () => mikaelskirken(k, c), c);
+        ruin = V(mx, 0, mz);
         lod.matrix = new THREE.Matrix4().makeTranslation(mx, 0, mz);
         const st = mats.lodColor('stein');
         lod.withTint({ top: 0.6, bottom: 0.6, hue: [st.r, st.g, st.b] }, () => lod.box('mork', 0, 2.5, 0, 17, 5, 9, { skip: ['bottom'] }));
@@ -282,8 +288,19 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
         k.withTint({ top: 0.8, bottom: 0.6, hue: DARK }, () => k.box('bordvegg', x0 + 0.1, 0.8, (GATE.land + back) / 2, 0.05, 1.6, back - GATE.land, { shadeFoot: true }));
     }
 
-    // Folk som går i gata.
-    ruter.push(...gatefolk(del, x0, auta, sjoBoder, land));
+    // Livet i gata (vaagsbunnen-liv.ts): barn, arbeid ute, fyllikken, dyrene og runepinnene.
+    const ax = autaX(x1);
+    const liv = vaagsbunnenLiv({
+        del, x0, x1, auta, gateZ: GATE.z, sjoZ: GATE.sjo, trapper: trappene(sjo, x0), dorer,
+        trappTopp: del === 'o' ? V(ax + 0.3, NIKOLAI_Y, TRAPP.z1 + 0.9) : null, trappX: ax + 0.3, trappFot: TRAPP.z0 - 0.4, ruin,
+    }, k, c);
+    // Dagsplaner (dagsplan.ts): de som har navn (oppdragene trenger dem) er alltid der; de andre i
+    // verkstedene går hjem om natta.
+    const fasePlasser: FasePlass[] = [
+        ...plasser.map((p): FasePlass => ({ ...p, naar: p.id ? ['morgen', 'dag', 'kveld', 'natt'] : ['morgen', 'dag', 'kveld'] })),
+        ...liv.plasser,
+    ];
+    const figurer: Dagsfigur[] = [...gatefolk(del, x0, auta, sjoBoder, land), ...liv.figurer];
 
     // ── Ferdig: husene med og uten skygge, innredningen, det som gløder, og folkene ──
     const naer = toGroup(k, mats, `vaagsbunnen-${del}`);
@@ -294,7 +311,9 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
     glodMat.color.setScalar(2.2);
     if (glod.bucket('mork').vertexCount > 0) inne.add(new THREE.Mesh(glod.bucket('mork').toGeometry(), glodMat));
     for (const f of ilder) inne.add(f.group);
-    const folk = await lagFolk(plasser, mats, del === 'o' ? 1330 : 1413, ruter);
+    const folk = await lagDagsfolk(fasePlasser, figurer, liv.vei, mats, del === 'o' ? 1330 : 1413);
+    meldDyreSoner(`vaagsbunnen-${del}`, liv.soner);
+    meldPinner(`vaagsbunnen-${del}`, liv.pinner);
     near.add(naer, uten, inne, folk.group);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `vaagsbunnen-${del}:lod`;
@@ -310,6 +329,8 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
             ilder.forEach((f) => f.dispose());
             folk.dispose();
             glodMat.dispose();
+            glemDyreSoner(`vaagsbunnen-${del}`);
+            glemPinner(`vaagsbunnen-${del}`);
         },
     };
 }
@@ -381,8 +402,9 @@ function bom(k: MeshKit, c: ColliderKit, x: number): void {
  * Bak verkstedene i øst: to bolighus for håndverkerne med gavlen mot gata, gjerder, vedstabler og
  * en brønn. Hvordan de bodde, er ikke funnet [K]; husene er av modulsettet [S].
  */
-function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: number, x1: number, r: () => number): void {
+function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: number, x1: number, r: () => number): THREE.Vector3[] {
     const toner = [WARM, COLD, DARK];
+    const dorer: THREE.Vector3[] = [];
     let x = x1 - 1.5;
     for (let i = 0; i < 3; i++) {
         const w = 5.6 + r() * 1.6;
@@ -399,6 +421,9 @@ function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: 
         lod.matrix = m.clone();
         hus(k, c, spec);
         husLod(lod, spec, (key) => mats.lodColor(key));
+        // Døra (føttene rett utenfor), til dagsplanene.
+        const d = spec.doors![0];
+        dorer.push(V(d.side * (w / 2 + 0.7), 0, d.z).applyMatrix4(m));
         x -= w + 2.2 + r() * 1.5;
     }
     k.matrix = new THREE.Matrix4();
@@ -417,6 +442,7 @@ function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: 
             c.box(vx, 0.25, gz - 0.55, 1.1, 0.5, 0.7, true);
         }
     });
+    return dorer;
 }
 
 /**
@@ -424,9 +450,9 @@ function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: 
  * på vei mellom kaia og Øvregaten. Hver har sitt eget løp langs z (vandrerne kolliderer ikke med
  * hverandre).
  */
-function gatefolk(del: 'o' | 'v', x0: number, x1: number, sjo: number[], land: { x: number; w: number; fag: Fag }[]): Rute[] {
+function gatefolk(del: 'o' | 'v', x0: number, x1: number, sjo: number[], land: { x: number; w: number; fag: Fag }[]): Dagsfigur[] {
     const P = (x: number, z: number, y = 0) => V(x, y, z);
-    const ruter: Rute[] = [];
+    const ruter: { figur: Dagsfigur['figur']; fart: number; start: number; baer?: 'botte'; stopp: Stopp[] }[] = [];
     const vest = x0 + 4;
     const ost = x1 - 2;
     const vedLand = (i: number) => land[Math.min(i, land.length - 1)]?.x ?? (x0 + x1) / 2;
@@ -500,7 +526,20 @@ function gatefolk(del: 'o' | 'v', x0: number, x1: number, sjo: number[], land: {
             ],
         });
     }
-    return ruter;
+    // Dagsplanene (dagsplan.ts): ruta over gjelder morgen og dag. Om kvelden går kona opp trappa til
+    // kirka i Øvregaten, tjenestejenta og svennen inn, og de norske går hjem forbi bommen. Om natta er
+    // alle inne [S].
+    const topp = P(x1 + AUTA_W / 2 + 0.3, TRAPP.z1 + 0.9, NIKOLAI_Y);
+    const hjem: Record<string, THREE.Vector3> = {
+        kjopekone: topp, borger: topp,
+        skomakersvenn: P(vedSjo(0) - 0.6, 14.0), tjenestejente: P(vedLand(0) + 1.2, 17.0),
+        fisker: P(vest + 2, 14.2), bondekone: P(vest + 1.2, 15.4),
+    };
+    return ruter.map((r): Dagsfigur => {
+        const h = hjem[r.figur] ?? P(vest, 15);
+        const kveld: Dagsfigur['plan']['kveld'] = r.figur === 'kjopekone' ? { inn: topp } : r.figur === 'borger' ? undefined : 'hjemme';
+        return { figur: r.figur, fart: r.fart, baer: r.baer, hjem: h, forskyv: r.start * 13 - 10, plan: { morgen: r.stopp, kveld, natt: 'hjemme' } };
+    });
 }
 
 /**

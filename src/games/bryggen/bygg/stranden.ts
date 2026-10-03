@@ -34,7 +34,12 @@ interface Pensel {
     k: MeshKit;
     fjern: boolean;
     farge: Record<Del, THREE.Color>;
+    /** Den gåbare biten (strandliv.ts): ingenting bygges der. */
+    hull?: [number, number];
 }
+
+/** Står noe fra `a` til `b` langs x i den gåbare biten? */
+const iHull = (p: Pensel, a: number, b: number) => !!p.hull && b > p.hull[0] - 1 && a < p.hull[1] + 1;
 
 function mal(p: Pensel, del: Del, t: Tint, fn: (key: MatKey) => void): void {
     if (!p.fjern) {
@@ -58,6 +63,7 @@ function lagRng(seed: number): () => number {
  */
 function hus(p: Pensel, x: number, z: number, rot: number, b: number, l: number, eave: number, pitch: number, tone: Tint, naust: boolean): void {
     const k = p.k;
+    if (iHull(p, x - b / 2 - 0.5, x + b / 2 + 0.5)) return;
     k.at(x, BAKKE, z, Math.PI + rot, () => {
         mal(p, 'vegg', tone, (key) => k.box(key, 0, eave / 2 - 0.25, l / 2, b, eave + 0.5, l, { skip: ['bottom'], shadeFoot: true }));
         const hw = b / 2;
@@ -99,6 +105,7 @@ function hus(p: Pensel, x: number, z: number, rot: number, b: number, l: number,
 /** Tømmer stablet på stranda: stokker langs x på tverrligger [V tømmerhandel, S stabelen]. */
 function tommer(p: Pensel, x: number, z: number, len: number, lag: number, rng: () => number): void {
     const k = p.k;
+    if (iHull(p, x - len / 2 - 0.5, x + len / 2 + 0.5)) return;
     if (p.fjern) {
         mal(p, 'tre', { top: 0.9, bottom: 0.9 }, (key) => k.box(key, x, BAKKE + lag * 0.18, z, len, lag * 0.36, 2.2, { skip: ['bottom'] }));
         return;
@@ -121,6 +128,7 @@ function skipPaStokker(p: Pensel, x: number, z: number): void {
     const k = p.k;
     const L = 16;
     const y = BAKKE + 0.7;
+    if (iHull(p, x - L / 2 - 2, x + L / 2 + 2)) return;
     if (p.fjern) {
         mal(p, 'tre', { top: 0.8, bottom: 0.8 }, (key) => {
             k.box(key, x, y, z, L, 0.3, 0.3, { skip: ['bottom'] });
@@ -152,14 +160,19 @@ function skipPaStokker(p: Pensel, x: number, z: number): void {
     });
 }
 
-/** Rekka langs stranda fra `x0` til `x1`, trukket fra frøet. */
-function stranda(p: Pensel, x0: number, x1: number): void {
+/** Rekka langs stranda fra `x0` til `x1`, trukket fra frøet. `hull` er den gåbare biten (strandliv.ts), som hoppes over. */
+function stranda(p: Pensel, x0: number, x1: number, hull?: [number, number]): void {
     const rng = lagRng(1429);
     const k = p.k;
+    p.hull = hull;
     // Bakken: jord og gress, med en kant av stein og jord ned mot sjøen.
-    mal(p, 'tak', { top: 0.6, bottom: 0.45, hue: [0.9, 0.85, 0.75] }, (key) =>
-        k.box(key, (x0 + x1) / 2, BAKKE / 2 - 2, STRAND_Z - DYBDE / 2, x1 - x0, BAKKE + 4, DYBDE, { skip: ['bottom'], shadeFoot: true })
+    const bakke = (a: number, b: number) => mal(p, 'tak', { top: 0.6, bottom: 0.45, hue: [0.9, 0.85, 0.75] }, (key) =>
+        k.box(key, (a + b) / 2, BAKKE / 2 - 2, STRAND_Z - DYBDE / 2, b - a, BAKKE + 4, DYBDE, { skip: ['bottom'], shadeFoot: true })
     );
+    if (hull) {
+        bakke(x0, hull[0]);
+        bakke(hull[1], x1);
+    } else bakke(x0, x1);
     let skipBygd = false;
     let x = x0 + 4;
     while (x < x1 - 8) {
@@ -203,7 +216,7 @@ function stranda(p: Pensel, x0: number, x1: number): void {
 }
 
 /** Cella med Stranden fra `x0` til `x1` langs Vågen. */
-export function strandCelle(mats: Materials, x0: number, x1: number): CellDef {
+export function strandCelle(mats: Materials, x0: number, x1: number, hull?: [number, number]): CellDef {
     return {
         id: 'stranden',
         center: new THREE.Vector2((x0 + x1) / 2, STRAND_Z - DYBDE / 2),
@@ -212,8 +225,8 @@ export function strandCelle(mats: Materials, x0: number, x1: number): CellDef {
             const naer = new MeshKit();
             const mid = new MeshKit();
             const farge: Record<Del, THREE.Color> = { vegg: mats.lodColor('laft'), tak: mats.lodColor('torv'), tre: mats.lodColor('raatre') };
-            stranda({ k: naer, fjern: false, farge }, x0, x1);
-            stranda({ k: mid, fjern: true, farge }, x0, x1);
+            stranda({ k: naer, fjern: false, farge }, x0, x1, hull);
+            stranda({ k: mid, fjern: true, farge }, x0, x1, hull);
             const near = new THREE.Group();
             near.name = 'stranden';
             for (const [key, b] of naer.buckets) {

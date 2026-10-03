@@ -17,6 +17,7 @@ import type { ComponentType } from 'react';
 import { FilmVisning } from '../graboks/FilmVisning';
 import type { FilmHud } from '../graboks/sekvens';
 import { SystemHint } from './SystemHint';
+import { RunekortPanel } from './Runekort'; // Runepinnene (verden2)
 
 export type PanelPlass = 'hoyre' | 'midt' | 'bunn' | 'hel';
 
@@ -31,4 +32,5 @@ export const SYSTEM_PANELER: SystemPanel[] = [
     { navn: 'film', plass: 'hel', Komponent: ({ data }) => <FilmVisning f={data as FilmHud} /> },
     { navn: 'tyv', plass: 'bunn', Komponent: SystemHint },
     { navn: 'opplaering', plass: 'bunn', Komponent: SystemHint },
+    { navn: 'runer', plass: 'midt', Komponent: RunekortPanel }, // Runepinnene (graboks/strandliv.ts)
 ];

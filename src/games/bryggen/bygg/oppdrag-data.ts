@@ -20,6 +20,7 @@
 import type { Samtale } from './samtaler';
 import { SAMTALER, SPOR } from './samtaler';
 import { SIDEOPPDRAG } from './sideoppdrag';
+import { RUNER } from './runeoppdrag'; // Pinnene i gjørma (Stranden, verden2)
 
 /** Fraksjonene (blueprint §7): Kontoret, Bergenhus/kongens menn, norske borgere, kirken, nordlandsfiskerne. */
 export type Fraksjon = 'K' | 'B' | 'N' | 'Ki' | 'F';
@@ -542,4 +543,5 @@ export const OPPDRAG: OppdragDef[] = [
         lonn: 'Du har vært innenfor muren på Bergenhus.',
     },
     ...SIDEOPPDRAG,
+    RUNER, // Pinnene i gjørma (runeoppdrag.ts)
 ];

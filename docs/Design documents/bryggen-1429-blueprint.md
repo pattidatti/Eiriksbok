@@ -272,7 +272,7 @@ Fraksjonene: **K** Kontoret, **B** Bergenhus/kongens menn, **N** norske borgere 
 
 | Aktivitet | Mekanikk | Læringsmål | Fraksjon |
 |---|---|---|---|
-| **Runepinnen** | Les og risse runer på trepinner: eierlapper på varer, beskjeder, en bønn. Puslespill med runealfabetet | På Bryggen er det funnet 597 runeinnskrifter, mest på trepinner [V]. Folk skrev i hverdagen | N, K |
+| **Runepinnen** | Les og risse runer på trepinner: eierlapper på varer, beskjeder, en bønn. Puslespill med runealfabetet | På Bryggen er det funnet rundt 670 runeinnskrifter, mest på trepinner [V Wikipedia «Bryggen inscriptions»; tallet 597 som sto her, er ikke funnet igjen]. Folk skrev i hverdagen | N, K |
 | **Brannvakt og bøttekjede** | Patruljér gårdene om natta og finn ulovlig ild; når det brenner, organiser bøttekjeden før det sprer seg | Ildforbudet og hvorfor (brannene 1248, 1476, 1702) [V] | K, N |
 | **Jekta kommer** | Møt en nordlandsfisker på kaia; samtale der du ser handelen fra *hans* side, med gjelden fra fjoråret | Perspektivbytte: fiskerens liv | F |
 | **Skomakerverkstedet i Skostredet** | Syrytme og lærstykker; senere en sperret gate du må forhandle deg gjennom | De tyske håndverkerne og konflikten med Kontoret [V] | N, K |
@@ -879,6 +879,17 @@ Mixamo brukes ikke (krever innlogging).
   først omkring 1750 [V SNL «svartrotte», «brunrotte»], så rottene på Bryggen i 1420-årene var
   svartrotter: slank kropp, hale lengre enn kroppen, store ører, mørk grå. Venter på eierens
   spilltest. Hund mangler
+- [~] Stranden, Vågsbunnen og dagsplanene (03.10.2026, `bygg/strandliv.ts`, `bygg/dagsplan.ts`,
+  `bygg/vaagsbunnen-liv.ts`, `motor/dyr.ts`, `graboks/strandliv.ts`). Stranden kan gås på: gutten ror over og
+  legger til ved Jonsbryggen (klosteret eide Jonsbryggen [V Byleksikon «Jonsklosteret»]; utseendet [S]).
+  Strandtorget med boder, familier i lave laftehus, naust og Jonskirken med et forfallent klosterhus
+  (augustinerkloster grunnlagt før 1180, «trolig mer eller mindre øde omkring år 1400», kirka i bruk til 1500-tallet
+  [V Byleksikon]; kirka og husene [S]). Vågsbunnen: barn, svenner som arbeider ute, en fyllik og kona hans om
+  kvelden (alvor, ingen komikk), griser og hunder ([K] at de gikk løse i Bergen, se §8.8). Dagsplaner (§8.7):
+  morgen, dag, kveld og natt; folk går til boden, torget, kirka og hjem, og er inne om natta [S]. Runepinner
+  (§7.2): seks ekte innskrifter fra Bryggen (B 1, B 3, B 17, B 149, N B380 og «Ingebjørg»-pinnen) med kilde, og
+  oppdraget «Pinnene i gjørma» for N. Griser og hunder er laget i kode (InstancedMesh, vertex-shader), ingen
+  asset. Venter på eierens spilltest. Lyd til dyrene mangler
 - [~] Lyd (02.10.2026, `motor/lyd.ts`, `motor/lydkobling.ts`): regn ute og på taket inne etter
   `world.regn`, vind, bølger som klukker mot bolverket der kaikanten er nærmest, ildstedet i schøtstua,
   måker som skriker fra der de er (og i kor når flokken letter), rotter som piper og krafser, fottrinn
@@ -988,6 +999,14 @@ Lokalhistoriewiki.no. (u.å.). *Rosenkrantztårnet*. Norsk lokalhistorisk instit
 Wikipedia. (2026). *Håkonshallen*, *Rosenkrantztårnet*, *Kristkirkene på Holmen i Bergen*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/H%C3%A5konshallen) (sekundærkilder: grunnflaten 37 x 16,4 m og trappegavlen etter Scholeus-stikket; stemmer med byleksikonet)
 
 Wikipedia. (2026). *Strandsiden (Bergen)*. Hentet 02.10.2026 fra [no.wikipedia.org](https://no.wikipedia.org/wiki/Strandsiden_(Bergen)) (sekundærkilde for bylova 1276 og utbyggingen etter 1300)
+
+Hartvedt, G. H. & Skreien, N. (2009). *Jonsklosteret*. Bergen byleksikon, Bergen byarkiv. Hentet 03.10.2026 fra [bergenbyarkiv.no](https://www.bergenbyarkiv.no/bergenbyleksikon/arkiv/1421675)
+
+Wikipedia. (2026). *Bryggen inscriptions*. Hentet 03.10.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Bryggen_inscriptions) (sekundærkilde: rundt 670 innskrifter, B 1, B 3, B 17, B 149, N B380)
+
+Historisk museum, Universitetet i Oslo. (u.å.). *Runer i middelalderbyene* (utstillingen «Kyss meg»). Hentet 03.10.2026 fra [historiskmuseum.no](https://www.historiskmuseum.no/utstillinger/utstillingsarkiv/kyss-meg-runenes-verden/runer-i-middelalderbyene/)
+
+Hansen, G. (u.å.). *1979 Frekke runepinner fra Bryggen*. Tohundre fortellinger, Universitetsmuseet i Bergen. Hentet 03.10.2026 fra [tohundrefortellinger.w.uib.no](https://tohundrefortellinger.w.uib.no/1979/09/15/1979-frekke-runepinner-fra-bryggen/)
 
 ### Kildeoppgavene (status 02.10.2026)
 

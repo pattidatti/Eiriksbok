@@ -416,3 +416,28 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Vågsbunnen og Auta allmenning ligger vest for `xwGard` (der gårdene slutter); `xw` i `bryggen.ts` er
   den vestre enden av byen etter det. Støttemuren under Øvregaten har en åpning for Auta-trappa
   (`GateOppsett.trapper`).
+
+## Stranden, Vågsbunnen og dagsplanene (verden2)
+
+- Test: `/test/bryggen-gard?sted=stranden` (Jonsbryggen, med færingen ved siden av), `?sted=gunnvor`
+  (oppdraget «Pinnene i gjørma»), `?sted=jonskirken`, `?sted=skostredet`. Legg til `&lys=dag|kveld|natt` og
+  `&dogn=0` for å se en fast del av dagen; `__bryggenLys.still(560)` (kveld) eller `still(820)` (natt) bytter
+  midt i spillet, og folkene går til de nye stedene. `?oppdrag=runer` tar oppdraget.
+
+| Fil | Hva |
+|---|---|
+| `bygg/strandliv.ts` | Den gåbare biten av Stranden (x -42 til 22): bolverk og Jonsbryggen (båten legger til, `finnLanding`), gata, Strandtorget med boder og brønn, familiene i laftehusene, naust, garnhjell, grisebinge, Jonskirken med kirkegård og det halvtomme klosterhuset. Grensa over Vågen har en åpning her (`STRAND_X`, bryggen.ts), og kulissen i `stranden.ts` hopper over biten |
+| `bygg/dagsplan.ts` | Dagsplaner (§8.7): morgen, dag, kveld, natt fra `lys.klokke`. Hver figur har en rute, «hjemme» eller `{ inn: dør }` per del; ved skifte går hen langs gata (`Vei`) til det nye stedet. Folk som står stille (`FasePlass.naar`) kommer og går bare når kameraet er unna eller ser en annen vei |
+| `bygg/vaagsbunnen-liv.ts` | Barn i Auta allmenning, svenner som arbeider ute (kar, hudramme, skinn), fyllikken Arnfinn og kona Tora (kveld), dyresonene og runepinnene i kvarteret |
+| `bygg/runepinner.ts`, `bygg/runeoppdrag.ts` | Seks ekte innskrifter fra Bryggen med kilde, og oppdraget «Pinnene i gjørma» (N) med `belonning`. Også navn, replikker og samtaler for de nye folkene (Gunnvor, presten i Jonskirken, Tora, Arnfinn, barna) |
+| `graboks/strandliv.ts`, `ui/Runekort.tsx` | Systemet: klokka til dagsplanene, dyrene, pinnene (glimt, plukke opp, kortet med runene som risses fram). Pinnen huskes som flagget `rune:<id>` i lagringen |
+| `motor/firbeint.ts`, `motor/dyr.ts` | Griser og hunder laget i kode, én InstancedMesh per art (nær med skygge, fjern uten), animert i vertex-shaderen. Cellene melder sonene sine (`meldDyreSoner`) |
+
+Regler:
+- Folk med dagsplan bygges med `lagDagsfolk` (samme form som `lagFolk`). Figurer som er hjemme, står
+  parkert under bakken (`Vandrer.byttRute(null)`): de tegnes ikke, animeres ikke og får ikke kollider.
+- Rutene i en dagsplan må ligge der det er fritt, og `Vei` i cella må gi en vei ut til gata som ikke går
+  gjennom hus (bak bodene på Strandtorget går den rundt vestenden).
+- Folk med `id` i Vågsbunnen (de oppdragene trenger) er der hele døgnet; de andre i verkstedene går hjem om natta.
+- Stranden og Vågsbunnen henger ikke sammen til fots: bommen over Skostredet stenger, så gutten ror over.
+- I Playwright går simuleringen mye saktere enn klokka (programvare-GL): vent på HUD-teksten, ikke på faste tider.

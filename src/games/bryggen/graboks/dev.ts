@@ -62,7 +62,7 @@ export function fotoSystem(): Spillsystem {
 }
 
 /** Startpunkter for `?sted=` (verdensrom, føttene) og retningen gutten ser. Målt i spillet 03.10.2026. */
-const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number }> = {
+const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number; baat?: [number, number, number] }> = {
     loft: { pos: [-5.5, 3.6, 9.5], yaw: 0 },
     hans: { pos: [-140.8, 0, 16.9], yaw: 0 },
     detmar: { pos: [-178.3, 0, 16.6], yaw: -Math.PI / 2 },
@@ -71,14 +71,20 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number }>
     kirke: { pos: [100.6, 2.05, 105.4], yaw: 0.15 },
     alter: { pos: [95.8, 2.05, 100.6], yaw: -0.54 },
     olstua: { pos: [38.2, 2.2, 74.0], yaw: 0.88 },
+    // Stranden og Vågsbunnen (verden2): bryggen på Stranden (med færingen ved siden av), Gunnvor, Jonskirken, Skostredet.
+    stranden: { pos: [-16.4, 0, -118.2], yaw: Math.PI, baat: [-19.6, -1.35, -118.0] },
+    gunnvor: { pos: [-28.5, 0, -134.6], yaw: Math.PI },
+    jonskirken: { pos: [-18, 0, -136.4], yaw: Math.PI },
+    skostredet: { pos: [-128, 0, 15], yaw: -Math.PI / 2 },
 };
 
 /** `?sted=`: flytt startpunktet før cellene rundt det lastes (bare i dev). */
-export function devStart(layout: { playerStart: THREE.Vector3; playerYaw: number }): void {
+export function devStart(layout: { playerStart: THREE.Vector3; playerYaw: number; boatStart?: THREE.Vector3 }): void {
     const s = DEV_STEDER[new URLSearchParams(location.search).get('sted') ?? ''];
     if (!s) return;
     layout.playerStart.fromArray(s.pos);
     layout.playerYaw = s.yaw;
+    if (s.baat) layout.boatStart?.fromArray(s.baat); // færingen følger med (Stranden)
 }
 
 /** `?oppdrag=` og `?hendelse=`: ta oppdrag og send hendelser når spillet er klart (bare i dev). */

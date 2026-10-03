@@ -206,6 +206,46 @@ export const DRAKTER = {
         belte: 0x1e140c, hoser: 0x2e2b28, sko: 0x1d1510, hette: 0x4a4440, hetteOppe: false, tut: 0.12, kappe: 0.15,
         mage: 0.4,
     },
+
+    // ── Familiene på Stranden og barna og fyllikken i Vågsbunnen (strandliv.ts, vaagsbunnen-liv.ts) ──
+    // Valgt for spillet [S], samme snitt som de andre norske byfolkene. Hva barn gikk med, og om de
+    // hadde sko, er ikke sjekket mot funnene [K].
+    /** Gamle Gunnvor på Stranden: grå kjortel til anklene, mørk hodeduk, foroverbøyd og tynn. */
+    gammelkone: {
+        navn: 'gammelkone', hud: 0xcf9f86, haar: 0xb9b2a6, kjortel: 0x5a5650, kjortelNed: 0.44, belte: 0x2e241c,
+        hoser: 0x3e3a35, sko: 0x2a2018, hette: 0x4a4440, hetteOppe: true, tut: 0.03, kappe: 0.24,
+        slank: 0.45,
+    },
+    /** Husmannen på Stranden: kort brun kjortel til arbeid, hetta nede, skjegg. */
+    husmann: {
+        navn: 'husmann', hud: 0xc99478, haar: 0x6a4e34, skjegg: 0x6e5236, kjortel: 0x5e4c38, kjortelNed: 0.0,
+        belte: 0x2a1d14, hoser: 0x4a463e, sko: 0x2b1f17, hette: 0x6a6052, hetteOppe: false, tut: 0.14, kappe: 0.16,
+        mage: 0.15,
+    },
+    /** Husfrua: grønngrå kjortel til anklene, ufarget hodeduk. */
+    husfrue: {
+        navn: 'husfrue', hud: 0xd8a588, haar: 0x7a5636, kjortel: 0x58604c, kjortelNed: 0.42, belte: 0x3a2a1e,
+        hoser: 0x4a4038, sko: 0x33251b, hette: 0xd2c8b2, hetteOppe: true, tut: 0.03, kappe: 0.2,
+        slank: 0.3,
+    },
+    /** En gutt på 8-9 år: kort kjortel, barbeint-mørke sko, stort hode. */
+    gutt: {
+        navn: 'gutt', hud: 0xe0b196, haar: 0xb08a58, kjortel: 0x7a6a52, kjortelNed: -0.08, belte: 0x3b2a1e,
+        hoser: 0x5b5047, sko: 0x3a2a1f, hette: 0x8a7d66, hetteOppe: false, tut: 0.1, kappe: 0.13,
+        slank: 0.75, hode: 1.16,
+    },
+    /** Ei jente på 8-9 år: kjortel til leggen, håret synes. */
+    jente: {
+        navn: 'jente', hud: 0xe3b59a, haar: 0x8a5a34, kjortel: 0x7c5a48, kjortelNed: 0.3, belte: 0x3b2a1e,
+        hoser: 0x5b5047, sko: 0x3a2a1f, hette: 0x9a8a70, hetteOppe: false, tut: 0.06, kappe: 0.13,
+        slank: 0.75, hode: 1.16,
+    },
+    /** Fyllikken i Vågsbunnen: en skomakersvenn i skitten, slitt kjortel, hetta på skakke. */
+    fyllik: {
+        navn: 'fyllik', hud: 0xd09a86, haar: 0x5a4430, skjegg: 0x5e4834, kjortel: 0x4c4840, kjortelNed: 0.02,
+        belte: 0x2a2018, hoser: 0x3c3832, sko: 0x241810, hette: 0x5a4a3a, hetteOppe: false, tut: 0.2, kappe: 0.15,
+        mage: 0.2,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
@@ -215,6 +255,7 @@ export const HOYDE: Record<FigurNavn, number> = {
     fiskekone: 1.58, kornselger: 1.73, bondekone: 1.55, bodker: 1.7, kjopekone: 1.61, borger: 1.75, tjenestejente: 1.54,
     tyv: 1.68, prest: 1.72, vakt: 1.82, skriver: 1.7, klokker: 1.66, olkone: 1.6,
     skomaker: 1.7, skomakersvenn: 1.74, baker: 1.72, bakerdreng: 1.5, gullsmed: 1.73, buntmaker: 1.68, barberer: 1.76, smed: 1.84,
+    gammelkone: 1.5, husmann: 1.72, husfrue: 1.6, gutt: 1.26, jente: 1.22, fyllik: 1.73,
 };
 
 /**
