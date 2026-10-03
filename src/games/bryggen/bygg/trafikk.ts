@@ -177,6 +177,9 @@ class Seiler {
     private readonly fot: SkrogFot;
     private readonly vl: { L: number; B: number; fyldig: number; forut: number };
     private readonly kol: ReturnType<Physics['addMovingHull']>;
+    /** Sikt-skjermer (kastellene, og seilet når det er satt) for navneskiltene. */
+    private readonly skjerm: NonNullable<ReturnType<Physics['addMovingHull']>>[] = [];
+    private seilSkjerm: ReturnType<Physics['addMovingHull']> = null;
     private heling = 0;
     private seilet = 1;
 
@@ -202,6 +205,13 @@ class Seiler {
         skrogKollider(c, sp);
         const pts = c.specs.flatMap((s) => (s.kind === 'hull' ? s.points : []));
         this.kol = phys.addMovingHull(pts);
+        for (const sk of info.skjerm ?? []) {
+            const h = phys.addMovingHull(sk, true);
+            if (h) this.skjerm.push(h);
+        }
+        const seil: THREE.Vector3[] = [];
+        for (const x of [-ra.halv, ra.halv]) for (const y of [ra.bunn, ra.y]) for (const dz of [-0.15, ra.halv * 0.16]) seil.push(new THREE.Vector3(x, y, ra.z + dz));
+        this.seilSkjerm = phys.addMovingHull(seil, true);
     }
 
     update(t: number, dt: number, kamera: THREE.Vector3): SkrogFot {
@@ -231,6 +241,8 @@ class Seiler {
         this.root.rotation.z = (hB - hS) / (2 * b) + Math.sin(t * 0.83) * 0.012 + this.heling;
         this.root.visible = this.root.position.distanceTo(kamera) < 190;
         this.kol?.flytt(x, WATER_Y, z, f.yaw);
+        for (const sk of this.skjerm) sk.flytt(x, WATER_Y, z, f.yaw);
+        this.seilSkjerm?.flytt(x, this.satt.visible ? WATER_Y : -100, z, f.yaw);
         const fot = this.fot;
         fot.x = x + fx * this.vl.forut;
         fot.z = z + fz * this.vl.forut;
@@ -240,6 +252,8 @@ class Seiler {
 
     dispose(): void {
         this.kol?.fjern();
+        for (const sk of this.skjerm) sk.fjern();
+        this.seilSkjerm?.fjern();
         this.root.traverse((o) => {
             if (o instanceof THREE.Mesh) o.geometry.dispose();
         });

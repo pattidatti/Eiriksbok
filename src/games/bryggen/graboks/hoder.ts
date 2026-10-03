@@ -9,8 +9,8 @@
 //  - Navnet: nærmere enn NAVN_R, eller når figuren har et oppdragsmerke.
 //  - Merket: nærmere enn MERKE_R. Gull «!» = har et oppdrag til deg, gull «?» = du kan levere,
 //    grå «?» = du er i gang med oppdraget hen ga deg.
-//  - Ingenting synes gjennom vegger: en stråle fra kameraet til hodet (kolliderne i verden) sjekkes
-//    noen ganger i sekundet per figur.
+//  - Ingenting synes gjennom vegger: en stråle fra kameraet til hodet (kolliderne i verden og
+//    sikt-skjermene på skipene) sjekkes noen ganger i sekundet per figur.
 import * as THREE from 'three';
 import type { Physics } from '../motor/physics';
 
@@ -161,8 +161,8 @@ export class Hoder {
                 el.sjekk = 0.2 + Math.random() * 0.1;
                 _d.subVectors(_h, kam);
                 const len = _d.length();
-                const hit = len > 0.5 ? this.phys.rayWorld(kam, _d.divideScalar(len), len - 0.4) : null;
-                el.skjult = hit ? 1 : 0;
+                // `raySikt` ser også skjermene (kastellene og seilene på skipene, physics.ts).
+                el.skjult = len > 0.5 && this.phys.raySikt(kam, _d.divideScalar(len), len - 0.4) ? 1 : 0;
             }
             const maal = el.skjult ? 0 : 1;
             el.opac += (maal - el.opac) * Math.min(1, dt * 10);

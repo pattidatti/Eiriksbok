@@ -6,6 +6,7 @@
 // - `window.__bryggenFolk()` gir folkene i de lastede cellene (drakt, posisjon, retning).
 import * as THREE from 'three';
 import type { Character } from '../motor/character';
+import type { Spillsystem } from './system';
 
 interface Dev {
     __bryggenFoto?: { pos: number[]; look: number[] };
@@ -37,4 +38,21 @@ function folkListe(scene: THREE.Scene): { navn: string; pos: number[]; yaw: numb
         }
     });
     return ut;
+}
+
+/**
+ * Fotokameraet også for navneskiltene: løkka tegner hodene før `devVerktoy` flytter kameraet, så
+ * uten dette sto skiltene der gutten ser, ikke der bildet er tatt fra (bare i dev).
+ */
+export function fotoSystem(): Spillsystem {
+    return {
+        navn: 'foto',
+        bilde: (_dt, kamera) => {
+            const foto = (window as Dev).__bryggenFoto;
+            if (!foto) return;
+            kamera.position.fromArray(foto.pos);
+            kamera.lookAt(foto.look[0], foto.look[1], foto.look[2]);
+            kamera.updateMatrixWorld();
+        },
+    };
 }
