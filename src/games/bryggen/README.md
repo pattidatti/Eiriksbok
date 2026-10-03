@@ -124,6 +124,11 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `graboks/syrytme.ts`, `ui/Syrytme.tsx` | Sy sålen hos mester Hans: hull glir mot nåla i takt med hammeren, A for øvre rad, D for nedre. Dømmes etter når tasten ble trykket (`InputFrame.trykt`), ikke når steget kom |
 | `graboks/messe.ts`, `ui/Messe.tsx` | Lyset fra sidealteret til høyalteret (saktere gange, flammen slukner av løp og hopp), og svarene på latin (1-3) med bjella når presten løfter brødet. Stedene står i `mariakirken-inne.ts` |
 | `graboks/terning.ts`, `ui/Terning.tsx` | Tre runder terning med Einar i ølstua, med jukseterningen fra Vågsbunnen (2) og sjansen for å bli tatt |
+| `bygg/byen-oppdrag.ts` | Kongens menn på Holmen: «Budet til Bergenhus» (tre mål: spør vakta, hør dagens ord, si det i porten) og «Brann i lagerhuset», samtalene med høvedsmannen (om kongen) og gjaldkeren, og «Dette vet vi» om tyveribolken i bylova |
+| `bygg/holmenvei.ts` | Kongens vaktbu på veien til Holmen: vaktsonen med staur og tau, vedstabler, kassestabler, kjerra og tønnene å gjemme seg bak, kongens skattefisk. `HOLMEN.xe` (kaienden) og `holmenVerden(u, y, z)` regner fra veiens rom |
+| `graboks/holmenvakt.ts`, `ui/Snik.tsx` | Vaktene Ulf (runde) og Kolbein (speider ved vaktbua), og vakta i porten: synsfelt tegnet på bakken (stråler som stoppes av det som står i veien), synsmåler over hodet, vaktskiftet der ordet sies, porten som stenger uten ordet, tyveri av skattefisken |
+| `graboks/ettersokt.ts`, `ui/Ettersokt.tsx` | Ettersøkt (blueprint §8.2): mistenkt, etterlyst, jaget. Synker når ingen ser gutten. Utveier: bot til en vakt (E), eller tatt og ført til gjaldkeren (svart overgang, dommen, tyveribolken) |
+| `graboks/brann.ts`, `ui/Brann.tsx` | Brannen i lagerhuset: rop «Brann!», folk løper til en bøttekjede fra kaia, kast bøtta i takt (mellomrom), slå ut gnister på nabohusene (Q, E) |
 | `ui/Aktiviteter.tsx` | Velger HUD-komponenten for aktivitetene i sideoppdragene (`HudState.system`), tegnet fra `ui/Hud.tsx` |
 | `graboks/flytere.ts`, `graboks/dev.ts` | Skadetallene i kampen, og utviklerverktøyene (flyttet ut av `game.ts`) |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
@@ -416,3 +421,24 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Vågsbunnen og Auta allmenning ligger vest for `xwGard` (der gårdene slutter); `xw` i `bryggen.ts` er
   den vestre enden av byen etter det. Støttemuren under Øvregaten har en åpning for Auta-trappa
   (`GateOppsett.trapper`).
+
+## Kongens menn på Holmen (byen)
+
+- Høvedsmannen står foran vestgavlen på hallen og svarer på hvor kongen er (Erik av Pommern, krigen
+  med hansabyene). Han har ikke navn: hvem som var høvedsmann i 1426, er ikke funnet [K]. Gjaldkeren
+  Sjur [S] står ved skriverboden og gir «Brann i lagerhuset». Draktene `hovedsmann` og `gjaldker` står i `folk.ts`.
+- «Budet til Bergenhus»: vakta i porten slipper ingen tysker inn uten dagens ord. Ordet sies når Ulf kommer
+  til vaktbua og Kolbein svarer. Gutten må stå innenfor den blå ringen uten å bli sett (bak vaktbua, langs
+  ringmuren bak ryggen til vakta i porten, eller bak kassene). Porten skyver ham tilbake uten ordet.
+- Synet: rekkevidde 10 m og 38° til hver side (13 m og 52° når de er etterlyst eller jager), stråler fra
+  hoftehøyde stoppes av alt med kollider (også prop). Kolliderne til det man gjemmer seg bak er vanlige
+  verdenskollidere og minst 1,55 m høye: strålen fra øyet til brystet går over noe lavere.
+- Synsfeltene vises når gutten er nær vaktbua, gule når de gjelder (i vaktsonen, ettersøkt, rett etter
+  tyveri) og bleke ellers. Måleren fylles fortere jo nærmere og fortere gutten er.
+- Ettersøkt er eget system (`ETTERSOKT` i ettersokt.ts): andre systemer kaller `sett(p)`, `ser(p)` og
+  `meld(niva, grunn)`. Vaktene som tar imot bot står i `VAKTPERSONER`. Boten og dommen går gjennom
+  belønningskontrakten (`witten:-n`, `rykte:B:-n`). Samtalen hos gjaldkeren bruker `ettersokt:fri`.
+- `HOLMEN.brann`: mens det brenner, står Ulf og Kolbein i bøttekjeden (brann.ts) og ser ingenting.
+- Dev: `?sted=holmenveien|porten|muren|lytte|borggard|lagerhus` og `?oppdrag=bergenhus` eller `?oppdrag=brann`.
+  Eksempel: `/test/bryggen-gard?sted=lytte&oppdrag=bergenhus&hendelse=snakk:vakta` står bak vaktbua, klar til å lytte.
+  `__bryggenVakter()` (bare i dev) viser vaktene: posisjon, modus, synsmåler.

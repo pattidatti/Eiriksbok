@@ -9,7 +9,7 @@
 | id (foreløpig) | `bryggen-1429` |
 | Parent (Fag) | Historie (kobles også til samfunnskunnskap og KRLE) |
 | Emner i boka | `historie/middelalderen/hanseatene`, `historie/norsk-middelalder/hansadrapet-1455` |
-| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Øvregaten med ølstua, Mariakirken innvendig og veien til Bergenhus med borggården kan gås til, og oppdragene «Brev til Mariakirken» og «Budet til Bergenhus» kan spilles til ende, bygget 02.10.2026, venter på eierens spilltest. Navn ikke valgt |
+| Status | Følelse og motor godkjent av eieren 02.10.2026. Første gård bygget av modulsettet, godkjent av eieren 02.10.2026 («ser skambra ut», også uten lyseffektene). Kvalitet byttes med knapp/G mens spillet går. Nabogårdene bygget av modulsettet 02.10.2026, eieren spiller på full. Utkraging og glugger godkjent av eieren 02.10.2026 («ser bra ut»). Schøtstua kan gås inn i (ildsted, ljore, benker, bord), bygget 02.10.2026, venter på eierens spilltest. Bua og lagerloftet i vestre forhus kan gås inn i (tørrfisk, bismer, gjeldsbok, trapp, svalgangsdør), bygget 02.10.2026, venter på eierens spilltest. Mariakirken står som kulisse bak gårdene i nordenden (tvillingtårn, basilika, gotisk kor, tynnere tåke så den synes fra Vågen), bygget 02.10.2026, venter på eierens spilltest. Figurer med klær (junge, husbonde, svenn, skutedreng, stuedreng) og sju folk som sitter og jobber i bua og schøtstua, bygget 02.10.2026, venter på eierens spilltest. Øvregaten med ølstua, Mariakirken innvendig og veien til Bergenhus med borggården kan gås til, og oppdragene «Brev til Mariakirken» og «Budet til Bergenhus» kan spilles til ende, bygget 02.10.2026, venter på eierens spilltest. Kongens menn på Holmen (høvedsmann uten navn [K], gjaldker, vakter med synsfelt), «Budet til Bergenhus» med sniking, vaktrunder og dagens ord, ettersøkt med tre nivåer, bot og gjaldkeren (§8.2), og «Brann i lagerhuset» med bøttekjede, bygget 03.10.2026, venter på eierens spilltest. Navn ikke valgt |
 | Gråboks | `/test/bryggen-graboks` (egen rute, ikke i galleriet) |
 | Første gård | `/test/bryggen-gard` (`?kvalitet=lav` for lav-nivået) |
 | Motor | **A**: ny, liten Three.js-motor i `src/games/bryggen/motor/` (valgt, se §9) |
@@ -273,10 +273,10 @@ Fraksjonene: **K** Kontoret, **B** Bergenhus/kongens menn, **N** norske borgere 
 | Aktivitet | Mekanikk | Læringsmål | Fraksjon |
 |---|---|---|---|
 | **Runepinnen** | Les og risse runer på trepinner: eierlapper på varer, beskjeder, en bønn. Puslespill med runealfabetet | På Bryggen er det funnet 597 runeinnskrifter, mest på trepinner [V]. Folk skrev i hverdagen | N, K |
-| **Brannvakt og bøttekjede** | Patruljér gårdene om natta og finn ulovlig ild; når det brenner, organiser bøttekjeden før det sprer seg | Ildforbudet og hvorfor (brannene 1248, 1476, 1702) [V] | K, N |
+| **Brannvakt og bøttekjede** | Patruljér gårdene om natta og finn ulovlig ild; når det brenner, organiser bøttekjeden før det sprer seg. *Første utgave bygget 03.10.2026 ved lagerhusene på veien til Holmen (`graboks/brann.ts`): rop, bøttekjede i takt, gnister* | Ildforbudet og hvorfor (brannene 1248, 1476, 1702) [V] | K, N |
 | **Jekta kommer** | Møt en nordlandsfisker på kaia; samtale der du ser handelen fra *hans* side, med gjelden fra fjoråret | Perspektivbytte: fiskerens liv | F |
 | **Skomakerverkstedet i Skostredet** | Syrytme og lærstykker; senere en sperret gate du må forhandle deg gjennom | De tyske håndverkerne og konflikten med Kontoret [V] | N, K |
-| **Budet til Bergenhus** | Lever et brev til kongens skriver gjennom porten på Holmen: sniking, passord, timing på vaktene | Kongens makt og hvor den satt | B |
+| **Budet til Bergenhus** | Lever et brev til kongens skriver gjennom porten på Holmen: sniking, passord, timing på vaktene. *Bygget 03.10.2026: synsfelt på bakken, vaktskiftet der ordet sies, porten stengt uten ordet (`graboks/holmenvakt.ts`)* | Kongens makt og hvor den satt | B |
 | **Ølstua i Øvregaten** | Terningspill med innsats og juks; slåsskamp hvis du blir tatt. Fyllas mørke side vises med alvor | Byliv og fattigdom | N |
 | **Rottejakt på lagerloftet** | Fang rotter før de ødelegger fisken, med katt og feller | Lagring av mat og tap | K |
 | **Messe i Mariakirken** | Bære lys og svare i messen på latin uten å bomme; lær hvorfor Kontoret hadde sin egen kirke (1408) [V] | Kirken og tyskernes egen kirke | Ki, K |
@@ -311,6 +311,8 @@ sjekkes mot en trykt norsk oversettelse]:**
 | Stjeler for en halv mark | Bot på 13 mark og 8 ertog, eller landsforvist | Drept |
 | Stjeler for en mark eller mer | Straffes av kongens mann, men beholder livet | Mister jord, eiendom og livet |
 | Den bestjålne tar tyven med godset | Godset bindes på ryggen hans (om det er vitner), og han føres bundet til *gjaldkeren*, kongens mann som holdt orden i byen | |
+
+*Bygget 03.10.2026 (`graboks/ettersokt.ts`):* mistenkt, etterlyst og jaget på veien til Holmen; nivået synker når ingen ser gutten; bot til en vakt eller ført til gjaldkeren, med tyveribolken som «Dette vet vi». Hunder, bytinget og Kontorets egen rett gjenstår.
 
 Dette passer spillet: den første sulten er tilgitt, og straffen øker for hver gang. Fattigdom og
 hardhet i samme lov. Slagsmål og drap (mannhelgebolken) er ikke oversatt ennå **[K]**.

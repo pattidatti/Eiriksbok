@@ -20,6 +20,7 @@ import { BAKKE, BORG_HUS, HALL, HUS, PORT } from './holmen';
 import { lagFolk, type Plass } from './folk';
 import type { Rute } from './vandrer';
 import { STEIN } from './stein';
+import { HOLMEN, byggVaktomraade } from './holmenvei';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -29,6 +30,9 @@ export const HOLMEN_D = 24;
 const VEI = { front: 0.3, grense: 31.3 };
 /** Borggården i Holmens rom: fra innsida av ringmuren til grensa mot hallen. */
 const BORG = { x0: PORT.x + 0.8, x1: 36, z0: -2, z1: 44 };
+/** Gjaldkeren ved skriverboden og høvedsmannen foran hallen, i Holmens rom (ettersokt.ts fører gutten hit) [S]. */
+export const GJALDKER_LOKAL = { x: 26.2, z: 25.2 };
+export const HOVEDSMANN_LOKAL = { x: 15.0, z: 21.2, yaw: -1.7 };
 
 /** Et lagerhus eller naust ved veien, gavlen mot sjøen [S]. */
 function lager(w: number, l: number, floors: number[], roof: 'torv' | 'bordtak', tone: number, hue: [number, number, number]): HouseSpec {
@@ -90,6 +94,8 @@ async function buildVeiCell(mats: Materials, x0: number, x1: number, vest: numbe
     c.matrix = new THREE.Matrix4();
     c.box((x0 + x1) / 2 + 0.6, 3, VEI.grense, x1 - x0 + 1.2, 6, 0.2);
     for (const [x, z, t] of [[x0 + 2.2, 4.1, 0.9], [x0 + 2.9, 4.5, 0.8], [x1 - 6.5, 4.2, 0.95]] as const) tonne(k, c, x, z, t);
+    // Kongens vaktbu, vaktsonen og tingene å gjemme seg bak («Budet til Bergenhus», holmenvei.ts).
+    byggVaktomraade(k, c, x0);
 
     // En svenn fra Kontoret går langs kaia og ser bort mot Holmen [S].
     const ruter: Rute[] = [{
@@ -197,6 +203,10 @@ async function buildBorgCell(mats: Materials, hx: number): Promise<CellContent> 
         { figur: 'vakt', rolle: 'staa', pos: P(mx - half - 0.9, 0, PORT.z - PORT.w / 2 - 0.9), yaw: VEST, id: 'vakta' },
         { figur: 'vakt', rolle: 'staa', pos: P(mx + half + 0.8, BAKKE, PORT.z + PORT.w / 2 + 0.9), yaw: Math.PI },
         { figur: 'skriver', rolle: 'skrive', pos: P(sk.x + 0.25, BAKKE, sk.z), yaw: VEST, id: 'skriveren' },
+        // Kongens menn (byen-oppdrag.ts): gjaldkeren ved skriverboden, høvedsmannen midt i borggården med en vakt.
+        { figur: 'gjaldker', rolle: 'staa', pos: P(GJALDKER_LOKAL.x, BAKKE, GJALDKER_LOKAL.z), yaw: VEST, id: 'gjaldkeren', samtale: 'gjaldker' },
+        { figur: 'hovedsmann', rolle: 'staa', pos: P(HOVEDSMANN_LOKAL.x, BAKKE, HOVEDSMANN_LOKAL.z), yaw: HOVEDSMANN_LOKAL.yaw, id: 'hovedsmannen', samtale: 'hovedsmann' },
+        { figur: 'vakt', rolle: 'staa', pos: P(HOVEDSMANN_LOKAL.x + 0.8, BAKKE, HOVEDSMANN_LOKAL.z + 1.7), yaw: HOVEDSMANN_LOKAL.yaw + 0.2 },
     ];
     const ruter: Rute[] = [{
         figur: 'vakt', fart: 0.85, start: 0,
@@ -216,6 +226,7 @@ async function buildBorgCell(mats: Materials, hx: number): Promise<CellContent> 
  */
 export function holmenCeller(mats: Materials, xe: number, vest: number | undefined): CellDef[] {
     const hx = xe + HOLMEN_D;
+    HOLMEN.xe = xe;
     return [
         {
             id: 'holmenveien',

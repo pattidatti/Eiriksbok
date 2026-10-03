@@ -43,6 +43,12 @@ export const PERSONER: Record<string, Person> = {
     bard: { navn: 'Bård', tittel: 'nordlandsfisker, Ottars bror' },
     einar: { navn: 'Einar', tittel: 'fisker' },
     detmar: { navn: 'Detmar', tittel: 'skomakersvenn' },
+    // Kongens menn på Holmen (byen-oppdrag.ts). Høvedsmannen har ikke navn: hvem det var i 1426, er
+    // ikke funnet [K]. Sjur, Ulf og Kolbein er laget for spillet [S].
+    hovedsmannen: { navn: 'Høvedsmannen', tittel: 'kongens mann på Bergenhus' },
+    gjaldkeren: { navn: 'Sjur', tittel: 'gjaldker, kongens mann i byen' },
+    'vakt-ulf': { navn: 'Ulf', tittel: 'vakt på kongens vei' },
+    'vakt-kolbein': { navn: 'Kolbein', tittel: 'vakt ved vaktbua' },
 };
 
 /** Tittelen når en figur ikke har eget navn: drakten sier hva hen er. */

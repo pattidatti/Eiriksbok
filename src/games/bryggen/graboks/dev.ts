@@ -71,6 +71,13 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number }>
     kirke: { pos: [100.6, 2.05, 105.4], yaw: 0.15 },
     alter: { pos: [95.8, 2.05, 100.6], yaw: -0.54 },
     olstua: { pos: [38.2, 2.2, 74.0], yaw: 0.88 },
+    // Holmen (byen-oppdrag.ts): kaienden, foran porten, langs ringmuren bak vakta, bak vaktbua, ved gjaldkeren, ved lagerhusene.
+    holmenveien: { pos: [131.5, 0.3, 3.4], yaw: Math.PI / 2 },
+    porten: { pos: [148.6, 0.3, 15.2], yaw: Math.PI / 2 },
+    muren: { pos: [152.6, 0.3, 19.0], yaw: 0 },
+    lytte: { pos: [150.4, 0.3, 26.2], yaw: -1.6 },
+    borggard: { pos: [178.5, 0.9, 25.2], yaw: Math.PI / 2 },
+    lagerhus: { pos: [138.0, 0.3, 24.0], yaw: 0 },
 };
 
 /** `?sted=`: flytt startpunktet før cellene rundt det lastes (bare i dev). */
