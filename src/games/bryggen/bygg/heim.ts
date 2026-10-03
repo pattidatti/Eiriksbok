@@ -178,7 +178,7 @@ export function vugge(k: MeshKit): void {
 }
 
 /** En krakk på tre bein (setet 0,45 m over golvet). */
-function krakk(k: MeshKit, c: ColliderKit, x: number, z: number): void {
+export function krakk(k: MeshKit, c: ColliderKit, x: number, z: number): void {
     const y = GOLV_Y;
     k.withTint({ top: 0.75, bottom: 0.7, hue: WARM }, () => {
         k.log('raatre', V(x, y + 0.4, z), V(x, y + 0.45, z), 0.2, 9, true);

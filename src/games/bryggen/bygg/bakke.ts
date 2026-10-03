@@ -103,22 +103,33 @@ export interface BakkeOpts {
     rusk?: number;
 }
 
-/** En liten stein: åtte skjeve trekanter rundt et punkt, halvt nede i bakken. */
+/** En liten stein: en flat, rund kuppel av seks skjeve trekanter, det meste nede i gjørma. */
 function stein(k: MeshKit, x: number, y: number, z: number, r: number, rnd: () => number): void {
-    const jit = () => r * (0.75 + rnd() * 0.5);
     const rot = rnd() * Math.PI;
     const c = Math.cos(rot);
     const sn = Math.sin(rot);
+    const lang = 0.8 + rnd() * 0.5;
     const pt = (dx: number, dy: number, dz: number) => new THREE.Vector3(x + dx * c - dz * sn, y + dy, z + dx * sn + dz * c);
-    const topp = pt(0, jit() * 0.7, 0);
-    const bunn = pt(0, -r * 0.5, 0);
-    const ring = [pt(jit(), 0, 0), pt(0, 0, jit() * 0.8), pt(-jit(), 0, 0), pt(0, 0, -jit() * 0.8)];
+    const topp = pt(0, r * (0.3 + rnd() * 0.15), 0);
+    const N = 6;
+    const ring: THREE.Vector3[] = [];
+    const midt: THREE.Vector3[] = [];
+    for (let i = 0; i < N; i++) {
+        const a = (i / N) * Math.PI * 2;
+        const rr = r * (0.8 + rnd() * 0.35);
+        ring.push(pt(Math.cos(a) * rr * lang, -0.01, Math.sin(a) * rr));
+        midt.push(pt(Math.cos(a) * rr * lang * 0.6, topp.y - y - r * 0.1, Math.sin(a) * rr * 0.6));
+    }
     const uv = (p: THREE.Vector3): [number, number] => [p.x * 1.7, p.z * 1.7 + p.y];
-    for (let i = 0; i < 4; i++) {
+    // Lys stein (kleberstein og gråstein i gjørma), litt mørkere nede mot kanten.
+    for (let i = 0; i < N; i++) {
         const a = ring[i];
-        const b = ring[(i + 1) % 4];
-        k.tri('stein', b, a, topp, uv(b), uv(a), uv(topp), [0.75, 0.75, 1.05]);
-        k.tri('stein', a, b, bunn, uv(a), uv(b), uv(bunn), [0.6, 0.6, 0.6]);
+        const b = ring[(i + 1) % N];
+        const ma = midt[i];
+        const mb = midt[(i + 1) % N];
+        k.tri('stein', b, a, ma, uv(b), uv(a), uv(ma), [0.95, 0.95, 1.2]);
+        k.tri('stein', b, ma, mb, uv(b), uv(ma), uv(mb), [0.95, 1.2, 1.2]);
+        k.tri('stein', mb, ma, topp, uv(mb), uv(ma), uv(topp), [1.2, 1.2, 1.3]);
     }
 }
 

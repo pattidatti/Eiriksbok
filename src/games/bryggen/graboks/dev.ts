@@ -96,6 +96,8 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number; b
     // Inn i husene på Stranden (heim.ts): foran døra til stua der Åsa vever, og foran naustet.
     stua: { pos: [-32.6, 0, -138.3], yaw: -Math.PI / 2 },
     naustet: { pos: [-37, 0, -122.6], yaw: Math.PI },
+    // Stua bak verkstedene i Vågsbunnen (bolig.ts): foran den åpne døra.
+    bolig: { pos: [-124.3, 0, 35.5], yaw: -Math.PI / 2 },
     aasa: { pos: [-37.3, 0.2, -138.95], yaw: -Math.PI / 2 },
     // Veien til fots (strandgaten.ts): foran bommen, bak den i gata, på kaia langs bunnen av Vågen, og på Strandgaten.
     bommen: { pos: [-178.8, 0, 15.5], yaw: -Math.PI / 2 },

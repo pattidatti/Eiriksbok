@@ -24,7 +24,10 @@ import type { Materials } from '../motor/materials';
 import type { CellContent, CellDef, Rom, Sted } from '../motor/streaming';
 import { Ild } from '../motor/ild';
 import { COLD, DARK, FRONT_Z, GARD_DEPTH, T, WARM, kai, kaiJog, toGroup, tonne, type Sides } from './gard';
-import { hus, husLod, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { eaveY, hus, husLod, riseOf, rng, trekkGlugger, type HouseSpec } from './moduler';
+import { bakPortaler, Portaler } from '../motor/portal';
+import { romIHus } from './inne';
+import { bolig } from './bolig';
 import { LUKE_OPPE, lukeForm, lukeKlaff, skiltHeng, verksted, type Fag, type VerkstedSpec } from './verksted';
 import { Uro } from './uro';
 import { korskirken, mikaelskirken } from './kirker-vaagsbunnen';
@@ -152,6 +155,9 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
     const royk: THREE.Vector3[] = [];
     const ilder: Ild[] = [];
     const plasser: Plass[] = [];
+    /** Stua man kan gå inn i (bolig.ts), med ilden sin: tegnes bare gjennom åpningene. */
+    let boligInne: THREE.Group | null = null;
+    const boligIld: Ild[] = [];
     let dorer: THREE.Vector3[] = [];
     let ruin: THREE.Vector3 | null = null;
     const steder: Sted[] = [];
@@ -260,7 +266,25 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
 
     // Bak verkstedene: i øst bolighus med gjerder og ved, i vest ruinen av Mikaelskirken.
     if (del === 'o') {
-        dorer = bakgard(k, c, lod, mats, x0, auta, r);
+        dorer = bakgard(k, c, lod, mats, x0, auta, r, (spec, m, a0) => {
+            // Stua til skomakersvennen (bolig.ts): tegnes bare gjennom døra, gluggene og ljoren (portal.ts).
+            const bk = new MeshKit();
+            bk.matrix = m.clone();
+            const bc = new ColliderKit();
+            bc.matrix = m.clone();
+            const portaler = new Portaler(k.aapninger.slice(a0), romIHus(spec, 1).map((rr) => rr.box.clone().applyMatrix4(m)));
+            const info = bolig(bk, bc, spec, rng(1331));
+            boligInne = bakPortaler(toGroup(bk, mats, 'bolig:inne', false), portaler);
+            c.specs.push(...bc.specs);
+            rom.push({ box: info.rom.box.clone().applyMatrix4(m), demp: info.rom.demp });
+            for (const p of info.folk) plasser.push({ ...p, pos: p.pos.clone().applyMatrix4(m), bak: portaler, id: undefined });
+            const f = new Ild({ smokeTop: eaveY(spec) + riseOf(spec) - 0.3 - info.ild.y, spread: 0.4 });
+            f.group.position.copy(info.ild).applyMatrix4(m);
+            boligIld.push(f);
+            boligInne.add(f.group);
+            ild.push(f.group.position.clone().setY(f.group.position.y + 0.5));
+            royk.push(V(0, eaveY(spec) + riseOf(spec), spec.l * 0.55).applyMatrix4(m));
+        });
     } else {
         const mx = (x0 + x1) / 2 + 2;
         const mz = 41;
@@ -323,19 +347,22 @@ async function byggCelle(mats: Materials, x0: number, x1: number, del: 'o' | 'v'
     meldDyreSoner(`vaagsbunnen-${del}`, liv.soner);
     meldPinner(`vaagsbunnen-${del}`, liv.pinner);
     near.add(naer, uten, inne, folk.group, uro.group);
+    if (boligInne) near.add(boligInne);
     const mid = new THREE.Mesh(lod.bucket('mork').toGeometry(), mats.lodMaterial());
     mid.name = `vaagsbunnen-${del}:lod`;
     return {
-        near, mid, inne: [inne], samlet: { delt: [naer], samlet: uten },
+        near, mid, inne: boligInne ? [inne, boligInne] : [inne], samlet: { delt: [naer], samlet: uten },
         colliders: [...c.specs, ...folk.colliders], rom, ild, royk, drypp: k.skjegg, steder,
         gaaende: folk.gaaende, snakkbare: folk.snakkbare,
         tick: (t, dt, ctx) => {
             ilder.forEach((f) => f.update(t, dt));
+            boligIld.forEach((f) => f.update(t, dt));
             folk.tick(t, dt, ctx);
             uro.tick(t, dt, ctx.kamera);
         },
         dispose: () => {
             ilder.forEach((f) => f.dispose());
+            boligIld.forEach((f) => f.dispose());
             folk.dispose();
             uro.dispose();
             glodMat.dispose();
@@ -416,7 +443,7 @@ function bom(k: MeshKit, c: ColliderKit, x: number): void {
  * Bak verkstedene i øst: to bolighus for håndverkerne med gavlen mot gata, gjerder, vedstabler og
  * en brønn. Hvordan de bodde, er ikke funnet [K]; husene er av modulsettet [S].
  */
-function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: number, x1: number, r: () => number): THREE.Vector3[] {
+function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: number, x1: number, r: () => number, inneHus?: (spec: HouseSpec, m: THREE.Matrix4, a0: number) => void): THREE.Vector3[] {
     const toner = [WARM, COLD, DARK];
     const dorer: THREE.Vector3[] = [];
     let x = x1 - 1.5;
@@ -429,12 +456,20 @@ function bakgard(k: MeshKit, c: ColliderKit, lod: MeshKit, mats: Materials, x0: 
             doors: [{ side: r() < 0.5 ? -1 : 1, z: 1.3 }],
         };
         spec.glugger = trekkGlugger(spec, spec.doors![0].side, true, rng(i * 17 + 5));
+        // Det første huset er stua man kan gå inn i (bolig.ts): døra står åpen, og det ryker fra ljoren.
+        // Trekningene over er de samme, så husene står der de sto.
+        if (i === 0 && inneHus) {
+            spec.inne = { ljore: { z: spec.l * 0.55, len: 1.2, down: 0.9 } };
+            spec.doors![0].open = true;
+        }
         const m = new THREE.Matrix4().makeTranslation(x - w / 2, 0, 33 + r() * 2);
         k.matrix = m.clone();
         c.matrix = m.clone();
         lod.matrix = m.clone();
+        const a0 = k.aapninger.length;
         hus(k, c, spec);
         husLod(lod, spec, (key) => mats.lodColor(key));
+        if (i === 0 && inneHus) inneHus(spec, m, a0);
         // Døra (føttene rett utenfor), til dagsplanene.
         const d = spec.doors![0];
         dorer.push(V(d.side * (w / 2 + 0.7), 0, d.z).applyMatrix4(m));

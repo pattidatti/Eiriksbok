@@ -171,7 +171,7 @@ export function benk(k: MeshKit, c: ColliderKit, x: number, z0: number, z1: numb
 }
 
 /** Bord på bukker, med skåler, kjenger og et brød eller to. */
-function bord(k: MeshKit, c: ColliderKit, x: number, z0: number, z1: number, r: () => number): void {
+export function bord(k: MeshKit, c: ColliderKit, x: number, z0: number, z1: number, r: () => number): void {
     const len = z1 - z0;
     const zm = (z0 + z1) / 2;
     const y = GOLV_Y + BORD_H;
