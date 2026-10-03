@@ -62,12 +62,19 @@ export const TUNING = {
         foran: 40,
     },
 
+    /** Anklagen: en fin landing på de røde hendene mellom øyene etter valget 1882. */
+    anklag: {
+        /** Hver røde sone stolen krysser uten å anklage, gjør gapene så mye lengre (m). */
+        bomGap: 4,
+        bomMaks: 6,
+    },
+
     /** Jevn synking uten flertall (m/s). Fast fart - ingen flaks. */
     synk: {
         /** Kampanjen: satt slik at Schweigaard når gata et godt stykke inn i brett 3. */
-        fart: 0.058,
+        fart: 0.065,
         /** Feil bytte (en uten flertall, som Schweigaard): stolen dumper så mye med en gang (m). */
-        feilFall: 0.6,
+        feilFall: 0.8,
         /** Frispillet: synkefarten øker per banner opp til maks. */
         friStart: 0.22,
         friPerBanner: 0.025,
@@ -82,8 +89,8 @@ export const TUNING = {
         perfektKrymp: 0.03,
         /** Så lenge etter banneret kandidaten løper ved siden av og kan tas (sent bytte). */
         sentVindu: 2.5,
-        /** Så lenge Sverdrup må sitte etter banneret 26. juni før kongen skriver under. */
-        seierSek: 2.5,
+        /** Så lenge Sverdrup må holdes oppe etter banneret 26. juni før kongen skriver under. */
+        seierSek: 8,
         /** Perfekt bytte kaster stolen opp. */
         perfektKast: 6,
     },
@@ -93,6 +100,8 @@ export const TUNING = {
         finLanding: 15,
         avisark: 60,
         perfekt: 500,
+        /** Anklagen (fin landing på de røde hendene), ganget med multiplikatoren. */
+        anklag: 300,
         seier: 5000,
         /** Multiplikatoren bygges av landinger: +1 per fin landing, dunk = x1, perfekt bytte +2. */
         multFin: 1,
@@ -119,6 +128,8 @@ export const TUNING = {
         øyMargin: 3,
         /** Hvor nær avisarket stolen må komme. */
         arkRadius: 0.95,
+        /** Klaring under dette (m) teller som «Like over!». */
+        nesten: 0.35,
     },
 
     /** Banner: hvor fort det ruller inn (m/s, relativt til stolen) og hvor lenge før det vises. */
@@ -148,5 +159,7 @@ export const TUNING = {
         fartMaks: 10,
         vektFart: 0.45,
         vektFare: 0.55,
+        /** Fare fra en hindring like foran stolen, etter type. */
+        hindring: { kjerre: 0.15, lav: 0.25, middels: 0.8, tråd: 0.8 },
     },
 } as const;

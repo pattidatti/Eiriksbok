@@ -9,16 +9,8 @@ const HI = TUNING.hindring;
 const HE = TUNING.hender;
 const FRI = TUNING.fri;
 
-/** Brettet stolen er i når den når en hindring som legges ut nå. */
-function brettVed(g: Game, marsj: number) {
-    const t = g.t + HI.foran / marsj;
-    let i = 0;
-    while (i + 1 < BRETT.length && t >= BRETT[i + 1].fra) i++;
-    return BRETT[i];
-}
-
-function typer(g: Game, marsj: number): HType[] {
-    if (!g.fri) return brettVed(g, marsj).typer;
+function typer(g: Game): HType[] {
+    if (!g.fri) return BRETT[g.brett].typer;
     if (g.friNr < 2) return ['kjerre', 'lav'];
     if (g.friNr < 4) return ['lav', 'middels'];
     return ['lav', 'middels', 'tråd'];
@@ -40,14 +32,14 @@ const TOPP: Record<HType, number> = {
 export function nyeTing(g: Game, marsj: number) {
     if (g.t < g.nesteHindring) return;
     const L = HE.bølgelengde;
-    const ts = typer(g, marsj);
+    const ts = typer(g);
     let type = ts[Math.floor(g.rng() * ts.length)];
     // Litt variasjon i avstanden: en bølge fram eller tilbake.
     const topp0 = nesteTopp(g.x + HI.foran + Math.floor(g.rng() * 3 - 1) * L);
     const x = topp0 + HI.fase * L;
     // Før dommen: mellom kongens øyer synker stolen, så der står bare lave kjerrer.
     if (g.vern && !(påØy(g, x - HI.øyMargin) && påØy(g, x + HI.øyMargin))) type = 'kjerre';
-    g.hindringer.push({ x, type, topp: TOPP[type], bunn: HI.trådBunn, forbi: false });
+    g.hindringer.push({ x, type, topp: TOPP[type], bunn: HI.trådBunn, forbi: false, klaring: 99 });
     g.valg++;
     if (g.fri || BRETT[g.brett].ark) {
         // Der et vanlig kast fra toppen før når høyest.
@@ -56,7 +48,12 @@ export function nyeTing(g: Game, marsj: number) {
         const apex = (vy * vy) / (2 * TUNING.fysikk.tyngde);
         const xa = (marsj * vy) / TUNING.fysikk.tyngde;
         const topp = topp0 - L;
-        g.ark.push({ x: topp + xa, y: g.base + g.amp + apex * HI.arkAndel + 0.45, tatt: false });
+        g.ark.push({
+            x: topp + xa,
+            y: g.base + g.amp + apex * HI.arkAndel + 0.45,
+            tatt: false,
+            tattT: 0,
+        });
         g.valg++;
     }
     g.nesteHindring = g.t + hver(g) * (1 - HI.spredning + 2 * HI.spredning * g.rng());
@@ -69,17 +66,20 @@ export function kollisjoner(g: Game): 'krasj' | null {
         if (o.forbi) continue;
         if (g.x > o.x + halv) {
             o.forbi = true;
+            // Nesten-bom: stolen kom så vidt over (eller under tråden).
+            if (o.klaring < HI.nesten) g.ut.push({ type: 'nesten', hva: 'hindring' });
             continue;
         }
         if (g.x < o.x - halv) continue;
-        if (o.type === 'tråd') {
-            if (g.y + TUNING.fysikk.stolHøyde > o.bunn) return 'krasj';
-        } else if (g.y < o.topp) return 'krasj';
+        const klaring = o.type === 'tråd' ? o.bunn - (g.y + TUNING.fysikk.stolHøyde) : g.y - o.topp;
+        o.klaring = Math.min(o.klaring, klaring);
+        if (klaring < 0) return 'krasj';
     }
     for (const a of g.ark) {
         if (a.tatt) continue;
         if (Math.hypot(g.x - a.x, g.y + 0.45 - a.y) < HI.arkRadius) {
             a.tatt = true;
+            a.tattT = g.t;
             g.arkTatt++;
             g.poeng += TUNING.poeng.avisark * g.mult;
             g.ut.push({ type: 'ark' });

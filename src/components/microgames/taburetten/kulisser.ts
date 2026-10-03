@@ -284,7 +284,13 @@ export interface Plakat {
 }
 
 /** Avisplakaten som ruller inn fra høyre (tegnes på en crispCanvas i logiske mål). */
-export function tegnPlakat(ctx: Ctx, w: number, h: number, p: Plakat, portrett?: CanvasImageSource) {
+export function tegnPlakat(
+    ctx: Ctx,
+    w: number,
+    h: number,
+    p: Plakat,
+    portrett?: CanvasImageSource
+) {
     const ramme = p.farge ? FARGE[p.farge] : SVERTE;
     ctx.fillStyle = '#fffaf0';
     ctx.fillRect(0, 0, w, h);

@@ -7,6 +7,7 @@ import * as THREE from 'three';
 import { useQuality } from '../kit';
 import { løft } from './crowd';
 import { Mengde, Stol, Vernlinjer } from './folk';
+import { Kontur } from './kontur';
 import type { Fx } from './fx';
 import type { Game } from './state';
 import { teksturer } from './teksturer';
@@ -44,7 +45,9 @@ function Kamera({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
         camera.rotation.z += Math.sin(t * 29) * s * 0.04;
         v.set(g.x, g.y + 1.2, 0).project(camera);
         fx.stolSkjerm =
-            v.z < 1 ? { x: (v.x * 0.5 + 0.5) * size.width, y: (-v.y * 0.5 + 0.5) * size.height } : null;
+            v.z < 1
+                ? { x: (v.x * 0.5 + 0.5) * size.width, y: (-v.y * 0.5 + 0.5) * size.height }
+                : null;
     });
     return null;
 }
@@ -158,7 +161,8 @@ function Gate({ gRef }: { gRef: GRef }) {
             linje.current.position.x = x;
             const l = løft(g);
             const fare = l === 'synk' || l === 'mellom' ? Math.max(0, 1 - g.base / 1.6) : 0;
-            linjeMat.current.opacity = 0.35 + fare * (0.5 + 0.15 * Math.sin(clock.elapsedTime * 10));
+            linjeMat.current.opacity =
+                0.35 + fare * (0.5 + 0.15 * Math.sin(clock.elapsedTime * 10));
             linje.current.scale.y = 1 + fare * 1.5;
         }
     });
@@ -192,7 +196,13 @@ function Sol({ gRef }: { gRef: GRef }) {
     return (
         <mesh ref={ref} userData={{ sceneAuditIgnore: true }}>
             <planeGeometry args={[34, 34]} />
-            <meshBasicMaterial ref={mat} map={t.stråler} transparent opacity={0.12} depthWrite={false} />
+            <meshBasicMaterial
+                ref={mat}
+                map={t.stråler}
+                transparent
+                opacity={0.12}
+                depthWrite={false}
+            />
         </mesh>
     );
 }
@@ -205,7 +215,16 @@ export function Verden({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
             <Kamera gRef={gRef} fxRef={fxRef} />
             <Sol gRef={gRef} />
             {/* Himmel-streker og Slottet langt bak */}
-            <Flis gRef={gRef} bredde={30} fliser={3} y={15} z={-48} h={7.5} map={t.sky} parallakse={0.85} />
+            <Flis
+                gRef={gRef}
+                bredde={30}
+                fliser={3}
+                y={15}
+                z={-48}
+                h={7.5}
+                map={t.sky}
+                parallakse={0.85}
+            />
             <Stykke
                 gRef={gRef}
                 map={t.slottet}
@@ -245,6 +264,7 @@ export function Verden({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
             <Gate gRef={gRef} />
             <Vernlinjer gRef={gRef} />
             <Mengde gRef={gRef} />
+            <Kontur gRef={gRef} />
             <Plakater gRef={gRef} fxRef={fxRef} />
             <Avisark gRef={gRef} />
             <Stol gRef={gRef} fxRef={fxRef} />

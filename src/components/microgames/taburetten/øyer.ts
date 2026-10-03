@@ -1,5 +1,6 @@
 // Kongens øyer før dommen: livgarden bærer en blå stol bare på øyene. Gapet mellom dem
-// vokser når stripa flytter seg mot rødt (vernet krymper), og dommen fjerner dem helt.
+// vokser når stripa flytter seg mot rødt (vernet krymper) og for hver røde sone eleven ikke
+// anklaget i. Dommen fjerner dem helt.
 
 import type { Game } from './state';
 import { TUNING } from './tuning';
@@ -8,7 +9,8 @@ const Ø = TUNING.øy;
 
 /** Lengden på gapet etter en øy som legges ut nå. */
 export function gap(g: Game): number {
-    return Ø.gapStart + Ø.gapK * Math.max(0, g.rødt - 58);
+    const bom = Math.min(TUNING.anklag.bomMaks, g.bom) * TUNING.anklag.bomGap;
+    return Ø.gapStart + Ø.gapK * Math.max(0, g.rødt - 58) + bom;
 }
 
 /** Legg ut øyer foran stolen så lenge vernet finnes. */

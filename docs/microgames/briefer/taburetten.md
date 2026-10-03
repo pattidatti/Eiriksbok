@@ -411,3 +411,40 @@ i flosshatt, rødt og blått som håndkolorering'`, `tone: 'lett'`.
   det delbare «lengste regjering»-utklippet er bare et tall på slutt-skjermen. Taps-tipset for
   hindringer er svakere fag enn synke-tipset. Uavhengig vurdering (port 3) er ikke gjort - jeg kan
   ikke starte underagenter.
+
+### Fase: forbedrer 1 (2026-10-03)
+
+- Gjorde (vurdering 1: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 3, Unikt 4):
+  (1) Lesbart terreng (`kontur.tsx`): tykk svertelinje langs toppen av hendene, skygge under
+  nedoverbakkene der du lener og lander, gull linje på kongens øyer, rød pulserende linje og
+  skiltet «ANKLAG HER!» i de røde sonene. Valgplakaten står lavere (ikke bak stripa), lappene ved
+  stolen står aldri høyere enn 40 % ned i bildet, og «Fin landing!» er større og blå.
+  (2) Eleven gjør riksretten selv: etter valget 1882 (over 60 % rødt) er gapene mellom øyene røde
+  soner. En fin landing der (hold/slipp, land på nedsiden) = Odelstinget anklager (23. april 1883),
+  og bare da kommer dommen, Schweigaard og Sverdrup (`ETTER_ANKLAG`, tider fra anklagen). Hver rød
+  sone du krysser uten å anklage gjør gapene 4 m lengre, så den som aldri anklager synker i gata.
+  Ingen ny knapp: reglene på menyen er tre korte linjer (verbet, anklagen, byttet), uten
+  «statsrådsstolen» og «gule øyer».
+  (3) Presset etter dommen: raskere marsj (6), raskere synking (0,065), og når Sverdrup sitter må
+  han holdes oppe i 8 s til 1. juli på kanonbølger i fart 8 med høye hindringer (lykter og
+  telegraftråder). Tap-skjermen har en rød boks med hva som skjedde og ett faglig tips (eget
+  tips for den som aldri anklaget). Mål-linja i HUD-en følger fasen.
+- Feel-lista: før runden var 1 (svar på handling, men ingen hit-stop), 3 (delvis) og 4 (delvis)
+  på plass. Lagt til: 1 hit-stop ved anklage, perfekt bytte, høy multiplikator og tap; 2 nesten-bom
+  («Like over!» ved klaring under 0,35 m, «Reddet i siste liten!» når Sverdrup tas lavt); 3 avisark
+  flyr opp og krymper bort, plakatene vokser inn med sprett og synker bort; 4 multiplikatoren
+  spretter i HUD-en ved hver endring, «ANKLAGET!» med banner og lyd. Nå er alle fire på plass.
+- Simulering (200 runder per robot, grønn): flertallsmann 97 % (median 14010), nølende (middels)
+  56 % (median 7634, var 92 %), kongens-mann 0 % (6387, anklager aldri), nervøs 0 % (7156),
+  knappemoser 0 % (1370), passiv 0 % (531, dør i gata ved 40 s). 36 valg/min. Press 0,18 -> 0,28 ->
+  0,39 (var 0,17 -> 0,34). Nettleser: flertallsmann vant med 14147, Chromebook 2,6 ms JS per bilde,
+  27 draw calls. Audit 0 funn, likhet 0,40 mot petisjonen-3d.
+- Prøvde, virket ikke: (1) etter dommen marsj 6,5 og kjerre hvert 4. s: vinneren falt til 75 %
+  (smalt i kjerrer med synkende Selmer); (2) Sverdrup-etappen med hindring hvert 2,2 s: middels 50 %
+  og trappen for trang; (3) Schweigaard-fella 0,8 m i stedet for 0,6 m flyttet nesten ingenting
+  (beholdt 0,8).
+- Kjente svakheter: middels-medianen (7634) ligger bare litt over nervøs (7156) - trappen hviler
+  på seiersbonusen. Kongens-mann anklager iblant ved et uhell akkurat når valgbanneret treffer
+  (stolen står i et gap). Den passive runden i selvspillet (20 s) er for kort til å vise en tap-skjerm,
+  så tap-skjermen er ikke sett i selvspillet. Kongens veto som egne hindringer er ikke laget (ville
+  blitt en fjerde regel). Øyene er fortsatt ikke ekte platåer i fysikken, bare markert med gull.

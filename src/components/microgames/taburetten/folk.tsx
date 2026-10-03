@@ -186,7 +186,11 @@ export function Stol({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
             const topp = g.luft ? Math.max(0, 1 - Math.abs(g.vy) / 3) * 0.28 : 0;
             const dunk = Math.max(0, 1 - (T - fx.dunk) * 2.5);
             hattY.current += (topp - hattY.current) * Math.min(1, dt * 12);
-            hatt.current.position.set(0.02, 2.1 + hattY.current + Math.sin(dunk * Math.PI) * 0.6, 0.02);
+            hatt.current.position.set(
+                0.02,
+                2.1 + hattY.current + Math.sin(dunk * Math.PI) * 0.6,
+                0.02
+            );
             hatt.current.rotation.z = dunk * 0.8;
             hatt.current.visible = !tapt;
         }
@@ -210,11 +214,7 @@ export function Stol({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
                 const tex = t.figur[fx.kastet.figur];
                 if (kastetMat.current.map !== tex) kastetMat.current.map = tex;
                 // Relativt til stolen, som har kjørt videre: buen går bakover og ned.
-                kastet.current.position.set(
-                    g.x - s * 3.2,
-                    fx.kastY + 1.2 + s * 6 - s * s * 9,
-                    0.3
-                );
+                kastet.current.position.set(g.x - s * 3.2, fx.kastY + 1.2 + s * 6 - s * s * 9, 0.3);
                 kastet.current.rotation.z = s * 5;
             }
         }
@@ -257,11 +257,21 @@ export function Stol({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
                 </mesh>
                 <mesh ref={figurMesh} position={[-0.05, 1.22, 0.01]}>
                     <planeGeometry args={[FIG_B, FIG_H]} />
-                    <meshBasicMaterial ref={figur} map={t.figur.selmer} transparent alphaTest={0.3} />
+                    <meshBasicMaterial
+                        ref={figur}
+                        map={t.figur.selmer}
+                        transparent
+                        alphaTest={0.3}
+                    />
                 </mesh>
                 <mesh ref={hatt} position={[0.02, 2.1, 0.02]}>
                     <planeGeometry args={[0.75, 0.75]} />
-                    <meshBasicMaterial ref={hattMat} map={t.hatt.floss} transparent alphaTest={0.3} />
+                    <meshBasicMaterial
+                        ref={hattMat}
+                        map={t.hatt.floss}
+                        transparent
+                        alphaTest={0.3}
+                    />
                 </mesh>
             </group>
             <group ref={vakt}>
@@ -274,7 +284,12 @@ export function Stol({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
             </group>
             <mesh ref={kastet} visible={false}>
                 <planeGeometry args={[FIG_B, FIG_H]} />
-                <meshBasicMaterial ref={kastetMat} map={t.figur.selmer} transparent alphaTest={0.3} />
+                <meshBasicMaterial
+                    ref={kastetMat}
+                    map={t.figur.selmer}
+                    transparent
+                    alphaTest={0.3}
+                />
             </mesh>
         </>
     );

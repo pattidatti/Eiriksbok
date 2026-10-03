@@ -13,6 +13,10 @@ export interface Fx {
     ark: number;
     smell: number;
     bytte: number;
+    anklag: number;
+    nesten: number;
+    /** Hit-stop: spillet står nesten stille til denne ekte tiden. */
+    stopp: number;
     /** Den som ble kastet av ved siste bytte, og hvor stolen var da. */
     kastet: Passasjer | null;
     kastX: number;
@@ -34,6 +38,9 @@ export function nyFx(): Fx {
         ark: -9,
         smell: -9,
         bytte: -9,
+        anklag: -9,
+        nesten: -9,
+        stopp: 0,
         kastet: null,
         kastX: 0,
         kastY: 0,

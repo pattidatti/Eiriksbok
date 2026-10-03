@@ -137,6 +137,11 @@ export function Hud({
                     color: SVERTE,
                 }}
             >
+                <style>
+                    {
+                        '@keyframes tabPop{0%{transform:scale(1.7)}55%{transform:scale(0.9)}100%{transform:scale(1)}}'
+                    }
+                </style>
                 <div style={{ pointerEvents: 'auto', display: 'flex', gap: 8 }}>{knapper}</div>
                 <div style={{ textAlign: 'center' }}>
                     <div style={{ fontFamily: FRAKTUR, fontSize: 34, lineHeight: 1 }}>
@@ -159,7 +164,10 @@ export function Hud({
                     <div style={{ fontSize: 26, fontWeight: 800, lineHeight: 1 }}>
                         {d.poeng.toLocaleString('nb-NO')}
                         <span
+                            key={d.mult}
                             style={{
+                                display: 'inline-block',
+                                animation: 'tabPop 0.35s ease-out',
                                 marginLeft: 10,
                                 padding: '0 8px',
                                 background: d.mult > 1 ? FARGE.gull : 'transparent',
@@ -305,13 +313,7 @@ export function Hud({
                     fontSize: 16,
                 }}
             >
-                <div style={{ fontWeight: 800 }}>
-                    {d.fri
-                        ? `Frispill: ${d.meter} m langs Karl Johan`
-                        : d.tilSeier > 0
-                          ? `Mål: flertallets mann i stolen - 26. juni om ${d.tilSeier} s`
-                          : 'Mål: hold flertallets mann i stolen!'}
-                </div>
+                <div style={{ fontWeight: 800 }}>{d.mål}</div>
                 <div style={{ marginTop: 3 }}>
                     Len: <Tast>Hold mus</Tast>/<Tast>↓</Tast> · Bytt: <Tast>Mellomrom</Tast>
                 </div>

@@ -39,6 +39,7 @@ import {
     SEIERS_RANG,
     SEIER_TEKST,
     TIPS,
+    TIPS_ANKLAG,
     TIPS_APRIL,
     TIPS_VERN,
     ØYEBLIKK,
@@ -94,6 +95,8 @@ interface Resultat {
     neste: [number, string] | null;
     tekst: string;
     nyRekord: boolean;
+    /** Kort overskrift for tapet («Stolen landet i gata»). */
+    hvorfor: string;
     kanFly: boolean;
     lærdom: string[];
     nyeKort: string[];
@@ -103,10 +106,12 @@ function Loop({
     gRef,
     modeRef,
     textRef,
+    fxRef,
     onUt,
     onHud,
 }: {
     gRef: React.MutableRefObject<Game>;
+    fxRef: React.MutableRefObject<Fx>;
     modeRef: React.MutableRefObject<Mode>;
     textRef: React.MutableRefObject<ArcadeText>;
     onUt: React.MutableRefObject<(u: Ut) => void>;
@@ -114,7 +119,9 @@ function Loop({
 }) {
     const acc = useRef(0);
     useFrame((_, raw) => {
-        const dt = Math.min(0.05, raw) * textRef.current.timeScale();
+        // Hit-stop: et kort øyeblikk der spillet nesten står stille etter et treff.
+        const stopp = nå() < fxRef.current.stopp ? 0.06 : 1;
+        const dt = Math.min(0.05, raw) * textRef.current.timeScale() * stopp;
         const g = gRef.current;
         if (modeRef.current === 'play')
             for (let k = 0; k < SPEED && g.mode === 'play'; k++) update(g, dt);
@@ -174,7 +181,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
         const p = fxRef.current.stolSkjerm ?? { x: w * 0.32, y: h * 0.42 };
         return {
             x: Math.min(w * 0.55, Math.max(w * 0.15, p.x)),
-            y: Math.min(h * 0.7, Math.max(h * 0.25, p.y)),
+            y: Math.min(h * 0.7, Math.max(h * 0.4, p.y)),
         };
     };
     // Valgbannerets lapp står ved «Neste»-ovalen i høyre marg.
@@ -207,8 +214,10 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
         }));
         let tekst = SEIER_TEKST;
         if (!vunnet && g.årsak) {
-            if (g.årsak === 'gata' && g.stol.navn === 'Schweigaard') tekst = TIPS_APRIL;
+            if (g.stol.navn === 'Schweigaard') tekst = TIPS_APRIL;
+            else if (g.vern && !g.anklaget && g.rødt >= 69) tekst = TIPS_ANKLAG;
             else if (g.årsak === 'gata' && g.vern) tekst = TIPS_VERN;
+            else if (g.årsak === 'hindring' && !g.vern && g.stol.farge === 'blå') tekst = TIPS.gata;
             else tekst = TIPS[g.årsak];
         }
         if (g.fri) tekst = `${TIPS[g.årsak ?? 'gata']}`;
@@ -224,6 +233,10 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
             neste: nextRank(RANGER, best),
             tekst,
             nyRekord: poeng > prev.best && prev.runs > 0,
+            hvorfor:
+                g.årsak === 'hindring'
+                    ? `Smell! ${g.stol.navn} traff en hindring`
+                    : `${g.stol.navn} hadde ikke flertallet - stolen landet i gata`,
             kanFly: vunnet && !g.fri,
             lærdom: text.lessons(3),
             nyeKort,
@@ -288,6 +301,40 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 break;
             case 'nedtelling':
                 break;
+            case 'rødsone':
+                if (
+                    !text.beatOnce('anklag', ØYEBLIKK.anklag.tittel, ØYEBLIKK.anklag.tekst, {
+                        at: fast(stolNå),
+                    })
+                )
+                    text.point('rød', LAPP.rød, fast(stolNå), {
+                        tone: 'fare',
+                        seconds: 3,
+                        once: true,
+                    });
+                break;
+            case 'bom':
+                lyd.dunk();
+                flyt('Bom!', FARGE.blå, true);
+                text.point('bom', LAPP.bom, fast(stolNå), { tone: 'fare', seconds: 3, once: true });
+                break;
+            case 'anklag':
+                fx.anklag = T;
+                fx.perfekt = T;
+                fx.stopp = T + 0.18;
+                fx.skjelv = Math.max(fx.skjelv, 0.5);
+                lyd.perfekt(2);
+                flyt('ANKLAGET!', FARGE.rød, true);
+                text.banner('ODELSTINGET ANKLAGER', FARGE.rød, 2.2);
+                text.lesson('anklag', LÆRDOM.anklag, 3);
+                buzz([30, 30, 60]);
+                break;
+            case 'nesten':
+                fx.nesten = T;
+                lyd.fin(2);
+                flyt(u.hva === 'gata' ? 'Reddet i siste liten!' : 'Like over!', FARGE.gull, true);
+                buzz(10);
+                break;
             case 'dom':
                 lyd.dom();
                 fx.skjelv = Math.max(fx.skjelv, 0.6);
@@ -297,9 +344,10 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 break;
             case 'fin':
                 fx.fin = T;
+                if (u.mult >= 5) fx.stopp = T + 0.05;
                 lyd.fin(u.mult);
                 if (u.mult >= 3) flyt(`x${u.mult}`, FARGE.gull, u.mult >= 6);
-                else flyt('Fin landing!', '#221c18');
+                else flyt('Fin landing!', FARGE.blå, true);
                 buzz(15);
                 break;
             case 'dunk':
@@ -327,6 +375,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 }
                 if (u.type === 'perfekt') {
                     fx.perfekt = T;
+                    fx.stopp = T + 0.12;
                     fx.skjelv = Math.max(fx.skjelv, 0.35);
                     lyd.perfekt(g.perfektRekke);
                     flyt(
@@ -341,10 +390,15 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 } else {
                     lyd.feil();
                     fx.skjelv = Math.max(fx.skjelv, 0.4);
-                    text.point(`b${u.type}`, u.type === 'feil' ? LAPP.feil : LAPP.unødvendig, fast(stolNå), {
-                        tone: 'fare',
-                        seconds: 3,
-                    });
+                    text.point(
+                        `b${u.type}`,
+                        u.type === 'feil' ? LAPP.feil : LAPP.unødvendig,
+                        fast(stolNå),
+                        {
+                            tone: 'fare',
+                            seconds: 3,
+                        }
+                    );
                 }
                 if (u.navn === 'Sverdrup') text.lesson('sverdrup', LÆRDOM.sverdrup, 3);
                 if (g.fri && u.type !== 'feil' && u.type !== 'unødvendig')
@@ -357,6 +411,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                 break;
             case 'tap':
                 fx.smell = T;
+                fx.stopp = T + 0.25;
                 fx.skjelv = 1;
                 if (u.årsak === 'hindring') lyd.smell();
                 else lyd.gata();
@@ -528,6 +583,7 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                                 gRef={gRef}
                                 modeRef={modeRef}
                                 textRef={textRef}
+                                fxRef={fxRef}
                                 onUt={onUt}
                                 onHud={onHud}
                             />
@@ -598,14 +654,41 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
 
                     {mode === 'over' && res && (
                         <ArcadeScreen>
-                            <ArcadeLogo>{res.vunnet ? 'Parlamentarisme!' : 'Stolen falt'}</ArcadeLogo>
+                            <ArcadeLogo>
+                                {res.vunnet ? 'Parlamentarisme!' : 'Stolen falt'}
+                            </ArcadeLogo>
                             <ArcadeTag color={res.vunnet ? FARGE.rød : FARGE.blå}>
                                 {res.rang}
                             </ArcadeTag>
-                            <p style={{ fontSize: 17, margin: '8px 0' }}>
-                                {!res.vunnet && <b>Tips: </b>}
-                                {res.tekst}
-                            </p>
+                            {res.vunnet ? (
+                                <p style={{ fontSize: 17, margin: '8px 0' }}>{res.tekst}</p>
+                            ) : (
+                                <div
+                                    data-tap-tips
+                                    style={{
+                                        margin: '8px 0',
+                                        padding: '8px 12px',
+                                        border: `3px solid ${FARGE.rød}`,
+                                        background: '#fff6e6',
+                                        textAlign: 'left',
+                                    }}
+                                >
+                                    <div
+                                        style={{
+                                            fontSize: 15,
+                                            fontWeight: 800,
+                                            letterSpacing: 1,
+                                            color: FARGE.rød,
+                                        }}
+                                    >
+                                        {res.hvorfor}
+                                    </div>
+                                    <div style={{ fontSize: 17, marginTop: 4 }}>
+                                        <b>Tips: </b>
+                                        {res.tekst}
+                                    </div>
+                                </div>
+                            )}
                             <ArcadeStats
                                 items={[
                                     {
@@ -646,18 +729,22 @@ export default function Taburetten3D({ onComplete }: MicroGameProps) {
                                         >
                                             <b>
                                                 {k.navn}
-                                                {res.nyeKort.includes(k.navn) ? ' - nytt kort!' : ''}
+                                                {res.nyeKort.includes(k.navn)
+                                                    ? ' - nytt kort!'
+                                                    : ''}
                                             </b>
                                             <div>{har ? k.fakta : 'Bær ham i stolen'}</div>
                                         </div>
                                     );
                                 })}
                             </div>
-                            <ArcadeLessons items={res.lærdom.length ? res.lærdom : [LÆRDOM.sverdrup]} />
+                            <ArcadeLessons
+                                items={res.lærdom.length ? res.lærdom : [LÆRDOM.sverdrup]}
+                            />
                             {res.neste && (
                                 <p style={{ fontSize: 14, margin: '4px 0' }}>
-                                    Neste rang: {res.neste[1]} ved {res.neste[0].toLocaleString('nb-NO')}{' '}
-                                    poeng
+                                    Neste rang: {res.neste[1]} ved{' '}
+                                    {res.neste[0].toLocaleString('nb-NO')} poeng
                                 </p>
                             )}
                             {res.kanFly && (

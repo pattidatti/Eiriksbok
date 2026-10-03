@@ -1,10 +1,13 @@
 // Tilstanden i Taburetten. Ren data uten React, så simuleringen og nettleseren deler den.
 
 import { seeded, type Rng } from '../sim';
-import { RØDT_START, SELMER, type Farge, type HType, type Passasjer } from './levels';
+import { RØDT_START, SELMER, type Farge, type HType, type Manus, type Passasjer } from './levels';
 import { TUNING } from './tuning';
 
 export type Årsak = 'gata' | 'hindring';
+
+/** Venstre må ha over 60 % (69 av 114) før Odelstinget kan anklage. */
+export const ANKLAG_SETER = 69;
 
 export interface Hindring {
     x: number;
@@ -14,12 +17,16 @@ export interface Hindring {
     /** Bunnen av en telegraftråd (stolen må under). */
     bunn: number;
     forbi: boolean;
+    /** Minste klaring mens stolen var over hindringen (for «Like over!»). */
+    klaring: number;
 }
 
 export interface Ark {
     x: number;
     y: number;
     tatt: boolean;
+    /** Spilt tid da arket ble tatt (for animasjonen ut). */
+    tattT: number;
 }
 
 /** Kongens øy før dommen: livgarden bærer stolen mellom x0 og x1. */
@@ -43,6 +50,8 @@ export interface Banner {
     snur: boolean;
     vist: boolean;
     truffet: boolean;
+    /** Spilt tid da banneret ble vist (plakaten vokser inn). */
+    fra: number;
 }
 
 /** Det spillet vil vise eleven. Komponenten tømmer lista hver frame. */
@@ -51,7 +60,9 @@ export type Ut =
     | { type: 'banner'; tekst: string; farge: Farge | null; navn: string | null }
     | { type: 'nedtelling'; tekst: string }
     | { type: 'fin'; mult: number }
-    | { type: 'dunk' | 'ark' | 'dom' | 'seier' | 'øy' | 'gap' | 'smell' }
+    | { type: 'dunk' | 'ark' | 'dom' | 'seier' | 'øy' | 'gap' | 'smell' | 'anklag' | 'bom' }
+    | { type: 'nesten'; hva: 'hindring' | 'gata' }
+    | { type: 'rødsone' }
     | { type: 'perfekt' | 'bytte' | 'unødvendig' | 'feil'; navn: string; farge: Farge }
     | { type: 'tap'; årsak: Årsak };
 
@@ -77,6 +88,18 @@ export interface Game {
     amp: number;
     rødt: number;
     vern: boolean;
+    /** Odelstinget har anklaget (eleven landet på de røde hendene). */
+    anklaget: boolean;
+    /** Røde soner stolen har krysset uten å anklage: gapene vokser. */
+    bom: number;
+    /** Stolen er i en rød sone nå (for overgangene). */
+    iRød: boolean;
+    /** Spilt tid da eleven anklaget. */
+    anklagT: number | null;
+    /** Spilt tid da Sverdrup-banneret treffer (26. juni), satt ved anklagen. */
+    seierT: number | null;
+    /** Spilt tid da Sverdrup kom i stolen (etappen mot 1. juli). */
+    sverdrupT: number | null;
 
     // Passasjerene
     stol: Passasjer;
@@ -106,6 +129,8 @@ export interface Game {
     // Verden
     brett: number;
     manus: number;
+    /** Manuset etter anklagen (absolutt tid). */
+    etter: Manus[];
     hindringer: Hindring[];
     øyer: Øy[];
     /** Der neste øy begynner. */
@@ -148,6 +173,12 @@ export function newGame(seed: number): Game {
         amp: H.vernAmp,
         rødt: RØDT_START,
         vern: true,
+        anklaget: false,
+        bom: 0,
+        iRød: false,
+        anklagT: null,
+        seierT: null,
+        sverdrupT: null,
         stol: SELMER,
         forrige: null,
         sitteTid: 0,
@@ -166,6 +197,7 @@ export function newGame(seed: number): Game {
         valg: 0,
         brett: 0,
         manus: 0,
+        etter: [],
         hindringer: [],
         øyer: [{ x0: -30, x1: TUNING.øy.førsteSlutt }],
         nesteØy: TUNING.øy.førsteSlutt + TUNING.øy.gapStart + TUNING.øy.gapK * (RØDT_START - 58),

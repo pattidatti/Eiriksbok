@@ -3,7 +3,7 @@
 
 import type { Rng } from '../sim';
 import { PLAYTEST_DT, type PlaytestBot } from '../playtest';
-import { flate, helning, stegStol } from './crowd';
+import { flate, helning, iRødSone, stegStol } from './crowd';
 import { aktivtBanner, bytt, hold, marsj } from './game';
 import { FLERTALL, type Game } from './state';
 import { TUNING } from './tuning';
@@ -26,9 +26,10 @@ function vane(g: Game): boolean {
 
 /**
  * Spill videre i en kopi: `først` de neste 0,2 s, så grunnvanen. Gir en verdi:
- * krasj er katastrofe, fin landing og avisark er bra, dunk er dårlig.
+ * krasj er katastrofe, fin landing og avisark er bra, dunk er dårlig. `anklag` er hva en
+ * fin landing på de røde hendene er verdt (negativ for den som er lojal mot kongen).
  */
-function utsikt(g: Game, først: boolean, horisont: number): number {
+function utsikt(g: Game, først: boolean, horisont: number, anklag: number): number {
     const k = { ...g } as Game;
     const h = PLAYTEST_DT / TUNING.fysikk.delsteg;
     // Litt sikkerhetsmargin rundt hindringene.
@@ -50,20 +51,20 @@ function utsikt(g: Game, først: boolean, horisont: number): number {
                 v += 2;
             }
         });
-        if (l?.kvalitet === 'fin') v += 0.5;
+        if (l?.kvalitet === 'fin') v += iRødSone(k, k.x) ? anklag : 0.5;
         if (l?.kvalitet === 'dunk') v -= 0.5;
     }
     return v + k.vx * 0.4;
 }
 
 /** Len og hopp. `horisont` > 0: se framover og velg det beste; 0: bare grunnvanen. */
-function surf(g: Game, horisont: number) {
+function surf(g: Game, horisont: number, anklag = 6) {
     if (horisont <= 0) {
         hold(g, vane(g));
         return;
     }
-    const på = utsikt(g, true, horisont);
-    const av = utsikt(g, false, horisont);
+    const på = utsikt(g, true, horisont, anklag);
+    const av = utsikt(g, false, horisont, anklag);
     hold(g, på === av ? vane(g) : på > av);
 }
 
@@ -97,7 +98,7 @@ export const BOTS: Record<string, BotDef> = {
     flertallsmann: {
         forventer: 'vinner',
         beskrivelse:
-            'Lener ned bølgene og slipper opp dem, planlegger landingen, og bytter til flertallets mann akkurat når banneret treffer stolen.',
+            'Lener ned bølgene og slipper opp dem, planlegger landingen, anklager på første røde sone og bytter til flertallets mann akkurat når banneret treffer stolen.',
         make: () => (g) => {
             vurderBytte(g, 0);
             surf(g, 2.4);
@@ -116,8 +117,8 @@ export const BOTS: Record<string, BotDef> = {
     'kongens-mann': {
         forventer: 'taper',
         beskrivelse:
-            'Surfer like godt som flertallsmannen, men bytter aldri: holder på kongens embetsmann i stolen.',
-        make: () => (g) => surf(g, 2.4),
+            'Surfer like godt som flertallsmannen, men er lojal mot kongen: anklager aldri og bytter aldri.',
+        make: () => (g) => surf(g, 2.4, -6),
     },
     nervøs: {
         forventer: 'taper',

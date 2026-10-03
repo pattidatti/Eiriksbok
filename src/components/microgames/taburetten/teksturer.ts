@@ -76,9 +76,14 @@ export function teksturer(): Teksturer {
         erme: tekstur(tegnErme()),
         mengde: [1, 2, 3].map((s) => tekstur(tegnMengde(s), true)),
         stol: tekstur(tegnStol()),
-        figur: Object.fromEntries(FIGURER.map((f) => [f, tekstur(figurLerret[f])])) as unknown as Record<Figur, THREE.Texture>,
+        figur: Object.fromEntries(
+            FIGURER.map((f) => [f, tekstur(figurLerret[f])])
+        ) as unknown as Record<Figur, THREE.Texture>,
         figurLerret,
-        hatt: Object.fromEntries(HATTER.map((h) => [h, tekstur(tegnHatt(h))])) as unknown as Record<Hatt, THREE.Texture>,
+        hatt: Object.fromEntries(HATTER.map((h) => [h, tekstur(tegnHatt(h))])) as unknown as Record<
+            Hatt,
+            THREE.Texture
+        >,
         gardist: tekstur(tegnGardist()),
         stråler: tekstur(tegnStråler()),
         hindring: {

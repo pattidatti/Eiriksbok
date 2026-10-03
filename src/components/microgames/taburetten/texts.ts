@@ -2,18 +2,21 @@
 
 import type { Årsak } from './state';
 
-export const MÅL = 'Du er statsrådsstolen. Hendene bærer bare den flertallet vil ha.';
+export const MÅL = 'Hendene bærer bare den regjeringen flertallet vil ha.';
 
+/** Tre korte linjer: verbet, anklagen og byttet. */
 export const REGLER = [
-    'Hold inne for å dykke ned bølgene. Slipp, så kaster hendene deg opp.',
-    'Stripa er Stortinget. Fargen med flertall bærer deg. Før 1884 bærer kongens livgarde en blå regjering - men bare på de gule øyene.',
-    'Trykk Bytt når banneret treffer stolen - bare hvis kandidaten har flertallsfargen.',
+    'Hold inne ned bølgene, slipp på toppen.',
+    'Land på de røde hendene: da anklager du regjeringen.',
+    'Trykk Bytt bare når kandidaten har flertallet.',
 ];
 
 /** Lappene ved tingen (maks 7 ord). */
 export const LAPP = {
     hold: 'Hold inne nedover, slipp på toppen',
-    vern: 'Livgarden bærer Selmer bare på gule øyer',
+    vern: 'Gull: kongens livgarde bærer Selmer',
+    rød: 'Land her for å anklage!',
+    bom: 'Bom! Kongen holder - gapene vokser',
     gap: 'Uten vern drar flertallet deg ned',
     valg: 'Venstre fikk over 60 prosent',
     schweigaard: 'Blå kandidat - men stripa er rød',
@@ -25,6 +28,10 @@ export const LAPP = {
 
 /** Lærings-øyeblikkene (sakte film). Maks tre per runde. */
 export const ØYEBLIKK = {
+    anklag: {
+        tittel: 'Odelstinget kan anklage',
+        tekst: 'Venstre har over 60 prosent. Land på de røde hendene, så anklager Odelstinget regjeringen.',
+    },
     dom: {
         tittel: 'Kongens vern er borte',
         tekst: 'Riksretten dømte Selmer. Nå bærer hendene bare en regjering som har flertall i stripa.',
@@ -42,6 +49,8 @@ export const TIPS: Record<Årsak, string> = {
 };
 export const TIPS_VERN =
     'Kongens vern bar Selmer bare på de gule øyene. Mellom dem drar flertallet stolen ned - hopp godt over gapene.';
+export const TIPS_ANKLAG =
+    'Odelstinget måtte anklage regjeringen før riksretten kunne dømme den. Etter valget 1882: hold i lufta og land på nedsiden av de røde hendene.';
 export const TIPS_APRIL =
     'Schweigaard hadde heller ikke flertallet. Aprilministeriet falt etter under to måneder. La blå kandidater gå forbi når stripa er rød.';
 
@@ -52,6 +61,7 @@ export const SEIER_TEKST =
 export const LÆRDOM = {
     vern: 'Venstre hadde flertallet lenge før 1884. Det var kongens vern som holdt Selmer oppe.',
     valg: 'Valget i 1882 ga Venstre over 60 prosent av stemmene. Stripa ble enda rødere.',
+    anklag: 'Du anklaget regjeringen. 23. april 1883 anklaget Odelstinget alle statsrådene for riksrett.',
     dom: 'Riksretten dømte Selmer og sju statsråder i 1884. Da var kongens vern borte.',
     aprilTatt:
         'Du satte Schweigaard i stolen og sank. Aprilministeriet hadde heller ikke flertallet og falt etter under to måneder.',

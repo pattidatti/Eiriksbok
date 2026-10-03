@@ -1,8 +1,26 @@
 // Spillreglene i Taburetten: update, grepene (hold, bytt, fortsett), manuset og frispillet.
 // Fagregelen (løftet fra stripa) bor i crowd.ts, tingene i gata i spawn.ts, øyene i øyer.ts.
 
-import { flate, kastOpp, løft, oppdaterHender, påØy, stegStol } from './crowd';
-import { BRETT, FRI_FØRSTE, FRI_PASSASJER, MANUS, SVERDRUP, type Farge, type Manus } from './levels';
+import {
+    flate,
+    iRødSone,
+    kanAnklage,
+    kastOpp,
+    løft,
+    oppdaterHender,
+    påØy,
+    stegStol,
+} from './crowd';
+import {
+    BRETT,
+    ETTER_ANKLAG,
+    FRI_FØRSTE,
+    FRI_PASSASJER,
+    MANUS,
+    SVERDRUP,
+    type Farge,
+    type Manus,
+} from './levels';
 import { kollisjoner, nyeTing } from './spawn';
 import { FLERTALL, SETER, type Banner, type Game, type Årsak } from './state';
 import { TUNING } from './tuning';
@@ -17,7 +35,7 @@ const FRI = TUNING.fri;
 /** Manuset sortert på når hver linje utløses (bannerne vises før de treffer). */
 const utløs = (m: Manus) => (m.type === 'banner' ? m.t - TUNING.banner.varsel : m.t);
 const MANUS_KØ = [...MANUS].sort((a, b) => utløs(a) - utløs(b));
-const SEIER_T = MANUS.find((m) => m.type === 'banner' && m.seier)!.t;
+const SEIER_ETTER = ETTER_ANKLAG.find((m) => m.type === 'banner' && m.seier)!.t;
 
 const andre = (f: Farge): Farge => (f === 'rød' ? 'blå' : 'rød');
 const flertallI = (rødt: number): Farge => (rødt >= FLERTALL ? 'rød' : 'blå');
@@ -26,6 +44,22 @@ const flertallI = (rødt: number): Farge => (rødt >= FLERTALL ? 'rød' : 'blå'
 export function marsj(g: Game): number {
     if (g.fri) return FRI.marsjStart * (1 + FRI.fartPerBanner * g.friNr);
     return BRETT[g.brett].marsj;
+}
+
+/**
+ * Anklagen: en fin landing på de røde hendene etter valget 1882. Da reiser Odelstinget
+ * riksrett, og resten av manuset (dommen, Schweigaard, Sverdrup) settes i gang herfra.
+ */
+function anklag(g: Game) {
+    g.anklaget = true;
+    g.anklagT = g.t;
+    g.iRød = false;
+    g.etter = ETTER_ANKLAG.map((m) =>
+        m.type === 'nedtelling' ? { ...m, t: m.t + g.t, til: m.til + g.t } : { ...m, t: m.t + g.t }
+    ).sort((a, b) => utløs(a) - utløs(b));
+    g.seierT = g.t + SEIER_ETTER;
+    g.poeng += P.anklag * g.mult;
+    g.ut.push({ type: 'anklag' });
 }
 
 // ---------- Grepene (samme for eleven og robotene) ----------
@@ -80,6 +114,13 @@ export function bytt(g: Game) {
         if (!nyHar) g.base = Math.max(0, g.base - TUNING.synk.feilFall);
         g.ut.push({ type: nyHar ? 'unødvendig' : 'feil', ...ut });
     }
+    if (nyHar && !gammelHar && g.base < 0.75) g.ut.push({ type: 'nesten', hva: 'gata' });
+    if (ny === SVERDRUP && nyHar && !g.fri) {
+        // Etappen mot 1. juli: kanonbølger, høy fart og høye hindringer.
+        g.sverdrupT = g.t;
+        g.brett = 3;
+        g.nesteHindring = g.t;
+    }
     b.tatt = true;
     g.forrige = g.stol;
     g.stol = ny;
@@ -119,6 +160,7 @@ function visBanner(
         snur: flertallI(rødt) !== flertallI(før),
         vist: true,
         truffet: false,
+        fra: g.t,
     });
     g.valg++;
     g.ut.push({
@@ -129,27 +171,25 @@ function visBanner(
     });
 }
 
-function manus(g: Game) {
-    while (g.manus < MANUS_KØ.length && g.t >= utløs(MANUS_KØ[g.manus])) {
-        const m = MANUS_KØ[g.manus++];
-        if (m.type === 'lapp') g.ut.push({ type: 'lapp', nøkkel: m.nøkkel });
-        else if (m.type === 'banner')
-            visBanner(g, m.tekst, m.t, m.rødt, {
-                dom: m.dom,
-                seier: m.seier,
-                passasjer: m.passasjer,
-            });
-        else {
-            g.nedtelling = { tekst: m.tekst, til: m.til };
-            g.ut.push({ type: 'nedtelling', tekst: m.tekst });
-        }
+function kjør(g: Game, m: Manus) {
+    if (m.type === 'lapp') g.ut.push({ type: 'lapp', nøkkel: m.nøkkel });
+    else if (m.type === 'banner')
+        visBanner(g, m.tekst, m.t, m.rødt, {
+            dom: m.dom,
+            seier: m.seier,
+            passasjer: m.passasjer,
+        });
+    else {
+        g.nedtelling = { tekst: m.tekst, til: m.til };
+        g.ut.push({ type: 'nedtelling', tekst: m.tekst });
     }
+}
+
+function manus(g: Game) {
+    while (g.manus < MANUS_KØ.length && g.t >= utløs(MANUS_KØ[g.manus]))
+        kjør(g, MANUS_KØ[g.manus++]);
+    while (g.etter.length && g.t >= utløs(g.etter[0])) kjør(g, g.etter.shift()!);
     if (g.nedtelling && g.t >= g.nedtelling.til) g.nedtelling = null;
-    for (let i = BRETT.length - 1; i > 0; i--)
-        if (g.t >= BRETT[i].fra) {
-            g.brett = i;
-            break;
-        }
 }
 
 function friBanner(g: Game) {
@@ -180,7 +220,9 @@ function treffBannere(g: Game) {
         if (b.truffet || g.t < b.t) continue;
         b.truffet = true;
         g.rødt = b.rødt;
+        if (!g.fri && !b.dom && !b.passasjer && g.brett === 0) g.brett = 1;
         if (b.dom) {
+            g.brett = 2;
             g.vern = false;
             g.øyer.length = 0;
             // Livgarden løfter stolen en siste gang før den slipper.
@@ -207,7 +249,7 @@ function tap(g: Game, årsak: Årsak) {
 }
 
 function seier(g: Game, dt: number) {
-    if (g.fri || g.t < SEIER_T) return;
+    if (g.fri || g.seierT === null || g.t < g.seierT) return;
     if (g.stol === SVERDRUP && løft(g) === 'flertall') g.seierKlokke += dt;
     else g.seierKlokke = 0;
     if (g.seierKlokke >= B.seierSek) {
@@ -242,6 +284,7 @@ export function update(g: Game, dt: number) {
             g.mult = bæres ? Math.min(P.multMaks, g.mult + P.multFin) : 1;
             g.poeng += P.finLanding * g.mult;
             g.ut.push({ type: 'fin', mult: g.mult });
+            if (iRødSone(g, g.x)) anklag(g);
         } else if (l?.kvalitet === 'dunk') {
             g.dunk++;
             g.kombo = 0;
@@ -254,6 +297,18 @@ export function update(g: Game, dt: number) {
     g.meter += meter;
     g.poeng += meter * P.perMeter * g.mult;
 
+    // De røde sonene: hver gang stolen krysser en uten å anklage, vokser gapene.
+    const rød = iRødSone(g, g.x);
+    if (rød !== g.iRød) {
+        if (rød) {
+            g.valg++;
+            g.ut.push({ type: 'rødsone' });
+        } else if (kanAnklage(g)) {
+            g.bom++;
+            g.ut.push({ type: 'bom' });
+        }
+        g.iRød = rød;
+    }
     if (g.vern) {
         const nå = påØy(g, g.x);
         if (nå !== g.påØy) g.ut.push({ type: nå ? 'øy' : 'gap' });
@@ -280,16 +335,28 @@ export function press(g: Game): number {
         const seter = g.stol.farge === 'rød' ? g.rødt : SETER - g.rødt;
         fare = 0.6 * (1 - Math.min(1, (seter - 57) / 26));
     }
+    // Høye hindringer like foran stolen presser også (2 s fram).
+    for (const o of g.hindringer) {
+        if (o.forbi || o.x < g.x || o.x > g.x + g.vx * 2) continue;
+        fare = Math.max(fare, T.hindring[o.type]);
+    }
     return T.vektFart * fart + T.vektFare * fare;
 }
 
 /** 0-1 mot seieren (kampanjen) - frispillet står på 1. */
 export function framdrift(g: Game): number {
     if (g.fri || g.mode === 'won') return 1;
-    return Math.min(1, g.t / (SEIER_T + B.seierSek));
+    if (g.seierT === null || g.anklagT === null) return Math.min(0.4, g.t / 70);
+    const fram = Math.min(1, (g.t - g.anklagT) / SEIER_ETTER);
+    return Math.min(1, 0.4 + 0.4 * fram + (0.2 * g.seierKlokke) / B.seierSek);
 }
 
 /** Sekunder til seiersbanneret (kampanjen), for målet i HUD-en. */
 export function tilSeier(g: Game): number {
-    return Math.max(0, SEIER_T - g.t);
+    return g.seierT === null ? -1 : Math.max(0, g.seierT - g.t);
+}
+
+/** Sekunder Sverdrup ennå må holdes oppe før kongen skriver under (1. juli). */
+export function tilJuli(g: Game): number {
+    return Math.max(0, B.seierSek - g.seierKlokke);
 }

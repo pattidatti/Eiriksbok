@@ -1,7 +1,7 @@
 // Hendene og stolen: bølgene, løftet fra stripa og fysikken (lene og hoppe).
 // Fagregelen bor i `løft`: fargen i stolen med flertall = høye bølger; uten = jevn synking.
 
-import { harFlertall, SETER, type Game } from './state';
+import { ANKLAG_SETER, harFlertall, SETER, type Game } from './state';
 import { TUNING } from './tuning';
 
 const H = TUNING.hender;
@@ -14,6 +14,16 @@ export type Løft = 'flertall' | 'vern' | 'mellom' | 'synk';
 export function påØy(g: Game, x: number): boolean {
     for (const ø of g.øyer) if (x >= ø.x0 && x <= ø.x1) return true;
     return false;
+}
+
+/** Kan Odelstinget anklage nå? Etter valget 1882 (over 60 % rødt) og før dommen. */
+export function kanAnklage(g: Game): boolean {
+    return g.vern && !g.anklaget && g.rødt >= ANKLAG_SETER;
+}
+
+/** Er x i en rød sone (de røde hendene mellom kongens øyer), der en fin landing anklager? */
+export function iRødSone(g: Game, x: number): boolean {
+    return kanAnklage(g) && !påØy(g, x);
 }
 
 /**

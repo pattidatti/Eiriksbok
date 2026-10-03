@@ -81,12 +81,15 @@ export function Avisark({ gRef }: { gRef: GRef }) {
         const tid = clock.elapsedTime;
         let i = 0;
         for (const a of g.ark) {
-            if (a.tatt || a.x < g.x - 14) continue;
+            // Et tatt ark flyr opp og krymper bort på et halvt sekund (aldri bare av).
+            const ut = a.tatt ? (g.t - a.tattT) / 0.5 : 0;
+            if (ut >= 1 || a.x < g.x - 14) continue;
             const m = pott.current[i++];
             if (!m) break;
             m.visible = true;
-            m.position.set(a.x, a.y + Math.sin(tid * 2 + a.x) * 0.12, 0.2);
-            m.rotation.z = Math.sin(tid * 3 + a.x) * 0.25;
+            m.position.set(a.x + ut * 0.8, a.y + Math.sin(tid * 2 + a.x) * 0.12 + ut * 1.6, 0.2);
+            m.rotation.z = Math.sin(tid * 3 + a.x) * 0.25 + ut * 4;
+            m.scale.setScalar(1 + ut * 0.4 - ut * ut * 1.4);
         }
         for (; i < pott.current.length; i++) {
             const m = pott.current[i];
@@ -107,7 +110,7 @@ export function Avisark({ gRef }: { gRef: GRef }) {
 
 const PL_B = 3.6;
 const PL_H = 2.25;
-const PL_Y = 5.4;
+const PL_Y = 4.6;
 const PL_Z = -3.6;
 /** Plakaten ruller inn fra høyre med denne farten (m/s) mot stolen, så den synes i 6 s. */
 const PL_FART = 1.8;
@@ -159,6 +162,11 @@ function Plakat({ gRef, nr, fxRef }: { gRef: GRef; nr: number; fxRef: FxRef }) {
         }
         const x = g.x + (b.t - g.t) * PL_FART;
         gr.position.x = x;
+        // Plakaten vokser inn med et lite sprett når den dukker opp, og synker bort etter treff.
+        const inn = Math.min(1, (g.t - b.fra) / 0.45);
+        const ut = b.truffet ? Math.min(1, (g.t - b.t) / 0.8) : 0;
+        const sprett = inn < 1 ? 1 + Math.sin(inn * Math.PI) * 0.18 : 1;
+        gr.scale.setScalar(Math.max(0.01, inn * sprett * (1 - ut * ut)));
         if (sone.current && soneMat.current) {
             const p = b.passasjer;
             sone.current.visible = !!p && !b.tatt;
@@ -170,7 +178,9 @@ function Plakat({ gRef, nr, fxRef }: { gRef: GRef; nr: number; fxRef: FxRef }) {
         if (nr === 0) {
             v.set(x, PL_Y - PL_H / 2, PL_Z).project(camera);
             fxRef.current.bannerSkjerm =
-                v.z < 1 ? { x: (v.x * 0.5 + 0.5) * size.width, y: (-v.y * 0.5 + 0.5) * size.height } : null;
+                v.z < 1
+                    ? { x: (v.x * 0.5 + 0.5) * size.width, y: (-v.y * 0.5 + 0.5) * size.height }
+                    : null;
         }
     });
     return (
