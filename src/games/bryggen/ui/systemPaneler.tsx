@@ -22,6 +22,7 @@ import { RpgKortPanel } from './RpgHud';
 import { Ettersokt, EttersoktSvart } from './Ettersokt';
 import { Snik } from './Snik';
 import { Brann } from './Brann';
+import { RunekortPanel } from './Runekort'; // Runepinnene (verden2)
 
 export type PanelPlass = 'hoyre' | 'midt' | 'bunn' | 'hel';
 
@@ -42,4 +43,5 @@ export const SYSTEM_PANELER: SystemPanel[] = [
     { navn: 'ettersokt', plass: 'hel', Komponent: EttersoktSvart },
     { navn: 'budet', plass: 'bunn', Komponent: Snik },
     { navn: 'brann', plass: 'bunn', Komponent: Brann },
+    { navn: 'runer', plass: 'midt', Komponent: RunekortPanel }, // Runepinnene (graboks/strandliv.ts)
 ];

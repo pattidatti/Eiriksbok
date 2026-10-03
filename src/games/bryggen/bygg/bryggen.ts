@@ -217,7 +217,10 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     // Nordnes på den andre siden av Vågen, der Stranden slutter: åsen og Munkeliv kloster (nordnes.ts).
     scene.add((await import('./nordnes')).lagNordnes(materials, xe - 12, xw - 40));
     cells.push(...bergMod.holmenCeller(materials, xe, slots[slots.length - 1].front));
-    cells.push(strandMod.strandCelle(materials, xw - 20, xe - 10));
+    // Den gåbare biten av Stranden (strandliv.ts) står i et hull i kulissen.
+    const strandLiv = await import('./strandliv');
+    cells.push(strandMod.strandCelle(materials, xw - 20, xe - 10, strandLiv.STRAND_X));
+    cells.push(strandLiv.strandlivCelle(materials));
     cells.push(vbMod.endeCelle(materials, xw));
     const streamer = new CellStreamer(phys, cells);
     scene.add(streamer.root);
@@ -366,7 +369,10 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
     wall(hx + 40, 50, 0.5, 80);
     wall(xMin - 0.5, -60, 0.5, 60);
     wall(xMax + 0.5, -60, 0.5, 60);
-    wall((xMin + xMax) / 2, -120, (xMax - xMin) / 2 + 1, 0.5);
+    // Over Vågen, med en åpning der man kan legge til på Stranden (bolverket der kolliderer selv).
+    const [sx0, sx1] = strandLiv.STRAND_X;
+    wall((xMin - 1 + sx0) / 2, -120, (sx0 - xMin + 1) / 2, 0.5);
+    wall((sx1 + xMax + 1) / 2, -120, (xMax + 1 - sx1) / 2, 0.5);
 
     // Underlaget: inne i et rom er det golv; oppe (svalganger, trapper, loft) og på kaia planker.
     // I allmenningen er det gjørme utenfor plankegangen opp midten, og bak gårdene gjørme. Ellers

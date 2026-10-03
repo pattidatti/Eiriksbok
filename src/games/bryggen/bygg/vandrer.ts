@@ -38,7 +38,12 @@ export interface Rute {
     baer?: 'bunt' | 'botte';
     /** Hvem hen er (personer.ts). */
     id?: string;
+    /** Kalles når figuren er laget (dagsplan.ts styrer den videre med `byttRute`). */
+    vedLaget?: (v: Vandrer) => void;
 }
+
+/** Hit flyttes en figur som er hjemme (dagsplan.ts): langt under bakken, så den verken tegnes, animeres eller får kollider. */
+const BORTE = new THREE.Vector3(0, -500, 0);
 
 const SVING = 3.2; // rad/s
 const AKS = 2.2; // m/s²
@@ -93,6 +98,43 @@ export class Vandrer {
         this.a.root.rotation.y = this.yaw;
         this.gestikk = new Gestikk(a);
         this.gestikk.onFerdig = () => this.a.release(0.35);
+        rute.vedLaget?.(this);
+    }
+
+    // ── Dagsplaner (dagsplan.ts) ──
+    /** Figuren er hjemme (eller gått ut av området): står parkert under bakken og gjør ingenting. */
+    skjult = false;
+    /** Punktet hen går mot nå (indeks i `rute.stopp`). */
+    get neste(): number {
+        return this.i;
+    }
+    /**
+     * Ny rute (en ny del av dagen), fra der hen står eller fra `fra`. `null` gjemmer figuren: hen
+     * er hjemme.
+     */
+    byttRute(stopp: Stopp[] | null, fra?: THREE.Vector3): void {
+        this.vent = 0;
+        this.handling = 0;
+        this.nyLast = null;
+        this.omvei = null;
+        this.blokkert = 0;
+        this.speed = 0;
+        this.a.release(0.2);
+        if (!stopp) {
+            this.skjult = true;
+            this.pos.copy(BORTE);
+            this.a.root.position.copy(this.pos);
+            return;
+        }
+        this.skjult = false;
+        if (fra) this.pos.copy(fra);
+        this.rute.stopp = stopp;
+        this.i = 0;
+        this.fra = this.pos.clone();
+        const p = stopp[0].p;
+        if (fra && (p.x !== fra.x || p.z !== fra.z)) this.yaw = Math.atan2(p.x - fra.x, p.z - fra.z);
+        this.a.root.position.copy(this.pos);
+        this.a.root.rotation.y = this.yaw;
     }
 
     /**
@@ -124,6 +166,7 @@ export class Vandrer {
 
     /** Logikken (hvert bilde). Animasjonen oppdateres av eieren, som kan gjøre det sjeldnere langt unna. */
     step(dt: number, t: number, ctx: CellCtx): void {
+        if (this.skjult) return;
         this.gestikk.tick(dt);
         let maal = 0;
         if (this.snudd) {

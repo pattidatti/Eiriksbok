@@ -27,6 +27,7 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push((await import('./ettersokt')).lagEttersokt(k));
     ut.push((await import('./holmenvakt')).lagHolmenvakt(k));
     ut.push((await import('./brann')).lagBrann(k));
+    ut.push((await import('./strandliv')).lagStrandliv(k)); // Stranden og Vågsbunnen: dagsplaner, dyr, runepinner
     if (import.meta.env.DEV) ut.push(fotoSystem());
     return ut;
 }
