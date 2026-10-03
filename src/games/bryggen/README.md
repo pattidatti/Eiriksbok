@@ -67,6 +67,7 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/post.ts` | Etterbehandling på full kvalitet: SSAO (halv oppløsning), glød (kvart og åttendels), lysstråler fra sola, solglød i tåka, dis over Vågen, FXAA, fargetone, vignett, filmkorn |
 | `motor/faering-modell.ts` | Færingen som modell: klinkbygd skrog med bordganger, stavner, ripe, tiljer og tofter |
 | `motor/skrog.ts` | Skroget og riggen skipene deles om: klinkbygd skrog av tverrsnitt, stavner, dekk, mast, rå med beslått seil, vant, ror og konveks kollider |
+| `motor/seilduk.ts` | Seilduken (`MatKey` 'seil'): ett delt materiale for alle seil, tekstur tegnet på lerret én gang (duker, sømmer, lapper, bonnet, kanttau, skitt), kypert-vev som relieff på full kvalitet, vind og lys gjennom duken i shaderen |
 | `motor/kogge-modell.ts` | Koggen: flatbunnet, høye sider, rette stavner, kasteller forut og akter, mastekurv, ror på akterstevnen |
 | `motor/jekt-modell.ts` | Jekta: lavt, åpent skrog med bunter av tørrfisk midtskips, vengen akter, ett råseil |
 | `bygg/skip.ts` | Skipene i Vågen: kogge og jekt fortøyd ved kaia, en jekt for anker. Gynger med bølgene, kollider mot færingen, og melder omrisset i vannlinja (`skrog`) |
@@ -334,9 +335,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   allmenningens egne bøtter, så hele cella er ca. 15 tegnekall.
 - `__bryggenKatter` (bare i dev): `still(i, tilstand, pos?, yaw?)` setter katt `i` i en tilstand og holder den der (til skjermbilder). Kattene bruker de samme sonene som rottene og leser `rotter.framme`; de tar ikke `onHendelse` (lyden eier den).
 - Skipene (`bygg/skip.ts`) står ikke i en celle: de er få og synes over hele Vågen. Hvert skip er én
-  `MeshKit` (ett tegnekall per materiale: `raatre` for treverk og seil, `mork` for tauverk) og én
+  `MeshKit` (ett tegnekall per materiale: `raatre` for treverk, `seil` for seilduken, `mork` for tauverk) og én
   konveks kollider som står stille. De gynger etter `vannHoyde` i `vann.ts`, som må følge bølgene i
-  GLSL-en der. Seilet er lyst `raatre` innenfor `withUv` (som tørrfisken). Fibrene i treteksturene går
+  GLSL-en der. Seilet har eget materiale (`seil`, se under). Fibrene i treteksturene går
   langs v, så bordene i skroget har v langs skipet.
 - Ingen fil over 800 linjer.
 - `MeshKit.quad` og `tri` leser bare `tint.hue`, ikke `tint.top`/`bottom` (det gjør bare `box`). Mørke
@@ -416,3 +417,20 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Vågsbunnen og Auta allmenning ligger vest for `xwGard` (der gårdene slutter); `xw` i `bryggen.ts` er
   den vestre enden av byen etter det. Støttemuren under Øvregaten har en åpning for Auta-trappa
   (`GateOppsett.trapper`).
+
+## Seilduken (seil, 03.10.2026)
+
+- Seilene på koggen og jektene (fortøyd, i trafikken og i filmene) bruker `MatKey` 'seil' fra
+  `motor/seilduk.ts`, ikke lenger lys `raatre`. `Materials.load` lager materialet, `applyQuality`
+  slår veven (bumpMap) av og på, og alt annet er likt på lav og full kvalitet.
+- UV-ene er normalisert over seilet: `seilSatt` har u 0..1 på tvers og v 0..1 fra underkanten til råa;
+  `raa` (beslått) har u 0..1 langs råa og v 1..2 rundt rullen. Vinden i shaderen bruker v: v >= 1 står
+  stille. Nye seil må følge det, ellers blafrer de feil.
+- Det beslåtte seilet er én rull duk (`flate`) som henger i buker mellom surringene, med folder rundt
+  og en dråpeform nederst. Surringene står litt skjevt (`SKJEV`).
+- Vinden er en forskyvning forut (+z i skipets rom) i vertex-shaderen, med fase fra skipets posisjon,
+  så skipene ikke blafrer i takt. Normalen vippes med krusningen. Skyggen følger ikke vinden (liten feil).
+- Baksida av seilet får litt av sollyset gjennom duken (`GJENNOM`), uten skygge.
+- Test: `/test/bryggen-gard?sted=bard&dogn=0&lys=dag&regn=0` (jekta ved kaia og koggen),
+  `__bryggenFoto` mot `jekt-kai:seil`, `kogge:seil` og `jekt-seil:seil:seil` (trafikken, satt seil).
+  Legg til `&kvalitet=lav` og `&lys=kveld`.

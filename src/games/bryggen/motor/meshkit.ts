@@ -13,7 +13,7 @@
 import * as THREE from 'three';
 import type { Aapning } from './portal';
 
-export type MatKey = 'laft' | 'bordvegg' | 'bordtak' | 'torv' | 'dekke' | 'gardsrom' | 'gjorme' | 'raatre' | 'stein' | 'mork';
+export type MatKey = 'laft' | 'bordvegg' | 'bordtak' | 'torv' | 'dekke' | 'gardsrom' | 'gjorme' | 'raatre' | 'stein' | 'mork' | 'seil';
 
 const _p = new THREE.Vector3();
 const _n = new THREE.Vector3();

@@ -6,6 +6,7 @@
 import * as THREE from 'three';
 import type { MatKey } from './meshkit';
 import { Vaat } from './vaat';
+import { SEIL_LOD, kastSeilduk, lagSeilduk, seilKvalitet } from './seilduk';
 
 const BASE = '/games/bryggen/textures/';
 
@@ -28,7 +29,7 @@ export const LOG_H = 0.24;
 /** Hvor tett tåka er rundt landemerkene (`tynnTake`), mot resten av byen. */
 const TYNN_TAKE = 0.5;
 
-const DEFS: Record<Exclude<MatKey, 'mork'>, MatDef> = {
+const DEFS: Record<Exclude<MatKey, 'mork' | 'seil'>, MatDef> = {
     laft: { file: 'laft', tile: LOG_H * 10, color: [1.55, 1.45, 1.35], normalScale: 1.1, lodColor: 0x4a3c31 },
     bordvegg: { file: 'bordvegg', tile: 2.0, color: [1.45, 1.38, 1.3], lodColor: 0x4f4338 },
     bordtak: { file: 'bordtak', tile: 1.7, color: [1.1, 1.08, 1.05], lodColor: 0x55504a },
@@ -66,13 +67,15 @@ export class Materials {
     /** Laster alle teksturene. Spillet venter på denne før første bilde. */
     async load(): Promise<void> {
         const jobs: Promise<void>[] = [];
-        for (const [key, def] of Object.entries(DEFS) as [Exclude<MatKey, 'mork'>, MatDef][]) {
+        for (const [key, def] of Object.entries(DEFS) as [Exclude<MatKey, 'mork' | 'seil'>, MatDef][]) {
             jobs.push(this.make(key, def));
         }
         await Promise.all(jobs);
         if (!this.low) await this.loadDetail();
         // Mørke åpninger (inn i loftet, under svalgangen): ingen tekstur, bare nesten svart tre.
         this.mats.set('mork', this.medVaat(new THREE.MeshStandardMaterial({ color: 0x1b1714, roughness: 1, vertexColors: true }), 'mork'));
+        // Seilduken: egen tekstur tegnet på lerret, og vind i shaderen (seilduk.ts).
+        this.mats.set('seil', lagSeilduk(this.vaat, this.low, this.anisotropy));
     }
 
     get(key: MatKey): THREE.MeshStandardMaterial {
@@ -161,7 +164,7 @@ export class Materials {
     }
 
     lodColor(key: MatKey): THREE.Color {
-        return new THREE.Color(key === 'mork' ? 0x1b1714 : DEFS[key].lodColor);
+        return new THREE.Color(key === 'mork' ? 0x1b1714 : key === 'seil' ? SEIL_LOD : DEFS[key].lodColor);
     }
 
     private tex(url: string, srgb: boolean, tile: number): Promise<THREE.Texture> {
@@ -193,7 +196,7 @@ export class Materials {
     /** Laster normal- og ARM-kartene én gang, første gang full kvalitet trengs. */
     private loadDetail(): Promise<void> {
         if (!this.detailLoad) {
-            const entries = Object.entries(DEFS) as [Exclude<MatKey, 'mork'>, MatDef][];
+            const entries = Object.entries(DEFS) as [Exclude<MatKey, 'mork' | 'seil'>, MatDef][];
             this.detailLoad = Promise.all(
                 entries.map(async ([key, def]) => {
                     const [normal, arm] = await Promise.all([
@@ -220,6 +223,10 @@ export class Materials {
         for (const [key, m] of this.mats) {
             m.needsUpdate = true;
             if (key === 'mork') continue;
+            if (key === 'seil') {
+                seilKvalitet(m, this.low, this.anisotropy);
+                continue;
+            }
             const d = this.low ? undefined : this.detail.get(key);
             m.normalMap = d?.normal ?? null;
             m.aoMap = d?.arm ?? null;
@@ -248,6 +255,7 @@ export class Materials {
         this.lodMat?.dispose();
         this.tynne.forEach((m) => m.dispose());
         this.textures.forEach((t) => t.dispose());
+        kastSeilduk();
     }
 }
 

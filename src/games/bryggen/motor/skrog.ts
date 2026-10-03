@@ -1,9 +1,9 @@
 // Skroget og riggen som koggen og jekta deles om: et klinkbygd skrog laget av tverrsnitt langs
 // skipet, stavner, ripe, dekk, mast, rå med beslått seil, vant og ror.
 //
-// Alt legges i en `MeshKit`, så et helt skip er ett tegnekall per materiale ('raatre' for treverket
-// og seilet, 'mork' for tauverket). Skroget er tjæret og mørkt, dekket og castellene lysere, og
-// seilet lyst: alt er fargefaktor per hjørne (`tint`), ikke nye materialer.
+// Alt legges i en `MeshKit`, så et helt skip er ett tegnekall per materiale ('raatre' for treverket,
+// 'seil' for seilduken, 'mork' for tauverket). Skroget er tjæret og mørkt, dekket og castellene
+// lysere: fargefaktor per hjørne (`tint`). Seilet har eget, delt materiale (seilduk.ts).
 //
 // Skipets eget rom: z langs skipet (forut = +z), x på tvers (styrbord = -x), y opp fra vannlinja.
 // Skipet bygges med identitetsmatrise i kit-et, så hjørnene kan skrives rett i bøtta.
@@ -246,47 +246,85 @@ export function mast(k: MeshKit, fot: THREE.Vector3, h: number, r0: number, r1: 
     return top;
 }
 
-/** Lyst, ufarget seilduk: flaten får nesten én farge fra teksturen (som tørrfisken i bua). */
-const SEIL: Tint = { top: 2.5, bottom: 1.9, hue: [1.04, 1.0, 0.9] };
+/** Seilduken (seilduk.ts): fargen kommer fra teksturen, så hjørnene får bare litt varme. */
+const SEIL: Tint = { top: 1, bottom: 1, hue: [1.0, 0.99, 0.96] };
 
 /**
  * Råa på tvers av skipet i høyden `y` med seilet beslått (rullet sammen og surret) langs den.
  * Et skip som ligger i havn, har seilet beslått [S].
+ *
+ * Duken er én rull av seilduk som henger i buker mellom surringene og har folder rundt (ikke
+ * stokker som før). UV: u 0..1 langs råa, v 1..2 rundt rullen (vinden i seilduk.ts lar v >= 1 være).
  */
 export function raa(k: MeshKit, z: number, y: number, halv: number, tint: Tint, seilR: number): void {
     k.withTint(tint, () => k.log('raatre', V3(-halv, y, z), V3(halv, y, z), 0.13, 7, true, 0.13));
-    // Seilet: tykkest på midten, i noen buker mellom surringene.
-    const n = 9;
-    k.withUv(0.04, () =>
-        k.withTint(SEIL, () => {
-            for (let i = 0; i < n; i++) {
-                const xa = -halv * 0.92 + (halv * 1.84 * i) / n;
-                const xb = xa + (halv * 1.84) / n;
-                const t = Math.abs((xa + xb) / 2) / halv;
-                const r = seilR * (1 - t * 0.55);
-                k.log('raatre', V3(xa, y - r * 0.9, z + 0.05), V3(xb, y - r * 0.9, z + 0.05), r * 0.9, 7, i === 0 || i === n - 1, r);
-            }
-        })
+    const n = 9; // bukene mellom surringene
+    const X = halv * 0.92;
+    const r0 = (x: number) => seilR * (1 - (Math.abs(x) / halv) * 0.55);
+    // Surringene står ikke helt jevnt: litt forskjøvet fra lik avstand, fast for alle skip.
+    const SKJEV = [0, 0.12, -0.1, 0.16, -0.06, 0.1, -0.14, 0.08, -0.1, 0];
+    const surring = (i: number) => -X + (2 * X * (i + SKJEV[i] * (i > 0 && i < n ? 1 : 0))) / n;
+    const buk = (x: number) => {
+        let i = Math.floor(((x + X) / (2 * X)) * n);
+        i = THREE.MathUtils.clamp(i, 0, n - 1);
+        if (x < surring(i)) i = Math.max(0, i - 1);
+        else if (i < n - 1 && x > surring(i + 1)) i++;
+        const a = surring(i);
+        const b = surring(i + 1);
+        return Math.sin(Math.PI * THREE.MathUtils.clamp((x - a) / (b - a), 0, 1));
+    };
+    // Midten av rullen: under råa, og lavest midt i hver buk (duken siger mellom surringene).
+    const midtY = (x: number) => y - r0(x) * 0.85 - buk(x) * r0(x) * 0.3;
+    const NI = 110;
+    const NJ = 16;
+    const xOf = (i: number) => -X + (2 * X * i) / NI;
+    const thOf = (j: number) => Math.PI / 2 + (2 * Math.PI * j) / NJ; // sømmen øverst, inn mot råa
+    // Foldene: store rynker rundt rullen som vrir seg langs den, små skarpe bretter oppå, og
+    // rullen er klumpete.
+    const fold = (x: number, th: number) =>
+        Math.sin(th * 5 + x * 2.3 + Math.sin(x * 0.7) * 2) * 0.45 +
+        Math.sin(th * 3 - x * 4.1) * 0.3 +
+        Math.abs(Math.sin(th * 9 + x * 6.7 + Math.sin(x * 1.9) * 3)) * 0.5 - 0.25;
+    const radius = (x: number, th: number) => {
+        const ende = THREE.MathUtils.clamp((X - Math.abs(x)) / 0.45, 0, 1);
+        return r0(x) * (0.72 + 0.34 * buk(x)) * (1 + 0.14 * fold(x, th)) * (1 + 0.08 * Math.sin(x * 5.3) * Math.sin(x * 1.7)) * (0.08 + 0.92 * Math.sqrt(ende));
+    };
+    k.withTint(SEIL, () =>
+        flate(
+            k, 'seil', NI, NJ,
+            (i, j) => {
+                const x = xOf(i);
+                const th = thOf(j);
+                const rr = radius(x, th);
+                // Den nedre halvdelen henger tyngre midt i buken (duken siger, rullen blir en dråpe).
+                const sig = Math.sin(th) < 0 ? Math.pow(-Math.sin(th), 2) * buk(x) * rr * 0.45 : 0;
+                return V3(x, midtY(x) + rr * Math.sin(th) - sig, z + 0.05 + rr * Math.cos(th));
+            },
+            (i, j) => [i / NI, 1 + j / NJ],
+            // Mørkere inne i foldene og der surringene klemmer duken sammen.
+            (i, j) => (0.86 + 0.14 * fold(xOf(i), thOf(j))) * (0.82 + 0.18 * buk(xOf(i))),
+            (p) => V3(p.x, midtY(p.x), z + 0.05)
+        )
     );
-    // Surringene rundt seilet.
+    // Surringene rundt seilet (lyst, utjæret tau).
     k.withTint({ top: 0.9, bottom: 0.9, hue: [1.1, 1.0, 0.8] }, () => {
         for (let i = 1; i < n; i++) {
-            const x = -halv * 0.92 + (halv * 1.84 * i) / n;
-            const t = Math.abs(x) / halv;
-            const r = seilR * (1 - t * 0.55) * 1.04;
-            k.log('raatre', V3(x - 0.03, y - r * 0.85, z + 0.05), V3(x + 0.03, y - r * 0.85, z + 0.05), r, 7, false);
+            const x = surring(i);
+            const r = r0(x) * 0.72 * 1.2;
+            k.log('raatre', V3(x - 0.035, midtY(x), z + 0.05), V3(x + 0.035, midtY(x), z + 0.05), r, 8, false);
         }
     });
 }
 
 /**
  * Råa med seilet satt: duken henger fra råa ned til `bunn` og buker seg forut for vinden (`buk` m).
- * Begge sider tegnes (man ser seilet bakfra og forfra). Skjøtene går fra de nedre hjørnene akterut.
+ * Begge sider tegnes (man ser seilet bakfra og forfra). Vinden i seilduk.ts får duken til å puste
+ * og kruse seg; UV-ene er u 0..1 på tvers og v 0..1 fra underkanten til råa.
  */
 export function seilSatt(k: MeshKit, z: number, y: number, halv: number, bunn: number, buk: number, tint: Tint): void {
     k.withTint(tint, () => k.log('raatre', V3(-halv, y, z), V3(halv, y, z), 0.13, 7, true, 0.13));
-    const NX = 8;
-    const NY = 6;
+    const NX = 16;
+    const NY = 12;
     const w = halv * 0.94;
     const pt = (i: number, j: number) => {
         const u = i / NX;
@@ -294,28 +332,18 @@ export function seilSatt(k: MeshKit, z: number, y: number, halv: number, bunn: n
         const x = -w + 2 * w * u;
         // Duken er litt smalere nederst, og buker mest midt på og litt under midten.
         const xx = x * (0.92 + 0.08 * v);
-        const b = buk * Math.sin(Math.PI * u) * Math.sin(Math.PI * (0.15 + 0.85 * v)) ;
-        return V3(xx, bunn + (y - 0.15 - bunn) * v, z + 0.1 + b);
+        const b = buk * Math.sin(Math.PI * u) * Math.sin(Math.PI * (0.15 + 0.85 * v));
+        // Øverst er duken rynket der den er surret til råa.
+        const rynke = 0.06 * Math.sin(u * Math.PI * 26) * THREE.MathUtils.smoothstep(v, 0.82, 1);
+        return V3(xx, bunn + (y - 0.15 - bunn) * v, z + 0.1 + b + rynke);
     };
-    k.withUv(0.04, () =>
-        k.withTint(SEIL, () => {
-            for (let i = 0; i < NX; i++) {
-                for (let j = 0; j < NY; j++) {
-                    const a = pt(i, j);
-                    const b = pt(i + 1, j);
-                    const d = pt(i, j + 1);
-                    const c = pt(i + 1, j + 1);
-                    // To trekantpar per rute, ett for hver side.
-                    const s0 = SEIL.bottom + (SEIL.top - SEIL.bottom) * (j / NY);
-                    const s1 = SEIL.bottom + (SEIL.top - SEIL.bottom) * ((j + 1) / NY);
-                    k.tri('raatre', a, b, c, [a.x, a.y], [b.x, b.y], [c.x, c.y], [s0, s0, s1]);
-                    k.tri('raatre', a, c, d, [a.x, a.y], [c.x, c.y], [d.x, d.y], [s0, s1, s1]);
-                    k.tri('raatre', a, c, b, [a.x, a.y], [c.x, c.y], [b.x, b.y], [s0 * 0.8, s1 * 0.8, s0 * 0.8]);
-                    k.tri('raatre', a, d, c, [a.x, a.y], [d.x, d.y], [c.x, c.y], [s0 * 0.8, s1 * 0.8, s1 * 0.8]);
-                }
-            }
-        })
-    );
+    const uv = (i: number, j: number): [number, number] => [i / NX, j / NY];
+    const inn = (p: THREE.Vector3) => V3(p.x, p.y, p.z - 1);
+    k.withTint(SEIL, () => {
+        // Forsida (forut) og baksida, som får litt mindre lys.
+        flate(k, 'seil', NX, NY, pt, uv, (_i, j) => 0.92 + 0.08 * (j / NY), inn);
+        flate(k, 'seil', NX, NY, pt, uv, (_i, j) => 0.8 + 0.08 * (j / NY), inn, true);
+    });
 }
 
 /** Et tau mellom to punkter (tjæret hamp, mørkt). Litt slakk når `slakk` > 0. */

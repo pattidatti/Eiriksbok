@@ -790,7 +790,11 @@ Mixamo brukes ikke (krever innlogging).
   kasteller og fribord er [S]. Jekta: klinkbygd og flatbunnet, ett råseil, tørrfisk høyt opp mot masta,
   vengen akter [V SNL «jekt»], men målene og vengen gjelder senere århundrer [U]; 15 m [S]. Seilene er
   beslått (rullet sammen på råa) fordi skipene ligger i havn [S]. Laget i kode med råtre-teksturen og
-  fargefaktor per hjørne: to tegnekall per skip, ca. 30k trekanter for alle tre. De gynger med samme
+  fargefaktor per hjørne: to tegnekall per skip, ca. 30k trekanter for alle tre. Seilduk (03.10.2026,
+  `motor/seilduk.ts`): seilene har eget, delt materiale med lys, ufarget duk, sømmer mellom dukene,
+  lapper, bonnet, kanttau og vev; det beslåtte seilet henger i buker med folder, og satte seil puster
+  og kruser seg i vinden. Ullvadmel på norrøne seil og lin eller hamp på koggene er **[K]**; at begge
+  skipene har samme duk, er [S]. De gynger med samme
   bølger som vannet, og skroget har en konveks kollider så færingen ikke ror gjennom. Venter på eierens
   spilltest. Gjenstår: koggen som legger til i introen, folk om bord, last som losses, navigerbar kogge.
 - [~] Færing (02.10.2026): klinkbygd skrog med fire bordganger per side, stavner i begge ender, ripe,
