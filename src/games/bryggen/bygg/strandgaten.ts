@@ -18,6 +18,11 @@ import type { CellDef } from '../motor/streaming';
 import { kai, toGroup, tonne } from './gard';
 import { STRAND_Z, VEI } from './stranden';
 import { GATE } from './vaagsbunnen';
+import { rng } from './moduler';
+import { veiLiv } from './veiliv';
+import { lagDagsfolk } from './dagsplan';
+import { glemDyreSoner, meldDyreSoner } from '../motor/dyr';
+import { lagFaeringSkrog } from '../motor/faering-modell';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -130,14 +135,40 @@ export function strandgatenCelle(mats: Materials, xw: number, strandX0: number):
             vegg(c, V(g.x0, 0, g.z0), V(kv.x0, 0, g.z0));
             vegg(c, V(g.x0, 0, g.z0), V(g.x0, 0, g.z1));
 
+            // ── Livet langs veien (veiliv.ts): folk som går og arbeider, og tingene deres ──
+            const liv = veiLiv(M, k, c, rng(1426));
+            const folk = await lagDagsfolk(liv.plasser, liv.figurer, liv.vei, mats, 1426);
+            meldDyreSoner('strandgaten', liv.soner);
+
             const near = toGroup(k, mats, 'strandgaten');
+            // Færingen som tjæres, opp ned på bukkene.
+            // Nytjæret: mørkere enn færingene i Vågen (samme tekstur, egne materialer som cella kaster).
+            const tjaere = new THREE.MeshStandardMaterial({ map: mats.get('raatre').map, color: 0x6a5444, roughness: 0.55 });
+            const tjaereInn = tjaere.clone();
+            tjaereInn.side = THREE.BackSide;
+            tjaereInn.color.multiplyScalar(0.6);
+            const baat = lagFaeringSkrog(tjaere, tjaereInn);
+            baat.rotation.set(0, Math.PI / 2, Math.PI);
+            baat.position.copy(liv.baat).setY(0.92);
+            baat.traverse((o) => {
+                if (o instanceof THREE.Mesh) o.castShadow = o.receiveShadow = true;
+            });
+            near.add(baat, folk.group);
             return {
                 near,
-                colliders: c.specs,
-                dispose: () =>
+                colliders: [...c.specs, ...folk.colliders],
+                gaaende: folk.gaaende,
+                snakkbare: folk.snakkbare,
+                tick: folk.tick,
+                dispose: () => {
+                    folk.dispose();
+                    glemDyreSoner('strandgaten');
+                    tjaere.dispose();
+                    tjaereInn.dispose();
                     near.traverse((o) => {
                         if (o instanceof THREE.Mesh) o.geometry.dispose();
-                    }),
+                    });
+                },
             };
         },
     };

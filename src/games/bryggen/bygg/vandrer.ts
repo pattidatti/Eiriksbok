@@ -35,7 +35,7 @@ export interface Rute {
     /** Id i samtalene (samtaler.ts). Uten: en kort replikk. */
     samtale?: string;
     /** Hva hen bærer mellom `last`-punktene: en bunt tørrfisk (standard) eller en vannbøtte. */
-    baer?: 'bunt' | 'botte';
+    baer?: 'bunt' | 'botte' | 'kjerre';
     /** Hvem hen er (personer.ts). */
     id?: string;
     /** Kalles når figuren er laget (dagsplan.ts styrer den videre med `byttRute`). */
@@ -158,8 +158,10 @@ export class Vandrer {
     }
 
     private visLast(): void {
-        this.bunt.visible = this.baerer;
-        this.a.overlay(this.baerer ? 'Baere_Over' : null, 0.35);
+        // Kjerra er alltid med, og den skyves (gangklippet), ikke bæres.
+        const kjerre = this.rute.baer === 'kjerre';
+        this.bunt.visible = this.baerer || kjerre;
+        this.a.overlay(this.baerer && !kjerre ? 'Baere_Over' : null, 0.35);
     }
 
     private snu(mot: number, dt: number): number {

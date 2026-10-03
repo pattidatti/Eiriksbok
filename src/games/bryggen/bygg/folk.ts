@@ -529,8 +529,9 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         // Den som går, bøyer seg og bærer: kula rundt figuren gjøres litt større (figurlod.ts).
         cullFigur(a.model);
         const s = HOYDE[rute.figur] / rig.height;
-        const bunt = rute.baer === 'botte' ? botteMesh(mats) : buntMesh(mats);
-        bunt.position.set(0, (rute.baer === 'botte' ? 0.9 : 1.0) * s, 0.3 * s);
+        const bunt = rute.baer === 'botte' ? botteMesh(mats) : rute.baer === 'kjerre' ? kjerreMesh(mats) : buntMesh(mats);
+        if (rute.baer === 'kjerre') a.brukGang('Push_Loop');
+        else bunt.position.set(0, (rute.baer === 'botte' ? 0.9 : 1.0) * s, 0.3 * s);
         a.root.add(bunt);
         egne.push(bunt);
         const v = new Vandrer(a, rute, bunt, seed + i * 3.7);
@@ -600,6 +601,44 @@ export function buntMesh(mats: Materials): THREE.Object3D {
     k.withTint({ top: 1.1, bottom: 0.9, hue: [1.12, 1.02, 0.8] }, () => {
         for (const dx of [-0.13, 0.13]) k.box('raatre', dx, 0, 0, 0.035, 0.27, 0.31);
     });
+    const g = new THREE.Group();
+    for (const [key, b] of k.buckets) {
+        if (b.vertexCount === 0) continue;
+        const m = new THREE.Mesh(b.toGeometry(), mats.get(key));
+        m.castShadow = true;
+        g.add(m);
+    }
+    return g;
+}
+
+/**
+ * Ei kjerre med to hjul og to tønner, som skyves foran seg [S]. I figurens rom: hjulene foran, og
+ * håndtakene bak der hendene er i `Push_Loop`.
+ */
+export function kjerreMesh(mats: Materials): THREE.Object3D {
+    const k = new MeshKit();
+    const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+    k.withTint({ top: 0.75, bottom: 0.6, hue: [1.05, 0.95, 0.85] }, () => {
+        // Planet og sidene.
+        k.box('raatre', 0, 0.55, 1.25, 0.95, 0.05, 1.2, { grain: 'z' });
+        for (const s of [-1, 1]) k.box('raatre', s * 0.46, 0.68, 1.25, 0.04, 0.22, 1.2, { grain: 'z' });
+        // Håndtakene bakover til hendene.
+        for (const s of [-1, 1]) k.log('raatre', V(s * 0.3, 0.6, 0.7), V(s * 0.27, 1.12, 0.4), 0.025, 5);
+        k.log('raatre', V(-0.3, 1.12, 0.4), V(0.3, 1.12, 0.4), 0.022, 5);
+    });
+    k.withTint({ top: 0.55, bottom: 0.5, hue: [1.0, 0.9, 0.8] }, () => {
+        // Hjulene: skiver av planker på en aksel.
+        for (const s of [-1, 1]) k.log('raatre', V(s * 0.5, 0.33, 1.45), V(s * 0.57, 0.33, 1.45), 0.33, 12, true);
+        k.log('raatre', V(-0.55, 0.33, 1.45), V(0.55, 0.33, 1.45), 0.03, 5);
+        k.log('raatre', V(0, 0, 0.75), V(0, 0.52, 0.75), 0.03, 4);
+    });
+    // To tønner som ligger på planet.
+    for (const z of [0.98, 1.52]) {
+        k.withTint({ top: 0.85, bottom: 0.8, hue: [1.1, 0.95, 0.82] }, () => k.log('raatre', V(-0.38, 0.85, z), V(0.38, 0.85, z), 0.25, 10, true, 0.25));
+        k.withTint({ top: 0.35, bottom: 0.35 }, () => {
+            for (const x of [-0.25, 0.25]) k.log('raatre', V(x - 0.02, 0.85, z), V(x + 0.02, 0.85, z), 0.258, 10, false);
+        });
+    }
     const g = new THREE.Group();
     for (const [key, b] of k.buckets) {
         if (b.vertexCount === 0) continue;
