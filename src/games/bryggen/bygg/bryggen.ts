@@ -23,7 +23,7 @@ import { Katter } from '../motor/katter';
 import { Himmel } from '../motor/himmel';
 import { Royk, Stov } from '../motor/luft';
 import type { Lyssetting } from '../motor/stemning';
-import { lagSkipene } from './skip';
+import { lagSkipene, type Skipene } from './skip';
 import type { GrayboxLayout } from '../graboks/scene';
 import { FRONT_Z, GARD_DEPTH, GARD_W, YARD_W, type Sides } from './gard';
 import type { GardParams } from './nabogard';
@@ -55,6 +55,8 @@ export interface BryggenWorld {
     skygge: number;
     /** Færingen gutten ror (settes av spillet): vannet holdes ute av den også. */
     faering: THREE.Object3D | null;
+    /** Skipene som ligger fast i Vågen (koggen og jektene, skip.ts). */
+    skip: Skipene;
     /** Andre skrog vannet skal holdes ute av (koggen i en filmscene, sekvens.ts). */
     ekstraSkrog: SkrogFot[];
     /**
@@ -416,6 +418,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         skygge: 0,
         faering: null,
         ekstraSkrog: [],
+        skip,
         streamer,
         materials,
         get environment() {

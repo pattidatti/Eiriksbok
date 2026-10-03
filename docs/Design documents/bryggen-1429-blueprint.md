@@ -273,8 +273,10 @@ Fraksjonene: **K** Kontoret, **B** Bergenhus/kongens menn, **N** norske borgere 
 «Kontorets lov» (`bygg/kontor-data.ts`): sortere etter kvalitet (bua), prute med en fisker (bytteforholdet
 fisk mot rug, §4.3), gjeldsbok (Sølves konto, nordfarergjelda) og heise med vinsjen i gavlen. Kjeden
 begynner og slutter med Morgensprache i schøtstua, der oldermannen og sekretæren leser de tre reglene med
-straff, og dømmer etter valget med gjeldsboka (§4.2; straffene for 1420-årene er [U]/[K]). «Laste koggen»
-og «veie på bismer» som egen jobb står igjen. Venter på eierens spilltest.
+straff, og dømmer etter valget med gjeldsboka (§4.2; straffene for 1420-årene er [U]/[K]). Venter på eierens spilltest.
+*03.10.2026:* «Laste koggen» (pakkepuslespill med krenging og trim, koggen krenger i 3D; [V] Bremerkoggen
+1380, 90-130 tonn, Wikipedia «Bremen cog») og «veie på bismer» som egen jobb (Bårds fisk: fem bunter, regn
+om til våger, [U] våg-størrelsen) er bygget (`bygg/kontor-jobber.ts`). De kan tas igjen for lønn én gang per døgn.
 
 ### 7.2 Nye forslag (8)
 
@@ -335,7 +337,9 @@ retning. Ryktet låser opp oppdrag, priser og hjelp, og avgjør slutten.
 kort midt på skjermen når de endrer seg, «Meg» i pausemenyen. Alle oppdragene gir rykte, og valg i
 gjeld, tyven, rottejakten, skomakeren, jekta og terningspillet flytter to målere i motsatt retning.
 Låste svar (krav om rykte, rang, witten eller ferdighet) hos vakta på Bergenhus, Detmar, Bård og Tideke.
-Venter på eierens spilltest. Slutten og priser etter rykte gjenstår.
+*03.10.2026:* ryktet styrer lønna (hos den som betaler), prutingen med Sølve (F), boten og synet til vaktene (B),
+og om folk møter gutten kaldt eller varmt. Flere låste svar: husbonden, Ottar, kornselgeren, høvedsmannen (gir
+fri ferdsel forbi vaktbua) og presten i Jonskirken. Venter på eierens spilltest. Slutten gjenstår.
 
 ### 8.4 Ferdigheter (bedre av bruk)
 Styrke (bære), slåsskamp (treffe og blokkere), pruting (lese grensen), roing (takt), regning og

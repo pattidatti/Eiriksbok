@@ -261,6 +261,12 @@ export const DRAKTER = {
     },
     // ── Kontoret (kontor-data.ts) ── [S]: ingen kilde for hva en oldermann bar i 1420-årene [K].
     /** Oldermannen på Kontoret: lang, mørk vinrød kjortel til anklene, svart hette oppe, grått skjegg. */
+    /** Skipperen på koggen fra Lübeck: kort, mørk grønn kjortel for sjøen, lærhette, vær i ansiktet. */
+    skipper: {
+        navn: 'skipper', hud: 0xc48d6c, haar: 0x6a5238, skjegg: 0x7a5f44, kjortel: 0x2f4a3a, kjortelNed: -0.02,
+        belte: 0x2a1d14, hoser: 0x4a3f36, sko: 0x2b1f17, hette: 0x4b3624, hetteOppe: true, tut: 0.12, kappe: 0.2,
+        mage: 0.35,
+    },
     oldermann: {
         navn: 'oldermann', hud: 0xd0a086, haar: 0x9a948a, skjegg: 0xa8a39a, kjortel: 0x4a1f24, kjortelNed: 0.44,
         belte: 0x1a120c, hoser: 0x2a2626, sko: 0x1d1612, hette: 0x1c1a1a, hetteOppe: true, tut: 0.46, kappe: 0.24,
@@ -277,7 +283,7 @@ export const HOYDE: Record<FigurNavn, number> = {
     hovedsmann: 1.8, gjaldker: 1.76,
     skomaker: 1.7, skomakersvenn: 1.74, baker: 1.72, bakerdreng: 1.5, gullsmed: 1.73, buntmaker: 1.68, barberer: 1.76, smed: 1.84,
     gammelkone: 1.5, husmann: 1.72, husfrue: 1.6, gutt: 1.26, jente: 1.22, fyllik: 1.73,
-    oldermann: 1.76,
+    oldermann: 1.76, skipper: 1.77,
 };
 
 /**

@@ -23,7 +23,8 @@ import { SIDEOPPDRAG } from './sideoppdrag';
 import { BUDET, BYEN_OPPDRAG } from './byen-oppdrag';
 import { RUNER } from './runeoppdrag'; // Pinnene i gjørma (Stranden, verden2)
 import { KONTOR_OPPDRAG } from './kontor-data';
-import './rykte-samtaler'; // kald og varm start, og svar som ryktet låser opp (etter at alle samtalene finnes)
+import { JOBB_OPPDRAG } from './kontor-jobber';
+import { leggTilRykte } from './rykte-samtaler';
 
 /** Fraksjonene (blueprint §7): Kontoret, Bergenhus/kongens menn, norske borgere, kirken, nordlandsfiskerne. */
 export type Fraksjon = 'K' | 'B' | 'N' | 'Ki' | 'F';
@@ -483,4 +484,8 @@ export const OPPDRAG: OppdragDef[] = [
     ...BYEN_OPPDRAG,
     RUNER, // Pinnene i gjørma (runeoppdrag.ts)
     ...KONTOR_OPPDRAG,
+    ...JOBB_OPPDRAG, // Last koggen og Bårds fisk på bismeren (kontor-jobber.ts)
 ];
+
+// Kald og varm start, og svar som ryktet låser opp: sist, når samtalene over har fått sine svar.
+leggTilRykte();

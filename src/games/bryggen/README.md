@@ -580,6 +580,16 @@ kastes ut fra kaia og forsvinner). Prisen fra prutingen styrer hvor mye rug Søl
 Flaggene står øverst i `kontor-data.ts`. Belønningen bruker `belonning` og `gjor`-kommandoene
 `rykte:K:+n`, `witten:+n` (kontrakten i `oppdrag-data.ts`).
 
+To jobber ved siden av kjeden (`bygg/kontor-jobber.ts`), krav: «Fisken bærer seg ikke selv». Når de er
+levert, kan de tas igjen for lønn én gang per døgn (døgnet telles når `lys.klokke` går rundt).
+
+| Fil | Hva |
+|---|---|
+| `graboks/kontor-koggen.ts`, `ui/KontorKoggen.tsx` | «Last koggen» hos skipperen Hinrik på kaia ved allmenningen: pakkepuslespill i lasterommet (8 x 4, smale ender, masta), tranfat (4), bunter (1) og store pakker (2, R snur). Krenging og trim regnes som vekt ganger avstand fra midten, og koggen krenger i 3D (`Skipene.krenging`, `world.skip`). Floen gir 150 s |
+| `graboks/kontor-veiing.ts`, `ui/KontorVeiing.tsx` | «Bårds fisk på bismeren» ved jekta: fem bunter på bismeren (`BismerSpill`), så tre svar i våger (3 bismerpund i en våg, `PUND_PER_VAAG`; feilene er å svare i pund eller dele på to). Bårds eget tall er litt høyere: fisken tørker på veien |
+
+Dev: `?sted=koggen&oppdrag=kontor-koggen` og `?sted=bard&oppdrag=kontor-veiing`.
+
 Dev: `?sted=schotstua|bua|pult|solve|vinsj`, og `?oppdrag=kontor-morgensprache` (eller `kontor-sortere`,
 `kontor-prute`, `kontor-gjeldsbok`, `kontor-vinsj`, `kontor-dom`). Eksempel:
 `/test/bryggen-gard?sted=vinsj&oppdrag=kontor-vinsj` går rett til vinsjen. Gjeldsboka trenger at

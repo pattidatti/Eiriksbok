@@ -185,7 +185,9 @@ export class FolkStyring {
         if (s) {
             if (this.snudd) this.snudd.npc.vend(null);
             this.snudd = null;
-            this.aktiv = { s, node: q?.start ?? startNode(npc.samtale!, s), npc };
+            // Et oppdrag som bruker personens egen samtale fra start (Ottar), får også kald og varm start.
+            const egen = !!npc.samtale && (!q || (q.s === SAMTALER[npc.samtale] && q.start === 'start'));
+            this.aktiv = { s, node: egen ? startNode(npc.samtale!, s) : (q?.start ?? 'start'), npc };
             npc.vend(gutt);
             this.replikk = null;
             this.vis();

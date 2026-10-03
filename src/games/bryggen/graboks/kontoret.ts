@@ -18,6 +18,8 @@ import { lagPrute } from './kontor-prute';
 import { lagSortering } from './kontor-sortering';
 import { KONTOR_STEDER as S } from './kontor-steder';
 import { lagVinsj } from './kontor-vinsj';
+import { lagKoggen } from './kontor-koggen';
+import { lagVeiing } from './kontor-veiing';
 import type { SpillKontekst, Spillsystem } from './system';
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
@@ -118,5 +120,6 @@ export function lagKontoret(k: SpillKontekst): Spillsystem[] {
         },
     };
 
-    return [liv, lagMorgensprache(k), lagSortering(k), lagPrute(k), lagGjeldsbok(k), lagVinsj(k)];
+    // Jobbene ved siden av kjeden: laste koggen og veie Bårds fisk (kontor-jobber.ts).
+    return [liv, lagMorgensprache(k), lagSortering(k), lagPrute(k), lagGjeldsbok(k), lagVinsj(k), lagKoggen(k), lagVeiing(k)];
 }

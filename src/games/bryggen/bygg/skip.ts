@@ -26,6 +26,11 @@ export interface Skipene {
     update: (t: number) => void;
     /** Omrisset av hvert skrog i vannlinja (vannet tegnes ikke innenfor). */
     skrog: SkrogFot[];
+    /**
+     * Ekstra krenging (rull, radianer, + mot styrbord) og trim (duv, + baugen ned) for et skip, f.eks.
+     * når lasten står skjevt i koggen (kontor-koggen.ts). Tones inn mykt.
+     */
+    krenging: (navn: string, rull: number, duv: number) => void;
     /** Omrisset av skipene som synes nå (en filmscene kan skjule koggen, sekvens.ts). */
     synlige: () => SkrogFot[];
     /** Jekta som ligger for anker (lekteren i trafikk.ts losser den). */
@@ -66,6 +71,9 @@ interface Skip {
     rull: number;
     fase: number;
     fot: SkrogFot;
+    navn: string;
+    /** Krenging og trim fra lasten (`krenging`), tonet mot målet. */
+    ekstra: { rull: number; duv: number; maalRull: number; maalDuv: number };
 }
 
 /** `kaiFront(x)` er z for kaifronten (bolverket) ved x. */
@@ -121,7 +129,7 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
         // Skipet ligger 0,15 m dypere enn skroget sier (update): vannlinja står litt opp i skroget.
         const vl = vannlinje(sp, 0.3);
         const fot: SkrogFot = { x: p.x + Math.sin(p.yaw) * vl.forut, z: z + Math.cos(p.yaw) * vl.forut, yaw: p.yaw, L: vl.L, B: vl.B, fyldig: vl.fyldig };
-        skip.push({ root, x: p.x, z, yaw: p.yaw, sp, rull: p.rull, fase: i * 2.1, fot });
+        skip.push({ root, navn: p.navn, x: p.x, z, yaw: p.yaw, sp, rull: p.rull, fase: i * 2.1, fot, ekstra: { rull: 0, duv: 0, maalRull: 0, maalDuv: 0 } });
     });
 
     const update = (t: number) => {
@@ -139,8 +147,11 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
             const tid = t + s.fase;
             // Litt dypere enn skroget sier: ellers løfter kjølen seg over vannet i endene.
             s.root.position.y = WATER_Y - 0.15 + (hF + hA + hB + hS) / 4 + Math.sin(tid * 0.55) * 0.035;
-            s.root.rotation.x = -(hF - hA) / (2 * l) + Math.sin(tid * 0.41 + 1.3) * s.rull * 0.35;
-            s.root.rotation.z = (hB - hS) / (2 * b) + Math.sin(tid * 0.83) * s.rull;
+            const e = s.ekstra;
+            e.rull += (e.maalRull - e.rull) * 0.04;
+            e.duv += (e.maalDuv - e.duv) * 0.04;
+            s.root.rotation.x = -(hF - hA) / (2 * l) + Math.sin(tid * 0.41 + 1.3) * s.rull * 0.35 + e.duv;
+            s.root.rotation.z = (hB - hS) / (2 * b) + Math.sin(tid * 0.83) * s.rull + e.rull;
         }
     };
 
@@ -148,6 +159,10 @@ export function lagSkipene(phys: Physics, mats: Materials, kaiFront: (x: number)
         group,
         update,
         skrog: skip.map((s) => s.fot),
+        krenging: (navn, rull, duv) => {
+            const s = skip.find((x) => x.navn === navn);
+            if (s) Object.assign(s.ekstra, { maalRull: rull, maalDuv: duv });
+        },
         synlige: () => skip.filter((s) => s.root.visible).map((s) => s.fot),
         anker: (() => {
             const p = PLASSER.find((q) => q.z !== undefined)!;

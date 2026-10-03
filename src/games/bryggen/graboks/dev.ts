@@ -91,6 +91,8 @@ const DEV_STEDER: Record<string, { pos: [number, number, number]; yaw: number; b
     pult: { pos: [-3.4, 0.2, 7.6], yaw: Math.PI },
     solve: { pos: [2.4, 0, 2.9], yaw: Math.PI },
     vinsj: { pos: [-5.9, 0, 2.2], yaw: 0 },
+    // Jobbene (kontor-jobber.ts): foran Hinrik ved koggen, og foran Bård ved jekta.
+    koggen: { pos: [23.2, 0, 2.6], yaw: Math.PI },
 };
 
 /** `?sted=`: flytt startpunktet før cellene rundt det lastes (bare i dev). */
