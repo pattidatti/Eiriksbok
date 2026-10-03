@@ -20,6 +20,7 @@
 import type { Samtale } from './samtaler';
 import { SAMTALER, SPOR } from './samtaler';
 import { SIDEOPPDRAG } from './sideoppdrag';
+import { BUDET, BYEN_OPPDRAG } from './byen-oppdrag';
 
 /** Fraksjonene (blueprint §7): Kontoret, Bergenhus/kongens menn, norske borgere, kirken, nordlandsfiskerne. */
 export type Fraksjon = 'K' | 'B' | 'N' | 'Ki' | 'F';
@@ -473,104 +474,8 @@ export const OPPDRAG: OppdragDef[] = [
         lonn: 'Herr Johannes kjenner deg igjen nå.',
         belonning: { witten: 1, rykte: { Ki: 5, K: 2 } },
     },
-    {
-        id: 'bergenhus',
-        tittel: 'Budet til Bergenhus',
-        giver: 'presten',
-        mottaker: 'skriveren',
-        krav: ['brev'],
-        om: 'Herr Johannes har et svar som skal til kongens skriver på Bergenhus, borgen på Holmen. Vakta i porten må slippe deg inn.',
-        hvor: 'Porten til Bergenhus på Holmen, ytterst langs kaia mot nord',
-        maal: [{ hendelse: 'snakk:vakta', tekst: 'Snakk med vakta i porten til Bergenhus' }],
-        ting: 'brev',
-        tilbud: {
-            start: {
-                tekst: 'Vent, gutt. Siden du først er her: dette brevet skal til kongens skriver på Bergenhus.',
-                gest: 'kom',
-                til: 'start2',
-            },
-            start2: {
-                tekst: 'Følg kaia mot nord til Holmen. Porten er i muren. Si til vakta at du kommer fra presten i Mariakirken.',
-                gest: 'peke',
-                valg: [
-                    { tekst: 'Får jeg se kongen?', til: 'kongen' },
-                    { tekst: 'Jeg skal levere det.', til: 'ja' },
-                ],
-            },
-            kongen: {
-                tekst: 'Kongen? Han er ikke her, gutt. Spør vakta, så får du høre.',
-                gest: 'riste',
-                valg: [{ tekst: 'Jeg skal levere det.', til: 'ja' }],
-            },
-            ja: { tekst: 'Gud være med deg.', gest: 'bukk', gjor: 'ta:bergenhus' },
-        },
-        underveis: {
-            start: { tekst: 'Bergenhus ligger ytterst på Holmen. Følg kaia mot nord.', gest: 'peke' },
-        },
-        samtaler: {
-            vakta: {
-                start: {
-                    tekst: 'Stopp! Hva vil en tyskergutt på kongens borg?',
-                    gest: 'peke',
-                    valg: [
-                        { tekst: 'Jeg har et brev fra presten i Mariakirken.', til: 'brev' },
-                        { tekst: 'Jeg vil se kongen.', til: 'kongen' },
-                        { tekst: 'Du kjenner meg. Jeg ropte på dere da tyven var i gården.', til: 'kjent', krav: { rykte: { B: 8 } } },
-                    ],
-                },
-                kjent: {
-                    tekst: 'Jungen som ropte på oss da tyven var i gården? Ja, jeg husker deg. Gå rett inn. Skriveren står ved pulten foran hallen.',
-                    gest: 'nikk',
-                    gjor: 'hendelse:snakk:vakta;rykte:B:+2',
-                },
-                kongen: {
-                    tekst: 'Kongen? Kong Erik bor i Danmark. Han har ikke vært i Bergen på lenge. Her styrer høvedsmannen for ham.',
-                    gest: 'riste',
-                    til: 'krig',
-                },
-                krig: {
-                    tekst: 'Og nå er kongen i krig med hansabyene. Med dine folk, gutt. Så hva vil du her?',
-                    gest: 'snakk',
-                    valg: [{ tekst: 'Jeg har et brev fra presten i Mariakirken.', til: 'brev' }],
-                },
-                brev: {
-                    tekst: 'Fra presten? Gå inn, da. Skriveren står ved pulten sin i borggården, foran hallen. Rør ingenting.',
-                    gest: 'vift',
-                    gjor: 'hendelse:snakk:vakta',
-                },
-            },
-        },
-        levering: {
-            start: {
-                tekst: 'Et brev fra Mariakirken? Hit med det. Jeg skal gi det til høvedsmannen.',
-                gest: 'kom',
-                gjor: 'lever:bergenhus',
-                til: 'hvem',
-            },
-            hvem: {
-                tekst: 'Høvedsmannen er kongens mann her. Han holder borgen, krever inn skatt og passer på at kongens lov gjelder i byen.',
-                gest: 'snakk',
-                valg: [
-                    { tekst: 'Gjelder kongens lov på Bryggen også?', til: 'bryggen' },
-                    { tekst: 'Takk. Jeg går nå.', til: 'slutt' },
-                ],
-            },
-            bryggen: {
-                tekst: 'Det burde den. Men dere på Kontoret har egne lover, og kongen trenger kornet deres. Det er en strid som ikke er over.',
-                gest: 'skuldre',
-                til: 'slutt',
-            },
-            slutt: { tekst: 'Gå tilbake til Bryggen før det blir mørkt, gutt.', gest: 'vift', til: 'vet' },
-            vet: {
-                hvem: 'Dette vet vi',
-                vet: true,
-                // [V] Erik av Pommern unionskonge, krigen mellom Danmark og hansabyene 1426-1435, høvedsmannen
-                // på Bergenhus som kongens fremste mann i byen (blueprint §3, §4.1). Skriveren og vakta er [S].
-                tekst: 'Kong Erik av Pommern var konge over Norge, Danmark og Sverige, og bodde mest i Danmark. Fra 1426 var han i krig med hansabyene. På Bergenhus satt høvedsmannen, kongens fremste mann i Bergen. Vakta og skriveren er laget for spillet.',
-            },
-        },
-        lonn: 'Du har vært innenfor muren på Bergenhus.',
-        belonning: { witten: 2, rykte: { B: 6, Ki: 2 } },
-    },
+    // Budet til Bergenhus og brannen ved lagerhusene: bygg/byen-oppdrag.ts.
+    BUDET,
     ...SIDEOPPDRAG,
+    ...BYEN_OPPDRAG,
 ];

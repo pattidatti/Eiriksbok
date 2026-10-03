@@ -19,6 +19,9 @@ import { FilmVisning } from '../graboks/FilmVisning';
 import type { FilmHud } from '../graboks/sekvens';
 import { SystemHint } from './SystemHint';
 import { RpgKortPanel } from './RpgHud';
+import { Ettersokt, EttersoktSvart } from './Ettersokt';
+import { Snik } from './Snik';
+import { Brann } from './Brann';
 
 export type PanelPlass = 'hoyre' | 'midt' | 'bunn' | 'hel';
 
@@ -34,4 +37,9 @@ export const SYSTEM_PANELER: SystemPanel[] = [
     { navn: 'tyv', plass: 'bunn', Komponent: SystemHint },
     { navn: 'opplaering', plass: 'bunn', Komponent: SystemHint },
     { navn: 'rpg', plass: 'hel', Komponent: RpgKortPanel },
+    // Kongens menn på Holmen (byen-oppdrag.ts).
+    { navn: 'ettersokt', plass: 'hoyre', Komponent: Ettersokt },
+    { navn: 'ettersokt', plass: 'hel', Komponent: EttersoktSvart },
+    { navn: 'budet', plass: 'bunn', Komponent: Snik },
+    { navn: 'brann', plass: 'bunn', Komponent: Brann },
 ];

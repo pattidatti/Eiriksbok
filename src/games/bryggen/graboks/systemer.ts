@@ -23,6 +23,10 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push((await import('./terning')).lagTerning(k));
     // Rollespillet (blueprint §8.3-8.6): rykte, pung, ferdigheter og rang.
     ut.push((await import('./rpg')).lagRollespill(k));
+    // Kongens menn på Holmen (bygg/byen-oppdrag.ts): ettersøkt først (boten tar E foran budet), så vaktene og brannen.
+    ut.push((await import('./ettersokt')).lagEttersokt(k));
+    ut.push((await import('./holmenvakt')).lagHolmenvakt(k));
+    ut.push((await import('./brann')).lagBrann(k));
     if (import.meta.env.DEV) ut.push(fotoSystem());
     return ut;
 }

@@ -206,6 +206,20 @@ export const DRAKTER = {
         belte: 0x1e140c, hoser: 0x2e2b28, sko: 0x1d1510, hette: 0x4a4440, hetteOppe: false, tut: 0.12, kappe: 0.15,
         mage: 0.4,
     },
+
+    // ── Kongens menn på Holmen (byen-oppdrag.ts) ── Fargene er [S], ikke sjekket [K].
+    /** Høvedsmannen: kongens mann på Bergenhus. Lang blå kjortel, rød kappe og hette, kort skjegg, pung. */
+    hovedsmann: {
+        navn: 'hovedsmann', hud: 0xd2a084, haar: 0x6a5440, skjegg: 0x6e5844, kjortel: 0x23365c, kjortelNed: 0.3,
+        belte: 0x5a3a18, hoser: 0x6a2420, sko: 0x1d1510, hette: 0x8a1f1c, hetteOppe: false, tut: 0.2, kappe: 0.3,
+        mage: 0.2, pung: 0.5,
+    },
+    /** Gjaldkeren: kongens mann i byen. Brun kjortel til leggen, grå hette oppe, skjegg, stor pung. */
+    gjaldker: {
+        navn: 'gjaldker', hud: 0xcf9d80, haar: 0x4a3a2c, skjegg: 0x5a483a, kjortel: 0x5a4430, kjortelNed: 0.22,
+        belte: 0x1e1610, hoser: 0x3c3c3a, sko: 0x231a12, hette: 0x6a6a6e, hetteOppe: true, tut: 0.26, kappe: 0.22,
+        mage: 0.35, pung: 0.7,
+    },
 } satisfies Record<string, Drakt>;
 
 export type FigurNavn = keyof typeof DRAKTER;
@@ -214,6 +228,7 @@ export const HOYDE: Record<FigurNavn, number> = {
     junge: 1.58, husbonde: 1.74, svenn: 1.79, dreng: 1.66, stuedreng: 1.52, fisker: 1.71,
     fiskekone: 1.58, kornselger: 1.73, bondekone: 1.55, bodker: 1.7, kjopekone: 1.61, borger: 1.75, tjenestejente: 1.54,
     tyv: 1.68, prest: 1.72, vakt: 1.82, skriver: 1.7, klokker: 1.66, olkone: 1.6,
+    hovedsmann: 1.8, gjaldker: 1.76,
     skomaker: 1.7, skomakersvenn: 1.74, baker: 1.72, bakerdreng: 1.5, gullsmed: 1.73, buntmaker: 1.68, barberer: 1.76, smed: 1.84,
 };
 
