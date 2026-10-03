@@ -63,5 +63,7 @@ export interface Spillsystem {
     rask?(): boolean;
     /** Data til React-HUD-en (`HudState.system[navn]`). Kalles når HUD-en oppdateres. */
     hud?(): unknown;
+    /** Eleven trykket Start på startskjermen (spillet har stått til da). */
+    vedSpillstart?(): void;
     dispose?(): void;
 }

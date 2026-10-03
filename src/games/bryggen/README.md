@@ -31,7 +31,9 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Lyd: `public/games/bryggen/audio/` (CC0 og offentlig eie, se KILDE.md). Lyden starter ved første
   klikk eller Enter. M slår av og på. Hovedvolum og volum per buss (ute, inne, hendelser) står under
   Innstillinger i pausemenyen, og huskes i `bryggen-innstillinger`.
-- Menyene (`ui/`): startskjerm (Enter = bare tastatur), og pausemenyen på Esc med Fortsett,
+- Menyene (`ui/`): startskjerm (Enter = bare tastatur) med tittelen over første skudd av prologen. Spillet
+  står bak startskjermen, og prologen begynner først når eleven trykker Start (`GrayboxGame.begynn`).
+  Spillet fyller nettleservinduet; ekte fullskjerm er et valg i HUD-en og menyen. Pausemenyen på Esc med Fortsett,
   Innstillinger, Kontroller, Oppdrag og dagbok, og Avslutt. Alt styres med piltaster, Enter og Esc.
   Spillet står mens menyen er oppe (`GrayboxGame.pause`). I fullskjerm låses Esc (Chrome), så Esc
   åpner menyen i stedet for å gå ut av fullskjermen.

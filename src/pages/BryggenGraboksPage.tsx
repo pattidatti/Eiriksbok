@@ -53,6 +53,8 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             if (cancelled || !mountRef.current || !floatRef.current) return;
             const game = new GrayboxGame(mountRef.current, floatRef.current, setHud, { shadows, world, low: start.grafikk === 'lav' });
             gameRef.current = game;
+            // Spillet står bak startskjermen til eleven trykker Start (`begynn`), så prologen ikke går tapt.
+            game.pause(true);
             brukInnstillinger(game, start);
             (window as unknown as { __bryggen?: GrayboxGame }).__bryggen = game;
             game.start().catch((e: unknown) => setError(String(e)));
@@ -147,7 +149,8 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
         setStarted(true);
         // Lyden får bare starte fra et klikk eller tastetrykk.
         gameRef.current?.startLyd();
-        void fullskjerm(true);
+        gameRef.current?.begynn();
+        // Spillet fyller nettleservinduet. Ekte fullskjerm er et valg (knappen i HUD-en og menyen).
         if (withMouse) gameRef.current?.requestPointerLock();
         else gameRef.current?.focus();
     };

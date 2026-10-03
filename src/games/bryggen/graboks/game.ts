@@ -221,6 +221,7 @@ export class GrayboxGame {
             const { LydKobling } = await import('../motor/lydkobling');
             if (this.disposed) return;
             this.lyd = new LydKobling(this.world, this.cam.camera, this.player, this.boat);
+            this.lyd.lyd.dempet = this.pauset;
             const { FolkStyring } = await import('./folkstyring');
             if (this.disposed) return;
             const gutt = this.player;
@@ -280,6 +281,12 @@ export class GrayboxGame {
     startLyd(): void {
         this.lydValg.onsket = true;
         void this.lyd?.start();
+    }
+
+    /** Start på startskjermen: spillet har stått bak den (`pause(true)`), og prologen begynner nå. */
+    begynn(): void {
+        this.pause(false);
+        for (const s of this.systemer) s.vedSpillstart?.();
     }
 
     /** Pause: simuleringen, døgnet og været står, tastene går til menyen, lyden dempes, bildet tegnes sjelden. */

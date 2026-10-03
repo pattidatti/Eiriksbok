@@ -71,6 +71,12 @@
     "link": "/historie/andre-verdenskrig/krigsseilerne",
     "title": "Krigsseilerne"
   },
+  "tinghuset": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/landssvikoppgjoret",
+    "title": "Landssvikoppgjøret: Da Norge dømte sine egne"
+  },
   "over-volga-3d": {
     "subjectId": "historie",
     "topicId": "andre-verdenskrig",
@@ -148,6 +154,12 @@
     "topicId": "dansketiden",
     "link": "/historie/dansketiden/pietismen",
     "title": "Pietismen: sporet vi fortsatt går i"
+  },
+  "lopegravene-1718": {
+    "subjectId": "historie",
+    "topicId": "dansketiden",
+    "link": "/historie/dansketiden/store-nordiske-krig",
+    "title": "Den store nordiske krig: Da Karl XII ville ta Norge"
   },
   "trelastruta-3d": {
     "subjectId": "historie",
@@ -443,7 +455,19 @@
     "link": "/historie/industriell-revolusjon/storbritannia",
     "title": "Hvorfor begynte det i Storbritannia?"
   },
+  "klokka-0045": {
+    "subjectId": "historie",
+    "topicId": "industriell-revolusjon",
+    "link": "/historie/industriell-revolusjon/titanic",
+    "title": "Titanic: Skipet som ikke kunne synke"
+  },
   "rismark-og-makt-3d": {
+    "subjectId": "historie",
+    "topicId": "japans-historie",
+    "link": "/historie/japans-historie/det-foydale-japan",
+    "title": "Det føydale Japan: samuraienes tid"
+  },
+  "guddommelig-vind": {
     "subjectId": "historie",
     "topicId": "japans-historie",
     "link": "/historie/japans-historie/det-foydale-japan",
@@ -725,6 +749,12 @@
     "link": "/historie/norge-i-moderne-tid/oljealderen",
     "title": "Oljealderen: da Norge fant gullet under havet"
   },
+  "taburetten": {
+    "subjectId": "historie",
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/riksretten-1884",
+    "title": "Riksretten 1884: Da Stortinget tok makta"
+  },
   "vinterbeitet-3d": {
     "subjectId": "historie",
     "topicId": "norge-i-moderne-tid",
@@ -736,6 +766,12 @@
     "topicId": "norge-i-moderne-tid",
     "link": "/historie/norge-i-moderne-tid/svalbard",
     "title": "Svalbard: øyene ingen eide"
+  },
+  "petisjonen-3d": {
+    "subjectId": "historie",
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/thranebevegelsen",
+    "title": "Thranebevegelsen: Da husmennene krevde stemmerett"
   },
   "gjenreisningen-3d": {
     "subjectId": "historie",
@@ -839,11 +875,23 @@
     "link": "/historie/osmanske-riket/konstantinopels-fall",
     "title": "1453: Da Konstantinopel falt"
   },
+  "hammer-og-ambolt": {
+    "subjectId": "historie",
+    "topicId": "perserriket",
+    "link": "/historie/perserriket/aleksander-den-store",
+    "title": "Aleksander den store: Eleven som erobret verden"
+  },
   "persepolis-gaver-3d": {
     "subjectId": "historie",
     "topicId": "perserriket",
     "link": "/historie/perserriket/artikkel",
     "title": "Perserriket: Det første verdensriket"
+  },
+  "thermopylae": {
+    "subjectId": "historie",
+    "topicId": "perserriket",
+    "link": "/historie/perserriket/perserkrigene",
+    "title": "Perserkrigene: Da Hellas trosset verdens største rike"
   },
   "himmelmodellen-3d": {
     "subjectId": "historie",
@@ -862,6 +910,18 @@
     "topicId": "renessansen",
     "link": "/historie/renessansen/leonardo-da-vinci",
     "title": "Leonardo da Vinci — mannen som ville vite alt"
+  },
+  "loddposen": {
+    "subjectId": "historie",
+    "topicId": "renessansen",
+    "link": "/historie/renessansen/medici-familien",
+    "title": "Medici-familien: Bankfolkene som kjøpte renessansen"
+  },
+  "frisk-puss": {
+    "subjectId": "historie",
+    "topicId": "renessansen",
+    "link": "/historie/renessansen/michelangelo",
+    "title": "Michelangelo: Han som hugde mennesker ut av stein"
   },
   "testudo-3d": {
     "subjectId": "historie",

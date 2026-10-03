@@ -145,7 +145,7 @@ export class Sekvens implements Spillsystem {
     private ut = 0;
     private svart = 0;
     private esc = false;
-    /** Filmen som venter på at spilleren skal begynne (første tast eller klikk). */
+    /** Filmen som venter på at spilleren skal begynne (Start på startskjermen, `vedSpillstart`). */
     private venter: Film | null = null;
     private klokke = 0;
     /** Kalles når en film er ferdig (id). */
@@ -154,7 +154,6 @@ export class Sekvens implements Spillsystem {
     constructor(k: SpillKontekst) {
         this.k = k;
         window.addEventListener('keydown', this.onKey);
-        window.addEventListener('pointerdown', this.onStart);
     }
 
     /** Går en film nå, eller venter en (på å starte eller i køen)? */
@@ -173,25 +172,23 @@ export class Sekvens implements Spillsystem {
         this.ko.push(film);
     }
 
-    /** Vis første skudd med en gang, og start filmen ved første tast eller klikk (startskjermen). */
+    /** Vis første skudd med en gang (bak startskjermen), og start filmen når eleven trykker Start. */
     vedStart(film: Film): void {
         this.venter = film;
         void this.begynn(film, true);
     }
 
-    private onStart = () => {
+    /** Start på startskjermen. Bare knappen starter filmen: et klikk eller en tast før det ville
+     *  latt prologen gå bak startskjermen, og eleven ville mistet åpningen. */
+    vedSpillstart(): void {
         if (!this.venter) return;
         this.venter = null;
         if (this.a) this.a.t = 0;
         this.k.hudSnart();
-    };
+    }
 
     private onKey = (e: KeyboardEvent) => {
-        if (this.venter) {
-            this.onStart();
-            return;
-        }
-        if (e.code === 'Escape' && this.a) this.esc = true;
+        if (e.code === 'Escape' && this.a && !this.venter) this.esc = true;
     };
 
     private async begynn(film: Film, holdt = false): Promise<void> {
@@ -491,7 +488,6 @@ export class Sekvens implements Spillsystem {
 
     dispose(): void {
         window.removeEventListener('keydown', this.onKey);
-        window.removeEventListener('pointerdown', this.onStart);
         if (this.a) this.avslutt();
     }
 }

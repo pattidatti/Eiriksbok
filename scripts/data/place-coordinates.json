@@ -888,11 +888,11 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 350
+      "count": 357
     },
     {
       "tag": "teknologi",
-      "count": 73
+      "count": 75
     },
     {
       "tag": "dekolonisering",
@@ -900,7 +900,7 @@
     },
     {
       "tag": "krig",
-      "count": 69
+      "count": 71
     },
     {
       "tag": "økonomi",
@@ -948,11 +948,11 @@
     },
     {
       "tag": "demokrati",
-      "count": 32
+      "count": 34
     },
     {
       "tag": "1800-tallet",
-      "count": 31
+      "count": 34
     },
     {
       "tag": "etikk",
@@ -1003,6 +1003,10 @@
       "count": 24
     },
     {
+      "tag": "1700-tallet",
+      "count": 24
+    },
+    {
       "tag": "musikk",
       "count": 24
     },
@@ -1019,7 +1023,7 @@
       "count": 22
     },
     {
-      "tag": "1700-tallet",
+      "tag": "renessansen",
       "count": 22
     },
     {
@@ -1036,10 +1040,6 @@
     },
     {
       "tag": "samfunn",
-      "count": 20
-    },
-    {
-      "tag": "renessansen",
       "count": 20
     },
     {
@@ -1061,6 +1061,10 @@
     {
       "tag": "holocaust",
       "count": 18
+    },
+    {
+      "tag": "andre-verdenskrig",
+      "count": 17
     },
     {
       "tag": "sammenligning",
@@ -1095,6 +1099,10 @@
       "count": 15
     },
     {
+      "tag": "rettsstat",
+      "count": 14
+    },
+    {
       "tag": "reformasjonen",
       "count": 14
     },
@@ -1115,10 +1123,6 @@
       "count": 14
     },
     {
-      "tag": "andre-verdenskrig",
-      "count": 13
-    },
-    {
       "tag": "kollaps",
       "count": 12
     },
@@ -1128,10 +1132,6 @@
     },
     {
       "tag": "globalisering",
-      "count": 12
-    },
-    {
-      "tag": "rettsstat",
       "count": 12
     },
     {
@@ -1203,6 +1203,10 @@
       "count": 10
     },
     {
+      "tag": "kunst",
+      "count": 10
+    },
+    {
       "tag": "kolonialisme",
       "count": 10
     },
@@ -1211,7 +1215,15 @@
       "count": 10
     },
     {
+      "tag": "dansketiden",
+      "count": 10
+    },
+    {
       "tag": "1500-tallet",
+      "count": 10
+    },
+    {
+      "tag": "vendepunkt",
       "count": 10
     },
     {
@@ -1315,19 +1327,7 @@
       "count": 8
     },
     {
-      "tag": "kunst",
-      "count": 8
-    },
-    {
-      "tag": "dansketiden",
-      "count": 8
-    },
-    {
       "tag": "okonomi",
-      "count": 8
-    },
-    {
-      "tag": "vendepunkt",
       "count": 8
     },
     {
@@ -1360,6 +1360,10 @@
     },
     {
       "tag": "bøker",
+      "count": 7
+    },
+    {
+      "tag": "makt",
       "count": 7
     },
     {
@@ -1439,6 +1443,10 @@
       "count": 6
     },
     {
+      "tag": "union",
+      "count": 6
+    },
+    {
       "tag": "psykologi",
       "count": 6
     },
@@ -1456,6 +1464,10 @@
     },
     {
       "tag": "ideologi",
+      "count": 6
+    },
+    {
+      "tag": "stemmerett",
       "count": 6
     },
     {
@@ -1484,6 +1496,10 @@
     },
     {
       "tag": "oversikt",
+      "count": 6
+    },
+    {
+      "tag": "okkupasjon",
       "count": 6
     },
     {
@@ -1531,10 +1547,6 @@
       "count": 5
     },
     {
-      "tag": "makt",
-      "count": 5
-    },
-    {
       "tag": "enevelde",
       "count": 5
     },
@@ -1548,10 +1560,6 @@
     },
     {
       "tag": "kommunikasjon",
-      "count": 5
-    },
-    {
-      "tag": "stemmerett",
       "count": 5
     },
     {
@@ -1747,10 +1755,6 @@
       "count": 4
     },
     {
-      "tag": "union",
-      "count": 4
-    },
-    {
       "tag": "mangfold",
       "count": 4
     },
@@ -1776,6 +1780,10 @@
     },
     {
       "tag": "nyere tid",
+      "count": 4
+    },
+    {
+      "tag": "karl-xii",
       "count": 4
     },
     {
@@ -1819,6 +1827,14 @@
       "count": 4
     },
     {
+      "tag": "skipsfart",
+      "count": 4
+    },
+    {
+      "tag": "sikkerhet",
+      "count": 4
+    },
+    {
       "tag": "rente",
       "count": 4
     },
@@ -1840,10 +1856,6 @@
     },
     {
       "tag": "krigføring",
-      "count": 4
-    },
-    {
-      "tag": "okkupasjon",
       "count": 4
     },
     {
@@ -2004,6 +2016,10 @@
     },
     {
       "tag": "fornorsking",
+      "count": 3
+    },
+    {
+      "tag": "parlamentarisme",
       "count": 3
     },
     {
@@ -2527,6 +2543,10 @@
       "count": 2
     },
     {
+      "tag": "medici",
+      "count": 2
+    },
+    {
       "tag": "leonardo-da-vinci",
       "count": 2
     },
@@ -2683,10 +2703,6 @@
       "count": 2
     },
     {
-      "tag": "karl-xii",
-      "count": 2
-    },
-    {
       "tag": "gustav-ii-adolf",
       "count": 2
     },
@@ -2744,6 +2760,10 @@
     },
     {
       "tag": "montesquieu",
+      "count": 2
+    },
+    {
+      "tag": "tordenskiold",
       "count": 2
     },
     {
@@ -2935,6 +2955,10 @@
       "count": 2
     },
     {
+      "tag": "arbeiderbevegelse",
+      "count": 2
+    },
+    {
       "tag": "1848",
       "count": 2
     },
@@ -3051,6 +3075,18 @@
       "count": 2
     },
     {
+      "tag": "titanic",
+      "count": 2
+    },
+    {
+      "tag": "klassesamfunn",
+      "count": 2
+    },
+    {
+      "tag": "1900-tallet",
+      "count": 2
+    },
+    {
       "tag": "sentralbank",
       "count": 2
     },
@@ -3143,11 +3179,23 @@
       "count": 2
     },
     {
+      "tag": "luftkrig",
+      "count": 2
+    },
+    {
+      "tag": "radar",
+      "count": 2
+    },
+    {
       "tag": "atomvapen",
       "count": 2
     },
     {
       "tag": "ostfronten",
+      "count": 2
+    },
+    {
+      "tag": "normandie",
       "count": 2
     },
     {
@@ -3164,6 +3212,10 @@
     },
     {
       "tag": "folketrygden",
+      "count": 2
+    },
+    {
+      "tag": "landssvik",
       "count": 2
     },
     {
@@ -3351,19 +3403,11 @@
       "count": 2
     },
     {
-      "tag": "skipsfart",
-      "count": 2
-    },
-    {
       "tag": "logistikk",
       "count": 2
     },
     {
       "tag": "sårbarhet",
-      "count": 2
-    },
-    {
-      "tag": "sikkerhet",
       "count": 2
     },
     {
@@ -4055,10 +4099,6 @@
       "count": 1
     },
     {
-      "tag": "parlamentarisme",
-      "count": 1
-    },
-    {
       "tag": "valg",
       "count": 1
     },
@@ -4084,22 +4124,6 @@
     },
     {
       "tag": "rettsvitenskap",
-      "count": 1
-    },
-    {
-      "tag": "arbeiderbevegelse",
-      "count": 1
-    },
-    {
-      "tag": "luftkrig",
-      "count": 1
-    },
-    {
-      "tag": "radar",
-      "count": 1
-    },
-    {
-      "tag": "normandie",
       "count": 1
     },
     {
