@@ -501,6 +501,14 @@ function ljore(k: MeshKit, s: HouseSpec, lj: Ljore): void {
             for (const sx of [-1, 1]) k.log('raatre', V(sx * (lx + 0.05), ly - 0.02, z), V(0, ridgeY + surf + 0.02, z), 0.075, 6);
         }
     });
+    // Hullet er en portal inn til rommet (portal.ts): én skrå flate på hver side av mønet, fra
+    // karmen og opp til mønet, med retningen ut av taket. Alt man ser gjennom hullet, går gjennom
+    // en av dem, også åsene rett under mønet.
+    const topp = ridgeY + surf + 0.02;
+    for (const sx of [-1, 1]) {
+        const ut = V(sx * Math.sin(a), Math.cos(a), 0);
+        k.aapning([V(sx * lx, ly, z0), V(0, topp, z0), V(0, topp, z1), V(sx * lx, ly, z1)], ut);
+    }
     // Lemmen: bord i en ramme, hengslet langs karmen på -x-siden og slått opp mot +x.
     const lw = lx * 2 + 0.2;
     const m = new THREE.Matrix4()

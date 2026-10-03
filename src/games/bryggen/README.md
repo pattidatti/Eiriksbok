@@ -52,6 +52,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `motor/hode.ts` | Nytt hode i stedet for mannequinens egg: skalle, kjeve, hår/skjegg/hette, ører, hals, og ansiktet (øyne, bryn, nese, munn) |
 | `motor/meshkit.ts` | Geometri-settet: bøtter per materiale, UV i meter, fargefaktor per hjørne, kollider-beskrivelser |
 | `motor/materials.ts` | PBR-materialene (farge, normal, ARM) og miljølys fra en enkel himmel |
+| `motor/portal.ts` | Portal-culling for innredningen: delt i biter på 1,5 m (`BatchedMesh` per materiale, fortsatt ett tegnekall), og hver bit tegnes bare når den kan synes gjennom en åpen dør, glugg eller ljoren. Står kameraet inne i huset eller i døråpningen, tegnes alt |
+| `motor/figurlod.ts` | Nivåene til figurene: fin geometri med skygge nær, grov uten skygge bak 13 m (`FigurLod`), og frustum-culling med litt større kule for figurer som flytter seg (`cullFigur`) |
 | `motor/streaming.ts` | Celler som lastes innen 120 m og kastes bak 180 m, nær- og middels-nivå, delt/samlet, innredning og tåkegrense |
 | `motor/vann.ts` | Vågen: bølger regnet ut i pikselen, falsk speiling av bryggefronten, regnringer. Ingen teksturer, ingen ekstra tegning. Tegnes ikke innenfor skrogene (`settSkrog`) |
 | `motor/maaker.ts` | Måker: én InstancedMesh, vingeslag i vertex-shaderen. Sirkler, daler, står på kaia eller vannet, letter i flokk når gutten kommer |
@@ -168,6 +170,11 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Innredning (bua, schøtstua) bygges i en egen `MeshKit` per hus og går i `CellContent.inne`: den
   kaster ikke skygge (veggene skygger allerede for sola inne) og skjules bak `INNE_R` (30 m), der den
   bare er et mørkt hull bak en dør. Bua alene er ca. 75k trekanter.
+- Innredningen går gjennom `bakPortaler` (portal.ts), og folkene inne får `bak` på plassen: de
+  tegnes bare når kameraet kan se dem gjennom en åpning. Åpningene registreres med
+  `MeshKit.aapning` der hullet lages (`vegg` i inne.ts for dører og glugger, `ljore` i moduler.ts).
+  Et nytt hull inn i et hus med innredning må registreres, ellers mangler innredningen bak det.
+  Ting i innredningen må stå innenfor veggene: det som står utenfor, blir borte sett utenfra.
 - Bak `TAAKE_R` (110 m) tegnes ikke cella i det hele tatt: tåka er over 99 % tett der. Landemerker
   bruker `tynnTake`, og strømmingen kjenner dem på det og lar dem stå.
 - Del modeller i én geometri per materiale (`mergeGeometries`) når delene ikke beveger seg hver for
@@ -310,7 +317,8 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
   noen ved en bod, må flytte gutten bort før de venter på at noen andre kommer dit.
 - Animasjonen til folk oppdateres hvert bilde innen 16 m, 15 ganger i sekundet ut til 45 m, og de
   tegnes ikke lenger unna (`Takt` i `folk.ts`). Bak 13 m bytter figuren til det grove nivået
-  (`GROV` i `figur.ts`, ca. 2,5k trekanter mot 6,7k) og kaster ikke skygge. Logikken til dem som
+  (`GROV` i `figur.ts`, ca. 2,5k trekanter mot 6,7k) og kaster ikke skygge (`FigurLod`, også for
+  roerne i færingene). Logikken til dem som
   går, kjører alltid.
 - Overkroppsklipp oppå gangen (bære noe): `Animator.overlay('Baere_Over')`. Mixeren normaliserer
   vektene per bein, så `overlay` regner om vekten til andelen overkroppen skal ha.

@@ -16,7 +16,9 @@
 // ikke sjekket mot Bryggens Museum [K].
 import * as THREE from 'three';
 import { Animator, loadRig } from '../motor/animator';
-import { GROV, kleFigur, RIG_URL, type Drakt } from '../motor/figur';
+import { kleFigur, RIG_URL, type Drakt } from '../motor/figur';
+import { cullFigur, FigurLod } from '../motor/figurlod';
+import type { Portaler } from '../motor/portal';
 import { ColliderKit, MeshKit, type ColliderSpec } from '../motor/meshkit';
 import type { Materials } from '../motor/materials';
 import { disposeObject, type CellCtx, type Snakkbar } from '../motor/streaming';
@@ -241,6 +243,11 @@ export interface Plass {
     samtale?: string;
     /** Hvem hen er (personer.ts): eget navn over hodet, og hen kan gi og ta imot oppdrag. */
     id?: string;
+    /**
+     * Ytelse: hen står inne i et hus og synes bare gjennom åpningene (portal.ts). Tegnes da bare
+     * når kameraet kan se hen gjennom en dør eller glugg, og kaster ikke skygge (veggene skygger).
+     */
+    bak?: Portaler;
 }
 
 const KLIPP: Record<Rolle, { clip: string; speed: number; hold?: number }> = {
@@ -280,34 +287,28 @@ export interface Folk {
 /** Nærmere enn dette animeres hvert bilde; lenger unna 15 ganger i sekundet, og bak FJERN ikke. */
 const NAER = 16;
 const FJERN = 45;
-/** Bak denne avstanden: grov geometri og ingen skygge. */
-const GROV_R = 13;
 /** Lenger unna enn dette tegnes ikke folk: tåka har nesten tatt dem, og de koster tegnekall. */
 const SYNLIG = 45;
 
-/** Hvor ofte animasjonen oppdateres etter avstand. Tåka skjuler det som står langt unna. */
+/**
+ * Hvor ofte animasjonen oppdateres etter avstand. Tåka skjuler det som står langt unna. Nivået
+ * (fin/grov, skygge) styres av `FigurLod` i figurlod.ts.
+ */
 class Takt {
     private acc = 0;
     readonly a: Animator;
-    private mesh: THREE.Mesh | null = null;
-    private readonly fin: THREE.BufferGeometry | null = null;
-    private readonly grov: THREE.BufferGeometry | undefined;
-    constructor(a: Animator) {
+    private readonly lod: FigurLod;
+    /** Inne i et hus: synes bare gjennom åpningene (`Plass.bak`). */
+    private readonly bak?: { p: Portaler; box: THREE.Box3 };
+    constructor(a: Animator, bak?: Portaler) {
         this.a = a;
-        a.model.traverse((o) => {
-            if (o.name.startsWith('figur:')) this.mesh = o as THREE.Mesh;
-        });
-        this.fin = this.mesh?.geometry ?? null;
-        this.grov = this.fin ? GROV.get(this.fin) : undefined;
+        this.lod = new FigurLod(a.model);
+        if (bak) this.bak = { p: bak, box: new THREE.Box3().setFromCenterAndSize(a.root.position.clone().setY(a.root.position.y + 0.9), new THREE.Vector3(1.2, 1.9, 1.2)) };
     }
     update(dt: number, speed: number, kamera: THREE.Vector3): void {
         const d = this.a.root.position.distanceTo(kamera);
-        this.a.root.visible = d < SYNLIG;
-        if (this.mesh && this.fin && this.grov) {
-            const langt = d > GROV_R;
-            this.mesh.geometry = langt ? this.grov : this.fin;
-            this.mesh.castShadow = !langt;
-        }
+        this.a.root.visible = d < SYNLIG && (!this.bak || this.bak.p.ser(kamera, this.bak.box));
+        this.lod.sett(d, !this.bak);
         if (d > FJERN) return;
         this.acc += dt;
         if (d > NAER && this.acc < 1 / 15) return;
@@ -418,7 +419,7 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
         a.root.rotation.y = p.yaw;
         group.add(a.root);
         anims.push(a);
-        takter.push(new Takt(a));
+        takter.push(new Takt(a, p.bak));
         const st = new Staaende(a, p, k, sitter);
         staaende.push(st);
         snakkbare.push({
@@ -445,9 +446,8 @@ export async function lagFolk(plasser: Plass[], mats: Materials, seed = 1, ruter
     ruter.forEach((rute, i) => {
         const a = new Animator(kleFigur(rig, DRAKTER[rute.figur]), HOYDE[rute.figur]);
         a.update(0.02, 0);
-        a.model.traverse((o) => {
-            if ((o as THREE.Mesh).isMesh) o.frustumCulled = true;
-        });
+        // Den som går, bøyer seg og bærer: kula rundt figuren gjøres litt større (figurlod.ts).
+        cullFigur(a.model);
         const s = HOYDE[rute.figur] / rig.height;
         const bunt = rute.baer === 'botte' ? botteMesh(mats) : buntMesh(mats);
         bunt.position.set(0, (rute.baer === 'botte' ? 0.9 : 1.0) * s, 0.3 * s);
