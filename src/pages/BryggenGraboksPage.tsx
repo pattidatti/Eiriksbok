@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { GrayboxGame, HudState, Quality, WorldId } from '../games/bryggen/graboks/game';
 import { BismerVisning } from '../games/bryggen/graboks/BismerVisning';
+import { Aktiviteter } from '../games/bryggen/ui/Aktiviteter';
 
 // Testruter for Bryggen-spillet. Ikke koblet inn i galleriet.
 // /test/bryggen-graboks  grå prøvescene (følelsen)
@@ -319,6 +320,7 @@ export function BryggenGraboksPage({ world = 'graboks' }: { world?: WorldId }) {
             </div>
 
             {hud.bismer && <BismerVisning b={hud.bismer} />}
+            <Aktiviteter system={hud.system} />
 
             {/* Samtalen: replikkene står i boblene over hodene. Nederst står bare hvem man snakker med og
                 svarene, og «Dette vet vi» i sin helhet: det er ikke noen i spillet som sier det. */}

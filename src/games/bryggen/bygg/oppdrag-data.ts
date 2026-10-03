@@ -17,6 +17,7 @@
 // Historien og ordene er laget for spillet [S]. Fakta i «Dette vet vi» er merket i kommentarene.
 import type { Samtale } from './samtaler';
 import { SAMTALER, SPOR } from './samtaler';
+import { SIDEOPPDRAG } from './sideoppdrag';
 
 export interface Maal {
     /** Hendelsen som teller (se over). */
@@ -431,4 +432,5 @@ export const OPPDRAG: OppdragDef[] = [
         },
         lonn: 'Du har vært innenfor muren på Bergenhus.',
     },
+    ...SIDEOPPDRAG,
 ];

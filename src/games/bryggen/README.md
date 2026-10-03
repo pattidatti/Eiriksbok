@@ -104,6 +104,13 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 | `graboks/oppdrag.ts` | Oppdragsmotoren: status, teller hendelser, merker («!», «?», grå «?»), steder med E, lagret i `bryggen-oppdrag` |
 | `graboks/hoder.ts` | HTML over hodene: navneskilt, oppdragsmerke og snakkeboble som skrives fram. Skjult bak vegger (stråle fra kameraet) |
 | `graboks/tyv.ts` | Tyven i gården: ute bare mens oppdraget hans er aktivt, roper over hodet, teller `slaa:tyven` |
+| `bygg/sideoppdrag.ts` | Sideoppdragene fra blueprint §7.2 (rottejakt, skomakerverkstedet, jekta, messen, terningene): data og samtaler, lagt til `OPPDRAG`. `SIDE` holder det systemene husker (fisken, hvordan terningspillet endte) |
+| `graboks/sidefolk.ts` | Bård ved jekta (egen celle, `CellStreamer.leggTil`) og hjelperne `finnPerson`, `naer`, `maalNaadd` |
+| `graboks/rottejakt.ts`, `ui/Rottejakt.tsx` | Feller med agn på lagerloftet, katta, fisken som blir gnagd på |
+| `graboks/syrytme.ts`, `ui/Syrytme.tsx` | Sy sålen hos mester Hans: hull glir mot nåla i takt med hammeren, A for øvre rad, D for nedre. Dømmes etter når tasten ble trykket (`InputFrame.trykt`), ikke når steget kom |
+| `graboks/messe.ts`, `ui/Messe.tsx` | Lyset fra sidealteret til høyalteret (saktere gange, flammen slukner av løp og hopp), og svarene på latin (1-3) med bjella når presten løfter brødet. Stedene står i `mariakirken-inne.ts` |
+| `graboks/terning.ts`, `ui/Terning.tsx` | Tre runder terning med Einar i ølstua, med jukseterningen fra Vågsbunnen (2) og sjansen for å bli tatt |
+| `ui/Aktiviteter.tsx` | Velger HUD-komponenten for hvert system (`HudState.system`) |
 | `graboks/flytere.ts`, `graboks/dev.ts` | Skadetallene i kampen, og utviklerverktøyene (flyttet ut av `game.ts`) |
 | `graboks/` | Prøvescenen og løkka (faste 1/60-steg, interpolert tegning). Løkka kjører begge verdenene |
 
@@ -329,6 +336,14 @@ En liten, egen Three.js-motor for det store Bryggen-spillet. Den importerer inge
 - Kampen: rekka er jab, kross, svingslag (starten av `Sword_Attack`, sluppet før det dype utfallet). Tungt
   slag og avslutning er også svingslaget. Fienden velger kross, to jab eller et svingslag som går gjennom
   garden (varsles i oransje: rull unna). Lyd fra `kamp.ogg` via `CombatSink.lyd`; gutten får lysere stemme.
+- Sideoppdragene i dev: `?sted=loft|hans|detmar|bard|ottar|kirke|alter|olstua` starter gutten ved stedet
+  (`DEV_STEDER` i `dev.ts`), `?oppdrag=sko,messe` tar oppdragene uten krav (også om de er levert), og
+  `?hendelse=messe:lys` sender hendelser. Eksempel: `/test/bryggen-gard?sted=alter&oppdrag=messe&hendelse=messe:lys`
+  går rett til svarene i messen.
+- Et system som holder gutten (`steg` gir true) skjuler «E: …» mens aktiviteten pågår, og `rask()` gir
+  HUD-en ca. 30 oppdateringer i sekundet. Aktivitetene animerer selv mellom oppdateringene (`ui/useNaa.ts`),
+  og panelene står over navneskiltene (`z-[1100]`). Hold dem 640 px brede eller smalere: kontrollpanelet nede
+  til venstre tar 336 px på 1366 x 768.
 - Oppdrag: et mål er en hendelse (`veid`, `sted:<id>`, `snakk:<person>`, `slaa:tyven`). Steder meldes av
   cellene (`CellContent.steder`, f.eks. `bronn` og `gjeldsbok`). Et oppdrag uten mål er klart med en gang
   (et brev som bare skal leveres). `__bryggen.folk.oppdrag` i konsollen kan ta, telle og levere.

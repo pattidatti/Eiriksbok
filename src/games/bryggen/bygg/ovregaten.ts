@@ -252,7 +252,7 @@ async function buildGateCell(mats: Materials, o: GateOppsett, plan: ReturnType<t
             const bytt: Partial<Record<FigurNavn, FigurNavn>> = { svenn: 'fisker', dreng: 'kornselger', stuedreng: 'olkone', husbonde: 'borger' };
             for (const p of info.folk) {
                 const figur = bytt[p.figur] ?? p.figur;
-                plasser.push({ ...p, figur, id: figur === 'olkone' ? 'gunhild' : undefined, pos: p.pos.clone().applyMatrix4(m), yaw: p.yaw + h.rot });
+                plasser.push({ ...p, figur, id: figur === 'olkone' ? 'gunhild' : figur === 'fisker' ? 'einar' : undefined, pos: p.pos.clone().applyMatrix4(m), yaw: p.yaw + h.rot });
             }
             const f = new Ild({ smokeTop: eaveY(h.spec) + riseOf(h.spec) - 0.3 - info.ild.y, spread: 0.45 });
             f.group.position.copy(info.ild).applyMatrix4(m);

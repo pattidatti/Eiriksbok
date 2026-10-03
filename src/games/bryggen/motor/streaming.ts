@@ -174,6 +174,11 @@ export class CellStreamer {
         this.root.name = 'celler';
     }
 
+    /** Legger til en celle mens spillet går (sideoppdragenes folk, sidefolk.ts). Lastes ved neste `update`. */
+    leggTil(def: CellDef): void {
+        if (!this.cells.some((c) => c.id === def.id)) this.cells.push(def);
+    }
+
     /** Avstand fra punktet til cellas rektangel (0 inne i cella). */
     private dist(def: CellDef, x: number, z: number): number {
         const dx = Math.max(0, Math.abs(x - def.center.x) - def.half.x);

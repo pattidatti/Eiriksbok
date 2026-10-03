@@ -39,6 +39,10 @@ export const PERSONER: Record<string, Person> = {
     henneke: { navn: 'Henneke', tittel: 'buntmaker' },
     johan: { navn: 'Mester Johan', tittel: 'barberer' },
     asbjorn: { navn: 'Asbjørn', tittel: 'smed' },
+    // Sideoppdragene (sideoppdrag.ts) [S].
+    bard: { navn: 'Bård', tittel: 'nordlandsfisker, Ottars bror' },
+    einar: { navn: 'Einar', tittel: 'fisker' },
+    detmar: { navn: 'Detmar', tittel: 'skomakersvenn' },
 };
 
 /** Tittelen når en figur ikke har eget navn: drakten sier hva hen er. */
