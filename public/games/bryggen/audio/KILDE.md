@@ -46,6 +46,15 @@ stille (`Lydbilde.stottet`).
 | `aare.ogg` | `tak` (6) | [R23-38-Oar Splash.wav](https://freesound.org/people/craigsmith/sounds/480840/) | craigsmith | CC0 |
 | | `knirk` (5) | [G27-11-Ship Creaks.wav](https://freesound.org/people/craigsmith/sounds/438357/) | craigsmith | CC0 |
 
+| `dyr.ogg` | `gris` (5) | [A pig grunting, grumbling and falling asleep](https://freesound.org/people/felix.blume/sounds/158746/), [PIGS - 1](https://freesound.org/people/SamuelGremaud/sounds/467570/) | felix.blume, SamuelGremaud | CC0 |
+| | `bjeff` (4) | [Dog Bark](https://freesound.org/people/aunrea/sounds/495658/), [Dog Barking Distance - 1.wav](https://freesound.org/people/SpaceJoe/sounds/485962/) | aunrea, SpaceJoe | CC0 |
+| | `knurr` (1) | [Animal Dog Bark And Growl 01.wav](https://freesound.org/people/abhisheky948/sounds/625501/) | abhisheky948 | CC0 |
+| | `mjau` (6) | [Cat, Meows 3x](https://freesound.org/people/Kinoton/sounds/741166/), [Cat Meows](https://freesound.org/people/brandonmoeller/sounds/456441/) | Kinoton, brandonmoeller | CC0 |
+
+Dyrelydene (`dyr.ogg`) er hentet og lisenssjekket 03.10.2026: sida til hver fil sier CC0 1.0. Forhåndslyttingen
+(128 kbit/s) er klippet i enkeltlyder (stillhet funnet med `silencedetect`, grisene klippet fast fordi de
+grynter sammenhengende), høypass 110 Hz, nivå etter RMS mot -14 dB, Opus 40 kbit/s (118 kB).
+
 `latter` er gråmåkas lange rop (ha-ha-ha), `skrik` enkeltrop og mjauing.
 
 ## Prøvd, ikke brukt

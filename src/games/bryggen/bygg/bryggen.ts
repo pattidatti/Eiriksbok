@@ -55,6 +55,8 @@ export interface BryggenWorld {
     skygge: number;
     /** Færingen gutten ror (settes av spillet): vannet holdes ute av den også. */
     faering: THREE.Object3D | null;
+    /** Kattene i rottesonene (katter.ts): lydkoblingen lytter på dem. */
+    katter: Katter;
     /** Skipene som ligger fast i Vågen (koggen og jektene, skip.ts). */
     skip: Skipene;
     /** Andre skrog vannet skal holdes ute av (koggen i en filmscene, sekvens.ts). */
@@ -419,6 +421,7 @@ export async function buildBryggen(scene: THREE.Scene, phys: Physics, renderer: 
         faering: null,
         ekstraSkrog: [],
         skip,
+        katter,
         streamer,
         materials,
         get environment() {

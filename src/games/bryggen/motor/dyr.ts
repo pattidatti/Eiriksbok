@@ -176,6 +176,12 @@ export class Dyrene {
     private guttFart = 0;
     /** Natt: de fleste ligger (dagsplan.ts gir svaret). */
     natt: () => boolean = () => false;
+    /**
+     * Lyd fra et dyr (lydkobling via strandliv.ts): grisene grynter mens de roter og snuser, og høyere
+     * når de blir skremt; hundene bjeffer når de blir nysgjerrige på gutten eller skremt, og knurrer
+     * om natta når han kommer for nær.
+     */
+    onLyd: (art: Art, hva: 'grynt' | 'skremt' | 'bjeff' | 'knurr', pos: THREE.Vector3) => void = () => undefined;
 
     constructor() {
         this.flokker = { gris: new Flokk('gris'), hund: new Flokk('hund') };
@@ -294,6 +300,7 @@ export class Dyrene {
         if (sammeHoyde && d.tilstand !== 'flykte' && ((lop && dg < (art === 'gris' ? 4.5 : 3.2)) || (art === 'gris' && dg < 1.3))) {
             d.tilstand = 'flykte';
             d.tid = 1.6 + this.rnd();
+            this.onLyd(art, art === 'gris' ? 'skremt' : 'bjeff', d.pos);
             // Bort fra gutten, litt til siden, innenfor sona.
             const a = Math.atan2(-dx, -dz) + (this.rnd() - 0.5) * 0.9;
             d.mal.set(d.pos.x + Math.sin(a) * 5, d.pos.y, d.pos.z + Math.cos(a) * 5);
@@ -301,6 +308,11 @@ export class Dyrene {
             // Hunden blir nysgjerrig og går bort til gutten.
             d.tilstand = 'folge';
             d.tid = 6 + this.rnd() * 4;
+            this.onLyd(art, 'bjeff', d.pos);
+        } else if (art === 'gris' && (d.tilstand === 'snuse' || d.tilstand === 'rusle') && this.rnd() < dt * 0.09) {
+            this.onLyd(art, 'grynt', d.pos);
+        } else if (art === 'hund' && sammeHoyde && this.natt() && d.tilstand === 'ligge' && dg < 2.6 && this.rnd() < dt * 0.5) {
+            this.onLyd(art, 'knurr', d.pos);
         }
         d.tid -= dt;
         if (d.tid <= 0) this.velg(d);

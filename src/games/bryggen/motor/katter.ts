@@ -93,6 +93,8 @@ export class Katter {
     private readonly rng: () => number;
     private tid = 0;
     private nestePels = 0;
+    /** En katt mjauer (lydkobling.ts): av og til når gutten er nær, oftere når den må vike for ham. */
+    onMjau: ((pos: THREE.Vector3, ute: boolean) => void) | undefined;
 
     constructor(phys: Physics, rotter: Rotter, seed = 23) {
         this.phys = phys;
@@ -255,6 +257,9 @@ export class Katter {
         const kommer = (k.forrigeD - d) / dt;
         k.forrigeD = d;
         const sammeGolv = Math.abs(gutt.y - k.pos.y) < 1.4;
+        if (sammeGolv && d < 9 && k.tilstand !== 'sover' && k.tilstand !== 'lusker' && this.rng() < dt * (k.tilstand === 'viker' ? 0.6 : 0.025)) {
+            this.onMjau?.(k.pos, !!k.sone.ute);
+        }
         const motGutt = Math.atan2(dx, dz);
         let maalFart = 0;
         let hodeYaw = 0;

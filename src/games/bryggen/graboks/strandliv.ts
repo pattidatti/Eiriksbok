@@ -43,6 +43,7 @@ export function lagStrandliv(k: SpillKontekst): Spillsystem {
     const oppdrag = k.folk.oppdrag;
     const dyr = new Dyrene();
     dyr.natt = () => fase() === 'natt';
+    dyr.onLyd = (art, hva, pos) => k.lyd?.dyr(art, hva, pos);
     k.scene.add(dyr.group);
 
     // ── Pinnene ──

@@ -5,6 +5,7 @@
 // - Ildstedet knitrer der det står (nærmeste innen 15 m).
 // - Måkene skriker fra der en måke faktisk er, og en hel flokk skriker når den letter.
 // - Rottene piper, krafser og skriker fra der rotta er (lave, man må være nær), også når katta tar en.
+// - Grisene grynter, hundene bjeffer og knurrer (dyr.ts) og kattene mjauer (katter.ts), fra der dyret er (`dyr.ogg`).
 // - Fottrinn: når en fot når bunnen av steget i animasjonen (fotbeinet slutter å synke), velges
 //   underlaget der gutten står: planker ute, golv inne eller gjørme.
 // - Færingen: et plask og et åretak når åra settes i, og vann mot skroget etter farten.
@@ -51,6 +52,17 @@ export class LydKobling {
         this.fotter = ['DEF-footL', 'DEF-footR'].map((n) => ({ bein: gutt.anim.root.getObjectByName(n) ?? null, y: 0, topp: 0, synker: false, sist: 0 }));
         world.rotter.onHendelse = (h) => this.rotte(h);
         world.maaker.onLetter = (pos, antall) => this.flokk(pos, antall);
+        world.katter.onMjau = (pos, ute) => this.dyr('katt', 'mjau', pos, ute);
+    }
+
+    /** Dyrelyder (dyr.ts og katter.ts), fra `dyr.ogg`. */
+    dyr(art: 'gris' | 'hund' | 'katt', hva: string, pos: THREE.Vector3, ute = true): void {
+        const l = this.lyd;
+        const f = 0.92 + Math.random() * 0.16;
+        if (art === 'katt') l.spill('dyr', 'mjau', { pos, ref: 1.6, styrke: 0.45, fart: f, buss: ute ? 'ute' : 'inne' });
+        else if (art === 'gris') l.spill('dyr', 'gris', { pos, ref: 2.2, styrke: hva === 'skremt' ? 0.75 : 0.45, fart: hva === 'skremt' ? 1.3 : f });
+        else if (hva === 'knurr') l.spill('dyr', 'knurr', { pos, ref: 1.6, styrke: 0.5, fart: f });
+        else for (let i = 0; i < (Math.random() < 0.5 ? 2 : 1); i++) l.spill('dyr', 'bjeff', { pos, ref: 4, styrke: 0.6, fart: f, om: i * (0.32 + Math.random() * 0.15) });
     }
 
     /** Fra et tastetrykk eller klikk (nettleseren krever det før lyd kan spilles). */
@@ -209,6 +221,7 @@ export class LydKobling {
     dispose(): void {
         this.world.rotter.onHendelse = undefined;
         this.world.maaker.onLetter = undefined;
+        this.world.katter.onMjau = undefined;
         this.lyd.dispose();
     }
 }

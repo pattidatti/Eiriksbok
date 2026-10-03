@@ -543,7 +543,7 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `bygg/vaagsbunnen-liv.ts` | Barn i Auta allmenning, svenner som arbeider ute (kar, hudramme, skinn), fyllikken Arnfinn og kona Tora (kveld), dyresonene og runepinnene i kvarteret |
 | `bygg/runepinner.ts`, `bygg/runeoppdrag.ts` | Seks ekte innskrifter fra Bryggen med kilde, og oppdraget «Pinnene i gjørma» (N) med `belonning`. Også navn, replikker og samtaler for de nye folkene (Gunnvor, presten i Jonskirken, Tora, Arnfinn, barna) |
 | `graboks/strandliv.ts`, `ui/Runekort.tsx` | Systemet: klokka til dagsplanene, dyrene, pinnene (glimt, plukke opp, kortet med runene som risses fram). Pinnen huskes som flagget `rune:<id>` i lagringen |
-| `motor/firbeint.ts`, `motor/dyr.ts` | Griser og hunder laget i kode, én InstancedMesh per art (nær med skygge, fjern uten), animert i vertex-shaderen. Cellene melder sonene sine (`meldDyreSoner`) |
+| `motor/firbeint.ts`, `motor/dyr.ts` | Griser og hunder laget i kode, én InstancedMesh per art (nær med skygge, fjern uten), animert i vertex-shaderen. Cellene melder sonene sine (`meldDyreSoner`). `Dyrene.onLyd` og `Katter.onMjau` gir lydene (`LydKobling.dyr`, sprite `dyr.ogg`: gris, bjeff, knurr, mjau; kildene i KILDE.md) |
 
 Regler:
 - Folk med dagsplan bygges med `lagDagsfolk` (samme form som `lagFolk`). Figurer som er hjemme, står
