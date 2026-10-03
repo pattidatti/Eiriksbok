@@ -154,6 +154,8 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 | `ui/InnstillingerPanel.tsx`, `ui/innstillinger.ts` | Innstillingene (grafikk, skygger, lys og dis, lyd per buss, kamerafart, snu opp og ned, ytelse), lagret i `bryggen-innstillinger`. Leser og flytter over de gamle `bryggen-kvalitet` og `bryggen-lyd` |
 | `ui/Dagbok.tsx`, `ui/vetlager.ts` | Dagboka: oppdragene med «om» og «hvor», og «Dette vet vi»-tekstene eleven har lest (`bryggen-vet`). «Begynn på nytt» bak en bekreftelse |
 | `ui/stil.ts`, `ui/stil.css`, `ui/Melding.tsx`, `ui/Segl.tsx` | Den felles stilen (pergament, blekk, segl), oppdragsmeldingene med seremonien for «Oppdrag fullført», og voksseglet |
+| `graboks/rpg.ts`, `bygg/rpg-data.ts` | Rollespillet (blueprint §8.3-8.6): rykte hos fem fraksjoner, pungen, ferdigheter som blir bedre av bruk, rangstigen. Leser `belonning` og `gjor`-kommandoene, låser svar med `Valg.krav`, lagret i `bryggen-rpg` (se «Rollespillet» under) |
+| `ui/RpgHud.tsx`, `ui/Meg.tsx` | Pungen og rangen i livskortet, kortene midt på skjermen når noe endrer seg, og «Meg» i pausemenyen |
 | `ui/menydeler.tsx`, `ui/fokus.ts`, `ui/fullskjerm.ts` | Bryter, glidebryter, knapp og overskrift; piltastnavigasjon og fokusring; fullskjerm med Esc-lås |
 
 ## Regler
@@ -454,3 +456,26 @@ lastes først når spillet lastes. Fortsatt lyst (blueprint §2): blekk på perg
 - Test: `/test/bryggen-gard?sted=bard&dogn=0&lys=dag&regn=0` (jekta ved kaia og koggen),
   `__bryggenFoto` mot `jekt-kai:seil`, `kogge:seil` og `jekt-seil:seil:seil` (trafikken, satt seil).
   Legg til `&kvalitet=lav` og `&lys=kveld`.
+
+## Rollespillet (rykte, pung, ferdigheter, rang)
+
+- Kontrakten står i `bygg/oppdrag-data.ts` (`Belonning`, `Krav`, `Fraksjon`, `Ferdighet`). Et oppdrag med
+  `belonning: { witten, rykte, ferdighet }` gir det når det leveres. I `gjor` virker `rykte:K:+3`,
+  `witten:+2`, `witten:-gevinst` (gir tilbake det som ble vunnet i terningspillet) og `ferdighet:prute`.
+  Rykte i `gjor` hører hjemme på noder som vises én gang, ikke i en løkke tilbake til et valg.
+  `ferdighet:` fra samtaler telles høyst én gang i minuttet per ferdighet (samtaler kan tas om igjen).
+- Et svar med `krav: { rykte: { N: 15 } }` (eller `rang`, `witten`, `ferdighet`) står låst med hengelås og
+  grunnen under, til gutten oppfyller det. Sett låste svar sist, så tallene på de åpne ikke flytter seg.
+  Samtaler kan ha fire svar (tast 1-4).
+- Lønna for et oppdrag øker med rangen (+1 witten per trinn) og prutingen (+20 % per nivå).
+- Ferdighetene øves av det gutten gjør: bunter båret (bære), riktig avlest bismer (regne og veie), hvert
+  tredje slag som treffer (slåss), hver 40. meter i færingen (ro), og samtaler om priser (prute). Nivåene
+  (0-5) står i `NIVAA`. Effektene settes på delene som bruker dem: `Baering.fart`, `slark` og `roligere`,
+  `PlayerCombat.skadeFaktor`, `Faering.kraft`.
+- Rangstigen: ny junge, stuejunge, skutedreng, lærling, svenn, husbonde. Kravene står i `RANGER`
+  (antall oppdrag, rykte hos Kontoret, ferdigheter). Rangen faller aldri.
+- Lagringen er `bryggen-rpg` (versjon 1); `bryggen-oppdrag` røres ikke. Finnes bare den gamle lagringen,
+  regnes rykte, pung og rang ut fra oppdragene som er levert og valgene i flaggene, og et kort sier fra.
+  `SIDE` (fisken på loftet, terningspillet) og `SPOR` (juks på vekta) lagres også her. «Begynn på nytt»
+  nullstiller rollespillet (`Oppdrag.utvidelser`).
+- I dev: `window.__bryggenRpg` er rollespillet (`endreRykte('N', 15)`, `endreWitten(5)`, `ov('ro', 3)`).

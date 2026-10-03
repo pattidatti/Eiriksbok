@@ -22,6 +22,8 @@ export const SIDE = {
     fisk: 100,
     /** Hvordan terningspillet endte. */
     terning: '' as '' | 'vant' | 'tapte' | 'likt' | 'tatt' | 'gikk',
+    /** Hvor mange witten gutten vant av Einar (`witten:-gevinst` gir dem tilbake). */
+    gevinst: 0,
 };
 
 // ── Rottejakt på lagerloftet ──
@@ -50,7 +52,15 @@ const ROTTER: OppdragDef = {
             valg: [
                 { tekst: 'Hvordan?', til: 'hvordan' },
                 { tekst: 'Kan ikke katta ta dem?', til: 'katt' },
+                { tekst: 'Jeg er stuejunge nå. Gi meg nøkkelen til loftet, så passer jeg det selv.', til: 'nokkel', krav: { rang: 1 } },
             ],
+        },
+        // Rangstigen låser opp rettigheter som nøkkel til lageret (blueprint §8.5) [S].
+        nokkel: {
+            tekst: 'En stuejunge med nøkkel? Ja, det har du fortjent. Da er det ditt loft å passe, og din skyld om fisken blir borte.',
+            gest: 'nikk',
+            gjor: 'rykte:K:+2',
+            til: 'hvordan',
         },
         katt: {
             tekst: 'Katta tar en og annen. Men hun sover halve dagen, og rottene er mange. Vi må hjelpe henne.',
@@ -72,11 +82,13 @@ const ROTTER: OppdragDef = {
         bra: {
             tekst: 'Fem rotter! Og stabelen er nesten hel. Du er flinkere enn du ser ut, junge.',
             gest: 'nikk',
+            gjor: 'witten:+2;rykte:K:+2',
             til: 'skip',
         },
         ille: {
             tekst: 'Fem rotter, ja. Men se på stabelen. Mye av fisken er gnagd på. Den får vi ikke solgt.',
             gest: 'riste',
+            gjor: 'rykte:K:-3',
             til: 'skip',
         },
         skip: {
@@ -92,6 +104,7 @@ const ROTTER: OppdragDef = {
         },
     },
     lonn: 'Tideke deler brødet sitt med deg.',
+    belonning: { witten: 2, rykte: { K: 5 } },
 };
 
 // ── Skomakerverkstedet i Skostredet ──
@@ -150,7 +163,13 @@ const SKO: OppdragDef = {
                     { tekst: 'Jeg kommer fra Kontoret. Slipp meg forbi.', til: 'kontoret' },
                     { tekst: 'Jeg har sko fra mester Hans.', til: 'hans' },
                     { tekst: 'Hvorfor ligger bommen der?', til: 'hvorfor' },
+                    { tekst: 'Folk i Skostredet kjenner meg. Jeg er ingen Kontor-gutt for dere.', til: 'kjent', krav: { rykte: { N: 15 } } },
                 ],
+            },
+            kjent: {
+                tekst: 'Ja, du er han som byfolket snakker godt om. Greit. Gi meg skoene, så tar jeg dem over til Stranden.',
+                gest: 'nikk',
+                til: 'forbi',
             },
             kontoret: {
                 tekst: 'Fra Kontoret? Da kan du snu. Det er nettopp dere bommen er for.',
@@ -181,6 +200,7 @@ const SKO: OppdragDef = {
             aerlig: {
                 tekst: 'Ærlig, i alle fall. Og skoene er amtets sak, ikke Kontorets. Gi dem hit.',
                 gest: 'kom',
+                gjor: 'rykte:N:+3',
                 til: 'forbi',
             },
             forbi: {
@@ -217,6 +237,8 @@ const SKO: OppdragDef = {
         },
     },
     lonn: 'Mester Hans ga deg lærbiter til å lappe skoene dine.',
+    // Å hjelpe amtet mens bommen ligger over gata, liker ikke Kontoret [S].
+    belonning: { rykte: { N: 8, K: -3 }, ferdighet: { prute: 2 } },
 };
 
 // ── Jekta kommer ──
@@ -289,16 +311,31 @@ const JEKT: OppdragDef = {
                     { tekst: 'Betal hele gjelda først.', til: 'alt' },
                     { tekst: 'Betal halve gjelda, og kjøp korn for resten.', til: 'halv' },
                     { tekst: 'Kjøp korn for alt. Gjelda kan vente.', til: 'ingen' },
+                    { tekst: 'La meg regne ut hva kornet egentlig koster dere.', til: 'regnut', krav: { ferdighet: { regning: 2 } } },
                 ],
+            },
+            // [U] 8 kg rug for 1 kg tørrfisk gjelder rundt 1500 (Holm mfl. 2019). Regnestykket er [S].
+            regnut: {
+                tekst: 'Du regner med pinner i sanden. Én våg fisk gir åtte våger rug. Betaler dere halve gjelda, har dere 20 våger igjen, og det blir nok korn til hele vinteren hvis dere er sparsomme.',
+                gest: 'snakk',
+                til: 'regnut2',
+            },
+            regnut2: {
+                tekst: 'Åtte for én? Det har ingen tysker sagt til meg før. Da vet jeg hva jeg skal be om. Takk, gutt.',
+                gest: 'nikk',
+                gjor: 'rykte:F:+5;ferdighet:regning',
+                til: 'slutt',
             },
             alt: {
                 tekst: 'Da er gjelda borte. Men da har vi bare 10 våger igjen. Det er korn til to måneder. Vinteren er mye lenger. Resten må vi ta på bok, og så skylder vi igjen.',
                 gest: 'riste',
+                gjor: 'rykte:K:+2',
                 til: 'slutt',
             },
             halv: {
                 tekst: 'Da har vi korn til halve vinteren, og Ottar skylder fortsatt 10 våger. Det vi tar på bok i år, kommer i tillegg.',
                 gest: 'skuldre',
+                gjor: 'rykte:F:+3',
                 til: 'slutt',
             },
             ingen: {
@@ -327,6 +364,7 @@ const JEKT: OppdragDef = {
         urett: {
             tekst: 'Kanskje. Men husbonden din sier at han tar en sjanse når han gir oss korn før vi har fisk. Begge sider har sin regning.',
             gest: 'skuldre',
+            gjor: 'rykte:F:+3;rykte:K:-2',
             til: 'takk',
         },
         fortsett: {
@@ -342,6 +380,7 @@ const JEKT: OppdragDef = {
         },
     },
     lonn: 'Du har sett handelen fra fiskernes side.',
+    belonning: { rykte: { F: 10 }, ferdighet: { regning: 2 } },
 };
 
 // ── Messe i Mariakirken ──
@@ -421,6 +460,7 @@ const MESSE: OppdragDef = {
         },
     },
     lonn: 'Herr Johannes velsignet deg.',
+    belonning: { witten: 1, rykte: { Ki: 10, K: 2 } },
 };
 
 // ── Terninger i ølstua ──
@@ -476,11 +516,13 @@ const TERNING: OppdragDef = {
         gi: {
             tekst: 'Gi dem heller til kona hans, ikke til ham. Han drikker dem opp før han er hjemme.',
             gest: 'snakk',
+            gjor: 'witten:-gevinst;rykte:N:+6;rykte:F:+2',
             til: 'vet',
         },
         aerlig: {
             tekst: 'Kanskje det. Men ærlig eller ikke, er det ungene hans som blir sultne.',
             gest: 'skuldre',
+            gjor: 'rykte:N:-2',
             til: 'vet',
         },
         tapte: {
@@ -496,11 +538,13 @@ const TERNING: OppdragDef = {
         tatt: {
             tekst: 'Jeg så hva du gjorde med terningen. Einar ville slått deg, og ingen her hadde stoppet ham. Gå hjem til Bryggen, og kom ikke hit og jukser igjen.',
             gest: 'peke',
+            gjor: 'rykte:N:-6',
             til: 'vet',
         },
         gikk: {
             tekst: 'Du reiste deg fra bordet. Det er det klokeste noen har gjort i denne stua i dag.',
             gest: 'nikk',
+            gjor: 'rykte:N:+2',
             til: 'vet',
         },
         vet: {
@@ -511,6 +555,7 @@ const TERNING: OppdragDef = {
         },
     },
     lonn: 'Gunhild vet hvem du er nå.',
+    belonning: { rykte: { N: 2 }, ferdighet: { prute: 1 } },
 };
 
 export const SIDEOPPDRAG: OppdragDef[] = [ROTTER, SKO, JEKT, MESSE, TERNING];

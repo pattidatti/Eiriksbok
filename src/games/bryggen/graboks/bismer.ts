@@ -38,10 +38,12 @@ export class BismerSpill {
     readonly sann: number;
     readonly merker: BismerHud['merker'];
     readonly juks: boolean;
+    private readonly demping: number;
 
-    constructor(sann: number, juks = false) {
+    constructor(sann: number, juks = false, roligere = 0) {
         this.sann = sann;
         this.juks = juks;
+        this.demping = 4.2 + roligere;
         this.merker = [];
         for (let m = 0; m <= 6; m += 0.5) {
             this.merker.push({ p: balanse(m), tekst: Number.isInteger(m) ? String(m) : '', hel: Number.isInteger(m) });
@@ -55,7 +57,7 @@ export class BismerSpill {
         const moment = STANG * (TP - this.p) - this.sann * this.p;
         const maal = Math.max(-0.3, Math.min(0.3, moment * 0.9));
         // En fjær med litt for lite demping: stanga vipper og svinger seg til ro.
-        this.fart += ((maal - this.vinkel) * 38 - this.fart * 4.2) * dt;
+        this.fart += ((maal - this.vinkel) * 38 - this.fart * this.demping) * dt;
         this.vinkel += this.fart * dt;
     }
 

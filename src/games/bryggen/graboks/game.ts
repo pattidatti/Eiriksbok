@@ -251,7 +251,7 @@ export class GrayboxGame {
             const w = this.world;
             this.systemer = await lagSystemer({
                 scene: this.scene, renderer: this.renderer, phys: this.phys, world: w, player: this.player, enemy: this.enemy,
-                ai: this.ai, tyv: this.tyv!, cam: this.cam, folk: this.folk!, baering: this.baering!, lys: this.lys, lyd: this.lyd,
+                ai: this.ai, pc: this.pc, boat: this.boat, tyv: this.tyv!, cam: this.cam, folk: this.folk!, baering: this.baering!, lys: this.lys, lyd: this.lyd,
                 floatLayer: this.floatLayer, flash: (t, s) => this.flash(t, s), hudSnart: this.pushHudSoon, modus: () => this.mode,
             });
             if (this.disposed) return;
@@ -472,7 +472,7 @@ export class GrayboxGame {
         }
         // Med en bunt i armene: saktere, og ingen sprint, hopp eller slag.
         if (this.baering?.baerer) {
-            dir.multiplyScalar(0.42);
+            dir.multiplyScalar(this.baering.fart);
             inp.sprint = inp.jumpPressed = inp.lightPressed = inp.heavyPressed = inp.dodgePressed = false;
         }
 

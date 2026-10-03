@@ -6,7 +6,8 @@ import type { InputFrame } from '../motor/input';
 import type { Physics } from '../motor/physics';
 import type { Character } from '../motor/character';
 import type { SpringArmCamera } from '../motor/camera';
-import type { EnemyAI } from '../motor/combat';
+import type { EnemyAI, PlayerCombat } from '../motor/combat';
+import type { Faering } from '../motor/boat';
 import type { Lyssetting } from '../motor/stemning';
 import type { LydKobling } from '../motor/lydkobling';
 import type { BryggenWorld } from '../bygg/bryggen';
@@ -24,6 +25,10 @@ export interface SpillKontekst {
     /** Figuren kampen bruker (tyven). */
     enemy: Character;
     ai: EnemyAI;
+    /** Guttens slag (rpg.ts skrur skaden etter slåss-ferdigheten). */
+    pc: PlayerCombat;
+    /** Færingen gutten ror. */
+    boat: Faering;
     /** Tyven i gården (kapittel 1, tyv.ts). */
     tyv: Tyv;
     cam: SpringArmCamera;

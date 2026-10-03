@@ -154,7 +154,7 @@ export class Input {
             dodgePressed: p.has('KeyQ') || p.has('ControlLeft') || p.has('KeyC'),
             finisherPressed: p.has('KeyF'),
             resetPressed: p.has('KeyR'),
-            valg: [1, 2, 3].find((n) => p.has(`Digit${n}`) || p.has(`Numpad${n}`)) ?? null,
+            valg: [1, 2, 3, 4].find((n) => p.has(`Digit${n}`) || p.has(`Numpad${n}`)) ?? null,
             trykt: new Map(this.trykkTid),
         };
         p.clear();

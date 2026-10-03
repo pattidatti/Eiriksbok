@@ -32,10 +32,24 @@ export type Ferdighet = 'styrke' | 'slaass' | 'prute' | 'ro' | 'regning';
  *   rykte:<fraksjon>:<+n|-n>   f.eks. `rykte:F:+5;rykte:K:-3`
  *   witten:<+n|-n>             mynter i pungen
  *   ferdighet:<navn>           én øvelse i en ferdighet
+ *   witten:-gevinst            gi tilbake det gutten vant i terningspillet (`SIDE.gevinst`)
+ * Bruk rykte i `gjor` bare på noder som vises én gang (ikke i en løkke tilbake til et valg).
  */
 export interface Belonning {
     witten?: number;
     rykte?: Partial<Record<Fraksjon, number>>;
+    ferdighet?: Partial<Record<Ferdighet, number>>;
+}
+
+/**
+ * Krav på et svar i en samtale (`Valg.krav` i samtaler.ts). Svaret står låst, med grunnen under,
+ * til gutten oppfyller alt (graboks/rpg.ts). `rang` er nummeret i `RANGER` (0 ny junge, 1 stuejunge,
+ * 2 skutedreng, 3 lærling, 4 svenn, 5 husbonde), `ferdighet` er nivået (0-5).
+ */
+export interface Krav {
+    rykte?: Partial<Record<Fraksjon, number>>;
+    rang?: number;
+    witten?: number;
     ferdighet?: Partial<Record<Ferdighet, number>>;
 }
 
@@ -94,8 +108,9 @@ const H = SAMTALER.husbonde;
 H.start.gjor = 'lever:ankomst';
 H.slutt.gjor = 'ta:fisk';
 H.glemme.gjor = 'ta:fisk';
-H.flink.gjor = 'lever:fisk';
-H.medskyldig.gjor = 'lever:fisk';
+H.flink.gjor = 'lever:fisk;rykte:F:+2';
+// Gutten jukset på vekta for husbonden: Kontoret liker det, fiskerne merker det [S].
+H.medskyldig.gjor = 'lever:fisk;rykte:K:+3;rykte:F:-6';
 
 // ── 2. Ottars gjeld ── Fiskeren ber gutten lese hva som står om ham i gjeldsboka.
 const F = SAMTALER.fisker;
@@ -137,6 +152,7 @@ export const OPPDRAG: OppdragDef[] = [
         underveis: { start: { tekst: 'Kom inn i bua, junge. Her inne.', gest: 'kom' } },
         levering: H,
         lonn: 'Du har fått plass i gården. Nå er du junge hos Hinrik Kolle.',
+        belonning: { rykte: { K: 3 } },
     },
     {
         id: 'fisk',
@@ -157,6 +173,7 @@ export const OPPDRAG: OppdragDef[] = [
         levering: H,
         leveringStart: () => (SPOR.juks > 0 ? 'medskyldig' : 'flink'),
         lonn: 'Husbonden stoler litt mer på deg.',
+        belonning: { witten: 2, rykte: { K: 5 }, ferdighet: { styrke: 1 } },
     },
     {
         id: 'gjeld',
@@ -182,13 +199,14 @@ export const OPPDRAG: OppdragDef[] = [
             sant: {
                 tekst: 'Tjue våger. Det er mer enn jeg har med meg i år. Da kommer jeg tilbake neste sommer også. Takk for at du sa det rett ut.',
                 gest: 'riste',
-                gjor: 'lever:gjeld',
+                // Sa det som står i husbondens bok: fiskerne stoler på ham, Kontoret liker det ikke [S].
+                gjor: 'lever:gjeld;rykte:F:+6;rykte:K:-4',
                 til: 'vet',
             },
             loy: {
                 tekst: 'Du lyver, gutt. Jeg ser det på deg. Men du ville vel bare at jeg skulle slippe å vite det.',
                 gest: 'skuldre',
-                gjor: 'lever:gjeld',
+                gjor: 'lever:gjeld;rykte:F:-3;rykte:K:+2',
                 til: 'vet',
             },
             vet: {
@@ -199,6 +217,7 @@ export const OPPDRAG: OppdragDef[] = [
             },
         },
         lonn: 'Ottar vet nå hvor mye han skylder.',
+        belonning: { rykte: { F: 4 }, ferdighet: { regning: 2 } },
     },
     {
         id: 'vann',
@@ -253,6 +272,7 @@ export const OPPDRAG: OppdragDef[] = [
             },
         },
         lonn: 'Hennig deler suppa med deg i kveld.',
+        belonning: { witten: 1, rykte: { K: 3 }, ferdighet: { styrke: 2 } },
     },
     {
         // Kapittel 1, «Tyven i natt» (blueprint §6), høsten 1426. Lambert ber gutten holde vakt om
@@ -321,12 +341,14 @@ export const OPPDRAG: OppdragDef[] = [
                 selv: {
                     tekst: 'Til tyskeren din? Ja vel. Jeg klarer ikke å løpe mer uansett.',
                     gest: 'skuldre',
-                    gjor: 'flagg:tyv-selv;hendelse:snakk:tyven',
+                    gjor: 'flagg:tyv-selv;hendelse:snakk:tyven;rykte:K:+3;rykte:F:+2',
                 },
                 vakta: {
                     tekst: 'Nei! Ikke vakta! Da blir jeg pisket ...',
                     gest: 'riste',
-                    gjor: 'flagg:tyv-vakta;hendelse:snakk:tyven',
+                    // Kontoret dømte sine egne og likte ikke kongens folk i gårdene [V SNL Det tyske kontor]; at det
+                    // koster rykte her, er [S].
+                    gjor: 'flagg:tyv-vakta;hendelse:snakk:tyven;rykte:B:+8;rykte:K:-4',
                 },
             },
         },
@@ -365,7 +387,7 @@ export const OPPDRAG: OppdragDef[] = [
             hardt: {
                 tekst: 'Jeg hørte at du ropte på vakta. Og vakta sier at du slo hardt. For hardt. Pass deg, junge. Den som slår for hardt, kan selv havne hos gjaldkeren.',
                 gest: 'riste',
-                gjor: 'lever:tyven',
+                gjor: 'lever:tyven;rykte:B:-5',
                 til: 'lov2',
             },
             lov2: {
@@ -384,6 +406,7 @@ export const OPPDRAG: OppdragDef[] = [
         },
         leveringStart: (f) => (f.has('tyv-selv') ? 'selv' : f.has('tyv-vakta') ? (f.has('tyv-hardt') ? 'hardt' : 'vakta') : 'start'),
         lonn: 'Svennene snakker om deg i schøtstua. Den nye jungen tok tyven.',
+        belonning: { witten: 3, rykte: { K: 6 }, ferdighet: { slaass: 2 } },
     },
     {
         id: 'brev',
@@ -448,6 +471,7 @@ export const OPPDRAG: OppdragDef[] = [
             },
         },
         lonn: 'Herr Johannes kjenner deg igjen nå.',
+        belonning: { witten: 1, rykte: { Ki: 5, K: 2 } },
     },
     {
         id: 'bergenhus',
@@ -491,7 +515,13 @@ export const OPPDRAG: OppdragDef[] = [
                     valg: [
                         { tekst: 'Jeg har et brev fra presten i Mariakirken.', til: 'brev' },
                         { tekst: 'Jeg vil se kongen.', til: 'kongen' },
+                        { tekst: 'Du kjenner meg. Jeg ropte på dere da tyven var i gården.', til: 'kjent', krav: { rykte: { B: 8 } } },
                     ],
+                },
+                kjent: {
+                    tekst: 'Jungen som ropte på oss da tyven var i gården? Ja, jeg husker deg. Gå rett inn. Skriveren står ved pulten foran hallen.',
+                    gest: 'nikk',
+                    gjor: 'hendelse:snakk:vakta;rykte:B:+2',
                 },
                 kongen: {
                     tekst: 'Kongen? Kong Erik bor i Danmark. Han har ikke vært i Bergen på lenge. Her styrer høvedsmannen for ham.',
@@ -540,6 +570,7 @@ export const OPPDRAG: OppdragDef[] = [
             },
         },
         lonn: 'Du har vært innenfor muren på Bergenhus.',
+        belonning: { witten: 2, rykte: { B: 6, Ki: 2 } },
     },
     ...SIDEOPPDRAG,
 ];

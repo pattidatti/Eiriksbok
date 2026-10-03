@@ -31,6 +31,14 @@ export class Baering {
     private readonly botte: THREE.Object3D;
     private harBotte = false;
     private trekk = 0.37;
+    /** Farten med en bunt i armene, del av vanlig fart. Styrke-ferdigheten løfter den (rpg.ts). */
+    fart = 0.42;
+    /** Hvor langt fra riktig vekt avlesningen kan være og fortsatt godtas (bismerpund). Regning løfter den. */
+    slark = 0.15;
+    /** Ekstra demping på bismerstanga, så den roer seg fortere (regning, rpg.ts). */
+    roligere = 0;
+    /** En bunt er lest av: riktig eller ikke (rpg.ts gir øvelse i regning). */
+    onLest: (riktig: boolean) => void = () => undefined;
 
     constructor(world: BryggenWorld, gutt: Character) {
         this.world = world;
@@ -80,7 +88,7 @@ export class Baering {
         this.trekk = (this.trekk * 9301 + 0.4927) % 1;
         // Fra tredje bunt vil svennen at gutten skal lese av for lite på fisken til nordlendingen [S].
         const juks = this.antall >= 2;
-        this.veier = new BismerSpill(Math.round((2.5 + this.trekk * 1.1) * 10) / 10, juks);
+        this.veier = new BismerSpill(Math.round((2.5 + this.trekk * 1.1) * 10) / 10, juks, this.roligere);
         if (this.antall === 0) return 'Bunten henger i kroken på bismeren. Flytt hanken med A og D til stanga ligger vannrett, og les av merket med E.';
         if (this.antall === 2) return 'Svennen hvisker: «Denne er nordlendingens fisk. Si et halvt pund mindre enn merket viser. Husbonden vil ha det slik.»';
         return null;
@@ -120,9 +128,10 @@ export class Baering {
         this.antall++;
         SPOR.baret++;
         this.onVeid();
+        this.onLest(feil <= this.slark);
         const tall = (x: number) => x.toFixed(1).replace('.', ',');
         this.onMelding(
-            feil <= 0.15
+            feil <= this.slark
                 ? `${tall(lest)} bismerpund. Svennen nikker, og husbonden skriver det i gjeldsboka. (${this.antall} båret)`
                 : `Du leste ${tall(lest)}, men stanga lå ikke vannrett. Svennen veier på nytt: ${tall(v.sann)} bismerpund. «Se etter at stanga ligger rett, junge.»`
         );

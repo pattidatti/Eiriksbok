@@ -47,6 +47,14 @@ const STEDER: Record<string, { prompt: string; melding: string }> = {
 
 const LAGER = 'bryggen-oppdrag';
 
+/** Et system som utvider oppdragene (rollespillet i rpg.ts): egne `gjor`-kommandoer og «begynn på nytt». */
+export interface OppdragUtvidelse {
+    /** En `gjor`-handling oppdragene selv ikke kjenner (`rykte:K:+3`, `witten:+2`, `ferdighet:ro`). */
+    gjor?(hva: string, arg: string): void;
+    /** Alt glemmes («Begynn på nytt» i dagboka). */
+    nullstill?(): void;
+}
+
 export class Oppdrag {
     private tilstand = new Map<string, Tilstand>();
     /** Det gutten bærer for oppdragene (brev, bøtte). */
@@ -66,6 +74,8 @@ export class Oppdrag {
     readonly nyttSpill: boolean;
     /** Lyttere: `ta`, `lever` og `flagg` med id (filmene starter på dem, sekvens.ts). */
     readonly lyttere: ((hva: 'ta' | 'lever' | 'flagg', id: string) => void)[] = [];
+    /** Systemer med egne `gjor`-kommandoer (rpg.ts). */
+    readonly utvidelser: OppdragUtvidelse[] = [];
 
     constructor() {
         this.nyttSpill = !this.last();
@@ -212,6 +222,7 @@ export class Oppdrag {
             else if (hva === 'lever') this.lever(arg);
             else if (hva === 'hendelse') this.hendelse(arg);
             else if (hva === 'flagg') this.settFlagg(arg);
+            else for (const u of this.utvidelser) u.gjor?.(hva, arg);
         }
     }
 
@@ -280,6 +291,7 @@ export class Oppdrag {
         this.ting.clear();
         this.nye.clear();
         this.flagg.clear();
+        for (const u of this.utvidelser) u.nullstill?.();
         this.endret();
     }
 

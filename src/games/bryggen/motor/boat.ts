@@ -32,6 +32,8 @@ export class Faering {
     yaw = 0;
     prevYaw = 0;
     speed = 0;
+    /** Hvor hardt åretaket drar (1 = vanlig). Ro-ferdigheten løfter den (graboks/rpg.ts). */
+    kraft = 1;
     private yawVel = 0;
     /** 0..1 gjennom ett åretak. */
     strokePhase = 0;
@@ -84,7 +86,7 @@ export class Faering {
         const inWater = this.strokePhase < DRIVE && this.rowing > 0.2;
         if (inWater && intent) {
             const pull = Math.sin((this.strokePhase / DRIVE) * Math.PI);
-            this.speed += intent.forward * (intent.forward > 0 ? 3.4 : 2.2) * pull * dt;
+            this.speed += intent.forward * (intent.forward > 0 ? 3.4 : 2.2) * this.kraft * pull * dt;
             // Svinger mest når båten står, men litt også i fart (ror hardere på én side).
             this.yawVel += intent.turn * (1.6 + Math.abs(intent.forward) * 0.6) * pull * dt;
             if (Math.abs(intent.forward) < 0.1) this.speed += 0.6 * Math.abs(intent.turn) * pull * dt;

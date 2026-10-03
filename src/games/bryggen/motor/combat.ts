@@ -137,6 +137,8 @@ export class PlayerCombat {
     private dodge = 0;
     private counterBonus = 0;
     private time = 0;
+    /** Ganges med skaden i slagene (slåss-ferdigheten, graboks/rpg.ts). */
+    skadeFaktor = 1;
     private readonly kropp: Kropp;
 
     constructor(char: Character, hp = 100) {
@@ -329,6 +331,7 @@ export class PlayerCombat {
             kind = 'finisher';
         } else if (a.kind === 'heavy') dmg = 18 + Math.round(Math.random() * 7);
         else dmg = (this.combo === 3 ? 12 : 7) + Math.round(Math.random() * 3);
+        if (a.kind !== 'finisher') dmg = Math.round(dmg * this.skadeFaktor);
         if (this.counterBonus > 0) {
             dmg *= 2;
             this.counterBonus = 0;

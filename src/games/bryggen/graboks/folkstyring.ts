@@ -14,6 +14,7 @@ import { gestFra } from '../motor/gestikk';
 import { Hoder, type Hode, type HodeInfo } from './hoder';
 import { Oppdrag } from './oppdrag';
 import type { Physics } from '../motor/physics';
+import type { Krav } from '../bygg/oppdrag-data';
 
 export interface SamtaleHud {
     hvem: string;
@@ -21,6 +22,8 @@ export interface SamtaleHud {
     tekst: string;
     valg: string[];
     vet: boolean;
+    /** Grunnen til at et svar er låst (samme rekkefølge som `valg`), eller null når det er åpent. */
+    laast?: (string | null)[];
 }
 
 export interface ReplikkHud {
@@ -49,6 +52,10 @@ export class FolkStyring {
     onEndring: () => void = () => undefined;
     /** En filmscene går (sekvens.ts): ingen navn eller merker over hodene. */
     film = false;
+    /** Hvorfor et svar med `krav` er låst, eller null når gutten oppfyller det (rpg.ts setter denne). */
+    kravGrunn: (k: Krav) => string | null = () => null;
+    /** Gutten prøvde et låst svar. */
+    onLaast: (grunn: string) => void = () => undefined;
     /** Andre som kan ha noe over hodet (gutten, tyven). */
     readonly ekstra: { h: Hode; info: () => HodeInfo | null }[] = [];
 
@@ -210,6 +217,11 @@ export class FolkStyring {
         if (r.valg?.length) {
             if (valg === null || valg < 1 || valg > r.valg.length) return;
             const v = r.valg[valg - 1];
+            const grunn = v.krav ? this.kravGrunn(v.krav) : null;
+            if (grunn) {
+                this.onLaast(grunn);
+                return;
+            }
             // Det gutten svarer, står over ham en liten stund.
             this.hoder.si(this.gutt, v.tekst, Math.min(4, 1.5 + v.tekst.length / 25));
             a.node = v.til;
@@ -251,6 +263,7 @@ export class FolkStyring {
             tekst: r.tekst,
             valg: r.valg?.map((v) => v.tekst) ?? [],
             vet: !!r.vet,
+            laast: r.valg?.some((v) => v.krav) ? r.valg.map((v) => (v.krav ? this.kravGrunn(v.krav) : null)) : undefined,
         };
         if (r.vet) this.hoder.taus(a.npc);
         else {
