@@ -84,6 +84,9 @@ export function lagTerning(k: SpillKontekst): Spillsystem {
 
     function slutt(utfall: typeof SIDE.terning): void {
         SIDE.terning = utfall;
+        // Det gutten vant eller tapte, går i pungen (rpg.ts). Pungen går aldri under null.
+        SIDE.gevinst = Math.max(0, witten - START);
+        if (witten !== START) oppdrag.gjor(`witten:${witten > START ? '+' : ''}${witten - START}`);
         tilFase(utfall === 'tatt' ? 'tatt' : 'slutt');
         if (utfall === 'vant') {
             tekst = `Du har ${witten} witten, ${witten - START} mer enn du hadde. Gå til Gunhild ved ilden.`;

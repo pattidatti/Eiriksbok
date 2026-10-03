@@ -1,4 +1,4 @@
-// Pausemenyen (Esc): Fortsett, Innstillinger, Kontroller, Dagbok og Avslutt. Spillet står mens den
+// Pausemenyen (Esc): Fortsett, Meg, Innstillinger, Kontroller, Dagbok og Avslutt. Spillet står mens den
 // er oppe (GrayboxGame.pause). Menyen til venstre, det valgte til høyre.
 //
 // Tastatur: pil opp/ned i menyen viser hvert valg til høyre, Enter eller pil høyre går inn i det,
@@ -10,11 +10,14 @@ import { Dagbok, type Bok } from './Dagbok';
 import { Knapp } from './menydeler';
 import { FOKUS, flyttFokus, pilNav } from './fokus';
 import type { Innstillinger } from './innstillinger';
+import { Meg } from './Meg';
+import { aktivtRollespill } from '../graboks/rpg';
 
-type Valg = 'fortsett' | 'innstillinger' | 'kontroller' | 'dagbok' | 'avslutt';
+type Valg = 'fortsett' | 'meg' | 'innstillinger' | 'kontroller' | 'dagbok' | 'avslutt';
 
 const MENY: [Valg, string][] = [
     ['fortsett', 'Fortsett'],
+    ['meg', 'Meg'],
     ['innstillinger', 'Innstillinger'],
     ['kontroller', 'Kontroller'],
     ['dagbok', 'Oppdrag og dagbok'],
@@ -27,7 +30,7 @@ const KONTROLLER: [string, string][] = [
     ['Mellomrom', 'hopp, klatre opp på kanter'],
     ['Mus / piltaster', 'snu kameraet'],
     ['E', 'snakk, gjør noe, gå om bord og i land'],
-    ['1, 2, 3', 'svar i en samtale'],
+    ['1, 2, 3, 4', 'svar i en samtale'],
     ['Venstre klikk / J', 'lett slag'],
     ['Hold venstre / K', 'tungt slag'],
     ['Høyre klikk / L (hold)', 'blokker'],
@@ -102,14 +105,14 @@ export function Pausemeny({ valg, onEndre, harLyd, bok, vet, onFortsett, onAvslu
     };
 
     return (
-        <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
+        <div className="absolute inset-0 z-[1200] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm" onClick={(e) => e.stopPropagation()}>
             <div role="dialog" aria-modal="true" aria-label="Pause" className="flex h-[min(640px,92vh)] w-[min(940px,95vw)] overflow-hidden rounded-3xl bg-white shadow-2xl">
                 <div onKeyDown={menyTast} className="flex w-64 shrink-0 flex-col gap-1.5 bg-slate-100 p-4">
                     <div className="px-2 pb-2">
                         <p className="text-[13px] font-bold uppercase tracking-widest text-indigo-700">Pause</p>
                         <p className="font-[Outfit,Inter,sans-serif] text-[20px] font-extrabold leading-tight text-slate-900">Bryggen, 1420-årene</p>
                     </div>
-                    {MENY.map(([id, tekst]) => (
+                    {MENY.filter(([id]) => id !== 'meg' || aktivtRollespill()).map(([id, tekst]) => (
                         <button
                             key={id}
                             ref={(el) => {
@@ -153,6 +156,7 @@ export function Pausemeny({ valg, onEndre, harLyd, bok, vet, onFortsett, onAvslu
                             )}
                         </div>
                     )}
+                    {vis === 'meg' && <Meg />}
                     {vis === 'innstillinger' && <InnstillingerPanel valg={valg} onEndre={onEndre} harLyd={harLyd} onFullskjerm={onFullskjerm} />}
                     {vis === 'kontroller' && (
                         <dl className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-1.5 px-3">

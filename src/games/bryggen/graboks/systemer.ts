@@ -21,6 +21,8 @@ export async function lagSystemer(k: SpillKontekst): Promise<Spillsystem[]> {
     ut.push((await import('./syrytme')).lagSyrytme(k));
     ut.push((await import('./messe')).lagMesse(k));
     ut.push((await import('./terning')).lagTerning(k));
+    // Rollespillet (blueprint §8.3-8.6): rykte, pung, ferdigheter og rang.
+    ut.push((await import('./rpg')).lagRollespill(k));
     if (import.meta.env.DEV) ut.push(fotoSystem());
     return ut;
 }

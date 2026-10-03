@@ -8,10 +8,13 @@
 // slutter samtalen med en «Dette vet vi»-tekst (§3). Ordene og replikkene ellers er [S].
 
 import type { Gest } from '../motor/gestikk';
+import type { Krav } from './oppdrag-data';
 
 export interface Valg {
     tekst: string;
     til: string;
+    /** Svaret er låst til gutten har nok rykte, rang, witten eller ferdighet (graboks/rpg.ts). */
+    krav?: Krav;
 }
 
 export interface Replikk {
@@ -304,6 +307,8 @@ SAMTALER.kornselger = {
     },
     kontoret2: {
         tekst: 'Så når kornet blir dyrt, er det ikke jeg som har bestemt det. Det er husbonden din og de andre i gårdene.',
+        // Gutten lærer hvordan prisen blir til: én øvelse i pruting (rpg.ts teller den høyst én gang i minuttet).
+        gjor: 'ferdighet:prute',
         valg: [
             { tekst: 'Er det urettferdig?', til: 'rett' },
             { tekst: 'Takk. Jeg må gå.', til: 'vet' },

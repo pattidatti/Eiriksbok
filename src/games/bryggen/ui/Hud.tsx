@@ -11,6 +11,8 @@ import { huskVet } from './vetlager';
 const TING: Record<string, string> = { brev: 'Et brev', botte: 'En bøtte vann' };
 
 import { KORT } from './stil';
+import { PungLinje } from './RpgHud';
+import type { RpgHud } from '../graboks/rpg';
 
 interface Props {
     hud: HudState;
@@ -21,6 +23,15 @@ interface Props {
     toast: string | null;
     onMeny: () => void;
     onFullskjerm: () => void;
+}
+
+function Laas() {
+    return (
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-label="Låst" className="mr-1.5 inline-block -translate-y-px align-baseline">
+            <rect x="2.5" y="7" width="11" height="8" rx="1.5" fill="currentColor" />
+            <path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
+    );
 }
 
 function Paneler({ hud, plass }: { hud: HudState; plass: PanelPlass }) {
@@ -63,12 +74,13 @@ export function Hud({ hud, world, visOppdrag, visYtelse, toast, onMeny, onFullsk
             {/* Liv */}
             <div className={`pointer-events-none absolute left-4 top-4 w-64 px-4 py-2.5 ${KORT}`}>
                 <div className="flex items-baseline justify-between text-[15px] font-bold text-slate-800">
-                    <span>Junge</span>
+                    <span>{(hud.system.rpg as RpgHud | undefined)?.rang ?? 'Junge'}</span>
                     <span className="tabular-nums">{hud.playerHp}</span>
                 </div>
                 <div className="mt-1 h-3 overflow-hidden rounded-full bg-slate-200">
                     <div className="h-full rounded-full bg-rose-600 transition-[width] duration-200" style={{ width: `${hpPct}%` }} />
                 </div>
+                <PungLinje data={hud.system.rpg} />
                 {hud.bunter > 0 && (
                     <div className="mt-1.5 text-[14px] text-slate-700">
                         Bunter båret: <span className="font-bold tabular-nums text-slate-900">{hud.bunter}</span>
@@ -174,12 +186,20 @@ export function Hud({ hud, world, visOppdrag, visYtelse, toast, onMeny, onFullsk
                         <div className={`px-5 py-3 ${KORT} bg-white/95`}>
                             <div className="text-[14px] font-bold uppercase tracking-wide text-indigo-700">Svar {hud.samtale.hvem}</div>
                             <ol className="mt-2 flex flex-col gap-2">
-                                {hud.samtale.valg.map((v, i) => (
-                                    <li key={v} className="flex items-baseline gap-2.5 text-[17px] font-semibold leading-snug text-slate-900">
-                                        <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-400 text-[15px] font-bold text-slate-900">{i + 1}</span>
-                                        {v}
-                                    </li>
-                                ))}
+                                {hud.samtale.valg.map((v, i) => {
+                                    // Låst svar (rpg.ts): grått, med hengelås og grunnen under.
+                                    const laast = hud.samtale?.laast?.[i];
+                                    return (
+                                        <li key={v} className={`flex items-baseline gap-2.5 text-[17px] font-semibold leading-snug ${laast ? 'text-slate-500' : 'text-slate-900'}`}>
+                                            <span className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[15px] font-bold ${laast ? 'bg-slate-200 text-slate-500' : 'bg-amber-400 text-slate-900'}`}>{i + 1}</span>
+                                            <span>
+                                                {laast && <Laas />}
+                                                {v}
+                                                {laast && <span className="block text-[14px] font-semibold text-rose-700">{laast}</span>}
+                                            </span>
+                                        </li>
+                                    );
+                                })}
                             </ol>
                         </div>
                     ) : (

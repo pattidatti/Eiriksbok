@@ -319,17 +319,34 @@ hardhet i samme lov. Slagsmål og drap (mannhelgebolken) er ikke oversatt ennå 
 Fem målere (K, B, N, Ki, F), fra -100 til 100. Handlinger flytter dem, ofte to i motsatt
 retning. Ryktet låser opp oppdrag, priser og hjelp, og avgjør slutten.
 
+**Status 03.10.2026:** Bygget (`graboks/rpg.ts`). Fem målere med ord (hatet, mistrodd, ukjent, likt, æret),
+kort midt på skjermen når de endrer seg, «Meg» i pausemenyen. Alle oppdragene gir rykte, og valg i
+gjeld, tyven, rottejakten, skomakeren, jekta og terningspillet flytter to målere i motsatt retning.
+Låste svar (krav om rykte, rang, witten eller ferdighet) hos vakta på Bergenhus, Detmar, Bård og Tideke.
+Venter på eierens spilltest. Slutten og priser etter rykte gjenstår.
+
 ### 8.4 Ferdigheter (bedre av bruk)
 Styrke (bære), slåsskamp (treffe og blokkere), pruting (lese grensen), roing (takt), regning og
 lesing (gjeldsbok, runer, brev). Ingen poengfordeling: man blir god av å gjøre det.
+
+**Status 03.10.2026:** Bygget. Fem ferdigheter med nivå 0-5, øvet av det gutten gjør (bære bunter, veie
+riktig, slag som treffer, roing, samtaler om priser). Hvert nivå merkes: raskere med last, mer skade,
+mer betalt, raskere færing, roligere bismer med mer slark. Lesing og runer gjenstår.
 
 ### 8.5 Rangstigen
 Junge → skutedreng/lærling → svenn → husbonde. Hver rang låser opp gårder, oppdrag og
 rettigheter (nøkkel til lageret, egen stue, egen handel).
 
+**Status 03.10.2026:** Bygget med seks trinn: ny junge, stuejunge, skutedreng, lærling, svenn, husbonde
+(husbonde låses opp i historien senere). Kravene er oppdrag, rykte hos Kontoret og ferdigheter [S].
+Hver rang gir mer lønn; stuejungen kan få nøkkelen til lagerloftet. Gårder og egen handel gjenstår.
+
 ### 8.6 Økonomi
 Lønn i mat og husrom, små penger fra arbeid, store penger fra egen handel som bryter Kontorets
 regler. Mynt, vekt og bytteforhold: se §4.3.
+
+**Status 03.10.2026:** Pungen med witten er bygget (HUD og «Meg»). Oppdragene gir små penger, og
+terningspillet vinner eller taper ekte witten. Egen handel og bytteforhold i gjeldsboka gjenstår.
 
 ### 8.7 Dagsplaner
 Hver figur har en enkel plan: arbeid, måltid, kirke, ølstue, søvn. Porten til Kontoret stenges
