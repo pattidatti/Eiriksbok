@@ -121,6 +121,7 @@ const TestPaastanden = lazy(() => import('./content/interactive/TestPaastanden')
 const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansionMap').then(m => ({ default: m.RomanExpansionMap })));
 const Tiltakspakken = lazy(() => import('./content/interactive/Tiltakspakken').then(m => ({ default: m.Tiltakspakken })));
 const MaktDragkampen = lazy(() => import('./content/interactive/MaktDragkampen').then(m => ({ default: m.MaktDragkampen })));
+const Opprorstavla1968 = lazy(() => import('./content/interactive/Opprorstavla1968').then(m => ({ default: m.Opprorstavla1968 })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
 const Varslingskjeden = lazy(() => import('./content/interactive/Varslingskjeden').then(m => ({ default: m.Varslingskjeden })));
 const EisenhowersValg = lazy(() => import('./content/interactive/EisenhowersValg').then(m => ({ default: m.EisenhowersValg })));
@@ -637,6 +638,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     SuverenitetsSkala,
     Tiltakspakken,
     MaktDragkampen,
+    Opprorstavla1968,
     TrolleyProblem,
     Varslingskjeden,
     EisenhowersValg,

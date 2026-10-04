@@ -11308,6 +11308,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "ungdomsopproret-1968",
+      "title": "1968: Da de unge sa nei",
+      "description": "Hvorfor gjorde unge over hele verden opprør i 1968, og hva ble igjen etterpå?",
+      "startDate": 1964,
+      "endDate": 1970,
+      "displayDate": "1964-1970",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/ungdomsopproret-1968",
+      "tags": [
+        "1968",
+        "studentopprøret",
+        "ungdomsopprøret",
+        "vietnamkrigen",
+        "frankrike",
+        "norge",
+        "etterkrigstiden"
+      ],
+      "lat": 46.6,
+      "lng": 2.5,
+      "placeLabel": "Frankrike",
+      "placeCountryId": 250,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "frontfagmodellen",
       "title": "Norges lønnsmaskin",
       "description": "Motoren i norsk økonomi. Forstå systemet som balanserer lønn, eksport og rettferdighet.",
