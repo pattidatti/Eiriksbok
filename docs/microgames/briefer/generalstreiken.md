@@ -420,3 +420,42 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
   stopper etter 25 s, før fristen på 32 s); rakelstripene kan se ut som en skjermfeil; GRENELLE-
   knappen på brett 2 (14. mai) kommer før den ekte avtalen 27. mai; TV-kartet dekker et hjørne av
   kartet på brett 3.
+- **Fase forbedrer 3, siste runde (2026-10-04):** Utseende hadde stått på 3 i tre runder.
+  (1) **Ryddet brettet:** feltene der streiken har gått er nå flat silketrykk-rød (blå der
+  marsjen tok dem), tegnet én gang som én flate per farge på det svarte laget under fabrikkene.
+  Den rosa uroen fra Sorbonne og den blå flaten fra Paris er fjernet, så det er ingen
+  gjennomsiktige lag oppå hverandre. Kjeden har fått en papirkant, så den skiller seg fra
+  feltet, og de røde flaggene og verdiene har papirkant. Stedsnavnene står én gang (det store
+  spøkelsesnavnet er borte). Fabrikkene er skåret for hånd: skjeve kanter, ulike sagtenner,
+  skjev pipe og to vinduer skåret ut. Fabrikknavn skjules når to fabrikker står så tett at
+  tekstene ville overlappe. «NY PLAKAT!» står nede til høyre i knappestripa, inne på papiret.
+  «TILBAKE PÅ JOBB» står over klokka, ikke oppå fabrikken. TV-kartet er litt bredere, og hvert
+  sted har sin egen plass for navn og bonus, så merkelappene ikke overlapper. «Byks» i lappen er
+  byttet med «Blått blink: marsjen hopper snart fram!».
+  (2) **Bølgen er en hard front:** de Gaulles marsj er en flat blå blokk med en svart kant på
+  tvers av kjeden, seks folk skåret ut i fronten og tre blå flagg bak. Fronten står i leddet den
+  er i ferd med å ta, og blokken blir bredere jo nærmere hodet den er. En stiplet blå linje går
+  langs kjeden fra fronten til hodet og marsjerer framover, så avstanden synes på kartet.
+  **AVSLUTT er grå under målet:** `kanAvslutte()` krever nå at millionene har nådd målet på
+  brettet, og knappen står grå med «AVSLUTT - UNDER MÅLET» til da. Lappen etter GRENELLE sier
+  «Nå målet, og AVSLUTT før marsjen». Robotene bruker samme `trykk()`, så de møter den samme
+  grå knappen (ingen egen robotregel).
+  **Tallene:** simuleringen er grønn (200 runder per robot): streikeleder vinner 95 % (median
+  199, p10 162, p90 231), halvgod 79 % (median 140, vanligste tap nå «bølgen tok hodet» på
+  brett 3, 42 av 200; «avsluttet under målet» kan ikke skje lenger), aldri-avslutt 0 %,
+  aldri-grenelle 0 %, tilfeldig 0 %, passiv 0 %. 57,3 valg per minutt, presset går 0,29 ->
+  0,60 -> 0,76. Selvspillet: alle porter grønne (streikeleder vant med 218 poeng), Chromebook
+  p95 ca. 9 ms, bildeendring passiv 12,8. Scene-audit `--strict` grønn (0 funn), likhet mot
+  petisjonen-3d 0,39 (før 0,42).
+  **Prøvd som ikke virket:** (1) helt mettet rød (samme rød som kjeden) på feltene ville gjort
+  kjeden usynlig og dekket de røde flaggene - feltet er derfor en lysere flat rød (#ea5f50) og
+  kjeden har papirkant; (2) «NY PLAKAT: <navn>» i knappestripa ble for lang og traff
+  GRENELLE-knappen - nå bare «NY PLAKAT!» (navnet står på plakatveggen); (3) den første blå
+  blokken (1,5 x 1,7 ruter) var for liten til å synes bak lappen ved halen - nå 2 x 2,4 ruter;
+  (4) å regne ut rutestørrelsen for «TILBAKE PÅ JOBB» gjorde komponenten 803 linjer (maks 800) -
+  nå en fast avstand.
+  **Kjente svakheter:** lappen «Blått blink» står ved halen og dekker en del av fronten;
+  de røde feltene dekker stedsnavn og kartstreker der streiken har gått; «De unge» og TV som
+  regel underveis (forbedring 2 i vurdering 3) er ikke gjort; tekstene i `texts.ts`/`tips.ts`
+  om å avslutte under målet kan ikke lenger vises; halvgod vinner 79 %, så spillet er fortsatt
+  snilt for middels spillere; Frankrikes omriss er fortsatt strukket.

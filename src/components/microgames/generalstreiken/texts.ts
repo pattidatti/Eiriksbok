@@ -112,7 +112,7 @@ export const BRO = {
 };
 
 /** Lappen ved knappen rett etter GRENELLE: AVSLUTT læres først når den finnes. */
-export const AVSLUTT_LAPP = 'Nå: AVSLUTT før marsjen når hodet';
+export const AVSLUTT_LAPP = 'Nå målet, og AVSLUTT før marsjen';
 
 /** TV-sendingen på brett 3 (ved 4 millioner). */
 export const TV = {

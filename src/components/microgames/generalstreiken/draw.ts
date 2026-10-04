@@ -114,6 +114,25 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ctx.stroke();
         ctx.globalAlpha = 1;
     }
+    // Feltene der streiken har gått: flat silketrykk-rød med harde kanter, blå der marsjen
+    // tok kjeden. Tegnes én gang som én flate per farge (ikke lag oppå hverandre).
+    {
+        const B = g.brett.b;
+        for (const [verdi, farge] of [
+            [1, P.felt],
+            [2, P.feltBlå],
+        ] as const) {
+            ctx.fillStyle = farge;
+            ctx.beginPath();
+            for (let i = 0; i < g.spor.length; i++) {
+                if (g.spor[i] !== verdi) continue;
+                const x = i % B;
+                const y = (i - x) / B;
+                ctx.rect(L.ox + x * s - 0.5, L.oy + y * s - 0.5, s + 1, s + 1);
+            }
+            ctx.fill();
+        }
+    }
     // Fabrikkene som venter.
     for (const f of g.fabrikker) {
         const alder = g.bt - f.født;
@@ -133,7 +152,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ctx.scale(sk, sk);
         ctx.fillStyle = P.svart;
         fabrikkForm(ctx, s);
-        ctx.fill();
+        ctx.fill('evenodd');
         ctx.restore();
         if (Math.random() < (fx.tier === 'lav' ? 0.04 : 0.08))
             røyk(fx, x + s * 0.48 - L.ox, y - s * 0.62 - L.oy);
@@ -143,6 +162,10 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ctx.font = `800 ${Math.max(13, Math.round(s * 0.5))}px ${BODY}`;
         ctx.textAlign = 'center';
         ctx.fillStyle = x2 ? P.rød : P.svart;
+        ctx.strokeStyle = P.papir;
+        ctx.lineWidth = 3;
+        ctx.lineJoin = 'round';
+        ctx.strokeText(`+${fmt(v)}`, x, y + s * 0.95 + 6);
         ctx.fillText(`+${fmt(v)}`, x, y + s * 0.95 + 6);
         // Brett 1: klokka rundt fabrikken. Går den ut, går arbeiderne tilbake på jobb.
         if (f.jobbTil < Infinity) {
@@ -177,8 +200,12 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
             ctx.fillText(`x2 ${igjen}`, x, y - s * 0.95);
         } else if (f.navn) {
             // Navnet i små håndmalte bokstaver - bare når hodet ikke er rett ved.
+            // Navnet vises heller ikke når en annen fabrikk står så tett at tekstene ville overlappe.
             const nær = Math.abs(g.hode.x - f.x) + Math.abs(g.hode.y - f.y) < 3;
-            if (!nær) {
+            const trengt = g.fabrikker.some(
+                (o) => o !== f && Math.abs(o.x - f.x) < 5 && Math.abs(o.y - f.y) < 3
+            );
+            if (!nær && !trengt) {
                 ctx.font = `700 13px ${BODY}`;
                 ctx.fillStyle = P.svart;
                 ctx.fillText(f.navn.toUpperCase(), x, y - s * 0.78);
@@ -194,7 +221,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ctx.scale(1 - t * 0.6, 1 - t * 0.6);
         ctx.fillStyle = P.grå;
         fabrikkForm(ctx, s);
-        ctx.fill();
+        ctx.fill('evenodd');
         ctx.restore();
     }
     ctx.globalAlpha = 1;
@@ -210,7 +237,8 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
             ctx.fillStyle = P.papir;
             ctx.fillRect(-s * 0.75, -s * 0.22, s * 1.5, s * 0.44);
             ctx.fillStyle = P.rød;
-            for (let k = 0; k < 3; k++) ctx.fillRect(-s * 0.75 + k * s * 0.5, -s * 0.22, s * 0.25, s * 0.44);
+            for (let k = 0; k < 3; k++)
+                ctx.fillRect(-s * 0.75 + k * s * 0.5, -s * 0.22, s * 0.25, s * 0.44);
             ctx.strokeStyle = P.svart;
             ctx.lineWidth = 2;
             ctx.strokeRect(-s * 0.75, -s * 0.22, s * 1.5, s * 0.44);
@@ -253,43 +281,8 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
     ink.beginPath();
     ink.rect(L.ox - 2, L.oy - 2, s * g.brett.b + 4, s * g.brett.h + 4);
     ink.clip();
-    // Uroen sprer seg fra Sorbonne som en svak rød flate (før Grenelle), dag for dag.
-    {
-        const rr = Math.min(40, 1.5 + (etter ? g.grenelle! : g.bt) * 0.55) * s;
-        ink.globalAlpha = 0.14;
-        ink.fillStyle = P.rød;
-        blekkFlekk(ink, c(g.brett.paris.x), r(g.brett.paris.y), rr, 1);
-        ink.globalAlpha = 1;
-    }
-    // Sporet: røde felt der streiken har gått, blå der marsjen har tatt kjeden.
-    {
-        const B = g.brett.b;
-        for (const [verdi, farge, a] of [
-            [1, P.rød, 0.2],
-            [2, P.blå, 0.3],
-        ] as const) {
-            ink.fillStyle = farge;
-            ink.globalAlpha = a;
-            ink.beginPath();
-            for (let i = 0; i < g.spor.length; i++) {
-                if (g.spor[i] !== verdi) continue;
-                const x = i % B;
-                const y = (i - x) / B;
-                const j = ((i * 7919) % 7) / 7;
-                ink.rect(L.ox + x * s - j * 2, L.oy + y * s - (1 - j) * 2, s + 2, s + 2);
-            }
-            ink.fill();
-        }
-        ink.globalAlpha = 1;
-    }
-    // Den blå flaten sprer seg fra Paris etter Grenelle.
+    // De Gaulles profil trykkes stort og svakt i hjørnet etter Grenelle.
     if (etter) {
-        const rad = Math.min(60, (g.bt - g.grenelle!) * 2.4 + 2) * s;
-        ink.globalAlpha = 0.13;
-        ink.fillStyle = P.blå;
-        blekkFlekk(ink, c(g.brett.paris.x), r(g.brett.paris.y), rad, 2);
-        ink.globalAlpha = 1;
-        // De Gaulles profil trykkes stort og svakt i hjørnet.
         if (fx.grenelleT !== null) {
             const t = Math.min(1, (fx.tid - fx.grenelleT) / 0.4);
             ink.save();
@@ -311,7 +304,6 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ink.save();
         ink.translate(c(o.x), r(o.y));
         ink.scale(1.5 - 0.5 * t, 1.5 - 0.5 * t);
-        ink.globalAlpha = 0.8;
         ink.fillRect(-s * 0.26, -s * 0.42, s * 0.07, s * 0.8);
         ink.beginPath();
         ink.moveTo(-s * 0.19, -s * 0.42);
@@ -319,6 +311,9 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ink.lineTo(s * 0.34, -s * 0.06);
         ink.quadraticCurveTo(s * 0.05, -s * (0.16 - vai), -s * 0.19, -s * 0.1);
         ink.closePath();
+        ink.strokeStyle = P.papir;
+        ink.lineWidth = 3;
+        ink.stroke();
         ink.fill();
         ink.restore();
     }
@@ -338,6 +333,12 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
     if (pts.length > 1) {
         ink.lineJoin = 'round';
         ink.lineCap = 'round';
+        // Papirkant rundt kjeden, så den skiller seg fra feltet bak.
+        ink.strokeStyle = P.papir;
+        ink.lineWidth = s * 0.8 + 6;
+        ink.beginPath();
+        pts.forEach((p, i) => (i ? ink.lineTo(c(p.x), r(p.y)) : ink.moveTo(c(p.x), r(p.y))));
+        ink.stroke();
         ink.strokeStyle = P.rød;
         ink.lineWidth = s * 0.8;
         ink.beginPath();
@@ -353,62 +354,67 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
             else ink.moveTo(px, py);
         });
         ink.stroke();
-        // Bølgen: blått blekk ved halen, tykkere når den blinker.
+        // De Gaulles marsj: en hard blå front som går langs kjeden mot hodet.
         if (etter && g.body.length) {
             const hale = g.body[g.body.length - 1];
-            const blink = varsel ? 0.5 + 0.5 * Math.sin(fx.tid * 28) : 0;
             const nest = g.body[g.body.length - 2] ?? g.hode;
+            const blink = varsel ? 0.5 + 0.5 * Math.sin(fx.tid * 28) : 0;
             const del = Math.min(1, g.bølgeRest);
-            ink.strokeStyle = P.blå;
-            ink.lineWidth = s * (0.84 + blink * 0.3);
-            ink.beginPath();
-            ink.moveTo(c(hale.x), r(hale.y));
-            ink.lineTo(c(hale.x + (nest.x - hale.x) * del), r(hale.y + (nest.y - hale.y) * del));
-            ink.stroke();
-            ink.fillStyle = P.blå;
-            ink.beginPath();
-            ink.arc(c(hale.x), r(hale.y), s * (0.5 + blink * 0.35), 0, Math.PI * 2);
-            ink.fill();
-            // De Gaulles marsj: en tykk blå front av folk med flagg som går bak halen.
-            // Fronten vokser jo nærmere den er hodet.
-            const ret = { x: nest.x - hale.x, y: nest.y - hale.y };
+            const lr = Math.hypot(nest.x - hale.x, nest.y - hale.y) || 1;
+            const ret = { x: (nest.x - hale.x) / lr, y: (nest.y - hale.y) / lr };
             const tv = { x: -ret.y, y: ret.x };
+            // Fronten står et stykke inn i leddet bølgen er i ferd med å ta.
+            const fx0 = c(hale.x + (nest.x - hale.x) * del);
+            const fy0 = r(hale.y + (nest.y - hale.y) * del);
             const n = nærhet(g);
-            const tykk = 1 + n * 0.25 + blink * 0.3;
-            const gå = Math.sin(fx.tid * 10) * 0.08;
-            const fx0 = c(hale.x) - ret.x * s * 0.3;
-            const fy0 = r(hale.y) - ret.y * s * 0.3;
+            // Avstanden på kartet: en stiplet blå linje langs kjeden fra fronten til hodet.
+            ink.strokeStyle = P.blå;
+            ink.lineWidth = Math.max(2, s * 0.14);
+            ink.setLineDash([s * 0.32, s * 0.26]);
+            ink.lineDashOffset = -fx.tid * s * 1.6;
+            ink.beginPath();
+            ink.moveTo(fx0, fy0);
+            for (let i = g.body.length - 2; i >= 0; i--) ink.lineTo(c(g.body[i].x), r(g.body[i].y));
+            ink.lineTo(c(g.hode.x), r(g.hode.y));
+            ink.stroke();
+            ink.setLineDash([]);
+            // Massen bak fronten: en flat blå blokk, bredere jo nærmere hodet den er.
+            const bred = s * (2 + n * 0.4 + blink * 0.3);
+            const dyp = s * (2.4 + n * 0.6);
+            ink.save();
+            ink.translate(fx0, fy0);
+            ink.rotate(Math.atan2(ret.y, ret.x));
             ink.fillStyle = P.blå;
-            blekkFlekk(ink, fx0, fy0, s * 1.15 * tykk, 3 + Math.floor(fx.tid * 2));
-            blekkFlekk(
-                ink,
-                fx0 - ret.x * s * 1.2,
-                fy0 - ret.y * s * 1.2,
-                s * 0.95 * tykk,
-                5 + Math.floor(fx.tid * 2)
-            );
-            // Flaggene: tre blå fane-stenger over massen.
+            ink.fillRect(-dyp, -bred / 2, dyp, bred);
+            // Den harde kanten: en svart strek på tvers av kjeden.
+            ink.fillStyle = P.svart;
+            ink.fillRect(-s * 0.06, -bred / 2 - s * 0.18, s * 0.16, bred + s * 0.36);
+            ink.restore();
+            // Flaggene: tre blå faner bak fronten.
+            ink.fillStyle = P.blå;
             for (const k of [-1, 0, 1]) {
-                const bx = fx0 + tv.x * k * s * 0.8 - ret.x * s * 0.4;
-                const by = fy0 + tv.y * k * s * 0.8 - ret.y * s * 0.4;
-                const hy = s * (1.5 + (k === 0 ? 0.35 : 0)) * tykk;
+                const bx = fx0 + tv.x * k * bred * 0.32 - ret.x * dyp * 0.7;
+                const by = fy0 + tv.y * k * bred * 0.32 - ret.y * dyp * 0.7;
+                const hy = s * (1.3 + (k === 0 ? 0.35 : 0) + n * 0.2);
                 ink.fillRect(bx - s * 0.05, by - hy, s * 0.1, hy);
                 ink.beginPath();
                 ink.moveTo(bx + s * 0.05, by - hy);
-                ink.lineTo(bx + s * (0.75 + Math.sin(fx.tid * 6 + k) * 0.08), by - hy + s * 0.22);
-                ink.lineTo(bx + s * 0.05, by - hy + s * 0.48);
+                ink.lineTo(bx + s * (0.7 + Math.sin(fx.tid * 6 + k) * 0.08), by - hy + s * 0.22);
+                ink.lineTo(bx + s * 0.05, by - hy + s * 0.46);
                 ink.fill();
             }
-            // Folkene skjæres ut av massen (papiret skinner gjennom), og de går i takt.
+            // Folkene i fronten skjæres ut av massen og går i takt.
+            const gå = Math.sin(fx.tid * 10) * 0.07;
             ink.globalCompositeOperation = 'destination-out';
             for (let rad = 0; rad < 2; rad++)
                 for (const k of [-1, 0, 1]) {
                     const steg = (rad + k) % 2 ? gå : -gå;
-                    const bx = fx0 + tv.x * k * s * 0.55 - ret.x * s * (rad * 0.9 + steg);
-                    const by = fy0 + tv.y * k * s * 0.55 - ret.y * s * (rad * 0.9 + steg);
+                    const bak = s * (0.4 + rad * 0.75 + steg);
+                    const bx = fx0 + tv.x * k * bred * 0.3 - ret.x * bak;
+                    const by = fy0 + tv.y * k * bred * 0.3 - ret.y * bak;
                     ink.beginPath();
-                    ink.arc(bx, by - s * 0.2, s * 0.13, 0, Math.PI * 2);
-                    ink.rect(bx - s * 0.11, by - s * 0.06, s * 0.22, s * 0.36);
+                    ink.arc(bx, by - s * 0.2, s * 0.12, 0, Math.PI * 2);
+                    ink.rect(bx - s * 0.1, by - s * 0.07, s * 0.2, s * 0.34);
                     ink.fill();
                 }
             ink.globalCompositeOperation = 'source-over';
@@ -418,7 +424,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
                 ink.globalAlpha = 1 - t;
                 ink.lineWidth = 3;
                 ink.beginPath();
-                ink.arc(c(hale.x), r(hale.y), s * (0.6 + t * 1.6), 0, Math.PI * 2);
+                ink.arc(fx0, fy0, s * (0.7 + t * 1.6), 0, Math.PI * 2);
                 ink.stroke();
                 ink.globalAlpha = 1;
             }
@@ -526,25 +532,6 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
     }
     if (!ex.meny) hudSvart(ctx, g, L, ex, fx);
     if (fx.sveip) tegnSveip(ctx, fx, L);
-}
-
-/** En ujevn blekkflate (ikke en perfekt sirkel), som blekk som har flytt utover papiret. */
-function blekkFlekk(ctx: CanvasRenderingContext2D, x: number, y: number, rad: number, frø: number) {
-    ctx.beginPath();
-    for (let i = 0; i <= 36; i++) {
-        const a = (i / 36) * Math.PI * 2;
-        const k =
-            1 +
-            0.09 * Math.sin(a * 3 + frø) +
-            0.06 * Math.sin(a * 7 + frø * 2) +
-            0.04 * Math.sin(a * 13);
-        const px = x + Math.cos(a) * rad * k;
-        const py = y + Math.sin(a) * rad * k;
-        if (i) ctx.lineTo(px, py);
-        else ctx.moveTo(px, py);
-    }
-    ctx.closePath();
-    ctx.fill();
 }
 
 /** Skalaen 0-12 millioner: x-posisjon for et tall. */
@@ -692,13 +679,17 @@ function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra,
     void HUD_H;
 }
 
-/** Steder på det innfelte verdenskartet (relativt til midten), Paris først. */
-const TV_STEDER: [string, number, number][] = [
-    ['Paris', -6, 10],
-    ['Berkeley', -62, 6],
-    ['Oslo', 6, -24],
-    ['Vest-Berlin', 22, -6],
-    ['Praha', 26, 10],
+/**
+ * Steder på det innfelte verdenskartet (relativt til midten), Paris først. Hvert sted har sin
+ * egen plass for navnet og bonusen, så ingen merkelapper overlapper:
+ * [navn, x, y, navn x, navn y, justering, bonus x, bonus y].
+ */
+const TV_STEDER: [string, number, number, number, number, CanvasTextAlign, number, number][] = [
+    ['Paris', -14, 12, -14, 30, 'center', -14, 12],
+    ['Berkeley', -62, 4, -82, 20, 'left', -62, -8],
+    ['Oslo', 4, -22, 12, -18, 'left', -10, -18],
+    ['Vest-Berlin', 12, -4, 18, 0, 'left', 2, 4],
+    ['Praha', 24, 14, 31, 22, 'left', 24, 46],
 ];
 
 /** TV-sendingen: et lite innfelt kart der landene tennes ett etter ett, med bonusen. */
@@ -706,15 +697,15 @@ function tvKart(ctx: CanvasRenderingContext2D, fx: Fx, L: Layout) {
     const t = fx.tid - fx.tvT!;
     const inn = Math.min(1, t / 0.3);
     ctx.save();
-    ctx.translate(L.px + L.pw - 104, L.py + 150);
+    ctx.translate(L.px + L.pw - 108, L.py + 150);
     ctx.rotate(-0.02);
     ctx.scale(0.6 + 0.4 * inn, 0.6 + 0.4 * inn);
     ctx.globalAlpha = inn;
     ctx.fillStyle = '#fafaf8';
-    ctx.fillRect(-82, -52, 164, 104);
+    ctx.fillRect(-90, -52, 180, 104);
     ctx.lineWidth = 2;
     ctx.strokeStyle = P.svart;
-    ctx.strokeRect(-82, -52, 164, 104);
+    ctx.strokeRect(-90, -52, 180, 104);
     ctx.fillStyle = P.svart;
     ctx.font = `900 15px ${FONT}`;
     ctx.textAlign = 'center';
@@ -729,7 +720,7 @@ function tvKart(ctx: CanvasRenderingContext2D, fx: Fx, L: Layout) {
     ctx.stroke();
     ctx.setLineDash([]);
     const [, px, py] = TV_STEDER[0];
-    TV_STEDER.forEach(([navn, x, y], i) => {
+    TV_STEDER.forEach(([navn, x, y, lx, ly, jus, bx, by], i) => {
         const tent = i === 0 || t > 0.35 + i * 0.45;
         if (i > 0 && tent) {
             const k = Math.min(1, (t - 0.35 - i * 0.45) / 0.3);
@@ -745,12 +736,14 @@ function tvKart(ctx: CanvasRenderingContext2D, fx: Fx, L: Layout) {
         ctx.arc(x, y, tent ? 5 : 3, 0, Math.PI * 2);
         ctx.fill();
         ctx.fillStyle = P.svart;
-        ctx.font = `800 11px ${BODY}`;
-        ctx.fillText(navn.toUpperCase(), x, y + 16);
+        ctx.font = `800 10px ${BODY}`;
+        ctx.textAlign = jus;
+        ctx.fillText(navn.toUpperCase(), lx, ly);
         if (i > 0 && tent && t < 0.35 + i * 0.45 + 1.6) {
             ctx.fillStyle = P.rød;
-            ctx.font = `900 13px ${FONT}`;
-            ctx.fillText(`+${fmt(TUNING.tv.verdi)}`, x, y - 9);
+            ctx.font = `900 12px ${FONT}`;
+            ctx.textAlign = 'center';
+            ctx.fillText(`+${fmt(TUNING.tv.verdi)}`, bx, by - 6);
         }
     });
     ctx.restore();

@@ -12,6 +12,10 @@ export const P = {
     svart: '#151413',
     blå: '#1f4f9f',
     tynn: '#f3b8ad',
+    /** Feltene der streiken har gått: flat silketrykk-rød, lysere enn kjeden. */
+    felt: '#ea5f50',
+    /** Feltene marsjen har tatt tilbake. */
+    feltBlå: '#6c8cc6',
     grå: '#8f8a80',
     mur: '#8b8b8d',
     murMørk: '#76767a',
@@ -438,7 +442,7 @@ export function tegnBakgrunn(w: number, h: number, dpr: number, b: Brett, L: Lay
     }
     ctx.globalAlpha = 1;
     ctx.restore();
-    // Stedsnavn som store plakatbokstaver, svakt trykt i bakgrunnen.
+    // Stedsnavnene: ett lite navn per sted (ikke et stort spøkelsesnavn bak).
     ctx.textAlign = 'center';
     ctx.fillStyle = P.svart;
     for (const e of ETIKETTER[b.nr] ?? []) {
@@ -446,11 +450,8 @@ export function tegnBakgrunn(w: number, h: number, dpr: number, b: Brett, L: Lay
         ctx.save();
         ctx.translate(p.x, p.y + 4);
         ctx.rotate((rng() - 0.5) * 0.08);
-        ctx.globalAlpha = 0.11;
-        ctx.font = `900 ${Math.round(s * 1.25)}px ${FONT}`;
-        ctx.fillText(e.t, 0, s * 0.35);
-        ctx.globalAlpha = 0.55;
-        ctx.font = `800 12px ${BODY}`;
+        ctx.globalAlpha = 0.7;
+        ctx.font = `800 13px ${BODY}`;
         ctx.fillText(e.t, 0, 0);
         ctx.restore();
     }
@@ -518,29 +519,44 @@ export function tegnFlekker(w: number, h: number, dpr: number) {
     return c;
 }
 
-/** Fabrikken som venter: svart silhuett med sagtak og pipe. Tegnes rundt (0, 0), bredde ca. 1,2 s. */
+/**
+ * Fabrikken som venter: svart silhuett med sagtak og pipe, skåret for hånd (kantene er litt
+ * skjeve, som et linoleumssnitt). Tegnes rundt (0, 0), bredde ca. 1,2 s.
+ */
+const SNITT = [
+    0.02, -0.03, 0.04, -0.01, 0.03, -0.04, 0.01, 0.03, -0.02, 0.04, -0.03, 0.02, -0.01, 0.03,
+];
 export function fabrikkForm(ctx: CanvasRenderingContext2D, s: number) {
     const w = s * 1.15;
     const h = s * 0.62;
     const x0 = -w / 2;
     const y0 = s * 0.38;
+    let k = 0;
+    const p = (x: number, y: number) => {
+        const d = SNITT[k++ % SNITT.length] * s;
+        if (k === 1) ctx.moveTo(x + d, y - d * 0.5);
+        else ctx.lineTo(x + d, y - d * 0.5);
+    };
     ctx.beginPath();
-    ctx.moveTo(x0, y0);
-    ctx.lineTo(x0, y0 - h * 0.55);
-    // Sagtaket: tre tenner.
+    p(x0, y0);
+    p(x0, y0 - h * 0.55);
+    // Sagtaket: tre tenner, litt ulike.
     for (let i = 0; i < 3; i++) {
         const a = x0 + (i * w * 0.7) / 3;
-        ctx.lineTo(a + (w * 0.7) / 3, y0 - h);
-        ctx.lineTo(a + (w * 0.7) / 3, y0 - h * 0.55);
+        p(a + (w * 0.7) / 3, y0 - h * (0.95 + i * 0.04));
+        p(a + (w * 0.7) / 3, y0 - h * 0.55);
     }
-    // Pipa.
-    ctx.lineTo(x0 + w * 0.76, y0 - h * 0.55);
-    ctx.lineTo(x0 + w * 0.76, y0 - h * 1.55);
-    ctx.lineTo(x0 + w * 0.92, y0 - h * 1.55);
-    ctx.lineTo(x0 + w * 0.92, y0 - h * 0.55);
-    ctx.lineTo(x0 + w, y0 - h * 0.55);
-    ctx.lineTo(x0 + w, y0);
+    // Pipa, litt skjev.
+    p(x0 + w * 0.76, y0 - h * 0.55);
+    p(x0 + w * 0.74, y0 - h * 1.55);
+    p(x0 + w * 0.93, y0 - h * 1.5);
+    p(x0 + w * 0.92, y0 - h * 0.55);
+    p(x0 + w, y0 - h * 0.55);
+    p(x0 + w, y0);
     ctx.closePath();
+    // To vinduer skåret ut (papiret skinner gjennom ved evenodd).
+    ctx.rect(x0 + w * 0.12, y0 - h * 0.38, w * 0.14, h * 0.2);
+    ctx.rect(x0 + w * 0.4, y0 - h * 0.38, w * 0.14, h * 0.2);
 }
 
 /** Tre streikende arm i arm (hode og skuldre), tegnet som form rundt (0, 0). Skjæres ut av det røde. */

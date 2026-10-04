@@ -273,13 +273,14 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                     !r.nyePlakater.includes(e.navn)
                 ) {
                     r.nyePlakater.push(e.navn);
-                    // Lappen står i hjørnet nede til venstre, bort fra kjeden.
+                    // Lappen står nede til høyre i knappestripa, inne på papiret og bort fra kjeden.
                     const st = stageRef.current;
-                    if (st)
+                    const pl = st ? layout(st.clientWidth, st.clientHeight, g.brett) : null;
+                    if (pl)
                         text.float(
-                            `NY PLAKAT: ${e.navn.toUpperCase()}`,
-                            150,
-                            st.clientHeight - 96,
+                            'NY PLAKAT!',
+                            pl.px + pl.pw - 110,
+                            pl.py + pl.ph - 40,
                             P.svart,
                             false,
                             1.6
@@ -325,7 +326,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                 );
             } else if (e.k === 'varsel') {
                 sfx.varsel();
-                text.point('blink', 'Blått blink: bølgen byks snart!', haleAt, {
+                text.point('blink', 'Blått blink: marsjen hopper snart fram!', haleAt, {
                     seconds: 3,
                     once: true,
                     tone: 'fare',
@@ -349,7 +350,8 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                 fx.tilbake.push({ x: e.x, y: e.y, t: fx.tid });
                 sfx.tilbake();
                 const sp = skjerm(g, e.x, e.y);
-                if (sp) text.float('TILBAKE PÅ JOBB', sp.x, sp.y - 26, P.grå, false, 1.2);
+                // Over klokka, ikke oppå fabrikken.
+                if (sp) text.float('TILBAKE PÅ JOBB', sp.x, sp.y - 54, P.grå, false, 1.2);
             } else if (e.k === 'bro') {
                 fx.broT = fx.tid;
                 fx.rist = Math.max(fx.rist, 5);
@@ -682,7 +684,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                         <button
                             type="button"
                             onClick={trykkKnapp}
-                            disabled={k === 'venter'}
+                            disabled={k === 'venter' || k === 'under'}
                             className={k === 'grenelle' ? 'gs-puls' : undefined}
                             style={{
                                 position: 'absolute',
@@ -694,7 +696,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                                 fontWeight: 900,
                                 fontFamily: FONT,
                                 letterSpacing: '0.04em',
-                                border: `3px solid ${k === 'venter' ? P.grå : k === 'grenelle' ? P.rød : P.rød}`,
+                                border: `3px solid ${k === 'venter' || k === 'under' ? P.grå : P.rød}`,
                                 background:
                                     k === 'grenelle'
                                         ? P.rød
@@ -702,7 +704,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                                           ? P.papir
                                           : '#dcdcd8',
                                 color: k === 'grenelle' ? P.papir : k === 'avslutt' ? P.rød : P.grå,
-                                cursor: k === 'venter' ? 'default' : 'pointer',
+                                cursor: k === 'venter' || k === 'under' ? 'default' : 'pointer',
                                 whiteSpace: 'nowrap',
                             }}
                         >
@@ -710,7 +712,9 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                                 ? 'GRENELLE (MELLOMROM)'
                                 : k === 'avslutt'
                                   ? 'AVSLUTT STREIKEN (MELLOMROM)'
-                                  : `GRENELLE FRA ${fmt(TUNING.grenelleFra)} MILLIONER`}
+                                  : k === 'under'
+                                    ? 'AVSLUTT - UNDER MÅLET'
+                                    : `GRENELLE FRA ${fmt(TUNING.grenelleFra)} MILLIONER`}
                         </button>
                     )}
 

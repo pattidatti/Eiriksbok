@@ -86,12 +86,14 @@ export function styr(g: Game, r: Retning) {
 
 export const kanGrenelle = (g: Game) =>
     g.mode === 'play' && g.brett.knapp && g.grenelle === null && millioner(g) >= TUNING.grenelleFra;
-export const kanAvslutte = (g: Game) => g.mode === 'play' && g.grenelle !== null;
+/** AVSLUTT virker først når millionene har nådd målet på brettet (knappen er grå før det). */
+export const kanAvslutte = (g: Game) =>
+    g.mode === 'play' && g.grenelle !== null && millioner(g) >= g.brett.mål;
 
-export type Knapp = 'grenelle' | 'avslutt' | 'venter' | null;
+export type Knapp = 'grenelle' | 'avslutt' | 'under' | 'venter' | null;
 export function knapp(g: Game): Knapp {
     if (!g.brett.knapp || g.mode !== 'play') return null;
-    if (g.grenelle !== null) return 'avslutt';
+    if (g.grenelle !== null) return kanAvslutte(g) ? 'avslutt' : 'under';
     return kanGrenelle(g) ? 'grenelle' : 'venter';
 }
 
