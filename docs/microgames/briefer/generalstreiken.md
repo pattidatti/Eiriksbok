@@ -223,3 +223,30 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
   velge). Kjente svakheter: kalenderen er en ekstra klokke ved siden av bølgen, og krasj i egen hale
   er fortsatt en løs metafor for splittelsen; bølgetallene i punkt 4 er utgangspunkt og må stilles
   med selvspill.
+- **Fase byggmester, gråboks (2026-10-04):** bygde reglene i `src/components/microgames/generalstreiken/`
+  (`KART.md`, `tuning.ts`, `levels.ts` med brett 1-3 fra punkt 11, `state.ts`, `rules.ts`,
+  `game.ts`, `bots.ts`, `sim.ts`, `draw.ts`, `texts.ts`) og `Generalstreiken.tsx` med
+  `usePlaytest`, registrert i `registry.ts`. Visningen er rutenett, røde bokser for kjeden, blå for
+  leddene bølgen spiser, svarte bokser for fabrikkene med verdien over. Én runde i sim og selvspill
+  er brett 1, 2 og 3 etter hverandre; poeng = tiendeler av millionene summert over brettene.
+  **Simuleringen er grønn** (200 runder per robot): streikeleder vinner 93 % (median 140),
+  halvgod 0 % (median 104, nøyer seg med ca. 5 millioner på brett 3), aldri-avslutt 0 % (11),
+  aldri-grenelle 0 % (11), tilfeldig 0 % (0), passiv 0 % (0). 54 valg per minutt, presset går
+  0,09 -> 0,23 -> 0,32. Selvspillet i nettleseren: streikeleder vant med 153 poeng (sim: 128-151),
+  så nettleseren og simuleringen spiller samme spill.
+  **Prøvd som ikke virket:** (1) første balanse ga vinneren 68 % - roboten ventet på at
+  millionene skulle falle 0,3 under toppen og mistet målet når bølgen spiste et stort ledd;
+  (2) x2 SAMMEN med vindu 2 s og nye fabrikker 4 ruter fra hodet ga dobbel verdi på nesten
+  halvparten av fabrikkene - vinduet er nå 1,5 s og avstanden 6 ruter, men x2 er fortsatt vanlig
+  (ca. 40 %); (3) robotens tilstand i en `let` inne i `usePlaytest`-fabrikken ble nullstilt hvert
+  grep (fabrikken kalles på nytt ved hver bruk), så den trykket aldri AVSLUTT i nettleseren - den
+  bor nå i en `useRef`.
+  **Avvik fra briefen:** brett 1 og 2 har en skjult frist (70 og 55 s) i stedet for kalender, så
+  runden alltid ender; kartkanten svinger hodet i stedet for å drepe; kartet er et rektangel, ikke
+  Frankrikes omriss.
+  **Kjente svakheter:** brett 1 tar bare ca. 5 s (fire fabrikker til 1 million), så eleven møter
+  aldri krasjet der; hele løpet er ca. 65 s, kortere enn briefens 35 + 60 + 90; etter Grenelle
+  stiger millionene lite (bølgen spiser gamle ledd omtrent like fort som nye kommer), så brett 3
+  avgjøres mest av når du trykker GRENELLE; fabrikkene klumper seg nær Paris tidlig i brett 3, og
+  rutene er små på 1366x768. Mangler ennå: spøkelse/rekordstrek, plakatveggen, `useArcadeText`,
+  «Dette skjedde», lyd, kunst og coverbildet.
