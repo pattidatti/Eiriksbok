@@ -22,7 +22,7 @@ import {
 } from './art';
 import type { Fx } from './fx';
 import { røyk } from './fx';
-import { byksVarsel, dag, erX2, fristIgjen, gangetall, tiendeler, verdiFor } from './rules';
+import { byksVarsel, dag, erX2, fristIgjen, gangetall, nærhet, tiendeler, verdiFor } from './rules';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
@@ -203,7 +203,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
     // Uroen sprer seg fra Sorbonne som en svak rød flate (før Grenelle), dag for dag.
     {
         const rr = Math.min(40, 1.5 + (etter ? g.grenelle! : g.bt) * 0.55) * s;
-        ink.globalAlpha = 0.1;
+        ink.globalAlpha = 0.14;
         ink.fillStyle = P.rød;
         blekkFlekk(ink, c(g.brett.paris.x), r(g.brett.paris.y), rr, 1);
         ink.globalAlpha = 1;
@@ -228,15 +228,23 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
             ink.restore();
         }
     }
-    // Merkene etter fabrikkene som ble med.
+    // Merkene etter fabrikkene som ble med: et rødt streikeflagg (ikke en fabrikk), så de
+    // ikke kan forveksles med de svarte fabrikkene du kan hekte på.
     ink.fillStyle = P.rød;
     for (const o of fx.okkupert) {
         const t = Math.min(1, (fx.tid - o.t) / 0.2);
+        const vai = Math.sin(fx.tid * 4 + o.x * 2.1) * 0.12;
         ink.save();
         ink.translate(c(o.x), r(o.y));
-        ink.scale(0.62 * (1.5 - 0.5 * t), 0.62 * (1.5 - 0.5 * t));
-        ink.globalAlpha = 0.55;
-        fabrikkForm(ink, s);
+        ink.scale(1.5 - 0.5 * t, 1.5 - 0.5 * t);
+        ink.globalAlpha = 0.8;
+        ink.fillRect(-s * 0.26, -s * 0.42, s * 0.07, s * 0.8);
+        ink.beginPath();
+        ink.moveTo(-s * 0.19, -s * 0.42);
+        ink.quadraticCurveTo(s * 0.05, -s * (0.5 + vai), s * 0.34, -s * 0.36);
+        ink.lineTo(s * 0.34, -s * 0.06);
+        ink.quadraticCurveTo(s * 0.05, -s * (0.16 - vai), -s * 0.19, -s * 0.1);
+        ink.closePath();
         ink.fill();
         ink.restore();
     }
@@ -286,6 +294,22 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
             ink.fillStyle = P.blå;
             ink.beginPath();
             ink.arc(c(hale.x), r(hale.y), s * (0.5 + blink * 0.35), 0, Math.PI * 2);
+            ink.fill();
+            // De Gaulles marsj: et tog av blå folk med flagg rett bak bølgefronten.
+            const ret = { x: nest.x - hale.x, y: nest.y - hale.y };
+            for (let k = 1; k <= 3; k++) {
+                const bx = c(hale.x - ret.x * k * 0.55) + Math.sin(fx.tid * 7 + k) * 1.5;
+                const by = r(hale.y - ret.y * k * 0.55) + Math.cos(fx.tid * 9 + k) * 1.5;
+                ink.beginPath();
+                ink.arc(bx, by - s * 0.18, s * 0.13, 0, Math.PI * 2);
+                ink.rect(bx - s * 0.12, by - s * 0.05, s * 0.24, s * 0.34);
+                ink.fill();
+            }
+            ink.fillRect(c(hale.x) - s * 0.04, r(hale.y) - s * 1.25, s * 0.08, s * 0.9);
+            ink.beginPath();
+            ink.moveTo(c(hale.x) + s * 0.04, r(hale.y) - s * 1.25);
+            ink.lineTo(c(hale.x) + s * (0.62 + Math.sin(fx.tid * 5) * 0.06), r(hale.y) - s * 1.05);
+            ink.lineTo(c(hale.x) + s * 0.04, r(hale.y) - s * 0.82);
             ink.fill();
             if (varsel) {
                 const t = (fx.tid * 2.2) % 1;
@@ -373,6 +397,20 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ctx.restore();
     }
     ctx.globalAlpha = 1;
+    // Nærhet: en blå ring rundt hodet når bølgen nærmer seg, tykk og rask når den er rett bak.
+    if (etter && g.mode === 'play') {
+        const n = nærhet(g);
+        if (n > 0) {
+            const t = (fx.tid * (n === 2 ? 3 : 1.4)) % 1;
+            ctx.strokeStyle = P.blå;
+            ctx.globalAlpha = (n === 2 ? 0.95 : 0.55) * (1 - t * 0.6);
+            ctx.lineWidth = n === 2 ? 4 : 2;
+            ctx.beginPath();
+            ctx.arc(c(g.hode.x), r(g.hode.y), s * (0.75 + t * 0.5), 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+        }
+    }
     // Gangetallet etter Grenelle står ved hodet (litt over, så det ikke dekker det).
     if (etter && g.mode === 'play') {
         const gt = gangetall(g);
@@ -454,9 +492,9 @@ function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra)
     const merker: [number, string][] =
         g.brett.nr === 3
             ? [
-                  [TUNING.seier[0], 'MÅL 6'],
-                  [TUNING.seier[1], 'AVTALEN 8'],
-                  [TUNING.seier[2], 'STILLE 11'],
+                  [TUNING.seier[0], `MÅL ${TUNING.seier[0]}`],
+                  [TUNING.seier[1], `${TUNING.seier[1]} ★`],
+                  [TUNING.seier[2], `${TUNING.seier[2]} ★★`],
               ]
             : [[g.brett.mål, `MÅL ${fmt(g.brett.mål)}`]];
     ctx.font = `800 13px ${BODY}`;
@@ -483,7 +521,7 @@ function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra)
     ctx.save();
     ctx.translate(L.px + L.pw - 104, L.py + 46);
     ctx.rotate(0.035);
-    ctx.fillStyle = '#fbf9f3';
+    ctx.fillStyle = '#fafaf8';
     ctx.fillRect(-82, -36, 164, 70);
     ctx.lineWidth = 2;
     ctx.strokeRect(-82, -36, 164, 70);
@@ -493,9 +531,22 @@ function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra)
         ctx.font = `900 30px ${FONT}`;
         ctx.fillStyle = P.blå;
         ctx.textAlign = 'center';
-        ctx.fillText('AVTALE', 0, 4);
         ctx.font = `800 13px ${BODY}`;
-        ctx.fillText('BØLGEN KOMMER', 0, 24);
+        ctx.textAlign = 'left';
+        ctx.fillText('BØLGEN', -70, -14);
+        // Grov avstandsmåler: tre felt som fylles blått når marsjen nærmer seg (ikke et tall).
+        const n = nærhet(g);
+        for (let i = 0; i < 3; i++) {
+            ctx.strokeStyle = P.blå;
+            ctx.lineWidth = 2;
+            ctx.strokeRect(-70 + i * 48, -6, 42, 14);
+            if (i <= n) ctx.fillRect(-70 + i * 48, -6, 42, 14);
+        }
+        ctx.textAlign = 'center';
+        ctx.font = `900 16px ${FONT}`;
+        ctx.fillStyle = n === 2 ? P.rød : P.blå;
+        ctx.fillText(['LANGT UNNA', 'NÆRMER SEG', 'RETT BAK!'][n], 0, 28);
+        ctx.strokeStyle = P.svart;
     } else if (g.brett.kalender) {
         ctx.font = `900 22px ${FONT}`;
         ctx.fillText('MAI', -70, -6);

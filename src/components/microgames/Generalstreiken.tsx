@@ -8,16 +8,22 @@ import {
     ArcadeTag,
     ArcadeBigButton,
     ArcadeSmallButton,
-    ArcadeStats,
 } from './arcade/ArcadeShell';
-import { ArcadeLessons } from './arcade/ArcadeLayers';
 import { useArcadeLoop, useArcadeText } from './arcade/useArcade';
 import { useArcadeSave, nextRank } from './arcade/save';
 import { createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest } from './playtest';
 import { newGame, update, type Game } from './generalstreiken/game';
-import { knapp, millioner, rang, seierNivå, styr, tiendeler, trykk } from './generalstreiken/rules';
+import {
+    bølgeAvstand,
+    knapp,
+    millioner,
+    rang,
+    seierNivå,
+    styr,
+    trykk,
+} from './generalstreiken/rules';
 import type { Retning } from './generalstreiken/state';
 import { BOTS } from './generalstreiken/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './generalstreiken/sim';
@@ -34,9 +40,14 @@ import {
 } from './generalstreiken/fx';
 import { lagSfx } from './generalstreiken/sound';
 import {
+    AVSLUTT_LAPP,
     BRETT_BANNER,
     BRETT_VUNNET,
+    FØLGER,
     MÅL_TEKST,
+    NY_START,
+    TV,
+    ÅRSAKER,
     PLAKATER,
     SEIER,
     slagordFor,
@@ -44,6 +55,8 @@ import {
     ØYEBLIKK,
 } from './generalstreiken/texts';
 import { TUNING } from './generalstreiken/tuning';
+import { Sluttplakat } from './generalstreiken/Sluttplakat';
+import { tipsFor, type Resultat } from './generalstreiken/tips';
 
 // GENERALSTREIKEN - mai 1968. Eleven er streiken selv: Snake på et Atelier Populaire-
 // silketrykk av Frankrike. Hekt på fabrikker, trykk GRENELLE for avtalen, og AVSLUTT før
@@ -56,7 +69,7 @@ const THEME: Partial<ArcadeTheme> = {
     accent: P.rød,
     cta: P.rød,
     ctaText: P.papir,
-    chip: '#ebe6da',
+    chip: '#e4e4e0',
     scrim: 'rgba(21,20,19,.5)',
     font: FONT,
     fontWeight: 900,
@@ -93,19 +106,6 @@ interface Lagring {
     spøkelse: [number, number][];
 }
 const STANDARD: Lagring = { rekord: 0, runder: 0, fri: false, plakater: [], spøkelse: [] };
-
-interface Resultat {
-    vant: boolean;
-    m: number;
-    tittel: string;
-    tekst: string;
-    nyRekord: boolean;
-    fabrikker: number;
-    krasj: number;
-    brett: number;
-    nyePlakater: string[];
-    lærdom: string[];
-}
 
 export default function Generalstreiken({ onComplete }: MicroGameProps) {
     const gameRef = useRef<Game>(newGame(1));
@@ -190,11 +190,14 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
             `Streiken din spredte seg fra Sorbonne til ${run.current.hekt} fabrikker. I mai 1968 streiket rundt 10 millioner i Frankrike.`,
             1
         );
+        // «Dette skjedde» skal alltid koble til årsakene, og en seier til følgene.
+        text.lesson('årsaker', ÅRSAKER, 1000);
+        if (vant) text.lesson('følger', FØLGER, 2000);
         if (vant)
             text.lesson(
                 'reformer',
                 `Du avsluttet med ${fmt(m)} millioner og fikk reformer. Men det ble ingen revolusjon: de Gaulle vant valget i juni.`,
-                3
+                3000
             );
         const nivå = vant ? seierNivå(m) : 0;
         const seier = vant ? SEIER[Math.max(0, nivå - 1)] : null;
@@ -210,6 +213,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
             brett: g.brett.nr,
             nyePlakater: run.current.nyePlakater.filter((n) => !prev.plakater.includes(n)),
             lærdom: text.lessons(3),
+            tips: vant ? '' : tipsFor(g),
         });
         if (vant) onComplete({ score: Math.min(1, m / TUNING.seier[2]), completed: true });
         setModeBoth('over');
@@ -233,6 +237,8 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                 sprut(fx, p.x, p.y, 6, 'papir', 140);
                 fx.hodeSprett = 1;
                 fx.sprett = 1;
+                // En kort stopp ved treff, så hver fabrikk kjennes.
+                fx.stopp = e.x2 ? 0.09 : 0.05;
                 fx.rist = Math.max(fx.rist, e.x2 ? 5 : 2.5);
                 sfx.hekt(r.hektBrett, e.x2);
                 const sp = skjerm(g, e.x, e.y);
@@ -279,6 +285,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                 fx.rist = 6;
                 sfx.grenelle();
                 text.banner('HØYERE LØNN, 40 TIMER', P.blå, 2.2);
+                text.point('avslutt', AVSLUTT_LAPP, knappAt, { seconds: 5, once: true });
                 text.lesson(
                     'grenelle',
                     'Grenelle-avtalen 27. mai lovte høyere lønn og kortere arbeidsuke. Mange arbeidere sa nei og streiket videre.',
@@ -310,12 +317,29 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                 sprut(fx, p.x, p.y, 14, 'blå', 200);
                 fx.rist = Math.max(fx.rist, 5);
                 sfx.byks();
+            } else if (e.k === 'tv') {
+                // TV-kvelden: fabrikker langt unna blir med av seg selv.
+                for (const st of e.steder) {
+                    fx.okkupert.push({ x: st.x, y: st.y, t: fx.tid });
+                    fx.ringer.push({ x: st.x, y: st.y, t: fx.tid, farge: P.rød });
+                    const p = lok(st.x, st.y);
+                    sprut(fx, p.x, p.y, 12, 'rød', 180);
+                }
+                fx.sprett = 1;
+                fx.rist = Math.max(fx.rist, 4);
+                sfx.hekt(run.current.hektBrett + 2, true);
+                text.banner(`${TV.banner} +${fmt(e.verdi)}`, P.rød, 1.8);
+                const sp = e.steder[0] ? skjerm(g, e.steder[0].x, e.steder[0].y) : null;
+                if (sp) text.point('tv', TV.lapp, () => sp, { seconds: 4, once: true });
+                text.lesson('tv', TV.lærdom, 2.2);
             } else if (e.k === 'brett') {
                 nullstillKart(fx, e.nr);
                 fx.sveip = null;
                 run.current.hektBrett = 0;
                 sfx.brett();
                 text.banner(BRETT_BANNER[e.nr - 1], P.rød, 1.8);
+                if (e.nr === 2)
+                    text.point('nystart', NY_START, hodeAt, { seconds: 3.5, once: true });
                 if (e.nr === 3)
                     text.point('kalender', 'Trykk GRENELLE før 30. mai', knappAt, {
                         seconds: 5,
@@ -351,12 +375,25 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
             const g = gameRef.current;
             if (m === 'play') {
                 const før = g.mode;
-                update(g, dt * text.timeScale());
+                const stopp = fx.stopp > 0;
+                fx.stopp = Math.max(0, fx.stopp - dt);
+                update(g, stopp ? 0 : dt * text.timeScale());
                 reager(g);
+                // Nesten-bom: AVSLUTT med marsjen bare noen ledd bak hodet.
+                const reddet =
+                    før === 'play' &&
+                    (g.mode === 'kort' || g.mode === 'won') &&
+                    g.grenelle !== null &&
+                    bølgeAvstand(g) <= 3;
+                if (reddet) {
+                    const sp = skjerm(g, g.hode.x, g.hode.y);
+                    if (sp) text.float('I SISTE LITEN!', sp.x, sp.y - 40, P.blå, true, 1.4);
+                    fx.rist = Math.max(fx.rist, 6);
+                }
                 if (før === 'play' && g.mode === 'kort') {
                     sweepFor(
                         BRETT_VUNNET[g.bi] ?? '',
-                        `${fmt(g.resultat[g.bi] ?? 0)} millioner i streik`,
+                        `${fmt(g.resultat[g.bi] ?? 0)} millioner lagret - neste brett starter på nytt`,
                         P.rød
                     );
                     sfx.avslutt();
@@ -630,7 +667,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                                         ? P.rød
                                         : k === 'avslutt'
                                           ? P.papir
-                                          : '#e5e0d4',
+                                          : '#dcdcd8',
                                 color: k === 'grenelle' ? P.papir : k === 'avslutt' ? P.rød : P.grå,
                                 cursor: k === 'venter' ? 'default' : 'pointer',
                                 whiteSpace: 'nowrap',
@@ -653,9 +690,8 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                             </ArcadeLogo>
                             <ArcadeTag>Frankrike, mai 1968</ArcadeTag>
                             <p style={{ fontSize: 15, margin: '10px 0 8px', lineHeight: 1.4 }}>
-                                Du er streiken. Styr med piltastene (eller sveip) og hekt på
-                                fabrikker. Trykk GRENELLE for avtalen, og AVSLUTT før den blå bølgen
-                                når hodet.
+                                Du er streiken. Styr med piltastene (eller sveip) og kryp over de
+                                svarte fabrikkene, så blir de med.
                             </p>
                             <ArcadeBigButton onClick={() => begin(0)}>
                                 Start streiken
@@ -706,50 +742,14 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                     )}
 
                     {mode === 'over' && res && (
-                        <div className="gs-inn">
-                            <ArcadeScreen>
-                                <ArcadeLogo>
-                                    <span style={{ fontSize: '0.6em', whiteSpace: 'nowrap' }}>
-                                        {res.tittel}
-                                    </span>
-                                </ArcadeLogo>
-                                <ArcadeTag
-                                    color={
-                                        res.vant ? P.rød : g.årsak === 'bølgen' ? P.blå : P.svart
-                                    }
-                                >
-                                    {fmt(res.m)} millioner - {rang(res.m)}
-                                    {res.nyRekord ? ' - ny rekord!' : ''}
-                                </ArcadeTag>
-                                <p style={{ fontSize: 13, margin: '6px 0', lineHeight: 1.35 }}>
-                                    {res.tekst}
-                                </p>
-                                <ArcadeLessons items={res.lærdom} />
-                                <ArcadeStats
-                                    items={[
-                                        { value: res.fabrikker, label: 'fabrikker' },
-                                        { value: res.krasj, label: 'krasj' },
-                                        { value: `${res.brett}/3`, label: 'brett' },
-                                        { value: fmt(Math.max(save.rekord, 0)), label: 'rekord' },
-                                    ]}
-                                />
-                                {res.nyePlakater.length > 0 ? (
-                                    <p style={{ fontSize: 13, margin: '4px 0', fontWeight: 700 }}>
-                                        Ny plakat: {res.nyePlakater[0]} - «
-                                        {slagordFor(res.nyePlakater[0])[0]}»
-                                    </p>
-                                ) : neste ? (
-                                    <p style={{ fontSize: 13, margin: '4px 0', fontWeight: 700 }}>
-                                        {fmt(Math.max(0.1, tiendeler(neste[0] - save.rekord)))}{' '}
-                                        millioner til neste rang: {neste[1]}
-                                    </p>
-                                ) : null}
-                                <ArcadeBigButton onClick={igjen}>
-                                    Én gang til (mellomrom)
-                                </ArcadeBigButton>
-                                <ArcadeSmallButton onClick={tilMeny}>Meny</ArcadeSmallButton>
-                            </ArcadeScreen>
-                        </div>
+                        <Sluttplakat
+                            res={res}
+                            rekord={save.rekord}
+                            årsak={g.årsak}
+                            neste={neste}
+                            igjen={igjen}
+                            tilMeny={tilMeny}
+                        />
                     )}
                 </ArcadeStage>
                 <style>{`.gs-inn{position:absolute;inset:0;animation:gs-inn 0.3s ease-out 0.4s both}@keyframes gs-inn{from{opacity:0}}.gs-puls{animation:gs-puls 0.9s ease-in-out infinite}@keyframes gs-puls{50%{box-shadow:0 0 0 6px ${P.tynn}}}`}</style>

@@ -1,15 +1,19 @@
 // Fagkjernen og grepene. Eleven og robotene bruker de samme funksjonene: styr() og trykk().
 //  1. Henger kjeden sammen, vokser streiken (game.ts: krasj i egen kjede kutter alt bak).
-//  2. GRENELLE gir høyere verdi på nye fabrikker (og hver ny gir mer enn den forrige), men
-//     starter den blå bølgen bakfra, og den blir raskere for hver fabrikk du tar.
+//  2. GRENELLE starter den blå bølgen bakfra (de Gaulles marsj). Arbeiderne sa nei og streiket
+//     videre, så hvert sekund etter GRENELLE vokser gangetallet på hele streiken. Bølgen blir
+//     raskere for hver fabrikk du tar, og bytter fart tilfeldig ved hvert byks.
 //  3. AVSLUTT gjør millionene til reformer. Tar bølgen hodet først, gir brettet 0.
 
 import { BRETT } from './levels';
 import { DX, MOTSATT, startBrett, type Fabrikk, type Game, type Retning } from './state';
 import { TUNING } from './tuning';
 
-/** Millionene: kjeden pluss delen av de spiste leddene som er vunnet for godt. */
-export const millioner = (g: Game) => g.verdi.reduce((s, v) => s + v, g.bevart);
+/** Grunnverdien: kjeden pluss delen av de spiste leddene som er vunnet for godt. */
+export const rå = (g: Game) => g.verdi.reduce((s, v) => s + v, g.bevart);
+
+/** Millionene på telleren: grunnverdien ganget med gangetallet etter GRENELLE. */
+export const millioner = (g: Game) => rå(g) * gangetall(g);
 
 /** Avrundet til én desimal, slik telleren viser det. */
 export const tiendeler = (m: number) => Math.round(m * 10) / 10;
@@ -26,7 +30,7 @@ export function fart(g: Game) {
 export function bølgeFart(g: Game) {
     if (g.grenelle === null) return 0;
     const b = g.brett.bølge;
-    return b.start * Math.pow(b.vekst, g.etterN) + b.økning * (g.bt - g.grenelle);
+    return (b.start * Math.pow(b.vekst, g.etterN) + b.økning * (g.bt - g.grenelle)) * g.bølgeFaktor;
 }
 
 /** Sekunder til bølgen tar hodet med farten den har nå. */
@@ -35,15 +39,30 @@ export const bølgeSek = (g: Game) => {
     return f > 0 ? bølgeAvstand(g) / f : Infinity;
 };
 
-/** Gangetallet på neste fabrikk etter Grenelle: x1, x1,15, x1,3 ... opp til x2,5. */
+/** Gangetallet på hele streiken: x1 før GRENELLE, så litt mer for hvert sekund, opp til taket. */
 export const gangetall = (g: Game) =>
-    g.grenelle === null ? 1 : Math.min(TUNING.stigeTak, 1 + TUNING.stige * g.etterN);
+    g.grenelle === null
+        ? 1
+        : Math.min(TUNING.vent.tak, 1 + TUNING.vent.perSek * (g.bt - g.grenelle));
+
+/** Grovt hvor nær bølgen er: 0 = langt unna, 1 = nærmer seg, 2 = rett bak (ikke et eksakt tall). */
+export function nærhet(g: Game): 0 | 1 | 2 {
+    if (g.grenelle === null) return 0;
+    const sek = bølgeSek(g);
+    const ledd = bølgeAvstand(g);
+    if (sek < 3.5 || ledd <= 3) return 2;
+    if (sek < 8 || ledd <= 7) return 1;
+    return 0;
+}
 
 /** Sekunder til neste byks i bølgen, tilfeldig mellom `hvert[0]` og `hvert[1]`. */
 export function planleggByks(g: Game) {
     const [a, b] = TUNING.byks.hvert;
     g.byksNeste = g.bt + a + g.rng() * (b - a);
     g.byksVarslet = false;
+    // Marsjen går ujevnt: ny fart til neste byks, som ingen kan vite på forhånd.
+    const [lo, hi] = TUNING.slump;
+    g.bølgeFaktor = lo + g.rng() * (hi - lo);
 }
 
 /** Blinker bølgen nå (varselet ca. 1 s før et byks)? */
@@ -128,8 +147,12 @@ export function tap(g: Game, årsak: NonNullable<Game['årsak']>) {
     g.resultat[g.bi] = 0;
 }
 
-/** Hva en fabrikk er verdt hvis du tar den nå. */
-export function verdiFor(g: Game, f: Fabrikk) {
+/** Hva en fabrikk er verdt på telleren hvis du tar den nå (grunnverdi x gangetallet). */
+export const verdiFor = (g: Game, f: Fabrikk) =>
+    Math.round(grunnverdi(g, f) * gangetall(g) * 10) / 10;
+
+/** Fabrikkens egen verdi (det som lagres i kjeden). */
+export function grunnverdi(g: Game, f: Fabrikk) {
     const fa = TUNING.fabrikk;
     let v = g.grenelle === null ? fa.før : fa.etter;
     if (g.brett.fjernBonus) {
@@ -140,9 +163,8 @@ export function verdiFor(g: Game, f: Fabrikk) {
         );
         v += fa.fjernBonus * (fraParis(g, f) / maks);
     }
-    // x2 dobler fabrikkens egen verdi i stedet for gangetallet, aldri oppå det.
-    v *= erX2(g, f) ? TUNING.x2.faktor : gangetall(g);
-    return Math.round(v * 10) / 10;
+    if (erX2(g, f)) v *= TUNING.x2.faktor;
+    return v;
 }
 
 export const fraParis = (g: Game, p: { x: number; y: number }) =>
@@ -150,8 +172,14 @@ export const fraParis = (g: Game, p: { x: number; y: number }) =>
 
 export const erX2 = (g: Game, f: Fabrikk) => g.bt < f.x2Til;
 
-/** Dagen i mai på kalenderen (13-30). */
-export const dag = (g: Game) => Math.min(30, 13 + Math.floor(g.bt / TUNING.dagSek));
+/** Dagen i mai på kalenderen (brett 3 starter 17. mai, fristen er 30.). */
+export const dag = (g: Game) => Math.min(30, g.brett.startDag + Math.floor(g.bt / TUNING.dagSek));
+
+/** Hvor langt mai har kommet (0 = 13. mai, 1 = 30. mai): kalenderens del av presset. */
+const mai = (g: Game, bt: number) => {
+    const forsprang = (g.brett.startDag - 13) * TUNING.dagSek;
+    return (bt + forsprang) / (g.brett.frist + forsprang);
+};
 
 /** Sekunder igjen til de Gaulle-tilhengerne kommer uansett (bare før Grenelle). */
 export const fristIgjen = (g: Game) => Math.max(0, g.brett.frist - g.bt);
@@ -163,12 +191,17 @@ export function press(g: Game) {
     const w = TUNING.press;
     const f = TUNING.fart;
     const fartDel = ((fart(g) - f.start) / (f.tak - f.start)) * w.fart;
+    const vekt = g.brett.knapp ? w.kalender : w.kalender / 2;
     if (g.grenelle === null) {
-        const kal = (g.bt / g.brett.frist) * (g.brett.knapp ? w.kalender : w.kalender / 2);
+        const kal = mai(g, g.bt) * vekt;
         return Math.min(1, Math.max(fartDel + w.trangt * trangt(g), kal));
     }
+    // Presset faller ikke av å trykke GRENELLE: kalenderen den dagen er et gulv.
+    const kalVed = mai(g, g.grenelle) * vekt;
+    // Etter GRENELLE: hvor nær bølgen er, og hvor mye som står på spill (gangetallet vokser).
     const nær = 1 - Math.min(1, bølgeSek(g) / w.bølgeSek);
-    return Math.min(1, Math.max(fartDel, 0.5 + 0.5 * nær));
+    const innsats = (gangetall(g) - 1) / (TUNING.vent.tak - 1);
+    return Math.min(1, Math.max(fartDel, kalVed, 0.45 + 0.55 * Math.max(nær, innsats)));
 }
 
 /** 0-1: hvor tett egen kjede ligger rundt hodet (fare for krasj). Ledd innen 2 ruter, ikke de to nærmeste. */

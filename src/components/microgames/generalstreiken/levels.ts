@@ -41,6 +41,8 @@ export interface Brett {
     bølge: { start: number; vekst: number; økning: number };
     /** Viser kalenderen 13.-30. mai? Uten kalender gjelder `frist` (sekunder) i stedet. */
     kalender: boolean;
+    /** Dagen i mai kalenderen starter på (brett 3: streiken er alt i gang). */
+    startDag: number;
     /** Sekunder før de Gaulle-tilhengerne kommer uansett (uten avtale = tap). */
     frist: number;
     /** Får fjerne fabrikker ekstra verdi? */
@@ -70,6 +72,7 @@ export const BRETT: Brett[] = [
         mål: 2.5,
         bølge: { start: 0, vekst: 1, økning: 0 },
         kalender: false,
+        startDag: 13,
         frist: 32,
         fjernBonus: false,
         x2: false,
@@ -102,6 +105,7 @@ export const BRETT: Brett[] = [
         mål: 4,
         bølge: { start: 0.7, vekst: 1.12, økning: 0.03 },
         kalender: false,
+        startDag: 13,
         frist: 30,
         fjernBonus: true,
         x2: true,
@@ -130,10 +134,11 @@ export const BRETT: Brett[] = [
         samtidig: 4,
         fartTak: 11,
         knapp: true,
-        mål: 6,
-        bølge: { start: 0.5, vekst: 1.12, økning: 0.06 },
+        mål: 7,
+        bølge: { start: 0.6, vekst: 1.12, økning: 0.06 },
         kalender: true,
-        frist: 30,
+        startDag: 17,
+        frist: 21,
         fjernBonus: true,
         x2: true,
         leddPer: 1,

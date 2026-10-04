@@ -5,6 +5,9 @@ import { DX, MOTSATT, type Game, type Retning } from './state';
 import {
     byksVarsel,
     bølgeFart,
+    dag,
+    grunnverdi,
+    rå,
     planleggByks,
     erX2,
     fart,
@@ -79,7 +82,7 @@ export function ettSteg(g: Game) {
         const ledd = g.body.length - ki;
         // Krasjet koster med en gang: leddene bak faller av, og hvert ledd trekker litt ekstra.
         const straff = Math.min(
-            millioner(g) - g.verdi.slice(ki).reduce((s, v) => s + v, 0),
+            rå(g) - g.verdi.slice(ki).reduce((s, v) => s + v, 0),
             ledd * TUNING.krasjStraff
         );
         const mistet = g.verdi.slice(ki).reduce((s, v) => s + v, 0) + Math.max(0, straff);
@@ -98,7 +101,8 @@ export function ettSteg(g: Game) {
     if (spiser) {
         const f = g.fabrikker[fi];
         const x2 = erX2(g, f);
-        const v = verdiFor(g, f);
+        const v = grunnverdi(g, f);
+        const vis = verdiFor(g, f);
         // Fabrikken gir `leddPer` ledd; verdien deles på dem.
         const per = g.brett.leddPer;
         g.verdi.unshift(v / per);
@@ -106,10 +110,10 @@ export function ettSteg(g: Game) {
         g.vekstVerdi = v / per;
         g.fabrikker.splice(fi, 1);
         if (f.navn) g.brukteNavn.add(f.navn);
-        // Etter Grenelle: neste fabrikk gir mer, og bølgen blir raskere (x2 flytter ingenting).
+        // Etter Grenelle: bølgen blir raskere for hver fabrikk du tar (x2 flytter ingenting).
         if (g.grenelle !== null && !x2) g.etterN++;
         g.sisteHekt = g.bt;
-        g.hendelser.push({ k: 'hekt', x: p.x, y: p.y, verdi: v, navn: f.navn, x2 });
+        g.hendelser.push({ k: 'hekt', x: p.x, y: p.y, verdi: vis, navn: f.navn, x2 });
     } else if (g.vekst > 0) {
         g.vekst--;
         g.verdi.unshift(g.vekstVerdi);
@@ -117,6 +121,27 @@ export function ettSteg(g: Game) {
         g.body.pop();
     }
     if (krasj && g.brett.splitt && millioner(g) < TUNING.splittetUnder) tap(g, 'splittet');
+}
+
+/**
+ * TV-kvelden (brett 3): hele Frankrike ser streiken på TV, og fabrikker langt unna blir med
+ * av seg selv. Det er artikkelens forklaring på hvorfor protestene spredte seg så fort.
+ */
+function tvKveld(g: Game) {
+    g.tvSendt = true;
+    const tv = TUNING.tv;
+    // Regionene lengst fra hodet, én fabrikk i hver.
+    const rs = g.brett.regioner
+        .slice()
+        .sort(
+            (a, c) =>
+                Math.hypot(c.x - g.hode.x, c.y - g.hode.y) -
+                Math.hypot(a.x - g.hode.x, a.y - g.hode.y)
+        )
+        .slice(0, tv.fabrikker);
+    const steder = rs.map((rg) => ({ x: Math.round(rg.x), y: Math.round(rg.y) }));
+    g.bevart += tv.verdi * steder.length;
+    g.hendelser.push({ k: 'tv', steder, verdi: tv.verdi * steder.length });
 }
 
 /** Velger en region etter vekt. */
@@ -246,6 +271,7 @@ export function update(g: Game, dt: number) {
         tap(g, g.brett.knapp ? 'frist' : 'stille');
         return;
     }
+    if (g.brett.kalender && !g.tvSendt && dag(g) >= TUNING.tv.dag) tvKveld(g);
     g.steg += fart(g) * dt;
     while (g.steg >= 1 && g.mode === 'play') {
         g.steg -= 1;

@@ -46,7 +46,8 @@ export type Hendelse =
     | { k: 'spist'; mistet: number; x: number; y: number }
     | { k: 'varsel' }
     | { k: 'byks'; ledd: number }
-    | { k: 'brett'; nr: number };
+    | { k: 'brett'; nr: number }
+    | { k: 'tv'; steder: { x: number; y: number }[]; verdi: number };
 
 export interface Game {
     seed: number;
@@ -78,7 +79,7 @@ export interface Game {
     /** Millioner ved AVSLUTT på hvert brett (brett 1: målet). */
     resultat: number[];
     sisteHekt: number;
-    /** Fabrikker tatt siden Grenelle (n i x(1 + 0,3n)). */
+    /** Fabrikker tatt siden Grenelle (bølgen blir raskere for hver). */
     etterN: number;
     /** Millioner som er vunnet for godt: delen av de spiste leddene bølgen ikke tok. */
     bevart: number;
@@ -92,6 +93,10 @@ export interface Game {
     /** Neste byks i bølgen (brett-sekunder), og om varselet er gitt. */
     byksNeste: number;
     byksVarslet: boolean;
+    /** Bølgens fart til neste byks ganges med dette (tilfeldig, se TUNING.slump). */
+    bølgeFaktor: number;
+    /** TV-kvelden (brett 3) er sendt. */
+    tvSendt: boolean;
     /** Krasj i egen kjede på dette brettet. */
     krasj: number;
     valg: number;
@@ -155,5 +160,7 @@ export function startBrett(g: Game, bi: number) {
     g.sisteRegion = null;
     g.byksNeste = Infinity;
     g.byksVarslet = false;
+    g.bølgeFaktor = 1;
+    g.tvSendt = false;
     g.krasj = 0;
 }

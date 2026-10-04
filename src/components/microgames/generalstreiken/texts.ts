@@ -5,7 +5,7 @@ import type { Årsak } from './state';
 export const TAP: Record<Årsak, { tittel: string; tekst: string }> = {
     bølgen: {
         tittel: 'De Gaulle vant valget',
-        tekst: '30. mai marsjerte de Gaulles tilhengere i Paris, og i juni vant han valget stort. Folk var lei av uroen. Tips: trykk AVSLUTT mens kjeden er lang - når halen blinker blått, byks bølgen fram.',
+        tekst: '30. mai marsjerte de Gaulles tilhengere i Paris, og i juni vant han valget stort. Folk var lei av uroen. Tips: følg måleren BØLGEN oppe til høyre - trykk AVSLUTT når den står på NÆRMER SEG, for ett byks kan ta deg fra RETT BAK.',
     },
     frist: {
         tittel: 'Ingen avtale',
@@ -17,7 +17,7 @@ export const TAP: Record<Årsak, { tittel: string; tekst: string }> = {
     },
     forLite: {
         tittel: 'For lite press',
-        tekst: 'Du avsluttet før streiken var stor nok. Tips: bygg kjeden lenger før du trykker GRENELLE, og hekt på fabrikker mens bølgen kommer.',
+        tekst: 'Du avsluttet før streiken var stor nok. Tips: etter GRENELLE vokser tallet ved hodet hvert sekund. Vent litt lenger før du trykker AVSLUTT, og hekt på fabrikker mens marsjen kommer.',
     },
     stille: {
         tittel: 'Streiken spredte seg ikke',
@@ -29,7 +29,7 @@ export const TAP: Record<Årsak, { tittel: string; tekst: string }> = {
 export const SEIER = [
     {
         tittel: 'DELVIS SEIER',
-        tekst: 'Regjeringen ga litt, men ikke alt. Med 8 millioner i streik får du hele Grenelle-avtalen. I juni vant de Gaulle valget.',
+        tekst: 'Regjeringen ga litt, men ikke alt. Med 9 millioner i streik får du hele Grenelle-avtalen. I juni vant de Gaulle valget.',
     },
     {
         tittel: 'GRENELLE-AVTALEN',
@@ -37,7 +37,7 @@ export const SEIER = [
     },
     {
         tittel: 'LANDET STO STILLE',
-        tekst: '11 millioner eller mer i streik, mer enn i 1968. Arbeiderne fikk høyere lønn og 40 timers uke, men i juni vant de Gaulle valget. Reformer, ikke revolusjon.',
+        tekst: '12 millioner eller mer i streik, mer enn i 1968. Arbeiderne fikk høyere lønn og 40 timers uke, men i juni vant de Gaulle valget. Reformer, ikke revolusjon.',
     },
 ];
 
@@ -47,7 +47,7 @@ export const BRETT_VUNNET = ['STREIKEN SPRER SEG', 'HØYERE LØNN ER LOVET'];
 export const MÅL_TEKST = [
     'Hekt på fabrikker til streiken er 2,5 millioner.',
     'Trykk GRENELLE, og AVSLUTT med minst 4 millioner før bølgen tar hodet.',
-    'Trykk GRENELLE før 30. mai, og AVSLUTT med minst 6 millioner. 8 og 11 gir en større seier.',
+    'Trykk GRENELLE før 30. mai, og AVSLUTT med minst 7 millioner. 9 (★) og 12 (★★) gir en større seier.',
 ];
 
 /** Plakatveggen: hver navngitt fabrikk gir en plakat med et slagord fra mai 68. */
@@ -91,13 +91,32 @@ export const ØYEBLIKK = {
     },
     grenelle: {
         tittel: 'Regjeringen vil forhandle',
-        tekst: 'Streiken er så stor at regjeringen lover høyere lønn. Trykk GRENELLE for avtalen - men da kommer motbølgen.',
+        tekst: 'Streiken er så stor at regjeringen lover høyere lønn. Trykk GRENELLE: arbeiderne sier nei og streiker videre, så tallet ved hodet vokser hvert sekund - men da kommer de Gaulles marsj bakfra.',
     },
     bølgen: {
         tittel: 'Motbølgen',
-        tekst: 'De Gaulles tilhengere vil ha ro, og folk går hjem. Trykk AVSLUTT før bølgen når hodet.',
+        tekst: 'De Gaulles tilhengere vil ha ro, og folk går hjem. Marsjen går ujevnt, så se på måleren BØLGEN og trykk AVSLUTT før den når hodet.',
     },
 };
 
 /** Banner når et brett starter. */
 export const BRETT_BANNER = ['SORBONNE, 13. MAI', 'GRENELLE, 27. MAI', 'HELE FRANKRIKE'];
+
+/** Lappen ved knappen rett etter GRENELLE: AVSLUTT læres først når den finnes. */
+export const AVSLUTT_LAPP = 'Nå: AVSLUTT før marsjen når hodet';
+
+/** TV-kvelden på brett 3. */
+export const TV = {
+    banner: 'TV-KVELD',
+    lapp: 'Hele landet så streiken på TV',
+    lærdom: 'TV gjorde at protestene spredte seg fort. Samme vår protesterte unge i Berkeley i USA, i Vest-Berlin, i Praha og i Oslo.',
+};
+
+/** «Dette skjedde»: hvorfor det skjedde, og hva det førte til. */
+export const ÅRSAKER =
+    'Hvorfor 1968? Mange unge etter babyboomen, mange flere studenter, og TV som viste protestene. Samme vår protesterte unge i Berkeley, Vest-Berlin, Praha og Oslo.';
+export const FØLGER =
+    'Ingen revolusjon, men varige følger: unge fikk mer personlig frihet, og arbeidere og kvinner fikk nye rettigheter.';
+
+/** Mellom brettene: hvorfor telleren starter på nytt. */
+export const NY_START = 'Ny start - forrige brett er lagret';

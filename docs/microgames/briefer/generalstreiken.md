@@ -339,3 +339,48 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
   (diagnose 2); Frankrikes omriss er strukket for å passe rutenettet 34x20; de Gaulle-profilen er
   liten og svak; ingen egen display-font (Outfit 900 klemt sammen i stedet for Anton, for ikke å
   røre package.json).
+- **Fase forbedrer 1 (2026-10-04):** løftet spillet etter den uavhengige vurderingen (Gøy 3,
+  Utseende 3, Lærerikt 4, Lesbart 3, Unikt 4, sum 17). (1) **Bølgen er en synlig motstander:**
+  de Gaulles marsj er et lite tog av blå folk med flagg rett bak bølgefronten ved halen, og en
+  blå ring rundt hodet pulserer når den nærmer seg (rask og tykk når den er rett bak). Datoseddelen
+  er etter GRENELLE en grov måler «BØLGEN» med tre felt: LANGT UNNA / NÆRMER SEG / RETT BAK! (ikke
+  et tall, slik diagnose 2 ville). **Ventetiden gir mer:** gangetallet ved hodet er nå tidsbasert -
+  hele streiken vokser x0,045 per sekund etter GRENELLE (tak x2,2), fordi arbeiderne sa nei og
+  streiket videre. Gangetallet per fabrikk (x1 + 0,15n) er fjernet, så det er fortsatt ett tall å
+  følge. **Bølgen bytter fart tilfeldig** ved hvert byks (x0,65-1,55). Brett 3: mål 7 og nivåer
+  7 / 9 / 12 (før 6 / 8 / 11, tallene ble større med gangetallet), kalenderen starter 17. mai
+  (1,6 s per dag, frist 21 s), bølgen starter på 0,6 ledd/s. (2) **Lesbarhet:** fabrikker som er
+  med, er nå røde streikeflagg (ikke små rosa fabrikker), så bare de svarte fabrikkene kan hektes
+  på; målestokken på brett 3 viser «MÅL 7», «9 ★» og «12 ★★» i stedet for «AVTALEN 8» og
+  «STILLE 11»; sveipet mellom brettene sier «2,5 millioner lagret - neste brett starter på nytt»,
+  og en lapp ved hodet på brett 2 sier det samme; menyen forklarer bare styringen, GRENELLE læres
+  når knappen lyser og AVSLUTT med en lapp ved knappen rett etter trykket; tapsskjermen har et
+  rødt tips-felt ut fra runden («Du hadde 6,1 millioner, og målet var 7. Trykk AVSLUTT når
+  BØLGEN-måleren står på NÆRMER SEG.»). (3) **Mer av artikkelen:** TV-kvelden 21. mai på brett 3
+  tenner tre fabrikker langt unna (+0,6, røde flagg og ringer, banner «TV-KVELD»), og «Dette
+  skjedde» viser alltid årsakene (babyboom, flere studenter, TV, Berkeley, Vest-Berlin, Praha og
+  Oslo) og ved seier følgene (personlig frihet, nye rettigheter). Fortsatt tre regler.
+  **Palett:** papiret er kjøligere hvitt (#f2f2ef), muren kaldere grå, plakatrestene på muren er
+  røde i stedet for beige, og den røde uroen fra Sorbonne er sterkere. Likhet mot petisjonen-3d
+  0,44 -> 0,41 (farge 0,70 -> 0,68).
+  **Feel-lista:** før runden var 3 (ting kommer og går) og 4 (belønningen merkes) på plass, og 1
+  delvis (lyd, sprut og rykk, men ingen stopp). Lagt til: 1 hit-stop (0,05 s ved hekting, 0,09 s
+  ved x2) og 2 nesten-bom («I SISTE LITEN!» og risting når du avslutter med marsjen 3 ledd bak
+  eller nærmere). Nå er alle fire på plass.
+  **Tallene:** simuleringen er grønn (200 runder per robot): streikeleder vinner 87 % (median
+  197, p10 110, p90 242), halvgod 63 % (median 139; før 89 %), aldri-avslutt 0 %, aldri-grenelle
+  0 %, tilfeldig 0 %, passiv 0 %. 60,5 valg per minutt, presset går 0,29 -> 0,60 -> 0,74 (før
+  0,30 -> 0,55 -> 0,60). Selvspillet: alle porter grønne (streikeleder vant med 183 poeng), Chromebook
+  p95 ca. 9-11 ms. Scene-audit grønn.
+  **Prøvd som ikke virket:** (1) bare tidsgangetallet med de gamle målene ga halvgod 97 % - den
+  nådde 6,2 av seg selv mens den ventet; (2) å la streikeleder trykke GRENELLE på 3 millioner på
+  brett 3 ga bare 69 % seier (for kort kjede); (3) kortere frist (24 s) alene løftet ikke presset i
+  siste tredjedel (0,60), fordi brett 3 starter med lavt press og presset falt da GRENELLE ble
+  trykket - nå er kalenderen ved GRENELLE et gulv, og kalenderen starter 17. mai; (4) den første
+  «Dette skjedde» viste ikke årsakene, fordi bølge-lærdommen får vekt for hvert spist ledd.
+  **Avvik:** halvgod sin «nøyer seg»-grense på brett 3 er flyttet fra 6,2 til 7,2 (fulgte målet,
+  samme oppførsel). Presset etter GRENELLE måler også innsatsen (gangetallet), ikke bare hvor nær
+  bølgen er. Designbriefens punkt 3, 6 og 11 nevner fortsatt x(1 + 0,15n) og 6 / 8 / 11.
+  **Kjente svakheter:** streikeleder taper 7 % på brett 2 når bølgen får en rask fart rett etter
+  GRENELLE; tapsskjermen er ikke sett i et skjermbilde (selvspillet viser bare seier); TV-kvelden
+  kommer alltid 21. mai, så den er lett å vente på; Frankrikes omriss er fortsatt strukket.

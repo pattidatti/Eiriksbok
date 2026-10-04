@@ -7,14 +7,14 @@ import type { Brett } from './levels';
 
 /** Paletten fra kunstbriefen, brukt flatt. */
 export const P = {
-    papir: '#f4f1ea',
+    papir: '#f2f2ef',
     rød: '#e0261d',
     svart: '#151413',
     blå: '#1f4f9f',
     tynn: '#f3b8ad',
     grå: '#8f8a80',
-    mur: '#9c978e',
-    murMørk: '#8a857c',
+    mur: '#8b8b8d',
+    murMørk: '#76767a',
 };
 
 /** Outfit 900 er alltid lastet; klemt sammen vannrett ser den ut som håndmalte plakatbokstaver. */
@@ -231,7 +231,7 @@ export function tegnBakgrunn(w: number, h: number, dpr: number, b: Brett, L: Lay
         ctx.fill();
     }
     ctx.globalAlpha = 0.18;
-    ctx.strokeStyle = '#6f6a62';
+    ctx.strokeStyle = '#5c5c60';
     ctx.lineWidth = 1;
     for (let y = 30; y < h; y += 46) {
         ctx.beginPath();
@@ -242,18 +242,18 @@ export function tegnBakgrunn(w: number, h: number, dpr: number, b: Brett, L: Lay
     ctx.globalAlpha = 1;
     // Gamle plakatrester som stikker fram bak plakaten.
     const rester = [
-        { x: L.px - 46, y: L.py + 40, w: 120, h: 210, f: '#ece4d2', r: 0.05, t: 'NON' },
+        { x: L.px - 46, y: L.py + 40, w: 120, h: 210, f: '#d8241b', r: 0.05, t: 'NON' },
         {
             x: L.px + L.pw - 70,
             y: L.py + L.ph - 230,
             w: 120,
             h: 200,
-            f: '#e9a598',
+            f: '#e0261d',
             r: -0.04,
             t: 'OUI',
         },
-        { x: L.px + L.pw - 60, y: L.py - 6, w: 100, h: 120, f: '#ece4d2', r: 0.07, t: '68' },
-        { x: L.px - 30, y: L.py + L.ph - 150, w: 90, h: 150, f: '#e9a598', r: -0.06, t: '' },
+        { x: L.px + L.pw - 60, y: L.py - 6, w: 100, h: 120, f: '#f2f2ef', r: 0.07, t: '68' },
+        { x: L.px - 30, y: L.py + L.ph - 150, w: 90, h: 150, f: '#b91d15', r: -0.06, t: '' },
     ];
     for (const r of rester) {
         ctx.save();
@@ -269,7 +269,7 @@ export function tegnBakgrunn(w: number, h: number, dpr: number, b: Brett, L: Lay
         ruLinje(ctx, pts, rng, 9, true);
         ctx.fill();
         if (r.t) {
-            ctx.fillStyle = r.f === '#ece4d2' ? '#c9433a' : '#f4f1ea';
+            ctx.fillStyle = r.f === '#f2f2ef' ? '#c9221a' : '#f2f2ef';
             ctx.font = `900 46px ${FONT}`;
             ctx.textAlign = 'center';
             ctx.globalAlpha = 0.7;

@@ -21,9 +21,12 @@ export const TUNING = {
         /** Sjanse for at en ny fabrikk er en navngitt fabrikk fra brettet. */
         navngitt: 0.35,
     },
-    /** Etter Grenelle: fabrikk nr. n (0, 1, 2 ...) er verdt grunnverdi x (1 + stige x n), maks stigeTak. */
-    stige: 0.15,
-    stigeTak: 2.5,
+    /**
+     * Etter Grenelle: arbeiderne sa nei og streiket videre. Hvert sekund etter GRENELLE vokser
+     * gangetallet på hele streiken (x1 + perSek x sekunder), opp til `tak`. Jo lenger du holder
+     * ut, jo mer gir AVSLUTT - men bølgen kommer nærmere.
+     */
+    vent: { perSek: 0.045, tak: 2.2 },
     /**
      * x2: sjelden, bare langt fra Paris, og bare en kort stund. Dobler bare sin egen
      * grunnverdi (i stedet for gangetallet, aldri oppå det) og flytter ikke gangetallet.
@@ -34,6 +37,10 @@ export const TUNING = {
      * 3.-6. sekund (tilfeldig), varslet med et blink `varsel` sekunder før.
      */
     byks: { kryp: 0.4, hvert: [3, 6] as [number, number], varsel: 1 },
+    /** Bølgen bytter fart ved hvert byks: snittfarten ganges med et tilfeldig tall i dette spennet. */
+    slump: [0.65, 1.55] as [number, number],
+    /** TV-kvelden på brett 3: dagen i mai, hvor mange fabrikker langt unna som blir med, og verdien. */
+    tv: { dag: 21, fabrikker: 3, verdi: 0.2 },
     /** Krasj i egen kjede: millioner du mister med en gang, per ledd som faller av. */
     krasjStraff: 0.04,
     /** Hver gang bølgen spiser et ledd, mister du denne delen av verdien (resten er vunnet). */
@@ -44,19 +51,19 @@ export const TUNING = {
     splittetUnder: 0.5,
     /** Kortet mellom brettene (spillsekunder uten bevegelse). */
     kortTid: 1.5,
-    /** Kalenderen: sekunder per dag fra 13. til 30. mai (brett 3). */
-    dagSek: 1.75,
+    /** Kalenderen: sekunder per dag fram til 30. mai (brett 3). */
+    dagSek: 1.6,
     /** Seieren på brett 3 i nivåer: millioner ved AVSLUTT. Under det laveste = tap. */
-    seier: [6, 8, 11] as [number, number, number],
+    seier: [7, 9, 12] as [number, number, number],
     /** Rangene etter millioner ved AVSLUTT. */
     ranger: [
         [0, 'Løpeseddel'],
         [2, 'Fabrikkport'],
         [4, 'Okkupert'],
-        [6, 'Landet nesten stille'],
-        [8, 'Generalstreik'],
-        [11, 'Mer enn i 1968'],
+        [7, 'Landet nesten stille'],
+        [9, 'Generalstreik'],
+        [12, 'Mer enn i 1968'],
     ] as [number, string][],
     /** Presset (0-1): vekter for fart, egen kjede tett rundt hodet, kalender og bølgen (sekunder til den tar hodet). */
-    press: { fart: 0.45, trangt: 0.6, kalender: 0.9, bølgeSek: 20 },
+    press: { fart: 0.45, trangt: 0.6, kalender: 1, bølgeSek: 20 },
 } as const;

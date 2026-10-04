@@ -46,6 +46,8 @@ export interface Fx {
     grenelleT: number | null;
     /** Brettet merkene hører til. */
     brett: number;
+    /** Hit-stop: spillet står stille så mange sekunder til (ekte tid). */
+    stopp: number;
 }
 
 export function nyFx(tier: Tier): Fx {
@@ -64,6 +66,7 @@ export function nyFx(tier: Tier): Fx {
         sveip: null,
         grenelleT: null,
         brett: 0,
+        stopp: 0,
     };
 }
 
@@ -127,7 +130,7 @@ export function gåHjem(fx: Fx, x: number, y: number) {
     fx.gående.push({ x, y, tx: mål.x, ty: mål.y, liv: 3 });
 }
 
-export function sveip(fx: Fx, tittel: string, under: string, farge: string, tekst = '#f4f1ea') {
+export function sveip(fx: Fx, tittel: string, under: string, farge: string, tekst = '#f2f2ef') {
     fx.sveip = { t0: fx.tid, tittel, under, farge, tekst };
 }
 

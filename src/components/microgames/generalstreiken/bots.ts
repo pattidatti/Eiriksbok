@@ -275,7 +275,7 @@ export const BOTS: Record<string, BotDef> = {
             {
                 grenelle: [99, 3, 3],
                 fristMargin: 6,
-                avslutt: { sek: 4, regner: false, nøyerSeg: [99, 4.1, 6.2] },
+                avslutt: { sek: 4, regner: false, nøyerSeg: [99, 4.1, 7.2] },
             }
         ),
     },
