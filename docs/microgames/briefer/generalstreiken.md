@@ -1,0 +1,225 @@
+# Generalstreiken
+
+Mikrospill til «1968: Da de unge sa nei» (`/historie/etterkrigstiden/ungdomsopproret-1968`).
+Tone: `lett` med grenser. Vietnamkrigens døde, skuddene mot Dutschke og RAF finnes ikke i spillet.
+Ingen politi, ingen batonger, ingen barrikadekamp, ingen skadde. De Gaulle-tilhengerne er et fredelig
+tog med flagg, og det de gjør i spillet, er å få folk til å gå tilbake på jobb.
+
+## Konseptturnering
+
+**Runde 1** (andre konsepter: blant annet et allmøte-rytmespill og et 1968-flipperspill): ingen fikk
+4 på begge aksene. Beste var Generalstreiken med Gøy 3, Fag 4. Dommeren ba om en Grenelle-knapp
+spilleren trykker selv, synlig risiko etter reformene, ingen poengtak og ingen rekord for «lengste
+streik».
+
+**Runde 2** (bestilling: ingen):
+
+| # | Konsept | Kort | Gøy | Fag |
+|---|---|---|---|---|
+| 1 | **Generalstreiken** | Snake på kart over Frankrike ovenfra (2D). Du er streiken, hekter på fabrikker og velger selv når du tar gevinsten. | **4** | **4** |
+| 2 | Skru opp! | Middagsbord ovenfra (3D). Hold inne for å skru opp rocken uten at foreldrene koker over; foreldrenes partivalg avgjør hvor mye de tåler. | 3 | 2 |
+| 3 | Gnisten | Lade-og-hopp over en globus (3D). Gnisten fra Berkeley hopper fra by til by; byer med mange studenter spretter deg lenger. | 3 | 2 |
+| 4 | Kveldsnyhetene | Fotospill gjennom søkeren (3D). Film demonstrasjonen og rekk sendingen samme kveld. | 3 | 3 |
+| 5 | Kravtårnet | Tower Bloxx på Blindern (3D). Stable krav i et tårn og lever dem før det velter. | 3 | 2 |
+
+**Dommerens begrunnelse:** Generalstreiken er den eneste ideen der spillets kjerne (stor streik, så
+å slutte i tide) er artikkelens egen historie, og der verbet er kjent og gøy fra første sekund. Alle
+kan Snake, så starten krever ingen lesing. Den som vinner, har forstått poenget: streiken ble stor,
+presset fram reformer, og det ble likevel ingen revolusjon. Trekk: den skjulte valgrisikoen var et
+terningkast (den grådige taper av uflaks), krasj i egen hale er en løs metafor, og det var uklart
+hva som utløser Grenelle. Konsept 5 lærte det motsatte av læringsmålet (smale, radikale blokker ga
+mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regler.
+
+**Løftet (innarbeidet under):**
+- Den skjulte valgrisikoen er borte. I stedet: en **synlig blå motbølge fra Paris** (de
+  Gaulle-tilhengernes demonstrasjon 30. mai) som spiser kjeden bakfra, fabrikk for fabrikk, etter
+  Grenelle. Den grådige straffes for et valg hun så.
+- **Spilleren utløser Grenelle selv** med én knapp, aldri på et fast tidspunkt.
+- **Stor, levende teller** fra 1 til 10 millioner streikende.
+- **Korte runder** på rundt 90 sekunder, **«én gang til» på ett trykk**, og et **spøkelse** som viser
+  hvor rekordholderen stoppet.
+
+## Designbrief
+
+1. **Fantasien.** Du er streiken selv. Du kryper ut fra Sorbonne i Paris i mai 1968, og hver fabrikk
+   du når, legger ned arbeidet og blir med. Du vil gjøre streiken så stor at regjeringen må gi etter,
+   og så avslutte den med en god avtale før folk blir lei.
+
+2. **Kjerneverbet.** **Styre** slangen (piltaster, WASD eller sveip). Snake-suget: én fabrikk til,
+   en skarp sving rundt din egen hale, kjeden som blir lengre og raskere. Hver fabrikk hekter seg på
+   med en fabrikkfløyte og et rødt silketrykk-«klask», og telleren hopper. Det andre grepet er det
+   ene store trykket per runde: GRENELLE, og etterpå AVSLUTT (samme knapp, mellomrom eller stor knapp
+   nederst).
+
+3. **Fagkjernen.** Tre regler, og det er alt eleven må huske:
+   1. **Hvis kjeden henger sammen, vokser streiken.** Hver fabrikk du kryper over, blir med.
+      Kjører du inn i din egen kjede, splittes streiken, og alt bak krasjet faller av (studenter og
+      fagforeninger som ikke holder sammen).
+   2. **Hvis du trykker GRENELLE, lover de Gaulle høyere lønn og 40 timers uke, og da starter den
+      blå motbølgen.** Arbeiderne sa nei til avtalen og streiket videre, så fabrikkene etter Grenelle
+      er verdt mer (0,3 mot 0,2 millioner). Men fra Paris kommer de Gaulle-tilhengerne og spiser
+      kjeden bakfra, ledd for ledd, raskere og raskere. Har du ikke trykket innen 30. mai, kommer de
+      uansett, og da har du ingen avtale.
+   3. **Hvis du trykker AVSLUTT, blir tallet på telleren reformene dine. Tar bølgen hodet før det,
+      vinner de Gaulle valget i juni, og runden gir 0.**
+
+   Regel 2 og 3 er artikkelens mekanisme: streiken presset fram reformer, men folk ble lei av
+   uroen, og de Gaulle vant valget. Bytter man dem ut, er spillet bare Snake. Den som vinner, har
+   skjønt at man må bygge stort press og så ta avtalen i tide.
+
+4. **Presset og valgene.**
+   - **Før Grenelle eskalerer:** farten (6 ruter/s, +0,1 per ledd, tak 11), lengden (mer hale å
+     styre rundt), fabrikkene dukker opp lenger ut i provinsen, og kalenderen går fra 13. til
+     30. mai (3 s per dag, ca. 50 s).
+   - **Etter Grenelle eskalerer:** bølgen. Start ca. 0,5 ledd/s, +0,1 ledd/s for hvert sekund, uten
+     tak. En flink spiller spiser ca. 1 ledd/s, så avstanden vokser litt i 5 s og krymper så fort.
+     Med 15 ledd ved Grenelle når bølgen hodet etter ca. 20-25 s. Det er alltid fare.
+   - **Valg minst hvert 10. sekund:** 2-4 fabrikker blinker samtidig med ulikt navn, verdi og
+     avstand (liten og nær, eller Peugeot Sochaux langt øst), velg vei rundt egen hale, «GRENELLE
+     nå, eller én fabrikk til?», og etter Grenelle er hvert sekund et valg: «én fabrikk til, eller
+     AVSLUTT?». Selvspillet logger `valg` for hvert fabrikkvalg, Grenelle og Avslutt, og `press` som
+     bølgefart og slangefart.
+
+5. **Tap.** Hver død gir et tips som er fagstoff:
+   - **Bølgen tok hodet:** «30. mai marsjerte de Gaulles tilhengere i Paris, og i juni vant han
+     valget stort. Folk var lei av uroen. Tips: ta avtalen mens streiken er stor - se hvor nær
+     bølgen er.»
+   - **30. mai uten Grenelle:** «Streiken forhandlet aldri, så den fikk ingen avtale. Tips: trykk
+     GRENELLE - det var presset fra streiken som fikk regjeringen til å love høyere lønn og 40 timers
+     uke.»
+   - **Splittet ned til nesten ingenting** (under 0,5 millioner etter et krasj): «Studentene og
+     arbeiderne sto ikke sammen. Tips: streiken ble stor fordi den spredte seg fra universitetene
+     til fabrikkene - hold kjeden hel.»
+
+6. **Seier.** Seieren følger plottet: streiken ble 8-10 millioner, regjeringen ga reformer, og det
+   ble ingen revolusjon. Trykker du AVSLUTT med **8 millioner eller mer** i brett 3 eller i fri
+   streik, vinner du, uansett rekord: plakaten «LANDET STO STILLE» trykkes, med teksten «Arbeiderne
+   fikk høyere lønn og 40 timers uke. I juni vant de Gaulle likevel valget. Reformer, ikke
+   revolusjon.» AVSLUTT under målet gir poengene og en lavere rang, men ikke seiersplakaten.
+
+7. **En runde til.**
+   - **Rekord** = millionene du hadde da du trykket AVSLUTT («9,4 millioner, slå det»). Ingen tak.
+     Ingen rekord for lengste streik.
+   - **Spøkelset:** rekordrunden lagres (millioner, avstand til bølgen og kjeden i stoppøyeblikket).
+     I neste runde står en svart stiplet strek på telleren («REKORD 8,6 - stoppet her»), en strek på
+     kjeden som viser hvor nær bølgen var da rekordholderen trykket, og en blek omriss-kjede på
+     kartet.
+   - **Én gang til på ett trykk:** sluttplakaten tar mellomrom, Enter eller ett trykk hvor som helst,
+     og samme brett starter med en gang. Ingen meny i mellom.
+   - **Ranger:** under 2 «Løpeseddel», 2-4 «Fabrikkport», 4-6 «Okkupert», 6-8 «Landet nesten stille»,
+     8-10 «Generalstreik», over 10 «Mer enn i 1968».
+   - **Samleobjekter:** første gang du hekter på en navngitt fabrikk, får du dens plakat på
+     plakatveggen (10 stk.), med slagord på norsk og fransk i liten skrift: «Fantasien til makten»,
+     «Fabrikker, universiteter, sammen», «Kampen fortsetter» og så videre.
+   - **Multiplikator for dyktig spill:** to fabrikker på under 2 s gir «x2 SAMMEN!» på neste.
+
+8. **Sjanger, perspektiv, 2D/3D.** `snake-trykk-på-lykken`: Snake med ett trykk-på-lykken-valg.
+   Ny sjanger i biblioteket. Kart over Frankrike sett rett ovenfra, som en plakat klistret på en vegg
+   i Paris. **2D-canvas.** Snake lever av at hele kroppen og bølgen er lesbar på et øyeblikk;
+   et fast, flatt kart gir det. Kilden (silketrykk) er flat av natur, så 3D ville bare lagt til et
+   kamera som skjuler halen. 2D er også billigst på Chromebook og gir 60 bilder/s.
+
+9. **Look.** Atelier Populaire-plakatene fra mai 1968: én-farget rødt silketrykk med flekkete
+   dekning på billig hvitt papir, grove håndmalte bokstaver, og en blå motfarge som kryper inn
+   etter Grenelle.
+
+10. **Første fem sekunder.** En hvit plakat med Frankrike i svart strek, en liten rød prikk ved
+    Sorbonne i Paris og en svart fabrikk som blinker rett ved, med røyk av pipa. Telleren sier
+    «0,1 MILLIONER I STREIK». Eleven trykker en pil (eller sveiper), prikken svinger, fabrikken
+    fløyter, blir rød og hekter seg på, og telleren hopper til 0,3. Ingen tekst å lese.
+
+11. **Første minutt - opptrappingen.**
+    - **Brett 1 «Sorbonne, 13. mai»** (ca. 35 s). Kartet er zoomet inn på Paris og omegn. Bare
+      regel 1: styr og hekt på. To fabrikker blinker om gangen (Citroën i Paris, Renault
+      Billancourt), slangen er treg (6 ruter/s), ingen knapp, ingen bølge, ingen kalender. Valget er
+      hvilken av de to du tar først, og hvordan du svinger rundt deg selv. Halen blir lang nok til at
+      eleven møter regel 1-krasjet én gang i et ufarlig øyeblikk. Mål: 1 million. Da trykkes plakaten
+      «STREIKEN SPRER SEG» og brettet er vunnet.
+    - **Brett 2 «Grenelle, 27. mai»** (ca. 60 s). Kartet åpner seg mot nordvest (Renault Cléon,
+      Sud-Aviation ved Nantes, verftene i Saint-Nazaire). Nytt og alene: knappen. Ved 1,5 millioner
+      lyser GRENELLE. Trykk, og de Gaulle-profilen i blått lover «HØYERE LØNN - 40 TIMERS UKE», knappen
+      blir til AVSLUTT, og den blå bølgen kryper inn fra halen, sakte (0,4 ledd/s, +0,05/s). Den er
+      svaret på brettet: eleven ser at den spiser bakfra og at nye fabrikker skyver hodet unna. Tre
+      fabrikker blinker om gangen. Mål: AVSLUTT med minst 3 millioner.
+    - **Brett 3 «Hele Frankrike, mai 68»** (ca. 90 s). Hele landet: Peugeot Sochaux, Berliet og
+      Rhodiaceta i Lyon, gruvene i nord, jernbanen. Nytt og alene: kalenderen (13.-30. mai) øverst.
+      Venter du for lenge med GRENELLE, kommer bølgen uansett 30. mai. Bølgen har full fart
+      (0,5 ledd/s, +0,1/s). Fire fabrikker blinker, de fjerne er verdt mer. Mål: AVSLUTT med minst
+      8 millioner = seier. Etterpå åpner **fri streik** (brett 3 med spøkelse og rekord).
+
+**Sjekk mot guiden:**
+- *Er kjerneverbet deilig i seg selv?* Ja, det er Snake: styre, svinge i siste liten, se kjeden
+  vokse. Fløyta og klasket gjør hver fabrikk til en liten belønning.
+- *Er fagkjernen en REGEL som avgjør om man vinner?* Ja: uten GRENELLE får du ingenting, og uten
+  AVSLUTT før bølgen tar deg får du ingenting. Den som vinner, har bygd stort press og tatt avtalen
+  i tide - akkurat det artikkelen forklarer.
+- *Nytt valg minst hvert 10. sekund?* Ja: nytt fabrikkvalg hvert 2-4 s, GRENELLE-spørsmålet hele
+  første halvdel, og «én til eller AVSLUTT?» hvert sekund i andre halvdel.
+- *Stiger presset?* Ja: fart og lengde før Grenelle, kalenderen mot 30. mai, og en bølge som
+  akselererer uten tak etter Grenelle.
+
+## Kunstbrief
+
+1. **Kilden.** Atelier Populaire, verkstedet i École des Beaux-Arts i Paris i mai og juni 1968, der
+   studenter og arbeidere trykket hundrevis av plakater om natta og klistret dem opp om morgenen.
+   Kjennetegn: (1) silketrykk i én farge, oftest rødt, på billig hvitt papir, med flekkete dekning
+   der rakelen ikke presset blekket helt gjennom, og litt ujevne kanter; (2) grove, håndmalte
+   blokkbokstaver i store slagord, ofte skrått eller i bue; (3) enkle silhuetter i negativ form:
+   fabrikkpiper, folkemengder, en knyttneve som vokser ut av en fabrikk, de Gaulles profil med kepi.
+   Figurene er ofte hvitt papir skåret ut av et rødt felt.
+2. **Palett.**
+   - `#f4f1ea` billig hvitt papir, litt kjølig (bakgrunn, havet, figurer skåret ut i negativ)
+   - `#e0261d` streikerød (kjeden, fabrikker som er med, telleren, knappen)
+   - `#151413` trykksvart (kartlinjen, fabrikker som venter, tekst, de Gaulles kepi)
+   - `#1f4f9f` gaullistblå (motbølgen, de Gaulle-profilen, flaggene i toget) - finnes ikke før
+     Grenelle
+   - `#f3b8ad` tynn rød, trykk med lite blekk (ledd som har falt av, blink, x2-glimt)
+   - `#8f8a80` blyantgrå (spøkelset, svak rutekant, fremtidige fabrikker)
+3. **Form og overflate.** Helt flate farger, aldri gradient eller krysskravering. Kjeden er et tykt
+   rødt bånd med ru kant, og i båndet er hvert ledd tre små streikende (hode og skuldre, arm i arm)
+   skåret ut i hvitt papir. Hodet er en rund rød form med en hvit fabrikkpipe-knyttneve. Fabrikker
+   som venter, er svarte silhuetter (sagtak og pipe) med navnet i små håndmalte bokstaver; de som er
+   med, trykkes røde. Det røde laget forskyves 1-2 px fra det svarte (feilregistrering), og alle
+   røde flater har en flekkemaske der papiret skinner gjennom. Bølgen er blått blekk som flyter langs
+   kjeden og trykkes over det røde; leddene den tar, blir små blå figurer som går rolig tilbake mot
+   fabrikkene sine. Ingen skjold, ingen køller, ingen sammenstøt.
+4. **Lys.** Flatt trykklys, ingen lyskilder. Stemningen bæres av blekket: før Grenelle er plakaten
+   rød og hvit, etter Grenelle sprer det blå seg fra Paris over kartet som en ny trykkfarge (svak
+   blå flate over regionene, sterk blå på kjeden). Store hendelser (Grenelle, avslutt, seier) er et
+   rakel-sveip: et bredt felt drar over skjermen og trykker en ny plakat på 0,4 s.
+5. **Perspektiv og kamera.** 2D, kartet rett ovenfra, men hele spillflaten er en plakat klistret
+   litt skjevt (ca. 1 grad) på en grå murvegg i Paris, med et par lag gamle plakatrester i kanten og
+   en limrynke. Kameraet står helt stille; brett 1 og 2 er utsnitt (Paris, nordvest) som zoomer ut
+   til hele Frankrike med et rakel-sveip. Ulikt de tre siste: fast tverrsnitt forfra (Klokka 00.45),
+   skrått ovenfra i 3D (Radionettet), lavt følgekamera i gatehøyde (Taburetten). Det er også ulikt
+   Tinghusets skrivebordsark: her er det en plakat på en vegg, ikke et ark på et bord.
+6. **Typografi og HUD.** HUD-en er plakatens egne slagord. Øverst den store telleren i håndmalte
+   røde blokkbokstaver: «7,4» stort, «MILLIONER I STREIK» under, sifrene ruller og klasker når de
+   endres (f.eks. Google Fonts Anton, med flekkemasken over). Ved telleren en tynn skala 1-10 med
+   en svart stiplet spøkelsesstrek ved rekorden. Oppe til høyre datoen som en løpeseddel: «MAI 68 -
+   24». Nederst knappen som en trykt stripe: «GRENELLE» (hvitt på rødt), etter trykket «AVSLUTT
+   STREIKEN» (rødt på hvitt). Avstanden til bølgen vises på selve kjeden og som «BØLGEN 6 LEDD
+   UNNA». Brettkort og sluttskjerm er nye plakater med slagord og rang. Brødtekst i en enkel grotesk
+   (f.eks. Archivo), aldri under 18 px.
+7. **Slik lages det på en Chromebook.** Canvas 2D. Papir, mur, kartlinje og fabrikksilhuetter
+   tegnes én gang til et offscreen-canvas ved oppstart. Flekkemasken er støy tegnet én gang og lagt
+   på de røde og blå sprite-ene med `destination-out`, så hvert ledd er en ferdig sprite
+   (`drawImage`, ikke tegning hver ramme). Kjedebåndet er én `stroke` med tykk linje og ru kant fra
+   et forhåndstegnet mønster. Bølgen er samme bånd i blått tegnet fra halen til bølgefronten.
+   Ingen `shadowBlur`, ingen filtre per ramme, DPR maks 2. Rakel-sveipet er én rektangel-maske som
+   flyttes. Ser ferdig ut på `?kvalitet=lav`; høyere nivå legger bare til flere små figurer og
+   røyk fra pipene.
+8. **Ikke slik.** Ikke blåkopi (hvite linjer på blått, Klokka 00.45): her er papiret hvitt og blått
+   er et blekk som kommer inn. Ikke tresnitt med krysskravering og gulnet papir (Taburetten), og
+   ingen store karikaturhoder. Ikke realistisk strategikart (Radionettet), og ikke krigsplakat med
+   mange farger. Ikke fiolette stempler på arkpapir (Tinghuset). Ikke grønn Nokia-Snake med
+   piksler, ikke grønn plen-diorama.
+
+## Byggelogg
+
+- **Fase designer (2026-10-04):** skrev briefen for vinnerkonseptet fra runde 2 med hele løftet
+  innarbeidet. Ingen simulering ennå (ingen tall). Vurdert og forkastet: de Gaulles radiotaler som
+  ringer før Grenelle (ble en fjerde regel), Grenelle ved fast lengde (eleven venter i stedet for å
+  velge). Kjente svakheter: kalenderen er en ekstra klokke ved siden av bølgen, og krasj i egen hale
+  er fortsatt en løs metafor for splittelsen; bølgetallene i punkt 4 er utgangspunkt og må stilles
+  med selvspill.
