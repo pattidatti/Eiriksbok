@@ -247,6 +247,7 @@ const KursForGronland3D = lazy(() => import('./KursForGronland3D'));
 const Tinghuset = lazy(() => import('./Tinghuset'));
 const BatdekketKlokka = lazy(() => import('./BatdekketKlokka'));
 const Taburetten3D = lazy(() => import('./Taburetten3D'));
+const Generalstreiken = lazy(() => import('./Generalstreiken'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2512,6 +2513,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Norske vittighetsblader og avistresnitt fra 1880-tallet: krysskravert sverte på gulnet papir, karikaturer i flosshatt, rødt og blått som håndkolorering',
         loader: () => import('./Taburetten3D'),
         Component: Taburetten3D as never,
+    },
+    generalstreiken: {
+        id: 'generalstreiken',
+        title: 'Generalstreiken',
+        description:
+            'Mai 1968. Du er streiken selv og kryper ut fra Sorbonne i Paris. Hver fabrikk du når, legger ned arbeidet og blir med, og kjeden blir lengre og raskere. Kjører du inn i din egen kjede, faller alt bak av. Trykk GRENELLE, så lover de Gaulle høyere lønn og 40 timers uke - men da marsjerer de Gaulle-tilhengerne inn bakfra og spiser kjeden i ujevne rykk. Arbeiderne sa nei og streiket videre, så hvert sekund du venter gir mer. Trykk AVSLUTT før marsjen tar hodet, og millionene blir reformene dine.',
+        estimatedSeconds: 120,
+        sjanger: 'snake-trykk-på-lykken',
+        tone: 'lett',
+        hook: 'Du er streiken i mai 1968. Gjør den så stor at regjeringen gir etter - og stopp før folk blir lei.',
+        cover: '/images/microgames/generalstreiken.webp',
+        kunst: 'Atelier Populaire, mai 1968: røde silketrykkplakater på billig hvitt papir, grove håndmalte bokstaver og en gaullistblå motfarge',
+        loader: () => import('./Generalstreiken'),
+        Component: Generalstreiken as never,
     },
 };
 
