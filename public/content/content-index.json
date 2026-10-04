@@ -1,5 +1,5 @@
 {
-  "buildId": 138378075372784,
+  "buildId": 75891638306326,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2280,6 +2280,9 @@
     ],
     "russland-etter-sovjet": [
       "content/historie/etterkrigstiden/russland-etter-sovjet.json"
+    ],
+    "ungdomsopproret-1968": [
+      "content/historie/etterkrigstiden/ungdomsopproret-1968.json"
     ],
     "verden-bygges-pa-nytt": [
       "content/historie/etterkrigstiden/verden-bygges-pa-nytt.json"
@@ -5604,6 +5607,7 @@
     "historie/etterkrigstiden/etterkrigstiden-sti": "content/historie/etterkrigstiden/etterkrigstiden-sti.json",
     "historie/etterkrigstiden/jugoslavias-opplosning": "content/historie/etterkrigstiden/jugoslavias-opplosning.json",
     "historie/etterkrigstiden/russland-etter-sovjet": "content/historie/etterkrigstiden/russland-etter-sovjet.json",
+    "historie/etterkrigstiden/ungdomsopproret-1968": "content/historie/etterkrigstiden/ungdomsopproret-1968.json",
     "historie/etterkrigstiden/verden-bygges-pa-nytt": "content/historie/etterkrigstiden/verden-bygges-pa-nytt.json",
     "historie/forste-verdenskrig/hjemmefronten": "content/historie/forste-verdenskrig/hjemmefronten.json",
     "historie/forste-verdenskrig/konsekvenser": "content/historie/forste-verdenskrig/konsekvenser.json",

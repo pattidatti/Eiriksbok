@@ -1,0 +1,246 @@
+{
+  "id": "ungdomsopproret-1968",
+  "title": "1968: Da de unge sa nei",
+  "layout": "rich",
+  "year": "1964-1970",
+  "category": "Verden",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "factChecked": "2026-10-04",
+  "details": [
+    "På 1960-tallet ble det mange flere studenter, og mange av dem gjorde opprør mot autoriteter",
+    "Vietnamkrigen på TV gjorde krigen til den største saken for de unge",
+    "I mai 1968 streiket 8-10 millioner arbeidere i Frankrike",
+    "Det norske opprøret var stort sett fredelig",
+    "1968 ga mer støtte til kvinner, minoriteter og homofile"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er mai 1968 i Paris. Studentene har tatt over universitetene og stanset all undervisning. På veggene maler de slagord. Ett av dem lyder «Fantasien til makten» (Grünbaum, 2026). Noen dager senere har opprøret spredt seg fra skolene til fabrikkene. På det meste streiker 8-10 millioner arbeidere, og hele Frankrike står nesten stille (Julsrud mfl., 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Paris var ikke alene. Samme år protesterte unge mennesker i USA, Vest-Tyskland, Tsjekkoslovakia, Etiopia og mange andre land. Derfor har årstallet 1968 blitt et navn på en hel bølge av opprør. I Store norske leksikon står det at «1968» eller «68» ofte brukes som et annet ord for studentopprøret (Godbolt, 2026b). I denne artikkelen skal du finne ut hva de unge var sinte på, hvorfor det skjedde akkurat da, og hva som ble igjen etterpå."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Studenter bygger barrikade i en gate i Paris, 1968",
+      "caption": "Mai 1968: Studentene i Paris okkuperte universitetene. Snart streiket millioner av arbeidere også."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor ble de unge sinte?"
+    },
+    {
+      "type": "text",
+      "content": "Etter andre verdenskrig ble det født svært mange barn i Europa og USA. Samtidig vokste økonomien raskt, og landene fikk råd til å bygge ut skoler og universiteter. På 1960-tallet skjøt antallet studenter i været. I Norge var det i 1975 fire og en halv gang så mange som tok eksamen fra universitetet som i 1960 (Godbolt, 2026b). Du kan lese mer om disse årene i artikkelen om [hvordan verden ble bygd opp igjen etter krigen](/historie/etterkrigstiden/verden-bygges-pa-nytt)."
+    },
+    {
+      "type": "text",
+      "content": "Foreldrene til disse ungdommene hadde levd gjennom den harde krisen på 1930-tallet og gjennom krigen. Barna deres vokste opp i trygge og gode tider. Forskjellen mellom generasjonene ble kalt generasjonskløften, og den gjorde mange foreldre urolige (Godbolt, 2026a). De unge ville ha mer personlig frihet, og de ville slippe at foreldre, lærere og ledere bestemte alt for dem (Grünbaum, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Studentene hadde også mer fritid enn unge som jobbet, eller voksne med familie. Mange studerte samfunnsfag og humanistiske fag, der de møtte tanker som kritiserte samfunnet. Og så var det fjernsynet. Gjennom TV, billige bøker og plater kunne en protest i ett land bli kjent i et annet land samme kveld. En av aktivistene sa det slik: «The whole world is watching», som betyr «hele verden ser på» (Godbolt, 2026b)."
+    },
+    {
+      "type": "header",
+      "text": "Fra rock og hippier til protest"
+    },
+    {
+      "type": "text",
+      "content": "Opprøret startet ikke som politikk. Det startet med musikk og klær. Fra midten av 1960-tallet vokste det fram en ungdomskultur med elektrisk rockemusikk, fargerike klær og langt hår på guttene (Grünbaum, 2026). Hippiene i San Francisco levde sammen i store bofellesskap, kalt kollektiver, og ble forbilder for unge i hele den vestlige verden. Et kjent slagord var «Make love, not war», som betyr «elsk, ikke krig»."
+    },
+    {
+      "type": "text",
+      "content": "Sommeren 1967 ga The Beatles ut platen Sergeant Pepper, og mange regner den som toppen av de glade hippiedagene. Etter det ble opprøret mer politisk (Grünbaum, 2026). Allerede høsten 1964 hadde studenter ved universitetet i Berkeley i California aksjonert mot universitetsledelsen, som hadde forbudt dem å drive politikk på campus. Det regnes som stedet der studentopprøret startet på gata (Godbolt, 2026b)."
+    },
+    {
+      "type": "header",
+      "text": "Krigen på TV-skjermen"
+    },
+    {
+      "type": "text",
+      "content": "Den største saken for de unge var [Vietnamkrigen](/historie/den-kalde-krigen/vietnamkrigen). Over hele verden protesterte studenter mot at USA kriget i Vietnam (Godbolt, 2026b). Natt til 31. januar 1968 angrep nordvietnamesiske styrker og FNL, geriljaen i Sør-Vietnam, over 100 byer i Sør-Vietnam. Angrepet kalles Tet-offensiven, etter det vietnamesiske nyttåret Tet (Tønnesson & Filseth, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Militært tapte angriperne. Men amerikanske ledere hadde sagt at krigen snart var vunnet, og nå så folk det motsatte på TV. I februar 1968 ble rundt 2100 amerikanske soldater drept. Motstanden mot krigen fikk mye større støtte, og 31. mars 1968 sa president Lyndon B. Johnson at han ikke ville stille til valg igjen (Tønnesson & Filseth, 2026). Om høsten samlet unge fra hele USA seg i Chicago, der Det demokratiske partiet holdt et stort møte. De protesterte mot krigen, og gatene ble nesten som en krigssone (Grünbaum, 2026)."
+    },
+    {
+      "type": "component",
+      "name": "Opprorstavla1968",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Mai i Paris"
+    },
+    {
+      "type": "text",
+      "content": "I Frankrike begynte urolighetene ved universitetene og høyskolene. Studentene krevde en helt ny måte å drive skole og undervisning på. Fagforeningene støttet kravet, og snart streiket arbeidere og tok over fabrikker. President Charles de Gaulle lovte store reformer i radio og på TV. Arbeiderne fikk høyere lønn og et løfte om 40 timers arbeidsuke fra 1970 (Julsrud mfl., 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Likevel ble ikke resultatet en revolusjon. I juni 1968 holdt Frankrike valg, og partiet til de Gaulle vant det største flertallet noen gang i nasjonalforsamlingen. Det var et tegn på at mange franskmenn var lei av uroen. Men de Gaulle satt ikke lenge. Etter at han tapte en folkeavstemning i april 1969, gikk han av som president (Julsrud mfl., 2025)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Arbeidere i streik utenfor en fabrikk i Frankrike, 1968",
+      "caption": "Opprøret spredte seg fra universitetene til fabrikkene. På det meste streiket 8-10 millioner franske arbeidere."
+    },
+    {
+      "type": "header",
+      "text": "Et opprør over hele verden"
+    },
+    {
+      "type": "text",
+      "content": "1968 var ikke bare et vestlig opprør. I Tsjekkoslovakia sto studentene sentralt under Praha-våren, da folk krevde mer frihet fra det kommunistiske styret. Også i Polen og Jugoslavia var det store studentprotester. I Polen og Tsjekkoslovakia tapte studentene kampen den gangen (Godbolt, 2026b). Du kan lese om hvordan Sovjetunionen holdt østblokken sammen i artikkelen om [NATO og Warszawapakten](/historie/den-kalde-krigen/nato-vs-warszawa). I Vest-Tyskland ble studentlederen Rudi Dutschke skutt i 1968, men han overlevde så vidt (Godbolt, 2026b)."
+    },
+    {
+      "type": "text",
+      "content": "I Addis Abeba i Etiopia angrep studenter samme år et moteshow der miniskjørtet skulle vises fram. For dem var miniskjørtet et tegn på at Vesten fortsatt ville bestemme over tidligere kolonier, noe som kalles nykolonialisme (Godbolt, 2026b). I Kina gikk studenter i spissen for kulturrevolusjonen, men der kjempet de for Mao Zedong og ikke mot ham. Året etter, i 1969, møttes rundt en halv million unge på musikkfestivalen Woodstock nord for New York (Grünbaum, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Et rolig opprør i Norge"
+    },
+    {
+      "type": "text",
+      "content": "I Norge og resten av Norden var samfunnet mindre styrt ovenfra enn i mange andre land. Derfor kan man si at opprøret delvis ble hentet hjem fra utlandet (Godbolt, 2026b). Norske studenter ble ikke kjent for gatekamper. De kjempet mot planer om å legge om universitetene, aksjonerte for bedre studentliv og krevde å få være med og bestemme over pensum og eksamen. Pedagogikkstudentene på Blindern i Oslo fikk til og med et helt nytt studium i sosialpedagogikk (Godbolt, 2026b)."
+    },
+    {
+      "type": "text",
+      "content": "Noen norske studenter ble maoister, altså tilhengere av den kinesiske lederen Mao. De var få, men svært aktive (Godbolt, 2026b). En undersøkelse av norske studenter viser likevel at den typiske norske 68-eren var sosialist, gikk i demonstrasjoner og oppførte seg fredelig. Det var flere menn enn kvinner med i opprøret. Det som betydde mest for om en student ble radikal, var hva foreldrene stemte (Godbolt, 2026a). Generasjonskløften i Norge var altså mindre enn mange trodde."
+    },
+    {
+      "type": "text",
+      "content": "Mye av dette skjedde i et land som allerede hadde bygd ut [velferdsstaten](/historie/norge-i-moderne-tid/velferdsstaten). Det kan forklare hvorfor det norske opprøret handlet mer om ord, møter og demonstrasjoner enn om barrikader."
+    },
+    {
+      "type": "header",
+      "text": "Hva ble igjen etter 1968?"
+    },
+    {
+      "type": "text",
+      "content": "Det ble ingen revolusjon, verken i Norge eller i andre vestlige land (Godbolt, 2026b). Likevel endret 1968 mye. Etter opprøret fikk grupper som tidligere ble holdt utenfor mer støtte, for eksempel svarte amerikanere og andre minoriteter, kvinner, unge og homofile (Godbolt, 2026a). Etter 1970 vokste det fram nye bevegelser for kvinners rettigheter og for miljøet. Mange mener opprøret brøt ned gamle måter å styre på og ga folk mer personlig frihet (Grünbaum, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Opprøret hadde også mørke sider. Noen få gikk over til vold. I Vest-Tyskland drepte og kidnappet terrorgruppen Rote Armee Fraktion, RAF, flere mennesker (Godbolt, 2026b). Og opprøret fikk en overraskende virkning: Når unge kritiserte staten for å bestemme for mye, ga det også høyresiden nye argumenter mot det de kalte «formynderstaten», altså en stat som blander seg for mye inn i livet til folk. Venstrevinden bidro slik til en høyrebølge senere (Godbolt, 2026b)."
+    },
+    {
+      "type": "text",
+      "content": "I dag strides folk fortsatt om 1968. I USA snakker noen om «de gode sekstiårene» og andre om «de dårlige sekstiårene», alt etter om de liker verdiene fra 1968 eller ikke (Godbolt, 2026a). Uansett hva man mener, er det vanskelig å forstå samfunnet vi lever i uten å vite hva som skjedde da de unge sa nei."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung kvinne med langt hår holder et fredsskilt i en demonstrasjon",
+      "caption": "Fredstegnet ble et symbol for 1968-generasjonen. Mange av verdiene deres preger samfunnet i dag."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvorfor skjøt antallet studenter i været på 1960-tallet? Nevn to grunner fra teksten.",
+          "Hva var Tet-offensiven, og hvordan påvirket den synet på Vietnamkrigen i USA?",
+          "Hva skjedde i Frankrike i mai 1968, og hvordan endte det for president de Gaulle?",
+          "Hva oppnådde pedagogikkstudentene på Blindern?"
+        ],
+        "reflekter": [
+          "Forklar hvorfor fjernsynet var så viktig for at opprøret spredte seg til mange land samtidig.",
+          "Studentene i Paris, Praha og Addis Abeba protesterte mot helt forskjellige ting. Hva hadde de likevel til felles?",
+          "Hvorfor var det norske opprøret roligere enn det franske? Bruk teksten i svaret ditt.",
+          "Teksten sier at venstrevinden kunne skape en høyrebølge. Forklar med egne ord hva det betyr."
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Finnes det et ungdomsopprør i dag? Hva protesterer unge mot nå, og hvordan sprer de budskapet?",
+          "Skriv et kort innlegg som en student i Paris i mai 1968. Hva krever du, og hvorfor?",
+          "Spør en besteforelder eller en annen eldre person hva de husker fra slutten av 1960-tallet, og sammenlign med det du har lest."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er «1968» blitt et navn på?",
+            "options": [
+              "Et valg i Frankrike",
+              "En bølge av ungdoms- og studentopprør over store deler av verden",
+              "Slutten på Vietnamkrigen",
+              "Den første musikkfestivalen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "«1968» eller «68» brukes ofte som et annet ord for studentopprøret, som toppet seg det året."
+          },
+          {
+            "question": "Hvor mange arbeidere streiket i Frankrike på det meste i mai 1968?",
+            "options": [
+              "Rundt 10 000",
+              "Rundt 100 000",
+              "8-10 millioner",
+              "Hele befolkningen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "I midten av mai streiket 8-10 millioner arbeidere, og landet sto nesten stille."
+          },
+          {
+            "question": "Hvorfor ble Tet-offensiven et vendepunkt, selv om angriperne tapte militært?",
+            "options": [
+              "Fordi USA vant krigen",
+              "Fordi folk i USA så at krigen ikke snart var vunnet, slik lederne hadde sagt",
+              "Fordi Kina gikk inn i krigen",
+              "Fordi studentene sluttet å protestere"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Angrepet viste at lederne ikke hadde fortalt sannheten om krigen. Motstanden vokste, og president Johnson ville ikke stille til gjenvalg."
+          },
+          {
+            "question": "Hva kjennetegnet den typiske norske 68-eren ifølge forskningen?",
+            "options": [
+              "Kastet stein og bygde barrikader",
+              "Var sosialist, gikk i demonstrasjoner og oppførte seg fredelig",
+              "Var som regel kvinne",
+              "Var uenig med foreldrene sine i alt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Den typiske norske 68-eren var fredelig, og foreldrenes politikk betydde mest for om studenten ble radikal."
+          },
+          {
+            "question": "Hva var en av de varige følgene av 1968?",
+            "options": [
+              "Kommunistisk revolusjon i Vest-Europa",
+              "Mer støtte til grupper som kvinner, minoriteter og homofile",
+              "At universitetene ble stengt",
+              "At TV ble forbudt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Det ble ingen revolusjon, men verdiene fra 1968 ga mer støtte til grupper som tidligere ble holdt utenfor."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Godbolt, J. (2026a). *1968-generasjonen*. Store norske leksikon. Hentet 04.10.2026 fra [snl.no](https://snl.no/1968-generasjonen)",
+          "Godbolt, J. (2026b). *Studentopprøret*. Store norske leksikon. Hentet 04.10.2026 fra [snl.no](https://snl.no/studentopp%C3%B8ret)",
+          "Grünbaum, O. (2026). *Ungdomsoprøret*. Lex.dk / Den Store Danske. Hentet 04.10.2026 fra [lex.dk](https://lex.dk/ungdomsopr%C3%B8ret)",
+          "Julsrud, O., Tvedt, K. A. & Greve, T. (2025). *Frankrikes historie fra 1958 (den femte republikk)*. Store norske leksikon. Hentet 04.10.2026 fra [snl.no](https://snl.no/Frankrikes_historie_fra_1958_(den_femte_republikk))",
+          "Tønnesson, S. & Filseth, G. (2026). *Tet-offensiven*. Store norske leksikon. Hentet 04.10.2026 fra [snl.no](https://snl.no/Tet-offensiven)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

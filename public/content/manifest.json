@@ -4964,6 +4964,22 @@
               ],
               "createdDate": "2026-08-04T19:35:38+02:00",
               "lastUpdated": "2026-08-05T00:33:53+02:00"
+            },
+            {
+              "id": "ungdomsopproret-1968",
+              "title": "1968: Da de unge sa nei",
+              "description": "Hvorfor gjorde unge over hele verden opprør i 1968, og hva ble igjen etterpå?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "1968",
+                "studentopprøret",
+                "ungdomsopprøret",
+                "vietnamkrigen",
+                "frankrike",
+                "norge",
+                "etterkrigstiden"
+              ],
+              "createdDate": "2026-10-04T00:00:00Z"
             }
           ]
         },
