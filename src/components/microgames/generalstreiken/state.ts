@@ -34,9 +34,18 @@ export type Årsak = 'bølgen' | 'frist' | 'splittet' | 'forLite' | 'stille';
 /** Det som skjedde dette steget, for visning og lyd (tømmes av komponenten). */
 export type Hendelse =
     | { k: 'hekt'; x: number; y: number; verdi: number; navn: string | null; x2: boolean }
-    | { k: 'krasj'; mistet: number }
+    | {
+          k: 'krasj';
+          mistet: number;
+          ledd: number;
+          x: number;
+          y: number;
+          celler: { x: number; y: number }[];
+      }
     | { k: 'grenelle' }
-    | { k: 'spist'; mistet: number }
+    | { k: 'spist'; mistet: number; x: number; y: number }
+    | { k: 'varsel' }
+    | { k: 'byks'; ledd: number }
     | { k: 'brett'; nr: number };
 
 export interface Game {
@@ -74,6 +83,17 @@ export interface Game {
     /** Millioner som er vunnet for godt: delen av de spiste leddene bølgen ikke tok. */
     bevart: number;
     toppMillioner: number;
+    /** Ledd kjeden skal vokse med de neste stegene (brett med leddPer > 1). */
+    vekst: number;
+    /** Verdien hvert av vekst-leddene får. */
+    vekstVerdi: number;
+    /** Regionen forrige fabrikk dukket opp i (etter Grenelle: neste i en annen). */
+    sisteRegion: string | null;
+    /** Neste byks i bølgen (brett-sekunder), og om varselet er gitt. */
+    byksNeste: number;
+    byksVarslet: boolean;
+    /** Krasj i egen kjede på dette brettet. */
+    krasj: number;
     valg: number;
     hendelser: Hendelse[];
 }
@@ -130,4 +150,10 @@ export function startBrett(g: Game, bi: number) {
     g.etterN = 0;
     g.bevart = 0;
     g.toppMillioner = 0;
+    g.vekst = 0;
+    g.vekstVerdi = 0;
+    g.sisteRegion = null;
+    g.byksNeste = Infinity;
+    g.byksVarslet = false;
+    g.krasj = 0;
 }

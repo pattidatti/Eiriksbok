@@ -87,6 +87,13 @@
       "content": "Likevel ble ikke resultatet en revolusjon. I juni 1968 holdt Frankrike valg, og partiet til de Gaulle vant det største flertallet noen gang i nasjonalforsamlingen. Det var et tegn på at mange franskmenn var lei av uroen. Men de Gaulle satt ikke lenge. Etter at han tapte en folkeavstemning i april 1969, gikk han av som president (Julsrud mfl., 2025)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "generalstreiken"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/placeholder.webp",
       "alt": "Arbeidere i streik utenfor en fabrikk i Frankrike, 1968",

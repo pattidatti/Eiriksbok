@@ -92,26 +92,27 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
      til fabrikkene - hold kjeden hel.»
 
 6. **Seier.** Seieren følger plottet: streiken ble 8-10 millioner, regjeringen ga reformer, og det
-   ble ingen revolusjon. Trykker du AVSLUTT med **8 millioner eller mer** i brett 3 eller i fri
-   streik, vinner du, uansett rekord: plakaten «LANDET STO STILLE» trykkes, med teksten «Arbeiderne
-   fikk høyere lønn og 40 timers uke. I juni vant de Gaulle likevel valget. Reformer, ikke
-   revolusjon.» AVSLUTT under målet gir poengene og en lavere rang, men ikke seiersplakaten.
+   ble ingen revolusjon. Seieren kommer i tre nivåer når du trykker AVSLUTT på brett 3 (eller i fri
+   streik): **6 millioner** gir «DELVIS SEIER», **8** gir «GRENELLE-AVTALEN» («Arbeiderne fikk
+   høyere lønn og 40 timers uke. I juni vant de Gaulle likevel valget. Reformer, ikke revolusjon.»),
+   og **11 eller mer** gir toppnivået «LANDET STO STILLE». Under 6 er tap («For lite press»). En flink
+   spiller når 8 de fleste rundene, men 11 bare av og til.
 
 7. **En runde til.**
-   - **Rekord** = millionene du hadde da du trykket AVSLUTT («9,4 millioner, slå det»). Ingen tak.
-     Ingen rekord for lengste streik.
-   - **Spøkelset:** rekordrunden lagres (millioner, avstand til bølgen og kjeden i stoppøyeblikket).
-     I neste runde står en svart stiplet strek på telleren («REKORD 8,6 - stoppet her»), en strek på
-     kjeden som viser hvor nær bølgen var da rekordholderen trykket, og en blek omriss-kjede på
-     kartet.
-   - **Én gang til på ett trykk:** sluttplakaten tar mellomrom, Enter eller ett trykk hvor som helst,
-     og samme brett starter med en gang. Ingen meny i mellom.
+   - **Rekord** = millionene du hadde da du trykket AVSLUTT på brett 3 («9,4 millioner, slå det»).
+     Ingen tak. Ingen rekord for lengste streik.
+   - **Spøkelset:** rekorden lagres. I neste runde står en svart stiplet strek på skalaen ved
+     telleren («REKORD 9,4»), og et blekt omriss av rekordkjeden ligger på kartet der den var da
+     rekordholderen trykket AVSLUTT.
+   - **Én gang til på ett trykk:** sluttplakaten tar mellomrom eller Enter, og samme brett starter
+     med en gang. Ingen meny i mellom.
    - **Ranger:** under 2 «Løpeseddel», 2-4 «Fabrikkport», 4-6 «Okkupert», 6-8 «Landet nesten stille»,
-     8-10 «Generalstreik», over 10 «Mer enn i 1968».
-   - **Samleobjekter:** første gang du hekter på en navngitt fabrikk, får du dens plakat på
-     plakatveggen (10 stk.), med slagord på norsk og fransk i liten skrift: «Fantasien til makten»,
-     «Fabrikker, universiteter, sammen», «Kampen fortsetter» og så videre.
-   - **Multiplikator for dyktig spill:** to fabrikker på under 2 s gir «x2 SAMMEN!» på neste.
+     8-11 «Generalstreik», 11 og over «Mer enn i 1968».
+   - **Samleobjekter:** første gang du hekter på en navngitt fabrikk, får den sin plakat på
+     plakatveggen i menyen, med slagord på norsk og fransk.
+   - **x2:** av og til blinker en fabrikk langt ute i provinsen med x2 og en nedtelling på 6 s. Den
+     dobler bare sin egen verdi (i stedet for gangetallet, aldri oppå det) og gjør ikke bølgen
+     raskere. Etter GRENELLE stiger gangetallet med x0,15 per fabrikk, men aldri over x2,5.
 
 8. **Sjanger, perspektiv, 2D/3D.** `snake-trykk-på-lykken`: Snake med ett trykk-på-lykken-valg.
    Ny sjanger i biblioteket. Kart over Frankrike sett rett ovenfra, som en plakat klistret på en vegg
@@ -129,23 +130,25 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
     fløyter, blir rød og hekter seg på, og telleren hopper til 0,3. Ingen tekst å lese.
 
 11. **Første minutt - opptrappingen.**
-    - **Brett 1 «Sorbonne, 13. mai»** (ca. 35 s). Kartet er zoomet inn på Paris og omegn. Bare
-      regel 1: styr og hekt på. To fabrikker blinker om gangen (Citroën i Paris, Renault
-      Billancourt), slangen er treg (6 ruter/s), ingen knapp, ingen bølge, ingen kalender. Valget er
-      hvilken av de to du tar først, og hvordan du svinger rundt deg selv. Halen blir lang nok til at
-      eleven møter regel 1-krasjet én gang i et ufarlig øyeblikk. Mål: 1 million. Da trykkes plakaten
-      «STREIKEN SPRER SEG» og brettet er vunnet.
-    - **Brett 2 «Grenelle, 27. mai»** (ca. 60 s). Kartet åpner seg mot nordvest (Renault Cléon,
+    - **Brett 1 «Sorbonne, 13. mai»** (ca. 15 s). Kartet er zoomet inn på Paris og omegn. Bare
+      regel 1: styr og hekt på. Fabrikkene kommer i klynger på tre, 2-3 ruter fra hverandre
+      (Citroën, Renault Billancourt, Nanterre), så du må svinge tett. Hver fabrikk gir to ledd, så
+      halen blir lang fort. Ingen knapp, ingen bølge. Krasjer du i halen, faller alt bak av og du
+      mister litt ekstra med en gang, men runden er ikke tapt: du mister bare tid (fristen er 32 s).
+      Mål: 2,5 millioner. Da trykkes plakaten «STREIKEN SPRER SEG».
+    - **Brett 2 «Grenelle, 27. mai»** (ca. 20-25 s). Kartet åpner seg mot nordvest (Renault Cléon,
       Sud-Aviation ved Nantes, verftene i Saint-Nazaire). Nytt og alene: knappen. Ved 1,5 millioner
-      lyser GRENELLE. Trykk, og de Gaulle-profilen i blått lover «HØYERE LØNN - 40 TIMERS UKE», knappen
-      blir til AVSLUTT, og den blå bølgen kryper inn fra halen, sakte (0,4 ledd/s, +0,05/s). Den er
-      svaret på brettet: eleven ser at den spiser bakfra og at nye fabrikker skyver hodet unna. Tre
-      fabrikker blinker om gangen. Mål: AVSLUTT med minst 3 millioner.
-    - **Brett 3 «Hele Frankrike, mai 68»** (ca. 90 s). Hele landet: Peugeot Sochaux, Berliet og
-      Rhodiaceta i Lyon, gruvene i nord, jernbanen. Nytt og alene: kalenderen (13.-30. mai) øverst.
-      Venter du for lenge med GRENELLE, kommer bølgen uansett 30. mai. Bølgen har full fart
-      (0,5 ledd/s, +0,1/s). Fire fabrikker blinker, de fjerne er verdt mer. Mål: AVSLUTT med minst
-      8 millioner = seier. Etterpå åpner **fri streik** (brett 3 med spøkelse og rekord).
+      lyser GRENELLE. Trykk, og de Gaulle lover «HØYERE LØNN - 40 TIMERS UKE», knappen blir til
+      AVSLUTT, og den blå bølgen kryper inn fra halen. Den går rykkvis: et blått blink, og ca. 1 s
+      etter byks den 2-4 ledd fram. Du ser aldri et tall for hvor langt unna den er, bare bølgen
+      selv. Nye fabrikker dukker opp minst 8 ruter unna, i en ny region. Mål: AVSLUTT med minst
+      4 millioner (3-4 fabrikker etter GRENELLE).
+    - **Brett 3 «Hele Frankrike, mai 68»** (ca. 35 s). Hele landet: Peugeot Sochaux, Berliet og
+      Rhodiaceta i Lyon, gruvene i nord, havna i Marseille, Sud-Aviation i Toulouse. Nytt og alene:
+      kalenderen (13.-30. mai). Venter du for lenge med GRENELLE, kommer bølgen uansett 30. mai.
+      Bølgen starter roligere enn på brett 2, men blir raskere for hver fabrikk. Fire fabrikker
+      blinker, de fjerne er verdt mer, og av og til en x2. Mål: AVSLUTT med minst 6 millioner
+      (8 og 11 gir større seier). Etterpå åpner **fri streik** (brett 3 med spøkelse og rekord).
 
 **Sjekk mot guiden:**
 - *Er kjerneverbet deilig i seg selv?* Ja, det er Snake: styre, svinge i siste liten, se kjeden
@@ -285,3 +288,54 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
   briefens punkt 6, 7 og 11 (8 millioner, 35/60/90 s, x2 SAMMEN) er ikke skrevet om ennå.
   Mangler fortsatt: spøkelse/rekordstrek, plakatveggen, `useArcadeText`, «Dette skjedde»,
   lyd, kunst og coverbildet.
+- **Fase byggmester, diagnose 2 og kunst (2026-10-04):** gjorde de tre endringene fra
+  diagnose 2 og bygde så det ferdige spillet. (1) AVSLUTT er magefølelse: tallet «BØLGEN N LEDD
+  UNNA» er borte. Bølgen kryper 40 % jevnt og tar resten i byks på 2-4 ledd hvert 3.-6. sekund
+  (seedet rng i spillet), med et blått blink og en varsellyd ca. 1 s før. Fabrikker etter
+  GRENELLE dukker opp i en ny region minst 8 ruter fra hodet. (2) Økonomien: gangetallet stiger
+  x0,15 per fabrikk og stopper på x2,5; en x2-fabrikk dobler bare sin egen grunnverdi (i stedet
+  for gangetallet, aldri oppå det) og gjør ikke bølgen raskere; brett 2 har mål 4 og en roligere
+  bølge (0,7 ledd/s, +12 % per fabrikk). (3) Brett 1: fabrikkene kommer i klynger på tre med 2-3
+  ruter mellom, hver gir to ledd, studentene starter med fire ledd, et krasj trekker 0,04 per
+  ledd ekstra med en gang, og brett 1 kan ikke splittes (krasjet koster tid mot fristen på
+  32 s). Presset før GRENELLE måler også hvor tett egen kjede ligger rundt hodet. Designbriefens
+  punkt 6, 7 og 11 er skrevet om etter spillet.
+  **Kunsten:** plakat limt 0,7 grader skjevt på en grå mur med gamle plakatrester og limrynke;
+  kartlinjer per brett (Seinen og ringveien, kysten i nordvest, Frankrikes omriss) og stedsnavn i
+  blyant; et eget blekklag for rødt og blått med flekkemaske og 1,5 px feilregistrering; kjeden
+  er et rødt bånd med tre streikende skåret ut i hvert ledd og en knyttneve i hodet; fabrikkene
+  som venter, blinker med tynn rød flate og ryker; fabrikkene som er med, blir røde merker på
+  kartet; rød uro sprer seg fra Sorbonne, og etter GRENELLE en blå flate og de Gaulles profil;
+  folk bølgen tar, går som små blå figurer hjem. Rakel-sveip mellom brettene og på slutten.
+  HUD: stor rød teller som ruller og spretter, skala 0-12 med mål (brett 3: 6/8/11) og
+  rekordstrek, datoseddel (tid på brett 1-2, dag i mai på brett 3, «AVTALE» etter GRENELLE),
+  tastene nederst, stor trykt GRENELLE/AVSLUTT-stripe, LYD og PAUSE. Juice per ledd: fløyte som
+  stiger med rekka, klask, rykk i hodet, blekk- og papirsprut, risting, «+0,4» ved fabrikken.
+  Tekst: tre lærings-øyeblikk (første krasj, første GRENELLE, første gang bølgen spiser), lapper
+  for tastene, blinket og 30. mai, «Dette skjedde» på slutt-skjermen. Spøkelset (rekordkjeden og
+  streken på skalaen), plakatveggen (14 navngitte fabrikker med slagord på norsk og fransk), fri
+  streik etter første seier, demo-streik bak menyen.
+  **Tallene:** simuleringen er grønn (200 runder per robot): streikeleder vinner 90 % (median
+  197, p10 135, p90 226; brett 3 median 9,3, minst 8 i ca. 80 %, 11+ i ca. 24 %), halvgod 89 %
+  (median 133, men bare laveste nivå: brett 3 ca. 6,4, aldri 8), aldri-avslutt 0 % (25),
+  aldri-grenelle 0 % (25), tilfeldig 0 %, passiv 0 %. 60 valg per minutt, presset går
+  0,30 -> 0,55 -> 0,60. Selvspillet: alle porter grønne i siste kjøring (streikeleder vant med 237;
+  tidligere 185 og 193), Chromebook p95 ca. 10 ms, bildeendring uten input 5-6,5. To kjøringer
+  tapte streikeleder: én på brett 3 (bølgen, 7 % i simuleringen, ikke et funn) og én på brett 2
+  etter 39 s, som porten meldte rødt fordi simuleringen taper så tidlig i bare 0,5 % - jeg fant
+  ingen forskjell i koden (samme tidssteg, roboten tikker i spilltid), så jeg tror det var
+  uflaks med et byks, men det bør følges med på. Scene-audit grønn, likhetsvakten: nærmest petisjonen-3d (0,44).
+  **Prøvd som ikke virket:** (1) mål 4 på brett 2 med den gamle bølgen (1,0 ledd/s, +15 %) ga
+  streikeleder 56 % - byksene tok hodet; (2) streikeleder med 0,6 s margin tapte 20 % på
+  brett 2 - den regner nå med 1,6 s og trykker AVSLUTT når halen blinker og bølgen er under 5
+  ledd unna (roboten måtte lære byksene, slik en elev gjør); (3) uten tetthet i presset lå første
+  tredjedel på 0,15; (4) passiv runde ga bildeendring 1,2 - fabrikker som blinker og en lengre
+  start hjalp lite, den røde uroen fra Sorbonne løftet den til ca. 5; (5) slutt-skjermen bak en
+  1,6 s pause kom ikke fram i tide for selvspillet - den står nå i DOM-en med en gang og toner
+  inn med CSS; (6) navngitte fabrikker i klyngene havnet i feil bydel.
+  **Kjente svakheter:** halvgod vinner fortsatt nesten alltid det laveste nivået (diagnosens mål
+  var 55-70 %); brett 1 er ca. 13-15 s, ikke 25; GRENELLE-øyeblikket står i sakte film til eleven
+  trykker eller tar «Skjønner»; kunstbriefens «BØLGEN 6 LEDD UNNA» er bevisst ikke laget
+  (diagnose 2); Frankrikes omriss er strukket for å passe rutenettet 34x20; de Gaulle-profilen er
+  liten og svak; ingen egen display-font (Outfit 900 klemt sammen i stedet for Anton, for ikke å
+  røre package.json).

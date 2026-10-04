@@ -19,7 +19,7 @@ const ÅRSAK: Record<NonNullable<Game['årsak']>, string> = {
     frist: 'fristen gikk ut uten GRENELLE',
     splittet: 'krasjet i egen kjede og ble splittet',
     forLite: 'trykket AVSLUTT under målet',
-    stille: 'brett 1: nådde ikke 1 million',
+    stille: 'nådde ikke målet før fristen',
 };
 
 export function årsakTekst(g: Game): string | undefined {
@@ -27,7 +27,10 @@ export function årsakTekst(g: Game): string | undefined {
     return `brett ${g.brett.nr}: ${ÅRSAK[g.årsak]}`;
 }
 
-export function snapshotOf(g: Game | null, meny = false): PlaytestSnapshot & Record<string, unknown> {
+export function snapshotOf(
+    g: Game | null,
+    meny = false
+): PlaytestSnapshot & Record<string, unknown> {
     if (!g || meny) return { fase: 'meny', poeng: 0, framdrift: 0, tid: 0 };
     const mål = g.brett.mål;
     return {

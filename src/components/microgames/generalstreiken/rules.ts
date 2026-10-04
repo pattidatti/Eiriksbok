@@ -19,7 +19,10 @@ export function fart(g: Game) {
     return Math.min(g.brett.fartTak, f.tak, f.start + f.perLedd * g.body.length);
 }
 
-/** Bølgens fart (ledd/s) nå, eller 0 før Grenelle. */
+/**
+ * Bølgens snittfart (ledd/s) nå, eller 0 før Grenelle. Delen `kryp` går jevnt, resten
+ * kommer i byks (se game.ts), så den faktiske farten er rykkvis.
+ */
 export function bølgeFart(g: Game) {
     if (g.grenelle === null) return 0;
     const b = g.brett.bølge;
@@ -32,8 +35,20 @@ export const bølgeSek = (g: Game) => {
     return f > 0 ? bølgeAvstand(g) / f : Infinity;
 };
 
-/** Gangetallet på neste fabrikk etter Grenelle: x1, x1,3, x1,6 ... */
-export const gangetall = (g: Game) => (g.grenelle === null ? 1 : 1 + TUNING.stige * g.etterN);
+/** Gangetallet på neste fabrikk etter Grenelle: x1, x1,15, x1,3 ... opp til x2,5. */
+export const gangetall = (g: Game) =>
+    g.grenelle === null ? 1 : Math.min(TUNING.stigeTak, 1 + TUNING.stige * g.etterN);
+
+/** Sekunder til neste byks i bølgen, tilfeldig mellom `hvert[0]` og `hvert[1]`. */
+export function planleggByks(g: Game) {
+    const [a, b] = TUNING.byks.hvert;
+    g.byksNeste = g.bt + a + g.rng() * (b - a);
+    g.byksVarslet = false;
+}
+
+/** Blinker bølgen nå (varselet ca. 1 s før et byks)? */
+export const byksVarsel = (g: Game) =>
+    g.grenelle !== null && g.bt >= g.byksNeste - TUNING.byks.varsel;
 
 /** Ledd mellom bølgefronten og hodet. */
 export const bølgeAvstand = (g: Game) => Math.max(0, g.body.length - g.bølgeRest);
@@ -51,10 +66,7 @@ export function styr(g: Game, r: Retning) {
 }
 
 export const kanGrenelle = (g: Game) =>
-    g.mode === 'play' &&
-    g.brett.knapp &&
-    g.grenelle === null &&
-    millioner(g) >= TUNING.grenelleFra;
+    g.mode === 'play' && g.brett.knapp && g.grenelle === null && millioner(g) >= TUNING.grenelleFra;
 export const kanAvslutte = (g: Game) => g.mode === 'play' && g.grenelle !== null;
 
 export type Knapp = 'grenelle' | 'avslutt' | 'venter' | null;
@@ -68,6 +80,7 @@ export function knapp(g: Game): Knapp {
 export function trykk(g: Game): boolean {
     if (kanGrenelle(g)) {
         g.grenelle = g.bt;
+        planleggByks(g);
         g.valg++;
         g.hendelser.push({ k: 'grenelle' });
         return true;
@@ -121,11 +134,14 @@ export function verdiFor(g: Game, f: Fabrikk) {
     let v = g.grenelle === null ? fa.før : fa.etter;
     if (g.brett.fjernBonus) {
         const b = g.brett;
-        const maks = Math.hypot(Math.max(b.paris.x, b.b - b.paris.x), Math.max(b.paris.y, b.h - b.paris.y));
+        const maks = Math.hypot(
+            Math.max(b.paris.x, b.b - b.paris.x),
+            Math.max(b.paris.y, b.h - b.paris.y)
+        );
         v += fa.fjernBonus * (fraParis(g, f) / maks);
     }
-    v *= gangetall(g);
-    if (erX2(g, f)) v *= TUNING.x2.faktor;
+    // x2 dobler fabrikkens egen verdi i stedet for gangetallet, aldri oppå det.
+    v *= erX2(g, f) ? TUNING.x2.faktor : gangetall(g);
     return Math.round(v * 10) / 10;
 }
 
@@ -149,10 +165,20 @@ export function press(g: Game) {
     const fartDel = ((fart(g) - f.start) / (f.tak - f.start)) * w.fart;
     if (g.grenelle === null) {
         const kal = (g.bt / g.brett.frist) * (g.brett.knapp ? w.kalender : w.kalender / 2);
-        return Math.min(1, Math.max(fartDel, kal));
+        return Math.min(1, Math.max(fartDel + w.trangt * trangt(g), kal));
     }
     const nær = 1 - Math.min(1, bølgeSek(g) / w.bølgeSek);
     return Math.min(1, Math.max(fartDel, 0.5 + 0.5 * nær));
+}
+
+/** 0-1: hvor tett egen kjede ligger rundt hodet (fare for krasj). Ledd innen 2 ruter, ikke de to nærmeste. */
+export function trangt(g: Game) {
+    let n = 0;
+    for (let i = 2; i < g.body.length; i++) {
+        const c = g.body[i];
+        if (Math.abs(c.x - g.hode.x) <= 2 && Math.abs(c.y - g.hode.y) <= 2) n++;
+    }
+    return Math.min(1, n / 6);
 }
 
 export function rang(m: number) {

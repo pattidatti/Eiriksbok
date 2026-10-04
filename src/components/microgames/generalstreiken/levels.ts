@@ -47,6 +47,12 @@ export interface Brett {
     fjernBonus: boolean;
     /** Kan fjerne fabrikker bli x2 en kort stund? */
     x2: boolean;
+    /** Ledd kjeden vokser med for hver fabrikk (verdien deles på leddene). */
+    leddPer: number;
+    /** Fabrikkene kommer i klynger: alle `samtidig` på én gang, tett i én region. */
+    klynge: boolean;
+    /** Kan et krasj splitte streiken (tap)? Brett 1 lærer krasjet uten å ta runden. */
+    splitt: boolean;
     regioner: Region[];
     fabrikker: NavnFabrikk[];
 }
@@ -58,15 +64,18 @@ export const BRETT: Brett[] = [
         b: 22,
         h: 14,
         paris: { x: 11, y: 7 },
-        samtidig: 2,
-        fartTak: 7,
+        samtidig: 3,
+        fartTak: 8,
         knapp: false,
         mål: 2.5,
         bølge: { start: 0, vekst: 1, økning: 0 },
         kalender: false,
-        frist: 40,
+        frist: 32,
         fjernBonus: false,
         x2: false,
+        leddPer: 2,
+        klynge: true,
+        splitt: false,
         regioner: [
             { navn: 'Latinerkvarteret', x: 11, y: 7, r: 3, vekt: 1 },
             { navn: 'Billancourt', x: 4, y: 10, r: 2, vekt: 1 },
@@ -90,15 +99,18 @@ export const BRETT: Brett[] = [
         samtidig: 3,
         fartTak: 10,
         knapp: true,
-        mål: 2.5,
-        bølge: { start: 1.0, vekst: 1.15, økning: 0.03 },
+        mål: 4,
+        bølge: { start: 0.7, vekst: 1.12, økning: 0.03 },
         kalender: false,
         frist: 30,
         fjernBonus: true,
         x2: true,
+        leddPer: 1,
+        klynge: false,
+        splitt: true,
         regioner: [
             { navn: 'Paris', x: 21, y: 6, r: 3, vekt: 0.3 },
-            { navn: 'Normandie', x: 13, y: 3, r: 3, vekt: 0.2 },
+            { navn: 'Normandie', x: 13, y: 4.5, r: 2, vekt: 0.2 },
             { navn: 'Le Mans', x: 12, y: 11, r: 3, vekt: 0.2 },
             { navn: 'Nantes', x: 4, y: 13, r: 3, vekt: 0.3 },
         ],
@@ -124,6 +136,9 @@ export const BRETT: Brett[] = [
         frist: 30,
         fjernBonus: true,
         x2: true,
+        leddPer: 1,
+        klynge: false,
+        splitt: true,
         regioner: [
             { navn: 'Paris', x: 17, y: 5, r: 3, vekt: 0.12 },
             { navn: 'Nord', x: 20, y: 1, r: 2, vekt: 0.08 },

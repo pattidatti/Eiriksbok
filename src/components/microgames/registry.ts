@@ -2518,7 +2518,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'generalstreiken',
         title: 'Generalstreiken',
         description:
-            'Mai 1968. Du er streiken selv og kryper ut fra Sorbonne i Paris. Hver fabrikk du når, legger ned arbeidet og blir med, og kjeden blir lengre og raskere. Kjører du inn i din egen kjede, faller alt bak av. Trykk GRENELLE, så lover de Gaulle høyere lønn og 40 timers uke - men da kommer en blå bølge av de Gaulle-tilhengere og spiser kjeden bakfra. Trykk AVSLUTT før den tar hodet, og millionene blir reformene dine.',
+            'Mai 1968. Du er streiken selv og kryper ut fra Sorbonne i Paris. Hver fabrikk du når, legger ned arbeidet og blir med, og kjeden blir lengre og raskere. Kjører du inn i din egen kjede, faller alt bak av. Trykk GRENELLE, så lover de Gaulle høyere lønn og 40 timers uke - men da kommer en blå bølge av de Gaulle-tilhengere og spiser kjeden bakfra i rykk. Trykk AVSLUTT før den tar hodet, og millionene blir reformene dine.',
         estimatedSeconds: 120,
         sjanger: 'snake-trykk-på-lykken',
         tone: 'lett',

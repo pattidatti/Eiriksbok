@@ -5,7 +5,7 @@ export const TUNING = {
     /** Fart på slangen: ruter per sekund. Ca. 7 ved 4 ledd, opp mot 11 ved 25 ledd. */
     fart: { start: 6.2, perLedd: 0.19, tak: 11 },
     /** Studentene fra Sorbonne: ledd du starter med, og hva hvert er verdt (millioner). */
-    start: { ledd: 2, verdi: 0.05 },
+    start: { ledd: 4, verdi: 0.025 },
     /** Hvor mange svinger du kan legge i kø (to raske trykk). */
     kø: 3,
     /** Fabrikker: verdi før og etter Grenelle, bonus for de fjerne (brett med fjernBonus). */
@@ -17,14 +17,25 @@ export const TUNING = {
         /** Nye fabrikker før Grenelle dukker ikke opp nærmere hodet enn dette (ruter). */
         minAvstand: 6,
         /** Etter Grenelle: nye fabrikker dukker opp så langt fra hodet (ruter, min og maks). */
-        etterAvstand: [10, 15] as [number, number],
+        etterAvstand: [8, 14] as [number, number],
         /** Sjanse for at en ny fabrikk er en navngitt fabrikk fra brettet. */
         navngitt: 0.35,
     },
-    /** Etter Grenelle: fabrikk nr. n (0, 1, 2 ...) er verdt grunnverdi x (1 + stige x n). */
-    stige: 0.2,
-    /** x2: sjelden, bare langt fra Paris, og bare en kort stund. */
+    /** Etter Grenelle: fabrikk nr. n (0, 1, 2 ...) er verdt grunnverdi x (1 + stige x n), maks stigeTak. */
+    stige: 0.15,
+    stigeTak: 2.5,
+    /**
+     * x2: sjelden, bare langt fra Paris, og bare en kort stund. Dobler bare sin egen
+     * grunnverdi (i stedet for gangetallet, aldri oppå det) og flytter ikke gangetallet.
+     */
     x2: { sjanse: 0.15, fraParis: 10, varer: 6, faktor: 2 },
+    /**
+     * Bølgen etter Grenelle: en del kryper jevnt (`kryp`), resten kommer i byks hvert
+     * 3.-6. sekund (tilfeldig), varslet med et blink `varsel` sekunder før.
+     */
+    byks: { kryp: 0.4, hvert: [3, 6] as [number, number], varsel: 1 },
+    /** Krasj i egen kjede: millioner du mister med en gang, per ledd som faller av. */
+    krasjStraff: 0.04,
     /** Hver gang bølgen spiser et ledd, mister du denne delen av verdien (resten er vunnet). */
     trekk: 0.5,
     /** GRENELLE lyser fra denne størrelsen (millioner). */
@@ -46,6 +57,6 @@ export const TUNING = {
         [8, 'Generalstreik'],
         [11, 'Mer enn i 1968'],
     ] as [number, string][],
-    /** Presset (0-1): vekter for fart, kalender og bølgen (sekunder til den tar hodet). */
-    press: { fart: 0.45, kalender: 0.9, bølgeSek: 20 },
+    /** Presset (0-1): vekter for fart, egen kjede tett rundt hodet, kalender og bølgen (sekunder til den tar hodet). */
+    press: { fart: 0.45, trangt: 0.6, kalender: 0.9, bølgeSek: 20 },
 } as const;
