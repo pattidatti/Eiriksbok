@@ -1,16 +1,19 @@
 // Kjerneløkka: update(g, dt). Bevegelse rute for rute, hekting, krasj i egen kjede,
-// bølgen bakfra etter Grenelle, fristen (30. mai) og nye fabrikker.
+// bølgen bakfra etter Grenelle, fristen (30. mai) og nye fabrikker i regionene.
 
 import { DX, MOTSATT, type Game, type Retning } from './state';
 import {
     bølgeFart,
+    erX2,
     fart,
+    fraParis,
     iRute,
     millioner,
     neste,
     neste1,
     nesteBrett,
     tap,
+    tiendeler,
     verdiFor,
 } from './rules';
 import { TUNING } from './tuning';
@@ -81,14 +84,13 @@ export function ettSteg(g: Game) {
     g.hode = p;
     if (spiser) {
         const f = g.fabrikker[fi];
-        const x2 = g.bt < g.x2Til;
+        const x2 = erX2(g, f);
         const v = verdiFor(g, f);
         g.verdi.unshift(v);
         g.fabrikker.splice(fi, 1);
         if (f.navn) g.brukteNavn.add(f.navn);
-        if (x2) g.x2Til = -1;
-        else if (g.bt - g.sisteHekt < TUNING.sammen.vindu) g.x2Til = g.bt + TUNING.sammen.varer;
-        g.forrigeHekt = g.sisteHekt;
+        // Etter Grenelle: neste fabrikk gir mer, og bølgen blir raskere.
+        if (g.grenelle !== null) g.etterN++;
         g.sisteHekt = g.bt;
         g.hendelser.push({ k: 'hekt', x: p.x, y: p.y, verdi: v, navn: f.navn, x2 });
     } else {
@@ -97,40 +99,66 @@ export function ettSteg(g: Game) {
     if (krasj && millioner(g) < TUNING.splittetUnder) tap(g, 'splittet');
 }
 
+/** Velger en region etter vekt. */
+function region(g: Game) {
+    const rs = g.brett.regioner;
+    let r = g.rng() * rs.reduce((s, x) => s + x.vekt, 0);
+    for (const x of rs) {
+        r -= x.vekt;
+        if (r <= 0) return x;
+    }
+    return rs[rs.length - 1];
+}
+
 function nyFabrikk(g: Game) {
     const b = g.brett;
     const fa = TUNING.fabrikk;
-    const radius = fa.radius.start + fa.radius.perLedd * g.body.length;
-    const ledig = (x: number, y: number) =>
-        iRute(g, x, y) &&
-        !opptatt(g, x, y) &&
-        !(g.hode.x === x && g.hode.y === y) &&
-        !g.fabrikker.some((f) => f.x === x && f.y === y) &&
-        Math.abs(x - g.hode.x) + Math.abs(y - g.hode.y) >= fa.minAvstand;
+    const etter = g.grenelle !== null;
+    const [nær, fjern] = etter ? fa.etterAvstand : [fa.minAvstand, 999];
+    const ledig = (x: number, y: number) => {
+        if (!iRute(g, x, y) || opptatt(g, x, y)) return false;
+        if (g.fabrikker.some((f) => f.x === x && f.y === y)) return false;
+        const d = Math.abs(x - g.hode.x) + Math.abs(y - g.hode.y);
+        return d >= nær && d <= fjern;
+    };
+    const legg = (x: number, y: number, navn: string | null, reg: string | null) => {
+        const f = { x, y, verdi: 0, navn, region: reg, født: g.bt, x2Til: -1 };
+        // x2 er sjelden, og bare langt ute i provinsen. Ca. 60 % av fabrikkene ligger langt
+        // ute, så sjanse / 0,6 der gir ca. 15 % av alle fabrikkene.
+        if (b.x2 && fraParis(g, f) >= TUNING.x2.fraParis && g.rng() < TUNING.x2.sjanse / 0.6)
+            f.x2Til = g.bt + TUNING.x2.varer;
+        g.fabrikker.push(f);
+        g.valg++;
+    };
     if (g.rng() < fa.navngitt) {
         const navn = b.fabrikker.filter(
             (n) =>
                 !g.brukteNavn.has(n.navn) &&
                 !g.fabrikker.some((f) => f.navn === n.navn) &&
-                Math.hypot(n.x - b.paris.x, n.y - b.paris.y) <= radius * 1.3 &&
                 ledig(n.x, n.y)
         );
         if (navn.length) {
             const n = navn[Math.floor(g.rng() * navn.length)];
-            g.fabrikker.push({ x: n.x, y: n.y, verdi: 0, navn: n.navn, født: g.bt });
-            g.valg++;
+            legg(n.x, n.y, n.navn, null);
             return;
         }
     }
-    for (let forsøk = 0; forsøk < 80; forsøk++) {
+    for (let forsøk = 0; forsøk < 120; forsøk++) {
+        if (etter && forsøk < 60) {
+            // Etter Grenelle: et sted 10-15 ruter fra hodet, hvor som helst på kartet.
+            const d = nær + Math.floor(g.rng() * (fjern - nær + 1));
+            const dx = Math.floor(g.rng() * (d + 1));
+            const x = g.hode.x + (g.rng() < 0.5 ? -dx : dx);
+            const y = g.hode.y + (g.rng() < 0.5 ? dx - d : d - dx);
+            if (ledig(x, y)) return legg(x, y, null, null);
+            continue;
+        }
+        const rg = region(g);
         const a = g.rng() * Math.PI * 2;
-        const r = Math.sqrt(g.rng()) * radius;
-        const x = Math.round(b.paris.x + Math.cos(a) * r);
-        const y = Math.round(b.paris.y + Math.sin(a) * r);
-        if (!ledig(x, y)) continue;
-        g.fabrikker.push({ x, y, verdi: 0, navn: null, født: g.bt });
-        g.valg++;
-        return;
+        const r = Math.sqrt(g.rng()) * rg.r;
+        const x = Math.round(rg.x + Math.cos(a) * r);
+        const y = Math.round(rg.y + Math.sin(a) * r);
+        if (ledig(x, y)) return legg(x, y, null, rg.navn);
     }
 }
 
@@ -170,14 +198,16 @@ export function update(g: Game, dt: number) {
                 return;
             }
             g.body.pop();
-            g.verdi.pop();
-            g.hendelser.push({ k: 'spist' });
+            // Bølgen tar en del av leddets verdi. Resten er vunnet for godt.
+            const v = g.verdi.pop() ?? 0;
+            g.bevart += v * (1 - TUNING.trekk);
+            g.hendelser.push({ k: 'spist', mistet: v * TUNING.trekk });
         }
     }
     const m = millioner(g);
     g.toppMillioner = Math.max(g.toppMillioner, m);
-    if (!g.brett.knapp && m >= g.brett.mål) {
-        g.resultat[g.bi] = Math.round(m * 10) / 10;
+    if (!g.brett.knapp && tiendeler(m) >= g.brett.mål) {
+        g.resultat[g.bi] = tiendeler(m);
         neste(g);
     }
 }

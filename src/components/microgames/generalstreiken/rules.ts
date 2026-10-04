@@ -1,13 +1,15 @@
 // Fagkjernen og grepene. Eleven og robotene bruker de samme funksjonene: styr() og trykk().
 //  1. Henger kjeden sammen, vokser streiken (game.ts: krasj i egen kjede kutter alt bak).
-//  2. GRENELLE gir høyere verdi på nye fabrikker, men starter den blå bølgen bakfra.
+//  2. GRENELLE gir høyere verdi på nye fabrikker (og hver ny gir mer enn den forrige), men
+//     starter den blå bølgen bakfra, og den blir raskere for hver fabrikk du tar.
 //  3. AVSLUTT gjør millionene til reformer. Tar bølgen hodet først, gir brettet 0.
 
 import { BRETT } from './levels';
 import { DX, MOTSATT, startBrett, type Fabrikk, type Game, type Retning } from './state';
 import { TUNING } from './tuning';
 
-export const millioner = (g: Game) => g.verdi.reduce((s, v) => s + v, 0);
+/** Millionene: kjeden pluss delen av de spiste leddene som er vunnet for godt. */
+export const millioner = (g: Game) => g.verdi.reduce((s, v) => s + v, g.bevart);
 
 /** Avrundet til én desimal, slik telleren viser det. */
 export const tiendeler = (m: number) => Math.round(m * 10) / 10;
@@ -21,8 +23,17 @@ export function fart(g: Game) {
 export function bølgeFart(g: Game) {
     if (g.grenelle === null) return 0;
     const b = g.brett.bølge;
-    return b.start + b.økning * (g.bt - g.grenelle);
+    return b.start * Math.pow(b.vekst, g.etterN) + b.økning * (g.bt - g.grenelle);
 }
+
+/** Sekunder til bølgen tar hodet med farten den har nå. */
+export const bølgeSek = (g: Game) => {
+    const f = bølgeFart(g);
+    return f > 0 ? bølgeAvstand(g) / f : Infinity;
+};
+
+/** Gangetallet på neste fabrikk etter Grenelle: x1, x1,3, x1,6 ... */
+export const gangetall = (g: Game) => (g.grenelle === null ? 1 : 1 + TUNING.stige * g.etterN);
 
 /** Ledd mellom bølgefronten og hodet. */
 export const bølgeAvstand = (g: Game) => Math.max(0, g.body.length - g.bølgeRest);
@@ -68,6 +79,9 @@ export function trykk(g: Game): boolean {
     return false;
 }
 
+/** Seiersnivået på brett 3: 0 = ingen seier, 1 = delvis, 2 = Grenelle-avtalen, 3 = landet sto stille. */
+export const seierNivå = (m: number) => TUNING.seier.filter((s) => m >= s).length;
+
 function avslutt(g: Game) {
     const m = tiendeler(millioner(g));
     g.valg++;
@@ -108,11 +122,17 @@ export function verdiFor(g: Game, f: Fabrikk) {
     if (g.brett.fjernBonus) {
         const b = g.brett;
         const maks = Math.hypot(Math.max(b.paris.x, b.b - b.paris.x), Math.max(b.paris.y, b.h - b.paris.y));
-        v += fa.fjernBonus * (Math.hypot(f.x - b.paris.x, f.y - b.paris.y) / maks);
+        v += fa.fjernBonus * (fraParis(g, f) / maks);
     }
-    v = Math.round(v * 10) / 10;
-    return g.bt < g.x2Til ? v * TUNING.sammen.faktor : v;
+    v *= gangetall(g);
+    if (erX2(g, f)) v *= TUNING.x2.faktor;
+    return Math.round(v * 10) / 10;
 }
+
+export const fraParis = (g: Game, p: { x: number; y: number }) =>
+    Math.hypot(p.x - g.brett.paris.x, p.y - g.brett.paris.y);
+
+export const erX2 = (g: Game, f: Fabrikk) => g.bt < f.x2Til;
 
 /** Dagen i mai på kalenderen (13-30). */
 export const dag = (g: Game) => Math.min(30, 13 + Math.floor(g.bt / TUNING.dagSek));
@@ -131,7 +151,7 @@ export function press(g: Game) {
         const kal = (g.bt / g.brett.frist) * (g.brett.knapp ? w.kalender : w.kalender / 2);
         return Math.min(1, Math.max(fartDel, kal));
     }
-    const nær = 1 - Math.min(1, bølgeAvstand(g) / w.bølgeNær);
+    const nær = 1 - Math.min(1, bølgeSek(g) / w.bølgeSek);
     return Math.min(1, Math.max(fartDel, 0.5 + 0.5 * nær));
 }
 

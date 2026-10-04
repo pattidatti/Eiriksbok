@@ -250,3 +250,38 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
   avgjøres mest av når du trykker GRENELLE; fabrikkene klumper seg nær Paris tidlig i brett 3, og
   rutene er små på 1366x768. Mangler ennå: spøkelse/rekordstrek, plakatveggen, `useArcadeText`,
   «Dette skjedde», lyd, kunst og coverbildet.
+- **Fase byggmester, diagnose 1 (2026-10-04):** gjorde de tre endringene i kjerneløkka fra
+  gråboks-diagnosen, fortsatt gråboks. (1) Etter GRENELLE gir fabrikk nr. n grunnverdi
+  x (1 + 0,2n), og gangetallet står stort ved hodet (x1,2, x1,4 ...). Bølgen starter på
+  0,5 ledd/s (brett 2: 1,0), blir 12 % (brett 2: 15 %) raskere for hver fabrikk du tar og litt
+  raskere med tiden, og hvert ledd den spiser trekker 50 % av verdien (resten er vunnet for
+  godt, `bevart`). Nye fabrikker etter Grenelle dukker opp 10-15 ruter fra hodet. (2)
+  Fabrikkene dukker opp i regioner med vekt (brett 3: Paris, Nord, Normandie, Nantes, Lyon,
+  Sochaux, Marseille, Toulouse), maks 2/3/4 om gangen. På brett 3 ligger 59 % over 12 ruter
+  fra Paris før Grenelle. x2 SAMMEN er fjernet; x2 er nå 15 % av fabrikkene, bare 10+ ruter
+  fra Paris, og bare i 6 s med nedtelling på ruta. (3) Brett 1 ca. 17 s (bare Snake, mål 2,5,
+  22x14), brett 2 ca. 20 s (GRENELLE og bølgen, mål 2,5, 28x18), brett 3 ca. 35 s (34x20,
+  kalender 1,75 s per dag, frist 30 s). Farten er 6,2 + 0,19 per ledd (7 ved 4 ledd, 11 ved
+  25). Rutene er 27 px på brett 3 ved 1366x768. Seier i nivåer på brett 3: 6 «Delvis seier»,
+  8 «Grenelle-avtalen», 11 «Landet sto stille». Menytittelen har mindre skrift og holder seg
+  i boksen. Robotene: streikeleder regner ut om den rekker neste fabrikk før bølgen
+  (`bølgeSek` mot tiden til fabrikken + 0,6 s); halvgod nøyer seg med 6,2 på brett 3.
+  **Simuleringen er grønn** (200 runder per robot): streikeleder vinner 100 % (median 198,
+  brett 3 median 12,2 millioner, avslutter med bølgen 4,5 ledd unna), halvgod 86 % (median
+  117, brett 3 ca. 6,3 = delvis seier), aldri-avslutt 0 % (25), aldri-grenelle 0 % (25),
+  tilfeldig 0 %, passiv 0 %. 55 valg per minutt, presset går 0,11 -> 0,46 -> 0,62.
+  Selvspillet i nettleseren: streikeleder vant med 186 poeng (sim p10-p90 170-230).
+  **Prøvd som ikke virket:** (1) x1 + 0,3n med grunnverdi 0,3 ga 12-18 millioner på brett 3
+  og 8-12 på brett 2 (mål 2,5) - nå 0,25 og 0,2n; (2) bølgen på 1,1 ledd/s ved start gjorde
+  tiden etter Grenelle bare ca. 10 s, så presset i siste tredjedel ble 0,38; (3) presset som
+  0,3 + 0,7 x nærhet falt ved Grenelle (fra 0,47 til 0,35) fordi bølgen var langt unna - nå
+  starter det på 0,5 og måles i sekunder til bølgen tar hodet; (4) å trykke GRENELLE tidligere
+  på brett 3 (3,4 i stedet for 4,5) ga lavere poeng og løftet ikke presset; (5) å flytte vekt
+  bort fra Paris endret lite fordi fabrikkene etter Grenelle dukker opp ved hodet.
+  **Kjente svakheter:** streikeleder vinner 100 % og når ofte 11+ (toppnivået er for lett for
+  en flink spiller); brett 2 kan fortsatt gi 5-7 millioner med mål 2,5; navngitte fabrikker
+  (Jernbanen, Cléon, Gruvene) ligger nær Paris; politisperringen på brett 1 fra diagnosen er
+  ikke laget, så krasj er fortsatt sjeldent der; fabrikknavnet over ruta kan dekke hodet;
+  briefens punkt 6, 7 og 11 (8 millioner, 35/60/90 s, x2 SAMMEN) er ikke skrevet om ennå.
+  Mangler fortsatt: spøkelse/rekordstrek, plakatveggen, `useArcadeText`, «Dette skjedde»,
+  lyd, kunst og coverbildet.

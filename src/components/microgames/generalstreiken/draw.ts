@@ -2,8 +2,9 @@
 // Leser bare spillet.
 
 import type { ArcadeView } from '../arcade/useArcade';
-import { bølgeAvstand, dag, fristIgjen, millioner, tiendeler, verdiFor } from './rules';
+import { bølgeAvstand, dag, erX2, fristIgjen, gangetall, millioner, tiendeler, verdiFor } from './rules';
 import type { Game } from './state';
+import { TUNING } from './tuning';
 import { BRETT_VUNNET } from './texts';
 
 /** Paletten fra kunstbriefen, brukt flatt. */
@@ -71,6 +72,15 @@ export function tegn(view: ArcadeView, g: Game) {
         ctx.font = `700 13px Archivo, system-ui, sans-serif`;
         const tekst = `${f.navn ? f.navn + ' ' : ''}+${fmt(verdiFor(g, f))}`;
         ctx.fillText(tekst, ox + (f.x + 0.5) * s, oy + f.y * s - 8);
+        // x2: rød ramme og nedtelling på ruta.
+        if (erX2(g, f)) {
+            ctx.strokeStyle = P.rød;
+            ctx.lineWidth = 3;
+            ctx.strokeRect(ox + f.x * s - 2, oy + f.y * s - 2, s + 4, s + 4);
+            ctx.fillStyle = P.papir;
+            ctx.font = `900 ${Math.max(13, Math.floor(s * 0.55))}px Anton, Impact, system-ui, sans-serif`;
+            ctx.fillText(`${Math.ceil(f.x2Til - g.bt)}`, ox + (f.x + 0.5) * s, oy + (f.y + 0.55) * s);
+        }
     }
 
     // Kjeden: røde ledd, de bølgen holder på å spise er blå.
@@ -87,6 +97,13 @@ export function tegn(view: ArcadeView, g: Game) {
     ctx.strokeStyle = P.svart;
     ctx.lineWidth = 2;
     ctx.stroke();
+    // Gangetallet på neste fabrikk etter Grenelle, stort ved hodet.
+    if (g.grenelle !== null) {
+        ctx.fillStyle = P.svart;
+        ctx.font = '900 24px Anton, Impact, system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(`x${fmt(gangetall(g))}`, ox + (g.hode.x + 0.5) * s, oy + g.hode.y * s - 14);
+    }
     // Bølgen bak halen.
     if (g.grenelle !== null && L) {
         const hale = g.body[L - 1];
@@ -111,14 +128,16 @@ function hud(view: ArcadeView, g: Game) {
     ctx.font = '700 14px Archivo, system-ui, sans-serif';
     ctx.fillStyle = P.svart;
     ctx.fillText(`MILLIONER I STREIK  -  mål ${fmt(g.brett.mål)}`, w / 2, 64);
-    // Skala 0-10 under telleren.
+    // Skala 0-12 under telleren, med målet (og seiersnivåene på brett 3).
     const sx = w / 2 - 150;
+    const skala = (v: number) => sx + Math.min(300, (v / 12) * 300);
     ctx.fillStyle = 'rgba(21,20,19,.15)';
     ctx.fillRect(sx, 68, 300, 4);
     ctx.fillStyle = P.rød;
-    ctx.fillRect(sx, 68, Math.min(300, (m / 10) * 300), 4);
+    ctx.fillRect(sx, 68, skala(m) - sx, 4);
     ctx.fillStyle = P.svart;
-    ctx.fillRect(sx + (g.brett.mål / 10) * 300 - 1, 64, 2, 12);
+    const streker = g.brett.nr === 3 ? TUNING.seier : [g.brett.mål];
+    for (const v of streker) ctx.fillRect(skala(v) - 1, 64, 2, 12);
 
     ctx.textAlign = 'left';
     ctx.font = '700 15px Archivo, system-ui, sans-serif';
@@ -135,12 +154,6 @@ function hud(view: ArcadeView, g: Game) {
         ctx.font = '700 16px Archivo, system-ui, sans-serif';
         ctx.fillStyle = P.blå;
         ctx.fillText(`BØLGEN ${Math.floor(bølgeAvstand(g))} LEDD UNNA`, w - 16, 64);
-    }
-    if (g.bt < g.x2Til) {
-        ctx.textAlign = 'left';
-        ctx.fillStyle = P.rød;
-        ctx.font = '900 18px Anton, Impact, system-ui, sans-serif';
-        ctx.fillText('x2 SAMMEN!', 16, 40);
     }
 }
 

@@ -10,6 +10,7 @@ import type { Rng } from '../sim';
 import { ettSteg } from './game';
 import {
     bølgeAvstand,
+    bølgeSek,
     fart,
     kanAvslutte,
     kanGrenelle,
@@ -180,43 +181,47 @@ export interface Knappeplan {
     grenelle: [number, number, number] | null;
     /** Hvor mange sekunder før fristen roboten trykker uansett. */
     fristMargin: number;
-    /** Trykk AVSLUTT når bølgen er så nær (ledd), eller når millionene faller fra toppen. */
-    avslutt: { nær: number; fall: number; over: number; nøyerSeg?: number } | null;
+    /**
+     * AVSLUTT når bølgen er mindre enn `sek` sekunder unna (pluss tiden til nærmeste fabrikk
+     * hvis `regner`), eller straks millionene når `nøyerSeg` (per brett).
+     */
+    avslutt: { sek: number; regner: boolean; nøyerSeg?: [number, number, number] } | null;
 }
 
-function knapper(g: Game, p: Knappeplan, topp: { m: number }) {
+/** Sekunder til nærmeste fabrikk roboten kan nå, rundt kjeden. */
+function tidTilFabrikk(g: Game) {
+    const ledig = ledigOm(g);
+    let best = Infinity;
+    for (const f of g.fabrikker) {
+        const d = avstandTil(g, f.x, f.y, ledig, g.hode.x, g.hode.y)[g.hode.y * g.brett.b + g.hode.x];
+        if (d >= 0) best = Math.min(best, d);
+    }
+    return best / fart(g);
+}
+
+function knapper(g: Game, p: Knappeplan) {
     if (g.mode !== 'play') return;
     const m = millioner(g);
     if (kanGrenelle(g) && p.grenelle) {
         const fristNær = g.brett.frist - g.bt < p.fristMargin;
-        if (m >= p.grenelle[g.bi] || fristNær) {
-            trykk(g);
-            topp.m = m;
-        }
+        if (m >= p.grenelle[g.bi] || fristNær) trykk(g);
         return;
     }
     if (kanAvslutte(g) && p.avslutt) {
-        topp.m = Math.max(topp.m, m);
-        // Den halvgode nøyer seg med mindre enn målet på brett 3 (lavere rang, ingen seier).
-        const mål = g.bi === 2 && p.avslutt.nøyerSeg ? p.avslutt.nøyerSeg : g.brett.mål;
-        const nær = bølgeAvstand(g) <= p.avslutt.nær;
-        const faller = m <= topp.m - p.avslutt.fall;
-        // Sikrer målet før millionene faller under det igjen.
-        const sikre = topp.m >= mål + p.avslutt.over && m < mål + p.avslutt.over;
-        if ((m >= mål && (nær || faller || sikre)) || bølgeAvstand(g) <= 2) trykk(g);
+        const a = p.avslutt;
+        const sek = bølgeSek(g);
+        const nok = m >= g.brett.mål;
+        // Den gode regner med tiden til neste fabrikk: rekker jeg én til før bølgen?
+        const grense = a.sek + (a.regner ? Math.min(3, tidTilFabrikk(g)) : 0);
+        const nøyd = a.nøyerSeg && m >= a.nøyerSeg[g.bi];
+        if ((nok && (sek <= grense || nøyd)) || bølgeAvstand(g) <= 1.5) trykk(g);
     }
 }
 
 function spiller(st: Styring, kp: Knappeplan) {
     return (rng: Rng): Grep => {
-        const topp = { m: 0 };
-        let bi = -1;
         return (g) => {
-            if (g.bi !== bi) {
-                bi = g.bi;
-                topp.m = 0;
-            }
-            knapper(g, kp, topp);
+            knapper(g, kp);
             styrMot(g, st, rng);
         };
     };
@@ -244,27 +249,27 @@ export const BOTS: Record<string, BotDef> = {
     streikeleder: {
         forventer: 'vinner',
         beskrivelse:
-            'Styrer mot de beste fabrikkene uten å stenge seg inne, trykker GRENELLE når streiken er stor og AVSLUTT når bølgen nærmer seg eller millionene begynner å falle.',
+            'Styrer mot de beste fabrikkene uten å stenge seg inne, trykker GRENELLE når streiken er stor, tar så én fabrikk til så lenge den rekker det før bølgen, og AVSLUTT i siste liten.',
         make: spiller(GOD, {
-            grenelle: [99, 2.8, 7.6],
+            grenelle: [99, 3, 4.5],
             fristMargin: 2,
-            avslutt: { nær: 5, fall: 0.3, over: 0.4 },
+            avslutt: { sek: 0.6, regner: true },
         }),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Tar nærmeste fabrikk, følger ikke alltid med, trykker GRENELLE tidlig og AVSLUTT med god margin til bølgen.',
+            'Tar nærmeste fabrikk, følger ikke alltid med, trykker GRENELLE tidlig og AVSLUTT med god margin til bølgen, eller straks den har nok til en lav seier.',
         make: spiller(
             { verdiVekt: 0, trygg: true, sover: 0.25 },
-            { grenelle: [99, 2.4, 4.5], fristMargin: 4, avslutt: { nær: 10, fall: 0.2, over: 0, nøyerSeg: 5 } }
+            { grenelle: [99, 2, 3], fristMargin: 6, avslutt: { sek: 4, regner: false, nøyerSeg: [99, 2.6, 6.2] } }
         ),
     },
     'aldri-avslutt': {
         forventer: 'taper',
         beskrivelse:
             'Styrer like godt og trykker GRENELLE, men trykker aldri AVSLUTT - vil bare ha mer, til bølgen tar hodet.',
-        make: spiller(GOD, { grenelle: [99, 2.8, 7.6], fristMargin: 2, avslutt: null }),
+        make: spiller(GOD, { grenelle: [99, 3, 4.5], fristMargin: 2, avslutt: null }),
     },
     'aldri-grenelle': {
         forventer: 'taper',

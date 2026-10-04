@@ -25,16 +25,27 @@ export const TAP: Record<Årsak, { tittel: string; tekst: string }> = {
     },
 };
 
-export const SEIER = {
-    tittel: 'LANDET STO STILLE',
-    tekst: 'Arbeiderne fikk høyere lønn og 40 timers uke. I juni vant de Gaulle likevel valget. Reformer, ikke revolusjon.',
-};
+/** Seieren på brett 3 i tre nivåer (6, 8 og 11 millioner, se TUNING.seier). */
+export const SEIER = [
+    {
+        tittel: 'DELVIS SEIER',
+        tekst: 'Regjeringen ga litt, men ikke alt. Med 8 millioner i streik får du hele Grenelle-avtalen. I juni vant de Gaulle valget.',
+    },
+    {
+        tittel: 'GRENELLE-AVTALEN',
+        tekst: 'Arbeiderne fikk høyere lønn og 40 timers uke. I juni vant de Gaulle likevel valget. Reformer, ikke revolusjon.',
+    },
+    {
+        tittel: 'LANDET STO STILLE',
+        tekst: '11 millioner eller mer i streik, mer enn i 1968. Arbeiderne fikk høyere lønn og 40 timers uke, men i juni vant de Gaulle valget. Reformer, ikke revolusjon.',
+    },
+];
 
 /** Plakaten mellom brettene (etter brett 1 og 2). */
 export const BRETT_VUNNET = ['STREIKEN SPRER SEG', 'AVTALEN ER I HUS'];
 
 export const MÅL_TEKST = [
-    'Hekt på fabrikker til streiken er 1 million.',
-    'Trykk GRENELLE, og AVSLUTT med minst 3 millioner før bølgen tar hodet.',
-    'Trykk GRENELLE før 30. mai, og AVSLUTT med minst 8 millioner.',
+    'Hekt på fabrikker til streiken er 2,5 millioner.',
+    'Trykk GRENELLE, og AVSLUTT med minst 2,5 millioner før bølgen tar hodet.',
+    'Trykk GRENELLE før 30. mai, og AVSLUTT med minst 6 millioner. 8 og 11 gir en større seier.',
 ];

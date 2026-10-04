@@ -14,7 +14,7 @@ import { useArcadeSave } from './arcade/save';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest } from './playtest';
 import { newGame, update, type Game } from './generalstreiken/game';
-import { knapp, rang, styr, trykk } from './generalstreiken/rules';
+import { knapp, rang, seierNivå, styr, trykk } from './generalstreiken/rules';
 import type { Retning } from './generalstreiken/state';
 import { BOTS } from './generalstreiken/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './generalstreiken/sim';
@@ -83,7 +83,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
             rekord: Math.max(s.rekord, m3),
             fri: s.fri || g.mode === 'won',
         }));
-        if (g.mode === 'won') onComplete({ score: Math.min(1, m3 / 10), completed: true });
+        if (g.mode === 'won') onComplete({ score: Math.min(1, m3 / 11), completed: true });
         setModeBoth('over');
     };
 
@@ -208,6 +208,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
     const hudOn = mode === 'play' || mode === 'paused';
     const tap = g.mode === 'lost' && g.årsak ? TAP[g.årsak] : null;
     const sluttM = g.resultat[g.bi] ?? 0;
+    const seier = g.mode === 'won' ? SEIER[Math.max(0, seierNivå(sluttM) - 1)] : null;
 
     return (
         <MicroGameFrame title="Generalstreiken" bleed>
@@ -264,7 +265,10 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
 
                     {mode === 'menu' && (
                         <ArcadeScreen>
-                            <ArcadeLogo>Generalstreiken</ArcadeLogo>
+                            <ArcadeLogo>
+                                {/* Det lange navnet får mindre skrift, så det holder seg inne i boksen. */}
+                                <span style={{ fontSize: '0.7em' }}>Generalstreiken</span>
+                            </ArcadeLogo>
                             <ArcadeTag>Frankrike, mai 1968</ArcadeTag>
                             <p style={{ fontSize: 15, margin: '10px 0 4px' }}>
                                 Du er streiken. Styr med piltastene, WASD eller sveip. Hver fabrikk du
@@ -296,12 +300,12 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
 
                     {mode === 'over' && (
                         <ArcadeScreen>
-                            <ArcadeLogo>{g.mode === 'won' ? SEIER.tittel : (tap?.tittel ?? '')}</ArcadeLogo>
+                            <ArcadeLogo>{seier ? seier.tittel : (tap?.tittel ?? '')}</ArcadeLogo>
                             <ArcadeTag>
                                 {fmt(sluttM)} millioner - {rang(sluttM)}
                             </ArcadeTag>
                             <p style={{ fontSize: 15, margin: '10px 0' }}>
-                                {g.mode === 'won' ? SEIER.tekst : tap?.tekst}
+                                {seier ? seier.tekst : tap?.tekst}
                             </p>
                             <ArcadeBigButton onClick={igjen}>Én gang til (mellomrom)</ArcadeBigButton>
                             <p style={{ fontSize: 13, margin: 0 }}>

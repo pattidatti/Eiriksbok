@@ -22,7 +22,11 @@ export interface Fabrikk {
     y: number;
     verdi: number;
     navn: string | null;
+    /** Regionen fabrikken dukket opp i (null for navngitte og for fabrikker etter Grenelle). */
+    region: string | null;
     født: number;
+    /** x2 til dette tidspunktet (brett-sekunder), ellers -1. */
+    x2Til: number;
 }
 
 export type Årsak = 'bølgen' | 'frist' | 'splittet' | 'forLite' | 'stille';
@@ -32,7 +36,7 @@ export type Hendelse =
     | { k: 'hekt'; x: number; y: number; verdi: number; navn: string | null; x2: boolean }
     | { k: 'krasj'; mistet: number }
     | { k: 'grenelle' }
-    | { k: 'spist' }
+    | { k: 'spist'; mistet: number }
     | { k: 'brett'; nr: number };
 
 export interface Game {
@@ -65,8 +69,10 @@ export interface Game {
     /** Millioner ved AVSLUTT på hvert brett (brett 1: målet). */
     resultat: number[];
     sisteHekt: number;
-    forrigeHekt: number;
-    x2Til: number;
+    /** Fabrikker tatt siden Grenelle (n i x(1 + 0,3n)). */
+    etterN: number;
+    /** Millioner som er vunnet for godt: delen av de spiste leddene bølgen ikke tok. */
+    bevart: number;
     toppMillioner: number;
     valg: number;
     hendelser: Hendelse[];
@@ -121,7 +127,7 @@ export function startBrett(g: Game, bi: number) {
     g.grenelle = null;
     g.bølgeRest = 0;
     g.sisteHekt = -99;
-    g.forrigeHekt = -99;
-    g.x2Til = -1;
+    g.etterN = 0;
+    g.bevart = 0;
     g.toppMillioner = 0;
 }
