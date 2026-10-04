@@ -144,6 +144,22 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ctx.textAlign = 'center';
         ctx.fillStyle = x2 ? P.rød : P.svart;
         ctx.fillText(`+${fmt(v)}`, x, y + s * 0.95 + 6);
+        // Brett 1: klokka rundt fabrikken. Går den ut, går arbeiderne tilbake på jobb.
+        if (f.jobbTil < Infinity) {
+            const igjen = Math.max(0, f.jobbTil - g.bt) / g.brett.tilbake;
+            const haster = igjen < 0.3;
+            ctx.strokeStyle = haster ? P.rød : P.svart;
+            ctx.lineWidth = haster ? 4 : 3;
+            ctx.beginPath();
+            ctx.arc(
+                x + (haster ? Math.sin(fx.tid * 40) * 1.5 : 0),
+                y,
+                s * 0.85,
+                -Math.PI / 2,
+                -Math.PI / 2 + Math.PI * 2 * igjen
+            );
+            ctx.stroke();
+        }
         if (x2) {
             const igjen = Math.ceil(f.x2Til - g.bt);
             ctx.strokeStyle = P.rød;
@@ -168,6 +184,43 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
                 ctx.fillText(f.navn.toUpperCase(), x, y - s * 0.78);
             }
         }
+    }
+    // Fabrikker som gikk tilbake på jobb: krymper, blir grå og forsvinner.
+    for (const tb of fx.tilbake) {
+        const t = Math.min(1, (fx.tid - tb.t) / 0.8);
+        ctx.save();
+        ctx.globalAlpha = 1 - t;
+        ctx.translate(c(tb.x), r(tb.y) - t * s * 0.6);
+        ctx.scale(1 - t * 0.6, 1 - t * 0.6);
+        ctx.fillStyle = P.grå;
+        fabrikkForm(ctx, s);
+        ctx.fill();
+        ctx.restore();
+    }
+    ctx.globalAlpha = 1;
+    // Den stengte broen: en rød og hvit bom på tvers.
+    if (g.broStengt && g.brett.elv) {
+        const inn = fx.broT === null ? 1 : Math.min(1, (fx.tid - fx.broT) / 0.3);
+        for (const q of g.brett.elv.bro) {
+            const x = c(q.x);
+            const y = r(q.y);
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.scale(inn * (1.3 - 0.3 * inn), 1);
+            ctx.fillStyle = P.papir;
+            ctx.fillRect(-s * 0.75, -s * 0.22, s * 1.5, s * 0.44);
+            ctx.fillStyle = P.rød;
+            for (let k = 0; k < 3; k++) ctx.fillRect(-s * 0.75 + k * s * 0.5, -s * 0.22, s * 0.25, s * 0.44);
+            ctx.strokeStyle = P.svart;
+            ctx.lineWidth = 2;
+            ctx.strokeRect(-s * 0.75, -s * 0.22, s * 1.5, s * 0.44);
+            ctx.restore();
+        }
+        const ø = g.brett.elv.bro[0];
+        ctx.font = `900 ${Math.max(14, Math.round(s * 0.55))}px ${FONT}`;
+        ctx.textAlign = 'center';
+        ctx.fillStyle = P.rød;
+        ctx.fillText('STENGT', c(ø.x), r(ø.y) - s * 0.8);
     }
     // Ringer som vokser ut fra nye fabrikker (står stille på stedet).
     for (const rg of fx.ringer) {
@@ -206,6 +259,27 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
         ink.globalAlpha = 0.14;
         ink.fillStyle = P.rød;
         blekkFlekk(ink, c(g.brett.paris.x), r(g.brett.paris.y), rr, 1);
+        ink.globalAlpha = 1;
+    }
+    // Sporet: røde felt der streiken har gått, blå der marsjen har tatt kjeden.
+    {
+        const B = g.brett.b;
+        for (const [verdi, farge, a] of [
+            [1, P.rød, 0.2],
+            [2, P.blå, 0.3],
+        ] as const) {
+            ink.fillStyle = farge;
+            ink.globalAlpha = a;
+            ink.beginPath();
+            for (let i = 0; i < g.spor.length; i++) {
+                if (g.spor[i] !== verdi) continue;
+                const x = i % B;
+                const y = (i - x) / B;
+                const j = ((i * 7919) % 7) / 7;
+                ink.rect(L.ox + x * s - j * 2, L.oy + y * s - (1 - j) * 2, s + 2, s + 2);
+            }
+            ink.fill();
+        }
         ink.globalAlpha = 1;
     }
     // Den blå flaten sprer seg fra Paris etter Grenelle.
@@ -295,22 +369,49 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
             ink.beginPath();
             ink.arc(c(hale.x), r(hale.y), s * (0.5 + blink * 0.35), 0, Math.PI * 2);
             ink.fill();
-            // De Gaulles marsj: et tog av blå folk med flagg rett bak bølgefronten.
+            // De Gaulles marsj: en tykk blå front av folk med flagg som går bak halen.
+            // Fronten vokser jo nærmere den er hodet.
             const ret = { x: nest.x - hale.x, y: nest.y - hale.y };
-            for (let k = 1; k <= 3; k++) {
-                const bx = c(hale.x - ret.x * k * 0.55) + Math.sin(fx.tid * 7 + k) * 1.5;
-                const by = r(hale.y - ret.y * k * 0.55) + Math.cos(fx.tid * 9 + k) * 1.5;
+            const tv = { x: -ret.y, y: ret.x };
+            const n = nærhet(g);
+            const tykk = 1 + n * 0.25 + blink * 0.3;
+            const gå = Math.sin(fx.tid * 10) * 0.08;
+            const fx0 = c(hale.x) - ret.x * s * 0.3;
+            const fy0 = r(hale.y) - ret.y * s * 0.3;
+            ink.fillStyle = P.blå;
+            blekkFlekk(ink, fx0, fy0, s * 1.15 * tykk, 3 + Math.floor(fx.tid * 2));
+            blekkFlekk(
+                ink,
+                fx0 - ret.x * s * 1.2,
+                fy0 - ret.y * s * 1.2,
+                s * 0.95 * tykk,
+                5 + Math.floor(fx.tid * 2)
+            );
+            // Flaggene: tre blå fane-stenger over massen.
+            for (const k of [-1, 0, 1]) {
+                const bx = fx0 + tv.x * k * s * 0.8 - ret.x * s * 0.4;
+                const by = fy0 + tv.y * k * s * 0.8 - ret.y * s * 0.4;
+                const hy = s * (1.5 + (k === 0 ? 0.35 : 0)) * tykk;
+                ink.fillRect(bx - s * 0.05, by - hy, s * 0.1, hy);
                 ink.beginPath();
-                ink.arc(bx, by - s * 0.18, s * 0.13, 0, Math.PI * 2);
-                ink.rect(bx - s * 0.12, by - s * 0.05, s * 0.24, s * 0.34);
+                ink.moveTo(bx + s * 0.05, by - hy);
+                ink.lineTo(bx + s * (0.75 + Math.sin(fx.tid * 6 + k) * 0.08), by - hy + s * 0.22);
+                ink.lineTo(bx + s * 0.05, by - hy + s * 0.48);
                 ink.fill();
             }
-            ink.fillRect(c(hale.x) - s * 0.04, r(hale.y) - s * 1.25, s * 0.08, s * 0.9);
-            ink.beginPath();
-            ink.moveTo(c(hale.x) + s * 0.04, r(hale.y) - s * 1.25);
-            ink.lineTo(c(hale.x) + s * (0.62 + Math.sin(fx.tid * 5) * 0.06), r(hale.y) - s * 1.05);
-            ink.lineTo(c(hale.x) + s * 0.04, r(hale.y) - s * 0.82);
-            ink.fill();
+            // Folkene skjæres ut av massen (papiret skinner gjennom), og de går i takt.
+            ink.globalCompositeOperation = 'destination-out';
+            for (let rad = 0; rad < 2; rad++)
+                for (const k of [-1, 0, 1]) {
+                    const steg = (rad + k) % 2 ? gå : -gå;
+                    const bx = fx0 + tv.x * k * s * 0.55 - ret.x * s * (rad * 0.9 + steg);
+                    const by = fy0 + tv.y * k * s * 0.55 - ret.y * s * (rad * 0.9 + steg);
+                    ink.beginPath();
+                    ink.arc(bx, by - s * 0.2, s * 0.13, 0, Math.PI * 2);
+                    ink.rect(bx - s * 0.11, by - s * 0.06, s * 0.22, s * 0.36);
+                    ink.fill();
+                }
+            ink.globalCompositeOperation = 'source-over';
             if (varsel) {
                 const t = (fx.tid * 2.2) % 1;
                 ink.strokeStyle = P.blå;
@@ -423,7 +524,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, ex: Ekstra) {
             r(g.hode.y) - s * 0.6
         );
     }
-    if (!ex.meny) hudSvart(ctx, g, L, ex);
+    if (!ex.meny) hudSvart(ctx, g, L, ex, fx);
     if (fx.sveip) tegnSveip(ctx, fx, L);
 }
 
@@ -475,12 +576,21 @@ function hudBlekk(ink: CanvasRenderingContext2D, fx: Fx, L: Layout) {
     ink.fillRect(sk.x0, sk.y - 6, sk.til(fx.visTall) - sk.x0, 12);
 }
 
-function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra) {
+function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra, fx: Fx) {
     const sk = skala(L);
     ctx.fillStyle = P.svart;
     ctx.font = `800 15px ${BODY}`;
     ctx.textAlign = 'left';
     ctx.fillText('MILLIONER I STREIK', L.px + 28, L.py + 82);
+    // Det som er lagret fra brettene før (telleren starter på 0 på hvert brett).
+    const lagret = g.resultat.slice(0, g.bi).reduce((a, m) => a + (m ?? 0), 0);
+    if (g.bi > 0) {
+        ctx.font = `800 13px ${BODY}`;
+        ctx.fillStyle = P.grå;
+        ctx.fillText(`+ ${fmt(lagret)} LAGRET FRA FØR`, L.px + 28, L.py + 99);
+        ctx.fillStyle = P.svart;
+        ctx.font = `800 15px ${BODY}`;
+    }
     // Skalaen.
     ctx.lineWidth = 2;
     ctx.strokeStyle = P.svart;
@@ -561,7 +671,7 @@ function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra)
         ctx.fillText('TIL 30.', 74, 26);
     } else {
         ctx.font = `900 22px ${FONT}`;
-        ctx.fillText(g.brett.nr === 1 ? '13. MAI' : '27. MAI', -70, -8);
+        ctx.fillText(g.brett.nr === 1 ? '13. MAI' : '14. MAI', -70, -8);
         // Tiden som er igjen før streiken mister farten.
         const t = fristIgjen(g) / g.brett.frist;
         ctx.strokeRect(-70, 6, 140, 12);
@@ -572,6 +682,7 @@ function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra)
         ctx.fillText('TID', -70, 32);
     }
     ctx.restore();
+    if (fx.tvT !== null) tvKart(ctx, fx, L);
     // Tastene nederst, der de trengs.
     ctx.fillStyle = P.svart;
     ctx.font = `800 14px ${BODY}`;
@@ -579,6 +690,70 @@ function hudSvart(ctx: CanvasRenderingContext2D, g: Game, L: Layout, ex: Ekstra)
     const fy = L.py + L.ph - FOT_H / 2 + 5;
     ctx.fillText('STYR: ← ↑ → ↓ ELLER WASD', L.px + 22, fy);
     void HUD_H;
+}
+
+/** Steder på det innfelte verdenskartet (relativt til midten), Paris først. */
+const TV_STEDER: [string, number, number][] = [
+    ['Paris', -6, 10],
+    ['Berkeley', -62, 6],
+    ['Oslo', 6, -24],
+    ['Vest-Berlin', 22, -6],
+    ['Praha', 26, 10],
+];
+
+/** TV-sendingen: et lite innfelt kart der landene tennes ett etter ett, med bonusen. */
+function tvKart(ctx: CanvasRenderingContext2D, fx: Fx, L: Layout) {
+    const t = fx.tid - fx.tvT!;
+    const inn = Math.min(1, t / 0.3);
+    ctx.save();
+    ctx.translate(L.px + L.pw - 104, L.py + 150);
+    ctx.rotate(-0.02);
+    ctx.scale(0.6 + 0.4 * inn, 0.6 + 0.4 * inn);
+    ctx.globalAlpha = inn;
+    ctx.fillStyle = '#fafaf8';
+    ctx.fillRect(-82, -52, 164, 104);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = P.svart;
+    ctx.strokeRect(-82, -52, 164, 104);
+    ctx.fillStyle = P.svart;
+    ctx.font = `900 15px ${FONT}`;
+    ctx.textAlign = 'center';
+    ctx.fillText('TV-SENDING', 0, -36);
+    // Atlanteren som en svak strek mellom USA og Europa.
+    ctx.strokeStyle = P.grå;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 4]);
+    ctx.beginPath();
+    ctx.moveTo(-40, -26);
+    ctx.lineTo(-40, 44);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    const [, px, py] = TV_STEDER[0];
+    TV_STEDER.forEach(([navn, x, y], i) => {
+        const tent = i === 0 || t > 0.35 + i * 0.45;
+        if (i > 0 && tent) {
+            const k = Math.min(1, (t - 0.35 - i * 0.45) / 0.3);
+            ctx.strokeStyle = P.rød;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(px, py);
+            ctx.lineTo(px + (x - px) * k, py + (y - py) * k);
+            ctx.stroke();
+        }
+        ctx.fillStyle = tent ? P.rød : P.grå;
+        ctx.beginPath();
+        ctx.arc(x, y, tent ? 5 : 3, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = P.svart;
+        ctx.font = `800 11px ${BODY}`;
+        ctx.fillText(navn.toUpperCase(), x, y + 16);
+        if (i > 0 && tent && t < 0.35 + i * 0.45 + 1.6) {
+            ctx.fillStyle = P.rød;
+            ctx.font = `900 13px ${FONT}`;
+            ctx.fillText(`+${fmt(TUNING.tv.verdi)}`, x, y - 9);
+        }
+    });
+    ctx.restore();
 }
 
 /** Rakel-sveipet: et rødt felt drar over plakaten og trykker en ny plakat på 0,4 s. */

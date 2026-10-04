@@ -221,7 +221,7 @@ export function rang(m: number) {
 }
 
 export const iRute = (g: Game, x: number, y: number) =>
-    x >= 0 && y >= 0 && x < g.brett.b && y < g.brett.h;
+    x >= 0 && y >= 0 && x < g.brett.b && y < g.brett.h && !g.sperret?.[y * g.brett.b + x];
 
 export const neste1 = (p: { x: number; y: number }, r: Retning) => ({
     x: p.x + DX[r][0],

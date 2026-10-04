@@ -37,6 +37,9 @@ selvspill, start-/pause-/sluttskjerm, demo-streik bak menyen).
    kommer i byks på 2-4 ledd hvert 3.-6. sekund, med et blått blink 1 s før. Hvert spist ledd
    trekker 50 % av verdien. AVSLUTT lagrer millionene i `resultat[bi]`. Under målet = tap.
 5. Fristen (brett 3 = 30. mai) uten GRENELLE = tap. Brett 1 har ingen knapp.
+   Hendelse per brett: brett 1 `tilbake` (fabrikken går tilbake på jobb etter 7 s), brett 2
+   `elv` (elva i `sperret`, nordre bro stenges etter 7 s), brett 3 `tvVed` (TV-sending ved
+   4 millioner, +0,1 per land, innfelt kart `tvKart` i draw.ts). `spor` = røde/blå felt.
 6. Én runde = brett 1 (ca. 13-15 s), 2 (ca. 20-25 s) og 3 (ca. 35 s). Poeng = tiendeler av
    millioner summert. Seier = AVSLUTT med minst 7 på brett 3, i nivåer 7 / 9 / 12. TV-kvelden 21. mai gir +0,6 fra
    fabrikker langt unna.

@@ -27,13 +27,24 @@ export interface Fabrikk {
     født: number;
     /** x2 til dette tidspunktet (brett-sekunder), ellers -1. */
     x2Til: number;
+    /** Brett 1: fabrikken går tilbake på jobb på dette tidspunktet (Infinity = aldri). */
+    jobbTil: number;
 }
 
 export type Årsak = 'bølgen' | 'frist' | 'splittet' | 'forLite' | 'stille';
 
 /** Det som skjedde dette steget, for visning og lyd (tømmes av komponenten). */
 export type Hendelse =
-    | { k: 'hekt'; x: number; y: number; verdi: number; navn: string | null; x2: boolean }
+    | {
+          k: 'hekt';
+          x: number;
+          y: number;
+          verdi: number;
+          navn: string | null;
+          x2: boolean;
+          /** Rakk du fabrikken i siste liten før den gikk tilbake på jobb? */
+          sisteLiten: boolean;
+      }
     | {
           k: 'krasj';
           mistet: number;
@@ -47,7 +58,9 @@ export type Hendelse =
     | { k: 'varsel' }
     | { k: 'byks'; ledd: number }
     | { k: 'brett'; nr: number }
-    | { k: 'tv'; steder: { x: number; y: number }[]; verdi: number };
+    | { k: 'tv'; land: string[]; verdi: number }
+    | { k: 'tilbake'; x: number; y: number }
+    | { k: 'bro'; celler: { x: number; y: number }[] };
 
 export interface Game {
     seed: number;
@@ -99,6 +112,12 @@ export interface Game {
     tvSendt: boolean;
     /** Krasj i egen kjede på dette brettet. */
     krasj: number;
+    /** Hvor streiken har vært (1 = rødt) og hvor bølgen har tatt den (2 = blått), per rute. */
+    spor: Uint8Array;
+    /** Ruter du ikke kan gå på (elva og den stengte broen på brett 2). */
+    sperret: Uint8Array;
+    /** Broen på brett 2 er stengt. */
+    broStengt: boolean;
     valg: number;
     hendelser: Hendelse[];
 }
@@ -163,4 +182,8 @@ export function startBrett(g: Game, bi: number) {
     g.bølgeFaktor = 1;
     g.tvSendt = false;
     g.krasj = 0;
+    g.spor = new Uint8Array(b.b * b.h);
+    g.sperret = new Uint8Array(b.b * b.h);
+    for (const c of b.elv?.celler ?? []) g.sperret[c.y * b.b + c.x] = 1;
+    g.broStengt = false;
 }

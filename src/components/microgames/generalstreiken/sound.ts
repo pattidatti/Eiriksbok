@@ -15,6 +15,9 @@ export interface Sfx {
     tap: () => void;
     brett: () => void;
     start: () => void;
+    tilbake: () => void;
+    bro: () => void;
+    tv: (i: number) => void;
 }
 
 export function lagSfx(sy: ArcadeSynth): Sfx {
@@ -55,5 +58,14 @@ export function lagSfx(sy: ArcadeSynth): Sfx {
             sy.arp(440, [0, 5, 9], 0.08, 0.07);
         },
         start: () => sy.tone(260, 520, 0.14, 'triangle', 0.09),
+        // En fabrikk går tilbake på jobb: en matt fløyte som synker.
+        tilbake: () => sy.tone(440, 220, 0.28, 'triangle', 0.06),
+        // Broen stenges: en bom som slår ned.
+        bro: () => {
+            sy.noise(0.1, 0.3, 700);
+            sy.tone(200, 120, 0.18, 'square', 0.06);
+        },
+        // TV-sendingen: et pip for hvert land som tennes.
+        tv: (i) => sy.tone(880 + i * 110, 880 + i * 110, 0.08, 'square', 0.04, i * 0.45 + 0.35),
     };
 }

@@ -5,7 +5,6 @@ import { DX, MOTSATT, type Game, type Retning } from './state';
 import {
     byksVarsel,
     bølgeFart,
-    dag,
     grunnverdi,
     rå,
     planleggByks,
@@ -98,6 +97,7 @@ export function ettSteg(g: Game) {
     }
     g.body.unshift({ ...g.hode });
     g.hode = p;
+    g.spor[p.y * g.brett.b + p.x] = 1;
     if (spiser) {
         const f = g.fabrikker[fi];
         const x2 = erX2(g, f);
@@ -113,7 +113,8 @@ export function ettSteg(g: Game) {
         // Etter Grenelle: bølgen blir raskere for hver fabrikk du tar (x2 flytter ingenting).
         if (g.grenelle !== null && !x2) g.etterN++;
         g.sisteHekt = g.bt;
-        g.hendelser.push({ k: 'hekt', x: p.x, y: p.y, verdi: vis, navn: f.navn, x2 });
+        const sisteLiten = f.jobbTil - g.bt < TUNING.sisteLiten;
+        g.hendelser.push({ k: 'hekt', x: p.x, y: p.y, verdi: vis, navn: f.navn, x2, sisteLiten });
     } else if (g.vekst > 0) {
         g.vekst--;
         g.verdi.unshift(g.vekstVerdi);
@@ -124,24 +125,16 @@ export function ettSteg(g: Game) {
 }
 
 /**
- * TV-kvelden (brett 3): hele Frankrike ser streiken på TV, og fabrikker langt unna blir med
- * av seg selv. Det er artikkelens forklaring på hvorfor protestene spredte seg så fort.
+ * TV-sendingen (brett 3): når streiken passerer terskelen, viser TV den i hele verden.
+ * Unge i Berkeley, Vest-Berlin, Praha og Oslo protesterer også, og hvert land gir en bonus.
+ * Det er artikkelens forklaring på hvorfor protestene spredte seg så fort.
  */
-function tvKveld(g: Game) {
+export const TV_LAND = ['Berkeley', 'Vest-Berlin', 'Praha', 'Oslo'];
+function tvSending(g: Game) {
     g.tvSendt = true;
-    const tv = TUNING.tv;
-    // Regionene lengst fra hodet, én fabrikk i hver.
-    const rs = g.brett.regioner
-        .slice()
-        .sort(
-            (a, c) =>
-                Math.hypot(c.x - g.hode.x, c.y - g.hode.y) -
-                Math.hypot(a.x - g.hode.x, a.y - g.hode.y)
-        )
-        .slice(0, tv.fabrikker);
-    const steder = rs.map((rg) => ({ x: Math.round(rg.x), y: Math.round(rg.y) }));
-    g.bevart += tv.verdi * steder.length;
-    g.hendelser.push({ k: 'tv', steder, verdi: tv.verdi * steder.length });
+    const verdi = TUNING.tv.verdi * TV_LAND.length;
+    g.bevart += verdi;
+    g.hendelser.push({ k: 'tv', land: TV_LAND, verdi });
 }
 
 /** Velger en region etter vekt. */
@@ -168,7 +161,8 @@ function nyFabrikk(g: Game) {
         return d >= nær && d <= fjern;
     };
     const legg = (x: number, y: number, navn: string | null, reg: string | null) => {
-        const f = { x, y, verdi: 0, navn, region: reg, født: g.bt, x2Til: -1 };
+        const f = { x, y, verdi: 0, navn, region: reg, født: g.bt, x2Til: -1, jobbTil: Infinity };
+        if (b.tilbake > 0) f.jobbTil = g.bt + b.tilbake;
         // x2 er sjelden, og bare langt ute i provinsen. Ca. 60 % av fabrikkene ligger langt
         // ute, så sjanse / 0,6 der gir ca. 15 % av alle fabrikkene.
         if (b.x2 && fraParis(g, f) >= TUNING.x2.fraParis && g.rng() < TUNING.x2.sjanse / 0.6)
@@ -271,7 +265,22 @@ export function update(g: Game, dt: number) {
         tap(g, g.brett.knapp ? 'frist' : 'stille');
         return;
     }
-    if (g.brett.kalender && !g.tvSendt && dag(g) >= TUNING.tv.dag) tvKveld(g);
+    // Brett 1: fabrikker du ikke rekker i tide, går tilbake på jobb.
+    for (let i = g.fabrikker.length - 1; i >= 0; i--) {
+        const f = g.fabrikker[i];
+        if (g.bt >= f.jobbTil) {
+            g.fabrikker.splice(i, 1);
+            g.hendelser.push({ k: 'tilbake', x: f.x, y: f.y });
+        }
+    }
+    // Brett 2: den nordre broen stenges, så veien vestover deler seg.
+    const elv = g.brett.elv;
+    if (elv && !g.broStengt && g.bt >= elv.stengesVed) {
+        g.broStengt = true;
+        for (const c of elv.bro) g.sperret[c.y * g.brett.b + c.x] = 1;
+        g.hendelser.push({ k: 'bro', celler: elv.bro });
+    }
+    if (g.brett.tvVed > 0 && !g.tvSendt && millioner(g) >= g.brett.tvVed) tvSending(g);
     g.steg += fart(g) * dt;
     while (g.steg >= 1 && g.mode === 'play') {
         g.steg -= 1;
@@ -304,6 +313,7 @@ export function update(g: Game, dt: number) {
                 return;
             }
             const c = g.body.pop()!;
+            g.spor[c.y * g.brett.b + c.x] = 2;
             // Bølgen tar en del av leddets verdi. Resten er vunnet for godt.
             const lv = g.verdi.pop() ?? 0;
             g.bevart += lv * (1 - TUNING.trekk);

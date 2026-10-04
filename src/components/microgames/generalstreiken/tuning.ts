@@ -39,8 +39,10 @@ export const TUNING = {
     byks: { kryp: 0.4, hvert: [3, 6] as [number, number], varsel: 1 },
     /** Bølgen bytter fart ved hvert byks: snittfarten ganges med et tilfeldig tall i dette spennet. */
     slump: [0.65, 1.55] as [number, number],
-    /** TV-kvelden på brett 3: dagen i mai, hvor mange fabrikker langt unna som blir med, og verdien. */
-    tv: { dag: 21, fabrikker: 3, verdi: 0.2 },
+    /** TV-sendingen på brett 3 (terskelen står i levels.ts): millioner hvert land som tenner, gir. */
+    tv: { verdi: 0.1 },
+    /** Brett 1: sekunder før fristen regnes som «i siste liten». */
+    sisteLiten: 1.5,
     /** Krasj i egen kjede: millioner du mister med en gang, per ledd som faller av. */
     krasjStraff: 0.04,
     /** Hver gang bølgen spiser et ledd, mister du denne delen av verdien (resten er vunnet). */

@@ -47,6 +47,9 @@ import {
     MÅL_TEKST,
     NY_START,
     TV,
+    BRO,
+    FABRIKK_LAPP,
+    SLUTT,
     ÅRSAKER,
     PLAKATER,
     SEIER,
@@ -148,6 +151,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
     };
 
     /** Rute -> punkt i spillvinduet, samme regnestykke som tegningen. */
+    const fabrikkVist = useRef(false);
     const skjerm = (g: Game, x: number, y: number) => {
         const st = stageRef.current;
         if (!st) return null;
@@ -162,6 +166,13 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
         const g = gameRef.current;
         return g.body[g.body.length - 1] ?? g.hode;
     });
+    const tvAt = () => {
+        const st = stageRef.current;
+        if (!st) return null;
+        const L = layout(st.clientWidth, st.clientHeight, gameRef.current.brett);
+        return { x: L.px + L.pw - 200, y: L.py + 150 };
+    };
+    const fabrikkAt = ved(() => gameRef.current.fabrikker[0] ?? null);
     const knappAt = () => {
         const st = stageRef.current;
         return st ? { x: st.clientWidth / 2, y: st.clientHeight - 64 } : null;
@@ -212,7 +223,8 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
             krasj: run.current.krasj,
             brett: g.brett.nr,
             nyePlakater: run.current.nyePlakater.filter((n) => !prev.plakater.includes(n)),
-            lærdom: text.lessons(3),
+            // Tre korte linjer i stedet for en lang tekst (hva skjedde, hvorfor, hva ble igjen).
+            lærdom: SLUTT,
             tips: vant ? '' : tipsFor(g),
         });
         if (vant) onComplete({ score: Math.min(1, m / TUNING.seier[2]), completed: true });
@@ -250,17 +262,24 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                         e.x2 ? P.blå : P.rød,
                         e.x2 || e.verdi >= 0.5
                     );
+                // Nesten-bom på brett 1: du rakk fabrikken rett før den gikk tilbake på jobb.
+                if (e.sisteLiten && sp) {
+                    text.float('RAKK DET!', sp.x, sp.y - 48, P.rød, true, 1.2);
+                    fx.rist = Math.max(fx.rist, 5);
+                }
                 if (
                     e.navn &&
                     !saveRef.current.plakater.includes(e.navn) &&
                     !r.nyePlakater.includes(e.navn)
                 ) {
                     r.nyePlakater.push(e.navn);
-                    if (sp)
+                    // Lappen står i hjørnet nede til venstre, bort fra kjeden.
+                    const st = stageRef.current;
+                    if (st)
                         text.float(
                             `NY PLAKAT: ${e.navn.toUpperCase()}`,
-                            sp.x,
-                            sp.y - 58,
+                            150,
+                            st.clientHeight - 96,
                             P.svart,
                             false,
                             1.6
@@ -318,20 +337,29 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                 fx.rist = Math.max(fx.rist, 5);
                 sfx.byks();
             } else if (e.k === 'tv') {
-                // TV-kvelden: fabrikker langt unna blir med av seg selv.
-                for (const st of e.steder) {
-                    fx.okkupert.push({ x: st.x, y: st.y, t: fx.tid });
-                    fx.ringer.push({ x: st.x, y: st.y, t: fx.tid, farge: P.rød });
-                    const p = lok(st.x, st.y);
-                    sprut(fx, p.x, p.y, 12, 'rød', 180);
-                }
+                // TV-sendingen: verden ser streiken, og landene tennes ett etter ett.
+                fx.tvT = fx.tid;
                 fx.sprett = 1;
                 fx.rist = Math.max(fx.rist, 4);
-                sfx.hekt(run.current.hektBrett + 2, true);
+                e.land.forEach((_, i) => sfx.tv(i + 1));
                 text.banner(`${TV.banner} +${fmt(e.verdi)}`, P.rød, 1.8);
-                const sp = e.steder[0] ? skjerm(g, e.steder[0].x, e.steder[0].y) : null;
-                if (sp) text.point('tv', TV.lapp, () => sp, { seconds: 4, once: true });
+                text.point('tv', TV.lapp, tvAt, { seconds: 4, once: true });
                 text.lesson('tv', TV.lærdom, 2.2);
+            } else if (e.k === 'tilbake') {
+                fx.tilbake.push({ x: e.x, y: e.y, t: fx.tid });
+                sfx.tilbake();
+                const sp = skjerm(g, e.x, e.y);
+                if (sp) text.float('TILBAKE PÅ JOBB', sp.x, sp.y - 26, P.grå, false, 1.2);
+            } else if (e.k === 'bro') {
+                fx.broT = fx.tid;
+                fx.rist = Math.max(fx.rist, 5);
+                sfx.bro();
+                text.banner(BRO.banner, P.rød, 1.6);
+                const q = e.celler[0];
+                text.point('bro', BRO.lapp, () => skjerm(gameRef.current, q.x, q.y), {
+                    seconds: 4,
+                    once: true,
+                });
             } else if (e.k === 'brett') {
                 nullstillKart(fx, e.nr);
                 fx.sveip = null;
@@ -393,7 +421,7 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                 if (før === 'play' && g.mode === 'kort') {
                     sweepFor(
                         BRETT_VUNNET[g.bi] ?? '',
-                        `${fmt(g.resultat[g.bi] ?? 0)} millioner lagret - neste brett starter på nytt`,
+                        `${fmt(g.resultat[g.bi] ?? 0)} millioner lagret. Telleren starter på 0 på neste brett`,
                         P.rød
                     );
                     sfx.avslutt();
@@ -415,6 +443,11 @@ export default function Generalstreiken({ onComplete }: MicroGameProps) {
                     setTick((n) => n + 1);
                 }
                 if (!run.current.svinget && g.kø.length) run.current.svinget = true;
+                // Første fabrikk på brett 1: forklar den svarte fabrikken og klokka.
+                if (g.bi === 0 && g.fabrikker.length && !fabrikkVist.current) {
+                    fabrikkVist.current = true;
+                    text.point('fabrikk', FABRIKK_LAPP, fabrikkAt, { seconds: 5, once: true });
+                }
             }
             oppdaterFx(fx, dt, g.mode === 'lost' ? 0 : millioner(g));
             tegn(view, g, fx, {

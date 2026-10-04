@@ -390,15 +390,71 @@ export function tegnBakgrunn(w: number, h: number, dpr: number, b: Brett, L: Lay
         ctx.stroke();
         ctx.setLineDash([]);
     }
+    // Elva på brett 2 med to broer (den stengte broen tegnes i draw.ts).
+    if (b.elv) {
+        ctx.fillStyle = '#d3d6d4';
+        ctx.strokeStyle = P.svart;
+        ctx.lineWidth = 2;
+        for (const e of b.elv.celler) {
+            const p = til([e.x, e.y]);
+            ctx.fillRect(p.x - s * 0.45, p.y - s * 0.5 - 1, s * 0.9, s + 2);
+        }
+        ctx.beginPath();
+        for (const side of [-0.45, 0.45]) {
+            const x = L.ox + (b.elv.celler[0].x + 0.5 + side) * s;
+            ctx.moveTo(x, L.oy);
+            ctx.lineTo(x, L.oy + s * b.h);
+        }
+        ctx.stroke();
+        // Broene: planker på tvers.
+        const alle: { x: number; y: number }[] = [];
+        for (let y = 0; y < b.h; y++)
+            if (!b.elv.celler.some((c) => c.y === y)) alle.push({ x: b.elv.celler[0].x, y });
+        ctx.fillStyle = P.papir;
+        for (const q of alle) {
+            const p = til([q.x, q.y]);
+            ctx.fillRect(p.x - s * 0.6, p.y - s * 0.5, s * 1.2, s);
+            ctx.strokeRect(p.x - s * 0.6, p.y - s * 0.5, s * 1.2, s);
+            ctx.beginPath();
+            for (let k = 1; k < 4; k++) {
+                ctx.moveTo(p.x - s * 0.6 + k * s * 0.3, p.y - s * 0.5);
+                ctx.lineTo(p.x - s * 0.6 + k * s * 0.3, p.y + s * 0.5);
+            }
+            ctx.stroke();
+        }
+    }
+    // Silketrykk: et svakt raster av røde prikker og rakelstriper over hele kartet.
+    ctx.fillStyle = P.rød;
+    ctx.globalAlpha = 0.07;
+    for (let y = L.oy; y < L.oy + s * b.h; y += 7)
+        for (let x = L.ox + ((y / 7) % 2) * 3.5; x < L.ox + s * b.b; x += 7) {
+            const rr = 0.6 + rng() * 1.1;
+            ctx.fillRect(x, y, rr, rr);
+        }
+    ctx.globalAlpha = 0.05;
+    for (let k = 0; k < 7; k++) {
+        const y = L.oy + rng() * s * b.h;
+        ctx.fillRect(L.ox, y, s * b.b, 3 + rng() * 9);
+    }
+    ctx.globalAlpha = 1;
     ctx.restore();
-    // Stedsnavn i blyant.
-    ctx.fillStyle = P.grå;
-    ctx.font = `700 13px ${BODY}`;
+    // Stedsnavn som store plakatbokstaver, svakt trykt i bakgrunnen.
     ctx.textAlign = 'center';
+    ctx.fillStyle = P.svart;
     for (const e of ETIKETTER[b.nr] ?? []) {
         const p = til([e.x, e.y]);
-        ctx.fillText(e.t, p.x, p.y + 4);
+        ctx.save();
+        ctx.translate(p.x, p.y + 4);
+        ctx.rotate((rng() - 0.5) * 0.08);
+        ctx.globalAlpha = 0.11;
+        ctx.font = `900 ${Math.round(s * 1.25)}px ${FONT}`;
+        ctx.fillText(e.t, 0, s * 0.35);
+        ctx.globalAlpha = 0.55;
+        ctx.font = `800 12px ${BODY}`;
+        ctx.fillText(e.t, 0, 0);
+        ctx.restore();
     }
+    ctx.globalAlpha = 1;
     // Sorbonne: en liten svart stjerne.
     const sp = til([b.paris.x, b.paris.y]);
     ctx.fillStyle = P.svart;

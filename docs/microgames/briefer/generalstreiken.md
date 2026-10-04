@@ -384,3 +384,39 @@ mest), konsept 2 hviler på en smal forskningsdetalj, 3 og 4 har indirekte regle
   **Kjente svakheter:** streikeleder taper 7 % på brett 2 når bølgen får en rask fart rett etter
   GRENELLE; tapsskjermen er ikke sett i et skjermbilde (selvspillet viser bare seier); TV-kvelden
   kommer alltid 21. mai, så den er lett å vente på; Frankrikes omriss er fortsatt strukket.
+- **Fase forbedrer 2 (2026-10-04):** Gøy og Utseende sto på 3 i to runder, så kjerneløkka er
+  endret: hvert brett har nå sin egen hendelse. (1) **Brett 1:** hver fabrikk har en klokke rundt
+  seg (7 s). Går den ut, går arbeiderne «TILBAKE PÅ JOBB» (fabrikken krymper og blir grå, med
+  lyd). Rekker du den det siste 1,5 sekundet, står det «RAKK DET!» (nesten-bom). **Brett 2**
+  (nå «Ut i landet, 14. mai»): en elv med to broer deler kartet, og etter 7 s stenges den nordre
+  broen (rød og hvit bom, «STENGT», banner og lyd), så veien vestover deler seg. Robotene ser
+  elva som sperret. **Brett 3:** TV-sendingen er en regel: når streiken passerer 4 millioner,
+  kommer et innfelt kart der Berkeley, Oslo, Vest-Berlin og Praha tennes ett etter ett med pip og
+  «+0,1» hver (+0,4 i alt). Den gamle TV-kvelden 21. mai er borte. De Gaulles bølge er en tykk
+  blå front: to blå blekkflater ved halen med seks folk skåret ut som går i takt og tre blå
+  flagg, og fronten vokser med måleren. Kjeden blir blå der bølgen har tatt den. (2)
+  **Lesbarhet:** første fabrikk får lappen «Kryp over fabrikken før klokka går ut»; under telleren
+  står «+ 2,5 LAGRET FRA FØR» på brett 2 og 3, og sveipet sier «Telleren starter på 0 på neste
+  brett»; datoene går framover (13. mai, 14. mai, 17.-30. mai); «NY PLAKAT» står nede til venstre;
+  slutt-skjermen har tre korte linjer (hva skjedde, hvorfor 1968, hva ble igjen) i stedet for
+  rundt 70 ord. Tapsskjermen hadde allerede årsak og tips (`tipsFor`). (3) **Utseende:** et svakt
+  rødt silketrykkraster og rakelstriper over kartet, stedsnavnene som store plakatbokstaver i
+  bakgrunnen, og røde felt overalt der streiken har gått (blå der bølgen tok den).
+  Fortsatt tre regler: kryp over fabrikkene uten å krasje, GRENELLE og AVSLUTT før bølgen,
+  TV-sendingen ved 4 millioner.
+  **Feel-lista:** alle fire var på plass før runden. Lagt til: nesten-bom på brett 1 («RAKK
+  DET!»), lyd og animasjon for fabrikker som går tilbake på jobb, bom og risting når broen stenges,
+  og pip per land i TV-sendingen. Alle fire er fortsatt på plass.
+  **Tallene:** simuleringen er grønn (200 runder per robot): streikeleder vinner 93 % (median
+  198, p10 162, p90 231), halvgod 78 % (median 140), aldri-avslutt 0 %, aldri-grenelle 0 %,
+  tilfeldig 0 %, passiv 0 %. 57,3 valg per minutt, presset går 0,29 -> 0,60 -> 0,75.
+  Selvspillet: alle porter grønne (streikeleder vant med 203 poeng), Chromebook p95 ca. 10 ms,
+  bildeendring passiv 10,4. Scene-audit grønn, likhet mot petisjonen-3d 0,42.
+  **Prøvd som ikke virket:** (1) TV-bonus 0,15 per land (0,6 i alt) løftet halvgod fra 63 % til
+  84 % seier - nå 0,1 per land (halvgod 78 %); (2) de første lappene var 11-14 ord og ble røde i
+  selvspillet (maks 7) - kortet ned.
+  **Kjente svakheter:** halvgod vinner oftere enn sist (78 % mot 63 %), mest fordi TV-bonusen
+  kommer før GRENELLE; tapsskjermen er fortsatt ikke sett i et skjermbilde (den passive runden
+  stopper etter 25 s, før fristen på 32 s); rakelstripene kan se ut som en skjermfeil; GRENELLE-
+  knappen på brett 2 (14. mai) kommer før den ekte avtalen 27. mai; TV-kartet dekker et hjørne av
+  kartet på brett 3.

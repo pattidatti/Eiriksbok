@@ -57,6 +57,19 @@ export interface Brett {
     splitt: boolean;
     regioner: Region[];
     fabrikker: NavnFabrikk[];
+    /** Brett 1: sekunder en fabrikk venter før den går tilbake på jobb (0 = aldri). */
+    tilbake: number;
+    /** Brett 2: elva du må krysse på en bro, og broen som stenges etter `stengesVed` s. */
+    elv?: { celler: { x: number; y: number }[]; bro: { x: number; y: number }[]; stengesVed: number };
+    /** Brett 3: TV-sendingen kommer når streiken passerer så mange millioner (0 = aldri). */
+    tvVed: number;
+}
+
+/** Elva på brett 2: en loddrett stripe med to broer. Den nordre broen stenges. */
+function elv(x: number, h: number, nord: number[], sør: number[]) {
+    const celler: { x: number; y: number }[] = [];
+    for (let y = 0; y < h; y++) if (!nord.includes(y) && !sør.includes(y)) celler.push({ x, y });
+    return { celler, bro: nord.map((y) => ({ x, y })), stengesVed: 7 };
 }
 
 export const BRETT: Brett[] = [
@@ -92,10 +105,12 @@ export const BRETT: Brett[] = [
             { navn: 'Renault Billancourt', x: 3, y: 10 },
             { navn: 'Nanterre', x: 4, y: 3 },
         ],
+        tilbake: 7,
+        tvVed: 0,
     },
     {
         nr: 2,
-        navn: 'Grenelle, 27. mai',
+        navn: 'Ut i landet, 14.-16. mai',
         b: 28,
         h: 18,
         paris: { x: 21, y: 6 },
@@ -124,6 +139,9 @@ export const BRETT: Brett[] = [
             { navn: 'Verftene i Saint-Nazaire', x: 2, y: 12 },
             { navn: 'Renault Flins', x: 18, y: 5 },
         ],
+        tilbake: 0,
+        elv: elv(16, 18, [4, 5], [12, 13]),
+        tvVed: 0,
     },
     {
         nr: 3,
@@ -165,5 +183,7 @@ export const BRETT: Brett[] = [
             { navn: 'Renault Cléon', x: 10, y: 3 },
             { navn: 'Sud-Aviation Nantes', x: 4, y: 10 },
         ],
+        tilbake: 0,
+        tvVed: 4,
     },
 ];

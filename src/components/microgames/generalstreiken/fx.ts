@@ -48,6 +48,12 @@ export interface Fx {
     brett: number;
     /** Hit-stop: spillet står stille så mange sekunder til (ekte tid). */
     stopp: number;
+    /** TV-sendingen (ekte tid) og landene som tennes på det innfelte kartet. */
+    tvT: number | null;
+    /** Fabrikker som gikk tilbake på jobb: krymper og blir grå. */
+    tilbake: { x: number; y: number; t: number }[];
+    /** Når broen ble stengt (ekte tid). */
+    broT: number | null;
 }
 
 export function nyFx(tier: Tier): Fx {
@@ -67,6 +73,9 @@ export function nyFx(tier: Tier): Fx {
         grenelleT: null,
         brett: 0,
         stopp: 0,
+        tvT: null,
+        tilbake: [],
+        broT: null,
     };
 }
 
@@ -81,6 +90,9 @@ export function nullstillKart(fx: Fx, brett: number) {
     fx.okkupert.length = 0;
     fx.ringer.length = 0;
     fx.grenelleT = null;
+    fx.tvT = null;
+    fx.tilbake.length = 0;
+    fx.broT = null;
     fx.brett = brett;
 }
 

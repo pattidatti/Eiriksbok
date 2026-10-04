@@ -34,6 +34,7 @@ function klon(g: Game): Game {
         kø: g.kø.slice(),
         fabrikker: g.fabrikker.slice(),
         brukteNavn: new Set(g.brukteNavn),
+        spor: g.spor.slice(),
         hendelser: [],
     };
 }
@@ -44,6 +45,8 @@ function ledigOm(g: Game): Int16Array {
     const a = new Int16Array(b * h);
     const L = g.body.length;
     g.body.forEach((c, j) => (a[c.y * b + c.x] = L - j));
+    // Elva og den stengte broen er alltid sperret.
+    g.sperret.forEach((v, i) => v && (a[i] = 30000));
     return a;
 }
 
