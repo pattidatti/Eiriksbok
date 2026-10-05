@@ -5,7 +5,7 @@
   "year": "1642-1651",
   "category": "England",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/lov-og-rett/den-engelske-borgerkrigen-hero.webp",
   "factChecked": "2026-10-05",
   "details": [
     "Karl 1. mente Gud hadde gitt ham makta, og styrte uten parlamentet fra 1629 til 1640.",
@@ -24,7 +24,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/lov-og-rett/den-engelske-borgerkrigen-01.webp",
       "alt": "Kong Karl 1. på et skafott i Whitehall foran folkemengde",
       "caption": "Karl 1. ble halshugget utenfor Banqueting House i London 30. januar 1649."
     },
@@ -98,7 +98,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/lov-og-rett/den-engelske-borgerkrigen-02.webp",
       "alt": "Domstol i stor sal med kongen sittende foran dommerne",
       "caption": "Karl 1. nektet å svare på anklagen. Han mente at ingen domstol hadde rett til å dømme en konge."
     },
