@@ -493,3 +493,52 @@ KronensVei.
 - Skjermbilder: `.screenshots/kontaktark/kongens-tallerkener-1.png` til `-3.png`, cover
   `public/images/microgames/kongens-tallerkener.webp`.
 
+
+### Fase: forbedrer 2 (2026-10-05)
+
+- (A) Lesbart og riktig historie: parlamentet er låst til skottene kommer i 1639 (`parlament.fra`,
+  brett 3 uten parlament). Skiltet sier «Parlamentet: låst til 1639», så «Parlamentet: +gull / -1
+  stang», og tinntallerkenen er flyttet inn mot midten (x 680), så teppet ikke kutter den. Ett
+  regnskap for stengene overalt: HUD «X gitt bort · Y igjen», slutt-skjermen «stenger gitt bort» og
+  «stenger igjen (i 1640)» pluss linja «Du hadde N stenger: X gitt bort + Y igjen», og «Dette
+  skjedde» bruker de samme tallene. Kroker: 3 (ved 3 gitt bort er det slutt). Lapper som kommer
+  samtidig med et årsbanner, venter til banneret er borte (`pinSnart`), så ingen boble ligger over
+  banneret. Seier ser ut som seier: merket «Seier · du holdt ut til 1640», overskrift «Seier! Du holdt
+  ut til 1640 med N stenger igjen.», gull «Seier!» på scenen, rang etter stenger igjen
+  (`SEIER_RANKS`). Slutt-skjermen er flyttet til `tallerkener/SluttSkjerm.tsx` (komponenten var over
+  800 linjer).
+- (B) Gøy, kjerneløkka i midten: én synlig hendelse som endrer spillet hvert år - 1632 såpemonopol,
+  1633 titler, 1634 protester, 1635 to nye skip-tallerkener langt bak som vakler 1,4x fortere, 1636
+  titler, 1637 Hampden: skip-tallerkenen lengst inne blir rød, gir ikke gull og må sveipes to ganger
+  (klang og rykk når den slipper), 1638 skottene marsjerer inn, og myntene flyr nå fra kista bort
+  til soldatene. Kista holdes tynnere i midten: hoffkostnaden tar 20 % per sekund av alt over 45
+  gull (var 4 % over 60), forbruket stiger til 8,5 gull/s i 1635-1636, og kildene gir litt mer
+  (skip 1,55, monopol 2,4, våpen 3,0) og blir mindre tyngre per år. Ingen ny regel å huske: Hampden
+  er en tallerken, ikke en knapp. Film-06 (80 s) viser Hampden-banneret og den røde tallerkenen.
+- (C) Lærerikt: seier = nådd 1640 med gull i kista. Så går borgerkrigen som en kort, styrt epilog
+  (3 s per år, ingen tap, ingen sider eller parlament): hæren tar stengene i fire stasjoner med
+  banner og «Dette skjedde»-linje - 1642 BORGERKRIG, 1645 NEW MODEL ARMY, 1648 PRIDES UTRENSKNING,
+  1649 RETTSSAKEN MOT KONGEN (saklig, henrettelsen nevnes bare i teksten). Stengene du har igjen,
+  gir fortsatt poeng hvert år, så valgene før 1640 teller. Slutt-skjermen knytter til 1642, 1649 og
+  1660. Vinnerroboten når 1649 i alle rundene den vinner.
+- Robot: halvgod tar nå en økt i krigen når kista holder under 4 s («trenger»), ikke hver gang den
+  kommer - med tre kroker var «hver gang» det samme som tar-alt. Seende venter til 9 s som før.
+- Feel-lista: før runden var 1-4 på plass. Lagt til: 1 (klang, rykk og «reddet»-glød når Hampden
+  slipper), 3 (myntene flyr synlig til skottene, soldatene marsjerer inn), 4 (seier med banner,
+  «Seier!» og eget merke på slutt-skjermen). Etter runden: alle fire på plass.
+- Simuleringen (200 runder per robot): seende 93 % seier, median 9 960 (p10-p90 8 824-10 710);
+  halvgod 85 %, median 8 882; mester-alene 0 %, median 4 621; aldri-parlament 0 %; tar-alt 0 %;
+  tilfeldig 0 %; passiv 0 % (stopper etter ca. 17 s). Press 0,20 -> 0,31 -> 0,70. Selvspill grønt
+  (seende vant, 10 343 poeng, 147 s, nådde 1649), Chromebook p50 7,2 ms, audit --strict grønn,
+  likhet nærmest inn-mot-stranda 0,50 (under grensen, men på kanten).
+- Prøvde som IKKE virket: (1) Bare å låse parlamentet til 1639 ga seende 39 % og halvgod 0 %: alle
+  hadde brukt nød-økter i 1636-1638. (2) Tynn kiste (hoffkostnad over 30-40) uten mer inntekt løftet
+  midten til 0,28-0,30, men seende falt til 16-70 %. Det som virket, var høyere forbruk OG høyere
+  inntekt, så kista er tynn i sekunder, ikke i gull. (3) Protester hvert 6. s i stedet for 8. ga ikke
+  mer press, bare flere tap. (4) 4-6 kroker: tar-alt rakk bare tre økter i 1639 og vant like ofte som
+  halvgod; tre kroker skiller dem. (5) Forbruk 9 gull/s i 1638 fikk seende til å tape i nettleseren
+  to ganger på rad i 1638.
+- Kjente svakheter: halvgod vinner 85 % (litt lett). Likheten mot inn-mot-stranda er 0,50 avrundet.
+  Hendelsene 1635 (innlandet) og 1638 (skottene) er ikke på film-bildene (de faste tidene 55 s og
+  80 s treffer 1634 og 1637). Epilogen er styrt: eleven kan sveipe for poeng, men kan ikke tape eller
+  redde stenger. KART.md punkt 10 er gammel tekst; punkt 12 gjelder.

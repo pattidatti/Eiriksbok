@@ -75,7 +75,8 @@ export function update(g: Game, dt: number): void {
     // Ut av kista: hoffet og flåten, skottene i krigen, og hoffkostnaden på alt over taket
     // (en full kiste lønner seg ikke - gull må tjenes hvert år).
     const H = TUNING.kiste.hoff;
-    const hoff = g.gull > H.over ? (g.gull - H.over) * H.andel : 0;
+    // I krigen går alt til hæren: hoffkostnaden gjelder bare i fredsårene.
+    const hoff = g.gull > H.over && aar < TUNING.tid.skottene ? (g.gull - H.over) * H.andel : 0;
     const fast = hoffForbruk(g);
     const skott = skottetrekk(g);
     g.gull -= (fast + skott + hoff) * dt;
@@ -87,21 +88,25 @@ export function update(g: Game, dt: number): void {
     g.flyt.skott = skott;
     g.flyt.parlament = g.tin.state === 'oser' ? g.tin.gull / P.oser : 0;
 
-    if (brett.sider) sider(g, dt, aar);
-    if (brett.parlament) tinntallerken(g, dt, aar);
+    // Etter 1640 er borgerkrigen en styrt epilog: ingen sider, ingen parlamentsøkter, ingen tap.
+    if (brett.sider && !g.won) sider(g, dt, aar);
+    if (brett.parlament && !g.won) tinntallerken(g, dt, aar);
 
-    // Seier: 1640 med gull i kista. Runden fortsetter som borgerkrig fram mot 1649.
+    // Seier: 1640 med gull i kista. Så går borgerkrigen fram mot 1649.
     if (!g.won && aar >= TUNING.tid.seier && g.gull > 0) {
         g.won = true;
         g.beholdt1640 = egneStenger(g);
         g.gitt1640 = g.tatt;
+        g.page = null;
+        if (g.tin.state === 'nede') g.tin.state = 'oppe';
         g.events.push({ type: 'seier' });
     }
-    if (g.won && aar >= TUNING.tid.slutt) {
-        slutt(g, 'aar1649');
+    if (g.won) {
+        if (g.gull < 0) g.gull = 0;
+        // Rettssaken i 1649 får stå et øyeblikk på scenen før teppet går ned.
+        if (aar >= TUNING.tid.slutt + 0.7) slutt(g, 'aar1649');
     } else if (
-        // Før 1640: seks kroker fulle er slutt. I borgerkrigen tar hæren stenger til du ikke har flere.
-        (!g.won && g.tatt >= P.kroker) ||
+        g.tatt >= P.kroker ||
         !g.slots.some((s) => s.state === 'aktiv' || s.state === 'tom')
     ) {
         slutt(g, 'parlament');
@@ -169,32 +174,47 @@ function hendelser(g: Game, hele: number) {
         g.events.push({ type: 'hendelse', navn: 'saape', slot: id >= 0 ? id : undefined });
     }
     if (hele === E.innland) {
+        // Skipsskatten kreves i hele landet: to nye skip-tallerkener langt inne som vakler fort.
         g.innland = true;
-        const id = tvungen(g, 'skip', true);
-        g.events.push({ type: 'hendelse', navn: 'innland', slot: id >= 0 ? id : undefined });
+        const a = tvungen(g, 'skip', true);
+        const b = tvungen(g, 'skip', true);
+        for (const id of [a, b]) if (id >= 0) g.slots[id].plate!.fort = E.innlandFort;
+        g.events.push({ type: 'hendelse', navn: 'innland', slot: a >= 0 ? a : undefined });
+        if (b >= 0) g.events.push({ type: 'ny', slot: b });
     }
     if (hele === E.hampden) {
-        // Hampden nekter å betale: alle skip-tallerkenene slingrer på en gang.
+        // Hampden nekter å betale: skip-tallerkenen lengst inne blir rød og må sveipes to ganger.
+        let best: (typeof g.slots)[number] | null = null;
         for (const s of g.slots) {
             const p = s.plate;
             if (s.state !== 'aktiv' || !p || p.kind !== 'skip') continue;
-            p.spin = Math.max(0.05, p.spin * TUNING.protest.andel);
-            p.protestT = TUNING.protest.tid;
-            g.events.push({ type: 'protest', slot: s.id });
+            if (!best || SLOTS[s.id].dybde > SLOTS[best.id].dybde) best = s;
         }
-        g.events.push({ type: 'hendelse', navn: 'hampden' });
+        if (best) {
+            const p = best.plate!;
+            p.spin = Math.max(0.3, p.spin * TUNING.protest.andel);
+            p.hampden = E.hampdenSveip;
+            p.protestT = 99;
+            g.events.push({ type: 'protest', slot: best.id });
+        }
+        g.events.push({ type: 'hendelse', navn: 'hampden', slot: best?.id });
     }
     if (hele === E.skotter) g.events.push({ type: 'hendelse', navn: 'skotter' });
-    if (g.won && (TUNING.borgerkrig.tarAar as readonly number[]).includes(hele)) {
-        if (hele === 1642) g.events.push({ type: 'hendelse', navn: 'borgerkrig' });
-        // Parlamentets hær tar den rikeste stanga du har igjen.
-        const id = parlamentTilbud(g)[0];
-        if (id !== undefined) {
+    const st = TUNING.borgerkrig.stasjoner as readonly number[];
+    const i = st.indexOf(hele);
+    if (g.won && i >= 0) {
+        const navn = (['borgerkrig', 'nma', 'pride', 'rettssak'] as const)[i];
+        g.events.push({ type: 'hendelse', navn });
+        // Parlamentets hær tar stengene dine én etter én, de rikeste først. I 1649 er alt tatt.
+        const igjen = egneStenger(g);
+        const n = Math.ceil(igjen / (st.length - i));
+        for (let k = 0; k < n; k++) {
+            const id = parlamentTilbud(g)[0];
+            if (id === undefined) break;
             const s = g.slots[id];
             g.taattKind[id] = s.plate?.kind ?? null;
             s.state = 'tatt';
             s.plate = null;
-            if (g.page?.slot === id) g.page = null;
             g.tatt++;
             g.events.push({ type: 'haer', slot: id });
         }

@@ -19,6 +19,7 @@ Ferdig spill (2D-canvas). Brief: `docs/microgames/briefer/kongens-tallerkener.md
 | `pit.ts`    | Orkestergraven: rampelysene (gulltaket), kista med myntberget, skottenes hånd, myntene og sekkene. |
 | `sfx.ts`    | Lyden (`makeSfx`): syngende metall, mynter, knusing, tinnklokke, sekker, trommer og torden. |
 | `YearBar.tsx` | Tidslinja 1629-1649 på slutt-skjermen (merker 1640, 1642, 1649) og fargene `GOLD`, `CREAM`, `KRONE`. |
+| `SluttSkjerm.tsx` | Slutt-skjermen (`Result`): seier eller tap, ett regnskap «gitt bort + igjen = stenger», rang, «Dette skjedde». |
 | `texts.ts`  | Tips ved tap, `seierLinje`, rangene (etter år alene, med desimal), `sluttLinje`.                                |
 
 ## Kjerneløkka
@@ -36,7 +37,7 @@ Tre regler eleven skal huske: snurr kildene; kista tømmes; parlamentet gir gull
 5. Kista: + `inntekt`, - `hoffForbruk`, - `skottetrekk` (fra 1639, stiger i overtiden), og
    hoffkostnaden `kiste.hoff` på alt over 90 gull. Å spare lønner seg ikke.
 6. Fra brett 2 bærer sider inn nye tallerkener hvert `sider.hver` s.
-7. Fra 1635 senker tinntallerkenen seg (en parlamentsøkt) og tilbyr de to rikeste stengene
+7. Fra 1639 (låst til skottene kommer) senker tinntallerkenen seg (en parlamentsøkt) og tilbyr de to rikeste stengene
    (`parlamentTilbud`). Slipp den på én: stanga heises til taket for godt, og den øser gull.
 8. Poeng ved hvert årsskifte: gull tjent det året x stenger igjen. Seier: 1640 med gull i kista,
    så overtid. Tap før 1640 (tom kiste eller ingen stenger) halverer poengene (`poeng.tap`).
@@ -44,10 +45,17 @@ Tre regler eleven skal huske: snurr kildene; kista tømmes; parlamentet gir gull
    1633/1636 titler, 1634 protester, 1635 skipsskatt i hele landet (tvungen skip bakerst, skip
    tyngre), 1637 Hampden (alle skip får protest), 1638 skottene marsjerer (`marsj` gull/s, figurer
    i `drawSkotter`). Tast 1/2 gir parlamentet stanga med det tallet på prislappen.
-10. Borgerkrigen etter 1640: årene går fortere (`tid.aarOvertid` s per år, se `aarNa`), hæren tar
+10. (Gammel tekst under, se 12.) Borgerkrigen etter 1640: årene går fortere (`tid.aarOvertid` s per år, se `aarNa`), hæren tar
    den rikeste stanga hvert år i `borgerkrig.tarAar` (hendelse `haer`), runden slutter i 1649
-   (`aar1649`) eller når du ikke har stenger igjen. Seks kroker er bare slutt før 1640.
+   (`aar1649`) eller når du ikke har stenger igjen. Tre kroker (`parlament.kroker`) er slutt før 1640.
 11. `valg` telles når en ny tallerken vakler mens minst én annen vakler, og når parlamentet senker seg.
+
+12. Forbedrer 2: 1635 gir to tvungne skip-tallerkener bakerst med `fort` = `hendelser.innlandFort`
+   (vakler fort); 1637 gjør skip-tallerkenen lengst inne rød (`plate.hampden` = 2 sveip, gir ikke
+   gull før den er sveipet to ganger, hendelse `hampden-ok`). Etter 1640 er borgerkrigen en styrt
+   epilog uten tap: ingen sider eller parlament, hæren tar stengene i `borgerkrig.stasjoner`
+   (1642, 1645, 1648, 1649 - hendelsene `borgerkrig`, `nma`, `pride`, `rettssak`), og runden
+   slutter 0,7 år etter 1649. Hoffkostnaden gjelder bare før 1639.
 
 ## Knapper som styrer mest
 

@@ -37,7 +37,7 @@ interface BotOpts {
 
 export const BOTS: Record<Style, BotOpts> = {
     seende: { every: 3, redd: 0.55, med: 0.75, maksBue: 3, sikt: 0.12, parlament: 'trenger', nod: 9, nodFor: 7, overspinn: true, ofre: 'billigst' },
-    halvgod: { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'krig', nod: 0, nodFor: 8, overspinn: false, ofre: 'vaklende' },
+    halvgod: { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'trenger', nod: 4, nodFor: 8, overspinn: false, ofre: 'vaklende' },
     'tar-alt': { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'alltid', nod: 0, nodFor: 0, overspinn: false, ofre: 'vaklende' },
     'aldri-parlament': { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'aldri', nod: 0, nodFor: 0, overspinn: false, ofre: 'vaklende' },
     'mester-alene': { every: 3, redd: 0.55, med: 0.75, maksBue: 3, sikt: 0.12, parlament: 'aldri', nod: 0, nodFor: 0, overspinn: true, ofre: 'billigst' },

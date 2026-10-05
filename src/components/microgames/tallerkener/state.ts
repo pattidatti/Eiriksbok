@@ -17,6 +17,10 @@ export interface Plate {
     lett: number;
     /** Sekunder igjen av en protest: den slingrer rødt og gir ikke gull. */
     protestT: number;
+    /** Hampden-tallerkenen (1637): så mange sveip igjen før den slutter å protestere. */
+    hampden: number;
+    /** Tapet ganges med dette (skipsskatt i innlandet vakler fort). */
+    fort: number;
 }
 
 export type SlotState = 'stengt' | 'tom' | 'aktiv' | 'tatt';
@@ -74,8 +78,9 @@ export type GameEvent =
     | { type: 'tin-ned' }
     | { type: 'parlament'; slot: number }
     | { type: 'protest'; slot: number }
+    | { type: 'hampden-ok'; slot: number }
     | { type: 'storm' }
-    | { type: 'hendelse'; navn: 'saape' | 'innland' | 'hampden' | 'skotter' | 'borgerkrig'; slot?: number }
+    | { type: 'hendelse'; navn: 'saape' | 'innland' | 'hampden' | 'skotter' | 'borgerkrig' | 'nma' | 'pride' | 'rettssak'; slot?: number }
     | { type: 'haer'; slot: number }
     | { type: 'seier' }
     | { type: 'slutt' };
@@ -142,7 +147,7 @@ export interface Game {
 }
 
 export function newPlate(kind: PlateKind): Plate {
-    return { kind, spin: TUNING.snurr.start, kombo: 1, komboT: 0, vakler: false, lett: 0, protestT: 0 };
+    return { kind, spin: TUNING.snurr.start, kombo: 1, komboT: 0, vakler: false, lett: 0, protestT: 0, hampden: 0, fort: 1 };
 }
 
 export function newGame(seed: number): Game {

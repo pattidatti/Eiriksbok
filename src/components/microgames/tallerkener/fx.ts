@@ -297,6 +297,12 @@ export function onEvents(
                 sfx?.tromme();
                 v.shake = Math.max(v.shake, e.navn === 'hampden' || e.navn === 'borgerkrig' ? 0.35 : 0.18);
                 break;
+            case 'hampden-ok':
+                // Andre sveip: protesten slipper, med klang og et lite rykk.
+                v.reddet[e.slot] = 1;
+                v.shake = Math.max(v.shake, 0.15);
+                sfx?.clang();
+                break;
             case 'haer':
             case 'parlament': {
                 for (const s of g.slots)
@@ -397,7 +403,8 @@ export function stepView(v: ViewState, g: Game, dt: number, gdt: number, sfx: Sf
         if (v.accSkott >= 3 && v.arm > 0.85) {
             v.accSkott -= 3;
             const m = chestMouth();
-            coin(v, 'skott', { x: m.x - 30, y: m.y }, { x: -30, y: 500 + Math.random() * 30 }, 30, 0.9);
+            // Myntene flyr fra kista bort til soldatene ved høyre kulisse, så eleven ser hvor de går.
+            coin(v, 'skott', { x: m.x + 30, y: m.y }, { x: W - 110 + Math.random() * 40, y: 470 + Math.random() * 20 }, 60, 0.9);
         }
         // Parlamentets gullsekker faller ned i kista mens tinntallerkenen øser.
         if (g.tin.state === 'oser') {

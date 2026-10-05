@@ -26,12 +26,12 @@ export const BOT_INFO = {
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Treg og unøyaktig: sveiper bare hvert fjerde tick, høyst to naboer per bue, uten å sikte på overspinn. Tar en parlamentsøkt i nød før 1639 og hver gang den kommer i krigen, og gir bort stanga som vakler mest.',
+            'Treg og unøyaktig: sveiper bare hvert fjerde tick, høyst to naboer per bue, uten å sikte på overspinn. Tar en parlamentsøkt i krigen først når kista holder under 4 s (seende venter bare til 9 s), og gir bort stanga som vakler mest.',
     },
     'tar-alt': {
         forventer: 'taper',
         beskrivelse:
-            'Sjonglerer som halvgod, men drar ned parlamentets tallerken hver gang den kommer (fra 1635) - lettvint gull, men før krigen koster hver økt to stenger.',
+            'Sjonglerer som halvgod, men drar ned parlamentets tallerken hver gang den kommer (fra 1639) - lettvint gull, men tre økter er tre stenger, og da er det slutt.',
     },
     'aldri-parlament': {
         forventer: 'taper',

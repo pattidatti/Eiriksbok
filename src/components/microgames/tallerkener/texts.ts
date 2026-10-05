@@ -9,20 +9,23 @@ import { aarNa } from './rules';
 export const TIPS = {
     fred: 'Tallerkenene sto stille, og kista gikk tom før krigen. En konge uten parlament må holde hver kilde i gang selv: sveip over dem som vakler, før de stopper.',
     kiste: 'Skipsskatten og titlene ga for lite til å betale krigen mot skottene. Karl måtte kalle inn parlamentet i 1640. Spar parlamentets tallerken til skottene kommer, og ta den da.',
-    parlament:
-        'Parlamentet ga penger bare mot mer makt. Tok du tallerkenen for tidlig, hadde du ingen kilder igjen da krigen kom. I 1642 endte striden i borgerkrig.',
+    parlament: `Parlamentet ga penger bare mot mer makt. Ga du bort ${TUNING.parlament.kroker} stenger, styrte ikke kongen lenger. Ta bare så mye gull som du trenger for å betale krigen.`,
     aar1649: '',
 } as const;
 
 /** Linja når eleven har nådd 1640: hva stengene du beholdt, betydde i borgerkrigen. */
 export function seierLinje(g: Game): string {
-    const aar = sluttAar(g);
-    if (g.cause === 'aar1649')
-        return 'Du hadde stenger igjen helt til 1649. Karl hadde ikke det: han tapte borgerkrigen som begynte i 1642.';
-    if (g.cause === 'parlament')
-        return `Parlamentets hær tok den siste stanga i ${aar}. Jo flere stenger du beholdt i 1640, jo lenger holdt du ut.`;
-    return `Kista ble tom i ${aar}. Krigen mot parlamentet kostet mer enn noen konge kunne betale alene.`;
+    const n = g.beholdt1640 ?? 0;
+    return `Etter 1640 tok parlamentets hær stengene én etter én: 1642 borgerkrig, 1645 New Model Army, 1648 Prides utrenskning, 1649 rettssaken. De ${n} stengene du hadde igjen, ga poeng hvert år i krigen.`;
 }
+
+/** Ranger for dem som vant: hvor mange stenger du hadde igjen i 1640. */
+export const SEIER_RANKS: [number, string][] = [
+    [0, 'Holdt ut som Karl'],
+    [3, 'Konge med makt igjen'],
+    [5, 'Sterk konge'],
+    [7, 'Kongen over alle konger'],
+];
 
 /** Ranger etter året du nådde. Karl ga seg i 1640, borgerkrigen kom i 1642, dommen i 1649. */
 export const RANKS: [number, string][] = [
@@ -58,5 +61,5 @@ export function sluttLinje(g: Game): string {
     const aar = sluttAar(g);
     if (!g.won) return `Teppet falt i ${aar}, før du nådde 1640.`;
     const n = g.beholdt1640 ?? 0;
-    return `Du nådde 1640 med ${n} ${n === 1 ? 'stang' : 'stenger'}. Teppet falt i ${aar}.`;
+    return `Seier! Du holdt ut til 1640 med ${n} ${n === 1 ? 'stang' : 'stenger'} igjen.`;
 }

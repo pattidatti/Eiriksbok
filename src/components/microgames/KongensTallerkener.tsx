@@ -8,10 +8,8 @@ import {
     ArcadeTag,
     ArcadeBigButton,
     ArcadeSmallButton,
-    ArcadeStats,
 } from './arcade/ArcadeShell';
 import { useArcadeLoop, useArcadeText, type ArcadeView } from './arcade/useArcade';
-import { ArcadeLessons } from './arcade/ArcadeLayers';
 import type { ArcadeTheme } from './arcade/tokens';
 import { useArcadeSave, rankFor } from './arcade/save';
 import { createArcadeSynth } from './arcade/synth';
@@ -20,7 +18,7 @@ import { usePlaytest } from './playtest';
 import { newGame, update, type Game } from './tallerkener/game';
 import type { GameEvent } from './tallerkener/state';
 import { TUNING } from './tallerkener/tuning';
-import { aarNa, nyBue, swipeHit, takeParliament, acceptPage, tinNede, type Bue } from './tallerkener/rules';
+import { aarNa, egneStenger, nyBue, swipeHit, takeParliament, acceptPage, tinNede, type Bue } from './tallerkener/rules';
 import { BOTS, makeBot, makeRandomBot } from './tallerkener/bots';
 import { BOT_INFO, GAME_ID, MAKS_SEKUNDER, snapshotOf } from './tallerkener/sim';
 import { drawGame } from './tallerkener/draw';
@@ -28,7 +26,7 @@ import { burst, newView, onEvents, pagePlate, stepView, type ViewState } from '.
 import { buildArt, type Art } from './tallerkener/art';
 import { makeSfx } from './tallerkener/sfx';
 import { CHEST, FART_REF, H, W, chestMouth, platePos, segmentHits, type Pt } from './tallerkener/layout';
-import { RANKS, TIPS, aarAlene, fmtAar, seierLinje, sluttAar, sluttLinje } from './tallerkener/texts';
+import { RANKS, SEIER_RANKS, TIPS, aarAlene, fmtAar, seierLinje, sluttAar, sluttLinje } from './tallerkener/texts';
 
 // Elleve år (kongens-tallerkener). Du er Karl 1. i 1629 og holder pengekildene i gang som
 // snurrende tallerkener på en maskeradescene. Parlamentets tinntallerken gir mye gull,
@@ -60,7 +58,8 @@ const THEME: Partial<ArcadeTheme> = {
     bannerTop: '30%',
 };
 
-import { CREAM, GOLD, KRONE, YearBar } from './tallerkener/YearBar';
+import { CREAM, GOLD, KRONE } from './tallerkener/YearBar';
+import { SluttSkjerm, type Result } from './tallerkener/SluttSkjerm';
 
 interface Save {
     bestScore: number;
@@ -70,22 +69,6 @@ interface Save {
     runs: number;
     /** Titlenes bok: titler solgt over alle runder. */
     titler: number;
-}
-
-interface Result {
-    won: boolean;
-    score: number;
-    alene: number;
-    tatt: number;
-    aar: number;
-    /** Stenger igjen i 1640 (null = nådde ikke 1640). */
-    beholdt: number | null;
-    linje: string;
-    forklaring: string;
-    rank: string;
-    titler: number;
-    rekord: boolean;
-    lessons: string[];
 }
 
 type BotName = keyof typeof BOT_INFO;
@@ -124,6 +107,18 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
     const outroT = useRef(0);
     const lest = useRef(new Set<string>());
     /** Et læringspunkt én gang per runde (gjentatte hendelser skal ikke vokse seg viktigst). */
+    // Bannerne står alene: lapper som kommer samtidig, venter til banneret er borte.
+    const bannerTil = useRef(0);
+    const banner = (title: string, color?: string, sec = 2.2) => {
+        bannerTil.current = performance.now() + sec * 1000;
+        text.banner(title, color, sec);
+    };
+    const pinSnart: typeof text.point = (key, t, a, o) => {
+        const vent = bannerTil.current - performance.now();
+        if (vent <= 0) return text.point(key, t, a, o);
+        window.setTimeout(() => modeRef.current === 'play' && text.point(key, t, a, o), vent + 120);
+        return true;
+    };
     const lessonOnce = (key: string, t: string, w = 1) => {
         if (lest.current.has(key)) return;
         lest.current.add(key);
@@ -224,7 +219,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
         if (g.won) {
             text.lesson(
                 'borgerkrig',
-                `Du ga bort ${g.gitt1640} ${g.gitt1640 === 1 ? 'stang' : 'stenger'} før 1640. I 1642 kom borgerkrigen, og parlamentets hær vant. I 1649 ble Karl dømt og henrettet.`,
+                `Du ga bort ${g.gitt1640} og hadde ${g.beholdt1640 ?? 0} igjen i 1640. I 1642 kom borgerkrigen, og parlamentets hær vant. I 1649 ble Karl dømt og henrettet.`,
                 5
             );
             text.lesson(
@@ -240,11 +235,13 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
             score,
             alene,
             tatt: g.tatt,
+            gitt: g.won ? g.gitt1640 : g.tatt,
+            igjen: g.won ? (g.beholdt1640 ?? 0) : egneStenger(g),
             aar,
             beholdt: g.beholdt1640,
             linje: sluttLinje(g),
             forklaring: g.won ? seierLinje(g) : g.cause ? TIPS[g.cause] : '',
-            rank: rankFor(RANKS, g.won ? aar : Math.min(aar, 1639)),
+            rank: g.won ? rankFor(SEIER_RANKS, g.beholdt1640 ?? 0) : rankFor(RANKS, Math.min(aar, 1639)),
             titler: prev.titler + g.titler,
             rekord: score > prev.bestScore && prev.runs > 0,
             lessons: text.lessons(3),
@@ -272,19 +269,19 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
         switch (e.type) {
             case 'aar': {
                 if (g.sistPoeng > 0) text.float(`+${g.sistPoeng} poeng`, ...xy({ x: 790, y: 440 }), GOLD, true);
-                if (e.aar === 1633) text.banner('1633 · TITLER TIL SALGS', '#6b4a14');
-                if (e.aar === TUNING.protest.fra) text.banner('1634 · FOLK PROTESTERER', '#8e2230');
-                if (e.aar === 1636) text.banner('1636 · FLERE TITLER', '#6b4a14');
-                if (e.aar === 1641) text.banner('1641 · PARLAMENTET KREVER MER', '#4a5254', 2.6);
+                if (e.aar === 1633) banner('1633 · TITLER TIL SALGS', '#6b4a14');
+                if (e.aar === TUNING.protest.fra) banner('1634 · FOLK PROTESTERER', '#8e2230');
+                if (e.aar === 1636) banner('1636 · FLERE TITLER', '#6b4a14');
+                if (e.aar === 1641) banner('1641 · PARLAMENTET KREVER MER', '#4a5254', 2.6);
                 const el = hud.score.current;
                 el?.animate?.([{ transform: 'scale(1.35)' }, { transform: 'scale(1)' }], { duration: 420, easing: 'cubic-bezier(.2,1.7,.4,1)' });
                 break;
             }
             case 'brett':
-                if (e.nr === 2) text.banner('1631 · NYE KILDER', '#6b4a14');
+                if (e.nr === 2) banner('1631 · NYE KILDER', '#6b4a14');
                 if (e.nr === 3)
-                    text.point('tin-venter', 'Parlamentet venter med gull', toScreen(() => view.current.tin), { seconds: 4 });
-                if (e.nr === 4) text.banner('1639 · SKOTTENE KOMMER', '#8e2230', 2.6);
+                    pinSnart('tin-venter', 'Parlamentet venter med gull', toScreen(() => view.current.tin), { seconds: 4 });
+                if (e.nr === 4) banner('1639 · SKOTTENE KOMMER', '#8e2230', 2.6);
                 break;
             case 'faller': {
                 const t0 = g.treff;
@@ -298,7 +295,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                 break;
             }
             case 'flyr':
-                text.point('flyr', 'For hardt! Kast roligere', plateAt(e.slot), { tone: 'fare', seconds: 3 });
+                pinSnart('flyr', 'For hardt! Kast roligere', plateAt(e.slot), { tone: 'fare', seconds: 3 });
                 lessonOnce('flyr', 'Presset du en kilde for hardt, mistet du den. Mange som før hadde støttet kongen, ble sinte.', 0.9);
                 break;
             case 'kombo': {
@@ -310,21 +307,23 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                 text.float('Tittel solgt', ...xy({ x: 860, y: 450 }), '#f0d58a');
                 break;
             case 'tittel-ny':
-                text.point('tittel-ny', 'Ny adelstittel: tung, men rik', plateAt(e.slot), { seconds: 4 });
+                pinSnart('tittel-ny', 'Ny adelstittel: tung, men rik', plateAt(e.slot), { seconds: 4 });
                 break;
             case 'side':
-                text.point('side', 'Dra tallerkenen til stanga', toScreen(() => (view.current.page ? pagePlate(view.current.page) : null)), {
+                pinSnart('side', 'Dra tallerkenen til stanga', toScreen(() => (view.current.page ? pagePlate(view.current.page) : null)), {
                     until: () => !game.current.page,
                     once: true,
                     seconds: 4,
                 });
                 break;
             case 'protest':
-                text.point('protest', 'Protest! Den rikeste kilden stopper', plateAt(e.slot), { tone: 'fare', seconds: 3 });
+                // Hampden-tallerkenen får sin egen lapp (under), ikke protest-lappen.
+                if (!g.slots[e.slot]?.plate?.hampden)
+                    pinSnart('protest', 'Protest! Den rikeste kilden stopper', plateAt(e.slot), { tone: 'fare', seconds: 3 });
                 lessonOnce('protest', 'Skipsskatten ble krevd av hele landet. Mange som før hadde støttet kongen, ble sinte og nektet å betale.', 1);
                 break;
             case 'tin-ned':
-                text.point('tin', `+${g.tin.gull} gull, men -1 stang`, toScreen(() => view.current.tin), {
+                pinSnart('tin', `+${g.tin.gull} gull, men -1 stang`, toScreen(() => view.current.tin), {
                     until: () => game.current.tin.state !== 'nede',
                     seconds: 3,
                 });
@@ -364,30 +363,51 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                 break;
             }
             case 'seier':
-                text.banner('1640 · DU HOLDT UT', '#6b4a14', 3);
+                banner('1640 · SEIER: DU HOLDT UT', '#6b4a14', 3);
+                text.float('Seier!', ...xy({ x: 480, y: 300 }), GOLD, true, 2);
                 break;
             case 'hendelse':
                 if (e.navn === 'saape') {
-                    text.banner('1632 · SÅPEMONOPOLET', '#6b4a14');
-                    if (e.slot !== undefined) text.point('saape', 'Monopol på såpe: ny kilde', plateAt(e.slot), { seconds: 4 });
+                    banner('1632 · SÅPEMONOPOLET', '#6b4a14');
+                    if (e.slot !== undefined) pinSnart('saape', 'Monopol på såpe: ny kilde', plateAt(e.slot), { seconds: 4 });
                     lessonOnce('saape', 'Karl solgte enerett på varer som såpe. Da ble såpa dyrere for alle.', 0.8);
                 }
                 if (e.navn === 'innland') {
-                    text.banner('1635 · SKIPSSKATT OVERALT', '#1f3a6b');
-                    if (e.slot !== undefined) text.point('innland', 'Nå betaler innlandet også', plateAt(e.slot), { seconds: 4 });
+                    banner('1635 · SKIPSSKATT OVERALT', '#1f3a6b');
+                    if (e.slot !== undefined) pinSnart('innland', 'Innlandet betaler nå: vakler fort', plateAt(e.slot), { tone: 'fare', seconds: 4 });
+                    lessonOnce('innland', 'I 1635 krevde Karl skipsskatt av hele landet, ikke bare av byene ved kysten.', 0.9);
                 }
                 if (e.navn === 'hampden') {
-                    text.banner('1637 · HAMPDEN NEKTER', '#8e2230', 2.6);
+                    banner('1637 · HAMPDEN NEKTER', '#8e2230', 2.6);
+                    if (e.slot !== undefined)
+                        pinSnart('hampden', 'Hampden nekter: sveip to ganger', plateAt(e.slot), {
+                            tone: 'fare',
+                            seconds: 5,
+                            until: () => !(game.current.slots[e.slot!]?.plate?.hampden ?? 0),
+                        });
                     lessonOnce('hampden', 'I 1637 nektet John Hampden å betale skipsskatt. Han tapte saken, men mange ga ham rett.', 1.3);
                 }
                 if (e.navn === 'skotter') {
-                    text.banner('1638 · SKOTTENE SAMLES', '#1f3a6b', 2.6);
-                    text.point('skotter', 'Skottene marsjerer: kista lekker', at({ x: 760, y: 400 }), { tone: 'fare', seconds: 4 });
+                    banner('1638 · SKOTTENE SAMLES', '#1f3a6b', 2.6);
+                    pinSnart('skotter', 'Skottene marsjerer: kista lekker', at({ x: 760, y: 400 }), { tone: 'fare', seconds: 4 });
                 }
-                if (e.navn === 'borgerkrig') text.banner('1642 · BORGERKRIG', '#8e2230', 3);
+                // Borgerkrigen er en kort epilog: hæren tar stengene i fire stasjoner.
+                if (e.navn === 'borgerkrig') {
+                    banner('1642 · BORGERKRIG', '#8e2230', 2.4);
+                    lessonOnce('krig1642', 'I 1642 begynte borgerkrigen mellom kongen og parlamentet.', 1.4);
+                }
+                if (e.navn === 'nma') {
+                    banner('1645 · NEW MODEL ARMY', '#8e2230', 2.4);
+                    lessonOnce('nma', 'I 1645 laget parlamentet en ny hær med faste soldater, New Model Army. Den vant krigen.', 1.1);
+                }
+                if (e.navn === 'pride') {
+                    banner('1648 · PRIDES UTRENSKNING', '#4a5254', 2.4);
+                    lessonOnce('pride', 'I 1648 stengte soldater ute alle i parlamentet som ville forhandle med kongen. Det kalles Prides utrenskning.', 1.1);
+                }
+                if (e.navn === 'rettssak') banner('1649 · RETTSSAKEN MOT KONGEN', '#2b3133', 2.4);
                 break;
             case 'haer':
-                text.point('haer', 'Parlamentet tar en stang', plateAt(e.slot), { tone: 'fare', seconds: 3 });
+                pinSnart('haer', 'Hæren tar en stang', plateAt(e.slot), { tone: 'fare', seconds: 2 });
                 break;
             default:
                 break;
@@ -432,9 +452,10 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
             for (let i = 0; i < pips.length; i++)
                 (pips[i] as HTMLElement).style.background = i < g.tatt ? '#9aa3a6' : 'transparent';
         }
-        if (hud.stenger.current) hud.stenger.current.textContent = g.won
-                ? 'Borgerkrig: hæren tar resten'
-                : `${g.tatt} av ${kroker} - ved ${kroker} er det slutt`;
+        if (hud.stenger.current)
+            hud.stenger.current.textContent = g.won
+                ? `Borgerkrig: ${egneStenger(g)} igjen`
+                : `${g.tatt} gitt bort · ${egneStenger(g)} igjen`;
     };
 
     const { bindStage, bindCanvas } = useArcadeLoop({
@@ -672,7 +693,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                             </div>
                         </div>
 
-                        {/* Parlamentets makt: seks kroker i loftet. */}
+                        {/* Parlamentets makt: krokene i loftet (fulle = slutt). */}
                         <div style={{ ...cartouche, left: '1.5%', bottom: '1.5%', padding: '5px 12px', borderRadius: 4, textAlign: 'left' }}>
                             <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 700 }}>Gitt til parlamentet</div>
                             <div ref={hud.makt} style={{ display: 'flex', gap: 5, margin: '4px 0 2px' }}>
@@ -681,7 +702,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                                 ))}
                             </div>
                             <div ref={hud.stenger} style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, opacity: 0.9 }}>
-                                0 av {kroker} - ved {kroker} er det slutt
+                                0 gitt bort · {TUNING.start.length} igjen
                             </div>
                         </div>
 
@@ -743,7 +764,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                             <ol style={{ textAlign: 'left', maxWidth: 440, margin: '6px auto', paddingLeft: 22, fontSize: 15, lineHeight: 1.45 }}>
                                 <li>Sveip over tallerkenene. Bare de som snurrer, gir gull.</li>
                                 <li>Kista tømmes hele tiden, og fort når skottene kommer.</li>
-                                <li>Parlamentet gir mye gull, men tar en stang for godt. Hver stang du har i 1640, holder deg lenger i borgerkrigen.</li>
+                                <li>Parlamentet er låst til skottene kommer i 1639. Det gir mye gull, men tar en stang for godt. Gir du bort {kroker}, er det slutt.</li>
                             </ol>
                             <ArcadeBigButton onClick={start}>Løft teppet</ArcadeBigButton>
                             {save.runs > 0 && (
@@ -768,28 +789,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                     )}
 
                     {mode === 'over' && result && (
-                        <ArcadeScreen>
-                            <ArcadeTag color={result.won ? '#6b4a14' : '#8e2230'}>
-                                {result.won ? `Du nådde ${result.aar}` : `Teppet falt i ${result.aar}`}
-                            </ArcadeTag>
-                            <h2 style={{ fontFamily: SERIF, fontSize: 25, lineHeight: 1.15, margin: '6px auto 2px', maxWidth: 520, textAlign: 'center' }}>
-                                {result.linje}
-                            </h2>
-                            <YearBar aar={result.aar} best={save.bestAar ?? 0} />
-                            <ArcadeStats
-                                items={[
-                                    { value: String(result.aar), label: 'år nådd' },
-                                    { value: result.beholdt !== null ? String(result.beholdt) : '-', label: 'stenger i 1640' },
-                                    { value: result.score.toLocaleString('nb-NO'), label: result.rekord ? 'poeng - ny rekord!' : 'poeng' },
-                                    { value: `${result.titler} av 266`, label: 'titler solgt' },
-                                ]}
-                            />
-                            <p style={{ fontWeight: 700, fontFamily: SERIF, fontSize: 18, margin: '2px 0' }}>{result.rank}</p>
-                            <p style={{ maxWidth: 520, textAlign: 'center', fontSize: 14, margin: '2px auto' }}>{result.forklaring}</p>
-                            <ArcadeLessons items={result.lessons} />
-                            <ArcadeBigButton onClick={start}>Én runde til</ArcadeBigButton>
-                            <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
-                        </ArcadeScreen>
+                        <SluttSkjerm result={result} bestAar={save.bestAar ?? 0} serif={SERIF} onAgain={start} onMenu={toMenu} />
                     )}
                 </ArcadeStage>
             </div>

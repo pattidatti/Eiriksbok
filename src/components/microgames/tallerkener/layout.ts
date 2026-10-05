@@ -53,8 +53,8 @@ export function chestMouth(): Pt {
 
 /** Parlamentets tinntallerken: oppe i taket, nede i rekkevidde, og foran rampen når den øser. */
 export const TIN = {
-    oppe: { x: 790, y: 128 },
-    nede: { x: 790, y: 212 },
+    oppe: { x: 680, y: 128 },
+    nede: { x: 680, y: 212 },
     oser: { x: 842, y: 420 },
     rx: 58,
     ry: 17,

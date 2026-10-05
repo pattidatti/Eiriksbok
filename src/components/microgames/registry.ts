@@ -2533,7 +2533,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'kongens-tallerkener',
         title: 'Elleve år',
         description:
-            'Det er 1629, og du er Karl 1. Du har sendt parlamentet hjem og vil styre helt alene. Pengekildene dine er forgylte tallerkener på stenger, og de gir bare gull mens de snurrer. Sveip over dem for å holde dem i gang - én lang bue over flere gir kombo, men kaster du for hardt, flyr tallerkenen av. Kista tømmes hele tiden, og mye fortere når skottene gjør opprør i 1639. Oppe i taket henger parlamentets tallerken. Den gir mye gull, men tar en av stengene dine for godt. Hold ut til 1640 som Karl gjorde.',
+            'Det er 1629, og du er Karl 1. Du har sendt parlamentet hjem og vil styre helt alene. Pengekildene dine er forgylte tallerkener på stenger, og de gir bare gull mens de snurrer. Sveip over dem for å holde dem i gang - én lang bue over flere gir kombo, men kaster du for hardt, flyr tallerkenen av. Kista tømmes hele tiden, og mye fortere når skottene gjør opprør i 1639. Oppe i taket henger parlamentets tallerken. Den er låst til skottene kommer. Da gir den mye gull, men tar en av stengene dine for godt. Hold ut til 1640 som Karl gjorde, og se borgerkrigen ta resten.',
         estimatedSeconds: 150,
         sjanger: 'sjonglering',
         tone: 'alvorlig',

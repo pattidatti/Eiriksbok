@@ -45,7 +45,7 @@ export interface Brett {
 export const BRETT: Brett[] = [
     { nr: 1, fra: 1629, navn: '1629', sider: false, parlament: false, gratis: true },
     { nr: 2, fra: 1631, navn: '1631-1634', sider: true, parlament: false, gratis: false },
-    { nr: 3, fra: 1635, navn: '1635-1638', sider: true, parlament: true, gratis: false },
+    { nr: 3, fra: 1635, navn: '1635-1638', sider: true, parlament: false, gratis: false },
     { nr: 4, fra: 1639, navn: '1639-1640', sider: true, parlament: true, gratis: false },
 ];
 

@@ -47,13 +47,13 @@ export function spinTap(g: Game, p: Plate): number {
     const aarGatt = Math.min(aarNa(g), TUNING.tid.seier) - TUNING.tid.start;
     const t = TUNING.typer[p.kind];
     const innland = g.innland && p.kind === 'skip' ? 1 + TUNING.hendelser.innlandTyngre : 1;
-    return S.tap * t.vekt * (1 + t.tyngre * aarGatt) * innland;
+    return S.tap * t.vekt * (1 + t.tyngre * aarGatt) * innland * p.fort;
 }
 
 /** Gull per sekund fra én stang akkurat nå (0 når den vakler eller har nådd årets tak). */
 export function inntekt(s: Slot): number {
     const p = s.plate;
-    if (!p || p.spin < S.slakk || p.protestT > 0) return 0;
+    if (!p || p.spin < S.slakk || p.protestT > 0 || p.hampden > 0) return 0;
     if (s.aarGull >= TUNING.typer[p.kind].tak) return 0;
     const over = p.spin >= S.overspinn ? 2 : 1;
     return TUNING.typer[p.kind].gull * over * p.kombo;
@@ -97,6 +97,16 @@ export function swipeHit(g: Game, bue: Bue, h: Hit): void {
     const p = s.plate;
     const fart = Math.max(0, Math.min(2.5, h.fart));
     const for_ = p.spin;
+    // Hampden-tallerkenen tar to sveip: det første stopper protesten bare halvveis.
+    if (p.hampden > 0) {
+        p.hampden--;
+        p.spin += fart * S.perFart * 0.5;
+        if (p.hampden === 0) {
+            p.protestT = 0;
+            g.events.push({ type: 'hampden-ok', slot: h.slot });
+        }
+        return;
+    }
     p.spin += fart * S.perFart;
     if (p.spin > S.flyr) {
         flyAv(g, h.slot);

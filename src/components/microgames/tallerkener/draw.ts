@@ -357,8 +357,9 @@ function drawTin(ctx: CanvasRenderingContext2D, art: Art, g: Game, v: ViewState)
     ctx.restore();
     if (!oser && !v.tinDrag) {
         // Skilt under skyen: hva den grå tallerkenen er, også mens den venter i taket.
-        const fra = aarNa(g) < TUNING.parlament.fra;
-        plaque(ctx, p.x, p.y + (nede ? 68 : 46), fra ? 'Parlamentet (fra 1635)' : 'Parlamentet', '#2b3133', '#f3e6c4');
+        // Låst til skottene kommer (1639), slik Karl måtte. Så står prisen på skiltet.
+        const last = aarNa(g) < TUNING.parlament.fra;
+        plaque(ctx, p.x, p.y + (nede ? 68 : 46), last ? 'Parlamentet: låst til 1639' : 'Parlamentet: +gull / -1 stang', '#2b3133', '#f3e6c4');
     }
     if (nede && !v.tinDrag) {
         // I rekkevidde: en bølge som vokser ut fra tallerkenen og blekner (står stille).
@@ -614,7 +615,8 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, a
                 spin: s.plate.spin,
                 vinkel: v.vinkel[id],
                 t: v.tid + id,
-                protest: v.protest[id],
+                // Hampden-tallerkenen er rød til den er sveipet to ganger.
+                protest: s.plate.hampden > 0 ? Math.max(1, v.protest[id]) : v.protest[id],
                 reddet: v.reddet[id],
                 kombo: s.plate.kombo,
             });
