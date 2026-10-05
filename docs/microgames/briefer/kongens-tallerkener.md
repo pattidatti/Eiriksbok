@@ -542,3 +542,38 @@ KronensVei.
   Hendelsene 1635 (innlandet) og 1638 (skottene) er ikke på film-bildene (de faste tidene 55 s og
   80 s treffer 1634 og 1637). Epilogen er styrt: eleven kan sveipe for poeng, men kan ikke tape eller
   redde stenger. KART.md punkt 10 er gammel tekst; punkt 12 gjelder.
+
+### Fase: forbedrer 3 - siste forbedring (2026-10-05)
+
+- (1) Lesbart: HUD-boksen nede til venstre har to tellere med én betydning hver: «Stenger: N» og
+  «Parlamentet har tatt: X av 3» (i krigen «Hæren har tatt: X»). Ringene og «igjen»-tallene er
+  borte. Skiltet under parlamentets tallerken har alltid prisen med tall: «Parlamentet (fra 1639):
+  +400 gull / -1 stang», så «Parlamentet: +400 gull / -1 stang». Årsbannerne står lavere
+  (`bannerTop` 62 %), så de aldri dekker tinntallerkenen eller skiltet. Hampden-tallerkenen er lilla
+  med lys kant og et rundt merke «×2» (ikke lenger rød som en tallerken som stopper). Navneskiltene
+  sitter i ulik høyde per rad (`SKILT_H` i draw.ts), så «Monopol» og «Skipsskatt» ikke overlapper.
+  Den blå skottehånda ved kista er fjernet (`drawArm` kalles ikke); skottene vises som soldater.
+  «Titler solgt» forklares: «titler solgt (Karl solgte 266)».
+- (2) Krigen som siste akt: ingen «Seier!» i 1640. Banneret sier «1640 · PARLAMENTET KALLES INN»
+  (tromme, ikke fanfare), og HUD-en sier «Borgerkrig 1642-1649» i stedet for «Overtid». Soldatene
+  velter én stang i 1642, 1645 og 1648 (lapp «Soldatene velter en stang»), og 1649 er rettssaken
+  (banner og lærings-øyeblikk, henrettelsen nevnes bare i «Dette skjedde»). Slutt-skjermen:
+  «1649 · Borgerkrigen er over», «Du holdt N stenger gjennom borgerkrigen til 1649», tallet som
+  teller er «stenger holdt til 1649», og rangene (`SEIER_RANKS`) går etter det. «Dette skjedde»
+  har 1642/1649, Oliver Cromwell til 1658 og 1660 (Karl 2.). Seier-logikken i simuleringen er den
+  samme (nådd 1640 = vunnet).
+- Likhet: bakteppet har et varmt rosa-gyllent kveldslys nede, gulvet er fiolett-grå marmor, og
+  salen rundt prosceniet, orkestergraven og vignetten er plommefarget fløyel i stedet for nesten
+  svart. Likhet nærmest lop-med-lonna-3d 0,45 (var 0,50 mot inn-mot-stranda), cover ved 20 s.
+- Simuleringen (200 runder per robot): seende 93 % seier, median 10 004 (p10-p90 8 931-10 832);
+  halvgod 85 %, median 8 992; mester-alene 0 %, median 4 621; tar-alt og aldri-parlament 0 %;
+  tilfeldig 0 %; passiv 0 %. Press 0,20 -> 0,31 -> 0,69, 44 valg per minutt. Selvspill grønt
+  (seende vant, nådde 1649), audit --strict grønn.
+- Prøvde som IKKE virket: (1) Cover ved 80 s ga likhet 0,52-0,57: formen (dHash) steg til 0,50 med
+  flere tallerkener. (2) Varmt brunt gulv: fargen falt mot inn-mot-stranda, men da ble loddposen
+  (brunt tre) nærmest med 0,52. (3) Karmosin sal rundt scenen havnet i samme fargekasse som brunt
+  tre; plomme (rødt + blått) skiller seg fra begge. (4) Bannerne 1640 og 1641 rett etter hverandre
+  dekket midten i 4,9 s; 1641-banneret er fjernet.
+- Kjente svakheter: halvgod vinner fortsatt 85 % (forbedring 3 i vurderingen, ekte valg i midten,
+  er ikke gjort). Bannerne står nå over de midterste tallerkenene i 2,4 s. New Model Army er bare
+  banner og lærings-øyeblikk, ikke dobbel fart. Komponenten er 799 linjer (grensen er 800).

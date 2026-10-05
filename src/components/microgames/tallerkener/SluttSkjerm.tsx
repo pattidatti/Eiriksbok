@@ -9,7 +9,7 @@ export interface Result {
     score: number;
     alene: number;
     tatt: number;
-    /** Ett regnskap: gitt bort + igjen = stengene du hadde (i 1640 for den som vant). */
+    /** Gitt til parlamentet før 1640 (eller før tapet), og stenger du hadde igjen da runden sluttet (i 1649 for den som nådde 1640). */
     gitt: number;
     igjen: number;
     aar: number;
@@ -39,7 +39,7 @@ export function SluttSkjerm({
     return (
         <ArcadeScreen>
             <ArcadeTag color={result.won ? '#6b4a14' : '#8e2230'}>
-                {result.won ? 'Seier · du holdt ut til 1640' : `Teppet falt i ${result.aar}`}
+                {result.won ? '1649 · Borgerkrigen er over' : `Teppet falt i ${result.aar}`}
             </ArcadeTag>
             <h2 style={{ fontFamily: serif, fontSize: 25, lineHeight: 1.15, margin: '6px auto 2px', maxWidth: 520, textAlign: 'center' }}>
                 {result.linje}
@@ -47,14 +47,16 @@ export function SluttSkjerm({
             <YearBar aar={result.aar} best={bestAar} />
             <ArcadeStats
                 items={[
-                    { value: String(result.gitt), label: 'stenger gitt bort' },
-                    { value: String(result.igjen), label: result.won ? 'stenger igjen i 1640' : 'stenger igjen' },
+                    { value: String(result.igjen), label: result.won ? 'stenger holdt til 1649' : 'stenger igjen' },
+                    { value: String(result.gitt), label: 'gitt til parlamentet' },
                     { value: result.score.toLocaleString('nb-NO'), label: result.rekord ? 'poeng - ny rekord!' : 'poeng' },
-                    { value: `${result.titler} av 266`, label: 'titler solgt' },
+                    { value: String(result.titler), label: 'titler solgt (Karl solgte 266)' },
                 ]}
             />
             <p style={{ fontSize: 14, margin: '0 auto' }}>
-                Du hadde {result.gitt + result.igjen} stenger: {result.gitt} gitt bort + {result.igjen} igjen.
+                {result.won && result.beholdt !== null
+                    ? `I 1640 hadde du ${result.beholdt}. Soldatene veltet ${result.beholdt - result.igjen} i krigen, og du holdt ${result.igjen} til 1649.`
+                    : `Du hadde ${result.gitt + result.igjen} stenger: ${result.gitt} gitt bort + ${result.igjen} igjen.`}
             </p>
             <p style={{ fontWeight: 700, fontFamily: serif, fontSize: 18, margin: '2px 0' }}>{result.rank}</p>
             <p style={{ maxWidth: 520, textAlign: 'center', fontSize: 14, margin: '2px auto' }}>{result.forklaring}</p>

@@ -333,7 +333,7 @@ export function onEvents(
                 v.shake = Math.max(v.shake, 0.4);
                 break;
             case 'seier':
-                sfx?.seier();
+                sfx?.tromme();
                 break;
             case 'slutt':
                 v.teppeMal = 1;

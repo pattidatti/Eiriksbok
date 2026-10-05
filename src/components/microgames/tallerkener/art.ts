@@ -8,7 +8,7 @@ import { H, STAGE, VP, W } from './layout';
 import type { PlateKind } from './tuning';
 
 export const PAL = {
-    sal: '#10141f',
+    sal: '#4a1844',
     ultra: '#1f3a6b',
     ultraLys: '#3d64a3',
     gull: '#d4a640',
@@ -106,12 +106,13 @@ function drawBack(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
     ctx.fillRect(0, 0, W, H);
     const { x0, x1, y0, floorBack, edge } = STAGE;
 
-    // Bakteppet: Rubens-ultramarin himmel med varm horisont.
+    // Bakteppet: Rubens-himmel, ultramarin øverst og et varmt rosa-gyllent kveldslys nede.
     const sky = ctx.createLinearGradient(0, y0, 0, floorBack);
-    sky.addColorStop(0, '#142a52');
-    sky.addColorStop(0.55, PAL.ultra);
-    sky.addColorStop(0.85, '#4f6f9e');
-    sky.addColorStop(1, '#b89a62');
+    sky.addColorStop(0, '#1d2a55');
+    sky.addColorStop(0.4, PAL.ultra);
+    sky.addColorStop(0.68, '#8a6a8c');
+    sky.addColorStop(0.88, '#c98f6a');
+    sky.addColorStop(1, '#e0b46e');
     ctx.fillStyle = sky;
     ctx.fillRect(x0, y0, x1 - x0, floorBack - y0);
     // Malte skyer med figurer som bare antydes (lyse dotter).
@@ -165,10 +166,10 @@ function drawBack(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
 
     // Scenegulvet: fliser mot forsvinningspunktet, varmt lys fra rampen.
     const fl = ctx.createLinearGradient(0, floorBack, 0, edge);
-    // Malt marmorgulv i grått og blått, som i Inigo Jones' perspektivscener.
-    fl.addColorStop(0, '#191c26');
-    fl.addColorStop(0.6, '#383b4a');
-    fl.addColorStop(1, '#63606e');
+    // Malt marmorgulv i fiolett og grått, som i Inigo Jones' perspektivscener.
+    fl.addColorStop(0, '#3c3a6a');
+    fl.addColorStop(0.6, '#58528a');
+    fl.addColorStop(1, '#8278a8');
     ctx.fillStyle = fl;
     ctx.fillRect(x0, floorBack, x1 - x0, edge - floorBack);
     ctx.strokeStyle = 'rgba(16,10,6,0.55)';
@@ -205,7 +206,7 @@ function drawBack(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
             const xa = Math.min(outer, inner);
             // Lerretet: mørk søylehall, opplyst kant mot scenen.
             const lg = ctx.createLinearGradient(outer, 0, inner, 0);
-            lg.addColorStop(0, '#0d1428');
+            lg.addColorStop(0, '#22305a');
             lg.addColorStop(0.7, i === 0 ? '#2b3c62' : '#24365c');
             lg.addColorStop(1, '#5a6f96');
             ctx.fillStyle = lg;
@@ -338,16 +339,16 @@ function drawFront(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
             ctx.stroke();
         }
     }
-    // Scenekanten (rampen) med forgylt list, og orkestergraven foran.
-    ctx.fillStyle = '#0b0d14';
+    // Scenekanten (rampen) med forgylt list, og orkestergraven i plommefarget fløyel foran.
+    ctx.fillStyle = '#4a2048';
     ctx.fillRect(x0 - 30, edge + 6, x1 - x0 + 60, H - edge);
     ctx.fillStyle = goldGrad(ctx, 0, edge, 0, edge + 8);
     ctx.fillRect(x0 - 30, edge, x1 - x0 + 60, 7);
 
-    // Vignett: varm midte, mørke hjørner.
+    // Vignett: varm midte, vinrøde hjørner (salen i plommefarget fløyel).
     const vig = ctx.createRadialGradient(W / 2, H * 0.55, H * 0.25, W / 2, H * 0.55, W * 0.68);
     vig.addColorStop(0, 'rgba(0,0,0,0)');
-    vig.addColorStop(1, 'rgba(5,6,12,0.62)');
+    vig.addColorStop(1, 'rgba(40,12,40,0.5)');
     ctx.fillStyle = vig;
     ctx.fillRect(0, 0, W, H);
 

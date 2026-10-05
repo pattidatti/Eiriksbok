@@ -17,7 +17,7 @@ import {
     type Pt,
 } from './layout';
 import { hoistPoint, pageAt, pagePlate, type ViewState } from './fx';
-import { drawArm, drawChest, drawCoins, drawLamps } from './pit';
+import { drawChest, drawCoins, drawLamps } from './pit';
 
 const S = TUNING.snurr;
 const TAU = Math.PI * 2;
@@ -36,6 +36,9 @@ function ell(ctx: CanvasRenderingContext2D, x: number, y: number, rx: number, ry
     ctx.ellipse(x, y, Math.max(0.1, rx), Math.max(0.1, ry), 0, 0, TAU);
 }
 
+/** Hvor høyt på stanga navneskiltet sitter (andel av stanga), per stang. */
+const SKILT_H = [0.26, 0.26, 0.42, 0.42, 0.62, 0.62, 0.7];
+
 const dk = (slot: number) => 1 - SLOTS[slot].dybde * 0.17;
 
 interface PlateLook {
@@ -47,6 +50,8 @@ interface PlateLook {
     reddet?: number;
     kombo?: number;
     alpha?: number;
+    /** Hampden-tallerkenen: egen lilla farge og merket «×2» (må sveipes to ganger). */
+    hampden?: boolean;
 }
 
 /** En dreid tallerken i bladgull (eller matt tinn) med preget ikon og glans som roterer. */
@@ -120,7 +125,17 @@ export function drawPlate(ctx: CanvasRenderingContext2D, art: Art, x: number, y:
             ell(ctx, 0, 0, rx + 2 * k, ry + 1.5 * k);
             ctx.stroke();
         }
-        const rod = o.protest ? 0.55 : o.spin < S.slakk ? 0.45 : vakl * 0.3;
+        const rod = o.hampden ? 0 : o.protest ? 0.55 : o.spin < S.slakk ? 0.45 : vakl * 0.3;
+        if (o.hampden) {
+            // Hampden har sin egen farge (lilla), så den ikke ligner en tallerken som stopper.
+            ctx.fillStyle = 'rgba(88,46,140,0.62)';
+            ell(ctx, 0, 0, rx, ry);
+            ctx.fill();
+            ctx.strokeStyle = '#d9c4ff';
+            ctx.lineWidth = 2.5 * k;
+            ell(ctx, 0, 0, rx + 3 * k, ry + 2 * k);
+            ctx.stroke();
+        }
         if (rod > 0) {
             ctx.fillStyle = `rgba(142,34,48,${rod})`;
             ell(ctx, 0, 0, rx, ry);
@@ -134,6 +149,23 @@ export function drawPlate(ctx: CanvasRenderingContext2D, art: Art, x: number, y:
         }
     }
     ctx.restore();
+    if (o.hampden) {
+        // Merket «×2»: to sveip trengs.
+        const bx = x + rx * 0.95;
+        const by = y - 10 * k;
+        ctx.fillStyle = '#4b2378';
+        ctx.strokeStyle = '#f3e6c4';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(bx, by, 13 * k, 0, TAU);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = '#f3e6c4';
+        ctx.font = `700 ${Math.round(14 * k)}px ${SERIF}`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('×2', bx, by + 1);
+    }
     // Reddet i siste liten: en lys bølge som vokser ut fra tallerkenen.
     if (o.reddet && o.reddet > 0) {
         const u = 1 - o.reddet / 0.8;
@@ -359,7 +391,7 @@ function drawTin(ctx: CanvasRenderingContext2D, art: Art, g: Game, v: ViewState)
         // Skilt under skyen: hva den grå tallerkenen er, også mens den venter i taket.
         // Låst til skottene kommer (1639), slik Karl måtte. Så står prisen på skiltet.
         const last = aarNa(g) < TUNING.parlament.fra;
-        plaque(ctx, p.x, p.y + (nede ? 68 : 46), last ? 'Parlamentet: låst til 1639' : 'Parlamentet: +gull / -1 stang', '#2b3133', '#f3e6c4');
+        plaque(ctx, p.x, p.y + (nede ? 68 : 46), last ? `Parlamentet (fra 1639): +${TUNING.parlament.gullStorm} gull / -1 stang` : `Parlamentet: +${TUNING.parlament.gullStorm} gull / -1 stang`, '#2b3133', '#f3e6c4');
     }
     if (nede && !v.tinDrag) {
         // I rekkevidde: en bølge som vokser ut fra tallerkenen og blekner (står stille).
@@ -616,11 +648,13 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, a
                 vinkel: v.vinkel[id],
                 t: v.tid + id,
                 // Hampden-tallerkenen er rød til den er sveipet to ganger.
-                protest: s.plate.hampden > 0 ? Math.max(1, v.protest[id]) : v.protest[id],
+                protest: v.protest[id],
+                hampden: s.plate.hampden > 0,
                 reddet: v.reddet[id],
                 kombo: s.plate.kombo,
             });
-            plaque(ctx, f.x, f.y - hh * 0.42, NAVN[s.plate.kind]);
+            // Skiltene i ulik høyde etter rad, så naboene i midten ikke overlapper.
+            plaque(ctx, f.x, f.y - hh * (SKILT_H[id] ?? 0.42), NAVN[s.plate.kind]);
         }
         if (tilbud.includes(id)) {
             // Parlamentet vil ha denne: tinnfarget bølge og prisen.
@@ -652,7 +686,6 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, a
     ctx.drawImage(art.front, 0, 0, W, H);
     drawLamps(ctx, g, v);
     drawChest(ctx, g, v);
-    drawArm(ctx, v);
     drawCoins(ctx, v);
     drawSparks(ctx, v, false);
     drawSparks(ctx, v, true);

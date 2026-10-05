@@ -205,9 +205,9 @@ function hendelser(g: Game, hele: number) {
     if (g.won && i >= 0) {
         const navn = (['borgerkrig', 'nma', 'pride', 'rettssak'] as const)[i];
         g.events.push({ type: 'hendelse', navn });
-        // Parlamentets hær tar stengene dine én etter én, de rikeste først. I 1649 er alt tatt.
-        const igjen = egneStenger(g);
-        const n = Math.ceil(igjen / (st.length - i));
+        // Parlamentets hær tar én stang i 1642, 1645 og 1648 (den rikeste). I 1649 er det
+        // rettssaken: da teller stengene du holdt ut krigen.
+        const n = navn === 'rettssak' ? 0 : 1;
         for (let k = 0; k < n; k++) {
             const id = parlamentTilbud(g)[0];
             if (id === undefined) break;

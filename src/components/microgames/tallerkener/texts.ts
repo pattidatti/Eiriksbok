@@ -3,7 +3,7 @@
 
 import { TUNING } from './tuning';
 import type { Game } from './state';
-import { aarNa } from './rules';
+import { aarNa, egneStenger } from './rules';
 
 /** Tips når runden er tapt før 1640 (hvorfor, og hva Karl gjorde). */
 export const TIPS = {
@@ -13,18 +13,17 @@ export const TIPS = {
     aar1649: '',
 } as const;
 
-/** Linja når eleven har nådd 1640: hva stengene du beholdt, betydde i borgerkrigen. */
-export function seierLinje(g: Game): string {
-    const n = g.beholdt1640 ?? 0;
-    return `Etter 1640 tok parlamentets hær stengene én etter én: 1642 borgerkrig, 1645 New Model Army, 1648 Prides utrenskning, 1649 rettssaken. De ${n} stengene du hadde igjen, ga poeng hvert år i krigen.`;
+/** Linja når eleven har nådd 1649: krigen og hva stengene du holdt, betydde. */
+export function seierLinje(_g: Game): string {
+    return 'Etter 1640 kom krigen: 1642 borgerkrig, 1645 New Model Army, 1648 Prides utrenskning, 1649 rettssaken mot kongen. Hver stang du holdt, ga poeng hvert år i krigen.';
 }
 
-/** Ranger for dem som vant: hvor mange stenger du hadde igjen i 1640. */
+/** Ranger for dem som nådde 1649: hvor mange stenger de holdt gjennom krigen. */
 export const SEIER_RANKS: [number, string][] = [
-    [0, 'Holdt ut som Karl'],
+    [0, 'Konge uten makt'],
+    [1, 'Holdt ut som Karl'],
     [3, 'Konge med makt igjen'],
     [5, 'Sterk konge'],
-    [7, 'Kongen over alle konger'],
 ];
 
 /** Ranger etter året du nådde. Karl ga seg i 1640, borgerkrigen kom i 1642, dommen i 1649. */
@@ -60,6 +59,6 @@ export function fmtAar(n: number): string {
 export function sluttLinje(g: Game): string {
     const aar = sluttAar(g);
     if (!g.won) return `Teppet falt i ${aar}, før du nådde 1640.`;
-    const n = g.beholdt1640 ?? 0;
-    return `Seier! Du holdt ut til 1640 med ${n} ${n === 1 ? 'stang' : 'stenger'} igjen.`;
+    const n = egneStenger(g);
+    return `Du holdt ${n} ${n === 1 ? 'stang' : 'stenger'} gjennom borgerkrigen til 1649.`;
 }

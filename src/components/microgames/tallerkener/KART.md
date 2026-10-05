@@ -57,6 +57,11 @@ Tre regler eleven skal huske: snurr kildene; kista tømmes; parlamentet gir gull
    (1642, 1645, 1648, 1649 - hendelsene `borgerkrig`, `nma`, `pride`, `rettssak`), og runden
    slutter 0,7 år etter 1649. Hoffkostnaden gjelder bare før 1639.
 
+13. Forbedrer 3: etter 1640 velter soldatene én stang i 1642, 1645 og 1648 (`stasjoner`, ikke i
+   1649). Slutt-skjermen teller stenger holdt til 1649 (`egneStenger` når runden slutter). HUD:
+   «Stenger: N» og «Parlamentet har tatt: X av 3». Hampden-tallerkenen tegnes lilla med «×2»
+   (`hampden` i `PlateLook`). Skottehånda (`drawArm`) tegnes ikke lenger.
+
 ## Knapper som styrer mest
 
 - Om mester-alene og aldri-parlament taper: `kiste.krig` og `kiste.hoff` (lageret før krigen).
