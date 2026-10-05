@@ -6613,6 +6613,21 @@
               ],
               "createdDate": "2026-06-01T06:39:08+02:00",
               "lastUpdated": "2026-07-29T00:00:08+02:00"
+            },
+            {
+              "id": "den-engelske-borgerkrigen",
+              "title": "Den engelske borgerkrigen: Da folket dømte kongen",
+              "description": "I 1649 stilte engelskmennene sin egen konge for retten og henrettet ham. Krigen mellom kongen og parlamentet viste at også en konge kan dømmes etter loven.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "england",
+                "borgerkrig",
+                "kongemakt",
+                "parlament",
+                "rettsstat",
+                "rettsutvikling"
+              ],
+              "createdDate": "2026-10-05T00:00:00Z"
             }
           ]
         },

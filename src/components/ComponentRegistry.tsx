@@ -75,6 +75,7 @@ const RessurskollapsSimulator = lazy(() => import('./content/interactive/Ressurs
 const TorkensVippepunkt = lazy(() => import('./content/interactive/TorkensVippepunkt').then(m => ({ default: m.TorkensVippepunkt })));
 const KongensMaktBinding = lazy(() => import('./content/interactive/KongensMaktBinding').then(m => ({ default: m.KongensMaktBinding })));
 const ParlamentetsJa = lazy(() => import('./content/interactive/ParlamentetsJa').then(m => ({ default: m.ParlamentetsJa })));
+const KronensVei = lazy(() => import('./content/interactive/KronensVei').then(m => ({ default: m.KronensVei })));
 const KongensSegl = lazy(() => import('./content/interactive/KongensSegl').then(m => ({ default: m.KongensSegl })));
 const GullSaltVekten = lazy(() => import('./content/interactive/GullSaltVekten').then(m => ({ default: m.GullSaltVekten })));
 const TondibiSlaget = lazy(() => import('./content/interactive/TondibiSlaget').then(m => ({ default: m.TondibiSlaget })));
@@ -1022,6 +1023,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Oyhopping: lazy(() => import('./content/interactive/Oyhopping').then(m => ({ default: m.Oyhopping }))),
     KongensMaktBinding,
     ParlamentetsJa,
+    KronensVei,
     KongensSegl,
     MalstangaTest,
     MapCarousel,

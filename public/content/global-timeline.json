@@ -5003,6 +5003,31 @@
       ]
     },
     {
+      "id": "den-engelske-borgerkrigen",
+      "title": "Den engelske borgerkrigen: Da folket dømte kongen",
+      "description": "I 1649 stilte engelskmennene sin egen konge for retten og henrettet ham. Krigen mellom kongen og parlamentet viste at også en konge kan dømmes etter loven.",
+      "startDate": 1642,
+      "endDate": 1651,
+      "displayDate": "1642-1651",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "lov-og-rett",
+      "link": "/historie/lov-og-rett/den-engelske-borgerkrigen",
+      "tags": [
+        "england",
+        "borgerkrig",
+        "kongemakt",
+        "parlament",
+        "rettsstat",
+        "rettsutvikling"
+      ],
+      "lat": 52.5,
+      "lng": -1.5,
+      "placeLabel": "England",
+      "placeCountryId": 826,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "ludvig-xiv-absolutisme",
       "title": "Solkongen og eneveldet",
       "description": "Ludvig XIV av Frankrike styrer som eneveldig monark ('Staten, det er jeg').",
