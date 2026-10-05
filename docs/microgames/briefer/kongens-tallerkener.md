@@ -292,3 +292,43 @@ KronensVei.
   finnes i simuleringen (se målene i punkt 11). Treffsikkerheten for sveip over tallerkener langt
   bak på scenen må testes på berøringsskjerm. Tre regler pluss kombo og overspinn er øvre grense;
   kutt heller sider med nye tallerkener enn å legge til noe.
+
+### Fase: bygg - gråboks (2026-10-05)
+
+- Gjorde: spillreglene i rene `.ts`-moduler i `src/components/microgames/tallerkener/`
+  (`tuning.ts`, `levels.ts`, `state.ts`, `rules.ts`, `game.ts`), robotene i `bots.ts`, `sim.ts`,
+  enkel 2D-canvas-visning med primitive former (`layout.ts`, `draw.ts`), `texts.ts`, `KART.md`,
+  komponenten `KongensTallerkener.tsx` med `usePlaytest`, og oppføring i `registry.ts` med
+  `kunst`. Ikke embedet i artikkelen. Gråboksen er 2D med vilje: input er 2D uansett (buen
+  treffer tallerkenenes ellipser), og reglene vet ikke om visningen, så kunstfasen kan bytte til
+  3D (R3F) uten å røre reglene.
+- Opptrappingen følger punkt 11: brett 1 (1629-30) én skip-tallerken, nummer to ved 6 s, gratis
+  erstatning; brett 2 (1631-34) sider med nye stenger bakover hvert 7. s, første våpenskjold i
+  1633; brett 3 (1635-38) tinntallerkenen nede i 3 s ca. hvert 10. s, stormkulisse fra 1637;
+  1639 skottene (forbruk x3, tinntallerkenen hvert 2. s i taket og 220 gull). Seier i 1640 med
+  gull i kista, så overtid til kista er tom eller alle seks krokene er fulle.
+- Simuleringen er grønn (200 runder per robot): seende (vinner) 100 % seier, median 116 742;
+  halvgod (middels) 98 %, median 39 365; tar-alt (taper, tar parlamentet fra 1635) 0 %, median
+  23 388, taper i 1639 med alle krokene fulle; aldri-parlament (taper) 0 %, median 36 550, kista
+  går tom i 1639; tilfeldig 0 %, median 26; passiv 0 %. 88 valg per minutt, presset stiger
+  0,04 -> 0,25 -> 0,54. Røyktesten i nettleseren: seende vant med 122 801 poeng (i båndet fra
+  simuleringen), 1,5 ms JS per bilde på Chromebook-takt.
+- Prøvde som IKKE virket: (1) første tallsett - kista vokste til 700 gull, og alle roboter
+  (også tar-alt og aldri-parlament) vant 100 %; robotene sveipet dessuten 2,5 buer i sekundet
+  over fire tallerkener, raskere enn en elev. Satte robotene ned til menneskelig takt og hevet
+  forbruket. (2) Taperne med samme sjonglering som seende: aldri-parlament fikk flere poeng enn
+  halvgod (88 000 mot 16 000) fordi poengene kommer fra sjonglering, ikke regelen. Nå sjonglerer
+  alle tre (halvgod, tar-alt, aldri-parlament) likt, og bare regelen om parlamentet skiller dem.
+  (3) Tinntallerkenen hvert 10. s pluss 6 s øsing ga for få tallerkener i 1639: tar-alt rakk ikke
+  å fylle krokene før 1640, og halvgod døde i krigen. Kortere syklus (nede 3 s + 7 s, øser 3 s)
+  og 220 gull i krigen løste begge. (4) Høyere forbruk i 1634-38 for å få en mestersjonglør uten
+  parlamentet til å tape: halvgod falt da til 46 % seier og trappa ble 3 % bred. Rullet tilbake.
+- Kjente svakheter: en mestersjonglør (seende-nivå) som aldri tar parlamentet, når 1640 i 97-100 %
+  av rundene (briefen ville ha «sjelden»); regelen avgjør for den vanlige eleven, men den aller
+  flinkeste kan sjonglere seg forbi. Ferdighetstrappa mellom halvgod og aldri-parlament er smal
+  (39 365 mot 36 550), fordi parlamentets gull ikke gir poeng og overtiden er kort for halvgod.
+  `valg` teller hver gang en tallerken begynner å vakle - ærlig, men høyt (88/min). Ingen juice,
+  lyd, `useArcadeText`, «Dette skjedde» eller titlenes bok ennå (portfunn ventet). Rampelysene
+  bak kista vises ikke. Treff på tallerkener langt bak er ikke testet på berøringsskjerm.
+- Skjermbilder: `.screenshots/playtest/kongens-tallerkener/film-03-20s.png`, `film-06-80s.png`,
+  `film-07-110s.png`.
