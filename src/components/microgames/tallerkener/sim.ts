@@ -19,22 +19,22 @@ export const BOT_INFO = {
     seende: {
         forventer: 'vinner',
         beskrivelse:
-            'Tegner én bue over alle slakke tallerkener med riktig fart, gir våpenskjoldene overspinn, tar imot sidene og tar parlamentets tallerken først når skottene kommer (eller kista er nesten tom), og ofrer den tomme eller fattigste stanga.',
+            'Tegner buer fra nabo til nabo over de slakke tallerkenene med riktig fart, gir våpenskjoldene overspinn, tar imot sidene og tar få parlamentsøkter: bare rundt krigen når kista ikke holder fem sekunder (før 1639 bare i nød), og velger stanga som koster minst å gi bort.',
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger samme regel om parlamentet, men sveiper bare hvert fjerde tick, høyst to tallerkener per bue, med unøyaktig fart og uten å sikte på overspinn.',
+            'Treg og unøyaktig: sveiper bare hvert fjerde tick, høyst to naboer per bue, uten å sikte på overspinn. Tar en parlamentsøkt i nød før 1639 og hver gang den kommer i krigen, og gir bort stanga som vakler mest.',
     },
     'tar-alt': {
         forventer: 'taper',
         beskrivelse:
-            'Sjonglerer like godt som seende, men drar ned parlamentets tallerken hver gang den kommer (fra 1635) - lettvint gull, men stengene forsvinner.',
+            'Sjonglerer som halvgod, men drar ned parlamentets tallerken hver gang den kommer (fra 1635) - lettvint gull, men før krigen koster hver økt to stenger.',
     },
     'aldri-parlament': {
         forventer: 'taper',
         beskrivelse:
-            'Sjonglerer like godt som seende, men tar aldri parlamentets penger - heller ikke når krigen kommer i 1639.',
+            'Sjonglerer som halvgod, men tar aldri parlamentets penger - heller ikke når krigen kommer i 1639.',
     },
     tilfeldig: {
         forventer: 'taper',

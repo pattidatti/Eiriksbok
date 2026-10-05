@@ -1,7 +1,7 @@
 // Gråboks-tegningen: scenen med primitive former (rektangler, ellipser, streker).
 // Ingen kunst og ingen juice ennå - bare det som trengs for å lese spillet.
 
-import { TUNING } from './tuning';
+import { TUNING, type PlateKind } from './tuning';
 import { SLOTS } from './levels';
 import type { Game } from './state';
 import { aarNa, forbruk } from './rules';
@@ -64,7 +64,7 @@ function drawPlate(
     rx: number,
     ry: number,
     spin: number,
-    kind: 'skip' | 'vapen',
+    kind: PlateKind,
     vinkel: number,
     t: number
 ) {
@@ -90,13 +90,17 @@ function drawPlate(
     ctx.moveTo(0, 0);
     ctx.lineTo(Math.cos(vinkel) * rx * 0.95, Math.sin(vinkel) * ry * 0.95);
     ctx.stroke();
-    // Ikonet: trekant = skip (skipsskatt), firkant = våpenskjold (titler).
+    // Ikonet: trekant = skip (skipsskatt), sirkel = monopol, firkant = våpenskjold (titler).
     ctx.fillStyle = C.sal;
     if (kind === 'skip') {
         ctx.beginPath();
         ctx.moveTo(-8, 4);
         ctx.lineTo(8, 4);
         ctx.lineTo(0, -6);
+        ctx.fill();
+    } else if (kind === 'monopol') {
+        ctx.beginPath();
+        ctx.arc(0, 0, 6, 0, Math.PI * 2);
         ctx.fill();
     } else {
         ctx.fillRect(-7, -6, 14, 12);

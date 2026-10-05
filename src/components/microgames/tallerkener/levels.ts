@@ -17,6 +17,16 @@ export const SLOTS: SlotDef[] = [
     { x: 0, dybde: 2 },
 ];
 
+/** Avstanden mellom to stenger på scenen (x og dybde i samme mål). */
+export function avstand(a: number, b: number): number {
+    return Math.hypot(SLOTS[a].x - SLOTS[b].x, SLOTS[a].dybde - SLOTS[b].dybde);
+}
+
+/** To stenger er naboer når de står nær hverandre: én bue kan bare gå fra nabo til nabo. */
+export function naboer(a: number, b: number, grense: number): boolean {
+    return a !== b && avstand(a, b) <= grense;
+}
+
 export interface Brett {
     /** Brettnummer (1-4). */
     nr: number;

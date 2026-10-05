@@ -75,7 +75,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
     const tf = useRef({ s: 1, ox: 0, oy: 0 });
     const bue = useRef<{ b: Bue; last: Pt; at: number; fart: number } | null>(null);
     const bots = useRef<Record<BotName, (g: Game) => void> | null>(null);
-    const [hud, setHud] = useState({ score: 0, mult: 1, stenger: 1 });
+    const [hud, setHud] = useState({ score: 0, gull: 0, stenger: 1 });
     const hudT = useRef(0);
 
     const setModeBoth = (m: Mode) => {
@@ -147,7 +147,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
             hudT.current -= dt;
             if (hudT.current <= 0) {
                 hudT.current = 0.25;
-                setHud({ score: Math.floor(g.score), mult: g.mult, stenger: egneStenger(g) });
+                setHud({ score: Math.floor(g.score), gull: Math.floor(g.gull), stenger: egneStenger(g) });
             }
         },
     });
@@ -280,7 +280,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                                 pointerEvents: 'none',
                             }}
                         >
-                            {hud.score} · ×{hud.mult.toFixed(1)} · stenger {hud.stenger}
+                            {hud.score} · gull {hud.gull} · stenger {hud.stenger}
                         </div>
                     )}
 
@@ -290,8 +290,10 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                             <ArcadeLogo>Elleve år</ArcadeLogo>
                             <p style={{ maxWidth: 440, textAlign: 'center' }}>
                                 Du er Karl 1. og styrer uten parlamentet. Sveip over
-                                tallerkenene så de snurrer og gir gull. For hardt, og de flyr.
-                                Parlamentets tallerken gir mye gull, men tar en stang for godt.
+                                tallerkenene så de snurrer og gir gull. Kista tømmes hele
+                                tiden. Parlamentet gir mye gull, men tar en stang for godt
+                                (før krigen to). Hvert år får du gullet i kista ganger
+                                stengene du har igjen som poeng.
                             </p>
                             <ArcadeBigButton onClick={start}>Spill</ArcadeBigButton>
                             {save.runs > 0 && (

@@ -30,27 +30,38 @@ export const TUNING = {
         perFart: 0.62,
         /** Hvor fort snurret dør ut per sekund (skip-tallerken i 1629). */
         tap: 0.13,
-        /** Tallerkenene blir tyngre: tapet øker med denne andelen per år. */
-        tapPerAar: 0.06,
+        /** Tallerkenene blir tyngre: tapet øker med denne andelen per år (fra 1629). */
+        tapPerAar: 0.12,
         /** Hvor lenge en kombo varer (s). */
         komboTid: 2,
-        /** Rundemultiplikatoren øker så mye per ekstra tallerken i en kombo. */
-        rundeMultPerKombo: 0.1,
     },
 
-    /** Tallerkentypene: gull per sekund når den snurrer godt, og hvor tung den er. */
+    /**
+     * Tallerkentypene (hver stang er en egen kilde): gull per sekund når den snurrer godt, hvor
+     * tung den er, og `tak` = mest gull stanga kan gi på ett år (så egne kilder ikke dekker krigen).
+     */
     typer: {
-        skip: { gull: 1.0, vekt: 1.0 },
-        vapen: { gull: 2.5, vekt: 1.9 },
+        skip: { gull: 1.0, vekt: 1.0, tak: 15 },
+        monopol: { gull: 1.6, vekt: 1.35, tak: 24 },
+        vapen: { gull: 2.5, vekt: 1.9, tak: 32 },
     },
+
+    /** Runden starter med disse tallerkenene på stengene 0, 1, 2 ... */
+    start: ['skip', 'skip', 'monopol'] as const,
+
+    /** Én bue: når bare naboer (avstand på scenen) og har nedkjøling før neste bue kan treffe. */
+    bue: { nabo: 0.8, nedkjoling: 0.6 },
+
+    /** Protester (Hampden 1637): fra `fra` hvert `hver` s får én tallerken et vakle-dytt. */
+    protest: { fra: 1634, hver: 20, dytt: 0.4 },
 
     /** Kista. */
     kiste: {
-        start: 18,
+        start: 25,
         /** Forbruk (gull/s) per år fra 1629. Siste verdi gjelder videre før 1639. */
-        forbruk: [0.3, 0.5, 1.5, 3, 5, 8, 11, 13, 15, 17],
-        /** Forbruket ganges med dette i 1639 (skottene). */
-        storm: 3,
+        forbruk: [4, 4.5, 5.5, 6.5, 7.5, 8, 8.5, 9, 9.5, 10],
+        /** Skottene trekker så mye gull fra kista per sekund fra 1639 (i tillegg til forbruket). */
+        krig: 45,
         /** Etter 1640: forbruket øker med denne andelen per år (overtid). */
         overtidVekst: 0.35,
     },
@@ -67,6 +78,8 @@ export const TUNING = {
         vapenFra: 1633,
         /** Sjansen for at en side bærer et våpenskjold etter `vapenFra`. */
         vapenSjanse: 0.4,
+        /** Sjansen for et monopol (ellers skipsskatt). */
+        monopolSjanse: 0.3,
     },
 
     /** Parlamentets tinntallerken. */
@@ -79,23 +92,28 @@ export const TUNING = {
         hverStorm: 2,
         /** Hvor lenge den er nede (s). */
         nede: 3,
+        /** En parlamentsøkt før krigen (1639) koster så mange stenger: den du velger og naboen. */
+        forKrigen: 2,
         /** Gull den øser (totalt, over `oser` sekunder) før 1637, fra 1637 og fra 1639. */
         gull: 50,
         gullSent: 70,
-        gullStorm: 220,
+        gullStorm: 300,
         oser: 3,
         /** Krokene i taket: fulle = parlamentet har tatt alle stengene. */
         kroker: 6,
     },
 
-    /** Brett 1: tallerken nummer to heises opp etter så mange sekunder. */
-    brett1: { andre: 6 },
+    /**
+     * Poeng ved hvert årsskifte: gull i kista x stenger igjen.
+     * Taper du før 1640 (tom kiste eller ingen stenger igjen), ganges poengene med `tap`.
+     */
+    poeng: { tap: 0.5 },
 
-    /** Poeng: gull fra egne tallerkener x rundemultiplikator. Parlamentets gull gir ikke poeng. */
-    poeng: { perGull: 10 },
-
-    /** Pressmåleren (0-1) i snapshot. */
-    press: { forbrukRef: 25, andelForbruk: 0.6 },
+    /**
+     * Pressmåleren (0-1) i snapshot: andelen slakke tallerkener og hvor tynn kista er
+     * (sekunder med forbruk den holder, mot `reserveRef`).
+     */
+    press: { reserveRef: 25, andelKiste: 0.5 },
 };
 
 export type PlateKind = keyof typeof TUNING.typer;

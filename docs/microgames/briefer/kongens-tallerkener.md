@@ -332,3 +332,45 @@ KronensVei.
   bak kista vises ikke. Treff på tallerkener langt bak er ikke testet på berøringsskjerm.
 - Skjermbilder: `.screenshots/playtest/kongens-tallerkener/film-03-20s.png`, `film-06-80s.png`,
   `film-07-110s.png`.
+
+### Fase: bygg - diagnose-grep 1 (2026-10-05)
+
+- Gjorde: de tre endringene i kjerneløkka fra gråboks-diagnosen (Gøy 3), uten kunst eller juice.
+  (1) Skjøre penger fra start: tre tallerkener (skip, skip, monopol) og forbruk fra 1629
+  (4 gull/s), ny kilde monopol, tallerkenene 12 % tyngre hvert år, hver tittel gir en ny
+  våpenskjold-tallerken du ikke kan si nei til, og fra 1634 en protest hvert 20. s som dytter
+  én tilfeldig tallerken ned i vakling. (2) Parlamentet som økter: hver økt gir mye gull, men
+  stanga du velger heises for godt, og før 1639 tar den nærmeste stang også. Poeng ved hvert
+  årsskifte = gull i kista x stenger igjen; tap før 1640 halverer poengene. (3) Krigen: skottene
+  trekker 45 gull/s ekstra fra 1639, hver stang har et tak på gull per år (skip 15, monopol 24,
+  våpenskjold 32), én bue når bare naboer og har 0,6 s nedkjøling, og tinntallerkenen kommer
+  med en gang krigen starter. `valg` telles nå bare når en ny tallerken vakler mens en annen
+  allerede vakler, og når parlamentet senker seg.
+- Kuttet: rundemultiplikatoren (kombo gir fortsatt xN gull i to sekunder). HUD viser nå
+  poeng, gull og stenger. Menyteksten sier de tre reglene og poengregelen.
+- Robotene: seende tar få økter (bare når kista ikke holder fem sekunder i krigen, før 1639
+  bare i nød) og velger stanga som koster minst; halvgod er treg og unøyaktig, tar en økt i
+  nød før 1639 og hver gang i krigen, og gir bort den som vakler mest; tar-alt tar alle fra
+  1635; aldri-parlament tar ingen. Alle bygger buen fra nabo til nabo og venter på nedkjølingen.
+- Simuleringen er grønn (200 runder per robot): seende 100 % seier, median 20 880
+  (p10-p90 13 570-25 646); halvgod 65 %, median 5 934; aldri-parlament 0 %, median 2 828
+  (kista tom i 1639); tar-alt 0 %, median 2 298 (mister alle stengene i 1637); tilfeldig 0 %,
+  median 1; passiv 0 % (taper etter 13 s). 77,7 valg per minutt, presset 0,25 -> 0,14 -> 0,44.
+  Mestersjonglør mister minst én tallerken før 1639 i 100 % av rundene. Selvspill i
+  nettleseren: seende vant med 12 685 poeng (litt under p10), 1,8 ms JS per bilde på Chromebook.
+- Prøvde som IKKE virket: (1) Poeng = gull x stenger x rundemultiplikator: tar-alt fikk flere
+  poeng enn halvgod, fordi færre tallerkener gir færre fall og høyere multiplikator. Kuttet
+  multiplikatoren. (2) Halvere poengene bare ved tom kiste: alle som vant, gikk tomme i
+  overtiden og ble halvert, mens tar-alt (tap på stenger) slapp. Nå halveres bare tap før 1640.
+  (3) Tak 14/20/30 per år: seende og halvgod nådde taket likt, og ferdighet betydde lite. (4)
+  Krig 60 gull/s: halvgod døde før første økt rakk å øse (15 % seier, trappa 3 041 mot 3 111).
+  (5) Forbruk +2 gull/s fra 1632: halvgod 0 % seier og alle under 1 800 poeng. (6) Startkiste 35
+  for at passiv skulle leve lenger: presset i første tredjedel falt til 0,21. Landet på 25.
+- Kjente svakheter: en mestersjonglør som aldri tar parlamentet, når 1640 i ca. 60 % av
+  rundene (briefen vil ha «sjelden»); seende bygger et stort lager (500 gull) før krigen, så
+  presset synker i midten (0,14). Valg per minutt er høyt (78), men ærlig etter den nye
+  regelen. Protesten og tittel-tallerkenen har ingen visning ennå. Taper-årsaken
+  «kildene ga for lite til å betale krigen» vises også når passiv taper i 1630. Portfunn om
+  cover, `useArcadeText`, «Dette skjedde» og stille bilde uten input er ventet (kunst/juice).
+- Skjermbilder: `.screenshots/playtest/kongens-tallerkener/film-03-20s.png`, `film-06-80s.png`,
+  `film-07-110s.png`, `seende-slutt.png`.

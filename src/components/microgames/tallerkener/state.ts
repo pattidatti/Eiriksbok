@@ -23,6 +23,8 @@ export interface Slot {
     plate: Plate | null;
     /** Har stanga hatt en tallerken før? Da koster en ny gull. */
     brukt: boolean;
+    /** Gull stanga har gitt i år (taket er `TUNING.typer[kind].tak`). */
+    aarGull: number;
 }
 
 export interface Page {
@@ -55,6 +57,7 @@ export type GameEvent =
     | { type: 'ny'; slot: number }
     | { type: 'tin-ned' }
     | { type: 'parlament'; slot: number }
+    | { type: 'protest'; slot: number }
     | { type: 'storm' }
     | { type: 'seier' }
     | { type: 'slutt' };
@@ -78,8 +81,6 @@ export interface Game {
     tatt: number;
     /** Året da parlamentets tallerken ble tatt første gang (null = aldri). */
     forsteParlament: number | null;
-    /** Rundemultiplikatoren: øker med kombo, nullstilles når en tallerken faller. */
-    mult: number;
     score: number;
     /** Gull fra egne tallerkener (uten parlamentet). */
     egetGull: number;
@@ -87,7 +88,12 @@ export interface Game {
     faller: number;
     flyr: number;
     kombos: number;
+    /** Ærlige valg: når to eller flere vakler samtidig, og hver gang parlamentet senker seg. */
     valg: number;
+    /** Neste bue kan ikke treffe før dette tidspunktet (nedkjøling). */
+    bueKlar: number;
+    /** Sekunder til neste protest (fra `TUNING.protest.fra`). */
+    protestNeste: number;
     sistAar: number;
     sistBrett: number;
     events: GameEvent[];
@@ -103,11 +109,15 @@ export function newGame(seed: number): Game {
         state: 'stengt',
         plate: null,
         brukt: false,
+        aarGull: 0,
     }));
-    slots[0].state = 'aktiv';
-    slots[0].plate = newPlate('skip');
-    slots[0].plate.spin = 0.45;
-    slots[0].brukt = true;
+    TUNING.start.forEach((kind, i) => {
+        const s = slots[i];
+        s.state = 'aktiv';
+        s.plate = newPlate(kind);
+        s.plate.spin = 0.45 + 0.1 * i;
+        s.brukt = true;
+    });
     return {
         rng: seeded(seed),
         t: 0,
@@ -121,14 +131,15 @@ export function newGame(seed: number): Game {
         tin: { state: 'oppe', t: 0, neste: 0, gull: 0 },
         tatt: 0,
         forsteParlament: null,
-        mult: 1,
         score: 0,
         egetGull: 0,
         titler: 0,
         faller: 0,
         flyr: 0,
         kombos: 0,
-        valg: 1,
+        valg: 0,
+        bueKlar: 0,
+        protestNeste: TUNING.protest.hver,
         sistAar: TUNING.tid.start,
         sistBrett: 1,
         events: [],

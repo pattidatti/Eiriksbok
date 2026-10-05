@@ -5,7 +5,8 @@
 import type { Rng } from '../sim';
 import { TUNING } from './tuning';
 import type { Game } from './state';
-import { aarNa, acceptPage, forbruk, swipe, takeParliament, tinNede, type Hit } from './rules';
+import { naboer } from './levels';
+import { aarNa, acceptPage, forbruk, parlamentTar, swipe, takeParliament, tinNede, type Hit } from './rules';
 
 type Style = 'seende' | 'halvgod' | 'tar-alt' | 'aldri-parlament';
 
@@ -14,51 +15,63 @@ interface BotOpts {
     every: number;
     /** Under dette snurret sveiper roboten en tallerken. */
     redd: number;
+    /** En nabo med snurr under dette tas med i samme bue (kombo). */
+    med: number;
     /** Flest tallerkener i én bue. */
     maksBue: number;
     /** Hvor unøyaktig farten er (andel). */
     sikt: number;
-    /** Når parlamentets tallerken tas: 'krig' (fra 1639 eller når kista er nesten tom), 'alltid', 'aldri'. */
-    parlament: 'krig' | 'alltid' | 'aldri';
-    /** Hvor mange sekunders forbruk kista må ha før roboten klarer seg uten parlamentet. */
+    /**
+     * Når en parlamentsøkt tas: 'trenger' (rundt krigen, bare når kista ikke holder `nod` s),
+     * 'krig' (hver gang fra 1639), 'alltid', 'aldri'. Før 1639 tar alle unntatt 'alltid' en økt
+     * bare i nød (kista holder under `nodFor` s).
+     */
+    parlament: 'trenger' | 'krig' | 'alltid' | 'aldri';
     nod: number;
+    nodFor: number;
     /** Sikter på overspinn på våpenskjoldene (titler). */
     overspinn: boolean;
-    /** Stanga som ofres til parlamentet: den fattigste (tom først) eller den som vakler mest (lettelse). */
-    ofre: 'fattigst' | 'vaklende';
+    /** Stanga som gis bort: den som koster minst (tom først) eller den som vakler mest. */
+    ofre: 'billigst' | 'vaklende';
 }
 
 export const BOTS: Record<Style, BotOpts> = {
-    seende: { every: 3, redd: 0.5, maksBue: 3, sikt: 0.12, parlament: 'krig', nod: 4, overspinn: true, ofre: 'fattigst' },
-    halvgod: { every: 4, redd: 0.45, maksBue: 2, sikt: 0.25, parlament: 'krig', nod: 2, overspinn: false, ofre: 'vaklende' },
-    'tar-alt': { every: 4, redd: 0.45, maksBue: 2, sikt: 0.25, parlament: 'alltid', nod: 2, overspinn: false, ofre: 'vaklende' },
-    'aldri-parlament': { every: 4, redd: 0.45, maksBue: 2, sikt: 0.25, parlament: 'aldri', nod: 2, overspinn: false, ofre: 'vaklende' },
+    seende: { every: 3, redd: 0.55, med: 0.75, maksBue: 3, sikt: 0.12, parlament: 'trenger', nod: 5, nodFor: 3, overspinn: true, ofre: 'billigst' },
+    halvgod: { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'krig', nod: 0, nodFor: 6, overspinn: false, ofre: 'vaklende' },
+    'tar-alt': { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'alltid', nod: 0, nodFor: 0, overspinn: false, ofre: 'vaklende' },
+    'aldri-parlament': { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'aldri', nod: 0, nodFor: 0, overspinn: false, ofre: 'vaklende' },
 };
 
-/** Stanga roboten ofrer: en tom stang først, ellers tallerkenen som gir minst (eller vakler mest). */
+/** Hva en stang er verdt for roboten (tom = 0). */
+function verdi(g: Game, id: number): number {
+    const p = g.slots[id].plate;
+    return p ? TUNING.typer[p.kind].gull * 10 + p.spin : 0;
+}
+
+/** Stanga roboten gir bort: den økta som koster minst, eller den som vakler mest. */
 function offer(g: Game, o: BotOpts): number {
-    const tom = g.slots.find((s) => s.state === 'tom');
-    if (tom && o.ofre === 'fattigst') return tom.id;
     let best = -1;
-    let verdi = Infinity;
+    let kost = Infinity;
     for (const s of g.slots) {
-        if (s.state !== 'aktiv' || !s.plate) continue;
-        const v =
-            o.ofre === 'vaklende'
-                ? s.plate.spin
-                : TUNING.typer[s.plate.kind].gull * 10 + s.plate.spin;
-        if (v < verdi) {
-            verdi = v;
+        if (s.state !== 'aktiv' && s.state !== 'tom') continue;
+        const k =
+            o.ofre === 'billigst'
+                ? parlamentTar(g, s.id).reduce((sum, id) => sum + verdi(g, id), 0)
+                : (s.plate?.spin ?? -1);
+        if (k < kost) {
+            kost = k;
             best = s.id;
         }
     }
-    return best >= 0 ? best : (tom?.id ?? -1);
+    return best;
 }
 
 function vilHaParlament(g: Game, o: BotOpts): boolean {
     if (o.parlament === 'aldri') return false;
     if (o.parlament === 'alltid') return true;
-    return aarNa(g) >= TUNING.tid.skottene || g.gull < forbruk(g) * o.nod;
+    const sek = g.gull / Math.max(0.1, forbruk(g));
+    if (aarNa(g) < TUNING.tid.skottene) return sek < o.nodFor;
+    return o.parlament === 'krig' || sek < o.nod;
 }
 
 export function makeBot(o: BotOpts, rng: Rng) {
@@ -71,13 +84,22 @@ export function makeBot(o: BotOpts, rng: Rng) {
             if (s >= 0 && takeParliament(g, s)) return;
         }
         if (g.page && g.gull > g.page.pris + forbruk(g) * 2 && acceptPage(g)) return;
+        if (g.t < g.bueKlar) return;
         const S = TUNING.snurr;
-        const lav = g.slots
-            .filter((s) => s.state === 'aktiv' && s.plate && s.plate.spin < o.redd)
-            .sort((a, b) => a.plate!.spin - b.plate!.spin)
-            .slice(0, o.maksBue);
+        const aktive = g.slots.filter((s) => s.state === 'aktiv' && s.plate);
+        const lav = aktive.filter((s) => s.plate!.spin < o.redd).sort((a, b) => a.plate!.spin - b.plate!.spin);
         if (!lav.length) return;
-        const hits: Hit[] = lav.map((s) => {
+        // Buen starter på den som vakler mest og går videre til slakke naboer.
+        const bue = [lav[0]];
+        while (bue.length < o.maksBue) {
+            const sist = bue[bue.length - 1].id;
+            const neste = aktive
+                .filter((s) => !bue.includes(s) && s.plate!.spin < o.med && naboer(sist, s.id, TUNING.bue.nabo))
+                .sort((a, b) => a.plate!.spin - b.plate!.spin)[0];
+            if (!neste) break;
+            bue.push(neste);
+        }
+        const hits: Hit[] = bue.map((s) => {
             const p = s.plate!;
             const mål = o.overspinn && p.kind === 'vapen' ? 1.12 : 0.88;
             const fart = ((mål - p.spin) / S.perFart) * (1 + (rng() * 2 - 1) * o.sikt);
