@@ -115,10 +115,7 @@ function drawBack(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
     sky.addColorStop(1, '#e0b46e');
     ctx.fillStyle = sky;
     ctx.fillRect(x0, y0, x1 - x0, floorBack - y0);
-    // Malte skyer med figurer som bare antydes (lyse dotter).
-    for (let i = 0; i < 7; i++) {
-        cloud(ctx, r, x0 + 60 + r() * (x1 - x0 - 120), y0 + 60 + r() * 130, 160 + r() * 140, 30 + r() * 20, 'rgb(52,82,138)', 'rgb(236,222,190)');
-    }
+    // Skyene ligger på et eget lag (`skyer`) som glir sakte over bakteppet.
     if (!lav) strokes(ctx, r, x0, y0, x1 - x0, floorBack - y0, '#e9dcc0', 260, 0.06);
     strokes(ctx, r, x0, y0, x1 - x0, floorBack - y0, '#0c1a36', 160, 0.1);
 
@@ -194,7 +191,31 @@ function drawBack(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
     ctx.globalAlpha = 1;
     strokes(ctx, r, x0, floorBack, x1 - x0, edge - floorBack, '#120b05', lav ? 60 : 160, 0.12);
 
-    // Kulissene: fire par malte søylevinger som trappes innover mot forsvinningspunktet.
+    // Lemmene i scenegulvet der nye stenger heises opp.
+    ctx.strokeStyle = 'rgba(10,6,3,0.6)';
+    ctx.lineWidth = 1.2;
+}
+
+/** Skystripa: malte skyer på en stripe like bred som scenen, som går i ett når den gjentas. */
+export const SKY_W = STAGE.x1 - STAGE.x0;
+function drawSkyStrip(ctx: CanvasRenderingContext2D, r: Rng) {
+    for (let i = 0; i < 8; i++) {
+        const cx = (i + 0.2 + r() * 0.6) * (SKY_W / 8);
+        const cy = 40 + r() * 150;
+        const w = 160 + r() * 140;
+        const ch = 30 + r() * 20;
+        const seed = 100 + Math.floor(r() * 1e6);
+        // Samme sky tegnes også én stripe til venstre og høyre, så skjøten ikke synes.
+        for (const dx of [-SKY_W, 0, SKY_W]) {
+            if (cx + dx + w < -40 || cx + dx - w > SKY_W + 40) continue;
+            cloud(ctx, seeded(seed), cx + dx, cy, w, ch, 'rgb(52,82,138)', 'rgb(236,222,190)');
+        }
+    }
+}
+
+/** Kulissene: fire par malte søylevinger som trappes innover mot forsvinningspunktet (foran skyene). */
+function drawWings(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
+    const { x0, x1, y0, floorBack, edge } = STAGE;
     for (let i = 3; i >= 0; i--) {
         const k = 1 - i * 0.16;
         const top = y0 + 10 + i * 8;
@@ -234,10 +255,6 @@ function drawBack(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
             strokes(ctx, r, xa, top, wdt, bot - top, '#e6d8b4', lav ? 10 : 30, 0.07);
         }
     }
-
-    // Lemmene i scenegulvet der nye stenger heises opp.
-    ctx.strokeStyle = 'rgba(10,6,3,0.6)';
-    ctx.lineWidth = 1.2;
 }
 
 /** Fremre lag: prosceniumramma, skyrekka i snorloftet, vignett og lerretskorn. */
@@ -407,6 +424,10 @@ export interface Art {
     key: string;
     storm: HTMLCanvasElement;
     back: HTMLCanvasElement;
+    /** Skyene (bredde `SKY_W`, høyde himmelen), tegnes forskjøvet med tiden. */
+    skyer: HTMLCanvasElement;
+    /** Kulissene, tegnes over skyene. */
+    wings: HTMLCanvasElement;
     front: HTMLCanvasElement;
     curtain: HTMLCanvasElement;
     icons: Record<PlateKind, HTMLCanvasElement>;
@@ -529,6 +550,13 @@ export function buildArt(prev: Art | null, scale: number, lav: boolean): Art {
     return {
         key,
         back: make((ctx, r) => drawBack(ctx, r, lav), 11),
+        wings: make((ctx, r) => drawWings(ctx, r, lav), 15),
+        skyer: (() => {
+            const [c, ctx] = mk(SKY_W * scale, (STAGE.floorBack - STAGE.y0) * scale);
+            ctx.scale(scale, scale);
+            drawSkyStrip(ctx, seeded(16));
+            return c;
+        })(),
         front: make((ctx, r) => drawFront(ctx, r, lav), 12),
         curtain: make((ctx, r) => drawCurtain(ctx, r), 13),
         storm: (() => {

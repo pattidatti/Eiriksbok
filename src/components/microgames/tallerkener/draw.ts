@@ -6,7 +6,7 @@ import { TUNING, type PlateKind } from './tuning';
 import { SLOTS } from './levels';
 import type { Game } from './state';
 import { aarNa, egneStenger } from './rules';
-import { PAL, type Art } from './art';
+import { PAL, SKY_W, type Art } from './art';
 import {
     H,
     STAGE,
@@ -283,6 +283,25 @@ function drawStorm(ctx: CanvasRenderingContext2D, art: Art, v: ViewState) {
         }
         ctx.stroke();
     }
+    ctx.restore();
+}
+
+/**
+ * Skyene glir sakte over bakteppet (en scenemaskin drar skystripa), så scenen lever også før
+ * eleven rører noe. Bare visning: farten følger ekte tid, ikke spillet.
+ */
+const SKY_FART = 22;
+function drawSkies(ctx: CanvasRenderingContext2D, art: Art, v: ViewState) {
+    const { x0, x1, y0, floorBack } = STAGE;
+    const hy = floorBack - 26;
+    const off = (v.tid * SKY_FART) % SKY_W;
+    const h = floorBack - y0;
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(x0, y0, x1 - x0, hy - y0);
+    ctx.clip();
+    ctx.drawImage(art.skyer, x0 + off - SKY_W, y0, SKY_W, h);
+    ctx.drawImage(art.skyer, x0 + off, y0, SKY_W, h);
     ctx.restore();
 }
 
@@ -610,6 +629,8 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, a
     ctx.save();
     ctx.translate(sx, sy);
     ctx.drawImage(art.back, 0, 0, W, H);
+    drawSkies(ctx, art, v);
+    ctx.drawImage(art.wings, 0, 0, W, H);
     if (v.lyn > 0.02) {
         ctx.fillStyle = `rgba(190,210,255,${v.lyn * 0.28})`;
         ctx.fillRect(STAGE.x0, STAGE.y0, STAGE.x1 - STAGE.x0, STAGE.floorBack - STAGE.y0);

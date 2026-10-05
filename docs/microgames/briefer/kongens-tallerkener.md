@@ -577,3 +577,12 @@ KronensVei.
 - Kjente svakheter: halvgod vinner fortsatt 85 % (forbedring 3 i vurderingen, ekte valg i midten,
   er ikke gjort). Bannerne står nå over de midterste tallerkenene i 2,4 s. New Model Army er bare
   banner og lærings-øyeblikk, ikke dobbel fart. Komponenten er 799 linjer (grensen er 800).
+
+### CI-fiks: levende scene uten input (2026-10-05)
+
+- Mikrospill-audit feilet på liv-sjekken (bildeendring passiv 2 s -> 7 s: 1.6 < 2 på CI-runneren).
+  Mellom 2 og 7 s sto alt stille bortsett fra små vaklinger og flammer.
+- Fiks (bare visning): skyene er flyttet ut av bakteppet til en egen skystripe (`skyer` i art.ts)
+  som glir 22 px/s over himmelen i ekte tid (`drawSkies` i draw.ts). Kulissene ligger på et eget
+  lag (`wings`) som tegnes over skyene. Lokalt 2 s -> 7 s: 1.2 før, 3.4-3.6 etter.
+- Simuleringen er uendret (samme tall som før), ingen tall i tuning.ts er rørt.

@@ -13,7 +13,7 @@ Ferdig spill (2D-canvas). Brief: `docs/microgames/briefer/kongens-tallerkener.md
 | `bots.ts`   | Robotene: seende, halvgod, tar-alt, aldri-parlament, mester-alene (`BOTS`) og knappemoseren (`makeRandomBot`). |
 | `sim.ts`    | `SimSpec` for `scripts/sim-microgame.mts`, `snapshotOf()`, `BOT_INFO`, `ARSAK` (delt med `usePlaytest`).        |
 | `layout.ts` | Hvor alt står på flata 960x540 (`STAGE`, `VP`, `CHEST`, `TIN`, `hookPos`, `lampPos`) og treff for pekeren (`segmentHits`, `FART_REF`). |
-| `art.ts`    | Kunsten som tegnes én gang per oppløsning (`buildArt`): bakteppe med havn, kulisser, gulv, proscenium, skyrekke, vignett, lerretskorn, teppet, stormkulissen og ikonene (skip, segl, våpenskjold). |
+| `art.ts`    | Kunsten som tegnes én gang per oppløsning (`buildArt`): bakteppe med havn, skystripa (`skyer`, glir i `drawSkies`), kulissene (`wings`, over skyene), gulv, proscenium, skyrekke, vignett, lerretskorn, teppet, stormkulissen og ikonene (skip, segl, våpenskjold). |
 | `fx.ts`     | Visningstilstanden (`ViewState`): mynter, gnister, røyk, fallende tallerkener, heising til loftet, sidene, tinntallerkenens vei, storm, lyn, skottenes hånd, teppet, rysting og hit-stop. `onEvents` gjør hendelser til lyd og bevegelse. |
 | `draw.ts`   | Tegningen per bilde (`drawGame`): stenger og tallerkener (vakling, glans, overspinn, protest, «reddet»), navneskilt, prislapper, tinntallerkenen, storm, støv, sporet. |
 | `pit.ts`    | Orkestergraven: rampelysene (gulltaket), kista med myntberget, skottenes hånd, myntene og sekkene. |
