@@ -13,6 +13,10 @@ export interface Plate {
     komboT: number;
     /** Den vakler nå (brukt til å telle valg én gang per vakling). */
     vakler: boolean;
+    /** Sekunder igjen før snurret begynner å dø ut (en ny tittel-tallerken er lett). */
+    lett: number;
+    /** Sekunder igjen av en protest: den slingrer rødt og gir ikke gull. */
+    protestT: number;
 }
 
 export type SlotState = 'stengt' | 'tom' | 'aktiv' | 'tatt';
@@ -44,6 +48,17 @@ export interface Tin {
     neste: number;
     /** Gull den øser denne gangen (totalt). */
     gull: number;
+    /** Stengene parlamentet tilbyr å ta (de rikeste): eleven velger én. */
+    tilbud: number[];
+}
+
+/** Gullstrømmene i kista akkurat nå (gull per sekund), for visningen. */
+export interface Flyt {
+    inn: number;
+    forbruk: number;
+    hoff: number;
+    skott: number;
+    parlament: number;
 }
 
 export type GameEvent =
@@ -53,6 +68,7 @@ export type GameEvent =
     | { type: 'flyr'; slot: number }
     | { type: 'kombo'; n: number }
     | { type: 'tittel' }
+    | { type: 'tittel-ny'; slot: number }
     | { type: 'side'; slot: number }
     | { type: 'ny'; slot: number }
     | { type: 'tin-ned' }
@@ -62,7 +78,8 @@ export type GameEvent =
     | { type: 'seier' }
     | { type: 'slutt' };
 
-export type Cause = 'kiste' | 'parlament';
+/** Hvorfor runden sluttet: kista tom i fred, kista tom i krigen, eller alle stengene tatt. */
+export type Cause = 'fred' | 'kiste' | 'parlament';
 
 export interface Game {
     rng: Rng;
@@ -79,15 +96,29 @@ export interface Game {
     tin: Tin;
     /** Stenger parlamentet har tatt (heist opp i taket). */
     tatt: number;
+    /** Tallerkenen som satt på hver stang da parlamentet tok den (for visningen i taket). */
+    taattKind: (PlateKind | null)[];
     /** Året da parlamentets tallerken ble tatt første gang (null = aldri). */
     forsteParlament: number | null;
+    /** Spilltiden (s) da første parlamentsøkt ble tatt (null = aldri). */
+    forsteParlamentT: number | null;
     score: number;
+    /** Gull tjent i år fra egne tallerkener (blir poeng ved årsskiftet). */
+    aarTjent: number;
+    /** Poeng fra forrige årsoppgjør (for visningen). */
+    sistPoeng: number;
+    /** Gull hoffet og skottene har tatt fra kista totalt. */
+    hoffTatt: number;
+    skottTatt: number;
+    flyt: Flyt;
     /** Gull fra egne tallerkener (uten parlamentet). */
     egetGull: number;
     titler: number;
     faller: number;
     flyr: number;
     kombos: number;
+    /** Tallerkener truffet av en bue så langt (for hintet om å sveipe). */
+    treff: number;
     /** Ærlige valg: når to eller flere vakler samtidig, og hver gang parlamentet senker seg. */
     valg: number;
     /** Neste bue kan ikke treffe før dette tidspunktet (nedkjøling). */
@@ -100,7 +131,7 @@ export interface Game {
 }
 
 export function newPlate(kind: PlateKind): Plate {
-    return { kind, spin: TUNING.snurr.start, kombo: 1, komboT: 0, vakler: false };
+    return { kind, spin: TUNING.snurr.start, kombo: 1, komboT: 0, vakler: false, lett: 0, protestT: 0 };
 }
 
 export function newGame(seed: number): Game {
@@ -128,15 +159,23 @@ export function newGame(seed: number): Game {
         slots,
         page: null,
         pageNeste: 0,
-        tin: { state: 'oppe', t: 0, neste: 0, gull: 0 },
+        tin: { state: 'oppe', t: 0, neste: 0, gull: 0, tilbud: [] },
         tatt: 0,
+        taattKind: SLOTS.map(() => null),
         forsteParlament: null,
+        forsteParlamentT: null,
         score: 0,
+        aarTjent: 0,
+        sistPoeng: 0,
+        hoffTatt: 0,
+        skottTatt: 0,
+        flyt: { inn: 0, forbruk: 0, hoff: 0, skott: 0, parlament: 0 },
         egetGull: 0,
         titler: 0,
         faller: 0,
         flyr: 0,
         kombos: 0,
+        treff: 0,
         valg: 0,
         bueKlar: 0,
         protestNeste: TUNING.protest.hver,

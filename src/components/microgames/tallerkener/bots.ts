@@ -6,9 +6,9 @@ import type { Rng } from '../sim';
 import { TUNING } from './tuning';
 import type { Game } from './state';
 import { naboer } from './levels';
-import { aarNa, acceptPage, forbruk, parlamentTar, swipe, takeParliament, tinNede, type Hit } from './rules';
+import { aarNa, acceptPage, forbruk, swipe, takeParliament, tinNede, type Hit } from './rules';
 
-type Style = 'seende' | 'halvgod' | 'tar-alt' | 'aldri-parlament';
+type Style = 'seende' | 'halvgod' | 'tar-alt' | 'aldri-parlament' | 'mester-alene';
 
 interface BotOpts {
     /** Handler bare hvert n-te tick (0,2 s per tick). */
@@ -36,10 +36,11 @@ interface BotOpts {
 }
 
 export const BOTS: Record<Style, BotOpts> = {
-    seende: { every: 3, redd: 0.55, med: 0.75, maksBue: 3, sikt: 0.12, parlament: 'trenger', nod: 5, nodFor: 3, overspinn: true, ofre: 'billigst' },
+    seende: { every: 3, redd: 0.55, med: 0.75, maksBue: 3, sikt: 0.12, parlament: 'trenger', nod: 9, nodFor: 7, overspinn: true, ofre: 'billigst' },
     halvgod: { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'krig', nod: 0, nodFor: 6, overspinn: false, ofre: 'vaklende' },
     'tar-alt': { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'alltid', nod: 0, nodFor: 0, overspinn: false, ofre: 'vaklende' },
     'aldri-parlament': { every: 4, redd: 0.5, med: 0.6, maksBue: 2, sikt: 0.25, parlament: 'aldri', nod: 0, nodFor: 0, overspinn: false, ofre: 'vaklende' },
+    'mester-alene': { every: 3, redd: 0.55, med: 0.75, maksBue: 3, sikt: 0.12, parlament: 'aldri', nod: 0, nodFor: 0, overspinn: true, ofre: 'billigst' },
 };
 
 /** Hva en stang er verdt for roboten (tom = 0). */
@@ -48,16 +49,13 @@ function verdi(g: Game, id: number): number {
     return p ? TUNING.typer[p.kind].gull * 10 + p.spin : 0;
 }
 
-/** Stanga roboten gir bort: den økta som koster minst, eller den som vakler mest. */
+/** Stanga roboten gir bort av dem parlamentet tilbyr: den som koster minst, eller den som vakler mest. */
 function offer(g: Game, o: BotOpts): number {
     let best = -1;
     let kost = Infinity;
-    for (const s of g.slots) {
-        if (s.state !== 'aktiv' && s.state !== 'tom') continue;
-        const k =
-            o.ofre === 'billigst'
-                ? parlamentTar(g, s.id).reduce((sum, id) => sum + verdi(g, id), 0)
-                : (s.plate?.spin ?? -1);
+    for (const id of g.tin.tilbud) {
+        const s = g.slots[id];
+        const k = o.ofre === 'billigst' ? verdi(g, id) : (s.plate?.spin ?? -1);
         if (k < kost) {
             kost = k;
             best = s.id;

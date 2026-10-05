@@ -4,7 +4,17 @@
 import { TUNING } from './tuning';
 import { brettFor, BRETT } from './levels';
 import { newPlate, type Game } from './state';
-import { aarNa, egneStenger, fall, forbruk, inntekt, spinTap } from './rules';
+import {
+    aarNa,
+    egneStenger,
+    fall,
+    hoffForbruk,
+    inntekt,
+    parlamentTilbud,
+    settInn,
+    skottetrekk,
+    spinTap,
+} from './rules';
 
 export { newGame } from './state';
 export type { Game } from './state';
@@ -31,6 +41,8 @@ export function update(g: Game, dt: number): void {
         const p = s.plate;
         if (s.state !== 'aktiv' || !p) continue;
         p.spin -= spinTap(g, p) * dt;
+        if (p.lett > 0) p.lett -= dt;
+        if (p.protestT > 0) p.protestT -= dt;
         if (p.komboT > 0) {
             p.komboT -= dt;
             if (p.komboT <= 0) p.kombo = 1;
@@ -58,8 +70,22 @@ export function update(g: Game, dt: number): void {
     if (nyVakler && vaklerNa >= 2 && vaklerNa > vaklerFor) g.valg++;
     g.gull += inn * dt;
     g.egetGull += inn * dt;
+    g.aarTjent += inn * dt;
 
-    g.gull -= forbruk(g) * dt;
+    // Ut av kista: hoffet og flåten, skottene i krigen, og hoffkostnaden på alt over taket
+    // (en full kiste lønner seg ikke - gull må tjenes hvert år).
+    const H = TUNING.kiste.hoff;
+    const hoff = g.gull > H.over ? (g.gull - H.over) * H.andel : 0;
+    const fast = hoffForbruk(g);
+    const skott = skottetrekk(g);
+    g.gull -= (fast + skott + hoff) * dt;
+    g.hoffTatt += hoff * dt;
+    g.skottTatt += skott * dt;
+    g.flyt.inn = inn;
+    g.flyt.forbruk = fast;
+    g.flyt.hoff = hoff;
+    g.flyt.skott = skott;
+    g.flyt.parlament = g.tin.state === 'oser' ? g.tin.gull / P.oser : 0;
 
     if (brett.sider) sider(g, dt, aar);
     if (brett.parlament) tinntallerken(g, dt, aar);
@@ -73,11 +99,11 @@ export function update(g: Game, dt: number): void {
         slutt(g, 'parlament');
     } else if (g.gull <= 0) {
         g.gull = 0;
-        slutt(g, 'kiste');
+        slutt(g, aar < TUNING.tid.skottene ? 'fred' : 'kiste');
     }
 }
 
-function slutt(g: Game, cause: 'kiste' | 'parlament') {
+function slutt(g: Game, cause: Game['cause'] & string) {
     // Tap før 1640 (tom kiste eller alle stengene borte): poengene halveres.
     if (!g.won) g.score *= TUNING.poeng.tap;
     g.mode = 'over';
@@ -89,10 +115,23 @@ function kalender(g: Game, aar: number, brett: number) {
     const hele = Math.floor(aar);
     if (hele > g.sistAar) {
         g.sistAar = hele;
-        // Årsoppgjøret: gull i kista x stenger igjen blir poeng.
-        g.score += Math.max(0, g.gull) * egneStenger(g);
+        // Årsoppgjøret: gull tjent i år x stenger igjen blir poeng.
+        g.sistPoeng = Math.round(g.aarTjent * egneStenger(g));
+        g.score += g.sistPoeng;
+        g.aarTjent = 0;
         for (const s of g.slots) s.aarGull = 0;
         g.events.push({ type: 'aar', aar: hele });
+        // En ny adelstittel er solgt: en ny våpenskjold-tallerken du ikke kan si nei til.
+        if ((TUNING.titler as readonly number[]).includes(hele)) {
+            const ledig =
+                g.slots.find((x) => x.state === 'stengt') ?? g.slots.find((x) => x.state === 'tom');
+            if (ledig) {
+                if (g.page?.slot === ledig.id) g.page = null;
+                settInn(g, ledig, 'vapen');
+                ledig.plate!.lett = TUNING.snurr.lett;
+                g.events.push({ type: 'tittel-ny', slot: ledig.id });
+            }
+        }
         if (hele === TUNING.tid.skottene) {
             g.events.push({ type: 'storm' });
             // Krigen: tinntallerkenen kommer straks.
@@ -107,16 +146,29 @@ function kalender(g: Game, aar: number, brett: number) {
     }
 }
 
-/** Protester (Hampden 1637): hvert `hver` s får én tilfeldig tallerken et kraftig vakle-dytt. */
+/**
+ * Protester (Hampden 1637): hvert `hver` s mister tallerkenen som tjener mest, halve snurret
+ * og slingrer rødt uten å gi gull en liten stund.
+ */
 function protest(g: Game, dt: number) {
     g.protestNeste -= dt;
     if (g.protestNeste > 0) return;
     g.protestNeste = TUNING.protest.hver;
-    const aktive = g.slots.filter((s) => s.state === 'aktiv' && s.plate);
-    if (!aktive.length) return;
-    const s = aktive[Math.floor(g.rng() * aktive.length)];
-    s.plate!.spin = Math.max(0.02, s.plate!.spin - TUNING.protest.dytt);
-    g.events.push({ type: 'protest', slot: s.id });
+    let best: (typeof g.slots)[number] | null = null;
+    let mest = -1;
+    for (const s of g.slots) {
+        if (s.state !== 'aktiv' || !s.plate || s.plate.protestT > 0) continue;
+        const v = TUNING.typer[s.plate.kind].gull * (s.plate.spin >= TUNING.snurr.slakk ? 1 : 0.1);
+        if (v > mest) {
+            mest = v;
+            best = s;
+        }
+    }
+    if (!best) return;
+    const p = best.plate!;
+    p.spin = Math.max(0.05, p.spin * TUNING.protest.andel);
+    p.protestT = TUNING.protest.tid;
+    g.events.push({ type: 'protest', slot: best.id });
 }
 
 /** Sidene bærer inn nye tallerkener til en tom stang. Ta imot, eller la siden gå. */
@@ -160,6 +212,8 @@ function tinntallerken(g: Game, dt: number, aar: number) {
         return;
     }
     if (tin.state === 'nede') {
+        // Tilbudet følger hva du har akkurat nå (de rikeste stengene).
+        tin.tilbud = parlamentTilbud(g);
         tin.t -= dt;
         if (tin.t <= 0) {
             tin.state = 'oppe';
@@ -171,6 +225,7 @@ function tinntallerken(g: Game, dt: number, aar: number) {
     if (tin.neste <= 0) {
         tin.state = 'nede';
         tin.t = P.nede;
+        tin.tilbud = parlamentTilbud(g);
         tin.gull =
             aar >= TUNING.tid.skottene ? P.gullStorm : aar >= TUNING.tid.varsel ? P.gullSent : P.gull;
         g.valg++;
@@ -178,13 +233,15 @@ function tinntallerken(g: Game, dt: number, aar: number) {
     }
 }
 
-/** 0-1: hvor hardt spillet presser nå (hvor tynn kista er og andelen slakke tallerkener). */
+/** 0-1: hvor hardt spillet presser nå (tynn kiste, slakke tallerkener, makt gitt bort). */
 export function pressure(g: Game): number {
     const pr = TUNING.press;
     const aktive = g.slots.filter((s) => s.state === 'aktiv' && s.plate);
     const slakke = aktive.filter((s) => s.plate!.spin < S.slakk * 1.6).length;
     const andel = aktive.length ? slakke / aktive.length : 1;
-    const sek = g.gull / Math.max(0.1, forbruk(g));
+    const sek = g.gull / Math.max(0.1, hoffForbruk(g) + skottetrekk(g));
     const tynn = 1 - Math.min(1, sek / pr.reserveRef);
-    return Math.min(1, pr.andelKiste * tynn + (1 - pr.andelKiste) * andel);
+    // Makt som er gitt bort, er også press: færre stenger igjen å redde kista med.
+    const makt = g.tatt / P.kroker;
+    return Math.min(1, pr.andelKiste * tynn + pr.andelSlakk * andel + pr.andelMakt * makt);
 }

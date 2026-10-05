@@ -159,6 +159,12 @@ trykk-for-å-forfremme er en tredje regel, faget i kanten. 3 venting, lite press
    tegnes på skjermen og treffer tallerkenenes projiserte ellipser, så kontrollen er like enkel som
    i et 2D-spill. Ulikt de tre siste: skrått ovenfra (Radionettet), lavt følgekamera fra siden
    (Taburetten), rett ovenfra ortografisk (Tinghuset).
+   **Bygget i 2D (byggfasen, 2026-10-05):** spillet ble laget som 2D-canvas med scenedybde i
+   stedet for 3D. En maskeradescene ER lag på lag av flate, malte kulisser, så scenen bærer
+   kunstbriefen like godt i lag (bakteppe, fire par søylekulisser i sentralperspektiv, gulv mot
+   forsvinningspunktet, skyrekke, proscenium, rampelys) som i 3D. Input er 2D uansett, glansen som
+   piskes rundt kanten og vaklingen leses tydelig i 2D, og 2D-canvas er tryggere på en Chromebook
+   (7-8 ms JS per bilde med CPU x4, ingen three.js). Dybden kommer fra skala og høyde per stang.
 
 9. **Look.** Inigo Jones' hoffmaskerader i Banqueting House på 1630-tallet: en forgylt
    prosceniumramme, malte kulisser i sentralperspektiv, skymaskiner og stearinlys, under Rubens'
@@ -374,3 +380,63 @@ KronensVei.
   cover, `useArcadeText`, «Dette skjedde» og stille bilde uten input er ventet (kunst/juice).
 - Skjermbilder: `.screenshots/playtest/kongens-tallerkener/film-03-20s.png`, `film-06-80s.png`,
   `film-07-110s.png`, `seende-slutt.png`.
+
+### Fase: bygg - ferdig spill (2026-10-05)
+
+- Gjorde diagnose-2-endringene først: poeng per år = gull TJENT det året (egne tallerkener) x
+  stenger igjen; hoffkostnad 4 %/s på gull over 90 (synlig: mynter flyter ut til hoffet); skottene
+  trekker 26 gull/s fra 1639 (pluss forbruket), mer enn alle stengenes tak til sammen; protest hvert
+  8. s på tallerkenen som tjener mest (halvt snurr, rød slingring 1,5 s uten gull); tvungen
+  adelstittel-tallerken i 1633, 1636 og 1639 (lett i 2 s); skipsskatten blir 15 % tyngre per år;
+  parlamentet tilbyr de to rikeste stengene, eleven drar tinntallerkenen til én av dem, og prisen
+  står på en lapp ved stanga («-1 stang = -20 % poeng») og «+240 gull» under tinntallerkenen.
+  Ny robot `mester-alene` (sjonglerer som seende, tar aldri parlamentet) beviser at ingen kan
+  betale krigen alene. Tre tapsårsaker: kista tom før krigen (`fred`), kista tom i krigen, alle
+  stengene tatt. Sluttskjermen stemmer med seg selv: «Du styrte alene i 9,2 år. Karl klarte 11.»
+  (år alene med én desimal, fram til første parlamentsøkt), «Du nådde 1640» eller «Teppet gikk ned
+  i 1639», stenger gitt bort «X av 6», poeng og titler, og en linje som følger plottet.
+- Bygde kunsten i 2D (se punkt 8): `art.ts` tegner bakteppe med Rubens-himmel og havn med skip,
+  kulisser, gulv, proscenium, skyrekke, draperier, vignett, lerretskorn, teppe og stormkulisse én
+  gang per oppløsning; `draw.ts`/`pit.ts` tegner per bilde. Tallerkener i bladgull med preget ikon
+  (skip, segl, våpenskjold) og navneskilt på stanga (Skipsskatt, Monopol, Adelstittel), glans som
+  piskes rundt kanten etter snurret, hvitglødende kant ved overspinn, rødskjær ved vakling.
+- Feel: syngende metall per treff (tone etter snurr), gnister, hit-stop ved kombo på tre, «Reddet!»
+  med lysbølge når en nesten død tallerken reddes, tallerkener som vingler, faller og knuses i skår
+  med lyd og rysting, eller flyr ut i kulissen med klang; mynter flyr fra hver snurrende tallerken
+  til kista; stenger heises opp av lemmen; sider går inn og ut av kulissene; tinnhånda tar stanga,
+  napper den ned og heiser den til en krok i loftet mens gullsekker faller i kista og rampelyset
+  slukner med røyk; skottenes mørke hånd drar mynter synlig ut av kista i krigen, med lyn, torden og
+  trommer; stormkulisser glir inn fra 1637; tom kiste: salen mørkner, kista rister, lysene slukner
+  fra kantene, teppet går ned. Poeng teller opp og spretter, årstallet spretter.
+- Arkadeskall med eget THEME og egen HUD: kartusj øverst på prosceniet (årstall, tidslinje mot
+  1640 med Karls krone, «N år igjen til 1640»), «Parlamentets makt» med seks kroker nede til
+  venstre, gullet på kista, poengkartusj nede til høyre. Pause (Esc/P og knapp med tastetegn),
+  lyd av/på. Tekst via `useArcadeText`: tre lærings-øyeblikk (snurr, parlament, skottene) med
+  `until`, korte lapper ved tingen, bannere for aktene, «Dette skjedde» med år alene, parlamentet,
+  skottene, titlene. Rekord (år alene, poeng) og titlenes bok over runder, ranger etter år alene.
+  Embedet i artikkelen etter avsnittet «I 1637 prøvde Karl ...».
+- Simuleringen (200 runder per robot): seende 99 % seier, median 6 025 (p10-p90 5 357-6 587);
+  halvgod 79 %, median 4 312; mester-alene 0 %, median 2 868; aldri-parlament 0 %, median 2 170
+  (kista tom i 1638-39); tar-alt 0 %, median 1 821 (alle stengene tatt i 1639); tilfeldig 0 %,
+  median 24; passiv 0 % (taper etter 12 s). 45 valg per minutt, press 0,21 -> 0,17 -> 0,42.
+  Selvspill grønt: seende vant med 5 282, 7,9 ms JS per bilde på Chromebook-takt. Audit --strict
+  grønn, likhet nærmest loddposen (0,49).
+- Prøvde som IKKE virket: (1) Seende tok parlamentet først når kista holdt under 3 s før krigen og
+  5 s i krigen: 10 % tap rett ved 1639 fordi tinntallerkenen ikke rakk ned. Roboten tar nå økta i
+  nød tidligere (7 og 9 s) - som en elev som ser kista synke. (2) Hoffkostnad over 120: presset i
+  midten falt til 0,14; 90 ga 0,17. (3) Presset målt bare som tynn kiste og slakke tallerkener steg
+  ikke nok (0,26 -> 0,39), fordi parlamentets gull fyller kista i krigen; makt gitt bort teller nå
+  også. (4) Malte skyer som runde dotter så ut som bobler, og mørke kanter oppsto når toningen gikk
+  mot svart; nå flate, myke dotter som toner mot samme farge. (5) Stormkulissen som dotter tegnet
+  per bilde dekket stengene; nå et forhåndstegnet lerret klippet til bakteppet. (6) Lærings-
+  øyeblikk uten `until` sto i sakte film resten av runden for roboten. (7) 13 px HUD-tekst ble
+  12,7 px i fullskjerm; hevet til 14 px. (8) Teppefallet (2,4 s) gjorde at porten ikke fant
+  «Dette skjedde»; snapshot sier nå «spiller» til slutt-skjermen står.
+- Kjente svakheter: IM Fell English er ikke installert (ingen Fontsource-pakke), så serifen faller
+  tilbake til Georgia. Med sju stenger blir midten trang: navneskilt bak kan delvis dekkes av
+  tallerkener foran. «Reddet!» vises bare for elevens egne sveip, ikke robotenes. Presset i midten
+  (0,17) er lavere enn diagnose-målet (0,4). Ingen kan nå 11 år alene og vinne, med vilje (Karl
+  måtte også gi seg), så de to øverste rangene er nesten uoppnåelige. Treff på tallerkener langt
+  bak er ikke testet på berøringsskjerm.
+- Skjermbilder: `.screenshots/kontaktark/kongens-tallerkener-1.png` til `-3.png`, cover
+  `public/images/microgames/kongens-tallerkener.webp`.

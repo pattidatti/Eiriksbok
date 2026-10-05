@@ -1,5 +1,5 @@
 // Hvor alt står på skjermen (logisk flate 960x540) og treff for pekeren.
-// Gråboks: scenen sett rett forfra; stenger bakover står høyere og er mindre.
+// Scenen sett rett forfra fra kongens stol: stenger bakover står høyere og er mindre.
 
 import { SLOTS } from './levels';
 import { TUNING } from './tuning';
@@ -37,22 +37,38 @@ export function plateRadius(slot: number): { rx: number; ry: number } {
     return { rx: 50 * k, ry: 16 * k };
 }
 
+/** Prosceniumsåpningen (scenen innenfor den forgylte ramma). */
+export const STAGE = { x0: 64, x1: 896, y0: 58, floorBack: 336, edge: 468 };
+
+/** Forsvinningspunktet for kulissenes sentralperspektiv. */
+export const VP = { x: W / 2, y: 262 };
+
 /** Kista foran rampen. */
-export const CHEST = { x: W / 2 - 60, y: 470, w: 120, h: 56 };
+export const CHEST = { x: W / 2 - 62, y: 482, w: 124, h: 50 };
+
+/** Toppen av myntberget i kista (der mynter lander). */
+export function chestMouth(): Pt {
+    return { x: CHEST.x + CHEST.w / 2, y: CHEST.y + 4 };
+}
 
 /** Parlamentets tinntallerken: oppe i taket, nede i rekkevidde, og foran rampen når den øser. */
 export const TIN = {
-    oppe: { x: W / 2 + 230, y: 112 },
-    nede: { x: W / 2 + 230, y: 178 },
-    oser: { x: 840, y: 440 },
-    rx: 66,
-    ry: 20,
+    oppe: { x: 790, y: 128 },
+    nede: { x: 790, y: 212 },
+    oser: { x: 842, y: 420 },
+    rx: 58,
+    ry: 17,
 };
 
-/** Krokene i taket der parlamentet henger stengene det har tatt. */
+/** Krokene i snorloftet der parlamentet henger stengene det har tatt. */
 export function hookPos(i: number): Pt {
     const n = TUNING.parlament.kroker;
-    return { x: W / 2 - 250 + (500 / (n - 1)) * i, y: 22 };
+    return { x: 196 + (420 / (n - 1)) * i, y: 96 };
+}
+
+/** Rampelyset foran hver stang (langs scenekanten). */
+export function lampPos(slot: number): Pt {
+    return { x: W / 2 + SLOTS[slot].x * 400, y: STAGE.edge - 4 };
 }
 
 /** Siden står litt til høyre for stanga den bærer tallerkenen til. */

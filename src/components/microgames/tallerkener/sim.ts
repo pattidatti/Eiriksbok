@@ -11,6 +11,7 @@ export const GAME_ID = 'kongens-tallerkener';
 export const MAKS_SEKUNDER = 260;
 
 export const ARSAK = {
+    fred: 'kista var tom før krigen - tallerkenene sto stille',
     kiste: 'kista var tom - kildene ga for lite til å betale krigen',
     parlament: 'parlamentet tok alle stengene',
 } as const;
@@ -35,6 +36,11 @@ export const BOT_INFO = {
         forventer: 'taper',
         beskrivelse:
             'Sjonglerer som halvgod, men tar aldri parlamentets penger - heller ikke når krigen kommer i 1639.',
+    },
+    'mester-alene': {
+        forventer: 'taper',
+        beskrivelse:
+            'Sjonglerer like godt som seende (raske, presise buer og overspinn på våpenskjoldene), men tar aldri parlamentets penger. Beviser at ingen sjonglør kan betale krigen alene.',
     },
     tilfeldig: {
         forventer: 'taper',
@@ -73,6 +79,7 @@ const spec: SimSpec<Game> = {
         halvgod: { ...BOT_INFO.halvgod, make: bot('halvgod') },
         'tar-alt': { ...BOT_INFO['tar-alt'], make: bot('tar-alt') },
         'aldri-parlament': { ...BOT_INFO['aldri-parlament'], make: bot('aldri-parlament') },
+        'mester-alene': { ...BOT_INFO['mester-alene'], make: bot('mester-alene') },
         tilfeldig: { ...BOT_INFO.tilfeldig, make: (rng) => makeRandomBot(rng) },
     },
 };

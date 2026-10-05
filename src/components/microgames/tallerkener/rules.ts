@@ -2,7 +2,7 @@
 // tallerken. Robotene bruker de samme funksjonene som pekeren.
 
 import { TUNING } from './tuning';
-import { avstand, naboer } from './levels';
+import { naboer } from './levels';
 import { newPlate, type Game, type Plate, type Slot } from './state';
 
 const S = TUNING.snurr;
@@ -12,31 +12,41 @@ export function aarNa(g: Game): number {
     return TUNING.tid.start + g.t / TUNING.tid.aar;
 }
 
-/** Forbruket fra kista (gull per sekund) akkurat nå. */
-export function forbruk(g: Game): number {
+/** Hoffets og flåtens faste forbruk fra kista (gull per sekund) akkurat nå. */
+export function hoffForbruk(g: Game): number {
     const aar = aarNa(g);
     const i = Math.floor(aar - TUNING.tid.start);
     const liste = TUNING.kiste.forbruk;
-    const base = liste[Math.min(liste.length - 1, Math.max(0, i))];
-    if (aar < TUNING.tid.skottene) return base;
-    // Skottene trekker gull fra kista hvert sekund.
-    const krig = base + TUNING.kiste.krig;
-    if (aar < TUNING.tid.seier) return krig;
+    return liste[Math.min(liste.length - 1, Math.max(0, i))];
+}
+
+/** Gull skottene trekker ut av kista per sekund (0 før 1639, stiger i overtiden). */
+export function skottetrekk(g: Game): number {
+    const aar = aarNa(g);
+    if (aar < TUNING.tid.skottene) return 0;
+    if (aar < TUNING.tid.seier) return TUNING.kiste.krig;
     // Overtid: krigen blir dyrere for hvert år til ingen kan holde ut.
-    return krig * Math.pow(1 + TUNING.kiste.overtidVekst, aar - TUNING.tid.seier);
+    return TUNING.kiste.krig * Math.pow(1 + TUNING.kiste.overtidVekst, aar - TUNING.tid.seier);
+}
+
+/** Alt som går ut av kista per sekund (uten hoffkostnaden over taket). */
+export function forbruk(g: Game): number {
+    return hoffForbruk(g) + skottetrekk(g);
 }
 
 /** Hvor fort en tallerken mister snurr (per sekund) i år. */
 export function spinTap(g: Game, p: Plate): number {
     // Tyngre for hvert år fram til 1640; i overtiden er det forbruket som stiger.
+    if (p.lett > 0) return 0;
     const aarGatt = Math.min(aarNa(g), TUNING.tid.seier) - TUNING.tid.start;
-    return S.tap * TUNING.typer[p.kind].vekt * (1 + S.tapPerAar * aarGatt);
+    const t = TUNING.typer[p.kind];
+    return S.tap * t.vekt * (1 + t.tyngre * aarGatt);
 }
 
 /** Gull per sekund fra én stang akkurat nå (0 når den vakler eller har nådd årets tak). */
 export function inntekt(s: Slot): number {
     const p = s.plate;
-    if (!p || p.spin < S.slakk) return 0;
+    if (!p || p.spin < S.slakk || p.protestT > 0) return 0;
     if (s.aarGull >= TUNING.typer[p.kind].tak) return 0;
     const over = p.spin >= S.overspinn ? 2 : 1;
     return TUNING.typer[p.kind].gull * over * p.kombo;
@@ -76,6 +86,7 @@ export function swipeHit(g: Game, bue: Bue, h: Hit): void {
     } else if (!naboer(forrige, h.slot, TUNING.bue.nabo)) return;
     bue.seen.add(h.slot);
     bue.slots.push(h.slot);
+    g.treff++;
     const p = s.plate;
     const fart = Math.max(0, Math.min(2.5, h.fart));
     const for_ = p.spin;
@@ -84,16 +95,10 @@ export function swipeHit(g: Game, bue: Bue, h: Hit): void {
         flyAv(g, h.slot);
         return;
     }
-    // En tittel selges hver gang et våpenskjold går inn i overspinn.
-    // Hver tittel gir en ny adelsfamilie: en ny tallerken du ikke kan si nei til.
+    // En tittel selges hver gang et våpenskjold går inn i overspinn (titlenes bok).
     if (for_ < S.overspinn && p.spin >= S.overspinn && p.kind === 'vapen') {
         g.titler++;
         g.events.push({ type: 'tittel' });
-        const ledig = g.slots.find((x) => x.state === 'stengt') ?? g.slots.find((x) => x.state === 'tom');
-        if (ledig) {
-            if (g.page?.slot === ledig.id) g.page = null;
-            settInn(g, ledig, 'vapen');
-        }
     }
     bue.hit.push(p);
     const n = bue.hit.length;
@@ -163,17 +168,25 @@ export function tinNede(g: Game): boolean {
 
 const egen = (s: Slot) => s.state === 'aktiv' || s.state === 'tom';
 
-/** Stengene parlamentet tar hvis du slipper tinntallerkenen på `slot` nå: før krigen også naboen. */
+/** Hva en stang er verdt for kongen: gull per sekund når den snurrer (tom stang = 0). */
+export function stangVerdi(s: Slot): number {
+    return s.plate ? TUNING.typer[s.plate.kind].gull : 0;
+}
+
+/** Stengene parlamentet vil ha nå: de rikeste du har (eleven velger én av dem). */
+export function parlamentTilbud(g: Game): number[] {
+    return g.slots
+        .filter(egen)
+        .sort((a, b) => stangVerdi(b) - stangVerdi(a) || (b.plate?.spin ?? 0) - (a.plate?.spin ?? 0))
+        .slice(0, TUNING.parlament.tilbud)
+        .map((s) => s.id);
+}
+
+/** Stengene parlamentet tar hvis du slipper tinntallerkenen på `slot` nå (bare de tilbudte). */
 export function parlamentTar(g: Game, slot: number): number[] {
     const s = g.slots[slot];
-    if (!s || !egen(s)) return [];
-    const ut = [slot];
-    const antall = aarNa(g) < TUNING.tid.skottene ? TUNING.parlament.forKrigen : 1;
-    const andre = g.slots
-        .filter((x) => x.id !== slot && egen(x))
-        .sort((a, b) => avstand(slot, a.id) - avstand(slot, b.id));
-    for (const x of andre.slice(0, antall - 1)) ut.push(x.id);
-    return ut;
+    if (!s || !egen(s) || !g.tin.tilbud.includes(slot)) return [];
+    return [slot];
 }
 
 /**
@@ -187,12 +200,16 @@ export function takeParliament(g: Game, slot: number): boolean {
     if (!tar.length) return false;
     for (const id of tar) {
         const s = g.slots[id];
+        g.taattKind[id] = s.plate?.kind ?? null;
         s.state = 'tatt';
         s.plate = null;
         if (g.page?.slot === id) g.page = null;
         g.tatt++;
     }
-    if (g.forsteParlament === null) g.forsteParlament = Math.floor(aarNa(g));
+    if (g.forsteParlament === null) {
+        g.forsteParlament = Math.floor(aarNa(g));
+        g.forsteParlamentT = g.t;
+    }
     g.tin.state = 'oser';
     g.tin.t = TUNING.parlament.oser;
     g.events.push({ type: 'parlament', slot });
