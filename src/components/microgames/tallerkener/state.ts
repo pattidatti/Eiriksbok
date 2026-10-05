@@ -75,11 +75,16 @@ export type GameEvent =
     | { type: 'parlament'; slot: number }
     | { type: 'protest'; slot: number }
     | { type: 'storm' }
+    | { type: 'hendelse'; navn: 'saape' | 'innland' | 'hampden' | 'skotter' | 'borgerkrig'; slot?: number }
+    | { type: 'haer'; slot: number }
     | { type: 'seier' }
     | { type: 'slutt' };
 
-/** Hvorfor runden sluttet: kista tom i fred, kista tom i krigen, eller alle stengene tatt. */
-export type Cause = 'fred' | 'kiste' | 'parlament';
+/**
+ * Hvorfor runden sluttet: kista tom i fred, kista tom i krigen, alle stengene tatt, eller
+ * (etter 1640) 1649 nådd.
+ */
+export type Cause = 'fred' | 'kiste' | 'parlament' | 'aar1649';
 
 export interface Game {
     rng: Rng;
@@ -103,6 +108,12 @@ export interface Game {
     /** Spilltiden (s) da første parlamentsøkt ble tatt (null = aldri). */
     forsteParlamentT: number | null;
     score: number;
+    /** Stenger kongen hadde igjen da 1640 ble nådd (null = ikke nådd). */
+    beholdt1640: number | null;
+    /** Stenger gitt til parlamentet før 1640. */
+    gitt1640: number;
+    /** Skipsskatten kreves i hele landet (fra 1635): skip-tallerkenene er tyngre. */
+    innland: boolean;
     /** Gull tjent i år fra egne tallerkener (blir poeng ved årsskiftet). */
     aarTjent: number;
     /** Poeng fra forrige årsoppgjør (for visningen). */
@@ -165,6 +176,9 @@ export function newGame(seed: number): Game {
         forsteParlament: null,
         forsteParlamentT: null,
         score: 0,
+        beholdt1640: null,
+        gitt1640: 0,
+        innland: false,
         aarTjent: 0,
         sistPoeng: 0,
         hoffTatt: 0,

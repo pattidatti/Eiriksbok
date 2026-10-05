@@ -14,6 +14,7 @@ export const ARSAK = {
     fred: 'kista var tom før krigen - tallerkenene sto stille',
     kiste: 'kista var tom - kildene ga for lite til å betale krigen',
     parlament: 'parlamentet tok alle stengene',
+    aar1649: 'runden nådde 1649',
 } as const;
 
 export const BOT_INFO = {

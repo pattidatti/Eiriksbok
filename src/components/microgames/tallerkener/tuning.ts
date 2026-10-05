@@ -12,7 +12,22 @@ export const TUNING = {
         skottene: 1639,
         /** Stormkulissen varsler (bønneboka). */
         varsel: 1637,
+        /** Etter 1640 går årene fortere: så mange sekunder per år i borgerkrigen. */
+        aarOvertid: 4,
+        /** Siste år i runden: Karl ble dømt i 1649. */
+        slutt: 1649,
     },
+
+    /**
+     * Hendelsene i midten (én ny ting hvert år). `saape`: et tvunget monopol (såpemonopolet);
+     * `innland`: skipsskatten kreves i hele landet (en tvungen skip-tallerken bakerst, og alle
+     * skip-tallerkener blir tyngre); `hampden`: alle skip-tallerkener får protest på en gang;
+     * `skotter`: skottene marsjerer inn og trekker `marsj` gull/s før krigen.
+     */
+    hendelser: { saape: 1632, innland: 1635, hampden: 1637, skotter: 1638, marsj: 1.5, innlandTyngre: 0.1 },
+
+    /** Borgerkrigen etter 1640: parlamentets hær tar en stang hvert av disse årene. */
+    borgerkrig: { tarAar: [1641, 1642, 1643, 1645, 1647] },
 
     /** Snurr per tallerken: 0 = står stille (faller), 1 = overspinn, over `flyr` = flyr av. */
     snurr: {
@@ -66,13 +81,13 @@ export const TUNING = {
     kiste: {
         start: 25,
         /** Forbruk (gull/s) per år fra 1629. Siste verdi gjelder videre før 1639. */
-        forbruk: [4, 4.5, 5.5, 6.5, 7.5, 8, 8.5, 9, 9.5, 10],
+        forbruk: [4, 4.5, 5.5, 6.5, 7.5, 8, 8.5, 9, 9.2, 9.5],
         /** Skottene trekker så mye gull fra kista per sekund fra 1639 (i tillegg til forbruket). */
-        krig: 26,
+        krig: 22,
         /** Hoffet: over `over` gull i kista forsvinner `andel` av overskuddet per sekund. */
-        hoff: { over: 90, andel: 0.04 },
+        hoff: { over: 60, andel: 0.04 },
         /** Etter 1640: forbruket øker med denne andelen per år (overtid). */
-        overtidVekst: 0.35,
+        overtidVekst: 0.12,
     },
 
     /** Sidene som bærer inn nye tallerkener. */

@@ -20,7 +20,7 @@ import { usePlaytest } from './playtest';
 import { newGame, update, type Game } from './tallerkener/game';
 import type { GameEvent } from './tallerkener/state';
 import { TUNING } from './tallerkener/tuning';
-import { aarNa, egneStenger, nyBue, swipeHit, takeParliament, acceptPage, tinNede, type Bue } from './tallerkener/rules';
+import { aarNa, nyBue, swipeHit, takeParliament, acceptPage, tinNede, type Bue } from './tallerkener/rules';
 import { BOTS, makeBot, makeRandomBot } from './tallerkener/bots';
 import { BOT_INFO, GAME_ID, MAKS_SEKUNDER, snapshotOf } from './tallerkener/sim';
 import { drawGame } from './tallerkener/draw';
@@ -60,13 +60,13 @@ const THEME: Partial<ArcadeTheme> = {
     bannerTop: '30%',
 };
 
-const GOLD = '#d4a640';
-const CREAM = '#f3e6c4';
-const KRONE = 'M2 12 L2 5 L6 8 L9 2 L12 8 L16 5 L16 12 Z';
+import { CREAM, GOLD, KRONE, YearBar } from './tallerkener/YearBar';
 
 interface Save {
     bestScore: number;
     bestAlene: number;
+    /** Året du kom lengst (1629-1649). */
+    bestAar?: number;
     runs: number;
     /** Titlenes bok: titler solgt over alle runder. */
     titler: number;
@@ -78,6 +78,8 @@ interface Result {
     alene: number;
     tatt: number;
     aar: number;
+    /** Stenger igjen i 1640 (null = nådde ikke 1640). */
+    beholdt: number | null;
     linje: string;
     forklaring: string;
     rank: string;
@@ -213,11 +215,24 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
         const alene = aarAlene(g);
         const score = Math.floor(g.score);
         const prev = saveRef.current;
+        const aar = sluttAar(g);
         text.lesson(
             'alene',
             `Du styrte alene i ${fmtAar(alene)} år. Karl styrte uten parlamentet fra 1629 til 1640, i elleve år, før krigen tvang ham.`,
-            5
+            2
         );
+        if (g.won) {
+            text.lesson(
+                'borgerkrig',
+                `Du ga bort ${g.gitt1640} ${g.gitt1640 === 1 ? 'stang' : 'stenger'} før 1640. I 1642 kom borgerkrigen, og parlamentets hær vant. I 1649 ble Karl dømt og henrettet.`,
+                5
+            );
+            text.lesson(
+                'restaurasjon',
+                'I 1660 fikk England en konge igjen, Karl 2. Men fra da av måtte kongen styre sammen med parlamentet.',
+                4
+            );
+        }
         if (g.titler > 0)
             text.lesson('titler', `Karl solgte adelstitler for penger, 266 bare i England. Du solgte ${g.titler} i denne runden.`, 1.2);
         setResult({
@@ -225,10 +240,11 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
             score,
             alene,
             tatt: g.tatt,
-            aar: sluttAar(g),
+            aar,
+            beholdt: g.beholdt1640,
             linje: sluttLinje(g),
             forklaring: g.won ? seierLinje(g) : g.cause ? TIPS[g.cause] : '',
-            rank: rankFor(RANKS, alene),
+            rank: rankFor(RANKS, g.won ? aar : Math.min(aar, 1639)),
             titler: prev.titler + g.titler,
             rekord: score > prev.bestScore && prev.runs > 0,
             lessons: text.lessons(3),
@@ -236,6 +252,7 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
         updateSave((p) => ({
             bestScore: Math.max(p.bestScore, score),
             bestAlene: Math.max(p.bestAlene, alene),
+            bestAar: Math.max(p.bestAar ?? 0, aar),
             runs: p.runs + 1,
             titler: p.titler + g.titler,
         }));
@@ -254,15 +271,19 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
         const g = game.current;
         switch (e.type) {
             case 'aar': {
-                if (g.sistPoeng > 0) text.float(`+${g.sistPoeng} poeng`, ...xy({ x: 858, y: 470 }), GOLD, true);
-                if (e.aar === TUNING.tid.varsel) text.banner('1637 · BØNNEBOKA', '#1f3a6b');
+                if (g.sistPoeng > 0) text.float(`+${g.sistPoeng} poeng`, ...xy({ x: 790, y: 440 }), GOLD, true);
+                if (e.aar === 1633) text.banner('1633 · TITLER TIL SALGS', '#6b4a14');
+                if (e.aar === TUNING.protest.fra) text.banner('1634 · FOLK PROTESTERER', '#8e2230');
+                if (e.aar === 1636) text.banner('1636 · FLERE TITLER', '#6b4a14');
+                if (e.aar === 1641) text.banner('1641 · PARLAMENTET KREVER MER', '#4a5254', 2.6);
                 const el = hud.score.current;
                 el?.animate?.([{ transform: 'scale(1.35)' }, { transform: 'scale(1)' }], { duration: 420, easing: 'cubic-bezier(.2,1.7,.4,1)' });
                 break;
             }
             case 'brett':
                 if (e.nr === 2) text.banner('1631 · NYE KILDER', '#6b4a14');
-                if (e.nr === 3) text.banner('1635 · PARLAMENTET VENTER', '#4a5254');
+                if (e.nr === 3)
+                    text.point('tin-venter', 'Parlamentet venter med gull', toScreen(() => view.current.tin), { seconds: 4 });
                 if (e.nr === 4) text.banner('1639 · SKOTTENE KOMMER', '#8e2230', 2.6);
                 break;
             case 'faller': {
@@ -303,6 +324,10 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                 lessonOnce('protest', 'Skipsskatten ble krevd av hele landet. Mange som før hadde støttet kongen, ble sinte og nektet å betale.', 1);
                 break;
             case 'tin-ned':
+                text.point('tin', `+${g.tin.gull} gull, men -1 stang`, toScreen(() => view.current.tin), {
+                    until: () => game.current.tin.state !== 'nede',
+                    seconds: 3,
+                });
                 text.beatOnce(
                     'parlament',
                     'Parlamentets tallerken',
@@ -340,6 +365,29 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
             }
             case 'seier':
                 text.banner('1640 · DU HOLDT UT', '#6b4a14', 3);
+                break;
+            case 'hendelse':
+                if (e.navn === 'saape') {
+                    text.banner('1632 · SÅPEMONOPOLET', '#6b4a14');
+                    if (e.slot !== undefined) text.point('saape', 'Monopol på såpe: ny kilde', plateAt(e.slot), { seconds: 4 });
+                    lessonOnce('saape', 'Karl solgte enerett på varer som såpe. Da ble såpa dyrere for alle.', 0.8);
+                }
+                if (e.navn === 'innland') {
+                    text.banner('1635 · SKIPSSKATT OVERALT', '#1f3a6b');
+                    if (e.slot !== undefined) text.point('innland', 'Nå betaler innlandet også', plateAt(e.slot), { seconds: 4 });
+                }
+                if (e.navn === 'hampden') {
+                    text.banner('1637 · HAMPDEN NEKTER', '#8e2230', 2.6);
+                    lessonOnce('hampden', 'I 1637 nektet John Hampden å betale skipsskatt. Han tapte saken, men mange ga ham rett.', 1.3);
+                }
+                if (e.navn === 'skotter') {
+                    text.banner('1638 · SKOTTENE SAMLES', '#1f3a6b', 2.6);
+                    text.point('skotter', 'Skottene marsjerer: kista lekker', at({ x: 760, y: 400 }), { tone: 'fare', seconds: 4 });
+                }
+                if (e.navn === 'borgerkrig') text.banner('1642 · BORGERKRIG', '#8e2230', 3);
+                break;
+            case 'haer':
+                text.point('haer', 'Parlamentet tar en stang', plateAt(e.slot), { tone: 'fare', seconds: 3 });
                 break;
             default:
                 break;
@@ -384,7 +432,9 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
             for (let i = 0; i < pips.length; i++)
                 (pips[i] as HTMLElement).style.background = i < g.tatt ? '#9aa3a6' : 'transparent';
         }
-        if (hud.stenger.current) hud.stenger.current.textContent = `${egneStenger(g)} stenger igjen`;
+        if (hud.stenger.current) hud.stenger.current.textContent = g.won
+                ? 'Borgerkrig: hæren tar resten'
+                : `${g.tatt} av ${kroker} - ved ${kroker} er det slutt`;
     };
 
     const { bindStage, bindCanvas } = useArcadeLoop({
@@ -531,6 +581,13 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
 
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
+            // Tast 1 eller 2: gi parlamentet stanga med det tallet (prislappen viser det).
+            const tall = e.code === 'Digit1' || e.code === 'Numpad1' ? 0 : e.code === 'Digit2' || e.code === 'Numpad2' ? 1 : -1;
+            if (tall >= 0 && modeRef.current === 'play' && tinNede(game.current)) {
+                const id = game.current.tin.tilbud[tall];
+                if (id !== undefined) takeParliament(game.current, id);
+                return;
+            }
             if (e.code !== 'Escape' && e.code !== 'KeyP') return;
             if (modeRef.current === 'play') pause();
             else if (modeRef.current === 'paused') resume();
@@ -617,14 +674,14 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
 
                         {/* Parlamentets makt: seks kroker i loftet. */}
                         <div style={{ ...cartouche, left: '1.5%', bottom: '1.5%', padding: '5px 12px', borderRadius: 4, textAlign: 'left' }}>
-                            <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 700 }}>Parlamentets makt</div>
+                            <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 700 }}>Gitt til parlamentet</div>
                             <div ref={hud.makt} style={{ display: 'flex', gap: 5, margin: '4px 0 2px' }}>
                                 {Array.from({ length: kroker }, (_, i) => (
                                     <span key={i} style={{ width: 14, height: 14, borderRadius: 7, border: '2px solid #9aa3a6', display: 'inline-block' }} />
                                 ))}
                             </div>
                             <div ref={hud.stenger} style={{ fontFamily: 'Outfit, sans-serif', fontSize: 14, opacity: 0.9 }}>
-                                3 stenger igjen
+                                0 av {kroker} - ved {kroker} er det slutt
                             </div>
                         </div>
 
@@ -686,12 +743,12 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                             <ol style={{ textAlign: 'left', maxWidth: 440, margin: '6px auto', paddingLeft: 22, fontSize: 15, lineHeight: 1.45 }}>
                                 <li>Sveip over tallerkenene. Bare de som snurrer, gir gull.</li>
                                 <li>Kista tømmes hele tiden, og fort når skottene kommer.</li>
-                                <li>Parlamentet gir mye gull, men tar en stang for godt.</li>
+                                <li>Parlamentet gir mye gull, men tar en stang for godt. Hver stang du har i 1640, holder deg lenger i borgerkrigen.</li>
                             </ol>
                             <ArcadeBigButton onClick={start}>Løft teppet</ArcadeBigButton>
                             {save.runs > 0 && (
                                 <p style={{ opacity: 0.85, fontSize: 14 }}>
-                                    Rekord: {fmtAar(save.bestAlene)} år alene · {save.bestScore.toLocaleString('nb-NO')} poeng ·
+                                    Rekord: nådde {save.bestAar ?? 1629} · {save.bestScore.toLocaleString('nb-NO')} poeng ·
                                     Titler solgt: {save.titler} av 266
                                 </p>
                             )}
@@ -713,16 +770,16 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                     {mode === 'over' && result && (
                         <ArcadeScreen>
                             <ArcadeTag color={result.won ? '#6b4a14' : '#8e2230'}>
-                                {result.won ? 'Du nådde 1640' : `Teppet gikk ned i ${result.aar}`}
+                                {result.won ? `Du nådde ${result.aar}` : `Teppet falt i ${result.aar}`}
                             </ArcadeTag>
                             <h2 style={{ fontFamily: SERIF, fontSize: 25, lineHeight: 1.15, margin: '6px auto 2px', maxWidth: 520, textAlign: 'center' }}>
                                 {result.linje}
                             </h2>
-                            <AloneBar alene={result.alene} best={save.bestAlene} />
+                            <YearBar aar={result.aar} best={save.bestAar ?? 0} />
                             <ArcadeStats
                                 items={[
-                                    { value: fmtAar(result.alene), label: 'år alene' },
-                                    { value: `${result.tatt} av ${kroker}`, label: 'stenger gitt bort' },
+                                    { value: String(result.aar), label: 'år nådd' },
+                                    { value: result.beholdt !== null ? String(result.beholdt) : '-', label: 'stenger i 1640' },
                                     { value: result.score.toLocaleString('nb-NO'), label: result.rekord ? 'poeng - ny rekord!' : 'poeng' },
                                     { value: `${result.titler} av 266`, label: 'titler solgt' },
                                 ]}
@@ -737,30 +794,5 @@ export default function KongensTallerkener({ onComplete }: MicroGameProps) {
                 </ArcadeStage>
             </div>
         </MicroGameFrame>
-    );
-}
-
-/** Tidslinja på slutt-skjermen: gullstripa er årene dine alene, kronen er Karls elleve. */
-function AloneBar({ alene, best }: { alene: number; best: number }) {
-    const span = 13;
-    const pct = (n: number) => `${Math.min(100, (n / span) * 100)}%`;
-    return (
-        <div style={{ width: 'min(420px, 80%)', margin: '6px auto 10px', position: 'relative' }}>
-            <div style={{ height: 10, border: `1px solid ${GOLD}`, background: '#0a0f1c', position: 'relative' }}>
-                <div style={{ width: pct(alene), height: '100%', background: 'linear-gradient(90deg,#8a6420,#f0d58a)' }} />
-                {best > 0 && (
-                    <div style={{ position: 'absolute', left: pct(best), top: -3, width: 2, height: 14, background: CREAM }} title="Rekord" />
-                )}
-            </div>
-            <div style={{ position: 'absolute', left: pct(11), top: -16, transform: 'translateX(-50%)', textAlign: 'center' }}>
-                <svg viewBox="0 0 18 14" width={18} height={14} aria-hidden>
-                    <path d={KRONE} fill="#f0d58a" stroke="#6b4a14" strokeWidth={0.8} />
-                </svg>
-            </div>
-            <div style={{ position: 'relative', height: 18, fontSize: 14, marginTop: 3, fontFamily: 'Outfit, sans-serif' }}>
-                <span style={{ position: 'absolute', left: 0 }}>1629</span>
-                <span style={{ position: 'absolute', left: pct(11), transform: 'translateX(-50%)', whiteSpace: 'nowrap' }}>Karl: 11 år</span>
-            </div>
-        </div>
     );
 }

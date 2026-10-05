@@ -5,7 +5,7 @@
 import { TUNING, type PlateKind } from './tuning';
 import { SLOTS } from './levels';
 import type { Game } from './state';
-import { egneStenger } from './rules';
+import { aarNa, egneStenger } from './rules';
 import { PAL, type Art } from './art';
 import {
     H,
@@ -355,6 +355,11 @@ function drawTin(ctx: CanvasRenderingContext2D, art: Art, g: Game, v: ViewState)
     ctx.ellipse(0, 0, rx * 0.92, ry * 0.88, 0, a, a + 0.5);
     ctx.stroke();
     ctx.restore();
+    if (!oser && !v.tinDrag) {
+        // Skilt under skyen: hva den grå tallerkenen er, også mens den venter i taket.
+        const fra = aarNa(g) < TUNING.parlament.fra;
+        plaque(ctx, p.x, p.y + (nede ? 68 : 46), fra ? 'Parlamentet (fra 1635)' : 'Parlamentet', '#2b3133', '#f3e6c4');
+    }
     if (nede && !v.tinDrag) {
         // I rekkevidde: en bølge som vokser ut fra tallerkenen og blekner (står stille).
         const u = (t * 0.9) % 1;
@@ -512,6 +517,59 @@ function drawMotes(ctx: CanvasRenderingContext2D, v: ViewState) {
 }
 
 /** Hele scenen. `ctx` er allerede skalert til den logiske flata (960x540). */
+/**
+ * Skottene (fra 1638): små soldater med blå luer og piker marsjerer inn fra høyre kulisse og
+ * blir flere når krigen starter i 1639. Etter 1640 er det parlamentets hær i rødt.
+ */
+function drawSkotter(ctx: CanvasRenderingContext2D, g: Game, v: ViewState) {
+    const aar = aarNa(g);
+    if (aar < TUNING.hendelser.skotter) return;
+    const krig = aar >= TUNING.tid.skottene;
+    const haer = aar >= TUNING.tid.seier;
+    const n = haer ? 8 : krig ? 7 : 4;
+    // Inn fra kulissen det første året, så står de.
+    const inn = Math.min(1, (aar - TUNING.hendelser.skotter) / 0.6);
+    const y0 = STAGE.edge - 18;
+    for (let i = 0; i < n; i++) {
+        const x = STAGE.x1 - 20 - (i % 4) * 34 * inn - (i >= 4 ? 17 : 0);
+        const y = y0 - (i >= 4 ? 14 : 0);
+        const k = i >= 4 ? 0.82 : 1;
+        const stegT = inn < 1 ? v.tid * 7 + i : 0;
+        const bob = Math.abs(Math.sin(stegT)) * 2;
+        ctx.save();
+        ctx.translate(x, y - bob);
+        ctx.scale(k, k);
+        // Bein.
+        ctx.strokeStyle = '#1a130b';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(-3, 0);
+        ctx.lineTo(-3 - Math.sin(stegT) * 3, 14);
+        ctx.moveTo(3, 0);
+        ctx.lineTo(3 + Math.sin(stegT) * 3, 14);
+        ctx.stroke();
+        // Frakk og lue.
+        ctx.fillStyle = haer ? '#8e2230' : '#2a3550';
+        ctx.fillRect(-6, -18, 12, 19);
+        ctx.fillStyle = '#e2c9a4';
+        ctx.beginPath();
+        ctx.arc(0, -22, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = haer ? '#3a3a3a' : PAL.ultraLys;
+        ctx.beginPath();
+        ctx.ellipse(0, -26, 6, 2.6, 0, 0, Math.PI * 2);
+        ctx.fill();
+        // Pike.
+        ctx.strokeStyle = '#6b5a3a';
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.moveTo(-8, 8);
+        ctx.lineTo(-10, -44);
+        ctx.stroke();
+        ctx.restore();
+    }
+}
+
 export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, art: Art) {
     const sh = v.shake;
     const sx = sh > 0 ? (Math.random() - 0.5) * sh * 14 : 0;
@@ -569,10 +627,12 @@ export function drawGame(ctx: CanvasRenderingContext2D, g: Game, v: ViewState, a
             ctx.lineWidth = 2.5;
             ell(ctx, top.x, top.y, 50 * k * (1 + u * 0.4), 20 * k * (1 + u * 0.7));
             ctx.stroke();
-            plaque(ctx, top.x, top.y - 30 * k, `-1 stang = -${pct} % poeng`, '#2b3133', '#f3e6c4');
+            const n = tilbud.indexOf(id) + 1;
+            plaque(ctx, top.x, top.y - 30 * k, `[${n}] -1 stang = -${pct} % poeng`, '#2b3133', '#f3e6c4');
         }
     }
     drawMotes(ctx, v);
+    drawSkotter(ctx, g, v);
     drawPage(ctx, art, g, v);
     drawFalling(ctx, art, v);
     drawTin(ctx, art, g, v);

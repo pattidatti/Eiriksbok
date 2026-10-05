@@ -11,30 +11,36 @@ export const TIPS = {
     kiste: 'Skipsskatten og titlene ga for lite til å betale krigen mot skottene. Karl måtte kalle inn parlamentet i 1640. Spar parlamentets tallerken til skottene kommer, og ta den da.',
     parlament:
         'Parlamentet ga penger bare mot mer makt. Tok du tallerkenen for tidlig, hadde du ingen kilder igjen da krigen kom. I 1642 endte striden i borgerkrig.',
+    aar1649: '',
 } as const;
 
-/** Linja når eleven har nådd 1640 og overtiden er over. */
+/** Linja når eleven har nådd 1640: hva stengene du beholdt, betydde i borgerkrigen. */
 export function seierLinje(g: Game): string {
     const aar = sluttAar(g);
+    if (g.cause === 'aar1649')
+        return 'Du hadde stenger igjen helt til 1649. Karl hadde ikke det: han tapte borgerkrigen som begynte i 1642.';
     if (g.cause === 'parlament')
-        return `I ${aar} hadde parlamentet tatt alle stengene. Slik gikk det med Karl også: han mistet makt bit for bit, og i 1642 kom borgerkrigen.`;
-    return `I ${aar} ble krigen for dyr. Karl kalte inn parlamentet i 1640, og det tok mer og mer makt fra ham. I 1642 kom borgerkrigen.`;
+        return `Parlamentets hær tok den siste stanga i ${aar}. Jo flere stenger du beholdt i 1640, jo lenger holdt du ut.`;
+    return `Kista ble tom i ${aar}. Krigen mot parlamentet kostet mer enn noen konge kunne betale alene.`;
 }
 
-/** Ranger etter år alene (før første parlamentsøkt). Karl klarte 11. */
+/** Ranger etter året du nådde. Karl ga seg i 1640, borgerkrigen kom i 1642, dommen i 1649. */
 export const RANKS: [number, string][] = [
     [0, 'Kronprins'],
-    [5, 'Konge'],
-    [8, 'Enevoldskonge'],
-    [10, 'Nesten som Karl'],
-    [11, 'Like lenge som Karl'],
-    [12, 'Lenger enn Karl'],
+    [1635, 'Konge uten penger'],
+    [1639, 'Konge i krig'],
+    [1640, 'Holdt ut som Karl'],
+    [1642, 'Konge i borgerkrigen'],
+    [1645, 'Seig konge'],
+    [1649, 'Holdt ut til 1649'],
 ];
 
 /** År kongen styrte alene, med én desimal: fram til første parlamentsøkt, ellers hele runden. */
 export function aarAlene(g: Game): number {
-    const slutt = g.forsteParlamentT !== null ? TUNING.tid.start + g.forsteParlamentT / TUNING.tid.aar : aarNa(g);
-    return Math.max(0, Math.floor((slutt - TUNING.tid.start) * 10) / 10);
+    const T = TUNING.tid;
+    const t = g.forsteParlamentT !== null ? g.forsteParlamentT : g.t;
+    const slutt = T.start + Math.min(t, (T.seier - T.start) * T.aar) / T.aar;
+    return Math.max(0, Math.floor((slutt - T.start) * 10) / 10);
 }
 
 /** Året teppet gikk ned. */
@@ -47,6 +53,10 @@ export function fmtAar(n: number): string {
     return n.toFixed(1).replace('.', ',').replace(',0', '');
 }
 
+/** Overskriften på slutt-skjermen: året du nådde og stengene du hadde i 1640. */
 export function sluttLinje(g: Game): string {
-    return `Du styrte alene i ${fmtAar(aarAlene(g))} år. Karl klarte 11.`;
+    const aar = sluttAar(g);
+    if (!g.won) return `Teppet falt i ${aar}, før du nådde 1640.`;
+    const n = g.beholdt1640 ?? 0;
+    return `Du nådde 1640 med ${n} ${n === 1 ? 'stang' : 'stenger'}. Teppet falt i ${aar}.`;
 }

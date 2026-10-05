@@ -440,3 +440,56 @@ KronensVei.
   bak er ikke testet på berøringsskjerm.
 - Skjermbilder: `.screenshots/kontaktark/kongens-tallerkener-1.png` til `-3.png`, cover
   `public/images/microgames/kongens-tallerkener.webp`.
+
+### Fase: forbedrer 1 (2026-10-05)
+
+- Gjorde (1) Lesbart: parlamentets tinntallerken har skilt under skyen hele runden
+  («Parlamentet (fra 1635)», så «Parlamentet»); når den senker seg, står en lapp ved den
+  («+240 gull, men -1 stang»), og prislappene ved de to tilbudte stengene har tastetegn
+  («[1] -1 stang = -20 % poeng»): tast 1 eller 2 gir bort den stanga, eller dra som før.
+  HUD-telleren heter nå «Gitt til parlamentet» med «X av 6 - ved 6 er det slutt» (i
+  borgerkrigen: «Borgerkrig: hæren tar resten»), ikke lenger to tellere i én boks. Slutt-skjermen
+  stemmer med seg selv: merket «Du nådde <år>» / «Teppet falt i <år>», overskrift «Du nådde 1640
+  med N stenger. Teppet falt i <år>.», tall for år nådd og stenger i 1640, og rangene følger året
+  du nådde (Kronprins, Konge uten penger, Konge i krig, Holdt ut som Karl, Konge i borgerkrigen,
+  Seig konge, Holdt ut til 1649). Tidslinja går 1629-1649 med 1640, 1642 og 1649. «+N poeng»
+  flyter nå over scenen, ikke bak poengboksen.
+- (2) Gøy: én ny hendelse hvert år i midten, alle del av reglene og med banner og trommevirvel:
+  1632 såpemonopolet (tvungen monopol-tallerken), 1633 titler, 1634 protester, 1635 skipsskatt i
+  hele landet (tvungen skip-tallerken bakerst, alle skip-tallerkener 10 % tyngre), 1636 flere
+  titler, 1637 Hampden nekter (alle skip-tallerkenene får protest samtidig), 1638 skottene samles
+  (soldater med blå luer og piker marsjerer inn fra høyre kulisse og trekker 1,5 gull/s, flere i
+  1639, rødkledd parlamentshær etter 1640). Hoffkostnaden starter nå over 60 gull (var 90).
+- (3) Lærerikt: borgerkrigen etter 1640. Årene går fortere (4 s per år), parlamentets hær tar
+  den rikeste stanga i 1641, 1642 (banner «1642 · BORGERKRIG»), 1643, 1645 og 1647, og runden
+  slutter i 1649 eller når du ikke har flere stenger. Hver stang du beholdt i 1640, gir altså flere
+  år. «Dette skjedde» knytter valget til 1642, 1649 og 1660 («Du ga bort N stenger før 1640. I
+  1642 kom borgerkrigen ... I 1649 ble Karl dømt og henrettet.» og «I 1660 fikk England en konge
+  igjen, Karl 2 ...»). Henrettelsen vises aldri i spillet.
+- Unikt: draperiene i hjørnene er større (170 px brede, 210 px ned), og gulvet er et kjølig malt
+  marmorgulv i grått og blått (Inigo Jones' perspektivscener) i stedet for brune planker.
+- Feel-lista før runden: 1 (lyd, gnister, hit-stop), 2 («Reddet!»), 3 (inn/ut-animasjon) og 4
+  (poeng teller opp) var på plass. Lagt til: 1 og 3 for hendelsene (trommevirvel og rykk ved hver
+  ny hendelse, soldatene marsjerer inn med steg), og 4 (poengteksten flyter ikke lenger bak
+  poengboksen). Etter runden: alle fire på plass.
+- Simuleringen (200 runder per robot): seende 89 % seier, median 5 715 (p10-p90 2 870-6 442);
+  halvgod 55 %, median 4 019; mester-alene 0 %, median 2 779; aldri-parlament 0 %, median 2 071;
+  tar-alt 0 %, median 1 891; tilfeldig 0 %; passiv 0 %. 46 valg per minutt, press 0,21 -> 0,19 ->
+  0,43. Selvspill grønt (seende vant), Chromebook 7 ms JS per bilde, audit --strict grønn, likhet
+  nærmest inn-mot-stranda (0,47), loddposen 0,46.
+- Prøvde som IKKE virket: (1) Rød karmosin på kulissene (som oppgaven foreslo) løftet likheten mot
+  Loddposen fra 0,49 til 0,55 - Loddposen er brunt treverk, og det røde og de brune plankene lå
+  for nær. Gikk tilbake til blå søylehall og byttet heller ut de brune plankene. (2) Første
+  tallsett for hendelsene (skotter 5 gull/s, skip 25 % tyngre fra 1635) ga seende 48 % og halvgod
+  4 %. (3) Hoffkostnad over 70/60 hevet presset i midten (0,15 -> 0,19), men halvgod falt til
+  37-45 % til den fikk ta en økt i nød litt tidligere (kista under 8 s, var 6 s). (4) I
+  borgerkrigen med seks kroker som grense endte seende allerede i 1641; nå er krokene bare
+  grensen før 1640.
+- Kjente svakheter: kronestanga for gudegitt kongemakt er ikke laget (det ville blitt en fjerde
+  regel). Presset i midten (0,19) er fortsatt litt lavere enn i første tredjedel (0,21), selv om
+  hendelsene gjør midten mer travel. Seende tar ofte 3-4 økter før 1640 og har få stenger i
+  borgerkrigen, så rundene ender som regel 1641-1643; 1649 er en ekte rekord. Tast 1/2 er ikke
+  testet av roboten (den bruker takeParliament direkte, som tasten).
+- Skjermbilder: `.screenshots/kontaktark/kongens-tallerkener-1.png` til `-3.png`, cover
+  `public/images/microgames/kongens-tallerkener.webp`.
+

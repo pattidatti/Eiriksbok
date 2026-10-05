@@ -292,6 +292,12 @@ export function onEvents(
             case 'tin-ned':
                 sfx?.tinNed();
                 break;
+            case 'hendelse':
+                // Hver ny hendelse i midten får en trommevirvel og et lite rykk i scenen.
+                sfx?.tromme();
+                v.shake = Math.max(v.shake, e.navn === 'hampden' || e.navn === 'borgerkrig' ? 0.35 : 0.18);
+                break;
+            case 'haer':
             case 'parlament': {
                 for (const s of g.slots)
                     if (s.state === 'tatt' && v.hookOf[s.id] < 0) {

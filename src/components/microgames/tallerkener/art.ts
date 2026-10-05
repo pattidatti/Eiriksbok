@@ -163,11 +163,12 @@ function drawBack(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
         ctx.fill();
     }
 
-    // Scenegulvet: planker mot forsvinningspunktet, varmt lys fra rampen.
+    // Scenegulvet: fliser mot forsvinningspunktet, varmt lys fra rampen.
     const fl = ctx.createLinearGradient(0, floorBack, 0, edge);
-    fl.addColorStop(0, '#22180f');
-    fl.addColorStop(0.6, '#4a331d');
-    fl.addColorStop(1, '#7a5530');
+    // Malt marmorgulv i grått og blått, som i Inigo Jones' perspektivscener.
+    fl.addColorStop(0, '#191c26');
+    fl.addColorStop(0.6, '#383b4a');
+    fl.addColorStop(1, '#63606e');
     ctx.fillStyle = fl;
     ctx.fillRect(x0, floorBack, x1 - x0, edge - floorBack);
     ctx.strokeStyle = 'rgba(16,10,6,0.55)';
@@ -278,21 +279,21 @@ function drawFront(ctx: CanvasRenderingContext2D, r: Rng, lav: boolean) {
         ctx.fillStyle = PAL.flo;
         ctx.beginPath();
         ctx.moveTo(ox, y0 - 2);
-        ctx.lineTo(ox - side * 120, y0 - 2);
-        ctx.quadraticCurveTo(ox - side * 60, y0 + 40, ox, y0 + 150);
+        ctx.lineTo(ox - side * 170, y0 - 2);
+        ctx.quadraticCurveTo(ox - side * 80, y0 + 60, ox, y0 + 210);
         ctx.closePath();
         ctx.fill();
         ctx.strokeStyle = PAL.floMork;
         ctx.lineWidth = 3;
         for (let k = 0; k < 4; k++) {
             ctx.beginPath();
-            ctx.moveTo(ox - side * (100 - k * 22), y0);
-            ctx.quadraticCurveTo(ox - side * (50 - k * 10), y0 + 30 + k * 6, ox, y0 + 50 + k * 25);
+            ctx.moveTo(ox - side * (145 - k * 30), y0);
+            ctx.quadraticCurveTo(ox - side * (70 - k * 14), y0 + 40 + k * 8, ox, y0 + 70 + k * 35);
             ctx.stroke();
         }
         ctx.fillStyle = goldGrad(ctx, ox - 10, 0, ox + 10, 0);
         ctx.beginPath();
-        ctx.arc(ox - side * 6, y0 + 150, 6, 0, Math.PI * 2);
+        ctx.arc(ox - side * 6, y0 + 210, 6, 0, Math.PI * 2);
         ctx.fill();
     }
 

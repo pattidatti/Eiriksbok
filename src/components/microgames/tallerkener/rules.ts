@@ -9,7 +9,11 @@ const S = TUNING.snurr;
 
 /** Året nå som desimaltall (1629.0 ved start). */
 export function aarNa(g: Game): number {
-    return TUNING.tid.start + g.t / TUNING.tid.aar;
+    const T = TUNING.tid;
+    const fred = (T.seier - T.start) * T.aar;
+    // Etter 1640 går årene fortere: borgerkrigen fram mot 1649.
+    if (g.t <= fred) return T.start + g.t / T.aar;
+    return T.seier + (g.t - fred) / T.aarOvertid;
 }
 
 /** Hoffets og flåtens faste forbruk fra kista (gull per sekund) akkurat nå. */
@@ -23,7 +27,9 @@ export function hoffForbruk(g: Game): number {
 /** Gull skottene trekker ut av kista per sekund (0 før 1639, stiger i overtiden). */
 export function skottetrekk(g: Game): number {
     const aar = aarNa(g);
-    if (aar < TUNING.tid.skottene) return 0;
+    if (aar < TUNING.hendelser.skotter) return 0;
+    // 1638: skottene marsjerer inn og koster litt allerede før krigen.
+    if (aar < TUNING.tid.skottene) return TUNING.hendelser.marsj;
     if (aar < TUNING.tid.seier) return TUNING.kiste.krig;
     // Overtid: krigen blir dyrere for hvert år til ingen kan holde ut.
     return TUNING.kiste.krig * Math.pow(1 + TUNING.kiste.overtidVekst, aar - TUNING.tid.seier);
@@ -40,7 +46,8 @@ export function spinTap(g: Game, p: Plate): number {
     if (p.lett > 0) return 0;
     const aarGatt = Math.min(aarNa(g), TUNING.tid.seier) - TUNING.tid.start;
     const t = TUNING.typer[p.kind];
-    return S.tap * t.vekt * (1 + t.tyngre * aarGatt);
+    const innland = g.innland && p.kind === 'skip' ? 1 + TUNING.hendelser.innlandTyngre : 1;
+    return S.tap * t.vekt * (1 + t.tyngre * aarGatt) * innland;
 }
 
 /** Gull per sekund fra én stang akkurat nå (0 når den vakler eller har nådd årets tak). */
