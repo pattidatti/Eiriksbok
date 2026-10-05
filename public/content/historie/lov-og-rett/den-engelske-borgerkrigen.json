@@ -57,6 +57,13 @@
       "content": "I 1637 prøvde Karl å tvinge den engelske bønneboka på skottene. Skottene nektet og gjorde opprør i 1639 og 1640. For å betale for krigen måtte Karl kalle inn parlamentet igjen (Arntzen & Lunga, 2026). Nå trengte kongen parlamentet, og det visste parlamentet. Det nye parlamentet, som kalles Det lange parlamentet, samlet seg i november 1640. Det begynte straks å ta fra kongen makt, og i mai 1641 fikk det henrettet en av kongens viktigste menn, jarlen av Strafford (Ohlmeyer, 2026)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "kongens-tallerkener"
+      }
+    },
+    {
       "type": "header",
       "text": "Kongen mot parlamentet"
     },

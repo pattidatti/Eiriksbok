@@ -248,6 +248,7 @@ const Tinghuset = lazy(() => import('./Tinghuset'));
 const BatdekketKlokka = lazy(() => import('./BatdekketKlokka'));
 const Taburetten3D = lazy(() => import('./Taburetten3D'));
 const Generalstreiken = lazy(() => import('./Generalstreiken'));
+const KongensTallerkener = lazy(() => import('./KongensTallerkener'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2527,6 +2528,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Atelier Populaire, mai 1968: røde silketrykkplakater på billig hvitt papir, grove håndmalte bokstaver og en gaullistblå motfarge',
         loader: () => import('./Generalstreiken'),
         Component: Generalstreiken as never,
+    },
+    'kongens-tallerkener': {
+        id: 'kongens-tallerkener',
+        title: 'Elleve år',
+        description:
+            'Det er 1629, og du er Karl 1. Du har sendt parlamentet hjem og vil styre helt alene. Pengekildene dine er forgylte tallerkener på stenger, og de gir bare gull mens de snurrer. Sveip over dem for å holde dem i gang - én lang bue over flere gir kombo, men kaster du for hardt, flyr tallerkenen av. Kista tømmes hele tiden, og mye fortere når skottene gjør opprør i 1639. Oppe i taket henger parlamentets tallerken. Den er låst til skottene kommer. Da gir den mye gull, men tar en av stengene dine for godt. Hold ut til 1640 som Karl gjorde, og se borgerkrigen ta resten.',
+        estimatedSeconds: 150,
+        sjanger: 'sjonglering',
+        tone: 'alvorlig',
+        hook: 'Du er Karl 1. og styrer uten parlamentet. Hvor lenge klarer du å holde alle pengekildene i gang selv?',
+        cover: '/images/microgames/kongens-tallerkener.webp',
+        kunst: 'Inigo Jones sine hoffmaskerader i Banqueting House på 1630-tallet: forgylt prosceniumramme, malte kulisser i sentralperspektiv, skymaskiner og stearinlys under Rubens sin ultramarin og bladgull',
+        loader: () => import('./KongensTallerkener'),
+        Component: KongensTallerkener as never,
     },
 };
 
