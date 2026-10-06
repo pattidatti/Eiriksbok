@@ -2,6 +2,10 @@
 // rekordrunden, tingstua med bøndene, funnene, kronen og Stortinget på Løvebakken.
 
 import { P } from './art';
+import { TUNING } from './tuning';
+
+/** Ballongen er tegnet for 78 px høyde; den skaleres til høyden i tuning.ts. */
+const STØRRELSE = TUNING.ballong.høyde / 78;
 
 export interface Mannskap {
     varme: number;
@@ -31,6 +35,7 @@ export function tegnBallong(ctx: CanvasRenderingContext2D, x: number, y: number,
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(Math.max(-0.08, Math.min(0.08, -m.vy * 0.0004)));
+    ctx.scale(STØRRELSE, STØRRELSE);
     const pust = 1 + m.varme * 0.03 + Math.sin(m.tid * 2.1) * 0.006;
 
     // Flammen inn i munningen: tre rammer, størst når du holder.
@@ -246,6 +251,7 @@ function mannskap(ctx: CanvasRenderingContext2D, m: Mannskap) {
 export function tegnSpøkelse(ctx: CanvasRenderingContext2D, x: number, y: number) {
     ctx.save();
     ctx.translate(x, y);
+    ctx.scale(STØRRELSE, STØRRELSE);
     ctx.globalAlpha = 0.6;
     ctx.strokeStyle = P.halv;
     ctx.lineWidth = 1.6;

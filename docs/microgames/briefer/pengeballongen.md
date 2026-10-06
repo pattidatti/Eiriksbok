@@ -411,3 +411,54 @@ hatt hoper seg opp. `kongeveiKostnad` 0,10 er neste knapp å prøve. (2) Flinks 
 (p10-p90 2304-2447) - robotene er like; ekte elever vil spre mer. (3) Mye tom himmel øverst i
 bildet. (4) Fontene (Bodoni Moda, Libre Caslon) er ikke installert, så canvas faller tilbake til
 Georgia/Didot.
+
+**Forbedring 1 (forbedrer, 2026-10-06):** Vurdering runde 1: Gøy 3, Utseende 3, Lærerikt 4, Lesbart 3,
+Unikt 4 (17). Gjorde de tre forbedringene:
+1. **Ny sjanse ved valgflaggene.** Fra 1833 lagres et sjekkpunkt ved hvert valg. Krasj eller stemt ut
+   setter deg tilbake til forrige valgflagg, koster 15 % av det sparte og én av tre sjanser (vist som
+   tre små ballonger under Spart). Før 1833 er et krasj fortsatt slutt (omstarten er rask). I tillegg
+   vokser formene bare 4,5 % per periode (fra 8 %). Saftigere gliding: et spor av glør etter kurven i
+   båndet, lengre og varmere med gangeren.
+2. **Ryddig HUD.** Valgstabelen og brennerprisen er borte. Ett budsjett til valget står som en stående
+   bar rett ved ballongen (tømmes når du fyrer, karmin og risting under 25 %, lapp «Valg 1848» over).
+   Spart, Ueland, tidslinja og sjansene står på solide papirkort med mørk kant. All svevende tekst
+   («Gjenvalgt 1845!», «Ueland ×3», «Hårfint!») er byttet til egne canvas-lapper: mørk tekst på lys
+   papirbunn, spretter inn og blekner. Ingen tekst under 13 px.
+3. **Historien som regler.** Ola-boka (1831) henger høyere, med lapp «Ola-boka: ta den!», og gjør
+   brenneren 20 % billigere resten av runden (bondeflertallet kutter utgiftene). Fra 1884,0 (riksretten)
+   går tida sakte i ca. 8 s, eleven får roret: pil ned / S / trykk under ballongen styrer ned, gratis,
+   og brenneren svarer raskere. Tre bratte daler har en stemmeseddel i bunnen (40 × gangeren) som bare
+   roret når. Lærings-øyeblikket om riksretten kommer nå ved roret og står til eleven trykker pil ned.
+Utseende: ballongen er 20 % større (høyde 94, kollisjon og åpninger skalert med), et ekstra fjernt
+fjell-lag fyller himmelen, skyene varierer i størrelse og høyde, to fugleflokker, og forgrunnen har lys
+kant mot sola, skravur på skyggesidene og egen farge per epoke (grønne lier, brun kyst, blågrå
+Filefjell, gårdsland, mørk Jotunheimen, varm stein i 1884) med snøgrense som varierer.
+
+Reglene eleven må huske er fortsatt tre: hold = betal og stig, budsjettet må holde til valget, gli tett
+= Ueland. Roret kommer først til slutt, som belønningen.
+
+Feel-lista: før runden var 1 (mynter og klirr ved hold), 2 («Hårfint!») og 4 (Spart spretter) på plass.
+Lagt til nå: 3 (ting kommer og går) - funn og stemmer flyr til Spart-kortet når de tas, lappene spretter
+inn og blekner, ny sjanse har blink, risting og mynter som drysser. Også 4 er styrket (stemmer, sjanser).
+
+Simulering (200 runder): **grønn.** flink 100 % seier, median 3035 (p10 2831, p90 3282), snitt-ganger
+×4,7, tar ca. 2,3 av 3 stemmer; nybegynner (middels) 21 % seier, median 470; sløseren 0 % (stemt ut
+fire ganger i 1836), gniten/passiv 18, tilfeldig 38. 35 valg per minutt, press 0,30 -> 0,55 -> 0,74.
+Selvspill: flink vant med 2906 (samsvar), Chromebook JS p95 11,2 ms, alle porter grønne. Scene-audit
+ren. Likhet: nærmest generalstreiken 0,46 (var 0,48 mot petisjonen-3d).
+
+Prøvd som IKKE virket: (1) Sjekkpunkt alene (2 sjanser, alt annet likt): nybegynneren vant 1 %. Den
+ble stemt ut i nesten hver tind-periode etter 1848, så den brukte opp sjansene på samme sted.
+(2) Analyse.ts målte feil: robottakten fulgte `g.t`, som spoles tilbake ved ny sjanse, så robotene
+sto stille i 5 s og krasjet rett etter hver sjanse. Simuleringen hadde egen klokke og var riktig.
+(3) Rorstrekk på 6 s med fire symmetriske daler: også uten ror nådde ballongen nesten ned, og den som
+stupte med roret rakk ikke opp igjen fordi varmen kom for sent - derfor bratt forside, raskere varme
+(`ror.varmeTau` 0,07) og raskere akselerasjon i rorstrekket. (4) Robot-ror som spådde med hele
+ballongbredden mot bakken: så alltid fare ved den bratte kanten og styrte aldri ned.
+
+Kjente svakheter: (1) Rorstrekket er bare ca. 8 s og kommer helt til slutt; mange elever ser det
+sjelden. Kanskje «Øv fra 1870» bør nevne det. (2) Mus-styringen av roret (trykk under ballongen) er
+ikke prøvd av en ekte elev. (3) Flink og nybegynner er langt fra hverandre (3035 mot 470) - en ekte
+elev ligger trolig midt imellom. (4) Rangene ble satt for runde 6; flink når nå «Ueland selv» (3000).
+(5) Likheten (0,46) er fortsatt ikke langt under grensen på 0,50.
+

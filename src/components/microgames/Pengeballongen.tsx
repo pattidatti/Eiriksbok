@@ -17,15 +17,15 @@ import { createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest } from './playtest';
 import { newGame, update, type Game } from './pengeballongen/game';
-import { hold, nesteRang, rang } from './pengeballongen/rules';
+import { hold, nesteRang, rang, ror } from './pengeballongen/rules';
 import { BOTS } from './pengeballongen/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './pengeballongen/sim';
 import { P, skala, tegn, tilSkjerm, flateX, type Skala } from './pengeballongen/draw';
 import { BRETT, FUNN, type FunnId } from './pengeballongen/levels';
 import { TUNING } from './pengeballongen/tuning';
-import { LÆRDOM, MÅL, REGLER, SKJEDDE, TAP_TITTEL, TIPS } from './pengeballongen/texts';
+import { LÆRDOM, MÅL, REGLER, SJANSER, SKJEDDE, TAP_TITTEL, TIPS } from './pengeballongen/texts';
 import type { Årsak } from './pengeballongen/state';
-import { nullstillFx, nyFx, oppdaterFx } from './pengeballongen/fx';
+import { lapp, nullstillFx, nyFx, oppdaterFx } from './pengeballongen/fx';
 import { juice, nyJuice, påHendelse } from './pengeballongen/juice';
 import { lagLyd } from './pengeballongen/sound';
 import { coach, coachHendelse, type Coach } from './pengeballongen/coach';
@@ -138,6 +138,7 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
         },
         skjerm,
         spill: () => gameRef.current,
+        lapp: (tekst, x, y, farge, stor, sek) => lapp(fx, tekst, x, y, farge, stor, sek),
     };
 
     const ferdig = (g: Game) => {
@@ -161,6 +162,8 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
         if (kongevei) text.lesson('kongevei', SKJEDDE.kongevei(kongevei), 2.6);
         else if (under) text.lesson('under', SKJEDDE.under(under), 2.4);
         text.lesson('styre', LÆRDOM.styre, 2.5);
+        if (vant) text.lesson('ror', LÆRDOM.ror, 3);
+        if (g.olaboka && !øving) text.lesson('ola', LÆRDOM.ola, 2.2);
         if (g.hatter > 3) text.lesson('hatter', LÆRDOM.hatter, 1.5);
         updateSave((s) => ({
             rekord: øving ? s.rekord : Math.max(s.rekord, spart),
@@ -314,10 +317,15 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                 hold(gameRef.current, true);
                 e.preventDefault();
             }
+            if (e.code === 'ArrowDown' || e.code === 'KeyS') {
+                ror(gameRef.current, true);
+                e.preventDefault();
+            }
         };
         const opp = (e: KeyboardEvent) => {
             if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW')
                 hold(gameRef.current, false);
+            if (e.code === 'ArrowDown' || e.code === 'KeyS') ror(gameRef.current, false);
         };
         window.addEventListener('keydown', ned);
         window.addEventListener('keyup', opp);
@@ -331,11 +339,20 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
 
     const onPointer = (e: React.PointerEvent<HTMLCanvasElement>) => {
         if (modeRef.current !== 'play') return;
+        const g = gameRef.current;
         if (e.type === 'pointerdown') {
             synth.unlock();
             e.currentTarget.setPointerCapture?.(e.pointerId);
-            hold(gameRef.current, true);
-        } else hold(gameRef.current, false);
+            // Med roret (etter riksretten): trykk lavt i bildet = styr ned, høyt = brenneren.
+            const r = e.currentTarget.getBoundingClientRect();
+            const k = skalaRef.current;
+            const fy = (e.clientY - r.top - k.oy) / k.s;
+            if (g.harRor && fy > g.y) ror(g, true);
+            else hold(g, true);
+        } else {
+            hold(g, false);
+            ror(g, false);
+        }
     };
 
     usePlaytest(GAME_ID, () => {
@@ -437,6 +454,9 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                                     <li key={r}>{r}</li>
                                 ))}
                             </ul>
+                            <p style={{ fontSize: 15, margin: '0 0 8px', fontStyle: 'italic' }}>
+                                {SJANSER}
+                            </p>
                             <ArcadeBigButton onClick={() => start()}>
                                 Fyr opp (mellomrom)
                             </ArcadeBigButton>

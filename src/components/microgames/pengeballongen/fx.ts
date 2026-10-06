@@ -23,8 +23,20 @@ interface Partikkel {
     mål?: { x: number; y: number };
 }
 
+/** En solid papirlapp med mørk tekst som spretter inn, stiger litt og blekner. */
+interface Lapp {
+    tekst: string;
+    x: number;
+    y: number;
+    farge: string;
+    stor: boolean;
+    liv: number;
+    maks: number;
+}
+
 export interface Fx {
     p: Partikkel[];
+    lapper: Lapp[];
     rist: number;
     blink: number;
     blinkFarge: string;
@@ -40,6 +52,7 @@ export interface Fx {
 
 export const nyFx = (): Fx => ({
     p: [],
+    lapper: [],
     rist: 0,
     blink: 0,
     blinkFarge: P.hvit,
@@ -54,6 +67,7 @@ const MAKS = 260;
 /** Ny runde: tøm partiklene og rystelsen. */
 export function nullstillFx(fx: Fx) {
     fx.p.length = 0;
+    fx.lapper.length = 0;
     fx.rist = 0;
     fx.blink = 0;
 }
@@ -86,6 +100,16 @@ export function slipp(
     });
 }
 
+/**
+ * En lapp i flatekoordinater: mørk tekst på lys papirbunn med en fargestripe til venstre.
+ * Lapper som ville lagt seg oppå hverandre, skyves opp.
+ */
+export function lapp(fx: Fx, tekst: string, x: number, y: number, farge: string = P.kritt, stor = false, sek = 1.4) {
+    for (const l of fx.lapper) if (Math.abs(l.x - x) < 120 && Math.abs(l.y - y) < 26) y = l.y - 28;
+    if (fx.lapper.length > 6) fx.lapper.shift();
+    fx.lapper.push({ tekst, x, y, farge, stor, liv: sek, maks: sek });
+}
+
 export function rist(fx: Fx, styrke: number) {
     fx.rist = Math.max(fx.rist, styrke);
 }
@@ -107,6 +131,12 @@ export function oppdaterFx(fx: Fx, spill: number, ekte: number, scroll: number):
     fx.sprett = Math.max(0, fx.sprett - ekte * 4);
     fx.gangerSprett = Math.max(0, fx.gangerSprett - ekte * 2.5);
     fx.stabelBlink = Math.max(0, fx.stabelBlink - ekte * 3);
+    for (let i = fx.lapper.length - 1; i >= 0; i--) {
+        const l = fx.lapper[i];
+        l.liv -= ekte;
+        l.y -= 16 * ekte;
+        if (l.liv <= 0) fx.lapper.splice(i, 1);
+    }
     let landet = 0;
     const dt = spill;
     for (let i = fx.p.length - 1; i >= 0; i--) {
@@ -224,4 +254,36 @@ export function tegnFx(ctx: CanvasRenderingContext2D, fx: Fx, lag: 'bak' | 'fora
         }
         ctx.restore();
     }
+}
+
+/** Lappene: tegnes øverst, over HUD-en, så de alltid er skarpe og leselige. */
+export function tegnLapper(ctx: CanvasRenderingContext2D, fx: Fx, font: string) {
+    for (const l of fx.lapper) {
+        const alder = l.maks - l.liv;
+        const inn = Math.min(1, alder / 0.16);
+        const sk = inn < 1 ? 0.6 + 0.55 * inn : 1 + 0.15 * Math.max(0, 1 - (alder - 0.16) / 0.12);
+        const a = Math.min(1, l.liv / 0.3);
+        ctx.save();
+        ctx.globalAlpha = a;
+        ctx.translate(l.x, l.y);
+        ctx.scale(sk, sk);
+        ctx.font = `bold ${l.stor ? 20 : 15}px ${font}`;
+        const w = ctx.measureText(l.tekst).width + 22;
+        const h = l.stor ? 30 : 24;
+        ctx.fillStyle = 'rgba(31,35,38,0.35)';
+        ctx.fillRect(-w / 2 + 2, -h / 2 + 3, w, h);
+        ctx.fillStyle = '#f8f4e8';
+        ctx.fillRect(-w / 2, -h / 2, w, h);
+        ctx.strokeStyle = P.kritt;
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(-w / 2, -h / 2, w, h);
+        ctx.fillStyle = l.farge;
+        ctx.fillRect(-w / 2, -h / 2, 5, h);
+        ctx.fillStyle = P.kritt;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(l.tekst, 3, 1);
+        ctx.restore();
+    }
+    ctx.textBaseline = 'alphabetic';
 }

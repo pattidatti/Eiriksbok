@@ -14,7 +14,25 @@ export type Hendelse =
     | { slag: 'ganger'; ganger: number; fra: number }
     | { slag: 'veiskille'; vei: 'over' | 'under'; hatt: boolean; konge: boolean }
     | { slag: 'krasj' }
+    | { slag: 'sjanse'; årsak: Årsak; år: number; tilbake: number; straff: number }
+    | { slag: 'stemme'; verdi: number }
+    | { slag: 'roret' }
     | { slag: 'landet' };
+
+/** Det som lagres ved hvert valgflagg fra 1833, så en ny sjanse starter der. */
+export interface Sjekkpunkt {
+    t: number;
+    år: number;
+    y: number;
+    nesteValg: number;
+    nesteVp: number;
+    hatter: number;
+    kongeHatter: number;
+    spart: number;
+    brukt: number;
+    perioder: number;
+    spor: number;
+}
 
 export interface Game {
     seed: number;
@@ -38,6 +56,19 @@ export interface Game {
     varme: number;
     /** Holder eleven knappen nå? */
     hold: boolean;
+    /** Styrer eleven ned med roret (bare etter riksretten)? */
+    ror: boolean;
+    /** Har eleven roret (fra 1884)? */
+    harRor: boolean;
+    /** Ola-boka er tatt: brenneren er billigere resten av runden. */
+    olaboka: boolean;
+    /** Nye sjanser igjen, og forrige valgflagg. */
+    sjanser: number;
+    sjekk: Sjekkpunkt | null;
+    /** Når ballongen sist startet (rolig start, også etter en ny sjanse). */
+    rolig: number;
+    /** Stemmer tatt i rorstrekket. */
+    stemmer: number;
     /** Brukt totalt, og siden forrige valg (pengestabelen). */
     brukt: number;
     periode: number;
@@ -90,7 +121,7 @@ export function newGame(seed: number, fraÅr?: number): Game {
 function hoppTil(g: Game, år: number) {
     const ter = g.ter;
     g.øving = true;
-    g.t = g.start = tidFor(år);
+    g.t = g.start = g.rolig = tidFor(år);
     g.år = år;
     g.x = veiVed(g.t);
     g.brett = brettFor(år);
@@ -103,6 +134,7 @@ function hoppTil(g: Game, år: number) {
     g.nesteVp = vp < 0 ? ter.valgpunkter.length : vp;
     for (const k of ter.knauser) if (k.x1 < g.x) k.valgt = 'under';
     for (const f of ter.funn) if (f.x < g.x) f.tatt = true;
+    g.olaboka = true;
     for (let i = 0; i <= g.x / 8; i++) g.spor.push(g.y);
 }
 
@@ -122,6 +154,13 @@ function lagGame(seed: number): Game {
         vy: 0,
         varme: 0,
         hold: false,
+        ror: false,
+        harRor: false,
+        olaboka: false,
+        sjanser: TUNING.sjekk.sjanser,
+        sjekk: null,
+        rolig: 0,
+        stemmer: 0,
         brukt: 0,
         periode: 0,
         spart: 0,

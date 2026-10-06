@@ -9,17 +9,26 @@ import { TUNING } from './tuning';
 const T = TUNING;
 const B = T.ballong;
 
-/** Eneste grep eleven har: hold eller slipp pengeknappen. Ingen tast for retning før 1884. */
+/** Grep 1: hold eller slipp pengeknappen. */
 export function hold(g: Game, på: boolean) {
     if (g.mode !== 'play') return;
     g.hold = på;
+}
+
+/**
+ * Grep 2, bare etter riksretten: roret styrer ballongen ned. Før 1884 valgte kongen kursen,
+ * så tasten gjør ingenting.
+ */
+export function ror(g: Game, på: boolean) {
+    if (g.mode !== 'play') return;
+    g.ror = på && g.harRor;
 }
 
 /** Synkefart uten varme: tyngre med årene og med hver flosshatt om bord. */
 export function synk(g: Game): number {
     const l = T.løft;
     const u = Math.min(1, Math.max(0, (g.år - T.fart.fraÅr) / (T.fart.tilÅr - T.fart.fraÅr)));
-    const rolig = Math.min(1, l.rolig.fra + ((1 - l.rolig.fra) * (g.t - g.start)) / l.rolig.sekunder);
+    const rolig = Math.min(1, l.rolig.fra + ((1 - l.rolig.fra) * (g.t - g.rolig)) / l.rolig.sekunder);
     return (l.synkFra + (l.synkTil - l.synkFra) * u + g.hatter * l.perHatt) * rolig;
 }
 
@@ -27,6 +36,32 @@ export function synk(g: Game): number {
 export function stig(y: number): number {
     const alt = Math.min(1, Math.max(0, (540 - y) / 540));
     return T.løft.stigLav + (T.løft.stigHøy - T.løft.stigLav) * Math.pow(alt, T.løft.tynnLuft);
+}
+
+export interface Flukt {
+    y: number;
+    vy: number;
+    varme: number;
+}
+
+/**
+ * Ett fysikksteg: varmen følger knappen litt etter, farten følger varmen. Med roret (etter
+ * riksretten) følger ballongen deg raskt, og roret alene styrer den ned. Brukes av spillet og
+ * av robotene som spår.
+ */
+export function fly(f: Flukt, holdPå: boolean, rorPå: boolean, harRor: boolean, sy: number, dt: number) {
+    const l = T.løft;
+    const tau = harRor ? T.ror.varmeTau : l.varmeTau;
+    f.varme += ((holdPå ? 1 : 0) - f.varme) * (1 - Math.exp(-dt / tau));
+    const mål = rorPå && !holdPå ? T.ror.synk : -stig(f.y) * f.varme + sy * (1 - f.varme);
+    const a = harRor
+        ? T.ror.akselerasjon
+        : mål > f.vy && f.vy >= 0
+          ? l.akselerasjonNed
+          : l.akselerasjon;
+    f.vy += Math.max(-a * dt, Math.min(a * dt, mål - f.vy));
+    f.y = Math.max(B.tak + B.høyde, f.y + f.vy * dt);
+    if (f.y <= B.tak + B.høyde && f.vy < 0) f.vy = 0;
 }
 
 /** Avstand fra kurven til bakken rett under (px). */
@@ -47,9 +82,14 @@ export function nærhet(ter: Game['ter'], x: number, y: number): number {
 export const iBåndet = (g: Game) =>
     g.år >= T.ganger.fra && nærhet(g.ter, g.x, g.y) < T.ganger.nær;
 
-/** Hva brenneren koster nå (Spd/s): hver flosshatt fra kongeveien gjør den dyrere. */
+/**
+ * Hva brenneren koster nå (Spd/s): hver flosshatt fra kongeveien gjør den dyrere, Ola-boka
+ * (bondeflertallet) gjør den billigere.
+ */
 export const kostnad = (g: Game) =>
-    T.penger.perSek * (1 + T.veiskille.kongeveiKostnad * g.kongeHatter);
+    T.penger.perSek *
+    (1 + T.veiskille.kongeveiKostnad * g.kongeHatter) *
+    (g.olaboka ? 1 - T.penger.olaboka : 1);
 
 /** Spart per sekund når du slipper: lite høyt oppe, mye tett over fjellet. */
 export function sparing(g: Game): number {

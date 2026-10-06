@@ -53,22 +53,48 @@ export function tegnHimmel(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
         ctx.fill();
         ctx.restore();
     }
-    // Skyer: to lag (et tredje på høy kvalitet).
-    const lag = kvalitet() === 'hoy' ? 3 : 2;
+    // Skyer: tre lag i ulik høyde og størrelse, så himmelen aldri gjentar seg likt.
+    const lag = kvalitet() === 'lav' ? 2 : 3;
     for (let l = 0; l < lag; l++) {
-        const par = [0.06, 0.12, 0.035][l];
-        const sk = [1, 0.75, 0.5][l];
-        const span = 1300;
-        for (let i = 0; i < 4; i++) {
-            const bilde = k.skyer[(i + l) % k.skyer.length];
-            let x = (i * 340 + l * 170 - g.x * par - tid * (4 + l * 3)) % span;
-            if (x < -300) x += span;
-            const y = 30 + l * 46 + hash(i * 7 + l) * 70;
-            ctx.globalAlpha = 0.6 - l * 0.12;
-            ctx.drawImage(bilde, x, y, bilde.width * sk * 1.3, bilde.height * sk * 0.6);
+        const par = [0.03, 0.07, 0.13][l];
+        const span = 1500 + l * 230;
+        for (let i = 0; i < 5; i++) {
+            const n = i * 5 + l * 17;
+            const bilde = k.skyer[(i * 3 + l) % k.skyer.length];
+            const sk = (0.55 + hash(n) * 0.75) * [0.7, 1, 1.25][l];
+            let x = (i * (span / 5) + hash(n + 1) * 160 - g.x * par - tid * (3 + l * 3)) % span;
+            if (x < -360) x += span;
+            const y = 18 + l * 52 + hash(n + 2) * 70;
+            ctx.globalAlpha = [0.45, 0.6, 0.72][l];
+            ctx.drawImage(bilde, x, y, bilde.width * sk * 1.25, bilde.height * sk * (0.45 + hash(n + 3) * 0.3));
         }
     }
     ctx.globalAlpha = 1;
+    tegnFugler(ctx, g, tid);
+}
+
+/** Fugleflokker i V som krysser himmelen i ulik høyde (bare pynt langt borte). */
+function tegnFugler(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.3;
+    for (let f = 0; f < 2; f++) {
+        const span = 2200 + f * 700;
+        const fx = span - ((g.x * (0.1 + f * 0.05) + tid * (26 + f * 10) + f * 900) % span) - 200;
+        const fy = 70 + f * 60 + Math.sin(tid * 0.4 + f) * 14;
+        const n = 5 + f * 2;
+        for (let i = 0; i < n; i++) {
+            const side = i % 2 === 0 ? 1 : -1;
+            const rad = Math.ceil(i / 2);
+            const bx = fx + rad * 16;
+            const by = fy + side * rad * 9;
+            const vinge = Math.sin(tid * 9 + i * 1.7) * 3;
+            ctx.beginPath();
+            ctx.moveTo(bx - 5, by - vinge);
+            ctx.quadraticCurveTo(bx - 2, by - 2, bx, by);
+            ctx.quadraticCurveTo(bx + 2, by - 2, bx + 5, by - vinge);
+            ctx.stroke();
+        }
+    }
 }
 
 interface Lag {
@@ -83,6 +109,7 @@ interface Lag {
 }
 
 const LAG: Lag[] = [
+    { par: 0.025, base: 270, amp: 190, frek: 420, farge: '#c3c9c4', snø: true, korn: false, dis: 0.35 },
     { par: 0.06, base: 330, amp: 230, frek: 300, farge: '#b7beb3', snø: true, korn: false, dis: 0.45 },
     { par: 0.18, base: 390, amp: 170, frek: 200, farge: '#9ca598', snø: true, korn: true, dis: 0.5 },
     { par: 0.4, base: 440, amp: 110, frek: 140, farge: '#7d877f', snø: false, korn: true, dis: 0.55 },
@@ -138,6 +165,35 @@ export function tegnBakgrunn(ctx: CanvasRenderingContext2D, g: Game) {
     });
 }
 
+/**
+ * Hver epoke har sitt eget fjell: grønne lier i Hallingdal og på Ringerike, brun kyst ved
+ * Egersund, blågrå høyfjell på Filefjell, gårdsland ved Eidsvoll, mørk skifer i Jotunheimen og
+ * varm stein i 1884. Fargene glir over i hverandre mellom brettene.
+ */
+const EPOKE: { fra: number; lys: string; mørk: string; snø: number }[] = [
+    { fra: 1815, lys: '#6b7a5e', mørk: '#3c4639', snø: 395 },
+    { fra: 1824, lys: '#71805a', mørk: '#3f4a35', snø: 390 },
+    { fra: 1833, lys: '#7a715d', mørk: '#463f35', snø: 380 },
+    { fra: 1842, lys: '#66727c', mørk: '#353d45', snø: 410 },
+    { fra: 1854, lys: '#6f7b55', mørk: '#3d4632', snø: 375 },
+    { fra: 1866, lys: '#5c6470', mørk: '#2c3139', snø: 425 },
+    { fra: 1882, lys: '#857760', mørk: '#4a4033', snø: 380 },
+];
+
+function epoke(år: number) {
+    let i = 0;
+    for (let k = 0; k < EPOKE.length; k++) if (år >= EPOKE[k].fra) i = k;
+    const a = EPOKE[i];
+    const b = EPOKE[Math.min(EPOKE.length - 1, i + 1)];
+    // Glir over de siste to årene før neste epoke.
+    const u = b === a ? 0 : Math.min(1, Math.max(0, (år - (b.fra - 2)) / 2));
+    return {
+        lys: blandFarge(a.lys, b.lys, u),
+        mørk: blandFarge(a.mørk, b.mørk, u),
+        snø: a.snø + (b.snø - a.snø) * u,
+    };
+}
+
 /** Forgrunnsfjellet og alt som står på det. */
 export function tegnForgrunn(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
     const ter = g.ter;
@@ -163,9 +219,10 @@ export function tegnForgrunn(ctx: CanvasRenderingContext2D, g: Game, tid: number
     ys.forEach((y, i) => ctx.lineTo(-12 + i * steg, y));
     ctx.lineTo(972, 540);
     ctx.closePath();
-    const grad = ctx.createLinearGradient(0, 240, 0, 540);
-    grad.addColorStop(0, '#5f675e');
-    grad.addColorStop(0.55, '#3f453f');
+    const ep = epoke(g.år);
+    const grad = ctx.createLinearGradient(0, 260, 0, 540);
+    grad.addColorStop(0, ep.lys);
+    grad.addColorStop(0.5, ep.mørk);
     grad.addColorStop(1, P.kritt);
     ctx.fillStyle = grad;
     ctx.fill();
@@ -175,11 +232,39 @@ export function tegnForgrunn(ctx: CanvasRenderingContext2D, g: Game, tid: number
         ctx.fill();
     }
 
+    // Lys fra sola oppe til høyre: en bred, lys kant langs overflaten, sterkest på skråninger
+    // som vender mot lyset. Skyggesidene får litografiens skravur.
+    ctx.save();
+    ctx.clip();
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = 'rgba(236,232,210,0.16)';
+    ctx.lineWidth = 34;
+    ctx.beginPath();
+    ys.forEach((y, i) => (i ? ctx.lineTo(-12 + i * steg, y) : ctx.moveTo(-12, y)));
+    ctx.stroke();
+    ctx.strokeStyle = 'rgba(240,236,214,0.22)';
+    ctx.lineWidth = 12;
+    ctx.stroke();
+    ctx.strokeStyle = 'rgba(20,22,24,0.32)';
+    ctx.lineWidth = 1.1;
+    ctx.beginPath();
+    for (let i = 1; i < ys.length; i += 1) {
+        const ned = ys[i] > ys[i - 1] + 1.2;
+        if (!ned) continue;
+        const sx = -12 + i * steg;
+        const wx = Math.floor((x0 + sx) / steg);
+        const l = 10 + hash(wx) * 16;
+        ctx.moveTo(sx, ys[i] + 5);
+        ctx.lineTo(sx - l * 0.5, ys[i] + 5 + l);
+    }
+    ctx.stroke();
+    ctx.restore();
+
     // Skrapt hvitt: snø på høye topper og lys langs kammene som vender mot venstre.
     ctx.fillStyle = P.hvit;
     ctx.beginPath();
     const dybde = (i: number) =>
-        Math.min(26, Math.max(0, (395 - ys[i]) * 0.4)) *
+        Math.min(26, Math.max(0, (ep.snø - ys[i]) * 0.4)) *
         (0.75 + 0.5 * hash(i + Math.floor(x0 / steg)));
     for (let i = 1; i < ys.length; i++) {
         const d0 = dybde(i - 1);
@@ -333,6 +418,36 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
             ctx.font = `italic 15px ${FONT}`;
             ctx.fillText(u.navn, sx, u.y - 32);
         }
+    }
+    // Stemmene i rorstrekket: stemmesedler med karmin kryss som vipper i dalen.
+    for (const st of ter.stemmer) {
+        if (st.tatt) continue;
+        const sx = st.x - x0;
+        if (sx < -30 || sx > 990) continue;
+        const vipp = Math.sin(tid * 3 + st.x) * 0.15;
+        ctx.save();
+        ctx.translate(sx, st.y - 10 + Math.sin(tid * 2.4 + st.x) * 3);
+        ctx.rotate(vipp);
+        ctx.globalAlpha = 0.35;
+        ctx.fillStyle = P.silkeLys;
+        ctx.beginPath();
+        ctx.arc(0, 0, 20 + Math.sin(tid * 5) * 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = P.hvit;
+        ctx.strokeStyle = P.kritt;
+        ctx.lineWidth = 1.4;
+        ctx.fillRect(-9, -12, 18, 24);
+        ctx.strokeRect(-9, -12, 18, 24);
+        ctx.strokeStyle = P.karmin;
+        ctx.lineWidth = 2.4;
+        ctx.beginPath();
+        ctx.moveTo(-5, -6);
+        ctx.lineTo(5, 6);
+        ctx.moveTo(5, -6);
+        ctx.lineTo(-5, 6);
+        ctx.stroke();
+        ctx.restore();
     }
     for (const f of ter.funn) {
         if (f.tatt) continue;

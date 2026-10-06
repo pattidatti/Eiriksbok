@@ -1,6 +1,6 @@
 // HUD-en er selve litografibladet: papirmarg med trykkekant, bildeteksten i nedre marg
-// (år og sted i kursiv), «Spart» oppe til høyre, tidslinja 1815-1884 (målet), Ueland i et
-// ovalt portrett med gangeren, og valgstabelen av krittmynter med grensen som karmin strek.
+// (år og sted i kursiv), «Spart» oppe til høyre, tidslinja 1815-1884 (målet), Ueland i et ovalt portrett
+// og budsjettbaren ved ballongen. Alt står på solide papirkort, så teksten er skarp.
 
 import { P } from './art';
 import type { Fx } from './fx';
@@ -45,48 +45,65 @@ export function tegnRamme(ctx: CanvasRenderingContext2D, g: Game, meny: boolean)
     ctx.fillText(sted, 480, 527);
 }
 
+/** Et solid papirkort med mørk kant og skygge: alt i HUD-en står på slike, så teksten er skarp. */
+function kort(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number) {
+    ctx.fillStyle = 'rgba(31,35,38,0.28)';
+    ctx.fillRect(x + 3, y + 3, w, h);
+    ctx.fillStyle = '#f8f4e8';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(x, y, w, h);
+}
+
 export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudValg) {
     if (v.meny) return;
     const tid = fx.klokke;
 
-    // Nede til venstre i margen: tasten, så eleven alltid ser grepet.
+    // Nede til venstre i margen: tastene, så eleven alltid ser grepet.
     ctx.textAlign = 'left';
-    ctx.font = `13px ${FONT}`;
+    ctx.font = `14px ${FONT}`;
     ctx.fillStyle = P.kritt;
-    const tw = tast(ctx, 16, 508, 'MELLOMROM');
+    const tx = 16 + tast(ctx, 16, 506, 'MELLOMROM');
     ctx.textAlign = 'left';
-    ctx.fillText('eller mus = penger i brenneren', 16 + tw + 8, 524);
-    ctx.textAlign = 'right';
-    ctx.font = `italic 14px ${FONT}`;
-    ctx.fillText(v.øving ? 'Øving fra 1870 (teller ikke)' : v.rekord ? `Rekord ${spd(v.rekord)} Spd.` : '', 940, 98);
+    if (!g.harRor) ctx.fillText('= penger i brenneren', tx + 8, 522);
+    else {
+        // Etter riksretten: to taster, kort tekst, så bildeteksten i midten får plass.
+        ctx.fillText('= opp', tx + 8, 522);
+        const rx = tx + 58;
+        const puls = g.ror ? 0 : 0.5 + 0.5 * Math.sin(tid * 6);
+        ctx.globalAlpha = 0.75 + 0.25 * puls;
+        const rw = tast(ctx, rx, 506, 'PIL NED');
+        ctx.globalAlpha = 1;
+        ctx.textAlign = 'left';
+        ctx.font = `bold 14px ${FONT}`;
+        ctx.fillStyle = P.silkeMørk;
+        ctx.fillText('= roret', rx + rw + 8, 522);
+    }
 
-    // Oppe til høyre: Spart, stor og rolig. Spretter når mynter lander.
-    const sk = 1 + fx.sprett * 0.18;
-    ctx.save();
-    ctx.translate(940, 50);
-    ctx.scale(sk, sk);
+    // Oppe til høyre: Spart, stor og rolig på et kort. Spretter når mynter lander.
+    kort(ctx, 776, 16, 168, 76);
     ctx.textAlign = 'right';
     ctx.fillStyle = P.kritt;
     ctx.font = `italic 15px ${FONT}`;
-    ctx.fillText('Spart for bøndene', 0, -24);
-    ctx.font = `italic 32px ${FONT}`;
+    ctx.fillText(v.øving ? 'Spart (øving)' : 'Spart for bøndene', 934, 36);
+    const sk = 1 + fx.sprett * 0.18;
+    ctx.save();
+    ctx.translate(934, 66);
+    ctx.scale(sk, sk);
+    ctx.font = `bold 30px ${FONT}`;
     ctx.fillStyle = fx.sprett > 0.3 ? P.silkeMørk : P.kritt;
-    ctx.fillText(`${spd(g.spart)} Spd.`, 0, 6);
+    ctx.fillText(`${spd(g.spart)} Spd.`, 0, 0);
     ctx.restore();
-    // Hva brenneren koster nå (kongeveiens flosshatter gjør den dyrere).
-    ctx.textAlign = 'right';
-    ctx.font = `italic 14px ${FONT}`;
-    ctx.fillStyle = g.kongeHatter ? P.karmin : P.kritt;
-    const pris = T.penger.perSek * (1 + T.veiskille.kongeveiKostnad * g.kongeHatter);
-    ctx.fillText(
-        `Brenneren: ${pris.toLocaleString('nb-NO', { maximumFractionDigits: 1 })} Spd. i sekundet`,
-        940,
-        78
-    );
+    ctx.font = `14px ${FONT}`;
+    ctx.fillStyle = P.kritt;
+    ctx.fillText(v.rekord && !v.øving ? `Rekord ${spd(v.rekord)}` : '', 934, 85);
+    // Sjansene: små ballonger under kortet (fra det første ekte valget).
+    if (g.år >= T.penger.førsteEkteValg - 0.5) sjanser(ctx, g, fx, tid);
 
     tidslinje(ctx, g);
     if (g.år >= T.ganger.fra - 0.3) portrett(ctx, g, fx, tid);
-    if (g.stabel) stabel(ctx, g, fx, tid);
+    if (grenseVises(g) && g.mode === 'play') budsjett(ctx, g, fx, tid);
 
     if (fx.blink > 0) {
         ctx.globalAlpha = fx.blink * 0.5;
@@ -96,9 +113,90 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
     }
 }
 
+/** Sjansene igjen: tre små ballonger. En brukt sjanse er et tomt omriss. */
+function sjanser(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
+    const n = T.sjekk.sjanser;
+    const x0 = 934 - n * 22;
+    ctx.textAlign = 'right';
+    ctx.font = `bold 13px ${FONT}`;
+    ctx.fillStyle = P.kritt;
+    kort(ctx, x0 - 74, 98, n * 22 + 82, 26);
+    ctx.fillStyle = P.kritt;
+    ctx.fillText('Sjanser', x0 - 8, 116);
+    for (let i = 0; i < n; i++) {
+        const har = i < g.sjanser;
+        const cx = x0 + 10 + i * 22;
+        const puls = !har && i === g.sjanser ? Math.max(0, fx.blink) : 0;
+        ctx.beginPath();
+        ctx.ellipse(cx, 108 - puls * 3, 7, 8, 0, 0, Math.PI * 2);
+        ctx.fillStyle = har ? P.silke : 'transparent';
+        if (har) ctx.fill();
+        ctx.strokeStyle = har ? P.kritt : P.halv;
+        ctx.lineWidth = 1.3;
+        ctx.stroke();
+        ctx.fillStyle = har ? P.kritt : P.halv;
+        ctx.fillRect(cx - 2.5, 118, 5, 3);
+    }
+    void tid;
+}
+
+/**
+ * Budsjettet til neste valg: én stående bar rett ved ballongen. Full bar = alt bøndene tillater
+ * denne perioden. Den tømmes når du fyrer, og fylles igjen ved hvert valg.
+ */
+function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
+    const B = T.ballong;
+    const igjen = Math.max(0, 1 - g.periode / T.penger.grense);
+    const fare = igjen < 0.25;
+    const inn = Math.min(1, (g.år - (T.penger.førsteEkteValg - 1.2)) / 0.4);
+    const w = 16;
+    const h = 92;
+    const x = B.skjermX - B.halvBredde - 34;
+    const y = Math.max(MARG.topp + 34, Math.min(MARG.bunn - h - 8, g.y - B.høyde + 2));
+    ctx.save();
+    ctx.globalAlpha = inn;
+    const rist = fare ? Math.sin(tid * 30) * 1.2 : 0;
+    ctx.translate(rist, 0);
+    kort(ctx, x - 3, y - 3, w + 6, h + 6);
+    // Fyllet: lyst og trygt, karmin når det nesten er tomt.
+    const fh = (h - 4) * igjen;
+    ctx.fillStyle = fare ? P.karmin : P.silke;
+    if (fare) ctx.globalAlpha = inn * (0.65 + 0.35 * Math.sin(tid * 12));
+    ctx.fillRect(x + 2, y + 2 + (h - 4 - fh), w - 4, fh);
+    ctx.globalAlpha = inn;
+    // Myntstreker hver 5. spesidaler.
+    ctx.strokeStyle = 'rgba(46,50,54,0.35)';
+    ctx.lineWidth = 1;
+    for (let k = 5; k < T.penger.grense; k += 5) {
+        const ly = y + 2 + (h - 4) * (k / T.penger.grense);
+        ctx.beginPath();
+        ctx.moveTo(x + 2, ly);
+        ctx.lineTo(x + w - 2, ly);
+        ctx.stroke();
+    }
+    if (fx.stabelBlink > 0) {
+        ctx.strokeStyle = P.karmin;
+        ctx.globalAlpha = fx.stabelBlink;
+        ctx.lineWidth = 3;
+        ctx.strokeRect(x - 5, y - 5, w + 10, h + 10);
+        ctx.globalAlpha = inn;
+    }
+    // Lappen over: når neste valg er.
+    const neste = g.ter.valg[g.nesteValg];
+    const etikett = neste ? `Valg ${neste.år}` : 'Budsjett';
+    ctx.font = `bold 13px ${FONT}`;
+    const ew = ctx.measureText(etikett).width + 12;
+    const ex = x + w / 2 - ew / 2;
+    kort(ctx, ex, y - 26, ew, 19);
+    ctx.fillStyle = fare ? P.karmin : P.kritt;
+    ctx.textAlign = 'center';
+    ctx.fillText(etikett, x + w / 2, y - 12);
+    ctx.restore();
+}
+
 function tast(ctx: CanvasRenderingContext2D, x: number, y: number, t: string): number {
     ctx.save();
-    ctx.font = `bold 12px Georgia, serif`;
+    ctx.font = `bold 13px Georgia, serif`;
     const w = Math.max(ctx.measureText(t).width, t.length * 9.5) + 12;
     ctx.fillStyle = P.hvit;
     ctx.strokeStyle = P.kritt;
@@ -119,6 +217,7 @@ function tidslinje(ctx: CanvasRenderingContext2D, g: Game) {
     const b = 620;
     const y = 30;
     const u = (år: number) => a + ((b - a) * (år - T.år.start)) / (T.år.slutt - T.år.start);
+    kort(ctx, a - 52, 14, b - a + 182, 30);
     ctx.strokeStyle = P.kritt;
     ctx.lineWidth = 1.5;
     ctx.beginPath();
@@ -155,6 +254,9 @@ function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     const cy = 62;
     const inn = Math.min(1, (g.år - (T.ganger.fra - 0.3)) / 0.3);
     const s = (0.6 + 0.4 * inn) * (1 + fx.gangerSprett * 0.25);
+    ctx.globalAlpha = inn;
+    kort(ctx, 16, 14, 160, 98);
+    ctx.globalAlpha = 1;
     ctx.save();
     ctx.translate(cx, cy);
     ctx.scale(s, s);
@@ -217,73 +319,10 @@ function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     ctx.textAlign = 'center';
     ctx.font = `italic bold ${28 + fx.gangerSprett * 10}px ${FONT}`;
     ctx.fillText(`×${g.ganger}`, cx + 70, cy + 4);
-    ctx.font = `italic 14px ${FONT}`;
+    ctx.font = `bold 13px ${FONT}`;
     ctx.fillStyle = P.kritt;
-    ctx.fillText('Ueland', cx + 70, cy + 22);
+    ctx.fillText('Ueland', cx + 70, cy + 24);
+    ctx.font = `italic 13px ${FONT}`;
+    ctx.fillText(g.ganger > 1 ? 'sparer mer' : 'gli tett!', cx + 70, cy + 40);
     ctx.globalAlpha = 1;
-}
-
-/** Pengestabelen siden forrige valg: krittmynter på rad, grensen som karmin strek. */
-function stabel(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
-    const x = 24;
-    const y = 132;
-    const perMynt = 2;
-    const grense = T.penger.grense;
-    const maks = Math.ceil((grense * 1.35) / perMynt);
-    const gap = 8.5;
-    const vis = grenseVises(g);
-    const andel = g.periode / grense;
-    const fare = vis && andel > 0.8;
-    // Papirlapp bak.
-    const bredde = maks * gap + 64;
-    ctx.fillStyle = 'rgba(238,235,223,0.88)';
-    ctx.fillRect(x - 10, y - 28, bredde, 66);
-    const neste = g.ter.valg[g.nesteValg];
-    ctx.fillStyle = P.kritt;
-    ctx.font = `italic 15px ${FONT}`;
-    ctx.textAlign = 'left';
-    ctx.fillText(neste ? `Brukt før valget ${neste.år}` : 'Brukt', x, y - 10);
-    const fulle = g.periode / perMynt;
-    for (let i = 0; i < maks; i++) {
-        const fyll = Math.min(1, Math.max(0, fulle - i));
-        const mx = x + 5 + i * gap;
-        const over = vis && i * perMynt >= grense;
-        const dy = fyll > 0 && fyll < 1 ? (1 - fyll) * -8 : 0;
-        ctx.strokeStyle = P.kritt;
-        ctx.lineWidth = 1.1;
-        ctx.globalAlpha = fyll > 0 ? 1 : 0.3;
-        ctx.beginPath();
-        ctx.arc(mx, y + 6 + dy, 4.6, 0, Math.PI * 2);
-        if (fyll > 0) {
-            ctx.fillStyle = over ? P.karmin : P.hvit;
-            ctx.fill();
-        }
-        ctx.stroke();
-        if (fyll > 0) {
-            ctx.beginPath();
-            ctx.arc(mx, y + 6 + dy, 2.2, 0, Math.PI * 2);
-            ctx.stroke();
-        }
-    }
-    ctx.globalAlpha = 1;
-    if (vis) {
-        const gx = x + 5 + (grense / perMynt - 0.5) * gap;
-        const puls = fare ? 0.5 + 0.5 * Math.sin(tid * 12) : 0;
-        ctx.fillStyle = P.karmin;
-        ctx.fillRect(gx - 1.5 - puls, y - 4, 3 + puls * 2, 22);
-        ctx.font = `italic 13px ${FONT}`;
-        ctx.textAlign = 'right';
-        ctx.fillText('bøndenes grense', gx + 3, y + 32);
-    }
-    ctx.fillStyle = fare ? P.karmin : P.kritt;
-    ctx.font = `italic 16px ${FONT}`;
-    ctx.textAlign = 'left';
-    ctx.fillText(`${Math.round(g.periode)}`, x + 5 + maks * gap + 2, y + 12);
-    if (fx.stabelBlink > 0) {
-        ctx.strokeStyle = P.karmin;
-        ctx.globalAlpha = fx.stabelBlink;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(x - 10, y - 28, bredde, 66);
-        ctx.globalAlpha = 1;
-    }
 }

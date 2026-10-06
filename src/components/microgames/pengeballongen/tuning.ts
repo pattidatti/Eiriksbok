@@ -14,6 +14,40 @@ export const TUNING = {
         etterValg: 1.65,
         /** Ballongen lander på Løvebakken her (seier). */
         slutt: 1884.5,
+        /** Riksretten er over: fra her går tida sakte, og eleven har roret. */
+        rorFra: 1884,
+        /** Sekunder per år i rorstrekket (1884,0-1884,5 = ca. 8 s). */
+        rorTempo: 16,
+    },
+
+    // Roret etter riksretten: pil ned / S / trykk lavt styrer ballongen ned, gratis.
+    ror: {
+        /** Fart ned når eleven styrer (px/s). */
+        synk: 340,
+        /** Brenneren svarer raskere når Stortinget styrer (s, mot `løft.varmeTau`). */
+        varmeTau: 0.07,
+        /** Hvor fort farten følger roret og brenneren i rorstrekket (px/s²): Stortinget styrer. */
+        akselerasjon: 1300,
+        /** Stemmene i dalene: verdt så mye ganger Ueland-gangeren. */
+        stemme: 40,
+        /** Dalene i rorstrekket: antall, dybde (px under kammen) og kammen. */
+        daler: 3,
+        kamY: 360,
+        dalY: 490,
+        /** Fra kanten av kammen til bunnen av dalen (px vei): bratt. */
+        bratt: 90,
+        /** Stemmen henger så høyt over dalbunnen. */
+        stemmeOver: 40,
+    },
+
+    // Ny sjanse: krasj eller stemt ut fra 1833 setter deg tilbake til forrige valg.
+    sjekk: {
+        /** Så mange ganger per runde. */
+        sjanser: 3,
+        /** Du mister så stor del av det du har spart. */
+        straff: 0.15,
+        /** Høyde over bakken når du starter igjen. */
+        over: 140,
     },
 
     // Farten fram (px/s) øker litt hvert tiår.
@@ -23,11 +57,11 @@ export const TUNING = {
     ballong: {
         skjermX: 288,
         /** Fra bunnen av kurven til toppen av ballongen. */
-        høyde: 78,
+        høyde: 94,
         /** Halv bredde på ballongen (mot fjellknauser i lufta). */
-        halvBredde: 26,
+        halvBredde: 31,
         /** Halv bredde på kurven (mot bakken). */
-        kurvHalv: 12,
+        kurvHalv: 14,
         startY: 300,
         /** Øverste kant ballongen kan nå (toppen av ballongen). */
         tak: 6,
@@ -69,6 +103,9 @@ export const TUNING = {
         utenfor: 2,
         /** Grensen ved valget: så mye kan du bruke per treårsperiode fra 1833. */
         grense: 26,
+        /** Ola-boka (1832): bøndene får flertall, embetsmennene får mindre - brenneren blir
+         * så mye billigere resten av runden. */
+        olaboka: 0.2,
         /** Valgårene. Før 1833 vinker bøndene deg forbi. */
         førsteValg: 1827,
         førsteEkteValg: 1833,
@@ -108,7 +145,7 @@ export const TUNING = {
         /** Skråningen opp til og ned fra kammen (px vei). */
         skrå: 170,
         /** Hver valgperiode blir tinden og kammen så mye høyere (andel av starthøyden). */
-        økning: 0.08,
+        økning: 0.045,
         /** Skrapedalen er åser som bølger: høyden på hver ås (px), og antall åser. */
         bølge: [64, 82] as [number, number],
         åser: 3,
@@ -124,9 +161,9 @@ export const TUNING = {
         /** Flat kam før og etter knausen. */
         flate: 90,
         /** Luft fra kammen til undersiden av knausen før 1882 (1,6 ballonghøyder). */
-        gapLav: 125,
+        gapLav: 150,
         /** Luft under knausen etter 1882 (fra dalbunnen). */
-        gap: 150,
+        gap: 175,
         /** Kongeveien over knausen: en flosshatt klatrer om bord, og hver slik hatt gjør
          * brenneren så mye dyrere resten av runden. Gangeren går til ×1. */
         kongeveiKostnad: 0.15,

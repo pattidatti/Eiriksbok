@@ -1,6 +1,6 @@
 # Pengeballongen - kart over mappa
 
-Ferdig bygg (fase 6: kunst, juice, lyd, tekst). Brief: `docs/microgames/briefer/pengeballongen.md`.
+Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD). Brief: `docs/microgames/briefer/pengeballongen.md`.
 Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skjerm, øving fra 1870, selvspill).
 
 | Fil | Hva den gjør |
@@ -9,7 +9,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 | `levels.ts` | Brettene (bildetekst, banner, terreng før 1833), sletta før 1833, `FORMER` per valgperiode (tind / bølgende skrapeåser / veiskille), finalen, kongens utgifter, funnene med fagsetning. |
 | `terrain.ts` | Tid <-> år <-> vei, `lagTerreng(rng)`, oppslag `bakke`, `fastTopp`, `knausVed`. |
 | `state.ts` | Typene og `newGame(seed, fraÅr?)` (øving hopper til 1870 med alt før lagt inn). |
-| `rules.ts` | Fagkjernen: `hold()`, `synk()`, `stig()`, `klaring()`, `nærhet()`, `iBåndet()`, `kostnad()`, `sparing()`, `krasjer()`, `press()`, `rang()`. |
+| `rules.ts` | Fagkjernen: `hold()`, `ror()`, `fly()` (fysikksteget, delt med robotene), `synk()`, `stig()`, `klaring()`, `nærhet()`, `iBåndet()`, `kostnad()`, `sparing()`, `krasjer()`, `press()`, `rang()`. |
 | `game.ts` | Kjerneløkka `update(g, dt)`: varme og løft, penger og sparing, gangeren, veiskillene, funn, valgene, spor, krasj, landing. |
 | `bots.ts` / `sim.ts` | Robotene (`pilot()` spår med samme fysikk) og simuleringskontrakten. |
 | `analyse.ts` | Tuning-verktøy: `npx tsx src/components/microgames/pengeballongen/analyse.ts 100` viser seier, poeng, snitt-ganger og andel av valggrensen tidlig/sent per robot. |
@@ -38,6 +38,12 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 6. Kongens veiskille: under knausen (1,6 ballonghøyder) = gangeren +1 med en gang. Over =
    kongeveien: +1 flosshatt, brenneren +15 % resten av runden, gangeren til ×1.
 7. Seier: 1884,5 (Løvebakken). Tap: fjell/knaus eller stemt ut.
+8. Ny sjanse (`sjekk`): fra 1833 lagres et sjekkpunkt ved hvert valgflagg. Krasj eller stemt ut
+   spoler tida tilbake dit (`slutt()` i game.ts), trekker 15 % av det sparte og bruker én av tre sjanser.
+9. Ola-boka (funn 1831): henger høyere enn de andre funnene. Tatt = brenneren 20 % billigere (`kostnad()`).
+10. Roret (`ror`): fra 1884,0 går tida sakte (`år.rorTempo`), eleven får pil ned / S / trykk under
+    ballongen (`ror()`), brenneren svarer raskere (`fly()`), og tre bratte daler har en stemme
+    i bunnen (40 x gangeren). Uten roret synker ballongen for sakte til å nå dem.
 
 ## Knapper
 
@@ -51,5 +57,9 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 - Hele terrenget lages i `newGame` fra seed; endrer du farten, flytter alt seg.
 - Knausen sjekkes mot hele ballongen (`halvBredde`), bakken bare mot kurven.
 - Komponenten tømmer `g.hendelser` hver ramme; sim.ts gjør det samme.
+- Ny sjanse spoler `g.t` tilbake. Alt som planlegger etter spilltid (robottakt, analyse) må ha
+  egen klokke - analyse.ts brukte `g.t` og lot robotene stå stille i 5 s etter hver sjanse.
+- HUD-tekst og lapper tegnes på canvas på solide papirkort (`kort()` i hud.ts, `tegnLapper()` i
+  fx.ts). Bruk ikke `text.float` - skallets svevetekst ble utvasket mot den lyse himmelen.
 - En robot med for liten fare-margin vinner i simuleringen men krasjer i nettleseren. Test med flere dt.
 - Kornet er et `CanvasPattern` som flyttes med `setTransform` - ellers står kornet stille mens fjellet glir.

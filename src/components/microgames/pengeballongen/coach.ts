@@ -7,7 +7,7 @@ import { P } from './art';
 import { BRETT, FUNN } from './levels';
 import { klaring } from './rules';
 import type { Game, Hendelse } from './state';
-import { BEAT, LAPP } from './texts';
+import { BEAT, LAPP, SJANSE_LÆRDOM } from './texts';
 import { TUNING } from './tuning';
 
 export interface Coach {
@@ -20,60 +20,49 @@ export interface Coach {
     vedVerden: (wx: number, y: number) => Anchor;
     skjerm: (x: number, y: number) => { x: number; y: number };
     spill: () => Game;
+    /** En solid lapp på flata (960 x 540) som spretter inn og blekner. */
+    lapp: (tekst: string, x: number, y: number, farge?: string, stor?: boolean, sek?: number) => void;
 }
 
 const BX = TUNING.ballong.skjermX;
 
 export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
     const { text, sagt } = c;
-    const ved = (dy: number) => c.skjerm(BX + 36, g.y + dy);
+    /** Lapp ved ballongen (flatekoordinater). */
+    const ved = (tekst: string, dy: number, farge?: string, stor?: boolean, sek?: number) =>
+        c.lapp(tekst, BX + 70, g.y + dy, farge, stor, sek);
     switch (h.slag) {
         case 'brett':
             text.banner(BRETT[h.brett].tittel);
-            if (h.brett === 1 && !sagt.has('stabel')) {
-                sagt.add('stabel');
-                text.point('stabel', LAPP.stabel, c.flate(90, 150), { seconds: 5 });
-            }
             break;
         case 'valg': {
-            const p = ved(-110);
             if (!h.ekte) {
-                text.float('Bøndene vinker deg forbi', p.x, p.y, P.kritt);
                 if (!sagt.has('vinker')) {
                     sagt.add('vinker');
-                    text.point('vinker', LAPP.vinker, c.flate(90, 150), { seconds: 4 });
-                }
+                    text.point('vinker', LAPP.vinker, c.vedBallong(-130), { seconds: 4 });
+                } else ved('Bøndene vinker deg forbi', -120, P.halv);
             } else if (h.år === TUNING.penger.førsteEkteValg) {
                 text.banner('Bondestortinget!', P.silke);
-            } else text.float(`Gjenvalgt ${h.år}!`, p.x, p.y, P.silkeMørk, true);
-            if (h.hatt) {
-                const q = ved(-30);
-                text.float('+1 flosshatt', q.x + 30, q.y, P.karmin);
-            }
+            } else ved(`Gjenvalgt ${h.år}!`, -120, P.silke, true);
+            if (h.hatt) ved('+1 flosshatt', -40, P.karmin);
             break;
         }
         case 'funn': {
             const f = FUNN.find((x) => x.id === h.id);
-            const p = ved(-70);
             if (f) {
-                text.float(f.navn, p.x, p.y, P.silkeMørk, true, 1.6);
-                text.lesson(`funn-${f.id}`, f.fakta, 1);
+                ved(f.navn, -80, P.silke, true, 1.8);
+                text.lesson(`funn-${f.id}`, f.fakta, f.id === 'olaboka' ? 3 : 1);
             }
+            if (h.id === 'olaboka') ved(`Brenneren ${Math.round(TUNING.penger.olaboka * 100)} % billigere`, -40, P.silke, false, 2.4);
             break;
         }
         case 'veiskille':
-            if (h.konge && h.vei === 'under') {
-                const p = ved(-100);
-                text.float('Under bommen! Ueland +1', p.x, p.y, P.silkeMørk, true);
-            } else if (h.hatt) {
-                const p = ved(-110);
-                text.float('Kongeveien: brenneren +15 %', p.x, p.y, P.karmin, true);
-            }
+            if (h.konge && h.vei === 'under') ved('Under bommen! Ueland +1', -110, P.silke, true);
+            else if (h.hatt) ved('Kongeveien: brenneren dyrere', -120, P.karmin, true);
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
-                const p = ved(-50);
-                text.float(`Ueland ×${h.ganger}`, p.x + 20, p.y, P.silkeMørk, h.ganger >= 4);
+                ved(`Ueland ×${h.ganger}`, -60, P.silke, h.ganger >= 4, 1);
                 if (h.ganger === 2)
                     text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
                         at: c.vedBallong(-60),
@@ -81,6 +70,30 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
                     });
             }
             break;
+        case 'sjanse':
+            text.banner(`Ny sjanse fra ${h.tilbake}`, P.karmin);
+            ved(h.årsak === 'valg' ? 'Stemt ut!' : 'Rett i fjellet!', -120, P.karmin, true, 1.8);
+            if (h.straff > 0) ved(`-${h.straff} Spd.`, -80, P.karmin, false, 1.8);
+            if (!sagt.has('sjanse')) {
+                sagt.add('sjanse');
+                text.lesson('sjanse', SJANSE_LÆRDOM, 1.5);
+            }
+            break;
+        case 'stemme':
+            ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
+            break;
+        case 'roret': {
+            const t0 = g.t;
+            text.beatOnce('roret', BEAT.roret.tittel, BEAT.roret.tekst, {
+                at: c.vedBallong(-60),
+                until: () => c.spill().ror || c.spill().t > t0 + 2.5,
+            });
+            text.point('ror', LAPP.ror, c.vedBallong(20), {
+                until: () => c.spill().ror,
+                seconds: 5,
+            });
+            break;
+        }
         default:
             break;
     }
@@ -96,11 +109,28 @@ export function coach(g: Game, c: Coach) {
             seconds: 10,
         });
     }
+    // Ola-boka: pek på den i god tid, så eleven kan dukke ned og ta den.
+    if (!sagt.has('ola')) {
+        const f = g.ter.funn.find((x) => x.id === 'olaboka' && !x.tatt);
+        if (f && f.x - g.x < 560 && f.x > g.x) {
+            sagt.add('ola');
+            text.point('ola', LAPP.ola, c.vedVerden(f.x, f.y - 20), {
+                until: () => f.tatt || f.x < c.spill().x,
+                seconds: 5,
+            });
+        }
+    }
+    // Budsjettbaren ved ballongen: anker til lærings-øyeblikket om valget.
+    const vedBar = () => {
+        const sp = c.spill();
+        const B = TUNING.ballong;
+        return c.skjerm(B.skjermX - B.halvBredde - 26, sp.y - B.høyde + 40);
+    };
     if (!sagt.has('grense') && g.år >= TUNING.penger.førsteEkteValg - 1.2) {
         sagt.add('grense');
         const t0 = g.t;
         text.beatOnce('valg', BEAT.valg.tittel, BEAT.valg.tekst, {
-            at: c.flate(110, 150),
+            at: vedBar,
             until: () => c.spill().t > t0 + 1.4,
         });
     }
@@ -117,17 +147,6 @@ export function coach(g: Game, c: Coach) {
             });
         }
     }
-    if (!sagt.has('roret') && g.år >= TUNING.veiskille.åpenFra) {
-        const k = g.ter.knauser.find((kn) => !kn.konge && kn.x0 > g.x);
-        if (k) {
-            sagt.add('roret');
-            const t0 = g.t;
-            text.beatOnce('roret', BEAT.roret.tittel, BEAT.roret.tekst, {
-                at: c.vedVerden((k.x0 + k.x1) / 2, k.bunn + 30),
-                until: () => c.spill().t > t0 + 1.4,
-            });
-        }
-    }
     if (!sagt.has('sverdrup') && g.år >= TUNING.veiskille.åpenFra + 0.6) {
         sagt.add('sverdrup');
         text.banner('Sverdrup om bord', P.silke);
@@ -136,7 +155,6 @@ export function coach(g: Game, c: Coach) {
     const kl = klaring(g);
     if (kl > 0 && kl < 7 && g.t - (c.sist.get('nesten') ?? -9) > 3) {
         c.sist.set('nesten', g.t);
-        const p = c.skjerm(BX - 40, g.y + 26);
-        text.float('Hårfint!', p.x, p.y, P.hvit);
+        c.lapp('Hårfint!', BX - 70, g.y + 10, P.silke, false, 0.9);
     }
 }

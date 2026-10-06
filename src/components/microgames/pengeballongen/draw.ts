@@ -4,9 +4,9 @@
 import type { ArcadeView } from '../arcade/useArcade';
 import { P } from './art';
 import { tegnBallong, tegnSpøkelse } from './figures';
-import { tegnFx, type Fx } from './fx';
+import { tegnFx, tegnLapper, type Fx } from './fx';
 import { tegnHud, tegnRamme } from './hud';
-import { tegnBakgrunn, tegnBånd, tegnForgrunn, tegnGlød, tegnHimmel, tegnHindre } from './scene';
+import { FONT, tegnBakgrunn, tegnBånd, tegnForgrunn, tegnGlød, tegnHimmel, tegnHindre } from './scene';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
@@ -84,4 +84,5 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
 
     tegnRamme(ctx, g, valg.meny);
     tegnHud(ctx, g, fx, { meny: valg.meny, rekord: valg.rekord, øving: valg.øving });
+    tegnLapper(ctx, fx, FONT);
 }

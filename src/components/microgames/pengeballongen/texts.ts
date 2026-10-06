@@ -6,24 +6,31 @@ import type { Årsak } from './state';
 export const MÅL = 'Få ballongen fra 1815 til 1884. Bruk så lite penger som mulig.';
 
 export const REGLER = [
-    'Hold MELLOMROM eller musa: du betaler, ballongen stiger. Svinge kan du ikke.',
-    'Treffer du fjellet, er det over. Bruker du for mye, stemmer bøndene deg ut.',
+    'Hold MELLOMROM eller musa: du betaler, og ballongen stiger. Styre kan du ikke - det gjør kongen.',
+    'Budsjettet til valget må holde. Bruker du for mye, stemmer bøndene deg ut.',
     'Gli tett over fjellet uten å fyre: da sparer Ueland mest.',
 ];
 
+/** Om sjansene, i menyen og på slutt-skjermen. */
+export const SJANSER = 'Krasjer du eller blir stemt ut, får du tre nye sjanser fra forrige valg.';
+
+export const SJANSE_LÆRDOM =
+    'Valgene kom hvert tredje år. Den som ble stemt ut, kunne prøve igjen ved neste valg.';
+
 export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
-    stabel: 'Pengene du bruker hoper seg her',
     grense: 'Over streken = bøndene stemmer deg ut',
     ganger: 'Tett over fjellet: Ueland sparer mer',
     bom: 'Under: billig. Over: dyrere brenner',
     vinker: 'Bøndene stemmer ennå på embetsmenn',
+    ror: 'Pil NED eller trykk lavt: styr ned',
+    ola: 'Ola-boka: ta den!',
 };
 
 export const BEAT = {
     valg: {
         tittel: 'Valget i 1833',
-        tekst: 'Nå teller bøndene pengene du har brukt. Går stabelen over streken, stemmer de deg ut.',
+        tekst: 'Nå teller bøndene pengene du bruker. Er budsjettet ved ballongen tomt før valget, stemmer de deg ut.',
     },
     ueland: {
         tittel: 'Ueland om bord',
@@ -31,7 +38,7 @@ export const BEAT = {
     },
     roret: {
         tittel: 'Riksretten 1884',
-        tekst: 'Statsrådene er dømt, så nå må regjeringen ha Stortinget med seg - og Sverdrup gir deg roret.',
+        tekst: 'Statsrådene er dømt. Nå styrer Stortinget kursen: trykk pil ned for å styre ned til stemmene.',
     },
 };
 
@@ -63,7 +70,9 @@ export const SKJEDDE = {
 export const LÆRDOM = {
     fjell: 'Fjellene var de faste utgiftene: prester, dommere, festninger og veier. Dem måtte Stortinget betale.',
     valg: 'Fra 1833 stemte bøndene på bønder som ville spare. Den som brukte for mye, mistet plassen.',
-    styre: 'Kongen valgte regjeringen og kursen. Stortinget styrte bare pengene - derfor kunne du aldri svinge.',
+    styre: 'Kongen valgte regjeringen og kursen. Stortinget styrte bare pengene - derfor fikk du roret først i 1884.',
+    ola: 'Ola-boka fikk bøndene til å stemme på bønder. Fra 1833 hadde bøndene flertall og kuttet utgiftene.',
+    ror: 'Etter riksretten i 1884 måtte regjeringen ha flertallet med seg. Da fikk Stortinget roret.',
     ueland: 'Ueland sparte der det gikk, men ga regjeringen penger når den måtte ha dem.',
     hatter: 'Embetsverket vokste: fra 1900 embetsmenn i 1825 til 2300 i 1875. Ballongen ble tyngre.',
     seier: 'I 1884 måtte regjeringen ha flertallet i Stortinget med seg. Det kalles parlamentarisme.',

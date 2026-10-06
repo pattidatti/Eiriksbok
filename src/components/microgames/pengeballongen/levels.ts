@@ -119,7 +119,7 @@ export const FORMER: Form[] = ['tind', 'skrapedal', 'veiskille'];
  * Veiskillene etter riksretten: knaus over en åpen dal. (Før 1882 står kongens veiskiller
  * midt i hver veiskille-periode, se FORMER.)
  */
-export const ÅPNE_VEISKILLER = [1882.4, 1883.3];
+export const ÅPNE_VEISKILLER = [1882.2, 1883.1];
 
 /** Kongens navngitte utgifter: en brå spiss på tinden i perioden. */
 export const UTGIFTER: { år: number; navn: string }[] = [
@@ -131,10 +131,12 @@ export const UTGIFTER: { år: number; navn: string }[] = [
 export type FunnId = 'olaboka' | 'jordskatten' | 'formannskap' | 'hovedbanen' | 'ibsen' | 'roret';
 
 /** Funn som henger lavt i en dal (samles på tvers av runder). */
-export const FUNN: { id: FunnId; år: number; navn: string; fakta: string }[] = [
+export const FUNN: { id: FunnId; år: number; navn: string; fakta: string; over?: number }[] = [
     {
         id: 'olaboka',
         år: 1831.3,
+        // Ola-boka henger høyere enn de andre funnene: den endrer spillet, så de fleste skal nå den.
+        over: 90,
         navn: 'Ola-boka',
         fakta: 'I 1832 ga John Neergaard ut et lite hefte som ba bøndene stemme på bønder.',
     },

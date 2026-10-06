@@ -4,8 +4,8 @@
 import type { Rng } from '../sim';
 import type { PlaytestBot } from '../playtest';
 import { BOT_EVERY } from '../playtest';
-import { hold, stig, synk } from './rules';
-import { fartVed, fastTopp, veiVed, type Knaus } from './terrain';
+import { fly, hold, ror, synk } from './rules';
+import { bakke, fartVed, fastTopp, veiVed, type Knaus } from './terrain';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
@@ -25,6 +25,8 @@ interface Pilot {
     /** Hvor ofte den tør den lave åpningen under knausen (0-1, når den kommer lavt inn).
      * Ellers tar den kongeveien. */
     under: number;
+    /** Etter riksretten: hvor langt foran (px) en stemme må være før den styrer ned. 0 = aldri. */
+    ror?: number;
 }
 
 /** Neste knaus innen rekkevidde. */
@@ -44,14 +46,20 @@ function pilot(p: Pilot): (rng: Rng) => Grep {
         let margin = p.margin;
         let bytt = 0;
         const vei = new Map<Knaus, boolean>();
+        let sist = -1;
         return (g) => {
+            // Ny sjanse: tida er spolt tilbake. Roboten bestemmer seg på nytt, som en elev.
+            if (g.t < sist) {
+                bytt = 0;
+                vei.clear();
+            }
+            sist = g.t;
             if (n++ % p.hver !== 0) return;
             if (p.skrap && g.t >= bytt) {
                 bytt = g.t + p.skrap.bytt;
                 margin = rng() < p.skrap.andel ? p.skrap.margin : p.margin;
             }
             const B = TUNING.ballong;
-            const l = TUNING.løft;
             const knaus = nesteKnaus(g, fartVed(g.t) * 2);
             // Første gang den ser knausen: under bare hvis den tør og allerede ligger lavt.
             if (knaus && !vei.has(knaus)) vei.set(knaus, rng() < p.under && g.y > knaus.bunn + 20);
@@ -59,31 +67,44 @@ function pilot(p: Pilot): (rng: Rng) => Grep {
             const vent = BOT_EVERY * p.hver;
             const dt = 0.05;
             const sy = synk(g);
-            let y = g.y;
-            let vy = g.vy;
-            let varme = g.varme;
-            let fare = false;
-            let tak = false;
-            for (let τ = 0; τ < vent + 1.6 && !fare; τ += dt) {
-                const på = τ >= vent;
-                varme += ((på ? 1 : 0) - varme) * (1 - Math.exp(-dt / l.varmeTau));
-                const mål = -stig(y) * varme + sy * (1 - varme);
-                const maks = (mål > vy && vy >= 0 ? l.akselerasjonNed : l.akselerasjon) * dt;
-                vy += Math.max(-maks, Math.min(maks, mål - vy));
-                y = Math.max(B.tak + B.høyde, y + vy * dt);
-                const x = veiVed(g.t + τ);
-                for (const dx of [-B.halvBredde, 0, B.halvBredde]) {
-                    let bunn = fastTopp(g.ter, x + dx);
-                    let m = margin;
-                    const iKnaus = knaus && x + dx > knaus.x0 - 150 && x + dx < knaus.x1 + 20;
-                    if (iKnaus && !under) bunn = Math.min(bunn, knaus.topp);
-                    if (iKnaus && under) {
-                        // Under knausen: trangt, så lavere margin - og taket må ikke treffes.
-                        m = 4;
-                        if (x + dx > knaus.x0 - 20 && y - B.høyde < knaus.bunn + 2) tak = true;
+            /** Spår: slipp til neste trykk, så fyr. Går det bra? */
+            const spå = (medRor = false) => {
+                const f = { y: g.y, vy: g.vy, varme: g.varme };
+                let fare = false;
+                let tak = false;
+                for (let τ = 0; τ < vent + 1.6 && !fare; τ += dt) {
+                    const på = τ >= vent;
+                    fly(f, på, medRor && !på, g.harRor, sy, dt);
+                    const y = f.y;
+                    const x = veiVed(g.t + τ);
+                    const bredde = medRor ? B.kurvHalv : B.halvBredde;
+                    for (const dx of [-bredde, 0, bredde]) {
+                        let bunn = fastTopp(g.ter, x + dx);
+                        let m = margin;
+                        const iKnaus = knaus && x + dx > knaus.x0 - 150 && x + dx < knaus.x1 + 20;
+                        if (iKnaus && !under) bunn = Math.min(bunn, knaus.topp);
+                        if (iKnaus && under) {
+                            // Under knausen: trangt, så lavere margin - og taket må ikke treffes.
+                            m = 4;
+                            if (x + dx > knaus.x0 - 20 && y - B.høyde < knaus.bunn + 2) tak = true;
+                        }
+                        if (y > bunn - m) fare = true;
                     }
-                    if (y > bunn - m) fare = true;
                 }
+                return { fare, tak };
+            };
+            const { fare, tak } = spå();
+            // Roret (etter riksretten): forbi kanten styrer den ned mot stemmen i dalen, så lenge
+            // den ikke må fyre for å klare neste kam.
+            if (g.harRor && p.ror) {
+                const st = g.ter.stemmer.find((s) => !s.tatt && s.x > g.x - 10);
+                const bratt = st && bakke(g.ter, g.x + 24) - g.y > 50;
+                if (st && bratt && st.x - g.x < p.ror && g.y < st.y - 6 && !spå(true).fare) {
+                    hold(g, false);
+                    ror(g, true);
+                    return;
+                }
+                ror(g, false);
             }
             // Skrapegrepet: når den skraper, tapper den lett for å ligge i nær-båndet i stedet for å
             // falle til siste øyeblikk (som en elev som har lært å «fjære» knappen).
@@ -120,7 +141,7 @@ export const BOTS: Record<string, BotDef> = {
         forventer: 'vinner',
         beskrivelse:
             'Fyrer før hver rygg og skraper i nær-båndet for Ueland-gangeren. Tar den lave åpningen under knausen når den kommer lavt inn.',
-        make: pilot({ margin: 4, skrapMål: 10, horisont: 0.2, hver: 1, under: 1 }),
+        make: pilot({ margin: 4, skrapMål: 10, horisont: 0.2, hver: 1, under: 1, ror: 140 }),
     },
     nybegynner: {
         forventer: 'middels',
@@ -133,6 +154,7 @@ export const BOTS: Record<string, BotDef> = {
             horisont: 0.3,
             hver: 1,
             under: 0.3,
+            ror: 60,
         }),
     },
     sløseren: {

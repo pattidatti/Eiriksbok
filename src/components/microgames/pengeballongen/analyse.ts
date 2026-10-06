@@ -32,14 +32,17 @@ export function analyser(runder = 100) {
             const g = newGame(seed);
             const grep = bot.make(seeded(seed + 1));
             let neste = 0;
+            let klokke = 0;
             let knauser = 0;
             let lave = 0;
-            while (g.mode === 'play' && g.t < 200) {
-                if (g.t >= neste) {
+            // Egen klokke (som simuleringen): spilltida spoles tilbake ved en ny sjanse.
+            while (g.mode === 'play' && klokke < 260) {
+                if (klokke >= neste - 1e-9) {
                     grep(g);
                     neste += BOT_EVERY;
                 }
                 update(g, PLAYTEST_DT);
+                klokke += PLAYTEST_DT;
                 for (const h of g.hendelser)
                     if (h.slag === 'veiskille' && h.konge) {
                         knauser++;

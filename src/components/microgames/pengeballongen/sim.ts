@@ -30,7 +30,7 @@ export function snapshotOf(g: Game | null, meny = false): PlaytestSnapshot {
     };
 }
 
-export const MAKS_SEKUNDER = Math.ceil(RUNDE) + 30;
+export const MAKS_SEKUNDER = Math.ceil(RUNDE) + 50;
 
 const spec: SimSpec<Game> = {
     id: GAME_ID,

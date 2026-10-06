@@ -69,6 +69,17 @@ export function juice(g: Game, fx: Fx, j: Juice, lyd: Lyd, dt: number, landet: n
             });
     }
 
+    // Glidesporet: en stripe av glør etter kurven i båndet, lengre og varmere med gangeren.
+    if (inne && !g.hold && Math.random() < 0.4 + g.ganger * 0.12) {
+        slipp(fx, 'glo', BX - 6, y - 2 + r(-2, 2), {
+            vx: r(-20, 0),
+            vy: r(-10, 10),
+            maks: 0.3 + g.ganger * 0.12,
+            str: 0.8 + g.ganger * 0.2,
+            verden: true,
+        });
+    }
+
     // Slipp i båndet: sparte mynter fyker opp til telleren (oftere jo større gangeren er).
     if (!g.hold && inne && j.fly <= 0) {
         j.fly = 0.55 / g.ganger;
@@ -150,6 +161,8 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
         case 'funn':
             lyd.funn();
             blink(fx, 0.35);
+            fx.sprett = 1;
+            slipp(fx, 'papir', BX + 10, y - 20, { maks: 0.7, mål: TELLER, vr: 6 });
             for (let i = 0; i < 8; i++)
                 slipp(fx, 'papir', BX + 10, y - 20, { vx: r(-120, 120), vy: r(-160, -40), maks: 1 });
             break;
@@ -185,6 +198,30 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                 slipp(fx, 'mynt', BX, y - 10, { vx: r(-200, 200), vy: r(-300, -80), maks: 1.2 });
             for (let i = 0; i < Math.min(6, g.hatter); i++)
                 slipp(fx, 'hatt', BX, y - 20, { vx: r(-150, 150), vy: r(-320, -150), maks: 1.4 });
+            break;
+        case 'sjanse':
+            if (h.årsak === 'valg') lyd.stemtUt();
+            else lyd.krasj();
+            rist(fx, 12);
+            blink(fx, 0.7, h.årsak === 'valg' ? P.karmin : P.kritt);
+            for (let i = 0; i < 10; i++)
+                slipp(fx, 'mynt', BX + r(-10, 10), y - 10, {
+                    vx: r(-160, 160),
+                    vy: r(-260, -60),
+                    maks: 1,
+                });
+            break;
+        case 'stemme':
+            lyd.ganger(5);
+            fx.gangerSprett = 1;
+            for (let i = 0; i < 5; i++)
+                slipp(fx, 'papir', BX + r(-8, 8), y - 10, { maks: r(0.5, 0.8), mål: TELLER, vr: 8 });
+            for (let i = 0; i < 8; i++)
+                slipp(fx, 'gnist', BX + r(-10, 10), y, { vx: r(-200, 200), vy: r(-260, -40), maks: 0.4 });
+            break;
+        case 'roret':
+            lyd.funn();
+            blink(fx, 0.5);
             break;
         case 'landet':
             lyd.seier();

@@ -21,10 +21,21 @@ const Å = T.år;
 /** Spilltid når det første ekte valget kommer (tida bytter fart her). */
 const T_SKIFTE = (Å.skifte - Å.start) * Å.førValg;
 
+/** Spilltid når riksretten er over og roret er ditt (tida går sakte herfra). */
+const T_ROR = T_SKIFTE + (Å.rorFra - Å.skifte) * Å.etterValg;
+
 export const tidFor = (år: number) =>
-    år <= Å.skifte ? (år - Å.start) * Å.førValg : T_SKIFTE + (år - Å.skifte) * Å.etterValg;
+    år <= Å.skifte
+        ? (år - Å.start) * Å.førValg
+        : år <= Å.rorFra
+          ? T_SKIFTE + (år - Å.skifte) * Å.etterValg
+          : T_ROR + (år - Å.rorFra) * Å.rorTempo;
 export const årFor = (t: number) =>
-    t <= T_SKIFTE ? Å.start + t / Å.førValg : Å.skifte + (t - T_SKIFTE) / Å.etterValg;
+    t <= T_SKIFTE
+        ? Å.start + t / Å.førValg
+        : t <= T_ROR
+          ? Å.skifte + (t - T_SKIFTE) / Å.etterValg
+          : Å.rorFra + (t - T_ROR) / Å.rorTempo;
 
 /** Hele runden i sekunder (1815 til landingen). */
 export const RUNDE = tidFor(Å.slutt);
@@ -78,6 +89,13 @@ export interface Utgift {
     navn: string | null;
 }
 
+/** En stemme som henger lavt i en dal i rorstrekket (bare roret når ned dit i tide). */
+export interface Stemme {
+    x: number;
+    y: number;
+    tatt: boolean;
+}
+
 export interface Valgsted {
     år: number;
     x: number;
@@ -92,6 +110,7 @@ export interface Terreng {
     funn: Funn[];
     utgifter: Utgift[];
     valg: Valgsted[];
+    stemmer: Stemme[];
     /** Steder der eleven får et nytt valg (rygger, valg, funn, veiskiller). */
     valgpunkter: number[];
     lengde: number;
@@ -106,6 +125,7 @@ export function lagTerreng(rng: Rng): Terreng {
     const valgpunkter: number[] = [];
     const utgifter: Utgift[] = [];
     const knauser: Knaus[] = [];
+    const stemmer: Stemme[] = [];
     const lengde = veiForÅr(Å.slutt) + 1200;
     const punkt = (x: number, y: number) => {
         xs.push(x);
@@ -192,6 +212,29 @@ export function lagTerreng(rng: Rng): Terreng {
                 });
                 valgpunkter.push(cx - vs.bredde / 2);
             }
+            // Rorstrekket: bratte, dype daler med en stemme i bunnen. Uten roret synker
+            // ballongen for sakte til å nå dem før neste kam.
+            const R = T.ror;
+            const xr = veiForÅr(Å.rorFra);
+            const xl = veiForÅr(Å.slutt);
+            const x1 = xr + 200;
+            const w = (xl - 160 - x1) / R.daler;
+            punkt(xr - 20, dy);
+            for (let i = 0; i <= R.daler; i++) {
+                const xk = x1 + i * w;
+                punkt(xk - 40, R.kamY);
+                punkt(xk + 40, R.kamY);
+                if (i < R.daler) {
+                    // Bratt ned rett etter kammen, slakt opp igjen: stemmen henger tett under
+                    // kanten, så bare den som styrer ned med roret når den.
+                    const xd = xk + 40 + R.bratt;
+                    punkt(xd, R.dalY);
+                    punkt(xd + 30, R.dalY);
+                    stemmer.push({ x: xd + 10, y: R.dalY - R.stemmeOver, tatt: false });
+                    valgpunkter.push(xk);
+                }
+            }
+            punkt(xl - 40, dy);
             punkt(lengde, dy);
             x = lengde;
             break;
@@ -272,6 +315,7 @@ export function lagTerreng(rng: Rng): Terreng {
         funn: [],
         utgifter,
         valg: [],
+        stemmer,
         valgpunkter,
         lengde,
     };
@@ -282,7 +326,7 @@ export function lagTerreng(rng: Rng): Terreng {
         let best = x0;
         for (let dx = -220; dx <= 220; dx += 10)
             if (bakke(ter, x0 + dx) > bakke(ter, best)) best = x0 + dx;
-        ter.funn.push({ id: f.id, x: best, y: bakke(ter, best) - T.funn.overBakken, tatt: false });
+        ter.funn.push({ id: f.id, x: best, y: bakke(ter, best) - (f.over ?? T.funn.overBakken), tatt: false });
         ter.valgpunkter.push(best);
     }
 
