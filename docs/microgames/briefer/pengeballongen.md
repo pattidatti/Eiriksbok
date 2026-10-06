@@ -367,3 +367,47 @@ endringer i fysikken kan slippe den gjennom. (3) Kongeveien er dyr for den som h
 (30-34 per periode) og er bare så vidt lovlig sent i runden - det er dette som slår ut nybegynneren.
 (4) Finalen etter 1882 er en flat dal med to åpne knauser (ingen egen form). (5) Fortsatt ingen lyd
 eller juice, og «Øv fra 1870» mangler.
+
+**Fase 6 - bygg (byggmester 2, 2026-10-06):** Gjorde diagnose 2 sine tre grep, og så kunst, juice,
+lyd og tekst.
+1. **Poeng fra skraping.** Slipp over nær-båndet gir bare 2 Spd/s (6 Spd/s før 1833); slipp i båndet
+   gir 10 × gangeren. Gangeren går +1 per 2 s i båndet (maks ×5) og faller ett trinn per 0,5 s over
+   det. Nytt: båndet måles mot nærmeste fjell i et vindu (90 px bak, 30 px foran kurven), ikke bare
+   rett under. Uten det kom selv flink aldri over ×1,6, fordi ballongen ikke rekker å synke like
+   fort som nedoverbakken etter en topp.
+2. **Kongens knaus som ekte valg.** Åpningen under er 125 px (1,6 ballonghøyder) og gir gangeren +1
+   med en gang. Kongeveien over gir en flosshatt som gjør brenneren 15 % dyrere resten av runden
+   (vises i HUD-en) og setter gangeren til ×1.
+3. **Strammere grense, ingen flate strekk.** Grensen er 26 (fra 29), synkfarten går til 150 i 1880
+   (fra 122), formene vokser 8 % per periode. Skrapedalen er tre bølgende åser (64-82 px), kammen
+   under knausen er 70 px. Kongens spisse utgifter er lavere (40-60 px over tinden), fordi en
+   periode med spiss var en klippe der flink ble stemt ut.
+
+Kunst: tonelitografi i papirmarg med trykkekant og bildetekst i kursiv didone; kritt-korn som
+mønster som glir med fjellet; tre fjell-lag med snø og dis, skyer, forgrunn i kornet kritt med
+skrapt hvitt på kam og snøtopper, graner; himmelen blir varm mot 1884 og sola bryter gjennom bak
+Stortinget. Ballongen er håndkolorert silke med bonde, Ueland, flosshatter og Sverdrup med ror.
+HUD: Ueland i ovalt portrett med ganger og framdriftsbue, valgstabel av krittmynter med karmin
+grense, tidslinja som mål, Spart oppe til høyre, brennerpris, tasten i margen. Juice: mynter kastes i
+brenneren med klirr, glør, gnister og knitring i båndet, sparte mynter fyker til telleren, nesten-bom
+(«Hårfint!»), luer i lufta ved valget, krasj med røyk og rystelse i ekte tid, 0,5 s før
+slutt-skjermen. Lyd på createArcadeSynth. Nytt: «Øv fra 1870» (låses opp ved 1884, teller ikke),
+funnsamling i menyen, «Dette skjedde» knyttet til runden (kongevei, under bommen, stemt ut med beløp).
+Tuning-verktøy: `analyse.ts`.
+
+Simulering (200 runder): **grønn.** flink 93 % seier, median 2387 (p10 2304, p90 2447), snitt-ganger
+×4,7, bruker 62 % av grensen tidlig og 69 % sent (p90 92 %); nybegynner (middels) 0 % seier, median
+341, ganger ×2,0, stemt ut 1850-60-tallet; sløseren 115 % av grensen, stemt ut 1836; gniten/passiv
+18, tilfeldig 48. 36 valg per minutt, press 0,29 -> 0,56 -> 0,73. Selvspill: flink vant med 2376
+(samsvar), Chromebook JS p95 11,6 ms, alle porter grønne. Likhet: nærmest petisjonen-3d (0,48).
+
+Prøvd som IKKE virket: (1) bånd målt rett under kurven med 45-65 px - flink ×1,5-2,7, alltid ute av
+båndet i nedoverbakker; (2) mykere løft (stigLav 260-280, akselerasjon 380-500) - flink krasjet
+mer uten å skrape bedre; (3) robot med kortere/lengre blikk framover - ingen forskjell;
+(4) nybegynner som handler hvert 2.-3. tick - svinger 100 px og kommer aldri i båndet.
+
+Kjente svakheter: (1) Nybegynneren når aldri 1884 (diagnose 1 ville 10-20 %): kongeveiens +15 % per
+hatt hoper seg opp. `kongeveiKostnad` 0,10 er neste knapp å prøve. (2) Flinks spredning er smal
+(p10-p90 2304-2447) - robotene er like; ekte elever vil spre mer. (3) Mye tom himmel øverst i
+bildet. (4) Fontene (Bodoni Moda, Libre Caslon) er ikke installert, så canvas faller tilbake til
+Georgia/Didot.

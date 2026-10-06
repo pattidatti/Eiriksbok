@@ -49,19 +49,26 @@ export const TUNING = {
         tynnLuft: 1.6,
         /** Synkefart uten varme i 1815 og 1880 (før flosshattene). */
         synkFra: 110,
-        synkTil: 122,
+        synkTil: 150,
         /** Hver flosshatt som klatrer om bord gjør ballongen tyngre (px/s ekstra synk). */
         perHatt: 0.6,
         /** De første sekundene synker ballongen sakte, så eleven rekker å se hva som skjer. */
         rolig: { sekunder: 4, fra: 0.25 },
     },
 
+    /** «Øv fra 1870» låses opp når eleven har nådd 1884 én gang. */
+    øvFra: 1870,
+
     // Pengene.
     penger: {
-        /** Spesidaler per sekund du holder. */
+        /** Spesidaler per sekund du holder (før kongeveiens flosshatter gjør brenneren dyrere). */
         perSek: 10,
+        /** Spart per sekund når du slipper før Ueland kommer om bord (1833). */
+        førUeland: 6,
+        /** Spart per sekund når du slipper over nær-båndet fra 1833. I båndet: perSek x gangeren. */
+        utenfor: 2,
         /** Grensen ved valget: så mye kan du bruke per treårsperiode fra 1833. */
-        grense: 29,
+        grense: 26,
         /** Valgårene. Før 1833 vinker bøndene deg forbi. */
         førsteValg: 1827,
         førsteEkteValg: 1833,
@@ -73,13 +80,18 @@ export const TUNING = {
         hattFra: 1836,
     },
 
-    // Ueland-gangeren (skrapebonus). Spart per sekund = perSek x ganger når du ikke holder.
+    // Ueland-gangeren (skrapebonus). Spart per sekund = perSek x ganger når du slipper i
+    // nær-båndet, og bare `penger.utenfor` over det.
     ganger: {
         fra: 1833,
-        /** Nær-båndet: under så mange px over bakken vokser gangeren. Over = straks ×1. */
-        nær: 45,
-        /** Sekunder i båndet per trinn. */
-        trinn: 1.2,
+        /** Nær-båndet: under så mange px over bakken vokser gangeren. */
+        nær: 50,
+        /** Bakken som teller, fra så langt bak til så langt foran kurven (px vei). */
+        vindu: [-90, 30] as [number, number],
+        /** Sekunder sammenhengende i båndet per trinn opp. */
+        trinn: 2,
+        /** Over båndet faller gangeren ett trinn per så mange sekunder. */
+        fall: 0.5,
         maks: 5,
     },
 
@@ -88,17 +100,18 @@ export const TUNING = {
         /** Høyden på tinden over dalen ved første valgperiode. */
         tind: 120,
         /** Høyden på kammen under knausen ved veiskillene. */
-        kam: 40,
+        kam: 60,
         /** Kammen blir aldri høyere enn dette (ellers blir kongeveien klemt mot taket). */
-        kamMaks: 95,
+        kamMaks: 105,
         /** Kammen varierer litt fra runde til runde (ganges med kam). */
         kamSpenn: [0.8, 1.2] as [number, number],
         /** Skråningen opp til og ned fra kammen (px vei). */
         skrå: 170,
         /** Hver valgperiode blir tinden og kammen så mye høyere (andel av starthøyden). */
-        økning: 0.06,
-        /** Hvor mye skrapedalen bølger (px opp og ned). */
-        bølge: 5,
+        økning: 0.08,
+        /** Skrapedalen er åser som bølger: høyden på hver ås (px), og antall åser. */
+        bølge: [64, 82] as [number, number],
+        åser: 3,
     },
 
     // Funn som henger lavt i en dal: avstand fra kurven som teller som tatt.
@@ -109,15 +122,16 @@ export const TUNING = {
     veiskille: {
         bredde: 260,
         /** Flat kam før og etter knausen. */
-        flate: 150,
-        /** Luft fra kammen til undersiden av knausen før 1882 (ca. 1,5 ballonghøyder). */
-        gapLav: 135,
+        flate: 90,
+        /** Luft fra kammen til undersiden av knausen før 1882 (1,6 ballonghøyder). */
+        gapLav: 125,
         /** Luft under knausen etter 1882 (fra dalbunnen). */
         gap: 150,
-        /** Flosshatter som klatrer om bord når du tar kongeveien over knausen. */
-        kongeveiHatt: 1,
+        /** Kongeveien over knausen: en flosshatt klatrer om bord, og hver slik hatt gjør
+         * brenneren så mye dyrere resten av runden. Gangeren går til ×1. */
+        kongeveiKostnad: 0.15,
         /** Tykkelsen på knausen. */
-        tykkelse: 40,
+        tykkelse: 24,
         dalY: 474,
         /** Fra dette året er bommen borte (riksretten). */
         åpenFra: 1882,

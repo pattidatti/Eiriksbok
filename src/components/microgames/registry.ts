@@ -2548,8 +2548,8 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'pengeballongen',
         title: 'Pengeballongen',
         description:
-            'Embetsmannsstaten 1815-1884. Regjeringen er en ballong full av embetsmenn i flosshatt, og den flyr dit kongen vil. Du er Stortinget og styrer bare pengene: hold for å fyre i brenneren, slipp for å spare. Fjellene er utgifter staten må betale, og fra 1833 teller bøndene pengene ved hvert valg. Bruker du for mye, stemmer de deg ut. Først i 1884 får du styre.',
-        estimatedSeconds: 170,
+            'Embetsmannsstaten 1815-1884. Regjeringen er en ballong full av embetsmenn i flosshatt, og den flyr dit kongen vil. Du er Stortinget og styrer bare pengene: hold for å fyre i brenneren, slipp for å spare. Fjellene er utgifter staten må betale, og fra 1833 teller bøndene pengene ved hvert valg. Bruker du for mye, stemmer de deg ut. Gli tett over fjellene, så sparer Ueland mest. Først i 1884 får du styre.',
+        estimatedSeconds: 110,
         sjanger: 'ettknapps-flyging',
         tone: 'lett',
         hook: 'Du er Stortinget med pengesekken. Kommer ballongen over fjellene uten at bøndene stemmer deg ut?',

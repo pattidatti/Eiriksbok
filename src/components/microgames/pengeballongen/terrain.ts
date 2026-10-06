@@ -207,7 +207,7 @@ export function lagTerreng(rng: Rng): Terreng {
                 const xb = xa + W * 0.36;
                 const xc = xa + W * 0.58;
                 const xm = (xb + xc) / 2;
-                const spiss = top - 60 - rng() * 25;
+                const spiss = top - 40 - rng() * 20;
                 punkt(xb, top);
                 punkt(xm - 50, top - 4);
                 punkt(xm, spiss);
@@ -222,10 +222,13 @@ export function lagTerreng(rng: Rng): Terreng {
             }
             punkt(xa + W * 0.8, dalY);
         } else if (form === 'skrapedal') {
-            // Lang, flat dal: her kan gangeren vokse helt til ×5.
-            for (let i = 1; i <= 4; i++)
-                punkt(xa + (W * i) / 5, dalY + (i % 2 ? -1 : 1) * F.bølge * rng());
-            valgpunkter.push(xa + W * 0.2);
+            // Bølgende åser: følg kammen tett, så vokser gangeren helt til ×5.
+            const n = F.åser * 2;
+            for (let i = 1; i < n; i++) {
+                const ås = i % 2 === 1;
+                punkt(xa + (W * i) / n, ås ? dalY - mellom(rng, F.bølge) * f : dalY);
+                if (ås) valgpunkter.push(xa + (W * i) / n);
+            }
         } else {
             // Kongens veiskille: kam med en knaus over. Under = lav, smal og billig.
             // Over = kongeveien: trygg, men dyr, og en flosshatt til.

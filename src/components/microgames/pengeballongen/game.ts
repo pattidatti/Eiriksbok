@@ -2,7 +2,7 @@
 // valgene og krasj. Tallene står i tuning.ts, fagreglene i rules.ts.
 
 import { brettFor } from './levels';
-import { klaring, krasjer, stig, synk } from './rules';
+import { iBåndet, kostnad, krasjer, sparing, stig, synk } from './rules';
 import { årFor, veiVed } from './terrain';
 import type { Game } from './state';
 import { TUNING } from './tuning';
@@ -10,6 +10,12 @@ import { TUNING } from './tuning';
 export { newGame, type Game } from './state';
 
 const T = TUNING;
+
+function settGanger(g: Game, n: number) {
+    if (n === g.ganger) return;
+    g.hendelser.push({ slag: 'ganger', ganger: n, fra: g.ganger });
+    g.ganger = n;
+}
 
 export function update(g: Game, dt: number) {
     if (g.mode !== 'play' || dt <= 0) return;
@@ -42,24 +48,31 @@ export function update(g: Game, dt: number) {
         g.periode = 0;
     }
     if (g.hold) {
-        const kr = T.penger.perSek * dt;
+        const kr = kostnad(g) * dt;
         g.brukt += kr;
         g.periode += kr;
-    } else g.spart += T.penger.perSek * g.ganger * dt;
+    } else g.spart += sparing(g) * dt;
 
-    // Ueland-gangeren: i nær-båndet vokser den, utenfor går den straks tilbake til ×1.
+    // Ueland-gangeren: sammenhengende tid i nær-båndet gir et trinn opp; over båndet faller
+    // den ett trinn om gangen.
     if (g.år >= T.ganger.fra) {
-        if (klaring(g) < T.ganger.nær) {
+        const G = T.ganger;
+        if (iBåndet(g)) {
+            g.fallTid = 0;
             g.gangerTid += dt;
-            while (g.gangerTid >= T.ganger.trinn && g.ganger < T.ganger.maks) {
-                g.gangerTid -= T.ganger.trinn;
-                g.ganger++;
-                g.hendelser.push({ slag: 'ganger', ganger: g.ganger });
+            if (g.gangerTid >= G.trinn) {
+                g.gangerTid -= G.trinn;
+                if (g.ganger < G.maks) settGanger(g, g.ganger + 1);
             }
         } else {
-            if (g.ganger > 1) g.hendelser.push({ slag: 'ganger', ganger: 1 });
-            g.ganger = 1;
-            g.gangerTid = 0;
+            // Et kort hopp over båndet (under `fall` s) koster ingenting. Lenger ute: ett trinn
+            // ned per `fall` s, og tida mot neste trinn opp begynner på nytt.
+            g.fallTid += dt;
+            if (g.fallTid >= G.fall) {
+                g.fallTid -= G.fall;
+                g.gangerTid = 0;
+                if (g.ganger > 1) settGanger(g, g.ganger - 1);
+            }
         }
         g.gangerSum += g.ganger * dt;
         g.gangerTidSum += dt;
@@ -70,8 +83,15 @@ export function update(g: Game, dt: number) {
         if (k.valgt || g.x < (k.x0 + k.x1) / 2) continue;
         k.valgt = g.y <= k.topp ? 'over' : 'under';
         const hatt = k.konge && k.valgt === 'over';
-        if (hatt) g.hatter += T.veiskille.kongeveiHatt;
-        g.hendelser.push({ slag: 'veiskille', vei: k.valgt, hatt });
+        if (hatt) {
+            // Kongeveien: trygg, men en embetsmann til, og brenneren blir dyrere for godt.
+            g.hatter++;
+            g.kongeHatter++;
+            if (g.ganger > 1) settGanger(g, 1);
+        } else if (k.valgt === 'under' && g.år >= T.ganger.fra) {
+            settGanger(g, Math.min(T.ganger.maks, g.ganger + 1));
+        }
+        g.hendelser.push({ slag: 'veiskille', vei: k.valgt, hatt, konge: k.konge });
     }
 
     // Funn som henger lavt.
@@ -91,12 +111,14 @@ export function update(g: Game, dt: number) {
         g.nesteValg++;
         const brukt = Math.round(g.periode);
         if (v.ekte && g.periode > T.penger.grense) {
+            g.perioder.push({ år: v.år, brukt: g.periode });
             g.hendelser.push({ slag: 'stemtUt', år: v.år, brukt });
             g.mode = 'lost';
             g.årsak = 'valg';
             g.hold = false;
             return;
         }
+        if (v.ekte) g.perioder.push({ år: v.år, brukt: g.periode });
         const hatt = v.år >= T.penger.hattFra;
         if (hatt) g.hatter++;
         g.hendelser.push({ slag: 'valg', år: v.år, ekte: v.ekte, brukt, hatt });

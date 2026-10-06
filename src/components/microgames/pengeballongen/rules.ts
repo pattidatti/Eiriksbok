@@ -19,7 +19,7 @@ export function hold(g: Game, på: boolean) {
 export function synk(g: Game): number {
     const l = T.løft;
     const u = Math.min(1, Math.max(0, (g.år - T.fart.fraÅr) / (T.fart.tilÅr - T.fart.fraÅr)));
-    const rolig = Math.min(1, l.rolig.fra + ((1 - l.rolig.fra) * g.t) / l.rolig.sekunder);
+    const rolig = Math.min(1, l.rolig.fra + ((1 - l.rolig.fra) * (g.t - g.start)) / l.rolig.sekunder);
     return (l.synkFra + (l.synkTil - l.synkFra) * u + g.hatter * l.perHatt) * rolig;
 }
 
@@ -31,6 +31,31 @@ export function stig(y: number): number {
 
 /** Avstand fra kurven til bakken rett under (px). */
 export const klaring = (g: Game) => bakke(g.ter, g.x) - g.y;
+
+/**
+ * Nærmeste fjell: minste avstand fra kurven ned til bakken litt bak og litt foran. Slik teller
+ * også kammen du nettopp gled over, så nedoverbakken etter en topp ikke straffes.
+ */
+export function nærhet(ter: Game['ter'], x: number, y: number): number {
+    const [a, b] = T.ganger.vindu;
+    let min = Infinity;
+    for (let dx = a; dx <= b; dx += 10) min = Math.min(min, bakke(ter, x + dx));
+    return min - y;
+}
+
+/** Er kurven i nær-båndet (Ueland-gangeren vokser)? */
+export const iBåndet = (g: Game) =>
+    g.år >= T.ganger.fra && nærhet(g.ter, g.x, g.y) < T.ganger.nær;
+
+/** Hva brenneren koster nå (Spd/s): hver flosshatt fra kongeveien gjør den dyrere. */
+export const kostnad = (g: Game) =>
+    T.penger.perSek * (1 + T.veiskille.kongeveiKostnad * g.kongeHatter);
+
+/** Spart per sekund når du slipper: lite høyt oppe, mye tett over fjellet. */
+export function sparing(g: Game): number {
+    if (g.år < T.ganger.fra) return T.penger.førUeland;
+    return iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor;
+}
 
 /** Treffer ballongen fjellet eller en knaus? */
 export function krasjer(g: Game): boolean {

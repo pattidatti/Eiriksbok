@@ -6,17 +6,17 @@ import type { Årsak } from './state';
 export const MÅL = 'Få ballongen fra 1815 til 1884. Bruk så lite penger som mulig.';
 
 export const REGLER = [
-    'Hold MELLOMROM (eller musa): du betaler, og ballongen stiger.',
-    'Fjellene må betales. Treffer du et fjell, er det over.',
-    'Fra 1833: bruker du over streken før valget, stemmer bøndene deg ut.',
+    'Hold MELLOMROM eller musa: du betaler, ballongen stiger. Svinge kan du ikke.',
+    'Treffer du fjellet, er det over. Bruker du for mye, stemmer bøndene deg ut.',
+    'Gli tett over fjellet uten å fyre: da sparer Ueland mest.',
 ];
 
 export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
     stabel: 'Pengene du bruker hoper seg her',
     grense: 'Over streken = bøndene stemmer deg ut',
-    ganger: 'Under streken: Ueland sparer mer',
-    bom: 'Under er billig. Over gir flosshatt',
+    ganger: 'Tett over fjellet: Ueland sparer mer',
+    bom: 'Under: billig. Over: dyrere brenner',
     vinker: 'Bøndene stemmer ennå på embetsmenn',
 };
 
@@ -27,11 +27,11 @@ export const BEAT = {
     },
     ueland: {
         tittel: 'Ueland om bord',
-        tekst: 'Ole Gabriel Ueland ville spare. Fly tett over kammen uten å fyre, så sparer du mye mer.',
+        tekst: 'Ole Gabriel Ueland ville spare. Gli tett over fjellet uten å fyre, så sparer du mye mer.',
     },
     roret: {
         tittel: 'Riksretten 1884',
-        tekst: 'Nå må regjeringen ha Stortinget med seg. Lav ballong tar den billige dalen under knausen.',
+        tekst: 'Statsrådene er dømt, så nå må regjeringen ha Stortinget med seg - og Sverdrup gir deg roret.',
     },
 };
 
@@ -44,6 +44,20 @@ export const TIPS: Record<Årsak, string> = {
 export const TAP_TITTEL: Record<Årsak, string> = {
     fjell: 'Rett i fjellet',
     valg: 'Stemt ut',
+};
+
+/** «Dette skjedde»: knyttet til det eleven faktisk gjorde i runden. */
+export const SKJEDDE = {
+    stemtUt: (år: number, brukt: number) =>
+        `Du brukte ${brukt} Spd. før valget i ${år}. Bøndene stemte på bønder som ville spare, og du mistet plassen.`,
+    krasj: (år: number) =>
+        `I ${år} fikk ikke staten betalt det den måtte: prester, dommere og veier. Fjellene var de faste utgiftene.`,
+    kongevei: (n: number) =>
+        `Du tok kongeveien ${n} ${n === 1 ? 'gang' : 'ganger'}. Hver gang ble embetsverket større, og alt ble dyrere.`,
+    under: (n: number) =>
+        `Du smatt under kongens bom ${n} ${n === 1 ? 'gang' : 'ganger'} og sparte, slik Ueland gjorde.`,
+    seier: (spart: number) =>
+        `Du kom fram til 1884 og sparte ${spart} Spd. Da måtte kongen la Sverdrup styre: regjeringen måtte ha Stortinget med seg.`,
 };
 
 export const LÆRDOM = {
