@@ -3428,6 +3428,23 @@
               "lastUpdated": "2026-07-30T23:58:56+02:00"
             },
             {
+              "id": "embetsmannsstaten",
+              "title": "Embetsmannsstaten: Da prestene og dommerne styrte Norge",
+              "description": "Fra 1814 til 1884 styrte prester, dommere og offiserer Norge. Bøndene vant Stortinget i 1833, men ikke makta.",
+              "image": "/images/placeholder.webp",
+              "year": "1814-1884",
+              "layout": "rich",
+              "tags": [
+                "historie",
+                "norge",
+                "norgeshistorie",
+                "demokrati",
+                "stemmerett",
+                "1800-tallet"
+              ],
+              "createdDate": "2026-10-06T00:00:00Z"
+            },
+            {
               "id": "riksretten-1884",
               "title": "Riksretten 1884: Da Stortinget tok makta",
               "description": "Kongen sa nei fire ganger, og Stortinget svarte med å dømme hele regjeringen. Slik fikk Norge parlamentarismen.",
