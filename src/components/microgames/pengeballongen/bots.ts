@@ -14,16 +14,20 @@ type Grep = (g: Game) => void;
 interface Pilot {
     /** Hvor mange px over bakken roboten vil ligge. */
     margin: number;
+    /** Når den skraper: hvor lavt den sikter (px over bakken, inne i nær-båndet). */
+    skrapMål?: number;
+    /** Av og til skraper den likevel: andel av tida, og margin da (bytter hvert 2. sekund). */
+    skrap?: { andel: number; margin: number };
     /** Handler bare hvert n-te tick (treg elev). */
     hver: number;
-    /** Ved åpne veiskiller: under knausen (billig) eller over (dyrt). */
+    /** Tør den den lave åpningen under knausen (når den kommer lavt inn)? Ellers kongeveien. */
     under: boolean;
 }
 
-/** Neste knaus uten bom innen rekkevidde. */
-function åpenKnaus(g: Game, rekke: number): Knaus | null {
+/** Neste knaus innen rekkevidde. */
+function nesteKnaus(g: Game, rekke: number): Knaus | null {
     for (const k of g.ter.knauser)
-        if (!k.bom && k.x1 > g.x - TUNING.ballong.halvBredde && k.x0 < g.x + rekke) return k;
+        if (k.x1 > g.x - TUNING.ballong.halvBredde && k.x0 < g.x + rekke) return k;
     return null;
 }
 
@@ -31,14 +35,24 @@ function åpenKnaus(g: Game, rekke: number): Knaus | null {
  * Piloten spår: «Hvis jeg slipper nå og først fyrer neste gang jeg rekker det - går det bra?»
  * Går det ikke, holder den. Slik fyrer den før ryggen og slipper så fort det er trygt.
  */
-function pilot(p: Pilot): () => Grep {
-    return () => {
+function pilot(p: Pilot): (rng: Rng) => Grep {
+    return (rng) => {
         let n = 0;
+        let margin = p.margin;
+        let bytt = 0;
+        const vei = new Map<Knaus, boolean>();
         return (g) => {
             if (n++ % p.hver !== 0) return;
+            if (p.skrap && g.t >= bytt) {
+                bytt = g.t + 2;
+                margin = rng() < p.skrap.andel ? p.skrap.margin : p.margin;
+            }
             const B = TUNING.ballong;
             const l = TUNING.løft;
-            const knaus = åpenKnaus(g, fartVed(g.t) * 2);
+            const knaus = nesteKnaus(g, fartVed(g.t) * 2);
+            // Første gang den ser knausen: under bare hvis den tør og allerede ligger lavt.
+            if (knaus && !vei.has(knaus)) vei.set(knaus, p.under && g.y > knaus.bunn + 20);
+            const under = knaus ? vei.get(knaus)! : false;
             const vent = BOT_EVERY * p.hver;
             const dt = 0.05;
             const sy = synk(g);
@@ -51,24 +65,40 @@ function pilot(p: Pilot): () => Grep {
                 const på = τ >= vent;
                 varme += ((på ? 1 : 0) - varme) * (1 - Math.exp(-dt / l.varmeTau));
                 const mål = -stig(y) * varme + sy * (1 - varme);
-                const maks = l.akselerasjon * dt;
+                const maks = (mål > vy && vy >= 0 ? l.akselerasjonNed : l.akselerasjon) * dt;
                 vy += Math.max(-maks, Math.min(maks, mål - vy));
                 y = Math.max(B.tak + B.høyde, y + vy * dt);
                 const x = veiVed(g.t + τ);
                 for (const dx of [-B.halvBredde, 0, B.halvBredde]) {
                     let bunn = fastTopp(g.ter, x + dx);
-                    let margin = p.margin;
+                    let m = margin;
                     const iKnaus = knaus && x + dx > knaus.x0 - 20 && x + dx < knaus.x1 + 20;
-                    if (iKnaus && !p.under) bunn = Math.min(bunn, knaus.topp);
-                    if (iKnaus && p.under) {
+                    if (iKnaus && !under) bunn = Math.min(bunn, knaus.topp);
+                    if (iKnaus && under) {
                         // Under knausen: trangt, så lavere margin - og taket må ikke treffes.
-                        margin = 4;
+                        m = 4;
                         if (y - B.høyde < knaus.bunn + 2) tak = true;
                     }
-                    if (y > bunn - margin) fare = true;
+                    if (y > bunn - m) fare = true;
                 }
             }
-            hold(g, fare && !tak);
+            // Skrapegrepet: når den skraper, tapper den lett for å ligge i nær-båndet i stedet for å
+            // falle til siste øyeblikk (som en elev som har lært å «fjære» knappen).
+            let skrape = false;
+            if (margin < TUNING.ganger.nær) {
+                let foran = 540;
+                for (let dx = -B.kurvHalv; dx <= fartVed(g.t) * 0.5; dx += 8)
+                    foran = Math.min(foran, fastTopp(g.ter, g.x + dx));
+                skrape = foran - g.y - 0.25 * g.vy < (p.skrapMål ?? margin);
+                if (
+                    knaus &&
+                    under &&
+                    g.x > knaus.x0 - 60 &&
+                    g.y - B.høyde - 0.15 * Math.min(0, g.vy) < knaus.bunn + 4
+                )
+                    skrape = false;
+            }
+            hold(g, (fare || skrape) && !tak);
         };
     };
 }
@@ -84,13 +114,20 @@ export const BOTS: Record<string, BotDef> = {
     flink: {
         forventer: 'vinner',
         beskrivelse:
-            'Fyrer før hver rygg og skraper tett over kammene for Ueland-gangeren. Tar den billige dalen i 1884.',
-        make: pilot({ margin: 16, hver: 1, under: true }),
+            'Fyrer før hver rygg og skraper i nær-båndet for Ueland-gangeren. Tar den lave åpningen under knausen når den kommer lavt inn.',
+        make: pilot({ margin: 4, skrapMål: 10, hver: 1, under: true }),
     },
     nybegynner: {
         forventer: 'middels',
-        beskrivelse: 'Fyrer før ryggene, men med god margin og treg hånd (hvert tredje tick).',
-        make: pilot({ margin: 48, hver: 3, under: false }),
+        beskrivelse:
+            'Fyrer før ryggene med god margin og treg hånd (hvert tredje tick). Skraper bare av og til, og tar alltid kongeveien over knausen.',
+        make: pilot({
+            margin: 48,
+            skrap: { andel: 0.3, margin: 12 },
+            skrapMål: 10,
+            hver: 3,
+            under: false,
+        }),
     },
     sløseren: {
         forventer: 'taper',

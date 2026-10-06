@@ -5,11 +5,9 @@ import type { SimSpec } from '../sim';
 import { BOTS } from './bots';
 import { newGame, update, type Game } from './game';
 import { press } from './rules';
-import { TUNING } from './tuning';
+import { RUNDE } from './terrain';
 
 export const GAME_ID = 'pengeballongen';
-
-const RUNDE = (TUNING.år.slutt - TUNING.år.start) * TUNING.år.sekunder;
 
 export function årsakTekst(g: Game): string | undefined {
     if (g.mode !== 'lost') return undefined;

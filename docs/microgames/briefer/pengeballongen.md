@@ -308,3 +308,62 @@ mye av midten er like rygger uten nye valg enn «når fyrer jeg» - veiskillene 
 føles mest som en høy vegg. (3) Pengestabelen i venstre marg dekker terrenget og knausene til
 venstre for ballongen. (4) «Øv fra 1870» og spøkelsesballongen er bare delvis med (spøkelset tegnes
 som stiplet omriss; øvingsstart mangler). (5) Ingen lyd og ingen juice ennå.
+
+**Fase 5 - diagnosegrep 1 (byggmester, 2026-10-06):** Gjorde de tre endringene fra gråboks-diagnosen
+(kjerneløkka, fortsatt uten kunst og juice).
+1. **Nær-båndet.** Gangeren vokser +1 per 1,2 s (maks ×5) når kurven er under `ganger.nær` over
+   bakken, og går til ×1 straks den er over (ingen `langt`-sone lenger). Båndet tegnes som en tynn
+   stiplet strek over terrenget, og «+1» flyter ved Ueland-ovalen når gangeren øker. Hver tredje
+   valgperiode er en lang, flat skrapedal (hele perioden, ca. 5 s).
+2. **Kortere runde med faste former.** Tida går nå 0,83 s/år til 1833 (ca. 15 s, første rygg etter
+   ca. 3 s) og 1,65 s/år etter: runden tar 100 s. Fra 1833 har hver valgperiode sin faste form i
+   rekkefølgen tind / skrapedal / veiskille (`FORMER` i levels.ts). Tinden og kammen under knausen
+   blir `form.økning` = 6 % høyere per valg, og kammen varierer ±20 % fra runde til runde.
+3. **Veiskillene med to lovlige veier.** Kongens knaus står midt i hver veiskille-periode (ca. hvert
+   15. sekund) over en kam: lav smal åpning (`gapLav` 135 px = 1,7 ballonghøyder) rett over kammen,
+   som teller som nær-bånd, eller kongeveien over knausen, som gir +1 flosshatt (`kongeveiHatt`).
+   Bommen under knausen er borte. Valgmåleren er flyttet opp på himmelen som en liggende stolpe
+   under Ueland-ovalen, så den ikke dekker terrenget eller åpningene.
+
+Avvik fra diagnosen (tall, ikke regler):
+- **Nær-båndet er 45 px, ikke 35.** Med 35 px og simuleringens steg på 0,05 s kom selv den flinke
+  roboten aldri over ca. ×1,2 i snitt: ett trykk varer minst ett tick og løfter ballongen 20-30 px.
+  45 px gir flink ×2,2 i snitt (×2,2 i skrapedalen, ×3,2 under knausen). Bør prøves av en ekte elev.
+- **Valgperioden er ca. 5 s, ikke 9 s.** Valg hvert tredje år fra 1833 og runde på ca. 100 s gir
+  ca. 5 s per periode (9 s ville gitt 150 s eller valg hvert sjette år, som er historisk feil).
+  Tre former etter hverandre er ca. 15 s, så veiskillet kommer ca. hvert 15. sekund som ønsket.
+- **Økningen er 6 % per valg, ikke 8 %.** Nybegynneren er svært følsom: 8 % ga 2-4 % seire,
+  6 % gir 14 %.
+- Ny fysikk: `akselerasjonNed` 350 (ballongen faller mykt når den allerede faller, så den er lett å
+  «fjære»). `stigHøy` -40 -> -120 (høyt oppe er dyrere, ellers slapp sløseren gjennom), grensen
+  34 -> 29 (kortere perioder), `perHatt` 1,2 -> 0,6, knausen 70 -> 40 px tykk, kammen under knausen
+  40 px (+6 %/valg, maks 95) med slake skråninger (170 px) og 150 px flat kam før og etter knausen.
+
+Robotene: flink har fått et skrapegrep (tapper når høyden over bakken foran minus fallfarten går
+under 10 px, fare-margin 4 px) og tar den lave åpningen når den kommer lavt inn mot knausen. Nybegynneren skraper i
+30 % av tida (byttes hvert 2. sekund), har fortsatt treg hånd og tar alltid kongeveien.
+
+Simulering (200 runder per robot): **grønn.** flink (vinner) 100 %, median 1300 Spd, rundetid
+100 s, snitt-ganger ×2,2 (×2,14 vektet etter sparing), tar alltid den lave åpningen; nybegynner
+(middels) 11 % seier, median 437, stemt ut spredt (1851, 1860, 1869, 1872, 1878); sløseren (taper)
+0 %, median 76, stemt ut 1836; gniten og passiv krasjer før 1833 (median 31); tilfeldig
+(knappemoser) 0 %, median 98. 30 valg per minutt, press 0,24 -> 0,41 -> 0,54. Selvspill i nettleseren: flink
+vant med 1244 (samsvar med simuleringen), Chromebook JS p95 2,5 ms. Eneste portfunn: coverbildet
+mangler (ventet).
+
+Prøvd som IKKE virket: (1) Bånd på 35 px med den gamle piloten (falle til siste øyeblikk, så fyre):
+svinger ca. 40 px og gangeren nullstilles hele tida (×1,02). (2) Lavere `akselerasjon` (450/350)
+for å dempe svingningen: flink traff undersiden av knausen oftere og gangeren steg lite. (3)
+`akselerasjonNed` som også bremset stigningen: ballongen skjøt over og krasjet i knausen (0 %).
+(4) `stigHøy` -160: tindene ble for tunge for flink (krasj 1861). (5) Fare-margin 1 px for flink: 100 % i simuleringen (steg 0,05 s, samme som prognosen), men
+krasjet i nettleseren, der steget er et annet. Margin 4 px og 10 px mer luft i åpningen (135) tåler
+steg på 1/60, 1/30 og 0,05 s (96-100 %). (6) Gi nybegynneren raskere hånd
+(hvert 2. tick): den ble mye billigere, men kom likevel aldri inn i båndet.
+
+Kjente svakheter: (1) Nybegynneren får aldri gangeren over ×1 (diagnosens mål var ×1,3) - med
+treg hånd ligger den 100-180 px over dalen. Kanskje båndet skal være litt tilgivende i kanten, eller
+skrapedalen litt grunnere. (2) Sløseren blir stemt ut med bare 1 Spd margin (30 mot 29); små
+endringer i fysikken kan slippe den gjennom. (3) Kongeveien er dyr for den som har stor margin
+(30-34 per periode) og er bare så vidt lovlig sent i runden - det er dette som slår ut nybegynneren.
+(4) Finalen etter 1882 er en flat dal med to åpne knauser (ingen egen form). (5) Fortsatt ingen lyd
+eller juice, og «Øv fra 1870» mangler.

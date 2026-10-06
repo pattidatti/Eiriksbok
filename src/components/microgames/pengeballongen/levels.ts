@@ -10,7 +10,8 @@ export interface Brett {
     sted: string;
     /** Banneret når brettet starter (2-4 ord). */
     tittel: string;
-    // Terrenget (y er overflaten, 540 er bunnen av bildet).
+    // Terrenget (y er overflaten, 540 er bunnen av bildet). Fra 1833 bruker terrenget bare
+    // `dal` herfra - resten styres av formen på valgperioden (FORMER).
     /** Sekunder mellom hver fjellrygg. */
     mellom: Spenn;
     /** Høyden på toppen av ryggene. */
@@ -103,16 +104,28 @@ export function brettFor(år: number): number {
 }
 
 /** Den fristende høye sletta rett før det første ekte valget (brett 2). */
-export const SLETTE = { fra: 1831.9, til: 1832.85, y: 335 };
+export const SLETTE = { fra: 1831.4, til: 1832.7, y: 335 };
 
-/** Veiskillene: før 1882 stenger kongens bom dalen under knausen. */
-export const VEISKILLER = [1848, 1852.5, 1858, 1863, 1870, 1876, 1882.7, 1883.4, 1884.05];
+/**
+ * Hver valgperiode fra 1833 har sin egen form, i denne rekkefølgen:
+ * tind = høy topp (dyr), skrapedal = lang flat dal (Ueland-gangeren),
+ * veiskille = kam med knaus over (lav smal åpning eller kongeveien over).
+ * Tre perioder er ca. 15 s, så et veiskille kommer ca. hvert 15. sekund.
+ */
+export type Form = 'tind' | 'skrapedal' | 'veiskille';
+export const FORMER: Form[] = ['tind', 'skrapedal', 'veiskille'];
 
-/** Kongens navngitte utgifter: brå topper som kommer uansett. */
+/**
+ * Veiskillene etter riksretten: knaus over en åpen dal. (Før 1882 står kongens veiskiller
+ * midt i hver veiskille-periode, se FORMER.)
+ */
+export const ÅPNE_VEISKILLER = [1882.4, 1883.3];
+
+/** Kongens navngitte utgifter: en brå spiss på tinden i perioden. */
 export const UTGIFTER: { år: number; navn: string }[] = [
-    { år: 1846.5, navn: 'Ny festning' },
-    { år: 1850, navn: 'Embetskontor' },
-    { år: 1854.2, navn: 'Hovedbanen' },
+    { år: 1843.5, navn: 'Ny festning' },
+    { år: 1852.5, navn: 'Hovedbanen' },
+    { år: 1861.5, navn: 'Embetskontor' },
 ];
 
 export type FunnId = 'olaboka' | 'jordskatten' | 'formannskap' | 'hovedbanen' | 'ibsen' | 'roret';

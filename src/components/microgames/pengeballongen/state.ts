@@ -12,6 +12,7 @@ export type Hendelse =
     | { slag: 'stemtUt'; år: number; brukt: number }
     | { slag: 'funn'; id: FunnId }
     | { slag: 'ganger'; ganger: number }
+    | { slag: 'veiskille'; vei: 'over' | 'under'; hatt: boolean }
     | { slag: 'krasj' }
     | { slag: 'landet' };
 
@@ -40,6 +41,9 @@ export interface Game {
     spart: number;
     ganger: number;
     gangerTid: number;
+    /** Summen av ganger x sekunder fra 1833 (snittet måles av simuleringen). */
+    gangerSum: number;
+    gangerTidSum: number;
     hatter: number;
     /** Neste valg i ter.valg. */
     nesteValg: number;
@@ -84,6 +88,8 @@ export function newGame(seed: number): Game {
         spart: 0,
         ganger: 1,
         gangerTid: 0,
+        gangerSum: 0,
+        gangerTidSum: 0,
         hatter: 0,
         nesteValg: 0,
         nesteVp: 0,

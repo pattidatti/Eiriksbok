@@ -1,17 +1,35 @@
 // Tida, veien og fjellene. Hele terrenget lages når runden starter (seedet), så sim og
 // nettleser får samme fjell. Ingen spillregler her - bare geometri og oppslag.
 
-import { BRETT, brettFor, FUNN, SLETTE, UTGIFTER, VEISKILLER, type FunnId } from './levels';
+import {
+    BRETT,
+    brettFor,
+    FORMER,
+    FUNN,
+    SLETTE,
+    UTGIFTER,
+    ÅPNE_VEISKILLER,
+    type FunnId,
+} from './levels';
 import { TUNING } from './tuning';
 
 const T = TUNING;
 
 // ---------- tid <-> år <-> vei ----------
 
-export const årFor = (t: number) => T.år.start + t / T.år.sekunder;
-export const tidFor = (år: number) => (år - T.år.start) * T.år.sekunder;
+const Å = T.år;
+/** Spilltid når det første ekte valget kommer (tida bytter fart her). */
+const T_SKIFTE = (Å.skifte - Å.start) * Å.førValg;
 
-const T1 = (T.fart.tilÅr - T.fart.fraÅr) * T.år.sekunder;
+export const tidFor = (år: number) =>
+    år <= Å.skifte ? (år - Å.start) * Å.førValg : T_SKIFTE + (år - Å.skifte) * Å.etterValg;
+export const årFor = (t: number) =>
+    t <= T_SKIFTE ? Å.start + t / Å.førValg : Å.skifte + (t - T_SKIFTE) / Å.etterValg;
+
+/** Hele runden i sekunder (1815 til landingen). */
+export const RUNDE = tidFor(Å.slutt);
+
+const T1 = tidFor(T.fart.tilÅr);
 const K = (T.fart.til - T.fart.fra) / T1;
 
 /** Farten fram (px/s) ved spilltid t. */
@@ -41,8 +59,10 @@ export interface Knaus {
     topp: number;
     bunn: number;
     år: number;
-    /** Kongens bom stenger dalen under. */
-    bom: boolean;
+    /** Kongens veiskille (før 1882): kam under, kongeveien over gir en flosshatt. */
+    konge: boolean;
+    /** Hvilken vei ballongen tok (settes når den er forbi midten). */
+    valgt: 'over' | 'under' | null;
 }
 
 export interface Funn {
@@ -86,50 +106,29 @@ export function lagTerreng(rng: Rng): Terreng {
     const valgpunkter: number[] = [];
     const utgifter: Utgift[] = [];
     const knauser: Knaus[] = [];
-    const lengde = veiForÅr(T.år.slutt) + 1200;
+    const lengde = veiForÅr(Å.slutt) + 1200;
     const punkt = (x: number, y: number) => {
         xs.push(x);
         ys.push(y);
     };
     const slette = { x0: veiForÅr(SLETTE.fra), x1: veiForÅr(SLETTE.til) };
-    const skiller = VEISKILLER.map((år) => ({ år, x: veiForÅr(år) }));
-    const navngitt = UTGIFTER.map((u) => ({ ...u, x: veiForÅr(u.år), brukt: false }));
-    const vb = T.veiskille.bredde;
+    const vs = T.veiskille;
+    const F = T.form;
+    const x33 = veiForÅr(Å.skifte);
 
-    // Rolig start: ballongen henger over en flat dal i ca. 3,5 sekunder.
+    // Rolig start: ballongen henger over en flat dal i ca. 3 sekunder.
     let x = 0;
     punkt(-400, 485);
-    punkt(x + 520, 485);
-    x += 520;
+    punkt(x + 420, 485);
+    x += 420;
 
-    while (x < lengde) {
-        const år = T.år.start + tidForVei(x) / T.år.sekunder;
+    // 1815-1833: tilfeldige rygger etter brettet (opptrappingen).
+    while (x < x33) {
+        const år = årFor(tidForVei(x));
         const b = BRETT[brettFor(år)];
         const fart = fartVed(tidForVei(x));
         const dalY = mellom(rng, b.dal);
         const bredde = mellom(rng, b.mellom) * fart;
-
-        // Veiskille før neste rygg ville vært ferdig: flat dal under en knaus.
-        const sk = skiller[0];
-        if (sk && sk.x - vb / 2 - 140 < x + bredde) {
-            const cx = Math.max(sk.x, x + vb / 2 + 160);
-            const dy = T.veiskille.dalY;
-            punkt(cx - vb / 2 - 120, dy);
-            punkt(cx + vb / 2 + 120, dy);
-            const bunn = dy - T.veiskille.gap;
-            knauser.push({
-                x0: cx - vb / 2,
-                x1: cx + vb / 2,
-                bunn,
-                topp: bunn - T.veiskille.tykkelse,
-                år: sk.år,
-                bom: sk.år < T.veiskille.åpenFra,
-            });
-            valgpunkter.push(cx - vb / 2);
-            skiller.shift();
-            x = cx + vb / 2 + 120;
-            continue;
-        }
 
         // Den høye sletta før 1833-valget.
         if (x < slette.x1 && slette.x0 < x + bredde) {
@@ -142,34 +141,114 @@ export function lagTerreng(rng: Rng): Terreng {
             x = slette.x1 + 180;
             continue;
         }
+        // Rekker ikke en hel rygg før 1833: flat dal fram til valget.
+        if (x + bredde > x33 + 60) {
+            punkt(x + 40, dalY);
+            x = Math.max(x + 40, x33);
+            break;
+        }
 
         // En vanlig rygg: dal, stigning, kam, fall.
         const topp = mellom(rng, b.topp);
         const kam = mellom(rng, b.kam) * bredde;
         const dal = bredde * 0.22;
         const opp = (bredde - kam - dal) * 0.5;
-        const xa = x + dal;
-        const xb = xa + opp;
+        const xb = x + dal + opp;
         const xc = xb + kam;
-        punkt(xa, dalY);
-        const nv = navngitt.find((u) => !u.brukt && u.x < xc + opp && u.x >= x);
-        if (nv || rng() < b.utgift) {
-            // Kongens brå utgift: en spiss topp midt på kammen.
-            const xm = (xb + xc) / 2;
-            const spiss = topp - 70 - rng() * 30;
-            punkt(xb, topp);
-            punkt(xm - 50, topp - 4);
-            punkt(xm, spiss);
-            punkt(xm + 50, topp - 4);
-            punkt(xc, topp);
-            utgifter.push({ x: xm, y: spiss, navn: nv ? nv.navn : null });
-            if (nv) nv.brukt = true;
-        } else {
-            punkt(xb, topp);
-            if (kam > 40) punkt(xc, topp + (rng() - 0.5) * 6);
-        }
+        punkt(x + dal, dalY);
+        punkt(xb, topp);
+        if (kam > 40) punkt(xc, topp + (rng() - 0.5) * 6);
         valgpunkter.push(xb);
         x = xc + opp;
+    }
+
+    // Fra 1833: én form per valgperiode (tind, skrapedal, veiskille), og hver blir litt
+    // høyere enn den forrige. Etter riksretten: finalen med åpne veiskiller.
+    for (let p = 0; ; p++) {
+        const år0 = Å.skifte + p * T.penger.hvert;
+        if (år0 >= Å.slutt) break;
+        const xa = Math.max(x, veiForÅr(år0));
+        const xe = Math.min(lengde, veiForÅr(år0 + T.penger.hvert));
+        const W = xe - xa;
+        const dalY = mellom(rng, BRETT[brettFor(år0 + 1.5)].dal);
+        const f = 1 + F.økning * p;
+        const finale = ÅPNE_VEISKILLER.some((å) => å >= år0 && å < år0 + T.penger.hvert);
+
+        if (finale) {
+            // Dalen fram til Løvebakken, med åpne knauser over (bommen er borte).
+            const dy = vs.dalY;
+            punkt(xa + 120, dy);
+            for (const år of ÅPNE_VEISKILLER) {
+                const cx = veiForÅr(år);
+                const bunn = dy - vs.gap;
+                knauser.push({
+                    x0: cx - vs.bredde / 2,
+                    x1: cx + vs.bredde / 2,
+                    bunn,
+                    topp: bunn - vs.tykkelse,
+                    år,
+                    konge: false,
+                    valgt: null,
+                });
+                valgpunkter.push(cx - vs.bredde / 2);
+            }
+            punkt(lengde, dy);
+            x = lengde;
+            break;
+        }
+
+        const form = FORMER[p % FORMER.length];
+        if (form === 'tind') {
+            const top = dalY - F.tind * f * (0.92 + 0.16 * rng());
+            const nv = UTGIFTER.find((u) => u.år >= år0 && u.år < år0 + T.penger.hvert);
+            punkt(xa + W * 0.16, dalY);
+            if (nv) {
+                // Kongens brå utgift: en spiss topp midt på kammen.
+                const xb = xa + W * 0.36;
+                const xc = xa + W * 0.58;
+                const xm = (xb + xc) / 2;
+                const spiss = top - 60 - rng() * 25;
+                punkt(xb, top);
+                punkt(xm - 50, top - 4);
+                punkt(xm, spiss);
+                punkt(xm + 50, top - 4);
+                punkt(xc, top);
+                utgifter.push({ x: xm, y: spiss, navn: nv.navn });
+                valgpunkter.push(xb);
+            } else {
+                punkt(xa + W * 0.4, top);
+                punkt(xa + W * 0.52, top + (rng() - 0.5) * 6);
+                valgpunkter.push(xa + W * 0.4);
+            }
+            punkt(xa + W * 0.8, dalY);
+        } else if (form === 'skrapedal') {
+            // Lang, flat dal: her kan gangeren vokse helt til ×5.
+            for (let i = 1; i <= 4; i++)
+                punkt(xa + (W * i) / 5, dalY + (i % 2 ? -1 : 1) * F.bølge * rng());
+            valgpunkter.push(xa + W * 0.2);
+        } else {
+            // Kongens veiskille: kam med en knaus over. Under = lav, smal og billig.
+            // Over = kongeveien: trygg, men dyr, og en flosshatt til.
+            const cx = (xa + xe) / 2;
+            const kamY = dalY - Math.min(F.kamMaks, F.kam * f * mellom(rng, F.kamSpenn));
+            const halv = vs.bredde / 2 + vs.flate;
+            punkt(cx - halv - F.skrå, dalY);
+            punkt(cx - halv, kamY);
+            punkt(cx + halv, kamY);
+            punkt(cx + halv + F.skrå, dalY);
+            const bunn = kamY - vs.gapLav;
+            knauser.push({
+                x0: cx - vs.bredde / 2,
+                x1: cx + vs.bredde / 2,
+                bunn,
+                topp: bunn - vs.tykkelse,
+                år: årFor(tidForVei(cx)),
+                konge: true,
+                valgt: null,
+            });
+            valgpunkter.push(cx - halv - F.skrå, cx - vs.bredde / 2);
+        }
+        x = xe;
     }
     punkt(lengde + 2000, 470);
 
@@ -231,12 +310,8 @@ export function bakke(ter: Terreng, x: number): number {
     return ys[lo] + (ys[hi] - ys[lo]) * s;
 }
 
-/** Høyeste faste hinder ved x: bakken, eller toppen av en knaus med bom under. */
-export function fastTopp(ter: Terreng, x: number): number {
-    let y = bakke(ter, x);
-    for (const k of ter.knauser) if (k.bom && x >= k.x0 && x <= k.x1) y = Math.min(y, k.topp);
-    return y;
-}
+/** Høyeste faste hinder ved x (bakken). Knausene har luft under seg, se knausVed. */
+export const fastTopp = (ter: Terreng, x: number): number => bakke(ter, x);
 
 /** Knausen over x, om det er en. */
 export function knausVed(ter: Terreng, x: number): Knaus | null {

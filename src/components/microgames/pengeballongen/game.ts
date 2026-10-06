@@ -27,7 +27,7 @@ export function update(g: Game, dt: number) {
     const l = T.løft;
     g.varme += ((g.hold ? 1 : 0) - g.varme) * (1 - Math.exp(-dt / l.varmeTau));
     const mål = -stig(g.y) * g.varme + synk(g) * (1 - g.varme);
-    const maks = l.akselerasjon * dt;
+    const maks = (mål > g.vy && g.vy >= 0 ? l.akselerasjonNed : l.akselerasjon) * dt;
     g.vy += Math.max(-maks, Math.min(maks, mål - g.vy));
     g.y += g.vy * dt;
     const tak = T.ballong.tak + T.ballong.høyde;
@@ -47,21 +47,31 @@ export function update(g: Game, dt: number) {
         g.periode += kr;
     } else g.spart += T.penger.perSek * g.ganger * dt;
 
-    // Ueland-gangeren: skrap tett over bakken, og den vokser.
+    // Ueland-gangeren: i nær-båndet vokser den, utenfor går den straks tilbake til ×1.
     if (g.år >= T.ganger.fra) {
-        const k = klaring(g);
-        if (k < T.ganger.nær) {
+        if (klaring(g) < T.ganger.nær) {
             g.gangerTid += dt;
             while (g.gangerTid >= T.ganger.trinn && g.ganger < T.ganger.maks) {
                 g.gangerTid -= T.ganger.trinn;
                 g.ganger++;
                 g.hendelser.push({ slag: 'ganger', ganger: g.ganger });
             }
-        } else if (k > T.ganger.langt) {
+        } else {
             if (g.ganger > 1) g.hendelser.push({ slag: 'ganger', ganger: 1 });
             g.ganger = 1;
             g.gangerTid = 0;
         }
+        g.gangerSum += g.ganger * dt;
+        g.gangerTidSum += dt;
+    }
+
+    // Veiskillene: forbi midten av knausen avgjøres hvilken vei du tok.
+    for (const k of g.ter.knauser) {
+        if (k.valgt || g.x < (k.x0 + k.x1) / 2) continue;
+        k.valgt = g.y <= k.topp ? 'over' : 'under';
+        const hatt = k.konge && k.valgt === 'over';
+        if (hatt) g.hatter += T.veiskille.kongeveiHatt;
+        g.hendelser.push({ slag: 'veiskille', vei: k.valgt, hatt });
     }
 
     // Funn som henger lavt.

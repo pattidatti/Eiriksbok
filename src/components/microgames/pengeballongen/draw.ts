@@ -101,18 +101,36 @@ export function tegn(view: ArcadeView, g: Game, valg: TegneValg) {
     ctx.lineTo(970, 540);
     ctx.fill();
 
-    // Knausene ved veiskillene, med kongens bom under før 1882.
+    // Nær-båndet: en tynn strek over terrenget. Under streken vokser Ueland-gangeren.
+    if (g.år >= TUNING.ganger.fra - 0.5) {
+        ctx.strokeStyle = P.silke;
+        ctx.lineWidth = 1.5;
+        ctx.globalAlpha = 0.7;
+        ctx.setLineDash([6, 6]);
+        ctx.beginPath();
+        for (let sx = -10; sx <= 970; sx += 8) {
+            const y = bakke(ter, x0 + sx) - TUNING.ganger.nær;
+            if (sx === -10) ctx.moveTo(sx, y);
+            else ctx.lineTo(sx, y);
+        }
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.globalAlpha = 1;
+    }
+
+    // Knausene ved veiskillene. Kongens knaus (før 1882) har krone: over den = kongeveien.
     for (const kn of ter.knauser) {
         const a = kn.x0 - x0;
         const b = kn.x1 - x0;
         if (b < -20 || a > 980) continue;
         ctx.fillStyle = P.kritt;
         ctx.fillRect(a, kn.topp, b - a, kn.bunn - kn.topp);
-        if (kn.bom) {
+        if (kn.konge) {
+            krone(ctx, (a + b) / 2, kn.topp - 14);
             ctx.fillStyle = P.karmin;
-            const midt = (a + b) / 2;
-            ctx.fillRect(midt - 6, kn.bunn, 12, bakke(ter, (kn.x0 + kn.x1) / 2) - kn.bunn);
-            krone(ctx, midt, kn.topp - 14);
+            ctx.font = 'italic 15px Georgia, serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('+1 flosshatt', (a + b) / 2, kn.topp - 34);
         }
     }
 
@@ -248,47 +266,48 @@ function hud(ctx: CanvasRenderingContext2D, g: Game, meny: boolean) {
     ctx.textAlign = 'left';
     ctx.fillText('1884 Løvebakken', tx1 + 8, 31);
 
-    // Venstre marg: pengestabelen siden forrige valg, med grensen som karmin strek.
+    // Pengestabelen siden forrige valg: en liggende stolpe oppe på himmelen, under
+    // gangeren, med grensen som karmin strek. Den dekker verken fjell eller knauser.
     if (g.stabel) {
-        const x = 18;
-        const bunn = 400;
-        const pxPerSpd = 6;
-        const høy = T.penger.grense * 1.4 * pxPerSpd;
-        ctx.fillStyle = 'rgba(246,244,236,0.75)';
-        ctx.fillRect(x - 6, bunn - høy - 40, 52, høy + 64);
+        const x = 30;
+        const y = 132;
+        const pxPerSpd = 120 / (T.penger.grense * 1.4);
+        const bred = T.penger.grense * 1.4 * pxPerSpd;
+        ctx.fillStyle = 'rgba(246,244,236,0.8)';
+        ctx.fillRect(x - 8, y - 22, bred + 70, 50);
         const fylt = Math.min(g.periode, T.penger.grense * 1.4) * pxPerSpd;
         const over = grenseVises(g) && g.periode > T.penger.grense;
         ctx.fillStyle = over ? P.karmin : P.halv;
-        ctx.fillRect(x + 4, bunn - fylt, 32, fylt);
+        ctx.fillRect(x, y, fylt, 16);
         ctx.strokeStyle = P.kritt;
         ctx.lineWidth = 1.5;
-        ctx.strokeRect(x + 4, bunn - høy, 32, høy);
+        ctx.strokeRect(x, y, bred, 16);
         if (grenseVises(g)) {
-            const gy = bunn - T.penger.grense * pxPerSpd;
+            const gx = x + T.penger.grense * pxPerSpd;
             ctx.fillStyle = P.karmin;
-            ctx.fillRect(x - 2, gy - 2, 44, 4);
+            ctx.fillRect(gx - 2, y - 6, 4, 28);
         }
         ctx.fillStyle = P.kritt;
         ctx.font = '15px Georgia, serif';
-        ctx.textAlign = 'center';
+        ctx.textAlign = 'left';
         const neste = g.ter.valg[g.nesteValg];
-        ctx.fillText(neste ? `Valg` : '', x + 20, bunn - høy - 22);
-        ctx.fillText(neste ? String(neste.år) : '', x + 20, bunn - høy - 6);
-        ctx.fillText(`${Math.round(g.periode)}`, x + 20, bunn + 18);
+        ctx.fillText(neste ? `Valg ${neste.år}` : '', x, y - 6);
+        ctx.fillText(`${Math.round(g.periode)}`, x + bred + 8, y + 14);
     }
 
     // Ueland-gangeren.
     if (g.år >= T.ganger.fra) {
         ctx.fillStyle = 'rgba(246,244,236,0.85)';
         ctx.beginPath();
-        ctx.ellipse(110, 60, 40, 30, 0, 0, Math.PI * 2);
+        ctx.ellipse(70, 60, 40, 30, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.fillStyle = g.ganger > 1 ? P.silke : P.kritt;
         ctx.font = 'bold 26px Georgia, serif';
         ctx.textAlign = 'center';
-        ctx.fillText(`×${g.ganger}`, 110, 66);
+        ctx.fillText(`×${g.ganger}`, 70, 66);
         ctx.fillStyle = P.kritt;
         ctx.font = '14px Georgia, serif';
-        ctx.fillText('Ueland', 110, 104);
+        ctx.textAlign = 'left';
+        ctx.fillText('Ueland', 116, 66);
     }
 }

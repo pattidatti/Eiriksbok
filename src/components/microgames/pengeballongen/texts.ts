@@ -15,8 +15,8 @@ export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
     stabel: 'Pengene du bruker hoper seg her',
     grense: 'Over streken = bøndene stemmer deg ut',
-    ganger: 'Skrap lavt: Ueland sparer mer',
-    bom: 'Kongens bom: du må over',
+    ganger: 'Under streken: Ueland sparer mer',
+    bom: 'Under er billig. Over gir flosshatt',
     vinker: 'Bøndene stemmer ennå på embetsmenn',
 };
 

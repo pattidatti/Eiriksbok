@@ -145,7 +145,7 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                 text.banner(BRETT[h.brett].tittel);
                 if (h.brett === 1 && !sagt.current.has('stabel')) {
                     sagt.current.add('stabel');
-                    text.point('stabel', LAPP.stabel, flate(64, 300), { seconds: 5 });
+                    text.point('stabel', LAPP.stabel, flate(90, 170), { seconds: 5 });
                 }
             } else if (h.slag === 'valg') {
                 const p = tilSkjerm(skalaRef.current, TUNING.ballong.skjermX, g.y - 100);
@@ -153,7 +153,7 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                     text.float('Bøndene vinker', p.x, p.y, P.kritt);
                     if (!sagt.current.has('vinker')) {
                         sagt.current.add('vinker');
-                        text.point('vinker', LAPP.vinker, flate(64, 230), { seconds: 4 });
+                        text.point('vinker', LAPP.vinker, flate(90, 170), { seconds: 4 });
                     }
                 } else if (h.år === TUNING.penger.førsteEkteValg) {
                     text.banner('Bondestortinget!', P.silke);
@@ -171,10 +171,15 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                     text.float(f.navn, p.x, p.y, P.silke, true);
                     text.lesson(`funn-${f.id}`, f.fakta, 1);
                 }
+            } else if (h.slag === 'veiskille') {
+                if (h.hatt) {
+                    const q = tilSkjerm(skalaRef.current, TUNING.ballong.skjermX, g.y - 90);
+                    text.float('Kongeveien: +1 flosshatt', q.x + 40, q.y, P.karmin);
+                }
             } else if (h.slag === 'ganger') {
                 if (h.ganger > 1) {
-                    const p = tilSkjerm(skalaRef.current, TUNING.ballong.skjermX, g.y + 6);
-                    text.float(`Ueland ×${h.ganger}`, p.x + 30, p.y, P.silke);
+                    const p = flate(118, 44)();
+                    text.float('+1', p.x, p.y, P.silke);
                 }
                 if (h.ganger === 2) {
                     text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
@@ -201,26 +206,25 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
             s.add('grense');
             const t0 = g.t;
             text.beatOnce('valg', BEAT.valg.tittel, BEAT.valg.tekst, {
-                at: flate(64, 210),
+                at: flate(90, 170),
                 until: () => gameRef.current.t > t0 + 1.4,
             });
         }
         if (!s.has('ganger') && g.år >= TUNING.ganger.fra + 0.3) {
             s.add('ganger');
-            text.point('ganger', LAPP.ganger, flate(110, 110), { seconds: 5 });
+            text.point('ganger', LAPP.ganger, flate(70, 96), { seconds: 5 });
         }
         if (!s.has('bom')) {
-            const k = g.ter.knauser.find((kn) => kn.bom && kn.x0 - g.x < 600 && kn.x0 > g.x);
+            const k = g.ter.knauser.find((kn) => kn.konge && kn.x0 - g.x < 600 && kn.x0 > g.x);
             if (k) {
                 s.add('bom');
-                text.point('bom', LAPP.bom, vedVerden((k.x0 + k.x1) / 2, k.topp - 30), {
+                text.point('bom', LAPP.bom, vedVerden((k.x0 + k.x1) / 2, k.bunn + 30), {
                     seconds: 4,
-                    tone: 'fare',
                 });
             }
         }
         if (!s.has('roret') && g.år >= TUNING.veiskille.åpenFra) {
-            const k = g.ter.knauser.find((kn) => !kn.bom && kn.x0 > g.x);
+            const k = g.ter.knauser.find((kn) => !kn.konge && kn.x0 > g.x);
             if (k) {
                 s.add('roret');
                 const t0 = g.t;
