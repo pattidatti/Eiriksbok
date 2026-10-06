@@ -58,16 +58,15 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
         }
         case 'veiskille':
             if (h.konge && h.vei === 'under') ved('Under bommen! Ueland +1', -110, P.silke, true);
-            else if (h.hatt) ved('Kongeveien: brenneren dyrere', -120, P.karmin, true);
+            else if (h.hatt) {
+                ved('Kongens gave: dobbel sparing!', -125, P.silke, true, TUNING.ganger.gave);
+                ved('Men brenneren blir dyrere for godt', -85, P.karmin, false, 2.4);
+            }
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
                 if (h.ganger > 5) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.4);
                 else ved(`Ueland ×${h.ganger}`, -60, P.silke, h.ganger >= 4, 1);
-                if (!sagt.has('hvem')) {
-                    sagt.add('hvem');
-                    ved('Ueland: bondeleder som sa nei til sløsing', -100, P.silke, false, 3.2);
-                }
                 if (h.ganger === 2)
                     text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
                         at: c.vedBallong(-60),
@@ -85,15 +84,12 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             }
             break;
         case 'bondeting':
-            ved('Bøndene har flertall!', -125, P.silke, true, 2.8);
-            ved(`Brenneren billigere: ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd. i sekundet`, -85, P.silke, false, 2.8);
+            text.banner('Bondetinget 1833', P.silke);
+            ved('Bøndene har flertall!', -125, P.silke, true, 8);
+            ved(`Brenneren billigere: ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd. i sekundet`, -85, P.silke, false, 8);
             break;
-        case 'veto':
-            if (!h.slutt) {
-                text.banner('Kongens veto!', P.karmin);
-                ved('Kongen stopper lovene: motvind!', -120, P.karmin, true, 2.6);
-                ved('Ballongen synker fortere - spar på brenneren', -80, P.karmin, false, 2.6);
-            } else ved('Vetoet er over: vinden løyer', -110, P.silke, true, 1.8);
+        case 'brent':
+            ved(`Fyrte tett over fjellet: Ueland ×${h.ganger}`, -60, P.karmin, false, 1.1);
             break;
         case 'stemme':
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
@@ -153,6 +149,7 @@ export function coach(g: Game, c: Coach) {
     if (!sagt.has('ganger') && g.år >= TUNING.ganger.fra + 0.3) {
         sagt.add('ganger');
         text.point('ganger', LAPP.ganger, c.vedBallong(10), { seconds: 5 });
+        c.lapp('Ole Gabriel Ueland: bondeleder som hatet sløsing', BX + 70, g.y - 150, P.silke, false, 4);
     }
     if (!sagt.has('bom')) {
         const k = g.ter.knauser.find((kn) => kn.konge && kn.x0 - g.x < 560 && kn.x0 > g.x);

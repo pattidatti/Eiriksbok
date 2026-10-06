@@ -8,7 +8,7 @@ export const MÅL = 'Få ballongen fra 1815 til 1884. Bruk så lite penger som m
 export const REGLER = [
     'Hold MELLOMROM eller musa: du betaler, og ballongen stiger. Styre kan du ikke - det gjør kongen.',
     'Budsjettet til valget må holde. Bruker du for mye, stemmer bøndene deg ut.',
-    'Gli tett over fjellet uten å fyre: da sparer Ueland mest.',
+    'Gli tett over fjellet: Ueland sparer opptil ×10. Fyrer du tett over en rygg, faller han ett trinn.',
 ];
 
 /** Om sjansene, i menyen og på slutt-skjermen. */
@@ -20,8 +20,8 @@ export const SJANSE_LÆRDOM =
 export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
     grense: 'Over streken = bøndene stemmer deg ut',
-    ganger: 'Tett over fjellet: Ueland sparer mer',
-    bom: 'Under: billig. Over: dyrere brenner',
+    ganger: 'Gli tett, men fyr før ryggen',
+    bom: 'Over: gave ×2 nå, dyrere siden',
     vinker: 'Bøndene stemmer ennå på embetsmenn',
     ror: 'Pil NED eller trykk lavt: styr ned',
     ola: 'Ola-boka: ta den!',

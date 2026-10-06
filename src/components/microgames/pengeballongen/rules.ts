@@ -29,15 +29,7 @@ export function synk(g: Game): number {
     const l = T.løft;
     const u = Math.min(1, Math.max(0, (g.år - T.fart.fraÅr) / (T.fart.tilÅr - T.fart.fraÅr)));
     const rolig = Math.min(1, l.rolig.fra + ((1 - l.rolig.fra) * (g.t - g.rolig)) / l.rolig.sekunder);
-    return (l.synkFra + (l.synkTil - l.synkFra) * u + g.hatter * l.perHatt + vetoSynk(g)) * rolig;
-}
-
-/** Kongens veto er i gang (motvind). */
-export const iVeto = (g: Game) => g.år >= T.veto.fra && g.år < T.veto.til;
-
-/** Ekstra synk fra motvinden under kongens veto. */
-function vetoSynk(g: Game): number {
-    return iVeto(g) ? T.veto.synk : 0;
+    return (l.synkFra + (l.synkTil - l.synkFra) * u + g.hatter * l.perHatt) * rolig;
 }
 
 /** Stigefart med full varme. Lavere jo høyere opp (tynn luft): å fly høyt koster mer. */
@@ -102,7 +94,8 @@ export const kostnad = (g: Game) =>
 /** Spart per sekund når du slipper: lite høyt oppe, mye tett over fjellet. */
 export function sparing(g: Game): number {
     if (g.år < T.ganger.fra) return T.penger.førUeland;
-    return iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor;
+    const gave = g.gave > 0 ? 2 : 1;
+    return (iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor) * gave;
 }
 
 /** Treffer ballongen fjellet eller en knaus? */

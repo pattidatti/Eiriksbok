@@ -497,3 +497,38 @@ Kjente svakheter: (1) Bondetinget ved 33 s spilltid havner mellom filmbildene (2
 vurdereren ser det ikke på filmen. (2) Vetoet er bare ekstra synk; det kan føles som «tyngre» mer enn
 som et nytt valg. (3) Flink og nybegynner er fortsatt langt fra hverandre (4262 mot 466). (4) Sverdrup-
 venner/riksrett-port fra vurderingen er ikke bygd. (5) Likheten 0,47 er nær grensen 0,50.
+
+### Forbedring 3 (etter vurdering runde 3: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 4, Unikt 4)
+
+Gøy sto på 3 i tre runder. Denne gangen er det fjernet og strammet, ikke lagt til:
+(1) Ueland-gangeren står aldri stille: den går til ×10 (før ×7), +1 trinn per sekund i båndet,
+og et nytt trykk på brenneren mens kurven er tett over en rygg koster ett trinn (lapp «Fyrte tett
+over fjellet: Ueland ×n», gnister). Fjæring innen 1,5 s teller som samme trykk. Risikoen ligger nå i
+hvert trykk: fyr før ryggen, ikke på den. (2) Kongeveien er et ekte grådig/trygt-valg: over knausen
+gir kongens gave dobbel sparing i 5 s (gullmynter rundt ballongen, «gave ×2: n s» i portrettet),
+men en embetsmann til og brenneren 15 % dyrere for godt. Gangeren nullstilles ikke lenger der.
+(3) Kongens veto er kuttet: det var bare ekstra synk uten et nytt valg.
+Lærerikt: Bondetinget 1833 kommer ved ca. 14 s spilltid. Banneret «Bondetinget 1833», lappene
+(8 s) og den synlig bredere budsjettbaren (12 -> 26 px) med lappen «Bondetinget: billigere brenner»
+står til 1838,5, så filmbildet ved 20 s fanger skiftet.
+Lesbart: «Ole Gabriel Ueland: bondeleder som hatet sløsing» første gang portrettet vises,
+«Spd. = speciedaler, datidens penger» i Spart-kortet til 1824, baren heter «Budsjett til valget
+18xx» hele runden (karmin og risting når under 25 % er igjen). Reglene i menyen er fortsatt tre.
+Rangene er hevet (700/1600/2700/3900/5400) fordi flink tjener mer.
+
+Feel-lista: 1 (trykket i båndet svarer med gnister og lapp, gaven med mynter), 3 (gaven synes i
+portrettet og som mynter), 4 (myntene rundt ballongen viser hva gaven gir) styrket.
+
+Simulering (200 runder): grønn. flink 100 %, median 5364 (p10 4895, p90 5812), snitt-ganger 7,5;
+nybegynner 22 %, median 480; sløseren 0 %, gniten/passiv 18, tilfeldig 39. 34,2 valg per minutt,
+press 0,30 -> 0,58 -> 0,74. Flink-roboten holder et trykk som er i gang i stedet for å tappe
+(slik en elev lærer når tapping koster).
+
+Prøvd som IKKE virket: trykk-straff uten fjær-vindu - hver fjæring over samme rygg kostet et trinn,
+og snitt-gangeren falt til 1,1-1,6 (flink 820-1240 poeng) selv med trinn 0,7 s. Gangeren sto da
+fast på ×1, det motsatte av målet. Fjær-vinduet på 1,5 s gjør at én rygg koster ett trinn.
+
+Kjente svakheter: (1) Nybegynner og flink er enda lenger fra hverandre (480 mot 5364). (2) Sverdrup-
+venner/riksrett-port er fortsatt ikke bygd. (3) Om gaven ×2 i 5 s er verdt 15 % dyrere brenner for
+en elev, er ikke prøvd av en ekte elev; flink-roboten tar under-veien når den kan.
+(4) Selvspill, scene-audit og likhet er kjørt etter denne teksten; tallene står i commit-rapporten.

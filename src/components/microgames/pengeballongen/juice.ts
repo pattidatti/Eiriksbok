@@ -3,7 +3,7 @@
 
 import { bakke } from './terrain';
 import { blink, rist, slipp, type Fx } from './fx';
-import { iBåndet, iVeto, klaring } from './rules';
+import { iBåndet, klaring } from './rules';
 import type { Lyd } from './sound';
 import type { Game, Hendelse } from './state';
 import { TUNING } from './tuning';
@@ -55,9 +55,9 @@ export function juice(g: Game, fx: Fx, j: Juice, lyd: Lyd, dt: number, landet: n
         slipp(fx, 'glo', BX + r(-4, 4), y - 30, { vx: r(-30, 10), vy: r(-40, -10), maks: 0.5 });
     }
 
-    // Kongens veto: nei-brev blåser mot ballongen fra høyre (motvinden).
-    if (iVeto(g) && Math.random() < dt * 14) {
-        slipp(fx, 'papir', 980, r(40, 420), { vx: r(-620, -420), vy: r(60, 140), maks: 2, vr: r(-6, 6) });
+    // Kongens gave: gullmynter drysser rundt ballongen mens sparingen er doblet.
+    if (g.gave > 0 && Math.random() < dt * 12) {
+        slipp(fx, 'mynt', BX + r(-30, 30), y - r(40, 100), { vx: r(-40, 40), vy: r(-60, 20), maks: 0.6 });
     }
     // Ueland over ×5: fartsstriper bak ballongen.
     if (g.ganger > 5 && Math.random() < 0.6) {
@@ -240,12 +240,9 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
             for (let i = 0; i < 12; i++)
                 slipp(fx, 'mynt', BX + r(-10, 10), y - 30, { maks: r(0.6, 0.9), mål: TELLER });
             break;
-        case 'veto':
-            if (!h.slutt) {
-                lyd.stemtUt();
-                rist(fx, 6);
-                blink(fx, 0.35, P.karmin);
-            } else lyd.vinker();
+        case 'brent':
+            for (let i = 0; i < 6; i++)
+                slipp(fx, 'gnist', BX + r(-10, 10), y, { vx: r(-160, 160), vy: r(-200, -40), maks: 0.35 });
             break;
         case 'roret':
             lyd.funn();

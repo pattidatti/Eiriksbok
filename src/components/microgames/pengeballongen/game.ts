@@ -62,6 +62,9 @@ function slutt(g: Game, årsak: Årsak, brukt?: number) {
         g.ganger = 1;
         g.gangerTid = 0;
         g.fallTid = 0;
+        g.gave = 0;
+        g.holdFør = false;
+        g.brentT = -9;
         g.rolig = g.t - T.løft.rolig.sekunder;
         g.harRor = g.år >= T.år.rorFra;
         g.ror = false;
@@ -85,11 +88,9 @@ export function update(g: Game, dt: number) {
     const førÅr = g.år;
     g.t += dt;
     g.år = årFor(g.t);
-    // Regelskiftene midt i runden: Bondetinget (brenneren billigere) og kongens veto (motvind).
+    // Regelskiftet midt i runden: Bondetinget (brenneren billigere).
     const krysset = (år: number) => førÅr < år && g.år >= år;
     if (krysset(T.penger.førsteEkteValg)) g.hendelser.push({ slag: 'bondeting' });
-    if (krysset(T.veto.fra)) g.hendelser.push({ slag: 'veto', slutt: false });
-    if (krysset(T.veto.til)) g.hendelser.push({ slag: 'veto', slutt: true });
     g.x = veiVed(g.t);
 
     const b = brettFor(g.år);
@@ -121,6 +122,14 @@ export function update(g: Game, dt: number) {
     // den ett trinn om gangen.
     if (g.år >= T.ganger.fra) {
         const G = T.ganger;
+        // Et nytt trykk på brenneren tett over fjellet koster ett trinn: risiko i hvert trykk.
+        // Fjæring over samme rygg teller som ett trykk (`G.fjær` s).
+        if (g.hold && !g.holdFør && iBåndet(g) && g.ganger > 1 && g.t - g.brentT > G.fjær) {
+            g.brentT = g.t;
+            settGanger(g, g.ganger - 1);
+            g.gangerTid = 0;
+            g.hendelser.push({ slag: 'brent', ganger: g.ganger });
+        }
         if (iBåndet(g)) {
             g.fallTid = 0;
             g.gangerTid += dt;
@@ -142,16 +151,20 @@ export function update(g: Game, dt: number) {
         g.gangerTidSum += dt;
     }
 
+    g.holdFør = g.hold;
+    if (g.gave > 0) g.gave = Math.max(0, g.gave - dt);
+
     // Veiskillene: forbi midten av knausen avgjøres hvilken vei du tok.
     for (const k of g.ter.knauser) {
         if (k.valgt || g.x < (k.x0 + k.x1) / 2) continue;
         k.valgt = g.y <= k.topp ? 'over' : 'under';
         const hatt = k.konge && k.valgt === 'over';
         if (hatt) {
-            // Kongeveien: trygg, men en embetsmann til, og brenneren blir dyrere for godt.
+            // Kongeveien: trygg, og kongens gave dobler sparingen en stund. Men en embetsmann
+            // til, og brenneren blir dyrere for godt.
             g.hatter++;
             g.kongeHatter++;
-            if (g.ganger > 1) settGanger(g, 1);
+            g.gave = T.ganger.gave;
         } else if (k.valgt === 'under' && g.år >= T.ganger.fra) {
             settGanger(g, Math.min(T.ganger.maks, g.ganger + 1));
         }

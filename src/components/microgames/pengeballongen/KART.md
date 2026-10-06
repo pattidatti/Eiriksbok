@@ -30,13 +30,15 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 2. Hold koster `kostnad()` (10 Spd/s, +15 % per hatt fra kongeveien). Slipp sparer `sparing()`:
    6/s før 1833, 2/s over nær-båndet, 10 x gangeren i båndet.
 3. Nær-båndet: `nærhet()` = minste høyde over bakken i et vindu (90 px bak, 30 foran), så
-   nedoverbakken etter en topp teller. 2 s i båndet = +1 trinn (maks ×5); over båndet faller den
-   ett trinn per 0,5 s (korte hopp under 0,5 s er gratis).
+   nedoverbakken etter en topp teller. 1 s i båndet = +1 trinn (maks ×10); over båndet faller den
+   ett trinn per 1,5 s. Et nytt trykk på brenneren mens kurven er i båndet koster ett trinn
+   (hendelse `brent`); fjæring innen `ganger.fjær` (1,5 s) etter teller som samme trykk.
 4. Valg hvert tredje år; fra 1833 er `periode > grense` stemt ut. Flosshatt ved hvert valg fra 1836 (tyngre).
 5. Hver valgperiode fra 1833 har sin form: tind, bølgende skrapeåser, veiskille. Alt blir
    `form.økning` høyere per periode.
 6. Kongens veiskille: under knausen (1,6 ballonghøyder) = gangeren +1 med en gang. Over =
-   kongeveien: +1 flosshatt, brenneren +15 % resten av runden, gangeren til ×1.
+   kongeveien: kongens gave (`g.gave`, dobbel sparing i `ganger.gave` = 5 s, synlig i portrettet og
+   som mynter), men +1 embetsmann og brenneren +15 % resten av runden.
 7. Seier: 1884,5 (Løvebakken). Tap: fjell/knaus eller stemt ut.
 8. Ny sjanse (`sjekk`): fra 1833 lagres et sjekkpunkt ved hvert valgflagg. Krasj eller stemt ut
    spoler tida tilbake dit (`slutt()` i game.ts), trekker 15 % av det sparte og bruker én av tre sjanser.
@@ -45,18 +47,19 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
     ballongen (`ror()`), brenneren svarer raskere (`fly()`), og tre bratte daler har en stemme
     i bunnen (40 x gangeren). Uten roret synker ballongen for sakte til å nå dem.
 
-11. Bondetinget (hendelse `bondeting` ved 1833): brenneren går fra `penger.førBonde` (14) til
-    `penger.perSek` (10) Spd/s, budsjettbaren gløder i to år med etiketten «Bondetinget».
-12. Kongens veto (`veto`, 1854,5-1860): motvind, `synk()` + `veto.synk`, nei-brev blåser fra høyre
-    (juice.ts). Hendelsen `veto` ved start og slutt.
-13. Gangeren går til ×7 (`ganger.maks`); over ×5 kommer fartsstriper, lyd, blink og «Full fart!».
+11. Bondetinget (hendelse `bondeting` ved 1833, ca. 14 s spilltid): brenneren går fra
+    `penger.førBonde` (14) til `penger.perSek` (10) Spd/s, budsjettbaren blir bredere (12 -> 26 px),
+    gløder og har lappen «Bondetinget: billigere brenner» under seg til 1838,5, så filmbildet ved
+    20 s fanger det. Baren heter «Budsjett til valget 18xx» hele runden.
+12. Kongens veto er fjernet (forbedring 3): det var bare ekstra synk, ikke et valg.
+13. Gangeren går til ×10 (`ganger.maks`); over ×5 kommer fartsstriper, lyd, blink og «Full fart!».
 14. Rorstrekket er ca. 15 s (`rorTempo` 30) med fem daler, så filmbildet ved 110 s viser roret.
 
 ## Knapper
 
-- Flink-robotens poeng: `ganger.nær`, `ganger.vindu`, `ganger.trinn`. Vinduet er det som gjorde ×5 mulig.
+- Flink-robotens poeng: `ganger.trinn`, `ganger.fjær` (uten fjær-vinduet når ingen over ×2), `ganger.nær`, `ganger.vindu`.
 - Hvor tett budsjettet er: `penger.grense` (26) mot `løft.synkTil` og `form.økning`.
-  Flink bruker 60 % tidlig og 70 % sent, sløseren 115 %.
+  Flink bruker ca. 50 % tidlig og 55 % sent, sløseren 115 %.
 - Hvor nybegynneren ryker: `kongeveiKostnad` (hver kongevei gjør resten dyrere).
 
 ## Fallgruver

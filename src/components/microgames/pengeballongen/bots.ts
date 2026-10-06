@@ -124,7 +124,8 @@ function pilot(p: Pilot): (rng: Rng) => Grep {
                 )
                     skrape = false;
             }
-            hold(g, (fare || skrape) && !tak);
+            // Et nytt trykk i båndet koster et trinn: skrapegrepet holder bare et trykk som er i gang.
+            hold(g, (fare || (skrape && g.hold)) && !tak);
         };
     };
 }

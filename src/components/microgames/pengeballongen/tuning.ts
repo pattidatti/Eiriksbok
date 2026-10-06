@@ -129,15 +129,15 @@ export const TUNING = {
         /** Bakken som teller, fra så langt bak til så langt foran kurven (px vei). */
         vindu: [-90, 30] as [number, number],
         /** Sekunder sammenhengende i båndet per trinn opp. */
-        trinn: 2,
+        trinn: 1,
         /** Over båndet faller gangeren ett trinn per så mange sekunder. */
-        fall: 0.5,
-        maks: 7,
+        fall: 1.5,
+        maks: 10,
+        /** Trykk i båndet innen så mange sekunder etter et trinn-tap koster ikke et nytt trinn. */
+        fjær: 1.5,
+        /** Kongens gave: så mange sekunder med dobbel sparing etter kongeveien. */
+        gave: 5,
     },
-
-    // Kongens veto: én valgperiode midt i runden blåser kongens nei-brev mot ballongen.
-    // Motvind = ballongen synker fortere, så hvert sekund med brenneren teller mer.
-    veto: { fra: 1854.5, til: 1860, synk: 30 },
 
     // Formene i hver valgperiode fra 1833 (rekkefølgen står i levels.ts).
     form: {
@@ -172,7 +172,7 @@ export const TUNING = {
         /** Luft under knausen etter 1882 (fra dalbunnen). */
         gap: 175,
         /** Kongeveien over knausen: en flosshatt klatrer om bord, og hver slik hatt gjør
-         * brenneren så mye dyrere resten av runden. Gangeren går til ×1. */
+         * brenneren så mye dyrere resten av runden. Til gjengjeld: kongens gave, dobbel sparing i `ganger.gave` s. */
         kongeveiKostnad: 0.15,
         /** Tykkelsen på knausen. */
         tykkelse: 24,
@@ -187,11 +187,11 @@ export const TUNING = {
     // Rangtrinn etter sparte spesidaler (stigende).
     ranger: [
         [0, 'Vararepresentant'],
-        [500, 'Bonderepresentant'],
-        [1100, 'Sparebonde'],
-        [1900, 'Ueland-elev'],
-        [2800, 'Dalanes stolthet'],
-        [3800, 'Ueland selv'],
+        [700, 'Bonderepresentant'],
+        [1600, 'Sparebonde'],
+        [2700, 'Ueland-elev'],
+        [3900, 'Dalanes stolthet'],
+        [5400, 'Ueland selv'],
     ] as [number, string][],
 };
 
