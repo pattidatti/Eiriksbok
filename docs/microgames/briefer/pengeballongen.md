@@ -265,3 +265,46 @@ så omstart etter krasj sent i runden kan kjennes lang - «Øv fra 1870» er ten
 valgstabelen er en ekstra måler i margen, og den må leses uten tekst - sjekk at eleven skjønner
 den i brett 2; (3) veiskillene med kongens bom før 1884 må ikke føles som urettferdig straff,
 dalen bak bommen må varsles i god tid.
+
+**Fase 4 - gråboks (byggmester, 2026-10-06):** Bygde kjerneløkka i `src/components/microgames/pengeballongen/`
+(KART.md, tuning.ts, levels.ts, terrain.ts, state.ts, rules.ts, game.ts, bots.ts, sim.ts, draw.ts,
+texts.ts) og `Pengeballongen.tsx` på arkadeskallet, med flate former i kunstbriefens palett. Registrert
+i `registry.ts` (ikke embeddet i artikkelen). Med i gråboksen: ett grep (hold/slipp), treghet,
+pengestabel fra 1824 og valggrense fra 1833, flosshatter fra 1836, Ueland-gangeren fra 1833, funnene,
+kongens spisse utgifter og bommer fra 1846, og klimakset 1882-84 med tre åpne veiskiller (under =
+billig og trangt, over = dyrt). Opptrappingen i punkt 11 er de tre første brettene, med banner,
+bildetekst, lappen «Hold MELLOMROM», stabel-lapp, vinkende bønder 1827/1830, lærings-øyeblikk ved
+valget 1833, ved første Ueland ×2 og ved riksretten.
+
+Regelendringer mot briefen (spillreglene, ikke konseptet):
+- **Tynn luft.** Med briefens rene fysikk koster det like mye å fly høyt som lavt (bare netto høyde
+  koster), så sløseren ble aldri stemt ut. Nå er løftet svakere jo høyere ballongen er
+  (`stigLav` 330 -> `stigHøy` -40, kurve `tynnLuft` 1,6). Det er dette som gjør at det lønner seg å
+  skrape: den som flyr høyt over fjellene, bruker mer per periode.
+- Grensen er 34 Spd per treårsperiode (briefen: 30). Flink bruker 24-33, sløseren 36-40,
+  nybegynneren går over rundt 1848.
+- Ueland-båndet er 40/90 px (briefen: 28/70) - med 28 px nådde selv den flinke roboten nesten aldri ×2.
+- Synkefarten går 110 -> 122 px/s, pluss 1,2 per flosshatt (briefen: 160 i 1880 ble umulig å betale
+  innenfor grensen). Fart 140 -> 200 px/s som i briefen.
+- Knausene ved veiskillene har 150 px luft under (gap 130 var for trangt for en ballong på 78 px).
+- Rolig start: dalen er flat de første ca. 3,5 s og synken er dempet de første 5 s.
+
+Simulering (200 runder per robot): **grønn.** flink (vinner) 90 % seier, median 1196 Spd;
+nybegynner (middels) 0 %, median 498, stemt ut 1848; sløseren (taper) 0 %, median 216, stemt ut
+1833; gniten og passiv krasjer i brett 1 (median 35); tilfeldig (knappemoser) 0 %, median 198.
+27 valg per minutt, press 0,19 -> 0,49 -> 0,68. Selvspill i nettleseren: flink vant med 1217
+(samsvar med simuleringen), Chromebook JS p95 3,3 ms. Eneste portfunn: coverbildet mangler (ventet).
+
+Prøvd som IKKE virket: (1) robot som sammenlignet krav over et vindu med «kan stige så og så fort» -
+undervurderte hvor lang tid det tar å snu fra synk til stigning, krasjet før 1833; erstattet med en
+pilot som spår med samme fysikk («går det bra hvis jeg slipper nå?»). (2) Lineært løft med høyden -
+for liten forskjell på flink og sløseren. (3) Spisse utgifter med 34 px flanker var for bratte å
+klatre over.
+
+Kjente svakheter til gråboks-diagnosen: (1) Skrapingen lønner seg for lite - flink ligger på ×1 det
+meste av runden, så poengene er nesten bare «slipp så mye du tør». Gangeren bør nok vokse lettere
+eller gi mer, og kammene i brett 3 bør være lange nok til ×3-×4. (2) Runden er lang (167 s), og
+mye av midten er like rygger uten nye valg enn «når fyrer jeg» - veiskillene med bom før 1882
+føles mest som en høy vegg. (3) Pengestabelen i venstre marg dekker terrenget og knausene til
+venstre for ballongen. (4) «Øv fra 1870» og spøkelsesballongen er bare delvis med (spøkelset tegnes
+som stiplet omriss; øvingsstart mangler). (5) Ingen lyd og ingen juice ennå.

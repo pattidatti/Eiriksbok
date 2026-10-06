@@ -249,6 +249,7 @@ const BatdekketKlokka = lazy(() => import('./BatdekketKlokka'));
 const Taburetten3D = lazy(() => import('./Taburetten3D'));
 const Generalstreiken = lazy(() => import('./Generalstreiken'));
 const KongensTallerkener = lazy(() => import('./KongensTallerkener'));
+const Pengeballongen = lazy(() => import('./Pengeballongen'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2542,6 +2543,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Inigo Jones sine hoffmaskerader i Banqueting House på 1630-tallet: forgylt prosceniumramme, malte kulisser i sentralperspektiv, skymaskiner og stearinlys under Rubens sin ultramarin og bladgull',
         loader: () => import('./KongensTallerkener'),
         Component: KongensTallerkener as never,
+    },
+    pengeballongen: {
+        id: 'pengeballongen',
+        title: 'Pengeballongen',
+        description:
+            'Embetsmannsstaten 1815-1884. Regjeringen er en ballong full av embetsmenn i flosshatt, og den flyr dit kongen vil. Du er Stortinget og styrer bare pengene: hold for å fyre i brenneren, slipp for å spare. Fjellene er utgifter staten må betale, og fra 1833 teller bøndene pengene ved hvert valg. Bruker du for mye, stemmer de deg ut. Først i 1884 får du styre.',
+        estimatedSeconds: 170,
+        sjanger: 'ettknapps-flyging',
+        tone: 'lett',
+        hook: 'Du er Stortinget med pengesekken. Kommer ballongen over fjellene uten at bøndene stemmer deg ut?',
+        cover: '/images/microgames/pengeballongen.webp',
+        kunst: 'Tonelitografier fra «Norge fremstillet i Tegninger» (1846-48): kornet litokritt på grågrønn tonestein, skrapt hvitt i snø og foss, håndkolorert oransje ballong',
+        loader: () => import('./Pengeballongen'),
+        Component: Pengeballongen as never,
     },
 };
 
