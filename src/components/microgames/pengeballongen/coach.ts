@@ -9,6 +9,7 @@ import { klaring } from './rules';
 import type { Game, Hendelse } from './state';
 import { BEAT, LAPP, SJANSE_LÆRDOM } from './texts';
 import { TUNING } from './tuning';
+import { BUDSJETT } from './hud';
 
 export interface Coach {
     text: ArcadeText;
@@ -39,10 +40,10 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             if (!h.ekte) {
                 if (!sagt.has('vinker')) {
                     sagt.add('vinker');
-                    text.point('vinker', LAPP.vinker, c.vedBallong(-130), { seconds: 4 });
+                    ved(LAPP.vinker, -130, P.halv, false, 3);
                 } else ved('Bøndene vinker deg forbi', -120, P.halv);
             } else if (h.år === TUNING.penger.førsteEkteValg) {
-                text.banner('Bondestortinget!', P.silke);
+                text.banner('BONDESTORTINGET', P.silke);
             } else ved(`Gjenvalgt ${h.år}!`, -120, P.silke, true);
             if (h.hatt) ved('+1 embetsmann om bord: tyngre', -40, P.karmin);
             break;
@@ -58,14 +59,11 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
         }
         case 'veiskille':
             if (h.konge && h.vei === 'under') ved('Under bommen! Ueland +1', -110, P.silke, true);
-            else if (h.hatt) {
-                ved('Kongens gave: dobbel sparing!', -125, P.silke, true, TUNING.ganger.gave);
-                ved('Men brenneren blir dyrere for godt', -85, P.karmin, false, 2.4);
-            }
+            else if (h.hatt) ved('Kongeveien: gave ×2, men +1 embetsmann', -125, P.silke, true, 3);
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
-                if (h.ganger > 5) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.4);
+                if (h.ganger > 5) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.1);
                 else ved(`Ueland ×${h.ganger}`, -60, P.silke, h.ganger >= 4, 1);
                 if (h.ganger === 2)
                     text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
@@ -76,17 +74,21 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             break;
         case 'sjanse':
             text.banner(`Ny sjanse fra ${h.tilbake}`, P.karmin);
-            ved(h.årsak === 'valg' ? 'Stemt ut!' : 'Rett i fjellet!', -120, P.karmin, true, 1.8);
-            if (h.straff > 0) ved(`-${h.straff} Spd.`, -80, P.karmin, false, 1.8);
+            ved(
+                (h.årsak === 'valg' ? 'Stemt ut!' : 'Rett i fjellet!') + (h.straff > 0 ? ` -${h.straff} Spd.` : ''),
+                -120,
+                P.karmin,
+                true,
+                2
+            );
             if (!sagt.has('sjanse')) {
                 sagt.add('sjanse');
                 text.lesson('sjanse', SJANSE_LÆRDOM, 1.5);
             }
             break;
         case 'bondeting':
-            text.banner('Bondetinget 1833', P.silke);
-            ved('Bøndene har flertall!', -125, P.silke, true, 8);
-            ved(`Brenneren billigere: ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd. i sekundet`, -85, P.silke, false, 8);
+            text.banner('BONDETINGET 1833', P.silke);
+            ved(`Bøndene har flertall: brenneren ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd. i sekundet`, -85, P.silke, false, 5);
             break;
         case 'brent':
             ved(`Fyrte tett over fjellet: Ueland ×${h.ganger}`, -60, P.karmin, false, 1.1);
@@ -132,12 +134,8 @@ export function coach(g: Game, c: Coach) {
             });
         }
     }
-    // Budsjettbaren ved ballongen: anker til lærings-øyeblikket om valget.
-    const vedBar = () => {
-        const sp = c.spill();
-        const B = TUNING.ballong;
-        return c.skjerm(B.skjermX - B.halvBredde - 26, sp.y - B.høyde + 40);
-    };
+    // Budsjettkortet i HUD-en (oppe til venstre): anker til lærings-øyeblikket om valget.
+    const vedBar = () => c.skjerm(BUDSJETT.x + 90, BUDSJETT.y + 40);
     if (!sagt.has('grense') && g.år >= TUNING.penger.førsteEkteValg - 1.2) {
         sagt.add('grense');
         const t0 = g.t;
@@ -148,8 +146,9 @@ export function coach(g: Game, c: Coach) {
     }
     if (!sagt.has('ganger') && g.år >= TUNING.ganger.fra + 0.3) {
         sagt.add('ganger');
-        text.point('ganger', LAPP.ganger, c.vedBallong(10), { seconds: 5 });
+        // Ueland-linja først (forklarer hvem han er), så tipset - begge i lappefeltet, i kø.
         c.lapp('Ole Gabriel Ueland: bondeleder som hatet sløsing', BX + 70, g.y - 150, P.silke, false, 4);
+        c.lapp(LAPP.ganger, BX + 70, g.y + 10, P.silke, false, 3);
     }
     if (!sagt.has('bom')) {
         const k = g.ter.knauser.find((kn) => kn.konge && kn.x0 - g.x < 560 && kn.x0 > g.x);

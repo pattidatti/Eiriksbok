@@ -386,17 +386,24 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
             ctx.stroke();
             krone(ctx, cx, kn.topp - 32, 1.1);
             // Skiltet: solid papir, mørk tekst (ikke blek kursiv mot himmelen).
-            const skilt = 'Kongeveien: +1 embetsmann';
+            // Både gaven (gull) og prisen (karmin) står på skiltet, så det er et ekte valg.
+            const gave = 'Kongeveien: gave ×2';
+            const pris = ', men +1 embetsmann';
             ctx.font = `bold 14px ${FONT}`;
-            const sw = ctx.measureText(skilt).width + 14;
+            const gw = ctx.measureText(gave).width;
+            const sw = gw + ctx.measureText(pris).width + 14;
             ctx.fillStyle = '#f8f4e8';
             ctx.fillRect(cx - sw / 2, kn.topp - 66, sw, 22);
             ctx.strokeStyle = P.karmin;
             ctx.lineWidth = 1.5;
             ctx.strokeRect(cx - sw / 2, kn.topp - 66, sw, 22);
-            ctx.fillStyle = P.kritt;
-            ctx.textAlign = 'center';
-            ctx.fillText(skilt, cx, kn.topp - 50);
+            ctx.fillStyle = P.silke;
+            ctx.fillRect(cx - sw / 2, kn.topp - 66, 5, 22);
+            ctx.textAlign = 'left';
+            ctx.fillStyle = P.silkeMørk;
+            ctx.fillText(gave, cx - sw / 2 + 7, kn.topp - 50);
+            ctx.fillStyle = P.karmin;
+            ctx.fillText(pris, cx - sw / 2 + 7 + gw, kn.topp - 50);
         } else {
             const fall = Math.max(0, (g.x - (kn.x0 - 520)) / 220);
             if (fall < 2.2) {

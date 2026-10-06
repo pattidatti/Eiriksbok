@@ -532,3 +532,37 @@ Kjente svakheter: (1) Nybegynner og flink er enda lenger fra hverandre (480 mot 
 venner/riksrett-port er fortsatt ikke bygd. (3) Om gaven ×2 i 5 s er verdt 15 % dyrere brenner for
 en elev, er ikke prøvd av en ekte elev; flink-roboten tar under-veien når den kan.
 (4) Selvspill, scene-audit og likhet er kjørt etter denne teksten; tallene står i commit-rapporten.
+
+### Forbedring 4 (siste runde, etter vurdering runde 4: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 3, Unikt 4)
+
+Bare lesbarhet og synlighet, ingen nye regler eller farer.
+(A) Lesbart: lappene står ikke lenger ved ballongen. Det er ett fast lappefelt under tidslinja
+(mellom Ueland-kortet og Spart), og bare én lapp vises om gangen. Viktige lapper venter i kø (maks
+to; den aktive viker etter 3 s når noen venter), korte tilbakemeldinger (Ueland ×n, Hårfint, Fyrte
+tett) byttes ut eller droppes. Lapper som før kom i par, er slått sammen («Stemt ut! -n Spd.»,
+Bondetinget i én linje). «Bøndene stemmer ennå på embetsmenn» og «Gli tett, men fyr før ryggen» er
+flyttet fra pekere ved ballongen til lappefeltet. Ueland-linja («Ole Gabriel Ueland: bondeleder som
+hatet sløsing») står først i køen, rett etter Bondetinget-lappen, og vises i minst 3 s.
+Budsjettbaren er flyttet inn i HUD-en: et fast kort under Ueland-portrettet med en liggende bar og
+etiketten «Budsjett til valget 18xx» alltid synlig. Under 25 % igjen blir etiketten, baren og kanten
+røde og blinker. «Spd. = speciedaler, datidens penger» stakk ut av Spart-kortet og er kortet til
+«Spd. = speciedaler». All tekst er 13 px eller større.
+(B) Kongeveien: én lapp «Kongeveien: gave ×2, men +1 embetsmann» (før: to lapper, der straffen var
+den som syntes). Skiltet over knausen sa også bare «Kongeveien: +1 embetsmann»; nå står
+«Kongeveien: gave ×2» i gull og «, men +1 embetsmann» i karmin på samme skilt. Mens gaven varer, blinker Ueland-kortet med gullkant og viser «gave ×2: n s»,
+og gullmyntene drysser rundt ballongen som før. Bondetinget 1833: banneret «BONDETINGET 1833», og
+budsjettkortet får en synlig bredere og høyere bar (150x12 -> 200x24 px), gullkant og stempelet
+«BONDETINGET 1833» som står til 1838,5 - så det er på skjermen ved spillsekund 20.
+
+Simulering (200 runder): grønn og uendret (bare tegning og tekst er rørt). flink 100 %, median 5364
+(p10 4895, p90 5812); nybegynner 22 %, median 480; sløseren 0 % (23), gniten/passiv 18, tilfeldig
+39. 34,2 valg per minutt, press 0,30 -> 0,58 -> 0,74.
+
+Prøvd som IKKE virket / valgt bort: å la lappene stå ved ballongen men skyve hverandre opp (slik det
+var) - med tre-fire lapper samtidig la de seg over ballongen og budsjettbaren. En vertikal
+budsjettbar i HUD-en ble valgt bort: den liggende baren får plass til etiketten på samme kort.
+
+Kjente svakheter: (1) Sverdrup-venner/riksrett-port er fortsatt ikke bygd. (2) Midten 1840-1880 er
+fortsatt lik (samme bakkebølge). (3) Nybegynner og flink er langt fra hverandre (480 mot 5364).
+(4) Pekerne fra arkadeskallet (hold, Ola-boka, bommen, roret) står fortsatt ved det de peker på.
+(5) Selvspill, scene-audit og likhet er kjørt etter denne teksten; tallene står i commit-rapporten.

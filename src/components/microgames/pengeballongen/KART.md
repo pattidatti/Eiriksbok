@@ -18,7 +18,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 | `figures.ts` | Ballongen med bonde, Ueland, flosshatter og Sverdrup; spøkelset; tingstua; funnet; kronen; Stortinget. |
 | `hud.ts` | Litografibladet: papirmarg, bildetekst, tast, Spart, brennerpris, tidslinja (målet), Ueland-ovalen, valgstabelen. |
 | `draw.ts` | Setter bildet sammen (rekkefølgen), `skala`/`tilSkjerm`/`flateX`. |
-| `fx.ts` | Partikler (mynter, gnister, røyk, hatter, luer, papir), mynter som flyr til telleren, rystelse i ekte tid. |
+| `fx.ts` | Lappefeltet (én lapp om gangen, kø), partikler (mynter, gnister, røyk, hatter, luer, papir), mynter som flyr til telleren, rystelse i ekte tid. |
 | `juice.ts` | Hva verden gjør hver ramme (mynter i brenneren, gnister i båndet, nesten-bom) og ved hendelser. |
 | `sound.ts` | Lydene på `createArcadeSynth`. |
 | `coach.ts` | All tekst under runden: bannere, lapper, de tre lærings-øyeblikkene, poengtekst. |
@@ -48,9 +48,14 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
     i bunnen (40 x gangeren). Uten roret synker ballongen for sakte til å nå dem.
 
 11. Bondetinget (hendelse `bondeting` ved 1833, ca. 14 s spilltid): brenneren går fra
-    `penger.førBonde` (14) til `penger.perSek` (10) Spd/s, budsjettbaren blir bredere (12 -> 26 px),
-    gløder og har lappen «Bondetinget: billigere brenner» under seg til 1838,5, så filmbildet ved
-    20 s fanger det. Baren heter «Budsjett til valget 18xx» hele runden.
+    `penger.førBonde` (14) til `penger.perSek` (10) Spd/s, banneret «BONDETINGET 1833», og
+    budsjettkortet i HUD-en (`BUDSJETT` i hud.ts, fast under Ueland-portrettet) får en bredere og
+    høyere bar (150x12 -> 200x24), gullkant og stempelet «BONDETINGET 1833» til 1838,5, så
+    filmbildet ved 20 s fanger det. Etiketten «Budsjett til valget 18xx» står alltid; under 25 %
+    igjen blir etikett, bar og kant røde og blinker.
+15. Lappene (forbedring 4): bare én om gangen, i et fast felt under tidslinja (`LAPPEFELT` i fx.ts),
+    aldri ved ballongen. Viktige lapper venter i kø (maks to, den aktive viker etter 3 s); korte
+    (`sek` <= 1,1: Ueland ×n, Hårfint) byttes ut eller droppes. x/y i `lapp()` brukes ikke lenger.
 12. Kongens veto er fjernet (forbedring 3): det var bare ekstra synk, ikke et valg.
 13. Gangeren går til ×10 (`ganger.maks`); over ×5 kommer fartsstriper, lyd, blink og «Full fart!».
 14. Rorstrekket er ca. 15 s (`rorTempo` 30) med fem daler, så filmbildet ved 110 s viser roret.

@@ -1,6 +1,6 @@
 // HUD-en er selve litografibladet: papirmarg med trykkekant, bildeteksten i nedre marg
 // (år og sted i kursiv), «Spart» oppe til høyre, tidslinja 1815-1884 (målet), Ueland i et ovalt portrett
-// og budsjettbaren ved ballongen. Alt står på solide papirkort, så teksten er skarp.
+// og budsjettkortet under portrettet. Alt står på solide papirkort, så teksten er skarp.
 
 import { P } from './art';
 import type { Fx } from './fx';
@@ -100,7 +100,7 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
     ctx.font = `14px ${FONT}`;
     ctx.fillStyle = P.kritt;
     ctx.fillText(
-        g.år < T.penger.stabelFra ? 'Spd. = speciedaler, datidens penger' : v.rekord && !v.øving ? `Rekord ${spd(v.rekord)}` : '',
+        g.år < T.penger.stabelFra ? 'Spd. = speciedaler' : v.rekord && !v.øving ? `Rekord ${spd(v.rekord)}` : '',
         934,
         85
     );
@@ -144,74 +144,89 @@ function sjanser(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     void tid;
 }
 
+/** Budsjettkortet står fast oppe til venstre, under Ueland-portrettet - aldri ved ballongen. */
+export const BUDSJETT = { x: 16, y: 120 };
+
 /**
- * Budsjettet til neste valg: én stående bar rett ved ballongen. Full bar = alt bøndene tillater
- * denne perioden. Den tømmes når du fyrer, og fylles igjen ved hvert valg.
+ * Budsjettet til neste valg: et fast kort i HUD-en med en liggende bar. Full bar = alt bøndene
+ * tillater denne perioden. Den tømmes når du fyrer, og fylles igjen ved hvert valg.
+ * Bondetinget 1833: baren blir synlig bredere og høyere, og kortet får stempelet «BONDETINGET 1833».
  */
 function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
-    const B = T.ballong;
     const igjen = Math.max(0, 1 - g.periode / T.penger.grense);
     const fare = igjen < 0.25;
     const inn = Math.min(1, (g.år - (T.penger.førsteEkteValg - 1.2)) / 0.4);
-    // Bondetinget 1833: baren blir synlig bredere - bøndene bestemmer over pengene nå.
-    const w = 12 + 14 * Math.max(0, Math.min(1, (g.år - T.penger.førsteEkteValg) / 0.6));
-    const h = 92;
-    const x = B.skjermX - B.halvBredde - 34;
-    const y = Math.max(MARG.topp + 34, Math.min(MARG.bunn - h - 8, g.y - B.høyde + 2));
+    const vokst = Math.max(0, Math.min(1, (g.år - T.penger.førsteEkteValg) / 0.6));
+    const bw = 150 + 50 * vokst;
+    const bh = 12 + 12 * vokst;
+    const bonde = g.år >= T.penger.førsteEkteValg ? Math.max(0, 1 - (g.år - T.penger.førsteEkteValg) / 5.5) : 0;
+
+    const neste = g.ter.valg[g.nesteValg];
+    const etikett = neste ? `Budsjett til valget ${neste.år}` : 'Budsjett';
+    ctx.font = `bold 14px ${FONT}`;
+    const ew = ctx.measureText(etikett).width;
+    const W = Math.max(bw, ew) + 20;
+    const H = 30 + bh + 10 + (bonde > 0 ? 22 : 0);
+    const { x, y } = BUDSJETT;
+
     ctx.save();
     ctx.globalAlpha = inn;
     const rist = fare ? Math.sin(tid * 30) * 1.2 : 0;
     ctx.translate(rist, 0);
-    kort(ctx, x - 3, y - 3, w + 6, h + 6);
-    // Bondetinget 1833: baren gløder i to år - bøndene har tatt over pengene.
-    const bonde = Math.max(0, 1 - (g.år - T.penger.førsteEkteValg) / 5.5);
-    if (bonde > 0 && g.år >= T.penger.førsteEkteValg) {
+    kort(ctx, x, y, W, H);
+    // Bondetinget: kortet gløder i gull de første årene etter 1833.
+    if (bonde > 0) {
         ctx.strokeStyle = P.silke;
         ctx.lineWidth = 3 + 3 * Math.sin(tid * 10) ** 2;
         ctx.globalAlpha = inn * bonde;
-        ctx.strokeRect(x - 7, y - 7, w + 14, h + 14);
+        ctx.strokeRect(x - 4, y - 4, W + 8, H + 8);
         ctx.globalAlpha = inn;
     }
-    // Fyllet: lyst og trygt, karmin når det nesten er tomt.
-    const fh = (h - 4) * igjen;
+    // Nær grensen: rød kant som blinker.
+    if (fare) {
+        ctx.strokeStyle = P.karmin;
+        ctx.lineWidth = 3;
+        ctx.globalAlpha = inn * (0.55 + 0.45 * Math.sin(tid * 12));
+        ctx.strokeRect(x - 2, y - 2, W + 4, H + 4);
+        ctx.globalAlpha = inn;
+    }
+    // Etiketten: alltid synlig, rød når budsjettet nesten er brukt opp.
+    ctx.fillStyle = fare ? P.karmin : P.kritt;
+    ctx.textAlign = 'left';
+    ctx.fillText(etikett, x + 10, y + 20);
+    // Baren: tom ramme, fyllet lyst og trygt, karmin og blinkende når det nesten er tomt.
+    const bx = x + 10;
+    const by = y + 30;
+    ctx.fillStyle = PAPIR;
+    ctx.fillRect(bx, by, bw, bh);
     ctx.fillStyle = fare ? P.karmin : P.silke;
-    if (fare) ctx.globalAlpha = inn * (0.65 + 0.35 * Math.sin(tid * 12));
-    ctx.fillRect(x + 2, y + 2 + (h - 4 - fh), w - 4, fh);
+    if (fare) ctx.globalAlpha = inn * (0.6 + 0.4 * Math.sin(tid * 12));
+    ctx.fillRect(bx, by, bw * igjen, bh);
     ctx.globalAlpha = inn;
-    // Myntstreker hver 5. spesidaler.
     ctx.strokeStyle = 'rgba(46,50,54,0.35)';
     ctx.lineWidth = 1;
     for (let k = 5; k < T.penger.grense; k += 5) {
-        const ly = y + 2 + (h - 4) * (k / T.penger.grense);
+        const lx = bx + bw * (1 - k / T.penger.grense);
         ctx.beginPath();
-        ctx.moveTo(x + 2, ly);
-        ctx.lineTo(x + w - 2, ly);
+        ctx.moveTo(lx, by);
+        ctx.lineTo(lx, by + bh);
         ctx.stroke();
     }
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.3;
+    ctx.strokeRect(bx, by, bw, bh);
     if (fx.stabelBlink > 0) {
         ctx.strokeStyle = P.karmin;
         ctx.globalAlpha = fx.stabelBlink;
         ctx.lineWidth = 3;
-        ctx.strokeRect(x - 5, y - 5, w + 10, h + 10);
+        ctx.strokeRect(bx - 3, by - 3, bw + 6, bh + 6);
         ctx.globalAlpha = inn;
     }
-    // Lappen over: når neste valg er.
-    const neste = g.ter.valg[g.nesteValg];
-    const etikett = neste ? `Budsjett til valget ${neste.år}` : 'Budsjett';
-    ctx.font = `bold 13px ${FONT}`;
-    const ew = ctx.measureText(etikett).width + 12;
-    const ex = x + w / 2 - ew / 2;
-    kort(ctx, ex, y - 26, ew, 19);
-    ctx.fillStyle = fare ? P.karmin : P.kritt;
-    ctx.textAlign = 'center';
-    ctx.fillText(etikett, x + w / 2, y - 12);
-    // Bondetinget-lappen under baren de første årene etter 1833.
-    if (bonde > 0 && g.år >= T.penger.førsteEkteValg) {
-        const bt = 'Bondetinget: billigere brenner';
-        const bw = ctx.measureText(bt).width + 12;
-        kort(ctx, x + w / 2 - bw / 2, y + h + 8, bw, 19);
+    // Stempelet etter Bondetinget.
+    if (bonde > 0) {
+        ctx.font = `bold 15px ${FONT}`;
         ctx.fillStyle = P.silkeMørk;
-        ctx.fillText(bt, x + w / 2, y + h + 22);
+        ctx.fillText('BONDETINGET 1833', x + 10, by + bh + 22);
     }
     ctx.restore();
 }
@@ -278,6 +293,12 @@ function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     const s = (0.6 + 0.4 * inn) * (1 + fx.gangerSprett * 0.25);
     ctx.globalAlpha = inn;
     kort(ctx, 16, 14, 160, 98);
+    // Kongens gave: kortet får en blinkende gullkant så lenge sparingen er doblet.
+    if (g.gave > 0) {
+        ctx.strokeStyle = P.silke;
+        ctx.lineWidth = 3 + 2 * Math.sin(tid * 9) ** 2;
+        ctx.strokeRect(12, 10, 168, 106);
+    }
     ctx.globalAlpha = 1;
     ctx.save();
     ctx.translate(cx, cy);
