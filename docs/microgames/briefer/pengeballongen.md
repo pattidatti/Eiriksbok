@@ -462,3 +462,38 @@ ikke prøvd av en ekte elev. (3) Flink og nybegynner er langt fra hverandre (303
 elev ligger trolig midt imellom. (4) Rangene ble satt for runde 6; flink når nå «Ueland selv» (3000).
 (5) Likheten (0,46) er fortsatt ikke langt under grensen på 0,50.
 
+### Forbedring 2 (etter vurdering runde 2: Gøy 3, Utseende 4, Lærerikt 3, Lesbart 4, Unikt 4)
+
+Gøy sto på 3 i to runder, så kjerneløkka er endret med regelskifter midt i runden:
+(1) Bondetinget 1833 endrer spillet synlig: brenneren går fra 14 til 10 Spd. i sekundet (før 1833
+bestemte embetsmennene), med to solide lapper, mynter som flyr til Spart, blink og en budsjettbar
+som gløder med etiketten «Bondetinget». (2) Kongens veto 1854,5-1860 er det ene nye elementet
+halvveis: motvind (+30 px/s synk) og nei-brev som blåser mot ballongen fra høyre, banner og lapp
+«Kongen stopper lovene: motvind!». Eleven må fyre mer akkurat da, så budsjettet blir trangere.
+(3) Rorstrekket er nå ca. 15 s (rorTempo 16 -> 30) med fem daler i stedet for tre; filmbildet ved
+110 s viser nå roret i bruk (PIL NED, stemme i dalen). (4) Ueland-gangeren går til ×7: over ×5
+kommer fartsstriper bak ballongen, ekstra lyd, lite rykk, blink og lappen «Ueland ×7! Full fart!».
+Tekst og HUD: «flosshatt» er byttet med «embetsmann» (skiltet over kongeveien er nå et solid
+papirskilt med mørk tekst i stedet for blek kursiv), én linje om Ueland første gang ×n vises
+(«Ueland: bondeleder som sa nei til sløsing»), og sjansene står inne i Spart-kortet (ett kort).
+Rangene er hevet (500/1100/1900/2800/3800) fordi flink nå tjener mer.
+
+Reglene eleven må huske er fortsatt tre: hold = betal og stig, budsjettet må holde til valget, gli
+tett = Ueland. Bondetinget og vetoet er ting som skjer med eleven, ikke nye taster.
+
+Feel-lista: 1-4 var på plass før. Styrket nå: 1 (ganger over ×5 svarer med lyd, rykk og blink),
+3 (nei-brevene kommer inn fra høyre og blåser ut), 4 (Bondetinget sender mynter til Spart).
+
+Simulering (200 runder): grønn. flink 100 %, median 4262 (p10 3995, p90 4344); nybegynner 19 %,
+median 466; sløseren 0 % (23), gniten/passiv 18, tilfeldig 39. 34,2 valg per minutt, press
+0,30 -> 0,62 -> 0,74. Selvspill: flink vant med 2655 (brukte én sjanse sent, runden 215 s ekte tid),
+Chromebook JS p95 11,3 ms, alle porter grønne. Scene-audit ren. Likhet: petisjonen-3d 0,47.
+
+Prøvd som IKKE virket / valgt bort: å korte ned midten for å få roret inn ved 80 s ville flyttet hele
+terrenget og budsjettet per periode; i stedet ble rorstrekket lengre, så runden når filmbildet ved
+110 s. Uvær 1848 ble valgt bort til fordel for vetoet, som hører til embetsmannsstaten.
+
+Kjente svakheter: (1) Bondetinget ved 33 s spilltid havner mellom filmbildene (20 og 35 s), så
+vurdereren ser det ikke på filmen. (2) Vetoet er bare ekstra synk; det kan føles som «tyngre» mer enn
+som et nytt valg. (3) Flink og nybegynner er fortsatt langt fra hverandre (4262 mot 466). (4) Sverdrup-
+venner/riksrett-port fra vurderingen er ikke bygd. (5) Likheten 0,47 er nær grensen 0,50.

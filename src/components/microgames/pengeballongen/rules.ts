@@ -29,7 +29,15 @@ export function synk(g: Game): number {
     const l = T.løft;
     const u = Math.min(1, Math.max(0, (g.år - T.fart.fraÅr) / (T.fart.tilÅr - T.fart.fraÅr)));
     const rolig = Math.min(1, l.rolig.fra + ((1 - l.rolig.fra) * (g.t - g.rolig)) / l.rolig.sekunder);
-    return (l.synkFra + (l.synkTil - l.synkFra) * u + g.hatter * l.perHatt) * rolig;
+    return (l.synkFra + (l.synkTil - l.synkFra) * u + g.hatter * l.perHatt + vetoSynk(g)) * rolig;
+}
+
+/** Kongens veto er i gang (motvind). */
+export const iVeto = (g: Game) => g.år >= T.veto.fra && g.år < T.veto.til;
+
+/** Ekstra synk fra motvinden under kongens veto. */
+function vetoSynk(g: Game): number {
+    return iVeto(g) ? T.veto.synk : 0;
 }
 
 /** Stigefart med full varme. Lavere jo høyere opp (tynn luft): å fly høyt koster mer. */
@@ -87,7 +95,7 @@ export const iBåndet = (g: Game) =>
  * (bondeflertallet) gjør den billigere.
  */
 export const kostnad = (g: Game) =>
-    T.penger.perSek *
+    (g.år < T.penger.førsteEkteValg ? T.penger.førBonde : T.penger.perSek) *
     (1 + T.veiskille.kongeveiKostnad * g.kongeHatter) *
     (g.olaboka ? 1 - T.penger.olaboka : 1);
 

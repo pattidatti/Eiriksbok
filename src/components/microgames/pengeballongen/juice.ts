@@ -3,7 +3,7 @@
 
 import { bakke } from './terrain';
 import { blink, rist, slipp, type Fx } from './fx';
-import { iBåndet, klaring } from './rules';
+import { iBåndet, iVeto, klaring } from './rules';
 import type { Lyd } from './sound';
 import type { Game, Hendelse } from './state';
 import { TUNING } from './tuning';
@@ -53,6 +53,15 @@ export function juice(g: Game, fx: Fx, j: Juice, lyd: Lyd, dt: number, landet: n
     }
     if (g.varme > 0.3 && Math.random() < g.varme * 0.5) {
         slipp(fx, 'glo', BX + r(-4, 4), y - 30, { vx: r(-30, 10), vy: r(-40, -10), maks: 0.5 });
+    }
+
+    // Kongens veto: nei-brev blåser mot ballongen fra høyre (motvinden).
+    if (iVeto(g) && Math.random() < dt * 14) {
+        slipp(fx, 'papir', 980, r(40, 420), { vx: r(-620, -420), vy: r(60, 140), maks: 2, vr: r(-6, 6) });
+    }
+    // Ueland over ×5: fartsstriper bak ballongen.
+    if (g.ganger > 5 && Math.random() < 0.6) {
+        slipp(fx, 'gnist', BX - 30, y - r(10, 90), { vx: r(-700, -500), vy: r(-10, 10), maks: 0.25, str: 1.4 });
     }
 
     // Skraping: gnister fra lyngen under kurven, flere jo større gangeren er.
@@ -123,6 +132,11 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
             if (h.ganger > h.fra) {
                 fx.gangerSprett = 1;
                 lyd.ganger(h.ganger);
+                if (h.ganger > 5) {
+                    lyd.under();
+                    rist(fx, 3);
+                    blink(fx, 0.25, P.silke);
+                }
                 for (let i = 0; i < h.ganger + 1; i++)
                     slipp(fx, 'mynt', BX + r(-10, 10), y - 10, { maks: r(0.5, 0.8), mål: { x: 132, y: 62 } });
             } else lyd.gangerNed();
@@ -218,6 +232,20 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                 slipp(fx, 'papir', BX + r(-8, 8), y - 10, { maks: r(0.5, 0.8), mål: TELLER, vr: 8 });
             for (let i = 0; i < 8; i++)
                 slipp(fx, 'gnist', BX + r(-10, 10), y, { vx: r(-200, 200), vy: r(-260, -40), maks: 0.4 });
+            break;
+        case 'bondeting':
+            lyd.valg();
+            blink(fx, 0.4, P.silke);
+            fx.sprett = 1;
+            for (let i = 0; i < 12; i++)
+                slipp(fx, 'mynt', BX + r(-10, 10), y - 30, { maks: r(0.6, 0.9), mål: TELLER });
+            break;
+        case 'veto':
+            if (!h.slutt) {
+                lyd.stemtUt();
+                rist(fx, 6);
+                blink(fx, 0.35, P.karmin);
+            } else lyd.vinker();
             break;
         case 'roret':
             lyd.funn();

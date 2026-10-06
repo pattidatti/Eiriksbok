@@ -17,6 +17,8 @@ export type Hendelse =
     | { slag: 'sjanse'; årsak: Årsak; år: number; tilbake: number; straff: number }
     | { slag: 'stemme'; verdi: number }
     | { slag: 'roret' }
+    | { slag: 'bondeting' }
+    | { slag: 'veto'; slutt: boolean }
     | { slag: 'landet' };
 
 /** Det som lagres ved hvert valgflagg fra 1833, så en ny sjanse starter der. */

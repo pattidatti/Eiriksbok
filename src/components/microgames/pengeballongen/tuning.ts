@@ -16,8 +16,9 @@ export const TUNING = {
         slutt: 1884.5,
         /** Riksretten er over: fra her går tida sakte, og eleven har roret. */
         rorFra: 1884,
-        /** Sekunder per år i rorstrekket (1884,0-1884,5 = ca. 8 s). */
-        rorTempo: 16,
+        /** Sekunder per år i rorstrekket (1884,0-1884,5 = ca. 15 s): siste etappe der eleven
+         * styrer ned mot Løvebakken. */
+        rorTempo: 30,
     },
 
     // Roret etter riksretten: pil ned / S / trykk lavt styrer ballongen ned, gratis.
@@ -31,7 +32,7 @@ export const TUNING = {
         /** Stemmene i dalene: verdt så mye ganger Ueland-gangeren. */
         stemme: 40,
         /** Dalene i rorstrekket: antall, dybde (px under kammen) og kammen. */
-        daler: 3,
+        daler: 5,
         kamY: 360,
         dalY: 490,
         /** Fra kanten av kammen til bunnen av dalen (px vei): bratt. */
@@ -97,6 +98,8 @@ export const TUNING = {
     penger: {
         /** Spesidaler per sekund du holder (før kongeveiens flosshatter gjør brenneren dyrere). */
         perSek: 10,
+        /** Før Bondetinget i 1833 bestemte embetsmennene: brenneren koster mer (Spd/s). */
+        førBonde: 14,
         /** Spart per sekund når du slipper før Ueland kommer om bord (1833). */
         førUeland: 6,
         /** Spart per sekund når du slipper over nær-båndet fra 1833. I båndet: perSek x gangeren. */
@@ -129,8 +132,12 @@ export const TUNING = {
         trinn: 2,
         /** Over båndet faller gangeren ett trinn per så mange sekunder. */
         fall: 0.5,
-        maks: 5,
+        maks: 7,
     },
+
+    // Kongens veto: én valgperiode midt i runden blåser kongens nei-brev mot ballongen.
+    // Motvind = ballongen synker fortere, så hvert sekund med brenneren teller mer.
+    veto: { fra: 1854.5, til: 1860, synk: 30 },
 
     // Formene i hver valgperiode fra 1833 (rekkefølgen står i levels.ts).
     form: {
@@ -180,11 +187,11 @@ export const TUNING = {
     // Rangtrinn etter sparte spesidaler (stigende).
     ranger: [
         [0, 'Vararepresentant'],
-        [400, 'Bonderepresentant'],
-        [900, 'Sparebonde'],
-        [1500, 'Ueland-elev'],
-        [2200, 'Dalanes stolthet'],
-        [3000, 'Ueland selv'],
+        [500, 'Bonderepresentant'],
+        [1100, 'Sparebonde'],
+        [1900, 'Ueland-elev'],
+        [2800, 'Dalanes stolthet'],
+        [3800, 'Ueland selv'],
     ] as [number, string][],
 };
 

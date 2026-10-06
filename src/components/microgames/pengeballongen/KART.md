@@ -45,6 +45,13 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
     ballongen (`ror()`), brenneren svarer raskere (`fly()`), og tre bratte daler har en stemme
     i bunnen (40 x gangeren). Uten roret synker ballongen for sakte til å nå dem.
 
+11. Bondetinget (hendelse `bondeting` ved 1833): brenneren går fra `penger.førBonde` (14) til
+    `penger.perSek` (10) Spd/s, budsjettbaren gløder i to år med etiketten «Bondetinget».
+12. Kongens veto (`veto`, 1854,5-1860): motvind, `synk()` + `veto.synk`, nei-brev blåser fra høyre
+    (juice.ts). Hendelsen `veto` ved start og slutt.
+13. Gangeren går til ×7 (`ganger.maks`); over ×5 kommer fartsstriper, lyd, blink og «Full fart!».
+14. Rorstrekket er ca. 15 s (`rorTempo` 30) med fem daler, så filmbildet ved 110 s viser roret.
+
 ## Knapper
 
 - Flink-robotens poeng: `ganger.nær`, `ganger.vindu`, `ganger.trinn`. Vinduet er det som gjorde ×5 mulig.

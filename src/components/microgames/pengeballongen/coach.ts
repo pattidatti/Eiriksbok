@@ -44,7 +44,7 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             } else if (h.år === TUNING.penger.førsteEkteValg) {
                 text.banner('Bondestortinget!', P.silke);
             } else ved(`Gjenvalgt ${h.år}!`, -120, P.silke, true);
-            if (h.hatt) ved('+1 flosshatt', -40, P.karmin);
+            if (h.hatt) ved('+1 embetsmann om bord: tyngre', -40, P.karmin);
             break;
         }
         case 'funn': {
@@ -62,7 +62,12 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
-                ved(`Ueland ×${h.ganger}`, -60, P.silke, h.ganger >= 4, 1);
+                if (h.ganger > 5) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.4);
+                else ved(`Ueland ×${h.ganger}`, -60, P.silke, h.ganger >= 4, 1);
+                if (!sagt.has('hvem')) {
+                    sagt.add('hvem');
+                    ved('Ueland: bondeleder som sa nei til sløsing', -100, P.silke, false, 3.2);
+                }
                 if (h.ganger === 2)
                     text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
                         at: c.vedBallong(-60),
@@ -78,6 +83,17 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
                 sagt.add('sjanse');
                 text.lesson('sjanse', SJANSE_LÆRDOM, 1.5);
             }
+            break;
+        case 'bondeting':
+            ved('Bøndene har flertall!', -125, P.silke, true, 2.8);
+            ved(`Brenneren billigere: ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd. i sekundet`, -85, P.silke, false, 2.8);
+            break;
+        case 'veto':
+            if (!h.slutt) {
+                text.banner('Kongens veto!', P.karmin);
+                ved('Kongen stopper lovene: motvind!', -120, P.karmin, true, 2.6);
+                ved('Ballongen synker fortere - spar på brenneren', -80, P.karmin, false, 2.6);
+            } else ved('Vetoet er over: vinden løyer', -110, P.silke, true, 1.8);
             break;
         case 'stemme':
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);

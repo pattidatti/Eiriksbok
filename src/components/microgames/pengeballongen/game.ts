@@ -82,8 +82,14 @@ function slutt(g: Game, årsak: Årsak, brukt?: number) {
 
 export function update(g: Game, dt: number) {
     if (g.mode !== 'play' || dt <= 0) return;
+    const førÅr = g.år;
     g.t += dt;
     g.år = årFor(g.t);
+    // Regelskiftene midt i runden: Bondetinget (brenneren billigere) og kongens veto (motvind).
+    const krysset = (år: number) => førÅr < år && g.år >= år;
+    if (krysset(T.penger.førsteEkteValg)) g.hendelser.push({ slag: 'bondeting' });
+    if (krysset(T.veto.fra)) g.hendelser.push({ slag: 'veto', slutt: false });
+    if (krysset(T.veto.til)) g.hendelser.push({ slag: 'veto', slutt: true });
     g.x = veiVed(g.t);
 
     const b = brettFor(g.år);
