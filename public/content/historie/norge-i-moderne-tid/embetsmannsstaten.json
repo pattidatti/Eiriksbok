@@ -119,6 +119,13 @@
       "content": "Men legg merke til én ting: Ueland ville ikke velte systemet. Når bøndene hadde fått det de ville, ga han ofte regjeringen det den ba om (Svendsen & Mardal, 2026). Bøndene brukte flertallet til å spare penger og styre sin egen bygd. Regjeringen og embetsverket ble sittende urørt."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "pengeballongen"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/placeholder.webp",
       "alt": "Bondeleder Ole Gabriel Ueland taler i Stortinget",
