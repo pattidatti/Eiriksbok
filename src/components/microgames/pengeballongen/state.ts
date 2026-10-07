@@ -16,8 +16,9 @@ export type Hendelse =
     | { slag: 'krasj' }
     | { slag: 'sjanse'; årsak: Årsak; år: number; tilbake: number; straff: number }
     | { slag: 'stemme'; verdi: number }
-    | { slag: 'bevilg'; navn: string; pris: number; ja: boolean; hårfint: boolean }
+    | { slag: 'bevilg'; navn: string; pris: number; ja: boolean; hårfint: boolean; bonus: number }
     | { slag: 'bæres'; ferdig: true }
+    | { slag: 'ueland'; nei: boolean }
     | { slag: 'riksrett'; n: number }
     | { slag: 'roret' }
     | { slag: 'bondeting' }
@@ -46,9 +47,9 @@ export interface Game {
     t: number;
     /** Spilte sekunder i alt, også etter en ny sjanse (g.t spoles tilbake, denne gjør ikke det). */
     spilt: number;
-    /** Når runden startet (t). Øving fra 1870 starter midt i. */
+    /** Når runden startet (t). Øving fra 1868 starter midt i. */
     start: number;
-    /** Øvingsrunde («Øv fra 1870»): teller ikke for rekord. */
+    /** Øvingsrunde («Øv fra 1868»): teller ikke for rekord. */
     øving: boolean;
     år: number;
     brett: number;
@@ -88,6 +89,8 @@ export interface Game {
     /** Poengene: pengene du ikke brukte. */
     spart: number;
     ganger: number;
+    /** Året Ueland kom om bord (ved første bevilgningsport, ellers `ganger.fra`). Infinity = ikke ennå. */
+    uelandÅr: number;
     gangerTid: number;
     /** Summen av ganger x sekunder fra 1833 (snittet måles av simuleringen). */
     gangerSum: number;
@@ -147,6 +150,7 @@ function hoppTil(g: Game, år: number) {
     for (const f of ter.funn) if (f.x < g.x) f.tatt = true;
     for (const b of ter.bevilg) if (b.x < g.x) b.valgt = 'nei';
     g.olaboka = true;
+    if (ter.bevilg.some((b) => b.x < g.x)) g.uelandÅr = TUNING.år.start;
     for (let i = 0; i <= g.x / 8; i++) g.spor.push(g.y);
 }
 
@@ -182,6 +186,7 @@ function lagGame(seed: number): Game {
         periode: 0,
         spart: 0,
         ganger: 1,
+        uelandÅr: Infinity,
         gangerTid: 0,
         gangerSum: 0,
         gangerTidSum: 0,

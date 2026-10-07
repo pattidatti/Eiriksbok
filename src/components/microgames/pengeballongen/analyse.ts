@@ -26,6 +26,8 @@ export function analyser(runder = 100) {
         const sent: number[] = [];
         const under: number[] = [];
         let seire = 0;
+        let ja = 0;
+        let nei = 0;
         const tap: Record<string, number> = {};
         for (let r = 0; r < runder; r++) {
             const seed = 1000 + r * 7919;
@@ -43,11 +45,16 @@ export function analyser(runder = 100) {
                 }
                 update(g, PLAYTEST_DT);
                 klokke += PLAYTEST_DT;
-                for (const h of g.hendelser)
+                for (const h of g.hendelser) {
+                    if (h.slag === 'bevilg') {
+                        if (h.ja) ja++;
+                        else nei++;
+                    }
                     if (h.slag === 'veiskille' && h.port) {
                         knauser++;
                         if (h.vei === 'under') lave++;
                     }
+                }
                 g.hendelser.length = 0;
             }
             if (g.mode === 'won') seire++;
@@ -65,7 +72,7 @@ export function analyser(runder = 100) {
         }
         const f = (x: number) => x.toFixed(2);
         linjer.push(
-            `${navn.padEnd(11)} seier ${Math.round((100 * seire) / runder)} %  poeng ${median(poeng)} (p10 ${pct(poeng, 0.1)}, p90 ${pct(poeng, 0.9)})  ganger ${f(median(ganger))}  grense tidlig ${f(median(tidlig))} sent ${f(median(sent))} (p90 ${f(pct(sent, 0.9))})  under ${f(median(under))}  tap ${JSON.stringify(tap)}`
+            `${navn.padEnd(11)} seier ${Math.round((100 * seire) / runder)} %  poeng ${median(poeng)} (p10 ${pct(poeng, 0.1)}, p90 ${pct(poeng, 0.9)})  ganger ${f(median(ganger))}  grense tidlig ${f(median(tidlig))} sent ${f(median(sent))} (p90 ${f(pct(sent, 0.9))})  under ${f(median(under))}  nei ${nei}/${ja + nei}  tap ${JSON.stringify(tap)}`
         );
     }
     return linjer.join('\n');

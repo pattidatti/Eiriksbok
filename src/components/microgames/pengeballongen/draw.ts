@@ -85,7 +85,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
         varme: g.varme,
         hold: g.hold,
         hatter: g.hatter,
-        ueland: g.år >= TUNING.ganger.fra,
+        ueland: g.år >= g.uelandÅr,
         sverdrup: g.harRor,
         ganger: g.ganger,
         tid,

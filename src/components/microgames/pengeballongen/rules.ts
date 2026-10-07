@@ -103,9 +103,12 @@ export function nærhet(ter: Game['ter'], x: number, y: number): number {
     return min - y;
 }
 
+/** Er Ueland om bord (gangeren og nær-båndet er i spill)? */
+export const uelandOm = (g: Game) => g.år >= g.uelandÅr;
+
 /** Er kurven i nær-båndet (Ueland-gangeren vokser)? */
 export const iBåndet = (g: Game) =>
-    g.år >= T.ganger.fra && nærhet(g.ter, g.x, g.y) < T.ganger.nær;
+    uelandOm(g) && nærhet(g.ter, g.x, g.y) < T.ganger.nær;
 
 /** Hva brenneren koster nå (Spd/s): Ola-boka (bondeflertallet) gjør den billigere. */
 export const kostnad = (g: Game) =>
@@ -114,7 +117,7 @@ export const kostnad = (g: Game) =>
 
 /** Spart per sekund når du slipper: lite høyt oppe, mye tett over fjellet. */
 export function sparing(g: Game): number {
-    if (g.år < T.ganger.fra) return T.penger.førUeland;
+    if (!uelandOm(g)) return T.penger.førUeland;
     const s = iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor;
     // Rorstrekket går i sakte film (ett år = `rorTempo` s): sparingen følger årene, ikke
     // sekundene, ellers ville det siste halve året gitt mer enn hele resten av runden.

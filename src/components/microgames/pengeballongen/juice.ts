@@ -12,6 +12,8 @@ import { P } from './art';
 const BX = TUNING.ballong.skjermX;
 /** Der «Spart»-telleren står i HUD-en. */
 const TELLER = { x: 860, y: 44 };
+/** Omtrent der budsjettbaren står i bondestripa. */
+const BUDSJETTBAR = { x: 210, y: 56 };
 
 export interface Juice {
     mynt: number;
@@ -140,7 +142,7 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                     blink(fx, 0.25, P.silke);
                 }
                 for (let i = 0; i < h.ganger + 1; i++)
-                    slipp(fx, 'mynt', BX + r(-10, 10), y - 10, { maks: r(0.5, 0.8), mål: { x: 132, y: 62 } });
+                    slipp(fx, 'mynt', BX + r(-10, 10), y - 10, { maks: r(0.5, 0.8), mål: { x: 98, y: 46 } });
             } else lyd.gangerNed();
             break;
         case 'valg': {
@@ -149,6 +151,8 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
             const by = v ? bakke(g.ter, v.x) : 470;
             if (h.ekte) {
                 lyd.valg();
+                // Gjenvalgt: flagget i stripa rykker, og baren fylles igjen.
+                fx.flagg = 1;
                 for (let i = 0; i < 10; i++)
                     slipp(fx, 'lue', sx - 34 - r(0, 30), by - 14, {
                         vx: r(-80, 60),
@@ -156,7 +160,7 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                         maks: 1.4,
                         verden: true,
                     });
-            } else lyd.vinker();
+            }
             if (h.hatt) {
                 lyd.hatt();
                 slipp(fx, 'hatt', BX + 40, y - 120, { vx: -50, vy: 60, maks: 0.6, vr: 4 });
@@ -272,22 +276,46 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
             break;
         case 'bevilg':
             if (h.ja) {
-                // Sekken åpnes: myntene flyr fra telleren ned til porten, og staten løfter.
+                // Sekken åpnes: myntene flyr fra telleren ned til embetsmennene, en karmin bit
+                // rives av valgbudsjettet, og staten løfter.
                 stopp(fx, 0.1);
                 lyd.bevilg();
                 rist(fx, 4);
-                blink(fx, 0.3, P.silke);
+                blink(fx, 0.3, P.karmin);
                 fx.sprett = 1;
+                fx.tapp = 1;
+                fx.tappAndel = TUNING.bevilg.budsjett / grenseNå(g);
+                fx.stabelBlink = 1;
                 for (let i = 0; i < 14; i++)
                     slipp(fx, 'mynt', TELLER.x + r(-20, 20), TELLER.y + r(-6, 6), {
                         maks: r(0.5, 0.8),
                         mål: { x: BX + r(-10, 10), y: y - 6 },
                         vr: 10,
                     });
-            } else {
-                lyd.spart();
                 for (let i = 0; i < 6; i++)
-                    slipp(fx, 'mynt', BX + r(-10, 10), y - 10, { maks: r(0.5, 0.8), mål: TELLER });
+                    slipp(fx, 'mynt', BUDSJETTBAR.x + r(-40, 40), BUDSJETTBAR.y, {
+                        maks: r(0.6, 0.9),
+                        mål: { x: BX + r(-10, 10), y: y + 20 },
+                        vr: 10,
+                    });
+            } else {
+                // Nei til kongen: bøndene jubler, Ueland-bonusen flyr til telleren.
+                stopp(fx, 0.09);
+                lyd.spart();
+                lyd.valg();
+                rist(fx, 3);
+                blink(fx, 0.35, P.silke);
+                fx.sprett = 1;
+                fx.gangerSprett = 1;
+                const n = Math.min(16, 4 + Math.round(h.bonus / 4));
+                for (let i = 0; i < n; i++)
+                    slipp(fx, 'mynt', BX + r(-20, 20), y - 110 + r(-10, 10), { maks: r(0.5, 0.9), mål: TELLER });
+                for (let i = 0; i < 8; i++)
+                    slipp(fx, 'lue', BX + r(-30, 30), y - 110, {
+                        vx: r(-120, 120),
+                        vy: r(-360, -200),
+                        maks: 1.2,
+                    });
             }
             break;
         case 'bæres':
