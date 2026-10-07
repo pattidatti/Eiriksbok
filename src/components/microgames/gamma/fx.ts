@@ -12,7 +12,7 @@ const J = T.juice;
 const G = T.verden.gammaX;
 const GY = bakke(G);
 
-export type Slag = 'gnist' | 'snø' | 'flis' | 'damp';
+export type Slag = 'gnist' | 'snø' | 'flis' | 'damp' | 'glo' | 'dott';
 
 export interface Partikkel {
     slag: Slag;
@@ -66,6 +66,19 @@ export interface Fx {
     netter: number;
     /** Signal til teksten: lyset gikk så vidt forbi røyken. */
     såVidt: boolean;
+    /** 0-1: Inga kaster en kubbe (svinger armen mot bålet). */
+    kast: number;
+    /** 0-1: flammen strekker seg etter at kubben landet (squash og stretch). */
+    støt: number;
+    /** 0-1: den øverste kubben på bålet spretter når den lander. */
+    sett: number;
+    /** 0-1: familien kvikner til og lener seg mot varmen. */
+    varmet: number;
+    /** Alderen (s) på varmebølgene som går ut fra bålet. */
+    bølger: number[];
+    /** Kubber i rekke (lagt på tett etter hverandre) og tida siden forrige. */
+    rekke: number;
+    sidenSist: number;
 }
 
 export function nyFx(): Fx {
@@ -87,15 +100,26 @@ export function nyFx(): Fx {
         varmNatt: 0,
         netter: 0,
         såVidt: false,
+        kast: 0,
+        støt: 0,
+        sett: 0,
+        varmet: 0,
+        bølger: [],
+        rekke: 0,
+        sidenSist: 9,
     };
 }
 
 /** Hvor stabelen ved døra står (toppen), og hvor bålet er. */
 export const STABEL = { x: G + 92, y: GY - 10 };
 export const BÅL = { x: G, y: GY - 10 };
+/** Hånda til Inga der hun står ved døra inne i gamma, og ljoren (røykhullet) i taket. */
+export const HÅND = { x: G + 44, y: GY - 30 };
+export const LJORE = { x: G, y: GY - 66 };
 
 function spray(fx: Fx, slag: Slag, x: number, y: number, n: number, fart: number, opp: number) {
-    const maks = slag === 'gnist' ? 0.9 : slag === 'damp' ? 1.4 : 0.6;
+    const maks =
+        slag === 'gnist' ? 0.9 : slag === 'damp' ? 1.4 : slag === 'glo' ? 1.6 : slag === 'dott' ? 1.8 : 0.6;
     for (let i = 0; i < n; i++) {
         if (fx.partikler.length > 220) fx.partikler.shift();
         const a = Math.random() * Math.PI * 2;
@@ -108,7 +132,12 @@ function spray(fx: Fx, slag: Slag, x: number, y: number, n: number, fart: number
             vy: Math.sin(a) * v * 0.5 - opp * (0.6 + Math.random() * 0.6),
             liv: maks * (0.6 + Math.random() * 0.4),
             maks,
-            r: slag === 'snø' ? 1.5 + Math.random() * 2 : 1 + Math.random() * 1.6,
+            r:
+                slag === 'snø'
+                    ? 1.5 + Math.random() * 2
+                    : slag === 'dott'
+                      ? 6 + Math.random() * 4
+                      : 1 + Math.random() * 1.6,
         });
     }
 }
@@ -116,9 +145,13 @@ function spray(fx: Fx, slag: Slag, x: number, y: number, n: number, fart: number
 export function fxHendelse(fx: Fx, h: Hendelse, g: Game, lyd: Lyd) {
     switch (h.type) {
         case 'legg':
+            // Inga snur seg, svinger armen og kaster kubben i en bue på bålet.
+            fx.kast = 1;
+            fx.rekke = fx.sidenSist < J.rekke ? fx.rekke + 1 : 1;
+            fx.sidenSist = 0;
             fx.kubber.push({
-                fx: STABEL.x,
-                fy: STABEL.y,
+                fx: HÅND.x,
+                fy: HÅND.y,
                 tx: BÅL.x,
                 ty: BÅL.y,
                 t: 0,
@@ -192,6 +225,12 @@ export function fxTick(fx: Fx, g: Game, dt: number, ekte: number, lyd: Lyd, spil
     fx.løft = Math.max(0, fx.løft - dt * 3.5);
     fx.såVidt = false;
     fx.varmNatt = Math.max(0, fx.varmNatt - ekte * 1.6);
+    fx.kast = Math.max(0, fx.kast - dt * 3.2);
+    fx.støt = Math.max(0, fx.støt - dt * 2.2);
+    fx.sett = Math.max(0, fx.sett - dt * 4.5);
+    fx.varmet = Math.max(0, fx.varmet - dt * 1.8);
+    fx.sidenSist += dt;
+    fx.bølger = fx.bølger.map((b) => b + dt).filter((b) => b < J.bølge);
     if (!spiller) fx.slutt += ekte;
     // En varm natt: datoklossen gløder kort (ingen poengregn, ingen lyd hvert døgn).
     if (g.varmeNetter > fx.netter && spiller) fx.varmNatt = 1;
@@ -202,8 +241,19 @@ export function fxTick(fx: Fx, g: Game, dt: number, ekte: number, lyd: Lyd, spil
         k.t += dt;
         if (k.t >= k.dur) {
             if (k.tilBål) {
+                // Landing: blus, sprett, glør opp gjennom ljoren, en røykdott ut av den,
+                // en varmebølge ut over snøen og en familie som kvikner til.
+                const ekstra = Math.min(3, fx.rekke - 1);
                 fx.blus = 1;
-                spray(fx, 'gnist', BÅL.x, BÅL.y - 6, J.gnister, 90, 110);
+                fx.støt = 1;
+                fx.sett = 1;
+                fx.varmet = 1;
+                fx.bølger.push(0);
+                fx.rist = Math.max(fx.rist, J.ristKubbe + ekstra * 0.5);
+                spray(fx, 'gnist', BÅL.x, BÅL.y - 6, J.gnister + ekstra * 6, 90 + ekstra * 20, 110);
+                spray(fx, 'flis', BÅL.x, BÅL.y - 4, 4, 60, 50);
+                spray(fx, 'glo', BÅL.x, BÅL.y - 14, J.glør + ekstra * 2, 18, 70);
+                spray(fx, 'dott', LJORE.x, LJORE.y, J.dotter, 8, 26);
                 lyd.dunk();
             } else {
                 fx.iLufta = Math.max(0, fx.iLufta - 1);
@@ -252,6 +302,15 @@ export function fxTick(fx: Fx, g: Game, dt: number, ekte: number, lyd: Lyd, spil
         if (q.slag === 'gnist') {
             q.vy -= 30 * dt;
             q.vx *= 0.98;
+        } else if (q.slag === 'glo') {
+            // Glørne trekker mot ljoren og stiger ut i natta.
+            q.vx += (LJORE.x - q.x) * 2.2 * dt;
+            q.vx *= 0.96;
+            q.vy -= 12 * dt;
+        } else if (q.slag === 'dott') {
+            q.vy -= 10 * dt;
+            q.vx += 6 * dt;
+            q.r += 9 * dt;
         } else if (q.slag === 'damp') q.vy -= 8 * dt;
         else q.vy += 160 * dt;
     }

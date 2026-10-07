@@ -137,6 +137,17 @@ function partikler(ctx: Ctx, fx: Fx) {
             ctx.moveTo(q.x, q.y);
             ctx.lineTo(q.x - q.vx * 0.03, q.y - q.vy * 0.03);
             ctx.stroke();
+        } else if (q.slag === 'glo') {
+            ctx.fillStyle = a > 0.6 ? `rgba(255,214,120,${a})` : `rgba(194,58,43,${a})`;
+            ctx.fillRect(q.x - 1.2, q.y - 1.2, 2.4, 2.4);
+        } else if (q.slag === 'dott') {
+            ctx.fillStyle = `rgba(180,184,196,${0.45 * a})`;
+            ctx.strokeStyle = `rgba(17,17,17,${0.5 * a})`;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(q.x, q.y, q.r, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
         } else if (q.slag === 'flis') {
             ctx.fillStyle = `rgba(168,116,58,${a})`;
             ctx.fillRect(q.x, q.y, 3, 1.6);
@@ -152,11 +163,28 @@ function partikler(ctx: Ctx, fx: Fx) {
         if (k.t < 0) continue;
         const f = Math.min(1, k.t / k.dur);
         const x = k.fx + (k.tx - k.fx) * f;
-        const y = k.fy + (k.ty - k.fy) * f - Math.sin(f * Math.PI) * (k.tilBål ? 26 : 18);
+        const y = k.fy + (k.ty - k.fy) * f - Math.sin(f * Math.PI) * (k.tilBål ? T.juice.kastBue : 18);
+        if (k.tilBål) {
+            // Et lite glødespor bak kubben på vei inn i bålet.
+            ctx.strokeStyle = `rgba(227,165,43,${0.5 * f})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            const f0 = Math.max(0, f - 0.25);
+            for (let s = f0; s <= f; s += 0.05) {
+                const sx = k.fx + (k.tx - k.fx) * s;
+                const sy = k.fy + (k.ty - k.fy) * s - Math.sin(s * Math.PI) * T.juice.kastBue;
+                if (s === f0) ctx.moveTo(sx, sy);
+                else ctx.lineTo(sx, sy);
+            }
+            ctx.stroke();
+        }
         ctx.save();
         ctx.translate(x, y);
-        ctx.rotate(f * Math.PI * (k.tilBål ? -2 : 1));
-        endeved(ctx, 0, 0, 4.2);
+        ctx.rotate(f * Math.PI * (k.tilBål ? -3 : 1));
+        // Strekkes litt i farta, som en tegnefilmkubbe.
+        const strekk = k.tilBål ? 1 + 0.35 * Math.sin(f * Math.PI) : 1;
+        ctx.scale(strekk, 1 / strekk);
+        endeved(ctx, 0, 0, 4.6);
         ctx.restore();
     }
 }

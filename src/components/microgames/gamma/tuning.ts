@@ -88,7 +88,18 @@ export const TUNING = {
     /** Spillfølelsen (bare bilde og lyd, ingen spillregler). */
     juice: {
         /** Sekunder en kubbe flyr fra stabelen til bålet, og fra armene til stabelen. */
-        kubbeFlyr: 0.26,
+        kubbeFlyr: 0.32,
+        /** Hvor høyt kubben buer når Inga kaster den på bålet (px). */
+        kastBue: 38,
+        /** Glør som stiger gjennom ljoren, og røykdotter ut av den, per kubbe. */
+        glør: 6,
+        dotter: 2,
+        /** Rykk i bildet når kubben lander. */
+        ristKubbe: 1.4,
+        /** Sekunder varmebølgen bruker ut over gamma og snøen. */
+        bølge: 0.7,
+        /** Kubber lagt på innen så mange sekunder etter hverandre gir et større blus. */
+        rekke: 0.7,
         leverFlyr: 0.22,
         /** Gnister når kubben lander, og snøfnugg ved føttene per sekund (tom / med fang). */
         gnister: 16,

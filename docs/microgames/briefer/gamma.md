@@ -270,3 +270,13 @@ Gråboksen ble kledd i John Savios fargetresnitt. Spillreglene, tallene i balans
 | Flaks og nesten-bom | Mangler: lyset gikk forbi uten at noe skjedde | Pust, hjerteslag, ring og «Det gikk så vidt.» når lyset går over gamma |
 | Ting kommer og går | Delvis: båten gled inn og ut | Båten glir inn og ut med lyd, lampa blitser, lappene spretter inn og blekner, skipene glir inn, familien går ut |
 | Belønningen merkes | Delvis: bare slutt-skjermen | Datoklossen gløder etter hver varme natt, «+4 ved», seier med skip, familien og tonerekke; tap med rystelse, banner og saklig slutt-bilde |
+
+### Mer liv i kastet (eier, chat 2026-10-07: «noen flere animasjoner når man hiver ved på plass»)
+
+Inga lener seg fram og svinger armen i et overhåndskast med fartsstreker. Kubben spinner i en
+høyere bue fra hånda hennes med et glødespor og strekkes i farta. Når den lander, trykkes flammen
+ned og skyter opp (squash og stretch, under taket). Den øverste kubben spretter, og det kommer
+gnister og flis. Glør trekker opp mot ljoren, og en røykdott går ut av den, så eleven ser at hver
+kubbe gir røyk. En varm ring går ut over snøen, og familien kvikner til og lener seg mot bålet.
+Kubber lagt på tett etter hverandre gir større blus og flere gnister. Tallene står i `tuning.ts`
+under `juice`.

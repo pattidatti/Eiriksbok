@@ -114,8 +114,10 @@ function familie(ctx: Ctx, g: Game, fx: Fx, klokke: number, frost: number) {
     const varm = Math.max(0, g.varme / T.varme.maks);
     const skjelv = g.varme < T.varme.rim || frost > 0 ? Math.sin(klokke * 42) * (1.2 + frost) : 0;
     FAMILIE.forEach((p, i) => {
-        const x = G + p.dx + (i % 2 ? skjelv : -skjelv) * (frost >= 1 ? 0 : 1);
-        const y = GY - 1;
+        // Når en kubbe lander, kvikner familien til: et lite hopp og et len mot bålet.
+        const kvikk = Math.sin(fx.varmet * Math.PI) * (1 - i * 0.15);
+        const x = G + p.dx + (i % 2 ? skjelv : -skjelv) * (frost >= 1 ? 0 : 1) - Math.sign(p.dx) * kvikk * 2.5;
+        const y = GY - 1 - kvikk * 3;
         // Kroppen under feltet (reinskinn): mørk klump med svart kontur.
         ctx.fillStyle = '#3a2a1e';
         ctx.strokeStyle = P.svart;
@@ -306,8 +308,10 @@ export function gamma(ctx: Ctx, g: Game, fx: Fx, klokke: number, utgang: number)
     }
     const påBålet = Math.ceil(g.bål / T.varme.perKubbe - 1e-6);
     for (let k = 0; k < påBålet; k++) {
+        // Den øverste kubben spretter når den lander.
+        const hopp = k === påBålet - 1 ? Math.sin(fx.sett * Math.PI) * 5 : 0;
         ctx.save();
-        ctx.translate(G, GY - 9 - k * 4);
+        ctx.translate(G, GY - 9 - k * 4 - hopp);
         ctx.rotate(k % 2 ? 0.35 : -0.35);
         ctx.fillStyle = P.ved;
         ctx.strokeStyle = P.svart;
@@ -317,8 +321,20 @@ export function gamma(ctx: Ctx, g: Game, fx: Fx, klokke: number, utgang: number)
         ctx.restore();
     }
     const kaldt = varm < 0.25;
-    const fl = utgang > 0 ? 3 * (1 - utgang) : 8 + 30 * varm + (g.bål > 0 ? 9 : 0) + 20 * fx.blus;
+    // Squash og stretch: flammen trykkes ned i det kubben lander, så skyter den opp.
+    const st = fx.støt > 0.85 ? 1 - (fx.støt - 0.85) * 2.5 : 1 + 0.4 * Math.sin((1 - fx.støt) * Math.PI) * (fx.støt > 0 ? 1 : 0);
+    // Taket: flammen skal aldri stikke gjennom torva.
+    const fl = utgang > 0 ? 3 * (1 - utgang) : Math.min(46, (8 + 30 * varm + (g.bål > 0 ? 9 : 0) + 20 * fx.blus) * st);
     if (fl > 0.5) flamme(ctx, G, GY - 8, fl, kaldt, klokke);
+    // Varmebølgene: en varm ring som går ut fra bålet, gjennom gamma og ut over snøen.
+    for (const b of fx.bølger) {
+        const k = b / T.juice.bølge;
+        ctx.strokeStyle = `rgba(255,190,90,${0.55 * (1 - k)})`;
+        ctx.lineWidth = 3 * (1 - k) + 1;
+        ctx.beginPath();
+        ctx.ellipse(G, GY - 10, 14 + k * 150, 8 + k * 70, 0, Math.PI, 0);
+        ctx.stroke();
+    }
 
     if (g.mode !== 'won') familie(ctx, g, fx, klokke, utgang);
 
@@ -398,7 +414,9 @@ export function inga(ctx: Ctx, g: Game, fx: Fx, sett: boolean) {
     const gåt = !iGamma && g.input.dir !== 0;
     const sv = gåt ? Math.sin(fx.steg * Math.PI) : 0;
     const bob = gåt ? Math.abs(sv) * (fang ? 2.5 : 1.5) : 0;
-    const lean = fang ? 0.16 * v : 0.05 * v * (gåt ? 1 : 0);
+    // Kastet: hun lener seg mot bålet i det armen svinger fram.
+    const kast = iGamma ? Math.sin(fx.kast * Math.PI) : 0;
+    const lean = (fang ? 0.16 * v : 0.05 * v * (gåt ? 1 : 0)) + 0.28 * v * kast;
     ctx.save();
     if (vedDøra) {
         ctx.beginPath();
@@ -466,6 +484,28 @@ export function inga(ctx: Ctx, g: Game, fx: Fx, sett: boolean) {
         ctx.lineTo(v * 12, -16 - løft);
         ctx.lineTo(v * 20, -18 - løft);
         ctx.stroke();
+    } else if (iGamma && fx.kast > 0) {
+        // Armen svinger fra bak og opp til fram og ned (overhåndskast mot bålet).
+        // Tegnes som om hun ser mot høyre, og speiles etter hvilken vei hun ser.
+        const fase = 1 - fx.kast;
+        const vinkel = -2.3 + fase * 2.9;
+        ctx.save();
+        ctx.scale(v, 1);
+        ctx.strokeStyle = P.svart;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(3, -28);
+        ctx.lineTo(3 + Math.cos(vinkel) * 14, -28 + Math.sin(vinkel) * 14);
+        ctx.stroke();
+        // Fartsstreker bak hånda i selve svingen.
+        if (fase > 0.2 && fase < 0.7) {
+            ctx.strokeStyle = 'rgba(241,234,217,0.7)';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(3, -28, 17, vinkel - 0.9, vinkel);
+            ctx.stroke();
+        }
+        ctx.restore();
     } else {
         ctx.strokeStyle = P.svart;
         ctx.lineWidth = 3;
