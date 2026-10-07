@@ -1,0 +1,274 @@
+{
+  "id": "brenningen-av-finnmark",
+  "title": "Brenningen av Finnmark: Da bygdene ble til aske",
+  "layout": "rich",
+  "year": "1944-1945",
+  "category": "Norge",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "28. oktober 1944 ga Hitler ordre om at alle øst for Lyngen skulle flyttes med tvang og alle hus brennes",
+    "Rundt 50 000 mennesker ble tvangsevakuert, mens rundt 23 000 gjemte seg i huler og gammer",
+    "Tyskerne brente 11 000 bolighus, 106 skoler og 27 kirker i Finnmark og Nord-Troms",
+    "Den varige gjenreisningen startet i 1947 og varte til tidlig på 1960-tallet"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er november 1944 i et lite fiskevær i Finnmark. Ute på kaia står en familie med noen sekker og et par dyner. Det er mørkt og kaldt. Tyske soldater har sagt at alle må gå om bord i båten. Når båten legger fra land, ser de røyken stige fra huset sitt, fra fjøset, fra skolen og fra kirken. Snart står hele bygda i flammer."
+    },
+    {
+      "type": "text",
+      "content": "Dette skjedde i hundrevis av bygder og byer i Finnmark og Nord-Troms høsten og vinteren 1944. Tyskerne tvang rundt 50 000 mennesker til å forlate hjemmene sine, og så brente de nesten alt som sto igjen (Bones, 2024). Dette kalles tvangsevakueringen. Å tvangsevakuere betyr å flytte folk bort fra et område med makt, enten de vil eller ikke. Hvorfor gjorde de det? Og hvordan klarte folk å bygge opp landsdelen igjen?"
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Fiskevær i Finnmark i flammer, folk på kaia",
+      "caption": "Høsten 1944 brente tyske soldater bygd etter bygd i Finnmark og Nord-Troms."
+    },
+    {
+      "type": "header",
+      "text": "En hær på vei hjem"
+    },
+    {
+      "type": "text",
+      "content": "For å forstå hva som skjedde, må vi se på krigen i nord. Høsten 1944 var [andre verdenskrig](/historie/andre-verdenskrig/krigens-lop) i ferd med å snu. Tyskland tapte terreng, og de tyske soldatene i Nord-Finland måtte komme seg ut. Over 200 000 tyske soldater trakk seg tilbake mot en ny forsvarslinje ved Lyngen i Nord-Troms (Bones, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Samtidig gikk den sovjetiske hæren til angrep. Den 22. oktober 1944 krysset sovjetiske soldater grensen til Norge, og 25. oktober var Kirkenes befridd. Byen var nesten borte: Bare 28 av rundt 900 bygninger sto igjen (Bones, 2024). Sovjetiske styrker rykket videre vestover til Tanaelva og stanset der 6. november. Den 10. november kom norske soldater til Finnmark (Dørum & Thorsnæs, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Finnmark ble altså den første delen av Norge som ble befridd. Men befrielsen kom bare til den østligste delen av fylket. Resten av Finnmark og Nord-Troms lå mellom de to hærene."
+    },
+    {
+      "type": "header",
+      "text": "Ordren fra Hitler"
+    },
+    {
+      "type": "text",
+      "content": "Først prøvde tyskerne å få folk til å flytte frivillig. I begynnelsen av oktober reiste rundt 5000 mennesker fra Øst-Finnmark. Men de fleste ville ikke dra. De ville ikke forlate gården, båten og dyrene sine (Bones, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Den 26. oktober var Josef Terboven i Troms. Terboven var rikskommissær, altså Hitlers mann i Norge. Han var redd for at regjeringen i London skulle få kontroll over Finnmark med hjelp fra folk som bodde der. Derfor tok han saken opp med Hitler. To dager senere, 28. oktober 1944, kom ordren fra Adolf Hitler: Alle som bodde øst for Lyngen, skulle flyttes med tvang, og alle hus skulle brennes (Bones, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Generalen som ledet de tyske soldatene i nord, het Lothar Rendulic. Han mente det var greit å ødelegge veier og bruer for å bremse fienden. Men han hadde frarådet å bruke tvang mot de norske innbyggerne (Bones, 2024). Likevel skrev han under på ordren om evakuering og ødeleggelse 29. oktober 1944 (Leraand, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Brent jord"
+    },
+    {
+      "type": "text",
+      "content": "Det tyskerne gjorde, kalles brent jord. Brent jord betyr at en hær som trekker seg tilbake, ødelegger alt fienden kan ha nytte av. Ingen skal finne mat, husly, veier eller båter. Tanken var at de sovjetiske soldatene ikke skulle få hjelp av folk eller tak over hodet når de rykket fram (Bones, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Men i Finnmark gikk ødeleggelsen mye lenger enn det en hær trengte. Nesten hele Finnmark vest for Varangerbotn og Tana ble totalt ødelagt. I Nord-Troms ble mellom halvparten og ni av ti bygninger ødelagt, alt etter hvor man bodde. I Vardø ble 85 prosent av byen ødelagt (Bones, 2024). Det var ikke bare bruer og kaier som brant. Det var hjem, fjøs, skoler og kirker."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv: Hva tror du en hær ville ødelegge for å stoppe fienden? Merk rutene, og les så ordren."
+    },
+    {
+      "type": "component",
+      "name": "BrentJord",
+      "props": {
+        "title": "Bygda før og etter ordren"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Statistisk sentralbyrå har talt opp hva som ble ødelagt i Finnmark og Nord-Troms. Listen er lang: 11 000 bolighus, 4700 fjøs og uthus, 306 fiskebruk, 420 butikker, 106 skoler, 21 sykehus og legekontor, 140 forsamlingshus og 27 kirker (Søbye, 1999). I tillegg ødela tyskerne nesten alle båtene (Norsk Folkemuseum, u.å.). For folk som levde av fiske, var båten like viktig som huset."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Tvangsevakueringen i tall",
+        "content": "Over 37 000 mennesker fra Finnmark og drøyt 12 000 fra Nord-Troms ble tvangsevakuert, rundt 50 000 i alt. Rundt 23 000 i Finnmark og 400 i Nord-Troms gjemte seg i stedet. Mellom 200 og 300 mennesker døde i forbindelse med evakueringen (Bones, 2024)."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Reisen sørover"
+    },
+    {
+      "type": "text",
+      "content": "De fleste ble fraktet sørover med båt. Noen kom med små fiskebåter, andre med store tyske transportskip. Fiskerne som fraktet folk, behandlet dem stort sett godt. På de tyske skipene var forholdene ofte svært dårlige (Bones, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Et av skipene het «Carl Arp». Om bord var det 1800 mennesker, tett i tett. Under reisen døde 25 av dem, de fleste av sykdom (Bones, 2024). Tenk deg et lasterom fullt av barn, gamle og syke, uten nok mat, vann eller toaletter."
+    },
+    {
+      "type": "text",
+      "content": "De fleste kom først til Tromsø. Bare i november 1944 passerte over 30 000 evakuerte gjennom byen. Litt over 70 prosent av dem endte opp i Nordland og Troms Rundt 18 000 ble sendt helt til Sør-Norge, de fleste til Østlandet (Bones, 2024). Mange skulle bo borte fra hjemmet sitt i over et halvt år."
+    },
+    {
+      "type": "header",
+      "text": "De som gjemte seg"
+    },
+    {
+      "type": "text",
+      "content": "Ikke alle fulgte ordren. Rundt 23 000 mennesker i Finnmark gjemte seg i stedet for å la seg flytte (Bones, 2024). De bodde i huler i fjellet, i enkle hytter eller i gammer. En gamme er en liten hytte bygd av torv."
+    },
+    {
+      "type": "text",
+      "content": "Å overleve en vinter i Finnmark i en hule eller en gamme er hardt. Det er mørkt nesten hele døgnet, og det kan være mange kuldegrader. Maten var lite, og hjemmet var brent. I februar 1945 ble 500 mennesker fra Finnmark fraktet over havet til Skottland (Søbye, 1999)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Familie utenfor en torvgamme i snødekt landskap",
+      "caption": "Rundt 23 000 mennesker i Finnmark gjemte seg i huler og gammer vinteren 1944-1945."
+    },
+    {
+      "type": "header",
+      "text": "Hjem til ingenting"
+    },
+    {
+      "type": "text",
+      "content": "Da krigen sluttet i mai 1945, ville folk hjem. Men hjem til hva? Nesten alt var brent. Derfor handlet gjenreisningen først om å skaffe husly, altså et sted å bo, til alle som kom tilbake (Dørum & Thorsnæs, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Den varige gjenreisningen startet våren 1947. Det meste var gjenreist i løpet av åtte til ni år (Dørum & Thorsnæs, 2026). Staten ga gunstige lån gjennom Husbanken, og fra 1952 til 1960 kom Nord-Norge-planen, som skulle bygge veier, boliger og annen hjelp til landsdelen. Mange valgte å flytte tilbake til akkurat den plassen der de bodde før, selv om myndighetene hadde andre planer (Dørum & Thorsnæs, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Hele gjenreisningen av landsdelen varte til tidlig på 1960-tallet (Norsk Folkemuseum, u.å.). Derfor ser mange byer og bygder i Finnmark annerledes ut enn resten av Norge. De fleste husene ble bygd i de samme årene. Gjenreisningen skjedde samtidig som Norge bygde opp [velferdsstaten](/historie/norge-i-moderne-tid/velferdsstaten)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nye trehus bygges på brente tomter i Finnmark",
+      "caption": "Etter krigen bygde folk opp igjen bygdene, ofte på de samme tomtene som før."
+    },
+    {
+      "type": "header",
+      "text": "Ble noen straffet?"
+    },
+    {
+      "type": "text",
+      "content": "Etter krigen ble mange nordmenn som hadde hjulpet tyskerne, straffet i [landssvikoppgjøret](/historie/andre-verdenskrig/landssvikoppgjoret). Men hva med de tyske lederne som ga ordren om å brenne Finnmark?"
+    },
+    {
+      "type": "text",
+      "content": "Lothar Rendulic sto for retten i Nürnberg, samme by som [Nürnbergprosessen](/historie/lov-og-rett/nurnbergprosessen) mot de øverste nazilederne. Han ble dømt til 20 års straffarbeid for krigsforbrytelser på Balkan. Men han ble ikke funnet skyldig for tvangsevakueringen og ødeleggelsen i Nord-Norge. Senere ble straffen satt ned til ti år, og i 1951 slapp han ut (Leraand, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Mange i Finnmark syntes det var urettferdig. For dem var brenningen en forbrytelse mot vanlige mennesker. For retten var spørsmålet om ødeleggelsen kunne forklares med hva hæren mente den trengte i krig. Denne uenigheten viser hvor vanskelig det kan være å trekke grensen mellom krigføring og krigsforbrytelser."
+    },
+    {
+      "type": "text",
+      "content": "Brenningen av Finnmark og Nord-Troms er en av de største katastrofene i norsk historie. Den viser hva brent jord betyr i praksis: Det er ikke bare soldater som rammes, men hele samfunn. Samtidig forteller historien om folk som nektet å gi opp, som gjemte seg gjennom en mørk vinter, og som kom hjem og bygde alt opp igjen fra ingenting."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvorfor måtte de tyske soldatene i Nord-Finland trekke seg tilbake høsten 1944?",
+          "Hvem ga ordren om tvangsevakuering og brenning, og hvilken dato kom ordren?",
+          "Hvor mange mennesker ble tvangsevakuert, og hvor mange gjemte seg i stedet?",
+          "Nevn fem typer bygninger som ble brent, og hvor mange det var av noen av dem."
+        ],
+        "reflekter": [
+          "Forklar med egne ord hva brent jord betyr. Hvorfor kan en hær ønske å bruke denne taktikken?",
+          "General Rendulic var imot tvang mot de norske innbyggerne, men skrev likevel under på ordren. Hva sier det om hvordan ordre fungerte i den tyske hæren?",
+          "Hvorfor tror du så mange valgte å gjemme seg i huler og gammer i stedet for å bli med båtene sørover?",
+          "Rendulic ble ikke funnet skyldig for brenningen av Finnmark. Var det rettferdig? Begrunn svaret ditt."
+        ],
+        "gaaVidere": [
+          "Tenk deg at du er 14 år og står på kaia i november 1944. Skriv et dagboknotat om reisen sørover eller om vinteren i en gamme.",
+          "Undersøk om det finnes gjenreisningshus eller minnesmerker fra krigen der du bor eller i Finnmark. Hva forteller de?",
+          "Brent jord har også vært brukt i andre kriger, også i vår tid. Finn et eksempel og sammenlign med Finnmark i 1944."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr brent jord?",
+            "options": [
+              "At bønder brenner gresset for å få bedre avling",
+              "At en hær på retrett ødelegger alt fienden kan ha nytte av",
+              "At soldater bare ødelegger militære leirer",
+              "At en by blir truffet av lyn"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Brent jord betyr at en hær som trekker seg tilbake, ødelegger hus, veier, båter og mat, slik at fienden ikke får noe å bruke."
+          },
+          {
+            "question": "Hvilken dato ga Hitler ordren om tvangsevakuering og brenning?",
+            "options": [
+              "9. april 1940",
+              "22. oktober 1944",
+              "28. oktober 1944",
+              "8. mai 1945"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ordren kom 28. oktober 1944, to dager etter at Terboven hadde tatt saken opp med Hitler."
+          },
+          {
+            "question": "Omtrent hvor mange mennesker ble tvangsevakuert fra Finnmark og Nord-Troms?",
+            "options": [
+              "5000",
+              "18 000",
+              "50 000",
+              "200 000"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Over 37 000 fra Finnmark og drøyt 12 000 fra Nord-Troms ble tvangsevakuert, rundt 50 000 i alt."
+          },
+          {
+            "question": "Hva gjorde rundt 23 000 mennesker i Finnmark?",
+            "options": [
+              "De flyktet til Sverige med tog",
+              "De gjemte seg i huler, hytter og gammer",
+              "De ble med i den tyske hæren",
+              "De reiste til Amerika"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Rundt 23 000 mennesker i Finnmark gjemte seg i stedet for å la seg flytte, og mange overlevde vinteren i huler og gammer."
+          },
+          {
+            "question": "Hva skjedde med general Lothar Rendulic etter krigen?",
+            "options": [
+              "Han ble dømt for brenningen av Finnmark",
+              "Han ble aldri stilt for retten",
+              "Han ble dømt for krigsforbrytelser på Balkan, men ikke for brenningen av Finnmark",
+              "Han ble norsk statsborger"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Rendulic fikk 20 års straffarbeid for krigsforbrytelser på Balkan, men ble ikke funnet skyldig for ødeleggelsen i Nord-Norge. Han slapp ut i 1951."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bones, S. (2024). *Tvangsevakueringen av Finnmark og Nord-Troms*. Store norske leksikon. Hentet 07.10.2026 fra [snl.no](https://snl.no/tvangsevakueringen_av_Finnmark_og_Nord-Troms)",
+          "Dørum, K. & Thorsnæs, G. (2026). *Finnmarks historie*. Store norske leksikon. Hentet 07.10.2026 fra [snl.no](https://snl.no/Finnmarks_historie)",
+          "Leraand, D. (2026). *Lothar Rendulic*. Store norske leksikon. Hentet 07.10.2026 fra [snl.no](https://snl.no/Lothar_Rendulic)",
+          "Norsk Folkemuseum. (u.å.). *Reconstruction houses from Finnmark*. Hentet 07.10.2026 fra [norskfolkemuseum.no](https://norskfolkemuseum.no/en/reconstruction-houses-from-finnmark)",
+          "Søbye, E. (1999). *Raseringen av Finnmark*. Statistisk sentralbyrå. Hentet 07.10.2026 fra [ssb.no](https://www.ssb.no/befolkning/artikler-og-publikasjoner/raseringen-av-finnmark)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
