@@ -16,22 +16,14 @@ export const SJANSE_LÆRDOM =
 
 export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
-    bevilg: 'Under porten: bevilg fra sekken',
-    spar: 'Over porten: spar, fyr selv',
     riksrett: 'Riksrett: ta stemmene, kutt tauene!',
-    grense: 'Over streken = bøndene stemmer deg ut',
+    grense: 'Tom for penger før valget = stemt ut',
     ganger: 'Gli tett, men fyr før ryggen',
-    banen: 'Jernbanen: lang stigning - fyr tidlig!',
-    vinker: 'Bøndene stemmer ennå på embetsmenn',
     ror: 'Pil NED: dykk under fjellet!',
     ola: 'Ola-boka: ta den!',
 };
 
 export const BEAT = {
-    valg: {
-        tittel: 'Valget i 1833',
-        tekst: 'Nå teller bøndene pengene du bruker. Er budsjettet ved ballongen tomt før valget, stemmer de deg ut.',
-    },
     ueland: {
         tittel: 'Ueland om bord',
         tekst: 'Ole Gabriel Ueland ville spare. Gli tett over fjellet uten å fyre, så sparer du mye mer.',

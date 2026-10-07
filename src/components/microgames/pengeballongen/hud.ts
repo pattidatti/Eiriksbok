@@ -1,11 +1,11 @@
 // HUD-en er selve litografibladet: papirmarg med trykkekant, bildeteksten i nedre marg
-// (år og sted i kursiv), «Spart» oppe til høyre, tidslinja 1815-1884 (målet), Ueland i et ovalt portrett
-// og budsjettkortet under portrettet. Alt står på solide papirkort, så teksten er skarp.
+// (år og sted i kursiv), «Spart» oppe til høyre, tidslinja 1815-1884 (målet) og bondestripa
+// oppe til venstre (Ueland, budsjettet, sjansene). Alt står på solide papirkort, så teksten er skarp.
 
 import { P } from './art';
 import type { Fx } from './fx';
 import { BRETT } from './levels';
-import { grenseNå, grenseVises, iBåndet } from './rules';
+import { grenseNå, grenseVises, iBåndet, sparing } from './rules';
 import { FONT } from './scene';
 import type { Game } from './state';
 import { TUNING } from './tuning';
@@ -83,9 +83,7 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
     }
 
     // Oppe til høyre: Spart, stor og rolig på et kort. Spretter når mynter lander.
-    // Ett kort: Spart, rekord og sjansene nederst.
-    const medSjanser = g.år >= T.penger.førsteEkteValg - 0.5;
-    kort(ctx, 776, 16, 168, medSjanser ? 104 : 76);
+    kort(ctx, 776, 16, 168, 76);
     ctx.textAlign = 'right';
     ctx.fillStyle = P.kritt;
     ctx.font = `italic 15px ${FONT}`;
@@ -95,23 +93,31 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
     ctx.translate(934, 66);
     ctx.scale(sk, sk);
     ctx.font = `bold 30px ${FONT}`;
-    ctx.fillStyle = fx.sprett > 0.3 ? P.silkeMørk : P.kritt;
+    // Mens du fyrer, sparer du ingenting: tallet blir grått og står stille.
+    const fyrer = g.hold && !g.bæres && g.mode === 'play';
+    ctx.fillStyle = fx.sprett > 0.3 ? P.silkeMørk : fyrer ? P.halv : P.kritt;
     ctx.fillText(`${spd(g.spart)} Spd.`, 0, 0);
     ctx.restore();
-    ctx.font = `14px ${FONT}`;
-    ctx.fillStyle = P.kritt;
-    ctx.fillText(
-        g.år < T.penger.stabelFra ? 'Spd. = speciedaler' : v.rekord && !v.øving ? `Rekord ${spd(v.rekord)}` : '',
-        934,
-        85
-    );
-    // Sjansene: små ballonger under kortet (fra det første ekte valget).
-    if (medSjanser) sjanser(ctx, g, fx, tid);
+    // Linja under sier hva som skjer nå: slipp = sparer (+n i sekundet), hold = sparer ingenting.
+    ctx.font = `bold 14px ${FONT}`;
+    if (g.t < 6) {
+        ctx.font = `14px ${FONT}`;
+        ctx.fillStyle = P.kritt;
+        ctx.fillText('Spd. = speciedaler', 934, 85);
+    } else if (g.bæres) {
+        ctx.fillStyle = P.karmin;
+        ctx.fillText('Staten bærer deg', 934, 85);
+    } else if (fyrer) {
+        ctx.fillStyle = P.karmin;
+        ctx.fillText('Fyrer: sparer ingenting', 934, 85);
+    } else if (g.mode === 'play') {
+        ctx.fillStyle = P.silkeMørk;
+        ctx.fillText(`Slipper: +${Math.round(sparing(g))} i sekundet`, 934, 85);
+    }
 
     tidslinje(ctx, g);
-    if (g.år >= T.ganger.fra - 0.3) portrett(ctx, g, fx, tid);
-    // Etter det siste valget (1881) er det ikke noe budsjett å holde: kortet går bort.
-    if (grenseVises(g) && g.mode === 'play' && g.ter.valg[g.nesteValg]) budsjett(ctx, g, fx, tid);
+    if (!g.harRor && g.mode === 'play') låstRor(ctx);
+    stripe(ctx, g, fx, tid);
 
     if (fx.blink > 0) {
         ctx.globalAlpha = fx.blink * 0.5;
@@ -121,121 +127,181 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
     }
 }
 
-/** Sjansene igjen: tre små ballonger. En brukt sjanse er et tomt omriss. */
-function sjanser(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
-    const n = T.sjekk.sjanser;
-    const x0 = 934 - n * 22;
-    ctx.textAlign = 'right';
-    ctx.font = `bold 13px ${FONT}`;
-    ctx.fillStyle = P.kritt;
-    ctx.fillText('Sjanser', x0 - 8, 112);
-    for (let i = 0; i < n; i++) {
-        const har = i < g.sjanser;
-        const cx = x0 + 10 + i * 22;
-        const puls = !har && i === g.sjanser ? Math.max(0, fx.blink) : 0;
-        ctx.beginPath();
-        ctx.ellipse(cx, 103 - puls * 3, 7, 8, 0, 0, Math.PI * 2);
-        ctx.fillStyle = har ? P.silke : 'transparent';
-        if (har) ctx.fill();
-        ctx.strokeStyle = har ? P.kritt : P.halv;
-        ctx.lineWidth = 1.3;
-        ctx.stroke();
-        ctx.fillStyle = har ? P.kritt : P.halv;
-        ctx.fillRect(cx - 2.5, 112, 5, 3);
+/**
+ * Bondestripa oppe til venstre: ett kort med alt som er bøndenes. Ueland og gangeren til
+ * venstre, budsjettet til valget til høyre (en varm bar som tømmes når du fyrer), og sjansene
+ * som små ballonger - men bare etter at du har brukt den første.
+ */
+/** Ankeret til lærings-øyeblikket om valget (1833): baren før Ueland står i stripa. */
+export const BUDSJETT = { x: 28, y: 34 };
+const STRIPE = { x: 16, y: 14, h: 64 };
+
+function stripe(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
+    const medUeland = fx.uelandSett || g.ganger > 1;
+    if (g.ganger > 1) fx.uelandSett = true;
+    const medBudsjett = grenseVises(g) && g.mode === 'play' && !!g.ter.valg[g.nesteValg];
+    const brukt = g.sjanser < T.sjekk.sjanser;
+    if (!medUeland && !medBudsjett && !brukt) return;
+    const venstre = medUeland ? 114 : 0;
+    const w = venstre + (medBudsjett || brukt ? 178 : 6);
+    const { x, y } = STRIPE;
+    // Med budsjettet blir kortet høyere: forklaringen står under baren.
+    const h = medBudsjett ? 86 : STRIPE.h;
+    kort(ctx, x, y, w, h);
+    // Full fart (over ×5): gullkant som blinker.
+    if (medUeland && g.ganger > 5) {
+        ctx.strokeStyle = P.silke;
+        ctx.lineWidth = 3 + 2 * Math.sin(tid * 9) ** 2;
+        ctx.strokeRect(x - 4, y - 4, w + 8, h + 8);
     }
-    void tid;
+    if (medUeland) portrett(ctx, g, fx, tid, x + 32, y + h / 2);
+    const bx = x + venstre + 12;
+    if (medBudsjett) budsjett(ctx, g, fx, tid, bx, y);
+    if (brukt) sjanser(ctx, g, fx, x + w - 12, y + 18);
 }
 
-/** Budsjettkortet står fast oppe til venstre, under Ueland-portrettet - aldri ved ballongen. */
-export const BUDSJETT = { x: 16, y: 120 };
+/** Sjansene igjen: små ballonger, høyrejustert. En brukt sjanse er et tomt omriss. */
+function sjanser(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, høyre: number, y: number) {
+    const n = T.sjekk.sjanser;
+    for (let i = 0; i < n; i++) {
+        const har = i < g.sjanser;
+        const cx = høyre - (n - 1 - i) * 16;
+        const puls = !har && i === g.sjanser ? Math.max(0, fx.blink) : 0;
+        ctx.beginPath();
+        ctx.ellipse(cx, y - puls * 3, 5, 6, 0, 0, Math.PI * 2);
+        ctx.fillStyle = P.silke;
+        if (har) ctx.fill();
+        ctx.strokeStyle = har ? P.kritt : P.halv;
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.fillStyle = har ? P.kritt : P.halv;
+        ctx.fillRect(cx - 2, y + 7, 4, 2.5);
+    }
+}
 
 /**
- * Budsjettet til neste valg: et fast kort i HUD-en med en liggende bar. Full bar = alt bøndene
+ * Budsjettet til neste valg: et valgflagg, året og en liggende bar. Full bar = alt bøndene
  * tillater denne perioden. Den tømmes når du fyrer, og fylles igjen ved hvert valg.
- * Bondetinget 1833: baren blir synlig bredere og høyere, og kortet får stempelet «BONDETINGET 1833».
+ * Bondetinget 1833: stripa gløder i gull de første årene.
  */
-function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
+function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number, x: number, y: number) {
     const grense = grenseNå(g);
     const igjen = Math.max(0, 1 - g.periode / grense);
     const fare = igjen < 0.25;
     const inn = Math.min(1, (g.år - (T.penger.førsteEkteValg - 1.2)) / 0.4);
-    const vokst = Math.max(0, Math.min(1, (g.år - T.penger.førsteEkteValg) / 0.6));
-    const bw = 150 + 50 * vokst;
-    const bh = 12 + 12 * vokst;
     const bonde = g.år >= T.penger.førsteEkteValg ? Math.max(0, 1 - (g.år - T.penger.førsteEkteValg) / 5.5) : 0;
-
     const neste = g.ter.valg[g.nesteValg];
-    // Hva som er igjen, i klartekst: tallet eleven må holde over null til valget.
-    const rest = Math.max(0, Math.floor(grense - g.periode));
-    const etikett = g.bæres
-        ? 'Bevilget: staten betaler'
-        : neste
-          ? `Igjen til valget ${neste.år}: ${rest} av ${Math.round(grense)} Spd.`
-          : 'Budsjett';
-    ctx.font = `bold 14px ${FONT}`;
-    const ew = ctx.measureText(etikett).width;
-    const W = Math.max(bw, ew) + 20;
-    const H = 30 + bh + 10 + (bonde > 0 ? 22 : 0);
-    const { x, y } = BUDSJETT;
+    const bw = 154;
+    const bh = 18;
+    const fyrer = g.hold && !g.bæres && g.mode === 'play';
 
     ctx.save();
     ctx.globalAlpha = inn;
     const rist = fare ? Math.sin(tid * 30) * 1.2 : 0;
     ctx.translate(rist, 0);
-    kort(ctx, x, y, W, H);
-    // Bondetinget: kortet gløder i gull de første årene etter 1833.
-    if (bonde > 0) {
-        ctx.strokeStyle = P.silke;
-        ctx.lineWidth = 3 + 3 * Math.sin(tid * 10) ** 2;
-        ctx.globalAlpha = inn * bonde;
-        ctx.strokeRect(x - 4, y - 4, W + 8, H + 8);
-        ctx.globalAlpha = inn;
-    }
-    // Nær grensen: rød kant som blinker.
-    if (fare) {
-        ctx.strokeStyle = P.karmin;
-        ctx.lineWidth = 3;
-        ctx.globalAlpha = inn * (0.55 + 0.45 * Math.sin(tid * 12));
-        ctx.strokeRect(x - 2, y - 2, W + 4, H + 4);
-        ctx.globalAlpha = inn;
-    }
-    // Etiketten: alltid synlig, rød når budsjettet nesten er brukt opp.
-    ctx.fillStyle = fare ? P.karmin : P.kritt;
+    // Valgflagget (samme som flaggene i landskapet) og året.
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(x + 2, y + 8);
+    ctx.lineTo(x + 2, y + 26);
+    ctx.stroke();
+    // Gjenvalgt: flagget rykker opp og vaier (fx.flagg), i stedet for en lapp.
+    const rykk = fx.flagg;
+    const løft = -7 * Math.sin(rykk * Math.PI);
+    const vai = Math.sin(tid * 22) * 4 * rykk;
+    const fl = 1 + 0.5 * rykk;
+    ctx.fillStyle = rykk > 0.2 ? P.silke : P.karmin;
+    ctx.beginPath();
+    ctx.moveTo(x + 3, y + 8 + løft);
+    ctx.lineTo(x + 3 + 12 * fl, y + 12 + løft + vai);
+    ctx.lineTo(x + 3, y + 16 + løft + 2 * rykk);
+    ctx.fill();
+    ctx.font = `bold 15px ${FONT}`;
     ctx.textAlign = 'left';
-    ctx.fillText(etikett, x + 10, y + 20);
-    // Baren: tom ramme, fyllet lyst og trygt, karmin og blinkende når det nesten er tomt.
-    const bx = x + 10;
-    const by = y + 30;
+    ctx.fillStyle = fare ? P.karmin : P.kritt;
+    ctx.fillText(g.bæres ? 'Staten betaler' : neste ? `Valg ${neste.år}` : 'Budsjett', x + 20, y + 22);
+    // Baren: varm bondefarge, karmin og blinkende når det nesten er tomt.
+    const by = y + 32;
     ctx.fillStyle = PAPIR;
-    ctx.fillRect(bx, by, bw, bh);
-    ctx.fillStyle = fare ? P.karmin : P.silke;
+    ctx.fillRect(x, by, bw, bh);
+    ctx.fillStyle = fare ? P.karmin : g.bæres ? P.silkeLys : P.silke;
     if (fare) ctx.globalAlpha = inn * (0.6 + 0.4 * Math.sin(tid * 12));
-    ctx.fillRect(bx, by, bw * igjen, bh);
+    ctx.fillRect(x, by, bw * igjen, bh);
     ctx.globalAlpha = inn;
+    // Baren er en rad med mynter: det er penger, og de blir færre når du fyrer.
+    const fylt = bw * igjen;
+    ctx.strokeStyle = fare ? P.hvit : P.silkeMørk;
+    ctx.lineWidth = 1.2;
+    for (let mx = x + 8; mx + 6 <= x + fylt; mx += 13) {
+        ctx.beginPath();
+        ctx.arc(mx, by + bh / 2, 5, 0, Math.PI * 2);
+        ctx.stroke();
+    }
+    // Mens du fyrer: mynter ramler av enden av baren og ned i brenneren.
+    if (fyrer && fylt > 4) {
+        for (let k = 0; k < 3; k++) {
+            const u = (tid * 1.6 + k / 3) % 1;
+            ctx.globalAlpha = inn * (1 - u);
+            ctx.fillStyle = P.silke;
+            ctx.beginPath();
+            ctx.arc(x + fylt - 3 + u * 6, by + bh + 3 + u * 16, 4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = P.kritt;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        }
+        ctx.globalAlpha = inn;
+    }
+    // Gjenvalgt: et lyst glimt som feier over den fulle baren.
+    if (fx.flagg > 0) {
+        const gx = x + bw * (1 - fx.flagg);
+        ctx.fillStyle = 'rgba(255,240,200,0.7)';
+        ctx.fillRect(Math.max(x, gx - 10), by, Math.min(20, x + bw - gx + 10), bh);
+    }
+    // Bevilget: kongens embetsmenn river en karmin bit av baren, og den faller ut av kortet.
+    if (fx.tapp > 0) {
+        const u = 1 - fx.tapp;
+        ctx.save();
+        ctx.globalAlpha = inn * Math.min(1, fx.tapp * 1.6);
+        ctx.translate(x + bw * igjen + (bw * fx.tappAndel) / 2, by + bh / 2 + u * u * 60);
+        ctx.rotate(u * 0.6);
+        ctx.fillStyle = P.karmin;
+        ctx.fillRect((-bw * fx.tappAndel) / 2, -bh / 2, bw * fx.tappAndel, bh);
+        ctx.strokeStyle = P.kritt;
+        ctx.strokeRect((-bw * fx.tappAndel) / 2, -bh / 2, bw * fx.tappAndel, bh);
+        ctx.restore();
+    }
     ctx.strokeStyle = 'rgba(46,50,54,0.35)';
     ctx.lineWidth = 1;
     for (let k = 5; k < grense; k += 5) {
-        const lx = bx + bw * (1 - k / grense);
+        const lx = x + bw * (1 - k / grense);
         ctx.beginPath();
         ctx.moveTo(lx, by);
         ctx.lineTo(lx, by + bh);
         ctx.stroke();
     }
-    ctx.strokeStyle = P.kritt;
-    ctx.lineWidth = 1.3;
-    ctx.strokeRect(bx, by, bw, bh);
+    ctx.strokeStyle = fare ? P.karmin : P.kritt;
+    ctx.lineWidth = fare ? 2.5 : 1.3;
+    ctx.strokeRect(x, by, bw, bh);
+    // Bondetinget: baren gløder i gull de første årene etter 1833.
+    if (bonde > 0) {
+        ctx.strokeStyle = P.silke;
+        ctx.globalAlpha = inn * bonde;
+        ctx.lineWidth = 2 + 3 * Math.sin(tid * 10) ** 2;
+        ctx.strokeRect(x - 3, by - 3, bw + 6, bh + 6);
+        ctx.globalAlpha = inn;
+    }
+    // Forklaringen rett under baren, så ingen lurer på om den viser brukt eller igjen.
+    ctx.font = `bold 13px ${FONT}`;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = fare ? P.karmin : P.kritt;
+    ctx.fillText(fyrer ? 'Fyrer: baren tømmes' : 'Penger igjen til valget', x, by + bh + 17);
     if (fx.stabelBlink > 0) {
         ctx.strokeStyle = P.karmin;
         ctx.globalAlpha = fx.stabelBlink;
         ctx.lineWidth = 3;
-        ctx.strokeRect(bx - 3, by - 3, bw + 6, bh + 6);
-        ctx.globalAlpha = inn;
-    }
-    // Stempelet etter Bondetinget.
-    if (bonde > 0) {
-        ctx.font = `bold 15px ${FONT}`;
-        ctx.fillStyle = P.silkeMørk;
-        ctx.fillText('BONDETINGET 1833', x + 10, by + bh + 22);
+        ctx.strokeRect(x - 3, by - 3, bw + 6, bh + 6);
     }
     ctx.restore();
 }
@@ -255,6 +321,39 @@ function tast(ctx: CanvasRenderingContext2D, x: number, y: number, t: string): n
     ctx.fillText(t, x + 6, y + 15);
     ctx.restore();
     return w;
+}
+
+/** Roret er låst til riksretten i 1884: et lite grått ror med hengelås under tidslinja. */
+function låstRor(ctx: CanvasRenderingContext2D) {
+    const x = 640;
+    const y = 50;
+    kort(ctx, x, y, 110, 24);
+    const cx = x + 14;
+    const cy = y + 12;
+    ctx.strokeStyle = P.halv;
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 6, 0, Math.PI * 2);
+    ctx.stroke();
+    for (let k = 0; k < 6; k++) {
+        const a = (k * Math.PI) / 3;
+        ctx.beginPath();
+        ctx.moveTo(cx + Math.cos(a) * 2, cy + Math.sin(a) * 2);
+        ctx.lineTo(cx + Math.cos(a) * 9, cy + Math.sin(a) * 9);
+        ctx.stroke();
+    }
+    // Hengelåsen.
+    ctx.fillStyle = P.kritt;
+    ctx.fillRect(cx + 4, cy + 1, 7, 6);
+    ctx.beginPath();
+    ctx.arc(cx + 7.5, cy + 1, 2.5, Math.PI, 0);
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.3;
+    ctx.stroke();
+    ctx.font = `13px ${FONT}`;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = P.kritt;
+    ctx.fillText('Roret: 1884', x + 30, y + 17);
 }
 
 /** Målet: tidslinja 1815-1884 øverst i midten, med valgene som små streker. */
@@ -294,25 +393,12 @@ function tidslinje(ctx: CanvasRenderingContext2D, g: Game) {
     ctx.fillText('1884 Løvebakken', b + 8, y + 5);
 }
 
-/** Ueland i et ovalt portrett (som i stortingskalenderne), med gangeren under. */
-function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
-    const cx = 62;
-    const cy = 62;
-    const inn = Math.min(1, (g.år - (T.ganger.fra - 0.3)) / 0.3);
-    const s = (0.6 + 0.4 * inn) * (1 + fx.gangerSprett * 0.25);
-    ctx.globalAlpha = inn;
-    kort(ctx, 16, 14, 160, 98);
-    // Full fart (over ×5): kortet får en blinkende gullkant.
-    if (g.ganger > 5) {
-        ctx.strokeStyle = P.silke;
-        ctx.lineWidth = 3 + 2 * Math.sin(tid * 9) ** 2;
-        ctx.strokeRect(12, 10, 168, 106);
-    }
-    ctx.globalAlpha = 1;
+/** Ueland i et lite ovalt portrett (som i stortingskalenderne), med gangeren ved siden av. */
+function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number, cx: number, cy: number) {
+    const s = 0.62 * (1 + fx.gangerSprett * 0.25);
     ctx.save();
     ctx.translate(cx, cy);
     ctx.scale(s, s);
-    ctx.globalAlpha = inn;
     ctx.fillStyle = PAPIR;
     ctx.strokeStyle = P.kritt;
     ctx.lineWidth = 2;
@@ -323,17 +409,9 @@ function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     // Framgang mot neste trinn: en bue rundt ovalen.
     if (g.ganger < T.ganger.maks && iBåndet(g)) {
         ctx.strokeStyle = P.silke;
-        ctx.lineWidth = 4;
+        ctx.lineWidth = 6;
         ctx.beginPath();
-        ctx.ellipse(
-            0,
-            0,
-            40,
-            46,
-            0,
-            -Math.PI / 2,
-            -Math.PI / 2 + (Math.PI * 2 * g.gangerTid) / T.ganger.trinn
-        );
+        ctx.ellipse(0, 0, 40, 46, 0, -Math.PI / 2, -Math.PI / 2 + (Math.PI * 2 * g.gangerTid) / T.ganger.trinn);
         ctx.stroke();
     }
     // Ueland: rundt ansikt, kragebart, lue.
@@ -365,16 +443,9 @@ function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     else ctx.rect(-4, 4, 8, 1.4);
     ctx.fill();
     ctx.restore();
-    // Gangeren på en plakett under.
-    ctx.globalAlpha = inn;
-    ctx.fillStyle = g.ganger > 1 ? P.silke : P.kritt;
+    // Gangeren ved siden av portrettet: stor, i gull når den virker.
+    ctx.fillStyle = g.ganger > 1 ? P.silke : P.halv;
     ctx.textAlign = 'center';
     ctx.font = `italic bold ${28 + fx.gangerSprett * 10}px ${FONT}`;
-    ctx.fillText(`×${g.ganger}`, cx + 70, cy + 4);
-    ctx.font = `bold 13px ${FONT}`;
-    ctx.fillStyle = P.kritt;
-    ctx.fillText('Ueland', cx + 70, cy + 24);
-    ctx.font = `italic 13px ${FONT}`;
-    ctx.fillText(g.ganger > 1 ? 'sparer mer' : 'gli tett!', cx + 70, cy + 40);
-    ctx.globalAlpha = 1;
+    ctx.fillText(`×${g.ganger}`, cx + 50, cy + 10);
 }

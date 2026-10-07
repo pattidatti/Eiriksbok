@@ -699,3 +699,213 @@ Bare visning, ingen nye regler (simuleringen er uendret: flink 100 %, middels 82
 
 Porter: CI-selvspill (fart 4, 60 s) grønt, hele runden grønn (flink vant med 549), audit 0 funn,
 likhet nærmest generalstreiken (0,43). Ikke gjort: pressmåleren og HUD-ryddingen fra vurderingen.
+
+### Natt 3, forbedring 1 (etter vurdering 1 med ny rubrikk: Forståelig 3, Myk start 4, Eleven gjør 4, Utseende 4, Lærerikt 4)
+
+Ingen nye regler. Bare tekst og HUD er kuttet, og porten forklares med bilde.
+
+Portfunn: selvspillet var rødt med «slutt-skjermen har ingen Dette skjedde». Spillet brukte allerede
+`text.lesson` + `ArcadeLessons`, men pausen før slutt-skjermen (`vent`, 0,35/0,6 s) talte ned med
+`dt`, som skallet kapper til 0,05 s. Med 3 bilder/s headless tok pausen flere sekunder, og
+selvspillet så etter `[data-coach-lessons]` etter 1,2 s. Nå venter komponenten på ekte klokke
+(`performance.now()`). Selvspillet var etterpå rødt på at scene.ts hadde 843 linjer: portene er
+flyttet til `porter.ts`.
+
+1. Forståelig - porten viser regelen. Skiltet over bevilgningsporten har bare navnet og prisen
+   som en rød mynt («-25»). Teksten «Over: spar, fyr selv / Under: bevilg -25 Spd.» er borte. I
+   åpningen henger kongens krok, og en stiplet gullsti går fra porten over fjellet til der staten
+   slipper deg: under porten blir du båret, over porten må du fyre selv. Lappen «Over porten:
+   spar, fyr selv» er fjernet; den eneste lappen ved første port er «Lavt under porten: staten
+   bærer deg». Fjellveggene i rorstrekket har tre lyse piler nedover i stedet for skiltet «Pil ned:
+   dykk under!».
+2. Forståelig/Myk start - én bondestripe i stedet for tre kort. Ueland, budsjettet og sjansene står
+   i ett kort oppe til venstre (`stripe()` i hud.ts): lite portrett + «×n», valgflagg + «Valg 18xx»
+   + varm bar (ingen tall), og sjansene som små ballonger. Ueland dukker først opp når gangeren går
+   til ×2 første gang (der lærings-øyeblikket om ham kommer), og sjansene først etter at du har
+   brukt en. Spart-kortet er alltid like lite. Før kom alt dette rundt 1833 på en gang.
+3. Færre tekstbokser samtidig. Fjernet: banneret «BONDESTORTINGET» (dobbelt med «BONDETINGET
+   1833»), stempelet «BONDETINGET 1833» i budsjettkortet, de to Ueland-lappene i 1833 («Ole Gabriel
+   Ueland: bondeleder ...» og «Gli tett, men fyr før ryggen»), og «Ueland ×n»-lappen for hvert
+   trinn (nå bare ved ×5 og ×10; portrettet spretter og mynter flyr dit for hvert trinn).
+   Bondeting-lappen er kortet til «Brenneren billigere: 14 → 10 Spd.».
+
+Feel-lista. Før: 1, 2 og 3 på plass; 4 delvis (Spart spretter under runden, men slutt-skjermen
+viste bare et tall). Etter: 4 lagt til - Spart på slutt-skjermen teller opp fra 0 med klirr og
+spretter når den er framme (`TellOpp` i komponenten), med rekord-lyd ved ny rekord. Alle fire på
+plass.
+
+Simulering (200 runder): grønn og uendret (ingen regler endret). flink 100 %, median 554 (p10 442,
+p90 694); nybegynner 82 %, median 256; sløseren 0 %, gniten 21, tilfeldig 47. 38,4 valg/min, press
+0,31 -> 0,67 -> 0,86. Selvspill (fart 4, --cover, hel runde): grønt, flink vant med 628, passiv
+krasjet etter 7 s. Scene-audit 0 funn. Likhet: nærmest petisjonen-3d (0,43). tsc og eslint rene.
+
+Prøvd som IKKE virket: ingenting forkastet i denne runden; første selvspill etter endringene var
+rødt bare på linjetallet i scene.ts.
+
+Kjente svakheter / ikke gjort: (1) Vurderingens forslag om å introdusere roret tidligere og gjøre
+riksretten til en flertallsport er ikke gjort - det er nye regler, og spillet har mange nok.
+(2) Budsjettbaren hopper 114 px til høyre når Ueland kommer inn i stripa. (3) Fjellene er
+fortsatt ikke merket som faste utgifter (Prestelønn, Veier, Festning). (4) Filmbildet ved 110 s
+viser rorstrekket, ikke tauene som kuttes.
+
+### Natt 3, forbedring 2 (etter vurdering 2: Forståelig 3, Myk start 3, Eleven gjør 3, Utseende 4, Lærerikt 3)
+
+Lærerikt og Eleven gjør falt til 3, og Forståelig sto på 3 for andre gang. Derfor er kjerneløkka
+ved porten endret, ikke pynten.
+
+1. Nei ved porten er et ekte valg (regler, `bevilg` i tuning, game.ts):
+   - Nei (over porten): Ueland gir `nei` (4) x gangeren til Spart, og gangeren går `neiTrinn` (2)
+     trinn opp. Men du må fyre deg over fjellet selv, og det tar av valgbudsjettet.
+   - Bevilg (under): prisen fra sekken som før, gangeren til ×1, og nå tar embetsmennene også
+     `budsjett` (6 Spd.) av valgbudsjettet.
+   - Fjellet bak porten var 0,75 av et vanlig fjell i et forsøk; nå er det like høyt (`fjell: 1`),
+     så et nei koster 17-22 Spd. av en grense på 22-25. De tidlige portene (små fjell, romslig
+     grense) tåler et nei, de sene (Drammenbanen, Rørosbanen) gjør det ikke. Å si nei til alt gir
+     stemt ut i 1870-årene i 2 av 3 runder.
+   - Robotene ser som en elev på hvor høyt fjellet bak porten er og hvor mye som er igjen av baren
+     (står et valgflagg før porten, regnes baren som full). Flink: nei når `brukt + 1 + 0,095 x
+     høyden` er under grensen. Nybegynner er forsiktig (`betal 0,85`, `anslag 3`): bevilger ofte når
+     den kunne sagt nei, og sier av og til nei uten å se (`slurv 0,2`).
+   - Ueland kommer om bord ved første port (1846), ikke i 1833 (`g.uelandÅr`, `uelandOm()`). Sier du
+     nei, kommer han med ×3 og jubel. Senest i 1848 (`ganger.fra`). Lærings-øyeblikket om Ueland
+     kommer litt etter porten, med egen tekst når du sa nei.
+   - Bildet viser under/over (porter.ts): nede i åpningen står to embetsmenn med flosshatt og
+     pengesekk og prisen som rød mynt; oppå skiltet står tre bønder med oransje luer og bonusen som
+     oransje mynt (`+4 x gangeren`, levende). Etter et nei hopper bøndene. Lappene: «Nei til kongen!
+     +n Spd.» / «Bevilget: -n Spd. og budsjett». Pekeren ved første port: «Under: kongen betaler.
+     Over: si nei!».
+   - Bevilget: en karmin bit rives av budsjettbaren og faller ut av kortet (`fx.tapp`), og mynter
+     flyr fra baren ned til porten.
+2. Fjellene er merket som faste utgifter: en karmin plate med hvit skrift (13 px fet) midt på
+   fjellet, under toppen: Prestelønn, Veier, Festning, Dommere, Hæren, Embetslønn etter tur
+   (`FASTE` i levels.ts, `ter.faste`). På alle rygger før 1833, vanlige tinder og midt i skrapedalen.
+   Roret er ikke vist tidligere.
+3. Introduksjonene er spredt: tida før 1833 går saktere (`førValg` 0,83 -> 1,2 s per år), så de
+   første ca. 21 s er bare ballong og fjell (og Ola-boka). Valgflaggene 1827/1830 tegnes ikke lenger
+   og lappen «Bøndene stemmer ennå på embetsmenn» er borte. I 1833 er valget det eneste nye (banner
+   «BONDETINGET 1833» og lappen om billigere brenner er fjernet, baren gløder fortsatt). Første port
+   ca. 43 s, alene. Ueland etter porten. Statusbanneret midt øverst («Gjenvalgt 18xx!») er borte:
+   gjenvalg er nå et rykk i valgflagget i stripa (flagget hopper, vaier og blir oransje) og et lyst
+   glimt over baren (`fx.flagg`). «+1 embetsmann om bord» vises bare første gang.
+
+Feel-lista. Før: alle fire på plass. Etter: 1 (nei ved porten svarer med hit-stop, jubel-lyd, blink,
+mynter fra porten til Spart og luer i lufta; bøndene hopper), 3 (budsjettbiten som rives av og
+faller, Uelands nær-bånd toner inn når han kommer om bord), 4 (gjenvalg: flagget rykker og vaier,
+glimt over baren). Alle fire på plass.
+
+Simulering (200 runder): grønn. flink 100 %, median 762 (p10 593, p90 1007); nybegynner 93 %,
+median 305 (40 % av flink); sløseren 0 %, gniten/passiv 21, tilfeldig 70. 36,8 valg/min, press
+0,26 -> 0,65 -> 0,86. Nei-andel (analyse.ts, 200 runder): flink 730 av 1201 porter (61 %; alltid nei
+ved Embetskontor, Telegrafen og Kongsvingerbanen, 60 % ved Fyrlyktene, ja ved Drammenbanen og
+Rørosbanen), nybegynner 351 av 1309 (27 %), stemt ut i 1870-årene i 5 %. Nybegynner som velger som
+flink ville fått median 294 uten tap; nybegynner som alltid bevilger 234. Rangene er hevet
+(100/250/400/600/850). Selvspill (fart 4, --cover, hel runde): grønt, flink vant med 518 («bevilget 3
+og sa nei til 3»), passiv krasjet etter 7 s. Scene-audit 0 funn. Likhet nærmest petisjonen-3d
+(0,44). tsc og eslint rene.
+
+Prøvd som IKKE virket: (a) bonus for nei uten å endre robotene: flink (`anslag 20`) sa fortsatt nei
+til 0, fordi den regnet med forrige periodes budsjett - porten står rett etter et valgflagg. Nå
+regner roboten baren som full når et flagg står før porten. (b) Fjellet bak porten på 0,75 og 0,9
+av høyden: da vant «alltid nei» 85-100 % med median 1350-1450, så nei var aldri et valg, bare
+riktig. På 1,0 vinner «alltid nei» 33 %. (c) Tidligere valgflagg fjernet helt (`førsteValg` 1833):
+da talte budsjettet fra 1824 og alle ble stemt ut i 1833. Valgene 1827/1830 er beholdt, bare
+usynlige.
+
+Kjente svakheter / ikke gjort: (1) Roret er ikke introdusert tidligere. (2) Budsjettbaren hopper
+fortsatt til høyre når Ueland kommer inn i stripa (nå ved første port). (3) Poengspredningen for
+flink er stor (p10 593, p90 1007) fordi nei-bonusen vokser med gangeren. (4) Filmbildene i
+selvspillet treffer ingen port; porten er sjekket med egne skjermbilder fra øving 1870. (5) Mynten
+«+n» oppå skiltet og banneret «Ny sjanse» kan dekke hverandre et øyeblikk.
+
+### Natt 3, forbedring 3 (etter vurdering 3: Forståelig 3, Myk start 4, Eleven gjør 4, Utseende 3, Lærerikt 4)
+
+Forståelig sto på 3 for tredje gang. Vurdereren hadde aldri sett en port i filmbildene. Derfor
+er porten tegnet om til et veiskille, og brettet er endret så første port står midt i bildet ved
+55 s. Ingen nye regler.
+
+1. Porten er et veiskille med to løp (porter.ts). Nedre løp: en stor karmin flate fra bakken
+   opp til delelinja, ordet «BEVILG» i 32 px, prosjektnavnet, prisen som rød mynt, to embetsmenn i
+   dobbel størrelse med pengesekk og hvite piler som glir mot porten. Øvre løp: en oransje flate
+   med «NEI» i 34 px, bonusen som oransje mynt, tre bønder på bjelken og en stor pil opp over
+   fjellet. Delelinja er en tykk bjelke der midten av ballongen skal være (kurven på terskelen
+   minus halve ballongen), så det eleven ser, stemmer med regelen. Gullstien for «staten bærer
+   deg» står igjen. Etter valget står «BEVILGET» eller «SA NEI!» på løpet du tok, det andre
+   dempes, og begge toner ut over 360 px. Tømmerporten, kroken og skiltet er borte.
+2. Første port flyttet fra Embetskontor (1846, ca. 43 s) til Hovedbanen (1854): `bevilg: true` på
+   Hovedbanen i `BANER`, Embetskontor er en vanlig utgift. Porten står på x 661 ved 55 s, og
+   film-05 viser hele veiskillet. Jernbanen og første port er nå én ting, ikke to.
+3. Ueland kommer om bord alene i 1844 (ca. 40 s, `ganger.fra`), med en egen hendelse. Første port
+   kommer 17 s senere. Lærings-øyeblikket om Ueland har bare én tekst nå.
+4. Bannerne midt øverst er borte. Lappene står ved tingen (x/y fra der det skjedde, holdt inne i
+   bildet under HUD-kortene, `LAPPEFELT` i fx.ts). Fjernet: brett-banneret, «Ny sjanse fra ...»
+   (står nå i lappen: «Stemt ut! Tilbake til 18xx, -n Spd.»), «RORET ER DITT!», lappen
+   «Jernbanen: lang stigning - fyr tidlig!» og pekeren «Under: kongen betaler. Over: si nei!»
+   (løpene sier det selv).
+5. Valgkortet som stoppet spillet («Valget i 1833 ... Skjønner») er byttet ut med en pinne ved
+   baren, «Tom bar før valget = stemt ut», som står 4,5 s uten å stoppe noe.
+6. «Spart for bøndene» stiger ikke lenger uforklart: linja under tallet sier hva som skjer nå -
+   «Slipper: +n i sekundet» (oransje), «Fyrer: sparer ingenting» (karmin, tallet blir grått og
+   står stille) eller «Staten bærer deg». Rekorden vises bare på slutt-skjermen.
+7. Én himmel per tiår (`TIÅR` i scene.ts): grågrønt 1815, rosa morgen fra 1831, klar blå fra
+   1843, rav fra 1853, fiolett skumring fra 1863, gull fra 1874. Fjellene langt bak og disen tar
+   fargen. Likheten med petisjonen-3d falt; nærmest er nå tinghuset (0,42).
+
+Måleren «Storting mot regjering» er vurdert og ikke laget: den ville blitt et femte element i
+HUD-en uten egen regel. Reglene eleven holder i hodet er fortsatt: hold = betal og stig, baren til
+valget, gli tett (Ueland), og porten (under/over). Roret tidlig er ikke gjort.
+
+Feel-lista. Før: alle fire på plass. Etter: 3 styrket (løpene toner ut etter valget, det valgte
+løpet blir stående sterkt med stempel), 1 styrket (figurene på løpet du tok, hopper). Alle fire.
+
+Simulering (200 runder): grønn. flink 100 %, median 724 (p10 565, p90 1005); nybegynner 94 %,
+median 304; sløseren 0 %, gniten/passiv 21, tilfeldig 70. 36,8 valg/min, press 0,26 -> 0,65 ->
+0,86. Nei-andel (analyse.ts, 100 runder): flink 363 av 601 (60 %), nybegynner 150 av 655 (23 %).
+Selvspill (fart 4, --cover, hel runde): grønt, flink vant med 828, passiv krasjet etter 8 s.
+Scene-audit 0 funn. Likhet nærmest tinghuset (0,42). tsc og eslint rene.
+
+Prøvd som IKKE virket: navnet `EPOKE` kolliderte med forgrunnens epoker i scene.ts (rettet til
+`TIÅR`). Ellers ingenting forkastet.
+
+Kjente svakheter: (1) En lapp ved ballongen («Ueland ×5!») kan dekke prosjektnavnet på nedre løp
+et øyeblikk. (2) Pinnen ved baren i 1833 ligger delvis over baren. (3) Ballongen er allerede inne i
+løpene ved 55 s; et bilde litt før ville vist veiskillet helt fritt. (4) Roret kommer fortsatt
+først i 1884. (5) Menyen har fortsatt tre regellinjer.
+
+### Natt 3, forbedring 4 (siste, etter vurdering 4: Forståelig 3, Myk start 3, Eleven gjør 4, Utseende 3, Lærerikt 4)
+
+To grep, ingen nye regler.
+
+1. Én ny ting om gangen. Ueland kommer om bord alene i 1840,5 (`ganger.fra`, ca. 34 s), og
+   lærings-øyeblikket kommer et halvt år etter (film-04 ved 35 s viser Ueland og ingen port).
+   Skrapeåsene 1842 er øvingsryggen. Hovedbanen 1854 er nå en vanlig bane uten port, så film-05
+   (55 s) viser bare jernbanen. Fra 1854 går formene banen, skrapedal, tind (byttet i `formFor`).
+   Portene er nå fire: Kongsvingerbanen (ca. 72 s), Telegrafen (flyttet til 1870,5, ca. 82 s),
+   Drammenbanen (ca. 87 s) og Rørosbanen (1879,5, ca. 97 s). Telegrafen står midt i film-06
+   ved 80 s med hele veiskillet (NEI +28 / BEVILG -30). Fyrlyktene og den navngitte toppen i 1860
+   er fjernet. «Øv fra» er flyttet fra 1870 til 1868, så øvingen får med Telegrafen-porten.
+   Lappene «Ueland ×5!» og «Ueland ×10! Full fart!» står nå under portrettet oppe til venstre,
+   ikke midt i bildet ved ballongen og aldri oppå prosjektnavnet på porten.
+2. Valgbaren er entydig. Under baren står «Penger igjen til valget» (fet 13 px), og mens du
+   fyrer «Fyrer: baren tømmes». Den fylte delen er en rad mynter, og mens du holder, ramler
+   mynter av enden av baren. Stripa er 86 px høy når baren vises. Pinnen i 1833 sier nå «Tom for
+   penger før valget = stemt ut». Et lite låst ror (grått hjul med hengelås) og «Roret: 1884»
+   står under tidslinja fra start til roret kommer.
+
+Simulering (200 runder): grønn. flink 100 %, median 820 (p10 651, p90 1162); nybegynner 84 %,
+median 375; sløseren 53, gniten/passiv 21, tilfeldig 69. 35,8 valg/min, press 0,26 -> 0,63 ->
+0,87. Nei-andel (analyse.ts, 100 runder): flink 120 av 400 (30 %), nybegynner 76 av 418.
+Selvspill (fart 4, --cover): grønt, flink vant med 1056, passiv krasjet etter 8 s, Chromebook
+p95 17,3 ms. Scene-audit 0 funn. Likhet nærmest tinghuset (0,41). tsc og eslint rene.
+
+Prøvd som IKKE virket: (a) Bare fjerne porten ved Hovedbanen, Telegrafen og Drammenbanen: flink
+vant 18 % (stemt ut ved valget 1875 - den sene Drammenbanen er for dyr uten port). Drammenbanen
+fikk porten tilbake. (b) Telegrafen som vanlig navngitt topp i tind-perioden 1860: flink brukte en
+sjanse ved valget 1863 i halvparten av rundene (39 av 80), og film-06 havnet bak porten. Toppen er
+fjernet (3 av 80 nå). (c) Første selvspill viste Chromebook p95 28,5 ms; ny kjøring 19,1 og
+17,3 ms - målestøy under last, ikke koden.
+
+Kjente svakheter: (1) Nei-andelen for flink falt fra 60 % til 30 % fordi de to første portene er
+borte; de fire som er igjen kommer sent, når fjellene er dyre. (2) Telegrafen og Drammenbanen står
+tett (ca. 2 s fra staten slipper deg til neste port). (3) Pinnen ved baren i 1833 ligger delvis
+over baren. (4) Roret vises bare som et låst ikon før 1884; ingen dragkamp-måler. (5) Telegrafen
+står i 1870 i spillet, men kom i 1855 i virkeligheten (skiltet viser ikke år).

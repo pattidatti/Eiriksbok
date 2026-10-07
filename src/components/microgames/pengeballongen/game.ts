@@ -2,7 +2,7 @@
 // valgene og krasj. Tallene står i tuning.ts, fagreglene i rules.ts.
 
 import { brettFor } from './levels';
-import { fly, grense, iBåndet, kostnad, krasjer, rorMål, sparing, synk } from './rules';
+import { fly, grense, iBåndet, kostnad, krasjer, rorMål, sparing, synk, uelandOm } from './rules';
 import { bakke, årFor, veiVed } from './terrain';
 import type { Game, Årsak } from './state';
 import { TUNING } from './tuning';
@@ -137,7 +137,12 @@ export function update(g: Game, dt: number) {
 
     // Ueland-gangeren: sammenhengende tid i nær-båndet gir et trinn opp; over båndet faller
     // den ett trinn om gangen.
-    if (g.år >= T.ganger.fra && !g.bæres) {
+    // Ueland kommer om bord i `ganger.fra` (1840,5), alene, lenge før første bevilgningsport.
+    if (g.uelandÅr > g.år && g.år >= T.ganger.fra) {
+        g.uelandÅr = T.ganger.fra;
+        g.hendelser.push({ slag: 'ueland', nei: false });
+    }
+    if (uelandOm(g) && !g.bæres) {
         const G = T.ganger;
         if (iBåndet(g)) {
             g.fallTid = 0;
@@ -165,7 +170,7 @@ export function update(g: Game, dt: number) {
         if (k.valgt || g.x < (k.x0 + k.x1) / 2) continue;
         k.valgt = g.y <= k.topp ? 'over' : 'under';
         // Under fjellet (bare mulig med roret): Ueland +1. Over koster bare brensel.
-        if (k.valgt === 'under' && g.år >= T.ganger.fra)
+        if (k.valgt === 'under' && uelandOm(g))
             settGanger(g, Math.min(T.ganger.maks, g.ganger + 1));
         g.hendelser.push({ slag: 'veiskille', vei: k.valgt, port: k.port });
     }
@@ -176,15 +181,28 @@ export function update(g: Game, dt: number) {
         const ja = g.y > b.bunn - T.bevilg.åpning;
         b.valgt = ja ? 'ja' : 'nei';
         const pris = ja ? Math.min(b.pris, Math.floor(g.spart)) : 0;
+        let bonus = 0;
         if (ja) {
             g.spart -= pris;
             g.bæres = b.til;
+            // Kongens embetsmenn tar av valgbudsjettet: bøndene ser at du ga etter.
+            g.periode += T.bevilg.budsjett;
             // Ueland hatet bevilgninger: gangeren starter på nytt.
             settGanger(g, 1);
             g.gangerTid = 0;
+        } else {
+            // Nei til kongen: Ueland jubler. Bonus til Spart, og gangeren går opp.
+            bonus = T.bevilg.nei * g.ganger;
+            g.spart += bonus;
+            settGanger(g, Math.min(T.ganger.maks, g.ganger + T.bevilg.neiTrinn));
+        }
+        // Første port: Ueland klatrer om bord (han kom på Stortinget for å si nei).
+        if (g.uelandÅr > g.år) {
+            g.uelandÅr = g.år;
+            g.hendelser.push({ slag: 'ueland', nei: !ja });
         }
         const hårfint = Math.abs(g.y - (b.bunn - T.bevilg.åpning)) < 14;
-        g.hendelser.push({ slag: 'bevilg', navn: b.navn, pris, ja, hårfint });
+        g.hendelser.push({ slag: 'bevilg', navn: b.navn, pris, ja, hårfint, bonus });
     }
 
     // Riksrett-stemmene 1882-1884: hver kutter ett tau.

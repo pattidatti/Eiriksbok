@@ -20,7 +20,7 @@ Eksempel:
 En linje her ber rutinen ta en runde til på et spill som allerede er levert (spill-id, og gjerne hva
 som skal bli bedre). Den går foran køen under.
 
-- pengeballongen - løft spillet etter den nye rubrikken (Forståelig, Myk start, Eleven gjør)
+- pengeballongen - løft spillet etter den nye rubrikken (Forståelig, Myk start, Eleven gjør) (ferdig: 2026-10-07)
 
 ## Kø
 

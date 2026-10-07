@@ -6,20 +6,43 @@ import { blandFarge, flyttMønster, hash, hentKunst, kvalitet, P, støy } from '
 import { krone, tegnFunn, tegnStortinget, tegnTingstue } from './figures';
 import { iBåndet, nærhet } from './rules';
 import { bakke, veiForÅr } from './terrain';
+import { tegnBevilg } from './porter';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
 const B = TUNING.ballong;
 export const FONT = '"Bodoni Moda", Didot, "Bodoni 72", Georgia, serif';
 
-/** Hvor varm himmelen er (0 = kjølig morgen, 1 = 1884). */
-const varme = (år: number) => Math.min(1, Math.max(0, (år - 1874) / 10));
+
+/**
+ * Én himmel per tiår, så filmbildene ikke er like: kjølig grågrønt i 1815, rosa morgen da
+ * bøndene tok flertallet, klar blå med Ueland, rav i dampens tiår, fiolett skumring under
+ * striden, varmt gull mot 1884. `tone` farger fjellene langt bak.
+ */
+const TIÅR = [
+    { fra: 1815, topp: '#c6cbbd', bunn: '#e4e6db', tone: '#9aa597' },
+    { fra: 1831, topp: '#d4b4a8', bunn: '#f0dccf', tone: '#a28a8c' },
+    { fra: 1843, topp: '#a6bacb', bunn: '#e0e7ea', tone: '#8495a8' },
+    { fra: 1853, topp: '#d3b07a', bunn: '#efdbb2', tone: '#9e8a66' },
+    { fra: 1863, topp: '#a29fc0', bunn: '#dfdbe8', tone: '#7f7e9e' },
+    { fra: 1874, topp: '#d9c9a8', bunn: '#f1e6cc', tone: '#a89a7a' },
+];
+
+/** Fargen for året: glir over to år inn i neste tiår. */
+function tiår(år: number, nøkkel: 'topp' | 'bunn' | 'tone'): string {
+    let i = 0;
+    for (let k = 0; k < TIÅR.length; k++) if (år >= TIÅR[k].fra) i = k;
+    const a = TIÅR[i];
+    const b = TIÅR[i + 1];
+    if (!b) return a[nøkkel];
+    const t = Math.min(1, Math.max(0, (år - (b.fra - 2)) / 2));
+    return blandFarge(a[nøkkel], b[nøkkel], t);
+}
 
 export function tegnHimmel(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
-    const v = varme(g.år);
     const sky = ctx.createLinearGradient(0, 0, 0, 420);
-    sky.addColorStop(0, blandFarge('#c6cbbd', '#d9c9a8', v));
-    sky.addColorStop(1, blandFarge(P.steinLys, '#f1e6cc', v));
+    sky.addColorStop(0, tiår(g.år, 'topp'));
+    sky.addColorStop(1, tiår(g.år, 'bunn'));
     ctx.fillStyle = sky;
     ctx.fillRect(0, 0, 960, 540);
     const k = hentKunst(ctx);
@@ -123,6 +146,9 @@ function fjellY(l: Lag, wx: number, i: number) {
 export function tegnBakgrunn(ctx: CanvasRenderingContext2D, g: Game) {
     const k = hentKunst(ctx);
     const lav = kvalitet() === 'lav';
+    const tone = tiår(g.år, 'tone');
+    const dis = parseInt(tiår(g.år, 'bunn').slice(1), 16);
+    const disRgb = `${(dis >> 16) & 255},${(dis >> 8) & 255},${dis & 255}`;
     LAG.forEach((l, i) => {
         const off = g.x * l.par;
         ctx.beginPath();
@@ -130,7 +156,7 @@ export function tegnBakgrunn(ctx: CanvasRenderingContext2D, g: Game) {
         for (let sx = -10; sx <= 970; sx += 12) ctx.lineTo(sx, fjellY(l, sx + off, i));
         ctx.lineTo(970, 540);
         ctx.closePath();
-        ctx.fillStyle = l.farge;
+        ctx.fillStyle = blandFarge(l.farge, tone, 0.3 + 0.08 * i);
         ctx.fill();
         if (l.korn && k.korn && !lav) {
             flyttMønster(k.korn, -off);
@@ -158,8 +184,8 @@ export function tegnBakgrunn(ctx: CanvasRenderingContext2D, g: Game) {
         }
         // Dis i dalene: lys halvtone som stiger fra bunnen.
         const d = ctx.createLinearGradient(0, l.base - 40, 0, l.base + 70);
-        d.addColorStop(0, 'rgba(228,230,219,0)');
-        d.addColorStop(1, `rgba(228,230,219,${l.dis})`);
+        d.addColorStop(0, `rgba(${disRgb},0)`);
+        d.addColorStop(1, `rgba(${disRgb},${l.dis})`);
         ctx.fillStyle = d;
         ctx.fillRect(0, l.base - 40, 960, 540);
     });
@@ -206,7 +232,8 @@ export function tegnForgrunn(ctx: CanvasRenderingContext2D, g: Game, tid: number
     // Tingstuene står bak forgrunnskammen.
     for (const v of ter.valg) {
         const sx = v.x - x0;
-        if (sx < -80 || sx > 1040) continue;
+        // Før 1833 vinket bøndene embetsmennene gjennom: de valgene vises ikke.
+        if (!v.ekte || sx < -80 || sx > 1040) continue;
         tegnTingstue(ctx, sx, bakke(ter, v.x) + 2, v.ekte, v.år, tid, !v.ekte);
     }
 
@@ -313,10 +340,10 @@ export function tegnForgrunn(ctx: CanvasRenderingContext2D, g: Game, tid: number
 
 /** Nær-båndet: en prikket strek i skrapt hvitt. Under den vokser Ueland-gangeren. */
 export function tegnBånd(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
-    if (g.år < TUNING.ganger.fra - 0.6 || g.mode !== 'play') return;
+    if (g.år < g.uelandÅr || g.mode !== 'play') return;
     const x0 = g.x - B.skjermX;
     const inne = iBåndet(g);
-    const a = Math.min(1, (g.år - (TUNING.ganger.fra - 0.6)) / 0.6);
+    const a = Math.min(1, (g.år - g.uelandÅr) / 0.6);
     for (let sx = 0; sx <= 960; sx += 9) {
         const y = g.y + nærhet(g.ter, x0 + sx, g.y) - TUNING.ganger.nær;
         const nær = Math.abs(sx - B.skjermX) < 70;
@@ -356,6 +383,21 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
     tegnRegjering(ctx, g, k.korn, x0, tid);
     tegnBevilg(ctx, g, tid);
     ctx.textAlign = 'center';
+    // Statens faste utgifter: en karmin plate med navnet midt på fjellet, under toppen.
+    ctx.font = `bold 13px ${FONT}`;
+    for (const u of ter.faste) {
+        const sx = u.x - x0;
+        if (sx < -80 || sx > 1040 || !u.navn) continue;
+        const y = bakke(ter, u.x) + 34;
+        const w = ctx.measureText(u.navn).width + 12;
+        ctx.fillStyle = P.karmin;
+        ctx.fillRect(sx - w / 2, y - 13, w, 19);
+        ctx.strokeStyle = 'rgba(246,244,236,0.6)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(sx - w / 2 + 2, y - 11, w - 4, 15);
+        ctx.fillStyle = P.hvit;
+        ctx.fillText(u.navn, sx, y + 1);
+    }
     for (const u of ter.utgifter) {
         const sx = u.x - x0;
         if (sx < -80 || sx > 1040) continue;
@@ -559,66 +601,6 @@ function tegnRegjering(
 }
 
 /**
- * Bevilgningsportene: en høy tømmerport i dalen før et dyrt fjell. Lavt gjennom = bevilg
- * (prisen fra sekken, staten bærer deg over fjellet). Over porten = spar sekken, fyr selv.
- */
-function tegnBevilg(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
-    const x0 = g.x - B.skjermX;
-    const BV = TUNING.bevilg;
-    for (const b of g.ter.bevilg) {
-        const sx = b.x - x0;
-        if (sx < -120 || sx > 1080) continue;
-        // Buen henger så høyt at hele ballongen går under den når kurven er under terskelen.
-        const bue = b.bunn - BV.åpning - B.høyde - 8;
-        const v = 44;
-        const valgt = b.valgt;
-        ctx.save();
-        if (valgt === 'nei') ctx.globalAlpha = 0.45;
-        // Lys i åpningen mens porten ligger foran deg.
-        if (!valgt) {
-            const puls = 0.22 + 0.14 * Math.sin(tid * 5);
-            const gr = ctx.createLinearGradient(0, bue, 0, b.bunn);
-            gr.addColorStop(0, 'rgba(240,200,120,0)');
-            gr.addColorStop(1, `rgba(240,200,120,${puls.toFixed(3)})`);
-            ctx.fillStyle = gr;
-            ctx.fillRect(sx - v, bue, v * 2, b.bunn - bue);
-        }
-        // Stolpene og buen.
-        ctx.fillStyle = '#5b4a38';
-        ctx.fillRect(sx - v - 6, bue - 6, 10, b.bunn - bue + 6);
-        ctx.fillRect(sx + v - 4, bue - 6, 10, b.bunn - bue + 6);
-        ctx.fillRect(sx - v - 14, bue - 12, v * 2 + 28, 9);
-        // Banneret: navnet og begge utfallene, så byttet står der før du velger.
-        const bw = 196;
-        const bh = valgt ? 40 : 64;
-        const by = bue - bh - 14;
-        ctx.fillStyle = valgt === 'ja' ? P.silke : P.hvit;
-        ctx.strokeStyle = P.kritt;
-        ctx.lineWidth = 1.5;
-        ctx.fillRect(sx - bw / 2, by, bw, bh);
-        ctx.strokeRect(sx - bw / 2, by, bw, bh);
-        ctx.textAlign = 'center';
-        if (valgt) {
-            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.karmin;
-            ctx.font = `bold 16px ${FONT}`;
-            ctx.fillText(valgt === 'ja' ? 'BEVILGET' : 'SA NEI', sx, by + 17);
-            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.kritt;
-            ctx.font = `italic 14px ${FONT}`;
-            ctx.fillText(b.navn, sx, by + 34);
-        } else {
-            ctx.fillStyle = P.kritt;
-            ctx.font = `italic 14px ${FONT}`;
-            ctx.fillText(b.navn, sx, by + 16);
-            ctx.font = `bold 14px ${FONT}`;
-            ctx.fillText('Over: spar, fyr selv', sx, by + 35);
-            ctx.fillStyle = P.karmin;
-            ctx.fillText(`Under: bevilg -${b.pris} Spd.`, sx, by + 55);
-        }
-        ctx.restore();
-    }
-}
-
-/**
  * Jernbanene fra 1854: skinner opp stigningen, et tog som puffer oppover og stasjonen med
  * navneskilt. Bare bilde - stigningen selv er terrenget.
  */
@@ -779,10 +761,22 @@ function tegnPort(
         gr.addColorStop(1, 'rgba(240,200,120,0)');
         ctx.fillStyle = gr;
         ctx.fillRect(a, bunn + 4, b - a, 150);
-        // Et skilt nederst på veggen: hva fjellet er, og at veien går under.
-        ctx.fillStyle = P.hvit;
-        ctx.textAlign = 'center';
-        ctx.font = `bold 17px ${FONT}`;
-        ctx.fillText('Pil ned: dykk under!', (a + b) / 2, bunn - 30);
+        // Tre lyse piler nedover i porten: veien går under, ikke over.
+        ctx.strokeStyle = P.hvit;
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        const mx = (a + b) / 2;
+        for (let i = 0; i < 3; i++) {
+            const fase = (tid * 1.5 + i / 3) % 1;
+            const py = bunn + 18 + fase * 60;
+            ctx.globalAlpha = Math.sin(fase * Math.PI);
+            ctx.beginPath();
+            ctx.moveTo(mx - 16, py - 10);
+            ctx.lineTo(mx, py);
+            ctx.lineTo(mx + 16, py - 10);
+            ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+        ctx.lineCap = 'butt';
     }
 }

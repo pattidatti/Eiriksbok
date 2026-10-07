@@ -9,6 +9,7 @@ import {
     FUNN,
     SLETTE,
     UTGIFTER,
+    FASTE,
     REGJERING,
     RIKSRETT,
     type FunnId,
@@ -136,6 +137,8 @@ export interface Terreng {
     knauser: Knaus[];
     funn: Funn[];
     utgifter: Utgift[];
+    /** Statens faste utgifter: navnet står på fjellet. */
+    faste: Utgift[];
     valg: Valgsted[];
     stemmer: Stemme[];
     baner: Bane[];
@@ -156,6 +159,8 @@ export function lagTerreng(rng: Rng): Terreng {
     const ys: number[] = [];
     const valgpunkter: number[] = [];
     const utgifter: Utgift[] = [];
+    const faste: Utgift[] = [];
+    const fast = (x: number, y: number) => faste.push({ x, y, navn: FASTE[faste.length % FASTE.length] });
     const knauser: Knaus[] = [];
     const stemmer: Stemme[] = [];
     const baner: Bane[] = [];
@@ -222,6 +227,7 @@ export function lagTerreng(rng: Rng): Terreng {
         const xc = xb + kam;
         punkt(x + dal, dalY);
         punkt(xb, topp);
+        fast((xb + xc) / 2, topp);
         if (kam > 40) punkt(xc, topp + (rng() - 0.5) * 6);
         valgpunkter.push(xb);
         x = xc + opp;
@@ -290,8 +296,9 @@ export function lagTerreng(rng: Rng): Terreng {
 
         const form = formFor(p, år0, BN.fra);
         if (form === 'tind') {
-            const top = dalY - F.tind * f * (0.92 + 0.16 * rng());
             const nv = UTGIFTER.find((u) => u.år >= år0 && u.år < år0 + T.penger.hvert);
+            const lav = nv?.bevilg ? BV.fjell : 1;
+            const top = dalY - F.tind * f * lav * (0.92 + 0.16 * rng());
             // Med bevilgningsport flyttes fjellet litt fram, så det er tid til å synke ned til porten.
             const o = nv?.bevilg ? BV.skyv : 0;
             punkt(xa + W * (0.16 + o), dalY);
@@ -300,7 +307,7 @@ export function lagTerreng(rng: Rng): Terreng {
                 const xb = xa + W * (0.36 + o);
                 const xc = xa + W * (0.58 + o);
                 const xm = (xb + xc) / 2;
-                const spiss = top - 40 - rng() * 20;
+                const spiss = top - (40 + rng() * 20) * lav;
                 punkt(xb, top);
                 punkt(xm - 50, top - 4);
                 punkt(xm, spiss);
@@ -312,6 +319,7 @@ export function lagTerreng(rng: Rng): Terreng {
             } else {
                 punkt(xa + W * 0.4, top);
                 punkt(xa + W * 0.52, top + (rng() - 0.5) * 6);
+                fast(xa + W * 0.46, top);
                 valgpunkter.push(xa + W * 0.4);
             }
             punkt(xa + W * (0.8 + o * 0.5), dalY);
@@ -321,13 +329,14 @@ export function lagTerreng(rng: Rng): Terreng {
             for (let i = 1; i < n; i++) {
                 const ås = i % 2 === 1;
                 punkt(xa + (W * i) / n, ås ? dalY - mellom(rng, F.bølge) * f : dalY);
+                if (i === 3) fast(xa + (W * i) / n, ys[ys.length - 1]);
                 if (ås) valgpunkter.push(xa + (W * i) / n);
             }
         } else {
             // Jernbanen: en lang, jevn stigning opp til stasjonen, så bratt ned. Mange små
             // punkter, så skinnene blir en nesten rett linje (bakke() er myk mellom punktene).
-            const y1 = dalY - BN.høyde * f * (0.95 + 0.1 * rng());
             const bnFør = [...BANER].reverse().find((b) => b.år <= år0 + 0.5) ?? BANER[0];
+            const y1 = dalY - BN.høyde * f * (bnFør.bevilg ? BV.fjell : 1) * (0.95 + 0.1 * rng());
             const x0 = xa + W * (BN.opp[0] + (bnFør.bevilg ? BV.skyv : 0));
             const x1 = xa + W * BN.opp[1];
             const x2 = xa + W * BN.stasjon;
@@ -361,6 +370,7 @@ export function lagTerreng(rng: Rng): Terreng {
         knauser,
         funn: [],
         utgifter,
+        faste,
         valg: [],
         stemmer,
         baner,
