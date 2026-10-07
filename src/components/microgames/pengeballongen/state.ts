@@ -16,6 +16,9 @@ export type Hendelse =
     | { slag: 'krasj' }
     | { slag: 'sjanse'; årsak: Årsak; år: number; tilbake: number; straff: number }
     | { slag: 'stemme'; verdi: number }
+    | { slag: 'bevilg'; navn: string; pris: number; ja: boolean; hårfint: boolean }
+    | { slag: 'bæres'; ferdig: true }
+    | { slag: 'riksrett'; n: number }
     | { slag: 'roret' }
     | { slag: 'bondeting' }
     | { slag: 'landet' };
@@ -41,6 +44,8 @@ export interface Game {
     årsak: Årsak | null;
     /** Spilte sekunder (fra 1815, også når runden starter senere). */
     t: number;
+    /** Spilte sekunder i alt, også etter en ny sjanse (g.t spoles tilbake, denne gjør ikke det). */
+    spilt: number;
     /** Når runden startet (t). Øving fra 1870 starter midt i. */
     start: number;
     /** Øvingsrunde («Øv fra 1870»): teller ikke for rekord. */
@@ -65,8 +70,16 @@ export interface Game {
     /** Nye sjanser igjen, og forrige valgflagg. */
     sjanser: number;
     sjekk: Sjekkpunkt | null;
+    /** Hvorfor forrige sjanse ble brukt (det eleven så på lappen). */
+    sistTap: Årsak | null;
     /** Når ballongen sist startet (rolig start, også etter en ny sjanse). */
     rolig: number;
+    /** Staten bærer ballongen over fjellet (etter en bevilgning) fram til denne x. 0 = nei. */
+    bæres: number;
+    /** Riksrett-stemmer tatt i 1882-1884 (tre kutter tauet til Kongens regjering). */
+    riksrett: number;
+    /** Der Kongens regjering falt (x, når roret kom). 0 = henger ennå. */
+    falt: number;
     /** Stemmer tatt i rorstrekket. */
     stemmer: number;
     /** Brukt totalt, og siden forrige valg (pengestabelen). */
@@ -132,6 +145,7 @@ function hoppTil(g: Game, år: number) {
     g.nesteVp = vp < 0 ? ter.valgpunkter.length : vp;
     for (const k of ter.knauser) if (k.x1 < g.x) k.valgt = 'under';
     for (const f of ter.funn) if (f.x < g.x) f.tatt = true;
+    for (const b of ter.bevilg) if (b.x < g.x) b.valgt = 'nei';
     g.olaboka = true;
     for (let i = 0; i <= g.x / 8; i++) g.spor.push(g.y);
 }
@@ -143,6 +157,7 @@ function lagGame(seed: number): Game {
         mode: 'play',
         årsak: null,
         t: 0,
+        spilt: 0,
         start: 0,
         øving: false,
         år: TUNING.år.start,
@@ -157,8 +172,12 @@ function lagGame(seed: number): Game {
         olaboka: false,
         sjanser: TUNING.sjekk.sjanser,
         sjekk: null,
+        sistTap: null,
         rolig: 0,
         stemmer: 0,
+        bæres: 0,
+        riksrett: 0,
+        falt: 0,
         brukt: 0,
         periode: 0,
         spart: 0,

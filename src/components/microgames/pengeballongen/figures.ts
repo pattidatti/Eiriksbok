@@ -223,27 +223,38 @@ function mannskap(ctx: CanvasRenderingContext2D, m: Mannskap) {
         }
     }
 
-    // Sverdrup i 1884: stort helskjegg, står ved roret.
+    // Sverdrup i 1884: står høyt ved roret med stort hvitt helskjegg og mørk frakk, så han
+    // synes i kurven. Tegnes større enn de andre: nå er det han som styrer.
     if (m.sverdrup) {
-        const sx = 9;
-        const sy = -20;
-        hode(ctx, sx, sy - 4, 3.8);
+        ctx.save();
+        ctx.translate(12, -14);
+        ctx.scale(1.7, 1.7);
+        ctx.fillStyle = P.kritt;
+        ctx.fillRect(-3.5, -6, 7, 9);
+        hode(ctx, 0, -10, 3.8);
         ctx.fillStyle = P.hvit;
         ctx.strokeStyle = P.kritt;
-        ctx.lineWidth = 0.8;
+        ctx.lineWidth = 0.6;
         ctx.beginPath();
-        ctx.ellipse(sx, sy + 1, 4, 5, 0, 0, Math.PI * 2);
+        ctx.ellipse(0, -5.5, 4, 5, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.stroke();
-        // Roret bak kurven.
-        ctx.strokeStyle = '#6b5a45';
-        ctx.lineWidth = 2;
+        // Hånda på roret, som går ut bak kurven.
+        ctx.strokeStyle = P.kritt;
+        ctx.lineWidth = 1.2;
         ctx.beginPath();
-        ctx.moveTo(13, -8);
-        ctx.lineTo(24, 2);
+        ctx.moveTo(3, -4);
+        ctx.lineTo(8, 0);
+        ctx.stroke();
+        ctx.restore();
+        ctx.strokeStyle = '#6b5a45';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(24, -14);
+        ctx.lineTo(34, 4);
         ctx.stroke();
         ctx.fillStyle = '#6b5a45';
-        ctx.fillRect(22, -2, 6, 10);
+        ctx.fillRect(31, 0, 8, 14);
     }
 }
 

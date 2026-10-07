@@ -9,7 +9,8 @@ import {
     FUNN,
     SLETTE,
     UTGIFTER,
-    ÅPNE_VEISKILLER,
+    REGJERING,
+    RIKSRETT,
     type FunnId,
 } from './levels';
 import { TUNING } from './tuning';
@@ -107,6 +108,21 @@ export interface Bane {
     navn: string;
 }
 
+/**
+ * En bevilgningsport i dalen før et dyrt fjell. Kurven under banneret ved x = bevilget: prisen
+ * trekkes fra sekken, og staten bærer ballongen over fjellet fram til `til`.
+ */
+export interface Bevilgning {
+    x: number;
+    /** Bakken ved porten (banneret henger `bevilg.åpning` over). */
+    bunn: number;
+    /** Der staten slipper ballongen igjen (etter toppen eller stasjonen). */
+    til: number;
+    navn: string;
+    pris: number;
+    valgt: 'ja' | 'nei' | null;
+}
+
 export interface Valgsted {
     år: number;
     x: number;
@@ -123,6 +139,10 @@ export interface Terreng {
     valg: Valgsted[];
     stemmer: Stemme[];
     baner: Bane[];
+    bevilg: Bevilgning[];
+    /** Riksrett-stemmene 1882-1884, og Kongens regjering (klippa de kutter løs). */
+    riksrett: Stemme[];
+    regjering: { x: number; bunn: number };
     /** Steder der eleven får et nytt valg (rygger, valg, funn, veiskiller). */
     valgpunkter: number[];
     lengde: number;
@@ -139,6 +159,16 @@ export function lagTerreng(rng: Rng): Terreng {
     const knauser: Knaus[] = [];
     const stemmer: Stemme[] = [];
     const baner: Bane[] = [];
+    const bevilg: Bevilgning[] = [];
+    const BV = T.bevilg;
+    /** Ny bevilgningsport foran en stigning som starter ved xStart. */
+    const port = (xStart: number, bunn: number, til: number, navn: string) => {
+        const x = xStart - BV.foran;
+        // Flat dal rundt porten, så banneret henger like høyt over bakken på begge sider.
+        punkt(xStart - BV.dal, bunn);
+        bevilg.push({ x, bunn, til, navn, pris: BV.pris + BV.økning * bevilg.length, valgt: null });
+        valgpunkter.push(x - 200);
+    };
     const lengde = veiForÅr(Å.slutt) + 1200;
     const punkt = (x: number, y: number) => {
         xs.push(x);
@@ -146,6 +176,7 @@ export function lagTerreng(rng: Rng): Terreng {
     };
     const slette = { x0: veiForÅr(SLETTE.fra), x1: veiForÅr(SLETTE.til) };
     const vs = T.veiskille;
+    const riksrett: Stemme[] = [];
     const F = T.form;
     const BN = T.banen;
     const x33 = veiForÅr(Å.skifte);
@@ -206,25 +237,16 @@ export function lagTerreng(rng: Rng): Terreng {
         const W = xe - xa;
         const dalY = mellom(rng, BRETT[brettFor(år0 + 1.5)].dal);
         const f = 1 + F.økning * p;
-        const finale = ÅPNE_VEISKILLER.some((å) => å >= år0 && å < år0 + T.penger.hvert);
+        const finale = RIKSRETT.some((å) => å >= år0 && å < år0 + T.penger.hvert);
 
         if (finale) {
-            // Dalen fram til Løvebakken, med åpne knauser over (bommen er borte).
+            // Dalen fram til Løvebakken. Riksrett-stemmene henger lavt over den flate dalbunnen.
             const dy = vs.dalY;
             punkt(xa + 120, dy);
-            for (const år of ÅPNE_VEISKILLER) {
+            for (const år of RIKSRETT) {
                 const cx = veiForÅr(år);
-                const bunn = dy - vs.gap;
-                knauser.push({
-                    x0: cx - vs.bredde / 2,
-                    x1: cx + vs.bredde / 2,
-                    bunn,
-                    topp: bunn - vs.tykkelse,
-                    år,
-                    port: false,
-                    valgt: null,
-                });
-                valgpunkter.push(cx - vs.bredde / 2);
+                riksrett.push({ x: cx, y: dy - vs.stemmeOver, tatt: false });
+                valgpunkter.push(cx - 200);
             }
             // Rorstrekket: bratte, dype daler med en stemme i bunnen. Uten roret synker
             // ballongen for sakte til å nå dem før neste kam.
@@ -270,11 +292,13 @@ export function lagTerreng(rng: Rng): Terreng {
         if (form === 'tind') {
             const top = dalY - F.tind * f * (0.92 + 0.16 * rng());
             const nv = UTGIFTER.find((u) => u.år >= år0 && u.år < år0 + T.penger.hvert);
-            punkt(xa + W * 0.16, dalY);
+            // Med bevilgningsport flyttes fjellet litt fram, så det er tid til å synke ned til porten.
+            const o = nv?.bevilg ? BV.skyv : 0;
+            punkt(xa + W * (0.16 + o), dalY);
             if (nv) {
                 // Kongens brå utgift: en spiss topp midt på kammen.
-                const xb = xa + W * 0.36;
-                const xc = xa + W * 0.58;
+                const xb = xa + W * (0.36 + o);
+                const xc = xa + W * (0.58 + o);
                 const xm = (xb + xc) / 2;
                 const spiss = top - 40 - rng() * 20;
                 punkt(xb, top);
@@ -284,12 +308,13 @@ export function lagTerreng(rng: Rng): Terreng {
                 punkt(xc, top);
                 utgifter.push({ x: xm, y: spiss, navn: nv.navn });
                 valgpunkter.push(xb);
+                if (nv.bevilg) port(xa + W * (0.16 + o), dalY, xc + 20, nv.navn);
             } else {
                 punkt(xa + W * 0.4, top);
                 punkt(xa + W * 0.52, top + (rng() - 0.5) * 6);
                 valgpunkter.push(xa + W * 0.4);
             }
-            punkt(xa + W * 0.8, dalY);
+            punkt(xa + W * (0.8 + o * 0.5), dalY);
         } else if (form === 'skrapedal') {
             // Bølgende åser: følg kammen tett, så vokser gangeren helt til ×5.
             const n = F.åser * 2;
@@ -302,15 +327,18 @@ export function lagTerreng(rng: Rng): Terreng {
             // Jernbanen: en lang, jevn stigning opp til stasjonen, så bratt ned. Mange små
             // punkter, så skinnene blir en nesten rett linje (bakke() er myk mellom punktene).
             const y1 = dalY - BN.høyde * f * (0.95 + 0.1 * rng());
-            const x0 = xa + W * BN.opp[0];
+            const bnFør = [...BANER].reverse().find((b) => b.år <= år0 + 0.5) ?? BANER[0];
+            const x0 = xa + W * (BN.opp[0] + (bnFør.bevilg ? BV.skyv : 0));
             const x1 = xa + W * BN.opp[1];
             const x2 = xa + W * BN.stasjon;
             const n = 10;
             for (let i = 0; i <= n; i++) punkt(x0 + ((x1 - x0) * i) / n, dalY + ((y1 - dalY) * i) / n);
             punkt(x2, y1);
             punkt(xa + W * 0.95, dalY);
-            const navn = [...BANER].reverse().find((b) => b.år <= år0 + 0.5)?.navn ?? BANER[0].navn;
+            const bn = [...BANER].reverse().find((b) => b.år <= år0 + 0.5) ?? BANER[0];
+            const navn = bn.navn;
             baner.push({ x0, y0: dalY, x1, x2, y1, navn });
+            if (bn.bevilg) port(x0, dalY, x2, navn.replace(/ \d+$/, ''));
             valgpunkter.push(x0, (x0 + x1) / 2, x1);
         }
         x = xe;
@@ -336,6 +364,9 @@ export function lagTerreng(rng: Rng): Terreng {
         valg: [],
         stemmer,
         baner,
+        bevilg,
+        riksrett,
+        regjering: { x: veiForÅr(REGJERING.år), bunn: REGJERING.bunn },
         valgpunkter,
         lengde,
     };
@@ -349,6 +380,8 @@ export function lagTerreng(rng: Rng): Terreng {
         ter.funn.push({ id: f.id, x: best, y: bakke(ter, best) - (f.over ?? T.funn.overBakken), tatt: false });
         ter.valgpunkter.push(best);
     }
+
+    for (const b of bevilg) b.bunn = bakke(ter, b.x);
 
     // Valgene: hvert tredje år, på en kolle.
     for (let år = T.penger.førsteValg; år <= T.penger.sisteValg; år += T.penger.hvert) {

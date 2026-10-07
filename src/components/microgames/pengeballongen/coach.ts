@@ -60,7 +60,14 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
         case 'veiskille':
             if (h.port && h.vei === 'under') ved('Under fjellet! Gratis', -110, P.silke, true);
             else if (h.port) ved('Over fjellet: dyrt', -110, P.karmin, false, 1.2);
-            else if (h.vei === 'under') ved('Under knausen! Ueland +1', -110, P.silke, true);
+            break;
+        case 'bevilg':
+            if (h.ja) ved(`Bevilget ${h.navn}: -${h.pris} Spd.`, -110, P.silke, true, 2.2);
+            else ved(`${h.navn}: nei takk - fyr selv!`, -110, P.karmin, false, 1.8);
+            if (h.hårfint) ved(h.ja ? 'Akkurat under banneret!' : 'Hårfint over porten!', -60, P.silke, false, 1);
+            break;
+        case 'riksrett':
+            ved(h.n >= 3 ? 'Siste tau kuttet!' : `Riksrett: tau ${h.n} av 3 kuttet`, -110, P.silke, true, 1.4);
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
@@ -95,6 +102,7 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
             break;
         case 'roret': {
+            text.banner('SVERDRUP TAR RORET', P.silke);
             const t0 = g.t;
             text.beatOnce('roret', BEAT.roret.tittel, BEAT.roret.tekst, {
                 at: c.vedBallong(-60),
@@ -116,7 +124,8 @@ export function coach(g: Game, c: Coach) {
     const { text, sagt } = c;
     if (!sagt.has('hold') && g.t > 0.6) {
         sagt.add('hold');
-        text.point('hold', LAPP.hold, c.vedBallong(-50), {
+        // Ved tasten nede til venstre, ikke over ballongen: der ser eleven grepet.
+        text.point('hold', LAPP.hold, c.flate(120, 492), {
             until: () => c.spill().varme > 0.6,
             seconds: 10,
         });
@@ -156,9 +165,28 @@ export function coach(g: Game, c: Coach) {
             c.lapp(LAPP.banen, BX + 70, g.y - 60, P.silke, true, 3.5);
         }
     }
-    if (!sagt.has('sverdrup') && g.år >= TUNING.veiskille.riksrett + 0.6) {
-        sagt.add('sverdrup');
-        text.banner('Sverdrup om bord', P.silke);
+    // Første bevilgningsport: pek på den i god tid, og si hva det andre valget er.
+    if (!sagt.has('bevilg')) {
+        const b = g.ter.bevilg.find((x) => !x.valgt && x.x - g.x < 600 && x.x > g.x);
+        if (b) {
+            sagt.add('bevilg');
+            text.point('bevilg', LAPP.bevilg, c.vedVerden(b.x - 50, b.bunn - 60), {
+                until: () => !!b.valgt,
+                seconds: 5,
+            });
+            c.lapp(LAPP.spar, BX + 70, g.y - 60, P.kritt, false, 3.5);
+        }
+    }
+    // Riksretten: pek på den første stemmen.
+    if (!sagt.has('riksrett')) {
+        const st = g.ter.riksrett[0];
+        if (st && !st.tatt && st.x - g.x < 600 && st.x > g.x) {
+            sagt.add('riksrett');
+            text.point('riksrett', LAPP.riksrett, c.vedVerden(st.x, st.y - 20), {
+                until: () => st.tatt || st.x < c.spill().x,
+                seconds: 4,
+            });
+        }
     }
     // Nesten-bom: hårfint over fjellet.
     const kl = klaring(g);

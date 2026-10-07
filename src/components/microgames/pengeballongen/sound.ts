@@ -60,6 +60,19 @@ export function lagLyd(s: ArcadeSynth) {
         under() {
             s.arp(587, [0, 7, 12], 0.05, 0.06);
         },
+        /** Bevilget: en rask strøm av mynter, så et løft. */
+        bevilg() {
+            for (let i = 0; i < 6; i++) {
+                const f = 1800 + Math.random() * 700;
+                s.tone(f, f * 0.96, 0.05, 'triangle', 0.035, i * 0.04);
+            }
+            s.tone(260, 520, 0.3, 'triangle', 0.06, 0.2);
+        },
+        /** Riksretten: et klubbeslag. */
+        dom() {
+            s.noise(0.08, 0.12, 800);
+            s.tone(160, 90, 0.18, 'square', 0.06);
+        },
         seier() {
             s.arp(392, [0, 4, 7, 12, 16, 19, 24], 0.11, 0.08);
             s.noise(0.9, 0.05, 1600, 0.4);

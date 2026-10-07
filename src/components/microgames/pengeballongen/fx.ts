@@ -304,7 +304,7 @@ export function tegnLapper(ctx: CanvasRenderingContext2D, fx: Fx, font: string) 
         const h = l.stor ? 30 : 24;
         ctx.fillStyle = 'rgba(31,35,38,0.35)';
         ctx.fillRect(-w / 2 + 2, -h / 2 + 3, w, h);
-        ctx.fillStyle = '#f8f4e8';
+        ctx.fillStyle = P.hvit;
         ctx.fillRect(-w / 2, -h / 2, w, h);
         ctx.strokeStyle = P.kritt;
         ctx.lineWidth = 1.5;

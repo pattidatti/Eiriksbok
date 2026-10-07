@@ -23,7 +23,7 @@ import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './pengeballongen/sim';
 import { P, skala, tegn, tilSkjerm, flateX, type Skala } from './pengeballongen/draw';
 import { BRETT, FUNN, type FunnId } from './pengeballongen/levels';
 import { TUNING } from './pengeballongen/tuning';
-import { LÆRDOM, MÅL, REGLER, SJANSER, SKJEDDE, TAP_TITTEL, TIPS } from './pengeballongen/texts';
+import { LÆRDOM, MÅL, REGLER, SKJEDDE, TAP_TITTEL, TIPS } from './pengeballongen/texts';
 import type { Årsak } from './pengeballongen/state';
 import { lapp, nullstillFx, nyFx, oppdaterFx } from './pengeballongen/fx';
 import { juice, nyJuice, påHendelse } from './pengeballongen/juice';
@@ -40,7 +40,7 @@ const ANTIKVA = '"Libre Caslon Text", "Iowan Old Style", Georgia, serif';
 
 const THEME: Partial<ArcadeTheme> = {
     ink: P.kritt,
-    paper: '#eeebdf',
+    paper: '#eceee4',
     accent: P.silke,
     cta: P.silke,
     ctaText: P.hvit,
@@ -56,7 +56,7 @@ const THEME: Partial<ArcadeTheme> = {
     drop: 0,
     tilt: 0,
     hudText: P.kritt,
-    hudStroke: '#eeebdf',
+    hudStroke: '#eceee4',
     bannerTop: '30%',
 };
 
@@ -157,6 +157,10 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
             text.lesson('stemtUt', SKJEDDE.stemtUt(p?.år ?? år, Math.round(p?.brukt ?? 0)), 4);
         }
         if (vant) text.lesson('seier', SKJEDDE.seier(spart), 4);
+        const ja = g.ter.bevilg.filter((b) => b.valgt === 'ja' && b.x < g.x).length;
+        const nei = g.ter.bevilg.filter((b) => b.valgt === 'nei' && b.x < g.x).length;
+        if (ja + nei > 0) text.lesson('bevilg', SKJEDDE.bevilg(ja, nei), 3.2);
+        if (g.riksrett >= 3 && vant) text.lesson('riksrett', LÆRDOM.riksrett, 2.8);
         if (porter) text.lesson('porter', SKJEDDE.porter(porter), 2.6);
         else if (baner) text.lesson('baner', SKJEDDE.baner, 2.4);
         text.lesson('styre', LÆRDOM.styre, 2.5);
@@ -244,6 +248,12 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                 meny: m === 'menu',
                 rekord: s.rekord,
                 øving: g.øving && m !== 'menu',
+                // Selvspillets plakat skjuler alt i vinduet som ikke er canvas; da tegnes
+                // heller ikke HUD-en på canvas. Bare i utvikling.
+                plakat:
+                    import.meta.env.DEV &&
+                    !!kn &&
+                    getComputedStyle(kn).visibility === 'hidden',
             });
         },
         onHidden: () => {
@@ -356,13 +366,15 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
         }
     };
 
+    // Robotene ligger i en ref: fabrikken under kan kalles på nytt, og en robot som lærer
+    // (bevilger lettere etter å ha blitt stemt ut) må beholde det den har lært i hele runden.
+    const grepRef = useRef<Record<string, (g: Game) => void>>({});
     usePlaytest(GAME_ID, () => {
-        let grep: Record<string, (g: Game) => void> = {};
         return {
             maksSekunder: MAKS_SEKUNDER,
             snapshot: () => snapshotOf(gameRef.current, modeRef.current === 'menu'),
             start: () => {
-                grep = {};
+                grepRef.current = {};
                 start();
             },
             bots: Object.fromEntries(
@@ -374,8 +386,9 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                         beskrivelse: b.beskrivelse,
                         tick: () => {
                             if (modeRef.current !== 'play') return;
-                            grep[navn] ??= b.make(Math.random);
-                            grep[navn](gameRef.current);
+                            const alle = grepRef.current;
+                            alle[navn] ??= b.make(Math.random);
+                            alle[navn](gameRef.current);
                         },
                     },
                 ])
@@ -400,7 +413,7 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                         onPointerDown={onPointer}
                         onPointerUp={onPointer}
                         onPointerCancel={onPointer}
-                        style={{ touchAction: 'none', background: '#eeebdf' }}
+                        style={{ touchAction: 'none', background: '#e4e6db' }}
                     />
 
                     <div
@@ -455,9 +468,6 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                                     <li key={r}>{r}</li>
                                 ))}
                             </ul>
-                            <p style={{ fontSize: 15, margin: '0 0 8px', fontStyle: 'italic' }}>
-                                {SJANSER}
-                            </p>
                             <ArcadeBigButton onClick={() => start()}>
                                 Fyr opp (mellomrom)
                             </ArcadeBigButton>

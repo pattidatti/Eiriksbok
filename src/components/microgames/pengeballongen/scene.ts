@@ -351,62 +351,10 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
         const a = kn.x0 - x0;
         const b = kn.x1 - x0;
         if (b < -160 || a > 1120) continue;
-        if (kn.port) {
-            tegnPort(ctx, kn, a, b, k.korn, x0, tid);
-            continue;
-        }
-        // Fjellhammeren: kornet kritt med takket underkant og snø på toppen.
-        ctx.beginPath();
-        ctx.moveTo(a - 6, kn.topp + 8);
-        const n = 12;
-        for (let i = 0; i <= n; i++) {
-            const x = a + ((b - a) * i) / n;
-            ctx.lineTo(x, kn.topp - 2 - hash(i + kn.x0) * 7);
-        }
-        ctx.lineTo(b + 6, kn.topp + 8);
-        for (let i = n; i >= 0; i--) {
-            const x = a + ((b - a) * i) / n;
-            const istapp = i % 2 === 0 ? 6 + hash(i * 3 + kn.x0) * 8 : 0;
-            ctx.lineTo(x, kn.bunn - 3 + istapp * 0.6);
-        }
-        ctx.closePath();
-        ctx.fillStyle = '#3a3f3b';
-        ctx.fill();
-        if (k.korn) {
-            flyttMønster(k.korn, -x0);
-            ctx.fillStyle = k.korn;
-            ctx.fill();
-        }
-        ctx.fillStyle = P.hvit;
-        ctx.fillRect(a, kn.topp - 3, b - a, 4);
-        // Etter riksretten faller kongens kroner av knausene én etter én.
-        const cx = (a + b) / 2;
-        if (!kn.port) {
-            const fall = Math.max(0, (g.x - (kn.x0 - 520)) / 220);
-            if (fall < 2.2) {
-                ctx.save();
-                ctx.globalAlpha = Math.max(0, 1 - fall / 2.2);
-                ctx.translate(cx + fall * 14, kn.topp - 32 + fall * fall * 120);
-                ctx.rotate(fall * 1.8);
-                krone(ctx, 0, 0, 1.1);
-                ctx.restore();
-            }
-        } else if (!kn.valgt) {
-            // Porten under fjellet: en pil som peker ned og inn, så eleven ser at det går an.
-            const puls = 0.6 + 0.4 * Math.sin(tid * 6);
-            ctx.save();
-            ctx.globalAlpha = puls;
-            ctx.strokeStyle = P.silke;
-            ctx.lineWidth = 3;
-            ctx.setLineDash([6, 6]);
-            ctx.beginPath();
-            ctx.moveTo(a - 70, kn.bunn - 40);
-            ctx.quadraticCurveTo(a - 20, kn.bunn + 50, cx, kn.bunn + 60);
-            ctx.stroke();
-            ctx.setLineDash([]);
-            ctx.restore();
-        }
+        tegnPort(ctx, kn, a, b, k.korn, x0, tid);
     }
+    tegnRegjering(ctx, g, k.korn, x0, tid);
+    tegnBevilg(ctx, g, tid);
     ctx.textAlign = 'center';
     for (const u of ter.utgifter) {
         const sx = u.x - x0;
@@ -448,11 +396,158 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
         ctx.stroke();
         ctx.restore();
     }
+    // Riksrett-stemmene 1882-1884: en dommerklubbe på et segl. Hver kutter ett tau.
+    for (const st of ter.riksrett) {
+        if (st.tatt) continue;
+        const sx = st.x - x0;
+        if (sx < -30 || sx > 990) continue;
+        const sy = st.y - 10 + Math.sin(tid * 2.4 + st.x) * 3;
+        ctx.save();
+        ctx.translate(sx, sy);
+        ctx.globalAlpha = 0.35;
+        ctx.fillStyle = P.silkeLys;
+        ctx.beginPath();
+        ctx.arc(0, 0, 22 + Math.sin(tid * 5) * 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = P.karmin;
+        ctx.beginPath();
+        ctx.arc(0, 0, 13, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.rotate(-0.6 + Math.sin(tid * 4 + st.x) * 0.25);
+        ctx.fillStyle = '#6b5a45';
+        ctx.fillRect(-1.5, -3, 3, 16);
+        ctx.fillStyle = P.hvit;
+        ctx.fillRect(-7, -8, 14, 7);
+        ctx.restore();
+    }
     for (const f of ter.funn) {
         if (f.tatt) continue;
         const sx = f.x - x0;
         if (sx < -30 || sx > 990) continue;
         tegnFunn(ctx, sx, f.y, tid);
+    }
+}
+
+/**
+ * Kongens regjering: en fjellklippe som henger i tre tau over dalen 1882-1884. Hver
+ * riksrett-stemme kutter ett tau; det tredje får klippa til å falle, og Stortinget får roret.
+ */
+function tegnRegjering(
+    ctx: CanvasRenderingContext2D,
+    g: Game,
+    korn: CanvasPattern | null,
+    x0: number,
+    tid: number
+) {
+    const r = g.ter.regjering;
+    const cx = r.x - x0;
+    if (cx < -300 || cx > 1260) return;
+    const fall = g.falt ? Math.max(0, (g.x - g.falt) / 260) : 0;
+    if (fall > 2.4) return;
+    const bredde = 170;
+    const høyde = 150;
+    const dy = fall * fall * 260;
+    const bunn = r.bunn + dy;
+    const topp = bunn - høyde;
+    // Tauene: fra himmelen ned i klippa. Kuttede tau henger og slenger.
+    const tau = [-bredde * 0.32, 0, bredde * 0.32];
+    ctx.strokeStyle = '#6b5a45';
+    ctx.lineWidth = 3;
+    tau.forEach((tx, i) => {
+        const kuttet = i < g.riksrett;
+        ctx.beginPath();
+        if (!kuttet) {
+            ctx.moveTo(cx + tx, -10);
+            ctx.lineTo(cx + tx, topp + 14);
+        } else if (!g.falt) {
+            const sving = Math.sin(tid * 3 + i) * 10;
+            ctx.moveTo(cx + tx, -10);
+            ctx.quadraticCurveTo(cx + tx + sving, 30, cx + tx + sving * 1.6, 60);
+        }
+        ctx.stroke();
+    });
+    ctx.save();
+    ctx.translate(cx, (topp + bunn) / 2);
+    ctx.rotate(fall * 0.25);
+    ctx.globalAlpha = Math.max(0, 1 - fall / 2.4);
+    ctx.beginPath();
+    ctx.moveTo(-bredde / 2, -høyde / 2);
+    const n = 10;
+    for (let i = 0; i <= n; i++) ctx.lineTo(-bredde / 2 + (bredde * i) / n, -høyde / 2 - hash(i + 7) * 12);
+    ctx.lineTo(bredde / 2 + 10, høyde * 0.1);
+    for (let i = n; i >= 0; i--) {
+        const istapp = i % 2 === 1 ? 10 + hash(i * 5) * 14 : 0;
+        ctx.lineTo(-bredde / 2 + (bredde * i) / n, høyde / 2 - 6 + istapp);
+    }
+    ctx.lineTo(-bredde / 2 - 10, høyde * 0.1);
+    ctx.closePath();
+    ctx.fillStyle = '#353a37';
+    ctx.fill();
+    if (korn) {
+        flyttMønster(korn, -x0 - cx);
+        ctx.fillStyle = korn;
+        ctx.fill();
+    }
+    ctx.fillStyle = P.hvit;
+    ctx.fillRect(-bredde / 2, -høyde / 2 - 4, bredde, 5);
+    krone(ctx, 0, -høyde / 2 - 22, 1.4);
+    ctx.fillStyle = P.hvit;
+    ctx.textAlign = 'center';
+    ctx.font = `italic bold 17px ${FONT}`;
+    ctx.fillText('Kongens regjering', 0, 4);
+    ctx.font = `15px ${FONT}`;
+    ctx.fillText(g.falt ? 'Felt i riksretten' : `${3 - g.riksrett} tau igjen`, 0, 26);
+    ctx.restore();
+    ctx.globalAlpha = 1;
+}
+
+/**
+ * Bevilgningsportene: en høy tømmerport i dalen før et dyrt fjell. Lavt gjennom = bevilg
+ * (prisen fra sekken, staten bærer deg over fjellet). Over porten = spar sekken, fyr selv.
+ */
+function tegnBevilg(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
+    const x0 = g.x - B.skjermX;
+    const BV = TUNING.bevilg;
+    for (const b of g.ter.bevilg) {
+        const sx = b.x - x0;
+        if (sx < -120 || sx > 1080) continue;
+        // Buen henger så høyt at hele ballongen går under den når kurven er under terskelen.
+        const bue = b.bunn - BV.åpning - B.høyde - 8;
+        const v = 44;
+        const valgt = b.valgt;
+        ctx.save();
+        if (valgt === 'nei') ctx.globalAlpha = 0.45;
+        // Lys i åpningen mens porten ligger foran deg.
+        if (!valgt) {
+            const puls = 0.22 + 0.14 * Math.sin(tid * 5);
+            const gr = ctx.createLinearGradient(0, bue, 0, b.bunn);
+            gr.addColorStop(0, 'rgba(240,200,120,0)');
+            gr.addColorStop(1, `rgba(240,200,120,${puls.toFixed(3)})`);
+            ctx.fillStyle = gr;
+            ctx.fillRect(sx - v, bue, v * 2, b.bunn - bue);
+        }
+        // Stolpene og buen.
+        ctx.fillStyle = '#5b4a38';
+        ctx.fillRect(sx - v - 6, bue - 6, 10, b.bunn - bue + 6);
+        ctx.fillRect(sx + v - 4, bue - 6, 10, b.bunn - bue + 6);
+        ctx.fillRect(sx - v - 14, bue - 12, v * 2 + 28, 9);
+        // Banneret med pris og navn.
+        const bw = 150;
+        const by = bue - 54;
+        ctx.fillStyle = valgt === 'ja' ? P.silke : P.hvit;
+        ctx.strokeStyle = P.kritt;
+        ctx.lineWidth = 1.5;
+        ctx.fillRect(sx - bw / 2, by, bw, 40);
+        ctx.strokeRect(sx - bw / 2, by, bw, 40);
+        ctx.textAlign = 'center';
+        ctx.fillStyle = valgt === 'ja' ? P.hvit : P.karmin;
+        ctx.font = `bold 16px ${FONT}`;
+        ctx.fillText(valgt === 'ja' ? 'BEVILGET' : `BEVILG ${b.pris} Spd.`, sx, by + 17);
+        ctx.fillStyle = valgt === 'ja' ? P.hvit : P.kritt;
+        ctx.font = `italic 14px ${FONT}`;
+        ctx.fillText(b.navn, sx, by + 34);
+        ctx.restore();
     }
 }
 
@@ -500,7 +595,7 @@ export function tegnBaner(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
         ctx.font = `bold 14px ${FONT}`;
         ctx.textAlign = 'center';
         const tw = ctx.measureText(b.navn).width + 14;
-        ctx.fillStyle = '#f8f4e8';
+        ctx.fillStyle = P.hvit;
         ctx.fillRect(sx - tw / 2, b.y1 - 76, tw, 22);
         ctx.strokeStyle = P.kritt;
         ctx.lineWidth = 1.5;

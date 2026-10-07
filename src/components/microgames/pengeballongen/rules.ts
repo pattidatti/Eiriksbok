@@ -115,7 +115,10 @@ export const kostnad = (g: Game) =>
 /** Spart per sekund når du slipper: lite høyt oppe, mye tett over fjellet. */
 export function sparing(g: Game): number {
     if (g.år < T.ganger.fra) return T.penger.førUeland;
-    return iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor;
+    const s = iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor;
+    // Rorstrekket går i sakte film (ett år = `rorTempo` s): sparingen følger årene, ikke
+    // sekundene, ellers ville det siste halve året gitt mer enn hele resten av runden.
+    return g.år >= T.år.rorFra ? (s * T.år.etterValg) / T.år.rorTempo : s;
 }
 
 /** Treffer ballongen fjellet eller en knaus? */
@@ -129,16 +132,33 @@ export function krasjer(g: Game): boolean {
     return false;
 }
 
+/**
+ * Grensen ved valget i perioden som slutter i `år`: bøndene teller strengere jo sterkere
+ * bondeopposisjonen blir. Fra `penger.grense` i 1833 ned til `penger.grenseSlutt` i 1881.
+ */
+export function grense(år: number): number {
+    const P = T.penger;
+    const u = Math.min(1, Math.max(0, (år - P.førsteEkteValg) / (P.sisteValg - P.førsteEkteValg)));
+    return P.grense + (P.grenseSlutt - P.grense) * u;
+}
+
+/** Grensen for valgperioden ballongen er i nå (neste valg). */
+export const grenseNå = (g: Game) => grense(g.ter.valg[g.nesteValg]?.år ?? T.penger.sisteValg);
+
 /** Valggrensen er i spill (fra 1833). */
 export const grenseVises = (g: Game) => g.år >= T.penger.førsteEkteValg - 1.2;
 
-/** 0-1: tyngde + fjellhøyde foran + fart. */
+/** 0-1: tyngde + fjellhøyde foran + fart + hvor stramt budsjettet er. */
 export function press(g: Game): number {
     const p = T.press;
     const n = (v: number, [a, b]: number[]) => Math.min(1, Math.max(0, (v - a) / (b - a)));
     let topp = 540;
     for (let dx = 0; dx <= 700; dx += 20) topp = Math.min(topp, fastTopp(g.ter, g.x + dx));
-    return (n(synk(g), p.synk) + n(topp, p.fjell) + n(g.x > 0 ? fartNå(g) : 140, p.fart)) / 3;
+    // Budsjettet: før 1833 teller ingen, så er det grensen som strammes.
+    const budsjett = g.år < T.penger.førsteEkteValg ? 0 : n(grenseNå(g), [T.penger.grense + 2, T.penger.grenseSlutt]);
+    return (
+        (n(synk(g), p.synk) + n(topp, p.fjell) + n(g.x > 0 ? fartNå(g) : 140, p.fart) + budsjett) / 4
+    );
 }
 
 function fartNå(g: Game) {

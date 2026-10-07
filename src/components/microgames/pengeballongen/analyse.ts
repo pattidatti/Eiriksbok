@@ -6,7 +6,7 @@ import { BOT_EVERY, PLAYTEST_DT } from '../playtest';
 import { seeded } from '../sim';
 import { BOTS } from './bots';
 import { newGame, update } from './game';
-import { TUNING } from './tuning';
+import { grense } from './rules';
 
 const median = (a: number[]) => {
     const s = [...a].sort((x, y) => x - y);
@@ -57,10 +57,9 @@ export function analyser(runder = 100) {
             }
             poeng.push(Math.floor(g.spart));
             if (g.gangerTidSum > 0) ganger.push(g.gangerSum / g.gangerTidSum);
-            const gr = TUNING.penger.grense;
             for (const p of g.perioder) {
-                if (p.år <= 1848) tidlig.push(p.brukt / gr);
-                if (p.år >= 1866) sent.push(p.brukt / gr);
+                if (p.år <= 1848) tidlig.push(p.brukt / grense(p.år));
+                if (p.år >= 1866) sent.push(p.brukt / grense(p.år));
             }
             if (knauser) under.push(lave / knauser);
         }

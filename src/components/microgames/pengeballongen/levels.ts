@@ -121,20 +121,28 @@ export function formFor(p: number, år0: number, banenFra: number): Form {
 }
 
 /** Jernbanene: navnet på skiltet ved stasjonen, etter året perioden starter. */
-export const BANER: { år: number; navn: string }[] = [
+export const BANER: { år: number; navn: string; bevilg?: boolean }[] = [
     { år: 1854, navn: 'Hovedbanen 1854' },
-    { år: 1863, navn: 'Kongsvingerbanen 1862' },
-    { år: 1872, navn: 'Drammenbanen 1872' },
+    { år: 1863, navn: 'Kongsvingerbanen 1862', bevilg: true },
+    { år: 1872, navn: 'Drammenbanen 1872', bevilg: true },
 ];
 
-/** Knausene i lufta etter riksretten (1882): åpne, uten kongens bom. */
-export const ÅPNE_VEISKILLER = [1882.2, 1883.1];
+/**
+ * Riksretten 1882-1884: tre riksrett-stemmer henger lavt i dalen. Hver stemme kutter ett tau
+ * som holder Kongens regjering (klippa som henger over dalen). Det tredje tauet = roret.
+ */
+export const RIKSRETT = [1882.35, 1882.95, 1883.55];
+/** Kongens regjering henger over dalen her (år), med bunnen så høyt (skjerm-y). */
+export const REGJERING = { år: 1883.95, bunn: 235 };
 
 /** Kongens navngitte utgifter: en brå spiss på tinden i perioden. */
-export const UTGIFTER: { år: number; navn: string }[] = [
+export const UTGIFTER: { år: number; navn: string; bevilg?: boolean }[] = [
     { år: 1840.5, navn: 'Ny festning' },
-    { år: 1846.5, navn: 'Embetskontor' },
-    { år: 1858.5, navn: 'Telegrafen' },
+    // Med bevilgningsport: Stortinget velger om staten skal betale for det.
+    { år: 1846.5, navn: 'Embetskontor', bevilg: true },
+    { år: 1858.5, navn: 'Telegrafen', bevilg: true },
+    { år: 1867.5, navn: 'Fyrlyktene', bevilg: true },
+    { år: 1876.5, navn: 'Rørosbanen', bevilg: true },
 ];
 
 export type FunnId = 'olaboka' | 'jordskatten' | 'formannskap' | 'hovedbanen' | 'ibsen' | 'roret';

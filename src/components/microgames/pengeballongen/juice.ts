@@ -3,7 +3,7 @@
 
 import { bakke } from './terrain';
 import { blink, rist, slipp, stopp, type Fx } from './fx';
-import { iBåndet, klaring } from './rules';
+import { grenseNå, iBåndet, klaring } from './rules';
 import type { Lyd } from './sound';
 import type { Game, Hendelse } from './state';
 import { TUNING } from './tuning';
@@ -117,7 +117,7 @@ export function juice(g: Game, fx: Fx, j: Juice, lyd: Lyd, dt: number, landet: n
     }
 
     // Stabelen nærmer seg streken.
-    const nær = g.år >= TUNING.penger.førsteEkteValg - 1.2 && g.periode > TUNING.penger.grense * 0.8;
+    const nær = g.år >= TUNING.penger.førsteEkteValg - 1.2 && g.periode > grenseNå(g) * 0.8;
     if (nær && !j.stabelVarslet) {
         j.stabelVarslet = true;
         fx.stabelBlink = 1;
@@ -245,8 +245,53 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                 slipp(fx, 'mynt', BX + r(-10, 10), y - 30, { maks: r(0.6, 0.9), mål: TELLER });
             break;
         case 'roret':
+            // Kongens regjering faller: tungt drønn, risting og støv.
+            stopp(fx, 0.12);
+            lyd.krasj();
             lyd.funn();
+            rist(fx, 12);
             blink(fx, 0.5);
+            for (let i = 0; i < 18; i++)
+                slipp(fx, 'røyk', g.ter.regjering.x - g.x + BX + r(-90, 90), g.ter.regjering.bunn + r(-60, 20), {
+                    vx: r(-90, 90),
+                    vy: r(-40, 80),
+                    maks: r(0.8, 1.5),
+                    str: r(0.7, 1.4),
+                });
+            break;
+        case 'riksrett':
+            // Et tau ryker: klubbeslag, gnister fra tauet og papir som flyr til telleren.
+            stopp(fx, 0.08);
+            lyd.dom();
+            rist(fx, 5);
+            fx.sprett = 1;
+            for (let i = 0; i < 4; i++)
+                slipp(fx, 'papir', BX + r(-8, 8), y - 10, { maks: r(0.5, 0.8), mål: TELLER, vr: 8 });
+            for (let i = 0; i < 10; i++)
+                slipp(fx, 'gnist', BX + r(-10, 10), y - 10, { vx: r(-200, 200), vy: r(-300, -60), maks: 0.45 });
+            break;
+        case 'bevilg':
+            if (h.ja) {
+                // Sekken åpnes: myntene flyr fra telleren ned til porten, og staten løfter.
+                stopp(fx, 0.1);
+                lyd.bevilg();
+                rist(fx, 4);
+                blink(fx, 0.3, P.silke);
+                fx.sprett = 1;
+                for (let i = 0; i < 14; i++)
+                    slipp(fx, 'mynt', TELLER.x + r(-20, 20), TELLER.y + r(-6, 6), {
+                        maks: r(0.5, 0.8),
+                        mål: { x: BX + r(-10, 10), y: y - 6 },
+                        vr: 10,
+                    });
+            } else {
+                lyd.spart();
+                for (let i = 0; i < 6; i++)
+                    slipp(fx, 'mynt', BX + r(-10, 10), y - 10, { maks: r(0.5, 0.8), mål: TELLER });
+            }
+            break;
+        case 'bæres':
+            lyd.vinker();
             break;
         case 'landet':
             lyd.seier();

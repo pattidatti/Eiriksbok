@@ -36,7 +36,7 @@ export const TUNING = {
         /** Hvor fort farten følger roret og brenneren i rorstrekket (px/s²): Stortinget styrer. */
         akselerasjon: 1300,
         /** Stemmene i dalene: verdt så mye ganger Ueland-gangeren. */
-        stemme: 40,
+        stemme: 6,
         /** Dalene i rorstrekket: antall, dybde (px under kammen) og kammen. */
         daler: 3,
         kamY: 360,
@@ -113,8 +113,10 @@ export const TUNING = {
         førUeland: 6,
         /** Spart per sekund når du slipper over nær-båndet fra 1833. I båndet: perSek x gangeren. */
         utenfor: 2,
-        /** Grensen ved valget: så mye kan du bruke per treårsperiode fra 1833. */
+        /** Grensen ved valget: så mye kan du bruke per treårsperiode i 1833 ... */
         grense: 26,
+        /** ... og ved det siste valget (1881). Bøndene teller strengere med årene. */
+        grenseSlutt: 22,
         /** Ola-boka (1832): bøndene får flertall, embetsmennene får mindre - brenneren blir
          * så mye billigere resten av runden. */
         olaboka: 0.2,
@@ -138,9 +140,9 @@ export const TUNING = {
         /** Bakken som teller, fra så langt bak til så langt foran kurven (px vei). */
         vindu: [-90, 30] as [number, number],
         /** Sekunder sammenhengende i båndet per trinn opp. */
-        trinn: 1,
-        /** Over båndet faller gangeren ett trinn per så mange sekunder. */
-        fall: 1.5,
+        trinn: 0.5,
+        /** Over båndet faller gangeren ett trinn per så mange sekunder (fort: høyt koster). */
+        fall: 1.0,
         maks: 10,
     },
 
@@ -172,14 +174,31 @@ export const TUNING = {
         tog: 70,
     },
 
-    // Knausene i lufta etter riksretten 1882-1884. Under = Ueland +1.
+    // Bevilgningsportene midt i runden (Embetskontor, Telegrafen, Drammenbanen): en port i dalen
+    // rett før fjellet. Gli under banneret = bevilg: prisen trekkes fra sekken (det du har spart),
+    // men staten bærer deg over fjellet, og budsjettet til valget slipper. Fly over porten = spar
+    // sekken, men da må du fyre deg over fjellet selv, og det tar av budsjettet.
+    bevilg: {
+        /** Prisen på den første porten (Spd. fra sekken), og så mye dyrere hver neste. */
+        pris: 25,
+        økning: 5,
+        /** Banneret henger så høyt over bakken: kurven under denne høyden = bevilget. */
+        åpning: 160,
+        /** Porten står så langt foran der stigningen begynner (px vei). */
+        foran: 70,
+        /** Flat dal fra så langt før stigningen (px vei), så banneret henger like høyt hele veien. */
+        dal: 320,
+        /** Fjellet med port flyttes så langt fram i perioden (andel), så det er tid til å synke. */
+        skyv: 0.2,
+    },
+
+    // Dalen etter riksretten 1882-1884, med tre riksrett-stemmer (årene står i levels.ts).
     veiskille: {
-        bredde: 260,
-        /** Luft under knausen (fra dalbunnen). */
-        gap: 175,
-        /** Tykkelsen på knausen. */
-        tykkelse: 24,
         dalY: 474,
+        /** Riksrett-stemmene henger så høyt over dalbunnen (lavt i dalen, men ikke helt nede). */
+        stemmeOver: 95,
+        /** Hver riksrett-stemme er verdt så mye ganger Ueland-gangeren. */
+        verdi: 5,
         /** Riksretten: fra dette året er kongens bommer borte, og Sverdrup kommer om bord. */
         riksrett: 1882,
     },
@@ -196,16 +215,16 @@ export const TUNING = {
     },
 
     // Presset (0-1) som selvspillet måler.
-    press: { synk: [110, 170], fart: [140, 200], fjell: [470, 230] },
+    press: { synk: [85, 125], fart: [140, 200], fjell: [470, 230] },
 
     // Rangtrinn etter sparte spesidaler (stigende).
     ranger: [
         [0, 'Vararepresentant'],
-        [500, 'Bonderepresentant'],
-        [1100, 'Sparebonde'],
-        [1800, 'Ueland-elev'],
-        [2500, 'Dalanes stolthet'],
-        [3200, 'Ueland selv'],
+        [100, 'Bonderepresentant'],
+        [250, 'Sparebonde'],
+        [400, 'Ueland-elev'],
+        [550, 'Dalanes stolthet'],
+        [750, 'Ueland selv'],
     ] as [number, string][],
 };
 

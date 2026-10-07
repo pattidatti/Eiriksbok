@@ -48,12 +48,14 @@ export interface TegneValg {
     meny: boolean;
     rekord: number;
     øving: boolean;
+    /** Plakaten (selvspillets --cover): bare bildet, uten papirmarg, HUD og lapper. */
+    plakat?: boolean;
 }
 
 export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
     const { ctx, w, h, dpr } = view;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = '#eeebdf';
+    ctx.fillStyle = '#e4e6db';
     ctx.fillRect(0, 0, w, h);
     const k = skala(w, h);
     ctx.setTransform(dpr * k.s, 0, 0, dpr * k.s, dpr * k.ox, dpr * k.oy);
@@ -84,7 +86,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
         hold: g.hold,
         hatter: g.hatter,
         ueland: g.år >= TUNING.ganger.fra,
-        sverdrup: g.år >= TUNING.veiskille.riksrett + 0.6,
+        sverdrup: g.harRor,
         ganger: g.ganger,
         tid,
         vy: g.vy,
@@ -92,6 +94,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
     tegnFx(ctx, fx, 'foran');
     ctx.restore();
 
+    if (valg.plakat) return;
     tegnRamme(ctx, g, valg.meny);
     tegnHud(ctx, g, fx, { meny: valg.meny, rekord: valg.rekord, øving: valg.øving });
     tegnLapper(ctx, fx, FONT);

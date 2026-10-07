@@ -2,7 +2,7 @@
 // valgene og krasj. Tallene står i tuning.ts, fagreglene i rules.ts.
 
 import { brettFor } from './levels';
-import { fly, iBåndet, kostnad, krasjer, rorMål, sparing, synk } from './rules';
+import { fly, grense, iBåndet, kostnad, krasjer, rorMål, sparing, synk } from './rules';
 import { bakke, årFor, veiVed } from './terrain';
 import type { Game, Årsak } from './state';
 import { TUNING } from './tuning';
@@ -41,6 +41,7 @@ function slutt(g: Game, årsak: Årsak, brukt?: number) {
     const s = g.sjekk;
     if (s && g.sjanser > 0) {
         g.sjanser--;
+        g.sistTap = årsak;
         const år = Math.floor(g.år);
         const straff = Math.round(s.spart * T.sjekk.straff);
         g.t = s.t;
@@ -62,10 +63,15 @@ function slutt(g: Game, årsak: Årsak, brukt?: number) {
         g.fallTid = 0;
         g.rolig = g.t - T.løft.rolig.sekunder;
         g.harRor = g.år >= T.år.rorFra;
+        if (!g.harRor) g.falt = 0;
         g.ror = false;
         for (const k of g.ter.knauser) if (k.x0 > g.x) k.valgt = null;
         for (const st of g.ter.stemmer) if (st.x > g.x) st.tatt = false;
         g.stemmer = g.ter.stemmer.filter((st) => st.tatt).length;
+        for (const b of g.ter.bevilg) if (b.x > g.x) b.valgt = null;
+        for (const st of g.ter.riksrett) if (st.x > g.x) st.tatt = false;
+        g.riksrett = g.ter.riksrett.filter((st) => st.tatt).length;
+        g.bæres = 0;
         s.spart = g.spart;
         g.hendelser.push({ slag: 'sjanse', årsak, år, tilbake: Math.floor(s.år), straff });
         return;
@@ -82,6 +88,7 @@ export function update(g: Game, dt: number) {
     if (g.mode !== 'play' || dt <= 0) return;
     const førÅr = g.år;
     g.t += dt;
+    g.spilt += dt;
     g.år = årFor(g.t);
     // Regelskiftet midt i runden: Bondetinget (brenneren billigere).
     const krysset = (år: number) => førÅr < år && g.år >= år;
@@ -96,18 +103,33 @@ export function update(g: Game, dt: number) {
 
     // Varme og løft: varmen følger knappen litt etter, farten følger varmen.
     // Riksretten er over: Stortinget styrer kursen, og eleven får roret.
-    if (!g.harRor && g.år >= T.år.rorFra) {
+    // Det tredje riksrett-tauet gir roret. Har du ikke alle tre i 1884, dømmer riksretten
+    // resten likevel (ellers kommer ingen gjennom rorstrekket).
+    if (!g.harRor && (g.riksrett >= 3 || g.år >= T.år.rorFra)) {
+        if (g.riksrett < 3) {
+            g.riksrett = 3;
+            g.hendelser.push({ slag: 'riksrett', n: 3 });
+        }
         g.harRor = true;
+        g.falt = g.x;
         g.hendelser.push({ slag: 'roret' });
     }
-    fly(g, g.hold, g.ror, g.harRor, synk(g), dt, g.ror ? rorMål(g.ter, g.x) : Infinity);
+    // Bevilget: staten bærer ballongen tett over fjellet. Brenneren er ute av spill imens.
+    if (g.bæres && g.x >= g.bæres) {
+        g.bæres = 0;
+        g.hendelser.push({ slag: 'bæres', ferdig: true });
+    }
+    if (g.bæres) fly(g, false, true, true, 0, dt, rorMål(g.ter, g.x));
+    else fly(g, g.hold, g.ror, g.harRor, synk(g), dt, g.ror ? rorMål(g.ter, g.x) : Infinity);
 
     // Pengene: hold = bruk, slipp = spar (ganger Ueland).
     if (!g.stabel && g.år >= T.penger.stabelFra) {
         g.stabel = true;
         g.periode = 0;
     }
-    if (g.hold) {
+    if (g.bæres) {
+        // Staten betaler: ingen brenner, ingen sparing.
+    } else if (g.hold) {
         const kr = kostnad(g) * dt;
         g.brukt += kr;
         g.periode += kr;
@@ -115,7 +137,7 @@ export function update(g: Game, dt: number) {
 
     // Ueland-gangeren: sammenhengende tid i nær-båndet gir et trinn opp; over båndet faller
     // den ett trinn om gangen.
-    if (g.år >= T.ganger.fra) {
+    if (g.år >= T.ganger.fra && !g.bæres) {
         const G = T.ganger;
         if (iBåndet(g)) {
             g.fallTid = 0;
@@ -148,6 +170,34 @@ export function update(g: Game, dt: number) {
         g.hendelser.push({ slag: 'veiskille', vei: k.valgt, port: k.port });
     }
 
+    // Bevilgningsportene: under banneret = bevilg (fra sekken), over = spar sekken og fyr selv.
+    for (const b of g.ter.bevilg) {
+        if (b.valgt || g.x < b.x) continue;
+        const ja = g.y > b.bunn - T.bevilg.åpning;
+        b.valgt = ja ? 'ja' : 'nei';
+        const pris = ja ? Math.min(b.pris, Math.floor(g.spart)) : 0;
+        if (ja) {
+            g.spart -= pris;
+            g.bæres = b.til;
+            // Ueland hatet bevilgninger: gangeren starter på nytt.
+            settGanger(g, 1);
+            g.gangerTid = 0;
+        }
+        const hårfint = Math.abs(g.y - (b.bunn - T.bevilg.åpning)) < 14;
+        g.hendelser.push({ slag: 'bevilg', navn: b.navn, pris, ja, hårfint });
+    }
+
+    // Riksrett-stemmene 1882-1884: hver kutter ett tau.
+    for (const st of g.ter.riksrett) {
+        if (st.tatt || Math.abs(st.x - g.x) > T.funn.radius) continue;
+        if (Math.abs(st.y - (g.y - 10)) < T.funn.radius) {
+            st.tatt = true;
+            g.riksrett = Math.min(3, g.riksrett + 1);
+            g.spart += T.veiskille.verdi * g.ganger;
+            g.hendelser.push({ slag: 'riksrett', n: g.riksrett });
+        }
+    }
+
     // Funn som henger lavt.
     for (const f of g.ter.funn) {
         if (f.tatt || Math.abs(f.x - g.x) > T.funn.radius) continue;
@@ -177,7 +227,7 @@ export function update(g: Game, dt: number) {
     if (v && g.x >= v.x) {
         g.nesteValg++;
         const brukt = Math.round(g.periode);
-        if (v.ekte && g.periode > T.penger.grense) {
+        if (v.ekte && g.periode > grense(v.år)) {
             g.perioder.push({ år: v.år, brukt: g.periode });
             slutt(g, 'valg', brukt);
             return;

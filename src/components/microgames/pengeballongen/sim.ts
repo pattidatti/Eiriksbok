@@ -23,7 +23,9 @@ export function snapshotOf(g: Game | null, meny = false): PlaytestSnapshot {
         fase: g.mode === 'won' ? 'vunnet' : g.mode === 'lost' ? 'tapt' : 'spiller',
         poeng: Math.floor(g.spart),
         framdrift: Math.min(1, g.t / RUNDE),
-        tid: g.t,
+        // Spilte sekunder i alt: en ny sjanse spoler g.t tilbake, men robottakten (som planlegger
+        // etter `tid`) må gå videre, ellers står roboten stille i sekundene som spoles om.
+        tid: g.start + g.spilt,
         valg: g.valg,
         press: press(g),
         årsak: årsakTekst(g),

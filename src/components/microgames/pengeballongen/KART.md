@@ -1,12 +1,12 @@
 # Pengeballongen - kart over mappa
 
-Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet). Brief: `docs/microgames/briefer/pengeballongen.md`.
+Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene). Brief: `docs/microgames/briefer/pengeballongen.md`.
 Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skjerm, øving fra 1870, selvspill).
 
 | Fil | Hva den gjør |
 | --- | --- |
 | `tuning.ts` | Alle tallene: år, fart, ballong, løft (varme, akselerasjon, tynn luft, synk, flosshatter, rolig start), roret (`synk`, `stig`, `over`, dalene), penger (pris, sparing før/utenfor/i båndet, grense, valgår), Ueland-gangeren (nær-bånd, vindu, trinn, fall), formene, `banen`, knausene 1882, `port`, press, ranger, `øvFra`. |
-| `levels.ts` | Brettene (bildetekst, banner, terreng før 1833), sletta før 1833, `formFor()` per valgperiode (tind / skrapeåser, fra 1854 også banen), `BANER`, finalen, kongens utgifter, funnene med fagsetning. |
+| `levels.ts` | `UTGIFTER`/`BANER` med `bevilg: true` (portene), `RIKSRETT` (årene for de tre stemmene) og `REGJERING` (klippa). Brettene (bildetekst, banner, terreng før 1833), sletta før 1833, `formFor()` per valgperiode (tind / skrapeåser, fra 1854 også banen), `BANER`, finalen, kongens utgifter, funnene med fagsetning. |
 | `terrain.ts` | Tid <-> år <-> vei, `lagTerreng(rng)` (også `baner` og portene i rorstrekket), oppslag `bakke`, `fastTopp`, `knausVed`. |
 | `state.ts` | Typene og `newGame(seed, fraÅr?)` (øving hopper til 1870 med alt før lagt inn). |
 | `rules.ts` | Fagkjernen: `hold()`, `ror()`, `fly()` (fysikksteget, delt med robotene), `rorMål()`, `synk()`, `stig()`, `klaring()`, `nærhet()`, `iBåndet()`, `kostnad()`, `sparing()`, `krasjer()`, `press()`, `rang()`. |
@@ -64,13 +64,33 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 13. Gangeren går til ×10 (`ganger.maks`); over ×5 kommer fartsstriper, lyd, blink og «Full fart!».
 14. Rorstrekket er ca. 15 s (`rorTempo` 30) med tre daler og porter, så filmbildet ved 110 s viser roret.
 
+17. Bevilgningsportene (`bevilg` i tuning, `ter.bevilg`): seks porter (Embetskontor 1846, Telegrafen
+    1858, Kongsvingerbanen, Fyrlyktene, Drammenbanen, Rørosbanen) i en flat dal før et dyrt fjell.
+    Kurven under `åpning` px over bakken ved porten = bevilget: prisen trekkes fra Spart, gangeren
+    går til ×1 (Ueland hatet bevilgninger), og staten bærer ballongen (`g.bæres`, ror-fysikk mot
+    `rorMål`) til `til`. Imens koster brenneren ingenting og ingenting spares. Over porten = spar
+    sekken, men fyr deg over fjellet selv (koster budsjett). Ett verb: høyden.
+18. Budsjettet strammes: `grense(år)` går fra `penger.grense` (26) i 1833 til `grenseSlutt` (22) i
+    1881. HUD-kortet viser «Igjen til valget 18xx: n av m Spd.». Presset (`press()`) har fire ledd:
+    synk, fjell, fart og hvor stram grensen er.
+19. Riksretten 1882-1884: tre stemmer (`ter.riksrett`) henger ca. 95 px over dalen. Hver kutter ett
+    tau til Kongens regjering (`ter.regjering`, klippa i `tegnRegjering`). Det tredje gir roret
+    (`g.falt`, klippa faller); mangler noen i 1884, dømmer riksretten resten likevel.
+20. Rorstrekket sparer per år, ikke per sekund (sakte film), ellers ga det siste halvåret mer enn
+    hele runden. `snapshot().tid` er `g.start + g.spilt` (spolte sekunder teller med), så robottakten
+    ikke står stille etter en ny sjanse.
+
 ## Knapper
 
 - Flink-robotens poeng: `ganger.trinn`, `ganger.nær`, `ganger.vindu`.
 - Hvor tilgivende kontrollen er: `løft.akselerasjonNed` (150), `løft.synkFra/synkTil` (85/115),
   `løft.varmeTau`. Bevis med et jitter-skript: flink med grep hvert 0,2-0,5 s og 5-20 % sene grep.
-- Hvor tett budsjettet er: `penger.grense` (26) mot `løft.synkTil` og `form.økning`.
-  Flink bruker ca. 54 % tidlig og 83 % sent; sløseren blir stemt ut i 1830-årene.
+- Hvor tett budsjettet er: `penger.grense` (26) og `grenseSlutt` (22) mot `løft.synkTil` og
+  `form.økning`. Et fjell bak en port uten bevilgning koster ca. 18-22 Spd., så sent i runden
+  må de fleste bevilge noen. Flink (`betal: 1, anslag: 20`) bevilger når periode + anslag > grensen.
+- Hva bevilgning koster: `bevilg.pris`/`økning` (25 + 5 per port) og at gangeren nullstilles.
+- Hvor lett porten er å treffe: `bevilg.åpning` (160), `bevilg.skyv` (fjellet flyttes fram så det
+  er tid til å synke ned til porten).
 - Hvor tett jernbanen er: `banen.høyde` mot `penger.grense`.
 
 ## Fallgruver
@@ -85,4 +105,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 - En robot med for liten fare-margin vinner i simuleringen men krasjer i nettleseren. Test med flere dt.
 - Robotene planlegger med `vent` (0,75 s) og `fartMargin`: de regner med at neste grep kan komme
   sent. Med `vent` = robottakten (0,2 s) vant flink 0 av 40 med grep hvert 0,25 s.
+- `usePlaytest`-fabrikken kalles ved hvert oppslag: robotene ligger i `grepRef` i komponenten, ellers
+  lages de på nytt hvert grep og glemmer det de har lært (bevilger lettere etter å ha blitt stemt ut).
+- Plakaten (`--cover`) tegnes uten papirmarg og HUD: komponenten ser at knappene er skjult.
 - Kornet er et `CanvasPattern` som flyttes med `setTransform` - ellers står kornet stille mens fjellet glir.

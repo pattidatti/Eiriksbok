@@ -617,3 +617,66 @@ tilgivende, og mye av poengene kommer fra stemmene i portene. (2) Portene er obl
 som ikke skjønner roret, krasjer og spoles tilbake til 1881 (tre sjanser). Pila, lappen og
 lærings-øyeblikket peker på pil ned. (3) Likheten 0,50 er på grensen. (4) Flink står sjeldnere i
 nær-båndet enn før (snitt-ganger 2,7 mot 7,5), så Ueland ×10 er sjeldnere å se på filmen.
+
+### Natt 2, forbedring 2 (etter vurdering 1: Gøy 3 i fem runder, «for snilt»)
+
+Kjerneløkka for Gøy er endret: budsjettet strammes, og midten har en avgjørelse.
+(1) Strammere og stigende press. Grensen ved valget går fra 26 Spd. i 1833 ned til 22 i 1881
+(`grense(år)`, «bøndene teller strengere»). HUD-kortet sier det i klartekst: «Igjen til valget
+1860: 17 av 24 Spd.», og går bort etter det siste valget. Ueland-gangeren faller fortere (ett trinn
+per 1,0 s, før 1,5) men vokser fortere (0,5 s per trinn), så den som ligger tett lenge, får
+høye gangere, og den som flyr høyt, mister dem. Rorstrekket sparer per år i stedet for per sekund
+(sakte film ga før ca. 1200 av 1400 poeng på det siste halvåret), og stemmene der er verdt 6 ×
+gangeren (før 40). Presset har fått et fjerde ledd (hvor stram grensen er), og synk-skalaen følger
+spillets ekte synk (85-125).
+(2) Bevilgningsporter. Seks porter midt i runden (Embetskontor 1846, Telegrafen 1858,
+Kongsvingerbanen, Fyrlyktene 1867, Drammenbanen, Rørosbanen 1877): en høy tømmerport i en flat dal
+foran et dyrt fjell, med banneret «BEVILG 25 Spd.» og navnet. Hele ballongen under buen = bevilget:
+prisen trekkes fra Spart (mynter flyr fra telleren til kurven), Ueland-gangeren går til ×1 (han
+hatet bevilgninger), og staten bærer ballongen tett over fjellet uten at budsjettet tæres. Over
+porten = spar sekken, men fyr deg over fjellet selv. Fortsatt ett verb (høyden). Sent i runden
+holder ikke budsjettet uten noen bevilgninger, så valget er: poeng nå eller trygghet ved valget.
+Lapper: «Lavt gjennom porten: bevilg fra sekken» (ved porten) og «Over porten: spar sekken, fyr
+selv». «Dette skjedde»: «Du bevilget 5 og sa nei til 1 av kongens store prosjekter.»
+(3) 1884 som maktskifte. Knausene i 1882-83 er byttet ut med tre riksrett-stemmer som henger
+lavt i dalen, og en klippe merket «Kongens regjering» som henger i tre tau («n tau igjen»). Hver
+stemme kutter ett tau (klubbeslag, hit-stop); det tredje får klippa til å falle (drønn, støv,
+risting), banneret «SVERDRUP TAR RORET», og Sverdrup står stor ved roret i kurven. Mangler noen
+stemmer i 1884, dømmer riksretten resten likevel (ellers kommer ingen gjennom rorstrekket).
+Startlappen «Hold MELLOMROM» står ved tasten nede til venstre, ikke over ballongen. Menyen har tre
+korte regler og ingen kursivlinje.
+Plakaten: papirmargen er lys tonestein (#e4e6db, kunstbriefen) i stedet for gulnet papir, og
+plakaten tegnes uten HUD og marg (komponenten ser at selvspillet har skjult knappene). Likhet:
+nærmest generalstreiken 0,43, petisjonen-3d 0,42 (før 0,50).
+Feil funnet: `usePlaytest`-fabrikken kalles ved hvert oppslag, så robotene i nettleseren ble laget
+på nytt hvert grep (glemte alt). Nå i `grepRef`. Og `snapshot().tid` var `g.t`, som spoles tilbake
+ved ny sjanse: robottakten i nettleseren sto da stille i 5 s etter hver sjanse. Nå `g.start +
+g.spilt`. Begge ga «flink tapte i nettleseren» så snart flink brukte en sjanse.
+
+Feel-lista. Før: alle fire på plass. Etter: 1 (porten svarer med hit-stop, lyd og mynter; tauet
+med klubbeslag; klippa med drønn), 2 (nytt nesten-bom ved porten: «Akkurat under banneret!» /
+«Hårfint over porten!»), 3 (klippa faller og blekner, kuttede tau slenger, porten blekner når du
+sa nei), 4 (Spart spretter ved bevilgning og riksrett). Alle fire på plass.
+
+Simulering (200 runder): grønn. flink 100 %, median 554 (p10 442, p90 694); nybegynner 82 %,
+median 256 (46 % av flink); sløseren 0 %, gniten/passiv 21, tilfeldig 47. 38,4 valg per minutt,
+press 0,31 -> 0,67 -> 0,86. Flink bruker i snitt 0,3 sjanser (den blir stemt ut av og til og
+bevilger da neste gang). Jitter-skriptet (60 seeds per variant, grep hvert 0,2/0,25/0,33/0,5 s,
+0-20 % sene grep): flink vinner 100 % i alle 16 variantene. Selvspill --maks-tid 60: grønn.
+--cover (hel runde): flink vant med 787, alle porter grønne. Scene-audit ren. Likhet 0,43.
+Rangene er senket igjen (100/250/400/550/750).
+
+Prøvd som IKKE virket: (a) bare strammere budsjett (grense 21-22 i 1881) uten porter: flink
+stemt ut i 1870-årene i 27-95 % av rundene og jitter ned i 7-20 %. (b) Porter rett etter en høy
+stasjon: ballongen rakk ikke å synke ned til porten (fjellet med port er nå skjøvet 0,2 av
+perioden fram, og dalen før porten er flat i 320 px). (c) Pris 90 + 25 per port med tak på det du
+har: tømte sekken, så alle endte på nesten 0 og nybegynner og flink fikk like mange poeng. (d)
+Smalere nær-bånd (45 px): skilte ikke robotene, fordi poengene kom fra rorstrekket. (e)
+Riksrett-stemmene 34-55 px over dalen: ingen robot tok dem, for en jevn flyger ligger ca. 100 px
+over flat dal (den må ha luft til et sent grep).
+
+Kjente svakheter: (1) Flink bevilger 4-5 av 6 porter; de flinkeste valgene (spar sekken på
+porten tidlig i en billig periode) er sjeldne for roboten. (2) Riksrett-klippa står delvis bak
+Spart-kortet når den kommer inn fra høyre, så tauene synes først når den er midt i bildet. (3)
+HUD-en oppe til venstre er fortsatt stor (Ueland + budsjettkort). (4) Filmbildet ved 110 s viser
+rorstrekket, ikke tauene som kuttes (det skjer rundt 97-100 s).

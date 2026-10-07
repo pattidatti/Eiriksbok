@@ -5,13 +5,14 @@
 import { P } from './art';
 import type { Fx } from './fx';
 import { BRETT } from './levels';
-import { grenseVises, iBåndet } from './rules';
+import { grenseNå, grenseVises, iBåndet } from './rules';
 import { FONT } from './scene';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
 const T = TUNING;
-const PAPIR = '#eeebdf';
+// Papirmargen er lys tonestein (kunstbriefen), ikke gulnet papir.
+const PAPIR = '#e4e6db';
 export const MARG = { side: 10, topp: 10, bunn: 500 };
 
 const spd = (n: number) => Math.floor(n).toLocaleString('nb-NO');
@@ -49,7 +50,7 @@ export function tegnRamme(ctx: CanvasRenderingContext2D, g: Game, meny: boolean)
 function kort(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number) {
     ctx.fillStyle = 'rgba(31,35,38,0.28)';
     ctx.fillRect(x + 3, y + 3, w, h);
-    ctx.fillStyle = '#f8f4e8';
+    ctx.fillStyle = P.hvit;
     ctx.fillRect(x, y, w, h);
     ctx.strokeStyle = P.kritt;
     ctx.lineWidth = 1.5;
@@ -109,7 +110,8 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
 
     tidslinje(ctx, g);
     if (g.år >= T.ganger.fra - 0.3) portrett(ctx, g, fx, tid);
-    if (grenseVises(g) && g.mode === 'play') budsjett(ctx, g, fx, tid);
+    // Etter det siste valget (1881) er det ikke noe budsjett å holde: kortet går bort.
+    if (grenseVises(g) && g.mode === 'play' && g.ter.valg[g.nesteValg]) budsjett(ctx, g, fx, tid);
 
     if (fx.blink > 0) {
         ctx.globalAlpha = fx.blink * 0.5;
@@ -153,7 +155,8 @@ export const BUDSJETT = { x: 16, y: 120 };
  * Bondetinget 1833: baren blir synlig bredere og høyere, og kortet får stempelet «BONDETINGET 1833».
  */
 function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
-    const igjen = Math.max(0, 1 - g.periode / T.penger.grense);
+    const grense = grenseNå(g);
+    const igjen = Math.max(0, 1 - g.periode / grense);
     const fare = igjen < 0.25;
     const inn = Math.min(1, (g.år - (T.penger.førsteEkteValg - 1.2)) / 0.4);
     const vokst = Math.max(0, Math.min(1, (g.år - T.penger.førsteEkteValg) / 0.6));
@@ -162,7 +165,13 @@ function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     const bonde = g.år >= T.penger.førsteEkteValg ? Math.max(0, 1 - (g.år - T.penger.førsteEkteValg) / 5.5) : 0;
 
     const neste = g.ter.valg[g.nesteValg];
-    const etikett = neste ? `Budsjett til valget ${neste.år}` : 'Budsjett';
+    // Hva som er igjen, i klartekst: tallet eleven må holde over null til valget.
+    const rest = Math.max(0, Math.floor(grense - g.periode));
+    const etikett = g.bæres
+        ? 'Bevilget: staten betaler'
+        : neste
+          ? `Igjen til valget ${neste.år}: ${rest} av ${Math.round(grense)} Spd.`
+          : 'Budsjett';
     ctx.font = `bold 14px ${FONT}`;
     const ew = ctx.measureText(etikett).width;
     const W = Math.max(bw, ew) + 20;
@@ -205,8 +214,8 @@ function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     ctx.globalAlpha = inn;
     ctx.strokeStyle = 'rgba(46,50,54,0.35)';
     ctx.lineWidth = 1;
-    for (let k = 5; k < T.penger.grense; k += 5) {
-        const lx = bx + bw * (1 - k / T.penger.grense);
+    for (let k = 5; k < grense; k += 5) {
+        const lx = bx + bw * (1 - k / grense);
         ctx.beginPath();
         ctx.moveTo(lx, by);
         ctx.lineTo(lx, by + bh);

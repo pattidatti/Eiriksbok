@@ -4,8 +4,8 @@
 import type { Rng } from '../sim';
 import type { PlaytestBot } from '../playtest';
 import { BOT_EVERY } from '../playtest';
-import { fly, hold, ror, rorMål, synk } from './rules';
-import { fartVed, fastTopp, knausVed, veiVed, type Knaus } from './terrain';
+import { fly, grenseNå, hold, ror, rorMål, synk } from './rules';
+import { fartVed, fastTopp, knausVed, veiVed, type Bevilgning, type Knaus } from './terrain';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
@@ -32,6 +32,23 @@ interface Pilot {
     under: number;
     /** Etter riksretten: hvor langt foran (px) porten må være før den styrer ned. 0 = aldri. */
     ror?: number;
+    /**
+     * Bevilgningsportene: bevilg (gli under banneret) når budsjettet er brukt så mye av
+     * grensen (0-1) - med `anslag` lagt til for fjellet foran. 0 = alltid, over 1 = aldri.
+     */
+    betal: number;
+    /** Hva roboten regner med at det koster å fyre seg over fjellet bak porten (Spd.). */
+    anslag?: number;
+    /** Andel av portene der den ikke tenker på budsjettet og flyr over (slurv). */
+    slurv?: number;
+    /** Lærer av å bli stemt ut: så mye lettere bevilger den etter en ny sjanse (standard 0,25). */
+    lærer?: number;
+}
+
+/** Neste bevilgningsport som ikke er passert, innen rekkevidde. */
+function nesteBevilg(g: Game, rekke: number): Bevilgning | null {
+    for (const b of g.ter.bevilg) if (!b.valgt && b.x > g.x - 4 && b.x < g.x + rekke) return b;
+    return null;
 }
 
 /** Neste knaus innen rekkevidde. */
@@ -82,12 +99,17 @@ function pilot(p: Pilot): (rng: Rng) => Grep {
         let margin = p.margin;
         let bytt = 0;
         const vei = new Map<Knaus, boolean>();
+        const bevilg = new Map<Bevilgning, boolean>();
         let sist = -1;
+        let betal = p.betal;
         return (g) => {
-            // Ny sjanse: tida er spolt tilbake. Roboten bestemmer seg på nytt, som en elev.
+            // Ny sjanse: tida er spolt tilbake. Roboten bestemmer seg på nytt, som en elev - og
+            // har den brukt for mye, bevilger den lettere neste gang.
             if (g.t < sist) {
+                if (g.sistTap === 'valg') betal -= p.lærer ?? 0.25;
                 bytt = 0;
                 vei.clear();
+                bevilg.clear();
             }
             sist = g.t;
             if (n++ % p.hver !== 0) return;
@@ -100,6 +122,15 @@ function pilot(p: Pilot): (rng: Rng) => Grep {
             // Første gang den ser knausen: under bare hvis den tør og allerede ligger lavt.
             if (knaus && !vei.has(knaus)) vei.set(knaus, rng() < p.under && g.y > knaus.bunn + 20);
             const under = knaus ? vei.get(knaus)! : false;
+            // Bevilgningsporten: bestem seg første gang den ser den, ut fra budsjettet.
+            const bv = nesteBevilg(g, fartVed(g.t) * 2.5);
+            if (bv && !bevilg.has(bv))
+                bevilg.set(
+                    bv,
+                    rng() >= (p.slurv ?? 0) && (g.periode + (p.anslag ?? 14)) / grenseNå(g) > betal
+                );
+            const ja = bv ? bevilg.get(bv)! : false;
+            const ÅP = TUNING.bevilg.åpning;
             const vent = Math.max(BOT_EVERY * p.hver, p.vent ?? 0.75);
             const dt = 0.05;
             const sy = synk(g);
@@ -119,6 +150,13 @@ function pilot(p: Pilot): (rng: Rng) => Grep {
                         let m = margin;
                         const iKnaus = knaus && x + dx > knaus.x0 - 150 && x + dx < knaus.x1 + 20;
                         if (iKnaus && !under) bunn = Math.min(bunn, knaus.topp);
+                        if (bv && ja && x + dx > bv.x - 30 && x + dx < bv.til) {
+                            // Bevilger: bakken bak porten bærer staten over, så den teller ikke.
+                            bunn = bv.bunn;
+                            if (x + dx < bv.x + 4 && y < bv.bunn - ÅP + 18) tak = true;
+                        }
+                        if (bv && !ja && Math.abs(x + dx - bv.x) < 40)
+                            bunn = Math.min(bunn, bv.bunn - ÅP - 8);
                         if (iKnaus && under) {
                             // Under knausen: trangt, så lavere margin - og taket må ikke treffes.
                             m = 4;
@@ -174,20 +212,24 @@ export const BOTS: Record<string, BotDef> = {
         forventer: 'vinner',
         beskrivelse:
             'Fyrer før hver rygg og regner med at neste grep kan komme sent. Skraper i nær-båndet for Ueland-gangeren og dykker under fjellene med roret i 1884.',
-        make: pilot({ margin: 4, skrapMål: 10, horisont: 0.2, hver: 1, under: 1, ror: 260 }),
+        make: pilot({ margin: 4, skrapMål: 10, horisont: 0.2, hver: 1, under: 1, ror: 260, betal: 1, anslag: 20 }),
     },
     nybegynner: {
         forventer: 'middels',
         beskrivelse:
             'Fyrer før ryggene med god margin. Skraper i strekk på 4 s (70 % av tida) og styrer seint ned mot portene med roret.',
         make: pilot({
-            margin: 50,
-            skrap: { andel: 0.7, margin: 12, bytt: 4 },
+            margin: 45,
+            skrap: { andel: 0.4, margin: 12, bytt: 4 },
             skrapMål: 10,
             horisont: 0.3,
             hver: 1,
             under: 0.3,
             ror: 200,
+            betal: 1,
+            anslag: 12,
+            lærer: 0.25,
+            slurv: 0.3,
         }),
     },
     sløseren: {
