@@ -57,7 +57,8 @@ som idé - ingen polering reddet dem. Derfor fem faser, og du går aldri videre 
 2. **Designbrief** (steg 2b) - vinneren skrevet ut i ti punkter.
 3. **Kunstbrief** (steg 2c) - looken hentes fra emnets egen bildekultur.
 4. **Gråboks** (steg 3a) - kjerneløkka med primitive former. Simuleringen må være grønn før du
-   lager kunst, og en gråboks-diagnose gir de første grepene for Gøy.
+   lager kunst, og en gråboks-diagnose sjekker at eleven skjønner spillet uten tekst og gjør
+   noe hele tiden.
 5. **Bygg og porter** (steg 3b-5) - kunst, juice, tekst, så portene.
 
 Fase 1-3 lagres i `docs/microgames/briefer/<id>.md` med seksjonene `## Konseptturnering`,
@@ -181,9 +182,9 @@ Slik finner du gode konsepter:
 **Dommeren.** Gi de fem konseptene til en fersk underagent som ikke har sett tankene dine, sammen
 med eierens bestilling hvis det finnes en (se «Bestillingen er lov»). Et konsept som ikke oppfyller
 bestillingen bokstavelig, får 1 på begge aksene. Den gir
-hvert konsept 1-5 på «Gøy på papiret» (ville en 14-åring spilt dette i friminuttet?) og «Fagregelen
-avgjør» (vinner den som har forstått mekanismen?), velger én vinner og sier hva som skal til for at
-den blir en 5 på Gøy («løftet»). Prompten står i nattrutinen.
+hvert konsept 1-5 på «Spillbart på papiret» (skjønner en 14-åring grepet av det de ser, uten å
+lese, og gjør de det hele tiden?) og «Fagregelen avgjør» (vinner den som har forstått mekanismen?),
+velger én vinner og sier hva som skal til for at den blir en 5 på Spillbart («løftet»). Prompten står i nattrutinen.
 
 **Stoppregel:** Får ingen konsepter minst 4 på begge, er artikkelen ikke et godt spill. Bytt
 artikkel - ikke lag et middels spill. Skriv alle fem konseptene, dommerens poeng og løftet i
@@ -343,12 +344,16 @@ i mappa si (selvspillet sjekker det):
 Ingen fil (heller ikke komponenten `<Navn>.tsx`) over 800 linjer. Blir en fil lang, del den
 etter ansvar - ikke i «del 1» og «del 2».
 
-### Gråboks-diagnosen: grep for Gøy før kunst
+### Gråboks-diagnosen: forstått og i bruk før kunst
 
 Når simuleringen er grønn, og FØR kunsten lages: ta tre skjermbilder av gråboksen midt i en runde
-og la en fersk underagent gi Gøy (1-5) og de tre endringene i kjerneløkka som ville løftet den mest,
-ut fra bildene, simuleringsrapporten (`.screenshots/playtest/_sim.md`) og kjerneløkka beskrevet i
-tre setninger. Gjør endringene. Under 4: én diagnose til etter endringene. Så lages kunsten uansett.
+og la en fersk underagent gi Forståelig og Eleven gjør (1-5, rubrikken i port 3) og de tre
+endringene som ville løftet dem mest, ut fra bildene, simuleringsrapporten
+(`.screenshots/playtest/_sim.md`) og kjerneløkka beskrevet i tre setninger. Kjerneprøven: ser den
+på første bilde hva den skal trykke på og hva målet er, uten å lese? Det kan en gråboks vise -
+form, størrelse, plassering og bevegelse forteller hva som er spilleren, målet og faren, lenge før
+kunsten kommer. Gjør endringene. Under 4 på en av dem: én diagnose til etter endringene. Så lages
+kunsten uansett.
 
 Diagnosen er en oppskrift, ikke en port. 29.09 brukte den som port: tre konsepter fikk Gøy 3 i
 gråboksen, alle ble forkastet, og natten leverte ingenting - selv om vurdereren sa at Seinen snur
@@ -682,20 +687,25 @@ Den får bare:
 
 Den svarer med poeng per akse og de tre viktigste forbedringene.
 
+**Vi måler ikke Gøy direkte.** Fra 01.10 til 07.10 sto Gøy på 3 i nesten alle vurderingsrunder,
+mens summen hoppet 17-19-18: en vurderer som ser stillbilder, kan ikke kjenne moro, og tallet ble
+støy. Eieren (07.10): et spill kan være gøy fordi det er visuelt interessant, og det viktigste er at
+eleven forstår av designet hva de skal gjøre, får en myk start, og gjør ting hele tiden. Det er det
+rubrikken måler. Unikt passes av likhetsvakten (port 2b) og kravet om ny sjanger og look.
+
 | Akse (1-5) | 1 | 3 | 5 |
 |---|---|---|---|
-| **Gøy** | Jeg ville lukket det etter 20 s | Greit å prøve én gang | «Én runde til» - eskalering, deilig verb, rekord å slå |
-| **Utseende** | Primitive klosser på en grønn plen | Pent, men generisk | Eget uttrykk; lys, atmosfære og bevegelse som i et indiespill |
+| **Forståelig** | Må lese for å vite hva jeg skal gjøre | Skjønner det etter litt prøving eller en lapp | Designet viser det: på første bilde ser jeg hva jeg skal trykke på og hva målet er; et tap viser hvorfor |
+| **Myk start** | Alt kommer på en gang | Rolig start, men flere nye ting samtidig | Én ny ting om gangen, hver kommer når den er svaret, presset stiger gradvis. Et enkelt spill med ett grep og rolig start er en 5 |
+| **Eleven gjør** | Eleven leser eller venter mest | Gjør noe, men samme grep på samme måte hele tiden | Handler hele tiden; hvert grep svarer med lyd, rykk eller animasjon, og valgene endrer det som skjer |
+| **Utseende** | Primitive klosser på en grønn plen | Pent, men generisk | Eget uttrykk; lys, atmosfære og bevegelse som i et indiespill - en verden som er spennende å se på |
 | **Lærerikt** | Fakta i tekstbokser, temaet er kulisse | Temaet preger spillet | Reglene ER fagstoffet - den som vinner, har forstått mekanismen |
-| **Lesbart** | Vet ikke hva jeg skal gjøre | Skjønner det etter litt | Forstått på 5 s, mål i HUD, tekst står der blikket er, skarp tekst, «Dette skjedde» forklarer tapet |
-| **Unikt** | Samme sjanger og look som et spill i biblioteket | Kjent form med egen vri | Sjanger + look som ikke finnes i biblioteket |
 
-Referansespillene er kalibreringen, rekalibrert 2026-09-28: eieren syntes Regnet i Lærdal var
-«interessant, men ikke sinnsykt gøy». Begge er derfor 3 på Gøy, 4 på Lesbart og 5 på Lærerikt, og 3
-(Havet kommer) og 4 (Regnet i Lærdal) på Utseende. En 4 på Gøy betyr klart gøyere enn referansene.
-MÅKA er en 5 på Gøy og Utseende.
+Referansespillene (Havet kommer og Regnet i Lærdal) er 4 på Forståelig og 5 på Lærerikt, og 3
+(Havet kommer) og 4 (Regnet i Lærdal) på Utseende. MÅKA er en 5 på Forståelig, Eleven gjør og
+Utseende.
 
-**Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20 av 25. Under
+**Terskel:** ingen akse under 3; Forståelig, Eleven gjør og Lærerikt minst 4; sum minst 20 av 25. Under
 terskel: gjør forbedringene og få en NY vurdering (ny underagent) som også får forrige rundes
 forbedringer og sier om de er løst. Et spill parkeres aldri; står en akse stille, endres
 kjerneløkka for den aksen (under). Nattrutinen leverer hver natt, også under terskel
@@ -704,25 +714,26 @@ kjerneløkka for den aksen (under). Nattrutinen leverer hver natt, også under t
 **Når vurderingen står stille, er det spillet som må endres - ikke pynten.** Står en akse på
 samme poeng to runder på rad, hjelper ikke flere farger, kameravinkler eller finere ringer. Gå
 tilbake til designbriefen og endre kjerneløkka for den aksen:
-- **Gøy under 4:** gå først gjennom feel-lista under - ofte er det den som mangler, ikke
-  reglene. Er den på plass: flere synlige valg per minutt, en trussel som vokser midtveis, et nytt
-  element som dukker opp halvveis (ny motstander, nytt verktøy, nytt område), eller en
+- **Eleven gjør under 4:** gå først gjennom feel-lista under - ofte er det den som mangler, ikke
+  reglene. Er den på plass: flere synlige valg per minutt, kortere venting mellom grepene, og en
   risiko/belønning-avveiing eleven må ta hele tiden. «Ensformig klikking» betyr at eleven gjør
   det samme på samme måte - gi grepet et nytt formål eller en ny motstand.
-- **Lesbart under 4:** færre ting samtidig, større mål, pil mot det som skjer utenfor bildet
-  (lapper gjør det av seg selv), og hendelser som skjer ett sted om gangen.
+- **Forståelig under 4:** la designet forklare i stedet for teksten. Det eleven styrer, skiller seg
+  ut (farge, lys, størrelse); målet er synlig i bildet, ikke bare i HUD; det farlige ser farlig ut;
+  det man kan trykke på, ser trykkbart ut og svarer når musa er over. Færre ting samtidig, og
+  hendelser ett sted om gangen.
+- **Myk start under 4:** første brett har ett grep og nesten ingen fare. Hver ny regel, fiende
+  eller knapp kommer alene, i et øyeblikk der den er svaret, og vises før den forklares.
 - **Lærerikt under 4:** gjør fagregelen til en regel som faktisk avgjør utfallet, og la de
   historiske vendepunktene endre spillet (ikke bare vise et banner).
-- **Unikt under 4:** bytt sjanger eller perspektiv - ikke farge.
-- **Har to forbedrere lagt til nye regler, stempler eller sakstyper uten at Gøy steg:** neste grep
+- **Har to forbedrere lagt til nye regler, stempler eller sakstyper uten at noen akse steg:** neste grep
   er å fjerne, ikke legge til. Tell reglene eleven må holde i hodet (hver ny knapp, sakstype eller
   unntak er en regel). Er de flere enn tre, kutt ned til de tre som bærer fagkjernen, og bruk runden
   på presset og feel i det som står igjen. Et spill med mange gode ideer og en flink spiller som
   aldri er i fare, er kjedeligere enn et enkelt spill der det står om noe hele tiden.
 
-**Feel-lista (hver forbedrer, hver runde).** Gøy er ofte feel, flaks, feedback og animasjon, og
-det kan vurdereren bare se på bilder - ikke kjenne. Derfor står ikke Gøy-tallet alene: sjekk
-disse fire i koden, og fiks det som mangler i tillegg til de tre forbedringene.
+**Feel-lista (hver forbedrer, hver runde).** Moro er ofte feel, flaks, feedback og animasjon, og
+det kan vurdereren bare se på bilder - ikke kjenne. Sjekk derfor disse fire i koden, og fiks det som mangler i tillegg til de tre forbedringene.
 1. **Hver handling svarer.** Lyd, et lite rykk eller partikler, og en kort stopp (hit-stop) ved
    treff. Ingen klikk uten svar.
 2. **Flaks og nesten-bom.** Minst ett øyeblikk per brett der det går akkurat (en redning i siste
@@ -761,7 +772,7 @@ runde, leveres det merket «(under terskel)» med det som gjenstår (se Jobb 4d 
 ## Sjekkliste før PR
 
 - [ ] Tone valgt; ikke et tema fra «ingen spill»-lista
-- [ ] Konseptturnering: fem ulike konsepter, fersk dommer, vinneren har minst 4 på Gøy og Fag
+- [ ] Konseptturnering: fem ulike konsepter, fersk dommer, vinneren har minst 4 på Spillbart og Fag
 - [ ] `docs/microgames/briefer/<id>.md` med Konseptturnering, Designbrief (ti punkter) og Kunstbrief (åtte punkter)
 - [ ] Sjanger, perspektiv og kunstretning ulik de tre siste nattspillene; `kunst` i registry
 - [ ] Designbriefen har opptrappingen for det første minuttet (punkt 11), og den finnes i spillet

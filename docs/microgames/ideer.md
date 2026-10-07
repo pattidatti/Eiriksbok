@@ -15,5 +15,12 @@ Eksempel:
 `- /historie/middelalderen/konstantinopel - tower defense: bygg murene lag på lag før kanonene kommer`
 `- /historie/vikingtiden/leidang - KRAV: førsteperson, WASD og fri bevegelse, nærkamp`
 
+## Fortsett
+
+En linje her ber rutinen ta en runde til på et spill som allerede er levert (spill-id, og gjerne hva
+som skal bli bedre). Den går foran køen under.
+
+- pengeballongen - løft spillet etter den nye rubrikken (Forståelig, Myk start, Eleven gjør)
+
 ## Kø
 

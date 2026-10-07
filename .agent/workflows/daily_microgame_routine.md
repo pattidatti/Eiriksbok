@@ -90,6 +90,13 @@ git ls-tree -r --name-only origin/<gren> -- docs/microgames/briefer/   # har den
   manglene som oppgave. Står samme akse lavt som natta før, gjelder «Når vurderingen står stille».
   En godkjent WIP får vanlig gren/PR i Jobb 5.
 
+**Eieren ber om en runde til.** Står det en spill-id under «Fortsett» i `docs/microgames/ideer.md`
+som ikke er merket ferdig, går den foran alt annet, også når spillet allerede er på main. Lag grenen
+`claude/microgame-<dato>-<id>-runde` fra `origin/main`, lagre siste rapport for spillet på issue #12
+i `/tmp/vurdering-0.md`, skriv `/tmp/artikkel.md` ut fra briefen, og gå rett til Jobb 4c (en ny
+vurdering med dagens rubrikk) og videre til 4d. Det som står etter id-en på linja, er eierens
+ønsker til runden. Merk linja `(ferdig: <dato>)` i samme PR. Natta lager da ikke noe nytt spill.
+
 **Hver natt ender med en PR.** WIP-grenen er bare en mellomlagring underveis i natta (og et sikkerhetsnett hvis kjøringen dør eller push feiler). En WIP-gren som finnes om kvelden, er derfor en natt som krasjet: fortsett den her til den er levert, etter reglene i Jobb 4d.
 
 ### 1a. Eierens idékø
@@ -196,7 +203,7 @@ Start arbeideren med felles innledning (rolle: «designeren») og:
 
 Start en FERSK underagent med denne prompten, feltene fylt ut fra `/tmp/artikkel.md`:
 
-> Du er en erfaren spilldesigner og har en 14-åring hjemme. Under er fem ideer til et lite nettleserspill (2-4 minutter per runde) som skal ligge i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Les ideene i `/tmp/konsepter.md`. <Hvis `/tmp/bestilling.txt` ikke er tom: «Eieren har bestilt: <innholdet>. Les bestillingen bokstavelig, i vanlig spillspråk. En idé som ikke oppfyller den, får 1 på begge aksene uansett hvor god den er ellers.»> Gi hver idé 1-5 på to akser: **Gøy på papiret** (1 = en oppgave i forkledning, 3 = greit én gang, 5 = en 14-åring ville spilt det i friminuttet og vist det til sidemannen) og **Fagregelen avgjør** (1 = temaet er kulisse, 5 = den som vinner, har forstått mekanismen). Vær streng: de fleste ideer er 3-ere. Trekk for ideer der eleven venter mer enn velger, der verbet er «klikk på riktig ting», eller der de første fem sekundene krever lesing. Trekk også for det som har felt tidligere gråbokser: mer enn tre regler eleven må huske, en flink spiller som aldri er i fare, indirekte årsak og virkning (A gir B som gir C), poeng med tak, og en regel som straffer det spillet nettopp har lært eleven å gjøre. Velg én vinner og si hva som må til for at den blir en 5 på Gøy. Svar til slutt med én linje JSON: {"poeng":[[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag],[gøy,fag]],"vinner":n,"løft":"..."}
+> Du er en erfaren spilldesigner og har en 14-åring hjemme. Under er fem ideer til et lite nettleserspill (2-4 minutter per runde) som skal ligge i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Les ideene i `/tmp/konsepter.md`. <Hvis `/tmp/bestilling.txt` ikke er tom: «Eieren har bestilt: <innholdet>. Les bestillingen bokstavelig, i vanlig spillspråk. En idé som ikke oppfyller den, får 1 på begge aksene uansett hvor god den er ellers.»> Gi hver idé 1-5 på to akser: **Spillbart på papiret** (1 = en oppgave i forkledning der eleven leser og venter, 3 = eleven gjør noe, men må få det forklart, 5 = en 14-åring skjønner grepet av det de ser på fem sekunder, uten å lese, og gjør det hele tiden) og **Fagregelen avgjør** (1 = temaet er kulisse, 5 = den som vinner, har forstått mekanismen). Vær streng: de fleste ideer er 3-ere. Trekk for ideer der eleven venter mer enn velger, der verbet er «klikk på riktig ting», eller der de første fem sekundene krever lesing. Trekk også for det som har felt tidligere gråbokser: mer enn tre regler eleven må huske, en flink spiller som aldri er i fare, indirekte årsak og virkning (A gir B som gir C), poeng med tak, og en regel som straffer det spillet nettopp har lært eleven å gjøre. Velg én vinner og si hva som må til for at den blir en 5 på Spillbart. Svar til slutt med én linje JSON: {"poeng":[[spill,fag],[spill,fag],[spill,fag],[spill,fag],[spill,fag]],"vinner":n,"løft":"..."}
 
 Lagre hele svaret i `/tmp/dommer-<n>.md`. Holder vinneren minst 4 på begge aksene: gå videre.
 Ellers: en ny Designer 1 (runde 2, samme artikkel, dommerens innvendinger som krav) og en ny
@@ -233,10 +240,12 @@ per natt; en Designer 2 skriver briefen om først).
 
 Start en FERSK underagent (ikke en arbeider): tre skjermbilder av gråboksen,
 `.screenshots/playtest/_sim.md` og kjerneløkka i tre setninger fra byggmesterens JSON. Den gir
-Gøy 1-5 og de tre endringene i kjerneløkka som ville løftet den mest (guidens «Gråboks-diagnosen»).
+Forståelig og Eleven gjør 1-5 (guidens rubrikk) og de tre endringene som ville løftet dem mest
+(guidens «Gråboks-diagnosen»). Kjerneprøven: ser den på første bilde hva den skal trykke på og
+hva målet er, uten å lese?
 Lagre svaret i `/tmp/diagnose-<n>.md`. Det er en diagnose, ikke en port.
 
-Ga den under 4: start en byggmester som bare gjør de tre endringene, kjører simuleringen grønn,
+Ga den under 4 på en av dem: start en byggmester som bare gjør de tre endringene, kjører simuleringen grønn,
 tar nye skjermbilder og committer - og ta én diagnose til. Så går du videre uansett.
 
 ### 3c. Byggmester 2 - kunst, juice og tekst
@@ -283,11 +292,9 @@ forskjellen i koden før du justerer balansen.
 
 ### 4c. Port 3 - uavhengig vurdering
 
-Første gang: lag biblioteklista og eierens kalibrering (ikke lim dem inn i prompten):
+Første gang: lag eierens kalibrering (ikke lim den inn i prompten):
 
 ```bash
-grep -nE "title:|description:|sjanger:|kunst:" src/components/microgames/registry.ts | grep -v "<din-id>" > /tmp/bibliotek.txt
-wc -l /tmp/bibliotek.txt   # skal være flere hundre linjer
 gh api --paginate "repos/pattidatti/eiriksbok/issues/12/comments?per_page=100" \
   -q '.[] | select(.body | startswith("**Mikrospill")) | select(.reactions["+1"] > 0 or .reactions["-1"] > 0)
       | "\(.reactions["+1"])x👍 \(.reactions["-1"])x👎  " + (.body | split("\n")[0]) + "  " + ((.body | capture("Uavhengig vurdering:\\*\\* (?<v>[^\\n]+)").v) // "")' \
@@ -299,8 +306,8 @@ Sjekk prompten før du sender den: ingen `<...>`- eller `$(...)`-plassholdere sk
 Når portene er grønne: start en FERSK underagent. Den skal IKKE få briefen, koden eller
 begrunnelser. Den ser alle bildene i full størrelse - ikke kontaktark. Send denne prompten:
 
-> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_sim.md` (robotresultatene over 200 runder og spillfølelsen: valg per minutt, presskurve og ferdighetstrapp fra taper via middels til vinner) og `.screenshots/playtest/_playtest.md` (nettleserrunden) og `.screenshots/likhet/_likhet.md` (hvor lik plakaten er de andre spillene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal). De er kalibrert til 3 på Gøy (eieren: «interessant, men ikke sinnsykt gøy»), 3-4 på Utseende, 4 på Lesbart og 5 på Lærerikt. Andre spill i biblioteket (for Unikt) står i `/tmp/bibliotek.txt` - les den. Eierens tommel opp/ned på tidligere spill, ved siden av poengene de fikk av vurderere før deg, står i `/tmp/eier-kalibrering.txt`: har eieren gitt tommel ned på spill med høy sum, har vurderingene vært for snille - juster deg etter eieren, ikke etter dem.
-> Gi 1-5 per akse: Gøy (1 = lukker etter 20 s, 3 = greit én gang, 5 = «én runde til»), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet), Lesbart (1 = skjønner ikke hva jeg skal gjøre, 5 = forstått på 5 s, mål synlig, tap gir tips), Unikt (1 = som et spill i biblioteket, 5 = sjanger og look som ikke finnes der). En 4 på Gøy betyr klart gøyere enn referansene. Begrunn hvert tall med noe du SÅ på et bilde eller i tallene. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"gøy":n,"utseende":n,"lærerikt":n,"lesbart":n,"unikt":n,"sum":n,"forbedringer":["...","...","..."]}
+> Du er en streng, erfaren spillanmelder og lærer. Vurder et lite nettleserspill for 14-åringer som ligger inne i en skoleartikkel om «<artikkeltittel>». Artikkelen handler om: <tre setninger>. Du skal IKKE lese kildekoden. Se på hvert bilde med Read: `.screenshots/playtest/<id>/` (meny, film-* er en robot som spiller godt, *-slutt er slutt-skjermer, passiv-* er uten input) og `.screenshots/microgames/<id>/frame-*.png`. Les `.screenshots/playtest/_sim.md` (robotresultatene over 200 runder og spillfølelsen: valg per minutt, presskurve og ferdighetstrapp fra taper via middels til vinner) og `.screenshots/playtest/_playtest.md` (nettleserrunden) og `.screenshots/likhet/_likhet.md` (hvor lik plakaten er de andre spillene). Sammenlign med referansespillene i `docs/microgames/referanse/` (Havet kommer og Regnet i Lærdal). De er kalibrert til 4 på Forståelig, 3-4 på Utseende og 5 på Lærerikt. Eierens tommel opp/ned på tidligere spill, ved siden av poengene de fikk av vurderere før deg, står i `/tmp/eier-kalibrering.txt`: har eieren gitt tommel ned på spill med høy sum, har vurderingene vært for snille - juster deg etter eieren, ikke etter dem.
+> Gi 1-5 per akse: Forståelig (1 = jeg må lese for å vite hva jeg skal gjøre, 3 = skjønner det etter litt prøving eller en lapp, 5 = designet viser det: på første bilde ser jeg hva jeg skal trykke på og hva målet er, og et tap viser hvorfor), Myk start (1 = alt kommer på en gang, 3 = rolig start, men flere nye ting samtidig, 5 = én ny ting om gangen, hver kommer når den er svaret, og presset stiger gradvis - et enkelt spill med ett grep og rolig start er en 5), Eleven gjør (1 = eleven leser eller venter mest, 3 = eleven gjør noe, men samme grep på samme måte hele tiden, 5 = eleven handler hele tiden, hvert grep svarer med lyd, rykk eller animasjon, og valgene endrer det som skjer - se valg per minutt), Utseende (1 = primitive klosser, 3 = pent men generisk, 5 = eget uttrykk som et indiespill, verden som er spennende å se på), Lærerikt (1 = temaet er kulisse, 3 = temaet preger spillet, 5 = reglene ER fagstoffet). Begrunn hvert tall med noe du SÅ på et bilde eller i tallene. Gi så de tre forbedringene som ville løftet spillet mest, konkret. Svar til slutt med én linje JSON: {"forståelig":n,"myk_start":n,"eleven_gjør":n,"utseende":n,"lærerikt":n,"sum":n,"forbedringer":["...","...","..."]}
 
 Fra runde 2: legg forrige rundes tre forbedringer til i prompten som «Forrige vurdering ba om: ...
 Si for hver om den er løst, sett ut fra bildene.» Da måler vurderingen om grepene virket, i stedet
@@ -308,15 +315,19 @@ for at hver ny vurderer finner tre nye ting.
 
 Lagre hele svaret i `/tmp/vurdering-<n>.md`, og ta checkpoint (`wip: <id> etter vurdering <n> (sum <x>)`).
 
-**Terskel:** ingen akse under 3; Gøy, Lærerikt og Utseende minst 4; sum minst 20. Nådd: Jobb 5.
+**Terskel:** ingen akse under 3; Forståelig, Eleven gjør og Lærerikt minst 4; sum minst 20. Nådd: Jobb 5.
 
 ### 4d. Forbedrer - én ny per runde
 
 Under terskel: start en NY arbeider (felles innledning, rolle: «forbedreren»):
 
-> Oppgave: løft `<id>` etter den uavhengige vurderingen. Les `/tmp/vurdering-<n>.md` (og tidligere `/tmp/vurdering-*.md`), briefen med `## Byggelogg`, og `node scripts/guide-microgame.mjs --rolle forbedrer`. <Hvis en akse har stått stille to runder: «Aksen <akse> har stått stille i to runder. Da er det kjerneløkka for den aksen som skal endres - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av Gøy.»> Se på spillet som det er nå: `node scripts/kontaktark-microgame.mjs --ids <id>` og Read på arkene. Les `KART.md`, så bare filene grepene gjelder (bruk `grep -n` for å finne stedet før du leser), og `/tmp/api.md` ved behov. Gjør de tre forbedringene, og gå gjennom feel-lista i guiden («Når vurderingen står stille») - fiks det av de fire punktene som mangler. Kjør simuleringen grønn, så Jobb 4a og 4b fra `.agent/workflows/daily_microgame_routine.md` til alt er grønt. Commit. JSON: {"porter":"grønne|røde","gjort":["...","...","..."],"feel":"<hvilke av 1-4 lagt til>","ikke_gjort":"...","sim":"..."}
+> Oppgave: løft `<id>` etter den uavhengige vurderingen. Les `/tmp/vurdering-<n>.md` (og tidligere `/tmp/vurdering-*.md`), briefen med `## Byggelogg`, og `node scripts/guide-microgame.mjs --rolle forbedrer`. <Hvis en akse har stått stille to runder: «Aksen <akse> har stått stille i to runder. Da er det kjerneløkka for den aksen som skal endres - se «Når vurderingen står stille» i guiden. Polering av farger og kamera teller ikke som forbedring av den aksen.»> Se på spillet som det er nå: `node scripts/kontaktark-microgame.mjs --ids <id>` og Read på arkene. Les `KART.md`, så bare filene grepene gjelder (bruk `grep -n` for å finne stedet før du leser), og `/tmp/api.md` ved behov. Gjør de tre forbedringene, og gå gjennom feel-lista i guiden («Når vurderingen står stille») - fiks det av de fire punktene som mangler. Kjør simuleringen grønn, så Jobb 4a og 4b fra `.agent/workflows/daily_microgame_routine.md` til alt er grønt. Commit. JSON: {"porter":"grønne|røde","gjort":["...","...","..."],"feel":"<hvilke av 1-4 lagt til>","ikke_gjort":"...","sim":"..."}
 
 Så 4c igjen med en ny vurderer. Inntil fire vurderingsrunder per natt. Et spill parkeres aldri.
+
+**Står alle aksene stille, lever.** Har ingen akse steget fra forrige runde to runder på rad, gir
+flere runder bare støy (natt etter natt 01.-07.10 gikk summen 17-19-18 uten at noe flyttet seg).
+Da gjør én siste forbedrer de to viktigste grepene, og spillet leveres med én gang.
 
 **Natta ender alltid med levering.** Etter fjerde vurderingsrunde (eller tidligere hvis kvoten
 eller tiden går mot slutten - se på klokka før hver ny runde, og start ingen runde etter 06:30 UTC):
@@ -369,7 +380,7 @@ Automatisk mikrospill fra \`eiriksbok-daily-microgame\`.
 $(cat docs/microgames/briefer/<id>.md)
 
 ## Uavhengig vurdering (runde <n>)
-| Gøy | Utseende | Lærerikt | Lesbart | Unikt | Sum |
+| Forståelig | Myk start | Eleven gjør | Utseende | Lærerikt | Sum |
 |---|---|---|---|---|---|
 | x | x | x | x | x | xx |
 
@@ -404,8 +415,8 @@ gh issue comment 12 --repo pattidatti/eiriksbok --body "**Mikrospill $(date +%Y-
 **Artikkel:** <artikkeltittel> (/<sti>)
 **Sjanger / tone / 2D-3D / kunstretning:** <...>
 **PR:** <url> - <MERGET | ÅPEN: grunn>
-**Konseptturnering:** vinner «<tittel>» (Gøy x, Fag x) av fem; <artikler som ble forkastet, og hvorfor>
-**Uavhengig vurdering:** Gøy x, Utseende x, Lærerikt x, Lesbart x, Unikt x (sum xx, runde n)
+**Konseptturnering:** vinner «<tittel>» (Spill x, Fag x) av fem; <artikler som ble forkastet, og hvorfor>
+**Uavhengig vurdering:** Forståelig x, Myk start x, Eleven gjør x, Utseende x, Lærerikt x (sum xx, runde n)
 **Spillfølelse:** x valg/min, press x -> x, ferdighetstrapp taper x < middels x < vinner x
 **Likhet:** nærmest <id> (x,xx)
 **Selvspill:** <vinner-robot vant på x s, taper-roboter og knappemoser tapte, passiv tapte>
