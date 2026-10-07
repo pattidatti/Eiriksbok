@@ -19,10 +19,13 @@ import { usePlaytest } from './playtest';
 import { gå, leggPå, newGame, update, type Game, type Årsak } from './gamma/game';
 import { BOTS } from './gamma/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './gamma/sim';
-import { P, skala, tegn, type Lapp, type Skala } from './gamma/draw';
-import { BRETT, dato } from './gamma/levels';
-import { bakke, dagNå, inne, nesteRang, rang } from './gamma/rules';
+import { P, skala, tegn, type Skala } from './gamma/draw';
+import { dato } from './gamma/levels';
+import { dagNå, inne, nesteRang, rang } from './gamma/rules';
 import { TUNING } from './gamma/tuning';
+import { fxFart, fxHendelse, fxTick, motorNivå, nyFx, smeltDamp } from './gamma/fx';
+import { lagLyd } from './gamma/sound';
+import { coachHendelse, coachStart, coachTick, nyCoach } from './gamma/coach';
 import { LÆRDOM, MÅL, REGLER, SKJEDDE, TAP_TITTEL, TIPS } from './gamma/texts';
 
 // GAMMA - Brenningen av Finnmark, vinteren 1944-45. Inga og familien har gjemt seg i en
@@ -78,26 +81,38 @@ export default function Gamma({ onComplete }: MicroGameProps) {
     const [synth] = useState(createArcadeSynth);
     const [muted, setMuted] = useState(() => synth.isMuted());
     const skalaRef = useRef<Skala>(skala(960, 540));
-    const lapper = useRef<Lapp[]>([]);
+    const [lyd] = useState(() => lagLyd(synth));
+    const fxRef = useRef(nyFx());
+    const [coach] = useState(() =>
+        nyCoach(
+            text,
+            (x, y) => () => {
+                const k = skalaRef.current;
+                return { x: x * k.s + k.ox, y: y * k.s + k.oy };
+            },
+            () => gameRef.current
+        )
+    );
     const klokke = useRef(0);
     const hint = useRef({ gå: true, legg: true, gikk: 0, lagt: 0 });
     const vent = useRef<number | null>(null);
-    const varsle = useRef(0);
     const slutt = useRef(0);
     const taster = useRef({ v: false, h: false });
 
     useEffect(() => {
         saveRef.current = save;
     }, [save]);
-    useEffect(() => () => synth.dispose(), [synth]);
+    useEffect(
+        () => () => {
+            lyd.stopp();
+            synth.dispose();
+        },
+        [synth, lyd]
+    );
 
     const setModeBoth = (m: Mode) => {
         modeRef.current = m;
         setMode(m);
-    };
-
-    const lapp = (tekst: string, x: number, y: number, sek = 4) => {
-        lapper.current = [{ tekst, x, y, igjen: sek }];
     };
 
     const ferdig = (g: Game) => {
@@ -132,70 +147,48 @@ export default function Gamma({ onComplete }: MicroGameProps) {
     };
 
     const { stageRef, bindStage, bindCanvas } = useArcadeLoop({
-        frame: (dt, view) => {
+        frame: (ekte, view) => {
             const g = gameRef.current;
             const m = modeRef.current;
-            klokke.current += dt;
+            const fx = fxRef.current;
+            klokke.current += ekte;
+            // Spilltid: sakte film under lærings-øyeblikket og pusten når lyset går forbi.
+            const dt = ekte * text.timeScale() * fxFart(fx);
             if (m === 'play') {
                 update(g, dt);
                 for (const h of g.hendelser) {
-                    if (h.type === 'brett') {
-                        const b = BRETT[h.brett];
-                        text.banner(b.tittel, P.glød);
-                        if (b.nytt) lapp(b.nytt, 540, 175, 4.5);
-                    }
-                    if (h.type === 'båt') {
-                        lapp('En båt! Ikke legg på mer ved - gå inn.', 760, 380, 3);
-                        synth.noise(1.6, 0.12, 110);
-                    }
-                    if (h.type === 'lys') synth.tone(880, 660, 0.25, 'square', 0.06);
-                    if (h.type === 'plukk') synth.tone(220, 180, 0.06, 'triangle', 0.15);
+                    coachHendelse(coach, h);
+                    fxHendelse(fx, h, g, lyd);
                     if (h.type === 'legg') {
                         hint.current.lagt++;
-                        synth.tone(140, 90, 0.08, 'triangle', 0.25);
-                        synth.noise(0.35, 0.08, 900, 0.05);
-                    }
-                    if (h.type === 'tom' && varsle.current <= 1) {
-                        const vedX = TUNING.verden.gammaX + 48;
-                        lapp('Tom for ved! Hent mer nede i skogen.', vedX + 60, bakke(vedX) - 80, 2.5);
-                        synth.tone(200, 120, 0.12, 'square', 0.08);
-                        varsle.current = 3;
+                        if (g.varme < TUNING.varme.rim + 15) smeltDamp(fx);
                     }
                 }
                 g.hendelser.length = 0;
-                // Si fra når bålet ikke kan fyres, eller holder på å gå ut.
-                varsle.current -= dt;
-                if (varsle.current <= 0 && g.mode === 'play') {
-                    if (g.varme < TUNING.varme.rim && g.stabel > 0 && g.bål === 0) {
-                        lapp('Bålet holder på å gå ut - legg på ved!', TUNING.verden.gammaX + 40, bakke(TUNING.verden.gammaX) - 90, 2.5);
-                        varsle.current = 6;
-                    } else if (g.varme < TUNING.varme.rim && g.stabel === 0 && g.fang === 0) {
-                        lapp('Kaldt, og ingen ved - skynd deg!', TUNING.verden.gammaX + 60, bakke(TUNING.verden.gammaX) - 90, 2.5);
-                        varsle.current = 6;
-                    }
-                }
+                fxTick(fx, g, dt, ekte, lyd, g.mode === 'play');
+                coachTick(coach, g, fx, dt);
                 if (g.input.dir !== 0) hint.current.gikk += dt;
-
                 hint.current.gå = hint.current.gikk < 1.5 && g.t < 20;
                 hint.current.legg = hint.current.lagt < 3 && g.t < 25 && inne(g);
                 if (g.mode !== 'play') {
-                    vent.current ??= 1.0;
-                    vent.current -= dt;
+                    vent.current ??= g.mode === 'won' ? TUNING.juice.sluttSeier : TUNING.juice.sluttTap;
+                    vent.current -= ekte;
                     if (vent.current <= 0) {
                         vent.current = null;
                         ferdig(g);
                     }
                 }
             }
-            for (const l of lapper.current) l.igjen -= dt;
-            lapper.current = lapper.current.filter((l) => l.igjen > 0);
+            lyd.motor(m === 'play' ? motorNivå(g) : 0);
+            // Ristingen svinner i ekte tid, og står aldri igjen i pausen eller på menyen.
+            if (m !== 'play') fx.rist = 0;
             const k = skala(view.w, view.h);
             skalaRef.current = k;
-            tegn(view, g, {
+            tegn(view, g, fx, {
                 meny: m === 'menu',
-                lapper: m === 'play' ? lapper.current : [],
+                lapper: m === 'play' && g.mode === 'play' ? coach.lapper : [],
                 klokke: klokke.current,
-                hint: m === 'play' ? hint.current : { gå: false, legg: false },
+                hint: m === 'play' && g.mode === 'play' ? hint.current : { gå: false, legg: false },
             });
         },
         onHidden: () => {
@@ -207,15 +200,13 @@ export default function Gamma({ onComplete }: MicroGameProps) {
         synth.unlock();
         gameRef.current = newGame(Math.floor(Math.random() * 1e9));
         vent.current = null;
-        lapper.current = [];
-        varsle.current = 0;
+        fxRef.current = nyFx();
         hint.current = { gå: true, legg: true, gikk: 0, lagt: 0 };
         taster.current = { v: false, h: false };
         setResultat(null);
         text.resetRun();
         setModeBoth('play');
-        text.banner(BRETT[0].tittel, P.glød);
-        lapp(BRETT[0].nytt ?? '', 540, 175, 5);
+        coachStart(coach);
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;

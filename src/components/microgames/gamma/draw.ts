@@ -1,26 +1,20 @@
-// Gråboksen: hele bildet med enkle former. Leser bare spillet.
-// Designet skal forklare: det varme lyset er gamma, det eneste lyse ute er veden,
-// og det kalde lyset fra båten er faren.
+// Hele bildet: bakgrunnen fra art.ts, figurene, partiklene, varmemåleren, datoklossen,
+// tastetegningene og lappene. Leser bare spillet og spillfølelsen.
 
 import type { ArcadeView } from '../arcade/useArcade';
+import { P, bakgrunn, ripe } from './art';
+import { gamma, glød, hauger, inga, nedTilStranda, patrulje, røyk, skip, stabel, endeved } from './figures';
+import type { Fx } from './fx';
 import type { Game } from './game';
 import { dato } from './levels';
-import { bakke, dagNå, inne, stormIgjen, stormNå } from './rules';
+import { bakke, dagNå, iLyset, inne, stormIgjen, stormNå } from './rules';
 import { TUNING } from './tuning';
+
+export { P } from './art';
 
 const T = TUNING;
 const G = T.verden.gammaX;
-
-export const P = {
-    himmel: '#14233f',
-    fjell: '#2f5d8c',
-    snø: '#d9dde6',
-    svart: '#111111',
-    glød: '#e3a52b',
-    fare: '#c23a2b',
-    lys: '#f7f3c8',
-    ved: '#8a5a2b',
-};
+const GY = bakke(G);
 
 export interface Skala {
     s: number;
@@ -38,6 +32,8 @@ export interface Lapp {
     x: number;
     y: number;
     igjen: number;
+    /** Hvor lenge lappen står i alt (for å sprette inn). */
+    sek: number;
 }
 
 export interface TegneValg {
@@ -48,287 +44,283 @@ export interface TegneValg {
     hint: { gå: boolean; legg: boolean };
 }
 
-function tegnBakke(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = P.himmel;
-    ctx.fillRect(0, 0, 960, 540);
-    // Fjorden nede til høyre.
-    ctx.fillStyle = '#0c1830';
-    ctx.fillRect(0, bakke(T.verden.strandX) + 6, 960, 200);
-    // Fjellsida.
-    ctx.fillStyle = P.snø;
-    ctx.beginPath();
-    ctx.moveTo(0, 540);
-    ctx.lineTo(0, bakke(0));
-    for (let x = 0; x <= T.verden.strandX + 20; x += 10) ctx.lineTo(x, bakke(x));
-    ctx.lineTo(T.verden.strandX + 40, 540);
-    ctx.closePath();
-    ctx.fill();
-    ctx.strokeStyle = P.svart;
-    ctx.lineWidth = 3;
-    ctx.stroke();
-}
+type Ctx = CanvasRenderingContext2D;
 
-function tegnHauger(ctx: CanvasRenderingContext2D, g: Game) {
-    T.haug.forEach((h, i) => {
-        const n = Math.min(12, g.haug[i]);
-        const y = bakke(h.x);
-        // Bjørkestammer bak haugen.
-        ctx.fillStyle = P.svart;
-        for (let k = -1; k <= 1; k++) ctx.fillRect(h.x + k * 16 - 2, y - 46, 4, 46);
-        if (n <= 0) return;
-        for (let k = 0; k < n; k++) {
-            const r = Math.floor(k / 4);
-            ctx.fillStyle = P.ved;
-            ctx.fillRect(h.x - 16 + (k % 4) * 8, y - 8 - r * 7, 7, 6);
-        }
-    });
-}
-
-function tegnGamma(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
-    const y = bakke(G);
-    const varm = g.varme / T.varme.maks;
-    const fyrNå = g.bål > 0;
-    // Gløden ut over snøen.
-    const r = 40 + 100 * varm + (fyrNå ? 8 * Math.sin(klokke * 20) : 0);
-    const grad = ctx.createRadialGradient(G, y - 20, 4, G, y - 20, r);
-    grad.addColorStop(0, `rgba(227,165,43,${0.2 + 0.55 * varm})`);
-    grad.addColorStop(1, 'rgba(227,165,43,0)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(G - r, y - 20 - r, r * 2, r * 2);
-    // Gamma: torvkuppel, snittet åpen.
-    ctx.fillStyle = '#3b2a1c';
-    ctx.strokeStyle = P.svart;
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.ellipse(G, y, 58, 50, 0, Math.PI, 0);
-    ctx.fill();
-    ctx.stroke();
-    ctx.fillStyle = `rgb(${30 + 120 * varm},${30 + 70 * varm},${40 + 10 * varm})`;
-    ctx.beginPath();
-    ctx.ellipse(G, y, 47, 40, 0, Math.PI, 0);
-    ctx.fill();
-    // Bålet midt i gamma: flammen er varmen. Liten og blå-rød glo når det er kaldt.
-    const fl = 4 + 26 * varm + (fyrNå ? 6 + 3 * Math.sin(klokke * 25) : 1.5 * Math.sin(klokke * 8));
-    ctx.fillStyle = '#4a4a4a';
-    ctx.fillRect(G - 9, y - 4, 18, 4);
-    // Kubbene som ligger på bålet.
-    const påBålet = Math.ceil(g.bål / T.varme.perKubbe - 1e-6);
-    for (let k = 0; k < påBålet; k++) {
-        ctx.fillStyle = P.ved;
-        ctx.fillRect(G - 10 + (k % 2) * 6, y - 8 - k * 4, 14, 4);
-    }
-    ctx.fillStyle = varm < 0.25 ? P.fare : P.glød;
-    ctx.beginPath();
-    ctx.moveTo(G - 8, y - 4);
-    ctx.quadraticCurveTo(G - 6, y - 4 - fl * 0.6, G, y - 4 - fl);
-    ctx.quadraticCurveTo(G + 6, y - 4 - fl * 0.6, G + 8, y - 4);
-    ctx.closePath();
-    ctx.fill();
-    if (varm > 0.3) {
-        ctx.fillStyle = '#fff2b0';
-        ctx.beginPath();
-        ctx.moveTo(G - 3, y - 4);
-        ctx.quadraticCurveTo(G, y - 4 - fl * 0.7, G + 3, y - 4);
-        ctx.fill();
-    }
-    // Familien rundt bålet. Blir blå og skjelver når det er kaldt.
-    const kald = Math.max(0, 1 - g.varme / 55);
-    const skjelv = g.varme < T.varme.rim ? Math.sin(klokke * 40) * 1.5 : 0;
-    const plass: [number, number][] = [[-32, 8], [-20, 10], [22, 7]];
-    plass.forEach(([dx, rr], k) => {
-        ctx.fillStyle = `rgb(${130 - 70 * kald},${85 + 45 * kald},${60 + 150 * kald})`;
-        ctx.beginPath();
-        ctx.arc(G + dx + (k % 2 ? skjelv : -skjelv), y - rr - 2, rr, 0, Math.PI * 2);
-        ctx.fill();
-    });
-    // Stabelen ved døra - eller et tomt merke når den er tom.
-    const sx = G + 36;
-    if (g.stabel === 0) {
-        ctx.setLineDash([3, 3]);
-        ctx.strokeStyle = P.fare;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(sx - 2, y - 20, 25, 18);
-        ctx.setLineDash([]);
-    }
-    for (let k = 0; k < g.stabel; k++) {
-        ctx.fillStyle = P.ved;
-        ctx.fillRect(sx + (k % 3) * 8, y - 7 - Math.floor(k / 3) * 6, 7, 5);
-    }
-    tegnMåler(ctx, g, klokke);
-}
-
-/** Varmemåleren ved gamma: snøfnugg nede, flamme oppe. Blinker rødt når det blir kaldt. */
-function tegnMåler(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
-    const x = G - 92;
-    const topp = bakke(G) - 120;
-    const h = 96;
+/** Varmemåleren ved døra, skåret i tre: flamme øverst, snøfnugg nederst, strek for en varm natt. */
+function måler(ctx: Ctx, g: Game, klokke: number) {
+    const x = G - 96;
+    const topp = GY - 128;
+    const h = 100;
     const varm = Math.max(0, g.varme / T.varme.maks);
     const kaldt = g.varme < T.varme.rim;
     const blink = kaldt && Math.sin(klokke * 10) > 0;
+    // Planken.
+    ctx.fillStyle = P.svart;
+    ctx.fillRect(x - 15, topp - 30, 30, h + 62);
+    ctx.strokeStyle = P.snø;
+    ctx.lineWidth = 1.2;
+    ctx.strokeRect(x - 12, topp - 27, 24, h + 56);
+    // Sporet med varmen: oker over rimstreken, blått under, rødt når det er kaldt.
     ctx.fillStyle = '#0a1224';
-    ctx.fillRect(x - 9, topp, 18, h);
-    const grad = ctx.createLinearGradient(0, topp + h, 0, topp);
-    grad.addColorStop(0, '#6fa8dc');
-    grad.addColorStop(0.4, P.glød);
-    grad.addColorStop(1, '#ff7a2b');
-    ctx.fillStyle = kaldt ? P.fare : grad;
-    ctx.fillRect(x - 7, topp + h * (1 - varm), 14, h * varm);
-    ctx.strokeStyle = blink ? P.fare : '#f1ead9';
-    ctx.lineWidth = blink ? 4 : 2;
-    ctx.strokeRect(x - 9, topp, 18, h);
-    // Linja for en varm natt.
-    const gy = topp + h * (1 - T.varme.god / T.varme.maks);
-    ctx.strokeStyle = '#f1ead9';
+    ctx.fillRect(x - 7, topp, 14, h);
+    const fy = topp + h * (1 - varm);
+    ctx.fillStyle = kaldt ? (blink ? P.fare : '#7a2a20') : P.glød;
+    ctx.fillRect(x - 7, fy, 14, topp + h - fy);
+    if (!kaldt) {
+        const rimY = topp + h * (1 - T.varme.rim / T.varme.maks);
+        ctx.fillStyle = P.blå;
+        ctx.fillRect(x - 7, Math.max(fy, rimY), 14, topp + h - Math.max(fy, rimY));
+    }
+    // Hvite skårne hakk langs sporet.
+    ctx.strokeStyle = P.snø;
     ctx.lineWidth = 1;
+    for (let k = 1; k < 10; k++) {
+        ctx.beginPath();
+        ctx.moveTo(x - 11, topp + (h * k) / 10);
+        ctx.lineTo(x - 8, topp + (h * k) / 10);
+        ctx.stroke();
+    }
+    ctx.strokeStyle = blink ? P.fare : P.snø;
+    ctx.lineWidth = blink ? 3.5 : 2;
+    ctx.strokeRect(x - 7, topp, 14, h);
+    // Streken for en varm natt.
+    const gy = topp + h * (1 - T.varme.god / T.varme.maks);
+    ctx.strokeStyle = P.snø;
+    ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(x - 13, gy);
-    ctx.lineTo(x + 13, gy);
+    ctx.moveTo(x - 12, gy);
+    ctx.lineTo(x + 12, gy);
     ctx.stroke();
-    ctx.font = '18px system-ui, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillStyle = '#f1ead9';
-    ctx.fillText('🔥', x, topp - 6);
-    ctx.fillText('❄', x, topp + h + 20);
+    // Flammen øverst.
+    ctx.fillStyle = P.fare;
+    ctx.beginPath();
+    ctx.moveTo(x - 7, topp - 6);
+    ctx.quadraticCurveTo(x - 8, topp - 18, x, topp - 26);
+    ctx.quadraticCurveTo(x + 8, topp - 18, x + 7, topp - 6);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = P.glød;
+    ctx.beginPath();
+    ctx.moveTo(x - 3.5, topp - 6);
+    ctx.quadraticCurveTo(x - 4, topp - 14, x, topp - 19);
+    ctx.quadraticCurveTo(x + 4, topp - 14, x + 3.5, topp - 6);
+    ctx.closePath();
+    ctx.fill();
+    // Snøfnugget nederst: seks skårne armer.
+    ctx.strokeStyle = blink ? P.fare : '#cfe3f5';
+    ctx.lineWidth = 2;
+    const sy = topp + h + 16;
+    for (let k = 0; k < 3; k++) {
+        const a = (k * Math.PI) / 3 + Math.PI / 2;
+        ctx.beginPath();
+        ctx.moveTo(x - Math.cos(a) * 9, sy - Math.sin(a) * 9);
+        ctx.lineTo(x + Math.cos(a) * 9, sy + Math.sin(a) * 9);
+        ctx.stroke();
+    }
     if (kaldt) {
         ctx.font = 'bold 15px system-ui, sans-serif';
-        ctx.fillStyle = blink ? P.fare : '#f1ead9';
-        ctx.fillText('KALDT', x, topp + h + 40);
+        ctx.textAlign = 'center';
+        ctx.fillStyle = P.svart;
+        ctx.fillRect(x - 28, topp + h + 34, 56, 22);
+        ctx.fillStyle = blink ? P.fare : P.snø;
+        ctx.fillText('KALDT', x, topp + h + 51);
     }
 }
 
-function tegnRøyk(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
-    if (g.røyk <= 0.02) return;
-    const y = bakke(G) - 40;
-    const synlig = g.røyk > T.røyk.synlig;
-    const n = Math.ceil(g.røyk * 12);
-    for (let k = 0; k < n; k++) {
-        const h = k * 14;
-        const dx = Math.sin(klokke * 1.5 + k) * (4 + k);
-        ctx.fillStyle = synlig ? 'rgba(200,200,205,0.75)' : 'rgba(200,200,205,0.35)';
-        ctx.beginPath();
-        ctx.arc(G + dx, y - h, 7 + k * 1.2, 0, Math.PI * 2);
-        ctx.fill();
+function partikler(ctx: Ctx, fx: Fx) {
+    for (const q of fx.partikler) {
+        const a = Math.max(0, q.liv / q.maks);
+        if (q.slag === 'gnist') {
+            ctx.strokeStyle = a > 0.5 ? `rgba(255,242,176,${a})` : `rgba(227,165,43,${a})`;
+            ctx.lineWidth = 1.6;
+            ctx.beginPath();
+            ctx.moveTo(q.x, q.y);
+            ctx.lineTo(q.x - q.vx * 0.03, q.y - q.vy * 0.03);
+            ctx.stroke();
+        } else if (q.slag === 'flis') {
+            ctx.fillStyle = `rgba(168,116,58,${a})`;
+            ctx.fillRect(q.x, q.y, 3, 1.6);
+        } else {
+            ctx.fillStyle = q.slag === 'damp' ? `rgba(232,241,255,${0.5 * a})` : `rgba(120,152,196,${a})`;
+            ctx.beginPath();
+            ctx.arc(q.x, q.y, q.r * (q.slag === 'damp' ? 2 : 1), 0, Math.PI * 2);
+            ctx.fill();
+        }
     }
-}
-
-function tegnPatrulje(ctx: CanvasRenderingContext2D, g: Game) {
-    const p = g.patrulje;
-    if (!p) return;
-    const sy = bakke(T.verden.strandX) + 10;
-    ctx.fillStyle = P.svart;
-    ctx.fillRect(p.båtX - 30, sy - 4, 60, 12);
-    ctx.fillRect(p.båtX - 8, sy - 16, 16, 12);
-    if (p.fase === 'lyser') {
-        const ly = bakke(p.lysX);
+    // Kubbene i lufta: en bue fra stabelen til bålet (eller fra armene til stabelen).
+    for (const k of fx.kubber) {
+        if (k.t < 0) continue;
+        const f = Math.min(1, k.t / k.dur);
+        const x = k.fx + (k.tx - k.fx) * f;
+        const y = k.fy + (k.ty - k.fy) * f - Math.sin(f * Math.PI) * (k.tilBål ? 26 : 18);
         ctx.save();
-        ctx.globalCompositeOperation = 'lighter';
-        ctx.fillStyle = 'rgba(247,243,200,0.28)';
-        ctx.beginPath();
-        ctx.moveTo(p.båtX - 6, sy - 14);
-        ctx.lineTo(p.lysX - T.patrulje.bredde, ly - 140);
-        ctx.lineTo(p.lysX + T.patrulje.bredde, ly + 10);
-        ctx.closePath();
-        ctx.fill();
+        ctx.translate(x, y);
+        ctx.rotate(f * Math.PI * (k.tilBål ? -2 : 1));
+        endeved(ctx, 0, 0, 4.2);
         ctx.restore();
-        ctx.fillStyle = 'rgba(247,243,200,0.6)';
-        ctx.beginPath();
-        ctx.ellipse(p.lysX, ly, T.patrulje.bredde, 10, 0, 0, Math.PI * 2);
-        ctx.fill();
-    } else if (p.fase === 'kommer') {
-        // Lyskasteren varmes opp: en rød prikk som blinker.
-        ctx.fillStyle = P.fare;
-        ctx.beginPath();
-        ctx.arc(p.båtX - 6, sy - 14, 4, 0, Math.PI * 2);
-        ctx.fill();
     }
 }
 
-function tegnInga(ctx: CanvasRenderingContext2D, g: Game) {
-    const y = bakke(g.x);
-    if (inne(g)) return;
-    ctx.fillStyle = P.glød;
-    ctx.strokeStyle = P.svart;
-    ctx.lineWidth = 2;
-    ctx.fillRect(g.x - 7, y - 30, 14, 30);
-    ctx.strokeRect(g.x - 7, y - 30, 14, 30);
-    for (let k = 0; k < g.fang; k++) {
-        ctx.fillStyle = P.ved;
-        ctx.fillRect(g.x - 10 + k * 5 * g.vendt, y - 24 - k * 3, 12, 5);
-    }
-}
-
-function tegnStorm(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
+function storm(ctx: Ctx, g: Game, klokke: number) {
     if (!stormNå(g)) return;
     const tynn = Math.min(1, stormIgjen(g) / 4);
-    ctx.fillStyle = `rgba(230,235,245,${0.35 * tynn})`;
+    ctx.fillStyle = `rgba(214,222,236,${0.28 * tynn})`;
     ctx.fillRect(0, 0, 960, 540);
-    ctx.fillStyle = `rgba(255,255,255,${0.8 * tynn})`;
-    for (let k = 0; k < 80; k++) {
-        const x = (k * 97 + klokke * 400) % 960;
-        const y = (k * 53 + klokke * 120) % 540;
-        ctx.fillRect(x, y, 3, 2);
+    ctx.strokeStyle = `rgba(255,255,255,${0.85 * tynn})`;
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    for (let k = 0; k < 90; k++) {
+        const x = ((k * 97 + klokke * 420) % 1000) - 20;
+        const y = ((k * 53 + klokke * 140) % 560) - 10;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + 9, y + 3);
+        ctx.stroke();
     }
 }
 
-function tegnHint(ctx: CanvasRenderingContext2D, g: Game, valg: TegneValg) {
+/** En lapp: papirlapp med svart skåret kant, spretter inn og står fast. */
+function lappTegn(ctx: Ctx, tekst: string, x: number, y: number, skala = 1) {
     ctx.font = 'bold 15px system-ui, sans-serif';
     ctx.textAlign = 'center';
-    const kort = (tekst: string, x: number, y: number) => {
-        const w = ctx.measureText(tekst).width + 16;
-        ctx.fillStyle = '#f1ead9';
-        ctx.fillRect(x - w / 2, y - 16, w, 24);
-        ctx.strokeStyle = P.svart;
-        ctx.lineWidth = 2;
-        ctx.strokeRect(x - w / 2, y - 16, w, 24);
-        ctx.fillStyle = P.svart;
-        ctx.fillText(tekst, x, y + 1);
-    };
-    if (valg.hint.gå) kort('← →  gå', g.x + 70, bakke(g.x) - 50);
-    if (valg.hint.legg) kort('MELLOMROM = legg på ved', G, bakke(G) - 70);
-    for (const l of valg.lapper) kort(l.tekst, l.x, l.y);
+    const w = ctx.measureText(tekst).width + 20;
+    const cx = Math.max(w / 2 + 12, Math.min(960 - w / 2 - 12, x));
+    ctx.save();
+    ctx.translate(cx, y);
+    ctx.scale(skala, skala);
+    ctx.fillStyle = P.svart;
+    ctx.fillRect(-w / 2 + 3, -14, w, 28);
+    ctx.fillStyle = P.snø;
+    ctx.fillRect(-w / 2, -17, w, 28);
+    ctx.strokeStyle = P.svart;
+    ctx.lineWidth = 2.5;
+    ctx.strokeRect(-w / 2, -17, w, 28);
+    ctx.fillStyle = P.svart;
+    ctx.fillText(tekst, 0, 2);
+    ctx.restore();
 }
 
-function tegnDato(ctx: CanvasRenderingContext2D, g: Game) {
+/** Tastetegning: skårne hvite tastekonturer. */
+function tast(ctx: Ctx, x: number, y: number, w: number, merke: string) {
+    ctx.fillStyle = P.svart;
+    ctx.fillRect(x - w / 2, y - 14, w, 26);
+    ctx.strokeStyle = P.snø;
+    ctx.lineWidth = 2;
+    ctx.strokeRect(x - w / 2 + 2, y - 12, w - 4, 22);
+    ctx.fillStyle = P.snø;
+    ctx.font = 'bold 15px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(merke, x, y + 4);
+}
+
+function hint(ctx: Ctx, valg: TegneValg) {
+    // Faste plasser: ved døra der Inga starter, og over gamma der hun legger på.
+    if (valg.hint.gå) {
+        // På snøen nedenfor døra, ved føttene der hun går ut.
+        const x = G + 96;
+        const y = bakke(x) + 34;
+        tast(ctx, x - 16, y, 28, '←');
+        tast(ctx, x + 16, y, 28, '→');
+        ctx.fillStyle = P.svart;
+        ctx.font = 'bold 15px system-ui, sans-serif';
+        ctx.fillText('gå', x + 48, y + 4);
+    }
+    if (valg.hint.legg) {
+        // Til høyre for kuppelen, under banneret og unna røyksøylen.
+        const y = GY - 72;
+        tast(ctx, G + 150, y, 120, 'MELLOMROM');
+        ctx.fillStyle = P.snø;
+        ctx.font = 'bold 15px system-ui, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText('= legg på ved', G + 214, y + 4);
+        ctx.textAlign = 'center';
+    }
+    for (const l of valg.lapper) {
+        const inn = Math.min(1, (l.sek - l.igjen) / 0.18);
+        const sk = inn < 1 ? 0.7 + 0.45 * inn - 0.15 * inn * inn : 1;
+        ctx.globalAlpha = Math.min(1, l.igjen / 0.3);
+        lappTegn(ctx, l.tekst, l.x, l.y, sk);
+        ctx.globalAlpha = 1;
+    }
+}
+
+/** Datoen som en utskåret trekloss øverst, og en skåret strek mot februar. */
+function datoKloss(ctx: Ctx, g: Game, fx: Fx) {
     const d = Math.min(T.dager, dagNå(g));
     const tekst = dato(d).toUpperCase();
     ctx.font = 'bold 22px Georgia, serif';
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#f1ead9';
-    ctx.fillText(tekst, 480, 36);
-    // Veien mot februar: en tynn strek med et merke.
-    ctx.fillStyle = 'rgba(241,234,217,0.3)';
-    ctx.fillRect(330, 48, 300, 4);
+    const w = Math.max(260, ctx.measureText(tekst).width + 40);
+    ctx.fillStyle = P.svart;
+    ctx.fillRect(480 - w / 2, 10, w, 38);
+    if (fx.varmNatt > 0) {
+        ctx.strokeStyle = `rgba(227,165,43,${fx.varmNatt})`;
+        ctx.lineWidth = 3;
+        ctx.strokeRect(480 - w / 2 - 2, 8, w + 4, 42);
+    }
+    ctx.strokeStyle = P.snø;
+    ctx.lineWidth = 1.2;
+    for (let k = 0; k < 6; k++) ripe(ctx, 480 - w / 2 + 8 + k * (w / 6), 14, 18, -0.8);
+    ctx.fillStyle = P.snø;
+    ctx.fillText(tekst, 480, 37);
+    // Veien mot februar: hakk for hver måned og en glo for i dag.
+    const x0 = 340;
+    const x1 = 620;
+    ctx.fillStyle = P.svart;
+    ctx.fillRect(x0 - 4, 52, x1 - x0 + 8, 10);
     ctx.fillStyle = P.glød;
-    ctx.fillRect(330, 48, 300 * (d / T.dager), 4);
-    ctx.font = '13px system-ui, sans-serif';
-    ctx.fillStyle = '#f1ead9';
+    ctx.fillRect(x0, 55, (x1 - x0) * (d / T.dager), 4);
+    ctx.strokeStyle = P.snø;
+    ctx.lineWidth = 1.5;
+    for (const md of [21, 52, 83]) {
+        const x = x0 + ((x1 - x0) * md) / T.dager;
+        ctx.beginPath();
+        ctx.moveTo(x, 52);
+        ctx.lineTo(x, 62);
+        ctx.stroke();
+    }
+    ctx.font = 'bold 13px system-ui, sans-serif';
+    ctx.fillStyle = P.snø;
     ctx.textAlign = 'right';
-    ctx.fillText('nov', 326, 54);
+    ctx.fillText('nov', x0 - 8, 62);
     ctx.textAlign = 'left';
-    ctx.fillText('feb: hjelpen', 636, 54);
+    ctx.fillText('feb: hjelpen kommer', x1 + 8, 62);
 }
 
-export function tegn(view: ArcadeView, g: Game, valg: TegneValg) {
+export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
     const { ctx, w, h, dpr } = view;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = '#0a1224';
     ctx.fillRect(0, 0, w, h);
     const k = skala(w, h);
-    ctx.setTransform(dpr * k.s, 0, 0, dpr * k.s, dpr * k.ox, dpr * k.oy);
+    const rx = fx.rist > 0 ? (Math.random() - 0.5) * fx.rist : 0;
+    const ry = fx.rist > 0 ? (Math.random() - 0.5) * fx.rist : 0;
+    ctx.setTransform(dpr * k.s, 0, 0, dpr * k.s, dpr * (k.ox + rx), dpr * (k.oy + ry));
     ctx.save();
     ctx.beginPath();
     ctx.rect(0, 0, 960, 540);
     ctx.clip();
-    tegnBakke(ctx);
-    tegnHauger(ctx, g);
-    tegnRøyk(ctx, g, valg.klokke);
-    tegnGamma(ctx, g, valg.klokke);
-    tegnInga(ctx, g);
-    tegnPatrulje(ctx, g);
-    tegnStorm(ctx, g, valg.klokke);
+    ctx.drawImage(bakgrunn(dpr * k.s), 0, 0, 960, 540);
+    skip(ctx, dagNå(g));
+    hauger(ctx, g, valg.klokke);
+    glød(ctx, g, fx, valg.klokke);
+    røyk(ctx, g, valg.klokke);
+    const frosset = g.mode === 'lost' && g.årsak === 'frosset' ? Math.min(1, fx.slutt / 1.4) : 0;
+    gamma(ctx, g, fx, valg.klokke, frosset);
+    stabel(ctx, g, fx, valg.klokke);
+    if (g.mode === 'won') nedTilStranda(ctx, fx.slutt);
+    else inga(ctx, g, fx, !inne(g) && iLyset(g, g.x));
+    partikler(ctx, fx);
+    patrulje(ctx, g, fx, valg.klokke);
+    storm(ctx, g, valg.klokke);
+    måler(ctx, g, valg.klokke);
+    // Rammen rundt trykket.
+    ctx.strokeStyle = P.svart;
+    ctx.lineWidth = 8;
+    ctx.strokeRect(4, 4, 952, 532);
     if (!valg.meny) {
-        tegnDato(ctx, g);
-        tegnHint(ctx, g, valg);
+        datoKloss(ctx, g, fx);
+        hint(ctx, valg);
     }
     ctx.restore();
 }

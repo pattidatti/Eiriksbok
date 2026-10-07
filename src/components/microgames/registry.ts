@@ -2569,7 +2569,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         tone: 'alvorlig',
         hook: 'Bygda er brent, og familien har gjemt seg i en gamme. Klarer du å holde dem varme uten at lyset ser røyken?',
         cover: '/images/microgames/gamma.webp',
-        kunst: 'John Savios fargetresnitt fra Finnmark: svart treskurd, hvite skårne linjer i snøen, preussisk blått og ild i oker',
+        kunst: 'John Savios fargetresnitt fra Finnmark: svart treskurd med tykke konturer, hvite skårne riper i snøen, preussisk blå natt, nordlys som skårne linjer og ild i oker og rødt',
         loader: () => import('./Gamma'),
         Component: Gamma as never,
     },

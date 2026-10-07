@@ -85,6 +85,30 @@ export const TUNING = {
     jul: { fra: 44, til: 48 },
     storm: { fra: 58, til: 64, fallGanger: 1.8 },
 
+    /** Spillfølelsen (bare bilde og lyd, ingen spillregler). */
+    juice: {
+        /** Sekunder en kubbe flyr fra stabelen til bålet, og fra armene til stabelen. */
+        kubbeFlyr: 0.26,
+        leverFlyr: 0.22,
+        /** Gnister når kubben lander, og snøfnugg ved føttene per sekund (tom / med fang). */
+        gnister: 16,
+        snøTom: 9,
+        snøFang: 22,
+        /** Pusten når lyset går rett over gamma uten å se røyken: ekte sekunder og fart. */
+        pust: 0.45,
+        pustFart: 0.3,
+        /** Røyk over dette (men under `røyk.synlig`) da lyset passerte = «det gikk så vidt». */
+        nesten: 0.04,
+        /** Skjermrystelse ved tap og når lyset tennes (px, svinner i ekte tid). */
+        ristTap: 7,
+        ristLys: 2.5,
+        /** Sekunder slutt-bildet står før slutt-skjermen (tapt / vunnet). */
+        sluttTap: 2.2,
+        sluttSeier: 3.0,
+        /** De allierte skipene synes i fjordmunningen fra denne dagen. */
+        skipDag: 96,
+    },
+
     /** Rangene etter dager holdt ut. */
     ranger: [
         [0, 'Første natt'],

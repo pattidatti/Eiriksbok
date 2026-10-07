@@ -216,3 +216,57 @@ ikke så gøy (med mindre man skyter), artigere å trykke hver gang man ligger p
   ut - legg på ved!» når det er kaldt og du har ved.
 - Simuleringen etter endringen: seende 85 %, halvgod 81 %, taperne 0-3 %; trapp 51 < 81 < 99;
   30,9 valg/min (før 24,6).
+
+### Kunst, juice og tekst (chat 2026-10-07)
+
+Gråboksen ble kledd i John Savios fargetresnitt. Spillreglene, tallene i balansen og trykk-verbet
+(ett trykk = én kubbe) er uendret, så simuleringen står som før: seende 85 %, halvgod 81 %, taperne
+0-3 %, trapp 51 < 81 < 99, 30,9 valg/min.
+
+- **Kunsten:** bakgrunnen tegnes én gang til et offscreen-canvas (`art.ts`): preussisk blå natt med
+  treårer og skårne stjerner, nordlys som hengende, skårne streker, fjellet bak gamma og fjellene over
+  fjorden med hvite snøriper, fjorden med skårne bølger, snøbakken med blå skygge som knivstrek
+  (glisne øverst, et blått felt nederst) og bjørkeskogen med hvite stammer og svarte hakk. Tykk svart
+  ramme rundt trykket. Ingen blur og ingen gradienter, bortsett fra gløden fra gamma.
+- **Figurene** (`figures.ts`): gamma som torvkuppel med snø på taket, snittet åpen med torvlag i
+  snittkanten, staver, ljore og dør. Bålet med steiner, kubber på kryss og flamme i tre lag (rødt,
+  oker, blekt). Familien (bestemor, lillebror, mor) som klumper under reinskinn med kofteband og lys
+  fra bålet på siden som vender mot det. Rimet er hvite krystaller som vokser i kulda og blir røde ved
+  siste kulde. Inga i blå kofte med rødt og gult band og rød lue, inne i gamma ved døra når hun er
+  inne. Vedkubbene vises fra enden med årringer. Patruljebåten er svart treskurd med styrhus og mast.
+- **Lesbarheten er beholdt og tydeligere:** varmemåleren er en skåret planke med flamme øverst,
+  snøfnugg nederst, strek for varm natt, blått under rimstreken og rødt som blinker under «KALDT».
+  Stabelen blinker rødt og stiplet når den er tom. Røyken som lyset ikke ser, er mørk og
+  gjennomsiktig; røyken som lyset ser, er blek og tett, og får rød kontur når båten er i fjorden.
+  Lyskasteren er en kald kjegle med hard rød kant og en lysflekk på bakken. Båten synes med blinkende
+  rød lampe og lydbuer som står fast og pulserer ut før lyset tennes.
+- **Juice på verbet** (`fx.ts`, `sound.ts`): kubben flyr i en bue fra stabelen inn i bålet, lander
+  med dunk og sus, flammen blusser, gnistene spruter og gløden vokser. Plukk: Inga løfter fanget,
+  snø og flis spruter, klakk. Levering: kubbene flyr fra armene til stabelen én og én, klakk for
+  hver, og «+4 ved» stiger fra stabelen. Snøen fyker rundt føttene, mer med fang, og hun går tyngre
+  (lener seg fram, større bob, lengre steg). Bålet knitrer mens det brenner. Rimet slipper damp når
+  bålet blusser i kulda.
+- **Spenning ved båten:** motorduren (to lave toner med dunk-puls) skrus opp mens båten kommer og
+  dør ut når den drar. Lyskasteren tennes med et klikk, en blits i lampa og en liten rystelse. Når
+  lyset går rett over gamma uten å se røyken: en pust (spillet går i 0,3 fart i 0,45 s), et
+  hjerteslag, en ring som pulserer ut fra gamma, og lappen «Det gikk så vidt.» hvis det var litt
+  røyk igjen.
+- **Tap og seier saklig:** funnet = lyset står stille der det fant dere, med en rød ring som pulserer
+  ut. Frosset = flammen dør og rimet dekker familien. Slutt-bildet står 2,2 s før slutt-skjermen.
+  Seier: de allierte skipene glir inn i fjordmunningen fra dag 96, og familien går ned mot stranda.
+- **Tekst:** lærings-øyeblikket «Lyset ser røyken» når lyset tennes første gang (øvingsbåten), med
+  ringen på strålen midt i lia så kortet ikke dekker gamma eller røyken. Faste lapper (maks 7 ord)
+  ved stabelen, gamma, båten og vedhaugen. Tastetegninger på faste plasser (← → på snøen nedenfor
+  døra, MELLOMROM til høyre for kuppelen). Tipsene på slutt-skjermen er kortet ned så skjermen får
+  plass, og «Dette skjedde» er skrevet om til enklere ord.
+- **Registry:** `kunst` presisert. Spillet er bygd inn i artikkelen etter avsnittet «Å overleve en
+  vinter i Finnmark ...».
+
+**Feel-lista før og etter:**
+
+| Punkt | Før (gråboks) | Etter |
+| --- | --- | --- |
+| Hver handling svarer | Delvis: korte toner ved plukk og legg, ingen bevegelse | Kubbe som flyr, blus, gnister, dunk og sus; løft, snø og klakk ved plukk; kubber som flyr til stabelen; snøfokk og tyngre gange |
+| Flaks og nesten-bom | Mangler: lyset gikk forbi uten at noe skjedde | Pust, hjerteslag, ring og «Det gikk så vidt.» når lyset går over gamma |
+| Ting kommer og går | Delvis: båten gled inn og ut | Båten glir inn og ut med lyd, lampa blitser, lappene spretter inn og blekner, skipene glir inn, familien går ut |
+| Belønningen merkes | Delvis: bare slutt-skjermen | Datoklossen gløder etter hver varme natt, «+4 ved», seier med skip, familien og tonerekke; tap med rystelse, banner og saklig slutt-bilde |

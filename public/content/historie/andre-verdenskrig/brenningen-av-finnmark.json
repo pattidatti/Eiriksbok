@@ -123,6 +123,13 @@
       "content": "Å overleve en vinter i Finnmark i en hule eller en gamme er hardt. Det er mørkt nesten hele døgnet, og det kan være mange kuldegrader. Maten var lite, og hjemmet var brent. I februar 1945 ble 500 mennesker fra Finnmark fraktet over havet til Skottland (Søbye, 1999)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "gamma"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/andre-verdenskrig/brenningen-av-finnmark-02.webp",
       "alt": "Familie utenfor en torvgamme i snødekt landskap",
