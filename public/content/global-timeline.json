@@ -6391,6 +6391,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "embetsmannsstaten",
+      "title": "Embetsmannsstaten: Da prestene og dommerne styrte Norge",
+      "description": "Fra 1814 til 1884 styrte prester, dommere og offiserer Norge. Bøndene vant Stortinget i 1833, men ikke makta.",
+      "startDate": 1814,
+      "endDate": 1884,
+      "displayDate": "1814-1884",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/embetsmannsstaten",
+      "tags": [
+        "historie",
+        "norge",
+        "norgeshistorie",
+        "demokrati",
+        "stemmerett",
+        "1800-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "nasjonale-minoriteter",
       "title": "De nasjonale minoritetene: fem folk staten ville gjøre like",
       "description": "Kvener, skogfinner, romanifolket, rom og jøder har bodd i Norge i hundrevis av år. I over hundre år prøvde staten å gjøre dem like alle andre.",
@@ -9365,6 +9390,32 @@
         "folkemord",
         "auschwitz"
       ]
+    },
+    {
+      "id": "brenningen-av-finnmark",
+      "title": "Brenningen av Finnmark: Da bygdene ble til aske",
+      "description": "Hvorfor tyskerne tvangsflyttet rundt 50 000 mennesker og brente nesten alt i Finnmark og Nord-Troms høsten 1944, og hvordan folk bygde landsdelen opp igjen.",
+      "startDate": 1944,
+      "endDate": 1945,
+      "displayDate": "1944-1945",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "andre-verdenskrig",
+      "link": "/historie/andre-verdenskrig/brenningen-av-finnmark",
+      "tags": [
+        "historie",
+        "andre-verdenskrig",
+        "norge",
+        "finnmark",
+        "okkupasjon",
+        "brent-jord",
+        "gjenreisning"
+      ],
+      "lat": 70,
+      "lng": 25,
+      "placeLabel": "Finnmark",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
     },
     {
       "id": "verden-bygges-pa-nytt-sub-0",

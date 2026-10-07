@@ -888,7 +888,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 357
+      "count": 359
     },
     {
       "tag": "teknologi",
@@ -943,16 +943,16 @@
       "count": 36
     },
     {
+      "tag": "demokrati",
+      "count": 35
+    },
+    {
       "tag": "middelalderen",
       "count": 35
     },
     {
-      "tag": "demokrati",
-      "count": 34
-    },
-    {
       "tag": "1800-tallet",
-      "count": 34
+      "count": 35
     },
     {
       "tag": "etikk",
@@ -1064,7 +1064,7 @@
     },
     {
       "tag": "andre-verdenskrig",
-      "count": 17
+      "count": 18
     },
     {
       "tag": "sammenligning",
@@ -1083,6 +1083,10 @@
       "count": 16
     },
     {
+      "tag": "rettsstat",
+      "count": 16
+    },
+    {
       "tag": "konflikt",
       "count": 16
     },
@@ -1097,10 +1101,6 @@
     {
       "tag": "fn",
       "count": 15
-    },
-    {
-      "tag": "rettsstat",
-      "count": 14
     },
     {
       "tag": "reformasjonen",
@@ -1132,6 +1132,14 @@
     },
     {
       "tag": "globalisering",
+      "count": 12
+    },
+    {
+      "tag": "kongemakt",
+      "count": 12
+    },
+    {
+      "tag": "borgerkrig",
       "count": 12
     },
     {
@@ -1195,11 +1203,7 @@
       "count": 10
     },
     {
-      "tag": "kongemakt",
-      "count": 10
-    },
-    {
-      "tag": "borgerkrig",
+      "tag": "rettsutvikling",
       "count": 10
     },
     {
@@ -1311,10 +1315,6 @@
       "count": 8
     },
     {
-      "tag": "rettsutvikling",
-      "count": 8
-    },
-    {
       "tag": "kirke",
       "count": 8
     },
@@ -1379,6 +1379,10 @@
       "count": 7
     },
     {
+      "tag": "stemmerett",
+      "count": 7
+    },
+    {
       "tag": "segregering",
       "count": 7
     },
@@ -1388,6 +1392,10 @@
     },
     {
       "tag": "the-troubles",
+      "count": 7
+    },
+    {
+      "tag": "okkupasjon",
       "count": 7
     },
     {
@@ -1467,10 +1475,6 @@
       "count": 6
     },
     {
-      "tag": "stemmerett",
-      "count": 6
-    },
-    {
       "tag": "borgerrettigheter",
       "count": 6
     },
@@ -1496,10 +1500,6 @@
     },
     {
       "tag": "oversikt",
-      "count": 6
-    },
-    {
-      "tag": "okkupasjon",
       "count": 6
     },
     {
@@ -1784,6 +1784,10 @@
     },
     {
       "tag": "karl-xii",
+      "count": 4
+    },
+    {
+      "tag": "parlament",
       "count": 4
     },
     {
@@ -2756,10 +2760,6 @@
     },
     {
       "tag": "bill-of-rights",
-      "count": 2
-    },
-    {
-      "tag": "parlament",
       "count": 2
     },
     {
@@ -4140,6 +4140,14 @@
     },
     {
       "tag": "rettsvitenskap",
+      "count": 1
+    },
+    {
+      "tag": "brent-jord",
+      "count": 1
+    },
+    {
+      "tag": "gjenreisning",
       "count": 1
     },
     {

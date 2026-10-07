@@ -47,6 +47,12 @@
     "link": "/historie/afrikanske-riker/swahili-kysten",
     "title": "Swahilikysten: Byene som levde av vinden"
   },
+  "gamma": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig",
+    "link": "/historie/andre-verdenskrig/brenningen-av-finnmark",
+    "title": "Brenningen av Finnmark: Da bygdene ble til aske"
+  },
   "inn-mot-stranda": {
     "subjectId": "historie",
     "topicId": "andre-verdenskrig",
@@ -274,6 +280,12 @@
     "topicId": "etterkrigstiden",
     "link": "/historie/etterkrigstiden/russland-etter-sovjet",
     "title": "Russland etter Sovjet: Fra sammenbrudd til krig"
+  },
+  "generalstreiken": {
+    "subjectId": "historie",
+    "topicId": "etterkrigstiden",
+    "link": "/historie/etterkrigstiden/ungdomsopproret-1968",
+    "title": "1968: Da de unge sa nei"
   },
   "marshallhjelpen-3d": {
     "subjectId": "historie",
@@ -581,6 +593,12 @@
     "link": "/historie/lov-og-rett/bill-of-rights-1689",
     "title": "Bill of Rights 1689 - kronen med vilkår"
   },
+  "kongens-tallerkener": {
+    "subjectId": "historie",
+    "topicId": "lov-og-rett",
+    "link": "/historie/lov-og-rett/den-engelske-borgerkrigen",
+    "title": "Den engelske borgerkrigen: Da folket dømte kongen"
+  },
   "forseglingen-runnymede-3d": {
     "subjectId": "historie",
     "topicId": "lov-og-rett",
@@ -718,6 +736,12 @@
     "topicId": "nasjonalstatenes-tid",
     "link": "/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland",
     "title": "Da nasjonene ble til: Samlingen av Italia og Tyskland"
+  },
+  "pengeballongen": {
+    "subjectId": "historie",
+    "topicId": "norge-i-moderne-tid",
+    "link": "/historie/norge-i-moderne-tid/embetsmannsstaten",
+    "title": "Embetsmannsstaten: Da prestene og dommerne styrte Norge"
   },
   "hvor-er-jobbene-3d": {
     "subjectId": "historie",
